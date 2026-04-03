@@ -1,0 +1,3737 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#000000">
+<title>Niyyah ✦</title>
+<link rel="manifest" href="manifest.json">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════
+   THEME : DARK (default)
+══════════════════════════ */
+:root {
+  --bg:        #03030a;
+  --bg1:       #080810;
+  --bg2:       #0f0f17;
+  --card:      rgba(28,28,42,0.95);
+  --card2:     rgba(44,44,62,0.90);
+  --sep:       rgba(255,255,255,0.07);
+  --sep2:      rgba(255,255,255,0.12);
+
+  --t1:  #ffffff;
+  --t2:  rgba(255,255,255,0.55);
+  --t3:  rgba(255,255,255,0.28);
+
+  --header-bg: rgba(3,3,10,0.80);
+  --nav-bg:    rgba(3,3,10,0.88);
+
+  --green:      #34d962;
+  --green-dim:  #1a6632;
+  --green-glow: rgba(52,217,98,0.22);
+  --green-soft: rgba(52,217,98,0.10);
+  --green-grad: linear-gradient(135deg,#34d962 0%,#26b850 100%);
+
+  --gold:      #ffd60a;
+  --gold-soft: rgba(255,214,10,0.10);
+  --gold-glow: rgba(255,214,10,0.28);
+  --gold-grad: linear-gradient(135deg,#ffd60a 0%,#f5a623 100%);
+
+  --bronze:    #e09a52;
+  --silver:    #b8ccd6;
+
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bot: env(safe-area-inset-bottom, 0px);
+
+  --r:    14px;
+  --r-lg: 20px;
+  --r-xl: 28px;
+
+  --serif: 'DM Serif Display', Georgia, serif;
+  --sans:  'DM Sans', -apple-system, sans-serif;
+  --calli: 'Cormorant Garamond', 'Palatino Linotype', Georgia, serif;
+
+  --theme-icon: '☀\FE0F';
+}
+
+/* ══════════════════════════
+   THEME : LIGHT — FIXED
+══════════════════════════ */
+[data-theme="light"] {
+  --bg:        #f0f0f5;
+  --bg1:       #e4e4eb;
+  --bg2:       #ffffff;
+  --card:      #ffffff;
+  --card2:     #ebebf0;
+  --sep:       rgba(0,0,0,0.09);
+  --sep2:      rgba(0,0,0,0.15);
+
+  --t1:  #000000;
+  --t2:  rgba(0,0,0,0.60);
+  --t3:  rgba(0,0,0,0.40);
+
+  --header-bg: rgba(240,240,245,0.92);
+  --nav-bg:    rgba(240,240,245,0.95);
+
+  --green:      #1a9436;
+  --green-dim:  #d0f0d8;
+  --green-glow: rgba(26,148,54,0.18);
+  --green-soft: rgba(26,148,54,0.10);
+  --green-grad: linear-gradient(135deg,#1a9436 0%,#148030 100%);
+
+  --gold:      #a07000;
+  --gold-soft: rgba(160,112,0,0.10);
+  --gold-glow: rgba(160,112,0,0.20);
+  --gold-grad: linear-gradient(135deg,#c48800 0%,#a06000 100%);
+
+  --bronze:    #8b5e1a;
+  --silver:    #4a6e80;
+}
+
+[data-theme="light"] .header,
+[data-theme="light"] .tabs-wrap {
+  background: var(--header-bg) !important;
+  border-bottom: 1px solid var(--sep);
+}
+[data-theme="light"] .nav-bar {
+  background: var(--nav-bg) !important;
+}
+
+/* Cards — ombre visible, fond blanc net */
+[data-theme="light"] .items-group {
+  background: #ffffff !important;
+  border: 1px solid rgba(0,0,0,0.07) !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.05) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+[data-theme="light"] .level-hero {
+  background: linear-gradient(145deg,#ffffff 0%,#f5f5fa 100%) !important;
+  border: 1px solid rgba(0,0,0,0.07) !important;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+[data-theme="light"] .streak-card,
+[data-theme="light"] .stat-box,
+[data-theme="light"] .year-card,
+[data-theme="light"] .badge-card,
+[data-theme="light"] .resume-hero,
+[data-theme="light"] .resume-level-row {
+  background: #ffffff !important;
+  border: 1px solid rgba(0,0,0,0.07) !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Texte — noir net */
+[data-theme="light"] .item-label  { color: #000000 !important; }
+[data-theme="light"] .item-sub    { color: rgba(0,0,0,0.50) !important; }
+[data-theme="light"] .item.checked .item-label { color: rgba(0,0,0,0.30) !important; }
+
+/* Arabe — vert foncé lisible */
+[data-theme="light"] .item-arabic { color: var(--green) !important; opacity: 1 !important; }
+[data-theme="light"] .item.checked .item-arabic { opacity: 0.30 !important; }
+
+/* Hero title visible */
+[data-theme="light"] .hero-title   { color: #000000 !important; }
+[data-theme="light"] .hero-label   { color: var(--green) !important; }
+[data-theme="light"] .hero-pct     { color: var(--green) !important; }
+
+/* Section */
+[data-theme="light"] .section-name { color: rgba(0,0,0,0.55) !important; }
+[data-theme="light"] .section-icon-wrap { background: var(--green-soft) !important; }
+
+/* Tabs */
+[data-theme="light"] .tab {
+  background: #ffffff !important;
+  color: rgba(0,0,0,0.55) !important;
+  border-color: rgba(0,0,0,0.10) !important;
+}
+[data-theme="light"] .tab.done:not(.active) {
+  color: var(--green) !important;
+  border-color: rgba(26,148,54,0.3) !important;
+}
+
+/* Counter */
+[data-theme="light"] .counter-body  { background: #f0f0f5 !important; }
+[data-theme="light"] .counter-num   { color: #000000 !important; }
+[data-theme="light"] .counter-total { color: rgba(0,0,0,0.40) !important; }
+[data-theme="light"] .counter-item.checked .counter-num { color: var(--green) !important; }
+[data-theme="light"] .btn-cnt-reset {
+  background: #e8e8ee !important;
+  border-color: rgba(0,0,0,0.12) !important;
+  color: rgba(0,0,0,0.55) !important;
+}
+
+/* Streak */
+[data-theme="light"] .streak-num   { color: #000000 !important; }
+[data-theme="light"] .streak-label { color: rgba(0,0,0,0.40) !important; }
+[data-theme="light"] .streak-unit  { color: rgba(0,0,0,0.55) !important; }
+[data-theme="light"] .streak-footer { color: rgba(0,0,0,0.40) !important; border-top-color: rgba(0,0,0,0.09) !important; }
+[data-theme="light"] .streak-footer span { color: rgba(0,0,0,0.70) !important; }
+[data-theme="light"] .streak-card::before {
+  background: linear-gradient(90deg, transparent, var(--green), transparent);
+  opacity: 0.4;
+}
+
+/* Medal tag */
+[data-theme="light"] .medal-tag.none   { background: #ebebf0 !important; color: rgba(0,0,0,0.40) !important; }
+[data-theme="light"] .medal-tag.bronze { background: rgba(139,94,26,0.12) !important; color: var(--bronze) !important; }
+[data-theme="light"] .medal-tag.silver { background: rgba(74,110,128,0.12) !important; color: var(--silver) !important; }
+[data-theme="light"] .medal-tag.gold   { background: rgba(160,112,0,0.10) !important; color: var(--gold) !important; }
+
+/* Date badge */
+[data-theme="light"] .date-badge { color: rgba(0,0,0,0.55) !important; }
+[data-theme="light"] .wordmark-sub { color: rgba(0,0,0,0.35) !important; }
+[data-theme="light"] .wordmark-main { color: #000000 !important; }
+
+/* Separators */
+[data-theme="light"] .item:not(:last-child)::after { background: rgba(0,0,0,0.07) !important; }
+
+/* Buttons */
+[data-theme="light"] .btn-reset {
+  background: #ffffff !important;
+  border-color: rgba(0,0,0,0.15) !important;
+  color: rgba(0,0,0,0.60) !important;
+}
+[data-theme="light"] .btn-stay-lvl {
+  border-color: rgba(0,0,0,0.15) !important;
+  color: rgba(0,0,0,0.55) !important;
+}
+[data-theme="light"] .btn-back-check {
+  border-color: rgba(0,0,0,0.15) !important;
+  color: rgba(0,0,0,0.55) !important;
+}
+[data-theme="light"] .btn-share {
+  background: #ffffff !important;
+  border-color: rgba(0,0,0,0.12) !important;
+  color: rgba(0,0,0,0.55) !important;
+}
+
+/* Toast */
+[data-theme="light"] .toast {
+  background: rgba(255,255,255,0.97) !important;
+  color: #000000 !important;
+  border-color: rgba(0,0,0,0.12) !important;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15) !important;
+}
+
+/* Popups */
+[data-theme="light"] .level-popup-card,
+[data-theme="light"] .badge-popup-card {
+  background: #ffffff !important;
+  border-color: rgba(0,0,0,0.08) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+[data-theme="light"] .badge-popup,
+[data-theme="light"] .level-popup { background: rgba(0,0,0,0.40) !important; }
+[data-theme="light"] .lvl-title,
+[data-theme="light"] .popup-title { color: #000000 !important; }
+[data-theme="light"] .popup-sub,
+[data-theme="light"] .lvl-sub    { color: rgba(0,0,0,0.60) !important; }
+
+/* Lock screen */
+[data-theme="light"] .lock-ring  { background: #ffffff !important; border-color: rgba(0,0,0,0.10) !important; }
+[data-theme="light"] .lock-title { color: #000000 !important; }
+[data-theme="light"] .lock-sub   { color: rgba(0,0,0,0.55) !important; }
+
+/* Section label */
+[data-theme="light"] .section-label { color: #000000 !important; }
+
+/* Year cal */
+[data-theme="light"] .year-day   { background: #e0e0e8 !important; }
+[data-theme="light"] .year-month-label { color: rgba(0,0,0,0.40) !important; }
+[data-theme="light"] .year-nav-title   { color: #000000 !important; }
+[data-theme="light"] .year-nav-btn     { background: #ebebf0 !important; border-color: rgba(0,0,0,0.10) !important; color: rgba(0,0,0,0.60) !important; }
+[data-theme="light"] .yl-item          { color: rgba(0,0,0,0.45) !important; }
+
+/* Week strip */
+[data-theme="light"] .day-cell         { background: #ffffff !important; border-color: rgba(0,0,0,0.09) !important; }
+[data-theme="light"] .d-name           { color: rgba(0,0,0,0.40) !important; }
+[data-theme="light"] .d-num            { color: rgba(0,0,0,0.40) !important; }
+
+/* Nav */
+[data-theme="light"] .nav-icon-wrap    { color: rgba(0,0,0,0.35) !important; }
+[data-theme="light"] .nav-label        { color: rgba(0,0,0,0.35) !important; }
+[data-theme="light"] .nav-item.active .nav-icon-wrap { color: var(--green) !important; }
+[data-theme="light"] .nav-item.active .nav-label     { color: var(--green) !important; }
+
+/* Badge cards */
+[data-theme="light"] .badge-name { color: #000000 !important; }
+[data-theme="light"] .badge-desc { color: rgba(0,0,0,0.45) !important; }
+[data-theme="light"] .badge-card.locked { opacity: 0.35 !important; }
+
+/* Friday banner */
+[data-theme="light"] .friday-title { color: var(--gold) !important; }
+[data-theme="light"] .friday-sub   { color: rgba(0,0,0,0.45) !important; }
+
+/* Ambient off */
+[data-theme="light"] body::before { opacity: 0; }
+
+/* Smooth theme transition */
+*, *::before, *::after {
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+/* But NOT on interactive elements or transforms */
+.item, .btn-cnt, .check-circle, .tab, .medal-tag, .nav-item, .nav-icon-wrap,
+.header-progress-fill, .hero-bar-fill, .counter-bar-fill,
+.badge-popup, .level-popup, .badge-popup-card, .level-popup-card,
+.year-day, .fast-day, .day-cell, .laylatul-night {
+  transition: none;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+html, body {
+  background: var(--bg);
+  color: var(--t1);
+  font-family: var(--sans);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior: none;
+  transition: background-color 0.3s ease;
+}
+
+/* Ambient background glow — dark mode only */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 35% at 50% -5%, rgba(52,217,98,0.055) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 25% at 95% 65%, rgba(255,214,10,0.035) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+  transition: opacity 0.4s ease;
+}
+[data-theme="light"] body::before { opacity: 0; }
+
+/* ── VIEWS ── */
+.view { display: none; }
+.view.active { display: block; }
+
+/* ══════════════════════════
+   HEADER
+══════════════════════════ */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: calc(var(--safe-top) + 16px) 20px 0;
+  background: var(--header-bg);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.wordmark {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
+.wordmark-main {
+  font-family: var(--calli);
+  font-size: 30px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--t1);
+  letter-spacing: 0.5px;
+  line-height: 1;
+  position: relative;
+  display: inline-block;
+}
+
+/* Ligne décorative sous Niyyah */
+.wordmark-main::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, var(--green), transparent);
+  opacity: 0.5;
+}
+
+.wordmark-main span {
+  background: var(--green-grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-style: normal;
+  font-size: 18px;
+  vertical-align: middle;
+  margin-left: 2px;
+}
+
+.wordmark-sub {
+  font-size: 9px;
+  font-weight: 500;
+  color: var(--t3);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-top: 2px;
+  font-family: var(--sans);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.date-badge {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--t2);
+  letter-spacing: 0.2px;
+}
+
+.medal-tag {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: all 0.35s cubic-bezier(0.34,1.56,0.64,1);
+}
+.medal-tag.none   { background: var(--card2); color: var(--t3); }
+.medal-tag.bronze { background: rgba(212,145,74,0.18); color: var(--bronze); }
+.medal-tag.silver { background: rgba(176,196,206,0.15); color: var(--silver); }
+.medal-tag.gold   { background: var(--gold-soft); color: var(--gold); box-shadow: 0 0 12px var(--gold-glow); }
+@keyframes tagPop { 0%{transform:scale(0.5);opacity:0} 65%{transform:scale(1.15)} 100%{transform:scale(1);opacity:1} }
+.medal-tag.anim { animation: tagPop 0.45s cubic-bezier(0.34,1.56,0.64,1) both; }
+
+/* Ramadan icon button in header */
+.btn-ramadan-icon {
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(245,166,35,0.25);
+  background: var(--card);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px;
+  cursor: pointer;
+  flex-shrink: 0;
+  opacity: 0.65;
+  transition: opacity 0.2s, background 0.25s, border-color 0.25s;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn-ramadan-icon:active { opacity: 1; }
+.btn-ramadan-icon.ramadan-on {
+  opacity: 1;
+  border-color: var(--moon);
+  background: rgba(245,166,35,0.12);
+}
+
+/* Theme toggle button */
+.btn-theme {
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--sep2);
+  background: var(--card);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), background 0.25s ease, border-color 0.25s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn-theme:active { transform: scale(0.85) rotate(20deg); }
+
+/* Global progress */
+.header-progress {
+  height: 2px;
+  background: var(--sep2);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+.header-progress-fill {
+  height: 100%;
+  background: var(--green-grad);
+  border-radius: 2px;
+  transition: width 0.5s cubic-bezier(0.34,1.56,0.64,1);
+  box-shadow: 0 0 8px var(--green-glow);
+  position: relative; overflow: hidden;
+}
+.header-progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%; width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  animation: barShimmer 2.5s ease-in-out infinite;
+}
+
+/* ══════════════════════════
+   LEVEL TABS
+══════════════════════════ */
+.tabs-wrap {
+  background: var(--header-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 12px 20px 10px;
+  position: sticky;
+  top: calc(var(--safe-top) + 68px);
+  z-index: 99;
+}
+
+.tabs {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.tabs::-webkit-scrollbar { display: none; }
+
+.tab {
+  flex-shrink: 0;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--t2);
+  background: var(--card);
+  border: 1px solid var(--sep);
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+  font-family: var(--sans);
+}
+.tab.active {
+  background: var(--green-grad);
+  color: #000;
+  border-color: var(--green);
+  font-weight: 600;
+  box-shadow: 0 2px 12px rgba(52,217,98,0.30);
+}
+.tab.locked { opacity: 0.28; cursor: not-allowed; }
+.tab.done:not(.active) { color: var(--green); border-color: rgba(48,209,88,0.3); }
+
+/* ══════════════════════════
+   CONTENT
+══════════════════════════ */
+.content {
+  padding: 16px 16px 160px;
+}
+
+/* Level hero — glassmorphism premium */
+.level-hero {
+  background: linear-gradient(145deg, rgba(34,34,50,0.9) 0%, rgba(20,20,32,0.95) 100%);
+  border-radius: var(--r-xl);
+  padding: 20px;
+  margin-bottom: 8px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+.level-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(52,217,98,0.5) 50%, transparent 100%);
+}
+
+.level-hero::after {
+  content: '';
+  position: absolute;
+  right: -20px; top: -20px;
+  width: 140px; height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(52,217,98,0.12) 0%, transparent 70%);
+  pointer-events: none;
+  animation: heroGlow 4s ease-in-out infinite;
+}
+@keyframes heroGlow {
+  0%,100% { opacity: 0.7; transform: scale(1); }
+  50%      { opacity: 1;   transform: scale(1.15); }
+}
+
+.hero-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 4px;
+  opacity: 0.8;
+}
+
+.hero-title {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--t1);
+  letter-spacing: -0.3px;
+  margin-bottom: 14px;
+}
+
+.hero-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-bar-track {
+  flex: 1;
+  height: 4px;
+  background: var(--sep2);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.hero-bar-fill {
+  height: 100%;
+  background: var(--green-grad);
+  border-radius: 4px;
+  transition: width 0.65s cubic-bezier(0.34,1.56,0.64,1);
+  box-shadow: 0 0 10px var(--green-glow), 0 0 20px rgba(52,217,98,0.12);
+  position: relative;
+  overflow: hidden;
+}
+.hero-bar-fill::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%; width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  animation: barShimmer 2.5s ease-in-out infinite;
+}
+@keyframes barShimmer {
+  0%   { left: -100%; }
+  100% { left: 200%; }
+}
+
+.hero-pct {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--green);
+  min-width: 36px;
+  text-align: right;
+}
+
+/* Friday banner */
+.friday-banner {
+  background: linear-gradient(135deg, rgba(255,214,10,0.1), rgba(48,209,88,0.06));
+  border: 1px solid rgba(255,214,10,0.2);
+  border-radius: var(--r-lg);
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.friday-txt { flex: 1; }
+.friday-title { font-size: 13px; font-weight: 600; color: var(--gold); }
+.friday-sub   { font-size: 11px; color: var(--t3); margin-top: 2px; }
+
+/* ══════════════════════════
+   SECTION
+══════════════════════════ */
+.section { margin-bottom: 2px; }
+
+.section-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 4px 8px;
+}
+
+.section-icon-wrap {
+  width: 28px; height: 28px;
+  border-radius: 8px;
+  background: var(--green-soft);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.section-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--t2);
+  letter-spacing: 0.2px;
+}
+
+/* ══════════════════════════
+   ITEM — iOS grouped style
+══════════════════════════ */
+.items-group {
+  background: linear-gradient(160deg, rgba(28,28,42,0.92) 0%, rgba(22,22,34,0.96) 100%);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  margin-bottom: 8px;
+  border: 1px solid rgba(255,255,255,0.06);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+/* ── STAGGER ENTRANCE ── */
+@keyframes staggerIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.items-group .item {
+  animation: staggerIn 0.3s ease both;
+}
+
+/* ── RIPPLE ── */
+.item {
+  position: relative;
+  overflow: hidden;
+}
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(52,217,98,0.18);
+  transform: scale(0);
+  animation: rippleAnim 0.55s ease-out forwards;
+  pointer-events: none;
+}
+@keyframes rippleAnim {
+  to { transform: scale(4); opacity: 0; }
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.15s;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 54px;
+  right: 0;
+  height: 1px;
+  background: var(--sep);
+}
+
+.item:active { background: rgba(255,255,255,0.04); }
+
+/* Check circle — iOS style */
+.check-circle {
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  border: 2px solid var(--sep2);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.25s cubic-bezier(0.34,1.56,0.64,1);
+  background: transparent;
+}
+
+.item.checked .check-circle {
+  background: var(--green-grad);
+  border-color: var(--green);
+  box-shadow: 0 0 0 4px var(--green-soft), 0 0 16px rgba(52,217,98,0.25);
+  transform: scale(1.08);
+}
+
+.check-svg {
+  opacity: 0;
+  transform: scale(0.3);
+  transition: all 0.2s cubic-bezier(0.34,1.56,0.64,1);
+}
+.item.checked .check-svg { opacity: 1; transform: scale(1); }
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-label {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--t1);
+  line-height: 1.3;
+  transition: color 0.2s;
+}
+
+.item.checked .item-label {
+  color: var(--t3);
+  text-decoration: line-through;
+  text-decoration-color: rgba(255,255,255,0.2);
+}
+
+.item-sub {
+  font-size: 12px;
+  color: var(--t3);
+  margin-top: 2px;
+  line-height: 1.35;
+  white-space: normal;
+}
+
+/* ── INFO BUTTON ── */
+.btn-info {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  border: 1px solid var(--sep2);
+  background: transparent;
+  color: var(--t3);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  margin-left: 4px;
+  -webkit-tap-highlight-color: transparent;
+  transition: all 0.15s;
+  font-style: italic;
+  font-family: Georgia, serif;
+}
+.btn-info:active { background: var(--green-soft); color: var(--green); border-color: var(--green); }
+
+/* ── INFO BOTTOM SHEET ── */
+.info-sheet {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(145deg, rgba(22,22,38,0.99) 0%, rgba(14,14,26,1) 100%);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-radius: 24px 24px 0 0;
+  padding: 12px 24px calc(24px + var(--safe-bot));
+  z-index: 500;
+  transform: translateY(100%);
+  transition: transform 0.38s cubic-bezier(0.34,1.56,0.64,1);
+  box-shadow: 0 -8px 40px rgba(0,0,0,0.6);
+}
+.info-sheet.show { transform: translateY(0); }
+.info-sheet-handle {
+  width: 36px; height: 4px;
+  background: var(--sep2);
+  border-radius: 2px;
+  margin: 0 auto 20px;
+}
+.info-sheet-label {
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--green); opacity: 0.8;
+  margin-bottom: 8px;
+}
+.info-sheet-arabic {
+  font-size: 26px;
+  color: var(--green);
+  direction: rtl;
+  text-align: right;
+  line-height: 1.8;
+  margin-bottom: 14px;
+  border-bottom: 1px solid var(--sep);
+  padding-bottom: 14px;
+}
+.info-sheet-phonetic {
+  font-size: 16px;
+  color: var(--t1);
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+.info-sheet-translation {
+  font-size: 13px;
+  color: var(--t2);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.info-sheet-close {
+  width: 100%; padding: 13px;
+  border-radius: 14px;
+  border: 1px solid var(--sep2);
+  background: transparent;
+  color: var(--t2);
+  font-size: 14px; font-weight: 500;
+  cursor: pointer; font-family: var(--sans);
+  -webkit-tap-highlight-color: transparent;
+}
+.info-sheet-close:active { background: var(--card2); }
+.info-sheet-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 499;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.info-sheet-overlay.show { opacity: 1; pointer-events: all; }
+
+[data-theme="light"] .info-sheet {
+  background: #ffffff !important;
+  border-top-color: rgba(0,0,0,0.08) !important;
+}
+[data-theme="light"] .info-sheet-arabic { color: var(--green) !important; }
+[data-theme="light"] .info-sheet-phonetic { color: #000 !important; }
+[data-theme="light"] .info-sheet-translation { color: rgba(0,0,0,0.60) !important; }
+
+/* Friday special item */
+.item.friday-item .check-circle { border-color: rgba(255,214,10,0.4); }
+.item.friday-item.checked .check-circle { background: var(--gold); border-color: var(--gold); box-shadow: 0 0 0 4px var(--gold-soft); }
+.item.friday-item .item-label { color: var(--gold); }
+.item.friday-item.checked .item-label { color: var(--t3); }
+
+/* Celebrate */
+@keyframes bounce { 0%{transform:scale(1)} 35%{transform:scale(1.07)} 65%{transform:scale(0.97)} 100%{transform:scale(1)} }
+.celebrate { animation: bounce 0.35s cubic-bezier(0.34,1.56,0.64,1); }
+
+/* ══════════════════════════
+   COUNTER
+══════════════════════════ */
+.counter-item {
+  cursor: default;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+  padding: 14px 16px;
+}
+
+.counter-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.counter-body {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--bg2);
+  border-radius: 12px;
+  padding: 10px 14px;
+}
+
+.counter-display {
+  flex: 1;
+  text-align: center;
+}
+
+.counter-num {
+  font-family: var(--serif);
+  font-size: 40px;
+  font-weight: 400;
+  color: var(--t1);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -1px;
+}
+.counter-item.checked .counter-num { color: var(--green); }
+
+.counter-total {
+  font-size: 11px;
+  color: var(--t3);
+  margin-top: 1px;
+}
+
+.counter-bar-track {
+  height: 3px;
+  background: var(--sep2);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+.counter-bar-fill {
+  height: 100%;
+  background: var(--green-grad);
+  border-radius: 3px;
+  transition: width 0.35s cubic-bezier(0.34,1.56,0.64,1);
+  position: relative; overflow: hidden;
+}
+.counter-bar-fill::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%; width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  animation: barShimmer 2s ease-in-out infinite;
+}
+
+.btn-cnt {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: var(--green-grad);
+  color: #000;
+  font-size: 22px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: transform 0.1s, opacity 0.1s;
+  flex-shrink: 0;
+  box-shadow: 0 2px 14px rgba(52,217,98,0.35);
+}
+.btn-cnt:active { transform: scale(0.88); opacity: 0.85; }
+
+/* Audio player inline */
+.btn-audio {
+  width: 28px; height: 28px;
+  border-radius: 8px;
+  border: 1px solid rgba(52,217,98,0.25);
+  background: var(--green-soft);
+  color: var(--green);
+  font-size: 13px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.15s;
+  -webkit-tap-highlight-color: transparent;
+  margin-left: 6px;
+}
+.btn-audio:active { transform: scale(0.88); }
+.btn-audio.playing { background: var(--green); color: #000; border-color: var(--green); animation: audioPulse 1s ease-in-out infinite; }
+@keyframes audioPulse { 0%,100%{box-shadow:0 0 0 0 var(--green-glow)} 50%{box-shadow:0 0 0 6px transparent} }
+
+/* Fullscreen tasbih trigger button */
+.btn-tasbih-fs {
+  width: 30px; height: 30px;
+  border-radius: 8px;
+  border: 1px solid var(--sep2);
+  background: var(--card2);
+  color: var(--t3);
+  font-size: 13px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn-tasbih-fs:active { background: var(--green-soft); color: var(--green); }
+
+.btn-cnt-reset {
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--sep2);
+  background: var(--card2);
+  color: var(--t2);
+  font-size: 14px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+.btn-cnt-reset:active { background: var(--sep2); }
+
+/* ══════════════════════════
+   LINK ITEM
+══════════════════════════ */
+.link-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 16px;
+  text-decoration: none;
+  background: rgba(255,214,10,0.06);
+  border: 1px solid rgba(255,214,10,0.12);
+  border-radius: var(--r);
+  margin-bottom: 6px;
+  transition: opacity 0.15s;
+}
+.link-item:active { opacity: 0.7; }
+.link-icon-wrap {
+  width: 34px; height: 34px;
+  border-radius: 9px;
+  background: rgba(255,214,10,0.15);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.link-label { font-size: 14px; font-weight: 500; color: var(--t1); }
+.link-sub   { font-size: 11px; color: var(--t3); margin-top: 2px; }
+.link-arrow { color: var(--t3); font-size: 14px; margin-left: auto; }
+
+/* ══════════════════════════
+   LOCKED SCREEN
+══════════════════════════ */
+.locked-screen {
+  text-align: center;
+  padding: 60px 24px;
+}
+.lock-ring {
+  width: 72px; height: 72px;
+  border-radius: 22px;
+  background: var(--card);
+  border: 1px solid var(--sep2);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 30px;
+}
+.lock-title { font-family: var(--serif); font-size: 22px; color: var(--t1); margin-bottom: 8px; }
+.lock-sub { font-size: 13px; color: var(--t2); line-height: 1.6; max-width: 240px; margin: 0 auto; }
+
+/* ══════════════════════════
+   BOTTOM ACTION BAR
+══════════════════════════ */
+.action-bar {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  padding: 12px 16px calc(12px + var(--safe-bot));
+  background: var(--nav-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid var(--sep);
+  display: flex;
+  gap: 10px;
+  z-index: 90;
+}
+
+.btn-reset {
+  padding: 14px 18px;
+  border-radius: 14px;
+  border: 1px solid var(--sep2);
+  background: var(--card);
+  color: var(--t2);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: var(--sans);
+  transition: all 0.15s;
+}
+.btn-reset:active { background: var(--card2); }
+
+.btn-bismillah {
+  flex: 1;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  background: var(--green-grad);
+  color: #000;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--serif);
+  transition: all 0.15s;
+  letter-spacing: 0.3px;
+  box-shadow: 0 4px 20px rgba(52,217,98,0.35), 0 0 0 1px rgba(52,217,98,0.2);
+}
+.btn-bismillah:active { opacity: 0.85; transform: scale(0.98); box-shadow: 0 2px 10px rgba(52,217,98,0.2); }
+
+/* ══════════════════════════
+   NAV BAR
+══════════════════════════ */
+.nav-bar {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: var(--nav-bg);
+  backdrop-filter: saturate(180%) blur(24px);
+  -webkit-backdrop-filter: saturate(180%) blur(24px);
+  border-top: 1px solid var(--sep);
+  display: flex;
+  padding: 6px 0 calc(6px + var(--safe-bot));
+  z-index: 200;
+}
+
+.nav-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 6px 0;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.nav-icon-wrap {
+  width: 26px; height: 26px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--t3);
+  transition: color 0.2s, transform 0.2s cubic-bezier(0.34,1.56,0.64,1);
+}
+.nav-item.active .nav-icon-wrap {
+  color: var(--green);
+  transform: translateY(-1px) scale(1.1);
+}
+
+.nav-label {
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--t3);
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-item.active .nav-label { color: var(--green); }
+
+/* ══════════════════════════
+   TOAST
+══════════════════════════ */
+.toast {
+  position: fixed;
+  bottom: 92px;
+  left: 50%;
+  transform: translateX(-50%) translateY(16px);
+  background: rgba(44,44,46,0.96);
+  color: var(--t1);
+  border: 1px solid var(--sep2);
+  padding: 10px 18px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
+  pointer-events: none;
+  z-index: 999;
+  white-space: nowrap;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+}
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* ══════════════════════════
+   BADGE POPUP
+══════════════════════════ */
+.badge-popup {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 1000;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.3s;
+  padding: 24px;
+}
+.badge-popup.show { opacity: 1; pointer-events: all; }
+
+.badge-popup-card {
+  background: linear-gradient(145deg, rgba(22,22,36,0.97) 0%, rgba(14,14,24,0.99) 100%);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--r-xl);
+  padding: 40px 28px 32px;
+  text-align: center;
+  max-width: 320px; width: 100%;
+  transform: scale(0.7) translateY(20px);
+  transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+  position: relative; overflow: hidden;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.06);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+.badge-popup.show .badge-popup-card { transform: scale(1) translateY(0); }
+.badge-popup-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--green), transparent);
+}
+
+@keyframes badgeSpin {
+  0%   { transform: scale(0.2) rotate(-20deg); opacity: 0; }
+  60%  { transform: scale(1.2) rotate(5deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0); }
+}
+.popup-icon {
+  width: 72px; height: 72px;
+  border-radius: 22px;
+  background: var(--green-soft);
+  border: 1px solid rgba(48,209,88,0.2);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 16px;
+}
+.badge-popup.show .popup-icon { animation: badgeSpin 0.6s cubic-bezier(0.34,1.56,0.64,1) 0.05s both; }
+
+.popup-title { font-family: var(--serif); font-size: 24px; color: var(--t1); margin-bottom: 6px; }
+.popup-sub   { font-size: 13px; color: var(--t2); margin-bottom: 28px; line-height: 1.55; }
+.popup-btn {
+  background: var(--green-grad); color: #000;
+  border: none; border-radius: 14px;
+  padding: 14px 36px;
+  font-size: 15px; font-weight: 600;
+  cursor: pointer; font-family: var(--serif);
+  box-shadow: 0 4px 20px rgba(52,217,98,0.35);
+}
+
+/* ══════════════════════════
+   LEVEL COMPLETE POPUP
+══════════════════════════ */
+.level-popup {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 1001; opacity: 0; pointer-events: none;
+  transition: opacity 0.35s;
+  padding: 24px;
+}
+.level-popup.show { opacity: 1; pointer-events: all; }
+
+.level-popup-card {
+  background: linear-gradient(145deg, rgba(22,22,36,0.97) 0%, rgba(14,14,24,0.99) 100%);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--r-xl);
+  padding: 44px 28px 32px;
+  text-align: center;
+  max-width: 320px; width: 100%;
+  transform: scale(0.7) translateY(30px);
+  transition: transform 0.45s cubic-bezier(0.34,1.56,0.64,1);
+  position: relative; overflow: hidden;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.06);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+.level-popup.show .level-popup-card { transform: scale(1) translateY(0); }
+.level-popup-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--green), transparent);
+}
+
+.confetti-wrap { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.confetti-dot  { position: absolute; width: 6px; height: 6px; border-radius: 2px; opacity: 0; }
+@keyframes confettiFall {
+  0%   { opacity: 1; transform: translateY(-10px) rotate(0deg); }
+  100% { opacity: 0; transform: translateY(220px) rotate(720deg); }
+}
+
+@keyframes starPop {
+  0%   { transform: scale(0.2) rotate(-20deg); opacity: 0; }
+  60%  { transform: scale(1.2) rotate(5deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0); }
+}
+.lvl-stars { font-size: 52px; line-height: 1; margin-bottom: 18px; display: block; }
+.level-popup.show .lvl-stars { animation: starPop 0.55s cubic-bezier(0.34,1.56,0.64,1) 0.1s both; }
+
+.lvl-eyebrow { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--green); font-weight: 600; margin-bottom: 6px; opacity: 0.8; }
+.lvl-title { font-family: var(--serif); font-size: 28px; color: var(--t1); margin-bottom: 8px; letter-spacing: -0.3px; }
+.lvl-sub { font-size: 13px; color: var(--t2); line-height: 1.6; margin-bottom: 28px; }
+.lvl-sub strong { color: var(--green); font-weight: 600; }
+
+.btn-next-lvl {
+  width: 100%; padding: 15px;
+  border-radius: 14px; border: none;
+  background: var(--green-grad); color: #000;
+  font-size: 15px; font-weight: 600;
+  cursor: pointer; font-family: var(--sans);
+  box-shadow: 0 4px 20px rgba(52,217,98,0.35);
+  transition: all 0.15s; margin-bottom: 10px;
+}
+.btn-next-lvl:active { opacity: 0.8; transform: scale(0.98); }
+
+.btn-stay-lvl {
+  width: 100%; padding: 12px;
+  border-radius: 14px; border: 1px solid var(--sep2);
+  background: transparent; color: var(--t2);
+  font-size: 13px; font-weight: 500;
+  cursor: pointer; font-family: var(--sans);
+  transition: all 0.15s;
+}
+.btn-stay-lvl:active { background: var(--card2); }
+
+/* ══════════════════════════
+   PROGRESSION PAGE
+══════════════════════════ */
+.prog-wrap { padding: 16px 16px 140px; }
+
+.prog-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.prog-title { font-family: var(--serif); font-size: 28px; color: var(--t1); letter-spacing: -0.3px; }
+
+.btn-share {
+  display: flex; align-items: center; gap: 6px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--sep2);
+  background: var(--card);
+  color: var(--t2);
+  font-size: 12px; font-weight: 500;
+  cursor: pointer; font-family: var(--sans);
+  transition: all 0.15s;
+}
+.btn-share:active { background: var(--card2); }
+
+/* Streak card */
+.streak-card {
+  background: linear-gradient(145deg, rgba(28,28,42,0.92) 0%, rgba(18,18,30,0.97) 100%);
+  border-radius: var(--r-xl);
+  padding: 24px;
+  margin-bottom: 10px;
+  position: relative; overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.07);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05);
+}
+.streak-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--green), transparent);
+}
+.streak-inner {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  margin-bottom: 20px;
+}
+.streak-label { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--t3); margin-bottom: 4px; }
+.streak-num { font-family: var(--serif); font-size: 72px; font-weight: 400; line-height: 1; color: var(--t1); letter-spacing: -3px; font-variant-numeric: tabular-nums; }
+.streak-unit { font-size: 14px; color: var(--t2); margin-top: 4px; }
+.streak-flame { font-size: 52px; line-height: 1; filter: drop-shadow(0 0 16px rgba(255,149,0,0.5)); }
+
+.medal-trio { display: flex; gap: 8px; margin-bottom: 16px; }
+.medal-cell {
+  flex: 1; border-radius: 12px; padding: 12px 8px; text-align: center;
+  background: var(--bg2); border: 1px solid var(--sep); transition: all 0.3s;
+}
+.medal-cell.e-bronze { background: rgba(212,145,74,0.1); border-color: rgba(212,145,74,0.2); }
+.medal-cell.e-silver { background: rgba(176,196,206,0.08); border-color: rgba(176,196,206,0.15); }
+.medal-cell.e-gold   { background: var(--gold-soft); border-color: rgba(255,214,10,0.2); box-shadow: 0 0 12px var(--gold-glow); }
+.medal-icon { font-size: 20px; line-height: 1; margin-bottom: 4px; }
+.medal-name { font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--t3); font-weight: 600; }
+.medal-cell.e-bronze .medal-name { color: var(--bronze); }
+.medal-cell.e-silver .medal-name { color: var(--silver); }
+.medal-cell.e-gold   .medal-name { color: var(--gold); }
+.medal-cond { font-size: 9px; color: var(--t3); margin-top: 2px; line-height: 1.3; }
+
+.streak-footer { font-size: 12px; color: var(--t3); padding-top: 14px; border-top: 1px solid var(--sep); display: flex; gap: 16px; }
+.streak-footer span { color: var(--t2); font-weight: 500; }
+
+/* Stats row */
+.stats-row { display: flex; gap: 8px; margin-bottom: 10px; }
+.stat-box {
+  flex: 1; background: var(--card); border-radius: var(--r-lg);
+  padding: 16px 12px; text-align: center;
+}
+.stat-num { font-family: var(--serif); font-size: 30px; font-weight: 400; color: var(--t1); line-height: 1; letter-spacing: -1px; }
+.stat-label { font-size: 9px; color: var(--t3); margin-top: 4px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; }
+
+/* Section label */
+.section-label { font-family: var(--serif); font-size: 20px; color: var(--t1); margin: 20px 0 10px 2px; letter-spacing: -0.2px; }
+
+/* Week strip */
+.week-strip { display: flex; gap: 5px; margin-bottom: 10px; }
+.day-cell {
+  flex: 1; aspect-ratio: 0.72;
+  border-radius: 10px;
+  border: 1px solid var(--sep);
+  background: var(--card);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
+}
+.day-cell.d-bronze { background: rgba(212,145,74,0.15); border-color: rgba(212,145,74,0.2); }
+.day-cell.d-silver { background: rgba(176,196,206,0.1); border-color: rgba(176,196,206,0.15); }
+.day-cell.d-gold   { background: var(--gold-soft); border-color: rgba(255,214,10,0.2); }
+.day-cell.d-today  { border-color: var(--green); border-width: 1.5px; }
+.d-name { font-size: 8px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--t3); }
+.day-cell.d-today  .d-name { color: var(--green); }
+.day-cell.d-bronze .d-name { color: var(--bronze); }
+.day-cell.d-silver .d-name { color: var(--silver); }
+.day-cell.d-gold   .d-name { color: var(--gold); }
+.d-dot { font-size: 13px; line-height: 1; }
+.d-num { font-size: 9px; color: var(--t3); font-weight: 500; }
+
+/* Year calendar */
+.year-card { background: var(--card); border-radius: var(--r-xl); padding: 18px; margin-bottom: 10px; }
+.year-nav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+.year-nav-title { font-family: var(--serif); font-size: 18px; color: var(--t1); letter-spacing: -0.2px; }
+.year-nav-btn {
+  width: 30px; height: 30px; border-radius: 50%;
+  border: 1px solid var(--sep2); background: var(--card2);
+  color: var(--t2); font-size: 16px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; transition: all 0.15s;
+}
+.year-nav-btn:active { background: var(--sep2); }
+.year-months { display: flex; flex-direction: column; gap: 8px; }
+.year-month { display: flex; gap: 6px; align-items: flex-start; }
+.year-month-label { font-size: 9px; font-weight: 600; text-transform: uppercase; color: var(--t3); width: 22px; flex-shrink: 0; padding-top: 2px; text-align: right; letter-spacing: 0.3px; }
+.year-days { display: flex; flex-wrap: wrap; gap: 2.5px; flex: 1; }
+.year-day { width: 9px; height: 9px; border-radius: 2px; background: var(--card2); flex-shrink: 0; }
+.year-day.fy { opacity: 0.1; }
+.year-day.yb { background: #d4914a; opacity: 0.75; }
+.year-day.ys { background: #b0c4ce; opacity: 0.8; }
+.year-day.yg { background: var(--gold); box-shadow: 0 0 3px rgba(255,214,10,0.4); }
+.year-day.yt { outline: 1.5px solid var(--green); outline-offset: 1px; }
+.year-legend { display: flex; gap: 12px; margin-top: 12px; flex-wrap: wrap; }
+.yl-item { display: flex; align-items: center; gap: 5px; font-size: 9px; color: var(--t3); font-weight: 500; }
+.yl-dot { width: 9px; height: 9px; border-radius: 2px; flex-shrink: 0; }
+
+/* Badges */
+.badges-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.badge-card {
+  background: var(--card); border: 1px solid var(--sep);
+  border-radius: var(--r-lg); padding: 16px 12px;
+  display: flex; flex-direction: column; align-items: center;
+  gap: 6px; text-align: center; transition: all 0.3s;
+  position: relative; overflow: hidden;
+}
+.badge-card.unlocked { background: rgba(48,209,88,0.06); border-color: rgba(48,209,88,0.15); }
+.badge-card.unlocked::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--green), transparent);
+}
+.badge-card.is-gold { background: var(--gold-soft); border-color: rgba(255,214,10,0.18); box-shadow: 0 0 16px var(--gold-glow); }
+.badge-card.is-gold::before { background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+.badge-card.locked { opacity: 0.28; filter: grayscale(1); }
+.badge-icon-wrap {
+  width: 44px; height: 44px; border-radius: 14px;
+  background: var(--green-soft); border: 1px solid rgba(48,209,88,0.15);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  font-size: 20px; transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
+}
+.badge-card.is-gold .badge-icon-wrap { background: var(--gold-soft); border-color: rgba(255,214,10,0.15); }
+.badge-card.unlocked .badge-icon-wrap { transform: scale(1.06); }
+.badge-name { font-size: 13px; font-weight: 600; color: var(--t1); line-height: 1.2; }
+.badge-desc { font-size: 10px; color: var(--t3); line-height: 1.4; }
+.badge-tag { font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--green); background: var(--green-soft); padding: 3px 8px; border-radius: 10px; }
+.badge-card.is-gold .badge-tag { color: var(--gold); background: var(--gold-soft); }
+
+/* ══════════════════════════
+   ARABIC TEXT
+══════════════════════════ */
+.item-arabic {
+  font-size: 15px;
+  color: var(--green);
+  text-align: right;
+  direction: rtl;
+  margin-top: 4px;
+  opacity: 0.7;
+  font-weight: 400;
+  line-height: 1.6;
+}
+.item.checked .item-arabic { opacity: 0.25; }
+
+/* ══════════════════════════
+   RESUME VIEW
+══════════════════════════ */
+.resume-wrap { padding: 16px 16px 140px; }
+.resume-hero {
+  background: linear-gradient(135deg, rgba(48,209,88,0.1), rgba(255,214,10,0.05));
+  border: 1px solid rgba(48,209,88,0.2);
+  border-radius: var(--r-xl);
+  padding: 28px 24px;
+  text-align: center;
+  margin-bottom: 12px;
+  position: relative; overflow: hidden;
+}
+.resume-hero::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--green), transparent);
+}
+.resume-big-emoji { font-size: 52px; line-height: 1; margin-bottom: 12px; display: block; }
+.resume-title { font-family: var(--serif); font-size: 26px; color: var(--t1); margin-bottom: 6px; letter-spacing: -0.3px; }
+.resume-sub { font-size: 13px; color: var(--t2); line-height: 1.6; }
+.resume-levels { display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px; }
+.resume-level-row {
+  background: var(--card);
+  border-radius: var(--r-lg);
+  padding: 14px 16px;
+  display: flex; align-items: center; gap: 12px;
+}
+.resume-level-icon { font-size: 20px; width: 32px; text-align: center; flex-shrink: 0; }
+.resume-level-body { flex: 1; min-width: 0; }
+.resume-level-name { font-size: 14px; font-weight: 500; color: var(--t1); margin-bottom: 4px; }
+.resume-level-bar-track { height: 3px; background: var(--sep2); border-radius: 3px; overflow: hidden; }
+.resume-level-bar-fill { height: 100%; background: var(--green); border-radius: 3px; }
+.resume-level-pct { font-size: 13px; font-weight: 600; color: var(--green); min-width: 38px; text-align: right; }
+.resume-level-pct.done { color: var(--gold); }
+.resume-actions { display: flex; flex-direction: column; gap: 8px; }
+.btn-new-day {
+  width: 100%; padding: 15px;
+  border-radius: 14px; border: none;
+  background: var(--green-grad); color: #000;
+  font-size: 16px; font-weight: 600;
+  cursor: pointer; font-family: var(--serif);
+  box-shadow: 0 4px 20px rgba(52,217,98,0.35);
+  transition: all 0.15s; letter-spacing: 0.2px;
+}
+.btn-new-day:active { opacity: 0.8; transform: scale(0.98); }
+.btn-back-check {
+  width: 100%; padding: 13px;
+  border-radius: 14px; border: 1px solid var(--sep2);
+  background: transparent; color: var(--t2);
+  font-size: 13px; font-weight: 500;
+  cursor: pointer; font-family: var(--sans);
+  transition: all 0.15s;
+}
+.btn-back-check:active { background: var(--card2); }
+
+/* ══════════════════════════
+   RAMADAN
+══════════════════════════ */
+:root {
+  --moon:      #f5a623;
+  --moon-soft: rgba(245,166,35,0.1);
+  --moon-glow: rgba(245,166,35,0.25);
+}
+
+/* Nav badge Ramadan */
+.nav-ramadan-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--moon);
+  position: absolute; top: 4px; right: 4px;
+  box-shadow: 0 0 6px var(--moon-glow);
+}
+
+/* Ramadan header banner */
+.ramadan-banner {
+  background: linear-gradient(135deg, rgba(245,166,35,0.12), rgba(48,209,88,0.06));
+  border: 1px solid rgba(245,166,35,0.25);
+  border-radius: var(--r-xl);
+  padding: 20px;
+  margin-bottom: 10px;
+  position: relative; overflow: hidden;
+  text-align: center;
+}
+.ramadan-banner::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--moon), transparent);
+}
+.ramadan-moon { font-size: 40px; line-height: 1; margin-bottom: 8px; display: block;
+  filter: drop-shadow(0 0 12px var(--moon-glow)); }
+.ramadan-title { font-family: var(--serif); font-size: 22px; color: var(--moon); letter-spacing: -0.3px; margin-bottom: 2px; }
+.ramadan-arabic { font-size: 20px; color: var(--moon); opacity: 0.7; direction: rtl; margin-bottom: 8px; }
+.ramadan-day-row { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 12px; }
+.ramadan-day-box {
+  background: rgba(245,166,35,0.1);
+  border: 1px solid rgba(245,166,35,0.2);
+  border-radius: 14px; padding: 10px 18px; text-align: center;
+}
+.ramadan-day-num { font-family: var(--serif); font-size: 32px; color: var(--moon); line-height: 1; letter-spacing: -1px; }
+.ramadan-day-label { font-size: 9px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--t3); font-weight: 600; margin-top: 2px; }
+
+/* Fasting streak */
+.fast-streak-row {
+  display: flex; gap: 8px; margin-bottom: 10px;
+}
+.fast-stat {
+  flex: 1; background: var(--card); border-radius: var(--r-lg);
+  padding: 14px 10px; text-align: center;
+  border: 1px solid var(--sep);
+}
+.fast-stat.active { border-color: rgba(245,166,35,0.25); background: rgba(245,166,35,0.06); }
+.fast-stat-num { font-family: var(--serif); font-size: 28px; color: var(--t1); line-height: 1; letter-spacing: -1px; }
+.fast-stat.active .fast-stat-num { color: var(--moon); }
+.fast-stat-label { font-size: 9px; text-transform: uppercase; letter-spacing: 1px; color: var(--t3); font-weight: 600; margin-top: 3px; }
+
+/* Fasting items — orange accent */
+.item.fast-item .check-circle { border-color: rgba(245,166,35,0.4); }
+.item.fast-item.checked .check-circle { background: var(--moon); border-color: var(--moon); box-shadow: 0 0 0 4px var(--moon-soft); }
+.item.fast-item .item-label { color: var(--moon); }
+.item.fast-item.checked .item-label { color: var(--t3); }
+.item.fast-item .item-arabic { color: var(--moon); }
+
+/* Laylat al-Qadr countdown */
+.laylatul-card {
+  background: linear-gradient(135deg, rgba(255,214,10,0.08), rgba(245,166,35,0.08));
+  border: 1px solid rgba(255,214,10,0.2);
+  border-radius: var(--r-xl); padding: 18px;
+  margin-bottom: 8px; text-align: center;
+  position: relative; overflow: hidden;
+}
+.laylatul-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+.laylatul-stars { font-size: 28px; margin-bottom: 8px; }
+.laylatul-title { font-family: var(--serif); font-size: 18px; color: var(--gold); margin-bottom: 4px; }
+.laylatul-arabic { font-size: 16px; color: var(--gold); opacity: 0.7; direction: rtl; margin-bottom: 8px; }
+.laylatul-sub { font-size: 12px; color: var(--t2); line-height: 1.5; }
+.laylatul-nights { display: flex; gap: 5px; justify-content: center; margin-top: 12px; flex-wrap: wrap; }
+.laylatul-night {
+  width: 38px; height: 38px; border-radius: 10px;
+  border: 1px solid var(--sep2); background: var(--card2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 600; color: var(--t3);
+  cursor: pointer; transition: all 0.2s;
+  flex-direction: column; gap: 1px;
+}
+.laylatul-night .night-num { font-size: 13px; font-weight: 700; color: var(--t2); }
+.laylatul-night .night-label { font-size: 8px; color: var(--t3); letter-spacing: 0.3px; }
+.laylatul-night.active { border-color: rgba(255,214,10,0.4); background: rgba(255,214,10,0.08); }
+.laylatul-night.active .night-num { color: var(--gold); }
+.laylatul-night.done { background: var(--gold-soft); border-color: rgba(255,214,10,0.3); box-shadow: 0 0 8px var(--gold-glow); }
+.laylatul-night.done .night-num { color: var(--gold); }
+
+/* Horaires link */
+.horaires-link {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 16px;
+  background: rgba(245,166,35,0.06);
+  border: 1px solid rgba(245,166,35,0.15);
+  border-radius: var(--r-lg);
+  margin-bottom: 8px; cursor: pointer;
+  transition: opacity 0.15s; text-decoration: none;
+}
+.horaires-link:active { opacity: 0.7; }
+.horaires-icon { font-size: 22px; width: 36px; text-align: center; flex-shrink: 0; }
+.horaires-body { flex: 1; }
+.horaires-label { font-size: 14px; font-weight: 600; color: var(--moon); }
+.horaires-sub { font-size: 11px; color: var(--t3); margin-top: 2px; }
+.horaires-arrow { color: var(--t3); font-size: 16px; }
+
+/* Ramadan wrap */
+.ramadan-wrap { padding: 16px 16px 160px; }
+
+/* Activation button on checklist */
+.btn-ramadan-activate {
+  width: 100%; padding: 13px;
+  border-radius: 14px;
+  border: 1px solid rgba(245,166,35,0.3);
+  background: rgba(245,166,35,0.07);
+  color: var(--moon);
+  font-size: 14px; font-weight: 600;
+  cursor: pointer; font-family: var(--sans);
+  transition: all 0.2s;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.btn-ramadan-activate:active { background: rgba(245,166,35,0.15); }
+
+/* Fast calendar strip */
+.fast-calendar { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 10px; }
+.fast-day {
+  width: 28px; height: 28px; border-radius: 8px;
+  border: 1px solid var(--sep); background: var(--card2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 600; color: var(--t3);
+  cursor: pointer; transition: all 0.2s;
+  flex-shrink: 0;
+}
+.fast-day.fasted { background: rgba(245,166,35,0.15); border-color: rgba(245,166,35,0.3); color: var(--moon); }
+.fast-day.today { outline: 1.5px solid var(--moon); outline-offset: 1px; }
+.fast-day.future { opacity: 0.2; cursor: default; }
+
+/* Card shadows handled above in light theme block */
+
+/* ══════════════════════════
+   TASBIH FULLSCREEN MODE
+══════════════════════════ */
+.tasbih-overlay {
+  position: fixed;
+  inset: 0;
+  background: #03030a;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.tasbih-overlay.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Close button */
+.tasbih-close {
+  position: absolute;
+  top: calc(var(--safe-top) + 18px);
+  right: 20px;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--sep2);
+  background: var(--card);
+  color: var(--t2);
+  font-size: 16px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Item name */
+.tasbih-label {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--t3);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+/* Arabic */
+.tasbih-arabic {
+  font-size: 22px;
+  color: var(--green);
+  direction: rtl;
+  opacity: 0.7;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+/* Big number */
+.tasbih-num {
+  font-family: var(--calli);
+  font-size: 120px;
+  font-weight: 300;
+  color: var(--t1);
+  line-height: 1;
+  letter-spacing: -4px;
+  font-variant-numeric: tabular-nums;
+  transition: transform 0.08s cubic-bezier(0.34,1.56,0.64,1);
+}
+.tasbih-num.pop {
+  transform: scale(1.12);
+}
+
+/* Total */
+.tasbih-total {
+  font-size: 18px;
+  color: var(--t3);
+  margin-top: 8px;
+  font-family: var(--sans);
+}
+
+/* Progress ring */
+.tasbih-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* Tap zone — toute la moitié basse */
+.tasbih-tap-zone {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 60%;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.tasbih-tap-hint {
+  font-size: 11px;
+  color: var(--t3);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.5;
+  pointer-events: none;
+  margin-top: 160px;
+}
+
+/* Progress bar at bottom */
+.tasbih-bar-wrap {
+  position: absolute;
+  bottom: calc(var(--safe-bot) + 24px);
+  left: 40px; right: 40px;
+  height: 3px;
+  background: var(--sep2);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.tasbih-bar-fill {
+  height: 100%;
+  background: var(--green-grad);
+  border-radius: 3px;
+  transition: width 0.2s ease;
+  box-shadow: 0 0 8px var(--green-glow);
+}
+
+/* Reset button */
+.tasbih-reset {
+  position: absolute;
+  bottom: calc(var(--safe-bot) + 44px);
+  left: 20px;
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--sep2);
+  background: transparent;
+  color: var(--t3);
+  font-size: 14px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Done state */
+.tasbih-overlay.done .tasbih-num { color: var(--green); }
+.tasbih-overlay.done .tasbih-arabic { opacity: 1; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.item, .link-item { animation: fadeUp 0.25s ease both; }
+@keyframes moonPulse { 0%,100%{filter:drop-shadow(0 0 8px var(--moon-glow))} 50%{filter:drop-shadow(0 0 18px var(--moon-glow))} }
+.ramadan-moon { animation: moonPulse 3s ease-in-out infinite; }
+
+/* ══════════════════════════
+   HORAIRES DE PRIÈRE
+══════════════════════════ */
+.prayer-times-card {
+  background: linear-gradient(145deg, rgba(28,28,42,0.95) 0%, rgba(18,18,32,0.98) 100%);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--r-xl);
+  padding: 16px;
+  margin-bottom: 8px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  position: relative; overflow: hidden;
+}
+.prayer-times-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--green), transparent);
+  opacity: 0.5;
+}
+[data-theme="light"] .prayer-times-card {
+  background: #ffffff !important; border-color: rgba(0,0,0,0.07) !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08) !important; backdrop-filter: none !important;
+}
+.prayer-times-header {
+  display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;
+}
+.prayer-times-title {
+  font-size: 11px; font-weight: 600; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--green); opacity: 0.85;
+}
+.prayer-times-city {
+  font-size: 11px; color: var(--t3); display: flex; align-items: center; gap: 4px; cursor: pointer;
+}
+.prayer-times-city:active { color: var(--green); }
+.prayer-times-grid { display: flex; gap: 4px; }
+.prayer-time-item {
+  flex: 1; text-align: center; padding: 8px 4px; border-radius: 10px;
+  background: rgba(255,255,255,0.04); border: 1px solid transparent; transition: all 0.2s;
+}
+[data-theme="light"] .prayer-time-item { background: rgba(0,0,0,0.03) !important; }
+.prayer-time-item.next { background: var(--green-soft); border-color: rgba(52,217,98,0.2); }
+.prayer-time-item.passed { opacity: 0.4; }
+.prayer-time-name {
+  font-size: 9px; font-weight: 600; letter-spacing: 0.5px;
+  text-transform: uppercase; color: var(--t3); margin-bottom: 4px;
+}
+.prayer-time-item.next .prayer-time-name { color: var(--green); }
+.prayer-time-hour { font-family: var(--serif); font-size: 13px; color: var(--t1); letter-spacing: -0.3px; }
+.prayer-time-item.next .prayer-time-hour { color: var(--green); font-weight: 600; }
+.prayer-times-loading { text-align: center; padding: 12px; font-size: 12px; color: var(--t3); }
+.city-input-wrap { display: flex; gap: 8px; margin-top: 10px; align-items: center; }
+.city-input {
+  flex: 1; background: var(--bg2); border: 1px solid var(--sep2); border-radius: 10px;
+  padding: 8px 12px; font-size: 13px; color: var(--t1); font-family: var(--sans); outline: none;
+}
+[data-theme="light"] .city-input { background: #f0f0f5 !important; color: #000 !important; }
+.city-input:focus { border-color: var(--green); }
+.city-input-btn {
+  padding: 8px 14px; border-radius: 10px; border: none; background: var(--green-grad);
+  color: #000; font-size: 12px; font-weight: 600; cursor: pointer; font-family: var(--sans); white-space: nowrap;
+}
+
+/* ══════════════════════════
+   ONBOARDING
+══════════════════════════ */
+.onboard-screen {
+  position: fixed; inset: 0;
+  background: var(--bg);
+  z-index: 2000;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 40px 32px calc(40px + var(--safe-bot));
+  text-align: center;
+  transition: opacity 0.3s ease;
+}
+.onboard-screen.hidden { display: none; }
+.onboard-dots {
+  display: flex; gap: 6px;
+  position: absolute;
+  top: calc(var(--safe-top) + 24px);
+  left: 50%; transform: translateX(-50%);
+}
+.onboard-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--sep2); transition: all 0.3s ease;
+}
+.onboard-dot.active { background: var(--green); width: 18px; border-radius: 3px; }
+.onboard-icon {
+  font-size: 72px; line-height: 1; margin-bottom: 28px;
+  filter: drop-shadow(0 0 24px rgba(52,217,98,0.3));
+  animation: onboardFloat 3s ease-in-out infinite;
+}
+@keyframes onboardFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+.onboard-logo {
+  font-family: var(--calli); font-size: 44px; font-weight: 300; font-style: italic;
+  background: var(--green-grad); -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; background-clip: text;
+  margin-bottom: 6px; letter-spacing: 0.5px;
+}
+.onboard-tagline {
+  font-size: 11px; color: var(--t3); letter-spacing: 2.5px;
+  text-transform: uppercase; margin-bottom: 36px; font-weight: 500;
+}
+.onboard-title {
+  font-family: var(--serif); font-size: 26px; color: var(--t1);
+  margin-bottom: 12px; letter-spacing: -0.3px; line-height: 1.25;
+}
+.onboard-sub {
+  font-size: 14px; color: var(--t2); line-height: 1.7;
+  max-width: 280px; margin-bottom: 44px;
+}
+.onboard-levels {
+  display: flex; flex-direction: column; gap: 8px;
+  width: 100%; max-width: 300px; margin-bottom: 44px;
+}
+.onboard-level {
+  display: flex; align-items: center; gap: 12px;
+  background: rgba(255,255,255,0.04); border: 1px solid var(--sep);
+  border-radius: 14px; padding: 12px 16px; text-align: left;
+  animation: onboardLevelIn 0.4s ease both;
+}
+.onboard-level:nth-child(1){animation-delay:0.05s}
+.onboard-level:nth-child(2){animation-delay:0.12s}
+.onboard-level:nth-child(3){animation-delay:0.19s}
+.onboard-level:nth-child(4){animation-delay:0.26s}
+@keyframes onboardLevelIn { from{opacity:0;transform:translateX(-14px)} to{opacity:1;transform:none} }
+.onboard-level-icon { font-size: 20px; flex-shrink: 0; }
+.onboard-level-name { font-size: 13px; font-weight: 600; color: var(--t1); }
+.onboard-level-desc { font-size: 11px; color: var(--t3); margin-top: 1px; }
+.onboard-btn {
+  width: 100%; max-width: 300px; padding: 16px;
+  border-radius: 16px; border: none; background: var(--green-grad); color: #000;
+  font-size: 16px; font-weight: 600; cursor: pointer; font-family: var(--serif);
+  box-shadow: 0 4px 20px rgba(52,217,98,0.35); transition: all 0.15s;
+  margin-bottom: 12px;
+}
+.onboard-btn:active { opacity: 0.85; transform: scale(0.98); }
+.onboard-skip {
+  font-size: 12px; color: var(--t3); background: none; border: none;
+  cursor: pointer; font-family: var(--sans); padding: 8px;
+}
+@keyframes slideInRight { from{opacity:0;transform:translateX(28px)} to{opacity:1;transform:none} }
+.onboard-anim { animation: slideInRight 0.32s ease both; }</style>
+</head>
+<body>
+
+<!-- ONBOARDING -->
+<div id="onboardScreen" class="onboard-screen">
+  <div class="onboard-dots">
+    <div class="onboard-dot active" id="dot0"></div>
+    <div class="onboard-dot" id="dot1"></div>
+    <div class="onboard-dot" id="dot2"></div>
+  </div>
+  <div id="onboardContent"></div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- BADGE POPUP -->
+<div class="badge-popup" id="badgePopup" onclick="closeBadgePopup()">
+  <div class="badge-popup-card" onclick="event.stopPropagation()">
+    <div class="popup-icon" id="popupIcon"></div>
+    <div class="popup-title" id="popupTitle">Badge débloqué !</div>
+    <div class="popup-sub" id="popupSub">—</div>
+    <button class="popup-btn" onclick="closeBadgePopup()">Alhamdulillah ✦</button>
+  </div>
+</div>
+
+<!-- LEVEL POPUP -->
+<div class="level-popup" id="levelPopup">
+  <div class="level-popup-card" onclick="event.stopPropagation()">
+    <div class="confetti-wrap" id="confettiWrap"></div>
+    <div class="lvl-stars" id="lvlStars">✦</div>
+    <div class="lvl-eyebrow" id="lvlEyebrow">Niveau accompli</div>
+    <div class="lvl-title" id="lvlTitle">MashaAllah !</div>
+    <div class="lvl-sub" id="lvlSub"></div>
+    <button class="btn-next-lvl" id="btnNextLvl" onclick="goNextLevel()">Niveau suivant →</button>
+    <button class="btn-stay-lvl" onclick="closeLevelPopup()">Rester sur ce niveau</button>
+  </div>
+</div>
+
+<!-- VIEW : RESUME -->
+<div class="view" id="view-resume">
+  <div class="header" style="padding-bottom:14px;">
+    <div class="header-top">
+      <div class="wordmark">
+        <div class="wordmark-main">Bilan <span>✦</span></div>
+        <div class="wordmark-sub">Journée accomplie</div>
+      </div>
+      <div class="date-badge" id="resumeDatePill"></div>
+    </div>
+    <div class="header-progress">
+      <div class="header-progress-fill" id="globalFill3" style="width:0%"></div>
+    </div>
+  </div>
+  <div class="resume-wrap" id="resumeContent"></div>
+</div>
+
+<!-- VIEW : RAMADAN -->
+<div class="view" id="view-ramadan">
+  <div class="header" style="padding-bottom:14px;">
+    <div class="header-top">
+      <div class="wordmark">
+        <div class="wordmark-main">Ramadan <span>🌙</span></div>
+        <div class="wordmark-sub">Mode Ramadan activé</div>
+      </div>
+      <button onclick="toggleRamadanMode()" style="padding:6px 12px;border-radius:20px;border:1px solid rgba(245,166,35,0.3);background:rgba(245,166,35,0.08);color:var(--moon);font-size:11px;font-weight:600;cursor:pointer;font-family:var(--sans);">✕ Désactiver</button>
+    </div>
+    <div class="header-progress">
+      <div class="header-progress-fill" id="globalFill4" style="width:0%;background:var(--moon);box-shadow:0 0 6px var(--moon-glow);"></div>
+    </div>
+  </div>
+  <div class="ramadan-wrap" id="ramadanContent"></div>
+</div>
+
+<!-- VIEW : CHECKLIST -->
+<div class="view active" id="view-checklist">
+  <div class="header">
+    <div class="header-top">
+      <div class="wordmark">
+        <img src="https://nabs881-sketch.github.io/niyyah-app/logo2.png" style="height:52px;width:52px;object-fit:cover;border-radius:50%;mix-blend-mode:lighten;" alt="Niyyah">
+      </div>
+      <div class="header-right">
+        <div class="date-badge" id="datePill"></div>
+        <button class="btn-ramadan-icon" id="ramadanActivateBtn" onclick="toggleRamadanMode()" title="Mode Ramadan" style="display:flex;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+        <button class="btn-theme" id="btnTheme" onclick="toggleTheme()" title="Thème" aria-label="Thème clair/sombre">☀️</button>
+        <div class="medal-tag none" id="medalTag">—</div>
+      </div>
+    </div>
+    <div class="header-progress">
+      <div class="header-progress-fill" id="globalFill" style="width:0%"></div>
+    </div>
+  </div>
+
+  <div class="tabs-wrap">
+    <div class="tabs" id="levelTabs"></div>
+  </div>
+
+  <div class="content" id="content"></div>
+
+  <div class="action-bar" style="bottom:calc(56px + var(--safe-bot)); border-top:none; background:transparent; backdrop-filter:none; -webkit-backdrop-filter:none;">
+    <button class="btn-reset" onclick="confirmReset()">↺ Reset</button>
+    <button class="btn-bismillah" onclick="showToast('بِسْمِ اللَّهِ — Bismillah 🌿')">بِسْمِ اللَّهِ</button>
+  </div>
+</div>
+
+<!-- VIEW : PROGRESSION -->
+<div class="view" id="view-progression">
+  <div class="header" style="padding-bottom: 14px;">
+    <div class="header-top">
+      <div class="prog-title">Progression</div>
+      <button class="btn-share" onclick="shareStreak()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        Partager
+      </button>
+    </div>
+    <div class="header-progress">
+      <div class="header-progress-fill" id="globalFill2" style="width:0%"></div>
+    </div>
+  </div>
+  <div class="prog-wrap" id="progContent"></div>
+</div>
+
+<!-- INFO BOTTOM SHEET -->
+<div class="info-sheet-overlay" id="infoOverlay" onclick="closeInfoSheet()"></div>
+<div class="info-sheet" id="infoSheet">
+  <div class="info-sheet-handle"></div>
+  <div class="info-sheet-label" id="infoLabel"></div>
+  <div class="info-sheet-arabic" id="infoArabic"></div>
+  <div class="info-sheet-phonetic" id="infoPhonetic"></div>
+  <div class="info-sheet-translation" id="infoTranslation"></div>
+  <button class="info-sheet-close" onclick="closeInfoSheet()">Fermer</button>
+</div>
+
+<!-- TASBIH FULLSCREEN -->
+<div class="tasbih-overlay" id="tasbihOverlay">
+  <button class="tasbih-close" onclick="closeTasbih()">✕</button>
+  <div class="tasbih-label" id="tasbihLabel">Tasbih</div>
+  <div class="tasbih-arabic" id="tasbihArabic"></div>
+  <div class="tasbih-num" id="tasbihBigNum">0</div>
+  <div class="tasbih-total" id="tasbihTotalLabel">/ 99</div>
+  <div class="tasbih-tap-zone" id="tasbihTapZone">
+    <div class="tasbih-tap-hint">Appuie n'importe où</div>
+  </div>
+  <button class="tasbih-reset" onclick="resetTasbihOverlay()">↺</button>
+  <div class="tasbih-bar-wrap">
+    <div class="tasbih-bar-fill" id="tasbihBarFill" style="width:0%"></div>
+  </div>
+</div>
+
+<!-- NAV BAR -->
+<div class="nav-bar">
+  <div class="nav-item active" id="nav-checklist" onclick="switchView('checklist')">
+    <div class="nav-icon-wrap">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+      </svg>
+    </div>
+    <div class="nav-label">Checklist</div>
+  </div>
+  <div class="nav-item" id="nav-ramadan" onclick="switchView('ramadan')" style="position:relative;">
+    <div class="nav-icon-wrap" id="navRamadanIcon">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    </div>
+    <div class="nav-label">Ramadan</div>
+  </div>
+  <div class="nav-item" id="nav-resume" onclick="switchView('resume')">
+    <div class="nav-icon-wrap">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+      </svg>
+    </div>
+    <div class="nav-label">Bilan</div>
+  </div>
+  <div class="nav-item" id="nav-progression" onclick="switchView('progression')">
+    <div class="nav-icon-wrap">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+      </svg>
+    </div>
+    <div class="nav-label">Stats</div>
+  </div>
+</div>
+
+<script>
+// ── UTILS ──
+function isFriday() { return new Date().getDay() === 5; }
+
+// ── BADGES ──
+const BADGES = [
+  { id: 'first_day', emoji: '🌱', name: 'Premier Pas',       desc: 'Valider le Niveau 1 complet pour la 1ere fois', gold: false, check: (s,h) => h.totalDays >= 1 },
+  { id: 'streak3',   emoji: '🔥', name: 'Flamme × 3',        desc: '3 jours consecutifs de Niveau 1 valide',        gold: false, check: (s,h) => h.streak >= 3 },
+  { id: 'streak7',   emoji: '⚡', name: 'Semaine de Foi',    desc: '7 jours consecutifs — MashaAllah !',            gold: true,  check: (s,h) => h.streak >= 7 },
+  { id: 'streak30',  emoji: '🌙', name: 'Mois Beni',         desc: '30 jours consecutifs — Allahu Akbar !',         gold: true,  check: (s,h) => h.streak >= 30 },
+  { id: 'level2',    emoji: '📿', name: 'Approfondissement', desc: 'Debloquer et completer le Niveau 2',             gold: false, check: (s,h) => s._unlocked && s._unlocked.includes(2) },
+  { id: 'level3',    emoji: '📚', name: 'Chercheur',         desc: 'Debloquer et completer le Niveau 3',             gold: false, check: (s,h) => s._unlocked && s._unlocked.includes(3) },
+  { id: 'level4',    emoji: '💚', name: 'Rayonnant',         desc: 'Atteindre le Niveau 4',                         gold: true,  check: (s,h) => s._unlocked && s._unlocked.includes(4) },
+  { id: 'istighfar', emoji: '🤲', name: '100 Istighfar',     desc: 'Completer 100 istighfar en une journee',        gold: false, check: (s,h) => (s.istighfar||0) >= 100 },
+  { id: 'tasbih',    emoji: '✨', name: 'Tasbih Complet',    desc: 'Completer le tasbih des 99 en une journee',     gold: false, check: (s,h) => (s.tasbih||0) >= 99 },
+  { id: 'week_full', emoji: '🏆', name: 'Semaine Parfaite',  desc: '7 jours dans la semaine avec Niveau 1 valide',  gold: true,  check: (s,h) => h.weekDays >= 7 },
+  { id: 'jumua',     emoji: '🕌', name: 'Vendredi Beni',     desc: 'Accomplir la priere du vendredi (Jumuah)',      gold: true,  check: (s,h) => h.jumuahCount >= 1 },
+  { id: 'jumua4',    emoji: '🌟', name: '4 Vendredis',       desc: '4 prieres du vendredi accomplies',              gold: true,  check: (s,h) => h.jumuahCount >= 4 },
+  { id: 'ramadan_start',  emoji: '🌙', name: 'Ramadan Mubarak',   desc: 'Premier jour de Ramadan',          gold: false, check: function(s,h) { return ((h.ramadan && h.ramadan.totalFasts)||0) >= 1; } },
+  { id: 'ramadan_10',     emoji: '⭐', name: '10 Jours de Jeune', desc: '10 jours de jeune accomplis',      gold: false, check: function(s,h) { return ((h.ramadan && h.ramadan.totalFasts)||0) >= 10; } },
+  { id: 'ramadan_20',     emoji: '🌟', name: '20 Jours de Jeune', desc: '20 jours — Mashallah !',           gold: false, check: function(s,h) { return ((h.ramadan && h.ramadan.totalFasts)||0) >= 20; } },
+  { id: 'ramadan_full',   emoji: '🥇', name: 'Ramadan Complet',   desc: '30 jours — Allahu Akbar !',        gold: true,  check: function(s,h) { return ((h.ramadan && h.ramadan.totalFasts)||0) >= 30; } },
+  { id: 'laylatul_qadr',  emoji: '✨', name: 'Laylat al-Qadr',    desc: 'Les 5 nuits impaires accomplies',  gold: true,  check: function(s,h) { var n=(h.ramadan && h.ramadan.laylatul)||{}; return [21,23,25,27,29].filter(function(x){return !!n[x];}).length>=5; } },
+];
+
+// ── RAMADAN STATE ──
+let ramadanState = JSON.parse(localStorage.getItem('spiritual_ramadan') || '{"active":false,"startDate":null,"days":{},"laylatul":{}}');
+
+function saveRamadanState() { localStorage.setItem('spiritual_ramadan', JSON.stringify(ramadanState)); }
+
+function toggleRamadanMode() {
+  if (ramadanState.active) {
+    if (!confirm('Désactiver le mode Ramadan ? Tes données de jeûne seront conservées.')) return;
+    ramadanState.active = false;
+    saveRamadanState();
+    updateNavRamadan();
+    renderRamadanActivateBtn();
+    switchView('checklist');
+    showToast('Mode Ramadan désactivé');
+  } else {
+    ramadanState.active = true;
+    if (!ramadanState.startDate) ramadanState.startDate = TODAY;
+    saveRamadanState();
+    updateNavRamadan();
+    renderRamadanActivateBtn();
+    // Now switch to ramadan view directly
+    document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    document.getElementById('view-ramadan').classList.add('active');
+    document.getElementById('nav-ramadan').classList.add('active');
+    renderRamadan();
+    showToast('🌙 Ramadan Mubarak ! Que ce mois soit béni.');
+    if (navigator.vibrate) navigator.vibrate([30, 40, 60]);
+  }
+}
+
+function updateNavRamadan() {
+  const nav = document.getElementById('nav-ramadan');
+  const icon = document.getElementById('navRamadanIcon');
+  if (!nav) return;
+  if (ramadanState.active) {
+    nav.style.color = 'var(--moon)';
+    icon.style.color = 'var(--moon)';
+    // Add pulsing dot
+    if (!document.getElementById('ramadanDot')) {
+      const dot = document.createElement('div');
+      dot.id = 'ramadanDot';
+      dot.className = 'nav-ramadan-dot';
+      nav.appendChild(dot);
+    }
+  } else {
+    nav.style.color = '';
+    icon.style.color = '';
+    const dot = document.getElementById('ramadanDot');
+    if (dot) dot.remove();
+  }
+}
+
+function getRamadanDay() {
+  if (!ramadanState.startDate) return 1;
+  const start = new Date(ramadanState.startDate + 'T12:00:00');
+  const today = new Date(TODAY + 'T12:00:00');
+  const diff = Math.round((today - start) / 86400000) + 1;
+  return Math.max(1, Math.min(30, diff));
+}
+
+function toggleFast(dayStr) {
+  if (!ramadanState.days) ramadanState.days = {};
+  ramadanState.days[dayStr] = !ramadanState.days[dayStr];
+  if (ramadanState.days[dayStr]) {
+    showToast('🌙 Jeûne du jour enregistré — Barakallahu feek !');
+    if (navigator.vibrate) navigator.vibrate(25);
+  }
+  // Update history for badges
+  if (!history.ramadan) history.ramadan = { totalFasts: 0, laylatul: {} };
+  history.ramadan.totalFasts = Object.values(ramadanState.days).filter(Boolean).length;
+  saveHistory();
+  saveRamadanState();
+  checkBadges();
+  renderRamadan();
+}
+
+function toggleLaylatul(night) {
+  if (!ramadanState.laylatul) ramadanState.laylatul = {};
+  ramadanState.laylatul[night] = !ramadanState.laylatul[night];
+  if (ramadanState.laylatul[night]) showToast('✨ Nuit ' + night + ' — Qu\'Allah l\'accepte !');
+  if (!history.ramadan) history.ramadan = { totalFasts: 0, laylatul: {} };
+  history.ramadan.laylatul = ramadanState.laylatul;
+  saveHistory();
+  saveRamadanState();
+  checkBadges();
+  renderRamadan();
+}
+
+function toggleRamadanItem(id) {
+  const key = 'r_' + TODAY + '_' + id;
+  ramadanState.days_items = ramadanState.days_items || {};
+  ramadanState.days_items[key] = !ramadanState.days_items[key];
+  saveRamadanState();
+  renderRamadan();
+  if (ramadanState.days_items[key] && navigator.vibrate) navigator.vibrate(20);
+}
+
+function getRamadanItemDone(id) {
+  const key = 'r_' + TODAY + '_' + id;
+  return !!(ramadanState.days_items && ramadanState.days_items[key]);
+}
+
+// Horaires sources per city
+const HORAIRES_CITIES = [
+  { name: 'Paris',     url: 'https://www.mosqueedeparis.net/horaires-des-prieres/' },
+  { name: 'Lyon',      url: 'https://www.grande-mosquee-lyon.org/horaires/' },
+  { name: 'Marseille', url: 'https://www.mosquee-marseille.fr/horaires/' },
+  { name: 'Bordeaux',  url: 'https://islamiccalendar.fr/ramadan/bordeaux' },
+  { name: 'Lille',     url: 'https://islamiccalendar.fr/ramadan/lille' },
+  { name: 'Strasbourg',url: 'https://islamiccalendar.fr/ramadan/strasbourg' },
+  { name: 'Nantes',    url: 'https://islamiccalendar.fr/ramadan/nantes' },
+  { name: 'Autre',     url: 'https://islamiccalendar.fr/ramadan/' },
+];
+
+let selectedCity = localStorage.getItem('spiritual_city') || 'Paris';
+
+function selectCity(name) {
+  selectedCity = name;
+  localStorage.setItem('spiritual_city', name);
+  renderRamadan();
+}
+
+function openHoraires() {
+  const city = HORAIRES_CITIES.find(c => c.name === selectedCity) || HORAIRES_CITIES[0];
+  window.open(city.url, '_blank', 'noopener');
+}
+
+// ── RENDER RAMADAN ──
+function renderRamadan() {
+  const el = document.getElementById('ramadanContent');
+  if (!el) return;
+
+  const day = getRamadanDay();
+  const daysLeft = Math.max(0, 30 - day + 1);
+  const todayFasted = ramadanState.days && ramadanState.days[TODAY];
+  const totalFasts = Object.values(ramadanState.days || {}).filter(Boolean).length;
+  const isLast10 = day >= 21;
+
+  // Progress bar
+  const pct = Math.round((day - 1) / 30 * 100);
+  const f4 = document.getElementById('globalFill4');
+  if (f4) f4.style.width = pct + '%';
+
+  // ── Hero banner
+  let html = '<div class="ramadan-banner">';
+  html += '<span class="ramadan-moon">🌙</span>';
+  html += '<div class="ramadan-title">رَمَضَان كَرِيم</div>';
+  html += '<div class="ramadan-arabic">شَهْرُ رَمَضَانَ</div>';
+  html += '<div class="ramadan-day-row">';
+  html += '<div class="ramadan-day-box"><div class="ramadan-day-num">' + day + '</div><div class="ramadan-day-label">Jour</div></div>';
+  html += '<div style="color:var(--t3);font-size:20px;">·</div>';
+  html += '<div class="ramadan-day-box"><div class="ramadan-day-num">' + daysLeft + '</div><div class="ramadan-day-label">Restants</div></div>';
+  html += '</div></div>';
+
+  // ── Stats jeûne
+  html += '<div class="fast-streak-row">';
+  html += '<div class="fast-stat active"><div class="fast-stat-num">' + totalFasts + '</div><div class="fast-stat-label">Jours jeûnés</div></div>';
+  html += '<div class="fast-stat"><div class="fast-stat-num">' + (30 - totalFasts) + '</div><div class="fast-stat-label">Restants</div></div>';
+  html += '<div class="fast-stat"><div class="fast-stat-num">' + Math.round(totalFasts / 30 * 100) + '%</div><div class="fast-stat-label">Progression</div></div>';
+  html += '</div>';
+
+  // ── Jeûne du jour
+  html += '<div style="background:var(--card);border-radius:var(--r-xl);overflow:hidden;margin-bottom:8px;">';
+  html += '<div style="padding:14px 16px;border-bottom:1px solid var(--sep);">';
+  html += '<div style="font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:2px;">Aujourd\'hui</div>';
+  html += '<div style="font-family:var(--serif);font-size:18px;color:var(--t1);">Jeûne du jour</div>';
+  html += '</div>';
+
+  const fastItems = [
+    { id: 'fast', label: "J'ai jeûné aujourd'hui", arabic: 'صُمْتُ الْيَوْمَ', isFast: true, special: true },
+    { id: 'suhur', label: 'Suhur — repas avant l\'aube', arabic: 'السَّحُور' },
+    { id: 'iftar', label: 'Iftar — rupture du jeûne', arabic: 'الْإِفْطَار', sub: 'بِسْمِ اللَّهِ وَعَلَى بَرَكَةِ اللَّهِ' },
+    { id: 'tarawih', label: 'Prière Tarawih', arabic: 'صَلَاةُ التَّرَاوِيحِ', sub: '8 ou 20 rakaat après Isha' },
+    { id: 'quran_ramadan', label: 'Récitation du Coran', arabic: 'قِرَاءَةُ الْقُرْآنِ', sub: 'Objectif : 1 Juzz par jour' },
+    { id: 'sadaqa_ramadan', label: 'Sadaqa du jour', arabic: 'الصَّدَقَةُ', sub: 'Même un sourire ou un service' },
+  ];
+
+  fastItems.forEach((item, idx) => {
+    const done = item.special ? !!todayFasted : getRamadanItemDone(item.id);
+    const onclick = item.special ? 'toggleFast(\'' + TODAY + '\')' : 'toggleRamadanItem(\'' + item.id + '\')';
+    const fastCls = (item.isFast || item.special) ? ' fast-item' : '';
+    const arabicHtml = item.arabic ? '<div class="item-arabic">' + item.arabic + '</div>' : '';
+    const subHtml = item.sub ? '<div class="item-sub">' + item.sub + '</div>' : '';
+    html += '<div class="item' + fastCls + (done ? ' checked' : '') + '" onclick="' + onclick + '" id="ritem-' + item.id + '">';
+    html += '<div class="check-circle' + (item.special ? '" style="' + (done ? 'background:var(--moon);border-color:var(--moon);box-shadow:0 0 0 4px var(--moon-soft)' : 'border-color:rgba(245,166,35,0.4)') : '') + '">';
+    html += '<svg class="check-svg" style="' + (done ? 'opacity:1;transform:scale(1)' : '') + '" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    html += '</div>';
+    html += '<div class="item-body"><div class="item-label">' + item.label + '</div>' + subHtml + arabicHtml + '</div>';
+    html += '</div>';
+  });
+  html += '</div>';
+
+  // ── Horaires
+  html += '<div style="margin-bottom:4px;padding:0 2px;"><div style="font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--t3);margin-bottom:8px;">Horaires Imsak / Iftar</div>';
+  // City selector
+  html += '<div style="display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;margin-bottom:8px;padding-bottom:2px;">';
+  HORAIRES_CITIES.forEach(c => {
+    const active = c.name === selectedCity;
+    html += '<div onclick="selectCity(\'' + c.name + '\')" style="flex-shrink:0;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:500;cursor:pointer;transition:all 0.2s;border:1px solid ' + (active ? 'var(--moon)' : 'var(--sep)') + ';background:' + (active ? 'rgba(245,166,35,0.1)' : 'var(--card)') + ';color:' + (active ? 'var(--moon)' : 'var(--t2)') + ';">' + c.name + '</div>';
+  });
+  html += '</div>';
+  html += '<div class="horaires-link" onclick="openHoraires()">';
+  html += '<div class="horaires-icon">🕌</div>';
+  html += '<div class="horaires-body"><div class="horaires-label">Voir les horaires — ' + selectedCity + '</div><div class="horaires-sub">Source officielle · Mosquée / IslamicCalendar.fr</div></div>';
+  html += '<div class="horaires-arrow">›</div>';
+  html += '</div></div>';
+
+  // ── Calendrier des jeûnes
+  html += '<div style="background:var(--card);border-radius:var(--r-xl);padding:18px;margin-bottom:8px;">';
+  html += '<div style="font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;">Calendrier du jeûne</div>';
+  html += '<div class="fast-calendar">';
+  for (let d = 1; d <= 30; d++) {
+    const startObj = new Date((ramadanState.startDate || TODAY) + 'T12:00:00');
+    startObj.setDate(startObj.getDate() + d - 1);
+    const dStr = startObj.toISOString().split('T')[0];
+    const fasted = ramadanState.days && ramadanState.days[dStr];
+    const isToday = dStr === TODAY;
+    const isFuture = dStr > TODAY;
+    let cls = 'fast-day';
+    if (fasted) cls += ' fasted';
+    if (isToday) cls += ' today';
+    if (isFuture && !isToday) cls += ' future';
+    const onclick = (!isFuture || isToday) ? ' onclick="toggleFast(\'' + dStr + '\')"' : '';
+    html += '<div class="' + cls + '"' + onclick + '>' + d + '</div>';
+  }
+  html += '</div></div>';
+
+  // ── Laylat al-Qadr (visible toujours, activé surtout dernière décade)
+  html += '<div class="laylatul-card">';
+  html += '<div class="laylatul-stars">✨🌙✨</div>';
+  html += '<div class="laylatul-title">Laylat al-Qadr</div>';
+  html += '<div class="laylatul-arabic">لَيْلَةُ الْقَدْرِ</div>';
+  html += '<div class="laylatul-sub">Les 5 nuits impaires des 10 dernières nuits — meilleure que mille mois</div>';
+  html += '<div class="laylatul-nights">';
+  [21, 23, 25, 27, 29].forEach(n => {
+    const done = ramadanState.laylatul && ramadanState.laylatul[n];
+    const startObj2 = new Date((ramadanState.startDate || TODAY) + 'T12:00:00');
+    startObj2.setDate(startObj2.getDate() + n - 1);
+    const nStr = startObj2.toISOString().split('T')[0];
+    const isActive = TODAY >= nStr;
+    let cls = 'laylatul-night';
+    if (done) cls += ' done';
+    else if (isActive) cls += ' active';
+    html += '<div class="' + cls + '" onclick="toggleLaylatul(' + n + ')">';
+    html += '<div class="night-num">' + n + '</div>';
+    html += '<div class="night-label">Nuit</div>';
+    html += '</div>';
+  });
+  html += '</div></div>';
+
+  el.innerHTML = html;
+}
+
+// ── LEVELS ──
+const LEVELS = [
+  {
+    id: 1, title: 'Fondations',
+    sections: [
+      { icon: '🕌', title: 'Les 5 Prières', items: [
+        { id: 'fajr',    label: 'Fajr',    sub: "Prière de l'aube",              arabic: 'صَلَاةُ الْفَجْرِ' },
+        { id: 'dhuhr',   label: 'Dhuhr',   sub: 'Prière du milieu du jour',      arabic: 'صَلَاةُ الظُّهْرِ' },
+        { id: 'asr',     label: 'Asr',     sub: "Prière de l'après-midi",        arabic: 'صَلَاةُ الْعَصْرِ' },
+        { id: 'maghrib', label: 'Maghrib', sub: 'Prière du coucher du soleil',   arabic: 'صَلَاةُ الْمَغْرِبِ' },
+        { id: 'isha',    label: 'Isha',    sub: 'Prière de la nuit',             arabic: 'صَلَاةُ الْعِشَاءِ' },
+        ...(isFriday() ? [{ id: 'jumua', label: 'Jumua ✦', sub: 'Prière du vendredi — obligation spéciale', arabic: 'صَلَاةُ الْجُمُعَةِ', isFriday: true }] : []),
+      ]},
+      { icon: '📖', title: 'Dhikr & Récitation', items: [
+        { id: 'ayat_kursi', label: 'Ayat al-Kursi', sub: 'Allahu la ilaha illa huwal hayyul qayyum · Après chaque prière & avant de dormir', arabic: 'آيَةُ الْكُرْسِيّ', audio: 'https://everyayah.com/data/Alafasy_128kbps/002255.mp3' },
+        { id: 'ikhlass_3x', label: 'Sourate Al-Ikhlass × 3', sub: 'Qul huwa Allahu ahad · Équivaut à réciter le Coran en entier', arabic: 'قُلْ هُوَ اللَّهُ أَحَدٌ ×٣', audio: 'https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/112.mp3' },
+        { id: 'shukr',      label: 'Remercier Allah',        sub: 'Alhamdulillah — au moins 3 grâces du jour', arabic: 'الْحَمْدُ لِلَّهِ' },
+      ]}
+    ]
+  },
+  {
+    id: 2, title: 'Approfondissement',
+    sections: [
+      { icon: '🕌', title: 'Prière & Mosquée', items: [
+        { id: 'mosquee', label: 'Prière à la mosquée', sub: 'Au moins une prière en jamaah', arabic: 'صَلَاةُ الْجَمَاعَةِ' },
+      ]},
+      { icon: '📿', title: 'Compteurs', items: [
+        { id: 'istighfar', label: 'Istighfar',      sub: 'Astaghfirullah · Je demande pardon à Allah — 100 fois', arabic: 'أَسْتَغْفِرُ اللَّهَ', type: 'counter', target: 100, audio: 'sc:172482888' },
+        { id: 'tasbih',    label: 'Tasbih complet', sub: 'SubhanAllah ×33 · Alhamdulillah ×33 · Allahu Akbar ×33', arabic: 'سُبْحَانَ اللَّهِ · الْحَمْدُ لِلَّهِ · اللَّهُ أَكْبَرُ', type: 'counter', target: 99, audio: 'sc:https://soundcloud.com/mohammadshariq/subhanallah-33-times' },
+      ]},
+      { icon: '🎧', title: 'Écoute', items: [
+        { id: 'coran_ecoute', label: 'Écouter le Coran', sub: 'Au moins 10 minutes de récitation', arabic: 'تِلَاوَةُ الْقُرْآنِ' },
+      ]}
+    ]
+  },
+  {
+    id: 3, title: 'Connaissance',
+    sections: [
+      { icon: '📚', title: 'Étude islamique', items: [
+        { id: 'hadith1',    label: '1er Hadith du jour',       sub: 'Riyad as-Salihin ou autre recueil',   arabic: 'حَدِيثٌ' },
+        { id: 'hadith2',    label: '2ème Hadith du jour',      sub: 'Méditer sa signification' },
+        { id: 'hadith3',    label: '3ème Hadith du jour',      sub: "L'appliquer dans la journée" },
+        { id: 'sira',       label: 'Vie du Prophète ﷺ',        sub: '10 min · Série Seerah',               arabic: 'السِّيرَةُ النَّبَوِيَّةُ' },
+        { id: 'quran_read', label: 'Lecture du Coran',         sub: 'Au moins 1 page avec le sens',        arabic: 'قِرَاءَةُ الْقُرْآنِ' },
+        { id: 'arabic',     label: "Apprentissage de l'arabe", sub: '10 min · Vocabulaire ou grammaire',   arabic: 'تَعَلُّمُ الْعَرَبِيَّةِ' },
+      ]},
+      { icon: '🎙️', title: 'Contenus & Sunnah', items: [
+        { id: 'podcast',        label: 'Podcast islamique',        sub: 'Islam Simplement ou autre contenu' },
+        { id: 'sunnah_prieres', label: 'Prières surérogatoires',   sub: 'Rawatib : 12 rakaat supplémentaires', arabic: 'السُّنَنُ الرَّوَاتِبُ' },
+        { id: 'sunnah_jejune',  label: 'Jeûne sunnah',             sub: 'Lundi ou jeudi — sunnah du Prophète', arabic: 'صَوْمُ الِاثْنَيْنِ وَالْخَمِيسِ' },
+      ], links: [
+        { label: 'Vie du Prophète ﷺ', sub: 'Playlist YouTube · Seerah', url: 'https://www.youtube.com/results?search_query=seerah+prophete+francais', icon: '▶' },
+        { label: 'Islam Simplement', sub: 'Podcast · Écouter maintenant', url: 'https://open.spotify.com/search/islam%20simplement', icon: '🎙' },
+        { label: "Apprendre l'arabe", sub: 'Duolingo Arabic', url: 'https://www.duolingo.com/course/ar/fr/Apprendre-l-arabe', icon: '📖' },
+      ]}
+    ]
+  },
+  {
+    id: 4, title: 'Rayonnement',
+    sections: [
+      { icon: '💚', title: 'Bonnes actions', items: [
+        { id: 'sadaqa',      label: 'Aumône (Sadaqa)',              sub: "Même un sourire est une aumône",       arabic: 'الصَّدَقَةُ' },
+        { id: 'tweet',       label: 'Partager une sagesse islamique', sub: 'Une belle parole pour rappeler Allah' },
+        { id: 'salam',       label: 'Donner le Salam',              sub: 'As-salamu alaykum à au moins 3 personnes', arabic: 'السَّلَامُ عَلَيْكُمْ' },
+        { id: 'silaturahm',  label: 'Maintenir les liens familiaux', sub: "Appeler ou voir un proche aujourd'hui", arabic: 'صِلَةُ الرَّحِمِ' },
+        { id: 'kind_act',    label: 'Acte de bonté',                sub: "Aider quelqu'un concrètement" },
+      ]},
+      { icon: '🤲', title: 'Douâas personnels', items: [
+        { id: 'doua1',      label: 'Douâa pour ta famille',    sub: 'Rabbi irhamhuma kama rabbayani saghira · Seigneur, fais-leur miséricorde comme ils m\'ont élevé',   arabic: 'رَبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا', audio: 'https://everyayah.com/data/Alafasy_128kbps/017024.mp3' },
+        { id: 'doua2',      label: 'Douâa pour toi-même',      sub: 'Rabbi inni lima anzalta ilayya min khayrin faqir · Seigneur, je suis dans le besoin de tout bien que Tu accordes',        arabic: 'رَبِّ إِنِّي لِمَا أَنزَلْتَ إِلَيَّ مِنْ خَيْرٍ فَقِيرٌ', audio: 'https://everyayah.com/data/Alafasy_128kbps/028024.mp3' },
+        { id: 'doua3',      label: "Douâa pour l'Oumma",       sub: 'Rabbana hab lana min azwajina wa dhurriyyatina qurrata a\'yunin · Seigneur, donne-nous la joie des yeux en nos familles',         arabic: 'رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ', audio: 'https://everyayah.com/data/Alafasy_128kbps/025074.mp3' },
+        { id: 'doua_morts', label: 'Douâa pour les défunts',   sub: 'Rabbana ighfir lana wa li ikhwanina alladhina sabaquna bil iman · Pardonne-nous ainsi qu\'à nos frères qui nous ont précédés',                   arabic: 'رَبَّنَا اغْفِرْ لَنَا وَلِإِخْوَانِنَا الَّذِينَ سَبَقُونَا بِالْإِيمَانِ', audio: 'https://everyayah.com/data/Alafasy_128kbps/059010.mp3' },
+      ]},
+      { icon: '🌙', title: 'Prière nocturne', items: [
+        { id: 'tahajjud', label: 'Qiyam al-Layl', sub: 'Prière nocturne — le dernier tiers de la nuit', arabic: 'قِيَامُ اللَّيْلِ' },
+        { id: 'witr',     label: 'Prière Witr',   sub: 'Minimum 1 rakaa — avant de dormir',             arabic: 'صَلَاةُ الْوِتْرِ' },
+      ]}
+    ]
+  }
+];
+
+// ── STATE ──
+const TODAY = new Date().toISOString().split('T')[0];
+let state   = JSON.parse(localStorage.getItem('spiritual_v2') || '{}');
+let history = JSON.parse(localStorage.getItem('spiritual_history') || '{"days":{},"dayMedals":{},"streak":0,"bestStreak":0,"totalDays":0,"unlockedBadges":[],"weekDays":0,"jumuahCount":0}');
+let currentLevel = parseInt(localStorage.getItem('spiritual_level') || '1');
+if (history.jumuahCount === undefined) history.jumuahCount = 0;
+
+if (state._date !== TODAY) {
+  checkAndSaveYesterdayStreak();
+  const ul = state._unlocked || [1];
+  state = { _date: TODAY, _unlocked: ul };
+  saveState();
+}
+if (!state._unlocked) state._unlocked = [1];
+
+function getCalcLvlPct(lvlId, s) {
+  const lvl = LEVELS.find(l => l.id === lvlId);
+  const items = lvl.sections.flatMap(sec => sec.items);
+  const done = items.filter(i => i.type === 'counter' ? (s[i.id]||0) >= i.target : !!s[i.id]).length;
+  return items.length > 0 ? (done / items.length) * 100 : 0;
+}
+
+function checkAndSaveYesterdayStreak() {
+  const prevDate = state._date;
+  if (!prevDate) return;
+  const lvl1Pct = getCalcLvlPct(1, state);
+  if (lvl1Pct >= 100) {
+    const lvl2Pct = getCalcLvlPct(2, state);
+    const allComplete = LEVELS.every(l => getCalcLvlPct(l.id, state) >= 100);
+    let dayMedal = 'bronze';
+    if (allComplete && history.streak >= 2) dayMedal = 'gold';
+    else if (lvl2Pct >= 100) dayMedal = 'silver';
+    history.days[prevDate] = true;
+    if (!history.dayMedals) history.dayMedals = {};
+    history.dayMedals[prevDate] = dayMedal;
+    const todayDate  = new Date(TODAY + 'T12:00:00');
+    const prevDateObj = new Date(prevDate + 'T12:00:00');
+    const diffDays = Math.round((todayDate - prevDateObj) / 86400000);
+    if (diffDays === 1) {
+      history.streak = (history.streak || 0) + 1;
+      history._gracePending = false; // streak OK, pas de grâce nécessaire
+    } else if (diffDays === 2) {
+      // Raté hier — grâce de 24h activée, streak conservé pour l'instant
+      history._gracePending = true;
+      history._graceMissedDate = getDateMinus(TODAY, 1);
+      history.streak = (history.streak || 0) + 1; // on ajoute quand même pour aujourd'hui
+    } else if (diffDays > 2) {
+      history.streak = 1;
+      history._gracePending = false;
+    }
+    history.bestStreak = Math.max(history.bestStreak || 0, history.streak);
+    history.totalDays = (history.totalDays || 0) + 1;
+  } else {
+    const todayDate  = new Date(TODAY + 'T12:00:00');
+    const prevDateObj = new Date((prevDate || TODAY) + 'T12:00:00');
+    const diffDays = Math.round((todayDate - prevDateObj) / 86400000);
+    if (diffDays === 1) {
+      // Hier non complété — grâce de 24h seulement si streak existait
+      if ((history.streak || 0) > 0) {
+        history._gracePending = true;
+        history._graceMissedDate = prevDate;
+      } else {
+        history._gracePending = false;
+      }
+    } else if (diffDays > 1) {
+      history.streak = 0;
+      history._gracePending = false;
+    }
+  }
+  history.weekDays = 0;
+  for (let i = 0; i < 7; i++) if (history.days[getDateMinus(TODAY, i+1)]) history.weekDays++;
+  saveHistory();
+}
+
+// Vérifie si la grâce est encore valide
+function isGraceActive() {
+  if (!history._gracePending || !history._graceMissedDate) return false;
+  if (getLevelProgress(1) >= 100) return false; // déjà complété aujourd'hui
+  return true;
+}
+
+// Appelé quand le niveau 1 est complété aujourd'hui — annule la grâce
+function resolveGrace() {
+  if (history._gracePending) {
+    history._gracePending = false;
+    history._graceMissedDate = null;
+    saveHistory();
+    showToast('🌿 Journée rattrapée — ton streak est sauvé !');
+    if (navigator.vibrate) navigator.vibrate([20, 30, 60]);
+  }
+}
+
+function getDateMinus(dateStr, days) {
+  const d = new Date(dateStr); d.setDate(d.getDate() - days); return d.toISOString().split('T')[0];
+}
+function saveState()   { localStorage.setItem('spiritual_v2', JSON.stringify(state)); localStorage.setItem('spiritual_level', currentLevel); }
+function saveHistory() { localStorage.setItem('spiritual_history', JSON.stringify(history)); }
+
+// ── BADGES ──
+function checkBadges() {
+  let newBadge = null;
+  BADGES.forEach(badge => {
+    if (!history.unlockedBadges.includes(badge.id) && badge.check(state, history)) {
+      history.unlockedBadges.push(badge.id);
+      newBadge = badge;
+    }
+  });
+  saveHistory();
+  if (newBadge) { playCheckSound(); showBadgePopup(newBadge); }
+}
+
+// ── MEDALS ──
+function getLevelProgress(levelId) { return getCalcLvlPct(levelId, state); }
+
+function getMedalLevel() {
+  const lvl1 = getLevelProgress(1);
+  const lvl2 = getLevelProgress(2);
+  const streakCurrent = history.streak + (lvl1 >= 100 ? 1 : 0);
+  const allDone = LEVELS.every(l => getLevelProgress(l.id) >= 100);
+  if (allDone && streakCurrent >= 3) return 'gold';
+  if (lvl1 >= 100 && lvl2 >= 100) return 'silver';
+  if (lvl1 >= 100) return 'bronze';
+  return 'none';
+}
+
+const MEDAL_CFG = {
+  none:   { label: '—',      cls: 'none'   },
+  bronze: { label: 'Bronze', cls: 'bronze' },
+  silver: { label: 'Argent', cls: 'silver' },
+  gold:   { label: 'Or ✦',   cls: 'gold'   },
+};
+let _lastMedal = null;
+function updateMedal() {
+  const medal = getMedalLevel();
+  const el = document.getElementById('medalTag');
+  if (!el) return;
+  el.className = 'medal-tag ' + MEDAL_CFG[medal].cls;
+  el.textContent = MEDAL_CFG[medal].label;
+  if (_lastMedal && _lastMedal !== medal && medal !== 'none') {
+    el.classList.add('anim');
+    el.addEventListener('animationend', () => el.classList.remove('anim'), { once: true });
+    const msgs = { bronze:'🥉 Bronze !', silver:'🥈 Argent !', gold:'🥇 OR — Journee parfaite !' };
+    showToast(msgs[medal]);
+  }
+  _lastMedal = medal;
+}
+
+// ── PROGRESS ──
+function getLevelItems(levelId) {
+  const level = LEVELS.find(l => l.id === levelId);
+  return level ? level.sections.flatMap(s => s.items) : [];
+}
+function updateGlobalProgress() {
+  const allItems = LEVELS.flatMap(l => getLevelItems(l.id));
+  const done = allItems.filter(item => item.type === 'counter' ? (state[item.id]||0) >= item.target : !!state[item.id]).length;
+  const pct  = allItems.length > 0 ? (done / allItems.length) * 100 : 0;
+  const f1 = document.getElementById('globalFill');
+  const f2 = document.getElementById('globalFill2');
+  if (f1) f1.style.width = pct + '%';
+  if (f2) f2.style.width = pct + '%';
+  updateMedal();
+}
+
+// ── LEVEL COMPLETION ──
+function checkLevelCompletion(levelId) {
+  if (getLevelProgress(levelId) >= 100) {
+    if (levelId === 1) resolveGrace();
+    const nextId = levelId + 1;
+    const hasNext = nextId <= LEVELS.length;
+    const alreadyShown = state['_lvl_shown_' + levelId];
+    if (!alreadyShown) {
+      state['_lvl_shown_' + levelId] = true;
+      if (hasNext && !state._unlocked.includes(nextId)) state._unlocked.push(nextId);
+      saveState();
+      renderTabs();
+      showLevelPopup(levelId, nextId, hasNext);
+    }
+  }
+}
+
+const LEVEL_MESSAGES = {
+  1: { stars: "🌙", eyebrow: "Fondations accomplies", title: "Mashallah !", sub: "Tu as pose les <strong>bases solides</strong> de ta pratique. Barakallahu feek !" },
+  2: { stars: "📿", eyebrow: "Approfondissement accompli", title: "SubhanAllah !", sub: "Istighfar, tasbih, mosquee — ton <strong>coeur s ouvre</strong> a Allah." },
+  3: { stars: "📚", eyebrow: "Connaissance accomplie", title: "Alhamdulillah !", sub: "La connaissance est une <strong>lumiere</strong>. Tu cherches, Allah guide." },
+  4: { stars: "💚", eyebrow: "Journee parfaite", title: "Allahu Akbar !", sub: "Tu as tout accompli. <strong>Journee doree</strong> — qu Allah accepte tes actes !" },
+};
+
+function showLevelPopup(levelId, nextId, hasNext) {
+  const msg = LEVEL_MESSAGES[levelId] || LEVEL_MESSAGES[1];
+  const nextLevel = LEVELS.find(l => l.id === nextId);
+  document.getElementById('lvlStars').textContent = msg.stars;
+  document.getElementById('lvlEyebrow').textContent = msg.eyebrow;
+  document.getElementById('lvlTitle').textContent = msg.title;
+  document.getElementById('lvlSub').innerHTML = msg.sub;
+  const btn = document.getElementById('btnNextLvl');
+  if (hasNext && nextLevel) {
+    btn.textContent = 'Niveau ' + nextId + ' : ' + nextLevel.title + ' →';
+    btn.onclick = goNextLevel;
+  } else {
+    btn.textContent = 'Voir ma progression ✦';
+    btn.onclick = () => { closeLevelPopup(); switchView('progression'); };
+  }
+  spawnConfetti();
+  if (navigator.vibrate) navigator.vibrate([30, 50, 30, 50, 60]);
+  playCompleteSound();
+  document.getElementById('levelPopup').classList.add('show');
+}
+
+function goNextLevel() {
+  const nextId = currentLevel + 1;
+  closeLevelPopup();
+  if (nextId <= LEVELS.length) setTimeout(() => selectLevel(nextId), 200);
+}
+function closeLevelPopup() { document.getElementById('levelPopup').classList.remove('show'); }
+
+function spawnConfetti() {
+  const wrap = document.getElementById('confettiWrap');
+  wrap.innerHTML = '';
+  const colors = ['#30d158','#ffd60a','#b0c4ce','#d4914a','#ffffff'];
+  for (let i = 0; i < 28; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'confetti-dot';
+    dot.style.cssText = 'left:' + (10 + Math.random() * 80) + '%;top:' + (Math.random() * 30) + '%;background:' + colors[Math.floor(Math.random() * colors.length)] + ';animation:confettiFall ' + (0.8 + Math.random() * 0.8) + 's ease ' + (Math.random() * 0.4) + 's both;border-radius:' + (Math.random() > 0.5 ? '50%' : '2px') + ';width:' + (4 + Math.random() * 6) + 'px;height:' + (4 + Math.random() * 6) + 'px';
+    wrap.appendChild(dot);
+  }
+}
+
+// ── VIEW SWITCH ──
+function switchView(name) {
+  // Guard: if Ramadan not active and trying to open ramadan view, activate first
+  if (name === 'ramadan' && !ramadanState.active) {
+    toggleRamadanMode();
+    return;
+  }
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('view-' + name).classList.add('active');
+  document.getElementById('nav-' + name).classList.add('active');
+  if (name === 'progression') renderProgression();
+  if (name === 'resume') renderResume();
+  if (name === 'ramadan') renderRamadan();
+}
+
+// ── BADGE POPUP ──
+function showBadgePopup(badge) {
+  const iconEl = document.getElementById('popupIcon');
+  iconEl.textContent = badge.emoji;
+  iconEl.style.fontSize = '32px';
+  document.getElementById('popupTitle').textContent = badge.name;
+  document.getElementById('popupSub').textContent = badge.desc;
+  document.getElementById('badgePopup').classList.add('show');
+}
+function closeBadgePopup() { document.getElementById('badgePopup').classList.remove('show'); }
+
+// ── RESUME ──
+function renderResume() {
+  const el = document.getElementById('resumeContent');
+  const dateEl = document.getElementById('resumeDatePill');
+  if (dateEl) {
+    const now = new Date();
+    dateEl.textContent = now.toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' });
+  }
+
+  const allItems = LEVELS.flatMap(l => l.sections.flatMap(s => s.items));
+  const totalDone = allItems.filter(item => item.type === 'counter' ? (state[item.id]||0) >= item.target : !!state[item.id]).length;
+  const totalAll  = allItems.length;
+  const globalPct = totalAll > 0 ? Math.round(totalDone / totalAll * 100) : 0;
+  const medal = getMedalLevel();
+
+  const f3 = document.getElementById('globalFill3');
+  if (f3) f3.style.width = globalPct + '%';
+
+  const emojiMap = { none: '🌱', bronze: '🥉', silver: '🥈', gold: '🥇' };
+  const msgMap = {
+    none:   { title: 'Continue, inch\'Allah !', sub: 'Chaque pas compte. Allah voit tes efforts.' },
+    bronze: { title: 'Mashallah !',             sub: 'Les fondations sont posées. Barakallahu feek !' },
+    silver: { title: 'SubhanAllah !',           sub: 'Dhikr, prière, mosquée — ton cœur brille.' },
+    gold:   { title: 'Allahu Akbar !',          sub: 'Journée parfaite accomplie. Qu\'Allah accepte tes actes !' },
+  };
+  const msg = msgMap[medal];
+
+  // SVG ring
+  const r = 36, cx = 44, cy = 44, circ = 2 * Math.PI * r;
+  const strokeDash = (globalPct / 100) * circ;
+  const ringColor = medal === 'gold' ? 'var(--gold)' : medal === 'silver' ? 'var(--silver)' : 'var(--green)';
+  const ringHtml = '<div style="width:88px;height:88px;position:relative;margin:0 auto 16px;"><svg width="88" height="88" viewBox="0 0 88 88" style="transform:rotate(-90deg)"><circle cx="44" cy="44" r="36" fill="none" stroke="var(--sep2)" stroke-width="5"/><circle cx="44" cy="44" r="36" fill="none" stroke="' + ringColor + '" stroke-width="5" stroke-linecap="round" stroke-dasharray="' + circ.toFixed(1) + '" stroke-dashoffset="' + (circ - strokeDash).toFixed(1) + '" style="transition:stroke-dashoffset 0.8s cubic-bezier(0.34,1.56,0.64,1);filter:drop-shadow(0 0 6px ' + ringColor + ')"/></svg><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:20px;color:var(--t1);letter-spacing:-1px;">' + globalPct + '%</div></div>';
+
+  // Levels rows
+  const levelIcons = ['🕌', '📿', '📚', '💚'];
+  let levelsHtml = '<div class="resume-levels">';
+  LEVELS.forEach((lvl, i) => {
+    const pct = Math.round(getLevelProgress(lvl.id));
+    const isDone = pct >= 100;
+    const unlocked = state._unlocked.includes(lvl.id);
+    const color = isDone ? 'var(--gold)' : 'var(--green)';
+    const pctCls = isDone ? 'resume-level-pct done' : 'resume-level-pct';
+    levelsHtml += '<div class="resume-level-row" style="' + (!unlocked ? 'opacity:0.35' : '') + '"><div class="resume-level-icon">' + levelIcons[i] + '</div><div class="resume-level-body"><div class="resume-level-name">' + lvl.title + (isDone ? ' ✓' : '') + '</div><div class="resume-level-bar-track"><div class="resume-level-bar-fill" style="width:' + pct + '%;background:' + color + '"></div></div></div><div class="' + pctCls + '">' + pct + '%</div></div>';
+  });
+  levelsHtml += '</div>';
+
+  // Streak info
+  const todayDone = getLevelProgress(1) >= 100;
+  const streakDisplay = history.streak + (todayDone ? 1 : 0);
+
+  el.innerHTML = '<div class="resume-hero">' + ringHtml + '<div class="resume-title">' + msg.title + '</div><div class="resume-sub">' + msg.sub + '</div></div>' +
+    '<div style="background:var(--card);border-radius:var(--r-lg);padding:14px 16px;margin-bottom:8px;display:flex;gap:24px;justify-content:center;">' +
+      '<div style="text-align:center"><div style="font-family:var(--serif);font-size:28px;color:var(--t1);letter-spacing:-1px;">' + totalDone + '</div><div style="font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--t3);font-weight:600;margin-top:2px;">Actes</div></div>' +
+      '<div style="width:1px;background:var(--sep)"></div>' +
+      '<div style="text-align:center"><div style="font-family:var(--serif);font-size:28px;color:var(--t1);letter-spacing:-1px;">' + streakDisplay + '</div><div style="font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--t3);font-weight:600;margin-top:2px;">Jours</div></div>' +
+      '<div style="width:1px;background:var(--sep)"></div>' +
+      '<div style="text-align:center"><div style="font-size:22px;line-height:1.3;">' + emojiMap[medal] + '</div><div style="font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--t3);font-weight:600;margin-top:2px;">Médaille</div></div>' +
+    '</div>' +
+    levelsHtml +
+    '<div class="resume-actions">' +
+      '<button class="btn-new-day" onclick="confirmReset();switchView(\'checklist\')">↺ Nouvelle journée — Bismillah</button>' +
+      '<button class="btn-back-check" onclick="switchView(\'checklist\')">← Retour à la checklist</button>' +
+    '</div>';
+}
+
+
+function init() {
+  applyTheme(currentTheme);
+  // Onboarding — premier lancement
+  if (!_onboardDone) {
+    onboardRender();
+    // L'app tourne en arrière-plan pendant l'onboarding
+  } else {
+    document.getElementById('onboardScreen').classList.add('hidden');
+    if (_prayerCity) loadPrayerTimes();
+  }
+  const now = new Date();
+  const dateStr = now.toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' });
+  ['datePill', 'resumeDatePill'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = dateStr;
+  });
+  updateNavRamadan();
+  renderTabs();
+  renderLevel(currentLevel);
+  updateGlobalProgress();
+  checkBadges();
+  // Si Ramadan actif, afficher bouton sur checklist
+  renderRamadanActivateBtn();
+}
+
+function renderRamadanActivateBtn() {
+  const btn = document.getElementById('ramadanActivateBtn');
+  if (!btn) return;
+  if (ramadanState.active) {
+    btn.classList.add('ramadan-on');
+    btn.title = 'Désactiver le Mode Ramadan';
+  } else {
+    btn.classList.remove('ramadan-on');
+    btn.title = 'Activer le Mode Ramadan';
+  }
+}
+
+// ── TABS ──
+function renderTabs() {
+  const tabs = document.getElementById('levelTabs');
+  tabs.innerHTML = LEVELS.map(l => {
+    const unlocked = state._unlocked.includes(l.id);
+    const active   = l.id === currentLevel;
+    const pct      = getLevelProgress(l.id);
+    const done     = pct >= 100;
+    let cls = 'tab';
+    if (active)        cls += ' active';
+    else if (!unlocked) cls += ' locked';
+    else if (done)     cls += ' done';
+    const lock = !unlocked ? ' 🔒' : done ? ' ✓' : '';
+    return '<div class="' + cls + '" onclick="selectLevel(' + l.id + ')">' + l.title + lock + '</div>';
+  }).join('');
+}
+
+function selectLevel(id) {
+  if (id > 1 && !state._unlocked.includes(id)) {
+    showToast('Termine le niveau ' + (id-1) + ' a 100% pour debloquer 🔒');
+    return;
+  }
+  currentLevel = id;
+  saveState();
+  renderTabs();
+  renderLevel(id);
+}
+
+// ── RENDER LEVEL ──
+function renderLevel(levelId) {
+  const level   = LEVELS.find(l => l.id === levelId);
+  const content = document.getElementById('content');
+  const pct     = getLevelProgress(levelId);
+
+  if (!state._unlocked.includes(levelId)) {
+    content.innerHTML = '<div class="locked-screen"><div class="lock-ring">🔒</div><div class="lock-title">Niveau ' + levelId + ' verrouille</div><div class="lock-sub">Complete le Niveau ' + (levelId-1) + ' pour debloquer ce niveau.</div></div>';
+    return;
+  }
+
+  const fridayBanner = (level.id === 1 && isFriday()) ? '<div class="friday-banner"><div style="font-size:22px">🌟</div><div class="friday-txt"><div class="friday-title">Yawm al-Jumuah — Vendredi beni</div><div class="friday-sub">La priere du vendredi est obligatoire aujourd\'hui</div></div></div>' : '';
+  const graceBanner = (level.id === 1 && isGraceActive()) ?
+    '<div style="background:linear-gradient(135deg,rgba(255,149,0,0.12),rgba(255,214,10,0.06));border:1px solid rgba(255,149,0,0.25);border-radius:var(--r-lg);padding:12px 16px;margin-bottom:8px;display:flex;align-items:center;gap:12px;">' +
+    '<div style="font-size:22px">⏳</div>' +
+    '<div><div style="font-size:13px;font-weight:600;color:#ff9500;">Tu as manqué hier</div>' +
+    '<div style="font-size:11px;color:var(--t3);margin-top:2px;">Complete le Niveau 1 aujourd\'hui pour sauver ton streak 🌿</div></div></div>' : '';
+  const prayerCard = level.id === 1 ? renderPrayerTimesCard() : '';
+
+  let html = '<div class="level-hero"><div class="hero-label">Niveau ' + level.id + '</div><div class="hero-title">' + level.title + '</div><div class="hero-bar-row"><div class="hero-bar-track"><div class="hero-bar-fill" style="width:' + pct + '%"></div></div><div class="hero-pct">' + Math.round(pct) + '%</div></div></div>' + graceBanner + fridayBanner + prayerCard;
+
+  level.sections.forEach(section => {
+    html += '<div class="section"><div class="section-title-row"><div class="section-icon-wrap">' + section.icon + '</div><div class="section-name">' + section.title + '</div></div>';
+
+    html += '<div class="items-group">';
+    section.items.forEach((item, idx) => {
+      const delay = idx * 30;
+      if (item.type === 'counter') {
+        html += renderCounter(item, delay);
+      } else {
+        const checked = !!state[item.id];
+        const fridayCls = item.isFriday ? ' friday-item' : '';
+        const arabicHtml = item.arabic ? '<div class="item-arabic">' + item.arabic + '</div>' : '';
+        const audioSrc = Array.isArray(item.audio) ? JSON.stringify(item.audio).replace(/"/g,"'") : item.audio;
+        const audioBtn = item.audio ? '<button class="btn-audio" onclick="playAudio(' + (Array.isArray(item.audio) ? JSON.stringify(item.audio) : '\'' + item.audio + '\'') + ',this,event)" title="Écouter la récitation">🔊</button>' : '';
+        // Info button pour items avec phonétique
+        let infoBtn = '';
+        if (item.sub && item.sub.includes('·') && item.arabic) {
+          const parts = item.sub.split('·');
+          const phonetic = parts[0].trim();
+          const translation = parts.slice(1).join('·').trim();
+          const labelEsc2 = item.label.replace(/'/g,"\\'");
+          const arabicEsc2 = (item.arabic||'').replace(/'/g,"\\'");
+          const phoneticEsc = phonetic.replace(/'/g,"\\'");
+          const translationEsc = translation.replace(/'/g,"\\'");
+          infoBtn = '<button class="btn-info" onclick="openInfoSheet(\'' + labelEsc2 + '\',\'' + arabicEsc2 + '\',\'' + phoneticEsc + '\',\'' + translationEsc + '\',event)" title="Voir la phonétique"><i>i</i></button>';
+        }
+        html += '<div class="item' + fridayCls + (checked ? ' checked' : '') + '" onclick="toggleItem(\'' + item.id + '\',event)" style="animation-delay:' + delay + 'ms;--i:' + idx + '" id="item-' + item.id + '"><div class="check-circle"><svg class="check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-body"><div class="item-label">' + item.label + '</div>' + (item.sub ? '<div class="item-sub">' + (item.sub.includes('·') ? item.sub.split('·')[0].trim() : item.sub) + '</div>' : '') + arabicHtml + '</div>' + audioBtn + infoBtn + '</div>';
+      }
+    });
+    html += '</div>';
+
+    if (section.links) {
+      section.links.forEach(link => {
+        html += '<a class="link-item" href="' + link.url + '" target="_blank" rel="noopener"><div class="link-icon-wrap">' + link.icon + '</div><div><div class="link-label">' + link.label + '</div><div class="link-sub">' + link.sub + '</div></div><div class="link-arrow">›</div></a>';
+      });
+    }
+    html += '</div>';
+  });
+
+  content.innerHTML = html;
+  level.sections.forEach(s => s.items.forEach(item => { if (item.type === 'counter') initCounterEl(item); }));
+}
+
+// ── COUNTER ──
+function renderCounter(item, delay) {
+  const count = state[item.id] || 0;
+  const done  = count >= item.target;
+  const arabicHtml = item.arabic ? '<div class="item-arabic" style="' + (done ? 'opacity:0.25' : '') + '">' + item.arabic + '</div>' : '';
+  const arabicEsc = (item.arabic || '').replace(/'/g, "\\'");
+  const labelEsc  = item.label.replace(/'/g, "\\'");
+  const fullscreenBtn = '<button class="btn-tasbih-fs" onclick="openTasbih(\'' + item.id + '\',' + item.target + ',\'' + labelEsc + '\',\'' + arabicEsc + '\')" title="Mode plein écran">⛶</button>';
+  const audioBtn = item.audio ? '<button class="btn-audio" onclick="playAudio(' + (Array.isArray(item.audio) ? JSON.stringify(item.audio) : '\'' + item.audio + '\'') + ',this,event)" title="Écouter la récitation">🔊</button>' : '';
+  return '<div class="item counter-item' + (done ? ' checked' : '') + '" style="animation-delay:' + delay + 'ms" id="item-' + item.id + '"><div class="counter-top"><div class="check-circle" id="cb-' + item.id + '" style="' + (done ? 'background:var(--green-grad);border-color:var(--green);box-shadow:0 0 0 4px var(--green-soft),0 0 16px rgba(52,217,98,0.25)' : '') + '"><svg class="check-svg" style="' + (done ? 'opacity:1;transform:scale(1)' : '') + '" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-body"><div class="item-label">' + item.label + '</div><div class="item-sub">' + item.sub + '</div>' + arabicHtml + '</div>' + audioBtn + fullscreenBtn + '</div><div class="counter-body"><button class="btn-cnt-reset" onclick="resetCounter(\'' + item.id + '\')">↺</button><div class="counter-display"><div class="counter-num" id="cnt-num-' + item.id + '">' + count + '</div><div class="counter-total">/ ' + item.target + '</div><div class="counter-bar-track"><div class="counter-bar-fill" id="cnt-bar-' + item.id + '" style="width:' + Math.min(count/item.target*100,100) + '%"></div></div></div><button class="btn-cnt" onclick="incrementCounter(\'' + item.id + '\',' + item.target + ')">+</button></div></div>';
+}
+
+function initCounterEl(item) {}
+
+function incrementCounter(id, target) {
+  const count = (state[id] || 0) + 1;
+  if (count > target) return;
+  state[id] = count;
+  saveState();
+  const numEl  = document.getElementById('cnt-num-' + id);
+  const barEl  = document.getElementById('cnt-bar-' + id);
+  const itemEl = document.getElementById('item-' + id);
+  const cbEl   = document.getElementById('cb-' + id);
+  if (numEl) numEl.textContent = count;
+  if (barEl) barEl.style.width = Math.min(count/target*100,100) + '%';
+  playCounterSound();
+  if (count >= target) {
+    itemEl && itemEl.classList.add('checked');
+    if (cbEl) {
+      cbEl.style.background = 'var(--green-grad)'; cbEl.style.borderColor = 'var(--green)';
+      cbEl.style.boxShadow = '0 0 0 4px var(--green-soft), 0 0 16px rgba(52,217,98,0.25)';
+      const svg = cbEl.querySelector('.check-svg');
+      if (svg) { svg.style.opacity = '1'; svg.style.transform = 'scale(1)'; }
+    }
+    itemEl && itemEl.classList.add('celebrate');
+    setTimeout(() => itemEl && itemEl.classList.remove('celebrate'), 400);
+    if (navigator.vibrate) navigator.vibrate([20, 40, 80]);
+    playCompleteSound();
+    showToast('🌿 Mashallah ! ' + target + ' fois accompli !');
+    checkLevelCompletion(currentLevel);
+  } else {
+    if (navigator.vibrate) navigator.vibrate(8);
+  }
+  updateGlobalProgress();
+  renderTabs();
+  checkBadges();
+}
+
+function resetCounter(id) {
+  state[id] = 0; saveState();
+  renderLevel(currentLevel); updateGlobalProgress();
+}
+
+// ── SOUND (Web Audio API) ──
+let _audioCtx = null;
+function getAudioCtx() {
+  if (!_audioCtx) {
+    try { _audioCtx = new (window.AudioContext || window.webkitAudioContext)(); } catch(e) {}
+  }
+  return _audioCtx;
+}
+function playCheckSound() {
+  const ctx = getAudioCtx();
+  if (!ctx) return;
+  try {
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(520, ctx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(780, ctx.currentTime + 0.08);
+    gain.gain.setValueAtTime(0.13, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.22);
+    osc.start(ctx.currentTime);
+    osc.stop(ctx.currentTime + 0.22);
+  } catch(e) {}
+}
+function playCounterSound() {
+  const ctx = getAudioCtx();
+  if (!ctx) return;
+  try {
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(440, ctx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(560, ctx.currentTime + 0.06);
+    gain.gain.setValueAtTime(0.09, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.14);
+    osc.start(ctx.currentTime);
+    osc.stop(ctx.currentTime + 0.14);
+  } catch(e) {}
+}
+function playCompleteSound() {
+  const ctx = getAudioCtx();
+  if (!ctx) return;
+  try {
+    const notes = [523, 659, 784, 1047];
+    notes.forEach((freq, i) => {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.connect(gain); gain.connect(ctx.destination);
+      osc.type = 'sine';
+      const t = ctx.currentTime + i * 0.09;
+      osc.frequency.setValueAtTime(freq, t);
+      gain.gain.setValueAtTime(0.12, t);
+      gain.gain.exponentialRampToValueAtTime(0.001, t + 0.25);
+      osc.start(t); osc.stop(t + 0.25);
+    });
+  } catch(e) {}
+}
+
+// ── RIPPLE ──
+function spawnRipple(el, event) {
+  const rect = el.getBoundingClientRect();
+  const x = (event.touches ? event.touches[0].clientX : event.clientX) - rect.left;
+  const y = (event.touches ? event.touches[0].clientY : event.clientY) - rect.top;
+  const size = Math.max(rect.width, rect.height) * 0.8;
+  const ripple = document.createElement('span');
+  ripple.className = 'ripple';
+  ripple.style.cssText = 'width:' + size + 'px;height:' + size + 'px;left:' + (x - size/2) + 'px;top:' + (y - size/2) + 'px;';
+  el.appendChild(ripple);
+  ripple.addEventListener('animationend', () => ripple.remove(), { once: true });
+}
+// ── TOGGLE ──
+function toggleItem(id, event) {
+  state[id] = !state[id];
+  saveState();
+  const el = document.getElementById('item-' + id);
+  if (el) {
+    if (event) spawnRipple(el, event);
+    el.classList.toggle('checked', !!state[id]);
+    if (state[id]) {
+      el.classList.add('celebrate');
+      setTimeout(() => el.classList.remove('celebrate'), 400);
+      if (navigator.vibrate) navigator.vibrate([12, 8, 25]);
+      playCheckSound();
+      if (id === 'jumua') {
+        if (!history.jumuahDays) history.jumuahDays = {};
+        if (!history.jumuahDays[TODAY]) {
+          history.jumuahDays[TODAY] = true;
+          history.jumuahCount = (history.jumuahCount || 0) + 1;
+          saveHistory();
+          showToast('🕌 Jumuah accomplie — Barakallahu feek !');
+        }
+      }
+    }
+  }
+  checkLevelCompletion(currentLevel);
+  updateGlobalProgress();
+  renderTabs();
+  checkBadges();
+}
+
+// ── RESET ──
+function confirmReset() {
+  if (confirm('Remettre a zero toutes les cases du jour ?')) {
+    const ul = state._unlocked;
+    state = { _date: TODAY, _unlocked: ul };
+    saveState();
+    renderLevel(currentLevel); updateGlobalProgress(); renderTabs();
+    showToast('Nouvelle journee — Bismillah 🌿');
+  }
+}
+
+// ── TOAST ──
+let toastTimeout;
+function showToast(msg) {
+  if (!msg) return;
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  clearTimeout(toastTimeout);
+  toastTimeout = setTimeout(() => t.classList.remove('show'), 2600);
+}
+
+// ── SHARE ──
+function shareStreak() {
+  const streakDone = history.streak + (getLevelProgress(1) >= 100 ? 1 : 0);
+  const medal = getMedalLevel();
+  const medalLabel = { none: '', bronze: '🥉', silver: '🥈', gold: '🥇' }[medal] || '';
+  const text = medalLabel + ' Jour ' + streakDone + ' de pratique spirituelle avec Niyyah — Alhamdulillah ! 🌿';
+  if (navigator.share) navigator.share({ title: 'Niyyah', text });
+  else navigator.clipboard && navigator.clipboard.writeText(text).then(() => showToast('Copie dans le presse-papier !'));
+}
+
+// ── YEAR CALENDAR ──
+let calYear = new Date().getFullYear();
+
+function renderYearCalendar() {
+  const el = document.getElementById('yearCalContent');
+  if (!el) return;
+  const todayDone = getLevelProgress(1) >= 100;
+  const currentMedal = getMedalLevel();
+  const MONTHS = ['Jan','Fev','Mar','Avr','Mai','Jun','Jul','Aou','Sep','Oct','Nov','Dec'];
+  const nowYear = new Date().getFullYear();
+  const canNext = calYear < nowYear;
+
+  let html = '<div class="year-nav"><button class="year-nav-btn" onclick="calYear--;renderYearCalendar()">&#8249;</button><div class="year-nav-title">' + calYear + '</div><button class="year-nav-btn" style="opacity:' + (canNext ? '1' : '0.3') + '" onclick="' + (canNext ? 'calYear++;renderYearCalendar()' : '') + '">&#8250;</button></div><div class="year-months">';
+
+  for (let m = 0; m < 12; m++) {
+    const daysInMonth = new Date(calYear, m+1, 0).getDate();
+    html += '<div class="year-month"><div class="year-month-label">' + MONTHS[m] + '</div><div class="year-days">';
+    for (let d = 1; d <= daysInMonth; d++) {
+      const dStr = calYear + '-' + String(m+1).padStart(2,'0') + '-' + String(d).padStart(2,'0');
+      const isToday  = dStr === TODAY;
+      const isFuture = dStr > TODAY;
+      let medal = null;
+      if (isToday && todayDone) medal = currentMedal;
+      else if (!isFuture && !isToday) medal = ((history.dayMedals && history.dayMedals[dStr])) || ((history.days && history.days[dStr]) ? 'bronze' : null);
+      const medalCls = { bronze: 'yb', silver: 'ys', gold: 'yg' };
+      let cls = 'year-day';
+      if (isFuture) cls += ' fy';
+      else if (medal) cls += ' ' + (medalCls[medal] || 'yb');
+      if (isToday) cls += ' yt';
+      html += '<div class="' + cls + '"></div>';
+    }
+    html += '</div></div>';
+  }
+  html += '</div><div class="year-legend"><div class="yl-item"><div class="yl-dot" style="background:var(--card2)"></div>Aucune</div><div class="yl-item"><div class="yl-dot" style="background:#d4914a"></div>Bronze</div><div class="yl-item"><div class="yl-dot" style="background:#b0c4ce"></div>Argent</div><div class="yl-item"><div class="yl-dot" style="background:var(--gold)"></div>Or</div></div>';
+  el.innerHTML = html;
+}
+
+// ── PROGRESSION ──
+function renderProgression() {
+  const el = document.getElementById('progContent');
+  const todayDone = getLevelProgress(1) >= 100;
+  const streakDisplay = history.streak + (todayDone ? 1 : 0);
+  const bestDisplay   = Math.max(history.bestStreak, streakDisplay);
+  const totalDisplay  = history.totalDays + (todayDone ? 1 : 0);
+  const currentMedal  = getMedalLevel();
+
+  // Flame
+  const flame = streakDisplay >= 7 ? '🔥' : streakDisplay >= 3 ? '🕯️' : '✦';
+
+  // Medal trio
+  const MEDALS = [
+    { key: 'bronze', name: 'Bronze', icon: '🥉', cond: 'Niv. 1 complet' },
+    { key: 'silver', name: 'Argent', icon: '🥈', cond: 'Niv. 1 + 2' },
+    { key: 'gold',   name: 'Or',     icon: '🥇', cond: 'Tout + streak 3j' },
+  ];
+  const mOrder = ['none','bronze','silver','gold'];
+  const medalTrio = MEDALS.map(m => {
+    const earned = mOrder.indexOf(currentMedal) >= mOrder.indexOf(m.key);
+    return '<div class="medal-cell' + (earned ? ' e-' + m.key : '') + '"><div class="medal-icon">' + m.icon + '</div><div class="medal-name">' + m.name + '</div><div class="medal-cond">' + m.cond + '</div></div>';
+  }).join('');
+
+  // Week strip
+  const DAY_NAMES = ['Di','Lu','Ma','Me','Je','Ve','Sa'];
+  const today = new Date();
+  let weekHTML = '';
+  for (let i = 6; i >= 0; i--) {
+    const d = new Date(today); d.setDate(d.getDate() - i);
+    const dStr    = d.toISOString().split('T')[0];
+    const isToday = dStr === TODAY;
+    const medal   = isToday ? (todayDone ? currentMedal : null) : ((history.dayMedals && history.dayMedals[dStr]) || (history.days[dStr] ? 'bronze' : null));
+    const isDone  = !!medal;
+    const dotMap  = { bronze: '🥉', silver: '🥈', gold: '🥇' };
+    let cls = 'day-cell';
+    if (isDone)  cls += ' d-' + medal;
+    if (isToday) cls += ' d-today';
+    weekHTML += '<div class="' + cls + '"><div class="d-name">' + DAY_NAMES[d.getDay()] + '</div><div class="d-dot">' + (isDone ? (dotMap[medal]||'✓') : (isToday ? '◎' : '')) + '</div><div class="d-num">' + d.getDate() + '</div></div>';
+  }
+
+  // Badges
+  let badgesHTML = '';
+  BADGES.forEach(badge => {
+    const unlocked = history.unlockedBadges.includes(badge.id);
+    let cls = 'badge-card';
+    if (unlocked) { cls += ' unlocked'; if (badge.gold) cls += ' is-gold'; }
+    else cls += ' locked';
+    badgesHTML += '<div class="' + cls + '"><div class="badge-icon-wrap">' + badge.emoji + '</div><div class="badge-name">' + badge.name + '</div><div class="badge-desc">' + badge.desc + '</div>' + (unlocked ? '<div class="badge-tag">' + (badge.gold ? '★ Or' : '✓ Obtenu') + '</div>' : '') + '</div>';
+  });
+
+  el.innerHTML = '<div class="streak-card"><div class="streak-inner"><div><div class="streak-label">Serie en cours</div><div class="streak-num">' + streakDisplay + '</div><div class="streak-unit">jours consecutifs</div></div><div class="streak-flame">' + flame + '</div></div><div class="medal-trio">' + medalTrio + '</div><div class="streak-footer">Meilleure : <span>' + bestDisplay + 'j</span> &nbsp;·&nbsp; Total : <span>' + totalDisplay + ' jours</span></div></div><div class="stats-row"><div class="stat-box"><div class="stat-num">' + history.unlockedBadges.length + '</div><div class="stat-label">Badges</div></div><div class="stat-box"><div class="stat-num">' + BADGES.length + '</div><div class="stat-label">Total</div></div><div class="stat-box"><div class="stat-num">' + Math.round((history.unlockedBadges.length/BADGES.length)*100) + '%</div><div class="stat-label">Completion</div></div></div><div class="section-label">Cette semaine</div><div class="week-strip">' + weekHTML + '</div><div class="section-label">Cette annee</div><div class="year-card" id="yearCalContent"></div><div class="section-label">Badges</div><div class="badges-grid">' + badgesHTML + '</div>';
+
+  renderYearCalendar();
+}
+
+// ── INFO SHEET ──
+function openInfoSheet(label, arabic, phonetic, translation, event) {
+  if (event) event.stopPropagation();
+  document.getElementById('infoLabel').textContent = label;
+  document.getElementById('infoArabic').textContent = arabic || '';
+  document.getElementById('infoPhonetic').textContent = phonetic || '';
+  document.getElementById('infoTranslation').textContent = translation || '';
+  document.getElementById('infoSheet').classList.add('show');
+  document.getElementById('infoOverlay').classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+function closeInfoSheet() {
+  document.getElementById('infoSheet').classList.remove('show');
+  document.getElementById('infoOverlay').classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+// ── AUDIO PLAYER ──
+let _currentAudio = null;
+let _currentBtn   = null;
+
+function playAudio(urlOrArr, btn, event) {
+  if (event) event.stopPropagation();
+
+  // SoundCloud track
+  if (typeof urlOrArr === 'string' && urlOrArr.startsWith('sc:')) {
+    const trackId = urlOrArr.replace('sc:', '');
+    const scUrl = trackId.startsWith('http') ? trackId : 'https://api.soundcloud.com/tracks/' + trackId;
+    openSoundCloudPlayer(scUrl, btn);
+    return;
+  }
+
+  // Si même bouton — stop
+  if (_currentAudio && _currentBtn === btn) {
+    _currentAudio.pause();
+    _currentAudio = null;
+    btn.textContent = '🔊';
+    btn.classList.remove('playing');
+    _currentBtn = null;
+    return;
+  }
+
+  // Stop le précédent
+  if (_currentAudio) {
+    _currentAudio.pause();
+    if (_currentBtn) { _currentBtn.textContent = '🔊'; _currentBtn.classList.remove('playing'); }
+  }
+
+  // Playlist ou URL simple
+  const urls = Array.isArray(urlOrArr) ? urlOrArr : [urlOrArr];
+  let idx = 0;
+
+  function playNext() {
+    if (idx >= urls.length) {
+      btn.textContent = '🔊';
+      btn.classList.remove('playing');
+      _currentAudio = null;
+      _currentBtn   = null;
+      return;
+    }
+    const audio = new Audio(urls[idx]);
+    _currentAudio = audio;
+    _currentBtn   = btn;
+    audio.play().then(() => {
+      btn.textContent = '⏹';
+      btn.classList.add('playing');
+      audio.onended = () => { idx++; playNext(); };
+      audio.onerror = () => {
+        btn.textContent = '🔊';
+        btn.classList.remove('playing');
+        _currentAudio = null;
+        _currentBtn   = null;
+        showToast('Audio indisponible — vérifie ta connexion');
+      };
+    }).catch(() => {
+      btn.textContent = '🔊';
+      btn.classList.remove('playing');
+      showToast('Audio indisponible — vérifie ta connexion');
+    });
+  }
+
+  playNext();
+}
+
+function openSoundCloudPlayer(trackUrl, btn) {
+  // Ferme le player précédent si ouvert
+  const existing = document.getElementById('scPlayerOverlay');
+  if (existing) { existing.remove(); if (_currentBtn) { _currentBtn.textContent = '🔊'; _currentBtn.classList.remove('playing'); } }
+  if (_currentBtn === btn) { _currentBtn = null; return; }
+
+  btn.textContent = '⏹';
+  btn.classList.add('playing');
+  _currentBtn = btn;
+
+  const overlay = document.createElement('div');
+  overlay.id = 'scPlayerOverlay';
+  overlay.style.cssText = 'position:fixed;bottom:80px;left:16px;right:16px;z-index:998;background:var(--card);border-radius:16px;border:1px solid var(--sep2);box-shadow:0 8px 32px rgba(0,0,0,0.5);overflow:hidden;';
+
+  const closeBtn = document.createElement('button');
+  closeBtn.textContent = '✕';
+  closeBtn.style.cssText = 'position:absolute;top:8px;right:8px;z-index:2;background:var(--card2);border:none;color:var(--t2);width:24px;height:24px;border-radius:50%;font-size:12px;cursor:pointer;';
+  closeBtn.onclick = () => { overlay.remove(); btn.textContent = '🔊'; btn.classList.remove('playing'); _currentBtn = null; };
+
+  const encodedUrl = encodeURIComponent(trackUrl);
+  const iframe = document.createElement('iframe');
+  iframe.width = '100%';
+  iframe.height = '120';
+  iframe.scrolling = 'no';
+  iframe.frameBorder = 'no';
+  iframe.allow = 'autoplay';
+  iframe.src = 'https://w.soundcloud.com/player/?url=' + encodedUrl + '&color=%2334d962&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false';
+
+  overlay.appendChild(closeBtn);
+  overlay.appendChild(iframe);
+  document.body.appendChild(overlay);
+}
+
+// ── TASBIH FULLSCREEN ──
+let _tasbihId = null;
+let _tasbihTarget = 99;
+
+function openTasbih(id, target, label, arabic) {
+  _tasbihId = id;
+  _tasbihTarget = target;
+  const count = state[id] || 0;
+
+  document.getElementById('tasbihLabel').textContent = label;
+  document.getElementById('tasbihArabic').textContent = arabic || '';
+  document.getElementById('tasbihTotalLabel').textContent = '/ ' + target;
+  document.getElementById('tasbihBigNum').textContent = count;
+  document.getElementById('tasbihBarFill').style.width = Math.min(count / target * 100, 100) + '%';
+
+  const overlay = document.getElementById('tasbihOverlay');
+  overlay.classList.remove('done');
+  if (count >= target) overlay.classList.add('done');
+  overlay.classList.add('show');
+
+  // Tap zone
+  const zone = document.getElementById('tasbihTapZone');
+  zone.onclick = tapTasbih;
+
+  // Prevent scroll
+  document.body.style.overflow = 'hidden';
+}
+
+function tapTasbih() {
+  if (!_tasbihId) return;
+  const count = (state[_tasbihId] || 0) + 1;
+  if (count > _tasbihTarget) return;
+  state[_tasbihId] = count;
+  saveState();
+
+  // Update UI
+  const numEl = document.getElementById('tasbihBigNum');
+  numEl.textContent = count;
+  numEl.classList.remove('pop');
+  void numEl.offsetWidth; // reflow
+  numEl.classList.add('pop');
+  setTimeout(() => numEl.classList.remove('pop'), 150);
+
+  document.getElementById('tasbihBarFill').style.width = Math.min(count / _tasbihTarget * 100, 100) + '%';
+
+  // Sound + vibration
+  playCounterSound();
+  if (navigator.vibrate) navigator.vibrate(8);
+
+  if (count >= _tasbihTarget) {
+    document.getElementById('tasbihOverlay').classList.add('done');
+    if (navigator.vibrate) navigator.vibrate([20, 40, 80]);
+    playCompleteSound();
+    showToast('🌿 Mashallah ! ' + _tasbihTarget + ' fois accompli !');
+    // Sync back to main state
+    const barEl = document.getElementById('cnt-bar-' + _tasbihId);
+    const numEl2 = document.getElementById('cnt-num-' + _tasbihId);
+    if (barEl) barEl.style.width = '100%';
+    if (numEl2) numEl2.textContent = count;
+    checkLevelCompletion(currentLevel);
+    updateGlobalProgress();
+    renderTabs();
+    checkBadges();
+  }
+  // Sync counter in background
+  const barEl = document.getElementById('cnt-bar-' + _tasbihId);
+  const numEl2 = document.getElementById('cnt-num-' + _tasbihId);
+  if (barEl) barEl.style.width = Math.min(count / _tasbihTarget * 100, 100) + '%';
+  if (numEl2) numEl2.textContent = count;
+  updateGlobalProgress();
+}
+
+function resetTasbihOverlay() {
+  if (!_tasbihId) return;
+  state[_tasbihId] = 0;
+  saveState();
+  document.getElementById('tasbihBigNum').textContent = '0';
+  document.getElementById('tasbihBarFill').style.width = '0%';
+  document.getElementById('tasbihOverlay').classList.remove('done');
+  renderLevel(currentLevel);
+  updateGlobalProgress();
+}
+
+function closeTasbih() {
+  document.getElementById('tasbihOverlay').classList.remove('show');
+  document.body.style.overflow = '';
+  renderLevel(currentLevel);
+}
+
+// ══════════════════════════
+// HORAIRES DE PRIÈRE
+// ══════════════════════════
+let _prayerTimes = null;
+let _prayerCity  = localStorage.getItem('niyyah_city') || '';
+let _prayerCountry = localStorage.getItem('niyyah_country') || 'France';
+let _prayerLoading = false;
+let _prayerError   = false;
+let _showCityInput = false; // On ne montre jamais le champ dans la card — uniquement via ✏️
+
+const PRAYER_NAMES = ['Fajr','Dhuhr','Asr','Maghrib','Isha'];
+const PRAYER_LABELS = ['Fajr','Dhuhr','Asr','Maghrib','Isha'];
+
+function renderPrayerTimesCard() {
+  if (_showCityInput) {
+    return '<div class="prayer-times-card">' +
+      '<div class="prayer-times-header"><div class="prayer-times-title">🕌 Horaires du jour</div></div>' +
+      '<div style="font-size:12px;color:var(--t3);margin-bottom:8px;">Entre ta ville pour voir les horaires de prière</div>' +
+      '<div class="city-input-wrap">' +
+        '<input class="city-input" id="cityInput" type="text" placeholder="Ex: Paris, Casablanca, Bruxelles..." value="' + (_prayerCity||'') + '" onkeydown="if(event.key===\'Enter\')saveCityAndLoad()">' +
+        '<button class="city-input-btn" onclick="saveCityAndLoad()">OK</button>' +
+      '</div>' +
+    '</div>';
+  }
+  if (_prayerLoading) {
+    return '<div class="prayer-times-card"><div class="prayer-times-loading">Chargement des horaires... 🕌</div></div>';
+  }
+  if (_prayerError) {
+    return '<div class="prayer-times-card">' +
+      '<div class="prayer-times-header"><div class="prayer-times-title">🕌 Horaires</div>' +
+        '<div class="prayer-times-city" onclick="showCityInput()">✏️ ' + (_prayerCity||'Ville') + '</div>' +
+      '</div>' +
+      '<div style="font-size:12px;color:var(--t3);text-align:center;padding:8px;">Erreur — vérifie ta connexion ou la ville</div>' +
+      '<div class="city-input-wrap">' +
+        '<input class="city-input" id="cityInput" type="text" placeholder="Ville..." value="' + (_prayerCity||'') + '" onkeydown="if(event.key===\'Enter\')saveCityAndLoad()">' +
+        '<button class="city-input-btn" onclick="saveCityAndLoad()">Réessayer</button>' +
+      '</div>' +
+    '</div>';
+  }
+  if (!_prayerTimes) return '';
+
+  const now = new Date();
+  const nowMin = now.getHours() * 60 + now.getMinutes();
+
+  function timeToMin(t) {
+    const parts = t.split(':');
+    return parseInt(parts[0]) * 60 + parseInt(parts[1]);
+  }
+
+  const times = PRAYER_NAMES.map(n => ({ name: n, time: _prayerTimes[n] }));
+  let nextIdx = times.findIndex(t => timeToMin(t.time) > nowMin);
+  if (nextIdx === -1) nextIdx = -1; // toutes passées
+
+  let grid = '<div class="prayer-times-grid">';
+  times.forEach((t, i) => {
+    const tMin = timeToMin(t.time);
+    const isPassed = tMin <= nowMin && i !== nextIdx;
+    const isNext   = i === nextIdx;
+    const cls = 'prayer-time-item' + (isNext ? ' next' : isPassed ? ' passed' : '');
+    grid += '<div class="' + cls + '">' +
+      '<div class="prayer-time-name">' + t.name + '</div>' +
+      '<div class="prayer-time-hour">' + t.time.substring(0,5) + '</div>' +
+    '</div>';
+  });
+  grid += '</div>';
+
+  return '<div class="prayer-times-card">' +
+    '<div class="prayer-times-header">' +
+      '<div class="prayer-times-title">🕌 Horaires — aujourd\'hui</div>' +
+      '<div class="prayer-times-city" onclick="showCityInput()">✏️ ' + _prayerCity + '</div>' +
+    '</div>' +
+    grid +
+  '</div>';
+}
+
+function saveCityAndLoad() {
+  const input = document.getElementById('cityInput');
+  if (!input || !input.value.trim()) return;
+  _prayerCity = input.value.trim();
+  localStorage.setItem('niyyah_city', _prayerCity);
+  _showCityInput = false;
+  loadPrayerTimes();
+}
+
+function showCityInput() {
+  _showCityInput = true;
+  renderLevel(currentLevel);
+  setTimeout(() => { const el = document.getElementById('cityInput'); if (el) el.focus(); }, 100);
+}
+
+function loadPrayerTimes() {
+  if (!_prayerCity) { _showCityInput = true; renderLevel(currentLevel); return; }
+  _prayerLoading = true;
+  _prayerError   = false;
+  renderLevel(currentLevel);
+
+  const url = 'https://api.aladhan.com/v1/timingsByAddress?address=' +
+    encodeURIComponent(_prayerCity) + '&method=2';
+
+  fetch(url)
+    .then(r => r.json())
+    .then(d => {
+      if (d.code === 200 && d.data && d.data.timings) {
+        _prayerTimes   = d.data.timings;
+        _prayerLoading = false;
+        _prayerError   = false;
+        renderLevel(currentLevel);
+      } else {
+        throw new Error('bad response');
+      }
+    })
+    .catch(() => {
+      _prayerLoading = false;
+      _prayerError   = true;
+      renderLevel(currentLevel);
+    });
+}
+
+// ══════════════════════════
+// ONBOARDING
+// ══════════════════════════
+let _onboardStep = 0;
+const _onboardDone = localStorage.getItem('niyyah_onboard') === '1';
+
+const ONBOARD_SLIDES = [
+  // Écran 1 — Logo + pitch
+  () => `
+    <div class="onboard-anim">
+      <img src="https://nabs881-sketch.github.io/niyyah-app/logo2.png" style="width:160px;height:160px;object-fit:contain;margin-bottom:20px;border-radius:50%;animation:onboardFloat 3s ease-in-out infinite;" alt="Niyyah">
+      <div class="onboard-logo">Niyyah</div>
+      <div class="onboard-tagline">نِيَّة · Pose ton intention</div>
+      <div class="onboard-title">Ta pratique spirituelle,<br>chaque jour</div>
+      <div class="onboard-sub">Niyyah t'accompagne dans ton chemin vers Allah — à ton rythme, sans jugement.</div>
+      <button class="onboard-btn" onclick="onboardNext()">Commencer →</button>
+      <button class="onboard-skip" onclick="onboardFinish()">Passer</button>
+    </div>`,
+
+  // Écran 2 — Les 4 niveaux
+  () => `
+    <div class="onboard-anim">
+      <div class="onboard-title">4 niveaux de pratique</div>
+      <div class="onboard-sub" style="margin-bottom:24px;">Progresse à ton rythme — chaque niveau se débloque quand tu es prêt.</div>
+      <div class="onboard-levels">
+        <div class="onboard-level">
+          <div class="onboard-level-icon">🕌</div>
+          <div><div class="onboard-level-name">Fondations</div><div class="onboard-level-desc">Les 5 prières · Dhikr · Récitation</div></div>
+        </div>
+        <div class="onboard-level">
+          <div class="onboard-level-icon">📿</div>
+          <div><div class="onboard-level-name">Approfondissement</div><div class="onboard-level-desc">Mosquée · Istighfar · Tasbih</div></div>
+        </div>
+        <div class="onboard-level">
+          <div class="onboard-level-icon">📚</div>
+          <div><div class="onboard-level-name">Connaissance</div><div class="onboard-level-desc">Hadiths · Coran · Arabe</div></div>
+        </div>
+        <div class="onboard-level">
+          <div class="onboard-level-icon">💚</div>
+          <div><div class="onboard-level-name">Rayonnement</div><div class="onboard-level-desc">Sadaqa · Salam · Douaas</div></div>
+        </div>
+      </div>
+      <button class="onboard-btn" onclick="onboardNext()">Suivant →</button>
+      <button class="onboard-skip" onclick="onboardFinish()">Passer</button>
+    </div>`,
+
+  // Écran 3 — Ville pour horaires
+  () => `
+    <div class="onboard-anim">
+      <img src="https://nabs881-sketch.github.io/niyyah-app/logo2.png" style="width:100px;height:100px;object-fit:contain;margin-bottom:20px;border-radius:50%;" alt="Niyyah">
+      <div class="onboard-title">Tes horaires de prière</div>
+      <div class="onboard-sub">Entre ta ville pour afficher les horaires de Fajr, Dhuhr, Asr, Maghrib et Isha chaque jour.</div>
+      <div class="city-input-wrap" style="max-width:300px;margin-bottom:16px;">
+        <input class="city-input" id="onboardCityInput" type="text"
+          placeholder="Ex: Paris, Orléans, Casablanca..."
+          value="${_prayerCity||''}"
+          onkeydown="if(event.key==='Enter')onboardSaveCity()">
+        <button class="city-input-btn" onclick="onboardSaveCity()">OK</button>
+      </div>
+      <button class="onboard-btn" onclick="onboardFinish()" style="max-width:300px;">C'est parti — Bismillah 🌿</button>
+      <button class="onboard-skip" onclick="onboardFinish()">Plus tard</button>
+    </div>`
+];
+
+function onboardRender() {
+  const content = document.getElementById('onboardContent');
+  if (content) content.innerHTML = ONBOARD_SLIDES[_onboardStep]();
+  [0,1,2].forEach(i => {
+    const dot = document.getElementById('dot' + i);
+    if (dot) dot.className = 'onboard-dot' + (i === _onboardStep ? ' active' : '');
+  });
+  // Focus ville sur écran 3
+  if (_onboardStep === 2) {
+    setTimeout(() => {
+      const el = document.getElementById('onboardCityInput');
+      if (el) el.focus();
+    }, 400);
+  }
+}
+
+function onboardNext() {
+  if (_onboardStep < ONBOARD_SLIDES.length - 1) {
+    _onboardStep++;
+    onboardRender();
+  } else {
+    onboardFinish();
+  }
+}
+
+function onboardSaveCity() {
+  const el = document.getElementById('onboardCityInput');
+  if (el && el.value.trim()) {
+    _prayerCity = el.value.trim();
+    localStorage.setItem('niyyah_city', _prayerCity);
+    _showCityInput = false;
+  }
+  onboardFinish();
+}
+
+function onboardFinish() {
+  localStorage.setItem('niyyah_onboard', '1');
+  const screen = document.getElementById('onboardScreen');
+  if (screen) {
+    screen.style.opacity = '0';
+    setTimeout(() => screen.classList.add('hidden'), 350);
+  }
+  if (_prayerCity) loadPrayerTimes();
+}
+
+// ── THEME ──
+let currentTheme = localStorage.getItem('spiritual_theme') || 'dark';
+
+function applyTheme(theme) {
+  currentTheme = theme;
+  document.documentElement.setAttribute('data-theme', theme === 'light' ? 'light' : '');
+  const btn = document.getElementById('btnTheme');
+  if (btn) btn.textContent = theme === 'light' ? '🌑' : '☀️';
+  localStorage.setItem('spiritual_theme', theme);
+}
+
+function toggleTheme() {
+  const next = currentTheme === 'dark' ? 'light' : 'dark';
+  applyTheme(next);
+  const msg = next === 'light' ? '☀️ Thème clair activé' : '🌙 Thème sombre activé';
+  showToast(msg);
+  if (navigator.vibrate) navigator.vibrate(18);
+}
+
+init();
+</script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => { navigator.serviceWorker.register('./sw.js').catch(() => {}); });
+}
+</script>
+</body>
+</html>
