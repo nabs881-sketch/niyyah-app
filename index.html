@@ -1,0 +1,2751 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#0A0A0A" />
+<title>Niyyah — Le Sanctuaire de l'Intention</title>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;500&family=Noto+Naskh+Arabic:wght@300;400;500&display=swap" rel="stylesheet" />
+
+<style>
+/* ═══════════════════════════════════════════════════
+   DESIGN SYSTEM — NIYYAH V2
+   ═══════════════════════════════════════════════════ */
+:root {
+  --void:        #0A0A0A;
+  --void-soft:   #111111;
+  --void-mid:    #1A1A1A;
+  --gold:        #D4AF37;
+  --gold-pale:   #E8D080;
+  --gold-dim:    #8A7020;
+  --sage:        #87A96B;
+  --sage-pale:   #B2C89A;
+  --sage-dim:    #4A6035;
+  --pearl:       #F0EAD6;
+  --mist:        rgba(212,175,55,0.08);
+  --mist-sage:   rgba(135,169,107,0.06);
+
+  --font-latin:  'Cormorant Garamond', Georgia, serif;
+  --font-title:  'Cinzel', serif;
+  --font-arabic: 'Noto Naskh Arabic', serif;
+
+  --orb-size:    220px;
+  --orb-glow:    60px;
+
+  --ease-silk:   cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-breath: cubic-bezier(0.45, 0, 0.55, 1);
+
+  --safe-top:    env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0; padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  background: var(--void);
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--void);
+  color: var(--pearl);
+  font-family: var(--font-latin);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.7;
+  min-height: 100svh;
+  overflow-x: hidden;
+  padding-top: var(--safe-top);
+  padding-bottom: var(--safe-bottom);
+}
+
+body[dir="rtl"] {
+  font-family: var(--font-arabic);
+  font-weight: 400;
+}
+
+/* Grain overlay for luxury texture */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.4;
+}
+
+/* ─── SCROLLBAR ─── */
+::-webkit-scrollbar { width: 2px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 2px; }
+
+/* ═══════════════════════════════════════════════════
+   NAVIGATION & SHELL
+   ═══════════════════════════════════════════════════ */
+.app-shell {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top bar */
+.topbar {
+  position: fixed;
+  top: var(--safe-top);
+  left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background: linear-gradient(to bottom, rgba(10,10,10,0.95), transparent);
+}
+
+.topbar-logo {
+  font-family: var(--font-title);
+  font-size: 18px;
+  letter-spacing: 0.25em;
+  color: var(--gold);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+.topbar-logo:hover { opacity: 0.7; }
+
+.topbar-actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.3s var(--ease-silk);
+  color: var(--pearl);
+  opacity: 0.6;
+  font-size: 18px;
+}
+.icon-btn:hover { opacity: 1; background: var(--mist); }
+
+/* Bottom nav */
+.bottom-nav {
+  position: fixed;
+  bottom: var(--safe-bottom);
+  left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 12px 0 16px;
+  background: linear-gradient(to top, rgba(10,10,10,0.98) 60%, transparent);
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 16px;
+  transition: all 0.3s var(--ease-silk);
+  opacity: 0.4;
+  border: none;
+  background: none;
+  color: var(--pearl);
+}
+.nav-item.active {
+  opacity: 1;
+  color: var(--gold);
+  background: var(--mist);
+}
+.nav-item:hover { opacity: 0.8; }
+
+.nav-icon { font-size: 20px; }
+.nav-label { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; font-family: var(--font-title); }
+
+/* ═══════════════════════════════════════════════════
+   SCREENS (PAGES)
+   ═══════════════════════════════════════════════════ */
+.screen {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100svh;
+  padding: 80px 24px 100px;
+  animation: screenFadeIn 0.6s var(--ease-silk) forwards;
+}
+.screen.active { display: flex; }
+
+@keyframes screenFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ═══════════════════════════════════════════════════
+   HOME SCREEN — L'ORBE DE LUMIÈRE
+   ═══════════════════════════════════════════════════ */
+#screen-home {
+  justify-content: center;
+  gap: 0;
+  padding-top: 60px;
+}
+
+/* Daily greeting */
+.greeting-area {
+  text-align: center;
+  margin-bottom: 48px;
+  animation: fadeSlideUp 0.8s var(--ease-silk) 0.2s both;
+}
+
+.greeting-top {
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: var(--gold-dim);
+  text-transform: uppercase;
+  font-family: var(--font-title);
+  margin-bottom: 8px;
+}
+
+.greeting-main {
+  font-size: 28px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--pearl);
+  line-height: 1.3;
+}
+
+[dir="rtl"] .greeting-main {
+  font-size: 24px;
+  font-style: normal;
+}
+
+/* ── THE ORB ── */
+.orb-container {
+  position: relative;
+  width: var(--orb-size);
+  height: var(--orb-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 0 auto 48px;
+}
+
+/* Outer ambient glow rings */
+.orb-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  pointer-events: none;
+}
+.orb-ring-1 {
+  width: calc(var(--orb-size) + 40px);
+  height: calc(var(--orb-size) + 40px);
+  border-color: rgba(212,175,55,0.08);
+  animation: orbRingPulse 4s var(--ease-breath) infinite;
+}
+.orb-ring-2 {
+  width: calc(var(--orb-size) + 80px);
+  height: calc(var(--orb-size) + 80px);
+  border-color: rgba(212,175,55,0.05);
+  animation: orbRingPulse 4s var(--ease-breath) 0.7s infinite;
+}
+.orb-ring-3 {
+  width: calc(var(--orb-size) + 130px);
+  height: calc(var(--orb-size) + 130px);
+  border-color: rgba(212,175,55,0.03);
+  animation: orbRingPulse 4s var(--ease-breath) 1.4s infinite;
+}
+
+@keyframes orbRingPulse {
+  0%, 100% { transform: scale(1);   opacity: 0.6; }
+  50%       { transform: scale(1.04); opacity: 1;   }
+}
+
+/* Core orb */
+.orb-core {
+  position: relative;
+  width: var(--orb-size);
+  height: var(--orb-size);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 38% 35%,
+    rgba(228, 218, 140, 0.18) 0%,
+    rgba(212,175,55, 0.10) 30%,
+    rgba(135,169,107, 0.06) 60%,
+    rgba(10,10,10, 0.98) 100%
+  );
+  border: 1px solid rgba(212,175,55,0.25);
+  box-shadow:
+    0 0 var(--orb-glow) rgba(212,175,55,0.12),
+    0 0 120px rgba(212,175,55,0.06),
+    inset 0 1px 0 rgba(212,175,55,0.15),
+    inset 0 -1px 0 rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.6s var(--ease-silk);
+  animation: orbBreath 5s var(--ease-breath) infinite;
+  z-index: 1;
+}
+
+.orb-core:hover, .orb-core:active {
+  box-shadow:
+    0 0 80px rgba(212,175,55,0.22),
+    0 0 160px rgba(212,175,55,0.10),
+    inset 0 1px 0 rgba(212,175,55,0.3);
+  border-color: rgba(212,175,55,0.5);
+  transform: scale(1.03);
+}
+
+/* Orb active (intention set) */
+.orb-core.intention-set {
+  background: radial-gradient(
+    circle at 38% 35%,
+    rgba(228,218,140,0.28) 0%,
+    rgba(212,175,55,0.18) 30%,
+    rgba(135,169,107,0.10) 60%,
+    rgba(10,10,10,0.95) 100%
+  );
+  border-color: rgba(212,175,55,0.5);
+  animation: orbBreathActive 4s var(--ease-breath) infinite;
+}
+
+@keyframes orbBreath {
+  0%, 100% { box-shadow: 0 0 60px rgba(212,175,55,0.12), 0 0 120px rgba(212,175,55,0.06), inset 0 1px 0 rgba(212,175,55,0.15); }
+  50%       { box-shadow: 0 0 80px rgba(212,175,55,0.20), 0 0 150px rgba(212,175,55,0.09), inset 0 1px 0 rgba(212,175,55,0.20); }
+}
+
+@keyframes orbBreathActive {
+  0%, 100% { box-shadow: 0 0 80px rgba(212,175,55,0.28), 0 0 160px rgba(212,175,55,0.12), inset 0 1px 0 rgba(212,175,55,0.25); }
+  50%       { box-shadow: 0 0 110px rgba(212,175,55,0.40), 0 0 200px rgba(212,175,55,0.18), inset 0 1px 0 rgba(212,175,55,0.35); }
+}
+
+/* Inner calligraphic symbol */
+.orb-symbol {
+  font-family: var(--font-arabic);
+  font-size: 36px;
+  color: rgba(212,175,55,0.6);
+  line-height: 1;
+  transition: all 0.5s;
+  user-select: none;
+}
+.orb-core:hover .orb-symbol,
+.orb-core.intention-set .orb-symbol {
+  color: rgba(212,175,55,0.9);
+}
+
+.orb-cta {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(212,175,55,0.5);
+  font-family: var(--font-title);
+  transition: color 0.3s;
+}
+.orb-core:hover .orb-cta {
+  color: rgba(212,175,55,0.8);
+}
+
+/* Today's intention chip */
+.intention-display {
+  text-align: center;
+  max-width: 280px;
+  margin-bottom: 40px;
+  animation: fadeSlideUp 0.8s var(--ease-silk) 0.4s both;
+}
+
+.intention-chip {
+  display: inline-block;
+  background: var(--mist);
+  border: 1px solid rgba(212,175,55,0.18);
+  border-radius: 100px;
+  padding: 8px 20px;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--gold-pale);
+  margin-bottom: 8px;
+}
+
+.intention-meta {
+  font-size: 11px;
+  color: rgba(240,234,214,0.3);
+  letter-spacing: 0.15em;
+  font-family: var(--font-title);
+}
+
+/* Level progress strip */
+.level-strip {
+  width: 100%;
+  max-width: 320px;
+  margin-bottom: 24px;
+  animation: fadeSlideUp 0.8s var(--ease-silk) 0.6s both;
+}
+
+.level-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.level-name {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--sage);
+  font-family: var(--font-title);
+}
+
+.level-xp {
+  font-size: 11px;
+  color: rgba(240,234,214,0.3);
+}
+
+.level-bar {
+  height: 2px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.level-fill {
+  height: 100%;
+  background: linear-gradient(to right, var(--sage-dim), var(--sage));
+  border-radius: 1px;
+  transition: width 1.2s var(--ease-silk);
+}
+
+/* Quick actions row */
+.quick-actions {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  max-width: 320px;
+  animation: fadeSlideUp 0.8s var(--ease-silk) 0.8s both;
+}
+
+.quick-btn {
+  flex: 1;
+  background: var(--void-mid);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 16px;
+  padding: 14px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-silk);
+  color: var(--pearl);
+  font-family: var(--font-latin);
+}
+[dir="rtl"] .quick-btn { font-family: var(--font-arabic); }
+.quick-btn:hover {
+  background: var(--mist);
+  border-color: rgba(212,175,55,0.2);
+  transform: translateY(-2px);
+}
+.quick-btn-icon { font-size: 22px; }
+.quick-btn-label {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  font-family: var(--font-title);
+}
+[dir="rtl"] .quick-btn-label {
+  font-family: var(--font-arabic);
+  letter-spacing: 0;
+  font-size: 11px;
+}
+
+/* ═══════════════════════════════════════════════════
+   INTENTION MODAL
+   ═══════════════════════════════════════════════════ */
+.modal-backdrop {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(10,10,10,0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 500;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0 0 var(--safe-bottom);
+}
+.modal-backdrop.open {
+  display: flex;
+  animation: backdropFade 0.3s ease forwards;
+}
+@keyframes backdropFade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.modal-sheet {
+  width: 100%;
+  max-width: 480px;
+  background: var(--void-soft);
+  border-radius: 24px 24px 0 0;
+  padding: 32px 28px 40px;
+  border-top: 1px solid rgba(212,175,55,0.15);
+  animation: sheetRise 0.5s var(--ease-silk) forwards;
+}
+@keyframes sheetRise {
+  from { transform: translateY(60px); opacity: 0; }
+  to   { transform: translateY(0);   opacity: 1; }
+}
+
+.modal-handle {
+  width: 40px; height: 3px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 2px;
+  margin: 0 auto 28px;
+}
+
+.modal-title {
+  font-family: var(--font-title);
+  font-size: 13px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.modal-subtitle {
+  font-size: 14px;
+  font-style: italic;
+  color: rgba(240,234,214,0.5);
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+/* Suggested intentions */
+.intentions-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.intention-option {
+  background: var(--void-mid);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-silk);
+  text-align: left;
+  color: var(--pearl);
+  font-family: var(--font-latin);
+  font-size: 15px;
+  font-weight: 300;
+  font-style: italic;
+}
+[dir="rtl"] .intention-option {
+  font-family: var(--font-arabic);
+  font-style: normal;
+  text-align: right;
+  font-size: 16px;
+}
+.intention-option:hover, .intention-option.selected {
+  border-color: rgba(212,175,55,0.35);
+  background: var(--mist);
+  color: var(--gold-pale);
+}
+
+.intention-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: rgba(240,234,214,0.2);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-family: var(--font-title);
+  margin-bottom: 16px;
+}
+.intention-divider::before,
+.intention-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(255,255,255,0.06);
+}
+
+.intention-custom {
+  width: 100%;
+  background: var(--void-mid);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-family: var(--font-latin);
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--pearl);
+  outline: none;
+  transition: border-color 0.3s;
+  margin-bottom: 20px;
+  resize: none;
+}
+[dir="rtl"] .intention-custom {
+  font-family: var(--font-arabic);
+  font-style: normal;
+  text-align: right;
+}
+.intention-custom::placeholder { color: rgba(240,234,214,0.25); font-style: italic; }
+.intention-custom:focus { border-color: rgba(212,175,55,0.3); }
+
+/* Confirm button */
+.btn-primary {
+  width: 100%;
+  background: linear-gradient(135deg, rgba(212,175,55,0.15), rgba(212,175,55,0.08));
+  border: 1px solid rgba(212,175,55,0.35);
+  border-radius: 100px;
+  padding: 16px;
+  color: var(--gold);
+  font-family: var(--font-title);
+  font-size: 13px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.4s var(--ease-silk);
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, rgba(212,175,55,0.25), rgba(212,175,55,0.12));
+  box-shadow: 0 0 30px rgba(212,175,55,0.2);
+  transform: translateY(-1px);
+}
+.btn-primary:active { transform: scale(0.98); }
+
+.btn-secondary {
+  width: 100%;
+  background: none;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 100px;
+  padding: 14px;
+  color: rgba(240,234,214,0.5);
+  font-family: var(--font-title);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 10px;
+}
+.btn-secondary:hover {
+  border-color: rgba(255,255,255,0.15);
+  color: var(--pearl);
+}
+
+/* ═══════════════════════════════════════════════════
+   WIRD SCREEN
+   ═══════════════════════════════════════════════════ */
+#screen-wird { gap: 24px; }
+
+.section-header {
+  text-align: center;
+  margin-bottom: 8px;
+}
+.section-eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.35em;
+  color: var(--gold-dim);
+  text-transform: uppercase;
+  font-family: var(--font-title);
+  margin-bottom: 6px;
+}
+.section-title {
+  font-size: 26px;
+  font-weight: 300;
+  color: var(--pearl);
+}
+[dir="rtl"] .section-title { font-size: 22px; }
+
+/* Wird counter card */
+.wird-card {
+  width: 100%;
+  max-width: 360px;
+  background: var(--void-soft);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 20px;
+  padding: 28px 24px;
+  text-align: center;
+}
+
+.wird-arabic {
+  font-family: var(--font-arabic);
+  font-size: 32px;
+  color: var(--gold-pale);
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.wird-translation {
+  font-size: 13px;
+  font-style: italic;
+  color: rgba(240,234,214,0.45);
+  margin-bottom: 24px;
+}
+
+.wird-counter-display {
+  font-family: var(--font-title);
+  font-size: 72px;
+  font-weight: 400;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 4px;
+  transition: all 0.2s var(--ease-silk);
+}
+.wird-counter-display.bump {
+  transform: scale(1.1);
+  color: var(--gold-pale);
+}
+
+.wird-target {
+  font-size: 12px;
+  color: rgba(240,234,214,0.3);
+  letter-spacing: 0.15em;
+  font-family: var(--font-title);
+  margin-bottom: 28px;
+}
+
+.wird-btn {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212,175,55,0.15), rgba(212,175,55,0.05));
+  border: 1px solid rgba(212,175,55,0.3);
+  cursor: pointer;
+  font-size: 28px;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 16px;
+  transition: all 0.2s var(--ease-silk);
+}
+.wird-btn:active {
+  transform: scale(0.92);
+  background: radial-gradient(circle, rgba(212,175,55,0.25), rgba(212,175,55,0.08));
+  box-shadow: 0 0 30px rgba(212,175,55,0.3);
+}
+
+.wird-reset-btn {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: rgba(240,234,214,0.25);
+  font-family: var(--font-title);
+  text-transform: uppercase;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.wird-reset-btn:hover { color: rgba(240,234,214,0.5); }
+
+/* Adhkar list */
+.adhkar-list {
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.adhkar-item {
+  background: var(--void-soft);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 14px;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-silk);
+}
+[dir="rtl"] .adhkar-item { flex-direction: row-reverse; }
+.adhkar-item:hover { border-color: rgba(212,175,55,0.2); background: var(--mist); }
+.adhkar-item.done { border-color: rgba(135,169,107,0.3); }
+.adhkar-item.done .adhkar-name { color: var(--sage-pale); }
+
+.adhkar-name { font-size: 14px; font-weight: 300; }
+.adhkar-count {
+  font-family: var(--font-title);
+  font-size: 11px;
+  color: var(--gold-dim);
+  letter-spacing: 0.1em;
+}
+.adhkar-check {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px;
+  transition: all 0.3s;
+}
+.adhkar-item.done .adhkar-check {
+  background: var(--sage-dim);
+  border-color: var(--sage);
+  color: var(--sage-pale);
+}
+
+/* ═══════════════════════════════════════════════════
+   QIBLA SCREEN
+   ═══════════════════════════════════════════════════ */
+#screen-qibla {
+  justify-content: center;
+  gap: 32px;
+}
+
+.qibla-compass-wrap {
+  position: relative;
+  width: 240px; height: 240px;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.qibla-ring-outer {
+  position: absolute; inset: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(212,175,55,0.15);
+}
+
+.qibla-ring-inner {
+  position: absolute;
+  inset: 20px;
+  border-radius: 50%;
+  border: 1px solid rgba(212,175,55,0.08);
+}
+
+.compass-face {
+  width: 180px; height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--void-mid), var(--void));
+  border: 1px solid rgba(212,175,55,0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 0 40px rgba(212,175,55,0.08);
+}
+
+.compass-needle {
+  position: absolute;
+  width: 3px;
+  height: 70px;
+  top: 20px;
+  left: 50%;
+  transform-origin: bottom center;
+  transform: translateX(-50%) rotate(0deg);
+  transition: transform 1s var(--ease-silk);
+}
+.needle-north {
+  width: 100%;
+  height: 55%;
+  background: linear-gradient(to bottom, var(--gold), rgba(212,175,55,0.3));
+  border-radius: 3px 3px 0 0;
+}
+.needle-south {
+  width: 100%;
+  height: 45%;
+  background: rgba(240,234,214,0.2);
+  border-radius: 0 0 3px 3px;
+}
+
+.compass-center-dot {
+  position: absolute;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 10px var(--gold);
+  z-index: 2;
+}
+
+.qibla-label {
+  font-size: 12px;
+  color: rgba(240,234,214,0.4);
+  font-family: var(--font-title);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.qibla-degree {
+  font-family: var(--font-title);
+  font-size: 36px;
+  color: var(--gold);
+  text-align: center;
+}
+
+.qibla-permission-btn {
+  background: var(--mist);
+  border: 1px solid rgba(212,175,55,0.25);
+  border-radius: 100px;
+  padding: 14px 28px;
+  color: var(--gold);
+  font-family: var(--font-title);
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-silk);
+}
+.qibla-permission-btn:hover {
+  background: rgba(212,175,55,0.15);
+  box-shadow: 0 0 20px rgba(212,175,55,0.15);
+}
+
+/* ═══════════════════════════════════════════════════
+   AI MODULES — HOOKS (COMING SOON)
+   ═══════════════════════════════════════════════════ */
+
+/* Mentor Screen */
+#screen-mentor { gap: 28px; justify-content: flex-start; }
+#screen-scanner { gap: 28px; justify-content: flex-start; }
+#screen-journal { gap: 28px; justify-content: flex-start; }
+
+.ai-hook-banner {
+  width: 100%;
+  max-width: 360px;
+  background: var(--void-soft);
+  border: 1px solid rgba(212,175,55,0.15);
+  border-radius: 20px;
+  padding: 32px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.ai-hook-banner::before {
+  content: '';
+  position: absolute;
+  top: -60px; left: 50%;
+  transform: translateX(-50%);
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212,175,55,0.08), transparent 70%);
+  pointer-events: none;
+}
+
+.ai-hook-icon {
+  font-size: 40px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.ai-hook-title {
+  font-family: var(--font-title);
+  font-size: 14px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+.ai-hook-desc {
+  font-size: 14px;
+  font-style: italic;
+  color: rgba(240,234,214,0.5);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.ai-hook-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(135,169,107,0.1);
+  border: 1px solid rgba(135,169,107,0.25);
+  border-radius: 100px;
+  padding: 5px 14px;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--sage);
+  font-family: var(--font-title);
+}
+
+/* Mentor conversation area (hook placeholder) */
+.mentor-chat-area {
+  width: 100%;
+  max-width: 360px;
+  background: var(--void-soft);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 20px;
+  padding: 20px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+}
+
+.mentor-message {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+[dir="rtl"] .mentor-message { flex-direction: row-reverse; }
+
+.mentor-avatar {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212,175,55,0.2), rgba(212,175,55,0.05));
+  border: 1px solid rgba(212,175,55,0.3);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.mentor-bubble {
+  background: var(--mist);
+  border-radius: 0 12px 12px 12px;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-style: italic;
+  color: rgba(240,234,214,0.7);
+  line-height: 1.7;
+  border: 1px solid rgba(212,175,55,0.08);
+}
+[dir="rtl"] .mentor-bubble { border-radius: 12px 0 12px 12px; text-align: right; font-style: normal; }
+
+/* Scanner placeholder */
+.scanner-viewport {
+  width: 100%;
+  max-width: 360px;
+  aspect-ratio: 3/4;
+  background: var(--void-mid);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.scanner-corner {
+  position: absolute;
+  width: 30px; height: 30px;
+  border-color: rgba(212,175,55,0.4);
+  border-style: solid;
+}
+.scanner-corner.tl { top: 24px; left: 24px; border-width: 2px 0 0 2px; border-radius: 4px 0 0 0; }
+.scanner-corner.tr { top: 24px; right: 24px; border-width: 2px 2px 0 0; border-radius: 0 4px 0 0; }
+.scanner-corner.bl { bottom: 24px; left: 24px; border-width: 0 0 2px 2px; border-radius: 0 0 0 4px; }
+.scanner-corner.br { bottom: 24px; right: 24px; border-width: 0 2px 2px 0; border-radius: 0 0 4px 0; }
+
+.scanner-icon { font-size: 40px; opacity: 0.3; }
+.scanner-hint { font-size: 13px; color: rgba(240,234,214,0.3); font-style: italic; text-align: center; padding: 0 24px; }
+
+/* Journal audio placeholder */
+.journal-audio-btn {
+  width: 100px; height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212,175,55,0.15), rgba(212,175,55,0.03));
+  border: 1px solid rgba(212,175,55,0.25);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.4s var(--ease-silk);
+  font-size: 32px;
+}
+.journal-audio-btn:hover {
+  box-shadow: 0 0 40px rgba(212,175,55,0.2);
+  border-color: rgba(212,175,55,0.5);
+}
+.journal-audio-label {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(240,234,214,0.4);
+  font-family: var(--font-title);
+}
+
+/* ═══════════════════════════════════════════════════
+   SETTINGS SCREEN
+   ═══════════════════════════════════════════════════ */
+#screen-settings { gap: 20px; justify-content: flex-start; }
+
+.settings-section {
+  width: 100%;
+  max-width: 360px;
+}
+
+.settings-section-title {
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  color: var(--gold-dim);
+  text-transform: uppercase;
+  font-family: var(--font-title);
+  margin-bottom: 10px;
+  padding: 0 4px;
+}
+
+.settings-list {
+  background: var(--void-soft);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.settings-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+[dir="rtl"] .settings-row { flex-direction: row-reverse; }
+.settings-row:last-child { border-bottom: none; }
+.settings-row:hover { background: var(--mist); }
+
+.settings-row-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+[dir="rtl"] .settings-row-left { flex-direction: row-reverse; }
+
+.settings-icon { font-size: 18px; width: 24px; text-align: center; }
+.settings-label { font-size: 15px; font-weight: 300; }
+
+.settings-value {
+  font-size: 13px;
+  color: rgba(240,234,214,0.35);
+}
+
+/* Language selector */
+.lang-selector {
+  display: flex;
+  gap: 8px;
+}
+
+.lang-btn {
+  padding: 6px 14px;
+  border-radius: 100px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: none;
+  color: rgba(240,234,214,0.5);
+  font-size: 12px;
+  font-family: var(--font-title);
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+.lang-btn.active {
+  background: var(--mist);
+  border-color: rgba(212,175,55,0.4);
+  color: var(--gold);
+}
+
+/* Tawba (resilience) mode card */
+.tawba-card {
+  width: 100%;
+  max-width: 360px;
+  background: linear-gradient(135deg, rgba(135,169,107,0.06), rgba(10,10,10,0.5));
+  border: 1px solid rgba(135,169,107,0.2);
+  border-radius: 20px;
+  padding: 24px 20px;
+  text-align: center;
+}
+.tawba-icon { font-size: 32px; margin-bottom: 12px; }
+.tawba-title {
+  font-family: var(--font-title);
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  color: var(--sage);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.tawba-text {
+  font-size: 14px;
+  font-style: italic;
+  color: rgba(240,234,214,0.5);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+.tawba-resume-btn {
+  background: rgba(135,169,107,0.15);
+  border: 1px solid rgba(135,169,107,0.3);
+  border-radius: 100px;
+  padding: 12px 24px;
+  color: var(--sage-pale);
+  font-family: var(--font-title);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-silk);
+}
+.tawba-resume-btn:hover {
+  background: rgba(135,169,107,0.25);
+  box-shadow: 0 0 20px rgba(135,169,107,0.15);
+}
+
+/* ═══════════════════════════════════════════════════
+   CHECKLIST / DAILY CHALLENGES
+   ═══════════════════════════════════════════════════ */
+#screen-checklist { gap: 20px; }
+
+.challenge-card {
+  width: 100%;
+  max-width: 360px;
+  background: var(--void-soft);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 16px;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-silk);
+}
+[dir="rtl"] .challenge-card { flex-direction: row-reverse; }
+.challenge-card:hover { border-color: rgba(212,175,55,0.2); background: var(--mist); }
+.challenge-card.completed { border-color: rgba(135,169,107,0.25); }
+
+.challenge-orb {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--void-mid);
+  border: 1px solid rgba(255,255,255,0.08);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+.challenge-card.completed .challenge-orb {
+  background: rgba(135,169,107,0.1);
+  border-color: rgba(135,169,107,0.3);
+}
+
+.challenge-info { flex: 1; min-width: 0; }
+.challenge-title { font-size: 15px; font-weight: 300; margin-bottom: 2px; }
+.challenge-card.completed .challenge-title { color: rgba(240,234,214,0.5); text-decoration: line-through; }
+.challenge-sub { font-size: 12px; color: rgba(240,234,214,0.3); font-style: italic; }
+
+/* ═══════════════════════════════════════════════════
+   LEVEL JOURNEY SCREEN
+   ═══════════════════════════════════════════════════ */
+#screen-levels { gap: 24px; }
+
+.level-card {
+  width: 100%;
+  max-width: 360px;
+  border-radius: 20px;
+  padding: 24px 20px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid;
+  transition: all 0.3s var(--ease-silk);
+}
+
+.level-card.reconnect {
+  background: linear-gradient(135deg, rgba(135,169,107,0.08), rgba(10,10,10,0.5));
+  border-color: rgba(135,169,107,0.2);
+}
+.level-card.discipline {
+  background: linear-gradient(135deg, rgba(212,175,55,0.06), rgba(10,10,10,0.5));
+  border-color: rgba(212,175,55,0.15);
+}
+.level-card.excellence {
+  background: linear-gradient(135deg, rgba(200,180,120,0.08), rgba(10,10,10,0.5));
+  border-color: rgba(200,180,120,0.2);
+}
+.level-card.lumiere {
+  background: linear-gradient(135deg, rgba(240,234,214,0.06), rgba(10,10,10,0.5));
+  border-color: rgba(240,234,214,0.15);
+}
+
+.level-card-num {
+  font-family: var(--font-title);
+  font-size: 64px;
+  color: rgba(255,255,255,0.04);
+  position: absolute;
+  top: -8px; right: 16px;
+  line-height: 1;
+  pointer-events: none;
+}
+[dir="rtl"] .level-card-num { right: auto; left: 16px; }
+
+.level-card-name {
+  font-family: var(--font-title);
+  font-size: 13px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.level-card.reconnect .level-card-name { color: var(--sage); }
+.level-card.discipline .level-card-name { color: var(--gold); }
+.level-card.excellence .level-card-name { color: var(--gold-pale); }
+.level-card.lumiere .level-card-name { color: var(--pearl); }
+
+.level-card-desc {
+  font-size: 14px;
+  font-style: italic;
+  color: rgba(240,234,214,0.45);
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+[dir="rtl"] .level-card-desc { font-style: normal; }
+
+.level-progress-bar {
+  height: 2px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 1px;
+  overflow: hidden;
+}
+.level-progress-fill {
+  height: 100%;
+  border-radius: 1px;
+  transition: width 1.4s var(--ease-silk);
+}
+.level-card.reconnect .level-progress-fill { background: var(--sage); }
+.level-card.discipline .level-progress-fill { background: var(--gold); }
+
+/* ═══════════════════════════════════════════════════
+   GLOBAL COMPONENTS
+   ═══════════════════════════════════════════════════ */
+
+/* Toast notifications */
+.toast {
+  position: fixed;
+  top: calc(var(--safe-top) + 80px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-20px);
+  background: var(--void-soft);
+  border: 1px solid rgba(212,175,55,0.3);
+  border-radius: 100px;
+  padding: 12px 24px;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--gold-pale);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s var(--ease-silk);
+  z-index: 600;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+}
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Divider */
+.divider {
+  width: 40px; height: 1px;
+  background: rgba(212,175,55,0.2);
+  margin: 4px auto;
+}
+
+/* Gold dot separator */
+.gold-dot {
+  display: inline-block;
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--gold-dim);
+  vertical-align: middle;
+}
+
+/* Scroll fade */
+.fade-top {
+  position: sticky; top: 80px;
+  height: 24px;
+  background: linear-gradient(to bottom, var(--void), transparent);
+  pointer-events: none;
+  z-index: 50;
+  margin-bottom: -24px;
+}
+
+/* ═══════════════════════════════════════════════════
+   ANIMATIONS UTILS
+   ═══════════════════════════════════════════════════ */
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes goldShimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Haptic feedback visual pulse */
+@keyframes haptPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(212,175,55,0.4); }
+  50%       { box-shadow: 0 0 0 20px rgba(212,175,55,0); }
+}
+.haptic-pulse { animation: haptPulse 0.5s var(--ease-breath) forwards; }
+
+/* ═══════════════════════════════════════════════════
+   ARABIC OVERRIDES
+   ═══════════════════════════════════════════════════ */
+[lang="ar"] .section-title { font-family: var(--font-arabic); }
+[lang="ar"] .greeting-main { font-family: var(--font-arabic); }
+[lang="ar"] .modal-subtitle { font-style: normal; }
+[lang="ar"] .wird-translation { font-family: var(--font-arabic); }
+
+/* ═══════════════════════════════════════════════════
+   MEDIA QUERIES
+   ═══════════════════════════════════════════════════ */
+@media (min-width: 480px) {
+  :root { --orb-size: 240px; }
+  .quick-actions { max-width: 380px; }
+}
+
+@media (min-height: 812px) {
+  #screen-home { padding-top: 80px; gap: 4px; }
+  .greeting-area { margin-bottom: 56px; }
+  .orb-container { margin-bottom: 56px; }
+}
+</style>
+</head>
+
+<body>
+<div class="app-shell">
+
+  <!-- ════════════ TOP BAR ════════════ -->
+  <header class="topbar">
+    <div class="topbar-logo" onclick="navigateTo('home')" data-i18n="app_name">Niyyah</div>
+    <div class="topbar-actions">
+      <button class="icon-btn" onclick="navigateTo('settings')" aria-label="Settings">⚙︎</button>
+    </div>
+  </header>
+
+  <!-- ════════════ SCREEN: HOME ════════════ -->
+  <main id="screen-home" class="screen active">
+
+    <!-- Greeting -->
+    <div class="greeting-area">
+      <div class="greeting-top" id="greeting-time-label">بِسْمِ اللَّهِ</div>
+      <div class="greeting-main" id="greeting-text" data-i18n="greeting_morning">Que cette journée soit lumineuse</div>
+    </div>
+
+    <!-- The Orb -->
+    <div class="orb-container" id="orb-container">
+      <div class="orb-ring orb-ring-1"></div>
+      <div class="orb-ring orb-ring-2"></div>
+      <div class="orb-ring orb-ring-3"></div>
+      <div class="orb-core" id="orb-core" onclick="openIntentionModal()">
+        <div class="orb-symbol">نية</div>
+        <div class="orb-cta" id="orb-cta-text" data-i18n="orb_start">Définir mon intention</div>
+      </div>
+    </div>
+
+    <!-- Active intention display -->
+    <div class="intention-display" id="intention-display" style="display:none;">
+      <div class="intention-chip" id="intention-chip-text"></div>
+      <div class="intention-meta" id="intention-meta-text"></div>
+    </div>
+
+    <!-- Level bar -->
+    <div class="level-strip">
+      <div class="level-header">
+        <span class="level-name" id="home-level-name" data-i18n="level_reconnect">Reconnexion</span>
+        <span class="level-xp" id="home-level-xp">12 / 40</span>
+      </div>
+      <div class="level-bar">
+        <div class="level-fill" id="home-level-fill" style="width: 30%"></div>
+      </div>
+    </div>
+
+    <!-- Quick actions -->
+    <div class="quick-actions">
+      <button class="quick-btn" onclick="navigateTo('wird')">
+        <span class="quick-btn-icon">📿</span>
+        <span class="quick-btn-label" data-i18n="nav_wird">Wird</span>
+      </button>
+      <button class="quick-btn" onclick="navigateTo('qibla')">
+        <span class="quick-btn-icon">🕌</span>
+        <span class="quick-btn-label" data-i18n="nav_qibla">Qibla</span>
+      </button>
+      <button class="quick-btn" onclick="navigateTo('checklist')">
+        <span class="quick-btn-icon">✦</span>
+        <span class="quick-btn-label" data-i18n="nav_checklist">Défis</span>
+      </button>
+    </div>
+
+  </main>
+
+  <!-- ════════════ SCREEN: WIRD ════════════ -->
+  <main id="screen-wird" class="screen">
+    <div class="section-header">
+      <div class="section-eyebrow" data-i18n="nav_wird">Wird</div>
+      <div class="section-title" data-i18n="wird_subtitle">Invocations du jour</div>
+    </div>
+
+    <!-- Main tasbih counter -->
+    <div class="wird-card">
+      <div class="wird-arabic" id="wird-arabic-text">سُبْحَانَ اللَّهِ</div>
+      <div class="wird-translation" id="wird-translation-text" data-i18n="wird_subhanallah_meaning">Gloire à Dieu</div>
+      <div class="wird-counter-display" id="wird-count">0</div>
+      <div class="wird-target" id="wird-target-text">/ 33</div>
+      <button class="wird-btn" id="wird-tap-btn" onclick="wirdTap()" aria-label="Count">☽</button>
+      <button class="wird-reset-btn" onclick="wirdReset()" data-i18n="wird_reset">Réinitialiser</button>
+    </div>
+
+    <!-- Adhkar list -->
+    <div class="adhkar-list" id="adhkar-list">
+      <!-- Generated by JS -->
+    </div>
+  </main>
+
+  <!-- ════════════ SCREEN: QIBLA ════════════ -->
+  <main id="screen-qibla" class="screen">
+    <div class="section-header">
+      <div class="section-eyebrow" data-i18n="nav_qibla">Qibla</div>
+      <div class="section-title" data-i18n="qibla_subtitle">Direction de la Prière</div>
+    </div>
+
+    <div class="qibla-compass-wrap">
+      <div class="qibla-ring-outer"></div>
+      <div class="qibla-ring-inner"></div>
+      <div class="compass-face">
+        <div class="compass-needle" id="compass-needle">
+          <div class="needle-north"></div>
+          <div class="needle-south"></div>
+        </div>
+        <div class="compass-center-dot"></div>
+      </div>
+    </div>
+
+    <div id="qibla-info">
+      <div class="qibla-degree" id="qibla-degree-text">—°</div>
+      <div class="qibla-label" data-i18n="qibla_from_north">depuis le Nord</div>
+    </div>
+
+    <button class="qibla-permission-btn" id="qibla-btn" onclick="startQibla()" data-i18n="qibla_activate">
+      Activer la boussole
+    </button>
+
+    <div style="text-align:center;">
+      <p style="font-size:13px; font-style:italic; color:rgba(240,234,214,0.3); max-width:260px;" data-i18n="qibla_note">
+        Calibrez en tournant votre appareil en huit
+      </p>
+    </div>
+  </main>
+
+  <!-- ════════════ SCREEN: MENTOR D'ADAB (AI HOOK) ════════════ -->
+  <main id="screen-mentor" class="screen">
+    <div class="section-header">
+      <div class="section-eyebrow" data-i18n="ai_modules">Modules IA</div>
+      <div class="section-title" data-i18n="mentor_title">Mentor d'Adab</div>
+    </div>
+
+    <div class="ai-hook-banner">
+      <span class="ai-hook-icon">🌿</span>
+      <div class="ai-hook-title" data-i18n="mentor_title">Mentor d'Adab</div>
+      <p class="ai-hook-desc" data-i18n="mentor_desc">
+        La sagesse de Ghazali et de la Sira, distillée pour votre instant présent. Il guide, n'interprète pas.
+      </p>
+      <span class="ai-hook-badge">✦ <span data-i18n="coming_soon">Bientôt disponible</span></span>
+    </div>
+
+    <!-- AI HOOK: Mentor chat interface — Master Prompt à injecter ici -->
+    <div class="mentor-chat-area" id="mentor-chat-area">
+      <div class="mentor-message">
+        <div class="mentor-avatar">🌿</div>
+        <div class="mentor-bubble" data-i18n="mentor_placeholder_msg">
+          "Le début de la sagesse est de connaître ce que tu ne sais pas."
+          <br/><br/>— Imam Al-Ghazali
+        </div>
+      </div>
+    </div>
+
+    <!-- INPUT HOOK: L'utilisateur posera sa question ici -->
+    <div style="width:100%; max-width:360px; display:flex; gap:10px;">
+      <input type="text"
+        id="mentor-input"
+        placeholder="Posez votre question..."
+        data-i18n-placeholder="mentor_input_placeholder"
+        style="flex:1; background:var(--void-soft); border:1px solid rgba(212,175,55,0.15); border-radius:100px; padding:14px 20px; color:var(--pearl); font-family:var(--font-latin); font-size:14px; outline:none;"
+        disabled />
+      <button onclick="mentorAsk()"
+        style="width:48px; height:48px; border-radius:50%; background:var(--mist); border:1px solid rgba(212,175,55,0.25); color:var(--gold); font-size:18px; cursor:pointer; flex-shrink:0;"
+        disabled>↑</button>
+    </div>
+  </main>
+
+  <!-- ════════════ SCREEN: NIYYAH SCANNER (AI HOOK) ════════════ -->
+  <main id="screen-scanner" class="screen">
+    <div class="section-header">
+      <div class="section-eyebrow" data-i18n="ai_modules">Modules IA</div>
+      <div class="section-title" data-i18n="scanner_title">Scanner de Présence</div>
+    </div>
+
+    <div class="ai-hook-banner">
+      <span class="ai-hook-icon">👁</span>
+      <div class="ai-hook-title" data-i18n="scanner_title">Scanner de Présence</div>
+      <p class="ai-hook-desc" data-i18n="scanner_desc">
+        Pointez votre appareil vers un objet du quotidien. L'IA révèle l'intention sacrée qui peut l'habiter.
+      </p>
+      <span class="ai-hook-badge">✦ <span data-i18n="coming_soon">Bientôt disponible</span></span>
+    </div>
+
+    <!-- CAMERA HOOK — Vision API à brancher ici -->
+    <div class="scanner-viewport" id="scanner-viewport">
+      <div class="scanner-corner tl"></div>
+      <div class="scanner-corner tr"></div>
+      <div class="scanner-corner bl"></div>
+      <div class="scanner-corner br"></div>
+      <div class="scanner-icon">👁</div>
+      <div class="scanner-hint" data-i18n="scanner_hint">Pointez l'objectif vers l'objet à sacraliser</div>
+    </div>
+
+    <button class="btn-primary" style="max-width:360px; opacity:0.4;" disabled data-i18n="scanner_capture">
+      Capturer &amp; Révéler l'Intention
+    </button>
+  </main>
+
+  <!-- ════════════ SCREEN: JOURNAL VOCAL (AI HOOK) ════════════ -->
+  <main id="screen-journal" class="screen">
+    <div class="section-header">
+      <div class="section-eyebrow" data-i18n="ai_modules">Modules IA</div>
+      <div class="section-title" data-i18n="journal_title">Journal de l'Âme</div>
+    </div>
+
+    <div class="ai-hook-banner">
+      <span class="ai-hook-icon">🎙</span>
+      <div class="ai-hook-title" data-i18n="journal_title">Journal de l'Âme</div>
+      <p class="ai-hook-desc" data-i18n="journal_desc">
+        Un espace de débriefing vocal, le soir, pour cultiver la gratitude avant le sommeil.
+      </p>
+      <span class="ai-hook-badge">✦ <span data-i18n="coming_soon">Bientôt disponible</span></span>
+    </div>
+
+    <!-- AUDIO HOOK — Web Audio API à brancher ici -->
+    <div class="journal-audio-btn" id="journal-audio-btn" onclick="journalToggleRecording()">
+      🎙
+    </div>
+    <div class="journal-audio-label" data-i18n="journal_hold">Appuyez pour parler</div>
+
+    <!-- Past entries placeholder -->
+    <div style="width:100%; max-width:360px;">
+      <div class="settings-section-title" data-i18n="journal_entries">Entrées passées</div>
+      <div style="text-align:center; padding:24px; color:rgba(240,234,214,0.2); font-style:italic; font-size:14px;" data-i18n="journal_empty">
+        Aucune entrée pour le moment. Votre premier soir commence ici.
+      </div>
+    </div>
+  </main>
+
+  <!-- ════════════ SCREEN: DÉFIS ════════════ -->
+  <main id="screen-checklist" class="screen">
+    <div class="section-header">
+      <div class="section-eyebrow" data-i18n="challenges_eyebrow">50 Défis</div>
+      <div class="section-title" data-i18n="challenges_title">Les Défis du Jour</div>
+    </div>
+    <div id="challenges-list" style="width:100%; max-width:360px; display:flex; flex-direction:column; gap:10px;">
+      <!-- Generated by JS -->
+    </div>
+  </main>
+
+  <!-- ════════════ SCREEN: NIVEAUX ════════════ -->
+  <main id="screen-levels" class="screen">
+    <div class="section-header">
+      <div class="section-eyebrow" data-i18n="levels_eyebrow">Parcours</div>
+      <div class="section-title" data-i18n="levels_title">Les 4 Niveaux</div>
+    </div>
+
+    <div class="level-card reconnect">
+      <div class="level-card-num">1</div>
+      <div class="level-card-name" data-i18n="level_reconnect">Reconnexion</div>
+      <p class="level-card-desc" data-i18n="level_reconnect_desc">Retrouver le fil, un souffle à la fois. La régularité prime sur l'intensité.</p>
+      <div class="level-progress-bar"><div class="level-progress-fill" id="lvl1-fill" style="width:30%"></div></div>
+    </div>
+
+    <div class="level-card discipline">
+      <div class="level-card-num">2</div>
+      <div class="level-card-name" data-i18n="level_discipline">Discipline</div>
+      <p class="level-card-desc" data-i18n="level_discipline_desc">La discipline n'est pas une cage — c'est la forme que prend la liberté intérieure.</p>
+      <div class="level-progress-bar"><div class="level-progress-fill" id="lvl2-fill" style="width:0%"></div></div>
+    </div>
+
+    <div class="level-card excellence">
+      <div class="level-card-num">3</div>
+      <div class="level-card-name" data-i18n="level_excellence">Excellence</div>
+      <p class="level-card-desc" data-i18n="level_excellence_desc">L'Ihsan : agir comme si tu voyais Dieu, car Il te voit.</p>
+      <div class="level-progress-bar"><div class="level-progress-fill" id="lvl3-fill" style="width:0%"></div></div>
+    </div>
+
+    <div class="level-card lumiere">
+      <div class="level-card-num">4</div>
+      <div class="level-card-name" data-i18n="level_lumiere">Lumière</div>
+      <p class="level-card-desc" data-i18n="level_lumiere_desc">Chaque acte devient lumière. Tu es devenu le sanctuaire.</p>
+      <div class="level-progress-bar"><div class="level-progress-fill" id="lvl4-fill" style="width:0%"></div></div>
+    </div>
+  </main>
+
+  <!-- ════════════ SCREEN: SETTINGS ════════════ -->
+  <main id="screen-settings" class="screen">
+    <div class="section-header">
+      <div class="section-eyebrow">Niyyah</div>
+      <div class="section-title" data-i18n="settings_title">Paramètres</div>
+    </div>
+
+    <!-- Language -->
+    <div class="settings-section">
+      <div class="settings-section-title" data-i18n="settings_lang">Langue</div>
+      <div style="display:flex; gap:8px; padding:4px 0;">
+        <button class="lang-btn active" id="lang-fr" onclick="setLanguage('fr')">FR</button>
+        <button class="lang-btn" id="lang-en" onclick="setLanguage('en')">EN</button>
+        <button class="lang-btn" id="lang-ar" onclick="setLanguage('ar')">عر</button>
+      </div>
+    </div>
+
+    <!-- App settings -->
+    <div class="settings-section">
+      <div class="settings-section-title" data-i18n="settings_preferences">Préférences</div>
+      <div class="settings-list">
+        <div class="settings-row" onclick="toggleHaptic()">
+          <div class="settings-row-left">
+            <span class="settings-icon">📳</span>
+            <span class="settings-label" data-i18n="settings_haptic">Vibrations Haptiques</span>
+          </div>
+          <span class="settings-value" id="haptic-value">ON</span>
+        </div>
+        <div class="settings-row" onclick="toggleSound()">
+          <div class="settings-row-left">
+            <span class="settings-icon">🎵</span>
+            <span class="settings-label" data-i18n="settings_sound">Nasheeds</span>
+          </div>
+          <span class="settings-value" id="sound-value">OFF</span>
+        </div>
+        <div class="settings-row" onclick="navigateTo('levels')">
+          <div class="settings-row-left">
+            <span class="settings-icon">✦</span>
+            <span class="settings-label" data-i18n="settings_journey">Mon Parcours</span>
+          </div>
+          <span class="settings-value">›</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reset & Privacy -->
+    <div class="settings-section">
+      <div class="settings-section-title" data-i18n="settings_privacy">Confidentialité</div>
+      <div class="settings-list">
+        <div class="settings-row">
+          <div class="settings-row-left">
+            <span class="settings-icon">🔒</span>
+            <span class="settings-label" data-i18n="settings_local">Données 100% locales</span>
+          </div>
+          <span class="settings-value" style="color:var(--sage);">Al-Haya</span>
+        </div>
+        <div class="settings-row" onclick="confirmReset()">
+          <div class="settings-row-left">
+            <span class="settings-icon">↺</span>
+            <span class="settings-label" style="color:rgba(240,234,214,0.5);" data-i18n="settings_reset">Réinitialiser</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Version -->
+    <div style="text-align:center; padding:16px 0; color:rgba(240,234,214,0.15); font-size:12px; font-family:var(--font-title); letter-spacing:0.2em;">
+      NIYYAH V2.0 · BISMILLAH
+    </div>
+  </main>
+
+  <!-- ════════════ BOTTOM NAV ════════════ -->
+  <nav class="bottom-nav">
+    <button class="nav-item active" id="nav-home" onclick="navigateTo('home')">
+      <span class="nav-icon">◉</span>
+      <span class="nav-label" data-i18n="nav_home">Sanctuaire</span>
+    </button>
+    <button class="nav-item" id="nav-wird" onclick="navigateTo('wird')">
+      <span class="nav-icon">📿</span>
+      <span class="nav-label" data-i18n="nav_wird">Wird</span>
+    </button>
+    <button class="nav-item" id="nav-mentor" onclick="navigateTo('mentor')">
+      <span class="nav-icon">🌿</span>
+      <span class="nav-label" data-i18n="nav_mentor">Mentor</span>
+    </button>
+    <button class="nav-item" id="nav-journal" onclick="navigateTo('journal')">
+      <span class="nav-icon">🎙</span>
+      <span class="nav-label" data-i18n="nav_journal">Journal</span>
+    </button>
+    <button class="nav-item" id="nav-settings" onclick="navigateTo('settings')">
+      <span class="nav-icon">⚙</span>
+      <span class="nav-label" data-i18n="nav_settings">Réglages</span>
+    </button>
+  </nav>
+
+</div><!-- /.app-shell -->
+
+<!-- ════════════ INTENTION MODAL ════════════ -->
+<div class="modal-backdrop" id="intention-modal">
+  <div class="modal-sheet">
+    <div class="modal-handle"></div>
+    <div class="modal-title" data-i18n="modal_intention_title">Ancrer votre Niyyah</div>
+    <div class="modal-subtitle" data-i18n="modal_intention_subtitle">Quelle est l'intention de cette journée ?</div>
+
+    <div class="intentions-grid" id="intention-suggestions">
+      <!-- Generated by JS -->
+    </div>
+
+    <div class="intention-divider" data-i18n="or_custom">ou votre propre intention</div>
+
+    <textarea
+      id="custom-intention"
+      class="intention-custom"
+      rows="2"
+      placeholder="Écrire votre intention personnelle..."
+      data-i18n-placeholder="modal_custom_placeholder"
+    ></textarea>
+
+    <button class="btn-primary" onclick="confirmIntention()" data-i18n="modal_confirm">
+      Ancrer cette Intention
+    </button>
+    <button class="btn-secondary" onclick="closeIntentionModal()" data-i18n="back">
+      Retour
+    </button>
+  </div>
+</div>
+
+<!-- ════════════ TOAST ════════════ -->
+<div class="toast" id="toast"></div>
+
+<!-- ════════════════════════════════════════════════════
+     JAVASCRIPT — NIYYAH V2
+     ════════════════════════════════════════════════════ -->
+<script>
+'use strict';
+
+/* ─────────────────────────────────────────────────────
+   I18N — TRANSLATIONS
+   ───────────────────────────────────────────────────── */
+const TRANSLATIONS = {
+  fr: {
+    app_name: "Niyyah",
+    slogan: "Le Sanctuaire de l'Intention",
+    orb_start: "Définir mon intention",
+    orb_resume: "Voir mon intention",
+    greeting_morning: "Que cette journée soit lumineuse",
+    greeting_afternoon: "Restez dans le souvenir",
+    greeting_evening: "La gratitude ferme la journée",
+    level_reconnect: "Reconnexion",
+    level_discipline: "Discipline",
+    level_excellence: "Excellence",
+    level_lumiere: "Lumière",
+    level_reconnect_desc: "Retrouver le fil, un souffle à la fois.",
+    level_discipline_desc: "La liberté intérieure prend la forme de la discipline.",
+    level_excellence_desc: "L'Ihsan : agir comme si tu voyais Dieu, car Il te voit.",
+    level_lumiere_desc: "Chaque acte devient lumière.",
+    nav_home: "Sanctuaire",
+    nav_wird: "Wird",
+    nav_qibla: "Qibla",
+    nav_mentor: "Mentor",
+    nav_journal: "Journal",
+    nav_checklist: "Défis",
+    nav_settings: "Réglages",
+    wird_subtitle: "Invocations du jour",
+    wird_subhanallah_meaning: "Gloire à Dieu",
+    wird_alhamdulillah_meaning: "Louange à Dieu",
+    wird_allahuakbar_meaning: "Dieu est Grand",
+    wird_reset: "Réinitialiser",
+    qibla_subtitle: "Direction de la Prière",
+    qibla_from_north: "depuis le Nord",
+    qibla_activate: "Activer la boussole",
+    qibla_note: "Calibrez en tournant votre appareil en huit",
+    mentor_title: "Mentor d'Adab",
+    mentor_desc: "La sagesse de Ghazali et de la Sira, distillée pour votre instant présent.",
+    mentor_placeholder_msg: '"Le début de la sagesse est de connaître ce que tu ne sais pas." — Al-Ghazali',
+    mentor_input_placeholder: "Posez votre question...",
+    scanner_title: "Scanner de Présence",
+    scanner_desc: "Pointez vers un objet du quotidien. L'IA révèle l'intention sacrée qui peut l'habiter.",
+    scanner_hint: "Pointez l'objectif vers l'objet à sacraliser",
+    scanner_capture: "Capturer & Révéler l'Intention",
+    journal_title: "Journal de l'Âme",
+    journal_desc: "Un espace de débriefing vocal, le soir, pour cultiver la gratitude.",
+    journal_hold: "Appuyez pour parler",
+    journal_entries: "Entrées passées",
+    journal_empty: "Aucune entrée pour le moment. Votre premier soir commence ici.",
+    challenges_eyebrow: "50 Défis",
+    challenges_title: "Les Défis du Jour",
+    levels_eyebrow: "Parcours",
+    levels_title: "Les 4 Niveaux",
+    settings_title: "Paramètres",
+    settings_lang: "Langue",
+    settings_preferences: "Préférences",
+    settings_haptic: "Vibrations Haptiques",
+    settings_sound: "Nasheeds",
+    settings_journey: "Mon Parcours",
+    settings_privacy: "Confidentialité",
+    settings_local: "Données 100% locales",
+    settings_reset: "Réinitialiser",
+    ai_modules: "Modules IA",
+    coming_soon: "Bientôt disponible",
+    modal_intention_title: "Ancrer votre Niyyah",
+    modal_intention_subtitle: "Quelle est l'intention de cette journée ?",
+    modal_custom_placeholder: "Écrire votre intention personnelle...",
+    modal_confirm: "Ancrer cette Intention",
+    or_custom: "ou votre propre intention",
+    back: "Retour",
+    toast_intention_set: "Niyyah ancrée · بِسْمِ اللَّهِ",
+    toast_wird_complete: "Complété · الحمد لله",
+    toast_reset: "Réinitialisé",
+    intention_today_label: "Intention du jour",
+    intention_options: [
+      "Pour la baraka dans ce que je fais",
+      "Pour le bien de ma famille",
+      "Pour purifier mon cœur aujourd'hui",
+      "Pour être utile à autrui",
+    ],
+    tawba_title: "Mode Tawba",
+    tawba_text: "Bienvenue de retour. Chaque instant est un nouveau départ. Il n'y a pas de retard dans le chemin vers Lui.",
+    tawba_btn: "Reprendre le chemin",
+    adhkar: [
+      { ar: "سُبْحَانَ اللَّهِ", text: "Subhan Allah", count: 33 },
+      { ar: "الْحَمْدُ لِلَّهِ", text: "Alhamdulillah", count: 33 },
+      { ar: "اللَّهُ أَكْبَرُ", text: "Allahu Akbar", count: 34 },
+      { ar: "لَا إِلَٰهَ إِلَّا اللَّهُ", text: "La ilaha illallah", count: 100 },
+      { ar: "صَلِّ عَلَى النَّبِيِّ", text: "Salawat", count: 10 },
+    ],
+    challenges: [
+      { icon: "🌅", title: "Fajr au premier appel", sub: "Commencer la journée dans la lumière" },
+      { icon: "📖", title: "Un verset du Coran", sub: "La lecture nourrit le cœur" },
+      { icon: "🤲", title: "Dua du matin", sub: "Invocation de protection" },
+      { icon: "💧", title: "Ablutions avec intention", sub: "La pureté est la moitié de la foi" },
+      { icon: "🌿", title: "Un acte de bonté", sub: "Même un sourire est sadaqa" },
+      { icon: "📿", title: "Wird du soir", sub: "Fermer la journée avec dhikr" },
+    ]
+  },
+
+  en: {
+    app_name: "Niyyah",
+    slogan: "The Sanctuary of Intent",
+    orb_start: "Set my Intention",
+    orb_resume: "View my Intention",
+    greeting_morning: "May this day be filled with light",
+    greeting_afternoon: "Stay in remembrance",
+    greeting_evening: "Gratitude closes the day",
+    level_reconnect: "Reconnection",
+    level_discipline: "Discipline",
+    level_excellence: "Excellence",
+    level_lumiere: "Light",
+    level_reconnect_desc: "Finding the thread, one breath at a time.",
+    level_discipline_desc: "Inner freedom takes the shape of discipline.",
+    level_excellence_desc: "Ihsan: act as if you see God, for He sees you.",
+    level_lumiere_desc: "Every act becomes light.",
+    nav_home: "Sanctuary",
+    nav_wird: "Wird",
+    nav_qibla: "Qibla",
+    nav_mentor: "Mentor",
+    nav_journal: "Journal",
+    nav_checklist: "Challenges",
+    nav_settings: "Settings",
+    wird_subtitle: "Daily Invocations",
+    wird_subhanallah_meaning: "Glory to God",
+    wird_alhamdulillah_meaning: "Praise be to God",
+    wird_allahuakbar_meaning: "God is Great",
+    wird_reset: "Reset",
+    qibla_subtitle: "Prayer Direction",
+    qibla_from_north: "from North",
+    qibla_activate: "Activate compass",
+    qibla_note: "Calibrate by rotating your device in a figure-eight",
+    mentor_title: "Adab Mentor",
+    mentor_desc: "The wisdom of Ghazali and the Sira, distilled for your present moment.",
+    mentor_placeholder_msg: '"The beginning of wisdom is to know what you do not know." — Al-Ghazali',
+    mentor_input_placeholder: "Ask your question...",
+    scanner_title: "Presence Scanner",
+    scanner_desc: "Point at an everyday object. AI reveals the sacred intention that can inhabit it.",
+    scanner_hint: "Point the lens at the object to sanctify",
+    scanner_capture: "Capture & Reveal Intention",
+    journal_title: "Soul Journal",
+    journal_desc: "A vocal debriefing space in the evening, to cultivate gratitude.",
+    journal_hold: "Hold to speak",
+    journal_entries: "Past entries",
+    journal_empty: "No entries yet. Your first evening begins here.",
+    challenges_eyebrow: "50 Challenges",
+    challenges_title: "Today's Challenges",
+    levels_eyebrow: "Journey",
+    levels_title: "The 4 Levels",
+    settings_title: "Settings",
+    settings_lang: "Language",
+    settings_preferences: "Preferences",
+    settings_haptic: "Haptic Vibrations",
+    settings_sound: "Nasheeds",
+    settings_journey: "My Journey",
+    settings_privacy: "Privacy",
+    settings_local: "100% local data",
+    settings_reset: "Reset",
+    ai_modules: "AI Modules",
+    coming_soon: "Coming soon",
+    modal_intention_title: "Anchor your Niyyah",
+    modal_intention_subtitle: "What is the intention for this day?",
+    modal_custom_placeholder: "Write your personal intention...",
+    modal_confirm: "Anchor this Intention",
+    or_custom: "or your own intention",
+    back: "Back",
+    toast_intention_set: "Niyyah anchored · بِسْمِ اللَّهِ",
+    toast_wird_complete: "Completed · الحمد لله",
+    toast_reset: "Reset",
+    intention_today_label: "Today's intention",
+    intention_options: [
+      "For barakah in all that I do",
+      "For the well-being of my family",
+      "To purify my heart today",
+      "To be of benefit to others",
+    ],
+    tawba_title: "Tawba Mode",
+    tawba_text: "Welcome back. Every moment is a fresh start. There is no delay on the path toward Him.",
+    tawba_btn: "Resume the path",
+    adhkar: [
+      { ar: "سُبْحَانَ اللَّهِ", text: "Subhan Allah", count: 33 },
+      { ar: "الْحَمْدُ لِلَّهِ", text: "Alhamdulillah", count: 33 },
+      { ar: "اللَّهُ أَكْبَرُ", text: "Allahu Akbar", count: 34 },
+      { ar: "لَا إِلَٰهَ إِلَّا اللَّهُ", text: "La ilaha illallah", count: 100 },
+      { ar: "صَلِّ عَلَى النَّبِيِّ", text: "Salawat", count: 10 },
+    ],
+    challenges: [
+      { icon: "🌅", title: "Fajr at first call", sub: "Start the day in the light" },
+      { icon: "📖", title: "One verse of Quran", sub: "Reading nourishes the heart" },
+      { icon: "🤲", title: "Morning Du'a", sub: "Invocation of protection" },
+      { icon: "💧", title: "Wudu with intention", sub: "Purity is half of faith" },
+      { icon: "🌿", title: "An act of kindness", sub: "Even a smile is sadaqa" },
+      { icon: "📿", title: "Evening Wird", sub: "Close the day with dhikr" },
+    ]
+  },
+
+  ar: {
+    app_name: "نية",
+    slogan: "محراب النية",
+    orb_start: "عقد النية",
+    orb_resume: "رؤية نيتي",
+    greeting_morning: "جعل الله يومك مباركاً",
+    greeting_afternoon: "دم في ذكر الله",
+    greeting_evening: "اختم يومك بالشكر",
+    level_reconnect: "إعادة الاتصال",
+    level_discipline: "الانضباط",
+    level_excellence: "التميز",
+    level_lumiere: "النور",
+    level_reconnect_desc: "إيجاد الخيط من جديد، نفساً بنفس.",
+    level_discipline_desc: "الانضباط هو الشكل الذي يتخذه الحرية الداخلية.",
+    level_excellence_desc: "الإحسان: أن تعبد الله كأنك تراه.",
+    level_lumiere_desc: "كل عمل يصبح نوراً.",
+    nav_home: "المحراب",
+    nav_wird: "الورد",
+    nav_qibla: "القبلة",
+    nav_mentor: "المربي",
+    nav_journal: "المذكرات",
+    nav_checklist: "التحديات",
+    nav_settings: "الإعدادات",
+    wird_subtitle: "أوراد اليوم",
+    wird_subhanallah_meaning: "سبحان الله",
+    wird_alhamdulillah_meaning: "الحمد لله",
+    wird_allahuakbar_meaning: "الله أكبر",
+    wird_reset: "إعادة ضبط",
+    qibla_subtitle: "اتجاه القبلة",
+    qibla_from_north: "من الشمال",
+    qibla_activate: "تفعيل البوصلة",
+    qibla_note: "اضبط الجهاز بتحريكه على شكل رقم ثمانية",
+    mentor_title: "مربي الأدب",
+    mentor_desc: "حكمة الغزالي والسيرة النبوية، مُقطَّرة للحظتك الراهنة.",
+    mentor_placeholder_msg: '"بداية الحكمة معرفة ما لا تعلمه." — الإمام الغزالي',
+    mentor_input_placeholder: "اطرح سؤالك...",
+    scanner_title: "كاشف الحضور",
+    scanner_desc: "وجّه الجهاز نحو شيء يومي. سيكشف الذكاء الاصطناعي النية المقدسة التي يمكن أن تسكنه.",
+    scanner_hint: "وجّه العدسة نحو الشيء المراد تقديسه",
+    scanner_capture: "التقاط وكشف النية",
+    journal_title: "مذكرات الروح",
+    journal_desc: "مساحة للتأمل الصوتي مساءً، لاستزراع الشكر.",
+    journal_hold: "اضغط للتحدث",
+    journal_entries: "المقيدات السابقة",
+    journal_empty: "لا مقيدات بعد. مساؤك الأول يبدأ هنا.",
+    challenges_eyebrow: "٥٠ تحدياً",
+    challenges_title: "تحديات اليوم",
+    levels_eyebrow: "المسيرة",
+    levels_title: "المستويات الأربعة",
+    settings_title: "الإعدادات",
+    settings_lang: "اللغة",
+    settings_preferences: "التفضيلات",
+    settings_haptic: "الاهتزاز",
+    settings_sound: "الأناشيد",
+    settings_journey: "مسيرتي",
+    settings_privacy: "الخصوصية",
+    settings_local: "البيانات محلية ١٠٠٪",
+    settings_reset: "إعادة الضبط",
+    ai_modules: "وحدات الذكاء",
+    coming_soon: "قريباً",
+    modal_intention_title: "تثبيت نيتك",
+    modal_intention_subtitle: "ما هي نية هذا اليوم؟",
+    modal_custom_placeholder: "اكتب نيتك الخاصة...",
+    modal_confirm: "تثبيت هذه النية",
+    or_custom: "أو نيتك الخاصة",
+    back: "رجوع",
+    toast_intention_set: "النية ثابتة · بِسْمِ اللَّهِ",
+    toast_wird_complete: "مكتمل · الحمد لله",
+    toast_reset: "تمت إعادة الضبط",
+    intention_today_label: "نية اليوم",
+    intention_options: [
+      "للبركة فيما أعمل",
+      "لخير عائلتي",
+      "لتطهير قلبي اليوم",
+      "لأكون نافعاً للآخرين",
+    ],
+    tawba_title: "وضع التوبة",
+    tawba_text: "مرحباً بعودتك. كل لحظة بداية جديدة. لا تأخير في طريق الرجوع إليه.",
+    tawba_btn: "استئناف المسيرة",
+    adhkar: [
+      { ar: "سُبْحَانَ اللَّهِ", text: "سبحان الله", count: 33 },
+      { ar: "الْحَمْدُ لِلَّهِ", text: "الحمد لله", count: 33 },
+      { ar: "اللَّهُ أَكْبَرُ", text: "الله أكبر", count: 34 },
+      { ar: "لَا إِلَٰهَ إِلَّا اللَّهُ", text: "لا إله إلا الله", count: 100 },
+      { ar: "صَلِّ عَلَى النَّبِيِّ", text: "الصلاة على النبي", count: 10 },
+    ],
+    challenges: [
+      { icon: "🌅", title: "الفجر عند الأذان الأول", sub: "ابدأ اليوم في النور" },
+      { icon: "📖", title: "آية من القرآن", sub: "القراءة تغذي القلب" },
+      { icon: "🤲", title: "دعاء الصباح", sub: "دعاء الحماية" },
+      { icon: "💧", title: "الوضوء بنية", sub: "الطهارة نصف الإيمان" },
+      { icon: "🌿", title: "عمل طيب", sub: "حتى الابتسامة صدقة" },
+      { icon: "📿", title: "ورد المساء", sub: "أغلق يومك بالذكر" },
+    ]
+  }
+};
+
+/* ─────────────────────────────────────────────────────
+   STATE & LOCALSTORAGE
+   ───────────────────────────────────────────────────── */
+const STATE_KEY = 'niyyah_v2_state';
+
+function getDefaultState() {
+  return {
+    lang: detectBrowserLang(),
+    intention: null,
+    intentionDate: null,
+    wirdCount: 0,
+    wirdCurrent: 0,    // which adhkar
+    adhkarDone: [],
+    challenges: [],
+    level: 1,
+    xp: 12,
+    lastOpenDate: null,
+    haptic: true,
+    sound: false,
+  };
+}
+
+function detectBrowserLang() {
+  const l = (navigator.language || 'fr').toLowerCase();
+  if (l.startsWith('ar')) return 'ar';
+  if (l.startsWith('en')) return 'en';
+  return 'fr';
+}
+
+function loadState() {
+  try {
+    const raw = localStorage.getItem(STATE_KEY);
+    if (raw) return { ...getDefaultState(), ...JSON.parse(raw) };
+  } catch(e) {}
+  return getDefaultState();
+}
+
+function saveState() {
+  try { localStorage.setItem(STATE_KEY, JSON.stringify(state)); } catch(e) {}
+}
+
+let state = loadState();
+
+/* ─────────────────────────────────────────────────────
+   MIDNIGHT RESET
+   ───────────────────────────────────────────────────── */
+function checkMidnightReset() {
+  const today = new Date().toDateString();
+  if (state.intentionDate && state.intentionDate !== today) {
+    // New day — reset intention and wird
+    state.intention = null;
+    state.intentionDate = null;
+    state.wirdCount = 0;
+    state.wirdCurrent = 0;
+    state.adhkarDone = [];
+    state.challenges = [];
+    saveState();
+  }
+  state.lastOpenDate = today;
+  saveState();
+}
+
+/* ─────────────────────────────────────────────────────
+   TAWBA MODE — 2 days absence
+   ───────────────────────────────────────────────────── */
+function checkTawbaMode() {
+  if (!state.lastOpenDate) return false;
+  const last = new Date(state.lastOpenDate);
+  const now = new Date();
+  const diffDays = Math.floor((now - last) / 86400000);
+  return diffDays >= 2;
+}
+
+function showTawbaWelcome() {
+  const t = TRANSLATIONS[state.lang];
+  const card = document.createElement('div');
+  card.className = 'tawba-card';
+  card.innerHTML = `
+    <div class="tawba-icon">🌙</div>
+    <div class="tawba-title">${t.tawba_title}</div>
+    <p class="tawba-text">${t.tawba_text}</p>
+    <button class="tawba-resume-btn" onclick="dismissTawba(this)">${t.tawba_btn}</button>
+  `;
+  const homeScreen = document.getElementById('screen-home');
+  homeScreen.insertBefore(card, homeScreen.firstChild.nextSibling);
+}
+
+function dismissTawba(btn) {
+  btn.closest('.tawba-card').remove();
+}
+
+/* ─────────────────────────────────────────────────────
+   NAVIGATION
+   ───────────────────────────────────────────────────── */
+const NAV_MAP = ['home','wird','mentor','journal','settings'];
+
+function navigateTo(screenId) {
+  // Hide all screens
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+
+  // Show target
+  const screen = document.getElementById('screen-' + screenId);
+  if (screen) screen.classList.add('active');
+
+  // Highlight nav
+  const navBtn = document.getElementById('nav-' + screenId);
+  if (navBtn) navBtn.classList.add('active');
+
+  // Lazy init screens
+  if (screenId === 'wird')      renderAdhkarList();
+  if (screenId === 'checklist') renderChallengesList();
+  if (screenId === 'qibla')     initQiblaScreen();
+}
+
+/* ─────────────────────────────────────────────────────
+   I18N APPLY
+   ───────────────────────────────────────────────────── */
+function applyTranslations() {
+  const t = TRANSLATIONS[state.lang];
+  const lang = state.lang;
+  const isRTL = lang === 'ar';
+
+  // Set html attributes
+  document.documentElement.lang = lang;
+  document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
+
+  // Apply font
+  document.body.style.fontFamily = isRTL
+    ? 'var(--font-arabic)'
+    : 'var(--font-latin)';
+
+  // Translate all elements with data-i18n
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) el.textContent = t[key];
+  });
+
+  // Translate placeholders
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (t[key] !== undefined) el.placeholder = t[key];
+  });
+
+  // Orb CTA
+  const orbCta = document.getElementById('orb-cta-text');
+  if (orbCta) {
+    orbCta.textContent = state.intention ? t.orb_resume : t.orb_start;
+  }
+
+  // Greeting
+  updateGreeting();
+
+  // Home level
+  const levelNames = [t.level_reconnect, t.level_discipline, t.level_excellence, t.level_lumiere];
+  const homeLevelName = document.getElementById('home-level-name');
+  if (homeLevelName) homeLevelName.textContent = levelNames[state.level - 1];
+
+  // Lang buttons
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  const activeLangBtn = document.getElementById('lang-' + lang);
+  if (activeLangBtn) activeLangBtn.classList.add('active');
+
+  // Settings values
+  const hapticVal = document.getElementById('haptic-value');
+  if (hapticVal) hapticVal.textContent = state.haptic ? 'ON' : 'OFF';
+  const soundVal = document.getElementById('sound-value');
+  if (soundVal) soundVal.textContent = state.sound ? 'ON' : 'OFF';
+
+  // Level descriptions
+  const lvl1desc = document.querySelector('[data-i18n="level_reconnect_desc"]');
+  if (lvl1desc) lvl1desc.textContent = t.level_reconnect_desc;
+
+  // Re-render dynamic lists
+  renderAdhkarList();
+  renderChallengesList();
+  updateIntentionDisplay();
+}
+
+function setLanguage(lang) {
+  state.lang = lang;
+  saveState();
+  applyTranslations();
+}
+
+/* ─────────────────────────────────────────────────────
+   GREETING
+   ───────────────────────────────────────────────────── */
+function updateGreeting() {
+  const t = TRANSLATIONS[state.lang];
+  const hour = new Date().getHours();
+  let greetKey = 'greeting_morning';
+  if (hour >= 12 && hour < 17) greetKey = 'greeting_afternoon';
+  else if (hour >= 17) greetKey = 'greeting_evening';
+
+  const el = document.getElementById('greeting-text');
+  if (el) el.textContent = t[greetKey];
+}
+
+/* ─────────────────────────────────────────────────────
+   INTENTION MODAL
+   ───────────────────────────────────────────────────── */
+function openIntentionModal() {
+  const t = TRANSLATIONS[state.lang];
+  const modal = document.getElementById('intention-modal');
+  const grid = document.getElementById('intention-suggestions');
+
+  // Render suggested intentions
+  grid.innerHTML = '';
+  t.intention_options.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'intention-option';
+    btn.textContent = opt;
+    btn.addEventListener('click', () => {
+      grid.querySelectorAll('.intention-option').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      document.getElementById('custom-intention').value = '';
+    });
+    grid.appendChild(btn);
+  });
+
+  // Pre-fill if existing intention
+  if (state.intention) {
+    document.getElementById('custom-intention').value = state.intention;
+  }
+
+  modal.classList.add('open');
+
+  // Translate modal
+  modal.querySelector('[data-i18n="modal_intention_title"]').textContent = t.modal_intention_title;
+  modal.querySelector('[data-i18n="modal_intention_subtitle"]').textContent = t.modal_intention_subtitle;
+  modal.querySelector('[data-i18n="modal_confirm"]').textContent = t.modal_confirm;
+  modal.querySelector('[data-i18n="back"]').textContent = t.back;
+}
+
+function closeIntentionModal() {
+  document.getElementById('intention-modal').classList.remove('open');
+}
+
+function confirmIntention() {
+  const t = TRANSLATIONS[state.lang];
+  const selected = document.querySelector('.intention-option.selected');
+  const custom = document.getElementById('custom-intention').value.trim();
+  const intention = custom || (selected ? selected.textContent : null);
+
+  if (!intention) return;
+
+  state.intention = intention;
+  state.intentionDate = new Date().toDateString();
+  state.xp += 5;
+  saveState();
+
+  // Animate orb
+  const orb = document.getElementById('orb-core');
+  orb.classList.add('intention-set');
+
+  // Update display
+  updateIntentionDisplay();
+  updateOrbCTA();
+
+  closeIntentionModal();
+  triggerHaptic();
+  showToast(t.toast_intention_set);
+}
+
+function updateIntentionDisplay() {
+  const t = TRANSLATIONS[state.lang];
+  const display = document.getElementById('intention-display');
+  const chip = document.getElementById('intention-chip-text');
+  const meta = document.getElementById('intention-meta-text');
+  const orb = document.getElementById('orb-core');
+
+  if (state.intention) {
+    display.style.display = 'block';
+    chip.textContent = state.intention;
+    meta.textContent = t.intention_today_label;
+    orb.classList.add('intention-set');
+  } else {
+    display.style.display = 'none';
+    orb.classList.remove('intention-set');
+  }
+}
+
+function updateOrbCTA() {
+  const t = TRANSLATIONS[state.lang];
+  const cta = document.getElementById('orb-cta-text');
+  if (cta) cta.textContent = state.intention ? t.orb_resume : t.orb_start;
+}
+
+/* ─────────────────────────────────────────────────────
+   WIRD / TASBIH
+   ───────────────────────────────────────────────────── */
+let wirdTimeout = null;
+
+function wirdTap() {
+  const t = TRANSLATIONS[state.lang];
+  const adhkar = t.adhkar;
+  const current = adhkar[state.wirdCurrent] || adhkar[0];
+  const target = current.count;
+
+  state.wirdCount++;
+
+  const display = document.getElementById('wird-count');
+  display.textContent = state.wirdCount;
+  display.classList.add('bump');
+  setTimeout(() => display.classList.remove('bump'), 200);
+
+  triggerHaptic();
+
+  if (state.wirdCount >= target) {
+    // Move to next dhikr or complete
+    state.adhkarDone.push(state.wirdCurrent);
+    const nextIdx = state.wirdCurrent + 1;
+    if (nextIdx < adhkar.length) {
+      state.wirdCurrent = nextIdx;
+      state.wirdCount = 0;
+      loadCurrentAdhkar();
+    } else {
+      showToast(t.toast_wird_complete);
+      state.xp += 10;
+    }
+    renderAdhkarList();
+    saveState();
+  }
+
+  saveState();
+}
+
+function wirdReset() {
+  const t = TRANSLATIONS[state.lang];
+  state.wirdCount = 0;
+  document.getElementById('wird-count').textContent = '0';
+  saveState();
+}
+
+function loadCurrentAdhkar() {
+  const t = TRANSLATIONS[state.lang];
+  const adhkar = t.adhkar;
+  const current = adhkar[state.wirdCurrent] || adhkar[0];
+
+  const arabicEl = document.getElementById('wird-arabic-text');
+  const targetEl = document.getElementById('wird-target-text');
+  if (arabicEl) arabicEl.textContent = current.ar;
+  if (targetEl) targetEl.textContent = '/ ' + current.count;
+}
+
+function renderAdhkarList() {
+  const t = TRANSLATIONS[state.lang];
+  const list = document.getElementById('adhkar-list');
+  if (!list) return;
+
+  list.innerHTML = '';
+  t.adhkar.forEach((item, i) => {
+    const done = state.adhkarDone.includes(i);
+    const div = document.createElement('div');
+    div.className = 'adhkar-item' + (done ? ' done' : '');
+    div.innerHTML = `
+      <div>
+        <div class="adhkar-name">${item.text}</div>
+        <div style="font-family:var(--font-arabic); font-size:18px; color:rgba(212,175,55,0.5); margin-top:2px;">${item.ar}</div>
+      </div>
+      <div style="display:flex; align-items:center; gap:10px;">
+        <span class="adhkar-count">×${item.count}</span>
+        <div class="adhkar-check">${done ? '✓' : ''}</div>
+      </div>
+    `;
+    div.addEventListener('click', () => {
+      state.wirdCurrent = i;
+      state.wirdCount = 0;
+      document.getElementById('wird-count').textContent = '0';
+      loadCurrentAdhkar();
+      saveState();
+    });
+    list.appendChild(div);
+  });
+}
+
+/* ─────────────────────────────────────────────────────
+   CHALLENGES
+   ───────────────────────────────────────────────────── */
+function renderChallengesList() {
+  const t = TRANSLATIONS[state.lang];
+  const list = document.getElementById('challenges-list');
+  if (!list) return;
+
+  list.innerHTML = '';
+  t.challenges.forEach((ch, i) => {
+    const done = state.challenges.includes(i);
+    const card = document.createElement('div');
+    card.className = 'challenge-card' + (done ? ' completed' : '');
+    card.innerHTML = `
+      <div class="challenge-orb">${ch.icon}</div>
+      <div class="challenge-info">
+        <div class="challenge-title">${ch.title}</div>
+        <div class="challenge-sub">${ch.sub}</div>
+      </div>
+      <div style="color:${done ? 'var(--sage)' : 'rgba(240,234,214,0.15)'}; font-size:20px;">${done ? '✓' : '○'}</div>
+    `;
+    card.addEventListener('click', () => {
+      if (!done) {
+        state.challenges.push(i);
+        state.xp += 3;
+        saveState();
+        triggerHaptic();
+        renderChallengesList();
+      }
+    });
+    list.appendChild(card);
+  });
+}
+
+/* ─────────────────────────────────────────────────────
+   QIBLA
+   ───────────────────────────────────────────────────── */
+let qiblaActive = false;
+let compassWatch = null;
+
+function initQiblaScreen() {
+  // Ready state only — actual start on button click
+}
+
+function startQibla() {
+  if (qiblaActive) return;
+  if (!window.DeviceOrientationEvent) {
+    showToast('Compass not supported');
+    return;
+  }
+
+  // iOS 13+ requires permission
+  if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+    DeviceOrientationEvent.requestPermission()
+      .then(res => { if (res === 'granted') attachCompass(); })
+      .catch(console.error);
+  } else {
+    attachCompass();
+  }
+}
+
+function attachCompass() {
+  qiblaActive = true;
+  document.getElementById('qibla-btn').textContent = '—';
+
+  navigator.geolocation.getCurrentPosition(pos => {
+    const userLat = pos.coords.latitude;
+    const userLng = pos.coords.longitude;
+    const qiblaDir = calculateQiblaAngle(userLat, userLng);
+
+    window.addEventListener('deviceorientation', (e) => {
+      const alpha = e.webkitCompassHeading || (360 - (e.alpha || 0));
+      const angle = qiblaDir - alpha;
+      const needle = document.getElementById('compass-needle');
+      if (needle) needle.style.transform = `translateX(-50%) rotate(${angle}deg)`;
+      const deg = document.getElementById('qibla-degree-text');
+      if (deg) deg.textContent = Math.round((qiblaDir + 360) % 360) + '°';
+    }, true);
+  }, () => {
+    showToast('Position unavailable');
+  });
+}
+
+function calculateQiblaAngle(lat, lng) {
+  const KAABA_LAT = 21.4225;
+  const KAABA_LNG = 39.8262;
+  const φ1 = lat * Math.PI / 180;
+  const φ2 = KAABA_LAT * Math.PI / 180;
+  const Δλ = (KAABA_LNG - lng) * Math.PI / 180;
+  const y = Math.sin(Δλ) * Math.cos(φ2);
+  const x = Math.cos(φ1)*Math.sin(φ2) - Math.sin(φ1)*Math.cos(φ2)*Math.cos(Δλ);
+  return (Math.atan2(y, x) * 180 / Math.PI + 360) % 360;
+}
+
+/* ─────────────────────────────────────────────────────
+   AI HOOKS (Placeholders — activate when Master Prompts ready)
+   ───────────────────────────────────────────────────── */
+
+// ── MENTOR HOOK ──
+// Inject your Anthropic API call here.
+// System prompt: VISION_NIYYAH context + Ghazali/Sira persona
+// Model: claude-sonnet-4-20250514
+async function mentorAsk() {
+  /* HOOK: Mentor d'Adab
+   *
+   * When ready, inject:
+   *   const input = document.getElementById('mentor-input').value;
+   *   const response = await fetch('/api/mentor', { ... });
+   *
+   * System prompt to use:
+   *   "Tu es le Mentor d'Adab de Niyyah.
+   *    Tu incarnes la sagesse éthique de l'Islam classique...
+   *    [Master Prompt à ajouter ici]"
+   */
+  showToast('Mentor — ' + TRANSLATIONS[state.lang].coming_soon);
+}
+
+// ── SCANNER HOOK ──
+// Inject your Vision API call here.
+async function scannerCapture() {
+  /* HOOK: Niyyah Scanner
+   *
+   * When ready, inject camera access + Anthropic Vision API
+   * to analyze the object and return a sacred intention suggestion.
+   */
+  showToast('Scanner — ' + TRANSLATIONS[state.lang].coming_soon);
+}
+
+// ── JOURNAL HOOK ──
+// Inject Web Audio API + transcription here.
+let isRecording = false;
+function journalToggleRecording() {
+  /* HOOK: Journal Vocal
+   *
+   * When ready:
+   *   - Start/stop MediaRecorder
+   *   - Send audio to Whisper or Anthropic
+   *   - Display debriefing summary
+   */
+  isRecording = !isRecording;
+  const btn = document.getElementById('journal-audio-btn');
+  if (btn) {
+    btn.style.borderColor = isRecording
+      ? 'rgba(212,175,55,0.8)'
+      : 'rgba(212,175,55,0.25)';
+    btn.style.boxShadow = isRecording
+      ? '0 0 40px rgba(212,175,55,0.3)'
+      : 'none';
+  }
+  if (!isRecording) showToast('Journal — ' + TRANSLATIONS[state.lang].coming_soon);
+}
+
+/* ─────────────────────────────────────────────────────
+   HAPTIC FEEDBACK
+   ───────────────────────────────────────────────────── */
+function triggerHaptic() {
+  if (!state.haptic) return;
+  if (navigator.vibrate) {
+    navigator.vibrate([30]);
+  }
+}
+
+function toggleHaptic() {
+  state.haptic = !state.haptic;
+  saveState();
+  applyTranslations();
+}
+
+function toggleSound() {
+  state.sound = !state.sound;
+  saveState();
+  applyTranslations();
+}
+
+/* ─────────────────────────────────────────────────────
+   TOAST
+   ───────────────────────────────────────────────────── */
+let toastTimer = null;
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  toast.textContent = msg;
+  toast.classList.add('show');
+  if (toastTimer) clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove('show'), 2800);
+}
+
+/* ─────────────────────────────────────────────────────
+   RESET
+   ───────────────────────────────────────────────────── */
+function confirmReset() {
+  const t = TRANSLATIONS[state.lang];
+  if (confirm('Reset all data?')) {
+    const lang = state.lang;
+    localStorage.removeItem(STATE_KEY);
+    state = getDefaultState();
+    state.lang = lang;
+    saveState();
+    applyTranslations();
+    updateIntentionDisplay();
+    showToast(t.toast_reset);
+  }
+}
+
+/* ─────────────────────────────────────────────────────
+   CLOSE MODAL ON BACKDROP CLICK
+   ───────────────────────────────────────────────────── */
+document.getElementById('intention-modal').addEventListener('click', function(e) {
+  if (e.target === this) closeIntentionModal();
+});
+
+/* ─────────────────────────────────────────────────────
+   INIT
+   ───────────────────────────────────────────────────── */
+function init() {
+  checkMidnightReset();
+
+  // Tawba mode check
+  if (checkTawbaMode()) showTawbaWelcome();
+
+  // Apply i18n
+  applyTranslations();
+
+  // Restore state visuals
+  updateIntentionDisplay();
+  loadCurrentAdhkar();
+
+  // Level bar
+  const maxXP = [40, 100, 200, 400];
+  const fill = document.getElementById('home-level-fill');
+  if (fill) {
+    const pct = Math.min(100, (state.xp / maxXP[state.level - 1]) * 100);
+    fill.style.width = pct + '%';
+  }
+
+  // Start on home
+  navigateTo('home');
+
+  console.log('%cNiyyah V2 · بِسْمِ اللَّهِ', 'color:#D4AF37; font-size:16px; font-style:italic;');
+}
+
+// Boot
+document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>
