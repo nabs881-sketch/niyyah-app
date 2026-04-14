@@ -1,0 +1,31 @@
+{
+  "appId": "com.niyyah.app",
+  "appName": "Niyyah",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  },
+  "android": {
+    "backgroundColor": "#0A0A0A",
+    "allowMixedContent": false,
+    "captureInput": true,
+    "webContentsDebuggingEnabled": false
+  },
+  "plugins": {
+    "LocalNotifications": {
+      "smallIcon": "ic_stat_niyyah",
+      "iconColor": "#D4AF37",
+      "sound": "none"
+    },
+    "SplashScreen": {
+      "launchShowDuration": 2000,
+      "backgroundColor": "#0A0A0A",
+      "showSpinner": false,
+      "androidSpinnerStyle": "small",
+      "spinnerColor": "#D4AF37"
+    },
+    "Haptics": {
+      "returnDataToPluginCall": true
+    }
+  }
+}
