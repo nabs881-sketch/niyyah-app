@@ -1753,14 +1753,18 @@ function getCurrentPrayerBlock() {
     var p = str.replace(/ *\(.*\)/, '').split(':');
     return parseInt(p[0], 10) * 60 + parseInt(p[1], 10);
   }
-  if (!_prayerTimes) return { id: 'reveil', label: 'AU RÉVEIL' };
+  if (!_prayerTimes) return { id: 'nuit', label: '🌙 La nuit' };
   var fajr = toMin(_prayerTimes['Fajr']);
   var dhuhr = toMin(_prayerTimes['Dhuhr']);
   var asr = toMin(_prayerTimes['Asr']);
   var maghrib = toMin(_prayerTimes['Maghrib']);
   var isha = toMin(_prayerTimes['Isha']);
-  if (fajr == null || dhuhr == null || asr == null || maghrib == null || isha == null) return { id: 'reveil', label: 'AU RÉVEIL' };
-  if (nowMin < fajr)    return { id: 'reveil',  label: 'AU RÉVEIL' };
+  if (fajr == null || dhuhr == null || asr == null || maghrib == null || isha == null) return { id: 'nuit', label: '🌙 La nuit' };
+  if (nowMin < fajr) {
+    var qiyamStart = Math.floor(fajr * 2 / 3);
+    if (nowMin >= qiyamStart) return { id: 'qiyam', label: '🌙 Qiyam al-Layl' };
+    return { id: 'nuit', label: '🌙 La nuit' };
+  }
   if (nowMin < dhuhr)   return { id: 'fajr',    label: 'APRÈS FAJR' };
   if (nowMin < asr)     return { id: 'dhuhr',   label: 'APRÈS DHUHR' };
   if (nowMin < maghrib) return { id: 'asr',     label: 'APRÈS ASR' };
@@ -1841,15 +1845,18 @@ function renderLevel(levelId) {
     + '</div></div>'
     + '</div>' + graceBanner + fridayBanner + prayerCard + qiblaCard;
   const _block = getCurrentPrayerBlock();
-  if (_block.id === 'reveil' && !_prayerTimes && !window._prayerBlockRetried) {
+  if (_block.id === 'nuit' && !_prayerTimes && !window._prayerBlockRetried) {
     window._prayerBlockRetried = true;
     setTimeout(function() { renderLevel(levelId); }, 2000);
   }
+  var _bandeauSub = 'Tes actes du moment';
+  if (_block.id === 'nuit') _bandeauSub = 'Dors avec le Witr';
+  else if (_block.id === 'qiyam') _bandeauSub = state._unlocked && state._unlocked.includes(4) ? 'L\'heure du Qiyam al-Layl' : 'Dors avec le Witr';
   html += '<div style="display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,rgba(200,168,75,0.15),rgba(200,168,75,0.05));border:1px solid rgba(200,168,75,0.35);border-radius:14px;padding:14px 18px;margin:0 0 20px;">'
     + '<div style="width:3px;height:36px;background:linear-gradient(180deg,#C8A84A,#E0C870);border-radius:2px;flex-shrink:0;"></div>'
     + '<div>'
     + '<div style="font-size:15px;font-weight:700;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;letter-spacing:0.5px;">' + _block.label + '</div>'
-    + '<div style="font-size:11px;color:var(--t3);margin-top:2px;">Tes actes du moment</div>'
+    + '<div style="font-size:11px;color:var(--t3);margin-top:2px;">' + _bandeauSub + '</div>'
     + '</div>'
     + '</div>';
   var _toggleLabel = window._showAllBlocks ? 'Moment actuel' : 'Ma journée complète';
@@ -5706,6 +5713,38 @@ function updateSanctuaireMoment() {
   if (!el) return;
   var block = getCurrentPrayerBlock();
   var blockId = block.id;
+  // Nuit et Qiyam — messages spéciaux
+  if (blockId === 'nuit') {
+    el.innerHTML = '<div style="display:flex;align-items:center;gap:10px;background:rgba(200,168,75,0.08);border:1px solid rgba(200,168,75,0.25);border-radius:14px;padding:14px 18px;margin:12px 0 20px;">'
+      + '<div style="width:3px;height:36px;background:linear-gradient(180deg,#C8A84A,#E0C870);border-radius:2px;flex-shrink:0;"></div>'
+      + '<div style="flex:1;">'
+      + '<div style="font-size:15px;font-weight:700;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;">🌙 La nuit est pour le repos</div>'
+      + '<div style="font-size:11px;color:var(--t3);margin-top:2px;">Dors avec le Witr</div>'
+      + '</div></div>';
+    return;
+  }
+  if (blockId === 'qiyam') {
+    var hasLevel4 = state._unlocked && state._unlocked.includes(4);
+    if (hasLevel4) {
+      var tahajjudDone = !!state['tahajjud'];
+      el.innerHTML = '<div style="display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,rgba(200,168,75,0.15),rgba(200,168,75,0.05));border:1px solid rgba(200,168,75,0.35);border-radius:14px;padding:14px 18px;margin:12px 0 20px;">'
+        + '<div style="width:3px;height:36px;background:linear-gradient(180deg,#C8A84A,#E0C870);border-radius:2px;flex-shrink:0;"></div>'
+        + '<div style="flex:1;">'
+        + '<div style="font-size:15px;font-weight:700;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;">🌙 Dernier tiers de la nuit</div>'
+        + '<div style="font-size:11px;color:var(--t3);margin-top:2px;">' + (tahajjudDone ? '✦ Qiyam al-Layl accompli' : 'L\'heure du Qiyam al-Layl') + '</div>'
+        + '</div>'
+        + (tahajjudDone ? '' : '<button onclick="v2GoTo(\'checklist\')" style="background:transparent;border:1px solid rgba(200,168,75,0.4);color:#C8A84A;font-size:12px;font-weight:600;padding:6px 14px;border-radius:10px;cursor:pointer;white-space:nowrap;">→ Prier</button>')
+        + '</div>';
+    } else {
+      el.innerHTML = '<div style="display:flex;align-items:center;gap:10px;background:rgba(200,168,75,0.08);border:1px solid rgba(200,168,75,0.25);border-radius:14px;padding:14px 18px;margin:12px 0 20px;">'
+        + '<div style="width:3px;height:36px;background:linear-gradient(180deg,#C8A84A,#E0C870);border-radius:2px;flex-shrink:0;"></div>'
+        + '<div style="flex:1;">'
+        + '<div style="font-size:15px;font-weight:700;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;">🌙 La nuit est pour le repos</div>'
+        + '<div style="font-size:11px;color:var(--t3);margin-top:2px;">Dors avec le Witr</div>'
+        + '</div></div>';
+    }
+    return;
+  }
   function _isDone(item) { return item.type === 'counter' ? (state[item.id] || 0) >= item.target : !!state[item.id]; }
   var _allUnlocked = LEVELS.filter(function(l) { return state._unlocked && state._unlocked.includes(l.id); })
     .flatMap(function(l) { return l.sections.flatMap(function(s) { return s.items; }); });
