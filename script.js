@@ -6037,11 +6037,11 @@ function v2GoMentor() {
       mentorStatusEl.textContent = '✦ Mentor Premium activé';
       mentorStatusEl.style.color = 'rgba(212,175,55,0.6)';
     } else if (remaining > 0) {
-      mentorStatusEl.textContent = remaining + ' question' + (remaining > 1 ? 's' : '') + ' gratuite' + (remaining > 1 ? 's' : '') + ' restante' + (remaining > 1 ? 's' : '');
-      mentorStatusEl.style.color = 'rgba(135,169,107,0.6)';
+      mentorStatusEl.textContent = remaining + ' question' + (remaining > 1 ? 's' : '') + ' encore offerte' + (remaining > 1 ? 's' : '') + ' ✦';
+      mentorStatusEl.style.color = 'rgba(200,168,75,0.6)';
     } else {
-      mentorStatusEl.textContent = '🔓 Premium requis';
-      mentorStatusEl.style.color = 'rgba(212,175,55,0.5)';
+      mentorStatusEl.textContent = 'Reviens demain inch\'Allah 🌙';
+      mentorStatusEl.style.color = 'rgba(200,168,75,0.5)';
     }
   }
 }
