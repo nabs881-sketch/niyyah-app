@@ -1856,6 +1856,20 @@ function renderLevel(levelId) {
   }
   content.innerHTML = html;
   level.sections.forEach(s => s.items.forEach(item => { if (item.type === 'counter') initCounterEl(item); }));
+  // Appliquer l'état timeline sur le DOM après injection
+  setTimeout(function() {
+    const allItems = document.querySelectorAll('.item');
+    allItems.forEach(function(el) {
+      const itemId = el.id.replace('item-', '');
+      if (state[itemId]) {
+        el.style.opacity = '0.35';
+        el.classList.remove('timeline-current');
+        el.style.background = '';
+        el.style.borderLeft = '';
+        el.style.paddingLeft = '';
+      }
+    });
+  }, 60);
   setTimeout(applyScrollScale, 50);
 }
 function renderPrayerItem(item, delay, extraClass, forceChecked) {
