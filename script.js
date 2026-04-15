@@ -812,7 +812,7 @@ const LEVELS = [
       ]},
       { icon: '🎧', title: 'Immersion coranique', items: [
         { id: 'coran_ecoute', label: 'Écouter le Coran', sub: 'Choisis une sourate et écoute', arabic: 'تِلَاوَةُ الْقُرْآنِ', optional: true, coranPicker: true, block: 'fajr', hadith: '\"Récite le Coran car il intercèdera pour ses compagnons le Jour du Jugement\" — Muslim 804', source: 'Muslim 804' },
-        { id: 'podcast', label: 'Podcast islamique', sub: 'Islam Simplement ou autre contenu', block: 'jour' },
+        { id: 'podcast', label: 'Podcast islamique', sub: 'Islam Simplement ou autre contenu', block: 'ressources' },
       ], links: [
         { label: 'Vie du Prophète ﷺ', sub: "L'Islam Simplement · YouTube", url: 'https://www.youtube.com/@lislamsimplement', icon: '▶' },
         { label: 'Islam Simplement', sub: 'Podcast · Écouter maintenant', url: 'https://open.spotify.com/search/islam%20simplement', icon: '🎙' },
