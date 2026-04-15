@@ -1744,6 +1744,28 @@ function getPrayerTimelineColor() {
   if (nowMin < maghrib) return '#c4722a';
   return '#7a2a2a';
 }
+function getCurrentPrayerBlock() {
+  var now = new Date();
+  var nowMin = now.getHours() * 60 + now.getMinutes();
+  function toMin(str) {
+    if (!str) return null;
+    var p = str.replace(/ *\(.*\)/, '').split(':');
+    return parseInt(p[0], 10) * 60 + parseInt(p[1], 10);
+  }
+  if (!_prayerTimes) return { id: 'reveil', emoji: '🌄', label: 'Au réveil' };
+  var fajr = toMin(_prayerTimes['Fajr']);
+  var dhuhr = toMin(_prayerTimes['Dhuhr']);
+  var asr = toMin(_prayerTimes['Asr']);
+  var maghrib = toMin(_prayerTimes['Maghrib']);
+  var isha = toMin(_prayerTimes['Isha']);
+  if (fajr == null || dhuhr == null || asr == null || maghrib == null || isha == null) return { id: 'reveil', emoji: '🌄', label: 'Au réveil' };
+  if (nowMin < fajr)    return { id: 'reveil',  emoji: '🌄', label: 'Au réveil' };
+  if (nowMin < dhuhr)   return { id: 'fajr',    emoji: '🌅', label: 'Après Fajr' };
+  if (nowMin < asr)     return { id: 'dhuhr',   emoji: '☀️', label: 'Après Dhuhr' };
+  if (nowMin < maghrib) return { id: 'asr',     emoji: '🌇', label: 'Après Asr' };
+  if (nowMin < isha)    return { id: 'maghrib', emoji: '🌆', label: 'Après Maghrib' };
+  return { id: 'isha', emoji: '🌙', label: 'Après Isha' };
+}
 function renderLevel(levelId) {
   const level   = LEVELS.find(l => l.id === levelId);
   const content = document.getElementById('content');
@@ -1801,6 +1823,8 @@ function renderLevel(levelId) {
     + '<div style="font-size:10px;color:' + scoreColor + ';background:' + scoreBg + ';border:1px solid ' + scoreBorder + ';border-radius:6px;padding:1px 6px;margin-left:2px;">' + scoreLabel + '</div>'
     + '</div></div>'
     + '</div>' + graceBanner + fridayBanner + prayerCard + qiblaCard;
+  const _block = getCurrentPrayerBlock();
+  html += '<div style="background:rgba(200,168,75,0.1);border:1px solid rgba(200,168,75,0.3);border-radius:12px;padding:12px 16px;margin:0 0 16px;font-size:13px;color:#C8A84A;font-weight:600;">' + _block.emoji + ' ' + _block.label + ' — Tes actes du moment</div>';
   level.sections.forEach(section => {
     html += '<div class="section"><div class="section-title-row"><div class="section-icon-wrap">' + section.icon + '</div><div class="section-name">' + section.title + '</div></div>'
       + (section.desc ? '<div style="margin:8px 0 12px;background:rgba(52,217,98,0.08);border:1px solid rgba(52,217,98,0.2);border-radius:10px;padding:12px 14px;display:flex;gap:10px;align-items:flex-start;"><div style="font-size:20px;flex-shrink:0;">🌿</div><div><div style="font-size:13px;font-weight:600;color:var(--green);margin-bottom:3px;">C\'est quoi le wird ?</div><div style="font-size:13px;color:var(--t2);line-height:1.5;">' + section.desc + '</div></div></div>' : '');
