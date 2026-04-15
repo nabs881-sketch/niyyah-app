@@ -2207,8 +2207,8 @@ body::before {
 
 .mentor-level-text {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 15px; line-height: 1.6; font-style: italic;
-  color: rgba(240,234,214,0.8);
+  font-size: 16.5px; line-height: 1.75; font-style: italic;
+  color: rgba(240,234,214,0.85);
 }
 
 /* Thinking orb (pulsation) */
