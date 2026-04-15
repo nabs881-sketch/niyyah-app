@@ -5797,23 +5797,29 @@ function v2GoMentor() {
   // Apply i18n
   mentorApplyI18n();
 
-  // Afficher le statut Premium / questions restantes (caché avant la 1ère interaction)
-  const mentorStatusEl = document.getElementById('mentor-premium-status');
-  if (mentorStatusEl) {
-    const usage = parseInt(localStorage.getItem('niyyah_mentor_usage') || '0');
-    const remaining = Math.max(0, 3 - usage);
-    if (usage === 0 && !isPremium()) {
-      mentorStatusEl.style.display = 'none';
-    } else if (isPremium()) {
-      mentorStatusEl.style.display = '';
+  // Afficher le statut Premium / questions restantes — uniquement après la 1ère interaction
+  var usage = parseInt(localStorage.getItem('niyyah_mentor_usage') || '0');
+  var remaining = Math.max(0, 3 - usage);
+  var mentorStatusEl = document.getElementById('mentor-premium-status');
+  if (usage === 0 && !isPremium()) {
+    // Aucune interaction : on ne crée/affiche rien
+    if (mentorStatusEl) mentorStatusEl.remove();
+  } else {
+    // Créer l'élément si absent
+    if (!mentorStatusEl) {
+      mentorStatusEl = document.createElement('div');
+      mentorStatusEl.id = 'mentor-premium-status';
+      mentorStatusEl.style.cssText = 'font-size:10px;letter-spacing:0.1em;margin-top:2px;opacity:0.8;';
+      var headerLeft = document.querySelector('.mentor-header-left');
+      if (headerLeft) headerLeft.appendChild(mentorStatusEl);
+    }
+    if (isPremium()) {
       mentorStatusEl.textContent = '✦ Mentor Premium activé';
       mentorStatusEl.style.color = 'rgba(212,175,55,0.6)';
     } else if (remaining > 0) {
-      mentorStatusEl.style.display = '';
       mentorStatusEl.textContent = remaining + ' question' + (remaining > 1 ? 's' : '') + ' gratuite' + (remaining > 1 ? 's' : '') + ' restante' + (remaining > 1 ? 's' : '');
       mentorStatusEl.style.color = 'rgba(135,169,107,0.6)';
     } else {
-      mentorStatusEl.style.display = '';
       mentorStatusEl.textContent = '🔓 Premium requis';
       mentorStatusEl.style.color = 'rgba(212,175,55,0.5)';
     }

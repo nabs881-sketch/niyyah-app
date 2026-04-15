@@ -234,7 +234,7 @@
   </div>
 
   <!-- DÉFI DE LA SEMAINE -->
-  <div id="accueilDefiCard" class="defi-card-sanctuaire" style="display:none;width:min(320px,90vw);margin:12px auto 0;padding:12px 14px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.2);border-radius:14px;cursor:pointer;position:relative;z-index:10;">
+  <button id="accueilDefiCard" class="defi-card-sanctuaire" onclick="if(typeof openDefiSelector==='function')openDefiSelector()" style="display:none;width:min(320px,90vw);margin:12px auto 0;padding:12px 14px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.2);border-radius:14px;cursor:pointer;position:relative;z-index:10;text-align:left;font-family:inherit;color:inherit;">
     <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
       <div id="defiCardIcon" style="font-size:22px;">🎯</div>
       <div style="flex:1;">
@@ -243,7 +243,7 @@
       </div>
     </div>
     <div id="defiCardDots" style="display:flex;gap:3px;align-items:center;"></div>
-  </div>
+  </button>
 
   </div><!-- /WRAPPER -->
 
@@ -394,7 +394,7 @@
     <div class="mentor-header-left">
       <div class="mentor-header-title" id="mentor-title-el">Mentor d'Adab</div>
       <div class="mentor-header-sub" id="mentor-sub-el">Sagesse · Tazkiyat al-Nafs</div>
-    <div id="mentor-premium-status" style="font-size:10px;letter-spacing:0.1em;margin-top:2px;opacity:0.8;display:none;"></div>
+    <!-- mentor-premium-status: injecté par JS après la 1ère interaction -->
     </div>
     <button class="mentor-header-back" onclick="v2GoSanctuaire()">←</button>
   </div>

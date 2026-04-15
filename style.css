@@ -2445,13 +2445,13 @@ body::before {
   flex-direction: column;
 }
 .card-desc-v2 {
-  padding: 5px 4px 2px;
-  font-size: 10px;
-  color: rgba(240,234,214,0.5);
+  padding: 6px 4px 2px;
+  font-size: 12.5px;
+  color: rgba(240,234,214,0.6);
   text-align: center;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
   font-family: var(--sans);
-  line-height: 1.3;
+  line-height: 1.35;
 }
 .quick-btn-v2 .quick-icon-v2,
 .quick-btn-v2 .quick-label-v2,
