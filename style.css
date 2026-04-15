@@ -3087,3 +3087,20 @@ div#v2-stats-row > div {
   border-color: rgba(200,168,74,0.6);
   transform: scale(0.93);
 }
+
+/* ═══ GLOBAL FIX : boutons dorés — texte sombre sur fond or ═══ */
+.btn-bismillah,
+.btn-new-day,
+.btn-confirm-v2,
+.weekly-btn,
+.notif-btn-yes,
+.freemium-btn-buy,
+.popup-btn,
+button[style*="gold-grad"],
+button[style*="#c8a84b"],
+button[style*="#ffd60a"],
+button[style*="gold-v2"] {
+  background: #C8A84A !important;
+  color: #2C2E32 !important;
+  text-shadow: none !important;
+}
