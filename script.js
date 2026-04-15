@@ -1702,6 +1702,27 @@ function selectLevel(id) {
     window.scrollTo(0, 0);
   }, 30);
 }
+function getMoonSVG(percent) {
+  var p = Math.max(0, Math.min(100, percent));
+  var s = 60, r = 26, cx = 30, cy = 30;
+  var fill = '#C8A84A', stroke = '#C8A84A';
+  if (p <= 10) {
+    return '<svg width="'+s+'" height="'+s+'" viewBox="0 0 60 60"><circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="transparent" stroke="'+stroke+'" stroke-width="2" opacity="0.5"/></svg>';
+  }
+  if (p >= 100) {
+    return '<svg class="moon-full" width="'+s+'" height="'+s+'" viewBox="0 0 60 60"><circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="'+fill+'"/></svg>';
+  }
+  // Crescent / half / gibbous via two arcs
+  var t = p / 100;
+  // Inner edge x-radius: 1=new, 0=half, -1=full
+  var ix = 1 - 2 * t;
+  var sweep = ix >= 0 ? 0 : 1;
+  var axr = Math.abs(ix) * r;
+  return '<svg width="'+s+'" height="'+s+'" viewBox="0 0 60 60">'
+    + '<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="transparent" stroke="'+stroke+'" stroke-width="1.5" opacity="0.2"/>'
+    + '<path d="M '+cx+' '+(cy-r)+' A '+r+' '+r+' 0 1 1 '+cx+' '+(cy+r)+' A '+axr+' '+r+' 0 0 '+sweep+' '+cx+' '+(cy-r)+'" fill="'+fill+'"/>'
+    + '</svg>';
+}
 function getPrayerTimelineColor() {
   const now = new Date();
   const nowMin = now.getHours() * 60 + now.getMinutes();
@@ -2404,16 +2425,12 @@ function renderProgression() {
   const niveauxHTML = LEVELS.map(l => {
     const pct = Math.min(Math.round(getLevelProgress(l.id)), 100);
     const unlocked = state._unlocked.includes(l.id);
-    const done = pct >= 100;
     return '<div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05);">'
-      + '<div style="width:28px;height:28px;border-radius:50%;background:' + (done ? 'linear-gradient(135deg,#c8a84b,#e8cc6a)' : unlocked ? 'rgba(52,217,98,0.15)' : 'rgba(255,255,255,0.05)') + ';display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:' + (done ? '#000' : unlocked ? 'var(--green)' : 'var(--t3)') + ';flex-shrink:0;">' + l.id + '</div>'
+      + '<div style="flex-shrink:0;' + (unlocked ? '' : 'opacity:0.25;') + '">' + getMoonSVG(unlocked ? pct : 0) + '</div>'
       + '<div style="flex:1;">'
-      + '<div style="font-size:13px;font-weight:600;color:' + (unlocked ? 'var(--t1)' : 'var(--t3)') + ';margin-bottom:4px;">' + l.title + '</div>'
-      + '<div style="height:3px;background:rgba(255,255,255,0.06);border-radius:2px;overflow:hidden;">'
-      + '<div style="height:100%;width:' + (unlocked ? pct : 0) + '%;background:' + (done ? 'linear-gradient(90deg,#c8a84b,#e8cc6a)' : 'var(--green-grad)') + ';border-radius:2px;transition:width 1s ease;"></div>'
-      + '</div></div>'
-      + '<div style="font-size:' + (unlocked && pct === 0 ? '10px' : '12px') + ';font-weight:' + (unlocked && pct === 0 ? '500' : '700') + ';color:' + (done ? '#c8a84b' : unlocked ? 'var(--green)' : 'var(--t3)') + ';min-width:32px;text-align:right;">' + (!unlocked ? '🔒' : pct === 0 ? 'Commence !' : pct + '%') + '</div>'
-      + '</div>';
+      + '<div style="font-size:13px;font-weight:600;color:' + (unlocked ? 'var(--t1)' : 'var(--t3)') + ';">' + l.title + '</div>'
+      + '<div style="font-size:11px;color:var(--t3);margin-top:2px;">' + (!unlocked ? '🔒 Verrouillé' : pct === 0 ? 'Commence !' : pct + '%') + '</div>'
+      + '</div></div>';
   }).join('');
   let badgesHTML = '';
   BADGES.forEach(badge => {
@@ -2439,10 +2456,11 @@ function renderProgression() {
   let lvlRowsP='';
   LEVELS.forEach((lvl,i)=>{
     const pct=Math.round(getLevelProgress(lvl.id)), done=pct>=100, unlocked=state._unlocked.includes(lvl.id);
-    const cc=done?'var(--gold)':'var(--green)', ico=['🕌','📿','📚','💚'][i];
     var pctLabel = (unlocked && pct===0) ? 'Commence !' : pct+'%';
-    var pctSize = (unlocked && pct===0) ? '10px' : '13px';
-    lvlRowsP+='<div style="background:var(--card);border-radius:12px;padding:10px 14px;display:flex;align-items:center;gap:10px;'+(unlocked?'':'opacity:0.35')+';margin-bottom:5px;"><span style="font-size:17px;width:26px;text-align:center;">'+ico+'</span><div style="flex:1"><div style="font-size:13px;color:var(--t1);margin-bottom:3px;">'+lvl.title+(done?' ✓':'')+'</div><div style="height:3px;background:var(--sep2);border-radius:3px;"><div style="height:100%;width:'+pct+'%;background:'+cc+';border-radius:3px;"></div></div></div><div style="font-size:'+pctSize+';font-weight:600;color:'+cc+';min-width:32px;text-align:right;">'+pctLabel+'</div></div>';
+    lvlRowsP+='<div style="background:var(--card);border-radius:12px;padding:10px 14px;display:flex;align-items:center;gap:10px;'+(unlocked?'':'opacity:0.35')+';margin-bottom:5px;">'
+      +'<div style="flex-shrink:0;">'+getMoonSVG(unlocked?pct:0)+'</div>'
+      +'<div style="flex:1"><div style="font-size:13px;color:var(--t1);margin-bottom:3px;">'+lvl.title+(done?' ✓':'')+'</div>'
+      +'<div style="font-size:11px;color:var(--t3);">'+(!unlocked?'🔒 Verrouillé':pctLabel)+'</div></div></div>';
   });
   // === GRAPHIQUE 7 JOURS BILANS ===
   const bilansData = JSON.parse(localStorage.getItem('niyyah_bilans') || '{}');

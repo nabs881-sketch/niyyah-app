@@ -3137,3 +3137,11 @@ button[style*="gold-v2"] {
   padding-left: 13px !important;
   transition: background 0.4s ease-in-out, border-left 0.4s ease-in-out, opacity 0.4s ease-in-out;
 }
+.moon-full circle {
+  filter: drop-shadow(0 0 6px #C8A84A);
+  animation: moonGlow 2s ease-in-out infinite;
+}
+@keyframes moonGlow {
+  0%, 100% { filter: drop-shadow(0 0 6px rgba(200,168,74,0.6)); }
+  50% { filter: drop-shadow(0 0 14px rgba(200,168,74,1)); }
+}
