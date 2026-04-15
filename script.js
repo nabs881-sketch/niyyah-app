@@ -396,7 +396,10 @@ function renderDefiCard() {
   const card = document.getElementById('accueilDefiCard');
   if (!card) return;
   card.style.display = 'block';
-  const { defi, state } = getDefiCourant();
+  // Toujours assigner un handler par défaut
+  card.onclick = function() { if (typeof openDefiSelector === 'function') openDefiSelector(); };
+  try {
+  const { defi, state: defiState } = getDefiCourant();
   // Pas encore de défi choisi cette semaine
   if (!defi) {
     document.getElementById('defiCardIcon').textContent = '🎯';
@@ -404,13 +407,12 @@ function renderDefiCard() {
     document.getElementById('defiCardScore').textContent = '';
     const dots = document.getElementById('defiCardDots');
     dots.innerHTML = '<div style="font-size:11px;color:rgba(200,168,75,0.5);font-style:italic;">Appuie pour parcourir les 100 défis →</div>';
-    card.onclick = openDefiSelector;
     return;
   }
-  card.onclick = openDefiOverlay;
+  card.onclick = function() { if (typeof openDefiOverlay === 'function') openDefiOverlay(); };
   document.getElementById('defiCardIcon').textContent = defi.icon;
   document.getElementById('defiCardTitre').textContent = defi.titre;
-  const fait = state.current.jours.length;
+  const fait = defiState.current.jours.length;
   document.getElementById('defiCardScore').textContent = fait + '/' + defi.cible;
   // Dots
   const dots = document.getElementById('defiCardDots');
@@ -422,17 +424,18 @@ function renderDefiCard() {
     dots.appendChild(dot);
   }
   const reste = defi.cible - fait;
-  if (reste > 0 && !state.current.complete) {
+  if (reste > 0 && !defiState.current.complete) {
     const label = document.createElement('div');
     label.style.cssText = 'margin-left:8px;font-size:9px;color:rgba(200,168,75,0.4);flex-shrink:0;';
     label.textContent = reste + (reste > 1 ? ' jours restants' : ' jour restant');
     dots.appendChild(label);
-  } else if (state.current.complete) {
+  } else if (defiState.current.complete) {
     const label = document.createElement('div');
     label.style.cssText = 'margin-left:8px;font-size:9px;color:#c8a84b;flex-shrink:0;font-weight:700;';
     label.textContent = '✦ Accompli !';
     dots.appendChild(label);
   }
+  } catch(e) { console.warn('renderDefiCard error:', e); }
 }
 
 function renderDefiOverlay() {
