@@ -2127,6 +2127,9 @@ function toggleItem(id, event) {
   if (_isMainItem && currentItem && state[id]) {
     currentItem.style.opacity = '0.35';
     currentItem.classList.remove('timeline-current');
+    currentItem.style.background = '';
+    currentItem.style.borderLeft = '';
+    currentItem.style.paddingLeft = '';
     const allItems = Array.from(document.querySelectorAll('.item'));
     const curIdx = allItems.indexOf(currentItem);
     for (let i = curIdx + 1; i < allItems.length; i++) {
