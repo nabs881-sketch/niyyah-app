@@ -2944,7 +2944,7 @@ function toggleWirdItem(id, event) {
 function renderWird() {
   const content = document.getElementById('wirdContent');
   if (!content) return;
-  let html = '';
+  let html = '<button onclick="switchView(\'checklist\')" style="background:transparent;border:none;color:#C8A84A;font-size:14px;cursor:pointer;padding:8px 0;margin-bottom:8px;display:flex;align-items:center;gap:4px;">← Retour</button>';
   ['matin', 'soir'].forEach(session => {
     const s = WIRD_DATA[session];
     const done = s.items.filter(i => wirdState[i.id]).length;
