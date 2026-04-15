@@ -6033,7 +6033,7 @@ function v2GoMentor() {
       mentorStatusEl = document.createElement('div');
       mentorStatusEl.id = 'mentor-premium-status';
       mentorStatusEl.style.cssText = 'font-size:10px;letter-spacing:0.1em;margin-top:2px;opacity:0.8;';
-      var headerLeft = document.querySelector('.mentor-header-left');
+      var headerLeft = document.querySelector('.mentor-header-center');
       if (headerLeft) headerLeft.appendChild(mentorStatusEl);
     }
     if (isPremium()) {
