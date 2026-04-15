@@ -5713,7 +5713,17 @@ function updateSanctuaireMoment() {
   var blockTotal = blockItems.length;
   var blockDone = blockItems.filter(_isDone).length;
   var blockRemaining = blockTotal - blockDone;
-  if (blockTotal === 0) { el.innerHTML = ''; return; }
+  if (blockTotal === 0 && !_prayerTimes && !window._sanctuaireMomentRetried) {
+    window._sanctuaireMomentRetried = true;
+    setTimeout(updateSanctuaireMoment, 2500);
+  }
+  if (blockTotal === 0) {
+    blockItems = _allUnlocked.filter(function(item) { return item.block === 'jour'; });
+    blockTotal = blockItems.length;
+    blockDone = blockItems.filter(_isDone).length;
+    blockRemaining = blockTotal - blockDone;
+    if (blockTotal === 0) { el.innerHTML = ''; return; }
+  }
   var jourItems = _allUnlocked.filter(function(item) { return item.block === 'jour'; });
   var jourTotal = jourItems.length;
   var jourDone = jourItems.filter(_isDone).length;
