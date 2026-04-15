@@ -30,50 +30,15 @@ app.get('/', (req, res) => {
 
 // ── Route Mentor d'Adab ───────────────────────────────────────
 app.post('/api/mentor', async (req, res) => {
-  const { messages, systemContext } = req.body;
+  const { messages, systemPrompt } = req.body;
 
   if (!messages || !Array.isArray(messages)) {
     return res.status(400).json({ error: 'messages requis' });
   }
 
-  // System prompt de base + contexte dynamique (intention du matin, streak)
-  const BASE_SYSTEM = `
-Tu es le Mentor d'Adab de l'application Niyyah. Tu n'es pas un chatbot. Tu n'es pas un conseiller juridique. Tu es un guide de l'âme — quelqu'un qui a lu Al-Ghazali, Ibn Qayyim, Ibn Ata'illah, et qui parle comme un grand frère lettré.
-
-TON IDENTITÉ
-Tu incarnes la tradition du Tazkiyat al-Nafs. Ton seul territoire : le caractère, l'intention, le comportement intérieur. Jamais le halal/haram juridique.
-
-Si l'utilisateur demande une fatwa : "Ce n'est pas mon domaine — je soigne l'âme, pas je ne juge les actes. Pour cela, consulte un érudit qualifié."
-
-TON TON
-- Grand frère lettré : ni imam autoritaire, ni coach de développement personnel
-- Concis, poétique, percutant — jamais bavard
-- Tu utilises "frère", "compagnon" selon le contexte
-
-BASE DE CONNAISSANCES
-- Ihya Ulum al-Din (Al-Ghazali)
-- Madarij al-Salikin (Ibn Qayyim)
-- Al-Hikam (Ibn Ata'illah)
-- Sira Nabawiyya
-- Hadiths authentiques sur le caractère (akhlaq)
-
-ANTI-HALLUCINATION : Ne cite jamais une référence précise si tu n'es pas sûr. Utilise "Un sage a dit...", "Il est rapporté...".
-
-TROIS MODES
-1. Conseil à la demande : BASE / DÉVOTION / EXCELLENCE (IHSAN)
-2. Questionnement socratique : si vague, une seule question
-3. Analyse d'intention : purifier la Niyyah avant une action
-
-CONTRAINTES
-- Max 300 mots
-- Terminer TOUJOURS par une question concrète
-- Jamais de listes à puces banales — prose fluide
-- Commencer par بِسْمِ اللَّهِ ou ouverture fraternelle
-`.trim();
-
-  const fullSystem = systemContext
-    ? BASE_SYSTEM + '\n\n## CONTEXTE DU JOUR\n' + systemContext
-    : BASE_SYSTEM;
+  // Utiliser le prompt envoyé par le client (complet avec contexte dynamique)
+  // Fallback minimal si le client n'envoie pas de prompt
+  const fullSystem = systemPrompt || 'Tu es le Mentor d\'Adab de Niyyah — un guide spirituel bienveillant.';
 
   try {
     const response = await fetch('https://api.anthropic.com/v1/messages', {

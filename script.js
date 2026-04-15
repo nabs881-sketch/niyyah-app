@@ -6373,7 +6373,7 @@ async function mentorAskAPI(question) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         messages: msgs,
-        systemContext: dynamicPrompt.replace(MENTOR_SYSTEM_PROMPT, '').trim() || null
+        systemPrompt: dynamicPrompt
       })
     });
 
