@@ -755,7 +755,23 @@ pointer-events:none;z-index:0;transition:opacity 0.4s ease}.view{display:none;po
   border-bottom: 1px solid rgba(200,168,74,0.12) !important;
   box-shadow: 0 4px 20px rgba(0,0,0,0.45), inset 0 1px 0 rgba(200,168,74,0.06) !important;
 }
-.item { background: rgba(49,52,56,0.97) !important; transition: all 0.4s ease-in-out; }
+.item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  padding: 16px !important;
+  background: rgba(49,52,56,0.97) !important;
+  transition: all 0.4s ease-in-out;
+}
+.item .check-circle {
+  width: 28px !important;
+  min-width: 28px !important;
+  flex-shrink: 0 !important;
+}
+.item .item-body {
+  flex: 1 !important;
+  min-width: 0 !important;
+}
 .item:active { background: rgba(60,64,70,0.95) !important; }
 
 /* ── PRAYER TIMES CELLS ── */
@@ -3114,6 +3130,6 @@ button[style*="gold-v2"] {
   position: relative;
   background: rgba(200,168,74,0.08) !important;
   border-left: 3px solid #C8A84A !important;
-  padding-left: 10px;
+  padding-left: 13px !important;
   transition: background 0.4s ease-in-out, border-left 0.4s ease-in-out, opacity 0.4s ease-in-out;
 }

@@ -2152,7 +2152,7 @@ function toggleItem(id, event) {
         allItems[i].classList.add('timeline-current');
         allItems[i].style.background = 'rgba(200,168,74,0.08)';
         allItems[i].style.borderLeft = '3px solid #C8A84A';
-        allItems[i].style.paddingLeft = '10px';
+        allItems[i].style.paddingLeft = '13px';
         break;
       }
     }
