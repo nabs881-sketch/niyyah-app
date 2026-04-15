@@ -1781,7 +1781,14 @@ function renderLevel(levelId) {
   if (!state._unlocked.includes(levelId)) {
     var _streak = (history && history.streak) || 0;
     var _convMsg = getConversionMessage(_streak);
-    content.innerHTML = '<div class="locked-screen"><div class="lock-ring"><svg width="40" height="46" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="7" width="12" height="9" rx="2" stroke="#C8A84A" stroke-width="1.5"/><path d="M4 7V5a3 3 0 0 1 6 0v2" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="lock-title">Niveau ' + levelId + '</div><div class="lock-sub"><span style="color:#C8A84A;font-size:11px;opacity:0.7;">Disponible au niveau supérieur ✦</span></div><div style="margin-top:16px;padding:14px 18px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.2);border-radius:12px;font-size:13px;color:var(--t2);line-height:1.6;font-style:italic;text-align:center;">' + _convMsg + '</div></div>';
+    content.innerHTML = '<div style="background:rgba(200,168,75,0.08);border:1px solid rgba(200,168,75,0.3);border-radius:16px;padding:24px;text-align:center;margin:20px 16px;">'
+      + '<div style="font-size:24px;color:#C8A84A;margin-bottom:16px;">✦</div>'
+      + '<svg width="40" height="46" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:14px;"><rect x="1" y="7" width="12" height="9" rx="2" stroke="#C8A84A" stroke-width="1.5"/><path d="M4 7V5a3 3 0 0 1 6 0v2" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"/></svg>'
+      + '<div style="font-size:18px;font-weight:600;color:var(--t1);margin-bottom:6px;">Niveau ' + levelId + '</div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:#E8DCC0;line-height:1.7;margin:16px 0 20px;padding:0 8px;">' + _convMsg + '</div>'
+      + '<button onclick="selectLevel(1)" style="width:100%;background:#C8A84A;color:#000;font-size:14px;font-weight:700;border:none;border-radius:12px;padding:14px;cursor:pointer;">Continuer ma progression →</button>'
+      + '<div style="font-size:10px;color:rgba(255,255,255,0.3);margin-top:10px;">4.99€ · Paiement unique · Accès à vie</div>'
+      + '</div>';
     return;
   }
   let fridayBanner = '';
