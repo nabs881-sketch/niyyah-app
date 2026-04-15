@@ -1445,8 +1445,9 @@ function renderResume() {
     const unlocked = state._unlocked.includes(lvl.id);
     const color = isDone ? 'var(--gold)' : 'var(--green)';
     const pctCls = isDone ? 'resume-level-pct done' : 'resume-level-pct';
-    var resumePctLabel = (unlocked && pct === 0) ? 'Commence !' : pct + '%';
-    levelsHtml += '<div class="resume-level-row" style="' + (!unlocked ? 'opacity:0.35' : '') + '"><div class="resume-level-icon">' + levelIcons[i] + '</div><div class="resume-level-body"><div class="resume-level-name">' + lvl.title + (isDone ? ' ✓' : '') + '</div><div class="resume-level-bar-track"><div class="resume-level-bar-fill" style="width:' + pct + '%;background:' + color + '"></div></div></div><div class="' + pctCls + '">' + resumePctLabel + '</div></div>';
+    var resumeLockSvg = '<svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;"><rect x="1" y="7" width="12" height="9" rx="2" stroke="#C8A84A" stroke-width="1.5"/><path d="M4 7V5a3 3 0 0 1 6 0v2" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"/></svg>';
+    var resumePctLabel = !unlocked ? resumeLockSvg : (unlocked && pct === 0) ? 'Commence !' : pct + '%';
+    levelsHtml += '<div class="resume-level-row" style="' + (!unlocked ? 'opacity:0.4' : '') + '"><div class="resume-level-icon">' + levelIcons[i] + '</div><div class="resume-level-body"><div class="resume-level-name">' + lvl.title + (isDone ? ' ✓' : '') + '</div><div class="resume-level-bar-track"><div class="resume-level-bar-fill" style="width:' + pct + '%;background:' + color + '"></div></div></div><div class="' + pctCls + '">' + resumePctLabel + '</div></div>';
   });
   levelsHtml += '</div>';
   const todayDone = getLevelProgress(1) >= 100;
@@ -1650,7 +1651,7 @@ function renderTabs() {
     if (active)        cls += ' active';
     else if (!unlocked) cls += ' locked';
     else if (done)     cls += ' done';
-    const lock = !unlocked ? ' 🔒' : done ? ' ✓' : '';
+    const lock = !unlocked ? ' <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-left:4px;"><rect x="1" y="7" width="12" height="9" rx="2" stroke="#C8A84A" stroke-width="1.5"/><path d="M4 7V5a3 3 0 0 1 6 0v2" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"/></svg>' : done ? ' ✓' : '';
     return '<div class="' + cls + '" onclick="selectLevel(' + l.id + ')">' + l.title + lock + '</div>';
   }).join('');
 }
@@ -1771,7 +1772,7 @@ function renderLevel(levelId) {
   const content = document.getElementById('content');
   const pct     = getLevelProgress(levelId);
   if (!state._unlocked.includes(levelId)) {
-    content.innerHTML = '<div class="locked-screen"><div class="lock-ring">🔒</div><div class="lock-title">Niveau ' + levelId + ' verrouille</div><div class="lock-sub">Complete le Niveau ' + (levelId-1) + ' pour debloquer ce niveau.</div></div>';
+    content.innerHTML = '<div class="locked-screen"><div class="lock-ring"><svg width="40" height="46" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="7" width="12" height="9" rx="2" stroke="#C8A84A" stroke-width="1.5"/><path d="M4 7V5a3 3 0 0 1 6 0v2" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="lock-title">Niveau ' + levelId + '</div><div class="lock-sub"><span style="color:#C8A84A;font-size:11px;opacity:0.7;">Disponible au niveau supérieur ✦</span></div></div>';
     return;
   }
   let fridayBanner = '';
@@ -2488,11 +2489,12 @@ function renderProgression() {
   let lvlRowsP='';
   LEVELS.forEach((lvl,i)=>{
     const pct=Math.round(getLevelProgress(lvl.id)), done=pct>=100, unlocked=state._unlocked.includes(lvl.id);
-    var pctLabel = !unlocked ? '🔒 Verrouillé' : pct===0 ? 'Commence !' : pct>=100 ? 'Accompli ✦' : 'En cours ✦';
-    lvlRowsP+='<div style="background:var(--card);border-radius:12px;padding:10px 14px;display:flex;align-items:center;gap:10px;'+(unlocked?'':'opacity:0.35')+';margin-bottom:5px;">'
+    var pctLabel = pct===0 ? 'Commence !' : pct>=100 ? 'Accompli ✦' : 'En cours ✦';
+    var lockSvg = '<svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:4px;"><rect x="1" y="7" width="12" height="9" rx="2" stroke="#C8A84A" stroke-width="1.5"/><path d="M4 7V5a3 3 0 0 1 6 0v2" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"/></svg>';
+    lvlRowsP+='<div style="background:var(--card);border-radius:12px;padding:10px 14px;display:flex;align-items:center;gap:10px;'+(unlocked?'':'opacity:0.4')+';margin-bottom:5px;">'
       +'<div style="flex-shrink:0;">'+getMoonSVG(unlocked?pct:0)+'</div>'
       +'<div style="flex:1"><div style="font-size:13px;color:var(--t1);margin-bottom:3px;">'+lvl.title+(done?' ✓':'')+'</div>'
-      +'<div style="font-size:11px;color:var(--t3);">'+(!unlocked?'🔒 Verrouillé':pctLabel)+'</div></div></div>';
+      +'<div>'+(!unlocked?lockSvg+'<span style="color:#C8A84A;font-size:11px;opacity:0.7;">Disponible au niveau supérieur ✦</span>':'<span style="font-size:11px;color:var(--t3);">'+pctLabel+'</span>')+'</div></div></div>';
   });
   // === GRAPHIQUE 7 JOURS BILANS ===
   const bilansData = JSON.parse(localStorage.getItem('niyyah_bilans') || '{}');
