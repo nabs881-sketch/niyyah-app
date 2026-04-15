@@ -5707,7 +5707,7 @@ function updateSanctuaireMoment() {
     jourLine = '<div style="font-size:10px;color:var(--t3);margin-top:3px;opacity:0.7;">+ ' + jourRemaining + ' acte' + (jourRemaining > 1 ? 's' : '') + ' du jour restant' + (jourRemaining > 1 ? 's' : '') + '</div>';
   }
   if (blockRemaining === 0) {
-    el.innerHTML = '<div style="display:flex;align-items:center;gap:10px;background:rgba(52,217,98,0.1);border:1px solid rgba(52,217,98,0.3);border-radius:14px;padding:14px 18px;margin:12px 0 0;">'
+    el.innerHTML = '<div style="display:flex;align-items:center;gap:10px;background:rgba(52,217,98,0.1);border:1px solid rgba(52,217,98,0.3);border-radius:14px;padding:14px 18px;margin:12px 0 20px;">'
       + '<div style="width:3px;height:36px;background:linear-gradient(180deg,var(--green),#7effa0);border-radius:2px;flex-shrink:0;"></div>'
       + '<div style="flex:1;">'
       + '<div style="font-size:15px;font-weight:700;color:var(--green);font-family:\'Cormorant Garamond\',serif;">✦ Bloc accompli</div>'
@@ -5715,7 +5715,7 @@ function updateSanctuaireMoment() {
       + jourLine
       + '</div></div>';
   } else {
-    el.innerHTML = '<div style="display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,rgba(200,168,75,0.15),rgba(200,168,75,0.05));border:1px solid rgba(200,168,75,0.35);border-radius:14px;padding:14px 18px;margin:12px 0 0;">'
+    el.innerHTML = '<div style="display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,rgba(200,168,75,0.15),rgba(200,168,75,0.05));border:1px solid rgba(200,168,75,0.35);border-radius:14px;padding:14px 18px;margin:12px 0 20px;">'
       + '<div style="width:3px;height:36px;background:linear-gradient(180deg,#C8A84A,#E0C870);border-radius:2px;flex-shrink:0;"></div>'
       + '<div style="flex:1;">'
       + '<div style="font-size:15px;font-weight:700;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;">' + block.label + '</div>'
