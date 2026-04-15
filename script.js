@@ -5675,6 +5675,46 @@ function v2RefreshStats() {
     if (fill) setTimeout(() => { fill.style.width = pct + '%'; }, 400);
 
   } catch(e) {}
+  updateSanctuaireMoment();
+}
+
+function updateSanctuaireMoment() {
+  var el = document.getElementById('sanctuaire-moment');
+  if (!el) return;
+  var block = getCurrentPrayerBlock();
+  var blockId = block.id;
+  var allItems = LEVELS.filter(function(l) { return state._unlocked && state._unlocked.includes(l.id); })
+    .flatMap(function(l) { return l.sections.flatMap(function(s) { return s.items; }); })
+    .filter(function(item) { return item.block === blockId; });
+  var jourItems = LEVELS.filter(function(l) { return state._unlocked && state._unlocked.includes(l.id); })
+    .flatMap(function(l) { return l.sections.flatMap(function(s) { return s.items; }); })
+    .filter(function(item) { return item.block === 'jour'; });
+  var items = allItems.concat(jourItems);
+  var total = items.length;
+  var done = items.filter(function(item) {
+    if (item.type === 'counter') return (state[item.id] || 0) >= item.target;
+    return !!state[item.id];
+  }).length;
+  var remaining = total - done;
+  if (total === 0) { el.innerHTML = ''; return; }
+  var allDone = remaining === 0;
+  if (allDone) {
+    el.innerHTML = '<div style="display:flex;align-items:center;gap:10px;background:rgba(52,217,98,0.1);border:1px solid rgba(52,217,98,0.3);border-radius:14px;padding:14px 18px;margin:12px 0 0;">'
+      + '<div style="width:3px;height:36px;background:linear-gradient(180deg,var(--green),#7effa0);border-radius:2px;flex-shrink:0;"></div>'
+      + '<div style="flex:1;">'
+      + '<div style="font-size:15px;font-weight:700;color:var(--green);font-family:\'Cormorant Garamond\',serif;">✦ Bloc accompli</div>'
+      + '<div style="font-size:11px;color:var(--t3);margin-top:2px;">Barak Allahu fik</div>'
+      + '</div></div>';
+  } else {
+    el.innerHTML = '<div style="display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,rgba(200,168,75,0.15),rgba(200,168,75,0.05));border:1px solid rgba(200,168,75,0.35);border-radius:14px;padding:14px 18px;margin:12px 0 0;">'
+      + '<div style="width:3px;height:36px;background:linear-gradient(180deg,#C8A84A,#E0C870);border-radius:2px;flex-shrink:0;"></div>'
+      + '<div style="flex:1;">'
+      + '<div style="font-size:15px;font-weight:700;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;">' + block.label + '</div>'
+      + '<div style="font-size:11px;color:var(--t3);margin-top:2px;">' + done + ' acte' + (done > 1 ? 's' : '') + ' accompli' + (done > 1 ? 's' : '') + ' · ' + remaining + ' restant' + (remaining > 1 ? 's' : '') + '</div>'
+      + '</div>'
+      + '<button onclick="v2GoTo(\'checklist\')" style="background:transparent;border:1px solid rgba(200,168,75,0.4);color:#C8A84A;font-size:12px;font-weight:600;padding:6px 14px;border-radius:10px;cursor:pointer;white-space:nowrap;">→ Continuer</button>'
+      + '</div>';
+  }
 }
 
 function v2UpdateOrbState() {
