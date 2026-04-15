@@ -1767,12 +1767,21 @@ function getCurrentPrayerBlock() {
   if (nowMin < isha)    return { id: 'maghrib', label: 'APRÈS MAGHRIB' };
   return { id: 'isha', label: 'APRÈS ISHA' };
 }
+function getConversionMessage(streak) {
+  if (streak >= 30) return 'Si vous êtes reconnaissants, J\'augmenterai Mes bienfaits. — Ibrahim 14:7';
+  if (streak >= 14) return 'Al-Muwâdhib — celui qui persévère. C\'est toi. Le niveau supérieur t\'appartient.';
+  if (streak >= 7)  return '7 jours de constance — Allah a vu chaque acte. Continue avec le niveau Approfondissement.';
+  if (streak >= 3)  return 'Le Prophète ﷺ : l\'acte le plus aimé d\'Allah est celui fait avec constance. — Bukhari 6465';
+  return 'Chaque grand voyage commence par un premier pas. Le niveau Approfondissement t\'attend.';
+}
 function renderLevel(levelId) {
   const level   = LEVELS.find(l => l.id === levelId);
   const content = document.getElementById('content');
   const pct     = getLevelProgress(levelId);
   if (!state._unlocked.includes(levelId)) {
-    content.innerHTML = '<div class="locked-screen"><div class="lock-ring"><svg width="40" height="46" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="7" width="12" height="9" rx="2" stroke="#C8A84A" stroke-width="1.5"/><path d="M4 7V5a3 3 0 0 1 6 0v2" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="lock-title">Niveau ' + levelId + '</div><div class="lock-sub"><span style="color:#C8A84A;font-size:11px;opacity:0.7;">Disponible au niveau supérieur ✦</span></div></div>';
+    var _streak = (history && history.streak) || 0;
+    var _convMsg = getConversionMessage(_streak);
+    content.innerHTML = '<div class="locked-screen"><div class="lock-ring"><svg width="40" height="46" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="7" width="12" height="9" rx="2" stroke="#C8A84A" stroke-width="1.5"/><path d="M4 7V5a3 3 0 0 1 6 0v2" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="lock-title">Niveau ' + levelId + '</div><div class="lock-sub"><span style="color:#C8A84A;font-size:11px;opacity:0.7;">Disponible au niveau supérieur ✦</span></div><div style="margin-top:16px;padding:14px 18px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.2);border-radius:12px;font-size:13px;color:var(--t2);line-height:1.6;font-style:italic;text-align:center;">' + _convMsg + '</div></div>';
     return;
   }
   let fridayBanner = '';
