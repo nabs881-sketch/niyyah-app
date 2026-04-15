@@ -1828,7 +1828,14 @@ function renderLevel(levelId) {
     window._prayerBlockRetried = true;
     setTimeout(function() { renderLevel(levelId); }, 2000);
   }
-  html += '<div style="background:rgba(200,168,75,0.1);border:1px solid rgba(200,168,75,0.3);border-radius:12px;padding:12px 16px;margin:0 0 16px;font-size:13px;color:#C8A84A;font-weight:600;">' + _block.label + ' — Tes actes du moment</div>';
+  html += '<div style="display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,rgba(200,168,75,0.15),rgba(200,168,75,0.05));border:1px solid rgba(200,168,75,0.35);border-radius:14px;padding:14px 18px;margin:0 0 20px;">'
+    + '<div style="width:3px;height:36px;background:linear-gradient(180deg,#C8A84A,#E0C870);border-radius:2px;flex-shrink:0;"></div>'
+    + '<div>'
+    + '<div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.6);margin-bottom:3px;">Moment actuel</div>'
+    + '<div style="font-size:15px;font-weight:700;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;letter-spacing:0.5px;">' + _block.label + '</div>'
+    + '<div style="font-size:11px;color:var(--t3);margin-top:2px;">Tes actes du moment</div>'
+    + '</div>'
+    + '</div>';
   level.sections.forEach(section => {
     html += '<div class="section"><div class="section-title-row"><div class="section-icon-wrap">' + section.icon + '</div><div class="section-name">' + section.title + '</div></div>'
       + (section.desc ? '<div style="margin:8px 0 12px;background:rgba(52,217,98,0.08);border:1px solid rgba(52,217,98,0.2);border-radius:10px;padding:12px 14px;display:flex;gap:10px;align-items:flex-start;"><div style="font-size:20px;flex-shrink:0;">🌿</div><div><div style="font-size:13px;font-weight:600;color:var(--green);margin-bottom:3px;">C\'est quoi le wird ?</div><div style="font-size:13px;color:var(--t2);line-height:1.5;">' + section.desc + '</div></div></div>' : '');
