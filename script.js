@@ -1904,7 +1904,7 @@ function renderLevel(levelId) {
       }
     });
     html += '</div>';
-    if (false && section.links) {
+    if (section.links) {
       section.links.forEach(link => {
         html += '<a class="link-item" href="' + link.url + '" target="_blank" rel="noopener"><div class="link-icon-wrap">' + link.icon + '</div><div><div class="link-label">' + link.label + '</div><div class="link-sub">' + link.sub + '</div></div><div class="link-arrow">›</div></a>';
       });
