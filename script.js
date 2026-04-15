@@ -1836,9 +1836,16 @@ function renderLevel(levelId) {
     + '<div style="font-size:11px;color:var(--t3);margin-top:2px;">Tes actes du moment</div>'
     + '</div>'
     + '</div>';
+  var _toggleLabel = window._showAllBlocks ? 'Voir le moment actuel' : 'Voir toute la journée';
+  html += '<div style="text-align:center;margin:-12px 0 16px;"><button onclick="window._showAllBlocks=!window._showAllBlocks;renderLevel(' + levelId + ')" style="background:transparent;border:none;color:#C8A84A;font-size:11px;font-weight:600;cursor:pointer;opacity:0.7;letter-spacing:0.3px;">' + _toggleLabel + '</button></div>';
   const _currentBlock = _block.id;
   level.sections.forEach(section => {
     const _filteredItems = section.items.filter(function(item) {
+      if (window._showAllBlocks) {
+        if (item.block === 'ressources') return false;
+        if (item.id === 'sunnah_jejune') { var d = new Date().getDay(); return d === 1 || d === 4; }
+        return true;
+      }
       if (!item.block) return true;
       if (item.block === 'ressources') return false;
       if (item.block === _currentBlock) return true;
