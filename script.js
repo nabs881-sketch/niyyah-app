@@ -505,15 +505,8 @@ function closeDefiOverlay() {
 document.addEventListener('DOMContentLoaded', function() {
   const ov = document.getElementById('defiOverlay');
   if (ov) ov.addEventListener('click', function(e) { if (e.target === ov) closeDefiOverlay(); });
-  // Auto-ouvrir sélecteur si nouvelle semaine au démarrage
-  try {
-    initDefiSemaine();
-    const _ds = getDefiState();
-    const _lundi = getLundiDate();
-    if (_ds.choixEnAttente && _ds.choixEnAttente.semaine === _lundi && (!_ds.current || _ds.current.semaine !== _lundi)) {
-      setTimeout(openDefiSelector, 1200);
-    }
-  } catch(e) {}
+  // Initialiser le défi (sans auto-ouvrir le sélecteur)
+  try { initDefiSemaine(); } catch(e) {}
 });
 
 function isFriday() { return new Date().getDay() === 5; }
@@ -1281,11 +1274,6 @@ function switchView(name) {
     }
     renderAccueil();
     renderDefiCard();
-    const _ds = getDefiState();
-    const _lundi = getLundiDate();
-    if (_ds.choixEnAttente && _ds.choixEnAttente.semaine === _lundi && (!_ds.current || _ds.current.semaine !== _lundi)) {
-      setTimeout(openDefiSelector, 900);
-    }
   }
 }
 
