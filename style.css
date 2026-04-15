@@ -3133,9 +3133,11 @@ button[style*="gold-v2"] {
 .timeline-current {
   position: relative;
   background: rgba(200,168,74,0.08) !important;
+  border: 1px solid rgba(200,168,75,0.4) !important;
   border-left: 3px solid #C8A84A !important;
   padding-left: 13px !important;
-  transition: background 0.4s ease-in-out, border-left 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  box-shadow: 0 0 12px rgba(200,168,75,0.3) !important;
+  transition: background 0.4s ease-in-out, border 0.4s ease-in-out, box-shadow 0.4s ease-in-out, opacity 0.4s ease-in-out;
 }
 .moon-full circle {
   filter: drop-shadow(0 0 6px #C8A84A);

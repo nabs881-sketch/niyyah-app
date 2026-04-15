@@ -1852,7 +1852,7 @@ function renderLevel(levelId) {
         const optionalBadge = item.optional ? '<span style="font-size:9px;font-weight:700;letter-spacing:0.8px;color:var(--green);background:rgba(52,217,98,0.12);border:1px solid rgba(52,217,98,0.25);border-radius:6px;padding:1px 5px;margin-left:5px;vertical-align:middle;">BONUS</span>' : '';
         const priorityDot = item.priority === 'fard' ? '<span class="priority-fard">&nbsp;</span>' : item.priority === 'sunnah' ? '<span class="priority-sunnah">&nbsp;</span>' : '';
         const _tlCurrent = (!checked && !_firstUncheckedFound) ? (_firstUncheckedFound = true, ' timeline-current') : '';
-        const _tlOpacity = checked ? 'opacity:0.35;' : '';
+        const _tlOpacity = checked ? 'opacity:0.3;' : '';
         html += '<div class="item' + fridayCls + (checked ? ' checked' : '') + _tlCurrent + '" onclick="toggleItem(\'' + item.id + '\',event)" style="' + _tlOpacity + 'animation-delay:' + delay + 'ms;--i:' + idx + '" id="item-' + item.id + '"><div class="check-circle"><svg class="check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-body"><div class="item-label">' + priorityDot + item.label + optionalBadge + '</div>' + (item.sub ? '<div class="item-sub">' + (item.sub.includes('·') ? item.sub.split('·')[0].trim() : item.sub) + '</div>' : '') + arabicHtml + '</div>' + audioBtn + infoBtn + '</div>';
       }
     });
@@ -1883,7 +1883,7 @@ function renderLevel(levelId) {
     allItems.forEach(function(el) {
       const itemId = el.id.replace('item-', '');
       if (state[itemId]) {
-        el.style.opacity = '0.35';
+        el.style.opacity = '0.3';
         el.classList.remove('timeline-current');
         el.style.background = '';
         el.style.borderLeft = '';
@@ -1904,7 +1904,7 @@ function renderPrayerItem(item, delay, extraClass, forceChecked) {
     + '<div style="width:18px;height:18px;border-radius:50%;background:' + (onTime ? '#fff' : 'rgba(255,255,255,0.4)') + ';margin-left:' + (onTime ? '16px' : '0') + ';transition:margin 0.2s;"></div>'
     + '</div></div>';
   const priorityDot = item.priority === 'fard' ? '<span class="priority-fard">&nbsp;</span>' : item.priority === 'sunnah' ? '<span class="priority-sunnah">&nbsp;</span>' : '';
-  const _tlOpacity = checked ? 'opacity:0.35;' : '';
+  const _tlOpacity = checked ? 'opacity:0.3;' : '';
   return '<div class="item' + fridayCls + (checked ? ' checked' : '') + (extraClass || '') + '" onclick="toggleItem(\'' + item.id + '\',event)" style="' + _tlOpacity + 'animation-delay:' + delay + 'ms;--i:' + delay + '" id="item-' + item.id + '">'
     + '<div class="check-circle"><svg class="check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>'
     + '<div class="item-body"><div class="item-label">' + priorityDot + item.label + '</div>'
@@ -2160,7 +2160,7 @@ function toggleItem(id, event) {
   const _isMainItem = !id.includes('ontime') && !id.includes('mosquee');
   const currentItem = document.getElementById('item-' + id);
   if (_isMainItem && currentItem && state[id]) {
-    currentItem.style.opacity = '0.35';
+    currentItem.style.opacity = '0.3';
     currentItem.classList.remove('timeline-current');
     currentItem.style.background = '';
     currentItem.style.borderLeft = '';
@@ -2446,7 +2446,7 @@ function renderProgression() {
   let lvlRowsP='';
   LEVELS.forEach((lvl,i)=>{
     const pct=Math.round(getLevelProgress(lvl.id)), done=pct>=100, unlocked=state._unlocked.includes(lvl.id);
-    var pctLabel = (unlocked && pct===0) ? 'Commence !' : pct+'%';
+    var pctLabel = !unlocked ? '🔒 Verrouillé' : pct===0 ? 'Commence !' : pct>=100 ? 'Accompli ✦' : 'En cours ✦';
     lvlRowsP+='<div style="background:var(--card);border-radius:12px;padding:10px 14px;display:flex;align-items:center;gap:10px;'+(unlocked?'':'opacity:0.35')+';margin-bottom:5px;">'
       +'<div style="flex-shrink:0;">'+getMoonSVG(unlocked?pct:0)+'</div>'
       +'<div style="flex:1"><div style="font-size:13px;color:var(--t1);margin-bottom:3px;">'+lvl.title+(done?' ✓':'')+'</div>'
