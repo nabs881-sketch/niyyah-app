@@ -7042,6 +7042,16 @@ function scannerRetry() {
 
 /* ── Capturer et Analyser ── */
 async function scannerCapture() {
+  // Limite 3 scans par jour
+  var _scanDate = localStorage.getItem('niyyah_scanner_date');
+  var _scanCount = parseInt(localStorage.getItem('niyyah_scanner_count') || '0', 10);
+  if (_scanDate !== TODAY) { _scanCount = 0; localStorage.setItem('niyyah_scanner_date', TODAY); }
+  if (_scanCount >= 3) {
+    showToast('Tu as utilisé tes 3 scans du jour — reviens demain inch\'Allah 🌙');
+    return;
+  }
+  localStorage.setItem('niyyah_scanner_count', String(_scanCount + 1));
+
   const video   = document.getElementById('scanner-video');
   const canvas  = document.getElementById('scanner-canvas');
   const orb     = document.getElementById('scanner-orb');
