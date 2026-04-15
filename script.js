@@ -1747,7 +1747,6 @@ function getPrayerTimelineColor() {
 function getCurrentPrayerBlock() {
   var now = new Date();
   var nowMin = now.getHours() * 60 + now.getMinutes();
-  console.log('_prayerTimes:', _prayerTimes, 'nowMin:', nowMin);
   function toMin(str) {
     if (!str) return null;
     var p = str.replace(/ *\(.*\)/, '').split(':');
@@ -1825,6 +1824,10 @@ function renderLevel(levelId) {
     + '</div></div>'
     + '</div>' + graceBanner + fridayBanner + prayerCard + qiblaCard;
   const _block = getCurrentPrayerBlock();
+  if (_block.id === 'reveil' && !_prayerTimes && !window._prayerBlockRetried) {
+    window._prayerBlockRetried = true;
+    setTimeout(function() { renderLevel(levelId); }, 2000);
+  }
   html += '<div style="background:rgba(200,168,75,0.1);border:1px solid rgba(200,168,75,0.3);border-radius:12px;padding:12px 16px;margin:0 0 16px;font-size:13px;color:#C8A84A;font-weight:600;">' + _block.label + ' — Tes actes du moment</div>';
   level.sections.forEach(section => {
     html += '<div class="section"><div class="section-title-row"><div class="section-icon-wrap">' + section.icon + '</div><div class="section-name">' + section.title + '</div></div>'
