@@ -5713,9 +5713,14 @@ function updateSanctuaireMoment() {
   var blockTotal = blockItems.length;
   var blockDone = blockItems.filter(_isDone).length;
   var blockRemaining = blockTotal - blockDone;
-  if (blockTotal === 0 && !_prayerTimes && !window._sanctuaireMomentRetried) {
-    window._sanctuaireMomentRetried = true;
-    setTimeout(updateSanctuaireMoment, 2500);
+  if (blockTotal === 0 && !_prayerTimes) {
+    if (!window._sanctuaireMomentRetried) {
+      window._sanctuaireMomentRetried = 1;
+      setTimeout(function() { if (document.getElementById('sanctuaire-moment') && !_prayerTimes) updateSanctuaireMoment(); }, 3000);
+    } else if (window._sanctuaireMomentRetried === 1) {
+      window._sanctuaireMomentRetried = 2;
+      setTimeout(function() { if (document.getElementById('sanctuaire-moment') && !_prayerTimes) updateSanctuaireMoment(); }, 6000);
+    }
   }
   if (blockTotal === 0) { el.innerHTML = ''; return; }
   var jourItems = _allUnlocked.filter(function(item) { return item.block === 'jour'; });
