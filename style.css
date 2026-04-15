@@ -1743,6 +1743,7 @@ body::before {
   grid-template-columns: 1fr 1fr;
   gap: 8px;
   width: 100%;
+  align-items: start;
   animation: fadeSlideV2 0.9s var(--ease-silk-v2) 0.65s both;
 }
 
@@ -1756,7 +1757,6 @@ body::before {
   overflow: hidden;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
-  aspect-ratio: 3 / 4;
   background:
     radial-gradient(ellipse 110% 70% at 35% 15%, rgba(212,175,55,0.055) 0%, transparent 50%),
     radial-gradient(ellipse 80% 60% at 75% 85%,  rgba(212,175,55,0.03)  0%, transparent 45%),
