@@ -5717,13 +5717,7 @@ function updateSanctuaireMoment() {
     window._sanctuaireMomentRetried = true;
     setTimeout(updateSanctuaireMoment, 2500);
   }
-  if (blockTotal === 0) {
-    blockItems = _allUnlocked.filter(function(item) { return item.block === 'jour'; });
-    blockTotal = blockItems.length;
-    blockDone = blockItems.filter(_isDone).length;
-    blockRemaining = blockTotal - blockDone;
-    if (blockTotal === 0) { el.innerHTML = ''; return; }
-  }
+  if (blockTotal === 0) { el.innerHTML = ''; return; }
   var jourItems = _allUnlocked.filter(function(item) { return item.block === 'jour'; });
   var jourTotal = jourItems.length;
   var jourDone = jourItems.filter(_isDone).length;
@@ -5733,10 +5727,10 @@ function updateSanctuaireMoment() {
     jourLine = '<div style="font-size:10px;color:var(--t3);margin-top:3px;opacity:0.7;">+ ' + jourRemaining + ' acte' + (jourRemaining > 1 ? 's' : '') + ' du jour restant' + (jourRemaining > 1 ? 's' : '') + '</div>';
   }
   if (blockRemaining === 0) {
-    el.innerHTML = '<div style="display:flex;align-items:center;gap:10px;background:rgba(52,217,98,0.1);border:1px solid rgba(52,217,98,0.3);border-radius:14px;padding:14px 18px;margin:12px 0 20px;">'
-      + '<div style="width:3px;height:36px;background:linear-gradient(180deg,var(--green),#7effa0);border-radius:2px;flex-shrink:0;"></div>'
+    el.innerHTML = '<div style="display:flex;align-items:center;gap:10px;background:rgba(200,168,75,0.1);border:1px solid rgba(200,168,75,0.3);border-radius:14px;padding:14px 18px;margin:12px 0 20px;">'
+      + '<div style="width:3px;height:36px;background:linear-gradient(180deg,#C8A84A,#E0C870);border-radius:2px;flex-shrink:0;"></div>'
       + '<div style="flex:1;">'
-      + '<div style="font-size:15px;font-weight:700;color:var(--green);font-family:\'Cormorant Garamond\',serif;">✦ Bloc accompli</div>'
+      + '<div style="font-size:15px;font-weight:700;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;">✦ Bloc accompli</div>'
       + '<div style="font-size:11px;color:var(--t3);margin-top:2px;">Barak Allahu fik</div>'
       + jourLine
       + '</div></div>';
