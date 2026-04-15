@@ -3147,3 +3147,9 @@ button[style*="gold-v2"] {
   0%, 100% { filter: drop-shadow(0 0 6px rgba(200,168,74,0.6)); }
   50% { filter: drop-shadow(0 0 14px rgba(200,168,74,1)); }
 }
+.item.checked .priority-fard,
+.item.checked .priority-sunnah {
+  vertical-align: middle !important;
+  position: relative !important;
+  top: -1px !important;
+}
