@@ -1831,7 +1831,6 @@ function renderLevel(levelId) {
   html += '<div style="display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,rgba(200,168,75,0.15),rgba(200,168,75,0.05));border:1px solid rgba(200,168,75,0.35);border-radius:14px;padding:14px 18px;margin:0 0 20px;">'
     + '<div style="width:3px;height:36px;background:linear-gradient(180deg,#C8A84A,#E0C870);border-radius:2px;flex-shrink:0;"></div>'
     + '<div>'
-    + '<div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.6);margin-bottom:3px;">Moment actuel</div>'
     + '<div style="font-size:15px;font-weight:700;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;letter-spacing:0.5px;">' + _block.label + '</div>'
     + '<div style="font-size:11px;color:var(--t3);margin-top:2px;">Tes actes du moment</div>'
     + '</div>'
