@@ -1835,13 +1835,21 @@ function renderLevel(levelId) {
     + '<div style="font-size:11px;color:var(--t3);margin-top:2px;">Tes actes du moment</div>'
     + '</div>'
     + '</div>';
+  const _currentBlock = _block.id;
   level.sections.forEach(section => {
+    const _filteredItems = section.items.filter(function(item) {
+      if (!item.block) return true;
+      if (item.block === _currentBlock) return true;
+      if (item.block === 'jour') return true;
+      return false;
+    });
+    if (_filteredItems.length === 0) return;
     html += '<div class="section"><div class="section-title-row"><div class="section-icon-wrap">' + section.icon + '</div><div class="section-name">' + section.title + '</div></div>'
       + (section.desc ? '<div style="margin:8px 0 12px;background:rgba(52,217,98,0.08);border:1px solid rgba(52,217,98,0.2);border-radius:10px;padding:12px 14px;display:flex;gap:10px;align-items:flex-start;"><div style="font-size:20px;flex-shrink:0;">🌿</div><div><div style="font-size:13px;font-weight:600;color:var(--green);margin-bottom:3px;">C\'est quoi le wird ?</div><div style="font-size:13px;color:var(--t2);line-height:1.5;">' + section.desc + '</div></div></div>' : '');
     const _tlColor = getPrayerTimelineColor();
     html += '<div class="items-group" style="border-left:2px solid ' + _tlColor + ';padding-left:12px;margin-left:4px;">';
     let _firstUncheckedFound = false;
-    section.items.forEach((item, idx) => {
+    _filteredItems.forEach((item, idx) => {
       const delay = idx * 30;
       if (item.type === 'wird') {
         html += renderWirdSmartCard(item, delay);
