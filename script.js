@@ -6245,10 +6245,19 @@ function mentorShareCard(text) {
 
 // ── Envoyer un message ──
 function mentorSend() {
+  // Limite 3 questions par jour
+  var _mentorDate = localStorage.getItem('niyyah_mentor_date');
+  var _mentorCount = parseInt(localStorage.getItem('niyyah_mentor_count') || '0', 10);
+  if (_mentorDate !== TODAY) { _mentorCount = 0; localStorage.setItem('niyyah_mentor_date', TODAY); }
+  if (_mentorCount >= 3) {
+    showToast('Tu as posé tes 3 questions du jour — reviens demain inch\'Allah 🌙');
+    return;
+  }
   const input = document.getElementById('mentor-input');
   if (!input) return;
   const question = input.value.trim();
   if (!question || mentorIsThinking) return;
+  localStorage.setItem('niyyah_mentor_count', String(_mentorCount + 1));
   input.value = '';
   input.style.height = 'auto';
   // Hide suggestions on first user message
