@@ -2424,14 +2424,16 @@ body::before {
   background: #0a0a0a !important;
   border-color: rgba(212,175,55,0.35) !important;
   width: 100% !important;
-  height: auto !important;
+  height: 160px !important;
   display: block !important;
   overflow: hidden;
 }
 .card-img-premium {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   border-radius: 11px;
   user-select: none;
   -webkit-user-drag: none;
