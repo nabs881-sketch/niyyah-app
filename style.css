@@ -3167,3 +3167,4 @@ button[style*="gold-v2"] {
   position: relative !important;
   top: -1px !important;
 }
+.hide-topbar-logo .topbar-logo-v2 { display: none !important; }

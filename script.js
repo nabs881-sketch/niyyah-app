@@ -5229,6 +5229,7 @@ let v2CurrentView = 'sanctuaire';
 
 function v2GoSanctuaire() {
   // Show sanctuaire + V2 UI
+  document.body.classList.remove('hide-topbar-logo');
   const sanctEl = document.getElementById('view-sanctuaire');
   if (sanctEl) sanctEl.classList.add('active');
   const tbEl = document.getElementById('topbar-v2');
@@ -5281,6 +5282,8 @@ function v2GoTo(viewName) {
     tbEl2.classList.add('active');
     tbEl2.setAttribute('data-mode', 'back');
   }
+  if (viewName === 'checklist') document.body.classList.add('hide-topbar-logo');
+  else document.body.classList.remove('hide-topbar-logo');
 
   // Show V1 view via original switchView function
   // First unhide the target view so switchView can activate it
@@ -6007,6 +6010,7 @@ function v2GoMentor() {
   // Hide topbar to avoid overlap
   const tbEl = document.getElementById('topbar-v2');
   if (tbEl) tbEl.classList.remove('active');
+  document.body.classList.add('hide-topbar-logo');
   // Show mentor
   const mentorView = document.getElementById('view-mentor');
   if (mentorView) {
