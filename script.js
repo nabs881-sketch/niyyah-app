@@ -1702,6 +1702,27 @@ function selectLevel(id) {
     window.scrollTo(0, 0);
   }, 30);
 }
+function getPrayerTimelineColor() {
+  const now = new Date();
+  const nowMin = now.getHours() * 60 + now.getMinutes();
+  function toMin(str) {
+    if (!str) return null;
+    const p = str.replace(/ *\(.*\)/, '').split(':');
+    return parseInt(p[0], 10) * 60 + parseInt(p[1], 10);
+  }
+  if (!_prayerTimes) return '#1a1f3e';
+  const fajr    = toMin(_prayerTimes['Fajr']);
+  const dhuhr   = toMin(_prayerTimes['Dhuhr']);
+  const asr     = toMin(_prayerTimes['Asr']);
+  const maghrib = toMin(_prayerTimes['Maghrib']);
+  const isha    = toMin(_prayerTimes['Isha']);
+  if (fajr == null || dhuhr == null || asr == null || maghrib == null || isha == null) return '#1a1f3e';
+  if (nowMin < fajr || nowMin >= isha) return '#1a1f3e';
+  if (nowMin < dhuhr)   return '#2a4a7f';
+  if (nowMin < asr)     return '#C8A84A';
+  if (nowMin < maghrib) return '#c4722a';
+  return '#7a2a2a';
+}
 function renderLevel(levelId) {
   const level   = LEVELS.find(l => l.id === levelId);
   const content = document.getElementById('content');
@@ -1762,7 +1783,9 @@ function renderLevel(levelId) {
   level.sections.forEach(section => {
     html += '<div class="section"><div class="section-title-row"><div class="section-icon-wrap">' + section.icon + '</div><div class="section-name">' + section.title + '</div></div>'
       + (section.desc ? '<div style="margin:8px 0 12px;background:rgba(52,217,98,0.08);border:1px solid rgba(52,217,98,0.2);border-radius:10px;padding:12px 14px;display:flex;gap:10px;align-items:flex-start;"><div style="font-size:20px;flex-shrink:0;">🌿</div><div><div style="font-size:13px;font-weight:600;color:var(--green);margin-bottom:3px;">C\'est quoi le wird ?</div><div style="font-size:13px;color:var(--t2);line-height:1.5;">' + section.desc + '</div></div></div>' : '');
-    html += '<div class="items-group">';
+    const _tlColor = getPrayerTimelineColor();
+    html += '<div class="items-group" style="border-left:2px solid ' + _tlColor + ';padding-left:12px;margin-left:4px;">';
+    let _firstUncheckedFound = false;
     section.items.forEach((item, idx) => {
       const delay = idx * 30;
       if (item.type === 'wird') {
@@ -1805,7 +1828,9 @@ function renderLevel(levelId) {
         }
         const optionalBadge = item.optional ? '<span style="font-size:9px;font-weight:700;letter-spacing:0.8px;color:var(--green);background:rgba(52,217,98,0.12);border:1px solid rgba(52,217,98,0.25);border-radius:6px;padding:1px 5px;margin-left:5px;vertical-align:middle;">BONUS</span>' : '';
         const priorityDot = item.priority === 'fard' ? '<span class="priority-fard">&nbsp;</span>' : item.priority === 'sunnah' ? '<span class="priority-sunnah">&nbsp;</span>' : '';
-        html += '<div class="item' + fridayCls + (checked ? ' checked' : '') + '" onclick="toggleItem(\'' + item.id + '\',event)" style="animation-delay:' + delay + 'ms;--i:' + idx + '" id="item-' + item.id + '"><div class="check-circle"><svg class="check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-body"><div class="item-label">' + priorityDot + item.label + optionalBadge + '</div>' + (item.sub ? '<div class="item-sub">' + (item.sub.includes('·') ? item.sub.split('·')[0].trim() : item.sub) + '</div>' : '') + arabicHtml + '</div>' + audioBtn + infoBtn + '</div>';
+        const _tlCurrent = (!checked && !_firstUncheckedFound) ? (_firstUncheckedFound = true, ' timeline-current') : '';
+        const _tlOpacity = checked ? 'opacity:0.35;' : '';
+        html += '<div class="item' + fridayCls + (checked ? ' checked' : '') + _tlCurrent + '" onclick="toggleItem(\'' + item.id + '\',event)" style="' + _tlOpacity + 'animation-delay:' + delay + 'ms;--i:' + idx + '" id="item-' + item.id + '"><div class="check-circle"><svg class="check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-body"><div class="item-label">' + priorityDot + item.label + optionalBadge + '</div>' + (item.sub ? '<div class="item-sub">' + (item.sub.includes('·') ? item.sub.split('·')[0].trim() : item.sub) + '</div>' : '') + arabicHtml + '</div>' + audioBtn + infoBtn + '</div>';
       }
     });
     html += '</div>';

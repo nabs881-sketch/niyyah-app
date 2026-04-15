@@ -4,7 +4,10 @@
       "Bash(awk 'NR>=196 && NR<=216' \"C:\\\\Users\\\\YOUSS\\\\Documents\\\\niyyah-app\\\\index.html\")",
       "Bash(node:*)",
       "Bash(where.exe node:*)",
-      "Bash(git config:*)"
+      "Bash(git config:*)",
+      "Bash(cmd.exe:*)",
+      "Edit",
+      "Bash"
     ]
   }
 }

@@ -3106,3 +3106,16 @@ button[style*="gold-v2"] {
   color: #2C2E32 !important;
   text-shadow: none !important;
 }
+.timeline-current { position: relative; }
+.timeline-current::before {
+  content: '';
+  position: absolute;
+  left: -16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #C8A84A;
+  box-shadow: 0 0 8px #C8A84A;
+}
