@@ -6004,6 +6004,9 @@ function v2GoMentor() {
     v.classList.remove('active');
     v.style.display = 'none';
   });
+  // Hide topbar to avoid overlap
+  const tbEl = document.getElementById('topbar-v2');
+  if (tbEl) tbEl.classList.remove('active');
   // Show mentor
   const mentorView = document.getElementById('view-mentor');
   if (mentorView) {

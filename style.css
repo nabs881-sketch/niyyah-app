@@ -2124,6 +2124,7 @@ body::before {
   background: rgba(10,10,10,0.97);
   border-bottom: 1px solid rgba(212,175,55,0.12);
   display: flex; align-items: center; justify-content: space-between;
+  position: relative; z-index: 1300;
 }
 .mentor-header-left { display: flex; flex-direction: column; gap: 2px; }
 .mentor-header-title {
