@@ -1840,8 +1840,12 @@ function renderLevel(levelId) {
   level.sections.forEach(section => {
     const _filteredItems = section.items.filter(function(item) {
       if (!item.block) return true;
+      if (item.block === 'ressources') return false;
       if (item.block === _currentBlock) return true;
-      if (item.block === 'jour') return true;
+      if (item.block === 'jour') {
+        if (item.id === 'sunnah_jejune') { var d = new Date().getDay(); return d === 1 || d === 4; }
+        return true;
+      }
       return false;
     });
     if (_filteredItems.length === 0) return;
@@ -1900,7 +1904,7 @@ function renderLevel(levelId) {
       }
     });
     html += '</div>';
-    if (section.links) {
+    if (false && section.links) {
       section.links.forEach(link => {
         html += '<a class="link-item" href="' + link.url + '" target="_blank" rel="noopener"><div class="link-icon-wrap">' + link.icon + '</div><div><div class="link-label">' + link.label + '</div><div class="link-sub">' + link.sub + '</div></div><div class="link-arrow">›</div></a>';
       });
