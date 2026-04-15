@@ -2121,6 +2121,25 @@ function toggleItem(id, event) {
       }
     }
   }
+  // Mettre à jour dynamiquement la timeline (items principaux uniquement)
+  const _isMainItem = !id.includes('ontime') && !id.includes('mosquee');
+  const currentItem = document.getElementById('item-' + id);
+  if (_isMainItem && currentItem && state[id]) {
+    currentItem.style.opacity = '0.35';
+    currentItem.classList.remove('timeline-current');
+    const allItems = Array.from(document.querySelectorAll('.item'));
+    const curIdx = allItems.indexOf(currentItem);
+    for (let i = curIdx + 1; i < allItems.length; i++) {
+      const itemId = allItems[i].id.replace('item-', '');
+      if (!state[itemId]) {
+        allItems[i].classList.add('timeline-current');
+        allItems[i].style.background = 'rgba(200,168,74,0.08)';
+        allItems[i].style.borderLeft = '3px solid #C8A84A';
+        allItems[i].style.paddingLeft = '10px';
+        break;
+      }
+    }
+  }
   checkLevelCompletion(currentLevel);
   updateGlobalProgress();
   renderTabs();
