@@ -1793,7 +1793,9 @@ function renderLevel(levelId) {
       } else if (item.type === 'counter') {
         html += renderCounter(item, delay);
       } else if (item.prayer) {
-        html += renderPrayerItem(item, delay);
+        const _pChecked = !!state[item.id];
+        const _pTlCurrent = (!_pChecked && !_firstUncheckedFound) ? (_firstUncheckedFound = true, ' timeline-current') : '';
+        html += renderPrayerItem(item, delay, _pTlCurrent, _pChecked);
       } else if (item.coranPicker) {
         const checked = !!state[item.id];
         const optionalBadge = '<span style="font-size:9px;font-weight:700;letter-spacing:0.8px;color:var(--green);background:rgba(52,217,98,0.12);border:1px solid rgba(52,217,98,0.25);border-radius:6px;padding:1px 5px;margin-left:5px;vertical-align:middle;">BONUS</span>';
@@ -1856,8 +1858,8 @@ function renderLevel(levelId) {
   level.sections.forEach(s => s.items.forEach(item => { if (item.type === 'counter') initCounterEl(item); }));
   setTimeout(applyScrollScale, 50);
 }
-function renderPrayerItem(item, delay) {
-  const checked   = !!state[item.id];
+function renderPrayerItem(item, delay, extraClass, forceChecked) {
+  const checked   = forceChecked !== undefined ? forceChecked : !!state[item.id];
   const onTime    = !!state[item.id + '_ontime'];
   const fridayCls = item.isFriday ? ' friday-item' : '';
   const arabicHtml = item.arabic ? '<div class="item-arabic">' + item.arabic + '</div>' : '';
@@ -1867,7 +1869,8 @@ function renderPrayerItem(item, delay) {
     + '<div style="width:18px;height:18px;border-radius:50%;background:' + (onTime ? '#fff' : 'rgba(255,255,255,0.4)') + ';margin-left:' + (onTime ? '16px' : '0') + ';transition:margin 0.2s;"></div>'
     + '</div></div>';
   const priorityDot = item.priority === 'fard' ? '<span class="priority-fard">&nbsp;</span>' : item.priority === 'sunnah' ? '<span class="priority-sunnah">&nbsp;</span>' : '';
-  return '<div class="item' + fridayCls + (checked ? ' checked' : '') + '" onclick="toggleItem(\'' + item.id + '\',event)" style="animation-delay:' + delay + 'ms;--i:' + delay + '" id="item-' + item.id + '">'
+  const _tlOpacity = checked ? 'opacity:0.35;' : '';
+  return '<div class="item' + fridayCls + (checked ? ' checked' : '') + (extraClass || '') + '" onclick="toggleItem(\'' + item.id + '\',event)" style="' + _tlOpacity + 'animation-delay:' + delay + 'ms;--i:' + delay + '" id="item-' + item.id + '">'
     + '<div class="check-circle"><svg class="check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>'
     + '<div class="item-body"><div class="item-label">' + priorityDot + item.label + '</div>'
     + (item.sub ? '<div class="item-sub">' + item.sub + '</div>' : '')
