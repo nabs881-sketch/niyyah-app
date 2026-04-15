@@ -1454,7 +1454,8 @@ function renderResume() {
     const unlocked = state._unlocked.includes(lvl.id);
     const color = isDone ? 'var(--gold)' : 'var(--green)';
     const pctCls = isDone ? 'resume-level-pct done' : 'resume-level-pct';
-    levelsHtml += '<div class="resume-level-row" style="' + (!unlocked ? 'opacity:0.35' : '') + '"><div class="resume-level-icon">' + levelIcons[i] + '</div><div class="resume-level-body"><div class="resume-level-name">' + lvl.title + (isDone ? ' ✓' : '') + '</div><div class="resume-level-bar-track"><div class="resume-level-bar-fill" style="width:' + pct + '%;background:' + color + '"></div></div></div><div class="' + pctCls + '">' + pct + '%</div></div>';
+    var resumePctLabel = (unlocked && pct === 0) ? 'Commence !' : pct + '%';
+    levelsHtml += '<div class="resume-level-row" style="' + (!unlocked ? 'opacity:0.35' : '') + '"><div class="resume-level-icon">' + levelIcons[i] + '</div><div class="resume-level-body"><div class="resume-level-name">' + lvl.title + (isDone ? ' ✓' : '') + '</div><div class="resume-level-bar-track"><div class="resume-level-bar-fill" style="width:' + pct + '%;background:' + color + '"></div></div></div><div class="' + pctCls + '">' + resumePctLabel + '</div></div>';
   });
   levelsHtml += '</div>';
   const todayDone = getLevelProgress(1) >= 100;
@@ -2107,15 +2108,17 @@ function toggleItem(id, event) {
   checkBadges();
 }
 function confirmReset() {
-  if (confirm('Remettre a zero toutes les cases du jour ?')) {
-    const ul = state._unlocked;
-    state = { _date: TODAY, _unlocked: ul, _mashaAllahShown: false, _sadaqa50: false, _sadaqa80: false, _sadaqa100: false };
-    saveState();
-    wirdState = {};
-    saveWirdState();
-    renderLevel(currentLevel); updateGlobalProgress(); renderTabs();
-    showToast('Nouvelle journee — Bismillah 🌿');
-  }
+  // Étape 1 : première confirmation
+  if (!confirm('Remettre à zéro toutes les cases du jour ?')) return;
+  // Étape 2 : deuxième confirmation
+  if (!confirm('Es-tu sûr(e) ? Cette action est irréversible pour aujourd\'hui.')) return;
+  const ul = state._unlocked;
+  state = { _date: TODAY, _unlocked: ul, _mashaAllahShown: false, _sadaqa50: false, _sadaqa80: false, _sadaqa100: false };
+  saveState();
+  wirdState = {};
+  saveWirdState();
+  renderLevel(currentLevel); updateGlobalProgress(); renderTabs();
+  showToast('Nouvelle journee — Bismillah 🌿');
 }
 let toastTimeout;
 function showToast(msg) {
@@ -2354,7 +2357,7 @@ function renderProgression() {
       + '<div style="height:3px;background:rgba(255,255,255,0.06);border-radius:2px;overflow:hidden;">'
       + '<div style="height:100%;width:' + (unlocked ? pct : 0) + '%;background:' + (done ? 'linear-gradient(90deg,#c8a84b,#e8cc6a)' : 'var(--green-grad)') + ';border-radius:2px;transition:width 1s ease;"></div>'
       + '</div></div>'
-      + '<div style="font-size:12px;font-weight:700;color:' + (done ? '#c8a84b' : unlocked ? 'var(--green)' : 'var(--t3)') + ';min-width:32px;text-align:right;">' + (unlocked ? pct + '%' : '🔒') + '</div>'
+      + '<div style="font-size:' + (unlocked && pct === 0 ? '10px' : '12px') + ';font-weight:' + (unlocked && pct === 0 ? '500' : '700') + ';color:' + (done ? '#c8a84b' : unlocked ? 'var(--green)' : 'var(--t3)') + ';min-width:32px;text-align:right;">' + (!unlocked ? '🔒' : pct === 0 ? 'Commence !' : pct + '%') + '</div>'
       + '</div>';
   }).join('');
   let badgesHTML = '';
@@ -2382,7 +2385,9 @@ function renderProgression() {
   LEVELS.forEach((lvl,i)=>{
     const pct=Math.round(getLevelProgress(lvl.id)), done=pct>=100, unlocked=state._unlocked.includes(lvl.id);
     const cc=done?'var(--gold)':'var(--green)', ico=['🕌','📿','📚','💚'][i];
-    lvlRowsP+='<div style="background:var(--card);border-radius:12px;padding:10px 14px;display:flex;align-items:center;gap:10px;'+(unlocked?'':'opacity:0.35')+';margin-bottom:5px;"><span style="font-size:17px;width:26px;text-align:center;">'+ico+'</span><div style="flex:1"><div style="font-size:13px;color:var(--t1);margin-bottom:3px;">'+lvl.title+(done?' ✓':'')+'</div><div style="height:3px;background:var(--sep2);border-radius:3px;"><div style="height:100%;width:'+pct+'%;background:'+cc+';border-radius:3px;"></div></div></div><div style="font-size:13px;font-weight:600;color:'+cc+';min-width:32px;text-align:right;">'+pct+'%</div></div>';
+    var pctLabel = (unlocked && pct===0) ? 'Commence !' : pct+'%';
+    var pctSize = (unlocked && pct===0) ? '10px' : '13px';
+    lvlRowsP+='<div style="background:var(--card);border-radius:12px;padding:10px 14px;display:flex;align-items:center;gap:10px;'+(unlocked?'':'opacity:0.35')+';margin-bottom:5px;"><span style="font-size:17px;width:26px;text-align:center;">'+ico+'</span><div style="flex:1"><div style="font-size:13px;color:var(--t1);margin-bottom:3px;">'+lvl.title+(done?' ✓':'')+'</div><div style="height:3px;background:var(--sep2);border-radius:3px;"><div style="height:100%;width:'+pct+'%;background:'+cc+';border-radius:3px;"></div></div></div><div style="font-size:'+pctSize+';font-weight:600;color:'+cc+';min-width:32px;text-align:right;">'+pctLabel+'</div></div>';
   });
   // === GRAPHIQUE 7 JOURS BILANS ===
   const bilansData = JSON.parse(localStorage.getItem('niyyah_bilans') || '{}');
@@ -4544,6 +4549,8 @@ const ONBOARD_SLIDES = [
   () => `
     <div class="onboard-anim"><div style="width:160px;height:160px;margin:0 auto 20px;animation:onboardFloat 3s ease-in-out infinite;"><svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" width="160" height="160"><circle cx="80" cy="80" r="76" fill="rgba(52,217,98,0.07)" stroke="rgba(52,217,98,0.3)" stroke-width="1.5"/><text x="80" y="72" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="22" font-style="italic" fill="white">Niyyah</text><text x="80" y="94" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="14" fill="#34d962">Daily</text><text x="80" y="118" text-anchor="middle" font-family="serif" font-size="26" fill="rgba(52,217,98,0.5)">&#x646;&#x650;&#x64A;&#x651;&#x629;</text></svg></div><div class="onboard-logo">Niyyah Daily</div><div class="onboard-tagline">نِيَّة · Pose ton intention</div><div class="onboard-title">Ta pratique spirituelle,<br>chaque jour</div><div class="onboard-sub">Niyyah t\'accompagne dans ton chemin vers Allah — à ton rythme, sans jugement.</div><button class="onboard-btn" onclick="onboardNext()">Commencer →</button><button class="onboard-skip" onclick="onboardFinish()">Passer</button></div>`,
   () => `
+    <div class="onboard-anim"><div style="font-size:56px;text-align:center;margin-bottom:16px;">👁</div><div class="onboard-title">Le Scanner de Niyyah</div><div class="onboard-sub" style="margin-bottom:24px;">Pose ton regard sur un objet du quotidien — le Scanner te proposera une intention spirituelle pour le sacraliser.</div><div style="background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.15);border-radius:14px;padding:16px;margin-bottom:20px;text-align:center;"><div style="font-size:13px;color:rgba(255,255,255,0.7);line-height:1.6;">Ton verre d'eau, ton stylo, ton miroir...<br>Chaque objet peut porter une niyyah.</div></div><button class="onboard-btn" onclick="onboardNext()">Suivant →</button><button class="onboard-skip" onclick="onboardFinish()">Passer</button></div>`,
+  () => `
     <div class="onboard-anim"><div class="onboard-title">4 niveaux de pratique</div><div class="onboard-sub" style="margin-bottom:24px;">Progresse à ton rythme — chaque niveau se débloque quand tu es prêt.</div><div class="onboard-levels"><div class="onboard-level"><div class="onboard-level-icon">🕌</div><div><div class="onboard-level-name">Fondations</div><div class="onboard-level-desc">Les 5 prières · Dhikr · Récitation</div></div></div><div class="onboard-level"><div class="onboard-level-icon">📿</div><div><div class="onboard-level-name">Approfondissement</div><div class="onboard-level-desc">Mosquée · Istighfar · Tasbih</div></div></div><div class="onboard-level"><div class="onboard-level-icon">📚</div><div><div class="onboard-level-name">Connaissance</div><div class="onboard-level-desc">Hadiths · Coran · Arabe</div></div></div><div class="onboard-level"><div class="onboard-level-icon">💚</div><div><div class="onboard-level-name">Rayonnement</div><div class="onboard-level-desc">Sadaqa · Salam · Douaas</div></div></div></div><button class="onboard-btn" onclick="onboardNext()">Suivant →</button><button class="onboard-skip" onclick="onboardFinish()">Passer</button></div>`,
   () => `
     <div class="onboard-anim"><div style="width:110px;height:110px;margin:0 auto 20px;"><svg viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg" width="110" height="110"><circle cx="55" cy="55" r="52" fill="rgba(52,217,98,0.07)" stroke="rgba(52,217,98,0.3)" stroke-width="1.5"/><text x="55" y="50" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="15" font-style="italic" fill="white">Niyyah</text><text x="55" y="68" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="10" fill="#34d962">Daily</text><text x="55" y="86" text-anchor="middle" font-family="serif" font-size="18" fill="rgba(52,217,98,0.5)">&#x646;&#x650;&#x64A;&#x651;&#x629;</text></svg></div><div class="onboard-title">Tes horaires de prière</div><div class="onboard-sub">Entre ta ville pour afficher les horaires de Fajr, Dhuhr, Asr, Maghrib et Isha chaque jour.</div><div class="city-input-wrap" style="max-width:300px;margin-bottom:16px;"><input class="city-input" id="onboardCityInput" type="text"
@@ -4554,11 +4561,11 @@ const ONBOARD_SLIDES = [
 function onboardRender() {
   const content = document.getElementById('onboardContent');
   if (content) content.innerHTML = ONBOARD_SLIDES[_onboardStep]();
-  [0,1,2].forEach(i => {
+  [0,1,2,3].forEach(i => {
     const dot = document.getElementById('dot' + i);
     if (dot) dot.className = 'onboard-dot' + (i === _onboardStep ? ' active' : '');
   });
-  if (_onboardStep === 2) {
+  if (_onboardStep === 3) {
     setTimeout(() => {
       const el = document.getElementById('onboardCityInput');
       if (el) el.focus();
@@ -5115,6 +5122,7 @@ function v2GoSanctuaire() {
 
   v2CurrentView = 'sanctuaire';
   v2RefreshStats();
+  if (typeof renderDefiCard === 'function') renderDefiCard();
 }
 
 function v2GoTo(viewName) {
@@ -5786,18 +5794,23 @@ function v2GoMentor() {
   // Apply i18n
   mentorApplyI18n();
 
-  // Afficher le statut Premium / questions restantes
+  // Afficher le statut Premium / questions restantes (caché avant la 1ère interaction)
   const mentorStatusEl = document.getElementById('mentor-premium-status');
   if (mentorStatusEl) {
     const usage = parseInt(localStorage.getItem('niyyah_mentor_usage') || '0');
     const remaining = Math.max(0, 3 - usage);
-    if (isPremium()) {
+    if (usage === 0 && !isPremium()) {
+      mentorStatusEl.style.display = 'none';
+    } else if (isPremium()) {
+      mentorStatusEl.style.display = '';
       mentorStatusEl.textContent = '✦ Mentor Premium activé';
       mentorStatusEl.style.color = 'rgba(212,175,55,0.6)';
     } else if (remaining > 0) {
+      mentorStatusEl.style.display = '';
       mentorStatusEl.textContent = remaining + ' question' + (remaining > 1 ? 's' : '') + ' gratuite' + (remaining > 1 ? 's' : '') + ' restante' + (remaining > 1 ? 's' : '');
       mentorStatusEl.style.color = 'rgba(135,169,107,0.6)';
     } else {
+      mentorStatusEl.style.display = '';
       mentorStatusEl.textContent = '🔓 Premium requis';
       mentorStatusEl.style.color = 'rgba(212,175,55,0.5)';
     }

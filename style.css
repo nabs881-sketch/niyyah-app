@@ -2440,6 +2440,21 @@ body::before {
 .quick-btn-v2:hover .card-img-premium {
   filter: brightness(1.12) drop-shadow(0 0 14px rgba(212,175,55,0.4));
 }
+.card-desc-v2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 6px 8px;
+  font-size: 10px;
+  color: rgba(240,234,214,0.6);
+  text-align: center;
+  letter-spacing: 0.02em;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
+  z-index: 2;
+  pointer-events: none;
+  font-family: var(--sans);
+}
 .quick-btn-v2 .quick-icon-v2,
 .quick-btn-v2 .quick-label-v2,
 .quick-btn-v2 .card-img { display: none !important; }
