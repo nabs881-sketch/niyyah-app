@@ -610,8 +610,10 @@ pointer-events:none;z-index:0;transition:opacity 0.4s ease}.view{display:none;po
 
 /* Wird */
 .wird-label { color: #E8DCC8 !important; }
-.wird-sub { color: #8A7E6E !important; }
-.wird-arabic { color: #C4A870 !important; }
+.wird-sub { color: #8A7E6E !important; font-size: 15px !important; }
+.wird-arabic { color: #C4A870 !important; font-size: 18px !important; }
+.friday-item-label { font-size: 15px !important; }
+.friday-item-arabic { font-size: 15px !important; }
 .wird-session-title { color: #E8DCC8 !important; }
 
 /* Toast */
@@ -692,7 +694,7 @@ pointer-events:none;z-index:0;transition:opacity 0.4s ease}.view{display:none;po
 
 
 /* ── CONTRASTE RENFORCÉ — thème sombre (s assurer que tout est lisible) ── */
-.item-sub { font-size: 13px; }
+.item-sub { font-size: 15px; }
 .section-name { font-size: 13px; font-weight: 600; }
 .hero-label { opacity: 1 !important; }
 .prayer-time-name { font-size: 10px; }
@@ -927,7 +929,7 @@ pointer-events:none;z-index:0;transition:opacity 0.4s ease}.view{display:none;po
 /* ── ITEM LABELS ── */
 .item-label { color: #E8DCC0 !important; font-weight: 400 !important; }
 .item.checked .item-label { color: rgba(184,168,128,0.35) !important; }
-.item-sub { color: #8A8070 !important; font-size: 13px !important; }
+.item-sub { color: #8A8070 !important; font-size: 15px !important; }
 .item-arabic { color: #C8A84A !important; }
 
 /* ── WEEKLY CARD — Luxe Coach ── */
@@ -1062,7 +1064,7 @@ pointer-events:none;z-index:0;transition:opacity 0.4s ease}.view{display:none;po
 [data-theme="light"] .item:not(:last-child)::after { background: rgba(100,72,36,0.10) !important; }
 [data-theme="light"] .item-label { color: #2A1F0E !important; font-weight: 400 !important; }
 [data-theme="light"] .item.checked .item-label { color: #B09870 !important; }
-[data-theme="light"] .item-sub { color: #7A6040 !important; font-size: 13px !important; }
+[data-theme="light"] .item-sub { color: #7A6040 !important; font-size: 15px !important; }
 [data-theme="light"] .item-arabic { color: #A07838 !important; opacity: 1 !important; }
 [data-theme="light"] .item.checked .item-arabic { opacity: 0.28 !important; }
 [data-theme="light"] .section-name { color: #6A5030 !important; font-weight: 600 !important; }
