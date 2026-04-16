@@ -2275,7 +2275,7 @@ function spawnPremiumBurst(cx, cy) {
     ring.r = t * 80;
     ring.alpha = 0.6 * (1 - t);
     ctx.beginPath();
-    ctx.arc(ox, oy, ring.r, 0, Math.PI * 2);
+    ctx.arc(ox, oy, Math.max(0.1, ring.r), 0, Math.PI * 2);
     ctx.strokeStyle = 'rgba(200,168,75,' + ring.alpha + ')';
     ctx.lineWidth = 2 * (1 - t);
     ctx.stroke();
@@ -2293,7 +2293,7 @@ function spawnPremiumBurst(cx, cy) {
       p.trail.forEach(function(tr, ti) {
         var ta = tr.alpha * (ti / p.trail.length) * (1 - t);
         ctx.beginPath();
-        ctx.arc(tr.x, tr.y, p.size * 0.4, 0, Math.PI * 2);
+        ctx.arc(tr.x, tr.y, Math.max(0.1, p.size * 0.4), 0, Math.PI * 2);
         ctx.fillStyle = p.color.replace(')', ',' + ta + ')').replace('rgb', 'rgba').replace('#', '');
         ctx.fillStyle = 'rgba(200,168,75,' + ta + ')';
         ctx.fill();
@@ -2310,7 +2310,7 @@ function spawnPremiumBurst(cx, cy) {
         ctx.fillText('✦', 0, 0);
       } else {
         ctx.beginPath();
-        ctx.arc(0, 0, p.size * (0.5 + 0.5 * (1 - t)), 0, Math.PI * 2);
+        ctx.arc(0, 0, Math.max(0.1, p.size * (0.5 + 0.5 * (1 - t))), 0, Math.PI * 2);
         ctx.fillStyle = p.color;
         ctx.fill();
       }
