@@ -2698,28 +2698,54 @@ function playAudio(urlOrArr, btn, event) {
   }
   const urls = Array.isArray(urlOrArr) ? urlOrArr : [urlOrArr];
   let idx = 0;
+  let _nextAudio = null;
+  let _crossfading = false;
   function playNext() {
     if (idx >= urls.length) {
       btn.textContent = '🔊';
       btn.classList.remove('playing');
       _currentAudio = null;
       _currentBtn   = null;
+      _nextAudio    = null;
       return;
     }
-    const audio = new Audio();
+    const audio = _crossfading && _nextAudio ? _nextAudio : new Audio();
+    _crossfading = false;
+    _nextAudio = null;
     _currentAudio = audio;
     _currentBtn   = btn;
-    audio.onerror = () => {
-      idx++;
-      playNext();
+    audio.onerror = function() { idx++; playNext(); };
+    audio.onended = function() { idx++; playNext(); };
+    // Crossfade: preload next 2s before end
+    audio.ontimeupdate = function() {
+      if (audio.duration && audio.currentTime > 0 && (audio.duration - audio.currentTime) < 2 && idx + 1 < urls.length && !_nextAudio) {
+        _nextAudio = new Audio();
+        _nextAudio.src = urls[idx + 1];
+        _nextAudio.load();
+        _nextAudio.volume = 0;
+        // Fade out current, fade in next
+        var _fadeInterval = setInterval(function() {
+          if (audio.volume > 0.05) audio.volume = Math.max(0, audio.volume - 0.05);
+          if (_nextAudio.volume < 0.95) _nextAudio.volume = Math.min(1, _nextAudio.volume + 0.05);
+          if (audio.volume <= 0.05 && _nextAudio.volume >= 0.95) clearInterval(_fadeInterval);
+        }, 100);
+        _nextAudio.play().catch(function() {});
+        audio.onended = function() {
+          _crossfading = true;
+          idx++;
+          playNext();
+        };
+      }
     };
-    audio.onended = () => { idx++; playNext(); };
-    audio.src = urls[idx];
-    audio.load();
-    audio.play().then(() => {
+    if (!audio.src || audio.src !== urls[idx]) {
+      audio.src = urls[idx];
+      audio.load();
+    }
+    audio.volume = 1;
+    audio.play().then(function() {
       btn.textContent = '⏹';
       btn.classList.add('playing');
-    }).catch(() => {
+    }).catch(function() {
       idx++;
       playNext();
     });
