@@ -395,7 +395,7 @@ function cocherDefiAujourdhui() {
 function renderDefiCard() {
   const card = document.getElementById('accueilDefiCard');
   if (!card) return;
-  card.style.display = 'block';
+  card.style.display = 'flex';
   // Toujours assigner un handler par défaut
   card.onclick = function() { if (typeof openDefiSelector === 'function') openDefiSelector(); };
   try {
