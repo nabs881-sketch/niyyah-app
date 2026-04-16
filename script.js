@@ -5887,6 +5887,8 @@ function v2RefreshStats() {
     if (fill) setTimeout(() => { fill.style.width = pct + '%'; }, 400);
 
   } catch(e) {}
+  showMorningSagesse();
+  checkNightCompanion();
   updateFajrChallenge();
   updateSanctuaireMoment();
 }
@@ -5930,6 +5932,77 @@ function updateFajrChallenge() {
       + '<div style="height:100%;width:' + pct + '%;background:linear-gradient(90deg,#C8A84A,#E0C870);transition:width 0.6s ease;"></div>'
       + '</div></div>';
   }
+}
+/* ── Mode Compagnon Nocturne ── */
+function checkNightCompanion() {
+  if (typeof isPremium !== 'function' || !isPremium()) return;
+  var block = getCurrentPrayerBlock();
+  if (block.id !== 'isha' && block.id !== 'nuit' && block.id !== 'qiyam') return;
+  var todayKey = new Date().toISOString().split('T')[0];
+  var sagesse = null;
+  try { sagesse = JSON.parse(localStorage.getItem('niyyah_sagesse_nuit') || 'null'); } catch(e) {}
+  if (sagesse && sagesse.date === todayKey) return;
+  var overlay = document.getElementById('night-companion-overlay');
+  if (overlay) overlay.style.display = 'block';
+}
+function closeNightCompanion() {
+  var overlay = document.getElementById('night-companion-overlay');
+  if (overlay) overlay.style.display = 'none';
+}
+async function sendNightThought() {
+  var input = document.getElementById('night-thought-input');
+  var btn = document.getElementById('night-send-btn');
+  if (!input || !input.value.trim()) return;
+  var thought = input.value.trim();
+  btn.textContent = '…';
+  btn.disabled = true;
+  try {
+    var res = await fetch('https://niyyah-worker.nabs881.workers.dev/murmure', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ thought: thought, mode: 'night', context: 'Réponds en une seule phrase de sagesse, dans le style d\'Ibn Ata\'illah ou Al-Ghazali. Pas de conseil, pas de question. Juste une parole lumineuse qui apaise.' })
+    });
+    var data = await res.json();
+    var wisdom = data.text || data.reply || data.content || 'La nuit est un voile de miséricorde — repose-toi sous Sa protection.';
+    var source = data.source || 'Sagesse nocturne';
+    var responseEl = document.getElementById('night-wisdom-response');
+    var textEl = document.getElementById('night-wisdom-text');
+    var sourceEl = document.getElementById('night-wisdom-source');
+    if (textEl) textEl.textContent = '« ' + wisdom + ' »';
+    if (sourceEl) sourceEl.textContent = '— ' + source;
+    if (responseEl) responseEl.style.display = 'block';
+    localStorage.setItem('niyyah_sagesse_nuit', JSON.stringify({ text: wisdom, source: source, date: new Date().toISOString().split('T')[0], thought: thought }));
+  } catch(e) {
+    var fallback = 'Celui qui connaît son âme connaît son Seigneur. — Al-Ghazali';
+    var responseEl2 = document.getElementById('night-wisdom-response');
+    var textEl2 = document.getElementById('night-wisdom-text');
+    var sourceEl2 = document.getElementById('night-wisdom-source');
+    if (textEl2) textEl2.textContent = '« ' + fallback + ' »';
+    if (sourceEl2) sourceEl2.textContent = '— Sagesse nocturne';
+    if (responseEl2) responseEl2.style.display = 'block';
+    localStorage.setItem('niyyah_sagesse_nuit', JSON.stringify({ text: fallback, source: 'Al-Ghazali', date: new Date().toISOString().split('T')[0], thought: thought }));
+  }
+  btn.textContent = 'ENVOYER';
+  btn.disabled = false;
+  input.value = '';
+}
+function showMorningSagesse() {
+  if (typeof isPremium !== 'function' || !isPremium()) return;
+  var card = document.getElementById('morning-wisdom-card');
+  if (!card) return;
+  var sagesse = null;
+  try { sagesse = JSON.parse(localStorage.getItem('niyyah_sagesse_nuit') || 'null'); } catch(e) {}
+  if (!sagesse || !sagesse.text) { card.style.display = 'none'; return; }
+  var yesterday = new Date(); yesterday.setDate(yesterday.getDate() - 1);
+  var yesterdayStr = yesterday.toISOString().split('T')[0];
+  if (sagesse.date !== yesterdayStr && sagesse.date !== new Date().toISOString().split('T')[0]) { card.style.display = 'none'; return; }
+  var block = getCurrentPrayerBlock();
+  if (block.id === 'isha' || block.id === 'nuit' || block.id === 'qiyam') { card.style.display = 'none'; return; }
+  card.style.display = 'block';
+  var textEl = document.getElementById('morning-wisdom-text');
+  var sourceEl = document.getElementById('morning-wisdom-source');
+  if (textEl) textEl.textContent = '« ' + sagesse.text + ' »';
+  if (sourceEl) sourceEl.textContent = '— ' + sagesse.source;
 }
 function updateSanctuaireMoment() {
   var el = document.getElementById('sanctuaire-moment');
