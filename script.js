@@ -402,7 +402,7 @@ function renderDefiCard() {
   const { defi, state: defiState } = getDefiCourant();
   // Pas encore de défi choisi cette semaine
   if (!defi) {
-    document.getElementById('defiCardIcon').innerHTML = '<img src="https://nabs881-sketch.github.io/niyyah-app/imagescroissant.png" width="80" height="80" alt="Croissant" style="object-fit:contain;filter:invert(1) brightness(10);mix-blend-mode:multiply;background:none !important;box-shadow:none !important;border:none !important;">';
+    document.getElementById('defiCardIcon').innerHTML = '<img src="https://nabs881-sketch.github.io/niyyah-app/imagescroissant.png" alt="Croissant" style="width:80px;height:auto;display:block;margin:0 auto;">';
     document.getElementById('defiCardTitre').textContent = 'Choisir ton défi de la semaine';
     document.getElementById('defiCardScore').textContent = '';
     const dots = document.getElementById('defiCardDots');
@@ -410,7 +410,7 @@ function renderDefiCard() {
     return;
   }
   card.onclick = function() { if (typeof openDefiOverlay === 'function') openDefiOverlay(); };
-  document.getElementById('defiCardIcon').innerHTML = '<img src="https://nabs881-sketch.github.io/niyyah-app/imagescroissant.png" width="80" height="80" alt="Croissant" style="object-fit:contain;filter:invert(1) brightness(10);mix-blend-mode:multiply;background:none !important;box-shadow:none !important;border:none !important;">';
+  document.getElementById('defiCardIcon').innerHTML = '<img src="https://nabs881-sketch.github.io/niyyah-app/imagescroissant.png" alt="Croissant" style="width:80px;height:auto;display:block;margin:0 auto;">';
   document.getElementById('defiCardTitre').textContent = defi.titre;
   const fait = defiState.current.jours.length;
   document.getElementById('defiCardScore').textContent = fait + '/' + defi.cible;
