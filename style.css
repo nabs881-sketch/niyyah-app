@@ -3291,6 +3291,24 @@ div#v2-stats-row > div {
   font-size: 20px !important;
   line-height: 1.6 !important;
 }
+/* Mentor — lisibilité conversation */
+.mentor-bubble {
+  font-size: 16px !important;
+  line-height: 1.6 !important;
+}
+/* Sanctuaire — level strip */
+.level-name-v2 {
+  font-size: 15px !important;
+  letter-spacing: 0.15em !important;
+}
+.level-xp-v2 {
+  font-size: 13px !important;
+}
+/* Sanctuaire — Fajr challenge titre */
+#fajr-challenge-card .quick-card-wrap,
+#fajr-challenge-card div {
+  font-size: 15px;
+}
 .onboard-levels {
   width: 100%;
   max-width: 300px;
