@@ -5229,6 +5229,7 @@ let v2CurrentView = 'sanctuaire';
 
 function v2GoSanctuaire() {
   // Show sanctuaire + V2 UI
+  document.body.classList.remove('mentor-active');
   const sanctEl = document.getElementById('view-sanctuaire');
   if (sanctEl) sanctEl.classList.add('active');
   const tbEl = document.getElementById('topbar-v2');
@@ -5265,6 +5266,7 @@ function v2GoSanctuaire() {
 }
 
 function v2GoTo(viewName) {
+  document.body.classList.remove('mentor-active');
   // Hide sanctuaire, keep topbar-v2 visible as back-bar
   const sanctEl2 = document.getElementById('view-sanctuaire');
   if (sanctEl2) sanctEl2.classList.remove('active');
@@ -5996,9 +5998,9 @@ function v2GoMentor() {
   // Hide sanctuaire
   const sanctEl = document.getElementById('view-sanctuaire');
   if (sanctEl) sanctEl.classList.remove('active');
-  // Show back btn
+  // Hide back btn (mentor has its own ←)
   const backBtn = document.getElementById('v2-back-btn');
-  if (backBtn) backBtn.classList.add('visible');
+  if (backBtn) backBtn.classList.remove('visible');
   // Hide all other views
   document.querySelectorAll('.view').forEach(v => {
     v.classList.remove('active');
@@ -6007,6 +6009,7 @@ function v2GoMentor() {
   // Hide topbar to avoid overlap
   const tbEl = document.getElementById('topbar-v2');
   if (tbEl) tbEl.classList.remove('active');
+  document.body.classList.add('mentor-active');
   // Show mentor
   const mentorView = document.getElementById('view-mentor');
   if (mentorView) {
@@ -6033,7 +6036,7 @@ function v2GoMentor() {
       mentorStatusEl = document.createElement('div');
       mentorStatusEl.id = 'mentor-premium-status';
       mentorStatusEl.style.cssText = 'font-size:10px;letter-spacing:0.1em;margin-top:2px;opacity:0.8;';
-      var headerLeft = document.querySelector('.mentor-header-left');
+      var headerLeft = document.querySelector('.mentor-header-center');
       if (headerLeft) headerLeft.appendChild(mentorStatusEl);
     }
     if (isPremium()) {
