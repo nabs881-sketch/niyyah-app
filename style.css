@@ -2965,6 +2965,26 @@ div#v2-stats-row > div {
   cursor: pointer;
 }
 
+/* Bouton WhatsApp share */
+.scanner-whatsapp-btn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  width: 100% !important;
+  max-width: 340px !important;
+  background: linear-gradient(135deg, #1a1a2e, #16213e) !important;
+  border: 1px solid rgba(200,168,75,0.4) !important;
+  border-radius: 16px !important;
+  padding: 16px 24px !important;
+  margin-top: 16px !important;
+  cursor: pointer !important;
+  text-align: left !important;
+}
+.scanner-whatsapp-btn:active {
+  opacity: 0.8 !important;
+}
+
 /* Mention vie privée */
 .scanner-privacy {
   font-size: 9px;
