@@ -5770,7 +5770,7 @@ function applyTawbaGlow() {
 function updateSpiritualTitle() {
   var el = document.getElementById('v2-spiritual-title');
   if (!el) return;
-  if (typeof isPremium !== 'function' || !isPremium()) { el.style.display = 'none'; return; }
+  // TODO: remettre après test → if (typeof isPremium !== 'function' || !isPremium()) { el.style.display = 'none'; return; }
   var streak = 0;
   try { streak = JSON.parse(localStorage.getItem('spiritual_history') || '{}').streak || 0; } catch(e) {}
   var titles = [
@@ -5778,10 +5778,10 @@ function updateSpiritualTitle() {
     { min: 180, ar: 'الْمُحْسِنُ', tr: 'Al-Muhsin — L\'excellent' },
     { min: 90,  ar: 'الْمُتَّقِي', tr: 'Al-Muttaqî — Le pieux' },
     { min: 30,  ar: 'الْمُوَاظِبُ', tr: 'Al-Muwâdhib — Le constant' },
-    { min: 7,   ar: 'الْمُبْتَدِئُ', tr: 'Al-Mubtadi\' — Le commençant' }
+    { min: 7,   ar: 'الْمُبْتَدِئُ', tr: 'Al-Mubtadi\' — Le commençant' },
+    { min: 0,   ar: 'الطَّالِبُ', tr: 'Al-Tâlib — Le chercheur' }
   ];
   var title = titles.find(function(t) { return streak >= t.min; });
-  if (!title) { el.style.display = 'none'; return; }
   el.style.display = 'block';
   el.innerHTML = '<div style="font-family:\'Noto Naskh Arabic\',serif;font-size:18px;color:#C8A84A;line-height:1.4;">' + title.ar + '</div>'
     + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:11px;font-style:italic;color:#B0A080;letter-spacing:0.5px;">' + title.tr + '</div>';
