@@ -5937,7 +5937,7 @@ function updateFajrChallenge() {
 function checkNightCompanion() {
   if (typeof isPremium !== 'function' || !isPremium()) return;
   var block = getCurrentPrayerBlock();
-  if (block.id !== 'isha' && block.id !== 'nuit' && block.id !== 'qiyam' && block.id !== 'asr') return; // TODO: retirer 'asr' après test
+  if (block.id !== 'isha' && block.id !== 'nuit' && block.id !== 'qiyam') return;
   var todayKey = new Date().toISOString().split('T')[0];
   if (localStorage.getItem('niyyah_compagnon_date') === todayKey) return;
   var overlay = document.getElementById('night-companion-overlay');
