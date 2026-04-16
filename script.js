@@ -5898,7 +5898,7 @@ function updateFajrChallenge() {
   } else {
     card.innerHTML = '<div style="background:#1a1a1a;border:1px solid rgba(200,168,75,0.3);border-radius:14px;padding:14px 18px;text-align:center;">'
       + '<div style="display:flex;flex-direction:column;align-items:center;gap:8px;margin-bottom:10px;">'
-      + '<div><img src="https://nabs881-sketch.github.io/niyyah-app/imagessoleil.png" width="80" height="80" alt="Soleil" style="object-fit:contain;mix-blend-mode:screen;"></div>'
+      + '<div><img src="https://nabs881-sketch.github.io/niyyah-app/imagessoleil.png" width="120" height="120" alt="Soleil" style="object-fit:contain;mix-blend-mode:screen;"></div>'
       + '<div>'
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:600;color:#C8A84A;">Challenge 30 jours Fajr</div>'
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;font-style:italic;color:#B0A080;margin-top:2px;">Jour ' + fajrStreak + ' sur 30</div>'
