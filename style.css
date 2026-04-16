@@ -3155,3 +3155,4 @@ button[style*="gold-v2"] {
   position: relative !important;
   top: -1px !important;
 }
+.mentor-active .topbar-v2 { display: none !important; }
