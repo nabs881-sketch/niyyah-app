@@ -7132,13 +7132,15 @@ function openScannerJournal() {
   if (hist.length === 0) {
     content.innerHTML = '<div style="text-align:center;padding:60px 20px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:#B0A080;">Tes intentions apparaîtront ici ✦</div></div>';
   } else {
-    var html = '';
+    var html = '<div style="display:flex;gap:14px;overflow-x:auto;padding:8px 0 16px;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;">';
     hist.forEach(function(entry) {
-      html += '<div style="padding:14px 0;border-bottom:1px solid rgba(200,168,75,0.1);">'
-        + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:#E8DCC0;line-height:1.6;">« ' + entry.text + ' »</div>'
-        + '<div style="font-size:10px;color:#B0A080;margin-top:6px;">' + entry.day + ' ' + entry.date + ' · ' + entry.time + '</div>'
+      html += '<div style="min-width:260px;max-width:260px;height:160px;background:linear-gradient(135deg,#1a1a1a,#2C2E32);border:1px solid rgba(200,168,75,0.3);border-radius:16px;padding:20px;display:flex;flex-direction:column;justify-content:space-between;scroll-snap-align:start;flex-shrink:0;">'
+        + '<div style="font-family:\'Cinzel\',serif;font-size:10px;color:#C8A84A;letter-spacing:1px;">' + entry.time + ' · ' + entry.day + '</div>'
+        + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:#E8DCC0;line-height:1.5;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">« ' + entry.text + ' »</div>'
+        + '<div style="font-size:10px;color:#B0A080;">' + entry.date + '</div>'
         + '</div>';
     });
+    html += '</div>';
     content.innerHTML = html;
   }
   overlay.style.display = 'block';
