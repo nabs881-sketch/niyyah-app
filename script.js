@@ -6324,7 +6324,7 @@ function v2GoMentor() {
 
   // Afficher le statut Premium / questions restantes — uniquement après la 1ère interaction
   var usage = parseInt(localStorage.getItem('niyyah_mentor_usage') || '0');
-  var remaining = Math.max(0, 3 - usage);
+  var remaining = Math.max(0, 1 - usage);
   var mentorStatusEl = document.getElementById('mentor-premium-status');
   if (usage === 0 && !isPremium()) {
     // Aucune interaction : on ne crée/affiche rien
@@ -6668,8 +6668,8 @@ function mentorSend() {
   var _mentorDate = localStorage.getItem('niyyah_mentor_date');
   var _mentorCount = parseInt(localStorage.getItem('niyyah_mentor_count') || '0', 10);
   if (_mentorDate !== TODAY) { _mentorCount = 0; localStorage.setItem('niyyah_mentor_date', TODAY); }
-  if (_mentorCount >= 3) {
-    showToast('Tu as posé tes 3 questions du jour — reviens demain inch\'Allah 🌙');
+  if (_mentorCount >= 1) {
+    showToast('Ta question du jour a été posée — reviens demain inch\'Allah 🌙');
     return;
   }
   const input = document.getElementById('mentor-input');
@@ -6867,14 +6867,14 @@ async function v2MentorAsk(question) {
 
 async function mentorAskAPI(question) {
   // ── VÉRIFICATION PREMIUM ──
-  // Les 3 premières questions sont gratuites, ensuite Premium requis
+  // La première question est gratuite, ensuite Premium requis
   const mentorUsageKey = 'niyyah_mentor_usage';
   const usageCount = parseInt(localStorage.getItem(mentorUsageKey) || '0');
 
-  if (!isPremium() && usageCount >= 3) {
+  if (!isPremium() && usageCount >= 1) {
     // Afficher le message freemium DANS le chat (pas de popup brutal)
     mentorHideThinking();
-    const freeMsg = "Tu as découvert le Mentor d'Adab. ✦\n\nPour continuer à recevoir des conseils personnalisés par l'IA, débloques Niyyah Premium.\n\nLes 3 premières questions étaient offertes — c'est notre façon de te montrer la valeur avant de te demander quoi que ce soit.";
+    const freeMsg = "Tu as découvert le Mentor d'Adab. ✦\n\nPour continuer à recevoir des conseils personnalisés par l'IA, débloque Niyyah Premium.\n\nLa première question était offerte — c'est notre façon de te montrer la valeur avant de te demander quoi que ce soit.";
     mentorAddAIMessage(freeMsg);
     // Afficher freemium après 1.5s
     setTimeout(() => {
@@ -7532,8 +7532,8 @@ async function scannerCapture() {
   var _scanDate = localStorage.getItem('niyyah_scanner_date');
   var _scanCount = parseInt(localStorage.getItem('niyyah_scanner_count') || '0', 10);
   if (_scanDate !== TODAY) { _scanCount = 0; localStorage.setItem('niyyah_scanner_date', TODAY); }
-  if (_scanCount >= 3) {
-    showToast('Tu as utilisé tes 3 scans du jour — reviens demain inch\'Allah 🌙');
+  if (_scanCount >= 1) {
+    showToast('Ton scan du jour a été utilisé — reviens demain inch\'Allah 🌙');
     return;
   }
   localStorage.setItem('niyyah_scanner_count', String(_scanCount + 1));
