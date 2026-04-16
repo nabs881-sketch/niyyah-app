@@ -414,6 +414,8 @@ function renderDefiCard() {
   document.getElementById('defiCardTitre').textContent = defi.titre;
   const fait = defiState.current.jours.length;
   document.getElementById('defiCardScore').textContent = fait + '/' + defi.cible;
+  var barFill = document.getElementById('defiCardBarFill');
+  if (barFill) barFill.style.width = Math.round((fait / defi.cible) * 100) + '%';
   // Dots
   const dots = document.getElementById('defiCardDots');
   dots.innerHTML = '';
