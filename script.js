@@ -7537,12 +7537,12 @@ function scannerShareCard() {
   // Mot arabe en grand
   ctx.textAlign = 'center';
   ctx.fillStyle = 'rgba(200,168,75,0.2)';
-  ctx.font = '80px "Noto Naskh Arabic", serif';
+  ctx.font = '160px "Noto Naskh Arabic", serif';
   ctx.fillText(arabicWord, w/2, 340);
 
   // Intention
   ctx.fillStyle = '#E8DCC0';
-  ctx.font = 'italic 22px "Cormorant Garamond", serif';
+  ctx.font = 'italic 44px "Cormorant Garamond", serif';
   var lines = wrapCanvasText(ctx, '« ' + niyyah + ' »', w - 200);
   var startY = h/2 + 40;
   lines.forEach(function(line, i) {
@@ -7556,7 +7556,7 @@ function scannerShareCard() {
 
   // Niyyah Daily en bas
   ctx.fillStyle = 'rgba(200,168,75,0.35)';
-  ctx.font = '14px "Cinzel", serif';
+  ctx.font = '28px "Cinzel", serif';
   ctx.letterSpacing = '4px';
   ctx.fillText('NIYYAH DAILY  ✦', w/2, h - 60);
 
