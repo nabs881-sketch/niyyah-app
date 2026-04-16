@@ -6244,8 +6244,43 @@ document.addEventListener('touchend', e => {
 /* ─────────────────────────────────────────────
    INIT V2 (after V1 is ready)
    ───────────────────────────────────────────── */
+/* ── Atmosphères cycliques (21 jours) ── */
+function applyAtmosphere() {
+  var atmospheres = [
+    { id: 'layl', bg: [10,10,10], gold: [184,160,96] },
+    { id: 'fajr', bg: [26,16,8], gold: [212,168,67] },
+    { id: 'nur',  bg: [13,13,10], gold: [224,200,112] },
+    { id: 'tawba', bg: [15,10,8], gold: [200,149,106] }
+  ];
+  var cycleLength = 21;
+  var epoch = new Date('2026-01-01').getTime();
+  var daysSinceEpoch = Math.floor((Date.now() - epoch) / 86400000);
+  var totalCycle = cycleLength * atmospheres.length;
+  var dayInCycle = daysSinceEpoch % totalCycle;
+  var atmIndex = Math.floor(dayInCycle / cycleLength);
+  var dayInAtm = dayInCycle % cycleLength;
+  var transitionDays = 3;
+  var current = atmospheres[atmIndex];
+  var next = atmospheres[(atmIndex + 1) % atmospheres.length];
+  var bg, gold;
+  if (dayInAtm >= cycleLength - transitionDays) {
+    var t = (dayInAtm - (cycleLength - transitionDays)) / transitionDays;
+    bg = current.bg.map(function(c, i) { return Math.round(c + (next.bg[i] - c) * t); });
+    gold = current.gold.map(function(c, i) { return Math.round(c + (next.gold[i] - c) * t); });
+  } else {
+    bg = current.bg;
+    gold = current.gold;
+  }
+  var root = document.documentElement.style;
+  root.setProperty('--bg-primary', 'rgb(' + bg.join(',') + ')');
+  root.setProperty('--gold-main', 'rgb(' + gold.join(',') + ')');
+  root.setProperty('--orb-color', 'rgba(' + gold.join(',') + ',0.3)');
+  document.body.style.background = 'rgb(' + bg.join(',') + ')';
+  localStorage.setItem('niyyah_atmosphere', JSON.stringify({ id: current.id, day: dayInAtm, bg: bg, gold: gold }));
+}
 function v2Init() {
   checkMidnightReset();
+  applyAtmosphere();
   // Add class so CSS knows V2 is active
   document.body.classList.add('v2-mode');
 
