@@ -276,7 +276,7 @@ function confirmerDefi(defiId) {
   saveDefiState(s);
   closeDefiSelector();
   renderDefiCard();
-  showToast('Défi lancé : ' + defi.titre + ' ✦');
+  showToast(t('defi_launched') + defi.titre + ' ✦');
 }
 
 function getDefiCourant() {
@@ -399,15 +399,15 @@ function cocherDefiAujourdhui() {
     if (s.current.jours.length >= defi.cible) {
       s.current.complete = true;
       if (!s.badges.includes(defi.id)) s.badges.push(defi.id);
-      showToast('Masha\'Allah ✦ Défi accompli !');
+      showToast(t('defi_done'));
     } else {
-      showToast('✦ Journée cochée — Continue !');
+      showToast(t('defi_checked'));
     }
     saveDefiState(s);
     renderDefiCard();
     renderDefiOverlay();
   } else {
-    showToast('Déjà coché aujourd\'hui ✓');
+    showToast(t('defi_already'));
   }
 }
 
@@ -978,7 +978,7 @@ function resolveGrace() {
     history._gracePending = false;
     history._graceMissedDate = null;
     saveHistory();
-    showToast('🌿 Journée rattrapée — ton streak est sauvé !');
+    showToast(t('toast_streak_saved'));
     if (navigator.vibrate) navigator.vibrate([20, 30, 60]);
   }
 }
@@ -1025,7 +1025,7 @@ function updateMedal() {
   if (_lastMedal && _lastMedal !== medal && medal !== 'none') {
     el.classList.add('anim');
     el.addEventListener('animationend', () => el.classList.remove('anim'), { once: true });
-    const msgs = { bronze:'🥉 Bronze !', silver:'🥈 Argent !', gold:'🥇 OR — Journee parfaite !' };
+    const msgs = { bronze:t('medal_toast_bronze'), silver:t('medal_toast_silver'), gold:t('medal_toast_gold') };
     showToast(msgs[medal]);
   }
   _lastMedal = medal;
@@ -1072,7 +1072,7 @@ function updateGlobalProgress() {
     state._mashaAllahShown = true;
     saveState();
     setTimeout(() => {
-      showToast('مَا شَاءَ اللَّهُ — Niveau 1 accompli ! 🌿');
+      showToast(t('toast_lvl1'));
       if (navigator.vibrate) navigator.vibrate([30, 50, 30, 50, 80]);
       playCompleteSound();
     }, 400);
@@ -1223,7 +1223,7 @@ function autoNextLevel(levelId) {
     setTimeout(() => {
       closeLevelPopup();
       selectLevel(nextId);
-      showToast('🌿 Niveau ' + nextId + ' débloqué — Mashallah !');
+      showToast(t('toast_lvl_unlock').replace('{n}', nextId));
     }, 2000);
   }
 }
@@ -1451,10 +1451,10 @@ function renderResume() {
   if (f3) f3.style.width = globalPct + '%';
   const emojiMap = { none: '🌱', bronze: '🥉', silver: '🥈', gold: '🥇' };
   const msgMap = {
-    none:   { title: 'Continue, inch\'Allah !', sub: 'Chaque pas compte. Allah voit tes efforts.' },
-    bronze: { title: 'Mashallah !',             sub: 'Les fondations sont posées. Barakallahu feek !' },
-    silver: { title: 'SubhanAllah !',           sub: 'Dhikr, prière, mosquée — ton cœur brille.' },
-    gold:   { title: 'Allahu Akbar !',          sub: 'Journée parfaite accomplie. Qu\'Allah accepte tes actes !' },
+    none:   { title: t('prog_msg_none'), sub: t('prog_sub_none') },
+    bronze: { title: t('prog_msg_bronze'), sub: t('prog_sub_bronze') },
+    silver: { title: t('prog_msg_silver'), sub: t('prog_sub_silver') },
+    gold:   { title: t('prog_msg_gold'), sub: t('prog_sub_gold') },
   };
   const msg = msgMap[medal];
   const r = 36, cx = 44, cy = 44, circ = 2 * Math.PI * r;
@@ -1844,13 +1844,13 @@ function renderLevel(levelId) {
       fitems += _audioBtnFri;
       fitems += '</div></div>';
     });
-    fridayBanner = '<div class="friday-banner"><div class="friday-header"><div style="font-size:22px">🌟</div><div class="friday-txt"><div class="friday-title">Yawm al-Jumuah — Vendredi béni</div><div class="friday-sub">La prière du vendredi est obligatoire aujourd\'hui</div></div></div><div class="friday-items">' + fitems + '</div></div>';
+    fridayBanner = '<div class="friday-banner"><div class="friday-header"><div style="font-size:22px">🌟</div><div class="friday-txt"><div class="friday-title">' + t('friday_title') + '</div><div class="friday-sub">' + t('friday_sub') + '</div></div></div><div class="friday-items">' + fitems + '</div></div>';
   }
   const graceBanner = (level.id === 1 && isGraceActive()) ?
     '<div style="background:linear-gradient(135deg,rgba(255,149,0,0.12),rgba(255,214,10,0.06));border:1px solid rgba(255,149,0,0.25);border-radius:var(--r-lg);padding:12px 16px;margin-bottom:8px;display:flex;align-items:center;gap:12px;">' +
     '<div style="font-size:22px">⏳</div>' +
-    '<div><div style="font-size:13px;font-weight:600;color:#ff9500;">Tu as manqué hier</div>' +
-    '<div style="font-size:12px;color:var(--t3);margin-top:2px;">Complete le Niveau 1 aujourd\'hui pour sauver ton streak 🌿</div></div></div>' : '';
+    '<div><div style="font-size:13px;font-weight:600;color:#ff9500;">' + t('grace_title') + '</div>' +
+    '<div style="font-size:12px;color:var(--t3);margin-top:2px;">' + t('grace_sub') + '</div></div></div>' : '';
   const prayerCard = level.id === 1 ? renderPrayerTimesCard() : '';
   const qiblaCard  = level.id === 1 ? renderQiblaCard() : '';
   const allLvlItems = LEVELS.filter(l => state._unlocked.includes(l.id)).flatMap(l => getLevelItems(l.id));
@@ -2643,20 +2643,20 @@ function renderProgression() {
   const globalPctP = totalAllP>0 ? Math.round(totalDoneP/totalAllP*100) : 0;
   const medalP = getMedalLevel();
   const emojiMapP = {none:'🌱',bronze:'🥉',silver:'🥈',gold:'🥇'};
-  const msgMapP   = {none:'Continue, inch\'Allah !',bronze:'Mashallah !',silver:'SubhanAllah !',gold:'Allahu Akbar !'};
-  const subMapP   = {none:'Chaque acte compte',bronze:'Les fondations sont posées',silver:'Dhikr, prière, constance',gold:'Journée parfaite accomplie'};
+  const msgMapP   = {none:t('prog_msg_none'),bronze:t('prog_msg_bronze'),silver:t('prog_msg_silver'),gold:t('prog_msg_gold')};
+  const subMapP   = {none:t('prog_sub_none'),bronze:t('prog_sub_bronze'),silver:t('prog_sub_silver'),gold:t('prog_sub_gold')};
   const rP=36, circP=2*Math.PI*rP, dashP=(globalPctP/100)*circP;
   const cP = medalP==='gold'?'var(--gold)':medalP==='silver'?'var(--silver)':'var(--green)';
   const ringP = '<div style="width:88px;height:88px;position:relative;margin:0 auto 12px;"><svg width="88" height="88" viewBox="0 0 88 88" style="transform:rotate(-90deg)"><circle cx="44" cy="44" r="36" fill="none" stroke="var(--sep2)" stroke-width="5"/><circle cx="44" cy="44" r="36" fill="none" stroke="'+cP+'" stroke-width="5" stroke-linecap="round" stroke-dasharray="'+circP.toFixed(1)+'" stroke-dashoffset="'+(circP-dashP).toFixed(1)+'" style="transition:stroke-dashoffset 0.8s cubic-bezier(0.34,1.56,0.64,1)"/></svg><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:20px;color:var(--t1);">'+globalPctP+'%</div></div>';
   let lvlRowsP='';
   LEVELS.forEach((lvl,i)=>{
     const pct=Math.round(getLevelProgress(lvl.id)), done=pct>=100, unlocked=state._unlocked.includes(lvl.id);
-    var pctLabel = pct===0 ? 'Commence !' : pct>=100 ? 'Accompli ✦' : 'En cours ✦';
+    var pctLabel = pct===0 ? t('lvl_start') : pct>=100 ? t('lvl_done') : t('lvl_progress');
     var lockSvg = '<svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:4px;"><rect x="1" y="7" width="12" height="9" rx="2" stroke="#C8A84A" stroke-width="1.5"/><path d="M4 7V5a3 3 0 0 1 6 0v2" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"/></svg>';
     lvlRowsP+='<div style="background:var(--card);border-radius:12px;padding:10px 14px;display:flex;align-items:center;gap:10px;'+(unlocked?'':'opacity:0.4')+';margin-bottom:5px;">'
       +'<div style="flex-shrink:0;">'+getMoonSVG(unlocked?pct:0)+'</div>'
       +'<div style="flex:1"><div style="font-size:13px;color:var(--t1);margin-bottom:3px;">'+lvl.title+(done?' ✓':'')+'</div>'
-      +'<div>'+(!unlocked?lockSvg+'<span style="color:#C8A84A;font-size:11px;opacity:0.7;">Disponible au niveau supérieur ✦</span>':'<span style="font-size:11px;color:var(--t3);">'+pctLabel+'</span>')+'</div></div></div>';
+      +'<div>'+(!unlocked?lockSvg+'<span style="color:#C8A84A;font-size:11px;opacity:0.7;">'+t('locked_premium')+'</span>':'<span style="font-size:11px;color:var(--t3);">'+pctLabel+'</span>')+'</div></div></div>';
   });
   // === GRAPHIQUE 7 JOURS BILANS ===
   const bilansData = JSON.parse(localStorage.getItem('niyyah_bilans') || '{}');
@@ -2687,9 +2687,9 @@ function renderProgression() {
   const heroSectionP = '<div style="background:linear-gradient(135deg,rgba(48,209,88,0.08),rgba(255,214,10,0.04));border:1px solid rgba(48,209,88,0.15);border-radius:var(--r-xl);padding:20px 16px;text-align:center;margin-bottom:10px;position:relative;overflow:hidden;"><div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--green),transparent);"></div>'+ringP+'<div style="font-family:var(--serif);font-size:20px;color:var(--t1);margin-bottom:4px;">'+msgMapP[medalP]+'</div><div style="font-size:12px;color:var(--t2);margin-bottom:14px;">'+emojiMapP[medalP]+' '+subMapP[medalP]+'</div>'+lvlRowsP+'<div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;"><button style="width:100%;padding:13px;border-radius:13px;border:none;background:var(--green-grad);color:#000;font-size:15px;font-weight:600;cursor:pointer;font-family:var(--serif);" onclick="switchView(\'checklist\')">Commencer ma journée</button><button style="width:100%;padding:11px;border-radius:13px;border:none;background:#C8A84A;color:#2C2E32;font-size:14px;font-weight:600;cursor:pointer;font-family:var(--sans);" onclick="openBilanSoir()">🌙 Bilan du soir</button></div></div>';
 
   el.innerHTML = `
-    <div style="padding:0 0 40px;">${heroSectionP}<!-- STREAK HERO --><div style="text-align:center;padding:36px 20px 28px;position:relative;"><div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;">Série en cours</div><div style="font-size:80px;font-weight:900;line-height:1;background:${streakDisplay >= 7 ? 'linear-gradient(135deg,#c8a84b,#e8cc6a)' : 'linear-gradient(135deg,var(--green),#7effa0)'};-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-3px;">${streakDisplay}</div><div style="font-size:13px;color:var(--t3);margin-top:6px;letter-spacing:1px;">JOURS CONSÉCUTIFS</div><div style="display:flex;justify-content:center;gap:24px;margin-top:16px;"><div style="text-align:center;"><div style="font-size:18px;font-weight:700;color:var(--t1);">${bestDisplay}</div><div style="font-size:12px;color:var(--t3);letter-spacing:0.8px;text-transform:uppercase;">Meilleur</div></div><div style="width:1px;background:rgba(255,255,255,0.1);"></div><div style="text-align:center;"><div style="font-size:18px;font-weight:700;color:var(--t1);">${totalDisplay}</div><div style="font-size:12px;color:var(--t3);letter-spacing:0.8px;text-transform:uppercase;">Total jours</div></div></div></div><!-- HADITH CONTEXTUEL --><div style="margin:0 16px 24px;padding:20px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.2);border-radius:16px;position:relative;overflow:hidden;"><div style="position:absolute;top:-10px;right:12px;font-size:48px;opacity:0.07;font-family:serif;">"</div><div style="font-size:14px;line-height:1.7;color:var(--t1);font-style:italic;margin-bottom:10px;">${hadith.text}</div><div style="font-size:11px;color:#c8a84b;font-weight:600;letter-spacing:0.5px;">— ${hadith.ref}</div></div><!-- GRAINE DE LUMIÈRE --><div style="margin:0 16px 24px;background:linear-gradient(135deg,rgba(200,168,75,0.08),rgba(200,168,75,0.03));border:1px solid rgba(200,168,75,0.25);border-radius:20px;padding:28px;text-align:center;"><div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;color:#C8A84A;text-transform:uppercase;margin-bottom:12px;">Graine de Lumière</div><div style="font-family:'Cormorant Garamond',serif;font-size:13px;font-style:italic;color:#B0A080;margin-bottom:12px;">La graine attend la lumière</div><div style="margin:0 auto 12px;">${getGraineSVG((function(){try{return JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length)}</div><div style="font-size:11px;color:#B0A080;margin-bottom:10px;">${(function(){try{return JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length} défis accomplis</div><div style="font-family:'Cormorant Garamond',serif;font-size:12px;font-style:italic;color:#C8A84A;opacity:0.7;line-height:1.6;">Avez-vous vu ce que vous cultivez ? — Al-Waqi'a 63</div></div><!-- HEATMAP 30 JOURS --><div style="margin:0 16px 24px;"><div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;">30 derniers jours</div><div style="display:grid;grid-template-columns:repeat(10,1fr);gap:4px;">
+    <div style="padding:0 0 40px;">${heroSectionP}<!-- STREAK HERO --><div style="text-align:center;padding:36px 20px 28px;position:relative;"><div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;">${t('prog_streak')}</div><div style="font-size:80px;font-weight:900;line-height:1;background:${streakDisplay >= 7 ? 'linear-gradient(135deg,#c8a84b,#e8cc6a)' : 'linear-gradient(135deg,var(--green),#7effa0)'};-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-3px;">${streakDisplay}</div><div style="font-size:13px;color:var(--t3);margin-top:6px;letter-spacing:1px;">${t('prog_days')}</div><div style="display:flex;justify-content:center;gap:24px;margin-top:16px;"><div style="text-align:center;"><div style="font-size:18px;font-weight:700;color:var(--t1);">${bestDisplay}</div><div style="font-size:12px;color:var(--t3);letter-spacing:0.8px;text-transform:uppercase;">${t('prog_best')}</div></div><div style="width:1px;background:rgba(255,255,255,0.1);"></div><div style="text-align:center;"><div style="font-size:18px;font-weight:700;color:var(--t1);">${totalDisplay}</div><div style="font-size:12px;color:var(--t3);letter-spacing:0.8px;text-transform:uppercase;">${t('prog_total')}</div></div></div></div><!-- HADITH CONTEXTUEL --><div style="margin:0 16px 24px;padding:20px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.2);border-radius:16px;position:relative;overflow:hidden;"><div style="position:absolute;top:-10px;right:12px;font-size:48px;opacity:0.07;font-family:serif;">"</div><div style="font-size:14px;line-height:1.7;color:var(--t1);font-style:italic;margin-bottom:10px;">${hadith.text}</div><div style="font-size:11px;color:#c8a84b;font-weight:600;letter-spacing:0.5px;">— ${hadith.ref}</div></div><!-- GRAINE DE LUMIÈRE --><div style="margin:0 16px 24px;background:linear-gradient(135deg,rgba(200,168,75,0.08),rgba(200,168,75,0.03));border:1px solid rgba(200,168,75,0.25);border-radius:20px;padding:28px;text-align:center;"><div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;color:#C8A84A;text-transform:uppercase;margin-bottom:12px;">${t('graine_title')}</div><div style="font-family:'Cormorant Garamond',serif;font-size:13px;font-style:italic;color:#B0A080;margin-bottom:12px;">${t('graine_sub')}</div><div style="margin:0 auto 12px;">${getGraineSVG((function(){try{return JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length)}</div><div style="font-size:11px;color:#B0A080;margin-bottom:10px;">${(function(){try{return JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length} ${t('graine_defis')}</div><div style="font-family:'Cormorant Garamond',serif;font-size:12px;font-style:italic;color:#C8A84A;opacity:0.7;line-height:1.6;">${t('graine_quote')}</div></div><!-- HEATMAP 30 JOURS --><div style="margin:0 16px 24px;"><div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;">${t('prog_heatmap')}</div><div style="display:grid;grid-template-columns:repeat(10,1fr);gap:4px;">
           ${heatmapHTML}
-        </div><div style="display:flex;gap:12px;margin-top:10px;align-items:center;"><div style="display:flex;align-items:center;gap:4px;"><div style="width:8px;height:8px;border-radius:2px;background:var(--green);"></div><span style="font-size:10px;color:var(--t3);">Présent</span></div><div style="display:flex;align-items:center;gap:4px;"><div style="width:8px;height:8px;border-radius:2px;background:linear-gradient(135deg,#c8a84b,#e8cc6a);"></div><span style="font-size:10px;color:var(--t3);">Journée or</span></div><div style="display:flex;align-items:center;gap:4px;"><div style="width:8px;height:8px;border-radius:2px;background:rgba(255,255,255,0.06);"></div><span style="font-size:10px;color:var(--t3);">Absent</span></div></div></div><!-- BILAN 7 JOURS -->${bilanHTML}<!-- BADGES (secondaire) --><div style="margin:0 16px;"><div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;">Récompenses</div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">
+        </div><div style="display:flex;gap:12px;margin-top:10px;align-items:center;"><div style="display:flex;align-items:center;gap:4px;"><div style="width:8px;height:8px;border-radius:2px;background:var(--green);"></div><span style="font-size:10px;color:var(--t3);">${t('prog_present')}</span></div><div style="display:flex;align-items:center;gap:4px;"><div style="width:8px;height:8px;border-radius:2px;background:linear-gradient(135deg,#c8a84b,#e8cc6a);"></div><span style="font-size:10px;color:var(--t3);">${t('prog_gold_day')}</span></div><div style="display:flex;align-items:center;gap:4px;"><div style="width:8px;height:8px;border-radius:2px;background:rgba(255,255,255,0.06);"></div><span style="font-size:10px;color:var(--t3);">${t('prog_absent')}</span></div></div></div><!-- BILAN 7 JOURS -->${bilanHTML}<!-- BADGES (secondaire) --><div style="margin:0 16px;"><div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;">${t('prog_rewards')}</div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">
           ${badgesHTML}
         </div></div>
 
@@ -4170,7 +4170,7 @@ function validateFreemiumCode() {
     document.body.style.overflow = '';
     renderTabs();
     renderLevel(currentLevel);
-    showToast('✅ Accès complet débloqué — Barakallahu feek !');
+    showToast(t('premium_unlocked'));
     if (navigator.vibrate) navigator.vibrate([30, 50, 100]);
   } else {
     input.style.borderColor = '#ff3b30';
@@ -4417,18 +4417,18 @@ function dismissNotifScreen() {
 function requestNotifPermission() {
   if (!('Notification' in window)) {
     dismissNotifScreen();
-    showToast('Les notifications ne sont pas supportées sur cet appareil');
+    showToast(t('notif_unsupported'));
     return;
   }
   try {
     Notification.requestPermission().then(permission => {
       dismissNotifScreen();
       if (permission === 'granted') {
-        showToast('✦ Rappels activés — JazakAllahu khairan !');
+        showToast(t('notif_enabled'));
         localStorage.setItem('niyyah_notif_perm', '1');
         scheduleAllNotifications();
       } else {
-        showToast('Tu pourras les activer plus tard dans les paramètres');
+        showToast(t('notif_later'));
       }
     }).catch(() => {
       dismissNotifScreen();
@@ -4593,7 +4593,7 @@ function toggleNotifications() {
     // Désactiver (on ne peut pas révoquer, mais on arrête de planifier)
     clearNotifTimers();
     localStorage.setItem('niyyah_notif_perm', '0');
-    showToast('🔕 Rappels désactivés');
+    showToast(t('notif_disabled'));
   } else {
     requestNotifPermission();
   }
@@ -4703,7 +4703,7 @@ function startCompass() {
   }
   if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
     DeviceOrientationEvent.requestPermission()
-      .then(s => { if (s === 'granted') _attachCompass(); else showToast('Autorise la boussole dans les réglages'); })
+      .then(s => { if (s === 'granted') _attachCompass(); else showToast(t('compass_denied')); })
       .catch(() => _attachCompass());
   } else {
     _attachCompass();
@@ -6323,8 +6323,8 @@ function updateSanctuaireMoment() {
     el.innerHTML = '<div style="display:flex;align-items:center;gap:10px;background:rgba(200,168,75,0.08);border:1px solid rgba(200,168,75,0.25);border-radius:14px;padding:14px 18px;margin:12px 0 20px;">'
       + '<div style="width:3px;height:36px;background:linear-gradient(180deg,#C8A84A,#E0C870);border-radius:2px;flex-shrink:0;"></div>'
       + '<div style="flex:1;">'
-      + '<div style="font-size:15px;font-weight:700;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;">🌙 La nuit est pour le repos</div>'
-      + '<div style="font-size:11px;color:var(--t3);margin-top:2px;">Dors avec le Witr</div>'
+      + '<div style="font-size:15px;font-weight:700;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;">' + t('block_nuit') + ' — ' + t('bandeau_nuit') + '</div>'
+      + '<div style="font-size:11px;color:var(--t3);margin-top:2px;">' + t('bandeau_nuit') + '</div>'
       + '</div></div>';
     return;
   }
@@ -6335,8 +6335,8 @@ function updateSanctuaireMoment() {
       el.innerHTML = '<div style="display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,rgba(200,168,75,0.15),rgba(200,168,75,0.05));border:1px solid rgba(200,168,75,0.35);border-radius:14px;padding:14px 18px;margin:12px 0 20px;">'
         + '<div style="width:3px;height:36px;background:linear-gradient(180deg,#C8A84A,#E0C870);border-radius:2px;flex-shrink:0;"></div>'
         + '<div style="flex:1;">'
-        + '<div style="font-size:15px;font-weight:700;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;">🌙 Dernier tiers de la nuit</div>'
-        + '<div style="font-size:11px;color:var(--t3);margin-top:2px;">' + (tahajjudDone ? '✦ Qiyam al-Layl accompli' : 'L\'heure du Qiyam al-Layl') + '</div>'
+        + '<div style="font-size:15px;font-weight:700;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;">' + t('block_qiyam') + '</div>'
+        + '<div style="font-size:11px;color:var(--t3);margin-top:2px;">' + (tahajjudDone ? '✦ Qiyam al-Layl' : t('bandeau_qiyam')) + '</div>'
         + '</div>'
         + (tahajjudDone ? '' : '<button onclick="v2GoTo(\'checklist\')" style="background:transparent;border:1px solid rgba(200,168,75,0.4);color:#C8A84A;font-size:12px;font-weight:600;padding:6px 14px;border-radius:10px;cursor:pointer;white-space:nowrap;">→ Prier</button>')
         + '</div>';
@@ -7684,7 +7684,7 @@ async function scannerOpen() {
     video.srcObject = _scannerStream;
     await video.play();
   } catch(err) {
-    v2ShowToast("Accès caméra refusé — autorise l'accès dans les réglages");
+    v2ShowToast(t('camera_denied'));
     return;
   }
 
@@ -7708,7 +7708,7 @@ function openScannerJournal() {
   var hist = [];
   try { hist = JSON.parse(localStorage.getItem('niyyah_scanner_history') || '[]'); } catch(e) {}
   if (hist.length === 0) {
-    content.innerHTML = '<div style="text-align:center;padding:60px 20px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:#B0A080;">Tes intentions apparaîtront ici ✦</div></div>';
+    content.innerHTML = '<div style="text-align:center;padding:60px 20px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:#B0A080;">' + t('scanner_empty') + '</div></div>';
   } else {
     var html = '<div style="display:flex;gap:14px;overflow-x:auto;padding:8px 0 16px;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;">';
     hist.forEach(function(entry, i) {
@@ -7776,7 +7776,7 @@ function scannerShowResult(data) {
       arText.classList.add('active');
       setTimeout(function() { arText.classList.remove('active'); }, 3000);
     }
-    document.getElementById('scanner-object-label').textContent  = '✦  INTENTION POSÉE';
+    document.getElementById('scanner-object-label').textContent  = t('scanner_posed');
     document.getElementById('scanner-niyyah-main').textContent   = '"' + data.niyyahDirect + '"';
     const nuancesEl = document.getElementById('scanner-nuances');
     if (nuancesEl) nuancesEl.innerHTML = '';
@@ -7929,8 +7929,8 @@ function scannerShareCard() {
   overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;z-index:99999;background:rgba(0,0,0,0.92);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;box-sizing:border-box;';
   overlay.innerHTML = '<img src="' + dataUrl + '" style="width:90vw;height:90vw;object-fit:contain;border-radius:16px;border:1px solid rgba(200,168,75,0.3);margin-bottom:20px;">'
     + '<div style="display:flex;gap:12px;">'
-    + '<button id="card-share-btn" style="padding:14px 28px;background:#C8A84A;color:#000;font-family:\'Cinzel\',serif;font-size:12px;font-weight:700;letter-spacing:2px;border:none;border-radius:12px;cursor:pointer;">PARTAGER ✦</button>'
-    + '<button id="card-close-btn" style="padding:14px 28px;background:transparent;color:rgba(255,255,255,0.5);font-family:\'Cinzel\',serif;font-size:12px;letter-spacing:2px;border:1px solid rgba(255,255,255,0.15);border-radius:12px;cursor:pointer;">FERMER</button>'
+    + '<button id="card-share-btn" style="padding:14px 28px;background:#C8A84A;color:#000;font-family:\'Cinzel\',serif;font-size:12px;font-weight:700;letter-spacing:2px;border:none;border-radius:12px;cursor:pointer;">' + t('share_btn') + '</button>'
+    + '<button id="card-close-btn" style="padding:14px 28px;background:transparent;color:rgba(255,255,255,0.5);font-family:\'Cinzel\',serif;font-size:12px;letter-spacing:2px;border:1px solid rgba(255,255,255,0.15);border-radius:12px;cursor:pointer;">' + t('share_close') + '</button>'
     + '</div>';
   document.body.appendChild(overlay);
   var _niyyahText = niyyah;
