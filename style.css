@@ -3203,6 +3203,31 @@ div#v2-stats-row > div {
   inset: -20px;
   pointer-events: none;
 }
+/* Onboard dots override */
+.onboard-dots {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  transform: none !important;
+  display: flex !important;
+  justify-content: center;
+  gap: 6px;
+  margin: 20px 0 16px;
+  order: 1;
+}
+.onboard-screen {
+  flex-wrap: wrap !important;
+}
+.onboard-screen #onboardContent {
+  order: 0;
+  width: 100%;
+}
+.onboard-dot {
+  background: rgba(200,168,75,0.2) !important;
+}
+.onboard-dot.active {
+  background: #C8A84A !important;
+}
 .sth-p {
   position: absolute;
   width: 3px;
