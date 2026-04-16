@@ -5778,6 +5778,74 @@ function v2OpenNiyyahModal() {
     opts.appendChild(btn);
   });
 
+  // 5ème intention cachée — إخلاص (streak >= 30, premium only)
+  var _ikhlasStreak = 0;
+  try { _ikhlasStreak = JSON.parse(localStorage.getItem('spiritual_history') || '{}').streak || 0; } catch(e) {}
+  if (_ikhlasStreak >= 30 && typeof isPremium === 'function' && isPremium()) {
+    var ikhlasUnlocked = localStorage.getItem('niyyah_ikhlas_unlocked');
+    var ikhlasBtn = document.createElement('button');
+    ikhlasBtn.className = 'intention-opt-v2 intention-ikhlas';
+    var ikhlasTexts = { fr: 'إخلاص — La sincérité pure', en: 'إخلاص — Pure sincerity', ar: 'الإِخْلَاصُ — صِدْقُ الْقَلْبِ' };
+    ikhlasBtn.textContent = ikhlasTexts[V2_LANG] || ikhlasTexts.fr;
+    ikhlasBtn.style.cssText = 'direction:' + (V2_I18N[V2_LANG] || V2_I18N.fr).dir + ';font-family:"Noto Naskh Arabic",serif;font-size:16px;border:2px solid #C8A84A !important;box-shadow:0 0 12px rgba(200,168,75,0.3);';
+    // First unlock animation
+    if (!ikhlasUnlocked) {
+      ikhlasBtn.style.display = 'none';
+      setTimeout(function() {
+        var flash = document.createElement('div');
+        flash.style.cssText = 'position:fixed;inset:0;background:#C8A84A;z-index:99999;pointer-events:none;opacity:1;transition:opacity 0.8s ease;';
+        document.body.appendChild(flash);
+        setTimeout(function() { flash.style.opacity = '0'; }, 200);
+        setTimeout(function() {
+          flash.remove();
+          ikhlasBtn.style.display = '';
+          ikhlasBtn.style.animation = 'intentionGlow 1.5s ease-in-out infinite';
+          if (navigator.vibrate) navigator.vibrate(800);
+          var unlockMsg = document.createElement('div');
+          unlockMsg.style.cssText = 'text-align:center;font-family:"Cormorant Garamond",serif;font-size:14px;font-style:italic;color:#C8A84A;padding:8px 0;animation:fadeSlideV2 0.8s ease forwards;';
+          unlockMsg.textContent = 'Tu as mérité cette intention ✦';
+          opts.insertBefore(unlockMsg, ikhlasBtn);
+          setTimeout(function() { ikhlasBtn.style.animation = ''; }, 4500);
+        }, 1000);
+        localStorage.setItem('niyyah_ikhlas_unlocked', '1');
+      }, 500);
+    }
+    // Hold logic for ikhlas
+    var _ikTimer = null, _ikHint = null, _ikOv = null;
+    function _ikStart(e) {
+      e.preventDefault();
+      opts.querySelectorAll('.intention-opt-v2').forEach(function(b) { b.classList.remove('sel-v2', 'intention-pressing'); var o = b.querySelector('.hold-overlay'); if (o) o.remove(); });
+      ikhlasBtn.classList.add('intention-pressing');
+      ikhlasBtn.style.position = 'relative'; ikhlasBtn.style.overflow = 'hidden';
+      if (navigator.vibrate) navigator.vibrate(30);
+      _ikOv = document.createElement('div');
+      _ikOv.className = 'hold-overlay';
+      _ikOv.innerHTML = '<svg class="hold-ring" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="none" stroke="rgba(200,168,75,0.15)" stroke-width="2"/><circle class="hold-ring-fill" cx="16" cy="16" r="14" fill="none" stroke="#C8A84A" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="87.96" stroke-dashoffset="87.96"/></svg><span class="hold-hint" style="opacity:0;">Maintenez...</span>';
+      ikhlasBtn.appendChild(_ikOv);
+      requestAnimationFrame(function() { var f = _ikOv.querySelector('.hold-ring-fill'); if (f) f.style.strokeDashoffset = '0'; });
+      _ikHint = setTimeout(function() { var h = ikhlasBtn.querySelector('.hold-hint'); if (h) h.style.opacity = '1'; }, 500);
+      _ikTimer = setTimeout(function() {
+        if (_ikOv && _ikOv.parentNode) _ikOv.remove(); _ikOv = null;
+        if (_ikHint) clearTimeout(_ikHint);
+        ikhlasBtn.classList.remove('intention-pressing');
+        ikhlasBtn.classList.add('sel-v2');
+        document.getElementById('v2-custom-intention').value = '';
+        if (navigator.vibrate) navigator.vibrate([50, 30, 50, 30, 500]);
+        ikhlasBtn.classList.add('intention-confirmed-glow');
+        var ring = document.createElement('div'); ring.className = 'intention-rotate-ring'; ikhlasBtn.appendChild(ring);
+        setTimeout(function() { ikhlasBtn.classList.add('intention-glow-fadeout'); setTimeout(function() { ikhlasBtn.classList.remove('intention-confirmed-glow', 'intention-glow-fadeout'); if (ring.parentNode) ring.remove(); }, 500); }, 2000);
+      }, 3000);
+    }
+    function _ikCancel() { if (_ikTimer) { clearTimeout(_ikTimer); _ikTimer = null; } if (_ikHint) { clearTimeout(_ikHint); _ikHint = null; } if (_ikOv && _ikOv.parentNode) _ikOv.remove(); _ikOv = null; ikhlasBtn.classList.remove('intention-pressing'); }
+    ikhlasBtn.addEventListener('touchstart', _ikStart, { passive: false });
+    ikhlasBtn.addEventListener('touchend', _ikCancel);
+    ikhlasBtn.addEventListener('touchcancel', _ikCancel);
+    ikhlasBtn.addEventListener('mousedown', _ikStart);
+    ikhlasBtn.addEventListener('mouseup', _ikCancel);
+    ikhlasBtn.addEventListener('mouseleave', _ikCancel);
+    opts.appendChild(ikhlasBtn);
+  }
+
   const s = v2GetState();
   if (s.intention) document.getElementById('v2-custom-intention').value = s.intention;
 
