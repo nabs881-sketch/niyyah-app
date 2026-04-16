@@ -5998,9 +5998,9 @@ function v2GoMentor() {
   // Hide sanctuaire
   const sanctEl = document.getElementById('view-sanctuaire');
   if (sanctEl) sanctEl.classList.remove('active');
-  // Show back btn
+  // Hide back btn (mentor has its own ←)
   const backBtn = document.getElementById('v2-back-btn');
-  if (backBtn) backBtn.classList.add('visible');
+  if (backBtn) backBtn.classList.remove('visible');
   // Hide all other views
   document.querySelectorAll('.view').forEach(v => {
     v.classList.remove('active');
