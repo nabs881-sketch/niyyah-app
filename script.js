@@ -2832,6 +2832,7 @@ const _cachedPrayerDate = localStorage.getItem('niyyah_prayer_date_v2');
 const _cachedPrayerData = localStorage.getItem('niyyah_prayer_cache_v2');
 if (_cachedPrayerDate === TODAY && _cachedPrayerData) {
   try { _prayerTimes = JSON.parse(_cachedPrayerData); } catch(e) {}
+  if (_prayerTimes) setTimeout(scheduleFajrNotification, 1000);
 }
 const PRAYER_NAMES = ['Fajr','Dhuhr','Asr','Maghrib','Isha'];
 const PRAYER_LABELS = ['Fajr','Dhuhr','Asr','Maghrib','Isha'];
@@ -4499,6 +4500,29 @@ function schedulePrayerReminders() {
       _prayerTimers.push(t);
     }
   });
+  // Personalized Fajr notification
+  scheduleFajrNotification();
+}
+function scheduleFajrNotification() {
+  if (!_prayerTimes || !_prayerTimes['Fajr']) return;
+  if (Notification.permission === 'default') Notification.requestPermission();
+  if (Notification.permission !== 'granted') return;
+  var parts = _prayerTimes['Fajr'].replace(/ *\(.*\)/, '').split(':');
+  var fajrTime = new Date();
+  fajrTime.setHours(parseInt(parts[0], 10), parseInt(parts[1], 10), 0, 0);
+  var msUntil = fajrTime.getTime() - Date.now();
+  if (msUntil <= 0 || msUntil >= 86400000) return;
+  var _intentionType = localStorage.getItem('niyyah_intention_type') || '';
+  var _msgs = {
+    rapprochement: "🌅 Fajr — Rapproche-toi d'Allah ce matin",
+    engagement: "🌅 Fajr — Tiens tes engagements aujourd'hui",
+    reconstruction: "🌅 Fajr — Chaque matin est une renaissance",
+    gratitude: "🌅 Fajr — Commence par le shukr"
+  };
+  var _body = _msgs[_intentionType] || "🌅 L'heure de Fajr est arrivée · Niyyah Daily";
+  window._fajrNotifTimer = setTimeout(function() {
+    new Notification('Niyyah Daily', { body: _body, icon: 'icon-512.png', tag: 'fajr-notif' });
+  }, msUntil);
 }
 const KAABA_LAT = 21.4225;
 const KAABA_LNG = 39.8262;
