@@ -5586,7 +5586,7 @@ function v2ConfirmIntention() {
   v2CloseModal();
   v2UpdateOrbState();
   applyInfusion(intention);
-  Capacitor.vibrate('heartbeat');
+  if (navigator.vibrate) navigator.vibrate([100, 50, 200]);
   v2ShowToast(t('toast_intention'));
 }
 
