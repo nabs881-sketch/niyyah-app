@@ -7504,12 +7504,90 @@ function scannerConfirmNiyyah() {
   }, 400);
 }
 
-/* ── Partager sur WhatsApp ── */
-function scannerShareWhatsApp() {
+/* ── Partager carte Niyyah ── */
+function scannerShareCard() {
   var lib = SCANNER_LIBRARY[_scannerResult?.category] || SCANNER_LIBRARY.default;
   var niyyah = _scannerResult?.niyyahDirect || lib.nuances[_selectedNuance || 0].text;
-  var text = '✦ Mon intention du jour :\n\n« ' + niyyah + ' »\n\n— Niyyah Daily · Pose ton intention\nnabs881-sketch.github.io/niyyah-app/';
-  window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
+  var arabicMap = {
+    patience: 'صَبْر', gratitude: 'شُكْر', presence: 'حُضُور', intention: 'نِيَّة',
+    water: 'مَاء', food: 'رِزْق', nature: 'تَفَكُّر', book: 'عِلْم',
+    mirror: 'تَزْكِيَة', phone: 'ذِكْر', car: 'تَوَكُّل', default: 'نِيَّة'
+  };
+  var category = _scannerResult?.category || 'default';
+  var arabicWord = arabicMap[category] || arabicMap.default;
+
+  var canvas = document.getElementById('scanner-share-canvas');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var w = 1080, h = 1080;
+  canvas.width = w; canvas.height = h;
+
+  // Fond
+  ctx.fillStyle = '#0A0A0A';
+  ctx.fillRect(0, 0, w, h);
+
+  // Halo doré central
+  var grad = ctx.createRadialGradient(w/2, h/2, 0, w/2, h/2, 350);
+  grad.addColorStop(0, 'rgba(200,168,75,0.12)');
+  grad.addColorStop(0.5, 'rgba(200,168,75,0.04)');
+  grad.addColorStop(1, 'rgba(200,168,75,0)');
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, w, h);
+
+  // Mot arabe en grand
+  ctx.textAlign = 'center';
+  ctx.fillStyle = 'rgba(200,168,75,0.2)';
+  ctx.font = '180px "Noto Naskh Arabic", serif';
+  ctx.fillText(arabicWord, w/2, 340);
+
+  // Intention
+  ctx.fillStyle = '#E8DCC0';
+  ctx.font = 'italic 38px "Cormorant Garamond", serif';
+  var lines = wrapCanvasText(ctx, '« ' + niyyah + ' »', w - 200);
+  var startY = h/2 + 40;
+  lines.forEach(function(line, i) {
+    ctx.fillText(line, w/2, startY + i * 52);
+  });
+
+  // Séparateur ✦
+  ctx.fillStyle = '#C8A84A';
+  ctx.font = '24px serif';
+  ctx.fillText('✦', w/2, startY + lines.length * 52 + 40);
+
+  // Niyyah Daily en bas
+  ctx.fillStyle = 'rgba(200,168,75,0.35)';
+  ctx.font = '18px "Cinzel", serif';
+  ctx.letterSpacing = '4px';
+  ctx.fillText('NIYYAH DAILY  ✦', w/2, h - 60);
+
+  // Partage
+  canvas.toBlob(function(blob) {
+    var file = new File([blob], 'niyyah-intention.png', { type: 'image/png' });
+    if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
+      navigator.share({
+        files: [file],
+        title: 'Mon intention — Niyyah Daily',
+        text: '✦ ' + niyyah
+      }).catch(function() {});
+    } else {
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url; a.download = 'niyyah-intention.png';
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+  }, 'image/png');
+}
+function wrapCanvasText(ctx, text, maxWidth) {
+  var words = text.split(' '), lines = [], line = '';
+  words.forEach(function(word) {
+    var test = line + (line ? ' ' : '') + word;
+    if (ctx.measureText(test).width > maxWidth && line) {
+      lines.push(line); line = word;
+    } else { line = test; }
+  });
+  if (line) lines.push(line);
+  return lines;
 }
 
 /* ── Rescanner ── */
