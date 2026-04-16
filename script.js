@@ -7134,10 +7134,12 @@ function openScannerJournal() {
   } else {
     var html = '<div style="display:flex;gap:14px;overflow-x:auto;padding:8px 0 16px;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;">';
     hist.forEach(function(entry, i) {
-      html += '<div class="journal-card" style="min-width:260px;max-width:260px;height:160px;background:linear-gradient(135deg,#1a1a1a,#2C2E32);border:1px solid rgba(200,168,75,0.3);border-radius:16px;padding:20px;display:flex;flex-direction:column;justify-content:space-between;scroll-snap-align:start;flex-shrink:0;animation:journalCardIn 0.4s ease both ' + (i * 100) + 'ms;">'
+      var _formattedDate = '';
+      try { _formattedDate = new Date(entry.date + 'T12:00:00').toLocaleDateString('fr-FR', {day:'numeric', month:'long', year:'numeric'}); } catch(e) { _formattedDate = entry.date; }
+      html += '<div class="journal-card" style="min-width:260px;max-width:260px;height:160px;background:linear-gradient(135deg,#1a1a1a,#2C2E32);border:1px solid rgba(200,168,75,0.6);border-radius:16px;padding:20px;display:flex;flex-direction:column;justify-content:space-between;scroll-snap-align:start;flex-shrink:0;box-shadow:0 0 20px rgba(200,168,75,0.15);animation:journalCardIn 0.4s ease both ' + (i * 100) + 'ms;">'
         + '<div style="font-family:\'Cinzel\',serif;font-size:10px;color:#C8A84A;letter-spacing:1px;">' + entry.time + ' · ' + entry.day + '</div>'
         + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:#E8DCC0;line-height:1.5;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">« ' + entry.text + ' »</div>'
-        + '<div style="font-size:10px;color:#B0A080;">' + entry.date + '</div>'
+        + '<div style="font-size:10px;color:#B0A080;">' + _formattedDate + '</div>'
         + '</div>';
     });
     html += '</div>';
