@@ -5891,17 +5891,19 @@ function updateFajrChallenge() {
   card.style.display = 'block';
   var pct = Math.min(100, Math.round((fajrStreak / 30) * 100));
   if (fajrStreak >= 30) {
-    card.innerHTML = '<div style="background:rgba(200,168,75,0.08);border:1px solid #C8A84A;border-radius:14px;padding:16px 18px;text-align:center;">'
+    card.innerHTML = '<div style="background:#1a1a1a;border:1px solid #C8A84A;border-radius:14px;padding:16px 18px;text-align:center;">'
       + '<div style="font-family:\'Noto Naskh Arabic\',serif;font-size:20px;color:#C8A84A;margin-bottom:4px;">مُحَافِظٌ عَلَى الْفَجْرِ</div>'
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#E8DCC0;">Gardien de Fajr ✦</div>'
       + '</div>';
   } else {
-    card.innerHTML = '<div style="background:rgba(10,10,10,0.9);border:1px solid rgba(200,168,75,0.4);border-radius:14px;padding:14px 18px;">'
-      + '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">'
-      + '<div style="font-size:13px;font-weight:600;color:#C8A84A;">🌅 Fajr — Jour ' + fajrStreak + '/30</div>'
-      + '<div style="font-size:11px;color:#B0A080;">' + pct + '%</div>'
-      + '</div>'
-      + '<div style="height:3px;background:rgba(200,168,75,0.15);border-radius:3px;overflow:hidden;">'
+    card.innerHTML = '<div style="background:#1a1a1a;border:1px solid rgba(200,168,75,0.3);border-radius:14px;padding:14px 18px;">'
+      + '<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">'
+      + '<div style="font-size:22px;">🌅</div>'
+      + '<div style="flex:1;">'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:600;color:#C8A84A;">Challenge 30 jours Fajr</div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;font-style:italic;color:#B0A080;margin-top:2px;">Jour ' + fajrStreak + ' sur 30</div>'
+      + '</div></div>'
+      + '<div style="height:3px;background:rgba(200,168,75,0.12);border-radius:3px;overflow:hidden;">'
       + '<div style="height:100%;width:' + pct + '%;background:linear-gradient(90deg,#C8A84A,#E0C870);border-radius:3px;transition:width 0.6s ease;"></div>'
       + '</div>'
       + '</div>';
