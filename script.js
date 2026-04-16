@@ -5574,6 +5574,18 @@ function v2OpenNiyyahModal() {
         flash.style.cssText = 'position:fixed;inset:0;background:rgba(200,168,75,0.25);z-index:99999;pointer-events:none;';
         document.body.appendChild(flash);
         setTimeout(function() { flash.remove(); }, 300);
+        // Golden halo + rotating ring
+        btn.classList.add('intention-confirmed-glow');
+        var ring = document.createElement('div');
+        ring.className = 'intention-rotate-ring';
+        btn.appendChild(ring);
+        setTimeout(function() {
+          btn.classList.add('intention-glow-fadeout');
+          setTimeout(function() {
+            btn.classList.remove('intention-confirmed-glow', 'intention-glow-fadeout');
+            if (ring.parentNode) ring.remove();
+          }, 500);
+        }, 2000);
       }, 3000);
     }
     function _cleanupOverlay() {

@@ -1978,6 +1978,35 @@ body::before {
   50%  { box-shadow: 0 0 16px rgba(200,168,75,0.3); }
   100% { box-shadow: 0 0 28px rgba(200,168,75,0.6), inset 0 0 12px rgba(200,168,75,0.1); }
 }
+.intention-confirmed-glow {
+  animation: intentionGlow 1s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+}
+.intention-glow-fadeout {
+  animation: none !important;
+  box-shadow: none !important;
+  transition: box-shadow 0.5s ease;
+}
+.intention-rotate-ring {
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  border: 2px solid transparent;
+  border-top-color: #C8A84A;
+  border-right-color: rgba(200,168,75,0.3);
+  animation: intentionRotate 1s linear infinite;
+  pointer-events: none;
+}
+@keyframes intentionGlow {
+  0%   { box-shadow: 0 0 10px #C8A84A; }
+  50%  { box-shadow: 0 0 40px #E0C870, 0 0 80px rgba(200,168,75,0.4); }
+  100% { box-shadow: 0 0 10px #C8A84A; }
+}
+@keyframes intentionRotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
 .hold-overlay {
   position: absolute;
   right: 12px;
