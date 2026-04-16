@@ -5783,8 +5783,8 @@ function updateSpiritualTitle() {
   ];
   var title = titles.find(function(t) { return streak >= t.min; });
   el.style.display = 'block';
-  el.innerHTML = '<div style="font-family:\'Noto Naskh Arabic\',serif;font-size:18px;color:#C8A84A;line-height:1.4;">' + title.ar + '</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:11px;font-style:italic;color:#B0A080;letter-spacing:0.5px;">' + title.tr + '</div>';
+  el.innerHTML = '<div style="font-family:\'Noto Naskh Arabic\',serif;font-size:20px;color:#C8A84A;line-height:1.4;">' + title.ar + '</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:#B0A080;letter-spacing:0.5px;">' + title.tr + '</div>';
 }
 function v2RefreshStats() {
   // POINT 3 — Effet visuel Tawba persistant 24h
