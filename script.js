@@ -243,6 +243,16 @@ function getSuggestionDefi() {
 function initDefiSemaine() {
   const s = getDefiState();
   const lundi = getLundiDate();
+  // Premier lancement — assigner défi id:1 par défaut
+  if (!s.current && s.historique.length === 0) {
+    var premierDefi = DEFIS_DB.find(function(d) { return d.id === 1; });
+    if (premierDefi) {
+      s.current = { id: premierDefi.id, semaine: lundi, jours: [], complete: false };
+      s.choixEnAttente = null;
+      saveDefiState(s);
+      return s;
+    }
+  }
   // Si nouvelle semaine et pas encore choisi → ouvrir le sélecteur
   if (!s.current || s.current.semaine !== lundi) {
     if (!s.choixEnAttente || s.choixEnAttente.semaine !== lundi) {
@@ -250,7 +260,6 @@ function initDefiSemaine() {
       s.choixEnAttente = { semaine: lundi, suggestionId: suggestion.id };
       saveDefiState(s);
     }
-    // Pas de défi verrouillé pour cette semaine — on attend le choix
     return s;
   }
   return s;
