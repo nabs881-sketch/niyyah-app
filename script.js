@@ -3264,28 +3264,42 @@ function loadPrayerTimes() {
   _prayerLoading = true;
   _prayerError   = false;
   renderLevel(currentLevel);
-  // Méthode 3 = Muslim World League (Fajr 18°, Isha 17°) — standard Europe, identique à Mawaqit
-  const _today = new Date();
-  const _dd = String(_today.getDate()).padStart(2,'0');
-  const _mm = String(_today.getMonth()+1).padStart(2,'0');
-  const _yyyy = _today.getFullYear();
-  const _tz = Intl.DateTimeFormat().resolvedOptions().timeZone || 'Europe/Paris';
-  const url = 'https://api.aladhan.com/v1/timingsByAddress?address=' +
-    encodeURIComponent(_prayerCity) +
-    '&method=3' +
-    '&school=0' +
-    '&midnightMode=0' +
-    '&latitudeAdjustmentMethod=3' +
-    '&date=' + _dd + '-' + _mm + '-' + _yyyy +
-    '&timezonestring=' + encodeURIComponent(_tz);
+  // API AlAdhan — method=12 (UMF)
+  var _today = new Date();
+  var _dd = String(_today.getDate()).padStart(2,'0');
+  var _mm = String(_today.getMonth()+1).padStart(2,'0');
+  var _yyyy = _today.getFullYear();
+  var _dateStr = _dd + '-' + _mm + '-' + _yyyy;
+  var _cacheKey = 'niyyah_prayer_times_' + _yyyy + '-' + _mm + '-' + _dd;
+  // Check 24h cache first
+  var _cached = localStorage.getItem(_cacheKey);
+  if (_cached) {
+    try {
+      _prayerTimes = JSON.parse(_cached);
+      _prayerLoading = false;
+      _prayerError = false;
+      localStorage.setItem('niyyah_prayer_cache_v2', _cached);
+      localStorage.setItem('niyyah_prayer_date_v2', TODAY);
+      schedulePrayerReminders();
+      renderLevel(currentLevel);
+      if (typeof updateSanctuaireMoment === 'function') updateSanctuaireMoment();
+      return;
+    } catch(e) {}
+  }
+  var url = 'https://api.aladhan.com/v1/timingsByCity/' + _dateStr +
+    '?city=' + encodeURIComponent(_prayerCity) +
+    '&country=' + encodeURIComponent(_prayerCountry || '') +
+    '&method=12';
   fetch(url)
-    .then(r => r.json())
-    .then(d => {
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
       if (d.code === 200 && d.data && d.data.timings) {
-        _prayerTimes   = d.data.timings;
+        _prayerTimes = d.data.timings;
         _prayerLoading = false;
-        _prayerError   = false;
-        localStorage.setItem('niyyah_prayer_cache_v2', JSON.stringify(_prayerTimes));
+        _prayerError = false;
+        var _timingsStr = JSON.stringify(_prayerTimes);
+        localStorage.setItem(_cacheKey, _timingsStr);
+        localStorage.setItem('niyyah_prayer_cache_v2', _timingsStr);
         localStorage.setItem('niyyah_prayer_date_v2', TODAY);
         schedulePrayerReminders();
         renderLevel(currentLevel);
@@ -3294,9 +3308,14 @@ function loadPrayerTimes() {
         throw new Error('bad response');
       }
     })
-    .catch(() => {
+    .catch(function() {
+      // Fallback : derniers horaires cachés
+      var _fallback = localStorage.getItem('niyyah_prayer_cache_v2');
+      if (_fallback) {
+        try { _prayerTimes = JSON.parse(_fallback); } catch(e) {}
+      }
       _prayerLoading = false;
-      _prayerError   = true;
+      _prayerError = !_prayerTimes;
       renderLevel(currentLevel);
     });
 }
