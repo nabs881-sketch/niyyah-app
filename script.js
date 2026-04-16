@@ -5648,6 +5648,17 @@ function v2ConfirmIntention() {
   applyInfusion(intention);
   if (navigator.vibrate) navigator.vibrate([100, 50, 200]);
   v2ShowToast(t('toast_intention'));
+  // Golden halo on orb
+  var orbWrap = document.getElementById('orb-wrap-v2');
+  if (orbWrap) {
+    orbWrap.classList.add('orb-intention-glow');
+    setTimeout(function() {
+      orbWrap.classList.add('orb-intention-glow-fadeout');
+      setTimeout(function() {
+        orbWrap.classList.remove('orb-intention-glow', 'orb-intention-glow-fadeout');
+      }, 600);
+    }, 3000);
+  }
 }
 
 /* ─────────────────────────────────────────────

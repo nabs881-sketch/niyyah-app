@@ -1978,6 +1978,37 @@ body::before {
   50%  { box-shadow: 0 0 16px rgba(200,168,75,0.3); }
   100% { box-shadow: 0 0 28px rgba(200,168,75,0.6), inset 0 0 12px rgba(200,168,75,0.1); }
 }
+/* Orb golden halo after intention confirmed */
+.orb-intention-glow {
+  position: relative;
+  animation: orbIntentionPulse 1.5s ease-in-out infinite;
+}
+.orb-intention-glow::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: #C8A84A;
+  border-right-color: rgba(200,168,75,0.3);
+  animation: intentionRotate 1.2s linear infinite;
+  pointer-events: none;
+}
+.orb-intention-glow-fadeout {
+  animation: none !important;
+  box-shadow: none !important;
+  transition: box-shadow 0.6s ease, opacity 0.6s ease;
+}
+.orb-intention-glow-fadeout::after {
+  animation: none !important;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+@keyframes orbIntentionPulse {
+  0%   { box-shadow: 0 0 10px rgba(200,168,75,0.3); }
+  50%  { box-shadow: 0 0 40px #C8A84A, 0 0 80px rgba(200,168,75,0.3); }
+  100% { box-shadow: 0 0 10px rgba(200,168,75,0.3); }
+}
 .intention-confirmed-glow {
   animation: intentionGlow 1s ease-in-out infinite;
   position: relative;
