@@ -6244,37 +6244,22 @@ document.addEventListener('touchend', e => {
 /* ─────────────────────────────────────────────
    INIT V2 (after V1 is ready)
    ───────────────────────────────────────────── */
-/* ── Atmosphères cycliques (21 jours) ── */
+/* ── Atmosphères basées sur le mois hijri ── */
 function applyAtmosphere() {
-  var atmospheres = [
-    { id: 'layl', bg: [10,10,10], gold: [184,160,96] },
-    { id: 'fajr', bg: [26,16,8], gold: [212,168,67] },
-    { id: 'nur',  bg: [13,13,10], gold: [224,200,112] },
-    { id: 'tawba', bg: [15,10,8], gold: [200,149,106] }
-  ];
-  var cycleLength = 21;
-  var epoch = new Date('2026-01-01').getTime();
-  var daysSinceEpoch = Math.floor((Date.now() - epoch) / 86400000);
-  var totalCycle = cycleLength * atmospheres.length;
-  var dayInCycle = daysSinceEpoch % totalCycle;
-  var atmIndex = Math.floor(dayInCycle / cycleLength);
-  var dayInAtm = dayInCycle % cycleLength;
-  var transitionDays = 3;
-  var current = atmospheres[atmIndex];
-  var next = atmospheres[(atmIndex + 1) % atmospheres.length];
-  var bg, gold;
-  if (dayInAtm >= cycleLength - transitionDays) {
-    var t = (dayInAtm - (cycleLength - transitionDays)) / transitionDays;
-    bg = current.bg.map(function(c, i) { return Math.round(c + (next.bg[i] - c) * t); });
-    gold = current.gold.map(function(c, i) { return Math.round(c + (next.gold[i] - c) * t); });
-  } else {
-    bg = current.bg;
-    gold = current.gold;
-  }
+  var hijriMonth = 1;
+  try {
+    var fmt = new Intl.DateTimeFormat('en-u-ca-islamic', { month: 'numeric' });
+    hijriMonth = parseInt(fmt.format(new Date())) || 1;
+  } catch(e) {}
+  var atm;
+  if (hijriMonth <= 4)       atm = { id: 'layl',  bg: '10,10,10',  gold: '184,160,96' };
+  else if (hijriMonth <= 7)  atm = { id: 'fajr',  bg: '26,16,8',   gold: '212,168,67' };
+  else if (hijriMonth <= 10) atm = { id: 'nur',   bg: '13,13,10',  gold: '224,200,112' };
+  else                       atm = { id: 'tawba', bg: '15,10,8',   gold: '200,149,106' };
+  var bgStr = 'rgb(' + atm.bg + ')';
+  var goldStr = 'rgb(' + atm.gold + ')';
+  var goldAlpha = 'rgba(' + atm.gold + ',0.3)';
   var root = document.documentElement.style;
-  var bgStr = 'rgb(' + bg.join(',') + ')';
-  var goldStr = 'rgb(' + gold.join(',') + ')';
-  var goldAlpha = 'rgba(' + gold.join(',') + ',0.3)';
   root.setProperty('--bg-primary', bgStr);
   root.setProperty('--gold-main', goldStr);
   root.setProperty('--orb-color', goldAlpha);
@@ -6282,9 +6267,7 @@ function applyAtmosphere() {
   root.setProperty('--gold-v2', goldStr);
   root.setProperty('--gold-pale-v2', goldStr);
   document.body.style.background = bgStr;
-  // Apply to key Sanctuaire elements
   applyAtmosphereDOM(bgStr, goldStr, goldAlpha);
-  localStorage.setItem('niyyah_atmosphere', JSON.stringify({ id: (current || {}).id, day: dayInAtm || 0, bg: bg, gold: gold }));
 }
 function applyAtmosphereDOM(bgStr, goldStr, goldAlpha) {
   var sanctuaire = document.getElementById('view-sanctuaire');
