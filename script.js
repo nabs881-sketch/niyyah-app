@@ -5570,10 +5570,6 @@ function v2OpenNiyyahModal() {
         btn.classList.add('sel-v2');
         document.getElementById('v2-custom-intention').value = '';
         if (navigator.vibrate) navigator.vibrate([50, 30, 50, 30, 500]);
-        var flash = document.createElement('div');
-        flash.style.cssText = 'position:fixed;inset:0;background:rgba(200,168,75,0.25);z-index:99999;pointer-events:none;';
-        document.body.appendChild(flash);
-        setTimeout(function() { flash.remove(); }, 300);
         // Golden halo + rotating ring
         btn.classList.add('intention-confirmed-glow');
         var ring = document.createElement('div');
