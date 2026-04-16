@@ -5771,7 +5771,7 @@ function applyTawbaGlow() {
 function updateSpiritualTitle() {
   var el = document.getElementById('v2-spiritual-title');
   if (!el) return;
-  // TODO: remettre après test → if (typeof isPremium !== 'function' || !isPremium()) { el.style.display = 'none'; return; }
+  if (typeof isPremium !== 'function' || !isPremium()) { el.style.display = 'none'; return; }
   var streak = 0;
   try { streak = JSON.parse(localStorage.getItem('spiritual_history') || '{}').streak || 0; } catch(e) {}
   var titles = [
