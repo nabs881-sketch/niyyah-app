@@ -402,7 +402,7 @@ function renderDefiCard() {
   const { defi, state: defiState } = getDefiCourant();
   // Pas encore de défi choisi cette semaine
   if (!defi) {
-    document.getElementById('defiCardIcon').textContent = '🎯';
+    document.getElementById('defiCardIcon').innerHTML = '<img src="https://nabs881-sketch.github.io/niyyah-app/imagescroissant.png" width="50" height="50" alt="Croissant" style="object-fit:contain;border-radius:50%;">';
     document.getElementById('defiCardTitre').textContent = 'Choisir ton défi de la semaine';
     document.getElementById('defiCardScore').textContent = '';
     const dots = document.getElementById('defiCardDots');
@@ -410,7 +410,7 @@ function renderDefiCard() {
     return;
   }
   card.onclick = function() { if (typeof openDefiOverlay === 'function') openDefiOverlay(); };
-  document.getElementById('defiCardIcon').textContent = defi.icon;
+  document.getElementById('defiCardIcon').innerHTML = '<img src="https://nabs881-sketch.github.io/niyyah-app/imagescroissant.png" width="50" height="50" alt="Croissant" style="object-fit:contain;border-radius:50%;">';
   document.getElementById('defiCardTitre').textContent = defi.titre;
   const fait = defiState.current.jours.length;
   document.getElementById('defiCardScore').textContent = fait + '/' + defi.cible;
@@ -5898,7 +5898,7 @@ function updateFajrChallenge() {
   } else {
     card.innerHTML = '<div style="background:#1a1a1a;border:1px solid rgba(200,168,75,0.3);border-radius:14px;padding:14px 18px;text-align:center;">'
       + '<div style="display:flex;flex-direction:column;align-items:center;gap:8px;margin-bottom:10px;">'
-      + '<div><img src="https://nabs881-sketch.github.io/niyyah-app/imagessoleil.png" width="40" height="40" alt="Soleil" style="object-fit:contain;mix-blend-mode:screen;"></div>'
+      + '<div><img src="https://nabs881-sketch.github.io/niyyah-app/imagessoleil.png" width="50" height="50" alt="Soleil" style="object-fit:contain;border-radius:50%;mix-blend-mode:screen;"></div>'
       + '<div>'
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:600;color:#C8A84A;">Challenge 30 jours Fajr</div>'
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;font-style:italic;color:#B0A080;margin-top:2px;">Jour ' + fajrStreak + ' sur 30</div>'
