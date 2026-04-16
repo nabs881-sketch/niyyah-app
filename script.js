@@ -7156,6 +7156,14 @@ function scannerConfirmNiyyah() {
   }, 400);
 }
 
+/* ── Partager sur WhatsApp ── */
+function scannerShareWhatsApp() {
+  var lib = SCANNER_LIBRARY[_scannerResult?.category] || SCANNER_LIBRARY.default;
+  var niyyah = _scannerResult?.niyyahDirect || lib.nuances[_selectedNuance || 0].text;
+  var text = '✦ Mon intention du jour :\n\n« ' + niyyah + ' »\n\n— Niyyah Daily · Pose ton intention\nnabs881-sketch.github.io/niyyah-app/';
+  window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
+}
+
 /* ── Rescanner ── */
 function scannerRetry() {
   document.getElementById('scanner-result').classList.remove('active');
