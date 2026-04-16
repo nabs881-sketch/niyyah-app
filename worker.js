@@ -41,9 +41,9 @@ export default {
       return handleScanner(request, env);
     }
 
-    // ── Route Murmures (notifications) ──
+    // ── Route Murmures (notifications + compagnon nocturne) ──
     if (path === '/api/murmure' && request.method === 'POST') {
-      return handleMurmure(request);
+      return handleMurmure(request, env);
     }
 
     return jsonResponse({ error: 'Route introuvable' }, 404);
@@ -215,9 +215,40 @@ EXEMPLES DU NIVEAU ATTENDU :
 // ═══════════════════════════════════════════════════
 // MURMURES (notifications intelligentes)
 // ═══════════════════════════════════════════════════
-async function handleMurmure(request) {
+async function handleMurmure(request, env) {
   try {
-    const { intention, moment, streak, todayScore } = await request.json();
+    const data = await request.json();
+
+    // ── Mode Compagnon Nocturne (appel Claude) ──
+    if (data.mode === 'night' && data.thought) {
+      const systemPrompt = "Tu es le Compagnon du soir de Niyyah. L'utilisateur te confie une pensée de fin de journée. Réponds par un haïku ou une très courte méditation spirituelle (3-5 lignes max), chaleureuse, en écho à sa pensée. Pas de dogme, pas de jugement.";
+
+      const response = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': env.ANTHROPIC_API_KEY,
+          'anthropic-version': '2023-06-01',
+        },
+        body: JSON.stringify({
+          model: 'claude-haiku-4-5-20251001',
+          max_tokens: 300,
+          system: systemPrompt,
+          messages: [{ role: 'user', content: data.thought }],
+        }),
+      });
+
+      if (!response.ok) {
+        return jsonResponse({ text: 'La nuit est un voile de miséricorde — repose-toi sous Sa protection.', source: 'Sagesse nocturne' });
+      }
+
+      const result = await response.json();
+      const text = result.content?.[0]?.text || 'La nuit est un voile de miséricorde — repose-toi sous Sa protection.';
+      return jsonResponse({ text, source: 'Compagnon du soir' });
+    }
+
+    // ── Mode Murmures classiques (notifications) ──
+    const { intention, moment, streak, todayScore } = data;
 
     const MURMURES = {
       allah:         { matin: "Ton cœur se souvient de Lui", midi: "Entre deux tâches — un instant vers Allah", soir: "La nuit est douce pour ceux qui reviennent" },
