@@ -3262,10 +3262,38 @@ div#v2-stats-row > div {
 .onboard-screen {
   flex-wrap: wrap !important;
   background: #0a0a0a !important;
+  text-align: center !important;
+  align-items: center !important;
 }
 .onboard-screen #onboardContent {
   order: 0;
   width: 100%;
+  text-align: center !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.onboard-anim {
+  text-align: center !important;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.onboard-sub {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.onboard-title {
+  text-align: center !important;
+}
+.onboard-levels {
+  width: 100%;
+  max-width: 300px;
+}
+.city-input-wrap {
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 .onboard-dot {
   background: rgba(200,168,75,0.2) !important;
