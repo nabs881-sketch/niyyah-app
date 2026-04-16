@@ -3301,6 +3301,18 @@ button[style*="gold-v2"] {
   0%, 100% { border-color: rgba(200,168,75,0.2); }
   50%      { border-color: rgba(200,168,75,0.5); }
 }
+.prayer-spinner {
+  width: 28px;
+  height: 28px;
+  border: 2px solid rgba(200,168,75,0.15);
+  border-top-color: #C8A84A;
+  border-radius: 50%;
+  animation: prayerSpin 0.8s linear infinite;
+  margin: 0 auto;
+}
+@keyframes prayerSpin {
+  to { transform: rotate(360deg); }
+}
 @keyframes grainFloat {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }

@@ -1845,10 +1845,17 @@ function renderLevel(levelId) {
     + '<div style="font-size:10px;color:' + scoreColor + ';background:' + scoreBg + ';border:1px solid ' + scoreBorder + ';border-radius:6px;padding:1px 6px;margin-left:2px;">' + scoreLabel + '</div>'
     + '</div></div>'
     + '</div>' + graceBanner + fridayBanner + prayerCard + qiblaCard;
-  const _block = getCurrentPrayerBlock();
-  if (_block.id === 'nuit' && !_prayerTimes && !window._prayerBlockRetried) {
-    window._prayerBlockRetried = true;
-    setTimeout(function() { renderLevel(levelId); }, 2000);
+  var _block = getCurrentPrayerBlock();
+  if (!_prayerTimes && (_block.id === 'nuit' || _block.id === 'qiyam')) {
+    if (!window._prayerBlockRetryCount) window._prayerBlockRetryCount = 0;
+    if (window._prayerBlockRetryCount < 2) {
+      window._prayerBlockRetryCount++;
+      html += '<div style="text-align:center;padding:20px 0;"><div class="prayer-spinner"></div></div>';
+      content.innerHTML = html;
+      setTimeout(function() { renderLevel(levelId); }, 3000);
+      return;
+    }
+    _block = { id: 'reveil', label: 'AU RÉVEIL' };
   }
   var _bandeauSub = 'Tes actes du moment';
   if (_block.id === 'nuit') _bandeauSub = 'Dors avec le Witr';
