@@ -261,10 +261,7 @@
   <div id="fajr-challenge-card" style="display:none;width:min(320px,90vw);margin:12px auto 0;"></div>
 
   <!-- TEST — REMOVE AFTER -->
-  <button onclick="testShareCard()" style="width:min(320px,90vw);margin:12px auto 0;padding:10px;border-radius:10px;border:1px solid rgba(255,0,0,0.3);background:rgba(255,0,0,0.05);color:rgba(255,100,100,0.8);font-size:11px;cursor:pointer;display:block;">⚠ Test Carte Calligraphie</button>
-  <button onclick="spawnPremiumBurst(window.innerWidth/2,window.innerHeight/2)" style="width:min(320px,90vw);margin:8px auto 0;padding:10px;border-radius:10px;border:1px solid rgba(255,0,0,0.3);background:rgba(255,0,0,0.05);color:rgba(255,100,100,0.8);font-size:11px;cursor:pointer;display:block;">⚠ Test Particules</button>
-  <canvas id="scanner-share-canvas-test" width="1080" height="1080" style="display:none;"></canvas>
-  <img id="test-card-preview" style="display:none;width:min(320px,90vw);margin:12px auto 0;border-radius:14px;border:1px solid rgba(200,168,75,0.3);">
+  <button onclick="window._atmTest=(window._atmTest||0)+1;var m=[{n:'Layl (1-4)',bg:'10,10,10',g:'184,160,96'},{n:'Fajr (5-7)',bg:'26,16,8',g:'212,168,67'},{n:'Nur (8-10)',bg:'13,13,10',g:'224,200,112'},{n:'Tawba (11-12)',bg:'15,10,8',g:'200,149,106'}];var c=m[window._atmTest%4];var b='rgb('+c.bg+')';var g='rgb('+c.g+')';var a='rgba('+c.g+',0.3)';var r=document.documentElement.style;r.setProperty('--bg-primary',b);r.setProperty('--gold-main',g);r.setProperty('--orb-color',a);r.setProperty('--gold',g);r.setProperty('--gold-v2',g);r.setProperty('--gold-pale-v2',g);document.body.style.background=b;applyAtmosphereDOM(b,g,a);this.textContent='⚠ '+c.n;" style="width:min(320px,90vw);margin:12px auto 0;padding:10px;border-radius:10px;border:1px solid rgba(255,0,0,0.3);background:rgba(255,0,0,0.05);color:rgba(255,100,100,0.8);font-size:11px;cursor:pointer;display:block;">⚠ Test Mois Hijri</button>
 
   </div><!-- /WRAPPER -->
 

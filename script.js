@@ -5662,9 +5662,6 @@ function v2OpenSettings() {
         </div>
       </div>
 
-      <!-- TEST NOTIF — REMOVE AFTER TESTING -->
-      <button onclick="if(Notification.permission==='default')Notification.requestPermission().then(function(){new Notification('Test Fajr',{body:'Notification test'});});else new Notification('Test Fajr',{body:'Notification test'});"
-        style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,0,0,0.3);background:rgba(255,0,0,0.05);color:rgba(255,100,100,0.8);font-size:11px;cursor:pointer;margin-bottom:10px;">⚠ TEST Fajr Notification</button>
 
       <div style="text-align:center;padding:8px;font-size:10px;color:rgba(240,234,214,0.12);font-family:'Cinzel',serif;letter-spacing:0.2em;margin-bottom:12px;">NIYYAH V2.0 · بِسْمِ اللَّهِ</div>
 
@@ -7747,23 +7744,6 @@ function wrapCanvasText(ctx, text, maxWidth) {
   });
   if (line) lines.push(line);
   return lines;
-}
-// TEST — REMOVE AFTER
-function testShareCard() {
-  _scannerResult = { category: 'nature', niyyahDirect: 'Chaque souffle est un don d\'Allah — je choisis de vivre cette journée avec présence et gratitude.' };
-  _selectedNuance = 0;
-  var origCanvas = document.getElementById('scanner-share-canvas');
-  var testCanvas = document.getElementById('scanner-share-canvas-test');
-  if (testCanvas) testCanvas.id = 'scanner-share-canvas';
-  scannerShareCard();
-  if (testCanvas) {
-    testCanvas.id = 'scanner-share-canvas-test';
-    var preview = document.getElementById('test-card-preview');
-    if (preview) {
-      preview.src = testCanvas.toDataURL('image/png');
-      preview.style.display = 'block';
-    }
-  }
 }
 
 /* ── Rescanner ── */
