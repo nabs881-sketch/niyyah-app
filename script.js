@@ -7560,23 +7560,36 @@ function scannerShareCard() {
   ctx.letterSpacing = '4px';
   ctx.fillText('NIYYAH DAILY  ✦', w/2, h - 60);
 
-  // Partage
-  canvas.toBlob(function(blob) {
-    var file = new File([blob], 'niyyah-intention.png', { type: 'image/png' });
-    if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
-      navigator.share({
-        files: [file],
-        title: 'Mon intention — Niyyah Daily',
-        text: '✦ ' + niyyah
-      }).catch(function() {});
-    } else {
-      var url = URL.createObjectURL(blob);
-      var a = document.createElement('a');
-      a.href = url; a.download = 'niyyah-intention.png';
-      a.click();
-      URL.revokeObjectURL(url);
-    }
-  }, 'image/png');
+  // Aperçu avant partage
+  var dataUrl = canvas.toDataURL('image/png');
+  var existing = document.getElementById('card-preview-overlay');
+  if (existing) existing.remove();
+  var overlay = document.createElement('div');
+  overlay.id = 'card-preview-overlay';
+  overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;z-index:99999;background:rgba(0,0,0,0.92);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;box-sizing:border-box;';
+  overlay.innerHTML = '<img src="' + dataUrl + '" style="max-width:90%;max-height:60vh;border-radius:16px;border:1px solid rgba(200,168,75,0.3);margin-bottom:20px;">'
+    + '<div style="display:flex;gap:12px;">'
+    + '<button id="card-share-btn" style="padding:14px 28px;background:#C8A84A;color:#000;font-family:\'Cinzel\',serif;font-size:12px;font-weight:700;letter-spacing:2px;border:none;border-radius:12px;cursor:pointer;">PARTAGER ✦</button>'
+    + '<button id="card-close-btn" style="padding:14px 28px;background:transparent;color:rgba(255,255,255,0.5);font-family:\'Cinzel\',serif;font-size:12px;letter-spacing:2px;border:1px solid rgba(255,255,255,0.15);border-radius:12px;cursor:pointer;">FERMER</button>'
+    + '</div>';
+  document.body.appendChild(overlay);
+  var _niyyahText = niyyah;
+  document.getElementById('card-close-btn').onclick = function() { overlay.remove(); };
+  document.getElementById('card-share-btn').onclick = function() {
+    canvas.toBlob(function(blob) {
+      var file = new File([blob], 'niyyah-intention.png', { type: 'image/png' });
+      if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
+        navigator.share({ files: [file], title: 'Mon intention — Niyyah Daily', text: '✦ ' + _niyyahText }).catch(function() {});
+      } else {
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url; a.download = 'niyyah-intention.png';
+        a.click();
+        URL.revokeObjectURL(url);
+      }
+      overlay.remove();
+    }, 'image/png');
+  };
 }
 function wrapCanvasText(ctx, text, maxWidth) {
   var words = text.split(' '), lines = [], line = '';
