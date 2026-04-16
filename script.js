@@ -5093,18 +5093,20 @@ const ONBOARD_SLIDES = [
           onkeydown="if(event.key==='Enter')onboardSaveCity()"><button class="city-input-btn" onclick="onboardSaveCity()">OK</button></div><button class="onboard-btn" onclick="onboardFinish()" style="max-width:300px;">${t('onboard_go')}</button><button class="onboard-skip" onclick="onboardFinish()">${t('onboard_later')}</button></div>`
 ];
 function onboardRender() {
-  const content = document.getElementById('onboardContent');
-  if (content) content.innerHTML = ONBOARD_SLIDES[_onboardStep]();
-  [0,1,2,3].forEach(i => {
-    const dot = document.getElementById('dot' + i);
-    if (dot) dot.className = 'onboard-dot' + (i === _onboardStep ? ' active' : '');
+  requestAnimationFrame(function() {
+    const content = document.getElementById('onboardContent');
+    if (content) content.innerHTML = ONBOARD_SLIDES[_onboardStep]();
+    [0,1,2,3].forEach(i => {
+      const dot = document.getElementById('dot' + i);
+      if (dot) dot.className = 'onboard-dot' + (i === _onboardStep ? ' active' : '');
+    });
+    if (_onboardStep === 3) {
+      setTimeout(() => {
+        const el = document.getElementById('onboardCityInput');
+        if (el) el.focus();
+      }, 400);
+    }
   });
-  if (_onboardStep === 3) {
-    setTimeout(() => {
-      const el = document.getElementById('onboardCityInput');
-      if (el) el.focus();
-    }, 400);
-  }
 }
 function onboardNext() {
   if (_onboardStep < ONBOARD_SLIDES.length - 1) {
