@@ -966,6 +966,22 @@ const SAVAIS_TU = [
   'Les premières cartes géographiques précises du monde musulman incluaient la Chine, l\'Afrique et l\'Europe. — Histoire des sciences',
   'Le Prophète ﷺ a dit : "Un musulman est le frère d\'un musulman : il ne l\'opprime pas et ne le livre pas." — Bukhari 2442',
   'Le Prophète ﷺ a dit : "Soyez dans ce monde comme un étranger ou un voyageur de passage." — Bukhari 6416',
+  'Le Prophète ﷺ a dit : "Celui qui lit les deux derniers versets de sourate Al-Baqara la nuit, ils lui suffisent." — Bukhari 5009',
+  'Le mot "tawba" (repentir) apparaît 87 fois dans le Coran — Allah aime ceux qui reviennent à Lui. — Coran',
+  'Le Prophète ﷺ a dit : "Trois invocations sont exaucées sans aucun doute : celle du parent, celle du voyageur et celle de l\'opprimé." — Tirmidhi 1905',
+  'La Maison de la Sagesse (Bayt al-Hikma) à Bagdad fut le plus grand centre scientifique du monde au 9ème siècle. — Histoire islamique',
+  'Le Prophète ﷺ a dit : "Celui qui garantit ce qui est entre ses mâchoires et ce qui est entre ses jambes, je lui garantis le Paradis." — Bukhari 6474',
+  'Le Coran mentionne que les montagnes sont comme des piquets (awtad) qui stabilisent la Terre — confirmé par la géologie moderne. — Coran 78:7',
+  'Le Prophète ﷺ a dit : "Les deux rakaat de Fajr sont meilleures que le monde et tout ce qu\'il contient." — Muslim 725',
+  'Le savant Ibn Khaldoun est considéré comme le fondateur de la sociologie et de l\'historiographie moderne. — Histoire islamique',
+  'Le Prophète ﷺ a dit : "Nourris l\'affamé, visite le malade et libère le prisonnier." — Bukhari 5649',
+  'Le Coran dit : "Nous avons créé l\'homme dans la meilleure stature." — Coran 95:4',
+  'Le Prophète ﷺ a dit : "La meilleure prière après les obligatoires est la prière de la nuit." — Muslim 1163',
+  'Les jardins de l\'Alhambra ont été conçus selon la description coranique du Paradis. — Histoire islamique',
+  'Le Prophète ﷺ a dit : "Allah est auprès du serviteur tant que le serviteur est auprès de son frère." — Muslim 2699',
+  'Le mot "dua" (invocation) et ses dérivés apparaissent 212 fois dans le Coran. — Étude linguistique du Coran',
+  'Le Prophète ﷺ a dit : "Le meilleur de ce que j\'ai dit, moi et les prophètes avant moi : La ilaha illallah wahdahu la sharika lah." — Tirmidhi 3585',
+  'Le Prophète ﷺ a dit : "Quiconque dit SubhanAllah wa bihamdihi 100 fois par jour, ses péchés sont effacés même s\'ils sont comme l\'écume de la mer." — Bukhari 6405',
 ];
 function getSavaisTuFact() {
   var dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(),0,0).getTime()) / 86400000);
