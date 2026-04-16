@@ -2950,6 +2950,7 @@ function loadPrayerTimes() {
         localStorage.setItem('niyyah_prayer_date_v2', TODAY);
         schedulePrayerReminders();
         renderLevel(currentLevel);
+        if (typeof updateSanctuaireMoment === 'function') updateSanctuaireMoment();
       } else {
         throw new Error('bad response');
       }
@@ -5869,6 +5870,11 @@ function v2RefreshStats() {
 function updateSanctuaireMoment() {
   var el = document.getElementById('sanctuaire-moment');
   if (!el) return;
+  // Attendre que prayerTimes soit chargé
+  if (!_prayerTimes) {
+    el.innerHTML = '<div style="text-align:center;padding:12px 0;"><div class="prayer-spinner"></div></div>';
+    return;
+  }
   var block = getCurrentPrayerBlock();
   var blockId = block.id;
   // Nuit et Qiyam — messages spéciaux
