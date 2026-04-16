@@ -783,7 +783,7 @@ function renderRamadan() {
 }
 const SAVAIS_TU = [
   'Le Coran contient 6236 versets, 114 sourates et 30 juz. — Coran',
-  'Le mot "Allah" apparaît 2698 fois dans le Coran. — Coran',
+  'Le nom Allah est l\'un des mots les plus fréquents du Coran. — Coran',
   'La sourate Al-Fatiha est appelée "la mère du Coran" (Umm al-Kitab). — Bukhari 4474',
   'Le Prophète ﷺ jeûnait les lundis et jeudis car les actes sont présentés à Allah ces jours-là. — Tirmidhi 747',
   'La première mosquée construite dans l\'Islam est la mosquée de Quba à Médine. — Histoire islamique',
@@ -900,7 +900,7 @@ const SAVAIS_TU = [
   'Le Prophète ﷺ buvait l\'eau en trois gorgées et ne soufflait jamais dans le récipient. — Bukhari 5631',
   'L\'Alhambra de Grenade est l\'un des plus beaux exemples d\'architecture islamique au monde. — Histoire islamique',
   'Le Prophète ﷺ a dit : "Chaque articulation du corps humain doit s\'acquitter d\'une aumône chaque jour." — Bukhari 2989',
-  'Le Prophète ﷺ n\'a jamais dit "non" quand on lui demandait quelque chose. — Bukhari 3563',
+  'Le Prophète ﷺ n\'a jamais refusé une demande de don ou de charité. — Bukhari 3563',
   'Les chiffres romains ont été remplacés en Europe par les chiffres arabes grâce à Fibonacci qui les apprit des musulmans. — Histoire des sciences',
   'Le Prophète ﷺ a dit : "Le siwak purifie la bouche et satisfait le Seigneur." — Bukhari 887',
   'Le Prophète ﷺ a dit : "La meilleure invocation est celle du jour de Arafa." — Tirmidhi 3585',
