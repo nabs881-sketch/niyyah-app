@@ -3364,16 +3364,21 @@ let _coranSourate = null;
 let _coranPlaying = false;
 function openCoranPicker(event) {
   if (event) event.stopPropagation();
-  document.getElementById('coranOverlay').style.opacity = '1';
-  document.getElementById('coranOverlay').style.pointerEvents = 'all';
-  document.getElementById('coranDrawer').style.transform = 'translateY(0)';
-  document.getElementById('coranSearch').value = '';
+  var _ov = document.getElementById('coranOverlay');
+  var _dr = document.getElementById('coranDrawer');
+  var _sr = document.getElementById('coranSearch');
+  if (!_ov || !_dr) return;
+  _ov.style.opacity = '1';
+  _ov.style.pointerEvents = 'all';
+  _dr.style.transform = 'translateY(0)';
+  if (_sr) _sr.value = '';
   renderSourateList(SOURATES);
 }
 function closeCoranPicker() {
-  document.getElementById('coranOverlay').style.opacity = '0';
-  document.getElementById('coranOverlay').style.pointerEvents = 'none';
-  document.getElementById('coranDrawer').style.transform = 'translateY(100%)';
+  var _ov = document.getElementById('coranOverlay');
+  var _dr = document.getElementById('coranDrawer');
+  if (_ov) { _ov.style.opacity = '0'; _ov.style.pointerEvents = 'none'; }
+  if (_dr) _dr.style.transform = 'translateY(100%)';
 }
 function filterSourates(q) {
   const filtered = SOURATES.filter(s =>
@@ -3386,6 +3391,7 @@ function filterSourates(q) {
 }
 function renderSourateList(list) {
   const el = document.getElementById('coranList');
+  if (!el) return;
   el.innerHTML = list.map(s => {
     const active = _coranSourate && _coranSourate[0] === s[0];
     return '<div onclick="playSourate(' + s[0] + ')" style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:12px;margin:2px 0;background:' + (active ? 'rgba(200,168,75,0.1)' : 'transparent') + ';border:1px solid ' + (active ? 'rgba(200,168,75,0.3)' : 'transparent') + ';cursor:pointer;">'
@@ -3405,8 +3411,10 @@ function playSourate(num) {
   _coranSourate = sourate;
   _coranIdx = 0;
   _coranPlaying = true;
-  document.getElementById('coranPlayer').style.display = 'block';
-  document.getElementById('coranPlayerName').textContent = sourate[1] + ' — ' + sourate[2];
+  var _playerEl = document.getElementById('coranPlayer');
+  var _nameEl = document.getElementById('coranPlayerName');
+  if (_playerEl) _playerEl.style.display = 'block';
+  if (_nameEl) _nameEl.textContent = sourate[1] + ' — ' + sourate[2];
   renderSourateList(SOURATES.filter(s => {
     const q = document.getElementById('coranSearch').value;
     return !q || s[1].toLowerCase().includes(q.toLowerCase()) || s[3].toLowerCase().includes(q.toLowerCase());
@@ -3416,17 +3424,19 @@ function playSourate(num) {
 function _playCoranVerset() {
   if (!_coranSourate || !_coranPlaying) return;
   const total = _coranSourate[4];
+  var _playBtn = document.getElementById('coranPlayBtn');
+  var _versetEl = document.getElementById('coranPlayerVerset');
   if (_coranIdx >= total) {
     _coranPlaying = false;
-    document.getElementById('coranPlayBtn').textContent = '▶';
-    document.getElementById('coranPlayerVerset').textContent = 'Terminé — Alhamdulillah 🌿';
+    if (_playBtn) _playBtn.textContent = '▶';
+    if (_versetEl) _versetEl.textContent = 'Terminé — Alhamdulillah 🌿';
     return;
   }
   const num = String(_coranSourate[0]).padStart(3,'0');
   const ver = String(_coranIdx + 1).padStart(3,'0');
   const url = 'https://everyayah.com/data/Alafasy_128kbps/' + num + ver + '.mp3';
-  document.getElementById('coranPlayerVerset').textContent = 'Verset ' + (_coranIdx+1) + ' / ' + total;
-  document.getElementById('coranPlayBtn').textContent = '⏸';
+  if (_versetEl) _versetEl.textContent = 'Verset ' + (_coranIdx+1) + ' / ' + total;
+  if (_playBtn) _playBtn.textContent = '⏸';
   if (_coranAudio) { _coranAudio.pause(); _coranAudio = null; }
   const audio = new Audio();
   _coranAudio = audio;
@@ -3438,14 +3448,15 @@ function _playCoranVerset() {
 }
 function toggleCoranPlay() {
   if (!_coranAudio) return;
+  var _btn = document.getElementById('coranPlayBtn');
   if (_coranPlaying) {
     _coranAudio.pause();
     _coranPlaying = false;
-    document.getElementById('coranPlayBtn').textContent = '▶';
+    if (_btn) _btn.textContent = '▶';
   } else {
     _coranAudio.play();
     _coranPlaying = true;
-    document.getElementById('coranPlayBtn').textContent = '⏸';
+    if (_btn) _btn.textContent = '⏸';
   }
 }
 function stopCoranPlayer() {
@@ -3453,8 +3464,10 @@ function stopCoranPlayer() {
   _coranPlaying = false;
   _coranSourate = null;
   _coranIdx = 0;
-  document.getElementById('coranPlayer').style.display = 'none';
-  document.getElementById('coranPlayBtn').textContent = '▶';
+  var _playerEl = document.getElementById('coranPlayer');
+  var _btn = document.getElementById('coranPlayBtn');
+  if (_playerEl) _playerEl.style.display = 'none';
+  if (_btn) _btn.textContent = '▶';
 }
 // ── MÉDITATION ──
 let _meditDuration = 3 * 60;
