@@ -3261,6 +3261,7 @@ div#v2-stats-row > div {
 }
 .onboard-screen {
   flex-wrap: wrap !important;
+  background: #0a0a0a !important;
 }
 .onboard-screen #onboardContent {
   order: 0;
