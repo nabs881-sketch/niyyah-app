@@ -5909,7 +5909,7 @@ function updateFajrChallenge() {
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#E8DCC0;">Gardien de Fajr ✦</div>'
       + '</div>';
   } else {
-    card.innerHTML = '<div style="background:#1a1a1a;border:1px solid rgba(200,168,75,0.3);border-radius:14px;padding:14px 18px;height:90px;box-sizing:border-box;overflow:visible;position:relative;display:flex;align-items:center;">'
+    card.innerHTML = '<div style="background:#1a1a1a;border:1px solid rgba(200,168,75,0.3);border-radius:14px;padding:14px 18px;min-height:90px;box-sizing:border-box;position:relative;display:flex;align-items:center;">'
       + '<div style="display:flex;align-items:center;gap:12px;width:100%;">'
       + '<div><img src="https://nabs881-sketch.github.io/niyyah-app/imagessoleil.png" alt="Soleil" style="width:60px;height:auto;display:block;flex-shrink:0;mix-blend-mode:screen;"></div>'
       + '<div style="flex:1;text-align:left;">'
