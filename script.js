@@ -4855,16 +4855,16 @@ const APP_VERSION = '2.0'; if (localStorage.getItem('niyyah_version') !== APP_VE
 const _onboardDone = localStorage.getItem('niyyah_onboard') === '1';
 const ONBOARD_SLIDES = [
   () => `
-    <div class="onboard-anim"><div class="onboard-logo-wrap"><div class="onboard-logo-halo"><img src="https://nabs881-sketch.github.io/niyyah-app/imageslogo.png" alt="Niyyah" style="width:150px;height:auto;display:block;margin:0 auto;"></div><div class="onboard-particle" style="--d:0s;--x:-40px;--y:-30px;">✦</div><div class="onboard-particle" style="--d:0.8s;--x:45px;--y:-20px;">✦</div><div class="onboard-particle" style="--d:1.6s;--x:-30px;--y:35px;">✦</div><div class="onboard-particle" style="--d:2.4s;--x:35px;--y:40px;">✦</div><div class="onboard-particle" style="--d:3.2s;--x:0px;--y:-45px;">✦</div></div><div class="onboard-logo">Niyyah Daily</div><div class="onboard-tagline">نِيَّة · Pose ton intention</div><div class="onboard-title">Ta pratique spirituelle,<br>chaque jour</div><div class="onboard-sub">Niyyah t\'accompagne dans ton chemin vers Allah — à ton rythme, sans jugement.</div><button class="onboard-btn" onclick="onboardNext()">Commencer →</button><button class="onboard-skip" onclick="onboardFinish()">Passer</button></div>`,
+    <div class="onboard-anim"><div class="onboard-logo-wrap"><div class="onboard-logo-halo"><img src="https://nabs881-sketch.github.io/niyyah-app/imageslogo.png" alt="Niyyah" style="width:150px;height:auto;display:block;margin:0 auto;"></div><div class="onboard-particle" style="--d:0s;--x:-40px;--y:-30px;">✦</div><div class="onboard-particle" style="--d:0.8s;--x:45px;--y:-20px;">✦</div><div class="onboard-particle" style="--d:1.6s;--x:-30px;--y:35px;">✦</div><div class="onboard-particle" style="--d:2.4s;--x:35px;--y:40px;">✦</div><div class="onboard-particle" style="--d:3.2s;--x:0px;--y:-45px;">✦</div></div><div class="onboard-logo">Niyyah Daily</div><div class="onboard-tagline">${t('onboard_tagline')}</div><div class="onboard-title">${t('onboard_title1')}</div><div class="onboard-sub">${t('onboard_sub1')}</div><button class="onboard-btn" onclick="onboardNext()">${t('onboard_start')}</button><button class="onboard-skip" onclick="onboardFinish()">${t('onboard_skip')}</button></div>`,
   () => `
-    <div class="onboard-anim"><div style="text-align:center;margin-bottom:16px;"><img src="https://nabs881-sketch.github.io/niyyah-app/imagescamera.png" alt="Scanner" style="width:100px;height:auto;display:block;margin:0 auto;"></div><div class="onboard-title">Le Scanner de Niyyah</div><div class="onboard-sub" style="margin-bottom:24px;">Pose ton regard sur un objet du quotidien — le Scanner te proposera une intention spirituelle pour le sacraliser.</div><div style="background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.15);border-radius:14px;padding:16px;margin-bottom:20px;text-align:center;"><div style="font-size:13px;color:rgba(255,255,255,0.7);line-height:1.6;">Ton verre d'eau, ton stylo, ton miroir...<br>Chaque objet peut porter une niyyah.</div></div><button class="onboard-btn" onclick="onboardNext()">Suivant →</button><button class="onboard-skip" onclick="onboardFinish()">Passer</button></div>`,
+    <div class="onboard-anim"><div style="text-align:center;margin-bottom:16px;"><img src="https://nabs881-sketch.github.io/niyyah-app/imagescamera.png" alt="Scanner" style="width:100px;height:auto;display:block;margin:0 auto;"></div><div class="onboard-title">${t('onboard_title2')}</div><div class="onboard-sub" style="margin-bottom:24px;">${t('onboard_sub2')}</div><div style="background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.15);border-radius:14px;padding:16px;margin-bottom:20px;text-align:center;"><div style="font-size:13px;color:rgba(255,255,255,0.7);line-height:1.6;">${t('onboard_scanner_hint')}</div></div><button class="onboard-btn" onclick="onboardNext()">${t('onboard_next')}</button><button class="onboard-skip" onclick="onboardFinish()">${t('onboard_skip')}</button></div>`,
   () => `
-    <div class="onboard-anim"><div class="onboard-title">4 niveaux de pratique</div><div class="onboard-sub" style="margin-bottom:24px;">Progresse à ton rythme — chaque niveau se débloque quand tu es prêt.</div><div class="onboard-levels"><div class="onboard-level"><div class="onboard-level-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M22 6a10 10 0 1 0 0 16A8 8 0 0 1 22 6z" fill="#C8A84A"/></svg></div><div><div class="onboard-level-name">Fondations</div><div class="onboard-level-desc">Les 5 prières · Dhikr · Récitation</div></div></div><div class="onboard-level"><div class="onboard-level-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 2l3.09 6.26L24 9.27l-5 4.87L20.18 21 14 17.27 7.82 21 9 14.14l-5-4.87 6.91-1.01L14 2z" fill="#C8A84A"/></svg></div><div><div class="onboard-level-name">Approfondissement</div><div class="onboard-level-desc">Mosquée · Istighfar · Tasbih</div></div></div><div class="onboard-level"><div class="onboard-level-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M4 4h8v20H4z" fill="#C8A84A" opacity="0.7"/><path d="M16 4h8v20h-8z" fill="#C8A84A"/><path d="M12 4v20h4V4z" fill="#C8A84A" opacity="0.5"/></svg></div><div><div class="onboard-level-name">Connaissance</div><div class="onboard-level-desc">Hadiths · Coran · Arabe</div></div></div><div class="onboard-level"><div class="onboard-level-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 4c-3 0-6 2-6 5 0 2 1 3 2 4l4 3 4-3c1-1 2-2 2-4 0-3-3-5-6-5z" fill="#C8A84A" opacity="0.8"/><path d="M6 18c0 0 2-1 8-1s8 1 8 1v4c0 1-1 2-2 2H8c-1 0-2-1-2-2v-4z" fill="#C8A84A"/></svg></div><div><div class="onboard-level-name">Rayonnement</div><div class="onboard-level-desc">Sadaqa · Salam · Douaas</div></div></div></div><button class="onboard-btn" onclick="onboardNext()">Suivant →</button><button class="onboard-skip" onclick="onboardFinish()">Passer</button></div>`,
+    <div class="onboard-anim"><div class="onboard-title">${t('onboard_title3')}</div><div class="onboard-sub" style="margin-bottom:24px;">${t('onboard_sub3')}</div><div class="onboard-levels"><div class="onboard-level"><div class="onboard-level-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M22 6a10 10 0 1 0 0 16A8 8 0 0 1 22 6z" fill="#C8A84A"/></svg></div><div><div class="onboard-level-name">${t('onboard_lvl1')}</div><div class="onboard-level-desc">${t('onboard_lvl1_desc')}</div></div></div><div class="onboard-level"><div class="onboard-level-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 2l3.09 6.26L24 9.27l-5 4.87L20.18 21 14 17.27 7.82 21 9 14.14l-5-4.87 6.91-1.01L14 2z" fill="#C8A84A"/></svg></div><div><div class="onboard-level-name">${t('onboard_lvl2')}</div><div class="onboard-level-desc">${t('onboard_lvl2_desc')}</div></div></div><div class="onboard-level"><div class="onboard-level-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M4 4h8v20H4z" fill="#C8A84A" opacity="0.7"/><path d="M16 4h8v20h-8z" fill="#C8A84A"/><path d="M12 4v20h4V4z" fill="#C8A84A" opacity="0.5"/></svg></div><div><div class="onboard-level-name">${t('onboard_lvl3')}</div><div class="onboard-level-desc">${t('onboard_lvl3_desc')}</div></div></div><div class="onboard-level"><div class="onboard-level-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 4c-3 0-6 2-6 5 0 2 1 3 2 4l4 3 4-3c1-1 2-2 2-4 0-3-3-5-6-5z" fill="#C8A84A" opacity="0.8"/><path d="M6 18c0 0 2-1 8-1s8 1 8 1v4c0 1-1 2-2 2H8c-1 0-2-1-2-2v-4z" fill="#C8A84A"/></svg></div><div><div class="onboard-level-name">${t('onboard_lvl4')}</div><div class="onboard-level-desc">${t('onboard_lvl4_desc')}</div></div></div></div><button class="onboard-btn" onclick="onboardNext()">${t('onboard_next')}</button><button class="onboard-skip" onclick="onboardFinish()">${t('onboard_skip')}</button></div>`,
   () => `
-    <div class="onboard-anim"><div style="margin:0 auto 20px;"><img src="https://nabs881-sketch.github.io/niyyah-app/imageslogo.png" alt="Niyyah" style="width:150px;height:auto;display:block;margin:0 auto;"></div><div class="onboard-title">Tes horaires de prière</div><div class="onboard-sub">Entre ta ville pour afficher les horaires de Fajr, Dhuhr, Asr, Maghrib et Isha chaque jour.</div><div class="city-input-wrap" style="max-width:300px;margin-bottom:16px;"><input class="city-input" id="onboardCityInput" type="text"
-          placeholder="Ex: Paris, Orléans, Casablanca..."
-          
-          onkeydown="if(event.key==='Enter')onboardSaveCity()"><button class="city-input-btn" onclick="onboardSaveCity()">OK</button></div><button class="onboard-btn" onclick="onboardFinish()" style="max-width:300px;">C'est parti — Bismillah 🌿</button><button class="onboard-skip" onclick="onboardFinish()">Plus tard</button></div>`
+    <div class="onboard-anim"><div style="margin:0 auto 20px;"><img src="https://nabs881-sketch.github.io/niyyah-app/imageslogo.png" alt="Niyyah" style="width:150px;height:auto;display:block;margin:0 auto;"></div><div class="onboard-title">${t('onboard_title4')}</div><div class="onboard-sub">${t('onboard_sub4')}</div><div class="city-input-wrap" style="max-width:300px;margin-bottom:16px;"><input class="city-input" id="onboardCityInput" type="text"
+          placeholder="${t('onboard_city_placeholder')}"
+
+          onkeydown="if(event.key==='Enter')onboardSaveCity()"><button class="city-input-btn" onclick="onboardSaveCity()">OK</button></div><button class="onboard-btn" onclick="onboardFinish()" style="max-width:300px;">${t('onboard_go')}</button><button class="onboard-skip" onclick="onboardFinish()">${t('onboard_later')}</button></div>`
 ];
 function onboardRender() {
   const content = document.getElementById('onboardContent');
@@ -5095,8 +5095,14 @@ const V2_I18N = {
     // Onboarding
     onboard_start: 'Commencer →', onboard_next: 'Suivant →', onboard_skip: 'Passer', onboard_later: 'Plus tard', onboard_go: 'C\'est parti — Bismillah 🌿',
     onboard_title1: 'Ta pratique spirituelle,<br>chaque jour', onboard_sub1: 'Niyyah t\'accompagne dans ton chemin vers Allah — à ton rythme, sans jugement.',
+    onboard_tagline: 'نِيَّة · Pose ton intention',
     onboard_title2: 'Le Scanner de Niyyah', onboard_sub2: 'Pose ton regard sur un objet du quotidien — le Scanner te proposera une intention spirituelle pour le sacraliser.',
+    onboard_scanner_hint: 'Ton verre d\'eau, ton stylo, ton miroir...<br>Chaque objet peut porter une niyyah.',
     onboard_title3: '4 niveaux de pratique', onboard_sub3: 'Progresse à ton rythme — chaque niveau se débloque quand tu es prêt.',
+    onboard_lvl1: 'Fondations', onboard_lvl1_desc: 'Les 5 prières · Dhikr · Récitation',
+    onboard_lvl2: 'Approfondissement', onboard_lvl2_desc: 'Mosquée · Istighfar · Tasbih',
+    onboard_lvl3: 'Connaissance', onboard_lvl3_desc: 'Hadiths · Coran · Arabe',
+    onboard_lvl4: 'Rayonnement', onboard_lvl4_desc: 'Sadaqa · Salam · Douaas',
     onboard_title4: 'Tes horaires de prière', onboard_sub4: 'Entre ta ville pour afficher les horaires de Fajr, Dhuhr, Asr, Maghrib et Isha chaque jour.',
     onboard_city_placeholder: 'Ex: Paris, Orléans, Casablanca...',
     // Night companion
@@ -5199,8 +5205,14 @@ const V2_I18N = {
     mentor_offered: 'question still offered ✦', mentor_offered_p: 'questions still offered ✦', mentor_tomorrow: 'Come back tomorrow insha\'Allah 🌙',
     onboard_start: 'Start →', onboard_next: 'Next →', onboard_skip: 'Skip', onboard_later: 'Later', onboard_go: 'Let\'s go — Bismillah 🌿',
     onboard_title1: 'Your spiritual practice,<br>every day', onboard_sub1: 'Niyyah walks with you on your path to Allah — at your pace, without judgment.',
+    onboard_tagline: 'نِيَّة · Set your intention',
     onboard_title2: 'The Niyyah Scanner', onboard_sub2: 'Look at an everyday object — the Scanner will suggest a spiritual intention to sanctify it.',
+    onboard_scanner_hint: 'Your glass of water, your pen, your mirror...<br>Every object can carry a niyyah.',
     onboard_title3: '4 levels of practice', onboard_sub3: 'Progress at your pace — each level unlocks when you\'re ready.',
+    onboard_lvl1: 'Foundations', onboard_lvl1_desc: '5 daily prayers · Dhikr · Recitation',
+    onboard_lvl2: 'Deepening', onboard_lvl2_desc: 'Mosque · Istighfar · Tasbih',
+    onboard_lvl3: 'Knowledge', onboard_lvl3_desc: 'Hadiths · Quran · Arabic',
+    onboard_lvl4: 'Radiance', onboard_lvl4_desc: 'Sadaqa · Salam · Duas',
     onboard_title4: 'Your prayer times', onboard_sub4: 'Enter your city to display Fajr, Dhuhr, Asr, Maghrib and Isha times each day.',
     onboard_city_placeholder: 'e.g. London, New York, Dubai...',
     night_title: 'What thought closes your day?', night_placeholder: 'Write your evening thought...', night_send: 'SEND', night_sagesse: 'NIGHT WISDOM',
@@ -5297,7 +5309,13 @@ const V2_I18N = {
     mentor_offered: 'سُؤَالٌ مَجَّانِيٌّ مُتَبَقٍّ ✦', mentor_offered_p: 'أَسْئِلَةٌ مَجَّانِيَّةٌ مُتَبَقِّيَةٌ ✦', mentor_tomorrow: 'عُدْ غَدًا إِنْ شَاءَ اللَّهُ 🌙',
     onboard_start: '← ابْدَأْ', onboard_next: '← التَّالِي', onboard_skip: 'تَخَطَّ', onboard_later: 'لَاحِقًا', onboard_go: 'بِسْمِ اللَّهِ — هَيَّا بِنَا 🌿',
     onboard_title1: 'عِبَادَتُكَ الرُّوحِيَّةُ<br>كُلَّ يَوْمٍ', onboard_sub1: 'نِيَّة تُرَافِقُكَ فِي طَرِيقِكَ إِلَى اللَّهِ — بِوَتِيرَتِكَ وَبِدُونِ حُكْمٍ.',
+    onboard_tagline: 'نِيَّة · عَقْدُ النِّيَّةِ',
     onboard_title2: 'مَاسِحُ النِّيَّةِ', onboard_sub2: 'انْظُرْ إِلَى شَيْءٍ يَوْمِيٍّ — سَيَقْتَرِحُ الْمَاسِحُ نِيَّةً رُوحِيَّةً لِتَقْدِيسِهِ.',
+    onboard_scanner_hint: 'كُوبُ الْمَاءِ، قَلَمُكَ، مِرْآتُكَ...<br>كُلُّ شَيْءٍ يُمْكِنُ أَنْ يَحْمِلَ نِيَّةً.',
+    onboard_lvl1: 'الْأَسَاسُ', onboard_lvl1_desc: 'الصَّلَوَاتُ الْخَمْسُ · الذِّكْرُ · التِّلَاوَةُ',
+    onboard_lvl2: 'التَّعَمُّقُ', onboard_lvl2_desc: 'الْمَسْجِدُ · الِاسْتِغْفَارُ · التَّسْبِيحُ',
+    onboard_lvl3: 'الْمَعْرِفَةُ', onboard_lvl3_desc: 'الْأَحَادِيثُ · الْقُرْآنُ · الْعَرَبِيَّةُ',
+    onboard_lvl4: 'الْإِشْعَاعُ', onboard_lvl4_desc: 'الصَّدَقَةُ · السَّلَامُ · الدُّعَاءُ',
     onboard_title3: '٤ مُسْتَوَيَاتٍ لِلْعِبَادَةِ', onboard_sub3: 'تَقَدَّمْ بِوَتِيرَتِكَ — كُلُّ مُسْتَوًى يُفْتَحُ عِنْدَمَا تَكُونُ جَاهِزًا.',
     onboard_title4: 'مَوَاقِيتُ صَلَاتِكَ', onboard_sub4: 'أَدْخِلْ مَدِينَتَكَ لِعَرْضِ مَوَاقِيتِ الْفَجْرِ وَالظُّهْرِ وَالْعَصْرِ وَالْمَغْرِبِ وَالْعِشَاءِ.',
     onboard_city_placeholder: 'مثال: الرياض، الدار البيضاء، باريس...',
@@ -6245,7 +6263,15 @@ function checkNightCompanion() {
   var todayKey = new Date().toISOString().split('T')[0];
   if (localStorage.getItem('niyyah_compagnon_date') === todayKey) return;
   var overlay = document.getElementById('night-companion-overlay');
-  if (overlay) overlay.style.display = 'block';
+  if (overlay) {
+    overlay.style.display = 'block';
+    var _ntTitle = document.getElementById('night-title-text');
+    var _ntInput = document.getElementById('night-thought-input');
+    var _ntBtn = document.getElementById('night-send-btn');
+    if (_ntTitle) _ntTitle.textContent = t('night_title');
+    if (_ntInput) _ntInput.placeholder = t('night_placeholder');
+    if (_ntBtn) _ntBtn.textContent = t('night_send');
+  }
 }
 function closeNightCompanion() {
   var overlay = document.getElementById('night-companion-overlay');
@@ -6303,6 +6329,8 @@ function showMorningSagesse() {
   var block = getCurrentPrayerBlock();
   if (block.id === 'isha' || block.id === 'nuit' || block.id === 'qiyam') { card.style.display = 'none'; return; }
   card.style.display = 'block';
+  var labelEl = document.getElementById('morning-wisdom-label');
+  if (labelEl) labelEl.textContent = t('night_sagesse');
   var textEl = document.getElementById('morning-wisdom-text');
   var sourceEl = document.getElementById('morning-wisdom-source');
   if (textEl) textEl.textContent = '« ' + sagesse.text + ' »';
