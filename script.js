@@ -2232,6 +2232,95 @@ function spawnRipple(el, event) {
   el.appendChild(ripple);
   ripple.addEventListener('animationend', () => ripple.remove(), { once: true });
 }
+/* ── Premium Particle Burst ── */
+function spawnPremiumBurst(cx, cy) {
+  var canvas = document.createElement('canvas');
+  canvas.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;z-index:99998;pointer-events:none;';
+  canvas.width = window.innerWidth * 2;
+  canvas.height = window.innerHeight * 2;
+  document.body.appendChild(canvas);
+  var ctx = canvas.getContext('2d');
+  ctx.scale(2, 2);
+  var ox = cx, oy = cy;
+  var particles = [];
+  var colors = ['#C8A84A', '#E0C870', '#D4AF37', '#F0E6B0', '#B8940A'];
+  // Spawn particles
+  for (var i = 0; i < 28; i++) {
+    var angle = (Math.PI * 2 * i / 28) + (Math.random() - 0.5) * 0.6;
+    var speed = 2.5 + Math.random() * 4;
+    var isStar = Math.random() < 0.3;
+    particles.push({
+      x: ox, y: oy,
+      vx: Math.cos(angle) * speed,
+      vy: Math.sin(angle) * speed - 2 - Math.random() * 3,
+      size: isStar ? 0 : 3 + Math.random() * 5,
+      star: isStar,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      alpha: 1,
+      rotation: Math.random() * Math.PI * 2,
+      rotSpeed: (Math.random() - 0.5) * 0.2,
+      trail: []
+    });
+  }
+  // Ring wave
+  var ring = { r: 0, alpha: 0.6 };
+  var startTime = performance.now();
+  var duration = 1200;
+  function frame(now) {
+    var elapsed = now - startTime;
+    if (elapsed > duration) { canvas.remove(); return; }
+    var t = elapsed / duration;
+    ctx.clearRect(0, 0, canvas.width / 2, canvas.height / 2);
+    // Ring wave
+    ring.r = t * 80;
+    ring.alpha = 0.6 * (1 - t);
+    ctx.beginPath();
+    ctx.arc(ox, oy, ring.r, 0, Math.PI * 2);
+    ctx.strokeStyle = 'rgba(200,168,75,' + ring.alpha + ')';
+    ctx.lineWidth = 2 * (1 - t);
+    ctx.stroke();
+    // Particles
+    particles.forEach(function(p) {
+      p.trail.push({ x: p.x, y: p.y, alpha: p.alpha * 0.4 });
+      if (p.trail.length > 6) p.trail.shift();
+      p.vy += 0.12; // gravity
+      p.vx *= 0.985;
+      p.x += p.vx;
+      p.y += p.vy;
+      p.rotation += p.rotSpeed;
+      p.alpha = Math.max(0, 1 - t * 1.2);
+      // Trail
+      p.trail.forEach(function(tr, ti) {
+        var ta = tr.alpha * (ti / p.trail.length) * (1 - t);
+        ctx.beginPath();
+        ctx.arc(tr.x, tr.y, p.size * 0.4, 0, Math.PI * 2);
+        ctx.fillStyle = p.color.replace(')', ',' + ta + ')').replace('rgb', 'rgba').replace('#', '');
+        ctx.fillStyle = 'rgba(200,168,75,' + ta + ')';
+        ctx.fill();
+      });
+      // Particle
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.rotation);
+      ctx.globalAlpha = p.alpha;
+      if (p.star) {
+        ctx.fillStyle = p.color;
+        ctx.font = (10 + Math.random() * 4) + 'px serif';
+        ctx.textAlign = 'center';
+        ctx.fillText('✦', 0, 0);
+      } else {
+        ctx.beginPath();
+        ctx.arc(0, 0, p.size * (0.5 + 0.5 * (1 - t)), 0, Math.PI * 2);
+        ctx.fillStyle = p.color;
+        ctx.fill();
+      }
+      ctx.restore();
+    });
+    ctx.globalAlpha = 1;
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+}
 function toggleItem(id, event) {
   // Ignorer si le tap vient d'un bouton audio ou info
   if (event && event.target && (
@@ -2253,6 +2342,7 @@ function toggleItem(id, event) {
       setTimeout(() => el.classList.remove('celebrate'), 400);
       if (navigator.vibrate) navigator.vibrate([12, 8, 25]);
       playCheckSound();
+      if (event) spawnPremiumBurst(event.clientX || event.touches?.[0]?.clientX || 0, event.clientY || event.touches?.[0]?.clientY || 0);
       if (id === 'jumua') {
         if (!history.jumuahDays) history.jumuahDays = {};
         if (!history.jumuahDays[TODAY]) {
