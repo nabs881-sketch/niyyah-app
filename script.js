@@ -5781,7 +5781,7 @@ function v2OpenNiyyahModal() {
   // 5ème intention cachée — إخلاص (streak >= 30, premium only)
   var _ikhlasStreak = 0;
   try { _ikhlasStreak = JSON.parse(localStorage.getItem('spiritual_history') || '{}').streak || 0; } catch(e) {}
-  if (_ikhlasStreak >= 0) { // TODO: remettre >= 30 && isPremium() après test
+  if (_ikhlasStreak >= 30 && typeof isPremium === 'function' && isPremium()) {
     var ikhlasUnlocked = localStorage.getItem('niyyah_ikhlas_unlocked');
     var ikhlasBtn = document.createElement('button');
     ikhlasBtn.className = 'intention-opt-v2 intention-ikhlas';
