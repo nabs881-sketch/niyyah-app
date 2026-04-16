@@ -7567,7 +7567,7 @@ function scannerShareCard() {
   var overlay = document.createElement('div');
   overlay.id = 'card-preview-overlay';
   overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;z-index:99999;background:rgba(0,0,0,0.92);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;box-sizing:border-box;';
-  overlay.innerHTML = '<img src="' + dataUrl + '" style="max-width:90%;max-height:60vh;border-radius:16px;border:1px solid rgba(200,168,75,0.3);margin-bottom:20px;">'
+  overlay.innerHTML = '<img src="' + dataUrl + '" style="width:90vw;height:90vw;object-fit:contain;border-radius:16px;border:1px solid rgba(200,168,75,0.3);margin-bottom:20px;">'
     + '<div style="display:flex;gap:12px;">'
     + '<button id="card-share-btn" style="padding:14px 28px;background:#C8A84A;color:#000;font-family:\'Cinzel\',serif;font-size:12px;font-weight:700;letter-spacing:2px;border:none;border-radius:12px;cursor:pointer;">PARTAGER ✦</button>'
     + '<button id="card-close-btn" style="padding:14px 28px;background:transparent;color:rgba(255,255,255,0.5);font-family:\'Cinzel\',serif;font-size:12px;letter-spacing:2px;border:1px solid rgba(255,255,255,0.15);border-radius:12px;cursor:pointer;">FERMER</button>'
