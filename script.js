@@ -5937,7 +5937,7 @@ function updateFajrChallenge() {
 function checkNightCompanion() {
   if (typeof isPremium !== 'function' || !isPremium()) return;
   var block = getCurrentPrayerBlock();
-  if (block.id !== 'isha' && block.id !== 'nuit' && block.id !== 'qiyam') return;
+  if (block.id !== 'isha' && block.id !== 'nuit' && block.id !== 'qiyam' && block.id !== 'asr') return; // TODO: retirer 'asr' après test
   var todayKey = new Date().toISOString().split('T')[0];
   var sagesse = null;
   try { sagesse = JSON.parse(localStorage.getItem('niyyah_sagesse_nuit') || 'null'); } catch(e) {}
