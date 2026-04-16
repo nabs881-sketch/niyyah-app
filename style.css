@@ -2123,16 +2123,29 @@ body::before {
   padding: calc(var(--safe-top, 0px) + 14px) 18px 12px;
   background: rgba(10,10,10,0.97);
   border-bottom: 1px solid rgba(212,175,55,0.12);
-  display: flex; align-items: center; justify-content: space-between;
+  display: flex; align-items: center; gap: 12px;
 }
-.mentor-header-left { display: flex; flex-direction: column; gap: 2px; }
+.mentor-header-center { flex: 1; text-align: center; display: flex; flex-direction: column; gap: 3px; align-items: center; }
 .mentor-header-title {
   font-family: 'Cinzel', serif;
-  font-size: 17px; letter-spacing: 0.2em; color: #D4AF37;
+  font-size: 16px; letter-spacing: 0.2em; color: #C8A84A;
 }
 .mentor-header-sub {
   font-family: 'Cormorant Garamond', serif;
   font-size: 12px; font-style: italic; color: rgba(240,234,214,0.38);
+}
+#view-mentor #mentor-premium-status {
+  display: inline-block !important;
+  background: rgba(52,217,98,0.15) !important;
+  border: 1px solid rgba(52,217,98,0.3) !important;
+  color: var(--green) !important;
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  border-radius: 20px !important;
+  padding: 3px 10px !important;
+  margin-top: 4px !important;
+  opacity: 1 !important;
+  letter-spacing: 0.05em !important;
 }
 .mentor-header-back {
   width: 36px; height: 36px; border-radius: 50%;
