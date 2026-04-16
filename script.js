@@ -1065,7 +1065,7 @@ const LEVELS = [
         { label: 'Vie du Prophète ﷺ', sub: "La vie du Prophète Mohammad ﷺ · Podcast", url: 'https://podcasts.apple.com/fr/podcast/la-vie-du-proph%C3%A8te-mohammad-%EF%B7%BA/id1804853747', icon: '🎙' },
         { label: 'Islam Simplement', sub: 'Podcast · Écouter maintenant', url: 'https://open.spotify.com/search/islam%20simplement', icon: '🎙' },
         { label: "L'Arabe Simplement", sub: 'Chaîne YouTube · Arabe coranique', url: 'https://www.youtube.com/@larabesimplement', icon: '📖' },
-        { label: 'Sunnah.com', sub: 'Hadiths authentiques · Riyad as-Salihin', url: 'https://sunnah.com/riyadussalihin', icon: '📚' },
+        { label: 'Hadith Podcast', sub: 'Hadiths authentiques · YouTube', url: 'https://www.youtube.com/watch?v=G7xdRzxyK1k&list=PLuTJKEpEkfuU-Qo4m69wKGjCWb_p_uAij', icon: '🎙' },
       ]},
       { icon: '🌙', title: 'Pratiques avancées', items: [
         { id: 'sunnah_jejune', label: 'Jeûne sunnah', sub: 'Lundi ou jeudi — sunnah du Prophète', arabic: 'صَوْمُ الِاثْنَيْنِ وَالْخَمِيسِ', optional: true, block: 'jour', hadith: '\"Les actes sont présentés à Allah le lundi et jeudi, j\'aime jeûner ces jours-là\" — Tirmidhi 747', source: 'Tirmidhi 747' },
