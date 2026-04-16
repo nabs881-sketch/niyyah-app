@@ -7122,6 +7122,32 @@ async function scannerOpen() {
   _scannerResult = null;
 }
 
+/* ── Journal du Scanner ── */
+function openScannerJournal() {
+  var overlay = document.getElementById('scanner-journal-overlay');
+  var content = document.getElementById('scanner-journal-content');
+  if (!overlay || !content) return;
+  var hist = [];
+  try { hist = JSON.parse(localStorage.getItem('niyyah_scanner_history') || '[]'); } catch(e) {}
+  if (hist.length === 0) {
+    content.innerHTML = '<div style="text-align:center;padding:60px 20px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:#B0A080;">Tes intentions apparaîtront ici ✦</div></div>';
+  } else {
+    var html = '';
+    hist.forEach(function(entry) {
+      html += '<div style="padding:14px 0;border-bottom:1px solid rgba(200,168,75,0.1);">'
+        + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:#E8DCC0;line-height:1.6;">« ' + entry.text + ' »</div>'
+        + '<div style="font-size:10px;color:#B0A080;margin-top:6px;">' + entry.day + ' ' + entry.date + ' · ' + entry.time + '</div>'
+        + '</div>';
+    });
+    content.innerHTML = html;
+  }
+  overlay.style.display = 'block';
+}
+function closeScannerJournal() {
+  var overlay = document.getElementById('scanner-journal-overlay');
+  if (overlay) overlay.style.display = 'none';
+}
+
 /* ── Fermer le Scanner ── */
 function scannerClose() {
   const overlay = document.getElementById('scanner-overlay');

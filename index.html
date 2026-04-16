@@ -261,6 +261,18 @@
   <video id="scanner-video" autoplay playsinline muted></video>
   <canvas id="scanner-canvas"></canvas>
   <button id="scanner-close" onclick="scannerClose()">✕</button>
+  <button id="scanner-journal-btn" onclick="openScannerJournal()" style="position:absolute;top:16px;right:60px;z-index:20;background:transparent;border:1px solid rgba(200,168,75,0.3);border-radius:20px;padding:6px 14px;cursor:pointer;font-family:'Cinzel',serif;font-size:11px;color:#C8A84A;letter-spacing:2px;">Mon journal ✦</button>
+  <!-- Journal overlay -->
+  <div id="scanner-journal-overlay" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(10,10,10,0.97);overflow-y:auto;">
+    <div style="padding:calc(var(--safe-top,0px) + 16px) 20px 40px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;">
+        <div></div>
+        <div style="font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;color:#C8A84A;text-transform:uppercase;">Mon Journal</div>
+        <button onclick="closeScannerJournal()" style="background:transparent;border:1px solid rgba(200,168,75,0.3);border-radius:50%;width:36px;height:36px;color:#C8A84A;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;">✕</button>
+      </div>
+      <div id="scanner-journal-content"></div>
+    </div>
+  </div>
   <div id="scanner-orb"><div id="scanner-orb-inner">نية</div></div>
   <div id="scanner-ar-text">
     <div id="scanner-ar-tag">Niyyah · Reconnaissance</div>
