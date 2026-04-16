@@ -1247,6 +1247,7 @@ function spawnConfettiTafakkur(accentColor) {
   }
 }
 function switchView(name) {
+  document.body.classList.remove('mentor-active');
   if (name !== 'checklist') stopCompass();
   if (name === 'ramadan' && !ramadanState.active) {
     toggleRamadanMode();
