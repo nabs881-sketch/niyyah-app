@@ -5896,10 +5896,10 @@ function updateFajrChallenge() {
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#E8DCC0;">Gardien de Fajr ✦</div>'
       + '</div>';
   } else {
-    card.innerHTML = '<div style="background:#1a1a1a;border:1px solid rgba(200,168,75,0.3);border-radius:14px;padding:14px 18px;">'
-      + '<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">'
+    card.innerHTML = '<div style="background:#1a1a1a;border:1px solid rgba(200,168,75,0.3);border-radius:14px;padding:14px 18px;text-align:center;">'
+      + '<div style="display:flex;flex-direction:column;align-items:center;gap:8px;margin-bottom:10px;">'
       + '<div><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="22" r="8" fill="#C8A84A"/><line x1="20" y1="8" x2="20" y2="12" stroke="#C8A84A" stroke-width="2" stroke-linecap="round"/><line x1="10" y1="14" x2="12.8" y2="16.8" stroke="#C8A84A" stroke-width="2" stroke-linecap="round"/><line x1="30" y1="14" x2="27.2" y2="16.8" stroke="#C8A84A" stroke-width="2" stroke-linecap="round"/><line x1="6" y1="22" x2="10" y2="22" stroke="#C8A84A" stroke-width="2" stroke-linecap="round"/><line x1="30" y1="22" x2="34" y2="22" stroke="#C8A84A" stroke-width="2" stroke-linecap="round"/><line x1="6" y1="30" x2="34" y2="30" stroke="#C8A84A" stroke-width="2" stroke-linecap="round"/></svg></div>'
-      + '<div style="flex:1;">'
+      + '<div>'
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:600;color:#C8A84A;">Challenge 30 jours Fajr</div>'
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;font-style:italic;color:#B0A080;margin-top:2px;">Jour ' + fajrStreak + ' sur 30</div>'
       + '</div></div>'
