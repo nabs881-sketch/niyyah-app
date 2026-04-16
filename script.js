@@ -1995,6 +1995,7 @@ function getPrayerTimelineColor() {
   return '#7a2a2a';
 }
 function getCurrentPrayerBlock() {
+  var _t = typeof t === 'function' ? t : function(k) { return k || ''; };
   var now = new Date();
   var nowMin = now.getHours() * 60 + now.getMinutes();
   function toMin(str) {
@@ -2002,23 +2003,23 @@ function getCurrentPrayerBlock() {
     var p = str.replace(/ *\(.*\)/, '').split(':');
     return parseInt(p[0], 10) * 60 + parseInt(p[1], 10);
   }
-  if (!_prayerTimes) return { id: 'nuit', label: t('block_nuit') };
+  if (!_prayerTimes) return { id: 'nuit', label: _t('block_nuit') };
   var fajr = toMin(_prayerTimes['Fajr']);
   var dhuhr = toMin(_prayerTimes['Dhuhr']);
   var asr = toMin(_prayerTimes['Asr']);
   var maghrib = toMin(_prayerTimes['Maghrib']);
   var isha = toMin(_prayerTimes['Isha']);
-  if (fajr == null || dhuhr == null || asr == null || maghrib == null || isha == null) return { id: 'nuit', label: t('block_nuit') };
+  if (fajr == null || dhuhr == null || asr == null || maghrib == null || isha == null) return { id: 'nuit', label: _t('block_nuit') };
   if (nowMin < fajr) {
     var qiyamStart = Math.floor(fajr * 2 / 3);
-    if (nowMin >= qiyamStart) return { id: 'qiyam', label: t('block_qiyam') };
-    return { id: 'nuit', label: t('block_nuit') };
+    if (nowMin >= qiyamStart) return { id: 'qiyam', label: _t('block_qiyam') };
+    return { id: 'nuit', label: _t('block_nuit') };
   }
-  if (nowMin < dhuhr)   return { id: 'fajr',    label: t('block_fajr') };
-  if (nowMin < asr)     return { id: 'dhuhr',   label: t('block_dhuhr') };
-  if (nowMin < maghrib) return { id: 'asr',     label: t('block_asr') };
-  if (nowMin < isha)    return { id: 'maghrib', label: t('block_maghrib') };
-  return { id: 'isha', label: t('block_isha') };
+  if (nowMin < dhuhr)   return { id: 'fajr',    label: _t('block_fajr') };
+  if (nowMin < asr)     return { id: 'dhuhr',   label: _t('block_dhuhr') };
+  if (nowMin < maghrib) return { id: 'asr',     label: _t('block_asr') };
+  if (nowMin < isha)    return { id: 'maghrib', label: _t('block_maghrib') };
+  return { id: 'isha', label: _t('block_isha') };
 }
 function getConversionMessage(streak) {
   if (streak >= 30) return 'Si vous êtes reconnaissants, J\'augmenterai Mes bienfaits. — Ibrahim 14:7';
@@ -5565,7 +5566,7 @@ function v2DetectLang() {
 }
 
 let V2_LANG = v2DetectLang();
-function t(key) { return (V2_I18N[V2_LANG] || V2_I18N.fr)[key] || key; }
+function t(key) { try { return (V2_I18N[V2_LANG] || V2_I18N.fr)[key] || key; } catch(e) { return key || ''; } }
 
 /* ══ INFUSION D'INTENTION ══ */
 const intentionThemes = {
