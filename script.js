@@ -5939,9 +5939,7 @@ function checkNightCompanion() {
   var block = getCurrentPrayerBlock();
   if (block.id !== 'isha' && block.id !== 'nuit' && block.id !== 'qiyam' && block.id !== 'asr') return; // TODO: retirer 'asr' après test
   var todayKey = new Date().toISOString().split('T')[0];
-  var sagesse = null;
-  try { sagesse = JSON.parse(localStorage.getItem('niyyah_sagesse_nuit') || 'null'); } catch(e) {}
-  if (sagesse && sagesse.date === todayKey) return;
+  if (localStorage.getItem('niyyah_compagnon_date') === todayKey) return;
   var overlay = document.getElementById('night-companion-overlay');
   if (overlay) overlay.style.display = 'block';
 }
@@ -5972,6 +5970,7 @@ async function sendNightThought() {
     if (sourceEl) sourceEl.textContent = '— ' + source;
     if (responseEl) responseEl.style.display = 'block';
     localStorage.setItem('niyyah_sagesse_nuit', JSON.stringify({ text: wisdom, source: source, date: new Date().toISOString().split('T')[0], thought: thought }));
+    localStorage.setItem('niyyah_compagnon_date', new Date().toISOString().split('T')[0]);
   } catch(e) {
     var fallback = 'Celui qui connaît son âme connaît son Seigneur. — Al-Ghazali';
     var responseEl2 = document.getElementById('night-wisdom-response');
@@ -5981,6 +5980,7 @@ async function sendNightThought() {
     if (sourceEl2) sourceEl2.textContent = '— Sagesse nocturne';
     if (responseEl2) responseEl2.style.display = 'block';
     localStorage.setItem('niyyah_sagesse_nuit', JSON.stringify({ text: fallback, source: 'Al-Ghazali', date: new Date().toISOString().split('T')[0], thought: thought }));
+    localStorage.setItem('niyyah_compagnon_date', new Date().toISOString().split('T')[0]);
   }
   btn.textContent = 'ENVOYER';
   btn.disabled = false;
