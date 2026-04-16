@@ -2123,14 +2123,13 @@ body::before {
   padding: calc(var(--safe-top, 0px) + 14px) 18px 12px;
   background: rgba(10,10,10,0.97);
   border-bottom: 1px solid rgba(212,175,55,0.12);
-  display: flex; align-items: center; gap: 12px;
+  display: flex; align-items: center; justify-content: space-between;
   position: relative; z-index: 1300;
 }
-.mentor-header-center { flex: 1; text-align: center; display: flex; flex-direction: column; gap: 2px; align-items: center; }
-.mentor-header-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.mentor-header-left { display: flex; flex-direction: column; gap: 2px; }
 .mentor-header-title {
   font-family: 'Cinzel', serif;
-  font-size: 16px; letter-spacing: 0.2em; color: #D4AF37;
+  font-size: 17px; letter-spacing: 0.2em; color: #D4AF37;
 }
 .mentor-header-sub {
   font-family: 'Cormorant Garamond', serif;
@@ -3155,4 +3154,3 @@ button[style*="gold-v2"] {
   position: relative !important;
   top: -1px !important;
 }
-.mentor-active .topbar-v2 { display: none !important; }
