@@ -5896,16 +5896,15 @@ function updateFajrChallenge() {
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#E8DCC0;">Gardien de Fajr ✦</div>'
       + '</div>';
   } else {
-    card.innerHTML = '<div style="background:#1a1a1a;border:1px solid rgba(200,168,75,0.3);border-radius:14px;padding:14px 18px;min-height:80px;">'
-      + '<div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">'
+    card.innerHTML = '<div style="background:#1a1a1a;border:1px solid rgba(200,168,75,0.3);border-radius:14px;padding:14px 18px;min-height:80px;display:flex;align-items:center;">'
+      + '<div style="display:flex;align-items:center;gap:12px;width:100%;">'
       + '<div><img src="https://nabs881-sketch.github.io/niyyah-app/imagessoleil.png" alt="Soleil" style="width:60px;height:auto;display:block;flex-shrink:0;mix-blend-mode:screen;"></div>'
       + '<div style="flex:1;text-align:left;">'
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:600;color:#C8A84A;">Challenge 30 jours Fajr</div>'
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;font-style:italic;color:#B0A080;margin-top:2px;">Jour ' + fajrStreak + ' sur 30</div>'
-      + '</div></div>'
-      + '<div style="height:3px;background:rgba(200,168,75,0.12);border-radius:3px;overflow:hidden;">'
+      + '<div style="height:3px;background:rgba(200,168,75,0.12);border-radius:3px;overflow:hidden;margin-top:6px;">'
       + '<div style="height:100%;width:' + pct + '%;background:linear-gradient(90deg,#C8A84A,#E0C870);border-radius:3px;transition:width 0.6s ease;"></div>'
-      + '</div>'
+      + '</div></div></div>'
       + '</div>';
   }
 }
