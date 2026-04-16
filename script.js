@@ -5539,11 +5539,33 @@ function v2OpenNiyyahModal() {
     btn.style.direction = (V2_I18N[V2_LANG] || V2_I18N.fr).dir;
     btn.style.fontFamily = V2_LANG === 'ar' ? "'Noto Naskh Arabic', serif" : "'Cormorant Garamond', serif";
     btn.style.fontSize = V2_LANG === 'ar' ? '16px' : '15px';
-    btn.addEventListener('click', () => {
-      opts.querySelectorAll('.intention-opt-v2').forEach(b => b.classList.remove('sel-v2'));
-      btn.classList.add('sel-v2');
-      document.getElementById('v2-custom-intention').value = '';
-    });
+    var _holdTimer = null;
+    function _startHold(e) {
+      e.preventDefault();
+      opts.querySelectorAll('.intention-opt-v2').forEach(b => b.classList.remove('sel-v2', 'intention-pressing'));
+      btn.classList.add('intention-pressing');
+      if (navigator.vibrate) navigator.vibrate(30);
+      _holdTimer = setTimeout(function() {
+        btn.classList.remove('intention-pressing');
+        btn.classList.add('sel-v2');
+        document.getElementById('v2-custom-intention').value = '';
+        if (navigator.vibrate) navigator.vibrate([50, 30, 50, 30, 500]);
+        var flash = document.createElement('div');
+        flash.style.cssText = 'position:fixed;inset:0;background:rgba(200,168,75,0.25);z-index:99999;pointer-events:none;';
+        document.body.appendChild(flash);
+        setTimeout(function() { flash.remove(); }, 300);
+      }, 3000);
+    }
+    function _cancelHold() {
+      if (_holdTimer) { clearTimeout(_holdTimer); _holdTimer = null; }
+      btn.classList.remove('intention-pressing');
+    }
+    btn.addEventListener('touchstart', _startHold, { passive: false });
+    btn.addEventListener('touchend', _cancelHold);
+    btn.addEventListener('touchcancel', _cancelHold);
+    btn.addEventListener('mousedown', _startHold);
+    btn.addEventListener('mouseup', _cancelHold);
+    btn.addEventListener('mouseleave', _cancelHold);
     opts.appendChild(btn);
   });
 
