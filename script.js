@@ -5539,13 +5539,33 @@ function v2OpenNiyyahModal() {
     btn.style.direction = (V2_I18N[V2_LANG] || V2_I18N.fr).dir;
     btn.style.fontFamily = V2_LANG === 'ar' ? "'Noto Naskh Arabic', serif" : "'Cormorant Garamond', serif";
     btn.style.fontSize = V2_LANG === 'ar' ? '16px' : '15px';
-    var _holdTimer = null;
+    var _holdTimer = null, _holdHintTimer = null, _holdOverlay = null;
     function _startHold(e) {
       e.preventDefault();
-      opts.querySelectorAll('.intention-opt-v2').forEach(b => b.classList.remove('sel-v2', 'intention-pressing'));
+      opts.querySelectorAll('.intention-opt-v2').forEach(function(b) {
+        b.classList.remove('sel-v2', 'intention-pressing');
+        var old = b.querySelector('.hold-overlay'); if (old) old.remove();
+      });
       btn.classList.add('intention-pressing');
+      btn.style.position = 'relative'; btn.style.overflow = 'hidden';
       if (navigator.vibrate) navigator.vibrate(30);
+      // SVG countdown circle + hint text
+      _holdOverlay = document.createElement('div');
+      _holdOverlay.className = 'hold-overlay';
+      _holdOverlay.innerHTML = '<svg class="hold-ring" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="none" stroke="rgba(200,168,75,0.15)" stroke-width="2"/><circle class="hold-ring-fill" cx="16" cy="16" r="14" fill="none" stroke="#C8A84A" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="87.96" stroke-dashoffset="87.96"/></svg><span class="hold-hint" style="opacity:0;">Maintenez...</span>';
+      btn.appendChild(_holdOverlay);
+      // Animate ring fill
+      requestAnimationFrame(function() {
+        var fill = _holdOverlay.querySelector('.hold-ring-fill');
+        if (fill) fill.style.strokeDashoffset = '0';
+      });
+      // Show hint after 0.5s
+      _holdHintTimer = setTimeout(function() {
+        var hint = btn.querySelector('.hold-hint');
+        if (hint) hint.style.opacity = '1';
+      }, 500);
       _holdTimer = setTimeout(function() {
+        _cleanupOverlay();
         btn.classList.remove('intention-pressing');
         btn.classList.add('sel-v2');
         document.getElementById('v2-custom-intention').value = '';
@@ -5556,8 +5576,14 @@ function v2OpenNiyyahModal() {
         setTimeout(function() { flash.remove(); }, 300);
       }, 3000);
     }
+    function _cleanupOverlay() {
+      if (_holdHintTimer) { clearTimeout(_holdHintTimer); _holdHintTimer = null; }
+      if (_holdOverlay && _holdOverlay.parentNode) _holdOverlay.remove();
+      _holdOverlay = null;
+    }
     function _cancelHold() {
       if (_holdTimer) { clearTimeout(_holdTimer); _holdTimer = null; }
+      _cleanupOverlay();
       btn.classList.remove('intention-pressing');
     }
     btn.addEventListener('touchstart', _startHold, { passive: false });

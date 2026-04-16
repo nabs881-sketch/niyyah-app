@@ -1978,6 +1978,28 @@ body::before {
   50%  { box-shadow: 0 0 16px rgba(200,168,75,0.3); }
   100% { box-shadow: 0 0 28px rgba(200,168,75,0.6), inset 0 0 12px rgba(200,168,75,0.1); }
 }
+.hold-overlay {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  pointer-events: none;
+}
+.hold-ring { transform: rotate(-90deg); }
+.hold-ring-fill {
+  transition: stroke-dashoffset 3s linear;
+}
+.hold-hint {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px;
+  font-style: italic;
+  color: #C8A84A;
+  white-space: nowrap;
+  transition: opacity 0.3s ease;
+}
 .modal-divider-v2 {
   display: flex; align-items: center; gap: 10px;
   color: rgba(240,234,214,0.2); font-family: 'Cinzel', serif;
