@@ -1062,7 +1062,7 @@ const LEVELS = [
         { id: 'coran_ecoute', label: 'Écouter le Coran', sub: 'Choisis une sourate et écoute', arabic: 'تِلَاوَةُ الْقُرْآنِ', optional: true, coranPicker: true, block: 'jour', hadith: '\"Récite le Coran car il intercèdera pour ses compagnons le Jour du Jugement\" — Muslim 804', source: 'Muslim 804' },
         { id: 'podcast', label: 'Podcast islamique', sub: 'Islam Simplement ou autre contenu', block: 'jour' },
       ], links: [
-        { label: 'Vie du Prophète ﷺ', sub: "L'Islam Simplement · YouTube", url: 'https://www.youtube.com/@lislamsimplement', icon: '▶' },
+        { label: 'Vie du Prophète ﷺ', sub: "La vie du Prophète Mohammad ﷺ · Podcast", url: 'https://podcasts.apple.com/fr/podcast/la-vie-du-proph%C3%A8te-mohammad-%EF%B7%BA/id1804853747', icon: '🎙' },
         { label: 'Islam Simplement', sub: 'Podcast · Écouter maintenant', url: 'https://open.spotify.com/search/islam%20simplement', icon: '🎙' },
         { label: "L'Arabe Simplement", sub: 'Chaîne YouTube · Arabe coranique', url: 'https://www.youtube.com/@larabesimplement', icon: '📖' },
         { label: 'Sunnah.com', sub: 'Hadiths authentiques · Riyad as-Salihin', url: 'https://sunnah.com/riyadussalihin', icon: '📚' },
