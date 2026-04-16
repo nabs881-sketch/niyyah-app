@@ -1978,6 +1978,19 @@ body::before {
   50%  { box-shadow: 0 0 16px rgba(200,168,75,0.3); }
   100% { box-shadow: 0 0 28px rgba(200,168,75,0.6), inset 0 0 12px rgba(200,168,75,0.1); }
 }
+/* Gold flash overlay */
+.intention-gold-flash {
+  position: fixed;
+  inset: 0;
+  background: rgba(200,168,75,0.2);
+  z-index: 99999;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+.intention-gold-flash.fade-out {
+  opacity: 0;
+}
 /* Orb golden halo after intention confirmed */
 .orb-intention-glow {
   position: relative;

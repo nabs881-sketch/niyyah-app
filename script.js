@@ -5570,6 +5570,12 @@ function v2OpenNiyyahModal() {
         btn.classList.add('sel-v2');
         document.getElementById('v2-custom-intention').value = '';
         if (navigator.vibrate) navigator.vibrate([50, 30, 50, 30, 500]);
+        // Gold flash overlay — fade in/out
+        var flash = document.createElement('div');
+        flash.className = 'intention-gold-flash';
+        document.body.appendChild(flash);
+        setTimeout(function() { flash.classList.add('fade-out'); }, 50);
+        setTimeout(function() { flash.remove(); }, 350);
         // Golden halo + rotating ring
         btn.classList.add('intention-confirmed-glow');
         var ring = document.createElement('div');
