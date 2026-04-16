@@ -5864,9 +5864,49 @@ function v2RefreshStats() {
     if (fill) setTimeout(() => { fill.style.width = pct + '%'; }, 400);
 
   } catch(e) {}
+  updateFajrChallenge();
   updateSanctuaireMoment();
 }
 
+function updateFajrChallenge() {
+  var card = document.getElementById('fajr-challenge-card');
+  if (!card) return;
+  // Compute Fajr streak from history
+  var hist = {};
+  try { hist = JSON.parse(localStorage.getItem('spiritual_history') || '{}'); } catch(e) {}
+  var fajrStreak = 0;
+  var today = new Date();
+  // Check today first
+  var todayFajr = !!state['fajr'];
+  // Count backwards from yesterday
+  for (var i = todayFajr ? 0 : 1; i < 30; i++) {
+    var d = new Date(today);
+    d.setDate(d.getDate() - i);
+    var ds = d.toISOString().split('T')[0];
+    // For today, check current state; for past days, check dayScores existence + assume fajr was done if day completed
+    if (i === 0 && todayFajr) { fajrStreak++; continue; }
+    if (i > 0 && hist.days && hist.days[ds]) { fajrStreak++; }
+    else break;
+  }
+  card.style.display = 'block';
+  var pct = Math.min(100, Math.round((fajrStreak / 30) * 100));
+  if (fajrStreak >= 30) {
+    card.innerHTML = '<div style="background:rgba(200,168,75,0.08);border:1px solid #C8A84A;border-radius:14px;padding:16px 18px;text-align:center;">'
+      + '<div style="font-family:\'Noto Naskh Arabic\',serif;font-size:20px;color:#C8A84A;margin-bottom:4px;">مُحَافِظٌ عَلَى الْفَجْرِ</div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#E8DCC0;">Gardien de Fajr ✦</div>'
+      + '</div>';
+  } else {
+    card.innerHTML = '<div style="background:rgba(10,10,10,0.9);border:1px solid rgba(200,168,75,0.4);border-radius:14px;padding:14px 18px;">'
+      + '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">'
+      + '<div style="font-size:13px;font-weight:600;color:#C8A84A;">🌅 Fajr — Jour ' + fajrStreak + '/30</div>'
+      + '<div style="font-size:11px;color:#B0A080;">' + pct + '%</div>'
+      + '</div>'
+      + '<div style="height:3px;background:rgba(200,168,75,0.15);border-radius:3px;overflow:hidden;">'
+      + '<div style="height:100%;width:' + pct + '%;background:linear-gradient(90deg,#C8A84A,#E0C870);border-radius:3px;transition:width 0.6s ease;"></div>'
+      + '</div>'
+      + '</div>';
+  }
+}
 function updateSanctuaireMoment() {
   var el = document.getElementById('sanctuaire-moment');
   if (!el) return;
