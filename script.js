@@ -7223,6 +7223,15 @@ function scannerConfirmNiyyah() {
     localStorage.setItem('niyyah_v2_state', JSON.stringify(s));
   } catch(e) {}
 
+  // Save to scanner history
+  try {
+    var _now = new Date();
+    var _hist = JSON.parse(localStorage.getItem('niyyah_scanner_history') || '[]');
+    _hist.unshift({ text: intentionText, time: _now.toTimeString().substring(0,5), date: _now.toISOString().split('T')[0], day: ['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'][_now.getDay()] });
+    if (_hist.length > 20) _hist.length = 20;
+    localStorage.setItem('niyyah_scanner_history', JSON.stringify(_hist));
+  } catch(e) {}
+
   // Toast fraternel
   v2ShowToast('✦ Niyyah posée — Bismillah 🌿');
   if (navigator.vibrate) navigator.vibrate([20, 40, 80]);
