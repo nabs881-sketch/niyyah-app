@@ -5767,6 +5767,25 @@ function applyTawbaGlow() {
   }
 }
 
+function updateSpiritualTitle() {
+  var el = document.getElementById('v2-spiritual-title');
+  if (!el) return;
+  if (typeof isPremium !== 'function' || !isPremium()) { el.style.display = 'none'; return; }
+  var streak = 0;
+  try { streak = JSON.parse(localStorage.getItem('spiritual_history') || '{}').streak || 0; } catch(e) {}
+  var titles = [
+    { min: 365, ar: 'الرَّاسِخُ', tr: 'Al-Râsikh — L\'enraciné' },
+    { min: 180, ar: 'الْمُحْسِنُ', tr: 'Al-Muhsin — L\'excellent' },
+    { min: 90,  ar: 'الْمُتَّقِي', tr: 'Al-Muttaqî — Le pieux' },
+    { min: 30,  ar: 'الْمُوَاظِبُ', tr: 'Al-Muwâdhib — Le constant' },
+    { min: 7,   ar: 'الْمُبْتَدِئُ', tr: 'Al-Mubtadi\' — Le commençant' }
+  ];
+  var title = titles.find(function(t) { return streak >= t.min; });
+  if (!title) { el.style.display = 'none'; return; }
+  el.style.display = 'block';
+  el.innerHTML = '<div style="font-family:\'Noto Naskh Arabic\',serif;font-size:18px;color:#C8A84A;line-height:1.4;">' + title.ar + '</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:11px;font-style:italic;color:#B0A080;letter-spacing:0.5px;">' + title.tr + '</div>';
+}
 function v2RefreshStats() {
   // POINT 3 — Effet visuel Tawba persistant 24h
   try { applyTawbaGlow(); } catch(e) {}
@@ -5785,6 +5804,8 @@ function v2RefreshStats() {
   const grKey = h < 12 ? 'greeting_morning' : h < 17 ? 'greeting_afternoon' : 'greeting_evening';
   const grEl = document.getElementById('v2-greeting-text');
   if (grEl) grEl.textContent = t(grKey);
+  // Titres spirituels évolutifs (premium only)
+  updateSpiritualTitle();
 
   // Midnight reset intention
   const s = v2GetState();
