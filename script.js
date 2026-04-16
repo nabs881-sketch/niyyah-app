@@ -6272,11 +6272,49 @@ function applyAtmosphere() {
     gold = current.gold;
   }
   var root = document.documentElement.style;
-  root.setProperty('--bg-primary', 'rgb(' + bg.join(',') + ')');
-  root.setProperty('--gold-main', 'rgb(' + gold.join(',') + ')');
-  root.setProperty('--orb-color', 'rgba(' + gold.join(',') + ',0.3)');
-  document.body.style.background = 'rgb(' + bg.join(',') + ')';
-  localStorage.setItem('niyyah_atmosphere', JSON.stringify({ id: current.id, day: dayInAtm, bg: bg, gold: gold }));
+  var bgStr = 'rgb(' + bg.join(',') + ')';
+  var goldStr = 'rgb(' + gold.join(',') + ')';
+  var goldAlpha = 'rgba(' + gold.join(',') + ',0.3)';
+  root.setProperty('--bg-primary', bgStr);
+  root.setProperty('--gold-main', goldStr);
+  root.setProperty('--orb-color', goldAlpha);
+  root.setProperty('--gold', goldStr);
+  root.setProperty('--gold-v2', goldStr);
+  root.setProperty('--gold-pale-v2', goldStr);
+  document.body.style.background = bgStr;
+  // Apply to key Sanctuaire elements
+  applyAtmosphereDOM(bgStr, goldStr, goldAlpha);
+  localStorage.setItem('niyyah_atmosphere', JSON.stringify({ id: (current || {}).id, day: dayInAtm || 0, bg: bg, gold: gold }));
+}
+function applyAtmosphereDOM(bgStr, goldStr, goldAlpha) {
+  var sanctuaire = document.getElementById('view-sanctuaire');
+  if (sanctuaire) sanctuaire.style.background = bgStr;
+  // Orb
+  var orbCore = document.getElementById('orb-core-v2');
+  if (orbCore) orbCore.style.borderColor = goldAlpha;
+  var orbRings = document.querySelectorAll('.orb-ring-v2');
+  orbRings.forEach(function(r) { r.style.borderColor = goldAlpha; });
+  // Greeting
+  var greetText = document.getElementById('v2-greeting-text');
+  if (greetText) greetText.style.color = goldStr;
+  // Stats
+  document.querySelectorAll('.sanct-stat-v2').forEach(function(s) {
+    s.style.borderColor = goldAlpha;
+  });
+  document.querySelectorAll('.sanct-stat-num-v2').forEach(function(s) {
+    s.style.color = goldStr;
+  });
+  // Level strip
+  var levelFill = document.getElementById('v2-level-fill');
+  if (levelFill) levelFill.style.background = goldStr;
+  var levelName = document.getElementById('v2-level-name');
+  if (levelName) levelName.style.color = goldStr;
+  // Orb CTA
+  var orbCta = document.getElementById('orb-cta-v2');
+  if (orbCta) orbCta.style.color = goldStr;
+  // Chip
+  var chip = document.getElementById('v2-intention-chip');
+  if (chip) chip.style.borderColor = goldAlpha;
 }
 function v2Init() {
   checkMidnightReset();
