@@ -424,8 +424,8 @@ function renderDefiCard() {
   // Pas encore de défi choisi cette semaine
   if (!defi) {
     document.getElementById('defiCardIcon').innerHTML = '<img src="https://nabs881-sketch.github.io/niyyah-app/imagescroissant.png" alt="Croissant" style="width:60px;height:auto;display:block;flex-shrink:0;">';
-    document.getElementById('defiCardTitre').textContent = 'Choisir un défi ✦';
-    document.getElementById('defiCardScore').textContent = 'Appuie pour commencer';
+    document.getElementById('defiCardTitre').textContent = t('defi_none');
+    document.getElementById('defiCardScore').textContent = t('defi_tap');
     var barFill0 = document.getElementById('defiCardBarFill');
     if (barFill0) barFill0.style.width = '0%';
     return;
@@ -1777,23 +1777,23 @@ function getCurrentPrayerBlock() {
     var p = str.replace(/ *\(.*\)/, '').split(':');
     return parseInt(p[0], 10) * 60 + parseInt(p[1], 10);
   }
-  if (!_prayerTimes) return { id: 'nuit', label: '🌙 La nuit' };
+  if (!_prayerTimes) return { id: 'nuit', label: t('block_nuit') };
   var fajr = toMin(_prayerTimes['Fajr']);
   var dhuhr = toMin(_prayerTimes['Dhuhr']);
   var asr = toMin(_prayerTimes['Asr']);
   var maghrib = toMin(_prayerTimes['Maghrib']);
   var isha = toMin(_prayerTimes['Isha']);
-  if (fajr == null || dhuhr == null || asr == null || maghrib == null || isha == null) return { id: 'nuit', label: '🌙 La nuit' };
+  if (fajr == null || dhuhr == null || asr == null || maghrib == null || isha == null) return { id: 'nuit', label: t('block_nuit') };
   if (nowMin < fajr) {
     var qiyamStart = Math.floor(fajr * 2 / 3);
-    if (nowMin >= qiyamStart) return { id: 'qiyam', label: '🌙 Qiyam al-Layl' };
-    return { id: 'nuit', label: '🌙 La nuit' };
+    if (nowMin >= qiyamStart) return { id: 'qiyam', label: t('block_qiyam') };
+    return { id: 'nuit', label: t('block_nuit') };
   }
-  if (nowMin < dhuhr)   return { id: 'fajr',    label: 'APRÈS FAJR' };
-  if (nowMin < asr)     return { id: 'dhuhr',   label: 'APRÈS DHUHR' };
-  if (nowMin < maghrib) return { id: 'asr',     label: 'APRÈS ASR' };
-  if (nowMin < isha)    return { id: 'maghrib', label: 'APRÈS MAGHRIB' };
-  return { id: 'isha', label: 'APRÈS ISHA' };
+  if (nowMin < dhuhr)   return { id: 'fajr',    label: t('block_fajr') };
+  if (nowMin < asr)     return { id: 'dhuhr',   label: t('block_dhuhr') };
+  if (nowMin < maghrib) return { id: 'asr',     label: t('block_asr') };
+  if (nowMin < isha)    return { id: 'maghrib', label: t('block_maghrib') };
+  return { id: 'isha', label: t('block_isha') };
 }
 function getConversionMessage(streak) {
   if (streak >= 30) return 'Si vous êtes reconnaissants, J\'augmenterai Mes bienfaits. — Ibrahim 14:7';
@@ -1814,8 +1814,8 @@ function renderLevel(levelId) {
       + '<svg width="40" height="46" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:14px;"><rect x="1" y="7" width="12" height="9" rx="2" stroke="#C8A84A" stroke-width="1.5"/><path d="M4 7V5a3 3 0 0 1 6 0v2" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"/></svg>'
       + '<div style="font-size:18px;font-weight:600;color:var(--t1);margin-bottom:6px;">Niveau ' + levelId + '</div>'
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:#E8DCC0;line-height:1.7;margin:16px 0 20px;padding:0 8px;">' + _convMsg + '</div>'
-      + '<button onclick="openFreemium()" style="width:100%;background:#C8A84A;color:#000;font-size:14px;font-weight:700;border:none;border-radius:12px;padding:14px;cursor:pointer;">Continuer ma progression →</button>'
-      + '<div style="font-size:10px;color:rgba(255,255,255,0.3);margin-top:10px;">4.99€ · Paiement unique · Accès à vie</div>'
+      + '<button onclick="openFreemium()" style="width:100%;background:#C8A84A;color:#000;font-size:14px;font-weight:700;border:none;border-radius:12px;padding:14px;cursor:pointer;">' + t('locked_btn') + '</button>'
+      + '<div style="font-size:10px;color:rgba(255,255,255,0.3);margin-top:10px;">' + t('locked_price') + '</div>'
       + '</div>';
     return;
   }
@@ -1878,11 +1878,11 @@ function renderLevel(levelId) {
       setTimeout(function() { renderLevel(levelId); }, 3000);
       return;
     }
-    _block = { id: 'reveil', label: 'AU RÉVEIL' };
+    _block = { id: 'reveil', label: t('block_reveil') };
   }
-  var _bandeauSub = 'Tes actes du moment';
-  if (_block.id === 'nuit') _bandeauSub = 'Dors avec le Witr';
-  else if (_block.id === 'qiyam') _bandeauSub = state._unlocked && state._unlocked.includes(4) ? 'L\'heure du Qiyam al-Layl' : 'Dors avec le Witr';
+  var _bandeauSub = t('bandeau_sub');
+  if (_block.id === 'nuit') _bandeauSub = t('bandeau_nuit');
+  else if (_block.id === 'qiyam') _bandeauSub = state._unlocked && state._unlocked.includes(4) ? t('bandeau_qiyam') : t('bandeau_nuit');
   html += '<div style="display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,rgba(200,168,75,0.15),rgba(200,168,75,0.05));border:1px solid rgba(200,168,75,0.35);border-radius:14px;padding:14px 18px;margin:0 0 20px;">'
     + '<div style="width:3px;height:36px;background:linear-gradient(180deg,#C8A84A,#E0C870);border-radius:2px;flex-shrink:0;"></div>'
     + '<div>'
@@ -1890,7 +1890,7 @@ function renderLevel(levelId) {
     + '<div style="font-size:11px;color:var(--t3);margin-top:2px;">' + _bandeauSub + '</div>'
     + '</div>'
     + '</div>';
-  var _toggleLabel = window._showAllBlocks ? 'Moment actuel' : 'Ma journée complète';
+  var _toggleLabel = window._showAllBlocks ? t('toggle_moment') : t('toggle_all');
   html += '<div style="text-align:center;margin:-12px 0 16px;"><button onclick="window._showAllBlocks=!window._showAllBlocks;renderLevel(' + levelId + ')" style="background:transparent;border:none;color:#C8A84A;font-size:11px;font-weight:600;cursor:pointer;opacity:0.7;letter-spacing:0.3px;">' + _toggleLabel + '</button></div>';
   const _currentBlock = _block.id;
   level.sections.forEach(section => {
@@ -3155,7 +3155,7 @@ function toggleWirdItem(id, event) {
 function renderWird() {
   const content = document.getElementById('wirdContent');
   if (!content) return;
-  let html = '<button onclick="switchView(\'checklist\')" style="background:transparent;border:none;color:#C8A84A;font-size:14px;cursor:pointer;padding:8px 0;margin-bottom:8px;display:flex;align-items:center;gap:4px;">← Retour</button>';
+  let html = '<button onclick="switchView(\'checklist\')" style="background:transparent;border:none;color:#C8A84A;font-size:14px;cursor:pointer;padding:8px 0;margin-bottom:8px;display:flex;align-items:center;gap:4px;">' + t('wird_back') + '</button>';
   ['matin', 'soir'].forEach(session => {
     const s = WIRD_DATA[session];
     const done = s.items.filter(i => wirdState[i.id]).length;
@@ -5047,6 +5047,71 @@ const V2_I18N = {
       'Pour purifier mon cœur et mes intentions',
       'Pour être utile à autrui — et plaire à Allah',
     ],
+    // Prayer blocks
+    block_reveil: 'AU RÉVEIL', block_fajr: 'APRÈS FAJR', block_dhuhr: 'APRÈS DHUHR', block_asr: 'APRÈS ASR', block_maghrib: 'APRÈS MAGHRIB', block_isha: 'APRÈS ISHA', block_nuit: '🌙 La nuit', block_qiyam: '🌙 Qiyam al-Layl',
+    // Bandeau pratique
+    bandeau_sub: 'Tes actes du moment', bandeau_nuit: 'Dors avec le Witr', bandeau_qiyam: 'L\'heure du Qiyam al-Layl',
+    toggle_all: 'Ma journée complète', toggle_moment: 'Moment actuel',
+    // Sanctuaire moment
+    actes_done: 'acte accompli', actes_done_p: 'actes accomplis', actes_left: 'restant', actes_left_p: 'restants', bloc_done: '✦ Bloc accompli', bloc_done_sub: 'Barak Allahu fik', btn_continue: '→ Continuer',
+    jour_left: 'acte du jour restant', jour_left_p: 'actes du jour restants',
+    // Fajr challenge
+    fajr_title: 'Challenge 30 jours Fajr', fajr_day: 'Jour', fajr_sur: 'sur', fajr_gardien: 'Gardien de Fajr ✦',
+    // Défi
+    defi_none: 'Choisir un défi ✦', defi_tap: 'Appuie pour commencer', defi_browse: 'Appuie pour parcourir les 100 défis →',
+    defi_launched: 'Défi lancé : ', defi_done: 'Masha\'Allah ✦ Défi accompli !', defi_checked: '✦ Journée cochée — Continue !', defi_already: 'Déjà coché aujourd\'hui ✓',
+    defi_days_left: 'jours restants', defi_day_left: 'jour restant', defi_accomplished: '✦ Accompli !',
+    // Wird
+    wird_back: '← Retour', wird_reset: '↺ Réinitialiser',
+    // Locked screen
+    locked_title: 'Niveau', locked_premium: 'Disponible au niveau supérieur ✦', locked_btn: 'Continuer ma progression →', locked_price: '4.99€ · Paiement unique · Accès à vie',
+    // Level labels
+    lvl_start: 'Commence !', lvl_progress: 'En cours ✦', lvl_done: 'Accompli ✦', lvl_locked: 'Verrouillé',
+    // Medals
+    medal_bronze: '🥉 Bronze', medal_silver: '🥈 Argent', medal_gold: '🥇 Or',
+    medal_toast_bronze: '🥉 Bronze !', medal_toast_silver: '🥈 Argent !', medal_toast_gold: '🥇 OR — Journée parfaite !',
+    // Friday
+    friday_title: 'Yawm al-Jumuah — Vendredi béni', friday_sub: 'La prière du vendredi est obligatoire aujourd\'hui',
+    // Grace
+    grace_title: 'Tu as manqué hier', grace_sub: 'Complète le Niveau 1 aujourd\'hui pour sauver ton streak 🌿',
+    // Toasts
+    toast_streak_saved: '🌿 Journée rattrapée — ton streak est sauvé !', toast_lvl1: 'مَا شَاءَ اللَّهُ — Niveau 1 accompli ! 🌿',
+    toast_lvl_unlock: '🌿 Niveau {n} débloqué — Mashallah !',
+    toast_niyyah: '✦ Niyyah posée — Bismillah 🌿',
+    // Progression
+    prog_streak: 'Série en cours', prog_days: 'JOURS CONSÉCUTIFS', prog_best: 'Meilleur', prog_total: 'Total jours',
+    prog_heatmap: '30 derniers jours', prog_present: 'Présent', prog_gold_day: 'Journée or', prog_absent: 'Absent',
+    prog_rewards: 'Récompenses',
+    prog_msg_none: 'Continue, inch\'Allah !', prog_msg_bronze: 'Mashallah !', prog_msg_silver: 'SubhanAllah !', prog_msg_gold: 'Allahu Akbar !',
+    prog_sub_none: 'Chaque acte compte', prog_sub_bronze: 'Les fondations sont posées', prog_sub_silver: 'Dhikr, prière, constance', prog_sub_gold: 'Journée parfaite accomplie',
+    // Graine
+    graine_title: 'Graine de Lumière', graine_sub: 'La graine attend la lumière', graine_defis: 'défis accomplis', graine_quote: 'Avez-vous vu ce que vous cultivez ? — Al-Waqi\'a 63',
+    // Scanner
+    scanner_posed: '✦ INTENTION POSÉE', scanner_empty: 'Tes intentions apparaîtront ici ✦',
+    scanner_limit: 'Ton scan du jour a été utilisé — reviens demain inch\'Allah 🌙',
+    // Mentor
+    mentor_limit: 'Ta question du jour a été posée — reviens demain inch\'Allah 🌙',
+    mentor_offered: 'question encore offerte ✦', mentor_offered_p: 'questions encore offertes ✦', mentor_tomorrow: 'Reviens demain inch\'Allah 🌙',
+    // Onboarding
+    onboard_start: 'Commencer →', onboard_next: 'Suivant →', onboard_skip: 'Passer', onboard_later: 'Plus tard', onboard_go: 'C\'est parti — Bismillah 🌿',
+    onboard_title1: 'Ta pratique spirituelle,<br>chaque jour', onboard_sub1: 'Niyyah t\'accompagne dans ton chemin vers Allah — à ton rythme, sans jugement.',
+    onboard_title2: 'Le Scanner de Niyyah', onboard_sub2: 'Pose ton regard sur un objet du quotidien — le Scanner te proposera une intention spirituelle pour le sacraliser.',
+    onboard_title3: '4 niveaux de pratique', onboard_sub3: 'Progresse à ton rythme — chaque niveau se débloque quand tu es prêt.',
+    onboard_title4: 'Tes horaires de prière', onboard_sub4: 'Entre ta ville pour afficher les horaires de Fajr, Dhuhr, Asr, Maghrib et Isha chaque jour.',
+    onboard_city_placeholder: 'Ex: Paris, Orléans, Casablanca...',
+    // Night companion
+    night_title: 'Quelle pensée ferme ta journée ?', night_placeholder: 'Écris ta pensée du soir...', night_send: 'ENVOYER', night_sagesse: 'SAGESSE DE LA NUIT',
+    // Notifications
+    notif_unsupported: 'Les notifications ne sont pas supportées sur cet appareil', notif_enabled: '✦ Rappels activés — JazakAllahu khairan !', notif_later: 'Tu pourras les activer plus tard dans les paramètres', notif_disabled: '🔕 Rappels désactivés',
+    // Sharing
+    share_downloaded: 'Image téléchargée — partage-la 🌿', share_copied: 'Lien copié !',
+    share_card: 'CARTE NIYYAH ✦', share_intention: 'Partager cette intention', share_btn: 'PARTAGER ✦', share_close: 'FERMER',
+    // Premium
+    premium_unlocked: '✅ Accès complet débloqué — Barakallahu feek !',
+    // Camera
+    camera_denied: 'Accès caméra refusé — autorise l\'accès dans les réglages',
+    // Compass
+    compass_denied: 'Autorise la boussole dans les réglages',
   },
 
   en: {
@@ -5103,6 +5168,48 @@ const V2_I18N = {
       'To purify my heart and intentions',
       'To be of benefit to others — and please Allah',
     ],
+    block_reveil: 'AT DAWN', block_fajr: 'AFTER FAJR', block_dhuhr: 'AFTER DHUHR', block_asr: 'AFTER ASR', block_maghrib: 'AFTER MAGHRIB', block_isha: 'AFTER ISHA', block_nuit: '🌙 Night', block_qiyam: '🌙 Qiyam al-Layl',
+    bandeau_sub: 'Your acts right now', bandeau_nuit: 'Sleep with Witr', bandeau_qiyam: 'Time for Qiyam al-Layl',
+    toggle_all: 'Full day', toggle_moment: 'Current moment',
+    actes_done: 'act completed', actes_done_p: 'acts completed', actes_left: 'remaining', actes_left_p: 'remaining', bloc_done: '✦ Block completed', bloc_done_sub: 'Barak Allahu fik', btn_continue: '→ Continue',
+    jour_left: 'daily act remaining', jour_left_p: 'daily acts remaining',
+    fajr_title: '30-Day Fajr Challenge', fajr_day: 'Day', fajr_sur: 'of', fajr_gardien: 'Guardian of Fajr ✦',
+    defi_none: 'Choose a challenge ✦', defi_tap: 'Tap to start', defi_browse: 'Tap to browse 100 challenges →',
+    defi_launched: 'Challenge started: ', defi_done: 'Masha\'Allah ✦ Challenge completed!', defi_checked: '✦ Day checked — Keep going!', defi_already: 'Already checked today ✓',
+    defi_days_left: 'days left', defi_day_left: 'day left', defi_accomplished: '✦ Accomplished!',
+    wird_back: '← Back', wird_reset: '↺ Reset',
+    locked_title: 'Level', locked_premium: 'Available at next level ✦', locked_btn: 'Continue my progress →', locked_price: '€4.99 · One-time · Lifetime',
+    lvl_start: 'Start!', lvl_progress: 'In progress ✦', lvl_done: 'Accomplished ✦', lvl_locked: 'Locked',
+    medal_bronze: '🥉 Bronze', medal_silver: '🥈 Silver', medal_gold: '🥇 Gold',
+    medal_toast_bronze: '🥉 Bronze!', medal_toast_silver: '🥈 Silver!', medal_toast_gold: '🥇 GOLD — Perfect day!',
+    friday_title: 'Yawm al-Jumuah — Blessed Friday', friday_sub: 'Friday prayer is obligatory today',
+    grace_title: 'You missed yesterday', grace_sub: 'Complete Level 1 today to save your streak 🌿',
+    toast_streak_saved: '🌿 Day recovered — your streak is saved!', toast_lvl1: 'مَا شَاءَ اللَّهُ — Level 1 completed! 🌿',
+    toast_lvl_unlock: '🌿 Level {n} unlocked — Mashallah!',
+    toast_niyyah: '✦ Niyyah set — Bismillah 🌿',
+    prog_streak: 'Current streak', prog_days: 'CONSECUTIVE DAYS', prog_best: 'Best', prog_total: 'Total days',
+    prog_heatmap: 'Last 30 days', prog_present: 'Present', prog_gold_day: 'Gold day', prog_absent: 'Absent',
+    prog_rewards: 'Rewards',
+    prog_msg_none: 'Keep going, insha\'Allah!', prog_msg_bronze: 'Mashallah!', prog_msg_silver: 'SubhanAllah!', prog_msg_gold: 'Allahu Akbar!',
+    prog_sub_none: 'Every act counts', prog_sub_bronze: 'Foundations are set', prog_sub_silver: 'Dhikr, prayer, consistency', prog_sub_gold: 'Perfect day accomplished',
+    graine_title: 'Seed of Light', graine_sub: 'The seed awaits the light', graine_defis: 'challenges completed', graine_quote: 'Have you seen what you cultivate? — Al-Waqi\'a 63',
+    scanner_posed: '✦ INTENTION SET', scanner_empty: 'Your intentions will appear here ✦',
+    scanner_limit: 'Your daily scan was used — come back tomorrow insha\'Allah 🌙',
+    mentor_limit: 'Your daily question was asked — come back tomorrow insha\'Allah 🌙',
+    mentor_offered: 'question still offered ✦', mentor_offered_p: 'questions still offered ✦', mentor_tomorrow: 'Come back tomorrow insha\'Allah 🌙',
+    onboard_start: 'Start →', onboard_next: 'Next →', onboard_skip: 'Skip', onboard_later: 'Later', onboard_go: 'Let\'s go — Bismillah 🌿',
+    onboard_title1: 'Your spiritual practice,<br>every day', onboard_sub1: 'Niyyah walks with you on your path to Allah — at your pace, without judgment.',
+    onboard_title2: 'The Niyyah Scanner', onboard_sub2: 'Look at an everyday object — the Scanner will suggest a spiritual intention to sanctify it.',
+    onboard_title3: '4 levels of practice', onboard_sub3: 'Progress at your pace — each level unlocks when you\'re ready.',
+    onboard_title4: 'Your prayer times', onboard_sub4: 'Enter your city to display Fajr, Dhuhr, Asr, Maghrib and Isha times each day.',
+    onboard_city_placeholder: 'e.g. London, New York, Dubai...',
+    night_title: 'What thought closes your day?', night_placeholder: 'Write your evening thought...', night_send: 'SEND', night_sagesse: 'NIGHT WISDOM',
+    notif_unsupported: 'Notifications are not supported on this device', notif_enabled: '✦ Reminders enabled — JazakAllahu khairan!', notif_later: 'You can enable them later in settings', notif_disabled: '🔕 Reminders disabled',
+    share_downloaded: 'Image downloaded — share it 🌿', share_copied: 'Link copied!',
+    share_card: 'NIYYAH CARD ✦', share_intention: 'Share this intention', share_btn: 'SHARE ✦', share_close: 'CLOSE',
+    premium_unlocked: '✅ Full access unlocked — Barakallahu feek!',
+    camera_denied: 'Camera access denied — allow in settings',
+    compass_denied: 'Allow compass in settings',
   },
 
   ar: {
@@ -5159,6 +5266,48 @@ const V2_I18N = {
       'لِتَطْهِيرِ قَلْبِي وَنِيَّاتِي',
       'لِأَكُونَ نَافِعًا لِلآخَرِينَ وَأُرْضِيَ اللَّهَ',
     ],
+    block_reveil: 'عِنْدَ الِاسْتِيقَاظِ', block_fajr: 'بَعْدَ الْفَجْرِ', block_dhuhr: 'بَعْدَ الظُّهْرِ', block_asr: 'بَعْدَ الْعَصْرِ', block_maghrib: 'بَعْدَ الْمَغْرِبِ', block_isha: 'بَعْدَ الْعِشَاءِ', block_nuit: '🌙 اللَّيْلُ', block_qiyam: '🌙 قِيَامُ اللَّيْلِ',
+    bandeau_sub: 'أَعْمَالُكَ الْآنَ', bandeau_nuit: 'نَمْ مَعَ الْوِتْرِ', bandeau_qiyam: 'وَقْتُ قِيَامِ اللَّيْلِ',
+    toggle_all: 'الْيَوْمُ كَامِلًا', toggle_moment: 'اللَّحْظَةُ الْحَالِيَّةُ',
+    actes_done: 'عَمَلٌ مُنْجَزٌ', actes_done_p: 'أَعْمَالٌ مُنْجَزَةٌ', actes_left: 'مُتَبَقٍّ', actes_left_p: 'مُتَبَقِّيَةٌ', bloc_done: '✦ أُنْجِزَ الْقِسْمُ', bloc_done_sub: 'بَارَكَ اللَّهُ فِيكَ', btn_continue: '← مُتَابَعَةٌ',
+    jour_left: 'عَمَلٌ يَوْمِيٌّ مُتَبَقٍّ', jour_left_p: 'أَعْمَالٌ يَوْمِيَّةٌ مُتَبَقِّيَةٌ',
+    fajr_title: 'تَحَدِّي ٣٠ يَوْمًا لِلْفَجْرِ', fajr_day: 'الْيَوْمُ', fajr_sur: 'مِنْ', fajr_gardien: 'حَارِسُ الْفَجْرِ ✦',
+    defi_none: 'اخْتَرْ تَحَدِّيًا ✦', defi_tap: 'اضْغَطْ لِلْبَدْءِ', defi_browse: 'اضْغَطْ لِتَصَفُّحِ ١٠٠ تَحَدٍّ →',
+    defi_launched: 'بَدَأَ التَّحَدِّي: ', defi_done: 'مَا شَاءَ اللَّهُ ✦ أُنْجِزَ التَّحَدِّي!', defi_checked: '✦ يَوْمٌ مُسَجَّلٌ — وَاصِلْ!', defi_already: 'سُجِّلَ الْيَوْمَ بِالْفِعْلِ ✓',
+    defi_days_left: 'أَيَّامٌ مُتَبَقِّيَةٌ', defi_day_left: 'يَوْمٌ مُتَبَقٍّ', defi_accomplished: '✦ أُنْجِزَ!',
+    wird_back: '→ رُجُوعٌ', wird_reset: '↺ إِعَادَةُ التَّعْيِينِ',
+    locked_title: 'الْمُسْتَوَى', locked_premium: 'مُتَاحٌ فِي الْمُسْتَوَى التَّالِي ✦', locked_btn: '← مُتَابَعَةُ التَّقَدُّمِ', locked_price: '٤.٩٩€ · دَفْعَةٌ وَاحِدَةٌ · مَدَى الْحَيَاةِ',
+    lvl_start: 'ابْدَأْ!', lvl_progress: 'جَارٍ ✦', lvl_done: 'أُنْجِزَ ✦', lvl_locked: 'مُقْفَلٌ',
+    medal_bronze: '🥉 بْرُونْزِيٌّ', medal_silver: '🥈 فِضِّيٌّ', medal_gold: '🥇 ذَهَبِيٌّ',
+    medal_toast_bronze: '🥉 بْرُونْزٌ!', medal_toast_silver: '🥈 فِضَّةٌ!', medal_toast_gold: '🥇 ذَهَبٌ — يَوْمٌ مِثَالِيٌّ!',
+    friday_title: 'يَوْمُ الْجُمُعَةِ الْمُبَارَكِ', friday_sub: 'صَلَاةُ الْجُمُعَةِ وَاجِبَةٌ الْيَوْمَ',
+    grace_title: 'فَاتَكَ الْأَمْسُ', grace_sub: 'أَكْمِلِ الْمُسْتَوَى ١ الْيَوْمَ لِإِنْقَاذِ سِلْسِلَتِكَ 🌿',
+    toast_streak_saved: '🌿 تَمَّ الِاسْتِدْرَاكُ — سِلْسِلَتُكَ مَحْفُوظَةٌ!', toast_lvl1: 'مَا شَاءَ اللَّهُ — أُنْجِزَ الْمُسْتَوَى ١! 🌿',
+    toast_lvl_unlock: '🌿 فُتِحَ الْمُسْتَوَى {n} — مَا شَاءَ اللَّهُ!',
+    toast_niyyah: '✦ ثَبَتَتِ النِّيَّةُ — بِسْمِ اللَّهِ 🌿',
+    prog_streak: 'السِّلْسِلَةُ الْحَالِيَّةُ', prog_days: 'أَيَّامٌ مُتَتَالِيَةٌ', prog_best: 'الْأَفْضَلُ', prog_total: 'إِجْمَالِي الْأَيَّامِ',
+    prog_heatmap: 'آخِرُ ٣٠ يَوْمًا', prog_present: 'حَاضِرٌ', prog_gold_day: 'يَوْمٌ ذَهَبِيٌّ', prog_absent: 'غَائِبٌ',
+    prog_rewards: 'الْمُكَافَآتُ',
+    prog_msg_none: 'وَاصِلْ إِنْ شَاءَ اللَّهُ!', prog_msg_bronze: 'مَا شَاءَ اللَّهُ!', prog_msg_silver: 'سُبْحَانَ اللَّهِ!', prog_msg_gold: 'اللَّهُ أَكْبَرُ!',
+    prog_sub_none: 'كُلُّ عَمَلٍ يُحْسَبُ', prog_sub_bronze: 'تَمَّ وَضْعُ الْأَسَاسِ', prog_sub_silver: 'ذِكْرٌ وَصَلَاةٌ وَمُدَاوَمَةٌ', prog_sub_gold: 'يَوْمٌ مِثَالِيٌّ',
+    graine_title: 'بَذْرَةُ النُّورِ', graine_sub: 'الْبَذْرَةُ تَنْتَظِرُ النُّورَ', graine_defis: 'تَحَدِّيَاتٌ مُنْجَزَةٌ', graine_quote: 'أَفَرَأَيْتُمْ مَا تَحْرُثُونَ — الْوَاقِعَة ٦٣',
+    scanner_posed: '✦ ثَبَتَتِ النِّيَّةُ', scanner_empty: 'سَتَظْهَرُ نِيَّاتُكَ هُنَا ✦',
+    scanner_limit: 'اسْتُخْدِمَ مَسْحُكَ الْيَوْمِيُّ — عُدْ غَدًا إِنْ شَاءَ اللَّهُ 🌙',
+    mentor_limit: 'طُرِحَ سُؤَالُكَ الْيَوْمِيُّ — عُدْ غَدًا إِنْ شَاءَ اللَّهُ 🌙',
+    mentor_offered: 'سُؤَالٌ مَجَّانِيٌّ مُتَبَقٍّ ✦', mentor_offered_p: 'أَسْئِلَةٌ مَجَّانِيَّةٌ مُتَبَقِّيَةٌ ✦', mentor_tomorrow: 'عُدْ غَدًا إِنْ شَاءَ اللَّهُ 🌙',
+    onboard_start: '← ابْدَأْ', onboard_next: '← التَّالِي', onboard_skip: 'تَخَطَّ', onboard_later: 'لَاحِقًا', onboard_go: 'بِسْمِ اللَّهِ — هَيَّا بِنَا 🌿',
+    onboard_title1: 'عِبَادَتُكَ الرُّوحِيَّةُ<br>كُلَّ يَوْمٍ', onboard_sub1: 'نِيَّة تُرَافِقُكَ فِي طَرِيقِكَ إِلَى اللَّهِ — بِوَتِيرَتِكَ وَبِدُونِ حُكْمٍ.',
+    onboard_title2: 'مَاسِحُ النِّيَّةِ', onboard_sub2: 'انْظُرْ إِلَى شَيْءٍ يَوْمِيٍّ — سَيَقْتَرِحُ الْمَاسِحُ نِيَّةً رُوحِيَّةً لِتَقْدِيسِهِ.',
+    onboard_title3: '٤ مُسْتَوَيَاتٍ لِلْعِبَادَةِ', onboard_sub3: 'تَقَدَّمْ بِوَتِيرَتِكَ — كُلُّ مُسْتَوًى يُفْتَحُ عِنْدَمَا تَكُونُ جَاهِزًا.',
+    onboard_title4: 'مَوَاقِيتُ صَلَاتِكَ', onboard_sub4: 'أَدْخِلْ مَدِينَتَكَ لِعَرْضِ مَوَاقِيتِ الْفَجْرِ وَالظُّهْرِ وَالْعَصْرِ وَالْمَغْرِبِ وَالْعِشَاءِ.',
+    onboard_city_placeholder: 'مثال: الرياض، الدار البيضاء، باريس...',
+    night_title: 'مَا الْفِكْرَةُ الَّتِي تَخْتِمُ بِهَا يَوْمَكَ؟', night_placeholder: 'اكْتُبْ فِكْرَتَكَ الْمَسَائِيَّةَ...', night_send: 'إِرْسَالٌ', night_sagesse: 'حِكْمَةُ اللَّيْلِ',
+    notif_unsupported: 'الْإِشْعَارَاتُ غَيْرُ مَدْعُومَةٍ عَلَى هَذَا الْجِهَازِ', notif_enabled: '✦ تَمَّ تَفْعِيلُ التَّذْكِيرَاتِ — جَزَاكَ اللَّهُ خَيْرًا!', notif_later: 'يُمْكِنُكَ تَفْعِيلُهَا لَاحِقًا فِي الْإِعْدَادَاتِ', notif_disabled: '🔕 تَمَّ تَعْطِيلُ التَّذْكِيرَاتِ',
+    share_downloaded: 'تَمَّ التَّحْمِيلُ — شَارِكْهَا 🌿', share_copied: 'تَمَّ النَّسْخُ!',
+    share_card: 'بِطَاقَةُ نِيَّة ✦', share_intention: 'مُشَارَكَةُ هَذِهِ النِّيَّةِ', share_btn: 'مُشَارَكَةٌ ✦', share_close: 'إِغْلَاقٌ',
+    premium_unlocked: '✅ تَمَّ فَتْحُ الْوُصُولِ الْكَامِلِ — بَارَكَ اللَّهُ فِيكَ!',
+    camera_denied: 'تَمَّ رَفْضُ الْوُصُولِ لِلْكَامِيرَا — فَعِّلْهُ فِي الْإِعْدَادَاتِ',
+    compass_denied: 'فَعِّلِ الْبُوصْلَةَ فِي الْإِعْدَادَاتِ',
   },
 };
 
@@ -6073,15 +6222,15 @@ function updateFajrChallenge() {
   if (fajrStreak >= 30) {
     card.innerHTML = '<div style="background:#1a1a1a;border:1px solid #C8A84A;border-radius:14px;padding:16px 18px;text-align:center;">'
       + '<div style="font-family:\'Noto Naskh Arabic\',serif;font-size:20px;color:#C8A84A;margin-bottom:4px;">مُحَافِظٌ عَلَى الْفَجْرِ</div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#E8DCC0;">Gardien de Fajr ✦</div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#E8DCC0;">' + t('fajr_gardien') + '</div>'
       + '</div>';
   } else {
     card.innerHTML = '<div style="background:#1a1a1a;border:1px solid rgba(200,168,75,0.3);border-radius:14px;padding:14px 18px;min-height:90px;box-sizing:border-box;position:relative;display:flex;align-items:center;">'
       + '<div style="display:flex;align-items:center;gap:12px;width:100%;">'
       + '<div><img src="https://nabs881-sketch.github.io/niyyah-app/imagessoleil.png" alt="Soleil" style="width:60px;height:auto;display:block;flex-shrink:0;mix-blend-mode:screen;"></div>'
       + '<div style="flex:1;text-align:left;">'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:600;color:#C8A84A;">Challenge 30 jours Fajr</div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;font-style:italic;color:#B0A080;margin-top:2px;">Jour ' + fajrStreak + ' sur 30</div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:600;color:#C8A84A;">' + t('fajr_title') + '</div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;font-style:italic;color:#B0A080;margin-top:2px;">' + t('fajr_day') + ' ' + fajrStreak + ' ' + t('fajr_sur') + ' 30</div>'
       + '</div></div>'
       + '<div style="position:absolute;bottom:0;left:0;right:0;height:3px;background:rgba(200,168,75,0.12);border-radius:0 0 14px 14px;overflow:hidden;">'
       + '<div style="height:100%;width:' + pct + '%;background:linear-gradient(90deg,#C8A84A,#E0C870);transition:width 0.6s ease;"></div>'
@@ -6230,8 +6379,8 @@ function updateSanctuaireMoment() {
     el.innerHTML = '<div style="display:flex;align-items:center;gap:10px;background:rgba(200,168,75,0.1);border:1px solid rgba(200,168,75,0.3);border-radius:14px;padding:14px 18px;margin:12px 0 20px;">'
       + '<div style="width:3px;height:36px;background:linear-gradient(180deg,#C8A84A,#E0C870);border-radius:2px;flex-shrink:0;"></div>'
       + '<div style="flex:1;">'
-      + '<div style="font-size:15px;font-weight:700;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;">✦ Bloc accompli</div>'
-      + '<div style="font-size:11px;color:var(--t3);margin-top:2px;">Barak Allahu fik</div>'
+      + '<div style="font-size:15px;font-weight:700;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;">' + t('bloc_done') + '</div>'
+      + '<div style="font-size:11px;color:var(--t3);margin-top:2px;">' + t('bloc_done_sub') + '</div>'
       + jourLine
       + '</div></div>';
   } else {
@@ -6239,10 +6388,10 @@ function updateSanctuaireMoment() {
       + '<div style="width:3px;height:36px;background:linear-gradient(180deg,#C8A84A,#E0C870);border-radius:2px;flex-shrink:0;"></div>'
       + '<div style="flex:1;">'
       + '<div style="font-size:15px;font-weight:700;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;">' + block.label + '</div>'
-      + '<div style="font-size:11px;color:var(--t3);margin-top:2px;">' + blockDone + ' acte' + (blockDone > 1 ? 's' : '') + ' accompli' + (blockDone > 1 ? 's' : '') + ' · ' + blockRemaining + ' restant' + (blockRemaining > 1 ? 's' : '') + '</div>'
+      + '<div style="font-size:11px;color:var(--t3);margin-top:2px;">' + blockDone + ' ' + (blockDone > 1 ? t('actes_done_p') : t('actes_done')) + ' · ' + blockRemaining + ' ' + (blockRemaining > 1 ? t('actes_left_p') : t('actes_left')) + '</div>'
       + jourLine
       + '</div>'
-      + '<button onclick="v2GoTo(\'checklist\')" style="background:transparent;border:1px solid rgba(200,168,75,0.4);color:#C8A84A;font-size:12px;font-weight:600;padding:6px 14px;border-radius:10px;cursor:pointer;white-space:nowrap;">→ Continuer</button>'
+      + '<button onclick="v2GoTo(\'checklist\')" style="background:transparent;border:1px solid rgba(200,168,75,0.4);color:#C8A84A;font-size:12px;font-weight:600;padding:6px 14px;border-radius:10px;cursor:pointer;white-space:nowrap;">' + t('btn_continue') + '</button>'
       + '</div>';
   }
 }
@@ -6553,10 +6702,10 @@ function v2GoMentor() {
       mentorStatusEl.textContent = '✦ Mentor Premium activé';
       mentorStatusEl.style.color = 'rgba(212,175,55,0.6)';
     } else if (remaining > 0) {
-      mentorStatusEl.textContent = remaining + ' question' + (remaining > 1 ? 's' : '') + ' encore offerte' + (remaining > 1 ? 's' : '') + ' ✦';
+      mentorStatusEl.textContent = remaining + ' ' + (remaining > 1 ? t('mentor_offered_p') : t('mentor_offered'));
       mentorStatusEl.style.color = 'rgba(200,168,75,0.6)';
     } else {
-      mentorStatusEl.textContent = 'Reviens demain inch\'Allah 🌙';
+      mentorStatusEl.textContent = t('mentor_tomorrow');
       mentorStatusEl.style.color = 'rgba(200,168,75,0.5)';
     }
   }
@@ -6880,7 +7029,7 @@ function mentorSend() {
   var _mentorCount = parseInt(localStorage.getItem('niyyah_mentor_count') || '0', 10);
   if (_mentorDate !== TODAY) { _mentorCount = 0; localStorage.setItem('niyyah_mentor_date', TODAY); }
   if (_mentorCount >= 1) {
-    showToast('Ta question du jour a été posée — reviens demain inch\'Allah 🌙');
+    showToast(t('mentor_limit'));
     return;
   }
   const input = document.getElementById('mentor-input');
@@ -7703,7 +7852,7 @@ function scannerConfirmNiyyah() {
   } catch(e) {}
 
   // Toast fraternel
-  v2ShowToast('✦ Niyyah posée — Bismillah 🌿');
+  v2ShowToast(t('toast_niyyah'));
   if (navigator.vibrate) navigator.vibrate([20, 40, 80]);
 
   // Fermer le scanner
@@ -7835,7 +7984,7 @@ async function scannerCapture() {
   var _scanCount = parseInt(localStorage.getItem('niyyah_scanner_count') || '0', 10);
   if (_scanDate !== TODAY) { _scanCount = 0; localStorage.setItem('niyyah_scanner_date', TODAY); }
   if (_scanCount >= 1) {
-    showToast('Ton scan du jour a été utilisé — reviens demain inch\'Allah 🌙');
+    showToast(t('scanner_limit'));
     return;
   }
   localStorage.setItem('niyyah_scanner_count', String(_scanCount + 1));
