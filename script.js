@@ -979,6 +979,10 @@ const SAVAIS_TU = [
   'Omar ibn al-Khattab pleurait tellement dans sa prière qu\'on entendait ses sanglots depuis les derniers rangs. — Histoire islamique',
   'Abu Bakr fut appelé as-Siddiq car il ne douta pas lors du voyage nocturne du Prophète ﷺ. — Histoire islamique',
   'Aisha a transmis plus de 2000 hadiths — c\'est la femme qui en a rapporté le plus. — Histoire islamique',
+  'Le Prophète ﷺ a dit : "Facilite et ne complique pas, annonce la bonne nouvelle et ne fais pas fuir." — Bukhari 69',
+  'Le Prophète ﷺ visitait les malades, assistait aux enterrements et répondait aux invitations des pauvres. — Bukhari 1239',
+  'Le Prophète ﷺ a dit : "Toute chose a un cœur, et le cœur du Coran est Ya-Sin." — Tirmidhi 2887',
+  'Le Prophète ﷺ a dit : "Si vous saviez ce que je sais, vous ririez peu et pleureriez beaucoup." — Bukhari 6485',
 ];
 function getSavaisTuFact() {
   var dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(),0,0).getTime()) / 86400000);
