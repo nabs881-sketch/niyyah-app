@@ -7589,6 +7589,23 @@ function wrapCanvasText(ctx, text, maxWidth) {
   if (line) lines.push(line);
   return lines;
 }
+// TEST — REMOVE AFTER
+function testShareCard() {
+  _scannerResult = { category: 'nature', niyyahDirect: 'Chaque souffle est un don d\'Allah — je choisis de vivre cette journée avec présence et gratitude.' };
+  _selectedNuance = 0;
+  var origCanvas = document.getElementById('scanner-share-canvas');
+  var testCanvas = document.getElementById('scanner-share-canvas-test');
+  if (testCanvas) testCanvas.id = 'scanner-share-canvas';
+  scannerShareCard();
+  if (testCanvas) {
+    testCanvas.id = 'scanner-share-canvas-test';
+    var preview = document.getElementById('test-card-preview');
+    if (preview) {
+      preview.src = testCanvas.toDataURL('image/png');
+      preview.style.display = 'block';
+    }
+  }
+}
 
 /* ── Rescanner ── */
 function scannerRetry() {
