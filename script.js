@@ -399,14 +399,16 @@ function renderDefiCard() {
   // Toujours assigner un handler par défaut
   card.onclick = function() { if (typeof openDefiSelector === 'function') openDefiSelector(); };
   try {
-  const { defi, state: defiState } = getDefiCourant();
+  var _defiResult = getDefiCourant() || {};
+  var defi = _defiResult.defi || null;
+  var defiState = _defiResult.state || null;
   // Pas encore de défi choisi cette semaine
   if (!defi) {
     document.getElementById('defiCardIcon').innerHTML = '<img src="https://nabs881-sketch.github.io/niyyah-app/imagescroissant.png" alt="Croissant" style="width:60px;height:auto;display:block;flex-shrink:0;">';
-    document.getElementById('defiCardTitre').textContent = 'Choisir ton défi de la semaine';
-    document.getElementById('defiCardScore').textContent = '';
-    const dots = document.getElementById('defiCardDots');
-    dots.innerHTML = '<div style="font-size:11px;color:rgba(200,168,75,0.5);font-style:italic;">Appuie pour parcourir les 100 défis →</div>';
+    document.getElementById('defiCardTitre').textContent = 'Aucun défi cette semaine';
+    document.getElementById('defiCardScore').textContent = 'Appuie pour en choisir un ✦';
+    var barFill0 = document.getElementById('defiCardBarFill');
+    if (barFill0) barFill0.style.width = '0%';
     return;
   }
   card.onclick = function() { if (typeof openDefiOverlay === 'function') openDefiOverlay(); };
