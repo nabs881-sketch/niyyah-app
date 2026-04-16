@@ -266,7 +266,7 @@
   <!-- Mode Compagnon Nocturne -->
   <div id="night-companion-overlay" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999;background:#0a0a0a;overflow-y:auto;">
     <div style="max-width:360px;margin:0 auto;padding:calc(var(--safe-top,0px) + 40px) 24px 40px;text-align:center;">
-      <button onclick="closeNightCompanion()" style="position:absolute;top:16px;right:16px;background:transparent;border:1px solid rgba(192,192,192,0.2);border-radius:50%;width:36px;height:36px;color:rgba(192,192,192,0.5);font-size:18px;cursor:pointer;">✕</button>
+      <button onclick="closeNightCompanion()" style="position:fixed;top:16px;right:16px;z-index:10000;background:rgba(10,10,10,0.8);border:1px solid rgba(192,192,192,0.3);border-radius:50%;width:44px;height:44px;color:rgba(192,192,192,0.7);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;">✕</button>
       <div style="font-family:'Noto Naskh Arabic',serif;font-size:20px;color:rgba(192,192,192,0.4);margin-bottom:24px;">بِسْمِ اللهِ</div>
       <div style="font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;color:#C0C0C0;line-height:1.7;margin-bottom:28px;">Quelle pensée ferme ta journée ?</div>
       <textarea id="night-thought-input" placeholder="Écris ta pensée du soir..." style="width:100%;min-height:100px;background:rgba(192,192,192,0.04);border:1px solid rgba(192,192,192,0.15);border-radius:14px;padding:16px;color:#C0C0C0;font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;resize:none;outline:none;box-sizing:border-box;"></textarea>

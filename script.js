@@ -6476,6 +6476,7 @@ function checkNightCompanion() {
   if (overlay) overlay.style.display = 'block';
 }
 function closeNightCompanion() {
+  localStorage.setItem('niyyah_compagnon_date', new Date().toISOString().split('T')[0]);
   var overlay = document.getElementById('night-companion-overlay');
   if (overlay) overlay.style.display = 'none';
 }
@@ -6487,12 +6488,14 @@ async function sendNightThought() {
   btn.textContent = '…';
   btn.disabled = true;
   try {
+    input.style.display = 'none';
     var res = await fetch('https://niyyah-worker.nabs881.workers.dev/murmure', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ thought: thought, mode: 'night', context: 'L\'utilisateur ferme sa journée avec cette pensée. Réponds en EXACTEMENT 3 phrases courtes :\n1) Accueille sa pensée avec douceur — montre que tu as compris ce qu\'il ressent, sans juger.\n2) Offre UNE sagesse d\'Ibn Ata\'illah (Al-Hikam) ou d\'Al-Ghazali (Ihya Ulum al-Din) directement liée à ce qu\'il a écrit. Cite la source.\n3) Termine par une invitation douce à dormir en paix sous la protection d\'Allah.\nTon : intime, fraternel, jamais générique. Parle comme un ami savant qui murmure avant le sommeil.' })
     });
     var data = await res.json();
+    console.log('Compagnon nocturne response:', data);
     var wisdom = data.text || data.reply || data.content || 'La nuit est un voile de miséricorde — repose-toi sous Sa protection.';
     var source = data.source || 'Sagesse nocturne';
     var responseEl = document.getElementById('night-wisdom-response');
@@ -6504,6 +6507,7 @@ async function sendNightThought() {
     localStorage.setItem('niyyah_sagesse_nuit', JSON.stringify({ text: wisdom, source: source, date: new Date().toISOString().split('T')[0], thought: thought }));
     localStorage.setItem('niyyah_compagnon_date', new Date().toISOString().split('T')[0]);
   } catch(e) {
+    console.log('Compagnon nocturne error:', e);
     var fallback = 'Celui qui connaît son âme connaît son Seigneur. — Al-Ghazali';
     var responseEl2 = document.getElementById('night-wisdom-response');
     var textEl2 = document.getElementById('night-wisdom-text');
@@ -6514,9 +6518,7 @@ async function sendNightThought() {
     localStorage.setItem('niyyah_sagesse_nuit', JSON.stringify({ text: fallback, source: 'Al-Ghazali', date: new Date().toISOString().split('T')[0], thought: thought }));
     localStorage.setItem('niyyah_compagnon_date', new Date().toISOString().split('T')[0]);
   }
-  btn.textContent = 'ENVOYER';
-  btn.disabled = false;
-  input.value = '';
+  btn.style.display = 'none';
 }
 function showMorningSagesse() {
   if (typeof isPremium !== 'function' || !isPremium()) return;
