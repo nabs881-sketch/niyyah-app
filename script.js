@@ -975,6 +975,10 @@ const SAVAIS_TU = [
   'Le Prophète ﷺ a dit : "Allah est auprès du serviteur tant que le serviteur est auprès de son frère." — Muslim 2699',
   'Le Prophète ﷺ a dit : "Le meilleur de ce que j\'ai dit, moi et les prophètes avant moi : La ilaha illallah wahdahu la sharika lah." — Tirmidhi 3585',
   'Le Prophète ﷺ a dit : "Quiconque dit SubhanAllah wa bihamdihi 100 fois par jour, ses péchés sont effacés même s\'ils sont comme l\'écume de la mer." — Bukhari 6405',
+  'La sourate Al-Fatiha est récitée 17 fois par jour dans les prières obligatoires. — Fiqh islamique',
+  'Omar ibn al-Khattab pleurait tellement dans sa prière qu\'on entendait ses sanglots depuis les derniers rangs. — Histoire islamique',
+  'Abu Bakr fut appelé as-Siddiq car il ne douta pas lors du voyage nocturne du Prophète ﷺ. — Histoire islamique',
+  'Aisha a transmis plus de 2000 hadiths — c\'est la femme qui en a rapporté le plus. — Histoire islamique',
 ];
 function getSavaisTuFact() {
   var dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(),0,0).getTime()) / 86400000);
