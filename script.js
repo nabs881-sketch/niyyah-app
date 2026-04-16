@@ -7133,8 +7133,8 @@ function openScannerJournal() {
     content.innerHTML = '<div style="text-align:center;padding:60px 20px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:#B0A080;">Tes intentions apparaîtront ici ✦</div></div>';
   } else {
     var html = '<div style="display:flex;gap:14px;overflow-x:auto;padding:8px 0 16px;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;">';
-    hist.forEach(function(entry) {
-      html += '<div style="min-width:260px;max-width:260px;height:160px;background:linear-gradient(135deg,#1a1a1a,#2C2E32);border:1px solid rgba(200,168,75,0.3);border-radius:16px;padding:20px;display:flex;flex-direction:column;justify-content:space-between;scroll-snap-align:start;flex-shrink:0;">'
+    hist.forEach(function(entry, i) {
+      html += '<div class="journal-card" style="min-width:260px;max-width:260px;height:160px;background:linear-gradient(135deg,#1a1a1a,#2C2E32);border:1px solid rgba(200,168,75,0.3);border-radius:16px;padding:20px;display:flex;flex-direction:column;justify-content:space-between;scroll-snap-align:start;flex-shrink:0;animation:journalCardIn 0.4s ease both ' + (i * 100) + 'ms;">'
         + '<div style="font-family:\'Cinzel\',serif;font-size:10px;color:#C8A84A;letter-spacing:1px;">' + entry.time + ' · ' + entry.day + '</div>'
         + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:#E8DCC0;line-height:1.5;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">« ' + entry.text + ' »</div>'
         + '<div style="font-size:10px;color:#B0A080;">' + entry.date + '</div>'
@@ -7144,10 +7144,21 @@ function openScannerJournal() {
     content.innerHTML = html;
   }
   overlay.style.display = 'block';
+  overlay.style.opacity = '0';
+  requestAnimationFrame(function() { overlay.style.opacity = '1'; });
+  // Pull-to-close gesture
+  var _touchY = 0;
+  overlay.ontouchstart = function(e) { _touchY = e.touches[0].clientY; };
+  overlay.ontouchmove = function(e) {
+    var dy = e.touches[0].clientY - _touchY;
+    if (dy > 120) { closeScannerJournal(); overlay.ontouchstart = null; overlay.ontouchmove = null; }
+  };
 }
 function closeScannerJournal() {
   var overlay = document.getElementById('scanner-journal-overlay');
-  if (overlay) overlay.style.display = 'none';
+  if (!overlay) return;
+  overlay.style.opacity = '0';
+  setTimeout(function() { overlay.style.display = 'none'; }, 300);
 }
 
 /* ── Fermer le Scanner ── */
