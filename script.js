@@ -281,7 +281,17 @@ function confirmerDefi(defiId) {
 
 function getDefiCourant() {
   const s = initDefiSemaine();
-  if (!s.current || s.current.semaine !== getLundiDate()) return { defi: null, state: s };
+  const lundi = getLundiDate();
+  if (!s.current || s.current.semaine !== lundi) {
+    // Auto-assigner un défi si aucun n'existe pour cette semaine
+    var suggestion = getSuggestionDefi();
+    if (suggestion) {
+      s.current = { id: suggestion.id, semaine: lundi, jours: [], complete: false };
+      s.choixEnAttente = null;
+      saveDefiState(s);
+    }
+  }
+  if (!s.current) return { defi: null, state: s };
   return { defi: DEFIS_DB.find(d => d.id === s.current.id), state: s };
 }
 
@@ -414,8 +424,8 @@ function renderDefiCard() {
   // Pas encore de défi choisi cette semaine
   if (!defi) {
     document.getElementById('defiCardIcon').innerHTML = '<img src="https://nabs881-sketch.github.io/niyyah-app/imagescroissant.png" alt="Croissant" style="width:60px;height:auto;display:block;flex-shrink:0;">';
-    document.getElementById('defiCardTitre').textContent = 'Aucun défi cette semaine';
-    document.getElementById('defiCardScore').textContent = 'Appuie pour en choisir un ✦';
+    document.getElementById('defiCardTitre').textContent = 'Choisir un défi ✦';
+    document.getElementById('defiCardScore').textContent = 'Appuie pour commencer';
     var barFill0 = document.getElementById('defiCardBarFill');
     if (barFill0) barFill0.style.width = '0%';
     return;
