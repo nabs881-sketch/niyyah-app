@@ -5958,7 +5958,7 @@ async function sendNightThought() {
     var res = await fetch('https://niyyah-worker.nabs881.workers.dev/murmure', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ thought: thought, mode: 'night', context: 'Réponds en une seule phrase de sagesse, dans le style d\'Ibn Ata\'illah ou Al-Ghazali. Pas de conseil, pas de question. Juste une parole lumineuse qui apaise.' })
+      body: JSON.stringify({ thought: thought, mode: 'night', context: 'L\'utilisateur ferme sa journée avec cette pensée. Réponds en EXACTEMENT 3 phrases courtes :\n1) Accueille sa pensée avec douceur — montre que tu as compris ce qu\'il ressent, sans juger.\n2) Offre UNE sagesse d\'Ibn Ata\'illah (Al-Hikam) ou d\'Al-Ghazali (Ihya Ulum al-Din) directement liée à ce qu\'il a écrit. Cite la source.\n3) Termine par une invitation douce à dormir en paix sous la protection d\'Allah.\nTon : intime, fraternel, jamais générique. Parle comme un ami savant qui murmure avant le sommeil.' })
     });
     var data = await res.json();
     var wisdom = data.text || data.reply || data.content || 'La nuit est un voile de miséricorde — repose-toi sous Sa protection.';
