@@ -1187,6 +1187,7 @@ if (state._date !== TODAY) {
   saveState();
 }
 if (!state._unlocked) state._unlocked = [1];
+if (state._unlocked.length < 4) { [1,2,3,4].forEach(function(id) { if (!state._unlocked.includes(id)) state._unlocked.push(id); }); saveState(); }
 function getCalcLvlPct(lvlId, s) {
   const lvl = LEVELS.find(l => l.id === lvlId);
   const items = lvl.sections.flatMap(sec => sec.items);
@@ -1773,12 +1774,10 @@ function renderResume() {
   LEVELS.forEach((lvl, i) => {
     const pct = Math.round(getLevelProgress(lvl.id));
     const isDone = pct >= 100;
-    const unlocked = state._unlocked.includes(lvl.id);
     const color = isDone ? 'var(--gold)' : 'var(--green)';
     const pctCls = isDone ? 'resume-level-pct done' : 'resume-level-pct';
-    var resumeLockSvg = '<svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;"><rect x="1" y="7" width="12" height="9" rx="2" stroke="#C8A84A" stroke-width="1.5"/><path d="M4 7V5a3 3 0 0 1 6 0v2" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"/></svg>';
-    var resumePctLabel = !unlocked ? resumeLockSvg : (unlocked && pct === 0) ? 'Commence !' : pct + '%';
-    levelsHtml += '<div class="resume-level-row" style="' + (!unlocked ? 'opacity:0.4' : '') + '"><div class="resume-level-icon">' + levelIcons[i] + '</div><div class="resume-level-body"><div class="resume-level-name">' + lvl.title + (isDone ? ' ✓' : '') + '</div><div class="resume-level-bar-track"><div class="resume-level-bar-fill" style="width:' + pct + '%;background:' + color + '"></div></div></div><div class="' + pctCls + '">' + resumePctLabel + '</div></div>';
+    var resumePctLabel = pct === 0 ? 'Commence !' : pct + '%';
+    levelsHtml += '<div class="resume-level-row"><div class="resume-level-icon">' + levelIcons[i] + '</div><div class="resume-level-body"><div class="resume-level-name">' + lvl.title + (isDone ? ' ✓' : '') + '</div><div class="resume-level-bar-track"><div class="resume-level-bar-fill" style="width:' + pct + '%;background:' + color + '"></div></div></div><div class="' + pctCls + '">' + resumePctLabel + '</div></div>';
   });
   levelsHtml += '</div>';
   const todayDone = getLevelProgress(1) >= 100;
@@ -1974,16 +1973,12 @@ function renderRamadanActivateBtn() {
 function renderTabs() {
   const tabs = document.getElementById('levelTabs');
   tabs.innerHTML = LEVELS.map(l => {
-    const unlocked = state._unlocked.includes(l.id);
-    const active   = l.id === currentLevel;
-    const pct      = getLevelProgress(l.id);
-    const done     = pct >= 100;
+    const active = l.id === currentLevel;
+    const done   = getLevelProgress(l.id) >= 100;
     let cls = 'tab';
-    if (active)        cls += ' active';
-    else if (!unlocked) cls += ' locked';
-    else if (done)     cls += ' done';
-    const lock = !unlocked ? ' <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-left:4px;"><rect x="1" y="7" width="12" height="9" rx="2" stroke="#C8A84A" stroke-width="1.5"/><path d="M4 7V5a3 3 0 0 1 6 0v2" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"/></svg>' : done ? ' ✓' : '';
-    return '<div class="' + cls + '" onclick="selectLevel(' + l.id + ')">' + l.title + lock + '</div>';
+    if (active)   cls += ' active';
+    else if (done) cls += ' done';
+    return '<div class="' + cls + '" onclick="selectLevel(' + l.id + ')">' + l.title + (done ? ' ✓' : '') + '</div>';
   }).join('');
 }
 function animateTabSwipe(direction, callback) {
@@ -2016,13 +2011,8 @@ function animateTabSwipe(direction, callback) {
 
 function selectLevel(id) {
   if (id > 1 && !state._unlocked.includes(id)) {
-    if (localStorage.getItem('niyyah_pro') === '1') {
-      if (!state._unlocked.includes(id)) state._unlocked.push(id);
-      saveState();
-    } else {
-      openFreemium();
-      return;
-    }
+    state._unlocked.push(id);
+    saveState();
   }
   currentLevel = id;
   saveState();
@@ -2115,17 +2105,9 @@ function renderLevel(levelId) {
   const content = document.getElementById('content');
   const pct     = getLevelProgress(levelId);
   if (!state._unlocked.includes(levelId)) {
-    var _streak = (history && history.streak) || 0;
-    var _convMsg = getConversionMessage(_streak);
-    content.innerHTML = '<div style="background:rgba(200,168,75,0.08);border:1px solid rgba(200,168,75,0.3);border-radius:16px;padding:24px;text-align:center;margin:20px 16px;">'
-      + '<div style="font-size:24px;color:#C8A84A;margin-bottom:16px;">✦</div>'
-      + '<svg width="40" height="46" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:14px;"><rect x="1" y="7" width="12" height="9" rx="2" stroke="#C8A84A" stroke-width="1.5"/><path d="M4 7V5a3 3 0 0 1 6 0v2" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"/></svg>'
-      + '<div style="font-size:18px;font-weight:600;color:var(--t1);margin-bottom:6px;">Niveau ' + levelId + '</div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:#E8DCC0;line-height:1.7;margin:16px 0 20px;padding:0 8px;">' + _convMsg + '</div>'
-      + '<button onclick="openFreemium()" style="width:100%;background:#C8A84A;color:#000;font-size:14px;font-weight:700;border:none;border-radius:12px;padding:14px;cursor:pointer;">' + t('locked_btn') + '</button>'
-      + '<div style="font-size:10px;color:rgba(255,255,255,0.3);margin-top:10px;">' + t('locked_price') + '</div>'
-      + '</div>';
-    return;
+    state._unlocked.push(levelId);
+    saveState();
+    renderTabs();
   }
   let fridayBanner = '';
   if (level.id === 1 && isFriday()) {
@@ -2891,13 +2873,12 @@ function renderProgression() {
   const ringP = '<div style="width:88px;height:88px;position:relative;margin:0 auto 12px;"><svg width="88" height="88" viewBox="0 0 88 88" style="transform:rotate(-90deg)"><circle cx="44" cy="44" r="36" fill="none" stroke="var(--sep2)" stroke-width="5"/><circle cx="44" cy="44" r="36" fill="none" stroke="'+cP+'" stroke-width="5" stroke-linecap="round" stroke-dasharray="'+circP.toFixed(1)+'" stroke-dashoffset="'+(circP-dashP).toFixed(1)+'" style="transition:stroke-dashoffset 0.8s cubic-bezier(0.34,1.56,0.64,1)"/></svg><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:20px;color:var(--t1);">'+globalPctP+'%</div></div>';
   let lvlRowsP='';
   LEVELS.forEach((lvl,i)=>{
-    const pct=Math.round(getLevelProgress(lvl.id)), done=pct>=100, unlocked=state._unlocked.includes(lvl.id);
+    const pct=Math.round(getLevelProgress(lvl.id)), done=pct>=100;
     var pctLabel = pct===0 ? t('lvl_start') : pct>=100 ? t('lvl_done') : t('lvl_progress');
-    var lockSvg = '<svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:4px;"><rect x="1" y="7" width="12" height="9" rx="2" stroke="#C8A84A" stroke-width="1.5"/><path d="M4 7V5a3 3 0 0 1 6 0v2" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"/></svg>';
-    lvlRowsP+='<div style="background:var(--card);border-radius:12px;padding:10px 14px;display:flex;align-items:center;gap:10px;'+(unlocked?'':'opacity:0.4')+';margin-bottom:5px;">'
-      +'<div style="flex-shrink:0;">'+getMoonSVG(unlocked?pct:0)+'</div>'
+    lvlRowsP+='<div style="background:var(--card);border-radius:12px;padding:10px 14px;display:flex;align-items:center;gap:10px;margin-bottom:5px;">'
+      +'<div style="flex-shrink:0;">'+getMoonSVG(pct)+'</div>'
       +'<div style="flex:1"><div style="font-size:13px;color:var(--t1);margin-bottom:3px;">'+lvl.title+(done?' ✓':'')+'</div>'
-      +'<div>'+(!unlocked?lockSvg+'<span style="color:#C8A84A;font-size:11px;opacity:0.7;">'+t('locked_premium')+'</span>':'<span style="font-size:11px;color:var(--t3);">'+pctLabel+'</span>')+'</div></div></div>';
+      +'<div><span style="font-size:11px;color:var(--t3);">'+pctLabel+'</span></div></div></div>';
   });
   // === GRAPHIQUE 7 JOURS BILANS ===
   const bilansData = JSON.parse(localStorage.getItem('niyyah_bilans') || '{}');
@@ -5448,9 +5429,9 @@ const V2_I18N = {
     // Wird
     wird_back: '← Retour', wird_reset: '↺ Réinitialiser',
     // Locked screen
-    locked_title: 'Niveau', locked_premium: 'Disponible au niveau supérieur ✦', locked_btn: 'Continuer ma progression →', locked_price: '4.99€ · Paiement unique · Accès à vie',
+    locked_title: 'Niveau',
     // Level labels
-    lvl_start: 'Commence !', lvl_progress: 'En cours ✦', lvl_done: 'Accompli ✦', lvl_locked: 'Verrouillé',
+    lvl_start: 'Commence !', lvl_progress: 'En cours ✦', lvl_done: 'Accompli ✦',
     // Medals
     medal_bronze: '🥉 Bronze', medal_silver: '🥈 Argent', medal_gold: '🥇 Or',
     medal_toast_bronze: '🥉 Bronze !', medal_toast_silver: '🥈 Argent !', medal_toast_gold: '🥇 OR — Journée parfaite !',
@@ -5493,6 +5474,11 @@ const V2_I18N = {
     camera_denied: 'Accès caméra refusé — autorise l\'accès dans les réglages',
     // Compass
     compass_denied: 'Autorise la boussole dans les réglages',
+    disclaimer: 'Cette application n\'émet pas d\'avis religieux. Pour toute question de fiqh, consultez un savant qualifié.',
+    night_disclaimer: 'Rappel : ceci n\'est pas une fatwa. Le Compagnon n\'émet pas d\'avis religieux.',
+    settings_mentions: 'Mentions',
+    mentions_text: 'Niyyah Daily est un outil de rappel et d\'organisation spirituelle. L\'application n\'émet aucun avis religieux (fatwa). Le contenu (savais-tu, traits de Nafs, suggestions) est indicatif. Pour toute question de fiqh, aqida, tafsir ou situation personnelle, consultez un savant qualifié (imam, cheikh, ustadh) avec ijaza reconnue.',
+    nafs_disclaimer: 'Compilation inspirée des classiques de tazkiyat an-nafs (Al-Ghazali, Ibn al-Qayyim). N\'a pas valeur de traité savant.',
   },
 
   en: {
@@ -5553,8 +5539,8 @@ const V2_I18N = {
     defi_launched: 'Challenge started: ', defi_done: 'Masha\'Allah ✦ Challenge completed!', defi_checked: '✦ Day checked — Keep going!', defi_already: 'Already checked today ✓',
     defi_days_left: 'days left', defi_day_left: 'day left', defi_accomplished: '✦ Accomplished!',
     wird_back: '← Back', wird_reset: '↺ Reset',
-    locked_title: 'Level', locked_premium: 'Available at next level ✦', locked_btn: 'Continue my progress →', locked_price: '€4.99 · One-time · Lifetime',
-    lvl_start: 'Start!', lvl_progress: 'In progress ✦', lvl_done: 'Accomplished ✦', lvl_locked: 'Locked',
+    locked_title: 'Level',
+    lvl_start: 'Start!', lvl_progress: 'In progress ✦', lvl_done: 'Accomplished ✦',
     medal_bronze: '🥉 Bronze', medal_silver: '🥈 Silver', medal_gold: '🥇 Gold',
     medal_toast_bronze: '🥉 Bronze!', medal_toast_silver: '🥈 Silver!', medal_toast_gold: '🥇 GOLD — Perfect day!',
     friday_title: 'Yawm al-Jumuah — Blessed Friday', friday_sub: 'Friday prayer is obligatory today',
@@ -5583,6 +5569,11 @@ const V2_I18N = {
     premium_unlocked: '✅ Full access unlocked — Barakallahu feek!',
     camera_denied: 'Camera access denied — allow in settings',
     compass_denied: 'Allow compass in settings',
+    disclaimer: 'This app does not issue religious rulings. For any fiqh question, consult a qualified scholar.',
+    night_disclaimer: 'Reminder: this is not a fatwa. The Companion does not issue religious rulings.',
+    settings_mentions: 'Legal Notice',
+    mentions_text: 'Niyyah Daily is a spiritual reminder and organization tool. The app does not issue any religious rulings (fatwa). Content (did-you-know, Nafs traits, suggestions) is informational only. For any question on fiqh, aqida, tafsir, or personal matters, consult a qualified scholar (imam, shaykh, ustadh) with recognized ijaza.',
+    nafs_disclaimer: 'Compilation inspired by classical works on tazkiyat an-nafs (Al-Ghazali, Ibn al-Qayyim). This is not a scholarly treatise.',
   },
 
   ar: {
@@ -5643,8 +5634,8 @@ const V2_I18N = {
     defi_launched: 'بَدَأَ التَّحَدِّي: ', defi_done: 'مَا شَاءَ اللَّهُ ✦ أُنْجِزَ التَّحَدِّي!', defi_checked: '✦ يَوْمٌ مُسَجَّلٌ — وَاصِلْ!', defi_already: 'سُجِّلَ الْيَوْمَ بِالْفِعْلِ ✓',
     defi_days_left: 'أَيَّامٌ مُتَبَقِّيَةٌ', defi_day_left: 'يَوْمٌ مُتَبَقٍّ', defi_accomplished: '✦ أُنْجِزَ!',
     wird_back: '→ رُجُوعٌ', wird_reset: '↺ إِعَادَةُ التَّعْيِينِ',
-    locked_title: 'الْمُسْتَوَى', locked_premium: 'مُتَاحٌ فِي الْمُسْتَوَى التَّالِي ✦', locked_btn: '← مُتَابَعَةُ التَّقَدُّمِ', locked_price: '٤.٩٩€ · دَفْعَةٌ وَاحِدَةٌ · مَدَى الْحَيَاةِ',
-    lvl_start: 'ابْدَأْ!', lvl_progress: 'جَارٍ ✦', lvl_done: 'أُنْجِزَ ✦', lvl_locked: 'مُقْفَلٌ',
+    locked_title: 'الْمُسْتَوَى',
+    lvl_start: 'ابْدَأْ!', lvl_progress: 'جَارٍ ✦', lvl_done: 'أُنْجِزَ ✦',
     medal_bronze: '🥉 بْرُونْزِيٌّ', medal_silver: '🥈 فِضِّيٌّ', medal_gold: '🥇 ذَهَبِيٌّ',
     medal_toast_bronze: '🥉 بْرُونْزٌ!', medal_toast_silver: '🥈 فِضَّةٌ!', medal_toast_gold: '🥇 ذَهَبٌ — يَوْمٌ مِثَالِيٌّ!',
     friday_title: 'يَوْمُ الْجُمُعَةِ الْمُبَارَكِ', friday_sub: 'صَلَاةُ الْجُمُعَةِ وَاجِبَةٌ الْيَوْمَ',
@@ -5673,6 +5664,11 @@ const V2_I18N = {
     premium_unlocked: '✅ تَمَّ فَتْحُ الْوُصُولِ الْكَامِلِ — بَارَكَ اللَّهُ فِيكَ!',
     camera_denied: 'تَمَّ رَفْضُ الْوُصُولِ لِلْكَامِيرَا — فَعِّلْهُ فِي الْإِعْدَادَاتِ',
     compass_denied: 'فَعِّلِ الْبُوصْلَةَ فِي الْإِعْدَادَاتِ',
+    disclaimer: 'هَذَا التَّطْبِيقُ لَا يُصْدِرُ فَتَاوَى شَرْعِيَّةً. لِأَيِّ سُؤَالٍ فِقْهِيٍّ، اسْتَشِرْ عَالِمًا مُؤَهَّلًا.',
+    night_disclaimer: 'تَذْكِيرٌ: هَذِهِ لَيْسَتْ فَتْوَى. الرَّفِيقُ لَا يُصْدِرُ أَحْكَامًا شَرْعِيَّةً.',
+    settings_mentions: 'إِشْعَارٌ قَانُونِيٌّ',
+    mentions_text: 'نِيَّة دَيْلِي أَدَاةُ تَذْكِيرٍ وَتَنْظِيمٍ رُوحِيٍّ. لَا يُصْدِرُ التَّطْبِيقُ أَيَّ فَتْوَى شَرْعِيَّةٍ. الْمُحْتَوَى (هَلْ تَعْلَمُ، سِمَاتُ النَّفْسِ، الِاقْتِرَاحَاتُ) إِرْشَادِيٌّ فَقَطْ. لِأَيِّ سُؤَالٍ فِي الْفِقْهِ أَوِ الْعَقِيدَةِ أَوِ التَّفْسِيرِ أَوِ الْأُمُورِ الشَّخْصِيَّةِ، اسْتَشِرْ عَالِمًا مُؤَهَّلًا (إِمَامٌ، شَيْخٌ، أُسْتَاذٌ) ذَا إِجَازَةٍ مُعْتَرَفٍ بِهَا.',
+    nafs_disclaimer: 'تَجْمِيعٌ مُسْتَوْحًى مِنْ كُتُبِ تَزْكِيَةِ النَّفْسِ الْكِلَاسِيكِيَّةِ (الْغَزَالِيُّ، ابْنُ الْقَيِّمِ). لَيْسَ بِمَثَابَةِ رِسَالَةٍ عِلْمِيَّةٍ.',
   },
 };
 
@@ -5911,6 +5907,14 @@ let v2CurrentView = 'sanctuaire';
 
 // ════════════════════════════════════════════════════════════
 // NAFS — 52 Traits de l'âme (Tazkiyat an-nafs)
+//
+// Compilation inspirée des ouvrages classiques
+// de tazkiyat an-nafs, notamment :
+// - Ihya 'Ulum ad-Din (Al-Ghazali)
+// - Madarij as-Salikin (Ibn al-Qayyim al-Jawziyya)
+//
+// Chaque trait est accompagné d'une référence prophétique.
+// Cette compilation n'a pas valeur de traité savant.
 // ════════════════════════════════════════════════════════════
 var NAFS_TRAITS = [
   // === SAISON 1 : maladies_coeur (1-13) ===
@@ -6311,6 +6315,8 @@ function v2GoNafs() {
   var btn = document.getElementById('v2nav-nafs');
   if (btn) btn.classList.add('active-nav');
   renderNafsTrait();
+  var nafsDisc = document.getElementById('nafs-disclaimer');
+  if (nafsDisc) nafsDisc.textContent = t('nafs_disclaimer');
 }
 function v2GoSanctuaire() {
   // Show sanctuaire + V2 UI
@@ -6579,6 +6585,11 @@ function v2OpenSettings() {
       <div style="padding:14px 16px;cursor:pointer;margin-top:8px;background:rgba(255,60,60,0.04);border:1px solid rgba(255,60,60,0.15);border-radius:14px;"
         onclick="if(confirm('Supprimer TOUTES les données ? Cette action est irréversible.')){if(confirm('Dernière confirmation — tout sera perdu.')){localStorage.clear();location.reload();}}">
         <div style="font-size:13px;color:rgba(255,80,80,0.6);text-align:center;">Réinitialisation complète</div>
+      </div>
+
+      <div style="margin-top:14px;background:#1a1a1a;border:1px solid rgba(255,255,255,0.05);border-radius:14px;padding:16px;">
+        <div style="font-size:10px;letter-spacing:0.28em;color:rgba(212,175,55,0.45);text-transform:uppercase;font-family:'Cinzel',serif;margin-bottom:10px;text-align:center;">${T.settings_mentions}</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:12px;color:rgba(240,234,214,0.3);line-height:1.6;text-align:${isRTL ? 'right' : 'left'};">${T.mentions_text}</div>
       </div>
 
       <div style="text-align:center;padding:8px;font-size:10px;color:rgba(240,234,214,0.12);font-family:'Cinzel',serif;letter-spacing:0.2em;margin-bottom:12px;">NIYYAH V2.0 · بِسْمِ اللَّهِ</div>
@@ -6964,6 +6975,8 @@ function v2RefreshStats() {
   checkNightCompanion();
   updateFajrChallenge();
   updateSanctuaireMoment();
+  var disclaimerEl = document.getElementById('app-disclaimer');
+  if (disclaimerEl) disclaimerEl.textContent = t('disclaimer');
 }
 
 function updateFajrChallenge() {
@@ -7043,7 +7056,15 @@ async function sendNightThought() {
     var sourceEl = document.getElementById('night-wisdom-source');
     if (textEl) textEl.textContent = '« ' + wisdom + ' »';
     if (sourceEl) sourceEl.textContent = '— ' + source;
-    if (responseEl) responseEl.style.display = 'block';
+    if (responseEl) {
+      var oldDisc = responseEl.querySelector('.night-disclaimer');
+      if (oldDisc) oldDisc.remove();
+      var disc = document.createElement('div');
+      disc.className = 'night-disclaimer';
+      disc.textContent = t('night_disclaimer');
+      responseEl.insertBefore(disc, responseEl.firstChild);
+      responseEl.style.display = 'block';
+    }
     safeSetItem('niyyah_sagesse_nuit', JSON.stringify({ text: wisdom, source: source, date: new Date().toISOString().split('T')[0], thought: thought }));
     safeSetItem('niyyah_compagnon_date', new Date().toISOString().split('T')[0]);
   } catch(e) {
@@ -7053,7 +7074,15 @@ async function sendNightThought() {
     var sourceEl2 = document.getElementById('night-wisdom-source');
     if (textEl2) textEl2.textContent = '« ' + fallback + ' »';
     if (sourceEl2) sourceEl2.textContent = '— Sagesse nocturne';
-    if (responseEl2) responseEl2.style.display = 'block';
+    if (responseEl2) {
+      var oldDisc2 = responseEl2.querySelector('.night-disclaimer');
+      if (oldDisc2) oldDisc2.remove();
+      var disc2 = document.createElement('div');
+      disc2.className = 'night-disclaimer';
+      disc2.textContent = t('night_disclaimer');
+      responseEl2.insertBefore(disc2, responseEl2.firstChild);
+      responseEl2.style.display = 'block';
+    }
     safeSetItem('niyyah_sagesse_nuit', JSON.stringify({ text: fallback, source: 'Al-Ghazali', date: new Date().toISOString().split('T')[0], thought: thought }));
     safeSetItem('niyyah_compagnon_date', new Date().toISOString().split('T')[0]);
   }

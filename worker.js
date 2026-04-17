@@ -159,6 +159,33 @@ EXEMPLES DU NIVEAU ATTENDU :
 }
 
 // ═══════════════════════════════════════════════════
+// FILTRE DE SÉCURITÉ — Compagnon Nocturne
+// ═══════════════════════════════════════════════════
+const FATWA_KEYWORDS = [
+  'halal', 'haram', 'fatwa', 'il est permis', 'il est interdit',
+  'selon le madhhab', 'la fatwa est', 'it is permissible', 'it is forbidden',
+];
+const FATWA_PATTERNS = [
+  /sourate\s+\S+\s+verset/i,
+  /verset\s+\d+\s*[.:]\s*\d+/i,
+  /\d+\s*[.:]\s*\d+(?=\s*[»"\)])/,
+  /le prophète a dit\s*[«"]/i,
+  /the prophet said\s*[«"]/i,
+  /قال النبي/,
+];
+
+function nightResponseContainsFatwa(text) {
+  const lower = text.toLowerCase();
+  for (const kw of FATWA_KEYWORDS) {
+    if (lower.includes(kw)) return true;
+  }
+  for (const re of FATWA_PATTERNS) {
+    if (re.test(text)) return true;
+  }
+  return false;
+}
+
+// ═══════════════════════════════════════════════════
 // MURMURES (notifications intelligentes)
 // ═══════════════════════════════════════════════════
 async function handleMurmure(request, env) {
@@ -167,7 +194,13 @@ async function handleMurmure(request, env) {
 
     // ── Mode Compagnon Nocturne (appel Claude) ──
     if (data.mode === 'night' && data.thought) {
-      const systemPrompt = "Tu es le Compagnon du soir de Niyyah. L'utilisateur te confie une pensée de fin de journée. Réponds par un haïku ou une très courte méditation spirituelle (3-5 lignes max), chaleureuse, en écho à sa pensée. Pas de dogme, pas de jugement.";
+      const systemPrompt = `Tu es le Compagnon du soir de Niyyah. L'utilisateur te confie une pensée de fin de journée. Réponds par un haïku ou une très courte méditation spirituelle (3-5 lignes max), chaleureuse, en écho à sa pensée. Pas de dogme, pas de jugement.
+
+INTERDICTIONS STRICTES :
+- Tu n'émets JAMAIS d'avis religieux (fatwa). Si l'utilisateur demande un avis de fiqh, aqida, halal/haram, tafsir de verset ou interprétation de hadith, tu réponds : "Pour cette question, consulte un savant qualifié. Je ne peux pas te répondre."
+- Tu n'inventes JAMAIS de verset coranique ni de hadith. Si tu n'es pas certain, tu ne cites pas.
+- Tu ne commentes pas les 4 madhahib. Tu ne prends pas position entre écoles juridiques.
+- Ton rôle : écouter, reformuler, apaiser, orienter vers le rappel d'Allah. Pas enseigner.`;
 
       const response = await fetch('https://api.anthropic.com/v1/messages', {
         method: 'POST',
@@ -189,7 +222,14 @@ async function handleMurmure(request, env) {
       }
 
       const result = await response.json();
-      const text = result.content?.[0]?.text || 'La nuit est un voile de miséricorde — repose-toi sous Sa protection.';
+      let text = result.content?.[0]?.text || 'La nuit est un voile de miséricorde — repose-toi sous Sa protection.';
+
+      // ── Filtre de sécurité côté serveur ──
+      if (nightResponseContainsFatwa(text)) {
+        console.warn('[NIYYAH SAFETY] Night companion response filtered — fatwa-like content detected');
+        text = 'Pour cette question, je t\'invite à consulter un savant qualifié. Je peux t\'écouter, mais je ne peux pas te répondre sur ce point.';
+      }
+
       return jsonResponse({ text, source: 'Compagnon du soir' });
     }
 
