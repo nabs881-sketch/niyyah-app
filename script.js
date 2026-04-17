@@ -310,11 +310,22 @@ function getDefiCourant() {
 // ── DRAWER SÉLECTEUR ─────────────────────────────────────────────────────────
 function openDefiSelector() {
   const s = getDefiState();
-  // Verrouillage 24h
+  // Verrouillage 24h — lecture seule
   if (s.current && s.current.chosenAt) {
     var hoursSince = (Date.now() - s.current.chosenAt) / 3600000;
     if (hoursSince > 24) {
-      showToast('Tiens-le jusqu\'à dimanche, in sha Allah ✦');
+      var defiActif = DEFIS_DB.find(function(d) { return d.id === s.current.id; });
+      var ov2 = document.getElementById('defiSelectorOverlay');
+      var body2 = document.getElementById('defiSelectorBody');
+      if (!ov2 || !body2) return;
+      body2.innerHTML = '<div style="text-align:center;padding:30px 16px;">'
+        + '<div style="font-size:28px;margin-bottom:14px;">' + (defiActif ? defiActif.icon : '✦') + '</div>'
+        + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:600;color:#C8A84A;margin-bottom:8px;">' + (defiActif ? defiActif.titre : 'Défi en cours') + '</div>'
+        + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#B0A080;line-height:1.6;margin-bottom:20px;">Ton défi est ta niyyah de la semaine.<br>Tiens-le jusqu\'à dimanche, in sha Allah ✦</div>'
+        + '<button onclick="closeDefiSelector()" style="padding:12px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-family:\'Cinzel\',serif;font-size:12px;letter-spacing:1px;cursor:pointer;">Fermer</button>'
+        + '</div>';
+      ov2.style.opacity = '1'; ov2.style.pointerEvents = 'all';
+      setTimeout(function() { document.getElementById('defiSelectorSheet').style.transform = 'translateY(0)'; }, 10);
       return;
     }
   }
