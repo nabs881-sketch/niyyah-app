@@ -1425,7 +1425,7 @@ function showLevelPopup(levelId, nextId, hasNext) {
         </button>` : `
         <button class="btn-next-lvl" id="btnNextLvl" style="background:linear-gradient(135deg,#FFD700,#D4AF37);color:#1a0f00;"
           onclick="closeLevelPopup();v2GoSanctuaire()">
-          ☀️ Voir mon Sanctuaire
+          ☀️ Voir Ma Niyyah
         </button>`
       }
       <button class="btn-stay-lvl" onclick="closeLevelPopup()">Rester sur ce niveau</button>
@@ -5233,7 +5233,7 @@ const V2_I18N = {
     lang_code: 'fr',
     dir: 'ltr',
     app_name: 'Niyyah',
-    slogan: 'Le Sanctuaire de l\'Intention',
+    slogan: 'Ma Niyyah · L\'Intention',
     // Orbe
     orb_start: 'Définir mon intention',
     orb_resume: 'Voir mon intention',
@@ -5251,7 +5251,7 @@ const V2_I18N = {
     // Chip
     chip_meta: 'Intention du jour',
     // Nav
-    nav_sanctuaire: 'Sanctuaire',
+    nav_sanctuaire: 'Ma Niyyah',
     nav_pratique:   'Pratique',
     nav_wird:       'Wird',
     nav_parcours:   'Parcours',
@@ -5366,7 +5366,7 @@ const V2_I18N = {
     lang_code: 'en',
     dir: 'ltr',
     app_name: 'Niyyah',
-    slogan: 'The Sanctuary of Intent',
+    slogan: 'My Niyyah · The Intention',
     orb_start: 'Set my Intention',
     orb_resume: 'View my Intention',
     greeting_morning:   'May this day be filled with light',
@@ -5379,7 +5379,7 @@ const V2_I18N = {
     modal_cancel:   'Back',
     modal_placeholder: 'Write your personal intention...',
     chip_meta: 'Today\'s intention',
-    nav_sanctuaire: 'Sanctuary',
+    nav_sanctuaire: 'My Niyyah',
     nav_pratique:   'Practice',
     nav_wird:       'Wird',
     nav_parcours:   'Journey',
