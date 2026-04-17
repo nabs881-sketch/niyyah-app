@@ -2132,8 +2132,8 @@ function renderLevel(levelId) {
   if (level.id === 1 && isFriday()) {
     const FRIDAY_ITEMS = [
       { id: 'fri_kahf',    label: 'Sourate Al-Kahf',       arabic: 'سُورَةُ الْكَهْفِ',         hadith: '"Celui qui lit Al-Kahf le vendredi aura une lumière entre les deux vendredis" — Hakim' },
-      { id: 'fri_salawat', label: 'Salawat × 1000 sur le Prophète ﷺ', arabic: 'اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ', hadith: '"Le meilleur de vos jours est le vendredi — multipliez la Salawat" — Abu Dawud' },
-      { id: 'fri_doua',    label: 'Douaa de l\'heure bénie', arabic: 'رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً', hadith: '"Il y a une heure le vendredi où Allah exauce toute demande" — Bukhari & Muslim' },
+      { id: 'fri_salawat', label: 'Salawat sur le Prophète ﷺ', arabic: 'اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ كَمَا صَلَّيْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ إِنَّكَ حَمِيدٌ مَجِيدٌ', hadith: '"Le meilleur de vos jours est le vendredi — multipliez la Salawat" — Abu Dawud', phonetic: 'Allahumma salli \'ala Muhammad wa \'ala ali Muhammad kama sallayta \'ala Ibrahim wa \'ala ali Ibrahim innaka hamidun majid', translation: 'Ô Allah, prie sur Muhammad et la famille de Muhammad comme Tu as prié sur Ibrahim et la famille d\'Ibrahim. Tu es certes digne de louanges et de glorification.' },
+      { id: 'fri_doua',    label: 'Douaa de l\'heure bénie', arabic: 'رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ', hadith: '"Il y a une heure le vendredi où Allah exauce toute demande" — Bukhari & Muslim', phonetic: 'Rabbanā ātinā fid-dunyā hasanatan wa fil-ākhirati hasanatan wa qinā \'adhāban-nār', translation: 'Notre Seigneur, accorde-nous en ce monde le bien et dans l\'au-delà le bien, et préserve-nous du châtiment du Feu.' },
     ];
     const fridayState = JSON.parse(localStorage.getItem('niyyah_friday_' + TODAY) || '{}');
     let fitems = '';
@@ -2147,7 +2147,16 @@ function renderLevel(levelId) {
       if (fi.id === 'fri_kahf') {
         _audioBtnFri = '<button class="btn-audio" id="btnKahfPlay" ontouchstart="event.stopPropagation()" onclick="toggleKahfAudio(this,event)" title="Écouter Al-Kahf — Alafasy" style="margin-left:0;margin-top:6px;width:auto;padding:0 10px;border-radius:8px;font-size:12px;font-weight:600;display:flex;align-items:center;gap:5px;"><span id="kahfPlayIcon">🔊</span><span id="kahfPlayLabel">Écouter Al-Kahf</span></button>';
       }
+      fitems += '<div style="display:flex;align-items:center;justify-content:space-between;">';
       fitems += '<div class="friday-item-label">' + fi.label + '</div>';
+      if (fi.phonetic) {
+        var _lEsc = fi.label.replace(/"/g,'&quot;');
+        var _aEsc = fi.arabic.replace(/"/g,'&quot;');
+        var _pEsc = (fi.phonetic||'').replace(/"/g,'&quot;');
+        var _tEsc = (fi.translation||'').replace(/"/g,'&quot;');
+        fitems += '<button class="btn-info" ontouchstart="event.stopPropagation()" onclick="openInfoSheet(\'\',\'\',\'\',\'\',event);event.stopPropagation();" data-label="' + _lEsc + '" data-arabic="' + _aEsc + '" data-phonetic="' + _pEsc + '" data-translation="' + _tEsc + '" title="Détails" style="flex-shrink:0;"><i>i</i></button>';
+      }
+      fitems += '</div>';
       fitems += '<div class="friday-item-hadith">' + fi.hadith + '</div>';
       fitems += '<div class="friday-item-arabic">' + fi.arabic + '</div>';
       fitems += _audioBtnFri;
