@@ -2,7 +2,7 @@
 // NIYYAH DAILY — script.js
 // Généré automatiquement — séparation chirurgicale
 // ═══════════════════════════════════════════════════
-function safeSetItem(key, value) { try { safeSetItem(key, value); } catch(e) {} }
+function safeSetItem(key, value) { try { localStorage.setItem(key, value); } catch(e) {} }
 
 /* ─── BLOC 1 : Fix Stats Row ─────────────────────── */
 
