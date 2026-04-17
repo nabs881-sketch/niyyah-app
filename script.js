@@ -422,10 +422,10 @@ function closeDefiSelector() {
 }
 
 function cocherDefiAujourdhui() {
-  const s = getDefiState();
+  var _r = getDefiCourant();
+  var s = _r.state;
   if (!s.current || !s.current.jours) {
     showToast('Aucun défi actif');
-    if (typeof openDefiSelector === 'function') openDefiSelector();
     return;
   }
   const today = getTodayStr();
@@ -573,6 +573,15 @@ function renderDefiOverlay() {
     btn.style.background = 'linear-gradient(135deg,#c8a84b,#e8cc6a)';
     btn.style.color = '#000';
     btn.style.cursor = 'pointer';
+  }
+  // Masquer "Changer de défi" si verrouillé (>24h)
+  var changerBtn = document.getElementById('changerDefiBtn');
+  if (changerBtn) {
+    if (state.current && state.current.chosenAt && (Date.now() - state.current.chosenAt) / 3600000 > 24) {
+      changerBtn.style.display = 'none';
+    } else {
+      changerBtn.style.display = '';
+    }
   }
 }
 
