@@ -3269,6 +3269,8 @@ if (_cachedPrayerDate === TODAY && _cachedPrayerData) {
 const PRAYER_NAMES = ['Fajr','Dhuhr','Asr','Maghrib','Isha'];
 const PRAYER_LABELS = ['Fajr','Dhuhr','Asr','Maghrib','Isha'];
 function renderPrayerTimesCard() {
+  // Re-check dynamiquement — coords peuvent arriver après le boot
+  if (_prayerTimes || localStorage.getItem('niyyah_coords') || _prayerLoading) _showCityInput = false;
   if (_showCityInput) {
     return '<div class="prayer-times-card">' +
       '<div class="prayer-times-header"><div class="prayer-times-title">🕌 Horaires du jour</div></div>' +
