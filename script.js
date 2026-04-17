@@ -5331,19 +5331,23 @@ function onboardRequestGeoloc() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
       function(pos) {
-        safeSetItem('niyyah_coords', JSON.stringify({ lat: pos.coords.latitude, lng: pos.coords.longitude }));
+        var coords = { lat: pos.coords.latitude, lng: pos.coords.longitude };
+        safeSetItem('niyyah_coords', JSON.stringify(coords));
+        alert('✅ GEOLOC SUCCESS\nlat: ' + coords.lat + '\nlng: ' + coords.lng + '\nsaved: ' + localStorage.getItem('niyyah_coords'));
         if (btn) { btn.textContent = '✓ Localisé !'; btn.style.background = 'var(--green)'; }
         setTimeout(onboardFinish, 800);
       },
-      function() {
+      function(err) {
+        alert('❌ GEOLOC ERROR\ncode: ' + err.code + '\nmsg: ' + err.message);
         // Refusé → afficher input ville
         if (btn) { btn.textContent = '📍 Me localiser'; btn.disabled = false; }
         var fallback = document.getElementById('onboardCityFallback');
         if (fallback) fallback.style.display = 'block';
       },
-      { timeout: 10000 }
+      { enableHighAccuracy: false, timeout: 15000, maximumAge: 300000 }
     );
   } else {
+    alert('❌ NO GEOLOC API');
     var fallback = document.getElementById('onboardCityFallback');
     if (fallback) fallback.style.display = 'block';
     if (btn) { btn.style.display = 'none'; }
