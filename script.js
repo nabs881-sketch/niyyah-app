@@ -5909,6 +5909,18 @@ function v2SaveState(s) {
    ───────────────────────────────────────────── */
 let v2CurrentView = 'sanctuaire';
 
+function v2GoNafs() {
+  var sanctEl = document.getElementById('view-sanctuaire');
+  if (sanctEl) sanctEl.classList.remove('active');
+  document.querySelectorAll('.view').forEach(function(v) { v.classList.remove('active'); v.style.display = 'none'; });
+  var nafsView = document.getElementById('view-nafs');
+  if (nafsView) { nafsView.style.display = ''; nafsView.classList.add('active'); }
+  var tbEl = document.getElementById('topbar-v2');
+  if (tbEl) tbEl.classList.remove('active');
+  document.querySelectorAll('.nav-v2-item').forEach(function(n) { n.classList.remove('active-nav'); });
+  var btn = document.getElementById('v2nav-nafs');
+  if (btn) btn.classList.add('active-nav');
+}
 function v2GoSanctuaire() {
   // Show sanctuaire + V2 UI
   document.body.classList.remove('pratique-active');
