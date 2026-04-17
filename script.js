@@ -1497,6 +1497,8 @@ function spawnConfettiTafakkur(accentColor) {
 }
 function switchView(name) {
   document.body.classList.remove('mentor-active');
+  document.body.classList.remove('pratique-active');
+  if (name === 'checklist') document.body.classList.add('pratique-active');
   if (name !== 'checklist') stopCompass();
   if (name === 'ramadan' && !ramadanState.active) {
     toggleRamadanMode();
@@ -5796,6 +5798,7 @@ let v2CurrentView = 'sanctuaire';
 function v2GoSanctuaire() {
   // Show sanctuaire + V2 UI
   document.body.classList.remove('mentor-active');
+  document.body.classList.remove('pratique-active');
   const sanctEl = document.getElementById('view-sanctuaire');
   if (sanctEl) sanctEl.classList.add('active');
   const tbEl = document.getElementById('topbar-v2');
@@ -5833,6 +5836,8 @@ function v2GoSanctuaire() {
 
 function v2GoTo(viewName) {
   document.body.classList.remove('mentor-active');
+  document.body.classList.remove('pratique-active');
+  if (viewName === 'checklist') document.body.classList.add('pratique-active');
   // Hide sanctuaire, keep topbar-v2 visible as back-bar
   const sanctEl2 = document.getElementById('view-sanctuaire');
   if (sanctEl2) sanctEl2.classList.remove('active');
