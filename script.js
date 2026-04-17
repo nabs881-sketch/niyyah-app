@@ -5298,7 +5298,13 @@ function onboardFinish() {
     screen.style.opacity = '0';
     setTimeout(() => screen.classList.add('hidden'), 350);
   }
-  loadPrayerTimes();
+  // Charger horaires — coords ou ville déjà gérées par l'onboarding
+  var _onboardCoords = localStorage.getItem('niyyah_coords');
+  if (_onboardCoords) {
+    try { var _c = JSON.parse(_onboardCoords); _loadPrayerByCoords(_c.lat, _c.lng); } catch(e) {}
+  } else if (_prayerCity) {
+    _loadPrayerByCity();
+  }
   // Afficher l'écran de permission notifications après l'onboarding
   setTimeout(() => {
     if (localStorage.getItem('niyyah_notif_asked') !== '1') {
