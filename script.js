@@ -3414,6 +3414,7 @@ function _applyPrayerTimings(timings) {
 function _loadPrayerByCoords(lat, lng) {
   _prayerLoading = true;
   _prayerError = false;
+  _showCityInput = false;
   renderLevel(currentLevel);
   var url = 'https://api.aladhan.com/v1/timings?latitude=' + lat + '&longitude=' + lng + '&method=12&school=0';
   fetch(url)
@@ -3431,6 +3432,7 @@ function _loadPrayerByCoords(lat, lng) {
 }
 function _loadPrayerByCity() {
   _prayerLoading = true;
+  _showCityInput = false;
   _prayerError = false;
   renderLevel(currentLevel);
   var _today = new Date();
@@ -6778,11 +6780,19 @@ function showMorningSagesse() {
 function updateSanctuaireMoment() {
   var el = document.getElementById('sanctuaire-moment');
   if (!el) return;
-  // Attendre que prayerTimes soit chargé
+  // Attendre que prayerTimes soit chargé — mais pas de spinner infini
   if (!_prayerTimes) {
-    el.innerHTML = '<div style="text-align:center;padding:12px 0;"><div class="prayer-spinner"></div></div>';
+    if (!window._sanctuaireMomentRetryCount) window._sanctuaireMomentRetryCount = 0;
+    if (window._sanctuaireMomentRetryCount < 3) {
+      window._sanctuaireMomentRetryCount++;
+      el.innerHTML = '<div style="text-align:center;padding:12px 0;"><div class="prayer-spinner"></div></div>';
+      setTimeout(updateSanctuaireMoment, 3000);
+    } else {
+      el.innerHTML = '';
+    }
     return;
   }
+  window._sanctuaireMomentRetryCount = 0;
   var block = getCurrentPrayerBlock();
   var blockId = block.id;
   // Nuit et Qiyam — messages spéciaux
@@ -6824,15 +6834,6 @@ function updateSanctuaireMoment() {
   var blockTotal = blockItems.length;
   var blockDone = blockItems.filter(_isDone).length;
   var blockRemaining = blockTotal - blockDone;
-  if (blockTotal === 0 && !_prayerTimes) {
-    if (!window._sanctuaireMomentRetried) {
-      window._sanctuaireMomentRetried = 1;
-      setTimeout(function() { if (document.getElementById('sanctuaire-moment') && !_prayerTimes) updateSanctuaireMoment(); }, 3000);
-    } else if (window._sanctuaireMomentRetried === 1) {
-      window._sanctuaireMomentRetried = 2;
-      setTimeout(function() { if (document.getElementById('sanctuaire-moment') && !_prayerTimes) updateSanctuaireMoment(); }, 6000);
-    }
-  }
   if (blockTotal === 0) { el.innerHTML = ''; return; }
   var jourItems = _allUnlocked.filter(function(item) { return item.block === 'jour'; });
   var jourTotal = jourItems.length;
