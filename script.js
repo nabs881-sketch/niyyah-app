@@ -436,7 +436,38 @@ function cocherDefiAujourdhui() {
   }
 }
 
+function updateDefiBannerTop() {
+  var banner = document.getElementById('defi-banner-top');
+  var txt = document.getElementById('defi-banner-text');
+  if (!banner || !txt) return;
+  try {
+    var r = getDefiCourant();
+    if (r.defi) {
+      txt.textContent = 'Défi de la semaine · ' + r.defi.titre;
+    } else {
+      txt.textContent = 'Défi de la semaine · Choisir ✦';
+    }
+    banner.style.display = 'block';
+  } catch(e) {
+    txt.textContent = 'Défi de la semaine · Choisir ✦';
+    banner.style.display = 'block';
+  }
+}
+function defiTopBannerClick() {
+  try {
+    var r = getDefiCourant();
+    if (r.defi) {
+      var card = document.getElementById('accueilDefiCard');
+      if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } else {
+      if (typeof openDefiSelector === 'function') openDefiSelector();
+    }
+  } catch(e) {
+    if (typeof openDefiSelector === 'function') openDefiSelector();
+  }
+}
 function renderDefiCard() {
+  updateDefiBannerTop();
   const card = document.getElementById('accueilDefiCard');
   if (!card) return;
   card.style.display = 'flex';

@@ -172,6 +172,11 @@
     </div>
   </div>
 
+  <!-- Bannière défi fine -->
+  <div id="defi-banner-top" onclick="defiTopBannerClick()" style="display:none;width:min(320px,90vw);margin:6px auto 0;padding:8px 14px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.15);border-radius:10px;cursor:pointer;text-align:center;">
+    <span id="defi-banner-text" style="font-family:'Cormorant Garamond',serif;font-size:13px;color:#B0A080;"></span>
+  </div>
+
   <!-- L'Orbe -->
   <div class="orb-wrap-v2" id="orb-wrap-v2">
     <div class="orb-ring-v2"></div>
@@ -198,20 +203,6 @@
     <div class="level-track-v2"><div class="level-fill-v2" id="v2-level-fill" style="width:0%"></div></div>
   </div>
 
-  <!-- DÉFI DE LA SEMAINE -->
-  <button id="accueilDefiCard" class="defi-card-sanctuaire" onclick="if(typeof openDefiSelector==='function')openDefiSelector()" style="display:none;width:min(320px,90vw);margin:12px auto 0;padding:14px 18px;background:#1a1a1a;border:1px solid rgba(200,168,75,0.3);border-radius:14px;cursor:pointer;position:relative;z-index:10;text-align:left;min-height:90px;box-sizing:border-box;font-family:inherit;color:inherit;">
-    <div style="display:flex;align-items:center;gap:12px;width:100%;">
-      <div id="defiCardIcon"><img src="https://nabs881-sketch.github.io/niyyah-app/imagescroissant.png" alt="Croissant" style="width:60px;height:auto;display:block;flex-shrink:0;"></div>
-      <div style="flex:1;text-align:left;">
-        <div id="defiCardTitre" style="font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:600;color:#C8A84A;">Défi de la semaine</div>
-        <div id="defiCardScore" style="font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;color:#B0A080;margin-top:2px;"></div>
-      </div>
-    </div>
-    <div id="defiCardDots" style="display:none;"></div>
-    <div id="defiCardBar" style="position:absolute;bottom:0;left:0;right:0;height:3px;background:rgba(200,168,75,0.12);border-radius:0 0 14px 14px;overflow:hidden;">
-      <div id="defiCardBarFill" style="height:100%;width:0%;background:#C8A84A;transition:width 0.6s ease;"></div>
-    </div>
-  </button>
   <!-- Moment actuel -->
   <div id="sanctuaire-moment"></div>
 
@@ -259,6 +250,20 @@
 
   <!-- Challenge 30 jours Fajr -->
   <div id="fajr-challenge-card" style="display:none;width:min(320px,90vw);margin:12px auto 0;"></div>
+  <!-- DÉFI DE LA SEMAINE -->
+  <button id="accueilDefiCard" class="defi-card-sanctuaire" onclick="if(typeof openDefiSelector==='function')openDefiSelector()" style="display:none;width:min(320px,90vw);margin:12px auto 0;padding:14px 18px;background:#1a1a1a;border:1px solid rgba(200,168,75,0.3);border-radius:14px;cursor:pointer;position:relative;z-index:10;text-align:left;min-height:90px;box-sizing:border-box;font-family:inherit;color:inherit;">
+    <div style="display:flex;align-items:center;gap:12px;width:100%;">
+      <div id="defiCardIcon"><img src="https://nabs881-sketch.github.io/niyyah-app/imagescroissant.png" alt="Croissant" style="width:60px;height:auto;display:block;flex-shrink:0;"></div>
+      <div style="flex:1;text-align:left;">
+        <div id="defiCardTitre" style="font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:600;color:#C8A84A;">Défi de la semaine</div>
+        <div id="defiCardScore" style="font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;color:#B0A080;margin-top:2px;"></div>
+      </div>
+    </div>
+    <div id="defiCardDots" style="display:none;"></div>
+    <div id="defiCardBar" style="position:absolute;bottom:0;left:0;right:0;height:3px;background:rgba(200,168,75,0.12);border-radius:0 0 14px 14px;overflow:hidden;">
+      <div id="defiCardBarFill" style="height:100%;width:0%;background:#C8A84A;transition:width 0.6s ease;"></div>
+    </div>
+  </button>
 
 
   </div><!-- /WRAPPER -->
