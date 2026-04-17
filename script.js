@@ -2158,7 +2158,6 @@ function renderLevel(levelId) {
       }
       fitems += '</div>';
       fitems += '<div class="friday-item-hadith">' + fi.hadith + '</div>';
-      fitems += '<div class="friday-item-arabic">' + fi.arabic + '</div>';
       fitems += _audioBtnFri;
       fitems += '</div></div>';
     });
