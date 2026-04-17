@@ -393,6 +393,11 @@ function closeDefiSelector() {
 
 function cocherDefiAujourdhui() {
   const s = getDefiState();
+  if (!s.current || !s.current.jours) {
+    showToast('Aucun défi actif');
+    if (typeof openDefiSelector === 'function') openDefiSelector();
+    return;
+  }
   const today = getTodayStr();
   if (!s.current.jours.includes(today)) {
     s.current.jours.push(today);
