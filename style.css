@@ -3247,3 +3247,84 @@ button[style*="gold-v2"] {
   color: rgba(176,160,128,0.5);
   transition: opacity 0.4s;
 }
+
+/* Nafs week map */
+.nafs-weekmap {
+  margin-top: 16px;
+}
+.nafs-weekmap-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.nafs-weekmap-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+}
+.nafs-weekmap-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(200,168,75,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0;
+  color: transparent;
+  transition: all 0.3s;
+}
+.nafs-weekmap-dot.today {
+  border-color: rgba(200,168,75,0.5);
+  box-shadow: 0 0 8px rgba(200,168,75,0.15);
+}
+.nafs-weekmap-dot.filled {
+  background: rgba(200,168,75,0.85);
+  border-color: rgba(200,168,75,0.85);
+  font-size: 13px;
+  color: #0a0a0a;
+  font-weight: 700;
+  cursor: pointer;
+}
+.nafs-weekmap-dot.filled.today {
+  box-shadow: 0 0 12px rgba(200,168,75,0.35);
+}
+.nafs-weekmap-label {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  color: rgba(176,160,128,0.35);
+}
+.nafs-weekmap-label.today {
+  color: rgba(200,168,75,0.7);
+}
+
+/* Day note tooltip */
+.nafs-day-tooltip {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: rgba(20,18,14,0.95);
+  border: 1px solid rgba(200,168,75,0.3);
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 12.5px;
+  font-style: italic;
+  color: rgba(232,220,200,0.85);
+  white-space: nowrap;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+  pointer-events: none;
+  z-index: 10;
+}
+.nafs-day-tooltip.visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}

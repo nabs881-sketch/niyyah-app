@@ -6160,6 +6160,65 @@ function _nafsCountThisWeek(traitId) {
   return _nafsGetObservations().filter(function(o) { return o.traitId === traitId && o.date >= mondayStr; }).length;
 }
 
+function _nafsGetWeekMap(traitId) {
+  var now = new Date();
+  var dayOfWeek = now.getDay() || 7;
+  var monday = new Date(now);
+  monday.setDate(now.getDate() - dayOfWeek + 1);
+  monday.setHours(0,0,0,0);
+  var obs = _nafsGetObservations().filter(function(o) { return o.traitId === traitId; });
+  var map = {};
+  for (var d = 0; d < 7; d++) {
+    var date = new Date(monday);
+    date.setDate(monday.getDate() + d);
+    var dateStr = date.toISOString().slice(0, 10);
+    var match = null;
+    for (var i = 0; i < obs.length; i++) {
+      if (obs[i].date === dateStr) { match = obs[i]; break; }
+    }
+    map[d] = match;
+  }
+  return map;
+}
+
+function _nafsRenderWeekMap(traitId) {
+  var map = _nafsGetWeekMap(traitId);
+  var labels = ['L','M','M','J','V','S','D'];
+  var now = new Date();
+  var todayIdx = (now.getDay() || 7) - 1;
+  var html = '<div class="nafs-weekmap">';
+  html += '<div class="nafs-weekmap-dots">';
+  for (var d = 0; d < 7; d++) {
+    var filled = !!map[d];
+    var isToday = d === todayIdx;
+    var cls = 'nafs-weekmap-dot' + (filled ? ' filled' : '') + (isToday ? ' today' : '');
+    var noteAttr = filled && map[d].note ? ' data-note="' + map[d].note.replace(/"/g, '&quot;') + '"' : '';
+    var onclick = filled ? ' onclick="nafsShowDayNote(this)"' : '';
+    html += '<div class="nafs-weekmap-col">';
+    html += '<div class="' + cls + '"' + noteAttr + onclick + '>' + (filled ? '✓' : '') + '</div>';
+    html += '<div class="nafs-weekmap-label' + (isToday ? ' today' : '') + '">' + labels[d] + '</div>';
+    html += '</div>';
+  }
+  html += '</div></div>';
+  return html;
+}
+
+function nafsShowDayNote(el) {
+  var existing = document.querySelector('.nafs-day-tooltip');
+  if (existing) existing.remove();
+  var note = el.getAttribute('data-note');
+  if (!note) return;
+  var tooltip = document.createElement('div');
+  tooltip.className = 'nafs-day-tooltip';
+  tooltip.textContent = note;
+  el.parentElement.appendChild(tooltip);
+  setTimeout(function() { tooltip.classList.add('visible'); }, 10);
+  setTimeout(function() {
+    tooltip.classList.remove('visible');
+    setTimeout(function() { tooltip.remove(); }, 300);
+  }, 3000);
+}
+
 function nafsObserve(traitId) {
   if (_nafsAlreadyToday(traitId)) return;
   var noteEl = document.getElementById('nafs-note-input');
@@ -6182,6 +6241,9 @@ function nafsObserve(traitId) {
     counter.textContent = c === 1 ? 'Tu l\'as observé 1 fois cette semaine' : 'Tu l\'as observé ' + c + ' fois cette semaine';
     counter.style.opacity = '1';
   }
+
+  var mapEl = document.getElementById('nafs-weekmap-container');
+  if (mapEl) { mapEl.innerHTML = _nafsRenderWeekMap(traitId); }
 }
 
 function renderNafsTrait() {
@@ -6233,6 +6295,7 @@ function renderNafsTrait() {
       '<div id="nafs-week-counter" class="nafs-week-counter"' + (weekCount === 0 ? ' style="opacity:0;"' : '') + '>' +
         (weekCount === 0 ? '' : weekCount === 1 ? 'Tu l\'as observé 1 fois cette semaine' : 'Tu l\'as observé ' + weekCount + ' fois cette semaine') +
       '</div>' +
+      '<div id="nafs-weekmap-container">' + _nafsRenderWeekMap(t.id) + '</div>' +
     '</div>';
 }
 
