@@ -2,6 +2,7 @@
 // NIYYAH DAILY — script.js
 // Généré automatiquement — séparation chirurgicale
 // ═══════════════════════════════════════════════════
+function safeSetItem(key, value) { try { safeSetItem(key, value); } catch(e) {} }
 
 /* ─── BLOC 1 : Fix Stats Row ─────────────────────── */
 
@@ -224,7 +225,7 @@ const DEFIS_DB = [
 function getDefiState() {
   return JSON.parse(localStorage.getItem('niyyah_defi_v2') || '{"current":null,"historique":[],"badges":[],"choixEnAttente":null}');
 }
-function saveDefiState(s) { localStorage.setItem('niyyah_defi_v2', JSON.stringify(s)); }
+function saveDefiState(s) { safeSetItem('niyyah_defi_v2', JSON.stringify(s)); }
 
 function getLundiDate() {
   const d = new Date(); const day = d.getDay(); const diff = (day === 0 ? -6 : 1 - day);
@@ -553,7 +554,7 @@ const BADGES = [
   { id: 'laylatul_qadr',  emoji: '✨', name: 'Laylat al-Qadr',    desc: 'Les 5 nuits impaires accomplies',  gold: true,  check: function(s,h) { var n=(h.ramadan && h.ramadan.laylatul)||{}; return [21,23,25,27,29].filter(function(x){return !!n[x];}).length>=5; } },
 ];
 let ramadanState = JSON.parse(localStorage.getItem('spiritual_ramadan') || '{"active":false,"startDate":null,"days":{},"laylatul":{}}');
-function saveRamadanState() { localStorage.setItem('spiritual_ramadan', JSON.stringify(ramadanState)); }
+function saveRamadanState() { safeSetItem('spiritual_ramadan', JSON.stringify(ramadanState)); }
 function toggleRamadanMode() {
   if (ramadanState.active) {
     if (!confirm('Désactiver le mode Ramadan ? Tes données de jeûne seront conservées.')) return;
@@ -631,7 +632,7 @@ function toggleFridayItem(id) {
   const key = 'niyyah_friday_' + TODAY;
   const fridayState = JSON.parse(localStorage.getItem(key) || '{}');
   fridayState[id] = !fridayState[id];
-  localStorage.setItem(key, JSON.stringify(fridayState));
+  safeSetItem(key, JSON.stringify(fridayState));
   if (fridayState[id]) {
     playCheckSound();
     if (navigator.vibrate) navigator.vibrate([12, 8, 25]);
@@ -669,7 +670,7 @@ const HORAIRES_CITIES = [
 let selectedCity = localStorage.getItem('spiritual_city') || 'Paris';
 function selectCity(name) {
   selectedCity = name;
-  localStorage.setItem('spiritual_city', name);
+  safeSetItem('spiritual_city', name);
   renderRamadan();
 }
 function openHoraires() {
@@ -1210,8 +1211,8 @@ function resolveGrace() {
 function getDateMinus(dateStr, days) {
   const d = new Date(dateStr); d.setDate(d.getDate() - days); return d.toISOString().split('T')[0];
 }
-function saveState()   { localStorage.setItem('spiritual_v2', JSON.stringify(state)); localStorage.setItem('spiritual_level', currentLevel); }
-function saveHistory() { localStorage.setItem('spiritual_history', JSON.stringify(history)); }
+function saveState()   { safeSetItem('spiritual_v2', JSON.stringify(state)); safeSetItem('spiritual_level', currentLevel); }
+function saveHistory() { safeSetItem('spiritual_history', JSON.stringify(history)); }
 function checkBadges() {
   let newBadge = null;
   BADGES.forEach(badge => {
@@ -1797,7 +1798,7 @@ function showNiyyahScreen() {
       screen.style.opacity = '0';
       if (window._niyyahAudio) { window._niyyahAudio.pause(); window._niyyahAudio = null; }
       if (window._niyyahParticleAnim) cancelAnimationFrame(window._niyyahParticleAnim);
-      localStorage.setItem('niyyah_intention_date', TODAY);
+      safeSetItem('niyyah_intention_date', TODAY);
     }
   }, 10000);
 }
@@ -1849,12 +1850,12 @@ function chooseNiyyah(type) {
   const s2 = JSON.parse(localStorage.getItem('niyyah_v2_bridge') || '{}');
   s2.intention = cleanLabels[type] || type;
   s2.intentionDate = new Date().toDateString();
-  localStorage.setItem('niyyah_v2_bridge', JSON.stringify(s2));
+  safeSetItem('niyyah_v2_bridge', JSON.stringify(s2));
   if (typeof v2UpdateOrbState === 'function') setTimeout(v2UpdateOrbState, 200);
   if (window._niyyahFailsafe) { clearTimeout(window._niyyahFailsafe); window._niyyahFailsafe = null; }
-  localStorage.setItem('niyyah_intention_date', TODAY);
-  localStorage.setItem('niyyah_intention_type', type);
-  localStorage.setItem('niyyah_intention_label', labels[type] || type);
+  safeSetItem('niyyah_intention_date', TODAY);
+  safeSetItem('niyyah_intention_type', type);
+  safeSetItem('niyyah_intention_label', labels[type] || type);
   if (window._niyyahAudio) { window._niyyahAudio.pause(); window._niyyahAudio = null; }
   const screen = document.getElementById('niyyahScreen');
   screen.classList.add('niyyah-dissolve');
@@ -1869,7 +1870,7 @@ function chooseNiyyah(type) {
 }
 function skipNiyyah() {
   if (window._niyyahFailsafe) { clearTimeout(window._niyyahFailsafe); window._niyyahFailsafe = null; }
-  localStorage.setItem('niyyah_intention_date', TODAY);
+  safeSetItem('niyyah_intention_date', TODAY);
   if (window._niyyahAudio) { window._niyyahAudio.pause(); window._niyyahAudio = null; }
   const screen = document.getElementById('niyyahScreen');
   screen.classList.add('niyyah-dissolve');
@@ -3250,7 +3251,7 @@ function saveCityAndLoad() {
   const input = document.getElementById('cityInput');
   if (!input || !input.value.trim()) return;
   _prayerCity = input.value.trim();
-  localStorage.setItem('niyyah_city', _prayerCity);
+  safeSetItem('niyyah_city', _prayerCity);
   _showCityInput = false;
   loadPrayerTimes();
 }
@@ -3278,8 +3279,8 @@ function loadPrayerTimes() {
       _prayerTimes = JSON.parse(_cached);
       _prayerLoading = false;
       _prayerError = false;
-      localStorage.setItem('niyyah_prayer_cache_v2', _cached);
-      localStorage.setItem('niyyah_prayer_date_v2', TODAY);
+      safeSetItem('niyyah_prayer_cache_v2', _cached);
+      safeSetItem('niyyah_prayer_date_v2', TODAY);
       schedulePrayerReminders();
       renderLevel(currentLevel);
       if (typeof updateSanctuaireMoment === 'function') updateSanctuaireMoment();
@@ -3298,9 +3299,9 @@ function loadPrayerTimes() {
         _prayerLoading = false;
         _prayerError = false;
         var _timingsStr = JSON.stringify(_prayerTimes);
-        localStorage.setItem(_cacheKey, _timingsStr);
-        localStorage.setItem('niyyah_prayer_cache_v2', _timingsStr);
-        localStorage.setItem('niyyah_prayer_date_v2', TODAY);
+        safeSetItem(_cacheKey, _timingsStr);
+        safeSetItem('niyyah_prayer_cache_v2', _timingsStr);
+        safeSetItem('niyyah_prayer_date_v2', TODAY);
         schedulePrayerReminders();
         renderLevel(currentLevel);
         if (typeof updateSanctuaireMoment === 'function') updateSanctuaireMoment();
@@ -3376,7 +3377,7 @@ function getWeightedScore(items, s) {
   return totalPts > 0 ? (donePts / totalPts) * 100 : 0;
 }
 function saveWirdState() {
-  localStorage.setItem('niyyah_wird_' + (new Date().toISOString().split('T')[0]), JSON.stringify(wirdState));
+  safeSetItem('niyyah_wird_' + (new Date().toISOString().split('T')[0]), JSON.stringify(wirdState));
 }
 function toggleWirdItem(id, event) {
   if (event && event.target && (
@@ -3961,23 +3962,23 @@ function setBilanSoir(choix) {
   const today = new Date().toISOString().split('T')[0];
   const bilans = JSON.parse(localStorage.getItem('niyyah_bilans') || '{}');
   bilans[today] = choix;
-  localStorage.setItem('niyyah_bilans', JSON.stringify(bilans));
+  safeSetItem('niyyah_bilans', JSON.stringify(bilans));
 
   // === EFFETS SELON LE CHOIX ===
   if (choix === 'distraction') {
     // Activer Mode Tawba pour demain : forcer le flag niyyah_tawba_force
-    localStorage.setItem('niyyah_tawba_force', '1');
+    safeSetItem('niyyah_tawba_force', '1');
     // Message au démarrage demain via toast différé (lu au prochain init)
-    localStorage.setItem('niyyah_morning_msg', JSON.stringify({
+    safeSetItem('niyyah_morning_msg', JSON.stringify({
       icon: '🌅', text: 'Nouveau jour, nouveau souffle. Allah t\'a accordé ce matin — commence par Bismillah.', date: today
     }));
   } else if (choix === 'effort') {
-    localStorage.setItem('niyyah_morning_msg', JSON.stringify({
+    safeSetItem('niyyah_morning_msg', JSON.stringify({
       icon: '🌿', text: 'Hier tu as fait des efforts. Aujourd\'hui, continue — la constance est plus aimée d\'Allah que l\'intensité.', date: today
     }));
   } else if (choix === 'sincerite') {
     // Bonus visuel streak
-    localStorage.setItem('niyyah_morning_msg', JSON.stringify({
+    safeSetItem('niyyah_morning_msg', JSON.stringify({
       icon: '✨', text: 'Hier ton cœur était sincère. Que Allah te maintienne dans cet état — c\'est Sa grâce.', date: today
     }));
     // Mini animation streak
@@ -4174,7 +4175,7 @@ function showTawba() {
     // Reset doux du streak uniquement (pas du niveau ni des badges)
     if (history.streak > 0) {
       history.streak = 0;
-      try { localStorage.setItem('spiritual_history', JSON.stringify(history)); } catch(e) {}
+      try { safeSetItem('spiritual_history', JSON.stringify(history)); } catch(e) {}
     }
   }
 
@@ -4243,14 +4244,14 @@ function showTawba() {
   overlay.style.display = 'flex';
   setTimeout(function() { if(card) card.style.transform = 'scale(1)'; }, 50);
   if (navigator.vibrate) navigator.vibrate([20, 40, 20, 40, 60]);
-  localStorage.setItem('niyyah_tawba_shown', TODAY);
+  safeSetItem('niyyah_tawba_shown', TODAY);
 
   // Débloquer badge Tawba si première fois
   try {
     const badges = JSON.parse(localStorage.getItem('niyyah_tawba_badges') || '{}');
     if (!badges.tawba_return) {
       badges.tawba_return = true;
-      localStorage.setItem('niyyah_tawba_badges', JSON.stringify(badges));
+      safeSetItem('niyyah_tawba_badges', JSON.stringify(badges));
     }
   } catch(e) {}
 }
@@ -4274,7 +4275,7 @@ function closeTawba() {
     // Rafraîchir le sanctuaire avec la nouvelle lumière
     if (typeof v2RefreshStats === 'function') v2RefreshStats();
     // POINT 3 — Effet visuel "Éveil" : orbe plus lumineux + message persistant 24h
-    localStorage.setItem('niyyah_tawba_glow', Date.now().toString());
+    safeSetItem('niyyah_tawba_glow', Date.now().toString());
     applyTawbaGlow();
   }, 350);
   // Toast de bienvenue fraternel
@@ -4366,7 +4367,7 @@ function _ouvrirWhatsApp(message) {
 function closeWeeklyBilan() {
   document.getElementById('weeklyOverlay').classList.remove('show');
   document.body.style.overflow = '';
-  localStorage.setItem('niyyah_bilan_week', getCurrentWeekKey());
+  safeSetItem('niyyah_bilan_week', getCurrentWeekKey());
 }
 function getCurrentWeekKey() {
   const d = new Date(TODAY);
@@ -4408,7 +4409,7 @@ function validateFreemiumCode() {
   if (!input) return;
   const code = input.value.trim().toUpperCase();
   if (FREEMIUM_CODES.includes(code)) {
-    localStorage.setItem('niyyah_pro', '1');
+    safeSetItem('niyyah_pro', '1');
     state._unlocked = [1, 2, 3, 4];
     saveState();
     document.getElementById('freemiumOverlay').classList.remove('show');
@@ -4583,7 +4584,7 @@ function getMurmureAdaptatif(moment) {
 
 // Sauvegarder timestamp de dernière ouverture
 (function() {
-  try { localStorage.setItem("niyyah_last_open", Date.now().toString()); } catch(e) {}
+  try { safeSetItem("niyyah_last_open", Date.now().toString()); } catch(e) {}
 })();
 
 function getMurmure(moment) {
@@ -4634,7 +4635,7 @@ function showNotifPermScreen() {
   if (localStorage.getItem('niyyah_notif_asked') === '1') return;
   if (!('Notification' in window)) return;
   if (Notification.permission === 'granted') {
-    localStorage.setItem('niyyah_notif_asked', '1');
+    safeSetItem('niyyah_notif_asked', '1');
     scheduleAllNotifications();
     return;
   }
@@ -4651,7 +4652,7 @@ function dismissNotifScreen() {
     screen.style.opacity = '0';
     setTimeout(() => screen.classList.remove('show'), 400);
   }
-  localStorage.setItem('niyyah_notif_asked', '1');
+  safeSetItem('niyyah_notif_asked', '1');
   // Si on vient de l'onboarding, lancer l'écran Niyyah
   if (!localStorage.getItem('niyyah_intention_date') || 
       localStorage.getItem('niyyah_intention_date') !== new Date().toISOString().split('T')[0]) {
@@ -4670,7 +4671,7 @@ function requestNotifPermission() {
       dismissNotifScreen();
       if (permission === 'granted') {
         showToast(t('notif_enabled'));
-        localStorage.setItem('niyyah_notif_perm', '1');
+        safeSetItem('niyyah_notif_perm', '1');
         scheduleAllNotifications();
       } else {
         showToast(t('notif_later'));
@@ -4798,18 +4799,18 @@ function initNotifications() {
   try {
     if (!('Notification' in window)) return;
     // Sauvegarder le timestamp d'ouverture pour l'anti-désactivation
-    try { localStorage.setItem("niyyah_last_open", Date.now().toString()); } catch(e) {}
+    try { safeSetItem("niyyah_last_open", Date.now().toString()); } catch(e) {}
 
     setTimeout(function() {
       try {
         if (Notification.permission === 'granted') {
-          localStorage.setItem('niyyah_notif_perm', '1');
+          safeSetItem('niyyah_notif_perm', '1');
 
           // Anti-désactivation : si l'utilisateur ignore les notifs depuis 5j+
           // → réduire à 1 seule notification/jour pour ne pas surcharger
           var lastOpen = localStorage.getItem("niyyah_last_open_prev");
           var daysSince = lastOpen ? Math.floor((Date.now() - parseInt(lastOpen)) / 86400000) : 0;
-          localStorage.setItem("niyyah_last_open_prev", Date.now().toString());
+          safeSetItem("niyyah_last_open_prev", Date.now().toString());
 
           if (daysSince >= 5) {
             // Mode silencieux : 1 seul murmure doux le soir
@@ -4837,7 +4838,7 @@ function toggleNotifications() {
   if (Notification.permission === 'granted') {
     // Désactiver (on ne peut pas révoquer, mais on arrête de planifier)
     clearNotifTimers();
-    localStorage.setItem('niyyah_notif_perm', '0');
+    safeSetItem('niyyah_notif_perm', '0');
     showToast(t('notif_disabled'));
   } else {
     requestNotifPermission();
@@ -5096,7 +5097,7 @@ function renderQiblaCard() {
 
 
 let _onboardStep = 0;
-const APP_VERSION = '2.0'; if (localStorage.getItem('niyyah_version') !== APP_VERSION) { localStorage.removeItem('niyyah_onboard'); localStorage.setItem('niyyah_version', APP_VERSION); }
+const APP_VERSION = '2.0'; if (localStorage.getItem('niyyah_version') !== APP_VERSION) { localStorage.removeItem('niyyah_onboard'); safeSetItem('niyyah_version', APP_VERSION); }
 const _onboardDone = localStorage.getItem('niyyah_onboard') === '1';
 const ONBOARD_SLIDES = [
   () => `
@@ -5139,13 +5140,13 @@ function onboardSaveCity() {
   const el = document.getElementById('onboardCityInput');
   if (el && el.value.trim()) {
     _prayerCity = el.value.trim();
-    localStorage.setItem('niyyah_city', _prayerCity);
+    safeSetItem('niyyah_city', _prayerCity);
     _showCityInput = false;
   }
   onboardFinish();
 }
 function onboardFinish() {
-  localStorage.setItem('niyyah_onboard', '1');
+  safeSetItem('niyyah_onboard', '1');
   const screen = document.getElementById('onboardScreen');
   if (screen) {
     screen.style.opacity = '0';
@@ -5196,7 +5197,7 @@ function applyTheme(theme) {
     document.documentElement.removeAttribute('data-theme');
   }
   currentTheme = theme;
-  localStorage.setItem('niyyah_theme', theme);
+  safeSetItem('niyyah_theme', theme);
   // Mettre à jour l'icône du bouton
   const btn = document.getElementById('btnTheme');
   if (btn) btn.textContent = theme === 'light' ? '🌙' : '☀️';
@@ -5784,7 +5785,7 @@ function v2GetState() {
 }
 
 function v2SaveState(s) {
-  try { localStorage.setItem(V2_KEY, JSON.stringify(s)); } catch(e) {}
+  try { safeSetItem(V2_KEY, JSON.stringify(s)); } catch(e) {}
 }
 
 /* ─────────────────────────────────────────────
@@ -6203,7 +6204,7 @@ function v2OpenNiyyahModal() {
           opts.insertBefore(unlockMsg, ikhlasBtn);
           setTimeout(function() { ikhlasBtn.style.animation = ''; }, 4500);
         }, 1000);
-        localStorage.setItem('niyyah_ikhlas_unlocked', '1');
+        safeSetItem('niyyah_ikhlas_unlocked', '1');
       }, 500);
     }
     // Hold logic for ikhlas
@@ -6495,7 +6496,7 @@ function checkNightCompanion() {
   if (overlay) overlay.style.display = 'block';
 }
 function closeNightCompanion() {
-  localStorage.setItem('niyyah_compagnon_date', new Date().toISOString().split('T')[0]);
+  safeSetItem('niyyah_compagnon_date', new Date().toISOString().split('T')[0]);
   var overlay = document.getElementById('night-companion-overlay');
   if (overlay) overlay.style.display = 'none';
 }
@@ -6514,7 +6515,6 @@ async function sendNightThought() {
       body: JSON.stringify({ thought: thought, mode: 'night', context: 'L\'utilisateur ferme sa journée avec cette pensée. Réponds en EXACTEMENT 3 phrases courtes :\n1) Accueille sa pensée avec douceur — montre que tu as compris ce qu\'il ressent, sans juger.\n2) Offre UNE sagesse d\'Ibn Ata\'illah (Al-Hikam) ou d\'Al-Ghazali (Ihya Ulum al-Din) directement liée à ce qu\'il a écrit. Cite la source.\n3) Termine par une invitation douce à dormir en paix sous la protection d\'Allah.\nTon : intime, fraternel, jamais générique. Parle comme un ami savant qui murmure avant le sommeil.' })
     });
     var data = await res.json();
-    console.log('Compagnon nocturne response:', data);
     var wisdom = data.text || data.reply || data.content || 'La nuit est un voile de miséricorde — repose-toi sous Sa protection.';
     var source = data.source || 'Sagesse nocturne';
     var responseEl = document.getElementById('night-wisdom-response');
@@ -6523,10 +6523,9 @@ async function sendNightThought() {
     if (textEl) textEl.textContent = '« ' + wisdom + ' »';
     if (sourceEl) sourceEl.textContent = '— ' + source;
     if (responseEl) responseEl.style.display = 'block';
-    localStorage.setItem('niyyah_sagesse_nuit', JSON.stringify({ text: wisdom, source: source, date: new Date().toISOString().split('T')[0], thought: thought }));
-    localStorage.setItem('niyyah_compagnon_date', new Date().toISOString().split('T')[0]);
+    safeSetItem('niyyah_sagesse_nuit', JSON.stringify({ text: wisdom, source: source, date: new Date().toISOString().split('T')[0], thought: thought }));
+    safeSetItem('niyyah_compagnon_date', new Date().toISOString().split('T')[0]);
   } catch(e) {
-    console.log('Compagnon nocturne error:', e);
     var fallback = 'Celui qui connaît son âme connaît son Seigneur. — Al-Ghazali';
     var responseEl2 = document.getElementById('night-wisdom-response');
     var textEl2 = document.getElementById('night-wisdom-text');
@@ -6534,8 +6533,8 @@ async function sendNightThought() {
     if (textEl2) textEl2.textContent = '« ' + fallback + ' »';
     if (sourceEl2) sourceEl2.textContent = '— Sagesse nocturne';
     if (responseEl2) responseEl2.style.display = 'block';
-    localStorage.setItem('niyyah_sagesse_nuit', JSON.stringify({ text: fallback, source: 'Al-Ghazali', date: new Date().toISOString().split('T')[0], thought: thought }));
-    localStorage.setItem('niyyah_compagnon_date', new Date().toISOString().split('T')[0]);
+    safeSetItem('niyyah_sagesse_nuit', JSON.stringify({ text: fallback, source: 'Al-Ghazali', date: new Date().toISOString().split('T')[0], thought: thought }));
+    safeSetItem('niyyah_compagnon_date', new Date().toISOString().split('T')[0]);
   }
   btn.style.display = 'none';
 }
@@ -7276,7 +7275,7 @@ function mentorSend() {
   // Limite 3 questions par jour
   var _mentorDate = localStorage.getItem('niyyah_mentor_date');
   var _mentorCount = parseInt(localStorage.getItem('niyyah_mentor_count') || '0', 10);
-  if (_mentorDate !== TODAY) { _mentorCount = 0; localStorage.setItem('niyyah_mentor_date', TODAY); }
+  if (_mentorDate !== TODAY) { _mentorCount = 0; safeSetItem('niyyah_mentor_date', TODAY); }
   if (_mentorCount >= 1) {
     showToast(t('mentor_limit'));
     return;
@@ -7285,7 +7284,7 @@ function mentorSend() {
   if (!input) return;
   const question = input.value.trim();
   if (!question || mentorIsThinking) return;
-  localStorage.setItem('niyyah_mentor_count', String(_mentorCount + 1));
+  safeSetItem('niyyah_mentor_count', String(_mentorCount + 1));
   input.value = '';
   input.style.height = 'auto';
   // Hide suggestions on first user message
@@ -7497,7 +7496,7 @@ async function mentorAskAPI(question) {
   }
 
   // Incrémenter le compteur d'usage
-  localStorage.setItem(mentorUsageKey, String(usageCount + 1));
+  safeSetItem(mentorUsageKey, String(usageCount + 1));
 
   mentorShowThinking();
 
@@ -7543,7 +7542,6 @@ async function mentorAskAPI(question) {
 
   } catch(err) {
     // ── MOCK FALLBACK (si pas de clé API configurée) ──
-    console.log('Mentor mock mode:', err.message);
     setTimeout(() => {
       mentorHideThinking();
       const mock = mentorGenerateMock(question);
@@ -8088,7 +8086,7 @@ function scannerConfirmNiyyah() {
     s.intention = intentionText;
     s.intentionSource = 'scanner';
     s.intentionTime   = Date.now();
-    localStorage.setItem('niyyah_v2_state', JSON.stringify(s));
+    safeSetItem('niyyah_v2_state', JSON.stringify(s));
   } catch(e) {}
 
   // Save to scanner history
@@ -8097,7 +8095,7 @@ function scannerConfirmNiyyah() {
     var _hist = JSON.parse(localStorage.getItem('niyyah_scanner_history') || '[]');
     _hist.unshift({ text: intentionText, time: _now.toTimeString().substring(0,5), date: _now.toISOString().split('T')[0], day: ['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'][_now.getDay()] });
     if (_hist.length > 20) _hist.length = 20;
-    localStorage.setItem('niyyah_scanner_history', JSON.stringify(_hist));
+    safeSetItem('niyyah_scanner_history', JSON.stringify(_hist));
   } catch(e) {}
 
   // Toast fraternel
@@ -8231,12 +8229,12 @@ async function scannerCapture() {
   // Limite 3 scans par jour
   var _scanDate = localStorage.getItem('niyyah_scanner_date');
   var _scanCount = parseInt(localStorage.getItem('niyyah_scanner_count') || '0', 10);
-  if (_scanDate !== TODAY) { _scanCount = 0; localStorage.setItem('niyyah_scanner_date', TODAY); }
+  if (_scanDate !== TODAY) { _scanCount = 0; safeSetItem('niyyah_scanner_date', TODAY); }
   if (_scanCount >= 1) {
     showToast(t('scanner_limit'));
     return;
   }
-  localStorage.setItem('niyyah_scanner_count', String(_scanCount + 1));
+  safeSetItem('niyyah_scanner_count', String(_scanCount + 1));
 
   const video   = document.getElementById('scanner-video');
   const canvas  = document.getElementById('scanner-canvas');
