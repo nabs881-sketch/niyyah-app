@@ -1545,9 +1545,9 @@ body::before {
   bottom: 0; left: 0; right: 0;
   z-index: 1200;
   display: none;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
-  padding: 10px 0 calc(12px + var(--safe-bot));
+  padding: 10px 15% calc(12px + var(--safe-bot));
   background: linear-gradient(to top, rgba(10,10,10,0.98) 60%, transparent);
   border-top: 1px solid rgba(212,175,55,0.12);
 }
@@ -1555,7 +1555,7 @@ body::before {
 
 .nav-v2-item {
   display: flex; flex-direction: column; align-items: center; gap: 3px;
-  cursor: pointer; padding: 6px 14px; border-radius: 14px;
+  cursor: pointer; padding: 8px 24px; border-radius: 14px; min-width: 80px;
   border: none; background: none; color: rgba(240,234,214,0.38);
   transition: all 0.25s var(--ease-silk-v2);
 }
