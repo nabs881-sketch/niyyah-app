@@ -2189,6 +2189,7 @@ body::before {
 .v2-mode .nav-bar { display: none !important; }
 .v2-mode .nav-bar-v2 { display: flex !important; }
 .v2-mode .topbar-v2 { display: flex !important; }
+body.pratique-active .topbar-v2 { display: none !important; }
 /* ══════════════════════════════════════════
    NIYYAH SCANNER — Interface Caméra Sacrée
    ══════════════════════════════════════════ */
