@@ -271,12 +271,23 @@ function confirmerDefi(defiId) {
   const lundi = getLundiDate();
   const defi = DEFIS_DB.find(d => d.id === defiId);
   if (!defi) return;
-  s.current = { id: defi.id, semaine: lundi, jours: [], complete: false };
+  // Vérifier verrouillage 24h
+  if (s.current && s.current.chosenAt) {
+    var hoursSince = (Date.now() - s.current.chosenAt) / 3600000;
+    if (hoursSince > 24) {
+      showToast('Tiens-le jusqu\'à dimanche, in sha Allah ✦');
+      closeDefiSelector();
+      return;
+    }
+  }
+  s.current = { id: defi.id, semaine: lundi, jours: [], complete: false, chosenAt: Date.now() };
   s.historique = [defi.id, ...s.historique].slice(0, 12);
   s.choixEnAttente = null;
   saveDefiState(s);
+  safeSetItem('niyyah_defi_chosenAt', String(Date.now()));
   closeDefiSelector();
   renderDefiCard();
+  if (typeof renderDefiOverlay === 'function') renderDefiOverlay();
   showToast(t('defi_launched') + defi.titre + ' ✦');
 }
 
@@ -299,6 +310,14 @@ function getDefiCourant() {
 // ── DRAWER SÉLECTEUR ─────────────────────────────────────────────────────────
 function openDefiSelector() {
   const s = getDefiState();
+  // Verrouillage 24h
+  if (s.current && s.current.chosenAt) {
+    var hoursSince = (Date.now() - s.current.chosenAt) / 3600000;
+    if (hoursSince > 24) {
+      showToast('Tiens-le jusqu\'à dimanche, in sha Allah ✦');
+      return;
+    }
+  }
   const suggestion = s.choixEnAttente ? DEFIS_DB.find(d => d.id === s.choixEnAttente.suggestionId) : getSuggestionDefi();
   const ov = document.getElementById('defiSelectorOverlay');
   const body = document.getElementById('defiSelectorBody');
