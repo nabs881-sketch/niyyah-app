@@ -248,7 +248,7 @@ function initDefiSemaine() {
   if (!s.current && s.historique.length === 0) {
     var premierDefi = DEFIS_DB.find(function(d) { return d.id === 1; });
     if (premierDefi) {
-      s.current = { id: premierDefi.id, semaine: lundi, jours: [], complete: false };
+      s.current = { id: premierDefi.id, semaine: lundi, jours: [], complete: false, chosenAt: Date.now() };
       s.choixEnAttente = null;
       saveDefiState(s);
       return s;
@@ -298,7 +298,7 @@ function getDefiCourant() {
     // Auto-assigner un défi si aucun n'existe pour cette semaine
     var suggestion = getSuggestionDefi();
     if (suggestion) {
-      s.current = { id: suggestion.id, semaine: lundi, jours: [], complete: false };
+      s.current = { id: suggestion.id, semaine: lundi, jours: [], complete: false, chosenAt: Date.now() };
       s.choixEnAttente = null;
       saveDefiState(s);
     }
