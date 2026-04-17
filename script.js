@@ -3258,10 +3258,10 @@ let _prayerCity  = localStorage.getItem('niyyah_city') || '';
 let _prayerCountry = localStorage.getItem('niyyah_country') || 'France';
 let _prayerLoading = false;
 let _prayerError   = false;
-let _showCityInput = !_prayerCity;
-// Cache v2 — méthode MWL (method=3). Clé changée pour invalider l'ancien cache method=12
+let _showCityInput = !_prayerCity && !localStorage.getItem('niyyah_coords');
+// Cache horaires — lit les deux clés (ancienne + nouvelle)
 const _cachedPrayerDate = localStorage.getItem('niyyah_prayer_date_v2');
-const _cachedPrayerData = localStorage.getItem('niyyah_prayer_cache_v2');
+const _cachedPrayerData = localStorage.getItem('niyyah_prayer_cache') || localStorage.getItem('niyyah_prayer_cache_v2');
 if (_cachedPrayerDate === TODAY && _cachedPrayerData) {
   try { _prayerTimes = JSON.parse(_cachedPrayerData); } catch(e) {}
   if (_prayerTimes) setTimeout(scheduleFajrNotification, 1000);
@@ -3351,6 +3351,7 @@ function _applyPrayerTimings(timings) {
   _prayerTimes = timings;
   _prayerLoading = false;
   _prayerError = false;
+  _showCityInput = false;
   var str = JSON.stringify(timings);
   safeSetItem('niyyah_prayer_cache', str);
   safeSetItem('niyyah_prayer_cache_v2', str);
