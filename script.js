@@ -304,6 +304,11 @@ function getDefiCourant() {
     }
   }
   if (!s.current) return { defi: null, state: s };
+  // Migration : anciens défis sans chosenAt
+  if (s.current && !s.current.chosenAt) {
+    s.current.chosenAt = Date.now();
+    saveDefiState(s);
+  }
   return { defi: DEFIS_DB.find(d => d.id === s.current.id), state: s };
 }
 
