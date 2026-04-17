@@ -2190,6 +2190,146 @@ body::before {
 .v2-mode .nav-bar-v2 { display: flex !important; }
 .v2-mode .topbar-v2 { display: flex !important; }
 body.pratique-active .topbar-v2 { display: none !important; }
+/* ── CARTES IMAGE PREMIUM ── */
+.quick-btn-v2 {
+  padding: 0 !important;
+  gap: 0 !important;
+  background: #0a0a0a !important;
+  border-color: rgba(212,175,55,0.35) !important;
+  width: 100% !important;
+  height: 160px !important;
+  display: block !important;
+  overflow: hidden;
+}
+.card-img-premium {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 11px;
+  user-select: none;
+  -webkit-user-drag: none;
+  vertical-align: top;
+}
+.quick-btn-v2:hover .card-img-premium {
+  filter: brightness(1.12) drop-shadow(0 0 14px rgba(212,175,55,0.4));
+}
+.quick-card-wrap {
+  display: flex;
+  flex-direction: column;
+}
+.card-desc-v2 {
+  padding: 6px 4px 2px;
+  font-size: 14px;
+  color: #B0A080;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  text-align: center;
+  letter-spacing: 0.01em;
+  font-family: var(--sans);
+  line-height: 1.35;
+}
+.quick-btn-v2 .quick-icon-v2,
+.quick-btn-v2 .quick-label-v2,
+.quick-btn-v2 .card-img { display: none !important; }
+
+/* ══ STATS ROW — OVERRIDE ABSOLU ══ */
+#v2-stats-row,
+div#v2-stats-row,
+.sanct-stats-v2#v2-stats-row {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  -webkit-flex-direction: row !important;
+  gap: 7px !important;
+  width: 100% !important;
+  max-width: 334px !important;
+  align-items: stretch !important;
+}
+#v2-stats-row .sanct-stat-v2,
+div#v2-stats-row > div {
+  flex: 1 1 0 !important;
+  min-width: 0 !important;
+  flex-grow: 1 !important;
+  flex-shrink: 1 !important;
+  flex-basis: 0 !important;
+}
+
+
+/* ══ INFUSION D'INTENTION — THÈME DYNAMIQUE ══ */
+* { transition: color 0.5s ease, border-color 0.5s ease, background-color 0.5s ease, box-shadow 0.5s ease; }
+
+/* Éléments qui utilisent --main-color */
+.orb-core-v2 { border-color: var(--main-color) !important; box-shadow: 0 0 60px rgba(var(--main-color-rgb), 0.15), inset 0 0 40px rgba(var(--main-color-rgb), 0.05) !important; }
+.level-fill-v2 { background: linear-gradient(to right, var(--main-color), var(--main-color)) !important; }
+.btn-bismillah { background: linear-gradient(135deg, var(--main-color), color-mix(in srgb, var(--main-color) 70%, white)) !important; }
+.sanct-stat-num-v2 { color: var(--main-color) !important; }
+.level-name-v2, .level-xp-v2 { color: var(--main-color) !important; opacity: 0.9; }
+.intention-chip-v2 { border-color: color-mix(in srgb, var(--main-color) 40%, transparent) !important; background: color-mix(in srgb, var(--main-color) 8%, transparent) !important; }
+.chip-inner-v2 { color: var(--main-color) !important; }
+#v2-infusion-phrase { color: var(--main-color); opacity: 0.7; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 12px; letter-spacing: 0.08em; text-align: center; margin-bottom: 8px; animation: fadeSlideV2 0.6s ease forwards; }
+
+/* ══ LEVEL POPUP — TAFAKKUR LUXURY ══ */
+@keyframes tafakkurReveal {
+  0%   { opacity:0; transform:scale(0.85) translateY(30px); }
+  60%  { opacity:1; transform:scale(1.02) translateY(-4px); }
+  100% { opacity:1; transform:scale(1) translateY(0); }
+}
+.level-popup.show .level-popup-card {
+  animation: tafakkurReveal 0.6s cubic-bezier(0.23,1,0.32,1) forwards !important;
+}
+.level-popup-card {
+  background: linear-gradient(160deg, #13100a 0%, #0a0804 100%) !important;
+  border: 1px solid rgba(212,175,55,0.2) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.9), 0 0 60px rgba(212,175,55,0.05) !important;
+  position: relative;
+  overflow: hidden;
+}
+.level-popup-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 40% at 50% 0%, rgba(212,175,55,0.04), transparent);
+  pointer-events: none;
+}
+
+/* ══ MODE TAWBA — Effets visuels ══ */
+@keyframes twinkleStar {
+  0%   { opacity: 0.05; transform: scale(0.8); }
+  100% { opacity: 0.4;  transform: scale(1.2); }
+}
+@keyframes tawbaReveal {
+  0%   { opacity:0; transform: scale(0.88) translateY(24px); }
+  60%  { opacity:1; transform: scale(1.01) translateY(-3px); }
+  100% { opacity:1; transform: scale(1) translateY(0); }
+}
+#tawbaCard {
+  transition: transform 0.45s cubic-bezier(0.34,1.56,0.64,1), 
+              opacity 0.3s ease,
+              border-color 0.5s ease,
+              box-shadow 0.5s ease !important;
+}
+#tawbaOverlay.show #tawbaCard {
+  animation: tawbaReveal 0.55s cubic-bezier(0.23,1,0.32,1) forwards;
+}
+#tawbaExclusiveBadge {
+  display: none;
+  margin: 10px auto 16px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(212,175,55,0.3);
+  background: rgba(212,175,55,0.07);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(212,175,55,0.7);
+  font-family: 'Cinzel', serif;
+  width: fit-content;
+}
+
 /* ══════════════════════════════════════════
    NIYYAH SCANNER — Interface Caméra Sacrée
    ══════════════════════════════════════════ */
