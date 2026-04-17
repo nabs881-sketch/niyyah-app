@@ -3191,3 +3191,59 @@ button[style*="gold-v2"] {
   color: #C8A84A;
   line-height: 1.65;
 }
+
+/* Nafs observation zone */
+.nafs-observe-zone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.nafs-note-input {
+  width: 100%;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(200,168,75,0.15);
+  border-radius: 10px;
+  padding: 11px 14px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14.5px;
+  color: rgba(232,220,200,0.8);
+  outline: none;
+  transition: border-color 0.3s;
+}
+.nafs-note-input::placeholder {
+  color: rgba(176,160,128,0.35);
+  font-style: italic;
+}
+.nafs-note-input:focus {
+  border-color: rgba(200,168,75,0.4);
+}
+.nafs-observe-btn {
+  width: 100%;
+  background: transparent;
+  border: 1px solid rgba(200,168,75,0.3);
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  color: rgba(200,168,75,0.8);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.nafs-observe-btn:active:not(.nafs-observed) {
+  background: rgba(200,168,75,0.1);
+}
+.nafs-observe-btn.nafs-observed {
+  border-color: rgba(200,168,75,0.15);
+  color: rgba(200,168,75,0.45);
+  cursor: default;
+}
+.nafs-week-counter {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  font-style: italic;
+  color: rgba(176,160,128,0.5);
+  transition: opacity 0.4s;
+}

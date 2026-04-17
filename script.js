@@ -6141,6 +6141,49 @@ var NAFS_SEASON_LABELS = {
   adab_quotidien: 'Adab du quotidien'
 };
 
+function _nafsGetObservations() {
+  try { return JSON.parse(localStorage.getItem('nafs_observations') || '[]'); } catch(e) { return []; }
+}
+
+function _nafsAlreadyToday(traitId) {
+  var today = new Date().toISOString().slice(0, 10);
+  return _nafsGetObservations().some(function(o) { return o.traitId === traitId && o.date === today; });
+}
+
+function _nafsCountThisWeek(traitId) {
+  var now = new Date();
+  var dayOfWeek = now.getDay() || 7;
+  var monday = new Date(now);
+  monday.setDate(now.getDate() - dayOfWeek + 1);
+  monday.setHours(0,0,0,0);
+  var mondayStr = monday.toISOString().slice(0, 10);
+  return _nafsGetObservations().filter(function(o) { return o.traitId === traitId && o.date >= mondayStr; }).length;
+}
+
+function nafsObserve(traitId) {
+  if (_nafsAlreadyToday(traitId)) return;
+  var noteEl = document.getElementById('nafs-note-input');
+  var note = noteEl ? noteEl.value.trim().slice(0, 100) : '';
+  var today = new Date().toISOString().slice(0, 10);
+  var obs = _nafsGetObservations();
+  obs.push({ traitId: traitId, date: today, note: note });
+  safeSetItem('nafs_observations', JSON.stringify(obs));
+
+  var btn = document.getElementById('nafs-observe-btn');
+  if (btn) {
+    btn.classList.add('nafs-observed');
+    btn.innerHTML = '✓ Observé aujourd\'hui';
+  }
+  if (noteEl) { noteEl.disabled = true; noteEl.style.opacity = '0.4'; }
+
+  var counter = document.getElementById('nafs-week-counter');
+  if (counter) {
+    var c = _nafsCountThisWeek(traitId);
+    counter.textContent = c === 1 ? 'Tu l\'as observé 1 fois cette semaine' : 'Tu l\'as observé ' + c + ' fois cette semaine';
+    counter.style.opacity = '1';
+  }
+}
+
 function renderNafsTrait() {
   var container = document.getElementById('nafs-trait-card');
   if (!container) return;
@@ -6148,6 +6191,8 @@ function renderNafsTrait() {
   var t = data.trait;
   var w = data.week;
   var seasonLabel = NAFS_SEASON_LABELS[t.season] || t.season;
+  var alreadyDone = _nafsAlreadyToday(t.id);
+  var weekCount = _nafsCountThisWeek(t.id);
 
   container.innerHTML =
     '<div style="text-align:center;">' +
@@ -6178,6 +6223,16 @@ function renderNafsTrait() {
     '<div class="nafs-action-box">' +
       '<div class="nafs-section-label" style="color:rgba(200,168,75,0.7);">Action de la semaine</div>' +
       '<div class="nafs-action-text">' + t.action + '</div>' +
+    '</div>' +
+    '<div class="nafs-divider"></div>' +
+    '<div class="nafs-observe-zone">' +
+      '<input type="text" id="nafs-note-input" class="nafs-note-input" maxlength="100" placeholder="Dans quelle situation ? (optionnel)"' + (alreadyDone ? ' disabled style="opacity:0.4;"' : '') + '>' +
+      '<button id="nafs-observe-btn" class="nafs-observe-btn' + (alreadyDone ? ' nafs-observed' : '') + '" onclick="nafsObserve(' + t.id + ')"' + (alreadyDone ? ' disabled' : '') + '>' +
+        (alreadyDone ? '✓ Observé aujourd\'hui' : 'Je l\'ai ressenti aujourd\'hui') +
+      '</button>' +
+      '<div id="nafs-week-counter" class="nafs-week-counter"' + (weekCount === 0 ? ' style="opacity:0;"' : '') + '>' +
+        (weekCount === 0 ? '' : weekCount === 1 ? 'Tu l\'as observé 1 fois cette semaine' : 'Tu l\'as observé ' + weekCount + ' fois cette semaine') +
+      '</div>' +
     '</div>';
 }
 
