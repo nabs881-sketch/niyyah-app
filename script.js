@@ -3321,12 +3321,19 @@ function renderPrayerTimesCard() {
     '</div>';
   });
   grid += '</div>';
+  var lastthird = '';
+  if (_prayerTimes.Lastthird) {
+    lastthird = '<div style="display:flex;align-items:center;justify-content:space-between;padding:8px 12px;margin-top:6px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.12);border-radius:10px;">'
+      + '<div style="font-size:12px;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-style:italic;">🌙 Qiyâm al-layl · Dernier tiers</div>'
+      + '<div style="font-size:13px;font-weight:600;color:#C8A84A;">' + _prayerTimes.Lastthird.substring(0,5) + '</div>'
+      + '</div>';
+  }
   return '<div class="prayer-times-card">' +
     '<div class="prayer-times-header">' +
       '<div class="prayer-times-title">🕌 Horaires — aujourd\'hui</div>' +
-      '<div class="prayer-times-city" onclick="showCityInput()">✏️ ' + _prayerCity + '</div>' +
+      '<div class="prayer-times-city" onclick="showCityInput()">✏️ ' + (_prayerCity || '📍') + '</div>' +
     '</div>' +
-    grid +
+    grid + lastthird +
   '</div>';
 }
 function saveCityAndLoad() {
