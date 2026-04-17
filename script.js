@@ -5232,10 +5232,7 @@ const ONBOARD_SLIDES = [
   () => `
     <div class="onboard-anim"><div class="onboard-title">4 niveaux de pratique</div><div class="onboard-sub" style="margin-bottom:24px;">Progresse à ton rythme — chaque niveau se débloque quand tu es prêt.</div><div class="onboard-levels"><div class="onboard-level"><div class="onboard-level-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M22 6a10 10 0 1 0 0 16A8 8 0 0 1 22 6z" fill="#C8A84A"/></svg></div><div><div class="onboard-level-name">Fondations</div><div class="onboard-level-desc">Les 5 prières · Dhikr · Récitation</div></div></div><div class="onboard-level"><div class="onboard-level-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 2l3.09 6.26L24 9.27l-5 4.87L20.18 21 14 17.27 7.82 21 9 14.14l-5-4.87 6.91-1.01L14 2z" fill="#C8A84A"/></svg></div><div><div class="onboard-level-name">Approfondissement</div><div class="onboard-level-desc">Mosquée · Istighfar · Tasbih</div></div></div><div class="onboard-level"><div class="onboard-level-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M4 4h8v20H4z" fill="#C8A84A" opacity="0.7"/><path d="M16 4h8v20h-8z" fill="#C8A84A"/><path d="M12 4v20h4V4z" fill="#C8A84A" opacity="0.5"/></svg></div><div><div class="onboard-level-name">Connaissance</div><div class="onboard-level-desc">Hadiths · Coran · Arabe</div></div></div><div class="onboard-level"><div class="onboard-level-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 4c-3 0-6 2-6 5 0 2 1 3 2 4l4 3 4-3c1-1 2-2 2-4 0-3-3-5-6-5z" fill="#C8A84A" opacity="0.8"/><path d="M6 18c0 0 2-1 8-1s8 1 8 1v4c0 1-1 2-2 2H8c-1 0-2-1-2-2v-4z" fill="#C8A84A"/></svg></div><div><div class="onboard-level-name">Rayonnement</div><div class="onboard-level-desc">Sadaqa · Salam · Douaas</div></div></div></div><button class="onboard-btn" onclick="onboardNext()">Suivant →</button><button class="onboard-skip" onclick="onboardFinish()">Passer</button></div>`,
   () => `
-    <div class="onboard-anim"><div style="margin:0 auto 20px;"><img src="https://nabs881-sketch.github.io/niyyah-app/imageslogo.png" alt="Niyyah" style="width:150px;height:auto;display:block;margin:0 auto;"></div><div class="onboard-title">Tes horaires de prière</div><div class="onboard-sub">Entre ta ville pour afficher les horaires de Fajr, Dhuhr, Asr, Maghrib et Isha chaque jour.</div><div class="city-input-wrap" style="max-width:300px;margin-bottom:16px;"><input class="city-input" id="onboardCityInput" type="text"
-          placeholder="Ex: Paris, Orléans, Casablanca..."
-          
-          onkeydown="if(event.key==='Enter')onboardSaveCity()"><button class="city-input-btn" onclick="onboardSaveCity()">OK</button></div><button class="onboard-btn" onclick="onboardFinish()" style="max-width:300px;">C'est parti — Bismillah 🌿</button><button class="onboard-skip" onclick="onboardFinish()">Plus tard</button></div>`
+    <div class="onboard-anim"><div style="margin:0 auto 20px;"><img src="https://nabs881-sketch.github.io/niyyah-app/imageslogo.png" alt="Niyyah" style="width:150px;height:auto;display:block;margin:0 auto;"></div><div class="onboard-title">Tes horaires de prière</div><div class="onboard-sub">Autorise la géolocalisation pour afficher automatiquement tes horaires de prière.</div><button class="onboard-btn" onclick="onboardRequestGeoloc()" style="max-width:300px;" id="onboardGeoBtn">📍 Me localiser</button><div id="onboardCityFallback" style="display:none;margin-top:16px;"><div style="font-size:13px;color:#B0A080;margin-bottom:10px;">Ou entre ta ville manuellement :</div><div class="city-input-wrap" style="max-width:300px;margin-bottom:16px;"><input class="city-input" id="onboardCityInput" type="text" placeholder="Ex: Paris, Casablanca, Bruxelles..." onkeydown="if(event.key===\'Enter\')onboardSaveCity()"><button class="city-input-btn" onclick="onboardSaveCity()">OK</button></div></div><button class="onboard-skip" onclick="onboardFinish()" style="margin-top:12px;">Plus tard</button></div>`
 ];
 function onboardRender() {
   requestAnimationFrame(function() {
@@ -5269,6 +5266,30 @@ function onboardSaveCity() {
     _showCityInput = false;
   }
   onboardFinish();
+}
+function onboardRequestGeoloc() {
+  var btn = document.getElementById('onboardGeoBtn');
+  if (btn) { btn.textContent = '⏳ Localisation...'; btn.disabled = true; }
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      function(pos) {
+        safeSetItem('niyyah_coords', JSON.stringify({ lat: pos.coords.latitude, lng: pos.coords.longitude }));
+        if (btn) { btn.textContent = '✓ Localisé !'; btn.style.background = 'var(--green)'; }
+        setTimeout(onboardFinish, 800);
+      },
+      function() {
+        // Refusé → afficher input ville
+        if (btn) { btn.textContent = '📍 Me localiser'; btn.disabled = false; }
+        var fallback = document.getElementById('onboardCityFallback');
+        if (fallback) fallback.style.display = 'block';
+      },
+      { timeout: 10000 }
+    );
+  } else {
+    var fallback = document.getElementById('onboardCityFallback');
+    if (fallback) fallback.style.display = 'block';
+    if (btn) { btn.style.display = 'none'; }
+  }
 }
 function onboardFinish() {
   safeSetItem('niyyah_onboard', '1');
