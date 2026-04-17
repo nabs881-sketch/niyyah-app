@@ -1,6 +1,6 @@
 // ═══════════════════════════════════════════════════
 // NIYYAH API — Cloudflare Worker
-// Routes : /api/mentor, /api/scanner, /api/murmure
+// Routes : /api/scanner, /api/murmure
 // ═══════════════════════════════════════════════════
 
 const CORS_HEADERS = {
@@ -31,11 +31,6 @@ export default {
       return jsonResponse({ status: 'ok', service: 'Niyyah API', version: '2.0.0' });
     }
 
-    // ── Route Mentor d'Adab ──
-    if (path === '/api/mentor' && request.method === 'POST') {
-      return handleMentor(request, env);
-    }
-
     // ── Route Scanner de Niyyah ──
     if (path === '/api/scanner' && request.method === 'POST') {
       return handleScanner(request, env);
@@ -49,55 +44,6 @@ export default {
     return jsonResponse({ error: 'Route introuvable' }, 404);
   },
 };
-
-// ═══════════════════════════════════════════════════
-// MENTOR D'ADAB
-// ═══════════════════════════════════════════════════
-async function handleMentor(request, env) {
-  try {
-    const { messages, systemPrompt } = await request.json();
-
-    if (!messages || !Array.isArray(messages)) {
-      return jsonResponse({ error: 'messages requis' }, 400);
-    }
-
-    // Utiliser le prompt complet envoyé par le client
-    const fullSystem = systemPrompt
-      || 'Tu es le Mentor d\'Adab de Niyyah — un guide spirituel bienveillant.';
-
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': env.ANTHROPIC_API_KEY,
-        'anthropic-version': '2023-06-01',
-      },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 900,
-        system: fullSystem,
-        messages: messages.slice(-10),
-      }),
-    });
-
-    if (!response.ok) {
-      const err = await response.text();
-      throw new Error(`Anthropic ${response.status}: ${err}`);
-    }
-
-    const data = await response.json();
-    const reply = data.content?.[0]?.text;
-    if (!reply) throw new Error('Réponse vide');
-
-    return jsonResponse({ reply });
-
-  } catch (err) {
-    return jsonResponse(
-      { error: 'Service temporairement indisponible', details: err.message },
-      500
-    );
-  }
-}
 
 // ═══════════════════════════════════════════════════
 // SCANNER DE NIYYAH

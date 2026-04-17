@@ -5425,12 +5425,6 @@ const V2_I18N = {
     // Wird header
     wird_subtitle: 'Invocations du matin & du soir',
     // Intentions suggestions
-    mentor_title: "Mentor d'Adab",
-    mentor_sub: "Sagesse · Tazkiyat al-Nafs",
-    mentor_placeholder: "Pose ta question au Mentor...",
-    mentor_welcome: "Salam, frère. Je suis ici pour t'aider à élever chaque acte de ta journée par une intention juste. Dis-moi ce que tu veux accomplir aujourd'hui — je te proposerai trois niveaux de Niyyah pour le sacraliser.",
-    mentor_suggestions_label: "Suggestions",
-    nav_mentor: "Mentor",
     intentions: [
       'Pour la baraka dans ce que je fais aujourd\'hui',
       'Pour le bien et la protection de ma famille',
@@ -5479,9 +5473,6 @@ const V2_I18N = {
     // Scanner
     scanner_posed: '✦ INTENTION POSÉE', scanner_empty: 'Tes intentions apparaîtront ici ✦',
     scanner_limit: 'Ton scan du jour a été utilisé — reviens demain inch\'Allah 🌙',
-    // Mentor
-    mentor_limit: 'Ta question du jour a été posée — reviens demain inch\'Allah 🌙',
-    mentor_offered: 'question encore offerte ✦', mentor_offered_p: 'questions encore offertes ✦', mentor_tomorrow: 'Reviens demain inch\'Allah 🌙',
     // Onboarding
     onboard_start: 'Commencer →', onboard_next: 'Suivant →', onboard_skip: 'Passer', onboard_later: 'Plus tard', onboard_go: 'C\'est parti — Bismillah 🌿',
     onboard_title1: 'Ta pratique spirituelle,<br>chaque jour', onboard_sub1: 'Niyyah t\'accompagne dans ton chemin vers Allah — à ton rythme, sans jugement.',
@@ -5546,12 +5537,6 @@ const V2_I18N = {
     stat_medal:  'Medal',
     toast_intention: 'Niyyah anchored · بِسْمِ اللَّهِ',
     wird_subtitle: 'Morning & evening invocations',
-    mentor_title: "Adab Mentor",
-    mentor_sub: "Wisdom · Tazkiyat al-Nafs",
-    mentor_placeholder: "Ask the Mentor...",
-    mentor_welcome: "Salam, brother. I am here to help you elevate every act of your day through a righteous intention. Tell me what you wish to accomplish — I will offer you three levels of Niyyah to sanctify it.",
-    mentor_suggestions_label: "Suggestions",
-    nav_mentor: "Mentor",
     intentions: [
       'For barakah in all that I do today',
       'For the well-being of my family',
@@ -5585,8 +5570,6 @@ const V2_I18N = {
     graine_title: 'Seed of Light', graine_sub: 'The seed awaits the light', graine_defis: 'challenges completed', graine_quote: 'Have you seen what you cultivate? — Al-Waqi\'a 63',
     scanner_posed: '✦ INTENTION SET', scanner_empty: 'Your intentions will appear here ✦',
     scanner_limit: 'Your daily scan was used — come back tomorrow insha\'Allah 🌙',
-    mentor_limit: 'Your daily question was asked — come back tomorrow insha\'Allah 🌙',
-    mentor_offered: 'question still offered ✦', mentor_offered_p: 'questions still offered ✦', mentor_tomorrow: 'Come back tomorrow insha\'Allah 🌙',
     onboard_start: 'Start →', onboard_next: 'Next →', onboard_skip: 'Skip', onboard_later: 'Later', onboard_go: 'Let\'s go — Bismillah 🌿',
     onboard_title1: 'Your spiritual practice,<br>every day', onboard_sub1: 'Niyyah walks with you on your path to Allah — at your pace, without judgment.',
     onboard_title2: 'The Niyyah Scanner', onboard_sub2: 'Look at an everyday object — the Scanner will suggest a spiritual intention to sanctify it.',
@@ -5644,12 +5627,6 @@ const V2_I18N = {
     stat_medal:  'الْمِيدَالِيَّةُ',
     toast_intention: 'ثَبَتَتِ النِّيَّةُ · بِسْمِ اللَّهِ',
     wird_subtitle: 'أَوْرَادُ الصَّبَاحِ وَالْمَسَاءِ',
-    mentor_title: "مُرَبِّي الأَدَبِ",
-    mentor_sub: "الْحِكْمَةُ · تَزْكِيَةُ النَّفْسِ",
-    mentor_placeholder: "اسْأَلْ مُرَبِّيَ الأَدَبِ...",
-    mentor_welcome: "السَّلَامُ عَلَيْكُمْ. أَنَا هُنَا لِمُسَاعَدَتِكَ عَلَى رَفْعِ كُلِّ عَمَلٍ فِي يَوْمِكَ بِنِيَّةٍ صَحِيحَةٍ. أَخْبِرْنِي بِمَا تُرِيدُ إِنْجَازَهُ — سَأَقْتَرِحُ عَلَيْكَ ثَلَاثَةَ مُسْتَوَيَاتٍ لِلنِّيَّةِ.",
-    mentor_suggestions_label: "اقْتِرَاحَاتٌ",
-    nav_mentor: "الْمُرَبِّي",
     intentions: [
       'لِلْبَرَكَةِ فِيمَا أَعْمَلُ الْيَوْمَ',
       'لِخَيْرِ عَائِلَتِي وَحِمَايَتِهَا',
@@ -5683,8 +5660,6 @@ const V2_I18N = {
     graine_title: 'بَذْرَةُ النُّورِ', graine_sub: 'الْبَذْرَةُ تَنْتَظِرُ النُّورَ', graine_defis: 'تَحَدِّيَاتٌ مُنْجَزَةٌ', graine_quote: 'أَفَرَأَيْتُمْ مَا تَحْرُثُونَ — الْوَاقِعَة ٦٣',
     scanner_posed: '✦ ثَبَتَتِ النِّيَّةُ', scanner_empty: 'سَتَظْهَرُ نِيَّاتُكَ هُنَا ✦',
     scanner_limit: 'اسْتُخْدِمَ مَسْحُكَ الْيَوْمِيُّ — عُدْ غَدًا إِنْ شَاءَ اللَّهُ 🌙',
-    mentor_limit: 'طُرِحَ سُؤَالُكَ الْيَوْمِيُّ — عُدْ غَدًا إِنْ شَاءَ اللَّهُ 🌙',
-    mentor_offered: 'سُؤَالٌ مَجَّانِيٌّ مُتَبَقٍّ ✦', mentor_offered_p: 'أَسْئِلَةٌ مَجَّانِيَّةٌ مُتَبَقِّيَةٌ ✦', mentor_tomorrow: 'عُدْ غَدًا إِنْ شَاءَ اللَّهُ 🌙',
     onboard_start: '← ابْدَأْ', onboard_next: '← التَّالِي', onboard_skip: 'تَخَطَّ', onboard_later: 'لَاحِقًا', onboard_go: 'بِسْمِ اللَّهِ — هَيَّا بِنَا 🌿',
     onboard_title1: 'عِبَادَتُكَ الرُّوحِيَّةُ<br>كُلَّ يَوْمٍ', onboard_sub1: 'نِيَّة تُرَافِقُكَ فِي طَرِيقِكَ إِلَى اللَّهِ — بِوَتِيرَتِكَ وَبِدُونِ حُكْمٍ.',
     onboard_title2: 'مَاسِحُ النِّيَّةِ', onboard_sub2: 'انْظُرْ إِلَى شَيْءٍ يَوْمِيٍّ — سَيَقْتَرِحُ الْمَاسِحُ نِيَّةً رُوحِيَّةً لِتَقْدِيسِهِ.',
