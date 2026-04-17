@@ -3272,7 +3272,6 @@ function renderPrayerTimesCard() {
   // Re-check dynamiquement — coords peuvent arriver après le boot
   var _hasCoords = !!localStorage.getItem('niyyah_coords');
   if (_prayerTimes || _hasCoords || _prayerLoading) _showCityInput = false;
-  console.log('[Prayer] render:', { _showCityInput, _prayerLoading, _prayerError, hasCoords: _hasCoords, hasCity: !!_prayerCity, hasTimes: !!_prayerTimes });
   if (_showCityInput) {
     return '<div class="prayer-times-card">' +
       '<div class="prayer-times-header"><div class="prayer-times-title">🕌 Horaires du jour</div></div>' +
@@ -5333,12 +5332,10 @@ function onboardRequestGeoloc() {
       function(pos) {
         var coords = { lat: pos.coords.latitude, lng: pos.coords.longitude };
         safeSetItem('niyyah_coords', JSON.stringify(coords));
-        alert('✅ GEOLOC SUCCESS\nlat: ' + coords.lat + '\nlng: ' + coords.lng + '\nsaved: ' + localStorage.getItem('niyyah_coords'));
         if (btn) { btn.textContent = '✓ Localisé !'; btn.style.background = 'var(--green)'; }
         setTimeout(onboardFinish, 800);
       },
       function(err) {
-        alert('❌ GEOLOC ERROR\ncode: ' + err.code + '\nmsg: ' + err.message);
         // Refusé → afficher input ville
         if (btn) { btn.textContent = '📍 Me localiser'; btn.disabled = false; }
         var fallback = document.getElementById('onboardCityFallback');
@@ -5347,7 +5344,6 @@ function onboardRequestGeoloc() {
       { enableHighAccuracy: false, timeout: 15000, maximumAge: 300000 }
     );
   } else {
-    alert('❌ NO GEOLOC API');
     var fallback = document.getElementById('onboardCityFallback');
     if (fallback) fallback.style.display = 'block';
     if (btn) { btn.style.display = 'none'; }
