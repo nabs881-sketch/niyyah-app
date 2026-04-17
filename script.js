@@ -6127,8 +6127,58 @@ var NAFS_TRAITS = [
     signal:'Tu gaspilles l\'eau, la nourriture ou l\'énergie sans y penser.', action:'Réduis un gaspillage concret aujourd\'hui — eau, électricité ou nourriture.' }
 ];
 function getNafsTraitOfWeek() {
-  var weekOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(),0,1).getTime()) / 604800000);
-  return NAFS_TRAITS[weekOfYear % NAFS_TRAITS.length];
+  var now = new Date();
+  var start = new Date(now.getFullYear(), 0, 1);
+  var day = Math.floor((now - start) / 86400000);
+  var weekOfYear = Math.floor((day + start.getDay()) / 7);
+  return { trait: NAFS_TRAITS[weekOfYear % NAFS_TRAITS.length], week: weekOfYear + 1 };
+}
+
+var NAFS_SEASON_LABELS = {
+  maladies_coeur: 'Maladies du cœur',
+  maladies_langue: 'Maladies de la langue',
+  vertus: 'Vertus à cultiver',
+  adab_quotidien: 'Adab du quotidien'
+};
+
+function renderNafsTrait() {
+  var container = document.getElementById('nafs-trait-card');
+  if (!container) return;
+  var data = getNafsTraitOfWeek();
+  var t = data.trait;
+  var w = data.week;
+  var seasonLabel = NAFS_SEASON_LABELS[t.season] || t.season;
+
+  container.innerHTML =
+    '<div style="text-align:center;">' +
+      '<div class="nafs-week-badge">Semaine ' + w + ' — Trait ' + t.id + '/52</div>' +
+    '</div>' +
+    '<div class="nafs-season-label" style="text-align:center;">' + seasonLabel + '</div>' +
+    '<div class="nafs-name-block">' +
+      '<div class="nafs-name-ar">' + t.name_ar + '</div>' +
+      '<div class="nafs-name-fr">' + t.name_fr + '</div>' +
+      '<div class="nafs-name-translit">' + t.name_translit + '</div>' +
+    '</div>' +
+    '<div class="nafs-divider"></div>' +
+    '<div class="nafs-section">' +
+      '<div class="nafs-section-label">Définition</div>' +
+      '<div class="nafs-section-text">' + t.definition + '</div>' +
+    '</div>' +
+    '<div class="nafs-reference-box">' +
+      '<div class="nafs-reference-text">« ' + t.reference.text + ' »</div>' +
+      '<div class="nafs-reference-source">' + t.reference.source + '</div>' +
+    '</div>' +
+    '<div class="nafs-signal-box">' +
+      '<div class="nafs-signal-icon">⚡</div>' +
+      '<div>' +
+        '<div class="nafs-section-label">Signal d\'alerte</div>' +
+        '<div class="nafs-section-text">' + t.signal + '</div>' +
+      '</div>' +
+    '</div>' +
+    '<div class="nafs-action-box">' +
+      '<div class="nafs-section-label" style="color:rgba(200,168,75,0.7);">Action de la semaine</div>' +
+      '<div class="nafs-action-text">' + t.action + '</div>' +
+    '</div>';
 }
 
 function v2GoNafs() {
@@ -6142,6 +6192,7 @@ function v2GoNafs() {
   document.querySelectorAll('.nav-v2-item').forEach(function(n) { n.classList.remove('active-nav'); });
   var btn = document.getElementById('v2nav-nafs');
   if (btn) btn.classList.add('active-nav');
+  renderNafsTrait();
 }
 function v2GoSanctuaire() {
   // Show sanctuaire + V2 UI
