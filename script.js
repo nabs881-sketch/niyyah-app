@@ -1817,7 +1817,7 @@ function init() {
     onboardRender();
   } else {
     document.getElementById('onboardScreen').classList.add('hidden');
-    if (_prayerCity) loadPrayerTimes();
+    loadPrayerTimes();
     const lastNiyyah = localStorage.getItem('niyyah_intention_date');
     if (lastNiyyah !== TODAY) {
       setTimeout(showNiyyahScreen, 100);
@@ -5277,7 +5277,7 @@ function onboardFinish() {
     screen.style.opacity = '0';
     setTimeout(() => screen.classList.add('hidden'), 350);
   }
-  if (_prayerCity) loadPrayerTimes();
+  loadPrayerTimes();
   // Afficher l'écran de permission notifications après l'onboarding
   setTimeout(() => {
     if (localStorage.getItem('niyyah_notif_asked') !== '1') {
