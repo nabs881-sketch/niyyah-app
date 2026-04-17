@@ -3330,77 +3330,120 @@ function renderPrayerTimesCard() {
   '</div>';
 }
 function saveCityAndLoad() {
-  const input = document.getElementById('cityInput');
+  var input = document.getElementById('cityInput');
   if (!input || !input.value.trim()) return;
   _prayerCity = input.value.trim();
   safeSetItem('niyyah_city', _prayerCity);
   _showCityInput = false;
-  loadPrayerTimes();
+  // Geocode city → coords → load
+  fetch('https://api.aladhan.com/v1/qibla/' + encodeURIComponent(_prayerCity))
+    .then(function(r) { return r.json(); })
+    .catch(function() { return null; });
+  // Use timingsByCity as geocoding fallback
+  _loadPrayerByCity();
 }
 function showCityInput() {
   _showCityInput = true;
   renderLevel(currentLevel);
-  setTimeout(() => { const el = document.getElementById('cityInput'); if (el) el.focus(); }, 100);
+  setTimeout(function() { var el = document.getElementById('cityInput'); if (el) el.focus(); }, 100);
+}
+function _applyPrayerTimings(timings) {
+  _prayerTimes = timings;
+  _prayerLoading = false;
+  _prayerError = false;
+  var str = JSON.stringify(timings);
+  safeSetItem('niyyah_prayer_cache', str);
+  safeSetItem('niyyah_prayer_cache_v2', str);
+  safeSetItem('niyyah_prayer_date_v2', TODAY);
+  schedulePrayerReminders();
+  renderLevel(currentLevel);
+  if (typeof updateSanctuaireMoment === 'function') updateSanctuaireMoment();
+}
+function _loadPrayerByCoords(lat, lng) {
+  _prayerLoading = true;
+  _prayerError = false;
+  renderLevel(currentLevel);
+  var url = 'https://api.aladhan.com/v1/timings?latitude=' + lat + '&longitude=' + lng + '&method=12&school=0';
+  fetch(url)
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      if (d.code === 200 && d.data && d.data.timings) {
+        _applyPrayerTimings(d.data.timings);
+      } else { throw new Error('bad response'); }
+    })
+    .catch(function() {
+      // Fallback par ville si coords échouent
+      if (_prayerCity) { _loadPrayerByCity(); }
+      else { _prayerLoading = false; _prayerError = true; renderLevel(currentLevel); }
+    });
+}
+function _loadPrayerByCity() {
+  _prayerLoading = true;
+  _prayerError = false;
+  renderLevel(currentLevel);
+  var _today = new Date();
+  var _dateStr = String(_today.getDate()).padStart(2,'0') + '-' + String(_today.getMonth()+1).padStart(2,'0') + '-' + _today.getFullYear();
+  var url = 'https://api.aladhan.com/v1/timingsByCity/' + _dateStr + '?city=' + encodeURIComponent(_prayerCity) + '&country=' + encodeURIComponent(_prayerCountry || '') + '&method=12';
+  fetch(url)
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      if (d.code === 200 && d.data && d.data.timings) {
+        _applyPrayerTimings(d.data.timings);
+      } else { throw new Error('bad response'); }
+    })
+    .catch(function() {
+      var _fallback = localStorage.getItem('niyyah_prayer_cache');
+      if (!_fallback) _fallback = localStorage.getItem('niyyah_prayer_cache_v2');
+      if (_fallback) { try { _prayerTimes = JSON.parse(_fallback); } catch(e) {} }
+      _prayerLoading = false;
+      _prayerError = !_prayerTimes;
+      renderLevel(currentLevel);
+    });
 }
 function loadPrayerTimes() {
-  if (!_prayerCity) { _showCityInput = true; renderLevel(currentLevel); return; }
-  _prayerLoading = true;
-  _prayerError   = false;
-  renderLevel(currentLevel);
-  // API AlAdhan — method=12 (UMF)
-  var _today = new Date();
-  var _dd = String(_today.getDate()).padStart(2,'0');
-  var _mm = String(_today.getMonth()+1).padStart(2,'0');
-  var _yyyy = _today.getFullYear();
-  var _dateStr = _dd + '-' + _mm + '-' + _yyyy;
-  var _cacheKey = 'niyyah_prayer_times_' + _yyyy + '-' + _mm + '-' + _dd;
   // Check 24h cache first
-  var _cached = localStorage.getItem(_cacheKey);
-  if (_cached) {
+  var _cached = localStorage.getItem('niyyah_prayer_cache');
+  var _cachedDate = localStorage.getItem('niyyah_prayer_date_v2');
+  if (_cachedDate === TODAY && _cached) {
     try {
       _prayerTimes = JSON.parse(_cached);
       _prayerLoading = false;
       _prayerError = false;
-      safeSetItem('niyyah_prayer_cache_v2', _cached);
-      safeSetItem('niyyah_prayer_date_v2', TODAY);
       schedulePrayerReminders();
       renderLevel(currentLevel);
       if (typeof updateSanctuaireMoment === 'function') updateSanctuaireMoment();
       return;
     } catch(e) {}
   }
-  var url = 'https://api.aladhan.com/v1/timingsByCity/' + _dateStr +
-    '?city=' + encodeURIComponent(_prayerCity) +
-    '&country=' + encodeURIComponent(_prayerCountry || '') +
-    '&method=12';
-  fetch(url)
-    .then(function(r) { return r.json(); })
-    .then(function(d) {
-      if (d.code === 200 && d.data && d.data.timings) {
-        _prayerTimes = d.data.timings;
-        _prayerLoading = false;
-        _prayerError = false;
-        var _timingsStr = JSON.stringify(_prayerTimes);
-        safeSetItem(_cacheKey, _timingsStr);
-        safeSetItem('niyyah_prayer_cache_v2', _timingsStr);
-        safeSetItem('niyyah_prayer_date_v2', TODAY);
-        schedulePrayerReminders();
-        renderLevel(currentLevel);
-        if (typeof updateSanctuaireMoment === 'function') updateSanctuaireMoment();
-      } else {
-        throw new Error('bad response');
-      }
-    })
-    .catch(function() {
-      // Fallback : derniers horaires cachés
-      var _fallback = localStorage.getItem('niyyah_prayer_cache_v2');
-      if (_fallback) {
-        try { _prayerTimes = JSON.parse(_fallback); } catch(e) {}
-      }
-      _prayerLoading = false;
-      _prayerError = !_prayerTimes;
-      renderLevel(currentLevel);
-    });
+  // Try geolocation first
+  var savedCoords = localStorage.getItem('niyyah_coords');
+  if (savedCoords) {
+    try {
+      var c = JSON.parse(savedCoords);
+      _loadPrayerByCoords(c.lat, c.lng);
+      return;
+    } catch(e) {}
+  }
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      function(pos) {
+        var lat = pos.coords.latitude;
+        var lng = pos.coords.longitude;
+        safeSetItem('niyyah_coords', JSON.stringify({ lat: lat, lng: lng }));
+        _loadPrayerByCoords(lat, lng);
+      },
+      function() {
+        // Geoloc refused → fallback city input
+        if (_prayerCity) { _loadPrayerByCity(); }
+        else { _showCityInput = true; renderLevel(currentLevel); }
+      },
+      { timeout: 8000 }
+    );
+  } else {
+    // No geolocation API
+    if (_prayerCity) { _loadPrayerByCity(); }
+    else { _showCityInput = true; renderLevel(currentLevel); }
+  }
 }
 const WIRD_DATA = {
   matin: {
@@ -6126,6 +6169,13 @@ function v2OpenSettings() {
               style="flex:1;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:none;color:rgba(240,234,214,0.6);font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.15em;cursor:pointer;">
               ${T.settings_theme}
             </button>
+          </div>
+        </div>
+        <div style="padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.04);cursor:pointer;"
+          onclick="document.getElementById('v2-settings-sheet').remove();localStorage.removeItem('niyyah_coords');showCityInput();">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <div style="font-size:14px;color:rgba(240,234,214,0.7);">📍 Changer ma ville</div>
+            <div style="font-size:11px;color:rgba(240,234,214,0.25);">${_prayerCity || '—'}</div>
           </div>
         </div>
         <div style="padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.04);cursor:pointer;"
