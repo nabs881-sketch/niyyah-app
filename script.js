@@ -5105,7 +5105,7 @@ const ONBOARD_SLIDES = [
   () => `
     <div class="onboard-anim"><div class="onboard-logo-wrap"><div class="onboard-logo-halo"><img src="https://nabs881-sketch.github.io/niyyah-app/imageslogo.png" alt="Niyyah" style="width:150px;height:auto;display:block;margin:0 auto;"></div><div class="onboard-particle" style="--d:0s;--x:-40px;--y:-30px;">✦</div><div class="onboard-particle" style="--d:0.8s;--x:45px;--y:-20px;">✦</div><div class="onboard-particle" style="--d:1.6s;--x:-30px;--y:35px;">✦</div><div class="onboard-particle" style="--d:2.4s;--x:35px;--y:40px;">✦</div><div class="onboard-particle" style="--d:3.2s;--x:0px;--y:-45px;">✦</div></div><div class="onboard-logo">Niyyah Daily</div><div class="onboard-tagline">نِيَّة · Pose ton intention</div><div class="onboard-title">Ta pratique spirituelle,<br>chaque jour</div><div class="onboard-sub">Niyyah t\'accompagne dans ton chemin vers Allah — à ton rythme, sans jugement.</div><button class="onboard-btn" onclick="onboardNext()">Commencer →</button><button class="onboard-skip" onclick="onboardFinish()">Passer</button></div>`,
   () => `
-    <div class="onboard-anim"><div style="text-align:center;margin-bottom:16px;"><img src="https://nabs881-sketch.github.io/niyyah-app/imagescamera.png" alt="Scanner" style="width:100px;height:auto;display:block;margin:0 auto;"></div><div class="onboard-title">Le Scanner de Niyyah</div><div class="onboard-sub" style="margin-bottom:24px;">Pose ton regard sur un objet du quotidien — le Scanner te proposera une intention spirituelle pour le sacraliser.</div><div style="background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.15);border-radius:14px;padding:16px;margin-bottom:20px;text-align:center;"><div style="font-size:13px;color:rgba(255,255,255,0.7);line-height:1.6;">Ton verre d'eau, ton stylo, ton miroir...<br>Chaque objet peut porter une niyyah.</div></div><button class="onboard-btn" onclick="onboardNext()">Suivant →</button><button class="onboard-skip" onclick="onboardFinish()">Passer</button></div>`,
+    <div class="onboard-anim"><div style="text-align:center;margin-bottom:16px;"><img src="https://nabs881-sketch.github.io/niyyah-app/imagescamera.png" alt="Scanner" style="width:100px;height:auto;display:block;margin:0 auto;"></div><div class="onboard-title">Le Scanner de Niyyah</div><div class="onboard-sub" style="margin-bottom:24px;">Pose ton regard sur un objet du quotidien — le Scanner te proposera une intention spirituelle pour le sacraliser.</div><div style="background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.15);border-radius:14px;padding:16px;margin-bottom:20px;text-align:center;"><div style="font-size:16px;color:rgba(255,255,255,0.7);line-height:1.6;">Ton verre d'eau, ton stylo, ton miroir...<br>Chaque objet peut porter une niyyah.</div></div><button class="onboard-btn" onclick="onboardNext()">Suivant →</button><button class="onboard-skip" onclick="onboardFinish()">Passer</button></div>`,
   () => `
     <div class="onboard-anim"><div class="onboard-title">4 niveaux de pratique</div><div class="onboard-sub" style="margin-bottom:24px;">Progresse à ton rythme — chaque niveau se débloque quand tu es prêt.</div><div class="onboard-levels"><div class="onboard-level"><div class="onboard-level-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M22 6a10 10 0 1 0 0 16A8 8 0 0 1 22 6z" fill="#C8A84A"/></svg></div><div><div class="onboard-level-name">Fondations</div><div class="onboard-level-desc">Les 5 prières · Dhikr · Récitation</div></div></div><div class="onboard-level"><div class="onboard-level-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 2l3.09 6.26L24 9.27l-5 4.87L20.18 21 14 17.27 7.82 21 9 14.14l-5-4.87 6.91-1.01L14 2z" fill="#C8A84A"/></svg></div><div><div class="onboard-level-name">Approfondissement</div><div class="onboard-level-desc">Mosquée · Istighfar · Tasbih</div></div></div><div class="onboard-level"><div class="onboard-level-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M4 4h8v20H4z" fill="#C8A84A" opacity="0.7"/><path d="M16 4h8v20h-8z" fill="#C8A84A"/><path d="M12 4v20h4V4z" fill="#C8A84A" opacity="0.5"/></svg></div><div><div class="onboard-level-name">Connaissance</div><div class="onboard-level-desc">Hadiths · Coran · Arabe</div></div></div><div class="onboard-level"><div class="onboard-level-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 4c-3 0-6 2-6 5 0 2 1 3 2 4l4 3 4-3c1-1 2-2 2-4 0-3-3-5-6-5z" fill="#C8A84A" opacity="0.8"/><path d="M6 18c0 0 2-1 8-1s8 1 8 1v4c0 1-1 2-2 2H8c-1 0-2-1-2-2v-4z" fill="#C8A84A"/></svg></div><div><div class="onboard-level-name">Rayonnement</div><div class="onboard-level-desc">Sadaqa · Salam · Douaas</div></div></div></div><button class="onboard-btn" onclick="onboardNext()">Suivant →</button><button class="onboard-skip" onclick="onboardFinish()">Passer</button></div>`,
   () => `
@@ -5332,8 +5332,8 @@ const V2_I18N = {
     prog_streak: 'Série en cours', prog_days: 'JOURS CONSÉCUTIFS', prog_best: 'Meilleur', prog_total: 'Total jours',
     prog_heatmap: '30 derniers jours', prog_present: 'Présent', prog_gold_day: 'Journée or', prog_absent: 'Absent',
     prog_rewards: 'Récompenses',
-    prog_msg_none: 'Continue, inch\'Allah !', prog_msg_bronze: 'Mashallah !', prog_msg_silver: 'SubhanAllah !', prog_msg_gold: 'Allahu Akbar !',
-    prog_sub_none: 'Chaque acte compte', prog_sub_bronze: 'Les fondations sont posées', prog_sub_silver: 'Dhikr, prière, constance', prog_sub_gold: 'Journée parfaite accomplie',
+    prog_msg_none: 'Bismillah — commence ta journée ✦', prog_msg_bronze: 'Mashallah !', prog_msg_silver: 'SubhanAllah !', prog_msg_gold: 'Allahu Akbar !',
+    prog_sub_none: 'Chaque petit acte te rapproche d\'Allah', prog_sub_bronze: 'Les fondations sont posées', prog_sub_silver: 'Dhikr, prière, constance', prog_sub_gold: 'Journée parfaite accomplie',
     // Graine
     graine_title: 'Graine de Lumière', graine_sub: 'La graine attend la lumière', graine_defis: 'défis accomplis', graine_quote: 'Avez-vous vu ce que vous cultivez ? — Al-Waqi\'a 63',
     // Scanner
@@ -5440,8 +5440,8 @@ const V2_I18N = {
     prog_streak: 'Current streak', prog_days: 'CONSECUTIVE DAYS', prog_best: 'Best', prog_total: 'Total days',
     prog_heatmap: 'Last 30 days', prog_present: 'Present', prog_gold_day: 'Gold day', prog_absent: 'Absent',
     prog_rewards: 'Rewards',
-    prog_msg_none: 'Keep going, insha\'Allah!', prog_msg_bronze: 'Mashallah!', prog_msg_silver: 'SubhanAllah!', prog_msg_gold: 'Allahu Akbar!',
-    prog_sub_none: 'Every act counts', prog_sub_bronze: 'Foundations are set', prog_sub_silver: 'Dhikr, prayer, consistency', prog_sub_gold: 'Perfect day accomplished',
+    prog_msg_none: 'Bismillah — start your day ✦', prog_msg_bronze: 'Mashallah!', prog_msg_silver: 'SubhanAllah!', prog_msg_gold: 'Allahu Akbar!',
+    prog_sub_none: 'Every small act brings you closer to Allah', prog_sub_bronze: 'Foundations are set', prog_sub_silver: 'Dhikr, prayer, consistency', prog_sub_gold: 'Perfect day accomplished',
     graine_title: 'Seed of Light', graine_sub: 'The seed awaits the light', graine_defis: 'challenges completed', graine_quote: 'Have you seen what you cultivate? — Al-Waqi\'a 63',
     scanner_posed: '✦ INTENTION SET', scanner_empty: 'Your intentions will appear here ✦',
     scanner_limit: 'Your daily scan was used — come back tomorrow insha\'Allah 🌙',
@@ -5538,8 +5538,8 @@ const V2_I18N = {
     prog_streak: 'السِّلْسِلَةُ الْحَالِيَّةُ', prog_days: 'أَيَّامٌ مُتَتَالِيَةٌ', prog_best: 'الْأَفْضَلُ', prog_total: 'إِجْمَالِي الْأَيَّامِ',
     prog_heatmap: 'آخِرُ ٣٠ يَوْمًا', prog_present: 'حَاضِرٌ', prog_gold_day: 'يَوْمٌ ذَهَبِيٌّ', prog_absent: 'غَائِبٌ',
     prog_rewards: 'الْمُكَافَآتُ',
-    prog_msg_none: 'وَاصِلْ إِنْ شَاءَ اللَّهُ!', prog_msg_bronze: 'مَا شَاءَ اللَّهُ!', prog_msg_silver: 'سُبْحَانَ اللَّهِ!', prog_msg_gold: 'اللَّهُ أَكْبَرُ!',
-    prog_sub_none: 'كُلُّ عَمَلٍ يُحْسَبُ', prog_sub_bronze: 'تَمَّ وَضْعُ الْأَسَاسِ', prog_sub_silver: 'ذِكْرٌ وَصَلَاةٌ وَمُدَاوَمَةٌ', prog_sub_gold: 'يَوْمٌ مِثَالِيٌّ',
+    prog_msg_none: 'بِسْمِ اللَّهِ — ابْدَأْ يَوْمَكَ ✦', prog_msg_bronze: 'مَا شَاءَ اللَّهُ!', prog_msg_silver: 'سُبْحَانَ اللَّهِ!', prog_msg_gold: 'اللَّهُ أَكْبَرُ!',
+    prog_sub_none: 'كُلُّ عَمَلٍ صَغِيرٍ يُقَرِّبُكَ مِنَ اللَّهِ', prog_sub_bronze: 'تَمَّ وَضْعُ الْأَسَاسِ', prog_sub_silver: 'ذِكْرٌ وَصَلَاةٌ وَمُدَاوَمَةٌ', prog_sub_gold: 'يَوْمٌ مِثَالِيٌّ',
     graine_title: 'بَذْرَةُ النُّورِ', graine_sub: 'الْبَذْرَةُ تَنْتَظِرُ النُّورَ', graine_defis: 'تَحَدِّيَاتٌ مُنْجَزَةٌ', graine_quote: 'أَفَرَأَيْتُمْ مَا تَحْرُثُونَ — الْوَاقِعَة ٦٣',
     scanner_posed: '✦ ثَبَتَتِ النِّيَّةُ', scanner_empty: 'سَتَظْهَرُ نِيَّاتُكَ هُنَا ✦',
     scanner_limit: 'اسْتُخْدِمَ مَسْحُكَ الْيَوْمِيُّ — عُدْ غَدًا إِنْ شَاءَ اللَّهُ 🌙',
@@ -6064,6 +6064,11 @@ function v2OpenSettings() {
         </div>
       </div>
 
+
+      <div style="padding:14px 16px;cursor:pointer;margin-top:8px;background:rgba(255,60,60,0.04);border:1px solid rgba(255,60,60,0.15);border-radius:14px;"
+        onclick="if(confirm('Supprimer TOUTES les données ? Cette action est irréversible.')){if(confirm('Dernière confirmation — tout sera perdu.')){localStorage.clear();location.reload();}}">
+        <div style="font-size:13px;color:rgba(255,80,80,0.6);text-align:center;">Réinitialisation complète</div>
+      </div>
 
       <div style="text-align:center;padding:8px;font-size:10px;color:rgba(240,234,214,0.12);font-family:'Cinzel',serif;letter-spacing:0.2em;margin-bottom:12px;">NIYYAH V2.0 · بِسْمِ اللَّهِ</div>
 

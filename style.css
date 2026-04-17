@@ -1392,7 +1392,7 @@ pointer-events:none;z-index:0;transition:opacity 0.4s ease}.view{display:none;po
 .resume-level-name{ color: #E8DCC0 !important; font-size: 14px !important; }
 .weekly-hadith-text{ color: #E8DCC0 !important; font-size: 14px !important; }
 .weekly-hadith-source{ color: #C8A84A !important; font-size: 11px !important; opacity: 1 !important; }
-.onboard-sub     { color: #B0A080 !important; font-size: 14px !important; }
+.onboard-sub     { color: #B0A080 !important; font-size: 16px !important; line-height: 1.6 !important; }
 .onboard-level-desc{ color: #9A8E7A !important; font-size: 12px !important; }
 
 /* ── THÈME CLAIR : idem pour t3 ── */
@@ -2253,7 +2253,7 @@ body.pratique-active .topbar-v2 { display: none !important; }
   font-size: 12px; font-style: italic; color: rgba(240,234,214,0.38);
 }
 #view-mentor #mentor-premium-status {
-  display: inline-block !important;
+  display: none !important;
   background: rgba(52,217,98,0.15) !important;
   border: 1px solid rgba(52,217,98,0.3) !important;
   color: var(--green) !important;
@@ -2603,8 +2603,10 @@ body.pratique-active .topbar-v2 { display: none !important; }
 }
 .card-desc-v2 {
   padding: 6px 4px 2px;
-  font-size: 12.5px;
-  color: #C8A84A;
+  font-size: 14px;
+  color: #B0A080;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
   text-align: center;
   letter-spacing: 0.01em;
   font-family: var(--sans);
