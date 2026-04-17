@@ -2278,7 +2278,11 @@ function renderLevel(levelId) {
         const priorityDot = item.priority === 'fard' ? '<span class="priority-fard">&nbsp;</span>' : item.priority === 'sunnah' ? '<span class="priority-sunnah">&nbsp;</span>' : '';
         const _tlCurrent = (!checked && !_firstUncheckedFound) ? (_firstUncheckedFound = true, ' timeline-current') : '';
         const _tlOpacity = checked ? 'opacity:0.3;' : '';
-        html += '<div class="item' + fridayCls + (checked ? ' checked' : '') + _tlCurrent + '" onclick="toggleItem(\'' + item.id + '\',event)" style="' + _tlOpacity + 'animation-delay:' + delay + 'ms;--i:' + idx + '" id="item-' + item.id + '"><div class="check-circle"><svg class="check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-body"><div class="item-label">' + priorityDot + item.label + optionalBadge + '</div>' + (item.sub ? '<div class="item-sub">' + (item.sub.includes('·') ? item.sub.split('·')[0].trim() : item.sub) + '</div>' : '') + arabicHtml + '</div>' + audioBtn + infoBtn + '</div>';
+        var shareBtn = '';
+        if (item.id === 'savais_tu') {
+          shareBtn = '<button class="btn-audio" ontouchstart="event.stopPropagation()" onclick="shareSavaisTu(event)" title="Partager" style="font-size:13px;padding:0 8px;width:auto;">📤</button>';
+        }
+        html += '<div class="item' + fridayCls + (checked ? ' checked' : '') + _tlCurrent + '" onclick="toggleItem(\'' + item.id + '\',event)" style="' + _tlOpacity + 'animation-delay:' + delay + 'ms;--i:' + idx + '" id="item-' + item.id + '"><div class="check-circle"><svg class="check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-body"><div class="item-label">' + priorityDot + item.label + optionalBadge + '</div>' + (item.sub ? '<div class="item-sub">' + (item.sub.includes('·') ? item.sub.split('·')[0].trim() : item.sub) + '</div>' : '') + arabicHtml + '</div>' + shareBtn + audioBtn + infoBtn + '</div>';
       }
     });
     html += '</div>';
@@ -8344,6 +8348,69 @@ function scannerConfirmNiyyah() {
 }
 
 /* ── Partager carte Niyyah ── */
+function shareSavaisTu(event) {
+  if (event) event.stopPropagation();
+  var fact = getSavaisTuFact();
+  var canvas = document.createElement('canvas');
+  canvas.width = 1080; canvas.height = 1080;
+  var ctx = canvas.getContext('2d');
+  // Fond
+  ctx.fillStyle = '#0A0A0A';
+  ctx.fillRect(0, 0, 1080, 1080);
+  // Halo
+  var grad = ctx.createRadialGradient(540, 540, 0, 540, 540, 400);
+  grad.addColorStop(0, 'rgba(200,168,75,0.08)');
+  grad.addColorStop(1, 'rgba(200,168,75,0)');
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, 1080, 1080);
+  // Bordure dorée fine en haut
+  ctx.fillStyle = 'rgba(200,168,75,0.3)';
+  ctx.fillRect(0, 0, 1080, 2);
+  // Titre
+  ctx.textAlign = 'center';
+  ctx.fillStyle = '#C8A84A';
+  ctx.font = '32px "Cinzel", serif';
+  ctx.fillText('LE SAVAIS-TU ?', 540, 120);
+  // Ornement
+  ctx.font = '28px serif';
+  ctx.fillText('✦', 540, 170);
+  // Arabe
+  ctx.fillStyle = 'rgba(200,168,75,0.15)';
+  ctx.font = '120px "Noto Naskh Arabic", serif';
+  ctx.fillText('هَلْ تَعْلَمُ', 540, 300);
+  // Fait — word wrap
+  ctx.fillStyle = '#E8DCC0';
+  ctx.font = 'italic 48px "Cormorant Garamond", serif';
+  var words = fact.split(' '), lines = [], line = '';
+  words.forEach(function(w) {
+    var test = line + (line ? ' ' : '') + w;
+    if (ctx.measureText(test).width > 900 && line) { lines.push(line); line = w; }
+    else { line = test; }
+  });
+  if (line) lines.push(line);
+  var startY = 540 - (lines.length * 30);
+  lines.forEach(function(l, i) { ctx.fillText(l, 540, startY + i * 64); });
+  // Séparateur
+  ctx.fillStyle = '#C8A84A';
+  ctx.font = '24px serif';
+  ctx.fillText('✦', 540, startY + lines.length * 64 + 50);
+  // Signature
+  ctx.fillStyle = 'rgba(200,168,75,0.3)';
+  ctx.font = '24px "Cinzel", serif';
+  ctx.fillText('NIYYAH DAILY  ✦', 540, 1030);
+  // Partage
+  canvas.toBlob(function(blob) {
+    var file = new File([blob], 'niyyah-savais-tu.png', { type: 'image/png' });
+    if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
+      navigator.share({ files: [file], title: 'Le savais-tu ? — Niyyah Daily' }).catch(function() {});
+    } else {
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url; a.download = 'niyyah-savais-tu.png';
+      a.click(); URL.revokeObjectURL(url);
+    }
+  }, 'image/png');
+}
 function scannerShareCard() {
   var lib = SCANNER_LIBRARY[_scannerResult?.category] || SCANNER_LIBRARY.default;
   var niyyah = _scannerResult?.niyyahDirect || lib.nuances[_selectedNuance || 0].text;
