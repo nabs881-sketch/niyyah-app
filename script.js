@@ -3308,7 +3308,26 @@ function renderPrayerTimesCard() {
   }
   const times = PRAYER_NAMES.map(n => ({ name: n, time: _prayerTimes[n] }));
   let nextIdx = times.findIndex(t => timeToMin(t.time) > nowMin);
-  if (nextIdx === -1) nextIdx = -1; 
+  var _nextName, _nextTime, _diffMin;
+  if (nextIdx >= 0) {
+    _nextName = times[nextIdx].name;
+    _nextTime = times[nextIdx].time.substring(0,5);
+    _diffMin = timeToMin(times[nextIdx].time) - nowMin;
+  } else {
+    _nextName = 'Fajr';
+    _nextTime = times[0].time.substring(0,5);
+    _diffMin = (1440 - nowMin) + timeToMin(times[0].time);
+  }
+  var _countdownText;
+  if (_diffMin < 2) _countdownText = 'Maintenant';
+  else if (_diffMin < 60) _countdownText = _diffMin + ' min';
+  else _countdownText = Math.floor(_diffMin / 60) + 'h ' + String(_diffMin % 60).padStart(2,'0') + ' min';
+  var countdown = '<div id="prayerCountdown" style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;margin-bottom:8px;background:linear-gradient(135deg,rgba(200,168,75,0.12),rgba(200,168,75,0.04));border:1px solid rgba(200,168,75,0.25);border-radius:12px;">'
+    + '<div><div style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:2px;">PROCHAINE</div>'
+    + '<div style="font-size:15px;font-weight:700;color:#C8A84A;">' + _nextName + ' <span style="font-weight:400;font-size:13px;color:#B0A080;">dans ' + _countdownText + '</span></div></div>'
+    + '<div style="font-family:\'Cinzel\',serif;font-size:16px;font-weight:700;color:#C8A84A;">' + _nextTime + '</div>'
+    + '</div>';
+  if (nextIdx === -1) nextIdx = -1;
   let grid = '<div class="prayer-times-grid">';
   times.forEach((t, i) => {
     const tMin = timeToMin(t.time);
@@ -3333,8 +3352,32 @@ function renderPrayerTimesCard() {
       '<div class="prayer-times-title">🕌 Horaires — aujourd\'hui</div>' +
       '<div class="prayer-times-city" onclick="showCityInput()">✏️ ' + (_prayerCity || '📍') + '</div>' +
     '</div>' +
-    grid + lastthird +
+    countdown + grid + lastthird +
   '</div>';
+}
+// Countdown auto-refresh toutes les 60s
+var _prayerCountdownInterval = null;
+function startPrayerCountdown() {
+  if (_prayerCountdownInterval) clearInterval(_prayerCountdownInterval);
+  _prayerCountdownInterval = setInterval(function() {
+    var el = document.getElementById('prayerCountdown');
+    if (!el || !_prayerTimes) return;
+    var now = new Date();
+    var nowMin = now.getHours() * 60 + now.getMinutes();
+    function toMin(t) { var p = t.split(':'); return parseInt(p[0]) * 60 + parseInt(p[1]); }
+    var times = PRAYER_NAMES.map(function(n) { return { name: n, time: _prayerTimes[n] }; });
+    var idx = times.findIndex(function(t) { return toMin(t.time) > nowMin; });
+    var name, time, diff;
+    if (idx >= 0) { name = times[idx].name; time = times[idx].time.substring(0,5); diff = toMin(times[idx].time) - nowMin; }
+    else { name = 'Fajr'; time = times[0].time.substring(0,5); diff = (1440 - nowMin) + toMin(times[0].time); }
+    var txt;
+    if (diff < 2) txt = 'Maintenant';
+    else if (diff < 60) txt = diff + ' min';
+    else txt = Math.floor(diff / 60) + 'h ' + String(diff % 60).padStart(2,'0') + ' min';
+    el.innerHTML = '<div><div style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:2px;">PROCHAINE</div>'
+      + '<div style="font-size:15px;font-weight:700;color:#C8A84A;">' + name + ' <span style="font-weight:400;font-size:13px;color:#B0A080;">dans ' + txt + '</span></div></div>'
+      + '<div style="font-family:\'Cinzel\',serif;font-size:16px;font-weight:700;color:#C8A84A;">' + time + '</div>';
+  }, 60000);
 }
 function saveCityAndLoad() {
   var input = document.getElementById('cityInput');
@@ -3364,6 +3407,7 @@ function _applyPrayerTimings(timings) {
   safeSetItem('niyyah_prayer_cache_v2', str);
   safeSetItem('niyyah_prayer_date_v2', TODAY);
   schedulePrayerReminders();
+  startPrayerCountdown();
   renderLevel(currentLevel);
   if (typeof updateSanctuaireMoment === 'function') updateSanctuaireMoment();
 }
