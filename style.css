@@ -1502,10 +1502,13 @@ body::before {
 .topbar-v2 * { pointer-events: all; }
 
 .topbar-logo-v2 {
-  font-family: var(--font-v2-title);
-  font-size: 17px;
-  letter-spacing: 0.25em;
-  color: var(--gold-v2);
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #C8A84A;
+  opacity: 0.85;
   cursor: pointer;
   transition: opacity 0.3s;
 }
