@@ -2,6 +2,7 @@
 // NIYYAH DAILY — script.js
 // Généré automatiquement — séparation chirurgicale
 // ═══════════════════════════════════════════════════
+const NIYYAH_DEBUG = true;
 function safeSetItem(key, value) { try { localStorage.setItem(key, value); } catch(e) {} }
 
 /* ─── BLOC 1 : Fix Stats Row ─────────────────────── */
@@ -6418,6 +6419,7 @@ function v2OpenSettings() {
   sheet.id = 'v2-settings-sheet';
   sheet.style.cssText = 'position:fixed;inset:0;background:rgba(10,10,10,0.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:3000;display:flex;align-items:flex-end;justify-content:center;animation:backdropV2 0.3s ease forwards;';
   const ramadanActive = typeof ramadanState !== 'undefined' && ramadanState.active;
+  const debugSection = NIYYAH_DEBUG ? '<div style="margin-top:14px;background:#1a1a1a;border:1px solid rgba(255,255,255,0.05);border-radius:14px;padding:16px;"><div style="font-size:10px;letter-spacing:0.28em;color:rgba(255,255,255,0.25);text-transform:uppercase;font-family:Cinzel,serif;margin-bottom:10px;text-align:center;">🔧 DEBUG</div><button onclick="safeSetItem(\'niyyah_regarde_available_today\',\'true\');showToast(\'Regarde active\');document.getElementById(\'v2-settings-sheet\').remove();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.4);font-size:12px;cursor:pointer;">[DEBUG] Activer Regarde</button></div>' : '';
   sheet.innerHTML = `
     <div style="width:100%;max-width:480px;background:#111;border-radius:22px 22px 0 0;padding:26px 22px calc(32px + env(safe-area-inset-bottom));border-top:1px solid rgba(212,175,55,0.14);animation:sheetV2 0.4s cubic-bezier(0.23,1,0.32,1) forwards;direction:${T.dir};">
       <div style="width:38px;height:3px;background:rgba(255,255,255,0.1);border-radius:2px;margin:0 auto 22px;"></div>
@@ -6485,6 +6487,8 @@ function v2OpenSettings() {
         <div style="font-size:10px;letter-spacing:0.28em;color:rgba(212,175,55,0.45);text-transform:uppercase;font-family:'Cinzel',serif;margin-bottom:10px;text-align:center;">${T.settings_mentions}</div>
         <div style="font-family:'Cormorant Garamond',serif;font-size:12px;color:rgba(240,234,214,0.3);line-height:1.6;text-align:${isRTL ? 'right' : 'left'};">${T.mentions_text}</div>
       </div>
+
+      ${debugSection}
 
       <div style="text-align:center;padding:8px;font-size:10px;color:rgba(240,234,214,0.12);font-family:'Cinzel',serif;letter-spacing:0.2em;margin-bottom:12px;">NIYYAH V2.0 · بِسْمِ اللَّهِ</div>
 
