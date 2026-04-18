@@ -7401,13 +7401,39 @@ function scannerMapLabel(labels) {
 
 /* ── Ouvrir le Scanner ── */
 /* ── Regarde — helpers ── */
-function regardeOpen() {
+var _regardeStream = null;
+
+async function regardeOpen() {
   var screen = document.getElementById('regarde-screen');
-  if (screen) { screen.classList.add('active'); document.body.style.overflow = 'hidden'; }
+  var content = document.getElementById('regarde-content');
+  if (!screen || !content) return;
+
+  // Init caméra
+  try {
+    _regardeStream = await navigator.mediaDevices.getUserMedia({
+      video: { facingMode: 'environment', width: { ideal: 1280 }, height: { ideal: 720 } }
+    });
+    content.innerHTML = '<video id="regarde-video" autoplay playsinline muted style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>'
+      + '<button id="regarde-capture-btn" onclick="regardeCapture()" style="position:absolute;bottom:40px;left:50%;transform:translateX(-50%);z-index:10;width:80px;height:80px;border-radius:50%;border:3px solid #C8A84A;background:rgba(200,168,75,0.15);cursor:pointer;display:flex;align-items:center;justify-content:center;"><div style="width:62px;height:62px;border-radius:50%;background:linear-gradient(135deg,#D4AF37,#B8940A);"></div></button>';
+    var video = document.getElementById('regarde-video');
+    video.srcObject = _regardeStream;
+    await video.play();
+  } catch(e) {
+    content.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#C8A84A;text-align:center;padding:40px;">Accès caméra refusé</div></div>';
+  }
+
+  screen.classList.add('active');
+  document.body.style.overflow = 'hidden';
 }
+
+function regardeCapture() {
+  console.log('capture Regarde');
+}
+
 function regardeClose() {
   var screen = document.getElementById('regarde-screen');
   if (screen) { screen.classList.remove('active'); document.body.style.overflow = ''; }
+  if (_regardeStream) { _regardeStream.getTracks().forEach(function(t) { t.stop(); }); _regardeStream = null; }
   var content = document.getElementById('regarde-content');
   if (content) content.innerHTML = '';
 }
