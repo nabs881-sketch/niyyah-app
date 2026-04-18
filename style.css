@@ -2287,7 +2287,7 @@ div#v2-stats-row > div {
 .btn-bismillah { background: linear-gradient(135deg, var(--main-color), color-mix(in srgb, var(--main-color) 70%, white)) !important; }
 .sanct-stat-num-v2 { color: var(--main-color) !important; }
 .level-name-v2, .level-xp-v2 { color: var(--main-color) !important; opacity: 0.9; }
-.intention-chip-v2 { border-color: color-mix(in srgb, var(--main-color) 40%, transparent) !important; background: color-mix(in srgb, var(--main-color) 8%, transparent) !important; }
+.intention-chip-v2 { border-color: color-mix(in srgb, var(--main-color) 40%, transparent) !important; }
 .chip-inner-v2 { color: var(--main-color) !important; }
 #v2-infusion-phrase { color: var(--main-color); opacity: 0.7; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 12px; letter-spacing: 0.08em; text-align: center; margin-bottom: 8px; animation: fadeSlideV2 0.6s ease forwards; }
 
