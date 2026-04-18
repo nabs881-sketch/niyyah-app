@@ -1623,21 +1623,42 @@ body::before {
   cursor: pointer; margin: 0 auto 40px;
   animation: fadeSlideV2 0.8s var(--ease-silk-v2) 0.3s both;
 }
+.orb-wrap-v2::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 320px;
+  height: 320px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212,175,55,0.35) 0%, rgba(212,175,55,0.18) 20%, rgba(212,175,55,0.08) 40%, rgba(212,175,55,0.03) 60%, transparent 80%);
+  pointer-events: none;
+  z-index: 0;
+  animation: orbHaloBreath 6s ease-in-out infinite;
+}
+@keyframes orbHaloBreath {
+  0%, 100% { opacity: 0.7; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.08); }
+}
 .orb-ring-v2 {
   position: absolute; border-radius: 50%;
   border: 1px solid transparent; pointer-events: none;
 }
 .orb-ring-v2:nth-child(1) {
+  display: none;
   width: 216px; height: 216px;
   border-color: rgba(212,175,55,0.07);
   animation: orbRingV2 4s var(--ease-breath-v2) infinite;
 }
 .orb-ring-v2:nth-child(2) {
+  display: none;
   width: 252px; height: 252px;
   border-color: rgba(212,175,55,0.04);
   animation: orbRingV2 4s var(--ease-breath-v2) 0.7s infinite;
 }
 .orb-ring-v2:nth-child(3) {
+  display: none;
   width: 290px; height: 290px;
   border-color: rgba(212,175,55,0.02);
   animation: orbRingV2 4s var(--ease-breath-v2) 1.4s infinite;
