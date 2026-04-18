@@ -7427,6 +7427,18 @@ async function scannerOpen() {
   document.getElementById('scanner-hint').textContent = "Quel objet portera ta niyyah aujourd'hui ?";
   document.getElementById('scanner-hint').style.opacity = '1';
   _scannerResult = null;
+
+  // Bandeau Regarde conditionnel
+  var oldBandeau = document.getElementById('scanner-regarde-bandeau');
+  if (oldBandeau) oldBandeau.remove();
+  if (localStorage.getItem('niyyah_regarde_available_today') === 'true') {
+    var bandeau = document.createElement('div');
+    bandeau.id = 'scanner-regarde-bandeau';
+    bandeau.textContent = '✦ Un Regarde t\'attend aujourd\'hui';
+    bandeau.style.cssText = 'position:absolute;top:0;left:0;right:0;z-index:15;background:#C8A84A;color:#000;font-family:Cinzel,serif;font-size:12px;text-align:center;padding:14px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);';
+    bandeau.onclick = function() { showToast('Écran Regarde arrive bientôt'); };
+    overlay.appendChild(bandeau);
+  }
 }
 
 /* ── Journal du Scanner ── */
