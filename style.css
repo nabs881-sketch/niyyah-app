@@ -3353,7 +3353,7 @@ button[style*="gold-v2"] {
 /* Bloc unifié Moment + Level */
 .moment-level-block {
   width: min(320px, 90vw);
-  margin: 8px auto 0;
+  margin: 8px auto 24px;
   padding: 14px 16px;
   background: rgba(200,168,75,0.04);
   border: 1px solid rgba(200,168,75,0.12);
