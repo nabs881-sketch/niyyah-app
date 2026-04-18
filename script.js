@@ -7426,6 +7426,18 @@ async function regardeOpen() {
   document.body.style.overflow = 'hidden';
 }
 
+function _regardeShowQuestion(content, question) {
+  content.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;padding:0 10%;">'
+    + '<div id="regarde-question" style="font-family:\'Cormorant Garamond\',serif;font-size:26px;font-style:italic;color:#D4AF37;text-align:center;line-height:1.6;max-width:80%;opacity:0;animation:regardeFadeIn 1.5s ease forwards;">' + question + '</div>'
+    + '<div style="display:flex;gap:20px;margin-top:32px;opacity:0;animation:regardeFadeIn 1.5s ease 0.5s forwards;">'
+    + '<button id="regarde-btn-star" onclick="regardeToggleStar()" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">☆</button>'
+    + '<button onclick="regardeRefresh()" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">↻</button>'
+    + '<button onclick="console.log(\'écrire note\')" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">✎</button>'
+    + '</div>'
+    + '</div>';
+  content.style.opacity = '1';
+}
+
 function regardeCapture() {
   var video = document.getElementById('regarde-video');
   var content = document.getElementById('regarde-content');
@@ -7436,26 +7448,48 @@ function regardeCapture() {
   canvas.width = video.videoWidth || 1280;
   canvas.height = video.videoHeight || 720;
   canvas.getContext('2d').drawImage(video, 0, 0);
-  window._regardeImageData = canvas.toDataURL('image/jpeg', 0.85);
+  var dataUrl = canvas.toDataURL('image/jpeg', 0.85);
+  window._regardeImageData = dataUrl;
+  var base64 = dataUrl.replace(/^data:image\/jpeg;base64,/, '');
 
   // Stop caméra
   if (_regardeStream) { _regardeStream.getTracks().forEach(function(t) { t.stop(); }); _regardeStream = null; }
 
-  // Fondu au noir
+  // Fondu au noir + loader doré
   content.style.transition = 'opacity 0.4s ease';
   content.style.opacity = '0';
 
   setTimeout(function() {
-    var question = pickRegardeQuestion('INDETERMINE');
-    content.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;padding:0 10%;">'
-      + '<div id="regarde-question" style="font-family:\'Cormorant Garamond\',serif;font-size:26px;font-style:italic;color:#D4AF37;text-align:center;line-height:1.6;max-width:80%;opacity:0;animation:regardeFadeIn 1.5s ease forwards;">' + question + '</div>'
-      + '<div style="display:flex;gap:20px;margin-top:32px;opacity:0;animation:regardeFadeIn 1.5s ease 0.5s forwards;">'
-      + '<button id="regarde-btn-star" onclick="regardeToggleStar()" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">☆</button>'
-      + '<button onclick="regardeRefresh()" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">↻</button>'
-      + '<button onclick="console.log(\'écrire note\')" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">✎</button>'
-      + '</div>'
-      + '</div>';
+    content.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;"><div style="width:12px;height:12px;border-radius:50%;background:#D4AF37;animation:regardePulse 1.2s ease-in-out infinite;"></div></div>';
     content.style.opacity = '1';
+
+    // Appel API avec timeout 8s
+    var aborted = false;
+    var timer = setTimeout(function() { aborted = true; fallback('INDETERMINE'); }, 8000);
+
+    function fallback(cat) {
+      if (timer) { clearTimeout(timer); timer = null; }
+      _regardeShowQuestion(content, pickRegardeQuestion(cat || 'INDETERMINE'));
+    }
+
+    fetch('https://niyyah-api.nabs881.workers.dev/api/regarde', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ image: base64 })
+    })
+    .then(function(res) { return res.json(); })
+    .then(function(data) {
+      if (aborted) return;
+      clearTimeout(timer); timer = null;
+      if (data.source === 'ia' && data.question) {
+        _regardeShowQuestion(content, data.question);
+      } else {
+        fallback(data.category || 'INDETERMINE');
+      }
+    })
+    .catch(function() {
+      if (!aborted) fallback('INDETERMINE');
+    });
   }, 400);
 }
 
