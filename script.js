@@ -7530,6 +7530,8 @@ async function regardeOpen() {
   var screen = document.getElementById('regarde-screen');
   var content = document.getElementById('regarde-content');
   if (!screen || !content) return;
+  closeRegardeJournal();
+  closeRegardeDetail();
 
   // Init caméra
   try {
@@ -7740,6 +7742,8 @@ function regardeDetailDelete(id) {
 }
 
 function regardeClose() {
+  closeRegardeJournal();
+  closeRegardeDetail();
   var screen = document.getElementById('regarde-screen');
   if (screen) { screen.classList.remove('active'); document.body.style.overflow = ''; }
   if (_regardeStream) { _regardeStream.getTracks().forEach(function(t) { t.stop(); }); _regardeStream = null; }
