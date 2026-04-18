@@ -1618,9 +1618,9 @@ body::before {
 
 .orb-wrap-v2 {
   position: relative;
-  width: 130px; height: 130px;
+  width: 180px; height: 180px;
   display: flex; align-items: center; justify-content: center;
-  cursor: pointer; margin: 0 auto 32px;
+  cursor: pointer; margin: 0 auto 40px;
   animation: fadeSlideV2 0.8s var(--ease-silk-v2) 0.3s both;
 }
 .orb-ring-v2 {
@@ -1628,17 +1628,17 @@ body::before {
   border: 1px solid transparent; pointer-events: none;
 }
 .orb-ring-v2:nth-child(1) {
-  width: 156px; height: 156px;
+  width: 216px; height: 216px;
   border-color: rgba(212,175,55,0.07);
   animation: orbRingV2 4s var(--ease-breath-v2) infinite;
 }
 .orb-ring-v2:nth-child(2) {
-  width: 182px; height: 182px;
+  width: 252px; height: 252px;
   border-color: rgba(212,175,55,0.04);
   animation: orbRingV2 4s var(--ease-breath-v2) 0.7s infinite;
 }
 .orb-ring-v2:nth-child(3) {
-  width: 210px; height: 210px;
+  width: 290px; height: 290px;
   border-color: rgba(212,175,55,0.02);
   animation: orbRingV2 4s var(--ease-breath-v2) 1.4s infinite;
 }
@@ -1649,7 +1649,7 @@ body::before {
 
 .orb-core-v2 {
   position: relative;
-  width: 130px; height: 130px; border-radius: 50%;
+  width: 180px; height: 180px; border-radius: 50%;
   background: radial-gradient(
     circle at 38% 35%,
     rgba(228,218,140,0.16) 0%,
@@ -1698,7 +1698,7 @@ body::before {
 
 .orb-symbol-v2 {
   font-family: var(--font-v2-ar);
-  font-size: 32px; color: rgba(212,175,55,0.55); line-height: 1;
+  font-size: 40px; color: rgba(212,175,55,0.55); line-height: 1;
   transition: color 0.4s; user-select: none;
 }
 .orb-core-v2:hover .orb-symbol-v2,
@@ -1706,7 +1706,7 @@ body::before {
 
 .orb-cta-v2 {
   font-family: 'Cinzel', serif;
-  font-size: 9px; letter-spacing: 0.18em;
+  font-size: 10px; letter-spacing: 0.18em;
   text-transform: uppercase; color: rgba(212,175,55,0.45);
   transition: color 0.3s;
 }
@@ -2197,7 +2197,7 @@ body.pratique-active .topbar-v2 { display: none !important; }
   background: #0a0a0a !important;
   border-color: rgba(212,175,55,0.35) !important;
   width: 100% !important;
-  height: 128px !important;
+  height: 180px !important;
   display: block !important;
   overflow: hidden;
 }
