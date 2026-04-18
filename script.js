@@ -5,6 +5,129 @@
 const NIYYAH_DEBUG = true;
 function safeSetItem(key, value) { try { localStorage.setItem(key, value); } catch(e) {} }
 
+// ═══════════════════════════════════════════════════
+// JOURNAL V2 — Storage helpers
+// ═══════════════════════════════════════════════════
+
+function compressPhoto(dataURL) {
+  return new Promise(function(resolve) {
+    var img = new Image();
+    img.onload = function() {
+      var c = document.createElement('canvas');
+      c.width = 400; c.height = 600;
+      var ratio = Math.min(400 / img.width, 600 / img.height);
+      var w = img.width * ratio, h = img.height * ratio;
+      var ctx = c.getContext('2d');
+      ctx.fillStyle = '#000';
+      ctx.fillRect(0, 0, 400, 600);
+      ctx.drawImage(img, (400 - w) / 2, (600 - h) / 2, w, h);
+      resolve(c.toDataURL('image/jpeg', 0.8));
+    };
+    img.onerror = function() { resolve(null); };
+    img.src = dataURL;
+  });
+}
+
+function cleanOldPhotosIfFull() {
+  try {
+    var total = 0;
+    for (var i = 0; i < localStorage.length; i++) { total += localStorage.getItem(localStorage.key(i)).length; }
+    if (total < 4 * 1024 * 1024) return;
+    ['niyyah_regarde_history', 'niyyah_niyyah_history'].forEach(function(key) {
+      var arr = JSON.parse(localStorage.getItem(key) || '[]');
+      var changed = false;
+      for (var j = arr.length - 1; j >= 0; j--) {
+        if (arr[j].photo) { arr[j].photo = null; changed = true; }
+      }
+      if (changed) safeSetItem(key, JSON.stringify(arr));
+    });
+  } catch(e) {}
+}
+
+function _journalGet(key) {
+  try { return JSON.parse(localStorage.getItem(key) || '[]'); } catch(e) { return []; }
+}
+
+function _journalSave(key, arr) {
+  cleanOldPhotosIfFull();
+  safeSetItem(key, JSON.stringify(arr));
+}
+
+function addRegardeEntry(entry) {
+  var arr = _journalGet('niyyah_regarde_history');
+  var item = {
+    id: Date.now() + '_' + Math.random().toString(36).slice(2, 6),
+    date: new Date().toISOString(),
+    question: entry.question || '',
+    category: entry.category || 'INDETERMINE',
+    photo: entry.photo || null,
+    bookmark: !!entry.bookmark,
+    note: entry.note || ''
+  };
+  arr.unshift(item);
+  _journalSave('niyyah_regarde_history', arr);
+  return item;
+}
+
+function addNiyyahEntry(entry) {
+  var arr = _journalGet('niyyah_niyyah_history');
+  var item = {
+    id: Date.now() + '_' + Math.random().toString(36).slice(2, 6),
+    date: new Date().toISOString(),
+    intention: entry.intention || '',
+    category: entry.category || 'INDETERMINE',
+    photo: entry.photo || null
+  };
+  arr.unshift(item);
+  _journalSave('niyyah_niyyah_history', arr);
+  return item;
+}
+
+function getRegardeHistory() { return _journalGet('niyyah_regarde_history'); }
+function getNiyyahHistory() { return _journalGet('niyyah_niyyah_history'); }
+
+function updateRegardeEntry(id, updates) {
+  var arr = _journalGet('niyyah_regarde_history');
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i].id === id) {
+      if (updates.bookmark !== undefined) arr[i].bookmark = updates.bookmark;
+      if (updates.note !== undefined) arr[i].note = updates.note;
+      _journalSave('niyyah_regarde_history', arr);
+      return arr[i];
+    }
+  }
+  return null;
+}
+
+function deleteEntry(type, id) {
+  var key = type === 'regarde' ? 'niyyah_regarde_history' : 'niyyah_niyyah_history';
+  var arr = _journalGet(key);
+  arr = arr.filter(function(e) { return e.id !== id; });
+  _journalSave(key, arr);
+}
+
+function migrateOldJournal() {
+  if (localStorage.getItem('niyyah_migration_v2_done') === '1') return;
+  try {
+    var old = JSON.parse(localStorage.getItem('niyyah_scanner_history') || '[]');
+    if (old.length > 0) {
+      var existing = _journalGet('niyyah_niyyah_history');
+      old.forEach(function(entry) {
+        existing.push({
+          id: (entry.date || '') + '_' + Math.random().toString(36).slice(2, 6),
+          date: entry.date ? new Date(entry.date + 'T' + (entry.time || '00:00')).toISOString() : new Date().toISOString(),
+          intention: entry.text || '',
+          category: 'INDETERMINE',
+          photo: null
+        });
+      });
+      _journalSave('niyyah_niyyah_history', existing);
+    }
+  } catch(e) {}
+  safeSetItem('niyyah_migration_v2_done', '1');
+}
+migrateOldJournal();
+
 /* ─── BLOC 1 : Fix Stats Row ─────────────────────── */
 
 
