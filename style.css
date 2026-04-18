@@ -3006,6 +3006,10 @@ button[style*="gold-v2"] {
   50% { transform: translateY(-6px); }
 }
 /* ═══ REGARDE — Écran plein écran ═══ */
+@keyframes regardeFadeIn {
+  0% { opacity: 0; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
 #regarde-screen {
   display: none;
   position: fixed;

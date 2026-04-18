@@ -7427,7 +7427,31 @@ async function regardeOpen() {
 }
 
 function regardeCapture() {
-  console.log('capture Regarde');
+  var video = document.getElementById('regarde-video');
+  var content = document.getElementById('regarde-content');
+  if (!video || !content) return;
+
+  // Capture image en mémoire
+  var canvas = document.createElement('canvas');
+  canvas.width = video.videoWidth || 1280;
+  canvas.height = video.videoHeight || 720;
+  canvas.getContext('2d').drawImage(video, 0, 0);
+  window._regardeImageData = canvas.toDataURL('image/jpeg', 0.85);
+
+  // Stop caméra
+  if (_regardeStream) { _regardeStream.getTracks().forEach(function(t) { t.stop(); }); _regardeStream = null; }
+
+  // Fondu au noir
+  content.style.transition = 'opacity 0.4s ease';
+  content.style.opacity = '0';
+
+  setTimeout(function() {
+    var question = pickRegardeQuestion('INDETERMINE');
+    content.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;padding:0 10%;">'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:26px;font-style:italic;color:#D4AF37;text-align:center;line-height:1.6;max-width:80%;opacity:0;animation:regardeFadeIn 1.5s ease forwards;">' + question + '</div>'
+      + '</div>';
+    content.style.opacity = '1';
+  }, 400);
 }
 
 function regardeClose() {
