@@ -6787,8 +6787,13 @@ function renderLevelStripCondensed() {
 function updateSpiritualTitle() {
   var el = document.getElementById('v2-spiritual-title');
   if (!el) return;
-  var streak = 0;
-  try { streak = JSON.parse(localStorage.getItem('spiritual_history') || '{}').streak || 0; } catch(e) {}
+  var hist = {};
+  try { hist = JSON.parse(localStorage.getItem('spiritual_history') || '{}'); } catch(e) {}
+  var streak = hist.streak || 0;
+  var totalDays = hist.totalDays || 0;
+  var todayDone = getLevelProgress(1) >= 100;
+  var streakDisplay = streak + (todayDone ? 1 : 0);
+  var totalDisplay = totalDays + (todayDone ? 1 : 0);
   var titles = [
     { min: 365, ar: 'الرَّاسِخُ', tr: 'Al-Râsikh — L\'enraciné' },
     { min: 180, ar: 'الْمُحْسِنُ', tr: 'Al-Muhsin — L\'excellent' },
@@ -6797,10 +6802,12 @@ function updateSpiritualTitle() {
     { min: 7,   ar: 'الْمُبْتَدِئُ', tr: 'Al-Mubtadi\' — Le commençant' },
     { min: 0,   ar: 'الطَّالِبُ', tr: 'Al-Tâlib — Le chercheur' }
   ];
-  var title = titles.find(function(t) { return streak >= t.min; });
+  var title = titles.find(function(t) { return streakDisplay >= t.min; });
   el.style.display = 'block';
-  el.innerHTML = '<div style="font-family:\'Noto Naskh Arabic\',serif;font-size:20px;color:#C8A84A;line-height:1.4;">' + title.ar + '</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:#B0A080;letter-spacing:0.5px;">' + title.tr + '</div>';
+  el.style.marginBottom = '40px';
+  el.innerHTML = '<div style="font-family:\'Noto Naskh Arabic\',serif;font-size:40px;color:#C8A84A;line-height:1.3;">' + title.ar + '</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:rgba(200,168,75,0.7);letter-spacing:0.5px;margin-top:4px;">' + title.tr + '</div>'
+    + '<div style="font-family:\'Inter\',var(--sans);font-size:12px;color:rgba(255,255,255,0.4);letter-spacing:1px;margin-top:12px;">Jour ' + totalDisplay + ' · Série de ' + streakDisplay + '</div>';
 }
 function v2RefreshStats() {
   // POINT 3 — Effet visuel Tawba persistant 24h
