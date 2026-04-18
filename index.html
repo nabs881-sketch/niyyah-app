@@ -164,17 +164,6 @@
   <div class="greeting-v2">
     <div class="greeting-eyebrow" id="v2-greeting-eyebrow">Commencer ma journée</div>
     <div class="greeting-text" id="v2-greeting-text">Que cette journée soit lumineuse</div>
-    <div id="v2-spiritual-title" style="display:none;margin-top:6px;text-align:center;"></div>
-    <div id="morning-wisdom-card" style="display:none;margin-top:10px;padding:14px 16px;background:rgba(192,192,192,0.04);border:1px solid rgba(192,192,192,0.12);border-radius:14px;text-align:center;">
-      <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;color:rgba(192,192,192,0.4);margin-bottom:6px;">SAGESSE DE LA NUIT</div>
-      <div id="morning-wisdom-text" style="font-family:'Cormorant Garamond',serif;font-size:14px;font-style:italic;color:#C0C0C0;line-height:1.6;"></div>
-      <div id="morning-wisdom-source" style="font-family:'Cinzel',serif;font-size:9px;color:rgba(192,192,192,0.3);letter-spacing:1px;margin-top:6px;"></div>
-    </div>
-  </div>
-
-  <!-- Bannière défi fine -->
-  <div id="defi-banner-top" onclick="defiTopBannerClick()" style="display:none;width:min(320px,90vw);margin:6px auto 0;padding:8px 14px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.15);border-radius:10px;cursor:pointer;text-align:center;">
-    <span id="defi-banner-text" style="font-family:'Cormorant Garamond',serif;font-size:13px;color:#B0A080;"></span>
   </div>
 
   <!-- L'Orbe -->
@@ -194,17 +183,12 @@
     <div class="chip-meta-v2">Intention du jour</div>
   </div>
 
-  <!-- Barre de niveau -->
-  <div class="level-strip-v2">
-    <div class="level-strip-header-v2">
-      <span class="level-name-v2" id="v2-level-name">Fondations</span>
-      <span class="level-xp-v2" id="v2-level-xp">0 / 100</span>
-    </div>
-    <div class="level-track-v2"><div class="level-fill-v2" id="v2-level-fill" style="width:0%"></div></div>
+  <!-- Bloc unifié : Moment + Level -->
+  <div class="moment-level-block">
+    <div id="sanctuaire-moment"></div>
+    <div class="moment-level-sep"></div>
+    <div id="level-strip-condensed" class="level-strip-condensed-inner" onclick="selectLevel(currentLevel)"></div>
   </div>
-
-  <!-- Moment actuel -->
-  <div id="sanctuaire-moment"></div>
 
   <!-- RAYONNEMENT PREMIUM — 4 Cartes SVG + Image overlay -->
   <div class="quick-actions-v2">
@@ -226,45 +210,6 @@
     </button><div class="card-desc-v2">Méditation et contemplation</div></div>
 
   </div>
-
-  <!-- Statistiques rapides -->
-  <div id="v2-stats-row" style="display:flex;flex-direction:row;gap:7px;width:100%;margin:9px 0 0;">
-      <div class="sanct-stat-v2" style="flex:1;text-align:center;border-radius:11px;padding:10px 4px 9px;background:linear-gradient(160deg,#14110d,#0d0b08);border:1px solid rgba(212,175,55,0.18);">
-        <div class="sanct-stat-num-v2" id="v2-stat-streak">0</div>
-        <div class="sanct-stat-label-v2">Streak</div>
-      </div>
-      <div class="sanct-stat-v2" style="flex:1;text-align:center;border-radius:11px;padding:10px 4px 9px;background:linear-gradient(160deg,#14110d,#0d0b08);border:1px solid rgba(212,175,55,0.18);">
-        <div class="sanct-stat-num-v2" id="v2-stat-score">—</div>
-        <div class="sanct-stat-label-v2">Score</div>
-      </div>
-      <div class="sanct-stat-v2" style="flex:1;text-align:center;border-radius:11px;padding:10px 4px 9px;background:linear-gradient(160deg,#14110d,#0d0b08);border:1px solid rgba(212,175,55,0.18);">
-        <div class="sanct-stat-num-v2" id="v2-stat-days">0</div>
-        <div class="sanct-stat-label-v2">Jours</div>
-      </div>
-      <div class="sanct-stat-v2" style="flex:1;text-align:center;border-radius:11px;padding:10px 4px 9px;background:linear-gradient(160deg,#14110d,#0d0b08);border:1px solid rgba(212,175,55,0.18);">
-        <div class="sanct-stat-num-v2" id="v2-stat-medal">—</div>
-        <div class="sanct-stat-label-v2">Médaille</div>
-      </div>
-  </div>
-
-
-  <!-- Challenge 30 jours Fajr -->
-  <div id="fajr-challenge-card" style="display:none;width:min(320px,90vw);margin:12px auto 0;"></div>
-  <!-- DÉFI DE LA SEMAINE -->
-  <button id="accueilDefiCard" class="defi-card-sanctuaire" onclick="if(typeof openDefiSelector==='function')openDefiSelector()" style="display:none;width:min(320px,90vw);margin:12px auto 0;padding:14px 18px;background:#1a1a1a;border:1px solid rgba(200,168,75,0.3);border-radius:14px;cursor:pointer;position:relative;z-index:10;text-align:left;min-height:90px;box-sizing:border-box;font-family:inherit;color:inherit;">
-    <div style="display:flex;align-items:center;gap:12px;width:100%;">
-      <div id="defiCardIcon"><img src="https://nabs881-sketch.github.io/niyyah-app/imagescroissant.png" alt="Croissant" style="width:60px;height:auto;display:block;flex-shrink:0;"></div>
-      <div style="flex:1;text-align:left;">
-        <div id="defiCardTitre" style="font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:600;color:#C8A84A;">Défi de la semaine</div>
-        <div id="defiCardScore" style="font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;color:#B0A080;margin-top:2px;"></div>
-      </div>
-    </div>
-    <div id="defiCardDots" style="display:none;"></div>
-    <div id="defiCardBar" style="position:absolute;bottom:0;left:0;right:0;height:3px;background:rgba(200,168,75,0.12);border-radius:0 0 14px 14px;overflow:hidden;">
-      <div id="defiCardBarFill" style="height:100%;width:0%;background:#C8A84A;transition:width 0.6s ease;"></div>
-    </div>
-  </button>
-
 
   </div><!-- /WRAPPER -->
 

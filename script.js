@@ -2909,7 +2909,7 @@ function renderProgression() {
   const heroSectionP = '<div style="background:linear-gradient(135deg,rgba(48,209,88,0.08),rgba(255,214,10,0.04));border:1px solid rgba(48,209,88,0.15);border-radius:var(--r-xl);padding:20px 16px;text-align:center;margin-bottom:10px;position:relative;overflow:hidden;"><div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--green),transparent);"></div>'+ringP+'<div style="font-family:var(--serif);font-size:20px;color:var(--t1);margin-bottom:4px;">'+msgMapP[medalP]+'</div><div style="font-size:12px;color:var(--t2);margin-bottom:14px;">'+emojiMapP[medalP]+' '+subMapP[medalP]+'</div>'+lvlRowsP+'<div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;"><button style="width:100%;padding:13px;border-radius:13px;border:none;background:var(--green-grad);color:#000;font-size:15px;font-weight:600;cursor:pointer;font-family:var(--serif);" onclick="switchView(\'checklist\')">Commencer ma journée</button><button style="width:100%;padding:11px;border-radius:13px;border:none;background:#C8A84A;color:#2C2E32;font-size:14px;font-weight:600;cursor:pointer;font-family:var(--sans);" onclick="openBilanSoir()">🌙 Bilan du soir</button></div></div>';
 
   el.innerHTML = `
-    <div style="padding:0 0 40px;">${heroSectionP}<!-- STREAK HERO --><div style="text-align:center;padding:36px 20px 28px;position:relative;"><div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;">${t('prog_streak')}</div><div style="font-size:80px;font-weight:900;line-height:1;background:${streakDisplay >= 7 ? 'linear-gradient(135deg,#c8a84b,#e8cc6a)' : 'linear-gradient(135deg,var(--green),#7effa0)'};-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-3px;">${streakDisplay}</div><div style="font-size:13px;color:var(--t3);margin-top:6px;letter-spacing:1px;">${t('prog_days')}</div><div style="display:flex;justify-content:center;gap:24px;margin-top:16px;"><div style="text-align:center;"><div style="font-size:18px;font-weight:700;color:var(--t1);">${bestDisplay}</div><div style="font-size:12px;color:var(--t3);letter-spacing:0.8px;text-transform:uppercase;">${t('prog_best')}</div></div><div style="width:1px;background:rgba(255,255,255,0.1);"></div><div style="text-align:center;"><div style="font-size:18px;font-weight:700;color:var(--t1);">${totalDisplay}</div><div style="font-size:12px;color:var(--t3);letter-spacing:0.8px;text-transform:uppercase;">${t('prog_total')}</div></div></div></div><!-- HADITH CONTEXTUEL --><div style="margin:0 16px 24px;padding:20px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.2);border-radius:16px;position:relative;overflow:hidden;"><div style="position:absolute;top:-10px;right:12px;font-size:48px;opacity:0.07;font-family:serif;">"</div><div style="font-size:14px;line-height:1.7;color:var(--t1);font-style:italic;margin-bottom:10px;">${hadith.text}</div><div style="font-size:11px;color:#c8a84b;font-weight:600;letter-spacing:0.5px;">— ${hadith.ref}</div></div><!-- GRAINE DE LUMIÈRE --><div style="margin:0 16px 24px;background:linear-gradient(135deg,rgba(200,168,75,0.08),rgba(200,168,75,0.03));border:1px solid rgba(200,168,75,0.25);border-radius:20px;padding:28px;text-align:center;"><div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;color:#C8A84A;text-transform:uppercase;margin-bottom:12px;">${t('graine_title')}</div><div style="font-family:'Cormorant Garamond',serif;font-size:13px;font-style:italic;color:#B0A080;margin-bottom:12px;">${t('graine_sub')}</div><div style="margin:0 auto 12px;">${getGraineSVG((function(){try{return JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length)}</div><div style="font-size:11px;color:#B0A080;margin-bottom:10px;">${(function(){try{return JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length} ${t('graine_defis')}</div><div style="font-family:'Cormorant Garamond',serif;font-size:12px;font-style:italic;color:#C8A84A;opacity:0.7;line-height:1.6;">${t('graine_quote')}</div></div><!-- HEATMAP 30 JOURS --><div style="margin:0 16px 24px;"><div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;">${t('prog_heatmap')}</div><div style="display:grid;grid-template-columns:repeat(10,1fr);gap:4px;">
+    <div style="padding:0 0 40px;"><!-- TITRE SPIRITUEL --><div id="v2-spiritual-title" style="text-align:center;margin:0 16px 12px;"></div><!-- STATS ROW --><div id="v2-stats-row" style="display:flex;flex-direction:row;gap:7px;margin:0 16px 12px;"><div class="sanct-stat-v2" style="flex:1;text-align:center;border-radius:11px;padding:10px 4px 9px;background:linear-gradient(160deg,#14110d,#0d0b08);border:1px solid rgba(212,175,55,0.18);"><div class="sanct-stat-num-v2" id="v2-stat-streak">0</div><div class="sanct-stat-label-v2">Streak</div></div><div class="sanct-stat-v2" style="flex:1;text-align:center;border-radius:11px;padding:10px 4px 9px;background:linear-gradient(160deg,#14110d,#0d0b08);border:1px solid rgba(212,175,55,0.18);"><div class="sanct-stat-num-v2" id="v2-stat-score">—</div><div class="sanct-stat-label-v2">Score</div></div><div class="sanct-stat-v2" style="flex:1;text-align:center;border-radius:11px;padding:10px 4px 9px;background:linear-gradient(160deg,#14110d,#0d0b08);border:1px solid rgba(212,175,55,0.18);"><div class="sanct-stat-num-v2" id="v2-stat-days">0</div><div class="sanct-stat-label-v2">Jours</div></div><div class="sanct-stat-v2" style="flex:1;text-align:center;border-radius:11px;padding:10px 4px 9px;background:linear-gradient(160deg,#14110d,#0d0b08);border:1px solid rgba(212,175,55,0.18);"><div class="sanct-stat-num-v2" id="v2-stat-medal">—</div><div class="sanct-stat-label-v2">Médaille</div></div></div><!-- CHALLENGE FAJR --><div id="fajr-challenge-card" style="display:none;margin:0 16px 12px;"></div><!-- DÉFI SEMAINE --><button id="accueilDefiCard" class="defi-card-sanctuaire" onclick="if(typeof openDefiSelector==='function')openDefiSelector()" style="display:none;margin:0 16px 12px;padding:14px 18px;background:#1a1a1a;border:1px solid rgba(200,168,75,0.3);border-radius:14px;cursor:pointer;position:relative;z-index:10;text-align:left;min-height:90px;box-sizing:border-box;font-family:inherit;color:inherit;width:calc(100% - 32px);"><div style="display:flex;align-items:center;gap:12px;width:100%;"><div id="defiCardIcon"><img src="https://nabs881-sketch.github.io/niyyah-app/imagescroissant.png" alt="Croissant" style="width:60px;height:auto;display:block;flex-shrink:0;"></div><div style="flex:1;text-align:left;"><div id="defiCardTitre" style="font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:600;color:#C8A84A;">Défi de la semaine</div><div id="defiCardScore" style="font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;color:#B0A080;margin-top:2px;"></div></div></div><div id="defiCardDots" style="display:none;"></div><div id="defiCardBar" style="position:absolute;bottom:0;left:0;right:0;height:3px;background:rgba(200,168,75,0.12);border-radius:0 0 14px 14px;overflow:hidden;"><div id="defiCardBarFill" style="height:100%;width:0%;background:#C8A84A;transition:width 0.6s ease;"></div></div></button>${heroSectionP}<!-- STREAK HERO --><div style="text-align:center;padding:36px 20px 28px;position:relative;"><div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;">${t('prog_streak')}</div><div style="font-size:80px;font-weight:900;line-height:1;background:${streakDisplay >= 7 ? 'linear-gradient(135deg,#c8a84b,#e8cc6a)' : 'linear-gradient(135deg,var(--green),#7effa0)'};-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-3px;">${streakDisplay}</div><div style="font-size:13px;color:var(--t3);margin-top:6px;letter-spacing:1px;">${t('prog_days')}</div><div style="display:flex;justify-content:center;gap:24px;margin-top:16px;"><div style="text-align:center;"><div style="font-size:18px;font-weight:700;color:var(--t1);">${bestDisplay}</div><div style="font-size:12px;color:var(--t3);letter-spacing:0.8px;text-transform:uppercase;">${t('prog_best')}</div></div><div style="width:1px;background:rgba(255,255,255,0.1);"></div><div style="text-align:center;"><div style="font-size:18px;font-weight:700;color:var(--t1);">${totalDisplay}</div><div style="font-size:12px;color:var(--t3);letter-spacing:0.8px;text-transform:uppercase;">${t('prog_total')}</div></div></div></div><!-- HADITH CONTEXTUEL --><div style="margin:0 16px 24px;padding:20px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.2);border-radius:16px;position:relative;overflow:hidden;"><div style="position:absolute;top:-10px;right:12px;font-size:48px;opacity:0.07;font-family:serif;">"</div><div style="font-size:14px;line-height:1.7;color:var(--t1);font-style:italic;margin-bottom:10px;">${hadith.text}</div><div style="font-size:11px;color:#c8a84b;font-weight:600;letter-spacing:0.5px;">— ${hadith.ref}</div></div><!-- GRAINE DE LUMIÈRE --><div style="margin:0 16px 24px;background:linear-gradient(135deg,rgba(200,168,75,0.08),rgba(200,168,75,0.03));border:1px solid rgba(200,168,75,0.25);border-radius:20px;padding:28px;text-align:center;"><div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;color:#C8A84A;text-transform:uppercase;margin-bottom:12px;">${t('graine_title')}</div><div style="font-family:'Cormorant Garamond',serif;font-size:13px;font-style:italic;color:#B0A080;margin-bottom:12px;">${t('graine_sub')}</div><div style="margin:0 auto 12px;">${getGraineSVG((function(){try{return JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length)}</div><div style="font-size:11px;color:#B0A080;margin-bottom:10px;">${(function(){try{return JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length} ${t('graine_defis')}</div><div style="font-family:'Cormorant Garamond',serif;font-size:12px;font-style:italic;color:#C8A84A;opacity:0.7;line-height:1.6;">${t('graine_quote')}</div></div><!-- HEATMAP 30 JOURS --><div style="margin:0 16px 24px;"><div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;">${t('prog_heatmap')}</div><div style="display:grid;grid-template-columns:repeat(10,1fr);gap:4px;">
           ${heatmapHTML}
         </div><div style="display:flex;gap:12px;margin-top:10px;align-items:center;"><div style="display:flex;align-items:center;gap:4px;"><div style="width:8px;height:8px;border-radius:2px;background:var(--green);"></div><span style="font-size:10px;color:var(--t3);">${t('prog_present')}</span></div><div style="display:flex;align-items:center;gap:4px;"><div style="width:8px;height:8px;border-radius:2px;background:linear-gradient(135deg,#c8a84b,#e8cc6a);"></div><span style="font-size:10px;color:var(--t3);">${t('prog_gold_day')}</span></div><div style="display:flex;align-items:center;gap:4px;"><div style="width:8px;height:8px;border-radius:2px;background:rgba(255,255,255,0.06);"></div><span style="font-size:10px;color:var(--t3);">${t('prog_absent')}</span></div></div></div><!-- BILAN 7 JOURS -->${bilanHTML}<!-- BADGES (secondaire) --><div style="margin:0 16px;"><div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;">${t('prog_rewards')}</div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">
           ${badgesHTML}
@@ -2917,6 +2917,19 @@ function renderProgression() {
 
       </div>
   `;
+  // Populate moved elements
+  try {
+    updateSpiritualTitle();
+    var hist = JSON.parse(localStorage.getItem('spiritual_history') || '{}');
+    var _el = function(id) { return document.getElementById(id); };
+    if (_el('v2-stat-streak'))  _el('v2-stat-streak').textContent  = hist.streak || 0;
+    if (_el('v2-stat-days'))    _el('v2-stat-days').textContent    = hist.totalDays || 0;
+    if (_el('v2-stat-medal'))   _el('v2-stat-medal').textContent   = hist.bestStreak >= 30 ? '🥇' : hist.bestStreak >= 7 ? '⚡' : hist.bestStreak >= 3 ? '🔥' : '—';
+    var v1s = JSON.parse(localStorage.getItem('spiritual_v2') || '{}');
+    if (_el('v2-stat-score')) { var sc = v1s._score || v1s._todayScore || '—'; _el('v2-stat-score').textContent = sc === '—' ? '—' : sc + '%'; }
+    if (typeof updateFajrChallenge === 'function') updateFajrChallenge();
+    if (typeof renderDefiCard === 'function') renderDefiCard();
+  } catch(e) {}
 }
 function openInfoSheet(label, arabic, phonetic, translation, event) {
   if (event) event.stopPropagation();
@@ -5454,6 +5467,7 @@ const V2_I18N = {
     // Scanner
     scanner_posed: '✦ INTENTION POSÉE', scanner_empty: 'Tes intentions apparaîtront ici ✦',
     scanner_limit: 'Ton scan du jour a été utilisé — reviens demain inch\'Allah 🌙',
+    scanner_limit_week: 'Tu as atteint ta limite de scans cette semaine — reviens bientôt inch\'Allah 🌙',
     // Onboarding
     onboard_start: 'Commencer →', onboard_next: 'Suivant →', onboard_skip: 'Passer', onboard_later: 'Plus tard', onboard_go: 'C\'est parti — Bismillah 🌿',
     onboard_title1: 'Ta pratique spirituelle,<br>chaque jour', onboard_sub1: 'Niyyah t\'accompagne dans ton chemin vers Allah — à ton rythme, sans jugement.',
@@ -5556,6 +5570,7 @@ const V2_I18N = {
     graine_title: 'Seed of Light', graine_sub: 'The seed awaits the light', graine_defis: 'challenges completed', graine_quote: 'Have you seen what you cultivate? — Al-Waqi\'a 63',
     scanner_posed: '✦ INTENTION SET', scanner_empty: 'Your intentions will appear here ✦',
     scanner_limit: 'Your daily scan was used — come back tomorrow insha\'Allah 🌙',
+    scanner_limit_week: 'You have reached your scan limit this week — come back soon insha\'Allah 🌙',
     onboard_start: 'Start →', onboard_next: 'Next →', onboard_skip: 'Skip', onboard_later: 'Later', onboard_go: 'Let\'s go — Bismillah 🌿',
     onboard_title1: 'Your spiritual practice,<br>every day', onboard_sub1: 'Niyyah walks with you on your path to Allah — at your pace, without judgment.',
     onboard_title2: 'The Niyyah Scanner', onboard_sub2: 'Look at an everyday object — the Scanner will suggest a spiritual intention to sanctify it.',
@@ -5651,6 +5666,7 @@ const V2_I18N = {
     graine_title: 'بَذْرَةُ النُّورِ', graine_sub: 'الْبَذْرَةُ تَنْتَظِرُ النُّورَ', graine_defis: 'تَحَدِّيَاتٌ مُنْجَزَةٌ', graine_quote: 'أَفَرَأَيْتُمْ مَا تَحْرُثُونَ — الْوَاقِعَة ٦٣',
     scanner_posed: '✦ ثَبَتَتِ النِّيَّةُ', scanner_empty: 'سَتَظْهَرُ نِيَّاتُكَ هُنَا ✦',
     scanner_limit: 'اسْتُخْدِمَ مَسْحُكَ الْيَوْمِيُّ — عُدْ غَدًا إِنْ شَاءَ اللَّهُ 🌙',
+    scanner_limit_week: 'لَقَدْ بَلَغْتَ حَدَّ الْمَسْحِ هَذَا الْأُسْبُوعَ — عُدْ قَرِيبًا إِنْ شَاءَ اللَّهُ 🌙',
     onboard_start: '← ابْدَأْ', onboard_next: '← التَّالِي', onboard_skip: 'تَخَطَّ', onboard_later: 'لَاحِقًا', onboard_go: 'بِسْمِ اللَّهِ — هَيَّا بِنَا 🌿',
     onboard_title1: 'عِبَادَتُكَ الرُّوحِيَّةُ<br>كُلَّ يَوْمٍ', onboard_sub1: 'نِيَّة تُرَافِقُكَ فِي طَرِيقِكَ إِلَى اللَّهِ — بِوَتِيرَتِكَ وَبِدُونِ حُكْمٍ.',
     onboard_title2: 'مَاسِحُ النِّيَّةِ', onboard_sub2: 'انْظُرْ إِلَى شَيْءٍ يَوْمِيٍّ — سَيَقْتَرِحُ الْمَاسِحُ نِيَّةً رُوحِيَّةً لِتَقْدِيسِهِ.',
@@ -6875,10 +6891,26 @@ function applyTawbaGlow() {
   }
 }
 
+function renderLevelStripCondensed() {
+  var el = document.getElementById('level-strip-condensed');
+  if (!el) return;
+  var lvl = LEVELS.find(function(l) { return l.id === currentLevel; });
+  if (!lvl) return;
+  var pct = Math.round(getLevelProgress(currentLevel));
+  var dots = '';
+  for (var i = 0; i < lvl.sections.length; i++) {
+    var sec = lvl.sections[i];
+    var secDone = sec.items.every(function(item) {
+      try { return isItemDone(item, state); } catch(e) { return item.type === 'counter' ? (state[item.id] || 0) >= item.target : !!state[item.id]; }
+    });
+    dots += '<div class="lvl-dot' + (secDone ? ' filled' : '') + '"></div>';
+  }
+  el.innerHTML = '<div class="lvl-strip-row"><div class="lvl-strip-name">' + lvl.title.toUpperCase() + '</div><div class="lvl-strip-dots">' + dots + '</div></div>'
+    + '<div class="lvl-strip-bar-row"><div class="lvl-strip-track"><div class="lvl-strip-fill" style="width:' + pct + '%;"></div></div><div class="lvl-strip-pct">' + pct + '%</div></div>';
+}
 function updateSpiritualTitle() {
   var el = document.getElementById('v2-spiritual-title');
   if (!el) return;
-  if (typeof isPremium !== 'function' || !isPremium()) { el.style.display = 'none'; return; }
   var streak = 0;
   try { streak = JSON.parse(localStorage.getItem('spiritual_history') || '{}').streak || 0; } catch(e) {}
   var titles = [
@@ -6958,17 +6990,8 @@ function v2RefreshStats() {
       el('v2-stat-score').textContent = score === '—' ? '—' : score + '%';
     }
 
-    // Level name & bar from V1
-    const unlocked = v1state._unlocked || [1];
-    const maxLvl = Math.max(...unlocked);
-    const levelNames = ['', 'Fondations', 'Approfondissement', 'Connaissance', 'Rayonnement'];
-    if (el('v2-level-name')) el('v2-level-name').textContent = levelNames[maxLvl] || 'Fondations';
-    if (el('v2-level-xp'))   el('v2-level-xp').textContent  = (hist.streak || 0) + ' j.';
-
-    // Approximate fill from streak/30
-    const pct = Math.min(100, Math.round(((hist.streak || 0) / 30) * 100));
-    const fill = document.getElementById('v2-level-fill');
-    if (fill) setTimeout(() => { fill.style.width = pct + '%'; }, 400);
+    // Level strip condensé
+    renderLevelStripCondensed();
 
   } catch(e) {}
   showMorningSagesse();
@@ -7090,21 +7113,29 @@ async function sendNightThought() {
 }
 function showMorningSagesse() {
   if (typeof isPremium !== 'function' || !isPremium()) return;
-  var card = document.getElementById('morning-wisdom-card');
-  if (!card) return;
+  var todayStr = new Date().toISOString().split('T')[0];
+  if (localStorage.getItem('niyyah_morning_wisdom_shown_date') === todayStr) return;
   var sagesse = null;
   try { sagesse = JSON.parse(localStorage.getItem('niyyah_sagesse_nuit') || 'null'); } catch(e) {}
-  if (!sagesse || !sagesse.text) { card.style.display = 'none'; return; }
+  if (!sagesse || !sagesse.text) return;
   var yesterday = new Date(); yesterday.setDate(yesterday.getDate() - 1);
   var yesterdayStr = yesterday.toISOString().split('T')[0];
-  if (sagesse.date !== yesterdayStr && sagesse.date !== new Date().toISOString().split('T')[0]) { card.style.display = 'none'; return; }
+  if (sagesse.date !== yesterdayStr && sagesse.date !== todayStr) return;
   var block = getCurrentPrayerBlock();
-  if (block.id === 'isha' || block.id === 'nuit' || block.id === 'qiyam') { card.style.display = 'none'; return; }
-  card.style.display = 'block';
-  var textEl = document.getElementById('morning-wisdom-text');
-  var sourceEl = document.getElementById('morning-wisdom-source');
-  if (textEl) textEl.textContent = '« ' + sagesse.text + ' »';
-  if (sourceEl) sourceEl.textContent = '— ' + sagesse.source;
+  if (block.id === 'isha' || block.id === 'nuit' || block.id === 'qiyam') return;
+  safeSetItem('niyyah_morning_wisdom_shown_date', todayStr);
+  var overlay = document.createElement('div');
+  overlay.id = 'morning-wisdom-modal';
+  overlay.style.cssText = 'position:fixed;inset:0;z-index:4000;background:rgba(10,10,10,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:center;animation:backdropV2 0.3s ease forwards;';
+  overlay.innerHTML = '<div style="width:min(320px,85vw);background:#111;border:1px solid rgba(192,192,192,0.12);border-radius:20px;padding:28px 24px;text-align:center;animation:sheetV2 0.4s cubic-bezier(0.23,1,0.32,1) forwards;">'
+    + '<div style="font-family:\'Cinzel\',serif;font-size:9px;letter-spacing:2.5px;color:rgba(192,192,192,0.4);margin-bottom:14px;text-transform:uppercase;">Sagesse de la nuit</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;font-style:italic;color:#C0C0C0;line-height:1.7;margin-bottom:12px;">« ' + sagesse.text + ' »</div>'
+    + '<div style="font-family:\'Cinzel\',serif;font-size:9px;color:rgba(192,192,192,0.3);letter-spacing:1px;margin-bottom:20px;">— ' + sagesse.source + '</div>'
+    + '<button onclick="document.getElementById(\'morning-wisdom-modal\').remove();" style="padding:10px 28px;border-radius:100px;border:1px solid rgba(192,192,192,0.15);background:none;color:rgba(192,192,192,0.5);font-family:\'Cinzel\',serif;font-size:10px;letter-spacing:1.5px;cursor:pointer;">FERMER</button>'
+    + '</div>';
+  overlay.addEventListener('click', function(e) { if (e.target === overlay) overlay.remove(); });
+  document.body.appendChild(overlay);
+  setTimeout(function() { if (overlay.parentNode) overlay.remove(); }, 8000);
 }
 function updateSanctuaireMoment() {
   var el = document.getElementById('sanctuaire-moment');
@@ -7126,7 +7157,7 @@ function updateSanctuaireMoment() {
   var blockId = block.id;
   // Nuit et Qiyam — messages spéciaux
   if (blockId === 'nuit') {
-    el.innerHTML = '<div style="display:flex;align-items:center;gap:10px;background:rgba(200,168,75,0.08);border:1px solid rgba(200,168,75,0.25);border-radius:14px;padding:14px 18px;margin:12px 0 20px;">'
+    el.innerHTML = '<div style="display:flex;align-items:center;gap:10px;">'
       + '<div style="width:3px;height:36px;background:linear-gradient(180deg,#C8A84A,#E0C870);border-radius:2px;flex-shrink:0;"></div>'
       + '<div style="flex:1;">'
       + '<div style="font-size:15px;font-weight:700;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;">' + t('block_nuit') + ' — ' + t('bandeau_nuit') + '</div>'
@@ -7138,7 +7169,7 @@ function updateSanctuaireMoment() {
     var hasLevel4 = state._unlocked && state._unlocked.includes(4);
     if (hasLevel4) {
       var tahajjudDone = !!state['tahajjud'];
-      el.innerHTML = '<div style="display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,rgba(200,168,75,0.15),rgba(200,168,75,0.05));border:1px solid rgba(200,168,75,0.35);border-radius:14px;padding:14px 18px;margin:12px 0 20px;">'
+      el.innerHTML = '<div style="display:flex;align-items:center;gap:10px;">'
         + '<div style="width:3px;height:36px;background:linear-gradient(180deg,#C8A84A,#E0C870);border-radius:2px;flex-shrink:0;"></div>'
         + '<div style="flex:1;">'
         + '<div style="font-size:15px;font-weight:700;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;">' + t('block_qiyam') + '</div>'
@@ -7147,7 +7178,7 @@ function updateSanctuaireMoment() {
         + (tahajjudDone ? '' : '<button onclick="v2GoTo(\'checklist\')" style="background:transparent;border:1px solid rgba(200,168,75,0.4);color:#C8A84A;font-size:12px;font-weight:600;padding:6px 14px;border-radius:10px;cursor:pointer;white-space:nowrap;">→ Prier</button>')
         + '</div>';
     } else {
-      el.innerHTML = '<div style="display:flex;align-items:center;gap:10px;background:rgba(200,168,75,0.08);border:1px solid rgba(200,168,75,0.25);border-radius:14px;padding:14px 18px;margin:12px 0 20px;">'
+      el.innerHTML = '<div style="display:flex;align-items:center;gap:10px;">'
         + '<div style="width:3px;height:36px;background:linear-gradient(180deg,#C8A84A,#E0C870);border-radius:2px;flex-shrink:0;"></div>'
         + '<div style="flex:1;">'
         + '<div style="font-size:15px;font-weight:700;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;">🌙 La nuit est pour le repos</div>'
@@ -7173,7 +7204,7 @@ function updateSanctuaireMoment() {
     jourLine = '<div style="font-size:10px;color:var(--t3);margin-top:3px;opacity:0.7;">+ ' + jourRemaining + ' acte' + (jourRemaining > 1 ? 's' : '') + ' du jour restant' + (jourRemaining > 1 ? 's' : '') + '</div>';
   }
   if (blockRemaining === 0) {
-    el.innerHTML = '<div style="display:flex;align-items:center;gap:10px;background:rgba(200,168,75,0.1);border:1px solid rgba(200,168,75,0.3);border-radius:14px;padding:14px 18px;margin:12px 0 20px;">'
+    el.innerHTML = '<div style="display:flex;align-items:center;gap:10px;">'
       + '<div style="width:3px;height:36px;background:linear-gradient(180deg,#C8A84A,#E0C870);border-radius:2px;flex-shrink:0;"></div>'
       + '<div style="flex:1;">'
       + '<div style="font-size:15px;font-weight:700;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;">' + t('bloc_done') + '</div>'
@@ -7181,7 +7212,7 @@ function updateSanctuaireMoment() {
       + jourLine
       + '</div></div>';
   } else {
-    el.innerHTML = '<div style="display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,rgba(200,168,75,0.15),rgba(200,168,75,0.05));border:1px solid rgba(200,168,75,0.35);border-radius:14px;padding:14px 18px;margin:12px 0 20px;">'
+    el.innerHTML = '<div style="display:flex;align-items:center;gap:10px;">'
       + '<div style="width:3px;height:36px;background:linear-gradient(180deg,#C8A84A,#E0C870);border-radius:2px;flex-shrink:0;"></div>'
       + '<div style="flex:1;">'
       + '<div style="font-size:15px;font-weight:700;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;">' + block.label + '</div>'
@@ -7884,15 +7915,18 @@ function scannerRetry() {
 
 /* ── Capturer et Analyser ── */
 async function scannerCapture() {
-  // Limite 3 scans par jour
-  var _scanDate = localStorage.getItem('niyyah_scanner_date');
-  var _scanCount = parseInt(localStorage.getItem('niyyah_scanner_count') || '0', 10);
-  if (_scanDate !== TODAY) { _scanCount = 0; safeSetItem('niyyah_scanner_date', TODAY); }
-  if (_scanCount >= 1) {
-    showToast(t('scanner_limit'));
+  // Quota scanner : 1/semaine gratuit, 3/semaine premium
+  var _scanQuota = [];
+  try { _scanQuota = JSON.parse(localStorage.getItem('niyyah_scanner_quota') || '[]'); } catch(e) { _scanQuota = []; }
+  var _weekAgo = new Date(Date.now() - 7 * 86400000).toISOString();
+  _scanQuota = _scanQuota.filter(function(ts) { return ts > _weekAgo; });
+  var _scanLimit = (typeof isPremium === 'function' && isPremium()) ? 3 : 1;
+  if (_scanQuota.length >= _scanLimit) {
+    showToast(t('scanner_limit_week'));
     return;
   }
-  safeSetItem('niyyah_scanner_count', String(_scanCount + 1));
+  _scanQuota.push(new Date().toISOString());
+  safeSetItem('niyyah_scanner_quota', JSON.stringify(_scanQuota));
 
   const video   = document.getElementById('scanner-video');
   const canvas  = document.getElementById('scanner-canvas');

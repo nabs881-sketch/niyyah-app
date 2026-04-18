@@ -1618,9 +1618,9 @@ body::before {
 
 .orb-wrap-v2 {
   position: relative;
-  width: 210px; height: 210px;
+  width: 100px; height: 100px;
   display: flex; align-items: center; justify-content: center;
-  cursor: pointer; margin: 0 auto 44px;
+  cursor: pointer; margin: 0 auto 24px;
   animation: fadeSlideV2 0.8s var(--ease-silk-v2) 0.3s both;
 }
 .orb-ring-v2 {
@@ -1628,17 +1628,17 @@ body::before {
   border: 1px solid transparent; pointer-events: none;
 }
 .orb-ring-v2:nth-child(1) {
-  width: 252px; height: 252px;
+  width: 120px; height: 120px;
   border-color: rgba(212,175,55,0.07);
   animation: orbRingV2 4s var(--ease-breath-v2) infinite;
 }
 .orb-ring-v2:nth-child(2) {
-  width: 292px; height: 292px;
+  width: 140px; height: 140px;
   border-color: rgba(212,175,55,0.04);
   animation: orbRingV2 4s var(--ease-breath-v2) 0.7s infinite;
 }
 .orb-ring-v2:nth-child(3) {
-  width: 340px; height: 340px;
+  width: 162px; height: 162px;
   border-color: rgba(212,175,55,0.02);
   animation: orbRingV2 4s var(--ease-breath-v2) 1.4s infinite;
 }
@@ -1649,7 +1649,7 @@ body::before {
 
 .orb-core-v2 {
   position: relative;
-  width: 210px; height: 210px; border-radius: 50%;
+  width: 100px; height: 100px; border-radius: 50%;
   background: radial-gradient(
     circle at 38% 35%,
     rgba(228,218,140,0.16) 0%,
@@ -1663,7 +1663,7 @@ body::before {
     0 0 110px rgba(212,175,55,0.05),
     inset 0 1px 0 rgba(212,175,55,0.13);
   display: flex; flex-direction: column;
-  align-items: center; justify-content: center; gap: 8px;
+  align-items: center; justify-content: center; gap: 4px;
   transition: all 0.5s var(--ease-silk-v2);
   animation: orbBreathV2 5s var(--ease-breath-v2) infinite;
   z-index: 1;
@@ -1698,7 +1698,7 @@ body::before {
 
 .orb-symbol-v2 {
   font-family: var(--font-v2-ar);
-  font-size: 34px; color: rgba(212,175,55,0.55); line-height: 1;
+  font-size: 20px; color: rgba(212,175,55,0.55); line-height: 1;
   transition: color 0.4s; user-select: none;
 }
 .orb-core-v2:hover .orb-symbol-v2,
@@ -1706,7 +1706,7 @@ body::before {
 
 .orb-cta-v2 {
   font-family: 'Cinzel', serif;
-  font-size: 10px; letter-spacing: 0.2em;
+  font-size: 7px; letter-spacing: 0.15em;
   text-transform: uppercase; color: rgba(212,175,55,0.45);
   transition: color 0.3s;
 }
@@ -3327,6 +3327,79 @@ button[style*="gold-v2"] {
 .nafs-day-tooltip.visible {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
+}
+
+/* Bloc unifié Moment + Level */
+.moment-level-block {
+  width: min(320px, 90vw);
+  margin: 8px auto 0;
+  padding: 14px 16px;
+  background: rgba(200,168,75,0.04);
+  border: 1px solid rgba(200,168,75,0.12);
+  border-radius: 14px;
+}
+.moment-level-sep {
+  width: 60%;
+  height: 1px;
+  background: rgba(200,168,75,0.3);
+  margin: 8px auto;
+}
+.level-strip-condensed-inner {
+  cursor: pointer;
+}
+.lvl-strip-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.lvl-strip-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: rgba(200,168,75,0.8);
+}
+.lvl-strip-dots {
+  display: flex;
+  gap: 5px;
+}
+.lvl-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: 1px solid rgba(200,168,75,0.3);
+  background: transparent;
+  transition: background 0.3s;
+}
+.lvl-dot.filled {
+  background: #C8A84A;
+  border-color: #C8A84A;
+}
+.lvl-strip-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.lvl-strip-track {
+  flex: 1;
+  height: 4px;
+  background: rgba(200,168,75,0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.lvl-strip-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #C8A84A, #E0C870);
+  border-radius: 2px;
+  transition: width 0.6s ease;
+}
+.lvl-strip-pct {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  color: rgba(200,168,75,0.5);
+  min-width: 28px;
+  text-align: right;
 }
 
 /* Night companion disclaimer */
