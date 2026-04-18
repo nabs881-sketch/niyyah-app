@@ -7958,124 +7958,37 @@ async function scannerCapture() {
 
 /* ── Analyser l'image via API ── */
 async function scannerAnalyzeImage(imageData) {
-  // Essayer le backend sécurisé d'abord
-  try {
-    const base64 = imageData.replace(/^data:image\/jpeg;base64,/, '');
+  var base64 = imageData.replace(/^data:image\/jpeg;base64,/, '');
+  var now = new Date();
 
-    const response = await fetch(NIYYAH_API_URL + '/api/scanner', {
+  // Appel /api/niyyah avec timeout 8s
+  try {
+    var controller = new AbortController();
+    var timer = setTimeout(function() { controller.abort(); }, 8000);
+
+    var response = await fetch('https://niyyah-api.nabs881.workers.dev/api/niyyah', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ image: base64 })
+      body: JSON.stringify({ image: base64, hour: now.getHours(), isFriday: now.getDay() === 5, isRamadan: false }),
+      signal: controller.signal
     });
+    clearTimeout(timer);
 
-    if (response.ok) {
-      const data = await response.json();
-      // Le Worker retourne { intention: "..." }
-      if (data.intention) {
-        return {
-          category: 'niyyah_direct',
-          labels: [data.intention],
-          objectName: data.intention,
-          niyyahDirect: data.intention
-        };
-      }
+    var data = await response.json();
+
+    if (data.source === 'ia' && data.intention) {
+      return { category: data.category || 'niyyah_direct', labels: [data.intention], objectName: data.intention, niyyahDirect: data.intention };
     }
-  } catch(e) {}
 
-  // Fallback intelligent — analyser directement via Claude Vision
-  try {
-    const now = new Date();
-    const h = now.getHours();
-    const day = now.getDay();
-    const month = now.getMonth() + 1;
+    // Fallback local avec catégorie IA
+    var localIntention = pickNiyyahIntention(data.category || 'INDETERMINE');
+    return { category: data.category || 'INDETERMINE', labels: [localIntention], objectName: localIntention, niyyahDirect: localIntention };
 
-    let moment = '';
-    if (h >= 4 && h < 7)        moment = 'au moment de Fajr (aube)';
-    else if (h >= 7 && h < 12)  moment = 'en matinée';
-    else if (h >= 12 && h < 14) moment = 'au moment de Dhuhr (mi-journée)';
-    else if (h >= 14 && h < 17) moment = 'en après-midi';
-    else if (h >= 17 && h < 20) moment = 'au moment de Asr et Maghrib';
-    else if (h >= 20 && h < 22) moment = 'en soirée après Isha';
-    else                         moment = 'tard dans la nuit';
-
-    let extra = '';
-    if (day === 5) extra += " C'est le vendredi béni, jour de Jumu'ah.";
-    if (month === 3 || month === 4) extra += ' Nous sommes potentiellement en Ramadan.';
-
-    const systemPrompt = `Tu es un générateur de niyyah islamique évolutif.
-Tu reçois une image — objet, lieu, actualité, écran, nature, visage — et tu produis UNE seule intention islamique intérieure.
-
-FORMAT STRICT :
-- Une seule phrase
-- Maximum 15 mots
-- Commence obligatoirement par "Je" ou "Que je"
-- Français uniquement
-- Rien d'autre — aucun titre, aucune explication
-
-CONTEXTE : ${moment}.${extra}
-
-STYLE :
-- Islamique sans être moraliste
-- Calme, ancré, légèrement poétique si naturel
-- Jamais directif ni culpabilisant
-- Percutant — une vérité qu'on ressent dans la poitrine
-- Partageable — comme un verset court
-
-ACTUALITÉ / SOUFFRANCE :
-Si l'image montre guerre, injustice, catastrophe, pauvreté :
-→ intention de recul intérieur, de gratitude ou de dou'a silencieux
-→ jamais de commentaire politique
-
-CONTENU INAPPROPRIÉ :
-Si nudité, violence explicite, contenu sexuel :
-→ répondre uniquement : "Contenu non approprié"
-
-ANTI-RÉPÉTITION :
-Ne jamais reformuler la même idée, ne jamais commencer par "je vois"
-
-EXEMPLES DU NIVEAU ATTENDU :
-"Je mange avec la conscience de celui qui sait que c'est un don."
-"Je pose tout ce que je porte et je reviens à l'essentiel."
-"Je fais de ma paix intérieure une réponse à la souffrance du monde."
-"Je conduis ce vendredi comme si chaque feu rouge était un dhikr."`;
-
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 60,
-        system: systemPrompt,
-        messages: [{
-          role: 'user',
-          content: [{
-            type: 'image',
-            source: { type: 'base64', media_type: 'image/jpeg', data: imageData.replace(/^data:image\/jpeg;base64,/, '') }
-          }, {
-            type: 'text',
-            text: 'Génère la niyyah.'
-          }]
-        }]
-      })
-    });
-
-    if (response.ok) {
-      const data = await response.json();
-      const intention = data.content?.[0]?.text?.trim() || '';
-      if (intention === 'Contenu non approprié') {
-        return { category: 'inappropriate', labels: [], objectName: '', niyyahDirect: 'Contenu non approprié' };
-      }
-      return {
-        category: 'niyyah_direct',
-        labels: [intention],
-        objectName: intention,
-        niyyahDirect: intention
-      };
-    }
-  } catch(e) {}
-
-  // Fallback total offline
-  return { category: 'default', labels: ['objet'], objectName: 'objet du quotidien' };
+  } catch(e) {
+    // Timeout ou erreur réseau → fallback local
+    var fallbackIntention = pickNiyyahIntention('INDETERMINE');
+    return { category: 'INDETERMINE', labels: [fallbackIntention], objectName: fallbackIntention, niyyahDirect: fallbackIntention };
+  }
 
 
 
