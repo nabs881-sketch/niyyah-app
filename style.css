@@ -3005,6 +3005,41 @@ button[style*="gold-v2"] {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
 }
+/* ═══ REGARDE — Écran plein écran ═══ */
+#regarde-screen {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2500;
+  background: #000;
+}
+#regarde-screen.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#regarde-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 10;
+  background: transparent;
+  border: 1px solid rgba(200,168,75,0.3);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  color: rgba(200,168,75,0.7);
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#regarde-content {
+  width: 100%;
+  height: 100%;
+}
+
 .item.checked .priority-fard,
 .item.checked .priority-sunnah {
   vertical-align: middle !important;

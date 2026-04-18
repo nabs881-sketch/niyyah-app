@@ -7400,6 +7400,18 @@ function scannerMapLabel(labels) {
 }
 
 /* ── Ouvrir le Scanner ── */
+/* ── Regarde — helpers ── */
+function regardeOpen() {
+  var screen = document.getElementById('regarde-screen');
+  if (screen) { screen.classList.add('active'); document.body.style.overflow = 'hidden'; }
+}
+function regardeClose() {
+  var screen = document.getElementById('regarde-screen');
+  if (screen) { screen.classList.remove('active'); document.body.style.overflow = ''; }
+  var content = document.getElementById('regarde-content');
+  if (content) content.innerHTML = '';
+}
+
 async function scannerOpen() {
   const overlay = document.getElementById('scanner-overlay');
   if (!overlay) return;
@@ -7436,7 +7448,7 @@ async function scannerOpen() {
     bandeau.id = 'scanner-regarde-bandeau';
     bandeau.textContent = '✦ Ton moment Regarde est arrivé ✦';
     bandeau.style.cssText = 'position:absolute;top:0;left:0;right:0;z-index:15;background:#D4AF37;color:#1a1200;font-family:Cinzel,serif;font-size:14px;letter-spacing:1.5px;text-align:center;padding:18px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);';
-    bandeau.onclick = function() { showToast('Écran Regarde arrive bientôt'); };
+    bandeau.onclick = function() { regardeOpen(); };
     overlay.appendChild(bandeau);
   }
 }
