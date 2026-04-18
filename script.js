@@ -7655,6 +7655,90 @@ function regardeRefresh() {
   if (btn) { btn.textContent = '☆'; btn.style.background = 'transparent'; }
 }
 
+function openRegardeJournal() {
+  var overlay = document.getElementById('regarde-journal-overlay');
+  var list = document.getElementById('regarde-journal-list');
+  if (!overlay || !list) return;
+  var entries = getRegardeHistory();
+  if (entries.length === 0) {
+    list.innerHTML = '<div style="text-align:center;padding:60px 20px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);">Tes premiers Regards apparaîtront ici ✦</div></div>';
+  } else {
+    var html = '';
+    entries.forEach(function(e) {
+      var d = new Date(e.date);
+      var dateStr = d.toLocaleDateString('fr-FR', { day:'numeric', month:'short' }) + ' · ' + d.toLocaleTimeString('fr-FR', { hour:'2-digit', minute:'2-digit' });
+      var thumb = e.photo ? '<img src="' + e.photo + '" style="width:60px;height:60px;border-radius:10px;object-fit:cover;flex-shrink:0;">' : '<div style="width:60px;height:60px;border-radius:10px;background:rgba(200,168,75,0.08);flex-shrink:0;"></div>';
+      var star = e.bookmark ? '<div style="position:absolute;top:8px;right:8px;color:#D4AF37;font-size:14px;">★</div>' : '';
+      html += '<div onclick="openRegardeDetail(\'' + e.id + '\')" style="display:flex;gap:12px;align-items:center;padding:12px;background:rgba(200,168,75,0.03);border:1px solid rgba(200,168,75,0.1);border-radius:12px;margin-bottom:8px;cursor:pointer;position:relative;">'
+        + thumb
+        + '<div style="flex:1;min-width:0;">'
+        + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#D4AF37;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">' + (e.question || '') + '</div>'
+        + '<div style="font-size:10px;color:rgba(255,255,255,0.3);margin-top:4px;">' + dateStr + '</div>'
+        + '</div>' + star + '</div>';
+    });
+    list.innerHTML = html;
+  }
+  overlay.style.display = 'block';
+}
+
+function closeRegardeJournal() {
+  var overlay = document.getElementById('regarde-journal-overlay');
+  if (overlay) overlay.style.display = 'none';
+}
+
+function openRegardeDetail(id) {
+  var entries = getRegardeHistory();
+  var entry = entries.find(function(e) { return e.id === id; });
+  if (!entry) return;
+  var overlay = document.getElementById('regarde-detail-overlay');
+  var content = document.getElementById('regarde-detail-content');
+  if (!overlay || !content) return;
+  var d = new Date(entry.date);
+  var dateStr = d.toLocaleDateString('fr-FR', { weekday:'long', day:'numeric', month:'long' }) + ' · ' + d.toLocaleTimeString('fr-FR', { hour:'2-digit', minute:'2-digit' });
+  var photoHtml = entry.photo ? '<img src="' + entry.photo + '" style="width:100%;border-radius:14px;margin-bottom:20px;">' : '';
+  var starIcon = entry.bookmark ? '★' : '☆';
+  var noteText = entry.note || '';
+  content.innerHTML = photoHtml
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-style:italic;color:#D4AF37;line-height:1.6;text-align:center;margin-bottom:12px;">' + (entry.question || '') + '</div>'
+    + '<div style="font-size:12px;color:rgba(255,255,255,0.3);text-align:center;margin-bottom:24px;">' + dateStr + '</div>'
+    + '<div style="display:flex;gap:16px;justify-content:center;margin-bottom:20px;">'
+    + '<button onclick="regardeDetailStar(\'' + id + '\')" id="regarde-detail-star" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:' + (entry.bookmark ? 'rgba(212,175,55,0.15)' : 'transparent') + ';cursor:pointer;font-size:24px;color:#D4AF37;display:flex;align-items:center;justify-content:center;">' + starIcon + '</button>'
+    + '<button onclick="regardeDetailNote(\'' + id + '\')" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;font-size:24px;color:#D4AF37;display:flex;align-items:center;justify-content:center;">✎</button>'
+    + '<button onclick="regardeDetailDelete(\'' + id + '\')" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,80,80,0.3);background:transparent;cursor:pointer;font-size:20px;color:rgba(255,80,80,0.6);display:flex;align-items:center;justify-content:center;">🗑</button>'
+    + '</div>'
+    + (noteText ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(255,255,255,0.5);text-align:center;padding:12px;background:rgba(200,168,75,0.04);border-radius:10px;">' + noteText + '</div>' : '');
+  overlay.style.display = 'block';
+}
+
+function closeRegardeDetail() {
+  var overlay = document.getElementById('regarde-detail-overlay');
+  if (overlay) overlay.style.display = 'none';
+}
+
+function regardeDetailStar(id) {
+  var entries = getRegardeHistory();
+  var entry = entries.find(function(e) { return e.id === id; });
+  if (!entry) return;
+  var newVal = !entry.bookmark;
+  updateRegardeEntry(id, { bookmark: newVal });
+  var btn = document.getElementById('regarde-detail-star');
+  if (btn) { btn.textContent = newVal ? '★' : '☆'; btn.style.background = newVal ? 'rgba(212,175,55,0.15)' : 'transparent'; }
+}
+
+function regardeDetailNote(id) {
+  var note = prompt('Note (optionnel) :');
+  if (note === null) return;
+  updateRegardeEntry(id, { note: note });
+  openRegardeDetail(id);
+}
+
+function regardeDetailDelete(id) {
+  if (!confirm('Supprimer ce Regarde ?')) return;
+  deleteEntry('regarde', id);
+  closeRegardeDetail();
+  openRegardeJournal();
+}
+
 function regardeClose() {
   var screen = document.getElementById('regarde-screen');
   if (screen) { screen.classList.remove('active'); document.body.style.overflow = ''; }
