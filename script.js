@@ -7599,6 +7599,9 @@ function regardeCapture() {
       compressPhoto(dataUrl).then(function(photo) {
         var entry = addRegardeEntry({ question: question, category: _currentRegardeCat, photo: photo, bookmark: false, note: '' });
         _currentRegardeId = entry.id;
+      }).catch(function() {
+        var entry = addRegardeEntry({ question: question, category: _currentRegardeCat, photo: null, bookmark: false, note: '' });
+        _currentRegardeId = entry.id;
       });
     }
 
@@ -7650,6 +7653,9 @@ function regardeRefresh() {
     q.style.opacity = '1';
     compressPhoto(window._regardeImageData || '').then(function(photo) {
       var entry = addRegardeEntry({ question: newQuestion, category: _currentRegardeCat, photo: photo, bookmark: false, note: '' });
+      _currentRegardeId = entry.id;
+    }).catch(function() {
+      var entry = addRegardeEntry({ question: newQuestion, category: _currentRegardeCat, photo: null, bookmark: false, note: '' });
       _currentRegardeId = entry.id;
     });
   }, 300);
