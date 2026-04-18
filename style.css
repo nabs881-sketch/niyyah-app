@@ -2646,24 +2646,6 @@ body.pratique-active .topbar-v2 { display: none !important; }
 }
 
 /* Bouton WhatsApp share */
-.scanner-whatsapp-btn {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 12px !important;
-  width: 100% !important;
-  max-width: 340px !important;
-  background: linear-gradient(135deg, #1a1a2e, #16213e) !important;
-  border: 1px solid rgba(200,168,75,0.4) !important;
-  border-radius: 16px !important;
-  padding: 16px 24px !important;
-  margin-top: 16px !important;
-  cursor: pointer !important;
-  text-align: left !important;
-}
-.scanner-whatsapp-btn:active {
-  opacity: 0.8 !important;
-}
 
 /* Mention vie privée */
 .scanner-privacy {
@@ -2922,25 +2904,6 @@ body.pratique-active .topbar-v2 { display: none !important; }
 /* ════════════════════════════════════════════════
    SCANNER — BOUTON PARTAGE ✦
    ════════════════════════════════════════════════ */
-.scanner-btn-share {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: rgba(200,168,74,0.12);
-  border: 1px solid rgba(200,168,74,0.35);
-  color: #C8A84A;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background 0.2s, border-color 0.2s, transform 0.15s;
-  flex-shrink: 0;
-}
-.scanner-btn-share:active {
-  background: rgba(200,168,74,0.25);
-  border-color: rgba(200,168,74,0.6);
-  transform: scale(0.93);
-}
 
 /* ═══ GLOBAL FIX : boutons dorés — texte sombre sur fond or ═══ */
 .btn-bismillah,
