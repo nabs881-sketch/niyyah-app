@@ -6993,8 +6993,6 @@ function v2RefreshStats() {
       el('v2-stat-score').textContent = score === '—' ? '—' : score + '%';
     }
 
-    // Level strip condensé
-    renderLevelStripCondensed();
 
   } catch(e) {}
   showMorningSagesse();
