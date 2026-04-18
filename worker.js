@@ -41,6 +41,16 @@ export default {
       return handleMurmure(request, env);
     }
 
+    // ── Route Regarde V2 ──
+    if (path === '/api/regarde' && request.method === 'POST') {
+      return handleRegarde(request, env);
+    }
+
+    // ── Route Niyyah V2 ──
+    if (path === '/api/niyyah' && request.method === 'POST') {
+      return handleNiyyah(request, env);
+    }
+
     return jsonResponse({ error: 'Route introuvable' }, 404);
   },
 };
@@ -266,5 +276,283 @@ INTERDICTIONS STRICTES :
 
   } catch (err) {
     return jsonResponse({ error: 'Erreur murmure', details: err.message }, 500);
+  }
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// NIYYAH V2 — ADDITIONS
+// ════════════════════════════════════════════════════════════════════════════
+
+const MODEL_HAIKU  = 'claude-haiku-4-5-20251001';
+const MODEL_SONNET = 'claude-sonnet-4-6';
+
+const ANTHROPIC_API_URL = 'https://api.anthropic.com/v1/messages';
+const ANTHROPIC_VERSION = '2023-06-01';
+
+const ARABIC_WHITELIST = ['amana', 'ayât', 'ayat', 'dhikr', 'dounia', 'dunya'];
+
+const ARABIC_BLACKLIST_PATTERNS = [
+  /\bnafs\b/i, /\bfitra\b/i, /\bsunna\b/i, /\bbid['']a\b/i,
+  /\bmadhhab\b/i, /\bfiqh\b/i, /\btawhid\b/i, /\btaqwa\b/i,
+  /\bshirk\b/i, /\bkufr\b/i, /\biman\b/i, /\bjihad\b/i,
+  /\bummah\b/i, /\bsahaba\b/i, /\btabi['']in\b/i, /\bsalaf\b/i
+];
+
+const FATWA_PATTERNS_V2 = [
+  /\bhalal\b/i, /\bharam\b/i,
+  /\bil est permis\b/i, /\bil est interdit\b/i,
+  /\bselon le madhhab\b/i, /\bselon l['']école\b/i,
+  /\bla sunna\b/i, /\bla sharia\b/i
+];
+
+const HADITH_PATTERNS = [
+  /le proph[èe]te a dit/i,
+  /rapport[ée] par/i,
+  /\bsahih\b/i, /\bbukhari\b/i, /\bmuslim\b/i, /\btirmidhi\b/i,
+  /\bhadith\b/i, /\bmessager d['']allah a dit/i
+];
+
+const QURAN_PATTERNS = [
+  /sourate\s+\d+/i,
+  /sourate\s+[a-zéèêàâ']+/i,
+  /\b\d{1,3}\s*[:vV]\s*\d{1,3}\b/,
+  /verset\s+\d+/i,
+  /al[-\s]?q[ou]r[']?an\s+dit/i
+];
+
+function jsonResponseV2(data, status = 200) {
+  return new Response(JSON.stringify(data), {
+    status,
+    headers: {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type'
+    }
+  });
+}
+
+function countWords(str) {
+  return str.trim().split(/\s+/).filter(Boolean).length;
+}
+
+function detectForbiddenContent(text) {
+  for (const p of FATWA_PATTERNS_V2) if (p.test(text)) return 'fatwa';
+  for (const p of HADITH_PATTERNS) if (p.test(text)) return 'hadith';
+  for (const p of QURAN_PATTERNS)  if (p.test(text)) return 'quran';
+  for (const p of ARABIC_BLACKLIST_PATTERNS) if (p.test(text)) return 'arabic';
+  return null;
+}
+
+function buildTemporalContext(ctx) {
+  const h = ctx.hour;
+  let moment;
+  if (h >= 0 && h < 5)        moment = "la nuit, avant l'aube";
+  else if (h >= 5 && h < 7)   moment = "l'aube, après Fajr";
+  else if (h >= 7 && h < 12)  moment = "le matin";
+  else if (h >= 12 && h < 14) moment = "Dhuhr, l'heure de la prière de midi";
+  else if (h >= 14 && h < 17) moment = "l'après-midi";
+  else if (h >= 17 && h < 19) moment = "entre Asr et Maghrib, la fin de journée";
+  else if (h >= 19 && h < 21) moment = "le soir, après Maghrib";
+  else                        moment = "la nuit, après Isha";
+  let jour;
+  if (ctx.isFriday && h >= 11 && h < 14) jour = "vendredi, proche de la Jumu'a";
+  else if (ctx.isFriday)                 jour = "vendredi";
+  else                                   jour = "un jour ordinaire";
+  let ramadan;
+  if (ctx.isRamadan && h < 19)      ramadan = "jour de jeûne de Ramadan";
+  else if (ctx.isRamadan)           ramadan = "soirée de Ramadan, après l'iftar";
+  else                              ramadan = "hors Ramadan";
+  return { moment, jour, ramadan };
+}
+
+async function callAnthropic(env, params) {
+  const response = await fetch(ANTHROPIC_API_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-api-key': env.ANTHROPIC_API_KEY,
+      'anthropic-version': ANTHROPIC_VERSION
+    },
+    body: JSON.stringify(params)
+  });
+  if (!response.ok) {
+    const errText = await response.text();
+    throw new Error(`Anthropic API error ${response.status}: ${errText}`);
+  }
+  return response.json();
+}
+
+function extractJSON(text) {
+  if (!text) return null;
+  let cleaned = text.trim();
+  cleaned = cleaned.replace(/^```json\s*/i, '').replace(/^```\s*/, '').replace(/\s*```$/, '');
+  try { return JSON.parse(cleaned); }
+  catch (e) {
+    const first = cleaned.indexOf('{');
+    const last = cleaned.lastIndexOf('}');
+    if (first !== -1 && last !== -1 && last > first) {
+      try { return JSON.parse(cleaned.slice(first, last + 1)); }
+      catch (e2) { return null; }
+    }
+    return null;
+  }
+}
+
+function buildNiyyahPrompt(temporalCtx) {
+  return `Tu es un guide spirituel discret pour un musulman francophone adulte et pratiquant. Il vient de scanner une image pour poser une intention dans son cœur à ce moment précis.
+
+CONTEXTE TEMPOREL :
+- Moment : ${temporalCtx.moment}
+- Jour : ${temporalCtx.jour}
+- Période : ${temporalCtx.ramadan}
+Tu DOIS tenir compte de ce contexte si l'image s'y prête.
+
+TA TÂCHE EN 2 ÉTAPES :
+1. CLASSE l'image dans UNE des 7 catégories : SOI, AUTRE, OBJET, MONDE, ENFANT, SACRE, INDETERMINE.
+2. GÉNÈRE UNE intention adaptée à cette catégorie ET à cette image précise ET au contexte temporel.
+
+RÈGLES ABSOLUES :
+- UNE SEULE intention, pas de choix multiple.
+- Commence OBLIGATOIREMENT par « Je ».
+- Maximum 15 mots.
+- NE se termine PAS par « ? ».
+- Tutoiement d'Allah (Tu/Toi) si nommé.
+- INTERDIT : verset, hadith, fatwa, termes arabes sauf amana/ayât/dhikr/dounia.
+- INTERDIT : ton coach, pseudo-poésie vague, platitude.
+
+FORMAT DE SORTIE (JSON strict) :
+{"category": "SOI|AUTRE|OBJET|MONDE|ENFANT|SACRE|INDETERMINE", "intention": "Je ... ."}`;
+}
+
+const REGARDE_CLASSIFIER_PROMPT = `Tu es un classificateur d'images pour une application spirituelle musulmane. Classe l'image dans UNE des 7 catégories : SOI, AUTRE, OBJET, MONDE, ENFANT, SACRE, INDETERMINE.
+Un écran numérique affichant un verset = OBJET, PAS SACRE.
+Si confidence < 0.80 → INDETERMINE.
+FORMAT (JSON strict) : {"category": "...", "confidence": 0.92}`;
+
+function buildRegardeGeneratorPrompt(category) {
+  return `Tu es un murabbi discret pour un musulman francophone adulte. Il a scanné une image. Pose UNE question contemplative qui pointe vers Allah.
+
+CATÉGORIE : ${category}
+
+RÈGLES :
+- UNE question, finit par « ? ».
+- 8 à 15 mots.
+- Tutoiement direct.
+- INTERDIT : verset, hadith, fatwa, termes arabes sauf amana/ayât/dhikr/dounia.
+
+FORMAT (JSON strict) : {"question": "Ta question ?"}`;
+}
+
+function validateNiyyahIntention(intention) {
+  if (!intention || typeof intention !== 'string') return { valid: false, reason: 'empty' };
+  const trimmed = intention.trim();
+  if (!/^Je\b/i.test(trimmed) && !/^J['']/.test(trimmed)) return { valid: false, reason: 'no_je' };
+  if (trimmed.endsWith('?')) return { valid: false, reason: 'ends_with_question' };
+  const wc = countWords(trimmed);
+  if (wc > 15) return { valid: false, reason: 'too_long' };
+  if (wc < 5)  return { valid: false, reason: 'too_short' };
+  const forbidden = detectForbiddenContent(trimmed);
+  if (forbidden) return { valid: false, reason: forbidden };
+  return { valid: true };
+}
+
+function validateRegardeQuestion(question) {
+  if (!question || typeof question !== 'string') return { valid: false, reason: 'empty' };
+  const trimmed = question.trim();
+  if (!trimmed.endsWith('?')) return { valid: false, reason: 'no_question_mark' };
+  const wc = countWords(trimmed);
+  if (wc > 15) return { valid: false, reason: 'too_long' };
+  if (wc < 8)  return { valid: false, reason: 'too_short' };
+  if (/\b(vous|nous)\b/i.test(trimmed)) return { valid: false, reason: 'vous_nous' };
+  const forbidden = detectForbiddenContent(trimmed);
+  if (forbidden) return { valid: false, reason: forbidden };
+  return { valid: true };
+}
+
+async function handleNiyyah(request, env) {
+  try {
+    const body = await request.json();
+    const { image, hour, isFriday, isRamadan } = body;
+    if (!image) return jsonResponseV2({ error: 'image manquante' }, 400);
+    const temporalCtx = buildTemporalContext({
+      hour: typeof hour === 'number' ? hour : new Date().getHours(),
+      isFriday: !!isFriday, isRamadan: !!isRamadan
+    });
+    const prompt = buildNiyyahPrompt(temporalCtx);
+    for (let attempt = 0; attempt < 2; attempt++) {
+      const response = await callAnthropic(env, {
+        model: MODEL_SONNET, max_tokens: 150, temperature: 0.7,
+        messages: [{ role: 'user', content: [
+          { type: 'image', source: { type: 'base64', media_type: 'image/jpeg', data: image } },
+          { type: 'text', text: prompt }
+        ]}]
+      });
+      const rawText = response.content?.[0]?.text || '';
+      const parsed = extractJSON(rawText);
+      if (!parsed || !parsed.intention) continue;
+      const validation = validateNiyyahIntention(parsed.intention);
+      if (validation.valid) {
+        return jsonResponseV2({ intention: parsed.intention.trim(), category: parsed.category || 'INDETERMINE', source: 'ia' });
+      }
+      if (['fatwa', 'hadith', 'quran'].includes(validation.reason)) break;
+    }
+    return jsonResponseV2({ intention: null, category: 'INDETERMINE', source: 'fallback', reason: 'validation_failed_or_religious' });
+  } catch (err) {
+    console.error('handleNiyyah error:', err);
+    return jsonResponseV2({ intention: null, category: 'INDETERMINE', source: 'fallback', reason: 'error' });
+  }
+}
+
+async function handleRegarde(request, env) {
+  try {
+    const body = await request.json();
+    const { image } = body;
+    if (!image) return jsonResponseV2({ error: 'image manquante' }, 400);
+    // PASS 1 : Classification Haiku
+    let category = 'INDETERMINE';
+    let confidence = 0;
+    try {
+      const classifResp = await callAnthropic(env, {
+        model: MODEL_HAIKU, max_tokens: 50, temperature: 0.1,
+        messages: [{ role: 'user', content: [
+          { type: 'image', source: { type: 'base64', media_type: 'image/jpeg', data: image } },
+          { type: 'text', text: REGARDE_CLASSIFIER_PROMPT }
+        ]}]
+      });
+      const classifText = classifResp.content?.[0]?.text || '';
+      const classifJson = extractJSON(classifText);
+      if (classifJson && classifJson.category) {
+        const validCats = ['SOI', 'AUTRE', 'OBJET', 'MONDE', 'ENFANT', 'SACRE', 'INDETERMINE'];
+        if (validCats.includes(classifJson.category)) {
+          category = classifJson.category;
+          confidence = typeof classifJson.confidence === 'number' ? classifJson.confidence : 0.8;
+          if (confidence < 0.80) category = 'INDETERMINE';
+        }
+      }
+    } catch (e) { category = 'INDETERMINE'; confidence = 0; }
+    // PASS 2 : Génération Sonnet
+    const genPrompt = buildRegardeGeneratorPrompt(category);
+    for (let attempt = 0; attempt < 2; attempt++) {
+      const genResp = await callAnthropic(env, {
+        model: MODEL_SONNET, max_tokens: 150, temperature: 0.7,
+        messages: [{ role: 'user', content: [
+          { type: 'image', source: { type: 'base64', media_type: 'image/jpeg', data: image } },
+          { type: 'text', text: genPrompt }
+        ]}]
+      });
+      const rawText = genResp.content?.[0]?.text || '';
+      const parsed = extractJSON(rawText);
+      if (!parsed || !parsed.question) continue;
+      const validation = validateRegardeQuestion(parsed.question);
+      if (validation.valid) {
+        return jsonResponseV2({ question: parsed.question.trim(), category, confidence, source: 'ia' });
+      }
+      if (['fatwa', 'hadith', 'quran'].includes(validation.reason)) break;
+    }
+    return jsonResponseV2({ question: null, category, confidence, source: 'fallback', reason: 'validation_failed_or_religious' });
+  } catch (err) {
+    console.error('handleRegarde error:', err);
+    return jsonResponseV2({ question: null, category: 'INDETERMINE', confidence: 0, source: 'fallback', reason: 'error' });
   }
 }
