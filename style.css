@@ -3354,7 +3354,7 @@ button[style*="gold-v2"] {
 .moment-level-block {
   width: 100%;
   margin: 0 auto 24px;
-  padding: 10px 16px;
+  padding: 6px 16px;
   background: rgba(200,168,75,0.04);
   border: 1px solid rgba(200,168,75,0.12);
   border-radius: 14px;
