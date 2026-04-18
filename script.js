@@ -2010,13 +2010,13 @@ function animateTabSwipe(direction, callback) {
 }
 
 function selectLevel(id) {
-  console.log('[DEBUG] selectLevel called with id:', id);
   if (id > 1 && !state._unlocked.includes(id)) {
     state._unlocked.push(id);
     saveState();
   }
   currentLevel = id;
   saveState();
+  if (typeof v2GoTo === 'function') v2GoTo('checklist');
   renderTabs();
   renderLevel(id);
   setTimeout(() => {
