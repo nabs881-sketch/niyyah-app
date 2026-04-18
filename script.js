@@ -7447,11 +7447,35 @@ function regardeCapture() {
 
   setTimeout(function() {
     var question = pickRegardeQuestion('INDETERMINE');
-    content.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;padding:0 10%;">'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:26px;font-style:italic;color:#D4AF37;text-align:center;line-height:1.6;max-width:80%;opacity:0;animation:regardeFadeIn 1.5s ease forwards;">' + question + '</div>'
+    content.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;padding:0 10%;">'
+      + '<div id="regarde-question" style="font-family:\'Cormorant Garamond\',serif;font-size:26px;font-style:italic;color:#D4AF37;text-align:center;line-height:1.6;max-width:80%;opacity:0;animation:regardeFadeIn 1.5s ease forwards;">' + question + '</div>'
+      + '<div style="display:flex;gap:20px;margin-top:32px;opacity:0;animation:regardeFadeIn 1.5s ease 0.5s forwards;">'
+      + '<button id="regarde-btn-star" onclick="regardeToggleStar()" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">☆</button>'
+      + '<button onclick="regardeRefresh()" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">↻</button>'
+      + '<button onclick="console.log(\'écrire note\')" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">✎</button>'
+      + '</div>'
       + '</div>';
     content.style.opacity = '1';
   }, 400);
+}
+
+var _regardeStarred = false;
+function regardeToggleStar() {
+  _regardeStarred = !_regardeStarred;
+  var btn = document.getElementById('regarde-btn-star');
+  if (btn) { btn.textContent = _regardeStarred ? '★' : '☆'; btn.style.background = _regardeStarred ? 'rgba(212,175,55,0.15)' : 'transparent'; }
+}
+function regardeRefresh() {
+  _regardeStarred = false;
+  var q = document.getElementById('regarde-question');
+  if (!q) return;
+  q.style.opacity = '0';
+  setTimeout(function() {
+    q.textContent = pickRegardeQuestion('INDETERMINE');
+    q.style.opacity = '1';
+  }, 300);
+  var btn = document.getElementById('regarde-btn-star');
+  if (btn) { btn.textContent = '☆'; btn.style.background = 'transparent'; }
 }
 
 function regardeClose() {
