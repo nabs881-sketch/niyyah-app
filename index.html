@@ -240,16 +240,24 @@
   <video id="scanner-video" autoplay playsinline muted></video>
   <canvas id="scanner-canvas"></canvas>
   <button id="scanner-close" onclick="scannerClose()">✕</button>
-  <button id="scanner-journal-btn" onclick="openScannerJournal()" style="position:absolute;top:16px;right:60px;z-index:20;background:transparent;border:1px solid rgba(200,168,75,0.3);border-radius:20px;padding:6px 14px;cursor:pointer;font-family:'Cinzel',serif;font-size:11px;color:#C8A84A;letter-spacing:2px;">Mon journal ✦</button>
-  <!-- Journal overlay -->
-  <div id="scanner-journal-overlay" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(10,10,10,0.97);overflow-y:auto;">
+  <button id="scanner-journal-btn" onclick="openNiyyahJournal()" style="position:absolute;top:16px;right:60px;z-index:20;background:transparent;border:1px solid rgba(200,168,75,0.3);border-radius:20px;padding:6px 14px;cursor:pointer;font-family:'Cinzel',serif;font-size:11px;color:#C8A84A;letter-spacing:2px;">MES NIYYAH ✦</button>
+  <!-- Journal Niyyah V2 -->
+  <div id="niyyah-journal-overlay" style="display:none;position:fixed;inset:0;z-index:9999;background:#000;overflow-y:auto;">
     <div style="padding:calc(var(--safe-top,0px) + 16px) 20px 40px;">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
         <div></div>
-        <div style="font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;color:#C8A84A;text-transform:uppercase;">Mon Journal</div>
-        <button onclick="closeScannerJournal()" style="background:transparent;border:1px solid rgba(200,168,75,0.3);border-radius:50%;width:36px;height:36px;color:#C8A84A;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;">✕</button>
+        <div style="font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;color:#C8A84A;text-transform:uppercase;">✦ Mes Niyyah</div>
+        <button onclick="closeNiyyahJournal()" style="background:transparent;border:1px solid rgba(200,168,75,0.3);border-radius:50%;width:36px;height:36px;color:#C8A84A;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;">✕</button>
       </div>
-      <div id="scanner-journal-content"></div>
+      <input id="niyyah-journal-search" type="text" placeholder="Rechercher..." oninput="filterNiyyahJournal()" style="width:100%;box-sizing:border-box;padding:10px 14px;background:rgba(200,168,75,0.04);border:1px solid rgba(200,168,75,0.15);border-radius:10px;color:#D4AF37;font-family:'Cormorant Garamond',serif;font-size:14px;outline:none;margin-bottom:16px;">
+      <div id="niyyah-journal-list"></div>
+      <div style="text-align:center;margin-top:24px;"><span onclick="closeNiyyahJournal();setTimeout(openRegardeJournal,300);" style="font-family:'Cormorant Garamond',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);cursor:pointer;text-decoration:underline;text-underline-offset:3px;">Voir mes Regards →</span></div>
+    </div>
+  </div>
+  <div id="niyyah-detail-overlay" style="display:none;position:fixed;inset:0;z-index:10000;background:#000;overflow-y:auto;">
+    <div style="padding:calc(var(--safe-top,0px) + 16px) 20px 40px;">
+      <button onclick="closeNiyyahDetail()" style="position:absolute;top:18px;right:18px;z-index:10;background:transparent;border:1px solid rgba(200,168,75,0.3);border-radius:50%;width:36px;height:36px;color:#C8A84A;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;">✕</button>
+      <div id="niyyah-detail-content"></div>
     </div>
   </div>
   <div id="scanner-orb"><div id="scanner-orb-inner">نية</div></div>
@@ -313,7 +321,7 @@
       <button onclick="closeRegardeJournal()" style="background:transparent;border:1px solid rgba(200,168,75,0.3);border-radius:50%;width:36px;height:36px;color:#C8A84A;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;">✕</button>
     </div>
     <div id="regarde-journal-list"></div>
-    <div style="text-align:center;margin-top:24px;"><span onclick="closeRegardeJournal();setTimeout(openScannerJournal,300);" style="font-family:'Cormorant Garamond',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);cursor:pointer;text-decoration:underline;text-underline-offset:3px;">Voir mes Niyyah →</span></div>
+    <div style="text-align:center;margin-top:24px;"><span onclick="closeRegardeJournal();setTimeout(openNiyyahJournal,300);" style="font-family:'Cormorant Garamond',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);cursor:pointer;text-decoration:underline;text-underline-offset:3px;">Voir mes Niyyah →</span></div>
   </div>
 </div>
 <div id="regarde-detail-overlay" style="display:none;position:fixed;inset:0;z-index:3100;background:#000;overflow-y:auto;">

@@ -7798,45 +7798,74 @@ async function scannerOpen() {
   }
 }
 
-/* ── Journal du Scanner ── */
-function openScannerJournal() {
-  var overlay = document.getElementById('scanner-journal-overlay');
-  var content = document.getElementById('scanner-journal-content');
-  if (!overlay || !content) return;
-  var hist = [];
-  try { hist = JSON.parse(localStorage.getItem('niyyah_scanner_history') || '[]'); } catch(e) {}
-  if (hist.length === 0) {
-    content.innerHTML = '<div style="text-align:center;padding:60px 20px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:#B0A080;">' + t('scanner_empty') + '</div></div>';
-  } else {
-    var html = '<div style="display:flex;gap:14px;overflow-x:auto;padding:8px 0 16px;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;">';
-    hist.forEach(function(entry, i) {
-      var _formattedDate = '';
-      try { _formattedDate = new Date(entry.date + 'T12:00:00').toLocaleDateString('fr-FR', {day:'numeric', month:'long', year:'numeric'}); } catch(e) { _formattedDate = entry.date; }
-      html += '<div class="journal-card" style="min-width:260px;max-width:260px;height:160px;background:linear-gradient(135deg,#1a1a1a,#2C2E32);border:1px solid rgba(200,168,75,0.6);border-radius:16px;padding:20px;display:flex;flex-direction:column;justify-content:space-between;scroll-snap-align:start;flex-shrink:0;box-shadow:0 0 20px rgba(200,168,75,0.15);animation:journalCardIn 0.4s ease both ' + (i * 100) + 'ms;">'
-        + '<div style="font-family:\'Cinzel\',serif;font-size:10px;color:#C8A84A;letter-spacing:1px;">' + entry.time + ' · ' + entry.day + '</div>'
-        + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:#E8DCC0;line-height:1.5;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">« ' + entry.text + ' »</div>'
-        + '<div style="font-size:10px;color:#B0A080;">' + _formattedDate + '</div>'
-        + '</div>';
-    });
-    html += '</div>';
-    content.innerHTML = html;
-  }
+/* ── Journal Niyyah V2 ── */
+var _niyyahJournalEntries = [];
+function openNiyyahJournal() {
+  var overlay = document.getElementById('niyyah-journal-overlay');
+  var list = document.getElementById('niyyah-journal-list');
+  if (!overlay || !list) return;
+  _niyyahJournalEntries = getNiyyahHistory();
+  renderNiyyahJournalList(_niyyahJournalEntries);
+  var search = document.getElementById('niyyah-journal-search');
+  if (search) search.value = '';
   overlay.style.display = 'block';
-  overlay.style.opacity = '0';
-  requestAnimationFrame(function() { overlay.style.opacity = '1'; });
-  // Pull-to-close gesture
-  var _touchY = 0;
-  overlay.ontouchstart = function(e) { _touchY = e.touches[0].clientY; };
-  overlay.ontouchmove = function(e) {
-    var dy = e.touches[0].clientY - _touchY;
-    if (dy > 120) { closeScannerJournal(); overlay.ontouchstart = null; overlay.ontouchmove = null; }
-  };
 }
-function closeScannerJournal() {
-  var overlay = document.getElementById('scanner-journal-overlay');
-  if (!overlay) return;
-  overlay.style.opacity = '0';
-  setTimeout(function() { overlay.style.display = 'none'; }, 300);
+function closeNiyyahJournal() {
+  var overlay = document.getElementById('niyyah-journal-overlay');
+  if (overlay) overlay.style.display = 'none';
+}
+function filterNiyyahJournal() {
+  var search = document.getElementById('niyyah-journal-search');
+  var q = (search ? search.value : '').toLowerCase();
+  var filtered = q ? _niyyahJournalEntries.filter(function(e) { return (e.intention || '').toLowerCase().includes(q); }) : _niyyahJournalEntries;
+  renderNiyyahJournalList(filtered);
+}
+function renderNiyyahJournalList(entries) {
+  var list = document.getElementById('niyyah-journal-list');
+  if (!list) return;
+  if (entries.length === 0) {
+    list.innerHTML = '<div style="text-align:center;padding:60px 20px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);">Tes premières intentions apparaîtront ici ✦</div></div>';
+    return;
+  }
+  var html = '';
+  entries.forEach(function(e) {
+    var d = new Date(e.date);
+    var dateStr = d.toLocaleDateString('fr-FR', { day:'numeric', month:'short' }) + ' · ' + d.toLocaleTimeString('fr-FR', { hour:'2-digit', minute:'2-digit' });
+    var thumb = e.photo ? '<img src="' + e.photo + '" style="width:60px;height:60px;border-radius:10px;object-fit:cover;flex-shrink:0;">' : '<div style="width:60px;height:60px;border-radius:10px;background:rgba(200,168,75,0.08);flex-shrink:0;"></div>';
+    html += '<div onclick="openNiyyahDetail(\'' + e.id + '\')" style="display:flex;gap:12px;align-items:center;padding:12px;background:rgba(200,168,75,0.03);border:1px solid rgba(200,168,75,0.1);border-radius:12px;margin-bottom:8px;cursor:pointer;">'
+      + thumb
+      + '<div style="flex:1;min-width:0;">'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#D4AF37;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">' + (e.intention || '') + '</div>'
+      + '<div style="font-size:10px;color:rgba(255,255,255,0.3);margin-top:4px;">' + dateStr + '</div>'
+      + '</div></div>';
+  });
+  list.innerHTML = html;
+}
+function openNiyyahDetail(id) {
+  var entries = getNiyyahHistory();
+  var entry = entries.find(function(e) { return e.id === id; });
+  if (!entry) return;
+  var overlay = document.getElementById('niyyah-detail-overlay');
+  var content = document.getElementById('niyyah-detail-content');
+  if (!overlay || !content) return;
+  var d = new Date(entry.date);
+  var dateStr = d.toLocaleDateString('fr-FR', { weekday:'long', day:'numeric', month:'long' }) + ' · ' + d.toLocaleTimeString('fr-FR', { hour:'2-digit', minute:'2-digit' });
+  var photoHtml = entry.photo ? '<img src="' + entry.photo + '" style="width:100%;border-radius:14px;margin-bottom:20px;">' : '';
+  content.innerHTML = photoHtml
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-style:italic;color:#D4AF37;line-height:1.6;text-align:center;margin-bottom:12px;">' + (entry.intention || '') + '</div>'
+    + '<div style="font-size:12px;color:rgba(255,255,255,0.3);text-align:center;margin-bottom:24px;">' + dateStr + '</div>'
+    + '<div style="text-align:center;"><button onclick="niyyahDetailDelete(\'' + id + '\')" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,80,80,0.3);background:transparent;cursor:pointer;font-size:20px;color:rgba(255,80,80,0.6);display:inline-flex;align-items:center;justify-content:center;">🗑</button></div>';
+  overlay.style.display = 'block';
+}
+function closeNiyyahDetail() {
+  var overlay = document.getElementById('niyyah-detail-overlay');
+  if (overlay) overlay.style.display = 'none';
+}
+function niyyahDetailDelete(id) {
+  if (!confirm('Supprimer cette Niyyah ?')) return;
+  deleteEntry('niyyah', id);
+  closeNiyyahDetail();
+  openNiyyahJournal();
 }
 
 /* ── Fermer le Scanner ── */
