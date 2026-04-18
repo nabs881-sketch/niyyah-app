@@ -6,27 +6,6 @@ function safeSetItem(key, value) { try { localStorage.setItem(key, value); } cat
 
 /* ─── BLOC 1 : Fix Stats Row ─────────────────────── */
 
-(function fixStatsRow() {
-  function applyFix() {
-    var el = document.getElementById('v2-stats-row');
-    if (el) {
-      el.style.setProperty('display', 'flex', 'important');
-      el.style.setProperty('flex-direction', 'row', 'important');
-      el.style.setProperty('flex-wrap', 'nowrap', 'important');
-      el.style.setProperty('gap', '7px', 'important');
-      var cells = el.querySelectorAll('.sanct-stat-v2');
-      cells.forEach(function(c) {
-        c.style.setProperty('flex', '1 1 0', 'important');
-        c.style.setProperty('min-width', '0', 'important');
-      });
-    }
-  }
-  document.addEventListener('DOMContentLoaded', applyFix);
-  window.addEventListener('load', applyFix);
-  setTimeout(applyFix, 500);
-  setTimeout(applyFix, 1500);
-})();
-
 
 /* ─── BLOC 2 : Error Handler ─────────────────────── */
 
@@ -1274,37 +1253,7 @@ function getDateMinus(dateStr, days) {
 function saveState()   { safeSetItem('spiritual_v2', JSON.stringify(state)); safeSetItem('spiritual_level', currentLevel); }
 function saveHistory() { safeSetItem('spiritual_history', JSON.stringify(history)); }
 function getLevelProgress(levelId) { return getCalcLvlPct(levelId, state); }
-function getMedalLevel() {
-  const lvl1 = getLevelProgress(1);
-  const lvl2 = getLevelProgress(2);
-  const streakCurrent = history.streak + (lvl1 >= 100 ? 1 : 0);
-  const allDone = LEVELS.every(l => getLevelProgress(l.id) >= 100);
-  if (allDone && streakCurrent >= 7) return 'gold';
-  if (lvl1 >= 100 && lvl2 >= 100) return 'silver';
-  if (lvl1 >= 100) return 'bronze';
-  return 'none';
-}
-const MEDAL_CFG = {
-  none:   { label: '—',      cls: 'none'   },
-  bronze: { label: 'Bronze', cls: 'bronze' },
-  silver: { label: 'Argent', cls: 'silver' },
-  gold:   { label: 'Or ✦',   cls: 'gold'   },
-};
-let _lastMedal = null;
-function updateMedal() {
-  const medal = getMedalLevel();
-  const el = document.getElementById('medalTag');
-  if (!el) return;
-  el.className = 'medal-tag ' + MEDAL_CFG[medal].cls;
-  el.textContent = MEDAL_CFG[medal].label;
-  if (_lastMedal && _lastMedal !== medal && medal !== 'none') {
-    el.classList.add('anim');
-    el.addEventListener('animationend', () => el.classList.remove('anim'), { once: true });
-    const msgs = { bronze:t('medal_toast_bronze'), silver:t('medal_toast_silver'), gold:t('medal_toast_gold') };
-    showToast(msgs[medal]);
-  }
-  _lastMedal = medal;
-}
+function getMedalLevel() { return 'none'; }
 function getLevelItems(levelId) {
   const level = LEVELS.find(l => l.id === levelId);
   return level ? level.sections.flatMap(s => s.items) : [];
@@ -1364,7 +1313,6 @@ function updateGlobalProgress() {
       setTimeout(() => showToast(m.msg), 800);
     }
   });
-  updateMedal();
 }
 function checkLevelCompletion(levelId) {
   if (getLevelProgress(levelId) >= 100) {
@@ -2799,25 +2747,22 @@ function renderProgression() {
     const d = new Date(today); d.setDate(d.getDate() - i);
     const dStr = d.toISOString().split('T')[0];
     const isToday = dStr === TODAY;
-    const done = isToday ? todayDone : !!(history.days && history.days[dStr]);
-    const medal = isToday ? (todayDone ? getMedalLevel() : null) : ((history.dayMedals && history.dayMedals[dStr]) || (done ? 'bronze' : null));
-    let color = 'rgba(255,255,255,0.06)';
-    if (medal === 'gold')   color = 'linear-gradient(135deg,#c8a84b,#e8cc6a)';
-    else if (medal === 'silver') color = 'linear-gradient(135deg,#8ab4c8,#b8d4e8)';
-    else if (done)          color = 'var(--green)';
-    heatmapHTML += '<div style="width:8px;height:8px;border-radius:2px;background:' + color + ';' + (isToday ? 'box-shadow:0 0 6px rgba(52,217,98,0.6);' : '') + '" title="' + dStr + '"></div>';
+    var dayPct = 0;
+    if (isToday) { dayPct = todayDone ? 100 : Math.round(getLevelProgress(1)); }
+    else if (history.days && history.days[dStr]) { dayPct = history.dayScores && history.dayScores[dStr] ? history.dayScores[dStr] : 100; }
+    var color = 'rgba(255,255,255,0.05)';
+    if (dayPct >= 100) color = '#C8A84A';
+    else if (dayPct >= 51) color = 'rgba(200,168,75,0.6)';
+    else if (dayPct >= 1) color = 'rgba(200,168,75,0.3)';
+    heatmapHTML += '<div style="width:8px;height:8px;border-radius:2px;background:' + color + ';' + (isToday ? 'box-shadow:0 0 6px rgba(200,168,75,0.6);' : '') + '" title="' + dStr + ' · ' + dayPct + '%"></div>';
   }
   // === HERO JOURNÉE (fusion avec ancien Bilan) ===
   const allItemsP = LEVELS.flatMap(l => l.sections.flatMap(s => s.items));
   const totalDoneP = allItemsP.filter(item => { try { return isItemDone(item, state); } catch(e) { return item.type==='counter'?(state[item.id]||0)>=item.target:!!state[item.id]; } }).reduce((sum,i)=>{ try{return sum+getWeight(i.id);}catch(e){return sum+1;} },0);
   const totalAllP  = allItemsP.reduce((sum,i)=>{ try{return sum+getWeight(i.id);}catch(e){return sum+1;} },0);
   const globalPctP = totalAllP>0 ? Math.round(totalDoneP/totalAllP*100) : 0;
-  const medalP = getMedalLevel();
-  const emojiMapP = {none:'🌱',bronze:'🥉',silver:'🥈',gold:'🥇'};
-  const msgMapP   = {none:t('prog_msg_none'),bronze:t('prog_msg_bronze'),silver:t('prog_msg_silver'),gold:t('prog_msg_gold')};
-  const subMapP   = {none:t('prog_sub_none'),bronze:t('prog_sub_bronze'),silver:t('prog_sub_silver'),gold:t('prog_sub_gold')};
   const rP=36, circP=2*Math.PI*rP, dashP=(globalPctP/100)*circP;
-  const cP = medalP==='gold'?'var(--gold)':medalP==='silver'?'var(--silver)':'var(--green)';
+  const cP = '#C8A84A';
   const ringP = '<div style="width:88px;height:88px;position:relative;margin:0 auto 12px;"><svg width="88" height="88" viewBox="0 0 88 88" style="transform:rotate(-90deg)"><circle cx="44" cy="44" r="36" fill="none" stroke="var(--sep2)" stroke-width="5"/><circle cx="44" cy="44" r="36" fill="none" stroke="'+cP+'" stroke-width="5" stroke-linecap="round" stroke-dasharray="'+circP.toFixed(1)+'" stroke-dashoffset="'+(circP-dashP).toFixed(1)+'" style="transition:stroke-dashoffset 0.8s cubic-bezier(0.34,1.56,0.64,1)"/></svg><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:20px;color:var(--t1);">'+globalPctP+'%</div></div>';
   let lvlRowsP='';
   LEVELS.forEach((lvl,i)=>{
@@ -2854,25 +2799,18 @@ function renderProgression() {
   const hasBilans = Object.keys(bilansData).length > 0;
   const bilanHTML = hasBilans ? '<div style="margin:0 16px 24px;"><div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;">Bilan des 7 derniers soirs</div><div style="display:flex;gap:6px;justify-content:space-between;padding:14px 16px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:16px;">' + bilanCells + '</div><div style="display:flex;gap:14px;margin-top:8px;"><div style="display:flex;align-items:center;gap:4px;"><span style="font-size:12px;">😶</span><span style="font-size:10px;color:var(--t3);">Distrait</span></div><div style="display:flex;align-items:center;gap:4px;"><span style="font-size:12px;">🌤</span><span style="font-size:10px;color:var(--t3);">Efforts</span></div><div style="display:flex;align-items:center;gap:4px;"><span style="font-size:12px;">☀️</span><span style="font-size:10px;color:var(--t3);">Sincère</span></div></div></div>' : '';
 
-  const heroSectionP = '<div style="background:linear-gradient(135deg,rgba(48,209,88,0.08),rgba(255,214,10,0.04));border:1px solid rgba(48,209,88,0.15);border-radius:var(--r-xl);padding:20px 16px;text-align:center;margin-bottom:10px;position:relative;overflow:hidden;"><div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--green),transparent);"></div>'+ringP+'<div style="font-family:var(--serif);font-size:20px;color:var(--t1);margin-bottom:4px;">'+msgMapP[medalP]+'</div><div style="font-size:12px;color:var(--t2);margin-bottom:14px;">'+emojiMapP[medalP]+' '+subMapP[medalP]+'</div>'+lvlRowsP+'<div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;"><button style="width:100%;padding:13px;border-radius:13px;border:none;background:var(--green-grad);color:#000;font-size:15px;font-weight:600;cursor:pointer;font-family:var(--serif);" onclick="switchView(\'checklist\')">Commencer ma journée</button><button style="width:100%;padding:11px;border-radius:13px;border:none;background:#C8A84A;color:#2C2E32;font-size:14px;font-weight:600;cursor:pointer;font-family:var(--sans);" onclick="openBilanSoir()">🌙 Bilan du soir</button></div></div>';
+  const heroSectionP = '<div style="background:linear-gradient(135deg,rgba(200,168,75,0.06),rgba(200,168,75,0.02));border:1px solid rgba(200,168,75,0.15);border-radius:var(--r-xl);padding:20px 16px;text-align:center;margin-bottom:10px;position:relative;overflow:hidden;"><div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,#C8A84A,transparent);"></div>'+ringP+'<div style="font-family:var(--serif);font-size:18px;color:var(--t1);margin-bottom:4px;">'+globalPctP+'% '+t('prog_msg_none')+'</div>'+lvlRowsP+'<div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;"><button style="width:100%;padding:13px;border-radius:13px;border:none;background:#C8A84A;color:#000;font-size:15px;font-weight:600;cursor:pointer;font-family:var(--serif);" onclick="switchView(\'checklist\')">Commencer ma journée</button><button style="width:100%;padding:11px;border-radius:13px;border:none;background:rgba(200,168,75,0.15);color:#C8A84A;font-size:14px;font-weight:600;cursor:pointer;font-family:var(--sans);" onclick="openBilanSoir()">🌙 Bilan du soir</button></div></div>';
 
   el.innerHTML = `
-    <div style="padding:0 0 40px;"><!-- TITRE SPIRITUEL --><div id="v2-spiritual-title" style="text-align:center;margin:0 16px 12px;"></div><!-- STATS ROW --><div id="v2-stats-row" style="display:flex;flex-direction:row;gap:7px;margin:0 16px 12px;"><div class="sanct-stat-v2" style="flex:1;text-align:center;border-radius:11px;padding:10px 4px 9px;background:linear-gradient(160deg,#14110d,#0d0b08);border:1px solid rgba(212,175,55,0.18);"><div class="sanct-stat-num-v2" id="v2-stat-streak">0</div><div class="sanct-stat-label-v2">Streak</div></div><div class="sanct-stat-v2" style="flex:1;text-align:center;border-radius:11px;padding:10px 4px 9px;background:linear-gradient(160deg,#14110d,#0d0b08);border:1px solid rgba(212,175,55,0.18);"><div class="sanct-stat-num-v2" id="v2-stat-score">—</div><div class="sanct-stat-label-v2">Score</div></div><div class="sanct-stat-v2" style="flex:1;text-align:center;border-radius:11px;padding:10px 4px 9px;background:linear-gradient(160deg,#14110d,#0d0b08);border:1px solid rgba(212,175,55,0.18);"><div class="sanct-stat-num-v2" id="v2-stat-days">0</div><div class="sanct-stat-label-v2">Jours</div></div><div class="sanct-stat-v2" style="flex:1;text-align:center;border-radius:11px;padding:10px 4px 9px;background:linear-gradient(160deg,#14110d,#0d0b08);border:1px solid rgba(212,175,55,0.18);"><div class="sanct-stat-num-v2" id="v2-stat-medal">—</div><div class="sanct-stat-label-v2">Médaille</div></div></div><!-- CHALLENGE FAJR --><div id="fajr-challenge-card" style="display:none;margin:0 16px 12px;"></div><!-- DÉFI SEMAINE --><button id="accueilDefiCard" class="defi-card-sanctuaire" onclick="if(typeof openDefiSelector==='function')openDefiSelector()" style="display:none;margin:0 16px 12px;padding:14px 18px;background:#1a1a1a;border:1px solid rgba(200,168,75,0.3);border-radius:14px;cursor:pointer;position:relative;z-index:10;text-align:left;min-height:90px;box-sizing:border-box;font-family:inherit;color:inherit;width:calc(100% - 32px);"><div style="display:flex;align-items:center;gap:12px;width:100%;"><div id="defiCardIcon"><img src="https://nabs881-sketch.github.io/niyyah-app/imagescroissant.png" alt="Croissant" style="width:60px;height:auto;display:block;flex-shrink:0;"></div><div style="flex:1;text-align:left;"><div id="defiCardTitre" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:#C8A84A;">Défi de la semaine</div><div id="defiCardScore" style="font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:#B0A080;margin-top:2px;"></div></div></div><div id="defiCardDots" style="display:none;"></div><div id="defiCardBar" style="position:absolute;bottom:0;left:0;right:0;height:3px;background:rgba(200,168,75,0.12);border-radius:0 0 14px 14px;overflow:hidden;"><div id="defiCardBarFill" style="height:100%;width:0%;background:#C8A84A;transition:width 0.6s ease;"></div></div></button>${heroSectionP}<!-- STREAK HERO --><div style="text-align:center;padding:36px 20px 28px;position:relative;"><div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;">${t('prog_streak')}</div><div style="font-size:80px;font-weight:900;line-height:1;background:${streakDisplay >= 7 ? 'linear-gradient(135deg,#c8a84b,#e8cc6a)' : 'linear-gradient(135deg,var(--green),#7effa0)'};-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-3px;">${streakDisplay}</div><div style="font-size:13px;color:var(--t3);margin-top:6px;letter-spacing:1px;">${t('prog_days')}</div><div style="display:flex;justify-content:center;gap:24px;margin-top:16px;"><div style="text-align:center;"><div style="font-size:18px;font-weight:700;color:var(--t1);">${bestDisplay}</div><div style="font-size:12px;color:var(--t3);letter-spacing:0.8px;text-transform:uppercase;">${t('prog_best')}</div></div><div style="width:1px;background:rgba(255,255,255,0.1);"></div><div style="text-align:center;"><div style="font-size:18px;font-weight:700;color:var(--t1);">${totalDisplay}</div><div style="font-size:12px;color:var(--t3);letter-spacing:0.8px;text-transform:uppercase;">${t('prog_total')}</div></div></div></div><!-- HADITH CONTEXTUEL --><div style="margin:0 16px 24px;padding:20px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.2);border-radius:16px;position:relative;overflow:hidden;"><div style="position:absolute;top:-10px;right:12px;font-size:48px;opacity:0.07;font-family:serif;">"</div><div style="font-size:14px;line-height:1.7;color:var(--t1);font-style:italic;margin-bottom:10px;">${hadith.text}</div><div style="font-size:11px;color:#c8a84b;font-weight:600;letter-spacing:0.5px;">— ${hadith.ref}</div></div><!-- GRAINE DE LUMIÈRE --><div style="margin:0 16px 24px;background:linear-gradient(135deg,rgba(200,168,75,0.08),rgba(200,168,75,0.03));border:1px solid rgba(200,168,75,0.25);border-radius:20px;padding:28px;text-align:center;"><div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;color:#C8A84A;text-transform:uppercase;margin-bottom:12px;">${t('graine_title')}</div><div style="font-family:'Cormorant Garamond',serif;font-size:13px;font-style:italic;color:#B0A080;margin-bottom:12px;">${t('graine_sub')}</div><div style="margin:0 auto 12px;">${getGraineSVG((function(){try{return JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length)}</div><div style="font-size:11px;color:#B0A080;margin-bottom:10px;">${(function(){try{return JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length} ${t('graine_defis')}</div><div style="font-family:'Cormorant Garamond',serif;font-size:12px;font-style:italic;color:#C8A84A;opacity:0.7;line-height:1.6;">${t('graine_quote')}</div></div><!-- HEATMAP 30 JOURS --><div style="margin:0 16px 24px;"><div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;">${t('prog_heatmap')}</div><div style="display:grid;grid-template-columns:repeat(10,1fr);gap:4px;">
+    <div style="padding:0 0 40px;"><!-- TITRE SPIRITUEL --><div id="v2-spiritual-title" style="text-align:center;margin:0 16px 12px;"></div><!-- CHALLENGE FAJR --><div id="fajr-challenge-card" style="display:none;margin:0 16px 12px;"></div><!-- DÉFI SEMAINE --><button id="accueilDefiCard" class="defi-card-sanctuaire" onclick="if(typeof openDefiSelector==='function')openDefiSelector()" style="display:none;margin:0 16px 12px;padding:14px 18px;background:#1a1a1a;border:1px solid rgba(200,168,75,0.3);border-radius:14px;cursor:pointer;position:relative;z-index:10;text-align:left;min-height:90px;box-sizing:border-box;font-family:inherit;color:inherit;width:calc(100% - 32px);"><div style="display:flex;align-items:center;gap:12px;width:100%;"><div id="defiCardIcon"><img src="https://nabs881-sketch.github.io/niyyah-app/imagescroissant.png" alt="Croissant" style="width:60px;height:auto;display:block;flex-shrink:0;"></div><div style="flex:1;text-align:left;"><div id="defiCardTitre" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:#C8A84A;">Défi de la semaine</div><div id="defiCardScore" style="font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:#B0A080;margin-top:2px;"></div></div></div><div id="defiCardDots" style="display:none;"></div><div id="defiCardBar" style="position:absolute;bottom:0;left:0;right:0;height:3px;background:rgba(200,168,75,0.12);border-radius:0 0 14px 14px;overflow:hidden;"><div id="defiCardBarFill" style="height:100%;width:0%;background:#C8A84A;transition:width 0.6s ease;"></div></div></button>${heroSectionP}<!-- STREAK HERO --><div style="text-align:center;padding:36px 20px 28px;position:relative;"><div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;">${t('prog_streak')}</div><div style="font-size:80px;font-weight:900;line-height:1;background:${streakDisplay >= 7 ? 'linear-gradient(135deg,#c8a84b,#e8cc6a)' : 'linear-gradient(135deg,var(--green),#7effa0)'};-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-3px;">${streakDisplay}</div><div style="font-size:13px;color:var(--t3);margin-top:6px;letter-spacing:1px;">${t('prog_days')}</div><div style="display:flex;justify-content:center;gap:24px;margin-top:16px;"><div style="text-align:center;"><div style="font-size:18px;font-weight:700;color:var(--t1);">${bestDisplay}</div><div style="font-size:12px;color:var(--t3);letter-spacing:0.8px;text-transform:uppercase;">${t('prog_best')}</div></div><div style="width:1px;background:rgba(255,255,255,0.1);"></div><div style="text-align:center;"><div style="font-size:18px;font-weight:700;color:var(--t1);">${totalDisplay}</div><div style="font-size:12px;color:var(--t3);letter-spacing:0.8px;text-transform:uppercase;">${t('prog_total')}</div></div></div></div><!-- HADITH CONTEXTUEL --><div style="margin:0 16px 24px;padding:20px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.2);border-radius:16px;position:relative;overflow:hidden;"><div style="position:absolute;top:-10px;right:12px;font-size:48px;opacity:0.07;font-family:serif;">"</div><div style="font-size:14px;line-height:1.7;color:var(--t1);font-style:italic;margin-bottom:10px;">${hadith.text}</div><div style="font-size:11px;color:#c8a84b;font-weight:600;letter-spacing:0.5px;">— ${hadith.ref}</div></div><!-- GRAINE DE LUMIÈRE --><div style="margin:0 16px 24px;background:linear-gradient(135deg,rgba(200,168,75,0.08),rgba(200,168,75,0.03));border:1px solid rgba(200,168,75,0.25);border-radius:20px;padding:28px;text-align:center;"><div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;color:#C8A84A;text-transform:uppercase;margin-bottom:12px;">${t('graine_title')}</div><div style="font-family:'Cormorant Garamond',serif;font-size:13px;font-style:italic;color:#B0A080;margin-bottom:12px;">${t('graine_sub')}</div><div style="margin:0 auto 12px;">${getGraineSVG((function(){try{return JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length)}</div><div style="font-size:11px;color:#B0A080;margin-bottom:10px;">${(function(){try{return JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length} ${t('graine_defis')}</div><div style="font-family:'Cormorant Garamond',serif;font-size:12px;font-style:italic;color:#C8A84A;opacity:0.7;line-height:1.6;">${t('graine_quote')}</div></div><!-- HEATMAP 30 JOURS --><div style="margin:0 16px 24px;"><div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;">${t('prog_heatmap')}</div><div style="display:grid;grid-template-columns:repeat(10,1fr);gap:4px;">
           ${heatmapHTML}
-        </div><div style="display:flex;gap:12px;margin-top:10px;align-items:center;"><div style="display:flex;align-items:center;gap:4px;"><div style="width:8px;height:8px;border-radius:2px;background:var(--green);"></div><span style="font-size:10px;color:var(--t3);">${t('prog_present')}</span></div><div style="display:flex;align-items:center;gap:4px;"><div style="width:8px;height:8px;border-radius:2px;background:linear-gradient(135deg,#c8a84b,#e8cc6a);"></div><span style="font-size:10px;color:var(--t3);">${t('prog_gold_day')}</span></div><div style="display:flex;align-items:center;gap:4px;"><div style="width:8px;height:8px;border-radius:2px;background:rgba(255,255,255,0.06);"></div><span style="font-size:10px;color:var(--t3);">${t('prog_absent')}</span></div></div></div><!-- BILAN 7 JOURS -->${bilanHTML}
+        </div><div style="display:flex;gap:10px;margin-top:10px;align-items:center;flex-wrap:wrap;"><div style="display:flex;align-items:center;gap:4px;"><div style="width:8px;height:8px;border-radius:2px;background:#C8A84A;"></div><span style="font-size:10px;color:var(--t3);">100%</span></div><div style="display:flex;align-items:center;gap:4px;"><div style="width:8px;height:8px;border-radius:2px;background:rgba(200,168,75,0.6);"></div><span style="font-size:10px;color:var(--t3);">51-99%</span></div><div style="display:flex;align-items:center;gap:4px;"><div style="width:8px;height:8px;border-radius:2px;background:rgba(200,168,75,0.3);"></div><span style="font-size:10px;color:var(--t3);">1-50%</span></div><div style="display:flex;align-items:center;gap:4px;"><div style="width:8px;height:8px;border-radius:2px;background:rgba(255,255,255,0.05);"></div><span style="font-size:10px;color:var(--t3);">${t('prog_absent')}</span></div></div></div><!-- BILAN 7 JOURS -->${bilanHTML}
 
       </div>
   `;
   // Populate moved elements
   try {
     updateSpiritualTitle();
-    var hist = JSON.parse(localStorage.getItem('spiritual_history') || '{}');
-    var _el = function(id) { return document.getElementById(id); };
-    if (_el('v2-stat-streak'))  _el('v2-stat-streak').textContent  = hist.streak || 0;
-    if (_el('v2-stat-days'))    _el('v2-stat-days').textContent    = hist.totalDays || 0;
-    if (_el('v2-stat-medal'))   _el('v2-stat-medal').textContent   = hist.bestStreak >= 30 ? '🥇' : hist.bestStreak >= 7 ? '⚡' : hist.bestStreak >= 3 ? '🔥' : '—';
-    var v1s = JSON.parse(localStorage.getItem('spiritual_v2') || '{}');
-    if (_el('v2-stat-score')) { var sc = v1s._score || v1s._todayScore || '—'; _el('v2-stat-score').textContent = sc === '—' ? '—' : sc + '%'; }
     if (typeof updateFajrChallenge === 'function') updateFajrChallenge();
     if (typeof renderDefiCard === 'function') renderDefiCard();
   } catch(e) {}
@@ -5391,8 +5329,6 @@ const V2_I18N = {
     // Level labels
     lvl_start: 'Commence !', lvl_progress: 'En cours ✦', lvl_done: 'Accompli ✦',
     // Medals
-    medal_bronze: '🥉 Bronze', medal_silver: '🥈 Argent', medal_gold: '🥇 Or',
-    medal_toast_bronze: '🥉 Bronze !', medal_toast_silver: '🥈 Argent !', medal_toast_gold: '🥇 OR — Journée parfaite !',
     // Friday
     friday_title: 'Yawm al-Jumuah — Vendredi béni', friday_sub: 'La prière du vendredi est obligatoire aujourd\'hui',
     // Grace
@@ -5499,8 +5435,6 @@ const V2_I18N = {
     wird_back: '← Back', wird_reset: '↺ Reset',
     locked_title: 'Level',
     lvl_start: 'Start!', lvl_progress: 'In progress ✦', lvl_done: 'Accomplished ✦',
-    medal_bronze: '🥉 Bronze', medal_silver: '🥈 Silver', medal_gold: '🥇 Gold',
-    medal_toast_bronze: '🥉 Bronze!', medal_toast_silver: '🥈 Silver!', medal_toast_gold: '🥇 GOLD — Perfect day!',
     friday_title: 'Yawm al-Jumuah — Blessed Friday', friday_sub: 'Friday prayer is obligatory today',
     grace_title: 'You missed yesterday', grace_sub: 'Complete Level 1 today to save your streak 🌿',
     toast_streak_saved: '🌿 Day recovered — your streak is saved!', toast_lvl1: 'مَا شَاءَ اللَّهُ — Level 1 completed! 🌿',
@@ -5594,8 +5528,6 @@ const V2_I18N = {
     wird_back: '→ رُجُوعٌ', wird_reset: '↺ إِعَادَةُ التَّعْيِينِ',
     locked_title: 'الْمُسْتَوَى',
     lvl_start: 'ابْدَأْ!', lvl_progress: 'جَارٍ ✦', lvl_done: 'أُنْجِزَ ✦',
-    medal_bronze: '🥉 بْرُونْزِيٌّ', medal_silver: '🥈 فِضِّيٌّ', medal_gold: '🥇 ذَهَبِيٌّ',
-    medal_toast_bronze: '🥉 بْرُونْزٌ!', medal_toast_silver: '🥈 فِضَّةٌ!', medal_toast_gold: '🥇 ذَهَبٌ — يَوْمٌ مِثَالِيٌّ!',
     friday_title: 'يَوْمُ الْجُمُعَةِ الْمُبَارَكِ', friday_sub: 'صَلَاةُ الْجُمُعَةِ وَاجِبَةٌ الْيَوْمَ',
     grace_title: 'فَاتَكَ الْأَمْسُ', grace_sub: 'أَكْمِلِ الْمُسْتَوَى ١ الْيَوْمَ لِإِنْقَاذِ سِلْسِلَتِكَ 🌿',
     toast_streak_saved: '🌿 تَمَّ الِاسْتِدْرَاكُ — سِلْسِلَتُكَ مَحْفُوظَةٌ!', toast_lvl1: 'مَا شَاءَ اللَّهُ — أُنْجِزَ الْمُسْتَوَى ١! 🌿',
@@ -6919,23 +6851,6 @@ function v2RefreshStats() {
   const _s = v2GetState();
   if (_s.intention) applyInfusion(_s.intention);
 
-  // Stats from V1 history
-  try {
-    const hist = JSON.parse(localStorage.getItem('spiritual_history') || '{}');
-    const el = id => document.getElementById(id);
-    if (el('v2-stat-streak'))  el('v2-stat-streak').textContent  = hist.streak      || 0;
-    if (el('v2-stat-days'))    el('v2-stat-days').textContent    = hist.totalDays    || 0;
-    if (el('v2-stat-medal'))   el('v2-stat-medal').textContent   = hist.bestStreak >= 30 ? '🥇' : hist.bestStreak >= 7 ? '⚡' : hist.bestStreak >= 3 ? '🔥' : '—';
-
-    // Score du jour depuis V1 state
-    const v1state = JSON.parse(localStorage.getItem('spiritual_v2') || '{}');
-    if (el('v2-stat-score')) {
-      const score = v1state._score || v1state._todayScore || '—';
-      el('v2-stat-score').textContent = score === '—' ? '—' : score + '%';
-    }
-
-
-  } catch(e) {}
   showMorningSagesse();
   checkNightCompanion();
   updateFajrChallenge();
