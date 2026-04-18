@@ -76,7 +76,7 @@ window.onunhandledrejection = function(e) {
     if (Math.abs(dy) > Math.abs(dx)) return;
     if (dt > 500) return;
     if (e.target.closest('.tabs,.fast-calendar,.laylatul-nights,.week-strip')) return;
-    const activeOverlay = document.querySelector('#meditScreen.show,#tasbihOverlay.show,#badgePopup.show,#levelPopup.show,#freemiumOverlay.show,#weeklyOverlay.show,#infoSheet.show');
+    const activeOverlay = document.querySelector('#meditScreen.show,#tasbihOverlay.show,#levelPopup.show,#freemiumOverlay.show,#weeklyOverlay.show,#infoSheet.show');
     if (activeOverlay) return;
 
     // Sur la checklist → swipe entre niveaux (tous, même locked → ouvre freemium)
@@ -614,25 +614,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function isFriday() { return new Date().getDay() === 5; }
-const BADGES = [
-  { id: 'first_day', emoji: '🌱', name: 'Premier Pas',       desc: 'Valider le Niveau 1 complet pour la 1ere fois', gold: false, check: (s,h) => h.totalDays >= 1 },
-  { id: 'streak3',   emoji: '🔥', name: 'Flamme × 3',        desc: '3 jours consecutifs de Niveau 1 valide',        gold: false, check: (s,h) => h.streak >= 3 },
-  { id: 'streak7',   emoji: '⚡', name: 'Semaine de Foi',    desc: '7 jours consecutifs — MashaAllah !',            gold: true,  check: (s,h) => h.streak >= 7 },
-  { id: 'streak30',  emoji: '🌙', name: 'Mois Beni',         desc: '30 jours consecutifs — Allahu Akbar !',         gold: true,  check: (s,h) => h.streak >= 30 },
-  { id: 'level2',    emoji: '📿', name: 'Approfondissement', desc: 'Debloquer et completer le Niveau 2',             gold: false, check: (s,h) => s._unlocked && s._unlocked.includes(2) },
-  { id: 'level3',    emoji: '📚', name: 'Chercheur',         desc: 'Debloquer et completer le Niveau 3',             gold: false, check: (s,h) => s._unlocked && s._unlocked.includes(3) },
-  { id: 'level4',    emoji: '💚', name: 'Rayonnant',         desc: 'Atteindre le Niveau 4',                         gold: true,  check: (s,h) => s._unlocked && s._unlocked.includes(4) },
-  { id: 'istighfar', emoji: '🤲', name: '100 Istighfar',     desc: 'Completer 100 istighfar en une journee',        gold: false, check: (s,h) => (s.istighfar||0) >= 100 },
-  { id: 'tasbih',    emoji: '✨', name: 'Tasbih Complet',    desc: 'Completer le tasbih des 99 en une journee',     gold: false, check: (s,h) => (s.tasbih||0) >= 99 },
-  { id: 'week_full', emoji: '🏆', name: 'Semaine Parfaite',  desc: '7 jours dans la semaine avec Niveau 1 valide',  gold: true,  check: (s,h) => h.weekDays >= 7 },
-  { id: 'jumua',     emoji: '🕌', name: 'Vendredi Beni',     desc: 'Accomplir la priere du vendredi (Jumuah)',      gold: true,  check: (s,h) => h.jumuahCount >= 1 },
-  { id: 'jumua4',    emoji: '🌟', name: '4 Vendredis',       desc: '4 prieres du vendredi accomplies',              gold: true,  check: (s,h) => h.jumuahCount >= 4 },
-  { id: 'ramadan_start',  emoji: '🌙', name: 'Ramadan Mubarak',   desc: 'Premier jour de Ramadan',          gold: false, check: function(s,h) { return ((h.ramadan && h.ramadan.totalFasts)||0) >= 1; } },
-  { id: 'ramadan_10',     emoji: '⭐', name: '10 Jours de Jeune', desc: '10 jours de jeune accomplis',      gold: false, check: function(s,h) { return ((h.ramadan && h.ramadan.totalFasts)||0) >= 10; } },
-  { id: 'ramadan_20',     emoji: '🌟', name: '20 Jours de Jeune', desc: '20 jours — Mashallah !',           gold: false, check: function(s,h) { return ((h.ramadan && h.ramadan.totalFasts)||0) >= 20; } },
-  { id: 'ramadan_full',   emoji: '🥇', name: 'Ramadan Complet',   desc: '30 jours — Allahu Akbar !',        gold: true,  check: function(s,h) { return ((h.ramadan && h.ramadan.totalFasts)||0) >= 30; } },
-  { id: 'laylatul_qadr',  emoji: '✨', name: 'Laylat al-Qadr',    desc: 'Les 5 nuits impaires accomplies',  gold: true,  check: function(s,h) { var n=(h.ramadan && h.ramadan.laylatul)||{}; return [21,23,25,27,29].filter(function(x){return !!n[x];}).length>=5; } },
-];
 let ramadanState = JSON.parse(localStorage.getItem('spiritual_ramadan') || '{"active":false,"startDate":null,"days":{},"laylatul":{}}');
 function saveRamadanState() { safeSetItem('spiritual_ramadan', JSON.stringify(ramadanState)); }
 function toggleRamadanMode() {
@@ -694,7 +675,6 @@ function toggleFast(dayStr) {
   history.ramadan.totalFasts = Object.values(ramadanState.days).filter(Boolean).length;
   saveHistory();
   saveRamadanState();
-  checkBadges();
   renderRamadan();
 }
 function toggleLaylatul(night) {
@@ -705,7 +685,6 @@ function toggleLaylatul(night) {
   history.ramadan.laylatul = ramadanState.laylatul;
   saveHistory();
   saveRamadanState();
-  checkBadges();
   renderRamadan();
 }
 function toggleFridayItem(id) {
@@ -1294,17 +1273,6 @@ function getDateMinus(dateStr, days) {
 }
 function saveState()   { safeSetItem('spiritual_v2', JSON.stringify(state)); safeSetItem('spiritual_level', currentLevel); }
 function saveHistory() { safeSetItem('spiritual_history', JSON.stringify(history)); }
-function checkBadges() {
-  let newBadge = null;
-  BADGES.forEach(badge => {
-    if (!history.unlockedBadges.includes(badge.id) && badge.check(state, history)) {
-      history.unlockedBadges.push(badge.id);
-      newBadge = badge;
-    }
-  });
-  saveHistory();
-  if (newBadge) { playCheckSound(); showBadgePopup(newBadge); }
-}
 function getLevelProgress(levelId) { return getCalcLvlPct(levelId, state); }
 function getMedalLevel() {
   const lvl1 = getLevelProgress(1);
@@ -1734,15 +1702,6 @@ function renderAccueil() {
     intentionEl.style.display = 'none';
   }
 }
-function showBadgePopup(badge) {
-  const iconEl = document.getElementById('popupIcon');
-  iconEl.textContent = badge.emoji;
-  iconEl.style.fontSize = '32px';
-  document.getElementById('popupTitle').textContent = badge.name;
-  document.getElementById('popupSub').textContent = badge.desc;
-  document.getElementById('badgePopup').classList.add('show');
-}
-function closeBadgePopup() { document.getElementById('badgePopup').classList.remove('show'); }
 function renderResume() {
   const el = document.getElementById('resumeContent');
   const dateEl = document.getElementById('resumeDatePill');
@@ -1834,7 +1793,6 @@ function init() {
   renderLevel(currentLevel);
   renderAccueil();
   updateGlobalProgress();
-  checkBadges();
   renderRamadanActivateBtn();
   initNotifications();
 }
@@ -2459,7 +2417,6 @@ function incrementCounter(id, target) {
   }
   updateGlobalProgress();
   renderTabs();
-  checkBadges();
 }
 function resetCounter(id) {
   state[id] = 0; saveState();
@@ -2682,7 +2639,6 @@ function toggleItem(id, event) {
   checkLevelCompletion(currentLevel);
   updateGlobalProgress();
   renderTabs();
-  checkBadges();
 }
 function confirmReset() {
   // Étape 1 : première confirmation
@@ -2851,15 +2807,6 @@ function renderProgression() {
     else if (done)          color = 'var(--green)';
     heatmapHTML += '<div style="width:8px;height:8px;border-radius:2px;background:' + color + ';' + (isToday ? 'box-shadow:0 0 6px rgba(52,217,98,0.6);' : '') + '" title="' + dStr + '"></div>';
   }
-  let badgesHTML = '';
-  BADGES.forEach(badge => {
-    const unlocked = history.unlockedBadges.includes(badge.id);
-    badgesHTML += '<div style="display:flex;flex-direction:column;align-items:center;gap:4px;padding:12px 8px;background:' + (unlocked ? (badge.gold ? 'rgba(200,168,75,0.1)' : 'rgba(52,217,98,0.08)') : 'rgba(255,255,255,0.03)') + ';border:1px solid ' + (unlocked ? (badge.gold ? 'rgba(200,168,75,0.3)' : 'rgba(52,217,98,0.2)') : 'rgba(255,255,255,0.06)') + ';border-radius:12px;opacity:' + (unlocked ? '1' : '0.4') + ';">'
-      + '<div style="font-size:24px;">' + badge.emoji + '</div>'
-      + '<div style="font-size:10px;font-weight:700;color:' + (unlocked ? (badge.gold ? '#c8a84b' : 'var(--green)') : 'var(--t3)') + ';text-align:center;letter-spacing:0.3px;">' + badge.name + '</div>'
-      + '</div>';
-  });
-  
   // === HERO JOURNÉE (fusion avec ancien Bilan) ===
   const allItemsP = LEVELS.flatMap(l => l.sections.flatMap(s => s.items));
   const totalDoneP = allItemsP.filter(item => { try { return isItemDone(item, state); } catch(e) { return item.type==='counter'?(state[item.id]||0)>=item.target:!!state[item.id]; } }).reduce((sum,i)=>{ try{return sum+getWeight(i.id);}catch(e){return sum+1;} },0);
@@ -2912,9 +2859,7 @@ function renderProgression() {
   el.innerHTML = `
     <div style="padding:0 0 40px;"><!-- TITRE SPIRITUEL --><div id="v2-spiritual-title" style="text-align:center;margin:0 16px 12px;"></div><!-- STATS ROW --><div id="v2-stats-row" style="display:flex;flex-direction:row;gap:7px;margin:0 16px 12px;"><div class="sanct-stat-v2" style="flex:1;text-align:center;border-radius:11px;padding:10px 4px 9px;background:linear-gradient(160deg,#14110d,#0d0b08);border:1px solid rgba(212,175,55,0.18);"><div class="sanct-stat-num-v2" id="v2-stat-streak">0</div><div class="sanct-stat-label-v2">Streak</div></div><div class="sanct-stat-v2" style="flex:1;text-align:center;border-radius:11px;padding:10px 4px 9px;background:linear-gradient(160deg,#14110d,#0d0b08);border:1px solid rgba(212,175,55,0.18);"><div class="sanct-stat-num-v2" id="v2-stat-score">—</div><div class="sanct-stat-label-v2">Score</div></div><div class="sanct-stat-v2" style="flex:1;text-align:center;border-radius:11px;padding:10px 4px 9px;background:linear-gradient(160deg,#14110d,#0d0b08);border:1px solid rgba(212,175,55,0.18);"><div class="sanct-stat-num-v2" id="v2-stat-days">0</div><div class="sanct-stat-label-v2">Jours</div></div><div class="sanct-stat-v2" style="flex:1;text-align:center;border-radius:11px;padding:10px 4px 9px;background:linear-gradient(160deg,#14110d,#0d0b08);border:1px solid rgba(212,175,55,0.18);"><div class="sanct-stat-num-v2" id="v2-stat-medal">—</div><div class="sanct-stat-label-v2">Médaille</div></div></div><!-- CHALLENGE FAJR --><div id="fajr-challenge-card" style="display:none;margin:0 16px 12px;"></div><!-- DÉFI SEMAINE --><button id="accueilDefiCard" class="defi-card-sanctuaire" onclick="if(typeof openDefiSelector==='function')openDefiSelector()" style="display:none;margin:0 16px 12px;padding:14px 18px;background:#1a1a1a;border:1px solid rgba(200,168,75,0.3);border-radius:14px;cursor:pointer;position:relative;z-index:10;text-align:left;min-height:90px;box-sizing:border-box;font-family:inherit;color:inherit;width:calc(100% - 32px);"><div style="display:flex;align-items:center;gap:12px;width:100%;"><div id="defiCardIcon"><img src="https://nabs881-sketch.github.io/niyyah-app/imagescroissant.png" alt="Croissant" style="width:60px;height:auto;display:block;flex-shrink:0;"></div><div style="flex:1;text-align:left;"><div id="defiCardTitre" style="font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:600;color:#C8A84A;">Défi de la semaine</div><div id="defiCardScore" style="font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;color:#B0A080;margin-top:2px;"></div></div></div><div id="defiCardDots" style="display:none;"></div><div id="defiCardBar" style="position:absolute;bottom:0;left:0;right:0;height:3px;background:rgba(200,168,75,0.12);border-radius:0 0 14px 14px;overflow:hidden;"><div id="defiCardBarFill" style="height:100%;width:0%;background:#C8A84A;transition:width 0.6s ease;"></div></div></button>${heroSectionP}<!-- STREAK HERO --><div style="text-align:center;padding:36px 20px 28px;position:relative;"><div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;">${t('prog_streak')}</div><div style="font-size:80px;font-weight:900;line-height:1;background:${streakDisplay >= 7 ? 'linear-gradient(135deg,#c8a84b,#e8cc6a)' : 'linear-gradient(135deg,var(--green),#7effa0)'};-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-3px;">${streakDisplay}</div><div style="font-size:13px;color:var(--t3);margin-top:6px;letter-spacing:1px;">${t('prog_days')}</div><div style="display:flex;justify-content:center;gap:24px;margin-top:16px;"><div style="text-align:center;"><div style="font-size:18px;font-weight:700;color:var(--t1);">${bestDisplay}</div><div style="font-size:12px;color:var(--t3);letter-spacing:0.8px;text-transform:uppercase;">${t('prog_best')}</div></div><div style="width:1px;background:rgba(255,255,255,0.1);"></div><div style="text-align:center;"><div style="font-size:18px;font-weight:700;color:var(--t1);">${totalDisplay}</div><div style="font-size:12px;color:var(--t3);letter-spacing:0.8px;text-transform:uppercase;">${t('prog_total')}</div></div></div></div><!-- HADITH CONTEXTUEL --><div style="margin:0 16px 24px;padding:20px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.2);border-radius:16px;position:relative;overflow:hidden;"><div style="position:absolute;top:-10px;right:12px;font-size:48px;opacity:0.07;font-family:serif;">"</div><div style="font-size:14px;line-height:1.7;color:var(--t1);font-style:italic;margin-bottom:10px;">${hadith.text}</div><div style="font-size:11px;color:#c8a84b;font-weight:600;letter-spacing:0.5px;">— ${hadith.ref}</div></div><!-- GRAINE DE LUMIÈRE --><div style="margin:0 16px 24px;background:linear-gradient(135deg,rgba(200,168,75,0.08),rgba(200,168,75,0.03));border:1px solid rgba(200,168,75,0.25);border-radius:20px;padding:28px;text-align:center;"><div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;color:#C8A84A;text-transform:uppercase;margin-bottom:12px;">${t('graine_title')}</div><div style="font-family:'Cormorant Garamond',serif;font-size:13px;font-style:italic;color:#B0A080;margin-bottom:12px;">${t('graine_sub')}</div><div style="margin:0 auto 12px;">${getGraineSVG((function(){try{return JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length)}</div><div style="font-size:11px;color:#B0A080;margin-bottom:10px;">${(function(){try{return JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length} ${t('graine_defis')}</div><div style="font-family:'Cormorant Garamond',serif;font-size:12px;font-style:italic;color:#C8A84A;opacity:0.7;line-height:1.6;">${t('graine_quote')}</div></div><!-- HEATMAP 30 JOURS --><div style="margin:0 16px 24px;"><div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;">${t('prog_heatmap')}</div><div style="display:grid;grid-template-columns:repeat(10,1fr);gap:4px;">
           ${heatmapHTML}
-        </div><div style="display:flex;gap:12px;margin-top:10px;align-items:center;"><div style="display:flex;align-items:center;gap:4px;"><div style="width:8px;height:8px;border-radius:2px;background:var(--green);"></div><span style="font-size:10px;color:var(--t3);">${t('prog_present')}</span></div><div style="display:flex;align-items:center;gap:4px;"><div style="width:8px;height:8px;border-radius:2px;background:linear-gradient(135deg,#c8a84b,#e8cc6a);"></div><span style="font-size:10px;color:var(--t3);">${t('prog_gold_day')}</span></div><div style="display:flex;align-items:center;gap:4px;"><div style="width:8px;height:8px;border-radius:2px;background:rgba(255,255,255,0.06);"></div><span style="font-size:10px;color:var(--t3);">${t('prog_absent')}</span></div></div></div><!-- BILAN 7 JOURS -->${bilanHTML}<!-- BADGES (secondaire) --><div style="margin:0 16px;"><div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;">${t('prog_rewards')}</div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">
-          ${badgesHTML}
-        </div></div>
+        </div><div style="display:flex;gap:12px;margin-top:10px;align-items:center;"><div style="display:flex;align-items:center;gap:4px;"><div style="width:8px;height:8px;border-radius:2px;background:var(--green);"></div><span style="font-size:10px;color:var(--t3);">${t('prog_present')}</span></div><div style="display:flex;align-items:center;gap:4px;"><div style="width:8px;height:8px;border-radius:2px;background:linear-gradient(135deg,#c8a84b,#e8cc6a);"></div><span style="font-size:10px;color:var(--t3);">${t('prog_gold_day')}</span></div><div style="display:flex;align-items:center;gap:4px;"><div style="width:8px;height:8px;border-radius:2px;background:rgba(255,255,255,0.06);"></div><span style="font-size:10px;color:var(--t3);">${t('prog_absent')}</span></div></div></div><!-- BILAN 7 JOURS -->${bilanHTML}
 
       </div>
   `;
@@ -3157,8 +3102,7 @@ function tapTasbih() {
     checkLevelCompletion(currentLevel);
     updateGlobalProgress();
     renderTabs();
-    checkBadges();
-  }
+    }
   const barEl = document.getElementById('cnt-bar-' + _tasbihId);
   const numEl2 = document.getElementById('cnt-num-' + _tasbihId);
   if (barEl) barEl.style.width = Math.min(count / _tasbihTarget * 100, 100) + '%';
@@ -5460,7 +5404,6 @@ const V2_I18N = {
     // Progression
     prog_streak: 'Série en cours', prog_days: 'JOURS CONSÉCUTIFS', prog_best: 'Meilleur', prog_total: 'Total jours',
     prog_heatmap: '30 derniers jours', prog_present: 'Présent', prog_gold_day: 'Journée or', prog_absent: 'Absent',
-    prog_rewards: 'Récompenses',
     prog_msg_none: 'Bismillah — commence ta journée ✦', prog_msg_bronze: 'Mashallah !', prog_msg_silver: 'SubhanAllah !', prog_msg_gold: 'Allahu Akbar !',
     prog_sub_none: 'Chaque petit acte te rapproche d\'Allah', prog_sub_bronze: 'Les fondations sont posées', prog_sub_silver: 'Dhikr, prière, constance', prog_sub_gold: 'Journée parfaite accomplie',
     // Graine
@@ -5565,7 +5508,6 @@ const V2_I18N = {
     toast_niyyah: '✦ Niyyah set — Bismillah 🌿',
     prog_streak: 'Current streak', prog_days: 'CONSECUTIVE DAYS', prog_best: 'Best', prog_total: 'Total days',
     prog_heatmap: 'Last 30 days', prog_present: 'Present', prog_gold_day: 'Gold day', prog_absent: 'Absent',
-    prog_rewards: 'Rewards',
     prog_msg_none: 'Bismillah — start your day ✦', prog_msg_bronze: 'Mashallah!', prog_msg_silver: 'SubhanAllah!', prog_msg_gold: 'Allahu Akbar!',
     prog_sub_none: 'Every small act brings you closer to Allah', prog_sub_bronze: 'Foundations are set', prog_sub_silver: 'Dhikr, prayer, consistency', prog_sub_gold: 'Perfect day accomplished',
     graine_title: 'Seed of Light', graine_sub: 'The seed awaits the light', graine_defis: 'challenges completed', graine_quote: 'Have you seen what you cultivate? — Al-Waqi\'a 63',
@@ -5661,7 +5603,6 @@ const V2_I18N = {
     toast_niyyah: '✦ ثَبَتَتِ النِّيَّةُ — بِسْمِ اللَّهِ 🌿',
     prog_streak: 'السِّلْسِلَةُ الْحَالِيَّةُ', prog_days: 'أَيَّامٌ مُتَتَالِيَةٌ', prog_best: 'الْأَفْضَلُ', prog_total: 'إِجْمَالِي الْأَيَّامِ',
     prog_heatmap: 'آخِرُ ٣٠ يَوْمًا', prog_present: 'حَاضِرٌ', prog_gold_day: 'يَوْمٌ ذَهَبِيٌّ', prog_absent: 'غَائِبٌ',
-    prog_rewards: 'الْمُكَافَآتُ',
     prog_msg_none: 'بِسْمِ اللَّهِ — ابْدَأْ يَوْمَكَ ✦', prog_msg_bronze: 'مَا شَاءَ اللَّهُ!', prog_msg_silver: 'سُبْحَانَ اللَّهِ!', prog_msg_gold: 'اللَّهُ أَكْبَرُ!',
     prog_sub_none: 'كُلُّ عَمَلٍ صَغِيرٍ يُقَرِّبُكَ مِنَ اللَّهِ', prog_sub_bronze: 'تَمَّ وَضْعُ الْأَسَاسِ', prog_sub_silver: 'ذِكْرٌ وَصَلَاةٌ وَمُدَاوَمَةٌ', prog_sub_gold: 'يَوْمٌ مِثَالِيٌّ',
     graine_title: 'بَذْرَةُ النُّورِ', graine_sub: 'الْبَذْرَةُ تَنْتَظِرُ النُّورَ', graine_defis: 'تَحَدِّيَاتٌ مُنْجَزَةٌ', graine_quote: 'أَفَرَأَيْتُمْ مَا تَحْرُثُونَ — الْوَاقِعَة ٦٣',
