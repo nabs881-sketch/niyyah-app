@@ -1,11 +1,9 @@
-const VERSION = 'niyyah-v17';
+const VERSION = 'niyyah-v18';
 const CORE = [
   './index.html',
   './manifest.json',
   './icon-192.png',
   './icon-512.png',
-  './bannière.png',
-  './fond.png',
   './logo2.png',
   './jannat-al-qalb.mp3',
   './rahatal-qulub.mp3',
@@ -52,12 +50,18 @@ self.addEventListener('fetch', e => {
           }
           return res;
         })
-        .catch(() => caches.match(e.request))
+        .catch(async () => {
+          const cached = await caches.match(e.request);
+          return cached || new Response('', { status: 503, statusText: 'Offline' });
+        })
     );
     return;
   }
 
-  e.respondWith(fetch(e.request).catch(() => caches.match(e.request)));
+  e.respondWith(fetch(e.request).catch(async () => {
+    const cached = await caches.match(e.request);
+    return cached || new Response('', { status: 503, statusText: 'Offline' });
+  }));
 });
 
 self.addEventListener('notificationclick', e => {
