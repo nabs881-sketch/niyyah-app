@@ -1736,7 +1736,7 @@ body::before {
 /* ─── INTENTION CHIP ─── */
 .intention-chip-v2 {
   text-align: center; width: 90%; max-width: 320px;
-  margin: 0 auto 36px;
+  margin: 0 auto 8px;
   animation: fadeSlideV2 0.8s var(--ease-silk-v2) 0.45s both;
 }
 .chip-inner-v2 {
@@ -3353,7 +3353,7 @@ button[style*="gold-v2"] {
 /* Bloc unifié Moment + Level */
 .moment-level-block {
   width: 100%;
-  margin: 8px auto 24px;
+  margin: 0 auto 24px;
   padding: 10px 16px;
   background: rgba(200,168,75,0.04);
   border: 1px solid rgba(200,168,75,0.12);
