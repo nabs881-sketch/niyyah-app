@@ -7590,9 +7590,19 @@ function regardeCapture() {
     var aborted = false;
     var timer = setTimeout(function() { aborted = true; fallback('INDETERMINE'); }, 8000);
 
+    function saveAndShow(question, cat) {
+      _regardeShowQuestion(content, question);
+      _currentRegardeCat = cat || 'INDETERMINE';
+      _regardeStarred = false;
+      compressPhoto(dataUrl).then(function(photo) {
+        var entry = addRegardeEntry({ question: question, category: _currentRegardeCat, photo: photo, bookmark: false, note: '' });
+        _currentRegardeId = entry.id;
+      });
+    }
+
     function fallback(cat) {
       if (timer) { clearTimeout(timer); timer = null; }
-      _regardeShowQuestion(content, pickRegardeQuestion(cat || 'INDETERMINE'));
+      saveAndShow(pickRegardeQuestion(cat || 'INDETERMINE'), cat);
     }
 
     fetch('https://niyyah-api.nabs881.workers.dev/api/regarde', {
@@ -7605,7 +7615,7 @@ function regardeCapture() {
       if (aborted) return;
       clearTimeout(timer); timer = null;
       if (data.source === 'ia' && data.question) {
-        _regardeShowQuestion(content, data.question);
+        saveAndShow(data.question, data.category);
       } else {
         fallback(data.category || 'INDETERMINE');
       }
@@ -7617,19 +7627,29 @@ function regardeCapture() {
 }
 
 var _regardeStarred = false;
+var _currentRegardeId = null;
+var _currentRegardeCat = 'INDETERMINE';
 function regardeToggleStar() {
   _regardeStarred = !_regardeStarred;
   var btn = document.getElementById('regarde-btn-star');
   if (btn) { btn.textContent = _regardeStarred ? '★' : '☆'; btn.style.background = _regardeStarred ? 'rgba(212,175,55,0.15)' : 'transparent'; }
+  if (_currentRegardeId) updateRegardeEntry(_currentRegardeId, { bookmark: _regardeStarred });
 }
 function regardeRefresh() {
+  if (_currentRegardeId) deleteEntry('regarde', _currentRegardeId);
   _regardeStarred = false;
+  _currentRegardeId = null;
   var q = document.getElementById('regarde-question');
   if (!q) return;
   q.style.opacity = '0';
   setTimeout(function() {
-    q.textContent = pickRegardeQuestion('INDETERMINE');
+    var newQuestion = pickRegardeQuestion(_currentRegardeCat || 'INDETERMINE');
+    q.textContent = newQuestion;
     q.style.opacity = '1';
+    compressPhoto(window._regardeImageData || '').then(function(photo) {
+      var entry = addRegardeEntry({ question: newQuestion, category: _currentRegardeCat, photo: photo, bookmark: false, note: '' });
+      _currentRegardeId = entry.id;
+    });
   }, 300);
   var btn = document.getElementById('regarde-btn-star');
   if (btn) { btn.textContent = '☆'; btn.style.background = 'transparent'; }
@@ -7766,6 +7786,13 @@ function scannerShowResult(data) {
     if (nuancesEl) nuancesEl.innerHTML = '';
     result.classList.add('active');
     if (navigator.vibrate) navigator.vibrate([25, 50, 40]);
+    // Sauvegarde journal Niyyah
+    var _scanImg = document.getElementById('scanner-canvas');
+    if (_scanImg) {
+      compressPhoto(_scanImg.toDataURL('image/jpeg', 0.85)).then(function(photo) {
+        addNiyyahEntry({ intention: data.niyyahDirect, category: data.category || 'INDETERMINE', photo: photo });
+      });
+    }
     return;
   }
 
