@@ -2010,6 +2010,7 @@ function animateTabSwipe(direction, callback) {
 }
 
 function selectLevel(id) {
+  console.log('[DEBUG] selectLevel called with id:', id);
   if (id > 1 && !state._unlocked.includes(id)) {
     state._unlocked.push(id);
     saveState();
@@ -7174,7 +7175,7 @@ function updateSanctuaireMoment() {
     el.innerHTML = '<div style="text-align:center;padding:20px;">'
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-weight:700;color:#C8A84A;">' + _iconSpan + (hasLevel4 ? t('block_qiyam') : 'La nuit est pour le repos') + '</div>'
       + '<div style="font-family:\'Inter\',var(--sans);font-size:12px;color:rgba(255,255,255,0.6);margin-top:6px;">' + qSub + '</div>'
-      + (hasLevel4 && !tahajjudDone ? '<button onclick="selectLevel(currentLevel)" style="display:block;width:100%;margin-top:12px;padding:0 20px;height:40px;background:transparent;border:1px solid rgba(200,168,75,0.4);border-radius:10px;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:13px;font-weight:600;cursor:pointer;">→ Prier</button>' : '')
+      + (hasLevel4 && !tahajjudDone ? '<button onclick="event.stopPropagation();selectLevel(currentLevel);" ontouchend="event.stopPropagation();event.preventDefault();selectLevel(currentLevel);" style="display:block;width:100%;margin-top:12px;padding:0 20px;height:40px;background:transparent;border:1px solid rgba(200,168,75,0.4);border-radius:10px;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:13px;font-weight:600;cursor:pointer;">→ Prier</button>' : '')
       + '</div>';
     return;
   }
@@ -7204,7 +7205,7 @@ function updateSanctuaireMoment() {
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-weight:700;color:#C8A84A;">' + _iconSpan + block.label + '</div>'
       + '<div style="font-family:\'Inter\',var(--sans);font-size:12px;color:rgba(255,255,255,0.6);margin-top:6px;">' + blockDone + ' ' + (blockDone > 1 ? t('actes_done_p') : t('actes_done')) + ' · ' + blockRemaining + ' ' + (blockRemaining > 1 ? t('actes_left_p') : t('actes_left')) + '</div>'
       + jourLine
-      + '<button onclick="selectLevel(currentLevel)" style="display:block;width:100%;margin-top:12px;padding:0 20px;height:40px;background:transparent;border:1px solid rgba(200,168,75,0.4);border-radius:10px;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:13px;font-weight:600;cursor:pointer;">' + t('btn_continue') + ' →</button>'
+      + '<button onclick="event.stopPropagation();selectLevel(currentLevel);" ontouchend="event.stopPropagation();event.preventDefault();selectLevel(currentLevel);" style="display:block;width:100%;margin-top:12px;padding:0 20px;height:40px;background:transparent;border:1px solid rgba(200,168,75,0.4);border-radius:10px;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:13px;font-weight:600;cursor:pointer;">' + t('btn_continue') + ' →</button>'
       + '</div>';
   }
 }
