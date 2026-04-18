@@ -1736,7 +1736,7 @@ body::before {
 /* ─── INTENTION CHIP ─── */
 .intention-chip-v2 {
   text-align: center; width: 100%;
-  margin: 0 auto 8px;
+  margin: 0 auto 16px;
   animation: fadeSlideV2 0.8s var(--ease-silk-v2) 0.45s both;
 }
 .chip-inner-v2 {
