@@ -6897,16 +6897,17 @@ function renderLevelStripCondensed() {
   var lvl = LEVELS.find(function(l) { return l.id === currentLevel; });
   if (!lvl) return;
   var pct = Math.round(getLevelProgress(currentLevel));
-  var dots = '';
+  var dotsStr = '';
   for (var i = 0; i < lvl.sections.length; i++) {
     var sec = lvl.sections[i];
     var secDone = sec.items.every(function(item) {
       try { return isItemDone(item, state); } catch(e) { return item.type === 'counter' ? (state[item.id] || 0) >= item.target : !!state[item.id]; }
     });
-    dots += '<div class="lvl-dot' + (secDone ? ' filled' : '') + '"></div>';
+    dotsStr += secDone ? '●' : '○';
   }
-  el.innerHTML = '<div class="lvl-strip-row"><div class="lvl-strip-name">' + lvl.title.toUpperCase() + '</div><div class="lvl-strip-dots">' + dots + '</div></div>'
-    + '<div class="lvl-strip-bar-row"><div class="lvl-strip-track"><div class="lvl-strip-fill" style="width:' + pct + '%;"></div></div><div class="lvl-strip-pct">' + pct + '%</div></div>';
+  el.innerHTML = '<div class="lvl-strip-name">' + lvl.title.toUpperCase() + '</div>'
+    + '<div class="lvl-strip-meta">' + dotsStr + ' · ' + pct + '%</div>'
+    + '<div class="lvl-strip-track"><div class="lvl-strip-fill" style="width:' + pct + '%;"></div></div>';
 }
 function updateSpiritualTitle() {
   var el = document.getElementById('v2-spiritual-title');
@@ -7157,34 +7158,21 @@ function updateSanctuaireMoment() {
   var blockId = block.id;
   // Nuit et Qiyam — messages spéciaux
   if (blockId === 'nuit') {
-    el.innerHTML = '<div style="display:flex;align-items:center;gap:10px;">'
-      + '<div style="width:3px;height:36px;background:linear-gradient(180deg,#C8A84A,#E0C870);border-radius:2px;flex-shrink:0;"></div>'
-      + '<div style="flex:1;">'
-      + '<div style="font-size:15px;font-weight:700;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;">' + t('block_nuit') + ' — ' + t('bandeau_nuit') + '</div>'
-      + '<div style="font-size:11px;color:var(--t3);margin-top:2px;">' + t('bandeau_nuit') + '</div>'
-      + '</div></div>';
+    el.innerHTML = '<div style="text-align:center;padding:20px;">'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-weight:700;color:#C8A84A;">' + t('block_nuit') + '</div>'
+      + '<div style="font-family:\'Inter\',var(--sans);font-size:12px;color:rgba(255,255,255,0.6);margin-top:6px;">' + t('bandeau_nuit') + '</div>'
+      + '</div>';
     return;
   }
   if (blockId === 'qiyam') {
     var hasLevel4 = state._unlocked && state._unlocked.includes(4);
-    if (hasLevel4) {
-      var tahajjudDone = !!state['tahajjud'];
-      el.innerHTML = '<div style="display:flex;align-items:center;gap:10px;">'
-        + '<div style="width:3px;height:36px;background:linear-gradient(180deg,#C8A84A,#E0C870);border-radius:2px;flex-shrink:0;"></div>'
-        + '<div style="flex:1;">'
-        + '<div style="font-size:15px;font-weight:700;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;">' + t('block_qiyam') + '</div>'
-        + '<div style="font-size:11px;color:var(--t3);margin-top:2px;">' + (tahajjudDone ? '✦ Qiyam al-Layl' : t('bandeau_qiyam')) + '</div>'
-        + '</div>'
-        + (tahajjudDone ? '' : '<button onclick="v2GoTo(\'checklist\')" style="background:transparent;border:1px solid rgba(200,168,75,0.4);color:#C8A84A;font-size:12px;font-weight:600;padding:6px 14px;border-radius:10px;cursor:pointer;white-space:nowrap;">→ Prier</button>')
-        + '</div>';
-    } else {
-      el.innerHTML = '<div style="display:flex;align-items:center;gap:10px;">'
-        + '<div style="width:3px;height:36px;background:linear-gradient(180deg,#C8A84A,#E0C870);border-radius:2px;flex-shrink:0;"></div>'
-        + '<div style="flex:1;">'
-        + '<div style="font-size:15px;font-weight:700;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;">🌙 La nuit est pour le repos</div>'
-        + '<div style="font-size:11px;color:var(--t3);margin-top:2px;">Dors avec le Witr</div>'
-        + '</div></div>';
-    }
+    var tahajjudDone = hasLevel4 && !!state['tahajjud'];
+    var qSub = hasLevel4 ? (tahajjudDone ? '✦ Qiyam al-Layl' : t('bandeau_qiyam')) : 'Dors avec le Witr';
+    el.innerHTML = '<div style="text-align:center;padding:20px;">'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-weight:700;color:#C8A84A;">' + (hasLevel4 ? t('block_qiyam') : '🌙 La nuit est pour le repos') + '</div>'
+      + '<div style="font-family:\'Inter\',var(--sans);font-size:12px;color:rgba(255,255,255,0.6);margin-top:6px;">' + qSub + '</div>'
+      + (hasLevel4 && !tahajjudDone ? '<button onclick="selectLevel(currentLevel)" style="display:block;width:100%;margin-top:12px;padding:0 20px;height:40px;background:transparent;border:1px solid rgba(200,168,75,0.4);border-radius:10px;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:13px;font-weight:600;cursor:pointer;">→ Prier</button>' : '')
+      + '</div>';
     return;
   }
   function _isDone(item) { return item.type === 'counter' ? (state[item.id] || 0) >= item.target : !!state[item.id]; }
@@ -7196,30 +7184,24 @@ function updateSanctuaireMoment() {
   var blockRemaining = blockTotal - blockDone;
   if (blockTotal === 0) { el.innerHTML = ''; return; }
   var jourItems = _allUnlocked.filter(function(item) { return item.block === 'jour'; });
-  var jourTotal = jourItems.length;
   var jourDone = jourItems.filter(_isDone).length;
-  var jourRemaining = jourTotal - jourDone;
+  var jourRemaining = jourItems.length - jourDone;
   var jourLine = '';
-  if (jourRemaining > 0 && jourTotal <= 5) {
-    jourLine = '<div style="font-size:10px;color:var(--t3);margin-top:3px;opacity:0.7;">+ ' + jourRemaining + ' acte' + (jourRemaining > 1 ? 's' : '') + ' du jour restant' + (jourRemaining > 1 ? 's' : '') + '</div>';
+  if (jourRemaining > 0 && jourItems.length <= 5) {
+    jourLine = '<div style="font-family:\'Inter\',var(--sans);font-size:10px;color:rgba(255,255,255,0.4);margin-top:4px;">+ ' + jourRemaining + ' acte' + (jourRemaining > 1 ? 's' : '') + ' du jour</div>';
   }
   if (blockRemaining === 0) {
-    el.innerHTML = '<div style="display:flex;align-items:center;gap:10px;">'
-      + '<div style="width:3px;height:36px;background:linear-gradient(180deg,#C8A84A,#E0C870);border-radius:2px;flex-shrink:0;"></div>'
-      + '<div style="flex:1;">'
-      + '<div style="font-size:15px;font-weight:700;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;">' + t('bloc_done') + '</div>'
-      + '<div style="font-size:11px;color:var(--t3);margin-top:2px;">' + t('bloc_done_sub') + '</div>'
+    el.innerHTML = '<div style="text-align:center;padding:20px;">'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-weight:700;color:#C8A84A;">' + t('bloc_done') + '</div>'
+      + '<div style="font-family:\'Inter\',var(--sans);font-size:12px;color:rgba(255,255,255,0.6);margin-top:6px;">' + t('bloc_done_sub') + '</div>'
       + jourLine
-      + '</div></div>';
+      + '</div>';
   } else {
-    el.innerHTML = '<div style="display:flex;align-items:center;gap:10px;">'
-      + '<div style="width:3px;height:36px;background:linear-gradient(180deg,#C8A84A,#E0C870);border-radius:2px;flex-shrink:0;"></div>'
-      + '<div style="flex:1;">'
-      + '<div style="font-size:15px;font-weight:700;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;">' + block.label + '</div>'
-      + '<div style="font-size:11px;color:var(--t3);margin-top:2px;">' + blockDone + ' ' + (blockDone > 1 ? t('actes_done_p') : t('actes_done')) + ' · ' + blockRemaining + ' ' + (blockRemaining > 1 ? t('actes_left_p') : t('actes_left')) + '</div>'
+    el.innerHTML = '<div style="text-align:center;padding:20px;">'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-weight:700;color:#C8A84A;">' + block.label + '</div>'
+      + '<div style="font-family:\'Inter\',var(--sans);font-size:12px;color:rgba(255,255,255,0.6);margin-top:6px;">' + blockDone + ' ' + (blockDone > 1 ? t('actes_done_p') : t('actes_done')) + ' · ' + blockRemaining + ' ' + (blockRemaining > 1 ? t('actes_left_p') : t('actes_left')) + '</div>'
       + jourLine
-      + '</div>'
-      + '<button onclick="v2GoTo(\'checklist\')" style="background:transparent;border:1px solid rgba(200,168,75,0.4);color:#C8A84A;font-size:12px;font-weight:600;padding:6px 14px;border-radius:10px;cursor:pointer;white-space:nowrap;">' + t('btn_continue') + '</button>'
+      + '<button onclick="selectLevel(currentLevel)" style="display:block;width:100%;margin-top:12px;padding:0 20px;height:40px;background:transparent;border:1px solid rgba(200,168,75,0.4);border-radius:10px;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:13px;font-weight:600;cursor:pointer;">' + t('btn_continue') + ' →</button>'
       + '</div>';
   }
 }
