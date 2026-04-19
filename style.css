@@ -2977,7 +2977,7 @@ button[style*="gold-v2"] {
 }
 #regarde-close {
   position: absolute;
-  top: 18px;
+  top: calc(var(--safe-top, 0px) + 18px);
   right: 18px;
   z-index: 10;
   background: transparent;
