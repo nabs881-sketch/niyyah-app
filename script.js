@@ -1695,7 +1695,7 @@ function renderAccueil() {
   const scoreEl = document.getElementById('accueilScore');
   if (scoreEl) scoreEl.textContent = scoreJour;
   const scoreLbl = document.getElementById('accueilScoreLabel');
-  if (scoreLbl) scoreLbl.textContent = scoreJour >= 80 ? 'MashaAllah ✦' : scoreJour >= 50 ? 'Continue ↗' : 'En cours…';
+  if (scoreLbl) scoreLbl.textContent = scoreJour >= 80 ? 'MashaAllah ✦' : scoreJour >= 50 ? t('score_continue') : t('score_progress');
   if (scoreEl) scoreEl.style.color = scoreJour >= 80 ? '#c8a84b' : scoreJour >= 50 ? 'var(--green)' : 'var(--t2)';
 
   // Medal
@@ -2185,10 +2185,10 @@ function renderLevel(levelId) {
   const scoreColor = scoreJour >= 80 ? '#c8a84b' : scoreJour >= 50 ? 'var(--green)' : 'var(--t2)';
   const scoreBg = scoreJour >= 80 ? 'rgba(200,168,75,0.12)' : scoreJour >= 50 ? 'rgba(52,217,98,0.08)' : 'rgba(255,255,255,0.04)';
   const scoreBorder = scoreJour >= 80 ? 'rgba(200,168,75,0.3)' : scoreJour >= 50 ? 'rgba(52,217,98,0.2)' : 'rgba(255,255,255,0.08)';
-  const scoreLabel = scoreJour >= 80 ? 'MashaAllah ✦' : scoreJour >= 50 ? 'Continue ↗' : 'En cours…';
+  const scoreLabel = scoreJour >= 80 ? 'MashaAllah ✦' : scoreJour >= 50 ? t('score_continue') : t('score_progress');
   let html = '<div class="level-hero"><div class="hero-label">Niveau ' + level.id + '</div><div class="hero-title">' + level.title + '</div><div class="hero-bar-row"><div class="hero-bar-track"><div class="hero-bar-fill" style="width:' + pct + '%"></div></div><div class="hero-pct">' + Math.round(pct) + '%</div></div>'
     + '<div style="display:flex;align-items:center;justify-content:space-between;margin-top:10px;padding:8px 12px;background:' + scoreBg + ';border:1px solid ' + scoreBorder + ';border-radius:10px;">'
-    + '<div style="font-size:11px;color:var(--t3);letter-spacing:0.5px;">Score pondéré du jour</div>'
+    + '<div style="font-size:11px;color:var(--t3);letter-spacing:0.5px;">' + t('score_weighted') + '</div>'
     + '<div style="display:flex;align-items:center;gap:6px;">'
     + '<div style="font-size:16px;font-weight:800;color:' + scoreColor + ';">' + scoreJour + '</div>'
     + '<div style="font-size:10px;color:' + scoreColor + ';opacity:0.8;">/100</div>'
@@ -2307,7 +2307,7 @@ function renderLevel(levelId) {
   const nextLvl = LEVELS.find(l => l.id === nextId);
   if (nextLvl && state._unlocked.includes(nextId)) {
     html += '<div style="padding:8px 0 24px;text-align:center;">'
-      + '<button onclick="selectLevel(' + nextId + ')" style="background:transparent;border:1px solid rgba(52,217,98,0.3);color:var(--t3);font-size:12px;padding:8px 20px;border-radius:20px;cursor:pointer;">Passer au Niveau ' + nextId + ' →</button>'
+      + '<button onclick="selectLevel(' + nextId + ')" style="background:transparent;border:1px solid rgba(52,217,98,0.3);color:var(--t3);font-size:12px;padding:8px 20px;border-radius:20px;cursor:pointer;">' + t('btn_skip_level') + nextId + ' →</button>'
       + '</div>';
   } else if (nextLvl && !state._unlocked.includes(nextId)) {
     html += '<div style="padding:8px 0 24px;text-align:center;">'
@@ -2399,7 +2399,7 @@ function renderWirdSmartCard(item, delay) {
         <div style="font-size:13px;font-weight:700;color:${accentColor};">${done}/${total}</div>
         <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.15em;
                     color:rgba(${accentRgb},0.5);">
-          ${allDone ? '✓ COMPLET' : 'OUVRIR ›'}
+          ${allDone ? t('btn_complete') : t('btn_open')}
         </div>
       </div>
     </div>
@@ -3209,8 +3209,8 @@ function renderPrayerTimesCard() {
   if (_prayerTimes || _hasCoords || _prayerLoading) _showCityInput = false;
   if (_showCityInput) {
     return '<div class="prayer-times-card">' +
-      '<div class="prayer-times-header"><div class="prayer-times-title">🕌 Horaires du jour</div></div>' +
-      '<div style="font-size:12px;color:var(--t3);margin-bottom:8px;">Entre ta ville pour voir les horaires de prière</div>' +
+      '<div class="prayer-times-header"><div class="prayer-times-title">' + t('prayer_title') + '</div></div>' +
+      '<div style="font-size:12px;color:var(--t3);margin-bottom:8px;">' + t('city_enter') + '</div>' +
       '<div class="city-input-wrap">' +
         '<input class="city-input" id="cityInput" type="text" placeholder="Ex: Paris, Casablanca, Bruxelles..." value="' + (_prayerCity||'') + '" onkeydown="if(event.key===\'Enter\')saveCityAndLoad()">' +
         '<button class="city-input-btn" onclick="saveCityAndLoad()">OK</button>' +
@@ -3233,7 +3233,7 @@ function renderPrayerTimesCard() {
     '</div>';
   }
   if (!_prayerTimes) return '<div class="prayer-times-card">' +
-    '<div class="prayer-times-header"><div class="prayer-times-title">🕌 Horaires du jour</div>' +
+    '<div class="prayer-times-header"><div class="prayer-times-title">' + t('prayer_title') + '</div>' +
     '<div class="prayer-times-city" onclick="showCityInput()">✏️ ' + (_prayerCity||'Ville') + '</div></div>' +
     '<div style="font-size:12px;color:var(--t3);margin-bottom:10px;">Les horaires n\'ont pas pu être chargés.</div>' +
     '<button class="city-input-btn" style="width:100%;padding:10px;" onclick="loadPrayerTimes()">🔄 Charger les horaires</button>' +
@@ -5093,11 +5093,11 @@ function loadQibla() {
 }
 function renderQiblaCard() {
   const chevron = '<svg width="16" height="16" viewBox="0 0 14 14" style="transition:transform 0.2s;transform:' + (_qiblaOpen ? 'rotate(180deg)' : 'rotate(0deg)') + ';color:var(--gold);flex-shrink:0;"><polyline points="3,5 7,9 11,5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>';
-  const headerHtml = '<div class="qibla-card"><div style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;margin-bottom:' + (_qiblaOpen ? '12' : '0') + 'px;" onclick="_qiblaOpen=!_qiblaOpen;if(!_qiblaOpen)stopCompass();renderLevel(currentLevel)"><div class="qibla-title" style="margin-bottom:0;">🕋 Qibla — Direction de La Mecque</div>' + chevron + '</div>';
+  const headerHtml = '<div class="qibla-card"><div style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;margin-bottom:' + (_qiblaOpen ? '12' : '0') + 'px;" onclick="_qiblaOpen=!_qiblaOpen;if(!_qiblaOpen)stopCompass();renderLevel(currentLevel)"><div class="qibla-title" style="margin-bottom:0;">' + t('qibla_title') + '</div>' + chevron + '</div>';
   if (!_qiblaOpen) return headerHtml + '</div>';
   if (_qiblaLoading) return headerHtml + '<div style="font-size:13px;color:var(--t3);padding:16px 0;text-align:center;">📍 Localisation...</div></div>';
   if (_qiblaError) return headerHtml + '<div style="font-size:13px;color:var(--t3);padding:8px 0;">' + _qiblaError + '</div><button class="qibla-btn" onclick="loadQibla()">Réessayer</button></div>';
-  if (_qiblaAngle === null) return headerHtml + '<div style="font-size:13px;color:var(--t2);margin-bottom:14px;text-align:center;">Trouve la direction de La Mecque depuis ta position</div><button class="qibla-btn" onclick="loadQibla()">📍 Trouver la Qibla</button></div>';
+  if (_qiblaAngle === null) return headerHtml + '<div style="font-size:13px;color:var(--t2);margin-bottom:14px;text-align:center;">' + t('qibla_find_text') + '</div><button class="qibla-btn" onclick="loadQibla()">' + t('qibla_find_btn') + '</button></div>';
   const angle = Math.round(_qiblaAngle);
   const visualAngle = _deviceHeading !== null ? (_qiblaAngle - _deviceHeading + 360) % 360 : angle;
   const dirs = ['N','NE','E','SE','S','SO','O','NO'];
@@ -5446,6 +5446,11 @@ const V2_I18N = {
     conv_msg_2: '7 jours de constance — Allah a vu chaque acte. Continue avec le niveau Approfondissement.',
     conv_msg_3: 'Al-Muwâdhib — celui qui persévère. C\'est toi. Le niveau supérieur t\'appartient.',
     conv_msg_4: 'Si vous êtes reconnaissants, J\'augmenterai Mes bienfaits. — Ibrahim 14:7',
+    score_weighted: 'Score pondéré du jour', score_progress: 'En cours…', score_continue: 'Continue ↗',
+    prayer_title: '🕌 Horaires du jour', city_enter: 'Entre ta ville pour voir les horaires de prière', city_placeholder: 'Ex: Paris, Casablanca, Bruxelles...',
+    qibla_title: '' + t('qibla_title') + '', qibla_find_text: '' + t('qibla_find_text') + '', qibla_find_btn: '' + t('qibla_find_btn') + '',
+    section_prayers: 'Les 5 Prières', section_wird: 'Wird quotidien', section_sunnah: 'Sunnah de base',
+    btn_open: 'OUVRIR ›', btn_complete: '✓ COMPLET', btn_skip_level: 'Passer au Niveau ',
     // Night companion
     night_title: 'Quelle pensée ferme ta journée ?', night_placeholder: 'Écris ta pensée du soir...', night_send: 'ENVOYER', night_sagesse: 'SAGESSE DE LA NUIT',
     // Notifications
@@ -5583,6 +5588,11 @@ const V2_I18N = {
     conv_msg_2: '7 days of constancy — Allah has seen every act. Continue with the Deepening level.',
     conv_msg_3: 'Al-Muwâdhib — the one who perseveres. That is you. The next level is yours.',
     conv_msg_4: 'Si vous êtes reconnaissants, J\'augmenterai Mes bienfaits. — Ibrahim 14:7',
+    score_weighted: 'Today\'s weighted score', score_progress: 'In progress…', score_continue: 'Continue ↗',
+    prayer_title: '🕌 Today\'s prayer times', city_enter: 'Enter your city to see prayer times', city_placeholder: 'Ex: London, Dubai, Istanbul...',
+    qibla_title: '🕋 Qibla — Direction of Mecca', qibla_find_text: 'Find the direction of Mecca from your position', qibla_find_btn: '📍 Find the Qibla',
+    section_prayers: 'The 5 Prayers', section_wird: 'Daily Wird', section_sunnah: 'Essential Sunnah',
+    btn_open: 'OPEN ›', btn_complete: '✓ COMPLETE', btn_skip_level: 'Skip to Level ',
     night_title: 'What thought closes your day?', night_placeholder: 'Write your evening thought...', night_send: 'SEND', night_sagesse: 'NIGHT WISDOM',
     notif_unsupported: 'Notifications are not supported on this device', notif_enabled: '✦ Reminders enabled — JazakAllahu khairan!', notif_later: 'You can enable them later in settings', notif_disabled: '🔕 Reminders disabled',
     share_downloaded: 'Image downloaded — share it 🌿', share_copied: 'Link copied!',
@@ -5708,6 +5718,11 @@ const V2_I18N = {
     card_pratique: '', card_wird: '', card_parcours: '', card_tafakkur: '',
     btn_start_day: '', btn_back_checklist: '', scanner_hint: '',
     conv_msg_0: '', conv_msg_1: '', conv_msg_2: '', conv_msg_3: '', conv_msg_4: '',
+    score_weighted: '', score_progress: '', score_continue: '',
+    prayer_title: '', city_enter: '', city_placeholder: '',
+    qibla_title: '', qibla_find_text: '', qibla_find_btn: '',
+    section_prayers: '', section_wird: '', section_sunnah: '',
+    btn_open: '', btn_complete: '', btn_skip_level: '',
     night_title: 'مَا الْفِكْرَةُ الَّتِي تَخْتِمُ بِهَا يَوْمَكَ؟', night_placeholder: 'اكْتُبْ فِكْرَتَكَ الْمَسَائِيَّةَ...', night_send: 'إِرْسَالٌ', night_sagesse: 'حِكْمَةُ اللَّيْلِ',
     notif_unsupported: 'الْإِشْعَارَاتُ غَيْرُ مَدْعُومَةٍ عَلَى هَذَا الْجِهَازِ', notif_enabled: '✦ تَمَّ تَفْعِيلُ التَّذْكِيرَاتِ — جَزَاكَ اللَّهُ خَيْرًا!', notif_later: 'يُمْكِنُكَ تَفْعِيلُهَا لَاحِقًا فِي الْإِعْدَادَاتِ', notif_disabled: '🔕 تَمَّ تَعْطِيلُ التَّذْكِيرَاتِ',
     share_downloaded: 'تَمَّ التَّحْمِيلُ — شَارِكْهَا 🌿', share_copied: 'تَمَّ النَّسْخُ!',
