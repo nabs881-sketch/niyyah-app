@@ -5389,6 +5389,11 @@ const V2_I18N = {
     notif_unavailable: 'Rappels non disponibles sur cet appareil', notif_unsupported_device: 'Notifications non supportées sur cet appareil',
     qibla_aligned: '✦ Tu es aligné avec La Mecque !', qibla_turn: '🔴 Tourne vers l\'aiguille dorée', qibla_calibrate: '⚠️ Calibre ton téléphone (fais un 8 dans l\'air)',
     geo_loading: '⏳ Localisation...', geo_found: '✓ Localisé !', geo_locate: '📍 Me localiser',
+    nafs_observed_today: '✓ Observé aujourd\'hui', nafs_observe_btn: 'Je l\'ai ressenti aujourd\'hui',
+    journal_niyyah_empty: 'Tes premières intentions apparaîtront ici ✦', journal_regarde_empty: 'Tes premiers Regards apparaîtront ici ✦',
+    ikhlas_earned: 'Tu as mérité cette intention ✦', tawba_door: '✦ La porte est toujours ouverte', tawba_resume: 'Reprendre le chemin',
+    note_saved: 'Enregistré ✦', scanner_analyzing: 'Analyse en cours…', journal_voice_soon: 'Journal de l\'Âme — Prochainement ✦',
+    scanner_adopt: '✦ Adopter cette Niyyah', scanner_retry_label: 'Rescanner',
     // Wird
     wird_back: '← Retour', wird_reset: '↺ Réinitialiser',
     // Locked screen
@@ -5513,6 +5518,11 @@ const V2_I18N = {
     notif_unavailable: 'Reminders not available on this device', notif_unsupported_device: 'Notifications not supported on this device',
     qibla_aligned: '✦ You are aligned with Mecca!', qibla_turn: '🔴 Turn towards the golden needle', qibla_calibrate: '⚠️ Calibrate your phone (make a figure 8 in the air)',
     geo_loading: '⏳ Locating...', geo_found: '✓ Located!', geo_locate: '📍 Locate me',
+    nafs_observed_today: '✓ Observed today', nafs_observe_btn: 'I felt it today',
+    journal_niyyah_empty: 'Your first intentions will appear here ✦', journal_regarde_empty: 'Your first Regards will appear here ✦',
+    ikhlas_earned: 'You have earned this intention ✦', tawba_door: '✦ The door is always open', tawba_resume: 'Resume the path',
+    note_saved: 'Saved ✦', scanner_analyzing: 'Analyzing…', journal_voice_soon: 'Soul Journal — Coming soon ✦',
+    scanner_adopt: '✦ Adopt this Niyyah', scanner_retry_label: 'Rescan',
     wird_back: '← Back', wird_reset: '↺ Reset',
     locked_title: 'Level',
     lvl_start: 'Start!', lvl_progress: 'In progress ✦', lvl_done: 'Accomplished ✦',
@@ -5620,6 +5630,11 @@ const V2_I18N = {
     notif_unavailable: '', notif_unsupported_device: '',
     qibla_aligned: '', qibla_turn: '', qibla_calibrate: '',
     geo_loading: '', geo_found: '', geo_locate: '',
+    nafs_observed_today: '', nafs_observe_btn: '',
+    journal_niyyah_empty: '', journal_regarde_empty: '',
+    ikhlas_earned: '', tawba_door: '', tawba_resume: '',
+    note_saved: '', scanner_analyzing: '', journal_voice_soon: '',
+    scanner_adopt: '', scanner_retry_label: '',
     wird_back: '→ رُجُوعٌ', wird_reset: '↺ إِعَادَةُ التَّعْيِينِ',
     locked_title: 'الْمُسْتَوَى',
     lvl_start: 'ابْدَأْ!', lvl_progress: 'جَارٍ ✦', lvl_done: 'أُنْجِزَ ✦',
@@ -6220,7 +6235,7 @@ function nafsObserve(traitId) {
   var btn = document.getElementById('nafs-observe-btn');
   if (btn) {
     btn.classList.add('nafs-observed');
-    btn.innerHTML = '✓ Observé aujourd\'hui';
+    btn.innerHTML = t('nafs_observed_today');
   }
   if (noteEl) { noteEl.disabled = true; noteEl.style.opacity = '0.4'; }
 
@@ -6279,7 +6294,7 @@ function renderNafsTrait() {
     '<div class="nafs-observe-zone">' +
       '<input type="text" id="nafs-note-input" class="nafs-note-input" maxlength="100" placeholder="Dans quelle situation ? (optionnel)"' + (alreadyDone ? ' disabled style="opacity:0.4;"' : '') + '>' +
       '<button id="nafs-observe-btn" class="nafs-observe-btn' + (alreadyDone ? ' nafs-observed' : '') + '" onclick="nafsObserve(' + t.id + ')"' + (alreadyDone ? ' disabled' : '') + '>' +
-        (alreadyDone ? '✓ Observé aujourd\'hui' : 'Je l\'ai ressenti aujourd\'hui') +
+        (alreadyDone ? t('nafs_observed_today') : t('nafs_observe_btn')) +
       '</button>' +
       '<div id="nafs-week-counter" class="nafs-week-counter"' + (weekCount === 0 ? ' style="opacity:0;"' : '') + '>' +
         (weekCount === 0 ? '' : weekCount === 1 ? 'Tu l\'as observé 1 fois cette semaine' : 'Tu l\'as observé ' + weekCount + ' fois cette semaine') +
@@ -6311,7 +6326,7 @@ function journalSwitchTab(tab) {
     if (tabR) { tabR.style.background = 'transparent'; tabR.style.color = 'rgba(200,168,75,0.4)'; }
     var entries = getNiyyahHistory();
     if (entries.length === 0) {
-      content.innerHTML = '<div style="text-align:center;padding:60px 20px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);">Tes premières intentions apparaîtront ici ✦</div></div>';
+      content.innerHTML = '<div style="text-align:center;padding:60px 20px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);">' + t('journal_niyyah_empty') + '</div></div>';
     } else {
       var html = '';
       entries.forEach(function(e) {
@@ -6329,7 +6344,7 @@ function journalSwitchTab(tab) {
     if (tabR) { tabR.style.background = 'rgba(200,168,75,0.12)'; tabR.style.color = '#D4AF37'; }
     var entries = getRegardeHistory();
     if (entries.length === 0) {
-      content.innerHTML = '<div style="text-align:center;padding:60px 20px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);">Tes premiers Regards apparaîtront ici ✦</div></div>';
+      content.innerHTML = '<div style="text-align:center;padding:60px 20px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);">' + t('journal_regarde_empty') + '</div></div>';
     } else {
       var html = '';
       entries.forEach(function(e) {
@@ -6777,7 +6792,7 @@ function v2OpenNiyyahModal() {
           if (navigator.vibrate) navigator.vibrate(800);
           var unlockMsg = document.createElement('div');
           unlockMsg.style.cssText = 'text-align:center;font-family:"Cormorant Garamond",serif;font-size:14px;font-style:italic;color:#C8A84A;padding:8px 0;animation:fadeSlideV2 0.8s ease forwards;';
-          unlockMsg.textContent = 'Tu as mérité cette intention ✦';
+          unlockMsg.textContent = t('ikhlas_earned');
           opts.insertBefore(unlockMsg, ikhlasBtn);
           setTimeout(function() { ikhlasBtn.style.animation = ''; }, 4500);
         }, 1000);
@@ -6910,7 +6925,7 @@ function applyTawbaGlow() {
       'margin-bottom:12px',
       'animation:fadeSlideV2 0.8s ease forwards'
     ].join(';');
-    msg.textContent = '✦ La porte est toujours ouverte';
+    msg.textContent = t('tawba_door');
     var chip = document.getElementById('v2-intention-chip');
     if (chip && chip.parentNode) chip.parentNode.insertBefore(msg, chip);
     else {
@@ -7570,7 +7585,7 @@ async function regardeOpen() {
     video.srcObject = _regardeStream;
     await video.play();
   } catch(e) {
-    content.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#C8A84A;text-align:center;padding:40px;">Accès caméra refusé</div></div>';
+    content.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#C8A84A;text-align:center;padding:40px;">' + t('camera_denied') + '</div></div>';
   }
 
   screen.classList.add('active');
@@ -7687,7 +7702,7 @@ function _showSavedIndicator(afterId) {
   if (existing) existing.remove();
   var el = document.createElement('div');
   el.id = afterId + '-saved';
-  el.textContent = 'Enregistré ✦';
+  el.textContent = t('note_saved');
   el.style.cssText = 'font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:#D4AF37;text-align:center;margin-top:6px;opacity:0;transition:opacity 0.2s ease;';
   var target = document.getElementById(afterId);
   if (target && target.parentNode) target.parentNode.appendChild(el);
@@ -7738,7 +7753,7 @@ function openRegardeJournal() {
   if (!overlay || !list) return;
   var entries = getRegardeHistory();
   if (entries.length === 0) {
-    list.innerHTML = '<div style="text-align:center;padding:60px 20px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);">Tes premiers Regards apparaîtront ici ✦</div></div>';
+    list.innerHTML = '<div style="text-align:center;padding:60px 20px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);">' + t('journal_regarde_empty') + '</div></div>';
   } else {
     var html = '';
     entries.forEach(function(e) {
@@ -7899,7 +7914,7 @@ function renderNiyyahJournalList(entries) {
   var list = document.getElementById('niyyah-journal-list');
   if (!list) return;
   if (entries.length === 0) {
-    list.innerHTML = '<div style="text-align:center;padding:60px 20px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);">Tes premières intentions apparaîtront ici ✦</div></div>';
+    list.innerHTML = '<div style="text-align:center;padding:60px 20px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);">' + t('journal_niyyah_empty') + '</div></div>';
     return;
   }
   var html = '';
@@ -8161,7 +8176,7 @@ async function scannerCapture() {
   const thinkingEl = document.getElementById('scanner-thinking');
   if (thinkingEl) thinkingEl.classList.add('active');
   captBtn.classList.add('hidden');
-  hint.textContent = 'Analyse en cours…';
+  hint.textContent = t('scanner_analyzing');
   hint.style.opacity = '0.8';
 
   // Capturer l'image depuis la vidéo
@@ -8229,7 +8244,7 @@ async function scannerAnalyzeImage(imageData) {
 
 // HOOK: Journal Vocal
 function v2JournalRecord() {
-  v2ShowToast('Journal de l\'Âme — Prochainement ✦');
+  v2ShowToast(t('journal_voice_soon'));
 }
 }
 
