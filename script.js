@@ -7541,7 +7541,10 @@ function _regardeShowQuestion(content, question) {
     + '<div style="display:flex;gap:20px;margin-top:32px;opacity:0;animation:regardeFadeIn 1.5s ease 0.5s forwards;">'
     + '<button id="regarde-btn-star" onclick="regardeToggleStar()" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">☆</button>'
     + '<button onclick="regardeRefresh()" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">↻</button>'
-    + '<button onclick="console.log(\'écrire note\')" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">✎</button>'
+    + '<button onclick="regardeToggleNote()" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">✎</button>'
+    + '</div>'
+    + '<div id="regarde-note-wrap" style="display:none;width:100%;max-width:80%;margin-top:20px;opacity:0;transition:opacity 0.3s ease;">'
+    + '<textarea id="regarde-note-input" placeholder="Note personnelle..." oninput="regardeSaveNote()" style="width:100%;min-height:60px;background:rgba(200,168,75,0.04);border:1px solid rgba(212,175,55,0.25);border-radius:12px;padding:12px;color:#D4AF37;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;resize:none;outline:none;box-sizing:border-box;"></textarea>'
     + '</div>'
     + '</div>';
   content.style.opacity = '1';
@@ -7617,6 +7620,30 @@ function regardeCapture() {
 
 var _regardeStarred = false;
 var _currentRegardeId = null;
+var _regardeNoteOpen = false;
+function regardeToggleNote() {
+  var wrap = document.getElementById('regarde-note-wrap');
+  var input = document.getElementById('regarde-note-input');
+  if (!wrap) return;
+  _regardeNoteOpen = !_regardeNoteOpen;
+  if (_regardeNoteOpen) {
+    wrap.style.display = 'block';
+    setTimeout(function() { wrap.style.opacity = '1'; if (input) input.focus(); }, 10);
+    if (_currentRegardeId && input) {
+      var entries = getRegardeHistory();
+      var entry = entries.find(function(e) { return e.id === _currentRegardeId; });
+      if (entry && entry.note) input.value = entry.note;
+    }
+  } else {
+    wrap.style.opacity = '0';
+    setTimeout(function() { wrap.style.display = 'none'; }, 300);
+  }
+}
+function regardeSaveNote() {
+  var input = document.getElementById('regarde-note-input');
+  if (!input || !_currentRegardeId) return;
+  updateRegardeEntry(_currentRegardeId, { note: input.value });
+}
 var _currentRegardeCat = 'INDETERMINE';
 function regardeToggleStar() {
   _regardeStarred = !_regardeStarred;
@@ -7718,10 +7745,24 @@ function regardeDetailStar(id) {
 }
 
 function regardeDetailNote(id) {
-  var note = prompt('Note (optionnel) :');
-  if (note === null) return;
-  updateRegardeEntry(id, { note: note });
-  openRegardeDetail(id);
+  var existing = document.getElementById('regarde-detail-note-wrap');
+  if (existing) { existing.remove(); return; }
+  var container = document.getElementById('regarde-detail-content');
+  if (!container) return;
+  var entries = getRegardeHistory();
+  var entry = entries.find(function(e) { return e.id === id; });
+  var wrap = document.createElement('div');
+  wrap.id = 'regarde-detail-note-wrap';
+  wrap.style.cssText = 'margin-top:16px;';
+  wrap.innerHTML = '<textarea id="regarde-detail-note-input" placeholder="Note personnelle..." oninput="regardeDetailNoteSave(\'' + id + '\')" style="width:100%;min-height:80px;background:rgba(200,168,75,0.04);border:1px solid rgba(212,175,55,0.25);border-radius:12px;padding:12px;color:#D4AF37;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;resize:none;outline:none;box-sizing:border-box;">' + ((entry && entry.note) || '') + '</textarea>';
+  container.appendChild(wrap);
+  var input = document.getElementById('regarde-detail-note-input');
+  if (input) input.focus();
+}
+function regardeDetailNoteSave(id) {
+  var input = document.getElementById('regarde-detail-note-input');
+  if (!input) return;
+  updateRegardeEntry(id, { note: input.value });
 }
 
 function regardeDetailDelete(id) {
