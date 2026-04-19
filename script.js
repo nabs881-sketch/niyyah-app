@@ -1992,10 +1992,10 @@ function renderRamadanActivateBtn() {
   if (!btn) return;
   if (ramadanState.active) {
     btn.classList.add('ramadan-on');
-    btn.title = 'Désactiver le Mode Ramadan';
+    btn.title = t('ramadan_disable_title');
   } else {
     btn.classList.remove('ramadan-on');
-    btn.title = 'Activer le Mode Ramadan';
+    btn.title = t('ramadan_enable_title');
   }
 }
 function renderTabs() {
@@ -2155,7 +2155,7 @@ function renderLevel(levelId) {
       // Bouton audio Al-Kahf uniquement pour fri_kahf
       let _audioBtnFri = '';
       if (fi.id === 'fri_kahf') {
-        _audioBtnFri = '<button class="btn-audio" id="btnKahfPlay" ontouchstart="event.stopPropagation()" onclick="toggleKahfAudio(this,event)" title="Écouter Al-Kahf — Alafasy" style="margin-left:0;margin-top:6px;width:auto;padding:0 10px;border-radius:8px;font-size:12px;font-weight:600;display:flex;align-items:center;gap:5px;"><span id="kahfPlayIcon">🔊</span><span id="kahfPlayLabel">Écouter Al-Kahf</span></button>';
+        _audioBtnFri = '<button class="btn-audio" id="btnKahfPlay" ontouchstart="event.stopPropagation()" onclick="toggleKahfAudio(this,event)" title="' + t('kahf_listen') + '" style="margin-left:0;margin-top:6px;width:auto;padding:0 10px;border-radius:8px;font-size:12px;font-weight:600;display:flex;align-items:center;gap:5px;"><span id="kahfPlayIcon">🔊</span><span id="kahfPlayLabel">' + t('kahf_play') + '</span></button>';
       }
       fitems += '<div style="display:flex;align-items:center;justify-content:space-between;">';
       fitems += '<div class="friday-item-label">' + fi.label + '</div>';
@@ -2480,7 +2480,7 @@ function incrementCounter(id, target) {
     setTimeout(() => itemEl && itemEl.classList.remove('celebrate'), 400);
     if (navigator.vibrate) navigator.vibrate([20, 40, 80]);
     playCompleteSound();
-    if (id === 'tasbih') { showToast('🌿 99 accompli ! Dis maintenant : لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ'); } else { showToast('🌿 Mashallah ! ' + target + ' fois accompli !'); }
+    if (id === 'tasbih') { showToast(t('tasbih_99')); } else { showToast(t('tasbih_done') + target + t('tasbih_done_end')); }
     checkLevelCompletion(currentLevel);
   } else {
     if (navigator.vibrate) navigator.vibrate(8);
@@ -2679,7 +2679,7 @@ function toggleItem(id, event) {
           history.jumuahDays[TODAY] = true;
           history.jumuahCount = (history.jumuahCount || 0) + 1;
           saveHistory();
-          showToast('🕌 Jumuah accomplie — Barakallahu feek !');
+          showToast(t('jumuah_done'));
         }
       }
     }
@@ -2721,7 +2721,7 @@ function confirmReset() {
   wirdState = {};
   saveWirdState();
   renderLevel(currentLevel); updateGlobalProgress(); renderTabs();
-  showToast('Nouvelle journee — Bismillah 🌿');
+  showToast(t('new_day'));
 }
 let toastTimeout;
 function showToast(msg) {
@@ -2983,7 +2983,7 @@ function toggleKahfAudio(btn, event) {
     _kahfAudio.pause();
     _kahfPlaying = false;
     if (iconEl)  iconEl.textContent  = '🔊';
-    if (labelEl) labelEl.textContent = 'Écouter Al-Kahf';
+    if (labelEl) labelEl.textContent = t('kahf_play');
     btn.classList.remove('playing');
     return;
   }
@@ -2991,7 +2991,7 @@ function toggleKahfAudio(btn, event) {
     _kahfAudio.play();
     _kahfPlaying = true;
     if (iconEl)  iconEl.textContent  = '⏸';
-    if (labelEl) labelEl.textContent = 'En cours — verset ' + (_kahfIdx + 1) + '/110';
+    if (labelEl) labelEl.textContent = t('kahf_playing') + (_kahfIdx + 1) + '/110';
     btn.classList.add('playing');
     return;
   }
@@ -3000,12 +3000,12 @@ function toggleKahfAudio(btn, event) {
   _kahfPlaying = true;
   btn.classList.add('playing');
   if (iconEl)  iconEl.textContent  = '⏸';
-  if (labelEl) labelEl.textContent = 'Verset 1/110…';
+  if (labelEl) labelEl.textContent = t('kahf_verse') + '1' + t('kahf_verse_end');
   function playNextKahf() {
     if (_kahfIdx >= KAHF_URLS.length || !_kahfPlaying) {
       _kahfPlaying = false;
       if (iconEl)  iconEl.textContent  = '✓';
-      if (labelEl) labelEl.textContent = 'Al-Kahf terminée ✦';
+      if (labelEl) labelEl.textContent = t('kahf_finished');
       btn.classList.remove('playing');
       return;
     }
@@ -3015,7 +3015,7 @@ function toggleKahfAudio(btn, event) {
     a.play().catch(() => {});
     a.onended = function() {
       _kahfIdx++;
-      if (labelEl) labelEl.textContent = 'Verset ' + Math.min(_kahfIdx + 1, 110) + '/110…';
+      if (labelEl) labelEl.textContent = t('kahf_verse') + Math.min(_kahfIdx + 1, 110) + t('kahf_verse_end');
       playNextKahf();
     };
     a.onerror = function() {
@@ -3158,7 +3158,7 @@ function tapTasbih() {
     document.getElementById('tasbihOverlay').classList.add('done');
     if (navigator.vibrate) navigator.vibrate([20, 40, 80]);
     playCompleteSound();
-    if (_tasbihId === 'tasbih') { showToast('🌿 99 accompli ! Dis maintenant : لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ'); } else { showToast('🌿 Mashallah ! ' + _tasbihTarget + ' fois accompli !'); }
+    if (_tasbihId === 'tasbih') { showToast(t('tasbih_99')); } else { showToast(t('tasbih_done') + _tasbihTarget + t('tasbih_done_end')); }
     const barEl = document.getElementById('cnt-bar-' + _tasbihId);
     const numEl2 = document.getElementById('cnt-num-' + _tasbihId);
     if (barEl) barEl.style.width = '100%';
@@ -5381,6 +5381,10 @@ const V2_I18N = {
     defi_enc_0: 'Commence aujourd\'hui — chaque jour compte ✦', defi_enc_1: 'Bien lancé — continue sur cette lancée !', defi_enc_2: 'À mi-chemin — tu y es presque !', defi_enc_3: 'Plus que quelques jours — tiens bon !', defi_enc_4: 'Masha\'Allah — tu es si proche !', defi_enc_5: 'Masha\'Allah ✦ Défi accompli — Barakallahu fik !',
     ramadan_off: 'Mode Ramadan désactivé', ramadan_on: '🌙 Ramadan Mubarak ! Que ce mois soit béni.',
     ramadan_fast: '🌙 Jeûne du jour enregistré — Barakallahu feek !', ramadan_laylatul: '✨ Nuit ', ramadan_laylatul_end: ' — Qu\'Allah l\'accepte !', ramadan_fallback: 'Barakallahu feek !',
+    ramadan_disable_title: 'Désactiver le Mode Ramadan', ramadan_enable_title: 'Activer le Mode Ramadan',
+    kahf_listen: 'Écouter Al-Kahf — Alafasy', kahf_play: 'Écouter Al-Kahf', kahf_playing: 'En cours — verset ', kahf_verse: 'Verset ', kahf_verse_end: '/110…', kahf_finished: 'Al-Kahf terminée ✦',
+    tasbih_99: '🌿 99 accompli ! Dis maintenant : لَا إِلٰهَ إِلَّا ٱللّٰه', tasbih_done: '🌿 Mashallah ! ',  tasbih_done_end: ' fois accompli !',
+    jumuah_done: '🕌 Jumuah accomplie — Barakallahu feek !', new_day: 'Nouvelle journee — Bismillah 🌿',
     // Wird
     wird_back: '← Retour', wird_reset: '↺ Réinitialiser',
     // Locked screen
@@ -5497,6 +5501,10 @@ const V2_I18N = {
     defi_enc_0: 'Start today — every day counts ✦', defi_enc_1: 'Good start — keep it up!', defi_enc_2: 'Halfway there — you\'re almost done!', defi_enc_3: 'Just a few days left — hold on!', defi_enc_4: 'Masha\'Allah — you\'re so close!', defi_enc_5: 'Masha\'Allah ✦ Challenge completed — Barakallahu fik!',
     ramadan_off: 'Ramadan mode disabled', ramadan_on: '🌙 Ramadan Mubarak! May this month be blessed.',
     ramadan_fast: '🌙 Fast recorded — Barakallahu feek!', ramadan_laylatul: '✨ Night ', ramadan_laylatul_end: ' — May Allah accept it!', ramadan_fallback: 'Barakallahu feek!',
+    ramadan_disable_title: 'Disable Ramadan Mode', ramadan_enable_title: 'Enable Ramadan Mode',
+    kahf_listen: 'Listen to Al-Kahf — Alafasy', kahf_play: 'Listen to Al-Kahf', kahf_playing: 'Playing — verse ', kahf_verse: 'Verse ', kahf_verse_end: '/110…', kahf_finished: 'Al-Kahf completed ✦',
+    tasbih_99: '🌿 99 completed! Now say: لَا إِلٰهَ إِلَّا ٱللّٰه', tasbih_done: '🌿 Mashallah! ', tasbih_done_end: ' times completed!',
+    jumuah_done: '🕌 Jumuah completed — Barakallahu feek!', new_day: 'New day — Bismillah 🌿',
     wird_back: '← Back', wird_reset: '↺ Reset',
     locked_title: 'Level',
     lvl_start: 'Start!', lvl_progress: 'In progress ✦', lvl_done: 'Accomplished ✦',
@@ -5596,6 +5604,10 @@ const V2_I18N = {
     defi_enc_0: '', defi_enc_1: '', defi_enc_2: '', defi_enc_3: '', defi_enc_4: '', defi_enc_5: '',
     ramadan_off: '', ramadan_on: '',
     ramadan_fast: '', ramadan_laylatul: '', ramadan_laylatul_end: '', ramadan_fallback: '',
+    ramadan_disable_title: '', ramadan_enable_title: '',
+    kahf_listen: '', kahf_play: '', kahf_playing: '', kahf_verse: '', kahf_verse_end: '', kahf_finished: '',
+    tasbih_99: '', tasbih_done: '', tasbih_done_end: '',
+    jumuah_done: '', new_day: '',
     wird_back: '→ رُجُوعٌ', wird_reset: '↺ إِعَادَةُ التَّعْيِينِ',
     locked_title: 'الْمُسْتَوَى',
     lvl_start: 'ابْدَأْ!', lvl_progress: 'جَارٍ ✦', lvl_done: 'أُنْجِزَ ✦',
