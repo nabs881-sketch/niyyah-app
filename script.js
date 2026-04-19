@@ -5408,7 +5408,8 @@ const V2_I18N = {
     freemium_f5: 'Compagnon Nocturne + Titres spirituels', freemium_f6: 'Badges exclusifs + Streak avancé',
     bilan_title: 'Bilan du soir', bilan_question: 'Comment était ton cœur aujourd\'hui ?', bilan_subtitle: 'Allah regarde la sincérité, pas le score.',
     bilan_distraction: 'Distraction', bilan_effort: 'Effort', bilan_sincerite: 'Sincérité',
-    bilan_distraction_sub: 'غفلة — le cœur absent', bilan_effort_sub: 'مجاهدة — le combat intérieur', bilan_sincerite_sub: 'إخلاص — l\x27état recherché',
+    bilan_distraction_sub: 'غفلة — le cœur absent', bilan_effort_sub: 'مجاهدة — le combat intérieur', bilan_sincerite_sub: 'إخلاص — l\'état recherché',
+    tasbih_label: 'Tasbih', tasbih_hint: 'Appuie n\'importe où',
     // Wird
     wird_back: '← Retour', wird_reset: '↺ Réinitialiser',
     // Locked screen
@@ -5568,6 +5569,7 @@ const V2_I18N = {
     bilan_title: 'Evening review', bilan_question: 'How was your heart today?', bilan_subtitle: 'Allah looks at sincerity, not the score.',
     bilan_distraction: 'Distraction', bilan_effort: 'Effort', bilan_sincerite: 'Sincerity',
     bilan_distraction_sub: 'غفلة — heedless heart', bilan_effort_sub: 'مجاهدة — inner struggle', bilan_sincerite_sub: 'إخلاص — the sought-after state',
+    tasbih_label: 'Tasbih', tasbih_hint: 'Tap anywhere',
     wird_back: '← Back', wird_reset: '↺ Reset',
     locked_title: 'Level',
     lvl_start: 'Start!', lvl_progress: 'In progress ✦', lvl_done: 'Accomplished ✦',
@@ -5706,6 +5708,7 @@ const V2_I18N = {
     freemium_buy: '', freemium_code_placeholder: '', freemium_free: '',
     freemium_f1: '', freemium_f2: '', freemium_f3: '', freemium_f4: '', freemium_f5: '', freemium_f6: '',
     bilan_title: '', bilan_question: '', bilan_subtitle: '', bilan_distraction: '', bilan_distraction_sub: '', bilan_effort: '', bilan_effort_sub: '', bilan_sincerite: '', bilan_sincerite_sub: '',
+    tasbih_label: '', tasbih_hint: '',
     wird_back: '→ رُجُوعٌ', wird_reset: '↺ إِعَادَةُ التَّعْيِينِ',
     locked_title: 'الْمُسْتَوَى',
     lvl_start: 'ابْدَأْ!', lvl_progress: 'جَارٍ ✦', lvl_done: 'أُنْجِزَ ✦',
@@ -6010,6 +6013,8 @@ function v2ApplyI18nHTML() {
   _s('i18n-bilan-effort-sub', 'bilan_effort_sub');
   _s('i18n-bilan-sincerite', 'bilan_sincerite');
   _s('i18n-bilan-sincerite-sub', 'bilan_sincerite_sub');
+  _s('tasbihLabel', 'tasbih_label');
+  _s('i18n-tasbih-hint', 'tasbih_hint');
 }
 
 // Shortcut: old V2_GREETINGS kept for compatibility
