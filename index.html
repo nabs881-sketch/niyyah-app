@@ -467,21 +467,21 @@
     <div style="position:absolute;inset:0;background:rgba(0,0,0,0.30);border-radius:0;"></div>
     <div style="position:relative;z-index:1;padding:28px 24px 40px;">
       <div style="width:36px;height:4px;background:rgba(255,255,255,0.2);border-radius:2px;margin:0 auto 24px;"></div>
-      <p style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.9);text-align:center;margin:0 0 8px;text-shadow:0 2px 8px rgba(0,0,0,0.9);">Bilan du soir</p>
-      <p style="font-size:21px;color:#fff;font-weight:600;text-align:center;margin:0 0 6px;line-height:1.3;text-shadow:0 2px 12px rgba(0,0,0,0.95);">Comment était ton cœur aujourd'hui ?</p>
-      <p style="font-size:13px;color:rgba(255,255,255,0.85);text-align:center;font-style:italic;margin:0 0 28px;text-shadow:0 1px 6px rgba(0,0,0,0.9);">Allah regarde la sincérité, pas le score.</p>
+      <p id="i18n-bilan-title" style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.9);text-align:center;margin:0 0 8px;text-shadow:0 2px 8px rgba(0,0,0,0.9);">Bilan du soir</p>
+      <p id="i18n-bilan-question" style="font-size:21px;color:#fff;font-weight:600;text-align:center;margin:0 0 6px;line-height:1.3;text-shadow:0 2px 12px rgba(0,0,0,0.95);">Comment était ton cœur aujourd'hui ?</p>
+      <p id="i18n-bilan-subtitle" style="font-size:13px;color:rgba(255,255,255,0.85);text-align:center;font-style:italic;margin:0 0 28px;text-shadow:0 1px 6px rgba(0,0,0,0.9);">Allah regarde la sincérité, pas le score.</p>
       <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:20px;">
         <button onclick="setBilanSoir('distraction')" style="background:rgba(0,0,0,0.65);border:1px solid rgba(255,255,255,0.2);border-radius:16px;padding:16px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;width:100%;text-align:left;backdrop-filter:blur(4px);">
           <div style="width:46px;height:46px;border-radius:50%;background:rgba(100,100,130,0.3);border:1px solid rgba(150,150,180,0.25);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;">😶‍🌫️</div>
-          <div><p style="font-size:16px;font-weight:600;color:#fff;margin:0 0 3px;text-shadow:0 1px 4px rgba(0,0,0,0.8);">Distraction</p><p style="font-size:12px;color:rgba(255,255,255,0.85);margin:0;font-style:italic;">غفلة — le cœur absent</p></div>
+          <div><p id="i18n-bilan-distraction" style="font-size:16px;font-weight:600;color:#fff;margin:0 0 3px;text-shadow:0 1px 4px rgba(0,0,0,0.8);">Distraction</p><p id="i18n-bilan-distraction-sub" style="font-size:12px;color:rgba(255,255,255,0.85);margin:0;font-style:italic;">غفلة — le cœur absent</p></div>
         </button>
         <button onclick="setBilanSoir('effort')" style="background:rgba(0,0,0,0.65);border:1px solid rgba(255,214,10,0.5);border-radius:16px;padding:16px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;width:100%;text-align:left;backdrop-filter:blur(4px);">
           <div style="width:46px;height:46px;border-radius:50%;background:rgba(255,214,10,0.1);border:1px solid rgba(255,214,10,0.25);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;">🌤️</div>
-          <div><p style="font-size:16px;font-weight:600;color:#ffd60a;margin:0 0 3px;">Effort</p><p style="font-size:12px;color:rgba(255,214,10,0.9);margin:0;font-style:italic;">مجاهدة — le combat intérieur</p></div>
+          <div><p id="i18n-bilan-effort" style="font-size:16px;font-weight:600;color:#ffd60a;margin:0 0 3px;">Effort</p><p id="i18n-bilan-effort-sub" style="font-size:12px;color:rgba(255,214,10,0.9);margin:0;font-style:italic;">مجاهدة — le combat intérieur</p></div>
         </button>
         <button onclick="setBilanSoir('sincerite')" style="background:rgba(0,0,0,0.65);border:1px solid rgba(52,217,98,0.5);border-radius:16px;padding:16px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;width:100%;text-align:left;backdrop-filter:blur(4px);">
           <div style="width:46px;height:46px;border-radius:50%;background:rgba(52,217,98,0.1);border:1px solid rgba(52,217,98,0.25);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;">☀️</div>
-          <div><p style="font-size:16px;font-weight:600;color:#34d962;margin:0 0 3px;">Sincérité</p><p style="font-size:12px;color:rgba(52,217,98,0.9);margin:0;font-style:italic;">إخلاص — l'état recherché</p></div>
+          <div><p id="i18n-bilan-sincerite" style="font-size:16px;font-weight:600;color:#34d962;margin:0 0 3px;">Sincérité</p><p id="i18n-bilan-sincerite-sub" style="font-size:12px;color:rgba(52,217,98,0.9);margin:0;font-style:italic;">إخلاص — l'état recherché</p></div>
         </button>
       </div>
       <button onclick="closeBilanSoir()" style="width:100%;padding:12px;border-radius:14px;border:1px solid rgba(255,255,255,0.3);background:rgba(0,0,0,0.5);color:rgba(255,255,255,0.8);font-size:13px;cursor:pointer;">Plus tard</button>
