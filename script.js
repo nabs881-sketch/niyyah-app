@@ -378,7 +378,7 @@ function confirmerDefi(defiId) {
   if (s.current && s.current.chosenAt) {
     var hoursSince = (Date.now() - s.current.chosenAt) / 3600000;
     if (hoursSince > 24) {
-      showToast('Tiens-le jusqu\'à dimanche, in sha Allah ✦');
+      showToast(t('defi_locked'));
       closeDefiSelector();
       return;
     }
@@ -533,7 +533,7 @@ function cocherDefiAujourdhui() {
   var _r = getDefiCourant();
   var s = _r.state;
   if (!s.current || !s.current.jours) {
-    showToast('Aucun défi actif');
+    showToast(t('defi_no_active'));
     return;
   }
   const today = getTodayStr();
@@ -562,13 +562,13 @@ function updateDefiBannerTop() {
   try {
     var r = getDefiCourant();
     if (r.defi) {
-      txt.textContent = 'Défi de la semaine · ' + r.defi.titre;
+      txt.textContent = t('defi_week_prefix') + r.defi.titre;
     } else {
-      txt.textContent = 'Défi de la semaine · Choisir ✦';
+      txt.textContent = t('defi_week_choose');
     }
     banner.style.display = 'block';
   } catch(e) {
-    txt.textContent = 'Défi de la semaine · Choisir ✦';
+    txt.textContent = t('defi_week_choose');
     banner.style.display = 'block';
   }
 }
@@ -625,12 +625,12 @@ function renderDefiCard() {
   if (reste > 0 && !defiState.current.complete) {
     const label = document.createElement('div');
     label.style.cssText = 'margin-left:8px;font-size:9px;color:rgba(200,168,75,0.4);flex-shrink:0;';
-    label.textContent = reste + (reste > 1 ? ' jours restants' : ' jour restant');
+    label.textContent = reste + ' ' + (reste > 1 ? t('defi_days_left') : t('defi_day_left'));
     dots.appendChild(label);
   } else if (defiState.current.complete) {
     const label = document.createElement('div');
     label.style.cssText = 'margin-left:8px;font-size:9px;color:#c8a84b;flex-shrink:0;font-weight:700;';
-    label.textContent = '✦ Accompli !';
+    label.textContent = t('defi_accomplished');
     dots.appendChild(label);
   }
   } catch(e) { console.warn('renderDefiCard error:', e); }
@@ -664,7 +664,7 @@ function renderDefiOverlay() {
   }
   // Encouragement
   const fait = state.current.jours.length;
-  const msgs = ['Commence aujourd\'hui — chaque jour compte ✦', 'Bien lancé — continue sur cette lancée !', 'À mi-chemin — tu y es presque !', 'Plus que quelques jours — tiens bon !', 'Masha\'Allah — tu es si proche !', 'Masha\'Allah ✦ Défi accompli — Barakallahu fik !'];
+  const msgs = [t('defi_enc_0'), t('defi_enc_1'), t('defi_enc_2'), t('defi_enc_3'), t('defi_enc_4'), t('defi_enc_5')];
   const idx = Math.min(Math.floor(fait / defi.cible * 5), 5);
   document.getElementById('defiOvEncouragement').textContent = msgs[idx];
   // Bouton
@@ -672,12 +672,12 @@ function renderDefiOverlay() {
   const dejaCoche = state.current.jours.includes(today);
   const btn = document.getElementById('defiOvBtn');
   if (state.current.complete || dejaCoche) {
-    btn.textContent = dejaCoche ? '✓ Coché aujourd\'hui' : '✦ Défi accompli !';
+    btn.textContent = dejaCoche ? t('defi_checked_today') : t('defi_done');
     btn.style.background = 'rgba(200,168,75,0.15)';
     btn.style.color = '#c8a84b';
     btn.style.cursor = 'default';
   } else {
-    btn.textContent = 'Cocher aujourd\'hui ✦';
+    btn.textContent = t('defi_check_today');
     btn.style.background = 'linear-gradient(135deg,#c8a84b,#e8cc6a)';
     btn.style.color = '#000';
     btn.style.cursor = 'pointer';
@@ -727,7 +727,7 @@ function toggleRamadanMode() {
     updateNavRamadan();
     renderRamadanActivateBtn();
     switchView('checklist'); setTimeout(renderDefiCard, 100);
-    showToast('Mode Ramadan désactivé');
+    showToast(t('ramadan_off'));
   } else {
     ramadanState.active = true;
     if (!ramadanState.startDate) ramadanState.startDate = TODAY;
@@ -736,7 +736,7 @@ function toggleRamadanMode() {
     renderRamadanActivateBtn();
     switchView('ramadan');
     renderRamadan();
-    showToast('🌙 Ramadan Mubarak ! Que ce mois soit béni.');
+    showToast(t('ramadan_on'));
     if (navigator.vibrate) navigator.vibrate([30, 40, 60]);
   }
 }
@@ -771,7 +771,7 @@ function toggleFast(dayStr) {
   if (!ramadanState.days) ramadanState.days = {};
   ramadanState.days[dayStr] = !ramadanState.days[dayStr];
   if (ramadanState.days[dayStr]) {
-    showToast('🌙 Jeûne du jour enregistré — Barakallahu feek !');
+    showToast(t('ramadan_fast'));
     if (navigator.vibrate) navigator.vibrate(25);
   }
   if (!history.ramadan) history.ramadan = { totalFasts: 0, laylatul: {} };
@@ -783,7 +783,7 @@ function toggleFast(dayStr) {
 function toggleLaylatul(night) {
   if (!ramadanState.laylatul) ramadanState.laylatul = {};
   ramadanState.laylatul[night] = !ramadanState.laylatul[night];
-  if (ramadanState.laylatul[night]) showToast('✨ Nuit ' + night + ' — Qu\'Allah l\'accepte !');
+  if (ramadanState.laylatul[night]) showToast(t('ramadan_laylatul') + night + t('ramadan_laylatul_end'));
   if (!history.ramadan) history.ramadan = { totalFasts: 0, laylatul: {} };
   history.ramadan.laylatul = ramadanState.laylatul;
   saveHistory();
@@ -803,7 +803,7 @@ function toggleFridayItem(id) {
       'fri_salawat': '🌟 Salawat envoyées sur le Prophète ﷺ',
       'fri_doua':    '🤲 Douaa de l\'heure bénie — qu\'Allah l\'exauce !'
     };
-    showToast(msgs[id] || 'Barakallahu feek !');
+    showToast(msgs[id] || t('ramadan_fallback'));
   }
   renderLevel(currentLevel);
 }
@@ -5375,6 +5375,12 @@ const V2_I18N = {
     defi_none: 'Choisir un défi ✦', defi_tap: 'Appuie pour commencer', defi_browse: 'Appuie pour parcourir les 100 défis →',
     defi_launched: 'Défi lancé : ', defi_done: 'Masha\'Allah ✦ Défi accompli !', defi_checked: '✦ Journée cochée — Continue !', defi_already: 'Déjà coché aujourd\'hui ✓',
     defi_days_left: 'jours restants', defi_day_left: 'jour restant', defi_accomplished: '✦ Accompli !',
+    defi_locked: 'Tiens-le jusqu\'à dimanche, in sha Allah ✦', defi_no_active: 'Aucun défi actif',
+    defi_week_prefix: 'Défi de la semaine · ', defi_week_choose: 'Défi de la semaine · Choisir ✦',
+    defi_checked_today: '✓ Coché aujourd\'hui', defi_check_today: 'Cocher aujourd\'hui ✦',
+    defi_enc_0: 'Commence aujourd\'hui — chaque jour compte ✦', defi_enc_1: 'Bien lancé — continue sur cette lancée !', defi_enc_2: 'À mi-chemin — tu y es presque !', defi_enc_3: 'Plus que quelques jours — tiens bon !', defi_enc_4: 'Masha\'Allah — tu es si proche !', defi_enc_5: 'Masha\'Allah ✦ Défi accompli — Barakallahu fik !',
+    ramadan_off: 'Mode Ramadan désactivé', ramadan_on: '🌙 Ramadan Mubarak ! Que ce mois soit béni.',
+    ramadan_fast: '🌙 Jeûne du jour enregistré — Barakallahu feek !', ramadan_laylatul: '✨ Nuit ', ramadan_laylatul_end: ' — Qu\'Allah l\'accepte !', ramadan_fallback: 'Barakallahu feek !',
     // Wird
     wird_back: '← Retour', wird_reset: '↺ Réinitialiser',
     // Locked screen
@@ -5485,6 +5491,12 @@ const V2_I18N = {
     defi_none: 'Choose a challenge ✦', defi_tap: 'Tap to start', defi_browse: 'Tap to browse 100 challenges →',
     defi_launched: 'Challenge started: ', defi_done: 'Masha\'Allah ✦ Challenge completed!', defi_checked: '✦ Day checked — Keep going!', defi_already: 'Already checked today ✓',
     defi_days_left: 'days left', defi_day_left: 'day left', defi_accomplished: '✦ Accomplished!',
+    defi_locked: 'Keep it until Sunday, in sha Allah ✦', defi_no_active: 'No active challenge',
+    defi_week_prefix: 'Weekly challenge · ', defi_week_choose: 'Weekly challenge · Choose ✦',
+    defi_checked_today: '✓ Checked today', defi_check_today: 'Check today ✦',
+    defi_enc_0: 'Start today — every day counts ✦', defi_enc_1: 'Good start — keep it up!', defi_enc_2: 'Halfway there — you\'re almost done!', defi_enc_3: 'Just a few days left — hold on!', defi_enc_4: 'Masha\'Allah — you\'re so close!', defi_enc_5: 'Masha\'Allah ✦ Challenge completed — Barakallahu fik!',
+    ramadan_off: 'Ramadan mode disabled', ramadan_on: '🌙 Ramadan Mubarak! May this month be blessed.',
+    ramadan_fast: '🌙 Fast recorded — Barakallahu feek!', ramadan_laylatul: '✨ Night ', ramadan_laylatul_end: ' — May Allah accept it!', ramadan_fallback: 'Barakallahu feek!',
     wird_back: '← Back', wird_reset: '↺ Reset',
     locked_title: 'Level',
     lvl_start: 'Start!', lvl_progress: 'In progress ✦', lvl_done: 'Accomplished ✦',
@@ -5578,6 +5590,12 @@ const V2_I18N = {
     defi_none: 'اخْتَرْ تَحَدِّيًا ✦', defi_tap: 'اضْغَطْ لِلْبَدْءِ', defi_browse: 'اضْغَطْ لِتَصَفُّحِ ١٠٠ تَحَدٍّ →',
     defi_launched: 'بَدَأَ التَّحَدِّي: ', defi_done: 'مَا شَاءَ اللَّهُ ✦ أُنْجِزَ التَّحَدِّي!', defi_checked: '✦ يَوْمٌ مُسَجَّلٌ — وَاصِلْ!', defi_already: 'سُجِّلَ الْيَوْمَ بِالْفِعْلِ ✓',
     defi_days_left: 'أَيَّامٌ مُتَبَقِّيَةٌ', defi_day_left: 'يَوْمٌ مُتَبَقٍّ', defi_accomplished: '✦ أُنْجِزَ!',
+    defi_locked: '', defi_no_active: '',
+    defi_week_prefix: '', defi_week_choose: '',
+    defi_checked_today: '', defi_check_today: '',
+    defi_enc_0: '', defi_enc_1: '', defi_enc_2: '', defi_enc_3: '', defi_enc_4: '', defi_enc_5: '',
+    ramadan_off: '', ramadan_on: '',
+    ramadan_fast: '', ramadan_laylatul: '', ramadan_laylatul_end: '', ramadan_fallback: '',
     wird_back: '→ رُجُوعٌ', wird_reset: '↺ إِعَادَةُ التَّعْيِينِ',
     locked_title: 'الْمُسْتَوَى',
     lvl_start: 'ابْدَأْ!', lvl_progress: 'جَارٍ ✦', lvl_done: 'أُنْجِزَ ✦',
