@@ -8009,7 +8009,7 @@ async function scannerCapture() {
   var _weekAgo = new Date(Date.now() - 7 * 86400000).toISOString();
   _scanQuota = _scanQuota.filter(function(ts) { return ts > _weekAgo; });
   var _scanLimit = (typeof isPremium === 'function' && isPremium()) ? 3 : 1;
-  if (_scanQuota.length >= _scanLimit) {
+  if (!NIYYAH_DEBUG && _scanQuota.length >= _scanLimit) {
     showToast(t('scanner_limit_week'));
     return;
   }
