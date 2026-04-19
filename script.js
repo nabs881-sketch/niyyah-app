@@ -5383,7 +5383,7 @@ const V2_I18N = {
     ramadan_fast: '🌙 Jeûne du jour enregistré — Barakallahu feek !', ramadan_laylatul: '✨ Nuit ', ramadan_laylatul_end: ' — Qu\'Allah l\'accepte !', ramadan_fallback: 'Barakallahu feek !',
     ramadan_disable_title: 'Désactiver le Mode Ramadan', ramadan_enable_title: 'Activer le Mode Ramadan',
     kahf_listen: 'Écouter Al-Kahf — Alafasy', kahf_play: 'Écouter Al-Kahf', kahf_playing: 'En cours — verset ', kahf_verse: 'Verset ', kahf_verse_end: '/110…', kahf_finished: 'Al-Kahf terminée ✦',
-    tasbih_99: '🌿 99 accompli ! Dis maintenant : لَا إِلٰهَ إِلَّا ٱللّٰه', tasbih_done: '🌿 Mashallah ! ',  tasbih_done_end: ' fois accompli !',
+    tasbih_99: '🌿 99 accompli ! Dis maintenant la shahada.', tasbih_done: '🌿 Mashallah ! ',  tasbih_done_end: ' fois accompli !',
     jumuah_done: '🕌 Jumuah accomplie — Barakallahu feek !', new_day: 'Nouvelle journee — Bismillah 🌿',
     // Wird
     wird_back: '← Retour', wird_reset: '↺ Réinitialiser',
@@ -5503,7 +5503,7 @@ const V2_I18N = {
     ramadan_fast: '🌙 Fast recorded — Barakallahu feek!', ramadan_laylatul: '✨ Night ', ramadan_laylatul_end: ' — May Allah accept it!', ramadan_fallback: 'Barakallahu feek!',
     ramadan_disable_title: 'Disable Ramadan Mode', ramadan_enable_title: 'Enable Ramadan Mode',
     kahf_listen: 'Listen to Al-Kahf — Alafasy', kahf_play: 'Listen to Al-Kahf', kahf_playing: 'Playing — verse ', kahf_verse: 'Verse ', kahf_verse_end: '/110…', kahf_finished: 'Al-Kahf completed ✦',
-    tasbih_99: '🌿 99 completed! Now say: لَا إِلٰهَ إِلَّا ٱللّٰه', tasbih_done: '🌿 Mashallah! ', tasbih_done_end: ' times completed!',
+    tasbih_99: '🌿 99 completed! Now say the shahada.', tasbih_done: '🌿 Mashallah! ', tasbih_done_end: ' times completed!',
     jumuah_done: '🕌 Jumuah completed — Barakallahu feek!', new_day: 'New day — Bismillah 🌿',
     wird_back: '← Back', wird_reset: '↺ Reset',
     locked_title: 'Level',
