@@ -5697,10 +5697,14 @@ const V2_I18N = {
 function v2DetectLang() {
   const saved = (JSON.parse(localStorage.getItem('niyyah_v2_bridge') || '{}')).lang;
   if (saved && V2_I18N[saved]) return saved;
-  // Par défaut : français (app française)
-  const bl = (navigator.language || 'fr').toLowerCase();
-  if (bl.startsWith('ar')) return 'ar';
-  return 'fr';
+  // Détection auto au premier lancement
+  var bl = (navigator.language || 'en').toLowerCase();
+  var detected = 'en';
+  if (bl.startsWith('fr')) detected = 'fr';
+  else if (bl.startsWith('ar')) detected = 'ar';
+  // Sauvegarder pour ne pas re-détecter
+  try { var s = JSON.parse(localStorage.getItem('niyyah_v2_bridge') || '{}'); s.lang = detected; safeSetItem('niyyah_v2_bridge', JSON.stringify(s)); } catch(e) {}
+  return detected;
 }
 
 let V2_LANG = v2DetectLang();
