@@ -2164,7 +2164,7 @@ function renderLevel(levelId) {
         var _aEsc = fi.arabic.replace(/"/g,'&quot;');
         var _pEsc = (fi.phonetic||'').replace(/"/g,'&quot;');
         var _tEsc = (fi.translation||'').replace(/"/g,'&quot;');
-        fitems += '<button class="btn-info" ontouchstart="event.stopPropagation()" onclick="openInfoSheet(\'\',\'\',\'\',\'\',event);event.stopPropagation();" data-label="' + _lEsc + '" data-arabic="' + _aEsc + '" data-phonetic="' + _pEsc + '" data-translation="' + _tEsc + '" title="Détails" style="flex-shrink:0;"><i>i</i></button>';
+        fitems += '<button class="btn-info" ontouchstart="event.stopPropagation()" onclick="openInfoSheet(\'\',\'\',\'\',\'\',event);event.stopPropagation();" data-label="' + _lEsc + '" data-arabic="' + _aEsc + '" data-phonetic="' + _pEsc + '" data-translation="' + _tEsc + '" title="' + t('btn_details') + '" style="flex-shrink:0;"><i>i</i></button>';
       }
       fitems += '</div>';
       fitems += '<div class="friday-item-hadith">' + fi.hadith + '</div>';
@@ -2261,21 +2261,21 @@ function renderLevel(levelId) {
           + '<div class="check-circle"><svg class="check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>'
           + '<div class="item-body"><div class="item-label">' + item.label + optionalBadge + '</div><div class="item-sub">' + item.sub + '</div>'
           + '<div class="item-arabic">' + item.arabic + '</div></div>'
-          + '<button class="btn-audio" onclick="openCoranPicker(event)" title="Choisir une sourate" style="font-size:13px;padding:0 10px;width:auto;white-space:nowrap;">📖 Écouter</button>'
+          + '<button class="btn-audio" onclick="openCoranPicker(event)" title="' + t('btn_choose_surah') + '" style="font-size:13px;padding:0 10px;width:auto;white-space:nowrap;">📖 Écouter</button>'
           + '</div>';
       } else {
         const checked = !!state[item.id];
         const fridayCls = item.isFriday ? ' friday-item' : '';
         const arabicHtml = item.arabic ? '<div class="item-arabic">' + item.arabic + '</div>' : '';
         const audioSrc = Array.isArray(item.audio) ? JSON.stringify(item.audio).replace(/"/g,"'") : item.audio;
-        const audioBtn = item.audio ? '<button class="btn-audio" ontouchstart="event.stopPropagation()" onclick="playAudio(' + (Array.isArray(item.audio) ? JSON.stringify(item.audio).replace(/"/g,"'") : '\'' + item.audio + '\'') + ',this,event)" title="Écouter la récitation">🔊</button>' : '';
+        const audioBtn = item.audio ? '<button class="btn-audio" ontouchstart="event.stopPropagation()" onclick="playAudio(' + (Array.isArray(item.audio) ? JSON.stringify(item.audio).replace(/"/g,"'") : '\'' + item.audio + '\'') + ',this,event)" title="' + t('btn_listen_recitation') + '">🔊</button>' : '';
         let infoBtn = '';
         if (item.hadith) {
           const labelEsc2 = item.label.replace(/"/g,'&quot;');
           const arabicEsc2 = (item.arabic||'').replace(/"/g,'&quot;');
           const hadithEsc = item.hadith.replace(/"/g,'&quot;');
           const sourceEsc = (item.source||'').replace(/"/g,'&quot;');
-          infoBtn = '<button class="btn-info" onclick="openInfoSheet(\'\',\'\',\'\',\'\',event)" data-label="' + labelEsc2 + '" data-arabic="' + arabicEsc2 + '" data-phonetic="" data-translation="' + hadithEsc + '" title="Pourquoi ?"><i>i</i></button>';
+          infoBtn = '<button class="btn-info" onclick="openInfoSheet(\'\',\'\',\'\',\'\',event)" data-label="' + labelEsc2 + '" data-arabic="' + arabicEsc2 + '" data-phonetic="" data-translation="' + hadithEsc + '" title="' + t('btn_why') + '"><i>i</i></button>';
         } else if (item.sub && item.sub.includes('·') && item.arabic) {
           const parts = item.sub.split('·');
           const phonetic = parts[0].trim();
@@ -2284,7 +2284,7 @@ function renderLevel(levelId) {
           const arabicEsc2 = (item.arabic||'').replace(/"/g,'&quot;');
           const phoneticEsc = phonetic.replace(/"/g,'&quot;');
           const translationEsc = translation.replace(/"/g,'&quot;');
-          infoBtn = '<button class="btn-info" onclick="openInfoSheet(\'\',\'\',\'\',\'\',event)" data-label="' + labelEsc2 + '" data-arabic="' + arabicEsc2 + '" data-phonetic="' + phoneticEsc + '" data-translation="' + translationEsc + '" title="Voir la phonétique"><i>i</i></button>';
+          infoBtn = '<button class="btn-info" onclick="openInfoSheet(\'\',\'\',\'\',\'\',event)" data-label="' + labelEsc2 + '" data-arabic="' + arabicEsc2 + '" data-phonetic="' + phoneticEsc + '" data-translation="' + translationEsc + '" title="' + t('btn_see_phonetic') + '"><i>i</i></button>';
         }
         const optionalBadge = item.optional ? '<span style="font-size:9px;font-weight:700;letter-spacing:0.8px;color:var(--green);background:rgba(52,217,98,0.12);border:1px solid rgba(52,217,98,0.25);border-radius:6px;padding:1px 5px;margin-left:5px;vertical-align:middle;">BONUS</span>' : '';
         const priorityDot = item.priority === 'fard' ? '<span class="priority-fard">&nbsp;</span>' : item.priority === 'sunnah' ? '<span class="priority-sunnah">&nbsp;</span>' : '';
@@ -2292,7 +2292,7 @@ function renderLevel(levelId) {
         const _tlOpacity = checked ? 'opacity:0.3;' : '';
         var shareBtn = '';
         if (item.id === 'savais_tu') {
-          shareBtn = '<button class="btn-audio" ontouchstart="event.stopPropagation()" onclick="shareSavaisTu(event)" title="Partager" style="font-size:13px;padding:0 8px;width:auto;">📤</button>';
+          shareBtn = '<button class="btn-audio" ontouchstart="event.stopPropagation()" onclick="shareSavaisTu(event)" title="' + t('btn_share_label') + '" style="font-size:13px;padding:0 8px;width:auto;">📤</button>';
         }
         html += '<div class="item' + fridayCls + (checked ? ' checked' : '') + _tlCurrent + '" onclick="toggleItem(\'' + item.id + '\',event)" style="' + _tlOpacity + 'animation-delay:' + delay + 'ms;--i:' + idx + '" id="item-' + item.id + '"><div class="check-circle"><svg class="check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-body"><div class="item-label">' + priorityDot + item.label + optionalBadge + '</div>' + (item.sub ? '<div class="item-sub">' + (item.sub.includes('·') ? item.sub.split('·')[0].trim() : item.sub) + '</div>' : '') + arabicHtml + '</div>' + shareBtn + audioBtn + infoBtn + '</div>';
       }
@@ -2453,8 +2453,8 @@ function renderCounter(item, delay) {
   const arabicHtml = item.arabic ? '<div class="item-arabic" style="' + (done ? 'opacity:0.25' : '') + '">' + item.arabic + '</div>' : '';
   const arabicEsc = (item.arabic || '').replace(/'/g, "\\'");
   const labelEsc  = item.label.replace(/'/g, "\\'");
-  const fullscreenBtn = '<button class="btn-tasbih-fs" onclick="openTasbih(\'' + item.id + '\',' + item.target + ',\'' + labelEsc + '\',\'' + arabicEsc + '\')" title="Mode plein écran">⛶</button>';
-  const audioBtn = item.audio ? '<button class="btn-audio" ontouchstart="event.stopPropagation()" onclick="playAudio(' + (Array.isArray(item.audio) ? JSON.stringify(item.audio).replace(/"/g,"'") : '\'' + item.audio + '\'') + ',this,event)" title="Écouter la récitation">🔊</button>' : '';
+  const fullscreenBtn = '<button class="btn-tasbih-fs" onclick="openTasbih(\'' + item.id + '\',' + item.target + ',\'' + labelEsc + '\',\'' + arabicEsc + '\')" title="' + t('btn_fullscreen') + '">⛶</button>';
+  const audioBtn = item.audio ? '<button class="btn-audio" ontouchstart="event.stopPropagation()" onclick="playAudio(' + (Array.isArray(item.audio) ? JSON.stringify(item.audio).replace(/"/g,"'") : '\'' + item.audio + '\'') + ',this,event)" title="' + t('btn_listen_recitation') + '">🔊</button>' : '';
   return '<div class="item counter-item' + (done ? ' checked' : '') + '" style="animation-delay:' + delay + 'ms" id="item-' + item.id + '"><div class="counter-top"><div class="check-circle" id="cb-' + item.id + '" style="' + (done ? 'background:var(--green-grad);border-color:var(--green);box-shadow:0 0 0 4px var(--green-soft),0 0 16px rgba(52,217,98,0.25)' : '') + '"><svg class="check-svg" style="' + (done ? 'opacity:1;transform:scale(1)' : '') + '" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-body"><div class="item-label">' + item.label + '</div><div class="item-sub">' + item.sub + '</div>' + arabicHtml + '</div>' + audioBtn + fullscreenBtn + '</div><div class="counter-body"><button class="btn-cnt-reset" onclick="resetCounter(\'' + item.id + '\')">↺</button><div class="counter-display"><div class="counter-num" id="cnt-num-' + item.id + '">' + count + '</div><div class="counter-total">/ ' + item.target + '</div><div class="counter-bar-track"><div class="counter-bar-fill" id="cnt-bar-' + item.id + '" style="width:' + Math.min(count/item.target*100,100) + '%"></div></div></div><button class="btn-cnt" onclick="incrementCounter(\'' + item.id + '\',' + item.target + ')">+</button></div></div>';
 }
 function initCounterEl(item) {}
@@ -3229,7 +3229,7 @@ function renderPrayerTimesCard() {
       '</div>' +
       '<div style="font-size:12px;color:var(--t3);text-align:center;padding:8px;">Erreur — vérifie ta connexion ou la ville</div>' +
       '<div class="city-input-wrap">' +
-        '<input class="city-input" id="cityInput" type="text" placeholder="Ville..." value="' + (_prayerCity||'') + '" onkeydown="if(event.key===\'Enter\')saveCityAndLoad()">' +
+        '<input class="city-input" id="cityInput" type="text" placeholder="' + t('city_placeholder_prayer') + '" value="' + (_prayerCity||'') + '" onkeydown="if(event.key===\'Enter\')saveCityAndLoad()">' +
         '<button class="city-input-btn" onclick="saveCityAndLoad()">Réessayer</button>' +
       '</div>' +
     '</div>';
@@ -3259,7 +3259,7 @@ function renderPrayerTimesCard() {
     _diffMin = (1440 - nowMin) + timeToMin(times[0].time);
   }
   var _countdownText;
-  if (_diffMin < 2) _countdownText = 'Maintenant';
+  if (_diffMin < 2) _countdownText = t('countdown_now');
   else if (_diffMin < 60) _countdownText = _diffMin + ' min';
   else _countdownText = Math.floor(_diffMin / 60) + 'h ' + String(_diffMin % 60).padStart(2,'0') + ' min';
   var countdown = '<div id="prayerCountdown" style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;margin-bottom:8px;background:linear-gradient(135deg,rgba(200,168,75,0.12),rgba(200,168,75,0.04));border:1px solid rgba(200,168,75,0.25);border-radius:12px;">'
@@ -3311,7 +3311,7 @@ function startPrayerCountdown() {
     if (idx >= 0) { name = times[idx].name; time = times[idx].time.substring(0,5); diff = toMin(times[idx].time) - nowMin; }
     else { name = 'Fajr'; time = times[0].time.substring(0,5); diff = (1440 - nowMin) + toMin(times[0].time); }
     var txt;
-    if (diff < 2) txt = 'Maintenant';
+    if (diff < 2) txt = t('countdown_now');
     else if (diff < 60) txt = diff + ' min';
     else txt = Math.floor(diff / 60) + 'h ' + String(diff % 60).padStart(2,'0') + ' min';
     el.innerHTML = '<div><div style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:2px;">PROCHAINE</div>'
@@ -3529,7 +3529,7 @@ function renderWird() {
     s.items.forEach(item => {
       const checked = !!wirdState[item.id];
       const audioData = item.audio ? JSON.stringify(item.audio) : null;
-      const audioBtn = item.audio ? `<button class="btn-wird-audio" ontouchstart="event.stopPropagation()" onclick="playAudioFromBtn(this,event)" data-audio="${audioData ? audioData.replace(/"/g,'&quot;') : ''}" title="Écouter">🔊</button>` : '';
+      const audioBtn = item.audio ? `<button class="btn-wird-audio" ontouchstart="event.stopPropagation()" onclick="playAudioFromBtn(this,event)" data-audio="${audioData ? audioData.replace(/"/g,'&quot;') : ''}" title="${t('btn_listen')}">🔊</button>` : '';
       const phonEsc = (item.phonetic||'').replace(/"/g,'&quot;');
       const arabEsc = (item.arabic||'').replace(/"/g,'&quot;');
       const srcEsc  = (item.source||'').replace(/"/g,'&quot;');
@@ -3898,7 +3898,7 @@ function _playCoranVerset() {
   const num = String(_coranSourate[0]).padStart(3,'0');
   const ver = String(_coranIdx + 1).padStart(3,'0');
   const url = 'https://everyayah.com/data/Alafasy_128kbps/' + num + ver + '.mp3';
-  if (_versetEl) _versetEl.textContent = 'Verset ' + (_coranIdx+1) + ' / ' + total;
+  if (_versetEl) _versetEl.textContent = t('quran_verse_label') + (_coranIdx+1) + ' / ' + total;
   if (_playBtn) _playBtn.textContent = '⏸';
   if (_coranAudio) { _coranAudio.pause(); _coranAudio = null; }
   const audio = new Audio();
@@ -4332,9 +4332,9 @@ function showTawba() {
   const streakEl = document.getElementById('tawbaStreakInfo');
   if (streakEl) {
     if (daysSince < 7 && history.bestStreak > 0) {
-      streakEl.textContent = "Ton chemin de " + history.bestStreak + " jours t'attend toujours.";
+      streakEl.textContent = t('tawba_streak_prefix') + history.bestStreak + t('tawba_streak_suffix');
     } else if (history.bestStreak > 0) {
-      streakEl.textContent = 'Nouvelle semaine, nouvelle niyyah. Bismillah.';
+      streakEl.textContent = t('tawba_week_msg');
     } else {
       streakEl.textContent = '';
     }
@@ -4466,7 +4466,7 @@ function validateFreemiumCode() {
     if (navigator.vibrate) navigator.vibrate([30, 50, 100]);
   } else {
     input.style.borderColor = '#ff3b30';
-    input.placeholder = 'Code invalide — réessaie';
+    input.placeholder = t('freemium_code_invalid');
     input.value = '';
     setTimeout(() => { input.style.borderColor = ''; input.placeholder = 'CODE D\'ACCÈS'; }, 2000);
   }
@@ -4908,7 +4908,7 @@ function schedulePrayerReminders() {
       const t = setTimeout(() => {
         const emoji = PRAYER_EMOJIS[name] || '🕌';
         const fr = PRAYER_FR[name] || name;
-        showToast(emoji + ' Il est l\'heure de ' + fr + ' — الله أكبر');
+        showToast(emoji + ' ' + t('prayer_time_toast') + fr + ' — الله أكبر');
         if (navigator.vibrate) navigator.vibrate([100, 50, 100, 50, 200]);
         try {
           const ctx = new (window.AudioContext || window.webkitAudioContext)();
@@ -6484,7 +6484,7 @@ function renderNafsTrait() {
     '</div>' +
     '<div class="nafs-divider"></div>' +
     '<div class="nafs-observe-zone">' +
-      '<input type="text" id="nafs-note-input" class="nafs-note-input" maxlength="100" placeholder="Dans quelle situation ? (optionnel)"' + (alreadyDone ? ' disabled style="opacity:0.4;"' : '') + '>' +
+      '<input type="text" id="nafs-note-input" class="nafs-note-input" maxlength="100" placeholder="' + t('nafs_note_placeholder') + '"' + (alreadyDone ? ' disabled style="opacity:0.4;"' : '') + '>' +
       '<button id="nafs-observe-btn" class="nafs-observe-btn' + (alreadyDone ? ' nafs-observed' : '') + '" onclick="nafsObserve(' + t.id + ')"' + (alreadyDone ? ' disabled' : '') + '>' +
         (alreadyDone ? t('nafs_observed_today') : t('nafs_observe_btn')) +
       '</button>' +
@@ -6902,7 +6902,7 @@ function v2OpenNiyyahModal() {
       // SVG countdown circle + hint text
       _holdOverlay = document.createElement('div');
       _holdOverlay.className = 'hold-overlay';
-      _holdOverlay.innerHTML = '<svg class="hold-ring" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="none" stroke="rgba(200,168,75,0.15)" stroke-width="2"/><circle class="hold-ring-fill" cx="16" cy="16" r="14" fill="none" stroke="#C8A84A" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="87.96" stroke-dashoffset="87.96"/></svg><span class="hold-hint" style="opacity:0;">Maintenez...</span>';
+      _holdOverlay.innerHTML = '<svg class="hold-ring" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="none" stroke="rgba(200,168,75,0.15)" stroke-width="2"/><circle class="hold-ring-fill" cx="16" cy="16" r="14" fill="none" stroke="#C8A84A" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="87.96" stroke-dashoffset="87.96"/></svg><span class="hold-hint" style="opacity:0;">' + t('hold_hint') + '</span>';
       btn.appendChild(_holdOverlay);
       // Animate ring fill
       requestAnimationFrame(function() {
@@ -7001,7 +7001,7 @@ function v2OpenNiyyahModal() {
       if (navigator.vibrate) navigator.vibrate(30);
       _ikOv = document.createElement('div');
       _ikOv.className = 'hold-overlay';
-      _ikOv.innerHTML = '<svg class="hold-ring" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="none" stroke="rgba(200,168,75,0.15)" stroke-width="2"/><circle class="hold-ring-fill" cx="16" cy="16" r="14" fill="none" stroke="#C8A84A" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="87.96" stroke-dashoffset="87.96"/></svg><span class="hold-hint" style="opacity:0;">Maintenez...</span>';
+      _ikOv.innerHTML = '<svg class="hold-ring" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="none" stroke="rgba(200,168,75,0.15)" stroke-width="2"/><circle class="hold-ring-fill" cx="16" cy="16" r="14" fill="none" stroke="#C8A84A" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="87.96" stroke-dashoffset="87.96"/></svg><span class="hold-hint" style="opacity:0;">' + t('hold_hint') + '</span>';
       ikhlasBtn.appendChild(_ikOv);
       requestAnimationFrame(function() { var f = _ikOv.querySelector('.hold-ring-fill'); if (f) f.style.strokeDashoffset = '0'; });
       _ikHint = setTimeout(function() { var h = ikhlasBtn.querySelector('.hold-hint'); if (h) h.style.opacity = '1'; }, 500);
@@ -7793,7 +7793,7 @@ function _regardeShowQuestion(content, question) {
     + '<button onclick="regardeToggleNote()" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">✎</button>'
     + '</div>'
     + '<div id="regarde-note-wrap" style="display:none;width:100%;max-width:80%;margin-top:20px;opacity:0;transition:opacity 0.3s ease;">'
-    + '<textarea id="regarde-note-input" placeholder="Note personnelle..." oninput="regardeSaveNote()" style="width:100%;min-height:60px;background:rgba(200,168,75,0.04);border:1px solid rgba(212,175,55,0.25);border-radius:12px;padding:12px;color:#D4AF37;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;resize:none;outline:none;box-sizing:border-box;"></textarea>'
+    + '<textarea id="regarde-note-input" placeholder="' + t('regarde_note_placeholder') + '" oninput="regardeSaveNote()" style="width:100%;min-height:60px;background:rgba(200,168,75,0.04);border:1px solid rgba(212,175,55,0.25);border-radius:12px;padding:12px;color:#D4AF37;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;resize:none;outline:none;box-sizing:border-box;"></textarea>'
     + '</div>'
     + '</div>';
   content.style.opacity = '1';
@@ -8019,7 +8019,7 @@ function regardeDetailNote(id) {
   var wrap = document.createElement('div');
   wrap.id = 'regarde-detail-note-wrap';
   wrap.style.cssText = 'margin-top:16px;';
-  wrap.innerHTML = '<textarea id="regarde-detail-note-input" placeholder="Note personnelle..." oninput="regardeDetailNoteSave(\'' + id + '\')" style="width:100%;min-height:80px;background:rgba(200,168,75,0.04);border:1px solid rgba(212,175,55,0.25);border-radius:12px;padding:12px;color:#D4AF37;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;resize:none;outline:none;box-sizing:border-box;">' + ((entry && entry.note) || '') + '</textarea>';
+  wrap.innerHTML = '<textarea id="regarde-detail-note-input" placeholder="' + t('regarde_note_placeholder') + '" oninput="regardeDetailNoteSave(\'' + id + '\')" style="width:100%;min-height:80px;background:rgba(200,168,75,0.04);border:1px solid rgba(212,175,55,0.25);border-radius:12px;padding:12px;color:#D4AF37;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;resize:none;outline:none;box-sizing:border-box;">' + ((entry && entry.note) || '') + '</textarea>';
   container.appendChild(wrap);
   var input = document.getElementById('regarde-detail-note-input');
   if (input) input.focus();
@@ -8317,7 +8317,7 @@ function shareSavaisTu(event) {
   canvas.toBlob(function(blob) {
     var file = new File([blob], 'niyyah-savais-tu.png', { type: 'image/png' });
     if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
-      navigator.share({ files: [file], title: 'Le savais-tu ? — Niyyah Daily' }).catch(function() {});
+      navigator.share({ files: [file], title: t('share_savaistu_title') }).catch(function() {});
     } else {
       var url = URL.createObjectURL(blob);
       var a = document.createElement('a');
