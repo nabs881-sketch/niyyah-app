@@ -7940,24 +7940,6 @@ function scannerConfirmNiyyah() {
   const nuance = lib.nuances[_selectedNuance] || lib.nuances[0];
   const intentionText = _scannerResult?.niyyahDirect || nuance.text;
 
-  // Sauvegarder comme intention du moment
-  try {
-    var s = JSON.parse(localStorage.getItem('niyyah_v2_state') || '{}');
-    s.intention = intentionText;
-    s.intentionSource = 'scanner';
-    s.intentionTime   = Date.now();
-    safeSetItem('niyyah_v2_state', JSON.stringify(s));
-  } catch(e) {}
-
-  // Save to scanner history
-  try {
-    var _now = new Date();
-    var _hist = JSON.parse(localStorage.getItem('niyyah_scanner_history') || '[]');
-    _hist.unshift({ text: intentionText, time: _now.toTimeString().substring(0,5), date: _now.toISOString().split('T')[0], day: ['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'][_now.getDay()] });
-    if (_hist.length > 20) _hist.length = 20;
-    safeSetItem('niyyah_scanner_history', JSON.stringify(_hist));
-  } catch(e) {}
-
   // Toast fraternel
   v2ShowToast(t('toast_niyyah'));
   if (navigator.vibrate) navigator.vibrate([20, 40, 80]);
