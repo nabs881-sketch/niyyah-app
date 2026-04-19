@@ -3890,7 +3890,7 @@ function _playCoranVerset() {
   if (_coranIdx >= total) {
     _coranPlaying = false;
     if (_playBtn) _playBtn.textContent = '▶';
-    if (_versetEl) _versetEl.textContent = 'Terminé — Alhamdulillah 🌿';
+    if (_versetEl) _versetEl.textContent = t('meditation_done');
     return;
   }
   const num = String(_coranSourate[0]).padStart(3,'0');
@@ -4099,7 +4099,7 @@ function setBilanSoir(choix) {
       icon: '✨', text: 'Hier ton cœur était sincère. Que Allah te maintienne dans cet état — c\'est Sa grâce.', date: today
     }));
     // Mini animation streak
-    showToast('✨ Journée sincère — Barakallahu fik !');
+    showToast(t('bilan_sincere'));
   }
 }
 
@@ -4149,7 +4149,7 @@ function toggleMeditTimer() {
       if (_meditRemaining <= 0) {
         clearInterval(_meditInterval);
         _meditRunning = false;
-        document.getElementById('meditPhrase').textContent = 'Barakallahu fik — Tafakkur accompli ✦';
+        document.getElementById('meditPhrase').textContent = t('tafakkur_done');
         document.getElementById('meditDotEl').style.background = '#34d962';
         if (navigator.vibrate) navigator.vibrate([100, 50, 100, 50, 200]);
       }
@@ -4722,7 +4722,7 @@ function requestNotifPermission() {
       }
     }).catch(() => {
       dismissNotifScreen();
-      showToast('Rappels non disponibles sur cet appareil');
+      showToast(t('notif_unavailable'));
     });
   } catch(e) {
     dismissNotifScreen();
@@ -4876,7 +4876,7 @@ function initNotifications() {
 // ── Bouton toggle notifications dans l'app ────────────────────────────────────
 function toggleNotifications() {
   if (!('Notification' in window)) {
-    showToast('Notifications non supportées sur cet appareil');
+    showToast(t('notif_unsupported_device'));
     return;
   }
   if (Notification.permission === 'granted') {
@@ -5013,10 +5013,10 @@ function _updateNeedle(heading) {
     if (subEl) {
       if (visual < 10 || visual > 350) {
         subEl.className = 'qibla-aligned';
-        subEl.textContent = '✦ Tu es aligné avec La Mecque !';
+        subEl.textContent = t('qibla_aligned');
       } else {
         subEl.className = 'qibla-sub';
-        subEl.textContent = '🔴 Tourne vers l\'aiguille dorée';
+        subEl.textContent = t('qibla_turn');
       }
     }
   }
@@ -5044,7 +5044,7 @@ function _attachCompass() {
     }
     if (_eventCount === 30 && !_hasAbsolute) {
       const subEl = document.getElementById('qiblaSub');
-      if (subEl) subEl.textContent = '⚠️ Calibre ton téléphone (fais un 8 dans l\'air)';
+      if (subEl) subEl.textContent = t('qibla_calibrate');
     }
   };
   window.addEventListener('deviceorientationabsolute', _compassListener, true);
@@ -5188,18 +5188,18 @@ function onboardSaveCity() {
 }
 function onboardRequestGeoloc() {
   var btn = document.getElementById('onboardGeoBtn');
-  if (btn) { btn.textContent = '⏳ Localisation...'; btn.disabled = true; }
+  if (btn) { btn.textContent = t('geo_loading'); btn.disabled = true; }
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
       function(pos) {
         var coords = { lat: pos.coords.latitude, lng: pos.coords.longitude };
         safeSetItem('niyyah_coords', JSON.stringify(coords));
-        if (btn) { btn.textContent = '✓ Localisé !'; btn.style.background = 'var(--green)'; }
+        if (btn) { btn.textContent = t('geo_found'); btn.style.background = 'var(--green)'; }
         setTimeout(onboardFinish, 800);
       },
       function(err) {
         // Refusé → afficher input ville
-        if (btn) { btn.textContent = '📍 Me localiser'; btn.disabled = false; }
+        if (btn) { btn.textContent = t('geo_locate'); btn.disabled = false; }
         var fallback = document.getElementById('onboardCityFallback');
         if (fallback) fallback.style.display = 'block';
       },
@@ -5385,6 +5385,10 @@ const V2_I18N = {
     kahf_listen: 'Écouter Al-Kahf — Alafasy', kahf_play: 'Écouter Al-Kahf', kahf_playing: 'En cours — verset ', kahf_verse: 'Verset ', kahf_verse_end: '/110…', kahf_finished: 'Al-Kahf terminée ✦',
     tasbih_99: '🌿 99 accompli ! Dis maintenant la shahada.', tasbih_done: '🌿 Mashallah ! ',  tasbih_done_end: ' fois accompli !',
     jumuah_done: '🕌 Jumuah accomplie — Barakallahu feek !', new_day: 'Nouvelle journee — Bismillah 🌿',
+    meditation_done: 'Terminé — Alhamdulillah 🌿', bilan_sincere: '✨ Journée sincère — Barakallahu fik !', tafakkur_done: 'Barakallahu fik — Tafakkur accompli ✦',
+    notif_unavailable: 'Rappels non disponibles sur cet appareil', notif_unsupported_device: 'Notifications non supportées sur cet appareil',
+    qibla_aligned: '✦ Tu es aligné avec La Mecque !', qibla_turn: '🔴 Tourne vers l\'aiguille dorée', qibla_calibrate: '⚠️ Calibre ton téléphone (fais un 8 dans l\'air)',
+    geo_loading: '⏳ Localisation...', geo_found: '✓ Localisé !', geo_locate: '📍 Me localiser',
     // Wird
     wird_back: '← Retour', wird_reset: '↺ Réinitialiser',
     // Locked screen
@@ -5505,6 +5509,10 @@ const V2_I18N = {
     kahf_listen: 'Listen to Al-Kahf — Alafasy', kahf_play: 'Listen to Al-Kahf', kahf_playing: 'Playing — verse ', kahf_verse: 'Verse ', kahf_verse_end: '/110…', kahf_finished: 'Al-Kahf completed ✦',
     tasbih_99: '🌿 99 completed! Now say the shahada.', tasbih_done: '🌿 Mashallah! ', tasbih_done_end: ' times completed!',
     jumuah_done: '🕌 Jumuah completed — Barakallahu feek!', new_day: 'New day — Bismillah 🌿',
+    meditation_done: 'Completed — Alhamdulillah 🌿', bilan_sincere: '✨ Sincere day — Barakallahu fik!', tafakkur_done: 'Barakallahu fik — Tafakkur completed ✦',
+    notif_unavailable: 'Reminders not available on this device', notif_unsupported_device: 'Notifications not supported on this device',
+    qibla_aligned: '✦ You are aligned with Mecca!', qibla_turn: '🔴 Turn towards the golden needle', qibla_calibrate: '⚠️ Calibrate your phone (make a figure 8 in the air)',
+    geo_loading: '⏳ Locating...', geo_found: '✓ Located!', geo_locate: '📍 Locate me',
     wird_back: '← Back', wird_reset: '↺ Reset',
     locked_title: 'Level',
     lvl_start: 'Start!', lvl_progress: 'In progress ✦', lvl_done: 'Accomplished ✦',
@@ -5608,6 +5616,10 @@ const V2_I18N = {
     kahf_listen: '', kahf_play: '', kahf_playing: '', kahf_verse: '', kahf_verse_end: '', kahf_finished: '',
     tasbih_99: '', tasbih_done: '', tasbih_done_end: '',
     jumuah_done: '', new_day: '',
+    meditation_done: '', bilan_sincere: '', tafakkur_done: '',
+    notif_unavailable: '', notif_unsupported_device: '',
+    qibla_aligned: '', qibla_turn: '', qibla_calibrate: '',
+    geo_loading: '', geo_found: '', geo_locate: '',
     wird_back: '→ رُجُوعٌ', wird_reset: '↺ إِعَادَةُ التَّعْيِينِ',
     locked_title: 'الْمُسْتَوَى',
     lvl_start: 'ابْدَأْ!', lvl_progress: 'جَارٍ ✦', lvl_done: 'أُنْجِزَ ✦',
