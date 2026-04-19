@@ -240,7 +240,7 @@
   <video id="scanner-video" autoplay playsinline muted></video>
   <canvas id="scanner-canvas"></canvas>
   <button id="scanner-close" onclick="scannerClose()">✕</button>
-  <button id="scanner-journal-btn" onclick="openNiyyahJournal()" style="position:absolute;top:16px;right:60px;z-index:20;background:transparent;border:1px solid rgba(200,168,75,0.3);border-radius:20px;padding:6px 14px;cursor:pointer;font-family:'Cinzel',serif;font-size:11px;color:#C8A84A;letter-spacing:2px;">MES NIYYAH ✦</button>
+  <div id="scanner-top-bar" style="position:absolute;top:calc(var(--safe-top,0px) + 14px);left:16px;right:56px;z-index:20;display:flex;gap:16px;"></div>
   <!-- Journal Niyyah V2 -->
   <div id="niyyah-journal-overlay" style="display:none;position:fixed;inset:0;z-index:9999;background:#000;overflow-y:auto;">
     <div style="padding:calc(var(--safe-top,0px) + 16px) 20px 40px;">

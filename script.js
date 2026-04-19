@@ -7712,16 +7712,17 @@ async function scannerOpen() {
   document.getElementById('scanner-hint').style.opacity = '1';
   _scannerResult = null;
 
-  // Bandeau Regarde conditionnel
-  var oldBandeau = document.getElementById('scanner-regarde-bandeau');
-  if (oldBandeau) oldBandeau.remove();
-  if (localStorage.getItem('niyyah_regarde_available_today') === 'true') {
-    var bandeau = document.createElement('div');
-    bandeau.id = 'scanner-regarde-bandeau';
-    bandeau.textContent = '✦ Ton moment Regarde est arrivé ✦';
-    bandeau.style.cssText = 'position:absolute;top:0;left:0;right:0;z-index:15;background:#D4AF37;color:#1a1200;font-family:Cinzel,serif;font-size:14px;letter-spacing:1.5px;text-align:center;padding:18px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);';
-    bandeau.onclick = function(e) { e.stopPropagation(); e.preventDefault(); regardeOpen(); };
-    overlay.appendChild(bandeau);
+  // Barre haute : boutons REGARDE + NIYYAH
+  var topBar = document.getElementById('scanner-top-bar');
+  if (topBar) {
+    var regardeDispo = localStorage.getItem('niyyah_regarde_available_today') === 'true';
+    var btnStyle = 'flex:1;padding:12px 8px;border-radius:12px;border:1px solid rgba(212,175,55,0.4);background:rgba(0,0,0,0.5);color:#D4AF37;font-family:Cinzel,serif;font-size:12px;letter-spacing:1.5px;text-align:center;cursor:pointer;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);';
+    var html = '';
+    if (regardeDispo) {
+      html += '<button onclick="event.stopPropagation();regardeOpen();" style="' + btnStyle + '">REGARDE</button>';
+    }
+    html += '<button onclick="event.stopPropagation();openNiyyahJournal();" style="' + btnStyle + '">MES NIYYAH</button>';
+    topBar.innerHTML = html;
   }
 }
 
