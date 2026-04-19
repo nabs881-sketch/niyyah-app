@@ -2287,14 +2287,14 @@ function renderLevel(levelId) {
           infoBtn = '<button class="btn-info" onclick="openInfoSheet(\'\',\'\',\'\',\'\',event)" data-label="' + labelEsc2 + '" data-arabic="' + arabicEsc2 + '" data-phonetic="' + phoneticEsc + '" data-translation="' + translationEsc + '" title="' + t('btn_see_phonetic') + '"><i>i</i></button>';
         }
         const optionalBadge = item.optional ? '<span style="font-size:9px;font-weight:700;letter-spacing:0.8px;color:var(--green);background:rgba(52,217,98,0.12);border:1px solid rgba(52,217,98,0.25);border-radius:6px;padding:1px 5px;margin-left:5px;vertical-align:middle;">BONUS</span>' : '';
-        const priorityDot = item.priority === 'fard' ? '<span class="priority-fard">&nbsp;</span>' : item.priority === 'sunnah' ? '<span class="priority-sunnah">&nbsp;</span>' : '';
+        const priorityCls = item.priority === 'fard' ? ' priority-fard' : item.priority === 'sunnah' ? ' priority-sunnah' : '';
         const _tlCurrent = (!checked && !_firstUncheckedFound) ? (_firstUncheckedFound = true, ' timeline-current') : '';
         const _tlOpacity = checked ? 'opacity:0.3;' : '';
         var shareBtn = '';
         if (item.id === 'savais_tu') {
           shareBtn = '<button class="btn-audio" ontouchstart="event.stopPropagation()" onclick="shareSavaisTu(event)" title="' + t('btn_share_label') + '" style="font-size:13px;padding:0 8px;width:auto;">📤</button>';
         }
-        html += '<div class="item' + fridayCls + (checked ? ' checked' : '') + _tlCurrent + '" onclick="toggleItem(\'' + item.id + '\',event)" style="' + _tlOpacity + 'animation-delay:' + delay + 'ms;--i:' + idx + '" id="item-' + item.id + '"><div class="check-circle"><svg class="check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-body"><div class="item-label">' + priorityDot + item.label + optionalBadge + '</div>' + (item.sub ? '<div class="item-sub">' + (item.sub.includes('·') ? item.sub.split('·')[0].trim() : item.sub) + '</div>' : '') + arabicHtml + '</div>' + shareBtn + audioBtn + infoBtn + '</div>';
+        html += '<div class="item' + fridayCls + (checked ? ' checked' : '') + _tlCurrent + '" onclick="toggleItem(\'' + item.id + '\',event)" style="' + _tlOpacity + 'animation-delay:' + delay + 'ms;--i:' + idx + '" id="item-' + item.id + '"><div class="check-circle"><svg class="check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-body"><div class="item-label' + priorityCls + '">' + item.label + optionalBadge + '</div>' + (item.sub ? '<div class="item-sub">' + (item.sub.includes('·') ? item.sub.split('·')[0].trim() : item.sub) + '</div>' : '') + arabicHtml + '</div>' + shareBtn + audioBtn + infoBtn + '</div>';
       }
     });
     html += '</div>';
@@ -2344,11 +2344,11 @@ function renderPrayerItem(item, delay, extraClass, forceChecked) {
     + '<div style="width:38px;height:22px;border-radius:11px;background:' + (onTime ? 'var(--green)' : 'rgba(255,255,255,0.1)') + ';border:1px solid ' + (onTime ? 'var(--green)' : 'rgba(255,255,255,0.15)') + ';display:flex;align-items:center;padding:2px;transition:background 0.2s;flex-shrink:0;">'
     + '<div style="width:18px;height:18px;border-radius:50%;background:' + (onTime ? '#fff' : 'rgba(255,255,255,0.4)') + ';margin-left:' + (onTime ? '16px' : '0') + ';transition:margin 0.2s;"></div>'
     + '</div></div>';
-  const priorityDot = item.priority === 'fard' ? '<span class="priority-fard">&nbsp;</span>' : item.priority === 'sunnah' ? '<span class="priority-sunnah">&nbsp;</span>' : '';
+  const priorityCls = item.priority === 'fard' ? ' priority-fard' : item.priority === 'sunnah' ? ' priority-sunnah' : '';
   const _tlOpacity = checked ? 'opacity:0.3;' : '';
   return '<div class="item' + fridayCls + (checked ? ' checked' : '') + (extraClass || '') + '" onclick="toggleItem(\'' + item.id + '\',event)" style="' + _tlOpacity + 'animation-delay:' + delay + 'ms;--i:' + delay + '" id="item-' + item.id + '">'
     + '<div class="check-circle"><svg class="check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>'
-    + '<div class="item-body"><div class="item-label">' + priorityDot + item.label + '</div>'
+    + '<div class="item-body"><div class="item-label' + priorityCls + '">' + item.label + '</div>'
     + (item.sub ? '<div class="item-sub">' + item.sub + '</div>' : '')
     + arabicHtml + '</div>'
     + toggle + '</div>';
@@ -2438,7 +2438,7 @@ function renderWirdAccordion(item, delay) {
   return '<div class="item' + (allDone ? ' checked' : '') + '" id="item-' + item.id + '" style="animation-delay:' + delay + 'ms;flex-direction:column;align-items:stretch;padding:0;cursor:default;border:1px solid ' + (isOpen ? 'rgba(52,217,98,0.25)' : 'var(--sep)') + ';overflow:hidden;background:var(--card);">'
     + '<div style="display:flex;align-items:center;gap:12px;padding:14px 14px;cursor:pointer;background:' + (isOpen ? 'rgba(52,217,98,0.05)' : 'transparent') + ';" onclick="window[\'_wirdOpen_\'+\'' + item.id + '\']=!' + isOpen + ';renderLevel(currentLevel)">'
     + '<div class="check-circle"' + (allDone ? ' style="background:var(--green-grad);border-color:var(--green);"' : '') + '><svg class="check-svg" style="' + (allDone ? 'opacity:1;transform:scale(1)' : '') + '" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>'
-    + '<div class="item-body"><div class="item-label">' + (item.priority === 'sunnah' ? '<span class="priority-sunnah">&nbsp;</span>' : '') + item.label + '</div><div class="item-sub">' + item.sub + '</div></div>'
+    + '<div class="item-body"><div class="item-label' + (item.priority === 'sunnah' ? ' priority-sunnah' : '') + '">' + item.label + '</div><div class="item-sub">' + item.sub + '</div></div>'
     + '<div style="display:flex;align-items:center;gap:6px;flex-shrink:0;">'
     + tapHint
     + (done > 0 ? '<div style="font-size:11px;color:var(--green);background:var(--green-soft);padding:2px 8px;border-radius:20px;">' + done + '/' + total + '</div>' : '')
@@ -6446,52 +6446,52 @@ function renderNafsTrait() {
   var container = document.getElementById('nafs-trait-card');
   if (!container) return;
   var data = getNafsTraitOfWeek();
-  var t = data.trait;
+  var trait = data.trait;
   var w = data.week;
-  var seasonLabel = NAFS_SEASON_LABELS[t.season] || t.season;
-  var alreadyDone = _nafsAlreadyToday(t.id);
-  var weekCount = _nafsCountThisWeek(t.id);
+  var seasonLabel = NAFS_SEASON_LABELS[trait.season] || trait.season;
+  var alreadyDone = _nafsAlreadyToday(trait.id);
+  var weekCount = _nafsCountThisWeek(trait.id);
 
   container.innerHTML =
     '<div style="text-align:center;">' +
-      '<div class="nafs-week-badge">Semaine ' + w + ' — Trait ' + t.id + '/52</div>' +
+      '<div class="nafs-week-badge">Semaine ' + w + ' — Trait ' + trait.id + '/52</div>' +
     '</div>' +
     '<div class="nafs-season-label" style="text-align:center;">' + seasonLabel + '</div>' +
     '<div class="nafs-name-block">' +
-      '<div class="nafs-name-ar">' + t.name_ar + '</div>' +
-      '<div class="nafs-name-fr">' + t.name_fr + '</div>' +
-      '<div class="nafs-name-translit">' + t.name_translit + '</div>' +
+      '<div class="nafs-name-ar">' + trait.name_ar + '</div>' +
+      '<div class="nafs-name-fr">' + trait.name_fr + '</div>' +
+      '<div class="nafs-name-translit">' + trait.name_translit + '</div>' +
     '</div>' +
     '<div class="nafs-divider"></div>' +
     '<div class="nafs-section">' +
       '<div class="nafs-section-label">Définition</div>' +
-      '<div class="nafs-section-text">' + t.definition + '</div>' +
+      '<div class="nafs-section-text">' + trait.definition + '</div>' +
     '</div>' +
     '<div class="nafs-reference-box">' +
-      '<div class="nafs-reference-text">« ' + t.reference.text + ' »</div>' +
-      '<div class="nafs-reference-source">' + t.reference.source + '</div>' +
+      '<div class="nafs-reference-text">« ' + trait.reference.text + ' »</div>' +
+      '<div class="nafs-reference-source">' + trait.reference.source + '</div>' +
     '</div>' +
     '<div class="nafs-signal-box">' +
       '<div class="nafs-signal-icon">⚡</div>' +
       '<div>' +
         '<div class="nafs-section-label">Signal d\'alerte</div>' +
-        '<div class="nafs-section-text">' + t.signal + '</div>' +
+        '<div class="nafs-section-text">' + trait.signal + '</div>' +
       '</div>' +
     '</div>' +
     '<div class="nafs-action-box">' +
       '<div class="nafs-section-label" style="color:rgba(200,168,75,0.7);">Action de la semaine</div>' +
-      '<div class="nafs-action-text">' + t.action + '</div>' +
+      '<div class="nafs-action-text">' + trait.action + '</div>' +
     '</div>' +
     '<div class="nafs-divider"></div>' +
     '<div class="nafs-observe-zone">' +
       '<input type="text" id="nafs-note-input" class="nafs-note-input" maxlength="100" placeholder="' + t('nafs_note_placeholder') + '"' + (alreadyDone ? ' disabled style="opacity:0.4;"' : '') + '>' +
-      '<button id="nafs-observe-btn" class="nafs-observe-btn' + (alreadyDone ? ' nafs-observed' : '') + '" onclick="nafsObserve(' + t.id + ')"' + (alreadyDone ? ' disabled' : '') + '>' +
+      '<button id="nafs-observe-btn" class="nafs-observe-btn' + (alreadyDone ? ' nafs-observed' : '') + '" onclick="nafsObserve(' + trait.id + ')"' + (alreadyDone ? ' disabled' : '') + '>' +
         (alreadyDone ? t('nafs_observed_today') : t('nafs_observe_btn')) +
       '</button>' +
       '<div id="nafs-week-counter" class="nafs-week-counter"' + (weekCount === 0 ? ' style="opacity:0;"' : '') + '>' +
         (weekCount === 0 ? '' : weekCount === 1 ? 'Tu l\'as observé 1 fois cette semaine' : 'Tu l\'as observé ' + weekCount + ' fois cette semaine') +
       '</div>' +
-      '<div id="nafs-weekmap-container">' + _nafsRenderWeekMap(t.id) + '</div>' +
+      '<div id="nafs-weekmap-container">' + _nafsRenderWeekMap(trait.id) + '</div>' +
     '</div>';
 }
 
