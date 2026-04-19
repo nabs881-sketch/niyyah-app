@@ -7720,7 +7720,7 @@ async function scannerOpen() {
     bandeau.id = 'scanner-regarde-bandeau';
     bandeau.textContent = '✦ Ton moment Regarde est arrivé ✦';
     bandeau.style.cssText = 'position:absolute;top:0;left:0;right:0;z-index:15;background:#D4AF37;color:#1a1200;font-family:Cinzel,serif;font-size:14px;letter-spacing:1.5px;text-align:center;padding:18px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);';
-    bandeau.onclick = function() { regardeOpen(); };
+    bandeau.onclick = function(e) { e.stopPropagation(); e.preventDefault(); regardeOpen(); };
     overlay.appendChild(bandeau);
   }
 }
