@@ -7464,7 +7464,7 @@ async function regardeOpen() {
       video: { facingMode: 'environment', width: { ideal: 1280 }, height: { ideal: 720 } }
     });
     content.innerHTML = '<video id="regarde-video" autoplay playsinline muted style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>'
-      + '<button id="regarde-capture-btn" onclick="regardeCapture()" style="position:absolute;bottom:40px;left:50%;transform:translateX(-50%);z-index:10;width:80px;height:80px;border-radius:50%;border:3px solid #C8A84A;background:rgba(200,168,75,0.15);cursor:pointer;display:flex;align-items:center;justify-content:center;"><div style="width:62px;height:62px;border-radius:50%;background:linear-gradient(135deg,#D4AF37,#B8940A);"></div></button>';
+      + '<button id="regarde-capture-btn" onclick="regardeCapture()" style="position:absolute;bottom:40px;left:50%;transform:translateX(-50%);z-index:10;width:80px;height:80px;border-radius:50%;border:3px solid #C8A84A;background:rgba(200,168,75,0.15);cursor:pointer;display:flex;align-items:center;justify-content:center;"><div style="width:62px;height:62px;border-radius:50%;background:linear-gradient(135deg,#D4AF37,#B8940A);pointer-events:none;"></div></button>';
     var video = document.getElementById('regarde-video');
     video.srcObject = _regardeStream;
     await video.play();
