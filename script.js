@@ -5394,6 +5394,13 @@ const V2_I18N = {
     ikhlas_earned: 'Tu as mérité cette intention ✦', tawba_door: '✦ La porte est toujours ouverte', tawba_resume: 'Reprendre le chemin',
     note_saved: 'Enregistré ✦', scanner_analyzing: 'Analyse en cours…', journal_voice_soon: 'Journal de l\'Âme — Prochainement ✦',
     scanner_adopt: '✦ Adopter cette Niyyah', scanner_retry_label: 'Rescanner',
+    journal_niyyah_title: '✦ Mes Niyyah', journal_regards_title: '✦ Mes Regards',
+    link_see_regards: 'Voir mes Regards →', link_see_niyyah: 'Voir mes Niyyah →',
+    journal_search: 'Rechercher...', modal_close: 'Fermer', btn_later: 'Plus tard',
+    tawba_ameen: 'Ameen', defi_change: 'Changer de défi', notif_accept: 'Oui, je veux ces rappels 🌿',
+    level_accomplished: 'Niveau accompli', level_next: 'Niveau suivant →', level_stay: 'Rester sur ce niveau',
+    freemium_title: 'Niyyah Premium', freemium_sub: 'Accède à l\'expérience complète — une seule fois, à vie.',
+    freemium_buy: 'Obtenir Niyyah Premium — 4,99€ 🌿', freemium_code_placeholder: 'CODE D\'ACCÈS', freemium_free: 'Continuer avec le Niveau 1 gratuit',
     // Wird
     wird_back: '← Retour', wird_reset: '↺ Réinitialiser',
     // Locked screen
@@ -5523,6 +5530,13 @@ const V2_I18N = {
     ikhlas_earned: 'You have earned this intention ✦', tawba_door: '✦ The door is always open', tawba_resume: 'Resume the path',
     note_saved: 'Saved ✦', scanner_analyzing: 'Analyzing…', journal_voice_soon: 'Soul Journal — Coming soon ✦',
     scanner_adopt: '✦ Adopt this Niyyah', scanner_retry_label: 'Rescan',
+    journal_niyyah_title: '✦ My Niyyah', journal_regards_title: '✦ My Regards',
+    link_see_regards: 'See my Regards →', link_see_niyyah: 'See my Niyyah →',
+    journal_search: 'Search...', modal_close: 'Close', btn_later: 'Later',
+    tawba_ameen: 'Ameen', defi_change: 'Change challenge', notif_accept: 'Yes, I want these reminders 🌿',
+    level_accomplished: 'Level accomplished', level_next: 'Next level →', level_stay: 'Stay on this level',
+    freemium_title: 'Niyyah Premium', freemium_sub: 'Access the full experience — one time, for life.',
+    freemium_buy: 'Get Niyyah Premium — €4.99 🌿', freemium_code_placeholder: 'ACCESS CODE', freemium_free: 'Continue with free Level 1',
     wird_back: '← Back', wird_reset: '↺ Reset',
     locked_title: 'Level',
     lvl_start: 'Start!', lvl_progress: 'In progress ✦', lvl_done: 'Accomplished ✦',
@@ -5635,6 +5649,13 @@ const V2_I18N = {
     ikhlas_earned: '', tawba_door: '', tawba_resume: '',
     note_saved: '', scanner_analyzing: '', journal_voice_soon: '',
     scanner_adopt: '', scanner_retry_label: '',
+    journal_niyyah_title: '', journal_regards_title: '',
+    link_see_regards: '', link_see_niyyah: '',
+    journal_search: '', modal_close: '', btn_later: '',
+    tawba_ameen: '', defi_change: '', notif_accept: '',
+    level_accomplished: '', level_next: '', level_stay: '',
+    freemium_title: '', freemium_sub: '',
+    freemium_buy: '', freemium_code_placeholder: '', freemium_free: '',
     wird_back: '→ رُجُوعٌ', wird_reset: '↺ إِعَادَةُ التَّعْيِينِ',
     locked_title: 'الْمُسْتَوَى',
     lvl_start: 'ابْدَأْ!', lvl_progress: 'جَارٍ ✦', lvl_done: 'أُنْجِزَ ✦',
@@ -5868,6 +5889,29 @@ function v2ApplyI18n() {
       btn.style.background = l === V2_LANG ? 'rgba(212,175,55,0.1)' : 'none';
     }
   });
+  v2ApplyI18nHTML();
+}
+
+function v2ApplyI18nHTML() {
+  var _s = function(id, key) { var el = document.getElementById(id); if (el && t(key)) el.textContent = t(key); };
+  var _p = function(id, key) { var el = document.getElementById(id); if (el && t(key)) el.placeholder = t(key); };
+  var _t = function(id, key) { var el = document.getElementById(id); if (el && t(key)) el.title = t(key); };
+  _s('i18n-tawba-resume', 'tawba_resume');
+  _s('scanner-btn-confirm', 'scanner_adopt');
+  _t('i18n-scanner-retry', 'scanner_retry_label');
+  _s('i18n-journal-niyyah-title', 'journal_niyyah_title');
+  _s('i18n-journal-regards-title', 'journal_regards_title');
+  _s('i18n-link-see-regards', 'link_see_regards');
+  _s('i18n-link-see-niyyah', 'link_see_niyyah');
+  _p('niyyah-journal-search', 'journal_search');
+  _p('night-thought-input', 'night_placeholder');
+  _s('i18n-info-close', 'modal_close');
+  _s('i18n-defi-close', 'modal_close');
+  _s('changerDefiBtn', 'defi_change');
+  _s('i18n-notif-yes', 'notif_accept');
+  _s('i18n-notif-later', 'btn_later');
+  _s('lvlEyebrow', 'level_accomplished');
+  _s('btnNextLvl', 'level_next');
 }
 
 // Shortcut: old V2_GREETINGS kept for compatibility

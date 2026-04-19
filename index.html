@@ -155,7 +155,7 @@
     <div style="font-size:28px; margin-bottom:10px;">🌙</div>
     <div class="tawba-title-v2">Mode Tawba</div>
     <p class="tawba-text-v2" id="tawba-text-v2">Bienvenue de retour. Chaque instant est un nouveau départ.</p>
-    <button class="tawba-btn-v2" onclick="v2DismissTawba(this)">Reprendre le chemin</button>
+    <button class="tawba-btn-v2" id="i18n-tawba-resume" onclick="v2DismissTawba(this)">Reprendre le chemin</button>
   </div>
 
   <!-- WRAPPER CENTRÉ -->
@@ -245,12 +245,12 @@
     <div style="padding:calc(var(--safe-top,0px) + 16px) 20px 40px;">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
         <div></div>
-        <div style="font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;color:#C8A84A;text-transform:uppercase;">✦ Mes Niyyah</div>
+        <div id="i18n-journal-niyyah-title" style="font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;color:#C8A84A;text-transform:uppercase;">✦ Mes Niyyah</div>
         <button onclick="closeNiyyahJournal()" style="background:transparent;border:1px solid rgba(200,168,75,0.3);border-radius:50%;width:36px;height:36px;color:#C8A84A;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;">✕</button>
       </div>
       <input id="niyyah-journal-search" type="text" placeholder="Rechercher..." oninput="filterNiyyahJournal()" style="width:100%;box-sizing:border-box;padding:10px 14px;background:rgba(200,168,75,0.04);border:1px solid rgba(200,168,75,0.15);border-radius:10px;color:#D4AF37;font-family:'Cormorant Garamond',serif;font-size:14px;outline:none;margin-bottom:16px;">
       <div id="niyyah-journal-list"></div>
-      <div style="text-align:center;margin-top:24px;"><span onclick="closeNiyyahJournal();setTimeout(openRegardeJournal,300);" style="font-family:'Cormorant Garamond',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);cursor:pointer;text-decoration:underline;text-underline-offset:3px;">Voir mes Regards →</span></div>
+      <div style="text-align:center;margin-top:24px;"><span onclick="closeNiyyahJournal();setTimeout(openRegardeJournal,300);" style="font-family:'Cormorant Garamond',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);cursor:pointer;text-decoration:underline;text-underline-offset:3px;"><span id="i18n-link-see-regards">Voir mes Regards →</span></span></div>
     </div>
   </div>
   <div id="niyyah-detail-overlay" style="display:none;position:fixed;inset:0;z-index:10000;background:#000;overflow-y:auto;">
@@ -290,7 +290,7 @@
     <div class="scanner-nuances" id="scanner-nuances"></div>
     <div class="scanner-actions">
       <button class="scanner-btn-confirm" id="scanner-btn-confirm" onclick="scannerConfirmNiyyah()">✦ Adopter cette Niyyah</button>
-      <button class="scanner-btn-retry" onclick="scannerRetry()" title="Rescanner">↩</button>
+      <button class="scanner-btn-retry" id="i18n-scanner-retry" onclick="scannerRetry()" title="Rescanner">↩</button>
     </div>
     <div class="scanner-privacy">✦ Aucune image n'est stockée · Traitement instantané · Vie privée totale</div>
   </div>
@@ -308,11 +308,11 @@
   <div style="padding:calc(var(--safe-top,0px) + 16px) 20px 40px;">
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;">
       <div></div>
-      <div style="font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;color:#C8A84A;text-transform:uppercase;">✦ Mes Regards</div>
+      <div id="i18n-journal-regards-title" style="font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;color:#C8A84A;text-transform:uppercase;">✦ Mes Regards</div>
       <button onclick="closeRegardeJournal()" style="background:transparent;border:1px solid rgba(200,168,75,0.3);border-radius:50%;width:36px;height:36px;color:#C8A84A;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;">✕</button>
     </div>
     <div id="regarde-journal-list"></div>
-    <div style="text-align:center;margin-top:24px;"><span onclick="closeRegardeJournal();setTimeout(openNiyyahJournal,300);" style="font-family:'Cormorant Garamond',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);cursor:pointer;text-decoration:underline;text-underline-offset:3px;">Voir mes Niyyah →</span></div>
+    <div style="text-align:center;margin-top:24px;"><span onclick="closeRegardeJournal();setTimeout(openNiyyahJournal,300);" style="font-family:'Cormorant Garamond',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);cursor:pointer;text-decoration:underline;text-underline-offset:3px;"><span id="i18n-link-see-niyyah">Voir mes Niyyah →</span></span></div>
   </div>
 </div>
 <div id="regarde-detail-overlay" style="display:none;position:fixed;inset:0;z-index:3100;background:#000;overflow-y:auto;">
@@ -453,7 +453,7 @@
 <div class="view" id="view-progression"><div class="prog-wrap" id="progContent"></div>
 </div><!-- INFO BOTTOM SHEET -->
 <div class="info-sheet-overlay" id="infoOverlay" onclick="closeInfoSheet()"></div>
-<div class="info-sheet" id="infoSheet"><div class="info-sheet-handle"></div><div class="info-sheet-label" id="infoLabel"></div><div class="info-sheet-arabic" id="infoArabic"></div><div class="info-sheet-phonetic" id="infoPhonetic"></div><div class="info-sheet-translation" id="infoTranslation"></div><button class="info-sheet-close" onclick="closeInfoSheet()">Fermer</button>
+<div class="info-sheet" id="infoSheet"><div class="info-sheet-handle"></div><div class="info-sheet-label" id="infoLabel"></div><div class="info-sheet-arabic" id="infoArabic"></div><div class="info-sheet-phonetic" id="infoPhonetic"></div><div class="info-sheet-translation" id="infoTranslation"></div><button class="info-sheet-close" id="i18n-info-close" onclick="closeInfoSheet()">Fermer</button>
 </div><!-- TASBIH FULLSCREEN -->
 <div class="tasbih-overlay" id="tasbihOverlay"><button class="tasbih-close" onclick="closeTasbih()">✕</button><div class="tasbih-label" id="tasbihLabel">Tasbih</div><div class="tasbih-arabic" id="tasbihArabic"></div><div class="tasbih-num" id="tasbihBigNum">0</div><div class="tasbih-total" id="tasbihTotalLabel">/ 99</div><div class="tasbih-tap-zone" id="tasbihTapZone"><div class="tasbih-tap-hint">Appuie n'importe où</div></div><button class="tasbih-reset" onclick="resetTasbihOverlay()">↺</button><div class="tasbih-bar-wrap"><div class="tasbih-bar-fill" id="tasbihBarFill" style="width:0%"></div></div>
 </div><!-- NAV BAR -->
@@ -514,10 +514,10 @@
     <div style="font-size:10px;color:rgba(255,255,255,0.3);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Progression cette semaine</div>
     <div id="defiOvJours" style="display:flex;gap:6px;margin-bottom:16px;"></div>
     <div id="defiOvEncouragement" style="font-size:12px;color:rgba(200,168,75,0.6);text-align:center;margin-bottom:14px;font-style:italic;"></div>
-    <button id="defiOvBtn" onclick="cocherDefiAujourdhui()" style="width:100%;padding:13px;border-radius:12px;background:#C8A84A;color:#2C2E32;font-size:16px;font-weight:700;border:none;cursor:pointer;font-family:var(--sans);margin-bottom:10px;">Cocher aujourd'hui ✦</button>
+    <button id="defiOvBtn" onclick="cocherDefiAujourdhui()" style="width:100%;padding:13px;border-radius:12px;background:#C8A84A;color:#2C2E32;font-size:16px;font-weight:700;border:none;cursor:pointer;font-family:var(--sans);margin-bottom:10px;">Cocher aujourd&#39;hui ✦</button>
     <div style="display:flex;gap:8px;margin-top:0;">
       <button id="changerDefiBtn" onclick="closeDefiOverlay();openDefiSelector();" style="flex:1;padding:10px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:transparent;color:#C8A84A;font-size:12px;cursor:pointer;font-family:var(--sans);">Changer de défi</button>
-      <button onclick="closeDefiOverlay()" style="flex:1;padding:10px;border-radius:12px;border:0.5px solid rgba(255,255,255,0.08);background:transparent;color:rgba(255,255,255,0.3);font-size:12px;cursor:pointer;font-family:var(--sans);">Fermer</button>
+      <button id="i18n-defi-close" onclick="closeDefiOverlay()" style="flex:1;padding:10px;border-radius:12px;border:0.5px solid rgba(255,255,255,0.08);background:transparent;color:rgba(255,255,255,0.3);font-size:12px;cursor:pointer;font-family:var(--sans);">Fermer</button>
     </div>
   </div>
 </div>
@@ -564,8 +564,8 @@
       </div>
     </div>
   </div>
-  <button class="notif-btn-yes" onclick="requestNotifPermission()">Oui, je veux ces rappels 🌿</button>
-  <button class="notif-btn-later" onclick="dismissNotifScreen()">Plus tard</button>
+  <button class="notif-btn-yes" id="i18n-notif-yes" onclick="requestNotifPermission()">Oui, je veux ces rappels 🌿</button>
+  <button class="notif-btn-later" id="i18n-notif-later" onclick="dismissNotifScreen()">Plus tard</button>
 </div>
 
 <!-- ════════════════════════════════════════════════
