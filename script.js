@@ -7639,10 +7639,26 @@ function regardeToggleNote() {
     setTimeout(function() { wrap.style.display = 'none'; }, 300);
   }
 }
+var _regardeNoteTimer = null;
+function _showSavedIndicator(afterId) {
+  var existing = document.getElementById(afterId + '-saved');
+  if (existing) existing.remove();
+  var el = document.createElement('div');
+  el.id = afterId + '-saved';
+  el.textContent = 'Enregistré ✦';
+  el.style.cssText = 'font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:#D4AF37;text-align:center;margin-top:6px;opacity:0;transition:opacity 0.2s ease;';
+  var target = document.getElementById(afterId);
+  if (target && target.parentNode) target.parentNode.appendChild(el);
+  setTimeout(function() { el.style.opacity = '1'; }, 10);
+  setTimeout(function() { el.style.transition = 'opacity 0.4s ease'; el.style.opacity = '0'; }, 1700);
+  setTimeout(function() { if (el.parentNode) el.remove(); }, 2100);
+}
 function regardeSaveNote() {
   var input = document.getElementById('regarde-note-input');
   if (!input || !_currentRegardeId) return;
   updateRegardeEntry(_currentRegardeId, { note: input.value });
+  clearTimeout(_regardeNoteTimer);
+  _regardeNoteTimer = setTimeout(function() { _showSavedIndicator('regarde-note-input'); }, 800);
 }
 var _currentRegardeCat = 'INDETERMINE';
 function regardeToggleStar() {
@@ -7759,10 +7775,13 @@ function regardeDetailNote(id) {
   var input = document.getElementById('regarde-detail-note-input');
   if (input) input.focus();
 }
+var _regardeDetailNoteTimer = null;
 function regardeDetailNoteSave(id) {
   var input = document.getElementById('regarde-detail-note-input');
   if (!input) return;
   updateRegardeEntry(id, { note: input.value });
+  clearTimeout(_regardeDetailNoteTimer);
+  _regardeDetailNoteTimer = setTimeout(function() { _showSavedIndicator('regarde-detail-note-input'); }, 800);
 }
 
 function regardeDetailDelete(id) {
