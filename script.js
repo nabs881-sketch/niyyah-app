@@ -5439,6 +5439,7 @@ const V2_I18N = {
     onboard_lvl1_desc: 'Les 5 prières · Dhikr · Récitation', onboard_lvl2_desc: 'Mosquée · Istighfar · Tasbih',
     onboard_lvl3_desc: 'Hadiths · Coran · Arabe', onboard_lvl4_desc: 'Sadaqa · Salam · Douaas',
     onboard_city_manual: 'Ou entre ta ville manuellement :',
+    card_pratique: 'Prières et actes du jour', card_wird: 'Invocations du matin et du soir', card_parcours: 'Ta progression spirituelle', card_tafakkur: 'Méditation et contemplation',
     // Night companion
     night_title: 'Quelle pensée ferme ta journée ?', night_placeholder: 'Écris ta pensée du soir...', night_send: 'ENVOYER', night_sagesse: 'SAGESSE DE LA NUIT',
     // Notifications
@@ -5569,6 +5570,7 @@ const V2_I18N = {
     onboard_lvl1_desc: '5 daily prayers · Dhikr · Recitation', onboard_lvl2_desc: 'Mosque · Istighfar · Tasbih',
     onboard_lvl3_desc: 'Hadiths · Quran · Arabic', onboard_lvl4_desc: 'Sadaqa · Salam · Douaas',
     onboard_city_manual: 'Or enter your city manually:',
+    card_pratique: 'Daily prayers and acts', card_wird: 'Morning and evening invocations', card_parcours: 'Your spiritual progress', card_tafakkur: 'Meditation and contemplation',
     night_title: 'What thought closes your day?', night_placeholder: 'Write your evening thought...', night_send: 'SEND', night_sagesse: 'NIGHT WISDOM',
     notif_unsupported: 'Notifications are not supported on this device', notif_enabled: '✦ Reminders enabled — JazakAllahu khairan!', notif_later: 'You can enable them later in settings', notif_disabled: '🔕 Reminders disabled',
     share_downloaded: 'Image downloaded — share it 🌿', share_copied: 'Link copied!',
@@ -5691,6 +5693,7 @@ const V2_I18N = {
     onboard_tagline: '', onboard_scanner_example: '',
     onboard_lvl1_desc: '', onboard_lvl2_desc: '', onboard_lvl3_desc: '', onboard_lvl4_desc: '',
     onboard_city_manual: '',
+    card_pratique: '', card_wird: '', card_parcours: '', card_tafakkur: '',
     night_title: 'مَا الْفِكْرَةُ الَّتِي تَخْتِمُ بِهَا يَوْمَكَ؟', night_placeholder: 'اكْتُبْ فِكْرَتَكَ الْمَسَائِيَّةَ...', night_send: 'إِرْسَالٌ', night_sagesse: 'حِكْمَةُ اللَّيْلِ',
     notif_unsupported: 'الْإِشْعَارَاتُ غَيْرُ مَدْعُومَةٍ عَلَى هَذَا الْجِهَازِ', notif_enabled: '✦ تَمَّ تَفْعِيلُ التَّذْكِيرَاتِ — جَزَاكَ اللَّهُ خَيْرًا!', notif_later: 'يُمْكِنُكَ تَفْعِيلُهَا لَاحِقًا فِي الْإِعْدَادَاتِ', notif_disabled: '🔕 تَمَّ تَعْطِيلُ التَّذْكِيرَاتِ',
     share_downloaded: 'تَمَّ التَّحْمِيلُ — شَارِكْهَا 🌿', share_copied: 'تَمَّ النَّسْخُ!',
@@ -5938,6 +5941,10 @@ function v2ApplyI18nHTML() {
   _s('i18n-notif-later', 'btn_later');
   _s('lvlEyebrow', 'level_accomplished');
   _s('btnNextLvl', 'level_next');
+  _s('i18n-card-pratique', 'card_pratique');
+  _s('i18n-card-wird', 'card_wird');
+  _s('i18n-card-parcours', 'card_parcours');
+  _s('i18n-card-tafakkur', 'card_tafakkur');
 }
 
 // Shortcut: old V2_GREETINGS kept for compatibility
