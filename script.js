@@ -5411,6 +5411,20 @@ const V2_I18N = {
     bilan_distraction_sub: 'غفلة — le cœur absent', bilan_effort_sub: 'مجاهدة — le combat intérieur', bilan_sincerite_sub: 'إخلاص — l\'état recherché',
     tasbih_label: 'Tasbih', tasbih_hint: 'Appuie n\'importe où',
     fri_kahf_toast: '📖 Al-Kahf récitée — lumière jusqu\'au prochain vendredi !', fri_salawat_toast: '🌟 Salawat envoyées sur le Prophète ﷺ', fri_doua_toast: '🤲 Douaa de l\'heure bénie — qu\'Allah l\'exauce !',
+    meta_subtitle: 'Pratique & Élévation', aria_language: 'Langue', aria_settings: 'Réglages',
+    aria_pratique: 'Pratique', aria_wird: 'Wird', aria_parcours: 'Parcours', aria_tafakkur: 'Tafakkur',
+    nafs_weekly: 'un trait par semaine', aria_back_home: 'Retour à Ma Niyyah',
+    modal_anchor_title: 'Ancrer votre Niyyah', modal_intention_placeholder: 'Écrivez votre intention personnelle...',
+    notif_stay_connected: 'Reste connecté à Allah',
+    btn_details: 'Détails', btn_choose_surah: 'Choisir une sourate', btn_listen_recitation: 'Écouter la récitation',
+    btn_why: 'Pourquoi ?', btn_see_phonetic: 'Voir la phonétique', btn_share_label: 'Partager', btn_fullscreen: 'Mode plein écran',
+    city_fallback: 'Ville', city_placeholder_prayer: 'Ville...', countdown_now: 'Maintenant', btn_listen: 'Écouter',
+    quran_verse_label: 'Verset ',
+    tawba_streak_prefix: 'Ton chemin de ', tawba_streak_suffix: ' jours t\'attend toujours.',
+    tawba_week_msg: 'Nouvelle semaine, nouvelle niyyah. Bismillah.',
+    freemium_code_invalid: 'Code invalide — réessaie', prayer_time_toast: 'Il est l\'heure de ',
+    nafs_note_placeholder: 'Dans quelle situation ? (optionnel)', hold_hint: 'Maintenez...',
+    regarde_note_placeholder: 'Note personnelle...', share_savaistu_title: 'Le savais-tu ? — Niyyah Daily',
     // Wird
     wird_back: '← Retour', wird_reset: '↺ Réinitialiser',
     // Locked screen
@@ -5572,6 +5586,20 @@ const V2_I18N = {
     bilan_distraction_sub: 'غفلة — heedless heart', bilan_effort_sub: 'مجاهدة — inner struggle', bilan_sincerite_sub: 'إخلاص — the sought-after state',
     tasbih_label: 'Tasbih', tasbih_hint: 'Tap anywhere',
     fri_kahf_toast: '📖 Al-Kahf recited — light until next Friday!', fri_salawat_toast: '🌟 Salawat sent upon the Prophet ﷺ', fri_doua_toast: '🤲 Dua of the blessed hour — may Allah accept it!',
+    meta_subtitle: 'Practice & Elevation', aria_language: 'Language', aria_settings: 'Settings',
+    aria_pratique: 'Practice', aria_wird: 'Wird', aria_parcours: 'Journey', aria_tafakkur: 'Tafakkur',
+    nafs_weekly: 'one trait per week', aria_back_home: 'Back to My Niyyah',
+    modal_anchor_title: 'Anchor your Niyyah', modal_intention_placeholder: 'Write your personal intention...',
+    notif_stay_connected: 'Stay connected to Allah',
+    btn_details: 'Details', btn_choose_surah: 'Choose a surah', btn_listen_recitation: 'Listen to recitation',
+    btn_why: 'Why?', btn_see_phonetic: 'See phonetics', btn_share_label: 'Share', btn_fullscreen: 'Fullscreen mode',
+    city_fallback: 'City', city_placeholder_prayer: 'City...', countdown_now: 'Now', btn_listen: 'Listen',
+    quran_verse_label: 'Verse ',
+    tawba_streak_prefix: 'Your path of ', tawba_streak_suffix: ' days still awaits you.',
+    tawba_week_msg: 'New week, new niyyah. Bismillah.',
+    freemium_code_invalid: 'Invalid code — try again', prayer_time_toast: 'It\'s time for ',
+    nafs_note_placeholder: 'In what situation? (optional)', hold_hint: 'Hold...',
+    regarde_note_placeholder: 'Personal note...', share_savaistu_title: 'Did you know? — Niyyah Daily',
     wird_back: '← Back', wird_reset: '↺ Reset',
     locked_title: 'Level',
     lvl_start: 'Start!', lvl_progress: 'In progress ✦', lvl_done: 'Accomplished ✦',
@@ -5712,6 +5740,15 @@ const V2_I18N = {
     bilan_title: '', bilan_question: '', bilan_subtitle: '', bilan_distraction: '', bilan_distraction_sub: '', bilan_effort: '', bilan_effort_sub: '', bilan_sincerite: '', bilan_sincerite_sub: '',
     tasbih_label: '', tasbih_hint: '',
     fri_kahf_toast: '', fri_salawat_toast: '', fri_doua_toast: '',
+    meta_subtitle: '', aria_language: '', aria_settings: '',
+    aria_pratique: '', aria_wird: '', aria_parcours: '', aria_tafakkur: '',
+    nafs_weekly: '', aria_back_home: '', modal_anchor_title: '', modal_intention_placeholder: '',
+    notif_stay_connected: '', btn_details: '', btn_choose_surah: '', btn_listen_recitation: '',
+    btn_why: '', btn_see_phonetic: '', btn_share_label: '', btn_fullscreen: '',
+    city_fallback: '', city_placeholder_prayer: '', countdown_now: '', btn_listen: '',
+    quran_verse_label: '', tawba_streak_prefix: '', tawba_streak_suffix: '', tawba_week_msg: '',
+    freemium_code_invalid: '', prayer_time_toast: '', nafs_note_placeholder: '', hold_hint: '',
+    regarde_note_placeholder: '', share_savaistu_title: '',
     wird_back: '→ رُجُوعٌ', wird_reset: '↺ إِعَادَةُ التَّعْيِينِ',
     locked_title: 'الْمُسْتَوَى',
     lvl_start: 'ابْدَأْ!', lvl_progress: 'جَارٍ ✦', lvl_done: 'أُنْجِزَ ✦',
@@ -6018,6 +6055,11 @@ function v2ApplyI18nHTML() {
   _s('i18n-bilan-sincerite-sub', 'bilan_sincerite_sub');
   _s('tasbihLabel', 'tasbih_label');
   _s('i18n-tasbih-hint', 'tasbih_hint');
+  _s('i18n-nafs-weekly', 'nafs_weekly');
+  var _a = function(id, key) { var el = document.getElementById(id); if (el && t(key)) el.setAttribute('aria-label', t(key)); };
+  _a('i18n-aria-lang', 'aria_language');
+  _a('i18n-aria-settings', 'aria_settings');
+  _a('i18n-aria-back', 'aria_back_home');
 }
 
 // Shortcut: old V2_GREETINGS kept for compatibility

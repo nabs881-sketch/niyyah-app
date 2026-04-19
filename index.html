@@ -16,7 +16,7 @@
 <meta name="theme-color" content="#000000">
 <link rel="icon" href="./icon-192.png" type="image/png">
 <link rel="shortcut icon" href="./icon-192.png" type="image/png">
-<title>Niyyah Daily ✦ — Pratique & Élévation</title>
+<title id="i18n-page-title">Niyyah Daily ✦ — Pratique & Élévation</title>
 <!-- Open Graph / WhatsApp -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://nabs881-sketch.github.io/niyyah-app/">
@@ -140,8 +140,8 @@
 <div class="topbar-v2 active" id="topbar-v2">
   <div class="topbar-logo-v2" onclick="v2GoSanctuaire()">Niyyah</div>
   <div class="topbar-actions-v2">
-    <button class="topbar-btn-v2" id="topbar-lang-btn" onclick="v2OpenSettings()" aria-label="Langue" style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.1em;width:auto;padding:0 8px;border:1px solid rgba(212,175,55,0.2);border-radius:100px;background:rgba(212,175,55,0.06);color:rgba(212,175,55,0.7);">FR</button>
-    <button class="topbar-btn-v2" onclick="v2OpenSettings()" aria-label="Réglages">⚙</button>
+    <button class="topbar-btn-v2" id="topbar-lang-btn" onclick="v2OpenSettings()" aria-label="Langue" id="i18n-aria-lang" style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.1em;width:auto;padding:0 8px;border:1px solid rgba(212,175,55,0.2);border-radius:100px;background:rgba(212,175,55,0.06);color:rgba(212,175,55,0.7);">FR</button>
+    <button class="topbar-btn-v2" onclick="v2OpenSettings()" aria-label="Réglages" id="i18n-aria-settings">⚙</button>
   </div>
 </div>
 
@@ -346,7 +346,7 @@
     <div class="nafs-header">
       <div class="nafs-arabic-title">نَفْس</div>
       <div class="nafs-title">NAFS</div>
-      <div class="nafs-subtitle">Tazkiyat an-nafs — un trait par semaine</div>
+      <div class="nafs-subtitle">Tazkiyat an-nafs — <span id="i18n-nafs-weekly">un trait par semaine</span></div>
     </div>
     <div id="nafs-trait-card" class="nafs-trait-card"></div>
     <p class="app-disclaimer" id="nafs-disclaimer"></p>
@@ -403,7 +403,7 @@
   </button>
 
 </nav>
-<button id="v2-back-btn" class="v2-back-btn" onclick="v2GoSanctuaire()" aria-label="Retour à Ma Niyyah">←</button>
+<button id="v2-back-btn" class="v2-back-btn" onclick="v2GoSanctuaire()" aria-label="Retour à Ma Niyyah" id="i18n-aria-back">←</button>
 
 <!-- ════════════════════════════════════════════════
      V2 — MODAL NIYYAH (Ancre de l'intention)
