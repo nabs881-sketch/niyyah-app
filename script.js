@@ -799,9 +799,9 @@ function toggleFridayItem(id) {
     playCheckSound();
     if (navigator.vibrate) navigator.vibrate([12, 8, 25]);
     const msgs = {
-      'fri_kahf':    '📖 Al-Kahf récitée — lumière jusqu\'au prochain vendredi !',
-      'fri_salawat': '🌟 Salawat envoyées sur le Prophète ﷺ',
-      'fri_doua':    '🤲 Douaa de l\'heure bénie — qu\'Allah l\'exauce !'
+      'fri_kahf':    t('fri_kahf_toast'),
+      'fri_salawat': t('fri_salawat_toast'),
+      'fri_doua':    t('fri_doua_toast')
     };
     showToast(msgs[id] || t('ramadan_fallback'));
   }
@@ -5410,6 +5410,7 @@ const V2_I18N = {
     bilan_distraction: 'Distraction', bilan_effort: 'Effort', bilan_sincerite: 'Sincérité',
     bilan_distraction_sub: 'غفلة — le cœur absent', bilan_effort_sub: 'مجاهدة — le combat intérieur', bilan_sincerite_sub: 'إخلاص — l\'état recherché',
     tasbih_label: 'Tasbih', tasbih_hint: 'Appuie n\'importe où',
+    fri_kahf_toast: '📖 Al-Kahf récitée — lumière jusqu\'au prochain vendredi !', fri_salawat_toast: '🌟 Salawat envoyées sur le Prophète ﷺ', fri_doua_toast: '🤲 Douaa de l\'heure bénie — qu\'Allah l\'exauce !',
     // Wird
     wird_back: '← Retour', wird_reset: '↺ Réinitialiser',
     // Locked screen
@@ -5570,6 +5571,7 @@ const V2_I18N = {
     bilan_distraction: 'Distraction', bilan_effort: 'Effort', bilan_sincerite: 'Sincerity',
     bilan_distraction_sub: 'غفلة — heedless heart', bilan_effort_sub: 'مجاهدة — inner struggle', bilan_sincerite_sub: 'إخلاص — the sought-after state',
     tasbih_label: 'Tasbih', tasbih_hint: 'Tap anywhere',
+    fri_kahf_toast: '📖 Al-Kahf recited — light until next Friday!', fri_salawat_toast: '🌟 Salawat sent upon the Prophet ﷺ', fri_doua_toast: '🤲 Dua of the blessed hour — may Allah accept it!',
     wird_back: '← Back', wird_reset: '↺ Reset',
     locked_title: 'Level',
     lvl_start: 'Start!', lvl_progress: 'In progress ✦', lvl_done: 'Accomplished ✦',
@@ -5709,6 +5711,7 @@ const V2_I18N = {
     freemium_f1: '', freemium_f2: '', freemium_f3: '', freemium_f4: '', freemium_f5: '', freemium_f6: '',
     bilan_title: '', bilan_question: '', bilan_subtitle: '', bilan_distraction: '', bilan_distraction_sub: '', bilan_effort: '', bilan_effort_sub: '', bilan_sincerite: '', bilan_sincerite_sub: '',
     tasbih_label: '', tasbih_hint: '',
+    fri_kahf_toast: '', fri_salawat_toast: '', fri_doua_toast: '',
     wird_back: '→ رُجُوعٌ', wird_reset: '↺ إِعَادَةُ التَّعْيِينِ',
     locked_title: 'الْمُسْتَوَى',
     lvl_start: 'ابْدَأْ!', lvl_progress: 'جَارٍ ✦', lvl_done: 'أُنْجِزَ ✦',
