@@ -7457,6 +7457,8 @@ async function regardeOpen() {
   if (!screen || !content) return;
   closeRegardeJournal();
   closeRegardeDetail();
+  if (typeof closeNiyyahJournal === 'function') closeNiyyahJournal();
+  if (typeof closeNiyyahDetail === 'function') closeNiyyahDetail();
 
   // Init caméra
   try {
