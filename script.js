@@ -5403,6 +5403,9 @@ const V2_I18N = {
     level_accomplished: 'Niveau accompli', level_next: 'Niveau suivant →', level_stay: 'Rester sur ce niveau',
     freemium_title: 'Niyyah Premium', freemium_sub: 'Accède à l\'expérience complète — une seule fois, à vie.',
     freemium_buy: 'Obtenir Niyyah Premium — 4,99€ 🌿', freemium_code_placeholder: 'CODE D\'ACCÈS', freemium_free: 'Continuer avec le Niveau 1 gratuit',
+    freemium_f1: 'Scanner de Niyyah — 1/jour gratuit → illimité premium', freemium_f2: 'Approfondissement — Tasbih, Mosquée, Jeûne sunnah',
+    freemium_f3: 'Connaissance — Coran, Hadiths, Arabe', freemium_f4: 'Rayonnement — Sadaqa, Douaas, Salam',
+    freemium_f5: 'Compagnon Nocturne + Titres spirituels', freemium_f6: 'Badges exclusifs + Streak avancé',
     // Wird
     wird_back: '← Retour', wird_reset: '↺ Réinitialiser',
     // Locked screen
@@ -5556,6 +5559,9 @@ const V2_I18N = {
     level_accomplished: 'Level accomplished', level_next: 'Next level →', level_stay: 'Stay on this level',
     freemium_title: 'Niyyah Premium', freemium_sub: 'Access the full experience — one time, for life.',
     freemium_buy: 'Get Niyyah Premium — €4.99 🌿', freemium_code_placeholder: 'ACCESS CODE', freemium_free: 'Continue with free Level 1',
+    freemium_f1: 'Niyyah Scanner — 1/day free → unlimited premium', freemium_f2: 'Deepening — Tasbih, Mosque, Sunnah fasting',
+    freemium_f3: 'Knowledge — Quran, Hadiths, Arabic', freemium_f4: 'Radiance — Sadaqa, Duas, Salam',
+    freemium_f5: 'Night Companion + Spiritual titles', freemium_f6: 'Exclusive badges + Advanced streak',
     wird_back: '← Back', wird_reset: '↺ Reset',
     locked_title: 'Level',
     lvl_start: 'Start!', lvl_progress: 'In progress ✦', lvl_done: 'Accomplished ✦',
@@ -5692,6 +5698,7 @@ const V2_I18N = {
     level_accomplished: '', level_next: '', level_stay: '',
     freemium_title: '', freemium_sub: '',
     freemium_buy: '', freemium_code_placeholder: '', freemium_free: '',
+    freemium_f1: '', freemium_f2: '', freemium_f3: '', freemium_f4: '', freemium_f5: '', freemium_f6: '',
     wird_back: '→ رُجُوعٌ', wird_reset: '↺ إِعَادَةُ التَّعْيِينِ',
     locked_title: 'الْمُسْتَوَى',
     lvl_start: 'ابْدَأْ!', lvl_progress: 'جَارٍ ✦', lvl_done: 'أُنْجِزَ ✦',
@@ -5976,6 +5983,17 @@ function v2ApplyI18nHTML() {
   _s('i18n-card-wird', 'card_wird');
   _s('i18n-card-parcours', 'card_parcours');
   _s('i18n-card-tafakkur', 'card_tafakkur');
+  _s('i18n-freemium-title', 'freemium_title');
+  _s('i18n-freemium-sub', 'freemium_sub');
+  _s('i18n-freemium-buy', 'freemium_buy');
+  _s('i18n-freemium-free', 'freemium_free');
+  _p('freemiumCodeInput', 'freemium_code_placeholder');
+  _s('i18n-freemium-f1', 'freemium_f1');
+  _s('i18n-freemium-f2', 'freemium_f2');
+  _s('i18n-freemium-f3', 'freemium_f3');
+  _s('i18n-freemium-f4', 'freemium_f4');
+  _s('i18n-freemium-f5', 'freemium_f5');
+  _s('i18n-freemium-f6', 'freemium_f6');
 }
 
 // Shortcut: old V2_GREETINGS kept for compatibility
