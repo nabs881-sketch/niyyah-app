@@ -5695,6 +5695,15 @@ const V2_I18N = {
 
 // Active language (detected from browser or saved)
 function v2DetectLang() {
+  // URL override: ?lang=en|fr|ar
+  try {
+    var urlLang = new URLSearchParams(window.location.search).get('lang');
+    if (urlLang && V2_I18N[urlLang]) {
+      var s = JSON.parse(localStorage.getItem('niyyah_v2_bridge') || '{}'); s.lang = urlLang; safeSetItem('niyyah_v2_bridge', JSON.stringify(s));
+      history.replaceState(null, '', window.location.pathname);
+      return urlLang;
+    }
+  } catch(e) {}
   const saved = (JSON.parse(localStorage.getItem('niyyah_v2_bridge') || '{}')).lang;
   if (saved && V2_I18N[saved]) return saved;
   // Détection auto au premier lancement
