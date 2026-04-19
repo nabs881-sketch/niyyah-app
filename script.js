@@ -6246,6 +6246,63 @@ function renderNafsTrait() {
     '</div>';
 }
 
+function v2GoJournal() {
+  var sanctEl = document.getElementById('view-sanctuaire');
+  if (sanctEl) sanctEl.classList.remove('active');
+  document.querySelectorAll('.view').forEach(function(v) { v.classList.remove('active'); v.style.display = 'none'; });
+  var journalView = document.getElementById('view-journal');
+  if (journalView) { journalView.style.display = ''; journalView.classList.add('active'); }
+  var tbEl = document.getElementById('topbar-v2');
+  if (tbEl) tbEl.classList.remove('active');
+  document.querySelectorAll('.nav-v2-item').forEach(function(n) { n.classList.remove('active-nav'); });
+  var btn = document.getElementById('v2nav-journal');
+  if (btn) btn.classList.add('active-nav');
+  journalSwitchTab('niyyah');
+}
+function journalSwitchTab(tab) {
+  var content = document.getElementById('journal-content');
+  var tabN = document.getElementById('journal-tab-niyyah');
+  var tabR = document.getElementById('journal-tab-regards');
+  if (!content) return;
+  if (tab === 'niyyah') {
+    if (tabN) { tabN.style.background = 'rgba(200,168,75,0.12)'; tabN.style.color = '#D4AF37'; }
+    if (tabR) { tabR.style.background = 'transparent'; tabR.style.color = 'rgba(200,168,75,0.4)'; }
+    var entries = getNiyyahHistory();
+    if (entries.length === 0) {
+      content.innerHTML = '<div style="text-align:center;padding:60px 20px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);">Tes premières intentions apparaîtront ici ✦</div></div>';
+    } else {
+      var html = '';
+      entries.forEach(function(e) {
+        var d = new Date(e.date);
+        var dateStr = d.toLocaleDateString('fr-FR', { day:'numeric', month:'short' }) + ' · ' + d.toLocaleTimeString('fr-FR', { hour:'2-digit', minute:'2-digit' });
+        var thumb = e.photo ? '<img src="' + e.photo + '" style="width:60px;height:60px;border-radius:10px;object-fit:cover;flex-shrink:0;">' : '<div style="width:60px;height:60px;border-radius:10px;background:rgba(200,168,75,0.08);flex-shrink:0;"></div>';
+        html += '<div onclick="openNiyyahDetail(\'' + e.id + '\')" style="display:flex;gap:12px;align-items:center;padding:12px;background:rgba(200,168,75,0.03);border:1px solid rgba(200,168,75,0.1);border-radius:12px;margin-bottom:8px;cursor:pointer;">'
+          + thumb + '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#D4AF37;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">' + (e.intention || '') + '</div>'
+          + '<div style="font-size:10px;color:rgba(255,255,255,0.3);margin-top:4px;">' + dateStr + '</div></div></div>';
+      });
+      content.innerHTML = html;
+    }
+  } else {
+    if (tabN) { tabN.style.background = 'transparent'; tabN.style.color = 'rgba(200,168,75,0.4)'; }
+    if (tabR) { tabR.style.background = 'rgba(200,168,75,0.12)'; tabR.style.color = '#D4AF37'; }
+    var entries = getRegardeHistory();
+    if (entries.length === 0) {
+      content.innerHTML = '<div style="text-align:center;padding:60px 20px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);">Tes premiers Regards apparaîtront ici ✦</div></div>';
+    } else {
+      var html = '';
+      entries.forEach(function(e) {
+        var d = new Date(e.date);
+        var dateStr = d.toLocaleDateString('fr-FR', { day:'numeric', month:'short' }) + ' · ' + d.toLocaleTimeString('fr-FR', { hour:'2-digit', minute:'2-digit' });
+        var thumb = e.photo ? '<img src="' + e.photo + '" style="width:60px;height:60px;border-radius:10px;object-fit:cover;flex-shrink:0;">' : '<div style="width:60px;height:60px;border-radius:10px;background:rgba(200,168,75,0.08);flex-shrink:0;"></div>';
+        var star = e.bookmark ? '<div style="position:absolute;top:8px;right:8px;color:#D4AF37;font-size:14px;">★</div>' : '';
+        html += '<div onclick="openRegardeDetail(\'' + e.id + '\')" style="display:flex;gap:12px;align-items:center;padding:12px;background:rgba(200,168,75,0.03);border:1px solid rgba(200,168,75,0.1);border-radius:12px;margin-bottom:8px;cursor:pointer;position:relative;">'
+          + thumb + '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#D4AF37;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">' + (e.question || '') + '</div>'
+          + '<div style="font-size:10px;color:rgba(255,255,255,0.3);margin-top:4px;">' + dateStr + '</div></div>' + star + '</div>';
+      });
+      content.innerHTML = html;
+    }
+  }
+}
 function v2GoNafs() {
   var sanctEl = document.getElementById('view-sanctuaire');
   if (sanctEl) sanctEl.classList.remove('active');
@@ -6467,7 +6524,7 @@ function v2OpenSettings() {
   sheet.id = 'v2-settings-sheet';
   sheet.style.cssText = 'position:fixed;inset:0;background:rgba(10,10,10,0.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:3000;display:flex;align-items:flex-end;justify-content:center;animation:backdropV2 0.3s ease forwards;';
   const ramadanActive = typeof ramadanState !== 'undefined' && ramadanState.active;
-  const debugSection = NIYYAH_DEBUG ? '<div style="margin-top:14px;background:#1a1a1a;border:1px solid rgba(255,255,255,0.05);border-radius:14px;padding:16px;"><div style="font-size:10px;letter-spacing:0.28em;color:rgba(255,255,255,0.25);text-transform:uppercase;font-family:Cinzel,serif;margin-bottom:10px;text-align:center;">🔧 DEBUG</div><button onclick="safeSetItem(\'niyyah_regarde_available_today\',\'true\');showToast(\'Regarde active\');document.getElementById(\'v2-settings-sheet\').remove();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.4);font-size:12px;cursor:pointer;">[DEBUG] Activer Regarde</button></div>' : '';
+  const debugSection = NIYYAH_DEBUG ? '<div style="margin-top:14px;background:#1a1a1a;border:1px solid rgba(255,255,255,0.05);border-radius:14px;padding:16px;"><div style="font-size:10px;letter-spacing:0.28em;color:rgba(255,255,255,0.25);text-transform:uppercase;font-family:Cinzel,serif;margin-bottom:10px;text-align:center;">🔧 DEBUG</div><button onclick="safeSetItem(\'niyyah_regarde_available_today\',\'true\');showToast(\'Regarde active\');document.getElementById(\'v2-settings-sheet\').remove();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.4);font-size:12px;cursor:pointer;margin-bottom:8px;">[DEBUG] Activer Regarde</button><button onclick="document.getElementById(\'v2-settings-sheet\').remove();regardeOpen();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.4);font-size:12px;cursor:pointer;">[DEBUG] Lancer Regarde maintenant</button></div>' : '';
   sheet.innerHTML = `
     <div style="width:100%;max-width:480px;background:#111;border-radius:22px 22px 0 0;padding:26px 22px calc(32px + env(safe-area-inset-bottom));border-top:1px solid rgba(212,175,55,0.14);animation:sheetV2 0.4s cubic-bezier(0.23,1,0.32,1) forwards;direction:${T.dir};">
       <div style="width:38px;height:3px;background:rgba(255,255,255,0.1);border-radius:2px;margin:0 auto 22px;"></div>
@@ -7712,18 +7769,6 @@ async function scannerOpen() {
   document.getElementById('scanner-hint').style.opacity = '1';
   _scannerResult = null;
 
-  // Barre haute : boutons REGARDE + NIYYAH
-  var topBar = document.getElementById('scanner-top-bar');
-  if (topBar) {
-    var regardeDispo = localStorage.getItem('niyyah_regarde_available_today') === 'true';
-    var btnStyle = 'flex:1;padding:12px 8px;border-radius:12px;border:1px solid rgba(212,175,55,0.4);background:rgba(0,0,0,0.5);color:#D4AF37;font-family:Cinzel,serif;font-size:12px;letter-spacing:1.5px;text-align:center;cursor:pointer;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);';
-    var html = '';
-    if (regardeDispo) {
-      html += '<button onclick="event.stopPropagation();regardeOpen();" style="' + btnStyle + '">REGARDE</button>';
-    }
-    html += '<button onclick="event.stopPropagation();openNiyyahJournal();" style="' + btnStyle + '">MES NIYYAH</button>';
-    topBar.innerHTML = html;
-  }
 }
 
 /* ── Journal Niyyah V2 ── */

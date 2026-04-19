@@ -240,7 +240,6 @@
   <video id="scanner-video" autoplay playsinline muted></video>
   <canvas id="scanner-canvas"></canvas>
   <button id="scanner-close" onclick="scannerClose()">✕</button>
-  <div id="scanner-top-bar" style="position:absolute;top:calc(var(--safe-top,0px) + 14px);left:16px;right:56px;z-index:20;display:flex;gap:16px;"></div>
   <!-- Journal Niyyah V2 -->
   <div id="niyyah-journal-overlay" style="display:none;position:fixed;inset:0;z-index:9999;background:#000;overflow-y:auto;">
     <div style="padding:calc(var(--safe-top,0px) + 16px) 20px 40px;">
@@ -324,6 +323,22 @@
 </div>
 
 <!-- ════════════════════════════════════════════════
+     JOURNAL — Niyyah + Regards
+     ════════════════════════════════════════════════ -->
+<div class="view" id="view-journal" style="display:none;">
+  <div style="min-height:100vh;background:#0a0a0a;padding:32px 20px 120px;">
+    <div style="text-align:center;margin-bottom:20px;">
+      <div style="font-family:'Cinzel',serif;font-size:18px;letter-spacing:3px;color:#C8A84A;text-transform:uppercase;">JOURNAL</div>
+    </div>
+    <div id="journal-tabs" style="display:flex;gap:0;margin-bottom:20px;border-radius:12px;overflow:hidden;border:1px solid rgba(200,168,75,0.2);">
+      <button id="journal-tab-niyyah" onclick="journalSwitchTab('niyyah')" style="flex:1;padding:10px;background:rgba(200,168,75,0.12);border:none;color:#D4AF37;font-family:'Cinzel',serif;font-size:11px;letter-spacing:1.5px;cursor:pointer;">NIYYAH</button>
+      <button id="journal-tab-regards" onclick="journalSwitchTab('regards')" style="flex:1;padding:10px;background:transparent;border:none;color:rgba(200,168,75,0.4);font-family:'Cinzel',serif;font-size:11px;letter-spacing:1.5px;cursor:pointer;">REGARDS</button>
+    </div>
+    <div id="journal-content"></div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════
      NAFS — Tazkiyat an-nafs
      ════════════════════════════════════════════════ -->
 <div class="view" id="view-nafs" style="display:none;">
@@ -361,6 +376,16 @@
       </svg>
     </span>
     <span class="nav-v2-label" id="nav-label-scanner">Scanner</span>
+  </button>
+
+  <!-- JOURNAL — Livre -->
+  <button class="nav-v2-item" id="v2nav-journal" onclick="v2GoJournal()">
+    <span class="nav-v2-icon"><svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 3h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4"/>
+      <path d="M4 3v16"/>
+      <path d="M8 7h6"/><path d="M8 11h4"/>
+    </svg></span>
+    <span class="nav-v2-label">Journal</span>
   </button>
 
   <!-- NAFS — Feuille -->
