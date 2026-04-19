@@ -1821,9 +1821,9 @@ function renderResume() {
     '</div>' +
     levelsHtml +
     '<div class="resume-actions">' +
-      '<button class="btn-new-day" onclick="switchView(\'checklist\')">Commencer ma journée</button>' +
+      '<button class="btn-new-day" onclick="switchView(\'checklist\')">' + t('btn_start_day') + '</button>' +
       '<button style="width:100%;padding:14px;border-radius:14px;border:none;background:#C8A84A;color:#2C2E32;font-size:15px;font-weight:600;cursor:pointer;font-family:var(--sans);margin-bottom:0;" onclick="openBilanSoir()">🌙 Bilan du soir</button>' +
-      '<button class="btn-back-check" onclick="switchView(\'checklist\')">← Retour à la checklist</button>' +
+      '<button class="btn-back-check" onclick="switchView(\'checklist\')">' + t('btn_back_checklist') + '</button>' +
     '</div>';
 }
 function init() {
@@ -2006,7 +2006,7 @@ function renderTabs() {
     let cls = 'tab';
     if (active)   cls += ' active';
     else if (done) cls += ' done';
-    return '<div class="' + cls + '" onclick="selectLevel(' + l.id + ')">' + l.title + (done ? ' ✓' : '') + '</div>';
+    return '<div class="' + cls + '" onclick="selectLevel(' + l.id + ')">' + t('level_' + l.id) + (done ? ' ✓' : '') + '</div>';
   }).join('');
 }
 function animateTabSwipe(direction, callback) {
@@ -2123,11 +2123,11 @@ function getCurrentPrayerBlock() {
   return { id: 'isha', label: _t('block_isha') };
 }
 function getConversionMessage(streak) {
-  if (streak >= 30) return 'Si vous êtes reconnaissants, J\'augmenterai Mes bienfaits. — Ibrahim 14:7';
-  if (streak >= 14) return 'Al-Muwâdhib — celui qui persévère. C\'est toi. Le niveau supérieur t\'appartient.';
-  if (streak >= 7)  return '7 jours de constance — Allah a vu chaque acte. Continue avec le niveau Approfondissement.';
-  if (streak >= 3)  return 'Le Prophète ﷺ : l\'acte le plus aimé d\'Allah est celui fait avec constance. — Bukhari 6465';
-  return 'Chaque grand voyage commence par un premier pas. Le niveau Approfondissement t\'attend.';
+  if (streak >= 30) return t('conv_msg_4');
+  if (streak >= 14) return t('conv_msg_3');
+  if (streak >= 7)  return t('conv_msg_2');
+  if (streak >= 3)  return t('conv_msg_1');
+  return t('conv_msg_0');
 }
 function renderLevel(levelId) {
   const level   = LEVELS.find(l => l.id === levelId);
@@ -2896,7 +2896,7 @@ function renderProgression() {
     const ring='<svg width="48" height="48" viewBox="0 0 48 48" style="transform:rotate(-90deg);"><circle cx="24" cy="24" r="20" fill="none" stroke="rgba(200,168,75,0.15)" stroke-width="2"/><circle cx="24" cy="24" r="20" fill="none" stroke="#C8A84A" stroke-width="2" stroke-linecap="round" stroke-dasharray="'+circ.toFixed(1)+'" stroke-dashoffset="'+(circ-dash).toFixed(1)+'"/></svg>';
     lvlGridP+='<div onclick="selectLevel('+lvl.id+')" style="background:rgba(200,168,75,0.03);border:1px solid rgba(200,168,75,0.12);border-radius:14px;height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;cursor:pointer;">'
       +'<div style="width:48px;height:48px;position:relative;">'+ring+'<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:\'Cormorant Garamond\',serif;font-size:14px;color:#C8A84A;">'+pct+'%</div></div>'
-      +'<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:600;color:#C8A84A;">'+lvl.title+'</div>'
+      +'<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:600;color:#C8A84A;">'+t('level_'+lvl.id)+'</div>'
       +'</div>';
   });
   // === GRAPHIQUE 7 JOURS BILANS ===
@@ -5440,6 +5440,12 @@ const V2_I18N = {
     onboard_lvl3_desc: 'Hadiths · Coran · Arabe', onboard_lvl4_desc: 'Sadaqa · Salam · Douaas',
     onboard_city_manual: 'Ou entre ta ville manuellement :',
     card_pratique: 'Prières et actes du jour', card_wird: 'Invocations du matin et du soir', card_parcours: 'Ta progression spirituelle', card_tafakkur: 'Méditation et contemplation',
+    btn_start_day: 'Commencer ma journée', btn_back_checklist: '← Retour à la checklist', scanner_hint: 'Quel objet portera ta niyyah aujourd\'hui ?',
+    conv_msg_0: 'Chaque grand voyage commence par un premier pas. Le niveau Approfondissement t\'attend.',
+    conv_msg_1: 'Le Prophète ﷺ : l\'acte le plus aimé d\'Allah est celui fait avec constance. — Bukhari 6465',
+    conv_msg_2: '7 jours de constance — Allah a vu chaque acte. Continue avec le niveau Approfondissement.',
+    conv_msg_3: 'Al-Muwâdhib — celui qui persévère. C\'est toi. Le niveau supérieur t\'appartient.',
+    conv_msg_4: 'Si vous êtes reconnaissants, J\'augmenterai Mes bienfaits. — Ibrahim 14:7',
     // Night companion
     night_title: 'Quelle pensée ferme ta journée ?', night_placeholder: 'Écris ta pensée du soir...', night_send: 'ENVOYER', night_sagesse: 'SAGESSE DE LA NUIT',
     // Notifications
@@ -5571,6 +5577,12 @@ const V2_I18N = {
     onboard_lvl3_desc: 'Hadiths · Quran · Arabic', onboard_lvl4_desc: 'Sadaqa · Salam · Douaas',
     onboard_city_manual: 'Or enter your city manually:',
     card_pratique: 'Daily prayers and acts', card_wird: 'Morning and evening invocations', card_parcours: 'Your spiritual progress', card_tafakkur: 'Meditation and contemplation',
+    btn_start_day: 'Start my day', btn_back_checklist: '← Back to checklist', scanner_hint: 'What object will carry your niyyah today?',
+    conv_msg_0: 'Every great journey begins with a first step. The Deepening level awaits you.',
+    conv_msg_1: 'Le Prophète ﷺ : l\'acte le plus aimé d\'Allah est celui fait avec constance. — Bukhari 6465',
+    conv_msg_2: '7 days of constancy — Allah has seen every act. Continue with the Deepening level.',
+    conv_msg_3: 'Al-Muwâdhib — the one who perseveres. That is you. The next level is yours.',
+    conv_msg_4: 'Si vous êtes reconnaissants, J\'augmenterai Mes bienfaits. — Ibrahim 14:7',
     night_title: 'What thought closes your day?', night_placeholder: 'Write your evening thought...', night_send: 'SEND', night_sagesse: 'NIGHT WISDOM',
     notif_unsupported: 'Notifications are not supported on this device', notif_enabled: '✦ Reminders enabled — JazakAllahu khairan!', notif_later: 'You can enable them later in settings', notif_disabled: '🔕 Reminders disabled',
     share_downloaded: 'Image downloaded — share it 🌿', share_copied: 'Link copied!',
@@ -5694,6 +5706,8 @@ const V2_I18N = {
     onboard_lvl1_desc: '', onboard_lvl2_desc: '', onboard_lvl3_desc: '', onboard_lvl4_desc: '',
     onboard_city_manual: '',
     card_pratique: '', card_wird: '', card_parcours: '', card_tafakkur: '',
+    btn_start_day: '', btn_back_checklist: '', scanner_hint: '',
+    conv_msg_0: '', conv_msg_1: '', conv_msg_2: '', conv_msg_3: '', conv_msg_4: '',
     night_title: 'مَا الْفِكْرَةُ الَّتِي تَخْتِمُ بِهَا يَوْمَكَ؟', night_placeholder: 'اكْتُبْ فِكْرَتَكَ الْمَسَائِيَّةَ...', night_send: 'إِرْسَالٌ', night_sagesse: 'حِكْمَةُ اللَّيْلِ',
     notif_unsupported: 'الْإِشْعَارَاتُ غَيْرُ مَدْعُومَةٍ عَلَى هَذَا الْجِهَازِ', notif_enabled: '✦ تَمَّ تَفْعِيلُ التَّذْكِيرَاتِ — جَزَاكَ اللَّهُ خَيْرًا!', notif_later: 'يُمْكِنُكَ تَفْعِيلُهَا لَاحِقًا فِي الْإِعْدَادَاتِ', notif_disabled: '🔕 تَمَّ تَعْطِيلُ التَّذْكِيرَاتِ',
     share_downloaded: 'تَمَّ التَّحْمِيلُ — شَارِكْهَا 🌿', share_copied: 'تَمَّ النَّسْخُ!',
@@ -7959,7 +7973,7 @@ async function scannerOpen() {
   document.getElementById('scanner-result').classList.remove('active');
   document.getElementById('scanner-capture-btn').classList.remove('hidden');
   document.getElementById('scanner-orb').classList.remove('scanning');
-  document.getElementById('scanner-hint').textContent = "Quel objet portera ta niyyah aujourd'hui ?";
+  document.getElementById('scanner-hint').textContent = t('scanner_hint');
   document.getElementById('scanner-hint').style.opacity = '1';
   _scannerResult = null;
 
@@ -8217,7 +8231,7 @@ function scannerRetry() {
   document.getElementById('scanner-capture-btn').classList.remove('hidden');
   const thinkingRetry = document.getElementById('scanner-thinking');
   if (thinkingRetry) thinkingRetry.classList.remove('active');
-  document.getElementById('scanner-hint').textContent = "Quel objet portera ta niyyah aujourd'hui ?";
+  document.getElementById('scanner-hint').textContent = t('scanner_hint');
   document.getElementById('scanner-hint').style.opacity = '1';
   _scannerResult = null;
   _selectedNuance = 0;
