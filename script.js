@@ -1405,9 +1405,7 @@ function updateGlobalProgress() {
   const donePts  = allItems.filter(i => isItemDone ? isItemDone(i, state) : (i.type==='counter'?(state[i.id]||0)>=i.target:!!state[i.id])).reduce((sum, i) => sum + (getWeight ? getWeight(i.id) : 1), 0);
   const pct = totalPts > 0 ? (donePts / totalPts) * 100 : 0;
   const f1 = document.getElementById('globalFill');
-  const f2 = document.getElementById('globalFill2');
   if (f1) f1.style.width = pct + '%';
-  if (f2) f2.style.width = pct + '%';
   const scoreBadge = document.getElementById('globalScoreBadge');
   if (scoreBadge) {
     const score = Math.round(pct);
@@ -4409,79 +4407,6 @@ function closeTawba() {
 }
 
 
-// ── PARTAGE NIYYAH ────────────────────────────────────────────────────────────
-function partagerNiyyah() {
-  // Récupérer les stats dynamiques
-  const streak = history.streak || 0;
-  const totalDays = history.totalDays || 0;
-  
-  // Jours cette semaine
-  const lundi = getLundiDate ? getLundiDate() : null;
-  let doneDays = 0;
-  if (lundi && history.days) {
-    for (let i = 0; i < 7; i++) {
-      const d = new Date(lundi);
-      d.setDate(d.getDate() + i);
-      const ds = d.toISOString().split('T')[0];
-      if (history.days[ds]) doneDays++;
-    }
-  }
-  
-  // Niveau actuel
-  const niveauLabels = { 1: 'Fondations', 2: 'Approfondissement', 3: 'Connaissance', 4: 'Rayonnement' };
-  const niveauActuel = (state && state._unlocked && state._unlocked.length) 
-    ? Math.max(...state._unlocked) : 1;
-  const niveauLabel = niveauLabels[niveauActuel] || 'Fondations';
-  
-  // Score moyen de la semaine
-  let avgScore = 0;
-  if (history.dayScores && lundi) {
-    const scores = [];
-    for (let i = 0; i < 7; i++) {
-      const d = new Date(lundi);
-      d.setDate(d.getDate() + i);
-      const ds = d.toISOString().split('T')[0];
-      if (history.dayScores[ds] !== undefined) scores.push(history.dayScores[ds]);
-    }
-    if (scores.length) avgScore = Math.round(scores.reduce((a,b) => a+b, 0) / scores.length);
-  }
-
-  const message = `بِسْمِ اللَّهِ
-
-Ça fait ${totalDays} jour${totalDays > 1 ? 's' : ''} que j'essaie de tenir ma pratique avec Niyyah Daily.
-Cette semaine : ${doneDays}/7 jours · Niveau ${niveauLabel} · Score ${avgScore}/100
-
-Les hauts, les bas — mais je continue.
-
-Le Prophète ﷺ a dit : "Celui qui guide vers un bien obtient la même récompense que celui qui le fait."
-— Muslim 1893
-
-Si toi aussi tu cherches à te reconnecter à Allah, sans pression :
-👉 nabs881-sketch.github.io/niyyah-app
-
-Que Allah nous facilite et nous récompense. 🤲`;
-
-  // Essayer l'API native de partage (mobile)
-  if (navigator.share) {
-    navigator.share({
-      title: 'Niyyah Daily — Pratique spirituelle',
-      text: message,
-      url: 'https://nabs881-sketch.github.io/niyyah-app'
-    }).catch(() => {
-      // Fallback WhatsApp
-      _ouvrirWhatsApp(message);
-    });
-  } else {
-    // Fallback WhatsApp direct
-    _ouvrirWhatsApp(message);
-  }
-}
-
-function _ouvrirWhatsApp(message) {
-  const url = 'https://wa.me/?text=' + encodeURIComponent(message);
-  window.open(url, '_blank');
-}
-// ─────────────────────────────────────────────────────────────────────────────
 
 function closeWeeklyBilan() {
   document.getElementById('weeklyOverlay').classList.remove('show');
@@ -8128,6 +8053,7 @@ async function scannerCapture() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     canvas.width = 1; canvas.height = 1;
     orb.classList.remove('scanning');
+    if (thinkingEl) thinkingEl.classList.remove('active');
   }
 }
 

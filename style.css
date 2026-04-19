@@ -2938,20 +2938,6 @@ button[style*="gold-v2"] {
   0%, 100% { filter: drop-shadow(0 0 6px rgba(200,168,74,0.6)); }
   50% { filter: drop-shadow(0 0 14px rgba(200,168,74,1)); }
 }
-#scanner-journal-overlay {
-  transition: opacity 0.3s ease;
-}
-.journal-card {
-  animation: journalShimmer 3s ease-in-out infinite, journalCardIn 0.4s ease both;
-}
-@keyframes journalCardIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-@keyframes journalShimmer {
-  0%, 100% { border-color: rgba(200,168,75,0.2); }
-  50%      { border-color: rgba(200,168,75,0.5); }
-}
 .prayer-spinner {
   width: 28px;
   height: 28px;
