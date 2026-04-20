@@ -960,20 +960,20 @@ pointer-events:none;z-index:0;transition:opacity 0.4s ease}.view{display:none;po
 
 /* ╔══════════════════════════════════════════════════════════════╗
    ║  THÈME CLAIR PREMIUM — Niyyah Mockup Gemini Ivoire          ║
-   ║  Fond #EFE4C8 · Or bronze #9A7B2F · Bois #5A3418                   ║
+   ║  Fond #E6D7B5 · Or bronze #9A7B2F · Bois #5A3418                   ║
    ╚══════════════════════════════════════════════════════════════╝ */
 
 [data-theme="light"] {
-  --bg:        #EDE4CE;
-  --bg1:       #E6DBC4;
-  --bg2:       #DDD0B8;
+  --bg:        #E6D7B5;
+  --bg1:       #DFD0AE;
+  --bg2:       #D6C7A4;
   --card:      #F4ECD8;
   --card2:     #EDE4CC;
   --sep:       rgba(100,72,36,0.12);
   --sep2:      rgba(100,72,36,0.20);
   --t1:        #2A1F0E;
-  --t2:        #6A5030;
-  --t3:        #9A7848;
+  --t2:        #5A4828;
+  --t3:        #7A6040;
   --header-bg: rgba(237,228,206,0.96);
   --nav-bg:    rgba(58,40,22,0.97);
   --green:     #9A7B2F;
@@ -991,13 +991,13 @@ pointer-events:none;z-index:0;transition:opacity 0.4s ease}.view{display:none;po
   --moon-glow: rgba(160,120,56,0.22);
 }
 
-[data-theme="light"] body { background: #EFE4C8 !important; background-image: none !important; }
+[data-theme="light"] body { background: #E6D7B5 !important; background-image: none !important; }
 [data-theme="light"] body::before { opacity: 0 !important; }
 [data-theme="light"] .view.active { background: transparent !important; }
 
 /* ── HEADER ── */
-[data-theme="light"] .header { background: rgba(239,228,200,0.96) !important; border-bottom: 1px solid rgba(160,120,56,0.14) !important; }
-[data-theme="light"] .tabs-wrap { background: rgba(239,228,200,0.94) !important; }
+[data-theme="light"] .header { background: rgba(230,215,181,0.96) !important; border-bottom: 1px solid rgba(160,120,56,0.14) !important; }
+[data-theme="light"] .tabs-wrap { background: rgba(230,215,181,0.94) !important; }
 [data-theme="light"] .wordmark-main { color: #2A1F0E !important; -webkit-text-fill-color: #2A1F0E !important; }
 [data-theme="light"] .wordmark-main span { background: none !important; -webkit-text-fill-color: #9A7B2F !important; color: #9A7B2F !important; }
 [data-theme="light"] .wordmark-sub { color: #9A7848 !important; }
@@ -1050,16 +1050,16 @@ pointer-events:none;z-index:0;transition:opacity 0.4s ease}.view{display:none;po
 
 /* ── ITEMS ── */
 [data-theme="light"] .items-group {
-  background: #F4ECD8 !important;
+  background: #F5EBD0 !important;
   border: 1px solid rgba(200,160,80,0.18) !important;
   box-shadow: 0 2px 12px rgba(80,50,20,0.10), inset 0 1px 0 rgba(255,255,255,0.65) !important;
 }
-[data-theme="light"] .item { background: #FBF5E5 !important; box-shadow: 0 1px 4px rgba(120,90,40,0.08) !important; }
+[data-theme="light"] .item { background: #FBF5E5 !important; border: 1px solid rgba(154,123,47,0.15) !important; box-shadow: 0 2px 8px rgba(120,90,40,0.12) !important; }
 [data-theme="light"] .item:active { background: #F0E8D4 !important; }
 [data-theme="light"] .item:not(:last-child)::after { background: rgba(100,72,36,0.10) !important; }
 [data-theme="light"] .item-label { color: #2A1F0E !important; font-weight: 400 !important; }
 [data-theme="light"] .item.checked .item-label { color: #B09870 !important; }
-[data-theme="light"] .item-sub { color: #7A6040 !important; font-size: 15px !important; }
+[data-theme="light"] .item-sub { color: #5A4828 !important; font-size: 15px !important; }
 [data-theme="light"] .item-arabic { color: #9A7B2F !important; opacity: 1 !important; }
 [data-theme="light"] .item.checked .item-arabic { opacity: 0.28 !important; }
 [data-theme="light"] .section-name { color: #6A5030 !important; font-weight: 600 !important; }
@@ -1088,7 +1088,7 @@ pointer-events:none;z-index:0;transition:opacity 0.4s ease}.view{display:none;po
   box-shadow: 0 2px 10px rgba(200,160,60,0.25) !important;
 }
 [data-theme="light"] .prayer-time-item.passed { background: rgba(200,175,130,0.30) !important; opacity: 0.55 !important; }
-[data-theme="light"] .prayer-time-name { color: #8A6840 !important; font-size: 10px !important; }
+[data-theme="light"] .prayer-time-name { color: #8A6840 !important; font-size: 12px !important; }
 [data-theme="light"] .prayer-time-item.next .prayer-time-name { color: #5A3010 !important; font-weight: 700 !important; }
 [data-theme="light"] .prayer-time-hour { color: #3A2810 !important; font-size: 16px !important; font-weight: 600 !important; }
 [data-theme="light"] .prayer-time-item.next .prayer-time-hour { color: #3A2008 !important; font-weight: 700 !important; }
@@ -1110,7 +1110,7 @@ pointer-events:none;z-index:0;transition:opacity 0.4s ease}.view{display:none;po
 [data-theme="light"] .qibla-sub { color: rgba(200,160,60,0.65) !important; }
 
 /* ── ACTION BAR ── */
-[data-theme="light"] .action-bar { background: rgba(239,228,200,0.97) !important; border-top: 1px solid rgba(160,120,56,0.14) !important; }
+[data-theme="light"] .action-bar { background: rgba(230,215,181,0.97) !important; border-top: 1px solid rgba(160,120,56,0.14) !important; }
 [data-theme="light"] .btn-bismillah {
   background:
     repeating-linear-gradient(180deg,rgba(255,255,255,0) 0px,rgba(255,255,255,0.06) 1px,rgba(0,0,0,0.07) 2px,rgba(0,0,0,0) 5px,rgba(0,0,0,0.08) 9px,rgba(0,0,0,0) 14px),
@@ -1131,13 +1131,13 @@ pointer-events:none;z-index:0;transition:opacity 0.4s ease}.view{display:none;po
 /* ── NAV BAR ── */
 [data-theme="light"] .nav-bar { background: rgba(50,32,14,0.97) !important; border-top: 1px solid rgba(200,160,60,0.20) !important; }
 [data-theme="light"] .nav-icon-wrap { color: rgba(200,175,130,0.50) !important; }
-[data-theme="light"] .nav-label { color: rgba(200,175,130,0.50) !important; font-size: 10px !important; }
+[data-theme="light"] .nav-label { color: rgba(200,175,130,0.50) !important; font-size: 13px !important; }
 [data-theme="light"] .nav-item.active .nav-icon-wrap { color: #D4A848 !important; }
 [data-theme="light"] .nav-item.active .nav-label { color: #D4A848 !important; font-weight: 700 !important; }
 
 /* ── STREAK / STATS / BADGES ── */
 [data-theme="light"] .streak-card, [data-theme="light"] .stat-box, [data-theme="light"] .year-card {
-  background: #F4ECD8 !important;
+  background: #F5EBD0 !important;
   border: 1px solid rgba(200,160,80,0.18) !important;
   box-shadow: 0 2px 10px rgba(80,50,20,0.09), inset 0 1px 0 rgba(255,255,255,0.60) !important;
   backdrop-filter: none !important;
@@ -1165,14 +1165,14 @@ pointer-events:none;z-index:0;transition:opacity 0.4s ease}.view{display:none;po
 [data-theme="light"] .lock-sub { color: #6A5030 !important; }
 
 /* ── INFO SHEET ── */
-[data-theme="light"] .info-sheet { background: #EFE4C8 !important; border-top-color: rgba(200,160,80,0.25) !important; }
+[data-theme="light"] .info-sheet { background: #E6D7B5 !important; border-top-color: rgba(200,160,80,0.25) !important; }
 [data-theme="light"] .info-sheet-phonetic { color: #2A1F0E !important; }
 [data-theme="light"] .info-sheet-translation { color: #6A5030 !important; }
 [data-theme="light"] .info-sheet-arabic { color: #9A7B2F !important; }
 [data-theme="light"] .info-sheet-close { color: #6A5030 !important; border-color: rgba(160,120,56,0.20) !important; background: #E8DABC !important; }
 
 /* ── FREEMIUM ── */
-[data-theme="light"] .freemium-sheet { background: #EFE4C8 !important; border-top-color: rgba(200,160,80,0.25) !important; }
+[data-theme="light"] .freemium-sheet { background: #E6D7B5 !important; border-top-color: rgba(200,160,80,0.25) !important; }
 [data-theme="light"] .freemium-title { color: #2A1F0E !important; }
 [data-theme="light"] .freemium-sub { color: #6A5030 !important; }
 [data-theme="light"] .freemium-feature { color: #2A1F0E !important; }
@@ -1198,7 +1198,7 @@ pointer-events:none;z-index:0;transition:opacity 0.4s ease}.view{display:none;po
 [data-theme="light"] .header-progress-fill::after { display: none !important; }
 
 /* ── MISC ── */
-[data-theme="light"] .counter-body { background: #E8DABC !important; }
+[data-theme="light"] .counter-body { background: #F5EBD0 !important; }
 [data-theme="light"] .counter-num { color: #2A1F0E !important; }
 [data-theme="light"] .btn-cnt { background: linear-gradient(135deg,#D4A858,#9A7B2F) !important; color: #fff !important; }
 [data-theme="light"] .counter-bar-fill { background: linear-gradient(90deg,#D4A858,#9A7B2F) !important; }
@@ -1218,7 +1218,7 @@ pointer-events:none;z-index:0;transition:opacity 0.4s ease}.view{display:none;po
 }
 [data-theme="light"] .hero-label {
   color: #9A7B2F !important;
-  font-size: 10px !important;
+  font-size: 12px !important;
   font-weight: 700 !important;
   letter-spacing: 2.5px !important;
   opacity: 1 !important;
@@ -1249,7 +1249,7 @@ pointer-events:none;z-index:0;transition:opacity 0.4s ease}.view{display:none;po
 /* Section name lisible */
 [data-theme="light"] .section-name {
   color: #5A4020 !important;
-  font-size: 13px !important;
+  font-size: 14px !important;
   font-weight: 700 !important;
 }
 /* Horaires card fond plus chaud */
@@ -1264,14 +1264,14 @@ pointer-events:none;z-index:0;transition:opacity 0.4s ease}.view{display:none;po
 }
 [data-theme="light"] .prayer-time-name {
   color: #7A5830 !important;
-  font-size: 10px !important;
+  font-size: 12px !important;
   font-weight: 700 !important;
   letter-spacing: 0.5px !important;
 }
 /* Qibla bar texte plus visible */
 [data-theme="light"] .qibla-title {
   color: #E0B848 !important;
-  font-size: 11px !important;
+  font-size: 13px !important;
   letter-spacing: 2px !important;
 }
 /* Item label plus fort */
@@ -1384,30 +1384,30 @@ pointer-events:none;z-index:0;transition:opacity 0.4s ease}.view{display:none;po
 .onboard-level-desc{ color: #9A8E7A !important; font-size: 12px !important; }
 
 /* ── THÈME CLAIR : idem pour t3 ── */
-[data-theme="light"] .item-sub        { color: #6A5030 !important; }
+[data-theme="light"] .item-sub        { color: #5A4828 !important; }
 [data-theme="light"] .section-name    { color: #5A4020 !important; }
-[data-theme="light"] .wird-sub        { color: #7A5A38 !important; }
-[data-theme="light"] .stat-label      { color: #7A6040 !important; }
-[data-theme="light"] .streak-label    { color: #7A6040 !important; }
-[data-theme="light"] .d-name          { color: #7A6040 !important; }
-[data-theme="light"] .d-num           { color: #8A7050 !important; }
-[data-theme="light"] .year-month-label{ color: #8A7050 !important; }
-[data-theme="light"] .lock-sub        { color: #6A5030 !important; }
-[data-theme="light"] .freemium-sub    { color: #6A5030 !important; }
-[data-theme="light"] .lvl-sub         { color: #6A5030 !important; }
-[data-theme="light"] .popup-sub       { color: #6A5030 !important; }
-[data-theme="light"] .counter-total   { color: #8A7050 !important; }
-[data-theme="light"] .weekly-day-label{ color: #8A7050 !important; }
-[data-theme="light"] .niyyah-card-sub { color: #9A7848 !important; }
-[data-theme="light"] .resume-sub      { color: #6A5030 !important; }
+[data-theme="light"] .wird-sub        { color: #5A4828 !important; }
+[data-theme="light"] .stat-label      { color: #5A4828 !important; }
+[data-theme="light"] .streak-label    { color: #5A4828 !important; }
+[data-theme="light"] .d-name          { color: #5A4828 !important; }
+[data-theme="light"] .d-num           { color: #5A4828 !important; }
+[data-theme="light"] .year-month-label{ color: #5A4828 !important; }
+[data-theme="light"] .lock-sub        { color: #5A4828 !important; }
+[data-theme="light"] .freemium-sub    { color: #5A4828 !important; }
+[data-theme="light"] .lvl-sub         { color: #5A4828 !important; }
+[data-theme="light"] .popup-sub       { color: #5A4828 !important; }
+[data-theme="light"] .counter-total   { color: #5A4828 !important; }
+[data-theme="light"] .weekly-day-label{ color: #5A4828 !important; }
+[data-theme="light"] .niyyah-card-sub { color: #5A4828 !important; }
+[data-theme="light"] .resume-sub      { color: #5A4828 !important; }
 [data-theme="light"] .resume-level-name{ color: #2A1F0E !important; }
-[data-theme="light"] .onboard-sub     { color: #6A5030 !important; }
-[data-theme="light"] .onboard-level-desc{ color: #8A7050 !important; }
-[data-theme="light"] .tasbih-label    { color: #6A5030 !important; }
-[data-theme="light"] .tasbih-total    { color: #8A7050 !important; }
-[data-theme="light"] .btn-back-check  { color: #6A5030 !important; }
-[data-theme="light"] .btn-stay-lvl    { color: #6A5030 !important; }
-[data-theme="light"] .laylatul-sub    { color: #6A5030 !important; }
+[data-theme="light"] .onboard-sub     { color: #5A4828 !important; }
+[data-theme="light"] .onboard-level-desc{ color: #5A4828 !important; }
+[data-theme="light"] .tasbih-label    { color: #5A4828 !important; }
+[data-theme="light"] .tasbih-total    { color: #5A4828 !important; }
+[data-theme="light"] .btn-back-check  { color: #5A4828 !important; }
+[data-theme="light"] .btn-stay-lvl    { color: #5A4828 !important; }
+[data-theme="light"] .laylatul-sub    { color: #5A4828 !important; }
 [data-theme="light"] .weekly-hadith-text{ color: #2A1F0E !important; }
 
 
