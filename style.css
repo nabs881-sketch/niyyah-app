@@ -1792,22 +1792,20 @@ body::before {
 .finjournee-active:active { transform: scale(0.97); }
 .finjournee-label {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 16px;
+  font-size: 14px;
   font-style: italic;
   font-weight: 600;
   color: #F4D77E;
   letter-spacing: 0.5px;
-  white-space: nowrap;
-  max-width: 60%;
+  line-height: 1.4;
   text-shadow: 0 2px 8px rgba(0,0,0,0.6);
 }
 .finjournee-sub {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 14px;
+  font-size: 12px;
   font-style: italic;
   color: #C8A84A;
-  margin-top: 6px;
-  white-space: nowrap;
+  margin-top: 4px;
   text-shadow: 0 1px 4px rgba(0,0,0,0.5);
 }
 .finjournee-done {
