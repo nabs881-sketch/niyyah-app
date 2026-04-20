@@ -1774,7 +1774,7 @@ body::before {
 }
 
 /* ── FIN DE JOURNÉE — carte soir ── */
-#finjournee-card { margin: 0 16px 12px; }
+#finjournee-card { margin: 0 16px 12px; overflow: hidden; border-radius: 20px; }
 .finjournee-active {
   background: url('ferme-ta-journee.png') center/cover no-repeat #000;
   border: none;
