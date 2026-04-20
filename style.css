@@ -1782,7 +1782,7 @@ body::before {
   box-shadow: none;
   overflow: hidden;
   min-height: 140px;
-  padding: 36px 20px 24px;
+  padding: 44px 20px 24px;
   padding-right: 50%;
   text-align: left;
   cursor: pointer;
@@ -1800,7 +1800,7 @@ body::before {
 }
 .finjournee-sub {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 11px;
+  font-size: 14px;
   font-style: italic;
   color: #C8A84A;
   margin-top: 6px;
