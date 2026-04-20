@@ -1776,14 +1776,13 @@ body::before {
 /* ── FIN DE JOURNÉE — carte soir ── */
 #finjournee-card { margin: 0 16px 12px; overflow: hidden; border-radius: 20px; }
 .finjournee-active {
-  background: url('ferme-ta-journee.png') center/100% 100% no-repeat #000;
+  background: url('ferme-ta-journee.png') center/cover no-repeat #000;
   border: none;
   border-radius: 20px;
-  box-shadow: none;
   overflow: hidden;
-  min-height: 170px;
-  padding: 48px 24px 32px;
-  padding-right: 50%;
+  aspect-ratio: 3 / 2;
+  padding: 32px 24px;
+  padding-right: 40%;
   text-align: left;
   cursor: pointer;
   display: flex;
@@ -1812,12 +1811,11 @@ body::before {
   text-shadow: 0 1px 4px rgba(0,0,0,0.5);
 }
 .finjournee-done {
-  background: url('ferme-ta-journee.png') center/100% 100% no-repeat #000;
+  background: url('ferme-ta-journee.png') center/cover no-repeat #000;
   border: none;
   border-radius: 20px;
-  box-shadow: none;
   overflow: hidden;
-  min-height: 120px;
+  aspect-ratio: 3 / 2;
   padding: 24px 24px;
   text-align: center;
   font-family: 'Cormorant Garamond', serif;
