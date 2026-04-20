@@ -1774,58 +1774,58 @@ body::before {
 }
 
 /* ── FIN DE JOURNÉE — carte soir ── */
-#finjournee-card { margin: 0 16px 12px; overflow: hidden; border-radius: 20px; }
+#finjournee-card { margin: 0 16px 12px; }
 .finjournee-active {
-  background: url('ferme-ta-journee.png') center/cover no-repeat #000;
-  border: none;
+  width: 100%;
+  max-width: 360px;
+  aspect-ratio: 3 / 2;
+  background: url('ferme-ta-journee.png') center/cover no-repeat;
   border-radius: 20px;
   overflow: hidden;
-  aspect-ratio: 3 / 2;
-  padding: 12% 10%;
-  padding-right: 48%;
-  text-align: left;
-  cursor: pointer;
+  padding: 20px 45% 20px 24px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  cursor: pointer;
+  box-sizing: border-box;
 }
 .finjournee-active:active { transform: scale(0.97); }
 .finjournee-label {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 14px;
+  font-size: 18px;
   font-style: italic;
   font-weight: 600;
   color: #F4D77E;
-  letter-spacing: 0.5px;
-  line-height: 1.4;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
+  white-space: nowrap;
+  text-align: left;
   text-shadow: 0 2px 8px rgba(0,0,0,0.6);
 }
 .finjournee-sub {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 12px;
+  font-size: 13px;
   font-style: italic;
   color: #C8A84A;
+  text-align: left;
   margin-top: 4px;
   text-shadow: 0 1px 4px rgba(0,0,0,0.5);
 }
 .finjournee-done {
-  background: url('ferme-ta-journee.png') center/cover no-repeat #000;
-  border: none;
+  width: 100%;
+  max-width: 360px;
+  aspect-ratio: 3 / 2;
+  background: url('ferme-ta-journee.png') center/cover no-repeat;
   border-radius: 20px;
   overflow: hidden;
-  aspect-ratio: 3 / 2;
-  padding: 24px 24px;
-  text-align: center;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 13px;
-  font-style: italic;
-  color: rgba(244,215,126,0.6);
+  padding: 20px 24px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  box-sizing: border-box;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  font-style: italic;
+  color: rgba(244,215,126,0.6);
   text-shadow: 0 1px 4px rgba(0,0,0,0.5);
 }
 
