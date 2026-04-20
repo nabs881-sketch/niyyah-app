@@ -4905,7 +4905,7 @@ function schedulePrayerReminders() {
     prayerTime.setHours(parseInt(parts[0]), parseInt(parts[1]), 0, 0);
     const msUntil = prayerTime.getTime() - nowMs;
     if (msUntil > 0 && msUntil < 86400000) {
-      const t = setTimeout(() => {
+      const timerId = setTimeout(() => {
         const emoji = PRAYER_EMOJIS[name] || '🕌';
         const fr = PRAYER_FR[name] || name;
         showToast(emoji + ' ' + t('prayer_time_toast') + fr + ' — الله أكبر');
@@ -4926,7 +4926,7 @@ function schedulePrayerReminders() {
         } catch(e) {}
         renderLevel(currentLevel);
       }, msUntil);
-      _prayerTimers.push(t);
+      _prayerTimers.push(timerId);
     }
   });
   // Personalized Fajr notification
