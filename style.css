@@ -1782,26 +1782,28 @@ body::before {
   box-shadow: 0 4px 20px rgba(200,168,74,0.3);
   min-height: 140px;
   padding: 24px 20px;
-  padding-right: 40%;
+  padding-right: 45%;
   text-align: left;
   cursor: pointer;
 }
 .finjournee-active:active { transform: scale(0.97); }
 .finjournee-label {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 24px;
+  font-size: 20px;
   font-style: italic;
   font-weight: 600;
   color: #F4D77E;
   letter-spacing: 0.5px;
+  white-space: nowrap;
   text-shadow: 0 2px 8px rgba(0,0,0,0.6);
 }
 .finjournee-sub {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 14px;
+  font-size: 12px;
   font-style: italic;
   color: #C8A84A;
   margin-top: 6px;
+  white-space: nowrap;
   text-shadow: 0 1px 4px rgba(0,0,0,0.5);
 }
 .finjournee-done {
