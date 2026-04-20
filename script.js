@@ -5279,7 +5279,6 @@ function applyTheme(theme) {
 function toggleTheme() {
   applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
 }
-init();
 
 
 /* ─── BLOC 4 : Service Worker ────────────────────── */
@@ -8523,4 +8522,6 @@ window.scannerCapture       = scannerCapture;
 window.scannerShowResult    = scannerShowResult;
 window.scannerConfirmNiyyah = scannerConfirmNiyyah;
 window.scannerRetry         = scannerRetry;
+
+init();
 
