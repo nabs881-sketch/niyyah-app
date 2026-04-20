@@ -1783,14 +1783,14 @@ body::before {
   overflow: hidden;
   min-height: 140px;
   padding: 24px 20px;
-  padding-right: 45%;
+  padding-right: 50%;
   text-align: left;
   cursor: pointer;
 }
 .finjournee-active:active { transform: scale(0.97); }
 .finjournee-label {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 20px;
+  font-size: 18px;
   font-style: italic;
   font-weight: 600;
   color: #F4D77E;
@@ -1800,7 +1800,7 @@ body::before {
 }
 .finjournee-sub {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 12px;
+  font-size: 11px;
   font-style: italic;
   color: #C8A84A;
   margin-top: 6px;
