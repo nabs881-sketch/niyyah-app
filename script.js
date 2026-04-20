@@ -7221,10 +7221,47 @@ function v2RefreshStats() {
   localStorage.removeItem('niyyah_compagnon_date');
   localStorage.removeItem('niyyah_sagesse_nuit');
   localStorage.removeItem('niyyah_morning_wisdom_shown_date');
+  updateFinJourneeCard();
   updateFajrChallenge();
   updateSanctuaireMoment();
   var disclaimerEl = document.getElementById('app-disclaimer');
   if (disclaimerEl) disclaimerEl.textContent = t('disclaimer');
+}
+
+function updateFinJourneeCard() {
+  var card = document.getElementById('finjournee-card');
+  if (!card) return;
+  // Determine visibility: Maghrib+1h to Fajr
+  var now = new Date();
+  var nowMin = now.getHours() * 60 + now.getMinutes();
+  var show = false;
+  if (_prayerTimes) {
+    var _toMin = function(s) { if (!s) return null; var p = s.replace(/ *\(.*\)/,'').split(':'); return parseInt(p[0],10)*60+parseInt(p[1],10); };
+    var maghrib = _toMin(_prayerTimes['Maghrib']);
+    var fajr = _toMin(_prayerTimes['Fajr']);
+    if (maghrib != null && fajr != null) {
+      show = (nowMin >= maghrib + 60) || (nowMin < fajr);
+    }
+  } else {
+    // Fallback: 20h-5h if no prayer times
+    show = (nowMin >= 1200) || (nowMin < 300);
+  }
+  if (!show) { card.style.display = 'none'; return; }
+  card.style.display = 'block';
+  var todayKey = now.toISOString().split('T')[0];
+  var done = localStorage.getItem('niyyah_finjournee_date') === todayKey;
+  if (done) {
+    card.innerHTML = '<div class="finjournee-done">Journée fermée. Alhamdulillah.</div>';
+  } else {
+    card.innerHTML = '<div class="finjournee-active" onclick="openFinJournee()">'
+      + '<div class="finjournee-label">✦ Ferme ta journée ✦</div>'
+      + '<div class="finjournee-sub">Trois minutes · Silence et gratitude</div>'
+      + '</div>';
+  }
+}
+function openFinJournee() {
+  var overlay = document.getElementById('finjournee-overlay');
+  if (overlay) overlay.style.display = 'block';
 }
 
 function updateFajrChallenge() {
