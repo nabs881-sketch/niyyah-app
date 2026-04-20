@@ -7261,7 +7261,29 @@ function updateFinJourneeCard() {
 }
 function openFinJournee() {
   var overlay = document.getElementById('finjournee-overlay');
-  if (overlay) overlay.style.display = 'block';
+  if (!overlay) return;
+  overlay.style.display = 'block';
+  var b1 = document.getElementById('finjournee-b1');
+  var b2 = document.getElementById('finjournee-b2');
+  var b3 = document.getElementById('finjournee-b3');
+  if (b1) b1.value = '';
+  if (b2) b2.value = '';
+  if (b3) b3.value = '';
+}
+function closeFinJournee() {
+  var overlay = document.getElementById('finjournee-overlay');
+  if (overlay) overlay.style.display = 'none';
+}
+function saveFinJourneeBontes() {
+  var b1 = (document.getElementById('finjournee-b1') || {}).value || '';
+  var b2 = (document.getElementById('finjournee-b2') || {}).value || '';
+  var b3 = (document.getElementById('finjournee-b3') || {}).value || '';
+  console.log('[FinJournee] bontes:', b1, b2, b3);
+  closeFinJournee();
+}
+function skipFinJourneeBontes() {
+  console.log('[FinJournee] skipped bontes');
+  closeFinJournee();
 }
 
 function updateFajrChallenge() {

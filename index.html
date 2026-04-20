@@ -220,6 +220,24 @@
 
 </div><!-- /#view-sanctuaire -->
 
+<!-- ══ FIN DE JOURNÉE OVERLAY ══ -->
+<div id="finjournee-overlay" style="display:none;">
+  <div class="finjournee-header">
+    <button class="finjournee-close" onclick="closeFinJournee()">✕</button>
+    <button class="finjournee-skip" onclick="skipFinJourneeBontes()">Passer</button>
+  </div>
+  <div class="finjournee-content">
+    <div class="finjournee-title">Quelles 3 bontés Allah t'a-t-Il permis d'accomplir aujourd'hui ?</div>
+    <div class="finjournee-subtitle">Écris, ou ferme simplement les yeux.</div>
+    <div class="finjournee-inputs">
+      <input type="text" id="finjournee-b1" class="finjournee-input" placeholder="Une bonté...">
+      <input type="text" id="finjournee-b2" class="finjournee-input" placeholder="Une autre...">
+      <input type="text" id="finjournee-b3" class="finjournee-input" placeholder="Une troisième...">
+    </div>
+    <button class="finjournee-btn" onclick="saveFinJourneeBontes()">Alhamdulillah</button>
+  </div>
+</div>
+
 <!-- ════════════════════════════════════════════════
      V2 — BOTTOM NAV (Sanctuaire + V1 views)
      ════════════════════════════════════════════════ -->
