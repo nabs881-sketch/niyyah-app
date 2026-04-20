@@ -1776,44 +1776,51 @@ body::before {
 /* ── FIN DE JOURNÉE — carte soir ── */
 #finjournee-card { margin: 0 16px 12px; }
 .finjournee-active {
-  background: #0a0a0a;
-  border: 1px solid rgba(200,168,75,0.4);
+  background: url('ferme-ta-journee.png') center/cover no-repeat #000;
+  border: none;
   border-radius: 16px;
-  padding: 20px 24px;
-  text-align: center;
+  box-shadow: 0 4px 20px rgba(200,168,74,0.3);
+  min-height: 140px;
+  padding: 24px 20px;
+  padding-right: 40%;
+  text-align: left;
   cursor: pointer;
-  animation: finJourneePulse 3s ease-in-out infinite;
 }
 .finjournee-active:active { transform: scale(0.97); }
 .finjournee-label {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 20px;
+  font-size: 24px;
   font-style: italic;
   font-weight: 600;
-  color: #C8A84A;
+  color: #F4D77E;
   letter-spacing: 0.5px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
 }
 .finjournee-sub {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 13px;
+  font-size: 14px;
   font-style: italic;
-  color: rgba(200,168,75,0.6);
-  margin-top: 4px;
+  color: #C8A84A;
+  margin-top: 6px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
 }
 .finjournee-done {
-  background: rgba(200,168,75,0.04);
-  border: 1px solid rgba(200,168,75,0.15);
+  background: url('ferme-ta-journee.png') center/cover no-repeat #000;
+  border: none;
   border-radius: 16px;
-  padding: 14px 24px;
+  box-shadow: 0 4px 20px rgba(200,168,74,0.15);
+  min-height: 80px;
+  padding: 20px 24px;
   text-align: center;
   font-family: 'Cormorant Garamond', serif;
   font-size: 14px;
   font-style: italic;
-  color: rgba(200,168,75,0.45);
-}
-@keyframes finJourneePulse {
-  0%, 100% { border-color: rgba(200,168,75,0.4); box-shadow: 0 0 0 0 rgba(200,168,75,0); }
-  50% { border-color: rgba(200,168,75,0.7); box-shadow: 0 0 12px 2px rgba(200,168,75,0.12); }
+  color: rgba(244,215,126,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
 }
 
 /* ── FIN DE JOURNÉE — overlay plein écran ── */

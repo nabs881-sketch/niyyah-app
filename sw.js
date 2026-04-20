@@ -1,4 +1,4 @@
-const VERSION = 'niyyah-v33';
+const VERSION = 'niyyah-v34';
 const CORE = [
   './index.html',
   './manifest.json',
@@ -7,6 +7,7 @@ const CORE = [
   './logo2.png',
   './jannat-al-qalb.mp3',
   './rahatal-qulub.mp3',
+  './ferme-ta-journee.png',
 ];
 
 self.addEventListener('install', e => {
