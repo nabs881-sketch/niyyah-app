@@ -1781,8 +1781,8 @@ body::before {
   border-radius: 20px;
   overflow: hidden;
   aspect-ratio: 3 / 2;
-  padding: 32px 24px;
-  padding-right: 40%;
+  padding: 12% 10%;
+  padding-right: 48%;
   text-align: left;
   cursor: pointer;
   display: flex;
@@ -1798,6 +1798,8 @@ body::before {
   color: #F4D77E;
   letter-spacing: 0.5px;
   line-height: 1.4;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
   text-shadow: 0 2px 8px rgba(0,0,0,0.6);
 }
 .finjournee-sub {
