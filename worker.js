@@ -36,11 +36,6 @@ export default {
       return handleScanner(request, env);
     }
 
-    // ── Route Murmures (notifications + compagnon nocturne) ──
-    if (path === '/api/murmure' && request.method === 'POST') {
-      return handleMurmure(request, env);
-    }
-
     // ── Route Regarde V2 ──
     if (path === '/api/regarde' && request.method === 'POST') {
       return handleRegarde(request, env);
@@ -168,116 +163,6 @@ EXEMPLES DU NIVEAU ATTENDU :
   }
 }
 
-// ═══════════════════════════════════════════════════
-// FILTRE DE SÉCURITÉ — Compagnon Nocturne
-// ═══════════════════════════════════════════════════
-const FATWA_KEYWORDS = [
-  'halal', 'haram', 'fatwa', 'il est permis', 'il est interdit',
-  'selon le madhhab', 'la fatwa est', 'it is permissible', 'it is forbidden',
-];
-const FATWA_PATTERNS = [
-  /sourate\s+\S+\s+verset/i,
-  /verset\s+\d+\s*[.:]\s*\d+/i,
-  /\d+\s*[.:]\s*\d+(?=\s*[»"\)])/,
-  /le prophète a dit\s*[«"]/i,
-  /the prophet said\s*[«"]/i,
-  /قال النبي/,
-];
-
-function nightResponseContainsFatwa(text) {
-  const lower = text.toLowerCase();
-  for (const kw of FATWA_KEYWORDS) {
-    if (lower.includes(kw)) return true;
-  }
-  for (const re of FATWA_PATTERNS) {
-    if (re.test(text)) return true;
-  }
-  return false;
-}
-
-// ═══════════════════════════════════════════════════
-// MURMURES (notifications intelligentes)
-// ═══════════════════════════════════════════════════
-async function handleMurmure(request, env) {
-  try {
-    const data = await request.json();
-
-    // ── Mode Compagnon Nocturne (appel Claude) ──
-    if (data.mode === 'night' && data.thought) {
-      const systemPrompt = `Tu es le Compagnon du soir de Niyyah. L'utilisateur te confie une pensée de fin de journée. Réponds par un haïku ou une très courte méditation spirituelle (3-5 lignes max), chaleureuse, en écho à sa pensée. Pas de dogme, pas de jugement.
-
-INTERDICTIONS STRICTES :
-- Tu n'émets JAMAIS d'avis religieux (fatwa). Si l'utilisateur demande un avis de fiqh, aqida, halal/haram, tafsir de verset ou interprétation de hadith, tu réponds : "Pour cette question, consulte un savant qualifié. Je ne peux pas te répondre."
-- Tu n'inventes JAMAIS de verset coranique ni de hadith. Si tu n'es pas certain, tu ne cites pas.
-- Tu ne commentes pas les 4 madhahib. Tu ne prends pas position entre écoles juridiques.
-- Ton rôle : écouter, reformuler, apaiser, orienter vers le rappel d'Allah. Pas enseigner.`;
-
-      const response = await fetch('https://api.anthropic.com/v1/messages', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'x-api-key': env.ANTHROPIC_API_KEY,
-          'anthropic-version': '2023-06-01',
-        },
-        body: JSON.stringify({
-          model: 'claude-haiku-4-5-20251001',
-          max_tokens: 300,
-          system: systemPrompt,
-          messages: [{ role: 'user', content: data.thought }],
-        }),
-      });
-
-      if (!response.ok) {
-        return jsonResponse({ text: 'La nuit est un voile de miséricorde — repose-toi sous Sa protection.', source: 'Sagesse nocturne' });
-      }
-
-      const result = await response.json();
-      let text = result.content?.[0]?.text || 'La nuit est un voile de miséricorde — repose-toi sous Sa protection.';
-
-      // ── Filtre de sécurité côté serveur ──
-      if (nightResponseContainsFatwa(text)) {
-        console.warn('[NIYYAH SAFETY] Night companion response filtered — fatwa-like content detected');
-        text = 'Pour cette question, je t\'invite à consulter un savant qualifié. Je peux t\'écouter, mais je ne peux pas te répondre sur ce point.';
-      }
-
-      return jsonResponse({ text, source: 'Compagnon du soir' });
-    }
-
-    // ── Mode Murmures classiques (notifications) ──
-    const { intention, moment, streak, todayScore } = data;
-
-    const MURMURES = {
-      allah:         { matin: "Ton cœur se souvient de Lui", midi: "Entre deux tâches — un instant vers Allah", soir: "La nuit est douce pour ceux qui reviennent" },
-      engage:        { matin: "Ta parole d'aujourd'hui — tiens-la", midi: "Mi-journée. Tes engagements respirent.", soir: "Ce que tu as tenu aujourd'hui compte" },
-      reconstruire:  { matin: "Une brique posée vaut mieux qu'un mur rêvé", midi: "Tu avances. Même lentement.", soir: "Se reconstruire prend du temps. Tu es en chemin." },
-      gratitude:     { matin: "Nomme une chose belle de ce matin", midi: "Quelque chose t'a souri aujourd'hui ?", soir: "Avant de dormir — merci pour quoi ?" },
-      default:       { matin: "Un instant pour ton âme avant de commencer", midi: "Un souffle de paix au cœur de la journée", soir: "La nuit est un cadeau. Commence-la en paix." },
-    };
-
-    let theme = 'default';
-    const i = (intention || '').toLowerCase();
-    if (i.includes('allah') || i.includes('rapprocher'))       theme = 'allah';
-    else if (i.includes('engagement') || i.includes('tenir'))  theme = 'engage';
-    else if (i.includes('reconstruire'))                       theme = 'reconstruire';
-    else if (i.includes('reconnaiss') || i.includes('gratit')) theme = 'gratitude';
-
-    let body = MURMURES[theme][moment || 'matin'];
-    if (moment === 'midi' && todayScore >= 60) {
-      body = "MashaAllah — tu tiens ton chemin aujourd'hui";
-    }
-    if (streak >= 7 && moment === 'matin') {
-      body = `${streak} jours de constance. L'Istiqamah est ta marque.`;
-    }
-
-    return jsonResponse({
-      body,
-      icon: theme === 'allah' ? '🌟' : theme === 'gratitude' ? '🙏' : '🌿',
-    });
-
-  } catch (err) {
-    return jsonResponse({ error: 'Erreur murmure', details: err.message }, 500);
-  }
-}
 
 // ════════════════════════════════════════════════════════════════════════════
 // NIYYAH V2 — ADDITIONS

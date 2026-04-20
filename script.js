@@ -5405,7 +5405,7 @@ const V2_I18N = {
     freemium_buy: 'Obtenir Niyyah Premium — 4,99€ 🌿', freemium_code_placeholder: 'CODE D\'ACCÈS', freemium_free: 'Continuer avec le Niveau 1 gratuit',
     freemium_f1: 'Scanner de Niyyah — 1/jour gratuit → illimité premium', freemium_f2: 'Approfondissement — Tasbih, Mosquée, Jeûne sunnah',
     freemium_f3: 'Connaissance — Coran, Hadiths, Arabe', freemium_f4: 'Rayonnement — Sadaqa, Douaas, Salam',
-    freemium_f5: 'Compagnon Nocturne + Titres spirituels', freemium_f6: 'Badges exclusifs + Streak avancé',
+    freemium_f5: 'Titres spirituels + Fin de Journée', freemium_f6: 'Badges exclusifs + Streak avancé',
     bilan_title: 'Bilan du soir', bilan_question: 'Comment était ton cœur aujourd\'hui ?', bilan_subtitle: 'Allah regarde la sincérité, pas le score.',
     bilan_distraction: 'Distraction', bilan_effort: 'Effort', bilan_sincerite: 'Sincérité',
     bilan_distraction_sub: 'غفلة — le cœur absent', bilan_effort_sub: 'مجاهدة — le combat intérieur', bilan_sincerite_sub: 'إخلاص — l\'état recherché',
@@ -5489,7 +5489,6 @@ const V2_I18N = {
     // Compass
     compass_denied: 'Autorise la boussole dans les réglages',
     disclaimer: 'Cette application n\'émet pas d\'avis religieux. Pour toute question de fiqh, consultez un savant qualifié.',
-    night_disclaimer: 'Rappel : ceci n\'est pas une fatwa. Le Compagnon n\'émet pas d\'avis religieux.',
     settings_mentions: 'Mentions',
     mentions_text: 'Niyyah Daily est un outil de rappel et d\'organisation spirituelle. L\'application n\'émet aucun avis religieux (fatwa). Le contenu (savais-tu, traits de Nafs, suggestions) est indicatif. Pour toute question de fiqh, aqida, tafsir ou situation personnelle, consultez un savant qualifié (imam, cheikh, ustadh) avec ijaza reconnue.',
     nafs_disclaimer: 'Compilation inspirée des classiques de tazkiyat an-nafs (Al-Ghazali, Ibn al-Qayyim). N\'a pas valeur de traité savant.',
@@ -5580,7 +5579,7 @@ const V2_I18N = {
     freemium_buy: 'Get Niyyah Premium — €4.99 🌿', freemium_code_placeholder: 'ACCESS CODE', freemium_free: 'Continue with free Level 1',
     freemium_f1: 'Niyyah Scanner — 1/day free → unlimited premium', freemium_f2: 'Deepening — Tasbih, Mosque, Sunnah fasting',
     freemium_f3: 'Knowledge — Quran, Hadiths, Arabic', freemium_f4: 'Radiance — Sadaqa, Duas, Salam',
-    freemium_f5: 'Night Companion + Spiritual titles', freemium_f6: 'Exclusive badges + Advanced streak',
+    freemium_f5: 'Spiritual titles + End of Day', freemium_f6: 'Exclusive badges + Advanced streak',
     bilan_title: 'Evening review', bilan_question: 'How was your heart today?', bilan_subtitle: 'Allah looks at sincerity, not the score.',
     bilan_distraction: 'Distraction', bilan_effort: 'Effort', bilan_sincerite: 'Sincerity',
     bilan_distraction_sub: 'غفلة — heedless heart', bilan_effort_sub: 'مجاهدة — inner struggle', bilan_sincerite_sub: 'إخلاص — the sought-after state',
@@ -5647,7 +5646,6 @@ const V2_I18N = {
     camera_denied: 'Camera access denied — allow in settings',
     compass_denied: 'Allow compass in settings',
     disclaimer: 'This app does not issue religious rulings. For any fiqh question, consult a qualified scholar.',
-    night_disclaimer: 'Reminder: this is not a fatwa. The Companion does not issue religious rulings.',
     settings_mentions: 'Legal Notice',
     mentions_text: 'Niyyah Daily is a spiritual reminder and organization tool. The app does not issue any religious rulings (fatwa). Content (did-you-know, Nafs traits, suggestions) is informational only. For any question on fiqh, aqida, tafsir, or personal matters, consult a qualified scholar (imam, shaykh, ustadh) with recognized ijaza.',
     nafs_disclaimer: 'Compilation inspired by classical works on tazkiyat an-nafs (Al-Ghazali, Ibn al-Qayyim). This is not a scholarly treatise.',
@@ -5790,7 +5788,6 @@ const V2_I18N = {
     camera_denied: 'تَمَّ رَفْضُ الْوُصُولِ لِلْكَامِيرَا — فَعِّلْهُ فِي الْإِعْدَادَاتِ',
     compass_denied: 'فَعِّلِ الْبُوصْلَةَ فِي الْإِعْدَادَاتِ',
     disclaimer: 'هَذَا التَّطْبِيقُ لَا يُصْدِرُ فَتَاوَى شَرْعِيَّةً. لِأَيِّ سُؤَالٍ فِقْهِيٍّ، اسْتَشِرْ عَالِمًا مُؤَهَّلًا.',
-    night_disclaimer: 'تَذْكِيرٌ: هَذِهِ لَيْسَتْ فَتْوَى. الرَّفِيقُ لَا يُصْدِرُ أَحْكَامًا شَرْعِيَّةً.',
     settings_mentions: 'إِشْعَارٌ قَانُونِيٌّ',
     mentions_text: 'نِيَّة دَيْلِي أَدَاةُ تَذْكِيرٍ وَتَنْظِيمٍ رُوحِيٍّ. لَا يُصْدِرُ التَّطْبِيقُ أَيَّ فَتْوَى شَرْعِيَّةٍ. الْمُحْتَوَى (هَلْ تَعْلَمُ، سِمَاتُ النَّفْسِ، الِاقْتِرَاحَاتُ) إِرْشَادِيٌّ فَقَطْ. لِأَيِّ سُؤَالٍ فِي الْفِقْهِ أَوِ الْعَقِيدَةِ أَوِ التَّفْسِيرِ أَوِ الْأُمُورِ الشَّخْصِيَّةِ، اسْتَشِرْ عَالِمًا مُؤَهَّلًا (إِمَامٌ، شَيْخٌ، أُسْتَاذٌ) ذَا إِجَازَةٍ مُعْتَرَفٍ بِهَا.',
     nafs_disclaimer: 'تَجْمِيعٌ مُسْتَوْحًى مِنْ كُتُبِ تَزْكِيَةِ النَّفْسِ الْكِلَاسِيكِيَّةِ (الْغَزَالِيُّ، ابْنُ الْقَيِّمِ). لَيْسَ بِمَثَابَةِ رِسَالَةٍ عِلْمِيَّةٍ.',
@@ -7220,8 +7217,10 @@ function v2RefreshStats() {
   const _s = v2GetState();
   if (_s.intention) applyInfusion(_s.intention);
 
-  showMorningSagesse();
-  checkNightCompanion();
+  // Cleanup deprecated Night Companion localStorage
+  localStorage.removeItem('niyyah_compagnon_date');
+  localStorage.removeItem('niyyah_sagesse_nuit');
+  localStorage.removeItem('niyyah_morning_wisdom_shown_date');
   updateFajrChallenge();
   updateSanctuaireMoment();
   var disclaimerEl = document.getElementById('app-disclaimer');
@@ -7267,101 +7266,6 @@ function updateFajrChallenge() {
       + '<div style="height:100%;width:' + pct + '%;background:linear-gradient(90deg,#C8A84A,#E0C870);transition:width 0.6s ease;"></div>'
       + '</div></div>';
   }
-}
-/* ── Mode Compagnon Nocturne ── */
-function checkNightCompanion() {
-  if (typeof isPremium !== 'function' || !isPremium()) return;
-  var block = getCurrentPrayerBlock();
-  if (block.id !== 'isha' && block.id !== 'nuit' && block.id !== 'qiyam') return;
-  var todayKey = new Date().toISOString().split('T')[0];
-  if (localStorage.getItem('niyyah_compagnon_date') === todayKey) return;
-  var overlay = document.getElementById('night-companion-overlay');
-  if (overlay) overlay.style.display = 'block';
-}
-function closeNightCompanion() {
-  safeSetItem('niyyah_compagnon_date', new Date().toISOString().split('T')[0]);
-  var overlay = document.getElementById('night-companion-overlay');
-  if (overlay) overlay.style.display = 'none';
-}
-async function sendNightThought() {
-  var input = document.getElementById('night-thought-input');
-  var btn = document.getElementById('night-send-btn');
-  if (!input || !input.value.trim()) return;
-  var thought = input.value.trim();
-  btn.textContent = '…';
-  btn.disabled = true;
-  try {
-    input.style.display = 'none';
-    var res = await fetch('https://niyyah-api.nabs881.workers.dev/api/murmure', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ thought: thought, mode: 'night', context: 'L\'utilisateur ferme sa journée avec cette pensée. Réponds en EXACTEMENT 3 phrases courtes :\n1) Accueille sa pensée avec douceur — montre que tu as compris ce qu\'il ressent, sans juger.\n2) Offre UNE sagesse d\'Ibn Ata\'illah (Al-Hikam) ou d\'Al-Ghazali (Ihya Ulum al-Din) directement liée à ce qu\'il a écrit. Cite la source.\n3) Termine par une invitation douce à dormir en paix sous la protection d\'Allah.\nTon : intime, fraternel, jamais générique. Parle comme un ami savant qui murmure avant le sommeil.' })
-    });
-    var data = await res.json();
-    var wisdom = data.text || data.reply || data.content || 'La nuit est un voile de miséricorde — repose-toi sous Sa protection.';
-    var source = data.source || 'Sagesse nocturne';
-    var responseEl = document.getElementById('night-wisdom-response');
-    var textEl = document.getElementById('night-wisdom-text');
-    var sourceEl = document.getElementById('night-wisdom-source');
-    if (textEl) textEl.textContent = '« ' + wisdom + ' »';
-    if (sourceEl) sourceEl.textContent = '— ' + source;
-    if (responseEl) {
-      var oldDisc = responseEl.querySelector('.night-disclaimer');
-      if (oldDisc) oldDisc.remove();
-      var disc = document.createElement('div');
-      disc.className = 'night-disclaimer';
-      disc.textContent = t('night_disclaimer');
-      responseEl.insertBefore(disc, responseEl.firstChild);
-      responseEl.style.display = 'block';
-    }
-    safeSetItem('niyyah_sagesse_nuit', JSON.stringify({ text: wisdom, source: source, date: new Date().toISOString().split('T')[0], thought: thought }));
-    safeSetItem('niyyah_compagnon_date', new Date().toISOString().split('T')[0]);
-  } catch(e) {
-    var fallback = 'Celui qui connaît son âme connaît son Seigneur. — Al-Ghazali';
-    var responseEl2 = document.getElementById('night-wisdom-response');
-    var textEl2 = document.getElementById('night-wisdom-text');
-    var sourceEl2 = document.getElementById('night-wisdom-source');
-    if (textEl2) textEl2.textContent = '« ' + fallback + ' »';
-    if (sourceEl2) sourceEl2.textContent = '— Sagesse nocturne';
-    if (responseEl2) {
-      var oldDisc2 = responseEl2.querySelector('.night-disclaimer');
-      if (oldDisc2) oldDisc2.remove();
-      var disc2 = document.createElement('div');
-      disc2.className = 'night-disclaimer';
-      disc2.textContent = t('night_disclaimer');
-      responseEl2.insertBefore(disc2, responseEl2.firstChild);
-      responseEl2.style.display = 'block';
-    }
-    safeSetItem('niyyah_sagesse_nuit', JSON.stringify({ text: fallback, source: 'Al-Ghazali', date: new Date().toISOString().split('T')[0], thought: thought }));
-    safeSetItem('niyyah_compagnon_date', new Date().toISOString().split('T')[0]);
-  }
-  btn.style.display = 'none';
-}
-function showMorningSagesse() {
-  if (typeof isPremium !== 'function' || !isPremium()) return;
-  var todayStr = new Date().toISOString().split('T')[0];
-  if (localStorage.getItem('niyyah_morning_wisdom_shown_date') === todayStr) return;
-  var sagesse = null;
-  try { sagesse = JSON.parse(localStorage.getItem('niyyah_sagesse_nuit') || 'null'); } catch(e) {}
-  if (!sagesse || !sagesse.text) return;
-  var yesterday = new Date(); yesterday.setDate(yesterday.getDate() - 1);
-  var yesterdayStr = yesterday.toISOString().split('T')[0];
-  if (sagesse.date !== yesterdayStr && sagesse.date !== todayStr) return;
-  var block = getCurrentPrayerBlock();
-  if (block.id === 'isha' || block.id === 'nuit' || block.id === 'qiyam') return;
-  safeSetItem('niyyah_morning_wisdom_shown_date', todayStr);
-  var overlay = document.createElement('div');
-  overlay.id = 'morning-wisdom-modal';
-  overlay.style.cssText = 'position:fixed;inset:0;z-index:4000;background:rgba(10,10,10,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:center;animation:backdropV2 0.3s ease forwards;';
-  overlay.innerHTML = '<div style="width:min(320px,85vw);background:#111;border:1px solid rgba(192,192,192,0.12);border-radius:20px;padding:28px 24px;text-align:center;animation:sheetV2 0.4s cubic-bezier(0.23,1,0.32,1) forwards;">'
-    + '<div style="font-family:\'Cinzel\',serif;font-size:9px;letter-spacing:2.5px;color:rgba(192,192,192,0.4);margin-bottom:14px;text-transform:uppercase;">Sagesse de la nuit</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;font-style:italic;color:#C0C0C0;line-height:1.7;margin-bottom:12px;">« ' + sagesse.text + ' »</div>'
-    + '<div style="font-family:\'Cinzel\',serif;font-size:9px;color:rgba(192,192,192,0.3);letter-spacing:1px;margin-bottom:20px;">— ' + sagesse.source + '</div>'
-    + '<button onclick="document.getElementById(\'morning-wisdom-modal\').remove();" style="padding:10px 28px;border-radius:100px;border:1px solid rgba(192,192,192,0.15);background:none;color:rgba(192,192,192,0.5);font-family:\'Cinzel\',serif;font-size:10px;letter-spacing:1.5px;cursor:pointer;">FERMER</button>'
-    + '</div>';
-  overlay.addEventListener('click', function(e) { if (e.target === overlay) overlay.remove(); });
-  document.body.appendChild(overlay);
-  setTimeout(function() { if (overlay.parentNode) overlay.remove(); }, 8000);
 }
 function updateSanctuaireMoment() {
   var el = document.getElementById('sanctuaire-moment');
