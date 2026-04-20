@@ -5409,6 +5409,7 @@ const V2_I18N = {
     bilan_distraction: 'Distraction', bilan_effort: 'Effort', bilan_sincerite: 'Sincérité',
     bilan_distraction_sub: 'غفلة — le cœur absent', bilan_effort_sub: 'مجاهدة — le combat intérieur', bilan_sincerite_sub: 'إخلاص — l\'état recherché',
     tasbih_label: 'Tasbih', tasbih_hint: 'Appuie n\'importe où',
+    finjournee_sub: 'Muhasaba du soir',
     fri_kahf_toast: '📖 Al-Kahf récitée — lumière jusqu\'au prochain vendredi !', fri_salawat_toast: '🌟 Salawat envoyées sur le Prophète ﷺ', fri_doua_toast: '🤲 Douaa de l\'heure bénie — qu\'Allah l\'exauce !',
     meta_subtitle: 'Pratique & Élévation', aria_language: 'Langue', aria_settings: 'Réglages',
     aria_pratique: 'Pratique', aria_wird: 'Wird', aria_parcours: 'Parcours', aria_tafakkur: 'Tafakkur',
@@ -5583,6 +5584,7 @@ const V2_I18N = {
     bilan_distraction: 'Distraction', bilan_effort: 'Effort', bilan_sincerite: 'Sincerity',
     bilan_distraction_sub: 'غفلة — heedless heart', bilan_effort_sub: 'مجاهدة — inner struggle', bilan_sincerite_sub: 'إخلاص — the sought-after state',
     tasbih_label: 'Tasbih', tasbih_hint: 'Tap anywhere',
+    finjournee_sub: 'Muhasaba du soir',
     fri_kahf_toast: '📖 Al-Kahf recited — light until next Friday!', fri_salawat_toast: '🌟 Salawat sent upon the Prophet ﷺ', fri_doua_toast: '🤲 Dua of the blessed hour — may Allah accept it!',
     meta_subtitle: 'Practice & Elevation', aria_language: 'Language', aria_settings: 'Settings',
     aria_pratique: 'Practice', aria_wird: 'Wird', aria_parcours: 'Journey', aria_tafakkur: 'Tafakkur',
@@ -5736,6 +5738,7 @@ const V2_I18N = {
     freemium_f1: '', freemium_f2: '', freemium_f3: '', freemium_f4: '', freemium_f5: '', freemium_f6: '',
     bilan_title: '', bilan_question: '', bilan_subtitle: '', bilan_distraction: '', bilan_distraction_sub: '', bilan_effort: '', bilan_effort_sub: '', bilan_sincerite: '', bilan_sincerite_sub: '',
     tasbih_label: '', tasbih_hint: '',
+    finjournee_sub: '',
     fri_kahf_toast: '', fri_salawat_toast: '', fri_doua_toast: '',
     meta_subtitle: '', aria_language: '', aria_settings: '',
     aria_pratique: '', aria_wird: '', aria_parcours: '', aria_tafakkur: '',
@@ -7254,7 +7257,7 @@ function updateFinJourneeCard() {
   } else {
     card.innerHTML = '<div class="finjournee-active" onclick="openFinJournee()">'
       + '<div class="finjournee-label">✦ Ferme ta journée ✦</div>'
-      + '<div class="finjournee-sub">Trois minutes · Silence et gratitude</div>'
+      + '<div class="finjournee-sub">' + t('finjournee_sub') + '</div>'
       + '</div>';
   }
 }
