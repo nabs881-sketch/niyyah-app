@@ -2006,7 +2006,6 @@ function renderTabs() {
     let cls = 'tab';
     if (active)   cls += ' active';
     else if (done) cls += ' done';
-    if (NIYYAH_DEBUG) console.log('[renderTabs] l.id=', l.id, 'typeof=', typeof l.id, 'clé=', 'level_'+l.id, 'résultat=', t('level_'+l.id), 'V2_LANG=', V2_LANG);
     return '<div class="' + cls + '" onclick="selectLevel(' + l.id + ')">' + t('level_' + l.id) + (done ? ' ✓' : '') + '</div>';
   }).join('');
 }
@@ -2899,7 +2898,7 @@ function renderProgression() {
     const ring='<svg width="48" height="48" viewBox="0 0 48 48" style="transform:rotate(-90deg);"><circle cx="24" cy="24" r="20" fill="none" stroke="rgba(200,168,75,0.15)" stroke-width="2"/><circle cx="24" cy="24" r="20" fill="none" stroke="#C8A84A" stroke-width="2" stroke-linecap="round" stroke-dasharray="'+circ.toFixed(1)+'" stroke-dashoffset="'+(circ-dash).toFixed(1)+'"/></svg>';
     lvlGridP+='<div onclick="selectLevel('+lvl.id+')" style="background:rgba(200,168,75,0.03);border:1px solid rgba(200,168,75,0.12);border-radius:14px;height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;cursor:pointer;">'
       +'<div style="width:48px;height:48px;position:relative;">'+ring+'<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:\'Cormorant Garamond\',serif;font-size:14px;color:#C8A84A;">'+pct+'%</div></div>'
-      +'<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:600;color:#C8A84A;">'+(function(){if(NIYYAH_DEBUG)console.log('[renderProg] lvl.id=',lvl.id,'clé=','level_'+lvl.id,'résultat=',t('level_'+lvl.id));return t('level_'+lvl.id)})()+'</div>'
+      +'<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:600;color:#C8A84A;">'+t('level_'+lvl.id)+'</div>'
       +'</div>';
   });
   // === GRAPHIQUE 7 JOURS BILANS ===
