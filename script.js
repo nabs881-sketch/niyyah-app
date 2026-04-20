@@ -7339,8 +7339,37 @@ function showFinJourneeActe2() {
   showNext();
 }
 function showFinJourneeActe3() {
-  closeFinJournee();
-  updateFinJourneeCard();
+  var overlay = document.getElementById('finjournee-overlay');
+  if (!overlay) return;
+  overlay.innerHTML = '<div class="finjournee-acte2"><div class="finjournee-acte2-text" id="finjournee-a3"></div></div>';
+  var el = document.getElementById('finjournee-a3');
+  // Phase 1: pardon text
+  setTimeout(function() {
+    el.innerHTML = 'Pardonne à ceux qui t\'ont blessé aujourd\'hui,<br>dans la mesure où tu le peux.<br><br>Demande pardon à Allah pour tes manquements.<br><br>Ferme les yeux.<br>Dors en paix.';
+    el.style.opacity = '1';
+  }, 100);
+  setTimeout(function() { el.style.opacity = '0'; }, 13100);
+  // Phase 2: bismillah
+  setTimeout(function() {
+    el.style.fontSize = '36px';
+    el.style.fontFamily = "'Noto Naskh Arabic', serif";
+    el.style.fontStyle = 'normal';
+    el.innerHTML = 'بِسْمِ اللَّهِ';
+    el.style.opacity = '1';
+  }, 14100);
+  setTimeout(function() { el.style.opacity = '0'; }, 17100);
+  // Phase 3: mark completed + close
+  setTimeout(function() {
+    var today = new Date().toISOString().split('T')[0];
+    var hist = [];
+    try { hist = JSON.parse(localStorage.getItem('niyyah_finjournee_history') || '[]'); } catch(e) {}
+    for (var i = hist.length - 1; i >= 0; i--) {
+      if (hist[i].date === today) { hist[i].completed = true; break; }
+    }
+    safeSetItem('niyyah_finjournee_history', JSON.stringify(hist));
+    closeFinJournee();
+    updateFinJourneeCard();
+  }, 18100);
 }
 function openFinJourneeConsultation() {
   var today = new Date().toISOString().split('T')[0];
