@@ -5345,7 +5345,7 @@ const V2_I18N = {
     // Levels
     level_1: 'Fondations',
     level_2: 'Approfondissement',
-    level_3: 'Intensité',
+    level_3: 'Connaissance',
     level_4: 'Rayonnement',
     // Stats
     stat_streak: 'Streak',
@@ -5528,7 +5528,7 @@ const V2_I18N = {
     tawba_btn:   'Resume the path',
     level_1: 'Foundations',
     level_2: 'Deepening',
-    level_3: 'Intensity',
+    level_3: 'Knowledge',
     level_4: 'Radiance',
     stat_streak: 'Streak',
     stat_score:  'Score',
