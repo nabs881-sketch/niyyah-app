@@ -7293,9 +7293,7 @@ function saveFinJourneeBontes() {
   hist.push(entry);
   safeSetItem('niyyah_finjournee_history', JSON.stringify(hist));
   safeSetItem('niyyah_finjournee_date', today);
-  alert('Suite à venir...');
-  closeFinJournee();
-  updateFinJourneeCard();
+  showFinJourneeActe2();
 }
 function skipFinJourneeBontes() {
   var today = new Date().toISOString().split('T')[0];
@@ -7305,7 +7303,42 @@ function skipFinJourneeBontes() {
   hist.push(entry);
   safeSetItem('niyyah_finjournee_history', JSON.stringify(hist));
   safeSetItem('niyyah_finjournee_date', today);
-  alert('Suite à venir...');
+  showFinJourneeActe2();
+}
+function showFinJourneeActe2() {
+  var overlay = document.getElementById('finjournee-overlay');
+  if (!overlay) return;
+  overlay.innerHTML = '<div class="finjournee-acte2"><div class="finjournee-acte2-text" id="finjournee-q"></div></div>';
+  overlay.style.display = 'block';
+  var questions = [
+    'Tes cinq prières d\'aujourd\'hui — combien ont vraiment rencontré ton cœur ?',
+    'Ta langue a parlé toute la journée — qu\'aurais-tu voulu taire ?',
+    'À qui as-tu peut-être fait du mal aujourd\'hui, sans le vouloir ?',
+    'Qu\'est-ce qui, cette journée, t\'a éloigné de ton Seigneur sans que tu t\'en rendes compte ?',
+    'Si cette nuit était la dernière, qu\'emporterais-tu de cette journée ?',
+    'Astaghfirullah.',
+    'Je demande pardon à Allah.'
+  ];
+  var durations = [8000, 8000, 8000, 8000, 8000, 4000, 4000];
+  var el = document.getElementById('finjournee-q');
+  var idx = 0;
+  function showNext() {
+    if (idx >= questions.length) { showFinJourneeActe3(); return; }
+    el.style.opacity = '0';
+    setTimeout(function() {
+      el.textContent = questions[idx];
+      el.style.opacity = '1';
+      var hold = durations[idx];
+      idx++;
+      setTimeout(function() {
+        el.style.opacity = '0';
+        setTimeout(showNext, 1000);
+      }, hold - 1000);
+    }, idx === 0 ? 100 : 1000);
+  }
+  showNext();
+}
+function showFinJourneeActe3() {
   closeFinJournee();
   updateFinJourneeCard();
 }

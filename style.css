@@ -1896,6 +1896,28 @@ body::before {
 }
 .finjournee-btn:active { transform: scale(0.97); }
 
+/* ── FIN DE JOURNÉE — Acte 2 muhasaba ── */
+.finjournee-acte2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 40px 28px;
+  box-sizing: border-box;
+}
+.finjournee-acte2-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-style: italic;
+  font-weight: 500;
+  color: #C8A84A;
+  line-height: 1.7;
+  text-align: center;
+  max-width: 320px;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
 /* Grille 2x2 */
 .quick-actions-v2 {
   display: grid;
