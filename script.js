@@ -7273,17 +7273,41 @@ function openFinJournee() {
 function closeFinJournee() {
   var overlay = document.getElementById('finjournee-overlay');
   if (overlay) overlay.style.display = 'none';
+  var b1 = document.getElementById('finjournee-b1');
+  var b2 = document.getElementById('finjournee-b2');
+  var b3 = document.getElementById('finjournee-b3');
+  if (b1) b1.value = '';
+  if (b2) b2.value = '';
+  if (b3) b3.value = '';
 }
 function saveFinJourneeBontes() {
   var b1 = (document.getElementById('finjournee-b1') || {}).value || '';
   var b2 = (document.getElementById('finjournee-b2') || {}).value || '';
   var b3 = (document.getElementById('finjournee-b3') || {}).value || '';
-  console.log('[FinJournee] bontes:', b1, b2, b3);
+  var bontes = [b1, b2, b3].filter(function(s) { return s.trim().length > 0; });
+  if (bontes.length === 0) { alert('Écris au moins une bonté, ou tape Passer.'); return; }
+  var today = new Date().toISOString().split('T')[0];
+  var entry = { id: 'finjournee_' + today, date: today, time: new Date().toISOString(), bontes: bontes, skipped_bontes: false, completed: false };
+  var hist = [];
+  try { hist = JSON.parse(localStorage.getItem('niyyah_finjournee_history') || '[]'); } catch(e) {}
+  hist.push(entry);
+  safeSetItem('niyyah_finjournee_history', JSON.stringify(hist));
+  safeSetItem('niyyah_finjournee_date', today);
+  alert('Suite à venir...');
   closeFinJournee();
+  updateFinJourneeCard();
 }
 function skipFinJourneeBontes() {
-  console.log('[FinJournee] skipped bontes');
+  var today = new Date().toISOString().split('T')[0];
+  var entry = { id: 'finjournee_' + today, date: today, time: new Date().toISOString(), bontes: [], skipped_bontes: true, completed: false };
+  var hist = [];
+  try { hist = JSON.parse(localStorage.getItem('niyyah_finjournee_history') || '[]'); } catch(e) {}
+  hist.push(entry);
+  safeSetItem('niyyah_finjournee_history', JSON.stringify(hist));
+  safeSetItem('niyyah_finjournee_date', today);
+  alert('Suite à venir...');
   closeFinJournee();
+  updateFinJourneeCard();
 }
 
 function updateFajrChallenge() {
