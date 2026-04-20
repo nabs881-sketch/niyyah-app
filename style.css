@@ -1796,6 +1796,7 @@ body::before {
   color: #F4D77E;
   letter-spacing: 0.5px;
   white-space: nowrap;
+  max-width: 60%;
   text-shadow: 0 2px 8px rgba(0,0,0,0.6);
 }
 .finjournee-sub {
