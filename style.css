@@ -778,6 +778,8 @@ pointer-events:none;z-index:0;transition:opacity 0.4s ease}.view{display:none;po
 .item:active { background: rgba(60,64,70,0.95) !important; }
 .wird-inner-item { padding-left: 14px !important; }
 .wird-inner-item .check-circle { position: static !important; left: auto !important; top: auto !important; transform: none !important; }
+.counter-item { padding-left: 14px !important; }
+.counter-item .check-circle { position: static !important; left: auto !important; top: auto !important; transform: none !important; }
 
 /* ── PRAYER TIMES CELLS ── */
 .prayer-time-item {
