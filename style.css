@@ -1782,7 +1782,7 @@ body::before {
   box-shadow: none;
   overflow: hidden;
   min-height: 140px;
-  padding: 24px 20px;
+  padding: 36px 20px 24px;
   padding-right: 50%;
   text-align: left;
   cursor: pointer;
