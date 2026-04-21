@@ -2399,30 +2399,12 @@ body.pratique-active .topbar-v2 { display: none !important; }
   object-position: center;
   border-radius: 11px;
   user-select: none;
-  filter: brightness(0.7) saturate(0.85);
-  transition: filter 0.3s ease;
   -webkit-user-drag: none;
   vertical-align: top;
-}
-.quick-btn-v2:hover .card-img-premium,
-.quick-btn-v2:active .card-img-premium {
-  filter: brightness(0.9) saturate(1);
 }
 .quick-card-wrap {
   display: flex;
   flex-direction: column;
-}
-.card-desc-v2 {
-  padding: 6px 4px 2px;
-  font-size: 14px;
-  font-weight: 600;
-  font-style: normal;
-  color: rgba(200,149,106,0.9);
-  font-family: 'Cormorant Garamond', serif;
-  text-align: center;
-  letter-spacing: 0.01em;
-  font-family: var(--sans);
-  line-height: 1.35;
 }
 .quick-btn-v2 .quick-icon-v2,
 .quick-btn-v2 .quick-label-v2,

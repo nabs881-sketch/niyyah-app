@@ -6047,10 +6047,6 @@ function v2ApplyI18nHTML() {
   _s('i18n-notif-later', 'btn_later');
   _s('lvlEyebrow', 'level_accomplished');
   _s('btnNextLvl', 'level_next');
-  _s('i18n-card-pratique', 'card_pratique');
-  _s('i18n-card-wird', 'card_wird');
-  _s('i18n-card-parcours', 'card_parcours');
-  _s('i18n-card-tafakkur', 'card_tafakkur');
   _s('i18n-freemium-title', 'freemium_title');
   _s('i18n-freemium-sub', 'freemium_sub');
   _s('i18n-freemium-buy', 'freemium_buy');
