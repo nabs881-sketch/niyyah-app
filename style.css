@@ -2039,7 +2039,6 @@ body::before {
 .quick-icon-v2 {
   position: relative; z-index: 3;
   width: 70px; height: 70px;
-  filter: brightness(0.7) saturate(0.85);
   display: flex; align-items: center; justify-content: center;
   border-radius: 50%;
   border: 1px solid rgba(212,175,55,0.22);
@@ -2051,9 +2050,7 @@ body::before {
     0 4px 12px rgba(0,0,0,0.6);
   transition: all 0.35s;
 }
-.quick-btn-v2:hover .quick-icon-v2,
-.quick-btn-v2:active .quick-icon-v2 {
-  filter: brightness(0.9) saturate(1);
+.quick-btn-v2:hover .quick-icon-v2 {
   border-color: rgba(212,175,55,0.5);
   background: radial-gradient(circle at 38% 32%,
     rgba(212,175,55,0.22) 0%, rgba(212,175,55,0.08) 50%, transparent 75%);
@@ -2081,10 +2078,10 @@ body::before {
 .quick-label-v2 {
   position: relative; z-index: 3;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 14px; font-weight: 600; font-style: normal;
+  font-size: 9px; font-weight: 400;
   letter-spacing: 0.28em; text-transform: uppercase;
-  color: rgba(200,149,106,0.9);
-  text-shadow: 0 0 10px rgba(200,149,106,0.15);
+  color: rgba(212,175,55,0.6);
+  text-shadow: 0 0 10px rgba(212,175,55,0.15);
   transition: color 0.35s, text-shadow 0.35s;
 }
 .quick-btn-v2:hover .quick-label-v2 {
@@ -2402,11 +2399,14 @@ body.pratique-active .topbar-v2 { display: none !important; }
   object-position: center;
   border-radius: 11px;
   user-select: none;
+  filter: brightness(0.7) saturate(0.85);
+  transition: filter 0.3s ease;
   -webkit-user-drag: none;
   vertical-align: top;
 }
-.quick-btn-v2:hover .card-img-premium {
-  filter: brightness(1.12) drop-shadow(0 0 14px rgba(212,175,55,0.4));
+.quick-btn-v2:hover .card-img-premium,
+.quick-btn-v2:active .card-img-premium {
+  filter: brightness(0.9) saturate(1);
 }
 .quick-card-wrap {
   display: flex;
@@ -2415,9 +2415,10 @@ body.pratique-active .topbar-v2 { display: none !important; }
 .card-desc-v2 {
   padding: 6px 4px 2px;
   font-size: 14px;
-  color: #B0A080;
+  font-weight: 600;
+  font-style: normal;
+  color: rgba(200,149,106,0.9);
   font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
   text-align: center;
   letter-spacing: 0.01em;
   font-family: var(--sans);
