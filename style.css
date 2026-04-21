@@ -3487,7 +3487,7 @@ button[style*="gold-v2"] {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  background-clip: padding-box;
+  background-clip: border-box;
   border: 1px solid rgba(212,181,98,0.25);
   width: 100%;
   aspect-ratio: 2.5 / 1;
