@@ -5314,6 +5314,13 @@ const V2_I18N = {
     greeting_morning:   'Que cette journée soit lumineuse',
     greeting_afternoon: 'Restez dans le souvenir d\'Allah',
     greeting_evening:   'La gratitude ferme la journée',
+    greeting_day_0: 'Que ton silence soit plein',
+    greeting_day_1: 'Que cette journée soit lumineuse',
+    greeting_day_2: 'Que ton cœur reste ouvert',
+    greeting_day_3: 'Que ce jour t\'élève vers ce qui compte',
+    greeting_day_4: 'Que tes pas soient justes',
+    greeting_day_5: 'Que ta Jumu\'a t\'apaise',
+    greeting_day_6: 'Que ta patience te soit rendue',
     // Modal
     modal_title:    'Ancrer votre Niyyah',
     modal_sub:      'Quelle est l\'intention de cette journée ?',
@@ -5505,6 +5512,13 @@ const V2_I18N = {
     greeting_morning:   'May this day be filled with light',
     greeting_afternoon: 'Stay in the remembrance of Allah',
     greeting_evening:   'Gratitude closes the day',
+    greeting_day_0: 'May your silence be full',
+    greeting_day_1: 'May this day be filled with light',
+    greeting_day_2: 'May your heart stay open',
+    greeting_day_3: 'May this day elevate you toward what matters',
+    greeting_day_4: 'May your steps be righteous',
+    greeting_day_5: 'May your Jumu\'a bring you peace',
+    greeting_day_6: 'May your patience be returned to you',
     modal_title:    'Anchor your Niyyah',
     modal_sub:      'What is the intention for this day?',
     modal_divider:  'or your own intention',
@@ -5664,6 +5678,7 @@ const V2_I18N = {
     greeting_morning:   'جَعَلَ اللَّهُ يَوْمَكَ مُبَارَكًا',
     greeting_afternoon: 'دُمْ فِي ذِكْرِ اللَّهِ',
     greeting_evening:   'اخْتِمْ يَوْمَكَ بِالشُّكْرِ',
+    greeting_day_0: '', greeting_day_1: '', greeting_day_2: '', greeting_day_3: '', greeting_day_4: '', greeting_day_5: '', greeting_day_6: '',
     modal_title:    'تَثْبِيتُ النِّيَّةِ',
     modal_sub:      'مَا هِيَ نِيَّةُ هَذَا الْيَوْمِ؟',
     modal_divider:  'أَوْ نِيَّتُكَ الْخَاصَّةُ',
@@ -5916,12 +5931,10 @@ function v2ApplyI18n() {
   const logo = document.querySelector('.topbar-logo-v2');
   if (logo) logo.textContent = T.app_name;
 
-  // Greeting
+  // Greeting — phrase du jour
   const grEl = document.getElementById('v2-greeting-text');
   if (grEl) {
-    const h = new Date().getHours();
-    const grKey = h < 12 ? 'greeting_morning' : h < 17 ? 'greeting_afternoon' : 'greeting_evening';
-    grEl.textContent = T[grKey];
+    grEl.textContent = t('greeting_day_' + new Date().getDay());
     grEl.style.direction = T.dir;
     grEl.style.fontFamily = isRTL ? "'Amiri', serif" : "'Cormorant Garamond', serif";
   }
@@ -7186,11 +7199,9 @@ function v2RefreshStats() {
   })();
   // Apply current language first
   v2ApplyI18n();
-  // Greeting selon heure
-  const h = new Date().getHours();
-  const grKey = h < 12 ? 'greeting_morning' : h < 17 ? 'greeting_afternoon' : 'greeting_evening';
+  // Greeting — phrase du jour
   const grEl = document.getElementById('v2-greeting-text');
-  if (grEl) grEl.textContent = t(grKey);
+  if (grEl) grEl.textContent = t('greeting_day_' + new Date().getDay());
   // Titres spirituels évolutifs (premium only)
   updateSpiritualTitle();
 
