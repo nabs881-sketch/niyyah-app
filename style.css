@@ -1799,7 +1799,7 @@ body::before {
 }
 
 /* ── FIN DE JOURNÉE — carte soir ── */
-#finjournee-card { margin: 0 auto 12px; width: min(320px, 90vw); }
+#finjournee-card { width: 100%; margin: 0 auto 12px; box-sizing: border-box; }
 .finjournee-img {
   display: block;
   width: 100%;
