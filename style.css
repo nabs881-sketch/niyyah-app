@@ -1792,7 +1792,7 @@ body::before {
 .finjournee-active:active { transform: scale(0.97); }
 .finjournee-label {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 18px;
+  font-size: 13px;
   font-style: italic;
   font-weight: 600;
   color: #F4D77E;
