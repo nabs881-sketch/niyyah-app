@@ -1607,7 +1607,7 @@ body::before {
 
 .orb-wrap-v2 {
   position: relative;
-  width: 180px; height: 180px;
+  width: 207px; height: 207px;
   display: flex; align-items: center; justify-content: center;
   cursor: pointer; margin: 0 auto 40px;
   animation: fadeSlideV2 0.8s var(--ease-silk-v2) 0.3s both;
@@ -1636,19 +1636,19 @@ body::before {
 }
 .orb-ring-v2:nth-child(1) {
   display: none;
-  width: 216px; height: 216px;
+  width: 248px; height: 248px;
   border-color: rgba(212,175,55,0.07);
   animation: orbRingV2 4s var(--ease-breath-v2) infinite;
 }
 .orb-ring-v2:nth-child(2) {
   display: none;
-  width: 252px; height: 252px;
+  width: 290px; height: 290px;
   border-color: rgba(212,175,55,0.04);
   animation: orbRingV2 4s var(--ease-breath-v2) 0.7s infinite;
 }
 .orb-ring-v2:nth-child(3) {
   display: none;
-  width: 290px; height: 290px;
+  width: 334px; height: 334px;
   border-color: rgba(212,175,55,0.02);
   animation: orbRingV2 4s var(--ease-breath-v2) 1.4s infinite;
 }
@@ -1659,7 +1659,7 @@ body::before {
 
 .orb-core-v2 {
   position: relative;
-  width: 180px; height: 180px; border-radius: 50%;
+  width: 207px; height: 207px; border-radius: 50%;
   background: radial-gradient(
     circle at 38% 35%,
     rgba(228,218,140,0.16) 0%,
@@ -1710,6 +1710,7 @@ body::before {
   font-family: 'Scheherazade New', var(--font-v2-ar);
   font-size: 56px; color: rgba(212,175,55,0.55); line-height: 1;
   text-shadow: 0 0 20px rgba(200,149,106,0.4);
+  margin-bottom: 12px;
   transition: color 0.4s; user-select: none;
 }
 .orb-core-v2:hover .orb-symbol-v2,
