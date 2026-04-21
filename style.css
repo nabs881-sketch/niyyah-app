@@ -3488,7 +3488,7 @@ button[style*="gold-v2"] {
   width: 100%;
   margin-top: 8px;
   padding: 14px 28px;
-  background: #C8A84A;
+  background: linear-gradient(135deg, #C8A84B 0%, #A67544 100%);
   border: none;
   border-radius: 10px;
   color: #0a0805;
