@@ -3169,6 +3169,14 @@ button[style*="gold-v2"] {
   z-index: 0;
 }
 .journal-screen > * { position: relative; z-index: 1; }
+.journal-arabic-title {
+  font-family: 'Scheherazade New', serif;
+  font-size: 32px;
+  color: rgba(200,168,75,0.85);
+  text-shadow: 0 0 20px rgba(200,168,75,0.25);
+  text-align: center;
+  margin-bottom: 12px;
+}
 
 .nafs-header {
   text-align: center;
