@@ -3489,9 +3489,13 @@ button[style*="gold-v2"] {
   background-clip: padding-box;
   border: 1px solid rgba(212,181,98,0.25);
   min-height: 140px;
-  padding: 24px 20px;
+  padding: 28px 24px;
   border-radius: 14px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
 }
 .moment-nuit-title {
   font-family: 'Cormorant Garamond', serif;
