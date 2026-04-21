@@ -2395,9 +2395,10 @@ body.pratique-active .topbar-v2 { display: none !important; }
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   border-radius: 11px;
+  background: #0a0805;
   user-select: none;
   -webkit-user-drag: none;
   vertical-align: top;
