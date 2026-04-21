@@ -1707,8 +1707,9 @@ body::before {
 }
 
 .orb-symbol-v2 {
-  font-family: var(--font-v2-ar);
-  font-size: 40px; color: rgba(212,175,55,0.55); line-height: 1;
+  font-family: 'Scheherazade New', var(--font-v2-ar);
+  font-size: 56px; color: rgba(212,175,55,0.55); line-height: 1;
+  text-shadow: 0 0 20px rgba(200,149,106,0.4);
   transition: color 0.4s; user-select: none;
 }
 .orb-core-v2:hover .orb-symbol-v2,
