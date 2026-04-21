@@ -3246,7 +3246,8 @@ button[style*="gold-v2"] {
 .nafs-section-text {
   font-family: 'Cormorant Garamond', serif;
   font-size: 16px;
-  color: rgba(232,220,200,0.85);
+  font-weight: 500;
+  color: rgba(245,235,215,0.95);
   line-height: 1.7;
 }
 .nafs-reference-box {
