@@ -3488,10 +3488,10 @@ button[style*="gold-v2"] {
   width: 100%;
   margin-top: 8px;
   padding: 14px 28px;
-  background: linear-gradient(135deg, #C8956A 0%, #A67544 100%);
+  background: #C8A84A;
   border: none;
   border-radius: 10px;
-  color: #1a0f05;
+  color: #0a0805;
   font-family: 'Cormorant Garamond', serif;
   font-size: 15px;
   font-weight: 600;
