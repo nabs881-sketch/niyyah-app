@@ -5375,7 +5375,7 @@ const V2_I18N = {
     bandeau_sub: 'Tes actes du moment', bandeau_nuit: 'Dors avec le Witr', bandeau_qiyam: 'L\'heure du Qiyam al-Layl',
     toggle_all: 'Ma journée complète', toggle_moment: 'Moment actuel',
     // Sanctuaire moment
-    actes_done: 'acte accompli', actes_done_p: 'actes accomplis', actes_left: 'restant', actes_left_p: 'restants', bloc_done: '✦ Bloc accompli', bloc_done_sub: 'Barak Allahu fik', btn_continue: 'Continuer',
+    actes_done: 'acte accompli', actes_done_p: 'actes accomplis', actes_left: 'restant', actes_left_p: 'restants', bloc_done: '✦ Bloc accompli', bloc_done_sub: 'Barak Allahu fik', btn_continue: 'Bismillah',
     jour_left: 'acte du jour restant', jour_left_p: 'actes du jour restants',
     // Fajr challenge
     fajr_title: 'Challenge 30 jours Fajr', fajr_day: 'Jour', fajr_sur: 'sur', fajr_gardien: 'Gardien de Fajr ✦',
@@ -5560,7 +5560,7 @@ const V2_I18N = {
     block_reveil: 'AT DAWN', block_fajr: 'AFTER FAJR', block_dhuhr: 'AFTER DHUHR', block_asr: 'AFTER ASR', block_maghrib: 'AFTER MAGHRIB', block_isha: 'AFTER ISHA', block_nuit: '🌙 Night', block_qiyam: '🌙 Qiyam al-Layl',
     bandeau_sub: 'Your acts right now', bandeau_nuit: 'Sleep with Witr', bandeau_qiyam: 'Time for Qiyam al-Layl',
     toggle_all: 'Full day', toggle_moment: 'Current moment',
-    actes_done: 'act completed', actes_done_p: 'acts completed', actes_left: 'remaining', actes_left_p: 'remaining', bloc_done: '✦ Block completed', bloc_done_sub: 'Barak Allahu fik', btn_continue: 'Continue',
+    actes_done: 'act completed', actes_done_p: 'acts completed', actes_left: 'remaining', actes_left_p: 'remaining', bloc_done: '✦ Block completed', bloc_done_sub: 'Barak Allahu fik', btn_continue: 'Bismillah',
     jour_left: 'daily act remaining', jour_left_p: 'daily acts remaining',
     fajr_title: '30-Day Fajr Challenge', fajr_day: 'Day', fajr_sur: 'of', fajr_gardien: 'Guardian of Fajr ✦',
     defi_none: 'Choose a challenge ✦', defi_tap: 'Tap to start', defi_browse: 'Tap to browse 100 challenges →',
@@ -5720,7 +5720,7 @@ const V2_I18N = {
     block_reveil: 'عِنْدَ الِاسْتِيقَاظِ', block_fajr: 'بَعْدَ الْفَجْرِ', block_dhuhr: 'بَعْدَ الظُّهْرِ', block_asr: 'بَعْدَ الْعَصْرِ', block_maghrib: 'بَعْدَ الْمَغْرِبِ', block_isha: 'بَعْدَ الْعِشَاءِ', block_nuit: '🌙 اللَّيْلُ', block_qiyam: '🌙 قِيَامُ اللَّيْلِ',
     bandeau_sub: 'أَعْمَالُكَ الْآنَ', bandeau_nuit: 'نَمْ مَعَ الْوِتْرِ', bandeau_qiyam: 'وَقْتُ قِيَامِ اللَّيْلِ',
     toggle_all: 'الْيَوْمُ كَامِلًا', toggle_moment: 'اللَّحْظَةُ الْحَالِيَّةُ',
-    actes_done: 'عَمَلٌ مُنْجَزٌ', actes_done_p: 'أَعْمَالٌ مُنْجَزَةٌ', actes_left: 'مُتَبَقٍّ', actes_left_p: 'مُتَبَقِّيَةٌ', bloc_done: '✦ أُنْجِزَ الْقِسْمُ', bloc_done_sub: 'بَارَكَ اللَّهُ فِيكَ', btn_continue: 'مُتَابَعَةٌ',
+    actes_done: 'عَمَلٌ مُنْجَزٌ', actes_done_p: 'أَعْمَالٌ مُنْجَزَةٌ', actes_left: 'مُتَبَقٍّ', actes_left_p: 'مُتَبَقِّيَةٌ', bloc_done: '✦ أُنْجِزَ الْقِسْمُ', bloc_done_sub: 'بَارَكَ اللَّهُ فِيكَ', btn_continue: 'بسم الله',
     jour_left: 'عَمَلٌ يَوْمِيٌّ مُتَبَقٍّ', jour_left_p: 'أَعْمَالٌ يَوْمِيَّةٌ مُتَبَقِّيَةٌ',
     fajr_title: 'تَحَدِّي ٣٠ يَوْمًا لِلْفَجْرِ', fajr_day: 'الْيَوْمُ', fajr_sur: 'مِنْ', fajr_gardien: 'حَارِسُ الْفَجْرِ ✦',
     defi_none: 'اخْتَرْ تَحَدِّيًا ✦', defi_tap: 'اضْغَطْ لِلْبَدْءِ', defi_browse: 'اضْغَطْ لِتَصَفُّحِ ١٠٠ تَحَدٍّ →',
@@ -7529,7 +7529,7 @@ function updateSanctuaireMoment() {
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:700;color:#C8A84A;">' + _iconSpan + block.label + '</div>'
       + '<div style="font-family:\'Inter\',var(--sans);font-size:12px;color:rgba(255,255,255,0.6);margin-top:4px;">' + blockDone + ' ' + (blockDone > 1 ? t('actes_done_p') : t('actes_done')) + ' · ' + blockRemaining + ' ' + (blockRemaining > 1 ? t('actes_left_p') : t('actes_left')) + '</div>'
       + jourLine
-      + '<button onclick="event.stopPropagation();selectLevel(currentLevel);" ontouchend="event.stopPropagation();event.preventDefault();selectLevel(currentLevel);" style="display:block;width:100%;margin-top:8px;padding:0 20px;height:36px;background:transparent;border:1px solid rgba(200,168,75,0.4);border-radius:10px;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:13px;font-weight:600;cursor:pointer;">' + t('btn_continue') + '</button>'
+      + '<button class="btn-bismillah-moment" onclick="event.stopPropagation();selectLevel(currentLevel);" ontouchend="event.stopPropagation();event.preventDefault();selectLevel(currentLevel);">' + t('btn_continue') + '</button>'
       + '</div>';
   }
 }

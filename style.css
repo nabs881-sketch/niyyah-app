@@ -3483,6 +3483,28 @@ button[style*="gold-v2"] {
   border-radius: 14px;
   box-sizing: border-box;
 }
+.btn-bismillah-moment {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, rgba(200,149,106,0.95), rgba(180,130,90,0.95));
+  border: none;
+  border-radius: 10px;
+  color: #1a1208;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(200,149,106,0.3);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.btn-bismillah-moment:hover,
+.btn-bismillah-moment:active {
+  box-shadow: 0 0 30px rgba(200,149,106,0.5);
+  transform: translateY(-1px);
+}
 .moment-level-sep {
   width: 60%;
   height: 1px;
