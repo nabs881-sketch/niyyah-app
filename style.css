@@ -2578,24 +2578,24 @@ body.pratique-active .topbar-v2 { display: none !important; }
   bottom: calc(var(--safe-bot, 0px) + 28px);
   left: 50%; transform: translateX(-50%);
   z-index: 10;
-  width: 70px; height: 70px;
+  width: 76px; height: 76px;
   border-radius: 50%;
-  border: 3px solid rgba(212,175,55,0.6);
-  background: radial-gradient(circle, rgba(212,175,55,0.2), rgba(212,175,55,0.05));
+  border: 3px solid rgba(230,200,130,0.95);
+  background: rgba(0,0,0,0.35);
   cursor: pointer;
   display: flex; align-items: center; justify-content: center;
   transition: all 0.2s;
-  box-shadow: 0 0 20px rgba(212,175,55,0.2);
+  box-shadow: 0 0 30px rgba(212,175,55,0.5), inset 0 0 10px rgba(0,0,0,0.3);
 }
 #scanner-capture-btn::after {
   content: '';
-  width: 48px; height: 48px;
+  width: 52px; height: 52px;
   border-radius: 50%;
-  background: rgba(212,175,55,0.4);
+  background: linear-gradient(180deg, #D4B562 0%, #C8956A 50%, #A67544 100%);
   transition: all 0.2s;
 }
 #scanner-capture-btn:active::after {
-  background: rgba(212,175,55,0.8);
+  background: linear-gradient(180deg, #E0C870 0%, #D4A858 50%, #C8956A 100%);
   transform: scale(0.9);
 }
 #scanner-capture-btn.hidden { opacity: 0; pointer-events: none; }
