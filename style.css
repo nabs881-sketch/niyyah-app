@@ -2779,7 +2779,7 @@ body.pratique-active .topbar-v2 { display: none !important; }
 /* Mention vie privée */
 .scanner-privacy {
   font-size: 9px;
-  color: rgba(255,255,255,0.2);
+  color: rgba(212,175,55,0.35);
   text-align: center;
   margin-top: 10px;
   letter-spacing: 0.05em;
