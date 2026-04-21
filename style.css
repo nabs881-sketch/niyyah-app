@@ -3501,9 +3501,9 @@ button[style*="gold-v2"] {
 .moment-nuit-sub {
   font-family: 'Inter', var(--sans);
   font-size: 12px;
-  color: rgba(255,255,255,0.6);
+  color: rgba(212,181,98,0.9);
   margin-top: 4px;
-  text-shadow: 0 1px 8px rgba(0,0,0,0.7);
+  text-shadow: 0 2px 10px rgba(0,0,0,0.8);
 }
 .btn-bismillah-moment {
   display: block;
