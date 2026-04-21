@@ -1766,6 +1766,7 @@ body::before {
   font-size: 10px; color: rgba(240,234,214,0.28);
   letter-spacing: 0.18em; font-family: 'Cormorant Garamond', serif;
   text-transform: uppercase;
+  margin-bottom: 14px;
 }
 
 /* ─── LEVEL STRIP V2 ─── */
