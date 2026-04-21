@@ -7465,15 +7465,19 @@ function updateFajrChallenge() {
 function updateSanctuaireMoment() {
   var el = document.getElementById('sanctuaire-moment');
   if (!el) return;
+  var wrapper = el.closest('.moment-level-block');
+  function _hideBlock() { el.innerHTML = ''; if (wrapper) wrapper.style.display = 'none'; }
+  function _showBlock() { if (wrapper) wrapper.style.display = 'block'; }
   // Attendre que prayerTimes soit chargé — mais pas de spinner infini
   if (!_prayerTimes) {
     if (!window._sanctuaireMomentRetryCount) window._sanctuaireMomentRetryCount = 0;
     if (window._sanctuaireMomentRetryCount < 3) {
       window._sanctuaireMomentRetryCount++;
+      _showBlock();
       el.innerHTML = '<div style="text-align:center;padding:12px 0;"><div class="prayer-spinner"></div></div>';
       setTimeout(updateSanctuaireMoment, 3000);
     } else {
-      el.innerHTML = '';
+      _hideBlock();
     }
     return;
   }
@@ -7484,6 +7488,7 @@ function updateSanctuaireMoment() {
   var _bIcon = _blockIcons[blockId] || '☀️';
   var _iconSpan = '<span style="margin-right:8px;">' + _bIcon + '</span>';
   // Nuit et Qiyam — messages spéciaux
+  _showBlock();
   if (blockId === 'nuit') {
     el.innerHTML = '<div style="text-align:center;padding:8px;">'
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:700;color:#C8A84A;">' + _iconSpan + t('block_nuit') + '</div>'
@@ -7509,7 +7514,7 @@ function updateSanctuaireMoment() {
   var blockTotal = blockItems.length;
   var blockDone = blockItems.filter(_isDone).length;
   var blockRemaining = blockTotal - blockDone;
-  if (blockTotal === 0) { el.innerHTML = ''; return; }
+  if (blockTotal === 0) { _hideBlock(); return; }
   var jourItems = _allUnlocked.filter(function(item) { return item.block === 'jour'; });
   var jourDone = jourItems.filter(_isDone).length;
   var jourRemaining = jourItems.length - jourDone;
