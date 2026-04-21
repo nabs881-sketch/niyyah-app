@@ -3239,7 +3239,7 @@ button[style*="gold-v2"] {
   font-family: 'Cormorant Garamond', serif;
   font-size: 10px;
   letter-spacing: 2px;
-  color: rgba(200,168,75,0.5);
+  color: rgba(200,168,75,0.75);
   text-transform: uppercase;
   margin-bottom: 8px;
 }
