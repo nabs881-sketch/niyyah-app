@@ -6528,8 +6528,8 @@ function journalSwitchTab(tab) {
   var tabR = document.getElementById('journal-tab-regards');
   if (!content) return;
   if (tab === 'niyyah') {
-    if (tabN) { tabN.style.background = 'rgba(200,168,75,0.12)'; tabN.style.color = '#D4AF37'; }
-    if (tabR) { tabR.style.background = 'transparent'; tabR.style.color = 'rgba(200,168,75,0.4)'; }
+    if (tabN) { tabN.style.background = 'linear-gradient(180deg,rgba(212,181,98,0.18) 0%,rgba(166,117,68,0.12) 100%)'; tabN.style.border = '1px solid rgba(230,200,130,0.5)'; tabN.style.color = 'rgba(230,200,130,1)'; tabN.style.boxShadow = '0 2px 8px rgba(0,0,0,0.3),inset 0 1px 0 rgba(255,230,180,0.1)'; }
+    if (tabR) { tabR.style.background = 'transparent'; tabR.style.border = '1px solid rgba(200,168,75,0.15)'; tabR.style.color = 'rgba(200,168,75,0.5)'; tabR.style.boxShadow = 'none'; }
     var entries = getNiyyahHistory();
     if (entries.length === 0) {
       content.innerHTML = '<div style="text-align:center;padding:60px 20px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);">' + t('journal_niyyah_empty') + '</div></div>';
@@ -6546,8 +6546,8 @@ function journalSwitchTab(tab) {
       content.innerHTML = html;
     }
   } else {
-    if (tabN) { tabN.style.background = 'transparent'; tabN.style.color = 'rgba(200,168,75,0.4)'; }
-    if (tabR) { tabR.style.background = 'rgba(200,168,75,0.12)'; tabR.style.color = '#D4AF37'; }
+    if (tabN) { tabN.style.background = 'transparent'; tabN.style.border = '1px solid rgba(200,168,75,0.15)'; tabN.style.color = 'rgba(200,168,75,0.5)'; tabN.style.boxShadow = 'none'; }
+    if (tabR) { tabR.style.background = 'linear-gradient(180deg,rgba(212,181,98,0.18) 0%,rgba(166,117,68,0.12) 100%)'; tabR.style.border = '1px solid rgba(230,200,130,0.5)'; tabR.style.color = 'rgba(230,200,130,1)'; tabR.style.boxShadow = '0 2px 8px rgba(0,0,0,0.3),inset 0 1px 0 rgba(255,230,180,0.1)'; }
     var entries = getRegardeHistory();
     if (entries.length === 0) {
       content.innerHTML = '<div style="text-align:center;padding:60px 20px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);">' + t('journal_regarde_empty') + '</div></div>';
