@@ -1799,59 +1799,14 @@ body::before {
 }
 
 /* ── FIN DE JOURNÉE — carte soir ── */
-#finjournee-card { margin: 0 16px 12px; }
-.finjournee-active {
+#finjournee-card { margin: 0 auto 12px; width: min(320px, 90vw); }
+.finjournee-img {
+  display: block;
   width: 100%;
-  max-width: 360px;
-  aspect-ratio: 3 / 2;
-  background: url('ferme-ta-journee.png') center/cover no-repeat;
-  border-radius: 20px;
-  overflow: hidden;
-  padding: 20px 45% 20px 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  aspect-ratio: 2.5 / 1;
+  object-fit: cover;
+  border-radius: 14px;
   cursor: pointer;
-  box-sizing: border-box;
-}
-.finjournee-active:active { transform: scale(0.97); }
-.finjournee-label {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 13px;
-  font-style: italic;
-  font-weight: 600;
-  color: #F4D77E;
-  white-space: nowrap;
-  text-align: left;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
-}
-.finjournee-sub {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 13px;
-  font-style: italic;
-  color: #C8A84A;
-  text-align: left;
-  margin-top: 4px;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
-}
-.finjournee-done {
-  width: 100%;
-  max-width: 360px;
-  aspect-ratio: 3 / 2;
-  background: url('ferme-ta-journee.png') center/cover no-repeat;
-  border-radius: 20px;
-  overflow: hidden;
-  padding: 20px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-sizing: border-box;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 13px;
-  font-style: italic;
-  color: rgba(244,215,126,0.6);
-  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
 }
 
 /* ── FIN DE JOURNÉE — overlay plein écran ── */
