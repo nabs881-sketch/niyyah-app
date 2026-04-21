@@ -7484,8 +7484,8 @@ function updateSanctuaireMoment() {
   _showBlock();
   if (blockId === 'nuit') {
     el.innerHTML = '<div class="moment-bandeau-nuit">'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:700;color:#C8A84A;">' + t('block_nuit') + '</div>'
-      + '<div style="font-family:\'Inter\',var(--sans);font-size:12px;color:rgba(255,255,255,0.6);margin-top:4px;">' + t('bandeau_nuit') + '</div>'
+      + '<div class="moment-nuit-title">' + t('block_nuit') + '</div>'
+      + '<div class="moment-nuit-sub">' + t('bandeau_nuit') + '</div>'
       + '</div>';
     return;
   }
