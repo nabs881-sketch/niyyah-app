@@ -1972,14 +1972,11 @@ body::before {
   display: block;
   padding: 0;
   border-radius: 16px;
-  border: 1px solid rgba(212,175,55,0.32);
+  border: 0.5px solid rgba(200,149,106,0.25);
   overflow: hidden;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
-  background:
-    radial-gradient(ellipse 110% 70% at 35% 15%, rgba(212,175,55,0.055) 0%, transparent 50%),
-    radial-gradient(ellipse 80% 60% at 75% 85%,  rgba(212,175,55,0.03)  0%, transparent 45%),
-    linear-gradient(160deg, #18140f 0%, #0d0b08 45%, #141009 100%);
+  background: #0a0805;
   box-shadow:
     0 4px 20px rgba(0,0,0,0.75),
     inset 0 1px 0 rgba(212,175,55,0.14),
@@ -2042,6 +2039,7 @@ body::before {
 .quick-icon-v2 {
   position: relative; z-index: 3;
   width: 70px; height: 70px;
+  filter: brightness(0.7) saturate(0.85);
   display: flex; align-items: center; justify-content: center;
   border-radius: 50%;
   border: 1px solid rgba(212,175,55,0.22);
@@ -2053,7 +2051,9 @@ body::before {
     0 4px 12px rgba(0,0,0,0.6);
   transition: all 0.35s;
 }
-.quick-btn-v2:hover .quick-icon-v2 {
+.quick-btn-v2:hover .quick-icon-v2,
+.quick-btn-v2:active .quick-icon-v2 {
+  filter: brightness(0.9) saturate(1);
   border-color: rgba(212,175,55,0.5);
   background: radial-gradient(circle at 38% 32%,
     rgba(212,175,55,0.22) 0%, rgba(212,175,55,0.08) 50%, transparent 75%);
@@ -2081,10 +2081,10 @@ body::before {
 .quick-label-v2 {
   position: relative; z-index: 3;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 9px; font-weight: 400;
+  font-size: 14px; font-weight: 600; font-style: normal;
   letter-spacing: 0.28em; text-transform: uppercase;
-  color: rgba(212,175,55,0.6);
-  text-shadow: 0 0 10px rgba(212,175,55,0.15);
+  color: rgba(200,149,106,0.9);
+  text-shadow: 0 0 10px rgba(200,149,106,0.15);
   transition: color 0.35s, text-shadow 0.35s;
 }
 .quick-btn-v2:hover .quick-label-v2 {
