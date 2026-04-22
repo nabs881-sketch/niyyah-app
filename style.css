@@ -903,6 +903,36 @@ pointer-events:none;z-index:0;transition:opacity 0.4s ease}.view{display:none;po
   box-shadow: 0 0 8px rgba(200,168,74,0.40) !important;
 }
 
+/* ── SECTION INFO BLOCK ── */
+.section-info-block {
+  margin: 8px 0 12px;
+  background: rgba(200,168,75,0.05);
+  border: 1px solid rgba(200,168,75,0.18);
+  border-left: 2px solid rgba(200,168,75,0.4);
+  border-radius: 10px;
+  padding: 12px 14px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.section-info-icon {
+  font-size: 18px;
+  color: #C8A84A;
+  flex-shrink: 0;
+}
+.section-info-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  font-style: italic;
+  color: #C8A84A;
+  margin-bottom: 3px;
+}
+.section-info-text {
+  font-size: 13px;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.5;
+}
+
 /* ── ACTION BAR BOUTONS ── */
 .btn-bismillah {
   background:
