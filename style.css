@@ -906,10 +906,10 @@ pointer-events:none;z-index:0;transition:opacity 0.4s ease}.view{display:none;po
 /* ── SECTION INFO BLOCK ── */
 .section-info-block {
   margin: 8px 0 12px;
-  background: linear-gradient(145deg,rgba(60,110,85,0.18),rgba(60,110,85,0.06));
-  border: 1px solid rgba(90,140,100,0.3);
-  border-left: 2px solid rgba(120,170,130,0.55);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.3), inset 0 1px 0 rgba(120,170,130,0.18);
+  background: linear-gradient(145deg,rgba(70,130,100,0.25),rgba(60,110,85,0.10));
+  border: 1px solid rgba(120,180,140,0.35);
+  border-left: 3px solid rgba(150,200,160,0.7);
+  box-shadow: 0 2px 12px rgba(40,90,60,0.25), 0 6px 20px rgba(0,0,0,0.35), inset 0 1px 0 rgba(180,220,190,0.2);
   border-radius: 10px;
   padding: 12px 14px;
   display: flex;
