@@ -3519,12 +3519,13 @@ function toggleWirdItem(id, event) {
 function renderWird() {
   const content = document.getElementById('wirdContent');
   if (!content) return;
-  let html = '<button onclick="switchView(\'checklist\')" style="background:transparent;border:none;color:#C8A84A;font-size:14px;cursor:pointer;padding:8px 0;margin-bottom:8px;display:flex;align-items:center;gap:4px;">' + t('wird_back') + '</button>';
+  var _wirdArabicSession = {matin:'أَوْرَاد الصَّبَاح',soir:'أَوْرَاد الْمَسَاء'};
+  let html = '<div class="section-header"><div class="section-arabic">أَوْرَاد</div><div class="section-name">WIRD QUOTIDIEN</div><div class="section-line"></div></div>';
   ['matin', 'soir'].forEach(session => {
     const s = WIRD_DATA[session];
     const done = s.items.filter(i => wirdState[i.id]).length;
     const pct = Math.round(done / s.items.length * 100);
-    html += `<div class="wird-session"><div class="wird-session-header"><div class="wird-session-icon">${s.icon}</div><div class="wird-session-title">${s.title}</div><div class="wird-session-pct">${done}/${s.items.length}</div></div><div class="wird-session-bar"><div class="wird-session-bar-fill" style="width:${pct}%"></div></div>`;
+    html += `<div class="wird-session"><div class="section-header" style="padding:16px 4px 8px;"><div class="section-arabic" style="font-size:18px;">${_wirdArabicSession[session]}</div><div class="section-name">${s.title} · ${done}/${s.items.length}</div><div class="section-line"></div></div><div class="wird-session-bar"><div class="wird-session-bar-fill" style="width:${pct}%"></div></div>`;
     s.items.forEach(item => {
       const checked = !!wirdState[item.id];
       const audioData = item.audio ? JSON.stringify(item.audio) : null;
