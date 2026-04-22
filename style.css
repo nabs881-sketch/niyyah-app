@@ -3488,15 +3488,19 @@ button[style*="gold-v2"] {
   background: none;
 }
 .moment-icon-img {
-  display: inline-block;
-  vertical-align: middle;
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
   width: 44px; height: 44px;
   border-radius: 50%;
-  margin-right: 10px;
   background-size: cover;
   background-position: center;
   border: 1px solid rgba(200,168,75,0.35);
   box-shadow: 0 0 8px rgba(212,175,55,0.12);
+}
+.moment-level-block:has(.moment-icon-img) {
+  position: relative;
 }
 .moment-icon-fajr    { background-image: url('assets/moments/fajr.jpg'); }
 .moment-icon-dhuhr   { background-image: url('assets/moments/dhuhr.jpg'); }
