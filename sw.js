@@ -1,4 +1,4 @@
-const VERSION = 'niyyah-v120';
+const VERSION = 'niyyah-v121';
 const CORE = [
   './index.html',
   './manifest.json',
@@ -7,7 +7,7 @@ const CORE = [
   './logo2.png',
   './jannat-al-qalb.mp3',
   './rahatal-qulub.mp3',
-  './ferme-ta-journee.png',
+  './ferme-ta-journee.jpg',
   './assets/moments/fajr.jpg',
   './assets/moments/dhuhr.jpg',
   './assets/moments/asr.jpg',
