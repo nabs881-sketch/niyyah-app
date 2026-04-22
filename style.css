@@ -3490,8 +3490,7 @@ button[style*="gold-v2"] {
 .moment-icon-img {
   position: absolute;
   left: 14px;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 14px;
   width: 44px; height: 44px;
   border-radius: 50%;
   background-size: cover;
