@@ -2242,7 +2242,7 @@ function renderLevel(levelId) {
     var _sectionTitleArabic = {'Les 5 Prières':'الصَّلَاةُ','Wird quotidien':'الوِرْد','Sunnah de base':'السُّنَن','Approfondissement de la prière':'الخُشُوع','Dhikr du cœur':'ذِكْر القَلْب','Douâas intimes':'الدُّعَاء','Étude islamique':'العِلْم','Immersion coranique':'التِّلَاوَة','Pratiques avancées':'المُجَاهَدَة',"Sommet de l'adoration":'الإِحْسَان','Rayonnement vers les autres':'الرَّحْمَة',"Conscience de l'Oumma":'الأُمَّة'};
     var _sectionArabic = _sectionTitleArabic[section.title] || '';
     html += '<div class="section"><div class="section-header">' + (_sectionArabic ? '<div class="section-arabic">' + _sectionArabic + '</div>' : '') + '<div class="section-name">' + _sectionTitle + '</div><div class="section-line"></div></div>'
-      + (section.desc ? '<div class="section-info-block"><div class="section-info-icon">✦</div><div><div class="section-info-title">C\'est quoi le wird ?</div><div class="section-info-text">' + section.desc + '</div></div></div>' : '');
+      + (section.desc ? '<div class="section-info-block"><div class="section-info-icon">۞</div><div><div class="section-info-title">C\'est quoi le wird ?</div><div class="section-info-text">' + section.desc + '</div></div></div>' : '');
     const _tlColor = getPrayerTimelineColor();
     html += '<div class="items-group" style="border-left:2px solid ' + _tlColor + ';padding-left:12px;margin-left:4px;">';
     let _firstUncheckedFound = false;

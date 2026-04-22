@@ -917,13 +917,13 @@ pointer-events:none;z-index:0;transition:opacity 0.4s ease}.view{display:none;po
   align-items: flex-start;
 }
 .section-info-icon {
-  font-size: 18px;
+  font-size: 22px;
   color: #8FC8A0;
   flex-shrink: 0;
 }
 .section-info-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 13px;
+  font-size: 16px;
   font-style: italic;
   color: #8FC8A0;
   margin-bottom: 3px;
