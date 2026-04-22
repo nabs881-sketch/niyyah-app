@@ -6442,18 +6442,51 @@ function renderNafsTrait() {
     '</div>';
 }
 
+function _v2TransitionTo(targetId, opts) {
+  opts = opts || {};
+  var current = document.getElementById('view-sanctuaire');
+  if (current && current.classList.contains('active')) {
+    current.classList.add('view-transition','exiting');
+    setTimeout(function() {
+      current.classList.remove('active','view-transition','exiting');
+      _v2ShowTarget(targetId, opts);
+    }, 150);
+  } else {
+    var activeView = document.querySelector('.view.active, .view[style*="display: block"], .view[style*="display:block"]');
+    if (activeView) {
+      activeView.classList.add('view-transition','exiting');
+      setTimeout(function() {
+        activeView.classList.remove('active','view-transition','exiting');
+        activeView.style.display = 'none';
+        _v2ShowTarget(targetId, opts);
+      }, 150);
+    } else {
+      document.querySelectorAll('.view').forEach(function(v) { v.classList.remove('active'); v.style.display = 'none'; });
+      _v2ShowTarget(targetId, opts);
+    }
+  }
+}
+function _v2ShowTarget(targetId, opts) {
+  document.querySelectorAll('.view').forEach(function(v) { if (v.id !== targetId) { v.classList.remove('active'); v.style.display = 'none'; } });
+  var target = document.getElementById(targetId);
+  if (!target) return;
+  target.style.display = '';
+  target.classList.add('active','view-transition','entering');
+  setTimeout(function() {
+    target.classList.remove('entering');
+    target.classList.add('entered');
+    setTimeout(function() { target.classList.remove('view-transition','entered'); }, 250);
+  }, 10);
+  if (opts.onShow) opts.onShow();
+}
+
 function v2GoJournal() {
-  var sanctEl = document.getElementById('view-sanctuaire');
-  if (sanctEl) sanctEl.classList.remove('active');
-  document.querySelectorAll('.view').forEach(function(v) { v.classList.remove('active'); v.style.display = 'none'; });
-  var journalView = document.getElementById('view-journal');
-  if (journalView) { journalView.style.display = ''; journalView.classList.add('active'); }
   var tbEl = document.getElementById('topbar-v2');
   if (tbEl) tbEl.classList.remove('active');
   document.querySelectorAll('.nav-v2-item').forEach(function(n) { n.classList.remove('active-nav'); });
   var btn = document.getElementById('v2nav-journal');
   if (btn) btn.classList.add('active-nav');
-  journalSwitchTab('niyyah');
+  _v2TransitionTo('view-journal', { onShow: function() { journalSwitchTab('niyyah'); } });
 }
 function journalSwitchTab(tab) {
   var content = document.getElementById('journal-content');
@@ -6500,49 +6533,46 @@ function journalSwitchTab(tab) {
   }
 }
 function v2GoNafs() {
-  var sanctEl = document.getElementById('view-sanctuaire');
-  if (sanctEl) sanctEl.classList.remove('active');
-  document.querySelectorAll('.view').forEach(function(v) { v.classList.remove('active'); v.style.display = 'none'; });
-  var nafsView = document.getElementById('view-nafs');
-  if (nafsView) { nafsView.style.display = ''; nafsView.classList.add('active'); }
   var tbEl = document.getElementById('topbar-v2');
   if (tbEl) tbEl.classList.remove('active');
   document.querySelectorAll('.nav-v2-item').forEach(function(n) { n.classList.remove('active-nav'); });
   var btn = document.getElementById('v2nav-nafs');
   if (btn) btn.classList.add('active-nav');
-  renderNafsTrait();
-  var nafsDisc = document.getElementById('nafs-disclaimer');
-  if (nafsDisc) nafsDisc.textContent = t('nafs_disclaimer');
+  _v2TransitionTo('view-nafs', { onShow: function() {
+    renderNafsTrait();
+    var nafsDisc = document.getElementById('nafs-disclaimer');
+    if (nafsDisc) nafsDisc.textContent = t('nafs_disclaimer');
+  }});
 }
 function v2GoSanctuaire() {
-  // Show sanctuaire + V2 UI
   document.body.classList.remove('pratique-active');
-  const sanctEl = document.getElementById('view-sanctuaire');
-  if (sanctEl) sanctEl.classList.add('active');
-  const tbEl = document.getElementById('topbar-v2');
-  if (tbEl) tbEl.classList.add('active');
-  const nbEl = document.getElementById('nav-bar-v2');
-  if (nbEl) nbEl.classList.add('active');
-  document.body.classList.add('v2-mode');
-
-  // Hide back button
-  const backBtn = document.getElementById('v2-back-btn');
-  if (backBtn) backBtn.classList.remove('visible');
-  // Kill any V1 residual overlays
-  ['niyyahScreen','notifPermScreen'].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) { el.style.display = 'none'; el.style.pointerEvents = 'none'; }
-  });
-  // Hide ALL views — both V1 .view and V2 panels
-  document.querySelectorAll('.view').forEach(v => {
-    v.classList.remove('active');
-    v.style.display = 'none';
-  });
-
-  // Update nav
-  document.querySelectorAll('.nav-v2-item').forEach(n => n.classList.remove('active-nav'));
-  const btn = document.getElementById('v2nav-sanctuaire');
-  if (btn) btn.classList.add('active-nav');
+  // Fade out current view
+  var activeView = document.querySelector('.view.active');
+  function _showSanctuaire() {
+    document.querySelectorAll('.view').forEach(function(v) { v.classList.remove('active'); v.style.display = 'none'; });
+    const sanctEl = document.getElementById('view-sanctuaire');
+    if (sanctEl) sanctEl.classList.add('active');
+    const tbEl = document.getElementById('topbar-v2');
+    if (tbEl) tbEl.classList.add('active');
+    const nbEl = document.getElementById('nav-bar-v2');
+    if (nbEl) nbEl.classList.add('active');
+    document.body.classList.add('v2-mode');
+    const backBtn = document.getElementById('v2-back-btn');
+    if (backBtn) backBtn.classList.remove('visible');
+    ['niyyahScreen','notifPermScreen'].forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) { el.style.display = 'none'; el.style.pointerEvents = 'none'; }
+    });
+    document.querySelectorAll('.nav-v2-item').forEach(function(n) { n.classList.remove('active-nav'); });
+    var btn = document.getElementById('v2nav-sanctuaire');
+    if (btn) btn.classList.add('active-nav');
+  }
+  if (activeView) {
+    activeView.classList.add('view-transition','exiting');
+    setTimeout(function() { activeView.classList.remove('view-transition','exiting'); _showSanctuaire(); }, 150);
+  } else {
+    _showSanctuaire();
+  }
 
   v2CurrentView = 'sanctuaire';
   v2RefreshStats();

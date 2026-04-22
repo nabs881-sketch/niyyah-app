@@ -699,6 +699,24 @@ pointer-events:none;z-index:0;transition:opacity 0.4s ease}.view{display:none;po
   backdrop-filter: none !important;
 }
 
+/* ── VIEW TRANSITIONS ── */
+.view-transition {
+  transition: opacity 250ms cubic-bezier(0.4,0,0.2,1), transform 250ms cubic-bezier(0.4,0,0.2,1);
+}
+.view-transition.exiting {
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+}
+.view-transition.entering {
+  opacity: 0;
+  transform: translateY(8px);
+}
+.view-transition.entered {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Toast */
 .toast {
   background: rgba(52,48,42,0.97) !important;
