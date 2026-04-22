@@ -903,6 +903,29 @@ pointer-events:none;z-index:0;transition:opacity 0.4s ease}.view{display:none;po
   box-shadow: 0 0 0 3px rgba(200,168,74,0.14) !important;
 }
 
+/* ── BOUTON NIVEAU SUIVANT ── */
+.btn-next-level {
+  background: transparent;
+  border: 1px solid rgba(200,168,75,0.35);
+  color: #C8A84A;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  font-style: italic;
+  padding: 10px 24px;
+  border-radius: 22px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn-next-level:hover,
+.btn-next-level:active {
+  background: rgba(200,168,75,0.08);
+  border-color: rgba(200,168,75,0.6);
+}
+.btn-next-level.locked {
+  color: rgba(200,168,75,0.5);
+  border-color: rgba(200,168,75,0.18);
+}
+
 /* ── STREAK / STATS ── */
 .streak-card {
   background: linear-gradient(145deg,rgba(48,52,58,0.97) 0%,rgba(38,40,46,0.99) 100%) !important;

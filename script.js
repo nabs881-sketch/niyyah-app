@@ -2309,13 +2309,10 @@ function renderLevel(levelId) {
   });
   const nextId = levelId + 1;
   const nextLvl = LEVELS.find(l => l.id === nextId);
-  if (nextLvl && state._unlocked.includes(nextId)) {
+  if (nextLvl) {
+    var _locked = !state._unlocked.includes(nextId);
     html += '<div style="padding:8px 0 24px;text-align:center;">'
-      + '<button onclick="selectLevel(' + nextId + ')" style="background:transparent;border:1px solid rgba(52,217,98,0.3);color:var(--t3);font-size:12px;padding:8px 20px;border-radius:20px;cursor:pointer;">' + t('btn_skip_level') + nextId + ' →</button>'
-      + '</div>';
-  } else if (nextLvl && !state._unlocked.includes(nextId)) {
-    html += '<div style="padding:8px 0 24px;text-align:center;">'
-      + '<button onclick="selectLevel(' + nextId + ')" style="background:transparent;border:1px solid rgba(255,255,255,0.1);color:var(--t3);font-size:12px;padding:8px 20px;border-radius:20px;cursor:pointer;opacity:0.5;">Niveau ' + nextId + ' (non débloqué) →</button>'
+      + '<button class="btn-next-level' + (_locked ? ' locked' : '') + '" onclick="selectLevel(' + nextId + ')">' + t('btn_skip_level') + nextId + ' →</button>'
       + '</div>';
   }
   content.innerHTML = html;
@@ -5484,7 +5481,7 @@ const V2_I18N = {
     prayer_title: '🕌 Horaires du jour', city_enter: 'Entre ta ville pour voir les horaires de prière', city_placeholder: 'Ex: Paris, Casablanca, Bruxelles...',
     qibla_title: '🕋 Qibla — Direction de la Mecque', qibla_find_text: 'Trouve la direction de la Mecque depuis ta position', qibla_find_btn: '📍 Trouver la Qibla',
     section_prayers: 'Les 5 Prières', section_wird: 'Wird quotidien', section_sunnah: 'Sunnah de base',
-    btn_open: 'OUVRIR ›', btn_complete: '✓ COMPLET', btn_skip_level: 'Passer au Niveau ',
+    btn_open: 'OUVRIR ›', btn_complete: '✓ COMPLET', btn_skip_level: 'Continuer vers Niveau ',
     // Night companion
     night_title: 'Quelle pensée ferme ta journée ?', night_placeholder: 'Écris ta pensée du soir...', night_send: 'ENVOYER', night_sagesse: 'SAGESSE DE LA NUIT',
     // Notifications
@@ -5656,7 +5653,7 @@ const V2_I18N = {
     prayer_title: '🕌 Today\'s prayer times', city_enter: 'Enter your city to see prayer times', city_placeholder: 'Ex: London, Dubai, Istanbul...',
     qibla_title: '🕋 Qibla — Direction of Mecca', qibla_find_text: 'Find the direction of Mecca from your position', qibla_find_btn: '📍 Find the Qibla',
     section_prayers: 'The 5 Prayers', section_wird: 'Daily Wird', section_sunnah: 'Essential Sunnah',
-    btn_open: 'OPEN ›', btn_complete: '✓ COMPLETE', btn_skip_level: 'Skip to Level ',
+    btn_open: 'OPEN ›', btn_complete: '✓ COMPLETE', btn_skip_level: 'Continue to Level ',
     night_title: 'What thought closes your day?', night_placeholder: 'Write your evening thought...', night_send: 'SEND', night_sagesse: 'NIGHT WISDOM',
     notif_unsupported: 'Notifications are not supported on this device', notif_enabled: '✦ Reminders enabled — JazakAllahu khairan!', notif_later: 'You can enable them later in settings', notif_disabled: '🔕 Reminders disabled',
     share_downloaded: 'Image downloaded — share it 🌿', share_copied: 'Link copied!',
