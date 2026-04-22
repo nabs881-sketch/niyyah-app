@@ -430,7 +430,7 @@ function openDefiSelector() {
         + '<div style="font-size:28px;margin-bottom:14px;">' + (defiActif ? defiActif.icon : '✦') + '</div>'
         + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:600;color:#C8A84A;margin-bottom:8px;">' + (defiActif ? defiActif.titre : 'Défi en cours') + '</div>'
         + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#B0A080;line-height:1.6;margin-bottom:20px;">Ton défi est ta niyyah de la semaine.<br>Tiens-le jusqu\'à dimanche, in sha Allah ✦</div>'
-        + '<button onclick="closeDefiSelector()" style="padding:12px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:1px;cursor:pointer;">Fermer</button>'
+        + '<button onclick="closeDefiSelector()" style="padding:12px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-family:\'Cinzel\',serif;font-size:12px;letter-spacing:1px;cursor:pointer;">Fermer</button>'
         + '</div>';
       ov2.style.opacity = '1'; ov2.style.pointerEvents = 'all';
       setTimeout(function() { document.getElementById('defiSelectorSheet').style.transform = 'translateY(0)'; }, 10);
@@ -1521,13 +1521,13 @@ function showLevelPopup(levelId, nextId, hasNext) {
       </div>
 
       <!-- Eyebrow -->
-      <div style="text-align:center;font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:${msg.color};opacity:0.8;margin-bottom:8px;">${msg.eyebrow}</div>
+      <div style="text-align:center;font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:${msg.color};opacity:0.8;margin-bottom:8px;">${msg.eyebrow}</div>
 
       <!-- Titre -->
       <div style="text-align:center;font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:#F0EAD6;letter-spacing:-0.5px;margin-bottom:16px;">${msg.title}</div>
 
       <!-- Verset arabe -->
-      <div style="text-align:center;font-family:'Amiri',serif;font-size:18px;color:${msg.color};direction:rtl;margin-bottom:6px;line-height:1.8;opacity:0.9;">${msg.arabic}</div>
+      <div style="text-align:center;font-family:'Noto Naskh Arabic',serif;font-size:18px;color:${msg.color};direction:rtl;margin-bottom:6px;line-height:1.8;opacity:0.9;">${msg.arabic}</div>
       <div style="text-align:center;font-family:'Cormorant Garamond',serif;font-size:12px;font-style:italic;color:rgba(240,234,214,0.5);margin-bottom:20px;">${msg.hadith}</div>
 
       <!-- Séparateur doré -->
@@ -2399,7 +2399,7 @@ function renderWirdSmartCard(item, delay) {
       </div>
       <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0;">
         <div style="font-size:13px;font-weight:700;color:${accentColor};">${done}/${total}</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:9px;letter-spacing:0.15em;
+        <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.15em;
                     color:rgba(${accentRgb},0.5);">
           ${allDone ? t('btn_complete') : t('btn_open')}
         </div>
@@ -2927,12 +2927,12 @@ function renderProgression() {
   const hasBilans = Object.keys(bilansData).length > 0;
   const bilanHTML = hasBilans ? '<div style="margin:0 16px 24px;"><div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;">Bilan des 7 derniers soirs</div><div style="display:flex;gap:6px;justify-content:space-between;padding:14px 16px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:16px;">' + bilanCells + '</div><div style="display:flex;gap:14px;margin-top:8px;"><div style="display:flex;align-items:center;gap:4px;"><span style="font-size:12px;">😶</span><span style="font-size:10px;color:var(--t3);">Distrait</span></div><div style="display:flex;align-items:center;gap:4px;"><span style="font-size:12px;">🌤</span><span style="font-size:10px;color:var(--t3);">Efforts</span></div><div style="display:flex;align-items:center;gap:4px;"><span style="font-size:12px;">☀️</span><span style="font-size:10px;color:var(--t3);">Sincère</span></div></div></div>' : '';
 
-  const heroSectionP = '<div style="margin:0 16px 24px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:11px;letter-spacing:2.5px;color:rgba(255,255,255,0.3);text-transform:uppercase;margin-bottom:12px;text-align:center;">PROGRESSION</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">'+lvlGridP+'</div></div>';
+  const heroSectionP = '<div style="margin:0 16px 24px;"><div style="font-family:\'Cinzel\',serif;font-size:11px;letter-spacing:2.5px;color:rgba(255,255,255,0.3);text-transform:uppercase;margin-bottom:12px;text-align:center;">PROGRESSION</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">'+lvlGridP+'</div></div>';
 
   el.innerHTML = `
     <div style="padding:0 0 40px;"><!-- 1. TITRE SPIRITUEL --><div id="v2-spiritual-title" style="text-align:center;margin:0 16px 12px;"></div><!-- 2. PROGRESSION -->${heroSectionP}<!-- 3. DÉFI SEMAINE --><button id="accueilDefiCard" class="defi-card-sanctuaire" onclick="if(typeof openDefiSelector==='function')openDefiSelector()" style="display:none;margin:0 16px 12px;padding:14px 18px;background:#1a1a1a;border:1px solid rgba(200,168,75,0.3);border-radius:14px;cursor:pointer;position:relative;z-index:10;text-align:left;min-height:90px;box-sizing:border-box;font-family:inherit;color:inherit;width:calc(100% - 32px);"><div style="display:flex;align-items:center;gap:12px;width:100%;"><div id="defiCardIcon"><img src="https://nabs881-sketch.github.io/niyyah-app/imagescroissant.png" alt="Croissant" style="width:60px;height:auto;display:block;flex-shrink:0;"></div><div style="flex:1;text-align:left;"><div id="defiCardTitre" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:#C8A84A;">Défi de la semaine</div><div id="defiCardScore" style="font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:#B0A080;margin-top:2px;"></div></div></div><div id="defiCardDots" style="display:none;"></div><div id="defiCardBar" style="position:absolute;bottom:0;left:0;right:0;height:3px;background:rgba(200,168,75,0.12);border-radius:0 0 14px 14px;overflow:hidden;"><div id="defiCardBarFill" style="height:100%;width:0%;background:#C8A84A;transition:width 0.6s ease;"></div></div></button><!-- 4. CHALLENGE FAJR --><div id="fajr-challenge-card" style="display:none;margin:0 16px 12px;"></div><!-- 5. SÉRIE EN COURS --><div style="text-align:center;padding:36px 20px 28px;position:relative;"><div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;">${t('prog_streak')}</div><div style="font-size:80px;font-weight:900;line-height:1;background:linear-gradient(135deg,#c8a84b,#e8cc6a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-3px;">${streakDisplay}</div><div style="font-size:13px;color:var(--t3);margin-top:6px;letter-spacing:1px;">${t('prog_days')}</div><div style="display:flex;justify-content:center;gap:24px;margin-top:16px;"><div style="text-align:center;"><div style="font-size:18px;font-weight:700;color:var(--t1);">${bestDisplay}</div><div style="font-size:12px;color:var(--t3);letter-spacing:0.8px;text-transform:uppercase;">${t('prog_best')}</div></div><div style="width:1px;background:rgba(255,255,255,0.1);"></div><div style="text-align:center;"><div style="font-size:18px;font-weight:700;color:var(--t1);">${totalDisplay}</div><div style="font-size:12px;color:var(--t3);letter-spacing:0.8px;text-transform:uppercase;">${t('prog_total')}</div></div></div></div><!-- HADITH CONTEXTUEL --><div style="margin:0 16px 24px;padding:20px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.2);border-radius:16px;position:relative;overflow:hidden;"><div style="position:absolute;top:-10px;right:12px;font-size:48px;opacity:0.07;font-family:serif;">"</div><div style="font-size:14px;line-height:1.7;color:var(--t1);font-style:italic;margin-bottom:10px;">${hadith.text}</div><div style="font-size:11px;color:#c8a84b;font-weight:600;letter-spacing:0.5px;">— ${hadith.ref}</div></div><!-- 6. HEATMAP 30 JOURS --><div style="margin:0 16px 24px;"><div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;text-align:center;">${t('prog_heatmap')}</div><div style="display:grid;grid-template-columns:repeat(10,1fr);gap:4px;">
           ${heatmapHTML}
-        </div><div style="font-family:'Inter',var(--sans);font-size:12px;color:rgba(255,255,255,0.5);text-align:center;margin-top:10px;">Aujourd'hui : ${Math.round(getLevelProgress(1))}% accompli</div></div><!-- BILAN 7 JOURS -->${bilanHTML}<!-- 7. GRAINE DE LUMIÈRE --><div style="margin:0 16px 24px;background:linear-gradient(135deg,rgba(200,168,75,0.08),rgba(200,168,75,0.03));border:1px solid rgba(200,168,75,0.25);border-radius:20px;padding:28px;text-align:center;user-select:none;-webkit-user-select:none;"><div style="font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:3px;color:#C8A84A;text-transform:uppercase;margin-bottom:16px;">${t('graine_title')}</div><div style="position:relative;width:160px;height:160px;min-width:160px;min-height:160px;margin:0 auto 16px;"><div style="position:absolute;inset:-20px;border-radius:50%;background:radial-gradient(circle,rgba(200,168,75,0.1) 0%,rgba(200,168,75,0.04) 50%,transparent 70%);"></div><div style="position:relative;">${getGraineSVG((function(){try{return JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length)}</div></div><div style="font-family:'Inter',var(--sans);font-size:16px;color:rgba(255,255,255,0.6);margin-bottom:6px;">${(function(){try{return JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length} ${t('graine_defis')}</div><div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:#C8A84A;margin-bottom:12px;">${getGraineStageName((function(){try{return JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length)}</div><div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:#C8A84A;opacity:0.7;line-height:1.6;">${t('graine_quote')}</div></div>
+        </div><div style="font-family:'Inter',var(--sans);font-size:12px;color:rgba(255,255,255,0.5);text-align:center;margin-top:10px;">Aujourd'hui : ${Math.round(getLevelProgress(1))}% accompli</div></div><!-- BILAN 7 JOURS -->${bilanHTML}<!-- 7. GRAINE DE LUMIÈRE --><div style="margin:0 16px 24px;background:linear-gradient(135deg,rgba(200,168,75,0.08),rgba(200,168,75,0.03));border:1px solid rgba(200,168,75,0.25);border-radius:20px;padding:28px;text-align:center;user-select:none;-webkit-user-select:none;"><div style="font-family:'Cinzel',serif;font-size:13px;letter-spacing:3px;color:#C8A84A;text-transform:uppercase;margin-bottom:16px;">${t('graine_title')}</div><div style="position:relative;width:160px;height:160px;min-width:160px;min-height:160px;margin:0 auto 16px;"><div style="position:absolute;inset:-20px;border-radius:50%;background:radial-gradient(circle,rgba(200,168,75,0.1) 0%,rgba(200,168,75,0.04) 50%,transparent 70%);"></div><div style="position:relative;">${getGraineSVG((function(){try{return JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length)}</div></div><div style="font-family:'Inter',var(--sans);font-size:16px;color:rgba(255,255,255,0.6);margin-bottom:6px;">${(function(){try{return JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length} ${t('graine_defis')}</div><div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:#C8A84A;margin-bottom:12px;">${getGraineStageName((function(){try{return JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length)}</div><div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:#C8A84A;opacity:0.7;line-height:1.6;">${t('graine_quote')}</div></div>
 
       </div>
   `;
@@ -3265,7 +3265,7 @@ function renderPrayerTimesCard() {
   var countdown = '<div id="prayerCountdown" style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;margin-bottom:8px;background:linear-gradient(135deg,rgba(200,168,75,0.12),rgba(200,168,75,0.04));border:1px solid rgba(200,168,75,0.25);border-radius:12px;">'
     + '<div><div style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:2px;">PROCHAINE</div>'
     + '<div style="font-size:15px;font-weight:700;color:#C8A84A;">' + _nextName + ' <span style="font-weight:400;font-size:13px;color:#B0A080;">dans ' + _countdownText + '</span></div></div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-weight:700;color:#C8A84A;">' + _nextTime + '</div>'
+    + '<div style="font-family:\'Cinzel\',serif;font-size:16px;font-weight:700;color:#C8A84A;">' + _nextTime + '</div>'
     + '</div>';
   if (nextIdx === -1) nextIdx = -1;
   let grid = '<div class="prayer-times-grid">';
@@ -3316,7 +3316,7 @@ function startPrayerCountdown() {
     else txt = Math.floor(diff / 60) + 'h ' + String(diff % 60).padStart(2,'0') + ' min';
     el.innerHTML = '<div><div style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:2px;">PROCHAINE</div>'
       + '<div style="font-size:15px;font-weight:700;color:#C8A84A;">' + name + ' <span style="font-weight:400;font-size:13px;color:#B0A080;">dans ' + txt + '</span></div></div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-weight:700;color:#C8A84A;">' + time + '</div>';
+      + '<div style="font-family:\'Cinzel\',serif;font-size:16px;font-weight:700;color:#C8A84A;">' + time + '</div>';
   }, 60000);
 }
 function saveCityAndLoad() {
@@ -3675,7 +3675,7 @@ function showWeeklyBilan() {
   const card = document.getElementById('weeklyCard');
   card.innerHTML = `
     <div style="text-align:center;padding:8px 0 20px;">
-      <div style="font-size:9px;letter-spacing:0.25em;text-transform:uppercase;color:rgba(212,175,55,0.5);margin-bottom:12px;font-family:'Cormorant Garamond',serif;">Muhasaba · Bilan de la semaine</div>
+      <div style="font-size:9px;letter-spacing:0.25em;text-transform:uppercase;color:rgba(212,175,55,0.5);margin-bottom:12px;font-family:'Cinzel',serif;">Muhasaba · Bilan de la semaine</div>
       <div style="font-size:40px;margin-bottom:16px;">${emojis[level]}</div>
       <!-- Jours visuels -->
       <div style="display:flex;justify-content:center;gap:12px;margin-bottom:20px;">${daysHtml}</div>
@@ -3686,17 +3686,17 @@ function showWeeklyBilan() {
       </div>
       <!-- Hadith Istiqamah -->
       <div style="margin-bottom:16px;padding:14px 16px;border-left:2px solid rgba(212,175,55,0.3);text-align:left;">
-        <div style="font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(212,175,55,0.45);margin-bottom:6px;font-family:'Cormorant Garamond',serif;">Al-Istiqamah</div>
+        <div style="font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(212,175,55,0.45);margin-bottom:6px;font-family:'Cinzel',serif;">Al-Istiqamah</div>
         <div style="font-family:'Cormorant Garamond',serif;font-size:13px;font-style:italic;color:rgba(240,234,214,0.65);line-height:1.6;">"${hadith.text}"</div>
         <div style="font-size:11px;color:rgba(212,175,55,0.5);margin-top:4px;">— ${hadith.source}</div>
       </div>
       <!-- Conseil pour la semaine -->
       <div style="background:rgba(135,169,107,0.06);border:1px solid rgba(135,169,107,0.15);border-radius:12px;padding:14px 16px;margin-bottom:20px;text-align:left;">
-        <div style="font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(135,169,107,0.6);margin-bottom:6px;font-family:'Cormorant Garamond',serif;">Conseil pour cette semaine</div>
+        <div style="font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(135,169,107,0.6);margin-bottom:6px;font-family:'Cinzel',serif;">Conseil pour cette semaine</div>
         <div style="font-size:13px;color:rgba(240,234,214,0.7);line-height:1.6;">${conseil}</div>
       </div>
     </div>
-    <button class="weekly-btn" onclick="closeWeeklyBilan()" style="width:100%;padding:15px;border-radius:14px;border:none;background:#C8A84A;color:#2C2E32;font-size:15px;font-weight:700;cursor:pointer;font-family:'Cormorant Garamond',serif;letter-spacing:0.05em;">
+    <button class="weekly-btn" onclick="closeWeeklyBilan()" style="width:100%;padding:15px;border-radius:14px;border:none;background:#C8A84A;color:#2C2E32;font-size:15px;font-weight:700;cursor:pointer;font-family:'Cinzel',serif;letter-spacing:0.05em;">
       بِسْمِ اللَّهِ — Nouvelle semaine
     </button>
   `;
@@ -5314,13 +5314,6 @@ const V2_I18N = {
     greeting_morning:   'Que cette journée soit lumineuse',
     greeting_afternoon: 'Restez dans le souvenir d\'Allah',
     greeting_evening:   'La gratitude ferme la journée',
-    greeting_day_0: 'Que ton silence soit plein',
-    greeting_day_1: 'Que cette journée soit lumineuse',
-    greeting_day_2: 'Que ton cœur reste ouvert',
-    greeting_day_3: 'Que ce jour t\'élève vers ce qui compte',
-    greeting_day_4: 'Que tes pas soient justes',
-    greeting_day_5: 'Que ta Jumu\'a t\'apaise',
-    greeting_day_6: 'Que ta patience te soit rendue',
     // Modal
     modal_title:    'Ancrer votre Niyyah',
     modal_sub:      'Quelle est l\'intention de cette journée ?',
@@ -5370,12 +5363,12 @@ const V2_I18N = {
       'Pour être utile à autrui — et plaire à Allah',
     ],
     // Prayer blocks
-    block_reveil: 'AU RÉVEIL', block_fajr: 'APRÈS FAJR', block_dhuhr: 'APRÈS DHUHR', block_asr: 'APRÈS ASR', block_maghrib: 'APRÈS MAGHRIB', block_isha: 'APRÈS ISHA', block_nuit: 'La nuit', block_qiyam: 'Qiyam al-Layl',
+    block_reveil: 'AU RÉVEIL', block_fajr: 'APRÈS FAJR', block_dhuhr: 'APRÈS DHUHR', block_asr: 'APRÈS ASR', block_maghrib: 'APRÈS MAGHRIB', block_isha: 'APRÈS ISHA', block_nuit: '🌙 La nuit', block_qiyam: '🌙 Qiyam al-Layl',
     // Bandeau pratique
     bandeau_sub: 'Tes actes du moment', bandeau_nuit: 'Dors avec le Witr', bandeau_qiyam: 'L\'heure du Qiyam al-Layl',
     toggle_all: 'Ma journée complète', toggle_moment: 'Moment actuel',
     // Sanctuaire moment
-    actes_done: 'acte accompli', actes_done_p: 'actes accomplis', actes_left: 'restant', actes_left_p: 'restants', bloc_done: '✦ Bloc accompli', bloc_done_sub: 'Barak Allahu fik', btn_continue: 'Bismillah',
+    actes_done: 'acte accompli', actes_done_p: 'actes accomplis', actes_left: 'restant', actes_left_p: 'restants', bloc_done: '✦ Bloc accompli', bloc_done_sub: 'Barak Allahu fik', btn_continue: 'Continuer',
     jour_left: 'acte du jour restant', jour_left_p: 'actes du jour restants',
     // Fajr challenge
     fajr_title: 'Challenge 30 jours Fajr', fajr_day: 'Jour', fajr_sur: 'sur', fajr_gardien: 'Gardien de Fajr ✦',
@@ -5401,7 +5394,7 @@ const V2_I18N = {
     journal_niyyah_empty: 'Tes premières intentions apparaîtront ici ✦', journal_regarde_empty: 'Tes premiers Regards apparaîtront ici ✦',
     ikhlas_earned: 'Tu as mérité cette intention ✦', tawba_door: '✦ La porte est toujours ouverte', tawba_resume: 'Reprendre le chemin',
     note_saved: 'Enregistré ✦', scanner_analyzing: 'Analyse en cours…', journal_voice_soon: 'Journal de l\'Âme — Prochainement ✦',
-    scanner_adopt: 'Adopter cette Niyyah', scanner_retry_label: 'Rescanner',
+    scanner_adopt: '✦ Adopter cette Niyyah', scanner_retry_label: 'Rescanner',
     journal_niyyah_title: '✦ Mes Niyyah', journal_regards_title: '✦ Mes Regards',
     link_see_regards: 'Voir mes Regards →', link_see_niyyah: 'Voir mes Niyyah →',
     journal_search: 'Rechercher...', modal_close: 'Fermer', btn_later: 'Plus tard',
@@ -5471,7 +5464,7 @@ const V2_I18N = {
     onboard_lvl1_desc: 'Les 5 prières · Dhikr · Récitation', onboard_lvl2_desc: 'Mosquée · Istighfar · Tasbih',
     onboard_lvl3_desc: 'Hadiths · Coran · Arabe', onboard_lvl4_desc: 'Sadaqa · Salam · Douaas',
     onboard_city_manual: 'Ou entre ta ville manuellement :',
-    card_pratique: 'Prières & actes', card_wird: 'Invocations', card_parcours: 'Ma progression', card_tafakkur: 'Méditation',
+    card_pratique: 'Prières et actes du jour', card_wird: 'Invocations du matin et du soir', card_parcours: 'Ta progression spirituelle', card_tafakkur: 'Méditation et contemplation',
     btn_start_day: 'Commencer ma journée', btn_back_checklist: '← Retour à la checklist', scanner_hint: 'Quel objet portera ta niyyah aujourd\'hui ?',
     conv_msg_0: 'Chaque grand voyage commence par un premier pas. Le niveau Approfondissement t\'attend.',
     conv_msg_1: 'Le Prophète ﷺ : l\'acte le plus aimé d\'Allah est celui fait avec constance. — Bukhari 6465',
@@ -5512,13 +5505,6 @@ const V2_I18N = {
     greeting_morning:   'May this day be filled with light',
     greeting_afternoon: 'Stay in the remembrance of Allah',
     greeting_evening:   'Gratitude closes the day',
-    greeting_day_0: 'May your silence be full',
-    greeting_day_1: 'May this day be filled with light',
-    greeting_day_2: 'May your heart stay open',
-    greeting_day_3: 'May this day elevate you toward what matters',
-    greeting_day_4: 'May your steps be righteous',
-    greeting_day_5: 'May your Jumu\'a bring you peace',
-    greeting_day_6: 'May your patience be returned to you',
     modal_title:    'Anchor your Niyyah',
     modal_sub:      'What is the intention for this day?',
     modal_divider:  'or your own intention',
@@ -5557,10 +5543,10 @@ const V2_I18N = {
       'To purify my heart and intentions',
       'To be of benefit to others — and please Allah',
     ],
-    block_reveil: 'AT DAWN', block_fajr: 'AFTER FAJR', block_dhuhr: 'AFTER DHUHR', block_asr: 'AFTER ASR', block_maghrib: 'AFTER MAGHRIB', block_isha: 'AFTER ISHA', block_nuit: 'Night', block_qiyam: 'Qiyam al-Layl',
+    block_reveil: 'AT DAWN', block_fajr: 'AFTER FAJR', block_dhuhr: 'AFTER DHUHR', block_asr: 'AFTER ASR', block_maghrib: 'AFTER MAGHRIB', block_isha: 'AFTER ISHA', block_nuit: '🌙 Night', block_qiyam: '🌙 Qiyam al-Layl',
     bandeau_sub: 'Your acts right now', bandeau_nuit: 'Sleep with Witr', bandeau_qiyam: 'Time for Qiyam al-Layl',
     toggle_all: 'Full day', toggle_moment: 'Current moment',
-    actes_done: 'act completed', actes_done_p: 'acts completed', actes_left: 'remaining', actes_left_p: 'remaining', bloc_done: '✦ Block completed', bloc_done_sub: 'Barak Allahu fik', btn_continue: 'Bismillah',
+    actes_done: 'act completed', actes_done_p: 'acts completed', actes_left: 'remaining', actes_left_p: 'remaining', bloc_done: '✦ Block completed', bloc_done_sub: 'Barak Allahu fik', btn_continue: 'Continue',
     jour_left: 'daily act remaining', jour_left_p: 'daily acts remaining',
     fajr_title: '30-Day Fajr Challenge', fajr_day: 'Day', fajr_sur: 'of', fajr_gardien: 'Guardian of Fajr ✦',
     defi_none: 'Choose a challenge ✦', defi_tap: 'Tap to start', defi_browse: 'Tap to browse 100 challenges →',
@@ -5584,7 +5570,7 @@ const V2_I18N = {
     journal_niyyah_empty: 'Your first intentions will appear here ✦', journal_regarde_empty: 'Your first Regards will appear here ✦',
     ikhlas_earned: 'You have earned this intention ✦', tawba_door: '✦ The door is always open', tawba_resume: 'Resume the path',
     note_saved: 'Saved ✦', scanner_analyzing: 'Analyzing…', journal_voice_soon: 'Soul Journal — Coming soon ✦',
-    scanner_adopt: 'Adopt this Niyyah', scanner_retry_label: 'Rescan',
+    scanner_adopt: '✦ Adopt this Niyyah', scanner_retry_label: 'Rescan',
     journal_niyyah_title: '✦ My Niyyah', journal_regards_title: '✦ My Regards',
     link_see_regards: 'See my Regards →', link_see_niyyah: 'See my Niyyah →',
     journal_search: 'Search...', modal_close: 'Close', btn_later: 'Later',
@@ -5643,7 +5629,7 @@ const V2_I18N = {
     onboard_lvl1_desc: '5 daily prayers · Dhikr · Recitation', onboard_lvl2_desc: 'Mosque · Istighfar · Tasbih',
     onboard_lvl3_desc: 'Hadiths · Quran · Arabic', onboard_lvl4_desc: 'Sadaqa · Salam · Douaas',
     onboard_city_manual: 'Or enter your city manually:',
-    card_pratique: 'Prayers & acts', card_wird: 'Invocations', card_parcours: 'My progress', card_tafakkur: 'Meditation',
+    card_pratique: 'Daily prayers and acts', card_wird: 'Morning and evening invocations', card_parcours: 'Your spiritual progress', card_tafakkur: 'Meditation and contemplation',
     btn_start_day: 'Start my day', btn_back_checklist: '← Back to checklist', scanner_hint: 'What object will carry your niyyah today?',
     conv_msg_0: 'Every great journey begins with a first step. The Deepening level awaits you.',
     conv_msg_1: 'Le Prophète ﷺ : l\'acte le plus aimé d\'Allah est celui fait avec constance. — Bukhari 6465',
@@ -5678,7 +5664,6 @@ const V2_I18N = {
     greeting_morning:   'جَعَلَ اللَّهُ يَوْمَكَ مُبَارَكًا',
     greeting_afternoon: 'دُمْ فِي ذِكْرِ اللَّهِ',
     greeting_evening:   'اخْتِمْ يَوْمَكَ بِالشُّكْرِ',
-    greeting_day_0: '', greeting_day_1: '', greeting_day_2: '', greeting_day_3: '', greeting_day_4: '', greeting_day_5: '', greeting_day_6: '',
     modal_title:    'تَثْبِيتُ النِّيَّةِ',
     modal_sub:      'مَا هِيَ نِيَّةُ هَذَا الْيَوْمِ؟',
     modal_divider:  'أَوْ نِيَّتُكَ الْخَاصَّةُ',
@@ -5717,10 +5702,10 @@ const V2_I18N = {
       'لِتَطْهِيرِ قَلْبِي وَنِيَّاتِي',
       'لِأَكُونَ نَافِعًا لِلآخَرِينَ وَأُرْضِيَ اللَّهَ',
     ],
-    block_reveil: 'عِنْدَ الِاسْتِيقَاظِ', block_fajr: 'بَعْدَ الْفَجْرِ', block_dhuhr: 'بَعْدَ الظُّهْرِ', block_asr: 'بَعْدَ الْعَصْرِ', block_maghrib: 'بَعْدَ الْمَغْرِبِ', block_isha: 'بَعْدَ الْعِشَاءِ', block_nuit: 'اللَّيْلُ', block_qiyam: 'قِيَامُ اللَّيْلِ',
+    block_reveil: 'عِنْدَ الِاسْتِيقَاظِ', block_fajr: 'بَعْدَ الْفَجْرِ', block_dhuhr: 'بَعْدَ الظُّهْرِ', block_asr: 'بَعْدَ الْعَصْرِ', block_maghrib: 'بَعْدَ الْمَغْرِبِ', block_isha: 'بَعْدَ الْعِشَاءِ', block_nuit: '🌙 اللَّيْلُ', block_qiyam: '🌙 قِيَامُ اللَّيْلِ',
     bandeau_sub: 'أَعْمَالُكَ الْآنَ', bandeau_nuit: 'نَمْ مَعَ الْوِتْرِ', bandeau_qiyam: 'وَقْتُ قِيَامِ اللَّيْلِ',
     toggle_all: 'الْيَوْمُ كَامِلًا', toggle_moment: 'اللَّحْظَةُ الْحَالِيَّةُ',
-    actes_done: 'عَمَلٌ مُنْجَزٌ', actes_done_p: 'أَعْمَالٌ مُنْجَزَةٌ', actes_left: 'مُتَبَقٍّ', actes_left_p: 'مُتَبَقِّيَةٌ', bloc_done: '✦ أُنْجِزَ الْقِسْمُ', bloc_done_sub: 'بَارَكَ اللَّهُ فِيكَ', btn_continue: 'بسم الله',
+    actes_done: 'عَمَلٌ مُنْجَزٌ', actes_done_p: 'أَعْمَالٌ مُنْجَزَةٌ', actes_left: 'مُتَبَقٍّ', actes_left_p: 'مُتَبَقِّيَةٌ', bloc_done: '✦ أُنْجِزَ الْقِسْمُ', bloc_done_sub: 'بَارَكَ اللَّهُ فِيكَ', btn_continue: 'مُتَابَعَةٌ',
     jour_left: 'عَمَلٌ يَوْمِيٌّ مُتَبَقٍّ', jour_left_p: 'أَعْمَالٌ يَوْمِيَّةٌ مُتَبَقِّيَةٌ',
     fajr_title: 'تَحَدِّي ٣٠ يَوْمًا لِلْفَجْرِ', fajr_day: 'الْيَوْمُ', fajr_sur: 'مِنْ', fajr_gardien: 'حَارِسُ الْفَجْرِ ✦',
     defi_none: 'اخْتَرْ تَحَدِّيًا ✦', defi_tap: 'اضْغَطْ لِلْبَدْءِ', defi_browse: 'اضْغَطْ لِتَصَفُّحِ ١٠٠ تَحَدٍّ →',
@@ -5903,7 +5888,7 @@ function v2SetLanguage(lang) {
   const langPill = document.getElementById('topbar-lang-btn');
   if (langPill) {
     langPill.textContent = lang === 'ar' ? 'عر' : lang.toUpperCase();
-    langPill.style.fontFamily = lang === 'ar' ? "'Amiri', serif" : "'Cormorant Garamond', serif";
+    langPill.style.fontFamily = lang === 'ar' ? "'Noto Naskh Arabic', serif" : "'Cinzel', serif";
     langPill.style.fontSize = lang === 'ar' ? '13px' : '10px';
   }
   v2ApplyI18n();
@@ -5931,15 +5916,14 @@ function v2ApplyI18n() {
   const logo = document.querySelector('.topbar-logo-v2');
   if (logo) logo.textContent = T.app_name;
 
-  // Greeting — phrase du jour + fade-in
+  // Greeting
   const grEl = document.getElementById('v2-greeting-text');
   if (grEl) {
-    grEl.textContent = t('greeting_day_' + new Date().getDay());
+    const h = new Date().getHours();
+    const grKey = h < 12 ? 'greeting_morning' : h < 17 ? 'greeting_afternoon' : 'greeting_evening';
+    grEl.textContent = T[grKey];
     grEl.style.direction = T.dir;
-    grEl.style.fontFamily = isRTL ? "'Amiri', serif" : "'Cormorant Garamond', serif";
-    grEl.style.animation = 'none';
-    grEl.offsetHeight;
-    grEl.style.animation = 'greetingFadeIn 1.5s ease-out 0.3s both';
+    grEl.style.fontFamily = isRTL ? "'Noto Naskh Arabic', serif" : "'Cormorant Garamond', serif";
   }
 
   // Orb CTA
@@ -6047,6 +6031,10 @@ function v2ApplyI18nHTML() {
   _s('i18n-notif-later', 'btn_later');
   _s('lvlEyebrow', 'level_accomplished');
   _s('btnNextLvl', 'level_next');
+  _s('i18n-card-pratique', 'card_pratique');
+  _s('i18n-card-wird', 'card_wird');
+  _s('i18n-card-parcours', 'card_parcours');
+  _s('i18n-card-tafakkur', 'card_tafakkur');
   _s('i18n-freemium-title', 'freemium_title');
   _s('i18n-freemium-sub', 'freemium_sub');
   _s('i18n-freemium-buy', 'freemium_buy');
@@ -6528,8 +6516,8 @@ function journalSwitchTab(tab) {
   var tabR = document.getElementById('journal-tab-regards');
   if (!content) return;
   if (tab === 'niyyah') {
-    if (tabN) { tabN.style.background = 'linear-gradient(180deg,rgba(212,181,98,0.18) 0%,rgba(166,117,68,0.12) 100%)'; tabN.style.border = '1px solid rgba(230,200,130,0.5)'; tabN.style.color = 'rgba(230,200,130,1)'; tabN.style.boxShadow = '0 2px 8px rgba(0,0,0,0.3),inset 0 1px 0 rgba(255,230,180,0.1)'; }
-    if (tabR) { tabR.style.background = 'transparent'; tabR.style.border = '1px solid rgba(200,168,75,0.15)'; tabR.style.color = 'rgba(200,168,75,0.5)'; tabR.style.boxShadow = 'none'; }
+    if (tabN) { tabN.style.background = 'rgba(200,168,75,0.12)'; tabN.style.color = '#D4AF37'; }
+    if (tabR) { tabR.style.background = 'transparent'; tabR.style.color = 'rgba(200,168,75,0.4)'; }
     var entries = getNiyyahHistory();
     if (entries.length === 0) {
       content.innerHTML = '<div style="text-align:center;padding:60px 20px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);">' + t('journal_niyyah_empty') + '</div></div>';
@@ -6539,15 +6527,15 @@ function journalSwitchTab(tab) {
         var d = new Date(e.date);
         var dateStr = d.toLocaleDateString('fr-FR', { day:'numeric', month:'short' }) + ' · ' + d.toLocaleTimeString('fr-FR', { hour:'2-digit', minute:'2-digit' });
         var thumb = e.photo ? '<img src="' + e.photo + '" style="width:60px;height:60px;border-radius:10px;object-fit:cover;flex-shrink:0;">' : '<div style="width:60px;height:60px;border-radius:10px;background:rgba(200,168,75,0.08);flex-shrink:0;"></div>';
-        html += '<div onclick="openNiyyahDetail(\'' + e.id + '\')" style="display:flex;gap:12px;align-items:center;padding:12px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.2);border-radius:12px;margin-bottom:8px;cursor:pointer;box-shadow:0 2px 12px rgba(0,0,0,0.3);transition:all 0.3s ease;">'
+        html += '<div onclick="openNiyyahDetail(\'' + e.id + '\')" style="display:flex;gap:12px;align-items:center;padding:12px;background:rgba(200,168,75,0.03);border:1px solid rgba(200,168,75,0.1);border-radius:12px;margin-bottom:8px;cursor:pointer;">'
           + thumb + '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#D4AF37;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">' + (e.intention || '') + '</div>'
           + '<div style="font-size:10px;color:rgba(255,255,255,0.3);margin-top:4px;">' + dateStr + '</div></div></div>';
       });
       content.innerHTML = html;
     }
   } else {
-    if (tabN) { tabN.style.background = 'transparent'; tabN.style.border = '1px solid rgba(200,168,75,0.15)'; tabN.style.color = 'rgba(200,168,75,0.5)'; tabN.style.boxShadow = 'none'; }
-    if (tabR) { tabR.style.background = 'linear-gradient(180deg,rgba(212,181,98,0.18) 0%,rgba(166,117,68,0.12) 100%)'; tabR.style.border = '1px solid rgba(230,200,130,0.5)'; tabR.style.color = 'rgba(230,200,130,1)'; tabR.style.boxShadow = '0 2px 8px rgba(0,0,0,0.3),inset 0 1px 0 rgba(255,230,180,0.1)'; }
+    if (tabN) { tabN.style.background = 'transparent'; tabN.style.color = 'rgba(200,168,75,0.4)'; }
+    if (tabR) { tabR.style.background = 'rgba(200,168,75,0.12)'; tabR.style.color = '#D4AF37'; }
     var entries = getRegardeHistory();
     if (entries.length === 0) {
       content.innerHTML = '<div style="text-align:center;padding:60px 20px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);">' + t('journal_regarde_empty') + '</div></div>';
@@ -6558,7 +6546,7 @@ function journalSwitchTab(tab) {
         var dateStr = d.toLocaleDateString('fr-FR', { day:'numeric', month:'short' }) + ' · ' + d.toLocaleTimeString('fr-FR', { hour:'2-digit', minute:'2-digit' });
         var thumb = e.photo ? '<img src="' + e.photo + '" style="width:60px;height:60px;border-radius:10px;object-fit:cover;flex-shrink:0;">' : '<div style="width:60px;height:60px;border-radius:10px;background:rgba(200,168,75,0.08);flex-shrink:0;"></div>';
         var star = e.bookmark ? '<div style="position:absolute;top:8px;right:8px;color:#D4AF37;font-size:14px;">★</div>' : '';
-        html += '<div onclick="openRegardeDetail(\'' + e.id + '\')" style="display:flex;gap:12px;align-items:center;padding:12px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.2);border-radius:12px;margin-bottom:8px;cursor:pointer;position:relative;box-shadow:0 2px 12px rgba(0,0,0,0.3);transition:all 0.3s ease;">'
+        html += '<div onclick="openRegardeDetail(\'' + e.id + '\')" style="display:flex;gap:12px;align-items:center;padding:12px;background:rgba(200,168,75,0.03);border:1px solid rgba(200,168,75,0.1);border-radius:12px;margin-bottom:8px;cursor:pointer;position:relative;">'
           + thumb + '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#D4AF37;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">' + (e.question || '') + '</div>'
           + '<div style="font-size:10px;color:rgba(255,255,255,0.3);margin-top:4px;">' + dateStr + '</div></div>' + star + '</div>';
       });
@@ -6787,26 +6775,26 @@ function v2OpenSettings() {
   sheet.id = 'v2-settings-sheet';
   sheet.style.cssText = 'position:fixed;inset:0;background:rgba(10,10,10,0.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:3000;display:flex;align-items:flex-end;justify-content:center;animation:backdropV2 0.3s ease forwards;';
   const ramadanActive = typeof ramadanState !== 'undefined' && ramadanState.active;
-  const debugSection = NIYYAH_DEBUG ? '<div style="margin-top:14px;background:#1a1a1a;border:1px solid rgba(255,255,255,0.05);border-radius:14px;padding:16px;"><div style="font-size:10px;letter-spacing:0.28em;color:rgba(255,255,255,0.25);text-transform:uppercase;font-family:Cormorant Garamond,serif;margin-bottom:10px;text-align:center;">🔧 DEBUG</div><button onclick="safeSetItem(\'niyyah_regarde_available_today\',\'true\');showToast(\'Regarde active\');document.getElementById(\'v2-settings-sheet\').remove();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.4);font-size:12px;cursor:pointer;margin-bottom:8px;">[DEBUG] Activer Regarde</button><button onclick="document.getElementById(\'v2-settings-sheet\').remove();regardeOpen();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.4);font-size:12px;cursor:pointer;">[DEBUG] Lancer Regarde maintenant</button><button onclick="document.getElementById(\'v2-settings-sheet\').remove();openFinJournee();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.4);font-size:12px;cursor:pointer;margin-top:8px;">[DEBUG] Forcer Fin de Journée</button></div>' : '';
+  const debugSection = NIYYAH_DEBUG ? '<div style="margin-top:14px;background:#1a1a1a;border:1px solid rgba(255,255,255,0.05);border-radius:14px;padding:16px;"><div style="font-size:10px;letter-spacing:0.28em;color:rgba(255,255,255,0.25);text-transform:uppercase;font-family:Cinzel,serif;margin-bottom:10px;text-align:center;">🔧 DEBUG</div><button onclick="safeSetItem(\'niyyah_regarde_available_today\',\'true\');showToast(\'Regarde active\');document.getElementById(\'v2-settings-sheet\').remove();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.4);font-size:12px;cursor:pointer;margin-bottom:8px;">[DEBUG] Activer Regarde</button><button onclick="document.getElementById(\'v2-settings-sheet\').remove();regardeOpen();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.4);font-size:12px;cursor:pointer;">[DEBUG] Lancer Regarde maintenant</button><button onclick="document.getElementById(\'v2-settings-sheet\').remove();openFinJournee();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.4);font-size:12px;cursor:pointer;margin-top:8px;">[DEBUG] Forcer Fin de Journée</button></div>' : '';
   sheet.innerHTML = `
     <div style="width:100%;max-width:480px;max-height:calc(100vh - env(safe-area-inset-top,0px));overflow-y:auto;background:#111;border-radius:22px 22px 0 0;padding:calc(env(safe-area-inset-top,0px) + 26px) 22px calc(32px + env(safe-area-inset-bottom));border-top:1px solid rgba(212,175,55,0.14);animation:sheetV2 0.4s cubic-bezier(0.23,1,0.32,1) forwards;direction:${T.dir};">
       <div style="width:38px;height:3px;background:rgba(255,255,255,0.1);border-radius:2px;margin:0 auto 22px;"></div>
-      <div style="font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:#D4AF37;text-align:center;margin-bottom:22px;">${T.settings_title}</div>
+      <div style="font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:#D4AF37;text-align:center;margin-bottom:22px;">${T.settings_title}</div>
 
       <!-- LANGUE -->
       <div style="margin-bottom:14px;">
-        <div style="font-size:10px;letter-spacing:0.28em;color:rgba(212,175,55,0.45);text-transform:uppercase;font-family:'Cormorant Garamond',serif;margin-bottom:10px;text-align:center;">${T.settings_lang}</div>
+        <div style="font-size:10px;letter-spacing:0.28em;color:rgba(212,175,55,0.45);text-transform:uppercase;font-family:'Cinzel',serif;margin-bottom:10px;text-align:center;">${T.settings_lang}</div>
         <div style="display:flex;gap:8px;justify-content:center;">
           <button id="v2-lang-fr" onclick="v2SetLanguage('fr')"
-            style="padding:9px 20px;border-radius:100px;border:1px solid ${V2_LANG==='fr'?'rgba(212,175,55,0.5)':'rgba(255,255,255,0.1)'};background:${V2_LANG==='fr'?'rgba(212,175,55,0.1)':'none'};color:${V2_LANG==='fr'?'#D4AF37':'rgba(240,234,214,0.5)'};font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:0.15em;cursor:pointer;transition:all 0.2s;">
+            style="padding:9px 20px;border-radius:100px;border:1px solid ${V2_LANG==='fr'?'rgba(212,175,55,0.5)':'rgba(255,255,255,0.1)'};background:${V2_LANG==='fr'?'rgba(212,175,55,0.1)':'none'};color:${V2_LANG==='fr'?'#D4AF37':'rgba(240,234,214,0.5)'};font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.15em;cursor:pointer;transition:all 0.2s;">
             FR
           </button>
           <button id="v2-lang-en" onclick="v2SetLanguage('en')"
-            style="padding:9px 20px;border-radius:100px;border:1px solid ${V2_LANG==='en'?'rgba(212,175,55,0.5)':'rgba(255,255,255,0.1)'};background:${V2_LANG==='en'?'rgba(212,175,55,0.1)':'none'};color:${V2_LANG==='en'?'#D4AF37':'rgba(240,234,214,0.5)'};font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:0.15em;cursor:pointer;transition:all 0.2s;">
+            style="padding:9px 20px;border-radius:100px;border:1px solid ${V2_LANG==='en'?'rgba(212,175,55,0.5)':'rgba(255,255,255,0.1)'};background:${V2_LANG==='en'?'rgba(212,175,55,0.1)':'none'};color:${V2_LANG==='en'?'#D4AF37':'rgba(240,234,214,0.5)'};font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.15em;cursor:pointer;transition:all 0.2s;">
             EN
           </button>
           <button id="v2-lang-ar" onclick="v2SetLanguage('ar')"
-            style="padding:9px 20px;border-radius:100px;border:1px solid ${V2_LANG==='ar'?'rgba(212,175,55,0.5)':'rgba(255,255,255,0.1)'};background:${V2_LANG==='ar'?'rgba(212,175,55,0.1)':'none'};color:${V2_LANG==='ar'?'#D4AF37':'rgba(240,234,214,0.5)'};font-family:'Amiri',serif;font-size:15px;cursor:pointer;transition:all 0.2s;">
+            style="padding:9px 20px;border-radius:100px;border:1px solid ${V2_LANG==='ar'?'rgba(212,175,55,0.5)':'rgba(255,255,255,0.1)'};background:${V2_LANG==='ar'?'rgba(212,175,55,0.1)':'none'};color:${V2_LANG==='ar'?'#D4AF37':'rgba(240,234,214,0.5)'};font-family:'Noto Naskh Arabic',serif;font-size:15px;cursor:pointer;transition:all 0.2s;">
             عربي
           </button>
         </div>
@@ -6817,7 +6805,7 @@ function v2OpenSettings() {
         <div style="padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.04);">
           <div style="display:flex;gap:8px;">
             <button onclick="if(typeof toggleTheme==='function')toggleTheme();document.getElementById('v2-settings-sheet').remove();"
-              style="flex:1;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:none;color:rgba(240,234,214,0.6);font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.15em;cursor:pointer;">
+              style="flex:1;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:none;color:rgba(240,234,214,0.6);font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.15em;cursor:pointer;">
               ${T.settings_theme}
             </button>
           </div>
@@ -6852,16 +6840,16 @@ function v2OpenSettings() {
       </div>
 
       <div style="margin-top:14px;background:#1a1a1a;border:1px solid rgba(255,255,255,0.05);border-radius:14px;padding:16px;">
-        <div style="font-size:10px;letter-spacing:0.28em;color:rgba(212,175,55,0.45);text-transform:uppercase;font-family:'Cormorant Garamond',serif;margin-bottom:10px;text-align:center;">${T.settings_mentions}</div>
+        <div style="font-size:10px;letter-spacing:0.28em;color:rgba(212,175,55,0.45);text-transform:uppercase;font-family:'Cinzel',serif;margin-bottom:10px;text-align:center;">${T.settings_mentions}</div>
         <div style="font-family:'Cormorant Garamond',serif;font-size:12px;color:rgba(240,234,214,0.3);line-height:1.6;text-align:${isRTL ? 'right' : 'left'};">${T.mentions_text}</div>
       </div>
 
       ${debugSection}
 
-      <div style="text-align:center;padding:8px;font-size:10px;color:rgba(240,234,214,0.12);font-family:'Cormorant Garamond',serif;letter-spacing:0.2em;margin-bottom:12px;">NIYYAH V2.0 · بِسْمِ اللَّهِ</div>
+      <div style="text-align:center;padding:8px;font-size:10px;color:rgba(240,234,214,0.12);font-family:'Cinzel',serif;letter-spacing:0.2em;margin-bottom:12px;">NIYYAH V2.0 · بِسْمِ اللَّهِ</div>
 
       <button onclick="document.getElementById('v2-settings-sheet').remove();"
-        style="width:100%;padding:13px;border-radius:100px;border:1px solid rgba(255,255,255,0.07);background:none;color:rgba(240,234,214,0.38);font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;">
+        style="width:100%;padding:13px;border-radius:100px;border:1px solid rgba(255,255,255,0.07);background:none;color:rgba(240,234,214,0.38);font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;">
         ${T.settings_close}
       </button>
     </div>`;
@@ -6891,7 +6879,7 @@ function v2OpenNiyyahModal() {
     mInput.placeholder = T.modal_placeholder;
     mInput.style.direction = T.dir;
     mInput.style.textAlign = isRTL ? 'right' : 'left';
-    mInput.style.fontFamily = isRTL ? "'Amiri', serif" : "'Cormorant Garamond', serif";
+    mInput.style.fontFamily = isRTL ? "'Noto Naskh Arabic', serif" : "'Cormorant Garamond', serif";
   }
 
   const opts = document.getElementById('v2-intention-opts');
@@ -6901,7 +6889,7 @@ function v2OpenNiyyahModal() {
     btn.className = 'intention-opt-v2';
     btn.textContent = opt;
     btn.style.direction = (V2_I18N[V2_LANG] || V2_I18N.fr).dir;
-    btn.style.fontFamily = V2_LANG === 'ar' ? "'Amiri', serif" : "'Cormorant Garamond', serif";
+    btn.style.fontFamily = V2_LANG === 'ar' ? "'Noto Naskh Arabic', serif" : "'Cormorant Garamond', serif";
     btn.style.fontSize = V2_LANG === 'ar' ? '16px' : '15px';
     var _holdTimer = null, _holdHintTimer = null, _holdOverlay = null;
     function _startHold(e) {
@@ -6982,7 +6970,7 @@ function v2OpenNiyyahModal() {
     ikhlasBtn.className = 'intention-opt-v2 intention-ikhlas';
     var ikhlasTexts = { fr: 'إخلاص — La sincérité pure', en: 'إخلاص — Pure sincerity', ar: 'الإِخْلَاصُ — صِدْقُ الْقَلْبِ' };
     ikhlasBtn.textContent = ikhlasTexts[V2_LANG] || ikhlasTexts.fr;
-    ikhlasBtn.style.cssText = 'direction:' + (V2_I18N[V2_LANG] || V2_I18N.fr).dir + ';font-family:"Amiri",serif;font-size:16px;border:2px solid #C8A84A !important;box-shadow:0 0 12px rgba(200,168,75,0.3);';
+    ikhlasBtn.style.cssText = 'direction:' + (V2_I18N[V2_LANG] || V2_I18N.fr).dir + ';font-family:"Noto Naskh Arabic",serif;font-size:16px;border:2px solid #C8A84A !important;box-shadow:0 0 12px rgba(200,168,75,0.3);';
     // First unlock animation
     if (!ikhlasUnlocked) {
       ikhlasBtn.style.display = 'none';
@@ -7181,7 +7169,7 @@ function updateSpiritualTitle() {
   var title = titles.find(function(t) { return streakDisplay >= t.min; });
   el.style.display = 'block';
   el.style.marginBottom = '40px';
-  el.innerHTML = '<div style="font-family:\'Amiri\',serif;font-size:40px;color:#C8A84A;line-height:1.3;">' + title.ar + '</div>'
+  el.innerHTML = '<div style="font-family:\'Noto Naskh Arabic\',serif;font-size:40px;color:#C8A84A;line-height:1.3;">' + title.ar + '</div>'
     + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:rgba(200,168,75,0.7);letter-spacing:0.5px;margin-top:4px;">' + title.tr + '</div>'
     + '<div style="font-family:\'Inter\',var(--sans);font-size:12px;color:rgba(255,255,255,0.4);letter-spacing:1px;margin-top:12px;">Jour ' + totalDisplay + ' · Série de ' + streakDisplay + '</div>';
 }
@@ -7198,14 +7186,11 @@ function v2RefreshStats() {
   })();
   // Apply current language first
   v2ApplyI18n();
-  // Greeting — phrase du jour + fade-in
+  // Greeting selon heure
+  const h = new Date().getHours();
+  const grKey = h < 12 ? 'greeting_morning' : h < 17 ? 'greeting_afternoon' : 'greeting_evening';
   const grEl = document.getElementById('v2-greeting-text');
-  if (grEl) {
-    grEl.textContent = t('greeting_day_' + new Date().getDay());
-    grEl.style.animation = 'none';
-    grEl.offsetHeight;
-    grEl.style.animation = 'greetingFadeIn 1.5s ease-out 0.3s both';
-  }
+  if (grEl) grEl.textContent = t(grKey);
   // Titres spirituels évolutifs (premium only)
   updateSpiritualTitle();
 
@@ -7271,9 +7256,12 @@ function updateFinJourneeCard() {
   var todayKey = now.toISOString().split('T')[0];
   var done = localStorage.getItem('niyyah_finjournee_date') === todayKey;
   if (done) {
-    card.innerHTML = '<img class="finjournee-img" src="assets/cards/card-findejour.jpg" alt="Journée fermée" onclick="openFinJourneeConsultation()">';
+    card.innerHTML = '<div class="finjournee-done" onclick="openFinJourneeConsultation()">Journée fermée. Alhamdulillah.</div>';
   } else {
-    card.innerHTML = '<img class="finjournee-img" src="assets/cards/card-findejour.jpg" alt="Fin de journée" onclick="openFinJournee()">';
+    card.innerHTML = '<div class="finjournee-active" onclick="openFinJournee()">'
+      + '<div class="finjournee-label">' + t('finjournee_label') + '</div>'
+      + '<div class="finjournee-sub">' + t('finjournee_sub') + '</div>'
+      + '</div>';
   }
 }
 function openFinJournee() {
@@ -7369,7 +7357,7 @@ function showFinJourneeActe3() {
   // Phase 2: bismillah
   setTimeout(function() {
     el.style.fontSize = '36px';
-    el.style.fontFamily = "'Amiri', serif";
+    el.style.fontFamily = "'Noto Naskh Arabic', serif";
     el.style.fontStyle = 'normal';
     el.innerHTML = 'بِسْمِ اللَّهِ';
     el.style.opacity = '1';
@@ -7439,7 +7427,7 @@ function updateFajrChallenge() {
   var pct = Math.min(100, Math.round((fajrStreak / 30) * 100));
   if (fajrStreak >= 30) {
     card.innerHTML = '<div style="background:#1a1a1a;border:1px solid #C8A84A;border-radius:14px;padding:16px 18px;text-align:center;">'
-      + '<div style="font-family:\'Amiri\',serif;font-size:20px;color:#C8A84A;margin-bottom:4px;">مُحَافِظٌ عَلَى الْفَجْرِ</div>'
+      + '<div style="font-family:\'Noto Naskh Arabic\',serif;font-size:20px;color:#C8A84A;margin-bottom:4px;">مُحَافِظٌ عَلَى الْفَجْرِ</div>'
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:#E8DCC0;">' + t('fajr_gardien') + '</div>'
       + '</div>';
   } else {
@@ -7458,19 +7446,15 @@ function updateFajrChallenge() {
 function updateSanctuaireMoment() {
   var el = document.getElementById('sanctuaire-moment');
   if (!el) return;
-  var wrapper = el.closest('.moment-level-block');
-  function _hideBlock() { el.innerHTML = ''; if (wrapper) wrapper.style.display = 'none'; }
-  function _showBlock() { if (wrapper) wrapper.style.display = 'block'; }
   // Attendre que prayerTimes soit chargé — mais pas de spinner infini
   if (!_prayerTimes) {
     if (!window._sanctuaireMomentRetryCount) window._sanctuaireMomentRetryCount = 0;
     if (window._sanctuaireMomentRetryCount < 3) {
       window._sanctuaireMomentRetryCount++;
-      _showBlock();
       el.innerHTML = '<div style="text-align:center;padding:12px 0;"><div class="prayer-spinner"></div></div>';
       setTimeout(updateSanctuaireMoment, 3000);
     } else {
-      _hideBlock();
+      el.innerHTML = '';
     }
     return;
   }
@@ -7478,20 +7462,13 @@ function updateSanctuaireMoment() {
   var block = getCurrentPrayerBlock();
   var blockId = block.id;
   var _blockIcons = { nuit:'🌙', fajr:'🌅', dhuhr:'🌞', asr:'🌇', maghrib:'🌆', isha:'🌙', qiyam:'✨' };
-  var _momentsImg = ['fajr','dhuhr','asr','maghrib','isha'];
-  var _iconSpan;
-  if (_momentsImg.indexOf(blockId) !== -1) {
-    _iconSpan = '<div class="moment-icon-img moment-icon-'+blockId+'"></div>';
-  } else {
-    var _bIcon = _blockIcons[blockId] || '☀️';
-    _iconSpan = '<span style="margin-right:8px;">'+_bIcon+'</span>';
-  }
+  var _bIcon = _blockIcons[blockId] || '☀️';
+  var _iconSpan = '<span style="margin-right:8px;">' + _bIcon + '</span>';
   // Nuit et Qiyam — messages spéciaux
-  _showBlock();
   if (blockId === 'nuit') {
-    el.innerHTML = '<div class="moment-bandeau-nuit">'
-      + '<div class="moment-nuit-title">' + t('block_nuit') + '</div>'
-      + '<div class="moment-nuit-sub">' + t('bandeau_nuit') + '</div>'
+    el.innerHTML = '<div style="text-align:center;padding:8px;">'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:700;color:#C8A84A;">' + _iconSpan + t('block_nuit') + '</div>'
+      + '<div style="font-family:\'Inter\',var(--sans);font-size:12px;color:rgba(255,255,255,0.6);margin-top:4px;">' + t('bandeau_nuit') + '</div>'
       + '</div>';
     return;
   }
@@ -7513,7 +7490,7 @@ function updateSanctuaireMoment() {
   var blockTotal = blockItems.length;
   var blockDone = blockItems.filter(_isDone).length;
   var blockRemaining = blockTotal - blockDone;
-  if (blockTotal === 0) { _hideBlock(); return; }
+  if (blockTotal === 0) { el.innerHTML = ''; return; }
   var jourItems = _allUnlocked.filter(function(item) { return item.block === 'jour'; });
   var jourDone = jourItems.filter(_isDone).length;
   var jourRemaining = jourItems.length - jourDone;
@@ -7532,7 +7509,7 @@ function updateSanctuaireMoment() {
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:700;color:#C8A84A;">' + _iconSpan + block.label + '</div>'
       + '<div style="font-family:\'Inter\',var(--sans);font-size:12px;color:rgba(255,255,255,0.6);margin-top:4px;">' + blockDone + ' ' + (blockDone > 1 ? t('actes_done_p') : t('actes_done')) + ' · ' + blockRemaining + ' ' + (blockRemaining > 1 ? t('actes_left_p') : t('actes_left')) + '</div>'
       + jourLine
-      + '<button class="btn-bismillah-moment" onclick="event.stopPropagation();selectLevel(currentLevel);" ontouchend="event.stopPropagation();event.preventDefault();selectLevel(currentLevel);">' + t('btn_continue') + '</button>'
+      + '<button onclick="event.stopPropagation();selectLevel(currentLevel);" ontouchend="event.stopPropagation();event.preventDefault();selectLevel(currentLevel);" style="display:block;width:100%;margin-top:8px;padding:0 20px;height:36px;background:transparent;border:1px solid rgba(200,168,75,0.4);border-radius:10px;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:13px;font-weight:600;cursor:pointer;">' + t('btn_continue') + '</button>'
       + '</div>';
   }
 }
@@ -7551,7 +7528,7 @@ function v2UpdateOrbState() {
     if (chipText) {
       chipText.textContent = s.intention;
       chipText.style.direction = T.dir;
-      chipText.style.fontFamily = V2_LANG === 'ar' ? "'Amiri', serif" : "'Cormorant Garamond', serif";
+      chipText.style.fontFamily = V2_LANG === 'ar' ? "'Noto Naskh Arabic', serif" : "'Cormorant Garamond', serif";
     }
     if (cta) { cta.textContent = T.orb_resume; cta.style.direction = T.dir; }
   } else {
@@ -7676,7 +7653,7 @@ function v2Init() {
   const langPill0 = document.getElementById('topbar-lang-btn');
   if (langPill0) {
     langPill0.textContent = V2_LANG === 'ar' ? 'عر' : V2_LANG.toUpperCase();
-    langPill0.style.fontFamily = V2_LANG === 'ar' ? "'Amiri', serif" : "'Cormorant Garamond', serif";
+    langPill0.style.fontFamily = V2_LANG === 'ar' ? "'Noto Naskh Arabic', serif" : "'Cinzel', serif";
     langPill0.style.fontSize = V2_LANG === 'ar' ? '13px' : '10px';
   }
   v2GoSanctuaire();
@@ -8387,14 +8364,14 @@ function shareSavaisTu(event) {
   // Titre
   ctx.textAlign = 'center';
   ctx.fillStyle = '#C8A84A';
-  ctx.font = '32px "Cormorant Garamond", serif';
+  ctx.font = '32px "Cinzel", serif';
   ctx.fillText('LE SAVAIS-TU ?', 540, 120);
   // Ornement
   ctx.font = '28px serif';
   ctx.fillText('✦', 540, 170);
   // Arabe
   ctx.fillStyle = 'rgba(200,168,75,0.15)';
-  ctx.font = '120px "Amiri", serif';
+  ctx.font = '120px "Noto Naskh Arabic", serif';
   ctx.fillText('هَلْ تَعْلَمُ', 540, 300);
   // Fait — word wrap
   ctx.fillStyle = '#E8DCC0';
@@ -8414,7 +8391,7 @@ function shareSavaisTu(event) {
   ctx.fillText('✦', 540, startY + lines.length * 64 + 50);
   // Signature
   ctx.fillStyle = 'rgba(200,168,75,0.3)';
-  ctx.font = '24px "Cormorant Garamond", serif';
+  ctx.font = '24px "Cinzel", serif';
   ctx.fillText('NIYYAH DAILY  ✦', 540, 1030);
   // Partage
   canvas.toBlob(function(blob) {
