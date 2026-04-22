@@ -906,10 +906,10 @@ pointer-events:none;z-index:0;transition:opacity 0.4s ease}.view{display:none;po
 /* ── SECTION INFO BLOCK ── */
 .section-info-block {
   margin: 8px 0 12px;
-  background: linear-gradient(145deg,rgba(52,217,98,0.12),rgba(52,217,98,0.04));
-  border: 1px solid rgba(52,217,98,0.28);
-  border-left: 2px solid rgba(52,217,98,0.55);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.3), inset 0 1px 0 rgba(52,217,98,0.15);
+  background: linear-gradient(145deg,rgba(60,110,85,0.18),rgba(60,110,85,0.06));
+  border: 1px solid rgba(90,140,100,0.3);
+  border-left: 2px solid rgba(120,170,130,0.55);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3), inset 0 1px 0 rgba(120,170,130,0.18);
   border-radius: 10px;
   padding: 12px 14px;
   display: flex;
@@ -918,14 +918,14 @@ pointer-events:none;z-index:0;transition:opacity 0.4s ease}.view{display:none;po
 }
 .section-info-icon {
   font-size: 18px;
-  color: #C8A84A;
+  color: #8FC8A0;
   flex-shrink: 0;
 }
 .section-info-title {
   font-family: 'Cormorant Garamond', serif;
   font-size: 13px;
   font-style: italic;
-  color: #C8A84A;
+  color: #8FC8A0;
   margin-bottom: 3px;
 }
 .section-info-text {
