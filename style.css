@@ -597,7 +597,6 @@ pointer-events:none;z-index:0;transition:opacity 0.4s ease}.view{display:none;po
 
 /* Progress bars */
 .header-progress { background: rgba(196,168,112,0.12) !important; }
-.hero-bar-track { background: rgba(30,28,26,0.6) !important; }
 
 /* Stat / Year */
 .stat-num { color: #E8DCC8 !important; }
@@ -630,11 +629,6 @@ pointer-events:none;z-index:0;transition:opacity 0.4s ease}.view{display:none;po
 .prayer-time-hour { color: #E8DCC8 !important; }
 .prayer-time-item.next .prayer-time-name { color: #C4A870 !important; }
 .prayer-time-item.next .prayer-time-hour { color: #D8BC88 !important; font-weight: 700 !important; }
-
-/* Hero level */
-.hero-title { color: #E8DCC8 !important; }
-.hero-label { color: #C4A870 !important; }
-.hero-pct { color: #C4A870 !important; }
 
 /* Lock */
 .lock-title { color: #E8DCC8 !important; }
@@ -692,7 +686,6 @@ pointer-events:none;z-index:0;transition:opacity 0.4s ease}.view{display:none;po
 
 /* ── CONTRASTE RENFORCÉ — thème sombre (s assurer que tout est lisible) ── */
 .item-sub { font-size: 15px; }
-.hero-label { opacity: 1 !important; }
 .prayer-time-name { font-size: 10px; }
 .stat-label { font-size: 10px; color: var(--t3); }
 .nav-label { font-size: 10px; }
