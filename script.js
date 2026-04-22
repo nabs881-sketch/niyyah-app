@@ -2364,88 +2364,21 @@ function renderWirdSmartCard(item, delay) {
   const allDone = done === total;
   const pct = Math.round(done / total * 100);
   const isMatin = item.session === 'matin';
-  const accentColor = isMatin ? '#D4AF37' : '#87A96B';
-  const accentRgb   = isMatin ? '212,175,55' : '135,169,107';
-  const moonIcon    = isMatin ? '🌅' : '🌙';
-  const arabicLabel = isMatin ? 'وِرْدُ الصَّبَاحِ' : 'وِرْدُ الْمَسَاءِ';
-  return `<div class="item${allDone?' checked':''}" id="item-${item.id}"
-    style="animation-delay:${delay}ms;flex-direction:column;align-items:stretch;padding:0;cursor:pointer;
-           border:1px solid rgba(${accentRgb},${allDone?'0.4':'0.18'});
-           border-radius:16px;overflow:hidden;
-           background:linear-gradient(135deg,rgba(${accentRgb},0.07) 0%,rgba(10,10,10,0.6) 100%);
-           position:relative;"
-    onclick="v2GoTo('wird');setTimeout(()=>{if(typeof renderWird==='function')renderWird();},60)">
-    <div style="position:absolute;top:0;left:0;right:0;height:1px;
-                background:linear-gradient(90deg,transparent,rgba(${accentRgb},0.5),transparent);"></div>
-    <div style="display:flex;align-items:center;gap:12px;padding:14px 16px;">
-      <div style="width:44px;height:44px;border-radius:12px;
-                  background:rgba(${accentRgb},0.12);border:1px solid rgba(${accentRgb},0.25);
-                  display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;">
-        ${allDone ? '✦' : moonIcon}
-      </div>
-      <div style="flex:1;min-width:0;">
-        <div style="display:flex;align-items:center;gap:6px;margin-bottom:2px;">
-          <span style="font-size:15px;font-weight:600;color:${allDone?accentColor:'var(--t1)'};
-                       ${allDone?'text-decoration:line-through;text-decoration-color:rgba('+accentRgb+',0.3)':''}">
-            ${item.label}
-          </span>
-          ${item.priority==='sunnah'?'<span style="font-size:9px;font-weight:700;letter-spacing:0.8px;color:'+accentColor+';background:rgba('+accentRgb+',0.12);border:1px solid rgba('+accentRgb+',0.25);border-radius:6px;padding:1px 6px;">SUNNAH</span>':''}
-        </div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:16px;
-                    color:rgba(${accentRgb},0.65);direction:rtl;text-align:left;">
-          ${arabicLabel}
-        </div>
-      </div>
-      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0;">
-        <div style="font-size:13px;font-weight:700;color:${accentColor};">${done}/${total}</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:9px;letter-spacing:0.15em;
-                    color:rgba(${accentRgb},0.5);">
-          ${allDone ? t('btn_complete') : t('btn_open')}
-        </div>
-      </div>
-    </div>
-    <div style="height:2px;background:rgba(${accentRgb},0.08);margin:0 16px 12px;">
-      <div style="height:100%;width:${pct}%;background:linear-gradient(to right,rgba(${accentRgb},0.4),${accentColor});
-                  border-radius:1px;transition:width 0.5s ease;"></div>
-    </div>
-  </div>`;
-}
-
-function renderWirdAccordion(item, delay) {
-  const session = WIRD_DATA[item.session];
-  const done  = session.items.filter(i => wirdState[i.id]).length;
-  const total = session.items.length;
-  const allDone = done === total;
-  const pct = Math.round(done / total * 100);
-  const isOpen = !!window['_wirdOpen_' + item.id];
-  let inner = '';
-  session.items.forEach(wi => {
-    const checked = !!wirdState[wi.id];
-    const audioSrcAcc = wi.audio ? JSON.stringify(wi.audio) : null;
-    const audioBtn = wi.audio ? '<button class="btn-audio" ontouchstart="event.stopPropagation()" onclick="playAudioFromBtn(this,event)" data-audio="' + (audioSrcAcc ? audioSrcAcc.replace(/"/g,'&quot;') : '') + '" style="margin-left:4px;">🔊</button>' : '';
-    inner += '<div class="item wird-inner-item' + (checked ? ' checked' : '') + '" style="border-top:1px solid var(--sep);border-radius:0;" onclick="toggleWirdItem(\'' + wi.id + '\');renderLevel(currentLevel);event.stopPropagation()">'
-      + '<div class="check-circle" style="flex-shrink:0;"><svg class="check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>'
-      + '<div class="item-body"><div class="item-label" style="color:var(--t1);">' + wi.label + '</div>'
-      + (wi.sub ? '<div class="item-sub">' + wi.sub + '</div>' : '')
-      + (wi.arabic ? '<div class="item-arabic">' + wi.arabic + '</div>' : '')
-      + '</div>' + audioBtn + '</div>';
-  });
-  const progressBar = '<div style="padding:10px 16px;border-top:1px solid var(--sep);display:flex;align-items:center;gap:8px;">'
-    + '<div style="height:3px;flex:1;background:var(--sep2);border-radius:2px;"><div style="height:100%;width:' + pct + '%;background:var(--green-grad);border-radius:2px;transition:width 0.3s;"></div></div>'
-    + '<div style="font-size:12px;color:var(--green);font-weight:600;">' + done + '/' + total + '</div></div>';
-  const tapHint = (!isOpen && done === 0) ? '<div style="font-size:11px;color:var(--green);background:var(--green-soft);border-radius:20px;padding:2px 10px;white-space:nowrap;">Appuie pour ouvrir</div>' : '';
-  return '<div class="item' + (allDone ? ' checked' : '') + '" id="item-' + item.id + '" style="animation-delay:' + delay + 'ms;flex-direction:column;align-items:stretch;padding:0;cursor:default;border:1px solid ' + (isOpen ? 'rgba(52,217,98,0.25)' : 'var(--sep)') + ';overflow:hidden;background:var(--card);">'
-    + '<div style="display:flex;align-items:center;gap:12px;padding:14px 14px;cursor:pointer;background:' + (isOpen ? 'rgba(52,217,98,0.05)' : 'transparent') + ';" onclick="window[\'_wirdOpen_\'+\'' + item.id + '\']=!' + isOpen + ';renderLevel(currentLevel)">'
-    + '<div class="check-circle"' + (allDone ? ' style="background:var(--green-grad);border-color:var(--green);"' : '') + '><svg class="check-svg" style="' + (allDone ? 'opacity:1;transform:scale(1)' : '') + '" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>'
-    + '<div class="item-body"><div class="item-label' + (item.priority === 'sunnah' ? ' priority-sunnah' : '') + '">' + item.label + '</div><div class="item-sub">' + item.sub + '</div></div>'
-    + '<div style="display:flex;align-items:center;gap:6px;flex-shrink:0;">'
-    + tapHint
-    + (done > 0 ? '<div style="font-size:11px;color:var(--green);background:var(--green-soft);padding:2px 8px;border-radius:20px;">' + done + '/' + total + '</div>' : '')
-    + '<svg width="16" height="16" viewBox="0 0 14 14" style="transition:transform 0.2s;transform:' + (isOpen ? 'rotate(180deg)' : 'rotate(0deg)') + ';color:var(--green);flex-shrink:0;"><polyline points="3,5 7,9 11,5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>'
-    + '</div></div>'
-    + (isOpen ? inner + progressBar : '')
+  const arabicLabel = isMatin ? 'وِرْدُ الصَّبَاح' : 'وِرْدُ الْمَسَاء';
+  const frLabel = isMatin ? 'WIRD DU MATIN' : 'WIRD DU SOIR';
+  return '<div class="wird-smart-card' + (allDone ? ' done' : '') + '" id="item-' + item.id + '" style="animation-delay:' + delay + 'ms" onclick="v2GoTo(\'wird\');setTimeout(function(){if(typeof renderWird===\'function\')renderWird();},60)">'
+    + '<div class="wird-smart-body">'
+    + '<div class="wird-smart-arabic">' + arabicLabel + '</div>'
+    + '<div class="wird-smart-label">' + frLabel + '</div>'
+    + '</div>'
+    + '<div class="wird-smart-right">'
+    + '<div class="wird-smart-count">' + done + '/' + total + '</div>'
+    + '<div class="wird-smart-arrow">›</div>'
+    + '</div>'
+    + '<div class="wird-smart-bar"><div class="wird-smart-bar-fill" style="width:' + pct + '%"></div></div>'
     + '</div>';
 }
+
 function renderCounter(item, delay) {
   const count = state[item.id] || 0;
   const done  = count >= item.target;
