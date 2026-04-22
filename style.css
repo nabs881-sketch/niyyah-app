@@ -561,7 +561,6 @@ pointer-events:none;z-index:0;transition:opacity 0.4s ease}.view{display:none;po
 .item.checked .item-label { color: rgba(184,168,136,0.35) !important; }
 .item-sub { color: #8A7E6E !important; }
 .item-arabic { color: #C4A870 !important; }
-.section-name { color: #A89878 !important; font-weight: 600 !important; }
 
 /* Nav bar */
 .nav-bar {
@@ -693,7 +692,6 @@ pointer-events:none;z-index:0;transition:opacity 0.4s ease}.view{display:none;po
 
 /* ── CONTRASTE RENFORCÉ — thème sombre (s assurer que tout est lisible) ── */
 .item-sub { font-size: 15px; }
-.section-name { font-size: 13px; font-weight: 600; }
 .hero-label { opacity: 1 !important; }
 .prayer-time-name { font-size: 10px; }
 .stat-label { font-size: 10px; color: var(--t3); }
@@ -878,9 +876,31 @@ pointer-events:none;z-index:0;transition:opacity 0.4s ease}.view{display:none;po
   border-bottom: 1px solid rgba(200,168,74,0.14) !important;
 }
 
-/* ── SECTION NAME ── */
-.section-name { color: #C8A84A !important; font-weight: 600 !important; font-size: 12px !important; letter-spacing: 0.5px !important; }
-.section-icon-wrap { background: rgba(200,168,74,0.10) !important; }
+/* ── SECTION HEADERS ── */
+.section-header {
+  padding: 24px 4px 12px;
+  text-align: center;
+}
+.section-arabic {
+  font-family: 'Scheherazade New', serif;
+  font-size: 22px;
+  color: #C8A84A;
+  text-shadow: 0 0 12px rgba(200,168,75,0.2);
+  margin-bottom: 4px;
+}
+.section-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  color: rgba(200,168,75,0.7);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.section-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(200,168,75,0.3), transparent);
+  margin: 0 20%;
+}
 
 /* ── CHECK CIRCLES ── */
 .check-circle { border-color: rgba(200,168,74,0.28) !important; }
@@ -1351,7 +1371,6 @@ pointer-events:none;z-index:0;transition:opacity 0.4s ease}.view{display:none;po
 .nav-label       { font-size: 10px !important; letter-spacing: 0.4px !important; }
 
 /* ── TEXTES SOMBRE : renforcer t3 sur les éléments critiques ── */
-.section-name    { color: #B0A080 !important; }  /* was t3, now t2 */
 .item-sub        { color: #9A8E7A !important; font-size: 13px !important; }
 .streak-label    { color: #9A8E7A !important; }
 .year-month-label{ color: #9A8E7A !important; }
