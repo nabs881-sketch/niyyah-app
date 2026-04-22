@@ -6567,6 +6567,9 @@ function v2GoSanctuaire() {
     var btn = document.getElementById('v2nav-sanctuaire');
     if (btn) btn.classList.add('active-nav');
   }
+  // Skip intro cascade on return visits
+  var sanctEl2 = document.getElementById('view-sanctuaire');
+  if (sanctEl2) sanctEl2.classList.add('no-intro');
   if (activeView) {
     activeView.classList.add('view-transition','exiting');
     setTimeout(function() { activeView.classList.remove('view-transition','exiting'); _showSanctuaire(); }, 150);

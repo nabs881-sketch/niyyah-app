@@ -717,6 +717,17 @@ pointer-events:none;z-index:0;transition:opacity 0.4s ease}.view{display:none;po
   transform: translateY(0);
 }
 
+/* ── NO INTRO (skip cascade on return) ── */
+.no-intro .greeting-v2,
+.no-intro .orb-wrap-v2,
+.no-intro .intention-chip-v2,
+.no-intro .level-strip-v2,
+.no-intro .quick-actions-v2 {
+  animation: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
 /* Toast */
 .toast {
   background: rgba(52,48,42,0.97) !important;
