@@ -842,10 +842,24 @@ pointer-events:none;z-index:0;transition:opacity 0.4s ease}.view{display:none;po
   font-weight: 700 !important;
 }
 .btn-reset {
-  background: linear-gradient(180deg,#3E3C3A,#323030) !important;
-  color: #A09878 !important;
-  border: 1px solid rgba(200,168,74,0.18) !important;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.35) !important;
+  background: transparent !important;
+  color: rgba(200,168,75,0.45) !important;
+  border: 1px solid rgba(200,168,75,0.15) !important;
+  box-shadow: none !important;
+  width: 32px !important;
+  height: 32px !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  font-size: 16px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+}
+.btn-reset:hover,
+.btn-reset:active {
+  color: rgba(200,168,75,0.8) !important;
+  border-color: rgba(200,168,75,0.35) !important;
 }
 
 /* ── NAV BAR ── */
