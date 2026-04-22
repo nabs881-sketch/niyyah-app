@@ -905,13 +905,18 @@ pointer-events:none;z-index:0;transition:opacity 0.4s ease}.view{display:none;po
 
 /* ── BOUTON NIVEAU SUIVANT ── */
 .btn-next-level {
+  display: block;
+  margin: 20px auto;
+  width: fit-content;
   background: transparent;
   border: 1px solid rgba(200,168,75,0.35);
   color: #C8A84A;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 14px;
-  font-style: italic;
-  padding: 10px 24px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 8px 18px;
   border-radius: 22px;
   cursor: pointer;
   transition: all 0.2s ease;

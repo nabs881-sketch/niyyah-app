@@ -2312,7 +2312,7 @@ function renderLevel(levelId) {
   if (nextLvl) {
     var _locked = !state._unlocked.includes(nextId);
     html += '<div style="padding:8px 0 24px;text-align:center;">'
-      + '<button class="btn-next-level' + (_locked ? ' locked' : '') + '" onclick="selectLevel(' + nextId + ')">' + t('btn_skip_level') + nextId + ' →</button>'
+      + '<button class="btn-next-level' + (_locked ? ' locked' : '') + '" onclick="selectLevel(' + nextId + ')">NIVEAU ' + nextId + ' · ' + t('level_' + nextId).toUpperCase() + '</button>'
       + '</div>';
   }
   content.innerHTML = html;
