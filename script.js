@@ -5480,7 +5480,7 @@ const V2_I18N = {
     conv_msg_4: 'Si vous êtes reconnaissants, J\'augmenterai Mes bienfaits. — Ibrahim 14:7',
     score_weighted: 'Score pondéré du jour', score_progress: 'En cours…', score_continue: 'Continue ↗',
     prayer_title: '🕌 Horaires du jour', city_enter: 'Entre ta ville pour voir les horaires de prière', city_placeholder: 'Ex: Paris, Casablanca, Bruxelles...',
-    qibla_title: '' + t('qibla_title') + '', qibla_find_text: '' + t('qibla_find_text') + '', qibla_find_btn: '' + t('qibla_find_btn') + '',
+    qibla_title: '🕋 Qibla — Direction de la Mecque', qibla_find_text: 'Trouve la direction de la Mecque depuis ta position', qibla_find_btn: '📍 Trouver la Qibla',
     section_prayers: 'Les 5 Prières', section_wird: 'Wird quotidien', section_sunnah: 'Sunnah de base',
     btn_open: 'OUVRIR ›', btn_complete: '✓ COMPLET', btn_skip_level: 'Passer au Niveau ',
     // Night companion
