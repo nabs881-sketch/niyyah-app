@@ -6498,7 +6498,7 @@ function journalSwitchTab(tab) {
     if (tabR) { tabR.style.background = 'transparent'; tabR.style.border = '1px solid rgba(200,168,75,0.15)'; tabR.style.color = 'rgba(200,168,75,0.5)'; tabR.style.boxShadow = 'none'; }
     var entries = getNiyyahHistory();
     if (entries.length === 0) {
-      content.innerHTML = '<div style="text-align:center;padding:60px 20px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);">' + t('journal_niyyah_empty') + '</div></div>';
+      content.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">نية</div><div class="empty-state-title">Ton journal commence ici</div><div class="empty-state-text">Chaque niyyah posée devient une trace de ta marche vers Allah.</div></div>';
     } else {
       var html = '';
       entries.forEach(function(e) {
@@ -6516,7 +6516,7 @@ function journalSwitchTab(tab) {
     if (tabR) { tabR.style.background = 'linear-gradient(180deg,rgba(212,181,98,0.18) 0%,rgba(166,117,68,0.12) 100%)'; tabR.style.border = '1px solid rgba(230,200,130,0.5)'; tabR.style.color = 'rgba(230,200,130,1)'; tabR.style.boxShadow = '0 2px 8px rgba(0,0,0,0.3),inset 0 1px 0 rgba(255,230,180,0.1)'; }
     var entries = getRegardeHistory();
     if (entries.length === 0) {
-      content.innerHTML = '<div style="text-align:center;padding:60px 20px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);">' + t('journal_regarde_empty') + '</div></div>';
+      content.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">نَظَر</div><div class="empty-state-title">Tes Regards commencent ici</div><div class="empty-state-text">Chaque instant saisi par le scanner devient un miroir de ta présence.</div><button class="empty-state-cta" onclick="scannerOpen()">OUVRIR LE SCANNER</button></div>';
     } else {
       var html = '';
       entries.forEach(function(e) {
@@ -7986,7 +7986,7 @@ function openRegardeJournal() {
   if (!overlay || !list) return;
   var entries = getRegardeHistory();
   if (entries.length === 0) {
-    list.innerHTML = '<div style="text-align:center;padding:60px 20px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);">' + t('journal_regarde_empty') + '</div></div>';
+    list.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">نَظَر</div><div class="empty-state-title">Tes Regards commencent ici</div><div class="empty-state-text">Chaque instant saisi par le scanner devient un miroir de ta présence.</div><button class="empty-state-cta" onclick="scannerOpen()">OUVRIR LE SCANNER</button></div>';
   } else {
     var html = '';
     entries.forEach(function(e) {
@@ -8147,7 +8147,7 @@ function renderNiyyahJournalList(entries) {
   var list = document.getElementById('niyyah-journal-list');
   if (!list) return;
   if (entries.length === 0) {
-    list.innerHTML = '<div style="text-align:center;padding:60px 20px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);">' + t('journal_niyyah_empty') + '</div></div>';
+    list.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">نية</div><div class="empty-state-title">Ton journal commence ici</div><div class="empty-state-text">Chaque niyyah posée devient une trace de ta marche vers Allah.</div></div>';
     return;
   }
   var html = '';
