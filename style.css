@@ -4465,10 +4465,10 @@ to {
 .qibla-card::before { display: none !important; }
 .qibla-card::after { display: none !important; }
 .qibla-title {
-  color: #D4B060 !important;
-  font-size: 11px !important;
-  letter-spacing: 2.5px !important;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.50) !important;
+  color: #D4B060;
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.50);
 }
 
 /* ── HERO CARD ── */
@@ -4837,7 +4837,6 @@ to {
 }
 [data-theme="light"] .qibla-card::before { display: none !important; }
 [data-theme="light"] .qibla-card::after { display: none !important; }
-[data-theme="light"] .qibla-title { color: #D4A848 !important; text-shadow: 0 1px 4px rgba(0,0,0,0.50) !important; }
 [data-theme="light"] .qibla-btn { color: #D4A848 !important; border-color: rgba(200,160,60,0.40) !important; }
 [data-theme="light"] .qibla-angle { color: #C8A040 !important; }
 [data-theme="light"] .qibla-sub { color: rgba(200,160,60,0.65) !important; }
@@ -5003,9 +5002,9 @@ to {
 }
 /* Qibla bar texte plus visible */
 [data-theme="light"] .qibla-title {
-  color: #E0B848 !important;
-  font-size: 13px !important;
-  letter-spacing: 2px !important;
+  color: #E0B848;
+  font-size: 13px;
+  letter-spacing: 2px;
 }
 /* Item label plus fort */
 [data-theme="light"] .item-label {
@@ -6646,21 +6645,21 @@ body.pratique-active .topbar-v2 { display: none !important; }
 }
 /* Onboard dots override */
 .onboard-dots {
-  position: relative !important;
-  top: auto !important;
-  left: auto !important;
-  transform: none !important;
-  display: flex !important;
+  position: relative;
+  top: auto;
+  left: auto;
+  transform: none;
+  display: flex;
   justify-content: center;
   gap: 6px;
   margin: 20px 0 16px;
   order: 1;
 }
 .onboard-screen {
-  flex-wrap: wrap !important;
-  background: #0a0a0a !important;
-  text-align: center !important;
-  align-items: center !important;
+  flex-wrap: wrap;
+  background: #0a0a0a;
+  text-align: center;
+  align-items: center;
 }
 .onboard-screen #onboardContent {
   order: 0;
