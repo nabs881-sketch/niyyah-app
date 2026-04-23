@@ -4648,9 +4648,9 @@ to {
 
 /* ── WEEKLY CARD — Luxe Coach ── */
 .weekly-overlay {
-  background: rgba(0,0,0,0.82) !important;
-  backdrop-filter: blur(16px) !important;
-  -webkit-backdrop-filter: blur(16px) !important;
+  background: rgba(0,0,0,0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 @keyframes bilanSlideUp {
   from { opacity:0; transform: translateY(40px) scale(0.97); }
