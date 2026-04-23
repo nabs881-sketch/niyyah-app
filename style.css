@@ -4116,7 +4116,7 @@ to {
 
 /* Stat / Year */
 .stat-num { color: #E8DCC8 !important; }
-.stat-label { color: #7A6E5E !important; }
+.stat-label { color: #9A8E7A !important; font-size: 11px !important; }
 .year-nav-title { color: #E8DCC8 !important; }
 .section-label { color: #E8DCC8 !important; }
 .d-name { color: #7A6E5E !important; }
@@ -4366,7 +4366,6 @@ to {
 
 /* ── CONTRASTE RENFORCÉ — thème sombre (s assurer que tout est lisible) ── */
 .prayer-time-name { font-size: 10px; }
-.stat-label { font-size: 10px; color: var(--t3); }
 .nav-label { font-size: 10px; }
 .d-name { font-size: 9px; }
 .weekly-stat-label { font-size: 10px; }
@@ -5096,7 +5095,6 @@ to {
 .lvl-eyebrow     { font-size: 11px !important; opacity: 1 !important; }
 .info-sheet-label{ font-size: 11px !important; opacity: 1 !important; }
 .prayer-time-name{ font-size: 11px !important; letter-spacing: 0.3px !important; }
-.stat-label      { font-size: 11px !important; }
 .nav-label       { font-size: 10px !important; letter-spacing: 0.4px !important; }
 
 /* ── TEXTES SOMBRE : renforcer t3 sur les éléments critiques ── */
@@ -5104,7 +5102,6 @@ to {
 .year-month-label{ color: #9A8E7A !important; }
 .d-name          { color: #9A8E7A !important; }
 .d-num           { color: #9A8E7A !important; }
-.stat-label      { color: #9A8E7A !important; }
 .wird-sub        { color: #9A8E7A !important; }
 .weekly-day-label{ color: #9A8E7A !important; font-size: 10px !important; }
 .weekly-stat-label{ color: #9A8E7A !important; font-size: 10px !important; }
