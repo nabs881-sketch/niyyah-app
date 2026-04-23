@@ -4119,7 +4119,7 @@ to {
 .stat-label { color: #9A8E7A !important; font-size: 11px !important; }
 .year-nav-title { color: #E8DCC8 !important; }
 .section-label { color: #E8DCC8 !important; }
-.d-name { color: #7A6E5E !important; }
+.d-name { color: #9A8E7A !important; font-size: 11px !important; letter-spacing: 0.6px !important; }
 .d-num { color: #7A6E5E !important; }
 
 /* Wird */
@@ -4365,7 +4365,6 @@ to {
 
 
 /* ── CONTRASTE RENFORCÉ — thème sombre (s assurer que tout est lisible) ── */
-.d-name { font-size: 9px; }
 .weekly-stat-label { font-size: 10px; }
 .lvl-eyebrow { opacity: 1 !important; color: var(--gold) !important; }
 .medal-name { font-size: 10px; }
@@ -5079,7 +5078,6 @@ to {
 /* ── TAILLES MINIMUM — rien sous 10px ── */
 .medal-name      { font-size: 10px !important; letter-spacing: 0.5px !important; }
 .medal-cond      { font-size: 10px !important; }
-.d-name          { font-size: 9px  !important; }   /* gardé car espace limité */
 .d-num           { font-size: 10px !important; }
 .year-month-label{ font-size: 10px !important; }
 .yl-item         { font-size: 10px !important; }
@@ -5094,7 +5092,6 @@ to {
 /* ── TEXTES SOMBRE : renforcer t3 sur les éléments critiques ── */
 .streak-label    { color: #9A8E7A !important; }
 .year-month-label{ color: #9A8E7A !important; }
-.d-name          { color: #9A8E7A !important; }
 .d-num           { color: #9A8E7A !important; }
 .wird-sub        { color: #9A8E7A !important; }
 .weekly-day-label{ color: #9A8E7A !important; font-size: 10px !important; }
@@ -5150,7 +5147,6 @@ to {
 
 /* ── TAILLES FINALES — éléments manqués ── */
 .night-label { font-size: 11px !important; letter-spacing: 0.2px !important; }
-.d-name      { font-size: 11px !important; letter-spacing: 0.6px !important; }
 .year-month-label { font-size: 11px !important; }
 
 /* ── CORRECTION FINALE nav-label ── */
