@@ -4306,7 +4306,7 @@ to {
 /* Popup */
 .lvl-title, .popup-title { color: #E8DCC8 !important; }
 .popup-sub, .lvl-sub { color: #A89878 !important; }
-.lvl-eyebrow { color: #C4A870 !important; }
+.lvl-eyebrow { color: var(--gold); opacity: 1; font-size: 11px; }
 
 /* Section prog */
 .prog-title { color: #E8DCC8 !important; }
@@ -4351,7 +4351,6 @@ to {
 
 /* ── CONTRASTE RENFORCÉ — thème sombre (s assurer que tout est lisible) ── */
 .weekly-stat-label { font-size: 10px; }
-.lvl-eyebrow { opacity: 1 !important; color: var(--gold) !important; }
 .medal-name { font-size: 10px; }
 
 
@@ -5062,7 +5061,6 @@ to {
 .night-label     { font-size: 9px  !important; }
 .weekly-score-sub{ font-size: 11px !important; }
 .weekly-eyebrow  { font-size: 11px !important; letter-spacing: 1.5px !important; }
-.lvl-eyebrow     { font-size: 11px !important; opacity: 1 !important; }
 .info-sheet-label{ font-size: 11px !important; opacity: 1 !important; }
 
 /* ── TEXTES SOMBRE : renforcer t3 sur les éléments critiques ── */
