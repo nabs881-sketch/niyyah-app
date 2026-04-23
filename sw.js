@@ -1,5 +1,4 @@
-const VERSION = 'niyyah-v201';
-const VERSION = 'niyyah-v201';
+const VERSION = 'niyyah-v200';
 const CORE = [
   './index.html',
   './manifest.json',
@@ -23,7 +22,7 @@ self.addEventListener('install', e => {
 self.addEventListener('activate', e => {
   e.waitUntil(
     caches.keys().then(keys =>
-const VERSION = 'niyyah-v201';
+      Promise.all(keys.filter(k => k !== VERSION).map(k => caches.delete(k)))
     )
   );
   self.clients.claim();
@@ -53,7 +52,7 @@ self.addEventListener('fetch', e => {
         .then(res => {
           if (res && res.status === 200) {
             const clone = res.clone();
-const VERSION = 'niyyah-v201';
+            caches.open(VERSION).then(c => c.put(e.request, clone));
           }
           return res;
         })
