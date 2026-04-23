@@ -4073,15 +4073,6 @@ to {
 
 
 
-/* Items — fond cohérent avec le mockup */
-.item { background: rgba(50,50,50,0.97) !important; }
-.items-group {
-  background: rgba(50,50,50,0.97) !important;
-  border-top: 1px solid rgba(196,168,112,0.12) !important;
-  border-right: 1px solid rgba(196,168,112,0.12) !important;
-  border-bottom: 1px solid rgba(196,168,112,0.12) !important;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.04) !important;
-}
 .item-label { color: #E8DCC8 !important; }
 .item.checked .item-label { color: rgba(184,168,136,0.35) !important; }
 .item-sub { color: #8A7E6E !important; }
