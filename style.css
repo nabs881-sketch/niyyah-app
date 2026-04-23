@@ -4305,7 +4305,7 @@ to {
 
 /* Prayer times */
 .prayer-times-title { color: #C4A870 !important; }
-.prayer-time-name { color: #7A6E5E !important; }
+.prayer-time-name { color: #8090A8 !important; font-size: 11px !important; letter-spacing: 0.3px !important; }
 .prayer-time-hour { color: #E8DCC8 !important; }
 .prayer-time-item.next .prayer-time-name { color: #C4A870 !important; }
 .prayer-time-item.next .prayer-time-hour { color: #D8BC88 !important; font-weight: 700 !important; }
@@ -4365,7 +4365,6 @@ to {
 
 
 /* ── CONTRASTE RENFORCÉ — thème sombre (s assurer que tout est lisible) ── */
-.prayer-time-name { font-size: 10px; }
 .nav-label { font-size: 10px; }
 .d-name { font-size: 9px; }
 .weekly-stat-label { font-size: 10px; }
@@ -4450,7 +4449,6 @@ to {
   background: rgba(36,38,44,0.60) !important;
   opacity: 0.55 !important;
 }
-.prayer-time-name { color: #8090A8 !important; font-size: 10px !important; }
 .prayer-time-item.next .prayer-time-name { color: #E0C870 !important; }
 .prayer-time-hour { color: #C8D0E0 !important; font-size: 16px !important; font-weight: 600 !important; }
 .prayer-time-item.next .prayer-time-hour { color: #F0D880 !important; font-weight: 700 !important; }
@@ -5094,7 +5092,6 @@ to {
 .weekly-eyebrow  { font-size: 11px !important; letter-spacing: 1.5px !important; }
 .lvl-eyebrow     { font-size: 11px !important; opacity: 1 !important; }
 .info-sheet-label{ font-size: 11px !important; opacity: 1 !important; }
-.prayer-time-name{ font-size: 11px !important; letter-spacing: 0.3px !important; }
 .nav-label       { font-size: 10px !important; letter-spacing: 0.4px !important; }
 
 /* ── TEXTES SOMBRE : renforcer t3 sur les éléments critiques ── */
