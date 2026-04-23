@@ -4079,10 +4079,6 @@ to {
 .item-arabic { color: #C4A870 !important; }
 
 /* Nav bar */
-.nav-bar {
-  background: rgba(30,30,30,0.98) !important;
-  border-top: 1px solid rgba(196,168,112,0.14) !important;
-}
 .nav-icon-wrap { color: #6A6058 !important; }
 .nav-label { color: rgba(160,152,128,0.50) !important; font-size: 11px !important; letter-spacing: 0.4px !important; }
 .nav-item.active .nav-icon-wrap { color: #C4A870 !important; }
@@ -4550,8 +4546,8 @@ to {
 
 /* ── NAV BAR ── */
 .nav-bar {
-  background: rgba(34,33,30,0.99) !important;
-  border-top: 1px solid rgba(200,168,74,0.16) !important;
+  background: rgba(34,33,30,0.99);
+  border-top: 1px solid rgba(200,168,74,0.16);
 }
 .nav-icon-wrap { color: rgba(160,152,128,0.50) !important; }
 .nav-item.active .nav-icon-wrap { color: #C8A84A !important; }
