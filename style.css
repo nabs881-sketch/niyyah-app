@@ -4372,11 +4372,11 @@ to {
   box-shadow: none;
 }
 .tab.active {
-  background: linear-gradient(135deg, #C8A84A, #A67544) !important;
-  color: #1a1005 !important;
-  border: 1px solid rgba(200,168,75,0.6) !important;
-  font-weight: 700 !important;
-  box-shadow: 0 0 20px rgba(200,168,75,0.3) !important;
+  background: linear-gradient(135deg, #C8A84A, #A67544);
+  color: #1a1005;
+  border: 1px solid rgba(200,168,75,0.6);
+  font-weight: 700;
+  box-shadow: 0 0 20px rgba(200,168,75,0.3);
 }
 .tab.done:not(.active) {
   background: transparent !important;
