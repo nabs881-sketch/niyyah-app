@@ -4379,7 +4379,7 @@ to {
 .tab.done:not(.active) {
   background: transparent !important;
   color: rgba(200,168,75,0.7);
-  border: 1px solid rgba(200,168,75,0.3) !important;
+  border: 1px solid rgba(200,168,75,0.3);
 }
 
 /* ── ITEMS GROUP ── */
@@ -4424,7 +4424,7 @@ to {
 }
 .prayer-time-item.next {
   background: linear-gradient(145deg,#7A5C30,#5A4020) !important;
-  border-color: rgba(200,168,74,0.55) !important;
+  border-color: rgba(200,168,74,0.55);
   box-shadow: 0 2px 10px rgba(200,168,74,0.22);
 }
 .prayer-time-item.passed {
@@ -4437,7 +4437,7 @@ to {
 .prayer-times-title { color: #C8A84A; letter-spacing: 2px !important; font-size: 11px; }
 .prayer-times-card {
   background: linear-gradient(145deg,rgba(44,46,52,0.97) 0%,rgba(36,38,44,0.99) 100%) !important;
-  border: 1px solid rgba(200,168,74,0.18) !important;
+  border: 1px solid rgba(200,168,74,0.18);
   box-shadow: 0 4px 20px rgba(0,0,0,0.40);
 }
 
@@ -4449,7 +4449,7 @@ to {
       rgba(0,0,0,0.06) 2px, rgba(0,0,0,0) 5px,
       rgba(0,0,0,0.07) 9px, rgba(0,0,0,0) 13px),
     linear-gradient(180deg,#4E3C28,#3A2C1C,#463418) !important;
-  border: 1px solid rgba(200,168,74,0.45) !important;
+  border: 1px solid rgba(200,168,74,0.45);
   box-shadow: 0 4px 20px rgba(0,0,0,0.50), inset 0 1px 0 rgba(255,255,255,0.07);
 }
 .qibla-card::before { display: none !important; }
@@ -4464,7 +4464,7 @@ to {
 /* ── HERO CARD ── */
 .level-hero {
   background: linear-gradient(145deg,rgba(44,48,54,0.97) 0%,rgba(36,40,46,0.99) 100%) !important;
-  border: 1px solid rgba(200,168,74,0.16) !important;
+  border: 1px solid rgba(200,168,74,0.16);
   box-shadow: 0 6px 24px rgba(0,0,0,0.45), inset 0 1px 0 rgba(200,168,74,0.08);
 }
 .hero-label { color: #C8A84A; letter-spacing: 2.5px !important; font-size: 10px; }
@@ -4516,7 +4516,7 @@ to {
       rgba(0,0,0,0.08) 9px, rgba(0,0,0,0) 13px),
     linear-gradient(180deg,#7A6038,#5A4420,#6A5230) !important;
   color: #E8C850;
-  border: 1px solid rgba(200,168,74,0.45) !important;
+  border: 1px solid rgba(200,168,74,0.45);
   box-shadow: 0 3px 14px rgba(200,168,74,0.25), inset 0 1px 0 rgba(255,255,255,0.08);
   text-shadow: 0 1px 3px rgba(0,0,0,0.50);
   font-weight: 700;
@@ -4621,11 +4621,11 @@ to {
 /* ── STREAK / STATS ── */
 .streak-card {
   background: linear-gradient(145deg,rgba(48,52,58,0.97) 0%,rgba(38,40,46,0.99) 100%) !important;
-  border: 1px solid rgba(200,168,74,0.16) !important;
+  border: 1px solid rgba(200,168,74,0.16);
 }
 .stat-box {
   background: rgba(44,46,52,0.96) !important;
-  border: 1px solid rgba(200,168,74,0.10) !important;
+  border: 1px solid rgba(200,168,74,0.10);
 }
 .year-card { background: rgba(44,46,52,0.96) !important; }
 /* ── WIRD ── */
@@ -4727,7 +4727,7 @@ to {
     repeating-linear-gradient(180deg,rgba(255,255,255,0) 0px,rgba(255,255,255,0.15) 1px,rgba(0,0,0,0.04) 2px,rgba(255,255,255,0) 4px,rgba(0,0,0,0.05) 9px,rgba(0,0,0,0) 13px),
     linear-gradient(180deg,#D4B880,#C0A060,#C8A868) !important;
   color: #4A2E10;
-  border: 1px solid rgba(160,120,56,0.35) !important;
+  border: 1px solid rgba(160,120,56,0.35);
   box-shadow: 0 2px 8px rgba(80,50,20,0.20), inset 0 1px 0 rgba(255,255,255,0.35);
   font-weight: 500;
   text-shadow: 0 1px 0 rgba(255,255,255,0.20);
@@ -4737,7 +4737,7 @@ to {
     repeating-linear-gradient(180deg,rgba(255,255,255,0) 0px,rgba(255,255,255,0.12) 1px,rgba(0,0,0,0.06) 2px,rgba(0,0,0,0) 5px,rgba(0,0,0,0.08) 9px,rgba(0,0,0,0) 13px),
     linear-gradient(180deg,#9A6830,#7A4E18,#8A5C28) !important;
   color: #F0D898;
-  border: 1px solid rgba(160,120,56,0.65) !important;
+  border: 1px solid rgba(160,120,56,0.65);
   box-shadow: 0 3px 14px rgba(120,78,24,0.35), inset 0 1px 0 rgba(255,255,255,0.15);
   font-weight: 700;
   text-shadow: 0 1px 2px rgba(0,0,0,0.40);
@@ -4747,13 +4747,13 @@ to {
     repeating-linear-gradient(180deg,rgba(255,255,255,0) 0px,rgba(255,255,255,0.12) 1px,rgba(0,0,0,0.04) 3px,rgba(0,0,0,0) 8px,rgba(0,0,0,0.05) 11px,rgba(0,0,0,0) 14px),
     linear-gradient(180deg,#B88C50,#9A7238,#A87E44) !important;
   color: #F0D898;
-  border: 1px solid rgba(160,120,56,0.45) !important;
+  border: 1px solid rgba(160,120,56,0.45);
 }
 
 /* ── HERO CARD ── */
 [data-theme="light"] .level-hero {
   background: linear-gradient(145deg,#F6EED8,#EEE4C8) !important;
-  border: 1px solid rgba(200,160,80,0.25) !important;
+  border: 1px solid rgba(200,160,80,0.25);
   box-shadow: 0 4px 20px rgba(80,50,20,0.12), inset 0 1px 0 rgba(255,255,255,0.70);
   backdrop-filter: none !important;
 }
@@ -4769,7 +4769,7 @@ to {
 /* ── ITEMS ── */
 [data-theme="light"] .items-group {
   background: #F5EBD0 !important;
-  border: 1px solid rgba(200,160,80,0.18) !important;
+  border: 1px solid rgba(200,160,80,0.18);
   box-shadow: 0 2px 12px rgba(80,50,20,0.10), inset 0 1px 0 rgba(255,255,255,0.65);
 }
 [data-theme="light"] .item { background: #FBF5E5 !important; border: 1px solid rgba(154,123,47,0.15) !important; box-shadow: 0 2px 8px rgba(120,90,40,0.12) !important; }
@@ -4785,7 +4785,7 @@ to {
 [data-theme="light"] .check-circle { border-color: rgba(160,120,56,0.28) !important; }
 [data-theme="light"] .item.checked .check-circle {
   background: linear-gradient(135deg,#D4A858,#9A7B2F) !important;
-  border-color: #9A7B2F !important;
+  border-color: #9A7B2F;
   box-shadow: 0 0 0 3px rgba(160,120,56,0.12);
 }
 [data-theme="light"] .check-svg path { stroke: #fff !important; }
@@ -4793,7 +4793,7 @@ to {
 /* ── PRAYER TIMES ── */
 [data-theme="light"] .prayer-times-card {
   background: linear-gradient(145deg,#F0E6CC,#E8D8B8) !important;
-  border: 1px solid rgba(200,160,80,0.22) !important;
+  border: 1px solid rgba(200,160,80,0.22);
   box-shadow: 0 2px 12px rgba(80,50,20,0.10), inset 0 1px 0 rgba(255,255,255,0.55);
   backdrop-filter: none !important;
 }
@@ -4802,7 +4802,7 @@ to {
 [data-theme="light"] .prayer-time-item { background: rgba(220,190,140,0.40) !important; border-radius: 10px !important; }
 [data-theme="light"] .prayer-time-item.next {
   background: linear-gradient(145deg,#ECC870,#C89840) !important;
-  border-color: rgba(200,160,60,0.60) !important;
+  border-color: rgba(200,160,60,0.60);
   box-shadow: 0 2px 10px rgba(200,160,60,0.25);
 }
 [data-theme="light"] .prayer-time-item.passed { background: rgba(200,175,130,0.30) !important; opacity: 0.55 !important; }
@@ -4817,7 +4817,7 @@ to {
   background:
     repeating-linear-gradient(180deg,rgba(255,255,255,0) 0px,rgba(255,255,255,0.04) 1px,rgba(0,0,0,0.08) 2px,rgba(0,0,0,0) 5px,rgba(0,0,0,0.09) 9px,rgba(0,0,0,0) 14px),
     linear-gradient(180deg,#4A3018,#341E0A,#3E2810) !important;
-  border: 1px solid rgba(200,160,60,0.50) !important;
+  border: 1px solid rgba(200,160,60,0.50);
   box-shadow: 0 4px 20px rgba(0,0,0,0.30), inset 0 1px 0 rgba(255,255,255,0.06);
 }
 [data-theme="light"] .qibla-card::before { display: none !important; }
@@ -4833,7 +4833,7 @@ to {
     repeating-linear-gradient(180deg,rgba(255,255,255,0) 0px,rgba(255,255,255,0.06) 1px,rgba(0,0,0,0.07) 2px,rgba(0,0,0,0) 5px,rgba(0,0,0,0.08) 9px,rgba(0,0,0,0) 14px),
     linear-gradient(180deg,#7A5228,#5A3818,#6A4822) !important;
   color: #E8C850;
-  border: 1px solid rgba(200,160,60,0.50) !important;
+  border: 1px solid rgba(200,160,60,0.50);
   box-shadow: 0 3px 14px rgba(80,40,10,0.30), inset 0 1px 0 rgba(255,255,255,0.08);
   text-shadow: 0 1px 3px rgba(0,0,0,0.50);
   font-weight: 700;
@@ -4841,7 +4841,7 @@ to {
 [data-theme="light"] .btn-reset {
   background: linear-gradient(180deg,#D4C0A0,#C0A880) !important;
   color: #5A3818;
-  border: 1px solid rgba(160,120,56,0.28) !important;
+  border: 1px solid rgba(160,120,56,0.28);
   box-shadow: 0 2px 8px rgba(80,50,20,0.15), inset 0 1px 0 rgba(255,255,255,0.30);
 }
 
@@ -4855,7 +4855,7 @@ to {
 /* ── STREAK / STATS / BADGES ── */
 [data-theme="light"] .streak-card, [data-theme="light"] .stat-box, [data-theme="light"] .year-card {
   background: #F5EBD0 !important;
-  border: 1px solid rgba(200,160,80,0.18) !important;
+  border: 1px solid rgba(200,160,80,0.18);
   box-shadow: 0 2px 10px rgba(80,50,20,0.09), inset 0 1px 0 rgba(255,255,255,0.60);
   backdrop-filter: none !important;
 }
@@ -4898,7 +4898,7 @@ to {
     repeating-linear-gradient(180deg,rgba(255,255,255,0) 0px,rgba(255,255,255,0.06) 1px,rgba(0,0,0,0.07) 2px,rgba(0,0,0,0) 5px,rgba(0,0,0,0.08) 9px,rgba(0,0,0,0) 14px),
     linear-gradient(180deg,#9A6830,#7A4E18,#8A5C28) !important;
   color: #F0D898;
-  border: 1px solid rgba(160,120,56,0.65) !important;
+  border: 1px solid rgba(160,120,56,0.65);
   text-shadow: 0 1px 2px rgba(0,0,0,0.40);
 }
 [data-theme="light"] .freemium-code-input { background: #E8DABC !important; color: #2A1F0E !important; border-color: rgba(160,120,56,0.22) !important; }
@@ -4943,7 +4943,7 @@ to {
 /* Prayer cell ACTIF plus chaud */
 [data-theme="light"] .prayer-time-item.next {
   background: linear-gradient(145deg,#F0C85A,#D4A030) !important;
-  border: 1.5px solid rgba(180,130,30,0.70) !important;
+  border: 1.5px solid rgba(180,130,30,0.70);
   box-shadow: 0 3px 14px rgba(180,130,30,0.30);
 }
 [data-theme="light"] .prayer-time-item.next .prayer-time-name {
@@ -5031,14 +5031,14 @@ to {
 /* Cards sur l'accueil */
 #view-accueil .niyyah-card {
   background: var(--card) !important;
-  border-color: var(--sep2) !important;
+  border-color: var(--sep2);
 }
 #view-accueil .niyyah-card-label { color: var(--t1); }
 #view-accueil .niyyah-card-sub { color: var(--t3); }
 /* Texte sous "Avec quelle intention" */
 #niyyahTitle { color: var(--gold); opacity: 0.85; }
 /* Intention du jour */
-#accueilIntention { background: var(--card) !important; border-color: var(--sep2) !important; }
+#accueilIntention { background: var(--card) !important; border-color: var(--sep2); }
 
 
 /* ╔══════════════════════════════════════════════════════════════╗
@@ -6026,7 +6026,7 @@ body::before {
 #view-resume .header,
 #view-ramadan .header {
   background: rgba(12,12,12,0.97) !important;
-  border-bottom: 1px solid rgba(212,175,55,0.10) !important;
+  border-bottom: 1px solid rgba(212,175,55,0.10);
 }
 
 /* When V2 sanctuaire is active, hide V1 nav-bar */
