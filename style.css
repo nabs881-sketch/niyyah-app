@@ -4677,14 +4677,14 @@ to {
   animation: bilanSlideUp 0.5s cubic-bezier(0.23,1,0.32,1) forwards;
 }
 .weekly-card {
-  background: linear-gradient(160deg, rgba(26,22,14,0.97) 0%, rgba(16,14,10,0.99) 100%) !important;
-  border: 1px solid rgba(212,175,55,0.18) !important;
-  backdrop-filter: blur(24px) !important;
-  -webkit-backdrop-filter: blur(24px) !important;
-  box-shadow: 0 40px 80px rgba(0,0,0,0.8), inset 0 1px 0 rgba(212,175,55,0.10) !important;
-  border-radius: 24px !important;
-  overflow-y: auto !important;
-  max-height: 88vh !important;
+  background: linear-gradient(160deg, rgba(26,22,14,0.97) 0%, rgba(16,14,10,0.99) 100%);
+  border: 1px solid rgba(212,175,55,0.18);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: 0 40px 80px rgba(0,0,0,0.8), inset 0 1px 0 rgba(212,175,55,0.10);
+  border-radius: 24px;
+  overflow-y: auto;
+  max-height: 88vh;
   position: relative;
 }
 .weekly-card::before {
