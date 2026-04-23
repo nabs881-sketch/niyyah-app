@@ -4088,10 +4088,6 @@ to {
 .nav-item.active .nav-label { color: #C4A870 !important; }
 
 /* Header */
-.header {
-  background: rgba(40,40,38,0.96) !important;
-  border-bottom: 1px solid rgba(196,168,112,0.12) !important;
-}
 
 
 /* Wordmark */
@@ -4562,8 +4558,8 @@ to {
 
 /* ── HEADER ── */
 .header {
-  background: rgba(40,42,48,0.95) !important;
-  border-bottom: 1px solid rgba(200,168,74,0.14) !important;
+  background: rgba(40,42,48,0.95);
+  border-bottom: 1px solid rgba(200,168,74,0.14);
 }
 
 /* ── SECTION HEADERS ── */
