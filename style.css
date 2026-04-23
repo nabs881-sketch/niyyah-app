@@ -4102,7 +4102,7 @@ to {
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
 }
-.wordmark-sub { color: #7A6E5E !important; }
+.wordmark-sub { color: #7A6E5E !important; font-size: 11px !important; letter-spacing: 2px !important; }
 .date-badge { color: #A89878 !important; }
 
 /* Streak card */
@@ -5084,7 +5084,6 @@ to {
 :root { --t3: #9A8E7A; }  /* était #7A6E5E → ratio 3.8:1 maintenant */
 
 /* ── TAILLES MINIMUM — rien sous 10px ── */
-.wordmark-sub    { font-size: 10px !important; }
 .medal-name      { font-size: 10px !important; letter-spacing: 0.5px !important; }
 .medal-cond      { font-size: 10px !important; }
 .d-name          { font-size: 9px  !important; }   /* gardé car espace limité */
@@ -5164,7 +5163,6 @@ to {
 /* ── TAILLES FINALES — éléments manqués ── */
 .night-label { font-size: 11px !important; letter-spacing: 0.2px !important; }
 .d-name      { font-size: 11px !important; letter-spacing: 0.6px !important; }
-.wordmark-sub{ font-size: 11px !important; letter-spacing: 2px !important; }
 .year-month-label { font-size: 11px !important; }
 
 /* ── CORRECTION FINALE nav-label ── */
