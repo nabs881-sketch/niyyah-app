@@ -4281,7 +4281,7 @@ to {
 .no-intro .level-strip-v2,
 .no-intro .quick-actions-v2 {
   animation: none !important;
-  opacity: 1 !important;
+  opacity: 1;
   transform: none !important;
 }
 
@@ -4293,7 +4293,7 @@ to {
 .prayer-time-name { color: #8090A8; font-size: 11px; letter-spacing: 0.3px !important; }
 .prayer-time-hour { color: #E8DCC8; }
 .prayer-time-item.next .prayer-time-name { color: #C4A870; }
-.prayer-time-item.next .prayer-time-hour { color: #D8BC88; font-weight: 700 !important; }
+.prayer-time-item.next .prayer-time-hour { color: #D8BC88; font-weight: 700; }
 
 /* Lock */
 .lock-title { color: #E8DCC8; }
@@ -4429,11 +4429,11 @@ to {
 }
 .prayer-time-item.passed {
   background: rgba(36,38,44,0.60) !important;
-  opacity: 0.55 !important;
+  opacity: 0.55;
 }
 .prayer-time-item.next .prayer-time-name { color: #E0C870; }
-.prayer-time-hour { color: #C8D0E0; font-size: 16px; font-weight: 600 !important; }
-.prayer-time-item.next .prayer-time-hour { color: #F0D880; font-weight: 700 !important; }
+.prayer-time-hour { color: #C8D0E0; font-size: 16px; font-weight: 600; }
+.prayer-time-item.next .prayer-time-hour { color: #F0D880; font-weight: 700; }
 .prayer-times-title { color: #C8A84A; letter-spacing: 2px !important; font-size: 11px; }
 .prayer-times-card {
   background: linear-gradient(145deg,rgba(44,46,52,0.97) 0%,rgba(36,38,44,0.99) 100%) !important;
@@ -4468,8 +4468,8 @@ to {
   box-shadow: 0 6px 24px rgba(0,0,0,0.45), inset 0 1px 0 rgba(200,168,74,0.08);
 }
 .hero-label { color: #C8A84A; letter-spacing: 2.5px !important; font-size: 10px; }
-.hero-title { color: #E8DCC0; font-size: 30px; font-weight: 300 !important; }
-.hero-pct { color: #C8A84A; font-weight: 600 !important; }
+.hero-title { color: #E8DCC0; font-size: 30px; font-weight: 300; }
+.hero-pct { color: #C8A84A; font-weight: 600; }
 .hero-bar-track { background: rgba(200,168,74,0.12) !important; }
 .hero-bar-fill {
   background: linear-gradient(90deg,#E0C870,#C8A84A) !important;
@@ -4518,8 +4518,8 @@ to {
   color: #E8C850;
   border: 1px solid rgba(200,168,74,0.45) !important;
   box-shadow: 0 3px 14px rgba(200,168,74,0.25), inset 0 1px 0 rgba(255,255,255,0.08);
-  text-shadow: 0 1px 3px rgba(0,0,0,0.50) !important;
-  font-weight: 700 !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.50);
+  font-weight: 700;
 }
 .btn-reset {
   background: transparent;
@@ -4641,7 +4641,7 @@ to {
 }
 
 /* ── ITEM LABELS ── */
-.item-label { color: #E8DCC0; font-weight: 400 !important; }
+.item-label { color: #E8DCC0; font-weight: 400; }
 .item.checked .item-label { color: rgba(184,168,128,0.35); }
 .item-arabic { color: #C8A84A; }
 
@@ -4729,8 +4729,8 @@ to {
   color: #4A2E10;
   border: 1px solid rgba(160,120,56,0.35) !important;
   box-shadow: 0 2px 8px rgba(80,50,20,0.20), inset 0 1px 0 rgba(255,255,255,0.35);
-  font-weight: 500 !important;
-  text-shadow: 0 1px 0 rgba(255,255,255,0.20) !important;
+  font-weight: 500;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.20);
 }
 [data-theme="light"] .tab.active {
   background:
@@ -4739,8 +4739,8 @@ to {
   color: #F0D898;
   border: 1px solid rgba(160,120,56,0.65) !important;
   box-shadow: 0 3px 14px rgba(120,78,24,0.35), inset 0 1px 0 rgba(255,255,255,0.15);
-  font-weight: 700 !important;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.40) !important;
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.40);
 }
 [data-theme="light"] .tab.done:not(.active) {
   background:
@@ -4835,8 +4835,8 @@ to {
   color: #E8C850;
   border: 1px solid rgba(200,160,60,0.50) !important;
   box-shadow: 0 3px 14px rgba(80,40,10,0.30), inset 0 1px 0 rgba(255,255,255,0.08);
-  text-shadow: 0 1px 3px rgba(0,0,0,0.50) !important;
-  font-weight: 700 !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.50);
+  font-weight: 700;
 }
 [data-theme="light"] .btn-reset {
   background: linear-gradient(180deg,#D4C0A0,#C0A880) !important;
@@ -4899,7 +4899,7 @@ to {
     linear-gradient(180deg,#9A6830,#7A4E18,#8A5C28) !important;
   color: #F0D898;
   border: 1px solid rgba(160,120,56,0.65) !important;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.40) !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.40);
 }
 [data-theme="light"] .freemium-code-input { background: #E8DABC !important; color: #2A1F0E !important; border-color: rgba(160,120,56,0.22) !important; }
 [data-theme="light"] .freemium-close { color: #9A7848 !important; border-color: rgba(160,120,56,0.20) !important; }
@@ -4930,15 +4930,15 @@ to {
 [data-theme="light"] .hero-title {
   color: #2A1A08;
   font-size: 32px;
-  font-weight: 300 !important;
+  font-weight: 300;
   letter-spacing: -0.5px !important;
 }
 [data-theme="light"] .hero-label {
   color: #9A7B2F;
   font-size: 12px;
-  font-weight: 700 !important;
+  font-weight: 700;
   letter-spacing: 2.5px !important;
-  opacity: 1 !important;
+  opacity: 1;
 }
 /* Prayer cell ACTIF plus chaud */
 [data-theme="light"] .prayer-time-item.next {
@@ -4948,11 +4948,11 @@ to {
 }
 [data-theme="light"] .prayer-time-item.next .prayer-time-name {
   color: #3A2008;
-  font-weight: 800 !important;
+  font-weight: 800;
 }
 [data-theme="light"] .prayer-time-item.next .prayer-time-hour {
   color: #2A1408;
-  font-weight: 800 !important;
+  font-weight: 800;
   font-size: 17px;
 }
 /* Tabs texte plus grand et lisible */
@@ -4967,7 +4967,7 @@ to {
 [data-theme="light"] .section-name {
   color: #5A4020;
   font-size: 14px;
-  font-weight: 700 !important;
+  font-weight: 700;
 }
 /* Horaires card fond plus chaud */
 [data-theme="light"] .prayer-times-card {
@@ -4977,12 +4977,12 @@ to {
 [data-theme="light"] .prayer-time-hour {
   color: #3A2810;
   font-size: 16px;
-  font-weight: 600 !important;
+  font-weight: 600;
 }
 [data-theme="light"] .prayer-time-name {
   color: #7A5830;
   font-size: 12px;
-  font-weight: 700 !important;
+  font-weight: 700;
   letter-spacing: 0.5px !important;
 }
 /* Qibla bar texte plus visible */
@@ -4995,7 +4995,7 @@ to {
 [data-theme="light"] .item-label {
   color: #2A1A08;
   font-size: 16px;
-  font-weight: 500 !important;
+  font-weight: 500;
 }
 /* Btn bismillah texte plus visible */
 [data-theme="light"] .btn-bismillah {
@@ -5026,7 +5026,7 @@ to {
 /* Date sur l'accueil */
 #niyyahAccueilDate {
   color: var(--t2);
-  opacity: 1 !important;
+  opacity: 1;
 }
 /* Cards sur l'accueil */
 #view-accueil .niyyah-card {
@@ -5036,7 +5036,7 @@ to {
 #view-accueil .niyyah-card-label { color: var(--t1); }
 #view-accueil .niyyah-card-sub { color: var(--t3); }
 /* Texte sous "Avec quelle intention" */
-#niyyahTitle { color: var(--gold); opacity: 0.85 !important; }
+#niyyahTitle { color: var(--gold); opacity: 0.85; }
 /* Intention du jour */
 #accueilIntention { background: var(--card) !important; border-color: var(--sep2) !important; }
 
@@ -5059,7 +5059,7 @@ to {
 .night-label     { font-size: 9px ; }
 .weekly-score-sub{ font-size: 11px; }
 .weekly-eyebrow  { font-size: 11px; letter-spacing: 1.5px !important; }
-.info-sheet-label{ font-size: 11px; opacity: 1 !important; }
+.info-sheet-label{ font-size: 11px; opacity: 1; }
 
 /* ── TEXTES SOMBRE : renforcer t3 sur les éléments critiques ── */
 .streak-label    { color: #9A8E7A; }
@@ -5078,12 +5078,12 @@ to {
 .counter-total   { color: #9A8E7A; font-size: 12px; }
 .tasbih-label    { color: #B0A080; font-size: 12px; }
 .tasbih-total    { color: #9A8E7A; font-size: 18px; }
-.friday-item-hadith{ color: #C8A84A; font-size: 14px; opacity: 1 !important; line-height: 1.5 !important; }
+.friday-item-hadith{ color: #C8A84A; font-size: 14px; opacity: 1; line-height: 1.5 !important; }
 .laylatul-sub    { color: #B0A080; font-size: 13px; }
 .resume-sub      { color: #B0A080; font-size: 14px; }
 .resume-level-name{ color: #E8DCC0; font-size: 14px; }
 .weekly-hadith-text{ color: #E8DCC0; font-size: 14px; }
-.weekly-hadith-source{ color: #C8A84A; font-size: 11px; opacity: 1 !important; }
+.weekly-hadith-source{ color: #C8A84A; font-size: 11px; opacity: 1; }
 .onboard-sub { color: #B0A080; font-size: 16px; line-height: 1.6; margin-left: auto; margin-right: auto; }
 .onboard-level-desc{ color: #9A8E7A; font-size: 12px; }
 
