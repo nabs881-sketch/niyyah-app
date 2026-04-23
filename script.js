@@ -2,7 +2,7 @@
 // NIYYAH DAILY — script.js
 // Généré automatiquement — séparation chirurgicale
 // ═══════════════════════════════════════════════════
-const NIYYAH_DEBUG = true;
+const NIYYAH_DEBUG = false;
 function safeSetItem(key, value) { try { localStorage.setItem(key, value); } catch(e) {} }
 
 // ═══════════════════════════════════════════════════
