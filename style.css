@@ -4075,12 +4075,12 @@ to {
 
 .item-label { color: #E8DCC8; }
 .item.checked .item-label { color: rgba(184,168,136,0.35); }
-.item-sub { color: #9A8E7A; font-size: 13px !important; }
+.item-sub { color: #9A8E7A; font-size: 13px; }
 .item-arabic { color: #C4A870; }
 
 /* Nav bar */
 .nav-icon-wrap { color: #6A6058; }
-.nav-label { color: rgba(160,152,128,0.50); font-size: 11px !important; letter-spacing: 0.4px !important; }
+.nav-label { color: rgba(160,152,128,0.50); font-size: 11px; letter-spacing: 0.4px !important; }
 .nav-item.active .nav-icon-wrap { color: #C4A870; }
 .nav-item.active .nav-label { color: #C8A84A; font-weight: 700; font-size: 11px; }
 
@@ -4094,7 +4094,7 @@ to {
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
 }
-.wordmark-sub { color: #7A6E5E; font-size: 11px !important; letter-spacing: 2px !important; }
+.wordmark-sub { color: #7A6E5E; font-size: 11px; letter-spacing: 2px !important; }
 .date-badge { color: #A89878; }
 
 /* Streak card */
@@ -4108,18 +4108,18 @@ to {
 
 /* Stat / Year */
 .stat-num { color: #E8DCC8; }
-.stat-label { color: #9A8E7A; font-size: 11px !important; }
+.stat-label { color: #9A8E7A; font-size: 11px; }
 .year-nav-title { color: #E8DCC8; }
 .section-label { color: #E8DCC8; }
-.d-name { color: #9A8E7A; font-size: 11px !important; letter-spacing: 0.6px !important; }
+.d-name { color: #9A8E7A; font-size: 11px; letter-spacing: 0.6px !important; }
 .d-num { color: #9A8E7A; font-size: 10px; }
 
 /* Wird */
 .wird-label { color: #E8DCC8; }
-.wird-sub { color: #8A7E6E; font-size: 15px !important; }
-.wird-arabic { color: #C4A870; font-size: 18px !important; }
-.friday-item-label { font-size: 16px !important; }
-.friday-item-arabic { font-size: 20px !important; line-height: 1.6 !important; }
+.wird-sub { color: #8A7E6E; font-size: 15px; }
+.wird-arabic { color: #C4A870; font-size: 18px; }
+.friday-item-label { font-size: 16px; }
+.friday-item-arabic { font-size: 20px; line-height: 1.6 !important; }
 .wird-session-title { color: #E8DCC8; }
 
 /* Wird screen — profondeur lumineuse */
@@ -4291,7 +4291,7 @@ to {
 
 /* Prayer times */
 .prayer-times-title { color: #C4A870; }
-.prayer-time-name { color: #8090A8; font-size: 11px !important; letter-spacing: 0.3px !important; }
+.prayer-time-name { color: #8090A8; font-size: 11px; letter-spacing: 0.3px !important; }
 .prayer-time-hour { color: #E8DCC8; }
 .prayer-time-item.next .prayer-time-name { color: #C4A870; }
 .prayer-time-item.next .prayer-time-hour { color: #D8BC88; font-weight: 700 !important; }
@@ -4433,9 +4433,9 @@ to {
   opacity: 0.55 !important;
 }
 .prayer-time-item.next .prayer-time-name { color: #E0C870; }
-.prayer-time-hour { color: #C8D0E0; font-size: 16px !important; font-weight: 600 !important; }
+.prayer-time-hour { color: #C8D0E0; font-size: 16px; font-weight: 600 !important; }
 .prayer-time-item.next .prayer-time-hour { color: #F0D880; font-weight: 700 !important; }
-.prayer-times-title { color: #C8A84A; letter-spacing: 2px !important; font-size: 11px !important; }
+.prayer-times-title { color: #C8A84A; letter-spacing: 2px !important; font-size: 11px; }
 .prayer-times-card {
   background: linear-gradient(145deg,rgba(44,46,52,0.97) 0%,rgba(36,38,44,0.99) 100%) !important;
   border: 1px solid rgba(200,168,74,0.18) !important;
@@ -4468,8 +4468,8 @@ to {
   border: 1px solid rgba(200,168,74,0.16) !important;
   box-shadow: 0 6px 24px rgba(0,0,0,0.45), inset 0 1px 0 rgba(200,168,74,0.08) !important;
 }
-.hero-label { color: #C8A84A; letter-spacing: 2.5px !important; font-size: 10px !important; }
-.hero-title { color: #E8DCC0; font-size: 30px !important; font-weight: 300 !important; }
+.hero-label { color: #C8A84A; letter-spacing: 2.5px !important; font-size: 10px; }
+.hero-title { color: #E8DCC0; font-size: 30px; font-weight: 300 !important; }
 .hero-pct { color: #C8A84A; font-weight: 600 !important; }
 .hero-bar-track { background: rgba(200,168,74,0.12) !important; }
 .hero-bar-fill {
@@ -4930,13 +4930,13 @@ to {
 /* ── CORRECTIONS screenshot ── */
 [data-theme="light"] .hero-title {
   color: #2A1A08;
-  font-size: 32px !important;
+  font-size: 32px;
   font-weight: 300 !important;
   letter-spacing: -0.5px !important;
 }
 [data-theme="light"] .hero-label {
   color: #9A7B2F;
-  font-size: 12px !important;
+  font-size: 12px;
   font-weight: 700 !important;
   letter-spacing: 2.5px !important;
   opacity: 1 !important;
@@ -4954,20 +4954,20 @@ to {
 [data-theme="light"] .prayer-time-item.next .prayer-time-hour {
   color: #2A1408;
   font-weight: 800 !important;
-  font-size: 17px !important;
+  font-size: 17px;
 }
 /* Tabs texte plus grand et lisible */
 [data-theme="light"] .tab {
-  font-size: 14px !important;
+  font-size: 14px;
   padding: 7px 16px !important;
 }
 [data-theme="light"] .tab.active {
-  font-size: 14px !important;
+  font-size: 14px;
 }
 /* Section name lisible */
 [data-theme="light"] .section-name {
   color: #5A4020;
-  font-size: 14px !important;
+  font-size: 14px;
   font-weight: 700 !important;
 }
 /* Horaires card fond plus chaud */
@@ -4977,12 +4977,12 @@ to {
 /* Prayer cells normales plus contrastées */
 [data-theme="light"] .prayer-time-hour {
   color: #3A2810;
-  font-size: 16px !important;
+  font-size: 16px;
   font-weight: 600 !important;
 }
 [data-theme="light"] .prayer-time-name {
   color: #7A5830;
-  font-size: 12px !important;
+  font-size: 12px;
   font-weight: 700 !important;
   letter-spacing: 0.5px !important;
 }
@@ -4995,12 +4995,12 @@ to {
 /* Item label plus fort */
 [data-theme="light"] .item-label {
   color: #2A1A08;
-  font-size: 16px !important;
+  font-size: 16px;
   font-weight: 500 !important;
 }
 /* Btn bismillah texte plus visible */
 [data-theme="light"] .btn-bismillah {
-  font-size: 18px !important;
+  font-size: 18px;
   letter-spacing: 1px !important;
 }
 
@@ -5051,24 +5051,24 @@ to {
 :root { --t3: #9A8E7A; }  /* était #7A6E5E → ratio 3.8:1 maintenant */
 
 /* ── TAILLES MINIMUM — rien sous 10px ── */
-.medal-name      { font-size: 10px !important; letter-spacing: 0.5px !important; }
-.medal-cond      { font-size: 10px !important; }
+.medal-name      { font-size: 10px; letter-spacing: 0.5px !important; }
+.medal-cond      { font-size: 10px; }
 .year-month-label { color: #9A8E7A; font-size: 11px; }
-.yl-item         { font-size: 10px !important; }
-.ramadan-day-label{ font-size: 10px !important; }
-.fast-stat-label { font-size: 10px !important; }
-.night-label     { font-size: 9px  !important; }
-.weekly-score-sub{ font-size: 11px !important; }
-.weekly-eyebrow  { font-size: 11px !important; letter-spacing: 1.5px !important; }
-.info-sheet-label{ font-size: 11px !important; opacity: 1 !important; }
+.yl-item         { font-size: 10px; }
+.ramadan-day-label{ font-size: 10px; }
+.fast-stat-label { font-size: 10px; }
+.night-label     { font-size: 9px ; }
+.weekly-score-sub{ font-size: 11px; }
+.weekly-eyebrow  { font-size: 11px; letter-spacing: 1.5px !important; }
+.info-sheet-label{ font-size: 11px; opacity: 1 !important; }
 
 /* ── TEXTES SOMBRE : renforcer t3 sur les éléments critiques ── */
 .streak-label    { color: #9A8E7A; }
 .wird-sub        { color: #9A8E7A; }
-.weekly-day-label{ color: #9A8E7A; font-size: 10px !important; }
-.weekly-stat-label{ color: #9A8E7A; font-size: 10px !important; }
-.prayer-times-city{ color: #9A8E7A; font-size: 12px !important; }
-.lock-sub        { color: #B0A080; font-size: 14px !important; }
+.weekly-day-label{ color: #9A8E7A; font-size: 10px; }
+.weekly-stat-label{ color: #9A8E7A; font-size: 10px; }
+.prayer-times-city{ color: #9A8E7A; font-size: 12px; }
+.lock-sub        { color: #B0A080; font-size: 14px; }
 .freemium-sub    { color: #B0A080; }
 .lvl-sub         { color: #B0A080; }
 .popup-sub       { color: #B0A080; }
@@ -5076,17 +5076,17 @@ to {
 .btn-back-check  { color: #B0A080; }
 .btn-stay-lvl    { color: #B0A080; }
 .niyyah-card-sub { color: rgba(232,220,200,0.55); }
-.counter-total   { color: #9A8E7A; font-size: 12px !important; }
-.tasbih-label    { color: #B0A080; font-size: 12px !important; }
-.tasbih-total    { color: #9A8E7A; font-size: 18px !important; }
-.friday-item-hadith{ color: #C8A84A; font-size: 14px !important; opacity: 1 !important; line-height: 1.5 !important; }
-.laylatul-sub    { color: #B0A080; font-size: 13px !important; }
-.resume-sub      { color: #B0A080; font-size: 14px !important; }
-.resume-level-name{ color: #E8DCC0; font-size: 14px !important; }
-.weekly-hadith-text{ color: #E8DCC0; font-size: 14px !important; }
-.weekly-hadith-source{ color: #C8A84A; font-size: 11px !important; opacity: 1 !important; }
+.counter-total   { color: #9A8E7A; font-size: 12px; }
+.tasbih-label    { color: #B0A080; font-size: 12px; }
+.tasbih-total    { color: #9A8E7A; font-size: 18px; }
+.friday-item-hadith{ color: #C8A84A; font-size: 14px; opacity: 1 !important; line-height: 1.5 !important; }
+.laylatul-sub    { color: #B0A080; font-size: 13px; }
+.resume-sub      { color: #B0A080; font-size: 14px; }
+.resume-level-name{ color: #E8DCC0; font-size: 14px; }
+.weekly-hadith-text{ color: #E8DCC0; font-size: 14px; }
+.weekly-hadith-source{ color: #C8A84A; font-size: 11px; opacity: 1 !important; }
 .onboard-sub { color: #B0A080; font-size: 16px; line-height: 1.6; margin-left: auto; margin-right: auto; }
-.onboard-level-desc{ color: #9A8E7A; font-size: 12px !important; }
+.onboard-level-desc{ color: #9A8E7A; font-size: 12px; }
 
 /* ── THÈME CLAIR : idem pour t3 ── */
 [data-theme="light"] .item-sub        { color: #5A4828 !important; }
@@ -5117,15 +5117,15 @@ to {
 
 
 /* ── TAILLES FINALES — éléments manqués ── */
-.night-label { font-size: 11px !important; letter-spacing: 0.2px !important; }
+.night-label { font-size: 11px; letter-spacing: 0.2px !important; }
 
 /* ── CORRECTION FINALE nav-label ── */
 
 /* ── DEFI éléments ── */
-.defi-target      { font-size: 12px !important; }
-.defi-badge-earned{ font-size: 12px !important; }
-.notif-example-time{ font-size: 12px !important; }
-.defi-section-title{ font-size: 13px !important; letter-spacing: 1px !important; }
+.defi-target      { font-size: 12px; }
+.defi-badge-earned{ font-size: 12px; }
+.notif-example-time{ font-size: 12px; }
+.defi-section-title{ font-size: 13px; letter-spacing: 1px !important; }
 
 
 /* ═══════════════════════════════════════════════════════
@@ -6660,16 +6660,16 @@ body.pratique-active .topbar-v2 { display: none !important; }
   text-align: center !important;
 }
 #item-savais_tu .item-sub {
-  font-size: 20px !important;
+  font-size: 20px;
   line-height: 1.6 !important;
 }
 /* Sanctuaire — level strip */
 .level-name-v2 {
-  font-size: 15px !important;
+  font-size: 15px;
   letter-spacing: 0.15em !important;
 }
 .level-xp-v2 {
-  font-size: 13px !important;
+  font-size: 13px;
 }
 /* Sanctuaire — Fajr challenge titre */
 #fajr-challenge-card .quick-card-wrap,
