@@ -4090,7 +4090,7 @@ to {
 /* Wordmark */
 .wordmark-main { color: #E8DCC8; }
 .wordmark-main span {
-  background: linear-gradient(135deg,#D8BC88,#C4A870) !important;
+  background: linear-gradient(135deg,#D8BC88,#C4A870);
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
 }
@@ -4104,7 +4104,7 @@ to {
 .streak-footer span { color: #A89878; }
 
 /* Progress bars */
-.header-progress { background: rgba(196,168,112,0.12) !important; }
+.header-progress { background: rgba(196,168,112,0.12); }
 
 /* Stat / Year */
 .stat-num { color: #E8DCC8; }
@@ -4125,7 +4125,7 @@ to {
 /* Wird screen — profondeur lumineuse */
 .wird-wrap {
   min-height: 100vh !important;
-  background: radial-gradient(ellipse at center top, #0a0805 0%, #000 100%) !important;
+  background: radial-gradient(ellipse at center top, #0a0805 0%, #000 100%);
   padding: 32px 16px 140px !important;
   position: relative;
 }
@@ -4378,7 +4378,7 @@ to {
   box-shadow: 0 0 20px rgba(200,168,75,0.3);
 }
 .tab.done:not(.active) {
-  background: transparent !important;
+  background: transparent;
   color: rgba(200,168,75,0.7);
   border: 1px solid rgba(200,168,75,0.3);
 }
@@ -4420,16 +4420,16 @@ to {
 
 /* ── PRAYER TIMES CELLS ── */
 .prayer-time-item {
-  background: rgba(50,58,76,0.65) !important;
+  background: rgba(50,58,76,0.65);
   border-radius: 10px !important;
 }
 .prayer-time-item.next {
-  background: linear-gradient(145deg,#7A5C30,#5A4020) !important;
+  background: linear-gradient(145deg,#7A5C30,#5A4020);
   border-color: rgba(200,168,74,0.55);
   box-shadow: 0 2px 10px rgba(200,168,74,0.22);
 }
 .prayer-time-item.passed {
-  background: rgba(36,38,44,0.60) !important;
+  background: rgba(36,38,44,0.60);
   opacity: 0.55;
 }
 .prayer-time-item.next .prayer-time-name { color: #E0C870; }
@@ -4437,7 +4437,7 @@ to {
 .prayer-time-item.next .prayer-time-hour { color: #F0D880; font-weight: 700; }
 .prayer-times-title { color: #C8A84A; letter-spacing: 2px !important; font-size: 11px; }
 .prayer-times-card {
-  background: linear-gradient(145deg,rgba(44,46,52,0.97) 0%,rgba(36,38,44,0.99) 100%) !important;
+  background: linear-gradient(145deg,rgba(44,46,52,0.97) 0%,rgba(36,38,44,0.99) 100%);
   border: 1px solid rgba(200,168,74,0.18);
   box-shadow: 0 4px 20px rgba(0,0,0,0.40);
 }
@@ -4464,16 +4464,16 @@ to {
 
 /* ── HERO CARD ── */
 .level-hero {
-  background: linear-gradient(145deg,rgba(44,48,54,0.97) 0%,rgba(36,40,46,0.99) 100%) !important;
+  background: linear-gradient(145deg,rgba(44,48,54,0.97) 0%,rgba(36,40,46,0.99) 100%);
   border: 1px solid rgba(200,168,74,0.16);
   box-shadow: 0 6px 24px rgba(0,0,0,0.45), inset 0 1px 0 rgba(200,168,74,0.08);
 }
 .hero-label { color: #C8A84A; letter-spacing: 2.5px !important; font-size: 10px; }
 .hero-title { color: #E8DCC0; font-size: 30px; font-weight: 300; }
 .hero-pct { color: #C8A84A; font-weight: 600; }
-.hero-bar-track { background: rgba(200,168,74,0.12) !important; }
+.hero-bar-track { background: rgba(200,168,74,0.12); }
 .hero-bar-fill {
-  background: linear-gradient(90deg,#E0C870,#C8A84A) !important;
+  background: linear-gradient(90deg,#E0C870,#C8A84A);
   box-shadow: 0 0 8px rgba(200,168,74,0.40);
 }
 
@@ -4621,14 +4621,14 @@ to {
 
 /* ── STREAK / STATS ── */
 .streak-card {
-  background: linear-gradient(145deg,rgba(48,52,58,0.97) 0%,rgba(38,40,46,0.99) 100%) !important;
+  background: linear-gradient(145deg,rgba(48,52,58,0.97) 0%,rgba(38,40,46,0.99) 100%);
   border: 1px solid rgba(200,168,74,0.16);
 }
 .stat-box {
-  background: rgba(44,46,52,0.96) !important;
+  background: rgba(44,46,52,0.96);
   border: 1px solid rgba(200,168,74,0.10);
 }
-.year-card { background: rgba(44,46,52,0.96) !important; }
+.year-card { background: rgba(44,46,52,0.96); }
 /* ── WIRD ── */
 
 /* ── TOASTS / POPUPS ── */
@@ -4638,7 +4638,7 @@ to {
   color: #E8DCC0;
 }
 .freemium-sheet {
-  background: linear-gradient(145deg,#383A42 0%,#2C2E36 100%) !important;
+  background: linear-gradient(145deg,#383A42 0%,#2C2E36 100%);
 }
 
 /* ── ITEM LABELS ── */
@@ -4753,7 +4753,7 @@ to {
 
 /* ── HERO CARD ── */
 [data-theme="light"] .level-hero {
-  background: linear-gradient(145deg,#F6EED8,#EEE4C8) !important;
+  background: linear-gradient(145deg,#F6EED8,#EEE4C8);
   border: 1px solid rgba(200,160,80,0.25);
   box-shadow: 0 4px 20px rgba(80,50,20,0.12), inset 0 1px 0 rgba(255,255,255,0.70);
   backdrop-filter: none !important;
@@ -4769,7 +4769,7 @@ to {
 
 /* ── ITEMS ── */
 [data-theme="light"] .items-group {
-  background: #F5EBD0 !important;
+  background: #F5EBD0;
   border: 1px solid rgba(200,160,80,0.18);
   box-shadow: 0 2px 12px rgba(80,50,20,0.10), inset 0 1px 0 rgba(255,255,255,0.65);
 }
@@ -4785,7 +4785,7 @@ to {
 [data-theme="light"] .section-icon-wrap { background: rgba(160,120,56,0.10) !important; }
 [data-theme="light"] .check-circle { border-color: rgba(160,120,56,0.28) !important; }
 [data-theme="light"] .item.checked .check-circle {
-  background: linear-gradient(135deg,#D4A858,#9A7B2F) !important;
+  background: linear-gradient(135deg,#D4A858,#9A7B2F);
   border-color: #9A7B2F;
   box-shadow: 0 0 0 3px rgba(160,120,56,0.12);
 }
@@ -4793,7 +4793,7 @@ to {
 
 /* ── PRAYER TIMES ── */
 [data-theme="light"] .prayer-times-card {
-  background: linear-gradient(145deg,#F0E6CC,#E8D8B8) !important;
+  background: linear-gradient(145deg,#F0E6CC,#E8D8B8);
   border: 1px solid rgba(200,160,80,0.22);
   box-shadow: 0 2px 12px rgba(80,50,20,0.10), inset 0 1px 0 rgba(255,255,255,0.55);
   backdrop-filter: none !important;
@@ -4802,7 +4802,7 @@ to {
 [data-theme="light"] .prayer-times-city { color: #9A7848 !important; }
 [data-theme="light"] .prayer-time-item { background: rgba(220,190,140,0.40) !important; border-radius: 10px !important; }
 [data-theme="light"] .prayer-time-item.next {
-  background: linear-gradient(145deg,#ECC870,#C89840) !important;
+  background: linear-gradient(145deg,#ECC870,#C89840);
   border-color: rgba(200,160,60,0.60);
   box-shadow: 0 2px 10px rgba(200,160,60,0.25);
 }
@@ -4840,7 +4840,7 @@ to {
   font-weight: 700;
 }
 [data-theme="light"] .btn-reset {
-  background: linear-gradient(180deg,#D4C0A0,#C0A880) !important;
+  background: linear-gradient(180deg,#D4C0A0,#C0A880);
   color: #5A3818;
   border: 1px solid rgba(160,120,56,0.28);
   box-shadow: 0 2px 8px rgba(80,50,20,0.15), inset 0 1px 0 rgba(255,255,255,0.30);
@@ -4855,7 +4855,7 @@ to {
 
 /* ── STREAK / STATS / BADGES ── */
 [data-theme="light"] .streak-card, [data-theme="light"] .stat-box, [data-theme="light"] .year-card {
-  background: #F5EBD0 !important;
+  background: #F5EBD0;
   border: 1px solid rgba(200,160,80,0.18);
   box-shadow: 0 2px 10px rgba(80,50,20,0.09), inset 0 1px 0 rgba(255,255,255,0.60);
   backdrop-filter: none !important;
@@ -4943,7 +4943,7 @@ to {
 }
 /* Prayer cell ACTIF plus chaud */
 [data-theme="light"] .prayer-time-item.next {
-  background: linear-gradient(145deg,#F0C85A,#D4A030) !important;
+  background: linear-gradient(145deg,#F0C85A,#D4A030);
   border: 1.5px solid rgba(180,130,30,0.70);
   box-shadow: 0 3px 14px rgba(180,130,30,0.30);
 }
@@ -4972,7 +4972,7 @@ to {
 }
 /* Horaires card fond plus chaud */
 [data-theme="light"] .prayer-times-card {
-  background: linear-gradient(145deg,#F0E4C4,#E6D8B0) !important;
+  background: linear-gradient(145deg,#F0E4C4,#E6D8B0);
 }
 /* Prayer cells normales plus contrastées */
 [data-theme="light"] .prayer-time-hour {
@@ -5007,11 +5007,11 @@ to {
 
 /* ── ÉCRAN ACCUEIL — fond propre cohérent avec le thème ── */
 #view-accueil {
-  background: var(--bg) !important;
+  background: var(--bg);
   background-image: none !important;
 }
 #view-accueil > div:first-child {
-  background: transparent !important;
+  background: transparent;
 }
 /* Titre Niyyah Daily sur l'accueil */
 #view-accueil .wordmark-main,
@@ -5031,7 +5031,7 @@ to {
 }
 /* Cards sur l'accueil */
 #view-accueil .niyyah-card {
-  background: var(--card) !important;
+  background: var(--card);
   border-color: var(--sep2);
 }
 #view-accueil .niyyah-card-label { color: var(--t1); }
@@ -5039,7 +5039,7 @@ to {
 /* Texte sous "Avec quelle intention" */
 #niyyahTitle { color: var(--gold); opacity: 0.85; }
 /* Intention du jour */
-#accueilIntention { background: var(--card) !important; border-color: var(--sep2); }
+#accueilIntention { background: var(--card); border-color: var(--sep2); }
 
 
 /* ╔══════════════════════════════════════════════════════════════╗
@@ -6026,7 +6026,7 @@ body::before {
 #view-progression .header,
 #view-resume .header,
 #view-ramadan .header {
-  background: rgba(12,12,12,0.97) !important;
+  background: rgba(12,12,12,0.97);
   border-bottom: 1px solid rgba(212,175,55,0.10);
 }
 
@@ -6685,10 +6685,10 @@ body.pratique-active .topbar-v2 { display: none !important; }
   margin-right: auto !important;
 }
 .onboard-dot {
-  background: rgba(200,168,75,0.2) !important;
+  background: rgba(200,168,75,0.2);
 }
 .onboard-dot.active {
-  background: #C8A84A !important;
+  background: #C8A84A;
 }
 .sth-p {
   position: absolute;
