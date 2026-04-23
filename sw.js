@@ -1,4 +1,4 @@
-const VERSION = 'niyyah-v154';
+const VERSION = 'niyyah-v155';
 const CORE = [
   './index.html',
   './manifest.json',
