@@ -4073,51 +4073,51 @@ to {
 
 
 
-.item-label { color: #E8DCC8 !important; }
-.item.checked .item-label { color: rgba(184,168,136,0.35) !important; }
-.item-sub { color: #9A8E7A !important; font-size: 13px !important; }
-.item-arabic { color: #C4A870 !important; }
+.item-label { color: #E8DCC8; }
+.item.checked .item-label { color: rgba(184,168,136,0.35); }
+.item-sub { color: #9A8E7A; font-size: 13px !important; }
+.item-arabic { color: #C4A870; }
 
 /* Nav bar */
-.nav-icon-wrap { color: #6A6058 !important; }
-.nav-label { color: rgba(160,152,128,0.50) !important; font-size: 11px !important; letter-spacing: 0.4px !important; }
-.nav-item.active .nav-icon-wrap { color: #C4A870 !important; }
+.nav-icon-wrap { color: #6A6058; }
+.nav-label { color: rgba(160,152,128,0.50); font-size: 11px !important; letter-spacing: 0.4px !important; }
+.nav-item.active .nav-icon-wrap { color: #C4A870; }
 .nav-item.active .nav-label { color: #C8A84A; font-weight: 700; font-size: 11px; }
 
 /* Header */
 
 
 /* Wordmark */
-.wordmark-main { color: #E8DCC8 !important; }
+.wordmark-main { color: #E8DCC8; }
 .wordmark-main span {
   background: linear-gradient(135deg,#D8BC88,#C4A870) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
 }
-.wordmark-sub { color: #7A6E5E !important; font-size: 11px !important; letter-spacing: 2px !important; }
-.date-badge { color: #A89878 !important; }
+.wordmark-sub { color: #7A6E5E; font-size: 11px !important; letter-spacing: 2px !important; }
+.date-badge { color: #A89878; }
 
 /* Streak card */
-.streak-num { color: #E8DCC8 !important; }
-.streak-unit { color: #A89878 !important; }
-.streak-label { color: #7A6E5E !important; }
-.streak-footer span { color: #A89878 !important; }
+.streak-num { color: #E8DCC8; }
+.streak-unit { color: #A89878; }
+.streak-label { color: #7A6E5E; }
+.streak-footer span { color: #A89878; }
 
 /* Progress bars */
 .header-progress { background: rgba(196,168,112,0.12) !important; }
 
 /* Stat / Year */
-.stat-num { color: #E8DCC8 !important; }
-.stat-label { color: #9A8E7A !important; font-size: 11px !important; }
-.year-nav-title { color: #E8DCC8 !important; }
-.section-label { color: #E8DCC8 !important; }
-.d-name { color: #9A8E7A !important; font-size: 11px !important; letter-spacing: 0.6px !important; }
+.stat-num { color: #E8DCC8; }
+.stat-label { color: #9A8E7A; font-size: 11px !important; }
+.year-nav-title { color: #E8DCC8; }
+.section-label { color: #E8DCC8; }
+.d-name { color: #9A8E7A; font-size: 11px !important; letter-spacing: 0.6px !important; }
 .d-num { color: #9A8E7A; font-size: 10px; }
 
 /* Wird */
-.wird-label { color: #E8DCC8 !important; }
-.wird-sub { color: #8A7E6E !important; font-size: 15px !important; }
-.wird-arabic { color: #C4A870 !important; font-size: 18px !important; }
+.wird-label { color: #E8DCC8; }
+.wird-sub { color: #8A7E6E; font-size: 15px !important; }
+.wird-arabic { color: #C4A870; font-size: 18px !important; }
 .friday-item-label { font-size: 16px !important; }
 .friday-item-arabic { font-size: 20px !important; line-height: 1.6 !important; }
 .wird-session-title { color: #E8DCC8; }
@@ -4290,29 +4290,29 @@ to {
 /* Badges */
 
 /* Prayer times */
-.prayer-times-title { color: #C4A870 !important; }
-.prayer-time-name { color: #8090A8 !important; font-size: 11px !important; letter-spacing: 0.3px !important; }
-.prayer-time-hour { color: #E8DCC8 !important; }
-.prayer-time-item.next .prayer-time-name { color: #C4A870 !important; }
-.prayer-time-item.next .prayer-time-hour { color: #D8BC88 !important; font-weight: 700 !important; }
+.prayer-times-title { color: #C4A870; }
+.prayer-time-name { color: #8090A8; font-size: 11px !important; letter-spacing: 0.3px !important; }
+.prayer-time-hour { color: #E8DCC8; }
+.prayer-time-item.next .prayer-time-name { color: #C4A870; }
+.prayer-time-item.next .prayer-time-hour { color: #D8BC88; font-weight: 700 !important; }
 
 /* Lock */
-.lock-title { color: #E8DCC8 !important; }
-.lock-sub { color: #A89878 !important; }
+.lock-title { color: #E8DCC8; }
+.lock-sub { color: #A89878; }
 
 /* Counter */
-.counter-num { color: #E8DCC8 !important; }
-.counter-total { color: #7A6E5E !important; }
+.counter-num { color: #E8DCC8; }
+.counter-total { color: #7A6E5E; }
 
 /* Popup */
-.lvl-title, .popup-title { color: #E8DCC8 !important; }
-.popup-sub, .lvl-sub { color: #A89878 !important; }
+.lvl-title, .popup-title { color: #E8DCC8; }
+.popup-sub, .lvl-sub { color: #A89878; }
 .lvl-eyebrow { color: var(--gold); opacity: 1; font-size: 11px; }
 
 /* Section prog */
-.prog-title { color: #E8DCC8 !important; }
-.link-label { color: #E8DCC8 !important; }
-.link-sub { color: #8A7E6E !important; }
+.prog-title { color: #E8DCC8; }
+.link-label { color: #E8DCC8; }
+.link-sub { color: #8A7E6E; }
 
 
 /* ── CONTRASTE RENFORCÉ — thème clair ── */
@@ -4379,7 +4379,7 @@ to {
 }
 .tab.done:not(.active) {
   background: transparent !important;
-  color: rgba(200,168,75,0.7) !important;
+  color: rgba(200,168,75,0.7);
   border: 1px solid rgba(200,168,75,0.3) !important;
 }
 
@@ -4432,10 +4432,10 @@ to {
   background: rgba(36,38,44,0.60) !important;
   opacity: 0.55 !important;
 }
-.prayer-time-item.next .prayer-time-name { color: #E0C870 !important; }
-.prayer-time-hour { color: #C8D0E0 !important; font-size: 16px !important; font-weight: 600 !important; }
-.prayer-time-item.next .prayer-time-hour { color: #F0D880 !important; font-weight: 700 !important; }
-.prayer-times-title { color: #C8A84A !important; letter-spacing: 2px !important; font-size: 11px !important; }
+.prayer-time-item.next .prayer-time-name { color: #E0C870; }
+.prayer-time-hour { color: #C8D0E0; font-size: 16px !important; font-weight: 600 !important; }
+.prayer-time-item.next .prayer-time-hour { color: #F0D880; font-weight: 700 !important; }
+.prayer-times-title { color: #C8A84A; letter-spacing: 2px !important; font-size: 11px !important; }
 .prayer-times-card {
   background: linear-gradient(145deg,rgba(44,46,52,0.97) 0%,rgba(36,38,44,0.99) 100%) !important;
   border: 1px solid rgba(200,168,74,0.18) !important;
@@ -4468,9 +4468,9 @@ to {
   border: 1px solid rgba(200,168,74,0.16) !important;
   box-shadow: 0 6px 24px rgba(0,0,0,0.45), inset 0 1px 0 rgba(200,168,74,0.08) !important;
 }
-.hero-label { color: #C8A84A !important; letter-spacing: 2.5px !important; font-size: 10px !important; }
-.hero-title { color: #E8DCC0 !important; font-size: 30px !important; font-weight: 300 !important; }
-.hero-pct { color: #C8A84A !important; font-weight: 600 !important; }
+.hero-label { color: #C8A84A; letter-spacing: 2.5px !important; font-size: 10px !important; }
+.hero-title { color: #E8DCC0; font-size: 30px !important; font-weight: 300 !important; }
+.hero-pct { color: #C8A84A; font-weight: 600 !important; }
 .hero-bar-track { background: rgba(200,168,74,0.12) !important; }
 .hero-bar-fill {
   background: linear-gradient(90deg,#E0C870,#C8A84A) !important;
@@ -4516,7 +4516,7 @@ to {
       rgba(0,0,0,0.07) 2px, rgba(0,0,0,0) 5px,
       rgba(0,0,0,0.08) 9px, rgba(0,0,0,0) 13px),
     linear-gradient(180deg,#7A6038,#5A4420,#6A5230) !important;
-  color: #E8C850 !important;
+  color: #E8C850;
   border: 1px solid rgba(200,168,74,0.45) !important;
   box-shadow: 0 3px 14px rgba(200,168,74,0.25), inset 0 1px 0 rgba(255,255,255,0.08) !important;
   text-shadow: 0 1px 3px rgba(0,0,0,0.50) !important;
@@ -4548,8 +4548,8 @@ to {
   background: rgba(34,33,30,0.99);
   border-top: 1px solid rgba(200,168,74,0.16);
 }
-.nav-icon-wrap { color: rgba(160,152,128,0.50) !important; }
-.nav-item.active .nav-icon-wrap { color: #C8A84A !important; }
+.nav-icon-wrap { color: rgba(160,152,128,0.50); }
+.nav-item.active .nav-icon-wrap { color: #C8A84A; }
 
 /* ── HEADER ── */
 .header {
@@ -4642,9 +4642,9 @@ to {
 }
 
 /* ── ITEM LABELS ── */
-.item-label { color: #E8DCC0 !important; font-weight: 400 !important; }
-.item.checked .item-label { color: rgba(184,168,128,0.35) !important; }
-.item-arabic { color: #C8A84A !important; }
+.item-label { color: #E8DCC0; font-weight: 400 !important; }
+.item.checked .item-label { color: rgba(184,168,128,0.35); }
+.item-arabic { color: #C8A84A; }
 
 /* ── WEEKLY CARD — Luxe Coach ── */
 .weekly-overlay {
@@ -4727,7 +4727,7 @@ to {
   background:
     repeating-linear-gradient(180deg,rgba(255,255,255,0) 0px,rgba(255,255,255,0.15) 1px,rgba(0,0,0,0.04) 2px,rgba(255,255,255,0) 4px,rgba(0,0,0,0.05) 9px,rgba(0,0,0,0) 13px),
     linear-gradient(180deg,#D4B880,#C0A060,#C8A868) !important;
-  color: #4A2E10 !important;
+  color: #4A2E10;
   border: 1px solid rgba(160,120,56,0.35) !important;
   box-shadow: 0 2px 8px rgba(80,50,20,0.20), inset 0 1px 0 rgba(255,255,255,0.35) !important;
   font-weight: 500 !important;
@@ -4737,7 +4737,7 @@ to {
   background:
     repeating-linear-gradient(180deg,rgba(255,255,255,0) 0px,rgba(255,255,255,0.12) 1px,rgba(0,0,0,0.06) 2px,rgba(0,0,0,0) 5px,rgba(0,0,0,0.08) 9px,rgba(0,0,0,0) 13px),
     linear-gradient(180deg,#9A6830,#7A4E18,#8A5C28) !important;
-  color: #F0D898 !important;
+  color: #F0D898;
   border: 1px solid rgba(160,120,56,0.65) !important;
   box-shadow: 0 3px 14px rgba(120,78,24,0.35), inset 0 1px 0 rgba(255,255,255,0.15) !important;
   font-weight: 700 !important;
@@ -4747,7 +4747,7 @@ to {
   background:
     repeating-linear-gradient(180deg,rgba(255,255,255,0) 0px,rgba(255,255,255,0.12) 1px,rgba(0,0,0,0.04) 3px,rgba(0,0,0,0) 8px,rgba(0,0,0,0.05) 11px,rgba(0,0,0,0) 14px),
     linear-gradient(180deg,#B88C50,#9A7238,#A87E44) !important;
-  color: #F0D898 !important;
+  color: #F0D898;
   border: 1px solid rgba(160,120,56,0.45) !important;
 }
 
@@ -4833,7 +4833,7 @@ to {
   background:
     repeating-linear-gradient(180deg,rgba(255,255,255,0) 0px,rgba(255,255,255,0.06) 1px,rgba(0,0,0,0.07) 2px,rgba(0,0,0,0) 5px,rgba(0,0,0,0.08) 9px,rgba(0,0,0,0) 14px),
     linear-gradient(180deg,#7A5228,#5A3818,#6A4822) !important;
-  color: #E8C850 !important;
+  color: #E8C850;
   border: 1px solid rgba(200,160,60,0.50) !important;
   box-shadow: 0 3px 14px rgba(80,40,10,0.30), inset 0 1px 0 rgba(255,255,255,0.08) !important;
   text-shadow: 0 1px 3px rgba(0,0,0,0.50) !important;
@@ -4841,7 +4841,7 @@ to {
 }
 [data-theme="light"] .btn-reset {
   background: linear-gradient(180deg,#D4C0A0,#C0A880) !important;
-  color: #5A3818 !important;
+  color: #5A3818;
   border: 1px solid rgba(160,120,56,0.28) !important;
   box-shadow: 0 2px 8px rgba(80,50,20,0.15), inset 0 1px 0 rgba(255,255,255,0.30) !important;
 }
@@ -4898,7 +4898,7 @@ to {
   background:
     repeating-linear-gradient(180deg,rgba(255,255,255,0) 0px,rgba(255,255,255,0.06) 1px,rgba(0,0,0,0.07) 2px,rgba(0,0,0,0) 5px,rgba(0,0,0,0.08) 9px,rgba(0,0,0,0) 14px),
     linear-gradient(180deg,#9A6830,#7A4E18,#8A5C28) !important;
-  color: #F0D898 !important;
+  color: #F0D898;
   border: 1px solid rgba(160,120,56,0.65) !important;
   text-shadow: 0 1px 2px rgba(0,0,0,0.40) !important;
 }
@@ -4929,13 +4929,13 @@ to {
 
 /* ── CORRECTIONS screenshot ── */
 [data-theme="light"] .hero-title {
-  color: #2A1A08 !important;
+  color: #2A1A08;
   font-size: 32px !important;
   font-weight: 300 !important;
   letter-spacing: -0.5px !important;
 }
 [data-theme="light"] .hero-label {
-  color: #9A7B2F !important;
+  color: #9A7B2F;
   font-size: 12px !important;
   font-weight: 700 !important;
   letter-spacing: 2.5px !important;
@@ -4948,11 +4948,11 @@ to {
   box-shadow: 0 3px 14px rgba(180,130,30,0.30) !important;
 }
 [data-theme="light"] .prayer-time-item.next .prayer-time-name {
-  color: #3A2008 !important;
+  color: #3A2008;
   font-weight: 800 !important;
 }
 [data-theme="light"] .prayer-time-item.next .prayer-time-hour {
-  color: #2A1408 !important;
+  color: #2A1408;
   font-weight: 800 !important;
   font-size: 17px !important;
 }
@@ -4966,7 +4966,7 @@ to {
 }
 /* Section name lisible */
 [data-theme="light"] .section-name {
-  color: #5A4020 !important;
+  color: #5A4020;
   font-size: 14px !important;
   font-weight: 700 !important;
 }
@@ -4976,12 +4976,12 @@ to {
 }
 /* Prayer cells normales plus contrastées */
 [data-theme="light"] .prayer-time-hour {
-  color: #3A2810 !important;
+  color: #3A2810;
   font-size: 16px !important;
   font-weight: 600 !important;
 }
 [data-theme="light"] .prayer-time-name {
-  color: #7A5830 !important;
+  color: #7A5830;
   font-size: 12px !important;
   font-weight: 700 !important;
   letter-spacing: 0.5px !important;
@@ -4994,7 +4994,7 @@ to {
 }
 /* Item label plus fort */
 [data-theme="light"] .item-label {
-  color: #2A1A08 !important;
+  color: #2A1A08;
   font-size: 16px !important;
   font-weight: 500 !important;
 }
@@ -5016,7 +5016,7 @@ to {
 /* Titre Niyyah Daily sur l'accueil */
 #view-accueil .wordmark-main,
 #view-accueil [id*="niyyah"] {
-  color: var(--t1) !important;
+  color: var(--t1);
 }
 /* Niyyah Daily — titre grand */
 #niyyahAccueilTitle {
@@ -5026,7 +5026,7 @@ to {
 }
 /* Date sur l'accueil */
 #niyyahAccueilDate {
-  color: var(--t2) !important;
+  color: var(--t2);
   opacity: 1 !important;
 }
 /* Cards sur l'accueil */
@@ -5034,10 +5034,10 @@ to {
   background: var(--card) !important;
   border-color: var(--sep2) !important;
 }
-#view-accueil .niyyah-card-label { color: var(--t1) !important; }
-#view-accueil .niyyah-card-sub { color: var(--t3) !important; }
+#view-accueil .niyyah-card-label { color: var(--t1); }
+#view-accueil .niyyah-card-sub { color: var(--t3); }
 /* Texte sous "Avec quelle intention" */
-#niyyahTitle { color: var(--gold) !important; opacity: 0.85 !important; }
+#niyyahTitle { color: var(--gold); opacity: 0.85 !important; }
 /* Intention du jour */
 #accueilIntention { background: var(--card) !important; border-color: var(--sep2) !important; }
 
@@ -5063,30 +5063,30 @@ to {
 .info-sheet-label{ font-size: 11px !important; opacity: 1 !important; }
 
 /* ── TEXTES SOMBRE : renforcer t3 sur les éléments critiques ── */
-.streak-label    { color: #9A8E7A !important; }
-.wird-sub        { color: #9A8E7A !important; }
-.weekly-day-label{ color: #9A8E7A !important; font-size: 10px !important; }
-.weekly-stat-label{ color: #9A8E7A !important; font-size: 10px !important; }
-.prayer-times-city{ color: #9A8E7A !important; font-size: 12px !important; }
-.lock-sub        { color: #B0A080 !important; font-size: 14px !important; }
-.freemium-sub    { color: #B0A080 !important; }
-.lvl-sub         { color: #B0A080 !important; }
-.popup-sub       { color: #B0A080 !important; }
-.wird-reset-btn  { color: #9A8E7A !important; }
-.btn-back-check  { color: #B0A080 !important; }
-.btn-stay-lvl    { color: #B0A080 !important; }
-.niyyah-card-sub { color: rgba(232,220,200,0.55) !important; }
-.counter-total   { color: #9A8E7A !important; font-size: 12px !important; }
-.tasbih-label    { color: #B0A080 !important; font-size: 12px !important; }
-.tasbih-total    { color: #9A8E7A !important; font-size: 18px !important; }
-.friday-item-hadith{ color: #C8A84A !important; font-size: 14px !important; opacity: 1 !important; line-height: 1.5 !important; }
-.laylatul-sub    { color: #B0A080 !important; font-size: 13px !important; }
-.resume-sub      { color: #B0A080 !important; font-size: 14px !important; }
-.resume-level-name{ color: #E8DCC0 !important; font-size: 14px !important; }
-.weekly-hadith-text{ color: #E8DCC0 !important; font-size: 14px !important; }
-.weekly-hadith-source{ color: #C8A84A !important; font-size: 11px !important; opacity: 1 !important; }
+.streak-label    { color: #9A8E7A; }
+.wird-sub        { color: #9A8E7A; }
+.weekly-day-label{ color: #9A8E7A; font-size: 10px !important; }
+.weekly-stat-label{ color: #9A8E7A; font-size: 10px !important; }
+.prayer-times-city{ color: #9A8E7A; font-size: 12px !important; }
+.lock-sub        { color: #B0A080; font-size: 14px !important; }
+.freemium-sub    { color: #B0A080; }
+.lvl-sub         { color: #B0A080; }
+.popup-sub       { color: #B0A080; }
+.wird-reset-btn  { color: #9A8E7A; }
+.btn-back-check  { color: #B0A080; }
+.btn-stay-lvl    { color: #B0A080; }
+.niyyah-card-sub { color: rgba(232,220,200,0.55); }
+.counter-total   { color: #9A8E7A; font-size: 12px !important; }
+.tasbih-label    { color: #B0A080; font-size: 12px !important; }
+.tasbih-total    { color: #9A8E7A; font-size: 18px !important; }
+.friday-item-hadith{ color: #C8A84A; font-size: 14px !important; opacity: 1 !important; line-height: 1.5 !important; }
+.laylatul-sub    { color: #B0A080; font-size: 13px !important; }
+.resume-sub      { color: #B0A080; font-size: 14px !important; }
+.resume-level-name{ color: #E8DCC0; font-size: 14px !important; }
+.weekly-hadith-text{ color: #E8DCC0; font-size: 14px !important; }
+.weekly-hadith-source{ color: #C8A84A; font-size: 11px !important; opacity: 1 !important; }
 .onboard-sub { color: #B0A080; font-size: 16px; line-height: 1.6; margin-left: auto; margin-right: auto; }
-.onboard-level-desc{ color: #9A8E7A !important; font-size: 12px !important; }
+.onboard-level-desc{ color: #9A8E7A; font-size: 12px !important; }
 
 /* ── THÈME CLAIR : idem pour t3 ── */
 [data-theme="light"] .item-sub        { color: #5A4828 !important; }
@@ -6744,7 +6744,7 @@ button[style*="#c8a84b"],
 button[style*="#ffd60a"],
 button[style*="gold-v2"] {
   background: #C8A84A !important;
-  color: #2C2E32 !important;
+  color: #2C2E32;
   text-shadow: none !important;
 }
 .timeline-current {
