@@ -4074,7 +4074,7 @@ to {
 
 .item-label { color: #E8DCC8 !important; }
 .item.checked .item-label { color: rgba(184,168,136,0.35) !important; }
-.item-sub { color: #8A7E6E !important; }
+.item-sub { color: #9A8E7A !important; font-size: 13px !important; }
 .item-arabic { color: #C4A870 !important; }
 
 /* Nav bar */
@@ -4364,7 +4364,6 @@ to {
 
 
 /* ── CONTRASTE RENFORCÉ — thème sombre (s assurer que tout est lisible) ── */
-.item-sub { font-size: 15px; }
 .prayer-time-name { font-size: 10px; }
 .stat-label { font-size: 10px; color: var(--t3); }
 .nav-label { font-size: 10px; }
@@ -4674,7 +4673,6 @@ to {
 /* ── ITEM LABELS ── */
 .item-label { color: #E8DCC0 !important; font-weight: 400 !important; }
 .item.checked .item-label { color: rgba(184,168,128,0.35) !important; }
-.item-sub { color: #8A8070 !important; font-size: 15px !important; }
 .item-arabic { color: #C8A84A !important; }
 
 /* ── WEEKLY CARD — Luxe Coach ── */
@@ -5101,7 +5099,6 @@ to {
 .nav-label       { font-size: 10px !important; letter-spacing: 0.4px !important; }
 
 /* ── TEXTES SOMBRE : renforcer t3 sur les éléments critiques ── */
-.item-sub        { color: #9A8E7A !important; font-size: 13px !important; }
 .streak-label    { color: #9A8E7A !important; }
 .year-month-label{ color: #9A8E7A !important; }
 .d-name          { color: #9A8E7A !important; }
