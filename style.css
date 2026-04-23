@@ -4363,13 +4363,13 @@ to {
 
 /* ── TABS NIVEAUX (dark) ── */
 .tab {
-  background: transparent !important;
-  color: rgba(255,255,255,0.5) !important;
-  border: 1px solid rgba(200,168,75,0.2) !important;
-  font-family: 'Cormorant Garamond', serif !important;
-  font-size: 14px !important;
-  font-weight: 500 !important;
-  box-shadow: none !important;
+  background: transparent;
+  color: rgba(255,255,255,0.5);
+  border: 1px solid rgba(200,168,75,0.2);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: none;
 }
 .tab.active {
   background: linear-gradient(135deg, #C8A84A, #A67544) !important;
