@@ -4523,24 +4523,24 @@ to {
   font-weight: 700 !important;
 }
 .btn-reset {
-  background: transparent !important;
-  color: rgba(200,168,75,0.45) !important;
-  border: 1px solid rgba(200,168,75,0.15) !important;
-  box-shadow: none !important;
-  width: 32px !important;
-  height: 32px !important;
-  padding: 0 !important;
-  border-radius: 50% !important;
-  font-size: 16px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  flex-shrink: 0 !important;
+  background: transparent;
+  color: rgba(200,168,75,0.45);
+  border: 1px solid rgba(200,168,75,0.15);
+  box-shadow: none;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border-radius: 50%;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 .btn-reset:hover,
 .btn-reset:active {
-  color: rgba(200,168,75,0.8) !important;
-  border-color: rgba(200,168,75,0.35) !important;
+  color: rgba(200,168,75,0.8);
+  border-color: rgba(200,168,75,0.35);
 }
 
 /* ── NAV BAR ── */
