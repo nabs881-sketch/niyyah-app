@@ -4080,7 +4080,7 @@ to {
 
 /* Nav bar */
 .nav-icon-wrap { color: #6A6058; }
-.nav-label { color: rgba(160,152,128,0.50); font-size: 11px; letter-spacing: 0.4px !important; }
+.nav-label { color: rgba(160,152,128,0.50); font-size: 11px; letter-spacing: 0.4px; }
 .nav-item.active .nav-icon-wrap { color: #C4A870; }
 .nav-item.active .nav-label { color: #C8A84A; font-weight: 700; font-size: 11px; }
 
@@ -4091,10 +4091,10 @@ to {
 .wordmark-main { color: #E8DCC8; }
 .wordmark-main span {
   background: linear-gradient(135deg,#D8BC88,#C4A870);
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-.wordmark-sub { color: #7A6E5E; font-size: 11px; letter-spacing: 2px !important; }
+.wordmark-sub { color: #7A6E5E; font-size: 11px; letter-spacing: 2px; }
 .date-badge { color: #A89878; }
 
 /* Streak card */
@@ -4111,7 +4111,7 @@ to {
 .stat-label { color: #9A8E7A; font-size: 11px; }
 .year-nav-title { color: #E8DCC8; }
 .section-label { color: #E8DCC8; }
-.d-name { color: #9A8E7A; font-size: 11px; letter-spacing: 0.6px !important; }
+.d-name { color: #9A8E7A; font-size: 11px; letter-spacing: 0.6px; }
 .d-num { color: #9A8E7A; font-size: 10px; }
 
 /* Wird */
@@ -4119,12 +4119,12 @@ to {
 .wird-sub { color: #8A7E6E; font-size: 15px; }
 .wird-arabic { color: #C4A870; font-size: 18px; }
 .friday-item-label { font-size: 16px; }
-.friday-item-arabic { font-size: 20px; line-height: 1.6 !important; }
+.friday-item-arabic { font-size: 20px; line-height: 1.6; }
 .wird-session-title { color: #E8DCC8; }
 
 /* Wird screen — profondeur lumineuse */
 .wird-wrap {
-  min-height: 100vh !important;
+  min-height: 100vh;
   background: radial-gradient(ellipse at center top, #0a0805 0%, #000 100%);
   padding: 32px 16px 140px !important;
   position: relative;
@@ -4291,7 +4291,7 @@ to {
 
 /* Prayer times */
 .prayer-times-title { color: #C4A870; }
-.prayer-time-name { color: #8090A8; font-size: 11px; letter-spacing: 0.3px !important; }
+.prayer-time-name { color: #8090A8; font-size: 11px; letter-spacing: 0.3px; }
 .prayer-time-hour { color: #E8DCC8; }
 .prayer-time-item.next .prayer-time-name { color: #C4A870; }
 .prayer-time-item.next .prayer-time-hour { color: #D8BC88; font-weight: 700; }
@@ -4421,7 +4421,7 @@ to {
 /* ── PRAYER TIMES CELLS ── */
 .prayer-time-item {
   background: rgba(50,58,76,0.65);
-  border-radius: 10px !important;
+  border-radius: 10px;
 }
 .prayer-time-item.next {
   background: linear-gradient(145deg,#7A5C30,#5A4020);
@@ -4435,7 +4435,7 @@ to {
 .prayer-time-item.next .prayer-time-name { color: #E0C870; }
 .prayer-time-hour { color: #C8D0E0; font-size: 16px; font-weight: 600; }
 .prayer-time-item.next .prayer-time-hour { color: #F0D880; font-weight: 700; }
-.prayer-times-title { color: #C8A84A; letter-spacing: 2px !important; font-size: 11px; }
+.prayer-times-title { color: #C8A84A; letter-spacing: 2px; font-size: 11px; }
 .prayer-times-card {
   background: linear-gradient(145deg,rgba(44,46,52,0.97) 0%,rgba(36,38,44,0.99) 100%);
   border: 1px solid rgba(200,168,74,0.18);
@@ -4468,7 +4468,7 @@ to {
   border: 1px solid rgba(200,168,74,0.16);
   box-shadow: 0 6px 24px rgba(0,0,0,0.45), inset 0 1px 0 rgba(200,168,74,0.08);
 }
-.hero-label { color: #C8A84A; letter-spacing: 2.5px !important; font-size: 10px; }
+.hero-label { color: #C8A84A; letter-spacing: 2.5px; font-size: 10px; }
 .hero-title { color: #E8DCC0; font-size: 30px; font-weight: 300; }
 .hero-pct { color: #C8A84A; font-weight: 600; }
 .hero-bar-track { background: rgba(200,168,74,0.12); }
@@ -4932,13 +4932,13 @@ to {
   color: #2A1A08;
   font-size: 32px;
   font-weight: 300;
-  letter-spacing: -0.5px !important;
+  letter-spacing: -0.5px;
 }
 [data-theme="light"] .hero-label {
   color: #9A7B2F;
   font-size: 12px;
   font-weight: 700;
-  letter-spacing: 2.5px !important;
+  letter-spacing: 2.5px;
   opacity: 1;
 }
 /* Prayer cell ACTIF plus chaud */
@@ -4984,7 +4984,7 @@ to {
   color: #7A5830;
   font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.5px !important;
+  letter-spacing: 0.5px;
 }
 /* Qibla bar texte plus visible */
 [data-theme="light"] .qibla-title {
@@ -5001,14 +5001,14 @@ to {
 /* Btn bismillah texte plus visible */
 [data-theme="light"] .btn-bismillah {
   font-size: 18px;
-  letter-spacing: 1px !important;
+  letter-spacing: 1px;
 }
 
 
 /* ── ÉCRAN ACCUEIL — fond propre cohérent avec le thème ── */
 #view-accueil {
   background: var(--bg);
-  background-image: none !important;
+  background-image: none;
 }
 #view-accueil > div:first-child {
   background: transparent;
@@ -5051,7 +5051,7 @@ to {
 :root { --t3: #9A8E7A; }  /* était #7A6E5E → ratio 3.8:1 maintenant */
 
 /* ── TAILLES MINIMUM — rien sous 10px ── */
-.medal-name      { font-size: 10px; letter-spacing: 0.5px !important; }
+.medal-name      { font-size: 10px; letter-spacing: 0.5px; }
 .medal-cond      { font-size: 10px; }
 .year-month-label { color: #9A8E7A; font-size: 11px; }
 .yl-item         { font-size: 10px; }
@@ -5059,7 +5059,7 @@ to {
 .fast-stat-label { font-size: 10px; }
 .night-label     { font-size: 9px ; }
 .weekly-score-sub{ font-size: 11px; }
-.weekly-eyebrow  { font-size: 11px; letter-spacing: 1.5px !important; }
+.weekly-eyebrow  { font-size: 11px; letter-spacing: 1.5px; }
 .info-sheet-label{ font-size: 11px; opacity: 1; }
 
 /* ── TEXTES SOMBRE : renforcer t3 sur les éléments critiques ── */
@@ -5079,7 +5079,7 @@ to {
 .counter-total   { color: #9A8E7A; font-size: 12px; }
 .tasbih-label    { color: #B0A080; font-size: 12px; }
 .tasbih-total    { color: #9A8E7A; font-size: 18px; }
-.friday-item-hadith{ color: #C8A84A; font-size: 14px; opacity: 1; line-height: 1.5 !important; }
+.friday-item-hadith{ color: #C8A84A; font-size: 14px; opacity: 1; line-height: 1.5; }
 .laylatul-sub    { color: #B0A080; font-size: 13px; }
 .resume-sub      { color: #B0A080; font-size: 14px; }
 .resume-level-name{ color: #E8DCC0; font-size: 14px; }
@@ -5117,7 +5117,7 @@ to {
 
 
 /* ── TAILLES FINALES — éléments manqués ── */
-.night-label { font-size: 11px; letter-spacing: 0.2px !important; }
+.night-label { font-size: 11px; letter-spacing: 0.2px; }
 
 /* ── CORRECTION FINALE nav-label ── */
 
@@ -5125,7 +5125,7 @@ to {
 .defi-target      { font-size: 12px; }
 .defi-badge-earned{ font-size: 12px; }
 .notif-example-time{ font-size: 12px; }
-.defi-section-title{ font-size: 13px; letter-spacing: 1px !important; }
+.defi-section-title{ font-size: 13px; letter-spacing: 1px; }
 
 
 /* ═══════════════════════════════════════════════════════
@@ -6644,29 +6644,29 @@ body.pratique-active .topbar-v2 { display: none !important; }
 .onboard-screen #onboardContent {
   order: 0;
   width: 100%;
-  text-align: center !important;
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .onboard-anim {
-  text-align: center !important;
+  text-align: center;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .onboard-title {
-  text-align: center !important;
+  text-align: center;
 }
 #item-savais_tu .item-sub {
   font-size: 20px;
-  line-height: 1.6 !important;
+  line-height: 1.6;
 }
 /* Sanctuaire — level strip */
 .level-name-v2 {
   font-size: 15px;
-  letter-spacing: 0.15em !important;
+  letter-spacing: 0.15em;
 }
 .level-xp-v2 {
   font-size: 13px;
@@ -6681,8 +6681,8 @@ body.pratique-active .topbar-v2 { display: none !important; }
   max-width: 300px;
 }
 .city-input-wrap {
-  margin-left: auto !important;
-  margin-right: auto !important;
+  margin-left: auto;
+  margin-right: auto;
 }
 .onboard-dot {
   background: rgba(200,168,75,0.2);
