@@ -4128,7 +4128,7 @@ to {
 .wird-arabic { color: #C4A870 !important; font-size: 18px !important; }
 .friday-item-label { font-size: 16px !important; }
 .friday-item-arabic { font-size: 20px !important; line-height: 1.6 !important; }
-.wird-session-title { color: #E8DCC8 !important; }
+.wird-session-title { color: #E8DCC8; }
 
 /* Wird screen — profondeur lumineuse */
 .wird-wrap {
@@ -4210,9 +4210,9 @@ to {
 }
 
 .wird-session {
-  background: transparent !important;
-  border: none !important;
-  backdrop-filter: none !important;
+  background: transparent;
+  border: none;
+  backdrop-filter: none;
 }
 
 /* ── VIEW TRANSITIONS ── */
@@ -4640,10 +4640,6 @@ to {
 }
 .year-card { background: rgba(44,46,52,0.96) !important; }
 /* ── WIRD ── */
-.wird-session {
-  background: rgba(44,46,52,0.96) !important;
-  border: 1px solid rgba(200,168,74,0.14) !important;
-}
 
 /* ── TOASTS / POPUPS ── */
 .toast {
