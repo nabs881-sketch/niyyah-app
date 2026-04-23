@@ -4425,7 +4425,7 @@ to {
 .prayer-time-item.next {
   background: linear-gradient(145deg,#7A5C30,#5A4020) !important;
   border-color: rgba(200,168,74,0.55) !important;
-  box-shadow: 0 2px 10px rgba(200,168,74,0.22) !important;
+  box-shadow: 0 2px 10px rgba(200,168,74,0.22);
 }
 .prayer-time-item.passed {
   background: rgba(36,38,44,0.60) !important;
@@ -4438,7 +4438,7 @@ to {
 .prayer-times-card {
   background: linear-gradient(145deg,rgba(44,46,52,0.97) 0%,rgba(36,38,44,0.99) 100%) !important;
   border: 1px solid rgba(200,168,74,0.18) !important;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.40) !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.40);
 }
 
 /* ── QIBLA BAR ── */
@@ -4450,7 +4450,7 @@ to {
       rgba(0,0,0,0.07) 9px, rgba(0,0,0,0) 13px),
     linear-gradient(180deg,#4E3C28,#3A2C1C,#463418) !important;
   border: 1px solid rgba(200,168,74,0.45) !important;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.50), inset 0 1px 0 rgba(255,255,255,0.07) !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.50), inset 0 1px 0 rgba(255,255,255,0.07);
 }
 .qibla-card::before { display: none !important; }
 .qibla-card::after { display: none !important; }
@@ -4465,7 +4465,7 @@ to {
 .level-hero {
   background: linear-gradient(145deg,rgba(44,48,54,0.97) 0%,rgba(36,40,46,0.99) 100%) !important;
   border: 1px solid rgba(200,168,74,0.16) !important;
-  box-shadow: 0 6px 24px rgba(0,0,0,0.45), inset 0 1px 0 rgba(200,168,74,0.08) !important;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.45), inset 0 1px 0 rgba(200,168,74,0.08);
 }
 .hero-label { color: #C8A84A; letter-spacing: 2.5px !important; font-size: 10px; }
 .hero-title { color: #E8DCC0; font-size: 30px; font-weight: 300 !important; }
@@ -4473,7 +4473,7 @@ to {
 .hero-bar-track { background: rgba(200,168,74,0.12) !important; }
 .hero-bar-fill {
   background: linear-gradient(90deg,#E0C870,#C8A84A) !important;
-  box-shadow: 0 0 8px rgba(200,168,74,0.40) !important;
+  box-shadow: 0 0 8px rgba(200,168,74,0.40);
 }
 
 /* ── SECTION INFO BLOCK ── */
@@ -4517,7 +4517,7 @@ to {
     linear-gradient(180deg,#7A6038,#5A4420,#6A5230) !important;
   color: #E8C850;
   border: 1px solid rgba(200,168,74,0.45) !important;
-  box-shadow: 0 3px 14px rgba(200,168,74,0.25), inset 0 1px 0 rgba(255,255,255,0.08) !important;
+  box-shadow: 0 3px 14px rgba(200,168,74,0.25), inset 0 1px 0 rgba(255,255,255,0.08);
   text-shadow: 0 1px 3px rgba(0,0,0,0.50) !important;
   font-weight: 700 !important;
 }
@@ -4587,7 +4587,7 @@ to {
 .item.checked .check-circle {
   background: linear-gradient(135deg,#E0C870,#C8A84A) !important;
   border-color: #C8A84A !important;
-  box-shadow: 0 0 0 3px rgba(200,168,74,0.14) !important;
+  box-shadow: 0 0 0 3px rgba(200,168,74,0.14);
 }
 
 /* ── BOUTON NIVEAU SUIVANT ── */
@@ -4728,7 +4728,7 @@ to {
     linear-gradient(180deg,#D4B880,#C0A060,#C8A868) !important;
   color: #4A2E10;
   border: 1px solid rgba(160,120,56,0.35) !important;
-  box-shadow: 0 2px 8px rgba(80,50,20,0.20), inset 0 1px 0 rgba(255,255,255,0.35) !important;
+  box-shadow: 0 2px 8px rgba(80,50,20,0.20), inset 0 1px 0 rgba(255,255,255,0.35);
   font-weight: 500 !important;
   text-shadow: 0 1px 0 rgba(255,255,255,0.20) !important;
 }
@@ -4738,7 +4738,7 @@ to {
     linear-gradient(180deg,#9A6830,#7A4E18,#8A5C28) !important;
   color: #F0D898;
   border: 1px solid rgba(160,120,56,0.65) !important;
-  box-shadow: 0 3px 14px rgba(120,78,24,0.35), inset 0 1px 0 rgba(255,255,255,0.15) !important;
+  box-shadow: 0 3px 14px rgba(120,78,24,0.35), inset 0 1px 0 rgba(255,255,255,0.15);
   font-weight: 700 !important;
   text-shadow: 0 1px 2px rgba(0,0,0,0.40) !important;
 }
@@ -4754,7 +4754,7 @@ to {
 [data-theme="light"] .level-hero {
   background: linear-gradient(145deg,#F6EED8,#EEE4C8) !important;
   border: 1px solid rgba(200,160,80,0.25) !important;
-  box-shadow: 0 4px 20px rgba(80,50,20,0.12), inset 0 1px 0 rgba(255,255,255,0.70) !important;
+  box-shadow: 0 4px 20px rgba(80,50,20,0.12), inset 0 1px 0 rgba(255,255,255,0.70);
   backdrop-filter: none !important;
 }
 [data-theme="light"] .level-hero::before { background: linear-gradient(90deg,transparent,rgba(200,160,80,0.30),transparent) !important; }
@@ -4770,7 +4770,7 @@ to {
 [data-theme="light"] .items-group {
   background: #F5EBD0 !important;
   border: 1px solid rgba(200,160,80,0.18) !important;
-  box-shadow: 0 2px 12px rgba(80,50,20,0.10), inset 0 1px 0 rgba(255,255,255,0.65) !important;
+  box-shadow: 0 2px 12px rgba(80,50,20,0.10), inset 0 1px 0 rgba(255,255,255,0.65);
 }
 [data-theme="light"] .item { background: #FBF5E5 !important; border: 1px solid rgba(154,123,47,0.15) !important; box-shadow: 0 2px 8px rgba(120,90,40,0.12) !important; }
 [data-theme="light"] .item:active { background: #F0E8D4 !important; }
@@ -4786,7 +4786,7 @@ to {
 [data-theme="light"] .item.checked .check-circle {
   background: linear-gradient(135deg,#D4A858,#9A7B2F) !important;
   border-color: #9A7B2F !important;
-  box-shadow: 0 0 0 3px rgba(160,120,56,0.12) !important;
+  box-shadow: 0 0 0 3px rgba(160,120,56,0.12);
 }
 [data-theme="light"] .check-svg path { stroke: #fff !important; }
 
@@ -4794,7 +4794,7 @@ to {
 [data-theme="light"] .prayer-times-card {
   background: linear-gradient(145deg,#F0E6CC,#E8D8B8) !important;
   border: 1px solid rgba(200,160,80,0.22) !important;
-  box-shadow: 0 2px 12px rgba(80,50,20,0.10), inset 0 1px 0 rgba(255,255,255,0.55) !important;
+  box-shadow: 0 2px 12px rgba(80,50,20,0.10), inset 0 1px 0 rgba(255,255,255,0.55);
   backdrop-filter: none !important;
 }
 [data-theme="light"] .prayer-times-title { color: #9A7B2F !important; opacity: 1 !important; }
@@ -4803,7 +4803,7 @@ to {
 [data-theme="light"] .prayer-time-item.next {
   background: linear-gradient(145deg,#ECC870,#C89840) !important;
   border-color: rgba(200,160,60,0.60) !important;
-  box-shadow: 0 2px 10px rgba(200,160,60,0.25) !important;
+  box-shadow: 0 2px 10px rgba(200,160,60,0.25);
 }
 [data-theme="light"] .prayer-time-item.passed { background: rgba(200,175,130,0.30) !important; opacity: 0.55 !important; }
 [data-theme="light"] .prayer-time-name { color: #8A6840 !important; font-size: 12px !important; }
@@ -4818,7 +4818,7 @@ to {
     repeating-linear-gradient(180deg,rgba(255,255,255,0) 0px,rgba(255,255,255,0.04) 1px,rgba(0,0,0,0.08) 2px,rgba(0,0,0,0) 5px,rgba(0,0,0,0.09) 9px,rgba(0,0,0,0) 14px),
     linear-gradient(180deg,#4A3018,#341E0A,#3E2810) !important;
   border: 1px solid rgba(200,160,60,0.50) !important;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.30), inset 0 1px 0 rgba(255,255,255,0.06) !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.30), inset 0 1px 0 rgba(255,255,255,0.06);
 }
 [data-theme="light"] .qibla-card::before { display: none !important; }
 [data-theme="light"] .qibla-card::after { display: none !important; }
@@ -4834,7 +4834,7 @@ to {
     linear-gradient(180deg,#7A5228,#5A3818,#6A4822) !important;
   color: #E8C850;
   border: 1px solid rgba(200,160,60,0.50) !important;
-  box-shadow: 0 3px 14px rgba(80,40,10,0.30), inset 0 1px 0 rgba(255,255,255,0.08) !important;
+  box-shadow: 0 3px 14px rgba(80,40,10,0.30), inset 0 1px 0 rgba(255,255,255,0.08);
   text-shadow: 0 1px 3px rgba(0,0,0,0.50) !important;
   font-weight: 700 !important;
 }
@@ -4842,7 +4842,7 @@ to {
   background: linear-gradient(180deg,#D4C0A0,#C0A880) !important;
   color: #5A3818;
   border: 1px solid rgba(160,120,56,0.28) !important;
-  box-shadow: 0 2px 8px rgba(80,50,20,0.15), inset 0 1px 0 rgba(255,255,255,0.30) !important;
+  box-shadow: 0 2px 8px rgba(80,50,20,0.15), inset 0 1px 0 rgba(255,255,255,0.30);
 }
 
 /* ── NAV BAR ── */
@@ -4856,7 +4856,7 @@ to {
 [data-theme="light"] .streak-card, [data-theme="light"] .stat-box, [data-theme="light"] .year-card {
   background: #F5EBD0 !important;
   border: 1px solid rgba(200,160,80,0.18) !important;
-  box-shadow: 0 2px 10px rgba(80,50,20,0.09), inset 0 1px 0 rgba(255,255,255,0.60) !important;
+  box-shadow: 0 2px 10px rgba(80,50,20,0.09), inset 0 1px 0 rgba(255,255,255,0.60);
   backdrop-filter: none !important;
 }
 [data-theme="light"] .streak-num, [data-theme="light"] .stat-num, [data-theme="light"] .section-label, [data-theme="light"] .year-nav-title { color: #2A1F0E !important; }
@@ -4944,7 +4944,7 @@ to {
 [data-theme="light"] .prayer-time-item.next {
   background: linear-gradient(145deg,#F0C85A,#D4A030) !important;
   border: 1.5px solid rgba(180,130,30,0.70) !important;
-  box-shadow: 0 3px 14px rgba(180,130,30,0.30) !important;
+  box-shadow: 0 3px 14px rgba(180,130,30,0.30);
 }
 [data-theme="light"] .prayer-time-item.next .prayer-time-name {
   color: #3A2008;
@@ -5855,7 +5855,7 @@ body::before {
 }
 .orb-intention-glow-fadeout {
   animation: none !important;
-  box-shadow: none !important;
+  box-shadow: none;
   transition: box-shadow 0.6s ease, opacity 0.6s ease;
 }
 .orb-intention-glow-fadeout::after {
@@ -5884,7 +5884,7 @@ body::before {
 }
 .intention-glow-fadeout {
   animation: none !important;
-  box-shadow: none !important;
+  box-shadow: none;
   transition: box-shadow 0.5s ease;
 }
 .intention-rotate-ring {
