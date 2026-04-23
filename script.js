@@ -6585,52 +6585,30 @@ function v2GoSanctuaire() {
 function v2GoTo(viewName) {
   document.body.classList.remove('pratique-active');
   if (viewName === 'checklist') document.body.classList.add('pratique-active');
-  // Hide sanctuaire, keep topbar-v2 visible as back-bar
-  const sanctEl2 = document.getElementById('view-sanctuaire');
-  if (sanctEl2) sanctEl2.classList.remove('active');
-  // Fermer les overlays qui pourraient couvrir la vue
+  // Fermer les overlays
   if (typeof closeDefiSelector === 'function') closeDefiSelector();
-  const _defOv = document.getElementById('defiSelectorOverlay');
+  var _defOv = document.getElementById('defiSelectorOverlay');
   if (_defOv) { _defOv.style.opacity = '0'; _defOv.style.pointerEvents = 'none'; }
-  // Keep topbar visible with back-arrow mode
-  const tbEl2 = document.getElementById('topbar-v2');
-  if (tbEl2) {
-    tbEl2.classList.add('active');
-    tbEl2.setAttribute('data-mode', 'back');
-  }
-
-  // Show V1 view via original switchView function
-  // First unhide the target view so switchView can activate it
-  const targetPre = document.getElementById('view-' + viewName);
-  if (targetPre) targetPre.style.display = '';
-  if (typeof switchView === 'function') {
-    switchView(viewName);
-  }
-  // Extra safety: force renderWird if navigating to wird
-  if (viewName === 'wird') {
-    setTimeout(() => { if (typeof renderWird === 'function') renderWird(); }, 80);
-  } else {
-    // Fallback: show/hide manually
-    document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
-    const target = document.getElementById('view-' + viewName);
-    if (target) {
-      target.classList.add('active');
-      // Trigger V1 renders
-      if (viewName === 'wird' && typeof renderWird === 'function') renderWird();
-      if (viewName === 'checklist' && typeof renderLevel === 'function') renderLevel(typeof currentLevel !== 'undefined' ? currentLevel : 1);
-      if (viewName === 'progression' && typeof renderProgression === 'function') renderProgression();
-    }
-  }
-
-  // Update V2 nav
-  document.querySelectorAll('.nav-v2-item').forEach(n => n.classList.remove('active-nav'));
-  const navBtn = document.getElementById('v2nav-' + viewName);
+  // Topbar back mode
+  var tbEl2 = document.getElementById('topbar-v2');
+  if (tbEl2) { tbEl2.classList.add('active'); tbEl2.setAttribute('data-mode', 'back'); }
+  // Nav
+  document.querySelectorAll('.nav-v2-item').forEach(function(n) { n.classList.remove('active-nav'); });
+  var navBtn = document.getElementById('v2nav-' + viewName);
   if (navBtn) navBtn.classList.add('active-nav');
-  // Show back button
-  const backBtn = document.getElementById('v2-back-btn');
+  var backBtn = document.getElementById('v2-back-btn');
   if (backBtn) backBtn.classList.add('visible');
-
   v2CurrentView = viewName;
+  // Hide sanctuaire
+  var sanctEl2 = document.getElementById('view-sanctuaire');
+  if (sanctEl2) sanctEl2.classList.add('no-intro');
+  // Transition to target
+  _v2TransitionTo('view-' + viewName, { onShow: function() {
+    if (sanctEl2) sanctEl2.classList.remove('active');
+    if (viewName === 'wird' && typeof renderWird === 'function') setTimeout(renderWird, 60);
+    if (viewName === 'checklist' && typeof renderLevel === 'function') renderLevel(typeof currentLevel !== 'undefined' ? currentLevel : 1);
+    if (viewName === 'progression' && typeof renderProgression === 'function') renderProgression();
+  }});
 }
 
 /* Override V1 switchView to also update V2 nav */
@@ -6653,19 +6631,13 @@ function v2GoTo(viewName) {
 
     v2CurrentView = view;
 
-    if (_origSwitch) _origSwitch(view);
-    else {
-      document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
-      const t = document.getElementById('view-' + view);
-      if (t) {
-        t.classList.add('active');
-        if (view === 'wird' && typeof renderWird === 'function') setTimeout(renderWird, 50);
-        if (view === 'checklist' && typeof renderLevel === 'function') setTimeout(() => renderLevel(typeof currentLevel !== 'undefined' ? currentLevel : 1), 50);
-        if (view === 'progression' && typeof renderProgression === 'function') setTimeout(renderProgression, 50);
-        if (view === 'ramadan' && typeof renderRamadan === 'function') setTimeout(renderRamadan, 50);
-        if (view === 'resume' && typeof renderResume === 'function') setTimeout(renderResume, 50);
-      }
-    }
+    _v2TransitionTo('view-' + view, { onShow: function() {
+      if (view === 'wird' && typeof renderWird === 'function') setTimeout(renderWird, 50);
+      if (view === 'checklist' && typeof renderLevel === 'function') setTimeout(function() { renderLevel(typeof currentLevel !== 'undefined' ? currentLevel : 1); }, 50);
+      if (view === 'progression' && typeof renderProgression === 'function') setTimeout(renderProgression, 50);
+      if (view === 'ramadan' && typeof renderRamadan === 'function') setTimeout(renderRamadan, 50);
+      if (view === 'resume' && typeof renderResume === 'function') setTimeout(renderResume, 50);
+    }});
   };
 
 
