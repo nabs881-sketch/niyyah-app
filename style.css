@@ -4082,7 +4082,7 @@ to {
 .nav-icon-wrap { color: #6A6058 !important; }
 .nav-label { color: rgba(160,152,128,0.50) !important; font-size: 11px !important; letter-spacing: 0.4px !important; }
 .nav-item.active .nav-icon-wrap { color: #C4A870 !important; }
-.nav-item.active .nav-label { color: #C4A870 !important; }
+.nav-item.active .nav-label { color: #C8A84A; font-weight: 700; font-size: 11px; }
 
 /* Header */
 
@@ -4550,7 +4550,6 @@ to {
 }
 .nav-icon-wrap { color: rgba(160,152,128,0.50) !important; }
 .nav-item.active .nav-icon-wrap { color: #C8A84A !important; }
-.nav-item.active .nav-label { color: #C8A84A !important; font-weight: 700 !important; }
 
 /* ── HEADER ── */
 .header {
@@ -4852,7 +4851,7 @@ to {
 [data-theme="light"] .nav-icon-wrap { color: rgba(200,175,130,0.50) !important; }
 [data-theme="light"] .nav-label { color: rgba(200,175,130,0.50) !important; font-size: 13px !important; }
 [data-theme="light"] .nav-item.active .nav-icon-wrap { color: #D4A848 !important; }
-[data-theme="light"] .nav-item.active .nav-label { color: #D4A848 !important; font-weight: 700 !important; }
+[data-theme="light"] .nav-item.active .nav-label { color: #D4A848; font-weight: 700; }
 
 /* ── STREAK / STATS / BADGES ── */
 [data-theme="light"] .streak-card, [data-theme="light"] .stat-box, [data-theme="light"] .year-card {
@@ -5121,7 +5120,6 @@ to {
 .night-label { font-size: 11px !important; letter-spacing: 0.2px !important; }
 
 /* ── CORRECTION FINALE nav-label ── */
-.nav-item.active .nav-label { font-size: 11px !important; }
 
 /* ── DEFI éléments ── */
 .defi-target      { font-size: 12px !important; }
