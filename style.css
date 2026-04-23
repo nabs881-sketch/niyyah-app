@@ -5019,9 +5019,9 @@ to {
 }
 /* Niyyah Daily — titre grand */
 #niyyahAccueilTitle {
-  font-family: var(--serif) !important;
-  color: var(--t1) !important;
-  text-shadow: none !important;
+  font-family: var(--serif);
+  color: var(--t1);
+  text-shadow: none;
 }
 /* Date sur l'accueil */
 #niyyahAccueilDate {
