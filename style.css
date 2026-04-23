@@ -4071,33 +4071,6 @@ to {
    ║  Fond: #3C3B38 · Texte: #E8DCC8 · Accent: #C4A870          ║
    ╚══════════════════════════════════════════════════════════════╝ */
 
-/* Tabs bois sombre */
-.tab {
-  background:
-    repeating-linear-gradient(180deg,rgba(255,255,255,0) 0px,rgba(255,255,255,0.05) 1px,rgba(0,0,0,0.06) 2px,rgba(255,255,255,0) 4px,rgba(0,0,0,0.07) 8px,rgba(0,0,0,0) 12px),
-    linear-gradient(180deg,#5A5248,#484038,#524840) !important;
-  color: #E8DCC8 !important;
-  border: 1px solid rgba(196,168,112,0.18) !important;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.30), inset 0 1px 0 rgba(255,255,255,0.07) !important;
-  font-weight: 500 !important;
-}
-.tab.active {
-  background:
-    repeating-linear-gradient(180deg,rgba(255,255,255,0) 0px,rgba(255,255,255,0.06) 1px,rgba(0,0,0,0.08) 2px,rgba(0,0,0,0) 5px,rgba(0,0,0,0.09) 9px,rgba(0,0,0,0) 13px),
-    linear-gradient(180deg,#C4A870,#A88848,#B89860) !important;
-  color: #1A1510 !important;
-  border: 1px solid rgba(196,168,112,0.50) !important;
-  box-shadow: 0 2px 12px rgba(196,168,112,0.28), inset 0 1px 0 rgba(255,255,255,0.12) !important;
-  font-weight: 700 !important;
-  text-shadow: 0 1px 1px rgba(0,0,0,0.20) !important;
-}
-.tab.done:not(.active) {
-  background:
-    repeating-linear-gradient(180deg,rgba(255,255,255,0) 0px,rgba(255,255,255,0.04) 1px,rgba(0,0,0,0.05) 3px,rgba(0,0,0,0) 8px,rgba(0,0,0,0.06) 11px,rgba(0,0,0,0) 14px),
-    linear-gradient(180deg,#7A6850,#68583C,#726248) !important;
-  color: #E8DCC8 !important;
-  border: 1px solid rgba(196,168,112,0.28) !important;
-}
 
 
 /* Items — fond cohérent avec le mockup */
