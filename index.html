@@ -35,7 +35,7 @@
 <meta name="keywords" content="islam, prière, wird, dhikr, qibla, application islamique, pratique musulmane">
 <link rel="manifest" href="manifest.json">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.min.css">
 
   <!-- Capacitor -->
   <meta name="mobile-web-app-capable" content="yes">
@@ -168,7 +168,7 @@
 
   <!-- L'Orbe -->
   <div class="orb-wrap-v2" id="orb-wrap-v2">
-    <img src="mandala.svg" class="mandala-bg" aria-hidden="true">
+    <img src="mandala.svg" class="mandala-bg" aria-hidden="true" loading="lazy">
     <div class="orb-ring-v2"></div>
     <div class="orb-ring-v2"></div>
     <div class="orb-ring-v2"></div>
@@ -196,19 +196,19 @@
   <div class="quick-actions-v2">
 
     <div class="quick-card-wrap"><button class="quick-btn-v2" onclick="v2GoTo('checklist')" aria-label="Pratique">
-      <img class="card-img-premium" src="assets/cards/card-prieres.jpg" alt="Pratique"/>
+      <img class="card-img-premium" loading="lazy" src="assets/cards/card-prieres.jpg" alt="Pratique"/>
     </button></div>
 
     <div class="quick-card-wrap"><button class="quick-btn-v2" onclick="v2GoTo('wird')" aria-label="Wird">
-      <img class="card-img-premium" src="assets/cards/card-invocations.jpg" alt="Wird"/>
+      <img class="card-img-premium" loading="lazy" src="assets/cards/card-invocations.jpg" alt="Wird"/>
     </button></div>
 
     <div class="quick-card-wrap"><button class="quick-btn-v2" onclick="v2GoTo('progression')" aria-label="Parcours">
-      <img class="card-img-premium" src="assets/cards/card-progression.jpg" alt="Parcours"/>
+      <img class="card-img-premium" loading="lazy" src="assets/cards/card-progression.jpg" alt="Parcours"/>
     </button></div>
 
     <div class="quick-card-wrap"><button class="quick-btn-v2" onclick="if(typeof openMeditation==='function')openMeditation()" aria-label="Tafakkur">
-      <img class="card-img-premium" src="assets/cards/card-meditation.jpg" alt="Tafakkur"/>
+      <img class="card-img-premium" loading="lazy" src="assets/cards/card-meditation.jpg" alt="Tafakkur"/>
     </button></div>
 
   </div>
