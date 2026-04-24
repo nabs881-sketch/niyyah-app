@@ -7203,7 +7203,7 @@ button[style*="gold-v2"] {
 .moment-icon-isha    { background-image: url('assets/moments/isha.jpg'); }
 
 .moment-bandeau-nuit {
-  background-image: linear-gradient(180deg, rgba(10,8,5,0.3) 0%, rgba(10,8,5,0.55) 50%, rgba(10,8,5,0.8) 100%), url('bandeau-nuit.jpg');
+  background-image: linear-gradient(180deg, rgba(10,8,5,0.3) 0%, rgba(10,8,5,0.55) 50%, rgba(10,8,5,0.8) 100%), url('bandeau-nuit.webp');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;

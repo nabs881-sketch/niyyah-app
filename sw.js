@@ -1,13 +1,13 @@
-const VERSION = 'niyyah-v221';
+const VERSION = 'niyyah-v222';
 const CORE = [
   './index.html',
   './manifest.json',
   './icon-192.png',
   './icon-512.png',
-  './logo2.png',
+  './logo2.webp',
   './jannat-al-qalb.mp3',
   './rahatal-qulub.mp3',
-  './ferme-ta-journee.jpg',
+  './ferme-ta-journee.webp',
   './assets/moments/fajr.jpg',
   './assets/moments/dhuhr.jpg',
   './assets/moments/asr.jpg',
