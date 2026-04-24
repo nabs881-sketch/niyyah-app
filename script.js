@@ -2044,11 +2044,12 @@ function selectLevel(id) {
   }
   currentLevel = id;
   saveState();
-  if (typeof v2GoTo === 'function') v2GoTo('checklist');
+  var checkView = document.getElementById('view-checklist');
+  var alreadyOnChecklist = checkView && checkView.classList.contains('active');
+  if (!alreadyOnChecklist && typeof v2GoTo === 'function') v2GoTo('checklist');
   renderTabs();
   renderLevel(id);
-  var activeView = document.querySelector('.view.active');
-  if (activeView) activeView.scrollTop = 0;
+  if (alreadyOnChecklist && checkView) checkView.scrollTop = 0;
 }
 function getMoonSVG(percent) {
   var p = Math.max(0, Math.min(100, percent));
