@@ -91,7 +91,7 @@ pointer-events:none;
   margin-left:2px
 }
 .wordmark-sub {
-  font-size:11px;
+  font-size:12px;
   font-weight:500;
   color:var(--t3);
   letter-spacing:2px;
@@ -1180,7 +1180,7 @@ to {
   transform:translateY(-1px) scale(1.1)
 }
 .nav-label {
-  font-size:11px;
+  font-size:12px;
   font-weight:600;
   color:var(--t3);
   letter-spacing:0.4px;
@@ -1522,7 +1522,7 @@ to {
   margin-bottom:4px
 }
 .medal-name {
-  font-size:11px;
+  font-size:12px;
   letter-spacing:0.8px;
   text-transform:uppercase;
   color:var(--t3);
@@ -1538,7 +1538,7 @@ to {
   color:var(--gold)
 }
 .medal-cond {
-  font-size:11px;
+  font-size:12px;
   color:var(--t3);
   margin-top:2px;
   line-height:1.35
@@ -1625,7 +1625,7 @@ to {
   border-width:1.5px
 }
 .d-name {
-  font-size:11px;
+  font-size:12px;
   font-weight:700;
   letter-spacing:0.8px;
   text-transform:uppercase;
@@ -1648,7 +1648,7 @@ to {
   line-height:1
 }
 .d-num {
-  font-size:11px;
+  font-size:12px;
   color:var(--t3);
   font-weight:500
 }
@@ -1699,7 +1699,7 @@ to {
   align-items:flex-start
 }
 .year-month-label {
-  font-size:11px;
+  font-size:12px;
   font-weight:600;
   text-transform:uppercase;
   color:var(--t3);
@@ -1751,7 +1751,7 @@ to {
   display:flex;
   align-items:center;
   gap:5px;
-  font-size:11px;
+  font-size:12px;
   color:var(--t3);
   font-weight:500
 }
@@ -1982,7 +1982,7 @@ to {
   letter-spacing:-1px
 }
 .ramadan-day-label {
-  font-size:11px;
+  font-size:12px;
   text-transform:uppercase;
   letter-spacing:1px;
   color:var(--t3);
@@ -2017,7 +2017,7 @@ to {
   color:var(--moon)
 }
 .fast-stat-label {
-  font-size:11px;
+  font-size:12px;
   text-transform:uppercase;
   letter-spacing:0.8px;
   color:var(--t3);
@@ -2098,7 +2098,7 @@ to {
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:11px;
+  font-size:12px;
   font-weight:600;
   color:var(--t3);
   cursor:pointer;
@@ -2112,7 +2112,7 @@ to {
   color:var(--t2)
 }
 .laylatul-night .night-label {
-  font-size:11px;
+  font-size:12px;
   color:var(--t3);
   letter-spacing:0.3px
 }
@@ -2319,7 +2319,7 @@ to {
   justify-content:center
 }
 .tasbih-tap-hint {
-  font-size:11px;
+  font-size:12px;
   color:var(--t3);
   letter-spacing:2px;
   text-transform:uppercase;
@@ -2648,7 +2648,7 @@ to {
   background:var(--gold-grad)
 }
 .weekly-day-label {
-  font-size:11px;
+  font-size:12px;
   color:var(--t3);
   letter-spacing:0.3px;
   text-transform:uppercase
@@ -3593,7 +3593,7 @@ to {
   height:100vh;
   overflow-y:auto;
 }
-.defi-section-title{font-family:var(--calli);font-size:11px;font-style:italic;color:rgba(200,168,75,0.65);letter-spacing:2.5px;text-transform:uppercase;text-align:center;margin-bottom:8px;}
+.defi-section-title{font-family:var(--calli);font-size:12px;font-style:italic;color:rgba(200,168,75,0.65);letter-spacing:2.5px;text-transform:uppercase;text-align:center;margin-bottom:8px;}
 .defi-card{position:relative;border-radius:16px;padding:13px 14px;margin-bottom:7px;overflow:hidden;transition:transform 0.2s cubic-bezier(0.34,1.56,0.64,1);}
 .defi-card:active{transform:scale(0.97);}
 .defi-card.defi-fajr{background:linear-gradient(135deg,rgba(255,214,10,0.08),rgba(255,140,0,0.05));border:1px solid rgba(255,214,10,0.2);}
@@ -3613,12 +3613,12 @@ to {
 .defi-done .defi-icon{background:rgba(200,168,75,0.15);}
 .defi-info{flex:1;}
 .defi-name{font-family:var(--serif);font-size:15px;color:var(--t1);margin-bottom:1px;}
-.defi-target{font-size:10px;letter-spacing:0.3px;}
+.defi-target{font-size:12px;letter-spacing:0.3px;}
 .defi-fajr .defi-target{color:rgba(255,214,10,0.7);}
 .defi-wird .defi-target{color:rgba(52,217,98,0.7);}
 .defi-nuit .defi-target{color:rgba(100,120,255,0.7);}
 .defi-done .defi-target{color:rgba(200,168,75,0.8);}
-.defi-badge-earned{font-size:10px;font-weight:700;padding:3px 8px;border-radius:20px;background:rgba(200,168,75,0.15);border:1px solid rgba(200,168,75,0.3);color:#c8a84b;}
+.defi-badge-earned{font-size:12px;font-weight:700;padding:3px 8px;border-radius:20px;background:rgba(200,168,75,0.15);border:1px solid rgba(200,168,75,0.3);color:#c8a84b;}
 .defi-progress-row{display:flex;align-items:center;gap:8px;}
 .defi-dots{display:flex;gap:4px;flex:1;}
 .defi-dot{flex:1;height:4px;border-radius:2px;transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1);}
@@ -3648,7 +3648,7 @@ to {
 .notif-example{display:flex;align-items:flex-start;gap:12px;background:rgba(200,168,75,0.06);border:0.5px solid rgba(200,168,75,0.15);border-radius:14px;padding:12px 14px;text-align:left;}
 .notif-example-icon{font-size:20px;flex-shrink:0;margin-top:1px;}
 .notif-example-text{font-size:12px;color:rgba(255,255,255,0.75);line-height:1.5;}
-.notif-example-time{font-size:10px;color:rgba(200,168,75,0.7);font-weight:600;letter-spacing:0.5px;margin-top:3px;}
+.notif-example-time{font-size:12px;color:rgba(200,168,75,0.7);font-weight:600;letter-spacing:0.5px;margin-top:3px;}
 .notif-btn-yes{width:100%;max-width:300px;padding:15px;border-radius:14px;border:none;background:var(--gold-grad);color:#1a0f00;font-size:16px;font-weight:700;cursor:pointer;font-family:var(--serif);box-shadow:0 4px 20px rgba(200,168,75,0.40);margin-bottom:12px;transition:all 0.15s;}
 .notif-btn-yes:active{opacity:0.85;transform:scale(0.98);}
 .notif-btn-later{font-size:12px;color:rgba(255,255,255,0.35);background:none;border:none;cursor:pointer;font-family:var(--sans);padding:8px;}
@@ -4079,9 +4079,9 @@ to {
 
 /* Nav bar */
 .nav-icon-wrap { color: #6A6058; }
-.nav-label { color: rgba(160,152,128,0.50); font-size: 11px; letter-spacing: 0.4px; }
+.nav-label { color: rgba(160,152,128,0.50); font-size:12px; letter-spacing: 0.4px; }
 .nav-item.active .nav-icon-wrap { color: #C4A870; }
-.nav-item.active .nav-label { color: #C8A84A; font-weight: 700; font-size: 11px; }
+.nav-item.active .nav-label { color: #C8A84A; font-weight: 700; font-size:12px; }
 
 /* Header */
 
@@ -4093,7 +4093,7 @@ to {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.wordmark-sub { color: #7A6E5E; font-size: 11px; letter-spacing: 2px; }
+.wordmark-sub { color: #7A6E5E; font-size:12px; letter-spacing: 2px; }
 .date-badge { color: #A89878; }
 
 /* Streak card */
@@ -4107,11 +4107,11 @@ to {
 
 /* Stat / Year */
 .stat-num { color: #E8DCC8; }
-.stat-label { color: #9A8E7A; font-size: 11px; }
+.stat-label { color: #9A8E7A; font-size:12px; }
 .year-nav-title { color: #E8DCC8; }
 .section-label { color: #E8DCC8; }
-.d-name { color: #9A8E7A; font-size: 11px; letter-spacing: 0.6px; }
-.d-num { color: #9A8E7A; font-size: 10px; }
+.d-name { color: #9A8E7A; font-size:12px; letter-spacing: 0.6px; }
+.d-num { color: #9A8E7A; font-size:12px; }
 
 /* Wird */
 .wird-label { color: #E8DCC8; }
@@ -4256,7 +4256,7 @@ to {
 }
 .empty-state-cta {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 11px;
+  font-size:12px;
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -4290,7 +4290,7 @@ to {
 
 /* Prayer times */
 .prayer-times-title { color: #C4A870; }
-.prayer-time-name { color: #8090A8; font-size: 11px; letter-spacing: 0.3px; }
+.prayer-time-name { color: #8090A8; font-size:12px; letter-spacing: 0.3px; }
 .prayer-time-hour { color: #E8DCC8; }
 .prayer-time-item.next .prayer-time-name { color: #C4A870; }
 .prayer-time-item.next .prayer-time-hour { color: #D8BC88; font-weight: 700; }
@@ -4306,7 +4306,7 @@ to {
 /* Popup */
 .lvl-title, .popup-title { color: #E8DCC8; }
 .popup-sub, .lvl-sub { color: #A89878; }
-.lvl-eyebrow { color: var(--gold); opacity: 1; font-size: 11px; }
+.lvl-eyebrow { color: var(--gold); opacity: 1; font-size:12px; }
 
 /* Section prog */
 .prog-title { color: #E8DCC8; }
@@ -4350,8 +4350,8 @@ to {
 
 
 /* ── CONTRASTE RENFORCÉ — thème sombre (s assurer que tout est lisible) ── */
-.weekly-stat-label { font-size: 10px; }
-.medal-name { font-size: 10px; }
+.weekly-stat-label { font-size:12px; }
+.medal-name { font-size:12px; }
 
 
 /* ╔══════════════════════════════════════════════════════════════════╗
@@ -4434,7 +4434,7 @@ to {
 .prayer-time-item.next .prayer-time-name { color: #E0C870; }
 .prayer-time-hour { color: #C8D0E0; font-size: 16px; font-weight: 600; }
 .prayer-time-item.next .prayer-time-hour { color: #F0D880; font-weight: 700; }
-.prayer-times-title { color: #C8A84A; letter-spacing: 2px; font-size: 11px; }
+.prayer-times-title { color: #C8A84A; letter-spacing: 2px; font-size:12px; }
 .prayer-times-card {
   background: linear-gradient(145deg,rgba(44,46,52,0.97) 0%,rgba(36,38,44,0.99) 100%);
   border: 1px solid rgba(200,168,74,0.18);
@@ -4456,7 +4456,7 @@ to {
 .qibla-card::after { display: none; }
 .qibla-title {
   color: #D4B060;
-  font-size: 11px;
+  font-size:12px;
   letter-spacing: 2.5px;
   text-shadow: 0 1px 4px rgba(0,0,0,0.50);
 }
@@ -4467,7 +4467,7 @@ to {
   border: 1px solid rgba(200,168,74,0.16);
   box-shadow: 0 6px 24px rgba(0,0,0,0.45), inset 0 1px 0 rgba(200,168,74,0.08);
 }
-.hero-label { color: #C8A84A; letter-spacing: 2.5px; font-size: 10px; }
+.hero-label { color: #C8A84A; letter-spacing: 2.5px; font-size:12px; }
 .hero-title { color: #E8DCC0; font-size: 30px; font-weight: 300; }
 .hero-pct { color: #C8A84A; font-weight: 600; }
 .hero-bar-track { background: rgba(200,168,74,0.12); }
@@ -5050,22 +5050,22 @@ to {
 :root { --t3: #9A8E7A; }  /* était #7A6E5E → ratio 3.8:1 maintenant */
 
 /* ── TAILLES MINIMUM — rien sous 10px ── */
-.medal-name      { font-size: 10px; letter-spacing: 0.5px; }
-.medal-cond      { font-size: 10px; }
-.year-month-label { color: #9A8E7A; font-size: 11px; }
-.yl-item         { font-size: 10px; }
-.ramadan-day-label{ font-size: 10px; }
-.fast-stat-label { font-size: 10px; }
-.night-label     { font-size: 9px ; }
-.weekly-score-sub{ font-size: 11px; }
-.weekly-eyebrow  { font-size: 11px; letter-spacing: 1.5px; }
-.info-sheet-label{ font-size: 11px; opacity: 1; }
+.medal-name      { font-size:12px; letter-spacing: 0.5px; }
+.medal-cond      { font-size:12px; }
+.year-month-label { color: #9A8E7A; font-size:12px; }
+.yl-item         { font-size:12px; }
+.ramadan-day-label{ font-size:12px; }
+.fast-stat-label { font-size:12px; }
+.night-label     { font-size:12px ; }
+.weekly-score-sub{ font-size:12px; }
+.weekly-eyebrow  { font-size:12px; letter-spacing: 1.5px; }
+.info-sheet-label{ font-size:12px; opacity: 1; }
 
 /* ── TEXTES SOMBRE : renforcer t3 sur les éléments critiques ── */
 .streak-label    { color: #9A8E7A; }
 .wird-sub        { color: #9A8E7A; }
-.weekly-day-label{ color: #9A8E7A; font-size: 10px; }
-.weekly-stat-label{ color: #9A8E7A; font-size: 10px; }
+.weekly-day-label{ color: #9A8E7A; font-size:12px; }
+.weekly-stat-label{ color: #9A8E7A; font-size:12px; }
 .prayer-times-city{ color: #9A8E7A; font-size: 12px; }
 .lock-sub        { color: #B0A080; font-size: 14px; }
 .freemium-sub    { color: #B0A080; }
@@ -5083,7 +5083,7 @@ to {
 .resume-sub      { color: #B0A080; font-size: 14px; }
 .resume-level-name{ color: #E8DCC0; font-size: 14px; }
 .weekly-hadith-text{ color: #E8DCC0; font-size: 14px; }
-.weekly-hadith-source{ color: #C8A84A; font-size: 11px; opacity: 1; }
+.weekly-hadith-source{ color: #C8A84A; font-size:12px; opacity: 1; }
 .onboard-sub { color: #B0A080; font-size: 16px; line-height: 1.6; margin-left: auto; margin-right: auto; }
 .onboard-level-desc{ color: #9A8E7A; font-size: 12px; }
 
@@ -5116,7 +5116,7 @@ to {
 
 
 /* ── TAILLES FINALES — éléments manqués ── */
-.night-label { font-size: 11px; letter-spacing: 0.2px; }
+.night-label { font-size:12px; letter-spacing: 0.2px; }
 
 /* ── CORRECTION FINALE nav-label ── */
 
@@ -5296,7 +5296,7 @@ body::before {
   stroke: #D4AF37;
   filter: drop-shadow(0 0 5px rgba(212,175,55,0.5));
 }
-.nav-v2-label { font-family: 'Cormorant Garamond', serif; font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; }
+.nav-v2-label { font-family: 'Cormorant Garamond', serif; font-size:12px; letter-spacing: 0.18em; text-transform: uppercase; }
 
 /* ─── ORB CENTRAL ─── */
 .greeting-v2 {
@@ -5306,7 +5306,7 @@ body::before {
 }
 .greeting-eyebrow {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 10px; letter-spacing: 0.35em; color: rgba(212,175,55,0.45);
+  font-size:12px; letter-spacing: 0.35em; color: rgba(212,175,55,0.45);
   text-transform: uppercase; margin-bottom: 6px;
 }
 .greeting-text {
@@ -5439,7 +5439,7 @@ body::before {
 
 .orb-cta-v2 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 10px; letter-spacing: 0.18em;
+  font-size:12px; letter-spacing: 0.18em;
   text-transform: uppercase; color: rgba(212,175,55,0.45);
   transition: color 0.3s;
 }
@@ -5462,7 +5462,7 @@ body::before {
   color: var(--gold-pale-v2); margin-bottom: 6px;
 }
 .chip-meta-v2 {
-  font-size: 10px; color: rgba(240,234,214,0.28);
+  font-size:12px; color: rgba(240,234,214,0.28);
   letter-spacing: 0.18em; font-family: 'Cormorant Garamond', serif;
   text-transform: uppercase;
   margin-bottom: 14px;
@@ -5479,8 +5479,8 @@ body::before {
   gap: 8px;
   margin-bottom: 7px;
 }
-.level-name-v2 { font-family: 'Cormorant Garamond', serif; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sage-v2); }
-.level-xp-v2 { font-size: 10px; color: rgba(240,234,214,0.28); }
+.level-name-v2 { font-family: 'Cormorant Garamond', serif; font-size:12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sage-v2); }
+.level-xp-v2 { font-size:12px; color: rgba(240,234,214,0.28); }
 .level-track-v2 { height: 2px; background: rgba(255,255,255,0.05); border-radius: 1px; overflow: hidden; }
 .level-fill-v2 { height: 100%; border-radius: 1px; background: linear-gradient(to right, #4A6035, #87A96B); transition: width 1.2s var(--ease-silk-v2); }
 
@@ -5732,7 +5732,7 @@ body::before {
 .quick-label-v2 {
   position: relative; z-index: 3;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 9px; font-weight: 400;
+  font-size:12px; font-weight: 400;
   letter-spacing: 0.28em; text-transform: uppercase;
   color: rgba(212,175,55,0.6);
   text-shadow: 0 0 10px rgba(212,175,55,0.15);
@@ -5769,7 +5769,7 @@ body::before {
   background: rgba(135,169,107,0.14); border: 1px solid rgba(135,169,107,0.28);
   border-radius: 100px; padding: 10px 22px;
   color: #B2C89A; font-family: 'Cormorant Garamond', serif;
-  font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+  font-size:12px; letter-spacing: 0.2em; text-transform: uppercase;
   cursor: pointer; transition: all 0.3s var(--ease-silk-v2);
 }
 .tawba-btn-v2:hover { background: rgba(135,169,107,0.24); }
@@ -5922,7 +5922,7 @@ body::before {
 }
 .hold-hint {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 11px;
+  font-size:12px;
   font-style: italic;
   color: #C8A84A;
   white-space: nowrap;
@@ -5931,7 +5931,7 @@ body::before {
 .modal-divider-v2 {
   display: flex; align-items: center; gap: 10px;
   color: rgba(240,234,214,0.2); font-family: 'Cormorant Garamond', serif;
-  font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+  font-size:12px; letter-spacing: 0.2em; text-transform: uppercase;
   margin-bottom: 14px;
 }
 .modal-divider-v2::before, .modal-divider-v2::after { content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.06); }
@@ -5965,7 +5965,7 @@ body::before {
   width: 100%; background: none;
   border: 1px solid rgba(255,255,255,0.07); border-radius: 100px;
   padding: 13px; color: rgba(240,234,214,0.42);
-  font-family: 'Cormorant Garamond', serif; font-size: 10px;
+  font-family: 'Cormorant Garamond', serif; font-size:12px;
   letter-spacing: 0.2em; text-transform: uppercase;
   cursor: pointer; transition: all 0.25s; margin-top: 9px;
 }
@@ -6130,7 +6130,7 @@ body.pratique-active .topbar-v2 { display: none !important; }
   border-radius: 20px;
   border: 1px solid rgba(212,175,55,0.3);
   background: rgba(212,175,55,0.07);
-  font-size: 10px;
+  font-size:12px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: rgba(212,175,55,0.7);
@@ -6263,7 +6263,7 @@ body.pratique-active .topbar-v2 { display: none !important; }
   left: 0; right: 0;
   text-align: center;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 11px;
+  font-size:12px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: rgba(212,175,55,0.5);
@@ -6334,7 +6334,7 @@ body.pratique-active .topbar-v2 { display: none !important; }
 }
 #scanner-ar-tag {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 11px;
+  font-size:12px;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: rgba(212,175,55,0.75);
@@ -6379,7 +6379,7 @@ body.pratique-active .topbar-v2 { display: none !important; }
 
 .scanner-object-label {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 10px;
+  font-size:12px;
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: rgba(212,175,55,0.5);
@@ -6422,7 +6422,7 @@ body.pratique-active .topbar-v2 { display: none !important; }
 }
 .scanner-nuance-label {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 9px;
+  font-size:12px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: rgba(212,175,55,0.55);
@@ -6478,7 +6478,7 @@ body.pratique-active .topbar-v2 { display: none !important; }
 
 /* Mention vie privée */
 .scanner-privacy {
-  font-size: 9px;
+  font-size:12px;
   color: rgba(212,175,55,0.35);
   text-align: center;
   margin-top: 10px;
@@ -6608,7 +6608,7 @@ body.pratique-active .topbar-v2 { display: none !important; }
   position: absolute;
   top: 50%;
   left: 50%;
-  font-size: 10px;
+  font-size:12px;
   color: #C8A84A;
   opacity: 0;
   pointer-events: none;
@@ -6911,7 +6911,7 @@ button[style*="gold-v2"] {
 .nafs-week-badge {
   display: inline-block;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 11px;
+  font-size:12px;
   letter-spacing: 2px;
   color: #C8A84A;
   text-transform: uppercase;
@@ -6963,7 +6963,7 @@ button[style*="gold-v2"] {
 }
 .nafs-section-label {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 10px;
+  font-size:12px;
   letter-spacing: 2px;
   color: rgba(200,168,75,0.75);
   text-transform: uppercase;
@@ -6993,7 +6993,7 @@ button[style*="gold-v2"] {
 }
 .nafs-reference-source {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 10px;
+  font-size:12px;
   letter-spacing: 1.5px;
   color: rgba(176,160,128,0.5);
   text-transform: uppercase;
@@ -7013,7 +7013,7 @@ button[style*="gold-v2"] {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 10px;
+  font-size:12px;
   color: #C8A84A;
   margin-top: 3px;
 }
@@ -7131,7 +7131,7 @@ button[style*="gold-v2"] {
 }
 .nafs-weekmap-label {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 10px;
+  font-size:12px;
   letter-spacing: 0.5px;
   color: rgba(176,160,128,0.35);
 }
@@ -7269,7 +7269,7 @@ button[style*="gold-v2"] {
 }
 .lvl-strip-name {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 11px;
+  font-size:12px;
   font-weight: 600;
   letter-spacing: 2px;
   color: #C8A84A;
@@ -7300,7 +7300,7 @@ button[style*="gold-v2"] {
 /* Night companion disclaimer */
 .night-disclaimer {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 11px;
+  font-size:12px;
   color: rgba(192,192,192,0.35);
   text-align: center;
   background: rgba(192,192,192,0.04);
@@ -7313,7 +7313,7 @@ button[style*="gold-v2"] {
 /* Disclaimer */
 .app-disclaimer {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 11px;
+  font-size:12px;
   color: rgba(255,255,255,0.2);
   text-align: center;
   line-height: 1.5;

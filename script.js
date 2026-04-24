@@ -452,7 +452,7 @@ function openDefiSelector() {
   // Suggestion du haut
   if (suggestion) {
     html += '<div style="margin-bottom:18px;">';
-    html += '<div style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.7);margin-bottom:10px;">✦ Suggestion de la semaine</div>';
+    html += '<div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.7);margin-bottom:10px;">✦ Suggestion de la semaine</div>';
     html += '<div onclick="confirmerDefi(' + suggestion.id + ')" style="background:rgba(200,168,75,0.09);border:1px solid rgba(200,168,75,0.3);border-radius:14px;padding:14px 16px;cursor:pointer;position:relative;overflow:hidden;transition:all 0.2s;" ontouchstart="this.style.opacity=0.8" ontouchend="this.style.opacity=1">';
     html += '<div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(200,168,75,0.6),transparent);"></div>';
     html += '<div style="display:flex;align-items:center;gap:12px;">';
@@ -460,8 +460,8 @@ function openDefiSelector() {
     html += '<div style="flex:1;min-width:0;">';
     html += '<div style="font-size:14px;font-weight:600;color:#fff;margin-bottom:4px;line-height:1.3;">' + suggestion.titre + '</div>';
     html += '<div style="display:flex;align-items:center;gap:8px;">';
-    html += '<span style="font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;background:' + diffBg[suggestion.diff] + ';border:0.5px solid ' + diffBorder[suggestion.diff] + ';color:' + diffColor[suggestion.diff] + ';">' + diffLabel[suggestion.diff] + '</span>';
-    html += '<span style="font-size:10px;color:rgba(255,255,255,0.3);">' + suggestion.cible + ' ' + suggestion.unite + '</span>';
+    html += '<span style="font-size:12px;font-weight:700;padding:2px 8px;border-radius:10px;background:' + diffBg[suggestion.diff] + ';border:0.5px solid ' + diffBorder[suggestion.diff] + ';color:' + diffColor[suggestion.diff] + ';">' + diffLabel[suggestion.diff] + '</span>';
+    html += '<span style="font-size:12px;color:rgba(255,255,255,0.3);">' + suggestion.cible + ' ' + suggestion.unite + '</span>';
     html += '</div></div>';
     html += '<div style="font-size:20px;color:rgba(200,168,75,0.4);">›</div>';
     html += '</div></div></div>';
@@ -471,7 +471,7 @@ function openDefiSelector() {
   html += '<div style="display:flex;gap:6px;margin-bottom:14px;" id="defiTabsRow">';
   for (const d of ['facile','moyen','intensif']) {
     const active = d === 'facile';
-    html += '<button data-diff="' + d + '" id="defiTab_' + d + '" style="flex:1;padding:7px 4px;border-radius:10px;border:1px solid ' + (active ? diffBorder[d] : 'rgba(255,255,255,0.07)') + ';background:' + (active ? diffBg[d] : 'transparent') + ';color:' + (active ? diffColor[d] : 'rgba(255,255,255,0.4)') + ';font-size:11px;font-weight:700;cursor:pointer;font-family:var(--sans);transition:all 0.2s;">' + diffLabel[d] + '</button>';
+    html += '<button data-diff="' + d + '" id="defiTab_' + d + '" style="flex:1;padding:7px 4px;border-radius:10px;border:1px solid ' + (active ? diffBorder[d] : 'rgba(255,255,255,0.07)') + ';background:' + (active ? diffBg[d] : 'transparent') + ';color:' + (active ? diffColor[d] : 'rgba(255,255,255,0.4)') + ';font-size:12px;font-weight:700;cursor:pointer;font-family:var(--sans);transition:all 0.2s;">' + diffLabel[d] + '</button>';
   }
   html += '</div>';
 
@@ -484,7 +484,7 @@ function openDefiSelector() {
       html += '<div style="font-size:18px;width:36px;height:36px;background:' + diffBg[diff] + ';border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">' + d.icon + '</div>';
       html += '<div style="flex:1;min-width:0;">';
       html += '<div style="font-size:13px;color:rgba(255,255,255,0.88);line-height:1.3;">' + d.titre + '</div>';
-      html += '<div style="font-size:10px;color:rgba(255,255,255,0.28);margin-top:2px;">' + d.cible + ' ' + d.unite + '</div>';
+      html += '<div style="font-size:12px;color:rgba(255,255,255,0.28);margin-top:2px;">' + d.cible + ' ' + d.unite + '</div>';
       html += '</div>';
       html += '<div style="font-size:16px;color:rgba(255,255,255,0.15);">›</div>';
       html += '</div>';
@@ -624,12 +624,12 @@ function renderDefiCard() {
   const reste = defi.cible - fait;
   if (reste > 0 && !defiState.current.complete) {
     const label = document.createElement('div');
-    label.style.cssText = 'margin-left:8px;font-size:9px;color:rgba(200,168,75,0.4);flex-shrink:0;';
+    label.style.cssText = 'margin-left:8px;font-size:12px;color:rgba(200,168,75,0.4);flex-shrink:0;';
     label.textContent = reste + ' ' + (reste > 1 ? t('defi_days_left') : t('defi_day_left'));
     dots.appendChild(label);
   } else if (defiState.current.complete) {
     const label = document.createElement('div');
-    label.style.cssText = 'margin-left:8px;font-size:9px;color:#c8a84b;flex-shrink:0;font-weight:700;';
+    label.style.cssText = 'margin-left:8px;font-size:12px;color:#c8a84b;flex-shrink:0;font-weight:700;';
     label.textContent = t('defi_accomplished');
     dots.appendChild(label);
   }
@@ -645,7 +645,7 @@ function renderDefiOverlay() {
   const refEl = document.getElementById('defiOvRef');
   if (defi.ref) {
     refEl.style.display = 'block';
-    refEl.innerHTML = '"' + defi.ref + '"' + (defi.hadith ? '<br><span style="font-size:10px;color:rgba(200,168,75,0.5);margin-top:4px;display:block;">— ' + defi.hadith + '</span>' : '');
+    refEl.innerHTML = '"' + defi.ref + '"' + (defi.hadith ? '<br><span style="font-size:12px;color:rgba(200,168,75,0.5);margin-top:4px;display:block;">— ' + defi.hadith + '</span>' : '');
   }
   // Jours semaine
   const joursEl = document.getElementById('defiOvJours');
@@ -659,7 +659,7 @@ function renderDefiOverlay() {
     const auj = ds === getTodayStr();
     const div = document.createElement('div');
     div.style.cssText = 'flex:1;text-align:center;';
-    div.innerHTML = '<div style="width:100%;aspect-ratio:1;border-radius:8px;background:' + (coche ? '#c8a84b' : auj ? 'rgba(200,168,75,0.12)' : 'rgba(255,255,255,0.04)') + ';border:' + (auj && !coche ? '1px solid rgba(200,168,75,0.4)' : '0.5px solid rgba(255,255,255,0.06)') + ';display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:' + (coche ? '#000' : auj ? '#c8a84b' : 'rgba(255,255,255,0.2)') + ';margin-bottom:3px;">' + jourNoms[i] + '</div><div style="font-size:9px;color:' + (coche ? '#c8a84b' : 'rgba(255,255,255,0.15)') + ';">' + (coche ? '✓' : '—') + '</div>';
+    div.innerHTML = '<div style="width:100%;aspect-ratio:1;border-radius:8px;background:' + (coche ? '#c8a84b' : auj ? 'rgba(200,168,75,0.12)' : 'rgba(255,255,255,0.04)') + ';border:' + (auj && !coche ? '1px solid rgba(200,168,75,0.4)' : '0.5px solid rgba(255,255,255,0.06)') + ';display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:' + (coche ? '#000' : auj ? '#c8a84b' : 'rgba(255,255,255,0.2)') + ';margin-bottom:3px;">' + jourNoms[i] + '</div><div style="font-size:12px;color:' + (coche ? '#c8a84b' : 'rgba(255,255,255,0.15)') + ';">' + (coche ? '✓' : '—') + '</div>';
     joursEl.appendChild(div);
   }
   // Encouragement
@@ -866,7 +866,7 @@ function renderRamadan() {
   html += '</div>';
   html += '<div style="background:var(--card);border-radius:var(--r-xl);overflow:hidden;margin-bottom:8px;">';
   html += '<div style="padding:14px 16px;border-bottom:1px solid var(--sep);">';
-  html += '<div style="font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:2px;">Aujourd\'hui</div>';
+  html += '<div style="font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:2px;">Aujourd\'hui</div>';
   html += '<div style="font-family:var(--serif);font-size:18px;color:var(--t1);">Jeûne du jour</div>';
   html += '</div>';
   const fastItems = [
@@ -891,7 +891,7 @@ function renderRamadan() {
     html += '</div>';
   });
   html += '</div>';
-  html += '<div style="margin-bottom:4px;padding:0 2px;"><div style="font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--t3);margin-bottom:8px;">Horaires Imsak / Iftar</div>';
+  html += '<div style="margin-bottom:4px;padding:0 2px;"><div style="font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--t3);margin-bottom:8px;">Horaires Imsak / Iftar</div>';
   html += '<div style="display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;margin-bottom:8px;padding-bottom:2px;">';
   HORAIRES_CITIES.forEach(c => {
     const active = c.name === selectedCity;
@@ -904,7 +904,7 @@ function renderRamadan() {
   html += '<div class="horaires-arrow">›</div>';
   html += '</div></div>';
   html += '<div style="background:var(--card);border-radius:var(--r-xl);padding:18px;margin-bottom:8px;">';
-  html += '<div style="font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;">Calendrier du jeûne</div>';
+  html += '<div style="font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;">Calendrier du jeûne</div>';
   html += '<div class="fast-calendar">';
   for (let d = 1; d <= 30; d++) {
     const startObj = new Date((ramadanState.startDate || TODAY) + 'T12:00:00');
@@ -1521,7 +1521,7 @@ function showLevelPopup(levelId, nextId, hasNext) {
       </div>
 
       <!-- Eyebrow -->
-      <div style="text-align:center;font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:${msg.color};opacity:0.8;margin-bottom:8px;">${msg.eyebrow}</div>
+      <div style="text-align:center;font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:0.25em;text-transform:uppercase;color:${msg.color};opacity:0.8;margin-bottom:8px;">${msg.eyebrow}</div>
 
       <!-- Titre -->
       <div style="text-align:center;font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:#F0EAD6;letter-spacing:-0.5px;margin-bottom:16px;">${msg.title}</div>
@@ -1813,11 +1813,11 @@ function renderResume() {
   const streakDisplay = history.streak + (todayDone ? 1 : 0);
   el.innerHTML = '<div class="resume-hero">' + ringHtml + '<div class="resume-title">' + msg.title + '</div><div class="resume-sub">' + msg.sub + '</div></div>' +
     '<div style="background:var(--card);border-radius:var(--r-lg);padding:14px 16px;margin-bottom:8px;display:flex;gap:24px;justify-content:center;">' +
-      '<div style="text-align:center"><div style="font-family:var(--serif);font-size:28px;color:var(--t1);letter-spacing:-1px;">' + totalDone + '</div><div style="font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--t3);font-weight:600;margin-top:2px;">Actes</div></div>' +
+      '<div style="text-align:center"><div style="font-family:var(--serif);font-size:28px;color:var(--t1);letter-spacing:-1px;">' + totalDone + '</div><div style="font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--t3);font-weight:600;margin-top:2px;">Actes</div></div>' +
       '<div style="width:1px;background:var(--sep)"></div>' +
-      '<div style="text-align:center"><div style="font-family:var(--serif);font-size:28px;color:var(--t1);letter-spacing:-1px;">' + streakDisplay + '</div><div style="font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--t3);font-weight:600;margin-top:2px;">Jours</div></div>' +
+      '<div style="text-align:center"><div style="font-family:var(--serif);font-size:28px;color:var(--t1);letter-spacing:-1px;">' + streakDisplay + '</div><div style="font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--t3);font-weight:600;margin-top:2px;">Jours</div></div>' +
       '<div style="width:1px;background:var(--sep)"></div>' +
-      '<div style="text-align:center"><div style="font-size:22px;line-height:1.3;">' + emojiMap[medal] + '</div><div style="font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--t3);font-weight:600;margin-top:2px;">Médaille</div></div>' +
+      '<div style="text-align:center"><div style="font-size:22px;line-height:1.3;">' + emojiMap[medal] + '</div><div style="font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--t3);font-weight:600;margin-top:2px;">Médaille</div></div>' +
     '</div>' +
     levelsHtml +
     '<div class="resume-actions">' +
@@ -2188,11 +2188,11 @@ function renderLevel(levelId) {
   const scoreLabel = scoreJour >= 80 ? 'MashaAllah ✦' : scoreJour >= 50 ? t('score_continue') : t('score_progress');
   let html = '<div class="level-hero"><div class="hero-label">Niveau ' + level.id + '</div><div class="hero-title">' + level.title + '</div><div class="hero-bar-row"><div class="hero-bar-track"><div class="hero-bar-fill" style="width:' + pct + '%"></div></div><div class="hero-pct">' + Math.round(pct) + '%</div></div>'
     + '<div style="display:flex;align-items:center;justify-content:space-between;margin-top:10px;padding:8px 12px;background:' + scoreBg + ';border:1px solid ' + scoreBorder + ';border-radius:10px;">'
-    + '<div style="font-size:11px;color:var(--t3);letter-spacing:0.5px;">' + t('score_weighted') + '</div>'
+    + '<div style="font-size:12px;color:var(--t3);letter-spacing:0.5px;">' + t('score_weighted') + '</div>'
     + '<div style="display:flex;align-items:center;gap:6px;">'
     + '<div style="font-size:16px;font-weight:800;color:' + scoreColor + ';">' + scoreJour + '</div>'
-    + '<div style="font-size:10px;color:' + scoreColor + ';opacity:0.8;">/100</div>'
-    + '<div style="font-size:10px;color:' + scoreColor + ';background:' + scoreBg + ';border:1px solid ' + scoreBorder + ';border-radius:6px;padding:1px 6px;margin-left:2px;">' + scoreLabel + '</div>'
+    + '<div style="font-size:12px;color:' + scoreColor + ';opacity:0.8;">/100</div>'
+    + '<div style="font-size:12px;color:' + scoreColor + ';background:' + scoreBg + ';border:1px solid ' + scoreBorder + ';border-radius:6px;padding:1px 6px;margin-left:2px;">' + scoreLabel + '</div>'
     + '</div></div>'
     + '</div>' + graceBanner + fridayBanner + prayerCard + qiblaCard;
   var _block = getCurrentPrayerBlock();
@@ -2214,11 +2214,11 @@ function renderLevel(levelId) {
     + '<div style="width:3px;height:36px;background:linear-gradient(180deg,#C8A84A,#E0C870);border-radius:2px;flex-shrink:0;"></div>'
     + '<div>'
     + '<div style="font-size:15px;font-weight:700;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;letter-spacing:0.5px;">' + _block.label + '</div>'
-    + '<div style="font-size:11px;color:var(--t3);margin-top:2px;">' + _bandeauSub + '</div>'
+    + '<div style="font-size:12px;color:var(--t3);margin-top:2px;">' + _bandeauSub + '</div>'
     + '</div>'
     + '</div>';
   var _toggleLabel = window._showAllBlocks ? t('toggle_moment') : t('toggle_all');
-  html += '<div style="text-align:center;margin:-12px 0 16px;"><button onclick="window._showAllBlocks=!window._showAllBlocks;renderLevel(' + levelId + ')" style="background:transparent;border:none;color:#C8A84A;font-size:11px;font-weight:600;cursor:pointer;opacity:0.7;letter-spacing:0.3px;">' + _toggleLabel + '</button></div>';
+  html += '<div style="text-align:center;margin:-12px 0 16px;"><button onclick="window._showAllBlocks=!window._showAllBlocks;renderLevel(' + levelId + ')" style="background:transparent;border:none;color:#C8A84A;font-size:12px;font-weight:600;cursor:pointer;opacity:0.7;letter-spacing:0.3px;">' + _toggleLabel + '</button></div>';
   const _currentBlock = _block.id;
   level.sections.forEach(section => {
     const _filteredItems = section.items.filter(function(item) {
@@ -2258,7 +2258,7 @@ function renderLevel(levelId) {
         html += renderPrayerItem(item, delay, _pTlCurrent, _pChecked);
       } else if (item.coranPicker) {
         const checked = !!state[item.id];
-        const optionalBadge = '<span style="font-size:9px;font-weight:700;letter-spacing:0.8px;color:var(--green);background:rgba(52,217,98,0.12);border:1px solid rgba(52,217,98,0.25);border-radius:6px;padding:1px 5px;margin-left:5px;vertical-align:middle;">BONUS</span>';
+        const optionalBadge = '<span style="font-size:12px;font-weight:700;letter-spacing:0.8px;color:var(--green);background:rgba(52,217,98,0.12);border:1px solid rgba(52,217,98,0.25);border-radius:6px;padding:1px 5px;margin-left:5px;vertical-align:middle;">BONUS</span>';
         html += '<div class="item' + (checked ? ' checked' : '') + '" onclick="toggleItem(\'' + item.id + '\',event)" style="animation-delay:' + delay + 'ms;--i:' + idx + '" id="item-' + item.id + '">'
           + '<div class="check-circle"><svg class="check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>'
           + '<div class="item-body"><div class="item-label">' + item.label + optionalBadge + '</div><div class="item-sub">' + item.sub + '</div>'
@@ -2288,7 +2288,7 @@ function renderLevel(levelId) {
           const translationEsc = translation.replace(/"/g,'&quot;');
           infoBtn = '<button class="btn-info" onclick="openInfoSheet(\'\',\'\',\'\',\'\',event)" data-label="' + labelEsc2 + '" data-arabic="' + arabicEsc2 + '" data-phonetic="' + phoneticEsc + '" data-translation="' + translationEsc + '" title="' + t('btn_see_phonetic') + '"><i>i</i></button>';
         }
-        const optionalBadge = item.optional ? '<span style="font-size:9px;font-weight:700;letter-spacing:0.8px;color:var(--green);background:rgba(52,217,98,0.12);border:1px solid rgba(52,217,98,0.25);border-radius:6px;padding:1px 5px;margin-left:5px;vertical-align:middle;">BONUS</span>' : '';
+        const optionalBadge = item.optional ? '<span style="font-size:12px;font-weight:700;letter-spacing:0.8px;color:var(--green);background:rgba(52,217,98,0.12);border:1px solid rgba(52,217,98,0.25);border-radius:6px;padding:1px 5px;margin-left:5px;vertical-align:middle;">BONUS</span>' : '';
         const priorityCls = item.priority === 'fard' ? ' priority-fard' : item.priority === 'sunnah' ? ' priority-sunnah' : '';
         const _tlCurrent = (!checked && !_firstUncheckedFound) ? (_firstUncheckedFound = true, ' timeline-current') : '';
         const _tlOpacity = checked ? 'opacity:0.3;' : '';
@@ -2339,7 +2339,7 @@ function renderPrayerItem(item, delay, extraClass, forceChecked) {
   const fridayCls = item.isFriday ? ' friday-item' : '';
   const arabicHtml = item.arabic ? '<div class="item-arabic">' + item.arabic + '</div>' : '';
   const toggle = '<div style="display:flex;align-items:center;gap:6px;flex-shrink:0;" onclick="togglePrayerOnTime(\'' + item.id + '\');event.stopPropagation()">'
-    + '<div style="font-size:11px;color:' + (onTime ? 'var(--green)' : 'var(--t3)') + ';white-space:nowrap;">À l\'heure</div>'
+    + '<div style="font-size:12px;color:' + (onTime ? 'var(--green)' : 'var(--t3)') + ';white-space:nowrap;">À l\'heure</div>'
     + '<div style="width:38px;height:22px;border-radius:11px;background:' + (onTime ? 'var(--green)' : 'rgba(255,255,255,0.1)') + ';border:1px solid ' + (onTime ? 'var(--green)' : 'rgba(255,255,255,0.15)') + ';display:flex;align-items:center;padding:2px;transition:background 0.2s;flex-shrink:0;">'
     + '<div style="width:18px;height:18px;border-radius:50%;background:' + (onTime ? '#fff' : 'rgba(255,255,255,0.4)') + ';margin-left:' + (onTime ? '16px' : '0') + ';transition:margin 0.2s;"></div>'
     + '</div></div>';
@@ -2847,22 +2847,22 @@ function renderProgression() {
     if (choix) {
       bilanCells += '<div style="display:flex;flex-direction:column;align-items:center;gap:4px;">'
         + '<div style="width:36px;height:36px;border-radius:10px;background:' + bilanColors[choix] + '22;border:1px solid ' + bilanColors[choix] + '55;display:flex;align-items:center;justify-content:center;font-size:18px;">' + bilanEmojis[choix] + '</div>'
-        + '<div style="font-size:8px;color:var(--t3);text-transform:uppercase;letter-spacing:0.5px;">' + dayName + '</div>'
+        + '<div style="font-size:12px;color:var(--t3);text-transform:uppercase;letter-spacing:0.5px;">' + dayName + '</div>'
         + '</div>';
     } else {
       bilanCells += '<div style="display:flex;flex-direction:column;align-items:center;gap:4px;">'
         + '<div style="width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--t3);">—</div>'
-        + '<div style="font-size:8px;color:var(--t3);text-transform:uppercase;letter-spacing:0.5px;">' + dayName + '</div>'
+        + '<div style="font-size:12px;color:var(--t3);text-transform:uppercase;letter-spacing:0.5px;">' + dayName + '</div>'
         + '</div>';
     }
   }
   const hasBilans = Object.keys(bilansData).length > 0;
-  const bilanHTML = hasBilans ? '<div style="margin:0 16px 24px;"><div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;">Bilan des 7 derniers soirs</div><div style="display:flex;gap:6px;justify-content:space-between;padding:14px 16px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:16px;">' + bilanCells + '</div><div style="display:flex;gap:14px;margin-top:8px;"><div style="display:flex;align-items:center;gap:4px;"><span style="font-size:12px;">😶</span><span style="font-size:10px;color:var(--t3);">Distrait</span></div><div style="display:flex;align-items:center;gap:4px;"><span style="font-size:12px;">🌤</span><span style="font-size:10px;color:var(--t3);">Efforts</span></div><div style="display:flex;align-items:center;gap:4px;"><span style="font-size:12px;">☀️</span><span style="font-size:10px;color:var(--t3);">Sincère</span></div></div></div>' : '';
+  const bilanHTML = hasBilans ? '<div style="margin:0 16px 24px;"><div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;">Bilan des 7 derniers soirs</div><div style="display:flex;gap:6px;justify-content:space-between;padding:14px 16px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:16px;">' + bilanCells + '</div><div style="display:flex;gap:14px;margin-top:8px;"><div style="display:flex;align-items:center;gap:4px;"><span style="font-size:12px;">😶</span><span style="font-size:12px;color:var(--t3);">Distrait</span></div><div style="display:flex;align-items:center;gap:4px;"><span style="font-size:12px;">🌤</span><span style="font-size:12px;color:var(--t3);">Efforts</span></div><div style="display:flex;align-items:center;gap:4px;"><span style="font-size:12px;">☀️</span><span style="font-size:12px;color:var(--t3);">Sincère</span></div></div></div>' : '';
 
-  const heroSectionP = '<div style="margin:0 16px 24px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:11px;letter-spacing:2.5px;color:rgba(255,255,255,0.3);text-transform:uppercase;margin-bottom:12px;text-align:center;">PROGRESSION</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">'+lvlGridP+'</div></div>';
+  const heroSectionP = '<div style="margin:0 16px 24px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:2.5px;color:rgba(255,255,255,0.3);text-transform:uppercase;margin-bottom:12px;text-align:center;">PROGRESSION</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">'+lvlGridP+'</div></div>';
 
   el.innerHTML = `
-    <div style="padding:0 0 40px;"><!-- 1. TITRE SPIRITUEL --><div id="v2-spiritual-title" style="text-align:center;margin:0 16px 12px;"></div><!-- 2. PROGRESSION -->${heroSectionP}<!-- 3. DÉFI SEMAINE --><button id="accueilDefiCard" class="defi-card-sanctuaire" onclick="if(typeof openDefiSelector==='function')openDefiSelector()" style="display:none;margin:0 16px 12px;padding:14px 18px;background:#1a1a1a;border:1px solid rgba(200,168,75,0.3);border-radius:14px;cursor:pointer;position:relative;z-index:10;text-align:left;min-height:90px;box-sizing:border-box;font-family:inherit;color:inherit;width:calc(100% - 32px);"><div style="display:flex;align-items:center;gap:12px;width:100%;"><div id="defiCardIcon"><img src="https://nabs881-sketch.github.io/niyyah-app/imagescroissant.webp" alt="Croissant" style="width:60px;height:auto;display:block;flex-shrink:0;"></div><div style="flex:1;text-align:left;"><div id="defiCardTitre" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:#C8A84A;">Défi de la semaine</div><div id="defiCardScore" style="font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:#B0A080;margin-top:2px;"></div></div></div><div id="defiCardDots" style="display:none;"></div><div id="defiCardBar" style="position:absolute;bottom:0;left:0;right:0;height:3px;background:rgba(200,168,75,0.12);border-radius:0 0 14px 14px;overflow:hidden;"><div id="defiCardBarFill" style="height:100%;width:0%;background:#C8A84A;transition:width 0.6s ease;"></div></div></button><!-- 4. CHALLENGE FAJR --><div id="fajr-challenge-card" style="display:none;margin:0 16px 12px;"></div><!-- 5. SÉRIE EN COURS --><div style="text-align:center;padding:36px 20px 28px;position:relative;"><div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;">${t('prog_streak')}</div><div style="font-size:80px;font-weight:900;line-height:1;background:linear-gradient(135deg,#c8a84b,#e8cc6a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-3px;">${streakDisplay}</div><div style="font-size:13px;color:var(--t3);margin-top:6px;letter-spacing:1px;">${t('prog_days')}</div><div style="display:flex;justify-content:center;gap:24px;margin-top:16px;"><div style="text-align:center;"><div style="font-size:18px;font-weight:700;color:var(--t1);">${bestDisplay}</div><div style="font-size:12px;color:var(--t3);letter-spacing:0.8px;text-transform:uppercase;">${t('prog_best')}</div></div><div style="width:1px;background:rgba(255,255,255,0.1);"></div><div style="text-align:center;"><div style="font-size:18px;font-weight:700;color:var(--t1);">${totalDisplay}</div><div style="font-size:12px;color:var(--t3);letter-spacing:0.8px;text-transform:uppercase;">${t('prog_total')}</div></div></div></div><!-- HADITH CONTEXTUEL --><div style="margin:0 16px 24px;padding:20px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.2);border-radius:16px;position:relative;overflow:hidden;"><div style="position:absolute;top:-10px;right:12px;font-size:48px;opacity:0.07;font-family:serif;">"</div><div style="font-size:14px;line-height:1.7;color:var(--t1);font-style:italic;margin-bottom:10px;">${hadith.text}</div><div style="font-size:11px;color:#c8a84b;font-weight:600;letter-spacing:0.5px;">— ${hadith.ref}</div></div><!-- 6. HEATMAP 30 JOURS --><div style="margin:0 16px 24px;"><div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;text-align:center;">${t('prog_heatmap')}</div><div style="display:grid;grid-template-columns:repeat(10,1fr);gap:4px;">
+    <div style="padding:0 0 40px;"><!-- 1. TITRE SPIRITUEL --><div id="v2-spiritual-title" style="text-align:center;margin:0 16px 12px;"></div><!-- 2. PROGRESSION -->${heroSectionP}<!-- 3. DÉFI SEMAINE --><button id="accueilDefiCard" class="defi-card-sanctuaire" onclick="if(typeof openDefiSelector==='function')openDefiSelector()" style="display:none;margin:0 16px 12px;padding:14px 18px;background:#1a1a1a;border:1px solid rgba(200,168,75,0.3);border-radius:14px;cursor:pointer;position:relative;z-index:10;text-align:left;min-height:90px;box-sizing:border-box;font-family:inherit;color:inherit;width:calc(100% - 32px);"><div style="display:flex;align-items:center;gap:12px;width:100%;"><div id="defiCardIcon"><img src="https://nabs881-sketch.github.io/niyyah-app/imagescroissant.webp" alt="Croissant" style="width:60px;height:auto;display:block;flex-shrink:0;"></div><div style="flex:1;text-align:left;"><div id="defiCardTitre" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:#C8A84A;">Défi de la semaine</div><div id="defiCardScore" style="font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:#B0A080;margin-top:2px;"></div></div></div><div id="defiCardDots" style="display:none;"></div><div id="defiCardBar" style="position:absolute;bottom:0;left:0;right:0;height:3px;background:rgba(200,168,75,0.12);border-radius:0 0 14px 14px;overflow:hidden;"><div id="defiCardBarFill" style="height:100%;width:0%;background:#C8A84A;transition:width 0.6s ease;"></div></div></button><!-- 4. CHALLENGE FAJR --><div id="fajr-challenge-card" style="display:none;margin:0 16px 12px;"></div><!-- 5. SÉRIE EN COURS --><div style="text-align:center;padding:36px 20px 28px;position:relative;"><div style="font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;">${t('prog_streak')}</div><div style="font-size:80px;font-weight:900;line-height:1;background:linear-gradient(135deg,#c8a84b,#e8cc6a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-3px;">${streakDisplay}</div><div style="font-size:13px;color:var(--t3);margin-top:6px;letter-spacing:1px;">${t('prog_days')}</div><div style="display:flex;justify-content:center;gap:24px;margin-top:16px;"><div style="text-align:center;"><div style="font-size:18px;font-weight:700;color:var(--t1);">${bestDisplay}</div><div style="font-size:12px;color:var(--t3);letter-spacing:0.8px;text-transform:uppercase;">${t('prog_best')}</div></div><div style="width:1px;background:rgba(255,255,255,0.1);"></div><div style="text-align:center;"><div style="font-size:18px;font-weight:700;color:var(--t1);">${totalDisplay}</div><div style="font-size:12px;color:var(--t3);letter-spacing:0.8px;text-transform:uppercase;">${t('prog_total')}</div></div></div></div><!-- HADITH CONTEXTUEL --><div style="margin:0 16px 24px;padding:20px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.2);border-radius:16px;position:relative;overflow:hidden;"><div style="position:absolute;top:-10px;right:12px;font-size:48px;opacity:0.07;font-family:serif;">"</div><div style="font-size:14px;line-height:1.7;color:var(--t1);font-style:italic;margin-bottom:10px;">${hadith.text}</div><div style="font-size:12px;color:#c8a84b;font-weight:600;letter-spacing:0.5px;">— ${hadith.ref}</div></div><!-- 6. HEATMAP 30 JOURS --><div style="margin:0 16px 24px;"><div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;text-align:center;">${t('prog_heatmap')}</div><div style="display:grid;grid-template-columns:repeat(10,1fr);gap:4px;">
           ${heatmapHTML}
         </div><div style="font-family:'Inter',var(--sans);font-size:12px;color:rgba(255,255,255,0.5);text-align:center;margin-top:10px;">Aujourd'hui : ${Math.round(getLevelProgress(1))}% accompli</div></div><!-- BILAN 7 JOURS -->${bilanHTML}<!-- 7. GRAINE DE LUMIÈRE --><div style="margin:0 16px 24px;background:linear-gradient(135deg,rgba(200,168,75,0.08),rgba(200,168,75,0.03));border:1px solid rgba(200,168,75,0.25);border-radius:20px;padding:28px;text-align:center;user-select:none;-webkit-user-select:none;"><div style="font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:3px;color:#C8A84A;text-transform:uppercase;margin-bottom:16px;">${t('graine_title')}</div><div style="position:relative;width:160px;height:160px;min-width:160px;min-height:160px;margin:0 auto 16px;"><div style="position:absolute;inset:-20px;border-radius:50%;background:radial-gradient(circle,rgba(200,168,75,0.1) 0%,rgba(200,168,75,0.04) 50%,transparent 70%);"></div><div style="position:relative;">${getGraineSVG((function(){try{return JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length)}</div></div><div style="font-family:'Inter',var(--sans);font-size:16px;color:rgba(255,255,255,0.6);margin-bottom:6px;">${(function(){try{return JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length} ${t('graine_defis')}</div><div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:#C8A84A;margin-bottom:12px;">${getGraineStageName((function(){try{return JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length)}</div><div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:#C8A84A;opacity:0.7;line-height:1.6;">${t('graine_quote')}</div></div>
 
@@ -3195,7 +3195,7 @@ function renderPrayerTimesCard() {
   else if (_diffMin < 60) _countdownText = _diffMin + ' min';
   else _countdownText = Math.floor(_diffMin / 60) + 'h ' + String(_diffMin % 60).padStart(2,'0') + ' min';
   var countdown = '<div id="prayerCountdown" style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;margin-bottom:8px;background:linear-gradient(135deg,rgba(200,168,75,0.12),rgba(200,168,75,0.04));border:1px solid rgba(200,168,75,0.25);border-radius:12px;">'
-    + '<div><div style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:2px;">PROCHAINE</div>'
+    + '<div><div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:2px;">PROCHAINE</div>'
     + '<div style="font-size:15px;font-weight:700;color:#C8A84A;">' + _nextName + ' <span style="font-weight:400;font-size:13px;color:#B0A080;">dans ' + _countdownText + '</span></div></div>'
     + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-weight:700;color:#C8A84A;">' + _nextTime + '</div>'
     + '</div>';
@@ -3246,7 +3246,7 @@ function startPrayerCountdown() {
     if (diff < 2) txt = t('countdown_now');
     else if (diff < 60) txt = diff + ' min';
     else txt = Math.floor(diff / 60) + 'h ' + String(diff % 60).padStart(2,'0') + ' min';
-    el.innerHTML = '<div><div style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:2px;">PROCHAINE</div>'
+    el.innerHTML = '<div><div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:2px;">PROCHAINE</div>'
       + '<div style="font-size:15px;font-weight:700;color:#C8A84A;">' + name + ' <span style="font-weight:400;font-size:13px;color:#B0A080;">dans ' + txt + '</span></div></div>'
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-weight:700;color:#C8A84A;">' + time + '</div>';
   }, 60000);
@@ -3598,7 +3598,7 @@ function showWeeklyBilan() {
       : `<div style="width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);"></div>`;
     return `<div style="display:flex;flex-direction:column;align-items:center;gap:5px;">
       ${dot}
-      <div style="font-size:9px;font-weight:700;color:rgba(255,255,255,0.3);letter-spacing:0.05em;">${labels[i]}</div>
+      <div style="font-size:12px;font-weight:700;color:rgba(255,255,255,0.3);letter-spacing:0.05em;">${labels[i]}</div>
     </div>`;
   }).join('');
 
@@ -3608,7 +3608,7 @@ function showWeeklyBilan() {
   const card = document.getElementById('weeklyCard');
   card.innerHTML = `
     <div style="text-align:center;padding:8px 0 20px;">
-      <div style="font-size:9px;letter-spacing:0.25em;text-transform:uppercase;color:rgba(212,175,55,0.5);margin-bottom:12px;font-family:'Cormorant Garamond',serif;">Muhasaba · Bilan de la semaine</div>
+      <div style="font-size:12px;letter-spacing:0.25em;text-transform:uppercase;color:rgba(212,175,55,0.5);margin-bottom:12px;font-family:'Cormorant Garamond',serif;">Muhasaba · Bilan de la semaine</div>
       <div style="font-size:40px;margin-bottom:16px;">${emojis[level]}</div>
       <!-- Jours visuels -->
       <div style="display:flex;justify-content:center;gap:12px;margin-bottom:20px;">${daysHtml}</div>
@@ -3619,13 +3619,13 @@ function showWeeklyBilan() {
       </div>
       <!-- Hadith Istiqamah -->
       <div style="margin-bottom:16px;padding:14px 16px;border-left:2px solid rgba(212,175,55,0.3);text-align:left;">
-        <div style="font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(212,175,55,0.45);margin-bottom:6px;font-family:'Cormorant Garamond',serif;">Al-Istiqamah</div>
+        <div style="font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(212,175,55,0.45);margin-bottom:6px;font-family:'Cormorant Garamond',serif;">Al-Istiqamah</div>
         <div style="font-family:'Cormorant Garamond',serif;font-size:13px;font-style:italic;color:rgba(240,234,214,0.65);line-height:1.6;">"${hadith.text}"</div>
-        <div style="font-size:11px;color:rgba(212,175,55,0.5);margin-top:4px;">— ${hadith.source}</div>
+        <div style="font-size:12px;color:rgba(212,175,55,0.5);margin-top:4px;">— ${hadith.source}</div>
       </div>
       <!-- Conseil pour la semaine -->
       <div style="background:rgba(135,169,107,0.06);border:1px solid rgba(135,169,107,0.15);border-radius:12px;padding:14px 16px;margin-bottom:20px;text-align:left;">
-        <div style="font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(135,169,107,0.6);margin-bottom:6px;font-family:'Cormorant Garamond',serif;">Conseil pour cette semaine</div>
+        <div style="font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(135,169,107,0.6);margin-bottom:6px;font-family:'Cormorant Garamond',serif;">Conseil pour cette semaine</div>
         <div style="font-size:13px;color:rgba(240,234,214,0.7);line-height:1.6;">${conseil}</div>
       </div>
     </div>
@@ -3794,7 +3794,7 @@ function renderSourateList(list) {
       + '<div style="width:36px;height:36px;border-radius:10px;background:' + (active ? 'linear-gradient(135deg,#c8a84b,#e8cc6a)' : 'rgba(255,255,255,0.06)') + ';display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:' + (active ? '#000' : 'var(--t3)') + ';flex-shrink:0;">' + s[0] + '</div>'
       + '<div style="flex:1;min-width:0;">'
       + '<div style="font-size:14px;font-weight:600;color:' + (active ? '#e8cc6a' : 'var(--t1)') + ';">' + s[1] + ' <span style="font-size:12px;color:var(--t3);">· ' + s[3] + '</span></div>'
-      + '<div style="font-size:11px;color:var(--t3);">' + s[4] + ' versets</div>'
+      + '<div style="font-size:12px;color:var(--t3);">' + s[4] + ' versets</div>'
       + '</div>'
       + '<div style="font-size:18px;color:var(--t2);font-family:var(--arabic);">' + s[2] + '</div>'
       + '</div>';
@@ -6507,7 +6507,7 @@ function journalSwitchTab(tab) {
         var thumb = e.photo ? '<img src="' + e.photo + '" style="width:60px;height:60px;border-radius:10px;object-fit:cover;flex-shrink:0;">' : '<div style="width:60px;height:60px;border-radius:10px;background:rgba(200,168,75,0.08);flex-shrink:0;"></div>';
         html += '<div onclick="openNiyyahDetail(\'' + e.id + '\')" style="display:flex;gap:12px;align-items:center;padding:12px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.2);border-radius:12px;margin-bottom:8px;cursor:pointer;box-shadow:0 2px 12px rgba(0,0,0,0.3);transition:all 0.3s ease;">'
           + thumb + '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#D4AF37;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">' + (e.intention || '') + '</div>'
-          + '<div style="font-size:10px;color:rgba(255,255,255,0.3);margin-top:4px;">' + dateStr + '</div></div></div>';
+          + '<div style="font-size:12px;color:rgba(255,255,255,0.3);margin-top:4px;">' + dateStr + '</div></div></div>';
       });
       content.innerHTML = html;
     }
@@ -6526,7 +6526,7 @@ function journalSwitchTab(tab) {
         var star = e.bookmark ? '<div style="position:absolute;top:8px;right:8px;color:#D4AF37;font-size:14px;">★</div>' : '';
         html += '<div onclick="openRegardeDetail(\'' + e.id + '\')" style="display:flex;gap:12px;align-items:center;padding:12px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.2);border-radius:12px;margin-bottom:8px;cursor:pointer;position:relative;box-shadow:0 2px 12px rgba(0,0,0,0.3);transition:all 0.3s ease;">'
           + thumb + '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#D4AF37;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">' + (e.question || '') + '</div>'
-          + '<div style="font-size:10px;color:rgba(255,255,255,0.3);margin-top:4px;">' + dateStr + '</div></div>' + star + '</div>';
+          + '<div style="font-size:12px;color:rgba(255,255,255,0.3);margin-top:4px;">' + dateStr + '</div></div>' + star + '</div>';
       });
       content.innerHTML = html;
     }
@@ -6725,7 +6725,7 @@ function v2OpenSettings() {
   sheet.id = 'v2-settings-sheet';
   sheet.style.cssText = 'position:fixed;inset:0;background:rgba(10,10,10,0.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:3000;display:flex;align-items:flex-end;justify-content:center;animation:backdropV2 0.3s ease forwards;';
   const ramadanActive = typeof ramadanState !== 'undefined' && ramadanState.active;
-  const debugSection = NIYYAH_DEBUG ? '<div style="margin-top:14px;background:#1a1a1a;border:1px solid rgba(255,255,255,0.05);border-radius:14px;padding:16px;"><div style="font-size:10px;letter-spacing:0.28em;color:rgba(255,255,255,0.25);text-transform:uppercase;font-family:Cormorant Garamond,serif;margin-bottom:10px;text-align:center;">🔧 DEBUG</div><button onclick="safeSetItem(\'niyyah_regarde_available_today\',\'true\');showToast(\'Regarde active\');document.getElementById(\'v2-settings-sheet\').remove();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.4);font-size:12px;cursor:pointer;margin-bottom:8px;">[DEBUG] Activer Regarde</button><button onclick="document.getElementById(\'v2-settings-sheet\').remove();regardeOpen();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.4);font-size:12px;cursor:pointer;">[DEBUG] Lancer Regarde maintenant</button><button onclick="document.getElementById(\'v2-settings-sheet\').remove();openFinJournee();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.4);font-size:12px;cursor:pointer;margin-top:8px;">[DEBUG] Forcer Fin de Journée</button></div>' : '';
+  const debugSection = NIYYAH_DEBUG ? '<div style="margin-top:14px;background:#1a1a1a;border:1px solid rgba(255,255,255,0.05);border-radius:14px;padding:16px;"><div style="font-size:12px;letter-spacing:0.28em;color:rgba(255,255,255,0.25);text-transform:uppercase;font-family:Cormorant Garamond,serif;margin-bottom:10px;text-align:center;">🔧 DEBUG</div><button onclick="safeSetItem(\'niyyah_regarde_available_today\',\'true\');showToast(\'Regarde active\');document.getElementById(\'v2-settings-sheet\').remove();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.4);font-size:12px;cursor:pointer;margin-bottom:8px;">[DEBUG] Activer Regarde</button><button onclick="document.getElementById(\'v2-settings-sheet\').remove();regardeOpen();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.4);font-size:12px;cursor:pointer;">[DEBUG] Lancer Regarde maintenant</button><button onclick="document.getElementById(\'v2-settings-sheet\').remove();openFinJournee();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.4);font-size:12px;cursor:pointer;margin-top:8px;">[DEBUG] Forcer Fin de Journée</button></div>' : '';
   sheet.innerHTML = `
     <div style="width:100%;max-width:480px;max-height:calc(100vh - env(safe-area-inset-top,0px));overflow-y:auto;background:#111;border-radius:22px 22px 0 0;padding:calc(env(safe-area-inset-top,0px) + 26px) 22px calc(32px + env(safe-area-inset-bottom));border-top:1px solid rgba(212,175,55,0.14);animation:sheetV2 0.4s cubic-bezier(0.23,1,0.32,1) forwards;direction:${T.dir};">
       <div style="width:38px;height:3px;background:rgba(255,255,255,0.1);border-radius:2px;margin:0 auto 22px;"></div>
@@ -6733,7 +6733,7 @@ function v2OpenSettings() {
 
       <!-- LANGUE -->
       <div style="margin-bottom:14px;">
-        <div style="font-size:10px;letter-spacing:0.28em;color:rgba(212,175,55,0.45);text-transform:uppercase;font-family:'Cormorant Garamond',serif;margin-bottom:10px;text-align:center;">${T.settings_lang}</div>
+        <div style="font-size:12px;letter-spacing:0.28em;color:rgba(212,175,55,0.45);text-transform:uppercase;font-family:'Cormorant Garamond',serif;margin-bottom:10px;text-align:center;">${T.settings_lang}</div>
         <div style="display:flex;gap:8px;justify-content:center;">
           <button id="v2-lang-fr" onclick="v2SetLanguage('fr')"
             style="padding:9px 20px;border-radius:100px;border:1px solid ${V2_LANG==='fr'?'rgba(212,175,55,0.5)':'rgba(255,255,255,0.1)'};background:${V2_LANG==='fr'?'rgba(212,175,55,0.1)':'none'};color:${V2_LANG==='fr'?'#D4AF37':'rgba(240,234,214,0.5)'};font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:0.15em;cursor:pointer;transition:all 0.2s;">
@@ -6755,7 +6755,7 @@ function v2OpenSettings() {
         <div style="padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.04);">
           <div style="display:flex;gap:8px;">
             <button onclick="if(typeof toggleTheme==='function')toggleTheme();document.getElementById('v2-settings-sheet').remove();"
-              style="flex:1;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:none;color:rgba(240,234,214,0.6);font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.15em;cursor:pointer;">
+              style="flex:1;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:none;color:rgba(240,234,214,0.6);font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:0.15em;cursor:pointer;">
               ${T.settings_theme}
             </button>
           </div>
@@ -6764,7 +6764,7 @@ function v2OpenSettings() {
           onclick="document.getElementById('v2-settings-sheet').remove();localStorage.removeItem('niyyah_coords');showCityInput();">
           <div style="display:flex;justify-content:space-between;align-items:center;">
             <div style="font-size:14px;color:rgba(240,234,214,0.7);">📍 Changer ma ville</div>
-            <div style="font-size:11px;color:rgba(240,234,214,0.25);">${_prayerCity || '—'}</div>
+            <div style="font-size:12px;color:rgba(240,234,214,0.25);">${_prayerCity || '—'}</div>
           </div>
         </div>
         <div style="padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.04);cursor:pointer;"
@@ -6778,7 +6778,7 @@ function v2OpenSettings() {
           onclick="if(typeof confirmReset==='function'){confirmReset();document.getElementById('v2-settings-sheet').remove();}">
           <div style="display:flex;justify-content:space-between;align-items:center;">
             <div style="font-size:14px;color:rgba(240,234,214,0.4);">${T.settings_reset}</div>
-            <div style="font-size:11px;color:rgba(240,234,214,0.18);">${T.settings_privacy}</div>
+            <div style="font-size:12px;color:rgba(240,234,214,0.18);">${T.settings_privacy}</div>
           </div>
         </div>
       </div>
@@ -6790,16 +6790,16 @@ function v2OpenSettings() {
       </div>
 
       <div style="margin-top:14px;background:#1a1a1a;border:1px solid rgba(255,255,255,0.05);border-radius:14px;padding:16px;">
-        <div style="font-size:10px;letter-spacing:0.28em;color:rgba(212,175,55,0.45);text-transform:uppercase;font-family:'Cormorant Garamond',serif;margin-bottom:10px;text-align:center;">${T.settings_mentions}</div>
+        <div style="font-size:12px;letter-spacing:0.28em;color:rgba(212,175,55,0.45);text-transform:uppercase;font-family:'Cormorant Garamond',serif;margin-bottom:10px;text-align:center;">${T.settings_mentions}</div>
         <div style="font-family:'Cormorant Garamond',serif;font-size:12px;color:rgba(240,234,214,0.3);line-height:1.6;text-align:${isRTL ? 'right' : 'left'};">${T.mentions_text}</div>
       </div>
 
       ${debugSection}
 
-      <div style="text-align:center;padding:8px;font-size:10px;color:rgba(240,234,214,0.12);font-family:'Cormorant Garamond',serif;letter-spacing:0.2em;margin-bottom:12px;">NIYYAH V2.0 · بِسْمِ اللَّهِ</div>
+      <div style="text-align:center;padding:8px;font-size:12px;color:rgba(240,234,214,0.12);font-family:'Cormorant Garamond',serif;letter-spacing:0.2em;margin-bottom:12px;">NIYYAH V2.0 · بِسْمِ اللَّهِ</div>
 
       <button onclick="document.getElementById('v2-settings-sheet').remove();"
-        style="width:100%;padding:13px;border-radius:100px;border:1px solid rgba(255,255,255,0.07);background:none;color:rgba(240,234,214,0.38);font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;">
+        style="width:100%;padding:13px;border-radius:100px;border:1px solid rgba(255,255,255,0.07);background:none;color:rgba(240,234,214,0.38);font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;">
         ${T.settings_close}
       </button>
     </div>`;
@@ -7457,7 +7457,7 @@ function updateSanctuaireMoment() {
   var jourRemaining = jourItems.length - jourDone;
   var jourLine = '';
   if (jourRemaining > 0 && jourItems.length <= 5) {
-    jourLine = '<div style="font-family:\'Inter\',var(--sans);font-size:10px;color:rgba(255,255,255,0.4);margin-top:4px;">+ ' + jourRemaining + ' acte' + (jourRemaining > 1 ? 's' : '') + ' du jour</div>';
+    jourLine = '<div style="font-family:\'Inter\',var(--sans);font-size:12px;color:rgba(255,255,255,0.4);margin-top:4px;">+ ' + jourRemaining + ' acte' + (jourRemaining > 1 ? 's' : '') + ' du jour</div>';
   }
   if (blockRemaining === 0) {
     el.innerHTML = '<div style="text-align:center;padding:8px;">'
@@ -7998,7 +7998,7 @@ function openRegardeJournal() {
         + thumb
         + '<div style="flex:1;min-width:0;">'
         + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#D4AF37;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">' + (e.question || '') + '</div>'
-        + '<div style="font-size:10px;color:rgba(255,255,255,0.3);margin-top:4px;">' + dateStr + '</div>'
+        + '<div style="font-size:12px;color:rgba(255,255,255,0.3);margin-top:4px;">' + dateStr + '</div>'
         + '</div>' + star + '</div>';
     });
     list.innerHTML = html;
@@ -8159,7 +8159,7 @@ function renderNiyyahJournalList(entries) {
       + thumb
       + '<div style="flex:1;min-width:0;">'
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#D4AF37;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">' + (e.intention || '') + '</div>'
-      + '<div style="font-size:10px;color:rgba(255,255,255,0.3);margin-top:4px;">' + dateStr + '</div>'
+      + '<div style="font-size:12px;color:rgba(255,255,255,0.3);margin-top:4px;">' + dateStr + '</div>'
       + '</div></div>';
   });
   list.innerHTML = html;
@@ -8489,6 +8489,20 @@ window.scannerCapture       = scannerCapture;
 window.scannerShowResult    = scannerShowResult;
 window.scannerConfirmNiyyah = scannerConfirmNiyyah;
 window.scannerRetry         = scannerRetry;
+
+// A11y: Escape key closes active overlay
+document.addEventListener('keydown', function(e) {
+  if (e.key !== 'Escape') return;
+  var overlays = ['scanner-overlay','niyyah-journal-overlay','niyyah-detail-overlay',
+    'regarde-journal-overlay','regarde-detail-overlay','infoOverlay','bilanSoirOverlay',
+    'defiOverlay','defiSelectorOverlay','coranOverlay','finjournee-overlay','tasbihOverlay'];
+  for (var i = 0; i < overlays.length; i++) {
+    var el = document.getElementById(overlays[i]);
+    if (el && el.style.display !== 'none' && getComputedStyle(el).display !== 'none') {
+      el.style.display = 'none'; return;
+    }
+  }
+});
 
 init();
 
