@@ -2047,11 +2047,8 @@ function selectLevel(id) {
   if (typeof v2GoTo === 'function') v2GoTo('checklist');
   renderTabs();
   renderLevel(id);
-  setTimeout(() => {
-    const activeView = document.querySelector('.view.active');
-    if (activeView) activeView.scrollTop = 0;
-    window.scrollTo(0, 0);
-  }, 30);
+  var activeView = document.querySelector('.view.active');
+  if (activeView) activeView.scrollTop = 0;
 }
 function getMoonSVG(percent) {
   var p = Math.max(0, Math.min(100, percent));

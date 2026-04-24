@@ -200,8 +200,9 @@ pointer-events:none;
   -webkit-backdrop-filter:blur(20px);
   padding:12px 20px 10px;
   position:sticky;
-  top:calc(var(--safe-top)+68px);
-  z-index:99
+  top:0;
+  z-index:99;
+  will-change:transform;
 }
 .tabs {
   display:flex;
