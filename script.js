@@ -1630,6 +1630,7 @@ function switchView(name) {
   const activeView = document.getElementById('view-' + name);
   activeView.classList.add('active');
   activeView.style.display = name === 'accueil' ? 'flex' : 'block';
+  fadeInView(activeView);
   const navEl = document.getElementById('nav-' + name);
   if (navEl) navEl.classList.add('active');
   if (name === 'progression') renderProgression();
@@ -2314,6 +2315,7 @@ function renderLevel(levelId) {
       + '</div>';
   }
   content.innerHTML = html;
+  fadeInView(content);
   level.sections.forEach(s => s.items.forEach(item => { if (item.type === 'counter') initCounterEl(item); }));
   // Appliquer l'état timeline sur le DOM après injection
   setTimeout(function() {
@@ -6469,12 +6471,8 @@ function _v2ShowTarget(targetId, opts) {
   var target = document.getElementById(targetId);
   if (!target) return;
   target.style.display = '';
-  target.classList.add('active','view-transition','entering');
-  setTimeout(function() {
-    target.classList.remove('entering');
-    target.classList.add('entered');
-    setTimeout(function() { target.classList.remove('view-transition','entered'); }, 250);
-  }, 10);
+  target.classList.add('active');
+  fadeInView(target);
   if (opts.onShow) opts.onShow();
 }
 
@@ -8517,6 +8515,20 @@ document.addEventListener('keydown', function(e) {
     if (document.activeElement === last) { e.preventDefault(); first.focus(); }
   }
 });
+
+// View fade-in: applies AFTER display:block is set (safe, no layout change)
+function fadeInView(el) {
+  if (!el || window.matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+  el.style.transition = 'none';
+  el.style.opacity = '0';
+  requestAnimationFrame(function() {
+    requestAnimationFrame(function() {
+      el.style.transition = 'opacity 0.2s ease';
+      el.style.opacity = '1';
+      setTimeout(function() { el.style.transition = ''; el.style.opacity = ''; }, 250);
+    });
+  });
+}
 
 init();
 
