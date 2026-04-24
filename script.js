@@ -430,7 +430,7 @@ function openDefiSelector() {
         + '<div style="font-size:28px;margin-bottom:14px;">' + (defiActif ? defiActif.icon : '✦') + '</div>'
         + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:600;color:#C8A84A;margin-bottom:8px;">' + (defiActif ? defiActif.titre : 'Défi en cours') + '</div>'
         + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#B0A080;line-height:1.6;margin-bottom:20px;">Ton défi est ta niyyah de la semaine.<br>Tiens-le jusqu\'à dimanche, in sha Allah ✦</div>'
-        + '<button onclick="closeDefiSelector()" style="padding:12px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:1px;cursor:pointer;">Fermer</button>'
+        + '<button onclick="closeDefiSelector()" style="padding:12px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:1px;cursor:pointer;" aria-label="Fermer">Fermer</button>'
         + '</div>';
       ov2.style.opacity = '1'; ov2.style.pointerEvents = 'all';
       setTimeout(function() { document.getElementById('defiSelectorSheet').style.transform = 'translateY(0)'; }, 10);
@@ -461,9 +461,9 @@ function openDefiSelector() {
     html += '<div style="font-size:14px;font-weight:600;color:#fff;margin-bottom:4px;line-height:1.3;">' + suggestion.titre + '</div>';
     html += '<div style="display:flex;align-items:center;gap:8px;">';
     html += '<span style="font-size:12px;font-weight:700;padding:2px 8px;border-radius:10px;background:' + diffBg[suggestion.diff] + ';border:0.5px solid ' + diffBorder[suggestion.diff] + ';color:' + diffColor[suggestion.diff] + ';">' + diffLabel[suggestion.diff] + '</span>';
-    html += '<span style="font-size:12px;color:rgba(255,255,255,0.3);">' + suggestion.cible + ' ' + suggestion.unite + '</span>';
+    html += '<span style="font-size:12px;color:rgba(255,255,255,0.55);">' + suggestion.cible + ' ' + suggestion.unite + '</span>';
     html += '</div></div>';
-    html += '<div style="font-size:20px;color:rgba(200,168,75,0.4);">›</div>';
+    html += '<div style="font-size:20px;color:rgba(200,168,75,0.6);">›</div>';
     html += '</div></div></div>';
   }
 
@@ -484,9 +484,9 @@ function openDefiSelector() {
       html += '<div style="font-size:18px;width:36px;height:36px;background:' + diffBg[diff] + ';border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">' + d.icon + '</div>';
       html += '<div style="flex:1;min-width:0;">';
       html += '<div style="font-size:13px;color:rgba(255,255,255,0.88);line-height:1.3;">' + d.titre + '</div>';
-      html += '<div style="font-size:12px;color:rgba(255,255,255,0.28);margin-top:2px;">' + d.cible + ' ' + d.unite + '</div>';
+      html += '<div style="font-size:12px;color:rgba(255,255,255,0.55);margin-top:2px;">' + d.cible + ' ' + d.unite + '</div>';
       html += '</div>';
-      html += '<div style="font-size:16px;color:rgba(255,255,255,0.15);">›</div>';
+      html += '<div style="font-size:16px;color:rgba(255,255,255,0.55);">›</div>';
       html += '</div>';
     }
     html += '</div>';
@@ -624,7 +624,7 @@ function renderDefiCard() {
   const reste = defi.cible - fait;
   if (reste > 0 && !defiState.current.complete) {
     const label = document.createElement('div');
-    label.style.cssText = 'margin-left:8px;font-size:12px;color:rgba(200,168,75,0.4);flex-shrink:0;';
+    label.style.cssText = 'margin-left:8px;font-size:12px;color:rgba(200,168,75,0.6);flex-shrink:0;';
     label.textContent = reste + ' ' + (reste > 1 ? t('defi_days_left') : t('defi_day_left'));
     dots.appendChild(label);
   } else if (defiState.current.complete) {
@@ -884,7 +884,7 @@ function renderRamadan() {
     const arabicHtml = item.arabic ? '<div class="item-arabic">' + item.arabic + '</div>' : '';
     const subHtml = item.sub ? '<div class="item-sub">' + item.sub + '</div>' : '';
     html += '<div class="item' + fastCls + (done ? ' checked' : '') + '" onclick="' + onclick + '" id="ritem-' + item.id + '">';
-    html += '<div class="check-circle' + (item.special ? '" style="' + (done ? 'background:var(--moon);border-color:var(--moon);box-shadow:0 0 0 4px var(--moon-soft)' : 'border-color:rgba(245,166,35,0.4)') : '') + '">';
+    html += '<div class="check-circle' + (item.special ? '" style="' + (done ? 'background:var(--moon);border-color:var(--moon);box-shadow:0 0 0 4px var(--moon-soft)' : 'border-color:rgba(245,166,35,0.6)') : '') + '">';
     html += '<svg class="check-svg" style="' + (done ? 'opacity:1;transform:scale(1)' : '') + '" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
     html += '</div>';
     html += '<div class="item-body"><div class="item-label">' + item.label + '</div>' + subHtml + arabicHtml + '</div>';
@@ -1547,7 +1547,7 @@ function showLevelPopup(levelId, nextId, hasNext) {
           ☀️ Voir Ma Niyyah
         </button>`
       }
-      <button class="btn-stay-lvl" onclick="closeLevelPopup()">Rester sur ce niveau</button>
+      <button class="btn-stay-lvl" aria-label="Rester sur ce niveau" onclick="closeLevelPopup()">Rester sur ce niveau</button>
     `;
   }
 
@@ -2270,14 +2270,14 @@ function renderLevel(levelId) {
         const fridayCls = item.isFriday ? ' friday-item' : '';
         const arabicHtml = item.arabic ? '<div class="item-arabic">' + item.arabic + '</div>' : '';
         const audioSrc = Array.isArray(item.audio) ? JSON.stringify(item.audio).replace(/"/g,"'") : item.audio;
-        const audioBtn = item.audio ? '<button class="btn-audio" ontouchstart="event.stopPropagation()" onclick="playAudio(' + (Array.isArray(item.audio) ? JSON.stringify(item.audio).replace(/"/g,"'") : '\'' + item.audio + '\'') + ',this,event)" title="' + t('btn_listen_recitation') + '">🔊</button>' : '';
+        const audioBtn = item.audio ? '<button class="btn-audio" aria-label="Écouter" ontouchstart="event.stopPropagation()" onclick="playAudio(' + (Array.isArray(item.audio) ? JSON.stringify(item.audio).replace(/"/g,"'") : '\'' + item.audio + '\'') + ',this,event)" title="' + t('btn_listen_recitation') + '">🔊</button>' : '';
         let infoBtn = '';
         if (item.hadith) {
           const labelEsc2 = item.label.replace(/"/g,'&quot;');
           const arabicEsc2 = (item.arabic||'').replace(/"/g,'&quot;');
           const hadithEsc = item.hadith.replace(/"/g,'&quot;');
           const sourceEsc = (item.source||'').replace(/"/g,'&quot;');
-          infoBtn = '<button class="btn-info" onclick="openInfoSheet(\'\',\'\',\'\',\'\',event)" data-label="' + labelEsc2 + '" data-arabic="' + arabicEsc2 + '" data-phonetic="" data-translation="' + hadithEsc + '" title="' + t('btn_why') + '"><i>i</i></button>';
+          infoBtn = '<button class="btn-info" aria-label="Détails" onclick="openInfoSheet(\'\',\'\',\'\',\'\',event)" data-label="' + labelEsc2 + '" data-arabic="' + arabicEsc2 + '" data-phonetic="" data-translation="' + hadithEsc + '" title="' + t('btn_why') + '"><i>i</i></button>';
         } else if (item.sub && item.sub.includes('·') && item.arabic) {
           const parts = item.sub.split('·');
           const phonetic = parts[0].trim();
@@ -2286,7 +2286,7 @@ function renderLevel(levelId) {
           const arabicEsc2 = (item.arabic||'').replace(/"/g,'&quot;');
           const phoneticEsc = phonetic.replace(/"/g,'&quot;');
           const translationEsc = translation.replace(/"/g,'&quot;');
-          infoBtn = '<button class="btn-info" onclick="openInfoSheet(\'\',\'\',\'\',\'\',event)" data-label="' + labelEsc2 + '" data-arabic="' + arabicEsc2 + '" data-phonetic="' + phoneticEsc + '" data-translation="' + translationEsc + '" title="' + t('btn_see_phonetic') + '"><i>i</i></button>';
+          infoBtn = '<button class="btn-info" aria-label="Détails" onclick="openInfoSheet(\'\',\'\',\'\',\'\',event)" data-label="' + labelEsc2 + '" data-arabic="' + arabicEsc2 + '" data-phonetic="' + phoneticEsc + '" data-translation="' + translationEsc + '" title="' + t('btn_see_phonetic') + '"><i>i</i></button>';
         }
         const optionalBadge = item.optional ? '<span style="font-size:12px;font-weight:700;letter-spacing:0.8px;color:var(--green);background:rgba(52,217,98,0.12);border:1px solid rgba(52,217,98,0.25);border-radius:6px;padding:1px 5px;margin-left:5px;vertical-align:middle;">BONUS</span>' : '';
         const priorityCls = item.priority === 'fard' ? ' priority-fard' : item.priority === 'sunnah' ? ' priority-sunnah' : '';
@@ -2294,7 +2294,7 @@ function renderLevel(levelId) {
         const _tlOpacity = checked ? 'opacity:0.3;' : '';
         var shareBtn = '';
         if (item.id === 'savais_tu') {
-          shareBtn = '<button class="btn-audio" ontouchstart="event.stopPropagation()" onclick="shareSavaisTu(event)" title="' + t('btn_share_label') + '" style="font-size:13px;padding:0 8px;width:auto;">📤</button>';
+          shareBtn = '<button class="btn-audio" aria-label="Écouter" ontouchstart="event.stopPropagation()" onclick="shareSavaisTu(event)" title="' + t('btn_share_label') + '" style="font-size:13px;padding:0 8px;width:auto;">📤</button>';
         }
         html += '<div class="item' + fridayCls + (checked ? ' checked' : '') + _tlCurrent + '" onclick="toggleItem(\'' + item.id + '\',event)" style="' + _tlOpacity + 'animation-delay:' + delay + 'ms;--i:' + idx + '" id="item-' + item.id + '"><div class="check-circle"><svg class="check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-body"><div class="item-label' + priorityCls + '">' + item.label + optionalBadge + '</div>' + (item.sub ? '<div class="item-sub">' + (item.sub.includes('·') ? item.sub.split('·')[0].trim() : item.sub) + '</div>' : '') + arabicHtml + '</div>' + shareBtn + audioBtn + infoBtn + '</div>';
       }
@@ -2385,9 +2385,9 @@ function renderCounter(item, delay) {
   const arabicHtml = item.arabic ? '<div class="item-arabic" style="' + (done ? 'opacity:0.25' : '') + '">' + item.arabic + '</div>' : '';
   const arabicEsc = (item.arabic || '').replace(/'/g, "\\'");
   const labelEsc  = item.label.replace(/'/g, "\\'");
-  const fullscreenBtn = '<button class="btn-tasbih-fs" onclick="openTasbih(\'' + item.id + '\',' + item.target + ',\'' + labelEsc + '\',\'' + arabicEsc + '\')" title="' + t('btn_fullscreen') + '">⛶</button>';
-  const audioBtn = item.audio ? '<button class="btn-audio" ontouchstart="event.stopPropagation()" onclick="playAudio(' + (Array.isArray(item.audio) ? JSON.stringify(item.audio).replace(/"/g,"'") : '\'' + item.audio + '\'') + ',this,event)" title="' + t('btn_listen_recitation') + '">🔊</button>' : '';
-  return '<div class="item counter-item' + (done ? ' checked' : '') + '" style="animation-delay:' + delay + 'ms" id="item-' + item.id + '"><div class="counter-top"><div class="check-circle" id="cb-' + item.id + '" style="' + (done ? 'background:var(--green-grad);border-color:var(--green);box-shadow:0 0 0 4px var(--green-soft),0 0 16px rgba(52,217,98,0.25)' : '') + '"><svg class="check-svg" style="' + (done ? 'opacity:1;transform:scale(1)' : '') + '" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-body"><div class="item-label">' + item.label + '</div><div class="item-sub">' + item.sub + '</div>' + arabicHtml + '</div>' + audioBtn + fullscreenBtn + '</div><div class="counter-body"><button class="btn-cnt-reset" onclick="resetCounter(\'' + item.id + '\')">↺</button><div class="counter-display"><div class="counter-num" id="cnt-num-' + item.id + '">' + count + '</div><div class="counter-total">/ ' + item.target + '</div><div class="counter-bar-track"><div class="counter-bar-fill" id="cnt-bar-' + item.id + '" style="width:' + Math.min(count/item.target*100,100) + '%"></div></div></div><button class="btn-cnt" onclick="incrementCounter(\'' + item.id + '\',' + item.target + ')">+</button></div></div>';
+  const fullscreenBtn = '<button class="btn-tasbih-fs" aria-label="Plein écran" onclick="openTasbih(\'' + item.id + '\',' + item.target + ',\'' + labelEsc + '\',\'' + arabicEsc + '\')" title="' + t('btn_fullscreen') + '">⛶</button>';
+  const audioBtn = item.audio ? '<button class="btn-audio" aria-label="Écouter" ontouchstart="event.stopPropagation()" onclick="playAudio(' + (Array.isArray(item.audio) ? JSON.stringify(item.audio).replace(/"/g,"'") : '\'' + item.audio + '\'') + ',this,event)" title="' + t('btn_listen_recitation') + '">🔊</button>' : '';
+  return '<div class="item counter-item' + (done ? ' checked' : '') + '" style="animation-delay:' + delay + 'ms" id="item-' + item.id + '"><div class="counter-top"><div class="check-circle" id="cb-' + item.id + '" style="' + (done ? 'background:var(--green-grad);border-color:var(--green);box-shadow:0 0 0 4px var(--green-soft),0 0 16px rgba(52,217,98,0.25)' : '') + '"><svg class="check-svg" style="' + (done ? 'opacity:1;transform:scale(1)' : '') + '" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-body"><div class="item-label">' + item.label + '</div><div class="item-sub">' + item.sub + '</div>' + arabicHtml + '</div>' + audioBtn + fullscreenBtn + '</div><div class="counter-body"><button class="btn-cnt-reset" aria-label="Réinitialiser" onclick="resetCounter(\'' + item.id + '\')">↺</button><div class="counter-display"><div class="counter-num" id="cnt-num-' + item.id + '">' + count + '</div><div class="counter-total">/ ' + item.target + '</div><div class="counter-bar-track"><div class="counter-bar-fill" id="cnt-bar-' + item.id + '" style="width:' + Math.min(count/item.target*100,100) + '%"></div></div></div><button class="btn-cnt" aria-label="Incrémenter" onclick="incrementCounter(\'' + item.id + '\',' + item.target + ')">+</button></div></div>';
 }
 function initCounterEl(item) {}
 function incrementCounter(id, target) {
@@ -2674,7 +2674,7 @@ function renderYearCalendar() {
   const MONTHS = ['Jan','Fev','Mar','Avr','Mai','Jun','Jul','Aou','Sep','Oct','Nov','Dec'];
   const nowYear = new Date().getFullYear();
   const canNext = calYear < nowYear;
-  let html = '<div class="year-nav"><button class="year-nav-btn" onclick="calYear--;renderYearCalendar()">&#8249;</button><div class="year-nav-title">' + calYear + '</div><button class="year-nav-btn" style="opacity:' + (canNext ? '1' : '0.3') + '" onclick="' + (canNext ? 'calYear++;renderYearCalendar()' : '') + '">&#8250;</button></div><div class="year-months">';
+  let html = '<div class="year-nav"><button class="year-nav-btn" aria-label="Année précédente" onclick="calYear--;renderYearCalendar()">&#8249;</button><div class="year-nav-title">' + calYear + '</div><button class="year-nav-btn" aria-label="Année suivante" style="opacity:' + (canNext ? '1' : '0.3') + '" onclick="' + (canNext ? 'calYear++;renderYearCalendar()' : '') + '">&#8250;</button></div><div class="year-months">';
   for (let m = 0; m < 12; m++) {
     const daysInMonth = new Date(calYear, m+1, 0).getDate();
     html += '<div class="year-month"><div class="year-month-label">' + MONTHS[m] + '</div><div class="year-days">';
@@ -2859,7 +2859,7 @@ function renderProgression() {
   const hasBilans = Object.keys(bilansData).length > 0;
   const bilanHTML = hasBilans ? '<div style="margin:0 16px 24px;"><div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;">Bilan des 7 derniers soirs</div><div style="display:flex;gap:6px;justify-content:space-between;padding:14px 16px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:16px;">' + bilanCells + '</div><div style="display:flex;gap:14px;margin-top:8px;"><div style="display:flex;align-items:center;gap:4px;"><span style="font-size:12px;">😶</span><span style="font-size:12px;color:var(--t3);">Distrait</span></div><div style="display:flex;align-items:center;gap:4px;"><span style="font-size:12px;">🌤</span><span style="font-size:12px;color:var(--t3);">Efforts</span></div><div style="display:flex;align-items:center;gap:4px;"><span style="font-size:12px;">☀️</span><span style="font-size:12px;color:var(--t3);">Sincère</span></div></div></div>' : '';
 
-  const heroSectionP = '<div style="margin:0 16px 24px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:2.5px;color:rgba(255,255,255,0.3);text-transform:uppercase;margin-bottom:12px;text-align:center;">PROGRESSION</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">'+lvlGridP+'</div></div>';
+  const heroSectionP = '<div style="margin:0 16px 24px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:2.5px;color:rgba(255,255,255,0.55);text-transform:uppercase;margin-bottom:12px;text-align:center;">PROGRESSION</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">'+lvlGridP+'</div></div>';
 
   el.innerHTML = `
     <div style="padding:0 0 40px;"><!-- 1. TITRE SPIRITUEL --><div id="v2-spiritual-title" style="text-align:center;margin:0 16px 12px;"></div><!-- 2. PROGRESSION -->${heroSectionP}<!-- 3. DÉFI SEMAINE --><button id="accueilDefiCard" class="defi-card-sanctuaire" onclick="if(typeof openDefiSelector==='function')openDefiSelector()" style="display:none;margin:0 16px 12px;padding:14px 18px;background:#1a1a1a;border:1px solid rgba(200,168,75,0.3);border-radius:14px;cursor:pointer;position:relative;z-index:10;text-align:left;min-height:90px;box-sizing:border-box;font-family:inherit;color:inherit;width:calc(100% - 32px);"><div style="display:flex;align-items:center;gap:12px;width:100%;"><div id="defiCardIcon"><img src="https://nabs881-sketch.github.io/niyyah-app/imagescroissant.webp" alt="Croissant" style="width:60px;height:auto;display:block;flex-shrink:0;"></div><div style="flex:1;text-align:left;"><div id="defiCardTitre" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:#C8A84A;">Défi de la semaine</div><div id="defiCardScore" style="font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:#B0A080;margin-top:2px;"></div></div></div><div id="defiCardDots" style="display:none;"></div><div id="defiCardBar" style="position:absolute;bottom:0;left:0;right:0;height:3px;background:rgba(200,168,75,0.12);border-radius:0 0 14px 14px;overflow:hidden;"><div id="defiCardBarFill" style="height:100%;width:0%;background:#C8A84A;transition:width 0.6s ease;"></div></div></button><!-- 4. CHALLENGE FAJR --><div id="fajr-challenge-card" style="display:none;margin:0 16px 12px;"></div><!-- 5. SÉRIE EN COURS --><div style="text-align:center;padding:36px 20px 28px;position:relative;"><div style="font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;">${t('prog_streak')}</div><div style="font-size:80px;font-weight:900;line-height:1;background:linear-gradient(135deg,#c8a84b,#e8cc6a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-3px;">${streakDisplay}</div><div style="font-size:13px;color:var(--t3);margin-top:6px;letter-spacing:1px;">${t('prog_days')}</div><div style="display:flex;justify-content:center;gap:24px;margin-top:16px;"><div style="text-align:center;"><div style="font-size:18px;font-weight:700;color:var(--t1);">${bestDisplay}</div><div style="font-size:12px;color:var(--t3);letter-spacing:0.8px;text-transform:uppercase;">${t('prog_best')}</div></div><div style="width:1px;background:rgba(255,255,255,0.1);"></div><div style="text-align:center;"><div style="font-size:18px;font-weight:700;color:var(--t1);">${totalDisplay}</div><div style="font-size:12px;color:var(--t3);letter-spacing:0.8px;text-transform:uppercase;">${t('prog_total')}</div></div></div></div><!-- HADITH CONTEXTUEL --><div style="margin:0 16px 24px;padding:20px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.2);border-radius:16px;position:relative;overflow:hidden;"><div style="position:absolute;top:-10px;right:12px;font-size:48px;opacity:0.07;font-family:serif;">"</div><div style="font-size:14px;line-height:1.7;color:var(--t1);font-style:italic;margin-bottom:10px;">${hadith.text}</div><div style="font-size:12px;color:#c8a84b;font-weight:600;letter-spacing:0.5px;">— ${hadith.ref}</div></div><!-- 6. HEATMAP 30 JOURS --><div style="margin:0 16px 24px;"><div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;text-align:center;">${t('prog_heatmap')}</div><div style="display:grid;grid-template-columns:repeat(10,1fr);gap:4px;">
@@ -3147,7 +3147,7 @@ function renderPrayerTimesCard() {
       '<div style="font-size:12px;color:var(--t3);margin-bottom:8px;">' + t('city_enter') + '</div>' +
       '<div class="city-input-wrap">' +
         '<input class="city-input" id="cityInput" type="text" placeholder="Ex: Paris, Casablanca, Bruxelles..." value="' + (_prayerCity||'') + '" onkeydown="if(event.key===\'Enter\')saveCityAndLoad()">' +
-        '<button class="city-input-btn" onclick="saveCityAndLoad()">OK</button>' +
+        '<button class="city-input-btn" aria-label="Valider la ville" onclick="saveCityAndLoad()">OK</button>' +
       '</div>' +
     '</div>';
   }
@@ -3162,7 +3162,7 @@ function renderPrayerTimesCard() {
       '<div style="font-size:12px;color:var(--t3);text-align:center;padding:8px;">Erreur — vérifie ta connexion ou la ville</div>' +
       '<div class="city-input-wrap">' +
         '<input class="city-input" id="cityInput" type="text" placeholder="' + t('city_placeholder_prayer') + '" value="' + (_prayerCity||'') + '" onkeydown="if(event.key===\'Enter\')saveCityAndLoad()">' +
-        '<button class="city-input-btn" onclick="saveCityAndLoad()">Réessayer</button>' +
+        '<button class="city-input-btn" aria-label="Valider la ville" onclick="saveCityAndLoad()">Réessayer</button>' +
       '</div>' +
     '</div>';
   }
@@ -3194,7 +3194,7 @@ function renderPrayerTimesCard() {
   if (_diffMin < 2) _countdownText = t('countdown_now');
   else if (_diffMin < 60) _countdownText = _diffMin + ' min';
   else _countdownText = Math.floor(_diffMin / 60) + 'h ' + String(_diffMin % 60).padStart(2,'0') + ' min';
-  var countdown = '<div id="prayerCountdown" style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;margin-bottom:8px;background:linear-gradient(135deg,rgba(200,168,75,0.12),rgba(200,168,75,0.04));border:1px solid rgba(200,168,75,0.25);border-radius:12px;">'
+  var countdown = '<div id="prayerCountdown" aria-live="polite" aria-atomic="true" style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;margin-bottom:8px;background:linear-gradient(135deg,rgba(200,168,75,0.12),rgba(200,168,75,0.04));border:1px solid rgba(200,168,75,0.25);border-radius:12px;">'
     + '<div><div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:2px;">PROCHAINE</div>'
     + '<div style="font-size:15px;font-weight:700;color:#C8A84A;">' + _nextName + ' <span style="font-weight:400;font-size:13px;color:#B0A080;">dans ' + _countdownText + '</span></div></div>'
     + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-weight:700;color:#C8A84A;">' + _nextTime + '</div>'
@@ -3462,15 +3462,15 @@ function renderWird() {
     s.items.forEach(item => {
       const checked = !!wirdState[item.id];
       const audioData = item.audio ? JSON.stringify(item.audio) : null;
-      const audioBtn = item.audio ? `<button class="btn-wird-audio" ontouchstart="event.stopPropagation()" onclick="playAudioFromBtn(this,event)" data-audio="${audioData ? audioData.replace(/"/g,'&quot;') : ''}" title="${t('btn_listen')}">🔊</button>` : '';
+      const audioBtn = item.audio ? `<button class="btn-wird-audio" aria-label="Écouter" ontouchstart="event.stopPropagation()" onclick="playAudioFromBtn(this,event)" data-audio="${audioData ? audioData.replace(/"/g,'&quot;') : ''}" title="${t('btn_listen')}">🔊</button>` : '';
       const phonEsc = (item.phonetic||'').replace(/"/g,'&quot;');
       const arabEsc = (item.arabic||'').replace(/"/g,'&quot;');
       const srcEsc  = (item.source||'').replace(/"/g,'&quot;');
       const labelEsc = item.label.replace(/"/g,'&quot;');
-      const infoBtn = `<button class="btn-wird-info" onclick="openInfoSheet('','','','',event)" data-label="${labelEsc}" data-arabic="${arabEsc}" data-phonetic="${phonEsc}" data-translation="${srcEsc}"><i>i</i></button>`;
+      const infoBtn = `<button class="btn-wird-info" aria-label="Détails" onclick="openInfoSheet('','','','',event)" data-label="${labelEsc}" data-arabic="${arabEsc}" data-phonetic="${phonEsc}" data-translation="${srcEsc}"><i>i</i></button>`;
       html += `<div class="wird-item${checked?' checked':''}" onclick="toggleWirdItem('${item.id}',event)"><div class="wird-check"><svg class="wird-check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="wird-body"><div class="wird-label">${item.label}</div><div class="wird-sub">${item.sub}</div><div class="wird-arabic">${item.arabic}</div></div><div class="wird-actions">${audioBtn}${infoBtn}</div></div>`;
     });
-    html += `<button class="wird-reset-btn" onclick="resetWirdSession('${session}')">↺ Réinitialiser</button></div>`;
+    html += `<button class="wird-reset-btn" aria-label="Réinitialiser" onclick="resetWirdSession('${session}')">↺ Réinitialiser</button></div>`;
   });
   content.innerHTML = html;
 }
@@ -3598,7 +3598,7 @@ function showWeeklyBilan() {
       : `<div style="width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);"></div>`;
     return `<div style="display:flex;flex-direction:column;align-items:center;gap:5px;">
       ${dot}
-      <div style="font-size:12px;font-weight:700;color:rgba(255,255,255,0.3);letter-spacing:0.05em;">${labels[i]}</div>
+      <div style="font-size:12px;font-weight:700;color:rgba(255,255,255,0.55);letter-spacing:0.05em;">${labels[i]}</div>
     </div>`;
   }).join('');
 
@@ -3619,7 +3619,7 @@ function showWeeklyBilan() {
       </div>
       <!-- Hadith Istiqamah -->
       <div style="margin-bottom:16px;padding:14px 16px;border-left:2px solid rgba(212,175,55,0.3);text-align:left;">
-        <div style="font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(212,175,55,0.45);margin-bottom:6px;font-family:'Cormorant Garamond',serif;">Al-Istiqamah</div>
+        <div style="font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(212,175,55,0.65);margin-bottom:6px;font-family:'Cormorant Garamond',serif;">Al-Istiqamah</div>
         <div style="font-family:'Cormorant Garamond',serif;font-size:13px;font-style:italic;color:rgba(240,234,214,0.65);line-height:1.6;">"${hadith.text}"</div>
         <div style="font-size:12px;color:rgba(212,175,55,0.5);margin-top:4px;">— ${hadith.source}</div>
       </div>
@@ -5031,8 +5031,8 @@ function renderQiblaCard() {
   const headerHtml = '<div class="qibla-card"><div style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;margin-bottom:' + (_qiblaOpen ? '12' : '0') + 'px;" onclick="_qiblaOpen=!_qiblaOpen;if(!_qiblaOpen)stopCompass();renderLevel(currentLevel)"><div class="qibla-title" style="margin-bottom:0;">' + t('qibla_title') + '</div>' + chevron + '</div>';
   if (!_qiblaOpen) return headerHtml + '</div>';
   if (_qiblaLoading) return headerHtml + '<div style="font-size:13px;color:var(--t3);padding:16px 0;text-align:center;">📍 Localisation...</div></div>';
-  if (_qiblaError) return headerHtml + '<div style="font-size:13px;color:var(--t3);padding:8px 0;">' + _qiblaError + '</div><button class="qibla-btn" onclick="loadQibla()">Réessayer</button></div>';
-  if (_qiblaAngle === null) return headerHtml + '<div style="font-size:13px;color:var(--t2);margin-bottom:14px;text-align:center;">' + t('qibla_find_text') + '</div><button class="qibla-btn" onclick="loadQibla()">' + t('qibla_find_btn') + '</button></div>';
+  if (_qiblaError) return headerHtml + '<div style="font-size:13px;color:var(--t3);padding:8px 0;">' + _qiblaError + '</div><button class="qibla-btn" aria-label="Réessayer" onclick="loadQibla()">Réessayer</button></div>';
+  if (_qiblaAngle === null) return headerHtml + '<div style="font-size:13px;color:var(--t2);margin-bottom:14px;text-align:center;">' + t('qibla_find_text') + '</div><button class="qibla-btn" aria-label="Réessayer" onclick="loadQibla()">' + t('qibla_find_btn') + '</button></div>';
   const angle = Math.round(_qiblaAngle);
   const visualAngle = _deviceHeading !== null ? (_qiblaAngle - _deviceHeading + 360) % 360 : angle;
   const dirs = ['N','NE','E','SE','S','SO','O','NO'];
@@ -5067,7 +5067,7 @@ function renderQiblaCard() {
     + '<div class="' + (isAligned ? 'qibla-aligned' : 'qibla-sub') + '" id="qiblaSub">'
     + (isAligned ? '✦ ALIGNÉ AVEC LA MECQUE ✦' : isLive ? 'Tourne vers l\'aiguille verte' : 'Direction ' + dir + ' · ' + Math.round(visualAngle) + '°')
     + '</div>'
-    + '<button class="qibla-btn" onclick="loadQibla()">↻ Recalibrer</button>'
+    + '<button class="qibla-btn" aria-label="Réessayer" onclick="loadQibla()">↻ Recalibrer</button>'
     + '</div>';
 }
 
@@ -6507,7 +6507,7 @@ function journalSwitchTab(tab) {
         var thumb = e.photo ? '<img src="' + e.photo + '" style="width:60px;height:60px;border-radius:10px;object-fit:cover;flex-shrink:0;">' : '<div style="width:60px;height:60px;border-radius:10px;background:rgba(200,168,75,0.08);flex-shrink:0;"></div>';
         html += '<div onclick="openNiyyahDetail(\'' + e.id + '\')" style="display:flex;gap:12px;align-items:center;padding:12px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.2);border-radius:12px;margin-bottom:8px;cursor:pointer;box-shadow:0 2px 12px rgba(0,0,0,0.3);transition:all 0.3s ease;">'
           + thumb + '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#D4AF37;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">' + (e.intention || '') + '</div>'
-          + '<div style="font-size:12px;color:rgba(255,255,255,0.3);margin-top:4px;">' + dateStr + '</div></div></div>';
+          + '<div style="font-size:12px;color:rgba(255,255,255,0.55);margin-top:4px;">' + dateStr + '</div></div></div>';
       });
       content.innerHTML = html;
     }
@@ -6526,7 +6526,7 @@ function journalSwitchTab(tab) {
         var star = e.bookmark ? '<div style="position:absolute;top:8px;right:8px;color:#D4AF37;font-size:14px;">★</div>' : '';
         html += '<div onclick="openRegardeDetail(\'' + e.id + '\')" style="display:flex;gap:12px;align-items:center;padding:12px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.2);border-radius:12px;margin-bottom:8px;cursor:pointer;position:relative;box-shadow:0 2px 12px rgba(0,0,0,0.3);transition:all 0.3s ease;">'
           + thumb + '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#D4AF37;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">' + (e.question || '') + '</div>'
-          + '<div style="font-size:12px;color:rgba(255,255,255,0.3);margin-top:4px;">' + dateStr + '</div></div>' + star + '</div>';
+          + '<div style="font-size:12px;color:rgba(255,255,255,0.55);margin-top:4px;">' + dateStr + '</div></div>' + star + '</div>';
       });
       content.innerHTML = html;
     }
@@ -6725,7 +6725,7 @@ function v2OpenSettings() {
   sheet.id = 'v2-settings-sheet';
   sheet.style.cssText = 'position:fixed;inset:0;background:rgba(10,10,10,0.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:3000;display:flex;align-items:flex-end;justify-content:center;animation:backdropV2 0.3s ease forwards;';
   const ramadanActive = typeof ramadanState !== 'undefined' && ramadanState.active;
-  const debugSection = NIYYAH_DEBUG ? '<div style="margin-top:14px;background:#1a1a1a;border:1px solid rgba(255,255,255,0.05);border-radius:14px;padding:16px;"><div style="font-size:12px;letter-spacing:0.28em;color:rgba(255,255,255,0.25);text-transform:uppercase;font-family:Cormorant Garamond,serif;margin-bottom:10px;text-align:center;">🔧 DEBUG</div><button onclick="safeSetItem(\'niyyah_regarde_available_today\',\'true\');showToast(\'Regarde active\');document.getElementById(\'v2-settings-sheet\').remove();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.4);font-size:12px;cursor:pointer;margin-bottom:8px;">[DEBUG] Activer Regarde</button><button onclick="document.getElementById(\'v2-settings-sheet\').remove();regardeOpen();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.4);font-size:12px;cursor:pointer;">[DEBUG] Lancer Regarde maintenant</button><button onclick="document.getElementById(\'v2-settings-sheet\').remove();openFinJournee();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.4);font-size:12px;cursor:pointer;margin-top:8px;">[DEBUG] Forcer Fin de Journée</button></div>' : '';
+  const debugSection = NIYYAH_DEBUG ? '<div style="margin-top:14px;background:#1a1a1a;border:1px solid rgba(255,255,255,0.05);border-radius:14px;padding:16px;"><div style="font-size:12px;letter-spacing:0.28em;color:rgba(255,255,255,0.55);text-transform:uppercase;font-family:Cormorant Garamond,serif;margin-bottom:10px;text-align:center;">🔧 DEBUG</div><button onclick="safeSetItem(\'niyyah_regarde_available_today\',\'true\');showToast(\'Regarde active\');document.getElementById(\'v2-settings-sheet\').remove();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);font-size:12px;cursor:pointer;margin-bottom:8px;">[DEBUG] Activer Regarde</button><button onclick="document.getElementById(\'v2-settings-sheet\').remove();regardeOpen();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);font-size:12px;cursor:pointer;">[DEBUG] Lancer Regarde maintenant</button><button onclick="document.getElementById(\'v2-settings-sheet\').remove();openFinJournee();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);font-size:12px;cursor:pointer;margin-top:8px;">[DEBUG] Forcer Fin de Journée</button></div>' : '';
   sheet.innerHTML = `
     <div style="width:100%;max-width:480px;max-height:calc(100vh - env(safe-area-inset-top,0px));overflow-y:auto;background:#111;border-radius:22px 22px 0 0;padding:calc(env(safe-area-inset-top,0px) + 26px) 22px calc(32px + env(safe-area-inset-bottom));border-top:1px solid rgba(212,175,55,0.14);animation:sheetV2 0.4s cubic-bezier(0.23,1,0.32,1) forwards;direction:${T.dir};">
       <div style="width:38px;height:3px;background:rgba(255,255,255,0.1);border-radius:2px;margin:0 auto 22px;"></div>
@@ -6733,7 +6733,7 @@ function v2OpenSettings() {
 
       <!-- LANGUE -->
       <div style="margin-bottom:14px;">
-        <div style="font-size:12px;letter-spacing:0.28em;color:rgba(212,175,55,0.45);text-transform:uppercase;font-family:'Cormorant Garamond',serif;margin-bottom:10px;text-align:center;">${T.settings_lang}</div>
+        <div style="font-size:12px;letter-spacing:0.28em;color:rgba(212,175,55,0.65);text-transform:uppercase;font-family:'Cormorant Garamond',serif;margin-bottom:10px;text-align:center;">${T.settings_lang}</div>
         <div style="display:flex;gap:8px;justify-content:center;">
           <button id="v2-lang-fr" onclick="v2SetLanguage('fr')"
             style="padding:9px 20px;border-radius:100px;border:1px solid ${V2_LANG==='fr'?'rgba(212,175,55,0.5)':'rgba(255,255,255,0.1)'};background:${V2_LANG==='fr'?'rgba(212,175,55,0.1)':'none'};color:${V2_LANG==='fr'?'#D4AF37':'rgba(240,234,214,0.5)'};font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:0.15em;cursor:pointer;transition:all 0.2s;">
@@ -6764,7 +6764,7 @@ function v2OpenSettings() {
           onclick="document.getElementById('v2-settings-sheet').remove();localStorage.removeItem('niyyah_coords');showCityInput();">
           <div style="display:flex;justify-content:space-between;align-items:center;">
             <div style="font-size:14px;color:rgba(240,234,214,0.7);">📍 Changer ma ville</div>
-            <div style="font-size:12px;color:rgba(240,234,214,0.25);">${_prayerCity || '—'}</div>
+            <div style="font-size:12px;color:rgba(240,234,214,0.55);">${_prayerCity || '—'}</div>
           </div>
         </div>
         <div style="padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.04);cursor:pointer;"
@@ -6777,8 +6777,8 @@ function v2OpenSettings() {
         <div style="padding:14px 16px;cursor:pointer;"
           onclick="if(typeof confirmReset==='function'){confirmReset();document.getElementById('v2-settings-sheet').remove();}">
           <div style="display:flex;justify-content:space-between;align-items:center;">
-            <div style="font-size:14px;color:rgba(240,234,214,0.4);">${T.settings_reset}</div>
-            <div style="font-size:12px;color:rgba(240,234,214,0.18);">${T.settings_privacy}</div>
+            <div style="font-size:14px;color:rgba(240,234,214,0.55);">${T.settings_reset}</div>
+            <div style="font-size:12px;color:rgba(240,234,214,0.55);">${T.settings_privacy}</div>
           </div>
         </div>
       </div>
@@ -6790,16 +6790,16 @@ function v2OpenSettings() {
       </div>
 
       <div style="margin-top:14px;background:#1a1a1a;border:1px solid rgba(255,255,255,0.05);border-radius:14px;padding:16px;">
-        <div style="font-size:12px;letter-spacing:0.28em;color:rgba(212,175,55,0.45);text-transform:uppercase;font-family:'Cormorant Garamond',serif;margin-bottom:10px;text-align:center;">${T.settings_mentions}</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:12px;color:rgba(240,234,214,0.3);line-height:1.6;text-align:${isRTL ? 'right' : 'left'};">${T.mentions_text}</div>
+        <div style="font-size:12px;letter-spacing:0.28em;color:rgba(212,175,55,0.65);text-transform:uppercase;font-family:'Cormorant Garamond',serif;margin-bottom:10px;text-align:center;">${T.settings_mentions}</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:12px;color:rgba(240,234,214,0.55);line-height:1.6;text-align:${isRTL ? 'right' : 'left'};">${T.mentions_text}</div>
       </div>
 
       ${debugSection}
 
-      <div style="text-align:center;padding:8px;font-size:12px;color:rgba(240,234,214,0.12);font-family:'Cormorant Garamond',serif;letter-spacing:0.2em;margin-bottom:12px;">NIYYAH V2.0 · بِسْمِ اللَّهِ</div>
+      <div style="text-align:center;padding:8px;font-size:12px;color:rgba(240,234,214,0.55);font-family:'Cormorant Garamond',serif;letter-spacing:0.2em;margin-bottom:12px;">NIYYAH V2.0 · بِسْمِ اللَّهِ</div>
 
       <button onclick="document.getElementById('v2-settings-sheet').remove();"
-        style="width:100%;padding:13px;border-radius:100px;border:1px solid rgba(255,255,255,0.07);background:none;color:rgba(240,234,214,0.38);font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;">
+        style="width:100%;padding:13px;border-radius:100px;border:1px solid rgba(255,255,255,0.07);background:none;color:rgba(240,234,214,0.55);font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;">
         ${T.settings_close}
       </button>
     </div>`;
@@ -7121,7 +7121,7 @@ function updateSpiritualTitle() {
   el.style.marginBottom = '40px';
   el.innerHTML = '<div style="font-family:\'Amiri\',serif;font-size:40px;color:#C8A84A;line-height:1.3;">' + title.ar + '</div>'
     + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:rgba(200,168,75,0.7);letter-spacing:0.5px;margin-top:4px;">' + title.tr + '</div>'
-    + '<div style="font-family:\'Inter\',var(--sans);font-size:12px;color:rgba(255,255,255,0.4);letter-spacing:1px;margin-top:12px;">Jour ' + totalDisplay + ' · Série de ' + streakDisplay + '</div>';
+    + '<div style="font-family:\'Inter\',var(--sans);font-size:12px;color:rgba(255,255,255,0.55);letter-spacing:1px;margin-top:12px;">Jour ' + totalDisplay + ' · Série de ' + streakDisplay + '</div>';
 }
 function v2RefreshStats() {
   // POINT 3 — Effet visuel Tawba persistant 24h
@@ -7347,7 +7347,7 @@ function openFinJourneeConsultation() {
   overlay.id = 'finjournee-consult';
   overlay.style.cssText = 'position:fixed;inset:0;z-index:10000;background:#000;display:flex;align-items:center;justify-content:center;padding:24px;';
   overlay.innerHTML = '<div style="max-width:320px;text-align:center;">' + body
-    + '<button onclick="document.getElementById(\'finjournee-consult\').remove()" style="margin-top:36px;padding:12px 32px;border-radius:100px;border:1px solid rgba(200,168,75,0.3);background:none;color:rgba(200,168,75,0.6);font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;cursor:pointer;">Fermer</button>'
+    + '<button onclick="document.getElementById(\'finjournee-consult\').remove()" style="margin-top:36px;padding:12px 32px;border-radius:100px;border:1px solid rgba(200,168,75,0.3);background:none;color:rgba(200,168,75,0.6);font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;cursor:pointer;" aria-label="Fermer">Fermer</button>'
     + '</div>';
   overlay.addEventListener('click', function(e) { if (e.target === overlay) overlay.remove(); });
   document.body.appendChild(overlay);
@@ -7457,7 +7457,7 @@ function updateSanctuaireMoment() {
   var jourRemaining = jourItems.length - jourDone;
   var jourLine = '';
   if (jourRemaining > 0 && jourItems.length <= 5) {
-    jourLine = '<div style="font-family:\'Inter\',var(--sans);font-size:12px;color:rgba(255,255,255,0.4);margin-top:4px;">+ ' + jourRemaining + ' acte' + (jourRemaining > 1 ? 's' : '') + ' du jour</div>';
+    jourLine = '<div style="font-family:\'Inter\',var(--sans);font-size:12px;color:rgba(255,255,255,0.55);margin-top:4px;">+ ' + jourRemaining + ' acte' + (jourRemaining > 1 ? 's' : '') + ' du jour</div>';
   }
   if (blockRemaining === 0) {
     el.innerHTML = '<div style="text-align:center;padding:8px;">'
@@ -7998,7 +7998,7 @@ function openRegardeJournal() {
         + thumb
         + '<div style="flex:1;min-width:0;">'
         + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#D4AF37;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">' + (e.question || '') + '</div>'
-        + '<div style="font-size:12px;color:rgba(255,255,255,0.3);margin-top:4px;">' + dateStr + '</div>'
+        + '<div style="font-size:12px;color:rgba(255,255,255,0.55);margin-top:4px;">' + dateStr + '</div>'
         + '</div>' + star + '</div>';
     });
     list.innerHTML = html;
@@ -8025,7 +8025,7 @@ function openRegardeDetail(id) {
   var noteText = entry.note || '';
   content.innerHTML = photoHtml
     + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-style:italic;color:#D4AF37;line-height:1.6;text-align:center;margin-bottom:12px;">' + (entry.question || '') + '</div>'
-    + '<div style="font-size:12px;color:rgba(255,255,255,0.3);text-align:center;margin-bottom:24px;">' + dateStr + '</div>'
+    + '<div style="font-size:12px;color:rgba(255,255,255,0.55);text-align:center;margin-bottom:24px;">' + dateStr + '</div>'
     + '<div style="display:flex;gap:16px;justify-content:center;margin-bottom:20px;">'
     + '<button onclick="regardeDetailStar(\'' + id + '\')" id="regarde-detail-star" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:' + (entry.bookmark ? 'rgba(212,175,55,0.15)' : 'transparent') + ';cursor:pointer;font-size:24px;color:#D4AF37;display:flex;align-items:center;justify-content:center;">' + starIcon + '</button>'
     + '<button onclick="regardeDetailNote(\'' + id + '\')" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;font-size:24px;color:#D4AF37;display:flex;align-items:center;justify-content:center;">✎</button>'
@@ -8159,7 +8159,7 @@ function renderNiyyahJournalList(entries) {
       + thumb
       + '<div style="flex:1;min-width:0;">'
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#D4AF37;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">' + (e.intention || '') + '</div>'
-      + '<div style="font-size:12px;color:rgba(255,255,255,0.3);margin-top:4px;">' + dateStr + '</div>'
+      + '<div style="font-size:12px;color:rgba(255,255,255,0.55);margin-top:4px;">' + dateStr + '</div>'
       + '</div></div>';
   });
   list.innerHTML = html;
@@ -8176,7 +8176,7 @@ function openNiyyahDetail(id) {
   var photoHtml = entry.photo ? '<img src="' + entry.photo + '" style="width:100%;border-radius:14px;margin-bottom:20px;">' : '';
   content.innerHTML = photoHtml
     + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-style:italic;color:#D4AF37;line-height:1.6;text-align:center;margin-bottom:12px;">' + (entry.intention || '') + '</div>'
-    + '<div style="font-size:12px;color:rgba(255,255,255,0.3);text-align:center;margin-bottom:24px;">' + dateStr + '</div>'
+    + '<div style="font-size:12px;color:rgba(255,255,255,0.55);text-align:center;margin-bottom:24px;">' + dateStr + '</div>'
     + '<div style="text-align:center;"><button onclick="niyyahDetailDelete(\'' + id + '\')" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,80,80,0.3);background:transparent;cursor:pointer;font-size:20px;color:rgba(255,80,80,0.6);display:inline-flex;align-items:center;justify-content:center;">🗑</button></div>';
   overlay.style.display = 'block';
 }
@@ -8490,17 +8490,33 @@ window.scannerShowResult    = scannerShowResult;
 window.scannerConfirmNiyyah = scannerConfirmNiyyah;
 window.scannerRetry         = scannerRetry;
 
-// A11y: Escape key closes active overlay
+// A11y: overlay list used by Escape + focus trap
+var A11Y_OVERLAYS = ['scanner-overlay','niyyah-journal-overlay','niyyah-detail-overlay',
+  'regarde-journal-overlay','regarde-detail-overlay','infoOverlay','bilanSoirOverlay',
+  'defiOverlay','defiSelectorOverlay','coranOverlay','finjournee-overlay','tasbihOverlay',
+  'tawbaOverlay','freemiumOverlay','niyyahModal-v2','weeklyOverlay'];
+
+function a11yGetActiveOverlay() {
+  for (var i = 0; i < A11Y_OVERLAYS.length; i++) {
+    var el = document.getElementById(A11Y_OVERLAYS[i]);
+    if (el && el.style.display !== 'none' && getComputedStyle(el).display !== 'none') return el;
+  }
+  return null;
+}
+
+// A11y: Escape key closes active overlay + focus trap
 document.addEventListener('keydown', function(e) {
-  if (e.key !== 'Escape') return;
-  var overlays = ['scanner-overlay','niyyah-journal-overlay','niyyah-detail-overlay',
-    'regarde-journal-overlay','regarde-detail-overlay','infoOverlay','bilanSoirOverlay',
-    'defiOverlay','defiSelectorOverlay','coranOverlay','finjournee-overlay','tasbihOverlay'];
-  for (var i = 0; i < overlays.length; i++) {
-    var el = document.getElementById(overlays[i]);
-    if (el && el.style.display !== 'none' && getComputedStyle(el).display !== 'none') {
-      el.style.display = 'none'; return;
-    }
+  var active = a11yGetActiveOverlay();
+  if (!active) return;
+  if (e.key === 'Escape') { active.style.display = 'none'; return; }
+  if (e.key !== 'Tab') return;
+  var focusable = active.querySelectorAll('button,input,select,textarea,a,[tabindex]:not([tabindex="-1"])');
+  if (!focusable.length) return;
+  var first = focusable[0], last = focusable[focusable.length - 1];
+  if (e.shiftKey) {
+    if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+  } else {
+    if (document.activeElement === last) { e.preventDefault(); first.focus(); }
   }
 });
 
