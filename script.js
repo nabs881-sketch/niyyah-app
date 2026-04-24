@@ -1624,10 +1624,12 @@ function switchView(name) {
   }
   document.querySelectorAll('.view').forEach(v => {
     v.classList.remove('active');
+    v.style.display = 'none';
   });
   document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
   const activeView = document.getElementById('view-' + name);
   activeView.classList.add('active');
+  activeView.style.display = name === 'accueil' ? 'flex' : 'block';
   const navEl = document.getElementById('nav-' + name);
   if (navEl) navEl.classList.add('active');
   if (name === 'progression') renderProgression();
@@ -1832,10 +1834,11 @@ function init() {
   window.addEventListener('touchmove', onScroll, { passive: true });
   document.addEventListener('scroll', onScroll, { passive: true });
   currentLevel = 1;
-  document.querySelectorAll('.view').forEach(v => { v.classList.remove('active'); });
+  document.querySelectorAll('.view').forEach(v => { v.classList.remove('active'); v.style.display = 'none'; });
   document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
   const accueilView = document.getElementById('view-accueil');
   accueilView.classList.add('active');
+  accueilView.style.display = 'flex';
   document.getElementById('nav-accueil').classList.add('active');
   if (!_onboardDone) {
     onboardRender();
@@ -6454,18 +6457,20 @@ function _v2TransitionTo(targetId, opts) {
       activeView.classList.add('view-transition','exiting');
       setTimeout(function() {
         activeView.classList.remove('active','view-transition','exiting');
+        activeView.style.display = 'none';
         _v2ShowTarget(targetId, opts);
       }, 150);
     } else {
-      document.querySelectorAll('.view').forEach(function(v) { v.classList.remove('active'); });
+      document.querySelectorAll('.view').forEach(function(v) { v.classList.remove('active'); v.style.display = 'none'; });
       _v2ShowTarget(targetId, opts);
     }
   }
 }
 function _v2ShowTarget(targetId, opts) {
-  document.querySelectorAll('.view').forEach(function(v) { if (v.id !== targetId) { v.classList.remove('active'); } });
+  document.querySelectorAll('.view').forEach(function(v) { if (v.id !== targetId) { v.classList.remove('active'); v.style.display = 'none'; } });
   var target = document.getElementById(targetId);
   if (!target) return;
+  target.style.display = '';
   target.classList.add('active','view-transition','entering');
   setTimeout(function() {
     target.classList.remove('entering');
@@ -6544,7 +6549,7 @@ function v2GoSanctuaire() {
   // Fade out current view
   var activeView = document.querySelector('.view.active');
   function _showSanctuaire() {
-    document.querySelectorAll('.view').forEach(function(v) { v.classList.remove('active'); });
+    document.querySelectorAll('.view').forEach(function(v) { v.classList.remove('active'); v.style.display = 'none'; });
     const sanctEl = document.getElementById('view-sanctuaire');
     if (sanctEl) sanctEl.classList.add('active');
     const tbEl = document.getElementById('topbar-v2');
