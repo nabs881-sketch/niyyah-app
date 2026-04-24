@@ -1,4 +1,4 @@
-const VERSION = 'niyyah-v229';
+const VERSION = 'niyyah-v230';
 const CORE = [
   './index.html',
   './manifest.json',
@@ -8,11 +8,11 @@ const CORE = [
   './jannat-al-qalb.mp3',
   './rahatal-qulub.mp3',
   './ferme-ta-journee.webp',
-  './assets/moments/fajr.jpg',
-  './assets/moments/dhuhr.jpg',
-  './assets/moments/asr.jpg',
-  './assets/moments/maghrib.jpg',
-  './assets/moments/isha.jpg',
+  './assets/moments/fajr.webp',
+  './assets/moments/dhuhr.webp',
+  './assets/moments/asr.webp',
+  './assets/moments/maghrib.webp',
+  './assets/moments/isha.webp',
 ];
 
 self.addEventListener('install', e => {
