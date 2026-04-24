@@ -29,16 +29,23 @@ pointer-events:none;
   transition:opacity 0.4s ease
 }
 .view {
-  display:none;
-  position:relative;
-  z-index:1
+  position:absolute;
+  top:0;left:0;right:0;
+  z-index:1;
+  height:100vh;
+  overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
+  background:var(--bg,#0A0A0A);
+  visibility:hidden;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity 0.25s ease,visibility 0.25s ease;
 }
 .view.active {
-  display:block;
-  overflow-y:auto;
-  height:100vh;
-  -webkit-overflow-scrolling:touch;
-  background:var(--bg,#0A0A0A)
+  position:relative;
+  visibility:visible;
+  opacity:1;
+  pointer-events:auto;
 }
 .header {
   position:sticky;
@@ -7321,4 +7328,72 @@ button[style*="gold-v2"] {
   line-height: 1.5;
   padding: 24px 20px 32px;
   margin: 0;
+}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE — TABLET (≥768px)
+   ═══════════════════════════════════════ */
+@media (min-width:768px) {
+  .view.active {
+    max-width:600px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .nav-bar, .nav-bar-v2 {
+    max-width:600px;
+    margin-left:auto;
+    margin-right:auto;
+    border-radius:20px 20px 0 0;
+  }
+  .content {
+    padding:20px 24px 160px;
+  }
+  .modal-sheet-v2 {
+    max-width:540px;
+  }
+  .topbar-v2 {
+    max-width:600px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE — DESKTOP (≥1024px)
+   ═══════════════════════════════════════ */
+@media (min-width:1024px) {
+  .view.active {
+    max-width:480px;
+    box-shadow:0 0 80px rgba(0,0,0,0.4);
+    border-left:1px solid rgba(200,168,75,0.1);
+    border-right:1px solid rgba(200,168,75,0.1);
+    min-height:100vh;
+  }
+  .nav-bar, .nav-bar-v2 {
+    max-width:480px;
+  }
+  .topbar-v2 {
+    max-width:480px;
+  }
+  .modal-sheet-v2 {
+    max-width:480px;
+  }
+  body {
+    background:#050505;
+  }
+}
+
+/* ═══════════════════════════════════════
+   PREFERS-REDUCED-MOTION
+   ═══════════════════════════════════════ */
+@media (prefers-reduced-motion:reduce) {
+  *, *::before, *::after {
+    animation-duration:0.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:0.01ms !important;
+    scroll-behavior:auto !important;
+  }
+  .view {
+    transition:none;
+  }
 }
