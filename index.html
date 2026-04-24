@@ -68,8 +68,8 @@
 
 <!-- DRAWER CORAN PICKER -->
 <div id="coranOverlay" role="dialog" aria-modal="true" onclick="closeCoranPicker()" style="position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:1100;opacity:0;pointer-events:none;transition:opacity 0.3s;"></div>
-<div id="coranDrawer" style="position:fixed;bottom:0;left:0;right:0;z-index:1101;background:#080810;border-radius:24px 24px 0 0;border-top:1px solid rgba(200,168,75,0.2);transform:translateY(100%);transition:transform 0.35s cubic-bezier(0.32,0.72,0,1);max-height:85vh;display:flex;flex-direction:column;"><!-- Header drawer --><div style="padding:16px 20px 12px;border-bottom:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between;flex-shrink:0;"><div><div style="font-size:16px;font-weight:700;color:#fff;">Écouter le Coran</div><div style="font-size:12px;color:var(--t3);margin-top:2px;">Alafasy · Choisis une sourate</div></div><button onclick="closeCoranPicker()" style="background:rgba(255,255,255,0.08);border:none;color:var(--t2);font-size:18px;width:32px;height:32px;border-radius:50%;cursor:pointer;">✕</button></div><!-- Recherche --><div style="padding:10px 16px;flex-shrink:0;"><input id="coranSearch" type="text" placeholder="Rechercher une sourate…" oninput="filterSourates(this.value)"
-      style="width:100%;box-sizing:border-box;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:10px 14px;color:#fff;font-size:14px;outline:none;font-family:var(--sans);"></div><!-- Player actif --><div id="coranPlayer" style="display:none;margin:0 16px 10px;padding:12px 16px;background:rgba(200,168,75,0.08);border:1px solid rgba(200,168,75,0.25);border-radius:14px;flex-shrink:0;"><div style="display:flex;align-items:center;justify-content:space-between;"><div><div id="coranPlayerName" style="font-size:14px;font-weight:700;color:#e8cc6a;"></div><div id="coranPlayerVerset" style="font-size:12px;color:var(--t3);margin-top:2px;"></div></div><div style="display:flex;gap:8px;"><button id="coranPlayBtn" onclick="toggleCoranPlay()" style="background:linear-gradient(135deg,#c8a84b,#e8cc6a);border:none;color:#000;font-size:16px;width:38px;height:38px;border-radius:50%;cursor:pointer;font-weight:700;">⏸</button><button onclick="stopCoranPlayer()" style="background:rgba(255,255,255,0.08);border:none;color:var(--t2);font-size:14px;width:38px;height:38px;border-radius:50%;cursor:pointer;">⏹</button></div></div></div><!-- Liste sourates --><div id="coranList" style="overflow-y:auto;flex:1;padding:0 8px 24px;"></div>
+<div id="coranDrawer" style="position:fixed;bottom:0;left:0;right:0;z-index:1101;background:#080810;border-radius:24px 24px 0 0;border-top:1px solid rgba(200,168,75,0.2);transform:translateY(100%);transition:transform 0.35s cubic-bezier(0.32,0.72,0,1);max-height:85vh;display:flex;flex-direction:column;"><!-- Header drawer --><div style="padding:16px 20px 12px;border-bottom:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between;flex-shrink:0;"><div><div style="font-size:16px;font-weight:700;color:#fff;">Écouter le Coran</div><div class="u-sub-meta">Alafasy · Choisis une sourate</div></div><button onclick="closeCoranPicker()" style="background:rgba(255,255,255,0.08);border:none;color:var(--t2);font-size:18px;width:32px;height:32px;border-radius:50%;cursor:pointer;">✕</button></div><!-- Recherche --><div style="padding:10px 16px;flex-shrink:0;"><input id="coranSearch" type="text" placeholder="Rechercher une sourate…" oninput="filterSourates(this.value)"
+      style="width:100%;box-sizing:border-box;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:10px 14px;color:#fff;font-size:14px;outline:none;font-family:var(--sans);"></div><!-- Player actif --><div id="coranPlayer" style="display:none;margin:0 16px 10px;padding:12px 16px;background:rgba(200,168,75,0.08);border:1px solid rgba(200,168,75,0.25);border-radius:14px;flex-shrink:0;"><div style="display:flex;align-items:center;justify-content:space-between;"><div><div id="coranPlayerName" style="font-size:14px;font-weight:700;color:#e8cc6a;"></div><div id="coranPlayerVerset" class="u-sub-meta"></div></div><div style="display:flex;gap:8px;"><button id="coranPlayBtn" onclick="toggleCoranPlay()" style="background:linear-gradient(135deg,#c8a84b,#e8cc6a);border:none;color:#000;font-size:16px;width:38px;height:38px;border-radius:50%;cursor:pointer;font-weight:700;">⏸</button><button onclick="stopCoranPlayer()" style="background:rgba(255,255,255,0.08);border:none;color:var(--t2);font-size:14px;width:38px;height:38px;border-radius:50%;cursor:pointer;">⏹</button></div></div></div><!-- Liste sourates --><div id="coranList" style="overflow-y:auto;flex:1;padding:0 8px 24px;"></div>
 </div><!-- ÉCRAN NIYYAH — INTENTION DU JOUR -->
 <div id="niyyahScreen" style="position:fixed;inset:0;z-index:2000;background:#000;display:none;flex-direction:column;align-items:center;justify-content:center;padding:0;overflow:hidden;">
   <canvas id="niyyahCanvas" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.25;"></canvas>
@@ -84,7 +84,7 @@
     <!-- 4 cartes -->
     <div id="niyyahCards" style="width:100%;display:flex;flex-direction:column;gap:10px;opacity:0;transform:translateY(24px);transition:all 0.9s cubic-bezier(0.16,1,0.3,1) 1s;">
       <div class="niyyah-card" onclick="chooseNiyyah('rapprochement')">
-        <div class="niyyah-card-icon" style="font-size:20px;">🌙</div>
+        <div class="niyyah-card-icon" class="u-emoji-lg">🌙</div>
         <div class="niyyah-card-content">
           <div class="niyyah-card-label">Me rapprocher d'Allah</div>
           <div class="niyyah-card-sub">إِنَّمَا الْأَعْمَالُ بِالنِّيَّاتِ — Les actes valent par leurs intentions</div>
@@ -92,7 +92,7 @@
         <div class="niyyah-card-arrow">›</div>
       </div>
       <div class="niyyah-card" onclick="chooseNiyyah('engagement')">
-        <div class="niyyah-card-icon" style="font-size:20px;">⚖️</div>
+        <div class="niyyah-card-icon" class="u-emoji-lg">⚖️</div>
         <div class="niyyah-card-content">
           <div class="niyyah-card-label">Tenir mes engagements</div>
           <div class="niyyah-card-sub">أَحَبُّ الْأَعْمَالِ — L'acte aimé d'Allah est le plus régulier</div>
@@ -100,7 +100,7 @@
         <div class="niyyah-card-arrow">›</div>
       </div>
       <div class="niyyah-card" onclick="chooseNiyyah('reconstruction')">
-        <div class="niyyah-card-icon" style="font-size:20px;">🤲</div>
+        <div class="niyyah-card-icon" class="u-emoji-lg">🤲</div>
         <div class="niyyah-card-content">
           <div class="niyyah-card-label">Me reconstruire</div>
           <div class="niyyah-card-sub">التَّوَّابِينَ — Allah aime ceux qui reviennent vers Lui</div>
@@ -250,20 +250,20 @@
   <button id="scanner-close" onclick="scannerClose()">✕</button>
   <!-- Journal Niyyah V2 -->
   <div id="niyyah-journal-overlay" role="dialog" aria-modal="true" style="display:none;position:fixed;inset:0;z-index:9999;background:#000;overflow-y:auto;">
-    <div style="padding:calc(var(--safe-top,0px) + 16px) 20px 40px;">
+    <div class="u-safe-pad">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
         <div></div>
-        <div id="i18n-journal-niyyah-title" style="font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:3px;color:#C8A84A;text-transform:uppercase;">✦ Mes Niyyah</div>
-        <button onclick="closeNiyyahJournal()" aria-label="Fermer" style="background:transparent;border:1px solid rgba(200,168,75,0.3);border-radius:50%;width:36px;height:36px;color:#C8A84A;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;">✕</button>
+        <div id="i18n-journal-niyyah-title" class="u-section-eyebrow">✦ Mes Niyyah</div>
+        <button onclick="closeNiyyahJournal()" aria-label="Fermer" class="u-overlay-close" style="position:static;">✕</button>
       </div>
       <input id="niyyah-journal-search" type="text" placeholder="Rechercher..." oninput="filterNiyyahJournal()" style="width:100%;box-sizing:border-box;padding:10px 14px;background:rgba(200,168,75,0.04);border:1px solid rgba(200,168,75,0.15);border-radius:10px;color:#D4AF37;font-family:'Cormorant Garamond',serif;font-size:14px;outline:none;margin-bottom:16px;">
       <div id="niyyah-journal-list"></div>
-      <div style="text-align:center;margin-top:24px;"><span onclick="closeNiyyahJournal();setTimeout(openRegardeJournal,300);" style="font-family:'Cormorant Garamond',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);cursor:pointer;text-decoration:underline;text-underline-offset:3px;"><span id="i18n-link-see-regards">Voir mes Regards →</span></span></div>
+      <div class="u-center-mt24"><span onclick="closeNiyyahJournal();setTimeout(openRegardeJournal,300);" class="u-section-link"><span id="i18n-link-see-regards">Voir mes Regards →</span></span></div>
     </div>
   </div>
   <div id="niyyah-detail-overlay" role="dialog" aria-modal="true" style="display:none;position:fixed;inset:0;z-index:10000;background:#000;overflow-y:auto;">
-    <div style="padding:calc(var(--safe-top,0px) + 16px) 20px 40px;">
-      <button onclick="closeNiyyahDetail()" aria-label="Fermer" style="position:absolute;top:18px;right:18px;z-index:10;background:transparent;border:1px solid rgba(200,168,75,0.3);border-radius:50%;width:36px;height:36px;color:#C8A84A;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;">✕</button>
+    <div class="u-safe-pad">
+      <button onclick="closeNiyyahDetail()" aria-label="Fermer" class="u-overlay-close">✕</button>
       <div id="niyyah-detail-content"></div>
     </div>
   </div>
@@ -313,19 +313,19 @@
   <div id="regarde-content"></div>
 </div>
 <div id="regarde-journal-overlay" role="dialog" aria-modal="true" style="display:none;position:fixed;inset:0;z-index:3000;background:#000;overflow-y:auto;">
-  <div style="padding:calc(var(--safe-top,0px) + 16px) 20px 40px;">
+  <div class="u-safe-pad">
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;">
       <div></div>
-      <div id="i18n-journal-regards-title" style="font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:3px;color:#C8A84A;text-transform:uppercase;">✦ Mes Regards</div>
-      <button onclick="closeRegardeJournal()" aria-label="Fermer" style="background:transparent;border:1px solid rgba(200,168,75,0.3);border-radius:50%;width:36px;height:36px;color:#C8A84A;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;">✕</button>
+      <div id="i18n-journal-regards-title" class="u-section-eyebrow">✦ Mes Regards</div>
+      <button onclick="closeRegardeJournal()" aria-label="Fermer" class="u-overlay-close" style="position:static;">✕</button>
     </div>
     <div id="regarde-journal-list"></div>
-    <div style="text-align:center;margin-top:24px;"><span onclick="closeRegardeJournal();setTimeout(openNiyyahJournal,300);" style="font-family:'Cormorant Garamond',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);cursor:pointer;text-decoration:underline;text-underline-offset:3px;"><span id="i18n-link-see-niyyah">Voir mes Niyyah →</span></span></div>
+    <div class="u-center-mt24"><span onclick="closeRegardeJournal();setTimeout(openNiyyahJournal,300);" class="u-section-link"><span id="i18n-link-see-niyyah">Voir mes Niyyah →</span></span></div>
   </div>
 </div>
 <div id="regarde-detail-overlay" role="dialog" aria-modal="true" style="display:none;position:fixed;inset:0;z-index:3100;background:#000;overflow-y:auto;">
-  <div style="padding:calc(var(--safe-top,0px) + 16px) 20px 40px;">
-    <button onclick="closeRegardeDetail()" aria-label="Fermer" style="position:absolute;top:18px;right:18px;z-index:10;background:transparent;border:1px solid rgba(200,168,75,0.3);border-radius:50%;width:36px;height:36px;color:#C8A84A;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;">✕</button>
+  <div class="u-safe-pad">
+    <button onclick="closeRegardeDetail()" aria-label="Fermer" class="u-overlay-close">✕</button>
     <div id="regarde-detail-content"></div>
   </div>
 </div>
@@ -453,9 +453,9 @@
      ════════════════════════════════════════════════ -->
 
 <!-- VIEW : RESUME -->
-<div class="view" id="view-resume"><div class="header" style="padding-bottom:14px;"><div class="header-top"><div class="wordmark"><div class="wordmark-main">Bilan <span>✦</span></div><div class="wordmark-sub">Journée accomplie</div></div><div class="date-badge" id="resumeDatePill"></div></div><div class="header-progress"><div class="header-progress-fill" id="globalFill3" style="width:0%"></div></div></div><div class="resume-wrap" id="resumeContent"></div>
+<div class="view" id="view-resume"><div class="header" class="u-pb14"><div class="header-top"><div class="wordmark"><div class="wordmark-main">Bilan <span>✦</span></div><div class="wordmark-sub">Journée accomplie</div></div><div class="date-badge" id="resumeDatePill"></div></div><div class="header-progress"><div class="header-progress-fill" id="globalFill3" style="width:0%"></div></div></div><div class="resume-wrap" id="resumeContent"></div>
 </div><!-- VIEW : RAMADAN -->
-<div class="view" id="view-ramadan"><div class="header" style="padding-bottom:14px;"><div class="header-top"><div class="wordmark"><div class="wordmark-main">Ramadan <span>🌙</span></div><div class="wordmark-sub">Mode Ramadan activé</div></div><button onclick="toggleRamadanMode()" style="padding:6px 12px;border-radius:20px;border:1px solid rgba(245,166,35,0.3);background:rgba(245,166,35,0.08);color:var(--moon);font-size:12px;font-weight:600;cursor:pointer;font-family:var(--sans);">✕ Désactiver</button></div><div class="header-progress"><div class="header-progress-fill" id="globalFill4" style="width:0%;background:var(--moon);box-shadow:0 0 6px var(--moon-glow);"></div></div></div><div class="ramadan-wrap" id="ramadanContent"></div>
+<div class="view" id="view-ramadan"><div class="header" class="u-pb14"><div class="header-top"><div class="wordmark"><div class="wordmark-main">Ramadan <span>🌙</span></div><div class="wordmark-sub">Mode Ramadan activé</div></div><button onclick="toggleRamadanMode()" style="padding:6px 12px;border-radius:20px;border:1px solid rgba(245,166,35,0.3);background:rgba(245,166,35,0.08);color:var(--moon);font-size:12px;font-weight:600;cursor:pointer;font-family:var(--sans);">✕ Désactiver</button></div><div class="header-progress"><div class="header-progress-fill" id="globalFill4" style="width:0%;background:var(--moon);box-shadow:0 0 6px var(--moon-glow);"></div></div></div><div class="ramadan-wrap" id="ramadanContent"></div>
 </div><!-- VIEW : CHECKLIST -->
 <div class="view" id="view-checklist"><!-- BANNIÈRE --><div style="position:relative;width:100%;height:calc(180px + var(--safe-top));min-height:180px;overflow:hidden;padding-top:var(--safe-top);box-sizing:border-box;contain:layout;"><img src="banner.webp" style="width:100%;height:100%;object-fit:cover;object-position:center center;" alt="Niyyah"><!-- Contrôles superposés --><div style="position:absolute;top:0;right:0;display:flex;align-items:center;gap:6px;padding:10px 12px;"><div class="date-badge" id="datePill" style="color:#fff;font-weight:600;text-shadow:0 1px 4px rgba(0,0,0,0.8);"></div><button class="btn-ramadan-icon" id="ramadanActivateBtn" onclick="toggleRamadanMode()" aria-label="Mode Ramadan" title="Mode Ramadan" style="display:flex;background:rgba(255,255,255,0.12);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.2);border-radius:50%;width:42px;height:42px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button><button id="btnTheme" onclick="toggleTheme()" aria-label="Changer le thème" title="Thème" style="display:flex;background:rgba(255,255,255,0.12);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.2);border-radius:50%;width:42px;height:42px;align-items:center;justify-content:center;font-size:20px;cursor:pointer;flex-shrink:0;">☀️</button><div id="globalScoreBadge" aria-live="polite" style="background:rgba(255,255,255,0.12);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:12px;font-weight:700;padding:0 10px;height:42px;border-radius:21px;display:flex;align-items:center;letter-spacing:0.5px;">0%</div><div class="medal-tag none" id="medalTag" aria-live="polite" style="background:rgba(255,255,255,0.12);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.2);color:#fff;">—</div></div><!-- Barre de progression en bas du bandeau --><div style="position:absolute;bottom:0;left:0;right:0;height:3px;background:rgba(255,255,255,0.1);"><div class="header-progress-fill" id="globalFill" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%;height:3px;background:var(--green-grad);transition:width 0.4s ease;"></div></div></div><div class="tabs-wrap"><div class="tabs" id="levelTabs"></div></div><div id="checklistIntentionBar" style="display:none;align-items:center;gap:10px;padding:10px 16px 0;"><div style="display:flex;align-items:center;gap:8px;flex:1;background:rgba(200,168,75,0.07);border:0.5px solid rgba(200,168,75,0.2);border-radius:12px;padding:9px 13px;"><span id="checklistIntentionIcon" style="font-size:16px;">🌙</span><div><div style="font-size:12px;color:rgba(200,168,75,0.55);text-transform:uppercase;letter-spacing:1.5px;font-weight:700;margin-bottom:1px;">Intention du jour</div><div id="checklistIntentionText" style="font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;color:rgba(255,255,255,0.8);"></div></div></div></div><div class="content" id="content"></div><div class="action-bar" style="bottom:calc(56px + var(--safe-bot)); border-top:none; background:transparent; backdrop-filter:none; -webkit-backdrop-filter:none;"><button class="btn-reset" onclick="confirmReset()" aria-label="Recommencer">↻</button><button class="btn-bismillah" aria-label="Bismillah" onclick="showToast('بِسْمِ اللَّهِ — Bismillah 🌿')">بِسْمِ اللَّهِ</button></div>
 </div><!-- VIEW : PROGRESSION -->
