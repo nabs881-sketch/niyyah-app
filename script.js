@@ -882,12 +882,12 @@ function renderRamadan() {
     const onclick = item.special ? 'toggleFast(\'' + TODAY + '\')' : 'toggleRamadanItem(\'' + item.id + '\')';
     const fastCls = (item.isFast || item.special) ? ' fast-item' : '';
     const arabicHtml = item.arabic ? '<div class="item-arabic">' + item.arabic + '</div>' : '';
-    const subHtml = item.sub ? '<div class="item-sub">' + item.sub + '</div>' : '';
+    const subHtml = item.sub ? '<div class="item-sub">' + tI(item,'sub') + '</div>' : '';
     html += '<div class="item' + fastCls + (done ? ' checked' : '') + '" onclick="' + onclick + '" id="ritem-' + item.id + '">';
     html += '<div class="check-circle' + (item.special ? '" style="' + (done ? 'background:var(--moon);border-color:var(--moon);box-shadow:0 0 0 4px var(--moon-soft)' : 'border-color:rgba(245,166,35,0.6)') : '') + '">';
     html += '<svg class="check-svg" style="' + (done ? 'opacity:1;transform:scale(1)' : '') + '" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
     html += '</div>';
-    html += '<div class="item-body"><div class="item-label">' + item.label + '</div>' + subHtml + arabicHtml + '</div>';
+    html += '<div class="item-body"><div class="item-label">' + tI(item,'label') + '</div>' + subHtml + arabicHtml + '</div>';
     html += '</div>';
   });
   html += '</div>';
@@ -2262,7 +2262,7 @@ function renderLevel(levelId) {
         const optionalBadge = '<span style="font-size:12px;font-weight:700;letter-spacing:0.8px;color:var(--green);background:rgba(52,217,98,0.12);border:1px solid rgba(52,217,98,0.25);border-radius:6px;padding:1px 5px;margin-left:5px;vertical-align:middle;">BONUS</span>';
         html += '<div class="item' + (checked ? ' checked' : '') + '" onclick="toggleItem(\'' + item.id + '\',event)" style="animation-delay:' + delay + 'ms;--i:' + idx + '" id="item-' + item.id + '">'
           + '<div class="check-circle"><svg class="check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>'
-          + '<div class="item-body"><div class="item-label">' + item.label + optionalBadge + '</div><div class="item-sub">' + item.sub + '</div>'
+          + '<div class="item-body"><div class="item-label">' + tI(item,'label') + optionalBadge + '</div><div class="item-sub">' + tI(item,'sub') + '</div>'
           + '<div class="item-arabic">' + item.arabic + '</div></div>'
           + '<button class="btn-audio" onclick="openCoranPicker(event)" title="' + t('btn_choose_surah') + '" style="font-size:13px;padding:0 10px;width:auto;white-space:nowrap;">📖 Écouter</button>'
           + '</div>';
@@ -2349,8 +2349,8 @@ function renderPrayerItem(item, delay, extraClass, forceChecked) {
   const _tlOpacity = checked ? 'opacity:0.3;' : '';
   return '<div class="item' + fridayCls + (checked ? ' checked' : '') + (extraClass || '') + '" onclick="toggleItem(\'' + item.id + '\',event)" style="' + _tlOpacity + 'animation-delay:' + delay + 'ms;--i:' + delay + '" id="item-' + item.id + '">'
     + '<div class="check-circle"><svg class="check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>'
-    + '<div class="item-body"><div class="item-label' + priorityCls + '">' + item.label + '</div>'
-    + (item.sub ? '<div class="item-sub">' + item.sub + '</div>' : '')
+    + '<div class="item-body"><div class="item-label' + priorityCls + '">' + tI(item,'label') + '</div>'
+    + (item.sub ? '<div class="item-sub">' + tI(item,'sub') + '</div>' : '')
     + arabicHtml + '</div>'
     + toggle + '</div>';
 }
@@ -2389,7 +2389,7 @@ function renderCounter(item, delay) {
   const labelEsc  = item.label.replace(/'/g, "\\'");
   const fullscreenBtn = '<button class="btn-tasbih-fs" aria-label="Plein écran" onclick="openTasbih(\'' + item.id + '\',' + item.target + ',\'' + labelEsc + '\',\'' + arabicEsc + '\')" title="' + t('btn_fullscreen') + '">⛶</button>';
   const audioBtn = item.audio ? '<button class="btn-audio" aria-label="Écouter" ontouchstart="event.stopPropagation()" onclick="playAudio(' + (Array.isArray(item.audio) ? JSON.stringify(item.audio).replace(/"/g,"'") : '\'' + item.audio + '\'') + ',this,event)" title="' + t('btn_listen_recitation') + '">🔊</button>' : '';
-  return '<div class="item counter-item' + (done ? ' checked' : '') + '" style="animation-delay:' + delay + 'ms" id="item-' + item.id + '"><div class="counter-top"><div class="check-circle" id="cb-' + item.id + '" style="' + (done ? 'background:var(--green-grad);border-color:var(--green);box-shadow:0 0 0 4px var(--green-soft),0 0 16px rgba(52,217,98,0.25)' : '') + '"><svg class="check-svg" style="' + (done ? 'opacity:1;transform:scale(1)' : '') + '" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-body"><div class="item-label">' + item.label + '</div><div class="item-sub">' + item.sub + '</div>' + arabicHtml + '</div>' + audioBtn + fullscreenBtn + '</div><div class="counter-body"><button class="btn-cnt-reset" aria-label="Réinitialiser" onclick="resetCounter(\'' + item.id + '\')">↺</button><div class="counter-display"><div class="counter-num" id="cnt-num-' + item.id + '">' + count + '</div><div class="counter-total">/ ' + item.target + '</div><div class="counter-bar-track"><div class="counter-bar-fill" id="cnt-bar-' + item.id + '" style="width:' + Math.min(count/item.target*100,100) + '%"></div></div></div><button class="btn-cnt" aria-label="Incrémenter" onclick="incrementCounter(\'' + item.id + '\',' + item.target + ')">+</button></div></div>';
+  return '<div class="item counter-item' + (done ? ' checked' : '') + '" style="animation-delay:' + delay + 'ms" id="item-' + item.id + '"><div class="counter-top"><div class="check-circle" id="cb-' + item.id + '" style="' + (done ? 'background:var(--green-grad);border-color:var(--green);box-shadow:0 0 0 4px var(--green-soft),0 0 16px rgba(52,217,98,0.25)' : '') + '"><svg class="check-svg" style="' + (done ? 'opacity:1;transform:scale(1)' : '') + '" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-body"><div class="item-label">' + tI(item,'label') + '</div><div class="item-sub">' + tI(item,'sub') + '</div>' + arabicHtml + '</div>' + audioBtn + fullscreenBtn + '</div><div class="counter-body"><button class="btn-cnt-reset" aria-label="Réinitialiser" onclick="resetCounter(\'' + item.id + '\')">↺</button><div class="counter-display"><div class="counter-num" id="cnt-num-' + item.id + '">' + count + '</div><div class="counter-total">/ ' + item.target + '</div><div class="counter-bar-track"><div class="counter-bar-fill" id="cnt-bar-' + item.id + '" style="width:' + Math.min(count/item.target*100,100) + '%"></div></div></div><button class="btn-cnt" aria-label="Incrémenter" onclick="incrementCounter(\'' + item.id + '\',' + item.target + ')">+</button></div></div>';
 }
 function initCounterEl(item) {}
 function incrementCounter(id, target) {
@@ -3491,7 +3491,7 @@ function renderWird() {
       const srcEsc  = (item.source||'').replace(/"/g,'&quot;');
       const labelEsc = item.label.replace(/"/g,'&quot;');
       const infoBtn = `<button class="btn-wird-info" aria-label="Détails" onclick="openInfoSheet('','','','',event)" data-label="${labelEsc}" data-arabic="${arabEsc}" data-phonetic="${phonEsc}" data-translation="${srcEsc}"><i>i</i></button>`;
-      html += `<div class="wird-item${checked?' checked':''}" onclick="toggleWirdItem('${item.id}',event)"><div class="wird-check"><svg class="wird-check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="wird-body"><div class="wird-label">${item.label}</div><div class="wird-sub">${item.sub}</div><div class="wird-arabic">${item.arabic}</div></div><div class="wird-actions">${audioBtn}${infoBtn}</div></div>`;
+      html += `<div class="wird-item${checked?' checked':''}" onclick="toggleWirdItem('${item.id}',event)"><div class="wird-check"><svg class="wird-check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="wird-body"><div class="wird-label">${tI(item,"label")}</div><div class="wird-sub">${tI(item,"sub")}</div><div class="wird-arabic">${item.arabic}</div></div><div class="wird-actions">${audioBtn}${infoBtn}</div></div>`;
     });
     html += `<button class="wird-reset-btn" aria-label="Réinitialiser" onclick="resetWirdSession('${session}')">↺ Réinitialiser</button></div>`;
   });
@@ -6160,7 +6160,6 @@ function v2SetLanguage(lang) {
   // Toast confirmation
   var langNames = { fr: 'Fran\u00e7ais', en: 'English', ar: '\u0627\u0644\u0639\u0631\u0628\u064A\u0629' };
   v2ShowToast('\ud83c\udf10 ' + (langNames[lang] || lang));
-  if (lang !== 'fr') setTimeout(function() { v2ShowToast('Interface translated. Spiritual content remains in French for authenticity.'); }, 2000);
 }
 
 function v2ApplyI18n() {
@@ -7491,6 +7490,69 @@ function niyyahImportData(input) {
   };
   reader.readAsText(input.files[0]);
   input.value = '';
+}
+var ITEMS_I18N = {
+  en: {
+    wird_matin:{l:'Morning Wird',s:'Ayat al-Kursi, Muawwidhat\u2026'},wird_soir:{l:'Evening Wird',s:'Al-Mulk\u2026'},
+    ayat_kursi:{l:'Ayat al-Kursi after prayer',s:'Protection verse \u2014 recite after each salah'},
+    basmala:{l:'Bismillah before every action',s:'Eating, leaving, starting \u2014 Bismillah'},
+    witr:{l:'Witr Prayer',s:'1 or 3 rakaat after Isha'},
+    shukr:{l:'Tafakkur: contemplate 3 blessings',s:'Health, being Muslim, safety\u2026 meditate on 3 concrete blessings from Allah today'},
+    sunnah_fajr:{l:'Sunnah Fajr',s:'2 rakaat before Fajr \u2014 the Prophet \u00b7 never abandoned them'},
+    jumua:{l:'Jumua \u2726'},
+    mosquee:{l:'Prayer at the mosque',s:'27 times the reward of praying alone'},
+    sunnah_prieres:{l:'Supererogatory prayers',s:'Rawatib: 2 before Fajr, 4 before Dhuhr, 2 after, 2 after Maghrib, 2 after Isha'},
+    istighfar:{l:'Istighfar',s:'SubhanAllah \u00d7 33, Al-Hamdulillah \u00d7 33, Allahu Akbar \u00d7 33 + La ilaha illallah'},
+    tasbih:{l:'Full Tasbih',s:'SubhanAllah \u00b7 Al-Hamdulillah \u00b7 Allahu Akbar'},
+    doua_soi:{l:'Du\u2019a for yourself',s:'My Lord, I am in dire need of whatever good You send down to me'},
+    doua1:{l:'Du\u2019a for your parents',s:'My Lord, have mercy on them as they raised me when I was small'},
+    doua2:{l:'Du\u2019a for your family',s:'Our Lord, grant us from our spouses and offspring the joy of our eyes'},
+    doua_morts:{l:'Du\u2019a for the deceased',s:'Our Lord, forgive us and our brothers who preceded us in faith'},
+    doua_oumma:{l:'Du\u2019a for the Ummah',s:'O Allah, improve the condition of Muslims everywhere'},
+    hadith1:{l:'Hadith of the day',s:'Read and memorize 1 hadith'},
+    sira:{l:'Life of the Prophet \u00b7',s:'10 min of Sira reading'},
+    quran_read:{l:'Quran reading',s:'At least 1 page per day'},
+    arabic:{l:'Arabic learning',s:'10 min \u00b7 Vocabulary or grammar'},
+    vie_prophetes:{l:'Lives of the Prophets',s:'Ibrahim, Moussa, Issa\u2026'},
+    vie_compagnons:{l:'Lives of the Companions',s:'Abu Bakr, Omar, Othman, Ali\u2026'},
+    fiqh_jour:{l:'Jurisprudence \u2014 1 rule of the day',s:'Learn 1 fiqh rule today'},
+    savais_tu:{l:'Did you know?',s:'An Islamic culture fact'},
+    coran_ecoute:{l:'Listen to the Quran',s:'10-15 min of recitation'},
+    podcast:{l:'Islamic podcast',s:'10 min of beneficial listening'},
+    sunnah_jejune:{l:'Sunnah fasting',s:'Monday and/or Thursday'},
+    tahajjud:{l:'Qiyam al-Layl',s:'2 rakaat in the last third of the night'},
+    sadaqa:{l:'Charity (Sadaqa)',s:'Even a smile or a kind word'},
+    salam:{l:'Give Salam',s:'Spread peace to 3 people today'},
+    silaturahm:{l:'Maintain family ties',s:'Call or visit a relative'},
+    maruf:{l:'Enjoin good (Amr bil ma\u2019ruf)',s:'Ibn Taymiyya: the very identity of the Ummah'},
+    kind_act:{l:'Act of kindness',s:'A good deed with no expectation'},
+    ziyara:{l:'Visit a sick person or a brother',s:'One of the 6 rights of a Muslim'},
+    pardon:{l:'Forgive someone',s:'Even if they didn\u2019t ask for it'}
+  },
+  ar: {
+    wird_matin:{l:'\u0648\u0650\u0631\u0652\u062F\u064F \u0627\u0644\u0635\u0651\u064E\u0628\u0627\u062D',s:'\u0622\u064A\u064E\u0629\u064F \u0627\u0644\u0643\u064F\u0631\u0652\u0633\u0650\u064A\u0651\u060C \u0627\u0644\u0645\u064F\u0639\u064E\u0648\u0651\u0650\u0630\u0627\u062A\u2026'},wird_soir:{l:'\u0648\u0650\u0631\u0652\u062F\u064F \u0627\u0644\u0645\u064E\u0633\u0627\u0621',s:'\u0633\u064F\u0648\u0631\u064E\u0629\u064F \u0627\u0644\u0645\u064F\u0644\u0652\u0643\u2026'},
+    ayat_kursi:{l:'\u0622\u064A\u064E\u0629\u064F \u0627\u0644\u0643\u064F\u0631\u0652\u0633\u0650\u064A\u0651 \u0628\u064E\u0639\u0652\u062F\u064E \u0627\u0644\u0635\u0651\u064E\u0644\u0627\u0629',s:'\u0622\u064A\u064E\u0629\u064F \u0627\u0644\u062D\u0650\u0641\u0652\u0638'},
+    basmala:{l:'\u0628\u0650\u0633\u0652\u0645\u0650 \u0627\u0644\u0644\u0651\u064E\u0647 \u0642\u064E\u0628\u0652\u0644\u064E \u0643\u064F\u0644\u0651\u0650 \u0641\u0650\u0639\u0652\u0644',s:'\u0627\u0644\u0623\u064E\u0643\u0652\u0644\u060C \u0627\u0644\u062E\u064F\u0631\u064F\u0648\u062C\u060C \u0627\u0644\u0628\u064E\u062F\u0652\u0621'},
+    witr:{l:'\u0635\u064E\u0644\u0627\u0629\u064F \u0627\u0644\u0648\u0650\u062A\u0652\u0631',s:'\u0631\u064E\u0643\u0652\u0639\u064E\u0629 \u0623\u064E\u0648\u0652 \u062B\u064E\u0644\u0627\u062B \u0628\u064E\u0639\u0652\u062F\u064E \u0627\u0644\u0639\u0650\u0634\u0627\u0621'},
+    shukr:{l:'\u062A\u064E\u0641\u064E\u0643\u0651\u064F\u0631: \u062A\u064E\u0623\u064E\u0645\u0651\u064F\u0644 \u0663 \u0646\u0650\u0639\u064E\u0645',s:'\u0627\u0644\u0635\u0651\u0650\u062D\u0651\u064E\u0629\u060C \u0627\u0644\u0625\u0650\u0633\u0652\u0644\u0627\u0645\u060C \u0627\u0644\u0623\u064E\u0645\u0627\u0646'},
+    sunnah_fajr:{l:'\u0633\u064F\u0646\u0651\u064E\u0629\u064F \u0627\u0644\u0641\u064E\u062C\u0652\u0631',s:'\u0631\u064E\u0643\u0652\u0639\u064E\u062A\u0627\u0646\u0650 \u0642\u064E\u0628\u0652\u0644\u064E \u0627\u0644\u0641\u064E\u062C\u0652\u0631'},
+    mosquee:{l:'\u0627\u0644\u0635\u0651\u064E\u0644\u0627\u0629\u064F \u0641\u0650\u064A \u0627\u0644\u0645\u064E\u0633\u0652\u062C\u0650\u062F',s:'\u0627\u0644\u062C\u064E\u0645\u0627\u0639\u064E\u0629 \u062A\u064E\u0641\u0652\u0636\u064F\u0644\u064F \u0628\u0640\u0662\u0667 \u062F\u064E\u0631\u064E\u062C\u064E\u0629'},
+    hadith1:{l:'\u062D\u064E\u062F\u0650\u064A\u062B\u064F \u0627\u0644\u064A\u064E\u0648\u0652\u0645',s:'\u0627\u0642\u0652\u0631\u064E\u0623\u0652 \u0648\u0627\u062D\u0652\u0641\u064E\u0638\u0652 \u062D\u064E\u062F\u0650\u064A\u062B\u064B\u0627'},
+    sira:{l:'\u0627\u0644\u0633\u0651\u0650\u064A\u0631\u064E\u0629\u064F \u0627\u0644\u0646\u0651\u064E\u0628\u064E\u0648\u0650\u064A\u0651\u064E\u0629',s:'\u0661\u0660 \u062F\u064E\u0642\u0627\u0626\u0650\u0642 \u0645\u0650\u0646\u064E \u0627\u0644\u0642\u0650\u0631\u0627\u0621\u064E\u0629'},
+    quran_read:{l:'\u0642\u0650\u0631\u0627\u0621\u064E\u0629\u064F \u0627\u0644\u0642\u064F\u0631\u0652\u0622\u0646',s:'\u0635\u064E\u0641\u0652\u062D\u064E\u0629 \u0648\u0627\u062D\u0650\u062F\u064E\u0629 \u0639\u064E\u0644\u064E\u0649 \u0627\u0644\u0623\u064E\u0642\u064E\u0644\u0651'},
+    arabic:{l:'\u062A\u064E\u0639\u064E\u0644\u0651\u064F\u0645\u064F \u0627\u0644\u0639\u064E\u0631\u064E\u0628\u0650\u064A\u0651\u064E\u0629',s:'\u0661\u0660 \u062F\u064E\u0642\u0627\u0626\u0650\u0642'},
+    sadaqa:{l:'\u0627\u0644\u0635\u0651\u064E\u062F\u064E\u0642\u064E\u0629',s:'\u062D\u064E\u062A\u0651\u064E\u0649 \u0627\u0644\u0627\u0628\u0652\u062A\u0650\u0633\u0627\u0645\u064E\u0629'},
+    salam:{l:'\u0625\u0650\u0644\u0652\u0642\u0627\u0621\u064F \u0627\u0644\u0633\u0651\u064E\u0644\u0627\u0645',s:'\u0627\u0646\u0652\u0634\u064F\u0631\u0650 \u0627\u0644\u0633\u0651\u064E\u0644\u0627\u0645\u064E'},
+    tahajjud:{l:'\u0642\u0650\u064A\u0627\u0645\u064F \u0627\u0644\u0644\u0651\u064E\u064A\u0652\u0644',s:'\u0631\u064E\u0643\u0652\u0639\u064E\u062A\u0627\u0646\u0650 \u0641\u0650\u064A \u0627\u0644\u062B\u0651\u064F\u0644\u064F\u062B\u0650 \u0627\u0644\u0623\u064E\u062E\u0650\u064A\u0631'},
+    pardon:{l:'\u0627\u0644\u0639\u064E\u0641\u0652\u0648',s:'\u062D\u064E\u062A\u0651\u064E\u0649 \u0644\u064E\u0648\u0652 \u0644\u064E\u0645\u0652 \u064A\u064E\u0637\u0652\u0644\u064F\u0628\u0652\u0647'}
+  }
+};
+function tI(item, field) {
+  var lang = (typeof V2_LANG !== 'undefined') ? V2_LANG : 'fr';
+  if (lang === 'fr') return item[field] || '';
+  var map = ITEMS_I18N[lang];
+  if (map && map[item.id] && map[item.id][field === 'label' ? 'l' : 's']) return map[item.id][field === 'label' ? 'l' : 's'];
+  return item[field] || '';
 }
 function isSilenceDay() {
   var d = localStorage.getItem('niyyah_silence_day');
