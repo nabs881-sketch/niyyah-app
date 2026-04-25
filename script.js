@@ -430,7 +430,7 @@ function openDefiSelector() {
         + '<div style="font-size:28px;margin-bottom:14px;">' + (defiActif ? defiActif.icon : '✦') + '</div>'
         + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:600;color:#C8A84A;margin-bottom:8px;">' + (defiActif ? tD(defiActif) : 'Défi en cours') + '</div>'
         + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#B0A080;line-height:1.6;margin-bottom:20px;">Ton défi est ta niyyah de la semaine.<br>Tiens-le jusqu\'à dimanche, in sha Allah ✦</div>'
-        + '<button onclick="closeDefiSelector()" style="padding:12px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:1px;cursor:pointer;" aria-label="Fermer">Fermer</button>'
+        + '<button onclick="closeDefiSelector()" style="padding:12px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:1px;cursor:pointer;" aria-label="Fermer">'+t('modal_close')+'</button>'
         + '</div>';
       ov2.style.opacity = '1'; ov2.style.pointerEvents = 'all';
       setTimeout(function() { document.getElementById('defiSelectorSheet').style.transform = 'translateY(0)'; }, 10);
@@ -5327,7 +5327,7 @@ const ONBOARD_SLIDES = [
       + '<div class="onboard-logo-wrap" style="opacity:0;animation:obFadeIn 0.8s ease 0.2s forwards;"><div class="onboard-logo-halo"><img src="https://nabs881-sketch.github.io/niyyah-app/imageslogo.webp" alt="Niyyah" style="width:120px;height:auto;display:block;margin:0 auto;"></div><div class="onboard-particle" style="--d:0s;--x:-40px;--y:-30px;">\u2726</div><div class="onboard-particle" style="--d:0.8s;--x:45px;--y:-20px;">\u2726</div><div class="onboard-particle" style="--d:1.6s;--x:-30px;--y:35px;">\u2726</div><div class="onboard-particle" style="--d:2.4s;--x:35px;--y:40px;">\u2726</div><div class="onboard-particle" style="--d:3.2s;--x:0px;--y:-45px;">\u2726</div></div>'
       + '<svg class="ob-calli-svg" viewBox="0 0 200 80" width="240" height="90"><text x="100" y="60" text-anchor="middle" font-family="\'Scheherazade New\',serif" font-size="56" fill="none" stroke="#C8A84A" stroke-width="0.8">\u0646\u0650\u064A\u0651\u064E\u0629</text></svg>'
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:rgba(200,168,75,0.7);letter-spacing:1px;opacity:0;animation:obFadeIn 1s ease 1.4s forwards;">Pose ton intention</div>'
-      + '<button class="onboard-btn" onclick="onboardNext()" style="margin-top:20px;opacity:0;animation:obFadeIn 0.6s ease 2.5s forwards;">Commencer</button>'
+      + '<button class="onboard-btn" onclick="onboardNext()" style="margin-top:20px;opacity:0;animation:obFadeIn 0.6s ease 2.5s forwards;">'+t('onboard_start')+'</button>'
       + '<button class="onboard-skip" onclick="onboardFinish()" style="margin-top:8px;opacity:0;animation:obFadeIn 0.6s ease 2.5s forwards;">' + t('onboard_skip') + '</button>'
       + '</div>',
   // Slide 1 — Motivation "'+t('ob_motivation_title')+'"
@@ -5348,7 +5348,7 @@ const ONBOARD_SLIDES = [
     + '<div class="ob-motiv-title">'+t('ob_motiv_sacraliser')+'</div>'
     + '<div class="ob-motiv-sub">'+t("ob_motiv_sacraliser_sub")+'</div></div>'
     + '</div>'
-    + '<button class="onboard-btn" id="obMotivBtn" onclick="onboardNext()" style="opacity:0.3;pointer-events:none;">Suivant</button>'
+    + '<button class="onboard-btn" id="obMotivBtn" onclick="onboardNext()" style="opacity:0.3;pointer-events:none;">'+t('onboard_next')+'</button>'
     + '<button class="onboard-skip" onclick="onboardFinish()">' + t('onboard_skip') + '</button>'
     + '</div>',
   // Slide 2 — Deux gestes : Niyyah + Regarde
@@ -5376,7 +5376,7 @@ const ONBOARD_SLIDES = [
       + '</div>'
       + '</div>'
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:var(--t3);text-align:center;margin:16px 0 24px;">'+t('ob_sacralise')+'</div>'
-      + '<button class="onboard-btn" onclick="onboardNext()">Suivant</button>'
+      + '<button class="onboard-btn" onclick="onboardNext()">'+t('onboard_next')+'</button>'
       + '<button class="onboard-skip" onclick="onboardFinish()">' + t('onboard_skip') + '</button>'
       + '</div>';
   },
@@ -5395,7 +5395,7 @@ const ONBOARD_SLIDES = [
     + '<div style="font-family:var(--serif);font-size:14px;font-style:italic;color:var(--t3);text-align:center;margin:20px 0 16px;line-height:1.6;">'+t('ob_chemin_quote')+'</div>'
     + '<div style="margin-bottom:20px;text-align:center;"><label style="font-family:var(--serif);font-size:13px;color:var(--t3);display:block;margin-bottom:6px;">'+t("ob_chemin_prenom")+'</label>'
     + '<input type="text" placeholder="Ton pr\u00e9nom..." style="width:100%;max-width:260px;box-sizing:border-box;padding:10px 14px;background:rgba(200,168,75,0.04);border:1px solid rgba(200,168,75,0.2);border-radius:12px;color:var(--t1);font-size:14px;font-family:var(--sans);outline:none;text-align:center;" oninput="safeSetItem(\'niyyah_prenom\',this.value.trim())"></div>'
-    + '<button class="onboard-btn" onclick="onboardNext()">Suivant</button>'
+    + '<button class="onboard-btn" onclick="onboardNext()">'+t('onboard_next')+'</button>'
     + '</div>',
   // Slide 5 — Notifications 3 catégories
   () => '<div class="onboard-anim">'
@@ -6580,6 +6580,8 @@ function v2ApplyI18nHTML() {
   // Card aria-labels
   var _cards = [['Pratique','card_pratique'],['Wird','card_wird'],['Parcours','card_parcours'],['Tafakkur','card_tafakkur']];
   _cards.forEach(function(c) { var el = document.querySelector('[aria-label="'+c[0]+'"]'); if (el) el.setAttribute('aria-label', t(c[1])); });
+  _s('i18n-finjournee-skip', 'onboard_skip');
+  _s('i18n-bilan-later', 'btn_later');
 }
 
 // Shortcut: old V2_GREETINGS kept for compatibility
@@ -8144,7 +8146,7 @@ function openFinJourneeConsultation() {
   overlay.id = 'finjournee-consult';
   overlay.style.cssText = 'position:fixed;inset:0;z-index:10000;background:#000;display:flex;align-items:center;justify-content:center;padding:24px;';
   overlay.innerHTML = '<div style="max-width:320px;text-align:center;">' + body
-    + '<button onclick="document.getElementById(\'finjournee-consult\').remove()" style="margin-top:36px;padding:12px 32px;border-radius:100px;border:1px solid rgba(200,168,75,0.3);background:none;color:rgba(200,168,75,0.6);font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;cursor:pointer;" aria-label="Fermer">Fermer</button>'
+    + '<button onclick="document.getElementById(\'finjournee-consult\').remove()" style="margin-top:36px;padding:12px 32px;border-radius:100px;border:1px solid rgba(200,168,75,0.3);background:none;color:rgba(200,168,75,0.6);font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;cursor:pointer;" aria-label="Fermer">'+t('modal_close')+'</button>'
     + '</div>';
   overlay.addEventListener('click', function(e) { if (e.target === overlay) overlay.remove(); });
   document.body.appendChild(overlay);
