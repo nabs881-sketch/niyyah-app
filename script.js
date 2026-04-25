@@ -3989,8 +3989,13 @@ function openMeditation() {
 }
 
 function openBilanSoir() {
-  const o = document.getElementById('bilanSoirOverlay');
+  var o = document.getElementById('bilanSoirOverlay');
   o.style.display = 'flex';
+  var titleEl = document.getElementById('i18n-bilan-title');
+  if (titleEl) {
+    var bp = (typeof _getPrenom === 'function') ? _getPrenom() : '';
+    titleEl.textContent = bp ? ('Bonsoir ' + bp) : 'Bilan du soir';
+  }
 }
 function closeBilanSoir() {
   document.getElementById('bilanSoirOverlay').style.display = 'none';
@@ -4250,9 +4255,10 @@ function showTawba() {
     card.style.boxShadow   = '0 0 60px ' + accentColor + '15, 0 40px 80px rgba(0,0,0,0.9)';
   }
 
-  // Remplir le contenu
-  document.getElementById('tawbaTitle').textContent    = msg.title;
-  document.getElementById('tawbaSub').textContent      = msg.sub;
+  // Remplir le contenu (avec prénom si disponible)
+  var _tp = (typeof _getPrenom === 'function') ? _getPrenom() : '';
+  document.getElementById('tawbaTitle').textContent    = _tp ? ('Reviens ' + _tp) : msg.title;
+  document.getElementById('tawbaSub').textContent      = _tp ? ('Allah Al-Tawwab t\u2019attend. ' + msg.sub) : msg.sub;
   document.getElementById('tawbaVerseText').textContent = '"' + msg.verse + '"';
   document.getElementById('tawbaVerseRef').textContent  = '— ' + msg.ref;
 
@@ -4883,6 +4889,8 @@ function scheduleFajrNotification() {
     gratitude: "🌅 Fajr — Commence par le shukr"
   };
   var _body = _msgs[_intentionType] || "🌅 L'heure de Fajr est arrivée · Niyyah Daily";
+  var _fp = (typeof _getPrenom === 'function') ? _getPrenom() : '';
+  if (_fp) _body = "🌅 Fajr — Bismillah " + _fp;
   window._fajrNotifTimer = setTimeout(function() {
     new Notification('Niyyah Daily', { body: _body, icon: 'icon-512.png', tag: 'fajr-notif' });
   }, msUntil);
@@ -7235,9 +7243,28 @@ function renderLevelStripCondensed() {
     + '<div class="lvl-strip-meta">' + secDoneCount + '/' + secTotal + ' · ' + pct + '%</div>'
     + '<div class="lvl-strip-track"><div class="lvl-strip-fill" style="width:' + pct + '%;"></div></div>';
 }
+function _getPrenom() {
+  var p = localStorage.getItem('niyyah_prenom');
+  return (p && p.trim()) ? p.trim() : '';
+}
 function updateSpiritualTitle() {
   var el = document.getElementById('v2-spiritual-title');
   if (!el) return;
+  // Salutation 1x/jour avec prénom
+  var greetEl = document.getElementById('v2-greeting');
+  var lastGreetDate = localStorage.getItem('niyyah_greet_date');
+  if (!greetEl && lastGreetDate !== TODAY) {
+    var h = new Date().getHours();
+    var prenom = _getPrenom();
+    var greet = h < 12 ? 'Bonjour' : h < 18 ? 'Bon après-midi' : 'Bonsoir';
+    if (prenom) greet += ' ' + prenom;
+    var gDiv = document.createElement('div');
+    gDiv.id = 'v2-greeting';
+    gDiv.style.cssText = 'font-family:var(--serif);font-size:20px;font-style:italic;color:rgba(200,168,75,0.7);margin-bottom:8px;opacity:0;animation:obFadeIn 0.8s ease 0.3s forwards;';
+    gDiv.textContent = greet;
+    el.parentNode.insertBefore(gDiv, el);
+    safeSetItem('niyyah_greet_date', TODAY);
+  }
   var hist = {};
   try { hist = JSON.parse(localStorage.getItem('spiritual_history') || '{}'); } catch(e) {}
   var streak = hist.streak || 0;
