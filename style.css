@@ -3516,12 +3516,18 @@ to {
   0%,100% { r:3.5; opacity:0.5; }
   50% { r:5; opacity:1; }
 }
+.ob-geste-img {
+  width:100%;
+  max-width:200px;
+  border-radius:12px;
+  display:block;
+  margin:0 auto;
+}
 .ob-geste-txt {
   font-family:'Cormorant Garamond',serif;
-  font-size:15px;
+  font-size:14px;
   font-style:italic;
   line-height:1.5;
-  min-height:40px;
 }
 .ob-geste-tag {
   font-size:12px;
