@@ -6064,7 +6064,7 @@ const V2_I18N = {
     settings_delete_confirm2: 'Final confirmation \u2014 everything will be lost.',
     tawba_reviens: 'Come back', tawba_attend: 'Allah Al-Tawwab awaits you.',
     card_pratique: 'Prayers & acts', card_wird: 'Du\u2019as', card_parcours: 'My progress', card_tafakkur: 'Meditation',
-    btn_start_day: 'Start my day', btn_back_checklist: '← Back to checklist', scanner_hint: 'What object will carry your niyyah today?',
+    btn_start_day: 'Begin my day', btn_back_checklist: '← Back to checklist', scanner_hint: 'What object will carry your niyyah today?',
     conv_msg_0: 'Every great journey begins with a first step. The Deepening level awaits you.',
     conv_msg_1: 'Le Prophète ﷺ : l\'acte le plus aimé d\'Allah est celui fait avec constance. — Bukhari 6465',
     conv_msg_2: '7 days of constancy — Allah has seen every act. Continue with the Deepening level.',
@@ -6273,7 +6273,7 @@ const V2_I18N = {
     settings_delete_confirm2: '\u062A\u064E\u0623\u0652\u0643\u0650\u064A\u062F\u064C \u0623\u064E\u062E\u0650\u064A\u0631.',
     tawba_reviens: '\u0639\u064F\u062F\u0652', tawba_attend: '\u0627\u0644\u0644\u0651\u064E\u0647\u064F \u0627\u0644\u062A\u0651\u064E\u0648\u0651\u064E\u0627\u0628\u064F \u064A\u064E\u0646\u0652\u062A\u064E\u0638\u0650\u0631\u064F\u0643.',
     card_pratique: '\u0627\u0644\u0635\u0651\u064E\u0644\u064E\u0648\u0627\u062A \u0648\u0627\u0644\u0623\u064E\u0639\u0652\u0645\u0627\u0644', card_wird: '\u0627\u0644\u0623\u064E\u062F\u0652\u0639\u0650\u064A\u064E\u0629', card_parcours: '\u062A\u064E\u0642\u064E\u062F\u0651\u064F\u0645\u0650\u064A', card_tafakkur: '\u062A\u064E\u0641\u064E\u0643\u0651\u064F\u0631',
-    btn_start_day: '', btn_back_checklist: '', scanner_hint: '',
+    btn_start_day: '\u0627\u0628\u0652\u062F\u064E\u0623\u0652 \u064A\u064E\u0648\u0652\u0645\u0650\u064A', btn_back_checklist: '', scanner_hint: '',
     conv_msg_0: '', conv_msg_1: '', conv_msg_2: '', conv_msg_3: '', conv_msg_4: '',
     score_weighted: '', score_progress: '', score_continue: '',
     prayer_title: '', city_enter: '', city_placeholder: '',
@@ -6582,6 +6582,7 @@ function v2ApplyI18nHTML() {
   _cards.forEach(function(c) { var el = document.querySelector('[aria-label="'+c[0]+'"]'); if (el) el.setAttribute('aria-label', t(c[1])); });
   _s('i18n-finjournee-skip', 'onboard_skip');
   _s('i18n-bilan-later', 'btn_later');
+  _s('v2-greeting-eyebrow', 'btn_start_day');
 }
 
 // Shortcut: old V2_GREETINGS kept for compatibility
