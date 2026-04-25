@@ -5770,7 +5770,7 @@ const V2_I18N = {
     onboard_lvl1_desc: 'Les 5 prières · Dhikr · Récitation', onboard_lvl2_desc: 'Mosquée · Istighfar · Tasbih',
     onboard_lvl3_desc: 'Hadiths · Coran · Arabe', onboard_lvl4_desc: 'Sadaqa · Salam · Douaas',
     onboard_city_manual: 'Ou entre ta ville manuellement :',
-    ob_splash_sub: 'Pose ton intention', ob_avant_acte: 'Avant l\u2019acte', ob_apres_acte: 'Apr\u00e8s l\u2019acte',
+    alhaya_resting: 'Niyyah est en repos', alhaya_tap_wake: 'Touchez pour r00e9veiller', ob_splash_sub: 'Pose ton intention', ob_avant_acte: 'Avant l\u2019acte', ob_apres_acte: 'Apr\u00e8s l\u2019acte',
     ob_deux_gestes: 'Deux gestes pour ton quotidien', ob_sacralise: 'Sacralise. Examine.',
     ob_motivation_title: 'Qu\u2019est-ce qui t\u2019am\u00e8ne\u00a0?', ob_motivation_sub: 'Choisis ce qui te parle \u2014 on adapte ton exp\u00e9rience.',
     ob_motiv_routine: 'Routine spirituelle', ob_motiv_routine_sub: 'Installer une pratique quotidienne',
@@ -6003,7 +6003,7 @@ const V2_I18N = {
     onboard_lvl1_desc: '5 daily prayers · Dhikr · Recitation', onboard_lvl2_desc: 'Mosque · Istighfar · Tasbih',
     onboard_lvl3_desc: 'Hadiths · Quran · Arabic', onboard_lvl4_desc: 'Sadaqa · Salam · Douaas',
     onboard_city_manual: 'Or enter your city manually:',
-    ob_splash_sub: 'Set your intention', ob_avant_acte: 'Before the act', ob_apres_acte: 'After the act',
+    alhaya_resting: 'Niyyah is resting', alhaya_tap_wake: 'Tap to wake', ob_splash_sub: 'Set your intention', ob_avant_acte: 'Before the act', ob_apres_acte: 'After the act',
     ob_deux_gestes: 'Two gestures for your daily life', ob_sacralise: 'Sanctify. Examine.',
     ob_motivation_title: 'What brings you here?', ob_motivation_sub: 'Choose what speaks to you \u2014 we\u2019ll adapt your experience.',
     ob_motiv_routine: 'Spiritual routine', ob_motiv_routine_sub: 'Build a daily practice',
@@ -6213,7 +6213,7 @@ const V2_I18N = {
     onboard_tagline: '', onboard_scanner_example: '',
     onboard_lvl1_desc: '', onboard_lvl2_desc: '', onboard_lvl3_desc: '', onboard_lvl4_desc: '',
     onboard_city_manual: '',
-    ob_splash_sub: '\u0636\u064E\u0639\u0652 \u0646\u0650\u064A\u0651\u064E\u062A\u064E\u0643', ob_avant_acte: '\u0642\u064E\u0628\u0652\u0644\u064E \u0627\u0644\u0641\u0650\u0639\u0652\u0644', ob_apres_acte: '\u0628\u064E\u0639\u0652\u062F\u064E \u0627\u0644\u0641\u0650\u0639\u0652\u0644',
+    alhaya_resting: '\u0646\u0650\u064A\u0651\u064E\u0629 \u062A\u064E\u0633\u0652\u062A\u064E\u0631\u0650\u064A\u062D', alhaya_tap_wake: '\u0627\u0644\u0645\u064E\u0633\u0652 \u0644\u0650\u0644\u0627\u0633\u0652\u062A\u0650\u064A\u0642\u0627\u0638', ob_splash_sub: '\u0636\u064E\u0639\u0652 \u0646\u0650\u064A\u0651\u064E\u062A\u064E\u0643', ob_avant_acte: '\u0642\u064E\u0628\u0652\u0644\u064E \u0627\u0644\u0641\u0650\u0639\u0652\u0644', ob_apres_acte: '\u0628\u064E\u0639\u0652\u062F\u064E \u0627\u0644\u0641\u0650\u0639\u0652\u0644',
     ob_deux_gestes: '\u0625\u0650\u064A\u0645\u0627\u0621\u062A\u0627\u0646\u0650 \u0644\u0650\u064A\u064E\u0648\u0652\u0645\u0650\u0643', ob_sacralise: '\u0642\u064E\u062F\u0651\u0650\u0633\u0652. \u062A\u064E\u0623\u064E\u0645\u0651\u064E\u0644\u0652.',
     ob_motivation_title: '\u0645\u0627 \u0627\u0644\u0651\u064E\u0630\u0650\u064A \u062C\u064E\u0627\u0621\u064E \u0628\u0650\u0643\u064E\u061F', ob_motivation_sub: '\u0627\u062E\u0652\u062A\u064E\u0631\u0652 \u0645\u0627 \u064A\u064F\u0646\u0627\u0633\u0650\u0628\u064F\u0643.',
     ob_motiv_routine: '\u0631\u064F\u0648\u062A\u0650\u064A\u0646\u064C \u0631\u064F\u0648\u062D\u064E\u0627\u0646\u0650\u064A\u0651', ob_motiv_routine_sub: '\u0628\u0650\u0646\u0627\u0621\u064F \u0639\u0650\u0628\u0627\u062F\u064E\u0629\u064D \u064A\u064E\u0648\u0652\u0645\u0650\u064A\u0651\u064E\u0629',
@@ -6568,6 +6568,8 @@ function v2ApplyI18nHTML() {
   // Card aria-labels
   var _cards = [['Pratique','card_pratique'],['Wird','card_wird'],['Parcours','card_parcours'],['Tafakkur','card_tafakkur']];
   _cards.forEach(function(c) { var el = document.querySelector('[aria-label="'+c[0]+'"]'); if (el) el.setAttribute('aria-label', t(c[1])); });
+  _s('i18n-alhaya-resting', 'alhaya_resting');
+  _s('i18n-alhaya-tap', 'alhaya_tap_wake');
   _s('i18n-finjournee-skip', 'onboard_skip');
   _s('i18n-bilan-later', 'btn_later');
   _s('v2-greeting-eyebrow', 'btn_start_day');
@@ -7882,6 +7884,20 @@ function updateSanctuaireNextPrayer() {
   var _star = '<svg width="14" height="14" viewBox="0 0 10 10"><path d="M5 0 L5.8 4.2 L10 5 L5.8 5.8 L5 10 L4.2 5.8 L0 5 L4.2 4.2 Z" fill="#C8A84A"/></svg>';
   el.innerHTML = '<div style="text-align:center;margin:20px 0;display:flex;align-items:center;justify-content:center;gap:16px;opacity:' + (diffMin <= 60 ? '1' : '0.75') + ';">' + _star + '<span class="next-prayer-text">' + txt + '</span>' + _star + '</div>';
   el.style.display = 'block';
+}
+function openAlHaya() {
+  var ov = document.getElementById('alhaya-overlay');
+  if (ov) { ov.style.display = 'flex'; ov.style.opacity = '1'; }
+  safeSetItem('niyyah_alhaya_active', '1');
+}
+function closeAlHaya() {
+  var ov = document.getElementById('alhaya-overlay');
+  if (ov) { ov.style.opacity = '0'; setTimeout(function() { ov.style.display = 'none'; }, 200); }
+  localStorage.removeItem('niyyah_alhaya_active');
+}
+// Restore Al-Haya on load if was active
+if (localStorage.getItem('niyyah_alhaya_active') === '1') {
+  setTimeout(function() { var ov = document.getElementById('alhaya-overlay'); if (ov) { ov.style.display = 'flex'; ov.style.opacity = '1'; } }, 100);
 }
 function _dateLocale() {
   var lang = (typeof V2_LANG !== 'undefined') ? V2_LANG : 'fr';
