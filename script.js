@@ -5169,9 +5169,62 @@ const ONBOARD_SLIDES = [
     + '<div class="ob-chemin-item"><svg viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"><path d="M22 6a10 10 0 1 0 0 16A8 8 0 0 1 22 6z"/></svg><div class="ob-chemin-label">Tawba</div><div class="ob-chemin-desc">Reviens sans jugement</div></div>'
     + '</div>'
     + '<div style="font-family:var(--serif);font-size:14px;font-style:italic;color:var(--t3);text-align:center;margin:20px 0 24px;line-height:1.6;">Pas de classement. Juste toi et ta constance.</div>'
-    + '<button class="onboard-btn" onclick="onboardFinish()">Bismillah, je commence \ud83c\udf3f</button>'
+    + '<button class="onboard-btn" onclick="onboardNext()">Suivant \u2192</button>'
+    + '</div>',
+  // Slide 5 — Notifications 3 catégories
+  () => '<div class="onboard-anim">'
+    + '<div class="onboard-title">Reste connect\u00e9</div>'
+    + '<div class="onboard-sub" style="margin-bottom:20px;">Niyyah peut t\u2019inviter \u00e0 recommencer chaque jour.</div>'
+    + '<div class="ob-notif-cards">'
+    + '<div class="ob-notif-card active" onclick="obToggleNotif(this,\'murmures\')">'
+    + '<div class="ob-notif-icon">\ud83c\udf3f</div>'
+    + '<div class="ob-notif-body"><div class="ob-notif-name">Murmures du jour</div><div class="ob-notif-desc">4 rappels doux selon ton intention</div></div>'
+    + '<div class="ob-notif-toggle"><div class="ob-notif-knob"></div></div></div>'
+    + '<div class="ob-notif-card active" onclick="obToggleNotif(this,\'rituels\')">'
+    + '<div class="ob-notif-icon">\ud83c\udf19</div>'
+    + '<div class="ob-notif-body"><div class="ob-notif-name">Rituels</div><div class="ob-notif-desc">Wird du matin et du soir</div></div>'
+    + '<div class="ob-notif-toggle"><div class="ob-notif-knob"></div></div></div>'
+    + '<div class="ob-notif-card active" onclick="obToggleNotif(this,\'encourage\')">'
+    + '<div class="ob-notif-icon">\ud83d\udd25</div>'
+    + '<div class="ob-notif-body"><div class="ob-notif-name">Encouragements</div><div class="ob-notif-desc">Streak en danger, d\u00e9fis</div></div>'
+    + '<div class="ob-notif-toggle"><div class="ob-notif-knob"></div></div></div>'
+    + '</div>'
+    + '<button class="onboard-btn" onclick="obActivateNotifs()">Activer \ud83d\udd14</button>'
+    + '<button class="onboard-skip" onclick="obSkipNotifs()">Plus tard</button>'
+    + '<div style="font-size:12px;color:var(--t3);margin-top:12px;cursor:pointer;">Modifier dans R\u00e9glages</div>'
     + '</div>'
 ];
+function obToggleNotif(el, key) {
+  el.classList.toggle('active');
+  var isOn = el.classList.contains('active');
+  safeSetItem('niyyah_notif_' + key, isOn ? '1' : '0');
+}
+function obActivateNotifs() {
+  // Store prefs (defaults already set to '1' by active class)
+  ['murmures','rituels','encourage'].forEach(function(k) {
+    if (!localStorage.getItem('niyyah_notif_' + k)) safeSetItem('niyyah_notif_' + k, '1');
+  });
+  var anyOn = document.querySelector('.ob-notif-card.active');
+  if (anyOn && 'Notification' in window) {
+    Notification.requestPermission().then(function(perm) {
+      if (perm === 'granted') {
+        safeSetItem('niyyah_notif_perm', '1');
+        safeSetItem('niyyah_notif_asked', '1');
+        if (typeof scheduleAllNotifications === 'function') scheduleAllNotifications();
+      }
+      onboardFinish();
+    }).catch(function() { onboardFinish(); });
+  } else {
+    onboardFinish();
+  }
+}
+function obSkipNotifs() {
+  safeSetItem('niyyah_notif_murmures', '0');
+  safeSetItem('niyyah_notif_rituels', '0');
+  safeSetItem('niyyah_notif_encourage', '0');
+  safeSetItem('niyyah_notif_asked', '1');
+  onboardFinish();
+}
 function obTryNiyyah() {
   var btn = document.getElementById('obTryBtn');
   if (btn) { btn.textContent = 'Ouverture cam\u00e9ra...'; btn.disabled = true; }
@@ -5250,11 +5303,11 @@ function onboardRender() {
   requestAnimationFrame(function() {
     var content = document.getElementById('onboardContent');
     if (content) content.innerHTML = ONBOARD_SLIDES[_onboardStep]();
-    [0,1,2,3,4].forEach(function(i) {
+    [0,1,2,3,4,5].forEach(function(i) {
       var dot = document.getElementById('dot' + i);
       if (dot) dot.className = 'onboard-dot' + (i === _onboardStep ? ' active' : '');
     });
-    if (_onboardStep === 4) {
+    if (_onboardStep === 5) {
       setTimeout(function() {
         var el = document.getElementById('onboardCityInput');
         if (el) el.focus();
