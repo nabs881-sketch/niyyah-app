@@ -3779,10 +3779,9 @@ const SOURATES = [
   [113,'Al-Falaq','الفلق','L\'Aube Naissante',5],
   [114,'An-Nas','الناس','Les Hommes',6],
 ];
-let _coranAudio = null;
-let _coranIdx = 0;
-let _coranSourate = null;
-let _coranPlaying = false;
+var _coranAudio = new Audio();
+var _coranSourate = null;
+var _coranPlaying = false;
 function openCoranPicker(event) {
   if (event) event.stopPropagation();
   var _ov = document.getElementById('coranOverlay');
@@ -3826,71 +3825,51 @@ function renderSourateList(list) {
   }).join('');
 }
 function playSourate(num) {
-  const sourate = SOURATES.find(s => s[0] === num);
+  var sourate = SOURATES.find(function(s) { return s[0] === num; });
   if (!sourate) return;
   stopCoranPlayer();
   _coranSourate = sourate;
-  _coranIdx = 0;
   _coranPlaying = true;
   var _playerEl = document.getElementById('coranPlayer');
   var _nameEl = document.getElementById('coranPlayerName');
+  var _versetEl = document.getElementById('coranPlayerVerset');
+  var _playBtn = document.getElementById('coranPlayBtn');
   if (_playerEl) _playerEl.style.display = 'block';
-  if (_nameEl) _nameEl.textContent = sourate[1] + ' — ' + sourate[2];
-  renderSourateList(SOURATES.filter(s => {
-    const q = document.getElementById('coranSearch').value;
+  if (_nameEl) _nameEl.textContent = sourate[1] + ' \u2014 ' + sourate[2];
+  if (_versetEl) _versetEl.textContent = sourate[4] + ' ' + t('quran_verse_label');
+  if (_playBtn) _playBtn.textContent = '\u23f8';
+  renderSourateList(SOURATES.filter(function(s) {
+    var q = document.getElementById('coranSearch').value;
     return !q || s[1].toLowerCase().includes(q.toLowerCase()) || s[3].toLowerCase().includes(q.toLowerCase());
   }));
-  _playCoranVerset();
-}
-function _playCoranVerset() {
-  if (!_coranSourate || !_coranPlaying) return;
-  const total = _coranSourate[4];
-  var _playBtn = document.getElementById('coranPlayBtn');
-  var _versetEl = document.getElementById('coranPlayerVerset');
-  if (_coranIdx >= total) {
+  var url = 'https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/' + String(num).padStart(3,'0') + '.mp3';
+  _coranAudio.src = url;
+  _coranAudio.load();
+  _coranAudio.onended = function() {
     _coranPlaying = false;
-    if (_playBtn) _playBtn.textContent = '▶';
+    if (_playBtn) _playBtn.textContent = '\u25b6';
     if (_versetEl) _versetEl.textContent = t('meditation_done');
-    return;
-  }
-  const num = String(_coranSourate[0]).padStart(3,'0');
-  const ver = String(_coranIdx + 1).padStart(3,'0');
-  const url = 'https://everyayah.com/data/Alafasy_128kbps/' + num + ver + '.mp3';
-  if (_versetEl) _versetEl.textContent = t('quran_verse_label') + (_coranIdx+1) + ' / ' + total;
-  if (_playBtn) _playBtn.textContent = '⏸';
-  if (_coranAudio) { _coranAudio.pause(); _coranAudio = null; }
-  const audio = new Audio();
-  _coranAudio = audio;
-  audio.onerror = () => { _coranIdx++; _playCoranVerset(); };
-  audio.onended = () => { _coranIdx++; _playCoranVerset(); };
-  audio.src = url;
-  audio.load();
-  audio.play().catch(() => { _coranIdx++; _playCoranVerset(); });
-  // Preload next verset
-  if (_coranIdx + 1 < total) {
-    var _next = new Audio();
-    _next.src = 'https://everyayah.com/data/Alafasy_128kbps/' + num + String(_coranIdx + 2).padStart(3,'0') + '.mp3';
-    _next.preload = 'auto';
-  }
+  };
+  _coranAudio.play().catch(function() {});
 }
 function toggleCoranPlay() {
-  if (!_coranAudio) return;
+  if (!_coranAudio.src) return;
   var _btn = document.getElementById('coranPlayBtn');
   if (_coranPlaying) {
     _coranAudio.pause();
     _coranPlaying = false;
-    if (_btn) _btn.textContent = '▶';
+    if (_btn) _btn.textContent = '\u25b6';
   } else {
     _coranAudio.play();
     _coranPlaying = true;
-    if (_btn) _btn.textContent = '⏸';
+    if (_btn) _btn.textContent = '\u23f8';
   }
 }
 function stopCoranPlayer() {
-  if (_coranAudio) { _coranAudio.pause(); _coranAudio = null; }
+  _coranAudio.pause();
+  _coranAudio.src = '';
   _coranPlaying = false;
   _coranSourate = null;
-  _coranIdx = 0;
   var _playerEl = document.getElementById('coranPlayer');
   var _btn = document.getElementById('coranPlayBtn');
   if (_playerEl) _playerEl.style.display = 'none';
