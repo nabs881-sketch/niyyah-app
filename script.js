@@ -6148,6 +6148,9 @@ function v2SetLanguage(lang) {
   v2ApplyI18n();
   v2RefreshStats();
   v2UpdateOrbState();
+  if (typeof renderTabs === 'function') renderTabs();
+  if (typeof renderLevel === 'function' && typeof currentLevel !== 'undefined') renderLevel(currentLevel);
+  if (typeof renderProgression === 'function') { var _progEl = document.getElementById('progContent'); if (_progEl && _progEl.innerHTML) renderProgression(); }
   // Close settings if open
   const sheet = document.getElementById('v2-settings-sheet');
   if (sheet) sheet.remove();
