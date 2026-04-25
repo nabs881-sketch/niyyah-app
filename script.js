@@ -5108,7 +5108,7 @@ const ONBOARD_SLIDES = [
       + '<div class="onboard-logo-wrap" style="opacity:0;animation:obFadeIn 0.8s ease 0.2s forwards;"><div class="onboard-logo-halo"><img src="https://nabs881-sketch.github.io/niyyah-app/imageslogo.webp" alt="Niyyah" style="width:120px;height:auto;display:block;margin:0 auto;"></div><div class="onboard-particle" style="--d:0s;--x:-40px;--y:-30px;">\u2726</div><div class="onboard-particle" style="--d:0.8s;--x:45px;--y:-20px;">\u2726</div><div class="onboard-particle" style="--d:1.6s;--x:-30px;--y:35px;">\u2726</div><div class="onboard-particle" style="--d:2.4s;--x:35px;--y:40px;">\u2726</div><div class="onboard-particle" style="--d:3.2s;--x:0px;--y:-45px;">\u2726</div></div>'
       + '<svg class="ob-calli-svg" viewBox="0 0 200 80" width="240" height="90"><text x="100" y="60" text-anchor="middle" font-family="\'Scheherazade New\',serif" font-size="56" fill="none" stroke="#C8A84A" stroke-width="0.8">\u0646\u0650\u064A\u0651\u064E\u0629</text></svg>'
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:rgba(200,168,75,0.7);letter-spacing:1px;opacity:0;animation:obFadeIn 1s ease 1.4s forwards;">Pose ton intention</div>'
-      + '<button class="onboard-btn" onclick="onboardNext()" style="margin-top:20px;opacity:0;animation:obFadeIn 0.6s ease 2.5s forwards;">Commencer \u2192</button>'
+      + '<button class="onboard-btn" onclick="onboardNext()" style="margin-top:20px;opacity:0;animation:obFadeIn 0.6s ease 2.5s forwards;">Commencer</button>'
       + '<button class="onboard-skip" onclick="onboardFinish()" style="margin-top:8px;opacity:0;animation:obFadeIn 0.6s ease 2.5s forwards;">' + t('onboard_skip') + '</button>'
       + '</div>',
   // Slide 1 — Motivation "Qu'est-ce qui t'amène ?"
@@ -5129,7 +5129,7 @@ const ONBOARD_SLIDES = [
     + '<div class="ob-motiv-title">Sacraliser mon quotidien</div>'
     + '<div class="ob-motiv-sub">Donner un sens spirituel à chaque geste</div></div>'
     + '</div>'
-    + '<button class="onboard-btn" id="obMotivBtn" onclick="onboardNext()" style="opacity:0.3;pointer-events:none;">Suivant →</button>'
+    + '<button class="onboard-btn" id="obMotivBtn" onclick="onboardNext()" style="opacity:0.3;pointer-events:none;">Suivant</button>'
     + '<button class="onboard-skip" onclick="onboardFinish()">' + t('onboard_skip') + '</button>'
     + '</div>',
   // Slide 2 — Deux gestes : Niyyah + Regarde
@@ -5157,7 +5157,7 @@ const ONBOARD_SLIDES = [
       + '</div>'
       + '</div>'
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:var(--t3);text-align:center;margin:16px 0 24px;">Sacralise. Examine.</div>'
-      + '<button class="onboard-btn" onclick="onboardNext()">Suivant \u2192</button>'
+      + '<button class="onboard-btn" onclick="onboardNext()">Suivant</button>'
       + '<button class="onboard-skip" onclick="onboardFinish()">' + t('onboard_skip') + '</button>'
       + '</div>';
   },
@@ -5176,7 +5176,7 @@ const ONBOARD_SLIDES = [
     + '<div style="font-family:var(--serif);font-size:14px;font-style:italic;color:var(--t3);text-align:center;margin:20px 0 16px;line-height:1.6;">Pas de classement. Juste toi et ta constance.</div>'
     + '<div style="margin-bottom:20px;text-align:center;"><label style="font-family:var(--serif);font-size:13px;color:var(--t3);display:block;margin-bottom:6px;">Comment veux-tu qu\u2019on t\u2019appelle\u00a0?</label>'
     + '<input type="text" placeholder="Ton pr\u00e9nom..." style="width:100%;max-width:260px;box-sizing:border-box;padding:10px 14px;background:rgba(200,168,75,0.04);border:1px solid rgba(200,168,75,0.2);border-radius:12px;color:var(--t1);font-size:14px;font-family:var(--sans);outline:none;text-align:center;" oninput="safeSetItem(\'niyyah_prenom\',this.value.trim())"></div>'
-    + '<button class="onboard-btn" onclick="onboardNext()">Suivant \u2192</button>'
+    + '<button class="onboard-btn" onclick="onboardNext()">Suivant</button>'
     + '</div>',
   // Slide 5 — Notifications 3 catégories
   () => '<div class="onboard-anim">'
@@ -5555,7 +5555,7 @@ const V2_I18N = {
     scanner_limit: 'Ton scan du jour a été utilisé — reviens demain inch\'Allah 🌙',
     scanner_limit_week: 'Tu as atteint ta limite de scans cette semaine — reviens bientôt inch\'Allah 🌙',
     // Onboarding
-    onboard_start: 'Commencer →', onboard_next: 'Suivant →', onboard_skip: 'Passer', onboard_later: 'Plus tard', onboard_go: 'C\'est parti — Bismillah 🌿',
+    onboard_start: 'Commencer', onboard_next: 'Suivant', onboard_skip: 'Passer', onboard_later: 'Plus tard', onboard_go: 'C\'est parti — Bismillah 🌿',
     onboard_title1: 'Ta pratique spirituelle,<br>chaque jour', onboard_sub1: 'Niyyah t\'accompagne dans ton chemin vers Allah — à ton rythme, sans jugement.',
     onboard_title2: 'Le Scanner de Niyyah', onboard_sub2: 'Pose ton regard sur un objet du quotidien — le Scanner te proposera une intention spirituelle pour le sacraliser.',
     onboard_title3: '4 niveaux de pratique', onboard_sub3: 'Progresse à ton rythme — chaque niveau se débloque quand tu es prêt.',
@@ -5727,7 +5727,7 @@ const V2_I18N = {
     scanner_posed: '✦ INTENTION SET', scanner_empty: 'Your intentions will appear here ✦',
     scanner_limit: 'Your daily scan was used — come back tomorrow insha\'Allah 🌙',
     scanner_limit_week: 'You have reached your scan limit this week — come back soon insha\'Allah 🌙',
-    onboard_start: 'Start →', onboard_next: 'Next →', onboard_skip: 'Skip', onboard_later: 'Later', onboard_go: 'Let\'s go — Bismillah 🌿',
+    onboard_start: 'Start', onboard_next: 'Next', onboard_skip: 'Skip', onboard_later: 'Later', onboard_go: 'Let\'s go — Bismillah 🌿',
     onboard_title1: 'Your spiritual practice,<br>every day', onboard_sub1: 'Niyyah walks with you on your path to Allah — at your pace, without judgment.',
     onboard_title2: 'The Niyyah Scanner', onboard_sub2: 'Look at an everyday object — the Scanner will suggest a spiritual intention to sanctify it.',
     onboard_title3: '4 levels of practice', onboard_sub3: 'Progress at your pace — each level unlocks when you\'re ready.',
@@ -5878,7 +5878,7 @@ const V2_I18N = {
     scanner_posed: '✦ ثَبَتَتِ النِّيَّةُ', scanner_empty: 'سَتَظْهَرُ نِيَّاتُكَ هُنَا ✦',
     scanner_limit: 'اسْتُخْدِمَ مَسْحُكَ الْيَوْمِيُّ — عُدْ غَدًا إِنْ شَاءَ اللَّهُ 🌙',
     scanner_limit_week: 'لَقَدْ بَلَغْتَ حَدَّ الْمَسْحِ هَذَا الْأُسْبُوعَ — عُدْ قَرِيبًا إِنْ شَاءَ اللَّهُ 🌙',
-    onboard_start: '← ابْدَأْ', onboard_next: '← التَّالِي', onboard_skip: 'تَخَطَّ', onboard_later: 'لَاحِقًا', onboard_go: 'بِسْمِ اللَّهِ — هَيَّا بِنَا 🌿',
+    onboard_start: 'ابْدَأْ', onboard_next: 'التَّالِي', onboard_skip: 'تَخَطَّ', onboard_later: 'لَاحِقًا', onboard_go: 'بِسْمِ اللَّهِ — هَيَّا بِنَا 🌿',
     onboard_title1: 'عِبَادَتُكَ الرُّوحِيَّةُ<br>كُلَّ يَوْمٍ', onboard_sub1: 'نِيَّة تُرَافِقُكَ فِي طَرِيقِكَ إِلَى اللَّهِ — بِوَتِيرَتِكَ وَبِدُونِ حُكْمٍ.',
     onboard_title2: 'مَاسِحُ النِّيَّةِ', onboard_sub2: 'انْظُرْ إِلَى شَيْءٍ يَوْمِيٍّ — سَيَقْتَرِحُ الْمَاسِحُ نِيَّةً رُوحِيَّةً لِتَقْدِيسِهِ.',
     onboard_title3: '٤ مُسْتَوَيَاتٍ لِلْعِبَادَةِ', onboard_sub3: 'تَقَدَّمْ بِوَتِيرَتِكَ — كُلُّ مُسْتَوًى يُفْتَحُ عِنْدَمَا تَكُونُ جَاهِزًا.',
