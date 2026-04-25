@@ -5139,11 +5139,100 @@ const ONBOARD_SLIDES = [
       + '<button class="onboard-skip" onclick="onboardFinish()">' + t('onboard_skip') + '</button>'
       + '</div>';
   },
-  () => `
-    <div class="onboard-anim"><div class="onboard-title">${t('onboard_title3')}</div><div class="onboard-sub" style="margin-bottom:24px;">${t('onboard_sub3')}</div><div class="onboard-levels"><div class="onboard-level"><div class="onboard-level-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M22 6a10 10 0 1 0 0 16A8 8 0 0 1 22 6z" fill="#C8A84A"/></svg></div><div><div class="onboard-level-name">${t('level_1')}</div><div class="onboard-level-desc">${t('onboard_lvl1_desc')}</div></div></div><div class="onboard-level"><div class="onboard-level-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 2l3.09 6.26L24 9.27l-5 4.87L20.18 21 14 17.27 7.82 21 9 14.14l-5-4.87 6.91-1.01L14 2z" fill="#C8A84A"/></svg></div><div><div class="onboard-level-name">${t('level_2')}</div><div class="onboard-level-desc">${t('onboard_lvl2_desc')}</div></div></div><div class="onboard-level"><div class="onboard-level-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M4 4h8v20H4z" fill="#C8A84A" opacity="0.7"/><path d="M16 4h8v20h-8z" fill="#C8A84A"/><path d="M12 4v20h4V4z" fill="#C8A84A" opacity="0.5"/></svg></div><div><div class="onboard-level-name">${t('level_3')}</div><div class="onboard-level-desc">${t('onboard_lvl3_desc')}</div></div></div><div class="onboard-level"><div class="onboard-level-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 4c-3 0-6 2-6 5 0 2 1 3 2 4l4 3 4-3c1-1 2-2 2-4 0-3-3-5-6-5z" fill="#C8A84A" opacity="0.8"/><path d="M6 18c0 0 2-1 8-1s8 1 8 1v4c0 1-1 2-2 2H8c-1 0-2-1-2-2v-4z" fill="#C8A84A"/></svg></div><div><div class="onboard-level-name">${t('level_4')}</div><div class="onboard-level-desc">${t('onboard_lvl4_desc')}</div></div></div></div><button class="onboard-btn" onclick="onboardNext()">${t('onboard_next')}</button><button class="onboard-skip" onclick="onboardFinish()">${t('onboard_skip')}</button></div>`,
-  () => `
-    <div class="onboard-anim"><div style="margin:0 auto 20px;"><img src="https://nabs881-sketch.github.io/niyyah-app/imageslogo.webp" alt="Niyyah" style="width:150px;height:auto;display:block;margin:0 auto;"></div><div class="onboard-title">${t('onboard_title4')}</div><div class="onboard-sub">${t('onboard_sub4')}</div><button class="onboard-btn" onclick="onboardRequestGeoloc()" style="max-width:300px;" id="onboardGeoBtn">${t('geo_locate')}</button><div id="onboardCityFallback" style="display:none;margin-top:16px;"><div style="font-size:13px;color:#B0A080;margin-bottom:10px;">${t('onboard_city_manual')}</div><div class="city-input-wrap" style="max-width:300px;margin-bottom:16px;"><input class="city-input" id="onboardCityInput" type="text" placeholder="${t('onboard_city_placeholder')}" onkeydown="if(event.key===\'Enter\')onboardSaveCity()"><button class="city-input-btn" onclick="onboardSaveCity()">OK</button></div></div><button class="onboard-skip" onclick="onboardFinish()" style="margin-top:12px;">${t('onboard_later')}</button></div>`
+  // Slide 3 — Première Niyyah live
+  () => '<div class="onboard-anim">'
+    + '<div style="font-size:40px;margin-bottom:12px;">📸</div>'
+    + '<div class="onboard-title">Veux-tu poser ta premi\u00e8re niyyah\u00a0?</div>'
+    + '<div class="onboard-sub" style="margin-bottom:20px;">Prends un objet en photo — on te propose une intention.</div>'
+    + '<div style="margin-bottom:20px;"><label style="font-family:var(--serif);font-size:13px;color:var(--t3);display:block;margin-bottom:6px;">Ton pr\u00e9nom (optionnel)</label>'
+    + '<input id="obPrenomInput" type="text" placeholder="Ex: Nabs, Fatima..." style="width:100%;max-width:280px;box-sizing:border-box;padding:10px 14px;background:rgba(200,168,75,0.04);border:1px solid rgba(200,168,75,0.2);border-radius:12px;color:var(--t1);font-size:14px;font-family:var(--sans);outline:none;" oninput="safeSetItem(\'niyyah_prenom\',this.value.trim())"></div>'
+    + '<div id="obNiyyahResult" style="display:none;margin-bottom:20px;text-align:center;">'
+    + '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:#C8A84A;line-height:1.6;margin-bottom:12px;" id="obNiyyahText"></div>'
+    + '<button class="onboard-btn" onclick="obConfirmNiyyah()" id="obBismillahBtn">Bismillah \u2014 J\'adopte cette niyyah \ud83c\udf3f</button>'
+    + '</div>'
+    + '<div id="obNiyyahActions">'
+    + '<button class="onboard-btn" onclick="obTryNiyyah()" id="obTryBtn">Essayer \ud83d\udcf7</button>'
+    + '<button class="onboard-skip" onclick="onboardNext()">Plus tard</button>'
+    + '</div>'
+    + '<div id="obConfettiZone" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;"></div>'
+    + '</div>',
+  // Slide 4 — Ton chemin
+  () => '<div class="onboard-anim">'
+    + '<div class="onboard-title">Niyyah suit tes pas</div>'
+    + '<div class="onboard-sub" style="margin-bottom:20px;">Voici ce qui t\u2019accompagne chaque jour.</div>'
+    + '<div class="ob-chemin-grid">'
+    + '<div class="ob-chemin-item"><svg viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"><path d="M16 6v12l6 4"/><circle cx="16" cy="16" r="13"/></svg><div class="ob-chemin-label">S\u00e9rie</div><div class="ob-chemin-desc">Jours cons\u00e9cutifs</div></div>'
+    + '<div class="ob-chemin-item"><svg viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"><path d="M6 24L12 12 18 18 26 8"/></svg><div class="ob-chemin-label">Score</div><div class="ob-chemin-desc">Ta journ\u00e9e /100</div></div>'
+    + '<div class="ob-chemin-item"><svg viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"><path d="M8 26V14M14 26V10M20 26V16M26 26V8"/></svg><div class="ob-chemin-label">Niveaux</div><div class="ob-chemin-desc">4 paliers</div></div>'
+    + '<div class="ob-chemin-item"><svg viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"><rect x="4" y="6" width="24" height="20" rx="3"/><path d="M4 12h24M10 6v4M22 6v4"/></svg><div class="ob-chemin-label">Carte</div><div class="ob-chemin-desc">Calendrier annuel</div></div>'
+    + '<div class="ob-chemin-item"><svg viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"><path d="M16 4l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><div class="ob-chemin-label">D\u00e9fi</div><div class="ob-chemin-desc">1 par semaine</div></div>'
+    + '<div class="ob-chemin-item"><svg viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"><path d="M22 6a10 10 0 1 0 0 16A8 8 0 0 1 22 6z"/></svg><div class="ob-chemin-label">Tawba</div><div class="ob-chemin-desc">Reviens sans jugement</div></div>'
+    + '</div>'
+    + '<div style="font-family:var(--serif);font-size:14px;font-style:italic;color:var(--t3);text-align:center;margin:20px 0 24px;line-height:1.6;">Pas de classement. Juste toi et ta constance.</div>'
+    + '<button class="onboard-btn" onclick="onboardFinish()">Bismillah, je commence \ud83c\udf3f</button>'
+    + '</div>'
 ];
+function obTryNiyyah() {
+  var btn = document.getElementById('obTryBtn');
+  if (btn) { btn.textContent = 'Ouverture cam\u00e9ra...'; btn.disabled = true; }
+  if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+    if (btn) { btn.textContent = 'Cam\u00e9ra non disponible'; }
+    return;
+  }
+  navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } }).then(function(stream) {
+    // Capture one frame
+    var video = document.createElement('video');
+    video.srcObject = stream;
+    video.setAttribute('playsinline', '');
+    video.play();
+    setTimeout(function() {
+      var canvas = document.createElement('canvas');
+      canvas.width = 320; canvas.height = 240;
+      canvas.getContext('2d').drawImage(video, 0, 0, 320, 240);
+      var base64 = canvas.toDataURL('image/jpeg', 0.7).split(',')[1];
+      stream.getTracks().forEach(function(t) { t.stop(); });
+      if (btn) btn.textContent = 'Analyse en cours...';
+      // Call API
+      var ctrl = new AbortController();
+      var timer = setTimeout(function() { ctrl.abort(); }, 8000);
+      fetch('https://niyyah-api.nabs881.workers.dev/api/niyyah', {
+        method: 'POST', signal: ctrl.signal,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ image: base64, hour: new Date().getHours() })
+      }).then(function(r) { return r.json(); }).then(function(data) {
+        clearTimeout(timer);
+        var intention = (data && data.intention) ? data.intention : 'Je pose mon regard avec gratitude envers Allah.';
+        obShowNiyyahResult(intention);
+      }).catch(function() {
+        clearTimeout(timer);
+        obShowNiyyahResult('Je pose mon regard avec gratitude envers Allah.');
+      });
+    }, 500);
+  }).catch(function() {
+    if (btn) { btn.textContent = 'Cam\u00e9ra refus\u00e9e'; btn.disabled = false; }
+  });
+}
+function obShowNiyyahResult(text) {
+  var actions = document.getElementById('obNiyyahActions');
+  var result = document.getElementById('obNiyyahResult');
+  if (actions) actions.style.display = 'none';
+  if (result) result.style.display = 'block';
+  var el = document.getElementById('obNiyyahText');
+  if (el) obTypeWriter('obNiyyahText', text, 0);
+}
+function obConfirmNiyyah() {
+  var zone = document.getElementById('obConfettiZone');
+  if (zone) {
+    for (var i = 0; i < 24; i++) {
+      var c = document.createElement('div');
+      c.style.cssText = 'position:absolute;width:6px;height:6px;border-radius:50%;top:50%;left:' + (20 + Math.random()*60) + '%;background:' + ['#C8A84A','#E0C870','#fff','#f5a623'][Math.floor(Math.random()*4)] + ';animation:confettiFall ' + (0.8+Math.random()*0.8) + 's ease-out forwards;';
+      zone.appendChild(c);
+    }
+  }
+  var btn = document.getElementById('obBismillahBtn');
+  if (btn) { btn.textContent = '\u2713 MashaAllah !'; btn.style.pointerEvents = 'none'; }
+  setTimeout(function() { onboardNext(); }, 1800);
+}
 function obTypeWriter(elId, text, i) {
   var el = document.getElementById(elId);
   if (!el || i >= text.length) return;
@@ -5222,12 +5311,17 @@ function onboardFinish() {
     screen.style.opacity = '0';
     setTimeout(() => screen.classList.add('hidden'), 350);
   }
-  // Charger horaires — coords ou ville déjà gérées par l'onboarding
+  // Charger horaires — géoloc silencieuse si pas encore faite
   var _onboardCoords = localStorage.getItem('niyyah_coords');
   if (_onboardCoords) {
     try { var _c = JSON.parse(_onboardCoords); _loadPrayerByCoords(_c.lat, _c.lng); } catch(e) {}
   } else if (_prayerCity) {
     _loadPrayerByCity();
+  } else if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(pos) {
+      safeSetItem('niyyah_coords', JSON.stringify({ lat: pos.coords.latitude, lng: pos.coords.longitude }));
+      if (typeof _loadPrayerByCoords === 'function') _loadPrayerByCoords(pos.coords.latitude, pos.coords.longitude);
+    }, function() {}, { enableHighAccuracy: false, timeout: 10000, maximumAge: 300000 });
   }
   // Afficher l'écran de permission notifications après l'onboarding
   setTimeout(() => {
