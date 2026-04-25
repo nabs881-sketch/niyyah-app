@@ -1377,7 +1377,7 @@ function getDateMinus(dateStr, days) {
 function saveState()   { safeSetItem('spiritual_v2', JSON.stringify(state)); safeSetItem('spiritual_level', currentLevel); }
 function saveHistory() { safeSetItem('spiritual_history', JSON.stringify(history)); }
 function getLevelProgress(levelId) { return getCalcLvlPct(levelId, state); }
-function getMedalLevel() { return 'none'; }
+// 'none' removed — was a stub returning 'none'
 function getLevelItems(levelId) {
   const level = LEVELS.find(l => l.id === levelId);
   return level ? level.sections.flatMap(s => s.items) : [];
@@ -1670,7 +1670,7 @@ function renderAccueil() {
   const scoreJour = Math.round(getWeightedScore(allLvlItems, state));
   const pct = Math.min(Math.round(getLevelProgress(1)), 100);
   const currentLvl = LEVELS.find(l => l.id === (state._unlocked ? Math.max(...state._unlocked) : 1));
-  const medal = getMedalLevel();
+  const medal = 'none';
 
   // Date
   const now = new Date();
@@ -1732,7 +1732,7 @@ function renderAccueil() {
       const d = getDateMinus(TODAY, i);
       const isToday = d === TODAY;
       const done = isToday ? getLevelProgress(1) >= 100 : !!(history.days && history.days[d]);
-      const medal2 = isToday ? (done ? getMedalLevel() : null) : ((history.dayMedals && history.dayMedals[d]) || (done ? 'bronze' : null));
+      const medal2 = isToday ? (done ? 'none' : null) : ((history.dayMedals && history.dayMedals[d]) || (done ? 'bronze' : null));
       const dot = document.createElement('div');
       let bg = 'rgba(255,255,255,0.06)';
       if (medal2 === 'gold') bg = 'linear-gradient(135deg,#c8a84b,#e8cc6a)';
@@ -1784,7 +1784,7 @@ function renderResume() {
   const totalDone = allItems.filter(item => { try { return isItemDone(item, state); } catch(e) { return item.type==="counter"?(state[item.id]||0)>=item.target:!!state[item.id]; } }).reduce((sum, i) => { try { return sum + getWeight(i.id); } catch(e) { return sum + 1; } }, 0);
   const totalAll = allItems.reduce((sum, i) => { try { return sum + getWeight(i.id); } catch(e) { return sum + 1; } }, 0);
   const globalPct = totalAll > 0 ? Math.round(totalDone / totalAll * 100) : 0;
-  const medal = getMedalLevel();
+  const medal = 'none';
   const f3 = document.getElementById('globalFill3');
   if (f3) f3.style.width = globalPct + '%';
   const emojiMap = { none: '🌱', bronze: '🥉', silver: '🥈', gold: '🥇' };
@@ -2667,34 +2667,35 @@ function showToast(msg) {
 }
 let calYear = new Date().getFullYear();
 function renderYearCalendar() {
-  const el = document.getElementById('yearCalContent');
+  var el = document.getElementById('yearCalContent');
   if (!el) return;
-  const todayDone = getLevelProgress(1) >= 100;
-  const currentMedal = getMedalLevel();
-  const MONTHS = ['Jan','Fev','Mar','Avr','Mai','Jun','Jul','Aou','Sep','Oct','Nov','Dec'];
-  const nowYear = new Date().getFullYear();
-  const canNext = calYear < nowYear;
-  let html = '<div class="year-nav"><button class="year-nav-btn" aria-label="Année précédente" onclick="calYear--;renderYearCalendar()">&#8249;</button><div class="year-nav-title">' + calYear + '</div><button class="year-nav-btn" aria-label="Année suivante" style="opacity:' + (canNext ? '1' : '0.3') + '" onclick="' + (canNext ? 'calYear++;renderYearCalendar()' : '') + '">&#8250;</button></div><div class="year-months">';
-  for (let m = 0; m < 12; m++) {
-    const daysInMonth = new Date(calYear, m+1, 0).getDate();
+  var todayPct = Math.round(getLevelProgress(1));
+  var MONTHS = ['Jan','Fev','Mar','Avr','Mai','Jun','Jul','Aou','Sep','Oct','Nov','Dec'];
+  var nowYear = new Date().getFullYear();
+  var canNext = calYear < nowYear;
+  var html = '<div class="year-nav"><button class="year-nav-btn" aria-label="Année précédente" onclick="calYear--;renderYearCalendar()">&#8249;</button><div class="year-nav-title">' + calYear + '</div><button class="year-nav-btn" aria-label="Année suivante" style="opacity:' + (canNext ? '1' : '0.3') + '" onclick="' + (canNext ? 'calYear++;renderYearCalendar()' : '') + '">&#8250;</button></div><div class="year-months">';
+  for (var m = 0; m < 12; m++) {
+    var daysInMonth = new Date(calYear, m + 1, 0).getDate();
     html += '<div class="year-month"><div class="year-month-label">' + MONTHS[m] + '</div><div class="year-days">';
-    for (let d = 1; d <= daysInMonth; d++) {
-      const dStr = calYear + '-' + String(m+1).padStart(2,'0') + '-' + String(d).padStart(2,'0');
-      const isToday  = dStr === TODAY;
-      const isFuture = dStr > TODAY;
-      let medal = null;
-      if (isToday && todayDone) medal = currentMedal;
-      else if (!isFuture && !isToday) medal = ((history.dayMedals && history.dayMedals[dStr])) || ((history.days && history.days[dStr]) ? 'bronze' : null);
-      const medalCls = { bronze: 'yb', silver: 'ys', gold: 'yg' };
-      let cls = 'year-day';
+    for (var d = 1; d <= daysInMonth; d++) {
+      var dStr = calYear + '-' + String(m + 1).padStart(2, '0') + '-' + String(d).padStart(2, '0');
+      var isToday = dStr === TODAY;
+      var isFuture = dStr > TODAY;
+      var pct = 0;
+      if (isToday) pct = todayPct;
+      else if (!isFuture && history.dayScores && history.dayScores[dStr]) pct = history.dayScores[dStr];
+      else if (!isFuture && history.days && history.days[dStr]) pct = 100;
+      var cls = 'year-day';
       if (isFuture) cls += ' fy';
-      else if (medal) cls += ' ' + (medalCls[medal] || 'yb');
+      else if (pct >= 80) cls += ' yg';
+      else if (pct >= 40) cls += ' ys';
+      else if (pct >= 1) cls += ' yb';
       if (isToday) cls += ' yt';
-      html += '<div class="' + cls + '"></div>';
+      html += '<div class="' + cls + '" title="' + dStr + ' · ' + pct + '%"></div>';
     }
     html += '</div></div>';
   }
-  html += '</div><div class="year-legend"><div class="yl-item"><div class="yl-dot" style="background:var(--card2)"></div>Aucune</div><div class="yl-item"><div class="yl-dot" style="background:#d4914a"></div>Bronze</div><div class="yl-item"><div class="yl-dot" style="background:#b0c4ce"></div>Argent</div><div class="yl-item"><div class="yl-dot" style="background:var(--gold)"></div>Or</div></div>';
+  html += '</div><div class="year-legend"><div class="yl-item"><div class="yl-dot" style="background:var(--card2)"></div>Aucune</div><div class="yl-item"><div class="yl-dot yb"></div>1-39%</div><div class="yl-item"><div class="yl-dot ys"></div>40-79%</div><div class="yl-item"><div class="yl-dot yg"></div>80%+</div></div>';
   el.innerHTML = html;
 }
 function getGraineSVG(count) {
@@ -2864,7 +2865,7 @@ function renderProgression() {
   el.innerHTML = `
     <div style="padding:0 0 40px;"><!-- 1. TITRE SPIRITUEL --><div id="v2-spiritual-title" style="text-align:center;margin:0 16px 12px;"></div><!-- 2. PROGRESSION -->${heroSectionP}<!-- 3. DÉFI SEMAINE --><button id="accueilDefiCard" class="defi-card-sanctuaire" onclick="if(typeof openDefiSelector==='function')openDefiSelector()" style="display:none;margin:0 16px 12px;padding:14px 18px;background:#1a1a1a;border:1px solid rgba(200,168,75,0.3);border-radius:14px;cursor:pointer;position:relative;z-index:10;text-align:left;min-height:90px;box-sizing:border-box;font-family:inherit;color:inherit;width:calc(100% - 32px);"><div style="display:flex;align-items:center;gap:12px;width:100%;"><div id="defiCardIcon"><img src="https://nabs881-sketch.github.io/niyyah-app/imagescroissant.webp" alt="Croissant" style="width:60px;height:auto;display:block;flex-shrink:0;"></div><div style="flex:1;text-align:left;"><div id="defiCardTitre" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:#C8A84A;">Défi de la semaine</div><div id="defiCardScore" style="font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:#B0A080;margin-top:2px;"></div></div></div><div id="defiCardDots" style="display:none;"></div><div id="defiCardBar" style="position:absolute;bottom:0;left:0;right:0;height:3px;background:rgba(200,168,75,0.12);border-radius:0 0 14px 14px;overflow:hidden;"><div id="defiCardBarFill" style="height:100%;width:0%;background:#C8A84A;transition:width 0.6s ease;"></div></div></button><!-- 4. CHALLENGE FAJR --><div id="fajr-challenge-card" style="display:none;margin:0 16px 12px;"></div><!-- 5. SÉRIE EN COURS --><div style="text-align:center;padding:36px 20px 28px;position:relative;"><div style="font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;">${t('prog_streak')}</div><div style="font-size:80px;font-weight:900;line-height:1;background:linear-gradient(135deg,#c8a84b,#e8cc6a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-3px;">${streakDisplay}</div><div style="font-size:13px;color:var(--t3);margin-top:6px;letter-spacing:1px;">${t('prog_days')}</div><div style="display:flex;justify-content:center;gap:24px;margin-top:16px;"><div style="text-align:center;"><div style="font-size:18px;font-weight:700;color:var(--t1);">${bestDisplay}</div><div style="font-size:12px;color:var(--t3);letter-spacing:0.8px;text-transform:uppercase;">${t('prog_best')}</div></div><div style="width:1px;background:rgba(255,255,255,0.1);"></div><div style="text-align:center;"><div style="font-size:18px;font-weight:700;color:var(--t1);">${totalDisplay}</div><div style="font-size:12px;color:var(--t3);letter-spacing:0.8px;text-transform:uppercase;">${t('prog_total')}</div></div></div></div><!-- HADITH CONTEXTUEL --><div style="margin:0 16px 24px;padding:20px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.2);border-radius:16px;position:relative;overflow:hidden;"><div style="position:absolute;top:-10px;right:12px;font-size:48px;opacity:0.07;font-family:serif;">"</div><div style="font-size:14px;line-height:1.7;color:var(--t1);font-style:italic;margin-bottom:10px;">${hadith.text}</div><div style="font-size:12px;color:#c8a84b;font-weight:600;letter-spacing:0.5px;">— ${hadith.ref}</div></div><!-- 6. HEATMAP 30 JOURS --><div style="margin:0 16px 24px;"><div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;text-align:center;">${t('prog_heatmap')}</div><div style="display:grid;grid-template-columns:repeat(10,1fr);gap:4px;">
           ${heatmapHTML}
-        </div><div style="font-family:'Inter',var(--sans);font-size:12px;color:rgba(255,255,255,0.5);text-align:center;margin-top:10px;">Aujourd'hui : ${Math.round(getLevelProgress(1))}% accompli</div></div><!-- BILAN 7 JOURS -->${bilanHTML}<!-- 7. GRAINE DE LUMIÈRE --><div style="margin:0 16px 24px;background:linear-gradient(135deg,rgba(200,168,75,0.08),rgba(200,168,75,0.03));border:1px solid rgba(200,168,75,0.25);border-radius:20px;padding:28px;text-align:center;user-select:none;-webkit-user-select:none;"><div style="font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:3px;color:#C8A84A;text-transform:uppercase;margin-bottom:16px;">${t('graine_title')}</div><div style="position:relative;width:160px;height:160px;min-width:160px;min-height:160px;margin:0 auto 16px;"><div style="position:absolute;inset:-20px;border-radius:50%;background:radial-gradient(circle,rgba(200,168,75,0.1) 0%,rgba(200,168,75,0.04) 50%,transparent 70%);"></div><div style="position:relative;">${getGraineSVG((function(){try{return JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length)}</div></div><div style="font-family:'Inter',var(--sans);font-size:16px;color:rgba(255,255,255,0.6);margin-bottom:6px;">${(function(){try{return JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length} ${t('graine_defis')}</div><div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:#C8A84A;margin-bottom:12px;">${getGraineStageName((function(){try{return JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length)}</div><div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:#C8A84A;opacity:0.7;line-height:1.6;">${t('graine_quote')}</div></div>
+        </div><div style="font-family:'Inter',var(--sans);font-size:12px;color:rgba(255,255,255,0.5);text-align:center;margin-top:10px;">Aujourd'hui : ${Math.round(getLevelProgress(1))}% accompli</div><button onclick="var c=document.getElementById('yearCalWrap');if(c.style.display==='none'){c.style.display='block';calYear=new Date().getFullYear();renderYearCalendar();this.textContent='Masquer la carte';}else{c.style.display='none';this.textContent='🗓️ Carte annuelle';}" style="display:block;margin:12px auto 0;background:transparent;border:1px solid rgba(200,168,75,0.25);border-radius:12px;padding:8px 18px;color:var(--gold);font-family:var(--serif);font-size:13px;cursor:pointer;" aria-label="Carte annuelle">🗓️ Carte annuelle</button><div id="yearCalWrap" style="display:none;margin-top:16px;background:var(--card);border:1px solid rgba(200,168,75,0.15);border-radius:12px;padding:16px;"><div id="yearCalContent"></div></div></div><!-- BILAN 7 JOURS -->${bilanHTML}<!-- 7. GRAINE DE LUMIÈRE --><div style="margin:0 16px 24px;background:linear-gradient(135deg,rgba(200,168,75,0.08),rgba(200,168,75,0.03));border:1px solid rgba(200,168,75,0.25);border-radius:20px;padding:28px;text-align:center;user-select:none;-webkit-user-select:none;"><div style="font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:3px;color:#C8A84A;text-transform:uppercase;margin-bottom:16px;">${t('graine_title')}</div><div style="position:relative;width:160px;height:160px;min-width:160px;min-height:160px;margin:0 auto 16px;"><div style="position:absolute;inset:-20px;border-radius:50%;background:radial-gradient(circle,rgba(200,168,75,0.1) 0%,rgba(200,168,75,0.04) 50%,transparent 70%);"></div><div style="position:relative;">${getGraineSVG((function(){try{return JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length)}</div></div><div style="font-family:'Inter',var(--sans);font-size:16px;color:rgba(255,255,255,0.6);margin-bottom:6px;">${(function(){try{return JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length} ${t('graine_defis')}</div><div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:#C8A84A;margin-bottom:12px;">${getGraineStageName((function(){try{return JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length)}</div><div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:#C8A84A;opacity:0.7;line-height:1.6;">${t('graine_quote')}</div></div>
 
       </div>
   `;
