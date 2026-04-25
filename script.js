@@ -1170,11 +1170,11 @@ const LEVELS = [
     id: 1, title: 'Fondations',
     sections: [
       { icon: '🕌', title: 'Les 5 Prières', items: [
-        { id: 'fajr',    label: 'Fajr',    sub: t('prayer_fajr_sub'),            arabic: '\u0635\u064E\u0644\u0627\u0629\u064F \u0627\u0644\u0641\u064E\u062C\u0652\u0631\u0650',  prayer: true, priority: 'fard', block: 'fajr', hadith: '\"Celui qui prie Fajr est sous la protection d\'Allah toute la journ\u00e9e\" \u2014 Muslim 657', source: 'Muslim 657' },
-        { id: 'dhuhr',   label: 'Dhuhr',   sub: t('prayer_dhuhr_sub'),           arabic: '\u0635\u064E\u0644\u0627\u0629\u064F \u0627\u0644\u0638\u0651\u064F\u0647\u0652\u0631\u0650',  prayer: true, priority: 'fard', block: 'dhuhr', hadith: '\"Celui qui prie les deux pri\u00e8res fra\u00eeches entrera au Paradis\" \u2014 Bukhari 574', source: 'Bukhari 574' },
-        { id: 'asr',     label: 'Asr',     sub: t('prayer_asr_sub'),             arabic: '\u0635\u064E\u0644\u0627\u0629\u064F \u0627\u0644\u0639\u064E\u0635\u0652\u0631\u0650',  prayer: true, priority: 'fard', block: 'asr', hadith: '\"Celui qui manque Asr, c\'est comme s\'il avait perdu sa famille et ses biens\" \u2014 Bukhari 552', source: 'Bukhari 552' },
-        { id: 'maghrib', label: 'Maghrib', sub: t('prayer_maghrib_sub'),         arabic: '\u0635\u064E\u0644\u0627\u0629\u064F \u0627\u0644\u0645\u064E\u063A\u0652\u0631\u0650\u0628\u0650', prayer: true, priority: 'fard', block: 'maghrib', hadith: '\"Priez avant le Maghrib, priez avant le Maghrib\" \u2014 Bukhari 1183', source: 'Bukhari 1183' },
-        { id: 'isha',    label: 'Isha',    sub: t('prayer_isha_sub'),            arabic: '\u0635\u064E\u0644\u0627\u0629\u064F \u0627\u0644\u0639\u0650\u0634\u0627\u0621\u0650',  prayer: true, priority: 'fard', block: 'isha', hadith: '\"Celui qui prie Isha en jamaah a la r\u00e9compense de prier la moiti\u00e9 de la nuit\" \u2014 Muslim 656', source: 'Muslim 656' },
+        { id: 'fajr',    label: 'Fajr',    _subKey: 'prayer_fajr_sub',    get sub(){return t(this._subKey)}, arabic: '\u0635\u064E\u0644\u0627\u0629\u064F \u0627\u0644\u0641\u064E\u062C\u0652\u0631\u0650',  prayer: true, priority: 'fard', block: 'fajr', hadith: '\"Celui qui prie Fajr est sous la protection d\'Allah toute la journ\u00e9e\" \u2014 Muslim 657', source: 'Muslim 657' },
+        { id: 'dhuhr',   label: 'Dhuhr',   _subKey: 'prayer_dhuhr_sub',   get sub(){return t(this._subKey)}, arabic: '\u0635\u064E\u0644\u0627\u0629\u064F \u0627\u0644\u0638\u0651\u064F\u0647\u0652\u0631\u0650',  prayer: true, priority: 'fard', block: 'dhuhr', hadith: '\"Celui qui prie les deux pri\u00e8res fra\u00eeches entrera au Paradis\" \u2014 Bukhari 574', source: 'Bukhari 574' },
+        { id: 'asr',     label: 'Asr',     _subKey: 'prayer_asr_sub',     get sub(){return t(this._subKey)}, arabic: '\u0635\u064E\u0644\u0627\u0629\u064F \u0627\u0644\u0639\u064E\u0635\u0652\u0631\u0650',  prayer: true, priority: 'fard', block: 'asr', hadith: '\"Celui qui manque Asr, c\'est comme s\'il avait perdu sa famille et ses biens\" \u2014 Bukhari 552', source: 'Bukhari 552' },
+        { id: 'maghrib', label: 'Maghrib', _subKey: 'prayer_maghrib_sub', get sub(){return t(this._subKey)}, arabic: '\u0635\u064E\u0644\u0627\u0629\u064F \u0627\u0644\u0645\u064E\u063A\u0652\u0631\u0650\u0628\u0650', prayer: true, priority: 'fard', block: 'maghrib', hadith: '\"Priez avant le Maghrib, priez avant le Maghrib\" \u2014 Bukhari 1183', source: 'Bukhari 1183' },
+        { id: 'isha',    label: 'Isha',    _subKey: 'prayer_isha_sub',    get sub(){return t(this._subKey)}, arabic: '\u0635\u064E\u0644\u0627\u0629\u064F \u0627\u0644\u0639\u0650\u0634\u0627\u0621\u0650',  prayer: true, priority: 'fard', block: 'isha', hadith: '\"Celui qui prie Isha en jamaah a la r\u00e9compense de prier la moiti\u00e9 de la nuit\" \u2014 Muslim 656', source: 'Muslim 656' },
         ...(isFriday() ? [{ id: 'jumua', label: 'Jumua ✦', sub: 'Prière du vendredi — obligation spéciale', arabic: 'صَلَاةُ الْجُمُعَةِ', isFriday: true, prayer: true, priority: 'fard', block: 'dhuhr', hadith: '\"Le vendredi est le meilleur jour sur lequel le soleil se lève\" — Muslim 854', source: 'Muslim 854' }] : []),
       ]},
       { icon: '📿', title: 'Wird quotidien', desc: 'Le wird est un ensemble d\'invocations quotidiennes tirées du Coran et de la Sunnah, récitées chaque matin après Fajr et chaque soir après Asr. Il protège, purifie le cœur et rapproche d\'Allah.', items: [
@@ -2187,7 +2187,7 @@ function renderLevel(levelId) {
   const scoreBg = scoreJour >= 80 ? 'rgba(200,168,75,0.12)' : scoreJour >= 50 ? 'rgba(52,217,98,0.08)' : 'rgba(255,255,255,0.04)';
   const scoreBorder = scoreJour >= 80 ? 'rgba(200,168,75,0.3)' : scoreJour >= 50 ? 'rgba(52,217,98,0.2)' : 'rgba(255,255,255,0.08)';
   const scoreLabel = scoreJour >= 80 ? 'MashaAllah ✦' : scoreJour >= 50 ? t('score_continue') : t('score_progress');
-  let html = '<div class="level-hero"><div class="hero-label">Niveau ' + level.id + '</div><div class="hero-title">' + level.title + '</div><div class="hero-bar-row"><div class="hero-bar-track"><div class="hero-bar-fill" style="width:' + pct + '%"></div></div><div class="hero-pct">' + Math.round(pct) + '%</div></div>'
+  let html = '<div class="level-hero"><div class="hero-label">' + t('level_word') + ' ' + level.id + '</div><div class="hero-title">' + level.title + '</div><div class="hero-bar-row"><div class="hero-bar-track"><div class="hero-bar-fill" style="width:' + pct + '%"></div></div><div class="hero-pct">' + Math.round(pct) + '%</div></div>'
     + '<div style="display:flex;align-items:center;justify-content:space-between;margin-top:10px;padding:8px 12px;background:' + scoreBg + ';border:1px solid ' + scoreBorder + ';border-radius:10px;">'
     + '<div style="font-size:12px;color:var(--t3);letter-spacing:0.5px;">' + t('score_weighted') + '</div>'
     + '<div style="display:flex;align-items:center;gap:6px;">'
@@ -5510,7 +5510,7 @@ const V2_I18N = {
     link_see_regards: 'Voir mes Regards →', link_see_niyyah: 'Voir mes Niyyah →',
     journal_search: 'Rechercher...', modal_close: 'Fermer', btn_later: 'Plus tard',
     tawba_ameen: 'Ameen', defi_change: 'Changer de défi', notif_accept: 'Oui, je veux ces rappels 🌿',
-    level_accomplished: 'Niveau accompli', level_next: 'Niveau suivant →', level_stay: 'Rester sur ce niveau',
+    level_word: 'Niveau', level_accomplished: 'Niveau accompli', level_next: 'Niveau suivant \u2192', level_stay: 'Rester sur ce niveau',
     freemium_title: 'Niyyah+', freemium_sub: 'Scanner illimit\u00e9 + futurs avantages cloud.',
     freemium_buy: 'Obtenir Niyyah+ \u2014 4,99\u20ac', freemium_code_placeholder: 'CODE D\'ACC\u00c8S', freemium_free: 'Continuer en gratuit',
     freemium_f1: 'Scanner de Niyyah illimit\u00e9 (vs 1/semaine)', freemium_f2: 'Synchronisation cloud (bient\u00f4t)',
@@ -5738,7 +5738,7 @@ const V2_I18N = {
     link_see_regards: 'See my Regards →', link_see_niyyah: 'See my Niyyah →',
     journal_search: 'Search...', modal_close: 'Close', btn_later: 'Later',
     tawba_ameen: 'Ameen', defi_change: 'Change challenge', notif_accept: 'Yes, I want these reminders 🌿',
-    level_accomplished: 'Level accomplished', level_next: 'Next level →', level_stay: 'Stay on this level',
+    level_word: 'Level', level_accomplished: 'Level accomplished', level_next: 'Next level \u2192', level_stay: 'Stay on this level',
     freemium_title: 'Niyyah+', freemium_sub: 'Unlimited scanner + future cloud features.',
     freemium_buy: 'Get Niyyah+ \u2014 \u20ac4.99', freemium_code_placeholder: 'ACCESS CODE', freemium_free: 'Continue for free',
     freemium_f1: 'Unlimited Niyyah Scanner (vs 1/week)', freemium_f2: 'Cloud sync (coming soon)',
@@ -5943,7 +5943,7 @@ const V2_I18N = {
     link_see_regards: '', link_see_niyyah: '',
     journal_search: '', modal_close: '', btn_later: '',
     tawba_ameen: '', defi_change: '', notif_accept: '',
-    level_accomplished: '', level_next: '', level_stay: '',
+    level_word: '\u0627\u0644\u0645\u064F\u0633\u0652\u062A\u064E\u0648\u064E\u0649', level_accomplished: '', level_next: '', level_stay: '',
     freemium_title: '', freemium_sub: '',
     freemium_buy: '', freemium_code_placeholder: '', freemium_free: '',
     freemium_f1: '', freemium_f2: '', freemium_f3: '', freemium_f4: '', freemium_f5: '', freemium_f6: '',
