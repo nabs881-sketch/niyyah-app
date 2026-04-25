@@ -7893,10 +7893,10 @@ function updateSanctuaireNextPrayer() {
   var txt = '';
   if (diffMin > 60) txt = nextName + ' \u00b7 ' + nextTime;
   else if (diffMin > 0) txt = nextName + ' ' + t('prayer_in') + ' ' + diffMin + ' min';
-  el.textContent = txt;
-  el.style.display = txt ? '' : 'none';
-  el.style.color = diffMin < 10 ? 'var(--gold)' : 'var(--silver)';
-  el.style.opacity = diffMin < 60 ? '1' : '0.7';
+  var span = document.getElementById('sanctuaire-prayer-text');
+  if (span) span.textContent = txt;
+  el.style.display = txt ? 'flex' : 'none';
+  el.style.opacity = diffMin <= 60 ? '1' : '0.75';
 }
 function _dateLocale() {
   var lang = (typeof V2_LANG !== 'undefined') ? V2_LANG : 'fr';
