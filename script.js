@@ -2187,7 +2187,7 @@ function renderLevel(levelId) {
   const scoreBg = scoreJour >= 80 ? 'rgba(200,168,75,0.12)' : scoreJour >= 50 ? 'rgba(52,217,98,0.08)' : 'rgba(255,255,255,0.04)';
   const scoreBorder = scoreJour >= 80 ? 'rgba(200,168,75,0.3)' : scoreJour >= 50 ? 'rgba(52,217,98,0.2)' : 'rgba(255,255,255,0.08)';
   const scoreLabel = scoreJour >= 80 ? 'MashaAllah ✦' : scoreJour >= 50 ? t('score_continue') : t('score_progress');
-  let html = '<div class="level-hero"><div class="hero-label">' + t('level_word') + ' ' + level.id + '</div><div class="hero-title">' + level.title + '</div><div class="hero-bar-row"><div class="hero-bar-track"><div class="hero-bar-fill" style="width:' + pct + '%"></div></div><div class="hero-pct">' + Math.round(pct) + '%</div></div>'
+  let html = '<div class="level-hero"><div class="hero-label">' + t('level_word') + ' ' + level.id + '</div><div class="hero-title">' + t('level_' + level.id) + '</div><div class="hero-bar-row"><div class="hero-bar-track"><div class="hero-bar-fill" style="width:' + pct + '%"></div></div><div class="hero-pct">' + Math.round(pct) + '%</div></div>'
     + '<div style="display:flex;align-items:center;justify-content:space-between;margin-top:10px;padding:8px 12px;background:' + scoreBg + ';border:1px solid ' + scoreBorder + ';border-radius:10px;">'
     + '<div style="font-size:12px;color:var(--t3);letter-spacing:0.5px;">' + t('score_weighted') + '</div>'
     + '<div style="display:flex;align-items:center;gap:6px;">'
@@ -2238,7 +2238,7 @@ function renderLevel(levelId) {
       return false;
     });
     if (_filteredItems.length === 0) return;
-    var _sectionTitleMap = {'Les 5 Prières':'section_prayers','Wird quotidien':'section_wird','Sunnah de base':'section_sunnah'};
+    var _sectionTitleMap = {'Les 5 Prières':'section_prayers','Wird quotidien':'section_wird','Sunnah de base':'section_sunnah','Approfondissement de la prière':'section_deep_prayer','Dhikr du cœur':'section_dhikr','Douâas intimes':'section_duas','Étude islamique':'section_study','Immersion coranique':'section_quran','Pratiques avancées':'section_advanced',"Sommet de l'adoration":'section_summit','Rayonnement vers les autres':'section_radiance',"Conscience de l'Oumma":'section_ummah'};
     var _sectionTitle = _sectionTitleMap[section.title] ? t(_sectionTitleMap[section.title]) : section.title;
     var _sectionTitleArabic = {'Les 5 Prières':'الصَّلَاةُ','Wird quotidien':'الوِرْد','Sunnah de base':'السُّنَن','Approfondissement de la prière':'الخُشُوع','Dhikr du cœur':'ذِكْر القَلْب','Douâas intimes':'الدُّعَاء','Étude islamique':'العِلْم','Immersion coranique':'التِّلَاوَة','Pratiques avancées':'المُجَاهَدَة',"Sommet de l'adoration":'الإِحْسَان','Rayonnement vers les autres':'الرَّحْمَة',"Conscience de l'Oumma":'الأُمَّة'};
     var _sectionArabic = _sectionTitleArabic[section.title] || '';
@@ -5632,7 +5632,10 @@ const V2_I18N = {
     score_weighted: 'Score pondéré du jour', score_progress: 'En cours…', score_continue: 'Continue ↗',
     prayer_title: '🕌 Horaires du jour', city_enter: 'Entre ta ville pour voir les horaires de prière', city_placeholder: 'Ex: Paris, Casablanca, Bruxelles...',
     qibla_title: '🕋 Qibla — Direction de la Mecque', qibla_find_text: 'Trouve la direction de la Mecque depuis ta position', qibla_find_btn: '📍 Trouver la Qibla',
-    section_prayers: 'Les 5 Prières', section_wird: 'Wird quotidien', section_sunnah: 'Sunnah de base',
+    section_prayers: 'Les 5 Pri\u00e8res', section_wird: 'Wird quotidien', section_sunnah: 'Sunnah de base',
+    section_deep_prayer: 'Approfondissement de la pri\u00e8re', section_dhikr: 'Dhikr du c\u0153ur', section_duas: 'Dou\u00e2as intimes',
+    section_study: '\u00c9tude islamique', section_quran: 'Immersion coranique', section_advanced: 'Pratiques avanc\u00e9es',
+    section_summit: 'Sommet de l\u2019adoration', section_radiance: 'Rayonnement vers les autres', section_ummah: 'Conscience de l\u2019Oumma',
     btn_open: 'OUVRIR ›', btn_complete: '✓ COMPLET', btn_skip_level: 'Continuer vers Niveau ',
     // Night companion
     night_title: 'Quelle pensée ferme ta journée ?', night_placeholder: 'Écris ta pensée du soir...', night_send: 'ENVOYER', night_sagesse: 'SAGESSE DE LA NUIT',
@@ -5851,6 +5854,9 @@ const V2_I18N = {
     prayer_title: '🕌 Today\'s prayer times', city_enter: 'Enter your city to see prayer times', city_placeholder: 'Ex: London, Dubai, Istanbul...',
     qibla_title: '🕋 Qibla — Direction of Mecca', qibla_find_text: 'Find the direction of Mecca from your position', qibla_find_btn: '📍 Find the Qibla',
     section_prayers: 'The 5 Prayers', section_wird: 'Daily Wird', section_sunnah: 'Essential Sunnah',
+    section_deep_prayer: 'Deepening the prayer', section_dhikr: 'Dhikr of the heart', section_duas: 'Intimate du\u2019as',
+    section_study: 'Islamic study', section_quran: 'Quranic immersion', section_advanced: 'Advanced practices',
+    section_summit: 'Summit of worship', section_radiance: 'Radiance toward others', section_ummah: 'Ummah awareness',
     btn_open: 'OPEN ›', btn_complete: '✓ COMPLETE', btn_skip_level: 'Continue to Level ',
     night_title: 'What thought closes your day?', night_placeholder: 'Write your evening thought...', night_send: 'SEND', night_sagesse: 'NIGHT WISDOM',
     notif_unsupported: 'Notifications are not supported on this device', notif_enabled: '✦ Reminders enabled — JazakAllahu khairan!', notif_later: 'You can enable them later in settings', notif_disabled: '🔕 Reminders disabled',
@@ -6041,7 +6047,10 @@ const V2_I18N = {
     score_weighted: '', score_progress: '', score_continue: '',
     prayer_title: '', city_enter: '', city_placeholder: '',
     qibla_title: '', qibla_find_text: '', qibla_find_btn: '',
-    section_prayers: '', section_wird: '', section_sunnah: '',
+    section_prayers: '\u0627\u0644\u0635\u0651\u064E\u0644\u064E\u0648\u0627\u062A\u064F \u0627\u0644\u062E\u064E\u0645\u0652\u0633', section_wird: '\u0627\u0644\u0648\u0650\u0631\u0652\u062F\u064F \u0627\u0644\u064A\u064E\u0648\u0652\u0645\u0650\u064A\u0651', section_sunnah: '\u0627\u0644\u0633\u0651\u064F\u0646\u064E\u0646\u064F \u0627\u0644\u0623\u064E\u0633\u0627\u0633\u0650\u064A\u0651\u064E\u0629',
+    section_deep_prayer: '\u062A\u064E\u0639\u0652\u0645\u0650\u064A\u0642\u064F \u0627\u0644\u0635\u0651\u064E\u0644\u0627\u0629', section_dhikr: '\u0630\u0650\u0643\u0652\u0631\u064F \u0627\u0644\u0642\u064E\u0644\u0652\u0628', section_duas: '\u062F\u064F\u0639\u0627\u0621\u064C \u062E\u0627\u0635\u0651',
+    section_study: '\u0627\u0644\u062F\u0651\u0650\u0631\u0627\u0633\u064E\u0629\u064F \u0627\u0644\u0625\u0650\u0633\u0652\u0644\u0627\u0645\u0650\u064A\u0651\u064E\u0629', section_quran: '\u0627\u0644\u063A\u064E\u0648\u0652\u0635\u064F \u0641\u0650\u064A \u0627\u0644\u0642\u064F\u0631\u0652\u0622\u0646', section_advanced: '\u0639\u0650\u0628\u0627\u062F\u0627\u062A\u064C \u0645\u064F\u062A\u064E\u0642\u064E\u062F\u0651\u0650\u0645\u064E\u0629',
+    section_summit: '\u0642\u0650\u0645\u0651\u064E\u0629\u064F \u0627\u0644\u0639\u0650\u0628\u0627\u062F\u064E\u0629', section_radiance: '\u0627\u0644\u0625\u0650\u0634\u0652\u0639\u0627\u0639\u064F \u0646\u064E\u062D\u0652\u0648\u064E \u0627\u0644\u0622\u062E\u064E\u0631\u0650\u064A\u0646', section_ummah: '\u0627\u0644\u0648\u064E\u0639\u0652\u064A\u064F \u0628\u0650\u0627\u0644\u0623\u064F\u0645\u0651\u064E\u0629',
     btn_open: '', btn_complete: '', btn_skip_level: '',
     night_title: 'مَا الْفِكْرَةُ الَّتِي تَخْتِمُ بِهَا يَوْمَكَ؟', night_placeholder: 'اكْتُبْ فِكْرَتَكَ الْمَسَائِيَّةَ...', night_send: 'إِرْسَالٌ', night_sagesse: 'حِكْمَةُ اللَّيْلِ',
     notif_unsupported: 'الْإِشْعَارَاتُ غَيْرُ مَدْعُومَةٍ عَلَى هَذَا الْجِهَازِ', notif_enabled: '✦ تَمَّ تَفْعِيلُ التَّذْكِيرَاتِ — جَزَاكَ اللَّهُ خَيْرًا!', notif_later: 'يُمْكِنُكَ تَفْعِيلُهَا لَاحِقًا فِي الْإِعْدَادَاتِ', notif_disabled: '🔕 تَمَّ تَعْطِيلُ التَّذْكِيرَاتِ',
@@ -7499,7 +7508,7 @@ var ITEMS_I18N = {
     basmala:{l:'Bismillah before every action',s:'Eating, leaving, starting \u2014 Bismillah'},
     witr:{l:'Witr Prayer',s:'1 or 3 rakaat after Isha'},
     shukr:{l:'Tafakkur: contemplate 3 blessings',s:'Health, being Muslim, safety\u2026 meditate on 3 concrete blessings from Allah today'},
-    sunnah_fajr:{l:'Sunnah Fajr',s:'2 rakaat before Fajr \u2014 the Prophet \u00b7 never abandoned them'},
+    sunnah_fajr:{l:'Sunnah Fajr',s:'2 rakaat before Fajr \u2014 the Prophet \uFDFA never abandoned them'},
     jumua:{l:'Jumua \u2726'},
     mosquee:{l:'Prayer at the mosque',s:'27 times the reward of praying alone'},
     sunnah_prieres:{l:'Supererogatory prayers',s:'Rawatib: 2 before Fajr, 4 before Dhuhr, 2 after, 2 after Maghrib, 2 after Isha'},
