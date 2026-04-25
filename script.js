@@ -7872,25 +7872,6 @@ function tD(defi) {
   if (lang === 'fr' || !DEFIS_I18N[lang] || !DEFIS_I18N[lang][defi.id]) return tD(defi);
   return DEFIS_I18N[lang][defi.id];
 }
-function updateWaqtRing() {
-  var arc = document.getElementById('waqt-arc');
-  if (!arc || !_prayerTimes) return;
-  var now = new Date();
-  var nowMin = now.getHours() * 60 + now.getMinutes();
-  var names = ['Fajr','Dhuhr','Asr','Maghrib','Isha'];
-  var times = names.map(function(n) { var p = (_prayerTimes[n]||'0:0').replace(/ *\(.*\)/,'').split(':'); return parseInt(p[0],10)*60+parseInt(p[1],10); });
-  var prevMin = 0, nextMin = 1440;
-  for (var i = 0; i < times.length; i++) {
-    if (times[i] <= nowMin) prevMin = times[i];
-    if (times[i] > nowMin && nextMin === 1440) nextMin = times[i];
-  }
-  if (nextMin === 1440) { nextMin = times[0] + 1440; } // wrap to next Fajr
-  var span = nextMin - prevMin;
-  var progress = span > 0 ? (nowMin - prevMin) / span : 0;
-  var circ = 2 * Math.PI * 110; // 691.15
-  arc.setAttribute('stroke-dashoffset', String(circ * (1 - progress)));
-}
-setInterval(updateWaqtRing, 60000);
 function updateSanctuaireNextPrayer() {
   var el = document.getElementById('sanctuaire-next-prayer');
   if (!el || !_prayerTimes) { if (el) el.style.display = 'none'; return; }
@@ -7979,7 +7960,6 @@ function updateSpiritualTitle() {
 }
 function v2RefreshStats() {
   if (typeof updateSanctuaireNextPrayer === 'function') updateSanctuaireNextPrayer();
-  if (typeof updateWaqtRing === 'function') updateWaqtRing();
   // POINT 3 — Effet visuel Tawba persistant 24h
   try { applyTawbaGlow(); } catch(e) {}
   // Stats row — table layout, toujours horizontal
