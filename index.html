@@ -150,18 +150,6 @@
      ════════════════════════════════════════════════ -->
 <main id="main-content"><div id="view-sanctuaire" class="active">
 
-  <!-- Al-Haya button -->
-  <button id="alhaya-btn" onclick="openAlHaya()" style="display:none;position:fixed;top:16px;right:16px;z-index:1200;background:none;border:none;cursor:pointer;opacity:0.5;padding:8px;" aria-label="Al-Haya"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"/><circle cx="12" cy="12" r="3"/><line x1="2" y1="2" x2="22" y2="22"/></svg></button>
-
-  <!-- Al-Haya overlay -->
-  <div id="alhaya-overlay" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;width:100vw;height:100vh;z-index:9998;background:#1F2125;align-items:center;justify-content:center;flex-direction:column;text-align:center;cursor:pointer;transition:opacity 0.2s;" onclick="closeAlHaya()">
-    <div style="font-family:'Scheherazade New',serif;font-size:28px;color:#C8A84A;margin-bottom:16px;">&#1606;&#1616;&#1610;&#1617;&#1614;&#1577;</div>
-    <div id="i18n-alhaya-resting" style="font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;color:rgba(200,168,75,0.7);margin-bottom:20px;">Niyyah est en repos</div>
-    <div style="font-size:12px;letter-spacing:3px;color:rgba(200,168,75,0.4);text-transform:uppercase;margin-bottom:24px;">AL-HAYA &#183; &#1575;&#1604;&#1581;&#1610;&#1575;&#1569;</div>
-    <div style="color:rgba(200,168,75,0.3);letter-spacing:8px;margin-bottom:24px;">&#10022; &#10022; &#10022;</div>
-    <div id="i18n-alhaya-tap" style="font-size:13px;color:rgba(255,255,255,0.3);">Touchez pour r&#233;veiller</div>
-  </div>
-
   <!-- Tawba card — affiché si 2+ jours d'absence -->
   <div class="tawba-card-v2" id="tawba-card-v2" style="display:none;">
     <div style="font-size:28px; margin-bottom:10px;">🌙</div>
@@ -599,5 +587,10 @@
 
 <script src="niyyah_v2_library.min.js" defer></script>
 <script src="script.min.js" defer></script>
+
+<!-- Al-Haya (outside all views for position:fixed independence) -->
+<button id="alhaya-btn" onclick="openAlHaya()" style="display:none;position:fixed;top:16px;right:16px;z-index:9997;background:none;border:none;cursor:pointer;opacity:0.5;padding:8px;" aria-label="Al-Haya"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"/><circle cx="12" cy="12" r="3"/><line x1="2" y1="2" x2="22" y2="22"/></svg></button>
+<div id="alhaya-overlay" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;width:100vw;height:100vh;z-index:9998;background:#1F2125;align-items:center;justify-content:center;flex-direction:column;text-align:center;cursor:pointer;transition:opacity 0.2s;" onclick="closeAlHaya()"><div style="font-family:'Scheherazade New',serif;font-size:28px;color:#C8A84A;margin-bottom:16px;">&#1606;&#1616;&#1610;&#1617;&#1614;&#1577;</div><div id="i18n-alhaya-resting" style="font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;color:rgba(200,168,75,0.7);margin-bottom:20px;">Niyyah est en repos</div><div style="font-size:12px;letter-spacing:3px;color:rgba(200,168,75,0.4);text-transform:uppercase;margin-bottom:24px;">AL-HAYA &#183; &#1575;&#1604;&#1581;&#1610;&#1575;&#1569;</div><div style="color:rgba(200,168,75,0.3);letter-spacing:8px;margin-bottom:24px;">&#10022; &#10022; &#10022;</div><div id="i18n-alhaya-tap" style="font-size:13px;color:rgba(255,255,255,0.3);">Touchez pour r&#233;veiller</div></div>
+
 </body>
 </html>
