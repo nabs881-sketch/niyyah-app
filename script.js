@@ -5326,7 +5326,7 @@ const ONBOARD_SLIDES = [
   () => '<div class="onboard-anim" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;">'
       + '<div class="onboard-logo-wrap" style="opacity:0;animation:obFadeIn 0.8s ease 0.2s forwards;"><div class="onboard-logo-halo"><img src="https://nabs881-sketch.github.io/niyyah-app/imageslogo.webp" alt="Niyyah" style="width:120px;height:auto;display:block;margin:0 auto;"></div><div class="onboard-particle" style="--d:0s;--x:-40px;--y:-30px;">\u2726</div><div class="onboard-particle" style="--d:0.8s;--x:45px;--y:-20px;">\u2726</div><div class="onboard-particle" style="--d:1.6s;--x:-30px;--y:35px;">\u2726</div><div class="onboard-particle" style="--d:2.4s;--x:35px;--y:40px;">\u2726</div><div class="onboard-particle" style="--d:3.2s;--x:0px;--y:-45px;">\u2726</div></div>'
       + '<svg class="ob-calli-svg" viewBox="0 0 200 80" width="240" height="90"><text x="100" y="60" text-anchor="middle" font-family="\'Scheherazade New\',serif" font-size="56" fill="none" stroke="#C8A84A" stroke-width="0.8">\u0646\u0650\u064A\u0651\u064E\u0629</text></svg>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:rgba(200,168,75,0.7);letter-spacing:1px;opacity:0;animation:obFadeIn 1s ease 1.4s forwards;">Pose ton intention</div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:rgba(200,168,75,0.7);letter-spacing:1px;opacity:0;animation:obFadeIn 1s ease 1.4s forwards;">'+t('ob_splash_sub')+'</div>'
       + '<button class="onboard-btn" onclick="onboardNext()" style="margin-top:20px;opacity:0;animation:obFadeIn 0.6s ease 2.5s forwards;">'+t('onboard_start')+'</button>'
       + '<button class="onboard-skip" onclick="onboardFinish()" style="margin-top:8px;opacity:0;animation:obFadeIn 0.6s ease 2.5s forwards;">' + t('onboard_skip') + '</button>'
       + '</div>',
@@ -5364,7 +5364,7 @@ const ONBOARD_SLIDES = [
       + '<div class="ob-geste-ar" style="color:#C8A84A;">نِيَّة</div>'
       + '<img src="images/niyyah-glass.webp" alt="" class="ob-geste-img">'
       + '<div class="ob-geste-txt" id="obTypeNiyyah" style="color:rgba(200,168,75,0.8);">&nbsp;</div>'
-      + '<div class="ob-geste-tag" style="border-color:rgba(200,168,75,0.3);color:#C8A84A;">Avant l\'acte</div>'
+      + '<div class="ob-geste-tag" style="border-color:rgba(200,168,75,0.3);color:#C8A84A;">'+t('ob_avant_acte')+'</div>'
       + '</div>'
       // Card Regarde (droite)
       + '<div class="ob-geste-card ob-geste-regarde">'
@@ -5372,7 +5372,7 @@ const ONBOARD_SLIDES = [
       + '<div class="ob-geste-ar" style="color:#A0A4AC;">نَظَر</div>'
       + '<img src="images/regarde-hand.webp" alt="" class="ob-geste-img">'
       + '<div class="ob-geste-txt" id="obTypeRegarde" style="color:rgba(160,164,172,0.8);">&nbsp;</div>'
-      + '<div class="ob-geste-tag" style="border-color:rgba(160,164,172,0.25);color:#A0A4AC;">Apr\u00e8s l\'acte</div>'
+      + '<div class="ob-geste-tag" style="border-color:rgba(160,164,172,0.25);color:#A0A4AC;">'+t('ob_apres_acte')+'</div>'
       + '</div>'
       + '</div>'
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:var(--t3);text-align:center;margin:16px 0 24px;">'+t('ob_sacralise')+'</div>'
@@ -5385,12 +5385,12 @@ const ONBOARD_SLIDES = [
     + '<div class="onboard-title">'+t('ob_chemin_title')+'</div>'
     + '<div class="onboard-sub" style="margin-bottom:20px;">'+t("ob_chemin_sub")+'</div>'
     + '<div class="ob-chemin-grid">'
-    + '<div class="ob-chemin-item"><svg viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"><path d="M16 6v12l6 4"/><circle cx="16" cy="16" r="13"/></svg><div class="ob-chemin-label">S\u00e9rie</div><div class="ob-chemin-desc">Jours cons\u00e9cutifs</div></div>'
-    + '<div class="ob-chemin-item"><svg viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"><path d="M16 4c-1 4-4 7-8 8 4 1 7 4 8 8 1-4 4-7 8-8-4-1-7-4-8-8z"/><path d="M8 26c3-1 5-3 6-6 1 3 3 5 6 6"/></svg><div class="ob-chemin-label">Nafs</div><div class="ob-chemin-desc">52 traits de l\u2019\u00e2me</div></div>'
-    + '<div class="ob-chemin-item"><svg viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"><rect x="4" y="6" width="24" height="20" rx="3"/><path d="M4 12h24M10 6v4M22 6v4"/></svg><div class="ob-chemin-label">Carte</div><div class="ob-chemin-desc">Calendrier annuel</div></div>'
-    + '<div class="ob-chemin-item"><svg viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"><path d="M16 4l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><div class="ob-chemin-label">D\u00e9fi</div><div class="ob-chemin-desc">1 par semaine</div></div>'
-    + '<div class="ob-chemin-item"><svg viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"><path d="M24 8a12 12 0 1 0 0 16A9 9 0 0 1 24 8z"/></svg><div class="ob-chemin-label">Bilan du soir</div><div class="ob-chemin-desc">Muhasaba quotidienne</div></div>'
-    + '<div class="ob-chemin-item"><svg viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"><path d="M22 6a10 10 0 1 0 0 16A8 8 0 0 1 22 6z"/></svg><div class="ob-chemin-label">Tawba</div><div class="ob-chemin-desc">Reviens sans jugement</div></div>'
+    + '<div class="ob-chemin-item"><svg viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"><path d="M16 6v12l6 4"/><circle cx="16" cy="16" r="13"/></svg><div class="ob-chemin-label">'+t('ob_chemin_serie')+'</div><div class="ob-chemin-desc">'+t('ob_chemin_serie_d')+'</div></div>'
+    + '<div class="ob-chemin-item"><svg viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"><path d="M16 4c-1 4-4 7-8 8 4 1 7 4 8 8 1-4 4-7 8-8-4-1-7-4-8-8z"/><path d="M8 26c3-1 5-3 6-6 1 3 3 5 6 6"/></svg><div class="ob-chemin-label">'+t('ob_chemin_nafs')+'</div><div class="ob-chemin-desc">'+t('ob_chemin_nafs_d')+'</div></div>'
+    + '<div class="ob-chemin-item"><svg viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"><rect x="4" y="6" width="24" height="20" rx="3"/><path d="M4 12h24M10 6v4M22 6v4"/></svg><div class="ob-chemin-label">'+t('ob_chemin_carte')+'</div><div class="ob-chemin-desc">'+t('ob_chemin_carte_d')+'</div></div>'
+    + '<div class="ob-chemin-item"><svg viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"><path d="M16 4l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><div class="ob-chemin-label">'+t('ob_chemin_defi')+'</div><div class="ob-chemin-desc">'+t('ob_chemin_defi_d')+'</div></div>'
+    + '<div class="ob-chemin-item"><svg viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"><path d="M24 8a12 12 0 1 0 0 16A9 9 0 0 1 24 8z"/></svg><div class="ob-chemin-label">'+t('ob_chemin_bilan')+'</div><div class="ob-chemin-desc">'+t('ob_chemin_bilan_d')+'</div></div>'
+    + '<div class="ob-chemin-item"><svg viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"><path d="M22 6a10 10 0 1 0 0 16A8 8 0 0 1 22 6z"/></svg><div class="ob-chemin-label">'+t('ob_chemin_tawba')+'</div><div class="ob-chemin-desc">'+t('ob_chemin_tawba_d')+'</div></div>'
     + '</div>'
     + '<div style="font-family:var(--serif);font-size:14px;font-style:italic;color:var(--t3);text-align:center;margin:20px 0 16px;line-height:1.6;">'+t('ob_chemin_quote')+'</div>'
     + '<div style="margin-bottom:20px;text-align:center;"><label style="font-family:var(--serif);font-size:13px;color:var(--t3);display:block;margin-bottom:6px;">'+t("ob_chemin_prenom")+'</label>'
@@ -5785,6 +5785,7 @@ const V2_I18N = {
     onboard_lvl1_desc: 'Les 5 prières · Dhikr · Récitation', onboard_lvl2_desc: 'Mosquée · Istighfar · Tasbih',
     onboard_lvl3_desc: 'Hadiths · Coran · Arabe', onboard_lvl4_desc: 'Sadaqa · Salam · Douaas',
     onboard_city_manual: 'Ou entre ta ville manuellement :',
+    ob_splash_sub: 'Pose ton intention', ob_avant_acte: 'Avant l\u2019acte', ob_apres_acte: 'Apr\u00e8s l\u2019acte',
     ob_deux_gestes: 'Deux gestes pour ton quotidien', ob_sacralise: 'Sacralise. Examine.',
     ob_motivation_title: 'Qu\u2019est-ce qui t\u2019am\u00e8ne\u00a0?', ob_motivation_sub: 'Choisis ce qui te parle \u2014 on adapte ton exp\u00e9rience.',
     ob_motiv_routine: 'Routine spirituelle', ob_motiv_routine_sub: 'Installer une pratique quotidienne',
@@ -6017,6 +6018,7 @@ const V2_I18N = {
     onboard_lvl1_desc: '5 daily prayers · Dhikr · Recitation', onboard_lvl2_desc: 'Mosque · Istighfar · Tasbih',
     onboard_lvl3_desc: 'Hadiths · Quran · Arabic', onboard_lvl4_desc: 'Sadaqa · Salam · Douaas',
     onboard_city_manual: 'Or enter your city manually:',
+    ob_splash_sub: 'Set your intention', ob_avant_acte: 'Before the act', ob_apres_acte: 'After the act',
     ob_deux_gestes: 'Two gestures for your daily life', ob_sacralise: 'Sanctify. Examine.',
     ob_motivation_title: 'What brings you here?', ob_motivation_sub: 'Choose what speaks to you \u2014 we\u2019ll adapt your experience.',
     ob_motiv_routine: 'Spiritual routine', ob_motiv_routine_sub: 'Build a daily practice',
@@ -6226,6 +6228,7 @@ const V2_I18N = {
     onboard_tagline: '', onboard_scanner_example: '',
     onboard_lvl1_desc: '', onboard_lvl2_desc: '', onboard_lvl3_desc: '', onboard_lvl4_desc: '',
     onboard_city_manual: '',
+    ob_splash_sub: '\u0636\u064E\u0639\u0652 \u0646\u0650\u064A\u0651\u064E\u062A\u064E\u0643', ob_avant_acte: '\u0642\u064E\u0628\u0652\u0644\u064E \u0627\u0644\u0641\u0650\u0639\u0652\u0644', ob_apres_acte: '\u0628\u064E\u0639\u0652\u062F\u064E \u0627\u0644\u0641\u0650\u0639\u0652\u0644',
     ob_deux_gestes: '\u0625\u0650\u064A\u0645\u0627\u0621\u062A\u0627\u0646\u0650 \u0644\u0650\u064A\u064E\u0648\u0652\u0645\u0650\u0643', ob_sacralise: '\u0642\u064E\u062F\u0651\u0650\u0633\u0652. \u062A\u064E\u0623\u064E\u0645\u0651\u064E\u0644\u0652.',
     ob_motivation_title: '\u0645\u0627 \u0627\u0644\u0651\u064E\u0630\u0650\u064A \u062C\u064E\u0627\u0621\u064E \u0628\u0650\u0643\u064E\u061F', ob_motivation_sub: '\u0627\u062E\u0652\u062A\u064E\u0631\u0652 \u0645\u0627 \u064A\u064F\u0646\u0627\u0633\u0650\u0628\u064F\u0643.',
     ob_motiv_routine: '\u0631\u064F\u0648\u062A\u0650\u064A\u0646\u064C \u0631\u064F\u0648\u062D\u064E\u0627\u0646\u0650\u064A\u0651', ob_motiv_routine_sub: '\u0628\u0650\u0646\u0627\u0621\u064F \u0639\u0650\u0628\u0627\u062F\u064E\u0629\u064D \u064A\u064E\u0648\u0652\u0645\u0650\u064A\u0651\u064E\u0629',
