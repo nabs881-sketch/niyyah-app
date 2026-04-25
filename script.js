@@ -4393,7 +4393,7 @@ function checkWeeklyBilan() {
     setTimeout(showWeeklyBilan, 1500);
   }
 }
-const FREEMIUM_CODES = ['BISMILLAH'];
+const FREEMIUM_CODES = [];
 const _freemiumUnlocked = localStorage.getItem('niyyah_pro') === '1';
 function openFreemium() {
   document.getElementById('freemiumOverlay').classList.add('show');
@@ -5511,11 +5511,11 @@ const V2_I18N = {
     journal_search: 'Rechercher...', modal_close: 'Fermer', btn_later: 'Plus tard',
     tawba_ameen: 'Ameen', defi_change: 'Changer de défi', notif_accept: 'Oui, je veux ces rappels 🌿',
     level_accomplished: 'Niveau accompli', level_next: 'Niveau suivant →', level_stay: 'Rester sur ce niveau',
-    freemium_title: 'Niyyah Premium', freemium_sub: 'Accède à l\'expérience complète — une seule fois, à vie.',
-    freemium_buy: 'Obtenir Niyyah Premium — 4,99€ 🌿', freemium_code_placeholder: 'CODE D\'ACCÈS', freemium_free: 'Continuer avec le Niveau 1 gratuit',
-    freemium_f1: 'Scanner de Niyyah — 1/jour gratuit → illimité premium', freemium_f2: 'Approfondissement — Tasbih, Mosquée, Jeûne sunnah',
-    freemium_f3: 'Connaissance — Coran, Hadiths, Arabe', freemium_f4: 'Rayonnement — Sadaqa, Douaas, Salam',
-    freemium_f5: 'Titres spirituels + Fin de Journée', freemium_f6: 'Badges exclusifs + Streak avancé',
+    freemium_title: 'Niyyah+', freemium_sub: 'Scanner illimit\u00e9 + futurs avantages cloud.',
+    freemium_buy: 'Obtenir Niyyah+ \u2014 4,99\u20ac', freemium_code_placeholder: 'CODE D\'ACC\u00c8S', freemium_free: 'Continuer en gratuit',
+    freemium_f1: 'Scanner de Niyyah illimit\u00e9 (vs 1/semaine)', freemium_f2: 'Synchronisation cloud (bient\u00f4t)',
+    freemium_f3: 'Sauvegarde automatique multi-appareils', freemium_f4: 'Fonctionnalit\u00e9s exclusives futures',
+    freemium_f5: 'Soutenir le d\u00e9veloppement de Niyyah', freemium_f6: '',
     bilan_title: 'Bilan du soir', bilan_question: 'Comment était ton cœur aujourd\'hui ?', bilan_subtitle: 'Allah regarde la sincérité, pas le score.',
     bilan_distraction: 'Distraction', bilan_effort: 'Effort', bilan_sincerite: 'Sincérité',
     bilan_distraction_sub: 'غفلة — le cœur absent', bilan_effort_sub: 'مجاهدة — le combat intérieur', bilan_sincerite_sub: 'إخلاص — l\'état recherché',
@@ -5694,11 +5694,11 @@ const V2_I18N = {
     journal_search: 'Search...', modal_close: 'Close', btn_later: 'Later',
     tawba_ameen: 'Ameen', defi_change: 'Change challenge', notif_accept: 'Yes, I want these reminders 🌿',
     level_accomplished: 'Level accomplished', level_next: 'Next level →', level_stay: 'Stay on this level',
-    freemium_title: 'Niyyah Premium', freemium_sub: 'Access the full experience — one time, for life.',
-    freemium_buy: 'Get Niyyah Premium — €4.99 🌿', freemium_code_placeholder: 'ACCESS CODE', freemium_free: 'Continue with free Level 1',
-    freemium_f1: 'Niyyah Scanner — 1/day free → unlimited premium', freemium_f2: 'Deepening — Tasbih, Mosque, Sunnah fasting',
-    freemium_f3: 'Knowledge — Quran, Hadiths, Arabic', freemium_f4: 'Radiance — Sadaqa, Duas, Salam',
-    freemium_f5: 'Spiritual titles + End of Day', freemium_f6: 'Exclusive badges + Advanced streak',
+    freemium_title: 'Niyyah+', freemium_sub: 'Unlimited scanner + future cloud features.',
+    freemium_buy: 'Get Niyyah+ \u2014 \u20ac4.99', freemium_code_placeholder: 'ACCESS CODE', freemium_free: 'Continue for free',
+    freemium_f1: 'Unlimited Niyyah Scanner (vs 1/week)', freemium_f2: 'Cloud sync (coming soon)',
+    freemium_f3: 'Automatic multi-device backup', freemium_f4: 'Future exclusive features',
+    freemium_f5: 'Support Niyyah development', freemium_f6: '',
     bilan_title: 'Evening review', bilan_question: 'How was your heart today?', bilan_subtitle: 'Allah looks at sincerity, not the score.',
     bilan_distraction: 'Distraction', bilan_effort: 'Effort', bilan_sincerite: 'Sincerity',
     bilan_distraction_sub: 'غفلة — heedless heart', bilan_effort_sub: 'مجاهدة — inner struggle', bilan_sincerite_sub: 'إخلاص — the sought-after state',
