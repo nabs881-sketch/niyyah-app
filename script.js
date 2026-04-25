@@ -5855,7 +5855,7 @@ const V2_I18N = {
     finjournee_title: 'Quelles 3 bont\u00e9s Allah t\u2019a-t-Il permis d\u2019accomplir aujourd\u2019hui ?',
     sp_rasikh: 'Al-R\u00e2sikh \u2014 L\u2019enracin\u00e9', sp_muhsin: 'Al-Muhsin \u2014 L\u2019excellent', sp_muttaqi: 'Al-Muttaq\u00ee \u2014 Le pieux',
     sp_muwadib: 'Al-Muw\u00e2dhib \u2014 Le constant', sp_mubtadi: 'Al-Mubtadi\u2019 \u2014 Le commen\u00e7ant', sp_talib: 'Al-T\u00e2lib \u2014 Le chercheur',
-    weekly_muhasaba: 'Muhasaba 00b7 Bilan de la semaine', silent_muhasaba: 'Ce soir, muhasaba silencieuse.', sp_day_streak: 'Jour {d} \u00b7 S\u00e9rie de {s}',
+    weekly_muhasaba: 'Muhasaba \u00b7 Bilan de la semaine', finjournee_sub2: '\u00c9cris, ou ferme simplement les yeux.', finjournee_ph1: 'Une bont\u00e9...', finjournee_ph2: 'Une autre...', finjournee_ph3: 'Une troisi\u00e8me...', silent_muhasaba: 'Ce soir, muhasaba silencieuse.', sp_day_streak: 'Jour {d} \u00b7 S\u00e9rie de {s}',
     btn_open: 'OUVRIR ›', btn_complete: '✓ COMPLET', btn_skip_level: 'Continuer vers Niveau ',
     // Night companion
     night_title: 'Quelle pensée ferme ta journée ?', night_placeholder: 'Écris ta pensée du soir...', night_send: 'ENVOYER', night_sagesse: 'SAGESSE DE LA NUIT',
@@ -6087,7 +6087,7 @@ const V2_I18N = {
     finjournee_title: 'What 3 good deeds did Allah allow you to accomplish today?',
     sp_rasikh: 'Al-R\u0101sikh \u2014 The firmly rooted', sp_muhsin: 'Al-Muhsin \u2014 The excellent', sp_muttaqi: 'Al-Muttaq\u012b \u2014 The pious',
     sp_muwadib: 'Al-Muw\u0101dhib \u2014 The steadfast', sp_mubtadi: 'Al-Mubtadi\u2019 \u2014 The beginner', sp_talib: 'Al-T\u0101lib \u2014 The seeker',
-    weekly_muhasaba: 'Muhasaba 00b7 Weekly review', silent_muhasaba: 'Tonight, silent muhasaba.', sp_day_streak: 'Day {d} \u00b7 Streak of {s}',
+    weekly_muhasaba: 'Muhasaba \u00b7 Weekly review', finjournee_sub2: 'Write, or simply close your eyes.', finjournee_ph1: 'A good deed...', finjournee_ph2: 'Another...', finjournee_ph3: 'A third...', silent_muhasaba: 'Tonight, silent muhasaba.', sp_day_streak: 'Day {d} \u00b7 Streak of {s}',
     btn_open: 'OPEN ›', btn_complete: '✓ COMPLETE', btn_skip_level: 'Continue to Level ',
     night_title: 'What thought closes your day?', night_placeholder: 'Write your evening thought...', night_send: 'SEND', night_sagesse: 'NIGHT WISDOM',
     notif_unsupported: 'Notifications are not supported on this device', notif_enabled: '✦ Reminders enabled — JazakAllahu khairan!', notif_later: 'You can enable them later in settings', notif_disabled: '🔕 Reminders disabled',
@@ -6293,6 +6293,7 @@ const V2_I18N = {
     sp_rasikh: '\u0627\u0644\u0631\u0651\u064E\u0627\u0633\u0650\u062E \u2014 \u0627\u0644\u0645\u064F\u062A\u064E\u062C\u064E\u0630\u0651\u0650\u0631', sp_muhsin: '\u0627\u0644\u0645\u064F\u062D\u0652\u0633\u0650\u0646 \u2014 \u0627\u0644\u0645\u064F\u062A\u0652\u0642\u0650\u0646', sp_muttaqi: '\u0627\u0644\u0645\u064F\u062A\u0651\u064E\u0642\u0650\u064A \u2014 \u0627\u0644\u062A\u0651\u064E\u0642\u0650\u064A\u0651',
     sp_muwadib: '\u0627\u0644\u0645\u064F\u0648\u0627\u0638\u0650\u0628 \u2014 \u0627\u0644\u062B\u0651\u0627\u0628\u0650\u062A', sp_mubtadi: '\u0627\u0644\u0645\u064F\u0628\u0652\u062A\u064E\u062F\u0650\u0626 \u2014 \u0627\u0644\u0628\u0627\u062F\u0650\u0626', sp_talib: '\u0627\u0644\u0637\u0651\u064E\u0627\u0644\u0650\u0628 \u2014 \u0627\u0644\u0628\u0627\u062D\u0650\u062B',
     sp_day_streak: '\u0627\u0644\u064A\u064E\u0648\u0652\u0645 {d} \u00b7 \u0633\u0650\u0644\u0652\u0633\u0650\u0644\u064E\u0629 {s}',
+    finjournee_sub2: '\u0627\u0643\u0652\u062A\u064F\u0628\u0652\u060C \u0623\u064E\u0648\u0652 \u0623\u064E\u063A\u0652\u0644\u0650\u0642\u0652 \u0639\u064E\u064A\u0652\u0646\u064E\u064A\u0652\u0643\u064E \u0628\u0650\u0628\u064E\u0633\u0627\u0637\u064E\u0629.', finjournee_ph1: '\u062E\u064E\u064A\u0652\u0631...', finjournee_ph2: '\u0622\u062E\u064E\u0631...', finjournee_ph3: '\u062B\u0627\u0644\u0650\u062B...',
     btn_open: '', btn_complete: '', btn_skip_level: '',
     night_title: 'مَا الْفِكْرَةُ الَّتِي تَخْتِمُ بِهَا يَوْمَكَ؟', night_placeholder: 'اكْتُبْ فِكْرَتَكَ الْمَسَائِيَّةَ...', night_send: 'إِرْسَالٌ', night_sagesse: 'حِكْمَةُ اللَّيْلِ',
     notif_unsupported: 'الْإِشْعَارَاتُ غَيْرُ مَدْعُومَةٍ عَلَى هَذَا الْجِهَازِ', notif_enabled: '✦ تَمَّ تَفْعِيلُ التَّذْكِيرَاتِ — جَزَاكَ اللَّهُ خَيْرًا!', notif_later: 'يُمْكِنُكَ تَفْعِيلُهَا لَاحِقًا فِي الْإِعْدَادَاتِ', notif_disabled: '🔕 تَمَّ تَعْطِيلُ التَّذْكِيرَاتِ',
@@ -6536,6 +6537,10 @@ function v2ApplyI18nHTML() {
   _s('i18n-link-see-regards', 'link_see_regards');
   _s('i18n-link-see-niyyah', 'link_see_niyyah');
   _s('i18n-finjournee-title', 'finjournee_title');
+  _s('i18n-finjournee-sub2', 'finjournee_sub2');
+  _p('finjournee-b1', 'finjournee_ph1');
+  _p('finjournee-b2', 'finjournee_ph2');
+  _p('finjournee-b3', 'finjournee_ph3');
   _p('niyyah-journal-search', 'journal_search');
   _p('night-thought-input', 'night_placeholder');
   _s('i18n-info-close', 'modal_close');
