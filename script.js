@@ -5770,7 +5770,7 @@ const V2_I18N = {
     onboard_lvl1_desc: 'Les 5 prières · Dhikr · Récitation', onboard_lvl2_desc: 'Mosquée · Istighfar · Tasbih',
     onboard_lvl3_desc: 'Hadiths · Coran · Arabe', onboard_lvl4_desc: 'Sadaqa · Salam · Douaas',
     onboard_city_manual: 'Ou entre ta ville manuellement :',
-    alhaya_resting: 'Niyyah est en repos', alhaya_tap_wake: 'Touchez pour r00e9veiller', ob_splash_sub: 'Pose ton intention', ob_avant_acte: 'Avant l\u2019acte', ob_apres_acte: 'Apr\u00e8s l\u2019acte',
+    alhaya_resting: 'Niyyah est en repos', alhaya_tap_wake: 'Touchez pour r\u00e9veiller', ob_splash_sub: 'Pose ton intention', ob_avant_acte: 'Avant l\u2019acte', ob_apres_acte: 'Apr\u00e8s l\u2019acte',
     ob_deux_gestes: 'Deux gestes pour ton quotidien', ob_sacralise: 'Sacralise. Examine.',
     ob_motivation_title: 'Qu\u2019est-ce qui t\u2019am\u00e8ne\u00a0?', ob_motivation_sub: 'Choisis ce qui te parle \u2014 on adapte ton exp\u00e9rience.',
     ob_motiv_routine: 'Routine spirituelle', ob_motiv_routine_sub: 'Installer une pratique quotidienne',
