@@ -3518,10 +3518,10 @@ to {
 }
 .ob-geste-txt {
   font-family:'Cormorant Garamond',serif;
-  font-size:13px;
+  font-size:15px;
   font-style:italic;
   line-height:1.5;
-  min-height:36px;
+  min-height:40px;
 }
 .ob-geste-tag {
   font-size:12px;
