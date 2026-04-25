@@ -3633,7 +3633,7 @@ function showWeeklyBilan() {
   const card = document.getElementById('weeklyCard');
   card.innerHTML = `
     <div style="text-align:center;padding:8px 0 20px;">
-      <div style="font-size:12px;letter-spacing:0.25em;text-transform:uppercase;color:rgba(212,175,55,0.5);margin-bottom:12px;font-family:'Cormorant Garamond',serif;">Muhasaba · Bilan de la semaine</div>
+      <div style="font-size:12px;letter-spacing:0.25em;text-transform:uppercase;color:rgba(212,175,55,0.5);margin-bottom:12px;font-family:'Cormorant Garamond',serif;">${t('weekly_muhasaba')}</div>
       <div style="font-size:40px;margin-bottom:16px;">${emojis[level]}</div>
       <!-- Jours visuels -->
       <div style="display:flex;justify-content:center;gap:12px;margin-bottom:20px;">${daysHtml}</div>
@@ -5855,7 +5855,7 @@ const V2_I18N = {
     finjournee_title: 'Quelles 3 bont\u00e9s Allah t\u2019a-t-Il permis d\u2019accomplir aujourd\u2019hui ?',
     sp_rasikh: 'Al-R\u00e2sikh \u2014 L\u2019enracin\u00e9', sp_muhsin: 'Al-Muhsin \u2014 L\u2019excellent', sp_muttaqi: 'Al-Muttaq\u00ee \u2014 Le pieux',
     sp_muwadib: 'Al-Muw\u00e2dhib \u2014 Le constant', sp_mubtadi: 'Al-Mubtadi\u2019 \u2014 Le commen\u00e7ant', sp_talib: 'Al-T\u00e2lib \u2014 Le chercheur',
-    sp_day_streak: 'Jour {d} \u00b7 S\u00e9rie de {s}',
+    weekly_muhasaba: 'Muhasaba 00b7 Bilan de la semaine', silent_muhasaba: 'Ce soir, muhasaba silencieuse.', sp_day_streak: 'Jour {d} \u00b7 S\u00e9rie de {s}',
     btn_open: 'OUVRIR ›', btn_complete: '✓ COMPLET', btn_skip_level: 'Continuer vers Niveau ',
     // Night companion
     night_title: 'Quelle pensée ferme ta journée ?', night_placeholder: 'Écris ta pensée du soir...', night_send: 'ENVOYER', night_sagesse: 'SAGESSE DE LA NUIT',
@@ -5973,9 +5973,9 @@ const V2_I18N = {
     bilan_distraction: 'Distraction', bilan_effort: 'Effort', bilan_sincerite: 'Sincerity',
     bilan_distraction_sub: 'غفلة — heedless heart', bilan_effort_sub: 'مجاهدة — inner struggle', bilan_sincerite_sub: 'إخلاص — the sought-after state',
     tasbih_label: 'Tasbih', tasbih_hint: 'Tap anywhere',
-    finjournee_label: 'Quand vient la nuit',
-    finjournee_sub: 'Muhasaba du soir',
-    fri_kahf_toast: '📖 Al-Kahf recited — light until next Friday!', fri_salawat_toast: '🌟 Salawat sent upon the Prophet ﷺ', fri_doua_toast: '🤲 Dua of the blessed hour — may Allah accept it!',
+    finjournee_label: 'When night comes',
+    finjournee_sub: 'Evening Muhasaba',
+    fri_kahf_toast: '\ud83d\udcd6 Al-Kahf recited — light until next Friday!', fri_salawat_toast: '🌟 Salawat sent upon the Prophet ﷺ', fri_doua_toast: '🤲 Dua of the blessed hour — may Allah accept it!',
     meta_subtitle: 'Practice & Elevation', aria_language: 'Language', aria_settings: 'Settings',
     aria_pratique: 'Practice', aria_wird: 'Wird', aria_parcours: 'Journey', aria_tafakkur: 'Tafakkur',
     nafs_weekly: 'one trait per week', aria_back_home: 'Back to My Niyyah',
@@ -6063,7 +6063,7 @@ const V2_I18N = {
     settings_delete_confirm1: 'Delete ALL data? This cannot be undone.',
     settings_delete_confirm2: 'Final confirmation \u2014 everything will be lost.',
     tawba_reviens: 'Come back', tawba_attend: 'Allah Al-Tawwab awaits you.',
-    card_pratique: 'Prayers & acts', card_wird: 'Invocations', card_parcours: 'My progress', card_tafakkur: 'Meditation',
+    card_pratique: 'Prayers & acts', card_wird: 'Du\u2019as', card_parcours: 'My progress', card_tafakkur: 'Meditation',
     btn_start_day: 'Start my day', btn_back_checklist: '← Back to checklist', scanner_hint: 'What object will carry your niyyah today?',
     conv_msg_0: 'Every great journey begins with a first step. The Deepening level awaits you.',
     conv_msg_1: 'Le Prophète ﷺ : l\'acte le plus aimé d\'Allah est celui fait avec constance. — Bukhari 6465',
@@ -6087,7 +6087,7 @@ const V2_I18N = {
     finjournee_title: 'What 3 good deeds did Allah allow you to accomplish today?',
     sp_rasikh: 'Al-R\u0101sikh \u2014 The firmly rooted', sp_muhsin: 'Al-Muhsin \u2014 The excellent', sp_muttaqi: 'Al-Muttaq\u012b \u2014 The pious',
     sp_muwadib: 'Al-Muw\u0101dhib \u2014 The steadfast', sp_mubtadi: 'Al-Mubtadi\u2019 \u2014 The beginner', sp_talib: 'Al-T\u0101lib \u2014 The seeker',
-    sp_day_streak: 'Day {d} \u00b7 Streak of {s}',
+    weekly_muhasaba: 'Muhasaba 00b7 Weekly review', silent_muhasaba: 'Tonight, silent muhasaba.', sp_day_streak: 'Day {d} \u00b7 Streak of {s}',
     btn_open: 'OPEN ›', btn_complete: '✓ COMPLETE', btn_skip_level: 'Continue to Level ',
     night_title: 'What thought closes your day?', night_placeholder: 'Write your evening thought...', night_send: 'SEND', night_sagesse: 'NIGHT WISDOM',
     notif_unsupported: 'Notifications are not supported on this device', notif_enabled: '✦ Reminders enabled — JazakAllahu khairan!', notif_later: 'You can enable them later in settings', notif_disabled: '🔕 Reminders disabled',
@@ -6189,8 +6189,8 @@ const V2_I18N = {
     freemium_f1: '', freemium_f2: '', freemium_f3: '', freemium_f4: '', freemium_f5: '', freemium_f6: '',
     bilan_title: '', bilan_question: '', bilan_subtitle: '', bilan_distraction: '', bilan_distraction_sub: '', bilan_effort: '', bilan_effort_sub: '', bilan_sincerite: '', bilan_sincerite_sub: '',
     tasbih_label: '', tasbih_hint: '',
-    finjournee_label: '',
-    finjournee_sub: '',
+    finjournee_label: '\u0639\u0650\u0646\u0652\u062F\u064E \u062D\u064F\u0644\u064F\u0648\u0644\u0650 \u0627\u0644\u0644\u0651\u064E\u064A\u0652\u0644',
+    finjournee_sub: '\u0645\u064F\u062D\u0627\u0633\u064E\u0628\u064E\u0629\u064F \u0627\u0644\u0645\u064E\u0633\u0627\u0621',
     fri_kahf_toast: '', fri_salawat_toast: '', fri_doua_toast: '',
     meta_subtitle: '', aria_language: '', aria_settings: '',
     aria_pratique: '', aria_wird: '', aria_parcours: '', aria_tafakkur: '',
@@ -6272,7 +6272,7 @@ const V2_I18N = {
     settings_delete_confirm1: '\u062D\u064E\u0630\u0652\u0641\u064F \u062C\u064E\u0645\u0650\u064A\u0639\u0650 \u0627\u0644\u0628\u064E\u064A\u0627\u0646\u0627\u062A\u061F',
     settings_delete_confirm2: '\u062A\u064E\u0623\u0652\u0643\u0650\u064A\u062F\u064C \u0623\u064E\u062E\u0650\u064A\u0631.',
     tawba_reviens: '\u0639\u064F\u062F\u0652', tawba_attend: '\u0627\u0644\u0644\u0651\u064E\u0647\u064F \u0627\u0644\u062A\u0651\u064E\u0648\u0651\u064E\u0627\u0628\u064F \u064A\u064E\u0646\u0652\u062A\u064E\u0638\u0650\u0631\u064F\u0643.',
-    card_pratique: '', card_wird: '', card_parcours: '', card_tafakkur: '',
+    card_pratique: '\u0627\u0644\u0635\u0651\u064E\u0644\u064E\u0648\u0627\u062A \u0648\u0627\u0644\u0623\u064E\u0639\u0652\u0645\u0627\u0644', card_wird: '\u0627\u0644\u0623\u064E\u062F\u0652\u0639\u0650\u064A\u064E\u0629', card_parcours: '\u062A\u064E\u0642\u064E\u062F\u0651\u064F\u0645\u0650\u064A', card_tafakkur: '\u062A\u064E\u0641\u064E\u0643\u0651\u064F\u0631',
     btn_start_day: '', btn_back_checklist: '', scanner_hint: '',
     conv_msg_0: '', conv_msg_1: '', conv_msg_2: '', conv_msg_3: '', conv_msg_4: '',
     score_weighted: '', score_progress: '', score_continue: '',
@@ -6572,6 +6572,9 @@ function v2ApplyI18nHTML() {
   _a('i18n-aria-lang', 'aria_language');
   _a('i18n-aria-settings', 'aria_settings');
   _a('i18n-aria-back', 'aria_back_home');
+  // Card aria-labels
+  var _cards = [['Pratique','card_pratique'],['Wird','card_wird'],['Parcours','card_parcours'],['Tafakkur','card_tafakkur']];
+  _cards.forEach(function(c) { var el = document.querySelector('[aria-label="'+c[0]+'"]'); if (el) el.setAttribute('aria-label', t(c[1])); });
 }
 
 // Shortcut: old V2_GREETINGS kept for compatibility
@@ -8120,7 +8123,7 @@ function openFinJourneeConsultation() {
   if (!entry) return;
   var body = '';
   if (entry.skipped_bontes) {
-    body = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;font-style:italic;color:#C8A84A;line-height:1.7;margin-bottom:8px;">Ce soir, muhasaba silencieuse.</div>'
+    body = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;font-style:italic;color:#C8A84A;line-height:1.7;margin-bottom:8px;">' + t('silent_muhasaba') + '</div>'
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:rgba(200,168,75,0.6);">Alhamdulillah.</div>';
   } else {
     body = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:rgba(200,168,75,0.6);margin-bottom:20px;">Ce soir, les 3 bontés qu\'Allah t\'a permis :</div>';
