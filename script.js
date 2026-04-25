@@ -4416,6 +4416,7 @@ function checkTawba() {
 }
 
 function showTawba() {
+  showAlHayaBtn();
   const overlay = document.getElementById('tawbaOverlay');
   const card    = document.getElementById('tawbaCard');
 
@@ -4533,6 +4534,7 @@ function showTawba() {
 }
 
 function closeTawba() {
+  hideAlHayaBtn();
   const overlay = document.getElementById('tawbaOverlay');
   const card    = document.getElementById('tawbaCard');
   card.style.transform  = 'scale(0.92) translateY(8px)';
@@ -7043,6 +7045,7 @@ function _v2ShowTarget(targetId, opts) {
 }
 
 function v2GoJournal() {
+  showAlHayaBtn();
   var tbEl = document.getElementById('topbar-v2');
   if (tbEl) tbEl.classList.remove('active');
   document.querySelectorAll('.nav-v2-item').forEach(function(n) { n.classList.remove('active-nav'); });
@@ -7107,6 +7110,7 @@ function v2GoNafs() {
   }});
 }
 function v2GoSanctuaire() {
+  hideAlHayaBtn();
   document.body.classList.remove('pratique-active');
   // Fade out current view
   var activeView = document.querySelector('.view.active');
@@ -7166,6 +7170,7 @@ function v2GoSanctuaire() {
 }
 
 function v2GoTo(viewName) {
+  hideAlHayaBtn();
   document.body.classList.remove('pratique-active');
   if (viewName === 'checklist') document.body.classList.add('pratique-active');
   // Fermer les overlays
@@ -7419,6 +7424,7 @@ function v2OpenSettings() {
    MODAL NIYYAH
    ───────────────────────────────────────────── */
 function v2OpenNiyyahModal() {
+  showAlHayaBtn();
   const T = V2_I18N[V2_LANG] || V2_I18N.fr;
   const isRTL = T.dir === 'rtl';
   // Apply i18n to modal elements
@@ -7594,6 +7600,7 @@ function v2OpenNiyyahModal() {
 }
 
 function v2CloseModal() {
+  hideAlHayaBtn();
   document.getElementById('niyyahModal-v2').classList.remove('open');
 }
 
@@ -7885,6 +7892,8 @@ function updateSanctuaireNextPrayer() {
   el.innerHTML = '<div style="text-align:center;margin:20px 0;display:flex;align-items:center;justify-content:center;gap:16px;opacity:' + (diffMin <= 60 ? '1' : '0.75') + ';">' + _star + '<span class="next-prayer-text">' + txt + '</span>' + _star + '</div>';
   el.style.display = 'block';
 }
+function showAlHayaBtn() { var b = document.getElementById('alhaya-btn'); if (b) b.style.display = 'block'; }
+function hideAlHayaBtn() { var b = document.getElementById('alhaya-btn'); if (b) b.style.display = 'none'; }
 function openAlHaya() {
   var ov = document.getElementById('alhaya-overlay');
   if (ov) { ov.style.display = 'flex'; ov.style.opacity = '1'; }
@@ -8041,6 +8050,7 @@ function updateFinJourneeCard() {
   }
 }
 function openFinJournee() {
+  showAlHayaBtn();
   var overlay = document.getElementById('finjournee-overlay');
   if (!overlay) return;
   overlay.style.display = 'block';
@@ -8052,6 +8062,7 @@ function openFinJournee() {
   if (b3) b3.value = '';
 }
 function closeFinJournee() {
+  hideAlHayaBtn();
   var overlay = document.getElementById('finjournee-overlay');
   if (overlay) overlay.style.display = 'none';
   var b1 = document.getElementById('finjournee-b1');
