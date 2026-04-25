@@ -3421,6 +3421,53 @@ to {
   color:var(--t3);
   margin-top:1px
 }
+/* Onboarding splash calligraphy */
+.ob-calli-svg text {
+  stroke-dasharray:400;
+  stroke-dashoffset:400;
+  animation:obStroke 1.5s ease forwards;
+}
+@keyframes obStroke {
+  to { stroke-dashoffset:0; }
+}
+@keyframes obFadeIn {
+  to { opacity:1; }
+}
+/* Onboarding motivation cards */
+.ob-motiv-cards {
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin-bottom:24px;
+}
+.ob-motiv-card {
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:16px;
+  background:rgba(200,168,75,0.04);
+  border:1.5px solid rgba(200,168,75,0.15);
+  border-radius:14px;
+  cursor:pointer;
+  transition:border-color 0.2s,background 0.2s;
+}
+.ob-motiv-card.selected {
+  border-color:#C8A84A;
+  background:rgba(200,168,75,0.10);
+  box-shadow:0 0 12px rgba(200,168,75,0.15);
+}
+.ob-motiv-title {
+  font-family:'Cormorant Garamond',serif;
+  font-size:16px;
+  font-weight:600;
+  color:var(--t1);
+}
+.ob-motiv-sub {
+  font-size:12px;
+  color:var(--t3);
+  margin-top:2px;
+}
+
 .onboard-btn {
   width:100%;
   max-width:300px;

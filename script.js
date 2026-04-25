@@ -5080,8 +5080,36 @@ let _onboardStep = 0;
 const APP_VERSION = '2.0'; if (localStorage.getItem('niyyah_version') !== APP_VERSION) { localStorage.removeItem('niyyah_onboard'); safeSetItem('niyyah_version', APP_VERSION); }
 const _onboardDone = localStorage.getItem('niyyah_onboard') === '1';
 const ONBOARD_SLIDES = [
-  () => `
-    <div class="onboard-anim"><div class="onboard-logo-wrap"><div class="onboard-logo-halo"><img src="https://nabs881-sketch.github.io/niyyah-app/imageslogo.webp" alt="Niyyah" style="width:150px;height:auto;display:block;margin:0 auto;"></div><div class="onboard-particle" style="--d:0s;--x:-40px;--y:-30px;">✦</div><div class="onboard-particle" style="--d:0.8s;--x:45px;--y:-20px;">✦</div><div class="onboard-particle" style="--d:1.6s;--x:-30px;--y:35px;">✦</div><div class="onboard-particle" style="--d:2.4s;--x:35px;--y:40px;">✦</div><div class="onboard-particle" style="--d:3.2s;--x:0px;--y:-45px;">✦</div></div><div class="onboard-logo">Niyyah Daily</div><div class="onboard-tagline">${t('onboard_tagline')}</div><div class="onboard-title">${t('onboard_title1')}</div><div class="onboard-sub">${t('onboard_sub1')}</div><button class="onboard-btn" onclick="onboardNext()">${t('onboard_start')}</button><button class="onboard-skip" onclick="onboardFinish()">${t('onboard_skip')}</button></div>`,
+  // Slide 0 — Splash calligraphie (auto-avance 4s)
+  () => {
+    setTimeout(function() { if (_onboardStep === 0) onboardNext(); }, 4000);
+    return '<div class="onboard-anim" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;">'
+      + '<svg class="ob-calli-svg" viewBox="0 0 200 80" width="260" height="100"><text x="100" y="60" text-anchor="middle" font-family="\'Scheherazade New\',serif" font-size="56" fill="none" stroke="#C8A84A" stroke-width="0.8">نِيَّة</text></svg>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:rgba(200,168,75,0.7);letter-spacing:1px;opacity:0;animation:obFadeIn 1s ease 1.2s forwards;">Pose ton intention</div>'
+      + '<button class="onboard-skip" onclick="onboardNext()" style="margin-top:20px;opacity:0;animation:obFadeIn 0.6s ease 2.5s forwards;">' + t('onboard_skip') + '</button>'
+      + '</div>';
+  },
+  // Slide 1 — Motivation "Qu'est-ce qui t'amène ?"
+  () => '<div class="onboard-anim">'
+    + '<div class="onboard-title">Qu\'est-ce qui t\'amène ?</div>'
+    + '<div class="onboard-sub" style="margin-bottom:24px;">Choisis ce qui te parle — on adapte ton expérience.</div>'
+    + '<div class="ob-motiv-cards">'
+    + '<div class="ob-motiv-card" onclick="obSelectMotiv(this,\'routine\')">'
+    + '<svg viewBox="0 0 40 40" width="36" height="36" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"><circle cx="20" cy="20" r="15"/><path d="M20 12v8l5 3"/></svg>'
+    + '<div class="ob-motiv-title">Routine spirituelle</div>'
+    + '<div class="ob-motiv-sub">Installer une pratique quotidienne</div></div>'
+    + '<div class="ob-motiv-card" onclick="obSelectMotiv(this,\'reconnecter\')">'
+    + '<svg viewBox="0 0 40 40" width="36" height="36" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"><path d="M20 8c-6 0-11 5-11 11s5 11 11 11 11-5 11-11"/><path d="M26 8l5 3-3 5"/></svg>'
+    + '<div class="ob-motiv-title">Reconnecter avec Allah</div>'
+    + '<div class="ob-motiv-sub">Revenir après une période d\'éloignement</div></div>'
+    + '<div class="ob-motiv-card" onclick="obSelectMotiv(this,\'sacraliser\')">'
+    + '<svg viewBox="0 0 40 40" width="36" height="36" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"><path d="M20 6l2.5 5 5.5.8-4 3.9.9 5.3-4.9-2.6-4.9 2.6.9-5.3-4-3.9 5.5-.8z"/><path d="M12 28h16M14 32h12"/></svg>'
+    + '<div class="ob-motiv-title">Sacraliser mon quotidien</div>'
+    + '<div class="ob-motiv-sub">Donner un sens spirituel à chaque geste</div></div>'
+    + '</div>'
+    + '<button class="onboard-btn" id="obMotivBtn" onclick="onboardNext()" style="opacity:0.3;pointer-events:none;">Suivant →</button>'
+    + '<button class="onboard-skip" onclick="onboardFinish()">' + t('onboard_skip') + '</button>'
+    + '</div>',
   () => `
     <div class="onboard-anim"><div style="text-align:center;margin-bottom:16px;"><img src="https://nabs881-sketch.github.io/niyyah-app/imagescamera.webp" alt="Scanner" style="width:100px;height:auto;display:block;margin:0 auto;"></div><div class="onboard-title">${t('onboard_title2')}</div><div class="onboard-sub" style="margin-bottom:24px;">${t('onboard_sub2')}</div><div style="background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.15);border-radius:14px;padding:16px;margin-bottom:20px;text-align:center;"><div style="font-size:16px;color:rgba(255,255,255,0.7);line-height:1.6;">${t('onboard_scanner_example')}</div></div><button class="onboard-btn" onclick="onboardNext()">${t('onboard_next')}</button><button class="onboard-skip" onclick="onboardFinish()">${t('onboard_skip')}</button></div>`,
   () => `
@@ -5089,17 +5117,24 @@ const ONBOARD_SLIDES = [
   () => `
     <div class="onboard-anim"><div style="margin:0 auto 20px;"><img src="https://nabs881-sketch.github.io/niyyah-app/imageslogo.webp" alt="Niyyah" style="width:150px;height:auto;display:block;margin:0 auto;"></div><div class="onboard-title">${t('onboard_title4')}</div><div class="onboard-sub">${t('onboard_sub4')}</div><button class="onboard-btn" onclick="onboardRequestGeoloc()" style="max-width:300px;" id="onboardGeoBtn">${t('geo_locate')}</button><div id="onboardCityFallback" style="display:none;margin-top:16px;"><div style="font-size:13px;color:#B0A080;margin-bottom:10px;">${t('onboard_city_manual')}</div><div class="city-input-wrap" style="max-width:300px;margin-bottom:16px;"><input class="city-input" id="onboardCityInput" type="text" placeholder="${t('onboard_city_placeholder')}" onkeydown="if(event.key===\'Enter\')onboardSaveCity()"><button class="city-input-btn" onclick="onboardSaveCity()">OK</button></div></div><button class="onboard-skip" onclick="onboardFinish()" style="margin-top:12px;">${t('onboard_later')}</button></div>`
 ];
+function obSelectMotiv(el, value) {
+  document.querySelectorAll('.ob-motiv-card').forEach(function(c) { c.classList.remove('selected'); });
+  el.classList.add('selected');
+  safeSetItem('niyyah_motivation', value);
+  var btn = document.getElementById('obMotivBtn');
+  if (btn) { btn.style.opacity = '1'; btn.style.pointerEvents = 'auto'; }
+}
 function onboardRender() {
   requestAnimationFrame(function() {
-    const content = document.getElementById('onboardContent');
+    var content = document.getElementById('onboardContent');
     if (content) content.innerHTML = ONBOARD_SLIDES[_onboardStep]();
-    [0,1,2,3].forEach(i => {
-      const dot = document.getElementById('dot' + i);
+    [0,1,2,3,4].forEach(function(i) {
+      var dot = document.getElementById('dot' + i);
       if (dot) dot.className = 'onboard-dot' + (i === _onboardStep ? ' active' : '');
     });
-    if (_onboardStep === 3) {
-      setTimeout(() => {
-        const el = document.getElementById('onboardCityInput');
+    if (_onboardStep === 4) {
+      setTimeout(function() {
+        var el = document.getElementById('onboardCityInput');
         if (el) el.focus();
       }, 400);
     }
