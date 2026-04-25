@@ -3866,6 +3866,12 @@ function _playCoranVerset() {
   audio.src = url;
   audio.load();
   audio.play().catch(() => { _coranIdx++; _playCoranVerset(); });
+  // Preload next verset
+  if (_coranIdx + 1 < total) {
+    var _next = new Audio();
+    _next.src = 'https://everyayah.com/data/Alafasy_128kbps/' + num + String(_coranIdx + 2).padStart(3,'0') + '.mp3';
+    _next.preload = 'auto';
+  }
 }
 function toggleCoranPlay() {
   if (!_coranAudio) return;
