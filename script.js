@@ -6201,7 +6201,7 @@ const V2_I18N = {
     btn_why: '', btn_see_phonetic: '', btn_share_label: '', btn_fullscreen: '',
     city_fallback: '', city_placeholder_prayer: '', countdown_now: '', btn_listen: '',
     quran_verse_label: '', tawba_streak_prefix: '', tawba_streak_suffix: '', tawba_week_msg: '',
-    prayer_in: '0628064E06390652062F', freemium_code_invalid: '', prayer_time_toast: '', nafs_note_placeholder: '', hold_hint: '',
+    prayer_in: '\u0628\u064E\u0639\u0652\u062F', freemium_code_invalid: '', prayer_time_toast: '', nafs_note_placeholder: '', hold_hint: '',
     regarde_note_placeholder: '', share_savaistu_title: '',
     wird_back: '→ رُجُوعٌ', wird_reset: '↺ إِعَادَةُ التَّعْيِينِ',
     locked_title: 'الْمُسْتَوَى',
