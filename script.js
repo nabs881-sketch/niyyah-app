@@ -5083,10 +5083,11 @@ const ONBOARD_SLIDES = [
   // Slide 0 — Splash calligraphie (auto-avance 4s)
   () => {
     setTimeout(function() { if (_onboardStep === 0) onboardNext(); }, 4000);
-    return '<div class="onboard-anim" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;">'
-      + '<svg class="ob-calli-svg" viewBox="0 0 200 80" width="260" height="100"><text x="100" y="60" text-anchor="middle" font-family="\'Scheherazade New\',serif" font-size="56" fill="none" stroke="#C8A84A" stroke-width="0.8">نِيَّة</text></svg>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:rgba(200,168,75,0.7);letter-spacing:1px;opacity:0;animation:obFadeIn 1s ease 1.2s forwards;">Pose ton intention</div>'
-      + '<button class="onboard-skip" onclick="onboardNext()" style="margin-top:20px;opacity:0;animation:obFadeIn 0.6s ease 2.5s forwards;">' + t('onboard_skip') + '</button>'
+    return '<div class="onboard-anim" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;">'
+      + '<div class="onboard-logo-wrap" style="opacity:0;animation:obFadeIn 0.8s ease 0.2s forwards;"><div class="onboard-logo-halo"><img src="https://nabs881-sketch.github.io/niyyah-app/imageslogo.webp" alt="Niyyah" style="width:120px;height:auto;display:block;margin:0 auto;"></div><div class="onboard-particle" style="--d:0s;--x:-40px;--y:-30px;">\u2726</div><div class="onboard-particle" style="--d:0.8s;--x:45px;--y:-20px;">\u2726</div><div class="onboard-particle" style="--d:1.6s;--x:-30px;--y:35px;">\u2726</div><div class="onboard-particle" style="--d:2.4s;--x:35px;--y:40px;">\u2726</div><div class="onboard-particle" style="--d:3.2s;--x:0px;--y:-45px;">\u2726</div></div>'
+      + '<svg class="ob-calli-svg" viewBox="0 0 200 80" width="240" height="90"><text x="100" y="60" text-anchor="middle" font-family="\'Scheherazade New\',serif" font-size="56" fill="none" stroke="#C8A84A" stroke-width="0.8">\u0646\u0650\u064A\u0651\u064E\u0629</text></svg>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:rgba(200,168,75,0.7);letter-spacing:1px;opacity:0;animation:obFadeIn 1s ease 1.4s forwards;">Pose ton intention</div>'
+      + '<button class="onboard-skip" onclick="onboardNext()" style="margin-top:16px;opacity:0;animation:obFadeIn 0.6s ease 2.5s forwards;">' + t('onboard_skip') + '</button>'
       + '</div>';
   },
   // Slide 1 — Motivation "Qu'est-ce qui t'amène ?"
