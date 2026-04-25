@@ -5115,7 +5115,7 @@ const ONBOARD_SLIDES = [
     setTimeout(function() { if (document.getElementById('obTypeNiyyah')) obTypeWriter('obTypeNiyyah', 'Je bois avec gratitude envers Allah.', 0); }, 600);
     setTimeout(function() { if (document.getElementById('obTypeRegarde')) obTypeWriter('obTypeRegarde', 'Combien de fois as-tu bu sans voir\u00a0?', 0); }, 1200);
     return '<div class="onboard-anim">'
-      + '<div class="onboard-title">Niyyah te propose deux gestes</div>'
+      + '<div class="onboard-title">Deux gestes pour ton quotidien</div>'
       + '<div class="ob-deux-gestes">'
       // Card Niyyah (gauche)
       + '<div class="ob-geste-card ob-geste-niyyah">'
