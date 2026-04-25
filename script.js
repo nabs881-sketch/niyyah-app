@@ -6987,6 +6987,16 @@ function v2OpenSettings() {
       </div>
 
 
+      <div style="display:flex;gap:8px;margin-top:8px;">
+        <button onclick="niyyahExportData()" style="flex:1;padding:12px;border-radius:14px;border:1px solid rgba(200,168,75,0.25);background:rgba(200,168,75,0.04);color:#C8A84A;font-family:var(--serif);font-size:13px;cursor:pointer;">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round" style="vertical-align:middle;margin-right:4px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>Exporter
+        </button>
+        <button onclick="document.getElementById('niyyahImportInput').click()" style="flex:1;padding:12px;border-radius:14px;border:1px solid rgba(200,168,75,0.25);background:rgba(200,168,75,0.04);color:#C8A84A;font-family:var(--serif);font-size:13px;cursor:pointer;">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round" style="vertical-align:middle;margin-right:4px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M17 8l-5-5-5 5"/><path d="M12 3v12"/></svg>Importer
+        </button>
+        <input type="file" id="niyyahImportInput" accept=".json" style="display:none" onchange="niyyahImportData(this)">
+      </div>
+
       <div style="padding:14px 16px;cursor:pointer;margin-top:8px;background:rgba(255,60,60,0.04);border:1px solid rgba(255,60,60,0.15);border-radius:14px;"
         onclick="if(confirm('Supprimer TOUTES les données ? Cette action est irréversible.')){if(confirm('Dernière confirmation — tout sera perdu.')){localStorage.clear();location.reload();}}">
         <div style="font-size:13px;color:rgba(255,80,80,0.6);text-align:center;">Réinitialisation complète</div>
@@ -7304,6 +7314,41 @@ function renderLevelStripCondensed() {
 function _getPrenom() {
   var p = localStorage.getItem('niyyah_prenom');
   return (p && p.trim()) ? p.trim() : '';
+}
+function niyyahExportData() {
+  var data = {};
+  for (var i = 0; i < localStorage.length; i++) {
+    var key = localStorage.key(i);
+    if (key && (key.indexOf('niyyah') === 0 || key.indexOf('spiritual') === 0 || key.indexOf('ramadan') === 0 || key.indexOf('nafs') === 0)) {
+      data[key] = localStorage.getItem(key);
+    }
+  }
+  var blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'niyyah-backup-' + new Date().toISOString().split('T')[0] + '.json';
+  a.click();
+  URL.revokeObjectURL(a.href);
+  if (typeof showToast === 'function') showToast('Backup export\u00e9 \u2713');
+}
+function niyyahImportData(input) {
+  if (!input.files || !input.files[0]) return;
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    try {
+      var data = JSON.parse(e.target.result);
+      var keys = Object.keys(data);
+      if (!keys.length) { showToast('Fichier vide'); return; }
+      if (!confirm('Restaurer ' + keys.length + ' cl\u00e9s ? Les donn\u00e9es actuelles seront remplac\u00e9es.')) return;
+      keys.forEach(function(k) { try { localStorage.setItem(k, data[k]); } catch(ex) {} });
+      showToast('Donn\u00e9es restaur\u00e9es \u2014 rechargement...');
+      setTimeout(function() { location.reload(); }, 1000);
+    } catch(ex) {
+      showToast('Fichier invalide');
+    }
+  };
+  reader.readAsText(input.files[0]);
+  input.value = '';
 }
 function isSilenceDay() {
   var d = localStorage.getItem('niyyah_silence_day');
