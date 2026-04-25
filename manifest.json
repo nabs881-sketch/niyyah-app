@@ -35,6 +35,23 @@
       "purpose": "maskable"
     }
   ],
+  "categories": ["lifestyle", "education"],
+  "screenshots": [
+    {
+      "src": "images/screenshot-1.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Sanctuaire — Pose ton intention"
+    },
+    {
+      "src": "images/screenshot-2.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Onboarding — Deux gestes"
+    }
+  ],
   "shortcuts": [
     {
       "name": "Définir mon intention",
