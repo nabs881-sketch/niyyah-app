@@ -1324,7 +1324,7 @@ function checkAndSaveYesterdayStreak() {
       history._graceMissedDate = getDateMinus(TODAY, 1);
       history.streak = (history.streak || 0) + 1; 
     } else if (diffDays > 2) {
-      history.streak = 1;
+      history.streak = isSilenceDay() ? (history.streak || 0) : 1;
       history._gracePending = false;
     }
     history.bestStreak = Math.max(history.bestStreak || 0, history.streak);
@@ -1333,7 +1333,9 @@ function checkAndSaveYesterdayStreak() {
     const todayDate  = new Date(TODAY + 'T12:00:00');
     const prevDateObj = new Date((prevDate || TODAY) + 'T12:00:00');
     const diffDays = Math.round((todayDate - prevDateObj) / 86400000);
-    if (diffDays === 1) {
+    if (isSilenceDay()) {
+      // Silence day: streak frozen, no break
+    } else if (diffDays === 1) {
       if ((history.streak || 0) > 0) {
         history._gracePending = true;
         history._graceMissedDate = prevDate;
@@ -2713,7 +2715,18 @@ function getGraineStageName(count) {
   return 'Dormante';
 }
 function renderProgression() {
-  const el = document.getElementById('progContent');
+  var el = document.getElementById('progContent');
+  if (isSilenceDay()) {
+    var _sp = _getPrenom();
+    el.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:70vh;text-align:center;padding:40px 24px;">'
+      + '<img src="https://nabs881-sketch.github.io/niyyah-app/imageslogo.webp" alt="Niyyah" style="width:100px;height:auto;margin-bottom:24px;opacity:0.7;">'
+      + '<div style="font-family:\'Scheherazade New\',serif;font-size:36px;color:#C8A84A;margin-bottom:16px;">\u0627\u0644\u0633\u0644\u0627\u0645 \u0639\u0644\u064A\u0643\u0645</div>'
+      + '<div style="font-family:var(--serif);font-size:20px;font-style:italic;color:var(--t1);margin-bottom:24px;">' + (_sp ? _sp + ', jour' : 'Jour') + ' de silence.</div>'
+      + '<div style="font-family:\'Amiri\',serif;font-size:22px;color:rgba(200,168,75,0.6);line-height:1.8;direction:rtl;margin-bottom:8px;">\u0648\u0625\u0650\u0644\u064E\u0649\u0670 \u0631\u064E\u0628\u0651\u0650\u0643\u064E \u0641\u0671\u0631\u0652\u063A\u064E\u0628</div>'
+      + '<div style="font-family:var(--serif);font-size:14px;font-style:italic;color:var(--t3);">Et vers ton Seigneur, dirige ton d\u00e9sir ardent. \u2014 Ash-Sharh, 8</div>'
+      + '</div>';
+    return;
+  }
   const todayDone = getLevelProgress(1) >= 100;
   const streakDisplay = history.streak + (todayDone ? 1 : 0);
   const bestDisplay   = Math.max(history.bestStreak, streakDisplay);
@@ -4674,6 +4687,7 @@ function requestNotifPermission() {
 
 // ── Planifier les 3 notifications de la journée ───────────────────────────────
 function scheduleAllNotifications() {
+  if (isSilenceDay()) return;
   try { if (Notification.permission !== 'granted') return; } catch(e) { return; }
   clearNotifTimers();
 
@@ -4873,6 +4887,7 @@ function schedulePrayerReminders() {
   scheduleFajrNotification();
 }
 function scheduleFajrNotification() {
+  if (isSilenceDay()) return;
   if (!_prayerTimes || !_prayerTimes['Fajr']) return;
   if (Notification.permission === 'default') Notification.requestPermission();
   if (Notification.permission !== 'granted') return;
@@ -6917,6 +6932,21 @@ function v2OpenSettings() {
             <div style="font-size:12px;color:rgba(245,166,35,0.6);">${ramadanActive ? '✓' : ''}</div>
           </div>
         </div>
+        <div style="padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.04);">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <div style="font-size:14px;color:rgba(240,234,214,0.7);">🤫 Jour de silence</div>
+            <select onchange="safeSetItem('niyyah_silence_day',this.value)" style="background:#222;color:#D4AF37;border:1px solid rgba(212,175,55,0.3);border-radius:8px;padding:6px 10px;font-size:12px;font-family:var(--sans);outline:none;">
+              <option value="none" ${(localStorage.getItem('niyyah_silence_day')||'none')==='none'?'selected':''}>Aucun</option>
+              <option value="1" ${localStorage.getItem('niyyah_silence_day')==='1'?'selected':''}>Lundi</option>
+              <option value="2" ${localStorage.getItem('niyyah_silence_day')==='2'?'selected':''}>Mardi</option>
+              <option value="3" ${localStorage.getItem('niyyah_silence_day')==='3'?'selected':''}>Mercredi</option>
+              <option value="4" ${localStorage.getItem('niyyah_silence_day')==='4'?'selected':''}>Jeudi</option>
+              <option value="5" ${localStorage.getItem('niyyah_silence_day')==='5'?'selected':''}>Vendredi</option>
+              <option value="6" ${localStorage.getItem('niyyah_silence_day')==='6'?'selected':''}>Samedi</option>
+              <option value="0" ${localStorage.getItem('niyyah_silence_day')==='0'?'selected':''}>Dimanche</option>
+            </select>
+          </div>
+        </div>
         <div style="padding:14px 16px;cursor:pointer;"
           onclick="if(typeof confirmReset==='function'){confirmReset();document.getElementById('v2-settings-sheet').remove();}">
           <div style="display:flex;justify-content:space-between;align-items:center;">
@@ -7244,6 +7274,11 @@ function renderLevelStripCondensed() {
 function _getPrenom() {
   var p = localStorage.getItem('niyyah_prenom');
   return (p && p.trim()) ? p.trim() : '';
+}
+function isSilenceDay() {
+  var d = localStorage.getItem('niyyah_silence_day');
+  if (!d || d === 'none') return false;
+  return parseInt(d, 10) === new Date().getDay();
 }
 function updateSpiritualTitle() {
   var el = document.getElementById('v2-spiritual-title');
