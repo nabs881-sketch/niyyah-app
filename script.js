@@ -8058,15 +8058,13 @@ function showFinJourneeActe2() {
   if (!overlay) return;
   overlay.innerHTML = '<div class="finjournee-acte2"><div class="finjournee-acte2-text" id="finjournee-q"></div></div>';
   overlay.style.display = 'block';
-  var questions = [
-    'Tes cinq prières d\'aujourd\'hui — combien ont vraiment rencontré ton cœur ?',
-    'Ta langue a parlé toute la journée — qu\'aurais-tu voulu taire ?',
-    'À qui as-tu peut-être fait du mal aujourd\'hui, sans le vouloir ?',
-    'Qu\'est-ce qui, cette journée, t\'a éloigné de ton Seigneur sans que tu t\'en rendes compte ?',
-    'Si cette nuit était la dernière, qu\'emporterais-tu de cette journée ?',
-    'Astaghfirullah.',
-    'Je demande pardon à Allah.'
-  ];
+  var _muhasabaQ = {
+    fr: ['Tes cinq pri\u00e8res d\u2019aujourd\u2019hui \u2014 combien ont vraiment rencontr\u00e9 ton c\u0153ur ?','Ta langue a parl\u00e9 toute la journ\u00e9e \u2014 qu\u2019aurais-tu voulu taire ?','\u00c0 qui as-tu peut-\u00eatre fait du mal aujourd\u2019hui, sans le vouloir ?','Qu\u2019est-ce qui, cette journ\u00e9e, t\u2019a \u00e9loign\u00e9 de ton Seigneur sans que tu t\u2019en rendes compte ?','Si cette nuit \u00e9tait la derni\u00e8re, qu\u2019emporterais-tu de cette journ\u00e9e ?','Astaghfirullah.','Je demande pardon \u00e0 Allah.'],
+    en: ['Your five prayers today \u2014 how many truly met your heart?','Your tongue spoke all day \u2014 what would you have rather kept silent?','Whom may you have hurt today, without meaning to?','What drew you away from your Lord today without you even noticing?','If tonight were your last, what would you take from this day?','Astaghfirullah.','I ask Allah\u2019s forgiveness.'],
+    ar: ['\u0635\u064E\u0644\u064E\u0648\u0627\u062A\u064F\u0643\u064E \u0627\u0644\u062E\u064E\u0645\u0652\u0633 \u0627\u0644\u064A\u064E\u0648\u0652\u0645 \u2014 \u0643\u064E\u0645\u0652 \u0645\u0650\u0646\u0652\u0647\u0627 \u0644\u0627\u0642\u064E\u062A\u0652 \u0642\u064E\u0644\u0652\u0628\u064E\u0643\u064E \u062D\u064E\u0642\u0651\u064B\u0627\u061F','\u0644\u0650\u0633\u0627\u0646\u064F\u0643\u064E \u062A\u064E\u0643\u064E\u0644\u0651\u064E\u0645\u064E \u0637\u064E\u0648\u0627\u0644\u064E \u0627\u0644\u064A\u064E\u0648\u0652\u0645 \u2014 \u0645\u0627\u0630\u0627 \u0643\u064F\u0646\u0652\u062A\u064E \u062A\u064E\u0648\u064E\u062F\u0651\u064F \u0644\u064E\u0648\u0652 \u0633\u064E\u0643\u064E\u062A\u0651\u064E\u061F','\u0645\u064E\u0646\u0652 \u0631\u064F\u0628\u0651\u064E\u0645\u0627 \u0622\u0630\u064E\u064A\u0652\u062A\u064E \u0627\u0644\u064A\u064E\u0648\u0652\u0645\u064E \u062F\u064F\u0648\u0646\u064E \u0642\u064E\u0635\u0652\u062F\u061F','\u0645\u0627 \u0627\u0644\u0651\u064E\u0630\u0650\u064A \u0623\u064E\u0628\u0652\u0639\u064E\u062F\u064E\u0643\u064E \u0639\u064E\u0646\u0652 \u0631\u064E\u0628\u0651\u0650\u0643\u064E \u062F\u064F\u0648\u0646\u064E \u0623\u064E\u0646\u0652 \u062A\u064E\u062F\u0652\u0631\u0650\u064A\u061F','\u0644\u064E\u0648\u0652 \u0643\u0627\u0646\u064E\u062A\u0652 \u0647\u0630\u0650\u0647\u0650 \u0627\u0644\u0644\u0651\u064E\u064A\u0652\u0644\u064E\u0629\u064F \u0627\u0644\u0623\u064E\u062E\u0650\u064A\u0631\u064E\u0629\u060C \u0645\u0627\u0630\u0627 \u062A\u064E\u0623\u0652\u062E\u064F\u0630\u064F \u0645\u0650\u0646\u0652 \u064A\u064E\u0648\u0652\u0645\u0650\u0643\u061F','\u0623\u064E\u0633\u0652\u062A\u064E\u063A\u0652\u0641\u0650\u0631\u064F \u0627\u0644\u0644\u0651\u064E\u0647.','\u0623\u064E\u0633\u0652\u062A\u064E\u063A\u0652\u0641\u0650\u0631\u064F \u0627\u0644\u0644\u0651\u064E\u0647.']
+  };
+  var _lang = (typeof V2_LANG !== 'undefined') ? V2_LANG : 'fr';
+  var questions = _muhasabaQ[_lang] || _muhasabaQ.fr;
   var durations = [8000, 8000, 8000, 8000, 8000, 4000, 4000];
   var el = document.getElementById('finjournee-q');
   var idx = 0;
