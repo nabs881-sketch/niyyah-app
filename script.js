@@ -1177,7 +1177,7 @@ const LEVELS = [
         { id: 'isha',    label: 'Isha',    _subKey: 'prayer_isha_sub',    get sub(){return t(this._subKey)}, arabic: '\u0635\u064E\u0644\u0627\u0629\u064F \u0627\u0644\u0639\u0650\u0634\u0627\u0621\u0650',  prayer: true, priority: 'fard', block: 'isha', hadith: '\"Celui qui prie Isha en jamaah a la r\u00e9compense de prier la moiti\u00e9 de la nuit\" \u2014 Muslim 656', source: 'Muslim 656' },
         ...(isFriday() ? [{ id: 'jumua', label: 'Jumua ✦', sub: 'Prière du vendredi — obligation spéciale', arabic: 'صَلَاةُ الْجُمُعَةِ', isFriday: true, prayer: true, priority: 'fard', block: 'dhuhr', hadith: '\"Le vendredi est le meilleur jour sur lequel le soleil se lève\" — Muslim 854', source: 'Muslim 854' }] : []),
       ]},
-      { icon: '📿', title: 'Wird quotidien', desc: 'Le wird est un ensemble d\'invocations quotidiennes tirées du Coran et de la Sunnah, récitées chaque matin après Fajr et chaque soir après Asr. Il protège, purifie le cœur et rapproche d\'Allah.', items: [
+      { icon: '\ud83d\udcff', title: 'Wird quotidien', _descKey: 'wird_desc', get desc(){return t(this._descKey)}, items: [
         { id: 'wird_matin', label: 'Wird du Matin', sub: 'Après Fajr · Al-Fatiha, Ayat al-Kursi, Muawwidhat…', arabic: 'وِرْدُ الصَّبَاحِ', priority: 'sunnah', optional: true, type: 'wird', session: 'matin', block: 'fajr', hadith: '\"Celui qui dit ces invocations le matin est protégé jusqu\'au soir\" — Abu Dawud 5088', source: 'Abu Dawud 5088' },
         { id: 'wird_soir',  label: 'Wird du Soir',  sub: 'Après Asr · Al-Baqara 285-286, Al-Mulk…',            arabic: 'وِرْدُ الْمَسَاءِ', priority: 'sunnah', optional: true, type: 'wird', session: 'soir', block: 'maghrib', hadith: '\"Celui qui dit ces invocations le soir est protégé jusqu\'au matin\" — Abu Dawud 5088', source: 'Abu Dawud 5088' },
       ]},
@@ -2243,7 +2243,7 @@ function renderLevel(levelId) {
     var _sectionTitleArabic = {'Les 5 Prières':'الصَّلَاةُ','Wird quotidien':'الوِرْد','Sunnah de base':'السُّنَن','Approfondissement de la prière':'الخُشُوع','Dhikr du cœur':'ذِكْر القَلْب','Douâas intimes':'الدُّعَاء','Étude islamique':'العِلْم','Immersion coranique':'التِّلَاوَة','Pratiques avancées':'المُجَاهَدَة',"Sommet de l'adoration":'الإِحْسَان','Rayonnement vers les autres':'الرَّحْمَة',"Conscience de l'Oumma":'الأُمَّة'};
     var _sectionArabic = _sectionTitleArabic[section.title] || '';
     html += '<div class="section"><div class="section-header">' + (_sectionArabic ? '<div class="section-arabic">' + _sectionArabic + '</div>' : '') + '<div class="section-name">' + _sectionTitle + '</div><div class="section-line"></div></div>'
-      + (section.desc ? '<div class="section-info-block"><div class="section-info-icon">۞</div><div><div class="section-info-title">C\'est quoi le wird ?</div><div class="section-info-text">' + section.desc + '</div></div></div>' : '');
+      + (section.desc ? '<div class="section-info-block"><div class="section-info-icon">\u06de</div><div><div class="section-info-title">' + t('wird_what') + '</div><div class="section-info-text">' + section.desc + '</div></div></div>' : '');
     const _tlColor = getPrayerTimelineColor();
     html += '<div class="items-group" style="border-left:2px solid ' + _tlColor + ';padding-left:12px;margin-left:4px;">';
     let _firstUncheckedFound = false;
@@ -5605,6 +5605,7 @@ const V2_I18N = {
     import_empty: 'Fichier vide', import_invalid: 'Fichier invalide',
     import_confirm: 'Restaurer {n} cl\u00e9s ? Les donn\u00e9es actuelles seront remplac\u00e9es.',
     wird_matin: 'WIRD DU MATIN', wird_soir: 'WIRD DU SOIR',
+    wird_what: 'C\u2019est quoi le wird ?', wird_desc: 'Le wird est un ensemble d\u2019invocations quotidiennes tir\u00e9es du Coran et de la Sunnah, r\u00e9cit\u00e9es chaque matin apr\u00e8s Fajr et chaque soir apr\u00e8s Asr. Il prot\u00e8ge, purifie le c\u0153ur et rapproche d\u2019Allah.',
     prayer_fajr_sub: 'Pri\u00e8re de l\u2019aube', prayer_dhuhr_sub: 'Pri\u00e8re du milieu du jour', prayer_asr_sub: 'Pri\u00e8re de l\u2019apr\u00e8s-midi', prayer_maghrib_sub: 'Pri\u00e8re du coucher du soleil', prayer_isha_sub: 'Pri\u00e8re de la nuit',
     bilan_7j_title: 'Bilan des 7 derniers soirs',
     bilan_distrait: 'Distrait', bilan_effort: 'Efforts', bilan_sincere: 'Sinc\u00e8re',
@@ -5822,6 +5823,7 @@ const V2_I18N = {
     import_empty: 'Empty file', import_invalid: 'Invalid file',
     import_confirm: 'Restore {n} keys? Current data will be replaced.',
     wird_matin: 'MORNING WIRD', wird_soir: 'EVENING WIRD',
+    wird_what: 'What is the wird?', wird_desc: 'The wird is a set of daily invocations from the Quran and Sunnah, recited each morning after Fajr and each evening after Asr. It protects, purifies the heart and brings closer to Allah.',
     prayer_fajr_sub: 'Dawn prayer', prayer_dhuhr_sub: 'Midday prayer', prayer_asr_sub: 'Afternoon prayer', prayer_maghrib_sub: 'Sunset prayer', prayer_isha_sub: 'Night prayer',
     bilan_7j_title: 'Last 7 evenings',
     bilan_distrait: 'Distracted', bilan_effort: 'Effort', bilan_sincere: 'Sincere',
@@ -6016,6 +6018,7 @@ const V2_I18N = {
     import_empty: '\u0645\u064E\u0644\u064E\u0641\u0651\u064C \u0641\u0627\u0631\u0650\u063A', import_invalid: '\u0645\u064E\u0644\u064E\u0641\u0651\u064C \u063A\u064E\u064A\u0652\u0631\u064F \u0635\u0627\u0644\u0650\u062D',
     import_confirm: '\u0627\u0650\u0633\u0652\u062A\u0650\u0639\u0627\u062F\u064E\u0629 {n} \u0645\u0650\u0641\u0652\u062A\u0627\u062D\u061F',
     wird_matin: '\u0648\u0650\u0631\u0652\u062F\u064F \u0627\u0644\u0635\u0651\u064E\u0628\u0627\u062D', wird_soir: '\u0648\u0650\u0631\u0652\u062F\u064F \u0627\u0644\u0645\u064E\u0633\u0627\u0621',
+    wird_what: '\u0645\u0627 \u0647\u064F\u0648\u064E \u0627\u0644\u0648\u0650\u0631\u0652\u062F\u064F\u061F', wird_desc: '\u0627\u0644\u0648\u0650\u0631\u0652\u062F\u064F \u0645\u064E\u062C\u0652\u0645\u064F\u0648\u0639\u064E\u0629\u064C \u0645\u0650\u0646\u064E \u0627\u0644\u0623\u064E\u0630\u0652\u0643\u0627\u0631\u0650 \u0627\u0644\u064A\u064E\u0648\u0652\u0645\u0650\u064A\u0651\u064E\u0629\u0650 \u0645\u0650\u0646\u064E \u0627\u0644\u0642\u064F\u0631\u0652\u0622\u0646\u0650 \u0648\u0627\u0644\u0633\u0651\u064F\u0646\u0651\u064E\u0629\u060C \u062A\u064F\u0642\u0652\u0631\u064E\u0623\u064F \u0643\u064F\u0644\u0651\u064E \u0635\u064E\u0628\u0627\u062D\u064D \u0628\u064E\u0639\u0652\u062F\u064E \u0627\u0644\u0641\u064E\u062C\u0652\u0631\u0650 \u0648\u0643\u064F\u0644\u0651\u064E \u0645\u064E\u0633\u0627\u0621\u064D \u0628\u064E\u0639\u0652\u062F\u064E \u0627\u0644\u0639\u064E\u0635\u0652\u0631\u0650. \u064A\u064E\u062D\u0652\u0641\u064E\u0638\u064F \u0648\u064E\u064A\u064F\u0637\u064E\u0647\u0651\u0650\u0631\u064F \u0627\u0644\u0642\u064E\u0644\u0652\u0628\u064E \u0648\u064E\u064A\u064F\u0642\u064E\u0631\u0651\u0650\u0628\u064F \u0645\u0650\u0646\u064E \u0627\u0644\u0644\u0651\u064E\u0647.',
     prayer_fajr_sub: '\u0635\u064E\u0644\u0627\u0629\u064F \u0627\u0644\u0641\u064E\u062C\u0652\u0631', prayer_dhuhr_sub: '\u0635\u064E\u0644\u0627\u0629\u064F \u0627\u0644\u0638\u0651\u064F\u0647\u0652\u0631', prayer_asr_sub: '\u0635\u064E\u0644\u0627\u0629\u064F \u0627\u0644\u0639\u064E\u0635\u0652\u0631', prayer_maghrib_sub: '\u0635\u064E\u0644\u0627\u0629\u064F \u0627\u0644\u0645\u064E\u063A\u0652\u0631\u0650\u0628', prayer_isha_sub: '\u0635\u064E\u0644\u0627\u0629\u064F \u0627\u0644\u0639\u0650\u0634\u0627\u0621',
     bilan_7j_title: '\u0622\u062E\u0650\u0631\u064F \u0667 \u0645\u064E\u0633\u0627\u0621\u0627\u062A',
     bilan_distrait: '\u063A\u064E\u0641\u0652\u0644\u064E\u0629', bilan_effort: '\u0645\u064F\u062C\u0627\u0647\u064E\u062F\u064E\u0629', bilan_sincere: '\u0625\u0650\u062E\u0652\u0644\u0627\u0635',
