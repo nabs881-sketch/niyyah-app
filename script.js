@@ -7893,10 +7893,10 @@ function updateSanctuaireNextPrayer() {
   var txt = '';
   if (diffMin > 60) txt = nextName + ' \u00b7 ' + nextTime;
   else if (diffMin > 0) txt = nextName + ' ' + t('prayer_in') + ' ' + diffMin + ' min';
-  var span = document.getElementById('sanctuaire-prayer-text');
-  if (span) span.textContent = txt;
-  el.style.display = txt ? 'flex' : 'none';
-  el.style.opacity = diffMin <= 60 ? '1' : '0.75';
+  if (!txt) { el.style.display = 'none'; return; }
+  var _star = '<svg width="14" height="14" viewBox="0 0 10 10"><path d="M5 0 L5.8 4.2 L10 5 L5.8 5.8 L5 10 L4.2 5.8 L0 5 L4.2 4.2 Z" fill="#C8A84A"/></svg>';
+  el.innerHTML = '<div style="text-align:center;margin:20px 0;display:flex;align-items:center;justify-content:center;gap:16px;opacity:' + (diffMin <= 60 ? '1' : '0.75') + ';">' + _star + '<span class="next-prayer-text">' + txt + '</span>' + _star + '</div>';
+  el.style.display = 'block';
 }
 function _dateLocale() {
   var lang = (typeof V2_LANG !== 'undefined') ? V2_LANG : 'fr';
