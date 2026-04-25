@@ -2274,16 +2274,16 @@ function renderLevel(levelId) {
         const audioBtn = item.audio ? '<button class="btn-audio" aria-label="Écouter" ontouchstart="event.stopPropagation()" onclick="playAudio(' + (Array.isArray(item.audio) ? JSON.stringify(item.audio).replace(/"/g,"'") : '\'' + item.audio + '\'') + ',this,event)" title="' + t('btn_listen_recitation') + '">🔊</button>' : '';
         let infoBtn = '';
         if (item.hadith) {
-          const labelEsc2 = item.label.replace(/"/g,'&quot;');
+          const labelEsc2 = tI(item,'label').replace(/"/g,'&quot;');
           const arabicEsc2 = (item.arabic||'').replace(/"/g,'&quot;');
           const hadithEsc = item.hadith.replace(/"/g,'&quot;');
           const sourceEsc = (item.source||'').replace(/"/g,'&quot;');
           infoBtn = '<button class="btn-info" aria-label="Détails" onclick="openInfoSheet(\'\',\'\',\'\',\'\',event)" data-label="' + labelEsc2 + '" data-arabic="' + arabicEsc2 + '" data-phonetic="" data-translation="' + hadithEsc + '" title="' + t('btn_why') + '"><i>i</i></button>';
-        } else if (item.sub && item.sub.includes('·') && item.arabic) {
-          const parts = item.sub.split('·');
+        } else if (item.sub && tI(item,'sub').includes('·') && item.arabic) {
+          const parts = tI(item,'sub').split('·');
           const phonetic = parts[0].trim();
           const translation = parts.slice(1).join('·').trim();
-          const labelEsc2 = item.label.replace(/"/g,'&quot;');
+          const labelEsc2 = tI(item,'label').replace(/"/g,'&quot;');
           const arabicEsc2 = (item.arabic||'').replace(/"/g,'&quot;');
           const phoneticEsc = phonetic.replace(/"/g,'&quot;');
           const translationEsc = translation.replace(/"/g,'&quot;');
@@ -2297,7 +2297,8 @@ function renderLevel(levelId) {
         if (item.id === 'savais_tu') {
           shareBtn = '<button class="btn-audio" aria-label="Écouter" ontouchstart="event.stopPropagation()" onclick="shareSavaisTu(event)" title="' + t('btn_share_label') + '" style="font-size:13px;padding:0 8px;width:auto;">📤</button>';
         }
-        html += '<div class="item' + fridayCls + (checked ? ' checked' : '') + _tlCurrent + '" onclick="toggleItem(\'' + item.id + '\',event)" style="' + _tlOpacity + 'animation-delay:' + delay + 'ms;--i:' + idx + '" id="item-' + item.id + '"><div class="check-circle"><svg class="check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-body"><div class="item-label' + priorityCls + '">' + item.label + optionalBadge + '</div>' + (item.sub ? '<div class="item-sub">' + (item.sub.includes('·') ? item.sub.split('·')[0].trim() : item.sub) + '</div>' : '') + arabicHtml + '</div>' + shareBtn + audioBtn + infoBtn + '</div>';
+        var _tl = tI(item,'label'), _ts = tI(item,'sub');
+        html += '<div class="item' + fridayCls + (checked ? ' checked' : '') + _tlCurrent + '" onclick="toggleItem(\'' + item.id + '\',event)" style="' + _tlOpacity + 'animation-delay:' + delay + 'ms;--i:' + idx + '" id="item-' + item.id + '"><div class="check-circle"><svg class="check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-body"><div class="item-label' + priorityCls + '">' + _tl + optionalBadge + '</div>' + (_ts ? '<div class="item-sub">' + (_ts.includes('·') ? _ts.split('·')[0].trim() : _ts) + '</div>' : '') + arabicHtml + '</div>' + shareBtn + audioBtn + infoBtn + '</div>';
       }
     });
     html += '</div>';
@@ -2386,7 +2387,7 @@ function renderCounter(item, delay) {
   const done  = count >= item.target;
   const arabicHtml = item.arabic ? '<div class="item-arabic" style="' + (done ? 'opacity:0.25' : '') + '">' + item.arabic + '</div>' : '';
   const arabicEsc = (item.arabic || '').replace(/'/g, "\\'");
-  const labelEsc  = item.label.replace(/'/g, "\\'");
+  const labelEsc  = tI(item,'label').replace(/'/g, "\\'");
   const fullscreenBtn = '<button class="btn-tasbih-fs" aria-label="Plein écran" onclick="openTasbih(\'' + item.id + '\',' + item.target + ',\'' + labelEsc + '\',\'' + arabicEsc + '\')" title="' + t('btn_fullscreen') + '">⛶</button>';
   const audioBtn = item.audio ? '<button class="btn-audio" aria-label="Écouter" ontouchstart="event.stopPropagation()" onclick="playAudio(' + (Array.isArray(item.audio) ? JSON.stringify(item.audio).replace(/"/g,"'") : '\'' + item.audio + '\'') + ',this,event)" title="' + t('btn_listen_recitation') + '">🔊</button>' : '';
   return '<div class="item counter-item' + (done ? ' checked' : '') + '" style="animation-delay:' + delay + 'ms" id="item-' + item.id + '"><div class="counter-top"><div class="check-circle" id="cb-' + item.id + '" style="' + (done ? 'background:var(--green-grad);border-color:var(--green);box-shadow:0 0 0 4px var(--green-soft),0 0 16px rgba(52,217,98,0.25)' : '') + '"><svg class="check-svg" style="' + (done ? 'opacity:1;transform:scale(1)' : '') + '" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-body"><div class="item-label">' + tI(item,'label') + '</div><div class="item-sub">' + tI(item,'sub') + '</div>' + arabicHtml + '</div>' + audioBtn + fullscreenBtn + '</div><div class="counter-body"><button class="btn-cnt-reset" aria-label="Réinitialiser" onclick="resetCounter(\'' + item.id + '\')">↺</button><div class="counter-display"><div class="counter-num" id="cnt-num-' + item.id + '">' + count + '</div><div class="counter-total">/ ' + item.target + '</div><div class="counter-bar-track"><div class="counter-bar-fill" id="cnt-bar-' + item.id + '" style="width:' + Math.min(count/item.target*100,100) + '%"></div></div></div><button class="btn-cnt" aria-label="Incrémenter" onclick="incrementCounter(\'' + item.id + '\',' + item.target + ')">+</button></div></div>';
@@ -3489,7 +3490,7 @@ function renderWird() {
       const phonEsc = (item.phonetic||'').replace(/"/g,'&quot;');
       const arabEsc = (item.arabic||'').replace(/"/g,'&quot;');
       const srcEsc  = (item.source||'').replace(/"/g,'&quot;');
-      const labelEsc = item.label.replace(/"/g,'&quot;');
+      const labelEsc = tI(item,'label').replace(/"/g,'&quot;');
       const infoBtn = `<button class="btn-wird-info" aria-label="Détails" onclick="openInfoSheet('','','','',event)" data-label="${labelEsc}" data-arabic="${arabEsc}" data-phonetic="${phonEsc}" data-translation="${srcEsc}"><i>i</i></button>`;
       html += `<div class="wird-item${checked?' checked':''}" onclick="toggleWirdItem('${item.id}',event)"><div class="wird-check"><svg class="wird-check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="wird-body"><div class="wird-label">${tI(item,"label")}</div><div class="wird-sub">${tI(item,"sub")}</div><div class="wird-arabic">${item.arabic}</div></div><div class="wird-actions">${audioBtn}${infoBtn}</div></div>`;
     });
