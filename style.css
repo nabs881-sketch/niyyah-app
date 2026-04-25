@@ -3522,6 +3522,7 @@ to {
   border-radius:12px;
   display:block;
   margin:0 auto;
+  mix-blend-mode:lighten;
 }
 .ob-geste-txt {
   font-family:'Cormorant Garamond',serif;
