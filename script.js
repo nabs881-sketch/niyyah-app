@@ -1676,7 +1676,7 @@ function renderAccueil() {
 
   // Date
   const now = new Date();
-  const dateStr = now.toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' });
+  const dateStr = now.toLocaleDateString(_dateLocale(), { weekday: 'long', day: 'numeric', month: 'long' });
   const el = document.getElementById('accueilDateLabel');
   if (el) el.textContent = dateStr;
 
@@ -1780,7 +1780,7 @@ function renderResume() {
   const dateEl = document.getElementById('resumeDatePill');
   if (dateEl) {
     const now = new Date();
-    dateEl.textContent = now.toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' });
+    dateEl.textContent = now.toLocaleDateString(_dateLocale(), { weekday: 'long', day: 'numeric', month: 'long' });
   }
   const allItems = LEVELS.flatMap(l => l.sections.flatMap(s => s.items));
   const totalDone = allItems.filter(item => { try { return isItemDone(item, state); } catch(e) { return item.type==="counter"?(state[item.id]||0)>=item.target:!!state[item.id]; } }).reduce((sum, i) => { try { return sum + getWeight(i.id); } catch(e) { return sum + 1; } }, 0);
@@ -1856,7 +1856,7 @@ function init() {
     }
   }
   const now = new Date();
-  const dateStr = now.toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' });
+  const dateStr = now.toLocaleDateString(_dateLocale(), { weekday: 'long', day: 'numeric', month: 'long' });
   ['datePill', 'resumeDatePill'].forEach(id => {
     const el = document.getElementById(id);
     if (el) el.textContent = dateStr;
@@ -2858,7 +2858,7 @@ function renderProgression() {
     const d = new Date(); d.setDate(d.getDate() - i);
     const ds = d.toISOString().split('T')[0];
     const choix = bilansData[ds];
-    const dayName = d.toLocaleDateString('fr-FR', { weekday: 'short' }).slice(0,3);
+    const dayName = d.toLocaleDateString(_dateLocale(), { weekday: 'short' }).slice(0,3);
     if (choix) {
       bilanCells += '<div style="display:flex;flex-direction:column;align-items:center;gap:4px;">'
         + '<div style="width:36px;height:36px;border-radius:10px;background:' + bilanColors[choix] + '22;border:1px solid ' + bilanColors[choix] + '55;display:flex;align-items:center;justify-content:center;font-size:18px;">' + bilanEmojis[choix] + '</div>'
@@ -7074,7 +7074,7 @@ function journalSwitchTab(tab) {
       var html = '';
       entries.forEach(function(e) {
         var d = new Date(e.date);
-        var dateStr = d.toLocaleDateString('fr-FR', { day:'numeric', month:'short' }) + ' · ' + d.toLocaleTimeString('fr-FR', { hour:'2-digit', minute:'2-digit' });
+        var dateStr = d.toLocaleDateString(_dateLocale(), { day:'numeric', month:'short' }) + ' · ' + d.toLocaleTimeString(_dateLocale(), { hour:'2-digit', minute:'2-digit' });
         var thumb = e.photo ? '<img src="' + e.photo + '" style="width:60px;height:60px;border-radius:10px;object-fit:cover;flex-shrink:0;">' : '<div style="width:60px;height:60px;border-radius:10px;background:rgba(200,168,75,0.08);flex-shrink:0;"></div>';
         html += '<div onclick="openNiyyahDetail(\'' + e.id + '\')" style="display:flex;gap:12px;align-items:center;padding:12px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.2);border-radius:12px;margin-bottom:8px;cursor:pointer;box-shadow:0 2px 12px rgba(0,0,0,0.3);transition:all 0.3s ease;">'
           + thumb + '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#D4AF37;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">' + (e.intention || '') + '</div>'
@@ -7092,7 +7092,7 @@ function journalSwitchTab(tab) {
       var html = '';
       entries.forEach(function(e) {
         var d = new Date(e.date);
-        var dateStr = d.toLocaleDateString('fr-FR', { day:'numeric', month:'short' }) + ' · ' + d.toLocaleTimeString('fr-FR', { hour:'2-digit', minute:'2-digit' });
+        var dateStr = d.toLocaleDateString(_dateLocale(), { day:'numeric', month:'short' }) + ' · ' + d.toLocaleTimeString(_dateLocale(), { hour:'2-digit', minute:'2-digit' });
         var thumb = e.photo ? '<img src="' + e.photo + '" style="width:60px;height:60px;border-radius:10px;object-fit:cover;flex-shrink:0;">' : '<div style="width:60px;height:60px;border-radius:10px;background:rgba(200,168,75,0.08);flex-shrink:0;"></div>';
         var star = e.bookmark ? '<div style="position:absolute;top:8px;right:8px;color:#D4AF37;font-size:14px;">★</div>' : '';
         html += '<div onclick="openRegardeDetail(\'' + e.id + '\')" style="display:flex;gap:12px;align-items:center;padding:12px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.2);border-radius:12px;margin-bottom:8px;cursor:pointer;position:relative;box-shadow:0 2px 12px rgba(0,0,0,0.3);transition:all 0.3s ease;">'
@@ -7872,6 +7872,10 @@ function tD(defi) {
   var lang = (typeof V2_LANG !== 'undefined') ? V2_LANG : 'fr';
   if (lang === 'fr' || !DEFIS_I18N[lang] || !DEFIS_I18N[lang][defi.id]) return tD(defi);
   return DEFIS_I18N[lang][defi.id];
+}
+function _dateLocale() {
+  var lang = (typeof V2_LANG !== 'undefined') ? V2_LANG : 'fr';
+  return lang === 'en' ? 'en-US' : lang === 'ar' ? 'ar' : 'fr-FR';
 }
 function isSilenceDay() {
   var d = localStorage.getItem('niyyah_silence_day');
@@ -8790,7 +8794,7 @@ function openRegardeJournal() {
     var html = '';
     entries.forEach(function(e) {
       var d = new Date(e.date);
-      var dateStr = d.toLocaleDateString('fr-FR', { day:'numeric', month:'short' }) + ' · ' + d.toLocaleTimeString('fr-FR', { hour:'2-digit', minute:'2-digit' });
+      var dateStr = d.toLocaleDateString(_dateLocale(), { day:'numeric', month:'short' }) + ' · ' + d.toLocaleTimeString(_dateLocale(), { hour:'2-digit', minute:'2-digit' });
       var thumb = e.photo ? '<img src="' + e.photo + '" style="width:60px;height:60px;border-radius:10px;object-fit:cover;flex-shrink:0;">' : '<div style="width:60px;height:60px;border-radius:10px;background:rgba(200,168,75,0.08);flex-shrink:0;"></div>';
       var star = e.bookmark ? '<div style="position:absolute;top:8px;right:8px;color:#D4AF37;font-size:14px;">★</div>' : '';
       html += '<div onclick="openRegardeDetail(\'' + e.id + '\')" style="display:flex;gap:12px;align-items:center;padding:12px;background:rgba(200,168,75,0.03);border:1px solid rgba(200,168,75,0.1);border-radius:12px;margin-bottom:8px;cursor:pointer;position:relative;">'
@@ -8818,7 +8822,7 @@ function openRegardeDetail(id) {
   var content = document.getElementById('regarde-detail-content');
   if (!overlay || !content) return;
   var d = new Date(entry.date);
-  var dateStr = d.toLocaleDateString('fr-FR', { weekday:'long', day:'numeric', month:'long' }) + ' · ' + d.toLocaleTimeString('fr-FR', { hour:'2-digit', minute:'2-digit' });
+  var dateStr = d.toLocaleDateString(_dateLocale(), { weekday:'long', day:'numeric', month:'long' }) + ' · ' + d.toLocaleTimeString(_dateLocale(), { hour:'2-digit', minute:'2-digit' });
   var photoHtml = entry.photo ? '<img src="' + entry.photo + '" style="width:100%;border-radius:14px;margin-bottom:20px;">' : '';
   var starIcon = entry.bookmark ? '★' : '☆';
   var noteText = entry.note || '';
@@ -8952,7 +8956,7 @@ function renderNiyyahJournalList(entries) {
   var html = '';
   entries.forEach(function(e) {
     var d = new Date(e.date);
-    var dateStr = d.toLocaleDateString('fr-FR', { day:'numeric', month:'short' }) + ' · ' + d.toLocaleTimeString('fr-FR', { hour:'2-digit', minute:'2-digit' });
+    var dateStr = d.toLocaleDateString(_dateLocale(), { day:'numeric', month:'short' }) + ' · ' + d.toLocaleTimeString(_dateLocale(), { hour:'2-digit', minute:'2-digit' });
     var thumb = e.photo ? '<img src="' + e.photo + '" style="width:60px;height:60px;border-radius:10px;object-fit:cover;flex-shrink:0;">' : '<div style="width:60px;height:60px;border-radius:10px;background:rgba(200,168,75,0.08);flex-shrink:0;"></div>';
     html += '<div onclick="openNiyyahDetail(\'' + e.id + '\')" style="display:flex;gap:12px;align-items:center;padding:12px;background:rgba(200,168,75,0.03);border:1px solid rgba(200,168,75,0.1);border-radius:12px;margin-bottom:8px;cursor:pointer;">'
       + thumb
@@ -8971,7 +8975,7 @@ function openNiyyahDetail(id) {
   var content = document.getElementById('niyyah-detail-content');
   if (!overlay || !content) return;
   var d = new Date(entry.date);
-  var dateStr = d.toLocaleDateString('fr-FR', { weekday:'long', day:'numeric', month:'long' }) + ' · ' + d.toLocaleTimeString('fr-FR', { hour:'2-digit', minute:'2-digit' });
+  var dateStr = d.toLocaleDateString(_dateLocale(), { weekday:'long', day:'numeric', month:'long' }) + ' · ' + d.toLocaleTimeString(_dateLocale(), { hour:'2-digit', minute:'2-digit' });
   var photoHtml = entry.photo ? '<img src="' + entry.photo + '" style="width:100%;border-radius:14px;margin-bottom:20px;">' : '';
   content.innerHTML = photoHtml
     + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-style:italic;color:#D4AF37;line-height:1.6;text-align:center;margin-bottom:12px;">' + (entry.intention || '') + '</div>'
