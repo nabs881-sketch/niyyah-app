@@ -1461,44 +1461,44 @@ function checkLevelCompletion(levelId) {
 const LEVEL_MESSAGES = {
   1: {
     stars: "🌱",
-    eyebrow: "Niveau I — Reconnexion",
+    eyebrow: t('lvl_eye_1'),
     title: "MashaAllah !",
-    arabic: "إِنَّ اللَّهَ مَعَ الصَّابِرِينَ",
-    hadith: "Allah est avec les patients.",
-    sub: "Tu as posé les <strong>premières pierres</strong> de ton chemin vers Allah. Chaque retour est une victoire.",
+    arabic: "\u0625\u0650\u0646\u0651\u064E \u0627\u0644\u0644\u0651\u064E\u0647\u064E \u0645\u064E\u0639\u064E \u0627\u0644\u0635\u0651\u064E\u0627\u0628\u0650\u0631\u0650\u064A\u0646\u064E",
+    hadith: t('lvl_hadith_1'),
+    sub: t('lvl_sub_1'),
     color: "#87A96B",
     glow: "rgba(135,169,107,0.3)",
     icon: "🌱"
   },
   2: {
     stars: "🕌",
-    eyebrow: "Niveau II — Discipline",
+    eyebrow: t('lvl_eye_2'),
     title: "SubhanAllah !",
-    arabic: "وَاسْتَعِينُوا بِالصَّبْرِ وَالصَّلَاةِ",
-    hadith: "Cherchez l\'aide dans la patience et la prière.",
-    sub: "La régularité est une forme d\'amour envers Allah. Ton cœur <strong>s\'ancre</strong> dans la pratique.",
+    arabic: "\u0648\u064E\u0627\u0633\u0652\u062A\u064E\u0639\u0650\u064A\u0646\u064F\u0648\u0627 \u0628\u0650\u0627\u0644\u0635\u0651\u064E\u0628\u0652\u0631\u0650 \u0648\u064E\u0627\u0644\u0635\u0651\u064E\u0644\u0627\u0629\u0650",
+    hadith: t('lvl_hadith_2'),
+    sub: t('lvl_sub_2'),
     color: "#D4AF37",
     glow: "rgba(212,175,55,0.3)",
     icon: "🕌"
   },
   3: {
     stars: "✦",
-    eyebrow: "Niveau III — Excellence",
+    eyebrow: t('lvl_eye_3'),
     title: "Alhamdulillah !",
-    arabic: "إِنَّ اللَّهَ يُحِبُّ إِذَا عَمِلَ أَحَدُكُمْ عَمَلًا أَنْ يُتْقِنَهُ",
-    hadith: "Allah aime que lorsque l\'un de vous fait une action, il l\'accomplisse avec excellence.",
-    sub: "L\'Ihsan — faire le bien comme si tu voyais Allah. Tu entres dans le <strong>cercle de la maîtrise</strong>.",
+    arabic: "\u0625\u0650\u0646\u0651\u064E \u0627\u0644\u0644\u0651\u064E\u0647\u064E \u064A\u064F\u062D\u0650\u0628\u0651\u064F \u0625\u0650\u0630\u0627 \u0639\u064E\u0645\u0650\u0644\u064E \u0623\u064E\u062D\u064E\u062F\u064F\u0643\u064F\u0645\u0652 \u0639\u064E\u0645\u064E\u0644\u064B\u0627 \u0623\u064E\u0646\u0652 \u064A\u064F\u062A\u0652\u0642\u0650\u0646\u064E\u0647\u064F",
+    hadith: t('lvl_hadith_3'),
+    sub: t('lvl_sub_3'),
     color: "#E9C46A",
     glow: "rgba(233,196,106,0.35)",
     icon: "⚡"
   },
   4: {
     stars: "☀️",
-    eyebrow: "Niveau IV — Lumière",
+    eyebrow: t('lvl_eye_4'),
     title: "Allahu Akbar !",
-    arabic: "اللَّهُ نُورُ السَّمَاوَاتِ وَالْأَرْضِ",
-    hadith: "Allah est la Lumière des cieux et de la terre.",
-    sub: "Tu rayonnes. Ton chemin s\'est transformé en <strong>lumière pour les autres</strong>. Que Allah accepte.",
+    arabic: "\u0627\u0644\u0644\u0651\u064E\u0647\u064F \u0646\u064F\u0648\u0631\u064F \u0627\u0644\u0633\u0651\u064E\u0645\u064E\u0627\u0648\u0627\u062A\u0650 \u0648\u064E\u0627\u0644\u0623\u064E\u0631\u0652\u0636\u0650",
+    hadith: t('lvl_hadith_4'),
+    sub: t('lvl_sub_4'),
     color: "#FFD700",
     glow: "rgba(255,215,0,0.4)",
     icon: "☀️"
@@ -4028,10 +4028,10 @@ function closeBilanFeedback() {
 }
 function setBilanSoir(choix) {
   closeBilanSoir();
-  const data = {
-    distraction: { icon: '😶‍🌫️', title: 'Allah est Pardonneur.', msg: 'La ghafla (distraction) est humaine. Demain est une nouvelle chance. Chaque lever du soleil est une porte ouverte.' },
-    effort:      { icon: '🌤️',  title: 'Continue, inch\'Allah !', msg: 'Chaque pas compte. Allah aime celui qui revient, encore et encore. La constance est plus aimée d\'Allah que l\'intensité.' },
-    sincerite:   { icon: '☀️',  title: 'Barakallahu fik.', msg: 'Un cœur sincère aujourd\'hui est la plus belle sadaqa. Que Allah te maintienne dans cet état. Alhamdulillah.' }
+  var data = {
+    distraction: { icon: '\ud83d\ude36\u200d\ud83c\udf2b\ufe0f', title: t('bilan_fb_distraction_t'), msg: t('bilan_fb_distraction_m') },
+    effort:      { icon: '\ud83c\udf24\ufe0f',  title: t('bilan_fb_effort_t'), msg: t('bilan_fb_effort_m') },
+    sincerite:   { icon: '\u2600\ufe0f',  title: t('bilan_fb_sincerite_t'), msg: t('bilan_fb_sincerite_m') }
   };
   const d = data[choix];
   document.getElementById('bilanFeedbackIcon').textContent = d.icon;
@@ -4270,6 +4270,9 @@ function showTawba() {
     msg = normals[Math.floor(Math.random() * normals.length)];
   }
 
+  // Translate tawba message
+  var _tIdx = TAWBA_MESSAGES.indexOf(msg);
+  msg = tTawba(msg, _tIdx >= 0 ? _tIdx : 0);
   // Appliquer la couleur du message à l'interface
   const accentColor = msg.color || '#D4AF37';
   document.documentElement.style.setProperty('--main-color', accentColor);
@@ -5636,6 +5639,14 @@ const V2_I18N = {
     section_deep_prayer: 'Approfondissement de la pri\u00e8re', section_dhikr: 'Dhikr du c\u0153ur', section_duas: 'Dou\u00e2as intimes',
     section_study: '\u00c9tude islamique', section_quran: 'Immersion coranique', section_advanced: 'Pratiques avanc\u00e9es',
     section_summit: 'Sommet de l\u2019adoration', section_radiance: 'Rayonnement vers les autres', section_ummah: 'Conscience de l\u2019Oumma',
+    bilan_fb_distraction_t: 'Allah est Pardonneur.', bilan_fb_distraction_m: 'La ghafla (distraction) est humaine. Demain est une nouvelle chance. Chaque lever du soleil est une porte ouverte.',
+    bilan_fb_effort_t: 'Continue, inch\u2019Allah !', bilan_fb_effort_m: 'Chaque pas compte. Allah aime celui qui revient, encore et encore. La constance est plus aim\u00e9e d\u2019Allah que l\u2019intensit\u00e9.',
+    bilan_fb_sincerite_t: 'Barakallahu fik.', bilan_fb_sincerite_m: 'Un c\u0153ur sinc\u00e8re aujourd\u2019hui est la plus belle sadaqa. Que Allah te maintienne dans cet \u00e9tat. Alhamdulillah.',
+    lvl_eye_1: 'Niveau I \u2014 Reconnexion', lvl_eye_2: 'Niveau II \u2014 Discipline', lvl_eye_3: 'Niveau III \u2014 Excellence', lvl_eye_4: 'Niveau IV \u2014 Lumi\u00e8re',
+    lvl_hadith_1: 'Allah est avec les patients.', lvl_hadith_2: 'Cherchez l\u2019aide dans la patience et la pri\u00e8re.', lvl_hadith_3: 'Allah aime que l\u2019action soit accomplie avec excellence.', lvl_hadith_4: 'Allah est la Lumi\u00e8re des cieux et de la terre.',
+    lvl_sub_1: 'Tu as pos\u00e9 les <strong>premi\u00e8res pierres</strong> de ton chemin vers Allah.', lvl_sub_2: 'Ton c\u0153ur <strong>s\u2019ancre</strong> dans la pratique.', lvl_sub_3: 'L\u2019Ihsan \u2014 tu entres dans le <strong>cercle de la ma\u00eetrise</strong>.', lvl_sub_4: 'Tu rayonnes en <strong>lumi\u00e8re pour les autres</strong>. Que Allah accepte.',
+    intent_allah: 'Pour Allah', intent_engage: 'Fid\u00e9lit\u00e9', intent_rebuild: 'Renaissance', intent_grateful: 'Gratitude',
+    finjournee_title: 'Quelles 3 bont\u00e9s Allah t\u2019a-t-Il permis d\u2019accomplir aujourd\u2019hui ?',
     btn_open: 'OUVRIR ›', btn_complete: '✓ COMPLET', btn_skip_level: 'Continuer vers Niveau ',
     // Night companion
     night_title: 'Quelle pensée ferme ta journée ?', night_placeholder: 'Écris ta pensée du soir...', night_send: 'ENVOYER', night_sagesse: 'SAGESSE DE LA NUIT',
@@ -5857,6 +5868,14 @@ const V2_I18N = {
     section_deep_prayer: 'Deepening the prayer', section_dhikr: 'Dhikr of the heart', section_duas: 'Intimate du\u2019as',
     section_study: 'Islamic study', section_quran: 'Quranic immersion', section_advanced: 'Advanced practices',
     section_summit: 'Summit of worship', section_radiance: 'Radiance toward others', section_ummah: 'Ummah awareness',
+    bilan_fb_distraction_t: 'Allah is the Forgiving.', bilan_fb_distraction_m: 'Heedlessness is human. Tomorrow is a new chance. Every sunrise is an open door.',
+    bilan_fb_effort_t: 'Keep going, insha\u2019Allah!', bilan_fb_effort_m: 'Every step counts. Allah loves those who return, again and again. Consistency is more beloved to Allah than intensity.',
+    bilan_fb_sincerite_t: 'Barakallahu fik.', bilan_fb_sincerite_m: 'A sincere heart today is the finest sadaqa. May Allah keep you in this state. Alhamdulillah.',
+    lvl_eye_1: 'Level I \u2014 Reconnection', lvl_eye_2: 'Level II \u2014 Discipline', lvl_eye_3: 'Level III \u2014 Excellence', lvl_eye_4: 'Level IV \u2014 Light',
+    lvl_hadith_1: 'Allah is with the patient.', lvl_hadith_2: 'Seek help through patience and prayer.', lvl_hadith_3: 'Allah loves that when one of you does something, he does it with excellence.', lvl_hadith_4: 'Allah is the Light of the heavens and the earth.',
+    lvl_sub_1: 'You have laid the <strong>first stones</strong> of your path toward Allah.', lvl_sub_2: 'Your heart is <strong>anchoring</strong> itself in practice.', lvl_sub_3: 'Ihsan \u2014 you enter the <strong>circle of mastery</strong>.', lvl_sub_4: 'You radiate as <strong>light for others</strong>. May Allah accept.',
+    intent_allah: 'For Allah', intent_engage: 'Fidelity', intent_rebuild: 'Renewal', intent_grateful: 'Gratitude',
+    finjournee_title: 'What 3 good deeds did Allah allow you to accomplish today?',
     btn_open: 'OPEN ›', btn_complete: '✓ COMPLETE', btn_skip_level: 'Continue to Level ',
     night_title: 'What thought closes your day?', night_placeholder: 'Write your evening thought...', night_send: 'SEND', night_sagesse: 'NIGHT WISDOM',
     notif_unsupported: 'Notifications are not supported on this device', notif_enabled: '✦ Reminders enabled — JazakAllahu khairan!', notif_later: 'You can enable them later in settings', notif_disabled: '🔕 Reminders disabled',
@@ -6051,6 +6070,14 @@ const V2_I18N = {
     section_deep_prayer: '\u062A\u064E\u0639\u0652\u0645\u0650\u064A\u0642\u064F \u0627\u0644\u0635\u0651\u064E\u0644\u0627\u0629', section_dhikr: '\u0630\u0650\u0643\u0652\u0631\u064F \u0627\u0644\u0642\u064E\u0644\u0652\u0628', section_duas: '\u062F\u064F\u0639\u0627\u0621\u064C \u062E\u0627\u0635\u0651',
     section_study: '\u0627\u0644\u062F\u0651\u0650\u0631\u0627\u0633\u064E\u0629\u064F \u0627\u0644\u0625\u0650\u0633\u0652\u0644\u0627\u0645\u0650\u064A\u0651\u064E\u0629', section_quran: '\u0627\u0644\u063A\u064E\u0648\u0652\u0635\u064F \u0641\u0650\u064A \u0627\u0644\u0642\u064F\u0631\u0652\u0622\u0646', section_advanced: '\u0639\u0650\u0628\u0627\u062F\u0627\u062A\u064C \u0645\u064F\u062A\u064E\u0642\u064E\u062F\u0651\u0650\u0645\u064E\u0629',
     section_summit: '\u0642\u0650\u0645\u0651\u064E\u0629\u064F \u0627\u0644\u0639\u0650\u0628\u0627\u062F\u064E\u0629', section_radiance: '\u0627\u0644\u0625\u0650\u0634\u0652\u0639\u0627\u0639\u064F \u0646\u064E\u062D\u0652\u0648\u064E \u0627\u0644\u0622\u062E\u064E\u0631\u0650\u064A\u0646', section_ummah: '\u0627\u0644\u0648\u064E\u0639\u0652\u064A\u064F \u0628\u0650\u0627\u0644\u0623\u064F\u0645\u0651\u064E\u0629',
+    bilan_fb_distraction_t: '\u0627\u0644\u0644\u0651\u064E\u0647\u064F \u063A\u064E\u0641\u064F\u0648\u0631\u064C.', bilan_fb_distraction_m: '\u0627\u0644\u063A\u064E\u0641\u0652\u0644\u064E\u0629\u064F \u0628\u064E\u0634\u064E\u0631\u0650\u064A\u0651\u064E\u0629. \u063A\u064E\u062F\u064B\u0627 \u0641\u064F\u0631\u0652\u0635\u064E\u0629\u064C \u062C\u064E\u062F\u0650\u064A\u062F\u064E\u0629.',
+    bilan_fb_effort_t: '\u0648\u0627\u0635\u0650\u0644\u0652 \u0625\u0650\u0646\u0652 \u0634\u0627\u0621\u064E \u0627\u0644\u0644\u0651\u064E\u0647!', bilan_fb_effort_m: '\u0643\u064F\u0644\u0651\u064F \u062E\u064F\u0637\u0652\u0648\u064E\u0629\u064D \u0645\u064E\u062D\u0652\u0633\u064F\u0648\u0628\u064E\u0629. \u0627\u0644\u0645\u064F\u062F\u0627\u0648\u064E\u0645\u064E\u0629\u064F \u0623\u064E\u062D\u064E\u0628\u0651\u064F \u0625\u0650\u0644\u064E\u0649 \u0627\u0644\u0644\u0651\u064E\u0647.',
+    bilan_fb_sincerite_t: '\u0628\u0627\u0631\u064E\u0643\u064E \u0627\u0644\u0644\u0651\u064E\u0647\u064F \u0641\u0650\u064A\u0643.', bilan_fb_sincerite_m: '\u0642\u064E\u0644\u0652\u0628\u064C \u0635\u0627\u062F\u0650\u0642\u064C \u0627\u0644\u064A\u064E\u0648\u0652\u0645 \u0623\u064E\u062C\u0652\u0645\u064E\u0644\u064F \u0635\u064E\u062F\u064E\u0642\u064E\u0629. \u0627\u0644\u062D\u064E\u0645\u0652\u062F\u064F \u0644\u0650\u0644\u0651\u064E\u0647.',
+    lvl_eye_1: '\u0627\u0644\u0645\u064F\u0633\u0652\u062A\u064E\u0648\u064E\u0649 \u0661 \u2014 \u0627\u0644\u0639\u064E\u0648\u0652\u062F\u064E\u0629', lvl_eye_2: '\u0627\u0644\u0645\u064F\u0633\u0652\u062A\u064E\u0648\u064E\u0649 \u0662 \u2014 \u0627\u0644\u0627\u0646\u0652\u0636\u0650\u0628\u0627\u0637', lvl_eye_3: '\u0627\u0644\u0645\u064F\u0633\u0652\u062A\u064E\u0648\u064E\u0649 \u0663 \u2014 \u0627\u0644\u0625\u0650\u062A\u0652\u0642\u0627\u0646', lvl_eye_4: '\u0627\u0644\u0645\u064F\u0633\u0652\u062A\u064E\u0648\u064E\u0649 \u0664 \u2014 \u0627\u0644\u0646\u0651\u064F\u0648\u0631',
+    lvl_hadith_1: '\u0625\u0650\u0646\u0651\u064E \u0627\u0644\u0644\u0651\u064E\u0647\u064E \u0645\u064E\u0639\u064E \u0627\u0644\u0635\u0651\u064E\u0627\u0628\u0650\u0631\u0650\u064A\u0646.', lvl_hadith_2: '\u0627\u0633\u0652\u062A\u064E\u0639\u0650\u064A\u0646\u064F\u0648\u0627 \u0628\u0650\u0627\u0644\u0635\u0651\u064E\u0628\u0652\u0631\u0650 \u0648\u0627\u0644\u0635\u0651\u064E\u0644\u0627\u0629.', lvl_hadith_3: '\u0627\u0644\u0644\u0651\u064E\u0647\u064F \u064A\u064F\u062D\u0650\u0628\u0651\u064F \u0625\u0650\u0630\u0627 \u0639\u064E\u0645\u0650\u0644\u064E \u0623\u064E\u062D\u064E\u062F\u064F\u0643\u064F\u0645 \u0639\u064E\u0645\u064E\u0644\u064B\u0627 \u0623\u064E\u0646\u0652 \u064A\u064F\u062A\u0652\u0642\u0650\u0646\u064E\u0647.', lvl_hadith_4: '\u0627\u0644\u0644\u0651\u064E\u0647\u064F \u0646\u064F\u0648\u0631\u064F \u0627\u0644\u0633\u0651\u064E\u0645\u0627\u0648\u0627\u062A\u0650 \u0648\u0627\u0644\u0623\u064E\u0631\u0652\u0636.',
+    lvl_sub_1: '\u0648\u064E\u0636\u064E\u0639\u0652\u062A\u064E <strong>\u0627\u0644\u0623\u064F\u0633\u064F\u0633\u064E \u0627\u0644\u0623\u064F\u0648\u0644\u064E\u0649</strong> \u0641\u0650\u064A \u0637\u064E\u0631\u0650\u064A\u0642\u0650\u0643.', lvl_sub_2: '\u0642\u064E\u0644\u0652\u0628\u064F\u0643 <strong>\u064A\u064E\u062A\u064E\u0631\u064E\u0633\u0651\u064E\u062E</strong> \u0641\u0650\u064A \u0627\u0644\u0639\u0650\u0628\u0627\u062F\u064E\u0629.', lvl_sub_3: '\u0627\u0644\u0625\u0650\u062D\u0652\u0633\u0627\u0646 \u2014 \u062F\u064E\u062E\u064E\u0644\u0652\u062A\u064E <strong>\u062F\u0627\u0626\u0650\u0631\u064E\u0629\u064E \u0627\u0644\u0625\u0650\u062A\u0652\u0642\u0627\u0646</strong>.', lvl_sub_4: '\u062A\u064F\u0634\u0650\u0639\u0651\u064F <strong>\u0646\u064F\u0648\u0631\u064B\u0627 \u0644\u0650\u0644\u0622\u062E\u064E\u0631\u0650\u064A\u0646</strong>. \u062A\u064E\u0642\u064E\u0628\u0651\u064E\u0644\u064E \u0627\u0644\u0644\u0651\u064E\u0647.',
+    intent_allah: '\u0644\u0650\u0644\u0651\u064E\u0647', intent_engage: '\u0648\u064E\u0641\u0627\u0621', intent_rebuild: '\u062A\u064E\u062C\u0652\u062F\u0650\u064A\u062F', intent_grateful: '\u0634\u064F\u0643\u0652\u0631',
+    finjournee_title: '\u0645\u0627 \u0627\u0644\u062E\u064E\u064A\u0652\u0631\u0627\u062A\u064F \u0627\u0644\u062B\u0651\u064E\u0644\u0627\u062B \u0627\u0644\u0651\u064E\u062A\u0650\u064A \u0623\u064E\u0639\u0627\u0646\u064E\u0643\u064E \u0627\u0644\u0644\u0651\u064E\u0647\u064F \u0639\u064E\u0644\u064E\u064A\u0652\u0647\u0627 \u0627\u0644\u064A\u064E\u0648\u0652\u0645\u061F',
     btn_open: '', btn_complete: '', btn_skip_level: '',
     night_title: 'مَا الْفِكْرَةُ الَّتِي تَخْتِمُ بِهَا يَوْمَكَ؟', night_placeholder: 'اكْتُبْ فِكْرَتَكَ الْمَسَائِيَّةَ...', night_send: 'إِرْسَالٌ', night_sagesse: 'حِكْمَةُ اللَّيْلِ',
     notif_unsupported: 'الْإِشْعَارَاتُ غَيْرُ مَدْعُومَةٍ عَلَى هَذَا الْجِهَازِ', notif_enabled: '✦ تَمَّ تَفْعِيلُ التَّذْكِيرَاتِ — جَزَاكَ اللَّهُ خَيْرًا!', notif_later: 'يُمْكِنُكَ تَفْعِيلُهَا لَاحِقًا فِي الْإِعْدَادَاتِ', notif_disabled: '🔕 تَمَّ تَعْطِيلُ التَّذْكِيرَاتِ',
@@ -6094,10 +6121,10 @@ function t(key) { try { return (V2_I18N[V2_LANG] || V2_I18N.fr)[key] || key; } c
 
 /* ══ INFUSION D'INTENTION ══ */
 const intentionThemes = {
-  "se rapprocher d'Allah":    { color: '#D4AF37', rgb: '212,175,55',  label: 'Pour Allah' },
-  "tenir mes engagements":    { color: '#A67C00', rgb: '166,124,0',   label: 'Fidélité' },
-  "me reconstruire":          { color: '#7A9482', rgb: '122,148,130', label: 'Renaissance' },
-  "être reconnaissant":       { color: '#E9C46A', rgb: '233,196,106', label: 'Gratitude' },
+  "se rapprocher d'Allah":    { color: '#D4AF37', rgb: '212,175,55',  label: t('intent_allah') },
+  "tenir mes engagements":    { color: '#A67C00', rgb: '166,124,0',   label: t('intent_engage') },
+  "me reconstruire":          { color: '#7A9482', rgb: '122,148,130', label: t('intent_rebuild') },
+  "\u00eatre reconnaissant":       { color: '#E9C46A', rgb: '233,196,106', label: t('intent_grateful') },
 };
 
 function getIntentionTheme(intention) {
@@ -6293,6 +6320,7 @@ function v2ApplyI18nHTML() {
   _s('i18n-journal-regards-title', 'journal_regards_title');
   _s('i18n-link-see-regards', 'link_see_regards');
   _s('i18n-link-see-niyyah', 'link_see_niyyah');
+  _s('i18n-finjournee-title', 'finjournee_title');
   _p('niyyah-journal-search', 'journal_search');
   _p('night-thought-input', 'night_placeholder');
   _s('i18n-info-close', 'modal_close');
@@ -7563,6 +7591,30 @@ function tI(item, field) {
   var map = ITEMS_I18N[lang];
   if (map && map[item.id] && map[item.id][field === 'label' ? 'l' : 's']) return map[item.id][field === 'label' ? 'l' : 's'];
   return item[field] || '';
+}
+var TAWBA_I18N = {
+  en: [
+    {title:'The door was open.',sub:'You came back. That\u2019s all that matters.',verse:'Say: O My servants who have transgressed, do not despair of the mercy of Allah.',ref:'Quran 39:53'},
+    {title:'Every return is beloved.',sub:'More beloved to Allah than a thousand perfect starts. You haven\u2019t failed \u2014 you\u2019re on the way.',verse:'Allah rejoices more at the repentance of His servant than one who finds his lost mount.',ref:'Bukhari 6309'},
+    {title:'Your path was waiting.',sub:'Absence has not erased what you built. It was waiting where you left it.',verse:'Every son of Adam makes mistakes. The best are those who return.',ref:'Tirmidhi 2499'},
+    {title:'Ibn Qayyim al-Jawziyya',sub:'The heart that returns is more beautiful than one that never left \u2014 for it knows the value of the path.',verse:'Sincere regret is half of repentance. The other half is not stopping.',ref:'Madarij al-Salikin'},
+    {title:'Al-Ghazali',sub:'It is not the fall that defines the believer. It is how he rises \u2014 gently, without shame.',verse:'The door of repentance is open until the sun rises from the West.',ref:'Ihya Ulum al-Din'},
+    {title:'Welcome back.',sub:'Every day is a new chance to love Allah. Today is that day.',verse:'Allah extends His hand at night for the repentance of the one who sinned during the day.',ref:'Muslim 2759'}
+  ],
+  ar: [
+    {title:'\u0627\u0644\u0628\u0627\u0628\u064F \u0643\u0627\u0646\u064E \u0645\u064E\u0641\u0652\u062A\u064F\u0648\u062D\u064B\u0627.',sub:'\u0639\u064F\u062F\u0652\u062A\u064E. \u0647\u064E\u0630\u0627 \u0645\u0627 \u064A\u064E\u0647\u064F\u0645\u0651.',verse:'\u0642\u064F\u0644\u0652 \u064A\u0627 \u0639\u0650\u0628\u0627\u062F\u0650\u064A\u064E \u0627\u0644\u0651\u064E\u0630\u0650\u064A\u0646\u064E \u0623\u064E\u0633\u0652\u0631\u064E\u0641\u064F\u0648\u0627 \u0639\u064E\u0644\u064E\u0649 \u0623\u064E\u0646\u0652\u0641\u064F\u0633\u0650\u0647\u0650\u0645\u0652 \u0644\u0627 \u062A\u064E\u0642\u0652\u0646\u064E\u0637\u064F\u0648\u0627 \u0645\u0650\u0646\u0652 \u0631\u064E\u062D\u0652\u0645\u064E\u0629\u0650 \u0627\u0644\u0644\u0651\u064E\u0647.',ref:'\u0627\u0644\u0632\u0645\u0631 39:53'},
+    {title:'\u0643\u064F\u0644\u0651\u064F \u0639\u064E\u0648\u0652\u062F\u064E\u0629\u064D \u0645\u064E\u062D\u0652\u0628\u064F\u0648\u0628\u064E\u0629.',sub:'\u0623\u064E\u062D\u064E\u0628\u0651\u064F \u0625\u0650\u0644\u064E\u0649 \u0627\u0644\u0644\u0651\u064E\u0647 \u0645\u0650\u0646\u0652 \u0623\u064E\u0644\u0652\u0641\u0650 \u0628\u0650\u062F\u0627\u064A\u064E\u0629\u064D \u0645\u064F\u062B\u0627\u0644\u0650\u064A\u0651\u064E\u0629.',verse:'\u0644\u064E\u0644\u0651\u064E\u0647\u064F \u0623\u064E\u0641\u0652\u0631\u064E\u062D\u064F \u0628\u0650\u062A\u064E\u0648\u0652\u0628\u064E\u0629\u0650 \u0639\u064E\u0628\u0652\u062F\u0650\u0647 \u0645\u0650\u0645\u0651\u064E\u0646\u0652 \u0648\u064E\u062C\u064E\u062F\u064E \u0631\u0627\u062D\u0650\u0644\u064E\u062A\u064E\u0647.',ref:'\u0627\u0644\u0628\u062E\u0627\u0631\u064A 6309'},
+    {title:'\u0637\u064E\u0631\u0650\u064A\u0642\u064F\u0643 \u0643\u0627\u0646\u064E \u0628\u0650\u0627\u0646\u0652\u062A\u0650\u0638\u0627\u0631\u0650\u0643.',sub:'\u0627\u0644\u063A\u0650\u064A\u0627\u0628\u064F \u0644\u064E\u0645\u0652 \u064A\u064E\u0645\u0652\u062D\u064F \u0645\u0627 \u0628\u064E\u0646\u064E\u064A\u0652\u062A.',verse:'\u0643\u064F\u0644\u0651\u064F \u0627\u0628\u0652\u0646\u0650 \u0622\u062F\u064E\u0645\u064E \u062E\u064E\u0637\u0651\u0627\u0621. \u0648\u062E\u064E\u064A\u0652\u0631\u064F\u0647\u064F\u0645\u0652 \u0627\u0644\u062A\u0651\u064E\u0648\u0651\u0627\u0628\u064F\u0648\u0646.',ref:'\u0627\u0644\u062A\u0631\u0645\u0630\u064A 2499'},
+    {title:'\u0627\u0628\u0652\u0646\u064F \u0627\u0644\u0642\u064E\u064A\u0651\u0650\u0645',sub:'\u0627\u0644\u0642\u064E\u0644\u0652\u0628\u064F \u0627\u0644\u0639\u0627\u0626\u0650\u062F\u064F \u0623\u064E\u062C\u0652\u0645\u064E\u0644\u064F \u0645\u0650\u0646\u064E \u0627\u0644\u0651\u064E\u0630\u0650\u064A \u0644\u064E\u0645\u0652 \u064A\u064E\u063A\u0650\u0628\u0652.',verse:'\u0627\u0644\u0646\u0651\u064E\u062F\u064E\u0645\u064F \u0646\u0650\u0635\u0652\u0641\u064F \u0627\u0644\u062A\u0651\u064E\u0648\u0652\u0628\u064E\u0629.',ref:'\u0645\u064E\u062F\u0627\u0631\u0650\u062C \u0627\u0644\u0633\u0651\u0627\u0644\u0650\u0643\u0650\u064A\u0646'},
+    {title:'\u0627\u0644\u063A\u064E\u0632\u0627\u0644\u0650\u064A',sub:'\u0644\u064E\u064A\u0652\u0633\u064E \u0627\u0644\u0633\u0651\u064F\u0642\u064F\u0648\u0637\u064F \u0645\u0627 \u064A\u064F\u0639\u064E\u0631\u0651\u0650\u0641\u064F \u0627\u0644\u0645\u064F\u0624\u0652\u0645\u0650\u0646\u064E. \u0628\u064E\u0644\u0652 \u0643\u064E\u064A\u0652\u0641\u064E \u064A\u064E\u0646\u0652\u0647\u064E\u0636.',verse:'\u0628\u0627\u0628\u064F \u0627\u0644\u062A\u0651\u064E\u0648\u0652\u0628\u064E\u0629\u0650 \u0645\u064E\u0641\u0652\u062A\u064F\u0648\u062D\u064C \u062D\u064E\u062A\u0651\u064E\u0649 \u062A\u064E\u0637\u0652\u0644\u064F\u0639\u064E \u0627\u0644\u0634\u0651\u064E\u0645\u0652\u0633\u064F \u0645\u0650\u0646\u064E \u0627\u0644\u0645\u064E\u063A\u0652\u0631\u0650\u0628.',ref:'\u0625\u0650\u062D\u0652\u064A\u0627\u0621 \u0639\u064F\u0644\u064F\u0648\u0645 \u0627\u0644\u062F\u0651\u0650\u064A\u0646'},
+    {title:'\u0623\u064E\u0647\u0652\u0644\u064B\u0627 \u0628\u0650\u0639\u064E\u0648\u0652\u062F\u064E\u062A\u0650\u0643.',sub:'\u0643\u064F\u0644\u0651\u064F \u064A\u064E\u0648\u0652\u0645\u064D \u0641\u064F\u0631\u0652\u0635\u064E\u0629\u064C \u062C\u064E\u062F\u0650\u064A\u062F\u064E\u0629.',verse:'\u064A\u064E\u0628\u0652\u0633\u064F\u0637\u064F \u0627\u0644\u0644\u0651\u064E\u0647\u064F \u064A\u064E\u062F\u064E\u0647\u064F \u0628\u0650\u0627\u0644\u0644\u0651\u064E\u064A\u0652\u0644\u0650 \u0644\u0650\u064A\u064E\u062A\u064F\u0648\u0628\u064E \u0645\u064F\u0633\u0650\u064A\u0621\u064F \u0627\u0644\u0646\u0651\u064E\u0647\u0627\u0631.',ref:'\u0645\u0633\u0644\u0645 2759'}
+  ]
+};
+function tTawba(msg, idx) {
+  var lang = (typeof V2_LANG !== 'undefined') ? V2_LANG : 'fr';
+  if (lang === 'fr' || !TAWBA_I18N[lang] || !TAWBA_I18N[lang][idx]) return msg;
+  var tr = TAWBA_I18N[lang][idx];
+  return { title: tr.title, sub: tr.sub, verse: tr.verse, ref: tr.ref, color: msg.color, exclusive: msg.exclusive };
 }
 function isSilenceDay() {
   var d = localStorage.getItem('niyyah_silence_day');
