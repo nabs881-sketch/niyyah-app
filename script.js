@@ -8091,7 +8091,13 @@ function showFinJourneeActe3() {
   var el = document.getElementById('finjournee-a3');
   // Phase 1: pardon text
   setTimeout(function() {
-    el.innerHTML = 'Pardonne à ceux qui t\'ont blessé aujourd\'hui,<br>dans la mesure où tu le peux.<br><br>Demande pardon à Allah pour tes manquements.<br><br>Ferme les yeux.<br>Dors en paix.';
+    var _a3 = {
+      fr: 'Pardonne \u00e0 ceux qui t\u2019ont bless\u00e9 aujourd\u2019hui,<br>dans la mesure o\u00f9 tu le peux.<br><br>Demande pardon \u00e0 Allah pour tes manquements.<br><br>Ferme les yeux.<br>Dors en paix.',
+      en: 'Forgive those who hurt you today,<br>as much as you are able.<br><br>Ask Allah\u2019s forgiveness for your shortcomings.<br><br>Close your eyes.<br>Sleep in peace.',
+      ar: '\u0633\u0627\u0645\u0650\u062D\u0652 \u0645\u064E\u0646\u0652 \u0622\u0630\u0627\u0643\u064E \u0627\u0644\u064A\u064E\u0648\u0652\u0645\u060C<br>\u0628\u0650\u0642\u064E\u062F\u0652\u0631\u0650 \u0645\u0627 \u062A\u064E\u0633\u0652\u062A\u064E\u0637\u0650\u064A\u0639.<br><br>\u0627\u0633\u0652\u062A\u064E\u063A\u0652\u0641\u0650\u0631\u0650 \u0627\u0644\u0644\u0651\u064E\u0647\u064E \u0639\u064E\u0644\u064E\u0649 \u062A\u064E\u0642\u0652\u0635\u0650\u064A\u0631\u0650\u0643.<br><br>\u0623\u064E\u063A\u0652\u0644\u0650\u0642\u0652 \u0639\u064E\u064A\u0652\u0646\u064E\u064A\u0652\u0643.<br>\u0646\u064E\u0645\u0652 \u0628\u0650\u0633\u064E\u0644\u0627\u0645.'
+    };
+    var _l3 = (typeof V2_LANG !== 'undefined') ? V2_LANG : 'fr';
+    el.innerHTML = _a3[_l3] || _a3.fr;
     el.style.opacity = '1';
   }, 100);
   setTimeout(function() { el.style.opacity = '0'; }, 13100);
