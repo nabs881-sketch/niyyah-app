@@ -6742,7 +6742,7 @@ function v2GoSanctuaire() {
     if (!_silOv) {
       _silOv = document.createElement('div');
       _silOv.id = 'silence-overlay';
-      _silOv.style.cssText = 'position:absolute;inset:0;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 24px;background:var(--bg,#2C2E32);';
+      _silOv.style.cssText = 'position:fixed;inset:0;z-index:9999;width:100vw;height:100vh;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 24px;background:var(--bg,#2C2E32);';
       var _sp = _getPrenom();
       _silOv.innerHTML = '<img src="https://nabs881-sketch.github.io/niyyah-app/imageslogo.webp" alt="Niyyah" style="width:100px;height:auto;margin-bottom:24px;opacity:0.7;">'
         + '<div style="font-family:\'Scheherazade New\',serif;font-size:36px;color:#C8A84A;margin-bottom:16px;">\u0627\u0644\u0633\u0644\u0627\u0645 \u0639\u0644\u064A\u0643\u0645</div>'
