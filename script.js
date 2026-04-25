@@ -3477,12 +3477,13 @@ function renderWird() {
   const content = document.getElementById('wirdContent');
   if (!content) return;
   var _wirdArabicSession = {matin:'أَوْرَاد الصَّبَاح',soir:'أَوْرَاد الْمَسَاء'};
-  let html = '<div class="section-header"><div class="section-arabic">أَوْرَاد</div><div class="section-name">WIRD QUOTIDIEN</div><div class="section-line"></div></div>';
+  let html = '<div class="section-header"><div class="section-arabic">\u0623\u064E\u0648\u0652\u0631\u0627\u062F</div><div class="section-name">' + t('wird_daily') + '</div><div class="section-line"></div></div>';
   ['matin', 'soir'].forEach(session => {
     const s = WIRD_DATA[session];
     const done = s.items.filter(i => wirdState[i.id]).length;
     const pct = Math.round(done / s.items.length * 100);
-    html += `<div class="wird-session"><div class="section-header" style="padding:16px 4px 8px;"><div class="section-arabic" style="font-size:18px;">${_wirdArabicSession[session]}</div><div class="section-name">${s.title} · ${done}/${s.items.length}</div><div class="section-line"></div></div><div class="wird-session-bar"><div class="wird-session-bar-fill" style="width:${pct}%"></div></div>`;
+    var _wTitle = session === 'matin' ? t('wird_matin') : t('wird_soir');
+    html += `<div class="wird-session"><div class="section-header" style="padding:16px 4px 8px;"><div class="section-arabic" style="font-size:18px;">${_wirdArabicSession[session]}</div><div class="section-name">${_wTitle} · ${done}/${s.items.length}</div><div class="section-line"></div></div><div class="wird-session-bar"><div class="wird-session-bar-fill" style="width:${pct}%"></div></div>`;
     s.items.forEach(item => {
       const checked = !!wirdState[item.id];
       const audioData = item.audio ? JSON.stringify(item.audio) : null;
@@ -3494,7 +3495,7 @@ function renderWird() {
       const infoBtn = `<button class="btn-wird-info" aria-label="Détails" onclick="openInfoSheet('','','','',event)" data-label="${labelEsc}" data-arabic="${arabEsc}" data-phonetic="${phonEsc}" data-translation="${srcEsc}"><i>i</i></button>`;
       html += `<div class="wird-item${checked?' checked':''}" onclick="toggleWirdItem('${item.id}',event)"><div class="wird-check"><svg class="wird-check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="wird-body"><div class="wird-label">${tI(item,"label")}</div><div class="wird-sub">${tI(item,"sub")}</div><div class="wird-arabic">${item.arabic}</div></div><div class="wird-actions">${audioBtn}${infoBtn}</div></div>`;
     });
-    html += `<button class="wird-reset-btn" aria-label="Réinitialiser" onclick="resetWirdSession('${session}')">↺ Réinitialiser</button></div>`;
+    html += `<button class="wird-reset-btn" aria-label="${t('settings_reset')}" onclick="resetWirdSession('${session}')">\u21ba ${t('settings_reset')}</button></div>`;
   });
   content.innerHTML = html;
 }
@@ -5608,7 +5609,7 @@ const V2_I18N = {
     export_done: 'Backup export\u00e9 \u2713', import_done: 'Donn\u00e9es restaur\u00e9es \u2014 rechargement...',
     import_empty: 'Fichier vide', import_invalid: 'Fichier invalide',
     import_confirm: 'Restaurer {n} cl\u00e9s ? Les donn\u00e9es actuelles seront remplac\u00e9es.',
-    wird_matin: 'WIRD DU MATIN', wird_soir: 'WIRD DU SOIR',
+    wird_matin: 'WIRD DU MATIN', wird_soir: 'WIRD DU SOIR', wird_daily: 'WIRD QUOTIDIEN',
     wird_what: 'C\u2019est quoi le wird ?', wird_desc: 'Le wird est un ensemble d\u2019invocations quotidiennes tir\u00e9es du Coran et de la Sunnah, r\u00e9cit\u00e9es chaque matin apr\u00e8s Fajr et chaque soir apr\u00e8s Asr. Il prot\u00e8ge, purifie le c\u0153ur et rapproche d\u2019Allah.',
     prayer_fajr_sub: 'Pri\u00e8re de l\u2019aube', prayer_dhuhr_sub: 'Pri\u00e8re du milieu du jour', prayer_asr_sub: 'Pri\u00e8re de l\u2019apr\u00e8s-midi', prayer_maghrib_sub: 'Pri\u00e8re du coucher du soleil', prayer_isha_sub: 'Pri\u00e8re de la nuit',
     bilan_7j_title: 'Bilan des 7 derniers soirs',
@@ -5837,7 +5838,7 @@ const V2_I18N = {
     export_done: 'Backup exported \u2713', import_done: 'Data restored \u2014 reloading...',
     import_empty: 'Empty file', import_invalid: 'Invalid file',
     import_confirm: 'Restore {n} keys? Current data will be replaced.',
-    wird_matin: 'MORNING WIRD', wird_soir: 'EVENING WIRD',
+    wird_matin: 'MORNING WIRD', wird_soir: 'EVENING WIRD', wird_daily: 'DAILY WIRD',
     wird_what: 'What is the wird?', wird_desc: 'The wird is a set of daily invocations from the Quran and Sunnah, recited each morning after Fajr and each evening after Asr. It protects, purifies the heart and brings closer to Allah.',
     prayer_fajr_sub: 'Dawn prayer', prayer_dhuhr_sub: 'Midday prayer', prayer_asr_sub: 'Afternoon prayer', prayer_maghrib_sub: 'Sunset prayer', prayer_isha_sub: 'Night prayer',
     bilan_7j_title: 'Last 7 evenings',
@@ -6043,7 +6044,7 @@ const V2_I18N = {
     export_done: '\u062A\u064E\u0645\u0651\u064E \u0627\u0644\u062A\u0651\u064E\u0635\u0652\u062F\u0650\u064A\u0631 \u2713', import_done: '\u062A\u064E\u0645\u0651\u064E \u0627\u0644\u0627\u0650\u0633\u0652\u062A\u0650\u0639\u0627\u062F\u064E\u0629...',
     import_empty: '\u0645\u064E\u0644\u064E\u0641\u0651\u064C \u0641\u0627\u0631\u0650\u063A', import_invalid: '\u0645\u064E\u0644\u064E\u0641\u0651\u064C \u063A\u064E\u064A\u0652\u0631\u064F \u0635\u0627\u0644\u0650\u062D',
     import_confirm: '\u0627\u0650\u0633\u0652\u062A\u0650\u0639\u0627\u062F\u064E\u0629 {n} \u0645\u0650\u0641\u0652\u062A\u0627\u062D\u061F',
-    wird_matin: '\u0648\u0650\u0631\u0652\u062F\u064F \u0627\u0644\u0635\u0651\u064E\u0628\u0627\u062D', wird_soir: '\u0648\u0650\u0631\u0652\u062F\u064F \u0627\u0644\u0645\u064E\u0633\u0627\u0621',
+    wird_matin: '\u0648\u0650\u0631\u0652\u062F\u064F \u0627\u0644\u0635\u0651\u064E\u0628\u0627\u062D', wird_soir: '\u0648\u0650\u0631\u0652\u062F\u064F \u0627\u0644\u0645\u064E\u0633\u0627\u0621', wird_daily: '\u0623\u064E\u0648\u0652\u0631\u0627\u062F\u064C \u064A\u064E\u0648\u0652\u0645\u0650\u064A\u0651\u064E\u0629',
     wird_what: '\u0645\u0627 \u0647\u064F\u0648\u064E \u0627\u0644\u0648\u0650\u0631\u0652\u062F\u064F\u061F', wird_desc: '\u0627\u0644\u0648\u0650\u0631\u0652\u062F\u064F \u0645\u064E\u062C\u0652\u0645\u064F\u0648\u0639\u064E\u0629\u064C \u0645\u0650\u0646\u064E \u0627\u0644\u0623\u064E\u0630\u0652\u0643\u0627\u0631\u0650 \u0627\u0644\u064A\u064E\u0648\u0652\u0645\u0650\u064A\u0651\u064E\u0629\u0650 \u0645\u0650\u0646\u064E \u0627\u0644\u0642\u064F\u0631\u0652\u0622\u0646\u0650 \u0648\u0627\u0644\u0633\u0651\u064F\u0646\u0651\u064E\u0629\u060C \u062A\u064F\u0642\u0652\u0631\u064E\u0623\u064F \u0643\u064F\u0644\u0651\u064E \u0635\u064E\u0628\u0627\u062D\u064D \u0628\u064E\u0639\u0652\u062F\u064E \u0627\u0644\u0641\u064E\u062C\u0652\u0631\u0650 \u0648\u0643\u064F\u0644\u0651\u064E \u0645\u064E\u0633\u0627\u0621\u064D \u0628\u064E\u0639\u0652\u062F\u064E \u0627\u0644\u0639\u064E\u0635\u0652\u0631\u0650. \u064A\u064E\u062D\u0652\u0641\u064E\u0638\u064F \u0648\u064E\u064A\u064F\u0637\u064E\u0647\u0651\u0650\u0631\u064F \u0627\u0644\u0642\u064E\u0644\u0652\u0628\u064E \u0648\u064E\u064A\u064F\u0642\u064E\u0631\u0651\u0650\u0628\u064F \u0645\u0650\u0646\u064E \u0627\u0644\u0644\u0651\u064E\u0647.',
     prayer_fajr_sub: '\u0635\u064E\u0644\u0627\u0629\u064F \u0627\u0644\u0641\u064E\u062C\u0652\u0631', prayer_dhuhr_sub: '\u0635\u064E\u0644\u0627\u0629\u064F \u0627\u0644\u0638\u0651\u064F\u0647\u0652\u0631', prayer_asr_sub: '\u0635\u064E\u0644\u0627\u0629\u064F \u0627\u0644\u0639\u064E\u0635\u0652\u0631', prayer_maghrib_sub: '\u0635\u064E\u0644\u0627\u0629\u064F \u0627\u0644\u0645\u064E\u063A\u0652\u0631\u0650\u0628', prayer_isha_sub: '\u0635\u064E\u0644\u0627\u0629\u064F \u0627\u0644\u0639\u0650\u0634\u0627\u0621',
     bilan_7j_title: '\u0622\u062E\u0650\u0631\u064F \u0667 \u0645\u064E\u0633\u0627\u0621\u0627\u062A',
@@ -7565,7 +7566,20 @@ var ITEMS_I18N = {
     maruf:{l:'Enjoin good (Amr bil ma\u2019ruf)',s:'Ibn Taymiyya: the very identity of the Ummah'},
     kind_act:{l:'Act of kindness',s:'A good deed with no expectation'},
     ziyara:{l:'Visit a sick person or a brother',s:'One of the 6 rights of a Muslim'},
-    pardon:{l:'Forgive someone',s:'Even if they didn\u2019t ask for it'}
+    pardon:{l:'Forgive someone',s:'Even if they didn\u2019t ask for it'},
+    w_fatiha:{l:'Al-Fatiha',s:'Surah 1 \u2014 The Opening'},
+    w_ayat_kursi:{l:'Ayat al-Kursi',s:'Protection \u2014 1 time'},
+    w_ikhlass_m:{l:'Al-Ikhlass \u00d7 3',s:'Equals one third of the Quran'},w_ikhlass_s:{l:'Al-Ikhlass \u00d7 3',s:'Equals one third of the Quran'},
+    w_falaq_m:{l:'Al-Falaq \u00d7 3',s:'Protection against evil'},w_falaq_s:{l:'Al-Falaq \u00d7 3',s:'Protection against evil'},
+    w_nas_m:{l:'An-Nas \u00d7 3',s:'Protection against the evil eye'},w_nas_s:{l:'An-Nas \u00d7 3',s:'Protection against the evil eye'},
+    w_sabah1:{l:'Morning du\u2019a',s:'We have entered the morning \u2014 1 time'},
+    w_istighfar_m:{l:'Istighfar \u00d7 3',s:'Astaghfirullah \u00d7 3'},
+    w_salawat_m:{l:'Salawat \u00d7 10',s:'Allahumma salli ala Muhammad \u00d7 10'},
+    w_baqara285:{l:'Al-Baqara 285-286',s:'Suffices against all harm'},
+    w_masa1:{l:'Evening du\u2019a',s:'We have entered the evening \u2014 1 time'},
+    w_aouzu:{l:'Seeking refuge',s:'Protection from punishment \u2014 3 times'},
+    w_mulk:{l:'Surah Al-Mulk',s:'Protection in the grave'},
+    w_kafirun:{l:'Al-Kafirun',s:'Before sleeping \u2014 1 time'}
   },
   ar: {
     wird_matin:{l:'\u0648\u0650\u0631\u0652\u062F\u064F \u0627\u0644\u0635\u0651\u064E\u0628\u0627\u062D',s:'\u0622\u064A\u064E\u0629\u064F \u0627\u0644\u0643\u064F\u0631\u0652\u0633\u0650\u064A\u0651\u060C \u0627\u0644\u0645\u064F\u0639\u064E\u0648\u0651\u0650\u0630\u0627\u062A\u2026'},wird_soir:{l:'\u0648\u0650\u0631\u0652\u062F\u064F \u0627\u0644\u0645\u064E\u0633\u0627\u0621',s:'\u0633\u064F\u0648\u0631\u064E\u0629\u064F \u0627\u0644\u0645\u064F\u0644\u0652\u0643\u2026'},
@@ -7582,7 +7596,20 @@ var ITEMS_I18N = {
     sadaqa:{l:'\u0627\u0644\u0635\u0651\u064E\u062F\u064E\u0642\u064E\u0629',s:'\u062D\u064E\u062A\u0651\u064E\u0649 \u0627\u0644\u0627\u0628\u0652\u062A\u0650\u0633\u0627\u0645\u064E\u0629'},
     salam:{l:'\u0625\u0650\u0644\u0652\u0642\u0627\u0621\u064F \u0627\u0644\u0633\u0651\u064E\u0644\u0627\u0645',s:'\u0627\u0646\u0652\u0634\u064F\u0631\u0650 \u0627\u0644\u0633\u0651\u064E\u0644\u0627\u0645\u064E'},
     tahajjud:{l:'\u0642\u0650\u064A\u0627\u0645\u064F \u0627\u0644\u0644\u0651\u064E\u064A\u0652\u0644',s:'\u0631\u064E\u0643\u0652\u0639\u064E\u062A\u0627\u0646\u0650 \u0641\u0650\u064A \u0627\u0644\u062B\u0651\u064F\u0644\u064F\u062B\u0650 \u0627\u0644\u0623\u064E\u062E\u0650\u064A\u0631'},
-    pardon:{l:'\u0627\u0644\u0639\u064E\u0641\u0652\u0648',s:'\u062D\u064E\u062A\u0651\u064E\u0649 \u0644\u064E\u0648\u0652 \u0644\u064E\u0645\u0652 \u064A\u064E\u0637\u0652\u0644\u064F\u0628\u0652\u0647'}
+    pardon:{l:'\u0627\u0644\u0639\u064E\u0641\u0652\u0648',s:'\u062D\u064E\u062A\u0651\u064E\u0649 \u0644\u064E\u0648\u0652 \u0644\u064E\u0645\u0652 \u064A\u064E\u0637\u0652\u0644\u064F\u0628\u0652\u0647'},
+    w_fatiha:{l:'\u0627\u0644\u0641\u0627\u062A\u0650\u062D\u064E\u0629',s:'\u0633\u064F\u0648\u0631\u064E\u0629 \u0661 \u2014 \u0627\u0644\u0641\u064E\u062A\u0652\u062D'},
+    w_ayat_kursi:{l:'\u0622\u064A\u064E\u0629\u064F \u0627\u0644\u0643\u064F\u0631\u0652\u0633\u0650\u064A\u0651',s:'\u062D\u0650\u0641\u0652\u0638 \u2014 \u0645\u064E\u0631\u0651\u064E\u0629'},
+    w_ikhlass_m:{l:'\u0627\u0644\u0625\u0650\u062E\u0652\u0644\u0627\u0635 \u00d7\u0663',s:'\u062A\u064E\u0639\u0652\u062F\u0650\u0644\u064F \u062B\u064F\u0644\u064F\u062B\u064E \u0627\u0644\u0642\u064F\u0631\u0652\u0622\u0646'},w_ikhlass_s:{l:'\u0627\u0644\u0625\u0650\u062E\u0652\u0644\u0627\u0635 \u00d7\u0663',s:'\u062A\u064E\u0639\u0652\u062F\u0650\u0644\u064F \u062B\u064F\u0644\u064F\u062B\u064E \u0627\u0644\u0642\u064F\u0631\u0652\u0622\u0646'},
+    w_falaq_m:{l:'\u0627\u0644\u0641\u064E\u0644\u064E\u0642 \u00d7\u0663',s:'\u062D\u0650\u0645\u0627\u064A\u064E\u0629\u064C \u0645\u0650\u0646\u064E \u0627\u0644\u0634\u0651\u064E\u0631'},w_falaq_s:{l:'\u0627\u0644\u0641\u064E\u0644\u064E\u0642 \u00d7\u0663',s:'\u062D\u0650\u0645\u0627\u064A\u064E\u0629\u064C \u0645\u0650\u0646\u064E \u0627\u0644\u0634\u0651\u064E\u0631'},
+    w_nas_m:{l:'\u0627\u0644\u0646\u0651\u0627\u0633 \u00d7\u0663',s:'\u062D\u0650\u0645\u0627\u064A\u064E\u0629\u064C \u0645\u0650\u0646\u064E \u0627\u0644\u0639\u064E\u064A\u0652\u0646'},w_nas_s:{l:'\u0627\u0644\u0646\u0651\u0627\u0633 \u00d7\u0663',s:'\u062D\u0650\u0645\u0627\u064A\u064E\u0629\u064C \u0645\u0650\u0646\u064E \u0627\u0644\u0639\u064E\u064A\u0652\u0646'},
+    w_sabah1:{l:'\u062F\u064F\u0639\u0627\u0621\u064F \u0627\u0644\u0635\u0651\u064E\u0628\u0627\u062D',s:'\u0623\u064E\u0635\u0652\u0628\u064E\u062D\u0652\u0646\u0627 \u2014 \u0645\u064E\u0631\u0651\u064E\u0629'},
+    w_istighfar_m:{l:'\u0627\u0633\u0652\u062A\u0650\u063A\u0652\u0641\u0627\u0631 \u00d7\u0663',s:'\u0623\u064E\u0633\u0652\u062A\u064E\u063A\u0652\u0641\u0650\u0631\u064F \u0627\u0644\u0644\u0651\u064E\u0647 \u00d7\u0663'},
+    w_salawat_m:{l:'\u0635\u064E\u0644\u064E\u0648\u0627\u062A \u00d7\u0661\u0660',s:'\u0627\u0644\u0644\u0651\u064E\u0647\u064F\u0645\u0651\u064E \u0635\u064E\u0644\u0651\u0650 \u0639\u064E\u0644\u064E\u0649 \u0645\u064F\u062D\u064E\u0645\u0651\u064E\u062F'},
+    w_baqara285:{l:'\u0627\u0644\u0628\u064E\u0642\u064E\u0631\u064E\u0629 \u0662\u0668\u0665-\u0662\u0668\u0666',s:'\u062A\u064E\u0643\u0652\u0641\u0650\u064A \u0645\u0650\u0646\u0652 \u0643\u064F\u0644\u0651\u0650 \u0636\u064F\u0631\u0651'},
+    w_masa1:{l:'\u062F\u064F\u0639\u0627\u0621\u064F \u0627\u0644\u0645\u064E\u0633\u0627\u0621',s:'\u0623\u064E\u0645\u0652\u0633\u064E\u064A\u0652\u0646\u0627 \u2014 \u0645\u064E\u0631\u0651\u064E\u0629'},
+    w_aouzu:{l:'\u0627\u0644\u0627\u0633\u0652\u062A\u0650\u0639\u0627\u0630\u064E\u0629',s:'\u062D\u0650\u0645\u0627\u064A\u064E\u0629\u064C \u0645\u0650\u0646\u064E \u0627\u0644\u0639\u064E\u0630\u0627\u0628 \u2014 \u0663 \u0645\u064E\u0631\u0651\u0627\u062A'},
+    w_mulk:{l:'\u0633\u064F\u0648\u0631\u064E\u0629\u064F \u0627\u0644\u0645\u064F\u0644\u0652\u0643',s:'\u062D\u0650\u0645\u0627\u064A\u064E\u0629\u064C \u0641\u0650\u064A \u0627\u0644\u0642\u064E\u0628\u0652\u0631'},
+    w_kafirun:{l:'\u0627\u0644\u0643\u0627\u0641\u0650\u0631\u064F\u0648\u0646',s:'\u0642\u064E\u0628\u0652\u0644\u064E \u0627\u0644\u0646\u0651\u064E\u0648\u0652\u0645 \u2014 \u0645\u064E\u0631\u0651\u064E\u0629'}
   }
 };
 function tI(item, field) {
