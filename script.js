@@ -7098,6 +7098,7 @@ function journalSwitchTab(tab) {
   }
 }
 function v2GoNafs() {
+  showAlHayaBtn();
   var tbEl = document.getElementById('topbar-v2');
   if (tbEl) tbEl.classList.remove('active');
   document.querySelectorAll('.nav-v2-item').forEach(function(n) { n.classList.remove('active-nav'); });
