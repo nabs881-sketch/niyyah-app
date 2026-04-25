@@ -5744,7 +5744,7 @@ const V2_I18N = {
     quran_verse_label: 'Verset ',
     tawba_streak_prefix: 'Ton chemin de ', tawba_streak_suffix: ' jours t\'attend toujours.',
     tawba_week_msg: 'Nouvelle semaine, nouvelle niyyah. Bismillah.',
-    freemium_code_invalid: 'Code invalide — réessaie', prayer_time_toast: 'Il est l\'heure de ',
+    freemium_code_invalid: 'Code invalide \u2014 r\u00e9essaie', prayer_in: 'dans', prayer_time_toast: 'Il est l\u2019heure de ',
     nafs_note_placeholder: 'Dans quelle situation ? (optionnel)', hold_hint: 'Maintenez...',
     regarde_note_placeholder: 'Note personnelle...', share_savaistu_title: 'Le savais-tu ? — Niyyah Daily',
     // Wird
@@ -5988,7 +5988,7 @@ const V2_I18N = {
     quran_verse_label: 'Verse ',
     tawba_streak_prefix: 'Your path of ', tawba_streak_suffix: ' days still awaits you.',
     tawba_week_msg: 'New week, new niyyah. Bismillah.',
-    freemium_code_invalid: 'Invalid code — try again', prayer_time_toast: 'It\'s time for ',
+    freemium_code_invalid: 'Invalid code \u2014 try again', prayer_in: 'in', prayer_time_toast: 'It\u2019s time for ',
     nafs_note_placeholder: 'In what situation? (optional)', hold_hint: 'Hold...',
     regarde_note_placeholder: 'Personal note...', share_savaistu_title: 'Did you know? — Niyyah Daily',
     wird_back: '← Back', wird_reset: '↺ Reset',
@@ -6201,7 +6201,7 @@ const V2_I18N = {
     btn_why: '', btn_see_phonetic: '', btn_share_label: '', btn_fullscreen: '',
     city_fallback: '', city_placeholder_prayer: '', countdown_now: '', btn_listen: '',
     quran_verse_label: '', tawba_streak_prefix: '', tawba_streak_suffix: '', tawba_week_msg: '',
-    freemium_code_invalid: '', prayer_time_toast: '', nafs_note_placeholder: '', hold_hint: '',
+    prayer_in: '0628064E06390652062F', freemium_code_invalid: '', prayer_time_toast: '', nafs_note_placeholder: '', hold_hint: '',
     regarde_note_placeholder: '', share_savaistu_title: '',
     wird_back: '→ رُجُوعٌ', wird_reset: '↺ إِعَادَةُ التَّعْيِينِ',
     locked_title: 'الْمُسْتَوَى',
@@ -7877,6 +7877,27 @@ function tD(defi) {
   if (lang === 'fr' || !DEFIS_I18N[lang] || !DEFIS_I18N[lang][defi.id]) return tD(defi);
   return DEFIS_I18N[lang][defi.id];
 }
+function updateSanctuaireNextPrayer() {
+  var el = document.getElementById('sanctuaire-next-prayer');
+  if (!el || !_prayerTimes) { if (el) el.style.display = 'none'; return; }
+  var now = new Date();
+  var nowMin = now.getHours() * 60 + now.getMinutes();
+  var names = ['Fajr','Dhuhr','Asr','Maghrib','Isha'];
+  var nextName = null, nextTime = null, diffMin = 0;
+  for (var i = 0; i < names.length; i++) {
+    var parts = (_prayerTimes[names[i]] || '').replace(/ *\(.*\)/,'').split(':');
+    var m = parseInt(parts[0],10) * 60 + parseInt(parts[1],10);
+    if (m > nowMin) { nextName = names[i]; nextTime = _prayerTimes[names[i]].substring(0,5); diffMin = m - nowMin; break; }
+  }
+  if (!nextName) { nextName = 'Fajr'; nextTime = (_prayerTimes['Fajr']||'').substring(0,5); diffMin = (1440 - nowMin) + parseInt((_prayerTimes['Fajr']||'0:0').split(':')[0],10)*60 + parseInt((_prayerTimes['Fajr']||'0:0').split(':')[1],10); }
+  var txt = '';
+  if (diffMin > 60) txt = nextName + ' \u00b7 ' + nextTime;
+  else if (diffMin > 0) txt = nextName + ' ' + t('prayer_in') + ' ' + diffMin + ' min';
+  el.textContent = txt;
+  el.style.display = txt ? '' : 'none';
+  el.style.color = diffMin < 10 ? 'var(--gold)' : 'var(--silver)';
+  el.style.opacity = diffMin < 60 ? '1' : '0.7';
+}
 function _dateLocale() {
   var lang = (typeof V2_LANG !== 'undefined') ? V2_LANG : 'fr';
   return lang === 'en' ? 'en-US' : lang === 'ar' ? 'ar' : 'fr-FR';
@@ -7927,6 +7948,7 @@ function updateSpiritualTitle() {
     + '<div style="font-family:\'Inter\',var(--sans);font-size:12px;color:rgba(255,255,255,0.55);letter-spacing:1px;margin-top:12px;">' + t('sp_day_streak').replace('{d}',totalDisplay).replace('{s}',streakDisplay) + '</div>';
 }
 function v2RefreshStats() {
+  if (typeof updateSanctuaireNextPrayer === 'function') updateSanctuaireNextPrayer();
   // POINT 3 — Effet visuel Tawba persistant 24h
   try { applyTawbaGlow(); } catch(e) {}
   // Stats row — table layout, toujours horizontal
