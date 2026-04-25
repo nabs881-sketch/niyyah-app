@@ -3468,6 +3468,71 @@ to {
   margin-top:2px;
 }
 
+/* Onboarding — Deux gestes */
+.ob-deux-gestes {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-bottom:8px;
+}
+.ob-geste-card {
+  position:relative;
+  overflow:hidden;
+  border-radius:16px;
+  border:1px solid rgba(200,168,75,0.12);
+  background:rgba(255,255,255,0.03);
+  padding:20px 12px 16px;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+}
+.ob-geste-voile {
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+}
+.ob-geste-ar {
+  font-family:'Scheherazade New',serif;
+  font-size:28px;
+  line-height:1;
+  direction:rtl;
+}
+.ob-geste-orb {
+  position:relative;
+}
+.ob-orb-spin {
+  animation:obOrbSpin 8s linear infinite;
+  transform-origin:30px 30px;
+}
+@keyframes obOrbSpin {
+  to { transform:rotate(360deg); }
+}
+.ob-orb-obj {
+  animation:obOrbPulse 2s ease-in-out infinite;
+}
+@keyframes obOrbPulse {
+  0%,100% { r:3.5; opacity:0.5; }
+  50% { r:5; opacity:1; }
+}
+.ob-geste-txt {
+  font-family:'Cormorant Garamond',serif;
+  font-size:13px;
+  font-style:italic;
+  line-height:1.5;
+  min-height:36px;
+}
+.ob-geste-tag {
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  border:1px solid;
+  border-radius:20px;
+  padding:3px 10px;
+}
+
 .onboard-btn {
   width:100%;
   max-width:300px;

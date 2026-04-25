@@ -5110,13 +5110,46 @@ const ONBOARD_SLIDES = [
     + '<button class="onboard-btn" id="obMotivBtn" onclick="onboardNext()" style="opacity:0.3;pointer-events:none;">Suivant →</button>'
     + '<button class="onboard-skip" onclick="onboardFinish()">' + t('onboard_skip') + '</button>'
     + '</div>',
-  () => `
-    <div class="onboard-anim"><div style="text-align:center;margin-bottom:16px;"><img src="https://nabs881-sketch.github.io/niyyah-app/imagescamera.webp" alt="Scanner" style="width:100px;height:auto;display:block;margin:0 auto;"></div><div class="onboard-title">${t('onboard_title2')}</div><div class="onboard-sub" style="margin-bottom:24px;">${t('onboard_sub2')}</div><div style="background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.15);border-radius:14px;padding:16px;margin-bottom:20px;text-align:center;"><div style="font-size:16px;color:rgba(255,255,255,0.7);line-height:1.6;">${t('onboard_scanner_example')}</div></div><button class="onboard-btn" onclick="onboardNext()">${t('onboard_next')}</button><button class="onboard-skip" onclick="onboardFinish()">${t('onboard_skip')}</button></div>`,
+  // Slide 2 — Deux gestes : Niyyah + Regarde
+  () => {
+    setTimeout(function() { if (document.getElementById('obTypeNiyyah')) obTypeWriter('obTypeNiyyah', 'Je bois avec gratitude envers Allah.', 0); }, 600);
+    setTimeout(function() { if (document.getElementById('obTypeRegarde')) obTypeWriter('obTypeRegarde', 'Combien de fois as-tu bu sans voir\u00a0?', 0); }, 1200);
+    return '<div class="onboard-anim">'
+      + '<div class="onboard-title">Niyyah te propose deux gestes</div>'
+      + '<div class="ob-deux-gestes">'
+      // Card Niyyah (gauche)
+      + '<div class="ob-geste-card ob-geste-niyyah">'
+      + '<div class="ob-geste-voile" style="background:radial-gradient(ellipse at 50% 20%,rgba(200,168,75,0.12),transparent 70%);"></div>'
+      + '<div class="ob-geste-ar" style="color:#C8A84A;">نِيَّة</div>'
+      + '<div class="ob-geste-orb"><svg viewBox="0 0 60 60" width="52" height="52"><circle cx="30" cy="30" r="24" fill="none" stroke="rgba(200,168,75,0.3)" stroke-width="1"/><circle cx="30" cy="30" r="24" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-dasharray="8 6" class="ob-orb-spin"/><circle cx="30" cy="14" r="3.5" fill="none" stroke="#C8A84A" stroke-width="1" class="ob-orb-obj" style="animation-delay:0s"/><circle cx="46" cy="30" r="3.5" fill="none" stroke="#C8A84A" stroke-width="1" class="ob-orb-obj" style="animation-delay:0.5s"/><circle cx="30" cy="46" r="3.5" fill="none" stroke="#C8A84A" stroke-width="1" class="ob-orb-obj" style="animation-delay:1s"/></svg></div>'
+      + '<div class="ob-geste-txt" id="obTypeNiyyah" style="color:rgba(200,168,75,0.8);min-height:36px;">&nbsp;</div>'
+      + '<div class="ob-geste-tag" style="border-color:rgba(200,168,75,0.3);color:#C8A84A;">Avant l\'acte</div>'
+      + '</div>'
+      // Card Regarde (droite)
+      + '<div class="ob-geste-card ob-geste-regarde">'
+      + '<div class="ob-geste-voile" style="background:radial-gradient(ellipse at 50% 20%,rgba(160,164,172,0.10),transparent 70%);"></div>'
+      + '<div class="ob-geste-ar" style="color:#A0A4AC;">نَظَر</div>'
+      + '<div class="ob-geste-orb"><svg viewBox="0 0 60 60" width="52" height="52"><circle cx="30" cy="30" r="24" fill="none" stroke="rgba(160,164,172,0.25)" stroke-width="1"/><circle cx="30" cy="30" r="24" fill="none" stroke="#A0A4AC" stroke-width="1.5" stroke-dasharray="8 6" class="ob-orb-spin"/><circle cx="18" cy="18" r="3.5" fill="none" stroke="#A0A4AC" stroke-width="1" class="ob-orb-obj" style="animation-delay:0.3s"/><circle cx="42" cy="18" r="3.5" fill="none" stroke="#A0A4AC" stroke-width="1" class="ob-orb-obj" style="animation-delay:0.8s"/><circle cx="30" cy="46" r="3.5" fill="none" stroke="#A0A4AC" stroke-width="1" class="ob-orb-obj" style="animation-delay:1.3s"/></svg></div>'
+      + '<div class="ob-geste-txt" id="obTypeRegarde" style="color:rgba(160,164,172,0.8);min-height:36px;">&nbsp;</div>'
+      + '<div class="ob-geste-tag" style="border-color:rgba(160,164,172,0.25);color:#A0A4AC;">Apr\u00e8s l\'acte</div>'
+      + '</div>'
+      + '</div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:var(--t3);text-align:center;margin:16px 0 24px;">Sacralise. Examine.</div>'
+      + '<button class="onboard-btn" onclick="onboardNext()">Suivant \u2192</button>'
+      + '<button class="onboard-skip" onclick="onboardFinish()">' + t('onboard_skip') + '</button>'
+      + '</div>';
+  },
   () => `
     <div class="onboard-anim"><div class="onboard-title">${t('onboard_title3')}</div><div class="onboard-sub" style="margin-bottom:24px;">${t('onboard_sub3')}</div><div class="onboard-levels"><div class="onboard-level"><div class="onboard-level-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M22 6a10 10 0 1 0 0 16A8 8 0 0 1 22 6z" fill="#C8A84A"/></svg></div><div><div class="onboard-level-name">${t('level_1')}</div><div class="onboard-level-desc">${t('onboard_lvl1_desc')}</div></div></div><div class="onboard-level"><div class="onboard-level-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 2l3.09 6.26L24 9.27l-5 4.87L20.18 21 14 17.27 7.82 21 9 14.14l-5-4.87 6.91-1.01L14 2z" fill="#C8A84A"/></svg></div><div><div class="onboard-level-name">${t('level_2')}</div><div class="onboard-level-desc">${t('onboard_lvl2_desc')}</div></div></div><div class="onboard-level"><div class="onboard-level-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M4 4h8v20H4z" fill="#C8A84A" opacity="0.7"/><path d="M16 4h8v20h-8z" fill="#C8A84A"/><path d="M12 4v20h4V4z" fill="#C8A84A" opacity="0.5"/></svg></div><div><div class="onboard-level-name">${t('level_3')}</div><div class="onboard-level-desc">${t('onboard_lvl3_desc')}</div></div></div><div class="onboard-level"><div class="onboard-level-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 4c-3 0-6 2-6 5 0 2 1 3 2 4l4 3 4-3c1-1 2-2 2-4 0-3-3-5-6-5z" fill="#C8A84A" opacity="0.8"/><path d="M6 18c0 0 2-1 8-1s8 1 8 1v4c0 1-1 2-2 2H8c-1 0-2-1-2-2v-4z" fill="#C8A84A"/></svg></div><div><div class="onboard-level-name">${t('level_4')}</div><div class="onboard-level-desc">${t('onboard_lvl4_desc')}</div></div></div></div><button class="onboard-btn" onclick="onboardNext()">${t('onboard_next')}</button><button class="onboard-skip" onclick="onboardFinish()">${t('onboard_skip')}</button></div>`,
   () => `
     <div class="onboard-anim"><div style="margin:0 auto 20px;"><img src="https://nabs881-sketch.github.io/niyyah-app/imageslogo.webp" alt="Niyyah" style="width:150px;height:auto;display:block;margin:0 auto;"></div><div class="onboard-title">${t('onboard_title4')}</div><div class="onboard-sub">${t('onboard_sub4')}</div><button class="onboard-btn" onclick="onboardRequestGeoloc()" style="max-width:300px;" id="onboardGeoBtn">${t('geo_locate')}</button><div id="onboardCityFallback" style="display:none;margin-top:16px;"><div style="font-size:13px;color:#B0A080;margin-bottom:10px;">${t('onboard_city_manual')}</div><div class="city-input-wrap" style="max-width:300px;margin-bottom:16px;"><input class="city-input" id="onboardCityInput" type="text" placeholder="${t('onboard_city_placeholder')}" onkeydown="if(event.key===\'Enter\')onboardSaveCity()"><button class="city-input-btn" onclick="onboardSaveCity()">OK</button></div></div><button class="onboard-skip" onclick="onboardFinish()" style="margin-top:12px;">${t('onboard_later')}</button></div>`
 ];
+function obTypeWriter(elId, text, i) {
+  var el = document.getElementById(elId);
+  if (!el || i >= text.length) return;
+  el.textContent = text.substring(0, i + 1);
+  setTimeout(function() { obTypeWriter(elId, text, i + 1); }, 40);
+}
 function obSelectMotiv(el, value) {
   document.querySelectorAll('.ob-motiv-card').forEach(function(c) { c.classList.remove('selected'); });
   el.classList.add('selected');
