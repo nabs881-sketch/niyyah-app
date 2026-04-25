@@ -5140,24 +5140,7 @@ const ONBOARD_SLIDES = [
       + '<button class="onboard-skip" onclick="onboardFinish()">' + t('onboard_skip') + '</button>'
       + '</div>';
   },
-  // Slide 3 — Première Niyyah live
-  () => '<div class="onboard-anim">'
-    + '<div style="font-size:40px;margin-bottom:12px;">📸</div>'
-    + '<div class="onboard-title">Veux-tu poser ta premi\u00e8re niyyah\u00a0?</div>'
-    + '<div class="onboard-sub" style="margin-bottom:20px;">Prends un objet en photo — on te propose une intention.</div>'
-    + '<div style="margin-bottom:20px;"><label style="font-family:var(--serif);font-size:13px;color:var(--t3);display:block;margin-bottom:6px;">Ton pr\u00e9nom (optionnel)</label>'
-    + '<input id="obPrenomInput" type="text" placeholder="Ex: Nabs, Fatima..." style="width:100%;max-width:280px;box-sizing:border-box;padding:10px 14px;background:rgba(200,168,75,0.04);border:1px solid rgba(200,168,75,0.2);border-radius:12px;color:var(--t1);font-size:14px;font-family:var(--sans);outline:none;" oninput="safeSetItem(\'niyyah_prenom\',this.value.trim())"></div>'
-    + '<div id="obNiyyahResult" style="display:none;margin-bottom:20px;text-align:center;">'
-    + '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:#C8A84A;line-height:1.6;margin-bottom:12px;" id="obNiyyahText"></div>'
-    + '<button class="onboard-btn" onclick="obConfirmNiyyah()" id="obBismillahBtn">Bismillah \u2014 J\'adopte cette niyyah \ud83c\udf3f</button>'
-    + '</div>'
-    + '<div id="obNiyyahActions">'
-    + '<button class="onboard-btn" onclick="obTryNiyyah()" id="obTryBtn">Essayer \ud83d\udcf7</button>'
-    + '<button class="onboard-skip" onclick="onboardNext()">Plus tard</button>'
-    + '</div>'
-    + '<div id="obConfettiZone" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;"></div>'
-    + '</div>',
-  // Slide 4 — Ton chemin
+  // Slide 3 — Ton chemin
   () => '<div class="onboard-anim">'
     + '<div class="onboard-title">Niyyah suit tes pas</div>'
     + '<div class="onboard-sub" style="margin-bottom:20px;">Voici ce qui t\u2019accompagne chaque jour.</div>'
@@ -5169,7 +5152,9 @@ const ONBOARD_SLIDES = [
     + '<div class="ob-chemin-item"><svg viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"><path d="M16 4l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><div class="ob-chemin-label">D\u00e9fi</div><div class="ob-chemin-desc">1 par semaine</div></div>'
     + '<div class="ob-chemin-item"><svg viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"><path d="M22 6a10 10 0 1 0 0 16A8 8 0 0 1 22 6z"/></svg><div class="ob-chemin-label">Tawba</div><div class="ob-chemin-desc">Reviens sans jugement</div></div>'
     + '</div>'
-    + '<div style="font-family:var(--serif);font-size:14px;font-style:italic;color:var(--t3);text-align:center;margin:20px 0 24px;line-height:1.6;">Pas de classement. Juste toi et ta constance.</div>'
+    + '<div style="font-family:var(--serif);font-size:14px;font-style:italic;color:var(--t3);text-align:center;margin:20px 0 16px;line-height:1.6;">Pas de classement. Juste toi et ta constance.</div>'
+    + '<div style="margin-bottom:20px;text-align:center;"><label style="font-family:var(--serif);font-size:13px;color:var(--t3);display:block;margin-bottom:6px;">Comment veux-tu qu\u2019on t\u2019appelle\u00a0?</label>'
+    + '<input type="text" placeholder="Ex: Nabs, Fatima..." style="width:100%;max-width:260px;box-sizing:border-box;padding:10px 14px;background:rgba(200,168,75,0.04);border:1px solid rgba(200,168,75,0.2);border-radius:12px;color:var(--t1);font-size:14px;font-family:var(--sans);outline:none;text-align:center;" oninput="safeSetItem(\'niyyah_prenom\',this.value.trim())"></div>'
     + '<button class="onboard-btn" onclick="onboardNext()">Suivant \u2192</button>'
     + '</div>',
   // Slide 5 — Notifications 3 catégories
@@ -5226,67 +5211,6 @@ function obSkipNotifs() {
   safeSetItem('niyyah_notif_asked', '1');
   onboardFinish();
 }
-function obTryNiyyah() {
-  var btn = document.getElementById('obTryBtn');
-  if (btn) { btn.textContent = 'Ouverture cam\u00e9ra...'; btn.disabled = true; }
-  if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
-    if (btn) { btn.textContent = 'Cam\u00e9ra non disponible'; }
-    return;
-  }
-  navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } }).then(function(stream) {
-    // Capture one frame
-    var video = document.createElement('video');
-    video.srcObject = stream;
-    video.setAttribute('playsinline', '');
-    video.play();
-    setTimeout(function() {
-      var canvas = document.createElement('canvas');
-      canvas.width = 320; canvas.height = 240;
-      canvas.getContext('2d').drawImage(video, 0, 0, 320, 240);
-      var base64 = canvas.toDataURL('image/jpeg', 0.7).split(',')[1];
-      stream.getTracks().forEach(function(t) { t.stop(); });
-      if (btn) btn.textContent = 'Analyse en cours...';
-      // Call API
-      var ctrl = new AbortController();
-      var timer = setTimeout(function() { ctrl.abort(); }, 8000);
-      fetch('https://niyyah-api.nabs881.workers.dev/api/niyyah', {
-        method: 'POST', signal: ctrl.signal,
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ image: base64, hour: new Date().getHours() })
-      }).then(function(r) { return r.json(); }).then(function(data) {
-        clearTimeout(timer);
-        var intention = (data && data.intention) ? data.intention : 'Je pose mon regard avec gratitude envers Allah.';
-        obShowNiyyahResult(intention);
-      }).catch(function() {
-        clearTimeout(timer);
-        obShowNiyyahResult('Je pose mon regard avec gratitude envers Allah.');
-      });
-    }, 500);
-  }).catch(function() {
-    if (btn) { btn.textContent = 'Cam\u00e9ra refus\u00e9e'; btn.disabled = false; }
-  });
-}
-function obShowNiyyahResult(text) {
-  var actions = document.getElementById('obNiyyahActions');
-  var result = document.getElementById('obNiyyahResult');
-  if (actions) actions.style.display = 'none';
-  if (result) result.style.display = 'block';
-  var el = document.getElementById('obNiyyahText');
-  if (el) obTypeWriter('obNiyyahText', text, 0);
-}
-function obConfirmNiyyah() {
-  var zone = document.getElementById('obConfettiZone');
-  if (zone) {
-    for (var i = 0; i < 24; i++) {
-      var c = document.createElement('div');
-      c.style.cssText = 'position:absolute;width:6px;height:6px;border-radius:50%;top:50%;left:' + (20 + Math.random()*60) + '%;background:' + ['#C8A84A','#E0C870','#fff','#f5a623'][Math.floor(Math.random()*4)] + ';animation:confettiFall ' + (0.8+Math.random()*0.8) + 's ease-out forwards;';
-      zone.appendChild(c);
-    }
-  }
-  var btn = document.getElementById('obBismillahBtn');
-  if (btn) { btn.textContent = '\u2713 MashaAllah !'; btn.style.pointerEvents = 'none'; }
-  setTimeout(function() { onboardNext(); }, 1800);
-}
 function obTypeWriter(elId, text, i) {
   var el = document.getElementById(elId);
   if (!el || i >= text.length) return;
@@ -5304,11 +5228,11 @@ function onboardRender() {
   requestAnimationFrame(function() {
     var content = document.getElementById('onboardContent');
     if (content) content.innerHTML = ONBOARD_SLIDES[_onboardStep]();
-    [0,1,2,3,4,5].forEach(function(i) {
+    [0,1,2,3,4].forEach(function(i) {
       var dot = document.getElementById('dot' + i);
       if (dot) dot.className = 'onboard-dot' + (i === _onboardStep ? ' active' : '');
     });
-    if (_onboardStep === 5) {
+    if (_onboardStep === 4) {
       setTimeout(function() {
         var el = document.getElementById('onboardCityInput');
         if (el) el.focus();
