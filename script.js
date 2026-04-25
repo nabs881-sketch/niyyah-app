@@ -2367,7 +2367,7 @@ function renderWirdSmartCard(item, delay) {
   const pct = Math.round(done / total * 100);
   const isMatin = item.session === 'matin';
   const arabicLabel = isMatin ? 'وِرْدُ الصَّبَاح' : 'وِرْدُ الْمَسَاء';
-  const frLabel = isMatin ? 'WIRD DU MATIN' : 'WIRD DU SOIR';
+  const frLabel = isMatin ? t('wird_matin') : t('wird_soir');
   return '<div class="wird-smart-card' + (allDone ? ' done' : '') + '" id="item-' + item.id + '" style="animation-delay:' + delay + 'ms" onclick="v2GoTo(\'wird\');setTimeout(function(){if(typeof renderWird===\'function\')renderWird();},60)">'
     + '<div class="wird-smart-body">'
     + '<div class="wird-smart-arabic">' + arabicLabel + '</div>'
@@ -2851,7 +2851,7 @@ function renderProgression() {
   const bilansData = JSON.parse(localStorage.getItem('niyyah_bilans') || '{}');
   const bilanColors = { distraction: '#6b7280', effort: '#34d962', sincerite: '#ffd60a' };
   const bilanEmojis = { distraction: '😶', effort: '🌤', sincerite: '☀️' };
-  const bilanLabels = { distraction: 'Distrait', effort: 'Efforts', sincerite: 'Sincère' };
+  const bilanLabels = { distraction: t('bilan_distrait'), effort: t('bilan_effort'), sincerite: t('bilan_sincere') };
   let bilanCells = '';
   for (let i = 6; i >= 0; i--) {
     const d = new Date(); d.setDate(d.getDate() - i);
@@ -2871,7 +2871,7 @@ function renderProgression() {
     }
   }
   const hasBilans = Object.keys(bilansData).length > 0;
-  const bilanHTML = hasBilans ? '<div style="margin:0 16px 24px;"><div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;">Bilan des 7 derniers soirs</div><div style="display:flex;gap:6px;justify-content:space-between;padding:14px 16px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:16px;">' + bilanCells + '</div><div style="display:flex;gap:14px;margin-top:8px;"><div style="display:flex;align-items:center;gap:4px;"><span style="font-size:12px;">😶</span><span style="font-size:12px;color:var(--t3);">Distrait</span></div><div style="display:flex;align-items:center;gap:4px;"><span style="font-size:12px;">🌤</span><span style="font-size:12px;color:var(--t3);">Efforts</span></div><div style="display:flex;align-items:center;gap:4px;"><span style="font-size:12px;">☀️</span><span style="font-size:12px;color:var(--t3);">Sincère</span></div></div></div>'
+  const bilanHTML = hasBilans ? '<div style="margin:0 16px 24px;"><div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;">'+t('bilan_7j_title')+'</div><div style="display:flex;gap:6px;justify-content:space-between;padding:14px 16px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:16px;">' + bilanCells + '</div><div style="display:flex;gap:14px;margin-top:8px;"><div style="display:flex;align-items:center;gap:4px;"><span style="font-size:12px;">😶</span><span style="font-size:12px;color:var(--t3);">'+t('bilan_distrait')+'</span></div><div style="display:flex;align-items:center;gap:4px;"><span style="font-size:12px;">🌤</span><span style="font-size:12px;color:var(--t3);">'+t('bilan_effort')+'</span></div><div style="display:flex;align-items:center;gap:4px;"><span style="font-size:12px;">☀️</span><span style="font-size:12px;color:var(--t3);">'+t('bilan_sincere')+'</span></div></div></div>'
     : '<div style="margin:0 16px 24px;text-align:center;padding:24px 16px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:16px;">'
     + '<svg viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="rgba(200,168,75,0.4)" stroke-width="1.5" stroke-linecap="round" style="margin-bottom:10px;"><path d="M24 6a12 12 0 1 0 0 16A9 9 0 0 1 24 6z"/></svg>'
     + '<div style="font-family:var(--serif);font-size:14px;font-style:italic;color:var(--t3);margin-bottom:12px;">'+t('empty_bilan')+'</div>'
@@ -2882,12 +2882,12 @@ function renderProgression() {
   const streakSection = _isFirstDay
     ? '<div style="text-align:center;padding:36px 20px 28px;"><div style="font-family:\'Scheherazade New\',serif;font-size:28px;color:#C8A84A;margin-bottom:10px;">\u0646\u064A\u0629</div><div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:rgba(200,168,75,0.7);">'+t('empty_streak_new')+'</div></div>'
     : '<div style="text-align:center;padding:36px 20px 28px;position:relative;"><div style="font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;">' + t('prog_streak') + '</div><div style="font-size:80px;font-weight:900;line-height:1;background:linear-gradient(135deg,#c8a84b,#e8cc6a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-3px;">' + streakDisplay + '</div><div style="font-size:13px;color:var(--t3);margin-top:6px;letter-spacing:1px;">' + t('prog_days') + '</div><div style="display:flex;justify-content:center;gap:24px;margin-top:16px;"><div style="text-align:center;"><div style="font-size:18px;font-weight:700;color:var(--t1);">' + bestDisplay + '</div><div style="font-size:12px;color:var(--t3);letter-spacing:0.8px;text-transform:uppercase;">' + t('prog_best') + '</div></div><div style="width:1px;background:rgba(255,255,255,0.1);"></div><div style="text-align:center;"><div style="font-size:18px;font-weight:700;color:var(--t1);">' + totalDisplay + '</div><div style="font-size:12px;color:var(--t3);letter-spacing:0.8px;text-transform:uppercase;">' + t('prog_total') + '</div></div></div></div>';
-  const heroSectionP = '<div style="margin:0 16px 24px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:2.5px;color:rgba(255,255,255,0.55);text-transform:uppercase;margin-bottom:12px;text-align:center;">PROGRESSION</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">'+lvlGridP+'</div></div>';
+  const heroSectionP = '<div style="margin:0 16px 24px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:2.5px;color:rgba(255,255,255,0.55);text-transform:uppercase;margin-bottom:12px;text-align:center;">'+t('progression_label')+'</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">'+lvlGridP+'</div></div>';
 
   el.innerHTML = `
     <div style="padding:0 0 40px;"><!-- 1. TITRE SPIRITUEL --><div id="v2-spiritual-title" style="text-align:center;margin:0 16px 12px;"></div><!-- 2. PROGRESSION -->${heroSectionP}<!-- 3. DÉFI SEMAINE --><button id="accueilDefiCard" class="defi-card-sanctuaire" onclick="if(typeof openDefiSelector==='function')openDefiSelector()" style="display:none;margin:0 16px 12px;padding:14px 18px;background:#1a1a1a;border:1px solid rgba(200,168,75,0.3);border-radius:14px;cursor:pointer;position:relative;z-index:10;text-align:left;min-height:90px;box-sizing:border-box;font-family:inherit;color:inherit;width:calc(100% - 32px);"><div style="display:flex;align-items:center;gap:12px;width:100%;"><div id="defiCardIcon"><img src="https://nabs881-sketch.github.io/niyyah-app/imagescroissant.webp" alt="Croissant" style="width:60px;height:auto;display:block;flex-shrink:0;"></div><div style="flex:1;text-align:left;"><div id="defiCardTitre" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:#C8A84A;">Défi de la semaine</div><div id="defiCardScore" style="font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:#B0A080;margin-top:2px;"></div></div></div><div id="defiCardDots" style="display:none;"></div><div id="defiCardBar" style="position:absolute;bottom:0;left:0;right:0;height:3px;background:rgba(200,168,75,0.12);border-radius:0 0 14px 14px;overflow:hidden;"><div id="defiCardBarFill" style="height:100%;width:0%;background:#C8A84A;transition:width 0.6s ease;"></div></div></button><!-- 4. CHALLENGE FAJR --><div id="fajr-challenge-card" style="display:none;margin:0 16px 12px;"></div><!-- 5. SÉRIE EN COURS -->${streakSection}<!-- HADITH CONTEXTUEL --><div style="margin:0 16px 24px;padding:20px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.2);border-radius:16px;position:relative;overflow:hidden;"><div style="position:absolute;top:-10px;right:12px;font-size:48px;opacity:0.07;font-family:serif;">"</div><div style="font-size:14px;line-height:1.7;color:var(--t1);font-style:italic;margin-bottom:10px;">${hadith.text}</div><div style="font-size:12px;color:#c8a84b;font-weight:600;letter-spacing:0.5px;">— ${hadith.ref}</div></div><!-- 6. HEATMAP 30 JOURS --><div style="margin:0 16px 24px;"><div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;text-align:center;">${t('prog_heatmap')}</div><div style="display:grid;grid-template-columns:repeat(10,1fr);gap:4px;">
           ${heatmapHTML}
-        </div><div style="font-family:'Inter',var(--sans);font-size:12px;color:rgba(255,255,255,0.5);text-align:center;margin-top:10px;">Aujourd'hui : ${Math.round(getLevelProgress(1))}% accompli</div><button onclick="var c=document.getElementById('yearCalWrap');if(c.style.display==='none'){c.style.display='block';calYear=new Date().getFullYear();renderYearCalendar();this.textContent=''+t('cal_hide')+'';}else{c.style.display='none';this.textContent='🗓️ '+t('cal_annual')+'';}" style="display:block;margin:12px auto 0;background:transparent;border:1px solid rgba(200,168,75,0.25);border-radius:12px;padding:8px 18px;color:var(--gold);font-family:var(--serif);font-size:13px;cursor:pointer;" aria-label="'+t('cal_annual')+'">🗓️ '+t('cal_annual')+'</button><div id="yearCalWrap" style="display:none;margin-top:16px;background:var(--card);border:1px solid rgba(200,168,75,0.15);border-radius:12px;padding:16px;"><div id="yearCalContent"></div></div></div><!-- BILAN 7 JOURS -->${bilanHTML}<!-- 7. GRAINE DE LUMIÈRE --><div style="margin:0 16px 24px;background:linear-gradient(135deg,rgba(200,168,75,0.08),rgba(200,168,75,0.03));border:1px solid rgba(200,168,75,0.25);border-radius:20px;padding:28px;text-align:center;user-select:none;-webkit-user-select:none;"><div style="font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:3px;color:#C8A84A;text-transform:uppercase;margin-bottom:16px;">${t('graine_title')}</div><div style="position:relative;width:160px;height:160px;min-width:160px;min-height:160px;margin:0 auto 16px;"><div style="position:absolute;inset:-20px;border-radius:50%;background:radial-gradient(circle,rgba(200,168,75,0.1) 0%,rgba(200,168,75,0.04) 50%,transparent 70%);"></div><div style="position:relative;">${getGraineSVG((function(){try{return JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length)}</div></div><div style="font-family:'Inter',var(--sans);font-size:16px;color:rgba(255,255,255,0.6);margin-bottom:6px;">${(function(){try{return JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length} ${t('graine_defis')}</div><div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:#C8A84A;margin-bottom:12px;">${getGraineStageName((function(){try{return JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length)}</div><div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:#C8A84A;opacity:0.7;line-height:1.6;">${t('graine_quote')}</div></div>
+        </div><div style="font-family:'Inter',var(--sans);font-size:12px;color:rgba(255,255,255,0.5);text-align:center;margin-top:10px;">'+t('today_pct').replace('{n}',Math.round(getLevelProgress(1)))+'</div><button onclick="var c=document.getElementById('yearCalWrap');if(c.style.display==='none'){c.style.display='block';calYear=new Date().getFullYear();renderYearCalendar();this.textContent=''+t('cal_hide')+'';}else{c.style.display='none';this.textContent='🗓️ '+t('cal_annual')+'';}" style="display:block;margin:12px auto 0;background:transparent;border:1px solid rgba(200,168,75,0.25);border-radius:12px;padding:8px 18px;color:var(--gold);font-family:var(--serif);font-size:13px;cursor:pointer;" aria-label="'+t('cal_annual')+'">🗓️ '+t('cal_annual')+'</button><div id="yearCalWrap" style="display:none;margin-top:16px;background:var(--card);border:1px solid rgba(200,168,75,0.15);border-radius:12px;padding:16px;"><div id="yearCalContent"></div></div></div><!-- BILAN 7 JOURS -->${bilanHTML}<!-- 7. GRAINE DE LUMIÈRE --><div style="margin:0 16px 24px;background:linear-gradient(135deg,rgba(200,168,75,0.08),rgba(200,168,75,0.03));border:1px solid rgba(200,168,75,0.25);border-radius:20px;padding:28px;text-align:center;user-select:none;-webkit-user-select:none;"><div style="font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:3px;color:#C8A84A;text-transform:uppercase;margin-bottom:16px;">${t('graine_title')}</div><div style="position:relative;width:160px;height:160px;min-width:160px;min-height:160px;margin:0 auto 16px;"><div style="position:absolute;inset:-20px;border-radius:50%;background:radial-gradient(circle,rgba(200,168,75,0.1) 0%,rgba(200,168,75,0.04) 50%,transparent 70%);"></div><div style="position:relative;">${getGraineSVG((function(){try{return JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length)}</div></div><div style="font-family:'Inter',var(--sans);font-size:16px;color:rgba(255,255,255,0.6);margin-bottom:6px;">${(function(){try{return JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length} ${t('graine_defis')}</div><div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:#C8A84A;margin-bottom:12px;">${getGraineStageName((function(){try{return JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length)}</div><div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:#C8A84A;opacity:0.7;line-height:1.6;">${t('graine_quote')}</div></div>
 
       </div>
   `;
@@ -5604,6 +5604,20 @@ const V2_I18N = {
     export_done: 'Backup export\u00e9 \u2713', import_done: 'Donn\u00e9es restaur\u00e9es \u2014 rechargement...',
     import_empty: 'Fichier vide', import_invalid: 'Fichier invalide',
     import_confirm: 'Restaurer {n} cl\u00e9s ? Les donn\u00e9es actuelles seront remplac\u00e9es.',
+    wird_matin: 'WIRD DU MATIN', wird_soir: 'WIRD DU SOIR',
+    bilan_7j_title: 'Bilan des 7 derniers soirs',
+    bilan_distrait: 'Distrait', bilan_effort: 'Efforts', bilan_sincere: 'Sinc\u00e8re',
+    progression_label: 'PROGRESSION',
+    today_pct: 'Aujourd\u2019hui : {n}% accompli',
+    journal_niyyah_title: 'Ton journal commence ici',
+    journal_niyyah_text: 'Chaque niyyah pos\u00e9e devient une trace de ta marche vers Allah.',
+    journal_regarde_title: 'Tes Regards commencent ici',
+    journal_regarde_text: 'Chaque instant saisi par le scanner devient un miroir de ta pr\u00e9sence.',
+    journal_regarde_cta: 'OUVRIR LE SCANNER',
+    settings_city: 'Changer ma ville', settings_export: 'Exporter', settings_import: 'Importer',
+    settings_delete_all: 'R\u00e9initialisation compl\u00e8te',
+    settings_delete_confirm1: 'Supprimer TOUTES les donn\u00e9es ? Cette action est irr\u00e9versible.',
+    settings_delete_confirm2: 'Derni\u00e8re confirmation \u2014 tout sera perdu.',
     tawba_reviens: 'Reviens', tawba_attend: 'Allah Al-Tawwab t\u2019attend.',
     card_pratique: 'Pri\u00e8res & actes', card_wird: 'Invocations', card_parcours: 'Ma progression', card_tafakkur: 'Méditation',
     btn_start_day: 'Commencer ma journée', btn_back_checklist: '← Retour à la checklist', scanner_hint: 'Quel objet portera ta niyyah aujourd\'hui ?',
@@ -5806,6 +5820,20 @@ const V2_I18N = {
     export_done: 'Backup exported \u2713', import_done: 'Data restored \u2014 reloading...',
     import_empty: 'Empty file', import_invalid: 'Invalid file',
     import_confirm: 'Restore {n} keys? Current data will be replaced.',
+    wird_matin: 'MORNING WIRD', wird_soir: 'EVENING WIRD',
+    bilan_7j_title: 'Last 7 evenings',
+    bilan_distrait: 'Distracted', bilan_effort: 'Effort', bilan_sincere: 'Sincere',
+    progression_label: 'PROGRESSION',
+    today_pct: 'Today: {n}% done',
+    journal_niyyah_title: 'Your journal starts here',
+    journal_niyyah_text: 'Each niyyah becomes a trace of your walk toward Allah.',
+    journal_regarde_title: 'Your Regards start here',
+    journal_regarde_text: 'Each moment captured by the scanner becomes a mirror of your presence.',
+    journal_regarde_cta: 'OPEN SCANNER',
+    settings_city: 'Change my city', settings_export: 'Export', settings_import: 'Import',
+    settings_delete_all: 'Full reset',
+    settings_delete_confirm1: 'Delete ALL data? This cannot be undone.',
+    settings_delete_confirm2: 'Final confirmation \u2014 everything will be lost.',
     tawba_reviens: 'Come back', tawba_attend: 'Allah Al-Tawwab awaits you.',
     card_pratique: 'Prayers & acts', card_wird: 'Invocations', card_parcours: 'My progress', card_tafakkur: 'Meditation',
     btn_start_day: 'Start my day', btn_back_checklist: '← Back to checklist', scanner_hint: 'What object will carry your niyyah today?',
@@ -5985,6 +6013,20 @@ const V2_I18N = {
     export_done: '\u062A\u064E\u0645\u0651\u064E \u0627\u0644\u062A\u0651\u064E\u0635\u0652\u062F\u0650\u064A\u0631 \u2713', import_done: '\u062A\u064E\u0645\u0651\u064E \u0627\u0644\u0627\u0650\u0633\u0652\u062A\u0650\u0639\u0627\u062F\u064E\u0629...',
     import_empty: '\u0645\u064E\u0644\u064E\u0641\u0651\u064C \u0641\u0627\u0631\u0650\u063A', import_invalid: '\u0645\u064E\u0644\u064E\u0641\u0651\u064C \u063A\u064E\u064A\u0652\u0631\u064F \u0635\u0627\u0644\u0650\u062D',
     import_confirm: '\u0627\u0650\u0633\u0652\u062A\u0650\u0639\u0627\u062F\u064E\u0629 {n} \u0645\u0650\u0641\u0652\u062A\u0627\u062D\u061F',
+    wird_matin: '\u0648\u0650\u0631\u0652\u062F\u064F \u0627\u0644\u0635\u0651\u064E\u0628\u0627\u062D', wird_soir: '\u0648\u0650\u0631\u0652\u062F\u064F \u0627\u0644\u0645\u064E\u0633\u0627\u0621',
+    bilan_7j_title: '\u0622\u062E\u0650\u0631\u064F \u0667 \u0645\u064E\u0633\u0627\u0621\u0627\u062A',
+    bilan_distrait: '\u063A\u064E\u0641\u0652\u0644\u064E\u0629', bilan_effort: '\u0645\u064F\u062C\u0627\u0647\u064E\u062F\u064E\u0629', bilan_sincere: '\u0625\u0650\u062E\u0652\u0644\u0627\u0635',
+    progression_label: '\u0627\u0644\u062A\u0651\u064E\u0642\u064E\u062F\u0651\u064F\u0645',
+    today_pct: '\u0627\u0644\u064A\u064E\u0648\u0652\u0645: {n}%',
+    journal_niyyah_title: '\u064A\u064E\u0628\u0652\u062F\u064E\u0623\u064F \u064A\u064E\u0648\u0652\u0645\u0650\u064A\u0651\u064E\u0627\u062A\u064F\u0643 \u0647\u064F\u0646\u0627',
+    journal_niyyah_text: '\u0643\u064F\u0644\u0651\u064F \u0646\u0650\u064A\u0651\u064E\u0629\u064D \u0623\u064E\u062B\u064E\u0631\u064C \u0641\u0650\u064A \u0645\u064E\u0633\u0650\u064A\u0631\u064E\u062A\u0650\u0643 \u0625\u0650\u0644\u064E\u0649 \u0627\u0644\u0644\u0651\u064E\u0647.',
+    journal_regarde_title: '\u062A\u064E\u0628\u0652\u062F\u064E\u0623\u064F \u0646\u064E\u0638\u064E\u0631\u0627\u062A\u064F\u0643 \u0647\u064F\u0646\u0627',
+    journal_regarde_text: '\u0643\u064F\u0644\u0651\u064F \u0644\u064E\u062D\u0652\u0638\u064E\u0629\u064D \u0645\u0650\u0631\u0652\u0622\u0629\u064C \u0644\u0650\u062D\u064F\u0636\u064F\u0648\u0631\u0650\u0643.',
+    journal_regarde_cta: '\u0627\u0641\u0652\u062A\u064E\u062D\u0650 \u0627\u0644\u0645\u0627\u0633\u0650\u062D',
+    settings_city: '\u062A\u063A\u064A\u064A\u0631 \u0645\u062F\u064A\u0646\u062A\u064A', settings_export: '\u062A\u064E\u0635\u0652\u062F\u0650\u064A\u0631', settings_import: '\u0627\u0650\u0633\u0652\u062A\u0650\u064A\u0631\u0627\u062F',
+    settings_delete_all: '\u0625\u0650\u0639\u0627\u062F\u064E\u0629\u064F \u0636\u064E\u0628\u0652\u0637 \u0643\u0627\u0645\u0650\u0644\u064E\u0629',
+    settings_delete_confirm1: '\u062D\u064E\u0630\u0652\u0641\u064F \u062C\u064E\u0645\u0650\u064A\u0639\u0650 \u0627\u0644\u0628\u064E\u064A\u0627\u0646\u0627\u062A\u061F',
+    settings_delete_confirm2: '\u062A\u064E\u0623\u0652\u0643\u0650\u064A\u062F\u064C \u0623\u064E\u062E\u0650\u064A\u0631.',
     tawba_reviens: '\u0639\u064F\u062F\u0652', tawba_attend: '\u0627\u0644\u0644\u0651\u064E\u0647\u064F \u0627\u0644\u062A\u0651\u064E\u0648\u0651\u064E\u0627\u0628\u064F \u064A\u064E\u0646\u0652\u062A\u064E\u0638\u0650\u0631\u064F\u0643.',
     card_pratique: '', card_wird: '', card_parcours: '', card_tafakkur: '',
     btn_start_day: '', btn_back_checklist: '', scanner_hint: '',
@@ -6107,8 +6149,9 @@ function v2SetLanguage(lang) {
   const sheet = document.getElementById('v2-settings-sheet');
   if (sheet) sheet.remove();
   // Toast confirmation
-  const langNames = { fr: 'Français', en: 'English', ar: 'العربية' };
-  v2ShowToast('🌐 ' + (langNames[lang] || lang));
+  var langNames = { fr: 'Fran\u00e7ais', en: 'English', ar: '\u0627\u0644\u0639\u0631\u0628\u064A\u0629' };
+  v2ShowToast('\ud83c\udf10 ' + (langNames[lang] || lang));
+  if (lang !== 'fr') setTimeout(function() { v2ShowToast('Interface translated. Spiritual content remains in French for authenticity.'); }, 2000);
 }
 
 function v2ApplyI18n() {
@@ -6755,7 +6798,7 @@ function journalSwitchTab(tab) {
     if (tabR) { tabR.style.background = 'transparent'; tabR.style.border = '1px solid rgba(200,168,75,0.15)'; tabR.style.color = 'rgba(200,168,75,0.5)'; tabR.style.boxShadow = 'none'; }
     var entries = getNiyyahHistory();
     if (entries.length === 0) {
-      content.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">نية</div><div class="empty-state-title">Ton journal commence ici</div><div class="empty-state-text">Chaque niyyah posée devient une trace de ta marche vers Allah.</div></div>';
+      content.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">نية</div><div class="empty-state-title">'+t('journal_niyyah_title')+'</div><div class="empty-state-text">'+t('journal_niyyah_text')+'</div></div>';
     } else {
       var html = '';
       entries.forEach(function(e) {
@@ -6773,7 +6816,7 @@ function journalSwitchTab(tab) {
     if (tabR) { tabR.style.background = 'linear-gradient(180deg,rgba(212,181,98,0.18) 0%,rgba(166,117,68,0.12) 100%)'; tabR.style.border = '1px solid rgba(230,200,130,0.5)'; tabR.style.color = 'rgba(230,200,130,1)'; tabR.style.boxShadow = '0 2px 8px rgba(0,0,0,0.3),inset 0 1px 0 rgba(255,230,180,0.1)'; }
     var entries = getRegardeHistory();
     if (entries.length === 0) {
-      content.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">نَظَر</div><div class="empty-state-title">Tes Regards commencent ici</div><div class="empty-state-text">Chaque instant saisi par le scanner devient un miroir de ta présence.</div><button class="empty-state-cta" onclick="scannerOpen()">OUVRIR LE SCANNER</button></div>';
+      content.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">نَظَر</div><div class="empty-state-title">'+t('journal_regarde_title')+'</div><div class="empty-state-text">'+t('journal_regarde_text')+'</div><button class="empty-state-cta" onclick="scannerOpen()">'+t('journal_regarde_cta')+'</button></div>';
     } else {
       var html = '';
       entries.forEach(function(e) {
@@ -7041,7 +7084,7 @@ function v2OpenSettings() {
         <div style="padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.04);cursor:pointer;"
           onclick="document.getElementById('v2-settings-sheet').remove();localStorage.removeItem('niyyah_coords');showCityInput();">
           <div style="display:flex;justify-content:space-between;align-items:center;">
-            <div style="font-size:14px;color:rgba(240,234,214,0.7);">📍 Changer ma ville</div>
+            <div style="font-size:14px;color:rgba(240,234,214,0.7);">📍 '+t('settings_city')+'</div>
             <div style="font-size:12px;color:rgba(240,234,214,0.55);">${_prayerCity || '—'}</div>
           </div>
         </div>
@@ -7079,17 +7122,17 @@ function v2OpenSettings() {
 
       <div style="display:flex;gap:8px;margin-top:8px;">
         <button onclick="niyyahExportData()" style="flex:1;padding:12px;border-radius:14px;border:1px solid rgba(200,168,75,0.25);background:rgba(200,168,75,0.04);color:#C8A84A;font-family:var(--serif);font-size:13px;cursor:pointer;">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round" style="vertical-align:middle;margin-right:4px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>Exporter
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round" style="vertical-align:middle;margin-right:4px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>'+t('settings_export')+'
         </button>
         <button onclick="document.getElementById('niyyahImportInput').click()" style="flex:1;padding:12px;border-radius:14px;border:1px solid rgba(200,168,75,0.25);background:rgba(200,168,75,0.04);color:#C8A84A;font-family:var(--serif);font-size:13px;cursor:pointer;">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round" style="vertical-align:middle;margin-right:4px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M17 8l-5-5-5 5"/><path d="M12 3v12"/></svg>Importer
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round" style="vertical-align:middle;margin-right:4px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M17 8l-5-5-5 5"/><path d="M12 3v12"/></svg>'+t('settings_import')+'
         </button>
         <input type="file" id="niyyahImportInput" accept=".json" style="display:none" onchange="niyyahImportData(this)">
       </div>
 
       <div style="padding:14px 16px;cursor:pointer;margin-top:8px;background:rgba(255,60,60,0.04);border:1px solid rgba(255,60,60,0.15);border-radius:14px;"
-        onclick="if(confirm('Supprimer TOUTES les données ? Cette action est irréversible.')){if(confirm('Dernière confirmation — tout sera perdu.')){localStorage.clear();location.reload();}}">
-        <div style="font-size:13px;color:rgba(255,80,80,0.6);text-align:center;">Réinitialisation complète</div>
+        onclick="if(confirm(t('settings_delete_confirm1'))){localStorage.clear();location.reload();}}">
+        <div style="font-size:13px;color:rgba(255,80,80,0.6);text-align:center;">'+t('settings_delete_all')+'</div>
       </div>
 
       <div style="margin-top:14px;background:#1a1a1a;border:1px solid rgba(255,255,255,0.05);border-radius:14px;padding:16px;">
@@ -8348,7 +8391,7 @@ function openRegardeJournal() {
   if (!overlay || !list) return;
   var entries = getRegardeHistory();
   if (entries.length === 0) {
-    list.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">نَظَر</div><div class="empty-state-title">Tes Regards commencent ici</div><div class="empty-state-text">Chaque instant saisi par le scanner devient un miroir de ta présence.</div><button class="empty-state-cta" onclick="scannerOpen()">OUVRIR LE SCANNER</button></div>';
+    list.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">نَظَر</div><div class="empty-state-title">'+t('journal_regarde_title')+'</div><div class="empty-state-text">'+t('journal_regarde_text')+'</div><button class="empty-state-cta" onclick="scannerOpen()">'+t('journal_regarde_cta')+'</button></div>';
   } else {
     var html = '';
     entries.forEach(function(e) {
@@ -8509,7 +8552,7 @@ function renderNiyyahJournalList(entries) {
   var list = document.getElementById('niyyah-journal-list');
   if (!list) return;
   if (entries.length === 0) {
-    list.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">نية</div><div class="empty-state-title">Ton journal commence ici</div><div class="empty-state-text">Chaque niyyah posée devient une trace de ta marche vers Allah.</div></div>';
+    list.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">نية</div><div class="empty-state-title">'+t('journal_niyyah_title')+'</div><div class="empty-state-text">'+t('journal_niyyah_text')+'</div></div>';
     return;
   }
   var html = '';
