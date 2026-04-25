@@ -6736,6 +6736,27 @@ function v2GoSanctuaire() {
   }
 
   v2CurrentView = 'sanctuaire';
+  // Mode Silence: overlay on sanctuaire
+  var _silOv = document.getElementById('silence-overlay');
+  if (isSilenceDay()) {
+    if (!_silOv) {
+      _silOv = document.createElement('div');
+      _silOv.id = 'silence-overlay';
+      _silOv.style.cssText = 'position:absolute;inset:0;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 24px;background:var(--bg,#2C2E32);';
+      var _sp = _getPrenom();
+      _silOv.innerHTML = '<img src="https://nabs881-sketch.github.io/niyyah-app/imageslogo.webp" alt="Niyyah" style="width:100px;height:auto;margin-bottom:24px;opacity:0.7;">'
+        + '<div style="font-family:\'Scheherazade New\',serif;font-size:36px;color:#C8A84A;margin-bottom:16px;">\u0627\u0644\u0633\u0644\u0627\u0645 \u0639\u0644\u064A\u0643\u0645</div>'
+        + '<div style="font-family:var(--serif);font-size:20px;font-style:italic;color:var(--t1);margin-bottom:24px;">' + (_sp ? _sp + ', jour' : 'Jour') + ' de silence.</div>'
+        + '<div style="font-family:\'Amiri\',serif;font-size:22px;color:rgba(200,168,75,0.6);line-height:1.8;direction:rtl;margin-bottom:8px;">\u0648\u0625\u0650\u0644\u064E\u0649\u0670 \u0631\u064E\u0628\u0651\u0650\u0643\u064E \u0641\u0671\u0631\u0652\u063A\u064E\u0628</div>'
+        + '<div style="font-family:var(--serif);font-size:14px;font-style:italic;color:var(--t3);">Et vers ton Seigneur, dirige ton d\u00e9sir ardent. \u2014 Ash-Sharh, 8</div>';
+      var sanctEl = document.getElementById('view-sanctuaire');
+      if (sanctEl) sanctEl.appendChild(_silOv);
+    }
+    _silOv.style.display = 'flex';
+    return;
+  } else if (_silOv) {
+    _silOv.style.display = 'none';
+  }
   v2RefreshStats();
   if (typeof renderDefiCard === 'function') renderDefiCard();
 }
