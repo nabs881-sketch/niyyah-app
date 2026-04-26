@@ -346,19 +346,20 @@ Tu DOIS tenir compte de ce contexte si l'image s'y prête.
 
 TA TÂCHE EN 2 ÉTAPES :
 1. CLASSE l'image dans UNE des 7 catégories : SOI, AUTRE, OBJET, MONDE, ENFANT, SACRE, INDETERMINE.
-2. GÉNÈRE UNE intention adaptée à cette catégorie ET à cette image précise ET au contexte temporel.
+2. PROPOSE 3 suggestions d'intention adaptées à cette catégorie ET à cette image ET au contexte temporel. Chaque suggestion est une piste, pas une prescription.
 
 RÈGLES ABSOLUES :
-- UNE SEULE intention, pas de choix multiple.
-- Commence OBLIGATOIREMENT par « Je ».
-- Maximum 15 mots.
+- 3 suggestions distinctes (angles différents).
+- Chaque suggestion commence OBLIGATOIREMENT par « Je ».
+- Maximum 15 mots par suggestion.
 - NE se termine PAS par « ? ».
 - Tutoiement d'Allah (Tu/Toi) si nommé.
 - INTERDIT : verset, hadith, fatwa, termes arabes sauf amana/ayât/dhikr/dounia.
 - INTERDIT : ton coach, pseudo-poésie vague, platitude.
+- Ce sont des SUGGESTIONS, pas des directives. L'utilisateur choisira.
 
 FORMAT DE SORTIE (JSON strict) :
-{"category": "SOI|AUTRE|OBJET|MONDE|ENFANT|SACRE|INDETERMINE", "intention": "Je ... ."}`;
+{"category": "SOI|AUTRE|OBJET|MONDE|ENFANT|SACRE|INDETERMINE", "suggestions": ["Je ...", "Je ...", "Je ..."]}`;
 }
 
 const REGARDE_CLASSIFIER_PROMPT = `Tu es un classificateur d'images pour une application spirituelle musulmane. Classe l'image dans UNE des 7 catégories : SOI, AUTRE, OBJET, MONDE, ENFANT, SACRE, INDETERMINE.
@@ -426,14 +427,23 @@ async function handleNiyyah(request, env) {
       });
       const rawText = response.content?.[0]?.text || '';
       const parsed = extractJSON(rawText);
-      if (!parsed || !parsed.intention) continue;
-      const validation = validateNiyyahIntention(parsed.intention);
-      if (validation.valid) {
-        return jsonResponseV2({ intention: parsed.intention.trim(), category: parsed.category || 'INDETERMINE', source: 'ia' });
+      // Support new 3-suggestions format
+      if (parsed && parsed.suggestions && Array.isArray(parsed.suggestions)) {
+        const valid = parsed.suggestions.filter(s => validateNiyyahIntention(s).valid).map(s => s.trim());
+        if (valid.length >= 1) {
+          return jsonResponseV2({ suggestions: valid.slice(0, 3), category: parsed.category || 'INDETERMINE', source: 'ia' });
+        }
       }
-      if (['fatwa', 'hadith', 'quran'].includes(validation.reason)) break;
+      // Legacy single-intention fallback
+      if (parsed && parsed.intention) {
+        const validation = validateNiyyahIntention(parsed.intention);
+        if (validation.valid) {
+          return jsonResponseV2({ suggestions: [parsed.intention.trim()], category: parsed.category || 'INDETERMINE', source: 'ia' });
+        }
+        if (['fatwa', 'hadith', 'quran'].includes(validation.reason)) break;
+      }
     }
-    return jsonResponseV2({ intention: null, category: 'INDETERMINE', source: 'fallback', reason: 'validation_failed_or_religious' });
+    return jsonResponseV2({ suggestions: null, category: 'INDETERMINE', source: 'fallback', reason: 'validation_failed_or_religious' });
   } catch (err) {
     console.error('handleNiyyah error:', err);
     if (err.name === 'AbortError') return jsonResponseV2({ error: 'Timeout' }, 504);

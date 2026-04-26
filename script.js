@@ -5838,7 +5838,7 @@ const V2_I18N = {
     journal_niyyah_empty: 'Tes premières intentions apparaîtront ici ✦', journal_regarde_empty: 'Tes premiers Regards apparaîtront ici ✦',
     ikhlas_earned: 'Tu as mérité cette intention ✦', tawba_door: '✦ La porte est toujours ouverte', tawba_resume: 'Reprendre le chemin',
     note_saved: 'Enregistré ✦', scanner_analyzing: 'Analyse en cours…', journal_voice_soon: 'Journal de l\'Âme — Prochainement ✦',
-    scanner_adopt: 'Adopter cette Niyyah', scanner_retry_label: 'Rescanner',
+    scanner_adopt: 'Adopter cette suggestion', scanner_retry_label: 'Rescanner',
     journal_niyyah_title: '✦ Mes Niyyah', journal_regards_title: '✦ Mes Regards',
     link_see_regards: 'Voir mes Regards →', link_see_niyyah: 'Voir mes Niyyah →',
     journal_search: 'Rechercher...', modal_close: 'Fermer', btn_later: 'Plus tard',
@@ -5893,7 +5893,7 @@ const V2_I18N = {
     // Graine
     graine_title: 'Graine de Lumière', graine_sub: 'La graine attend la lumière', graine_defis: 'défis accomplis', graine_quote: 'Avez-vous vu ce que vous cultivez ? — Al-Waqi\'a 63',
     // Scanner
-    scanner_posed: '✦ INTENTION POSÉE', scanner_empty: 'Tes intentions apparaîtront ici ✦',
+    scanner_posed: '\u2726 INTENTION POS\u00c9E', scanner_suggestions_title: 'Voici 3 suggestions \u2014 choisis celle qui te parle, ou \u00e9cris la tienne', scanner_custom_placeholder: '\u00c9cris ta propre intention...', scanner_adopt_custom: 'Adopter', scanner_empty: 'Tes intentions appara\u00eetront ici \u2726',
     scanner_limit: 'Ton scan du jour a été utilisé — reviens demain inch\'Allah 🌙',
     scanner_limit_week: 'Tu as atteint ta limite de scans cette semaine — reviens bientôt inch\'Allah 🌙',
     // Onboarding
@@ -6083,7 +6083,7 @@ const V2_I18N = {
     journal_niyyah_empty: 'Your first intentions will appear here ✦', journal_regarde_empty: 'Your first Regards will appear here ✦',
     ikhlas_earned: 'You have earned this intention ✦', tawba_door: '✦ The door is always open', tawba_resume: 'Resume the path',
     note_saved: 'Saved ✦', scanner_analyzing: 'Analyzing…', journal_voice_soon: 'Soul Journal — Coming soon ✦',
-    scanner_adopt: 'Adopt this Niyyah', scanner_retry_label: 'Rescan',
+    scanner_adopt: 'Adopt this suggestion', scanner_retry_label: 'Rescan',
     journal_niyyah_title: '✦ My Niyyah', journal_regards_title: '✦ My Regards',
     link_see_regards: 'See my Regards →', link_see_niyyah: 'See my Niyyah →',
     journal_search: 'Search...', modal_close: 'Close', btn_later: 'Later',
@@ -6128,7 +6128,7 @@ const V2_I18N = {
     prog_msg_none: 'Bismillah — start your day ✦', prog_msg_bronze: 'Mashallah!', prog_msg_silver: 'SubhanAllah!', prog_msg_gold: 'Allahu Akbar!',
     prog_sub_none: 'Every small act brings you closer to Allah', prog_sub_bronze: 'Foundations are set', prog_sub_silver: 'Dhikr, prayer, consistency', prog_sub_gold: 'Perfect day accomplished',
     graine_title: 'Seed of Light', graine_sub: 'The seed awaits the light', graine_defis: 'challenges completed', graine_quote: 'Have you seen what you cultivate? — Al-Waqi\'a 63',
-    scanner_posed: '✦ INTENTION SET', scanner_empty: 'Your intentions will appear here ✦',
+    scanner_posed: '\u2726 INTENTION SET', scanner_suggestions_title: 'Here are 3 suggestions \u2014 pick the one that speaks to you, or write your own', scanner_custom_placeholder: 'Write your own intention...', scanner_adopt_custom: 'Adopt', scanner_empty: 'Your intentions will appear here \u2726',
     scanner_limit: 'Your daily scan was used — come back tomorrow insha\'Allah 🌙',
     scanner_limit_week: 'You have reached your scan limit this week — come back soon insha\'Allah 🌙',
     onboard_start: 'Start', onboard_next: 'Next', onboard_skip: 'Skip', onboard_later: 'Later', onboard_go: 'Let\'s go — Bismillah 🌿',
@@ -9423,30 +9423,46 @@ function scannerShowResult(data) {
 
   hint.style.opacity = '0';
 
-  // ══ CAS NIYYAH DIRECTE (générée par IA contextuelle) ══
-  if (data.niyyahDirect) {
+  // ══ CAS SUGGESTIONS IA (3 pistes) ══
+  if (data.niyyahDirect || (data.suggestions && data.suggestions.length)) {
+    var _suggestions = data.suggestions || [data.niyyahDirect];
     var arText   = document.getElementById('scanner-ar-text');
     var arNiyyah = document.getElementById('scanner-ar-niyyah');
     var arTag    = document.getElementById('scanner-ar-tag');
     if (arText && arNiyyah) {
-      arTag.textContent    = '✦ NIYYAH';
-      arNiyyah.textContent = data.niyyahDirect.substring(0, 100);
+      arTag.textContent    = '\u2726 NIYYAH';
+      arNiyyah.textContent = _suggestions[0].substring(0, 100);
       arText.classList.add('active');
       setTimeout(function() { arText.classList.remove('active'); }, 3000);
     }
-    document.getElementById('scanner-object-label').textContent  = t('scanner_posed');
-    document.getElementById('scanner-niyyah-main').textContent   = '"' + data.niyyahDirect + '"';
-    const nuancesEl = document.getElementById('scanner-nuances');
-    if (nuancesEl) nuancesEl.innerHTML = '';
+    document.getElementById('scanner-object-label').textContent = t('scanner_suggestions_title');
+    document.getElementById('scanner-niyyah-main').textContent = '"' + _suggestions[0] + '"';
+    var nuancesEl = document.getElementById('scanner-nuances');
+    if (nuancesEl) {
+      nuancesEl.innerHTML = '';
+      _suggestions.forEach(function(s, i) {
+        var div = document.createElement('div');
+        div.className = 'scanner-nuance' + (i === 0 ? ' selected' : '');
+        div.onclick = function() {
+          document.querySelectorAll('.scanner-nuance').forEach(function(el) { el.classList.remove('selected'); });
+          div.classList.add('selected');
+          document.getElementById('scanner-niyyah-main').textContent = '"' + s + '"';
+          _selectedNuance = i;
+          if (navigator.vibrate) navigator.vibrate([15]);
+        };
+        div.innerHTML = '<div class="scanner-nuance-label">\u2726 Suggestion ' + (i + 1) + '</div><div class="scanner-nuance-text">' + escapeHtml(s) + '</div>';
+        nuancesEl.appendChild(div);
+      });
+      // Champ libre custom
+      var customWrap = document.createElement('div');
+      customWrap.style.cssText = 'margin-top:12px;display:flex;gap:8px;align-items:center;';
+      customWrap.innerHTML = '<input type="text" id="scanner-custom-input" placeholder="' + t('scanner_custom_placeholder') + '" style="flex:1;padding:10px 14px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:rgba(200,168,75,0.04);color:#D4AF37;font-family:var(--serif);font-size:13px;font-style:italic;outline:none;">'
+        + '<button onclick="scannerAdoptCustom()" style="padding:8px 14px;border-radius:12px;border:none;background:#C8A84A;color:#000;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;">' + t('scanner_adopt_custom') + '</button>';
+      nuancesEl.appendChild(customWrap);
+    }
+    _scannerResult.suggestions = _suggestions;
     result.classList.add('active');
     if (navigator.vibrate) navigator.vibrate([25, 50, 40]);
-    // Sauvegarde journal Niyyah
-    var _scanImg = document.getElementById('scanner-canvas');
-    if (_scanImg) {
-      compressPhoto(_scanImg.toDataURL('image/jpeg', 0.85)).then(function(photo) {
-        addNiyyahEntry({ intention: data.niyyahDirect, category: data.category || 'INDETERMINE', photo: photo });
-      });
-    }
     return;
   }
 
@@ -9470,7 +9486,7 @@ function scannerShowResult(data) {
     '"' + lib.nuances[0].text + '"';
 
   // 3 nuances d'intention (POINT 3)
-  const nuancesEl = document.getElementById('scanner-nuances');
+  var nuancesEl = document.getElementById('scanner-nuances');
   nuancesEl.innerHTML = '';
   lib.nuances.forEach(function(n, i) {
     var div = document.createElement('div');
@@ -9494,18 +9510,34 @@ function scannerShowResult(data) {
 
 /* ── Confirmer la Niyyah — POINT 4 : action cochée automatiquement ── */
 function scannerConfirmNiyyah() {
-  const lib  = SCANNER_LIBRARY[_scannerResult?.category] || SCANNER_LIBRARY.default;
-  const nuance = lib.nuances[_selectedNuance] || lib.nuances[0];
-  const intentionText = _scannerResult?.niyyahDirect || nuance.text;
-
-  // Toast fraternel
+  var intentionText;
+  if (_scannerResult && _scannerResult.suggestions) {
+    intentionText = _scannerResult.suggestions[_selectedNuance] || _scannerResult.suggestions[0];
+  } else {
+    var lib = SCANNER_LIBRARY[(_scannerResult && _scannerResult.category) || 'default'] || SCANNER_LIBRARY.default;
+    var nuance = lib.nuances[_selectedNuance] || lib.nuances[0];
+    intentionText = nuance.text;
+  }
+  _scannerAdopt(intentionText);
+}
+function scannerAdoptCustom() {
+  var input = document.getElementById('scanner-custom-input');
+  var text = input ? input.value.trim() : '';
+  if (!text) { showToast(t('scanner_custom_placeholder')); return; }
+  _scannerAdopt(text);
+}
+function _scannerAdopt(intentionText) {
   v2ShowToast(t('toast_niyyah'));
   if (navigator.vibrate) navigator.vibrate([20, 40, 80]);
-
-  // Fermer le scanner
+  // Sauvegarde journal
+  var _scanImg = document.getElementById('scanner-canvas');
+  if (_scanImg) {
+    compressPhoto(_scanImg.toDataURL('image/jpeg', 0.85)).then(function(photo) {
+      addNiyyahEntry({ intention: intentionText, category: (_scannerResult && _scannerResult.category) || 'INDETERMINE', photo: photo });
+    });
+  }
   setTimeout(function() {
     scannerClose();
-    // Retour au Sanctuaire avec l'infusion de la nouvelle intention
     try { if (typeof applyInfusion === 'function') applyInfusion(intentionText); } catch(e) {}
     try { if (typeof v2GoSanctuaire === 'function') v2GoSanctuaire(); } catch(e) {}
   }, 400);
@@ -9670,8 +9702,11 @@ async function scannerAnalyzeImage(imageData) {
 
     var data = await response.json();
 
+    if (data.source === 'ia' && data.suggestions && data.suggestions.length) {
+      return { category: data.category || 'niyyah_direct', suggestions: data.suggestions, niyyahDirect: data.suggestions[0] };
+    }
     if (data.source === 'ia' && data.intention) {
-      return { category: data.category || 'niyyah_direct', labels: [data.intention], objectName: data.intention, niyyahDirect: data.intention };
+      return { category: data.category || 'niyyah_direct', suggestions: [data.intention], niyyahDirect: data.intention };
     }
 
     // Fallback local avec catégorie IA
