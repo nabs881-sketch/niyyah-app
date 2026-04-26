@@ -2052,27 +2052,6 @@ function selectLevel(id) {
   renderLevel(id);
   if (alreadyOnChecklist && checkView) checkView.scrollTop = 0;
 }
-function getMoonSVG(percent) {
-  var p = Math.max(0, Math.min(100, percent));
-  var s = 60, r = 26, cx = 30, cy = 30;
-  var fill = '#C8A84A', stroke = '#C8A84A';
-  if (p <= 10) {
-    return '<svg width="'+s+'" height="'+s+'" viewBox="0 0 60 60"><circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="transparent" stroke="'+stroke+'" stroke-width="2" opacity="0.5"/></svg>';
-  }
-  if (p >= 100) {
-    return '<svg class="moon-full" width="'+s+'" height="'+s+'" viewBox="0 0 60 60"><circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="'+fill+'"/></svg>';
-  }
-  // Crescent / half / gibbous via two arcs
-  var t = p / 100;
-  // Inner edge x-radius: 1=new, 0=half, -1=full
-  var ix = 1 - 2 * t;
-  var sweep = ix >= 0 ? 0 : 1;
-  var axr = Math.abs(ix) * r;
-  return '<svg width="'+s+'" height="'+s+'" viewBox="0 0 60 60">'
-    + '<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="transparent" stroke="'+stroke+'" stroke-width="1.5" opacity="0.2"/>'
-    + '<path d="M '+cx+' '+(cy-r)+' A '+r+' '+r+' 0 1 1 '+cx+' '+(cy+r)+' A '+axr+' '+r+' 0 0 '+sweep+' '+cx+' '+(cy-r)+'" fill="'+fill+'"/>'
-    + '</svg>';
-}
 function getPrayerTimelineColor() {
   const now = new Date();
   const nowMin = now.getHours() * 60 + now.getMinutes();
@@ -2120,13 +2099,6 @@ function getCurrentPrayerBlock() {
   if (nowMin < maghrib) return { id: 'asr',     label: _t('block_asr') };
   if (nowMin < isha)    return { id: 'maghrib', label: _t('block_maghrib') };
   return { id: 'isha', label: _t('block_isha') };
-}
-function getConversionMessage(streak) {
-  if (streak >= 30) return t('conv_msg_4');
-  if (streak >= 14) return t('conv_msg_3');
-  if (streak >= 7)  return t('conv_msg_2');
-  if (streak >= 3)  return t('conv_msg_1');
-  return t('conv_msg_0');
 }
 function renderLevel(levelId) {
   const level   = LEVELS.find(l => l.id === levelId);
@@ -8788,24 +8760,6 @@ const SCANNER_LIBRARY = {
     ]
   }
 };
-
-/* ── Mapper les labels de l'API Vision vers les catégories ── */
-function scannerMapLabel(labels) {
-  var l = labels.join(' ').toLowerCase();
-  if (/food|meal|dish|plate|pizza|burger|salad|fruit|vegetable|rice|bread|soup/.test(l)) return 'food';
-  if (/laptop|computer|keyboard|screen|monitor|desktop/.test(l))  return 'laptop';
-  if (/phone|smartphone|mobile|iphone|android/.test(l))           return 'phone';
-  if (/book|notebook|journal|reading|magazine/.test(l))           return 'book';
-  if (/person|face|people|human|child|family|man|woman/.test(l))  return 'person';
-  if (/prayer|mat|mosque|quran|rosary|tasbi|misbaha/.test(l))     return 'prayer';
-  if (/mirror|reflection/.test(l))                                 return 'mirror';
-  if (/water|drink|coffee|tea|cup|glass|bottle/.test(l))          return 'drink';
-  if (/car|vehicle|truck|bus|bicycle|road|wheel|transport/.test(l)) return 'car';
-  if (/plant|flower|tree|nature|leaf|grass|garden|outdoor/.test(l)) return 'nature';
-  if (/money|wallet|cash|coin|bill|card|credit|banknote/.test(l))   return 'money';
-  if (/bed|pillow|blanket|sleep|bedroom|mattress/.test(l))          return 'bed';
-  return 'default';
-}
 
 /* ── Ouvrir le Scanner ── */
 /* ── Regarde — helpers ── */
