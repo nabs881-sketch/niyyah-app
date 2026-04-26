@@ -5,7 +5,7 @@
 // ── Sentry error monitoring ──
 if (typeof Sentry !== 'undefined') {
   Sentry.init({
-    dsn: 'TODO_DSN_HERE',
+    dsn: 'https://142832f4a76ceb3d7b7bcd0caa4ef670@o4511287171350528.ingest.de.sentry.io/4511287331782736',
     integrations: [Sentry.browserTracingIntegration()],
     tracesSampleRate: 0.2
   });
