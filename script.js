@@ -7864,12 +7864,28 @@ function openAlHaya() {
   var ov = document.getElementById('alhaya-overlay');
   if (ov) { ov.style.display = 'flex'; ov.style.opacity = '1'; }
   safeSetItem('niyyah_alhaya_active', '1');
+  try {
+    var now = Date.now().toString();
+    var count = parseInt(localStorage.getItem('niyyah_alhaya_activations') || '0', 10);
+    safeSetItem('niyyah_alhaya_activations', (count + 1).toString());
+    if (!localStorage.getItem('niyyah_alhaya_first_use')) safeSetItem('niyyah_alhaya_first_use', now);
+    safeSetItem('niyyah_alhaya_last_use', now);
+  } catch(e) {}
 }
 function closeAlHaya() {
   var ov = document.getElementById('alhaya-overlay');
   if (ov) { ov.style.opacity = '0'; setTimeout(function() { ov.style.display = 'none'; }, 200); }
   localStorage.removeItem('niyyah_alhaya_active');
 }
+window.getAlhayaStats = function() {
+  try {
+    return {
+      activations: parseInt(localStorage.getItem('niyyah_alhaya_activations') || '0', 10),
+      firstUse: parseInt(localStorage.getItem('niyyah_alhaya_first_use') || '0', 10) || null,
+      lastUse: parseInt(localStorage.getItem('niyyah_alhaya_last_use') || '0', 10) || null
+    };
+  } catch(e) { return {activations:0,firstUse:null,lastUse:null}; }
+};
 // Restore Al-Haya on load if was active
 if (localStorage.getItem('niyyah_alhaya_active') === '1') {
   setTimeout(function() { var ov = document.getElementById('alhaya-overlay'); if (ov) { ov.style.display = 'flex'; ov.style.opacity = '1'; } }, 100);
