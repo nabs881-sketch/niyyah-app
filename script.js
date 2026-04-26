@@ -453,7 +453,7 @@ function openDefiSelector() {
   if (suggestion) {
     html += '<div style="margin-bottom:18px;">';
     html += '<div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.7);margin-bottom:10px;">✦ Suggestion de la semaine</div>';
-    html += '<div onclick="confirmerDefi(' + suggestion.id + ')" style="background:rgba(200,168,75,0.09);border:1px solid rgba(200,168,75,0.3);border-radius:14px;padding:14px 16px;cursor:pointer;position:relative;overflow:hidden;transition:all 0.2s;" ontouchstart="this.style.opacity=0.8" ontouchend="this.style.opacity=1">';
+    html += '<div onclick="confirmerDefi(' + suggestion.id + ')" style="background:rgba(200,168,75,0.09);border:1px solid rgba(200,168,75,0.3);border-radius:12px;padding:14px 16px;cursor:pointer;position:relative;overflow:hidden;transition:all 0.2s;" ontouchstart="this.style.opacity=0.8" ontouchend="this.style.opacity=1">';
     html += '<div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(200,168,75,0.6),transparent);"></div>';
     html += '<div style="display:flex;align-items:center;gap:12px;">';
     html += '<div style="width:44px;height:44px;background:rgba(200,168,75,0.12);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;">' + suggestion.icon + '</div>';
@@ -1825,7 +1825,7 @@ function renderResume() {
     levelsHtml +
     '<div class="resume-actions">' +
       '<button class="btn-new-day" onclick="switchView(\'checklist\')">' + t('btn_start_day') + '</button>' +
-      '<button style="width:100%;padding:14px;border-radius:14px;border:none;background:#C8A84A;color:#2C2E32;font-size:15px;font-weight:600;cursor:pointer;font-family:var(--sans);margin-bottom:0;" onclick="openBilanSoir()">🌙 Bilan du soir</button>' +
+      '<button style="width:100%;padding:14px;border-radius:12px;border:none;background:#C8A84A;color:#2C2E32;font-size:15px;font-weight:600;cursor:pointer;font-family:var(--sans);margin-bottom:0;" onclick="openBilanSoir()">🌙 Bilan du soir</button>' +
       '<button class="btn-back-check" onclick="switchView(\'checklist\')">' + t('btn_back_checklist') + '</button>' +
     '</div>';
 }
@@ -2182,7 +2182,7 @@ function renderLevel(levelId) {
   var _bandeauSub = t('bandeau_sub');
   if (_block.id === 'nuit') _bandeauSub = t('bandeau_nuit');
   else if (_block.id === 'qiyam') _bandeauSub = state._unlocked && state._unlocked.includes(4) ? t('bandeau_qiyam') : t('bandeau_nuit');
-  html += '<div style="display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,rgba(200,168,75,0.15),rgba(200,168,75,0.05));border:1px solid rgba(200,168,75,0.35);border-radius:14px;padding:14px 18px;margin:0 0 20px;">'
+  html += '<div style="display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,rgba(200,168,75,0.15),rgba(200,168,75,0.05));border:1px solid rgba(200,168,75,0.35);border-radius:12px;padding:14px 18px;margin:0 0 20px;">'
     + '<div style="width:3px;height:36px;background:linear-gradient(180deg,#C8A84A,#E0C870);border-radius:2px;flex-shrink:0;"></div>'
     + '<div>'
     + '<div style="font-size:15px;font-weight:700;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;letter-spacing:0.5px;">' + _block.label + '</div>'
@@ -2814,7 +2814,7 @@ function renderProgression() {
     const pct=Math.round(getLevelProgress(lvl.id));
     const r=20, circ=2*Math.PI*r, dash=(pct/100)*circ;
     const ring='<svg width="48" height="48" viewBox="0 0 48 48" style="transform:rotate(-90deg);"><circle cx="24" cy="24" r="20" fill="none" stroke="rgba(200,168,75,0.15)" stroke-width="2"/><circle cx="24" cy="24" r="20" fill="none" stroke="#C8A84A" stroke-width="2" stroke-linecap="round" stroke-dasharray="'+circ.toFixed(1)+'" stroke-dashoffset="'+(circ-dash).toFixed(1)+'"/></svg>';
-    lvlGridP+='<div onclick="selectLevel('+lvl.id+')" style="background:rgba(200,168,75,0.03);border:1px solid rgba(200,168,75,0.12);border-radius:14px;height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;cursor:pointer;">'
+    lvlGridP+='<div onclick="selectLevel('+lvl.id+')" style="background:rgba(200,168,75,0.03);border:1px solid rgba(200,168,75,0.12);border-radius:12px;height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;cursor:pointer;">'
       +'<div style="width:48px;height:48px;position:relative;">'+ring+'<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:\'Cormorant Garamond\',serif;font-size:14px;color:#C8A84A;">'+pct+'%</div></div>'
       +'<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:600;color:#C8A84A;">'+t('level_'+lvl.id)+'</div>'
       +'</div>';
@@ -2857,7 +2857,7 @@ function renderProgression() {
   const heroSectionP = '<div style="margin:0 16px 24px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:2.5px;color:rgba(255,255,255,0.55);text-transform:uppercase;margin-bottom:12px;text-align:center;">'+t('progression_label')+'</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">'+lvlGridP+'</div></div>';
 
   el.innerHTML = `
-    <div style="padding:0 0 40px;"><!-- 1. TITRE SPIRITUEL --><div id="v2-spiritual-title" style="text-align:center;margin:0 16px 12px;"></div><!-- 2. PROGRESSION -->${heroSectionP}<!-- 3. DÉFI SEMAINE --><button id="accueilDefiCard" class="defi-card-sanctuaire" onclick="if(typeof openDefiSelector==='function')openDefiSelector()" style="display:none;margin:0 16px 12px;padding:14px 18px;background:#1a1a1a;border:1px solid rgba(200,168,75,0.3);border-radius:14px;cursor:pointer;position:relative;z-index:10;text-align:left;min-height:90px;box-sizing:border-box;font-family:inherit;color:inherit;width:calc(100% - 32px);"><div style="display:flex;align-items:center;gap:12px;width:100%;"><div id="defiCardIcon"><img src="./imagescroissant.webp" alt="Croissant" style="width:60px;height:auto;display:block;flex-shrink:0;"></div><div style="flex:1;text-align:left;"><div id="defiCardTitre" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:#C8A84A;">Défi de la semaine</div><div id="defiCardScore" style="font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:#B0A080;margin-top:2px;"></div></div></div><div id="defiCardDots" style="display:none;"></div><div id="defiCardBar" style="position:absolute;bottom:0;left:0;right:0;height:3px;background:rgba(200,168,75,0.12);border-radius:0 0 14px 14px;overflow:hidden;"><div id="defiCardBarFill" style="height:100%;width:0%;background:#C8A84A;transition:width 0.6s ease;"></div></div></button><!-- 4. CHALLENGE FAJR --><div id="fajr-challenge-card" style="display:none;margin:0 16px 12px;"></div><!-- 5. SÉRIE EN COURS -->${streakSection}<!-- HADITH CONTEXTUEL --><div style="margin:0 16px 24px;padding:20px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.2);border-radius:16px;position:relative;overflow:hidden;"><div style="position:absolute;top:-10px;right:12px;font-size:48px;opacity:0.07;font-family:serif;">"</div><div style="font-size:14px;line-height:1.7;color:var(--t1);font-style:italic;margin-bottom:10px;">${hadith.text}</div><div style="font-size:12px;color:#c8a84b;font-weight:600;letter-spacing:0.5px;">— ${hadith.ref}</div></div><!-- 6. HEATMAP 30 JOURS --><div style="margin:0 16px 24px;"><div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;text-align:center;">${t('prog_heatmap')}</div><div style="display:grid;grid-template-columns:repeat(10,1fr);gap:4px;">
+    <div style="padding:0 0 40px;"><!-- 1. TITRE SPIRITUEL --><div id="v2-spiritual-title" style="text-align:center;margin:0 16px 12px;"></div><!-- 2. PROGRESSION -->${heroSectionP}<!-- 3. DÉFI SEMAINE --><button id="accueilDefiCard" class="defi-card-sanctuaire" onclick="if(typeof openDefiSelector==='function')openDefiSelector()" style="display:none;margin:0 16px 12px;padding:14px 18px;background:#1a1a1a;border:1px solid rgba(200,168,75,0.3);border-radius:12px;cursor:pointer;position:relative;z-index:10;text-align:left;min-height:90px;box-sizing:border-box;font-family:inherit;color:inherit;width:calc(100% - 32px);"><div style="display:flex;align-items:center;gap:12px;width:100%;"><div id="defiCardIcon"><img src="./imagescroissant.webp" alt="Croissant" style="width:60px;height:auto;display:block;flex-shrink:0;"></div><div style="flex:1;text-align:left;"><div id="defiCardTitre" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:#C8A84A;">Défi de la semaine</div><div id="defiCardScore" style="font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:#B0A080;margin-top:2px;"></div></div></div><div id="defiCardDots" style="display:none;"></div><div id="defiCardBar" style="position:absolute;bottom:0;left:0;right:0;height:3px;background:rgba(200,168,75,0.12);border-radius:0 0 14px 14px;overflow:hidden;"><div id="defiCardBarFill" style="height:100%;width:0%;background:#C8A84A;transition:width 0.6s ease;"></div></div></button><!-- 4. CHALLENGE FAJR --><div id="fajr-challenge-card" style="display:none;margin:0 16px 12px;"></div><!-- 5. SÉRIE EN COURS -->${streakSection}<!-- HADITH CONTEXTUEL --><div style="margin:0 16px 24px;padding:20px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.2);border-radius:16px;position:relative;overflow:hidden;"><div style="position:absolute;top:-10px;right:12px;font-size:48px;opacity:0.07;font-family:serif;">"</div><div style="font-size:14px;line-height:1.7;color:var(--t1);font-style:italic;margin-bottom:10px;">${hadith.text}</div><div style="font-size:12px;color:#c8a84b;font-weight:600;letter-spacing:0.5px;">— ${hadith.ref}</div></div><!-- 6. HEATMAP 30 JOURS --><div style="margin:0 16px 24px;"><div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;text-align:center;">${t('prog_heatmap')}</div><div style="display:grid;grid-template-columns:repeat(10,1fr);gap:4px;">
           ${heatmapHTML}
         </div><div style="font-family:'Inter',var(--sans);font-size:12px;color:rgba(255,255,255,0.5);text-align:center;margin-top:10px;">${t('today_pct').replace('{n}',Math.round(getLevelProgress(1)))}</div><button onclick="var c=document.getElementById('yearCalWrap');if(c.style.display==='none'){c.style.display='block';calYear=new Date().getFullYear();renderYearCalendar();this.textContent=t('cal_hide');}else{c.style.display='none';this.textContent=t('cal_annual');}" style="display:block;margin:12px auto 0;background:transparent;border:1px solid rgba(200,168,75,0.25);border-radius:12px;padding:8px 18px;color:var(--gold);font-family:var(--serif);font-size:13px;cursor:pointer;" aria-label="${t('cal_annual')}">🗓️ ${t('cal_annual')}</button><div id="yearCalWrap" style="display:none;margin-top:16px;background:var(--card);border:1px solid rgba(200,168,75,0.15);border-radius:12px;padding:16px;"><div id="yearCalContent"></div></div></div><!-- BILAN 7 JOURS -->${bilanHTML}<!-- 7. GRAINE DE LUMIÈRE --><div style="margin:0 16px 24px;background:linear-gradient(135deg,rgba(200,168,75,0.08),rgba(200,168,75,0.03));border:1px solid rgba(200,168,75,0.25);border-radius:20px;padding:28px;text-align:center;user-select:none;-webkit-user-select:none;"><div style="font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:3px;color:#C8A84A;text-transform:uppercase;margin-bottom:16px;">${t('graine_title')}</div><div style="position:relative;width:160px;height:160px;min-width:160px;min-height:160px;margin:0 auto 16px;"><div style="position:absolute;inset:-20px;border-radius:50%;background:radial-gradient(circle,rgba(200,168,75,0.1) 0%,rgba(200,168,75,0.04) 50%,transparent 70%);"></div><div style="position:relative;">${getGraineSVG((function(){try{return JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length)}</div></div><div style="font-family:'Inter',var(--sans);font-size:16px;color:rgba(255,255,255,0.6);margin-bottom:6px;">${(function(){try{return JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length} ${t('graine_defis')}</div><div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:#C8A84A;margin-bottom:12px;">${getGraineStageName((function(){try{return JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length)}</div><div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:#C8A84A;opacity:0.7;line-height:1.6;">${t('graine_quote')}</div></div>
 
@@ -3623,7 +3623,7 @@ function showWeeklyBilan() {
         <div style="font-size:13px;color:rgba(240,234,214,0.7);line-height:1.6;">${conseil}</div>
       </div>
     </div>
-    <button class="weekly-btn" onclick="closeWeeklyBilan()" style="width:100%;padding:15px;border-radius:14px;border:none;background:#C8A84A;color:#2C2E32;font-size:15px;font-weight:700;cursor:pointer;font-family:'Cormorant Garamond',serif;letter-spacing:0.05em;">
+    <button class="weekly-btn" onclick="closeWeeklyBilan()" style="width:100%;padding:15px;border-radius:12px;border:none;background:#C8A84A;color:#2C2E32;font-size:15px;font-weight:700;cursor:pointer;font-family:'Cormorant Garamond',serif;letter-spacing:0.05em;">
       بِسْمِ اللَّهِ — Nouvelle semaine
     </button>
   `;
@@ -7309,7 +7309,7 @@ function v2OpenSettings() {
   sheet.id = 'v2-settings-sheet';
   sheet.style.cssText = 'position:fixed;inset:0;background:rgba(10,10,10,0.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:3000;display:flex;align-items:flex-end;justify-content:center;animation:backdropV2 0.3s ease forwards;';
   const ramadanActive = typeof ramadanState !== 'undefined' && ramadanState.active;
-  const debugSection = NIYYAH_DEBUG ? '<div style="margin-top:14px;background:#1a1a1a;border:1px solid rgba(255,255,255,0.05);border-radius:14px;padding:16px;"><div style="font-size:12px;letter-spacing:0.28em;color:rgba(255,255,255,0.55);text-transform:uppercase;font-family:Cormorant Garamond,serif;margin-bottom:10px;text-align:center;">🔧 DEBUG</div><button onclick="safeSetItem(\'niyyah_regarde_available_today\',\'true\');showToast(\'Regarde active\');document.getElementById(\'v2-settings-sheet\').remove();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);font-size:12px;cursor:pointer;margin-bottom:8px;">[DEBUG] Activer Regarde</button><button onclick="document.getElementById(\'v2-settings-sheet\').remove();regardeOpen();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);font-size:12px;cursor:pointer;">[DEBUG] Lancer Regarde maintenant</button><button onclick="document.getElementById(\'v2-settings-sheet\').remove();openFinJournee();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);font-size:12px;cursor:pointer;margin-top:8px;">[DEBUG] Forcer Fin de Journée</button></div>' : '';
+  const debugSection = NIYYAH_DEBUG ? '<div style="margin-top:14px;background:#1a1a1a;border:1px solid rgba(255,255,255,0.05);border-radius:12px;padding:16px;"><div style="font-size:12px;letter-spacing:0.28em;color:rgba(255,255,255,0.55);text-transform:uppercase;font-family:Cormorant Garamond,serif;margin-bottom:10px;text-align:center;">🔧 DEBUG</div><button onclick="safeSetItem(\'niyyah_regarde_available_today\',\'true\');showToast(\'Regarde active\');document.getElementById(\'v2-settings-sheet\').remove();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);font-size:12px;cursor:pointer;margin-bottom:8px;">[DEBUG] Activer Regarde</button><button onclick="document.getElementById(\'v2-settings-sheet\').remove();regardeOpen();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);font-size:12px;cursor:pointer;">[DEBUG] Lancer Regarde maintenant</button><button onclick="document.getElementById(\'v2-settings-sheet\').remove();openFinJournee();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);font-size:12px;cursor:pointer;margin-top:8px;">[DEBUG] Forcer Fin de Journée</button></div>' : '';
   sheet.innerHTML = `
     <div style="width:100%;max-width:480px;max-height:calc(100vh - env(safe-area-inset-top,0px));overflow-y:auto;background:#111;border-radius:22px 22px 0 0;padding:calc(env(safe-area-inset-top,0px) + 26px) 22px calc(32px + env(safe-area-inset-bottom));border-top:1px solid rgba(212,175,55,0.14);animation:sheetV2 0.4s cubic-bezier(0.23,1,0.32,1) forwards;direction:${T.dir};">
       <div style="width:38px;height:3px;background:rgba(255,255,255,0.1);border-radius:2px;margin:0 auto 22px;"></div>
@@ -7331,7 +7331,7 @@ function v2OpenSettings() {
       </div>
 
       <!-- AUTRES RÉGLAGES -->
-      <div style="background:#1a1a1a;border:1px solid rgba(255,255,255,0.05);border-radius:14px;overflow:hidden;margin-bottom:14px;">
+      <div style="background:#1a1a1a;border:1px solid rgba(255,255,255,0.05);border-radius:12px;overflow:hidden;margin-bottom:14px;">
         <div style="padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.04);">
           <div style="display:flex;gap:8px;">
             <button onclick="if(typeof toggleTheme==='function')toggleTheme();document.getElementById('v2-settings-sheet').remove();"
@@ -7380,21 +7380,21 @@ function v2OpenSettings() {
 
 
       <div style="display:flex;gap:8px;margin-top:8px;">
-        <button onclick="niyyahExportData()" style="flex:1;padding:12px;border-radius:14px;border:1px solid rgba(200,168,75,0.25);background:rgba(200,168,75,0.04);color:#C8A84A;font-family:var(--serif);font-size:13px;cursor:pointer;">
+        <button onclick="niyyahExportData()" style="flex:1;padding:12px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:rgba(200,168,75,0.04);color:#C8A84A;font-family:var(--serif);font-size:13px;cursor:pointer;">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round" style="vertical-align:middle;margin-right:4px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>${t('settings_export')}
         </button>
-        <button onclick="document.getElementById('niyyahImportInput').click()" style="flex:1;padding:12px;border-radius:14px;border:1px solid rgba(200,168,75,0.25);background:rgba(200,168,75,0.04);color:#C8A84A;font-family:var(--serif);font-size:13px;cursor:pointer;">
+        <button onclick="document.getElementById('niyyahImportInput').click()" style="flex:1;padding:12px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:rgba(200,168,75,0.04);color:#C8A84A;font-family:var(--serif);font-size:13px;cursor:pointer;">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round" style="vertical-align:middle;margin-right:4px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M17 8l-5-5-5 5"/><path d="M12 3v12"/></svg>${t('settings_import')}
         </button>
         <input type="file" id="niyyahImportInput" accept=".json" style="display:none" onchange="niyyahImportData(this)">
       </div>
 
-      <div style="padding:14px 16px;cursor:pointer;margin-top:8px;background:rgba(255,60,60,0.04);border:1px solid rgba(255,60,60,0.15);border-radius:14px;"
+      <div style="padding:14px 16px;cursor:pointer;margin-top:8px;background:rgba(255,60,60,0.04);border:1px solid rgba(255,60,60,0.15);border-radius:12px;"
         onclick="if(confirm('${t('settings_delete_confirm1').replace(/'/g,"\\'")}')){if(confirm('${t('settings_delete_confirm2').replace(/'/g,"\\'")}')){localStorage.clear();location.reload();}}">
         <div style="font-size:13px;color:rgba(255,80,80,0.6);text-align:center;">${t('settings_delete_all')}</div>
       </div>
 
-      <div style="margin-top:14px;background:#1a1a1a;border:1px solid rgba(255,255,255,0.05);border-radius:14px;padding:16px;">
+      <div style="margin-top:14px;background:#1a1a1a;border:1px solid rgba(255,255,255,0.05);border-radius:12px;padding:16px;">
         <div style="font-size:12px;letter-spacing:0.28em;color:rgba(212,175,55,0.65);text-transform:uppercase;font-family:'Cormorant Garamond',serif;margin-bottom:10px;text-align:center;">${T.settings_mentions}</div>
         <div style="font-family:'Cormorant Garamond',serif;font-size:12px;color:rgba(240,234,214,0.55);line-height:1.6;text-align:${isRTL ? 'right' : 'left'};">${T.mentions_text}</div>
       </div>
@@ -8413,12 +8413,12 @@ function updateFajrChallenge() {
   card.style.display = 'block';
   var pct = Math.min(100, Math.round((fajrStreak / 30) * 100));
   if (fajrStreak >= 30) {
-    card.innerHTML = '<div style="background:#1a1a1a;border:1px solid #C8A84A;border-radius:14px;padding:16px 18px;text-align:center;">'
+    card.innerHTML = '<div style="background:#1a1a1a;border:1px solid #C8A84A;border-radius:12px;padding:16px 18px;text-align:center;">'
       + '<div style="font-family:\'Amiri\',serif;font-size:20px;color:#C8A84A;margin-bottom:4px;">مُحَافِظٌ عَلَى الْفَجْرِ</div>'
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:#E8DCC0;">' + t('fajr_gardien') + '</div>'
       + '</div>';
   } else {
-    card.innerHTML = '<div style="background:#1a1a1a;border:1px solid rgba(200,168,75,0.3);border-radius:14px;padding:14px 18px;min-height:90px;box-sizing:border-box;position:relative;display:flex;align-items:center;">'
+    card.innerHTML = '<div style="background:#1a1a1a;border:1px solid rgba(200,168,75,0.3);border-radius:12px;padding:14px 18px;min-height:90px;box-sizing:border-box;position:relative;display:flex;align-items:center;">'
       + '<div style="display:flex;align-items:center;gap:12px;width:100%;">'
       + '<div><img src="./imagessoleil.webp" alt="Soleil" style="width:60px;height:auto;display:block;flex-shrink:0;mix-blend-mode:screen;"></div>'
       + '<div style="flex:1;text-align:left;">'
@@ -9041,7 +9041,7 @@ function openRegardeDetail(id) {
   if (!overlay || !content) return;
   var d = new Date(entry.date);
   var dateStr = d.toLocaleDateString(_dateLocale(), { weekday:'long', day:'numeric', month:'long' }) + ' · ' + d.toLocaleTimeString(_dateLocale(), { hour:'2-digit', minute:'2-digit' });
-  var photoHtml = entry.photo ? '<img src="' + entry.photo + '" style="width:100%;border-radius:14px;margin-bottom:20px;">' : '';
+  var photoHtml = entry.photo ? '<img src="' + entry.photo + '" style="width:100%;border-radius:12px;margin-bottom:20px;">' : '';
   var starIcon = entry.bookmark ? '★' : '☆';
   var noteText = entry.note || '';
   content.innerHTML = photoHtml
@@ -9203,7 +9203,7 @@ function openNiyyahDetail(id) {
   if (!overlay || !content) return;
   var d = new Date(entry.date);
   var dateStr = d.toLocaleDateString(_dateLocale(), { weekday:'long', day:'numeric', month:'long' }) + ' · ' + d.toLocaleTimeString(_dateLocale(), { hour:'2-digit', minute:'2-digit' });
-  var photoHtml = entry.photo ? '<img src="' + entry.photo + '" style="width:100%;border-radius:14px;margin-bottom:20px;">' : '';
+  var photoHtml = entry.photo ? '<img src="' + entry.photo + '" style="width:100%;border-radius:12px;margin-bottom:20px;">' : '';
   content.innerHTML = photoHtml
     + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-style:italic;color:#D4AF37;line-height:1.6;text-align:center;margin-bottom:12px;">' + (entry.intention || '') + '</div>'
     + '<div style="font-size:12px;color:rgba(255,255,255,0.55);text-align:center;margin-bottom:24px;">' + dateStr + '</div>'
