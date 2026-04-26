@@ -6289,19 +6289,18 @@ function v2DetectLang() {
   // URL override: ?lang=en|fr|ar
   try {
     var urlLang = new URLSearchParams(window.location.search).get('lang');
-    if (urlLang && V2_I18N[urlLang]) {
+    if (urlLang && urlLang !== 'ar' && V2_I18N[urlLang]) {
       var s = JSON.parse(localStorage.getItem('niyyah_v2_bridge') || '{}'); s.lang = urlLang; safeSetItem('niyyah_v2_bridge', JSON.stringify(s));
       history.replaceState(null, '', window.location.pathname);
       return urlLang;
     }
   } catch(e) {}
   const saved = (JSON.parse(localStorage.getItem('niyyah_v2_bridge') || '{}')).lang;
-  if (saved && V2_I18N[saved]) return saved;
+  if (saved && saved !== 'ar' && V2_I18N[saved]) return saved;
   // Détection auto au premier lancement
   var bl = (navigator.language || 'en').toLowerCase();
   var detected = 'en';
   if (bl.startsWith('fr')) detected = 'fr';
-  else if (bl.startsWith('ar')) detected = 'ar';
   // Sauvegarder pour ne pas re-détecter
   try { var s = JSON.parse(localStorage.getItem('niyyah_v2_bridge') || '{}'); s.lang = detected; safeSetItem('niyyah_v2_bridge', JSON.stringify(s)); } catch(e) {}
   return detected;
@@ -6364,7 +6363,7 @@ function checkMidnightReset() {
 }
 
 function v2SetLanguage(lang) {
-  if (!V2_I18N[lang]) return;
+  if (!V2_I18N[lang] || lang === 'ar') return;
   V2_LANG = lang;
   const s = v2GetState();
   s.lang = lang;
@@ -7320,10 +7319,6 @@ function v2OpenSettings() {
           <button id="v2-lang-en" onclick="v2SetLanguage('en')"
             style="padding:9px 20px;border-radius:100px;border:1px solid ${V2_LANG==='en'?'rgba(212,175,55,0.5)':'rgba(255,255,255,0.1)'};background:${V2_LANG==='en'?'rgba(212,175,55,0.1)':'none'};color:${V2_LANG==='en'?'#D4AF37':'rgba(240,234,214,0.5)'};font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:0.15em;cursor:pointer;transition:all 0.2s;">
             EN
-          </button>
-          <button id="v2-lang-ar" onclick="v2SetLanguage('ar')"
-            style="padding:9px 20px;border-radius:100px;border:1px solid ${V2_LANG==='ar'?'rgba(212,175,55,0.5)':'rgba(255,255,255,0.1)'};background:${V2_LANG==='ar'?'rgba(212,175,55,0.1)':'none'};color:${V2_LANG==='ar'?'#D4AF37':'rgba(240,234,214,0.5)'};font-family:'Amiri',serif;font-size:15px;cursor:pointer;transition:all 0.2s;">
-            عربي
           </button>
         </div>
       </div>
