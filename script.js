@@ -1376,7 +1376,7 @@ function resolveGrace() {
 function getDateMinus(dateStr, days) {
   const d = new Date(dateStr); d.setDate(d.getDate() - days); return d.toISOString().split('T')[0];
 }
-function saveState()   { safeSetItem('spiritual_v2', JSON.stringify(state)); safeSetItem('spiritual_level', currentLevel); }
+function saveState()   { safeSetItem('spiritual_v2', JSON.stringify(state)); }
 function saveHistory() { safeSetItem('spiritual_history', JSON.stringify(history)); }
 function getLevelProgress(levelId) { return getCalcLvlPct(levelId, state); }
 // 'none' removed — was a stub returning 'none'
@@ -3124,7 +3124,7 @@ let _prayerError   = false;
 let _showCityInput = !_prayerCity && !localStorage.getItem('niyyah_coords');
 // Cache horaires — lit les deux clés (ancienne + nouvelle)
 const _cachedPrayerDate = localStorage.getItem('niyyah_prayer_date_v2');
-const _cachedPrayerData = localStorage.getItem('niyyah_prayer_cache') || localStorage.getItem('niyyah_prayer_cache_v2');
+const _cachedPrayerData = localStorage.getItem('niyyah_prayer_cache');
 if (_cachedPrayerDate === TODAY && _cachedPrayerData) {
   try { _prayerTimes = JSON.parse(_cachedPrayerData); } catch(e) {}
   if (_prayerTimes) setTimeout(scheduleFajrNotification, 1000);
@@ -3270,7 +3270,6 @@ function _applyPrayerTimings(timings) {
   _showCityInput = false;
   var str = JSON.stringify(timings);
   safeSetItem('niyyah_prayer_cache', str);
-  safeSetItem('niyyah_prayer_cache_v2', str);
   safeSetItem('niyyah_prayer_date_v2', TODAY);
   schedulePrayerReminders();
   startPrayerCountdown();
@@ -3313,7 +3312,6 @@ function _loadPrayerByCity() {
     })
     .catch(function() {
       var _fallback = localStorage.getItem('niyyah_prayer_cache');
-      if (!_fallback) _fallback = localStorage.getItem('niyyah_prayer_cache_v2');
       if (_fallback) { try { _prayerTimes = JSON.parse(_fallback); } catch(e) {} }
       _prayerLoading = false;
       _prayerError = !_prayerTimes;
@@ -4393,9 +4391,6 @@ function showTawba() {
   // Calculer jours d'absence depuis localStorage (indépendant de la var globale)
   var _histRaw = {};
   try { _histRaw = JSON.parse(localStorage.getItem('spiritual_history') || '{}'); } catch(e) {}
-  var _niyyahState = {};
-  try { _niyyahState = JSON.parse(localStorage.getItem('niyyah_v2_state') || '{}'); } catch(e) {}
-
   // Utiliser niyyah_last_open pour détecter l'absence réelle
   var _lastOpen = localStorage.getItem('niyyah_last_open_prev') || localStorage.getItem('niyyah_last_open');
   var daysSince = 0;
@@ -4516,10 +4511,8 @@ function closeTawba() {
     card.style.opacity    = '1';
     card.style.transform  = 'scale(0.85)';
     // Appliquer l'infusion si une intention existe
-    try {
-      var s = JSON.parse(localStorage.getItem('niyyah_v2_state') || '{}');
-      if (s.intention && typeof applyInfusion === 'function') applyInfusion(s.intention);
-    } catch(e) {}
+    var _iType = localStorage.getItem('niyyah_intention_type');
+    if (_iType && typeof applyInfusion === 'function') applyInfusion(_iType);
     // Rafraîchir le sanctuaire avec la nouvelle lumière
     if (typeof v2RefreshStats === 'function') v2RefreshStats();
     // POINT 3 — Effet visuel "Éveil" : orbe plus lumineux + message persistant 24h
@@ -4763,9 +4756,7 @@ function getMurmureAdaptatif(moment) {
 })();
 
 function getMurmure(moment) {
-  var s = {};
-  try { s = JSON.parse(localStorage.getItem("niyyah_v2_state") || "{}"); } catch(e) {}
-  var intention = (s.intention || "").toLowerCase();
+  var intention = (localStorage.getItem('niyyah_intention_type') || '').toLowerCase();
 
   // Mots-clés de détection pour chaque thème
   var MAP = [
