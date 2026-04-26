@@ -3435,6 +3435,11 @@ to {
 @keyframes obFadeIn {
   to { opacity:1; }
 }
+@keyframes obAlhayaPulse {
+  0%,100% { transform:scale(1); box-shadow:0 0 0 0 rgba(200,168,75,0.4); }
+  50% { transform:scale(1.2); box-shadow:0 0 0 12px rgba(200,168,75,0); }
+}
+.ob-alhaya-anim { animation:obAlhayaPulse 0.8s ease 2; }
 /* Onboarding motivation cards */
 .ob-motiv-cards {
   display:flex;

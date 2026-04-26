@@ -5299,7 +5299,28 @@ const ONBOARD_SLIDES = [
     + '<button class="onboard-btn" id="obMotivBtn" onclick="onboardNext()" style="opacity:0.3;pointer-events:none;">'+t('onboard_next')+'</button>'
     + '<button class="onboard-skip" onclick="onboardFinish()">' + t('onboard_skip') + '</button>'
     + '</div>',
-  // Slide 2 — Deux gestes : Niyyah + Regarde
+  // Slide 2 — Code de Pudeur Al-Haya
+  () => {
+    setTimeout(function() {
+      var pulseBtn = document.getElementById('ob-alhaya-pulse');
+      if (pulseBtn) { pulseBtn.classList.add('ob-alhaya-anim'); setTimeout(function() { pulseBtn.classList.remove('ob-alhaya-anim'); }, 1600); }
+    }, 800);
+    return '<div class="onboard-anim" style="text-align:center;">'
+      + '<svg viewBox="0 0 80 80" width="80" height="80" fill="none" stroke="#C8A84A" stroke-width="2" stroke-linecap="round" style="margin-bottom:20px;">'
+      + '<ellipse cx="40" cy="40" rx="28" ry="20"/>'
+      + '<circle cx="40" cy="40" r="8"/>'
+      + '<circle cx="40" cy="40" r="3" fill="#C8A84A"/>'
+      + '<line x1="10" y1="70" x2="70" y2="10" stroke-width="3"/>'
+      + '</svg>'
+      + '<div class="onboard-title">'+t('alhaya_onboard_title')+'</div>'
+      + '<div class="onboard-sub" style="margin-bottom:20px;line-height:1.7;">'+t('alhaya_onboard_body')+'</div>'
+      + '<div id="ob-alhaya-pulse" style="display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:rgba(200,168,75,0.10);border:1px solid rgba(200,168,75,0.3);margin-bottom:16px;"><span style="font-size:22px;color:#C8A84A;">\u2726</span></div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:var(--t3);margin-bottom:24px;line-height:1.6;">\u00ab '+t('alhaya_onboard_quote')+' \u00bb</div>'
+      + '<button class="onboard-btn" onclick="onboardNext()">'+t('alhaya_onboard_cta')+'</button>'
+      + '<button class="onboard-skip" onclick="onboardFinish()">' + t('onboard_skip') + '</button>'
+      + '</div>';
+  },
+  // Slide 3 — Deux gestes : Niyyah + Regarde
   () => {
     setTimeout(function() { if (document.getElementById('obTypeNiyyah')) obTypeWriter('obTypeNiyyah', 'Je bois avec gratitude envers Allah.', 0); }, 600);
     setTimeout(function() { if (document.getElementById('obTypeRegarde')) obTypeWriter('obTypeRegarde', 'Combien de fois as-tu bu sans voir\u00a0?', 0); }, 1200);
@@ -5328,7 +5349,7 @@ const ONBOARD_SLIDES = [
       + '<button class="onboard-skip" onclick="onboardFinish()">' + t('onboard_skip') + '</button>'
       + '</div>';
   },
-  // Slide 3 — Ton chemin
+  // Slide 4 — Ton chemin
   () => '<div class="onboard-anim">'
     + '<div class="onboard-title">'+t('ob_chemin_title')+'</div>'
     + '<div class="onboard-sub" style="margin-bottom:20px;">'+t("ob_chemin_sub")+'</div>'
@@ -5345,7 +5366,7 @@ const ONBOARD_SLIDES = [
     + '<input type="text" placeholder="Ton pr\u00e9nom..." style="width:100%;max-width:260px;box-sizing:border-box;padding:10px 14px;background:rgba(200,168,75,0.04);border:1px solid rgba(200,168,75,0.2);border-radius:12px;color:var(--t1);font-size:14px;font-family:var(--sans);outline:none;text-align:center;" oninput="safeSetItem(\'niyyah_prenom\',this.value.trim())"></div>'
     + '<button class="onboard-btn" onclick="onboardNext()">'+t('onboard_next')+'</button>'
     + '</div>',
-  // Slide 5 — Notifications 3 catégories
+  // Slide 5 — Notifications 3 cat\u00e9gories
   () => '<div class="onboard-anim">'
     + '<div class="onboard-title">'+t('ob_notif_title')+'</div>'
     + '<div class="onboard-sub" style="margin-bottom:20px;">'+t("ob_notif_sub")+'</div>'
@@ -5416,11 +5437,11 @@ function onboardRender() {
   requestAnimationFrame(function() {
     var content = document.getElementById('onboardContent');
     if (content) content.innerHTML = ONBOARD_SLIDES[_onboardStep]();
-    [0,1,2,3,4].forEach(function(i) {
+    [0,1,2,3,4,5].forEach(function(i) {
       var dot = document.getElementById('dot' + i);
       if (dot) dot.className = 'onboard-dot' + (i === _onboardStep ? ' active' : '');
     });
-    if (_onboardStep === 4) {
+    if (_onboardStep === 5) {
       setTimeout(function() {
         var el = document.getElementById('onboardCityInput');
         if (el) el.focus();
@@ -5735,6 +5756,7 @@ const V2_I18N = {
     onboard_city_manual: 'Ou entre ta ville manuellement :',
     waqt_eyebrow: 'AL-WAQT \u00b7 UN MOMENT \u00c0 OFFRIR', waqt_offer_minute: 'J\u2019ai une minute', waqt_start: 'Commencer', waqt_close: 'Fermer', waqt_done: 'Bien fait. Tu as offert ce moment.', alhaya_resting: 'Niyyah est en repos', alhaya_tap_wake: 'Touchez pour r\u00e9veiller', ob_splash_sub: 'Pose ton intention', ob_avant_acte: 'Avant l\u2019acte', ob_apres_acte: 'Apr\u00e8s l\u2019acte',
     ob_deux_gestes: 'Deux gestes pour ton quotidien', ob_sacralise: 'Sacralise. Examine.',
+    alhaya_onboard_title: 'Ta vie spirituelle t\u2019appartient.', alhaya_onboard_body: 'En public, dans le m\u00e9tro, au bureau \u2014 touche \u2726 en haut \u00e0 droite. Niyyah masque ton \u00e9cran d\u2019un voile zen. Personne ne lira ce que tu confies \u00e0 Allah.', alhaya_onboard_quote: 'Al-Haya \u2014 la pudeur \u2014 est une branche de la foi.', alhaya_onboard_cta: 'J\u2019ai compris',
     ob_motivation_title: 'Qu\u2019est-ce qui t\u2019am\u00e8ne\u00a0?', ob_motivation_sub: 'Choisis ce qui te parle \u2014 on adapte ton exp\u00e9rience.',
     ob_motiv_routine: 'Routine spirituelle', ob_motiv_routine_sub: 'Installer une pratique quotidienne',
     ob_motiv_reconnecter: 'Reconnecter avec Allah', ob_motiv_reconnecter_sub: 'Revenir apr\u00e8s une p\u00e9riode d\u2019\u00e9loignement',
@@ -5968,6 +5990,7 @@ const V2_I18N = {
     onboard_city_manual: 'Or enter your city manually:',
     waqt_eyebrow: 'AL-WAQT \u00b7 A MOMENT TO OFFER', waqt_offer_minute: 'I have a minute', waqt_start: 'Start', waqt_close: 'Close', waqt_done: 'Well done. You\u2019ve offered this moment.', alhaya_resting: 'Niyyah is resting', alhaya_tap_wake: 'Tap to wake', ob_splash_sub: 'Set your intention', ob_avant_acte: 'Before the act', ob_apres_acte: 'After the act',
     ob_deux_gestes: 'Two gestures for your daily life', ob_sacralise: 'Sanctify. Examine.',
+    alhaya_onboard_title: 'Your spiritual life belongs to you.', alhaya_onboard_body: 'In public, on the train, at the office \u2014 tap \u2726 at the top right. Niyyah covers your screen with a zen veil. No one will read what you confide to Allah.', alhaya_onboard_quote: 'Al-Haya \u2014 modesty \u2014 is a branch of faith.', alhaya_onboard_cta: 'Got it',
     ob_motivation_title: 'What brings you here?', ob_motivation_sub: 'Choose what speaks to you \u2014 we\u2019ll adapt your experience.',
     ob_motiv_routine: 'Spiritual routine', ob_motiv_routine_sub: 'Build a daily practice',
     ob_motiv_reconnecter: 'Reconnect with Allah', ob_motiv_reconnecter_sub: 'Return after a time away',
@@ -6178,6 +6201,7 @@ const V2_I18N = {
     onboard_city_manual: '',
     waqt_eyebrow: '\u0627\u0644\u0648\u064E\u0642\u0652\u062A \u00b7 \u0644\u064E\u062D\u0652\u0638\u064E\u0629\u064C \u0644\u0650\u062A\u064E\u0642\u0652\u062F\u0650\u064A\u0645\u0650\u0647\u0627', waqt_offer_minute: '\u0644\u064E\u062F\u064E\u064A\u0651\u064E \u062F\u064E\u0642\u0650\u064A\u0642\u064E\u0629', waqt_start: '\u0627\u0628\u0652\u062F\u064E\u0623', waqt_close: '\u0625\u0650\u063A\u0652\u0644\u0627\u0642', waqt_done: '\u0623\u064E\u062D\u0652\u0633\u064E\u0646\u0652\u062A. \u0623\u064E\u0647\u0652\u062F\u064E\u064A\u0652\u062A\u064E \u0647\u0630\u0650\u0647\u0650 \u0627\u0644\u0644\u0651\u064E\u062D\u0652\u0638\u064E\u0629.', alhaya_resting: '\u0646\u0650\u064A\u0651\u064E\u0629 \u062A\u064E\u0633\u0652\u062A\u064E\u0631\u0650\u064A\u062D', alhaya_tap_wake: '\u0627\u0644\u0645\u064E\u0633\u0652 \u0644\u0650\u0644\u0627\u0633\u0652\u062A\u0650\u064A\u0642\u0627\u0638', ob_splash_sub: '\u0636\u064E\u0639\u0652 \u0646\u0650\u064A\u0651\u064E\u062A\u064E\u0643', ob_avant_acte: '\u0642\u064E\u0628\u0652\u0644\u064E \u0627\u0644\u0641\u0650\u0639\u0652\u0644', ob_apres_acte: '\u0628\u064E\u0639\u0652\u062F\u064E \u0627\u0644\u0641\u0650\u0639\u0652\u0644',
     ob_deux_gestes: '\u0625\u0650\u064A\u0645\u0627\u0621\u062A\u0627\u0646\u0650 \u0644\u0650\u064A\u064E\u0648\u0652\u0645\u0650\u0643', ob_sacralise: '\u0642\u064E\u062F\u0651\u0650\u0633\u0652. \u062A\u064E\u0623\u064E\u0645\u0651\u064E\u0644\u0652.',
+    alhaya_onboard_title: '\u062D\u064E\u064A\u0627\u062A\u064F\u0643\u064E \u0627\u0644\u0631\u0651\u064F\u0648\u062D\u0650\u064A\u0651\u064E\u0629\u064F \u0645\u0650\u0644\u0652\u0643\u064F\u0643.', alhaya_onboard_body: '\u0641\u0650\u064A \u0627\u0644\u0639\u064E\u0644\u064E\u0646\u060C \u0641\u0650\u064A \u0627\u0644\u0642\u0650\u0637\u0627\u0631\u060C \u0641\u0650\u064A \u0627\u0644\u0645\u064E\u0643\u0652\u062A\u064E\u0628 \u2014 \u0627\u0644\u0652\u0645\u0650\u0633\u0652 \u2726 \u0641\u0650\u064A \u0627\u0644\u0623\u064E\u0639\u0652\u0644\u064E\u0649. \u0646\u0650\u064A\u0651\u064E\u0629 \u062A\u064E\u0633\u0652\u062A\u064F\u0631\u064F \u0634\u0627\u0634\u064E\u062A\u064E\u0643 \u0628\u0650\u062D\u0650\u062C\u0627\u0628\u064D \u0647\u0627\u062F\u0650\u0626. \u0644\u0627 \u0623\u064E\u062D\u064E\u062F\u064E \u064A\u064E\u0642\u0652\u0631\u064E\u0623\u064F \u0645\u0627 \u062A\u064F\u0633\u0650\u0631\u0651\u064F \u0628\u0650\u0647\u0650 \u0625\u0650\u0644\u064E\u0649 \u0627\u0644\u0644\u0651\u064E\u0647.', alhaya_onboard_quote: '\u0627\u0644\u062D\u064E\u064A\u0627\u0621\u064F \u0634\u064F\u0639\u0652\u0628\u064E\u0629\u064C \u0645\u0650\u0646\u064E \u0627\u0644\u0625\u0650\u064A\u0645\u0627\u0646.', alhaya_onboard_cta: '\u0641\u064E\u0647\u0650\u0645\u0652\u062A',
     ob_motivation_title: '\u0645\u0627 \u0627\u0644\u0651\u064E\u0630\u0650\u064A \u062C\u064E\u0627\u0621\u064E \u0628\u0650\u0643\u064E\u061F', ob_motivation_sub: '\u0627\u062E\u0652\u062A\u064E\u0631\u0652 \u0645\u0627 \u064A\u064F\u0646\u0627\u0633\u0650\u0628\u064F\u0643.',
     ob_motiv_routine: '\u0631\u064F\u0648\u062A\u0650\u064A\u0646\u064C \u0631\u064F\u0648\u062D\u064E\u0627\u0646\u0650\u064A\u0651', ob_motiv_routine_sub: '\u0628\u0650\u0646\u0627\u0621\u064F \u0639\u0650\u0628\u0627\u062F\u064E\u0629\u064D \u064A\u064E\u0648\u0652\u0645\u0650\u064A\u0651\u064E\u0629',
     ob_motiv_reconnecter: '\u0627\u0644\u0639\u064E\u0648\u0652\u062F\u064E\u0629\u064F \u0625\u0650\u0644\u064E\u0649 \u0627\u0644\u0644\u0651\u064E\u0647', ob_motiv_reconnecter_sub: '\u0628\u064E\u0639\u0652\u062F\u064E \u0641\u064E\u062A\u0652\u0631\u064E\u0629\u064D \u0645\u0650\u0646\u064E \u0627\u0644\u0628\u064F\u0639\u0652\u062F',
