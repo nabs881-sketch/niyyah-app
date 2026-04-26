@@ -1,8 +1,8 @@
-const VERSION = 'niyyah-v362';
+const VERSION = 'niyyah-v363';
 const CORE = [
   './index.html',
   './script.min.js',
-  './style.css',
+  './style.min.css',
   './manifest.json',
   './icon-192.png',
   './icon-512.png',
