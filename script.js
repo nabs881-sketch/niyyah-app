@@ -717,7 +717,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function isFriday() { return new Date().getDay() === 5; }
-let ramadanState = JSON.parse(localStorage.getItem('spiritual_ramadan') || '{"active":false,"startDate":null,"days":{},"laylatul":{}}');
+let ramadanState; try { ramadanState = JSON.parse(localStorage.getItem('spiritual_ramadan')); } catch(e) {} ramadanState = ramadanState || {active:false,startDate:null,days:{},laylatul:{}};
 function saveRamadanState() { safeSetItem('spiritual_ramadan', JSON.stringify(ramadanState)); }
 function toggleRamadanMode() {
   if (ramadanState.active) {
@@ -1258,8 +1258,8 @@ const LEVELS = [
   }
 ];
 const TODAY = new Date().toISOString().split('T')[0];
-let state   = JSON.parse(localStorage.getItem('spiritual_v2') || '{}');
-let history = JSON.parse(localStorage.getItem('spiritual_history') || '{"days":{},"dayMedals":{},"streak":0,"bestStreak":0,"totalDays":0,"unlockedBadges":[],"weekDays":0,"jumuahCount":0}');
+let state; try { state = JSON.parse(localStorage.getItem('spiritual_v2')); } catch(e) {} state = state || {};
+let history; try { history = JSON.parse(localStorage.getItem('spiritual_history')); } catch(e) {} history = history || {days:{},dayMedals:{},streak:0,bestStreak:0,totalDays:0,unlockedBadges:[],weekDays:0,jumuahCount:0};
 let currentLevel = 1;
 if (history.jumuahCount === undefined) history.jumuahCount = 0;
 if (state._date !== TODAY) {
@@ -3427,7 +3427,7 @@ const WIRD_DATA = {
     ]
   }
 };
-let wirdState = JSON.parse(localStorage.getItem('niyyah_wird_' + (new Date().toISOString().split('T')[0])) || '{}');
+let wirdState; try { wirdState = JSON.parse(localStorage.getItem('niyyah_wird_' + (new Date().toISOString().split('T')[0]))); } catch(e) {} wirdState = wirdState || {};
 const ITEM_WEIGHTS = {
   fajr: 3, dhuhr: 3, asr: 3, maghrib: 3, isha: 3, jumua: 3,
   wird_matin: 2, wird_soir: 2,
@@ -9075,7 +9075,13 @@ function regardeDetailNote(id) {
   var wrap = document.createElement('div');
   wrap.id = 'regarde-detail-note-wrap';
   wrap.style.cssText = 'margin-top:16px;';
-  wrap.innerHTML = '<textarea id="regarde-detail-note-input" placeholder="' + t('regarde_note_placeholder') + '" oninput="regardeDetailNoteSave(\'' + id + '\')" style="width:100%;min-height:80px;background:rgba(200,168,75,0.04);border:1px solid rgba(212,175,55,0.25);border-radius:12px;padding:12px;color:#D4AF37;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;resize:none;outline:none;box-sizing:border-box;">' + ((entry && entry.note) || '') + '</textarea>';
+  var _ta = document.createElement('textarea');
+  _ta.id = 'regarde-detail-note-input';
+  _ta.placeholder = t('regarde_note_placeholder');
+  _ta.setAttribute('oninput', "regardeDetailNoteSave('" + id + "')");
+  _ta.style.cssText = 'width:100%;min-height:80px;background:rgba(200,168,75,0.04);border:1px solid rgba(212,175,55,0.25);border-radius:12px;padding:12px;color:#D4AF37;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;resize:none;outline:none;box-sizing:border-box;';
+  _ta.textContent = (entry && entry.note) || '';
+  wrap.appendChild(_ta);
   container.appendChild(wrap);
   var input = document.getElementById('regarde-detail-note-input');
   if (input) input.focus();
