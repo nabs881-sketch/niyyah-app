@@ -1454,7 +1454,11 @@ function getDateMinus(dateStr, days) {
   const d = new Date(dateStr); d.setDate(d.getDate() - days); return dateToKey(d);
 }
 function saveState()   { safeSetItem('spiritual_v2', JSON.stringify(state)); }
-function saveHistory() { safeSetItem('spiritual_history', JSON.stringify(history)); }
+function saveHistory() {
+  if (history.days) { var _keys = Object.keys(history.days).sort(); if (_keys.length > 365) { _keys.slice(0, _keys.length - 365).forEach(function(k) { delete history.days[k]; }); } }
+  if (history.dayMedals) { var _km = Object.keys(history.dayMedals).sort(); if (_km.length > 365) { _km.slice(0, _km.length - 365).forEach(function(k) { delete history.dayMedals[k]; }); } }
+  safeSetItem('spiritual_history', JSON.stringify(history));
+}
 function getLevelProgress(levelId) { return getCalcLvlPct(levelId, state); }
 // 'none' removed — was a stub returning 'none'
 function getLevelItems(levelId) {
@@ -2194,7 +2198,7 @@ function renderLevel(levelId) {
       { id: 'fri_salawat', label: 'Salawat sur le Prophète ﷺ', arabic: 'اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ كَمَا صَلَّيْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ إِنَّكَ حَمِيدٌ مَجِيدٌ', hadith: '"Le meilleur de vos jours est le vendredi — multipliez la Salawat" — Abu Dawud', phonetic: 'Allahumma salli \'ala Muhammad wa \'ala ali Muhammad kama sallayta \'ala Ibrahim wa \'ala ali Ibrahim innaka hamidun majid', translation: 'Ô Allah, prie sur Muhammad et la famille de Muhammad comme Tu as prié sur Ibrahim et la famille d\'Ibrahim. Tu es certes digne de louanges et de glorification.' },
       { id: 'fri_doua',    label: 'Douaa de l\'heure bénie', arabic: 'رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ', hadith: '"Il y a une heure le vendredi où Allah exauce toute demande" — Bukhari & Muslim', phonetic: 'Rabbanā ātinā fid-dunyā hasanatan wa fil-ākhirati hasanatan wa qinā \'adhāban-nār', translation: 'Notre Seigneur, accorde-nous en ce monde le bien et dans l\'au-delà le bien, et préserve-nous du châtiment du Feu.' },
     ];
-    const fridayState = JSON.parse(localStorage.getItem('niyyah_friday_' + TODAY) || '{}');
+    var fridayState = {}; try { fridayState = JSON.parse(localStorage.getItem('niyyah_friday_' + TODAY) || '{}'); } catch(e) {}
     let fitems = '';
     FRIDAY_ITEMS.forEach(fi => {
       const done = !!fridayState[fi.id];
@@ -2897,7 +2901,7 @@ function renderProgression() {
       +'</div>';
   });
   // === GRAPHIQUE 7 JOURS BILANS ===
-  const bilansData = JSON.parse(localStorage.getItem('niyyah_bilans') || '{}');
+  var bilansData = {}; try { bilansData = JSON.parse(localStorage.getItem('niyyah_bilans') || '{}'); } catch(e) {}
   const bilanColors = { distraction: '#6b7280', effort: '#34d962', sincerite: '#ffd60a' };
   const bilanEmojis = { distraction: '😶', effort: '🌤', sincerite: '☀️' };
   const bilanLabels = { distraction: t('bilan_distrait'), effort: t('bilan_effort'), sincerite: t('bilan_sincere') };
@@ -4278,7 +4282,7 @@ function setBilanSoir(choix) {
 
   // Sauvegarder dans localStorage
   const today = todayKey();
-  const bilans = JSON.parse(localStorage.getItem('niyyah_bilans') || '{}');
+  var bilans = {}; try { bilans = JSON.parse(localStorage.getItem('niyyah_bilans') || '{}'); } catch(e) {}
   bilans[today] = choix;
   safeSetItem('niyyah_bilans', JSON.stringify(bilans));
 
@@ -5290,11 +5294,11 @@ function loadQibla() {
       renderLevel(currentLevel);
     },
     err => {
-      _qiblaError = 'Autorise la localisation pour trouver la Qibla';
+      _qiblaError = err.code === 3 ? 'Position indisponible (timeout)' : err.code === 1 ? 'Position refus\u00e9e — autorise la localisation' : 'Position indisponible';
       _qiblaLoading = false;
       renderLevel(currentLevel);
     },
-    { timeout: 8000, maximumAge: 300000 }
+    { timeout: 10000, maximumAge: 300000 }
   );
 }
 function renderQiblaCard() {
@@ -7004,6 +7008,7 @@ function nafsObserve(traitId) {
   var today = new Date().toISOString().slice(0, 10);
   var obs = _nafsGetObservations();
   obs.push({ traitId: traitId, date: today, note: note });
+  if (obs.length > 365) obs = obs.slice(-365);
   safeSetItem('nafs_observations', JSON.stringify(obs));
 
   var btn = document.getElementById('nafs-observe-btn');
@@ -8353,6 +8358,7 @@ function saveFinJourneeBontes() {
   var hist = [];
   try { hist = JSON.parse(localStorage.getItem('niyyah_finjournee_history') || '[]'); } catch(e) {}
   hist.push(entry);
+  if (hist.length > 365) hist = hist.slice(-365);
   safeSetItem('niyyah_finjournee_history', JSON.stringify(hist));
   safeSetItem('niyyah_finjournee_date', today);
   showFinJourneeActe2();
@@ -8363,6 +8369,7 @@ function skipFinJourneeBontes() {
   var hist = [];
   try { hist = JSON.parse(localStorage.getItem('niyyah_finjournee_history') || '[]'); } catch(e) {}
   hist.push(entry);
+  if (hist.length > 365) hist = hist.slice(-365);
   safeSetItem('niyyah_finjournee_history', JSON.stringify(hist));
   safeSetItem('niyyah_finjournee_date', today);
   showFinJourneeActe2();
