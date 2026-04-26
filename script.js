@@ -8757,6 +8757,7 @@ const SCANNER_LIBRARY = {
 var _regardeStream = null;
 
 async function regardeOpen() {
+  showAlHayaBtn();
   var screen = document.getElementById('regarde-screen');
   var content = document.getElementById('regarde-content');
   if (!screen || !content) return;
@@ -9046,6 +9047,7 @@ function regardeDetailDelete(id) {
 }
 
 function regardeClose() {
+  hideAlHayaBtn();
   closeRegardeJournal();
   closeRegardeDetail();
   var screen = document.getElementById('regarde-screen');
@@ -9056,6 +9058,7 @@ function regardeClose() {
 }
 
 async function scannerOpen() {
+  showAlHayaBtn();
   const overlay = document.getElementById('scanner-overlay');
   if (!overlay) return;
 
@@ -9157,6 +9160,7 @@ function niyyahDetailDelete(id) {
 
 /* ── Fermer le Scanner ── */
 function scannerClose() {
+  hideAlHayaBtn();
   const overlay = document.getElementById('scanner-overlay');
   if (overlay) overlay.classList.remove('active');
   if (_scannerStream) {
