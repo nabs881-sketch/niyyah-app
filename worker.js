@@ -436,7 +436,8 @@ async function handleNiyyah(request, env) {
     return jsonResponseV2({ intention: null, category: 'INDETERMINE', source: 'fallback', reason: 'validation_failed_or_religious' });
   } catch (err) {
     console.error('handleNiyyah error:', err);
-    return jsonResponseV2({ intention: null, category: 'INDETERMINE', source: 'fallback', reason: 'error' });
+    if (err.name === 'AbortError') return jsonResponseV2({ error: 'Timeout' }, 504);
+    return jsonResponseV2({ intention: null, category: 'INDETERMINE', source: 'fallback', reason: 'error' }, 502);
   }
 }
 
@@ -489,6 +490,7 @@ async function handleRegarde(request, env) {
     return jsonResponseV2({ question: null, category, confidence, source: 'fallback', reason: 'validation_failed_or_religious' });
   } catch (err) {
     console.error('handleRegarde error:', err);
-    return jsonResponseV2({ question: null, category: 'INDETERMINE', confidence: 0, source: 'fallback', reason: 'error' });
+    if (err.name === 'AbortError') return jsonResponseV2({ error: 'Timeout' }, 504);
+    return jsonResponseV2({ question: null, category: 'INDETERMINE', confidence: 0, source: 'fallback', reason: 'error' }, 502);
   }
 }

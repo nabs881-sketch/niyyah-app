@@ -170,10 +170,13 @@ function migrateOldJournal() {
           photo: null
         });
       });
-      _journalSave('niyyah_niyyah_history', existing);
+      if (safeSetItem('niyyah_niyyah_history', JSON.stringify(existing))) {
+        safeSetItem('niyyah_migration_v2_done', '1');
+      }
+    } else {
+      safeSetItem('niyyah_migration_v2_done', '1');
     }
   } catch(e) {}
-  safeSetItem('niyyah_migration_v2_done', '1');
 }
 migrateOldJournal();
 
@@ -3207,10 +3210,12 @@ let _prayerCountry = localStorage.getItem('niyyah_country') || 'France';
 let _prayerLoading = false;
 let _prayerError   = false;
 let _showCityInput = !_prayerCity && !localStorage.getItem('niyyah_coords');
-// Cache horaires — lit les deux clés (ancienne + nouvelle)
+// Cache horaires — valide seulement si même jour + même timezone
+var _currentTZ = ''; try { _currentTZ = Intl.DateTimeFormat().resolvedOptions().timeZone; } catch(e) {}
+var _cachedTZ = localStorage.getItem('niyyah_prayer_tz') || '';
 const _cachedPrayerDate = localStorage.getItem('niyyah_prayer_date_v2');
 const _cachedPrayerData = localStorage.getItem('niyyah_prayer_cache');
-if (_cachedPrayerDate === TODAY && _cachedPrayerData) {
+if (_cachedPrayerDate === TODAY && _cachedPrayerData && _cachedTZ === _currentTZ) {
   try { _prayerTimes = JSON.parse(_cachedPrayerData); } catch(e) {}
   if (_prayerTimes) setTimeout(scheduleFajrNotification, 1000);
 }
@@ -3356,6 +3361,7 @@ function _applyPrayerTimings(timings) {
   var str = JSON.stringify(timings);
   safeSetItem('niyyah_prayer_cache', str);
   safeSetItem('niyyah_prayer_date_v2', TODAY);
+  try { safeSetItem('niyyah_prayer_tz', Intl.DateTimeFormat().resolvedOptions().timeZone); } catch(e) {}
   schedulePrayerReminders();
   startPrayerCountdown();
   renderLevel(currentLevel);
@@ -5397,7 +5403,7 @@ function renderQiblaCard() {
 
 
 let _onboardStep = 0;
-const APP_VERSION = '2.0'; if (localStorage.getItem('niyyah_version') !== APP_VERSION) { localStorage.removeItem('niyyah_onboard'); safeSetItem('niyyah_version', APP_VERSION); }
+const APP_VERSION = '2.0'; if (localStorage.getItem('niyyah_version') !== APP_VERSION) { safeSetItem('niyyah_version', APP_VERSION); }
 const _onboardDone = localStorage.getItem('niyyah_onboard') === '1';
 const ONBOARD_SLIDES = [
   // Slide 0 — Splash calligraphie (clic pour avancer)
