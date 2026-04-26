@@ -40,7 +40,7 @@ function escapeHtml(str) { return String(str).replace(/[&<>"']/g, function(c) { 
 function _pad2(n) { return n < 10 ? '0' + n : '' + n; }
 function todayKey() { var d = new Date(); return d.getFullYear() + '-' + _pad2(d.getMonth() + 1) + '-' + _pad2(d.getDate()); }
 function dateToKey(d) { return d.getFullYear() + '-' + _pad2(d.getMonth() + 1) + '-' + _pad2(d.getDate()); }
-function safeSetItem(key, value) { try { localStorage.setItem(key, value); } catch(e) {} }
+function safeSetItem(key, value) { try { localStorage.setItem(key, value); return true; } catch(e) { if (typeof showToast === 'function') showToast('M\u00e9moire pleine \u2014 exportez puis r\u00e9initialisez'); return false; } }
 
 // ═══════════════════════════════════════════════════
 // JOURNAL V2 — Storage helpers
@@ -363,7 +363,8 @@ const DEFIS_DB = [
 // LOGIQUE DEFI DE LA SEMAINE
 // ============================================================
 function getDefiState() {
-  return JSON.parse(localStorage.getItem('niyyah_defi_v2') || '{"current":null,"historique":[],"badges":[],"choixEnAttente":null}');
+  try { return JSON.parse(localStorage.getItem('niyyah_defi_v2') || '{}'); } catch(e) {}
+  return {current:null,historique:[],badges:[],choixEnAttente:null};
 }
 function saveDefiState(s) { safeSetItem('niyyah_defi_v2', JSON.stringify(s)); }
 
