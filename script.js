@@ -1311,6 +1311,21 @@ document.addEventListener('visibilitychange', function() {
     }
   }
 });
+// ── Multi-tab sync via storage event ──
+window.addEventListener('storage', function(e) {
+  try {
+    if (e.key === 'spiritual_v2' && e.newValue) {
+      state = JSON.parse(e.newValue) || {};
+    } else if (e.key === 'spiritual_history' && e.newValue) {
+      history = JSON.parse(e.newValue) || {};
+    } else if (e.key && e.key.startsWith('niyyah_wird_') && e.newValue) {
+      wirdState = JSON.parse(e.newValue) || {};
+    } else { return; }
+    if (typeof renderLevel === 'function') renderLevel(currentLevel);
+    if (typeof v2RefreshStats === 'function') v2RefreshStats();
+    if (typeof updateFinJourneeCard === 'function') updateFinJourneeCard();
+  } catch(err) {}
+});
 let state; try { state = JSON.parse(localStorage.getItem('spiritual_v2')); } catch(e) { if (typeof Sentry !== 'undefined') Sentry.captureException(new Error('Parse error: spiritual_v2')); } state = state || {};
 let history; try { history = JSON.parse(localStorage.getItem('spiritual_history')); } catch(e) { if (typeof Sentry !== 'undefined') Sentry.captureException(new Error('Parse error: spiritual_history')); } history = history || {days:{},dayMedals:{},streak:0,bestStreak:0,totalDays:0,unlockedBadges:[],weekDays:0,jumuahCount:0};
 let currentLevel = 1;
