@@ -37,6 +37,9 @@ if (typeof Sentry !== 'undefined') {
 window.testSentry = function() { throw new Error('Niyyah Sentry test — this is intentional'); };
 const NIYYAH_DEBUG = false;
 function escapeHtml(str) { return String(str).replace(/[&<>"']/g, function(c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+function _pad2(n) { return n < 10 ? '0' + n : '' + n; }
+function todayKey() { var d = new Date(); return d.getFullYear() + '-' + _pad2(d.getMonth() + 1) + '-' + _pad2(d.getDate()); }
+function dateToKey(d) { return d.getFullYear() + '-' + _pad2(d.getMonth() + 1) + '-' + _pad2(d.getDate()); }
 function safeSetItem(key, value) { try { localStorage.setItem(key, value); } catch(e) {} }
 
 // ═══════════════════════════════════════════════════
@@ -366,9 +369,9 @@ function saveDefiState(s) { safeSetItem('niyyah_defi_v2', JSON.stringify(s)); }
 
 function getLundiDate() {
   const d = new Date(); const day = d.getDay(); const diff = (day === 0 ? -6 : 1 - day);
-  d.setDate(d.getDate() + diff); d.setHours(0,0,0,0); return d.toISOString().split('T')[0];
+  d.setDate(d.getDate() + diff); d.setHours(0,0,0,0); return dateToKey(d);
 }
-function getTodayStr() { return new Date().toISOString().split('T')[0]; }
+function getTodayStr() { return todayKey(); }
 
 // Calcule la suggestion selon l'historique et le niveau
 function getSuggestionDefi() {
@@ -688,7 +691,7 @@ function renderDefiOverlay() {
   const lundi = new Date(getLundiDate());
   for (let i = 0; i < 7; i++) {
     const d = new Date(lundi); d.setDate(d.getDate() + i);
-    const ds = d.toISOString().split('T')[0];
+    const ds = dateToKey(d);
     const coche = state.current.jours.includes(ds);
     const auj = ds === getTodayStr();
     const div = document.createElement('div');
@@ -943,7 +946,7 @@ function renderRamadan() {
   for (let d = 1; d <= 30; d++) {
     const startObj = new Date((ramadanState.startDate || TODAY) + 'T12:00:00');
     startObj.setDate(startObj.getDate() + d - 1);
-    const dStr = startObj.toISOString().split('T')[0];
+    const dStr = dateToKey(startObj);
     const fasted = ramadanState.days && ramadanState.days[dStr];
     const isToday = dStr === TODAY;
     const isFuture = dStr > TODAY;
@@ -965,7 +968,7 @@ function renderRamadan() {
     const done = ramadanState.laylatul && ramadanState.laylatul[n];
     const startObj2 = new Date((ramadanState.startDate || TODAY) + 'T12:00:00');
     startObj2.setDate(startObj2.getDate() + n - 1);
-    const nStr = startObj2.toISOString().split('T')[0];
+    const nStr = dateToKey(startObj2);
     const isActive = TODAY >= nStr;
     let cls = 'laylatul-night';
     if (done) cls += ' done';
@@ -1291,7 +1294,22 @@ const LEVELS = [
     ]
   }
 ];
-const TODAY = new Date().toISOString().split('T')[0];
+var TODAY = todayKey();
+document.addEventListener('visibilitychange', function() {
+  if (document.visibilityState === 'visible') {
+    var newDay = todayKey();
+    if (newDay !== TODAY) {
+      TODAY = newDay;
+      if (typeof checkAndSaveYesterdayStreak === 'function') checkAndSaveYesterdayStreak();
+      var ul = state._unlocked || [1];
+      state = { _date: TODAY, _unlocked: ul, _mashaAllahShown: false, _sadaqa50: false, _sadaqa80: false, _sadaqa100: false };
+      if (typeof saveState === 'function') saveState();
+      if (typeof renderLevel === 'function') renderLevel(currentLevel);
+      if (typeof v2RefreshStats === 'function') v2RefreshStats();
+      if (typeof updateFinJourneeCard === 'function') updateFinJourneeCard();
+    }
+  }
+});
 let state; try { state = JSON.parse(localStorage.getItem('spiritual_v2')); } catch(e) { if (typeof Sentry !== 'undefined') Sentry.captureException(new Error('Parse error: spiritual_v2')); } state = state || {};
 let history; try { history = JSON.parse(localStorage.getItem('spiritual_history')); } catch(e) { if (typeof Sentry !== 'undefined') Sentry.captureException(new Error('Parse error: spiritual_history')); } history = history || {days:{},dayMedals:{},streak:0,bestStreak:0,totalDays:0,unlockedBadges:[],weekDays:0,jumuahCount:0};
 let currentLevel = 1;
@@ -1408,7 +1426,7 @@ function resolveGrace() {
   }
 }
 function getDateMinus(dateStr, days) {
-  const d = new Date(dateStr); d.setDate(d.getDate() - days); return d.toISOString().split('T')[0];
+  const d = new Date(dateStr); d.setDate(d.getDate() - days); return dateToKey(d);
 }
 function saveState()   { safeSetItem('spiritual_v2', JSON.stringify(state)); }
 function saveHistory() { safeSetItem('spiritual_history', JSON.stringify(history)); }
@@ -2828,7 +2846,7 @@ function renderProgression() {
   let heatmapHTML = '';
   for (let i = 29; i >= 0; i--) {
     const d = new Date(today); d.setDate(d.getDate() - i);
-    const dStr = d.toISOString().split('T')[0];
+    const dStr = dateToKey(d);
     const isToday = dStr === TODAY;
     var dayPct = 0;
     if (isToday) { dayPct = todayDone ? 100 : Math.round(getLevelProgress(1)); }
@@ -2861,7 +2879,7 @@ function renderProgression() {
   let bilanCells = '';
   for (let i = 6; i >= 0; i--) {
     const d = new Date(); d.setDate(d.getDate() - i);
-    const ds = d.toISOString().split('T')[0];
+    const ds = dateToKey(d);
     const choix = bilansData[ds];
     const dayName = d.toLocaleDateString(_dateLocale(), { weekday: 'short' }).slice(0,3);
     if (choix) {
@@ -3430,7 +3448,7 @@ const WIRD_DATA = {
     ]
   }
 };
-let wirdState; try { wirdState = JSON.parse(localStorage.getItem('niyyah_wird_' + (new Date().toISOString().split('T')[0]))); } catch(e) { if (typeof Sentry !== 'undefined') Sentry.captureException(new Error('Parse error: niyyah_wird_today')); } wirdState = wirdState || {};
+let wirdState; try { wirdState = JSON.parse(localStorage.getItem('niyyah_wird_' + (todayKey()))); } catch(e) { if (typeof Sentry !== 'undefined') Sentry.captureException(new Error('Parse error: niyyah_wird_today')); } wirdState = wirdState || {};
 const ITEM_WEIGHTS = {
   fajr: 3, dhuhr: 3, asr: 3, maghrib: 3, isha: 3, jumua: 3,
   wird_matin: 2, wird_soir: 2,
@@ -3455,7 +3473,7 @@ function getWeightedScore(items, s) {
   return totalPts > 0 ? (donePts / totalPts) * 100 : 0;
 }
 function saveWirdState() {
-  safeSetItem('niyyah_wird_' + (new Date().toISOString().split('T')[0]), JSON.stringify(wirdState));
+  safeSetItem('niyyah_wird_' + (todayKey()), JSON.stringify(wirdState));
 }
 function toggleWirdItem(id, event) {
   if (event && event.target && (
@@ -4234,7 +4252,7 @@ function setBilanSoir(choix) {
   document.getElementById('bilanSoirFeedback').style.display = 'flex';
 
   // Sauvegarder dans localStorage
-  const today = new Date().toISOString().split('T')[0];
+  const today = todayKey();
   const bilans = JSON.parse(localStorage.getItem('niyyah_bilans') || '{}');
   bilans[today] = choix;
   safeSetItem('niyyah_bilans', JSON.stringify(bilans));
@@ -4579,7 +4597,7 @@ function getCurrentWeekKey() {
   const day = d.getDay();
   const diff = d.getDate() - day + (day === 0 ? -6 : 1);
   d.setDate(diff);
-  return d.toISOString().split('T')[0];
+  return dateToKey(d);
 }
 function checkWeeklyBilan() {
   const today = new Date(TODAY);
@@ -4858,7 +4876,7 @@ function dismissNotifScreen() {
   safeSetItem('niyyah_notif_asked', '1');
   // Si on vient de l'onboarding, lancer l'écran Niyyah
   if (!localStorage.getItem('niyyah_intention_date') || 
-      localStorage.getItem('niyyah_intention_date') !== new Date().toISOString().split('T')[0]) {
+      localStorage.getItem('niyyah_intention_date') !== todayKey()) {
     setTimeout(() => showNiyyahScreen(), 450);
   }
 }
@@ -7754,7 +7772,7 @@ function niyyahExportData() {
   var blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
   var a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
-  a.download = 'niyyah-backup-' + new Date().toISOString().split('T')[0] + '.json';
+  a.download = 'niyyah-backup-' + todayKey() + '.json';
   a.click();
   URL.revokeObjectURL(a.href);
   if (typeof showToast === 'function') showToast(t('export_done'));
@@ -8270,8 +8288,8 @@ function updateFinJourneeCard() {
   }
   if (!show) { card.style.display = 'none'; return; }
   card.style.display = 'block';
-  var todayKey = now.toISOString().split('T')[0];
-  var done = localStorage.getItem('niyyah_finjournee_date') === todayKey;
+  var _todayStr = dateToKey(now);
+  var done = localStorage.getItem('niyyah_finjournee_date') === _todayStr;
   if (done) {
     card.innerHTML = '<img class="finjournee-img" src="assets/cards/card-findejour.webp" alt="Journée fermée" onclick="openFinJourneeConsultation()">';
   } else {
@@ -8308,7 +8326,7 @@ function saveFinJourneeBontes() {
   var bontes = [b1, b2, b3].filter(function(s) { return s.trim().length > 0; });
   if (bontes.length === 0) { alert('Écris au moins une bonté, ou tape Passer.'); return; }
   _nAn('muhasaba_done');
-  var today = new Date().toISOString().split('T')[0];
+  var today = todayKey();
   var entry = { id: 'finjournee_' + today, date: today, time: new Date().toISOString(), bontes: bontes, skipped_bontes: false, completed: false };
   var hist = [];
   try { hist = JSON.parse(localStorage.getItem('niyyah_finjournee_history') || '[]'); } catch(e) {}
@@ -8318,7 +8336,7 @@ function saveFinJourneeBontes() {
   showFinJourneeActe2();
 }
 function skipFinJourneeBontes() {
-  var today = new Date().toISOString().split('T')[0];
+  var today = todayKey();
   var entry = { id: 'finjournee_' + today, date: today, time: new Date().toISOString(), bontes: [], skipped_bontes: true, completed: false };
   var hist = [];
   try { hist = JSON.parse(localStorage.getItem('niyyah_finjournee_history') || '[]'); } catch(e) {}
@@ -8386,7 +8404,7 @@ function showFinJourneeActe3() {
   setTimeout(function() { el.style.opacity = '0'; }, 17100);
   // Phase 3: mark completed + close
   setTimeout(function() {
-    var today = new Date().toISOString().split('T')[0];
+    var today = todayKey();
     var hist = [];
     try { hist = JSON.parse(localStorage.getItem('niyyah_finjournee_history') || '[]'); } catch(e) {}
     for (var i = hist.length - 1; i >= 0; i--) {
@@ -8398,7 +8416,7 @@ function showFinJourneeActe3() {
   }, 18100);
 }
 function openFinJourneeConsultation() {
-  var today = new Date().toISOString().split('T')[0];
+  var today = todayKey();
   var hist = [];
   try { hist = JSON.parse(localStorage.getItem('niyyah_finjournee_history') || '[]'); } catch(e) {}
   var entry = null;
@@ -8438,7 +8456,7 @@ function updateFajrChallenge() {
   for (var i = todayFajr ? 0 : 1; i < 30; i++) {
     var d = new Date(today);
     d.setDate(d.getDate() - i);
-    var ds = d.toISOString().split('T')[0];
+    var ds = dateToKey(d);
     // For today, check current state; for past days, check dayScores existence + assume fajr was done if day completed
     if (i === 0 && todayFajr) { fajrStreak++; continue; }
     if (i > 0 && hist.days && hist.days[ds]) { fajrStreak++; }
