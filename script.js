@@ -113,6 +113,10 @@ function addRegardeEntry(entry) {
     bookmark: !!entry.bookmark,
     note: entry.note || ''
   };
+  if (item.photo && localStorage.getItem('niyyah_photo_disclaimer_seen') !== '1') {
+    safeSetItem('niyyah_photo_disclaimer_seen', '1');
+    if (typeof showToast === 'function') setTimeout(function() { showToast(t('photo_disclaimer'), 5000); }, 500);
+  }
   arr.unshift(item);
   _journalSave('niyyah_regarde_history', arr);
   return item;
@@ -2719,12 +2723,12 @@ function confirmReset() {
   showToast(t('new_day'));
 }
 let toastTimeout;
-function showToast(msg) {
+function showToast(msg, duration) {
   if (!msg) return;
   const t = document.getElementById('toast');
   t.textContent = msg; t.classList.add('show');
   clearTimeout(toastTimeout);
-  toastTimeout = setTimeout(() => t.classList.remove('show'), 2600);
+  toastTimeout = setTimeout(() => t.classList.remove('show'), duration || 2600);
 }
 let calYear = new Date().getFullYear();
 function renderYearCalendar() {
@@ -5395,6 +5399,7 @@ function renderQiblaCard() {
     + (isAligned ? '✦ ALIGNÉ AVEC LA MECQUE ✦' : isLive ? 'Tourne vers l\'aiguille verte' : 'Direction ' + dir + ' · ' + Math.round(visualAngle) + '°')
     + '</div>'
     + '<button class="qibla-btn" aria-label="Réessayer" onclick="loadQibla()">↻ Recalibrer</button>'
+    + '<div style="font-size:11px;font-style:italic;color:var(--t3);opacity:0.7;text-align:center;margin-top:10px;">' + t('qibla_disclaimer') + '</div>'
     + '</div>';
 }
 
@@ -5960,7 +5965,7 @@ const V2_I18N = {
     conv_msg_4: 'Si vous êtes reconnaissants, J\'augmenterai Mes bienfaits. — Ibrahim 14:7',
     score_weighted: 'Score pondéré du jour', score_progress: 'En cours…', score_continue: 'Continue ↗',
     prayer_title: '🕌 Horaires du jour', city_enter: 'Entre ta ville pour voir les horaires de prière', city_placeholder: 'Ex: Paris, Casablanca, Bruxelles...',
-    qibla_title: '🕋 Qibla — Direction de la Mecque', qibla_find_text: 'Trouve la direction de la Mecque depuis ta position', qibla_find_btn: '📍 Trouver la Qibla',
+    qibla_title: '\ud83d\udd4b Qibla \u2014 Direction de la Mecque', qibla_find_text: 'Trouve la direction de la Mecque depuis ta position', qibla_find_btn: '\ud83d\udccd Trouver la Qibla', qibla_disclaimer: 'Indication approximative \u2014 v\u00e9rifie avec une boussole physique en cas de doute.', photo_disclaimer: 'Tes photos restent sur ton appareil \u2014 jamais envoy\u00e9es.',
     section_prayers: 'Les 5 Pri\u00e8res', section_wird: 'Wird quotidien', section_sunnah: 'Sunnah de base',
     section_deep_prayer: 'Approfondissement de la pri\u00e8re', section_dhikr: 'Dhikr du c\u0153ur', section_duas: 'Dou\u00e2as intimes',
     section_study: '\u00c9tude islamique', section_quran: 'Immersion coranique', section_advanced: 'Pratiques avanc\u00e9es',
@@ -6194,7 +6199,7 @@ const V2_I18N = {
     conv_msg_4: 'Si vous êtes reconnaissants, J\'augmenterai Mes bienfaits. — Ibrahim 14:7',
     score_weighted: 'Today\'s weighted score', score_progress: 'In progress…', score_continue: 'Continue ↗',
     prayer_title: '🕌 Today\'s prayer times', city_enter: 'Enter your city to see prayer times', city_placeholder: 'Ex: London, Dubai, Istanbul...',
-    qibla_title: '🕋 Qibla — Direction of Mecca', qibla_find_text: 'Find the direction of Mecca from your position', qibla_find_btn: '📍 Find the Qibla',
+    qibla_title: '\ud83d\udd4b Qibla \u2014 Direction of Mecca', qibla_find_text: 'Find the direction of Mecca from your position', qibla_find_btn: '\ud83d\udccd Find the Qibla', qibla_disclaimer: 'Approximate indication \u2014 verify with a physical compass if in doubt.', photo_disclaimer: 'Your photos stay on your device \u2014 never sent.',
     section_prayers: 'The 5 Prayers', section_wird: 'Daily Wird', section_sunnah: 'Essential Sunnah',
     section_deep_prayer: 'Deepening the prayer', section_dhikr: 'Dhikr of the heart', section_duas: 'Intimate du\u2019as',
     section_study: 'Islamic study', section_quran: 'Quranic immersion', section_advanced: 'Advanced practices',
