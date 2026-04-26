@@ -13,19 +13,28 @@ if (typeof Sentry !== 'undefined') {
       if (event.request && event.request.url) {
         event.request.url = event.request.url.split('?')[0];
       }
-      ['contexts','extra'].forEach(function(k) {
+      ['contexts','extra','tags'].forEach(function(k) {
         if (event[k]) {
           Object.keys(event[k]).forEach(function(key) {
-            if (/lat|lng|coord/i.test(key)) { delete event[k][key]; return; }
+            if (/lat|lng|coord|prenom|intention|note/i.test(key)) { delete event[k][key]; return; }
             var v = event[k][key];
             if (typeof v === 'string' && v.length > 50) event[k][key] = v.slice(0, 50) + '…[stripped]';
           });
         }
       });
+      if (event.exception && event.exception.values) {
+        event.exception.values.forEach(function(ex) {
+          if (ex.stacktrace && ex.stacktrace.frames) {
+            ex.stacktrace.frames.forEach(function(f) { delete f.vars; });
+          }
+        });
+      }
       return event;
     },
     beforeBreadcrumb: function(breadcrumb) {
       if (breadcrumb.category === 'ui.input') return null;
+      if (breadcrumb.category === 'navigation') return null;
+      if (breadcrumb.category === 'ui.click' && breadcrumb.message && /input|textarea/i.test(breadcrumb.message)) return null;
       if (breadcrumb.category === 'fetch' && breadcrumb.data && breadcrumb.data.body) {
         delete breadcrumb.data.body;
       }
