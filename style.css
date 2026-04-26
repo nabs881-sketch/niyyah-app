@@ -1212,6 +1212,9 @@ to {
   pointer-events:none;
   z-index:999;
   white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  max-width:calc(100vw - 48px);
   backdrop-filter:blur(16px);
   box-shadow:0 4px 24px rgba(0,0,0,0.6),0 0 0 1px rgba(200,168,75,0.08)
 }

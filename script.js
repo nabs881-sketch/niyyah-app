@@ -6526,6 +6526,7 @@ function v2SetLanguage(lang) {
   if (typeof renderProgression === 'function') { var _progEl = document.getElementById('progContent'); if (_progEl && _progEl.innerHTML) renderProgression(); }
   if (typeof renderNafsTrait === 'function') { var _nafsEl = document.getElementById('view-nafs'); if (_nafsEl && _nafsEl.classList.contains('active')) renderNafsTrait(); }
   if (typeof renderNiyyahJournalList === 'function' && typeof _niyyahJournalEntries !== 'undefined') { var _jEl = document.getElementById('view-journal'); if (_jEl && _jEl.classList.contains('active')) renderNiyyahJournalList(_niyyahJournalEntries); }
+  if (typeof openRegardeJournal === 'function') { var _rOv = document.getElementById('regarde-journal-overlay'); if (_rOv && _rOv.classList.contains('active')) openRegardeJournal(); }
   // Close settings if open
   const sheet = document.getElementById('v2-settings-sheet');
   if (sheet) sheet.remove();
@@ -7206,7 +7207,7 @@ function journalSwitchTab(tab) {
       entries.forEach(function(e) {
         var d = new Date(e.date);
         var dateStr = d.toLocaleDateString(_dateLocale(), { day:'numeric', month:'short' }) + ' · ' + d.toLocaleTimeString(_dateLocale(), { hour:'2-digit', minute:'2-digit' });
-        var thumb = e.photo ? '<img src="' + e.photo + '" style="width:60px;height:60px;border-radius:10px;object-fit:cover;flex-shrink:0;">' : '<div style="width:60px;height:60px;border-radius:10px;background:rgba(200,168,75,0.08);flex-shrink:0;"></div>';
+        var thumb = e.photo ? '<img src="' + e.photo + '" style="width:60px;height:60px;border-radius:10px;object-fit:cover;flex-shrink:0;">' : '<div style="width:60px;height:60px;border-radius:10px;background:rgba(200,168,75,0.08);flex-shrink:0;display:flex;align-items:center;justify-content:center;"><svg width="20" height="20" fill="none" stroke="rgba(200,168,75,0.3)" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>';
         html += '<div onclick="openNiyyahDetail(\'' + e.id + '\')" style="display:flex;gap:12px;align-items:center;padding:12px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.2);border-radius:12px;margin-bottom:8px;cursor:pointer;box-shadow:0 2px 12px rgba(0,0,0,0.3);transition:all 0.3s ease;">'
           + thumb + '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#D4AF37;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">' + escapeHtml(e.intention || '') + '</div>'
           + '<div style="font-size:12px;color:rgba(255,255,255,0.55);margin-top:4px;">' + dateStr + '</div></div></div>';
@@ -7224,7 +7225,7 @@ function journalSwitchTab(tab) {
       entries.forEach(function(e) {
         var d = new Date(e.date);
         var dateStr = d.toLocaleDateString(_dateLocale(), { day:'numeric', month:'short' }) + ' · ' + d.toLocaleTimeString(_dateLocale(), { hour:'2-digit', minute:'2-digit' });
-        var thumb = e.photo ? '<img src="' + e.photo + '" style="width:60px;height:60px;border-radius:10px;object-fit:cover;flex-shrink:0;">' : '<div style="width:60px;height:60px;border-radius:10px;background:rgba(200,168,75,0.08);flex-shrink:0;"></div>';
+        var thumb = e.photo ? '<img src="' + e.photo + '" style="width:60px;height:60px;border-radius:10px;object-fit:cover;flex-shrink:0;">' : '<div style="width:60px;height:60px;border-radius:10px;background:rgba(200,168,75,0.08);flex-shrink:0;display:flex;align-items:center;justify-content:center;"><svg width="20" height="20" fill="none" stroke="rgba(200,168,75,0.3)" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>';
         var star = e.bookmark ? '<div style="position:absolute;top:8px;right:8px;color:#D4AF37;font-size:14px;">★</div>' : '';
         html += '<div onclick="openRegardeDetail(\'' + e.id + '\')" style="display:flex;gap:12px;align-items:center;padding:12px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.2);border-radius:12px;margin-bottom:8px;cursor:pointer;position:relative;box-shadow:0 2px 12px rgba(0,0,0,0.3);transition:all 0.3s ease;">'
           + thumb + '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#D4AF37;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">' + escapeHtml(e.question || '') + '</div>'
@@ -9164,7 +9165,7 @@ function openRegardeJournal() {
     entries.forEach(function(e) {
       var d = new Date(e.date);
       var dateStr = d.toLocaleDateString(_dateLocale(), { day:'numeric', month:'short' }) + ' · ' + d.toLocaleTimeString(_dateLocale(), { hour:'2-digit', minute:'2-digit' });
-      var thumb = e.photo ? '<img src="' + e.photo + '" style="width:60px;height:60px;border-radius:10px;object-fit:cover;flex-shrink:0;">' : '<div style="width:60px;height:60px;border-radius:10px;background:rgba(200,168,75,0.08);flex-shrink:0;"></div>';
+      var thumb = e.photo ? '<img src="' + e.photo + '" style="width:60px;height:60px;border-radius:10px;object-fit:cover;flex-shrink:0;">' : '<div style="width:60px;height:60px;border-radius:10px;background:rgba(200,168,75,0.08);flex-shrink:0;display:flex;align-items:center;justify-content:center;"><svg width="20" height="20" fill="none" stroke="rgba(200,168,75,0.3)" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>';
       var star = e.bookmark ? '<div style="position:absolute;top:8px;right:8px;color:#D4AF37;font-size:14px;">★</div>' : '';
       html += '<div onclick="openRegardeDetail(\'' + e.id + '\')" style="display:flex;gap:12px;align-items:center;padding:12px;background:rgba(200,168,75,0.03);border:1px solid rgba(200,168,75,0.1);border-radius:12px;margin-bottom:8px;cursor:pointer;position:relative;">'
         + thumb
@@ -9192,7 +9193,7 @@ function openRegardeDetail(id) {
   if (!overlay || !content) return;
   var d = new Date(entry.date);
   var dateStr = d.toLocaleDateString(_dateLocale(), { weekday:'long', day:'numeric', month:'long' }) + ' · ' + d.toLocaleTimeString(_dateLocale(), { hour:'2-digit', minute:'2-digit' });
-  var photoHtml = entry.photo ? '<img src="' + entry.photo + '" style="width:100%;border-radius:12px;margin-bottom:20px;">' : '';
+  var photoHtml = entry.photo ? '<img src="' + entry.photo + '" style="width:100%;border-radius:12px;margin-bottom:20px;">' : (entry.hasOwnProperty('photo') ? '<div style="width:100%;height:80px;border-radius:12px;background:rgba(200,168,75,0.05);border:1px dashed rgba(200,168,75,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:20px;"><span style="font-size:11px;color:var(--t3);font-style:italic;">Photo archiv\u00e9e</span></div>' : '');
   var starIcon = entry.bookmark ? '★' : '☆';
   var noteText = entry.note || '';
   content.innerHTML = photoHtml
@@ -9339,7 +9340,7 @@ function renderNiyyahJournalList(entries) {
   entries.forEach(function(e) {
     var d = new Date(e.date);
     var dateStr = d.toLocaleDateString(_dateLocale(), { day:'numeric', month:'short' }) + ' · ' + d.toLocaleTimeString(_dateLocale(), { hour:'2-digit', minute:'2-digit' });
-    var thumb = e.photo ? '<img src="' + e.photo + '" style="width:60px;height:60px;border-radius:10px;object-fit:cover;flex-shrink:0;">' : '<div style="width:60px;height:60px;border-radius:10px;background:rgba(200,168,75,0.08);flex-shrink:0;"></div>';
+    var thumb = e.photo ? '<img src="' + e.photo + '" style="width:60px;height:60px;border-radius:10px;object-fit:cover;flex-shrink:0;">' : '<div style="width:60px;height:60px;border-radius:10px;background:rgba(200,168,75,0.08);flex-shrink:0;display:flex;align-items:center;justify-content:center;"><svg width="20" height="20" fill="none" stroke="rgba(200,168,75,0.3)" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>';
     html += '<div onclick="openNiyyahDetail(\'' + e.id + '\')" style="display:flex;gap:12px;align-items:center;padding:12px;background:rgba(200,168,75,0.03);border:1px solid rgba(200,168,75,0.1);border-radius:12px;margin-bottom:8px;cursor:pointer;">'
       + thumb
       + '<div style="flex:1;min-width:0;">'
@@ -9358,7 +9359,7 @@ function openNiyyahDetail(id) {
   if (!overlay || !content) return;
   var d = new Date(entry.date);
   var dateStr = d.toLocaleDateString(_dateLocale(), { weekday:'long', day:'numeric', month:'long' }) + ' · ' + d.toLocaleTimeString(_dateLocale(), { hour:'2-digit', minute:'2-digit' });
-  var photoHtml = entry.photo ? '<img src="' + entry.photo + '" style="width:100%;border-radius:12px;margin-bottom:20px;">' : '';
+  var photoHtml = entry.photo ? '<img src="' + entry.photo + '" style="width:100%;border-radius:12px;margin-bottom:20px;">' : (entry.hasOwnProperty('photo') ? '<div style="width:100%;height:80px;border-radius:12px;background:rgba(200,168,75,0.05);border:1px dashed rgba(200,168,75,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:20px;"><span style="font-size:11px;color:var(--t3);font-style:italic;">Photo archiv\u00e9e</span></div>' : '');
   content.innerHTML = photoHtml
     + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-style:italic;color:#D4AF37;line-height:1.6;text-align:center;margin-bottom:12px;">' + escapeHtml(entry.intention || '') + '</div>'
     + '<div style="font-size:12px;color:rgba(255,255,255,0.55);text-align:center;margin-bottom:24px;">' + dateStr + '</div>'
