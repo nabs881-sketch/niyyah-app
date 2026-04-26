@@ -2725,7 +2725,7 @@ function renderYearCalendar() {
   var el = document.getElementById('yearCalContent');
   if (!el) return;
   var todayPct = Math.round(getLevelProgress(1));
-  var MONTHS = ['Jan','Fev','Mar','Avr','Mai','Jun','Jul','Aou','Sep','Oct','Nov','Dec'];
+  var MONTHS = V2_LANG === 'en' ? ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'] : ['Jan','F\u00e9v','Mar','Avr','Mai','Jun','Jul','Ao\u00fb','Sep','Oct','Nov','D\u00e9c'];
   var nowYear = new Date().getFullYear();
   var canNext = calYear < nowYear;
   var html = '<div class="year-nav"><button class="year-nav-btn" aria-label="Année précédente" onclick="calYear--;renderYearCalendar()">&#8249;</button><div class="year-nav-title">' + calYear + '</div><button class="year-nav-btn" aria-label="Année suivante" style="opacity:' + (canNext ? '1' : '0.3') + '" onclick="' + (canNext ? 'calYear++;renderYearCalendar()' : '') + '">&#8250;</button></div><div class="year-months">';
@@ -4782,6 +4782,34 @@ const MURMURES = {
     ],
   },
 };
+const MURMURES_EN = {
+  "se rapprocher d'Allah": {
+    matin: [{body:"Your heart remembers Him",icon:"🌟"},{body:"A breath of Dhikr before you begin",icon:"📿"},{body:"Allah is near — closer than your jugular vein",icon:"✨"}],
+    midi: [{body:"Between tasks — a moment toward Allah",icon:"🌟"},{body:"SubhanAllah. Three seconds. He hears.",icon:"📿"},{body:"Your day has a soul. Remember it.",icon:"✨"}],
+    soir: [{body:"The night is gentle for those who return",icon:"🌙"},{body:"Before closing your eyes — Al-Hamdulillah",icon:"🌙"},{body:"He kept you today. Thank Him.",icon:"🌙"}]
+  },
+  "tenir mes engagements": {
+    matin: [{body:"Your word today — keep it",icon:"🤝"},{body:"One commitment kept is worth a thousand intentions",icon:"💪"},{body:"Start with the smallest. The rest will follow.",icon:"🎯"}],
+    midi: [{body:"Midday. Your commitments are breathing.",icon:"🤝"},{body:"What you promised this morning — where are you?",icon:"💪"},{body:"Consistency is a form of nobility",icon:"⭐"}],
+    soir: [{body:"What you honored today counts",icon:"🌙"},{body:"Gentle review: what did you keep?",icon:"🌙"},{body:"Tomorrow, one commitment. Just one.",icon:"🌙"}]
+  },
+  "me reconstruire": {
+    matin: [{body:"One brick laid is better than a wall dreamed",icon:"🌱"},{body:"You are starting again. That is already a victory.",icon:"💚"},{body:"Allah loves the one who returns. You are on the path.",icon:"🌿"}],
+    midi: [{body:"You are moving. Even slowly, you are moving.",icon:"🌱"},{body:"One step. Just one. Bismillah.",icon:"💚"},{body:"Rebuilding takes time. Patience.",icon:"🌿"}],
+    soir: [{body:"Rebuilding takes time. You are on the path.",icon:"🌙"},{body:"Today you held. That counts immensely.",icon:"🌙"},{body:"Tomorrow is a blank page offered by Allah.",icon:"🌙"}]
+  },
+  "être reconnaissant": {
+    matin: [{body:"Name one beautiful thing about this morning",icon:"🙏"},{body:"Al-Hamdulillah — the heaviest of words",icon:"✨"},{body:"You breathe. Someone no longer can.",icon:"🌸"}],
+    midi: [{body:"Did something smile at you today?",icon:"🙏"},{body:"A hidden grace in your ordinary day",icon:"✨"},{body:"Say thank you to someone. It is sadaqa.",icon:"🌸"}],
+    soir: [{body:"Before sleep — grateful for what?",icon:"🌙"},{body:"Your day had value. Can you see it?",icon:"🌙"},{body:"3 things from today you are grateful for",icon:"🌙"}]
+  },
+  default: {
+    matin: [{body:"A moment for your soul before you begin",icon:"🌿"},{body:"Bismillah — every act can be ibadah",icon:"✨"},{body:"Your day begins with the grace of Allah",icon:"🌟"}],
+    midi: [{body:"A breath of peace in the heart of the day",icon:"🌿"},{body:"Remember why you do what you do",icon:"✨"},{body:"Astaghfirullah. A lighter heart goes further.",icon:"🤲"}],
+    soir: [{body:"The night is a gift. Begin it in peace.",icon:"🌙"},{body:"Your evening Wird awaits. 5 minutes.",icon:"🌙"},{body:"Al-Hamdulillah for this day, whatever it held.",icon:"🌙"}]
+  }
+};
+function _getMurmureDict() { return V2_LANG === 'en' ? MURMURES_EN : MURMURES; }
 
 /* ══ MURMURE ADAPTATIF — s'ajuste selon l'avancement ══ */
 function getMurmureAdaptatif(moment) {
@@ -4850,16 +4878,17 @@ function getMurmure(moment) {
     { keywords: ["reconnaissant", "gratitude", "merci"], key: "être reconnaissant" },
   ];
 
-  var theme = MURMURES["default"];
+  var _dict = _getMurmureDict();
+  var theme = _dict["default"];
   for (var i = 0; i < MAP.length; i++) {
     var entry = MAP[i];
     for (var j = 0; j < entry.keywords.length; j++) {
       if (intention.indexOf(entry.keywords[j]) !== -1) {
-        theme = MURMURES[entry.key] || MURMURES["default"];
+        theme = _dict[entry.key] || _dict["default"];
         break;
       }
     }
-    if (theme !== MURMURES["default"]) break;
+    if (theme !== _dict["default"]) break;
   }
 
   var pool = theme[moment] || theme.matin;
@@ -4932,7 +4961,7 @@ function requestNotifPermission() {
     });
   } catch(e) {
     dismissNotifScreen();
-    showToast('Rappels non disponibles sur cet appareil');
+    showToast(t('notif_unavailable'));
   }
 }
 
@@ -6462,6 +6491,8 @@ function v2SetLanguage(lang) {
   if (typeof renderTabs === 'function') renderTabs();
   if (typeof renderLevel === 'function' && typeof currentLevel !== 'undefined') renderLevel(currentLevel);
   if (typeof renderProgression === 'function') { var _progEl = document.getElementById('progContent'); if (_progEl && _progEl.innerHTML) renderProgression(); }
+  if (typeof renderNafsTrait === 'function') { var _nafsEl = document.getElementById('view-nafs'); if (_nafsEl && _nafsEl.classList.contains('active')) renderNafsTrait(); }
+  if (typeof renderNiyyahJournalList === 'function' && typeof _niyyahJournalEntries !== 'undefined') { var _jEl = document.getElementById('view-journal'); if (_jEl && _jEl.classList.contains('active')) renderNiyyahJournalList(_niyyahJournalEntries); }
   // Close settings if open
   const sheet = document.getElementById('v2-settings-sheet');
   if (sheet) sheet.remove();
