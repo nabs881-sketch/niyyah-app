@@ -1965,6 +1965,7 @@ function chooseNiyyah(type) {
   safeSetItem('niyyah_intention_date', TODAY);
   safeSetItem('niyyah_intention_type', type);
   safeSetItem('niyyah_intention_label', labels[type] || type);
+  _nAn('intention_set');
   if (window._niyyahAudio) { window._niyyahAudio.pause(); window._niyyahAudio = null; }
   const screen = document.getElementById('niyyahScreen');
   screen.classList.add('niyyah-dissolve');
@@ -3830,6 +3831,7 @@ function toggleCoranPlay() {
   } else {
     _coranAudio.play();
     _coranPlaying = true;
+    _nAn('coran_played');
     if (_btn) _btn.textContent = '\u23f8';
   }
 }
@@ -4384,6 +4386,7 @@ function checkTawba() {
 }
 
 function showTawba() {
+  _nAn('tawba_triggered');
   showAlHayaBtn();
   const overlay = document.getElementById('tawbaOverlay');
   const card    = document.getElementById('tawbaCard');
@@ -7033,6 +7036,7 @@ function _v2ShowTarget(targetId, opts) {
 }
 
 function v2GoJournal() {
+  _nAn('journal_visited');
   showAlHayaBtn();
   var tbEl = document.getElementById('topbar-v2');
   if (tbEl) tbEl.classList.remove('active');
@@ -7086,6 +7090,7 @@ function journalSwitchTab(tab) {
   }
 }
 function v2GoNafs() {
+  _nAn('nafs_visited');
   showAlHayaBtn();
   var tbEl = document.getElementById('topbar-v2');
   if (tbEl) tbEl.classList.remove('active');
@@ -7909,7 +7914,24 @@ window.getAlhayaStats = function() {
 if (localStorage.getItem('niyyah_alhaya_active') === '1') {
   setTimeout(function() { var ov = document.getElementById('alhaya-overlay'); if (ov) { ov.style.display = 'flex'; ov.style.opacity = '1'; } }, 100);
 }
+// ── Analytics ──
+function _nAn(evt) {
+  try {
+    var raw = localStorage.getItem('niyyah_analytics_v1');
+    var a = raw ? JSON.parse(raw) : {};
+    a[evt] = (a[evt] || 0) + 1;
+    var now = Date.now();
+    if (!a.first_use) a.first_use = now;
+    a.last_use = now;
+    safeSetItem('niyyah_analytics_v1', JSON.stringify(a));
+  } catch(e) {}
+}
+window.getNiyyahStats = function() {
+  try { return JSON.parse(localStorage.getItem('niyyah_analytics_v1') || '{}'); } catch(e) { return {}; }
+};
+_nAn('sessions');
 function openWaqtModal() {
+  _nAn('waqt_started');
   var moment = getCurrentMoment();
   var pool = WAQT_CATALOG[moment] || WAQT_CATALOG.matin;
   var item = pool[Math.floor(Math.random() * pool.length)];
@@ -7953,6 +7975,7 @@ function startWaqtTimer() {
       setTimeout(function() {
         if (ring) ring.remove();
         if (actionText) actionText.textContent = t('waqt_done');
+        _nAn('waqt_completed');
         if (closeBtn) { closeBtn.style.display = ''; closeBtn.textContent = t('waqt_close'); }
       }, 600);
     }
@@ -8248,6 +8271,7 @@ function saveFinJourneeBontes() {
   var b3 = (document.getElementById('finjournee-b3') || {}).value || '';
   var bontes = [b1, b2, b3].filter(function(s) { return s.trim().length > 0; });
   if (bontes.length === 0) { alert('Écris au moins une bonté, ou tape Passer.'); return; }
+  _nAn('muhasaba_done');
   var today = new Date().toISOString().split('T')[0];
   var entry = { id: 'finjournee_' + today, date: today, time: new Date().toISOString(), bontes: bontes, skipped_bontes: false, completed: false };
   var hist = [];
@@ -8792,6 +8816,7 @@ const SCANNER_LIBRARY = {
 var _regardeStream = null;
 
 async function regardeOpen() {
+  _nAn('scanner_tab_visited');
   showAlHayaBtn();
   var screen = document.getElementById('regarde-screen');
   var content = document.getElementById('regarde-content');
@@ -9093,6 +9118,7 @@ function regardeClose() {
 }
 
 async function scannerOpen() {
+  _nAn('scanner_uses');
   showAlHayaBtn();
   const overlay = document.getElementById('scanner-overlay');
   if (!overlay) return;
