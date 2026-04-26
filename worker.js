@@ -160,8 +160,11 @@ EXEMPLES DU NIVEAU ATTENDU :
 "Je fais de ma paix intérieure une réponse à la souffrance du monde."
 "Je conduis ce vendredi comme si chaque feu rouge était un dhikr."`;
 
+    const _ac = new AbortController();
+    const _to = setTimeout(() => _ac.abort(), 25000);
     const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
+      signal: _ac.signal,
       headers: {
         'Content-Type': 'application/json',
         'x-api-key': env.ANTHROPIC_API_KEY,
@@ -186,6 +189,7 @@ EXEMPLES DU NIVEAU ATTENDU :
         }],
       }),
     });
+    clearTimeout(_to);
 
     if (!response.ok) {
       const err = await response.text();
@@ -199,10 +203,10 @@ EXEMPLES DU NIVEAU ATTENDU :
     return jsonResponse({ intention });
 
   } catch (err) {
-    return jsonResponse(
-      { error: 'Scanner indisponible', details: err.message },
-      500
-    );
+    if (err.name === 'AbortError') {
+      return jsonResponse({ error: 'Timeout — IA trop lente' }, 504);
+    }
+    return jsonResponse({ error: 'Scanner indisponible' }, 500);
   }
 }
 
@@ -295,8 +299,11 @@ function buildTemporalContext(ctx) {
 }
 
 async function callAnthropic(env, params) {
+  const ac = new AbortController();
+  const to = setTimeout(() => ac.abort(), 25000);
   const response = await fetch(ANTHROPIC_API_URL, {
     method: 'POST',
+    signal: ac.signal,
     headers: {
       'Content-Type': 'application/json',
       'x-api-key': env.ANTHROPIC_API_KEY,
@@ -304,6 +311,7 @@ async function callAnthropic(env, params) {
     },
     body: JSON.stringify(params)
   });
+  clearTimeout(to);
   if (!response.ok) {
     const errText = await response.text();
     throw new Error(`Anthropic API error ${response.status}: ${errText}`);

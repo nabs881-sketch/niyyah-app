@@ -8934,12 +8934,14 @@ function regardeCapture() {
   var content = document.getElementById('regarde-content');
   if (!video || !content) return;
 
-  // Capture image en mémoire
+  // Capture image en mémoire — compressée max 1024px
   var canvas = document.createElement('canvas');
-  canvas.width = video.videoWidth || 1280;
-  canvas.height = video.videoHeight || 720;
-  canvas.getContext('2d').drawImage(video, 0, 0);
-  var dataUrl = canvas.toDataURL('image/jpeg', 0.85);
+  var _rvw = video.videoWidth || 1280, _rvh = video.videoHeight || 720;
+  var _rscale = Math.min(1, 1024 / Math.max(_rvw, _rvh));
+  canvas.width = Math.round(_rvw * _rscale);
+  canvas.height = Math.round(_rvh * _rscale);
+  canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+  var dataUrl = canvas.toDataURL('image/jpeg', 0.8);
   window._regardeImageData = dataUrl;
   var base64 = dataUrl.replace(/^data:image\/jpeg;base64,/, '');
 
@@ -8981,9 +8983,13 @@ function regardeCapture() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ image: base64 })
     })
-    .then(function(res) { return res.json(); })
+    .then(function(res) {
+      if (res.status === 429) { showToast('Quota IA atteint, r\u00e9essayez dans 1h'); return null; }
+      if (res.status >= 500) { showToast('Service indisponible'); return null; }
+      return res.json();
+    })
     .then(function(data) {
-      if (aborted) return;
+      if (!data || aborted) return;
       clearTimeout(timer); timer = null;
       if (data.source === 'ia' && data.question) {
         saveAndShow(data.question, data.category);
@@ -9511,12 +9517,14 @@ async function scannerCapture() {
   hint.textContent = t('scanner_analyzing');
   hint.style.opacity = '0.8';
 
-  // Capturer l'image depuis la vidéo
-  canvas.width  = video.videoWidth  || 1280;
-  canvas.height = video.videoHeight || 720;
+  // Capturer l'image depuis la vidéo — compressée max 1024px
+  var _vw = video.videoWidth || 1280, _vh = video.videoHeight || 720;
+  var _scale = Math.min(1, 1024 / Math.max(_vw, _vh));
+  canvas.width = Math.round(_vw * _scale);
+  canvas.height = Math.round(_vh * _scale);
   var ctx = canvas.getContext('2d');
-  ctx.drawImage(video, 0, 0);
-  var imageData = canvas.toDataURL('image/jpeg', 0.85);
+  ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+  var imageData = canvas.toDataURL('image/jpeg', 0.8);
 
   // Traitement < 3 secondes
   try {
@@ -9541,10 +9549,10 @@ async function scannerAnalyzeImage(imageData) {
   var base64 = imageData.replace(/^data:image\/jpeg;base64,/, '');
   var now = new Date();
 
-  // Appel /api/niyyah avec timeout 8s
+  // Appel /api/niyyah avec timeout 25s
   try {
     var controller = new AbortController();
-    var timer = setTimeout(function() { controller.abort(); }, 8000);
+    var timer = setTimeout(function() { controller.abort(); }, 25000);
 
     var response = await fetch('https://niyyah-api.nabs881.workers.dev/api/niyyah', {
       method: 'POST',
@@ -9553,6 +9561,9 @@ async function scannerAnalyzeImage(imageData) {
       signal: controller.signal
     });
     clearTimeout(timer);
+
+    if (response.status === 429) { showToast('Quota IA atteint, r\u00e9essayez dans 1h'); return null; }
+    if (response.status >= 500) { showToast('Service indisponible'); return null; }
 
     var data = await response.json();
 
