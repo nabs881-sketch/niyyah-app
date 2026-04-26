@@ -5631,7 +5631,7 @@ const V2_I18N = {
     settings_privacy: '🔒 Données 100% locales · Al-Haya',
     settings_close:   'Fermer',
     // Tawba
-    tawba_title: 'Mode Tawba',
+    tawba_title: 'Mode Tawba', tawba_pedagog: 'Reset de l\u2019\u00e2me, sans jugement', muhasaba_pedagog: '3 actes pour clore ta journ\u00e9e',
     tawba_text:  'Bienvenue de retour. Chaque instant est un nouveau départ. Il n\'y a pas de retard dans le chemin vers Lui.',
     tawba_btn:   'Reprendre le chemin',
     // Levels
@@ -5886,7 +5886,7 @@ const V2_I18N = {
     settings_reset:   '↺ Reset',
     settings_privacy: '🔒 100% local data · Al-Haya',
     settings_close:   'Close',
-    tawba_title: 'Tawba Mode',
+    tawba_title: 'Tawba Mode', tawba_pedagog: 'A soul reset, without judgment', muhasaba_pedagog: '3 deeds to close your day',
     tawba_text:  'Welcome back. Every moment is a fresh start. There is no delay on the path toward Him.',
     tawba_btn:   'Resume the path',
     level_1: 'Foundations',
@@ -6513,6 +6513,8 @@ function v2ApplyI18nHTML() {
   _s('i18n-journal-regards-title', 'journal_regards_title');
   _s('i18n-link-see-regards', 'link_see_regards');
   _s('i18n-link-see-niyyah', 'link_see_niyyah');
+  _s('i18n-tawba-pedagog', 'tawba_pedagog');
+  _s('i18n-muhasaba-pedagog', 'muhasaba_pedagog');
   _s('i18n-finjournee-title', 'finjournee_title');
   _s('i18n-finjournee-sub2', 'finjournee_sub2');
   _p('finjournee-b1', 'finjournee_ph1');
