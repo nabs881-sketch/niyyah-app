@@ -1834,8 +1834,6 @@ function init() {
   checkWeeklyBilan();
   checkTawba();
   window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('touchmove', onScroll, { passive: true });
-  document.addEventListener('scroll', onScroll, { passive: true });
   currentLevel = 1;
   document.querySelectorAll('.view').forEach(v => { v.classList.remove('active'); v.style.display = 'none'; });
   document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
