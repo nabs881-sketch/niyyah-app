@@ -1,4 +1,4 @@
-const VERSION = 'niyyah-v352';
+const VERSION = 'niyyah-v353';
 const CORE = [
   './index.html',
   './script.min.js',
@@ -16,16 +16,20 @@ const CORE = [
   './assets/moments/maghrib.webp',
   './assets/moments/isha.webp',
 ];
+const FONTS_CACHE = 'niyyah-fonts-v1';
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(VERSION).then(c => c.addAll(CORE)));
-  self.skipWaiting();
+});
+
+self.addEventListener('message', e => {
+  if (e.data && e.data.type === 'SKIP_WAITING') self.skipWaiting();
 });
 
 self.addEventListener('activate', e => {
   e.waitUntil(
     caches.keys().then(keys =>
-      Promise.all(keys.filter(k => k !== VERSION).map(k => caches.delete(k)))
+      Promise.all(keys.filter(k => k !== VERSION && k !== FONTS_CACHE).map(k => caches.delete(k)))
     )
   );
   self.clients.claim();
@@ -40,12 +44,24 @@ self.addEventListener('fetch', e => {
     url.hostname.includes('render.com') ||
     url.pathname.startsWith('/api/')
   ) {
-    e.respondWith(fetch(e.request).catch(() => new Response('', { status: 503 })));
+    e.respondWith(fetch(e.request).catch(() => new Response('{"error":"offline"}', { status: 503, headers: { 'Content-Type': 'application/json' } })));
     return;
   }
 
   if (['everyayah.com','mp3quran.net','quranicaudio.com','soundcloud.com','sndcdn.com'].some(h => url.hostname.includes(h))) {
     e.respondWith(fetch(e.request).catch(() => new Response('', { status: 503 })));
+    return;
+  }
+
+  if (url.hostname.includes('fonts.googleapis.com') || url.hostname.includes('fonts.gstatic.com')) {
+    e.respondWith(
+      caches.open(FONTS_CACHE).then(cache =>
+        cache.match(e.request).then(cached => {
+          var net = fetch(e.request).then(res => { if (res && res.status === 200) cache.put(e.request, res.clone()); return res; }).catch(() => cached || new Response('', { status: 503 }));
+          return cached || net;
+        })
+      )
+    );
     return;
   }
 

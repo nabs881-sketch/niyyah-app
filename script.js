@@ -3903,7 +3903,12 @@ function playSourate(num) {
     if (_playBtn) _playBtn.textContent = '\u25b6';
     if (_versetEl) _versetEl.textContent = t('meditation_done');
   };
-  _coranAudio.play().catch(function() {});
+  _coranAudio.onerror = function() {
+    _coranPlaying = false;
+    if (_playBtn) _playBtn.textContent = '\u25b6';
+    showToast(t('audio_offline'));
+  };
+  _coranAudio.play().catch(function() { showToast(t('audio_offline')); });
 }
 function toggleCoranPlay() {
   if (!_coranAudio.src) return;
@@ -5692,7 +5697,23 @@ function toggleTheme() {
 /* ─── BLOC 4 : Service Worker ────────────────────── */
 
 if ('serviceWorker' in navigator && location.protocol !== 'null:' && (location.protocol === 'https:' || location.protocol === 'http:')) {
-  window.addEventListener('load', () => { navigator.serviceWorker.register('./sw.js').catch(() => {}); });
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js').then(function(reg) {
+      reg.addEventListener('updatefound', function() {
+        var newWorker = reg.installing;
+        if (!newWorker) return;
+        newWorker.addEventListener('statechange', function() {
+          if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+            var banner = document.createElement('div');
+            banner.style.cssText = 'position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#1a1a1a;border:1px solid rgba(200,168,75,0.4);border-radius:12px;padding:12px 20px;z-index:9999;display:flex;align-items:center;gap:12px;box-shadow:0 4px 20px rgba(0,0,0,0.5);';
+            banner.innerHTML = '<span style="font-size:13px;color:var(--t2);">Nouvelle version disponible</span><button style="padding:6px 14px;border-radius:8px;border:none;background:#C8A84A;color:#000;font-size:12px;font-weight:600;cursor:pointer;">Mettre \u00e0 jour</button>';
+            banner.querySelector('button').onclick = function() { newWorker.postMessage({type:'SKIP_WAITING'}); window.location.reload(); };
+            document.body.appendChild(banner);
+          }
+        });
+      });
+    }).catch(() => {});
+  });
 }
 
 
@@ -5960,7 +5981,7 @@ const V2_I18N = {
     // Premium
     premium_unlocked: '✅ Accès complet débloqué — Barakallahu feek !',
     // Camera
-    camera_denied: 'Acc\u00e8s cam\u00e9ra refus\u00e9 \u2014 autorise l\u2019acc\u00e8s dans les r\u00e9glages', btn_retry: 'R\u00e9essayer', btn_close: 'Fermer',
+    camera_denied: 'Acc\u00e8s cam\u00e9ra refus\u00e9 \u2014 autorise l\u2019acc\u00e8s dans les r\u00e9glages', btn_retry: 'R\u00e9essayer', btn_close: 'Fermer', audio_offline: 'Audio non disponible hors-ligne',
     // Compass
     compass_denied: 'Autorise la boussole dans les réglages',
     disclaimer: 'Cette application n\'émet pas d\'avis religieux. Pour toute question de fiqh, consultez un savant qualifié.',
@@ -6189,7 +6210,7 @@ const V2_I18N = {
     share_downloaded: 'Image downloaded — share it 🌿', share_copied: 'Link copied!',
     share_card: 'NIYYAH CARD ✦', share_intention: 'Share this intention', share_btn: 'SHARE ✦', share_close: 'CLOSE',
     premium_unlocked: '✅ Full access unlocked — Barakallahu feek!',
-    camera_denied: 'Camera access denied \u2014 allow in settings', btn_retry: 'Retry', btn_close: 'Close',
+    camera_denied: 'Camera access denied \u2014 allow in settings', btn_retry: 'Retry', btn_close: 'Close', audio_offline: 'Audio not available offline',
     compass_denied: 'Allow compass in settings',
     disclaimer: 'This app does not issue religious rulings. For any fiqh question, consult a qualified scholar.',
     settings_mentions: 'Legal Notice',
