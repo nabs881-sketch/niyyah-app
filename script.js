@@ -2040,7 +2040,7 @@ function chooseNiyyah(type) {
     reconstruction: "Me reconstruire",
     gratitude: "Être reconnaissant"
   };
-  const s2 = JSON.parse(localStorage.getItem('niyyah_v2_bridge') || '{}');
+  var s2 = {}; try { s2 = JSON.parse(localStorage.getItem('niyyah_v2_bridge') || '{}'); } catch(e) {}
   s2.intention = cleanLabels[type] || type;
   s2.intentionDate = new Date().toDateString();
   safeSetItem('niyyah_v2_bridge', JSON.stringify(s2));
@@ -5981,7 +5981,7 @@ const V2_I18N = {
     // Premium
     premium_unlocked: '✅ Accès complet débloqué — Barakallahu feek !',
     // Camera
-    camera_denied: 'Acc\u00e8s cam\u00e9ra refus\u00e9 \u2014 autorise l\u2019acc\u00e8s dans les r\u00e9glages', btn_retry: 'R\u00e9essayer', btn_close: 'Fermer', audio_offline: 'Audio non disponible hors-ligne',
+    camera_denied: 'Acc\u00e8s cam\u00e9ra refus\u00e9 \u2014 autorise l\u2019acc\u00e8s dans les r\u00e9glages', btn_retry: 'R\u00e9essayer', btn_close: 'Fermer', audio_offline: 'Audio non disponible hors-ligne', regarde_limit: 'Limite Regarde atteinte (5/jour) \u2014 reviens demain',
     // Compass
     compass_denied: 'Autorise la boussole dans les réglages',
     disclaimer: 'Cette application n\'émet pas d\'avis religieux. Pour toute question de fiqh, consultez un savant qualifié.',
@@ -6210,7 +6210,7 @@ const V2_I18N = {
     share_downloaded: 'Image downloaded — share it 🌿', share_copied: 'Link copied!',
     share_card: 'NIYYAH CARD ✦', share_intention: 'Share this intention', share_btn: 'SHARE ✦', share_close: 'CLOSE',
     premium_unlocked: '✅ Full access unlocked — Barakallahu feek!',
-    camera_denied: 'Camera access denied \u2014 allow in settings', btn_retry: 'Retry', btn_close: 'Close', audio_offline: 'Audio not available offline',
+    camera_denied: 'Camera access denied \u2014 allow in settings', btn_retry: 'Retry', btn_close: 'Close', audio_offline: 'Audio not available offline', regarde_limit: 'Regarde limit reached (5/day) \u2014 come back tomorrow',
     compass_denied: 'Allow compass in settings',
     disclaimer: 'This app does not issue religious rulings. For any fiqh question, consult a qualified scholar.',
     settings_mentions: 'Legal Notice',
@@ -6438,7 +6438,7 @@ function v2DetectLang() {
       return urlLang;
     }
   } catch(e) {}
-  const saved = (JSON.parse(localStorage.getItem('niyyah_v2_bridge') || '{}')).lang;
+  var saved; try { saved = (JSON.parse(localStorage.getItem('niyyah_v2_bridge') || '{}')).lang; } catch(e) {}
   if (saved && saved !== 'ar' && V2_I18N[saved]) return saved;
   // Détection auto au premier lancement
   var bl = (navigator.language || 'en').toLowerCase();
@@ -7878,7 +7878,7 @@ function niyyahImportData(input) {
       var keys = Object.keys(data);
       if (!keys.length) { showToast(t('import_empty')); return; }
       if (!confirm(t('import_confirm').replace('{n}',keys.length))) return;
-      keys.forEach(function(k) { try { localStorage.setItem(k, data[k]); } catch(ex) {} });
+      keys.forEach(function(k) { safeSetItem(k, data[k]); });
       showToast(t('import_done'));
       setTimeout(function() { location.reload(); }, 1000);
     } catch(ex) {
@@ -9008,6 +9008,16 @@ function _regardeShowQuestion(content, question) {
 }
 
 function regardeCapture() {
+  // Quota Regarde : 5/jour
+  try {
+    var _rqRaw = JSON.parse(localStorage.getItem('niyyah_regarde_quota') || '[]');
+    var _rqToday = todayKey();
+    _rqRaw = _rqRaw.filter(function(d) { return d === _rqToday; });
+    if (_rqRaw.length >= 5) { showToast(t('regarde_limit')); return; }
+    _rqRaw.push(_rqToday);
+    safeSetItem('niyyah_regarde_quota', JSON.stringify(_rqRaw));
+  } catch(e) {}
+
   var video = document.getElementById('regarde-video');
   var content = document.getElementById('regarde-content');
   if (!video || !content) return;
