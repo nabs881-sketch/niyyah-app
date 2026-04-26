@@ -196,6 +196,19 @@
   <!-- PROCHAINE PRIÈRE -->
   <div id="sanctuaire-next-prayer" style="display:none;"></div>
 
+  <!-- AL-WAQT -->
+  <div id="waqt-card" onclick="openWaqtModal()" style="margin:0 20px 16px;padding:12px 16px;background:rgba(200,168,74,0.06);border:0.5px solid rgba(200,168,74,0.2);border-radius:12px;display:flex;align-items:center;gap:12px;cursor:pointer;">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"><path d="M6 2v4M18 2v4M6 18v4M18 18v4"/><rect x="6" y="6" width="12" height="12" rx="1"/><path d="M12 6v4l2 2"/></svg>
+    <span id="i18n-waqt-offer" style="font-family:'Cormorant Garamond',serif;font-size:14px;font-style:italic;color:#C8A84A;">J'ai 1 minute</span>
+  </div>
+
+  <!-- WAQT MODAL -->
+  <div id="waqt-modal" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;width:100vw;height:100vh;z-index:9996;background:#1F2125;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 24px;">
+    <div id="waqt-action-text" style="font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;color:#C8A84A;line-height:1.7;max-width:320px;margin-bottom:32px;"></div>
+    <button id="waqt-start-btn" onclick="startWaqtTimer()" style="padding:14px 32px;border-radius:16px;border:none;background:linear-gradient(135deg,#c8a84b,#e8cc6a);color:#1a0f00;font-size:15px;font-weight:700;font-family:'Cormorant Garamond',serif;cursor:pointer;margin-bottom:16px;" id="i18n-waqt-start">Commencer</button>
+    <button onclick="closeWaqtModal()" style="background:none;border:none;color:rgba(255,255,255,0.3);font-size:13px;cursor:pointer;font-family:var(--sans);" id="i18n-waqt-close">Fermer</button>
+  </div>
+
   <!-- RAYONNEMENT PREMIUM — 4 Cartes SVG + Image overlay -->
   <div class="quick-actions-v2">
 
