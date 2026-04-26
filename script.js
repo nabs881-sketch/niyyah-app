@@ -5772,7 +5772,7 @@ const V2_I18N = {
     onboard_lvl1_desc: 'Les 5 prières · Dhikr · Récitation', onboard_lvl2_desc: 'Mosquée · Istighfar · Tasbih',
     onboard_lvl3_desc: 'Hadiths · Coran · Arabe', onboard_lvl4_desc: 'Sadaqa · Salam · Douaas',
     onboard_city_manual: 'Ou entre ta ville manuellement :',
-    waqt_offer_minute: 'J\u2019ai 1 minute', waqt_start: 'Commencer', waqt_close: 'Fermer', waqt_done: 'Bien fait. Tu as offert ce moment.', alhaya_resting: 'Niyyah est en repos', alhaya_tap_wake: 'Touchez pour r\u00e9veiller', ob_splash_sub: 'Pose ton intention', ob_avant_acte: 'Avant l\u2019acte', ob_apres_acte: 'Apr\u00e8s l\u2019acte',
+    waqt_eyebrow: 'AL-WAQT \u00b7 UN MOMENT \u00c0 OFFRIR', waqt_offer_minute: 'J\u2019ai une minute', waqt_start: 'Commencer', waqt_close: 'Fermer', waqt_done: 'Bien fait. Tu as offert ce moment.', alhaya_resting: 'Niyyah est en repos', alhaya_tap_wake: 'Touchez pour r\u00e9veiller', ob_splash_sub: 'Pose ton intention', ob_avant_acte: 'Avant l\u2019acte', ob_apres_acte: 'Apr\u00e8s l\u2019acte',
     ob_deux_gestes: 'Deux gestes pour ton quotidien', ob_sacralise: 'Sacralise. Examine.',
     ob_motivation_title: 'Qu\u2019est-ce qui t\u2019am\u00e8ne\u00a0?', ob_motivation_sub: 'Choisis ce qui te parle \u2014 on adapte ton exp\u00e9rience.',
     ob_motiv_routine: 'Routine spirituelle', ob_motiv_routine_sub: 'Installer une pratique quotidienne',
@@ -6005,7 +6005,7 @@ const V2_I18N = {
     onboard_lvl1_desc: '5 daily prayers · Dhikr · Recitation', onboard_lvl2_desc: 'Mosque · Istighfar · Tasbih',
     onboard_lvl3_desc: 'Hadiths · Quran · Arabic', onboard_lvl4_desc: 'Sadaqa · Salam · Douaas',
     onboard_city_manual: 'Or enter your city manually:',
-    waqt_offer_minute: 'I have 1 minute', waqt_start: 'Start', waqt_close: 'Close', waqt_done: 'Well done. You2019ve offered this moment.', alhaya_resting: 'Niyyah is resting', alhaya_tap_wake: 'Tap to wake', ob_splash_sub: 'Set your intention', ob_avant_acte: 'Before the act', ob_apres_acte: 'After the act',
+    waqt_eyebrow: 'AL-WAQT \u00b7 A MOMENT TO OFFER', waqt_offer_minute: 'I have a minute', waqt_start: 'Start', waqt_close: 'Close', waqt_done: 'Well done. You\u2019ve offered this moment.', alhaya_resting: 'Niyyah is resting', alhaya_tap_wake: 'Tap to wake', ob_splash_sub: 'Set your intention', ob_avant_acte: 'Before the act', ob_apres_acte: 'After the act',
     ob_deux_gestes: 'Two gestures for your daily life', ob_sacralise: 'Sanctify. Examine.',
     ob_motivation_title: 'What brings you here?', ob_motivation_sub: 'Choose what speaks to you \u2014 we\u2019ll adapt your experience.',
     ob_motiv_routine: 'Spiritual routine', ob_motiv_routine_sub: 'Build a daily practice',
@@ -6215,7 +6215,7 @@ const V2_I18N = {
     onboard_tagline: '', onboard_scanner_example: '',
     onboard_lvl1_desc: '', onboard_lvl2_desc: '', onboard_lvl3_desc: '', onboard_lvl4_desc: '',
     onboard_city_manual: '',
-    waqt_offer_minute: '\u0644\u064E\u062F\u064E\u064A\u0651\u064E \u062F\u064E\u0642\u0650\u064A\u0642\u064E\u0629', waqt_start: '\u0627\u0628\u0652\u062F\u064E\u0623', waqt_close: '\u0625\u0650\u063A\u0652\u0644\u0627\u0642', waqt_done: '\u0623\u064E\u062D\u0652\u0633\u064E\u0646\u0652\u062A. \u0623\u064E\u0647\u0652\u062F\u064E\u064A\u0652\u062A\u064E \u0647\u0630\u0650\u0647\u0650 \u0627\u0644\u0644\u0651\u064E\u062D\u0652\u0638\u064E\u0629.', alhaya_resting: '\u0646\u0650\u064A\u0651\u064E\u0629 \u062A\u064E\u0633\u0652\u062A\u064E\u0631\u0650\u064A\u062D', alhaya_tap_wake: '\u0627\u0644\u0645\u064E\u0633\u0652 \u0644\u0650\u0644\u0627\u0633\u0652\u062A\u0650\u064A\u0642\u0627\u0638', ob_splash_sub: '\u0636\u064E\u0639\u0652 \u0646\u0650\u064A\u0651\u064E\u062A\u064E\u0643', ob_avant_acte: '\u0642\u064E\u0628\u0652\u0644\u064E \u0627\u0644\u0641\u0650\u0639\u0652\u0644', ob_apres_acte: '\u0628\u064E\u0639\u0652\u062F\u064E \u0627\u0644\u0641\u0650\u0639\u0652\u0644',
+    waqt_eyebrow: '\u0627\u0644\u0648\u064E\u0642\u0652\u062A \u00b7 \u0644\u064E\u062D\u0652\u0638\u064E\u0629\u064C \u0644\u0650\u062A\u064E\u0642\u0652\u062F\u0650\u064A\u0645\u0650\u0647\u0627', waqt_offer_minute: '\u0644\u064E\u062F\u064E\u064A\u0651\u064E \u062F\u064E\u0642\u0650\u064A\u0642\u064E\u0629', waqt_start: '\u0627\u0628\u0652\u062F\u064E\u0623', waqt_close: '\u0625\u0650\u063A\u0652\u0644\u0627\u0642', waqt_done: '\u0623\u064E\u062D\u0652\u0633\u064E\u0646\u0652\u062A. \u0623\u064E\u0647\u0652\u062F\u064E\u064A\u0652\u062A\u064E \u0647\u0630\u0650\u0647\u0650 \u0627\u0644\u0644\u0651\u064E\u062D\u0652\u0638\u064E\u0629.', alhaya_resting: '\u0646\u0650\u064A\u0651\u064E\u0629 \u062A\u064E\u0633\u0652\u062A\u064E\u0631\u0650\u064A\u062D', alhaya_tap_wake: '\u0627\u0644\u0645\u064E\u0633\u0652 \u0644\u0650\u0644\u0627\u0633\u0652\u062A\u0650\u064A\u0642\u0627\u0638', ob_splash_sub: '\u0636\u064E\u0639\u0652 \u0646\u0650\u064A\u0651\u064E\u062A\u064E\u0643', ob_avant_acte: '\u0642\u064E\u0628\u0652\u0644\u064E \u0627\u0644\u0641\u0650\u0639\u0652\u0644', ob_apres_acte: '\u0628\u064E\u0639\u0652\u062F\u064E \u0627\u0644\u0641\u0650\u0639\u0652\u0644',
     ob_deux_gestes: '\u0625\u0650\u064A\u0645\u0627\u0621\u062A\u0627\u0646\u0650 \u0644\u0650\u064A\u064E\u0648\u0652\u0645\u0650\u0643', ob_sacralise: '\u0642\u064E\u062F\u0651\u0650\u0633\u0652. \u062A\u064E\u0623\u064E\u0645\u0651\u064E\u0644\u0652.',
     ob_motivation_title: '\u0645\u0627 \u0627\u0644\u0651\u064E\u0630\u0650\u064A \u062C\u064E\u0627\u0621\u064E \u0628\u0650\u0643\u064E\u061F', ob_motivation_sub: '\u0627\u062E\u0652\u062A\u064E\u0631\u0652 \u0645\u0627 \u064A\u064F\u0646\u0627\u0633\u0650\u0628\u064F\u0643.',
     ob_motiv_routine: '\u0631\u064F\u0648\u062A\u0650\u064A\u0646\u064C \u0631\u064F\u0648\u062D\u064E\u0627\u0646\u0650\u064A\u0651', ob_motiv_routine_sub: '\u0628\u0650\u0646\u0627\u0621\u064F \u0639\u0650\u0628\u0627\u062F\u064E\u0629\u064D \u064A\u064E\u0648\u0652\u0645\u0650\u064A\u0651\u064E\u0629',
@@ -6570,6 +6570,7 @@ function v2ApplyI18nHTML() {
   // Card aria-labels
   var _cards = [['Pratique','card_pratique'],['Wird','card_wird'],['Parcours','card_parcours'],['Tafakkur','card_tafakkur']];
   _cards.forEach(function(c) { var el = document.querySelector('[aria-label="'+c[0]+'"]'); if (el) el.setAttribute('aria-label', t(c[1])); });
+  _s('i18n-waqt-eyebrow', 'waqt_eyebrow');
   _s('i18n-waqt-offer', 'waqt_offer_minute');
   var _wsb = document.getElementById('waqt-start-btn'); if (_wsb) _wsb.textContent = t('waqt_start');
   var _wcb = document.getElementById('waqt-close-btn'); if (_wcb) _wcb.textContent = t('waqt_close');
