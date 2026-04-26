@@ -7,8 +7,32 @@ if (typeof Sentry !== 'undefined') {
   Sentry.init({
     dsn: 'https://142832f4a76ceb3d7b7bcd0caa4ef670@o4511287171350528.ingest.de.sentry.io/4511287331782736',
     integrations: [Sentry.browserTracingIntegration()],
-    tracesSampleRate: 0.2
+    tracesSampleRate: 0.2,
+    beforeSend: function(event) {
+      delete event.user;
+      if (event.request && event.request.url) {
+        event.request.url = event.request.url.split('?')[0];
+      }
+      ['contexts','extra'].forEach(function(k) {
+        if (event[k]) {
+          Object.keys(event[k]).forEach(function(key) {
+            if (/lat|lng|coord/i.test(key)) { delete event[k][key]; return; }
+            var v = event[k][key];
+            if (typeof v === 'string' && v.length > 50) event[k][key] = v.slice(0, 50) + '…[stripped]';
+          });
+        }
+      });
+      return event;
+    },
+    beforeBreadcrumb: function(breadcrumb) {
+      if (breadcrumb.category === 'ui.input') return null;
+      if (breadcrumb.category === 'fetch' && breadcrumb.data && breadcrumb.data.body) {
+        delete breadcrumb.data.body;
+      }
+      return breadcrumb;
+    }
   });
+  Sentry.setUser(null);
 }
 window.testSentry = function() { throw new Error('Niyyah Sentry test — this is intentional'); };
 const NIYYAH_DEBUG = false;
@@ -726,7 +750,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function isFriday() { return new Date().getDay() === 5; }
-let ramadanState; try { ramadanState = JSON.parse(localStorage.getItem('spiritual_ramadan')); } catch(e) { if (typeof Sentry !== 'undefined') Sentry.captureException(e); } ramadanState = ramadanState || {active:false,startDate:null,days:{},laylatul:{}};
+let ramadanState; try { ramadanState = JSON.parse(localStorage.getItem('spiritual_ramadan')); } catch(e) { if (typeof Sentry !== 'undefined') Sentry.captureException(new Error('Parse error: spiritual_ramadan')); } ramadanState = ramadanState || {active:false,startDate:null,days:{},laylatul:{}};
 function saveRamadanState() { safeSetItem('spiritual_ramadan', JSON.stringify(ramadanState)); }
 function toggleRamadanMode() {
   if (ramadanState.active) {
@@ -1267,8 +1291,8 @@ const LEVELS = [
   }
 ];
 const TODAY = new Date().toISOString().split('T')[0];
-let state; try { state = JSON.parse(localStorage.getItem('spiritual_v2')); } catch(e) { if (typeof Sentry !== 'undefined') Sentry.captureException(e); } state = state || {};
-let history; try { history = JSON.parse(localStorage.getItem('spiritual_history')); } catch(e) { if (typeof Sentry !== 'undefined') Sentry.captureException(e); } history = history || {days:{},dayMedals:{},streak:0,bestStreak:0,totalDays:0,unlockedBadges:[],weekDays:0,jumuahCount:0};
+let state; try { state = JSON.parse(localStorage.getItem('spiritual_v2')); } catch(e) { if (typeof Sentry !== 'undefined') Sentry.captureException(new Error('Parse error: spiritual_v2')); } state = state || {};
+let history; try { history = JSON.parse(localStorage.getItem('spiritual_history')); } catch(e) { if (typeof Sentry !== 'undefined') Sentry.captureException(new Error('Parse error: spiritual_history')); } history = history || {days:{},dayMedals:{},streak:0,bestStreak:0,totalDays:0,unlockedBadges:[],weekDays:0,jumuahCount:0};
 let currentLevel = 1;
 if (history.jumuahCount === undefined) history.jumuahCount = 0;
 if (state._date !== TODAY) {
@@ -3405,7 +3429,7 @@ const WIRD_DATA = {
     ]
   }
 };
-let wirdState; try { wirdState = JSON.parse(localStorage.getItem('niyyah_wird_' + (new Date().toISOString().split('T')[0]))); } catch(e) { if (typeof Sentry !== 'undefined') Sentry.captureException(e); } wirdState = wirdState || {};
+let wirdState; try { wirdState = JSON.parse(localStorage.getItem('niyyah_wird_' + (new Date().toISOString().split('T')[0]))); } catch(e) { if (typeof Sentry !== 'undefined') Sentry.captureException(new Error('Parse error: niyyah_wird_today')); } wirdState = wirdState || {};
 const ITEM_WEIGHTS = {
   fajr: 3, dhuhr: 3, asr: 3, maghrib: 3, isha: 3, jumua: 3,
   wird_matin: 2, wird_soir: 2,
