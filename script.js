@@ -5990,7 +5990,7 @@ const V2_I18N = {
     onboard_city_manual: 'Or enter your city manually:',
     waqt_eyebrow: 'AL-WAQT \u00b7 A MOMENT TO OFFER', waqt_offer_minute: 'I have a minute', waqt_start: 'Start', waqt_close: 'Close', waqt_done: 'Well done. You\u2019ve offered this moment.', alhaya_resting: 'Niyyah is resting', alhaya_tap_wake: 'Tap to wake', ob_splash_sub: 'Set your intention', ob_avant_acte: 'Before the act', ob_apres_acte: 'After the act',
     ob_deux_gestes: 'Two gestures for your daily life', ob_sacralise: 'Sanctify. Examine.',
-    alhaya_onboard_title: 'Your spiritual life belongs to you.', alhaya_onboard_body: 'In public, on the train, at the office \u2014 tap \u2726 at the top right. Niyyah covers your screen with a zen veil. No one will read what you confide to Allah.', alhaya_onboard_quote: 'Al-Haya \u2014 modesty \u2014 is a branch of faith.', alhaya_onboard_cta: 'Got it',
+    alhaya_onboard_title: 'Your spiritual life is yours alone.', alhaya_onboard_body: 'Tap \u2726 in the top right. Niyyah veils your screen. No one will read what you confide to Allah.', alhaya_onboard_quote: 'Al-Haya \u2014 modesty \u2014 is a branch of faith.', alhaya_onboard_cta: 'I understand',
     ob_motivation_title: 'What brings you here?', ob_motivation_sub: 'Choose what speaks to you \u2014 we\u2019ll adapt your experience.',
     ob_motiv_routine: 'Spiritual routine', ob_motiv_routine_sub: 'Build a daily practice',
     ob_motiv_reconnecter: 'Reconnect with Allah', ob_motiv_reconnecter_sub: 'Return after a time away',
