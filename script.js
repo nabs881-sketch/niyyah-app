@@ -231,7 +231,7 @@ window.onunhandledrejection = function(e) {
     if (Math.abs(dy) > Math.abs(dx)) return;
     if (dt > 500) return;
     if (e.target.closest('.tabs,.fast-calendar,.laylatul-nights,.week-strip')) return;
-    const activeOverlay = document.querySelector('#meditScreen.show,#tasbihOverlay.show,#levelPopup.show,#freemiumOverlay.show,#weeklyOverlay.show,#infoSheet.show');
+    const activeOverlay = document.querySelector('#tafakkurScreen.show,#tasbihOverlay.show,#levelPopup.show,#freemiumOverlay.show,#weeklyOverlay.show,#infoSheet.show');
     if (activeOverlay) return;
 
     // Sur la checklist → swipe entre niveaux (tous, même locked → ouvre freemium)
@@ -3940,12 +3940,12 @@ function stopCoranPlayer() {
   if (_playerEl) _playerEl.style.display = 'none';
   if (_btn) _btn.textContent = '▶';
 }
-// ── MÉDITATION ──
-let _meditDuration = 3 * 60;
-let _meditRemaining = 3 * 60;
-let _meditInterval = null;
-let _meditRunning = false;
-let _meditAudio = null;
+// ── TAFAKKUR ──
+let _tafakkurDuration = 3 * 60;
+let _tafakkurRemaining = 3 * 60;
+let _tafakkurInterval = null;
+let _tafakkurRunning = false;
+let _tafakkurAudio = null;
 
 const MEDIT_PHRASES = [
   'Pose ton cœur. Respire. Réfléchis à la création d\'Allah.',
@@ -4244,24 +4244,24 @@ var MEDIT_PHRASES_AR = [
   '\u0623\u064E\u0646\u0652\u062A\u064E \u0645\u0627 \u0632\u0650\u0644\u0652\u062A\u064E \u0647\u064F\u0646\u0627. \u0641\u064F\u0631\u0652\u0635\u064E\u0629\u064C \u062C\u064E\u062F\u0650\u064A\u062F\u064E\u0629. \u0645\u0627\u0630\u0627 \u062A\u064E\u0641\u0652\u0639\u064E\u0644\u064F \u0628\u0650\u0647\u0627\u061F',
   '\u0634\u064E\u0647\u0650\u064A\u0642. \u0627\u0644\u0644\u0651\u064E\u0647. \u0632\u064E\u0641\u0650\u064A\u0631. \u0627\u0644\u062D\u064E\u0645\u0652\u062F\u064F \u0644\u0650\u0644\u0651\u064E\u0647. \u0645\u064F\u062C\u064E\u062F\u0651\u064E\u062F\u064B\u0627.'
 ];
-function _getMeditPool() {
+function _getTafakkurPool() {
   var lang = (typeof V2_LANG !== 'undefined') ? V2_LANG : 'fr';
   if (lang === 'en') return MEDIT_PHRASES_EN;
   if (lang === 'ar') return MEDIT_PHRASES_AR;
   return MEDIT_PHRASES;
 }
 
-let _meditAudioMode = 'silence';
-function openMeditation() {
-  document.getElementById('meditScreen').classList.add('show');
-  document.getElementById('meditDotEl').style.animation = 'meditPulse 2.5s ease-in-out infinite';
-  _meditRemaining = _meditDuration;
-  updateMeditDisplay();
-  rotateMeditPhrase();
+let _tafakkurAudioMode = 'silence';
+function openTafakkur() {
+  document.getElementById('tafakkurScreen').classList.add('show');
+  document.getElementById('tafakkurDotEl').style.animation = 'tafakkurPulse 2.5s ease-in-out infinite';
+  _tafakkurRemaining = _tafakkurDuration;
+  updateTafakkurDisplay();
+  rotateTafakkurPhrase();
   // Silence par défaut — nasheed seulement si l'utilisateur l'a choisi
-  if (_meditAudioMode === 'nasheed') {
-    if (!_meditAudio) { _meditAudio = new Audio('./rahatal-qulub.mp3'); _meditAudio.loop = true; _meditAudio.volume = 0.6; }
-    _meditAudio.play().catch(() => {});
+  if (_tafakkurAudioMode === 'nasheed') {
+    if (!_tafakkurAudio) { _tafakkurAudio = new Audio('./rahatal-qulub.mp3'); _tafakkurAudio.loop = true; _tafakkurAudio.volume = 0.6; }
+    _tafakkurAudio.play().catch(() => {});
   }
   if (navigator.vibrate) navigator.vibrate(20);
 }
@@ -4322,71 +4322,71 @@ function setBilanSoir(choix) {
   }
 }
 
-function setMeditAudio(mode, btn) {
-  _meditAudioMode = mode;
-  document.querySelectorAll('.medit-audio-btn').forEach(b => b.classList.remove('active'));
+function setTafakkurAudio(mode, btn) {
+  _tafakkurAudioMode = mode;
+  document.querySelectorAll('.tafakkur-audio-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   if (mode === 'nasheed') {
-    if (!_meditAudio) { _meditAudio = new Audio('./rahatal-qulub.mp3'); _meditAudio.loop = true; _meditAudio.volume = 0.6; }
-    _meditAudio.play().catch(() => {});
+    if (!_tafakkurAudio) { _tafakkurAudio = new Audio('./rahatal-qulub.mp3'); _tafakkurAudio.loop = true; _tafakkurAudio.volume = 0.6; }
+    _tafakkurAudio.play().catch(() => {});
   } else {
-    if (_meditAudio) { _meditAudio.pause(); _meditAudio.currentTime = 0; }
+    if (_tafakkurAudio) { _tafakkurAudio.pause(); _tafakkurAudio.currentTime = 0; }
   }
 }
 
-function closeMeditation() {
-  document.getElementById('meditScreen').classList.remove('show');
-  document.getElementById('meditDotEl').style.animation = 'none';
-  if (_meditInterval) { clearInterval(_meditInterval); _meditInterval = null; }
-  _meditRunning = false;
-  if (_meditAudio) { _meditAudio.pause(); _meditAudio.currentTime = 0; }
+function closeTafakkur() {
+  document.getElementById('tafakkurScreen').classList.remove('show');
+  document.getElementById('tafakkurDotEl').style.animation = 'none';
+  if (_tafakkurInterval) { clearInterval(_tafakkurInterval); _tafakkurInterval = null; }
+  _tafakkurRunning = false;
+  if (_tafakkurAudio) { _tafakkurAudio.pause(); _tafakkurAudio.currentTime = 0; }
 }
 
-function setMeditDuration(min, btn) {
-  _meditDuration = min * 60;
-  _meditRemaining = _meditDuration;
-  updateMeditDisplay();
-  if (_meditInterval) { clearInterval(_meditInterval); _meditInterval = null; _meditRunning = false; }
-  document.querySelectorAll('.medit-timer-btn').forEach(b => b.classList.remove('active'));
+function setTafakkurDuration(min, btn) {
+  _tafakkurDuration = min * 60;
+  _tafakkurRemaining = _tafakkurDuration;
+  updateTafakkurDisplay();
+  if (_tafakkurInterval) { clearInterval(_tafakkurInterval); _tafakkurInterval = null; _tafakkurRunning = false; }
+  document.querySelectorAll('.tafakkur-timer-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
 }
 
-function toggleMeditTimer() {
-  if (_meditRunning) {
-    clearInterval(_meditInterval);
-    _meditInterval = null;
-    _meditRunning = false;
-    document.getElementById('meditDotEl').style.animationPlayState = 'paused';
+function toggleTafakkurTimer() {
+  if (_tafakkurRunning) {
+    clearInterval(_tafakkurInterval);
+    _tafakkurInterval = null;
+    _tafakkurRunning = false;
+    document.getElementById('tafakkurDotEl').style.animationPlayState = 'paused';
   } else {
-    if (_meditRemaining <= 0) _meditRemaining = _meditDuration;
-    _meditRunning = true;
-    document.getElementById('meditDotEl').style.animationPlayState = 'running';
-    _meditInterval = setInterval(() => {
-      _meditRemaining--;
-      updateMeditDisplay();
-      if (_meditRemaining % 60 === 0) rotateMeditPhrase();
-      if (_meditRemaining <= 0) {
-        clearInterval(_meditInterval);
-        _meditRunning = false;
-        document.getElementById('meditPhrase').textContent = t('tafakkur_done');
-        document.getElementById('meditDotEl').style.background = '#34d962';
+    if (_tafakkurRemaining <= 0) _tafakkurRemaining = _tafakkurDuration;
+    _tafakkurRunning = true;
+    document.getElementById('tafakkurDotEl').style.animationPlayState = 'running';
+    _tafakkurInterval = setInterval(() => {
+      _tafakkurRemaining--;
+      updateTafakkurDisplay();
+      if (_tafakkurRemaining % 60 === 0) rotateTafakkurPhrase();
+      if (_tafakkurRemaining <= 0) {
+        clearInterval(_tafakkurInterval);
+        _tafakkurRunning = false;
+        document.getElementById('tafakkurPhrase').textContent = t('tafakkur_done');
+        document.getElementById('tafakkurDotEl').style.background = '#34d962';
         if (navigator.vibrate) navigator.vibrate([100, 50, 100, 50, 200]);
       }
     }, 1000);
   }
 }
 
-function updateMeditDisplay() {
-  const m = Math.floor(_meditRemaining / 60);
-  const s = _meditRemaining % 60;
-  document.getElementById('meditTimerDisplay').textContent =
+function updateTafakkurDisplay() {
+  const m = Math.floor(_tafakkurRemaining / 60);
+  const s = _tafakkurRemaining % 60;
+  document.getElementById('tafakkurTimerDisplay').textContent =
     String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
 }
 
-function rotateMeditPhrase() {
-  var pool = _getMeditPool();
+function rotateTafakkurPhrase() {
+  var pool = _getTafakkurPool();
   var idx = Math.floor(Math.random() * pool.length);
-  var el = document.getElementById('meditPhrase');
+  var el = document.getElementById('tafakkurPhrase');
   if (el) {
     el.style.opacity = '0';
     setTimeout(function() { el.textContent = pool[idx]; el.style.opacity = '1'; }, 300);
@@ -5951,7 +5951,7 @@ const V2_I18N = {
     settings_delete_confirm1: 'Supprimer TOUTES les donn\u00e9es ? Cette action est irr\u00e9versible.',
     settings_delete_confirm2: 'Derni\u00e8re confirmation \u2014 tout sera perdu.',
     tawba_reviens: 'Reviens', tawba_attend: 'Allah Al-Tawwab t\u2019attend.',
-    card_pratique: 'Pri\u00e8res & actes', card_wird: 'Invocations', card_parcours: 'Ma progression', card_tafakkur: 'Méditation',
+    card_pratique: 'Pri\u00e8res & actes', card_wird: 'Invocations', card_parcours: 'Ma progression', card_tafakkur: 'Tafakkur',
     btn_start_day: 'Commencer ma journée', btn_back_checklist: '← Retour à la checklist', scanner_hint: 'Quel objet portera ta niyyah aujourd\'hui ?',
     conv_msg_0: 'Chaque grand voyage commence par un premier pas. Le niveau Approfondissement t\'attend.',
     conv_msg_1: 'Le Prophète ﷺ : l\'acte le plus aimé d\'Allah est celui fait avec constance. — Bukhari 6465',
@@ -6185,7 +6185,7 @@ const V2_I18N = {
     settings_delete_confirm1: 'Delete ALL data? This cannot be undone.',
     settings_delete_confirm2: 'Final confirmation \u2014 everything will be lost.',
     tawba_reviens: 'Come back', tawba_attend: 'Allah Al-Tawwab awaits you.',
-    card_pratique: 'Prayers & acts', card_wird: 'Du\u2019as', card_parcours: 'My progress', card_tafakkur: 'Meditation',
+    card_pratique: 'Prayers & acts', card_wird: 'Du\u2019as', card_parcours: 'My progress', card_tafakkur: 'Tafakkur',
     btn_start_day: 'Begin my day', btn_back_checklist: '← Back to checklist', scanner_hint: 'What object will carry your niyyah today?',
     conv_msg_0: 'Every great journey begins with a first step. The Deepening level awaits you.',
     conv_msg_1: 'Le Prophète ﷺ : l\'acte le plus aimé d\'Allah est celui fait avec constance. — Bukhari 6465',
@@ -8924,7 +8924,7 @@ const SCANNER_LIBRARY = {
     nuances: [
       { tag: "Présence",   text: "Ce trajet est un souffle de vie offert par Allah — arriver avec plus de conscience qu'on n'est parti." },
       { tag: "Gratitude",  text: "Chaque route parcourue en sécurité est une grâce invisible — Alhamdulillah pour ce mouvement libre." },
-      { tag: "Intention",  text: "Transformer ce déplacement en dhikr — chaque kilomètre peut être une méditation si le cœur est présent." }
+      { tag: "Intention",  text: "Transformer ce déplacement en dhikr — chaque kilomètre peut être un tafakkur si le c\u0153ur est pr\u00e9sent." }
     ]
   },
   // Nature / Plantes
