@@ -419,7 +419,7 @@ async function handleNiyyah(request, env) {
     const prompt = buildNiyyahPrompt(temporalCtx);
     for (let attempt = 0; attempt < 2; attempt++) {
       const response = await callAnthropic(env, {
-        model: MODEL_SONNET, max_tokens: 150, temperature: 0.7,
+        model: MODEL_SONNET, max_tokens: 300, temperature: 0.7,
         messages: [{ role: 'user', content: [
           { type: 'image', source: { type: 'base64', media_type: 'image/jpeg', data: image } },
           { type: 'text', text: prompt }

@@ -9709,14 +9709,25 @@ async function scannerAnalyzeImage(imageData) {
       return { category: data.category || 'niyyah_direct', suggestions: [data.intention], niyyahDirect: data.intention };
     }
 
-    // Fallback local avec catégorie IA
-    var localIntention = pickNiyyahIntention(data.category || 'INDETERMINE');
-    return { category: data.category || 'INDETERMINE', labels: [localIntention], objectName: localIntention, niyyahDirect: localIntention };
+    // Fallback local avec catégorie IA — 3 suggestions locales
+    var _cat = data.category || 'INDETERMINE';
+    var _s1 = pickNiyyahIntention(_cat);
+    var _s2 = pickNiyyahIntention(_cat);
+    var _s3 = pickNiyyahIntention(_cat);
+    var _localSuggs = [_s1];
+    if (_s2 !== _s1) _localSuggs.push(_s2);
+    if (_s3 !== _s1 && _s3 !== _s2) _localSuggs.push(_s3);
+    return { category: _cat, suggestions: _localSuggs, niyyahDirect: _localSuggs[0] };
 
   } catch(e) {
-    // Timeout ou erreur réseau → fallback local
-    var fallbackIntention = pickNiyyahIntention('INDETERMINE');
-    return { category: 'INDETERMINE', labels: [fallbackIntention], objectName: fallbackIntention, niyyahDirect: fallbackIntention };
+    // Timeout ou erreur réseau → fallback local 3 suggestions
+    var _f1 = pickNiyyahIntention('INDETERMINE');
+    var _f2 = pickNiyyahIntention('INDETERMINE');
+    var _f3 = pickNiyyahIntention('INDETERMINE');
+    var _fSuggs = [_f1];
+    if (_f2 !== _f1) _fSuggs.push(_f2);
+    if (_f3 !== _f1 && _f3 !== _f2) _fSuggs.push(_f3);
+    return { category: 'INDETERMINE', suggestions: _fSuggs, niyyahDirect: _fSuggs[0] };
   }
 
 
