@@ -79,14 +79,17 @@ function cleanOldPhotosIfFull() {
     var total = 0;
     for (var i = 0; i < localStorage.length; i++) { total += localStorage.getItem(localStorage.key(i)).length; }
     if (total < 4 * 1024 * 1024) return;
+    if (typeof showToast === 'function') showToast('M\u00e9moire pleine \u2014 d\u2019anciennes photos vont \u00eatre supprim\u00e9es');
+    var _purged = 0;
     ['niyyah_regarde_history', 'niyyah_niyyah_history'].forEach(function(key) {
       var arr = JSON.parse(localStorage.getItem(key) || '[]');
       var changed = false;
       for (var j = arr.length - 1; j >= 0; j--) {
-        if (arr[j].photo) { arr[j].photo = null; changed = true; }
+        if (arr[j].photo) { arr[j].photo = null; changed = true; _purged++; }
       }
       if (changed) safeSetItem(key, JSON.stringify(arr));
     });
+    if (_purged > 0 && typeof showToast === 'function') setTimeout(function() { showToast(_purged + ' photo' + (_purged > 1 ? 's' : '') + ' archiv\u00e9e' + (_purged > 1 ? 's' : '') + ' lib\u00e9r\u00e9e' + (_purged > 1 ? 's' : '')); }, 2000);
   } catch(e) {}
 }
 
@@ -4952,6 +4955,15 @@ function requestNotifPermission() {
         showToast(t('notif_enabled'));
         safeSetItem('niyyah_notif_perm', '1');
         scheduleAllNotifications();
+      } else if (permission === 'denied') {
+        showToast(t('notif_denied'));
+        setTimeout(function() {
+          var tip = document.createElement('div');
+          tip.style.cssText = 'position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:#1a1a1a;border:1px solid rgba(200,168,75,0.3);border-radius:12px;padding:16px 20px;max-width:300px;z-index:9999;text-align:center;';
+          tip.innerHTML = '<div style="font-size:13px;color:var(--t2);line-height:1.6;margin-bottom:10px;">' + t('notif_denied_help') + '</div><button onclick="this.parentNode.remove()" style="padding:6px 16px;border-radius:8px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:12px;cursor:pointer;">OK</button>';
+          document.body.appendChild(tip);
+          setTimeout(function() { if (tip.parentNode) tip.remove(); }, 10000);
+        }, 500);
       } else {
         showToast(t('notif_later'));
       }
@@ -5941,14 +5953,14 @@ const V2_I18N = {
     // Night companion
     night_title: 'Quelle pensée ferme ta journée ?', night_placeholder: 'Écris ta pensée du soir...', night_send: 'ENVOYER', night_sagesse: 'SAGESSE DE LA NUIT',
     // Notifications
-    notif_unsupported: 'Les notifications ne sont pas supportées sur cet appareil', notif_enabled: '✦ Rappels activés — JazakAllahu khairan !', notif_later: 'Tu pourras les activer plus tard dans les paramètres', notif_disabled: '🔕 Rappels désactivés',
+    notif_unsupported: 'Les notifications ne sont pas supportées sur cet appareil', notif_enabled: '\u2726 Rappels activ\u00e9s \u2014 JazakAllahu khairan !', notif_later: 'Tu pourras les activer plus tard dans les param\u00e8tres', notif_denied: 'Notifications bloqu\u00e9es par le syst\u00e8me', notif_denied_help: 'Param\u00e8tres \u2192 Applications \u2192 Niyyah \u2192 Notifications \u2192 Activer', notif_disabled: '\ud83d\udd15 Rappels d\u00e9sactiv\u00e9s',
     // Sharing
     share_downloaded: 'Image téléchargée — partage-la 🌿', share_copied: 'Lien copié !',
     share_card: 'CARTE NIYYAH ✦', share_intention: 'Partager cette intention', share_btn: 'PARTAGER ✦', share_close: 'FERMER',
     // Premium
     premium_unlocked: '✅ Accès complet débloqué — Barakallahu feek !',
     // Camera
-    camera_denied: 'Accès caméra refusé — autorise l\'accès dans les réglages',
+    camera_denied: 'Acc\u00e8s cam\u00e9ra refus\u00e9 \u2014 autorise l\u2019acc\u00e8s dans les r\u00e9glages', btn_retry: 'R\u00e9essayer', btn_close: 'Fermer',
     // Compass
     compass_denied: 'Autorise la boussole dans les réglages',
     disclaimer: 'Cette application n\'émet pas d\'avis religieux. Pour toute question de fiqh, consultez un savant qualifié.',
@@ -6173,11 +6185,11 @@ const V2_I18N = {
     weekly_muhasaba: 'Muhasaba \u00b7 Weekly review', finjournee_sub2: 'Write, or simply close your eyes.', finjournee_ph1: 'A good deed...', finjournee_ph2: 'Another...', finjournee_ph3: 'A third...', silent_muhasaba: 'Tonight, silent muhasaba.', sp_day_streak: 'Day {d} \u00b7 Streak of {s}',
     btn_open: 'OPEN ›', btn_complete: '✓ COMPLETE', btn_skip_level: 'Continue to Level ',
     night_title: 'What thought closes your day?', night_placeholder: 'Write your evening thought...', night_send: 'SEND', night_sagesse: 'NIGHT WISDOM',
-    notif_unsupported: 'Notifications are not supported on this device', notif_enabled: '✦ Reminders enabled — JazakAllahu khairan!', notif_later: 'You can enable them later in settings', notif_disabled: '🔕 Reminders disabled',
+    notif_unsupported: 'Notifications are not supported on this device', notif_enabled: '\u2726 Reminders enabled \u2014 JazakAllahu khairan!', notif_later: 'You can enable them later in settings', notif_denied: 'Notifications blocked by system', notif_denied_help: 'Settings \u2192 Apps \u2192 Niyyah \u2192 Notifications \u2192 Enable', notif_disabled: '\ud83d\udd15 Reminders disabled',
     share_downloaded: 'Image downloaded — share it 🌿', share_copied: 'Link copied!',
     share_card: 'NIYYAH CARD ✦', share_intention: 'Share this intention', share_btn: 'SHARE ✦', share_close: 'CLOSE',
     premium_unlocked: '✅ Full access unlocked — Barakallahu feek!',
-    camera_denied: 'Camera access denied — allow in settings',
+    camera_denied: 'Camera access denied \u2014 allow in settings', btn_retry: 'Retry', btn_close: 'Close',
     compass_denied: 'Allow compass in settings',
     disclaimer: 'This app does not issue religious rulings. For any fiqh question, consult a qualified scholar.',
     settings_mentions: 'Legal Notice',
@@ -8951,7 +8963,7 @@ async function regardeOpen() {
     video.srcObject = _regardeStream;
     await video.play();
   } catch(e) {
-    content.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#C8A84A;text-align:center;padding:40px;">' + t('camera_denied') + '</div></div>';
+    content.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:16px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#C8A84A;text-align:center;padding:40px;">' + t('camera_denied') + '</div><button onclick="regardeOpen()" style="padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:13px;cursor:pointer;">' + t('btn_retry') + '</button></div>';
   }
 
   screen.classList.add('active');
@@ -9252,7 +9264,11 @@ async function scannerOpen() {
     video.srcObject = _scannerStream;
     await video.play();
   } catch(err) {
-    v2ShowToast(t('camera_denied'));
+    var _scanContent = document.getElementById('scanner-overlay');
+    if (_scanContent) {
+      _scanContent.classList.add('active');
+      _scanContent.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:16px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#C8A84A;text-align:center;padding:40px;">' + t('camera_denied') + '</div><button onclick="scannerClose();scannerOpen()" style="padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:13px;cursor:pointer;">' + t('btn_retry') + '</button><button onclick="scannerClose()" style="padding:8px 20px;border:none;background:transparent;color:var(--t3);font-size:12px;cursor:pointer;">' + t('btn_close') + '</button></div>';
+    }
     return;
   }
 
