@@ -1,10 +1,13 @@
 // ═══════════════════════════════════════════════════
 // NIYYAH API — Cloudflare Worker
-// Routes : /api/scanner, /api/murmure
+// Routes : /api/scanner, /api/niyyah, /api/regarde
+// Rate limiting via KV + Origin check
 // ═══════════════════════════════════════════════════
 
+const ALLOWED_ORIGIN = 'https://nabs881-sketch.github.io';
+
 const CORS_HEADERS = {
-  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Origin': ALLOWED_ORIGIN,
   'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
   'Access-Control-Allow-Headers': 'Content-Type',
 };
@@ -14,6 +17,34 @@ function jsonResponse(data, status = 200) {
     status,
     headers: { 'Content-Type': 'application/json', ...CORS_HEADERS },
   });
+}
+
+// ── Rate limiting helpers ──
+const RATE_LIMITS = {
+  '/api/scanner': 10,
+  '/api/niyyah': 10,
+  '/api/regarde': 20,
+};
+
+async function checkRateLimit(env, ip, path) {
+  try {
+    if (!env.RATE_LIMIT_KV) return true; // fail open if KV not bound
+    const limit = RATE_LIMITS[path];
+    if (!limit) return true;
+    const key = `rl:${ip}:${path}`;
+    const raw = await env.RATE_LIMIT_KV.get(key);
+    const count = raw ? parseInt(raw, 10) : 0;
+    if (count >= limit) return false;
+    await env.RATE_LIMIT_KV.put(key, String(count + 1), { expirationTtl: 3600 });
+    return true;
+  } catch (e) {
+    return true; // fail open if KV errors
+  }
+}
+
+function checkOrigin(request) {
+  const origin = request.headers.get('Origin') || '';
+  return origin.startsWith(ALLOWED_ORIGIN);
 }
 
 export default {
@@ -26,9 +57,21 @@ export default {
     const url = new URL(request.url);
     const path = url.pathname;
 
-    // ── Santé ──
+    // ── Santé (open to all) ──
     if (path === '/' && request.method === 'GET') {
-      return jsonResponse({ status: 'ok', service: 'Niyyah API', version: '2.0.0' });
+      return jsonResponse({ status: 'ok', service: 'Niyyah API', version: '2.1.0' });
+    }
+
+    // ── Origin check for API routes ──
+    if (!checkOrigin(request)) {
+      return jsonResponse({ error: 'Forbidden' }, 403);
+    }
+
+    // ── Rate limiting ──
+    const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
+    const allowed = await checkRateLimit(env, ip, path);
+    if (!allowed) {
+      return jsonResponse({ error: 'Rate limit exceeded — try again later' }, 429);
     }
 
     // ── Route Scanner de Niyyah ──
