@@ -1,6 +1,8 @@
-const VERSION = 'niyyah-v347';
+const VERSION = 'niyyah-v348';
 const CORE = [
   './index.html',
+  './script.min.js',
+  './style.css',
   './manifest.json',
   './icon-192.png',
   './icon-512.png',
@@ -16,6 +18,7 @@ const CORE = [
 ];
 
 self.addEventListener('install', e => {
+  e.waitUntil(caches.open(VERSION).then(c => c.addAll(CORE)));
   self.skipWaiting();
 });
 
