@@ -6130,7 +6130,7 @@ const V2_I18N = {
     block_reveil: 'عِنْدَ الِاسْتِيقَاظِ', block_fajr: 'بَعْدَ الْفَجْرِ', block_dhuhr: 'بَعْدَ الظُّهْرِ', block_asr: 'بَعْدَ الْعَصْرِ', block_maghrib: 'بَعْدَ الْمَغْرِبِ', block_isha: 'بَعْدَ الْعِشَاءِ', block_nuit: 'اللَّيْلُ', block_qiyam: 'قِيَامُ اللَّيْلِ',
     bandeau_sub: 'أَعْمَالُكَ الْآنَ', bandeau_nuit: 'نَمْ مَعَ الْوِتْرِ', bandeau_qiyam: 'وَقْتُ قِيَامِ اللَّيْلِ',
     toggle_all: 'الْيَوْمُ كَامِلًا', toggle_moment: 'اللَّحْظَةُ الْحَالِيَّةُ',
-    actes_done: 'عَمَلٌ مُنْجَزٌ', actes_done_p: 'أَعْمَالٌ مُنْجَزَةٌ', actes_left: 'مُتَبَقٍّ', actes_left_p: 'مُتَبَقِّيَةٌ', bloc_done: '✦ أُنْجِزَ الْقِسْمُ', bloc_done_sub: 'بَارَكَ اللَّهُ فِيكَ', btn_continue: 'بسم الله',
+    actes_done: 'عَمَلٌ مُنْجَزٌ', actes_done_p: 'أَعْمَالٌ مُنْجَزَةٌ', actes_left: 'مُتَبَقٍّ', actes_left_p: 'مُتَبَقِّيَةٌ', bloc_done: '✦ أُنْجِزَ الْقِسْمُ', bloc_done_sub: 'بَارَكَ اللَّهُ فِيكَ', btn_continue: 'بِسْمِ اللَّهِ',
     jour_left: 'عَمَلٌ يَوْمِيٌّ مُتَبَقٍّ', jour_left_p: 'أَعْمَالٌ يَوْمِيَّةٌ مُتَبَقِّيَةٌ',
     fajr_title: 'تَحَدِّي ٣٠ يَوْمًا لِلْفَجْرِ', fajr_day: 'الْيَوْمُ', fajr_sur: 'مِنْ', fajr_gardien: 'حَارِسُ الْفَجْرِ ✦',
     defi_none: 'اخْتَرْ تَحَدِّيًا ✦', defi_tap: 'اضْغَطْ لِلْبَدْءِ', defi_browse: 'اضْغَطْ لِتَصَفُّحِ ١٠٠ تَحَدٍّ →',
@@ -6424,9 +6424,9 @@ function v2ApplyI18n() {
     cta.textContent = s.intention ? T.orb_resume : T.orb_start;
   }
 
-  // Orb symbol always Arabic نية
+  // Orb symbol always Arabic نِيَّة
   const orbSym = document.querySelector('.orb-symbol-v2');
-  if (orbSym) orbSym.textContent = 'نية';
+  if (orbSym) orbSym.textContent = 'نِيَّة';
 
   // Chip meta
   const chipMeta = document.querySelector('.chip-meta-v2');
@@ -7057,7 +7057,7 @@ function journalSwitchTab(tab) {
     if (tabR) { tabR.style.background = 'transparent'; tabR.style.border = '1px solid rgba(200,168,75,0.15)'; tabR.style.color = 'rgba(200,168,75,0.5)'; tabR.style.boxShadow = 'none'; }
     var entries = getNiyyahHistory();
     if (entries.length === 0) {
-      content.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">نية</div><div class="empty-state-title">'+t('journal_niyyah_title')+'</div><div class="empty-state-text">'+t('journal_niyyah_text')+'</div></div>';
+      content.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">نِيَّة</div><div class="empty-state-title">'+t('journal_niyyah_title')+'</div><div class="empty-state-text">'+t('journal_niyyah_text')+'</div></div>';
     } else {
       var html = '';
       entries.forEach(function(e) {
@@ -9177,7 +9177,7 @@ function renderNiyyahJournalList(entries) {
   var list = document.getElementById('niyyah-journal-list');
   if (!list) return;
   if (entries.length === 0) {
-    list.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">نية</div><div class="empty-state-title">'+t('journal_niyyah_title')+'</div><div class="empty-state-text">'+t('journal_niyyah_text')+'</div></div>';
+    list.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">نِيَّة</div><div class="empty-state-title">'+t('journal_niyyah_title')+'</div><div class="empty-state-text">'+t('journal_niyyah_text')+'</div></div>';
     return;
   }
   var html = '';
