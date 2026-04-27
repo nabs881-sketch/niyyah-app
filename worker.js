@@ -28,7 +28,7 @@ const RATE_LIMITS = {
 
 async function checkRateLimit(env, ip, path) {
   try {
-    if (!env.RATE_LIMIT_KV) return true; // fail open if KV not bound
+    if (!env.RATE_LIMIT_KV) return false; // fail closed if KV not bound
     const limit = RATE_LIMITS[path];
     if (!limit) return true;
     const key = `rl:${ip}:${path}`;
@@ -38,13 +38,13 @@ async function checkRateLimit(env, ip, path) {
     await env.RATE_LIMIT_KV.put(key, String(count + 1), { expirationTtl: 3600 });
     return true;
   } catch (e) {
-    return true; // fail open if KV errors
+    return false; // fail closed if KV errors
   }
 }
 
 function checkOrigin(request) {
   const origin = request.headers.get('Origin') || '';
-  return origin.startsWith(ALLOWED_ORIGIN);
+  return origin === ALLOWED_ORIGIN;
 }
 
 export default {
@@ -102,6 +102,9 @@ async function handleScanner(request, env) {
 
     if (!image) {
       return jsonResponse({ error: 'image (base64) requise' }, 400);
+    }
+    if (image.length > 2_000_000) {
+      return jsonResponse({ error: 'Image too large' }, 413);
     }
 
     // Contexte temporel
@@ -257,7 +260,7 @@ function jsonResponseV2(data, status = 200) {
     status,
     headers: {
       'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Origin': ALLOWED_ORIGIN,
       'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
       'Access-Control-Allow-Headers': 'Content-Type'
     }
@@ -412,6 +415,7 @@ async function handleNiyyah(request, env) {
     const body = await request.json();
     const { image, hour, isFriday, isRamadan } = body;
     if (!image) return jsonResponseV2({ error: 'image manquante' }, 400);
+    if (image.length > 2_000_000) return jsonResponseV2({ error: 'Image too large' }, 413);
     const temporalCtx = buildTemporalContext({
       hour: typeof hour === 'number' ? hour : new Date().getHours(),
       isFriday: !!isFriday, isRamadan: !!isRamadan
@@ -456,6 +460,7 @@ async function handleRegarde(request, env) {
     const body = await request.json();
     const { image } = body;
     if (!image) return jsonResponseV2({ error: 'image manquante' }, 400);
+    if (image.length > 2_000_000) return jsonResponseV2({ error: 'Image too large' }, 413);
     // PASS 1 : Classification Haiku
     let category = 'INDETERMINE';
     let confidence = 0;
