@@ -5502,7 +5502,7 @@ const ONBOARD_SLIDES = [
     + '<div class="ob-chemin-item"><svg viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"><path d="M24 8a12 12 0 1 0 0 16A9 9 0 0 1 24 8z"/></svg><div class="ob-chemin-label">'+t('ob_chemin_bilan')+'</div><div class="ob-chemin-desc">'+t('ob_chemin_bilan_d')+'</div></div>'
     + '<div class="ob-chemin-item"><svg viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"><path d="M22 6a10 10 0 1 0 0 16A8 8 0 0 1 22 6z"/></svg><div class="ob-chemin-label">'+t('ob_chemin_tawba')+'</div><div class="ob-chemin-desc">'+t('ob_chemin_tawba_d')+'</div></div>'
     + '</div>'
-    + '<div style="font-family:var(--serif);font-size:14px;font-style:italic;color:var(--t3);text-align:center;margin:20px 0 16px;line-height:1.6;">'+t('ob_chemin_quote')+'</div>'
+    + ''
     + '<div style="margin-bottom:20px;text-align:center;"><label style="font-family:var(--serif);font-size:13px;color:var(--t3);display:block;margin-bottom:6px;">'+t("ob_chemin_prenom")+'</label>'
     + '<input type="text" maxlength="30" placeholder="Ton pr\u00e9nom..." style="width:100%;max-width:260px;box-sizing:border-box;padding:10px 14px;background:rgba(200,168,75,0.04);border:1px solid rgba(200,168,75,0.2);border-radius:12px;color:var(--t1);font-size:14px;font-family:var(--sans);outline:none;text-align:center;" oninput="safeSetItem(\'niyyah_prenom\',this.value.trim())"></div>'
     + '<button class="onboard-btn" onclick="onboardNext()">'+t('onboard_next')+'</button>'

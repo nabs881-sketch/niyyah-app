@@ -3557,7 +3557,7 @@ to {
 .ob-chemin-grid {
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:10px;
+  gap:6px;
 }
 @media (min-width:560px) {
   .ob-chemin-grid { grid-template-columns:1fr 1fr 1fr; }
@@ -3566,7 +3566,7 @@ to {
   background:rgba(200,168,75,0.04);
   border:1px solid rgba(200,168,75,0.12);
   border-radius:12px;
-  padding:14px 8px 12px;
+  padding:8px 6px;
   text-align:center;
   display:flex;
   flex-direction:column;
