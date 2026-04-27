@@ -3293,10 +3293,12 @@ to {
   display:flex;
   flex-direction:column;
   align-items:center;
-  justify-content:center;
-  padding:40px 32px calc(40px+var(--safe-bot));
+  justify-content:flex-start;
+  padding:calc(var(--safe-top) + 50px) 32px calc(40px+var(--safe-bot));
   text-align:center;
-  transition:opacity 0.3s ease
+  transition:opacity 0.3s ease;
+  overflow-y:auto;
+  -webkit-overflow-scrolling:touch
 }
 .onboard-screen.hidden {
   display:none
@@ -3484,16 +3486,16 @@ to {
   flex-direction:column;
   gap:16px;
   margin-bottom:8px;
-  max-height:60vh;
   overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
 }
-@media (min-width:600px) {
-  .ob-deux-gestes { flex-direction:row; max-height:none; overflow-y:visible; }
+@media (min-width:560px) {
+  .ob-deux-gestes { flex-direction:row; overflow-y:visible; }
   .ob-deux-gestes .ob-geste-card { flex:1; }
 }
 .ob-geste-card {
   position:relative;
-  overflow:hidden;
+  overflow:visible;
   border-radius:16px;
   border:1px solid rgba(200,168,75,0.12);
   background:rgba(255,255,255,0.03);
@@ -3560,7 +3562,7 @@ to {
   grid-template-columns:1fr 1fr;
   gap:10px;
 }
-@media (min-width:600px) {
+@media (min-width:560px) {
   .ob-chemin-grid { grid-template-columns:1fr 1fr 1fr; }
 }
 .ob-chemin-item {
@@ -6899,6 +6901,7 @@ body.alhaya-active .niyyah-menu-backdrop { display: none !important; }
   background: #0a0a0a;
   text-align: center;
   align-items: center;
+  justify-content: flex-start;
 }
 .onboard-screen #onboardContent {
   order: 0;
