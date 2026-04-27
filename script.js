@@ -50,6 +50,7 @@ function _pad2(n) { return n < 10 ? '0' + n : '' + n; }
 function todayKey() { var d = new Date(); return d.getFullYear() + '-' + _pad2(d.getMonth() + 1) + '-' + _pad2(d.getDate()); }
 function dateToKey(d) { return d.getFullYear() + '-' + _pad2(d.getMonth() + 1) + '-' + _pad2(d.getDate()); }
 function safeSetItem(key, value) { try { localStorage.setItem(key, value); return true; } catch(e) { if (typeof showToast === 'function') showToast('M\u00e9moire pleine \u2014 exportez puis r\u00e9initialisez'); return false; } }
+function safeGetItem(key) { try { return localStorage.getItem(key); } catch(e) { return null; } }
 
 // ═══════════════════════════════════════════════════
 // JOURNAL V2 — Storage helpers
@@ -263,7 +264,7 @@ window.onunhandledrejection = function(e) {
 // Nettoyage dot au démarrage
 document.addEventListener('DOMContentLoaded', function() {
   const dot = document.getElementById('ramadanDot');
-  try { if (dot && !(JSON.parse(localStorage.getItem('ramadan_state') || '{}') || {}).active) dot.remove(); } catch(e) { if (dot) dot.remove(); }
+  try { if (dot && !(JSON.parse(safeGetItem('ramadan_state') || '{}') || {}).active) dot.remove(); } catch(e) { if (dot) dot.remove(); }
 });
 
 
@@ -774,7 +775,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function isFriday() { return new Date().getDay() === 5; }
-let ramadanState; try { ramadanState = JSON.parse(localStorage.getItem('spiritual_ramadan')); } catch(e) { if (typeof Sentry !== 'undefined') Sentry.captureException(new Error('Parse error: spiritual_ramadan')); } ramadanState = ramadanState || {active:false,startDate:null,days:{},laylatul:{}};
+let ramadanState; try { ramadanState = JSON.parse(safeGetItem('spiritual_ramadan')); } catch(e) { if (typeof Sentry !== 'undefined') Sentry.captureException(new Error('Parse error: spiritual_ramadan')); } ramadanState = ramadanState || {active:false,startDate:null,days:{},laylatul:{}};
 function saveRamadanState() { safeSetItem('spiritual_ramadan', JSON.stringify(ramadanState)); }
 function toggleRamadanMode() {
   if (ramadanState.active) {
@@ -886,7 +887,7 @@ const HORAIRES_CITIES = [
   { name: 'Nantes',    url: 'https://islamiccalendar.fr/ramadan/nantes' },
   { name: 'Autre',     url: 'https://islamiccalendar.fr/ramadan/' },
 ];
-let selectedCity = localStorage.getItem('spiritual_city') || 'Paris';
+let selectedCity = safeGetItem('spiritual_city') || 'Paris';
 function selectCity(name) {
   selectedCity = name;
   safeSetItem('spiritual_city', name);
@@ -1345,8 +1346,8 @@ window.addEventListener('storage', function(e) {
     if (typeof updateFinJourneeCard === 'function') updateFinJourneeCard();
   } catch(err) {}
 });
-let state; try { state = JSON.parse(localStorage.getItem('spiritual_v2')); } catch(e) { if (typeof Sentry !== 'undefined') Sentry.captureException(new Error('Parse error: spiritual_v2')); } state = state || {};
-let history; try { history = JSON.parse(localStorage.getItem('spiritual_history')); } catch(e) { if (typeof Sentry !== 'undefined') Sentry.captureException(new Error('Parse error: spiritual_history')); } history = history || {days:{},dayMedals:{},streak:0,bestStreak:0,totalDays:0,unlockedBadges:[],weekDays:0,jumuahCount:0};
+let state; try { state = JSON.parse(safeGetItem('spiritual_v2')); } catch(e) { if (typeof Sentry !== 'undefined') Sentry.captureException(new Error('Parse error: spiritual_v2')); } state = state || {};
+let history; try { history = JSON.parse(safeGetItem('spiritual_history')); } catch(e) { if (typeof Sentry !== 'undefined') Sentry.captureException(new Error('Parse error: spiritual_history')); } history = history || {days:{},dayMedals:{},streak:0,bestStreak:0,totalDays:0,unlockedBadges:[],weekDays:0,jumuahCount:0};
 let currentLevel = 1;
 if (history.jumuahCount === undefined) history.jumuahCount = 0;
 if (state._date !== TODAY) {
@@ -3209,16 +3210,16 @@ function closeTasbih() {
   renderLevel(currentLevel);
 }
 let _prayerTimes = null;
-let _prayerCity  = localStorage.getItem('niyyah_city') || '';
-let _prayerCountry = localStorage.getItem('niyyah_country') || 'France';
+let _prayerCity  = safeGetItem('niyyah_city') || '';
+let _prayerCountry = safeGetItem('niyyah_country') || 'France';
 let _prayerLoading = false;
 let _prayerError   = false;
-let _showCityInput = !_prayerCity && !localStorage.getItem('niyyah_coords');
+let _showCityInput = !_prayerCity && !safeGetItem('niyyah_coords');
 // Cache horaires — valide seulement si même jour + même timezone
 var _currentTZ = ''; try { _currentTZ = Intl.DateTimeFormat().resolvedOptions().timeZone; } catch(e) {}
-var _cachedTZ = localStorage.getItem('niyyah_prayer_tz') || '';
-const _cachedPrayerDate = localStorage.getItem('niyyah_prayer_date_v2');
-const _cachedPrayerData = localStorage.getItem('niyyah_prayer_cache');
+var _cachedTZ = safeGetItem('niyyah_prayer_tz') || '';
+const _cachedPrayerDate = safeGetItem('niyyah_prayer_date_v2');
+const _cachedPrayerData = safeGetItem('niyyah_prayer_cache');
 if (_cachedPrayerDate === TODAY && _cachedPrayerData && _cachedTZ === _currentTZ) {
   try { _prayerTimes = JSON.parse(_cachedPrayerData); } catch(e) {}
   if (_prayerTimes) setTimeout(scheduleFajrNotification, 1000);
@@ -3493,7 +3494,7 @@ const WIRD_DATA = {
     ]
   }
 };
-let wirdState; try { wirdState = JSON.parse(localStorage.getItem('niyyah_wird_' + (todayKey()))); } catch(e) { if (typeof Sentry !== 'undefined') Sentry.captureException(new Error('Parse error: niyyah_wird_today')); } wirdState = wirdState || {};
+let wirdState; try { wirdState = JSON.parse(safeGetItem('niyyah_wird_' + (todayKey()))); } catch(e) { if (typeof Sentry !== 'undefined') Sentry.captureException(new Error('Parse error: niyyah_wird_today')); } wirdState = wirdState || {};
 const ITEM_WEIGHTS = {
   fajr: 3, dhuhr: 3, asr: 3, maghrib: 3, isha: 3, jumua: 3,
   wird_matin: 2, wird_soir: 2,
@@ -4659,7 +4660,7 @@ function checkWeeklyBilan() {
   }
 }
 const FREEMIUM_CODES = [];
-const _freemiumUnlocked = localStorage.getItem('niyyah_pro') === '1';
+const _freemiumUnlocked = safeGetItem('niyyah_pro') === '1';
 function openFreemium() {
   document.getElementById('freemiumOverlay').classList.add('show');
   document.body.style.overflow = 'hidden';
@@ -5412,8 +5413,8 @@ function renderQiblaCard() {
 
 
 let _onboardStep = 0;
-const APP_VERSION = '2.0'; if (localStorage.getItem('niyyah_version') !== APP_VERSION) { safeSetItem('niyyah_version', APP_VERSION); }
-const _onboardDone = localStorage.getItem('niyyah_onboard') === '1';
+const APP_VERSION = '2.0'; if (safeGetItem('niyyah_version') !== APP_VERSION) { safeSetItem('niyyah_version', APP_VERSION); }
+const _onboardDone = safeGetItem('niyyah_onboard') === '1';
 const ONBOARD_SLIDES = [
   // Slide 0 — Splash calligraphie (clic pour avancer)
   () => '<div class="onboard-anim" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;">'
@@ -5685,7 +5686,7 @@ function onScroll() {
     _scrollTicking = true;
   }
 }
-let currentTheme = localStorage.getItem('niyyah_theme') || 'dark';
+let currentTheme = safeGetItem('niyyah_theme') || 'dark';
 function applyTheme(theme) {
   if (theme === 'light') {
     document.documentElement.setAttribute('data-theme', 'light');
