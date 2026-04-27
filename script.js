@@ -1404,6 +1404,7 @@ function checkAndSaveYesterdayStreak() {
     const todayDate  = new Date(TODAY + 'T12:00:00');
     const prevDateObj = new Date(prevDate + 'T12:00:00');
     const diffDays = Math.round((todayDate - prevDateObj) / 86400000);
+    if (diffDays <= 0) return;
     if (diffDays === 1) {
       history.streak = (history.streak || 0) + 1;
       history._gracePending = false; 
