@@ -9098,11 +9098,14 @@ function regardeCapture() {
     content.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;"><div style="width:12px;height:12px;border-radius:50%;background:#D4AF37;animation:regardePulse 1.2s ease-in-out infinite;"></div></div>';
     content.style.opacity = '1';
 
-    // Appel API avec timeout 8s
-    var aborted = false;
-    var timer = setTimeout(function() { aborted = true; fallback('INDETERMINE'); }, 8000);
+    // Appel API avec AbortController timeout 8s
+    var _acR = new AbortController();
+    var _toR = setTimeout(function() { _acR.abort(); }, 8000);
+    var _done = false;
 
     function saveAndShow(question, cat) {
+      if (_done) return; _done = true;
+      clearTimeout(_toR);
       _regardeShowQuestion(content, question);
       _currentRegardeCat = cat || 'INDETERMINE';
       _regardeStarred = false;
@@ -9116,14 +9119,14 @@ function regardeCapture() {
     }
 
     function fallback(cat) {
-      if (timer) { clearTimeout(timer); timer = null; }
       saveAndShow(pickRegardeQuestion(cat || 'INDETERMINE'), cat);
     }
 
     fetch('https://niyyah-api.nabs881.workers.dev/api/regarde', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ image: base64 })
+      body: JSON.stringify({ image: base64 }),
+      signal: _acR.signal
     })
     .then(function(res) {
       if (res.status === 429) { showToast('Quota IA atteint, r\u00e9essayez dans 1h'); return null; }
@@ -9131,8 +9134,7 @@ function regardeCapture() {
       return res.json();
     })
     .then(function(data) {
-      if (!data || aborted) return;
-      clearTimeout(timer); timer = null;
+      if (!data) return;
       if (data.source === 'ia' && data.question) {
         saveAndShow(data.question, data.category);
       } else {
@@ -9140,7 +9142,7 @@ function regardeCapture() {
       }
     })
     .catch(function() {
-      if (!aborted) fallback('INDETERMINE');
+      fallback('INDETERMINE');
     });
   }, 400);
 }
