@@ -9810,12 +9810,19 @@ function v2JournalRecord() {
 
 
 
-window.scannerOpen          = scannerOpen;
-window.scannerClose         = scannerClose;
-window.scannerCapture       = scannerCapture;
-window.scannerShowResult    = scannerShowResult;
-window.scannerConfirmNiyyah = scannerConfirmNiyyah;
-window.scannerRetry         = scannerRetry;
+window.scannerOpen            = scannerOpen;
+window.scannerClose           = scannerClose;
+window.scannerCapture         = scannerCapture;
+window.scannerShowResult      = scannerShowResult;
+window.scannerConfirmNiyyah   = scannerConfirmNiyyah;
+window.scannerRetry           = scannerRetry;
+window.scannerCancelThinking  = scannerCancelThinking;
+window.scannerAdoptCustom     = scannerAdoptCustom;
+window.regardeOpen            = regardeOpen;
+window.regardeCapture         = regardeCapture;
+window.regardeClose           = regardeClose;
+window.regardeCancelThinking  = regardeCancelThinking;
+window.openRegardeJournal     = openRegardeJournal;
 
 // A11y: overlay list used by Escape + focus trap
 var A11Y_OVERLAYS = ['scanner-overlay','niyyah-journal-overlay','niyyah-detail-overlay',
