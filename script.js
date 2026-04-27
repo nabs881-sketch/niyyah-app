@@ -5240,9 +5240,9 @@ function startCompass() {
       ]).then(results => {
         if (results.every(r => r.state !== 'denied')) {
           try {
-            const sensor = new AbsoluteOrientationSensor({ frequency: 10, referenceFrame: 'screen' });
-            sensor.addEventListener('reading', () => {
-              const q = sensor.quaternion;
+            window._qiblaSensor = new AbsoluteOrientationSensor({ frequency: 10, referenceFrame: 'screen' });
+            window._qiblaSensor.addEventListener('reading', () => {
+              const q = window._qiblaSensor.quaternion;
               if (!q) return;
               const heading = Math.atan2(
                 2 * (q[0]*q[1] + q[2]*q[3]),
@@ -5250,8 +5250,8 @@ function startCompass() {
               ) * (180 / Math.PI);
               _updateNeedle((360 - heading + 360) % 360);
             });
-            sensor.addEventListener('error', () => _attachCompass());
-            sensor.start();
+            window._qiblaSensor.addEventListener('error', () => _attachCompass());
+            window._qiblaSensor.start();
             _compassActive = true;
             return;
           } catch(e) { _attachCompass(); }
@@ -5324,6 +5324,7 @@ function stopCompass() {
     window.removeEventListener('deviceorientationabsolute', _compassListener);
     window.removeEventListener('deviceorientation', _compassListener);
   }
+  if (window._qiblaSensor) { try { window._qiblaSensor.stop(); } catch(e) {} window._qiblaSensor = null; }
   _compassActive = false;
   _deviceHeading = null;
 }
@@ -8165,12 +8166,13 @@ function startWaqtTimer() {
   var numEl = document.getElementById('waqt-timer-num');
   var circ = 502.65;
   var sec = 60;
-  var iv = setInterval(function() {
+  if (window._waqtIv) clearInterval(window._waqtIv);
+  window._waqtIv = setInterval(function() {
     sec--;
     if (numEl) numEl.textContent = String(sec);
     if (arc) arc.setAttribute('stroke-dashoffset', String(circ * ((60 - sec) / 60)));
     if (sec <= 0) {
-      clearInterval(iv);
+      clearInterval(window._waqtIv); window._waqtIv = null;
       if (ring) ring.style.opacity = '0'; ring.style.transition = 'opacity 0.5s';
       setTimeout(function() {
         if (ring) ring.remove();
