@@ -413,12 +413,14 @@ function validateRegardeQuestion(question) {
 async function handleNiyyah(request, env) {
   try {
     const body = await request.json();
-    const { image, hour, isFriday, isRamadan } = body;
+    const { image } = body;
     if (!image) return jsonResponseV2({ suggestions: [], error: 'image manquante', source: 'fallback' }, 400);
     if (image.length > 2_000_000) return jsonResponseV2({ suggestions: [], error: 'Image too large', source: 'fallback' }, 413);
+    const now = new Date();
     const temporalCtx = buildTemporalContext({
-      hour: typeof hour === 'number' ? hour : new Date().getHours(),
-      isFriday: !!isFriday, isRamadan: !!isRamadan
+      hour: now.getUTCHours(),
+      isFriday: now.getUTCDay() === 5,
+      isRamadan: false
     });
     const prompt = buildNiyyahPrompt(temporalCtx);
     for (let attempt = 0; attempt < 2; attempt++) {
