@@ -6518,13 +6518,18 @@ body.alhaya-active .niyyah-menu-backdrop { display: none !important; }
 #scanner-hint {
   position: absolute;
   bottom: calc(var(--safe-bot, 0px) + 100px);
-  left: 0; right: 0;
+  left: 50%;
+  transform: translateX(-50%);
   text-align: center;
   font-family: 'Cormorant Garamond', serif;
   font-size:12px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(212,175,55,0.5);
+  color: rgba(212,175,55,0.85);
+  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.4);
+  padding: 6px 12px;
+  border-radius: 16px;
   z-index: 5;
   transition: opacity 0.5s;
 }
@@ -6621,6 +6626,10 @@ body.alhaya-active .niyyah-menu-backdrop { display: none !important; }
   align-items: center;
   justify-content: center;
   padding: 24px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  max-height: calc(100vh - 100px);
+  margin: auto 0;
   background: linear-gradient(180deg,
     rgba(0,0,0,0.1) 0%,
     rgba(5,4,2,0.75) 40%,
