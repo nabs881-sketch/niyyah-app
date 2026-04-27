@@ -263,7 +263,7 @@ window.onunhandledrejection = function(e) {
 // Nettoyage dot au démarrage
 document.addEventListener('DOMContentLoaded', function() {
   const dot = document.getElementById('ramadanDot');
-  if (dot && !JSON.parse(localStorage.getItem('ramadan_state') || '{}').active) dot.remove();
+  try { if (dot && !(JSON.parse(localStorage.getItem('ramadan_state') || '{}') || {}).active) dot.remove(); } catch(e) { if (dot) dot.remove(); }
 });
 
 
@@ -849,7 +849,7 @@ function toggleLaylatul(night) {
 }
 function toggleFridayItem(id) {
   const key = 'niyyah_friday_' + TODAY;
-  const fridayState = JSON.parse(localStorage.getItem(key) || '{}');
+  var fridayState = {}; try { fridayState = JSON.parse(localStorage.getItem(key) || '{}'); } catch(e) {}
   fridayState[id] = !fridayState[id];
   safeSetItem(key, JSON.stringify(fridayState));
   if (fridayState[id]) {
