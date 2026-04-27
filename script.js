@@ -9667,6 +9667,17 @@ function scannerRetry() {
   _scannerResult = null;
   _selectedNuance = 0;
 }
+function scannerCancelThinking() {
+  if (window._scannerAC) { try { window._scannerAC.abort(); } catch(e) {} window._scannerAC = null; }
+  var thinkingEl = document.getElementById('scanner-thinking');
+  if (thinkingEl) thinkingEl.classList.remove('active');
+  var captBtn = document.getElementById('scanner-capture-btn');
+  if (captBtn) captBtn.classList.remove('hidden');
+  var hint = document.getElementById('scanner-hint');
+  if (hint) { hint.textContent = t('scanner_hint'); hint.style.opacity = '1'; }
+  var orb = document.getElementById('scanner-orb');
+  if (orb) orb.classList.remove('scanning');
+}
 
 /* Exposer sur window */
 
@@ -9736,6 +9747,7 @@ async function scannerAnalyzeImage(imageData) {
   // Appel /api/niyyah avec timeout 25s
   try {
     var controller = new AbortController();
+    window._scannerAC = controller;
     var timer = setTimeout(function() { controller.abort(); }, 25000);
 
     var response = await fetch('https://niyyah-api.nabs881.workers.dev/api/niyyah', {

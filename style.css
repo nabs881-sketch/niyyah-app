@@ -6443,7 +6443,7 @@ body.alhaya-active .niyyah-menu-backdrop { display: none !important; }
   position: absolute;
   top: calc(var(--safe-top, 0px) + 18px);
   right: 18px;
-  width: 40px; height: 40px;
+  width: 44px; height: 44px;
   border-radius: 50%;
   border: 1px solid rgba(255,255,255,0.15);
   background: rgba(0,0,0,0.4);
