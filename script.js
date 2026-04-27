@@ -5463,8 +5463,8 @@ const ONBOARD_SLIDES = [
   },
   // Slide 3 — Deux gestes : Niyyah + Regarde
   () => {
-    setTimeout(function() { if (document.getElementById('obTypeNiyyah')) obTypeWriter('obTypeNiyyah', 'Je bois avec gratitude envers Allah.', 0); }, 600);
-    setTimeout(function() { if (document.getElementById('obTypeRegarde')) obTypeWriter('obTypeRegarde', 'Combien de fois as-tu bu sans voir\u00a0?', 0); }, 1200);
+    setTimeout(function() { if (document.getElementById('obTypeNiyyah')) obTypeWriter('obTypeNiyyah', t('ob_niyyah_example'), 0); }, 600);
+    setTimeout(function() { if (document.getElementById('obTypeRegarde')) obTypeWriter('obTypeRegarde', t('ob_regarde_example'), 0); }, 1200);
     return '<div class="onboard-anim">'
       + '<div class="onboard-title">'+t('ob_deux_gestes')+'</div>'
       + '<div class="ob-deux-gestes">'
@@ -5472,17 +5472,19 @@ const ONBOARD_SLIDES = [
       + '<div class="ob-geste-card ob-geste-niyyah">'
       + '<div class="ob-geste-voile" style="background:radial-gradient(ellipse at 50% 20%,rgba(200,168,75,0.12),transparent 70%);"></div>'
       + '<div class="ob-geste-ar" style="color:#C8A84A;">نِيَّة</div>'
-      + '<img src="images/niyyah-glass.webp" alt="" class="ob-geste-img">'
-      + '<div class="ob-geste-txt" id="obTypeNiyyah" style="color:rgba(200,168,75,0.8);">&nbsp;</div>'
-      + '<div class="ob-geste-tag" style="border-color:rgba(200,168,75,0.3);color:#C8A84A;">'+t('ob_avant_acte')+'</div>'
+      + '<div style="font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#C8A84A;margin-bottom:4px;">'+t('ob_niyyah_title')+'</div>'
+      + '<div style="font-size:11px;color:rgba(200,168,75,0.6);margin-bottom:8px;">'+t('ob_avant_acte')+'</div>'
+      + '<div style="font-size:12px;color:rgba(200,168,75,0.7);line-height:1.5;margin-bottom:10px;">'+t('ob_niyyah_desc')+'</div>'
+      + '<div class="ob-geste-txt" id="obTypeNiyyah" style="color:rgba(200,168,75,0.8);font-size:13px;">&nbsp;</div>'
       + '</div>'
       // Card Regarde (droite)
       + '<div class="ob-geste-card ob-geste-regarde">'
       + '<div class="ob-geste-voile" style="background:radial-gradient(ellipse at 50% 20%,rgba(160,164,172,0.10),transparent 70%);"></div>'
       + '<div class="ob-geste-ar" style="color:#A0A4AC;">نَظَر</div>'
-      + '<img src="images/regarde-hand.webp" alt="" class="ob-geste-img">'
-      + '<div class="ob-geste-txt" id="obTypeRegarde" style="color:rgba(160,164,172,0.8);">&nbsp;</div>'
-      + '<div class="ob-geste-tag" style="border-color:rgba(160,164,172,0.25);color:#A0A4AC;">'+t('ob_apres_acte')+'</div>'
+      + '<div style="font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#A0A4AC;margin-bottom:4px;">'+t('ob_regarde_title')+'</div>'
+      + '<div style="font-size:11px;color:rgba(160,164,172,0.6);margin-bottom:8px;">'+t('ob_apres_acte')+'</div>'
+      + '<div style="font-size:12px;color:rgba(160,164,172,0.7);line-height:1.5;margin-bottom:10px;">'+t('ob_regarde_desc')+'</div>'
+      + '<div class="ob-geste-txt" id="obTypeRegarde" style="color:rgba(160,164,172,0.8);font-size:13px;">&nbsp;</div>'
       + '</div>'
       + '</div>'
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:var(--t3);text-align:center;margin:16px 0 24px;">'+t('ob_sacralise')+'</div>'
@@ -5909,7 +5911,7 @@ const V2_I18N = {
     onboard_lvl3_desc: 'Hadiths · Coran · Arabe', onboard_lvl4_desc: 'Sadaqa · Salam · Douaas',
     onboard_city_manual: 'Ou entre ta ville manuellement :',
     waqt_eyebrow: 'AL-WAQT \u00b7 UN MOMENT \u00c0 OFFRIR', waqt_offer_minute: 'J\u2019ai une minute', waqt_start: 'Commencer', waqt_close: 'Fermer', waqt_done: 'Bien fait. Tu as offert ce moment.', alhaya_resting: 'Niyyah est en repos', alhaya_tap_wake: 'Touchez pour r\u00e9veiller', ob_splash_sub: 'Pose ton intention', ob_avant_acte: 'Avant l\u2019acte', ob_apres_acte: 'Apr\u00e8s l\u2019acte',
-    ob_deux_gestes: 'Deux gestes pour ton quotidien', ob_sacralise: 'Sacralise. Examine.',
+    ob_deux_gestes: 'Deux gestes pour ton quotidien', ob_sacralise: 'L\u2019intention sacralise. Le regard contemple.', ob_niyyah_title: 'Pose une intention', ob_niyyah_desc: 'Pointe ton t\u00e9l\u00e9phone vers un objet du quotidien. Niyyah te propose 3 intentions spirituelles adapt\u00e9es.', ob_niyyah_example: 'Je bois avec gratitude envers Allah.', ob_regarde_title: 'Pose un regard', ob_regarde_desc: 'M\u00eame geste. Niyyah te propose 3 questions contemplatives. Tu vois la main d\u2019Allah dans l\u2019ordinaire.', ob_regarde_example: 'Combien de mains ont pr\u00e9par\u00e9 ce repas avant toi ?',
     alhaya_onboard_title: 'Ta vie spirituelle t\u2019appartient.', alhaya_onboard_body: 'En public, dans le m\u00e9tro, au bureau \u2014 touche \u2726 en haut \u00e0 droite. Niyyah masque ton \u00e9cran d\u2019un voile zen. Personne ne lira ce que tu confies \u00e0 Allah.', alhaya_onboard_quote: 'Al-Haya \u2014 la pudeur \u2014 est une branche de la foi.', alhaya_onboard_cta: 'J\u2019ai compris',
     ob_motivation_title: 'Qu\u2019est-ce qui t\u2019am\u00e8ne\u00a0?', ob_motivation_sub: 'Choisis ce qui te parle \u2014 on adapte ton exp\u00e9rience.',
     ob_motiv_routine: 'Routine spirituelle', ob_motiv_routine_sub: 'Installer une pratique quotidienne',
@@ -6143,7 +6145,7 @@ const V2_I18N = {
     onboard_lvl3_desc: 'Hadiths · Quran · Arabic', onboard_lvl4_desc: 'Sadaqa · Salam · Douaas',
     onboard_city_manual: 'Or enter your city manually:',
     waqt_eyebrow: 'AL-WAQT \u00b7 A MOMENT TO OFFER', waqt_offer_minute: 'I have a minute', waqt_start: 'Start', waqt_close: 'Close', waqt_done: 'Well done. You\u2019ve offered this moment.', alhaya_resting: 'Niyyah is resting', alhaya_tap_wake: 'Tap to wake', ob_splash_sub: 'Set your intention', ob_avant_acte: 'Before the act', ob_apres_acte: 'After the act',
-    ob_deux_gestes: 'Two gestures for your daily life', ob_sacralise: 'Sanctify. Examine.',
+    ob_deux_gestes: 'Two gestures for your daily life', ob_sacralise: 'Intention sanctifies. The gaze contemplates.', ob_niyyah_title: 'Set an intention', ob_niyyah_desc: 'Point your phone at an everyday object. Niyyah suggests 3 tailored spiritual intentions.', ob_niyyah_example: 'I drink with gratitude toward Allah.', ob_regarde_title: 'Set a gaze', ob_regarde_desc: 'Same gesture. Niyyah suggests 3 contemplative questions. You see Allah\u2019s hand in the ordinary.', ob_regarde_example: 'How many hands prepared this meal before you?',
     alhaya_onboard_title: 'Your spiritual life is yours alone.', alhaya_onboard_body: 'Tap \u2726 in the top right. Niyyah veils your screen. No one will read what you confide to Allah.', alhaya_onboard_quote: 'Al-Haya \u2014 modesty \u2014 is a branch of faith.', alhaya_onboard_cta: 'I understand',
     ob_motivation_title: 'What brings you here?', ob_motivation_sub: 'Choose what speaks to you \u2014 we\u2019ll adapt your experience.',
     ob_motiv_routine: 'Spiritual routine', ob_motiv_routine_sub: 'Build a daily practice',
