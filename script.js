@@ -9733,6 +9733,7 @@ async function scannerCapture() {
     var result = await scannerAnalyzeImage(imageData);
     (window.scannerShowResult || scannerShowResult)(result);
   } catch(err) {
+    if (err && (err.name === 'AbortError' || err.code === 20)) return;
     // Fallback offline élégant
     const thinkingElErr = document.getElementById('scanner-thinking');
     if (thinkingElErr) thinkingElErr.classList.remove('active');
