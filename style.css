@@ -5530,7 +5530,7 @@ body::before {
 
 /* ─── ORB CENTRAL ─── */
 .greeting-v2 {
-  width: 90%; max-width: 320px; margin: 0 auto 44px;
+  width: 90%; max-width: 320px; margin: 0 auto 20px;
   text-align: center;
   animation: fadeSlideV2 0.8s var(--ease-silk-v2) 0.15s both;
 }
