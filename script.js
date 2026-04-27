@@ -3377,15 +3377,16 @@ function _loadPrayerByCoords(lat, lng) {
   _showCityInput = false;
   renderLevel(currentLevel);
   var url = 'https://api.aladhan.com/v1/timings?latitude=' + lat + '&longitude=' + lng + '&method=12&school=0';
-  fetch(url)
-    .then(function(r) { return r.json(); })
+  var _ac1 = new AbortController(); var _to1 = setTimeout(function() { _ac1.abort(); }, 10000);
+  fetch(url, { signal: _ac1.signal })
+    .then(function(r) { clearTimeout(_to1); return r.json(); })
     .then(function(d) {
       if (d.code === 200 && d.data && d.data.timings) {
         _applyPrayerTimings(d.data.timings);
       } else { throw new Error('bad response'); }
     })
     .catch(function() {
-      // Fallback par ville si coords échouent
+      clearTimeout(_to1);
       if (_prayerCity) { _loadPrayerByCity(); }
       else { _prayerLoading = false; _prayerError = true; renderLevel(currentLevel); }
     });
@@ -3398,14 +3399,16 @@ function _loadPrayerByCity() {
   var _today = new Date();
   var _dateStr = String(_today.getDate()).padStart(2,'0') + '-' + String(_today.getMonth()+1).padStart(2,'0') + '-' + _today.getFullYear();
   var url = 'https://api.aladhan.com/v1/timingsByCity/' + _dateStr + '?city=' + encodeURIComponent(_prayerCity) + '&country=' + encodeURIComponent(_prayerCountry || '') + '&method=12';
-  fetch(url)
-    .then(function(r) { return r.json(); })
+  var _ac2 = new AbortController(); var _to2 = setTimeout(function() { _ac2.abort(); }, 10000);
+  fetch(url, { signal: _ac2.signal })
+    .then(function(r) { clearTimeout(_to2); return r.json(); })
     .then(function(d) {
       if (d.code === 200 && d.data && d.data.timings) {
         _applyPrayerTimings(d.data.timings);
       } else { throw new Error('bad response'); }
     })
     .catch(function() {
+      clearTimeout(_to2);
       var _fallback = localStorage.getItem('niyyah_prayer_cache');
       if (_fallback) { try { _prayerTimes = JSON.parse(_fallback); } catch(e) {} }
       _prayerLoading = false;
