@@ -8439,9 +8439,9 @@ function updateFinJourneeCard() {
   var _todayStr = dateToKey(now);
   var done = localStorage.getItem('niyyah_finjournee_date') === _todayStr;
   if (done) {
-    card.innerHTML = '<img class="finjournee-img" src="assets/cards/card-findejour.webp" alt="Journée fermée" onclick="openFinJourneeConsultation()">';
+    card.innerHTML = '<img class="finjournee-img" loading="lazy" src="assets/cards/card-findejour.webp" alt="Journée fermée" onclick="openFinJourneeConsultation()">';
   } else {
-    card.innerHTML = '<img class="finjournee-img" src="assets/cards/card-findejour.webp" alt="Fin de journée" onclick="openFinJournee()">';
+    card.innerHTML = '<img class="finjournee-img" loading="lazy" src="assets/cards/card-findejour.webp" alt="Fin de journée" onclick="openFinJournee()">';
   }
 }
 function openFinJournee() {
