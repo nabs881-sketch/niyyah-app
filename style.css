@@ -3480,10 +3480,16 @@ to {
 
 /* Onboarding — Deux gestes */
 .ob-deux-gestes {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
+  display:flex;
+  flex-direction:column;
+  gap:16px;
   margin-bottom:8px;
+  max-height:60vh;
+  overflow-y:auto;
+}
+@media (min-width:600px) {
+  .ob-deux-gestes { flex-direction:row; max-height:none; overflow-y:visible; }
+  .ob-deux-gestes .ob-geste-card { flex:1; }
 }
 .ob-geste-card {
   position:relative;
@@ -3491,7 +3497,7 @@ to {
   border-radius:16px;
   border:1px solid rgba(200,168,75,0.12);
   background:rgba(255,255,255,0.03);
-  padding:20px 12px 16px;
+  padding:20px 16px 16px;
   text-align:center;
   display:flex;
   flex-direction:column;
@@ -3551,8 +3557,11 @@ to {
 /* Onboarding — Ton chemin grid */
 .ob-chemin-grid {
   display:grid;
-  grid-template-columns:1fr 1fr 1fr;
+  grid-template-columns:1fr 1fr;
   gap:10px;
+}
+@media (min-width:600px) {
+  .ob-chemin-grid { grid-template-columns:1fr 1fr 1fr; }
 }
 .ob-chemin-item {
   background:rgba(200,168,75,0.04);
