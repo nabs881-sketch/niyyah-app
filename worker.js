@@ -414,8 +414,8 @@ async function handleNiyyah(request, env) {
   try {
     const body = await request.json();
     const { image, hour, isFriday, isRamadan } = body;
-    if (!image) return jsonResponseV2({ error: 'image manquante' }, 400);
-    if (image.length > 2_000_000) return jsonResponseV2({ error: 'Image too large' }, 413);
+    if (!image) return jsonResponseV2({ suggestions: [], error: 'image manquante', source: 'fallback' }, 400);
+    if (image.length > 2_000_000) return jsonResponseV2({ suggestions: [], error: 'Image too large', source: 'fallback' }, 413);
     const temporalCtx = buildTemporalContext({
       hour: typeof hour === 'number' ? hour : new Date().getHours(),
       isFriday: !!isFriday, isRamadan: !!isRamadan
@@ -447,11 +447,11 @@ async function handleNiyyah(request, env) {
         if (['fatwa', 'hadith', 'quran'].includes(validation.reason)) break;
       }
     }
-    return jsonResponseV2({ suggestions: null, category: 'INDETERMINE', source: 'fallback', reason: 'validation_failed_or_religious' });
+    return jsonResponseV2({ suggestions: [], category: 'INDETERMINE', source: 'fallback', reason: 'validation_failed_or_religious' });
   } catch (err) {
     console.error('handleNiyyah error:', err);
-    if (err.name === 'AbortError') return jsonResponseV2({ error: 'Timeout' }, 504);
-    return jsonResponseV2({ intention: null, category: 'INDETERMINE', source: 'fallback', reason: 'error' }, 502);
+    if (err.name === 'AbortError') return jsonResponseV2({ suggestions: [], category: 'INDETERMINE', source: 'fallback', reason: 'timeout' }, 504);
+    return jsonResponseV2({ suggestions: [], category: 'INDETERMINE', source: 'fallback', reason: 'error' }, 502);
   }
 }
 
