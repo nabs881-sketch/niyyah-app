@@ -3234,7 +3234,7 @@ function renderPrayerTimesCard() {
       '<div class="prayer-times-header"><div class="prayer-times-title">' + t('prayer_title') + '</div></div>' +
       '<div style="font-size:12px;color:var(--t3);margin-bottom:8px;">' + t('city_enter') + '</div>' +
       '<div class="city-input-wrap">' +
-        '<input class="city-input" id="cityInput" type="text" placeholder="Ex: Paris, Casablanca, Bruxelles..." value="' + (_prayerCity||'') + '" onkeydown="if(event.key===\'Enter\')saveCityAndLoad()">' +
+        '<input class="city-input" id="cityInput" type="text" placeholder="Ex: Paris, Casablanca, Bruxelles..." value="' + escapeHtml(_prayerCity||'') + '" onkeydown="if(event.key===\'Enter\')saveCityAndLoad()">' +
         '<button class="city-input-btn" aria-label="Valider la ville" onclick="saveCityAndLoad()">OK</button>' +
       '</div>' +
     '</div>';
@@ -3245,18 +3245,18 @@ function renderPrayerTimesCard() {
   if (_prayerError) {
     return '<div class="prayer-times-card">' +
       '<div class="prayer-times-header"><div class="prayer-times-title">🕌 Horaires</div>' +
-        '<div class="prayer-times-city" onclick="showCityInput()">✏️ ' + (_prayerCity||'Ville') + '</div>' +
+        '<div class="prayer-times-city" onclick="showCityInput()">\u270f\ufe0f ' + escapeHtml(_prayerCity||'Ville') + '</div>' +
       '</div>' +
       '<div style="font-size:12px;color:var(--t3);text-align:center;padding:8px;">Erreur — vérifie ta connexion ou la ville</div>' +
       '<div class="city-input-wrap">' +
-        '<input class="city-input" id="cityInput" type="text" placeholder="' + t('city_placeholder_prayer') + '" value="' + (_prayerCity||'') + '" onkeydown="if(event.key===\'Enter\')saveCityAndLoad()">' +
+        '<input class="city-input" id="cityInput" type="text" placeholder="' + t('city_placeholder_prayer') + '" value="' + escapeHtml(_prayerCity||'') + '" onkeydown="if(event.key===\'Enter\')saveCityAndLoad()">' +
         '<button class="city-input-btn" aria-label="Valider la ville" onclick="saveCityAndLoad()">Réessayer</button>' +
       '</div>' +
     '</div>';
   }
   if (!_prayerTimes) return '<div class="prayer-times-card">' +
     '<div class="prayer-times-header"><div class="prayer-times-title">' + t('prayer_title') + '</div>' +
-    '<div class="prayer-times-city" onclick="showCityInput()">✏️ ' + (_prayerCity||'Ville') + '</div></div>' +
+    '<div class="prayer-times-city" onclick="showCityInput()">\u270f\ufe0f ' + escapeHtml(_prayerCity||'Ville') + '</div></div>' +
     '<div style="font-size:12px;color:var(--t3);margin-bottom:10px;">Les horaires n\'ont pas pu être chargés.</div>' +
     '<button class="city-input-btn" style="width:100%;padding:10px;" onclick="loadPrayerTimes()">🔄 Charger les horaires</button>' +
     '</div>';
@@ -3310,7 +3310,7 @@ function renderPrayerTimesCard() {
   return '<div class="prayer-times-card">' +
     '<div class="prayer-times-header">' +
       '<div class="prayer-times-title">🕌 Horaires — aujourd\'hui</div>' +
-      '<div class="prayer-times-city" onclick="showCityInput()">✏️ ' + (_prayerCity || '📍') + '</div>' +
+      '<div class="prayer-times-city" onclick="showCityInput()">\u270f\ufe0f ' + escapeHtml(_prayerCity || '\ud83d\udccd') + '</div>' +
     '</div>' +
     countdown + grid + lastthird +
   '</div>';
@@ -7539,7 +7539,7 @@ function v2OpenSettings() {
           onclick="document.getElementById('v2-settings-sheet').remove();localStorage.removeItem('niyyah_coords');showCityInput();">
           <div style="display:flex;justify-content:space-between;align-items:center;">
             <div style="font-size:14px;color:rgba(240,234,214,0.7);">📍 ${t('settings_city')}</div>
-            <div style="font-size:12px;color:rgba(240,234,214,0.55);">${_prayerCity || '—'}</div>
+            <div style="font-size:12px;color:rgba(240,234,214,0.55);">${escapeHtml(_prayerCity || '\u2014')}</div>
           </div>
         </div>
         <div style="padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.04);cursor:pointer;"
@@ -8577,7 +8577,7 @@ function openFinJourneeConsultation() {
   } else {
     body = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:rgba(200,168,75,0.6);margin-bottom:20px;">Ce soir, les 3 bontés qu\'Allah t\'a permis :</div>';
     entry.bontes.forEach(function(b) {
-      body += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;font-style:italic;color:#C8A84A;line-height:1.8;">・ ' + b + '</div>';
+      body += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;font-style:italic;color:#C8A84A;line-height:1.8;">\u30fb ' + escapeHtml(b) + '</div>';
     });
   }
   var overlay = document.createElement('div');
