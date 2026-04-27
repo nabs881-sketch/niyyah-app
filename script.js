@@ -5501,7 +5501,7 @@ const ONBOARD_SLIDES = [
     + '</div>'
     + '<div style="font-family:var(--serif);font-size:14px;font-style:italic;color:var(--t3);text-align:center;margin:20px 0 16px;line-height:1.6;">'+t('ob_chemin_quote')+'</div>'
     + '<div style="margin-bottom:20px;text-align:center;"><label style="font-family:var(--serif);font-size:13px;color:var(--t3);display:block;margin-bottom:6px;">'+t("ob_chemin_prenom")+'</label>'
-    + '<input type="text" placeholder="Ton pr\u00e9nom..." style="width:100%;max-width:260px;box-sizing:border-box;padding:10px 14px;background:rgba(200,168,75,0.04);border:1px solid rgba(200,168,75,0.2);border-radius:12px;color:var(--t1);font-size:14px;font-family:var(--sans);outline:none;text-align:center;" oninput="safeSetItem(\'niyyah_prenom\',this.value.trim())"></div>'
+    + '<input type="text" maxlength="30" placeholder="Ton pr\u00e9nom..." style="width:100%;max-width:260px;box-sizing:border-box;padding:10px 14px;background:rgba(200,168,75,0.04);border:1px solid rgba(200,168,75,0.2);border-radius:12px;color:var(--t1);font-size:14px;font-family:var(--sans);outline:none;text-align:center;" oninput="safeSetItem(\'niyyah_prenom\',this.value.trim())"></div>'
     + '<button class="onboard-btn" onclick="onboardNext()">'+t('onboard_next')+'</button>'
     + '</div>',
   // Slide 5 — Notifications 3 cat\u00e9gories
@@ -9501,7 +9501,7 @@ function scannerShowResult(data) {
       // Champ libre custom
       var customWrap = document.createElement('div');
       customWrap.style.cssText = 'margin-top:12px;display:flex;gap:8px;align-items:center;';
-      customWrap.innerHTML = '<input type="text" id="scanner-custom-input" placeholder="' + t('scanner_custom_placeholder') + '" style="flex:1;padding:10px 14px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:rgba(200,168,75,0.04);color:#D4AF37;font-family:var(--serif);font-size:13px;font-style:italic;outline:none;">'
+      customWrap.innerHTML = '<input type="text" id="scanner-custom-input" maxlength="300" placeholder="' + t('scanner_custom_placeholder') + '" style="flex:1;padding:10px 14px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:rgba(200,168,75,0.04);color:#D4AF37;font-family:var(--serif);font-size:13px;font-style:italic;outline:none;">'
         + '<button onclick="scannerAdoptCustom()" style="padding:8px 14px;border-radius:12px;border:none;background:#C8A84A;color:#000;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;">' + t('scanner_adopt_custom') + '</button>';
       nuancesEl.appendChild(customWrap);
     }
