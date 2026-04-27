@@ -3293,7 +3293,7 @@ to {
   display:flex;
   flex-direction:column;
   align-items:center;
-  justify-content:center;
+  justify-content:safe center;
   padding:calc(var(--safe-top) + 50px) 32px calc(40px+var(--safe-bot));
   text-align:center;
   transition:opacity 0.3s ease;
@@ -6899,11 +6899,12 @@ body.alhaya-active .niyyah-menu-backdrop { display: none !important; }
   background: #0a0a0a;
   text-align: center;
   align-items: center;
-  justify-content: center;
+  justify-content: safe center;
 }
 .onboard-screen #onboardContent {
   order: 0;
   width: 100%;
+  min-height: min-content;
   text-align: center;
   display: flex;
   flex-direction: column;
