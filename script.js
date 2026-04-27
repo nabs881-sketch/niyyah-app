@@ -8044,6 +8044,8 @@ function hideAlHayaBtn() { var b = document.getElementById('alhaya-btn'); if (b)
 function openAlHaya() {
   var ov = document.getElementById('alhaya-overlay');
   if (ov) { ov.style.display = 'flex'; ov.style.opacity = '1'; }
+  document.body.classList.add('alhaya-active');
+  var btn = document.getElementById('alhaya-btn'); if (btn) btn.style.display = 'none';
   safeSetItem('niyyah_alhaya_active', '1');
   try {
     var now = Date.now().toString();
@@ -8056,6 +8058,7 @@ function openAlHaya() {
 function closeAlHaya() {
   var ov = document.getElementById('alhaya-overlay');
   if (ov) { ov.style.opacity = '0'; setTimeout(function() { ov.style.display = 'none'; }, 200); }
+  document.body.classList.remove('alhaya-active');
   localStorage.removeItem('niyyah_alhaya_active');
 }
 window.getAlhayaStats = function() {
@@ -8069,7 +8072,7 @@ window.getAlhayaStats = function() {
 };
 // Restore Al-Haya on load if was active
 if (localStorage.getItem('niyyah_alhaya_active') === '1') {
-  setTimeout(function() { var ov = document.getElementById('alhaya-overlay'); if (ov) { ov.style.display = 'flex'; ov.style.opacity = '1'; } }, 100);
+  setTimeout(function() { var ov = document.getElementById('alhaya-overlay'); if (ov) { ov.style.display = 'flex'; ov.style.opacity = '1'; } document.body.classList.add('alhaya-active'); }, 100);
 }
 // ── Analytics ──
 function _nAn(evt) {

@@ -6257,6 +6257,10 @@ body::before {
 .v2-mode .nav-bar-v2 { display: flex !important; }
 .v2-mode .topbar-v2 { display: flex !important; }
 body.pratique-active .topbar-v2 { display: none !important; }
+body.alhaya-active .topbar-v2,
+body.alhaya-active .nav-v2,
+body.alhaya-active .nav-bar,
+body.alhaya-active #alhaya-btn { display: none !important; }
 /* ── CARTES IMAGE PREMIUM ── */
 .quick-btn-v2 {
   padding: 0;
