@@ -5992,7 +5992,7 @@ const V2_I18N = {
     // Premium
     premium_unlocked: '✅ Accès complet débloqué — Barakallahu feek !',
     // Camera
-    camera_denied: 'Acc\u00e8s cam\u00e9ra refus\u00e9 \u2014 autorise l\u2019acc\u00e8s dans les r\u00e9glages', btn_retry: 'R\u00e9essayer', btn_close: 'Fermer', audio_offline: 'Audio non disponible hors-ligne', regarde_limit: 'Limite Regarde atteinte (5/jour) \u2014 reviens demain',
+    camera_denied: 'Acc\u00e8s cam\u00e9ra refus\u00e9 \u2014 autorise l\u2019acc\u00e8s dans les r\u00e9glages', btn_retry: 'R\u00e9essayer', btn_close: 'Fermer', audio_offline: 'Audio non disponible hors-ligne', regarde_limit: 'Limite Regarde atteinte (5/jour) \u2014 reviens demain', regarde_hint: 'Pointe vers ce que tu regardes',
     // Compass
     compass_denied: 'Autorise la boussole dans les réglages',
     disclaimer: 'Cette application n\'émet pas d\'avis religieux. Pour toute question de fiqh, consultez un savant qualifié.',
@@ -6221,7 +6221,7 @@ const V2_I18N = {
     share_downloaded: 'Image downloaded — share it 🌿', share_copied: 'Link copied!',
     share_card: 'NIYYAH CARD ✦', share_intention: 'Share this intention', share_btn: 'SHARE ✦', share_close: 'CLOSE',
     premium_unlocked: '✅ Full access unlocked — Barakallahu feek!',
-    camera_denied: 'Camera access denied \u2014 allow in settings', btn_retry: 'Retry', btn_close: 'Close', audio_offline: 'Audio not available offline', regarde_limit: 'Regarde limit reached (5/day) \u2014 come back tomorrow',
+    camera_denied: 'Camera access denied \u2014 allow in settings', btn_retry: 'Retry', btn_close: 'Close', audio_offline: 'Audio not available offline', regarde_limit: 'Regarde limit reached (5/day) \u2014 come back tomorrow', regarde_hint: 'Point at what you are looking at',
     compass_denied: 'Allow compass in settings',
     disclaimer: 'This app does not issue religious rulings. For any fiqh question, consult a qualified scholar.',
     settings_mentions: 'Legal Notice',
@@ -9038,6 +9038,7 @@ async function regardeOpen() {
       video: { facingMode: 'environment', width: { ideal: 1280 }, height: { ideal: 720 } }
     });
     content.innerHTML = '<video id="regarde-video" autoplay playsinline muted style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>'
+      + '<div style="position:absolute;bottom:140px;left:50%;transform:translateX(-50%);z-index:5;text-align:center;font-family:var(--serif);font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(212,175,55,0.85);text-shadow:0 1px 4px rgba(0,0,0,0.8);background:rgba(0,0,0,0.4);padding:6px 12px;border-radius:16px;">'+t('regarde_hint')+'</div>'
       + '<button id="regarde-capture-btn" onclick="regardeCapture()" style="position:absolute;bottom:40px;left:50%;transform:translateX(-50%);z-index:10;width:80px;height:80px;border-radius:50%;border:3px solid #C8A84A;background:rgba(200,168,75,0.15);cursor:pointer;display:flex;align-items:center;justify-content:center;"><div style="width:62px;height:62px;border-radius:50%;background:linear-gradient(135deg,#D4AF37,#B8940A);pointer-events:none;"></div></button>';
     var video = document.getElementById('regarde-video');
     video.srcObject = _regardeStream;
@@ -9099,7 +9100,7 @@ function regardeCapture() {
   content.style.opacity = '0';
 
   setTimeout(function() {
-    content.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:24px;"><div style="width:12px;height:12px;border-radius:50%;background:#D4AF37;animation:regardePulse 1.2s ease-in-out infinite;"></div><div style="font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(200,168,75,0.6);">'+t('scanner_analyzing')+'</div><button onclick="regardeCancelThinking()" style="padding:10px 24px;border-radius:12px;border:1px solid rgba(255,255,255,0.2);background:transparent;color:rgba(255,255,255,0.6);font-size:13px;cursor:pointer;">Annuler</button></div>';
+    content.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:24px;"><div style="width:24px;height:24px;border-radius:50%;background:#D4AF37;animation:regardePulse 1.2s ease-in-out infinite;"></div><div style="font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(200,168,75,0.6);">'+t('scanner_analyzing')+'</div><button onclick="regardeCancelThinking()" style="padding:10px 24px;border-radius:12px;border:1px solid rgba(255,255,255,0.2);background:transparent;color:rgba(255,255,255,0.6);font-size:13px;cursor:pointer;">Annuler</button></div>';
     content.style.opacity = '1';
 
     // Appel API avec AbortController timeout 8s
