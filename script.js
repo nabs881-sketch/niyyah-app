@@ -5196,7 +5196,7 @@ function schedulePrayerReminders() {
 function scheduleFajrNotification() {
   if (isSilenceDay()) return;
   if (!_prayerTimes || !_prayerTimes['Fajr']) return;
-  if (Notification.permission === 'default') Notification.requestPermission();
+  if (Notification.permission === 'default') { try { Notification.requestPermission().catch(function() {}); } catch(e) {} }
   if (Notification.permission !== 'granted') return;
   var parts = _prayerTimes['Fajr'].replace(/ *\(.*\)/, '').split(':');
   var fajrTime = new Date();
