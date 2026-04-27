@@ -6260,7 +6260,7 @@ body.pratique-active .topbar-v2 { display: none !important; }
 #alhaya-btn {
   position: fixed;
   top: 16px;
-  right: 100px;
+  left: 16px;
   z-index: 9997;
   width: 32px;
   height: 32px;
@@ -6270,10 +6270,21 @@ body.pratique-active .topbar-v2 { display: none !important; }
   opacity: 0.5;
   padding: 0;
 }
+.topbar-left-v2 { display: flex; align-items: center; }
+/* ── Slide-in menu ── */
+.niyyah-menu-backdrop { position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:3000;opacity:0;transition:opacity 0.3s;pointer-events:none; }
+.niyyah-menu-backdrop.open { opacity:1;pointer-events:all; }
+.niyyah-menu-panel { position:fixed;top:0;right:-280px;bottom:0;width:280px;z-index:3001;background:#111;border-left:1px solid rgba(200,168,75,0.15);padding:calc(var(--safe-top,0px) + 20px) 24px 40px;overflow-y:auto;transition:right 0.3s cubic-bezier(0.4,0,0.2,1); }
+.niyyah-menu-backdrop.open .niyyah-menu-panel { right:0; }
+.niyyah-menu-item { display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06);color:var(--t1);font-family:var(--sans);font-size:14px;cursor:pointer;transition:color 0.2s; }
+.niyyah-menu-item:hover { color:#C8A84A; }
+.niyyah-menu-item svg { flex-shrink:0;opacity:0.6; }
+.niyyah-menu-section { font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(200,168,75,0.5);margin:20px 0 8px;font-family:var(--serif); }
 body.alhaya-active .topbar-v2,
 body.alhaya-active .nav-v2,
 body.alhaya-active .nav-bar,
-body.alhaya-active #alhaya-btn { display: none !important; }
+body.alhaya-active #alhaya-btn,
+body.alhaya-active .niyyah-menu-backdrop { display: none !important; }
 /* ── CARTES IMAGE PREMIUM ── */
 .quick-btn-v2 {
   padding: 0;

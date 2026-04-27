@@ -7457,6 +7457,49 @@ const Capacitor = {
   window.Capacitor           = Capacitor;
 })();
 
+// ── Hamburger slide-in menu ──
+function openNiyyahMenu() {
+  if (document.querySelector('.niyyah-menu-backdrop')) return;
+  var langLabel = V2_LANG === 'en' ? 'English' : 'Fran\u00e7ais';
+  var silVal = localStorage.getItem('niyyah_silence_day') || 'none';
+  var silLabel = silVal === 'none' ? t('silence_off') || 'D\u00e9sactiv\u00e9' : t('silence_on') || 'Actif';
+  var backdrop = document.createElement('div');
+  backdrop.className = 'niyyah-menu-backdrop';
+  backdrop.onclick = function(e) { if (e.target === backdrop) closeNiyyahMenu(); };
+  backdrop.innerHTML = '<div class="niyyah-menu-panel">'
+    + '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;"><div style="font-family:var(--serif);font-size:20px;color:#C8A84A;">Niyyah</div><button onclick="closeNiyyahMenu()" style="background:none;border:none;color:var(--t3);font-size:22px;cursor:pointer;">\u2715</button></div>'
+    + '<div class="niyyah-menu-section">Langue</div>'
+    + '<div class="niyyah-menu-item" onclick="v2SetLanguage(\'fr\');closeNiyyahMenu()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>' + (V2_LANG === 'fr' ? '<strong>Fran\u00e7ais</strong>' : 'Fran\u00e7ais') + '</div>'
+    + '<div class="niyyah-menu-item" onclick="v2SetLanguage(\'en\');closeNiyyahMenu()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>' + (V2_LANG === 'en' ? '<strong>English</strong>' : 'English') + '</div>'
+    + '<div class="niyyah-menu-section">R\u00e9glages</div>'
+    + '<div class="niyyah-menu-item" onclick="closeNiyyahMenu();v2OpenSettings()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>Param\u00e8tres</div>'
+    + '<div class="niyyah-menu-item" onclick="closeNiyyahMenu();niyyahExportData()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Exporter</div>'
+    + '<div class="niyyah-menu-item" onclick="closeNiyyahMenu();niyyahImportData()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>Importer</div>'
+    + '<div class="niyyah-menu-item" onclick="closeNiyyahMenu();toggleSilenceDay()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"/><line x1="12" y1="2" x2="12" y2="12"/></svg>Mode Silence \u2014 ' + silLabel + '</div>'
+    + '<div class="niyyah-menu-section">\u00c0 propos</div>'
+    + '<div class="niyyah-menu-item" style="font-size:12px;color:var(--t3);cursor:default;border:none;">Niyyah v' + (typeof APP_VERSION !== 'undefined' ? APP_VERSION : '2.0') + ' \u2014 Donn\u00e9es 100% locales \u00b7 Al-Haya</div>'
+    + '<div class="niyyah-menu-section" style="margin-top:24px;color:rgba(255,80,80,0.5);">Zone sensible</div>'
+    + '<div class="niyyah-menu-item" style="color:rgba(255,80,80,0.7);" onclick="closeNiyyahMenu();if(confirm(\'Effacer TOUTES les donn\u00e9es ? Cette action est irr\u00e9versible.\')){localStorage.clear();location.reload();}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,80,80,0.7)" stroke-width="2" stroke-linecap="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>Reset de l\u2019\u00c2me</div>'
+    + '</div>';
+  document.body.appendChild(backdrop);
+  requestAnimationFrame(function() { backdrop.classList.add('open'); });
+}
+function closeNiyyahMenu() {
+  var backdrop = document.querySelector('.niyyah-menu-backdrop');
+  if (backdrop) { backdrop.classList.remove('open'); setTimeout(function() { backdrop.remove(); }, 300); }
+}
+function toggleSilenceDay() {
+  var current = localStorage.getItem('niyyah_silence_day') || 'none';
+  if (current === 'none') {
+    var today = new Date().getDay();
+    safeSetItem('niyyah_silence_day', String(today));
+    showToast(t('silence_enabled') || 'Mode Silence activ\u00e9 pour aujourd\u2019hui');
+  } else {
+    safeSetItem('niyyah_silence_day', 'none');
+    showToast(t('silence_disabled') || 'Mode Silence d\u00e9sactiv\u00e9');
+  }
+}
+
 function v2OpenSettings() {
   const T = V2_I18N[V2_LANG] || V2_I18N.fr;
   const isRTL = T.dir === 'rtl';
@@ -8039,8 +8082,8 @@ function updateSanctuaireNextPrayer() {
   el.innerHTML = '<div style="text-align:center;margin:20px 0;display:flex;align-items:center;justify-content:center;gap:16px;opacity:' + (diffMin <= 60 ? '1' : '0.75') + ';">' + _star + '<span class="next-prayer-text">' + txt + '</span>' + _star + '</div>';
   el.style.display = 'block';
 }
-function showAlHayaBtn() { var b = document.getElementById('alhaya-btn'); if (b) b.style.display = 'block'; }
-function hideAlHayaBtn() { var b = document.getElementById('alhaya-btn'); if (b) b.style.display = 'none'; }
+function showAlHayaBtn() { var b = document.getElementById('alhaya-btn'); if (b) b.style.display = 'block'; var tb = document.getElementById('topbar-alhaya-btn'); if (tb) tb.style.opacity = '0.8'; }
+function hideAlHayaBtn() { var b = document.getElementById('alhaya-btn'); if (b) b.style.display = 'none'; var tb = document.getElementById('topbar-alhaya-btn'); if (tb) tb.style.opacity = '0.5'; }
 function openAlHaya() {
   var ov = document.getElementById('alhaya-overlay');
   if (ov) { ov.style.display = 'flex'; ov.style.opacity = '1'; }
