@@ -7091,6 +7091,9 @@ button[style*="gold-v2"] {
 #regarde-content {
   width: 100%;
   height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  max-height: calc(100vh - 100px);
 }
 #regarde-question {
   transition: opacity 0.3s ease;

@@ -9099,11 +9099,12 @@ function regardeCapture() {
   content.style.opacity = '0';
 
   setTimeout(function() {
-    content.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;"><div style="width:12px;height:12px;border-radius:50%;background:#D4AF37;animation:regardePulse 1.2s ease-in-out infinite;"></div></div>';
+    content.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:24px;"><div style="width:12px;height:12px;border-radius:50%;background:#D4AF37;animation:regardePulse 1.2s ease-in-out infinite;"></div><div style="font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(200,168,75,0.6);">'+t('scanner_analyzing')+'</div><button onclick="regardeCancelThinking()" style="padding:10px 24px;border-radius:12px;border:1px solid rgba(255,255,255,0.2);background:transparent;color:rgba(255,255,255,0.6);font-size:13px;cursor:pointer;">Annuler</button></div>';
     content.style.opacity = '1';
 
     // Appel API avec AbortController timeout 8s
     var _acR = new AbortController();
+    window._regardeAC = _acR;
     var _toR = setTimeout(function() { _acR.abort(); }, 8000);
     var _done = false;
 
@@ -9337,8 +9338,13 @@ function regardeClose() {
   var screen = document.getElementById('regarde-screen');
   if (screen) { screen.classList.remove('active'); document.body.style.overflow = ''; }
   if (_regardeStream) { _regardeStream.getTracks().forEach(function(t) { t.stop(); }); _regardeStream = null; }
+  if (window._regardeAC) { try { window._regardeAC.abort(); } catch(e) {} window._regardeAC = null; }
   var content = document.getElementById('regarde-content');
   if (content) content.innerHTML = '';
+}
+function regardeCancelThinking() {
+  if (window._regardeAC) { try { window._regardeAC.abort(); } catch(e) {} window._regardeAC = null; }
+  regardeOpen();
 }
 
 async function scannerOpen() {
