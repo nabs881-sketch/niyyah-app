@@ -6232,14 +6232,14 @@ body::before {
   top: calc(var(--safe-top) + 8px);
   left: 12px;
   z-index: 500;
-  width: 34px; height: 34px;
+  width: 44px; height: 44px;
   border-radius: 50%;
-  border: 1px solid rgba(212,175,55,0.25);
+  border: 1px solid rgba(212,175,55,0.35);
   background: rgba(10,10,10,0.7);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
   color: rgba(212,175,55,0.7);
-  font-size: 17px;
   cursor: pointer;
   display: none;
   align-items: center;
@@ -6247,6 +6247,7 @@ body::before {
   transition: all 0.2s;
 }
 .v2-back-btn:hover { background: rgba(212,175,55,0.15); color: #D4AF37; }
+.v2-back-btn:active { transform: scale(0.94); }
 .v2-back-btn.visible { display: flex; }
 
 /* V2 overrides for V1 views that remain active */
