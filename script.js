@@ -383,8 +383,9 @@ const DEFIS_DB = [
 // LOGIQUE DEFI DE LA SEMAINE
 // ============================================================
 function getDefiState() {
-  try { return JSON.parse(localStorage.getItem('niyyah_defi_v2') || '{}'); } catch(e) {}
-  return {current:null,historique:[],badges:[],choixEnAttente:null};
+  var _def = {current:null,historique:[],badges:[],choixEnAttente:null};
+  try { var p = JSON.parse(safeGetItem('niyyah_defi_v2') || '{}'); return {current:p.current||null,historique:Array.isArray(p.historique)?p.historique:[],badges:Array.isArray(p.badges)?p.badges:[],choixEnAttente:p.choixEnAttente||null}; } catch(e) {}
+  return _def;
 }
 function saveDefiState(s) { safeSetItem('niyyah_defi_v2', JSON.stringify(s)); }
 
