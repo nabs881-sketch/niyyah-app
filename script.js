@@ -7485,7 +7485,7 @@ function openNiyyahMenu() {
   backdrop.className = 'niyyah-menu-backdrop';
   backdrop.onclick = function(e) { if (e.target === backdrop) closeNiyyahMenu(); };
   backdrop.innerHTML = '<div class="niyyah-menu-panel">'
-    + '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;"><div style="font-family:var(--serif);font-size:20px;color:#C8A84A;">Niyyah</div><button onclick="closeNiyyahMenu()" style="background:none;border:none;color:var(--t3);font-size:22px;cursor:pointer;">\u2715</button></div>'
+    + '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;"><div style="font-family:var(--serif);font-size:20px;color:#C8A84A;">Niyyah</div><button onclick="closeNiyyahMenu()" aria-label="Fermer le menu" style="background:none;border:none;color:var(--t3);font-size:22px;cursor:pointer;min-width:44px;min-height:44px;">\u2715</button></div>'
     + '<div class="niyyah-menu-section">Langue</div>'
     + '<div class="niyyah-menu-item" onclick="v2SetLanguage(\'fr\');closeNiyyahMenu()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>' + (V2_LANG === 'fr' ? '<strong>Fran\u00e7ais</strong>' : 'Fran\u00e7ais') + '</div>'
     + '<div class="niyyah-menu-item" onclick="v2SetLanguage(\'en\');closeNiyyahMenu()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>' + (V2_LANG === 'en' ? '<strong>English</strong>' : 'English') + '</div>'
@@ -7619,7 +7619,7 @@ function v2OpenSettings() {
 
       <div style="text-align:center;padding:8px;font-size:12px;color:rgba(240,234,214,0.55);font-family:'Cormorant Garamond',serif;letter-spacing:0.2em;margin-bottom:12px;">NIYYAH V2.0 · بِسْمِ اللَّهِ</div>
 
-      <button onclick="document.getElementById('v2-settings-sheet').remove();"
+      <button onclick="document.getElementById('v2-settings-sheet').remove();" aria-label="Fermer les param\u00e8tres"
         style="width:100%;padding:13px;border-radius:100px;border:1px solid rgba(255,255,255,0.07);background:none;color:rgba(240,234,214,0.55);font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;">
         ${T.settings_close}
       </button>
@@ -9859,8 +9859,12 @@ function a11yGetActiveOverlay() {
 
 // A11y: Escape key closes active overlay + focus trap
 document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape' && typeof _qiblaOpen !== 'undefined' && _qiblaOpen) { _qiblaOpen = false; stopCompass(); renderLevel(currentLevel); return; }
-  if (e.key === 'Escape' && document.getElementById('tafakkurScreen').classList.contains('show')) { closeTafakkur(); return; }
+  if (e.key === 'Escape') {
+    var _menuBd = document.querySelector('.niyyah-menu-backdrop'); if (_menuBd) { closeNiyyahMenu(); return; }
+    var _settS = document.getElementById('v2-settings-sheet'); if (_settS) { _settS.remove(); return; }
+    if (typeof _qiblaOpen !== 'undefined' && _qiblaOpen) { _qiblaOpen = false; stopCompass(); renderLevel(currentLevel); return; }
+    if (document.getElementById('tafakkurScreen').classList.contains('show')) { closeTafakkur(); return; }
+  }
   var active = a11yGetActiveOverlay();
   if (!active) return;
   if (e.key === 'Escape') { active.style.display = 'none'; return; }
