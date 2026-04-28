@@ -4263,7 +4263,9 @@ function _getTafakkurPool() {
 
 let _tafakkurAudioMode = 'silence';
 function openTafakkur() {
-  document.getElementById('tafakkurScreen').classList.add('show');
+  var _tScreen = document.getElementById('tafakkurScreen');
+  _tScreen.classList.add('show');
+  if (!_tScreen._clickBound) { _tScreen.addEventListener('click', function(e) { if (e.target === _tScreen) closeTafakkur(); }); _tScreen._clickBound = true; }
   document.getElementById('tafakkurDotEl').style.animation = 'tafakkurPulse 2.5s ease-in-out infinite';
   _tafakkurRemaining = _tafakkurDuration;
   updateTafakkurDisplay();
@@ -9830,7 +9832,7 @@ window.openRegardeJournal     = openRegardeJournal;
 var A11Y_OVERLAYS = ['scanner-overlay','niyyah-journal-overlay','niyyah-detail-overlay',
   'regarde-journal-overlay','regarde-detail-overlay','infoOverlay','bilanSoirOverlay',
   'defiOverlay','defiSelectorOverlay','coranOverlay','finjournee-overlay','tasbihOverlay',
-  'tawbaOverlay','freemiumOverlay','niyyahModal-v2','weeklyOverlay','tafakkurScreen'];
+  'tawbaOverlay','freemiumOverlay','niyyahModal-v2','weeklyOverlay'];
 
 function a11yGetActiveOverlay() {
   for (var i = 0; i < A11Y_OVERLAYS.length; i++) {
@@ -9842,6 +9844,7 @@ function a11yGetActiveOverlay() {
 
 // A11y: Escape key closes active overlay + focus trap
 document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape' && document.getElementById('tafakkurScreen').classList.contains('show')) { closeTafakkur(); return; }
   var active = a11yGetActiveOverlay();
   if (!active) return;
   if (e.key === 'Escape') { active.style.display = 'none'; return; }
