@@ -7196,6 +7196,7 @@ function _v2ShowTarget(targetId, opts) {
 }
 
 function v2GoJournal() {
+  setupTopUI('journal');
   _nAn('journal_visited');
   showAlHayaBtn();
   var tbEl = document.getElementById('topbar-v2');
@@ -7250,6 +7251,7 @@ function journalSwitchTab(tab) {
   }
 }
 function v2GoNafs() {
+  setupTopUI('nafs');
   _nAn('nafs_visited');
   showAlHayaBtn();
   var tbEl = document.getElementById('topbar-v2');
