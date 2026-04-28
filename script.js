@@ -5368,7 +5368,7 @@ function loadQibla() {
 }
 function renderQiblaCard() {
   const chevron = '<svg width="16" height="16" viewBox="0 0 14 14" style="transition:transform 0.2s;transform:' + (_qiblaOpen ? 'rotate(180deg)' : 'rotate(0deg)') + ';color:var(--gold);flex-shrink:0;"><polyline points="3,5 7,9 11,5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>';
-  const headerHtml = '<div class="qibla-card"><div style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;margin-bottom:' + (_qiblaOpen ? '12' : '0') + 'px;" onclick="_qiblaOpen=!_qiblaOpen;if(!_qiblaOpen)stopCompass();renderLevel(currentLevel)"><div class="qibla-title" style="margin-bottom:0;">' + t('qibla_title') + '</div>' + chevron + '</div>';
+  const headerHtml = '<div class="qibla-card"><div role="button" tabindex="0" aria-expanded="' + (_qiblaOpen ? 'true' : 'false') + '" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;margin-bottom:' + (_qiblaOpen ? '12' : '0') + 'px;" onclick="_qiblaOpen=!_qiblaOpen;if(!_qiblaOpen)stopCompass();renderLevel(currentLevel)"><div class="qibla-title" style="margin-bottom:0;">' + t('qibla_title') + '</div>' + chevron + '</div>';
   if (!_qiblaOpen) return headerHtml + '</div>';
   if (_qiblaLoading) return headerHtml + '<div style="font-size:13px;color:var(--t3);padding:16px 0;text-align:center;">📍 Localisation...</div></div>';
   if (_qiblaError) return headerHtml + '<div style="font-size:13px;color:var(--t3);padding:8px 0;">' + _qiblaError + '</div><button class="qibla-btn" aria-label="Réessayer" onclick="loadQibla()">Réessayer</button></div>';
@@ -9859,6 +9859,7 @@ function a11yGetActiveOverlay() {
 
 // A11y: Escape key closes active overlay + focus trap
 document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape' && typeof _qiblaOpen !== 'undefined' && _qiblaOpen) { _qiblaOpen = false; stopCompass(); renderLevel(currentLevel); return; }
   if (e.key === 'Escape' && document.getElementById('tafakkurScreen').classList.contains('show')) { closeTafakkur(); return; }
   var active = a11yGetActiveOverlay();
   if (!active) return;
