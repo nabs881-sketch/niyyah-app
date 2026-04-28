@@ -7269,10 +7269,11 @@ function setupTopUI(screen) {
   if (backBtn) backBtn.classList.remove('visible');
   var tbEl = document.getElementById('topbar-v2');
   if (tbEl) tbEl.classList.remove('active');
+  if (tbEl) tbEl.classList.remove('secondary');
   switch (screen) {
     case 'sanctuaire': if (tbEl) tbEl.classList.add('active'); break;
     case 'journal': case 'nafs': showAlHayaBtn(); break;
-    case 'wird': case 'checklist': case 'progression': if (tbEl) tbEl.classList.add('active'); if (backBtn) backBtn.classList.add('visible'); break;
+    case 'wird': case 'checklist': case 'progression': if (tbEl) { tbEl.classList.add('active'); tbEl.classList.add('secondary'); } if (backBtn) backBtn.classList.add('visible'); break;
   }
 }
 function v2GoSanctuaire() {
@@ -7336,7 +7337,7 @@ function v2GoSanctuaire() {
 }
 
 function v2GoTo(viewName) {
-  hideAlHayaBtn();
+  setupTopUI(viewName);
   document.body.classList.remove('pratique-active');
   if (viewName === 'checklist') document.body.classList.add('pratique-active');
   // Fermer les overlays

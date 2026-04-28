@@ -5443,6 +5443,8 @@ body::before {
   pointer-events: none;
 }
 .topbar-v2.active { display: flex; }
+.topbar-v2.secondary { flex-direction: row-reverse; }
+.topbar-v2.secondary .topbar-actions-v2 { display: none; }
 .topbar-v2 * { pointer-events: all; }
 
 .topbar-logo-v2 {
