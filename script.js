@@ -7263,8 +7263,20 @@ function v2GoNafs() {
     if (nafsDisc) nafsDisc.textContent = t('nafs_disclaimer');
   }});
 }
-function v2GoSanctuaire() {
+function setupTopUI(screen) {
   hideAlHayaBtn();
+  var backBtn = document.getElementById('v2-back-btn');
+  if (backBtn) backBtn.classList.remove('visible');
+  var tbEl = document.getElementById('topbar-v2');
+  if (tbEl) tbEl.classList.remove('active');
+  switch (screen) {
+    case 'sanctuaire': if (tbEl) tbEl.classList.add('active'); break;
+    case 'journal': case 'nafs': showAlHayaBtn(); break;
+    case 'wird': case 'checklist': case 'progression': if (tbEl) tbEl.classList.add('active'); if (backBtn) backBtn.classList.add('visible'); break;
+  }
+}
+function v2GoSanctuaire() {
+  setupTopUI('sanctuaire');
   document.body.classList.remove('pratique-active');
   // Fade out current view
   var activeView = document.querySelector('.view.active');
