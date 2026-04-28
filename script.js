@@ -9830,7 +9830,7 @@ window.openRegardeJournal     = openRegardeJournal;
 var A11Y_OVERLAYS = ['scanner-overlay','niyyah-journal-overlay','niyyah-detail-overlay',
   'regarde-journal-overlay','regarde-detail-overlay','infoOverlay','bilanSoirOverlay',
   'defiOverlay','defiSelectorOverlay','coranOverlay','finjournee-overlay','tasbihOverlay',
-  'tawbaOverlay','freemiumOverlay','niyyahModal-v2','weeklyOverlay'];
+  'tawbaOverlay','freemiumOverlay','niyyahModal-v2','weeklyOverlay','tafakkurScreen'];
 
 function a11yGetActiveOverlay() {
   for (var i = 0; i < A11Y_OVERLAYS.length; i++) {
