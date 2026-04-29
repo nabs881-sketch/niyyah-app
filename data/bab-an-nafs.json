@@ -1,0 +1,126 @@
+{
+  "version": "0.1",
+  "validated": false,
+  "portes": [
+    {
+      "id": "colere",
+      "nom": { "fr": "Colère", "ar": "الغضب" },
+      "couleur": "#B33A3A",
+      "image": "assets/cards/porte-colere.webp",
+      "rappel": {
+        "type": "hadith",
+        "fr": "Le fort n'est pas celui qui terrasse les hommes. Le fort est celui qui se maîtrise quand il est en colère.",
+        "source": "Al-Bukhârî 6114, Muslim 2609 — d'après Abû Hurayra",
+        "validated": false
+      },
+      "action": {
+        "fr": "Si tu es debout, assieds-toi. Si tu es assis, allonge-toi. Si la colère persiste, fais le wudû — l'eau apaise le feu.",
+        "source": "Abû Dawûd 4782, Ahmad",
+        "validated": false
+      },
+      "intention": {
+        "fr": "Yâ Allah, j'éteins ce feu pour Toi. Donne-moi le hilm.",
+        "validated": false
+      },
+      "cloture": {
+        "fr": "Tu as franchi la porte. Le silence que tu as gardé, Allah l'a entendu."
+      }
+    },
+    {
+      "id": "anxiete",
+      "nom": { "fr": "Anxiété", "ar": "القلق" },
+      "couleur": "#3F51B5",
+      "image": "assets/cards/porte-anxiete.webp",
+      "rappel": {
+        "type": "verset",
+        "fr": "C'est par le rappel d'Allah que les cœurs s'apaisent.",
+        "source": "Coran, sourate Ar-Ra'd (13), verset 28",
+        "validated": false
+      },
+      "action": {
+        "fr": "Pose ta main sur ton cœur. Respire lentement. Répète sept fois : Hasbiya Allâhu lâ ilâha illâ Huwa, 'alayhi tawakkaltu wa Huwa Rabbu-l-'arshi-l-'azhîm. (Allah me suffit, il n'est de divinité que Lui, je place ma confiance en Lui, Il est le Seigneur du Trône immense.)",
+        "source": "Abû Dawûd 5081 — d'après Abû ad-Dardâ'",
+        "validated": false
+      },
+      "intention": {
+        "fr": "Yâ Allah, je dépose ce poids. Tu es Celui qui suffit.",
+        "validated": false
+      },
+      "cloture": {
+        "fr": "Tu as franchi la porte. Ton cœur n'est pas seul — il est confié."
+      }
+    },
+    {
+      "id": "regard",
+      "nom": { "fr": "Regard", "ar": "النظر" },
+      "couleur": "#2E7D5B",
+      "image": "assets/cards/porte-regard.webp",
+      "rappel": {
+        "type": "verset",
+        "fr": "Dis aux croyants de baisser leurs regards et de préserver leur chasteté. C'est plus pur pour eux. Allah est parfaitement informé de ce qu'ils font.",
+        "source": "Coran, sourate An-Nûr (24), verset 30",
+        "validated": false
+      },
+      "action": {
+        "fr": "Détourne ton regard maintenant. Le premier regard ne t'appartient pas, le second oui — et il blesse le cœur. Si l'écran t'a piégé, ferme-le. Lève-toi, change de pièce, bois un verre d'eau.",
+        "source": "Muslim 2159 — Jarîr ibn 'Abdillâh : « J'ai interrogé le Messager d'Allah ﷺ sur le regard fortuit. Il m'a ordonné de détourner mon regard. »",
+        "validated": false
+      },
+      "intention": {
+        "fr": "Yâ Allah, je préserve mon regard pour Toi. Garde mon cœur pur.",
+        "validated": false
+      },
+      "cloture": {
+        "fr": "Tu as franchi la porte. Ce que tu n'as pas regardé, Allah l'a vu."
+      }
+    },
+    {
+      "id": "arrogance",
+      "nom": { "fr": "Arrogance", "ar": "الكِبْر" },
+      "couleur": "#6A1B7A",
+      "image": "assets/cards/porte-arrogance.webp",
+      "rappel": {
+        "type": "hadith",
+        "fr": "N'entrera pas au Paradis celui qui a dans le cœur le poids d'un atome d'orgueil. — Et l'orgueil, ô Messager d'Allah, qu'est-ce ? — C'est rejeter la vérité et mépriser les gens.",
+        "source": "Muslim 91 — d'après 'Abdullâh ibn Mas'ûd",
+        "validated": false
+      },
+      "action": {
+        "fr": "Prosterne-toi. Front contre le sol. Reste-y le temps de trois respirations. Puis fais une seule chose humble : salue quelqu'un que tu aurais ignoré, ou reconnais à voix basse une erreur que tu n'as jamais admise.",
+        "source": "Muslim 482 — « Le serviteur est le plus proche de son Seigneur lorsqu'il est en prosternation. »",
+        "validated": false
+      },
+      "intention": {
+        "fr": "Yâ Allah, je ne suis rien sans Toi. Brise mon orgueil, garde ma dignité.",
+        "validated": false
+      },
+      "cloture": {
+        "fr": "Tu as franchi la porte. Le front qui se baisse, Allah le relève."
+      }
+    },
+    {
+      "id": "paresse",
+      "nom": { "fr": "Paresse", "ar": "الكَسَل" },
+      "couleur": "#6E6E6E",
+      "image": "assets/cards/porte-paresse.webp",
+      "rappel": {
+        "type": "dua",
+        "fr": "Ô Allah, je cherche refuge auprès de Toi contre l'incapacité et la paresse, contre la lâcheté et l'avarice, contre l'écrasement des dettes et la domination des hommes.",
+        "source": "Al-Bukhârî 6363 — invocation prophétique régulière du Prophète ﷺ",
+        "validated": false
+      },
+      "action": {
+        "fr": "Lève-toi maintenant. Une seule action, la plus petite : deux rak'ât, ou un verre d'eau bu debout, ou trois pas dehors. Le corps qui bouge entraîne l'âme.",
+        "source": "Tirmidhî 2459 — « Le rusé est celui qui se juge lui-même et œuvre pour ce qui vient après la mort. »",
+        "validated": false
+      },
+      "intention": {
+        "fr": "Yâ Allah, ranime ce que la paresse a éteint. Je commence, même petit.",
+        "validated": false
+      },
+      "cloture": {
+        "fr": "Tu as franchi la porte. Ce premier pas, Allah l'a vu — et c'est lui qui compte."
+      }
+    }
+  ]
+}

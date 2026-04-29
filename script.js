@@ -3573,6 +3573,30 @@ function resetWirdSession(session) {
   saveWirdState();
   renderWird();
 }
+
+// ── BAB AN-NAFS ──
+var BAB_AN_NAFS_AR = { colere: '\u0627\u0644\u063A\u064E\u0636\u064E\u0628', regard: '\u0627\u0644\u0646\u0651\u064E\u0638\u064E\u0631', anxiete: '\u0627\u0644\u0642\u064E\u0644\u064E\u0642', arrogance: '\u0627\u0644\u0643\u0650\u0628\u0652\u0631', paresse: '\u0627\u0644\u0643\u064E\u0633\u064E\u0644' };
+function renderBabAnNafs() {
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;">'
+    + '<div style="font-family:var(--serif);font-size:22px;color:#C8A84A;text-align:center;margin-bottom:6px;">B\u0101b an-Nafs</div>'
+    + '<div style="font-size:13px;color:var(--t3);text-align:center;margin-bottom:24px;font-style:italic;">Les portes de l\u2019\u00e2me</div>';
+  BAB_AN_NAFS.portes.forEach(function(p) {
+    var ar = BAB_AN_NAFS_AR[p.id] || '';
+    html += '<button onclick="v2GoTo(\'bab-porte-' + p.id + '\')" style="display:flex;align-items:center;gap:14px;width:100%;padding:16px;border-radius:12px;margin-bottom:12px;border:1px solid ' + p.couleur + '33;background:' + p.couleur + '26;cursor:pointer;text-align:left;">'
+      + '<img src="' + escapeHtml(p.image) + '" alt="" style="width:56px;height:56px;border-radius:10px;object-fit:cover;flex-shrink:0;" onerror="this.style.display=\'none\'">'
+      + '<div style="flex:1;">'
+      + '<div style="font-family:var(--serif);font-size:17px;color:var(--t1);margin-bottom:2px;">' + escapeHtml(p.nom) + '</div>'
+      + '<div style="font-family:\'Scheherazade New\',serif;font-size:20px;color:' + p.couleur + ';direction:rtl;">' + ar + '</div>'
+      + '</div>'
+      + '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="' + p.couleur + '" stroke-width="2" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>'
+      + '</button>';
+  });
+  html += '</div>';
+  el.innerHTML = html;
+}
+
 const WEEKLY_HADITHS = {
   perfect: [ 
     { text: "L'acte le plus aimé d'Allah est le plus constant, même s'il est petit.", source: "Sahih al-Bukhari 6464" },
@@ -6773,6 +6797,17 @@ let v2CurrentView = 'sanctuaire';
 // Chaque trait est accompagné d'une référence prophétique.
 // Cette compilation n'a pas valeur de traité savant.
 // ════════════════════════════════════════════════════════════
+var BAB_AN_NAFS = {
+  version: '0.1',
+  validated: false,
+  portes: [
+    { id: 'colere', nom: 'La Col\u00e8re', couleur: '#E53935', image: 'assets/cards/porte-colere.webp' },
+    { id: 'regard', nom: 'Le Regard', couleur: '#7E57C2', image: 'assets/cards/porte-regard.webp' },
+    { id: 'anxiete', nom: 'L\u2019Anxi\u00e9t\u00e9', couleur: '#42A5F5', image: 'assets/cards/porte-anxiete.webp' },
+    { id: 'arrogance', nom: 'L\u2019Arrogance', couleur: '#FF8F00', image: 'assets/cards/porte-arrogance.webp' },
+    { id: 'paresse', nom: 'La Paresse', couleur: '#78909C', image: 'assets/cards/porte-paresse.webp' }
+  ]
+};
 var NAFS_TRAITS = [
   // === SAISON 1 : maladies_coeur (1-13) ===
   { id:1, season:'maladies_coeur', name_fr:'Jalousie', name_ar:'الْحَسَدُ', name_translit:'hasad',
@@ -7363,6 +7398,7 @@ function v2GoTo(viewName) {
   _v2TransitionTo('view-' + viewName, { onShow: function() {
     if (sanctEl2) sanctEl2.classList.remove('active');
     if (viewName === 'wird' && typeof renderWird === 'function') setTimeout(renderWird, 60);
+    if (viewName === 'bab-an-nafs' && typeof renderBabAnNafs === 'function') setTimeout(renderBabAnNafs, 60);
     if (viewName === 'checklist' && typeof renderLevel === 'function') renderLevel(typeof currentLevel !== 'undefined' ? currentLevel : 1);
     if (viewName === 'progression' && typeof renderProgression === 'function') renderProgression();
   }});
