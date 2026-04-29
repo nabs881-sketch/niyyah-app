@@ -3577,6 +3577,7 @@ function resetWirdSession(session) {
 // ── BAB AN-NAFS ──
 // BAB_AN_NAFS_AR supprimé — AR intégré dans BAB_AN_NAFS.portes[].nom.ar
 function renderBabAnNafs() {
+  hideAlHayaBtn();
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;">'
@@ -3638,7 +3639,7 @@ function openBabPorte(id, step) {
   var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;">';
   if (!isCloture) {
     var backFn = _babCurrentStep === 1 ? 'renderBabAnNafs()' : 'openBabPorte(\'' + id + '\',' + (_babCurrentStep - 1) + ')';
-    html += '<button onclick="' + backFn + '" style="display:flex;align-items:center;background:rgba(10,10,10,0.7);border:1px solid rgba(212,175,55,0.35);border-radius:50%;color:rgba(212,175,55,0.7);cursor:pointer;margin-bottom:16px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.4);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
+    html += '<button onclick="' + backFn + '" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:16px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
   }
   if (porte.validated === false && _babCurrentStep === 1) {
     html += '<div style="font-size:11px;font-style:italic;color:#FFA000;background:rgba(255,160,0,0.1);padding:6px 12px;border-radius:6px;text-align:center;margin-bottom:12px;">Mode beta \u2014 contenu en validation</div>';
@@ -7395,12 +7396,12 @@ function setupTopUI(screen) {
   var backBtn = document.getElementById('v2-back-btn');
   if (backBtn) backBtn.classList.remove('visible');
   var tbEl = document.getElementById('topbar-v2');
-  if (tbEl) tbEl.classList.remove('active');
-  if (tbEl) tbEl.classList.remove('secondary');
+  if (tbEl) { tbEl.classList.remove('active'); tbEl.classList.remove('secondary'); tbEl.style.display = ''; }
   switch (screen) {
     case 'sanctuaire': if (tbEl) tbEl.classList.add('active'); break;
     case 'journal': case 'nafs': showAlHayaBtn(); break;
     case 'wird': case 'checklist': case 'progression': if (tbEl) { tbEl.classList.add('active'); tbEl.classList.add('secondary'); } if (backBtn) backBtn.classList.add('visible'); break;
+    case 'bab-an-nafs': if (tbEl) tbEl.style.display = 'none'; break;
   }
 }
 function v2GoSanctuaire() {
@@ -8226,7 +8227,7 @@ function updateSanctuaireNextPrayer() {
   el.innerHTML = '<div style="text-align:center;margin:20px 0;display:flex;align-items:center;justify-content:center;gap:16px;opacity:' + (diffMin <= 60 ? '1' : '0.75') + ';">' + _star + '<span class="next-prayer-text">' + txt + '</span>' + _star + '</div>';
   el.style.display = 'block';
 }
-function showAlHayaBtn() { var b = document.getElementById('alhaya-btn'); if (b) b.style.display = 'block'; var tb = document.getElementById('topbar-alhaya-btn'); if (tb) tb.style.opacity = '0.8'; }
+function showAlHayaBtn() { var bab = document.getElementById('view-bab-an-nafs'); if (bab && bab.classList.contains('active')) return; var b = document.getElementById('alhaya-btn'); if (b) b.style.display = 'block'; var tb = document.getElementById('topbar-alhaya-btn'); if (tb) tb.style.opacity = '0.8'; }
 function hideAlHayaBtn() { var b = document.getElementById('alhaya-btn'); if (b) b.style.display = 'none'; var tb = document.getElementById('topbar-alhaya-btn'); if (tb) tb.style.opacity = '0.5'; }
 function openAlHaya() {
   var ov = document.getElementById('alhaya-overlay');
