@@ -3577,7 +3577,7 @@ function resetWirdSession(session) {
 // ── BAB AN-NAFS ──
 // BAB_AN_NAFS_AR supprimé — AR intégré dans BAB_AN_NAFS.portes[].nom.ar
 function renderBabAnNafs() {
-  hideAlHayaBtn();
+  document.body.classList.add('in-bab-an-nafs');
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;">'
@@ -3607,7 +3607,7 @@ function _babSetIdx(id, idx) {
 }
 
 function openBabPorte(id, step) {
-  hideAlHayaBtn();
+  document.body.classList.add('in-bab-an-nafs');
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var porte = BAB_AN_NAFS.portes.find(function(p) { return p.id === id; });
@@ -7400,15 +7400,16 @@ function v2GoNafs() {
 }
 function setupTopUI(screen) {
   hideAlHayaBtn();
+  document.body.classList.remove('in-bab-an-nafs');
   var backBtn = document.getElementById('v2-back-btn');
   if (backBtn) backBtn.classList.remove('visible');
   var tbEl = document.getElementById('topbar-v2');
-  if (tbEl) { tbEl.classList.remove('active'); tbEl.classList.remove('secondary'); tbEl.style.display = ''; }
+  if (tbEl) { tbEl.classList.remove('active'); tbEl.classList.remove('secondary'); }
   switch (screen) {
     case 'sanctuaire': if (tbEl) tbEl.classList.add('active'); break;
     case 'journal': case 'nafs': showAlHayaBtn(); break;
     case 'wird': case 'checklist': case 'progression': if (tbEl) { tbEl.classList.add('active'); tbEl.classList.add('secondary'); } if (backBtn) backBtn.classList.add('visible'); break;
-    case 'bab-an-nafs': if (tbEl) tbEl.style.display = 'none'; break;
+    case 'bab-an-nafs': document.body.classList.add('in-bab-an-nafs'); break;
   }
 }
 function v2GoSanctuaire() {
