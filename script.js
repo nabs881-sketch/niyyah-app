@@ -3584,7 +3584,7 @@ function renderBabAnNafs() {
     + '<div style="font-size:13px;color:var(--t3);text-align:center;margin-bottom:24px;font-style:italic;">Les portes de l\u2019\u00e2me</div>';
   BAB_AN_NAFS.portes.forEach(function(p) {
     var ar = BAB_AN_NAFS_AR[p.id] || '';
-    html += '<button onclick="v2GoTo(\'bab-porte-' + p.id + '\')" style="display:flex;align-items:center;gap:14px;width:100%;padding:16px;border-radius:12px;margin-bottom:12px;border:1px solid ' + p.couleur + '33;background:' + p.couleur + '26;cursor:pointer;text-align:left;">'
+    html += '<button onclick="openBabPorte(\'' + p.id + '\')" style="display:flex;align-items:center;gap:14px;width:100%;padding:16px;border-radius:12px;margin-bottom:12px;border:1px solid ' + p.couleur + '33;background:' + p.couleur + '26;cursor:pointer;text-align:left;">'
       + '<img src="' + escapeHtml(p.image) + '" alt="" style="width:56px;height:56px;border-radius:10px;object-fit:cover;flex-shrink:0;" onerror="this.style.display=\'none\'">'
       + '<div style="flex:1;">'
       + '<div style="font-family:var(--serif);font-size:17px;color:var(--t1);margin-bottom:2px;">' + escapeHtml(p.nom) + '</div>'
@@ -3595,6 +3595,67 @@ function renderBabAnNafs() {
   });
   html += '</div>';
   el.innerHTML = html;
+}
+
+var _babCurrentPorte = null;
+var _babCurrentStep = 1;
+
+function openBabPorte(id, step) {
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var porte = BAB_AN_NAFS.portes.find(function(p) { return p.id === id; });
+  if (!porte) return;
+  _babCurrentPorte = id;
+  _babCurrentStep = step || 1;
+  var ar = BAB_AN_NAFS_AR[id] || '';
+  var etapes = ['Rappel', 'Action', 'Intention', 'Cl\u00f4ture'];
+  var etape = etapes[_babCurrentStep - 1] || 'Rappel';
+  var contenu, source, isIntention = false, isCloture = false;
+  if (_babCurrentStep === 1) { contenu = porte.rappel.fr; source = porte.rappel.source; }
+  else if (_babCurrentStep === 2) { contenu = porte.action.fr; source = porte.action.source; }
+  else if (_babCurrentStep === 3) { contenu = porte.intention.fr; source = ''; isIntention = true; }
+  else if (_babCurrentStep === 4) { contenu = porte.cloture.fr; source = ''; isCloture = true; }
+  else { contenu = ''; source = ''; }
+  var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;">';
+  if (!isCloture) {
+    var backFn = _babCurrentStep === 1 ? 'renderBabAnNafs()' : 'openBabPorte(\'' + id + '\',' + (_babCurrentStep - 1) + ')';
+    html += '<button onclick="' + backFn + '" style="display:flex;align-items:center;gap:6px;background:none;border:none;color:var(--t3);font-size:14px;cursor:pointer;margin-bottom:20px;padding:0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg> Retour</button>';
+  }
+  html += '<div style="display:flex;justify-content:center;gap:6px;margin-bottom:20px;">';
+  for (var i = 1; i <= 4; i++) {
+    html += '<div style="width:' + (i === _babCurrentStep ? '20px' : '6px') + ';height:6px;border-radius:3px;background:' + (i <= _babCurrentStep ? porte.couleur : 'rgba(255,255,255,0.15)') + ';transition:all 0.3s;"></div>';
+  }
+  html += '</div>'
+    + '<div style="text-align:center;margin-bottom:24px;">'
+    + '<div style="font-family:var(--serif);font-size:' + (isCloture ? '18' : '24') + 'px;color:' + porte.couleur + ';margin-bottom:4px;' + (isCloture ? 'opacity:0.7;' : '') + '">' + escapeHtml(porte.nom) + '</div>'
+    + '<div style="font-family:\'Scheherazade New\',serif;font-size:' + (isCloture ? '22' : '28') + 'px;color:' + porte.couleur + ';direction:rtl;opacity:' + (isCloture ? '0.5' : '0.7') + ';">' + ar + '</div>'
+    + '</div>'
+    + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + porte.couleur + ';opacity:0.6;margin-bottom:10px;">' + escapeHtml(etape) + '</div>';
+  if (isCloture) {
+    html += '<div style="font-family:var(--serif);font-size:22px;color:' + porte.couleur + ';line-height:1.6;text-align:center;margin:32px 0 40px;">' + escapeHtml(contenu) + '</div>'
+      + '<button onclick="babCompletPorte(\'' + id + '\')" style="width:100%;padding:16px;border-radius:12px;border:none;background:' + porte.couleur + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">C\u2019est fait \u2726</button>';
+  } else if (isIntention) {
+    html += '<div style="font-family:var(--serif);font-size:22px;font-style:italic;color:' + porte.couleur + ';line-height:1.6;text-align:center;margin:24px 0 32px;padding:20px;border:1px dashed ' + porte.couleur + '44;border-radius:16px;background:' + porte.couleur + '0d;">' + escapeHtml(contenu) + '</div>';
+    html += '<button onclick="openBabPorte(\'' + id + '\',4)" style="width:100%;padding:14px;border-radius:12px;border:1px solid ' + porte.couleur + '55;background:' + porte.couleur + '1a;color:' + porte.couleur + ';font-size:14px;font-family:var(--serif);cursor:pointer;">Suivant \u2192</button>';
+  } else {
+    html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:var(--t1);line-height:1.7;margin-bottom:12px;">' + escapeHtml(contenu) + '</div>'
+      + (source ? '<div style="font-size:13px;color:var(--t3);font-style:italic;margin-bottom:32px;">\u2014 ' + escapeHtml(source) + '</div>' : '<div style="margin-bottom:32px;"></div>');
+    var nextStep = _babCurrentStep + 1;
+    html += '<button onclick="openBabPorte(\'' + id + '\',' + nextStep + ')" style="width:100%;padding:14px;border-radius:12px;border:1px solid ' + porte.couleur + '55;background:' + porte.couleur + '1a;color:' + porte.couleur + ';font-size:14px;font-family:var(--serif);cursor:pointer;">Suivant \u2192</button>';
+  }
+  html += '</div>';
+  el.innerHTML = html;
+}
+
+function babCompletPorte(id) {
+  try {
+    var data = JSON.parse(safeGetItem('niyyah_bab_an_nafs') || '{}');
+    if (!data[id]) data[id] = { count: 0 };
+    data[id].count = (data[id].count || 0) + 1;
+    data[id].lastDate = todayKey();
+    safeSetItem('niyyah_bab_an_nafs', JSON.stringify(data));
+  } catch(e) {}
+  renderBabAnNafs();
 }
 
 const WEEKLY_HADITHS = {
@@ -6801,11 +6862,11 @@ var BAB_AN_NAFS = {
   version: '0.1',
   validated: false,
   portes: [
-    { id: 'colere', nom: 'La Col\u00e8re', couleur: '#E53935', image: 'assets/cards/porte-colere.webp' },
-    { id: 'regard', nom: 'Le Regard', couleur: '#7E57C2', image: 'assets/cards/porte-regard.webp' },
-    { id: 'anxiete', nom: 'L\u2019Anxi\u00e9t\u00e9', couleur: '#42A5F5', image: 'assets/cards/porte-anxiete.webp' },
-    { id: 'arrogance', nom: 'L\u2019Arrogance', couleur: '#FF8F00', image: 'assets/cards/porte-arrogance.webp' },
-    { id: 'paresse', nom: 'La Paresse', couleur: '#78909C', image: 'assets/cards/porte-paresse.webp' }
+    { id: 'colere', nom: 'Col\u00e8re', couleur: '#E53935', image: 'assets/cards/porte-colere.webp', rappel: { fr: 'Le Proph\u00e8te \uFDFA a dit : \u00ab La force ne r\u00e9side pas dans le fait de terrasser l\u2019adversaire, mais dans le fait de se ma\u00eetriser au moment de la col\u00e8re. \u00bb', source: 'Bukhari 6114' }, action: { fr: 'Quand tu sens la col\u00e8re monter, fais tes ablutions \u00e0 l\u2019eau froide. Si tu es debout, assieds-toi. Si tu es assis, allonge-toi.', source: 'Abu Dawud 4782' }, intention: { fr: 'Je choisis la douceur quand tout en moi veut exploser.' }, cloture: { fr: 'Tu as travers\u00e9 la porte de la Col\u00e8re. Que la douceur reste ton arme.' } },
+    { id: 'regard', nom: 'Regard', couleur: '#7E57C2', image: 'assets/cards/porte-regard.webp', rappel: { fr: '\u00ab Dis aux croyants de baisser leurs regards et de pr\u00e9server leur chastet\u00e9. Cela est plus pur pour eux. \u00bb', source: 'Coran 24:30' }, action: { fr: 'D\u00e9tourne le premier regard. Le premier est pardonn\u00e9, le second est \u00e0 ton compte. Baisse les yeux et dis : Allahumma inni as\u2019aluka khayra ma ara.', source: 'Muslim 2159' }, intention: { fr: 'Je prot\u00e8ge mon regard pour pr\u00e9server mon c\u0153ur.' }, cloture: { fr: 'Tu as travers\u00e9 la porte du Regard. Que tes yeux ne voient que ce qui \u00e9l\u00e8ve.' } },
+    { id: 'anxiete', nom: 'Anxi\u00e9t\u00e9', couleur: '#42A5F5', image: 'assets/cards/porte-anxiete.webp', rappel: { fr: '\u00ab Certes, c\u2019est par le rappel d\u2019Allah que les c\u0153urs se tranquillisent. \u00bb', source: 'Coran 13:28' }, action: { fr: 'R\u00e9p\u00e8te 7 fois : Hasbiyallahu la ilaha illa Hu, alayhi tawakkaltu wa Huwa Rabbul-Arshil-Azim. Pose la main sur ton c\u0153ur en respirant.', source: 'Abu Dawud 5081' }, intention: { fr: 'Je remets mon angoisse \u00e0 Allah et je respire dans Sa confiance.' }, cloture: { fr: 'Tu as travers\u00e9 la porte de l\u2019Anxi\u00e9t\u00e9. Allah est ton appui, toujours.' } },
+    { id: 'arrogance', nom: 'Arrogance', couleur: '#FF8F00', image: 'assets/cards/porte-arrogance.webp', rappel: { fr: '\u00ab N\u2019entrera pas au Paradis celui qui a dans le c\u0153ur le poids d\u2019un atome d\u2019orgueil. \u00bb', source: 'Muslim 91' }, action: { fr: 'Rends service \u00e0 quelqu\u2019un que tu consid\u00e8res en dessous de toi. Porte les courses d\u2019un voisin. Nettoie apr\u00e8s les autres sans qu\u2019on te le demande.', source: 'Adab al-Mufrad 552' }, intention: { fr: 'Je me rappelle que je ne suis rien sans la gr\u00e2ce d\u2019Allah.' }, cloture: { fr: 'Tu as travers\u00e9 la porte de l\u2019Arrogance. L\u2019humilit\u00e9 est la noblesse du c\u0153ur.' } },
+    { id: 'paresse', nom: 'Paresse', couleur: '#78909C', image: 'assets/cards/porte-paresse.webp', rappel: { fr: 'Le Proph\u00e8te \uFDFA cherchait refuge aupr\u00e8s d\u2019Allah contre la paresse : \u00ab Allahumma inni a\u2019udhu bika min al-kasali. \u00bb', source: 'Bukhari 6369' }, action: { fr: 'L\u00e8ve-toi maintenant et fais 2 rak\u2019aat. Pas demain. Pas apr\u00e8s. Maintenant. Le premier pas brise la paresse.', source: 'Ibn al-Qayyim, Madarij' }, intention: { fr: 'Je me l\u00e8ve maintenant, m\u00eame sans motivation \u2014 c\u2019est l\u00e0 que commence la sinc\u00e9rit\u00e9.' }, cloture: { fr: 'Tu as travers\u00e9 la porte de la Paresse. Chaque pas compte, m\u00eame le plus petit.' } }
   ]
 };
 var NAFS_TRAITS = [
@@ -9878,6 +9939,9 @@ window.regardeCapture         = regardeCapture;
 window.regardeClose           = regardeClose;
 window.regardeCancelThinking  = regardeCancelThinking;
 window.openRegardeJournal     = openRegardeJournal;
+window.renderBabAnNafs        = renderBabAnNafs;
+window.openBabPorte           = openBabPorte;
+window.babCompletPorte        = babCompletPorte;
 
 // A11y: overlay list used by Escape + focus trap
 var A11Y_OVERLAYS = ['scanner-overlay','niyyah-journal-overlay','niyyah-detail-overlay',
