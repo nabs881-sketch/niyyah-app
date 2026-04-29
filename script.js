@@ -3636,37 +3636,44 @@ function openBabPorte(id, step) {
   else if (_babCurrentStep === 3) { var arr = porte.intentions || [porte.intention]; var i = idx.intention % arr.length; contenu = arr[i].fr; source = ''; isIntention = true; }
   else if (_babCurrentStep === 4) { var arr = porte.clotures || [porte.cloture]; var i = idx.cloture % arr.length; contenu = arr[i].fr; source = ''; isCloture = true; }
   else { contenu = ''; source = ''; }
+  var _noiseSvg = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E";
   var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;">';
   if (!isCloture) {
     var backFn = _babCurrentStep === 1 ? 'renderBabAnNafs()' : 'openBabPorte(\'' + id + '\',' + (_babCurrentStep - 1) + ')';
-    html += '<button onclick="' + backFn + '" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:16px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
+    html += '<button onclick="' + backFn + '" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
   }
   if (porte.validated === false && _babCurrentStep === 1) {
     html += '<div style="font-size:11px;font-style:italic;color:#FFA000;background:rgba(255,160,0,0.1);padding:6px 12px;border-radius:6px;text-align:center;margin-bottom:12px;">Mode beta \u2014 contenu en validation</div>';
   }
-  html += '<div style="display:flex;justify-content:center;gap:6px;margin-bottom:20px;">';
+  // ── Carte premium ──
+  html += '<div style="background:radial-gradient(ellipse at 50% 30%,' + porte.couleur + '12,#0a0a0a 70%),url(\'' + _noiseSvg + '\');border:1px solid rgba(212,175,108,0.15);border-radius:16px;padding:32px 20px 28px;text-align:center;">';
+  // Dots progression
+  html += '<div style="display:flex;justify-content:center;gap:6px;margin-bottom:28px;">';
   for (var d = 1; d <= 4; d++) {
-    html += '<div style="width:' + (d === _babCurrentStep ? '20px' : '6px') + ';height:6px;border-radius:3px;background:' + (d <= _babCurrentStep ? porte.couleur : 'rgba(255,255,255,0.15)') + ';transition:all 0.3s;"></div>';
-  }
-  html += '</div>'
-    + '<div style="text-align:center;margin-bottom:24px;">'
-    + '<div style="font-family:var(--serif);font-size:' + (isCloture ? '18' : '24') + 'px;color:' + porte.couleur + ';margin-bottom:4px;' + (isCloture ? 'opacity:0.7;' : '') + '">' + escapeHtml(nomFr) + '</div>'
-    + '<div style="font-family:\'Scheherazade New\',serif;font-size:' + (isCloture ? '22' : '28') + 'px;color:' + porte.couleur + ';direction:rtl;opacity:' + (isCloture ? '0.5' : '0.7') + ';">' + ar + '</div>'
-    + '</div>'
-    + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + porte.couleur + ';opacity:0.6;margin-bottom:10px;">' + escapeHtml(etape) + '</div>';
-  if (isCloture) {
-    html += '<div style="font-family:var(--serif);font-size:22px;color:' + porte.couleur + ';line-height:1.6;text-align:center;margin:32px 0 40px;">' + escapeHtml(contenu) + '</div>'
-      + '<button onclick="babCompletPorte(\'' + id + '\')" style="width:100%;padding:16px;border-radius:12px;border:none;background:' + porte.couleur + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">C\u2019est fait \u2726</button>';
-  } else if (isIntention) {
-    html += '<div style="font-family:var(--serif);font-size:22px;font-style:italic;color:' + porte.couleur + ';line-height:1.6;text-align:center;margin:24px 0 32px;padding:20px;border:1px dashed ' + porte.couleur + '44;border-radius:16px;background:' + porte.couleur + '0d;">' + escapeHtml(contenu) + '</div>';
-    html += '<button onclick="openBabPorte(\'' + id + '\',4)" style="width:100%;padding:14px;border-radius:12px;border:1px solid ' + porte.couleur + '55;background:' + porte.couleur + '1a;color:' + porte.couleur + ';font-size:14px;font-family:var(--serif);cursor:pointer;">Suivant \u2192</button>';
-  } else {
-    html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:var(--t1);line-height:1.7;margin-bottom:12px;">' + escapeHtml(contenu) + '</div>'
-      + (source ? '<div style="font-size:13px;color:var(--t3);font-style:italic;margin-bottom:32px;">\u2014 ' + escapeHtml(source) + '</div>' : '<div style="margin-bottom:32px;"></div>');
-    var nextStep = _babCurrentStep + 1;
-    html += '<button onclick="openBabPorte(\'' + id + '\',' + nextStep + ')" style="width:100%;padding:14px;border-radius:12px;border:1px solid ' + porte.couleur + '55;background:' + porte.couleur + '1a;color:' + porte.couleur + ';font-size:14px;font-family:var(--serif);cursor:pointer;">Suivant \u2192</button>';
+    html += '<div style="width:' + (d === _babCurrentStep ? '20px' : '6px') + ';height:6px;border-radius:3px;background:' + (d <= _babCurrentStep ? porte.couleur : 'rgba(255,255,255,0.12)') + ';transition:all 0.3s;"></div>';
   }
   html += '</div>';
+  // Titre FR + AR
+  html += '<div style="margin-bottom:28px;">'
+    + '<div style="font-family:var(--serif);font-size:' + (isCloture ? '18' : '24') + 'px;color:' + porte.couleur + ';margin-bottom:6px;' + (isCloture ? 'opacity:0.7;' : '') + '">' + escapeHtml(nomFr) + '</div>'
+    + '<div style="font-family:\'Scheherazade New\',serif;font-size:' + (isCloture ? '22' : '28') + 'px;color:' + porte.couleur + ';direction:rtl;opacity:' + (isCloture ? '0.5' : '0.7') + ';">' + ar + '</div>'
+    + '</div>';
+  // Label étape
+  html += '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + porte.couleur + ';opacity:0.6;margin-bottom:20px;text-align:center;">' + escapeHtml(etape) + '</div>';
+  // Contenu
+  if (isCloture) {
+    html += '<div style="font-family:var(--serif);font-size:22px;color:' + porte.couleur + ';line-height:1.6;text-align:center;max-width:520px;margin:20px auto 36px;">' + escapeHtml(contenu) + '</div>'
+      + '<button onclick="babCompletPorte(\'' + id + '\')" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + porte.couleur + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">C\u2019est fait \u2726</button>';
+  } else if (isIntention) {
+    html += '<div style="font-family:var(--serif);font-size:20px;font-style:italic;color:' + porte.couleur + ';line-height:1.6;text-align:center;max-width:520px;margin:12px auto 28px;padding:20px;border:1px dashed ' + porte.couleur + '44;border-radius:16px;background:' + porte.couleur + '0d;">' + escapeHtml(contenu) + '</div>';
+    html += '<button onclick="openBabPorte(\'' + id + '\',4)" style="width:100%;max-width:320px;padding:14px;border-radius:12px;border:1px solid ' + porte.couleur + '55;background:' + porte.couleur + '1a;color:' + porte.couleur + ';font-size:14px;font-family:var(--serif);cursor:pointer;">Suivant \u2192</button>';
+  } else {
+    html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:var(--t1);line-height:1.8;text-align:center;max-width:520px;margin:0 auto 16px;">' + escapeHtml(contenu) + '</div>'
+      + (source ? '<div style="font-size:13px;color:var(--t3);font-style:italic;text-align:center;margin-bottom:28px;">\u2014 ' + escapeHtml(source) + '</div>' : '<div style="margin-bottom:28px;"></div>');
+    var nextStep = _babCurrentStep + 1;
+    html += '<button onclick="openBabPorte(\'' + id + '\',' + nextStep + ')" style="width:100%;max-width:320px;padding:14px;border-radius:12px;border:1px solid ' + porte.couleur + '55;background:' + porte.couleur + '1a;color:' + porte.couleur + ';font-size:14px;font-family:var(--serif);cursor:pointer;">Suivant \u2192</button>';
+  }
+  html += '</div></div>';
   el.innerHTML = html;
 }
 
