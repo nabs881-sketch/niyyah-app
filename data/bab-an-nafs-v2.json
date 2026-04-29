@@ -1,0 +1,291 @@
+{
+  "version": "0.2",
+  "validated": false,
+  "portes": [
+    {
+      "id": "colere",
+      "nom": { "fr": "Colère", "ar": "الغضب" },
+      "couleur": "#B33A3A",
+      "image": "assets/cards/porte-colere.webp",
+      "rappels": [
+        {
+          "type": "hadith",
+          "fr": "Le fort n'est pas celui qui terrasse les hommes. Le fort est celui qui se maîtrise quand il est en colère.",
+          "source": "Al-Bukhârî 6114, Muslim 2609 — Abû Hurayra",
+          "validated": false
+        },
+        {
+          "type": "verset",
+          "fr": "Ceux qui dépensent dans l'aisance comme dans l'adversité, qui dominent leur colère et qui pardonnent aux hommes — Allah aime les bienfaisants.",
+          "source": "Coran, sourate Âl 'Imrân (3), verset 134",
+          "validated": false
+        },
+        {
+          "type": "hadith",
+          "fr": "Un homme dit au Prophète ﷺ : Conseille-moi. Il répondit : Ne te mets pas en colère. L'homme répéta plusieurs fois sa demande, le Prophète ﷺ répétait : Ne te mets pas en colère.",
+          "source": "Al-Bukhârî 6116 — Abû Hurayra",
+          "validated": false
+        }
+      ],
+      "actions": [
+        {
+          "fr": "Si tu es debout, assieds-toi. Si tu es assis, allonge-toi. Le corps qui descend, le feu qui retombe.",
+          "source": "Abû Dawûd 4782, Ahmad",
+          "validated": false
+        },
+        {
+          "fr": "Lève-toi et fais le wudû. L'eau apaise ce que la colère a allumé. Trois passages d'eau froide sur le visage et les bras.",
+          "source": "Abû Dawûd 4784",
+          "validated": false
+        },
+        {
+          "fr": "Tais-toi. Ne dis rien pendant une minute. Pas un mot, pas un message, pas un cri. Le silence est ton bouclier.",
+          "source": "Ahmad 2136 — « Si l'un de vous se met en colère, qu'il se taise. »",
+          "validated": false
+        }
+      ],
+      "intentions": [
+        {
+          "fr": "Yâ Allah, j'éteins ce feu pour Toi. Donne-moi le hilm.",
+          "validated": false
+        },
+        {
+          "fr": "Yâ Allah, je préfère Ton agrément à ma vengeance.",
+          "validated": false
+        }
+      ],
+      "clotures": [
+        { "fr": "Tu as franchi la porte. Le silence que tu as gardé, Allah l'a entendu." },
+        { "fr": "Tu as franchi la porte. Ce que tu n'as pas dit te sera compté." }
+      ]
+    },
+    {
+      "id": "anxiete",
+      "nom": { "fr": "Anxiété", "ar": "القلق" },
+      "couleur": "#3F51B5",
+      "image": "assets/cards/porte-anxiete.webp",
+      "rappels": [
+        {
+          "type": "verset",
+          "fr": "C'est par le rappel d'Allah que les cœurs s'apaisent.",
+          "source": "Coran, sourate Ar-Ra'd (13), verset 28",
+          "validated": false
+        },
+        {
+          "type": "verset",
+          "fr": "Et place ta confiance en Allah. Allah suffit comme protecteur.",
+          "source": "Coran, sourate An-Nisâ' (4), verset 81",
+          "validated": false
+        },
+        {
+          "type": "hadith",
+          "fr": "Étonnante est l'affaire du croyant : tout ce qui lui arrive est un bien. S'il lui arrive du bien, il remercie — et c'est un bien. S'il lui arrive un mal, il patiente — et c'est un bien.",
+          "source": "Muslim 2999 — Suhayb",
+          "validated": false
+        }
+      ],
+      "actions": [
+        {
+          "fr": "Pose ta main sur ton cœur. Respire lentement. Répète sept fois : Hasbiya Allâhu lâ ilâha illâ Huwa, 'alayhi tawakkaltu wa Huwa Rabbu-l-'arshi-l-'azhîm.",
+          "source": "Abû Dawûd 5081 — Abû ad-Dardâ'",
+          "validated": false
+        },
+        {
+          "fr": "Prosterne-toi. Front contre le sol. Reste-y le temps de trois respirations profondes. Ce qui pèse sur toi, dépose-le là.",
+          "source": "Muslim 482 — « Le serviteur est le plus proche de son Seigneur quand il est en prosternation. »",
+          "validated": false
+        },
+        {
+          "fr": "Sors. Marche dehors trois minutes, même devant ta porte. Regarde le ciel. Allah a créé tout cela aussi.",
+          "source": "Coran, Âl 'Imrân (3), 190-191 — la méditation sur la création",
+          "validated": false
+        }
+      ],
+      "intentions": [
+        {
+          "fr": "Yâ Allah, je dépose ce poids. Tu es Celui qui suffit.",
+          "validated": false
+        },
+        {
+          "fr": "Yâ Allah, je remets entre Tes mains ce que je ne peux porter seul.",
+          "validated": false
+        }
+      ],
+      "clotures": [
+        { "fr": "Tu as franchi la porte. Ton cœur n'est pas seul — il est confié." },
+        { "fr": "Tu as franchi la porte. Ce que tu Lui as donné, Il en prend soin." }
+      ]
+    },
+    {
+      "id": "regard",
+      "nom": { "fr": "Regard", "ar": "النظر" },
+      "couleur": "#2E7D5B",
+      "image": "assets/cards/porte-regard.webp",
+      "rappels": [
+        {
+          "type": "verset",
+          "fr": "Dis aux croyants de baisser leurs regards et de préserver leur chasteté. C'est plus pur pour eux. Allah est parfaitement informé de ce qu'ils font.",
+          "source": "Coran, sourate An-Nûr (24), verset 30",
+          "validated": false
+        },
+        {
+          "type": "hadith",
+          "fr": "Jarîr ibn 'Abdillâh a dit : J'ai interrogé le Messager d'Allah ﷺ sur le regard fortuit. Il m'a ordonné de détourner mon regard.",
+          "source": "Muslim 2159",
+          "validated": false
+        },
+        {
+          "type": "hadith",
+          "fr": "Le Prophète ﷺ a dit à 'Alî : Ô 'Alî, ne fais pas suivre un regard d'un autre. Le premier est pour toi, le second contre toi.",
+          "source": "Abû Dawûd 2149, Tirmidhî 2777",
+          "validated": false
+        }
+      ],
+      "actions": [
+        {
+          "fr": "Détourne ton regard maintenant. Lève les yeux vers le haut, ou ferme-les un instant. Un seul mouvement suffit.",
+          "source": "Muslim 2159",
+          "validated": false
+        },
+        {
+          "fr": "Si l'écran t'a piégé, ferme-le. Pose ton téléphone face contre la table. Lève-toi, change de pièce, bois un verre d'eau.",
+          "source": "Application contemporaine du hadith de Jarîr (Muslim 2159)",
+          "validated": false
+        },
+        {
+          "fr": "Dis intérieurement : A'ûdhu billâhi mina-sh-shaytâni-r-rajîm. Puis pense à la mort, pendant trois respirations.",
+          "source": "Coran, An-Nahl (16), 98 + recommandation prophétique",
+          "validated": false
+        }
+      ],
+      "intentions": [
+        {
+          "fr": "Yâ Allah, je préserve mon regard pour Toi. Garde mon cœur pur.",
+          "validated": false
+        },
+        {
+          "fr": "Yâ Allah, ne fais pas de mes yeux des traîtres à mon âme.",
+          "validated": false
+        }
+      ],
+      "clotures": [
+        { "fr": "Tu as franchi la porte. Ce que tu n'as pas regardé, Allah l'a vu." },
+        { "fr": "Tu as franchi la porte. Le regard que tu as détourné, ton cœur en bénéficie déjà." }
+      ]
+    },
+    {
+      "id": "arrogance",
+      "nom": { "fr": "Arrogance", "ar": "الكِبْر" },
+      "couleur": "#6A1B7A",
+      "image": "assets/cards/porte-arrogance.webp",
+      "rappels": [
+        {
+          "type": "hadith",
+          "fr": "N'entrera pas au Paradis celui qui a dans le cœur le poids d'un atome d'orgueil. — Et l'orgueil, ô Messager d'Allah, qu'est-ce ? — C'est rejeter la vérité et mépriser les gens.",
+          "source": "Muslim 91 — 'Abdullâh ibn Mas'ûd",
+          "validated": false
+        },
+        {
+          "type": "verset",
+          "fr": "Ne détourne pas ton visage des hommes par mépris, et ne marche pas sur la terre avec arrogance. Allah n'aime pas tout fanfaron plein de gloriole.",
+          "source": "Coran, sourate Luqmân (31), verset 18",
+          "validated": false
+        },
+        {
+          "type": "hadith",
+          "fr": "Allah m'a révélé d'être humble jusqu'à ce que personne n'opprime personne, jusqu'à ce que personne ne se vante devant un autre.",
+          "source": "Muslim 2865 — 'Iyâd ibn Himâr",
+          "validated": false
+        }
+      ],
+      "actions": [
+        {
+          "fr": "Prosterne-toi. Front contre le sol. Reste-y le temps de trois respirations. Ton front, c'est ce qu'il y a de plus haut chez toi — et tu le poses au plus bas.",
+          "source": "Muslim 482",
+          "validated": false
+        },
+        {
+          "fr": "Reconnais à voix basse une erreur que tu n'as jamais admise. Une seule phrase : « J'ai eu tort sur ceci. » Allah l'entend même si personne d'autre ne l'entend.",
+          "source": "Tirmidhî 3540 — vertu de l'aveu",
+          "validated": false
+        },
+        {
+          "fr": "Salue le premier quelqu'un que tu aurais ignoré. Un voisin, un collègue, un inconnu. Que ton salâm soit sincère, sans regarder de haut.",
+          "source": "Muslim 54 — « Vous n'entrerez pas au Paradis tant que vous n'aurez pas la foi, et vous ne croirez pas tant que vous ne vous aimerez pas. Voulez-vous que je vous indique une chose qui vous fera vous aimer ? Diffusez le salâm entre vous. »",
+          "validated": false
+        }
+      ],
+      "intentions": [
+        {
+          "fr": "Yâ Allah, je ne suis rien sans Toi. Brise mon orgueil, garde ma dignité.",
+          "validated": false
+        },
+        {
+          "fr": "Yâ Allah, fais que je voie les autres comme Tu les vois.",
+          "validated": false
+        }
+      ],
+      "clotures": [
+        { "fr": "Tu as franchi la porte. Le front qui se baisse, Allah le relève." },
+        { "fr": "Tu as franchi la porte. Ce que tu as reconnu, Il l'a déjà couvert." }
+      ]
+    },
+    {
+      "id": "paresse",
+      "nom": { "fr": "Paresse", "ar": "الكَسَل" },
+      "couleur": "#6E6E6E",
+      "image": "assets/cards/porte-paresse.webp",
+      "rappels": [
+        {
+          "type": "dua",
+          "fr": "Ô Allah, je cherche refuge auprès de Toi contre l'incapacité et la paresse, contre la lâcheté et l'avarice, contre l'écrasement des dettes et la domination des hommes.",
+          "source": "Al-Bukhârî 6363 — invocation prophétique régulière",
+          "validated": false
+        },
+        {
+          "type": "hadith",
+          "fr": "Le rusé est celui qui se juge lui-même et œuvre pour ce qui vient après la mort. L'incapable est celui qui suit ses passions et nourrit chez Allah de vains espoirs.",
+          "source": "Tirmidhî 2459 — Shaddâd ibn Aws",
+          "validated": false
+        },
+        {
+          "type": "hadith",
+          "fr": "Saisis cinq choses avant cinq autres : ta jeunesse avant ta vieillesse, ta santé avant ta maladie, ta richesse avant ta pauvreté, ton temps libre avant ton occupation, et ta vie avant ta mort.",
+          "source": "Hâkim 7846, classifié sahih — Ibn 'Abbâs",
+          "validated": false
+        }
+      ],
+      "actions": [
+        {
+          "fr": "Lève-toi maintenant. Une seule action, la plus petite : deux rak'ât, ou un verre d'eau bu debout, ou trois pas dehors.",
+          "source": "Application du principe « Faites peu mais avec constance » — Al-Bukhârî 6464",
+          "validated": false
+        },
+        {
+          "fr": "Fais le wudû maintenant, même si tu n'en as pas besoin pour la prière. L'eau réveille le corps, et le corps entraîne l'âme.",
+          "source": "Muslim 251 — vertu du wudû renouvelé",
+          "validated": false
+        },
+        {
+          "fr": "Récite la du'a contre la paresse trois fois : Allâhumma innî a'ûdhu bika mina-l-'ajzi wa-l-kasal. Puis fais immédiatement une chose, n'importe laquelle.",
+          "source": "Al-Bukhârî 6363",
+          "validated": false
+        }
+      ],
+      "intentions": [
+        {
+          "fr": "Yâ Allah, ranime ce que la paresse a éteint. Je commence, même petit.",
+          "validated": false
+        },
+        {
+          "fr": "Yâ Allah, le temps est Ton dépôt. Aide-moi à ne pas le gaspiller.",
+          "validated": false
+        }
+      ],
+      "clotures": [
+        { "fr": "Tu as franchi la porte. Ce premier pas, Allah l'a vu — et c'est lui qui compte." },
+        { "fr": "Tu as franchi la porte. Petit acte, grande sincérité." }
+      ]
+    }
+  ]
+}

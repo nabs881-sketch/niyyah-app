@@ -3575,7 +3575,7 @@ function resetWirdSession(session) {
 }
 
 // ── BAB AN-NAFS ──
-var BAB_AN_NAFS_AR = { colere: '\u0627\u0644\u063A\u064E\u0636\u064E\u0628', regard: '\u0627\u0644\u0646\u0651\u064E\u0638\u064E\u0631', anxiete: '\u0627\u0644\u0642\u064E\u0644\u064E\u0642', arrogance: '\u0627\u0644\u0643\u0650\u0628\u0652\u0631', paresse: '\u0627\u0644\u0643\u064E\u0633\u064E\u0644' };
+// BAB_AN_NAFS_AR supprimé — AR intégré dans BAB_AN_NAFS.portes[].nom.ar
 function renderBabAnNafs() {
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
@@ -3585,23 +3585,25 @@ function renderBabAnNafs() {
   if (!BAB_AN_NAFS.validated || BAB_AN_NAFS.portes.some(function(p) { return p.validated === false; })) {
     html += '<div style="font-size:12px;font-style:italic;color:#FFA000;background:rgba(255,160,0,0.15);padding:8px;border-radius:6px;text-align:center;margin-bottom:16px;">Mode beta \u2014 contenu en validation th\u00e9ologique</div>';
   }
+  html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">';
   BAB_AN_NAFS.portes.forEach(function(p) {
-    var ar = BAB_AN_NAFS_AR[p.id] || '';
-    html += '<button onclick="openBabPorte(\'' + p.id + '\')" style="display:flex;align-items:center;gap:14px;width:100%;padding:16px;border-radius:12px;margin-bottom:12px;border:1px solid ' + p.couleur + '33;background:' + p.couleur + '26;cursor:pointer;text-align:left;">'
-      + '<img src="' + escapeHtml(p.image) + '" alt="" style="width:56px;height:56px;border-radius:10px;object-fit:cover;flex-shrink:0;" onerror="this.style.display=\'none\'">'
-      + '<div style="flex:1;">'
-      + '<div style="font-family:var(--serif);font-size:17px;color:var(--t1);margin-bottom:2px;">' + escapeHtml(p.nom) + '</div>'
-      + '<div style="font-family:\'Scheherazade New\',serif;font-size:20px;color:' + p.couleur + ';direction:rtl;">' + ar + '</div>'
-      + '</div>'
-      + '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="' + p.couleur + '" stroke-width="2" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>'
-      + '</button>';
+    var nomFr = (typeof p.nom === 'object') ? p.nom.fr : p.nom;
+    var ar = (typeof p.nom === 'object') ? (p.nom.ar || '') : '';
+    html += '<button onclick="openBabPorte(\'' + p.id + '\')" style="aspect-ratio:1/1;border-radius:12px;border:1px solid var(--gold,#C8A84A);background:url(assets/cards/porte-' + p.id + '.png) center/cover no-repeat,#111;cursor:pointer;padding:0;"></button>';
   });
-  html += '</div>';
+  html += '</div></div>';
   el.innerHTML = html;
 }
 
 var _babCurrentPorte = null;
 var _babCurrentStep = 1;
+
+function _babGetIdx(id) {
+  try { var raw = JSON.parse(safeGetItem('niyyah_bab_idx') || '{}'); return raw[id] || {rappel:0,action:0,intention:0,cloture:0}; } catch(e) { return {rappel:0,action:0,intention:0,cloture:0}; }
+}
+function _babSetIdx(id, idx) {
+  try { var raw = JSON.parse(safeGetItem('niyyah_bab_idx') || '{}'); raw[id] = idx; safeSetItem('niyyah_bab_idx', JSON.stringify(raw)); } catch(e) {}
+}
 
 function openBabPorte(id, step) {
   var el = document.getElementById('babAnNafsContent');
@@ -3610,14 +3612,16 @@ function openBabPorte(id, step) {
   if (!porte) return;
   _babCurrentPorte = id;
   _babCurrentStep = step || 1;
-  var ar = BAB_AN_NAFS_AR[id] || '';
+  var nomFr = (typeof porte.nom === 'object') ? porte.nom.fr : porte.nom;
+  var ar = (typeof porte.nom === 'object') ? (porte.nom.ar || '') : '';
   var etapes = ['Rappel', 'Action', 'Intention', 'Cl\u00f4ture'];
   var etape = etapes[_babCurrentStep - 1] || 'Rappel';
+  var idx = _babGetIdx(id);
   var contenu, source, isIntention = false, isCloture = false;
-  if (_babCurrentStep === 1) { contenu = porte.rappel.fr; source = porte.rappel.source; }
-  else if (_babCurrentStep === 2) { contenu = porte.action.fr; source = porte.action.source; }
-  else if (_babCurrentStep === 3) { contenu = porte.intention.fr; source = ''; isIntention = true; }
-  else if (_babCurrentStep === 4) { contenu = porte.cloture.fr; source = ''; isCloture = true; }
+  if (_babCurrentStep === 1) { var arr = porte.rappels || [porte.rappel]; var i = idx.rappel % arr.length; contenu = arr[i].fr; source = arr[i].source || ''; }
+  else if (_babCurrentStep === 2) { var arr = porte.actions || [porte.action]; var i = idx.action % arr.length; contenu = arr[i].fr; source = arr[i].source || ''; }
+  else if (_babCurrentStep === 3) { var arr = porte.intentions || [porte.intention]; var i = idx.intention % arr.length; contenu = arr[i].fr; source = ''; isIntention = true; }
+  else if (_babCurrentStep === 4) { var arr = porte.clotures || [porte.cloture]; var i = idx.cloture % arr.length; contenu = arr[i].fr; source = ''; isCloture = true; }
   else { contenu = ''; source = ''; }
   var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;">';
   if (!isCloture) {
@@ -3625,12 +3629,12 @@ function openBabPorte(id, step) {
     html += '<button onclick="' + backFn + '" style="display:flex;align-items:center;gap:6px;background:none;border:none;color:var(--t3);font-size:14px;cursor:pointer;margin-bottom:20px;padding:0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg> Retour</button>';
   }
   html += '<div style="display:flex;justify-content:center;gap:6px;margin-bottom:20px;">';
-  for (var i = 1; i <= 4; i++) {
-    html += '<div style="width:' + (i === _babCurrentStep ? '20px' : '6px') + ';height:6px;border-radius:3px;background:' + (i <= _babCurrentStep ? porte.couleur : 'rgba(255,255,255,0.15)') + ';transition:all 0.3s;"></div>';
+  for (var d = 1; d <= 4; d++) {
+    html += '<div style="width:' + (d === _babCurrentStep ? '20px' : '6px') + ';height:6px;border-radius:3px;background:' + (d <= _babCurrentStep ? porte.couleur : 'rgba(255,255,255,0.15)') + ';transition:all 0.3s;"></div>';
   }
   html += '</div>'
     + '<div style="text-align:center;margin-bottom:24px;">'
-    + '<div style="font-family:var(--serif);font-size:' + (isCloture ? '18' : '24') + 'px;color:' + porte.couleur + ';margin-bottom:4px;' + (isCloture ? 'opacity:0.7;' : '') + '">' + escapeHtml(porte.nom) + '</div>'
+    + '<div style="font-family:var(--serif);font-size:' + (isCloture ? '18' : '24') + 'px;color:' + porte.couleur + ';margin-bottom:4px;' + (isCloture ? 'opacity:0.7;' : '') + '">' + escapeHtml(nomFr) + '</div>'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:' + (isCloture ? '22' : '28') + 'px;color:' + porte.couleur + ';direction:rtl;opacity:' + (isCloture ? '0.5' : '0.7') + ';">' + ar + '</div>'
     + '</div>'
     + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + porte.couleur + ';opacity:0.6;margin-bottom:10px;">' + escapeHtml(etape) + '</div>';
@@ -3657,6 +3661,16 @@ function babCompletPorte(id) {
     data[id].count = (data[id].count || 0) + 1;
     data[id].lastDate = todayKey();
     safeSetItem('niyyah_bab_an_nafs', JSON.stringify(data));
+    // Rotate content index for next visit
+    var idx = _babGetIdx(id);
+    var porte = BAB_AN_NAFS.portes.find(function(p) { return p.id === id; });
+    if (porte) {
+      idx.rappel = (idx.rappel + 1) % (porte.rappels || [0]).length;
+      idx.action = (idx.action + 1) % (porte.actions || [0]).length;
+      idx.intention = (idx.intention + 1) % (porte.intentions || [0]).length;
+      idx.cloture = (idx.cloture + 1) % (porte.clotures || [0]).length;
+      _babSetIdx(id, idx);
+    }
   } catch(e) {}
   renderBabAnNafs();
 }
@@ -6861,17 +6875,14 @@ let v2CurrentView = 'sanctuaire';
 // Chaque trait est accompagné d'une référence prophétique.
 // Cette compilation n'a pas valeur de traité savant.
 // ════════════════════════════════════════════════════════════
-var BAB_AN_NAFS = {
-  version: '0.1',
-  validated: false,
-  portes: [
-    { id: 'colere', nom: 'Col\u00e8re', couleur: '#E53935', image: 'assets/cards/porte-colere.webp', rappel: { fr: 'Le Proph\u00e8te \uFDFA a dit : \u00ab La force ne r\u00e9side pas dans le fait de terrasser l\u2019adversaire, mais dans le fait de se ma\u00eetriser au moment de la col\u00e8re. \u00bb', source: 'Bukhari 6114' }, action: { fr: 'Quand tu sens la col\u00e8re monter, fais tes ablutions \u00e0 l\u2019eau froide. Si tu es debout, assieds-toi. Si tu es assis, allonge-toi.', source: 'Abu Dawud 4782' }, intention: { fr: 'Je choisis la douceur quand tout en moi veut exploser.' }, cloture: { fr: 'Tu as travers\u00e9 la porte de la Col\u00e8re. Que la douceur reste ton arme.' } },
-    { id: 'regard', nom: 'Regard', couleur: '#7E57C2', image: 'assets/cards/porte-regard.webp', rappel: { fr: '\u00ab Dis aux croyants de baisser leurs regards et de pr\u00e9server leur chastet\u00e9. Cela est plus pur pour eux. \u00bb', source: 'Coran 24:30' }, action: { fr: 'D\u00e9tourne le premier regard. Le premier est pardonn\u00e9, le second est \u00e0 ton compte. Baisse les yeux et dis : Allahumma inni as\u2019aluka khayra ma ara.', source: 'Muslim 2159' }, intention: { fr: 'Je prot\u00e8ge mon regard pour pr\u00e9server mon c\u0153ur.' }, cloture: { fr: 'Tu as travers\u00e9 la porte du Regard. Que tes yeux ne voient que ce qui \u00e9l\u00e8ve.' } },
-    { id: 'anxiete', nom: 'Anxi\u00e9t\u00e9', couleur: '#42A5F5', image: 'assets/cards/porte-anxiete.webp', rappel: { fr: '\u00ab Certes, c\u2019est par le rappel d\u2019Allah que les c\u0153urs se tranquillisent. \u00bb', source: 'Coran 13:28' }, action: { fr: 'R\u00e9p\u00e8te 7 fois : Hasbiyallahu la ilaha illa Hu, alayhi tawakkaltu wa Huwa Rabbul-Arshil-Azim. Pose la main sur ton c\u0153ur en respirant.', source: 'Abu Dawud 5081' }, intention: { fr: 'Je remets mon angoisse \u00e0 Allah et je respire dans Sa confiance.' }, cloture: { fr: 'Tu as travers\u00e9 la porte de l\u2019Anxi\u00e9t\u00e9. Allah est ton appui, toujours.' } },
-    { id: 'arrogance', nom: 'Arrogance', couleur: '#FF8F00', image: 'assets/cards/porte-arrogance.webp', rappel: { fr: '\u00ab N\u2019entrera pas au Paradis celui qui a dans le c\u0153ur le poids d\u2019un atome d\u2019orgueil. \u00bb', source: 'Muslim 91' }, action: { fr: 'Rends service \u00e0 quelqu\u2019un que tu consid\u00e8res en dessous de toi. Porte les courses d\u2019un voisin. Nettoie apr\u00e8s les autres sans qu\u2019on te le demande.', source: 'Adab al-Mufrad 552' }, intention: { fr: 'Je me rappelle que je ne suis rien sans la gr\u00e2ce d\u2019Allah.' }, cloture: { fr: 'Tu as travers\u00e9 la porte de l\u2019Arrogance. L\u2019humilit\u00e9 est la noblesse du c\u0153ur.' } },
-    { id: 'paresse', nom: 'Paresse', couleur: '#78909C', image: 'assets/cards/porte-paresse.webp', rappel: { fr: 'Le Proph\u00e8te \uFDFA cherchait refuge aupr\u00e8s d\u2019Allah contre la paresse : \u00ab Allahumma inni a\u2019udhu bika min al-kasali. \u00bb', source: 'Bukhari 6369' }, action: { fr: 'L\u00e8ve-toi maintenant et fais 2 rak\u2019aat. Pas demain. Pas apr\u00e8s. Maintenant. Le premier pas brise la paresse.', source: 'Ibn al-Qayyim, Madarij' }, intention: { fr: 'Je me l\u00e8ve maintenant, m\u00eame sans motivation \u2014 c\u2019est l\u00e0 que commence la sinc\u00e9rit\u00e9.' }, cloture: { fr: 'Tu as travers\u00e9 la porte de la Paresse. Chaque pas compte, m\u00eame le plus petit.' } }
-  ]
-};
+var BAB_AN_NAFS = {version:'0.2',validated:false,portes:[
+{id:'colere',nom:{fr:'Col\u00e8re',ar:'\u0627\u0644\u063A\u0636\u0628'},couleur:'#B33A3A',image:'assets/cards/porte-colere.webp',rappels:[{fr:'Le fort n\u2019est pas celui qui terrasse les hommes. Le fort est celui qui se ma\u00eetrise quand il est en col\u00e8re.',source:'Al-Bukh\u00e2r\u00ee 6114, Muslim 2609'},{fr:'Ceux qui d\u00e9pensent dans l\u2019aisance comme dans l\u2019adversit\u00e9, qui dominent leur col\u00e8re et qui pardonnent aux hommes \u2014 Allah aime les bienfaisants.',source:'Coran, \u00c2l \u2019Imr\u00e2n (3), 134'},{fr:'Un homme dit au Proph\u00e8te \uFDFA : Conseille-moi. Il r\u00e9pondit : Ne te mets pas en col\u00e8re. L\u2019homme r\u00e9p\u00e9ta plusieurs fois, le Proph\u00e8te \uFDFA r\u00e9p\u00e9tait : Ne te mets pas en col\u00e8re.',source:'Al-Bukh\u00e2r\u00ee 6116'}],actions:[{fr:'Si tu es debout, assieds-toi. Si tu es assis, allonge-toi. Le corps qui descend, le feu qui retombe.',source:'Ab\u00fb Daw\u00fbd 4782'},{fr:'L\u00e8ve-toi et fais le wud\u00fb. L\u2019eau apaise ce que la col\u00e8re a allum\u00e9. Trois passages d\u2019eau froide sur le visage et les bras.',source:'Ab\u00fb Daw\u00fbd 4784'},{fr:'Tais-toi. Ne dis rien pendant une minute. Pas un mot, pas un message, pas un cri. Le silence est ton bouclier.',source:'Ahmad 2136'}],intentions:[{fr:'Y\u00e2 Allah, j\u2019\u00e9teins ce feu pour Toi. Donne-moi le hilm.'},{fr:'Y\u00e2 Allah, je pr\u00e9f\u00e8re Ton agr\u00e9ment \u00e0 ma vengeance.'}],clotures:[{fr:'Tu as franchi la porte. Le silence que tu as gard\u00e9, Allah l\u2019a entendu.'},{fr:'Tu as franchi la porte. Ce que tu n\u2019as pas dit te sera compt\u00e9.'}]},
+{id:'anxiete',nom:{fr:'Anxi\u00e9t\u00e9',ar:'\u0627\u0644\u0642\u0644\u0642'},couleur:'#3F51B5',image:'assets/cards/porte-anxiete.webp',rappels:[{fr:'C\u2019est par le rappel d\u2019Allah que les c\u0153urs s\u2019apaisent.',source:'Coran, Ar-Ra\u2019d (13), 28'},{fr:'Et place ta confiance en Allah. Allah suffit comme protecteur.',source:'Coran, An-Nis\u00e2\u2019 (4), 81'},{fr:'\u00c9tonnante est l\u2019affaire du croyant : tout ce qui lui arrive est un bien. S\u2019il lui arrive du bien, il remercie \u2014 et c\u2019est un bien. S\u2019il lui arrive un mal, il patiente \u2014 et c\u2019est un bien.',source:'Muslim 2999'}],actions:[{fr:'Pose ta main sur ton c\u0153ur. Respire lentement. R\u00e9p\u00e8te sept fois : Hasbiya All\u00e2hu l\u00e2 il\u00e2ha ill\u00e2 Huwa, \u2019alayhi tawakkaltu wa Huwa Rabbu-l-\u2019arshi-l-\u2019azh\u00eem.',source:'Ab\u00fb Daw\u00fbd 5081'},{fr:'Prosterne-toi. Front contre le sol. Reste-y le temps de trois respirations profondes. Ce qui p\u00e8se sur toi, d\u00e9pose-le l\u00e0.',source:'Muslim 482'},{fr:'Sors. Marche dehors trois minutes. Regarde le ciel. Allah a cr\u00e9\u00e9 tout cela aussi.',source:'Coran, \u00c2l \u2019Imr\u00e2n (3), 190-191'}],intentions:[{fr:'Y\u00e2 Allah, je d\u00e9pose ce poids. Tu es Celui qui suffit.'},{fr:'Y\u00e2 Allah, je remets entre Tes mains ce que je ne peux porter seul.'}],clotures:[{fr:'Tu as franchi la porte. Ton c\u0153ur n\u2019est pas seul \u2014 il est confi\u00e9.'},{fr:'Tu as franchi la porte. Ce que tu Lui as donn\u00e9, Il en prend soin.'}]},
+{id:'regard',nom:{fr:'Regard',ar:'\u0627\u0644\u0646\u0638\u0631'},couleur:'#2E7D5B',image:'assets/cards/porte-regard.webp',rappels:[{fr:'Dis aux croyants de baisser leurs regards et de pr\u00e9server leur chastet\u00e9. C\u2019est plus pur pour eux.',source:'Coran, An-N\u00fbr (24), 30'},{fr:'Jar\u00eer ibn \u2019Abdill\u00e2h a dit : J\u2019ai interrog\u00e9 le Messager d\u2019Allah \uFDFA sur le regard fortuit. Il m\u2019a ordonn\u00e9 de d\u00e9tourner mon regard.',source:'Muslim 2159'},{fr:'Le Proph\u00e8te \uFDFA a dit \u00e0 \u2019Al\u00ee : Ne fais pas suivre un regard d\u2019un autre. Le premier est pour toi, le second contre toi.',source:'Ab\u00fb Daw\u00fbd 2149, Tirmidhî 2777'}],actions:[{fr:'D\u00e9tourne ton regard maintenant. L\u00e8ve les yeux vers le haut, ou ferme-les un instant. Un seul mouvement suffit.',source:'Muslim 2159'},{fr:'Si l\u2019\u00e9cran t\u2019a pi\u00e9g\u00e9, ferme-le. Pose ton t\u00e9l\u00e9phone face contre la table. L\u00e8ve-toi, change de pi\u00e8ce, bois un verre d\u2019eau.',source:'Application de Muslim 2159'},{fr:'Dis int\u00e9rieurement : A\u2019\u00fbdhu bill\u00e2hi mina-sh-shayt\u00e2ni-r-raj\u00eem. Puis pense \u00e0 la mort, pendant trois respirations.',source:'Coran, An-Nahl (16), 98'}],intentions:[{fr:'Y\u00e2 Allah, je pr\u00e9serve mon regard pour Toi. Garde mon c\u0153ur pur.'},{fr:'Y\u00e2 Allah, ne fais pas de mes yeux des tra\u00eetres \u00e0 mon \u00e2me.'}],clotures:[{fr:'Tu as franchi la porte. Ce que tu n\u2019as pas regard\u00e9, Allah l\u2019a vu.'},{fr:'Tu as franchi la porte. Le regard que tu as d\u00e9tourn\u00e9, ton c\u0153ur en b\u00e9n\u00e9ficie d\u00e9j\u00e0.'}]},
+{id:'arrogance',nom:{fr:'Arrogance',ar:'\u0627\u0644\u0643\u0650\u0628\u0652\u0631'},couleur:'#6A1B7A',image:'assets/cards/porte-arrogance.webp',rappels:[{fr:'N\u2019entrera pas au Paradis celui qui a dans le c\u0153ur le poids d\u2019un atome d\u2019orgueil. \u2014 Et l\u2019orgueil ? \u2014 C\u2019est rejeter la v\u00e9rit\u00e9 et m\u00e9priser les gens.',source:'Muslim 91'},{fr:'Ne d\u00e9tourne pas ton visage des hommes par m\u00e9pris, et ne marche pas sur la terre avec arrogance.',source:'Coran, Luqm\u00e2n (31), 18'},{fr:'Allah m\u2019a r\u00e9v\u00e9l\u00e9 d\u2019\u00eatre humble jusqu\u2019\u00e0 ce que personne n\u2019opprime personne.',source:'Muslim 2865'}],actions:[{fr:'Prosterne-toi. Front contre le sol. Reste-y le temps de trois respirations. Ton front \u2014 tu le poses au plus bas.',source:'Muslim 482'},{fr:'Reconnais \u00e0 voix basse une erreur que tu n\u2019as jamais admise. Une seule phrase : \u00ab J\u2019ai eu tort. \u00bb',source:'Tirmidhî 3540'},{fr:'Salue le premier quelqu\u2019un que tu aurais ignor\u00e9. Que ton sal\u00e2m soit sinc\u00e8re, sans regarder de haut.',source:'Muslim 54'}],intentions:[{fr:'Y\u00e2 Allah, je ne suis rien sans Toi. Brise mon orgueil, garde ma dignit\u00e9.'},{fr:'Y\u00e2 Allah, fais que je voie les autres comme Tu les vois.'}],clotures:[{fr:'Tu as franchi la porte. Le front qui se baisse, Allah le rel\u00e8ve.'},{fr:'Tu as franchi la porte. Ce que tu as reconnu, Il l\u2019a d\u00e9j\u00e0 couvert.'}]},
+{id:'paresse',nom:{fr:'Paresse',ar:'\u0627\u0644\u0643\u064E\u0633\u064E\u0644'},couleur:'#6E6E6E',image:'assets/cards/porte-paresse.webp',rappels:[{fr:'\u00d4 Allah, je cherche refuge aupr\u00e8s de Toi contre l\u2019incapacit\u00e9 et la paresse, contre la l\u00e2chet\u00e9 et l\u2019avarice.',source:'Al-Bukh\u00e2r\u00ee 6363'},{fr:'Le rus\u00e9 est celui qui se juge lui-m\u00eame et \u0153uvre pour ce qui vient apr\u00e8s la mort. L\u2019incapable suit ses passions et nourrit chez Allah de vains espoirs.',source:'Tirmidhî 2459'},{fr:'Saisis cinq choses avant cinq autres : ta jeunesse avant ta vieillesse, ta sant\u00e9 avant ta maladie, ta richesse avant ta pauvret\u00e9, ton temps libre avant ton occupation, et ta vie avant ta mort.',source:'H\u00e2kim 7846'}],actions:[{fr:'L\u00e8ve-toi maintenant. Une seule action, la plus petite : deux rak\u2019\u00e2t, ou un verre d\u2019eau bu debout, ou trois pas dehors.',source:'Al-Bukh\u00e2r\u00ee 6464'},{fr:'Fais le wud\u00fb maintenant, m\u00eame si tu n\u2019en as pas besoin. L\u2019eau r\u00e9veille le corps, et le corps entra\u00eene l\u2019\u00e2me.',source:'Muslim 251'},{fr:'R\u00e9cite la du\u2019\u00e2 contre la paresse trois fois : All\u00e2humma inn\u00ee a\u2019\u00fbdhu bika mina-l-\u2019ajzi wa-l-kasal. Puis fais imm\u00e9diatement une chose.',source:'Al-Bukh\u00e2r\u00ee 6363'}],intentions:[{fr:'Y\u00e2 Allah, ranime ce que la paresse a \u00e9teint. Je commence, m\u00eame petit.'},{fr:'Y\u00e2 Allah, le temps est Ton d\u00e9p\u00f4t. Aide-moi \u00e0 ne pas le gaspiller.'}],clotures:[{fr:'Tu as franchi la porte. Ce premier pas, Allah l\u2019a vu \u2014 et c\u2019est lui qui compte.'},{fr:'Tu as franchi la porte. Petit acte, grande sinc\u00e9rit\u00e9.'}]},
+{id:'medisance',nom:{fr:'M\u00e9disance',ar:'\u0627\u0644\u063A\u064A\u0628\u0629'},couleur:'#8D6E63',image:'assets/cards/porte-medisance.png',validated:false,rappels:[],actions:[],intentions:[],clotures:[]}
+]};
 var NAFS_TRAITS = [
   // === SAISON 1 : maladies_coeur (1-13) ===
   { id:1, season:'maladies_coeur', name_fr:'Jalousie', name_ar:'الْحَسَدُ', name_translit:'hasad',
