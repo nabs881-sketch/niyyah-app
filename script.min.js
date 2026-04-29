@@ -3583,7 +3583,7 @@ function renderBabAnNafs() {
   var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;">'
     + '<div style="font-family:var(--serif);font-size:22px;color:#C8A84A;text-align:center;margin-bottom:6px;">B\u0101b an-Nafs</div>'
     + '<div style="font-size:13px;color:var(--t3);text-align:center;margin-bottom:24px;font-style:italic;">Les portes de l\u2019\u00e2me</div>';
-  if (!BAB_AN_NAFS.validated || BAB_AN_NAFS.portes.some(function(p) { return p.validated === false; })) {
+  if (BAB_AN_NAFS.portes.some(function(p) { return p.validated === false; })) {
     html += '<div style="font-size:12px;font-style:italic;color:#FFA000;background:rgba(255,160,0,0.15);padding:8px;border-radius:6px;text-align:center;margin-bottom:16px;">Mode beta \u2014 contenu en validation th\u00e9ologique</div>';
   }
   html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">';
@@ -7480,15 +7480,17 @@ function v2GoTo(viewName) {
   if (typeof closeDefiSelector === 'function') closeDefiSelector();
   var _defOv = document.getElementById('defiSelectorOverlay');
   if (_defOv) { _defOv.style.opacity = '0'; _defOv.style.pointerEvents = 'none'; }
-  // Topbar back mode
-  var tbEl2 = document.getElementById('topbar-v2');
-  if (tbEl2) { tbEl2.classList.add('active'); tbEl2.setAttribute('data-mode', 'back'); }
+  // Topbar back mode (skip for bab-an-nafs — topbar hidden by CSS)
+  if (viewName !== 'bab-an-nafs') {
+    var tbEl2 = document.getElementById('topbar-v2');
+    if (tbEl2) { tbEl2.classList.add('active'); tbEl2.setAttribute('data-mode', 'back'); }
+    var backBtn = document.getElementById('v2-back-btn');
+    if (backBtn) backBtn.classList.add('visible');
+  }
   // Nav
   document.querySelectorAll('.nav-v2-item').forEach(function(n) { n.classList.remove('active-nav'); });
   var navBtn = document.getElementById('v2nav-' + viewName);
   if (navBtn) navBtn.classList.add('active-nav');
-  var backBtn = document.getElementById('v2-back-btn');
-  if (backBtn) backBtn.classList.add('visible');
   v2CurrentView = viewName;
   // Hide sanctuaire
   var sanctEl2 = document.getElementById('view-sanctuaire');
