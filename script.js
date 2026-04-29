@@ -3606,6 +3606,7 @@ function _babSetIdx(id, idx) {
 }
 
 function openBabPorte(id, step) {
+  hideAlHayaBtn();
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var porte = BAB_AN_NAFS.portes.find(function(p) { return p.id === id; });
@@ -3635,12 +3636,12 @@ function openBabPorte(id, step) {
   else if (_babCurrentStep === 4) { var arr = porte.clotures || [porte.cloture]; var i = idx.cloture % arr.length; contenu = arr[i].fr; source = ''; isCloture = true; }
   else { contenu = ''; source = ''; }
   var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;">';
-  if (porte.validated === false && _babCurrentStep === 1) {
-    html += '<div style="font-size:12px;font-style:italic;color:#FFA000;background:rgba(255,160,0,0.15);padding:8px;border-radius:6px;text-align:center;margin-bottom:16px;">Mode beta \u2014 contenu en validation th\u00e9ologique</div>';
-  }
   if (!isCloture) {
     var backFn = _babCurrentStep === 1 ? 'renderBabAnNafs()' : 'openBabPorte(\'' + id + '\',' + (_babCurrentStep - 1) + ')';
-    html += '<button onclick="' + backFn + '" style="display:flex;align-items:center;gap:6px;background:none;border:none;color:var(--t3);font-size:14px;cursor:pointer;margin-bottom:20px;padding:0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg> Retour</button>';
+    html += '<button onclick="' + backFn + '" style="display:flex;align-items:center;background:rgba(10,10,10,0.7);border:1px solid rgba(212,175,55,0.35);border-radius:50%;color:rgba(212,175,55,0.7);cursor:pointer;margin-bottom:16px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.4);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
+  }
+  if (porte.validated === false && _babCurrentStep === 1) {
+    html += '<div style="font-size:11px;font-style:italic;color:#FFA000;background:rgba(255,160,0,0.1);padding:6px 12px;border-radius:6px;text-align:center;margin-bottom:12px;">Mode beta \u2014 contenu en validation</div>';
   }
   html += '<div style="display:flex;justify-content:center;gap:6px;margin-bottom:20px;">';
   for (var d = 1; d <= 4; d++) {
