@@ -3826,7 +3826,7 @@ function openItfaaRefuge() {
     source = 'Bukh\u00e2r\u00ee 3282, Muslim 2610'; grade = 'sahih';
   }
   var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
-    + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';opacity:0.7;margin-bottom:24px;">Cherche refuge.</div>'
+    + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';opacity:0.7;margin-top:60px;margin-bottom:24px;">Cherche refuge.</div>'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:28px;color:' + c + ';direction:rtl;text-align:center;line-height:1.8;max-width:520px;margin:0 auto 12px;">' + ar + '</div>'
     + '<div style="font-size:14px;color:var(--t2);text-align:center;font-style:italic;margin-bottom:12px;">' + escapeHtml(translit) + '</div>'
     + '<div style="font-family:var(--serif);font-size:16px;color:var(--t1);line-height:1.7;max-width:520px;margin:0 auto 16px;">' + escapeHtml(fr) + '</div>';
