@@ -3734,38 +3734,21 @@ function openItfaaStep1() {
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var c = '#B33A3A';
-  var svg = '<svg viewBox="0 0 200 440" width="180" style="margin:0 auto;display:block;">'
-    // Tête
-    + '<ellipse cx="100" cy="40" rx="28" ry="32" fill="' + c + '1a" stroke="' + c + '" stroke-width="1.5" style="cursor:pointer" onclick="window._colereZone=\'tete\';openItfaaActionPlaceholder()"/>'
-    + '<text x="100" y="44" text-anchor="middle" fill="' + c + '" font-size="11" style="pointer-events:none">T\u00eate</text>'
-    // Gorge
-    + '<rect x="85" y="74" width="30" height="24" rx="8" fill="' + c + '1a" stroke="' + c + '" stroke-width="1.5" style="cursor:pointer" onclick="window._colereZone=\'gorge\';openItfaaActionPlaceholder()"/>'
-    + '<text x="100" y="90" text-anchor="middle" fill="' + c + '" font-size="10" style="pointer-events:none">Gorge</text>'
-    // Poitrine
-    + '<ellipse cx="100" cy="140" rx="45" ry="35" fill="' + c + '1a" stroke="' + c + '" stroke-width="1.5" style="cursor:pointer" onclick="window._colereZone=\'poitrine\';openItfaaActionPlaceholder()"/>'
-    + '<text x="100" y="144" text-anchor="middle" fill="' + c + '" font-size="11" style="pointer-events:none">Poitrine</text>'
-    // Ventre
-    + '<ellipse cx="100" cy="210" rx="40" ry="30" fill="' + c + '1a" stroke="' + c + '" stroke-width="1.5" style="cursor:pointer" onclick="window._colereZone=\'ventre\';openItfaaActionPlaceholder()"/>'
-    + '<text x="100" y="214" text-anchor="middle" fill="' + c + '" font-size="11" style="pointer-events:none">Ventre</text>'
-    // Mains
-    + '<ellipse cx="38" cy="230" rx="20" ry="28" fill="' + c + '1a" stroke="' + c + '" stroke-width="1.5" style="cursor:pointer" onclick="window._colereZone=\'mains\';openItfaaActionPlaceholder()"/>'
-    + '<ellipse cx="162" cy="230" rx="20" ry="28" fill="' + c + '1a" stroke="' + c + '" stroke-width="1.5" style="cursor:pointer" onclick="window._colereZone=\'mains\';openItfaaActionPlaceholder()"/>'
-    + '<text x="38" y="234" text-anchor="middle" fill="' + c + '" font-size="10" style="pointer-events:none">Mains</text>'
-    + '<text x="162" y="234" text-anchor="middle" fill="' + c + '" font-size="10" style="pointer-events:none">Mains</text>'
-    // Corps (lignes de liaison)
-    + '<line x1="100" y1="72" x2="100" y2="74" stroke="' + c + '44" stroke-width="1"/>'
-    + '<line x1="100" y1="98" x2="100" y2="105" stroke="' + c + '44" stroke-width="1"/>'
-    + '<line x1="100" y1="175" x2="100" y2="180" stroke="' + c + '44" stroke-width="1"/>'
-    + '<line x1="55" y1="150" x2="38" y2="202" stroke="' + c + '44" stroke-width="1"/>'
-    + '<line x1="145" y1="150" x2="162" y2="202" stroke="' + c + '44" stroke-width="1"/>'
-    // Jambes (décor, non cliquables)
-    + '<line x1="85" y1="240" x2="75" y2="340" stroke="' + c + '44" stroke-width="1.5"/>'
-    + '<line x1="115" y1="240" x2="125" y2="340" stroke="' + c + '44" stroke-width="1.5"/>'
+  var haloFn = "function _halo(el,z){el.setAttribute('fill','rgba(200,168,75,0.3)');window._colereZone=z;setTimeout(function(){openItfaaActionPlaceholder()},300);}";
+  var zones = '<svg viewBox="0 0 100 100" preserveAspectRatio="none" style="position:absolute;top:0;left:0;width:100%;height:100%;">'
+    + '<ellipse cx="50" cy="12" rx="10" ry="6" fill="transparent" style="cursor:pointer" onclick="' + haloFn + '_halo(this,\'tete\')"/>'
+    + '<ellipse cx="50" cy="21" rx="6" ry="4" fill="transparent" style="cursor:pointer" onclick="' + haloFn + '_halo(this,\'gorge\')"/>'
+    + '<ellipse cx="50" cy="32" rx="14" ry="8" fill="transparent" style="cursor:pointer" onclick="' + haloFn + '_halo(this,\'poitrine\')"/>'
+    + '<ellipse cx="50" cy="48" rx="12" ry="7" fill="transparent" style="cursor:pointer" onclick="' + haloFn + '_halo(this,\'ventre\')"/>'
+    + '<ellipse cx="30" cy="58" rx="7" ry="5" fill="transparent" style="cursor:pointer" onclick="' + haloFn + '_halo(this,\'mains\')"/>'
+    + '<ellipse cx="70" cy="58" rx="7" ry="5" fill="transparent" style="cursor:pointer" onclick="' + haloFn + '_halo(this,\'mains\')"/>'
     + '</svg>';
   el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 80px;text-align:center;">'
     + '<button onclick="openColereChoix()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:16px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>'
     + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';margin-bottom:20px;">O\u00f9 sens-tu la col\u00e8re dans ton corps\u00a0?</div>'
-    + svg
+    + '<div style="position:relative;width:240px;height:70vh;max-height:500px;margin:0 auto;background:url(\'images/silhouette-colere.png\') center/contain no-repeat;">'
+    + zones
+    + '</div>'
     + '</div>';
 }
 
