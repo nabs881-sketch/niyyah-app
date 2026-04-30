@@ -3582,6 +3582,17 @@ function renderBabAnNafs() {
   var nb = document.getElementById('nav-bar-v2');
   _hideAideBtn();
   if (_babImmersion) { _babImmersion = false; } else if (nb) { nb.classList.remove('hidden-immersion'); }
+  // Vérifier engagements Muḥâsaba à rappeler
+  try {
+    var engs = JSON.parse(safeGetItem('muhasaba_engagements') || '[]');
+    var now = Date.now();
+    for (var _ei = 0; _ei < engs.length; _ei++) {
+      if (!engs[_ei].traite && engs[_ei].dateRappel <= now) {
+        openMuhasabaRappel(_ei);
+        return;
+      }
+    }
+  } catch(e) {}
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;">'
@@ -4084,6 +4095,16 @@ function _muhasabaEngage() {
     var key = 'muhasaba_colere_' + Date.now();
     safeSetItem(key, JSON.stringify(window._muhasabaReponses));
   } catch(e) {}
+  // Engagement J+7
+  try {
+    var engagements = JSON.parse(safeGetItem('muhasaba_engagements') || '[]');
+    engagements.push({action:actionType,actionTexte:actionTexte,dateRappel:Date.now()+7*86400000,traite:false,created:Date.now()});
+    safeSetItem('muhasaba_engagements', JSON.stringify(engagements));
+  } catch(e) {}
+  // Demander permission notifications
+  if (typeof Notification !== 'undefined' && Notification.permission === 'default') {
+    try { Notification.requestPermission(); } catch(e) {}
+  }
   openMuhasabaCloture();
 }
 
@@ -4097,6 +4118,46 @@ function openMuhasabaCloture() {
     + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.8;max-width:400px;margin:0 auto 16px;">Allah voit ce que tu vois.<br>C\u2019est entre toi et Lui maintenant.</div>'
     + '<div class="itfaa-subtle" style="font-size:12px;max-width:380px;margin:0 auto 32px;">Mur\u00e2qaba \u2014 la vigilance constante du serviteur sous le regard d\u2019Allah.</div>'
     + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');babCompletPorte(\'colere\')" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Sortir</button>'
+    + '</div>';
+}
+
+function openMuhasabaRappel(idx) {
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  document.body.classList.add('in-bab-an-nafs');
+  var c = '#B33A3A';
+  var engs = JSON.parse(safeGetItem('muhasaba_engagements') || '[]');
+  var eng = engs[idx] || {};
+  var texte = eng.actionTexte || eng.action || 'ton engagement';
+  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
+    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:16px;">Rappel Mu\u1e25\u00e2saba</div>'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:16px;line-height:1.7;max-width:400px;margin:0 auto 8px;">Il y a 7\u00a0jours, tu t\u2019\u00e9tais engag\u00e9\u00a0:</div>'
+    + '<div style="font-family:var(--serif);font-size:17px;color:' + c + ';font-style:italic;max-width:400px;margin:0 auto 24px;padding:16px;border:1px dashed ' + c + '44;border-radius:12px;background:' + c + '08;">' + escapeHtml(texte) + '</div>'
+    + '<div class="itfaa-body" style="font-size:16px;margin-bottom:24px;">O\u00f9 en es-tu\u00a0?</div>'
+    + '<div style="display:flex;flex-direction:column;gap:10px;max-width:320px;margin:0 auto;">'
+    + '<button onclick="_muhasabaRappelReponse(' + idx + ',\'fait\')" style="padding:14px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:15px;font-weight:600;font-family:var(--serif);cursor:pointer;">C\u2019est fait \u2726</button>'
+    + '<button onclick="_muhasabaRappelReponse(' + idx + ',\'chemin\')" style="padding:14px;border-radius:12px;border:1px solid ' + c + '55;background:' + c + '1a;color:' + c + ';font-size:15px;font-family:var(--serif);cursor:pointer;">En chemin</button>'
+    + '<button onclick="_muhasabaRappelReponse(' + idx + ',\'pas_pu\')" style="padding:14px;border-radius:12px;border:1px solid ' + c + '33;background:none;color:' + c + ';opacity:0.7;font-size:14px;font-family:var(--serif);cursor:pointer;">J\u2019ai pas pu</button>'
+    + '</div></div>';
+}
+
+function _muhasabaRappelReponse(idx, reponse) {
+  try {
+    var engs = JSON.parse(safeGetItem('muhasaba_engagements') || '[]');
+    if (engs[idx]) { engs[idx].traite = true; engs[idx].reponse = reponse; }
+    safeSetItem('muhasaba_engagements', JSON.stringify(engs));
+  } catch(e) {}
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#B33A3A';
+  var phrases = {
+    fait: 'M\u00e2 sh\u00e2\u2019 All\u00e2h. Ce que tu as fait, Allah l\u2019a vu.',
+    chemin: 'Le chemin compte autant que l\u2019arriv\u00e9e. Continue.',
+    pas_pu: 'Pas de jugement. Reviens quand tu es pr\u00eat. La porte reste ouverte.'
+  };
+  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:50vh;text-align:center;">'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.8;max-width:400px;margin:0 auto 32px;">' + (phrases[reponse] || phrases.chemin) + '</div>'
+    + '<button onclick="renderBabAnNafs()" style="padding:14px 28px;border-radius:12px;border:1px solid ' + c + '44;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">Continuer</button>'
     + '</div>';
 }
 
@@ -10449,6 +10510,8 @@ window._showAideBtn           = _showAideBtn;
 window._hideAideBtn           = _hideAideBtn;
 window.openAideHumaine        = openAideHumaine;
 window.openColereSeuilTherapeute = openColereSeuilTherapeute;
+window.openMuhasabaRappel    = openMuhasabaRappel;
+window._muhasabaRappelReponse = _muhasabaRappelReponse;
 window._halo                  = _halo;
 window.openItfaaStep1         = openItfaaStep1;
 window.openItfaaAction        = openItfaaAction;
