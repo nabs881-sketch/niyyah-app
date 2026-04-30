@@ -4118,7 +4118,42 @@ function babCompletPorte(id) {
       _babSetIdx(id, idx);
     }
   } catch(e) {}
+  // Détection colère pathologique (>= 5 parcours en 7 jours)
+  if (id === 'colere') {
+    try {
+      var completions = JSON.parse(safeGetItem('colere_completions') || '[]');
+      completions.push(Date.now());
+      // Garder uniquement les 30 derniers jours
+      var cutoff30d = Date.now() - 30 * 86400000;
+      completions = completions.filter(function(t) { return t > cutoff30d; });
+      safeSetItem('colere_completions', JSON.stringify(completions));
+      // Compter sur 7 jours
+      var cutoff7d = Date.now() - 7 * 86400000;
+      var recent = completions.filter(function(t) { return t > cutoff7d; });
+      var lastSeen = parseInt(safeGetItem('colere_seuil_vu') || '0', 10);
+      if (recent.length >= 5 && (Date.now() - lastSeen) > 30 * 86400000) {
+        openColereSeuilTherapeute();
+        return;
+      }
+    } catch(e) {}
+  }
   renderBabAnNafs();
+}
+
+function openColereSeuilTherapeute() {
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#B33A3A';
+  _hideAideBtn();
+  var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.remove('hidden-immersion');
+  document.body.classList.add('in-bab-an-nafs');
+  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
+    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';line-height:1.6;max-width:400px;margin:0 auto 16px;">Tu es revenu 5\u00a0fois cette semaine sur la Col\u00e8re.</div>'
+    + '<div class="itfaa-body" style="font-size:15px;line-height:1.7;max-width:400px;margin:0 auto 28px;">Niyyah t\u2019accompagne, mais ne remplace pas un humain.</div>'
+    + '<a href="https://www.annuaire-musulman.com/psychologue" target="_blank" rel="noopener" style="display:block;width:100%;max-width:320px;margin:0 auto 12px;padding:14px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:15px;font-weight:600;font-family:var(--serif);text-decoration:none;text-align:center;">Trouver th\u00e9rapeute musulman</a>'
+    + '<button onclick="safeSetItem(\'colere_seuil_vu\',String(Date.now()));renderBabAnNafs()" style="width:100%;max-width:320px;padding:12px;border-radius:12px;border:1px solid ' + c + '44;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;margin-bottom:10px;">Plus tard</button>'
+    + '<button onclick="safeSetItem(\'colere_seuil_vu\',String(Date.now()));renderBabAnNafs()" style="width:100%;max-width:320px;padding:12px;border-radius:12px;border:1px solid ' + c + '22;background:none;color:' + c + ';opacity:0.6;font-family:var(--serif);font-size:13px;cursor:pointer;">Merci, j\u2019ai d\u00e9j\u00e0 un suivi</button>'
+    + '</div>';
 }
 
 const WEEKLY_HADITHS = {
@@ -10413,6 +10448,7 @@ window.openColereChoix        = openColereChoix;
 window._showAideBtn           = _showAideBtn;
 window._hideAideBtn           = _hideAideBtn;
 window.openAideHumaine        = openAideHumaine;
+window.openColereSeuilTherapeute = openColereSeuilTherapeute;
 window._halo                  = _halo;
 window.openItfaaStep1         = openItfaaStep1;
 window.openItfaaAction        = openItfaaAction;
