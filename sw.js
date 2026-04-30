@@ -1,4 +1,4 @@
-const VERSION = 'niyyah-v438';
+const VERSION = 'niyyah-v439';
 const CORE = [
   './index.html',
   './script.min.js',
@@ -10,6 +10,7 @@ const CORE = [
   './jannat-al-qalb.mp3',
   './rahatal-qulub.mp3',
   './ferme-ta-journee.webp',
+  './bab-nafs-content.json',
   './assets/moments/fajr.webp',
   './assets/moments/dhuhr.webp',
   './assets/moments/asr.webp',

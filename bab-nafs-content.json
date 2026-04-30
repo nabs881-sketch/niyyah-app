@@ -1,0 +1,224 @@
+{
+  "version": "1.0-beta",
+  "validated": false,
+  "lastUpdate": "2026-04-30",
+  "notice": "Contenu en mode beta. Validation par savant arabophone à venir.",
+
+  "concepts": {
+    "itfaa": {
+      "ar": "إِطْفَاء",
+      "translit": "Iṭfâ'",
+      "fr": "Extinction",
+      "description": "Mode court de régulation pendant la crise de colère."
+    },
+    "itmiinan": {
+      "ar": "الِاطْمِئْنَان",
+      "translit": "Iṭmi'nân",
+      "fr": "Apaisement",
+      "description": "Mode court de régulation pendant la crise d'anxiété. Référence : Coran 13:28."
+    },
+    "muhasaba": {
+      "ar": "مُحَاسَبَة",
+      "translit": "Muḥâsaba",
+      "fr": "Examen de conscience",
+      "description": "Mode long d'examen à froid, en dehors de toute crise. Attribué à ʿUmar ibn al-Khaṭṭâb (qu'Allâh l'agrée) : « Faites vos comptes avant qu'on ne vous les demande. »"
+    },
+    "niyyah": {
+      "ar": "النِّيَّة",
+      "translit": "Niyyah",
+      "fr": "Intention",
+      "description": "Concept fondateur. Hadith : Innamâ al-aʿmâlu bi-n-niyyât (Bukhârî 1, Muslim 1907)."
+    },
+    "tawakkul": {
+      "ar": "التَّوَكُّل",
+      "translit": "Tawakkul",
+      "fr": "Remise confiante à Allah",
+      "description": "Confier à Allah ce qui te dépasse, après avoir fait ce qui est en toi. Référence : Coran 65:3."
+    }
+  },
+
+  "colere": {
+    "nameAr": "بَاب الْغَضَب",
+    "nameFr": "Porte de la Colère",
+    "modeShort": "itfaa",
+
+    "itfaa": {
+      "etape1_corps_general": {
+        "type": "hadith",
+        "ar": "أَلَا وَإِنَّ فِي الْجَسَدِ مُضْغَةً إِذَا صَلَحَتْ صَلَحَ الْجَسَدُ كُلُّهُ، وَإِذَا فَسَدَتْ فَسَدَ الْجَسَدُ كُلُّهُ، أَلَا وَهِيَ الْقَلْبُ",
+        "translit": "Alâ wa inna fi al-jasadi muḍghatan idhâ ṣalaḥat ṣalaḥa al-jasadu kulluh...",
+        "fr": "Il y a dans le corps un morceau de chair : si elle est saine, tout le corps est sain ; si elle est corrompue, tout le corps est corrompu. C'est le cœur.",
+        "source": "Bukhârî 52, Muslim 1599",
+        "narrator": "an-Nuʿmân ibn Bashîr",
+        "grade": "sahih"
+      },
+
+      "etape2_assise": {
+        "type": "hadith",
+        "ar": "إِذَا غَضِبَ أَحَدُكُمْ وَهُوَ قَائِمٌ فَلْيَجْلِسْ، فَإِنْ ذَهَبَ عَنْهُ الْغَضَبُ وَإِلَّا فَلْيَضْطَجِعْ",
+        "translit": "Idhâ ghaḍiba aḥadukum wa huwa qâ'imun falyajlis, fa-in dhahaba ʿanhu al-ghaḍabu wa illâ falyaḍṭajiʿ",
+        "fr": "Si l'un de vous se met en colère alors qu'il est debout, qu'il s'assoie. Si la colère le quitte, tant mieux. Sinon, qu'il s'allonge.",
+        "source": "Abû Dâwûd 4782, Aḥmad 21348",
+        "narrator": "Abû Dharr al-Ghifârî",
+        "grade": "sahih (déclaré authentique par Al-Albânî dans Mishkât 5114)"
+      },
+
+      "etape2_silence": {
+        "type": "hadith",
+        "ar": "إِذَا غَضِبْتَ فَاسْكُتْ",
+        "translit": "Idhâ ghaḍibta faskut",
+        "fr": "Si tu te mets en colère, tais-toi.",
+        "source": "Aḥmad 2136",
+        "narrator": "Ibn ʿAbbâs",
+        "grade": "sahih (déclaré authentique par Al-Albânî)"
+      },
+
+      "etape2_wudu": {
+        "type": "hadith",
+        "ar": "إِنَّ الْغَضَبَ مِنَ الشَّيْطَانِ، وَإِنَّ الشَّيْطَانَ خُلِقَ مِنَ النَّارِ، وَإِنَّمَا تُطْفَأُ النَّارُ بِالْمَاءِ، فَإِذَا غَضِبَ أَحَدُكُمْ فَلْيَتَوَضَّأْ",
+        "translit": "Inna al-ghaḍaba mina sh-shayṭân, wa inna sh-shayṭâna khuliqa mina n-nâr, wa innamâ tuṭfa'u n-nâru bil-mâ', fa-idhâ ghaḍiba aḥadukum falyatawaḍḍa'",
+        "fr": "La colère vient du Diable. Le Diable a été créé du feu. Or le feu ne s'éteint qu'avec de l'eau. Si l'un de vous se met en colère, qu'il fasse ses ablutions.",
+        "source": "Abû Dâwûd 4784",
+        "narrator": "ʿAṭiyya ibn ʿUrwa as-Saʿdî",
+        "grade": "daif selon Al-Albânî dans Daʿîf Sunan Abî Dâwûd. Pratique néanmoins ancrée et largement utilisée."
+      },
+
+      "etape7_refuge": {
+        "type": "duaa",
+        "ar": "أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ",
+        "translit": "Aʿûdhu billâhi mina sh-shayṭâni r-rajîm",
+        "fr": "Je cherche refuge auprès d'Allah contre Satan le lapidé.",
+        "source": "Bukhârî 3282, Muslim 2610",
+        "narrator": "Sulaymân ibn Ṣurad",
+        "grade": "sahih",
+        "context": "Le Prophète ﷺ a dit, en voyant un homme dont les veines se gonflaient de colère : « Je connais une parole qui, s'il la disait, ferait disparaître ce qu'il ressent. »"
+      }
+    },
+
+    "muhasaba": {
+      "etape6_pardon": {
+        "type": "hadith",
+        "ar": "مَا نَقَصَتْ صَدَقَةٌ مِنْ مَالٍ، وَمَا زَادَ اللَّهُ عَبْدًا بِعَفْوٍ إِلَّا عِزًّا",
+        "translit": "Mâ naqaṣat ṣadaqatun min mâl, wa mâ zâda Llâhu ʿabdan bi-ʿafwin illâ ʿizzan",
+        "fr": "Une aumône ne diminue pas un bien, et Allah n'augmente nul serviteur en pardonnant sans qu'Il ne l'élève en honneur.",
+        "source": "Muslim 2588",
+        "narrator": "Abû Hurayra",
+        "grade": "sahih"
+      },
+
+      "etape6_duaa_parole_juste": {
+        "type": "duaa",
+        "ar": "اللَّهُمَّ إِنِّي أَسْأَلُكَ كَلِمَةَ الْحَقِّ فِي الرِّضَا وَالْغَضَبِ",
+        "translit": "Allâhumma innî as'aluka kalimata al-ḥaqqi fi r-riḍâ wa al-ghaḍab",
+        "fr": "Ô Allah, je Te demande la parole juste dans le contentement et dans la colère.",
+        "source": "an-Nasâ'î 1305",
+        "narrator": "ʿAmmâr ibn Yâsir",
+        "grade": "sahih (déclaré authentique par Al-Albânî)"
+      },
+
+      "etape7_intention": {
+        "type": "hadith",
+        "ar": "إِنَّمَا الْأَعْمَالُ بِالنِّيَّاتِ",
+        "translit": "Innamâ al-aʿmâlu bi-n-niyyât",
+        "fr": "Les actions ne valent que par les intentions.",
+        "source": "Bukhârî 1, Muslim 1907",
+        "narrator": "ʿUmar ibn al-Khaṭṭâb",
+        "grade": "sahih"
+      }
+    }
+  },
+
+  "anxiete": {
+    "nameAr": "بَاب الْقَلَق",
+    "nameFr": "Porte de l'Anxiété",
+    "modeShort": "itmiinan",
+
+    "vocabulary": {
+      "qalaq": { "ar": "الْقَلَق", "fr": "Agitation" },
+      "hamm": { "ar": "الْهَمّ", "fr": "Souci pesant sur le présent" },
+      "hazan": { "ar": "الْحَزَن", "fr": "Chagrin angoissant lié au passé" },
+      "jazaa": { "ar": "الْجَزَع", "fr": "Panique paralysante" },
+      "yaas": { "ar": "الْيَأْس", "fr": "Désespoir (manquement spirituel)" },
+      "khawf": { "ar": "الْخَوْف", "fr": "Peur saine" },
+      "wasawis": { "ar": "وَسَاوِس", "fr": "Chuchotements répétitifs (réf. sourate An-Nâs)" }
+    },
+
+    "itmiinan": {
+      "etape1_verset_apaisement": {
+        "type": "verse",
+        "ar": "أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ",
+        "translit": "Alâ bi-dhikri Llâhi taṭma'innu al-qulûb",
+        "fr": "N'est-ce pas par le rappel d'Allah que les cœurs s'apaisent ?",
+        "source": "Coran, Ar-Raʿd 13:28"
+      },
+
+      "etape2_hasbunallah": {
+        "type": "verse",
+        "ar": "حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ",
+        "translit": "Ḥasbunâ-llâhu wa niʿma al-wakîl",
+        "fr": "Allah nous suffit, et quel excellent Garant.",
+        "source": "Coran 3:173",
+        "context": "Parole d'Ibrâhîm ﷺ jeté au feu, reprise par le Prophète Muḥammad ﷺ et ses compagnons à Uḥud."
+      },
+
+      "etape7_refuge": {
+        "type": "duaa",
+        "ar": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْهَمِّ وَالْحَزَنِ، وَأَعُوذُ بِكَ مِنَ الْعَجْزِ وَالْكَسَلِ",
+        "translit": "Allâhumma innî aʿûdhu bika min al-hammi wa al-ḥazan, wa aʿûdhu bika min al-ʿajzi wa al-kasal",
+        "fr": "Ô Allah, je cherche refuge auprès de Toi contre l'angoisse et la tristesse, et contre l'incapacité et la paresse.",
+        "source": "Bukhârî 6369",
+        "narrator": "Anas ibn Mâlik",
+        "grade": "sahih",
+        "context": "Duʿâ' que le Prophète ﷺ disait fréquemment. Version complète plus longue : aʿûdhu bika min al-jubni wa al-bukhl, wa min ghalabati d-dayni wa qahri r-rijâl."
+      }
+    },
+
+    "muhasaba": {
+      "etape6_tawakkul": {
+        "type": "verse",
+        "ar": "وَمَنْ يَتَوَكَّلْ عَلَى اللَّهِ فَهُوَ حَسْبُهُ",
+        "translit": "Wa man yatawakkal ʿalâ Llâhi fa-huwa ḥasbuh",
+        "fr": "Quiconque place sa confiance en Allah, Il lui suffit.",
+        "source": "Coran, Aṭ-Ṭalâq 65:3"
+      },
+
+      "etape6_attache_chamelle": {
+        "type": "hadith",
+        "ar": "اعْقِلْهَا وَتَوَكَّلْ",
+        "translit": "Iʿqilhâ wa tawakkal",
+        "fr": "Attache-la (la chamelle), puis place ta confiance en Allah.",
+        "source": "Tirmidhî 2517",
+        "narrator": "Anas ibn Mâlik",
+        "grade": "hasan (déclaré bon par Al-Albânî)"
+      },
+
+      "etape6_dhikr_vivant_mort": {
+        "type": "hadith",
+        "ar": "مَثَلُ الَّذِي يَذْكُرُ رَبَّهُ وَالَّذِي لَا يَذْكُرُ رَبَّهُ مَثَلُ الْحَيِّ وَالْمَيِّتِ",
+        "translit": "Mathalu lladhî yadhkuru rabbahu wa lladhî lâ yadhkuru rabbahu mathalu al-ḥayyi wa al-mayyit",
+        "fr": "L'exemple de celui qui invoque son Seigneur et celui qui ne l'invoque pas est comme l'exemple du vivant et du mort.",
+        "source": "Bukhârî 6407",
+        "narrator": "Abû Mûsâ al-Ashʿarî",
+        "grade": "sahih"
+      },
+
+      "etape6_dhikr_options": [
+        {
+          "ar": "سُبْحَانَ اللَّهِ",
+          "translit": "Subḥâna-llâh",
+          "fr": "Gloire à Allah"
+        },
+        {
+          "ar": "حَسْبُنَا اللَّهُ",
+          "translit": "Ḥasbunâ-llâh",
+          "fr": "Allah nous suffit"
+        },
+        {
+          "ar": "لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ",
+          "translit": "Lâ ḥawla wa lâ quwwata illâ bi-llâh",
+          "fr": "Il n'y a de force ni de puissance qu'en Allah"
+        }
+      ]
+    }
+  }
+}
