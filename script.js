@@ -3761,6 +3761,17 @@ function openItfaaStep1() {
     + '<div style="position:relative;width:100%;height:100%;background:url(\'images/silhouette-colere.png\') center/contain no-repeat;z-index:1;">'
     + zones
     + '</div>'
+    + '</div>';
+  // Ancrage islamique en bas
+  var _cH = {ar:'\u0623\u064e\u0644\u064e\u0627 \u0648\u064e\u0625\u0650\u0646\u0651\u064e \u0641\u0650\u064a \u0627\u0644\u0652\u062c\u064e\u0633\u064e\u062f\u0650 \u0645\u0636\u0652\u063a\u064e\u0629\u064b... \u0623\u064e\u0644\u064e\u0627 \u0648\u064e\u0647\u0650\u064a\u064e \u0627\u0644\u0652\u0642\u064e\u0644\u0652\u0628\u0650',fr:'Il y a dans le corps un morceau de chair\u2026 C\u2019est le c\u0153ur.',source:'Bukh\u00e2r\u00ee 52, Muslim 1599 \u2014 sahih'};
+  if (window.babNafsContent && window.babNafsContent.colere && window.babNafsContent.colere.itfaa && window.babNafsContent.colere.itfaa.etape1_corps_general) {
+    var _h = window.babNafsContent.colere.itfaa.etape1_corps_general;
+    if (_h.ar) { _cH.ar = _h.ar; _cH.fr = _h.fr || _cH.fr; _cH.source = (_h.source || '') + ' \u2014 ' + (_h.grade || ''); }
+  }
+  html += '<div style="max-width:320px;margin:16px auto 0;text-align:center;">'
+    + '<div style="font-family:\'Scheherazade New\',serif;font-size:16px;color:#B33A3A;direction:rtl;line-height:1.6;opacity:0.7;">' + _cH.ar + '</div>'
+    + '<div class="itfaa-body" style="font-size:12px;margin:4px 0 2px;">' + escapeHtml(_cH.fr) + '</div>'
+    + '<div class="itfaa-subtle" style="font-size:10px;">' + escapeHtml(_cH.source) + '</div>'
     + '</div>'
     + '</div>';
 }
