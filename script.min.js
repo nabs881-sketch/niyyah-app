@@ -3720,7 +3720,7 @@ function openColereChoix() {
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:16px;color:' + c + ';opacity:0.7;">\u0625\u0637\u0641\u0627\u0621 \u2014 I\u1e6df\u00e2\u2019</div>'
     + '<div style="font-size:12px;color:var(--t3);margin-top:6px;">~3 min \u2014 en crise</div>'
     + '</button>'
-    + '<button onclick="openMuhasabaPlaceholder()" style="padding:20px;border-radius:14px;border:1px solid ' + c + '55;background:' + c + '0d;cursor:pointer;text-align:center;">'
+    + '<button onclick="openMuhasabaIntro()" style="padding:20px;border-radius:14px;border:1px solid ' + c + '55;background:' + c + '0d;cursor:pointer;text-align:center;">'
     + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';margin-bottom:4px;">\u00c0 froid</div>'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:16px;color:' + c + ';opacity:0.7;">\u0645\u062d\u0627\u0633\u0628\u0629 \u2014 Mu\u1e25\u00e2saba</div>'
     + '<div style="font-size:12px;color:var(--t3);margin-top:6px;">~12 min \u2014 examen de conscience</div>'
@@ -3842,16 +3842,48 @@ function openItfaaRefuge() {
   el.innerHTML = html;
 }
 
-function openMuhasabaPlaceholder() {
+function openMuhasabaIntro() {
   _babImmersion = true; var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var c = '#B33A3A';
+  window._muhasabaReponses = {};
+  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:20px;line-height:1.8;max-width:400px;margin:0 auto;animation:_zoneFade 3s ease forwards;">Bismillah.<br>Ce que je vais regarder, c\u2019est entre Allah et moi.</div>'
+    + '</div>';
+  setTimeout(function() { openMuhasabaEmotion(); }, 3000);
+}
+
+function openMuhasabaEmotion() {
+  _babImmersion = true; var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#B33A3A';
+  var emotions = ['Honte','Peur','Tristesse','Injustice','Impuissance','Trahison','Culpabilit\u00e9'];
+  var backBtn = '<button onclick="openColereChoix()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
+  var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
+    + backBtn
+    + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';margin-bottom:28px;">Sous la col\u00e8re, qu\u2019est-ce qui se cachait\u00a0?</div>'
+    + '<div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:360px;margin:0 auto;">';
+  for (var i = 0; i < emotions.length; i++) {
+    html += '<button onclick="window._muhasabaReponses.emotion=\'' + emotions[i] + '\';openMuhasabaStep4Placeholder()" style="padding:12px 20px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:15px;cursor:pointer;">' + emotions[i] + '</button>';
+  }
+  html += '</div></div>';
+  el.innerHTML = html;
+}
+
+function openMuhasabaStep4Placeholder() {
+  _babImmersion = true; var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#B33A3A';
+  var emo = (window._muhasabaReponses && window._muhasabaReponses.emotion) || '?';
   el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:28px;color:' + c + ';direction:rtl;margin-bottom:8px;">\u0645\u062d\u0627\u0633\u0628\u0629</div>'
-    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:24px;">Mode Mu\u1e25\u00e2saba</div>'
-    + '<div style="font-size:14px;color:var(--t3);line-height:1.7;margin-bottom:32px;">Bient\u00f4t disponible \u2014 examen de conscience \u00e0 froid.</div>'
-    + '<button onclick="openColereChoix()" style="padding:14px 28px;border-radius:12px;border:1px solid ' + c + '44;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">Retour</button>'
+    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:8px;">Mu\u1e25\u00e2saba</div>'
+    + '<div class="itfaa-body" style="font-size:15px;margin-bottom:8px;">\u00c9motion identifi\u00e9e : <strong>' + escapeHtml(emo) + '</strong></div>'
+    + '<div class="itfaa-subtle" style="font-size:14px;line-height:1.7;margin-bottom:32px;">Suite bient\u00f4t disponible \u2014 exploration \u00e0 froid.</div>'
+    + '<button onclick="_babImmersion=false;var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="padding:14px 28px;border-radius:12px;border:1px solid ' + c + '44;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">Retour</button>'
     + '</div>';
 }
 
@@ -10168,7 +10200,9 @@ window._halo                  = _halo;
 window.openItfaaStep1         = openItfaaStep1;
 window.openItfaaAction        = openItfaaAction;
 window.openItfaaRefuge        = openItfaaRefuge;
-window.openMuhasabaPlaceholder = openMuhasabaPlaceholder;
+window.openMuhasabaIntro      = openMuhasabaIntro;
+window.openMuhasabaEmotion    = openMuhasabaEmotion;
+window.openMuhasabaStep4Placeholder = openMuhasabaStep4Placeholder;
 window.babCompletPorte        = babCompletPorte;
 
 // A11y: overlay list used by Escape + focus trap
