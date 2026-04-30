@@ -3834,7 +3834,9 @@ function openItfaaRefuge() {
     html += '<div style="font-size:13px;color:var(--t3);line-height:1.6;max-width:480px;margin:0 auto 16px;font-style:italic;">' + escapeHtml(context) + '</div>';
   }
   html += '<div style="font-size:12px;color:var(--t3);margin-bottom:4px;">\u2014 ' + escapeHtml(source) + '</div>'
-    + '<div style="font-size:11px;color:var(--t3);font-style:italic;opacity:0.7;margin-bottom:32px;">' + escapeHtml(grade) + '</div>'
+    + '<div style="font-size:11px;color:var(--t3);font-style:italic;opacity:0.7;margin-bottom:28px;">' + escapeHtml(grade) + '</div>'
+    + '<div style="font-size:13px;color:' + c + ';opacity:0.6;font-style:italic;line-height:1.6;max-width:400px;margin:0 auto 16px;">Quand le calme sera revenu, tu pourras revenir ici \u00e0 froid. La porte t\u2019attend.</div>'
+    + '<button onclick="try{localStorage.setItem(\'colere_muhasaba_invite\',\'true\')}catch(e){}_babImmersion=false;var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');babCompletPorte(\'colere\')" style="width:100%;max-width:320px;padding:12px;border-radius:12px;border:1px solid ' + c + '55;background:none;color:' + c + ';font-size:14px;font-family:var(--serif);cursor:pointer;margin-bottom:12px;">Plus tard, en Mu\u1e25\u00e2saba</button>'
     + '<button onclick="_babImmersion=false;var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');babCompletPorte(\'colere\')" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Sortir</button>'
     + '</div>';
   el.innerHTML = html;
