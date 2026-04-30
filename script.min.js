@@ -3850,6 +3850,7 @@ function openMuhasabaIntro() {
   window._muhasabaReponses = {};
   el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
     + '<div class="itfaa-body" style="font-family:var(--serif);font-size:20px;line-height:1.8;max-width:400px;margin:0 auto;animation:_zoneFade 3s ease forwards;">Bismillah.<br>Ce que je vais regarder, c\u2019est entre Allah et moi.</div>'
+    + '<div class="itfaa-subtle" style="font-size:13px;margin-top:16px;animation:_zoneFade 3s ease forwards;">Niyyah \u2014 l\u2019intention juste qui pr\u00e9c\u00e8de l\u2019acte.</div>'
     + '</div>';
   setTimeout(function() { openMuhasabaEmotion(); }, 3000);
 }
