@@ -3978,22 +3978,53 @@ function _muhasabaChoixSens(porte) {
   if (porte === 'pardon') texte = (document.getElementById('_sensPardon') || {}).value || '';
   window._muhasabaReponses.sens = porte;
   window._muhasabaReponses.sensTexte = texte;
-  openMuhasabaActionPlaceholder();
+  openMuhasabaAction();
 }
 
-function openMuhasabaActionPlaceholder() {
+function openMuhasabaAction() {
   _babImmersion = true; var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var c = '#B33A3A';
-  var r = window._muhasabaReponses || {};
-  var sensLabels = {lecon:'La Le\u00e7on',pardon:'Le Pardon',duaa:'La Demande',aucune:'Aucune'};
-  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
-    + '<div style="font-family:\'Scheherazade New\',serif;font-size:28px;color:' + c + ';direction:rtl;margin-bottom:8px;">\u0645\u062d\u0627\u0633\u0628\u0629</div>'
-    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:16px;">Mu\u1e25\u00e2saba</div>'
-    + '<div class="itfaa-body" style="font-size:14px;margin-bottom:6px;">' + escapeHtml(r.emotion || '?') + ' \u2022 ' + escapeHtml(r.besoin || '?') + ' \u2022 ' + escapeHtml(sensLabels[r.sens] || '?') + '</div>'
-    + '<div class="itfaa-subtle" style="font-size:14px;line-height:1.7;margin-bottom:32px;">Suite bient\u00f4t disponible \u2014 action et cl\u00f4ture.</div>'
-    + '<button onclick="_babImmersion=false;var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');babCompletPorte(\'colere\')" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Terminer</button>'
+  var actions = ['Une parole (parler, expliquer, m\u2019excuser)','Un silence (laisser passer, accepter)','Un changement (habitude, situation)','Une du\u2019\u00e2\u2019 (entre Allah et moi)'];
+  var backBtn = '<button onclick="openMuhasabaSens()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
+  var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
+    + backBtn
+    + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';line-height:1.6;max-width:420px;margin:0 auto 24px;">Maintenant que tu vois clair, qu\u2019est-ce qui demande \u00e0 \u00eatre fait\u00a0?</div>'
+    + '<div style="display:flex;flex-direction:column;gap:10px;max-width:360px;margin:0 auto 20px;">';
+  for (var i = 0; i < actions.length; i++) {
+    html += '<button data-act="' + i + '" onclick="document.querySelectorAll(\'[data-act]\').forEach(function(b){b.classList.remove(\'_schemaOn\')});this.classList.add(\'_schemaOn\')" style="padding:14px 16px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;text-align:left;transition:background 0.2s;">' + actions[i] + '</button>';
+  }
+  html += '</div>'
+    + '<textarea id="_actionConcreteTexte" placeholder="Mon action concr\u00e8te\u2026" style="width:100%;max-width:360px;min-height:60px;padding:12px;border-radius:10px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;resize:vertical;margin-bottom:20px;"></textarea>'
+    + '<button onclick="_muhasabaEngage()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Je m\u2019engage</button>'
+    + '</div>';
+  el.innerHTML = html;
+}
+
+function _muhasabaEngage() {
+  var sel = document.querySelector('[data-act]._schemaOn');
+  var actionType = sel ? sel.textContent : '';
+  var actionTexte = (document.getElementById('_actionConcreteTexte') || {}).value || '';
+  window._muhasabaReponses.action = actionType;
+  window._muhasabaReponses.actionTexte = actionTexte;
+  // Sauvegarde en localStorage
+  try {
+    var key = 'muhasaba_colere_' + Date.now();
+    safeSetItem(key, JSON.stringify(window._muhasabaReponses));
+  } catch(e) {}
+  openMuhasabaCloture();
+}
+
+function openMuhasabaCloture() {
+  _babImmersion = true; var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#B33A3A';
+  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
+    + '<div style="font-family:\'Scheherazade New\',serif;font-size:28px;color:' + c + ';direction:rtl;margin-bottom:16px;">\u0645\u062d\u0627\u0633\u0628\u0629</div>'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.8;max-width:400px;margin:0 auto 32px;">Allah voit ce que tu vois.<br>C\u2019est entre toi et Lui maintenant.</div>'
+    + '<button onclick="_babImmersion=false;var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');babCompletPorte(\'colere\')" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Sortir</button>'
     + '</div>';
 }
 
@@ -10317,7 +10348,9 @@ window.openMuhasabaSchema     = openMuhasabaSchema;
 window._muhasabaCollectSchema = _muhasabaCollectSchema;
 window.openMuhasabaSens       = openMuhasabaSens;
 window._muhasabaChoixSens     = _muhasabaChoixSens;
-window.openMuhasabaActionPlaceholder = openMuhasabaActionPlaceholder;
+window.openMuhasabaAction     = openMuhasabaAction;
+window._muhasabaEngage        = _muhasabaEngage;
+window.openMuhasabaCloture    = openMuhasabaCloture;
 window.babCompletPorte        = babCompletPorte;
 
 // A11y: overlay list used by Escape + focus trap
