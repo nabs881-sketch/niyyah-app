@@ -4054,7 +4054,8 @@ function openMuhasabaCloture() {
   var c = '#B33A3A';
   el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:28px;color:' + c + ';direction:rtl;margin-bottom:16px;">\u0645\u062d\u0627\u0633\u0628\u0629</div>'
-    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.8;max-width:400px;margin:0 auto 32px;">Allah voit ce que tu vois.<br>C\u2019est entre toi et Lui maintenant.</div>'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.8;max-width:400px;margin:0 auto 16px;">Allah voit ce que tu vois.<br>C\u2019est entre toi et Lui maintenant.</div>'
+    + '<div class="itfaa-subtle" style="font-size:12px;max-width:380px;margin:0 auto 32px;">Mur\u00e2qaba \u2014 la vigilance constante du serviteur sous le regard d\u2019Allah.</div>'
     + '<button onclick="_babImmersion=false;var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');babCompletPorte(\'colere\')" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Sortir</button>'
     + '</div>';
 }
