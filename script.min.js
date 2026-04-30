@@ -3736,17 +3736,17 @@ function openItfaaStep1() {
   var c = '#B33A3A';
   var haloFn = "function _halo(el,z){el.setAttribute('fill','rgba(200,168,75,0.3)');window._colereZone=z;setTimeout(function(){openItfaaActionPlaceholder()},300);}";
   var zones = '<svg viewBox="0 0 100 100" preserveAspectRatio="none" style="position:absolute;top:0;left:0;width:100%;height:100%;">'
-    + '<ellipse cx="50" cy="12" rx="10" ry="6" fill="transparent" style="cursor:pointer" onclick="' + haloFn + '_halo(this,\'tete\')"/>'
-    + '<ellipse cx="50" cy="21" rx="6" ry="4" fill="transparent" style="cursor:pointer" onclick="' + haloFn + '_halo(this,\'gorge\')"/>'
-    + '<ellipse cx="50" cy="32" rx="14" ry="8" fill="transparent" style="cursor:pointer" onclick="' + haloFn + '_halo(this,\'poitrine\')"/>'
-    + '<ellipse cx="50" cy="48" rx="12" ry="7" fill="transparent" style="cursor:pointer" onclick="' + haloFn + '_halo(this,\'ventre\')"/>'
-    + '<ellipse cx="30" cy="58" rx="7" ry="5" fill="transparent" style="cursor:pointer" onclick="' + haloFn + '_halo(this,\'mains\')"/>'
-    + '<ellipse cx="70" cy="58" rx="7" ry="5" fill="transparent" style="cursor:pointer" onclick="' + haloFn + '_halo(this,\'mains\')"/>'
+    + '<circle cx="50" cy="11" r="5" fill="transparent" style="cursor:pointer" onclick="' + haloFn + '_halo(this,\'tete\')"/>'
+    + '<circle cx="50" cy="18" r="3" fill="transparent" style="cursor:pointer" onclick="' + haloFn + '_halo(this,\'gorge\')"/>'
+    + '<circle cx="50" cy="28" r="6" fill="transparent" style="cursor:pointer" onclick="' + haloFn + '_halo(this,\'poitrine\')"/>'
+    + '<circle cx="50" cy="42" r="7" fill="transparent" style="cursor:pointer" onclick="' + haloFn + '_halo(this,\'ventre\')"/>'
+    + '<circle cx="30" cy="55" r="5" fill="transparent" style="cursor:pointer" onclick="' + haloFn + '_halo(this,\'mains\')"/>'
+    + '<circle cx="70" cy="55" r="5" fill="transparent" style="cursor:pointer" onclick="' + haloFn + '_halo(this,\'mains\')"/>'
     + '</svg>';
   el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 80px;text-align:center;">'
     + '<button onclick="openColereChoix()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:16px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>'
     + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';margin-bottom:20px;">O\u00f9 sens-tu la col\u00e8re dans ton corps\u00a0?</div>'
-    + '<div style="position:relative;width:240px;height:70vh;max-height:500px;margin:0 auto;">'
+    + '<div style="position:relative;width:280px;height:85vh;max-height:680px;margin:0 auto;">'
     + '<div style="position:absolute;top:-10%;left:-10%;width:120%;height:120%;border-radius:50%;background:radial-gradient(ellipse at center,#B33A3A44 0%,transparent 70%);filter:blur(12px);animation:_haloBreath 5s ease-in-out infinite;z-index:0;"></div>'
     + '<div style="position:relative;width:100%;height:100%;background:url(\'images/silhouette-colere.png\') center/contain no-repeat;z-index:1;">'
     + zones
