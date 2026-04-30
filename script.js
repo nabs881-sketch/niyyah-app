@@ -4643,6 +4643,104 @@ function _cureColereJ6Save() {
     + '</div>';
 }
 
+function openCureColereJour7() {
+  _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
+  document.body.classList.add('in-bab-an-nafs');
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#B33A3A';
+  // Coran 13:11
+  var verset = {ar:'\u0625\u0650\u0646\u0651\u064e \u0627\u0644\u0644\u0651\u064e\u0647\u064e \u0644\u064e\u0627 \u064a\u064f\u063a\u064e\u064a\u0651\u0650\u0631\u064f \u0645\u064e\u0627 \u0628\u0650\u0642\u064e\u0648\u0652\u0645\u064d \u062d\u064e\u062a\u0651\u064e\u0649\u0670 \u064a\u064f\u063a\u064e\u064a\u0651\u0650\u0631\u064f\u0648\u0627 \u0645\u064e\u0627 \u0628\u0650\u0623\u064e\u0646\u0652\u0641\u064f\u0633\u0650\u0647\u0650\u0645\u0652',translit:'Inna Ll\u00e2ha l\u00e2 yughayyiru m\u00e2 bi-qawmin \u1e25att\u00e2 yughayyir\u00fb m\u00e2 bi-anfusihim',fr:'Allah ne change rien \u00e0 l\u2019\u00e9tat d\u2019un peuple tant qu\u2019il n\u2019a pas chang\u00e9 ce qui est en lui-m\u00eame.',source:'Coran, Ar-Ra\u2019d 13:11'};
+  var questions = [
+    {id:'vu',label:'Qu\u2019ai-je vu sur ma col\u00e8re que je ne voyais pas\u00a0?'},
+    {id:'change',label:'Qu\u2019est-ce qui change d\u00e9j\u00e0 en moi\u00a0?'},
+    {id:'intention30',label:'Quelle intention je porte pour les 30 prochains jours\u00a0?'}
+  ];
+  var backBtn = '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
+  // Relire notes précédentes
+  var cure = {};
+  try { cure = JSON.parse(safeGetItem('cure_colere') || '{}'); } catch(e) {}
+  var recap = '';
+  if (cure.notes_jour_1 || cure.notes_jour_2 || cure.notes_jour_3 || cure.notes_jour_4 || cure.notes_jour_5 || cure.notes_jour_6) {
+    recap = '<div style="text-align:left;max-width:360px;margin:0 auto 20px;padding:16px;border-radius:12px;border:1px solid ' + c + '15;background:' + c + '05;">'
+      + '<div class="itfaa-subtle" style="font-size:11px;text-align:center;margin-bottom:10px;">Tes notes des 6 jours</div>';
+    for (var d = 1; d <= 6; d++) {
+      var n = cure['notes_jour_' + d];
+      if (typeof n === 'object') n = JSON.stringify(n);
+      if (n) recap += '<div class="itfaa-body" style="font-size:12px;margin-bottom:6px;"><span style="color:' + c + ';font-weight:600;">J' + d + '\u00a0:</span> ' + escapeHtml(String(n).substring(0, 120)) + '</div>';
+    }
+    if (cure.emotion_sous_jour_4) recap += '<div class="itfaa-body" style="font-size:12px;margin-bottom:6px;"><span style="color:' + c + ';font-weight:600;">J4 \u00e9motion\u00a0:</span> ' + escapeHtml(cure.emotion_sous_jour_4) + '</div>';
+    recap += '</div>';
+  }
+  var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;">'
+    + backBtn
+    // 1. OUVERTURE
+    + '<div style="text-align:center;margin-bottom:40px;">'
+    + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:' + c + ';direction:rtl;margin-bottom:6px;">\u0631\u0650\u064a\u064e\u0627\u0636\u064e\u0629 \u0646\u064e\u0641\u0652\u0633\u0650\u064a\u0651\u064e\u0629</div>'
+    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:4px;">Cure Col\u00e8re \u2014 Jour 7</div>'
+    + '<div class="itfaa-body" style="font-size:16px;margin-bottom:8px;">Int\u00e9gration</div>'
+    + '<div class="itfaa-subtle" style="font-size:14px;">Aujourd\u2019hui, je r\u00e9colte ce que j\u2019ai sem\u00e9.</div>'
+    + '</div>'
+    // 2. CONTEMPLATION
+    + '<div style="text-align:center;margin-bottom:40px;padding:20px;border-radius:14px;border:1px solid ' + c + '22;background:' + c + '08;">'
+    + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.5;margin-bottom:12px;">Contemplation</div>'
+    + '<div style="font-family:\'Scheherazade New\',serif;font-size:22px;color:' + c + ';direction:rtl;line-height:1.8;margin-bottom:8px;">' + verset.ar + '</div>'
+    + '<div class="itfaa-body" style="font-size:13px;font-style:italic;margin-bottom:8px;">' + escapeHtml(verset.translit) + '</div>'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;margin-bottom:8px;">' + escapeHtml(verset.fr) + '</div>'
+    + '<div class="itfaa-subtle" style="font-size:11px;">\u2014 ' + escapeHtml(verset.source) + '</div>'
+    + '</div>'
+    // 3. EXERCICE
+    + '<div style="text-align:center;margin-bottom:40px;">'
+    + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.5;margin-bottom:12px;">Bilan</div>'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:16px;line-height:1.7;max-width:400px;margin:0 auto 16px;">Relis tes notes des 6 derniers jours.</div>'
+    + recap;
+  for (var qi = 0; qi < questions.length; qi++) {
+    html += '<div style="max-width:360px;margin:0 auto 14px;text-align:left;">'
+      + '<div style="font-family:var(--serif);font-size:14px;color:' + c + ';margin-bottom:4px;">' + questions[qi].label + '</div>'
+      + '<textarea id="_cureJ7_' + questions[qi].id + '" placeholder="\u2026" style="width:100%;min-height:60px;padding:10px;border-radius:8px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;resize:vertical;"></textarea>'
+      + '</div>';
+  }
+  html += '</div>'
+    // 4. CLÔTURE FINALE
+    + '<div style="text-align:center;margin-bottom:20px;padding:24px;border-radius:14px;border:1px solid ' + c + '33;background:' + c + '0d;">'
+    + '<div style="font-family:\'Scheherazade New\',serif;font-size:30px;color:' + c + ';direction:rtl;margin-bottom:12px;">\u0627\u0644\u0652\u062d\u064e\u0645\u0652\u062f\u064f \u0644\u0650\u0644\u0651\u064e\u0647\u0650</div>'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.7;max-width:400px;margin:0 auto 20px;">La cure est termin\u00e9e, le chemin commence.</div>'
+    + '<button onclick="_cureColereJ7Save()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Terminer la cure</button>'
+    + '</div>'
+    + '</div>';
+  el.innerHTML = html;
+}
+
+function _cureColereJ7Save() {
+  var ids = ['vu','change','intention30'];
+  var bilan = {};
+  for (var i = 0; i < ids.length; i++) {
+    bilan[ids[i]] = (document.getElementById('_cureJ7_' + ids[i]) || {}).value || '';
+  }
+  try {
+    var cure = JSON.parse(safeGetItem('cure_colere') || '{}');
+    cure.bilan_jour_7 = bilan;
+    cure.intention_30j = bilan.intention30 || '';
+    cure.current_day = 'complete';
+    cure.active = false;
+    cure.completed = true;
+    cure.jour7_date = new Date().toISOString();
+    cure.completed_date = new Date().toISOString();
+    safeSetItem('cure_colere', JSON.stringify(cure));
+    // Incrémenter compteur de cures terminées
+    var count = parseInt(safeGetItem('cures_colere_count') || '0', 10);
+    safeSetItem('cures_colere_count', String(count + 1));
+  } catch(e) {}
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#B33A3A';
+  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
+    + '<div style="font-family:\'Scheherazade New\',serif;font-size:28px;color:' + c + ';direction:rtl;margin-bottom:12px;">\u0628\u064e\u0627\u0631\u064e\u0643\u064e \u0627\u0644\u0644\u0651\u064e\u0647\u064f \u0641\u0650\u064a\u0643\u064e</div>'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.8;max-width:400px;margin:0 auto 32px;">Tu as march\u00e9 7\u00a0jours. Allah voit.<br>Reviens quand le c\u0153ur le demandera.</div>'
+    + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Retour au Sanctuaire</button>'
+    + '</div>';
+}
+
 function babCompletPorte(id) {
   try {
     var data = JSON.parse(safeGetItem('niyyah_bab_an_nafs') || '{}');
@@ -11005,6 +11103,8 @@ window.openCureColereJour5    = openCureColereJour5;
 window._cureColereJ5Save      = _cureColereJ5Save;
 window.openCureColereJour6    = openCureColereJour6;
 window._cureColereJ6Save      = _cureColereJ6Save;
+window.openCureColereJour7    = openCureColereJour7;
+window._cureColereJ7Save      = _cureColereJ7Save;
 window.openMuhasabaRappel    = openMuhasabaRappel;
 window._muhasabaRappelReponse = _muhasabaRappelReponse;
 window._halo                  = _halo;
