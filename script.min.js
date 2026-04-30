@@ -3917,24 +3917,83 @@ function _muhasabaCollectSchema() {
   var libre = (document.getElementById('_schemaLibre') || {}).value || '';
   window._muhasabaReponses.schema = checked;
   window._muhasabaReponses.schemaLibre = libre;
-  openMuhasabaSensPlaceholder();
+  openMuhasabaSens();
 }
 
-function openMuhasabaSensPlaceholder() {
+function openMuhasabaSens() {
   _babImmersion = true; var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var c = '#B33A3A';
-  var emo = (window._muhasabaReponses && window._muhasabaReponses.emotion) || '?';
-  var besoin = (window._muhasabaReponses && window._muhasabaReponses.besoin) || '?';
-  var schema = (window._muhasabaReponses && window._muhasabaReponses.schema) || [];
+  // Lire hadiths depuis JSON
+  var pardonH = {ar:'',translit:'',fr:'',source:'Muslim 2588'}, duaaH = {ar:'',translit:'',fr:'',source:"an-Nas\u00e2'\u00ee 1305"};
+  if (window.babNafsContent && window.babNafsContent.colere && window.babNafsContent.colere.muhasaba) {
+    var m = window.babNafsContent.colere.muhasaba;
+    if (m.etape6_pardon) { pardonH = m.etape6_pardon; }
+    if (m.etape6_duaa_parole_juste) { duaaH = m.etape6_duaa_parole_juste; }
+  }
+  var backBtn = '<button onclick="openMuhasabaSchema()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
+  var cardStyle = 'padding:20px;border-radius:14px;border:1px solid ' + c + '33;background:' + c + '08;margin-bottom:14px;text-align:center;';
+  var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
+    + backBtn
+    + '<div class="itfaa-subtle" style="font-size:15px;line-height:1.6;max-width:420px;margin:0 auto 24px;">L\u2019\u00e2me cherche un sens. 3\u00a0portes s\u2019ouvrent.<br>Choisis-en une, ou aucune.</div>'
+    // Carte 1 : La Leçon
+    + '<div style="max-width:360px;margin:0 auto;">'
+    + '<div style="' + cardStyle + '">'
+    + '<div style="font-family:var(--serif);font-size:17px;color:' + c + ';margin-bottom:4px;">La Le\u00e7on</div>'
+    + '<div class="itfaa-subtle" style="font-size:13px;margin-bottom:10px;">al-\u2019Ibra</div>'
+    + '<textarea id="_sensLecon" placeholder="Qu\u2019est-ce que cette col\u00e8re m\u2019apprend\u2026" style="width:100%;min-height:50px;padding:10px;border-radius:8px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:13px;resize:vertical;"></textarea>'
+    + '<button onclick="_muhasabaChoixSens(\'lecon\')" style="margin-top:8px;padding:10px 24px;border-radius:10px;border:1px solid ' + c + '55;background:' + c + '1a;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">Choisir</button>'
+    + '</div>'
+    // Carte 2 : Le Pardon
+    + '<div style="' + cardStyle + '">'
+    + '<div style="font-family:var(--serif);font-size:17px;color:' + c + ';margin-bottom:4px;">Le Pardon</div>'
+    + '<div class="itfaa-subtle" style="font-size:13px;margin-bottom:10px;">al-\u2019Afw</div>'
+    + (pardonH.ar ? '<div style="font-family:\'Scheherazade New\',serif;font-size:20px;color:' + c + ';direction:rtl;line-height:1.8;margin-bottom:4px;opacity:0.85;">' + pardonH.ar + '</div>' : '')
+    + (pardonH.translit ? '<div class="itfaa-body" style="font-size:12px;font-style:italic;margin-bottom:4px;">' + escapeHtml(pardonH.translit) + '</div>' : '')
+    + (pardonH.fr ? '<div class="itfaa-body" style="font-size:13px;margin-bottom:6px;">' + escapeHtml(pardonH.fr) + '</div>' : '')
+    + '<div class="itfaa-subtle" style="font-size:11px;margin-bottom:8px;">\u2014 ' + escapeHtml(pardonH.source) + '</div>'
+    + '<textarea id="_sensPardon" placeholder="\u00c0 qui ai-je besoin de pardonner\u2026" style="width:100%;min-height:50px;padding:10px;border-radius:8px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:13px;resize:vertical;"></textarea>'
+    + '<button onclick="_muhasabaChoixSens(\'pardon\')" style="margin-top:8px;padding:10px 24px;border-radius:10px;border:1px solid ' + c + '55;background:' + c + '1a;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">Choisir</button>'
+    + '</div>'
+    // Carte 3 : La Demande
+    + '<div style="' + cardStyle + '">'
+    + '<div style="font-family:var(--serif);font-size:17px;color:' + c + ';margin-bottom:4px;">La Demande</div>'
+    + '<div class="itfaa-subtle" style="font-size:13px;margin-bottom:10px;">ad-Du\u2019\u00e2\u2019</div>'
+    + (duaaH.ar ? '<div style="font-family:\'Scheherazade New\',serif;font-size:20px;color:' + c + ';direction:rtl;line-height:1.8;margin-bottom:4px;opacity:0.85;">' + duaaH.ar + '</div>' : '')
+    + (duaaH.translit ? '<div class="itfaa-body" style="font-size:12px;font-style:italic;margin-bottom:4px;">' + escapeHtml(duaaH.translit) + '</div>' : '')
+    + (duaaH.fr ? '<div class="itfaa-body" style="font-size:13px;margin-bottom:6px;">' + escapeHtml(duaaH.fr) + '</div>' : '')
+    + '<div class="itfaa-subtle" style="font-size:11px;margin-bottom:8px;">\u2014 ' + escapeHtml(duaaH.source) + '</div>'
+    + '<button onclick="_muhasabaChoixSens(\'duaa\')" style="padding:10px 24px;border-radius:10px;border:1px solid ' + c + '55;background:' + c + '1a;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">Choisir</button>'
+    + '</div>'
+    // Bouton aucune
+    + '<button onclick="_muhasabaChoixSens(\'aucune\')" style="padding:12px 28px;border-radius:12px;border:1px solid ' + c + '22;background:none;color:' + c + ';opacity:0.5;font-family:var(--serif);font-size:13px;cursor:pointer;margin-top:8px;">Aucune pour l\u2019instant</button>'
+    + '</div></div>';
+  el.innerHTML = html;
+}
+
+function _muhasabaChoixSens(porte) {
+  var texte = '';
+  if (porte === 'lecon') texte = (document.getElementById('_sensLecon') || {}).value || '';
+  if (porte === 'pardon') texte = (document.getElementById('_sensPardon') || {}).value || '';
+  window._muhasabaReponses.sens = porte;
+  window._muhasabaReponses.sensTexte = texte;
+  openMuhasabaActionPlaceholder();
+}
+
+function openMuhasabaActionPlaceholder() {
+  _babImmersion = true; var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#B33A3A';
+  var r = window._muhasabaReponses || {};
+  var sensLabels = {lecon:'La Le\u00e7on',pardon:'Le Pardon',duaa:'La Demande',aucune:'Aucune'};
   el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:28px;color:' + c + ';direction:rtl;margin-bottom:8px;">\u0645\u062d\u0627\u0633\u0628\u0629</div>'
     + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:16px;">Mu\u1e25\u00e2saba</div>'
-    + '<div class="itfaa-body" style="font-size:14px;margin-bottom:6px;">\u00c9motion : ' + escapeHtml(emo) + ' \u2022 Besoin : ' + escapeHtml(besoin) + '</div>'
-    + (schema.length ? '<div class="itfaa-subtle" style="font-size:13px;margin-bottom:16px;">Sch\u00e9ma : ' + escapeHtml(schema.join(', ')) + '</div>' : '')
-    + '<div class="itfaa-subtle" style="font-size:14px;line-height:1.7;margin-bottom:32px;">Suite bient\u00f4t disponible \u2014 sens et intention.</div>'
-    + '<button onclick="_babImmersion=false;var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="padding:14px 28px;border-radius:12px;border:1px solid ' + c + '44;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">Retour</button>'
+    + '<div class="itfaa-body" style="font-size:14px;margin-bottom:6px;">' + escapeHtml(r.emotion || '?') + ' \u2022 ' + escapeHtml(r.besoin || '?') + ' \u2022 ' + escapeHtml(sensLabels[r.sens] || '?') + '</div>'
+    + '<div class="itfaa-subtle" style="font-size:14px;line-height:1.7;margin-bottom:32px;">Suite bient\u00f4t disponible \u2014 action et cl\u00f4ture.</div>'
+    + '<button onclick="_babImmersion=false;var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');babCompletPorte(\'colere\')" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Terminer</button>'
     + '</div>';
 }
 
@@ -10256,7 +10315,9 @@ window.openMuhasabaEmotion    = openMuhasabaEmotion;
 window.openMuhasabaBesoin = openMuhasabaBesoin;
 window.openMuhasabaSchema     = openMuhasabaSchema;
 window._muhasabaCollectSchema = _muhasabaCollectSchema;
-window.openMuhasabaSensPlaceholder = openMuhasabaSensPlaceholder;
+window.openMuhasabaSens       = openMuhasabaSens;
+window._muhasabaChoixSens     = _muhasabaChoixSens;
+window.openMuhasabaActionPlaceholder = openMuhasabaActionPlaceholder;
 window.babCompletPorte        = babCompletPorte;
 
 // A11y: overlay list used by Escape + focus trap
