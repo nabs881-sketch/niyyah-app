@@ -3737,7 +3737,7 @@ function _halo(el, z) {
   _ov.textContent = _lbl[z] || z;
   _ov.className = '_zoneFlash';
   document.body.appendChild(_ov);
-  setTimeout(function() { _ov.remove(); openItfaaActionPlaceholder(); }, 1300);
+  setTimeout(function() { _ov.remove(); openItfaaAction(); }, 1300);
 }
 
 function openItfaaStep1() {
@@ -3765,18 +3765,60 @@ function openItfaaStep1() {
     + '</div>';
 }
 
-function openItfaaActionPlaceholder() {
+function openItfaaAction() {
   _babImmersion = true; var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var c = '#B33A3A';
-  var zone = window._colereZone || '?';
+  var zone = window._colereZone || 'poitrine';
   var labels = {tete:'T\u00eate',gorge:'Gorge',poitrine:'Poitrine',ventre:'Ventre',mains:'Mains'};
+  // Mapping zone → action + clé JSON
+  var actions = {
+    tete: {fr:'Va faire les ablutions. L\u2019eau apaise ce que la col\u00e8re a allum\u00e9. Trois passages d\u2019eau froide sur le visage et les bras.',key:'etape2_wudu'},
+    gorge: {fr:'Tais-toi. Ne dis rien pendant une minute. Pas un mot, pas un message, pas un cri. Le silence est ton bouclier.',key:'etape2_silence'},
+    poitrine: {fr:'Si tu es debout, assieds-toi. Si tu es assis, allonge-toi. Le corps qui descend, le feu qui retombe.',key:'etape2_assise'},
+    ventre: {fr:'Si tu es debout, assieds-toi. Si tu es assis, allonge-toi. Le corps qui descend, le feu qui retombe.',key:'etape2_assise'},
+    mains: {fr:'Marche une minute. Respire profond\u00e9ment. Chaque pas \u00e9loigne le feu.',key:null}
+  };
+  var act = actions[zone] || actions.poitrine;
+  // Enrichissement arabe/translit depuis JSON
+  var ar = '', translit = '', source = '', grade = '';
+  if (act.key && window.babNafsContent && window.babNafsContent.colere && window.babNafsContent.colere.itfaa) {
+    var h = window.babNafsContent.colere.itfaa[act.key];
+    if (h) { ar = h.ar || ''; translit = h.translit || ''; source = h.source || ''; grade = h.grade || ''; }
+  }
+  var backBtn = '<button onclick="openItfaaStep1()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
+  var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
+    + backBtn
+    + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.6;margin-bottom:16px;">' + escapeHtml(labels[zone] || zone) + '</div>'
+    + '<div style="font-family:var(--serif);font-size:18px;color:var(--t1);line-height:1.7;max-width:520px;margin:0 auto 20px;">' + escapeHtml(act.fr) + '</div>';
+  if (ar) {
+    html += '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:' + c + ';direction:rtl;text-align:center;line-height:1.8;margin:16px auto 6px;max-width:520px;opacity:0.85;">' + ar + '</div>';
+  }
+  if (translit) {
+    html += '<div style="font-size:13px;color:var(--t2);text-align:center;font-style:italic;margin-bottom:6px;">' + escapeHtml(translit) + '</div>';
+  }
+  if (source) {
+    html += '<div style="font-size:12px;color:var(--t3);text-align:center;margin-bottom:4px;">\u2014 ' + escapeHtml(source) + '</div>';
+  }
+  if (grade) {
+    html += '<div style="font-size:11px;color:var(--t3);text-align:center;font-style:italic;opacity:0.7;margin-bottom:24px;">' + escapeHtml(grade) + '</div>';
+  }
+  html += '<button onclick="openItfaaRefuge()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;margin-top:20px;">J\u2019ai fait \u2726</button>'
+    + '</div>';
+  el.innerHTML = html;
+}
+
+function openItfaaRefuge() {
+  _babImmersion = true; var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#B33A3A';
   el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
-    + '<button onclick="openItfaaStep1()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>'
-    + '<div style="font-family:\'Scheherazade New\',serif;font-size:28px;color:' + c + ';direction:rtl;margin-bottom:8px;">\u0625\u0637\u0641\u0627\u0621</div>'
-    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:8px;">Action cibl\u00e9e \u2014 ' + (labels[zone] || zone) + '</div>'
-    + '<div style="font-size:14px;color:var(--t3);line-height:1.7;margin-bottom:32px;">Bient\u00f4t disponible \u2014 action selon la zone ressentie.</div>'
+    + '<div style="font-family:\'Scheherazade New\',serif;font-size:28px;color:' + c + ';direction:rtl;margin-bottom:8px;">\u0623\u0639\u0648\u0630 \u0628\u0627\u0644\u0644\u0647</div>'
+    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:24px;">Refuge</div>'
+    + '<div style="font-size:14px;color:var(--t3);line-height:1.7;margin-bottom:32px;">Bient\u00f4t disponible \u2014 derni\u00e8re \u00e9tape du parcours I\u1e6df\u00e2\u2019.</div>'
+    + '<button onclick="openItfaaAction()" style="padding:14px 28px;border-radius:12px;border:1px solid ' + c + '44;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">Retour</button>'
     + '</div>';
 }
 
@@ -10104,7 +10146,8 @@ window.openBabPorte           = openBabPorte;
 window.openColereChoix        = openColereChoix;
 window._halo                  = _halo;
 window.openItfaaStep1         = openItfaaStep1;
-window.openItfaaActionPlaceholder = openItfaaActionPlaceholder;
+window.openItfaaAction        = openItfaaAction;
+window.openItfaaRefuge        = openItfaaRefuge;
 window.openMuhasabaPlaceholder = openMuhasabaPlaceholder;
 window.babCompletPorte        = babCompletPorte;
 
