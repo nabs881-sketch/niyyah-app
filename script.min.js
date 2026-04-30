@@ -3575,10 +3575,12 @@ function resetWirdSession(session) {
 }
 
 // ── BAB AN-NAFS ──
+var _babImmersion = false;
 // BAB_AN_NAFS_AR supprimé — AR intégré dans BAB_AN_NAFS.portes[].nom.ar
 function renderBabAnNafs() {
   document.body.classList.add('in-bab-an-nafs');
-  var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.remove('hidden-immersion');
+  var nb = document.getElementById('nav-bar-v2');
+  if (_babImmersion) { _babImmersion = false; } else if (nb) { nb.classList.remove('hidden-immersion'); }
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;">'
@@ -3704,12 +3706,12 @@ function openBabPorte(id, step) {
 
 function openColereChoix() {
   document.body.classList.add('in-bab-an-nafs');
-  requestAnimationFrame(function(){setTimeout(function(){var nb=document.getElementById('nav-bar-v2');if(nb)nb.classList.add('hidden-immersion')},100)});
+  _babImmersion = true; var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var c = '#B33A3A';
   var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
-    + '<button onclick="renderBabAnNafs()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>'
+    + '<button onclick="_babImmersion=false;var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>'
     + '<div style="font-family:var(--serif);font-size:26px;color:' + c + ';margin-bottom:6px;">Col\u00e8re</div>'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:30px;color:' + c + ';direction:rtl;opacity:0.7;margin-bottom:32px;">\u0627\u0644\u063A\u0636\u0628</div>'
     + '<div style="display:flex;flex-direction:column;gap:16px;max-width:320px;margin:0 auto;">'
@@ -3728,7 +3730,7 @@ function openColereChoix() {
 }
 
 function openItfaaPlaceholder() {
-  requestAnimationFrame(function(){setTimeout(function(){var nb=document.getElementById('nav-bar-v2');if(nb)nb.classList.add('hidden-immersion')},100)});
+  _babImmersion = true; var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var c = '#B33A3A';
@@ -3741,7 +3743,7 @@ function openItfaaPlaceholder() {
 }
 
 function openMuhasabaPlaceholder() {
-  requestAnimationFrame(function(){setTimeout(function(){var nb=document.getElementById('nav-bar-v2');if(nb)nb.classList.add('hidden-immersion')},100)});
+  _babImmersion = true; var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var c = '#B33A3A';
