@@ -3729,19 +3729,29 @@ function openColereChoix() {
   el.innerHTML = html;
 }
 
+function _halo(el, z) {
+  el.setAttribute('fill', 'rgba(200,168,75,0.3)');
+  window._colereZone = z;
+  var _lbl = {tete:'T\u00eate',gorge:'Gorge',poitrine:'Poitrine',ventre:'Ventre',mains:'Mains'};
+  var _ov = document.createElement('div');
+  _ov.textContent = _lbl[z] || z;
+  _ov.className = '_zoneFlash';
+  document.body.appendChild(_ov);
+  setTimeout(function() { _ov.remove(); openItfaaActionPlaceholder(); }, 1300);
+}
+
 function openItfaaStep1() {
   _babImmersion = true; var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var c = '#B33A3A';
-  var haloFn = "function _halo(el,z){el.setAttribute('fill','rgba(200,168,75,0.3)');window._colereZone=z;var _lbl={tete:'T\\xeate',gorge:'Gorge',poitrine:'Poitrine',ventre:'Ventre',mains:'Mains'};var _ov=document.createElement('div');_ov.textContent=_lbl[z]||z;_ov.className='_zoneFlash';document.body.appendChild(_ov);setTimeout(function(){_ov.remove();openItfaaActionPlaceholder()},1300);}";
   var zones = '<svg viewBox="0 0 100 100" preserveAspectRatio="none" style="position:absolute;top:0;left:0;width:100%;height:100%;">'
-    + '<circle cx="50" cy="11" r="5" fill="transparent" style="cursor:pointer" onclick="' + haloFn + '_halo(this,\'tete\')"/>'
-    + '<circle cx="50" cy="28" r="6" fill="transparent" style="cursor:pointer" onclick="' + haloFn + '_halo(this,\'poitrine\')"/>'
-    + '<circle cx="50" cy="18" r="3" fill="transparent" style="cursor:pointer" onclick="' + haloFn + '_halo(this,\'gorge\')"/>'
-    + '<circle cx="50" cy="42" r="7" fill="transparent" style="cursor:pointer" onclick="' + haloFn + '_halo(this,\'ventre\')"/>'
-    + '<circle cx="30" cy="55" r="5" fill="transparent" style="cursor:pointer" onclick="' + haloFn + '_halo(this,\'mains\')"/>'
-    + '<circle cx="70" cy="55" r="5" fill="transparent" style="cursor:pointer" onclick="' + haloFn + '_halo(this,\'mains\')"/>'
+    + '<circle cx="50" cy="11" r="5" fill="transparent" style="cursor:pointer" onclick="_halo(this,\'tete\')"/>'
+    + '<circle cx="50" cy="28" r="6" fill="transparent" style="cursor:pointer" onclick="_halo(this,\'poitrine\')"/>'
+    + '<circle cx="50" cy="18" r="3" fill="transparent" style="cursor:pointer" onclick="_halo(this,\'gorge\')"/>'
+    + '<circle cx="50" cy="42" r="7" fill="transparent" style="cursor:pointer" onclick="_halo(this,\'ventre\')"/>'
+    + '<circle cx="30" cy="55" r="5" fill="transparent" style="cursor:pointer" onclick="_halo(this,\'mains\')"/>'
+    + '<circle cx="70" cy="55" r="5" fill="transparent" style="cursor:pointer" onclick="_halo(this,\'mains\')"/>'
     + '</svg>';
   el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 80px;text-align:center;">'
     + '<button onclick="openColereChoix()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:16px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>'
@@ -10092,6 +10102,7 @@ window.openRegardeJournal     = openRegardeJournal;
 window.renderBabAnNafs        = renderBabAnNafs;
 window.openBabPorte           = openBabPorte;
 window.openColereChoix        = openColereChoix;
+window._halo                  = _halo;
 window.openItfaaStep1         = openItfaaStep1;
 window.openItfaaActionPlaceholder = openItfaaActionPlaceholder;
 window.openMuhasabaPlaceholder = openMuhasabaPlaceholder;
