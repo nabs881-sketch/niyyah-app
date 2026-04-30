@@ -3734,7 +3734,7 @@ function openItfaaStep1() {
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var c = '#B33A3A';
-  var haloFn = "function _halo(el,z){el.setAttribute('fill','rgba(200,168,75,0.3)');window._colereZone=z;setTimeout(function(){openItfaaActionPlaceholder()},300);}";
+  var haloFn = "function _halo(el,z){el.setAttribute('fill','rgba(200,168,75,0.3)');window._colereZone=z;var _lbl={tete:'T\\xeate',gorge:'Gorge',poitrine:'Poitrine',ventre:'Ventre',mains:'Mains'};var _ov=document.createElement('div');_ov.textContent=_lbl[z]||z;_ov.className='_zoneFlash';document.body.appendChild(_ov);setTimeout(function(){_ov.remove();openItfaaActionPlaceholder()},1300);}";
   var zones = '<svg viewBox="0 0 100 100" preserveAspectRatio="none" style="position:absolute;top:0;left:0;width:100%;height:100%;">'
     + '<circle cx="50" cy="11" r="5" fill="transparent" style="cursor:pointer" onclick="' + haloFn + '_halo(this,\'tete\')"/>'
     + '<circle cx="50" cy="28" r="6" fill="transparent" style="cursor:pointer" onclick="' + haloFn + '_halo(this,\'poitrine\')"/>'
