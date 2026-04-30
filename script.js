@@ -3791,18 +3791,18 @@ function openItfaaAction() {
   var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
     + backBtn
     + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.6;margin-bottom:16px;">' + escapeHtml(labels[zone] || zone) + '</div>'
-    + '<div style="font-family:var(--serif);font-size:18px;color:var(--t1);line-height:1.7;max-width:520px;margin:0 auto 20px;">' + escapeHtml(act.fr) + '</div>';
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.7;max-width:520px;margin:0 auto 20px;">' + escapeHtml(act.fr) + '</div>';
   if (ar) {
     html += '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:' + c + ';direction:rtl;text-align:center;line-height:1.8;margin:16px auto 6px;max-width:520px;opacity:0.85;">' + ar + '</div>';
   }
   if (translit) {
-    html += '<div style="font-size:13px;color:var(--t2);text-align:center;font-style:italic;margin-bottom:6px;">' + escapeHtml(translit) + '</div>';
+    html += '<div class="itfaa-body" style="font-size:13px;text-align:center;font-style:italic;margin-bottom:6px;">' + escapeHtml(translit) + '</div>';
   }
   if (source) {
-    html += '<div style="font-size:12px;color:var(--t3);text-align:center;margin-bottom:4px;">\u2014 ' + escapeHtml(source) + '</div>';
+    html += '<div class="itfaa-subtle" style="font-size:12px;text-align:center;margin-bottom:4px;">\u2014 ' + escapeHtml(source) + '</div>';
   }
   if (grade) {
-    html += '<div style="font-size:11px;color:var(--t3);text-align:center;font-style:italic;opacity:0.7;margin-bottom:24px;">' + escapeHtml(grade) + '</div>';
+    html += '<div class="itfaa-subtle" style="font-size:11px;text-align:center;opacity:0.7;margin-bottom:24px;">' + escapeHtml(grade) + '</div>';
   }
   html += '<button onclick="openItfaaRefuge()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;margin-top:20px;">J\u2019ai fait \u2726</button>'
     + '</div>';
@@ -3828,13 +3828,13 @@ function openItfaaRefuge() {
   var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
     + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';opacity:0.7;margin-top:60px;margin-bottom:24px;">Cherche refuge.</div>'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:28px;color:' + c + ';direction:rtl;text-align:center;line-height:1.8;max-width:520px;margin:0 auto 12px;">' + ar + '</div>'
-    + '<div style="font-size:14px;color:var(--t2);text-align:center;font-style:italic;margin-bottom:12px;">' + escapeHtml(translit) + '</div>'
-    + '<div style="font-family:var(--serif);font-size:16px;color:var(--t1);line-height:1.7;max-width:520px;margin:0 auto 16px;">' + escapeHtml(fr) + '</div>';
+    + '<div class="itfaa-body" style="font-size:14px;text-align:center;font-style:italic;margin-bottom:12px;">' + escapeHtml(translit) + '</div>'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:16px;line-height:1.7;max-width:520px;margin:0 auto 16px;">' + escapeHtml(fr) + '</div>';
   if (context) {
-    html += '<div style="font-size:13px;color:var(--t3);line-height:1.6;max-width:480px;margin:0 auto 16px;font-style:italic;">' + escapeHtml(context) + '</div>';
+    html += '<div class="itfaa-subtle" style="font-size:13px;line-height:1.6;max-width:480px;margin:0 auto 16px;">' + escapeHtml(context) + '</div>';
   }
-  html += '<div style="font-size:12px;color:var(--t3);margin-bottom:4px;">\u2014 ' + escapeHtml(source) + '</div>'
-    + '<div style="font-size:11px;color:var(--t3);font-style:italic;opacity:0.7;margin-bottom:28px;">' + escapeHtml(grade) + '</div>'
+  html += '<div class="itfaa-subtle" style="font-size:12px;margin-bottom:4px;">\u2014 ' + escapeHtml(source) + '</div>'
+    + '<div class="itfaa-subtle" style="font-size:11px;opacity:0.7;margin-bottom:28px;">' + escapeHtml(grade) + '</div>'
     + '<div style="font-size:13px;color:' + c + ';opacity:0.6;font-style:italic;line-height:1.6;max-width:400px;margin:0 auto 16px;">Quand le calme sera revenu, tu pourras revenir ici \u00e0 froid. La porte t\u2019attend.</div>'
     + '<button onclick="try{localStorage.setItem(\'colere_muhasaba_invite\',\'true\')}catch(e){}_babImmersion=false;var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');babCompletPorte(\'colere\')" style="width:100%;max-width:320px;padding:12px;border-radius:12px;border:1px solid ' + c + '55;background:none;color:' + c + ';font-size:14px;font-family:var(--serif);cursor:pointer;margin-bottom:12px;">Plus tard, en Mu\u1e25\u00e2saba</button>'
     + '<button onclick="_babImmersion=false;var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');babCompletPorte(\'colere\')" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Sortir</button>'
