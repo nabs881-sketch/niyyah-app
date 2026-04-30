@@ -3774,7 +3774,7 @@ function openItfaaAction() {
   var labels = {tete:'T\u00eate',gorge:'Gorge',poitrine:'Poitrine',ventre:'Ventre',mains:'Mains'};
   // Mapping zone → action + clé JSON
   var actions = {
-    tete: {fr:'Va faire les ablutions. L\u2019eau apaise ce que la col\u00e8re a allum\u00e9. Trois passages d\u2019eau froide sur le visage et les bras.',key:'etape2_wudu'},
+    tete: {fr:'L\u2019eau apaise. Va faire les ablutions. Le contact de l\u2019eau sur le visage est un retour au calme.',key:'etape2_wudu'},
     gorge: {fr:'Tais-toi. Ne dis rien pendant une minute. Pas un mot, pas un message, pas un cri. Le silence est ton bouclier.',key:'etape2_silence'},
     poitrine: {fr:'Si tu es debout, assieds-toi. Si tu es assis, allonge-toi. Le corps qui descend, le feu qui retombe.',key:'etape2_assise'},
     ventre: {fr:'Si tu es debout, assieds-toi. Si tu es assis, allonge-toi. Le corps qui descend, le feu qui retombe.',key:'etape2_assise'},

@@ -74,13 +74,14 @@
       },
 
       "etape2_wudu": {
-        "type": "hadith",
-        "ar": "إِنَّ الْغَضَبَ مِنَ الشَّيْطَانِ، وَإِنَّ الشَّيْطَانَ خُلِقَ مِنَ النَّارِ، وَإِنَّمَا تُطْفَأُ النَّارُ بِالْمَاءِ، فَإِذَا غَضِبَ أَحَدُكُمْ فَلْيَتَوَضَّأْ",
-        "translit": "Inna al-ghaḍaba mina sh-shayṭân, wa inna sh-shayṭâna khuliqa mina n-nâr, wa innamâ tuṭfa'u n-nâru bil-mâ', fa-idhâ ghaḍiba aḥadukum falyatawaḍḍa'",
-        "fr": "La colère vient du Diable. Le Diable a été créé du feu. Or le feu ne s'éteint qu'avec de l'eau. Si l'un de vous se met en colère, qu'il fasse ses ablutions.",
-        "source": "Abû Dâwûd 4784",
-        "narrator": "ʿAṭiyya ibn ʿUrwa as-Saʿdî",
-        "grade": "daif selon Al-Albânî dans Daʿîf Sunan Abî Dâwûd. Pratique néanmoins ancrée et largement utilisée."
+        "type": "conseil",
+        "ar": null,
+        "translit": null,
+        "fr": "L'eau apaise. Va faire les ablutions. Le contact de l'eau sur le visage est un retour au calme.",
+        "source": null,
+        "narrator": null,
+        "grade": null,
+        "note": "Hadith Abû Dâwûd 4784 retiré (ḍaʿîf selon Al-Albânî). Remplacé par conseil pratique sans attribution."
       },
 
       "etape7_refuge": {
