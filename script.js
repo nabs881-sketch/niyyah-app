@@ -3580,6 +3580,7 @@ var _babImmersion = false;
 function renderBabAnNafs() {
   document.body.classList.add('in-bab-an-nafs');
   var nb = document.getElementById('nav-bar-v2');
+  _hideAideBtn();
   if (_babImmersion) { _babImmersion = false; } else if (nb) { nb.classList.remove('hidden-immersion'); }
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
@@ -3706,12 +3707,12 @@ function openBabPorte(id, step) {
 
 function openColereChoix() {
   document.body.classList.add('in-bab-an-nafs');
-  _babImmersion = true; var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
+  _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var c = '#B33A3A';
   var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
-    + '<button onclick="_babImmersion=false;var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>'
+    + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>'
     + '<div style="font-family:var(--serif);font-size:26px;color:' + c + ';margin-bottom:6px;">Col\u00e8re</div>'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:30px;color:' + c + ';direction:rtl;opacity:0.7;margin-bottom:32px;">\u0627\u0644\u063A\u0636\u0628</div>'
     + '<div style="display:flex;flex-direction:column;gap:16px;max-width:320px;margin:0 auto;">'
@@ -3729,6 +3730,39 @@ function openColereChoix() {
   el.innerHTML = html;
 }
 
+function _showAideBtn() {
+  if (document.getElementById('_aideHumaineBtn')) return;
+  var btn = document.createElement('button');
+  btn.id = '_aideHumaineBtn';
+  btn.innerHTML = '\u260e Aide humaine';
+  btn.onclick = function() { openAideHumaine(); };
+  btn.style.cssText = 'position:fixed;bottom:16px;right:16px;z-index:99998;padding:8px 14px;border-radius:20px;border:1px solid #B33A3A44;background:rgba(10,10,10,0.85);color:#B33A3A;font-family:var(--serif);font-size:12px;cursor:pointer;opacity:0.6;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);';
+  document.body.appendChild(btn);
+}
+
+function _hideAideBtn() {
+  var btn = document.getElementById('_aideHumaineBtn');
+  if (btn) btn.remove();
+}
+
+function openAideHumaine() {
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#B33A3A';
+  var overlay = document.createElement('div');
+  overlay.id = '_aideOverlay';
+  overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);z-index:99999;display:flex;align-items:center;justify-content:center;';
+  overlay.innerHTML = '<div style="max-width:340px;padding:32px 24px;text-align:center;">'
+    + '<div style="font-family:var(--serif);font-size:22px;color:' + c + ';margin-bottom:16px;">Tu n\u2019es pas seul.</div>'
+    + '<div class="itfaa-body" style="font-size:15px;line-height:1.7;margin-bottom:8px;">Si tu traverses un moment difficile, parler \u00e0 quelqu\u2019un peut aider.</div>'
+    + '<div style="font-family:var(--serif);font-size:28px;color:' + c + ';margin:16px 0 4px;">3114</div>'
+    + '<div class="itfaa-subtle" style="font-size:12px;margin-bottom:24px;">Num\u00e9ro national de pr\u00e9vention du suicide \u2014 24h/24, gratuit</div>'
+    + '<a href="tel:3114" style="display:block;width:100%;max-width:280px;margin:0 auto 12px;padding:14px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);text-decoration:none;text-align:center;">Appeler le 3114</a>'
+    + '<button onclick="document.getElementById(\'_aideOverlay\').remove()" style="padding:12px 28px;border-radius:12px;border:1px solid ' + c + '44;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">Continuer</button>'
+    + '</div>';
+  document.body.appendChild(overlay);
+}
+
 function _halo(el, z) {
   el.setAttribute('fill', 'rgba(200,168,75,0.3)');
   window._colereZone = z;
@@ -3741,7 +3775,7 @@ function _halo(el, z) {
 }
 
 function openItfaaStep1() {
-  _babImmersion = true; var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
+  _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var c = '#B33A3A';
@@ -3777,7 +3811,7 @@ function openItfaaStep1() {
 }
 
 function openItfaaAction() {
-  _babImmersion = true; var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
+  _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var c = '#B33A3A';
@@ -3827,7 +3861,7 @@ function openItfaaAction() {
 }
 
 function openItfaaRefuge() {
-  _babImmersion = true; var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
+  _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var c = '#B33A3A';
@@ -3853,14 +3887,14 @@ function openItfaaRefuge() {
   html += '<div class="itfaa-subtle" style="font-size:12px;margin-bottom:4px;">\u2014 ' + escapeHtml(source) + '</div>'
     + '<div class="itfaa-subtle" style="font-size:11px;opacity:0.7;margin-bottom:28px;">' + escapeHtml(grade) + '</div>'
     + '<div style="font-size:13px;color:' + c + ';opacity:0.6;font-style:italic;line-height:1.6;max-width:400px;margin:0 auto 16px;">Quand le calme sera revenu, tu pourras revenir ici \u00e0 froid. La porte t\u2019attend.</div>'
-    + '<button onclick="try{localStorage.setItem(\'colere_muhasaba_invite\',\'true\')}catch(e){}_babImmersion=false;var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');babCompletPorte(\'colere\')" style="width:100%;max-width:320px;padding:12px;border-radius:12px;border:1px solid ' + c + '55;background:none;color:' + c + ';font-size:14px;font-family:var(--serif);cursor:pointer;margin-bottom:12px;">Plus tard, en Mu\u1e25\u00e2saba</button>'
-    + '<button onclick="_babImmersion=false;var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');babCompletPorte(\'colere\')" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Sortir</button>'
+    + '<button onclick="try{localStorage.setItem(\'colere_muhasaba_invite\',\'true\')}catch(e){}_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');babCompletPorte(\'colere\')" style="width:100%;max-width:320px;padding:12px;border-radius:12px;border:1px solid ' + c + '55;background:none;color:' + c + ';font-size:14px;font-family:var(--serif);cursor:pointer;margin-bottom:12px;">Plus tard, en Mu\u1e25\u00e2saba</button>'
+    + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');babCompletPorte(\'colere\')" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Sortir</button>'
     + '</div>';
   el.innerHTML = html;
 }
 
 function openMuhasabaIntro() {
-  _babImmersion = true; var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
+  _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var c = '#B33A3A';
@@ -3873,7 +3907,7 @@ function openMuhasabaIntro() {
 }
 
 function openMuhasabaEmotion() {
-  _babImmersion = true; var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
+  _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var c = '#B33A3A';
@@ -3892,7 +3926,7 @@ function openMuhasabaEmotion() {
 }
 
 function openMuhasabaBesoin() {
-  _babImmersion = true; var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
+  _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var c = '#B33A3A';
@@ -3911,7 +3945,7 @@ function openMuhasabaBesoin() {
 }
 
 function openMuhasabaSchema() {
-  _babImmersion = true; var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
+  _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var c = '#B33A3A';
@@ -3942,7 +3976,7 @@ function _muhasabaCollectSchema() {
 }
 
 function openMuhasabaSens() {
-  _babImmersion = true; var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
+  _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var c = '#B33A3A';
@@ -4007,7 +4041,7 @@ function _muhasabaChoixSens(porte) {
 }
 
 function openMuhasabaAction() {
-  _babImmersion = true; var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
+  _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var c = '#B33A3A';
@@ -4054,7 +4088,7 @@ function _muhasabaEngage() {
 }
 
 function openMuhasabaCloture() {
-  _babImmersion = true; var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
+  _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var c = '#B33A3A';
@@ -4062,7 +4096,7 @@ function openMuhasabaCloture() {
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:28px;color:' + c + ';direction:rtl;margin-bottom:16px;">\u0645\u062d\u0627\u0633\u0628\u0629</div>'
     + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.8;max-width:400px;margin:0 auto 16px;">Allah voit ce que tu vois.<br>C\u2019est entre toi et Lui maintenant.</div>'
     + '<div class="itfaa-subtle" style="font-size:12px;max-width:380px;margin:0 auto 32px;">Mur\u00e2qaba \u2014 la vigilance constante du serviteur sous le regard d\u2019Allah.</div>'
-    + '<button onclick="_babImmersion=false;var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');babCompletPorte(\'colere\')" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Sortir</button>'
+    + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');babCompletPorte(\'colere\')" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Sortir</button>'
     + '</div>';
 }
 
@@ -7790,6 +7824,7 @@ function v2GoNafs() {
 function setupTopUI(screen) {
   hideAlHayaBtn();
   document.body.classList.remove('in-bab-an-nafs');
+  _hideAideBtn();
   var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.remove('hidden-immersion');
   var backBtn = document.getElementById('v2-back-btn');
   if (backBtn) backBtn.classList.remove('visible');
@@ -10375,6 +10410,9 @@ window.openRegardeJournal     = openRegardeJournal;
 window.renderBabAnNafs        = renderBabAnNafs;
 window.openBabPorte           = openBabPorte;
 window.openColereChoix        = openColereChoix;
+window._showAideBtn           = _showAideBtn;
+window._hideAideBtn           = _hideAideBtn;
+window.openAideHumaine        = openAideHumaine;
 window._halo                  = _halo;
 window.openItfaaStep1         = openItfaaStep1;
 window.openItfaaAction        = openItfaaAction;
