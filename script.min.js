@@ -3636,6 +3636,27 @@ function openBabPorte(id, step) {
   else if (_babCurrentStep === 3) { var arr = porte.intentions || [porte.intention]; var i = idx.intention % arr.length; contenu = arr[i].fr; source = ''; isIntention = true; }
   else if (_babCurrentStep === 4) { var arr = porte.clotures || [porte.cloture]; var i = idx.cloture % arr.length; contenu = arr[i].fr; source = ''; isCloture = true; }
   else { contenu = ''; source = ''; }
+  // Enrichissement arabe/translit depuis bab-nafs-content.json
+  var _enrichAr = '', _enrichTranslit = '';
+  if (source && window.babNafsContent && window.babNafsContent[id]) {
+    var _nums = source.match(/\d+/g) || [];
+    var _sec = window.babNafsContent[id];
+    for (var _sk in _sec) {
+      if (typeof _sec[_sk] !== 'object' || !_sec[_sk]) continue;
+      var _sub = _sec[_sk];
+      for (var _ek in _sub) {
+        var _e = _sub[_ek];
+        if (_e && _e.source && _e.ar) {
+          var _jn = _e.source.match(/\d+/g) || [];
+          for (var _n = 0; _n < _nums.length; _n++) {
+            if (_jn.indexOf(_nums[_n]) !== -1) { _enrichAr = _e.ar; _enrichTranslit = _e.translit || ''; break; }
+          }
+        }
+        if (_enrichAr) break;
+      }
+      if (_enrichAr) break;
+    }
+  }
   var _noiseSvg = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E";
   var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;">';
   if (!isCloture) {
@@ -3669,6 +3690,7 @@ function openBabPorte(id, step) {
     html += '<button onclick="openBabPorte(\'' + id + '\',4)" style="width:100%;max-width:320px;padding:14px;border-radius:12px;border:1px solid ' + porte.couleur + '55;background:' + porte.couleur + '1a;color:' + porte.couleur + ';font-size:14px;font-family:var(--serif);cursor:pointer;">Suivant \u2192</button>';
   } else {
     html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:var(--t1);line-height:1.8;text-align:center;max-width:520px;margin:0 auto 16px;">' + escapeHtml(contenu) + '</div>'
+      + (_enrichAr ? '<div style="font-family:\'Scheherazade New\',serif;font-size:22px;color:' + porte.couleur + ';direction:rtl;text-align:center;line-height:1.8;margin:12px auto 4px;max-width:520px;opacity:0.85;">' + _enrichAr + '</div>' + (_enrichTranslit ? '<div style="font-size:13px;color:var(--t2);text-align:center;font-style:italic;margin-bottom:4px;">' + escapeHtml(_enrichTranslit) + '</div>' : '') : '')
       + (source ? '<div style="font-size:13px;color:var(--t3);font-style:italic;text-align:center;margin-bottom:28px;">\u2014 ' + escapeHtml(source) + '</div>' : '<div style="margin-bottom:28px;"></div>');
     var nextStep = _babCurrentStep + 1;
     html += '<button onclick="openBabPorte(\'' + id + '\',' + nextStep + ')" style="width:100%;max-width:320px;padding:14px;border-radius:12px;border:1px solid ' + porte.couleur + '55;background:' + porte.couleur + '1a;color:' + porte.couleur + ';font-size:14px;font-family:var(--serif);cursor:pointer;">Suivant \u2192</button>';
