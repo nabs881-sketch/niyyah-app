@@ -4440,6 +4440,71 @@ function _cureColereJ3Save() {
     + '</div>';
 }
 
+function openCureColereJour4() {
+  _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
+  document.body.classList.add('in-bab-an-nafs');
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#B33A3A';
+  var emotions = ['Honte','Peur','Tristesse','Injustice','Impuissance','Trahison','Culpabilit\u00e9'];
+  var backBtn = '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
+  var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;">'
+    + backBtn
+    // 1. OUVERTURE
+    + '<div style="text-align:center;margin-bottom:40px;">'
+    + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:' + c + ';direction:rtl;margin-bottom:6px;">\u0631\u0650\u064a\u064e\u0627\u0636\u064e\u0629 \u0646\u064e\u0641\u0652\u0633\u0650\u064a\u0651\u064e\u0629</div>'
+    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:4px;">Cure Col\u00e8re \u2014 Jour 4</div>'
+    + '<div class="itfaa-body" style="font-size:16px;">L\u2019\u00e9motion sous</div>'
+    + '</div>'
+    // 2. CONTEMPLATION
+    + '<div style="text-align:center;margin-bottom:40px;padding:20px;border-radius:14px;border:1px solid ' + c + '22;background:' + c + '08;">'
+    + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.5;margin-bottom:12px;">Contemplation</div>'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:17px;font-style:italic;line-height:1.7;max-width:400px;margin:0 auto 10px;">\u00ab\u00a0La col\u00e8re est rarement seule. Elle prot\u00e8ge souvent une \u00e9motion plus douloureuse.\u00a0\u00bb</div>'
+    + '<div class="itfaa-subtle" style="font-size:11px;">\u2014 inspir\u00e9 d\u2019al-Mu\u1e25\u00e2sib\u00ee, Ri\u2019\u00e2yat \u1e25uq\u00fbq All\u00e2h</div>'
+    + '</div>'
+    // 3. EXERCICE
+    + '<div style="text-align:center;margin-bottom:40px;">'
+    + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.5;margin-bottom:12px;">Exercice du jour</div>'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:16px;line-height:1.7;max-width:400px;margin:0 auto 20px;">Reprends UNE col\u00e8re r\u00e9cente. Sous la col\u00e8re, qu\u2019est-ce qui se cachait\u00a0?</div>'
+    + '<div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;max-width:360px;margin:0 auto 20px;">';
+  for (var i = 0; i < emotions.length; i++) {
+    html += '<button data-emo="' + i + '" onclick="document.querySelectorAll(\'[data-emo]\').forEach(function(b){b.classList.remove(\'_schemaOn\')});this.classList.add(\'_schemaOn\')" style="padding:10px 18px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;transition:background 0.2s;">' + emotions[i] + '</button>';
+  }
+  html += '</div>'
+    + '<textarea id="_cureJ4Notes" placeholder="\u00c9cris-le, sans d\u00e9tour, juste pour toi et Allah." style="width:100%;max-width:360px;min-height:80px;padding:12px;border-radius:10px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;resize:vertical;"></textarea>'
+    + '</div>'
+    // 4. CLÔTURE
+    + '<div style="text-align:center;margin-bottom:20px;padding:20px;border-radius:14px;border:1px solid ' + c + '22;background:' + c + '08;">'
+    + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.5;margin-bottom:12px;">Cl\u00f4ture</div>'
+    + '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:' + c + ';line-height:1.7;max-width:400px;margin:0 auto 16px;">\u00d4 Allah, montre-moi ce qui se cache sous ma col\u00e8re.</div>'
+    + '<button onclick="_cureColereJ4Save()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Je m\u2019engage pour demain</button>'
+    + '</div>'
+    + '</div>';
+  el.innerHTML = html;
+}
+
+function _cureColereJ4Save() {
+  var selBtn = document.querySelector('[data-emo]._schemaOn');
+  var emotionSous = selBtn ? selBtn.textContent : '';
+  var notes = (document.getElementById('_cureJ4Notes') || {}).value || '';
+  try {
+    var cure = JSON.parse(safeGetItem('cure_colere') || '{}');
+    cure.notes_jour_4 = notes;
+    cure.emotion_sous_jour_4 = emotionSous;
+    cure.current_day = 5;
+    cure.jour4_date = new Date().toISOString();
+    safeSetItem('cure_colere', JSON.stringify(cure));
+  } catch(e) {}
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#B33A3A';
+  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
+    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:12px;">Jour 4 enregistr\u00e9.</div>'
+    + '<div class="itfaa-body" style="font-size:16px;line-height:1.7;max-width:400px;margin:0 auto 32px;">Demain, Jour 5\u00a0: le pardon. La porte la plus lourde \u00e0 pousser.</div>'
+    + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="padding:14px 28px;border-radius:12px;border:1px solid ' + c + '44;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">Retour</button>'
+    + '</div>';
+}
+
 function babCompletPorte(id) {
   try {
     var data = JSON.parse(safeGetItem('niyyah_bab_an_nafs') || '{}');
@@ -10796,6 +10861,8 @@ window.openCureColereJour2    = openCureColereJour2;
 window._cureColereJ2Save      = _cureColereJ2Save;
 window.openCureColereJour3    = openCureColereJour3;
 window._cureColereJ3Save      = _cureColereJ3Save;
+window.openCureColereJour4    = openCureColereJour4;
+window._cureColereJ4Save      = _cureColereJ4Save;
 window.openMuhasabaRappel    = openMuhasabaRappel;
 window._muhasabaRappelReponse = _muhasabaRappelReponse;
 window._halo                  = _halo;
