@@ -9031,6 +9031,9 @@ function v2Init() {
   v2UpdateOrbState();
 }
 
+// Load Bab an-Nafs external content
+fetch('bab-nafs-content.json').then(function(r){return r.json()}).then(function(d){window.babNafsContent=d;console.log('Bab an-Nafs content loaded: v'+d.version)}).catch(function(){console.warn('bab-nafs-content.json not found')});
+
 // Boot after V1's own DOMContentLoaded fires
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => setTimeout(v2Init, 80));
