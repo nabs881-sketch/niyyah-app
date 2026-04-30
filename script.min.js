@@ -3884,25 +3884,56 @@ function openMuhasabaBesoin() {
     + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';line-height:1.6;max-width:400px;margin:0 auto 28px;">Sous chaque \u00e9motion, il y a un besoin.<br>Lequel n\u2019a pas \u00e9t\u00e9 combl\u00e9\u00a0?</div>'
     + '<div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:360px;margin:0 auto;">';
   for (var i = 0; i < besoins.length; i++) {
-    html += '<button onclick="window._muhasabaReponses.besoin=\'' + besoins[i] + '\';openMuhasabaSchemaPlaceholder()" style="padding:12px 20px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:15px;cursor:pointer;">' + besoins[i] + '</button>';
+    html += '<button onclick="window._muhasabaReponses.besoin=\'' + besoins[i] + '\';openMuhasabaSchema()" style="padding:12px 20px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:15px;cursor:pointer;">' + besoins[i] + '</button>';
   }
   html += '</div></div>';
   el.innerHTML = html;
 }
 
-function openMuhasabaSchemaPlaceholder() {
+function openMuhasabaSchema() {
+  _babImmersion = true; var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#B33A3A';
+  var items = ['M\u00eame personne','M\u00eame contexte','M\u00eame moment (fatigue/faim/fin journ\u00e9e)','M\u00eame besoin touch\u00e9','Quand pas dormi/mang\u00e9/pri\u00e9'];
+  var backBtn = '<button onclick="openMuhasabaBesoin()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
+  var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
+    + backBtn
+    + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';line-height:1.6;max-width:400px;margin:0 auto 24px;">Y a-t-il un fil rouge dans tes col\u00e8res\u00a0?</div>'
+    + '<div style="display:flex;flex-direction:column;gap:10px;max-width:360px;margin:0 auto 20px;text-align:left;">';
+  for (var i = 0; i < items.length; i++) {
+    html += '<button data-schema="' + i + '" onclick="this.classList.toggle(\'_schemaOn\')" style="padding:12px 16px;border-radius:10px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;text-align:left;transition:background 0.2s;">' + items[i] + '</button>';
+  }
+  html += '</div>'
+    + '<textarea id="_schemaLibre" placeholder="Autre chose\u2026 (optionnel)" style="width:100%;max-width:360px;min-height:60px;padding:12px;border-radius:10px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;resize:vertical;margin-bottom:20px;"></textarea>'
+    + '<button onclick="_muhasabaCollectSchema()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>'
+    + '</div>';
+  el.innerHTML = html;
+}
+
+function _muhasabaCollectSchema() {
+  var checked = [];
+  document.querySelectorAll('._schemaOn').forEach(function(b) { checked.push(b.textContent); });
+  var libre = (document.getElementById('_schemaLibre') || {}).value || '';
+  window._muhasabaReponses.schema = checked;
+  window._muhasabaReponses.schemaLibre = libre;
+  openMuhasabaSensPlaceholder();
+}
+
+function openMuhasabaSensPlaceholder() {
   _babImmersion = true; var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var c = '#B33A3A';
   var emo = (window._muhasabaReponses && window._muhasabaReponses.emotion) || '?';
   var besoin = (window._muhasabaReponses && window._muhasabaReponses.besoin) || '?';
+  var schema = (window._muhasabaReponses && window._muhasabaReponses.schema) || [];
   el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:28px;color:' + c + ';direction:rtl;margin-bottom:8px;">\u0645\u062d\u0627\u0633\u0628\u0629</div>'
     + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:16px;">Mu\u1e25\u00e2saba</div>'
-    + '<div class="itfaa-body" style="font-size:15px;margin-bottom:6px;">\u00c9motion : <strong>' + escapeHtml(emo) + '</strong></div>'
-    + '<div class="itfaa-body" style="font-size:15px;margin-bottom:16px;">Besoin : <strong>' + escapeHtml(besoin) + '</strong></div>'
-    + '<div class="itfaa-subtle" style="font-size:14px;line-height:1.7;margin-bottom:32px;">Suite bient\u00f4t disponible \u2014 sch\u00e9ma r\u00e9current.</div>'
+    + '<div class="itfaa-body" style="font-size:14px;margin-bottom:6px;">\u00c9motion : ' + escapeHtml(emo) + ' \u2022 Besoin : ' + escapeHtml(besoin) + '</div>'
+    + (schema.length ? '<div class="itfaa-subtle" style="font-size:13px;margin-bottom:16px;">Sch\u00e9ma : ' + escapeHtml(schema.join(', ')) + '</div>' : '')
+    + '<div class="itfaa-subtle" style="font-size:14px;line-height:1.7;margin-bottom:32px;">Suite bient\u00f4t disponible \u2014 sens et intention.</div>'
     + '<button onclick="_babImmersion=false;var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="padding:14px 28px;border-radius:12px;border:1px solid ' + c + '44;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">Retour</button>'
     + '</div>';
 }
@@ -10223,7 +10254,9 @@ window.openItfaaRefuge        = openItfaaRefuge;
 window.openMuhasabaIntro      = openMuhasabaIntro;
 window.openMuhasabaEmotion    = openMuhasabaEmotion;
 window.openMuhasabaBesoin = openMuhasabaBesoin;
-window.openMuhasabaSchemaPlaceholder = openMuhasabaSchemaPlaceholder;
+window.openMuhasabaSchema     = openMuhasabaSchema;
+window._muhasabaCollectSchema = _muhasabaCollectSchema;
+window.openMuhasabaSensPlaceholder = openMuhasabaSensPlaceholder;
 window.babCompletPorte        = babCompletPorte;
 
 // A11y: overlay list used by Escape + focus trap

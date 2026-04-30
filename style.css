@@ -7723,3 +7723,4 @@ button[style*="gold-v2"] {
 @keyframes _zoneFade { 0%{opacity:0} 15%{opacity:1} 77%{opacity:1} 100%{opacity:0} }
 .itfaa-body { color:#E5E0DC; }
 .itfaa-subtle { color:#9A9189; font-style:italic; }
+._schemaOn { background:#B33A3A33 !important; border-color:#B33A3A !important; }
