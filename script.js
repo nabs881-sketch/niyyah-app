@@ -3846,8 +3846,36 @@ function openItfaaAction() {
   var backBtn = '<button onclick="openItfaaStep1()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
   var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
     + backBtn
-    + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.6;margin-bottom:16px;">' + escapeHtml(labels[zone] || zone) + '</div>'
-    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.7;max-width:520px;margin:0 auto 20px;">' + escapeHtml(act.fr) + '</div>';
+    + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.6;margin-bottom:16px;">' + escapeHtml(labels[zone] || zone) + '</div>';
+  // Zone MAINS : cercle respiratoire
+  if (zone === 'mains') {
+    var sMode = safeGetItem('souffle_mode') || 'silence';
+    var sTextes = {silence:{i:'Inspire',e:'Expire'},subhanallah:{i:'Sub\u1e25\u00e2na',e:'All\u00e2h'},istighfar:{i:'Astaghfiru',e:'All\u00e2h'},lahawla:{i:'L\u00e2 \u1e25awla',e:'ill\u00e2 bill\u00e2h'}};
+    var sT = sTextes[sMode] || sTextes.silence;
+    html += '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;margin-bottom:24px;">Marche une minute. Respire.</div>'
+      + '<div style="width:140px;height:140px;border-radius:50%;background:radial-gradient(ellipse at center,' + c + '22 0%,transparent 70%);border:2px solid ' + c + '44;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;animation:_breathe 10s ease-in-out 3;">'
+      + '<div id="_souffleTexte" style="font-family:var(--serif);font-size:18px;color:' + c + ';text-align:center;"></div>'
+      + '</div>'
+      + '<div class="itfaa-subtle" style="font-size:11px;max-width:400px;margin:0 auto 24px;">Sounnah g\u00e9n\u00e9rale du mouvement et de la respiration consciente \u2014 pas de hadith sp\u00e9cifique sur cette pratique.</div>'
+      + '<button id="_souffleBtnFait" onclick="openItfaaRefuge()" style="display:none;width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019ai fait \u2726</button>'
+      + '</div>';
+    el.innerHTML = html;
+    // Animation texte inspire/expire
+    var _sStep = 0;
+    var _sTxt = document.getElementById('_souffleTexte');
+    function _updS() {
+      if (!_sTxt || !document.getElementById('_souffleTexte')) return;
+      _sTxt.textContent = (_sStep % 2 === 0) ? sT.i : sT.e;
+      _sStep++;
+      if (_sStep < 6) setTimeout(_updS, 5000);
+    }
+    _updS();
+    // Bouton apparaît après 30s
+    setTimeout(function() { var b = document.getElementById('_souffleBtnFait'); if (b) b.style.display = 'block'; }, 30000);
+    return;
+  }
+  // Zones standard (tête/gorge/poitrine/ventre)
+  html += '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.7;max-width:520px;margin:0 auto 20px;">' + escapeHtml(act.fr) + '</div>';
   if (ar) {
     html += '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:' + c + ';direction:rtl;text-align:center;line-height:1.8;margin:16px auto 6px;max-width:520px;opacity:0.85;">' + ar + '</div>';
   }
@@ -3862,9 +3890,6 @@ function openItfaaAction() {
   }
   if (zone === 'tete' && !ar) {
     html += '<div class="itfaa-subtle" style="font-size:11px;text-align:center;max-width:400px;margin:0 auto 24px;">Pratique recommand\u00e9e par la tradition musulmane.</div>';
-  }
-  if (zone === 'mains' && !ar) {
-    html += '<div class="itfaa-subtle" style="font-size:11px;text-align:center;max-width:400px;margin:0 auto 24px;">Sounnah g\u00e9n\u00e9rale du mouvement et de la respiration consciente \u2014 pas de hadith sp\u00e9cifique sur cette pratique.</div>';
   }
   html += '<button onclick="openItfaaRefuge()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;margin-top:20px;">J\u2019ai fait \u2726</button>'
     + '</div>';
