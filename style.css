@@ -7718,3 +7718,4 @@ button[style*="gold-v2"] {
   padding-bottom:14px;
 }
 .v2-mode .nav-bar-v2.hidden-immersion { display: none !important; }
+@keyframes _haloBreath { 0%,100% { opacity:0.4; } 50% { opacity:0.7; } }
