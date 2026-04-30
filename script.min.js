@@ -3815,6 +3815,9 @@ function openItfaaAction() {
   if (grade) {
     html += '<div class="itfaa-subtle" style="font-size:11px;text-align:center;opacity:0.7;margin-bottom:24px;">' + escapeHtml(grade) + '</div>';
   }
+  if (zone === 'mains' && !ar) {
+    html += '<div class="itfaa-subtle" style="font-size:11px;text-align:center;max-width:400px;margin:0 auto 24px;">Sounnah g\u00e9n\u00e9rale du mouvement et de la respiration consciente \u2014 pas de hadith sp\u00e9cifique sur cette pratique.</div>';
+  }
   html += '<button onclick="openItfaaRefuge()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;margin-top:20px;">J\u2019ai fait \u2726</button>'
     + '</div>';
   el.innerHTML = html;
