@@ -4577,6 +4577,72 @@ function _cureColereJ5Save() {
     + '</div>';
 }
 
+function openCureColereJour6() {
+  _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
+  document.body.classList.add('in-bab-an-nafs');
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#B33A3A';
+  // Hadith Bukhârî 6035 (caractère du Prophète ﷺ)
+  var hHilm = {ar:'\u0644\u064e\u0645\u0652 \u064a\u064e\u0643\u064f\u0646\u0650 \u0627\u0644\u0646\u0651\u064e\u0628\u0650\u064a\u0651\u064f \uFDFA \u0641\u064e\u0627\u062d\u0650\u0634\u064b\u0627 \u0648\u064e\u0644\u064e\u0627 \u0645\u064f\u062a\u064e\u0641\u064e\u062d\u0651\u0650\u0634\u064b\u0627',translit:'Lam yakuni n-nabiyyu \uFDFA f\u00e2\u1e25ishan wa l\u00e2 mutafa\u1e25\u1e25ishan',fr:'Le Proph\u00e8te \uFDFA n\u2019\u00e9tait ni grossier ni vulgaire. Il disait\u00a0: les meilleurs d\u2019entre vous sont ceux qui ont le meilleur caract\u00e8re.',source:'Bukh\u00e2r\u00ee 6035'};
+  // Ṣalât ʿala-n-nabiyy
+  var salat = {ar:'\u0627\u0644\u0644\u0651\u064e\u0647\u064f\u0645\u0651\u064e \u0635\u064e\u0644\u0651\u0650 \u0639\u064e\u0644\u064e\u0649 \u0645\u064f\u062d\u064e\u0645\u0651\u064e\u062f\u064d \u0648\u064e\u0639\u064e\u0644\u064e\u0649 \u0622\u0644\u0650 \u0645\u064f\u062d\u064e\u0645\u0651\u064e\u062f\u064d',translit:'All\u00e2humma \u1e63alli \u2019al\u00e2 Mu\u1e25ammad wa \u2019al\u00e2 \u00e2li Mu\u1e25ammad',fr:'\u00d4 Allah, envoie Ta pri\u00e8re sur Mu\u1e25ammad et sur la famille de Mu\u1e25ammad.'};
+  var backBtn = '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
+  var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;">'
+    + backBtn
+    // 1. OUVERTURE
+    + '<div style="text-align:center;margin-bottom:40px;">'
+    + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:' + c + ';direction:rtl;margin-bottom:6px;">\u0631\u0650\u064a\u064e\u0627\u0636\u064e\u0629 \u0646\u064e\u0641\u0652\u0633\u0650\u064a\u0651\u064e\u0629</div>'
+    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:4px;">Cure Col\u00e8re \u2014 Jour 6</div>'
+    + '<div class="itfaa-body" style="font-size:16px;">Le \u1e25ilm</div>'
+    + '</div>'
+    // 2. CONTEMPLATION
+    + '<div style="text-align:center;margin-bottom:40px;padding:20px;border-radius:14px;border:1px solid ' + c + '22;background:' + c + '08;">'
+    + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.5;margin-bottom:12px;">Contemplation</div>'
+    + '<div style="font-family:\'Scheherazade New\',serif;font-size:22px;color:' + c + ';direction:rtl;line-height:1.8;margin-bottom:8px;">' + hHilm.ar + '</div>'
+    + '<div class="itfaa-body" style="font-size:13px;font-style:italic;margin-bottom:8px;">' + escapeHtml(hHilm.translit) + '</div>'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;margin-bottom:8px;">' + escapeHtml(hHilm.fr) + '</div>'
+    + '<div class="itfaa-subtle" style="font-size:11px;">\u2014 ' + escapeHtml(hHilm.source) + '</div>'
+    + '</div>'
+    // 3. EXERCICE
+    + '<div style="text-align:center;margin-bottom:40px;">'
+    + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.5;margin-bottom:12px;">Exercice du jour</div>'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:16px;line-height:1.7;max-width:420px;margin:0 auto 12px;">Le <em style="color:' + c + ';">\u1e25ilm</em> = la douceur qui a le pouvoir de la col\u00e8re mais choisit la patience. Pas la mollesse.</div>'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:16px;line-height:1.7;max-width:420px;margin:0 auto 16px;">Trouve UNE situation o\u00f9 tu pourrais r\u00e9agir fort. Choisis le \u1e25ilm. Imitation du Proph\u00e8te \uFDFA.</div>'
+    + '<textarea id="_cureJ6Notes" placeholder="La situation, et comment j\u2019ai choisi le \u1e25ilm\u2026 (optionnel)" style="width:100%;max-width:360px;min-height:70px;padding:12px;border-radius:10px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;resize:vertical;"></textarea>'
+    + '</div>'
+    // 4. CLÔTURE
+    + '<div style="text-align:center;margin-bottom:20px;padding:20px;border-radius:14px;border:1px solid ' + c + '22;background:' + c + '08;">'
+    + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.5;margin-bottom:12px;">Cl\u00f4ture \u2014 \u1e62al\u00e2t \u2019ala-n-nabiyy</div>'
+    + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:' + c + ';direction:rtl;line-height:1.8;margin-bottom:6px;">' + salat.ar + '</div>'
+    + '<div class="itfaa-body" style="font-size:13px;font-style:italic;margin-bottom:6px;">' + escapeHtml(salat.translit) + '</div>'
+    + '<div class="itfaa-body" style="font-size:14px;margin-bottom:6px;">' + escapeHtml(salat.fr) + '</div>'
+    + '<div class="itfaa-subtle" style="font-size:12px;margin-bottom:16px;">\u00c0 r\u00e9p\u00e9ter 10 fois, lentement.</div>'
+    + '<button onclick="_cureColereJ6Save()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Je m\u2019engage pour demain</button>'
+    + '</div>'
+    + '</div>';
+  el.innerHTML = html;
+}
+
+function _cureColereJ6Save() {
+  var notes = (document.getElementById('_cureJ6Notes') || {}).value || '';
+  try {
+    var cure = JSON.parse(safeGetItem('cure_colere') || '{}');
+    cure.notes_jour_6 = notes;
+    cure.current_day = 7;
+    cure.jour6_date = new Date().toISOString();
+    safeSetItem('cure_colere', JSON.stringify(cure));
+  } catch(e) {}
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#B33A3A';
+  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
+    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:12px;">Jour 6 enregistr\u00e9.</div>'
+    + '<div class="itfaa-body" style="font-size:16px;line-height:1.7;max-width:400px;margin:0 auto 32px;">Demain, Jour 7\u00a0: le bilan. Tu as march\u00e9 6\u00a0jours. Le septi\u00e8me, tu regardes en arri\u00e8re.</div>'
+    + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="padding:14px 28px;border-radius:12px;border:1px solid ' + c + '44;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">Retour</button>'
+    + '</div>';
+}
+
 function babCompletPorte(id) {
   try {
     var data = JSON.parse(safeGetItem('niyyah_bab_an_nafs') || '{}');
@@ -10937,6 +11003,8 @@ window.openCureColereJour4    = openCureColereJour4;
 window._cureColereJ4Save      = _cureColereJ4Save;
 window.openCureColereJour5    = openCureColereJour5;
 window._cureColereJ5Save      = _cureColereJ5Save;
+window.openCureColereJour6    = openCureColereJour6;
+window._cureColereJ6Save      = _cureColereJ6Save;
 window.openMuhasabaRappel    = openMuhasabaRappel;
 window._muhasabaRappelReponse = _muhasabaRappelReponse;
 window._halo                  = _halo;
