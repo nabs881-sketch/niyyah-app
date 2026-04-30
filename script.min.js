@@ -3875,7 +3875,8 @@ function openMuhasabaEmotion() {
   var backBtn = '<button onclick="openColereChoix()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
   var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
     + backBtn
-    + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';margin-bottom:28px;">Sous la col\u00e8re, qu\u2019est-ce qui se cachait\u00a0?</div>'
+    + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';margin-bottom:12px;">Sous la col\u00e8re, qu\u2019est-ce qui se cachait\u00a0?</div>'
+    + '<div class="itfaa-subtle" style="font-size:12px;max-width:380px;margin:0 auto 24px;">Ma\u2019rifat an-nafs \u2014 la connaissance de soi, discipline classique des sages musulmans (al-Mu\u1e25\u00e2sib\u00ee, al-Ghaz\u00e2l\u00ee).</div>'
     + '<div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:360px;margin:0 auto;">';
   for (var i = 0; i < emotions.length; i++) {
     html += '<button onclick="window._muhasabaReponses.emotion=\'' + emotions[i] + '\';openMuhasabaBesoin()" style="padding:12px 20px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:15px;cursor:pointer;">' + emotions[i] + '</button>';
