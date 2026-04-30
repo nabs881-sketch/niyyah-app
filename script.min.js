@@ -4197,6 +4197,93 @@ function _muhasabaRappelReponse(idx, reponse) {
     + '</div>';
 }
 
+// ── CURE 7 JOURS COLÈRE ──
+function openCureColereJour1() {
+  _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
+  document.body.classList.add('in-bab-an-nafs');
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#B33A3A';
+  // Hadith Bukhârî 6116 (lâ taghḍab)
+  var h6116 = {ar:'\u0644\u064e\u0627 \u062a\u064e\u063a\u0652\u0636\u064e\u0628',translit:'L\u00e2 taghḍab',fr:'Ne te mets pas en col\u00e8re.',source:'Al-Bukh\u00e2r\u00ee 6116'};
+  try {
+    var raps = BAB_AN_NAFS.portes[0].rappels;
+    for (var _ri = 0; _ri < raps.length; _ri++) {
+      if (raps[_ri].source && raps[_ri].source.indexOf('6116') !== -1) { h6116.fr = raps[_ri].fr; h6116.source = raps[_ri].source; break; }
+    }
+  } catch(e) {}
+  // Duʿâ' an-Nasâ'î 1305
+  var duaa = {ar:'\u0627\u0644\u0644\u0651\u064e\u0647\u064f\u0645\u0651\u064e \u0625\u0650\u0646\u0651\u0650\u064a \u0623\u064e\u0633\u0652\u0623\u064e\u0644\u064f\u0643\u064e \u0643\u064e\u0644\u0650\u0645\u064e\u0629\u064e \u0627\u0644\u0652\u062d\u064e\u0642\u0651\u0650 \u0641\u0650\u064a \u0627\u0644\u0631\u0651\u0650\u0636\u064e\u0627 \u0648\u064e\u0627\u0644\u0652\u063a\u064e\u0636\u064e\u0628\u0650',translit:'All\u00e2humma inn\u00ee as\u2019aluka kalimata al-\u1e25aqqi fi r-ri\u1e0d\u00e2 wa al-gha\u1e0dab',fr:'\u00d4 Allah, je Te demande la parole juste dans le contentement et dans la col\u00e8re.',source:'an-Nas\u00e2\u2019\u00ee 1305'};
+  if (window.babNafsContent && window.babNafsContent.colere && window.babNafsContent.colere.muhasaba && window.babNafsContent.colere.muhasaba.etape6_duaa_parole_juste) {
+    var _d = window.babNafsContent.colere.muhasaba.etape6_duaa_parole_juste;
+    if (_d.ar) duaa = _d;
+  }
+  var backBtn = '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
+  var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;">'
+    + backBtn
+    // 1. OUVERTURE
+    + '<div style="text-align:center;margin-bottom:40px;">'
+    + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:' + c + ';direction:rtl;margin-bottom:6px;">\u0631\u0650\u064a\u064e\u0627\u0636\u064e\u0629 \u0646\u064e\u0641\u0652\u0633\u0650\u064a\u0651\u064e\u0629</div>'
+    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:4px;">Cure Col\u00e8re \u2014 Jour 1</div>'
+    + '<div class="itfaa-body" style="font-size:16px;margin-bottom:20px;">Reconna\u00eetre le feu</div>'
+    + '<div class="itfaa-subtle" style="font-size:13px;margin-bottom:8px;">Pose ton intention avant de commencer :</div>'
+    + '<textarea id="_cureNiyyah" placeholder="Ma niyyah pour cette cure\u2026" style="width:100%;max-width:360px;min-height:50px;padding:12px;border-radius:10px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;resize:vertical;"></textarea>'
+    + '</div>'
+    // 2. CONTEMPLATION
+    + '<div style="text-align:center;margin-bottom:40px;padding:20px;border-radius:14px;border:1px solid ' + c + '22;background:' + c + '08;">'
+    + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.5;margin-bottom:12px;">Contemplation</div>'
+    + '<div style="font-family:\'Scheherazade New\',serif;font-size:28px;color:' + c + ';direction:rtl;line-height:1.8;margin-bottom:8px;">' + h6116.ar + '</div>'
+    + '<div class="itfaa-body" style="font-size:14px;font-style:italic;margin-bottom:8px;">' + escapeHtml(h6116.translit) + '</div>'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:16px;line-height:1.7;margin-bottom:8px;">' + escapeHtml(h6116.fr) + '</div>'
+    + '<div class="itfaa-subtle" style="font-size:11px;">\u2014 ' + escapeHtml(h6116.source) + '</div>'
+    + '</div>'
+    // 3. EXERCICE
+    + '<div style="text-align:center;margin-bottom:40px;">'
+    + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.5;margin-bottom:12px;">Exercice du jour</div>'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:16px;line-height:1.7;max-width:400px;margin:0 auto 16px;">Aujourd\u2019hui, observe tes col\u00e8res. Note-les en 1\u00a0ligne.</div>'
+    + '<textarea id="_cureNotes" placeholder="Ce qui m\u2019a mis en col\u00e8re aujourd\u2019hui\u2026" style="width:100%;max-width:360px;min-height:80px;padding:12px;border-radius:10px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;resize:vertical;"></textarea>'
+    + '</div>'
+    // 4. CLÔTURE
+    + '<div style="text-align:center;margin-bottom:20px;padding:20px;border-radius:14px;border:1px solid ' + c + '22;background:' + c + '08;">'
+    + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.5;margin-bottom:12px;">Cl\u00f4ture</div>'
+    + '<div style="font-family:\'Scheherazade New\',serif;font-size:22px;color:' + c + ';direction:rtl;line-height:1.8;margin-bottom:6px;">' + duaa.ar + '</div>'
+    + '<div class="itfaa-body" style="font-size:13px;font-style:italic;margin-bottom:6px;">' + escapeHtml(duaa.translit) + '</div>'
+    + '<div class="itfaa-body" style="font-size:14px;margin-bottom:6px;">' + escapeHtml(duaa.fr) + '</div>'
+    + '<div class="itfaa-subtle" style="font-size:11px;margin-bottom:16px;">\u2014 ' + escapeHtml(duaa.source) + '</div>'
+    + '<button onclick="_cureColereJ1Save()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Je m\u2019engage pour demain</button>'
+    + '</div>'
+    + '</div>';
+  el.innerHTML = html;
+}
+
+function _cureColereJ1Save() {
+  var niyyah = (document.getElementById('_cureNiyyah') || {}).value || '';
+  if (!niyyah.trim()) {
+    var field = document.getElementById('_cureNiyyah');
+    if (field) { field.style.borderColor = '#B33A3A'; field.focus(); field.placeholder = 'Niyyah obligatoire avant de continuer\u2026'; }
+    return;
+  }
+  var notes = (document.getElementById('_cureNotes') || {}).value || '';
+  try {
+    var cure = JSON.parse(safeGetItem('cure_colere') || '{}');
+    cure.niyyah = niyyah;
+    cure.notes_jour_1 = notes;
+    cure.current_day = 2;
+    cure.started = cure.started || new Date().toISOString();
+    cure.jour1_date = new Date().toISOString();
+    safeSetItem('cure_colere', JSON.stringify(cure));
+  } catch(e) {}
+  // Écran confirmation
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#B33A3A';
+  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
+    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:12px;">Jour 1 enregistr\u00e9.</div>'
+    + '<div class="itfaa-body" style="font-size:16px;line-height:1.7;max-width:400px;margin:0 auto 32px;">Demain, Jour 2 t\u2019attend. Le feu se conna\u00eet avant de s\u2019\u00e9teindre.</div>'
+    + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="padding:14px 28px;border-radius:12px;border:1px solid ' + c + '44;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">Retour</button>'
+    + '</div>';
+}
+
 function babCompletPorte(id) {
   try {
     var data = JSON.parse(safeGetItem('niyyah_bab_an_nafs') || '{}');
@@ -10547,6 +10634,8 @@ window._showAideBtn           = _showAideBtn;
 window._hideAideBtn           = _hideAideBtn;
 window.openAideHumaine        = openAideHumaine;
 window.openColereSeuilTherapeute = openColereSeuilTherapeute;
+window.openCureColereJour1    = openCureColereJour1;
+window._cureColereJ1Save      = _cureColereJ1Save;
 window.openMuhasabaRappel    = openMuhasabaRappel;
 window._muhasabaRappelReponse = _muhasabaRappelReponse;
 window._halo                  = _halo;
