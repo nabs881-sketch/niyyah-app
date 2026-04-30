@@ -3913,7 +3913,8 @@ function openMuhasabaSchema() {
   var backBtn = '<button onclick="openMuhasabaBesoin()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
   var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
     + backBtn
-    + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';line-height:1.6;max-width:400px;margin:0 auto 24px;">Y a-t-il un fil rouge dans tes col\u00e8res\u00a0?</div>'
+    + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';line-height:1.6;max-width:400px;margin:0 auto 12px;">Y a-t-il un fil rouge dans tes col\u00e8res\u00a0?</div>'
+    + '<div class="itfaa-subtle" style="font-size:12px;max-width:380px;margin:0 auto 24px;line-height:1.6;">C\u2019est la mu\u1e25\u00e2saba \u2014 l\u2019examen de conscience que \u2019Umar ibn al-Kha\u1e6d\u1e6d\u00e2b recommandait\u00a0: \u00ab\u00a0Faites vos comptes avant qu\u2019on ne vous les demande.\u00a0\u00bb</div>'
     + '<div style="display:flex;flex-direction:column;gap:10px;max-width:360px;margin:0 auto 20px;text-align:left;">';
   for (var i = 0; i < items.length; i++) {
     html += '<button data-schema="' + i + '" onclick="this.classList.toggle(\'_schemaOn\')" style="padding:12px 16px;border-radius:10px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;text-align:left;transition:background 0.2s;">' + items[i] + '</button>';
