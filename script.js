@@ -3704,7 +3704,7 @@ function openBabPorte(id, step) {
 
 function openColereChoix() {
   document.body.classList.add('in-bab-an-nafs');
-  var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
+  requestAnimationFrame(function(){setTimeout(function(){var nb=document.getElementById('nav-bar-v2');if(nb)nb.classList.add('hidden-immersion')},100)});
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var c = '#B33A3A';
@@ -3728,7 +3728,7 @@ function openColereChoix() {
 }
 
 function openItfaaPlaceholder() {
-  var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
+  requestAnimationFrame(function(){setTimeout(function(){var nb=document.getElementById('nav-bar-v2');if(nb)nb.classList.add('hidden-immersion')},100)});
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var c = '#B33A3A';
@@ -3741,7 +3741,7 @@ function openItfaaPlaceholder() {
 }
 
 function openMuhasabaPlaceholder() {
-  var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
+  requestAnimationFrame(function(){setTimeout(function(){var nb=document.getElementById('nav-bar-v2');if(nb)nb.classList.add('hidden-immersion')},100)});
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var c = '#B33A3A';
