@@ -3814,12 +3814,30 @@ function openItfaaRefuge() {
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var c = '#B33A3A';
-  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
-    + '<div style="font-family:\'Scheherazade New\',serif;font-size:28px;color:' + c + ';direction:rtl;margin-bottom:8px;">\u0623\u0639\u0648\u0630 \u0628\u0627\u0644\u0644\u0647</div>'
-    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:24px;">Refuge</div>'
-    + '<div style="font-size:14px;color:var(--t3);line-height:1.7;margin-bottom:32px;">Bient\u00f4t disponible \u2014 derni\u00e8re \u00e9tape du parcours I\u1e6df\u00e2\u2019.</div>'
-    + '<button onclick="openItfaaAction()" style="padding:14px 28px;border-radius:12px;border:1px solid ' + c + '44;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">Retour</button>'
+  // Lire depuis JSON
+  var ar = '', translit = '', fr = '', source = '', grade = '', context = '';
+  if (window.babNafsContent && window.babNafsContent.colere && window.babNafsContent.colere.itfaa && window.babNafsContent.colere.itfaa.etape7_refuge) {
+    var h = window.babNafsContent.colere.itfaa.etape7_refuge;
+    ar = h.ar || ''; translit = h.translit || ''; fr = h.fr || ''; source = h.source || ''; grade = h.grade || ''; context = h.context || '';
+  } else {
+    ar = '\u0623\u0639\u0648\u0630\u0627 \u0628\u0627\u0644\u0644\u0647\u0650 \u0645\u0650\u0646\u064e \u0627\u0644\u0634\u064e\u0651\u064a\u0637\u064e\u0627\u0646\u0650 \u0627\u0644\u0631\u064e\u0651\u062c\u0650\u064a\u0645\u0650';
+    translit = 'A\u2019\u00fbdhu bill\u00e2hi mina sh-shayt\u00e2ni r-raj\u00eem';
+    fr = 'Je cherche refuge aupr\u00e8s d\u2019Allah contre Satan le lapid\u00e9.';
+    source = 'Bukh\u00e2r\u00ee 3282, Muslim 2610'; grade = 'sahih';
+  }
+  var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
+    + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';opacity:0.7;margin-bottom:24px;">Cherche refuge.</div>'
+    + '<div style="font-family:\'Scheherazade New\',serif;font-size:28px;color:' + c + ';direction:rtl;text-align:center;line-height:1.8;max-width:520px;margin:0 auto 12px;">' + ar + '</div>'
+    + '<div style="font-size:14px;color:var(--t2);text-align:center;font-style:italic;margin-bottom:12px;">' + escapeHtml(translit) + '</div>'
+    + '<div style="font-family:var(--serif);font-size:16px;color:var(--t1);line-height:1.7;max-width:520px;margin:0 auto 16px;">' + escapeHtml(fr) + '</div>';
+  if (context) {
+    html += '<div style="font-size:13px;color:var(--t3);line-height:1.6;max-width:480px;margin:0 auto 16px;font-style:italic;">' + escapeHtml(context) + '</div>';
+  }
+  html += '<div style="font-size:12px;color:var(--t3);margin-bottom:4px;">\u2014 ' + escapeHtml(source) + '</div>'
+    + '<div style="font-size:11px;color:var(--t3);font-style:italic;opacity:0.7;margin-bottom:32px;">' + escapeHtml(grade) + '</div>'
+    + '<button onclick="_babImmersion=false;var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');babCompletPorte(\'colere\')" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Sortir</button>'
     + '</div>';
+  el.innerHTML = html;
 }
 
 function openMuhasabaPlaceholder() {
