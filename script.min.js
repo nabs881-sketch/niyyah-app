@@ -3737,8 +3737,8 @@ function openItfaaStep1() {
   var haloFn = "function _halo(el,z){el.setAttribute('fill','rgba(200,168,75,0.3)');window._colereZone=z;setTimeout(function(){openItfaaActionPlaceholder()},300);}";
   var zones = '<svg viewBox="0 0 100 100" preserveAspectRatio="none" style="position:absolute;top:0;left:0;width:100%;height:100%;">'
     + '<circle cx="50" cy="11" r="5" fill="transparent" style="cursor:pointer" onclick="' + haloFn + '_halo(this,\'tete\')"/>'
-    + '<circle cx="50" cy="18" r="3" fill="transparent" style="cursor:pointer" onclick="' + haloFn + '_halo(this,\'gorge\')"/>'
     + '<circle cx="50" cy="28" r="6" fill="transparent" style="cursor:pointer" onclick="' + haloFn + '_halo(this,\'poitrine\')"/>'
+    + '<circle cx="50" cy="18" r="3" fill="transparent" style="cursor:pointer" onclick="' + haloFn + '_halo(this,\'gorge\')"/>'
     + '<circle cx="50" cy="42" r="7" fill="transparent" style="cursor:pointer" onclick="' + haloFn + '_halo(this,\'ventre\')"/>'
     + '<circle cx="30" cy="55" r="5" fill="transparent" style="cursor:pointer" onclick="' + haloFn + '_halo(this,\'mains\')"/>'
     + '<circle cx="70" cy="55" r="5" fill="transparent" style="cursor:pointer" onclick="' + haloFn + '_halo(this,\'mains\')"/>'
