@@ -3741,6 +3741,32 @@ function openColereChoix() {
   el.innerHTML = html;
 }
 
+// ── LE SOUFFLE (composant réutilisable) ──
+function afficheLeSouffle(parentEl, couleur) {
+  var c = couleur || '#B33A3A';
+  var sMode = safeGetItem('souffle_mode') || 'silence';
+  var sTextes = {silence:{i:'Inspire',e:'Expire'},subhanallah:{i:'Sub\u1e25\u00e2na',e:'All\u00e2h'},istighfar:{i:'Astaghfiru',e:'All\u00e2h'},lahawla:{i:'L\u00e2 \u1e25awla',e:'ill\u00e2 bill\u00e2h'}};
+  var sT = sTextes[sMode] || sTextes.silence;
+  var wrap = document.createElement('div');
+  wrap.style.cssText = 'display:flex;align-items:center;justify-content:center;margin:0 auto 20px;';
+  var circle = document.createElement('div');
+  circle.style.cssText = 'width:140px;height:140px;border-radius:50%;background:radial-gradient(ellipse at center,' + c + '22 0%,transparent 70%);border:2px solid ' + c + '44;display:flex;align-items:center;justify-content:center;animation:_breathe 10s ease-in-out 3;';
+  var txt = document.createElement('div');
+  txt.style.cssText = 'font-family:var(--serif);font-size:18px;color:' + c + ';text-align:center;';
+  circle.appendChild(txt);
+  wrap.appendChild(circle);
+  parentEl.appendChild(wrap);
+  var step = 0;
+  function upd() {
+    if (!txt.parentNode) return;
+    txt.textContent = (step % 2 === 0) ? sT.i : sT.e;
+    step++;
+    if (step < 6) setTimeout(upd, 5000);
+    else { txt.style.opacity = '0.4'; }
+  }
+  upd();
+}
+
 function _showAideBtn() {
   if (document.getElementById('_aideHumaineBtn')) return;
   var btn = document.createElement('button');
@@ -3847,30 +3873,15 @@ function openItfaaAction() {
   var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
     + backBtn
     + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.6;margin-bottom:16px;">' + escapeHtml(labels[zone] || zone) + '</div>';
-  // Zone MAINS : cercle respiratoire
+  // Zone MAINS : cercle respiratoire via composant réutilisable
   if (zone === 'mains') {
-    var sMode = safeGetItem('souffle_mode') || 'silence';
-    var sTextes = {silence:{i:'Inspire',e:'Expire'},subhanallah:{i:'Sub\u1e25\u00e2na',e:'All\u00e2h'},istighfar:{i:'Astaghfiru',e:'All\u00e2h'},lahawla:{i:'L\u00e2 \u1e25awla',e:'ill\u00e2 bill\u00e2h'}};
-    var sT = sTextes[sMode] || sTextes.silence;
     html += '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;margin-bottom:24px;">Marche une minute. Respire.</div>'
-      + '<div style="width:140px;height:140px;border-radius:50%;background:radial-gradient(ellipse at center,' + c + '22 0%,transparent 70%);border:2px solid ' + c + '44;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;animation:_breathe 10s ease-in-out 3;">'
-      + '<div id="_souffleTexte" style="font-family:var(--serif);font-size:18px;color:' + c + ';text-align:center;"></div>'
-      + '</div>'
+      + '<div id="_souffleContainer"></div>'
       + '<div class="itfaa-subtle" style="font-size:11px;max-width:400px;margin:0 auto 24px;">Sounnah g\u00e9n\u00e9rale du mouvement et de la respiration consciente \u2014 pas de hadith sp\u00e9cifique sur cette pratique.</div>'
       + '<button id="_souffleBtnFait" onclick="openItfaaRefuge()" style="display:none;width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019ai fait \u2726</button>'
       + '</div>';
     el.innerHTML = html;
-    // Animation texte inspire/expire
-    var _sStep = 0;
-    var _sTxt = document.getElementById('_souffleTexte');
-    function _updS() {
-      if (!_sTxt || !document.getElementById('_souffleTexte')) return;
-      _sTxt.textContent = (_sStep % 2 === 0) ? sT.i : sT.e;
-      _sStep++;
-      if (_sStep < 6) setTimeout(_updS, 5000);
-    }
-    _updS();
-    // Bouton apparaît après 30s
+    afficheLeSouffle(document.getElementById('_souffleContainer'), c);
     setTimeout(function() { var b = document.getElementById('_souffleBtnFait'); if (b) b.style.display = 'block'; }, 30000);
     return;
   }
@@ -10531,6 +10542,7 @@ window.openRegardeJournal     = openRegardeJournal;
 window.renderBabAnNafs        = renderBabAnNafs;
 window.openBabPorte           = openBabPorte;
 window.openColereChoix        = openColereChoix;
+window.afficheLeSouffle       = afficheLeSouffle;
 window._showAideBtn           = _showAideBtn;
 window._hideAideBtn           = _hideAideBtn;
 window.openAideHumaine        = openAideHumaine;
