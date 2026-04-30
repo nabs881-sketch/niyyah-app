@@ -3988,8 +3988,20 @@ function openMuhasabaAction() {
   var c = '#B33A3A';
   var actions = ['Une parole (parler, expliquer, m\u2019excuser)','Un silence (laisser passer, accepter)','Un changement (habitude, situation)','Une du\u2019\u00e2\u2019 (entre Allah et moi)'];
   var backBtn = '<button onclick="openMuhasabaSens()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
+  // Hadith niyyât depuis JSON
+  var niyH = {ar:'\u0625\u0650\u0646\u0651\u064e\u0645\u064e\u0627 \u0627\u0644\u0623\u0639\u0645\u0627\u0644\u064f \u0628\u0650\u0627\u0644\u0646\u0651\u0650\u064a\u0651\u064e\u0627\u062a\u0650',translit:'Innam\u00e2 al-a\u2019m\u00e2lu bi-n-niyy\u00e2t',fr:'Les actions ne valent que par les intentions.',source:'Bukh\u00e2r\u00ee 1, Muslim 1907',narrator:'\u2019Umar ibn al-Kha\u1e6d\u1e6d\u00e2b',grade:'sahih'};
+  if (window.babNafsContent && window.babNafsContent.colere && window.babNafsContent.colere.muhasaba && window.babNafsContent.colere.muhasaba.etape7_intention) {
+    var _h = window.babNafsContent.colere.muhasaba.etape7_intention;
+    if (_h.ar) niyH = _h;
+  }
   var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
     + backBtn
+    + '<div style="max-width:400px;margin:0 auto 24px;padding:16px;border-radius:12px;border:1px solid ' + c + '22;background:' + c + '08;text-align:center;">'
+    + '<div style="font-family:\'Scheherazade New\',serif;font-size:22px;color:' + c + ';direction:rtl;line-height:1.8;margin-bottom:6px;">' + niyH.ar + '</div>'
+    + '<div class="itfaa-body" style="font-size:13px;font-style:italic;margin-bottom:6px;">' + escapeHtml(niyH.translit) + '</div>'
+    + '<div class="itfaa-body" style="font-size:14px;margin-bottom:6px;">' + escapeHtml(niyH.fr) + '</div>'
+    + '<div class="itfaa-subtle" style="font-size:11px;">\u2014 ' + escapeHtml(niyH.source) + ' \u2014 ' + escapeHtml(niyH.narrator) + ' \u2014 ' + escapeHtml(niyH.grade) + '</div>'
+    + '</div>'
     + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';line-height:1.6;max-width:420px;margin:0 auto 24px;">Maintenant que tu vois clair, qu\u2019est-ce qui demande \u00e0 \u00eatre fait\u00a0?</div>'
     + '<div style="display:flex;flex-direction:column;gap:10px;max-width:360px;margin:0 auto 20px;">';
   for (var i = 0; i < actions.length; i++) {
