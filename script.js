@@ -3578,6 +3578,7 @@ function resetWirdSession(session) {
 // BAB_AN_NAFS_AR supprimé — AR intégré dans BAB_AN_NAFS.portes[].nom.ar
 function renderBabAnNafs() {
   document.body.classList.add('in-bab-an-nafs');
+  var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.remove('hidden-immersion');
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;">'
@@ -3703,6 +3704,7 @@ function openBabPorte(id, step) {
 
 function openColereChoix() {
   document.body.classList.add('in-bab-an-nafs');
+  var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var c = '#B33A3A';
@@ -3726,6 +3728,7 @@ function openColereChoix() {
 }
 
 function openItfaaPlaceholder() {
+  var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var c = '#B33A3A';
@@ -3738,6 +3741,7 @@ function openItfaaPlaceholder() {
 }
 
 function openMuhasabaPlaceholder() {
+  var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var c = '#B33A3A';
@@ -7473,6 +7477,7 @@ function v2GoNafs() {
 function setupTopUI(screen) {
   hideAlHayaBtn();
   document.body.classList.remove('in-bab-an-nafs');
+  var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.remove('hidden-immersion');
   var backBtn = document.getElementById('v2-back-btn');
   if (backBtn) backBtn.classList.remove('visible');
   var tbEl = document.getElementById('topbar-v2');
