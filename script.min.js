@@ -3610,6 +3610,8 @@ function openBabPorte(id, step) {
   document.body.classList.add('in-bab-an-nafs');
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
+  // Guard Colère → écran choix de mode
+  if (id === 'colere' && (!step || step === 1)) { openColereChoix(); return; }
   var porte = BAB_AN_NAFS.portes.find(function(p) { return p.id === id; });
   if (!porte) { console.warn('Bab an-Nafs: porte manquante:', id); return; }
   // Porte vide ou non validée sans contenu → écran "en préparation"
@@ -3697,6 +3699,54 @@ function openBabPorte(id, step) {
   }
   html += '</div></div>';
   el.innerHTML = html;
+}
+
+function openColereChoix() {
+  document.body.classList.add('in-bab-an-nafs');
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#B33A3A';
+  var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
+    + '<button onclick="renderBabAnNafs()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>'
+    + '<div style="font-family:var(--serif);font-size:26px;color:' + c + ';margin-bottom:6px;">Col\u00e8re</div>'
+    + '<div style="font-family:\'Scheherazade New\',serif;font-size:30px;color:' + c + ';direction:rtl;opacity:0.7;margin-bottom:32px;">\u0627\u0644\u063A\u0636\u0628</div>'
+    + '<div style="display:flex;flex-direction:column;gap:16px;max-width:320px;margin:0 auto;">'
+    + '<button onclick="openItfaaPlaceholder()" style="padding:20px;border-radius:14px;border:1px solid ' + c + '55;background:' + c + '1a;cursor:pointer;text-align:center;">'
+    + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';margin-bottom:4px;">Maintenant</div>'
+    + '<div style="font-family:\'Scheherazade New\',serif;font-size:16px;color:' + c + ';opacity:0.7;">\u0625\u0637\u0641\u0627\u0621 \u2014 I\u1e6df\u00e2\u2019</div>'
+    + '<div style="font-size:12px;color:var(--t3);margin-top:6px;">~3 min \u2014 en crise</div>'
+    + '</button>'
+    + '<button onclick="openMuhasabaPlaceholder()" style="padding:20px;border-radius:14px;border:1px solid ' + c + '55;background:' + c + '0d;cursor:pointer;text-align:center;">'
+    + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';margin-bottom:4px;">\u00c0 froid</div>'
+    + '<div style="font-family:\'Scheherazade New\',serif;font-size:16px;color:' + c + ';opacity:0.7;">\u0645\u062d\u0627\u0633\u0628\u0629 \u2014 Mu\u1e25\u00e2saba</div>'
+    + '<div style="font-size:12px;color:var(--t3);margin-top:6px;">~12 min \u2014 examen de conscience</div>'
+    + '</button>'
+    + '</div></div>';
+  el.innerHTML = html;
+}
+
+function openItfaaPlaceholder() {
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#B33A3A';
+  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
+    + '<div style="font-family:\'Scheherazade New\',serif;font-size:28px;color:' + c + ';direction:rtl;margin-bottom:8px;">\u0625\u0637\u0641\u0627\u0621</div>'
+    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:24px;">Mode I\u1e6df\u00e2\u2019</div>'
+    + '<div style="font-size:14px;color:var(--t3);line-height:1.7;margin-bottom:32px;">Bient\u00f4t disponible \u2014 parcours guid\u00e9 en crise de col\u00e8re.</div>'
+    + '<button onclick="openColereChoix()" style="padding:14px 28px;border-radius:12px;border:1px solid ' + c + '44;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">Retour</button>'
+    + '</div>';
+}
+
+function openMuhasabaPlaceholder() {
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#B33A3A';
+  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
+    + '<div style="font-family:\'Scheherazade New\',serif;font-size:28px;color:' + c + ';direction:rtl;margin-bottom:8px;">\u0645\u062d\u0627\u0633\u0628\u0629</div>'
+    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:24px;">Mode Mu\u1e25\u00e2saba</div>'
+    + '<div style="font-size:14px;color:var(--t3);line-height:1.7;margin-bottom:32px;">Bient\u00f4t disponible \u2014 examen de conscience \u00e0 froid.</div>'
+    + '<button onclick="openColereChoix()" style="padding:14px 28px;border-radius:12px;border:1px solid ' + c + '44;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">Retour</button>'
+    + '</div>';
 }
 
 function babCompletPorte(id) {
@@ -10006,6 +10056,9 @@ window.regardeCancelThinking  = regardeCancelThinking;
 window.openRegardeJournal     = openRegardeJournal;
 window.renderBabAnNafs        = renderBabAnNafs;
 window.openBabPorte           = openBabPorte;
+window.openColereChoix        = openColereChoix;
+window.openItfaaPlaceholder   = openItfaaPlaceholder;
+window.openMuhasabaPlaceholder = openMuhasabaPlaceholder;
 window.babCompletPorte        = babCompletPorte;
 
 // A11y: overlay list used by Escape + focus trap
