@@ -3815,6 +3815,9 @@ function openItfaaAction() {
   if (grade) {
     html += '<div class="itfaa-subtle" style="font-size:11px;text-align:center;opacity:0.7;margin-bottom:24px;">' + escapeHtml(grade) + '</div>';
   }
+  if (zone === 'tete' && !ar) {
+    html += '<div class="itfaa-subtle" style="font-size:11px;text-align:center;max-width:400px;margin:0 auto 24px;">Pratique recommand\u00e9e par la tradition musulmane.</div>';
+  }
   if (zone === 'mains' && !ar) {
     html += '<div class="itfaa-subtle" style="font-size:11px;text-align:center;max-width:400px;margin:0 auto 24px;">Sounnah g\u00e9n\u00e9rale du mouvement et de la respiration consciente \u2014 pas de hadith sp\u00e9cifique sur cette pratique.</div>';
   }
