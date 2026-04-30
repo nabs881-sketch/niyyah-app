@@ -3768,7 +3768,7 @@ function openItfaaStep1() {
     var _h = window.babNafsContent.colere.itfaa.etape1_corps_general;
     if (_h.ar) { _cH.ar = _h.ar; _cH.fr = _h.fr || _cH.fr; _cH.source = (_h.source || '') + ' \u2014 ' + (_h.grade || ''); }
   }
-  html += '<div style="max-width:320px;margin:16px auto 0;text-align:center;">'
+  el.innerHTML += '<div style="max-width:320px;margin:16px auto 0;text-align:center;">'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:16px;color:#B33A3A;direction:rtl;line-height:1.6;opacity:0.7;">' + _cH.ar + '</div>'
     + '<div class="itfaa-body" style="font-size:12px;margin:4px 0 2px;">' + escapeHtml(_cH.fr) + '</div>'
     + '<div class="itfaa-subtle" style="font-size:10px;">' + escapeHtml(_cH.source) + '</div>'
