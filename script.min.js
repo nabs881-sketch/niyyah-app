@@ -4284,6 +4284,87 @@ function _cureColereJ1Save() {
     + '</div>';
 }
 
+function openCureColereJour2() {
+  _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
+  document.body.classList.add('in-bab-an-nafs');
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#B33A3A';
+  // Hadith Bukhârî 6114 (le vrai fort)
+  var h6114 = {ar:'\u0644\u064e\u064a\u0652\u0633\u064e \u0627\u0644\u0634\u0651\u064e\u062f\u0650\u064a\u062f\u064f \u0628\u0650\u0627\u0644\u0635\u0651\u064f\u0631\u064e\u0639\u064e\u0629\u0650\u060c \u0625\u0650\u0646\u0651\u064e\u0645\u064e\u0627 \u0627\u0644\u0634\u0651\u064e\u062f\u0650\u064a\u062f\u064f \u0627\u0644\u0651\u064e\u0630\u0650\u064a \u064a\u064e\u0645\u0652\u0644\u0650\u0643\u064f \u0646\u064e\u0641\u0652\u0633\u064e\u0647\u064f \u0639\u0650\u0646\u0652\u062f\u064e \u0627\u0644\u0652\u063a\u064e\u0636\u064e\u0628\u0650',translit:'Laysa sh-shad\u00eedu bi-\u1e63-\u1e63ur\u2019a, innam\u00e2 sh-shad\u00eedu lladh\u00ee yamliku nafsahu \u2019inda al-gha\u1e0dab',fr:'Le fort n\u2019est pas celui qui terrasse les hommes. Le fort est celui qui se ma\u00eetrise quand il est en col\u00e8re.',source:'Al-Bukh\u00e2r\u00ee 6114, Muslim 2609'};
+  try {
+    var raps = BAB_AN_NAFS.portes[0].rappels;
+    for (var _ri = 0; _ri < raps.length; _ri++) {
+      if (raps[_ri].source && raps[_ri].source.indexOf('6114') !== -1) { h6114.fr = raps[_ri].fr; h6114.source = raps[_ri].source; break; }
+    }
+  } catch(e) {}
+  // Duʿâ' fitna
+  var duaaFitna = {ar:'\u0627\u0644\u0644\u0651\u064e\u0647\u064f\u0645\u0651\u064e \u0625\u0650\u0646\u0651\u0650\u064a \u0623\u064e\u0639\u064f\u0648\u0630\u064f \u0628\u0650\u0643\u064e \u0645\u0650\u0646\u064e \u0627\u0644\u0652\u0641\u0650\u062a\u064e\u0646\u0650 \u0645\u064e\u0627 \u0638\u064e\u0647\u064e\u0631\u064e \u0645\u0650\u0646\u0652\u0647\u064e\u0627 \u0648\u064e\u0645\u064e\u0627 \u0628\u064e\u0637\u064e\u0646\u064e',translit:'All\u00e2humma inn\u00ee a\u2019\u00fbdhu bika mina al-fitani m\u00e2 \u1e93ahara minh\u00e2 wa m\u00e2 ba\u1e6dana',fr:'\u00d4 Allah, je cherche refuge aupr\u00e8s de Toi contre les \u00e9preuves, apparentes et cach\u00e9es.',source:'Muslim 2867'};
+  var backBtn = '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
+  var questions = [{id:'qui',label:'QUI t\u2019a mis en col\u00e8re\u00a0?'},{id:'ou',label:'O\u00d9 \u00e9tais-tu\u00a0?'},{id:'quand',label:'QUAND (moment, \u00e9tat)\u00a0?'},{id:'comment',label:'COMMENT as-tu r\u00e9agi\u00a0?'},{id:'pourquoi',label:'POURQUOI \u00e7a t\u2019a touch\u00e9\u00a0?'}];
+  var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;">'
+    + backBtn
+    // 1. OUVERTURE
+    + '<div style="text-align:center;margin-bottom:40px;">'
+    + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:' + c + ';direction:rtl;margin-bottom:6px;">\u0631\u0650\u064a\u064e\u0627\u0636\u064e\u0629 \u0646\u064e\u0641\u0652\u0633\u0650\u064a\u0651\u064e\u0629</div>'
+    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:4px;">Cure Col\u00e8re \u2014 Jour 2</div>'
+    + '<div class="itfaa-body" style="font-size:16px;">Les d\u00e9clencheurs</div>'
+    + '</div>'
+    // 2. CONTEMPLATION
+    + '<div style="text-align:center;margin-bottom:40px;padding:20px;border-radius:14px;border:1px solid ' + c + '22;background:' + c + '08;">'
+    + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.5;margin-bottom:12px;">Contemplation</div>'
+    + '<div style="font-family:\'Scheherazade New\',serif;font-size:26px;color:' + c + ';direction:rtl;line-height:1.8;margin-bottom:8px;">' + h6114.ar + '</div>'
+    + '<div class="itfaa-body" style="font-size:13px;font-style:italic;margin-bottom:8px;">' + escapeHtml(h6114.translit) + '</div>'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:16px;line-height:1.7;margin-bottom:8px;">' + escapeHtml(h6114.fr) + '</div>'
+    + '<div class="itfaa-subtle" style="font-size:11px;">\u2014 ' + escapeHtml(h6114.source) + '</div>'
+    + '</div>'
+    // 3. EXERCICE
+    + '<div style="text-align:center;margin-bottom:40px;">'
+    + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.5;margin-bottom:12px;">Exercice du jour</div>'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:16px;line-height:1.7;max-width:400px;margin:0 auto 20px;">Pense \u00e0 ta derni\u00e8re col\u00e8re. D\u00e9compose-la.</div>';
+  for (var qi = 0; qi < questions.length; qi++) {
+    html += '<div style="max-width:360px;margin:0 auto 12px;text-align:left;">'
+      + '<div style="font-family:var(--serif);font-size:14px;color:' + c + ';margin-bottom:4px;">' + questions[qi].label + '</div>'
+      + '<input id="_cureJ2_' + questions[qi].id + '" type="text" placeholder="\u2026" style="width:100%;padding:10px;border-radius:8px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;"/>'
+      + '</div>';
+  }
+  html += '</div>'
+    // 4. CLÔTURE
+    + '<div style="text-align:center;margin-bottom:20px;padding:20px;border-radius:14px;border:1px solid ' + c + '22;background:' + c + '08;">'
+    + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.5;margin-bottom:12px;">Cl\u00f4ture</div>'
+    + '<div style="font-family:\'Scheherazade New\',serif;font-size:22px;color:' + c + ';direction:rtl;line-height:1.8;margin-bottom:6px;">' + duaaFitna.ar + '</div>'
+    + '<div class="itfaa-body" style="font-size:13px;font-style:italic;margin-bottom:6px;">' + escapeHtml(duaaFitna.translit) + '</div>'
+    + '<div class="itfaa-body" style="font-size:14px;margin-bottom:6px;">' + escapeHtml(duaaFitna.fr) + '</div>'
+    + '<div class="itfaa-subtle" style="font-size:11px;margin-bottom:16px;">\u2014 ' + escapeHtml(duaaFitna.source) + '</div>'
+    + '<button onclick="_cureColereJ2Save()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Je m\u2019engage pour demain</button>'
+    + '</div>'
+    + '</div>';
+  el.innerHTML = html;
+}
+
+function _cureColereJ2Save() {
+  var ids = ['qui','ou','quand','comment','pourquoi'];
+  var notes = {};
+  for (var i = 0; i < ids.length; i++) {
+    notes[ids[i]] = (document.getElementById('_cureJ2_' + ids[i]) || {}).value || '';
+  }
+  try {
+    var cure = JSON.parse(safeGetItem('cure_colere') || '{}');
+    cure.notes_jour_2 = notes;
+    cure.current_day = 3;
+    cure.jour2_date = new Date().toISOString();
+    safeSetItem('cure_colere', JSON.stringify(cure));
+  } catch(e) {}
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#B33A3A';
+  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
+    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:12px;">Jour 2 enregistr\u00e9.</div>'
+    + '<div class="itfaa-body" style="font-size:16px;line-height:1.7;max-width:400px;margin:0 auto 32px;">Demain, Jour 3\u00a0: le corps entre en jeu. Pr\u00e9pare-toi.</div>'
+    + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="padding:14px 28px;border-radius:12px;border:1px solid ' + c + '44;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">Retour</button>'
+    + '</div>';
+}
+
 function babCompletPorte(id) {
   try {
     var data = JSON.parse(safeGetItem('niyyah_bab_an_nafs') || '{}');
@@ -10636,6 +10717,8 @@ window.openAideHumaine        = openAideHumaine;
 window.openColereSeuilTherapeute = openColereSeuilTherapeute;
 window.openCureColereJour1    = openCureColereJour1;
 window._cureColereJ1Save      = _cureColereJ1Save;
+window.openCureColereJour2    = openCureColereJour2;
+window._cureColereJ2Save      = _cureColereJ2Save;
 window.openMuhasabaRappel    = openMuhasabaRappel;
 window._muhasabaRappelReponse = _muhasabaRappelReponse;
 window._halo                  = _halo;
