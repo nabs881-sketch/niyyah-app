@@ -3740,9 +3740,10 @@ to {
   justify-content:center;
 }
 .tafakkur-dot {
-  width:140px;
-  height:140px;
-  background:transparent url('assets/orb_tafakkur.png') center/cover no-repeat;
+  width:200px;
+  height:200px;
+  background:transparent url('assets/orb_tafakkur.png') center/contain no-repeat !important;
+  background-color:transparent !important;
   border:none;
   outline:none;
   cursor:pointer;
@@ -3750,6 +3751,7 @@ to {
   margin-bottom:20px;
   -webkit-appearance:none;
   appearance:none;
+  transition:none !important;
 }
 .tafakkur-timer-btns {
   display:flex;
