@@ -10025,6 +10025,9 @@ document.addEventListener('keydown', e => {
 let _v2TouchStartX = 0;
 document.addEventListener('touchstart', e => { _v2TouchStartX = e.touches[0].clientX; }, { passive: true });
 document.addEventListener('touchend', e => {
+  // Ignore swipe on interactive buttons (audio, info, tasbih, wird)
+  var _tgt = e.target;
+  if (_tgt && (_tgt.closest('.btn-audio') || _tgt.closest('.btn-info') || _tgt.closest('.btn-tasbih-fs') || _tgt.closest('.btn-wird-audio'))) return;
   const dx = e.changedTouches[0].clientX - _v2TouchStartX;
   if (dx > 80 && v2CurrentView !== 'sanctuaire') {
     // Swipe right → back to sanctuaire
