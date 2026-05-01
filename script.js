@@ -8452,7 +8452,8 @@ function renderNafsTrait() {
         (weekCount === 0 ? '' : weekCount === 1 ? 'Tu l\'as observé 1 fois cette semaine' : 'Tu l\'as observé ' + weekCount + ' fois cette semaine') +
       '</div>' +
       '<div id="nafs-weekmap-container">' + _nafsRenderWeekMap(trait.id) + '</div>' +
-    '</div>';
+    '</div>' +
+    '<div style="text-align:center;margin-top:24px;"><button onclick="_showWaswasaScreen()" style="background:none;border:none;color:rgba(200,168,75,0.35);font-family:var(--serif);font-size:12px;font-style:italic;cursor:pointer;">Relire l\u2019avertissement</button></div>';
 }
 
 function _v2TransitionTo(targetId, opts) {
@@ -8544,7 +8545,21 @@ function journalSwitchTab(tab) {
     }
   }
 }
+function _showWaswasaScreen() {
+  var overlay = document.createElement('div');
+  overlay.id = '_waswasaOverlay';
+  overlay.style.cssText = 'position:fixed;inset:0;z-index:99999;background:#0a0a0a;display:flex;align-items:center;justify-content:center;animation:_fdjFadeIn 1s ease forwards;';
+  overlay.innerHTML = '<div style="max-width:380px;padding:32px 24px;text-align:center;">'
+    + '<div style="font-family:\'Scheherazade New\',serif;font-size:32px;color:#C8A84A;direction:rtl;margin-bottom:20px;">\u0648\u064e\u0633\u0652\u0648\u064e\u0633\u064e\u0629</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.7);line-height:1.8;margin-bottom:32px;">Cette pratique est une lecture lente de l\u2019\u00e2me. Pas un diagnostic.<br><br>Si tu te reconnais dans tout, c\u2019est s\u00fbrement le scrupule qui parle.<br><br>Va parler \u00e0 un humain.</div>'
+    + '<button onclick="safeSetItem(\'nafs_waswasa_seen\',\'1\');document.getElementById(\'_waswasaOverlay\').remove();" style="width:100%;max-width:280px;padding:14px;border-radius:12px;border:none;background:#C8A84A;color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019ai compris</button>'
+    + '</div>';
+  document.body.appendChild(overlay);
+}
+
 function v2GoNafs() {
+  // Avertissement waswasa à la 1ère ouverture
+  if (!safeGetItem('nafs_waswasa_seen')) _showWaswasaScreen();
   setupTopUI('nafs');
   _nAn('nafs_visited');
   showAlHayaBtn();
@@ -11167,6 +11182,7 @@ window._hideAideBtn           = _hideAideBtn;
 window.openAideHumaine        = openAideHumaine;
 window.openColereSeuilTherapeute = openColereSeuilTherapeute;
 window.openCureColere         = openCureColere;
+window._showWaswasaScreen     = _showWaswasaScreen;
 window.openCureColereJour1    = openCureColereJour1;
 window._cureColereJ1Save      = _cureColereJ1Save;
 window.openCureColereJour2    = openCureColereJour2;
