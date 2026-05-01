@@ -3742,12 +3742,14 @@ to {
 .tafakkur-dot {
   width:140px;
   height:140px;
-  background:url('assets/orb_tafakkur.png') center/contain no-repeat;
-  background-color:transparent;
+  background:transparent url('assets/orb_tafakkur.png') center/cover no-repeat;
   border:none;
+  outline:none;
   cursor:pointer;
   flex-shrink:0;
   margin-bottom:20px;
+  -webkit-appearance:none;
+  appearance:none;
 }
 .tafakkur-timer-btns {
   display:flex;
