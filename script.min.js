@@ -3606,7 +3606,11 @@ function renderBabAnNafs() {
   BAB_AN_NAFS.portes.forEach(function(p) {
     var nomFr = (typeof p.nom === 'object') ? p.nom.fr : p.nom;
     var ar = (typeof p.nom === 'object') ? (p.nom.ar || '') : '';
-    html += '<button onclick="openBabPorte(\'' + p.id + '\')" style="aspect-ratio:1/1;border-radius:12px;border:1px solid var(--gold,#C8A84A);background:url(assets/cards/porte-' + p.id + '.png) center/cover no-repeat,#111;cursor:pointer;padding:0;"></button>';
+    var _cureMarker = '';
+    if (p.id === 'colere') {
+      try { var _cc = JSON.parse(safeGetItem('cure_colere') || '{}'); if (_cc.completed) _cureMarker = '<div style="position:absolute;top:6px;right:6px;font-size:14px;color:#C8A84A;text-shadow:0 0 6px rgba(200,168,75,0.5);" title="Tu as travers\u00e9 la Cure du c\u0153ur.">\u2726</div>'; } catch(e) {}
+    }
+    html += '<button onclick="openBabPorte(\'' + p.id + '\')" style="position:relative;aspect-ratio:1/1;border-radius:12px;border:1px solid var(--gold,#C8A84A);background:url(assets/cards/porte-' + p.id + '.png) center/cover no-repeat,#111;cursor:pointer;padding:0;">' + _cureMarker + '</button>';
   });
   html += '</div></div>';
   el.innerHTML = html;
@@ -3737,8 +3741,30 @@ function openColereChoix() {
     + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';margin-bottom:4px;">\u00c0 froid</div>'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:16px;color:' + c + ';opacity:0.7;">\u0645\u062d\u0627\u0633\u0628\u0629 \u2014 Mu\u1e25\u00e2saba</div>'
     + '<div style="font-size:12px;color:var(--t3);margin-top:6px;">~12 min \u2014 examen de conscience</div>'
-    + '</button>'
-    + '</div></div>';
+    + '</button>';
+  // Cure 7 Jours
+  var _cure = {}; try { _cure = JSON.parse(safeGetItem('cure_colere') || '{}'); } catch(e) {}
+  var _cureDay = _cure.current_day || 0;
+  var _cureDone = _cure.completed === true;
+  if (_cureDone) {
+    html += '<div style="margin-top:24px;padding:16px;border-radius:14px;border:1px solid rgba(200,168,75,0.2);background:rgba(200,168,75,0.04);text-align:center;">'
+      + '<div style="font-family:var(--serif);font-size:14px;color:#C8A84A;opacity:0.7;">\u2726 Cure du c\u0153ur accomplie</div>'
+      + '<div style="font-size:12px;color:var(--t3);margin-top:4px;">Tu as travers\u00e9 sept jours. La porte reste ouverte derri\u00e8re toi.</div>'
+      + '</div>';
+  } else if (_cureDay >= 2) {
+    html += '<button onclick="openCureColere()" style="margin-top:24px;padding:20px;border-radius:14px;border:1px solid rgba(200,168,75,0.3);background:rgba(200,168,75,0.06);cursor:pointer;text-align:center;width:100%;">'
+      + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:4px;">Cure du c\u0153ur</div>'
+      + '<div style="font-family:\'Scheherazade New\',serif;font-size:16px;color:#C8A84A;opacity:0.7;">\u0631\u0650\u064a\u064e\u0627\u0636\u064e\u0629 \u0646\u064e\u0641\u0652\u0633\u0650\u064a\u0651\u064e\u0629</div>'
+      + '<div style="font-size:12px;color:var(--t3);margin-top:6px;">Jour ' + _cureDay + ' / 7 \u2014 reprendre</div>'
+      + '</button>';
+  } else {
+    html += '<button onclick="openCureColere()" style="margin-top:24px;padding:20px;border-radius:14px;border:1px solid rgba(200,168,75,0.15);background:rgba(200,168,75,0.03);cursor:pointer;text-align:center;width:100%;">'
+      + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:4px;">Cure du c\u0153ur</div>'
+      + '<div style="font-family:\'Scheherazade New\',serif;font-size:16px;color:#C8A84A;opacity:0.7;">\u0631\u0650\u064a\u064e\u0627\u0636\u064e\u0629 \u0646\u064e\u0641\u0652\u0633\u0650\u064a\u0651\u064e\u0629</div>'
+      + '<div style="font-size:12px;color:var(--t3);margin-top:6px;">7 jours \u2014 transformer ta col\u00e8re</div>'
+      + '</button>';
+  }
+  html += '</div></div>';
   el.innerHTML = html;
 }
 
@@ -4199,6 +4225,41 @@ function _muhasabaRappelReponse(idx, reponse) {
 }
 
 // ── CURE 7 JOURS COLÈRE ──
+function openCureColere() {
+  var cure = {}; try { cure = JSON.parse(safeGetItem('cure_colere') || '{}'); } catch(e) {}
+  var day = cure.current_day || 1;
+  if (cure.completed === true) day = 'complete';
+  // Vérifier si déjà fait aujourd'hui
+  var today = new Date().toISOString().slice(0, 10);
+  var lastDay = cure['jour' + (day - 1) + '_date'] ? cure['jour' + (day - 1) + '_date'].slice(0, 10) : null;
+  if (lastDay === today && day !== 'complete' && day > 1) {
+    _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
+    document.body.classList.add('in-bab-an-nafs');
+    var el = document.getElementById('babAnNafsContent');
+    if (!el) return;
+    el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
+      + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;line-height:1.7;max-width:400px;margin:0 auto 32px;">Tu as fait ton jour. Reviens demain.</div>'
+      + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="padding:14px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:none;color:#C8A84A;font-family:var(--serif);font-size:14px;cursor:pointer;">Retour</button>'
+      + '</div>';
+    return;
+  }
+  if (day === 'complete') {
+    _babImmersion = true; _showAideBtn(); var nb2 = document.getElementById('nav-bar-v2'); if (nb2) nb2.classList.add('hidden-immersion');
+    document.body.classList.add('in-bab-an-nafs');
+    var el2 = document.getElementById('babAnNafsContent');
+    if (!el2) return;
+    el2.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
+      + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:#C8A84A;direction:rtl;margin-bottom:12px;">\u0631\u0650\u064a\u064e\u0627\u0636\u064e\u0629 \u0646\u064e\u0641\u0652\u0633\u0650\u064a\u0651\u064e\u0629</div>'
+      + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;line-height:1.7;max-width:400px;margin:0 auto 32px;">Tu as travers\u00e9 sept jours. La porte reste ouverte derri\u00e8re toi.</div>'
+      + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="padding:14px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:none;color:#C8A84A;font-family:var(--serif);font-size:14px;cursor:pointer;">Retour</button>'
+      + '</div>';
+    return;
+  }
+  var fns = [null, openCureColereJour1, openCureColereJour2, openCureColereJour3, openCureColereJour4, openCureColereJour5, openCureColereJour6, openCureColereJour7];
+  if (fns[day]) fns[day]();
+  else openCureColereJour1();
+}
+
 function openCureColereJour1() {
   _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
   document.body.classList.add('in-bab-an-nafs');
@@ -11105,6 +11166,7 @@ window._showAideBtn           = _showAideBtn;
 window._hideAideBtn           = _hideAideBtn;
 window.openAideHumaine        = openAideHumaine;
 window.openColereSeuilTherapeute = openColereSeuilTherapeute;
+window.openCureColere         = openCureColere;
 window.openCureColereJour1    = openCureColereJour1;
 window._cureColereJ1Save      = _cureColereJ1Save;
 window.openCureColereJour2    = openCureColereJour2;
