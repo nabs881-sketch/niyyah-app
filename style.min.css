@@ -7725,3 +7725,4 @@ button[style*="gold-v2"] {
 .itfaa-subtle { color:#9A9189; font-style:italic; }
 ._schemaOn { background:#B33A3A33 !important; border-color:#B33A3A !important; }
 @keyframes _breathe { 0%,100% { transform:scale(1);opacity:0.6; } 50% { transform:scale(1.5);opacity:1; } }
+@keyframes _fdjFadeIn { 0% { opacity:0; transform:translateY(10px); } 100% { opacity:1; transform:translateY(0); } }
