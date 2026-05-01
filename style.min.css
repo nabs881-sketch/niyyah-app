@@ -3695,10 +3695,10 @@ to {
 }
 @keyframes tafakkurPulse {
   0%,100% {
-  box-shadow:0 0 0 0 rgba(229,57,53,0.6)
+  box-shadow:0 0 0 0 rgba(200,168,75,0.6)
 }
 70% {
-  box-shadow:0 0 0 8px rgba(229,57,53,0)
+  box-shadow:0 0 0 8px rgba(200,168,75,0)
 }
 }
 .tafakkur-screen {
@@ -3747,9 +3747,9 @@ to {
   width:140px;
   height:140px;
   border-radius:50%;
-  background:radial-gradient(circle,#e53935 0%,#b71c1c 100%);
+  background:radial-gradient(circle,#D4AF37 0%,#B8940A 60%,#8B6914 100%);
   cursor:pointer;
-  box-shadow:0 0 0 0 rgba(229,57,53,0.4);
+  box-shadow:0 0 0 0 rgba(200,168,75,0.4);
   flex-shrink:0;
   margin-bottom:20px;
 }
