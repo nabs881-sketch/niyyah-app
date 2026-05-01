@@ -3718,6 +3718,14 @@ function openBabPorte(id, step) {
     html += '<button onclick="openBabPorte(\'' + id + '\',' + nextStep + ')" style="width:100%;max-width:320px;padding:14px;border-radius:12px;border:1px solid ' + porte.couleur + '55;background:' + porte.couleur + '1a;color:' + porte.couleur + ';font-size:14px;font-family:var(--serif);cursor:pointer;">Suivant \u2192</button>';
   }
   html += '</div></div>';
+  // Bouton grisé "À froid" sur step 1 des portes non-colère
+  if (_babCurrentStep === 1 && id !== 'colere') {
+    html += '<div style="text-align:center;margin-top:20px;max-width:320px;margin-left:auto;margin-right:auto;">'
+      + '<div style="padding:16px;border-radius:14px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.02);opacity:0.4;cursor:not-allowed;text-align:center;">'
+      + '<div style="font-family:var(--serif);font-size:15px;color:var(--t3);">Mode \u00e0 froid</div>'
+      + '<div style="font-size:12px;color:var(--t3);margin-top:4px;">Bient\u00f4t disponible</div>'
+      + '</div></div>';
+  }
   el.innerHTML = html;
 }
 
@@ -3737,10 +3745,6 @@ function openColereChoix() {
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:16px;color:' + c + ';opacity:0.7;">\u0625\u0637\u0641\u0627\u0621 \u2014 I\u1e6df\u00e2\u2019</div>'
     + '<div style="font-size:12px;color:var(--t3);margin-top:6px;">~3 min \u2014 en crise</div>'
     + '</button>'
-    + '<button onclick="openMuhasabaIntro()" style="padding:20px;border-radius:14px;border:1px solid ' + c + '55;background:' + c + '0d;cursor:pointer;text-align:center;">'
-    + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';margin-bottom:4px;">\u00c0 froid</div>'
-    + '<div style="font-family:\'Scheherazade New\',serif;font-size:16px;color:' + c + ';opacity:0.7;">\u0645\u062d\u0627\u0633\u0628\u0629 \u2014 Mu\u1e25\u00e2saba</div>'
-    + '<div style="font-size:12px;color:var(--t3);margin-top:6px;">~12 min \u2014 examen de conscience</div>'
     + '</button>';
   // Cure 7 Jours
   var _cure = {}; try { _cure = JSON.parse(safeGetItem('cure_colere') || '{}'); } catch(e) {}
