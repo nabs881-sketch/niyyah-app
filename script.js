@@ -2941,7 +2941,7 @@ function renderProgression() {
     : '<div style="margin:0 16px 24px;text-align:center;padding:24px 16px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:16px;">'
     + '<svg viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="rgba(200,168,75,0.4)" stroke-width="1.5" stroke-linecap="round" style="margin-bottom:10px;"><path d="M24 6a12 12 0 1 0 0 16A9 9 0 0 1 24 6z"/></svg>'
     + '<div style="font-family:var(--serif);font-size:14px;font-style:italic;color:var(--t3);margin-bottom:12px;">'+t('empty_bilan')+'</div>'
-    + '<button onclick="openBilanSoir()" style="background:transparent;border:1px solid rgba(200,168,75,0.25);border-radius:12px;padding:8px 18px;color:var(--gold);font-family:var(--serif);font-size:13px;cursor:pointer;">'+t('empty_bilan_btn')+'</button>'
+    + (function(){var _now=new Date(),_nm=_now.getHours()*60+_now.getMinutes(),_isNuit=false;if(_prayerTimes){var _tm=function(s){if(!s)return null;var p=s.replace(/ *\(.*\)/,'').split(':');return parseInt(p[0],10)*60+parseInt(p[1],10);};var _mg=_tm(_prayerTimes['Maghrib']),_fj=_tm(_prayerTimes['Fajr']);if(_mg!=null&&_fj!=null)_isNuit=(_nm>=_mg+60)||(_nm<_fj);}else{_isNuit=(_nm>=1200)||(_nm<300);}return _isNuit?'<button onclick="openBilanSoir()" style="background:transparent;border:1px solid rgba(200,168,75,0.25);border-radius:12px;padding:8px 18px;color:var(--gold);font-family:var(--serif);font-size:13px;cursor:pointer;">'+t('empty_bilan_btn')+'</button>':'<div style="font-family:var(--serif);font-size:13px;font-style:italic;color:var(--t3);opacity:0.5;">Le bilan appara\u00eetra ce soir.</div>';})()
     + '</div>';
 
   const _isFirstDay = streakDisplay === 0 && (history.totalDays || 0) === 0;
