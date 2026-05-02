@@ -9910,8 +9910,28 @@ function showFinJourneeActe2() {
   var questions = _muhasabaQ[_lang] || _muhasabaQ.fr;
   var durations = [8000, 8000, 8000, 8000, 8000, 4000, 4000];
   var el = document.getElementById('finjournee-q');
-  var idx = 0;
+  // Rappel intention du matin (si posée aujourd'hui)
+  var _intentionRappel = null;
+  try {
+    var _s = v2GetState();
+    if (_s.intention && _s.intentionDate === new Date().toDateString()) {
+      _intentionRappel = _s.intention;
+    }
+  } catch(e) {}
+  var idx = _intentionRappel ? -1 : 0;
   function showNext() {
+    if (idx === -1) {
+      el.style.opacity = '0';
+      setTimeout(function() {
+        el.innerHTML = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;color:rgba(255,255,255,0.7);margin-bottom:12px;">Ce matin tu as pos\u00e9 :</div>'
+          + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-style:italic;color:#C8A84A;line-height:1.5;margin-bottom:16px;">' + escapeHtml(_intentionRappel) + '</div>'
+          + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;color:rgba(255,255,255,0.7);">As-tu v\u00e9cu en coh\u00e9rence avec elle ?</div>';
+        el.style.opacity = '1';
+        idx = 0;
+        setTimeout(function() { el.style.opacity = '0'; setTimeout(showNext, 1000); }, 8000);
+      }, 100);
+      return;
+    }
     if (idx >= questions.length) { showFinJourneeActe3(); return; }
     el.style.opacity = '0';
     setTimeout(function() {
