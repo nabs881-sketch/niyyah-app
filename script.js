@@ -5395,6 +5395,11 @@ const MEDIT_PHRASES = [
   'Le ver de terre laboure ton sol gratuitement chaque nuit. Tu ne lui as jamais dit merci.',
   'Le miel ne pourrit jamais. On en a trouv\u00e9 dans les pyramides, encore mangeable.',
   'Mangue, fraise, ananas, past\u00e8que, datte, p\u00eache, raisin, figue, kiwi, grenade. Chacune un go\u00fbt unique. Pourquoi tant ? Personne ne t\u2019aurait fait de proc\u00e8s s\u2019il n\u2019y en avait qu\u2019un.',
+  'Tu n\u2019as jamais vu ton propre visage. Seulement son reflet. Qui le voit vraiment ?',
+  'Quand tu fermes les yeux pour dormir, tu fais confiance. Tu ne sais m\u00eame pas si tu te r\u00e9veilleras.',
+  'Tu marches sur une boule en suspension dans le vide. Tu ne tombes pas. Personne ne t\u2019a expliqu\u00e9 pourquoi.',
+  'Les morts sont plus nombreux que les vivants. Tu vis sur leur silence.',
+  'Une pomme tombe. Newton a vu une loi. Avant lui, qui avait fait tenir les pommes ?',
 ];
 var MEDIT_PHRASES_EN = [
   'Rest your heart. Breathe. Reflect on Allah\'s creation.',
