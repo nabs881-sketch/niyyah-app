@@ -9744,25 +9744,25 @@ function v2RefreshStats() {
     var _lastSalam = localStorage.getItem('niyyah_greet_date');
     var _murmureText = t('greeting_day_' + new Date().getDay());
     if (_lastSalam !== TODAY) {
-      // Salutation fade-in → visible 4s → fade-out → murmure
+      // Salutation fade-in 2s → visible 7s → fade-out 2s → murmure 1.5s
       var _prenom = _getPrenom();
       var _salamText = _prenom ? (t('greet_salam') + ', ' + _prenom) : t('greet_salam');
       grEl.textContent = _salamText;
       grEl.style.animation = 'none';
       grEl.offsetHeight;
-      grEl.style.animation = 'greetingFadeIn 1.5s ease-out both';
+      grEl.style.animation = 'greetingFadeIn 2s ease-out both';
       safeSetItem('niyyah_greet_date', TODAY);
-      // Après 5s : fade-out salutation → fade-in murmure
+      // Après 9s (2s fade-in + 7s visible) : fade-out → murmure
       setTimeout(function() {
-        grEl.style.transition = 'opacity 1.5s ease';
+        grEl.style.transition = 'opacity 2s ease';
         grEl.style.opacity = '0';
         setTimeout(function() {
           grEl.textContent = _murmureText;
           grEl.style.transition = 'opacity 1.5s ease';
           grEl.offsetHeight;
           grEl.style.opacity = '1';
-        }, 1500);
-      }, 5000);
+        }, 2000);
+      }, 9000);
     } else {
       // Flag déjà posé : murmure direct
       grEl.textContent = _murmureText;
