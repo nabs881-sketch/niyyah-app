@@ -9463,25 +9463,9 @@ function tD(defi) {
   return DEFIS_I18N[lang][defi.id];
 }
 function updateSanctuaireNextPrayer() {
+  // Fusionné dans updateSanctuaireMoment — bandeau séparé supprimé
   var el = document.getElementById('sanctuaire-next-prayer');
-  if (!el || !_prayerTimes) { if (el) el.style.display = 'none'; return; }
-  var now = new Date();
-  var nowMin = now.getHours() * 60 + now.getMinutes();
-  var names = ['Fajr','Dhuhr','Asr','Maghrib','Isha'];
-  var nextName = null, nextTime = null, diffMin = 0;
-  for (var i = 0; i < names.length; i++) {
-    var parts = (_prayerTimes[names[i]] || '').replace(/ *\(.*\)/,'').split(':');
-    var m = parseInt(parts[0],10) * 60 + parseInt(parts[1],10);
-    if (m > nowMin) { nextName = names[i]; nextTime = _prayerTimes[names[i]].substring(0,5); diffMin = m - nowMin; break; }
-  }
-  if (!nextName) { nextName = 'Fajr'; nextTime = (_prayerTimes['Fajr']||'').substring(0,5); diffMin = (1440 - nowMin) + parseInt((_prayerTimes['Fajr']||'0:0').split(':')[0],10)*60 + parseInt((_prayerTimes['Fajr']||'0:0').split(':')[1],10); }
-  var txt = '';
-  if (diffMin > 60) txt = '<span class="next-prayer-name">' + nextName + '</span> \u2014 ' + nextTime;
-  else if (diffMin > 0) txt = '<span class="next-prayer-name">' + nextName + '</span> ' + t('prayer_in') + ' ' + diffMin + ' min';
-  if (!txt) { el.style.display = 'none'; return; }
-  var _star = '<svg width="14" height="14" viewBox="0 0 10 10"><path d="M5 0 L5.8 4.2 L10 5 L5.8 5.8 L5 10 L4.2 5.8 L0 5 L4.2 4.2 Z" fill="#C8A84A"/></svg>';
-  el.innerHTML = '<div style="text-align:center;margin:20px 0;display:flex;align-items:center;justify-content:center;gap:16px;opacity:' + (diffMin <= 60 ? '1' : '0.75') + ';">' + _star + '<span class="next-prayer-text">' + txt + '</span>' + _star + '</div>';
-  el.style.display = 'block';
+  if (el) el.style.display = 'none';
 }
 function showAlHayaBtn() { var bab = document.getElementById('view-bab-an-nafs'); if (bab && bab.classList.contains('active')) return; var b = document.getElementById('alhaya-btn'); if (b) b.style.display = 'block'; var tb = document.getElementById('topbar-alhaya-btn'); if (tb) tb.style.opacity = '0.8'; }
 function hideAlHayaBtn() { var b = document.getElementById('alhaya-btn'); if (b) b.style.display = 'none'; var tb = document.getElementById('topbar-alhaya-btn'); if (tb) tb.style.opacity = '0.5'; }
@@ -10100,6 +10084,22 @@ function updateSanctuaireMoment() {
       + '</div>';
     return;
   }
+  // Calcul prochaine prière pour fusion dans le titre
+  var _nextInfo = '';
+  if (_prayerTimes) {
+    var _now2 = new Date(), _nowM2 = _now2.getHours() * 60 + _now2.getMinutes();
+    var _pNames = ['Fajr','Dhuhr','Asr','Maghrib','Isha'];
+    for (var _pi = 0; _pi < _pNames.length; _pi++) {
+      var _pp = (_prayerTimes[_pNames[_pi]] || '').replace(/ *\(.*\)/,'').split(':');
+      var _pm = parseInt(_pp[0],10)*60+parseInt(_pp[1],10);
+      if (_pm > _nowM2) {
+        var _diff = _pm - _nowM2;
+        if (_diff <= 120) _nextInfo = ' \u00b7 ' + _pNames[_pi] + ' dans ' + _diff + ' min';
+        else _nextInfo = ' \u00b7 ' + _pNames[_pi] + ' \u2014 ' + _prayerTimes[_pNames[_pi]].substring(0,5);
+        break;
+      }
+    }
+  }
   function _isDone(item) { return item.type === 'counter' ? (state[item.id] || 0) >= item.target : !!state[item.id]; }
   var _allUnlocked = LEVELS.filter(function(l) { return state._unlocked && state._unlocked.includes(l.id); })
     .flatMap(function(l) { return l.sections.flatMap(function(s) { return s.items; }); });
@@ -10117,13 +10117,13 @@ function updateSanctuaireMoment() {
   }
   if (blockRemaining === 0) {
     el.innerHTML = '<div style="text-align:center;padding:8px;">'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:700;color:#C8A84A;">' + _iconSpan + t('bloc_done') + '</div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:700;color:#C8A84A;">' + _iconSpan + t('bloc_done') + _nextInfo + '</div>'
       + '<div style="font-family:\'Inter\',var(--sans);font-size:12px;color:rgba(255,255,255,0.6);margin-top:4px;">' + t('bloc_done_sub') + '</div>'
       + jourLine
       + '</div>';
   } else {
     el.innerHTML = '<div style="text-align:center;padding:8px;">'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:700;color:#C8A84A;">' + _iconSpan + block.label + '</div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:700;color:#C8A84A;">' + _iconSpan + block.label + _nextInfo + '</div>'
       + '<div style="font-family:\'Inter\',var(--sans);font-size:12px;color:rgba(255,255,255,0.6);margin-top:4px;">' + blockDone + ' ' + (blockDone > 1 ? t('actes_done_p') : t('actes_done')) + ' · ' + blockRemaining + ' ' + (blockRemaining > 1 ? t('actes_left_p') : t('actes_left')) + '</div>'
       + jourLine
       + '<button class="btn-bismillah-moment" onclick="event.stopPropagation();selectLevel(currentLevel);" ontouchend="event.stopPropagation();event.preventDefault();selectLevel(currentLevel);">' + t('btn_continue') + '</button>'
