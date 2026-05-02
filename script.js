@@ -5390,6 +5390,11 @@ const MEDIT_PHRASES = [
   'Si la Terre \u00e9tait un peu plus pr\u00e8s du soleil, tu br\u00fbles. Un peu plus loin, tu g\u00e8les. Elle est pile.',
   'Le b\u00e9b\u00e9 dans le ventre respire dans l\u2019eau. Dehors, il respire dans l\u2019air. Il a appris quand ?',
   'La m\u00e8re reconna\u00eet le cri de son enfant entre mille. Personne ne lui a appris.',
+  'Une larme de tristesse n\u2019a pas la m\u00eame composition chimique qu\u2019une larme de joie. Qui les distingue ?',
+  'Tes empreintes digitales n\u2019existent nulle part ailleurs. Sur 8 milliards. Tu as un signe sur les doigts.',
+  'Le ver de terre laboure ton sol gratuitement chaque nuit. Tu ne lui as jamais dit merci.',
+  'Le miel ne pourrit jamais. On en a trouv\u00e9 dans les pyramides, encore mangeable.',
+  'Mangue, fraise, ananas, past\u00e8que, datte, p\u00eache, raisin, figue, kiwi, grenade. Chacune un go\u00fbt unique. Pourquoi tant ? Personne ne t\u2019aurait fait de proc\u00e8s s\u2019il n\u2019y en avait qu\u2019un.',
 ];
 var MEDIT_PHRASES_EN = [
   'Rest your heart. Breathe. Reflect on Allah\'s creation.',
