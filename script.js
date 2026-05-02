@@ -7222,7 +7222,7 @@ const V2_I18N = {
     ob_notif_rituels: 'Rituels', ob_notif_rituels_d: 'Wird du matin et du soir',
     ob_notif_encourage: 'Encouragements', ob_notif_encourage_d: 'Streak en danger, d\u00e9fis',
     ob_notif_activate: 'Activer', ob_notif_later: 'Plus tard', ob_notif_settings: 'Modifier dans R\u00e9glages',
-    greet_morning: 'Bonjour', greet_afternoon: 'Bon apr\u00e8s-midi', greet_evening: 'Bonsoir',
+    greet_morning: 'Bonjour', greet_afternoon: 'Bon apr\u00e8s-midi', greet_evening: 'Bonsoir', greet_salam: 'As-sal\u00e2mu \u02bfalaykum',
     silence_label: 'jour de silence', silence_salam: '\u0627\u0644\u0633\u0644\u0627\u0645 \u0639\u0644\u064A\u0643\u0645',
     silence_verse: 'Et vers ton Seigneur, dirige ton d\u00e9sir ardent.', silence_ref: 'Ash-Sharh, 8',
     silence_settings: 'Jour de silence',
@@ -9662,8 +9662,12 @@ function updateSpiritualTitle() {
   if (!greetEl && lastGreetDate !== TODAY) {
     var h = new Date().getHours();
     var prenom = _getPrenom();
-    var greet = h < 12 ? t('greet_morning') : h < 18 ? t('greet_afternoon') : t('greet_evening');
-    if (prenom) greet += ' ' + prenom;
+    var greet;
+    if (prenom) {
+      greet = (h < 12 ? t('greet_morning') : h < 18 ? t('greet_afternoon') : t('greet_evening')) + ' ' + prenom;
+    } else {
+      greet = t('greet_salam');
+    }
     var gDiv = document.createElement('div');
     gDiv.id = 'v2-greeting';
     gDiv.style.cssText = 'font-family:var(--serif);font-size:20px;font-style:italic;color:rgba(200,168,75,0.7);margin-bottom:8px;opacity:0;animation:obFadeIn 0.8s ease 0.3s forwards;';
