@@ -3597,8 +3597,8 @@ function renderBabAnNafs() {
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;">'
-    + '<div style="font-family:var(--serif);font-size:22px;color:#C8A84A;text-align:center;margin-bottom:6px;">B\u0101b an-Nafs</div>'
-    + '<div style="font-size:13px;color:var(--t3);text-align:center;margin-bottom:24px;font-style:italic;">Les portes de l\u2019\u00e2me</div>';
+    + '<div style="font-family:var(--serif);font-size:22px;color:#C8A84A;text-align:center;margin-bottom:6px;">Mes portes</div>'
+    + '<div style="font-size:13px;color:var(--t3);text-align:center;margin-bottom:24px;font-style:italic;">Les portes de ton \u00e2me</div>';
   if (BAB_AN_NAFS.portes.some(function(p) { return p.validated === false; })) {
     html += '<div style="font-size:12px;font-style:italic;color:#FFA000;background:rgba(255,160,0,0.15);padding:8px;border-radius:6px;text-align:center;margin-bottom:16px;">Mode beta \u2014 contenu en validation th\u00e9ologique</div>';
   }
