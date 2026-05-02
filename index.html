@@ -204,15 +204,6 @@
   <!-- PROCHAINE PRIÈRE -->
   <div id="sanctuaire-next-prayer" style="display:none;"></div>
 
-  <!-- AL-WAQT -->
-  <div id="waqt-card" onclick="openWaqtModal()" style="margin:0 20px 16px;padding:20px;background:rgba(200,168,74,0.06);border:0.5px solid rgba(200,168,74,0.2);border-radius:12px;cursor:pointer;">
-    <div id="i18n-waqt-eyebrow" style="font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:10px;">AL-WAQT &middot; UN MOMENT &Agrave; OFFRIR</div>
-    <div style="display:flex;align-items:center;gap:12px;">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2H18V6L13 12L18 18V22H6V18L11 12L6 6Z"/></svg>
-      <span id="i18n-waqt-offer" style="font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:#C8A84A;">J'ai une minute</span>
-    </div>
-  </div>
-
   <!-- WAQT MODAL -->
   <div id="waqt-modal" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;width:100vw;height:100vh;z-index:9996;background:#1F2125;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 24px;">
     <div id="waqt-action-text" style="font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;color:#C8A84A;line-height:1.7;max-width:320px;margin-bottom:32px;"></div>
@@ -238,6 +229,8 @@
     <div class="quick-card-wrap"><button class="quick-btn-v2" onclick="if(typeof openTafakkur==='function')openTafakkur()" aria-label="Tafakkur">
       <img class="card-img-premium" loading="lazy" src="assets/cards/card-tafakkur.png" alt="Tafakkur"/>
     </button></div>
+
+    <button id="medaillon-alwaqt" class="medaillon-alwaqt" onclick="openWaqtModal()" aria-label="Al-Waqt"></button>
 
   </div>
 

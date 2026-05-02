@@ -5853,7 +5853,30 @@ body::before {
   gap: 8px;
   width: 100%;
   align-items: start;
+  position: relative;
   animation: fadeSlideV2 0.9s var(--ease-silk-v2) 0.65s both;
+}
+.medaillon-alwaqt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 28%;
+  aspect-ratio: 1/1;
+  background: transparent url('assets/medallion_alwaqt.png') center/contain no-repeat;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  z-index: 2;
+  transition: transform 0.2s ease;
+  -webkit-appearance: none;
+  appearance: none;
+  filter: drop-shadow(0 0 12px rgba(200,168,75,0.3));
+}
+.medaillon-alwaqt:hover,
+.medaillon-alwaqt:active {
+  transform: translate(-50%, -50%) scale(1.05);
 }
 
 /* ── Carte marbre de base ── */
