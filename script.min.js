@@ -5651,6 +5651,8 @@ function setTafakkurDuration(min, btn) {
   if (_tafakkurInterval) { clearInterval(_tafakkurInterval); _tafakkurInterval = null; _tafakkurRunning = false; }
   document.querySelectorAll('.tafakkur-timer-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
+  // Auto-start timer
+  toggleTafakkurTimer();
 }
 
 function toggleTafakkurTimer() {
