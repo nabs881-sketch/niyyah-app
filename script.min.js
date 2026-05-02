@@ -7518,7 +7518,7 @@ const V2_I18N = {
     ob_notif_rituels: 'Rituals', ob_notif_rituels_d: 'Morning and evening Wird',
     ob_notif_encourage: 'Encouragements', ob_notif_encourage_d: 'Streak at risk, challenges',
     ob_notif_activate: 'Enable', ob_notif_later: 'Later', ob_notif_settings: 'Change in Settings',
-    greet_morning: 'Good morning', greet_afternoon: 'Good afternoon', greet_evening: 'Good evening',
+    greet_morning: 'Good morning', greet_afternoon: 'Good afternoon', greet_evening: 'Good evening', greet_salam: 'As-sal\u00e2mu \u02bfalaykum',
     silence_label: 'day of silence', silence_salam: '\u0627\u0644\u0633\u0644\u0627\u0645 \u0639\u0644\u064A\u0643\u0645',
     silence_verse: 'And to your Lord direct your longing.', silence_ref: 'Ash-Sharh, 8',
     silence_settings: 'Day of silence',
@@ -7729,7 +7729,7 @@ const V2_I18N = {
     ob_notif_rituels: '\u0639\u0650\u0628\u0627\u062F\u0627\u062A', ob_notif_rituels_d: '\u0648\u0650\u0631\u0652\u062F\u064F \u0627\u0644\u0635\u0651\u064E\u0628\u0627\u062D\u0650 \u0648\u0627\u0644\u0645\u064E\u0633\u0627\u0621',
     ob_notif_encourage: '\u062A\u064E\u0634\u0652\u062C\u0650\u064A\u0639', ob_notif_encourage_d: '\u0633\u0650\u0644\u0652\u0633\u0650\u0644\u064E\u0629\u064C \u0641\u0650\u064A \u062E\u064E\u0637\u064E\u0631',
     ob_notif_activate: '\u062A\u064E\u0641\u0652\u0639\u0650\u064A\u0644', ob_notif_later: '\u0644\u0627\u062D\u0650\u0642\u064B\u0627', ob_notif_settings: '\u062A\u064E\u0639\u0652\u062F\u0650\u064A\u0644 \u0641\u0650\u064A \u0627\u0644\u0625\u0650\u0639\u0652\u062F\u0627\u062F\u0627\u062A',
-    greet_morning: '\u0635\u064E\u0628\u0627\u062D\u064E \u0627\u0644\u062E\u064E\u064A\u0652\u0631', greet_afternoon: '\u0645\u064E\u0633\u0627\u0621\u064E \u0627\u0644\u0646\u0651\u064F\u0648\u0631', greet_evening: '\u0645\u064E\u0633\u0627\u0621\u064E \u0627\u0644\u062E\u064E\u064A\u0652\u0631',
+    greet_morning: '\u0635\u064E\u0628\u0627\u062D\u064E \u0627\u0644\u062E\u064E\u064A\u0652\u0631', greet_afternoon: '\u0645\u064E\u0633\u0627\u0621\u064E \u0627\u0644\u0646\u0651\u064F\u0648\u0631', greet_evening: '\u0645\u064E\u0633\u0627\u0621\u064E \u0627\u0644\u062E\u064E\u064A\u0652\u0631', greet_salam: '\u0627\u0644\u0633\u0644\u0627\u0645 \u0639\u0644\u064A\u0643\u0645',
     silence_label: '\u064A\u064E\u0648\u0652\u0645\u064F \u0627\u0644\u0635\u0651\u064E\u0645\u0652\u062A', silence_salam: '\u0627\u0644\u0633\u0644\u0627\u0645 \u0639\u0644\u064A\u0643\u0645',
     silence_verse: '\u0648\u064E\u0625\u0650\u0644\u064E\u0649\u0670 \u0631\u064E\u0628\u0651\u0650\u0643\u064E \u0641\u0671\u0631\u0652\u063A\u064E\u0628', silence_ref: '\u0627\u0644\u0634\u0651\u064E\u0631\u0652\u062D\u060C \u0668',
     silence_settings: '\u064A\u064E\u0648\u0652\u0645\u064F \u0627\u0644\u0635\u0651\u064E\u0645\u0652\u062A',
@@ -9710,7 +9710,7 @@ function updateSpiritualTitle() {
     var prenom = _getPrenom();
     var greet;
     if (prenom) {
-      greet = (h < 12 ? t('greet_morning') : h < 18 ? t('greet_afternoon') : t('greet_evening')) + ' ' + prenom;
+      greet = t('greet_salam') + ', ' + prenom;
     } else {
       greet = t('greet_salam');
     }
