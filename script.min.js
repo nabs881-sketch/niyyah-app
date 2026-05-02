@@ -5360,6 +5360,11 @@ const MEDIT_PHRASES = [
   'Pense \u00e0 un ami. Demain il pourrait ne plus \u00eatre l\u00e0. Tu lui as dit quoi en dernier ?',
   'L\u2019eau coule du robinet. Elle vient d\u2019o\u00f9, vraiment ?',
   'Une \u00e9toile que tu vois ce soir, sa lumi\u00e8re a mis des ann\u00e9es \u00e0 arriver. Tu re\u00e7ois un message ancien.',
+  'Tu as eu faim. Tu as mang\u00e9. Tu as oubli\u00e9 de remercier.',
+  'Quelqu\u2019un quelque part dort dans le froid en ce moment. Toi tu as un toit.',
+  'Si tu pouvais parler \u00e0 toi-m\u00eame il y a dix ans, tu lui dirais quoi ?',
+  'Tu connais ton pr\u00e9nom. Quelqu\u2019un l\u2019a choisi pour toi. Pourquoi celui-l\u00e0 ?',
+  'Le silence existe. \u00c9coute-le trois secondes.',
 ];
 var MEDIT_PHRASES_EN = [
   'Rest your heart. Breathe. Reflect on Allah\'s creation.',
