@@ -5375,6 +5375,11 @@ const MEDIT_PHRASES = [
   'Avant ta naissance, tu \u00e9tais quoi ?',
   'Si tu pouvais effacer un seul de tes souvenirs, lequel ? Et pourquoi tu h\u00e9sites ?',
   'Tu es vivant. C\u2019est tout ce qu\u2019il y a \u00e0 dire ? Ou il y a plus ?',
+  'Une orange a la peau qui prot\u00e8ge, la chair qui nourrit, le p\u00e9pin qui refait l\u2019arbre. Qui a pens\u00e9 \u00e0 tout ?',
+  'Le nourrisson cherche le sein sans qu\u2019on le lui apprenne. Qui le lui a dit ?',
+  'L\u2019abeille danse pour expliquer o\u00f9 sont les fleurs. Qui lui a appris la g\u00e9om\u00e9trie ?',
+  'Ton \u0153il a 130 millions de cellules qui captent la lumi\u00e8re. Tu en demandais combien ?',
+  'La Terre tourne \u00e0 100\u00a0000 km/h. Tu n\u2019as rien renvers\u00e9 sur la table.',
 ];
 var MEDIT_PHRASES_EN = [
   'Rest your heart. Breathe. Reflect on Allah\'s creation.',
