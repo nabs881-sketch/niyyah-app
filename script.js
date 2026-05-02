@@ -5314,7 +5314,7 @@ const MEDIT_PHRASES = [
   'Allah t\'appelle cinq fois par jour. Réponds-tu avec tout ton cœur ?',
   'Qu\'est-ce qui te manque pour être en paix ?',
   'Si tu pouvais parler à ton moi d\'il y a 10 ans… que lui dirais-tu ?',
-  'Le Prophète ﷺ souriait souvent. Toi… as-tu souri aujourd\'hui ?',
+  'Le Prophète ﷺ souriait souvent. Toi… as-tu souri aujourd\u2019hui ? <span style="opacity:0.5;font-size:0.8em">\u2014 Tirmidhî 3641</span>',
   'Qu\'est-ce que tu as appris sur toi-même ce mois-ci ?',
   'As-tu nourri ton corps et oublié ton âme ?',
   'Pense à quelque chose que tu possèdes. Et si Allah te le retirait demain ?',
@@ -5753,7 +5753,7 @@ function rotateTafakkurPhrase() {
   var el = document.getElementById('tafakkurPhrase');
   if (el) {
     el.style.opacity = '0';
-    setTimeout(function() { el.textContent = pool[idx]; el.style.opacity = '1'; }, 300);
+    setTimeout(function() { el.innerHTML = pool[idx]; el.style.opacity = '1'; }, 300);
   }
 }
 
