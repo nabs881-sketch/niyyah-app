@@ -5753,7 +5753,7 @@ function rotateTafakkurPhrase() {
   var el = document.getElementById('tafakkurPhrase');
   if (el) {
     el.style.opacity = '0';
-    setTimeout(function() { el.innerHTML = pool[idx]; el.style.opacity = '1'; }, 300);
+    setTimeout(function() { var phrase = pool[idx]; if (phrase.includes('<')) { el.innerHTML = phrase; } else { el.textContent = phrase; } el.style.opacity = '1'; }, 300);
   }
 }
 
