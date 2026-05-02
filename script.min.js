@@ -5355,6 +5355,11 @@ const MEDIT_PHRASES = [
   'La nuit tombe chaque jour. Le matin revient. Tu n\u2019y es pour rien.',
   'Tu vas mourir. Pas aujourd\u2019hui sans doute. Mais un jour. Que feras-tu d\u2019ici l\u00e0 ?',
   'Allah te voit en ce moment. Reste l\u00e0 quelques secondes.',
+  'Ton p\u00e8re, ta m\u00e8re. Tu n\u2019as rien fait pour les avoir. Ils t\u2019ont \u00e9t\u00e9 donn\u00e9s.',
+  'Tu marches. Tes pieds savent o\u00f9 poser. Tu n\u2019y penses jamais.',
+  'Pense \u00e0 un ami. Demain il pourrait ne plus \u00eatre l\u00e0. Tu lui as dit quoi en dernier ?',
+  'L\u2019eau coule du robinet. Elle vient d\u2019o\u00f9, vraiment ?',
+  'Une \u00e9toile que tu vois ce soir, sa lumi\u00e8re a mis des ann\u00e9es \u00e0 arriver. Tu re\u00e7ois un message ancien.',
 ];
 var MEDIT_PHRASES_EN = [
   'Rest your heart. Breathe. Reflect on Allah\'s creation.',
