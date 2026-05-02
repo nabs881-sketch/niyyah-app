@@ -5345,6 +5345,11 @@ const MEDIT_PHRASES = [
   'Qu\'est-ce qui mérite vraiment tes larmes ?',
   'Tu es encore là. C\'est une seconde chance. Qu\'en fais-tu ?',
   'Inhale. Allah. Exhale. Alhamdulillah. Encore.',
+  'Regarde une feuille. N\'importe laquelle. Tu sais ce qui la fait verte ?',
+  'Tu respires. Sans rien faire. Sans rien d\u00e9cider. Qui souffle en toi ?',
+  'L\u00e8ve les yeux. Le ciel ne p\u00e8se pas. Pourquoi il ne tombe pas ?',
+  'Pense \u00e0 la derni\u00e8re fois que tu as eu peur, et que tout s\u2019est bien pass\u00e9. Qui a tenu ?',
+  'Ferme les yeux trois secondes. Ce noir-l\u00e0, tu le vois avec quoi ?',
 ];
 var MEDIT_PHRASES_EN = [
   'Rest your heart. Breathe. Reflect on Allah\'s creation.',
