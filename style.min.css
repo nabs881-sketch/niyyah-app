@@ -3694,9 +3694,8 @@ to {
   animation:slideInRight 0.32s ease both
 }
 @keyframes tafakkurPulse {
-  0% { transform:scale(1) rotate(0deg); opacity:0.85; }
-  50% { transform:scale(1.06) rotate(180deg); opacity:1; }
-  100% { transform:scale(1) rotate(360deg); opacity:0.85; }
+  0%,100% { transform:scale(1); opacity:0.85; }
+  50% { transform:scale(1.06); opacity:1; }
 }
 .tafakkur-screen {
   position:fixed;
@@ -3753,6 +3752,7 @@ to {
   -webkit-appearance:none;
   appearance:none;
   transition:none !important;
+  filter:drop-shadow(0 0 30px rgba(212,175,55,0.5)) drop-shadow(0 0 60px rgba(184,134,11,0.3));
 }
 .tafakkur-timer-btns {
   display:flex;
