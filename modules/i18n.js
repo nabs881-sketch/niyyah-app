@@ -9,7 +9,7 @@ const V2_I18N = {
     lang_code: 'fr',
     dir: 'ltr',
     app_name: 'Niyyah',
-    slogan: 'Le Sanctuaire de l\'Intention',
+    slogan: 'Ma Niyyah \u00b7 L\'Intention',
     // Orbe
     orb_start: 'Définir mon intention',
     orb_resume: 'Voir mon intention',
@@ -27,7 +27,7 @@ const V2_I18N = {
     // Chip
     chip_meta: 'Intention du jour',
     // Nav
-    nav_sanctuaire: 'Sanctuaire',
+    nav_sanctuaire: 'Ma Niyyah',
     nav_pratique:   'Pratique',
     nav_wird:       'Wird',
     nav_parcours:   'Parcours',
