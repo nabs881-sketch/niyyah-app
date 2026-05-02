@@ -5872,7 +5872,11 @@ body::before {
   transition: transform 0.2s ease;
   -webkit-appearance: none;
   appearance: none;
-  filter: drop-shadow(0 0 12px rgba(200,168,75,0.3));
+  animation: medaillonGlow 3s ease-in-out infinite;
+}
+@keyframes medaillonGlow {
+  0%,100% { filter: drop-shadow(0 0 8px rgba(212,175,55,0.3)); }
+  50% { filter: drop-shadow(0 0 18px rgba(212,175,55,0.6)); }
 }
 .medaillon-alwaqt:hover,
 .medaillon-alwaqt:active {
