@@ -10094,8 +10094,8 @@ function updateSanctuaireMoment() {
       var _pm = parseInt(_pp[0],10)*60+parseInt(_pp[1],10);
       if (_pm > _nowM2) {
         var _diff = _pm - _nowM2;
-        if (_diff <= 120) _nextInfo = ' \u00b7 ' + _pNames[_pi] + ' dans ' + _diff + ' min';
-        else _nextInfo = ' \u00b7 ' + _pNames[_pi] + ' \u2014 ' + _prayerTimes[_pNames[_pi]].substring(0,5);
+        if (_diff <= 120) _nextInfo = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#C8A84A;opacity:0.7;margin-top:2px;">' + _pNames[_pi] + ' dans ' + _diff + ' min</div>';
+        else _nextInfo = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#C8A84A;opacity:0.7;margin-top:2px;">' + _pNames[_pi] + ' \u2014 ' + _prayerTimes[_pNames[_pi]].substring(0,5) + '</div>';
         break;
       }
     }
@@ -10117,13 +10117,15 @@ function updateSanctuaireMoment() {
   }
   if (blockRemaining === 0) {
     el.innerHTML = '<div style="text-align:center;padding:8px;">'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:700;color:#C8A84A;">' + _iconSpan + t('bloc_done') + _nextInfo + '</div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:700;color:#C8A84A;">' + _iconSpan + t('bloc_done') + '</div>'
+      + _nextInfo
       + '<div style="font-family:\'Inter\',var(--sans);font-size:12px;color:rgba(255,255,255,0.6);margin-top:4px;">' + t('bloc_done_sub') + '</div>'
       + jourLine
       + '</div>';
   } else {
     el.innerHTML = '<div style="text-align:center;padding:8px;">'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:700;color:#C8A84A;">' + _iconSpan + block.label + _nextInfo + '</div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:700;color:#C8A84A;">' + _iconSpan + block.label + '</div>'
+      + _nextInfo
       + '<div style="font-family:\'Inter\',var(--sans);font-size:12px;color:rgba(255,255,255,0.6);margin-top:4px;">' + blockDone + ' ' + (blockDone > 1 ? t('actes_done_p') : t('actes_done')) + ' · ' + blockRemaining + ' ' + (blockRemaining > 1 ? t('actes_left_p') : t('actes_left')) + '</div>'
       + jourLine
       + '<button class="btn-bismillah-moment" onclick="event.stopPropagation();selectLevel(currentLevel);" ontouchend="event.stopPropagation();event.preventDefault();selectLevel(currentLevel);">' + t('btn_continue') + '</button>'
