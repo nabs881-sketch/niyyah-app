@@ -9702,25 +9702,6 @@ function isSilenceDay() {
 function updateSpiritualTitle() {
   var el = document.getElementById('v2-spiritual-title');
   if (!el) return;
-  // Salutation 1x/jour avec prénom
-  var greetEl = document.getElementById('v2-greeting');
-  var lastGreetDate = localStorage.getItem('niyyah_greet_date');
-  if (!greetEl && lastGreetDate !== TODAY) {
-    var h = new Date().getHours();
-    var prenom = _getPrenom();
-    var greet;
-    if (prenom) {
-      greet = t('greet_salam') + ', ' + prenom;
-    } else {
-      greet = t('greet_salam');
-    }
-    var gDiv = document.createElement('div');
-    gDiv.id = 'v2-greeting';
-    gDiv.style.cssText = 'font-family:var(--serif);font-size:20px;font-style:italic;color:rgba(200,168,75,0.7);margin-bottom:8px;opacity:0;animation:obFadeIn 0.8s ease 0.3s forwards;';
-    gDiv.textContent = greet;
-    el.parentNode.insertBefore(gDiv, el);
-    safeSetItem('niyyah_greet_date', TODAY);
-  }
   var hist = {};
   try { hist = JSON.parse(localStorage.getItem('spiritual_history') || '{}'); } catch(e) {}
   var streak = hist.streak || 0;
@@ -9765,6 +9746,22 @@ function v2RefreshStats() {
     grEl.offsetHeight;
     grEl.style.animation = 'greetingFadeIn 1.5s ease-out 0.3s both';
   }
+  // Salutation 1×/jour sur Sanctuaire (au-dessus du murmure)
+  (function() {
+    var _greetWrap = document.querySelector('.greeting-v2');
+    var _existingSalam = document.getElementById('v2-salam');
+    var _lastSalam = localStorage.getItem('niyyah_greet_date');
+    if (_greetWrap && !_existingSalam && _lastSalam !== TODAY) {
+      var _prenom = _getPrenom();
+      var _salamText = _prenom ? (t('greet_salam') + ', ' + _prenom) : t('greet_salam');
+      var _salamDiv = document.createElement('div');
+      _salamDiv.id = 'v2-salam';
+      _salamDiv.style.cssText = 'font-family:var(--serif);font-size:15px;color:rgba(200,168,75,0.6);margin-bottom:6px;opacity:0;animation:greetingFadeIn 1s ease-out 0.1s both;';
+      _salamDiv.textContent = _salamText;
+      _greetWrap.insertBefore(_salamDiv, _greetWrap.firstChild);
+      safeSetItem('niyyah_greet_date', TODAY);
+    }
+  })();
   // Titres spirituels évolutifs (premium only)
   updateSpiritualTitle();
 
