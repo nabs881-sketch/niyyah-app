@@ -3694,8 +3694,9 @@ to {
   animation:slideInRight 0.32s ease both
 }
 @keyframes tafakkurPulse {
-  0%,100% { transform:scale(1); opacity:0.85; }
-  50% { transform:scale(1.06); opacity:1; }
+  0% { transform:scale(1) rotate(0deg); opacity:0.85; }
+  50% { transform:scale(1.06) rotate(180deg); opacity:1; }
+  100% { transform:scale(1) rotate(360deg); opacity:0.85; }
 }
 .tafakkur-screen {
   position:fixed;
