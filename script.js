@@ -5385,6 +5385,11 @@ const MEDIT_PHRASES = [
   'Tu peux distinguer 10\u00a0000 odeurs. Tu n\u2019en as jamais demand\u00e9 une seule.',
   'Un saumon n\u00e9 dans une rivi\u00e8re retrouve la m\u00eame rivi\u00e8re des ann\u00e9es plus tard. Avec quel GPS ?',
   'Une graine de tomate conna\u00eet la forme finale de la tomate. O\u00f9 est-elle \u00e9crite ?',
+  'Tu as 37 mille milliards de cellules. Toutes savent quoi faire. Aucune ne t\u2019a demand\u00e9.',
+  'La banane m\u00fbrit pile au moment o\u00f9 tu en as besoin. Et l\u2019emballage est inclus.',
+  'Si la Terre \u00e9tait un peu plus pr\u00e8s du soleil, tu br\u00fbles. Un peu plus loin, tu g\u00e8les. Elle est pile.',
+  'Le b\u00e9b\u00e9 dans le ventre respire dans l\u2019eau. Dehors, il respire dans l\u2019air. Il a appris quand ?',
+  'La m\u00e8re reconna\u00eet le cri de son enfant entre mille. Personne ne lui a appris.',
 ];
 var MEDIT_PHRASES_EN = [
   'Rest your heart. Breathe. Reflect on Allah\'s creation.',
