@@ -5550,6 +5550,7 @@ body::before {
   font-size: 25px; font-weight: 300; font-style: italic;
   color: var(--pearl-v2); line-height: 1.35;
   opacity: 0;
+  margin-bottom: 32px;
 }
 @keyframes greetingFadeIn { from { opacity: 0; } to { opacity: 1; } }
 
