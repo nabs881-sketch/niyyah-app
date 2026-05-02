@@ -3801,15 +3801,17 @@ to {
 }
 .tafakkur-phrase {
   font-family:var(--calli);
-  font-size:18px;
+  font-size:22px;
   font-style:italic;
   color:#ffffff;
-  margin-top:32px;
+  margin-top:0;
+  margin-bottom:28px;
   letter-spacing:0.5px;
   text-align:center;
-  padding:0 40px;
-  line-height:1.6;
+  padding:0 32px;
+  line-height:1.7;
   text-shadow:0 2px 12px rgba(0,0,0,0.8);
+  max-width:380px;
 }
 @keyframes tawbaMoon {
   0%,100% {

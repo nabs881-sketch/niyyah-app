@@ -55,7 +55,9 @@
 <div id="top"></div><!-- ÉCRAN MÉDITATION -->
 <div id="tafakkurScreen" class="tafakkur-screen">
   <button class="tafakkur-close" onclick="closeTafakkur()" aria-label="Fermer">✕</button>
+  <div class="tafakkur-phrase" id="tafakkurPhrase">Pose ton cœur. Réfléchis. Allah est proche.</div>
   <div id="tafakkurDotEl" class="tafakkur-dot" onclick="toggleTafakkurTimer()" style="animation:tafakkurPulse 2.5s ease-in-out infinite;"></div>
+  <div class="tafakkur-timer" id="tafakkurTimerDisplay">03:00</div>
   <div class="tafakkur-timer-btns">
     <button class="tafakkur-timer-btn active" onclick="setTafakkurDuration(3,this)">3 min</button>
     <button class="tafakkur-timer-btn" onclick="setTafakkurDuration(5,this)">5 min</button>
@@ -65,8 +67,6 @@
     <button class="tafakkur-audio-btn active" id="btnSilence" onclick="setTafakkurAudio('silence',this)">🤫 Silence</button>
     <button class="tafakkur-audio-btn" id="btnNasheed" onclick="setTafakkurAudio('nasheed',this)">🎵 Nasheed</button>
   </div>
-  <div class="tafakkur-timer" id="tafakkurTimerDisplay">03:00</div>
-  <div class="tafakkur-phrase" id="tafakkurPhrase">Pose ton cœur. Réfléchis. Allah est proche.</div>
 </div>
 
 <!-- DRAWER CORAN PICKER -->
