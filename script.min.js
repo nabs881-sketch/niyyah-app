@@ -9738,39 +9738,39 @@ function v2RefreshStats() {
   })();
   // Apply current language first
   v2ApplyI18n();
-  // Greeting — phrase du jour + fade-in
+  // Greeting — salutation 1×/jour puis murmure dans #v2-greeting-text
   const grEl = document.getElementById('v2-greeting-text');
   if (grEl) {
-    grEl.textContent = t('greeting_day_' + new Date().getDay());
-    grEl.style.animation = 'none';
-    grEl.offsetHeight;
-    grEl.style.animation = 'greetingFadeIn 1.5s ease-out 0.3s both';
-  }
-  // Salutation 1×/jour sur Sanctuaire (au-dessus du murmure)
-  (function() {
-    var _greetWrap = document.querySelector('.greeting-v2');
-    var _existingSalam = document.getElementById('v2-salam');
     var _lastSalam = localStorage.getItem('niyyah_greet_date');
-    if (_greetWrap && !_existingSalam && _lastSalam !== TODAY) {
+    var _murmureText = t('greeting_day_' + new Date().getDay());
+    if (_lastSalam !== TODAY) {
+      // Salutation fade-in → visible 4s → fade-out → murmure
       var _prenom = _getPrenom();
       var _salamText = _prenom ? (t('greet_salam') + ', ' + _prenom) : t('greet_salam');
-      var _salamDiv = document.createElement('div');
-      _salamDiv.id = 'v2-salam';
-      _salamDiv.style.cssText = 'font-family:var(--serif);font-size:15px;color:rgba(200,168,75,0.6);margin-bottom:6px;opacity:0;animation:_salamFadeIn 1.5s ease-out forwards;';
-      _salamDiv.textContent = _salamText;
-      _greetWrap.insertBefore(_salamDiv, _greetWrap.firstChild);
+      grEl.textContent = _salamText;
+      grEl.style.animation = 'none';
+      grEl.offsetHeight;
+      grEl.style.animation = 'greetingFadeIn 1.5s ease-out both';
       safeSetItem('niyyah_greet_date', TODAY);
-      // Fade-out après 4s visible
+      // Après 5s : fade-out salutation → fade-in murmure
       setTimeout(function() {
-        _salamDiv.style.animation = 'none';
-        _salamDiv.style.opacity = '1';
-        _salamDiv.offsetHeight;
-        _salamDiv.style.transition = 'opacity 2s ease';
-        _salamDiv.style.opacity = '0';
-        setTimeout(function() { _salamDiv.style.display = 'none'; }, 2000);
-      }, 5500);
+        grEl.style.transition = 'opacity 1.5s ease';
+        grEl.style.opacity = '0';
+        setTimeout(function() {
+          grEl.textContent = _murmureText;
+          grEl.style.transition = 'opacity 1.5s ease';
+          grEl.offsetHeight;
+          grEl.style.opacity = '1';
+        }, 1500);
+      }, 5000);
+    } else {
+      // Flag déjà posé : murmure direct
+      grEl.textContent = _murmureText;
+      grEl.style.animation = 'none';
+      grEl.offsetHeight;
+      grEl.style.animation = 'greetingFadeIn 1.5s ease-out 0.3s both';
     }
-  })();
+  }
   // Titres spirituels évolutifs (premium only)
   updateSpiritualTitle();
 
