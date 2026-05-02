@@ -5370,6 +5370,11 @@ const MEDIT_PHRASES = [
   'Si tu n\u2019avais pas de pr\u00e9nom, tu serais qui ?',
   'Tu as d\u00e9j\u00e0 entendu ta propre voix de l\u2019ext\u00e9rieur. C\u2019\u00e9tait la m\u00eame que dans ta t\u00eate ?',
   'Une pens\u00e9e vient d\u2019arriver dans ton cr\u00e2ne. D\u2019o\u00f9 elle sort exactement ?',
+  'Un jour, ton corps sera dans la terre. La terre te reconna\u00eetra-t-elle ?',
+  'Tes mains. Regarde-les. Elles ont touch\u00e9 combien de choses depuis ce matin ?',
+  'Avant ta naissance, tu \u00e9tais quoi ?',
+  'Si tu pouvais effacer un seul de tes souvenirs, lequel ? Et pourquoi tu h\u00e9sites ?',
+  'Tu es vivant. C\u2019est tout ce qu\u2019il y a \u00e0 dire ? Ou il y a plus ?',
 ];
 var MEDIT_PHRASES_EN = [
   'Rest your heart. Breathe. Reflect on Allah\'s creation.',
