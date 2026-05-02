@@ -10149,11 +10149,17 @@ function v2UpdateOrbState() {
       chipText.style.direction = T.dir;
       chipText.style.fontFamily = V2_LANG === 'ar' ? "'Amiri', serif" : "'Cormorant Garamond', serif";
     }
-    if (cta) { cta.textContent = T.orb_resume; cta.style.direction = T.dir; }
+    // Orbe silencieuse — pas de label CTA quand intention posée
+    if (cta) { cta.textContent = ''; cta.style.display = 'none'; }
+    // Retirer label "Intention du jour" au-dessus du chip
+    var _chipMeta = chip ? chip.querySelector('.chip-meta-v2') : null;
+    if (_chipMeta) _chipMeta.style.display = 'none';
   } else {
     if (orb) orb.classList.remove('intention-set-v2');
     if (chip) chip.style.display = 'none';
-    if (cta) { cta.textContent = T.orb_start; cta.style.direction = T.dir; }
+    if (cta) { cta.textContent = T.orb_start; cta.style.display = ''; cta.style.direction = T.dir; }
+    var _chipMeta2 = chip ? chip.querySelector('.chip-meta-v2') : null;
+    if (_chipMeta2) _chipMeta2.style.display = '';
   }
 }
 
