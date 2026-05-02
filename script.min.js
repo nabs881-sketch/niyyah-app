@@ -9756,10 +9756,19 @@ function v2RefreshStats() {
       var _salamText = _prenom ? (t('greet_salam') + ', ' + _prenom) : t('greet_salam');
       var _salamDiv = document.createElement('div');
       _salamDiv.id = 'v2-salam';
-      _salamDiv.style.cssText = 'font-family:var(--serif);font-size:15px;color:rgba(200,168,75,0.6);margin-bottom:6px;opacity:0;animation:greetingFadeIn 1s ease-out 0.1s both;';
+      _salamDiv.style.cssText = 'font-family:var(--serif);font-size:15px;color:rgba(200,168,75,0.6);margin-bottom:6px;opacity:0;animation:_salamFadeIn 1.5s ease-out forwards;';
       _salamDiv.textContent = _salamText;
       _greetWrap.insertBefore(_salamDiv, _greetWrap.firstChild);
       safeSetItem('niyyah_greet_date', TODAY);
+      // Fade-out après 4s visible
+      setTimeout(function() {
+        _salamDiv.style.animation = 'none';
+        _salamDiv.style.opacity = '1';
+        _salamDiv.offsetHeight;
+        _salamDiv.style.transition = 'opacity 2s ease';
+        _salamDiv.style.opacity = '0';
+        setTimeout(function() { _salamDiv.style.display = 'none'; }, 2000);
+      }, 5500);
     }
   })();
   // Titres spirituels évolutifs (premium only)

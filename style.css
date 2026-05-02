@@ -5553,6 +5553,7 @@ body::before {
   margin-bottom: 32px;
 }
 @keyframes greetingFadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes _salamFadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
 
 .mandala-bg {
   position: absolute;
