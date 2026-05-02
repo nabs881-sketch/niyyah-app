@@ -5380,6 +5380,11 @@ const MEDIT_PHRASES = [
   'L\u2019abeille danse pour expliquer o\u00f9 sont les fleurs. Qui lui a appris la g\u00e9om\u00e9trie ?',
   'Ton \u0153il a 130 millions de cellules qui captent la lumi\u00e8re. Tu en demandais combien ?',
   'La Terre tourne \u00e0 100\u00a0000 km/h. Tu n\u2019as rien renvers\u00e9 sur la table.',
+  'Le sang coagule pile quand tu te coupes. Pas avant. Pas apr\u00e8s. Qui r\u00e8gle l\u2019horloge ?',
+  'Deux atomes d\u2019hydrog\u00e8ne + un d\u2019oxyg\u00e8ne = de l\u2019eau. Pourquoi pas un poison ?',
+  'Tu peux distinguer 10\u00a0000 odeurs. Tu n\u2019en as jamais demand\u00e9 une seule.',
+  'Un saumon n\u00e9 dans une rivi\u00e8re retrouve la m\u00eame rivi\u00e8re des ann\u00e9es plus tard. Avec quel GPS ?',
+  'Une graine de tomate conna\u00eet la forme finale de la tomate. O\u00f9 est-elle \u00e9crite ?',
 ];
 var MEDIT_PHRASES_EN = [
   'Rest your heart. Breathe. Reflect on Allah\'s creation.',
