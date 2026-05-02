@@ -9775,9 +9775,9 @@ function v2RefreshStats() {
     s.intention = null; s.intentionDate = null;
     v2SaveState(s);
   }
-  // Masquer "Commencer ma journée" si intention déjà posée
+  // Masquer "Commencer ma journée" — sobriété
   var eyebrow = document.getElementById('v2-greeting-eyebrow');
-  if (eyebrow) eyebrow.style.display = (s.intention && s.intentionDate === today) ? 'none' : '';
+  if (eyebrow) eyebrow.style.display = 'none';
 
   // Tawba mode (2+ jours absence)
   if (s.lastOpenDate) {
