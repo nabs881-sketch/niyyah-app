@@ -5400,6 +5400,11 @@ const MEDIT_PHRASES = [
   'Tu marches sur une boule en suspension dans le vide. Tu ne tombes pas. Personne ne t\u2019a expliqu\u00e9 pourquoi.',
   'Les morts sont plus nombreux que les vivants. Tu vis sur leur silence.',
   'Une pomme tombe. Newton a vu une loi. Avant lui, qui avait fait tenir les pommes ?',
+  'Tu peux fermer ta bouche, pas tes oreilles. Pourquoi ce d\u00e9s\u00e9quilibre ?',
+  'Le sommeil est gratuit. La nourriture est gratuite \u00e0 la naissance. L\u2019air l\u2019est tout le temps. Le reste, on te le fait payer.',
+  'Une seconde dure une seconde. Mais une seconde de douleur ne dure pas comme une seconde de bonheur.',
+  'Tu ne te souviens pas de ta naissance. Le moment le plus important de ta vie, tu n\u2019y \u00e9tais pas.',
+  'Tu as un dos. Tu ne le verras jamais en entier de tes propres yeux. La moiti\u00e9 de toi est cach\u00e9e \u00e0 toi-m\u00eame.',
 ];
 var MEDIT_PHRASES_EN = [
   'Rest your heart. Breathe. Reflect on Allah\'s creation.',
