@@ -3849,7 +3849,29 @@ function _yasirSouffle() {
 }
 
 function _yasirIntention() {
-  // TODO : 3 choix intention prochaine fois
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#4a7c59';
+  var choix = ['Je m\u2019assoirai.','Je me tairai 30 secondes.','J\u2019irai faire mes ablutions.'];
+  var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
+    + '<div style="font-family:var(--serif);font-size:18px;color:#E5E0DC;line-height:1.7;max-width:380px;margin-bottom:28px;">La prochaine fois que \u00e7a monte plus, qu\u2019est-ce que tu feras\u00a0?</div>'
+    + '<div style="display:flex;flex-direction:column;gap:12px;max-width:320px;width:100%;">';
+  for (var i = 0; i < choix.length; i++) {
+    html += '<button onclick="_yasirChoix(\'' + choix[i].replace(/'/g,"\\'") + '\')" style="padding:16px;border-radius:12px;border:1px solid ' + c + '55;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:16px;cursor:pointer;">' + choix[i] + '</button>';
+  }
+  html += '</div></div>';
+  el.innerHTML = html;
+}
+
+function _yasirChoix(texte) {
+  safeSetItem('colere_intention_prochaine', texte);
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  el.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;min-height:100vh;text-align:center;">'
+    + '<div style="font-family:var(--serif);font-size:22px;color:#C8A84A;opacity:0;transition:opacity 0.8s ease;" id="_yasirBism">Bismillah.</div>'
+    + '</div>';
+  requestAnimationFrame(function() { var e = document.getElementById('_yasirBism'); if (e) e.style.opacity = '1'; });
+  setTimeout(function() { _babImmersion = false; _hideAideBtn(); var _nb = document.getElementById('nav-bar-v2'); if (_nb) _nb.classList.remove('hidden-immersion'); v2GoSanctuaire(); }, 1500);
 }
 function openColereMutawassit() { alert("Mutawassit OK - stub"); }
 function openColereShadid() { alert("Shadid OK - stub"); }
@@ -11438,6 +11460,7 @@ window.openItfaaOuverture     = openItfaaOuverture;
 window.openColereYasir        = openColereYasir;
 window._yasirSouffle          = _yasirSouffle;
 window._yasirIntention        = _yasirIntention;
+window._yasirChoix            = _yasirChoix;
 window.openColereMutawassit   = openColereMutawassit;
 window.openColereShadid       = openColereShadid;
 window.openItfaaSomatic       = openItfaaSomatic;
