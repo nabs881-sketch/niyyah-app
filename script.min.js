@@ -3758,13 +3758,13 @@ function _openColereThermometre() {
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:14px;color:rgba(255,255,255,0.3);direction:rtl;">Yas\u00eer</div>'
     + '</button>'
     // Carte 2 — Mutawassiṭ (orange)
-    + '<button onclick="_logColereZone(\'mutawassit\');openItfaaOuverture()" style="padding:20px;border-radius:14px;border:1px solid rgba(200,118,58,0.5);background:rgba(200,118,58,0.1);cursor:pointer;text-align:left;">'
+    + '<button onclick="_logColereZone(\'mutawassit\');openColereMutawassit()" style="padding:20px;border-radius:14px;border:1px solid rgba(200,118,58,0.5);background:rgba(200,118,58,0.1);cursor:pointer;text-align:left;">'
     + '<div style="font-family:var(--serif);font-size:18px;color:#c8763a;margin-bottom:4px;">\u00c7a me prend.</div>'
     + '<div style="font-size:13px;color:#E5E0DC;opacity:0.7;margin-bottom:6px;">mon corps se serre, mon c\u0153ur bat plus fort</div>'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:14px;color:rgba(255,255,255,0.3);direction:rtl;">Mutawassi\u1e6d</div>'
     + '</button>'
     // Carte 3 — Shadîd (rouge)
-    + '<button onclick="_logColereZone(\'shadid\');openItfaaOuverture()" style="padding:20px;border-radius:14px;border:1px solid rgba(163,55,42,0.5);background:rgba(163,55,42,0.1);cursor:pointer;text-align:left;">'
+    + '<button onclick="_colereMode=\'shadid\';_logColereZone(\'shadid\');openItfaaOuverture()" style="padding:20px;border-radius:14px;border:1px solid rgba(163,55,42,0.5);background:rgba(163,55,42,0.1);cursor:pointer;text-align:left;">'
     + '<div style="font-family:var(--serif);font-size:18px;color:#a3372a;margin-bottom:4px;">\u00c7a me submerge.</div>'
     + '<div style="font-size:13px;color:#E5E0DC;opacity:0.7;margin-bottom:6px;">je vais exploser, je n\u2019arrive plus \u00e0 penser</div>'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:14px;color:rgba(255,255,255,0.3);direction:rtl;">Shad\u00eed</div>'
@@ -3824,6 +3824,32 @@ function _showAideBtn() {
 function _hideAideBtn() {
   var btn = document.getElementById('_aideHumaineBtn');
   if (btn) btn.remove();
+}
+
+var _colereMode = 'shadid'; // 'yasir' | 'mutawassit' | 'shadid'
+
+function openColereMutawassit() {
+  _colereMode = 'mutawassit';
+  openItfaaStep1();
+}
+
+function _colereMutawassitExit() {
+  // Compter dans colere_completions
+  try {
+    var completions = JSON.parse(safeGetItem('colere_completions') || '[]');
+    completions.push(Date.now());
+    var cutoff30d = Date.now() - 30 * 86400000;
+    completions = completions.filter(function(t) { return t > cutoff30d; });
+    safeSetItem('colere_completions', JSON.stringify(completions));
+  } catch(e) {}
+  // Message court 1.5s
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  el.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;">'
+    + '<div style="font-family:var(--serif);font-size:18px;color:#E5E0DC;line-height:1.8;max-width:360px;opacity:0;transition:opacity 1s ease;" id="_mutExit">La vague redescend. Allah voit.</div>'
+    + '</div>';
+  requestAnimationFrame(function() { var e = document.getElementById('_mutExit'); if (e) e.style.opacity = '1'; });
+  setTimeout(function() { _babImmersion = false; _hideAideBtn(); var _nb = document.getElementById('nav-bar-v2'); if (_nb) _nb.classList.remove('hidden-immersion'); v2GoSanctuaire(); }, 2500);
 }
 
 function openColereYasir() {
@@ -4023,7 +4049,7 @@ function openItfaaAction() {
     html += '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;margin-bottom:24px;">Marche une minute. Respire.</div>'
       + '<div id="_souffleContainer"></div>'
       + '<div class="itfaa-subtle" style="font-size:11px;max-width:400px;margin:0 auto 24px;">Sounnah g\u00e9n\u00e9rale du mouvement et de la respiration consciente \u2014 pas de hadith sp\u00e9cifique sur cette pratique.</div>'
-      + '<button id="_souffleBtnFait" onclick="openItfaaRefuge()" style="display:none;width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019ai fait \u2726</button>'
+      + '<button id="_souffleBtnFait" onclick="_colereMode==='mutawassit'?_colereMutawassitExit():openItfaaRefuge()" style="display:none;width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019ai fait \u2726</button>'
       + '</div>';
     el.innerHTML = html;
     afficheLeSouffle(document.getElementById('_souffleContainer'), c);
@@ -4047,7 +4073,7 @@ function openItfaaAction() {
   if (zone === 'tete' && !ar) {
     html += '<div class="itfaa-subtle" style="font-size:11px;text-align:center;max-width:400px;margin:0 auto 24px;">Pratique recommand\u00e9e par la tradition musulmane.</div>';
   }
-  html += '<button onclick="openItfaaRefuge()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;margin-top:20px;">J\u2019ai fait \u2726</button>'
+  html += '<button onclick="_colereMode==='mutawassit'?_colereMutawassitExit():openItfaaRefuge()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;margin-top:20px;">J\u2019ai fait \u2726</button>'
     + '</div>';
   el.innerHTML = html;
 }
@@ -11430,6 +11456,8 @@ window.openBabPorte           = openBabPorte;
 window.openColereChoix        = openColereChoix;
 window._openColereThermometre = _openColereThermometre;
 window._logColereZone         = _logColereZone;
+window.openColereMutawassit   = openColereMutawassit;
+window._colereMutawassitExit  = _colereMutawassitExit;
 window.openColereYasir        = openColereYasir;
 window._openColereYasirSouffle = _openColereYasirSouffle;
 window._openColereYasirIntention = _openColereYasirIntention;
