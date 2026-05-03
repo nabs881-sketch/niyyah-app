@@ -3632,7 +3632,7 @@ function openBabPorte(id, step) {
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   // Guard Colère → écran choix de mode
-  if (id === 'colere' && (!step || step === 1)) { openColereChoix(); return; }
+  if (id === 'colere' && (!step || step === 1)) { openPorteChoix(id); return; }
   var porte = BAB_AN_NAFS.portes.find(function(p) { return p.id === id; });
   if (!porte) { console.warn('Bab an-Nafs: porte manquante:', id); return; }
   // Porte vide ou non validée sans contenu → écran "en préparation"
@@ -3730,7 +3730,7 @@ function openBabPorte(id, step) {
   el.innerHTML = html;
 }
 
-function openColereChoix() {
+function openPorteChoix(porte) {
   document.body.classList.add('in-bab-an-nafs');
   _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
   var el = document.getElementById('babAnNafsContent');
@@ -3832,7 +3832,7 @@ function _logColereZone(zone) {
   } catch(e) {}
 }
 
-function openColereYasir() {
+function openPorteYasir(porte) {
   _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
   document.body.classList.add('in-bab-an-nafs');
   var el = document.getElementById('babAnNafsContent');
@@ -3890,7 +3890,7 @@ function _yasirChoix(texte) {
 }
 var _colereMode = 'shadid';
 
-function openColereMutawassit() {
+function openPorteMutawassit(porte) {
   _colereMode = 'mutawassit';
   _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
   document.body.classList.add('in-bab-an-nafs');
@@ -3957,7 +3957,7 @@ function _logEmotionSous(emotion) {
   openItfaaRefuge();
 }
 
-function openColereShadid() {
+function openPorteShadid(porte) {
   _colereMode = 'shadid';
   openItfaaOuverture();
 }
@@ -5159,7 +5159,7 @@ function babCompletPorte(id) {
   renderBabAnNafs();
 }
 
-function openColereSeuilTherapeute() {
+function openPorteSeuilTherapeute(porte) {
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var c = '#B33A3A';
@@ -5172,6 +5172,13 @@ function openColereSeuilTherapeute() {
     + '<button onclick="safeSetItem(\'colere_seuil_vu\',String(Date.now()));_babImmersion=false;v2GoSanctuaire()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>'
     + '</div>';
 }
+
+// ── Backward-compatible wrappers (ouverture porte) ──
+function openColereChoix() { openPorteChoix('colere'); }
+function openColereYasir() { openPorteYasir('colere'); }
+function openColereMutawassit() { openPorteMutawassit('colere'); }
+function openColereShadid() { openPorteShadid('colere'); }
+function openColereSeuilTherapeute() { openPorteSeuilTherapeute('colere'); }
 
 const WEEKLY_HADITHS = {
   perfect: [ 
@@ -11594,6 +11601,11 @@ window.regardeCancelThinking  = regardeCancelThinking;
 window.openRegardeJournal     = openRegardeJournal;
 window.renderBabAnNafs        = renderBabAnNafs;
 window.openBabPorte           = openBabPorte;
+window.openPorteChoix         = openPorteChoix;
+window.openPorteYasir         = openPorteYasir;
+window.openPorteMutawassit    = openPorteMutawassit;
+window.openPorteShadid        = openPorteShadid;
+window.openPorteSeuilTherapeute = openPorteSeuilTherapeute;
 window.openColereChoix        = openColereChoix;
 window._renderThermometre     = _renderThermometre;
 window._logColereZone         = _logColereZone;
