@@ -3740,7 +3740,7 @@ function openColereChoix() {
     + '<div style="font-family:var(--serif);font-size:26px;color:' + c + ';margin-bottom:6px;">Col\u00e8re</div>'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:30px;color:' + c + ';direction:rtl;opacity:0.7;margin-bottom:32px;">\u0627\u0644\u063A\u0636\u0628</div>'
     + '<div style="display:flex;flex-direction:column;gap:16px;max-width:320px;margin:0 auto;">'
-    + '<button onclick="openItfaaStep1()" style="padding:20px;border-radius:14px;border:1px solid ' + c + '55;background:' + c + '1a;cursor:pointer;text-align:center;">'
+    + '<button onclick="openItfaaOuverture()" style="padding:20px;border-radius:14px;border:1px solid ' + c + '55;background:' + c + '1a;cursor:pointer;text-align:center;">'
     + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';margin-bottom:4px;">Maintenant</div>'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:16px;color:' + c + ';opacity:0.7;">\u0625\u0637\u0641\u0627\u0621 \u2014 I\u1e6df\u00e2\u2019</div>'
     + '<div style="font-size:12px;color:var(--t3);margin-top:6px;">~3 min \u2014 en crise</div>'
@@ -3840,6 +3840,22 @@ function _halo(el, z) {
   _ov.className = '_zoneFlash';
   document.body.appendChild(_ov);
   setTimeout(function() { _ov.remove(); openItfaaAction(); }, 1300);
+}
+
+function openItfaaOuverture() {
+  _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
+  document.body.classList.add('in-bab-an-nafs');
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  el.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;background:#000;padding:24px;">'
+    + '<div id="_itfaaAr" style="font-family:\'Scheherazade New\',serif;font-size:64px;color:#C8A84A;direction:rtl;opacity:0;transition:opacity 1.5s ease;">\u0644\u0627\u064e \u062a\u064e\u063a\u0652\u0636\u064e\u0628\u0652</div>'
+    + '<div id="_itfaaTranslit" style="font-family:var(--serif);font-size:16px;font-style:italic;color:rgba(200,168,75,0.7);margin-top:12px;opacity:0;transition:opacity 1s ease;">L\u00e2 taghḍab \u2014 Ne te mets pas en col\u00e8re.</div>'
+    + '<div id="_itfaaSource" style="font-size:12px;color:rgba(255,255,255,0.35);margin-top:6px;opacity:0;transition:opacity 1s ease;">Bukh\u00e2r\u00ee 6116 \u2014 \u1e63a\u1e25\u00ee\u1e25</div>'
+    + '</div>';
+  requestAnimationFrame(function() { document.getElementById('_itfaaAr').style.opacity = '1'; });
+  setTimeout(function() { var e = document.getElementById('_itfaaTranslit'); if (e) e.style.opacity = '1'; }, 2000);
+  setTimeout(function() { var e = document.getElementById('_itfaaSource'); if (e) e.style.opacity = '1'; }, 2500);
+  setTimeout(function() { openItfaaStep1(); }, 4000);
 }
 
 function openItfaaStep1() {
@@ -11309,6 +11325,7 @@ window._cureColereJ7Save      = _cureColereJ7Save;
 window.openMuhasabaRappel    = openMuhasabaRappel;
 window._muhasabaRappelReponse = _muhasabaRappelReponse;
 window._halo                  = _halo;
+window.openItfaaOuverture     = openItfaaOuverture;
 window.openItfaaStep1         = openItfaaStep1;
 window.openItfaaAction        = openItfaaAction;
 window.openItfaaRefuge        = openItfaaRefuge;
