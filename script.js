@@ -4581,7 +4581,7 @@ function openCureColereJour1() {
 
 function _cureColereJ1Save() {
   var niyyah = (document.getElementById('_cureNiyyah') || {}).value || '';
-  if (!niyyah.trim()) {
+  if (!niyyah.trim() && safeGetItem('cure_mode') !== 'doucement') {
     var field = document.getElementById('_cureNiyyah');
     if (field) { field.style.borderColor = '#B33A3A'; field.focus(); field.placeholder = 'Niyyah obligatoire avant de continuer\u2026'; }
     return;
