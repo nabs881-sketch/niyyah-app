@@ -3745,7 +3745,30 @@ function openColereChoix() {
 }
 
 function _renderThermometre() {
-  // TODO : thermomètre 3 niveaux
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var backBtn = '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
+  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;">'
+    + backBtn
+    + '<div style="display:flex;flex-direction:column;gap:14px;max-width:340px;margin:0 auto;">'
+    + '<button onclick="openColereYasir()" style="padding:20px;border-radius:14px;border:1px solid rgba(74,124,89,0.5);background:rgba(74,124,89,0.1);cursor:pointer;text-align:left;">'
+    + '<div style="font-family:var(--serif);font-size:18px;color:#4a7c59;margin-bottom:4px;">\u00c7a me chatouille.</div>'
+    + '<div style="font-size:13px;color:#E5E0DC;opacity:0.7;margin-bottom:6px;">je peux encore respirer calmement</div>'
+    + '<div style="font-family:\'Scheherazade New\',serif;font-size:14px;color:rgba(255,255,255,0.3);direction:rtl;">Yas\u00eer</div>'
+    + '</button>'
+    + '<button onclick="openColereMutawassit()" style="padding:20px;border-radius:14px;border:1px solid rgba(200,118,58,0.5);background:rgba(200,118,58,0.1);cursor:pointer;text-align:left;">'
+    + '<div style="font-family:var(--serif);font-size:18px;color:#c8763a;margin-bottom:4px;">\u00c7a me prend.</div>'
+    + '<div style="font-size:13px;color:#E5E0DC;opacity:0.7;margin-bottom:6px;">mon corps se serre, mon c\u0153ur bat plus fort</div>'
+    + '<div style="font-family:\'Scheherazade New\',serif;font-size:14px;color:rgba(255,255,255,0.3);direction:rtl;">Mutawassi\u1e6d</div>'
+    + '</button>'
+    + '<button onclick="openColereShadid()" style="padding:20px;border-radius:14px;border:1px solid rgba(163,55,42,0.5);background:rgba(163,55,42,0.1);cursor:pointer;text-align:left;">'
+    + '<div style="font-family:var(--serif);font-size:18px;color:#a3372a;margin-bottom:4px;">\u00c7a me submerge.</div>'
+    + '<div style="font-size:13px;color:#E5E0DC;opacity:0.7;margin-bottom:6px;">je vais exploser, je n\u2019arrive plus \u00e0 penser</div>'
+    + '<div style="font-family:\'Scheherazade New\',serif;font-size:14px;color:rgba(255,255,255,0.3);direction:rtl;">Shad\u00eed</div>'
+    + '</button>'
+    + '</div>'
+    + '<div style="text-align:center;margin-top:32px;"><button onclick="openCureColere()" style="background:none;border:none;color:rgba(200,168,75,0.4);font-family:var(--serif);font-size:13px;font-style:italic;cursor:pointer;">Travailler \u00e0 froid \u2192</button></div>'
+    + '</div>';
 }
 
 // ── LE SOUFFLE (composant réutilisable) ──
