@@ -4074,6 +4074,20 @@ function _logSomatic(sensation) {
   openItfaaAction();
 }
 
+function _itfaaWuduEtape2() {
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#B33A3A';
+  var backBtn = '<button onclick="openItfaaStep1()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
+  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
+    + backBtn
+    + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.6;margin-bottom:16px;">T\u00eate</div>'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.7;max-width:360px;margin:0 auto 12px;">Maintenant, compl\u00e8te les ablutions.</div>'
+    + '<div style="font-family:var(--serif);font-size:20px;color:#C8A84A;font-style:italic;margin-bottom:28px;">Bismill\u00e2h.</div>'
+    + '<button onclick="_itfaaFaitClick()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019ai fait \u2726</button>'
+    + '</div>';
+}
+
 function openItfaaOuverture() {
   _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
   document.body.classList.add('in-bab-an-nafs');
@@ -4153,6 +4167,16 @@ function openItfaaAction() {
   var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
     + backBtn
     + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.6;margin-bottom:16px;">' + escapeHtml(labels[zone] || zone) + '</div>';
+  // Zone TETE : parcours wudu en 2 étapes
+  if (zone === 'tete') {
+    html += '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.7;max-width:360px;margin:0 auto 8px;">Eau tr\u00e8s froide sur le visage.</div>'
+      + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;margin-bottom:8px;">30 secondes.</div>'
+      + '<div class="itfaa-subtle" style="font-size:15px;margin-bottom:28px;">C\u2019est le d\u00e9but du wudu.</div>'
+      + '<button onclick="_itfaaWuduEtape2()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">C\u2019est fait</button>'
+      + '</div>';
+    el.innerHTML = html;
+    return;
+  }
   // Zone MAINS : cercle respiratoire via composant réutilisable
   if (zone === 'mains') {
     html += '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;margin-bottom:24px;">Marche une minute. Respire.</div>'
@@ -11706,6 +11730,7 @@ window._cureColereJ7Save      = _cureColereJ7Save;
 window.openMuhasabaRappel    = openMuhasabaRappel;
 window._muhasabaRappelReponse = _muhasabaRappelReponse;
 window._halo                  = _halo;
+window._itfaaWuduEtape2       = _itfaaWuduEtape2;
 window.openItfaaOuverture     = openItfaaOuverture;
 window.openColereYasir        = openColereYasir;
 window._yasirSouffle          = _yasirSouffle;
