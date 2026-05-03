@@ -3734,42 +3734,18 @@ function openColereChoix() {
   _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
-  var c = '#B33A3A';
-  var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
-    + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>'
-    + '<div style="font-family:var(--serif);font-size:26px;color:' + c + ';margin-bottom:6px;">Col\u00e8re</div>'
-    + '<div style="font-family:\'Scheherazade New\',serif;font-size:30px;color:' + c + ';direction:rtl;opacity:0.7;margin-bottom:32px;">\u0627\u0644\u063A\u0636\u0628</div>'
-    + '<div style="display:flex;flex-direction:column;gap:16px;max-width:320px;margin:0 auto;">'
-    + '<button onclick="openItfaaOuverture()" style="padding:20px;border-radius:14px;border:1px solid ' + c + '55;background:' + c + '1a;cursor:pointer;text-align:center;">'
-    + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';margin-bottom:4px;">Maintenant</div>'
-    + '<div style="font-family:\'Scheherazade New\',serif;font-size:16px;color:' + c + ';opacity:0.7;">\u0625\u0637\u0641\u0627\u0621 \u2014 I\u1e6df\u00e2\u2019</div>'
-    + '<div style="font-size:12px;color:var(--t3);margin-top:6px;">~3 min \u2014 en crise</div>'
-    + '</button>'
-    + '</button>';
-  // Cure 7 Jours
-  var _cure = {}; try { _cure = JSON.parse(safeGetItem('cure_colere') || '{}'); } catch(e) {}
-  var _cureDay = _cure.current_day || 0;
-  var _cureDone = _cure.completed === true;
-  if (_cureDone) {
-    html += '<div style="margin-top:24px;padding:16px;border-radius:14px;border:1px solid rgba(200,168,75,0.2);background:rgba(200,168,75,0.04);text-align:center;">'
-      + '<div style="font-family:var(--serif);font-size:14px;color:#C8A84A;opacity:0.7;">\u2726 Cure du c\u0153ur accomplie</div>'
-      + '<div style="font-size:12px;color:var(--t3);margin-top:4px;">Tu as travers\u00e9 sept jours. La porte reste ouverte derri\u00e8re toi.</div>'
-      + '</div>';
-  } else if (_cureDay >= 2) {
-    html += '<button onclick="openCureColere()" style="margin-top:24px;padding:20px;border-radius:14px;border:1px solid rgba(200,168,75,0.3);background:rgba(200,168,75,0.06);cursor:pointer;text-align:center;width:100%;">'
-      + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:4px;">Cure du c\u0153ur</div>'
-      + '<div style="font-family:\'Scheherazade New\',serif;font-size:16px;color:#C8A84A;opacity:0.7;">\u0631\u0650\u064a\u064e\u0627\u0636\u064e\u0629 \u0646\u064e\u0641\u0652\u0633\u0650\u064a\u0651\u064e\u0629</div>'
-      + '<div style="font-size:12px;color:var(--t3);margin-top:6px;">Jour ' + _cureDay + ' / 7 \u2014 reprendre</div>'
-      + '</button>';
-  } else {
-    html += '<button onclick="openCureColere()" style="margin-top:24px;padding:20px;border-radius:14px;border:1px solid rgba(200,168,75,0.15);background:rgba(200,168,75,0.03);cursor:pointer;text-align:center;width:100%;">'
-      + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:4px;">Cure du c\u0153ur</div>'
-      + '<div style="font-family:\'Scheherazade New\',serif;font-size:16px;color:#C8A84A;opacity:0.7;">\u0631\u0650\u064a\u064e\u0627\u0636\u064e\u0629 \u0646\u064e\u0641\u0652\u0633\u0650\u064a\u0651\u064e\u0629</div>'
-      + '<div style="font-size:12px;color:var(--t3);margin-top:6px;">7 jours \u2014 transformer ta col\u00e8re</div>'
-      + '</button>';
-  }
-  html += '</div></div>';
-  el.innerHTML = html;
+  // Écran accueil 1.5s
+  el.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;">'
+    + '<div id="_colAccueil1" style="font-family:var(--serif);font-size:18px;color:#E5E0DC;line-height:1.8;max-width:360px;opacity:0;transition:opacity 1s ease;">Tu es venu. C\u2019est d\u00e9j\u00e0 un travail.</div>'
+    + '<div id="_colAccueil2" style="font-family:var(--serif);font-size:16px;color:rgba(200,168,75,0.7);margin-top:16px;opacity:0;transition:opacity 1s ease;">Comment es-tu maintenant\u00a0?</div>'
+    + '</div>';
+  requestAnimationFrame(function() { var e = document.getElementById('_colAccueil1'); if (e) e.style.opacity = '1'; });
+  setTimeout(function() { var e = document.getElementById('_colAccueil2'); if (e) e.style.opacity = '1'; }, 800);
+  setTimeout(function() { _renderThermometre(); }, 2500);
+}
+
+function _renderThermometre() {
+  // TODO : thermomètre 3 niveaux
 }
 
 // ── LE SOUFFLE (composant réutilisable) ──
@@ -11371,6 +11347,7 @@ window.openRegardeJournal     = openRegardeJournal;
 window.renderBabAnNafs        = renderBabAnNafs;
 window.openBabPorte           = openBabPorte;
 window.openColereChoix        = openColereChoix;
+window._renderThermometre     = _renderThermometre;
 window.afficheLeSouffle       = afficheLeSouffle;
 window._showAideBtn           = _showAideBtn;
 window._hideAideBtn           = _hideAideBtn;
