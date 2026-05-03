@@ -4479,6 +4479,28 @@ function openCureColereJour1() {
   document.body.classList.add('in-bab-an-nafs');
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
+  // Mode doucement : version raccourcie
+  if (safeGetItem('cure_mode') === 'doucement') {
+    var c = '#B33A3A';
+    var backBtn = '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
+    el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
+      + backBtn
+      + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:' + c + ';direction:rtl;margin-bottom:6px;">\u0631\u0650\u064a\u064e\u0627\u0636\u064e\u0629 \u0646\u064e\u0641\u0652\u0633\u0650\u064a\u0651\u064e\u0629</div>'
+      + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:4px;">Riy\u00e2\u1e0dat an-nafs \u2014 Jour 1</div>'
+      + '<div class="itfaa-body" style="font-size:16px;margin-bottom:28px;">Reconna\u00eetre le feu</div>'
+      + '<div style="margin-bottom:28px;padding:20px;border-radius:14px;border:1px solid ' + c + '22;background:' + c + '08;text-align:center;">'
+      + '<div style="font-family:\'Scheherazade New\',serif;font-size:36px;color:' + c + ';direction:rtl;line-height:1.8;margin-bottom:8px;">\u0644\u064e\u0627 \u062a\u064e\u063a\u0652\u0636\u064e\u0628\u0652</div>'
+      + '<div class="itfaa-body" style="font-size:14px;font-style:italic;margin-bottom:6px;">L\u00e2 taghḍab</div>'
+      + '<div class="itfaa-body" style="font-size:15px;margin-bottom:6px;">Ne te mets pas en col\u00e8re.</div>'
+      + '<div class="itfaa-subtle" style="font-size:11px;">Bukh\u00e2r\u00ee 6116</div>'
+      + '</div>'
+      + '<div class="itfaa-body" style="font-family:var(--serif);font-size:17px;line-height:1.7;max-width:360px;margin:0 auto 8px;">Aujourd\u2019hui, juste reconnais.</div>'
+      + '<div class="itfaa-subtle" style="font-size:15px;margin-bottom:28px;">Pas plus.</div>'
+      + '<button onclick="_cureColereJ1Save()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019ai reconnu</button>'
+      + '<div style="margin-top:24px;"><button onclick="safeSetItem(\'cure_mode\',\'serieusement\');openCureColereJour1()" style="background:none;border:none;font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(255,255,255,0.3);cursor:pointer;">Tu veux donner plus aujourd\u2019hui ? Passer en S\u00e9rieusement \u2192</button></div>'
+      + '</div>';
+    return;
+  }
   var c = '#B33A3A';
   // Hadith Bukhârî 6116 (lâ taghḍab)
   var h6116 = {ar:'\u0644\u064e\u0627 \u062a\u064e\u063a\u0652\u0636\u064e\u0628',translit:'L\u00e2 taghḍab',fr:'Ne te mets pas en col\u00e8re.',source:'Al-Bukh\u00e2r\u00ee 6116'};
