@@ -3873,8 +3873,35 @@ function _yasirChoix(texte) {
   requestAnimationFrame(function() { var e = document.getElementById('_yasirBism'); if (e) e.style.opacity = '1'; });
   setTimeout(function() { _babImmersion = false; _hideAideBtn(); var _nb = document.getElementById('nav-bar-v2'); if (_nb) _nb.classList.remove('hidden-immersion'); v2GoSanctuaire(); }, 1500);
 }
-function openColereMutawassit() { alert("Mutawassit OK - stub"); }
-function openColereShadid() { alert("Shadid OK - stub"); }
+var _colereMode = 'shadid';
+
+function openColereMutawassit() {
+  _colereMode = 'mutawassit';
+  _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
+  document.body.classList.add('in-bab-an-nafs');
+  openItfaaStep1();
+}
+
+function _colereMutawassitExit() {
+  // Compter dans colere_completions via babCompletPorte
+  babCompletPorte('colere');
+  // Intercepter le renderBabAnNafs qui suit — remplacer par message court
+  setTimeout(function() {
+    var el = document.getElementById('babAnNafsContent');
+    if (!el) return;
+    el.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;">'
+      + '<div id="_mutExit1" style="font-family:var(--serif);font-size:18px;color:#E5E0DC;line-height:1.8;opacity:0;transition:opacity 0.8s ease;">La vague redescend.</div>'
+      + '<div id="_mutExit2" style="font-family:var(--serif);font-size:16px;color:rgba(200,168,75,0.7);margin-top:12px;opacity:0;transition:opacity 0.8s ease;">Allah voit.</div>'
+      + '</div>';
+    requestAnimationFrame(function() { var e = document.getElementById('_mutExit1'); if (e) e.style.opacity = '1'; });
+    setTimeout(function() { var e = document.getElementById('_mutExit2'); if (e) e.style.opacity = '1'; }, 500);
+    setTimeout(function() { _babImmersion = false; _hideAideBtn(); var _nb = document.getElementById('nav-bar-v2'); if (_nb) _nb.classList.remove('hidden-immersion'); v2GoSanctuaire(); }, 2000);
+  }, 100);
+}
+function openColereShadid() {
+  _colereMode = 'shadid';
+  openItfaaOuverture();
+}
 
 function openAideHumaine() {
   var el = document.getElementById('babAnNafsContent');
@@ -4025,7 +4052,7 @@ function openItfaaAction() {
     html += '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;margin-bottom:24px;">Marche une minute. Respire.</div>'
       + '<div id="_souffleContainer"></div>'
       + '<div class="itfaa-subtle" style="font-size:11px;max-width:400px;margin:0 auto 24px;">Sounnah g\u00e9n\u00e9rale du mouvement et de la respiration consciente \u2014 pas de hadith sp\u00e9cifique sur cette pratique.</div>'
-      + '<button id="_souffleBtnFait" onclick="openItfaaRefuge()" style="display:none;width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019ai fait \u2726</button>'
+      + '<button id="_souffleBtnFait" onclick="_colereMode==='mutawassit'?_colereMutawassitExit():openItfaaRefuge()" style="display:none;width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019ai fait \u2726</button>'
       + '</div>';
     el.innerHTML = html;
     afficheLeSouffle(document.getElementById('_souffleContainer'), c);
@@ -4049,7 +4076,7 @@ function openItfaaAction() {
   if (zone === 'tete' && !ar) {
     html += '<div class="itfaa-subtle" style="font-size:11px;text-align:center;max-width:400px;margin:0 auto 24px;">Pratique recommand\u00e9e par la tradition musulmane.</div>';
   }
-  html += '<button onclick="openItfaaRefuge()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;margin-top:20px;">J\u2019ai fait \u2726</button>'
+  html += '<button onclick="_colereMode==='mutawassit'?_colereMutawassitExit():openItfaaRefuge()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;margin-top:20px;">J\u2019ai fait \u2726</button>'
     + '</div>';
   el.innerHTML = html;
 }
@@ -11462,6 +11489,7 @@ window._yasirSouffle          = _yasirSouffle;
 window._yasirIntention        = _yasirIntention;
 window._yasirChoix            = _yasirChoix;
 window.openColereMutawassit   = openColereMutawassit;
+window._colereMutawassitExit  = _colereMutawassitExit;
 window.openColereShadid       = openColereShadid;
 window.openItfaaSomatic       = openItfaaSomatic;
 window._logSomatic            = _logSomatic;
