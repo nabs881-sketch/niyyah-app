@@ -3614,43 +3614,41 @@ function renderBabAnNafs() {
     html += '<button onclick="openBabPorte(\'' + p.id + '\')" style="position:relative;aspect-ratio:1/1;border-radius:12px;border:1px solid var(--gold,#C8A84A);background:url(assets/cards/porte-' + p.id + '.png) center/cover no-repeat,#111;cursor:pointer;padding:0;">' + _cureMarker + '</button>';
   });
   html += '</div>';
-  // Mini-tableau stats 7 jours
-  (function() {
-    try {
-      var _zLog = JSON.parse(safeGetItem('colere_zone_log') || '[]');
-      var _cut = Date.now() - 7 * 86400000;
-      var _recent = _zLog.filter(function(e) { return e.date > _cut; });
-      if (_recent.length === 0) return;
-      // 1. Visites
-      var _visites = _recent.length;
-      // 2. Zone dominante
-      var _zc = {};
-      _recent.forEach(function(e) { _zc[e.zone] = (_zc[e.zone] || 0) + 1; });
-      var _dom = Object.keys(_zc).sort(function(a, b) { return _zc[b] - _zc[a]; })[0] || '';
-      var _domLabel = {verte:'verte',orange:'orange',rouge:'rouge'}[_dom] || _dom;
-      // 3. Récupération moyenne (rouge uniquement)
-      var _rouges = _recent.filter(function(e) { return e.zone === 'rouge'; });
-      var _comps = JSON.parse(safeGetItem('colere_completions') || '[]');
-      var _durees = [];
-      _rouges.forEach(function(r) {
-        for (var ci = 0; ci < _comps.length; ci++) {
-          if (_comps[ci] > r.date && (_comps[ci] - r.date) < 3600000) {
-            _durees.push(Math.round((_comps[ci] - r.date) / 60000));
-            break;
-          }
-        }
-      });
-      _durees.sort(function(a, b) { return a - b; });
-      var _median = _durees.length > 0 ? _durees[Math.floor(_durees.length / 2)] : null;
-      html += '<div style="margin-top:24px;padding:16px;border-radius:12px;border:1px solid rgba(200,168,75,0.12);background:rgba(200,168,75,0.03);display:flex;justify-content:space-around;text-align:center;">'
-        + '<div><div style="font-family:var(--serif);font-size:20px;color:#C8A84A;">' + _visites + '</div><div style="font-size:11px;color:var(--t3);">visites</div></div>'
-        + '<div><div style="font-family:var(--serif);font-size:20px;color:#C8A84A;">' + _domLabel + '</div><div style="font-size:11px;color:var(--t3);">plus souvent</div></div>'
-        + (_median !== null ? '<div><div style="font-family:var(--serif);font-size:20px;color:#C8A84A;">' + _median + ' min</div><div style="font-size:11px;color:var(--t3);">r\u00e9cup\u00e9ration</div></div>' : '')
-        + '</div>';
-    } catch(e) {}
-  })();
+  html += _babDashboardStats();
   html += '</div>';
   el.innerHTML = html;
+}
+
+function _babDashboardStats() {
+  try {
+    var _zLog = JSON.parse(safeGetItem('colere_zone_log') || '[]');
+    var _cut = Date.now() - 7 * 86400000;
+    var _recent = _zLog.filter(function(e) { return e.date > _cut; });
+    if (_recent.length === 0) return '';
+    var _visites = _recent.length;
+    var _zc = {};
+    _recent.forEach(function(e) { _zc[e.zone] = (_zc[e.zone] || 0) + 1; });
+    var _dom = Object.keys(_zc).sort(function(a, b) { return _zc[b] - _zc[a]; })[0] || '';
+    var _domLabel = {verte:'verte',orange:'orange',rouge:'rouge'}[_dom] || _dom;
+    var _rouges = _recent.filter(function(e) { return e.zone === 'rouge'; });
+    var _comps = JSON.parse(safeGetItem('colere_completions') || '[]');
+    var _durees = [];
+    _rouges.forEach(function(r) {
+      for (var ci = 0; ci < _comps.length; ci++) {
+        if (_comps[ci] > r.date && (_comps[ci] - r.date) < 3600000) {
+          _durees.push(Math.round((_comps[ci] - r.date) / 60000));
+          break;
+        }
+      }
+    });
+    _durees.sort(function(a, b) { return a - b; });
+    var _median = _durees.length > 0 ? _durees[Math.floor(_durees.length / 2)] : null;
+    return '<div style="margin-top:24px;padding:16px;border-radius:12px;border:1px solid rgba(200,168,75,0.12);background:rgba(200,168,75,0.03);display:flex;justify-content:space-around;text-align:center;">'
+      + '<div><div style="font-family:var(--serif);font-size:20px;color:#C8A84A;">' + _visites + '</div><div style="font-size:11px;color:var(--t3);">visites</div></div>'
+      + '<div><div style="font-family:var(--serif);font-size:20px;color:#C8A84A;">' + _domLabel + '</div><div style="font-size:11px;color:var(--t3);">plus souvent</div></div>'
+      + (_median !== null ? '<div><div style="font-family:var(--serif);font-size:20px;color:#C8A84A;">' + _median + ' min</div><div style="font-size:11px;color:var(--t3);">r\u00e9cup\u00e9ration</div></div>' : '')
+      + '</div>';
+  } catch(e) { return ''; }
 }
 
 var _babCurrentPorte = null;
@@ -11535,6 +11533,7 @@ window.regardeClose           = regardeClose;
 window.regardeCancelThinking  = regardeCancelThinking;
 window.openRegardeJournal     = openRegardeJournal;
 window.renderBabAnNafs        = renderBabAnNafs;
+window._babDashboardStats     = _babDashboardStats;
 window.openBabPorte           = openBabPorte;
 window.openColereChoix        = openColereChoix;
 window._renderThermometre     = _renderThermometre;
