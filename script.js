@@ -4490,7 +4490,8 @@ function _cureJourSave(porte, num) {
   var notes = notesEl ? notesEl.value || '' : '';
   var nextDay = num < 7 ? num + 1 : 'complete';
   try {
-    var cure = JSON.parse(safeGetItem('cure_colere') || '{}');
+    var _cureKey = 'cure_' + porte;
+    var cure = JSON.parse(safeGetItem(_cureKey) || '{}');
     if (num === 1) {
       var niyyah = (document.getElementById('_cureNiyyah') || {}).value || '';
       if (!niyyah.trim() && safeGetItem('cure_mode') !== 'doucement') {
@@ -4520,13 +4521,13 @@ function _cureJourSave(porte, num) {
       cure.active = false;
       cure.completed = true;
       cure.completed_date = new Date().toISOString();
-      var count = parseInt(safeGetItem('cures_colere_count') || '0', 10);
-      safeSetItem('cures_colere_count', String(count + 1));
+      var count = parseInt(safeGetItem('cures_' + porte + '_count') || '0', 10);
+      safeSetItem('cures_' + porte + '_count', String(count + 1));
     }
     cure['notes_jour_' + num] = notes;
     cure.current_day = nextDay;
     cure['jour' + num + '_date'] = new Date().toISOString();
-    safeSetItem('cure_colere', JSON.stringify(cure));
+    safeSetItem(_cureKey, JSON.stringify(cure));
   } catch(e) {}
   // Écran confirmation
   if (num === 7) {
