@@ -3876,18 +3876,28 @@ function openColereMutawassit() {
 }
 
 function _mutawassitExit() {
-  babCompletPorte('colere');
-  setTimeout(function() {
-    var el = document.getElementById('babAnNafsContent');
-    if (!el) return;
-    el.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;">'
-      + '<div id="_mutEx1" style="font-family:var(--serif);font-size:18px;color:#E5E0DC;line-height:1.8;opacity:0;transition:opacity 0.8s ease;">La vague redescend.</div>'
-      + '<div id="_mutEx2" style="font-family:var(--serif);font-size:16px;color:rgba(200,168,75,0.7);margin-top:12px;opacity:0;transition:opacity 0.8s ease;">Allah voit.</div>'
-      + '</div>';
-    requestAnimationFrame(function() { var e = document.getElementById('_mutEx1'); if (e) e.style.opacity = '1'; });
-    setTimeout(function() { var e = document.getElementById('_mutEx2'); if (e) e.style.opacity = '1'; }, 500);
-    setTimeout(function() { _babImmersion = false; _hideAideBtn(); var _nb = document.getElementById('nav-bar-v2'); if (_nb) _nb.classList.remove('hidden-immersion'); v2GoSanctuaire(); }, 2000);
-  }, 100);
+  // Afficher message AVANT babCompletPorte (qui appelle renderBabAnNafs)
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  el.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;">'
+    + '<div id="_mutEx1" style="font-family:var(--serif);font-size:18px;color:#E5E0DC;line-height:1.8;opacity:0;transition:opacity 0.8s ease;">La vague redescend.</div>'
+    + '<div id="_mutEx2" style="font-family:var(--serif);font-size:16px;color:rgba(200,168,75,0.7);margin-top:12px;opacity:0;transition:opacity 0.8s ease;">Allah voit.</div>'
+    + '</div>';
+  requestAnimationFrame(function() { var e = document.getElementById('_mutEx1'); if (e) e.style.opacity = '1'; });
+  setTimeout(function() { var e = document.getElementById('_mutEx2'); if (e) e.style.opacity = '1'; }, 500);
+  // Incrémenter compteurs manuellement (sans renderBabAnNafs)
+  try {
+    var data = JSON.parse(safeGetItem('niyyah_bab_an_nafs') || '{}');
+    if (!data.colere) data.colere = { count: 0 };
+    data.colere.count = (data.colere.count || 0) + 1;
+    data.colere.lastDate = todayKey();
+    safeSetItem('niyyah_bab_an_nafs', JSON.stringify(data));
+    var completions = JSON.parse(safeGetItem('colere_completions') || '[]');
+    completions.push(Date.now());
+    completions = completions.filter(function(t) { return t > Date.now() - 30 * 86400000; });
+    safeSetItem('colere_completions', JSON.stringify(completions));
+  } catch(e) {}
+  setTimeout(function() { _babImmersion = false; _hideAideBtn(); var _nb = document.getElementById('nav-bar-v2'); if (_nb) _nb.classList.remove('hidden-immersion'); v2GoSanctuaire(); }, 2500);
 }
 
 function _itfaaFaitClick() {
