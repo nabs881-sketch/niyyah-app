@@ -4471,7 +4471,7 @@ function openCureColereJour1() {
     // 1. OUVERTURE
     + '<div style="text-align:center;margin-bottom:40px;">'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:' + c + ';direction:rtl;margin-bottom:6px;">\u0631\u0650\u064a\u064e\u0627\u0636\u064e\u0629 \u0646\u064e\u0641\u0652\u0633\u0650\u064a\u0651\u064e\u0629</div>'
-    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:4px;">Cure Col\u00e8re \u2014 Jour 1</div>'
+    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:4px;">Riy\u00e2\u1e0dat an-nafs \u2014 Jour 1</div>'
     + '<div class="itfaa-body" style="font-size:16px;margin-bottom:20px;">Reconna\u00eetre le feu</div>'
     + '<div class="itfaa-subtle" style="font-size:13px;margin-bottom:8px;">Pose ton intention avant de commencer :</div>'
     + '<textarea id="_cureNiyyah" placeholder="Ma niyyah pour cette cure\u2026" style="width:100%;max-width:360px;min-height:50px;padding:12px;border-radius:10px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;resize:vertical;"></textarea>'
@@ -4554,7 +4554,7 @@ function openCureColereJour2() {
     // 1. OUVERTURE
     + '<div style="text-align:center;margin-bottom:40px;">'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:' + c + ';direction:rtl;margin-bottom:6px;">\u0631\u0650\u064a\u064e\u0627\u0636\u064e\u0629 \u0646\u064e\u0641\u0652\u0633\u0650\u064a\u0651\u064e\u0629</div>'
-    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:4px;">Cure Col\u00e8re \u2014 Jour 2</div>'
+    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:4px;">Riy\u00e2\u1e0dat an-nafs \u2014 Jour 2</div>'
     + '<div class="itfaa-body" style="font-size:16px;">Les d\u00e9clencheurs</div>'
     + '</div>'
     // 2. CONTEMPLATION
@@ -4648,7 +4648,7 @@ function openCureColereJour3() {
     // 1. OUVERTURE
     + '<div style="text-align:center;margin-bottom:40px;">'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:' + c + ';direction:rtl;margin-bottom:6px;">\u0631\u0650\u064a\u064e\u0627\u0636\u064e\u0629 \u0646\u064e\u0641\u0652\u0633\u0650\u064a\u0651\u064e\u0629</div>'
-    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:4px;">Cure Col\u00e8re \u2014 Jour 3</div>'
+    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:4px;">Riy\u00e2\u1e0dat an-nafs \u2014 Jour 3</div>'
     + '<div class="itfaa-body" style="font-size:16px;">La parole juste</div>'
     + '</div>'
     // 2. CONTEMPLATION
@@ -4716,7 +4716,7 @@ function openCureColereJour4() {
     // 1. OUVERTURE
     + '<div style="text-align:center;margin-bottom:40px;">'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:' + c + ';direction:rtl;margin-bottom:6px;">\u0631\u0650\u064a\u064e\u0627\u0636\u064e\u0629 \u0646\u064e\u0641\u0652\u0633\u0650\u064a\u0651\u064e\u0629</div>'
-    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:4px;">Cure Col\u00e8re \u2014 Jour 4</div>'
+    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:4px;">Riy\u00e2\u1e0dat an-nafs \u2014 Jour 4</div>'
     + '<div class="itfaa-body" style="font-size:16px;">L\u2019\u00e9motion sous</div>'
     + '</div>'
     // 2. CONTEMPLATION
@@ -4800,7 +4800,7 @@ function openCureColereJour5() {
     // 1. OUVERTURE
     + '<div style="text-align:center;margin-bottom:40px;">'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:' + c + ';direction:rtl;margin-bottom:6px;">\u0631\u0650\u064a\u064e\u0627\u0636\u064e\u0629 \u0646\u064e\u0641\u0652\u0633\u0650\u064a\u0651\u064e\u0629</div>'
-    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:4px;">Cure Col\u00e8re \u2014 Jour 5</div>'
+    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:4px;">Riy\u00e2\u1e0dat an-nafs \u2014 Jour 5</div>'
     + '<div class="itfaa-body" style="font-size:16px;">Le \u1e25ilm</div>'
     + '</div>'
     // 2. CONTEMPLATION
@@ -4870,7 +4870,7 @@ function openCureColereJour6() {
     // 1. OUVERTURE
     + '<div style="text-align:center;margin-bottom:40px;">'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:' + c + ';direction:rtl;margin-bottom:6px;">\u0631\u0650\u064a\u064e\u0627\u0636\u064e\u0629 \u0646\u064e\u0641\u0652\u0633\u0650\u064a\u0651\u064e\u0629</div>'
-    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:4px;">Cure Col\u00e8re \u2014 Jour 6</div>'
+    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:4px;">Riy\u00e2\u1e0dat an-nafs \u2014 Jour 6</div>'
     + '<div class="itfaa-body" style="font-size:16px;">Le pardon</div>'
     + '</div>'
     // 2. CONTEMPLATION
@@ -4956,7 +4956,7 @@ function openCureColereJour7() {
     // 1. OUVERTURE
     + '<div style="text-align:center;margin-bottom:40px;">'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:' + c + ';direction:rtl;margin-bottom:6px;">\u0631\u0650\u064a\u064e\u0627\u0636\u064e\u0629 \u0646\u064e\u0641\u0652\u0633\u0650\u064a\u0651\u064e\u0629</div>'
-    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:4px;">Cure Col\u00e8re \u2014 Jour 7</div>'
+    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:4px;">Riy\u00e2\u1e0dat an-nafs \u2014 Jour 7</div>'
     + '<div class="itfaa-body" style="font-size:16px;margin-bottom:8px;">Int\u00e9gration</div>'
     + '<div class="itfaa-subtle" style="font-size:14px;">Aujourd\u2019hui, je r\u00e9colte ce que j\u2019ai sem\u00e9.</div>'
     + '</div>'
