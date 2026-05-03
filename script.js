@@ -3841,12 +3841,42 @@ function _halo(el, z) {
   _ov.style.cssText = 'position:fixed;inset:0;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(0,0,0,0.9);';
   _ov.innerHTML = '<div id="_haloAr" style="font-family:\'Scheherazade New\',serif;font-size:80px;color:#C8A84A;direction:rtl;opacity:0;transition:opacity 1.5s ease;">' + (_lblAr[z] || '') + '</div>'
     + '<div id="_haloFr" style="font-family:var(--serif);font-size:16px;color:#E5E0DC;margin-top:12px;opacity:0;transition:opacity 0.5s ease;">' + (_lblFr[z] || z) + '</div>'
-    + '<button id="_haloContinue" onclick="var o=document.getElementById(\'_haloOverlay\');if(o)o.remove();openItfaaAction();" style="margin-top:24px;padding:12px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:none;color:#C8A84A;font-family:var(--serif);font-size:14px;cursor:pointer;opacity:0;transition:opacity 0.5s ease;">Continuer</button>';
+    + '<button id="_haloContinue" onclick="var o=document.getElementById(\'_haloOverlay\');if(o)o.remove();openItfaaSomatic();" style="margin-top:24px;padding:12px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:none;color:#C8A84A;font-family:var(--serif);font-size:14px;cursor:pointer;opacity:0;transition:opacity 0.5s ease;">Continuer</button>';
   document.body.appendChild(_ov);
   requestAnimationFrame(function() { var e = document.getElementById('_haloAr'); if (e) e.style.opacity = '1'; });
   setTimeout(function() { var e = document.getElementById('_haloFr'); if (e) e.style.opacity = '1'; }, 2000);
   setTimeout(function() { var e = document.getElementById('_haloContinue'); if (e) e.style.opacity = '0.6'; }, 3000);
-  setTimeout(function() { var o = document.getElementById('_haloOverlay'); if (o) { o.remove(); openItfaaAction(); } }, 6000);
+  setTimeout(function() { var o = document.getElementById('_haloOverlay'); if (o) { o.remove(); openItfaaSomatic(); } }, 6000);
+}
+
+function openItfaaSomatic() {
+  _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#B33A3A';
+  var zone = window._colereZone || 'poitrine';
+  var sensations = ['Chaud','Serr\u00e9','Vibrant','Lourd'];
+  var backBtn = '<button onclick="openItfaaStep1()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
+  var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
+    + backBtn
+    + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';margin-bottom:28px;">Cette sensation, comment est-elle\u00a0?</div>'
+    + '<div style="display:flex;flex-direction:column;gap:12px;max-width:320px;margin:0 auto;">';
+  for (var i = 0; i < sensations.length; i++) {
+    html += '<button onclick="_logSomatic(\'' + sensations[i] + '\')" style="padding:16px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:16px;cursor:pointer;">' + sensations[i] + '</button>';
+  }
+  html += '<button onclick="openItfaaAction()" style="padding:14px;border-radius:12px;border:1px solid ' + c + '22;background:none;color:' + c + ';opacity:0.6;font-family:var(--serif);font-size:14px;cursor:pointer;margin-top:8px;">Passer</button>'
+    + '</div></div>';
+  el.innerHTML = html;
+}
+
+function _logSomatic(sensation) {
+  try {
+    var log = JSON.parse(safeGetItem('colere_somatic_log') || '[]');
+    log.push({date:new Date().toISOString(),zone:window._colereZone||'',sensation:sensation});
+    if (log.length > 100) log = log.slice(-100);
+    safeSetItem('colere_somatic_log', JSON.stringify(log));
+  } catch(e) {}
+  openItfaaAction();
 }
 
 function openItfaaOuverture() {
@@ -11346,6 +11376,8 @@ window.openMuhasabaRappel    = openMuhasabaRappel;
 window._muhasabaRappelReponse = _muhasabaRappelReponse;
 window._halo                  = _halo;
 window.openItfaaOuverture     = openItfaaOuverture;
+window.openItfaaSomatic       = openItfaaSomatic;
+window._logSomatic            = _logSomatic;
 window.openItfaaStep1         = openItfaaStep1;
 window.openItfaaAction        = openItfaaAction;
 window.openItfaaRefuge        = openItfaaRefuge;
