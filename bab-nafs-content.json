@@ -45,11 +45,11 @@
     "itfaa": {
       "etape1_corps_general": {
         "type": "hadith",
-        "ar": "أَلَا وَإِنَّ فِي الْجَسَدِ مُضْغَةً إِذَا صَلَحَتْ صَلَحَ الْجَسَدُ كُلُّهُ، وَإِذَا فَسَدَتْ فَسَدَ الْجَسَدُ كُلُّهُ، أَلَا وَهِيَ الْقَلْبُ",
-        "translit": "Alâ wa inna fi al-jasadi muḍghatan idhâ ṣalaḥat ṣalaḥa al-jasadu kulluh...",
-        "fr": "Il y a dans le corps un morceau de chair : si elle est saine, tout le corps est sain ; si elle est corrompue, tout le corps est corrompu. C'est le cœur.",
-        "source": "Bukhârî 52, Muslim 1599",
-        "narrator": "an-Nuʿmân ibn Bashîr",
+        "ar": "لَيْسَ الشَّدِيدُ بِالصُّرَعَةِ، إِنَّمَا الشَّدِيدُ الَّذِي يَمْلِكُ نَفْسَهُ عِنْدَ الْغَضَبِ",
+        "translit": "Laysa sh-shadîdu bi-ṣ-ṣurʿa, innamâ sh-shadîdu lladhî yamliku nafsahu ʿinda al-ghaḍab",
+        "fr": "Le fort n'est pas celui qui terrasse les hommes. Le fort est celui qui se maîtrise dans la colère.",
+        "source": "Bukhârî 6114, Muslim 2609",
+        "narrator": "Abû Hurayra",
         "grade": "sahih"
       },
 

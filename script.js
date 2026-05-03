@@ -3881,7 +3881,7 @@ function openItfaaStep1() {
     + '</div>'
     + '</div>';
   // Ancrage islamique en bas
-  var _cH = {ar:'\u0623\u064e\u0644\u064e\u0627 \u0648\u064e\u0625\u0650\u0646\u0651\u064e \u0641\u0650\u064a \u0627\u0644\u0652\u062c\u064e\u0633\u064e\u062f\u0650 \u0645\u0636\u0652\u063a\u064e\u0629\u064b... \u0623\u064e\u0644\u064e\u0627 \u0648\u064e\u0647\u0650\u064a\u064e \u0627\u0644\u0652\u0642\u064e\u0644\u0652\u0628\u0650',fr:'Il y a dans le corps un morceau de chair\u2026 C\u2019est le c\u0153ur.',source:'Bukh\u00e2r\u00ee 52, Muslim 1599 \u2014 sahih'};
+  var _cH = {ar:'\u0644\u064e\u064a\u0652\u0633\u064e \u0627\u0644\u0634\u0651\u064e\u062f\u0650\u064a\u062f\u064f \u0628\u0650\u0627\u0644\u0635\u0651\u064f\u0631\u064e\u0639\u064e\u0629\u0650\u060c \u0625\u0650\u0646\u0651\u064e\u0645\u064e\u0627 \u0627\u0644\u0634\u0651\u064e\u062f\u0650\u064a\u062f\u064f \u0627\u0644\u0651\u064e\u0630\u0650\u064a \u064a\u064e\u0645\u0652\u0644\u0650\u0643\u064f \u0646\u064e\u0641\u0652\u0633\u064e\u0647\u064f \u0639\u0650\u0646\u0652\u062f\u064e \u0627\u0644\u0652\u063a\u064e\u0636\u064e\u0628\u0650',fr:'Le fort n\u2019est pas celui qui terrasse les hommes. Le fort est celui qui se ma\u00eetrise dans la col\u00e8re.',source:'Bukh\u00e2r\u00ee 6114, Muslim 2609 \u2014 sahih'};
   if (window.babNafsContent && window.babNafsContent.colere && window.babNafsContent.colere.itfaa && window.babNafsContent.colere.itfaa.etape1_corps_general) {
     var _h = window.babNafsContent.colere.itfaa.etape1_corps_general;
     if (_h.ar) { _cH.ar = _h.ar; _cH.fr = _h.fr || _cH.fr; _cH.source = (_h.source || '') + ' \u2014 ' + (_h.grade || ''); }
