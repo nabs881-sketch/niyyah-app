@@ -3834,17 +3834,19 @@ function openAideHumaine() {
 function _halo(el, z) {
   el.setAttribute('fill', 'rgba(200,168,75,0.3)');
   window._colereZone = z;
-  var _lblFr = {tete:'T\u00eate',gorge:'Gorge',poitrine:'Poitrine',ventre:'Ventre',mains:'Mains'};
+  var _lblFr = {tete:'La m\u00e2choire',gorge:'La gorge',poitrine:'La poitrine',ventre:'Le ventre',mains:'Les mains'};
   var _lblAr = {tete:'\u0627\u0644\u0652\u0641\u064e\u0643\u0651',gorge:'\u0627\u0644\u0652\u062d\u064e\u0644\u0652\u0642',poitrine:'\u0627\u0644\u0635\u0651\u064e\u062f\u0652\u0631',ventre:'\u0627\u0644\u0652\u0628\u064e\u0637\u0652\u0646',mains:'\u0627\u0644\u0652\u064a\u064e\u062f'};
   var _ov = document.createElement('div');
-  _ov.className = '_zoneFlash';
-  _ov.style.cssText = 'position:fixed;inset:0;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(0,0,0,0.85);pointer-events:none;';
+  _ov.id = '_haloOverlay';
+  _ov.style.cssText = 'position:fixed;inset:0;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(0,0,0,0.9);';
   _ov.innerHTML = '<div id="_haloAr" style="font-family:\'Scheherazade New\',serif;font-size:80px;color:#C8A84A;direction:rtl;opacity:0;transition:opacity 1.5s ease;">' + (_lblAr[z] || '') + '</div>'
-    + '<div id="_haloFr" style="font-family:var(--serif);font-size:16px;color:rgba(200,168,75,0.7);margin-top:12px;opacity:0;transition:opacity 1s ease;">' + (_lblFr[z] || z) + '</div>';
+    + '<div id="_haloFr" style="font-family:var(--serif);font-size:16px;color:#E5E0DC;margin-top:12px;opacity:0;transition:opacity 0.5s ease;">' + (_lblFr[z] || z) + '</div>'
+    + '<button id="_haloContinue" onclick="var o=document.getElementById(\'_haloOverlay\');if(o)o.remove();openItfaaAction();" style="margin-top:24px;padding:12px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:none;color:#C8A84A;font-family:var(--serif);font-size:14px;cursor:pointer;opacity:0;transition:opacity 0.5s ease;">Continuer</button>';
   document.body.appendChild(_ov);
-  requestAnimationFrame(function() { document.getElementById('_haloAr').style.opacity = '1'; });
+  requestAnimationFrame(function() { var e = document.getElementById('_haloAr'); if (e) e.style.opacity = '1'; });
   setTimeout(function() { var e = document.getElementById('_haloFr'); if (e) e.style.opacity = '1'; }, 2000);
-  setTimeout(function() { _ov.remove(); openItfaaAction(); }, 4000);
+  setTimeout(function() { var e = document.getElementById('_haloContinue'); if (e) e.style.opacity = '0.6'; }, 3000);
+  setTimeout(function() { var o = document.getElementById('_haloOverlay'); if (o) { o.remove(); openItfaaAction(); } }, 4000);
 }
 
 function openItfaaOuverture() {
