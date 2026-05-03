@@ -5016,6 +5016,11 @@ function babCompletPorte(id) {
       var cutoff30d = Date.now() - 30 * 86400000;
       completions = completions.filter(function(t) { return t > cutoff30d; });
       safeSetItem('colere_completions', JSON.stringify(completions));
+      // Compteur zone rouge (shadid)
+      if (_colereMode === 'shadid') {
+        var _zrc = parseInt(safeGetItem('colere_zone_rouge_count') || '0', 10);
+        safeSetItem('colere_zone_rouge_count', String(_zrc + 1));
+      }
       // Compter sur 7 jours
       var cutoff7d = Date.now() - 7 * 86400000;
       var recent = completions.filter(function(t) { return t > cutoff7d; });
