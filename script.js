@@ -3846,7 +3846,7 @@ function _halo(el, z) {
   requestAnimationFrame(function() { var e = document.getElementById('_haloAr'); if (e) e.style.opacity = '1'; });
   setTimeout(function() { var e = document.getElementById('_haloFr'); if (e) e.style.opacity = '1'; }, 2000);
   setTimeout(function() { var e = document.getElementById('_haloContinue'); if (e) e.style.opacity = '0.6'; }, 3000);
-  setTimeout(function() { var o = document.getElementById('_haloOverlay'); if (o) { o.remove(); openItfaaAction(); } }, 4000);
+  setTimeout(function() { var o = document.getElementById('_haloOverlay'); if (o) { o.remove(); openItfaaAction(); } }, 6000);
 }
 
 function openItfaaOuverture() {
