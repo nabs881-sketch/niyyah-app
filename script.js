@@ -3609,7 +3609,7 @@ function renderBabAnNafs() {
     var ar = (typeof p.nom === 'object') ? (p.nom.ar || '') : '';
     var _cureMarker = '';
     if (p.id === 'colere') {
-      try { var _cc = JSON.parse(safeGetItem('cure_colere') || '{}'); if (_cc.completed) _cureMarker = '<div style="position:absolute;top:6px;right:6px;font-size:14px;color:#C8A84A;text-shadow:0 0 6px rgba(200,168,75,0.5);" title="Tu as travers\u00e9 la Cure du c\u0153ur.">\u2726</div>'; } catch(e) {}
+      try { var _cc = JSON.parse(safeGetItem('cure_colere') || '{}'); if (_cc.completed) _cureMarker = '<div style="position:absolute;top:6px;right:6px;font-size:14px;color:#C8A84A;text-shadow:0 0 6px rgba(200,168,75,0.5);" title="Tu as travers\u00e9 Riy\u00e2\u1e0dat an-nafs.">\u2726</div>'; } catch(e) {}
     }
     html += '<button onclick="openBabPorte(\'' + p.id + '\')" style="position:relative;aspect-ratio:1/1;border-radius:12px;border:1px solid var(--gold,#C8A84A);background:url(assets/cards/porte-' + p.id + '.png) center/cover no-repeat,#111;cursor:pointer;padding:0;">' + _cureMarker + '</button>';
   });
@@ -3768,7 +3768,7 @@ function _renderThermometre() {
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:14px;color:rgba(255,255,255,0.3);direction:rtl;">Shad\u00eed</div>'
     + '</button>'
     + '</div>'
-    + '<div style="text-align:center;margin-top:32px;"><button onclick="openCureColere()" style="background:none;border:none;color:rgba(200,168,75,0.4);font-family:var(--serif);font-size:13px;font-style:italic;cursor:pointer;">Travailler \u00e0 froid \u2192</button></div>'
+    + '<div style="text-align:center;margin-top:32px;"><button onclick="openCureColere()" style="background:none;border:none;color:rgba(200,168,75,0.4);font-family:var(--serif);font-size:13px;font-style:italic;cursor:pointer;">Riy\u00e2\u1e0dat an-nafs \u2014 le travail \u00e0 froid \u2192</button></div>'
     + '</div>';
 }
 
