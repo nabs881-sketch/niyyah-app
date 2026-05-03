@@ -3797,20 +3797,8 @@ function afficheLeSouffle(parentEl, couleur) {
   upd();
 }
 
-function _showAideBtn() {
-  if (document.getElementById('_aideHumaineBtn')) return;
-  var btn = document.createElement('button');
-  btn.id = '_aideHumaineBtn';
-  btn.innerHTML = '\u260e Aide humaine';
-  btn.onclick = function() { openAideHumaine(); };
-  btn.style.cssText = 'position:fixed;bottom:16px;right:16px;z-index:99998;padding:8px 14px;border-radius:20px;border:1px solid #B33A3A44;background:rgba(10,10,10,0.85);color:#B33A3A;font-family:var(--serif);font-size:12px;cursor:pointer;opacity:0.6;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);';
-  document.body.appendChild(btn);
-}
-
-function _hideAideBtn() {
-  var btn = document.getElementById('_aideHumaineBtn');
-  if (btn) btn.remove();
-}
+function _showAideBtn() { /* no-op — aide humaine retirée */ }
+function _hideAideBtn() { /* no-op */ }
 
 function _logColereZone(zone) {
   try {
@@ -3909,24 +3897,6 @@ function _itfaaFaitClick() {
 function openColereShadid() {
   _colereMode = 'shadid';
   openItfaaOuverture();
-}
-
-function openAideHumaine() {
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  var c = '#B33A3A';
-  var overlay = document.createElement('div');
-  overlay.id = '_aideOverlay';
-  overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);z-index:99999;display:flex;align-items:center;justify-content:center;';
-  overlay.innerHTML = '<div style="max-width:340px;padding:32px 24px;text-align:center;">'
-    + '<div style="font-family:var(--serif);font-size:22px;color:' + c + ';margin-bottom:16px;">Tu n\u2019es pas seul.</div>'
-    + '<div class="itfaa-body" style="font-size:15px;line-height:1.7;margin-bottom:8px;">Si tu traverses un moment difficile, parler \u00e0 quelqu\u2019un peut aider.</div>'
-    + '<div style="font-family:var(--serif);font-size:28px;color:' + c + ';margin:16px 0 4px;">3114</div>'
-    + '<div class="itfaa-subtle" style="font-size:12px;margin-bottom:24px;">Num\u00e9ro national de pr\u00e9vention du suicide \u2014 24h/24, gratuit</div>'
-    + '<a href="tel:3114" style="display:block;width:100%;max-width:280px;margin:0 auto 12px;padding:14px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);text-decoration:none;text-align:center;">Appeler le 3114</a>'
-    + '<button onclick="document.getElementById(\'_aideOverlay\').remove()" style="padding:12px 28px;border-radius:12px;border:1px solid ' + c + '44;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">Continuer</button>'
-    + '</div>';
-  document.body.appendChild(overlay);
 }
 
 function _halo(el, z) {
@@ -11475,7 +11445,6 @@ window._logColereZone         = _logColereZone;
 window.afficheLeSouffle       = afficheLeSouffle;
 window._showAideBtn           = _showAideBtn;
 window._hideAideBtn           = _hideAideBtn;
-window.openAideHumaine        = openAideHumaine;
 window.openColereSeuilTherapeute = openColereSeuilTherapeute;
 window.openCureColere         = openCureColere;
 window._showWaswasaScreen     = _showWaswasaScreen;
