@@ -3781,12 +3781,17 @@ function _colerePourAllah() {
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:#C8A84A;direction:rtl;line-height:1.8;margin-bottom:8px;">\u0627\u0644\u0644\u0651\u064e\u0647\u064f\u0645\u0651\u064e \u0625\u0650\u0646\u0651\u0650\u064a \u0623\u064e\u0633\u0652\u0623\u064e\u0644\u064f\u0643\u064e \u0627\u0644\u0652\u062d\u064f\u0643\u0652\u0645\u064e \u0648\u064e\u0627\u0644\u0652\u062d\u0650\u0643\u0652\u0645\u064e\u0629\u064e</div>'
     + '<div class="itfaa-body" style="font-size:15px;">\u00d4 Allah, je Te demande le jugement et la sagesse.</div>'
     + '</div>'
+    + '<div id="_allahRiyadat" style="margin-bottom:20px;opacity:0;transition:opacity 0.8s ease;">'
+    + '<div class="itfaa-subtle" style="font-size:14px;margin-bottom:10px;">Si dans le doute, fais aussi le travail \u00e0 froid.</div>'
+    + '<button onclick="sessionStorage.setItem(\'colere_bifurcation_passe\',\'allah\');openCureColere()" style="background:none;border:1px solid rgba(200,168,75,0.25);border-radius:12px;padding:12px 24px;color:#C8A84A;font-family:var(--serif);font-size:14px;cursor:pointer;">Riy\u00e2\u1e0dat an-nafs \u2192</button>'
+    + '</div>'
     + '<button id="_allahBtn" onclick="sessionStorage.setItem(\'colere_bifurcation_passe\',\'allah\');_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');v2GoSanctuaire()" style="padding:16px 32px;border-radius:12px;border:none;background:#C8A84A;color:#000;font-family:var(--serif);font-size:16px;font-weight:600;cursor:pointer;opacity:0;transition:opacity 0.8s ease;">Bismillah</button>'
     + '</div>';
   requestAnimationFrame(function() { var e = document.getElementById('_allah1'); if (e) e.style.opacity = '1'; });
   setTimeout(function() { var e = document.getElementById('_allah2'); if (e) e.style.opacity = '1'; }, 2000);
   setTimeout(function() { var e = document.getElementById('_allah3'); if (e) e.style.opacity = '1'; }, 4000);
-  setTimeout(function() { var e = document.getElementById('_allahBtn'); if (e) e.style.opacity = '1'; }, 5500);
+  setTimeout(function() { var e = document.getElementById('_allahRiyadat'); if (e) e.style.opacity = '1'; }, 5500);
+  setTimeout(function() { var e = document.getElementById('_allahBtn'); if (e) e.style.opacity = '1'; }, 6500);
 }
 
 function openColereChoix() {
