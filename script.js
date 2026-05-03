@@ -3821,7 +3821,23 @@ function _logColereZone(zone) {
   } catch(e) {}
 }
 
-function openColereYasir() { alert("Yasir OK - stub"); }
+function openColereYasir() {
+  _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
+  document.body.classList.add('in-bab-an-nafs');
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  el.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;">'
+    + '<div id="_yasir1" style="font-family:var(--serif);font-size:18px;color:#E5E0DC;line-height:1.8;max-width:360px;opacity:0;transition:opacity 1s ease;">Tu es venu en moment calme.</div>'
+    + '<div id="_yasir2" style="font-family:var(--serif);font-size:16px;color:#4a7c59;margin-top:16px;opacity:0;transition:opacity 1s ease;">C\u2019est ici qu\u2019on pr\u00e9pare les moments durs.</div>'
+    + '</div>';
+  requestAnimationFrame(function() { var e = document.getElementById('_yasir1'); if (e) e.style.opacity = '1'; });
+  setTimeout(function() { var e = document.getElementById('_yasir2'); if (e) e.style.opacity = '1'; }, 1000);
+  setTimeout(function() { _yasirSouffle(); }, 3000);
+}
+
+function _yasirSouffle() {
+  // TODO : respiration + duaa
+}
 function openColereMutawassit() { alert("Mutawassit OK - stub"); }
 function openColereShadid() { alert("Shadid OK - stub"); }
 
@@ -11407,6 +11423,7 @@ window._muhasabaRappelReponse = _muhasabaRappelReponse;
 window._halo                  = _halo;
 window.openItfaaOuverture     = openItfaaOuverture;
 window.openColereYasir        = openColereYasir;
+window._yasirSouffle          = _yasirSouffle;
 window.openColereMutawassit   = openColereMutawassit;
 window.openColereShadid       = openColereShadid;
 window.openItfaaSomatic       = openItfaaSomatic;
