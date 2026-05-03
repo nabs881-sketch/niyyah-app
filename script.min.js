@@ -3842,10 +3842,14 @@ function _yasirSouffle() {
   el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:70vh;text-align:center;">'
     + '<div style="font-family:var(--serif);font-size:16px;font-style:italic;color:' + c + ';opacity:0.8;margin-bottom:24px;max-width:320px;">Dis int\u00e9rieurement\u00a0: A\u2019\u00fbdhu bill\u00e2h</div>'
     + '<div id="_yasirSouffleWrap"></div>'
+    + '<button onclick="_yasirSkipSouffle()" style="margin-top:32px;padding:12px 28px;border-radius:12px;border:1px solid ' + c + '33;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;opacity:0.6;">Continuer</button>'
     + '</div>';
   afficheLeSouffle(document.getElementById('_yasirSouffleWrap'), c);
-  // 3 cycles × 10s = 30s
-  setTimeout(function() { _yasirIntention(); }, 30000);
+  window._yasirTimer = setTimeout(function() { window._yasirTimer = null; _yasirIntention(); }, 30000);
+}
+function _yasirSkipSouffle() {
+  if (window._yasirTimer) { clearTimeout(window._yasirTimer); window._yasirTimer = null; }
+  _yasirIntention();
 }
 
 function _yasirIntention() {
@@ -11490,6 +11494,7 @@ window._halo                  = _halo;
 window.openItfaaOuverture     = openItfaaOuverture;
 window.openColereYasir        = openColereYasir;
 window._yasirSouffle          = _yasirSouffle;
+window._yasirSkipSouffle      = _yasirSkipSouffle;
 window._yasirIntention        = _yasirIntention;
 window._yasirChoix            = _yasirChoix;
 window.openColereMutawassit   = openColereMutawassit;
