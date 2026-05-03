@@ -3614,7 +3614,9 @@ function renderBabAnNafs() {
     html += '<button onclick="openBabPorte(\'' + p.id + '\')" style="position:relative;aspect-ratio:1/1;border-radius:12px;border:1px solid var(--gold,#C8A84A);background:url(assets/cards/porte-' + p.id + '.png) center/cover no-repeat,#111;cursor:pointer;padding:0;">' + _cureMarker + '</button>';
   });
   html += '</div>';
-  html += _babDashboardStats();
+  var _dashHtml = _babDashboardStats();
+  console.log('[DASHBOARD] stats retourne ' + _dashHtml.length + ' chars');
+  html += _dashHtml;
   html += '</div>';
   el.innerHTML = html;
 }
