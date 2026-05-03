@@ -4267,7 +4267,9 @@ function _cureTransition(jourFait) {
   };
   var l1 = _lines[jourFait] || '';
   el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
-    + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;line-height:1.8;max-width:400px;margin:0 auto 32px;">' + l1 + '<br>Aujourd\u2019hui, attends.<br>La porte rouvre demain.</div>'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.7;max-width:400px;margin:0 auto 24px;">' + l1 + '</div>'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.7;max-width:400px;margin:0 auto 24px;">Aujourd\u2019hui, attends.</div>'
+    + '<div class="itfaa-subtle" style="font-family:var(--serif);font-size:16px;max-width:400px;margin:0 auto 40px;">La porte rouvre demain.</div>'
     + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="padding:14px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:none;color:#C8A84A;font-family:var(--serif);font-size:14px;cursor:pointer;">Retour</button>'
     + '</div>';
 }
