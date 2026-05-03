@@ -4870,12 +4870,10 @@ function openColereSeuilTherapeute() {
   _hideAideBtn();
   var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.remove('hidden-immersion');
   document.body.classList.add('in-bab-an-nafs');
-  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
-    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';line-height:1.6;max-width:400px;margin:0 auto 16px;">Tu es revenu 5\u00a0fois cette semaine sur la Col\u00e8re.</div>'
-    + '<div class="itfaa-body" style="font-size:15px;line-height:1.7;max-width:400px;margin:0 auto 28px;">Niyyah t\u2019accompagne, mais ne remplace pas un humain.</div>'
-    + '<a href="https://www.annuaire-musulman.com/psychologue" target="_blank" rel="noopener" style="display:block;width:100%;max-width:320px;margin:0 auto 12px;padding:14px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:15px;font-weight:600;font-family:var(--serif);text-decoration:none;text-align:center;">Trouver th\u00e9rapeute musulman</a>'
-    + '<button onclick="safeSetItem(\'colere_seuil_vu\',String(Date.now()));renderBabAnNafs()" style="width:100%;max-width:320px;padding:12px;border-radius:12px;border:1px solid ' + c + '44;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;margin-bottom:10px;">Plus tard</button>'
-    + '<button onclick="safeSetItem(\'colere_seuil_vu\',String(Date.now()));renderBabAnNafs()" style="width:100%;max-width:320px;padding:12px;border-radius:12px;border:1px solid ' + c + '22;background:none;color:' + c + ';opacity:0.6;font-family:var(--serif);font-size:13px;cursor:pointer;">Merci, j\u2019ai d\u00e9j\u00e0 un suivi</button>'
+  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
+    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';line-height:1.6;max-width:400px;margin:0 auto 24px;">Tu es revenu cinq fois cette semaine.</div>'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:16px;line-height:1.8;max-width:400px;margin:0 auto 32px;">Allah voit ta lutte.<br>Cette porte t\u2019attend autant qu\u2019il faudra.<br><br>Et si la col\u00e8re continue de revenir aussi fort, parle \u00e0 un humain de confiance.</div>'
+    + '<button onclick="safeSetItem(\'colere_seuil_vu\',String(Date.now()));_babImmersion=false;v2GoSanctuaire()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>'
     + '</div>';
 }
 
