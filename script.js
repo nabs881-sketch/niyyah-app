@@ -3746,7 +3746,22 @@ function _colereBifurcation() {
 }
 
 function _colereDiscernement() {
-  // TODO : parcours discernement colère pour Allah
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  el.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;">'
+    + '<div id="_disc1" style="font-family:var(--serif);font-size:20px;color:#E5E0DC;line-height:1.8;max-width:380px;opacity:0;transition:opacity 1s ease;">Cette col\u00e8re d\u00e9fend-elle un pr\u00e9cepte religieux explicite\u00a0?</div>'
+    + '<div id="_disc2" style="font-family:var(--serif);font-size:18px;color:rgba(200,168,75,0.7);margin-top:24px;opacity:0;transition:opacity 1s ease;">Ou d\u00e9fend-elle ton ego religieux\u00a0?</div>'
+    + '<div id="_discBtns" style="display:flex;flex-direction:column;gap:14px;max-width:280px;width:100%;margin-top:36px;opacity:0;transition:opacity 0.8s ease;">'
+    + '<button onclick="_colerePourAllah()" style="padding:16px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:rgba(200,168,75,0.05);color:#C8A84A;font-family:var(--serif);font-size:16px;cursor:pointer;">Pr\u00e9cepte religieux</button>'
+    + '<button onclick="sessionStorage.setItem(\'colere_bifurcation_passe\',\'moi-discerne\');openColereChoix()" style="padding:16px;border-radius:12px;border:1px solid rgba(200,168,75,0.15);background:none;color:rgba(200,168,75,0.5);font-family:var(--serif);font-size:16px;cursor:pointer;">Mon ego</button>'
+    + '</div></div>';
+  requestAnimationFrame(function() { var e = document.getElementById('_disc1'); if (e) e.style.opacity = '1'; });
+  setTimeout(function() { var e = document.getElementById('_disc2'); if (e) e.style.opacity = '1'; }, 1200);
+  setTimeout(function() { var e = document.getElementById('_discBtns'); if (e) e.style.opacity = '1'; }, 2200);
+}
+
+function _colerePourAllah() {
+  // TODO : parcours colère pour Allah
 }
 
 function openColereChoix() {
@@ -11637,6 +11652,7 @@ window.renderBabAnNafs        = renderBabAnNafs;
 window.openBabPorte           = openBabPorte;
 window._colereBifurcation     = _colereBifurcation;
 window._colereDiscernement    = _colereDiscernement;
+window._colerePourAllah       = _colerePourAllah;
 window.openColereChoix        = openColereChoix;
 window._renderThermometre     = _renderThermometre;
 window._logColereZone         = _logColereZone;
