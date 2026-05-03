@@ -3764,7 +3764,7 @@ function _openColereThermometre() {
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:14px;color:rgba(255,255,255,0.3);direction:rtl;">Mutawassi\u1e6d</div>'
     + '</button>'
     // Carte 3 — Shadîd (rouge)
-    + '<button onclick="_colereMode=\'shadid\';_logColereZone(\'shadid\');openItfaaOuverture()" style="padding:20px;border-radius:14px;border:1px solid rgba(163,55,42,0.5);background:rgba(163,55,42,0.1);cursor:pointer;text-align:left;">'
+    + '<button onclick="_logColereZone(\'shadid\');openColereShadid()" style="padding:20px;border-radius:14px;border:1px solid rgba(163,55,42,0.5);background:rgba(163,55,42,0.1);cursor:pointer;text-align:left;">'
     + '<div style="font-family:var(--serif);font-size:18px;color:#a3372a;margin-bottom:4px;">\u00c7a me submerge.</div>'
     + '<div style="font-size:13px;color:#E5E0DC;opacity:0.7;margin-bottom:6px;">je vais exploser, je n\u2019arrive plus \u00e0 penser</div>'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:14px;color:rgba(255,255,255,0.3);direction:rtl;">Shad\u00eed</div>'
@@ -3827,6 +3827,11 @@ function _hideAideBtn() {
 }
 
 var _colereMode = 'shadid'; // 'yasir' | 'mutawassit' | 'shadid'
+
+function openColereShadid() {
+  _colereMode = 'shadid';
+  openItfaaOuverture();
+}
 
 function openColereMutawassit() {
   _colereMode = 'mutawassit';
@@ -5005,6 +5010,11 @@ function babCompletPorte(id) {
       var cutoff30d = Date.now() - 30 * 86400000;
       completions = completions.filter(function(t) { return t > cutoff30d; });
       safeSetItem('colere_completions', JSON.stringify(completions));
+      // Compteur zone rouge
+      if (_colereMode === 'shadid') {
+        var _zrc = parseInt(safeGetItem('colere_zone_rouge_count') || '0', 10);
+        safeSetItem('colere_zone_rouge_count', String(_zrc + 1));
+      }
       // Compter sur 7 jours
       var cutoff7d = Date.now() - 7 * 86400000;
       var recent = completions.filter(function(t) { return t > cutoff7d; });
@@ -11456,6 +11466,7 @@ window.openBabPorte           = openBabPorte;
 window.openColereChoix        = openColereChoix;
 window._openColereThermometre = _openColereThermometre;
 window._logColereZone         = _logColereZone;
+window.openColereShadid       = openColereShadid;
 window.openColereMutawassit   = openColereMutawassit;
 window._colereMutawassitExit  = _colereMutawassitExit;
 window.openColereYasir        = openColereYasir;
