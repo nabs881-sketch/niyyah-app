@@ -126,6 +126,109 @@
         "narrator": "ʿUmar ibn al-Khaṭṭâb",
         "grade": "sahih"
       }
+    },
+
+    "jours": {
+      "1": {
+        "titre_fr": "Reconnaître le feu",
+        "hadithRef": "$itfaa.etape7_refuge",
+        "doucement": {
+          "voixTemoin1": "Aujourd'hui, juste reconnais.",
+          "voixTemoin2": "Pas plus.",
+          "boutonAction": "J'ai reconnu"
+        },
+        "serieusement": {
+          "hadithContemplation": "Bukhârî 6116 — Lâ taghḍab",
+          "exercice": "Observe tes colères. Note-les en 1 ligne.",
+          "clotureRef": "$muhasaba.etape6_duaa_parole_juste"
+        },
+        "transitionApres": "Hier tu as reconnu le feu."
+      },
+      "2": {
+        "titre_fr": "Les déclencheurs",
+        "hadithRef": "$itfaa.etape1_corps_general",
+        "doucement": {
+          "voixTemoin1": "Aujourd'hui, juste nomme un déclencheur.",
+          "voixTemoin2": "Un seul.",
+          "boutonAction": "J'ai nommé"
+        },
+        "serieusement": {
+          "exercice": "5 questions : QUI / OÙ / QUAND / COMMENT / POURQUOI",
+          "clotureHadith": "Muslim 2867 — Duʿâ' fitna"
+        },
+        "transitionApres": "Hier tu as nommé tes déclencheurs."
+      },
+      "3": {
+        "titre_fr": "La parole juste",
+        "hadithRef": "$itfaa.etape2_silence",
+        "doucement": {
+          "voixTemoin1": "Aujourd'hui, choisis le silence une fois.",
+          "voixTemoin2": "Une seule.",
+          "boutonAction": "J'ai choisi le silence"
+        },
+        "serieusement": {
+          "exercice": "Silence 30s (respiration) + question ego/Allah",
+          "clotureHadith": "Bukhârî 6306 — Sayyid al-istighfâr"
+        },
+        "transitionApres": "Hier tu as cherché la parole juste."
+      },
+      "4": {
+        "titre_fr": "L'émotion sous",
+        "citation": "La colère est rarement seule. Elle protège souvent une émotion plus douloureuse. — inspiré d'al-Muḥâsibî",
+        "doucement": {
+          "voixTemoin1": "Aujourd'hui, regarde sous la colère.",
+          "voixTemoin2": "Juste regarde.",
+          "boutonAction": "J'ai regardé"
+        },
+        "serieusement": {
+          "exercice": "7 émotions : Honte / Peur / Tristesse / Injustice / Impuissance / Trahison / Culpabilité",
+          "clotureVoix": "Ô Allah, montre-moi ce qui se cache sous ma colère."
+        },
+        "transitionApres": "Hier tu as regardé sous la colère."
+      },
+      "5": {
+        "titre_fr": "Le ḥilm",
+        "hadithRef": "$itfaa.etape2_assise",
+        "hadithContemplation": "Bukhârî 6035 — caractère du Prophète ﷺ",
+        "doucement": {
+          "voixTemoin1": "Aujourd'hui, choisis le ḥilm une fois.",
+          "voixTemoin2": "Douceur, pas mollesse.",
+          "boutonAction": "J'ai choisi le ḥilm"
+        },
+        "serieusement": {
+          "exercice": "Trouver UNE situation, choisir le ḥilm. Imitation du Prophète ﷺ.",
+          "cloture": "Ṣalât ʿala-n-nabiyy × 10"
+        },
+        "transitionApres": "Hier tu as travaillé le ḥilm."
+      },
+      "6": {
+        "titre_fr": "Le pardon",
+        "hadithRef": "$muhasaba.etape6_pardon",
+        "doucement": {
+          "voixTemoin1": "Aujourd'hui, relâche une chose.",
+          "voixTemoin2": "Juste une.",
+          "boutonAction": "J'ai lâché"
+        },
+        "serieusement": {
+          "exercice": "Pense à une personne. Dis : « Allah est Témoin, je lâche. »",
+          "clotureVerset": "Coran 7:151 — Rabbi-ghfir lî wa li-akhî"
+        },
+        "transitionApres": "Hier tu as relâché."
+      },
+      "7": {
+        "titre_fr": "Intégration",
+        "versetRef": "Coran 13:11",
+        "doucement": {
+          "voixTemoin1": "Tu as marché sept jours.",
+          "voixTemoin2": "Qu'est-ce qui a changé ?",
+          "boutonAction": "J'ai marché"
+        },
+        "serieusement": {
+          "exercice": "Relire notes J1-J6. 3 questions bilan : vu / changé / intention 30j.",
+          "cloture": "الْحَمْدُ لِلَّهِ — Riyâḍat est terminée, le chemin commence."
+        },
+        "transitionApres": "Tu as traversé Riyâḍat an-nafs."
+      }
     }
   },
 
