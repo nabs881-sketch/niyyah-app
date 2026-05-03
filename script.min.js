@@ -3768,7 +3768,7 @@ function _renderThermometre() {
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:14px;color:rgba(255,255,255,0.3);direction:rtl;">Shad\u00eed</div>'
     + '</button>'
     + '</div>'
-    + '<div style="text-align:center;margin-top:32px;"><button onclick="openCureColere()" style="background:none;border:none;color:rgba(200,168,75,0.4);font-family:var(--serif);font-size:13px;font-style:italic;cursor:pointer;">Riy\u00e2\u1e0dat an-nafs \u2014 le travail \u00e0 froid \u2192</button></div>'
+    + '<div style="text-align:center;margin-top:32px;"><button onclick="openCureColere()" style="background:none;border:none;cursor:pointer;text-align:center;"><div style="font-family:var(--serif);font-size:16px;color:#C8A84A;margin-bottom:4px;">Travailler \u00e0 froid \u2192</div><div style="font-size:12px;color:rgba(255,255,255,0.35);font-style:italic;">Riy\u00e2\u1e0dat an-nafs</div></button></div>'
     + '</div>';
 }
 
