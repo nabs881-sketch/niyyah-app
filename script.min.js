@@ -3749,8 +3749,29 @@ function _renderThermometre() {
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var backBtn = '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
+  var _thermoStats = '';
+  try {
+    var _zL = JSON.parse(safeGetItem('colere_zone_log') || '[]');
+    var _ct = Date.now() - 7 * 86400000;
+    var _rc = _zL.filter(function(e) { return e.date > _ct; });
+    if (_rc.length >= 2) {
+      var _zc = {}; _rc.forEach(function(e) { _zc[e.zone] = (_zc[e.zone] || 0) + 1; });
+      var _dm = Object.keys(_zc).sort(function(a, b) { return _zc[b] - _zc[a]; })[0] || '';
+      var _dl = {verte:'\u00c7a me chatouille',orange:'\u00c7a me prend',rouge:'\u00c7a me submerge'}[_dm] || _dm;
+      var _txt = 'Cette semaine : ' + _rc.length + ' visites \u00b7 Plus souvent : ' + _dl;
+      var _rg = _rc.filter(function(e) { return e.zone === 'rouge'; });
+      if (_rg.length >= 2) {
+        var _cp = JSON.parse(safeGetItem('colere_completions') || '[]');
+        var _du = []; _rg.forEach(function(r) { for (var ci = 0; ci < _cp.length; ci++) { if (_cp[ci] > r.date && (_cp[ci] - r.date) < 3600000) { _du.push(Math.round((_cp[ci] - r.date) / 60000)); break; } } });
+        _du.sort(function(a, b) { return a - b; });
+        if (_du.length > 0) _txt += ' \u00b7 R\u00e9cup : ' + _du[Math.floor(_du.length / 2)] + ' min';
+      }
+      _thermoStats = '<div style="text-align:center;font-size:12px;font-style:italic;color:#888;margin-bottom:16px;max-width:340px;margin-left:auto;margin-right:auto;">' + _txt + '</div>';
+    }
+  } catch(e) {}
   el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;">'
     + backBtn
+    + _thermoStats
     + '<div style="display:flex;flex-direction:column;gap:14px;max-width:340px;margin:0 auto;">'
     + '<button onclick="_logColereZone(\'verte\');openColereYasir()" style="padding:20px;border-radius:14px;border:1px solid rgba(74,124,89,0.5);background:rgba(74,124,89,0.1);cursor:pointer;text-align:left;">'
     + '<div style="font-family:var(--serif);font-size:18px;color:#4a7c59;margin-bottom:4px;">\u00c7a me chatouille.</div>'
