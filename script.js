@@ -4710,6 +4710,22 @@ function openCureColereJour4() {
     + '<div class="itfaa-body" style="font-family:var(--serif);font-size:17px;font-style:italic;line-height:1.7;max-width:400px;margin:0 auto 10px;">\u00ab\u00a0La col\u00e8re est rarement seule. Elle prot\u00e8ge souvent une \u00e9motion plus douloureuse.\u00a0\u00bb</div>'
     + '<div class="itfaa-subtle" style="font-size:11px;">\u2014 inspir\u00e9 d\u2019al-Mu\u1e25\u00e2sib\u00ee, Ri\u2019\u00e2yat \u1e25uq\u00fbq All\u00e2h</div>'
     + '</div>'
+    // 3bis. RECAP EMOTION SOUS (si ≥2 entrées sur 7j)
+    + (function() {
+      try {
+        var _eLog = JSON.parse(safeGetItem('colere_emotion_sous_log') || '[]');
+        var _cutoff = Date.now() - 7 * 86400000;
+        var _recent = _eLog.filter(function(e) { return e.date > _cutoff; });
+        if (_recent.length < 2) return '';
+        var _counts = {};
+        _recent.forEach(function(e) { _counts[e.emotion] = (_counts[e.emotion] || 0) + 1; });
+        var _sorted = Object.keys(_counts).sort(function(a, b) { return _counts[b] - _counts[a]; });
+        var _lines = _sorted.map(function(s) { return '<div class="itfaa-body" style="font-size:15px;margin-bottom:4px;">' + _counts[s] + ' fois ' + s.toLowerCase() + '.</div>'; }).join('');
+        return '<div style="text-align:center;margin-bottom:40px;padding:20px;border-radius:14px;border:1px solid ' + c + '15;background:' + c + '05;">'
+          + '<div class="itfaa-subtle" style="font-size:13px;margin-bottom:12px;">Cette semaine, sous tes col\u00e8res, tu as senti :</div>'
+          + _lines + '</div>';
+      } catch(e) { return ''; }
+    })()
     // 3. EXERCICE
     + '<div style="text-align:center;margin-bottom:40px;">'
     + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.5;margin-bottom:12px;">Exercice du jour</div>'
