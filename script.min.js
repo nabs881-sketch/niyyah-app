@@ -7070,9 +7070,12 @@ if ('serviceWorker' in navigator && location.protocol !== 'null:' && (location.p
         if (!newWorker) return;
         newWorker.addEventListener('statechange', function() {
           if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+            var _updateLabels = {fr:{msg:'Niyyah a \u00e9volu\u00e9',btn:'Reprendre'},en:{msg:'Niyyah has evolved',btn:'Resume'},ar:{msg:'\u0646\u0650\u064a\u0651\u064e\u0629 \u062a\u062d\u062f\u0651\u062b\u062a',btn:'\u0627\u0633\u062a\u0626\u0646\u0627\u0641'}};
+            var _ul = _updateLabels[(typeof V2_LANG!=='undefined'?V2_LANG:'fr')] || _updateLabels.fr;
             var banner = document.createElement('div');
-            banner.style.cssText = 'position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#1a1a1a;border:1px solid rgba(200,168,75,0.4);border-radius:12px;padding:12px 20px;z-index:9999;display:flex;align-items:center;gap:12px;box-shadow:0 4px 20px rgba(0,0,0,0.5);';
-            banner.innerHTML = '<span style="font-size:13px;color:var(--t2);">Nouvelle version disponible</span><button style="padding:6px 14px;border-radius:8px;border:none;background:#C8A84A;color:#000;font-size:12px;font-weight:600;cursor:pointer;">Mettre \u00e0 jour</button>';
+            banner.style.cssText = 'position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(20px);background:#1a1a1a;border:1px solid rgba(200,168,75,0.4);border-radius:12px;padding:12px 20px;z-index:9999;display:flex;align-items:center;gap:12px;box-shadow:0 4px 20px rgba(0,0,0,0.5);opacity:0;transition:opacity 1s ease,transform 1s ease;';
+            banner.innerHTML = '<span style="font-size:13px;color:var(--t2);font-family:var(--serif);font-style:italic;">' + _ul.msg + '</span><button style="padding:6px 14px;border-radius:8px;border:none;background:#C8A84A;color:#000;font-size:12px;font-weight:600;cursor:pointer;font-family:var(--serif);">' + _ul.btn + '</button>';
+            requestAnimationFrame(function(){requestAnimationFrame(function(){banner.style.opacity='1';banner.style.transform='translateX(-50%) translateY(0)';});});
             banner.querySelector('button').onclick = function() { newWorker.postMessage({type:'SKIP_WAITING'}); window.location.reload(); };
             document.body.appendChild(banner);
           }
