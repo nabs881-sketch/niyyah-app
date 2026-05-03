@@ -3897,6 +3897,11 @@ function _mutawassitExit() {
   }, 100);
 }
 
+function _itfaaFaitClick() {
+  if (_colereMode === 'mutawassit') _mutawassitExit();
+  else openItfaaRefuge();
+}
+
 function openColereShadid() {
   _colereMode = 'shadid';
   openItfaaOuverture();
@@ -4051,7 +4056,7 @@ function openItfaaAction() {
     html += '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;margin-bottom:24px;">Marche une minute. Respire.</div>'
       + '<div id="_souffleContainer"></div>'
       + '<div class="itfaa-subtle" style="font-size:11px;max-width:400px;margin:0 auto 24px;">Sounnah g\u00e9n\u00e9rale du mouvement et de la respiration consciente \u2014 pas de hadith sp\u00e9cifique sur cette pratique.</div>'
-      + '<button id="_souffleBtnFait" onclick="_colereMode==='mutawassit'?_mutawassitExit():openItfaaRefuge()" style="display:none;width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019ai fait \u2726</button>'
+      + '<button id="_souffleBtnFait" onclick="_itfaaFaitClick()" style="display:none;width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019ai fait \u2726</button>'
       + '</div>';
     el.innerHTML = html;
     afficheLeSouffle(document.getElementById('_souffleContainer'), c);
@@ -4075,7 +4080,7 @@ function openItfaaAction() {
   if (zone === 'tete' && !ar) {
     html += '<div class="itfaa-subtle" style="font-size:11px;text-align:center;max-width:400px;margin:0 auto 24px;">Pratique recommand\u00e9e par la tradition musulmane.</div>';
   }
-  html += '<button onclick="_colereMode==='mutawassit'?_mutawassitExit():openItfaaRefuge()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;margin-top:20px;">J\u2019ai fait \u2726</button>'
+  html += '<button onclick="_itfaaFaitClick()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;margin-top:20px;">J\u2019ai fait \u2726</button>'
     + '</div>';
   el.innerHTML = html;
 }
@@ -11489,6 +11494,7 @@ window._yasirIntention        = _yasirIntention;
 window._yasirChoix            = _yasirChoix;
 window.openColereMutawassit   = openColereMutawassit;
 window._mutawassitExit        = _mutawassitExit;
+window._itfaaFaitClick        = _itfaaFaitClick;
 window.openColereShadid       = openColereShadid;
 window.openItfaaSomatic       = openItfaaSomatic;
 window._logSomatic            = _logSomatic;
