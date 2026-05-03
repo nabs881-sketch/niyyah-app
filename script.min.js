@@ -3579,7 +3579,6 @@ function resetWirdSession(session) {
 var _babImmersion = false;
 // BAB_AN_NAFS_AR supprimé — AR intégré dans BAB_AN_NAFS.portes[].nom.ar
 function renderBabAnNafs() {
-  console.log('[RENDER] renderBabAnNafs appele t=' + Date.now(), new Error().stack.split('\n')[2]);
   document.body.classList.add('in-bab-an-nafs');
   var nb = document.getElementById('nav-bar-v2');
   _hideAideBtn();
@@ -3977,11 +3976,10 @@ function _halo(el, z) {
   requestAnimationFrame(function() { var e = document.getElementById('_haloAr'); if (e) e.style.opacity = '1'; });
   setTimeout(function() { var e = document.getElementById('_haloFr'); if (e) e.style.opacity = '1'; }, 2000);
   setTimeout(function() { var e = document.getElementById('_haloContinue'); if (e) e.style.opacity = '0.6'; }, 3000);
-  setTimeout(function() { console.log('[HALO] auto-next t=' + Date.now()); openItfaaSomatic(); var o = document.getElementById('_haloOverlay'); if (o) o.remove(); }, 6000);
+  setTimeout(function() { openItfaaSomatic(); var o = document.getElementById('_haloOverlay'); if (o) o.remove(); }, 6000);
 }
 
 function openItfaaSomatic() {
-  console.log('[SOMATIC] entree t=' + Date.now());
   _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
@@ -4002,14 +4000,12 @@ function openItfaaSomatic() {
 }
 
 function _logSomatic(sensation) {
-  console.log('[NAMING] tap sensation "' + sensation + '" t=' + Date.now());
   try {
     var log = JSON.parse(safeGetItem('colere_somatic_log') || '[]');
     log.push({date:new Date().toISOString(),zone:window._colereZone||'',sensation:sensation});
     if (log.length > 100) log = log.slice(-100);
     safeSetItem('colere_somatic_log', JSON.stringify(log));
   } catch(e) {}
-  console.log('[NAMING] avant openItfaaAction t=' + Date.now());
   openItfaaAction();
 }
 
@@ -4080,10 +4076,9 @@ function openItfaaStep1() {
 }
 
 function openItfaaAction() {
-  console.log('[ACTION] entree t=' + Date.now() + ' colereMode=' + _colereMode);
   _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
   var el = document.getElementById('babAnNafsContent');
-  if (!el) { console.log('[ACTION] ERREUR: babAnNafsContent introuvable'); return; }
+  if (!el) return;
   var c = '#B33A3A';
   var zone = window._colereZone || 'poitrine';
   var labels = {tete:'T\u00eate',gorge:'Gorge',poitrine:'Poitrine',ventre:'Ventre',mains:'Mains'};
