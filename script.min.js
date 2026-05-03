@@ -3730,77 +3730,11 @@ function openBabPorte(id, step) {
   el.innerHTML = html;
 }
 
-function _colereBifurcation() {
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  el.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;">'
-    + '<div id="_bif1" style="font-family:var(--serif);font-size:20px;color:#E5E0DC;line-height:1.8;max-width:360px;opacity:0;transition:opacity 1s ease;">Cette col\u00e8re, est-elle pour toi\u00a0?</div>'
-    + '<div id="_bif2" style="font-family:var(--serif);font-size:18px;color:rgba(200,168,75,0.7);margin-top:24px;opacity:0;transition:opacity 1s ease;">Ou pour Allah\u00a0?</div>'
-    + '<div id="_bifBtns" style="display:flex;flex-direction:column;gap:14px;max-width:280px;width:100%;margin-top:36px;opacity:0;transition:opacity 0.8s ease;">'
-    + '<button onclick="sessionStorage.setItem(\'colere_bifurcation_passe\',\'moi\');openColereChoix()" style="padding:16px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:rgba(200,168,75,0.05);color:#C8A84A;font-family:var(--serif);font-size:16px;cursor:pointer;">Pour moi</button>'
-    + '<button onclick="_colereDiscernement()" style="padding:16px;border-radius:12px;border:1px solid rgba(200,168,75,0.15);background:none;color:rgba(200,168,75,0.6);font-family:var(--serif);font-size:16px;cursor:pointer;">Pour Allah</button>'
-    + '</div></div>';
-  requestAnimationFrame(function() { var e = document.getElementById('_bif1'); if (e) e.style.opacity = '1'; });
-  setTimeout(function() { var e = document.getElementById('_bif2'); if (e) e.style.opacity = '1'; }, 1000);
-  setTimeout(function() { var e = document.getElementById('_bifBtns'); if (e) e.style.opacity = '1'; }, 2000);
-}
-
-function _colereDiscernement() {
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  el.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;">'
-    + '<div id="_disc1" style="font-family:var(--serif);font-size:20px;color:#E5E0DC;line-height:1.8;max-width:380px;opacity:0;transition:opacity 1s ease;">Cette col\u00e8re d\u00e9fend-elle un pr\u00e9cepte religieux explicite\u00a0?</div>'
-    + '<div id="_disc2" style="font-family:var(--serif);font-size:18px;color:rgba(200,168,75,0.7);margin-top:24px;opacity:0;transition:opacity 1s ease;">Ou d\u00e9fend-elle ton ego religieux\u00a0?</div>'
-    + '<div id="_discBtns" style="display:flex;flex-direction:column;gap:14px;max-width:280px;width:100%;margin-top:36px;opacity:0;transition:opacity 0.8s ease;">'
-    + '<button onclick="_colerePourAllah()" style="padding:16px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:rgba(200,168,75,0.05);color:#C8A84A;font-family:var(--serif);font-size:16px;cursor:pointer;">Pr\u00e9cepte religieux</button>'
-    + '<button onclick="sessionStorage.setItem(\'colere_bifurcation_passe\',\'moi-discerne\');openColereChoix()" style="padding:16px;border-radius:12px;border:1px solid rgba(200,168,75,0.15);background:none;color:rgba(200,168,75,0.5);font-family:var(--serif);font-size:16px;cursor:pointer;">Mon ego</button>'
-    + '</div></div>';
-  requestAnimationFrame(function() { var e = document.getElementById('_disc1'); if (e) e.style.opacity = '1'; });
-  setTimeout(function() { var e = document.getElementById('_disc2'); if (e) e.style.opacity = '1'; }, 1200);
-  setTimeout(function() { var e = document.getElementById('_discBtns'); if (e) e.style.opacity = '1'; }, 2200);
-}
-
-function _colerePourAllah() {
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 24px 120px;text-align:center;">'
-    // 1. Verset Coran 3:134
-    + '<div style="margin-bottom:32px;padding:20px;border-radius:14px;border:1px solid rgba(200,168,75,0.2);background:rgba(200,168,75,0.05);">'
-    + '<div id="_allah1" style="font-family:\'Scheherazade New\',serif;font-size:22px;color:#C8A84A;direction:rtl;line-height:1.8;margin-bottom:10px;opacity:0;transition:opacity 1.5s ease;">\u0627\u0644\u0651\u064e\u0630\u0650\u064a\u0646\u064e \u064a\u064f\u0646\u0641\u0650\u0642\u064f\u0648\u0646\u064e \u0641\u0650\u064a \u0627\u0644\u0633\u0651\u064e\u0631\u0651\u064e\u0627\u0621\u0650 \u0648\u064e\u0627\u0644\u0636\u0651\u064e\u0631\u0651\u064e\u0627\u0621\u0650 \u0648\u064e\u0627\u0644\u0652\u0643\u064e\u0627\u0638\u0650\u0645\u0650\u064a\u0646\u064e \u0627\u0644\u0652\u063a\u064e\u064a\u0652\u0638\u064e \u0648\u064e\u0627\u0644\u0652\u0639\u064e\u0627\u0641\u0650\u064a\u0646\u064e \u0639\u064e\u0646\u0650 \u0627\u0644\u0646\u0651\u064e\u0627\u0633\u0650 \u06d7 \u0648\u064e\u0627\u0644\u0644\u0651\u064e\u0647\u064f \u064a\u064f\u062d\u0650\u0628\u0651\u064f \u0627\u0644\u0652\u0645\u064f\u062d\u0652\u0633\u0650\u0646\u0650\u064a\u0646\u064e</div>'
-    + '<div class="itfaa-body" style="font-size:15px;line-height:1.7;margin-bottom:6px;">Ceux qui contiennent leur col\u00e8re et pardonnent aux gens. Allah aime les bienfaisants.</div>'
-    + '<div class="itfaa-subtle" style="font-size:11px;">Coran 3:134</div>'
-    + '</div>'
-    // 2. Voix-témoin
-    + '<div id="_allah2" style="max-width:380px;margin:0 auto 32px;opacity:0;transition:opacity 1s ease;">'
-    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:16px;line-height:1.8;margin-bottom:8px;">Le Proph\u00e8te \uFDFA ne se mettait jamais en col\u00e8re pour lui-m\u00eame.</div>'
-    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:16px;line-height:1.8;margin-bottom:8px;">Il se mettait en col\u00e8re quand les limites d\u2019Allah \u00e9taient transgress\u00e9es.</div>'
-    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:16px;line-height:1.8;">Si c\u2019est ton cas, agis avec sagesse et patience.</div>'
-    + '</div>'
-    // 3. Duʿâ'
-    + '<div id="_allah3" style="margin-bottom:28px;opacity:0;transition:opacity 1s ease;">'
-    + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:#C8A84A;direction:rtl;line-height:1.8;margin-bottom:8px;">\u0627\u0644\u0644\u0651\u064e\u0647\u064f\u0645\u0651\u064e \u0625\u0650\u0646\u0651\u0650\u064a \u0623\u064e\u0633\u0652\u0623\u064e\u0644\u064f\u0643\u064e \u0627\u0644\u0652\u062d\u064f\u0643\u0652\u0645\u064e \u0648\u064e\u0627\u0644\u0652\u062d\u0650\u0643\u0652\u0645\u064e\u0629\u064e</div>'
-    + '<div class="itfaa-body" style="font-size:15px;">\u00d4 Allah, je Te demande le jugement et la sagesse.</div>'
-    + '</div>'
-    + '<div id="_allahRiyadat" style="margin-bottom:20px;opacity:0;transition:opacity 0.8s ease;">'
-    + '<div class="itfaa-subtle" style="font-size:14px;margin-bottom:10px;">Si dans le doute, fais aussi le travail \u00e0 froid.</div>'
-    + '<button onclick="sessionStorage.setItem(\'colere_bifurcation_passe\',\'allah\');openCureColere()" style="background:none;border:1px solid rgba(200,168,75,0.25);border-radius:12px;padding:12px 24px;color:#C8A84A;font-family:var(--serif);font-size:14px;cursor:pointer;">Riy\u00e2\u1e0dat an-nafs \u2192</button>'
-    + '</div>'
-    + '<button id="_allahBtn" onclick="sessionStorage.setItem(\'colere_bifurcation_passe\',\'allah\');_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');v2GoSanctuaire()" style="padding:16px 32px;border-radius:12px;border:none;background:#C8A84A;color:#000;font-family:var(--serif);font-size:16px;font-weight:600;cursor:pointer;opacity:0;transition:opacity 0.8s ease;">Bismillah</button>'
-    + '</div>';
-  requestAnimationFrame(function() { var e = document.getElementById('_allah1'); if (e) e.style.opacity = '1'; });
-  setTimeout(function() { var e = document.getElementById('_allah2'); if (e) e.style.opacity = '1'; }, 2000);
-  setTimeout(function() { var e = document.getElementById('_allah3'); if (e) e.style.opacity = '1'; }, 4000);
-  setTimeout(function() { var e = document.getElementById('_allahRiyadat'); if (e) e.style.opacity = '1'; }, 5500);
-  setTimeout(function() { var e = document.getElementById('_allahBtn'); if (e) e.style.opacity = '1'; }, 6500);
-}
-
 function openColereChoix() {
   document.body.classList.add('in-bab-an-nafs');
   _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
-  // Bifurcation 1x par session
-  if (!sessionStorage.getItem('colere_bifurcation_passe')) { _colereBifurcation(); return; }
   // Écran accueil 1.5s
   el.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;">'
     + '<div id="_colAccueil1" style="font-family:var(--serif);font-size:18px;color:#E5E0DC;line-height:1.8;max-width:360px;opacity:0;transition:opacity 1s ease;">Tu es venu. C\u2019est d\u00e9j\u00e0 un travail.</div>'
@@ -11749,9 +11683,6 @@ window.regardeCancelThinking  = regardeCancelThinking;
 window.openRegardeJournal     = openRegardeJournal;
 window.renderBabAnNafs        = renderBabAnNafs;
 window.openBabPorte           = openBabPorte;
-window._colereBifurcation     = _colereBifurcation;
-window._colereDiscernement    = _colereDiscernement;
-window._colerePourAllah       = _colerePourAllah;
 window.openColereChoix        = openColereChoix;
 window._renderThermometre     = _renderThermometre;
 window._logColereZone         = _logColereZone;
