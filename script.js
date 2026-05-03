@@ -3730,11 +3730,32 @@ function openBabPorte(id, step) {
   el.innerHTML = html;
 }
 
+function _colereBifurcation() {
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  el.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;">'
+    + '<div id="_bif1" style="font-family:var(--serif);font-size:20px;color:#E5E0DC;line-height:1.8;max-width:360px;opacity:0;transition:opacity 1s ease;">Cette col\u00e8re, est-elle pour toi\u00a0?</div>'
+    + '<div id="_bif2" style="font-family:var(--serif);font-size:18px;color:rgba(200,168,75,0.7);margin-top:24px;opacity:0;transition:opacity 1s ease;">Ou pour Allah\u00a0?</div>'
+    + '<div id="_bifBtns" style="display:flex;flex-direction:column;gap:14px;max-width:280px;width:100%;margin-top:36px;opacity:0;transition:opacity 0.8s ease;">'
+    + '<button onclick="sessionStorage.setItem(\'colere_bifurcation_passe\',\'moi\');openColereChoix()" style="padding:16px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:rgba(200,168,75,0.05);color:#C8A84A;font-family:var(--serif);font-size:16px;cursor:pointer;">Pour moi</button>'
+    + '<button onclick="_colereDiscernement()" style="padding:16px;border-radius:12px;border:1px solid rgba(200,168,75,0.15);background:none;color:rgba(200,168,75,0.6);font-family:var(--serif);font-size:16px;cursor:pointer;">Pour Allah</button>'
+    + '</div></div>';
+  requestAnimationFrame(function() { var e = document.getElementById('_bif1'); if (e) e.style.opacity = '1'; });
+  setTimeout(function() { var e = document.getElementById('_bif2'); if (e) e.style.opacity = '1'; }, 1000);
+  setTimeout(function() { var e = document.getElementById('_bifBtns'); if (e) e.style.opacity = '1'; }, 2000);
+}
+
+function _colereDiscernement() {
+  // TODO : parcours discernement colère pour Allah
+}
+
 function openColereChoix() {
   document.body.classList.add('in-bab-an-nafs');
   _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
+  // Bifurcation 1x par session
+  if (!sessionStorage.getItem('colere_bifurcation_passe')) { _colereBifurcation(); return; }
   // Écran accueil 1.5s
   el.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;">'
     + '<div id="_colAccueil1" style="font-family:var(--serif);font-size:18px;color:#E5E0DC;line-height:1.8;max-width:360px;opacity:0;transition:opacity 1s ease;">Tu es venu. C\u2019est d\u00e9j\u00e0 un travail.</div>'
@@ -11614,6 +11635,8 @@ window.regardeCancelThinking  = regardeCancelThinking;
 window.openRegardeJournal     = openRegardeJournal;
 window.renderBabAnNafs        = renderBabAnNafs;
 window.openBabPorte           = openBabPorte;
+window._colereBifurcation     = _colereBifurcation;
+window._colereDiscernement    = _colereDiscernement;
 window.openColereChoix        = openColereChoix;
 window._renderThermometre     = _renderThermometre;
 window._logColereZone         = _logColereZone;
