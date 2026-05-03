@@ -3752,7 +3752,7 @@ function _openColereThermometre() {
     + backBtn
     + '<div style="display:flex;flex-direction:column;gap:14px;max-width:340px;margin:0 auto;">'
     // Carte 1 — Yasîr (vert)
-    + '<button onclick="_logColereZone(\'yasir\');openItfaaOuverture()" style="padding:20px;border-radius:14px;border:1px solid rgba(74,124,89,0.5);background:rgba(74,124,89,0.1);cursor:pointer;text-align:left;">'
+    + '<button onclick="_logColereZone(\'yasir\');openColereYasir()" style="padding:20px;border-radius:14px;border:1px solid rgba(74,124,89,0.5);background:rgba(74,124,89,0.1);cursor:pointer;text-align:left;">'
     + '<div style="font-family:var(--serif);font-size:18px;color:#4a7c59;margin-bottom:4px;">\u00c7a me chatouille.</div>'
     + '<div style="font-size:13px;color:#E5E0DC;opacity:0.7;margin-bottom:6px;">je peux encore respirer calmement</div>'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:14px;color:rgba(255,255,255,0.3);direction:rtl;">Yas\u00eer</div>'
@@ -3824,6 +3824,54 @@ function _showAideBtn() {
 function _hideAideBtn() {
   var btn = document.getElementById('_aideHumaineBtn');
   if (btn) btn.remove();
+}
+
+function openColereYasir() {
+  _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
+  document.body.classList.add('in-bab-an-nafs');
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#4a7c59';
+  // Écran 1 : accueil 3s
+  el.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;">'
+    + '<div id="_yasir1" style="font-family:var(--serif);font-size:18px;color:#E5E0DC;line-height:1.8;max-width:360px;opacity:0;transition:opacity 1s ease;">Tu es venu en moment calme.</div>'
+    + '<div id="_yasir2" style="font-family:var(--serif);font-size:16px;color:' + c + ';margin-top:16px;opacity:0;transition:opacity 1s ease;">C\u2019est ici qu\u2019on pr\u00e9pare les moments durs.</div>'
+    + '</div>';
+  requestAnimationFrame(function() { var e = document.getElementById('_yasir1'); if (e) e.style.opacity = '1'; });
+  setTimeout(function() { var e = document.getElementById('_yasir2'); if (e) e.style.opacity = '1'; }, 1000);
+  setTimeout(function() { _openColereYasirSouffle(); }, 3000);
+}
+
+function _openColereYasirSouffle() {
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#4a7c59';
+  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:70vh;text-align:center;">'
+    + '<div id="_yasirSouffleWrap"></div>'
+    + '<div style="font-family:var(--serif);font-size:16px;font-style:italic;color:' + c + ';opacity:0.8;margin-top:24px;max-width:320px;">Dis int\u00e9rieurement\u00a0: A\u2019\u00fbdhu bill\u00e2h</div>'
+    + '</div>';
+  afficheLeSouffle(document.getElementById('_yasirSouffleWrap'), c);
+  // Après 60s → écran intention
+  setTimeout(function() { _openColereYasirIntention(); }, 60000);
+}
+
+function _openColereYasirIntention() {
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#4a7c59';
+  var intentions = [
+    {txt:'Je m\u2019assoirai.',key:'assise'},
+    {txt:'Je me tairai 30 secondes.',key:'silence'},
+    {txt:'J\u2019irai faire mes ablutions.',key:'wudu'}
+  ];
+  var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
+    + '<div style="font-family:var(--serif);font-size:18px;color:#E5E0DC;line-height:1.7;max-width:380px;margin-bottom:28px;">La prochaine fois que \u00e7a monte plus, qu\u2019est-ce que tu feras\u00a0?</div>'
+    + '<div style="display:flex;flex-direction:column;gap:12px;max-width:320px;width:100%;">';
+  for (var i = 0; i < intentions.length; i++) {
+    html += '<button onclick="safeSetItem(\'colere_intention_prochaine\',\'' + intentions[i].key + '\');_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');v2GoSanctuaire()" style="padding:16px;border-radius:12px;border:1px solid ' + c + '55;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:16px;cursor:pointer;">' + intentions[i].txt + '</button>';
+  }
+  html += '</div></div>';
+  el.innerHTML = html;
 }
 
 function openAideHumaine() {
@@ -11382,6 +11430,9 @@ window.openBabPorte           = openBabPorte;
 window.openColereChoix        = openColereChoix;
 window._openColereThermometre = _openColereThermometre;
 window._logColereZone         = _logColereZone;
+window.openColereYasir        = openColereYasir;
+window._openColereYasirSouffle = _openColereYasirSouffle;
+window._openColereYasirIntention = _openColereYasirIntention;
 window.afficheLeSouffle       = afficheLeSouffle;
 window._showAideBtn           = _showAideBtn;
 window._hideAideBtn           = _hideAideBtn;
