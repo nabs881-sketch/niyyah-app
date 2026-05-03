@@ -4418,7 +4418,35 @@ function _cureTransition(jourFait) {
     + '</div>';
 }
 
+function _cureChoixMode() {
+  _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
+  document.body.classList.add('in-bab-an-nafs');
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var backBtn = '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
+  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
+    + backBtn
+    + '<div style="font-family:var(--serif);font-size:20px;color:#C8A84A;margin-bottom:8px;">Tu commences ce travail.</div>'
+    + '<div class="itfaa-subtle" style="font-size:15px;margin-bottom:32px;">Comment es-tu aujourd\u2019hui\u00a0?</div>'
+    + '<div style="display:flex;flex-direction:column;gap:14px;max-width:320px;margin:0 auto;">'
+    + '<button onclick="safeSetItem(\'cure_mode\',\'doucement\');openCureColere()" style="padding:20px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:rgba(200,168,75,0.05);cursor:pointer;text-align:center;">'
+    + '<div style="font-size:24px;margin-bottom:6px;">\ud83c\udf31</div>'
+    + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:4px;">Doucement</div>'
+    + '<div style="font-size:13px;color:#E5E0DC;opacity:0.7;">Je teste, je n\u2019engage pas plus de 2 minutes par jour</div>'
+    + '</button>'
+    + '<button onclick="safeSetItem(\'cure_mode\',\'serieusement\');openCureColere()" style="padding:20px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:rgba(200,168,75,0.05);cursor:pointer;text-align:center;">'
+    + '<div style="font-size:24px;margin-bottom:6px;">\ud83c\udf33</div>'
+    + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:4px;">S\u00e9rieusement</div>'
+    + '<div style="font-size:13px;color:#E5E0DC;opacity:0.7;">Je donne 10 minutes par jour</div>'
+    + '</button>'
+    + '</div>'
+    + '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(255,255,255,0.3);margin-top:24px;">Tu pourras changer plus tard.</div>'
+    + '</div>';
+}
+
 function openCureColere() {
+  // Calibrage mode si pas encore choisi
+  if (!safeGetItem('cure_mode')) { _cureChoixMode(); return; }
   var cure = {}; try { cure = JSON.parse(safeGetItem('cure_colere') || '{}'); } catch(e) {}
   var day = cure.current_day || 1;
   if (cure.completed === true) day = 'complete';
@@ -11508,6 +11536,7 @@ window.afficheLeSouffle       = afficheLeSouffle;
 window._showAideBtn           = _showAideBtn;
 window._hideAideBtn           = _hideAideBtn;
 window.openColereSeuilTherapeute = openColereSeuilTherapeute;
+window._cureChoixMode         = _cureChoixMode;
 window.openCureColere         = openCureColere;
 window._showWaswasaScreen     = _showWaswasaScreen;
 window.openCureColereJour1    = openCureColereJour1;
