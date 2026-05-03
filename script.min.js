@@ -4475,7 +4475,7 @@ function openCureColereJour1() {
     + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:4px;">Riy\u00e2\u1e0dat an-nafs \u2014 Jour 1</div>'
     + '<div class="itfaa-body" style="font-size:16px;margin-bottom:20px;">Reconna\u00eetre le feu</div>'
     + '<div class="itfaa-subtle" style="font-size:13px;margin-bottom:8px;">Pose ton intention avant de commencer :</div>'
-    + '<textarea id="_cureNiyyah" placeholder="Ma niyyah pour cette cure\u2026" style="width:100%;max-width:360px;min-height:50px;padding:12px;border-radius:10px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;resize:vertical;"></textarea>'
+    + '<textarea id="_cureNiyyah" placeholder="Ma niyyah pour ce travail\u2026" style="width:100%;max-width:360px;min-height:50px;padding:12px;border-radius:10px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;resize:vertical;"></textarea>'
     + '</div>'
     // 2. CONTEMPLATION
     + '<div style="text-align:center;margin-bottom:40px;padding:20px;border-radius:14px;border:1px solid ' + c + '22;background:' + c + '08;">'
