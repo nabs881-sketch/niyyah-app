@@ -3891,7 +3891,37 @@ function _mutawassitExit() {
 
 function _itfaaFaitClick() {
   if (_colereMode === 'mutawassit') _mutawassitExit();
-  else openItfaaRefuge();
+  else openItfaaEmotionSous();
+}
+
+function openItfaaEmotionSous() {
+  _babImmersion = true; var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#B33A3A';
+  var emotions = ['Triste','Bless\u00e9','Impuissant','Trahi','Je ne sais pas'];
+  var backBtn = '<button onclick="openItfaaStep1()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
+  var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
+    + backBtn
+    + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';margin-bottom:8px;">Je suis en col\u00e8re\u2026</div>'
+    + '<div class="itfaa-subtle" style="font-size:14px;margin-bottom:28px;">et peut-\u00eatre aussi :</div>'
+    + '<div style="display:flex;flex-direction:column;gap:12px;max-width:320px;margin:0 auto;">';
+  for (var i = 0; i < emotions.length; i++) {
+    html += '<button onclick="_logEmotionSous(\'' + emotions[i].replace(/'/g,"\\'") + '\')" style="padding:16px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:16px;cursor:pointer;">' + emotions[i] + '</button>';
+  }
+  html += '<button onclick="openItfaaRefuge()" style="padding:14px;border-radius:12px;border:1px solid ' + c + '22;background:none;color:' + c + ';opacity:0.6;font-family:var(--serif);font-size:14px;cursor:pointer;margin-top:8px;">Passer</button>'
+    + '</div></div>';
+  el.innerHTML = html;
+}
+
+function _logEmotionSous(emotion) {
+  try {
+    var log = JSON.parse(localStorage.getItem('colere_emotion_sous_log') || '[]');
+    log.push({date:Date.now(),emotion:emotion});
+    if (log.length > 200) log = log.slice(-200);
+    localStorage.setItem('colere_emotion_sous_log', JSON.stringify(log));
+  } catch(e) {}
+  openItfaaRefuge();
 }
 
 function openColereShadid() {
@@ -11474,6 +11504,8 @@ window._yasirChoix            = _yasirChoix;
 window.openColereMutawassit   = openColereMutawassit;
 window._mutawassitExit        = _mutawassitExit;
 window._itfaaFaitClick        = _itfaaFaitClick;
+window.openItfaaEmotionSous   = openItfaaEmotionSous;
+window._logEmotionSous        = _logEmotionSous;
 window.openColereShadid       = openColereShadid;
 window.openItfaaSomatic       = openItfaaSomatic;
 window._logSomatic            = _logSomatic;
