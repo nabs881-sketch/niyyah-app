@@ -3768,7 +3768,8 @@ function _renderThermometre() {
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:14px;color:rgba(255,255,255,0.3);direction:rtl;">Shad\u00eed</div>'
     + '</button>'
     + '</div>'
-    + '<div style="text-align:center;margin-top:32px;"><button onclick="openCureColere()" style="background:none;border:none;cursor:pointer;text-align:center;"><div style="font-family:var(--serif);font-size:16px;color:#C8A84A;margin-bottom:4px;">Travailler \u00e0 froid \u2192</div><div style="font-size:12px;color:rgba(255,255,255,0.35);font-style:italic;">Riy\u00e2\u1e0dat an-nafs</div></button></div>'
+    + '<div style="text-align:center;margin-top:32px;color:rgba(200,168,75,0.3);font-size:14px;letter-spacing:4px;margin-bottom:16px;">\u2E3B \u2726 \u2E3B</div>'
+    + '<div style="text-align:center;"><button onclick="openCureColere()" style="max-width:280px;width:100%;padding:14px 24px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:rgba(200,168,75,0.05);cursor:pointer;text-align:center;"><div style="font-family:var(--serif);font-size:16px;color:#C8A84A;margin-bottom:4px;">Travailler \u00e0 froid \u2192</div><div style="font-size:12px;color:rgba(255,255,255,0.35);font-style:italic;">Riy\u00e2\u1e0dat an-nafs</div></button></div>'
     + '</div>';
 }
 
