@@ -3813,6 +3813,10 @@ function _hideAideBtn() {
   if (btn) btn.remove();
 }
 
+function openColereYasir() { alert("Yasir OK - stub"); }
+function openColereMutawassit() { alert("Mutawassit OK - stub"); }
+function openColereShadid() { alert("Shadid OK - stub"); }
+
 function openAideHumaine() {
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
@@ -11392,6 +11396,9 @@ window.openMuhasabaRappel    = openMuhasabaRappel;
 window._muhasabaRappelReponse = _muhasabaRappelReponse;
 window._halo                  = _halo;
 window.openItfaaOuverture     = openItfaaOuverture;
+window.openColereYasir        = openColereYasir;
+window.openColereMutawassit   = openColereMutawassit;
+window.openColereShadid       = openColereShadid;
 window.openItfaaSomatic       = openItfaaSomatic;
 window._logSomatic            = _logSomatic;
 window.openItfaaStep1         = openItfaaStep1;
