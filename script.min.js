@@ -3830,7 +3830,7 @@ function _yasirSouffle() {
   if (!el) return;
   var c = '#4a7c59';
   el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:70vh;text-align:center;">'
-    + '<div style="font-family:var(--serif);font-size:16px;font-style:italic;color:' + c + ';opacity:0.8;margin-bottom:24px;max-width:320px;">Dis int\u00e9rieurement\u00a0: A\u2019\u00fbdhu bill\u00e2h</div>'
+    + '<div style="font-family:var(--serif);font-size:16px;font-style:italic;color:' + c + ';opacity:0.8;margin-bottom:24px;max-width:320px;">Dans ton souffle\u00a0: A\u2019\u00fbdhu bill\u00e2h</div>'
     + '<div id="_yasirSouffleWrap"></div>'
     + '<button onclick="_yasirSkipSouffle()" style="margin-top:32px;padding:12px 28px;border-radius:12px;border:1px solid ' + c + '33;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;opacity:0.6;">Continuer</button>'
     + '</div>';
@@ -3848,7 +3848,7 @@ function _yasirIntention() {
   var c = '#4a7c59';
   var choix = ['Je m\u2019assoirai.','Je me tairai 30 secondes.','J\u2019irai faire mes ablutions.'];
   var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
-    + '<div style="font-family:var(--serif);font-size:18px;color:#E5E0DC;line-height:1.7;max-width:380px;margin-bottom:28px;">La prochaine fois que \u00e7a monte plus, qu\u2019est-ce que tu feras\u00a0?</div>'
+    + '<div style="font-family:var(--serif);font-size:18px;color:#E5E0DC;line-height:1.7;max-width:380px;margin-bottom:28px;">La prochaine fois que \u00e7a monte plus, tu feras quoi\u00a0?</div>'
     + '<div style="display:flex;flex-direction:column;gap:12px;max-width:320px;width:100%;">';
   for (var i = 0; i < choix.length; i++) {
     html += '<button onclick="_yasirChoix(\'' + choix[i].replace(/'/g,"\\'") + '\')" style="padding:16px;border-radius:12px;border:1px solid ' + c + '55;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:16px;cursor:pointer;">' + choix[i] + '</button>';
@@ -3916,7 +3916,7 @@ function openItfaaEmotionSous() {
   var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
     + backBtn
     + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';margin-bottom:8px;">Je suis en col\u00e8re\u2026</div>'
-    + '<div class="itfaa-subtle" style="font-size:14px;margin-bottom:28px;">et peut-\u00eatre aussi :</div>'
+    + '<div class="itfaa-subtle" style="font-size:14px;margin-bottom:28px;">Et dessous, peut-\u00eatre :</div>'
     + '<div style="display:flex;flex-direction:column;gap:12px;max-width:320px;margin:0 auto;">';
   for (var i = 0; i < emotions.length; i++) {
     html += '<button onclick="_logEmotionSous(\'' + emotions[i].replace(/'/g,"\\'") + '\')" style="padding:16px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:16px;cursor:pointer;">' + emotions[i] + '</button>';
@@ -3970,7 +3970,7 @@ function openItfaaSomatic() {
   var backBtn = '<button onclick="openItfaaStep1()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
   var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
     + backBtn
-    + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';margin-bottom:28px;">Cette sensation, comment est-elle\u00a0?</div>'
+    + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';margin-bottom:28px;">Comment est-ce que \u00e7a se sent\u00a0?</div>'
     + '<div style="display:flex;flex-direction:column;gap:12px;max-width:320px;margin:0 auto;">';
   for (var i = 0; i < sensations.length; i++) {
     html += '<button onclick="_logSomatic(\'' + sensations[i] + '\')" style="padding:16px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:16px;cursor:pointer;">' + sensations[i] + '</button>';
@@ -4444,7 +4444,7 @@ function _cureChoixMode() {
     + '</div>';
 }
 
-function _cureDoucement(jour, sousTitre, hadithAr, hadithFr, hadithSrc, voix1, voix2, saveFn) {
+function _cureDoucement(jour, sousTitre, hadithAr, hadithFr, hadithSrc, voix1, voix2, saveFn, btnLabel) {
   _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
   document.body.classList.add('in-bab-an-nafs');
   var el = document.getElementById('babAnNafsContent');
@@ -4464,7 +4464,7 @@ function _cureDoucement(jour, sousTitre, hadithAr, hadithFr, hadithSrc, voix1, v
     + '</div>'
     + '<div class="itfaa-body" style="font-family:var(--serif);font-size:17px;line-height:1.7;max-width:360px;margin:0 auto 8px;">' + voix1 + '</div>'
     + '<div class="itfaa-subtle" style="font-size:15px;margin-bottom:28px;">' + voix2 + '</div>'
-    + '<button onclick="' + saveFn + '()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019ai fait</button>'
+    + '<button onclick="' + saveFn + '()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">' + (btnLabel || 'J\u2019ai fait') + '</button>'
     + '<div style="margin-top:24px;"><button onclick="safeSetItem(\'cure_mode\',\'serieusement\');' + fnName + '()" style="background:none;border:none;font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(255,255,255,0.3);cursor:pointer;">Passer en S\u00e9rieusement \u2192</button></div>'
     + '</div>';
 }
@@ -4522,7 +4522,7 @@ function openCureColereJour1() {
       + '<div class="itfaa-body" style="font-family:var(--serif);font-size:17px;line-height:1.7;max-width:360px;margin:0 auto 8px;">Aujourd\u2019hui, juste reconnais.</div>'
       + '<div class="itfaa-subtle" style="font-size:15px;margin-bottom:28px;">Pas plus.</div>'
       + '<button onclick="_cureColereJ1Save()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019ai reconnu</button>'
-      + '<div style="margin-top:24px;"><button onclick="safeSetItem(\'cure_mode\',\'serieusement\');openCureColereJour1()" style="background:none;border:none;font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(255,255,255,0.3);cursor:pointer;">Tu veux donner plus aujourd\u2019hui ? Passer en S\u00e9rieusement \u2192</button></div>'
+      + '<div style="margin-top:24px;"><button onclick="safeSetItem(\'cure_mode\',\'serieusement\');openCureColereJour1()" style="background:none;border:none;font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(255,255,255,0.3);cursor:pointer;">Tu veux aller plus loin aujourd\u2019hui ? Passer en S\u00e9rieusement \u2192</button></div>'
       + '</div>';
     return;
   }
@@ -4608,7 +4608,7 @@ function _cureColereJ1Save() {
 }
 
 function openCureColereJour2() {
-  if (safeGetItem('cure_mode') === 'doucement') { _cureDoucement(2, 'Les d\u00e9clencheurs', '\u0644\u064e\u064a\u0652\u0633\u064e \u0627\u0644\u0634\u0651\u064e\u062f\u0650\u064a\u062f\u064f \u0628\u0650\u0627\u0644\u0635\u0651\u064f\u0631\u064e\u0639\u064e\u0629\u0650', 'Le fort est celui qui se ma\u00eetrise dans la col\u00e8re.', 'Bukh\u00e2r\u00ee 6114', 'Aujourd\u2019hui, juste nomme un d\u00e9clencheur.', 'Un seul.', '_cureColereJ2Save'); return; }
+  if (safeGetItem('cure_mode') === 'doucement') { _cureDoucement(2, 'Les d\u00e9clencheurs', '\u0644\u064e\u064a\u0652\u0633\u064e \u0627\u0644\u0634\u0651\u064e\u062f\u0650\u064a\u062f\u064f \u0628\u0650\u0627\u0644\u0635\u0651\u064f\u0631\u064e\u0639\u064e\u0629\u0650', 'Le fort est celui qui se ma\u00eetrise dans la col\u00e8re.', 'Bukh\u00e2r\u00ee 6114', 'Aujourd\u2019hui, juste nomme un d\u00e9clencheur.', 'Un seul.', '_cureColereJ2Save', 'J\u2019ai nomm\u00e9'); return; }
   _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
   document.body.classList.add('in-bab-an-nafs');
   var el = document.getElementById('babAnNafsContent');
@@ -4706,7 +4706,7 @@ function _cureColereJ2Save() {
 }
 
 function openCureColereJour3() {
-  if (safeGetItem('cure_mode') === 'doucement') { _cureDoucement(3, 'La parole juste', '\u0625\u0650\u0630\u064e\u0627 \u063a\u064e\u0636\u0650\u0628\u0652\u062a\u064e \u0641\u064e\u0627\u0633\u0652\u0643\u064f\u062a\u0652', 'Si tu te mets en col\u00e8re, tais-toi.', 'A\u1e25mad 2136', 'Aujourd\u2019hui, choisis le silence une fois.', 'Une seule.', '_cureColereJ3Save'); return; }
+  if (safeGetItem('cure_mode') === 'doucement') { _cureDoucement(3, 'La parole juste', '\u0625\u0650\u0630\u064e\u0627 \u063a\u064e\u0636\u0650\u0628\u0652\u062a\u064e \u0641\u064e\u0627\u0633\u0652\u0643\u064f\u062a\u0652', 'Si tu te mets en col\u00e8re, tais-toi.', 'A\u1e25mad 2136', 'Aujourd\u2019hui, choisis le silence une fois.', 'Une seule.', '_cureColereJ3Save', 'J\u2019ai choisi le silence'); return; }
   _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
   document.body.classList.add('in-bab-an-nafs');
   var el = document.getElementById('babAnNafsContent');
@@ -4782,7 +4782,7 @@ function _cureColereJ3Save() {
 }
 
 function openCureColereJour4() {
-  if (safeGetItem('cure_mode') === 'doucement') { _cureDoucement(4, 'L\u2019\u00e9motion sous', '\u0627\u0644\u063a\u064e\u0636\u064e\u0628\u064f \u064a\u064e\u062d\u0652\u0645\u0650\u064a \u0623\u064e\u0644\u064e\u0645\u064b\u0627 \u0623\u064e\u0639\u0652\u0645\u064e\u0642\u064e', 'La col\u00e8re prot\u00e8ge souvent une douleur plus profonde.', 'inspir\u00e9 d\u2019al-Mu\u1e25\u00e2sib\u00ee', 'Aujourd\u2019hui, regarde sous la col\u00e8re.', 'Sans rien analyser.', '_cureColereJ4Save'); return; }
+  if (safeGetItem('cure_mode') === 'doucement') { _cureDoucement(4, 'L\u2019\u00e9motion sous', '\u0627\u0644\u063a\u064e\u0636\u064e\u0628\u064f \u064a\u064e\u062d\u0652\u0645\u0650\u064a \u0623\u064e\u0644\u064e\u0645\u064b\u0627 \u0623\u064e\u0639\u0652\u0645\u064e\u0642\u064e', 'La col\u00e8re prot\u00e8ge souvent une douleur plus profonde.', 'inspir\u00e9 d\u2019al-Mu\u1e25\u00e2sib\u00ee', 'Aujourd\u2019hui, regarde sous la col\u00e8re.', 'Juste regarde.', '_cureColereJ4Save', 'J\u2019ai regard\u00e9'); return; }
   _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
   document.body.classList.add('in-bab-an-nafs');
   var el = document.getElementById('babAnNafsContent');
@@ -4864,7 +4864,7 @@ function _cureColereJ4Save() {
 }
 
 function openCureColereJour5() {
-  if (safeGetItem('cure_mode') === 'doucement') { _cureDoucement(5, 'Le \u1e25ilm', '\u0644\u064e\u0645\u0652 \u064a\u064e\u0643\u064f\u0646\u0650 \u0627\u0644\u0646\u0651\u064e\u0628\u0650\u064a\u0651\u064f \uFDFA \u0641\u064e\u0627\u062d\u0650\u0634\u064b\u0627', 'Le Proph\u00e8te \uFDFA n\u2019\u00e9tait ni grossier ni vulgaire.', 'Bukh\u00e2r\u00ee 6035', 'Aujourd\u2019hui, choisis le \u1e25ilm une fois.', 'Douceur, pas mollesse.', '_cureColereJ5Save'); return; }
+  if (safeGetItem('cure_mode') === 'doucement') { _cureDoucement(5, 'Le \u1e25ilm', '\u0644\u064e\u0645\u0652 \u064a\u064e\u0643\u064f\u0646\u0650 \u0627\u0644\u0646\u0651\u064e\u0628\u0650\u064a\u0651\u064f \uFDFA \u0641\u064e\u0627\u062d\u0650\u0634\u064b\u0627', 'Le Proph\u00e8te \uFDFA n\u2019\u00e9tait ni grossier ni vulgaire.', 'Bukh\u00e2r\u00ee 6035', 'Aujourd\u2019hui, choisis le \u1e25ilm une fois.', 'Douceur, pas mollesse.', '_cureColereJ5Save', 'J\u2019ai choisi le \u1e25ilm'); return; }
   _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
   document.body.classList.add('in-bab-an-nafs');
   var el = document.getElementById('babAnNafsContent');
@@ -4931,7 +4931,7 @@ function _cureColereJ5Save() {
 }
 
 function openCureColereJour6() {
-  if (safeGetItem('cure_mode') === 'doucement') { _cureDoucement(6, 'Le pardon', '\u0645\u064e\u0627 \u0632\u064e\u0627\u062f\u064e \u0627\u0644\u0644\u0651\u064e\u0647\u064f \u0639\u064e\u0628\u0652\u062f\u064b\u0627 \u0628\u0650\u0639\u064e\u0641\u0652\u0648\u064d \u0625\u0650\u0644\u0651\u064e\u0627 \u0639\u0650\u0632\u0651\u064b\u0627', 'Allah n\u2019augmente nul serviteur en pardonnant sans l\u2019\u00e9lever.', 'Muslim 2588', 'Aujourd\u2019hui, rel\u00e2che une chose.', 'Juste une.', '_cureColereJ6Save'); return; }
+  if (safeGetItem('cure_mode') === 'doucement') { _cureDoucement(6, 'Le pardon', '\u0645\u064e\u0627 \u0632\u064e\u0627\u062f\u064e \u0627\u0644\u0644\u0651\u064e\u0647\u064f \u0639\u064e\u0628\u0652\u062f\u064b\u0627 \u0628\u0650\u0639\u064e\u0641\u0652\u0648\u064d \u0625\u0650\u0644\u0651\u064e\u0627 \u0639\u0650\u0632\u0651\u064b\u0627', 'Allah n\u2019augmente nul serviteur en pardonnant sans l\u2019\u00e9lever.', 'Muslim 2588', 'Aujourd\u2019hui, rel\u00e2che une chose.', 'Juste une.', '_cureColereJ6Save', 'J\u2019ai l\u00e2ch\u00e9'); return; }
   _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
   document.body.classList.add('in-bab-an-nafs');
   var el = document.getElementById('babAnNafsContent');
@@ -5004,7 +5004,7 @@ function _cureColereJ6Save() {
 }
 
 function openCureColereJour7() {
-  if (safeGetItem('cure_mode') === 'doucement') { _cureDoucement(7, 'Int\u00e9gration', '\u0625\u0650\u0646\u0651\u064e \u0627\u0644\u0644\u0651\u064e\u0647\u064e \u0644\u064e\u0627 \u064a\u064f\u063a\u064e\u064a\u0651\u0650\u0631\u064f \u0645\u064e\u0627 \u0628\u0650\u0642\u064e\u0648\u0652\u0645\u064d', 'Allah ne change rien tant qu\u2019il n\u2019a pas chang\u00e9 ce qui est en lui-m\u00eame.', 'Coran 13:11', 'Tu as march\u00e9 sept jours.', 'Qu\u2019est-ce qui a chang\u00e9 ?', '_cureColereJ7Save'); return; }
+  if (safeGetItem('cure_mode') === 'doucement') { _cureDoucement(7, 'Int\u00e9gration', '\u0625\u0650\u0646\u0651\u064e \u0627\u0644\u0644\u0651\u064e\u0647\u064e \u0644\u064e\u0627 \u064a\u064f\u063a\u064e\u064a\u0651\u0650\u0631\u064f \u0645\u064e\u0627 \u0628\u0650\u0642\u064e\u0648\u0652\u0645\u064d', 'Allah ne change rien tant qu\u2019il n\u2019a pas chang\u00e9 ce qui est en lui-m\u00eame.', 'Coran 13:11', 'Tu as march\u00e9 sept jours.', 'Qu\u2019est-ce qui a chang\u00e9 ?', '_cureColereJ7Save', 'J\u2019ai march\u00e9'); return; }
   _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
   document.body.classList.add('in-bab-an-nafs');
   var el = document.getElementById('babAnNafsContent');
