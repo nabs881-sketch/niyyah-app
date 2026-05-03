@@ -3761,7 +3761,18 @@ function _colereDiscernement() {
 }
 
 function _colerePourAllah() {
-  // TODO : parcours colère pour Allah
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  el.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;">'
+    + '<div id="_allah1" style="font-family:\'Scheherazade New\',serif;font-size:28px;color:#C8A84A;direction:rtl;line-height:1.8;max-width:380px;opacity:0;transition:opacity 1.5s ease;">\u0627\u0644\u0644\u0651\u064e\u0647\u064f\u0645\u0651\u064e \u0625\u0650\u0646\u0651\u0650\u064a \u0623\u064e\u0633\u0652\u0623\u064e\u0644\u064f\u0643\u064e \u0627\u0644\u0652\u062d\u064f\u0643\u0652\u0645\u064e \u0648\u064e\u0627\u0644\u0652\u062d\u0650\u0643\u0652\u0645\u064e\u0629\u064e</div>'
+    + '<div id="_allah2" style="font-family:var(--serif);font-size:14px;font-style:italic;color:rgba(200,168,75,0.6);margin-top:12px;opacity:0;transition:opacity 1s ease;">All\u00e2humma inn\u00ee as\u2019aluka-l-\u1e25ukma wa-l-\u1e25ikma</div>'
+    + '<div id="_allah3" style="font-family:var(--serif);font-size:16px;color:#E5E0DC;margin-top:16px;line-height:1.7;max-width:360px;opacity:0;transition:opacity 1s ease;">\u00d4 Allah, je Te demande le jugement et la sagesse.</div>'
+    + '<button id="_allahBtn" onclick="sessionStorage.setItem(\'colere_bifurcation_passe\',\'allah\');_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');v2GoSanctuaire()" style="margin-top:36px;padding:16px 32px;border-radius:12px;border:none;background:#C8A84A;color:#000;font-family:var(--serif);font-size:16px;font-weight:600;cursor:pointer;opacity:0;transition:opacity 0.8s ease;">Bismillah</button>'
+    + '</div>';
+  requestAnimationFrame(function() { var e = document.getElementById('_allah1'); if (e) e.style.opacity = '1'; });
+  setTimeout(function() { var e = document.getElementById('_allah2'); if (e) e.style.opacity = '1'; }, 1500);
+  setTimeout(function() { var e = document.getElementById('_allah3'); if (e) e.style.opacity = '1'; }, 2500);
+  setTimeout(function() { var e = document.getElementById('_allahBtn'); if (e) e.style.opacity = '1'; }, 3500);
 }
 
 function openColereChoix() {
