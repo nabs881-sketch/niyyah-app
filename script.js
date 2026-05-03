@@ -4170,8 +4170,8 @@ function openItfaaAction() {
   // Zone TETE : parcours wudu en 2 étapes
   if (zone === 'tete') {
     html += '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.7;max-width:360px;margin:0 auto 8px;">Eau tr\u00e8s froide sur le visage.</div>'
-      + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;margin-bottom:8px;">30 secondes.</div>'
-      + '<div class="itfaa-subtle" style="font-size:15px;margin-bottom:28px;">C\u2019est le d\u00e9but du wudu.</div>'
+      + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;margin-bottom:8px;">30 secondes pour calmer le feu.</div>'
+      + '<div class="itfaa-subtle" style="font-size:15px;margin-bottom:28px;">Puis fais le wudu complet.</div>'
       + '<button onclick="_itfaaWuduEtape2()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">C\u2019est fait</button>'
       + '</div>';
     el.innerHTML = html;
