@@ -3751,17 +3751,17 @@ function _renderThermometre() {
   el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;">'
     + backBtn
     + '<div style="display:flex;flex-direction:column;gap:14px;max-width:340px;margin:0 auto;">'
-    + '<button onclick="openColereYasir()" style="padding:20px;border-radius:14px;border:1px solid rgba(74,124,89,0.5);background:rgba(74,124,89,0.1);cursor:pointer;text-align:left;">'
+    + '<button onclick="_logColereZone(\'verte\');openColereYasir()" style="padding:20px;border-radius:14px;border:1px solid rgba(74,124,89,0.5);background:rgba(74,124,89,0.1);cursor:pointer;text-align:left;">'
     + '<div style="font-family:var(--serif);font-size:18px;color:#4a7c59;margin-bottom:4px;">\u00c7a me chatouille.</div>'
     + '<div style="font-size:13px;color:#E5E0DC;opacity:0.7;margin-bottom:6px;">je peux encore respirer calmement</div>'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:14px;color:rgba(255,255,255,0.3);direction:rtl;">Yas\u00eer</div>'
     + '</button>'
-    + '<button onclick="openColereMutawassit()" style="padding:20px;border-radius:14px;border:1px solid rgba(200,118,58,0.5);background:rgba(200,118,58,0.1);cursor:pointer;text-align:left;">'
+    + '<button onclick="_logColereZone(\'orange\');openColereMutawassit()" style="padding:20px;border-radius:14px;border:1px solid rgba(200,118,58,0.5);background:rgba(200,118,58,0.1);cursor:pointer;text-align:left;">'
     + '<div style="font-family:var(--serif);font-size:18px;color:#c8763a;margin-bottom:4px;">\u00c7a me prend.</div>'
     + '<div style="font-size:13px;color:#E5E0DC;opacity:0.7;margin-bottom:6px;">mon corps se serre, mon c\u0153ur bat plus fort</div>'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:14px;color:rgba(255,255,255,0.3);direction:rtl;">Mutawassi\u1e6d</div>'
     + '</button>'
-    + '<button onclick="openColereShadid()" style="padding:20px;border-radius:14px;border:1px solid rgba(163,55,42,0.5);background:rgba(163,55,42,0.1);cursor:pointer;text-align:left;">'
+    + '<button onclick="_logColereZone(\'rouge\');openColereShadid()" style="padding:20px;border-radius:14px;border:1px solid rgba(163,55,42,0.5);background:rgba(163,55,42,0.1);cursor:pointer;text-align:left;">'
     + '<div style="font-family:var(--serif);font-size:18px;color:#a3372a;margin-bottom:4px;">\u00c7a me submerge.</div>'
     + '<div style="font-size:13px;color:#E5E0DC;opacity:0.7;margin-bottom:6px;">je vais exploser, je n\u2019arrive plus \u00e0 penser</div>'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:14px;color:rgba(255,255,255,0.3);direction:rtl;">Shad\u00eed</div>'
@@ -3810,6 +3810,15 @@ function _showAideBtn() {
 function _hideAideBtn() {
   var btn = document.getElementById('_aideHumaineBtn');
   if (btn) btn.remove();
+}
+
+function _logColereZone(zone) {
+  try {
+    var log = JSON.parse(localStorage.getItem('colere_zone_log') || '[]');
+    log.push({date:Date.now(),zone:zone});
+    if (log.length > 200) log = log.slice(-200);
+    localStorage.setItem('colere_zone_log', JSON.stringify(log));
+  } catch(e) {}
 }
 
 function openColereYasir() { alert("Yasir OK - stub"); }
@@ -11371,6 +11380,7 @@ window.renderBabAnNafs        = renderBabAnNafs;
 window.openBabPorte           = openBabPorte;
 window.openColereChoix        = openColereChoix;
 window._renderThermometre     = _renderThermometre;
+window._logColereZone         = _logColereZone;
 window.afficheLeSouffle       = afficheLeSouffle;
 window._showAideBtn           = _showAideBtn;
 window._hideAideBtn           = _hideAideBtn;
