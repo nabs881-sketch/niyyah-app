@@ -3939,12 +3939,12 @@ function _halo(el, z) {
   _ov.style.cssText = 'position:fixed;inset:0;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(0,0,0,0.9);';
   _ov.innerHTML = '<div id="_haloAr" style="font-family:\'Scheherazade New\',serif;font-size:80px;color:#C8A84A;direction:rtl;opacity:0;transition:opacity 1.5s ease;">' + (_lblAr[z] || '') + '</div>'
     + '<div id="_haloFr" style="font-family:var(--serif);font-size:16px;color:#E5E0DC;margin-top:12px;opacity:0;transition:opacity 0.5s ease;">' + (_lblFr[z] || z) + '</div>'
-    + '<button id="_haloContinue" onclick="var o=document.getElementById(\'_haloOverlay\');if(o)o.remove();openItfaaSomatic();" style="margin-top:24px;padding:12px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:none;color:#C8A84A;font-family:var(--serif);font-size:14px;cursor:pointer;opacity:0;transition:opacity 0.5s ease;">Continuer</button>';
+    + '<button id="_haloContinue" onclick="openItfaaSomatic();var o=document.getElementById(\'_haloOverlay\');if(o)o.remove();" style="margin-top:24px;padding:12px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:none;color:#C8A84A;font-family:var(--serif);font-size:14px;cursor:pointer;opacity:0;transition:opacity 0.5s ease;">Continuer</button>';
   document.body.appendChild(_ov);
   requestAnimationFrame(function() { var e = document.getElementById('_haloAr'); if (e) e.style.opacity = '1'; });
   setTimeout(function() { var e = document.getElementById('_haloFr'); if (e) e.style.opacity = '1'; }, 2000);
   setTimeout(function() { var e = document.getElementById('_haloContinue'); if (e) e.style.opacity = '0.6'; }, 3000);
-  setTimeout(function() { var o = document.getElementById('_haloOverlay'); if (o) { o.remove(); openItfaaSomatic(); } }, 6000);
+  setTimeout(function() { openItfaaSomatic(); var o = document.getElementById('_haloOverlay'); if (o) o.remove(); }, 6000);
 }
 
 function openItfaaSomatic() {
