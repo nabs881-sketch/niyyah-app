@@ -7329,7 +7329,6 @@ const ONBOARD_SLIDES = [
     + '</div>',
   // Slide 5 — Notifications 3 cat\u00e9gories
   () => '<div class="onboard-anim">'
-    + '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.6);line-height:1.8;margin-bottom:20px;">Niyyah accompagne tes pri\u00e8res.<br>Elle ne les remplace pas.</div>'
     + '<div class="onboard-title">'+t('ob_notif_title')+'</div>'
     + '<div class="onboard-sub" style="margin-bottom:20px;">'+t("ob_notif_sub")+'</div>'
     + '<div class="ob-notif-cards">'
