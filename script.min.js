@@ -3836,7 +3836,20 @@ function openColereYasir() {
 }
 
 function _yasirSouffle() {
-  // TODO : respiration + duaa
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#4a7c59';
+  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:70vh;text-align:center;">'
+    + '<div style="font-family:var(--serif);font-size:16px;font-style:italic;color:' + c + ';opacity:0.8;margin-bottom:24px;max-width:320px;">Dis int\u00e9rieurement\u00a0: A\u2019\u00fbdhu bill\u00e2h</div>'
+    + '<div id="_yasirSouffleWrap"></div>'
+    + '</div>';
+  afficheLeSouffle(document.getElementById('_yasirSouffleWrap'), c);
+  // 3 cycles × 10s = 30s
+  setTimeout(function() { _yasirIntention(); }, 30000);
+}
+
+function _yasirIntention() {
+  // TODO : 3 choix intention prochaine fois
 }
 function openColereMutawassit() { alert("Mutawassit OK - stub"); }
 function openColereShadid() { alert("Shadid OK - stub"); }
@@ -11424,6 +11437,7 @@ window._halo                  = _halo;
 window.openItfaaOuverture     = openItfaaOuverture;
 window.openColereYasir        = openColereYasir;
 window._yasirSouffle          = _yasirSouffle;
+window._yasirIntention        = _yasirIntention;
 window.openColereMutawassit   = openColereMutawassit;
 window.openColereShadid       = openColereShadid;
 window.openItfaaSomatic       = openItfaaSomatic;
