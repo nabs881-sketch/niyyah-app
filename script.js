@@ -4663,6 +4663,11 @@ function openCureColereJour1() {
     + '<div class="itfaa-subtle" style="font-size:13px;margin-bottom:8px;">Pose ton intention avant de commencer :</div>'
     + '<textarea id="_cureNiyyah" placeholder="Ma niyyah pour ce travail\u2026" style="width:100%;max-width:360px;min-height:50px;padding:12px;border-radius:10px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;resize:vertical;"></textarea>'
     + '</div>'
+    // 1bis. EFFICACITÉ
+    + '<div style="text-align:center;margin-bottom:40px;">'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:16px;line-height:1.7;max-width:380px;margin:0 auto 16px;">Sur 10, \u00e0 quel point te sens-tu capable de g\u00e9rer ta prochaine col\u00e8re\u00a0?</div>'
+    + '<div id="_efficJ1" style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;max-width:320px;margin:0 auto;"></div>'
+    + '</div>'
     // 2. CONTEMPLATION
     + '<div style="text-align:center;margin-bottom:40px;padding:20px;border-radius:14px;border:1px solid ' + c + '22;background:' + c + '08;">'
     + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.5;margin-bottom:12px;">Contemplation</div>'
@@ -4688,6 +4693,22 @@ function openCureColereJour1() {
     + '</div>'
     + '</div>';
   el.innerHTML = html;
+  // Render 10 boutons efficacité
+  var _eWrap = document.getElementById('_efficJ1');
+  if (_eWrap) {
+    for (var _ei = 1; _ei <= 10; _ei++) {
+      var _b = document.createElement('button');
+      _b.textContent = _ei;
+      _b.style.cssText = 'width:40px;height:40px;border-radius:50%;border:1px solid #B33A3A44;background:#B33A3A0d;color:#B33A3A;font-family:var(--serif);font-size:15px;cursor:pointer;';
+      _b.setAttribute('data-score', _ei);
+      _b.onclick = function() {
+        document.querySelectorAll('#_efficJ1 button').forEach(function(b) { b.style.background = '#B33A3A0d'; b.style.fontWeight = '400'; });
+        this.style.background = '#B33A3A33'; this.style.fontWeight = '700';
+        window._efficJ1Score = parseInt(this.getAttribute('data-score'), 10);
+      };
+      _eWrap.appendChild(_b);
+    }
+  }
 }
 
 function _cureColereJ1Save() {
@@ -4702,6 +4723,7 @@ function _cureColereJ1Save() {
     var cure = JSON.parse(safeGetItem('cure_colere') || '{}');
     cure.niyyah = niyyah;
     cure.notes_jour_1 = notes;
+    if (window._efficJ1Score) cure.efficacite_j1 = window._efficJ1Score;
     cure.current_day = 2;
     cure.started = cure.started || new Date().toISOString();
     cure.jour1_date = new Date().toISOString();
@@ -5173,6 +5195,11 @@ function openCureColereJour7() {
       + '</div>';
   }
   html += '</div>'
+    // 3bis. EFFICACITÉ J7
+    + '<div style="text-align:center;margin-bottom:40px;">'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:16px;line-height:1.7;max-width:380px;margin:0 auto 16px;">Sur 10, \u00e0 quel point te sens-tu capable de g\u00e9rer ta prochaine col\u00e8re\u00a0?</div>'
+    + '<div id="_efficJ7" style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;max-width:320px;margin:0 auto;"></div>'
+    + '</div>'
     // 4. CLÔTURE FINALE
     + '<div style="text-align:center;margin-bottom:20px;padding:24px;border-radius:14px;border:1px solid ' + c + '33;background:' + c + '0d;">'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:30px;color:' + c + ';direction:rtl;margin-bottom:12px;">\u0627\u0644\u0652\u062d\u064e\u0645\u0652\u062f\u064f \u0644\u0650\u0644\u0651\u064e\u0647\u0650</div>'
@@ -5181,6 +5208,22 @@ function openCureColereJour7() {
     + '</div>'
     + '</div>';
   el.innerHTML = html;
+  // Render 10 boutons efficacité J7
+  var _eWrap7 = document.getElementById('_efficJ7');
+  if (_eWrap7) {
+    for (var _ei7 = 1; _ei7 <= 10; _ei7++) {
+      var _b7 = document.createElement('button');
+      _b7.textContent = _ei7;
+      _b7.style.cssText = 'width:40px;height:40px;border-radius:50%;border:1px solid #B33A3A44;background:#B33A3A0d;color:#B33A3A;font-family:var(--serif);font-size:15px;cursor:pointer;';
+      _b7.setAttribute('data-score', _ei7);
+      _b7.onclick = function() {
+        document.querySelectorAll('#_efficJ7 button').forEach(function(b) { b.style.background = '#B33A3A0d'; b.style.fontWeight = '400'; });
+        this.style.background = '#B33A3A33'; this.style.fontWeight = '700';
+        window._efficJ7Score = parseInt(this.getAttribute('data-score'), 10);
+      };
+      _eWrap7.appendChild(_b7);
+    }
+  }
 }
 
 function _cureColereJ7Save() {
@@ -5192,6 +5235,7 @@ function _cureColereJ7Save() {
   try {
     var cure = JSON.parse(safeGetItem('cure_colere') || '{}');
     cure.bilan_jour_7 = bilan;
+    if (window._efficJ7Score) cure.efficacite_j7 = window._efficJ7Score;
     cure.intention_30j = bilan.intention30 || '';
     cure.current_day = 'complete';
     cure.active = false;
@@ -5219,7 +5263,8 @@ function _cureColereJ7Save() {
   }
   el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:28px;color:' + c + ';direction:rtl;margin-bottom:12px;">\u0628\u064e\u0627\u0631\u064e\u0643\u064e \u0627\u0644\u0644\u0651\u064e\u0647\u064f \u0641\u0650\u064a\u0643\u064e</div>'
-    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.8;max-width:400px;margin:0 auto 32px;">Tu as march\u00e9 7\u00a0jours. Allah voit.<br>Reviens quand le c\u0153ur le demandera.</div>'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.8;max-width:400px;margin:0 auto 20px;">Tu as march\u00e9 7\u00a0jours. Allah voit.<br>Reviens quand le c\u0153ur le demandera.</div>'
+    + (function() { try { var _c = JSON.parse(safeGetItem('cure_colere') || '{}'); if (_c.efficacite_j1 && _c.efficacite_j7) return '<div class="itfaa-subtle" style="font-size:14px;margin-bottom:24px;">Au d\u00e9but : ' + _c.efficacite_j1 + '/10. Aujourd\u2019hui : ' + _c.efficacite_j7 + '/10.</div>'; return ''; } catch(e) { return ''; } })()
     + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Retour \u00e0 Ma Niyyah</button>'
     + '</div>';
 }
