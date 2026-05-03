@@ -4452,6 +4452,22 @@ function openCureColereJour2() {
     + '<div class="itfaa-body" style="font-family:var(--serif);font-size:16px;line-height:1.7;margin-bottom:8px;">' + escapeHtml(h6114.fr) + '</div>'
     + '<div class="itfaa-subtle" style="font-size:11px;">\u2014 ' + escapeHtml(h6114.source) + '</div>'
     + '</div>'
+    // 2bis. SOMATIC RECAP (si ≥2 entrées sur 7j)
+    + (function() {
+      try {
+        var _sLog = JSON.parse(safeGetItem('colere_somatic_log') || '[]');
+        var _cutoff = Date.now() - 7 * 86400000;
+        var _recent = _sLog.filter(function(e) { return new Date(e.date).getTime() > _cutoff; });
+        if (_recent.length < 2) return '';
+        var _counts = {};
+        _recent.forEach(function(e) { _counts[e.sensation] = (_counts[e.sensation] || 0) + 1; });
+        var _sorted = Object.keys(_counts).sort(function(a, b) { return _counts[b] - _counts[a]; });
+        var _lines = _sorted.map(function(s) { return '<div class="itfaa-body" style="font-size:15px;margin-bottom:4px;">' + _counts[s] + ' fois ' + s.toLowerCase() + '.</div>'; }).join('');
+        return '<div style="text-align:center;margin-bottom:40px;padding:20px;border-radius:14px;border:1px solid ' + c + '15;background:' + c + '05;">'
+          + '<div class="itfaa-subtle" style="font-size:13px;margin-bottom:12px;">Cette semaine, ta col\u00e8re a \u00e9t\u00e9 :</div>'
+          + _lines + '</div>';
+      } catch(e) { return ''; }
+    })()
     // 3. EXERCICE
     + '<div style="text-align:center;margin-bottom:40px;">'
     + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.5;margin-bottom:12px;">Exercice du jour</div>'
