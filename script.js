@@ -4444,6 +4444,7 @@ function _mcReparation(quand) {
   safeSetItem('muhasaba_classique_reparation', JSON.stringify({quand:quand, ts:Date.now()}));
   window._muhasabaClassique.reparation = quand;
   if ((window._muhasabaClassique.q1 || '').trim()) { _mcCarteRetour(); return; }
+  if ((window._muhasabaClassique.q2 || '').trim()) { _mcCarteGeste(); return; }
   _muhasabaClassiqueFin();
 }
 function _mcCarteRetour() {
@@ -4459,11 +4460,29 @@ function _mcCarteRetour() {
     + '</div>'
     + '<div id="_mcRetourAction" style="max-width:480px;margin:0 auto 24px;display:none;">'
     + '<input id="_mcHaqqAction" type="text" placeholder="Mon action pour Lui aujourd\u2019hui\u2026" style="width:100%;padding:14px;border-radius:10px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;margin-bottom:12px;" />'
-    + '<button onclick="safeSetItem(\'muhasaba_action_haqq_allah\',document.getElementById(\'_mcHaqqAction\').value||\'.\');_muhasabaClassiqueFin()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>'
+    + '<button onclick="safeSetItem(\'muhasaba_action_haqq_allah\',document.getElementById(\'_mcHaqqAction\').value||\'.\');_mcAfterRetour()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>'
     + '</div>'
     + '<button id="_mcRetourBtn" onclick="document.getElementById(\'_mcRetourAction\').style.display=\'\';this.style.display=\'none\';" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019identifie une action</button>'
     + '</div>';
 }
+function _mcAfterRetour() {
+  if ((window._muhasabaClassique.q2 || '').trim()) { _mcCarteGeste(); return; }
+  _muhasabaClassiqueFin();
+}
+function _mcCarteGeste() {
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#B33A3A';
+  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;max-width:600px;margin:0 auto;text-align:center;">'
+    + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:20px;">Le geste vers l\u2019autre</div>'
+    + '<div style="border:1px solid ' + c + '33;border-radius:14px;padding:20px;max-width:480px;margin:0 auto 28px;text-align:center;">'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;margin-bottom:14px;">Tu as choisi quand lui parler. Voici comment.</div>'
+    + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);line-height:1.6;">\u00ab\u00a0Celui qui croit en All\u00e2h et au Jour Dernier, qu\u2019il dise du bien ou qu\u2019il se taise.\u00a0\u00bb \u2014 Bukh\u00e2r\u00ee 6018</div>'
+    + '</div>'
+    + '<button onclick="_muhasabaClassiqueFin()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>'
+    + '</div>';
+}
+
 function _muhasabaClassiqueFin() {
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
@@ -12196,6 +12215,8 @@ window._muhasabaClassiqueQ3   = _muhasabaClassiqueQ3;
 window._muhasabaClassiqueQ4   = _muhasabaClassiqueQ4;
 window._mcReparation          = _mcReparation;
 window._mcCarteRetour         = _mcCarteRetour;
+window._mcAfterRetour         = _mcAfterRetour;
+window._mcCarteGeste          = _mcCarteGeste;
 window._muhasabaClassiqueFin  = _muhasabaClassiqueFin;
 window.openMuhasabaEmotion    = openMuhasabaEmotion;
 window._muhasabaToggleEmo     = _muhasabaToggleEmo;
