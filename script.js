@@ -4682,7 +4682,21 @@ function openMuhasabaClassique() {
     + '<div style="font-family:var(--serif);font-size:24px;color:#C8A84A;margin-bottom:24px;">Bismill\u00e2h</div>'
     + '<div class="itfaa-body" style="font-family:var(--serif);font-size:16px;font-style:italic;line-height:1.6;max-width:440px;margin:0 auto 24px;">\u2019Umar ibn al-Kha\u1e6d\u1e6d\u00e2b (RA) disait\u00a0: \u00ab\u00a0Faites le compte de vos \u00e2mes avant qu\u2019on vous le fasse rendre.\u00a0\u00bb</div>'
     + '<div class="itfaa-body" style="font-family:var(--serif);font-size:16px;line-height:1.6;max-width:440px;margin:0 auto 32px;">Quatre questions vont t\u2019\u00eatre pos\u00e9es. Pas plus. Pas moins.</div>'
-    + '<button onclick="_muhasabaClassiqueQ1()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Commencer</button>'
+    + '<button onclick="_mcIntro()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Commencer</button>'
+    + '</div>';
+}
+function _mcIntro() {
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#B33A3A';
+  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;max-width:600px;margin:0 auto;text-align:center;">'
+    + '<div style="font-family:var(--serif);font-size:22px;color:#C8A84A;margin-bottom:20px;">Avant les 3\u00a0questions</div>'
+    + '<div style="font-size:14px;color:#E5E0DC;line-height:1.6;max-width:440px;margin:0 auto 20px;">Tu vas te poser 3\u00a0questions, dans l\u2019ordre o\u00f9 les savants les ont pos\u00e9es.</div>'
+    + '<div style="font-size:14px;font-style:italic;color:rgba(200,168,75,0.55);line-height:1.6;max-width:440px;margin:0 auto 12px;">Le droit d\u2019All\u00e2h\u00a0: t\u2019es-tu rappel\u00e9 qu\u2019Il te voyait pendant cette col\u00e8re\u00a0?</div>'
+    + '<div style="font-size:14px;font-style:italic;color:rgba(200,168,75,0.55);line-height:1.6;max-width:440px;margin:0 auto 12px;">Le droit des autres\u00a0: as-tu bless\u00e9 quelqu\u2019un par tes paroles, gestes, silences\u00a0?</div>'
+    + '<div style="font-size:14px;font-style:italic;color:rgba(200,168,75,0.55);line-height:1.6;max-width:440px;margin:0 auto 20px;">Le droit de ton \u00e2me\u00a0: as-tu pris soin de toi ou t\u2019es-tu trahi\u00a0?</div>'
+    + '<div style="font-size:13px;color:rgba(255,255,255,0.35);margin-bottom:24px;">Pas besoin de r\u00e9ponses parfaites. Juste regarder.</div>'
+    + '<button onclick="_muhasabaClassiqueQ1()" style="width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Commencer</button>'
     + '</div>';
 }
 function _muhasabaClassiqueQ1() {
@@ -12919,6 +12933,7 @@ window._refugeSudSave         = _refugeSudSave;
 window.openMuhasabaIntro      = openMuhasabaIntro;
 window._muhasabaGuidee        = _muhasabaGuidee;
 window.openMuhasabaClassique  = openMuhasabaClassique;
+window._mcIntro               = _mcIntro;
 window._muhasabaClassiqueQ1   = _muhasabaClassiqueQ1;
 window._muhasabaClassiqueQ2   = _muhasabaClassiqueQ2;
 window._muhasabaClassiqueQ3   = _muhasabaClassiqueQ3;
