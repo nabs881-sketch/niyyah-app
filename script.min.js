@@ -4040,7 +4040,7 @@ function openItfaaSomatic() {
   for (var i = 0; i < sensations.length; i++) {
     html += '<button onclick="_logSomatic(\'' + sensations[i] + '\')" style="padding:16px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:16px;cursor:pointer;">' + sensations[i] + '</button>';
   }
-  html += '<button onclick="openItfaaAction()" style="padding:14px;border-radius:12px;border:1px solid ' + c + '22;background:none;color:' + c + ';opacity:0.6;font-family:var(--serif);font-size:14px;cursor:pointer;margin-top:8px;">Passer</button>'
+  html += '<button onclick="openItfaaAction()" style="padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.2);background:none;color:rgba(255,255,255,0.55);font-family:var(--serif);font-size:14px;cursor:pointer;margin-top:16px;">Passer</button>'
     + '</div></div>';
   el.innerHTML = html;
 }
