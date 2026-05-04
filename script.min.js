@@ -11352,6 +11352,30 @@ function v2RefreshStats() {
   if (typeof updateSanctuaireNextPrayer === 'function') updateSanctuaireNextPrayer();
   // POINT 3 — Effet visuel Tawba persistant 24h
   try { applyTawbaGlow(); } catch(e) {}
+  // Encart Découverte J1-J7
+  (function() {
+    var _oldDe = document.getElementById('decouverte-encart'); if (_oldDe) _oldDe.remove();
+    var _inst = parseInt(safeGetItem('niyyah_install_date') || '0', 10);
+    if (!_inst) return;
+    var _dayN = Math.floor((Date.now() - _inst) / 86400000) + 1;
+    if (_dayN < 1 || _dayN > 7) return;
+    var _decTextes = {
+      1:'Bienvenue. Aujourd\u2019hui, explore le Sanctuaire. Pose ta premi\u00e8re intention.',
+      2:'Ouvre \u00ab\u00a0Ma pratique\u00a0\u00bb et d\u00e9couvre ta checklist spirituelle.',
+      3:'Va dans \u00ab\u00a0Mes portes\u00a0\u00bb. La Porte Col\u00e8re t\u2019attend.',
+      4:'Essaie le Tafakkur \u2014 2\u00a0minutes de m\u00e9ditation guid\u00e9e.',
+      5:'Regarde ton \u00ab\u00a0Mon chemin\u00a0\u00bb \u2014 ta progression est d\u00e9j\u00e0 l\u00e0.',
+      6:'Ce soir, fais \u00ab\u00a0Quand vient la nuit\u00a0\u00bb pour la premi\u00e8re fois.',
+      7:'Tu as explor\u00e9 7\u00a0jours. L\u2019app est \u00e0 toi maintenant.'
+    };
+    var _de = document.createElement('div');
+    _de.id = 'decouverte-encart';
+    _de.style.cssText = 'max-width:340px;margin:12px auto;padding:12px;border:1px solid rgba(200,168,75,0.25);border-radius:14px;background:rgba(10,10,10,0.5);text-align:center;';
+    _de.innerHTML = '<div style="font-size:14px;color:#E5E0DC;line-height:1.6;margin-bottom:4px;">' + (_decTextes[_dayN] || '') + '</div>'
+      + '<div style="font-size:11px;color:rgba(200,168,75,0.4);">Jour ' + _dayN + ' sur 7</div>';
+    var _sanctInner = document.querySelector('#view-sanctuaire > div');
+    if (_sanctInner) _sanctInner.insertBefore(_de, _sanctInner.firstChild);
+  })();
   // Stats row — table layout, toujours horizontal
   (function() {
     var sr = document.getElementById('v2-stats-row');
