@@ -3878,7 +3878,7 @@ function _yasirIntention() {
 }
 
 function _yasirChoix(texte) {
-  safeSetItem('colere_intention_prochaine', texte);
+  safeSetItem('colere_intention_prochaine', JSON.stringify({value:texte,ts:Date.now()}));
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   el.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;min-height:100vh;text-align:center;">'
@@ -3889,11 +3889,27 @@ function _yasirChoix(texte) {
 }
 var _colereMode = 'shadid';
 
+function _showIntentionRappel(cb) {
+  var raw = safeGetItem('colere_intention_prochaine');
+  if (!raw) { cb(); return; }
+  var obj; try { obj = JSON.parse(raw); } catch(e) { obj = {value:raw,ts:Date.now()}; }
+  if (!obj.value || (Date.now() - (obj.ts||0)) > 30*86400000) { cb(); return; }
+  _babImmersion = true; var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
+  document.body.classList.add('in-bab-an-nafs');
+  var el = document.getElementById('babAnNafsContent'); if (!el) { cb(); return; }
+  el.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;">'
+    + '<div style="font-family:var(--serif);font-size:18px;color:#E5E0DC;line-height:1.8;max-width:360px;opacity:0;transition:opacity 1s ease;" id="_rappelTxt">Tu m\u2019avais dit\u00a0: \u00ab\u00a0' + escapeHtml(obj.value) + '\u00a0\u00bb.<br>C\u2019est maintenant.</div></div>';
+  requestAnimationFrame(function() { var e = document.getElementById('_rappelTxt'); if (e) e.style.opacity = '1'; });
+  setTimeout(cb, 3000);
+}
+
 function openPorteMutawassit(porte) {
   _colereMode = 'mutawassit';
-  _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
-  document.body.classList.add('in-bab-an-nafs');
-  openItfaaStep1();
+  _showIntentionRappel(function() {
+    _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
+    document.body.classList.add('in-bab-an-nafs');
+    openItfaaStep1();
+  });
 }
 
 function _mutawassitExit() {
@@ -3958,7 +3974,7 @@ function _logEmotionSous(emotion) {
 
 function openPorteShadid(porte) {
   _colereMode = 'shadid';
-  openItfaaOuverture();
+  _showIntentionRappel(function() { openItfaaOuverture(); });
 }
 
 function _halo(el, z) {
