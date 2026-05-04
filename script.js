@@ -4261,27 +4261,41 @@ function _refugeRun(target) {
   window._refugeStop = false;
   if (endEl) endEl.style.display = 'none';
   if (cycleEl) cycleEl.style.display = '';
+  var guided = safeGetItem('refuge_breath_guided') !== '0';
+  function done() { if (endEl) endEl.style.display = ''; if (cycleEl) cycleEl.style.display = 'none'; }
   function tick() {
     if (window._refugeStop) return;
     n++;
     if (countEl) countEl.textContent = n + ' / ' + target;
     arEl.style.opacity = '1';
-    circle.style.transform = 'scale(1.25)';
-    if (phaseEl) phaseEl.textContent = 'Inspire';
-    setTimeout(function() {
-      if (window._refugeStop) return;
-      circle.style.transform = 'scale(1.25)'; if (phaseEl) phaseEl.textContent = 'Retiens';
+    if (guided) {
+      circle.style.transform = 'scale(1.25)';
+      if (phaseEl) phaseEl.textContent = 'Inspire';
       setTimeout(function() {
         if (window._refugeStop) return;
-        circle.style.transform = 'scale(1)'; if (phaseEl) phaseEl.textContent = 'Expire';
-        arEl.style.opacity = '0.3';
+        circle.style.transform = 'scale(1.25)'; if (phaseEl) phaseEl.textContent = 'Retiens';
         setTimeout(function() {
           if (window._refugeStop) return;
-          if (n < target) tick();
-          else { if (endEl) endEl.style.display = ''; if (cycleEl) cycleEl.style.display = 'none'; }
-        }, 8000);
-      }, 7000);
-    }, 4000);
+          circle.style.transform = 'scale(1)'; if (phaseEl) phaseEl.textContent = 'Expire';
+          arEl.style.opacity = '0.3';
+          setTimeout(function() {
+            if (window._refugeStop) return;
+            if (n < target) tick(); else done();
+          }, 8000);
+        }, 7000);
+      }, 4000);
+    } else {
+      circle.style.transform = 'scale(1.15)';
+      if (phaseEl) phaseEl.textContent = 'A\u2019\u00fbdhu bill\u00e2h';
+      setTimeout(function() {
+        if (window._refugeStop) return;
+        circle.style.transform = 'scale(1)'; arEl.style.opacity = '0.3';
+        setTimeout(function() {
+          if (window._refugeStop) return;
+          if (n < target) tick(); else done();
+        }, 2000);
+      }, 4000);
+    }
   }
   tick();
 }
