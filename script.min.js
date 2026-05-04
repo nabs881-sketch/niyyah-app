@@ -8550,6 +8550,7 @@ function onboardRequestGeoloc() {
 }
 function onboardFinish() {
   safeSetItem('niyyah_onboard', '1');
+  if (!safeGetItem('niyyah_install_date')) safeSetItem('niyyah_install_date', String(Date.now()));
   const screen = document.getElementById('onboardScreen');
   if (screen) {
     screen.style.opacity = '0';
