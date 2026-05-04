@@ -4275,7 +4275,7 @@ function openItfaaAction() {
   if (zone === 'mains') {
     html += '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;margin-bottom:24px;">Marche une minute. Respire.</div>'
       + '<div id="_souffleContainer"></div>'
-      + '<div class="itfaa-subtle" style="font-size:11px;max-width:400px;margin:0 auto 24px;">Sounnah g\u00e9n\u00e9rale du mouvement et de la respiration consciente \u2014 pas de hadith sp\u00e9cifique sur cette pratique.</div>'
+      + '<div style="font-size:12px;font-style:italic;color:rgba(200,168,75,0.45);text-align:center;max-width:400px;margin:0 auto 24px;">Marcher apaise le corps. Le c\u0153ur suit.</div>'
       + '<button id="_souffleBtnFait" onclick="_itfaaFaitClick()" style="display:none;width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019ai fait \u2726</button>'
       + '</div>';
     el.innerHTML = html;
