@@ -3578,6 +3578,27 @@ function resetWirdSession(session) {
 // ── BAB AN-NAFS ──
 var _babImmersion = false;
 // BAB_AN_NAFS_AR supprimé — AR intégré dans BAB_AN_NAFS.portes[].nom.ar
+function _checkMuhasabaInvite(container) {
+  var raw = safeGetItem('colere_muhasaba_invite');
+  if (!raw) return false;
+  var inv; try { inv = JSON.parse(raw); } catch(e) { inv = {ts:Date.now()}; }
+  var age = Date.now() - (inv.ts || 0);
+  if (age > 72 * 3600000) { localStorage.removeItem('colere_muhasaba_invite'); return false; }
+  if (age < 6 * 3600000) return false;
+  var snooze = parseInt(safeGetItem('colere_muhasaba_snooze') || '0', 10);
+  if (snooze && (Date.now() - snooze) < 24 * 3600000) return false;
+  var el = container || document.getElementById('babAnNafsContent');
+  if (!el) return false;
+  var c = '#B33A3A';
+  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.8;max-width:380px;margin:0 auto 28px;">Tu as choisi de revenir \u00e0 froid.<br>La porte t\u2019attend.</div>'
+    + '<div style="display:flex;flex-direction:column;gap:12px;max-width:320px;width:100%;">'
+    + '<button onclick="window._muhasabaFromInvite=true;openMuhasabaIntro()" style="width:100%;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Ouvrir Mu\u1e25\u00e2saba</button>'
+    + '<button onclick="safeSetItem(\'colere_muhasaba_snooze\',String(Date.now()));renderBabAnNafs()" style="width:100%;padding:14px;border-radius:12px;border:1px solid ' + c + '33;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;opacity:0.7;">Plus tard</button>'
+    + '</div></div>';
+  return true;
+}
+
 function renderBabAnNafs() {
   document.body.classList.add('in-bab-an-nafs');
   var nb = document.getElementById('nav-bar-v2');
@@ -3594,6 +3615,7 @@ function renderBabAnNafs() {
       }
     }
   } catch(e) {}
+  if (_checkMuhasabaInvite()) return;
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;">'
@@ -4188,7 +4210,7 @@ function openItfaaRefuge() {
   html += '<div class="itfaa-subtle" style="font-size:12px;margin-bottom:4px;">\u2014 ' + escapeHtml(source) + '</div>'
     + '<div class="itfaa-subtle" style="font-size:11px;opacity:0.7;margin-bottom:28px;">' + escapeHtml(grade) + '</div>'
     + '<div style="font-size:13px;color:' + c + ';opacity:0.6;font-style:italic;line-height:1.6;max-width:400px;margin:0 auto 16px;">Quand le calme sera revenu, tu pourras revenir ici \u00e0 froid. La porte t\u2019attend.</div>'
-    + '<button onclick="try{localStorage.setItem(\'colere_muhasaba_invite\',\'true\')}catch(e){}_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');babCompletPorte(\'colere\')" style="width:100%;max-width:320px;padding:12px;border-radius:12px;border:1px solid ' + c + '55;background:none;color:' + c + ';font-size:14px;font-family:var(--serif);cursor:pointer;margin-bottom:12px;">Plus tard, en Mu\u1e25\u00e2saba</button>'
+    + '<button onclick="try{safeSetItem(\'colere_muhasaba_invite\',JSON.stringify({ts:Date.now(),zone:window._colereZone||\'\'}))}catch(e){}_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');babCompletPorte(\'colere\')" style="width:100%;max-width:320px;padding:12px;border-radius:12px;border:1px solid ' + c + '55;background:none;color:' + c + ';font-size:14px;font-family:var(--serif);cursor:pointer;margin-bottom:12px;">Plus tard, en Mu\u1e25\u00e2saba</button>'
     + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');babCompletPorte(\'colere\')" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Sortir</button>'
     + '</div>';
   el.innerHTML = html;
@@ -4407,7 +4429,7 @@ function openMuhasabaCloture() {
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:28px;color:' + c + ';direction:rtl;margin-bottom:16px;">\u0645\u062d\u0627\u0633\u0628\u0629</div>'
     + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.8;max-width:400px;margin:0 auto 16px;">Allah voit ce que tu vois.<br>C\u2019est entre toi et Lui maintenant.</div>'
     + '<div class="itfaa-subtle" style="font-size:12px;max-width:380px;margin:0 auto 32px;">Mur\u00e2qaba \u2014 la vigilance constante du serviteur sous le regard d\u2019Allah.</div>'
-    + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');babCompletPorte(\'colere\')" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Sortir</button>'
+    + '<button onclick="if(window._muhasabaFromInvite){localStorage.removeItem(\'colere_muhasaba_invite\');localStorage.removeItem(\'colere_muhasaba_snooze\');window._muhasabaFromInvite=false;var _b=document.getElementById(\'_muhasabaInviteBanner\');if(_b)_b.remove();}_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');babCompletPorte(\'colere\')" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Sortir</button>'
     + '</div>';
 }
 
@@ -9048,6 +9070,27 @@ function v2GoSanctuaire() {
   }
   v2RefreshStats();
   if (typeof renderDefiCard === 'function') renderDefiCard();
+  // Invitation douce Muḥâsaba si en attente
+  var _mInvRaw = safeGetItem('colere_muhasaba_invite');
+  if (_mInvRaw) {
+    try { var _mInv = JSON.parse(_mInvRaw); } catch(e) { var _mInv = {ts:Date.now()}; }
+    var _mAge = Date.now() - (_mInv.ts || 0);
+    var _mSnooze = parseInt(safeGetItem('colere_muhasaba_snooze') || '0', 10);
+    if (_mAge > 72 * 3600000) { localStorage.removeItem('colere_muhasaba_invite'); }
+    else if (_mAge >= 6 * 3600000 && (!_mSnooze || (Date.now() - _mSnooze) >= 24 * 3600000)) {
+      var _mBanner = document.getElementById('_muhasabaInviteBanner');
+      if (!_mBanner) {
+        _mBanner = document.createElement('div');
+        _mBanner.id = '_muhasabaInviteBanner';
+        _mBanner.style.cssText = 'position:fixed;bottom:80px;left:50%;transform:translateX(-50%);max-width:340px;width:calc(100% - 32px);background:#1a1a1a;border:1px solid #B33A3A44;border-radius:14px;padding:16px;z-index:2000;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,0.5);';
+        _mBanner.innerHTML = '<div style="font-family:var(--serif);font-size:15px;color:#E5E0DC;line-height:1.6;margin-bottom:14px;">Tu as choisi de revenir \u00e0 froid. La porte t\u2019attend.</div>'
+          + '<div style="display:flex;gap:10px;"><button onclick="this.closest(\'#_muhasabaInviteBanner\').remove();v2GoTo(\'bab-an-nafs\');setTimeout(openMuhasabaIntro,300);window._muhasabaFromInvite=true" style="flex:1;padding:12px;border-radius:10px;border:none;background:#B33A3A;color:#000;font-family:var(--serif);font-size:14px;font-weight:600;cursor:pointer;">Mu\u1e25\u00e2saba</button>'
+          + '<button onclick="safeSetItem(\'colere_muhasaba_snooze\',String(Date.now()));this.closest(\'#_muhasabaInviteBanner\').remove()" style="flex:1;padding:12px;border-radius:10px;border:1px solid #B33A3A33;background:none;color:#B33A3A;font-family:var(--serif);font-size:14px;cursor:pointer;opacity:0.7;">Plus tard</button></div>';
+        var _sanctEl = document.getElementById('view-sanctuaire');
+        if (_sanctEl) _sanctEl.appendChild(_mBanner);
+      }
+    }
+  }
 }
 
 function v2GoTo(viewName) {
