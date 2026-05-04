@@ -4113,12 +4113,19 @@ function openItfaaStep1() {
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var c = '#B33A3A';
+  var _zPulse = 'animation:_zonePulse 2.5s ease-in-out infinite;';
   var zones = '<svg viewBox="0 0 100 100" preserveAspectRatio="none" style="position:absolute;top:0;left:0;width:100%;height:100%;">'
+    + '<circle cx="50" cy="16" r="2" fill="rgba(200,118,58,0.5)" style="' + _zPulse + 'cursor:pointer" onclick="_halo(this,\'tete\')"/>'
     + '<circle cx="50" cy="16" r="5" fill="transparent" style="cursor:pointer" onclick="_halo(this,\'tete\')"/>'
-    + '<circle cx="50" cy="33" r="6" fill="transparent" style="cursor:pointer" onclick="_halo(this,\'poitrine\')"/>'
+    + '<circle cx="50" cy="23" r="1.5" fill="rgba(200,118,58,0.5)" style="' + _zPulse + 'cursor:pointer" onclick="_halo(this,\'gorge\')"/>'
     + '<circle cx="50" cy="23" r="3" fill="transparent" style="cursor:pointer" onclick="_halo(this,\'gorge\')"/>'
+    + '<circle cx="50" cy="33" r="2.5" fill="rgba(200,118,58,0.5)" style="' + _zPulse + 'cursor:pointer" onclick="_halo(this,\'poitrine\')"/>'
+    + '<circle cx="50" cy="33" r="6" fill="transparent" style="cursor:pointer" onclick="_halo(this,\'poitrine\')"/>'
+    + '<circle cx="50" cy="47" r="2.5" fill="rgba(200,118,58,0.5)" style="' + _zPulse + 'cursor:pointer" onclick="_halo(this,\'ventre\')"/>'
     + '<circle cx="50" cy="47" r="7" fill="transparent" style="cursor:pointer" onclick="_halo(this,\'ventre\')"/>'
+    + '<circle cx="30" cy="60" r="2" fill="rgba(200,118,58,0.5)" style="' + _zPulse + 'cursor:pointer" onclick="_halo(this,\'mains\')"/>'
     + '<circle cx="30" cy="60" r="5" fill="transparent" style="cursor:pointer" onclick="_halo(this,\'mains\')"/>'
+    + '<circle cx="70" cy="60" r="2" fill="rgba(200,118,58,0.5)" style="' + _zPulse + 'cursor:pointer" onclick="_halo(this,\'mains\')"/>'
     + '<circle cx="70" cy="60" r="5" fill="transparent" style="cursor:pointer" onclick="_halo(this,\'mains\')"/>'
     + '</svg>';
   el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 80px;text-align:center;">'
