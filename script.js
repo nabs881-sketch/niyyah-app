@@ -4208,12 +4208,57 @@ function openItfaaRefuge() {
     html += '<div class="itfaa-subtle" style="font-size:13px;line-height:1.6;max-width:480px;margin:0 auto 16px;">' + escapeHtml(context) + '</div>';
   }
   html += '<div class="itfaa-subtle" style="font-size:12px;margin-bottom:4px;">\u2014 ' + escapeHtml(source) + '</div>'
-    + '<div class="itfaa-subtle" style="font-size:11px;opacity:0.7;margin-bottom:28px;">' + escapeHtml(grade) + '</div>'
+    + '<div class="itfaa-subtle" style="font-size:11px;opacity:0.7;margin-bottom:20px;">' + escapeHtml(grade) + '</div>'
+    + '<div id="_refugeCycle" style="margin-bottom:24px;">'
+    + '<div id="_refugeCircle" style="width:120px;height:120px;border-radius:50%;border:2px solid ' + c + '44;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;transition:transform 4s ease-in-out;"><div id="_refugePhase" style="font-family:var(--serif);font-size:13px;color:' + c + ';opacity:0.7;"></div></div>'
+    + '<div id="_refugeAr" style="font-family:\'Scheherazade New\',serif;font-size:32px;color:' + c + ';direction:rtl;opacity:0;transition:opacity 0.8s ease;">' + ar + '</div>'
+    + '<div id="_refugeCount" style="font-family:var(--serif);font-size:14px;color:' + c + ';opacity:0.5;margin-top:8px;">1 / 7</div>'
+    + '</div>'
+    + '<div id="_refugeEnd" style="display:none;">'
     + '<div style="font-size:13px;color:' + c + ';opacity:0.6;font-style:italic;line-height:1.6;max-width:400px;margin:0 auto 16px;">Quand le calme sera revenu, tu pourras revenir ici \u00e0 froid. La porte t\u2019attend.</div>'
+    + '<button onclick="_refugeExtend(33)" style="width:100%;max-width:320px;padding:10px;border-radius:10px;border:1px solid ' + c + '22;background:none;color:' + c + ';font-family:var(--serif);font-size:12px;cursor:pointer;opacity:0.5;margin-bottom:16px;">Continuer \u00d733</button>'
     + '<button onclick="try{safeSetItem(\'colere_muhasaba_invite\',JSON.stringify({ts:Date.now(),zone:window._colereZone||\'\'}))}catch(e){}_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');babCompletPorte(\'colere\')" style="width:100%;max-width:320px;padding:12px;border-radius:12px;border:1px solid ' + c + '55;background:none;color:' + c + ';font-size:14px;font-family:var(--serif);cursor:pointer;margin-bottom:12px;">Plus tard, en Mu\u1e25\u00e2saba</button>'
     + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');babCompletPorte(\'colere\')" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Sortir</button>'
-    + '</div>';
+    + '</div></div>';
   el.innerHTML = html;
+  // Cycle respiratoire 4-7-8 × target
+  _refugeRun(7);
+}
+function _refugeRun(target) {
+  var n = 0, circle = document.getElementById('_refugeCircle'), arEl = document.getElementById('_refugeAr'),
+      countEl = document.getElementById('_refugeCount'), phaseEl = document.getElementById('_refugePhase'),
+      endEl = document.getElementById('_refugeEnd'), cycleEl = document.getElementById('_refugeCycle');
+  if (!circle || !arEl) return;
+  window._refugeStop = false;
+  function tick() {
+    if (window._refugeStop) return;
+    n++;
+    if (countEl) countEl.textContent = n + ' / ' + target;
+    arEl.style.opacity = '1';
+    circle.style.transform = 'scale(1.25)';
+    if (phaseEl) phaseEl.textContent = 'Inspire';
+    setTimeout(function() {
+      if (window._refugeStop) return;
+      circle.style.transform = 'scale(1.25)'; if (phaseEl) phaseEl.textContent = 'Retiens';
+      setTimeout(function() {
+        if (window._refugeStop) return;
+        circle.style.transform = 'scale(1)'; if (phaseEl) phaseEl.textContent = 'Expire';
+        arEl.style.opacity = '0.3';
+        setTimeout(function() {
+          if (window._refugeStop) return;
+          if (n < target) tick();
+          else { if (endEl) endEl.style.display = ''; if (cycleEl) cycleEl.style.display = 'none'; }
+        }, 8000);
+      }, 7000);
+    }, 4000);
+  }
+  tick();
+}
+function _refugeExtend(t) {
+  var endEl = document.getElementById('_refugeEnd'), cycleEl = document.getElementById('_refugeCycle');
+  if (endEl) endEl.style.display = 'none'; if (cycleEl) cycleEl.style.display = '';
+  window._refugeStop = true;
+  setTimeout(function() { _refugeRun(t); }, 100);
 }
 
 function openMuhasabaIntro() {
