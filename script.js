@@ -4330,13 +4330,36 @@ function _muhasabaGuidee() {
   setTimeout(function() { openMuhasabaEmotion(); }, 3000);
 }
 function openMuhasabaClassique() {
-  // TODO: 4 questions selon al-Ghazâlî
+  window._muhasabaClassique = {};
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#B33A3A';
+  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;max-width:600px;margin:0 auto;">'
+    + '<div style="font-family:var(--serif);font-size:24px;color:#C8A84A;margin-bottom:24px;">Bismill\u00e2h</div>'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:16px;font-style:italic;line-height:1.6;max-width:440px;margin:0 auto 24px;">\u00ab\u00a0Examine-toi avant qu\u2019on t\u2019examine.\u00a0\u00bb \u2014 al-Mu\u1e25\u00e2sib\u00ee</div>'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:16px;line-height:1.6;max-width:440px;margin:0 auto 32px;">Quatre questions vont t\u2019\u00eatre pos\u00e9es. Pas plus. Pas moins.</div>'
+    + '<button onclick="_muhasabaClassiqueQ1()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Commencer</button>'
+    + '</div>';
+}
+function _muhasabaClassiqueQ1() {
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#B33A3A';
+  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;max-width:600px;margin:0 auto;text-align:center;">'
+    + '<div style="font-family:var(--serif);font-size:22px;color:#C8A84A;margin-bottom:24px;">Le droit d\u2019All\u00e2h</div>'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.6;max-width:480px;margin:0 auto 16px;">Dans cette col\u00e8re, ai-je manqu\u00e9 \u00e0 un droit qu\u2019All\u00e2h a sur moi\u00a0?</div>'
+    + '<div class="itfaa-subtle" style="font-size:14px;line-height:1.6;max-width:440px;margin:0 auto 24px;">Ai-je oubli\u00e9 Sa pr\u00e9sence\u00a0? Ai-je pr\u00e9f\u00e9r\u00e9 ma satisfaction \u00e0 la Sienne\u00a0?</div>'
+    + '<textarea id="_mcQ1" rows="4" placeholder="\u00c9cris ce qui vient. Personne ne lira." style="width:100%;max-width:480px;padding:14px;border-radius:10px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;line-height:1.6;resize:vertical;margin-bottom:24px;"></textarea>'
+    + '<button onclick="window._muhasabaClassique.q1=(document.getElementById(\'_mcQ1\')||{}).value||\'\';_muhasabaClassiqueQ2()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>'
+    + '</div>';
+}
+function _muhasabaClassiqueQ2() {
+  // TODO: écran 3 — Ḥaqq an-nafs
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var c = '#B33A3A';
   el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
-    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:12px;">Voie classique</div>'
-    + '<div class="itfaa-body" style="font-size:16px;line-height:1.7;max-width:380px;margin:0 auto 32px;">En pr\u00e9paration.<br>Les 4\u00a0questions d\u2019al-Ghaz\u00e2l\u00ee arrivent bient\u00f4t.</div>'
+    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:12px;">\u00c9cran suivant en pr\u00e9paration.</div>'
     + '<button onclick="openMuhasabaIntro()" style="padding:14px 28px;border-radius:12px;border:1px solid ' + c + '44;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">Retour</button>'
     + '</div>';
 }
@@ -11866,6 +11889,8 @@ window._refugeSkip            = _refugeSkip;
 window.openMuhasabaIntro      = openMuhasabaIntro;
 window._muhasabaGuidee        = _muhasabaGuidee;
 window.openMuhasabaClassique  = openMuhasabaClassique;
+window._muhasabaClassiqueQ1   = _muhasabaClassiqueQ1;
+window._muhasabaClassiqueQ2   = _muhasabaClassiqueQ2;
 window.openMuhasabaEmotion    = openMuhasabaEmotion;
 window.openMuhasabaBesoin = openMuhasabaBesoin;
 window.openMuhasabaSchema     = openMuhasabaSchema;
