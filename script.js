@@ -4663,7 +4663,29 @@ function _muhasabaEngage() {
   if (typeof Notification !== 'undefined' && Notification.permission === 'default') {
     try { Notification.requestPermission(); } catch(e) {}
   }
+  var _emos = window._muhasabaReponses.emotion || [];
+  if (Array.isArray(_emos) ? _emos.some(function(e){return e.toLowerCase()==='honte';}) : String(_emos).toLowerCase()==='honte') {
+    _muhasabaCarteHonte(); return;
+  }
   openMuhasabaCloture();
+}
+
+function _muhasabaCarteHonte() {
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#B33A3A';
+  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;max-width:600px;margin:0 auto;text-align:center;">'
+    + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:20px;">Aller plus loin</div>'
+    + '<div style="border:1px solid ' + c + '33;border-radius:14px;padding:20px;max-width:480px;margin:0 auto 28px;text-align:center;">'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;margin-bottom:16px;">La honte se gu\u00e9rit dans la tawba, pas dans la cachette.</div>'
+    + '<div class="itfaa-body" style="font-size:14px;font-style:italic;line-height:1.6;margin-bottom:6px;">\u00ab\u00a0All\u00e2h aime ceux qui se repentent souvent.\u00a0\u00bb</div>'
+    + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:16px;">\u2014 Coran 2:222</div>'
+    + '<div class="itfaa-body" style="font-size:14px;font-style:italic;line-height:1.6;margin-bottom:6px;">Le Proph\u00e8te \uFDFA a dit\u00a0: \u00ab\u00a0Si vous ne p\u00e9chiez pas, All\u00e2h ferait dispara\u00eetre votre groupe et le remplacerait par un peuple qui p\u00e8che, demande pardon, et qu\u2019Il pardonne.\u00a0\u00bb</div>'
+    + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:16px;">\u2014 Muslim 2748</div>'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;">All\u00e2h veut que tu reviennes vers Lui. Ta honte n\u2019est pas un obstacle, c\u2019est un chemin.</div>'
+    + '</div>'
+    + '<button onclick="openMuhasabaCloture()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019avance avec \u00e7a</button>'
+    + '</div>';
 }
 
 function openMuhasabaCloture() {
