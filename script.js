@@ -3971,7 +3971,7 @@ function openItfaaEmotionSous() {
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var c = '#B33A3A';
-  var emotions = ['Triste','Bless\u00e9','Impuissant','Trahi','Je ne sais pas'];
+  var emotions = ['Triste','Bless\u00e9','Impuissant','Trahi','\u00c9puis\u00e9','Je ne sais pas'];
   var backBtn = '<button onclick="openItfaaStep1()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
   var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
     + backBtn
@@ -4428,7 +4428,7 @@ function openMuhasabaEmotion() {
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var c = '#B33A3A';
-  var emotions = ['Honte','Peur','Tristesse','Injustice','Impuissance','Trahison','Culpabilit\u00e9'];
+  var emotions = ['Honte','Peur','Tristesse','Injustice','Impuissance','Trahison','Culpabilit\u00e9','\u00c9puisement'];
   var backBtn = '<button onclick="openColereChoix()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
   var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
     + backBtn
@@ -5115,7 +5115,7 @@ _cureJourRenderers.colere_3 = function(el) {
 
 _cureJourRenderers.colere_4 = function(el) {
   var c = '#B33A3A';
-  var emotions = ['Honte','Peur','Tristesse','Injustice','Impuissance','Trahison','Culpabilit\u00e9'];
+  var emotions = ['Honte','Peur','Tristesse','Injustice','Impuissance','Trahison','Culpabilit\u00e9','\u00c9puisement'];
   var backBtn = '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
   var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;">'
     + backBtn
