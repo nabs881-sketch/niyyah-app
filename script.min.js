@@ -4667,6 +4667,7 @@ function _muhasabaEngage() {
   var _emoL = Array.isArray(_emos) ? _emos.map(function(e){return e.toLowerCase();}) : [String(_emos).toLowerCase()];
   if (_emoL.indexOf('honte') !== -1) { _muhasabaCarteHonte(); return; }
   if (_emoL.indexOf('peur') !== -1) { _muhasabaCartePeur(); return; }
+  if (_emoL.indexOf('tristesse') !== -1) { _muhasabaCarteTristesse(); return; }
   openMuhasabaCloture();
 }
 
@@ -4700,6 +4701,28 @@ function _muhasabaCartePeur() {
     + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:16px;">\u2014 Coran 2:286</div>'
     + '<div class="itfaa-body" style="font-size:14px;font-style:italic;line-height:1.6;margin-bottom:6px;">Le Proph\u00e8te \uFDFA disait\u00a0: \u00ab\u00a0All\u00e2humma inn\u00ee a\u2019\u00fbdhu bika min al-\u1e25amm wa-l-\u1e25azan.\u00a0\u00bb \u2014 All\u00e2h, je cherche refuge contre le souci et la tristesse.</div>'
     + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:16px;">\u2014 Bukh\u00e2r\u00ee 6363</div>'
+    + '</div>'
+    + '<button onclick="openMuhasabaCloture()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019avance avec \u00e7a</button>'
+    + '</div>';
+}
+
+function _muhasabaCarteTristesse() {
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#B33A3A';
+  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;max-width:600px;margin:0 auto;text-align:center;">'
+    + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:20px;">Aller plus loin</div>'
+    + '<div style="border:1px solid ' + c + '33;border-radius:14px;padding:20px;max-width:480px;margin:0 auto 28px;text-align:center;">'
+    + '<div class="itfaa-body" style="font-size:14px;font-style:italic;line-height:1.6;margin-bottom:6px;">Ya\u2019q\u00fbb (\u2019alayhi as-sal\u00e2m) a dit\u00a0:</div>'
+    + '<div class="itfaa-body" style="font-size:14px;font-style:italic;line-height:1.6;margin-bottom:6px;">\u00ab\u00a0Je ne me plains de mon affliction et de ma tristesse qu\u2019\u00e0 All\u00e2h.\u00a0\u00bb</div>'
+    + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:12px;">\u2014 Coran 12:86</div>'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;margin-bottom:16px;">Tu peux faire pareil. Maintenant.</div>'
+    + '<div class="itfaa-body" style="font-size:14px;font-style:italic;line-height:1.6;margin-bottom:6px;">Le Proph\u00e8te \uFDFA a dit\u00a0: \u00ab\u00a0Jamais un musulman ne fait la du\u2019\u00e2\u2019 de Y\u00fbnus dans un moment de d\u00e9tresse sans qu\u2019All\u00e2h n\u2019y r\u00e9ponde.\u00a0\u00bb</div>'
+    + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:16px;">\u2014 Tirmidh\u00ee 3505</div>'
+    + '<div style="font-family:\'Scheherazade New\',serif;font-size:28px;color:' + c + ';direction:rtl;line-height:1.8;margin-bottom:8px;">\u0644\u064e\u0627 \u0625\u0650\u0644\u064e\u0670\u0647\u064e \u0625\u0650\u0644\u0651\u064e\u0627 \u0623\u064e\u0646\u0652\u062a\u064e \u0633\u064f\u0628\u0652\u062d\u064e\u0627\u0646\u064e\u0643\u064e \u0625\u0650\u0646\u0651\u0650\u064a \u0643\u064f\u0646\u0652\u062a\u064f \u0645\u0650\u0646\u064e \u0627\u0644\u0638\u0651\u064e\u0627\u0644\u0650\u0645\u0650\u064a\u0646\u064e</div>'
+    + '<div class="itfaa-body" style="font-size:14px;font-style:italic;margin-bottom:4px;">L\u00e2 il\u00e2ha ill\u00e2 anta, sub\u1e25\u00e2naka, inn\u00ee kuntu min a\u1e93-\u1e93\u00e2lim\u00een</div>'
+    + '<div style="font-size:13px;color:rgba(200,168,75,0.5);margin-bottom:4px;">\u00ab\u00a0Il n\u2019y a de divinit\u00e9 que Toi. Gloire \u00e0 Toi. J\u2019ai \u00e9t\u00e9 parmi les injustes.\u00a0\u00bb</div>'
+    + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:0;">\u2014 Coran 21:87</div>'
     + '</div>'
     + '<button onclick="openMuhasabaCloture()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019avance avec \u00e7a</button>'
     + '</div>';
