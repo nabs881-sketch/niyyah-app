@@ -8440,6 +8440,44 @@ function obSelectMotiv(el, value) {
   var btn = document.getElementById('obMotivBtn');
   if (btn) { btn.style.opacity = '1'; btn.style.pointerEvents = 'auto'; }
 }
+function renderCaverne() {
+  var el = document.getElementById('onboard-caverne');
+  var txt = document.getElementById('caverne-text');
+  var btn = document.getElementById('caverne-continue');
+  if (!el || !txt) return;
+  el.style.display = 'flex';
+  txt.innerHTML = '';
+  if (btn) btn.style.display = 'none';
+  var phrases = [
+    'Il \u00e9tait dans une caverne.',
+    'Le monde dehors \u00e9tait bruyant.',
+    'Les gens se disputaient, commer\u00e7aient, oubliaient.',
+    'Lui, il \u00e9tait assis dans le noir.',
+    'Pas pour fuir.',
+    'Pour \u00e9couter.',
+    'Et un jour, une voix est venue.',
+    'Elle n\u2019a pas dit : sois fort.',
+    'Elle a dit : lis.',
+    'Iqra\u2019.',
+    'Toi aussi, tu es ici pour \u00e9couter.'
+  ];
+  var i = 0;
+  function next() {
+    if (i >= phrases.length) {
+      if (btn) btn.style.display = '';
+      return;
+    }
+    var p = document.createElement('div');
+    p.style.cssText = 'opacity:0;transition:opacity 0.8s ease;margin-bottom:8px;';
+    p.textContent = phrases[i];
+    txt.appendChild(p);
+    requestAnimationFrame(function() { p.style.opacity = '1'; });
+    i++;
+    setTimeout(next, 2000);
+  }
+  next();
+}
+
 function onboardRender() {
   requestAnimationFrame(function() {
     var content = document.getElementById('onboardContent');
