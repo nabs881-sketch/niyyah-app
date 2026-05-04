@@ -5387,9 +5387,46 @@ function openCureJour(porte, num) {
   document.body.classList.add('in-bab-an-nafs');
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
+  if (num >= 2 && !window._cureEpisodeAsked) { _cureEpisodeCheck(porte, num); return; }
+  window._cureEpisodeAsked = false;
   if (safeGetItem('cure_mode') === 'doucement') { _cureDoucement(num, '_cureJourSave_' + porte + '_' + num); return; }
   var renderer = _cureJourRenderers[porte + '_' + num];
   if (renderer) renderer(el);
+}
+function _cureEpisodeCheck(porte, num) {
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#B33A3A';
+  var opts = ['Aucun','L\u00e9ger','Moyen','Fort'];
+  var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
+    + '<div style="font-family:var(--serif);font-size:16px;color:#C8A84A;margin-bottom:8px;">Depuis hier, comment \u00e7a s\u2019est pass\u00e9\u00a0?</div>'
+    + '<div style="font-size:14px;color:rgba(255,255,255,0.4);margin-bottom:24px;">As-tu eu un \u00e9pisode de col\u00e8re\u00a0?</div>'
+    + '<div style="display:flex;flex-direction:column;gap:10px;max-width:340px;width:100%;margin-bottom:20px;">';
+  for (var i = 0; i < opts.length; i++) {
+    html += '<button data-ep="' + opts[i] + '" onclick="_cureEpSelect(this)" style="width:100%;padding:12px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;transition:background 0.2s;">' + opts[i] + '</button>';
+  }
+  html += '</div>'
+    + '<button id="_cureEpBtn" disabled onclick="_cureEpSave(' + num + ',\'' + porte + '\')" style="width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;opacity:0.3;">Continuer</button>'
+    + '</div>';
+  el.innerHTML = html;
+}
+function _cureEpSelect(btn) {
+  document.querySelectorAll('[data-ep]').forEach(function(b) { b.style.background = '#B33A3A0d'; b.style.fontWeight = '400'; });
+  btn.style.background = 'rgba(200,168,75,0.15)'; btn.style.fontWeight = '600';
+  btn.classList.add('_epSel');
+  var cb = document.getElementById('_cureEpBtn');
+  if (cb) { cb.disabled = false; cb.style.opacity = '1'; }
+}
+function _cureEpSave(num, porte) {
+  var sel = document.querySelector('[data-ep]._epSel');
+  var val = sel ? sel.getAttribute('data-ep') : '';
+  try {
+    var log = JSON.parse(safeGetItem('cure_episodes_log') || '[]');
+    log.push({jour:num, intensite:val, ts:Date.now()});
+    safeSetItem('cure_episodes_log', JSON.stringify(log));
+  } catch(e) {}
+  window._cureEpisodeAsked = true;
+  openCureJour(porte, num);
 }
 
 function _cureJourSave(porte, num) {
@@ -12713,6 +12750,9 @@ window._hideAideBtn           = _hideAideBtn;
 window.openColereSeuilTherapeute = openColereSeuilTherapeute;
 window._resolveRef            = _resolveRef;
 window._getCureJourData       = _getCureJourData;
+window._cureEpisodeCheck      = _cureEpisodeCheck;
+window._cureEpSelect          = _cureEpSelect;
+window._cureEpSave            = _cureEpSave;
 window._cureDoucement         = _cureDoucement;
 window._cureDepistage         = _cureDepistage;
 window._depToggle             = _depToggle;
