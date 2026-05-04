@@ -4099,9 +4099,21 @@ function _mutawassitDhikr() {
     + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:20px;">\u1e24asbiya-Ll\u00e2hu \u2014 \u00d77</div>'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:28px;color:#C8A84A;direction:rtl;line-height:1.8;max-width:480px;margin:0 auto 12px;">\u062d\u064e\u0633\u0652\u0628\u0650\u064a\u064e \u0627\u0644\u0644\u0651\u064e\u0647\u064f \u0644\u064e\u0627 \u0625\u0650\u0644\u064e\u0670\u0647\u064e \u0625\u0650\u0644\u0651\u064e\u0627 \u0647\u064f\u0648\u064e \u0639\u064e\u0644\u064e\u064a\u0652\u0647\u0650 \u062a\u064e\u0648\u064e\u0643\u0651\u064e\u0644\u0652\u062a\u064f \u0648\u064e\u0647\u064f\u0648\u064e \u0631\u064e\u0628\u0651\u064f \u0627\u0644\u0652\u0639\u064e\u0631\u0652\u0634\u0650 \u0627\u0644\u0652\u0639\u064e\u0638\u0650\u064a\u0645\u0650</div>'
     + '<div style="font-size:16px;font-style:italic;color:rgba(200,168,75,0.6);line-height:1.6;max-width:420px;margin:0 auto 10px;">\u1e24asbiya-Ll\u00e2hu l\u00e2 il\u00e2ha ill\u00e2 huwa, \u2019alayhi tawakkaltu wa huwa rabbu-l-\u2019arshi-l-\u2019a\u1e93\u012bm</div>'
-    + '<div class="itfaa-body" style="font-size:14px;line-height:1.6;max-width:400px;margin:0 auto 24px;">All\u00e2h me suffit, il n\u2019est de divinit\u00e9 que Lui. \u00c0 Lui je m\u2019en remets, et Il est le Seigneur du Tr\u00f4ne immense.</div>'
-    + '<button onclick="_mutawassitEau()" style="width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>'
+    + '<div class="itfaa-body" style="font-size:14px;line-height:1.6;max-width:400px;margin:0 auto 12px;">All\u00e2h me suffit, il n\u2019est de divinit\u00e9 que Lui. \u00c0 Lui je m\u2019en remets, et Il est le Seigneur du Tr\u00f4ne immense.</div>'
+    + '<div style="font-size:12px;font-style:italic;color:rgba(200,168,75,0.45);line-height:1.5;max-width:400px;margin:0 auto 20px;">Coran 9:129. Le Proph\u00e8te \uFDFA a dit\u00a0: \u00ab\u00a0Celui qui le dit sept fois, All\u00e2h lui suffira.\u00a0\u00bb \u2014 Ab\u00fb D\u00e2w\u00fbd 5081, sahih.</div>'
+    + '<div id="_hasbCount" style="font-family:var(--serif);font-size:20px;color:#C8A84A;margin-bottom:12px;">0 / 7</div>'
+    + '<button id="_hasbBtn" onclick="_hasbIncr()" style="width:100%;max-width:340px;padding:14px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:none;color:rgba(200,168,75,0.7);font-size:14px;font-family:var(--serif);cursor:pointer;">+1</button>'
     + '</div>';
+  window._hasbN = 0;
+}
+function _hasbIncr() {
+  window._hasbN = (window._hasbN || 0) + 1;
+  var ce = document.getElementById('_hasbCount');
+  if (ce) ce.textContent = window._hasbN + ' / 7';
+  if (window._hasbN >= 7) {
+    var b = document.getElementById('_hasbBtn');
+    if (b) { b.textContent = 'C\u2019est fait'; b.onclick = function() { _mutawassitEau(); }; b.style.background = '#a3372a'; b.style.color = '#fff'; b.style.fontWeight = '600'; b.style.border = 'none'; }
+  }
 }
 function _mutawassitEau() {
   var el = document.getElementById('babAnNafsContent');
@@ -12662,6 +12674,7 @@ window._mutSudSave            = _mutSudSave;
 window._itfaaFaitClick        = _itfaaFaitClick;
 window._mutawassitPause       = _mutawassitPause;
 window._mutawassitDhikr       = _mutawassitDhikr;
+window._hasbIncr              = _hasbIncr;
 window._mutawassitEau         = _mutawassitEau;
 window._itfaaSalat            = _itfaaSalat;
 window.openItfaaEmotionSous   = openItfaaEmotionSous;
