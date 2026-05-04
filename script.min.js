@@ -4672,6 +4672,7 @@ function _muhasabaEngage() {
   if (_emoL.indexOf('impuissance') !== -1) { _muhasabaCarteImpuissance(); return; }
   if (_emoL.indexOf('trahison') !== -1) { _muhasabaCarteTrahison(); return; }
   if (_emoL.indexOf('culpabilit\u00e9') !== -1) { _muhasabaCarteCulpabilite(); return; }
+  if (_emoL.indexOf('\u00e9puisement') !== -1) { _muhasabaCarteEpuisement(); return; }
   openMuhasabaCloture();
 }
 
@@ -4706,6 +4707,33 @@ function _muhasabaCartePeur() {
     + '<div class="itfaa-body" style="font-size:14px;font-style:italic;line-height:1.6;margin-bottom:6px;">Le Proph\u00e8te \uFDFA disait\u00a0: \u00ab\u00a0All\u00e2humma inn\u00ee a\u2019\u00fbdhu bika min al-\u1e25amm wa-l-\u1e25azan.\u00a0\u00bb \u2014 All\u00e2h, je cherche refuge contre le souci et la tristesse.</div>'
     + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:16px;">\u2014 Bukh\u00e2r\u00ee 6363</div>'
     + '</div>'
+    + '<button onclick="openMuhasabaCloture()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019avance avec \u00e7a</button>'
+    + '</div>';
+}
+
+function _muhasabaCarteEpuisement() {
+  // Log + compter sur 7j
+  try {
+    var log = JSON.parse(safeGetItem('muhasaba_emotion_log') || '[]');
+    log.push({emotion:'\u00e9puisement',ts:Date.now()});
+    if (log.length > 200) log = log.slice(-200);
+    safeSetItem('muhasaba_emotion_log', JSON.stringify(log));
+    var cutoff = Date.now() - 7 * 86400000;
+    var count = log.filter(function(e){ return e.emotion === '\u00e9puisement' && e.ts > cutoff; }).length;
+  } catch(e) { var count = 0; }
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#B33A3A';
+  var hadith = '<div class="itfaa-body" style="font-size:14px;font-style:italic;line-height:1.6;margin-bottom:6px;">Le Proph\u00e8te \uFDFA a dit\u00a0: \u00ab\u00a0Ton corps a un droit sur toi.\u00a0\u00bb</div>'
+    + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:16px;">\u2014 Bukh\u00e2r\u00ee 1968</div>';
+  var msg = count >= 3
+    ? '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;margin-bottom:16px;">Tu as nomm\u00e9 l\u2019\u00e9puisement plusieurs fois cette semaine. Ce n\u2019est plus juste de la fatigue passag\u00e8re. All\u00e2h n\u2019aime pas qu\u2019on n\u00e9glige son corps.</div>'
+    + '<div style="font-family:var(--serif);font-size:16px;font-weight:bold;font-style:italic;color:#C8A84A;line-height:1.6;">Parle \u00e0 un m\u00e9decin. L\u2019\u00e9puisement r\u00e9p\u00e9t\u00e9 m\u00e9rite une attention m\u00e9dicale.</div>'
+    : '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;">Tu es \u00e9puis\u00e9. Cette col\u00e8re est un sympt\u00f4me, pas une faute. Soigne d\u2019abord ton corps et ton sommeil.</div>';
+  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;max-width:600px;margin:0 auto;text-align:center;">'
+    + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:20px;">Aller plus loin</div>'
+    + '<div style="border:1px solid ' + c + '33;border-radius:14px;padding:20px;max-width:480px;margin:0 auto 28px;text-align:center;">'
+    + hadith + msg + '</div>'
     + '<button onclick="openMuhasabaCloture()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019avance avec \u00e7a</button>'
     + '</div>';
 }
