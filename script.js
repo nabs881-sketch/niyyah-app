@@ -3964,8 +3964,9 @@ function _mutawassitExit() {
     + '<div id="_mutEx2" style="font-family:var(--serif);font-size:16px;color:rgba(200,168,75,0.7);margin-top:12px;opacity:0;transition:opacity 0.8s ease;">Allah voit.</div>'
     + '<div id="_mutExMore" style="margin-top:28px;opacity:0;transition:opacity 0.8s ease;max-width:320px;width:100%;">'
     + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.45);margin-bottom:14px;">Tu veux creuser un peu plus\u00a0?</div>'
-    + '<button onclick="clearTimeout(window._mutExTimer);openItfaaRefuge()" style="width:100%;padding:14px;border-radius:12px;border:1px solid ' + c + '33;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;margin-bottom:10px;">Faire un Refuge \u00d77</button>'
-    + '<button onclick="clearTimeout(window._mutExTimer);openMuhasabaIntro()" style="width:100%;padding:14px;border-radius:12px;border:1px solid ' + c + '33;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">Faire ma Mu\u1e25\u00e2saba</button>'
+    + '<button onclick="openItfaaRefuge()" style="width:100%;padding:14px;border-radius:12px;border:1px solid ' + c + '33;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;margin-bottom:10px;">Faire un Refuge \u00d77</button>'
+    + '<button onclick="openMuhasabaIntro()" style="width:100%;padding:14px;border-radius:12px;border:1px solid ' + c + '33;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;margin-bottom:10px;">Faire ma Mu\u1e25\u00e2saba</button>'
+    + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');v2GoSanctuaire()" style="width:100%;padding:14px;border-radius:12px;border:1px solid rgba(200,168,75,0.2);background:none;color:rgba(200,168,75,0.5);font-family:var(--serif);font-size:14px;cursor:pointer;">Sortir maintenant</button>'
     + '</div></div>';
   requestAnimationFrame(function() { var e = document.getElementById('_mutEx1'); if (e) e.style.opacity = '1'; });
   setTimeout(function() { var e = document.getElementById('_mutEx2'); if (e) e.style.opacity = '1'; }, 500);
@@ -3982,7 +3983,6 @@ function _mutawassitExit() {
     completions = completions.filter(function(t) { return t > Date.now() - 30 * 86400000; });
     safeSetItem('colere_completions', JSON.stringify(completions));
   } catch(e) {}
-  window._mutExTimer = setTimeout(function() { _babImmersion = false; _hideAideBtn(); var _nb = document.getElementById('nav-bar-v2'); if (_nb) _nb.classList.remove('hidden-immersion'); v2GoSanctuaire(); }, 5000);
 }
 
 function _itfaaFaitClick() {
