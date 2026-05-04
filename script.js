@@ -10074,6 +10074,24 @@ function v2GoSanctuaire() {
   }
   v2RefreshStats();
   if (typeof renderDefiCard === 'function') renderDefiCard();
+  // Encart Cure en cours
+  (function() {
+    var _oldCb = document.getElementById('_cureBanner'); if (_oldCb) _oldCb.remove();
+    try {
+      var _cc = JSON.parse(safeGetItem('cure_colere') || '{}');
+      var _cd = _cc.current_day;
+      if (_cd && typeof _cd === 'number' && _cd >= 1 && _cd <= 7 && !_cc.completed) {
+        var _cb = document.createElement('div');
+        _cb.id = '_cureBanner';
+        _cb.style.cssText = 'max-width:340px;margin:12px auto;padding:14px;border:1px solid rgba(200,168,75,0.25);border-radius:14px;background:rgba(10,10,10,0.5);text-align:center;';
+        _cb.innerHTML = '<div style="font-family:var(--serif);font-size:14px;color:#E5E0DC;margin-bottom:4px;">Cure col\u00e8re \u2014 Jour ' + _cd + ' sur 7</div>'
+          + '<div style="font-size:12px;font-style:italic;color:rgba(255,255,255,0.35);margin-bottom:10px;">Continuer d\u00e8s que tu peux.</div>'
+          + '<button onclick="openCureColere()" style="padding:10px 24px;border-radius:10px;border:none;background:#a3372a;color:#fff;font-family:var(--serif);font-size:13px;font-weight:600;cursor:pointer;">Reprendre la Cure</button>';
+        var _sanctInner = document.querySelector('#view-sanctuaire > div');
+        if (_sanctInner) _sanctInner.insertBefore(_cb, _sanctInner.firstChild);
+      }
+    } catch(e) {}
+  })();
   // Invitation douce Muḥâsaba si en attente
   var _mInvRaw = safeGetItem('colere_muhasaba_invite');
   if (_mInvRaw) {
