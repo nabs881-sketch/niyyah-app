@@ -4029,6 +4029,7 @@ function openPorteShadid(porte) {
 function _halo(el, z) {
   el.setAttribute('fill', 'rgba(200,168,75,0.3)');
   window._colereZone = z;
+  try { var _sl = JSON.parse(safeGetItem('somatic_log') || '[]'); _sl.push({zone:z,ts:Date.now()}); if (_sl.length > 30) _sl = _sl.slice(-30); safeSetItem('somatic_log', JSON.stringify(_sl)); } catch(e) {}
   var _lblFr = {tete:'La m\u00e2choire',gorge:'La gorge',poitrine:'La poitrine',ventre:'Le ventre',mains:'Les mains'};
   var _lblAr = {tete:'\u0627\u0644\u0652\u0641\u064e\u0643\u0651',gorge:'\u0627\u0644\u0652\u062d\u064e\u0644\u0652\u0642',poitrine:'\u0627\u0644\u0635\u0651\u064e\u062f\u0652\u0631',ventre:'\u0627\u0644\u0652\u0628\u064e\u0637\u0652\u0646',mains:'\u0627\u0644\u0652\u064a\u064e\u062f'};
   var _ov = document.createElement('div');
