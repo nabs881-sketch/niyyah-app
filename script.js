@@ -8449,17 +8449,17 @@ function renderCaverne() {
   txt.innerHTML = '';
   if (btn) btn.style.display = 'none';
   var phrases = [
-    'Il \u00e9tait dans une caverne.',
-    'Le monde dehors \u00e9tait bruyant.',
-    'Les gens se disputaient, commer\u00e7aient, oubliaient.',
-    'Lui, il \u00e9tait assis dans le noir.',
-    'Pas pour fuir.',
-    'Pour \u00e9couter.',
-    'Et un jour, une voix est venue.',
-    'Elle n\u2019a pas dit : sois fort.',
-    'Elle a dit : lis.',
-    'Iqra\u2019.',
-    'Toi aussi, tu es ici pour \u00e9couter.'
+    'Un homme va au travail.',
+    'Tous les matins, le m\u00eame chemin.',
+    'Tous les matins, le m\u00eame pas press\u00e9.',
+    'Un matin, il passe devant une caverne ouverte.',
+    '\u00c0 l\u2019int\u00e9rieur\u00a0: de l\u2019or, des diamants, des bijoux empil\u00e9s.',
+    'Une pancarte simple\u00a0: \u00ab\u00a0\u00c0 DONNER.\u00a0\u00bb',
+    'Il ne s\u2019arr\u00eate pas.',
+    'Il a un travail. Des choses \u00e0 faire.',
+    'Il continue.',
+    'Cette caverne, elle existe. Elle est ouverte 5\u00a0fois par jour.',
+    'Niyyah, c\u2019est l\u2019app qui te dit\u00a0: arr\u00eate-toi.'
   ];
   var i = 0;
   function next() {
