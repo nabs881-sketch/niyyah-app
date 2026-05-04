@@ -6057,6 +6057,13 @@ _cureJourRenderers.colere_5 = function(el) {
     + '</div>'
     // 3. EXERCICE
     + '<div style="text-align:center;margin-bottom:40px;">'
+    + '<div style="text-align:center;margin-bottom:40px;padding:20px;border-radius:14px;border:1px solid rgba(200,168,75,0.2);background:rgba(200,168,74,0.06);">'
+    + '<div style="font-family:var(--serif);font-size:16px;color:#C8A84A;margin-bottom:12px;">Le Proph\u00e8te \uFDFA dans cette \u00e9preuve</div>'
+    + '<div style="font-size:14px;font-style:italic;color:#E5E0DC;line-height:1.6;margin-bottom:8px;">Sa douceur avec \u2019\u00c2\u2019isha (RA) quand il \u00e9tait fatigu\u00e9. \u2014 Muslim 2440</div>'
+    + '<div style="font-size:14px;color:#E5E0DC;line-height:1.6;">Le Proph\u00e8te \uFDFA savait que la fatigue rend dur. Il choisissait alors la douceur, pas la justice imm\u00e9diate. Toi aussi, quand tu es fatigu\u00e9, choisis le \u1e25ilm.</div>'
+    + '</div>'
+    // 3. EXERCICE
+    + '<div style="text-align:center;margin-bottom:40px;">'
     + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.5;margin-bottom:12px;">Exercice du jour</div>'
     + '<div class="itfaa-body" style="font-family:var(--serif);font-size:16px;line-height:1.7;max-width:420px;margin:0 auto 12px;">Le <em style="color:' + c + ';">\u1e25ilm</em> = la douceur qui a le pouvoir de la col\u00e8re mais choisit la patience. Pas la mollesse.</div>'
     + '<div style="font-size:14px;font-style:italic;color:rgba(200,168,75,0.55);line-height:1.6;max-width:420px;margin:0 auto 16px;">Note importante\u00a0: certaines col\u00e8res ne doivent pas \u00eatre \u00e9teintes, mais port\u00e9es calmement \u00e0 la personne qui doit les entendre. Le \u1e25ilm n\u2019est pas le silence devant l\u2019injustice \u2014 c\u2019est la ma\u00eetrise qui rend la parole juste.</div>'
