@@ -8356,19 +8356,16 @@ const ONBOARD_SLIDES = [
       + '<button class="onboard-skip" onclick="onboardFinish()">' + t('onboard_skip') + '</button>'
       + '</div>';
   },
-  // Slide 4 — Ton chemin
+  // Slide 4 — Ton chemin (4 cartes)
   () => '<div class="onboard-anim">'
     + '<div class="onboard-title">'+t('ob_chemin_title')+'</div>'
     + '<div class="onboard-sub" style="margin-bottom:20px;">'+t("ob_chemin_sub")+'</div>'
-    + '<div class="ob-chemin-grid">'
-    + '<div class="ob-chemin-item"><svg viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"><path d="M16 6v12l6 4"/><circle cx="16" cy="16" r="13"/></svg><div class="ob-chemin-label">'+t('ob_chemin_serie')+'</div><div class="ob-chemin-desc">'+t('ob_chemin_serie_d')+'</div></div>'
-    + '<div class="ob-chemin-item"><svg viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"><path d="M16 4c-1 4-4 7-8 8 4 1 7 4 8 8 1-4 4-7 8-8-4-1-7-4-8-8z"/><path d="M8 26c3-1 5-3 6-6 1 3 3 5 6 6"/></svg><div class="ob-chemin-label">'+t('ob_chemin_nafs')+'</div><div class="ob-chemin-desc">'+t('ob_chemin_nafs_d')+'</div></div>'
-    + '<div class="ob-chemin-item"><svg viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"><rect x="4" y="6" width="24" height="20" rx="3"/><path d="M4 12h24M10 6v4M22 6v4"/></svg><div class="ob-chemin-label">'+t('ob_chemin_carte')+'</div><div class="ob-chemin-desc">'+t('ob_chemin_carte_d')+'</div></div>'
-    + '<div class="ob-chemin-item"><svg viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"><path d="M16 4l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><div class="ob-chemin-label">'+t('ob_chemin_defi')+'</div><div class="ob-chemin-desc">'+t('ob_chemin_defi_d')+'</div></div>'
-    + '<div class="ob-chemin-item"><svg viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"><path d="M24 8a12 12 0 1 0 0 16A9 9 0 0 1 24 8z"/></svg><div class="ob-chemin-label">'+t('ob_chemin_bilan')+'</div><div class="ob-chemin-desc">'+t('ob_chemin_bilan_d')+'</div></div>'
-    + '<div class="ob-chemin-item"><svg viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"><path d="M22 6a10 10 0 1 0 0 16A8 8 0 0 1 22 6z"/></svg><div class="ob-chemin-label">'+t('ob_chemin_tawba')+'</div><div class="ob-chemin-desc">'+t('ob_chemin_tawba_d')+'</div></div>'
+    + '<div style="display:flex;flex-direction:column;gap:12px;max-width:340px;margin:0 auto 20px;">'
+    + '<div style="border:1px solid rgba(200,168,75,0.2);border-radius:14px;padding:14px;" id="ob-chemin-card-1"></div>'
+    + '<div style="border:1px solid rgba(200,168,75,0.2);border-radius:14px;padding:14px;" id="ob-chemin-card-2"></div>'
+    + '<div style="border:1px solid rgba(200,168,75,0.2);border-radius:14px;padding:14px;" id="ob-chemin-card-3"></div>'
+    + '<div style="border:1px solid rgba(200,168,75,0.2);border-radius:14px;padding:14px;" id="ob-chemin-card-4"></div>'
     + '</div>'
-    + ''
     + '<div style="margin-bottom:20px;text-align:center;"><label style="font-family:var(--serif);font-size:13px;color:var(--t3);display:block;margin-bottom:6px;">'+t("ob_chemin_prenom")+'</label>'
     + '<input type="text" maxlength="30" placeholder="Ton pr\u00e9nom..." style="width:100%;max-width:260px;box-sizing:border-box;padding:10px 14px;background:rgba(200,168,75,0.04);border:1px solid rgba(200,168,75,0.2);border-radius:12px;color:var(--t1);font-size:14px;font-family:var(--sans);outline:none;text-align:center;" oninput="safeSetItem(\'niyyah_prenom\',this.value.trim())"></div>'
     + '<button class="onboard-btn" onclick="onboardNext()">'+t('onboard_next')+'</button>'
