@@ -3810,7 +3810,9 @@ function _renderThermometre() {
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:14px;color:rgba(255,255,255,0.3);direction:rtl;">Shad\u00eed</div>'
     + '</button>'
     + '</div>'
-    + '<div style="text-align:center;margin-top:32px;color:rgba(200,168,75,0.3);font-size:14px;letter-spacing:4px;margin-bottom:16px;">\u2E3B \u2726 \u2E3B</div>'
+    + '<div style="text-align:center;margin-top:28px;color:rgba(255,255,255,0.12);font-size:14px;letter-spacing:4px;margin-bottom:14px;">\u2E3B \u2726 \u2E3B</div>'
+    + '<button onclick="openMuhasabaIntro()" style="width:100%;max-width:340px;margin:0 auto 20px;display:block;padding:14px;border-radius:12px;border:1px solid rgba(200,168,75,0.2);background:#0a0a0a;cursor:pointer;text-align:center;"><div style="font-size:15px;color:rgba(240,234,214,0.6);">Je viens \u00e0 froid.</div><div style="font-size:12px;font-style:italic;color:rgba(255,255,255,0.3);margin-top:4px;">Pour examiner une col\u00e8re pass\u00e9e.</div></button>'
+    + '<div style="text-align:center;margin-top:8px;color:rgba(200,168,75,0.3);font-size:14px;letter-spacing:4px;margin-bottom:16px;">\u2E3B \u2726 \u2E3B</div>'
     + '<button onclick="openCureColere()" style="width:100%;max-width:340px;margin:0 auto;display:block;padding:14px 24px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:rgba(200,168,75,0.05);cursor:pointer;text-align:center;"><div style="font-family:var(--serif);font-size:16px;color:#C8A84A;">Travailler ma col\u00e8re en profondeur</div><div style="font-size:12px;color:rgba(255,255,255,0.35);font-style:italic;margin-top:4px;">Une d\u00e9marche de 7 jours \u00b7 Riy\u00e2\u1e0dat an-nafs</div></button>'
     + '</div>';
 }
