@@ -4188,6 +4188,7 @@ function openItfaaAction() {
     return;
   }
   // Zones standard (tête/gorge/poitrine/ventre)
+  html += '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.5;margin-bottom:12px;">L\u2019action proph\u00e9tique</div>';
   html += '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.7;max-width:520px;margin:0 auto 20px;">' + escapeHtml(act.fr) + '</div>';
   if (ar) {
     html += '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:' + c + ';direction:rtl;text-align:center;line-height:1.8;margin:16px auto 6px;max-width:520px;opacity:0.85;">' + ar + '</div>';
