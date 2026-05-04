@@ -4307,6 +4307,18 @@ function _refugeSkip() {
 
 function openMuhasabaIntro() {
   _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
+  document.body.classList.add('in-bab-an-nafs');
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#B33A3A';
+  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
+    + '<div style="font-family:var(--serif);font-size:22px;color:' + c + ';margin-bottom:28px;">Comment veux-tu faire ta mu\u1e25\u00e2saba\u00a0?</div>'
+    + '<div style="display:flex;flex-direction:column;gap:14px;max-width:340px;width:100%;">'
+    + '<button onclick="_muhasabaGuidee()" style="padding:20px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '08;cursor:pointer;text-align:center;"><div style="font-family:var(--serif);font-size:18px;color:' + c + ';">Voie guid\u00e9e</div><div style="font-size:13px;color:#E5E0DC;opacity:0.6;margin-top:4px;">Parcours en 8\u00a0\u00e9tapes</div></button>'
+    + '<button onclick="openMuhasabaClassique()" style="padding:20px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '08;cursor:pointer;text-align:center;"><div style="font-family:var(--serif);font-size:18px;color:' + c + ';">Voie classique</div><div style="font-size:13px;color:#E5E0DC;opacity:0.6;margin-top:4px;">4\u00a0questions selon al-Ghaz\u00e2l\u00ee</div></button>'
+    + '</div></div>';
+}
+function _muhasabaGuidee() {
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var c = '#B33A3A';
@@ -4316,6 +4328,17 @@ function openMuhasabaIntro() {
     + '<div class="itfaa-subtle" style="font-size:13px;margin-top:16px;animation:_zoneFade 3s ease forwards;">Niyyah \u2014 l\u2019intention juste qui pr\u00e9c\u00e8de l\u2019acte.</div>'
     + '</div>';
   setTimeout(function() { openMuhasabaEmotion(); }, 3000);
+}
+function openMuhasabaClassique() {
+  // TODO: 4 questions selon al-Ghazâlî
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#B33A3A';
+  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
+    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:12px;">Voie classique</div>'
+    + '<div class="itfaa-body" style="font-size:16px;line-height:1.7;max-width:380px;margin:0 auto 32px;">En pr\u00e9paration.<br>Les 4\u00a0questions d\u2019al-Ghaz\u00e2l\u00ee arrivent bient\u00f4t.</div>'
+    + '<button onclick="openMuhasabaIntro()" style="padding:14px 28px;border-radius:12px;border:1px solid ' + c + '44;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">Retour</button>'
+    + '</div>';
 }
 
 function openMuhasabaEmotion() {
@@ -11841,6 +11864,8 @@ window.openItfaaRefuge        = openItfaaRefuge;
 window._refugeExtend          = _refugeExtend;
 window._refugeSkip            = _refugeSkip;
 window.openMuhasabaIntro      = openMuhasabaIntro;
+window._muhasabaGuidee        = _muhasabaGuidee;
+window.openMuhasabaClassique  = openMuhasabaClassique;
 window.openMuhasabaEmotion    = openMuhasabaEmotion;
 window.openMuhasabaBesoin = openMuhasabaBesoin;
 window.openMuhasabaSchema     = openMuhasabaSchema;
