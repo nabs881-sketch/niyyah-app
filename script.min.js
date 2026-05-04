@@ -5139,6 +5139,46 @@ function _cureJ7FinaleSucces() {
     + '</div>';
 }
 
+function _cureDepistage() {
+  _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
+  document.body.classList.add('in-bab-an-nafs');
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#B33A3A';
+  var qs = ['Tes col\u00e8res sont-elles disproportionn\u00e9es par rapport au d\u00e9clencheur\u00a0?','Reviennent-elles plus de 3 fois par semaine\u00a0?','Continuent-elles depuis plus de 6 mois\u00a0?'];
+  var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;max-width:600px;margin:0 auto;text-align:center;">'
+    + '<div style="font-family:var(--serif);font-size:22px;color:#C8A84A;margin-bottom:12px;">Avant de commencer</div>'
+    + '<div class="itfaa-body" style="font-size:15px;margin-bottom:28px;">Trois questions rapides.</div>';
+  for (var i = 0; i < qs.length; i++) {
+    html += '<div style="max-width:340px;margin:0 auto 20px;text-align:left;">'
+      + '<div class="itfaa-body" style="font-family:var(--serif);font-size:14px;line-height:1.6;margin-bottom:10px;">' + qs[i] + '</div>'
+      + '<div style="display:flex;gap:10px;">'
+      + '<button data-dq="' + i + '" data-val="oui" onclick="_depToggle(this)" style="flex:1;padding:10px;border-radius:10px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;transition:background 0.2s;">Oui</button>'
+      + '<button data-dq="' + i + '" data-val="non" onclick="_depToggle(this)" style="flex:1;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:none;color:rgba(255,255,255,0.55);font-family:var(--serif);font-size:14px;cursor:pointer;transition:background 0.2s;">Non</button>'
+      + '</div></div>';
+  }
+  html += '<button onclick="_depSave()" style="width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;margin-top:8px;">Continuer</button>'
+    + '</div>';
+  el.innerHTML = html;
+}
+function _depToggle(btn) {
+  var q = btn.getAttribute('data-dq');
+  document.querySelectorAll('[data-dq="' + q + '"]').forEach(function(b) { b.style.background = 'none'; b.style.fontWeight = '400'; });
+  btn.style.background = btn.getAttribute('data-val') === 'oui' ? '#B33A3A22' : 'rgba(255,255,255,0.08)';
+  btn.style.fontWeight = '600';
+  btn.classList.add('_depSel');
+}
+function _depSave() {
+  var r = {};
+  for (var i = 0; i < 3; i++) {
+    var sel = document.querySelector('[data-dq="' + i + '"]._depSel');
+    r['q' + (i + 1)] = sel ? sel.getAttribute('data-val') : '';
+  }
+  r.ts = Date.now();
+  safeSetItem('cure_depistage', JSON.stringify(r));
+  _cureChoixMode();
+}
+
 function _cureChoixMode() {
   _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
   document.body.classList.add('in-bab-an-nafs');
@@ -5206,7 +5246,7 @@ function _cureDoucement(jour, saveFn) {
 
 function openCureColere() {
   // Calibrage mode si pas encore choisi
-  if (!safeGetItem('cure_mode')) { _cureChoixMode(); return; }
+  if (!safeGetItem('cure_mode')) { if (!safeGetItem('cure_depistage')) { _cureDepistage(); return; } _cureChoixMode(); return; }
   var cure = {}; try { cure = JSON.parse(safeGetItem('cure_colere') || '{}'); } catch(e) {}
   var day = cure.current_day || 1;
   if (cure.completed === true) day = 'complete';
@@ -12231,6 +12271,9 @@ window.openColereSeuilTherapeute = openColereSeuilTherapeute;
 window._resolveRef            = _resolveRef;
 window._getCureJourData       = _getCureJourData;
 window._cureDoucement         = _cureDoucement;
+window._cureDepistage         = _cureDepistage;
+window._depToggle             = _depToggle;
+window._depSave               = _depSave;
 window._cureChoixMode         = _cureChoixMode;
 window.openCureColere         = openCureColere;
 window._showWaswasaScreen     = _showWaswasaScreen;
