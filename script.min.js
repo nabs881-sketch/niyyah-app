@@ -4467,6 +4467,7 @@ function _mcCarteRetour() {
 }
 function _mcAfterRetour() {
   if ((window._muhasabaClassique.q2 || '').trim()) { _mcCarteGeste(); return; }
+  if ((window._muhasabaClassique.q3 || '').trim()) { _mcCarteSoin(); return; }
   _muhasabaClassiqueFin();
 }
 function _mcCarteGeste() {
@@ -4493,8 +4494,38 @@ function _mcCarteGeste() {
     + '</div>'
     + '<button id="_mcMsgBtn" onclick="document.getElementById(\'_mcMsgWrap\').style.display=\'\';this.style.display=\'none\';" style="padding:10px 20px;border-radius:10px;border:1px solid ' + c + '22;background:none;color:' + c + ';font-family:var(--serif);font-size:13px;cursor:pointer;opacity:0.6;">\u00c9crire un message</button>'
     + '</div>'
-    + '<button onclick="safeSetItem(\'muhasaba_amorce_repar\',(document.getElementById(\'_mcAmorceText\')||{}).value||\'\');var _m=(document.getElementById(\'_mcMsgText\')||{}).value||\'\';if(_m&&_m!==\'Salam, je voulais te dire\u2026\')safeSetItem(\'muhasaba_message_ecrit\',_m);_muhasabaClassiqueFin()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;margin-top:20px;">Continuer</button>'
+    + '<button onclick="safeSetItem(\'muhasaba_amorce_repar\',(document.getElementById(\'_mcAmorceText\')||{}).value||\'\');var _m=(document.getElementById(\'_mcMsgText\')||{}).value||\'\';if(_m&&_m!==\'Salam, je voulais te dire\u2026\')safeSetItem(\'muhasaba_message_ecrit\',_m);_mcAfterGeste()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;margin-top:20px;">Continuer</button>'
     + '</div>';
+}
+
+function _mcAfterGeste() {
+  if ((window._muhasabaClassique.q3 || '').trim()) { _mcCarteSoin(); return; }
+  _muhasabaClassiqueFin();
+}
+function _mcCarteSoin() {
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#B33A3A';
+  var choix = ['Je vais dormir t\u00f4t','Je fais wu\u1e0d\u00fb\u2019 et je m\u2019allonge','Si j\u2019ai un proche qui me fait du bien, je l\u2019appelle. Sinon, j\u2019\u00e9cris une lettre que je n\u2019enverrai pas.','Je m\u2019arr\u00eate et je respire'];
+  var btns = '';
+  for (var i = 0; i < choix.length; i++) {
+    btns += '<button data-soin="' + i + '" onclick="this.classList.toggle(\'_schemaOn\');this.style.background=this.classList.contains(\'_schemaOn\')?\'rgba(200,168,75,0.15)\':\'#B33A3A0d\';this.style.borderColor=this.classList.contains(\'_schemaOn\')?\'rgba(200,168,75,0.5)\':\'#B33A3A44\';" style="width:100%;padding:12px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;text-align:left;line-height:1.5;transition:background 0.2s,border-color 0.2s;">' + choix[i] + '</button>';
+  }
+  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;max-width:600px;margin:0 auto;text-align:center;">'
+    + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:20px;">Le soin de l\u2019\u00e2me</div>'
+    + '<div style="border:1px solid ' + c + '33;border-radius:14px;padding:20px;max-width:480px;margin:0 auto 24px;text-align:center;">'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;margin-bottom:14px;">Ton \u00e2me a \u00e9t\u00e9 n\u00e9glig\u00e9e. Une chose, aujourd\u2019hui, pour elle.</div>'
+    + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);line-height:1.6;margin-bottom:16px;">\u00ab\u00a0Ton corps a un droit sur toi.\u00a0\u00bb \u2014 Bukh\u00e2r\u00ee 1968</div>'
+    + '<div style="display:flex;flex-direction:column;gap:10px;">' + btns + '</div>'
+    + '</div>'
+    + '<button onclick="_mcSoinSave()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>'
+    + '</div>';
+}
+function _mcSoinSave() {
+  var sel = document.querySelectorAll('[data-soin]._schemaOn');
+  var arr = []; sel.forEach(function(b) { arr.push(b.textContent); });
+  safeSetItem('muhasaba_soin_nafs', JSON.stringify(arr));
+  _muhasabaClassiqueFin();
 }
 
 function _mcAmorce(btn) {
@@ -12237,6 +12268,9 @@ window._mcCarteRetour         = _mcCarteRetour;
 window._mcAfterRetour         = _mcAfterRetour;
 window._mcCarteGeste          = _mcCarteGeste;
 window._mcAmorce              = _mcAmorce;
+window._mcAfterGeste          = _mcAfterGeste;
+window._mcCarteSoin           = _mcCarteSoin;
+window._mcSoinSave            = _mcSoinSave;
 window._muhasabaClassiqueFin  = _muhasabaClassiqueFin;
 window.openMuhasabaEmotion    = openMuhasabaEmotion;
 window._muhasabaToggleEmo     = _muhasabaToggleEmo;
