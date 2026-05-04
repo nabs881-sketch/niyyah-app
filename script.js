@@ -4477,10 +4477,22 @@ function _mcCarteGeste() {
     + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:20px;">Le geste vers l\u2019autre</div>'
     + '<div style="border:1px solid ' + c + '33;border-radius:14px;padding:20px;max-width:480px;margin:0 auto 28px;text-align:center;">'
     + '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;margin-bottom:14px;">Tu as choisi quand lui parler. Voici comment.</div>'
-    + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);line-height:1.6;">\u00ab\u00a0Celui qui croit en All\u00e2h et au Jour Dernier, qu\u2019il dise du bien ou qu\u2019il se taise.\u00a0\u00bb \u2014 Bukh\u00e2r\u00ee 6018</div>'
+    + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);line-height:1.6;margin-bottom:16px;">\u00ab\u00a0Celui qui croit en All\u00e2h et au Jour Dernier, qu\u2019il dise du bien ou qu\u2019il se taise.\u00a0\u00bb \u2014 Bukh\u00e2r\u00ee 6018</div>'
+    + '<div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:12px;">'
+    + '<button onclick="_mcAmorce(this)" style="padding:8px 14px;border-radius:10px;border:1px solid ' + c + '33;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:13px;cursor:pointer;">Je viens te demander pardon</button>'
+    + '<button onclick="_mcAmorce(this)" style="padding:8px 14px;border-radius:10px;border:1px solid ' + c + '33;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:13px;cursor:pointer;">J\u2019ai eu tort, \u00e9coute-moi</button>'
+    + '<button onclick="_mcAmorce(this)" style="padding:8px 14px;border-radius:10px;border:1px solid ' + c + '33;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:13px;cursor:pointer;">Je veux qu\u2019on en parle calmement</button>'
+    + '<button onclick="_mcAmorce(this)" style="padding:8px 14px;border-radius:10px;border:1px solid ' + c + '33;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:13px;cursor:pointer;">Si tu ne veux pas parler maintenant, je t\u2019attendrai</button>'
     + '</div>'
-    + '<button onclick="_muhasabaClassiqueFin()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>'
+    + '<textarea id="_mcAmorceText" rows="2" placeholder="Ton amorce\u2026" style="width:100%;max-width:440px;padding:12px;border-radius:10px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;resize:vertical;"></textarea>'
+    + '</div>'
+    + '<button onclick="safeSetItem(\'muhasaba_amorce_repar\',(document.getElementById(\'_mcAmorceText\')||{}).value||\'\');_muhasabaClassiqueFin()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;margin-top:20px;">Continuer</button>'
     + '</div>';
+}
+
+function _mcAmorce(btn) {
+  var ta = document.getElementById('_mcAmorceText');
+  if (ta) ta.value = btn.textContent;
 }
 
 function _muhasabaClassiqueFin() {
@@ -12217,6 +12229,7 @@ window._mcReparation          = _mcReparation;
 window._mcCarteRetour         = _mcCarteRetour;
 window._mcAfterRetour         = _mcAfterRetour;
 window._mcCarteGeste          = _mcCarteGeste;
+window._mcAmorce              = _mcAmorce;
 window._muhasabaClassiqueFin  = _muhasabaClassiqueFin;
 window.openMuhasabaEmotion    = openMuhasabaEmotion;
 window._muhasabaToggleEmo     = _muhasabaToggleEmo;
