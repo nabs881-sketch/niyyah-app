@@ -5393,6 +5393,29 @@ function openCureJour(porte, num) {
   var renderer = _cureJourRenderers[porte + '_' + num];
   if (renderer) { renderer(el); _injectCureProgress(num); }
 }
+function _cureActionTexte(jour) {
+  var t = {
+    1:'Demain, note en 1 ligne chaque col\u00e8re que tu observes.',
+    2:'Demain, quand la col\u00e8re monte, pose-toi les 5 questions : qui, o\u00f9, quand, comment, pourquoi.',
+    3:'Demain, choisis le silence une fois \u2014 30 secondes, rien de plus.',
+    4:'Demain, quand la col\u00e8re vient, cherche l\u2019\u00e9motion en dessous.',
+    5:'Demain, trouve une situation et choisis le \u1e25ilm plut\u00f4t que la r\u00e9action.',
+    6:'Demain, pense \u00e0 une personne et dis int\u00e9rieurement : \u00ab\u00a0je l\u00e2che\u00a0\u00bb.'
+  };
+  return t[jour] || '';
+}
+function _cureForDemainHtml(jour, saveFn) {
+  var txt = _cureActionTexte(jour);
+  if (!txt) return '';
+  window._cureForDemainSave = function() {
+    try { safeSetItem('cure_action_du_jour', JSON.stringify({jour:jour, action:txt, ts:Date.now()})); } catch(e) {}
+    if (typeof window[saveFn] === 'function') window[saveFn]();
+  };
+  return '<div style="border:1px solid rgba(200,168,75,0.25);border-radius:14px;padding:14px;max-width:340px;margin:0 auto 16px;text-align:center;">'
+    + '<div style="font-family:var(--serif);font-size:16px;color:#C8A84A;margin-bottom:8px;">Pour demain</div>'
+    + '<div style="font-size:14px;color:#E5E0DC;line-height:1.6;">' + txt + '</div></div>'
+    + '<button onclick="_cureForDemainSave()" style="width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">C\u2019est not\u00e9</button>';
+}
 function _injectCureProgress(current) {
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
@@ -5764,7 +5787,7 @@ _cureJourRenderers.colere_1 = function(el) {
     + '<div class="itfaa-body" style="font-size:13px;font-style:italic;margin-bottom:6px;">' + escapeHtml(duaa.translit) + '</div>'
     + '<div class="itfaa-body" style="font-size:14px;margin-bottom:6px;">' + escapeHtml(duaa.fr) + '</div>'
     + '<div class="itfaa-subtle" style="font-size:11px;margin-bottom:16px;">\u2014 ' + escapeHtml(duaa.source) + '</div>'
-    + '<button onclick="_cureColereJ1Save()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Je m\u2019engage pour demain</button>'
+    + _cureForDemainHtml(1, '_cureColereJ1Save')
     + '</div>'
     + '</div>';
   el.innerHTML = html;
@@ -5851,7 +5874,7 @@ _cureJourRenderers.colere_2 = function(el) {
     + '<div class="itfaa-body" style="font-size:13px;font-style:italic;margin-bottom:6px;">' + escapeHtml(duaaFitna.translit) + '</div>'
     + '<div class="itfaa-body" style="font-size:14px;margin-bottom:6px;">' + escapeHtml(duaaFitna.fr) + '</div>'
     + '<div class="itfaa-subtle" style="font-size:11px;margin-bottom:16px;">\u2014 ' + escapeHtml(duaaFitna.source) + '</div>'
-    + '<button onclick="_cureColereJ2Save()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Je m\u2019engage pour demain</button>'
+    + _cureForDemainHtml(2, '_cureColereJ2Save')
     + '</div>'
     + '</div>';
   el.innerHTML = html;
@@ -5901,7 +5924,7 @@ _cureJourRenderers.colere_3 = function(el) {
     + '<div class="itfaa-body" style="font-size:12px;font-style:italic;margin-bottom:6px;">' + escapeHtml(istighfar.translit) + '</div>'
     + '<div class="itfaa-body" style="font-size:14px;margin-bottom:6px;">' + escapeHtml(istighfar.fr) + '</div>'
     + '<div class="itfaa-subtle" style="font-size:11px;margin-bottom:16px;">\u2014 ' + escapeHtml(istighfar.source) + '</div>'
-    + '<button onclick="_cureColereJ3Save()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Je m\u2019engage pour demain</button>'
+    + _cureForDemainHtml(3, '_cureColereJ3Save')
     + '</div>'
     + '</div>';
   el.innerHTML = html;
@@ -5960,7 +5983,7 @@ _cureJourRenderers.colere_4 = function(el) {
     + '<div style="text-align:center;margin-bottom:20px;padding:20px;border-radius:14px;border:1px solid ' + c + '22;background:' + c + '08;">'
     + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.5;margin-bottom:12px;">Cl\u00f4ture</div>'
     + '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:' + c + ';line-height:1.7;max-width:400px;margin:0 auto 16px;">\u00d4 Allah, montre-moi ce qui se cache sous ma col\u00e8re.</div>'
-    + '<button onclick="_cureColereJ4Save()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Je m\u2019engage pour demain</button>'
+    + _cureForDemainHtml(4, '_cureColereJ4Save')
     + '</div>'
     + '</div>';
   el.innerHTML = html;
@@ -6012,7 +6035,7 @@ _cureJourRenderers.colere_5 = function(el) {
     + '<div class="itfaa-body" style="font-size:13px;font-style:italic;margin-bottom:6px;">' + escapeHtml(salat.translit) + '</div>'
     + '<div class="itfaa-body" style="font-size:14px;margin-bottom:6px;">' + escapeHtml(salat.fr) + '</div>'
     + '<div class="itfaa-subtle" style="font-size:12px;margin-bottom:16px;">\u00c0 r\u00e9p\u00e9ter 10 fois, lentement.</div>'
-    + '<button onclick="_cureColereJ5Save()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Je m\u2019engage pour demain</button>'
+    + _cureForDemainHtml(5, '_cureColereJ5Save')
     + '</div>'
     + '</div>';
   el.innerHTML = html;
@@ -6062,7 +6085,7 @@ _cureJourRenderers.colere_6 = function(el) {
     + '<div class="itfaa-body" style="font-size:13px;font-style:italic;margin-bottom:6px;">' + escapeHtml(duaaPardon.translit) + '</div>'
     + '<div class="itfaa-body" style="font-size:14px;margin-bottom:6px;">' + escapeHtml(duaaPardon.fr) + '</div>'
     + '<div class="itfaa-subtle" style="font-size:11px;margin-bottom:16px;">\u2014 ' + escapeHtml(duaaPardon.source) + '</div>'
-    + '<button onclick="_cureColereJ6Save()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Je m\u2019engage pour demain</button>'
+    + _cureForDemainHtml(6, '_cureColereJ6Save')
     + '</div>'
     + '</div>';
   el.innerHTML = html;
