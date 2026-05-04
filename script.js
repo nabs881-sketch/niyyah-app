@@ -9577,6 +9577,15 @@ function v2OpenSettings() {
             </select>
           </div>
         </div>
+        <div style="padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.04);">
+          <div style="display:flex;justify-content:space-between;align-items:center;cursor:pointer;" onclick="var v=safeGetItem('refuge_breath_guided')!=='0'?'0':'1';safeSetItem('refuge_breath_guided',v);var d=this.querySelector('[data-tog]');if(d)d.style.background=v==='1'?'#C8A84A':'#444';">
+            <div>
+              <div style="font-size:14px;color:rgba(240,234,214,0.7);">Refuge\u00a0: respiration guid\u00e9e (4-7-8)</div>
+              <div style="font-size:12px;color:rgba(255,255,255,0.35);margin-top:2px;">D\u00e9coche pour r\u00e9p\u00e9ter \u00e0 ton rythme.</div>
+            </div>
+            <div data-tog style="width:36px;height:20px;border-radius:10px;background:${safeGetItem('refuge_breath_guided')!=='0'?'#C8A84A':'#444'};transition:background 0.2s;"></div>
+          </div>
+        </div>
         <div style="padding:14px 16px;cursor:pointer;"
           onclick="if(typeof confirmReset==='function'){confirmReset();document.getElementById('v2-settings-sheet').remove();}">
           <div style="display:flex;justify-content:space-between;align-items:center;">
