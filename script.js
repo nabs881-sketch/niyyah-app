@@ -4380,14 +4380,22 @@ function _muhasabaClassiqueQ3() {
     + '</div>';
 }
 function _muhasabaClassiqueQ4() {
-  // TODO: écran 5 — al-'Azm (résolution)
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var c = '#B33A3A';
-  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
-    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:12px;">\u00c9cran suivant en pr\u00e9paration.</div>'
+  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;max-width:600px;margin:0 auto;text-align:center;">'
+    + '<div style="font-family:var(--serif);font-size:22px;color:#C8A84A;margin-bottom:16px;">Demander pardon, et r\u00e9parer</div>'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:16px;line-height:1.6;max-width:440px;margin:0 auto 28px;">Maintenant que tu vois, deux gestes restent.</div>'
+    + '<div id="_mcIstighfar" style="border:1px solid rgba(200,168,75,0.3);border-radius:14px;padding:16px;max-width:480px;margin:0 auto 24px;text-align:center;">'
+    + '<div style="font-family:var(--serif);font-size:14px;color:#C8A84A;margin-bottom:12px;">L\u2019istighf\u00e2r \u2014 entre toi et All\u00e2h</div>'
+    + '<div style="font-family:\'Scheherazade New\',serif;font-size:28px;color:' + c + ';direction:rtl;line-height:1.8;margin-bottom:8px;">\u0623\u064e\u0633\u0652\u062a\u064e\u063a\u0652\u0641\u0650\u0631\u064f \u0627\u0644\u0644\u0651\u064e\u0647\u064e \u0627\u0644\u0652\u0639\u064e\u0638\u0650\u064a\u0645\u064e \u0648\u064e\u0623\u064e\u062a\u064f\u0648\u0628\u064f \u0625\u0650\u0644\u064e\u064a\u0652\u0647\u0650</div>'
+    + '<div class="itfaa-body" style="font-size:16px;font-style:italic;line-height:1.6;margin-bottom:16px;">Astaghfirull\u00e2h al-a\u1e93\u00eem wa at\u00fbbu ilayh.</div>'
+    + '<button onclick="this.textContent=\'\u2713 Acquitt\u00e9\';this.style.opacity=\'0.4\';this.disabled=true;var s2=document.getElementById(\'_mcSection2\');if(s2)s2.style.display=\'\';" style="padding:12px 28px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">J\u2019ai dit l\u2019istighf\u00e2r</button>'
+    + '</div>'
+    + '<div id="_mcSection2" style="display:none;">'
+    + '<div class="itfaa-body" style="font-size:14px;line-height:1.6;max-width:440px;margin:0 auto 20px;color:rgba(200,168,75,0.6);font-style:italic;">\u00c9cran suivant en pr\u00e9paration.</div>'
     + '<button onclick="openMuhasabaIntro()" style="padding:14px 28px;border-radius:12px;border:1px solid ' + c + '44;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">Retour</button>'
-    + '</div>';
+    + '</div></div>';
 }
 
 function openMuhasabaEmotion() {
