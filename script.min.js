@@ -3940,12 +3940,18 @@ function _mutawassitExit() {
   // Afficher message AVANT babCompletPorte (qui appelle renderBabAnNafs)
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
+  var c = '#B33A3A';
   el.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;">'
     + '<div id="_mutEx1" style="font-family:var(--serif);font-size:18px;color:#E5E0DC;line-height:1.8;opacity:0;transition:opacity 0.8s ease;">La vague redescend.</div>'
     + '<div id="_mutEx2" style="font-family:var(--serif);font-size:16px;color:rgba(200,168,75,0.7);margin-top:12px;opacity:0;transition:opacity 0.8s ease;">Allah voit.</div>'
-    + '</div>';
+    + '<div id="_mutExMore" style="margin-top:28px;opacity:0;transition:opacity 0.8s ease;max-width:320px;width:100%;">'
+    + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.45);margin-bottom:14px;">Tu veux creuser un peu plus\u00a0?</div>'
+    + '<button onclick="clearTimeout(window._mutExTimer);openItfaaRefuge()" style="width:100%;padding:14px;border-radius:12px;border:1px solid ' + c + '33;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;margin-bottom:10px;">Faire un Refuge \u00d77</button>'
+    + '<button onclick="clearTimeout(window._mutExTimer);openMuhasabaIntro()" style="width:100%;padding:14px;border-radius:12px;border:1px solid ' + c + '33;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">Faire ma Mu\u1e25\u00e2saba</button>'
+    + '</div></div>';
   requestAnimationFrame(function() { var e = document.getElementById('_mutEx1'); if (e) e.style.opacity = '1'; });
   setTimeout(function() { var e = document.getElementById('_mutEx2'); if (e) e.style.opacity = '1'; }, 500);
+  setTimeout(function() { var e = document.getElementById('_mutExMore'); if (e) e.style.opacity = '1'; }, 1500);
   // Incrémenter compteurs manuellement (sans renderBabAnNafs)
   try {
     var data = JSON.parse(safeGetItem('niyyah_bab_an_nafs') || '{}');
@@ -3958,7 +3964,7 @@ function _mutawassitExit() {
     completions = completions.filter(function(t) { return t > Date.now() - 30 * 86400000; });
     safeSetItem('colere_completions', JSON.stringify(completions));
   } catch(e) {}
-  setTimeout(function() { _babImmersion = false; _hideAideBtn(); var _nb = document.getElementById('nav-bar-v2'); if (_nb) _nb.classList.remove('hidden-immersion'); v2GoSanctuaire(); }, 2500);
+  window._mutExTimer = setTimeout(function() { _babImmersion = false; _hideAideBtn(); var _nb = document.getElementById('nav-bar-v2'); if (_nb) _nb.classList.remove('hidden-immersion'); v2GoSanctuaire(); }, 5000);
 }
 
 function _itfaaFaitClick() {
