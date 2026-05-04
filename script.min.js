@@ -4064,8 +4064,19 @@ function _mutSudSave() {
 }
 
 function _itfaaFaitClick() {
-  if (_colereMode === 'mutawassit') _mutawassitExit();
+  if (_colereMode === 'mutawassit') _mutawassitEau();
   else openItfaaEmotionSous();
+}
+function _mutawassitEau() {
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) { _mutawassitExit(); return; }
+  var c = '#B33A3A';
+  el.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;">'
+    + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:16px;">Maintenant, prends un verre d\u2019eau.</div>'
+    + '<div class="itfaa-body" style="font-size:14px;line-height:1.6;max-width:360px;margin:0 auto 16px;">Bois lentement, en 3\u00a0gorg\u00e9es. Dis Bismillah avant. Dis Al-hamdulill\u00e2h apr\u00e8s.</div>'
+    + '<div style="font-size:12px;font-style:italic;color:rgba(200,168,75,0.45);margin-bottom:28px;">Sunna proph\u00e9tique \u2014 Tirmidh\u00ee 1885</div>'
+    + '<button onclick="_mutawassitExit()" style="width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019ai bu</button>'
+    + '</div>';
 }
 
 function openItfaaEmotionSous() {
@@ -12605,6 +12616,7 @@ window.openColereMutawassit   = openColereMutawassit;
 window._mutawassitExit        = _mutawassitExit;
 window._mutSudSave            = _mutSudSave;
 window._itfaaFaitClick        = _itfaaFaitClick;
+window._mutawassitEau         = _mutawassitEau;
 window._itfaaSalat            = _itfaaSalat;
 window.openItfaaEmotionSous   = openItfaaEmotionSous;
 window._logEmotionSous        = _logEmotionSous;
