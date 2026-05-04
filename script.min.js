@@ -3849,6 +3849,20 @@ function afficheLeSouffle(parentEl, couleur) {
 function _showAideBtn() { /* no-op — aide humaine retirée */ }
 function _hideAideBtn() { /* no-op */ }
 
+var _exitLinkHtml = '<div style="text-align:center;margin-top:24px;"><button onclick="_showExitModal()" style="background:none;border:none;font-size:12px;color:rgba(255,255,255,0.25);font-family:var(--serif);cursor:pointer;">Sortir maintenant \u2014 c\u2019est ok</button></div>';
+function _showExitModal() {
+  var ov = document.createElement('div');
+  ov.id = '_exitModal';
+  ov.style.cssText = 'position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.85);padding:24px;';
+  ov.innerHTML = '<div style="max-width:340px;text-align:center;">'
+    + '<div style="font-family:var(--serif);font-size:16px;color:#E5E0DC;line-height:1.7;margin-bottom:24px;">Tu peux sortir, sans rien faire d\u2019autre.<br>All\u00e2h voit ton effort, pas seulement ton accomplissement.</div>'
+    + '<div style="display:flex;flex-direction:column;gap:12px;">'
+    + '<button onclick="document.getElementById(\'_exitModal\').remove();_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');v2GoSanctuaire()" style="width:100%;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Sortir et aller au Sanctuaire</button>'
+    + '<button onclick="document.getElementById(\'_exitModal\').remove()" style="width:100%;padding:14px;border-radius:12px;border:1px solid rgba(200,168,75,0.2);background:none;color:rgba(200,168,75,0.5);font-family:var(--serif);font-size:14px;cursor:pointer;">Continuer o\u00f9 je suis</button>'
+    + '</div></div>';
+  document.body.appendChild(ov);
+}
+
 function _logColereZone(zone) {
   try {
     var log = JSON.parse(localStorage.getItem('colere_zone_log') || '[]');
@@ -4073,6 +4087,7 @@ function openItfaaEmotionSous() {
   html += '<button onclick="openItfaaRefuge()" style="padding:14px;border-radius:12px;border:1px solid ' + c + '22;background:none;color:' + c + ';opacity:0.6;font-family:var(--serif);font-size:14px;cursor:pointer;margin-top:8px;">Passer</button>'
     + '</div></div>';
   el.innerHTML = html;
+  el.innerHTML += _exitLinkHtml;
 }
 
 function _logEmotionSous(emotion) {
@@ -4128,6 +4143,7 @@ function openItfaaSomatic() {
   html += '<button onclick="openItfaaAction()" style="padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.2);background:none;color:rgba(255,255,255,0.55);font-family:var(--serif);font-size:14px;cursor:pointer;margin-top:16px;">Passer</button>'
     + '</div></div>';
   el.innerHTML = html;
+  el.innerHTML += _exitLinkHtml;
 }
 
 function _logSomatic(sensation) {
@@ -4528,6 +4544,7 @@ function _muhasabaClassiqueQ1() {
     + '<textarea id="_mcQ1" rows="4" placeholder="\u00c9cris ce qui vient. Personne ne lira." style="width:100%;max-width:480px;padding:14px;border-radius:10px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;line-height:1.6;resize:vertical;margin-bottom:24px;"></textarea>'
     + '<button onclick="window._muhasabaClassique.q1=(document.getElementById(\'_mcQ1\')||{}).value||\'\';_muhasabaClassiqueQ2()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>'
     + '</div>';
+  el.innerHTML += _exitLinkHtml;
 }
 function _muhasabaClassiqueQ2() {
   var el = document.getElementById('babAnNafsContent');
@@ -4541,6 +4558,7 @@ function _muhasabaClassiqueQ2() {
     + '<div class="itfaa-body" style="font-size:13px;font-style:italic;line-height:1.6;max-width:440px;margin:0 auto 24px;">Le Proph\u00e8te \uFDFA a dit\u00a0: \u00ab\u00a0Le musulman est celui dont les autres musulmans sont pr\u00e9serv\u00e9s de sa langue et de sa main.\u00a0\u00bb \u2014 Bukh\u00e2r\u00ee\u00a010</div>'
     + '<button onclick="window._muhasabaClassique.q2=(document.getElementById(\'_mcQ2\')||{}).value||\'\';_muhasabaClassiqueQ3()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>'
     + '</div>';
+  el.innerHTML += _exitLinkHtml;
 }
 function _muhasabaClassiqueQ3() {
   var el = document.getElementById('babAnNafsContent');
@@ -4554,6 +4572,7 @@ function _muhasabaClassiqueQ3() {
     + '<div class="itfaa-body" style="font-size:13px;font-style:italic;line-height:1.6;max-width:440px;margin:0 auto 24px;">Le Proph\u00e8te \uFDFA a dit \u00e0 Salm\u00e2n\u00a0: \u00ab\u00a0Ton corps a un droit sur toi. Ton Seigneur a un droit sur toi. Ta famille a un droit sur toi. Donne \u00e0 chacun son droit.\u00a0\u00bb \u2014 Bukh\u00e2r\u00ee\u00a01968</div>'
     + '<button onclick="window._muhasabaClassique.q3=(document.getElementById(\'_mcQ3\')||{}).value||\'\';_muhasabaClassiqueQ4()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>'
     + '</div>';
+  el.innerHTML += _exitLinkHtml;
 }
 function _muhasabaClassiqueQ4() {
   var el = document.getElementById('babAnNafsContent');
@@ -4578,6 +4597,7 @@ function _muhasabaClassiqueQ4() {
     + '<button onclick="_mcReparation(\'demain\')" style="padding:14px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:15px;cursor:pointer;">Demain</button>'
     + '<button onclick="_mcReparation(\'plus_tard\')" style="padding:14px;border-radius:12px;border:1px solid ' + c + '22;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;opacity:0.6;">Plus tard, mais je m\u2019engage</button>'
     + '</div></div></div></div>';
+  el.innerHTML += _exitLinkHtml;
 }
 function _mcReparation(quand) {
   safeSetItem('muhasaba_classique_reparation', JSON.stringify({quand:quand, ts:Date.now()}));
@@ -4710,6 +4730,7 @@ function openMuhasabaEmotion() {
     + '<button id="_muhasabaEmoContinue" disabled onclick="_muhasabaEmoSubmit()" style="width:100%;max-width:340px;padding:16px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;opacity:0.3;transition:opacity 0.2s;">Continuer</button>'
     + '</div>';
   el.innerHTML = html;
+  el.innerHTML += _exitLinkHtml;
 }
 function _muhasabaToggleEmo(btn) {
   btn.classList.toggle('_schemaOn');
@@ -4744,6 +4765,7 @@ function openMuhasabaBesoin() {
   }
   html += '</div></div>';
   el.innerHTML = html;
+  el.innerHTML += _exitLinkHtml;
 }
 
 function openMuhasabaSchema() {
@@ -4766,6 +4788,7 @@ function openMuhasabaSchema() {
     + '<button onclick="_muhasabaCollectSchema()" style="width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>'
     + '</div>';
   el.innerHTML = html;
+  el.innerHTML += _exitLinkHtml;
 }
 
 function _muhasabaCollectSchema() {
@@ -4832,6 +4855,7 @@ function openMuhasabaSens() {
     + '<button onclick="_muhasabaChoixSens(\'aucune\')" style="padding:12px 28px;border-radius:12px;border:1px solid ' + c + '22;background:none;color:' + c + ';opacity:0.5;font-family:var(--serif);font-size:13px;cursor:pointer;margin-top:8px;">Aucune pour l\u2019instant</button>'
     + '</div></div>';
   el.innerHTML = html;
+  el.innerHTML += _exitLinkHtml;
 }
 
 function _muhasabaChoixSens(porte) {
@@ -4874,6 +4898,7 @@ function openMuhasabaAction() {
     + '<button onclick="_muhasabaEngage()" style="width:100%;max-width:340px;padding:16px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Je m\u2019engage</button>'
     + '</div>';
   el.innerHTML = html;
+  el.innerHTML += _exitLinkHtml;
 }
 
 function _muhasabaEngage() {
@@ -5501,6 +5526,7 @@ _cureJourRenderers.colere_1 = function(el) {
     + '</div>'
     + '</div>';
   el.innerHTML = html;
+  el.innerHTML += _exitLinkHtml;
   // Render 10 boutons efficacité
   var _eWrap = document.getElementById('_efficJ1');
   if (_eWrap) {
@@ -5587,6 +5613,7 @@ _cureJourRenderers.colere_2 = function(el) {
     + '</div>'
     + '</div>';
   el.innerHTML = html;
+  el.innerHTML += _exitLinkHtml;
 };
 
 _cureJourRenderers.colere_3 = function(el) {
@@ -5636,6 +5663,7 @@ _cureJourRenderers.colere_3 = function(el) {
     + '</div>'
     + '</div>';
   el.innerHTML = html;
+  el.innerHTML += _exitLinkHtml;
   // Injecter le cercle respiratoire
   var souffleContainer = document.getElementById('_cureJ3Souffle');
   if (souffleContainer) afficheLeSouffle(souffleContainer, c);
@@ -5694,6 +5722,7 @@ _cureJourRenderers.colere_4 = function(el) {
     + '</div>'
     + '</div>';
   el.innerHTML = html;
+  el.innerHTML += _exitLinkHtml;
 };
 
 _cureJourRenderers.colere_5 = function(el) {
@@ -5738,6 +5767,7 @@ _cureJourRenderers.colere_5 = function(el) {
     + '</div>'
     + '</div>';
   el.innerHTML = html;
+  el.innerHTML += _exitLinkHtml;
 };
 
 _cureJourRenderers.colere_6 = function(el) {
@@ -5787,6 +5817,7 @@ _cureJourRenderers.colere_6 = function(el) {
     + '</div>'
     + '</div>';
   el.innerHTML = html;
+  el.innerHTML += _exitLinkHtml;
 };
 
 _cureJourRenderers.colere_7 = function(el) {
@@ -5856,6 +5887,7 @@ _cureJourRenderers.colere_7 = function(el) {
     + '</div>'
     + '</div>';
   el.innerHTML = html;
+  el.innerHTML += _exitLinkHtml;
   // Render 10 boutons efficacité J7
   var _eWrap7 = document.getElementById('_efficJ7');
   if (_eWrap7) {
@@ -12463,6 +12495,7 @@ window.openPorteShadid        = openPorteShadid;
 window.openPorteSeuilTherapeute = openPorteSeuilTherapeute;
 window.openColereChoix        = openColereChoix;
 window._renderThermometre     = _renderThermometre;
+window._showExitModal          = _showExitModal;
 window._logColereZone         = _logColereZone;
 window.afficheLeSouffle       = afficheLeSouffle;
 window._showAideBtn           = _showAideBtn;
