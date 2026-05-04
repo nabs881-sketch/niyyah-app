@@ -8361,7 +8361,7 @@ const ONBOARD_SLIDES = [
     + '<div class="onboard-title">'+t('ob_chemin_title')+'</div>'
     + '<div class="onboard-sub" style="margin-bottom:20px;">'+t("ob_chemin_sub")+'</div>'
     + '<div style="display:flex;flex-direction:column;gap:12px;max-width:340px;margin:0 auto 20px;">'
-    + '<div style="border:1px solid rgba(200,168,75,0.2);border-radius:14px;padding:14px;" id="ob-chemin-card-1"></div>'
+    + '<div style="border:1px solid rgba(200,168,75,0.2);border-radius:14px;padding:14px;" id="ob-chemin-card-1"><div style="font-size:16px;margin-bottom:6px;">\ud83c\udf19</div><div style="font-family:var(--serif);font-size:16px;color:#C8A84A;margin-bottom:6px;">Quand vient la nuit</div><div style="font-size:14px;color:#E5E0DC;line-height:1.6;">Chaque soir apr\u00e8s Icha, 3\u00a0actes courts\u00a0: un dhikr, un retour sur ta journ\u00e9e, une du\u2019\u00e2\u2019 avant le sommeil.</div></div>'
     + '<div style="border:1px solid rgba(200,168,75,0.2);border-radius:14px;padding:14px;" id="ob-chemin-card-2"></div>'
     + '<div style="border:1px solid rgba(200,168,75,0.2);border-radius:14px;padding:14px;" id="ob-chemin-card-3"></div>'
     + '<div style="border:1px solid rgba(200,168,75,0.2);border-radius:14px;padding:14px;" id="ob-chemin-card-4"></div>'
