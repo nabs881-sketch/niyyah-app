@@ -5176,7 +5176,21 @@ function _depSave() {
   }
   r.ts = Date.now();
   safeSetItem('cure_depistage', JSON.stringify(r));
+  if (r.q1 === 'oui' && r.q2 === 'oui' && r.q3 === 'oui') { _cureOrientationMedicale(); return; }
   _cureChoixMode();
+}
+function _cureOrientationMedicale() {
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#B33A3A';
+  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;max-width:600px;margin:0 auto;text-align:center;">'
+    + '<div style="border:1px solid #a3372a;border-radius:14px;padding:14px;max-width:480px;margin:0 auto 28px;background:#0a0a0a;text-align:center;">'
+    + '<div style="font-size:15px;color:#E5E0DC;line-height:1.6;">Tes r\u00e9ponses sugg\u00e8rent que ces col\u00e8res pourraient avoir une cause m\u00e9dicale. La Cure peut t\u2019accompagner mais pas remplacer un avis professionnel.<br><br><strong style="color:#C8A84A;">Prends rendez-vous avec un m\u00e9decin ou un th\u00e9rapeute.</strong></div>'
+    + '</div>'
+    + '<div style="display:flex;flex-direction:column;gap:12px;max-width:340px;margin:0 auto;">'
+    + '<button onclick="safeSetItem(\'cure_orientation_medicale\',String(Date.now()));_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');v2GoSanctuaire()" style="width:100%;padding:14px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:none;color:rgba(200,168,75,0.7);font-family:var(--serif);font-size:14px;cursor:pointer;">Je vais consulter d\u2019abord</button>'
+    + '<button onclick="_cureChoixMode()" style="width:100%;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Je commence la Cure quand m\u00eame</button>'
+    + '</div></div>';
 }
 
 function _cureChoixMode() {
