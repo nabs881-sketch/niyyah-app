@@ -5065,7 +5065,7 @@ function openMuhasabaAction() {
     html += '<button data-act="' + i + '" onclick="document.querySelectorAll(\'[data-act]\').forEach(function(b){b.classList.remove(\'_schemaOn\')});this.classList.add(\'_schemaOn\')" style="padding:14px 16px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;text-align:left;transition:background 0.2s;">' + actions[i] + '</button>';
   }
   html += '</div>'
-    + '<textarea id="_actionConcreteTexte" placeholder="Mon action concr\u00e8te\u2026" style="width:100%;max-width:340px;min-height:60px;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;resize:vertical;margin-bottom:20px;"></textarea>'
+    + '<textarea id="_actionConcreteTexte" placeholder="Pour la prochaine fois, je vais essayer de\u2026" style="width:100%;max-width:340px;min-height:60px;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;resize:vertical;margin-bottom:20px;"></textarea>'
     + '<button onclick="_muhasabaEngage()" style="width:100%;max-width:340px;padding:16px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Je m\u2019engage</button>'
     + '</div>';
   el.innerHTML = html;
