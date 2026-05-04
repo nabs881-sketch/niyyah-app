@@ -4178,10 +4178,35 @@ function openItfaaAction() {
   if (zone === 'tete' && !ar) {
     html += '<div class="itfaa-subtle" style="font-size:11px;text-align:center;max-width:400px;margin:0 auto 24px;">Pratique recommand\u00e9e par la tradition musulmane.</div>';
   }
-  html += '<button onclick="_itfaaFaitClick()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;margin-top:20px;">J\u2019ai fait \u2726</button>'
+  if (_colereMode === 'shadid') {
+    html += '<button onclick="_itfaaSalat()" style="width:100%;max-width:320px;padding:14px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:none;color:rgba(200,168,75,0.7);font-family:var(--serif);font-size:14px;cursor:pointer;margin-top:20px;">\ud83d\udd4c Si je suis en wu\u1e0d\u00fb\u2019, aller prier 2 rak\u2019at maintenant</button>';
+  }
+  html += '<button onclick="_itfaaFaitClick()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;margin-top:12px;">J\u2019ai fait \u2726</button>'
     + '</div>';
   el.innerHTML = html;
 }
+function _itfaaSalat() {
+  safeSetItem('colere_salat_choisie', String(Date.now()));
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  el.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;">'
+    + '<div style="font-family:var(--serif);font-size:20px;color:#C8A84A;line-height:1.8;max-width:360px;opacity:0;transition:opacity 1s ease;" id="_salatMsg">Va prier.<br>Reviens quand tu veux.</div></div>';
+  requestAnimationFrame(function() { var e = document.getElementById('_salatMsg'); if (e) e.style.opacity = '1'; });
+}
+function _checkSalatReturn() {
+  var ts = parseInt(safeGetItem('colere_salat_choisie') || '0', 10);
+  if (!ts || (Date.now() - ts) > 30 * 60000) { localStorage.removeItem('colere_salat_choisie'); return; }
+  localStorage.removeItem('colere_salat_choisie');
+  _babImmersion = true; var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
+  document.body.classList.add('in-bab-an-nafs');
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  el.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;">'
+    + '<div style="font-family:var(--serif);font-size:20px;color:#C8A84A;line-height:1.8;max-width:360px;opacity:0;transition:opacity 1s ease;" id="_salatReturnMsg">Tu as pri\u00e9. Allah a entendu.<br>Maintenant regarde.</div></div>';
+  requestAnimationFrame(function() { var e = document.getElementById('_salatReturnMsg'); if (e) e.style.opacity = '1'; });
+  setTimeout(function() { openMuhasabaIntro(); }, 3000);
+}
+document.addEventListener('visibilitychange', function() { if (!document.hidden) _checkSalatReturn(); });
 
 function openItfaaRefuge() {
   _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
@@ -11804,6 +11829,7 @@ window._yasirChoix            = _yasirChoix;
 window.openColereMutawassit   = openColereMutawassit;
 window._mutawassitExit        = _mutawassitExit;
 window._itfaaFaitClick        = _itfaaFaitClick;
+window._itfaaSalat            = _itfaaSalat;
 window.openItfaaEmotionSous   = openItfaaEmotionSous;
 window._logEmotionSous        = _logEmotionSous;
 window.openColereShadid       = openColereShadid;
