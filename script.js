@@ -5395,12 +5395,13 @@ function openCureJour(porte, num) {
 }
 function _cureActionTexte(jour) {
   var t = {
-    1:'Demain, note en 1 ligne chaque col\u00e8re que tu observes.',
-    2:'Demain, quand la col\u00e8re monte, pose-toi les 5 questions : qui, o\u00f9, quand, comment, pourquoi.',
-    3:'Demain, choisis le silence une fois \u2014 30 secondes, rien de plus.',
-    4:'Demain, quand la col\u00e8re vient, cherche l\u2019\u00e9motion en dessous.',
-    5:'Demain, trouve une situation et choisis le \u1e25ilm plut\u00f4t que la r\u00e9action.',
-    6:'Demain, pense \u00e0 une personne et dis int\u00e9rieurement : \u00ab\u00a0je l\u00e2che\u00a0\u00bb.'
+    1:'Observe une fois o\u00f9 tu sens monter. Note\u00a0: qui, quoi, o\u00f9.',
+    2:'Rep\u00e8re un sch\u00e9ma\u00a0: m\u00eame personne\u00a0? m\u00eame contexte\u00a0? m\u00eame heure\u00a0?',
+    3:'Avant de r\u00e9pondre \u00e0 une situation tendue, prends 3\u00a0respirations.',
+    4:'Quand tu sens monter\u00a0: dis L\u00e2 \u1e25awla wa l\u00e2 quwwata une fois consciemment.',
+    5:'Une fois aujourd\u2019hui, choisis le \u1e25ilm.',
+    6:'Note le moment o\u00f9 tu as r\u00e9ussi \u00e0 tenir.',
+    7:'Reviens \u00e0 cette Cure si elle t\u2019aide.'
   };
   return t[jour] || '';
 }
