@@ -4706,7 +4706,8 @@ function _muhasabaClassiqueQ1() {
   el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;max-width:600px;margin:0 auto;text-align:center;">'
     + '<div style="font-family:var(--serif);font-size:22px;color:#C8A84A;margin-bottom:24px;">Le droit d\u2019All\u00e2h</div>'
     + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.6;max-width:480px;margin:0 auto 16px;">Dans cette col\u00e8re, ai-je manqu\u00e9 \u00e0 un droit qu\u2019All\u00e2h a sur moi\u00a0?</div>'
-    + '<div class="itfaa-subtle" style="font-size:14px;line-height:1.6;max-width:440px;margin:0 auto 24px;">Ai-je oubli\u00e9 Sa pr\u00e9sence\u00a0? Ai-je pr\u00e9f\u00e9r\u00e9 ma satisfaction \u00e0 la Sienne\u00a0?</div>'
+    + '<div class="itfaa-subtle" style="font-size:14px;line-height:1.6;max-width:440px;margin:0 auto 12px;">Ai-je oubli\u00e9 Sa pr\u00e9sence\u00a0? Ai-je pr\u00e9f\u00e9r\u00e9 ma satisfaction \u00e0 la Sienne\u00a0?</div>'
+    + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.45);line-height:1.5;max-width:440px;margin:0 auto 24px;">\u00ab\u00a0Et ne soyez pas comme ceux qui ont oubli\u00e9 All\u00e2h, et qu\u2019Il a fait s\u2019oublier eux-m\u00eames.\u00a0\u00bb \u2014 Coran 59:19</div>'
     + '<textarea id="_mcQ1" rows="4" placeholder="\u00c9cris ce qui vient. Personne ne lira." style="width:100%;max-width:480px;padding:14px;border-radius:10px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;line-height:1.6;resize:vertical;margin-bottom:24px;"></textarea>'
     + '<button onclick="window._muhasabaClassique.q1=(document.getElementById(\'_mcQ1\')||{}).value||\'\';_muhasabaClassiqueQ2()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>'
     + '</div>';
