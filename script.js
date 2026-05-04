@@ -5899,6 +5899,20 @@ window._cureJourSave_colere_5 = function() { _cureJourSave('colere', 5); };
 window._cureJourSave_colere_6 = function() { _cureJourSave('colere', 6); };
 window._cureJourSave_colere_7 = function() { _cureJourSave('colere', 7); };
 
+function _itfaaDepistageEncart() {
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) { renderBabAnNafs(); return; }
+  var c = '#B33A3A';
+  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;max-width:600px;margin:0 auto;text-align:center;">'
+    + '<div style="border:1px solid #a3372a;border-radius:14px;padding:14px;max-width:480px;margin:0 auto 28px;background:#0a0a0a;text-align:center;">'
+    + '<div style="font-size:15px;color:#E5E0DC;line-height:1.6;">Tu as utilis\u00e9 l\u2019I\u1e6df\u00e2\u2019 Shad\u00eed 5\u00a0fois en 2\u00a0semaines. Cette fr\u00e9quence m\u00e9rite un avis m\u00e9dical pour v\u00e9rifier qu\u2019il n\u2019y a pas de cause sous-jacente (trouble explosif, d\u00e9pression, autre).</div>'
+    + '</div>'
+    + '<div style="display:flex;flex-direction:column;gap:12px;max-width:340px;margin:0 auto;">'
+    + '<button onclick="safeSetItem(\'itfaa_depistage_vu\',String(Date.now()));_cureDepistage()" style="width:100%;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Faire le d\u00e9pistage</button>'
+    + '<button onclick="safeSetItem(\'itfaa_depistage_vu\',String(Date.now()));_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');v2GoSanctuaire()" style="width:100%;padding:14px;border-radius:12px;border:1px solid rgba(200,168,75,0.2);background:none;color:rgba(200,168,75,0.5);font-family:var(--serif);font-size:14px;cursor:pointer;">Plus tard</button>'
+    + '</div></div>';
+}
+
 function babCompletPorte(id) {
   try {
     var data = JSON.parse(safeGetItem('niyyah_bab_an_nafs') || '{}');
@@ -5940,6 +5954,21 @@ function babCompletPorte(id) {
         return;
       }
     } catch(e) {}
+    // Dépistage si 5+ Shadîd en 14j et pas encore fait
+    if (_colereMode === 'shadid') {
+      try {
+        var sLog = JSON.parse(safeGetItem('itfaa_shadid_log') || '[]');
+        sLog.push({ts:Date.now()});
+        if (sLog.length > 50) sLog = sLog.slice(-50);
+        safeSetItem('itfaa_shadid_log', JSON.stringify(sLog));
+        var cut14 = Date.now() - 14 * 86400000;
+        var r14 = sLog.filter(function(e) { return e.ts > cut14; });
+        var depVu = parseInt(safeGetItem('itfaa_depistage_vu') || '0', 10);
+        if (r14.length >= 5 && !safeGetItem('cure_depistage') && (Date.now() - depVu) > 30 * 86400000) {
+          _itfaaDepistageEncart(); return;
+        }
+      } catch(e) {}
+    }
   }
   renderBabAnNafs();
 }
@@ -12522,6 +12551,7 @@ window._muhasabaChoixSens     = _muhasabaChoixSens;
 window.openMuhasabaAction     = openMuhasabaAction;
 window._muhasabaEngage        = _muhasabaEngage;
 window.openMuhasabaCloture    = openMuhasabaCloture;
+window._itfaaDepistageEncart   = _itfaaDepistageEncart;
 window.babCompletPorte        = babCompletPorte;
 
 // A11y: overlay list used by Escape + focus trap
