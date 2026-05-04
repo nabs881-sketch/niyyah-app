@@ -4463,12 +4463,29 @@ function openMuhasabaEmotion() {
     + backBtn
     + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';margin-bottom:12px;">Sous la col\u00e8re, qu\u2019est-ce qui se cachait\u00a0?</div>'
     + '<div class="itfaa-subtle" style="font-size:12px;max-width:380px;margin:0 auto 24px;">Ma\u2019rifat an-nafs \u2014 la connaissance de soi, discipline classique des sages musulmans (al-Mu\u1e25\u00e2sib\u00ee, al-Ghaz\u00e2l\u00ee).</div>'
-    + '<div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:360px;margin:0 auto;">';
+    + '<div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:360px;margin:0 auto 24px;">';
   for (var i = 0; i < emotions.length; i++) {
-    html += '<button onclick="window._muhasabaReponses.emotion=\'' + emotions[i] + '\';openMuhasabaBesoin()" style="padding:12px 20px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:15px;cursor:pointer;">' + emotions[i] + '</button>';
+    html += '<button data-emo-g="' + emotions[i] + '" onclick="_muhasabaToggleEmo(this)" style="padding:12px 20px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:15px;cursor:pointer;transition:background 0.2s,border-color 0.2s;">' + emotions[i] + '</button>';
   }
-  html += '</div></div>';
+  html += '</div>'
+    + '<button id="_muhasabaEmoContinue" disabled onclick="_muhasabaEmoSubmit()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;opacity:0.3;transition:opacity 0.2s;">Continuer</button>'
+    + '</div>';
   el.innerHTML = html;
+}
+function _muhasabaToggleEmo(btn) {
+  btn.classList.toggle('_schemaOn');
+  var on = btn.classList.contains('_schemaOn');
+  btn.style.background = on ? 'rgba(200,168,75,0.15)' : '#B33A3A0d';
+  btn.style.borderColor = on ? 'rgba(200,168,75,0.5)' : '#B33A3A44';
+  var any = document.querySelectorAll('[data-emo-g]._schemaOn').length > 0;
+  var cb = document.getElementById('_muhasabaEmoContinue');
+  if (cb) { cb.disabled = !any; cb.style.opacity = any ? '1' : '0.3'; }
+}
+function _muhasabaEmoSubmit() {
+  var sel = document.querySelectorAll('[data-emo-g]._schemaOn');
+  var arr = []; sel.forEach(function(b) { arr.push(b.getAttribute('data-emo-g')); });
+  window._muhasabaReponses.emotion = arr;
+  openMuhasabaBesoin();
 }
 
 function openMuhasabaBesoin() {
@@ -11994,6 +12011,8 @@ window._muhasabaClassiqueQ4   = _muhasabaClassiqueQ4;
 window._mcReparation          = _mcReparation;
 window._muhasabaClassiqueFin  = _muhasabaClassiqueFin;
 window.openMuhasabaEmotion    = openMuhasabaEmotion;
+window._muhasabaToggleEmo     = _muhasabaToggleEmo;
+window._muhasabaEmoSubmit     = _muhasabaEmoSubmit;
 window.openMuhasabaBesoin = openMuhasabaBesoin;
 window.openMuhasabaSchema     = openMuhasabaSchema;
 window._muhasabaCollectSchema = _muhasabaCollectSchema;
