@@ -4270,6 +4270,12 @@ function openItfaaRefuge() {
     + '<div id="_refugeAr" style="font-family:\'Scheherazade New\',serif;font-size:32px;color:' + c + ';direction:rtl;opacity:0;transition:opacity 0.8s ease;">' + ar + '</div>'
     + '<div style="margin-top:16px;"><button onclick="_refugeSkip()" style="background:none;border:none;font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(255,255,255,0.3);cursor:pointer;">Sortir maintenant</button></div>'
     + '</div>'
+    + '<div id="_refugeSudApres" style="display:none;text-align:center;margin-bottom:24px;">'
+    + '<div style="font-family:var(--serif);font-size:16px;color:#C8A84A;margin-bottom:8px;">Et maintenant, \u00e0 quel point c\u2019est intense\u00a0?</div>'
+    + '<div id="_sudApresVal" style="font-family:var(--serif);font-size:32px;color:#C8A84A;margin-bottom:12px;">5</div>'
+    + '<input type="range" min="0" max="10" step="1" value="5" oninput="document.getElementById(\'_sudApresVal\').textContent=this.value" style="width:100%;max-width:300px;accent-color:#C8A84A;margin-bottom:16px;" />'
+    + '<div><button onclick="_refugeSudSave()" style="padding:12px 28px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Valider</button></div>'
+    + '</div>'
     + '<div id="_refugeEnd" style="display:none;">'
     + '<div style="font-size:13px;color:' + c + ';opacity:0.6;font-style:italic;line-height:1.6;max-width:400px;margin:0 auto 16px;">Quand le calme sera revenu, tu pourras revenir ici \u00e0 froid. La porte t\u2019attend.</div>'
     + '<div style="display:flex;flex-direction:column;gap:12px;max-width:340px;width:100%;margin:0 auto;">'
@@ -4300,7 +4306,11 @@ function _refugeRun(target) {
   if (endEl) endEl.style.display = 'none';
   if (cycleEl) cycleEl.style.display = '';
   var guided = safeGetItem('refuge_breath_guided') !== '0';
-  function done() { if (endEl) endEl.style.display = ''; if (cycleEl) cycleEl.style.display = 'none'; }
+  function done() {
+    if (cycleEl) cycleEl.style.display = 'none';
+    var sudEl = document.getElementById('_refugeSudApres');
+    if (sudEl) { sudEl.style.display = ''; } else { if (endEl) endEl.style.display = ''; }
+  }
   function tick() {
     if (window._refugeStop) return;
     n++;
@@ -4355,8 +4365,17 @@ function _refugeExtend(t) {
 }
 function _refugeSkip() {
   window._refugeStop = true;
-  var e = document.getElementById('_refugeEnd'), c = document.getElementById('_refugeCycle');
-  if (e) e.style.display = ''; if (c) c.style.display = 'none';
+  var c = document.getElementById('_refugeCycle');
+  if (c) c.style.display = 'none';
+  var sud = document.getElementById('_refugeSudApres');
+  if (sud) { sud.style.display = ''; } else { var e = document.getElementById('_refugeEnd'); if (e) e.style.display = ''; }
+}
+function _refugeSudSave() {
+  var v = parseInt((document.querySelector('#_refugeSudApres input[type=range]') || {}).value || '5', 10);
+  var avant = 5; try { var a = JSON.parse(safeGetItem('itfaa_sud_avant') || '{}'); avant = a.valeur || 5; } catch(e) {}
+  safeSetItem('itfaa_sud_apres', JSON.stringify({valeur:v, ts:Date.now(), zone:window._colereZone||'', delta:avant-v}));
+  var sud = document.getElementById('_refugeSudApres'); if (sud) sud.style.display = 'none';
+  var end = document.getElementById('_refugeEnd'); if (end) end.style.display = '';
 }
 
 function openMuhasabaIntro() {
@@ -12345,6 +12364,7 @@ window.openItfaaAction        = openItfaaAction;
 window.openItfaaRefuge        = openItfaaRefuge;
 window._refugeExtend          = _refugeExtend;
 window._refugeSkip            = _refugeSkip;
+window._refugeSudSave         = _refugeSudSave;
 window.openMuhasabaIntro      = openMuhasabaIntro;
 window._muhasabaGuidee        = _muhasabaGuidee;
 window.openMuhasabaClassique  = openMuhasabaClassique;
