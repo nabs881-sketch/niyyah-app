@@ -5936,6 +5936,12 @@ _cureJourRenderers.colere_3 = function(el) {
     + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:4px;">Riy\u00e2\u1e0dat an-nafs \u2014 Jour 3</div>'
     + '<div class="itfaa-body" style="font-size:16px;">La parole juste</div>'
     + '</div>'
+    // 1bis. IMITATION PROPHÉTIQUE
+    + '<div style="text-align:center;margin-bottom:40px;padding:20px;border-radius:14px;border:1px solid rgba(200,168,75,0.2);background:rgba(200,168,74,0.06);">'
+    + '<div style="font-family:var(--serif);font-size:16px;color:#C8A84A;margin-bottom:12px;">Le Proph\u00e8te \uFDFA dans cette \u00e9preuve</div>'
+    + '<div style="font-size:14px;font-style:italic;color:#E5E0DC;line-height:1.6;margin-bottom:8px;">Sa col\u00e8re \u00e9tait toujours pour All\u00e2h, jamais pour lui-m\u00eame. \u2014 Bukh\u00e2r\u00ee 6126</div>'
+    + '<div style="font-size:14px;color:#E5E0DC;line-height:1.6;">Quand on injuriait sa personne, il pardonnait. Quand on transgressait une limite d\u2019All\u00e2h, il s\u2019opposait. Toi aussi, distingue.</div>'
+    + '</div>'
     // 2. CONTEMPLATION
     + '<div style="text-align:center;margin-bottom:40px;padding:20px;border-radius:14px;border:1px solid ' + c + '22;background:' + c + '08;">'
     + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.5;margin-bottom:12px;">Contemplation</div>'
