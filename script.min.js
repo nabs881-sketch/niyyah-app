@@ -4367,7 +4367,7 @@ function openMuhasabaClassique() {
   var c = '#B33A3A';
   el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;max-width:600px;margin:0 auto;">'
     + '<div style="font-family:var(--serif);font-size:24px;color:#C8A84A;margin-bottom:24px;">Bismill\u00e2h</div>'
-    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:16px;font-style:italic;line-height:1.6;max-width:440px;margin:0 auto 24px;">\u00ab\u00a0Examine-toi avant qu\u2019on t\u2019examine.\u00a0\u00bb \u2014 al-Mu\u1e25\u00e2sib\u00ee</div>'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:16px;font-style:italic;line-height:1.6;max-width:440px;margin:0 auto 24px;">\u2019Umar ibn al-Kha\u1e6d\u1e6d\u00e2b (RA) disait\u00a0: \u00ab\u00a0Faites le compte de vos \u00e2mes avant qu\u2019on vous le fasse rendre.\u00a0\u00bb</div>'
     + '<div class="itfaa-body" style="font-family:var(--serif);font-size:16px;line-height:1.6;max-width:440px;margin:0 auto 32px;">Quatre questions vont t\u2019\u00eatre pos\u00e9es. Pas plus. Pas moins.</div>'
     + '<button onclick="_muhasabaClassiqueQ1()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Commencer</button>'
     + '</div>';
