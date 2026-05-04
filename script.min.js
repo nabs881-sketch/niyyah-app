@@ -4632,6 +4632,7 @@ function _mcCarteRetour() {
     + '</div>'
     + '<div id="_mcRetourAction" style="max-width:480px;margin:0 auto 24px;display:none;">'
     + '<input id="_mcHaqqAction" type="text" placeholder="Mon action pour Lui aujourd\u2019hui\u2026" style="width:100%;padding:14px;border-radius:10px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;margin-bottom:12px;" />'
+    + '<div style="text-align:center;margin-bottom:16px;"><button onclick="_mcRappelMort()" style="background:none;border:none;font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(200,168,75,0.45);cursor:pointer;">Pour aller plus loin encore →</button></div>'
     + '<div style="border:1px solid #a3372a;border-radius:14px;padding:14px;max-width:480px;margin:0 auto 20px;background:#0a0a0a;text-align:center;"><div style="font-size:14px;color:#E5E0DC;line-height:1.6;">Cet examen ne remplace pas le soin humain. Si la colère revient malgré tes efforts, parle à un humain de confiance — un proche, un imam, un savant local, un thérapeute. Allâh aime ceux qui se font aider.</div></div>'
     + '<button onclick="safeSetItem(\'muhasaba_action_haqq_allah\',document.getElementById(\'_mcHaqqAction\').value||\'.\');_mcAfterRetour()" style="width:100%;max-width:340px;padding:16px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>'
     + '</div>'
@@ -4668,6 +4669,7 @@ function _mcCarteGeste() {
     + '</div>'
     + '<button id="_mcMsgBtn" onclick="document.getElementById(\'_mcMsgWrap\').style.display=\'\';this.style.display=\'none\';" style="padding:10px 20px;border-radius:10px;border:1px solid ' + c + '22;background:none;color:' + c + ';font-family:var(--serif);font-size:13px;cursor:pointer;opacity:0.6;">\u00c9crire un message</button>'
     + '</div>'
+    + '<div style="text-align:center;margin-bottom:16px;"><button onclick="_mcRappelMort()" style="background:none;border:none;font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(200,168,75,0.45);cursor:pointer;">Pour aller plus loin encore →</button></div>'
     + '<div style="border:1px solid #a3372a;border-radius:14px;padding:14px;max-width:480px;margin:0 auto 20px;background:#0a0a0a;text-align:center;"><div style="font-size:14px;color:#E5E0DC;line-height:1.6;">Cet examen ne remplace pas le soin humain. Si la colère revient malgré tes efforts, parle à un humain de confiance — un proche, un imam, un savant local, un thérapeute. Allâh aime ceux qui se font aider.</div></div>'
     + '<button onclick="safeSetItem(\'muhasaba_amorce_repar\',(document.getElementById(\'_mcAmorceText\')||{}).value||\'\');var _m=(document.getElementById(\'_mcMsgText\')||{}).value||\'\';if(_m&&_m!==\'Salam, je voulais te dire\u2026\')safeSetItem(\'muhasaba_message_ecrit\',_m);_mcAfterGeste()" style="width:100%;max-width:340px;padding:16px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;margin-top:20px;">Continuer</button>'
     + '</div>';
@@ -4694,6 +4696,7 @@ function _mcCarteSoin() {
     + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);line-height:1.6;margin-bottom:16px;">\u00ab\u00a0Ton corps a un droit sur toi.\u00a0\u00bb \u2014 Bukh\u00e2r\u00ee 1968</div>'
     + '<div style="display:flex;flex-direction:column;gap:10px;">' + btns + '</div>'
     + '</div>'
+    + '<div style="text-align:center;margin-bottom:16px;"><button onclick="_mcRappelMort()" style="background:none;border:none;font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(200,168,75,0.45);cursor:pointer;">Pour aller plus loin encore →</button></div>'
     + '<div style="border:1px solid #a3372a;border-radius:14px;padding:14px;max-width:480px;margin:0 auto 20px;background:#0a0a0a;text-align:center;"><div style="font-size:14px;color:#E5E0DC;line-height:1.6;">Cet examen ne remplace pas le soin humain. Si la colère revient malgré tes efforts, parle à un humain de confiance — un proche, un imam, un savant local, un thérapeute. Allâh aime ceux qui se font aider.</div></div>'
     + '<button onclick="_mcSoinSave()" style="width:100%;max-width:340px;padding:16px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>'
     + '</div>';
@@ -4703,6 +4706,21 @@ function _mcSoinSave() {
   var arr = []; sel.forEach(function(b) { arr.push(b.textContent); });
   safeSetItem('muhasaba_soin_nafs', JSON.stringify(arr));
   _muhasabaClassiqueFin();
+}
+
+function _mcRappelMort() {
+  var ov = document.createElement('div');
+  ov.id = '_rappelMortOv';
+  ov.style.cssText = 'position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.9);padding:24px;';
+  ov.innerHTML = '<div style="max-width:420px;text-align:center;">'
+    + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:16px;">dhikr al-mawt \u2014 le rappel de la mort</div>'
+    + '<div style="font-size:15px;color:#E5E0DC;line-height:1.7;margin-bottom:12px;">Le Proph\u00e8te \uFDFA enseignait\u00a0:</div>'
+    + '<div style="font-size:15px;font-style:italic;color:#E5E0DC;line-height:1.7;margin-bottom:6px;">\u00ab\u00a0Multipliez le rappel de ce qui d\u00e9truit les plaisirs.\u00a0\u00bb</div>'
+    + '<div style="font-size:12px;color:rgba(200,168,75,0.5);margin-bottom:20px;">\u2014 Tirmidh\u00ee 2307</div>'
+    + '<div style="font-family:var(--serif);font-size:15px;color:#E5E0DC;line-height:1.7;margin-bottom:28px;">Si ta col\u00e8re revient malgr\u00e9 tes efforts, demande-toi\u00a0: si je devais mourir cette nuit, voudrais-je avoir laiss\u00e9 cette col\u00e8re intacte\u00a0?</div>'
+    + '<button onclick="document.getElementById(\'_rappelMortOv\').remove()" style="padding:14px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:none;color:rgba(200,168,75,0.6);font-family:var(--serif);font-size:14px;cursor:pointer;">Retour</button>'
+    + '</div>';
+  document.body.appendChild(ov);
 }
 
 function _mcAmorce(btn) {
@@ -12593,6 +12611,7 @@ window._mcReparation          = _mcReparation;
 window._mcCarteRetour         = _mcCarteRetour;
 window._mcAfterRetour         = _mcAfterRetour;
 window._mcCarteGeste          = _mcCarteGeste;
+window._mcRappelMort          = _mcRappelMort;
 window._mcAmorce              = _mcAmorce;
 window._mcAfterGeste          = _mcAfterGeste;
 window._mcCarteSoin           = _mcCarteSoin;
