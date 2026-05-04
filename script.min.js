@@ -4611,7 +4611,7 @@ function openMuhasabaEmotion() {
   var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
     + backBtn
     + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';margin-bottom:12px;">Sous la col\u00e8re, qu\u2019est-ce qui se cachait\u00a0?</div>'
-    + '<div class="itfaa-subtle" style="font-size:12px;max-width:380px;margin:0 auto 24px;">Ma\u2019rifat an-nafs \u2014 la connaissance de soi, discipline classique des sages musulmans (al-Mu\u1e25\u00e2sib\u00ee, al-Ghaz\u00e2l\u00ee).</div>'
+    + '<div class="itfaa-subtle" style="font-size:12px;max-width:400px;margin:0 auto 24px;line-height:1.6;">Reconna\u00eetre l\u2019\u00e9motion sous l\u2019\u00e9motion\u00a0: ma\u2019rifat an-nafs \u2014 la connaissance de soi.<br>Une science enseign\u00e9e par les savants de l\u2019islam classique\u00a0: al-Mu\u1e25\u00e2sib\u00ee (m.\u00a0857), al-Ghaz\u00e2l\u00ee (m.\u00a01111), Ibn al-Qayyim (m.\u00a01350) \u2014 bien avant la psychologie moderne.</div>'
     + '<div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:340px;margin:0 auto 24px;">';
   for (var i = 0; i < emotions.length; i++) {
     html += '<button data-emo-g="' + emotions[i] + '" onclick="_muhasabaToggleEmo(this)" style="padding:12px 20px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:15px;cursor:pointer;transition:background 0.2s,border-color 0.2s;">' + emotions[i] + '</button>';
