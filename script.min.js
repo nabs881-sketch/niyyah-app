@@ -4463,9 +4463,9 @@ function _mcCarteRetour() {
     + '<div id="_mcRetourAction" style="max-width:480px;margin:0 auto 24px;display:none;">'
     + '<input id="_mcHaqqAction" type="text" placeholder="Mon action pour Lui aujourd\u2019hui\u2026" style="width:100%;padding:14px;border-radius:10px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;margin-bottom:12px;" />'
     + '<div style="border:1px solid #a3372a;border-radius:14px;padding:14px;max-width:480px;margin:0 auto 20px;background:#0a0a0a;text-align:center;"><div style="font-size:14px;color:#E5E0DC;line-height:1.6;">Cet examen ne remplace pas le soin humain. Si la colère revient malgré tes efforts, parle à un humain de confiance — un proche, un imam, un savant local, un thérapeute. Allâh aime ceux qui se font aider.</div></div>'
-    + '<button onclick="safeSetItem(\'muhasaba_action_haqq_allah\',document.getElementById(\'_mcHaqqAction\').value||\'.\');_mcAfterRetour()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>'
+    + '<button onclick="safeSetItem(\'muhasaba_action_haqq_allah\',document.getElementById(\'_mcHaqqAction\').value||\'.\');_mcAfterRetour()" style="width:100%;max-width:340px;padding:16px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>'
     + '</div>'
-    + '<button id="_mcRetourBtn" onclick="document.getElementById(\'_mcRetourAction\').style.display=\'\';this.style.display=\'none\';" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019identifie une action</button>'
+    + '<button id="_mcRetourBtn" onclick="document.getElementById(\'_mcRetourAction\').style.display=\'\';this.style.display=\'none\';" style="width:100%;max-width:340px;padding:16px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019identifie une action</button>'
     + '</div>';
 }
 function _mcAfterRetour() {
@@ -4498,7 +4498,7 @@ function _mcCarteGeste() {
     + '<button id="_mcMsgBtn" onclick="document.getElementById(\'_mcMsgWrap\').style.display=\'\';this.style.display=\'none\';" style="padding:10px 20px;border-radius:10px;border:1px solid ' + c + '22;background:none;color:' + c + ';font-family:var(--serif);font-size:13px;cursor:pointer;opacity:0.6;">\u00c9crire un message</button>'
     + '</div>'
     + '<div style="border:1px solid #a3372a;border-radius:14px;padding:14px;max-width:480px;margin:0 auto 20px;background:#0a0a0a;text-align:center;"><div style="font-size:14px;color:#E5E0DC;line-height:1.6;">Cet examen ne remplace pas le soin humain. Si la colère revient malgré tes efforts, parle à un humain de confiance — un proche, un imam, un savant local, un thérapeute. Allâh aime ceux qui se font aider.</div></div>'
-    + '<button onclick="safeSetItem(\'muhasaba_amorce_repar\',(document.getElementById(\'_mcAmorceText\')||{}).value||\'\');var _m=(document.getElementById(\'_mcMsgText\')||{}).value||\'\';if(_m&&_m!==\'Salam, je voulais te dire\u2026\')safeSetItem(\'muhasaba_message_ecrit\',_m);_mcAfterGeste()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;margin-top:20px;">Continuer</button>'
+    + '<button onclick="safeSetItem(\'muhasaba_amorce_repar\',(document.getElementById(\'_mcAmorceText\')||{}).value||\'\');var _m=(document.getElementById(\'_mcMsgText\')||{}).value||\'\';if(_m&&_m!==\'Salam, je voulais te dire\u2026\')safeSetItem(\'muhasaba_message_ecrit\',_m);_mcAfterGeste()" style="width:100%;max-width:340px;padding:16px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;margin-top:20px;">Continuer</button>'
     + '</div>';
 }
 
@@ -4523,7 +4523,7 @@ function _mcCarteSoin() {
     + '<div style="display:flex;flex-direction:column;gap:10px;">' + btns + '</div>'
     + '</div>'
     + '<div style="border:1px solid #a3372a;border-radius:14px;padding:14px;max-width:480px;margin:0 auto 20px;background:#0a0a0a;text-align:center;"><div style="font-size:14px;color:#E5E0DC;line-height:1.6;">Cet examen ne remplace pas le soin humain. Si la colère revient malgré tes efforts, parle à un humain de confiance — un proche, un imam, un savant local, un thérapeute. Allâh aime ceux qui se font aider.</div></div>'
-    + '<button onclick="_mcSoinSave()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>'
+    + '<button onclick="_mcSoinSave()" style="width:100%;max-width:340px;padding:16px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>'
     + '</div>';
 }
 function _mcSoinSave() {
@@ -4547,7 +4547,7 @@ function _muhasabaClassiqueFin() {
     + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.6;max-width:400px;margin:0 auto 16px;">Tu as fait ce qu\u2019al-Mu\u1e25\u00e2sib\u00ee recommandait \u00e0 ses disciples.</div>'
     + '<div class="itfaa-body" style="font-family:var(--serif);font-size:16px;font-style:italic;line-height:1.6;max-width:400px;margin:0 auto 20px;">L\u2019examen avant l\u2019examen.</div>'
     + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:32px;">All\u00e2h accepte de toi.</div>'
-    + '<button onclick="if(window._muhasabaFromInvite){localStorage.removeItem(\'colere_muhasaba_invite\');localStorage.removeItem(\'colere_muhasaba_snooze\');window._muhasabaFromInvite=false;var _b=document.getElementById(\'_muhasabaInviteBanner\');if(_b)_b.remove();}_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');babCompletPorte(\'colere\')" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Retour</button>'
+    + '<button onclick="if(window._muhasabaFromInvite){localStorage.removeItem(\'colere_muhasaba_invite\');localStorage.removeItem(\'colere_muhasaba_snooze\');window._muhasabaFromInvite=false;var _b=document.getElementById(\'_muhasabaInviteBanner\');if(_b)_b.remove();}_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');babCompletPorte(\'colere\')" style="width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Retour</button>'
     + '</div>';
 }
 
@@ -4562,12 +4562,12 @@ function openMuhasabaEmotion() {
     + backBtn
     + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';margin-bottom:12px;">Sous la col\u00e8re, qu\u2019est-ce qui se cachait\u00a0?</div>'
     + '<div class="itfaa-subtle" style="font-size:12px;max-width:380px;margin:0 auto 24px;">Ma\u2019rifat an-nafs \u2014 la connaissance de soi, discipline classique des sages musulmans (al-Mu\u1e25\u00e2sib\u00ee, al-Ghaz\u00e2l\u00ee).</div>'
-    + '<div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:360px;margin:0 auto 24px;">';
+    + '<div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:340px;margin:0 auto 24px;">';
   for (var i = 0; i < emotions.length; i++) {
     html += '<button data-emo-g="' + emotions[i] + '" onclick="_muhasabaToggleEmo(this)" style="padding:12px 20px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:15px;cursor:pointer;transition:background 0.2s,border-color 0.2s;">' + emotions[i] + '</button>';
   }
   html += '</div>'
-    + '<button id="_muhasabaEmoContinue" disabled onclick="_muhasabaEmoSubmit()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;opacity:0.3;transition:opacity 0.2s;">Continuer</button>'
+    + '<button id="_muhasabaEmoContinue" disabled onclick="_muhasabaEmoSubmit()" style="width:100%;max-width:340px;padding:16px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;opacity:0.3;transition:opacity 0.2s;">Continuer</button>'
     + '</div>';
   el.innerHTML = html;
 }
@@ -4598,7 +4598,7 @@ function openMuhasabaBesoin() {
     + backBtn
     + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';line-height:1.6;max-width:400px;margin:0 auto 12px;">Sous chaque \u00e9motion, il y a un besoin.<br>Lequel n\u2019a pas \u00e9t\u00e9 combl\u00e9\u00a0?</div>'
     + '<div class="itfaa-subtle" style="font-size:12px;max-width:380px;margin:0 auto 24px;">Cette grille moderne rejoint la tradition\u00a0: al-Ghaz\u00e2l\u00ee reconnaissait dans I\u1e25y\u00e2\u2019 \u2018Ul\u00fbm ad-D\u00een que l\u2019\u00e2me a des besoins l\u00e9gitimes.</div>'
-    + '<div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:360px;margin:0 auto;">';
+    + '<div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:340px;margin:0 auto;">';
   for (var i = 0; i < besoins.length; i++) {
     html += '<button onclick="window._muhasabaReponses.besoin=\'' + besoins[i] + '\';openMuhasabaSchema()" style="padding:12px 20px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:15px;cursor:pointer;">' + besoins[i] + '</button>';
   }
@@ -4655,7 +4655,7 @@ function openMuhasabaSens() {
     + backBtn
     + '<div class="itfaa-subtle" style="font-size:15px;line-height:1.6;max-width:420px;margin:0 auto 24px;">L\u2019\u00e2me cherche un sens. 3\u00a0portes s\u2019ouvrent.<br>Choisis-en une, ou aucune.</div>'
     // Carte 1 : La Leçon
-    + '<div style="max-width:360px;margin:0 auto;">'
+    + '<div style="max-width:340px;margin:0 auto;">'
     + '<div style="' + cardStyle + '">'
     + '<div style="font-family:var(--serif);font-size:16px;color:' + c + ';margin-bottom:2px;">La Le\u00e7on</div>'
     + '<div style="font-size:12px;font-style:italic;color:rgba(255,255,255,0.4);margin-bottom:10px;">al-\u2019Ibra</div>'
@@ -4724,13 +4724,13 @@ function openMuhasabaAction() {
     + '<div class="itfaa-subtle" style="font-size:11px;">\u2014 ' + escapeHtml(niyH.source) + ' \u2014 ' + escapeHtml(niyH.narrator) + ' \u2014 ' + escapeHtml(niyH.grade) + '</div>'
     + '</div>'
     + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';line-height:1.6;max-width:420px;margin:0 auto 24px;">Maintenant que tu vois clair, qu\u2019est-ce qui demande \u00e0 \u00eatre fait\u00a0?</div>'
-    + '<div style="display:flex;flex-direction:column;gap:10px;max-width:360px;margin:0 auto 20px;">';
+    + '<div style="display:flex;flex-direction:column;gap:12px;max-width:340px;margin:0 auto 20px;">';
   for (var i = 0; i < actions.length; i++) {
     html += '<button data-act="' + i + '" onclick="document.querySelectorAll(\'[data-act]\').forEach(function(b){b.classList.remove(\'_schemaOn\')});this.classList.add(\'_schemaOn\')" style="padding:14px 16px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;text-align:left;transition:background 0.2s;">' + actions[i] + '</button>';
   }
   html += '</div>'
-    + '<textarea id="_actionConcreteTexte" placeholder="Mon action concr\u00e8te\u2026" style="width:100%;max-width:360px;min-height:60px;padding:12px;border-radius:10px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;resize:vertical;margin-bottom:20px;"></textarea>'
-    + '<button onclick="_muhasabaEngage()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Je m\u2019engage</button>'
+    + '<textarea id="_actionConcreteTexte" placeholder="Mon action concr\u00e8te\u2026" style="width:100%;max-width:340px;min-height:60px;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;resize:vertical;margin-bottom:20px;"></textarea>'
+    + '<button onclick="_muhasabaEngage()" style="width:100%;max-width:340px;padding:16px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Je m\u2019engage</button>'
     + '</div>';
   el.innerHTML = html;
 }
