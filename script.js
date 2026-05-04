@@ -4259,7 +4259,19 @@ function _refugeRun(target) {
 }
 function _refugeExtend(t) {
   window._refugeStop = true;
-  setTimeout(function() { _refugeRun(t); }, 100);
+  var endEl = document.getElementById('_refugeEnd');
+  var cycleEl = document.getElementById('_refugeCycle');
+  var circle = document.getElementById('_refugeCircle');
+  var arEl = document.getElementById('_refugeAr');
+  var countEl = document.getElementById('_refugeCount');
+  var phaseEl = document.getElementById('_refugePhase');
+  if (endEl) endEl.style.display = 'none';
+  if (cycleEl) cycleEl.style.display = '';
+  if (circle) circle.style.transform = 'scale(1)';
+  if (arEl) arEl.style.opacity = '0';
+  if (countEl) countEl.textContent = '1 / ' + t;
+  if (phaseEl) phaseEl.textContent = '';
+  setTimeout(function() { _refugeRun(t); }, 200);
 }
 function _refugeSkip() {
   window._refugeStop = true;
