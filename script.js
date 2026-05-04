@@ -3794,17 +3794,17 @@ function _renderThermometre() {
     + backBtn
     + _thermoStats
     + '<div style="display:flex;flex-direction:column;gap:14px;max-width:340px;margin:0 auto;">'
-    + '<button onclick="_logColereZone(\'verte\');openColereYasir()" style="padding:20px;border-radius:14px;border:1px solid rgba(74,124,89,0.5);background:rgba(74,124,89,0.1);cursor:pointer;text-align:left;">'
+    + '<button onclick="_logColereZone(\'verte\');_itfaaSUD(\'verte\',openColereYasir)" style="padding:20px;border-radius:14px;border:1px solid rgba(74,124,89,0.5);background:rgba(74,124,89,0.1);cursor:pointer;text-align:left;">'
     + '<div style="font-family:var(--serif);font-size:18px;color:#4a7c59;margin-bottom:4px;">\u00c7a me chatouille.</div>'
     + '<div style="font-size:13px;color:#E5E0DC;opacity:0.7;margin-bottom:6px;">je peux encore respirer calmement</div>'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:14px;color:rgba(255,255,255,0.3);direction:rtl;">Yas\u00eer</div>'
     + '</button>'
-    + '<button onclick="_logColereZone(\'orange\');openColereMutawassit()" style="padding:20px;border-radius:14px;border:1px solid rgba(200,118,58,0.5);background:rgba(200,118,58,0.1);cursor:pointer;text-align:left;">'
+    + '<button onclick="_logColereZone(\'orange\');_itfaaSUD(\'orange\',openColereMutawassit)" style="padding:20px;border-radius:14px;border:1px solid rgba(200,118,58,0.5);background:rgba(200,118,58,0.1);cursor:pointer;text-align:left;">'
     + '<div style="font-family:var(--serif);font-size:18px;color:#c8763a;margin-bottom:4px;">\u00c7a me prend.</div>'
     + '<div style="font-size:13px;color:#E5E0DC;opacity:0.7;margin-bottom:6px;">mon corps se serre, mon c\u0153ur bat plus fort</div>'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:14px;color:rgba(255,255,255,0.3);direction:rtl;">Mutawassi\u1e6d</div>'
     + '</button>'
-    + '<button onclick="_logColereZone(\'rouge\');openColereShadid()" style="padding:20px;border-radius:14px;border:1px solid rgba(163,55,42,0.5);background:rgba(163,55,42,0.1);cursor:pointer;text-align:left;">'
+    + '<button onclick="_logColereZone(\'rouge\');_itfaaSUD(\'rouge\',openColereShadid)" style="padding:20px;border-radius:14px;border:1px solid rgba(163,55,42,0.5);background:rgba(163,55,42,0.1);cursor:pointer;text-align:left;">'
     + '<div style="font-family:var(--serif);font-size:18px;color:#a3372a;margin-bottom:4px;">\u00c7a me submerge.</div>'
     + '<div style="font-size:13px;color:#E5E0DC;opacity:0.7;margin-bottom:6px;">je vais exploser, je n\u2019arrive plus \u00e0 penser</div>'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:14px;color:rgba(255,255,255,0.3);direction:rtl;">Shad\u00eed</div>'
@@ -3853,6 +3853,21 @@ function _logColereZone(zone) {
     if (log.length > 200) log = log.slice(-200);
     localStorage.setItem('colere_zone_log', JSON.stringify(log));
   } catch(e) {}
+}
+
+function _itfaaSUD(zone, cb) {
+  _babImmersion = true; var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
+  document.body.classList.add('in-bab-an-nafs');
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) { cb(); return; }
+  window._itfaaSUDcb = cb;
+  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
+    + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:8px;">\u00c0 quel point c\u2019est intense\u00a0?</div>'
+    + '<div style="font-size:13px;color:rgba(255,255,255,0.4);margin-bottom:28px;">0 = calme \u00b7 10 = \u00e7a me submerge totalement</div>'
+    + '<div id="_sudVal" style="font-family:var(--serif);font-size:32px;color:#C8A84A;margin-bottom:16px;">5</div>'
+    + '<input type="range" min="0" max="10" step="1" value="5" oninput="document.getElementById(\'_sudVal\').textContent=this.value" style="width:100%;max-width:300px;accent-color:#C8A84A;margin-bottom:28px;" />'
+    + '<button onclick="safeSetItem(\'itfaa_sud_avant\',JSON.stringify({valeur:parseInt(document.querySelector(\'input[type=range]\').value,10),ts:Date.now(),zone:\'' + zone + '\'}));window._itfaaSUDcb()" style="width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>'
+    + '</div>';
 }
 
 function openPorteYasir(porte) {
@@ -12310,6 +12325,7 @@ window._muhasabaRappelReponse = _muhasabaRappelReponse;
 window._halo                  = _halo;
 window._itfaaWuduEtape2       = _itfaaWuduEtape2;
 window.openItfaaOuverture     = openItfaaOuverture;
+window._itfaaSUD              = _itfaaSUD;
 window.openColereYasir        = openColereYasir;
 window._yasirSouffle          = _yasirSouffle;
 window._yasirSkipSouffle      = _yasirSkipSouffle;
