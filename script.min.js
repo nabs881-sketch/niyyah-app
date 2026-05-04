@@ -4094,7 +4094,7 @@ function openItfaaOuverture() {
     + '<div id="_itfaaTranslit" style="font-family:var(--serif);font-size:16px;font-style:italic;color:rgba(200,168,75,0.7);margin-top:12px;opacity:0;transition:opacity 1s ease;">L\u00e2 taghḍab \u2014 Ne te mets pas en col\u00e8re.</div>'
     + '<div id="_itfaaSource" style="font-size:12px;color:rgba(255,255,255,0.35);margin-top:6px;opacity:0;transition:opacity 1s ease;">Bukh\u00e2r\u00ee 6116 \u2014 \u1e63a\u1e25\u00ee\u1e25</div>'
     + '</div>';
-  requestAnimationFrame(function() { document.getElementById('_itfaaAr').style.opacity = '1'; });
+  requestAnimationFrame(function() { var e = document.getElementById('_itfaaAr'); if (e) e.style.opacity = '1'; });
   setTimeout(function() { var e = document.getElementById('_itfaaTranslit'); if (e) e.style.opacity = '1'; }, 2000);
   setTimeout(function() { var e = document.getElementById('_itfaaSource'); if (e) e.style.opacity = '1'; }, 2500);
   setTimeout(function() { openItfaaStep1(); }, 4000);
