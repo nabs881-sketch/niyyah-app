@@ -4178,18 +4178,19 @@ function openItfaaAction() {
     html += '<div class="itfaa-body" style="font-size:13px;text-align:center;font-style:italic;margin-bottom:6px;">' + escapeHtml(translit) + '</div>';
   }
   if (source) {
-    html += '<div class="itfaa-subtle" style="font-size:12px;text-align:center;margin-bottom:4px;">\u2014 ' + escapeHtml(source) + '</div>';
+    html += '<div class="itfaa-subtle" style="font-size:14px;text-align:center;margin-bottom:4px;">\u2014 ' + escapeHtml(source) + '</div>';
   }
   if (grade) {
-    html += '<div class="itfaa-subtle" style="font-size:11px;text-align:center;opacity:0.7;margin-bottom:24px;">' + escapeHtml(grade) + '</div>';
+    html += '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);text-align:center;margin-bottom:24px;">' + escapeHtml(grade) + '</div>';
   }
   if (zone === 'tete' && !ar) {
     html += '<div class="itfaa-subtle" style="font-size:11px;text-align:center;max-width:400px;margin:0 auto 24px;">Pratique recommand\u00e9e par la tradition musulmane.</div>';
   }
+  html += '<div style="display:flex;flex-direction:column;gap:12px;max-width:340px;width:100%;margin:20px auto 0;">';
   if (_colereMode === 'shadid') {
-    html += '<button onclick="_itfaaSalat()" style="width:100%;max-width:320px;padding:14px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:none;color:rgba(200,168,75,0.7);font-family:var(--serif);font-size:14px;cursor:pointer;margin-top:20px;">\ud83d\udd4c Si je suis en wu\u1e0d\u00fb\u2019, aller prier 2 rak\u2019at maintenant</button>';
+    html += '<button onclick="_itfaaSalat()" style="width:100%;padding:14px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:none;color:rgba(200,168,75,0.7);font-family:var(--serif);font-size:14px;cursor:pointer;">\ud83d\udd4c Si je suis en wu\u1e0d\u00fb\u2019, aller prier 2 rak\u2019at maintenant</button>';
   }
-  html += '<button onclick="_itfaaFaitClick()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;margin-top:12px;">J\u2019ai fait \u2726</button>'
+  html += '<button onclick="_itfaaFaitClick()" style="width:100%;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019ai fait \u2726</button></div>'
     + '</div>';
   el.innerHTML = html;
 }
