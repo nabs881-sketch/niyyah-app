@@ -4460,6 +4460,7 @@ function _mcCarteRetour() {
     + '</div>'
     + '<div id="_mcRetourAction" style="max-width:480px;margin:0 auto 24px;display:none;">'
     + '<input id="_mcHaqqAction" type="text" placeholder="Mon action pour Lui aujourd\u2019hui\u2026" style="width:100%;padding:14px;border-radius:10px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;margin-bottom:12px;" />'
+    + '<div style="border:1px solid #a3372a;border-radius:14px;padding:14px;max-width:480px;margin:0 auto 20px;background:#0a0a0a;text-align:center;"><div style="font-size:14px;color:#E5E0DC;line-height:1.6;">Cet examen ne remplace pas le soin humain. Si la colère revient malgré tes efforts, parle à un humain de confiance — un proche, un imam, un savant local, un thérapeute. Allâh aime ceux qui se font aider.</div></div>'
     + '<button onclick="safeSetItem(\'muhasaba_action_haqq_allah\',document.getElementById(\'_mcHaqqAction\').value||\'.\');_mcAfterRetour()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>'
     + '</div>'
     + '<button id="_mcRetourBtn" onclick="document.getElementById(\'_mcRetourAction\').style.display=\'\';this.style.display=\'none\';" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019identifie une action</button>'
@@ -4494,6 +4495,7 @@ function _mcCarteGeste() {
     + '</div>'
     + '<button id="_mcMsgBtn" onclick="document.getElementById(\'_mcMsgWrap\').style.display=\'\';this.style.display=\'none\';" style="padding:10px 20px;border-radius:10px;border:1px solid ' + c + '22;background:none;color:' + c + ';font-family:var(--serif);font-size:13px;cursor:pointer;opacity:0.6;">\u00c9crire un message</button>'
     + '</div>'
+    + '<div style="border:1px solid #a3372a;border-radius:14px;padding:14px;max-width:480px;margin:0 auto 20px;background:#0a0a0a;text-align:center;"><div style="font-size:14px;color:#E5E0DC;line-height:1.6;">Cet examen ne remplace pas le soin humain. Si la colère revient malgré tes efforts, parle à un humain de confiance — un proche, un imam, un savant local, un thérapeute. Allâh aime ceux qui se font aider.</div></div>'
     + '<button onclick="safeSetItem(\'muhasaba_amorce_repar\',(document.getElementById(\'_mcAmorceText\')||{}).value||\'\');var _m=(document.getElementById(\'_mcMsgText\')||{}).value||\'\';if(_m&&_m!==\'Salam, je voulais te dire\u2026\')safeSetItem(\'muhasaba_message_ecrit\',_m);_mcAfterGeste()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;margin-top:20px;">Continuer</button>'
     + '</div>';
 }
@@ -4518,6 +4520,7 @@ function _mcCarteSoin() {
     + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);line-height:1.6;margin-bottom:16px;">\u00ab\u00a0Ton corps a un droit sur toi.\u00a0\u00bb \u2014 Bukh\u00e2r\u00ee 1968</div>'
     + '<div style="display:flex;flex-direction:column;gap:10px;">' + btns + '</div>'
     + '</div>'
+    + '<div style="border:1px solid #a3372a;border-radius:14px;padding:14px;max-width:480px;margin:0 auto 20px;background:#0a0a0a;text-align:center;"><div style="font-size:14px;color:#E5E0DC;line-height:1.6;">Cet examen ne remplace pas le soin humain. Si la colère revient malgré tes efforts, parle à un humain de confiance — un proche, un imam, un savant local, un thérapeute. Allâh aime ceux qui se font aider.</div></div>'
     + '<button onclick="_mcSoinSave()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>'
     + '</div>';
 }
@@ -4778,7 +4781,7 @@ function _muhasabaCarteHonte() {
     + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:16px;">\u2014 Muslim 2748</div>'
     + '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;">All\u00e2h veut que tu reviennes vers Lui. Ta honte n\u2019est pas un obstacle, c\u2019est un chemin.</div>'
     + '</div>'
-    + '<button onclick="openMuhasabaCloture()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019avance avec \u00e7a</button>'
+    + '<div style="border:1px solid #a3372a;border-radius:14px;padding:14px;max-width:480px;margin:0 auto 20px;background:#0a0a0a;text-align:center;"><div style="font-size:14px;color:#E5E0DC;line-height:1.6;">Cet examen ne remplace pas le soin humain. Si la colère revient malgré tes efforts, parle à un humain de confiance — un proche, un imam, un savant local, un thérapeute. Allâh aime ceux qui se font aider.</div></div><button onclick="openMuhasabaCloture()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019avance avec \u00e7a</button>'
     + '</div>';
 }
 
@@ -4795,7 +4798,7 @@ function _muhasabaCartePeur() {
     + '<div class="itfaa-body" style="font-size:14px;font-style:italic;line-height:1.6;margin-bottom:6px;">Le Proph\u00e8te \uFDFA disait\u00a0: \u00ab\u00a0All\u00e2humma inn\u00ee a\u2019\u00fbdhu bika min al-\u1e25amm wa-l-\u1e25azan.\u00a0\u00bb \u2014 All\u00e2h, je cherche refuge contre le souci et la tristesse.</div>'
     + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:16px;">\u2014 Bukh\u00e2r\u00ee 6363</div>'
     + '</div>'
-    + '<button onclick="openMuhasabaCloture()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019avance avec \u00e7a</button>'
+    + '<div style="border:1px solid #a3372a;border-radius:14px;padding:14px;max-width:480px;margin:0 auto 20px;background:#0a0a0a;text-align:center;"><div style="font-size:14px;color:#E5E0DC;line-height:1.6;">Cet examen ne remplace pas le soin humain. Si la colère revient malgré tes efforts, parle à un humain de confiance — un proche, un imam, un savant local, un thérapeute. Allâh aime ceux qui se font aider.</div></div><button onclick="openMuhasabaCloture()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019avance avec \u00e7a</button>'
     + '</div>';
 }
 
@@ -4822,7 +4825,7 @@ function _muhasabaCarteEpuisement() {
     + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:20px;">Aller plus loin</div>'
     + '<div style="border:1px solid ' + c + '33;border-radius:14px;padding:20px;max-width:480px;margin:0 auto 28px;text-align:center;">'
     + hadith + msg + '</div>'
-    + '<button onclick="openMuhasabaCloture()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019avance avec \u00e7a</button>'
+    + '<div style="border:1px solid #a3372a;border-radius:14px;padding:14px;max-width:480px;margin:0 auto 20px;background:#0a0a0a;text-align:center;"><div style="font-size:14px;color:#E5E0DC;line-height:1.6;">Cet examen ne remplace pas le soin humain. Si la colère revient malgré tes efforts, parle à un humain de confiance — un proche, un imam, un savant local, un thérapeute. Allâh aime ceux qui se font aider.</div></div><button onclick="openMuhasabaCloture()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019avance avec \u00e7a</button>'
     + '</div>';
 }
 
@@ -4840,7 +4843,7 @@ function _muhasabaCarteCulpabilite() {
     + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:16px;">\u2014 Coran 11:114</div>'
     + '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;">Astaghfirull\u00e2h, et fais une bonne action en r\u00e9paration.</div>'
     + '</div>'
-    + '<button onclick="openMuhasabaCloture()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;margin-bottom:16px;">J\u2019avance avec \u00e7a</button>'
+    + '<div style="border:1px solid #a3372a;border-radius:14px;padding:14px;max-width:480px;margin:0 auto 20px;background:#0a0a0a;text-align:center;"><div style="font-size:14px;color:#E5E0DC;line-height:1.6;">Cet examen ne remplace pas le soin humain. Si la colère revient malgré tes efforts, parle à un humain de confiance — un proche, un imam, un savant local, un thérapeute. Allâh aime ceux qui se font aider.</div></div><button onclick="openMuhasabaCloture()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;margin-bottom:16px;">J\u2019avance avec \u00e7a</button>'
     + '<div><button onclick="openMuhasabaClassique()" style="background:none;border:none;font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);cursor:pointer;">Pour aller plus profond\u00e9ment, tu peux refaire ta mu\u1e25\u00e2saba en voie classique.</button></div>'
     + '</div>';
 }
@@ -4857,7 +4860,7 @@ function _muhasabaCarteTrahison() {
     + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:16px;">\u2014 Coran 12:92</div>'
     + '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;">Le pardon arrive quand il arrive. Tu n\u2019as pas \u00e0 le forcer. Y\u00fbsuf a pardonn\u00e9 apr\u00e8s des ann\u00e9es, apr\u00e8s que la justice ait \u00e9t\u00e9 r\u00e9tablie.</div>'
     + '</div>'
-    + '<button onclick="openMuhasabaCloture()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019avance avec \u00e7a</button>'
+    + '<div style="border:1px solid #a3372a;border-radius:14px;padding:14px;max-width:480px;margin:0 auto 20px;background:#0a0a0a;text-align:center;"><div style="font-size:14px;color:#E5E0DC;line-height:1.6;">Cet examen ne remplace pas le soin humain. Si la colère revient malgré tes efforts, parle à un humain de confiance — un proche, un imam, un savant local, un thérapeute. Allâh aime ceux qui se font aider.</div></div><button onclick="openMuhasabaCloture()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019avance avec \u00e7a</button>'
     + '</div>';
 }
 
@@ -4873,7 +4876,7 @@ function _muhasabaCarteImpuissance() {
     + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:16px;">\u2014 Coran 22:76</div>'
     + '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;">Tawakkul\u00a0: confier le r\u00e9sultat sans cesser d\u2019agir l\u00e0 o\u00f9 on peut.</div>'
     + '</div>'
-    + '<button onclick="openMuhasabaCloture()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019avance avec \u00e7a</button>'
+    + '<div style="border:1px solid #a3372a;border-radius:14px;padding:14px;max-width:480px;margin:0 auto 20px;background:#0a0a0a;text-align:center;"><div style="font-size:14px;color:#E5E0DC;line-height:1.6;">Cet examen ne remplace pas le soin humain. Si la colère revient malgré tes efforts, parle à un humain de confiance — un proche, un imam, un savant local, un thérapeute. Allâh aime ceux qui se font aider.</div></div><button onclick="openMuhasabaCloture()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019avance avec \u00e7a</button>'
     + '</div>';
 }
 
@@ -4889,7 +4892,7 @@ function _muhasabaCarteInjustice() {
     + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:16px;">\u2014 Coran 42:40</div>'
     + '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;">Tu peux choisir\u00a0: la riposte juste, ou le pardon. All\u00e2h accepte les deux.</div>'
     + '</div>'
-    + '<button onclick="openMuhasabaCloture()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019avance avec \u00e7a</button>'
+    + '<div style="border:1px solid #a3372a;border-radius:14px;padding:14px;max-width:480px;margin:0 auto 20px;background:#0a0a0a;text-align:center;"><div style="font-size:14px;color:#E5E0DC;line-height:1.6;">Cet examen ne remplace pas le soin humain. Si la colère revient malgré tes efforts, parle à un humain de confiance — un proche, un imam, un savant local, un thérapeute. Allâh aime ceux qui se font aider.</div></div><button onclick="openMuhasabaCloture()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019avance avec \u00e7a</button>'
     + '</div>';
 }
 
@@ -4911,7 +4914,7 @@ function _muhasabaCarteTristesse() {
     + '<div style="font-size:13px;color:rgba(200,168,75,0.5);margin-bottom:4px;">\u00ab\u00a0Il n\u2019y a de divinit\u00e9 que Toi. Gloire \u00e0 Toi. J\u2019ai \u00e9t\u00e9 parmi les injustes.\u00a0\u00bb</div>'
     + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:0;">\u2014 Coran 21:87</div>'
     + '</div>'
-    + '<button onclick="openMuhasabaCloture()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019avance avec \u00e7a</button>'
+    + '<div style="border:1px solid #a3372a;border-radius:14px;padding:14px;max-width:480px;margin:0 auto 20px;background:#0a0a0a;text-align:center;"><div style="font-size:14px;color:#E5E0DC;line-height:1.6;">Cet examen ne remplace pas le soin humain. Si la colère revient malgré tes efforts, parle à un humain de confiance — un proche, un imam, un savant local, un thérapeute. Allâh aime ceux qui se font aider.</div></div><button onclick="openMuhasabaCloture()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019avance avec \u00e7a</button>'
     + '</div>';
 }
 
