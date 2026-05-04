@@ -4406,7 +4406,7 @@ function _refugeSudSave() {
     m.textContent = msg;
     var end = document.getElementById('_refugeEnd');
     if (end) end.parentNode.insertBefore(m, end);
-    setTimeout(function() { m.remove(); if (end) end.style.display = ''; }, 2000);
+    setTimeout(function() { m.remove(); if (end) end.style.display = ''; }, 5000);
   } else {
     var end = document.getElementById('_refugeEnd'); if (end) end.style.display = '';
   }
