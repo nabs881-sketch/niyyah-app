@@ -4373,9 +4373,22 @@ function _refugeSkip() {
 function _refugeSudSave() {
   var v = parseInt((document.querySelector('#_refugeSudApres input[type=range]') || {}).value || '5', 10);
   var avant = 5; try { var a = JSON.parse(safeGetItem('itfaa_sud_avant') || '{}'); avant = a.valeur || 5; } catch(e) {}
-  safeSetItem('itfaa_sud_apres', JSON.stringify({valeur:v, ts:Date.now(), zone:window._colereZone||'', delta:avant-v}));
+  var delta = avant - v;
+  safeSetItem('itfaa_sud_apres', JSON.stringify({valeur:v, ts:Date.now(), zone:window._colereZone||'', delta:delta}));
   var sud = document.getElementById('_refugeSudApres'); if (sud) sud.style.display = 'none';
-  var end = document.getElementById('_refugeEnd'); if (end) end.style.display = '';
+  var msg = '';
+  if (delta >= 3) msg = 'Le feu retombe. All\u00e2h voit ton effort.';
+  else if (v >= 6) msg = 'Le feu reste. C\u2019est ok. Tu peux continuer \u00d733 ou aller plus loin.';
+  if (msg) {
+    var m = document.createElement('div');
+    m.style.cssText = 'font-family:var(--serif);font-size:16px;font-style:italic;color:#C8A84A;text-align:center;max-width:400px;margin:0 auto 20px;line-height:1.6;';
+    m.textContent = msg;
+    var end = document.getElementById('_refugeEnd');
+    if (end) end.parentNode.insertBefore(m, end);
+    setTimeout(function() { m.remove(); if (end) end.style.display = ''; }, 2000);
+  } else {
+    var end = document.getElementById('_refugeEnd'); if (end) end.style.display = '';
+  }
 }
 
 function openMuhasabaIntro() {
