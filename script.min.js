@@ -8455,7 +8455,8 @@ function renderCaverne() {
     'Il ne s\u2019arr\u00eate pas.',
     'Il a un travail. Des choses \u00e0 faire.',
     'Il continue.',
-    'Cette caverne, elle existe. Elle est ouverte 5\u00a0fois par jour.',
+    'Cette caverne, elle existe.',
+    'Elle est ouverte tout le temps.',
     'Niyyah, c\u2019est l\u2019app qui te dit\u00a0: arr\u00eate-toi.'
   ];
   var i = 0;
