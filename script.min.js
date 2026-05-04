@@ -4064,8 +4064,32 @@ function _mutSudSave() {
 }
 
 function _itfaaFaitClick() {
-  if (_colereMode === 'mutawassit') _mutawassitEau();
+  if (_colereMode === 'mutawassit') _mutawassitPause();
   else openItfaaEmotionSous();
+}
+function _mutawassitPause() {
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) { _mutawassitEau(); return; }
+  var c = '#B33A3A';
+  el.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;">'
+    + '<div style="font-family:var(--serif);font-size:16px;color:#E5E0DC;margin-bottom:8px;">Reste l\u00e0 30\u00a0secondes.</div>'
+    + '<div style="font-size:14px;font-style:italic;color:rgba(255,255,255,0.4);margin-bottom:24px;">Laisse ton corps comprendre que \u00e7a change.</div>'
+    + '<div id="_mutPauseCircle" style="width:100px;height:100px;border-radius:50%;border:2px solid ' + c + '44;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;animation:_zonePulse 3s ease-in-out infinite;">'
+    + '<div id="_mutPauseCount" style="font-family:var(--serif);font-size:28px;color:' + c + ';">30</div>'
+    + '</div>'
+    + '<button id="_mutPauseBtn" style="display:none;width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;" onclick="_mutawassitEau()">Continuer</button>'
+    + '</div>';
+  var _sec = 30;
+  var _iv = setInterval(function() {
+    _sec--;
+    var ce = document.getElementById('_mutPauseCount');
+    if (ce) ce.textContent = _sec;
+    if (_sec <= 0) {
+      clearInterval(_iv);
+      var b = document.getElementById('_mutPauseBtn'); if (b) b.style.display = 'block';
+      if (ce) ce.textContent = '\u2713';
+    }
+  }, 1000);
 }
 function _mutawassitEau() {
   var el = document.getElementById('babAnNafsContent');
@@ -12616,6 +12640,7 @@ window.openColereMutawassit   = openColereMutawassit;
 window._mutawassitExit        = _mutawassitExit;
 window._mutSudSave            = _mutSudSave;
 window._itfaaFaitClick        = _itfaaFaitClick;
+window._mutawassitPause       = _mutawassitPause;
 window._mutawassitEau         = _mutawassitEau;
 window._itfaaSalat            = _itfaaSalat;
 window.openItfaaEmotionSous   = openItfaaEmotionSous;
