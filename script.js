@@ -4592,10 +4592,38 @@ function _cureJ7Finale() {
       + '</div></div>';
     return;
   }
+  // Branche échec : effJ7 <= effJ1
+  var _cure7 = {}; try { _cure7 = JSON.parse(safeGetItem('cure_colere') || '{}'); } catch(e) {}
+  if (_cure7.efficacite_j1 && _cure7.efficacite_j7 && _cure7.efficacite_j7 <= _cure7.efficacite_j1) {
+    el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
+      + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:12px;">Et si le feu reste</div>'
+      + '<div class="itfaa-body" style="font-family:var(--serif);font-size:16px;line-height:1.8;max-width:400px;margin:0 auto 20px;">Tu as march\u00e9 7\u00a0jours et le feu reste. Cela ne veut pas dire que tu as \u00e9chou\u00e9.<br>La patience est elle-m\u00eame \u02bfib\u00e2da.</div>'
+      + '<div style="margin-bottom:24px;padding:16px;border-radius:14px;border:1px solid ' + c + '22;background:' + c + '08;max-width:400px;">'
+      + '<div style="font-family:\'Scheherazade New\',serif;font-size:22px;color:' + c + ';direction:rtl;line-height:1.8;margin-bottom:6px;">\u0648\u064e\u0645\u064e\u0646\u0652 \u064a\u064e\u0635\u0652\u0628\u0650\u0631\u0652 \u064a\u064f\u0635\u064e\u0628\u0651\u0650\u0631\u0652\u0647\u064f \u0627\u0644\u0644\u0651\u064e\u0647\u064f</div>'
+      + '<div class="itfaa-body" style="font-size:14px;font-style:italic;margin-bottom:4px;">Wa man ya\u1e63bir yu\u1e63abbirhu Ll\u00e2h</div>'
+      + '<div class="itfaa-body" style="font-size:15px;margin-bottom:4px;">Celui qui fait preuve de patience, Allah lui donnera la patience.</div>'
+      + '<div class="itfaa-subtle" style="font-size:11px;">\u2014 Bukh\u00e2r\u00ee 1469 \u2014 Ab\u00fb Sa\u2019\u00eed al-Khudr\u00ee</div>'
+      + '</div>'
+      + '<div class="itfaa-subtle" style="font-size:13px;margin-bottom:24px;">Au d\u00e9but\u00a0: ' + _cure7.efficacite_j1 + '/10. Aujourd\u2019hui\u00a0: ' + _cure7.efficacite_j7 + '/10.</div>'
+      + '<div style="display:flex;flex-direction:column;gap:12px;max-width:320px;width:100%;">'
+      + '<button onclick="localStorage.removeItem(\'cure_colere\');openCureColere()" style="width:100%;padding:14px;border-radius:12px;border:1px solid ' + c + '55;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">Reprendre la Cure</button>'
+      + '<button onclick="openMuhasabaIntro()" style="width:100%;padding:14px;border-radius:12px;border:1px solid ' + c + '55;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">Ouvrir Mu\u1e25\u00e2saba</button>'
+      + '<button onclick="_cureJ7FinaleSucces()" style="width:100%;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>'
+      + '</div></div>';
+    return;
+  }
+  _cureJ7FinaleSucces();
+}
+
+function _cureJ7FinaleSucces() {
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#B33A3A';
+  var _cure7 = {}; try { _cure7 = JSON.parse(safeGetItem('cure_colere') || '{}'); } catch(e) {}
   el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:28px;color:' + c + ';direction:rtl;margin-bottom:12px;">\u0628\u064e\u0627\u0631\u064e\u0643\u064e \u0627\u0644\u0644\u0651\u064e\u0647\u064f \u0641\u0650\u064a\u0643\u064e</div>'
     + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.8;max-width:400px;margin:0 auto 20px;">Tu as march\u00e9 7\u00a0jours. Allah voit.<br>Reviens quand le c\u0153ur le demandera.</div>'
-    + (function() { try { var _c = JSON.parse(safeGetItem('cure_colere') || '{}'); if (_c.efficacite_j1 && _c.efficacite_j7) return '<div class="itfaa-subtle" style="font-size:14px;margin-bottom:24px;">Au d\u00e9but : ' + _c.efficacite_j1 + '/10. Aujourd\u2019hui : ' + _c.efficacite_j7 + '/10.</div>'; return ''; } catch(e) { return ''; } })()
+    + (_cure7.efficacite_j1 && _cure7.efficacite_j7 ? '<div class="itfaa-subtle" style="font-size:14px;margin-bottom:24px;">Au d\u00e9but\u00a0: ' + _cure7.efficacite_j1 + '/10. Aujourd\u2019hui\u00a0: ' + _cure7.efficacite_j7 + '/10.</div>' : '')
     + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Retour \u00e0 Ma Niyyah</button>'
     + '</div>';
 }
