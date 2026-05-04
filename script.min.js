@@ -4392,10 +4392,31 @@ function _muhasabaClassiqueQ4() {
     + '<div class="itfaa-body" style="font-size:16px;font-style:italic;line-height:1.6;margin-bottom:16px;">Astaghfirull\u00e2h al-a\u1e93\u00eem wa at\u00fbbu ilayh.</div>'
     + '<button onclick="this.textContent=\'\u2713 Acquitt\u00e9\';this.style.opacity=\'0.4\';this.disabled=true;var s2=document.getElementById(\'_mcSection2\');if(s2)s2.style.display=\'\';" style="padding:12px 28px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">J\u2019ai dit l\u2019istighf\u00e2r</button>'
     + '</div>'
-    + '<div id="_mcSection2" style="display:none;">'
-    + '<div class="itfaa-body" style="font-size:14px;line-height:1.6;max-width:440px;margin:0 auto 20px;color:rgba(200,168,75,0.6);font-style:italic;">\u00c9cran suivant en pr\u00e9paration.</div>'
-    + '<button onclick="openMuhasabaIntro()" style="padding:14px 28px;border-radius:12px;border:1px solid ' + c + '44;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">Retour</button>'
-    + '</div></div>';
+    + '<div id="_mcSection2" style="display:none;margin-top:24px;">'
+    + '<div style="border:1px solid rgba(255,255,255,0.15);border-radius:14px;padding:16px;max-width:480px;margin:0 auto;text-align:center;">'
+    + '<div style="font-family:var(--serif);font-size:14px;color:rgba(255,255,255,0.55);margin-bottom:12px;">La r\u00e9paration \u2014 envers la personne</div>'
+    + '<div class="itfaa-body" style="font-size:14px;line-height:1.6;max-width:420px;margin:0 auto 16px;">Si tu as bless\u00e9 quelqu\u2019un, ton istighf\u00e2r ne suffit pas. Tu dois aussi aller voir cette personne.</div>'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:16px;line-height:1.6;margin-bottom:16px;">Quand vas-tu lui parler\u00a0?</div>'
+    + '<div style="display:flex;flex-direction:column;gap:10px;max-width:320px;margin:0 auto;">'
+    + '<button onclick="_mcReparation(\'aujourdhui\')" style="padding:14px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:15px;cursor:pointer;">Aujourd\u2019hui</button>'
+    + '<button onclick="_mcReparation(\'demain\')" style="padding:14px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:15px;cursor:pointer;">Demain</button>'
+    + '<button onclick="_mcReparation(\'plus_tard\')" style="padding:14px;border-radius:12px;border:1px solid ' + c + '22;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;opacity:0.6;">Plus tard, mais je m\u2019engage</button>'
+    + '</div></div></div></div>';
+}
+function _mcReparation(quand) {
+  safeSetItem('muhasaba_classique_reparation', JSON.stringify({quand:quand, ts:Date.now()}));
+  window._muhasabaClassique.reparation = quand;
+  _muhasabaClassiqueFin();
+}
+function _muhasabaClassiqueFin() {
+  // TODO: écran 6 — clôture
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#B33A3A';
+  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
+    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:12px;">\u00c9cran de cl\u00f4ture en pr\u00e9paration.</div>'
+    + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="padding:14px 28px;border-radius:12px;border:1px solid ' + c + '44;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">Retour</button>'
+    + '</div>';
 }
 
 function openMuhasabaEmotion() {
@@ -11927,6 +11948,8 @@ window._muhasabaClassiqueQ1   = _muhasabaClassiqueQ1;
 window._muhasabaClassiqueQ2   = _muhasabaClassiqueQ2;
 window._muhasabaClassiqueQ3   = _muhasabaClassiqueQ3;
 window._muhasabaClassiqueQ4   = _muhasabaClassiqueQ4;
+window._mcReparation          = _mcReparation;
+window._muhasabaClassiqueFin  = _muhasabaClassiqueFin;
 window.openMuhasabaEmotion    = openMuhasabaEmotion;
 window.openMuhasabaBesoin = openMuhasabaBesoin;
 window.openMuhasabaSchema     = openMuhasabaSchema;
