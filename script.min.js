@@ -11360,13 +11360,13 @@ function v2RefreshStats() {
     var _dayN = Math.floor((Date.now() - _inst) / 86400000) + 1;
     if (_dayN < 1 || _dayN > 7) return;
     var _decTextes = {
-      1:'Bienvenue. Aujourd\u2019hui, explore le Sanctuaire. Pose ta premi\u00e8re intention.',
-      2:'Ouvre \u00ab\u00a0Ma pratique\u00a0\u00bb et d\u00e9couvre ta checklist spirituelle.',
-      3:'Va dans \u00ab\u00a0Mes portes\u00a0\u00bb. La Porte Col\u00e8re t\u2019attend.',
-      4:'Essaie le Tafakkur \u2014 2\u00a0minutes de m\u00e9ditation guid\u00e9e.',
-      5:'Regarde ton \u00ab\u00a0Mon chemin\u00a0\u00bb \u2014 ta progression est d\u00e9j\u00e0 l\u00e0.',
-      6:'Ce soir, fais \u00ab\u00a0Quand vient la nuit\u00a0\u00bb pour la premi\u00e8re fois.',
-      7:'Tu as explor\u00e9 7\u00a0jours. L\u2019app est \u00e0 toi maintenant.'
+      1:'Bienvenue. Explore ton Sanctuaire \u00e0 ton rythme.',
+      2:'Ce soir apr\u00e8s Icha\u00a0: essaie \u00ab\u00a0Quand vient la nuit\u00a0\u00bb.',
+      3:'D\u00e9couvre ton trait Nafs de la semaine.',
+      4:'Le Scan Regarde peut arriver \u00e0 n\u2019importe quel moment aujourd\u2019hui.',
+      5:'Tu as une minute\u00a0? Essaie Al-Waqt.',
+      6:'Note une intention dans ton Journal.',
+      7:'Tu connais maintenant ton Sanctuaire. \u00c0 toi.'
     };
     var _de = document.createElement('div');
     _de.id = 'decouverte-encart';
