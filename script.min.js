@@ -5389,9 +5389,29 @@ function openCureJour(porte, num) {
   if (!el) return;
   if (num >= 2 && !window._cureEpisodeAsked) { _cureEpisodeCheck(porte, num); return; }
   window._cureEpisodeAsked = false;
-  if (safeGetItem('cure_mode') === 'doucement') { _cureDoucement(num, '_cureJourSave_' + porte + '_' + num); return; }
+  if (safeGetItem('cure_mode') === 'doucement') { _cureDoucement(num, '_cureJourSave_' + porte + '_' + num); _injectCureProgress(num); return; }
   var renderer = _cureJourRenderers[porte + '_' + num];
-  if (renderer) renderer(el);
+  if (renderer) { renderer(el); _injectCureProgress(num); }
+}
+function _injectCureProgress(current) {
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var bar = document.createElement('div');
+  bar.style.cssText = 'display:flex;justify-content:center;gap:8px;max-width:340px;margin:0 auto 20px;padding-top:8px;';
+  for (var d = 1; d <= 7; d++) {
+    var done = d < current, active = d === current, future = d > current;
+    var bg = done ? '#C8A84A' : active ? '#a3372a' : 'transparent';
+    var bdr = done ? '#C8A84A' : active ? '#a3372a' : 'rgba(255,255,255,0.2)';
+    var col = done || active ? '#fff' : 'rgba(255,255,255,0.3)';
+    var cursor = done ? 'cursor:pointer;' : '';
+    var onclick = done ? ' onclick="openCureJour(\'colere\',' + d + ')"' : '';
+    bar.innerHTML += '<div style="text-align:center;' + cursor + '"' + onclick + '>'
+      + '<div style="width:28px;height:28px;border-radius:50%;border:2px solid ' + bdr + ';background:' + bg + ';display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:11px;color:' + col + ';">' + d + '</div>'
+      + '<div style="font-size:9px;color:rgba(255,255,255,0.3);margin-top:2px;">J' + d + '</div></div>';
+  }
+  var first = el.firstChild;
+  if (first && first.firstChild) first.insertBefore(bar, first.firstChild);
+  else el.insertBefore(bar, el.firstChild);
 }
 function _cureEpisodeCheck(porte, num) {
   var el = document.getElementById('babAnNafsContent');
