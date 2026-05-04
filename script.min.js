@@ -5107,7 +5107,8 @@ function _somaticPatternHtml() {
     var lbls = {tete:'la t\u00eate',gorge:'la gorge',poitrine:'la poitrine',ventre:'le ventre',mains:'les mains'};
     return '<div style="border:1px solid rgba(200,168,75,0.25);border-radius:14px;padding:14px;max-width:400px;margin:0 auto 24px;background:rgba(200,168,74,0.06);text-align:center;">'
       + '<div style="font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:8px;">Sur 7 derniers jours, tu as nomm\u00e9 ' + escapeHtml(lbls[top] || top) + ' ' + counts[top] + ' fois sur ' + recent.length + '.</div>'
-      + '<div style="font-family:var(--serif);font-size:14px;font-style:italic;color:#E5E0DC;line-height:1.6;">' + (msgs[top] || '') + '</div></div>';
+      + '<div style="font-family:var(--serif);font-size:14px;font-style:italic;color:#E5E0DC;line-height:1.6;">' + (msgs[top] || '') + '</div>'
+      + '<div style="font-size:11px;font-style:italic;color:rgba(255,255,255,0.3);line-height:1.5;margin-top:10px;">Cette observation est une suggestion spirituelle, pas un diagnostic m\u00e9dical. Si tes col\u00e8res sont fr\u00e9quentes ou intenses, parle \u00e0 un m\u00e9decin.</div></div>';
   } catch(e) { return ''; }
 }
 
