@@ -4706,7 +4706,8 @@ function _muhasabaClassiqueFin() {
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:36px;color:' + c + ';direction:rtl;margin-bottom:20px;">\u0645\u062d\u0627\u0633\u0628\u0629</div>'
     + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.6;max-width:400px;margin:0 auto 16px;">Tu as fait al-mu\u1e25\u00e2saba \u2014 l\u2019examen de l\u2019\u00e2me.</div>'
     + '<div class="itfaa-body" style="font-family:var(--serif);font-size:14px;font-style:italic;line-height:1.6;max-width:400px;margin:0 auto 20px;color:rgba(255,255,255,0.5);">Une discipline enseign\u00e9e depuis al-Mu\u1e25\u00e2sib\u00ee (m.\u00a0857) et reprise par al-Ghaz\u00e2l\u00ee, Ibn al-Qayyim, et toute la tradition.</div>'
-    + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:32px;">All\u00e2h accepte de toi.</div>'
+    + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:24px;">All\u00e2h accepte de toi.</div>'
+    + _shareEngagementHtml('classique')
     + '<button onclick="if(window._muhasabaFromInvite){localStorage.removeItem(\'colere_muhasaba_invite\');localStorage.removeItem(\'colere_muhasaba_snooze\');window._muhasabaFromInvite=false;var _b=document.getElementById(\'_muhasabaInviteBanner\');if(_b)_b.remove();}_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');babCompletPorte(\'colere\')" style="width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Retour</button>'
     + '</div>';
 }
@@ -5094,6 +5095,15 @@ function _muhasabaCarteTristesse() {
     + '</div>';
 }
 
+function _shareEngagementHtml(voie) {
+  var txt = '';
+  if (voie === 'classique') txt = safeGetItem('muhasaba_amorce_repar') || '';
+  else if (window._muhasabaReponses) txt = window._muhasabaReponses.actionTexte || '';
+  if (!txt.trim()) return '<div style="font-size:11px;color:rgba(255,255,255,0.2);margin-bottom:20px;">Pour partager ton engagement, \u00e9cris-le d\u2019abord dans l\u2019\u00e9tape pr\u00e9c\u00e9dente.</div>';
+  var body = encodeURIComponent('Salam, je me suis engag\u00e9 devant All\u00e2h : ' + txt);
+  return '<a href="sms:?body=' + body + '" style="display:block;width:100%;max-width:340px;margin:0 auto 20px;padding:12px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:none;color:rgba(200,168,75,0.6);font-family:var(--serif);font-size:13px;text-decoration:none;text-align:center;">Partager mon engagement avec un proche</a>';
+}
+
 function _somaticPatternHtml() {
   try {
     var log = JSON.parse(safeGetItem('somatic_log') || '[]');
@@ -5122,6 +5132,7 @@ function openMuhasabaCloture() {
     + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.8;max-width:400px;margin:0 auto 16px;">Allah voit ce que tu vois.<br>C\u2019est entre toi et Lui maintenant.</div>'
     + '<div class="itfaa-subtle" style="font-size:12px;max-width:380px;margin:0 auto 24px;">Mur\u00e2qaba \u2014 la vigilance constante du serviteur sous le regard d\u2019Allah.</div>'
     + _somaticPatternHtml()
+    + _shareEngagementHtml('guidee')
     + '<button onclick="if(window._muhasabaFromInvite){localStorage.removeItem(\'colere_muhasaba_invite\');localStorage.removeItem(\'colere_muhasaba_snooze\');window._muhasabaFromInvite=false;var _b=document.getElementById(\'_muhasabaInviteBanner\');if(_b)_b.remove();}_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');babCompletPorte(\'colere\')" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Sortir</button>'
     + '</div>';
 }
