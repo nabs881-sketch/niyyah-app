@@ -4363,7 +4363,8 @@ function openItfaaRefuge() {
   }
   html += '<div class="itfaa-subtle" style="font-size:12px;margin-bottom:4px;">\u2014 ' + escapeHtml(source) + '</div>'
     + '<div class="itfaa-subtle" style="font-size:11px;opacity:0.7;margin-bottom:20px;">' + escapeHtml(grade) + '</div>'
-    + '<div style="font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:20px;">R\u00e9p\u00e8te la formule dans ton c\u0153ur \u00e0 chaque cycle.</div>'
+    + '<div style="font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:16px;">R\u00e9p\u00e8te la formule dans ton c\u0153ur \u00e0 chaque cycle.</div>'
+    + '<button onclick="_refugeSujud()" style="display:block;max-width:340px;margin:0 auto 20px;padding:12px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:none;color:rgba(200,168,75,0.6);font-family:var(--serif);font-size:13px;cursor:pointer;">\ud83e\uddf4 Pose ton front au sol \u2014 1\u00a0minute</button>'
     + '<div id="_refugeShort" style="text-align:center;margin-bottom:16px;"><button onclick="document.getElementById(\'_refugeShort\').style.display=\'none\';_refugeRun(3)" style="background:none;border:none;font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(200,168,75,0.45);cursor:pointer;">Crise s\u00e9v\u00e8re\u00a0? Faire un Refuge court (\u00d73, 1\u00a0minute)</button></div>'
     + '<div id="_refugeCycle" style="margin-bottom:24px;">'
     + '<div id="_refugeCircle" style="width:120px;height:120px;border-radius:50%;border:2px solid ' + c + '44;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;transition:transform 4s ease-in-out;"><div id="_refugePhase" style="font-family:var(--serif);font-size:13px;color:' + c + ';opacity:0.7;"></div></div>'
@@ -4469,6 +4470,17 @@ function _refugeExtend(t) {
   if (phaseEl) phaseEl.textContent = '';
   setTimeout(function() { _refugeRun(t); }, 200);
 }
+function _refugeSujud() {
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  el.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;background:#000;">'
+    + '<div style="font-family:var(--serif);font-size:18px;color:#E5E0DC;line-height:1.8;max-width:380px;margin-bottom:20px;">Va chercher un endroit propre. Pose ton front au sol. Reste 1\u00a0minute.</div>'
+    + '<div style="font-size:14px;font-style:italic;color:rgba(200,168,75,0.6);line-height:1.6;max-width:380px;margin-bottom:6px;">Le Proph\u00e8te \uFDFA a dit\u00a0: \u00ab\u00a0Le moment o\u00f9 le serviteur est le plus proche de son Seigneur, c\u2019est en suj\u00fbd.\u00a0\u00bb</div>'
+    + '<div style="font-size:12px;color:rgba(200,168,75,0.4);margin-bottom:32px;">\u2014 Bukh\u00e2r\u00ee 1083</div>'
+    + '<button onclick="openItfaaRefuge()" style="width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">C\u2019est fait</button>'
+    + '</div>';
+}
+
 function _refugeSkip() {
   window._refugeStop = true;
   var c = document.getElementById('_refugeCycle');
@@ -12567,6 +12579,7 @@ window.openItfaaAction        = openItfaaAction;
 window.openItfaaRefuge        = openItfaaRefuge;
 window._refugeRun             = _refugeRun;
 window._refugeExtend          = _refugeExtend;
+window._refugeSujud           = _refugeSujud;
 window._refugeSkip            = _refugeSkip;
 window._refugeSudSave         = _refugeSudSave;
 window.openMuhasabaIntro      = openMuhasabaIntro;
