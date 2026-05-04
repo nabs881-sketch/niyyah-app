@@ -4096,18 +4096,11 @@ function _mutawassitDhikr() {
   if (!el) { _mutawassitEau(); return; }
   var c = '#B33A3A';
   el.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;">'
-    + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:24px;">Pour t\u2019accompagner, choisis\u00a0:</div>'
-    + '<div style="display:flex;flex-direction:column;gap:12px;max-width:340px;width:100%;">'
-    + '<button onclick="safeSetItem(\'mutawassit_dhikr_choisi\',\'lahawla\');_mutawassitEau()" style="width:100%;padding:16px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:none;cursor:pointer;text-align:center;">'
-    + '<div style="font-family:var(--serif);font-size:15px;color:rgba(200,168,75,0.7);">L\u00e2 \u1e25awla wa l\u00e2 quwwata ill\u00e2 bill\u00e2h</div>'
-    + '<div style="font-size:12px;font-style:italic;color:rgba(255,255,255,0.35);margin-top:4px;">L\u00e2cher-prise \u2014 Bukh\u00e2r\u00ee 6384</div>'
-    + '</button>'
-    + '<button onclick="safeSetItem(\'mutawassit_dhikr_choisi\',\'refuge\');_mutawassitEau()" style="width:100%;padding:16px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:none;cursor:pointer;text-align:center;">'
-    + '<div style="font-family:var(--serif);font-size:15px;color:rgba(200,168,75,0.7);">A\u2019\u00fbdhu bill\u00e2hi mina sh-shay\u1e6d\u00e2ni r-raj\u00eem</div>'
-    + '<div style="font-size:12px;font-style:italic;color:rgba(255,255,255,0.35);margin-top:4px;">Refuge l\u00e9ger \u2014 Bukh\u00e2r\u00ee 3282</div>'
-    + '</button>'
-    + '</div>'
-    + '<div style="font-size:13px;font-style:italic;color:rgba(255,255,255,0.3);margin-top:16px;">\u00c0 r\u00e9p\u00e9ter mentalement 3\u00a0fois.</div>'
+    + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:20px;">\u1e24asbiya-Ll\u00e2hu \u2014 \u00d77</div>'
+    + '<div style="font-family:\'Scheherazade New\',serif;font-size:28px;color:#C8A84A;direction:rtl;line-height:1.8;max-width:480px;margin:0 auto 12px;">\u062d\u064e\u0633\u0652\u0628\u0650\u064a\u064e \u0627\u0644\u0644\u0651\u064e\u0647\u064f \u0644\u064e\u0627 \u0625\u0650\u0644\u064e\u0670\u0647\u064e \u0625\u0650\u0644\u0651\u064e\u0627 \u0647\u064f\u0648\u064e \u0639\u064e\u0644\u064e\u064a\u0652\u0647\u0650 \u062a\u064e\u0648\u064e\u0643\u0651\u064e\u0644\u0652\u062a\u064f \u0648\u064e\u0647\u064f\u0648\u064e \u0631\u064e\u0628\u0651\u064f \u0627\u0644\u0652\u0639\u064e\u0631\u0652\u0634\u0650 \u0627\u0644\u0652\u0639\u064e\u0638\u0650\u064a\u0645\u0650</div>'
+    + '<div style="font-size:16px;font-style:italic;color:rgba(200,168,75,0.6);line-height:1.6;max-width:420px;margin:0 auto 10px;">\u1e24asbiya-Ll\u00e2hu l\u00e2 il\u00e2ha ill\u00e2 huwa, \u2019alayhi tawakkaltu wa huwa rabbu-l-\u2019arshi-l-\u2019a\u1e93\u012bm</div>'
+    + '<div class="itfaa-body" style="font-size:14px;line-height:1.6;max-width:400px;margin:0 auto 24px;">All\u00e2h me suffit, il n\u2019est de divinit\u00e9 que Lui. \u00c0 Lui je m\u2019en remets, et Il est le Seigneur du Tr\u00f4ne immense.</div>'
+    + '<button onclick="_mutawassitEau()" style="width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>'
     + '</div>';
 }
 function _mutawassitEau() {
