@@ -4209,6 +4209,7 @@ function openItfaaRefuge() {
   }
   html += '<div class="itfaa-subtle" style="font-size:12px;margin-bottom:4px;">\u2014 ' + escapeHtml(source) + '</div>'
     + '<div class="itfaa-subtle" style="font-size:11px;opacity:0.7;margin-bottom:20px;">' + escapeHtml(grade) + '</div>'
+    + '<div style="font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:20px;">R\u00e9p\u00e8te la formule dans ton c\u0153ur \u00e0 chaque cycle.</div>'
     + '<div id="_refugeCycle" style="margin-bottom:24px;">'
     + '<div id="_refugeCircle" style="width:120px;height:120px;border-radius:50%;border:2px solid ' + c + '44;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;transition:transform 4s ease-in-out;"><div id="_refugePhase" style="font-family:var(--serif);font-size:13px;color:' + c + ';opacity:0.7;"></div></div>'
     + '<div id="_refugeCount" style="font-family:var(--serif);font-size:12px;color:#C8A84A;margin-bottom:14px;">1 / 7</div>'
