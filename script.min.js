@@ -4428,8 +4428,10 @@ function _refugeRun(target) {
       if (phaseEl) phaseEl.textContent = 'Inspire';
       setTimeout(function() {
         if (window._refugeStop) return;
-        circle.style.transform = 'scale(1.25)'; if (phaseEl) phaseEl.textContent = 'Retiens';
-        setTimeout(function() {
+        circle.style.transform = 'scale(1.25)';
+        if (phaseEl) phaseEl.innerHTML = 'Retiens<div style="font-size:11px;opacity:0.6;margin-top:2px;" id="_retCount">7</div>';
+        var _rc = 6; var _ri = setInterval(function() { if (window._refugeStop) { clearInterval(_ri); return; } var e = document.getElementById('_retCount'); if (e) e.textContent = _rc; _rc--; if (_rc < 0) clearInterval(_ri); }, 1000);
+        setTimeout(function() { clearInterval(_ri);
           if (window._refugeStop) return;
           circle.style.transform = 'scale(1)'; if (phaseEl) phaseEl.textContent = 'Expire';
           arEl.style.opacity = '0.3';
