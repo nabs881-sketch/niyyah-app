@@ -4417,7 +4417,7 @@ function _muhasabaClassiqueFin() {
     + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.6;max-width:400px;margin:0 auto 16px;">Tu as fait ce qu\u2019al-Mu\u1e25\u00e2sib\u00ee recommandait \u00e0 ses disciples.</div>'
     + '<div class="itfaa-body" style="font-family:var(--serif);font-size:16px;font-style:italic;line-height:1.6;max-width:400px;margin:0 auto 20px;">L\u2019examen avant l\u2019examen.</div>'
     + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:32px;">All\u00e2h accepte de toi.</div>'
-    + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');babCompletPorte(\'colere\')" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Retour</button>'
+    + '<button onclick="if(window._muhasabaFromInvite){localStorage.removeItem(\'colere_muhasaba_invite\');localStorage.removeItem(\'colere_muhasaba_snooze\');window._muhasabaFromInvite=false;var _b=document.getElementById(\'_muhasabaInviteBanner\');if(_b)_b.remove();}_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');babCompletPorte(\'colere\')" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Retour</button>'
     + '</div>';
 }
 
