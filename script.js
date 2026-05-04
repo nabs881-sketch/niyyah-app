@@ -3885,8 +3885,38 @@ function _itfaaSUD(zone, cb) {
     + '<div id="_sudVal" style="font-family:var(--serif);font-size:32px;color:#C8A84A;margin-bottom:16px;">' + _sudInit + '</div>'
     + '<input type="range" min="0" max="10" step="1" value="' + _sudInit + '" oninput="document.getElementById(\'_sudVal\').textContent=this.value" style="width:100%;max-width:300px;accent-color:#C8A84A;margin-bottom:16px;" />'
     + '<div style="font-size:12px;font-style:italic;color:rgba(255,255,255,0.35);line-height:1.5;max-width:300px;margin:0 auto 24px;">Mettre un chiffre aide \u00e0 prendre du recul. On te reposera la question apr\u00e8s le Refuge.</div>'
-    + '<button onclick="safeSetItem(\'itfaa_sud_avant\',JSON.stringify({valeur:parseInt(document.querySelector(\'input[type=range]\').value,10),ts:Date.now(),zone:\'' + zone + '\'}));window._itfaaSUDcb()" style="width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>'
+    + '<button onclick="var _sv=parseInt(document.querySelector(\'input[type=range]\').value,10);safeSetItem(\'itfaa_sud_avant\',JSON.stringify({valeur:_sv,ts:Date.now(),zone:\'' + zone + '\'}));if(_sv>=9&&\'' + zone + '\'===\'rouge\'){_itfaaUrgence();}else{window._itfaaSUDcb();}" style="width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>'
     + '</div>';
+}
+function _itfaaUrgence() {
+  safeSetItem('itfaa_urgence', 'true');
+  _colereMode = 'shadid';
+  _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
+  document.body.classList.add('in-bab-an-nafs');
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
+    + '<div style="font-family:var(--serif);font-size:14px;color:#C8A84A;margin-bottom:20px;">Tu es submerg\u00e9. Refuge imm\u00e9diat.</div>'
+    + '<div style="font-family:\'Scheherazade New\',serif;font-size:28px;color:#B33A3A;direction:rtl;line-height:1.8;max-width:480px;margin:0 auto 12px;">\u0623\u064e\u0639\u064f\u0648\u0630\u064f \u0628\u0650\u0627\u0644\u0644\u0651\u064e\u0647\u0650 \u0645\u0650\u0646\u064e \u0627\u0644\u0634\u0651\u064e\u064a\u0652\u0637\u064e\u0627\u0646\u0650 \u0627\u0644\u0631\u0651\u064e\u062c\u0650\u064a\u0645\u0650</div>'
+    + '<div id="_refugeCycle" style="margin-bottom:24px;">'
+    + '<div id="_refugeCircle" style="width:120px;height:120px;border-radius:50%;border:2px solid #B33A3A44;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;transition:transform 4s ease-in-out;"><div id="_refugePhase" style="font-family:var(--serif);font-size:13px;color:#B33A3A;opacity:0.7;"></div></div>'
+    + '<div id="_refugeCount" style="font-family:var(--serif);font-size:12px;color:#C8A84A;margin-bottom:4px;">1 / 3</div>'
+    + '<div id="_refugeTimer" style="font-size:11px;color:rgba(255,255,255,0.3);font-style:italic;margin-bottom:14px;"></div>'
+    + '<div id="_refugeAr" style="font-family:\'Scheherazade New\',serif;font-size:32px;color:#B33A3A;direction:rtl;opacity:0;transition:opacity 0.8s ease;">\u0623\u064e\u0639\u064f\u0648\u0630\u064f \u0628\u0650\u0627\u0644\u0644\u0651\u064e\u0647\u0650 \u0645\u0650\u0646\u064e \u0627\u0644\u0634\u0651\u064e\u064a\u0652\u0637\u064e\u0627\u0646\u0650 \u0627\u0644\u0631\u0651\u064e\u062c\u0650\u064a\u0645\u0650</div>'
+    + '<div style="margin-top:16px;"><button onclick="_refugeSkip()" style="background:none;border:none;font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(255,255,255,0.3);cursor:pointer;">Sortir maintenant</button></div>'
+    + '</div>'
+    + '<div id="_refugeSudApres" style="display:none;text-align:center;margin-bottom:24px;">'
+    + '<div style="font-family:var(--serif);font-size:16px;color:#C8A84A;margin-bottom:8px;">Et maintenant, \u00e0 quel point c\u2019est intense\u00a0?</div>'
+    + '<div id="_sudApresVal" style="font-family:var(--serif);font-size:32px;color:#C8A84A;margin-bottom:12px;">5</div>'
+    + '<input type="range" min="0" max="10" step="1" value="5" oninput="document.getElementById(\'_sudApresVal\').textContent=this.value" style="width:100%;max-width:300px;accent-color:#C8A84A;margin-bottom:16px;" />'
+    + '<div><button onclick="_refugeSudSave()" style="padding:12px 28px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Valider</button></div>'
+    + '</div>'
+    + '<div id="_refugeEnd" style="display:none;">'
+    + '<div style="display:flex;flex-direction:column;gap:12px;max-width:340px;width:100%;margin:0 auto;">'
+    + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');babCompletPorte(\'colere\')" style="width:100%;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Sortir</button>'
+    + '<button onclick="_refugeExtend(7)" id="_refugeExtBtn" style="width:100%;padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.2);background:none;color:rgba(255,255,255,0.55);font-family:var(--serif);font-size:14px;cursor:pointer;">Continuer \u00d77</button>'
+    + '</div></div></div>';
+  _refugeRun(3);
 }
 
 function openPorteYasir(porte) {
@@ -12706,6 +12736,7 @@ window._yasirExit             = _yasirExit;
 window.openColereMutawassit   = openColereMutawassit;
 window._mutawassitExit        = _mutawassitExit;
 window._mutSudSave            = _mutSudSave;
+window._itfaaUrgence          = _itfaaUrgence;
 window._itfaaChoixChemin      = _itfaaChoixChemin;
 window._itfaaFaitClick        = _itfaaFaitClick;
 window._mutawassitPause       = _mutawassitPause;
