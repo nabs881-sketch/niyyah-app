@@ -4368,7 +4368,8 @@ function openItfaaRefuge() {
     + '<div id="_refugeShort" style="text-align:center;margin-bottom:16px;"><button onclick="document.getElementById(\'_refugeShort\').style.display=\'none\';_refugeRun(3)" style="background:none;border:none;font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(200,168,75,0.45);cursor:pointer;">Crise s\u00e9v\u00e8re\u00a0? Faire un Refuge court (\u00d73, 1\u00a0minute)</button></div>'
     + '<div id="_refugeCycle" style="margin-bottom:24px;">'
     + '<div id="_refugeCircle" style="width:120px;height:120px;border-radius:50%;border:2px solid ' + c + '44;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;transition:transform 4s ease-in-out;"><div id="_refugePhase" style="font-family:var(--serif);font-size:13px;color:' + c + ';opacity:0.7;"></div></div>'
-    + '<div id="_refugeCount" style="font-family:var(--serif);font-size:12px;color:#C8A84A;margin-bottom:14px;">1 / 7</div>'
+    + '<div id="_refugeCount" style="font-family:var(--serif);font-size:12px;color:#C8A84A;margin-bottom:4px;">1 / 7</div>'
+    + '<div id="_refugeTimer" style="font-size:11px;color:rgba(255,255,255,0.3);font-style:italic;margin-bottom:14px;"></div>'
     + '<div id="_refugeAr" style="font-family:\'Scheherazade New\',serif;font-size:32px;color:' + c + ';direction:rtl;opacity:0;transition:opacity 0.8s ease;">' + ar + '</div>'
     + '<div style="margin-top:16px;"><button onclick="_refugeSkip()" style="background:none;border:none;font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(255,255,255,0.3);cursor:pointer;">Sortir maintenant</button></div>'
     + '</div>'
@@ -4411,7 +4412,20 @@ function _refugeRun(target) {
   if (endEl) endEl.style.display = 'none';
   if (cycleEl) cycleEl.style.display = '';
   var guided = safeGetItem('refuge_breath_guided') !== '0';
-  function done() {
+  var _cycleLen = guided ? 19 : 6;
+  var _totalSec = target * _cycleLen;
+  var _startTs = Date.now();
+  var _timerEl = document.getElementById('_refugeTimer');
+  function _fmtTime(s) { var m = Math.floor(s/60); var r = s % 60; return m > 0 ? m + ' min ' + (r < 10 ? '0' : '') + r + ' s' : r + ' s'; }
+  if (_timerEl) _timerEl.textContent = _fmtTime(_totalSec) + ' environ';
+  var _timerIv = setInterval(function() {
+    if (window._refugeStop) { clearInterval(_timerIv); return; }
+    var elapsed = Math.floor((Date.now() - _startTs) / 1000);
+    var rem = Math.max(0, _totalSec - elapsed);
+    if (_timerEl) _timerEl.textContent = _fmtTime(rem) + ' restantes';
+    if (rem <= 0) clearInterval(_timerIv);
+  }, 1000);
+  function done() { clearInterval(_timerIv);
     if (cycleEl) cycleEl.style.display = 'none';
     var eb = document.getElementById('_refugeExtBtn');
     if (eb) eb.textContent = 'Continuer \u00d7' + (target <= 3 ? '7' : '33');
