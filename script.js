@@ -3928,7 +3928,44 @@ function _yasirChoix(texte) {
     + '<div style="font-family:var(--serif);font-size:22px;color:#C8A84A;opacity:0;transition:opacity 0.8s ease;" id="_yasirBism">Bismillah.</div>'
     + '</div>';
   requestAnimationFrame(function() { var e = document.getElementById('_yasirBism'); if (e) e.style.opacity = '1'; });
-  setTimeout(function() { _babImmersion = false; _hideAideBtn(); var _nb = document.getElementById('nav-bar-v2'); if (_nb) _nb.classList.remove('hidden-immersion'); v2GoSanctuaire(); }, 1500);
+  setTimeout(function() { _yasirSudOption(); }, 1500);
+}
+function _yasirSudOption() {
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) { _yasirExit(); return; }
+  el.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;">'
+    + '<div style="font-family:var(--serif);font-size:14px;color:#E5E0DC;margin-bottom:20px;">Tu veux mesurer ce qui a chang\u00e9\u00a0?</div>'
+    + '<div style="display:flex;flex-direction:column;gap:12px;max-width:340px;width:100%;">'
+    + '<button onclick="_yasirSudMesure()" style="width:100%;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Oui, mesurer</button>'
+    + '<button onclick="_yasirExit()" style="width:100%;padding:14px;border-radius:12px;border:1px solid rgba(200,168,75,0.2);background:none;color:rgba(200,168,75,0.5);font-family:var(--serif);font-size:14px;cursor:pointer;">Non, retour</button>'
+    + '</div></div>';
+}
+function _yasirSudMesure() {
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  el.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;">'
+    + '<div style="font-family:var(--serif);font-size:16px;color:#C8A84A;margin-bottom:8px;">\u00c0 quel point c\u2019est intense maintenant\u00a0?</div>'
+    + '<div id="_yasirSudVal" style="font-family:var(--serif);font-size:32px;color:#C8A84A;margin-bottom:12px;">5</div>'
+    + '<input type="range" min="0" max="10" step="1" value="5" oninput="document.getElementById(\'_yasirSudVal\').textContent=this.value" style="width:100%;max-width:300px;accent-color:#C8A84A;margin-bottom:24px;" />'
+    + '<button onclick="_yasirSudSave()" style="width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Valider</button>'
+    + '</div>';
+}
+function _yasirSudSave() {
+  var v = parseInt((document.querySelector('#babAnNafsContent input[type=range]') || {}).value || '5', 10);
+  var avant = 5; try { var a = JSON.parse(safeGetItem('itfaa_sud_avant') || '{}'); avant = a.valeur || 5; } catch(e) {}
+  var delta = avant - v;
+  safeSetItem('yasir_sud_apres', JSON.stringify({valeur:v, ts:Date.now(), delta:delta}));
+  var msg = '';
+  if (delta >= 3) msg = 'Le feu retombe. All\u00e2h voit ton effort.';
+  else if (v >= 6) msg = 'Le feu reste. C\u2019est ok. Reviens quand tu veux.';
+  if (msg) {
+    var el = document.getElementById('babAnNafsContent');
+    if (el) el.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;"><div style="font-family:var(--serif);font-size:16px;font-style:italic;color:#C8A84A;line-height:1.6;max-width:360px;">' + msg + '</div></div>';
+    setTimeout(_yasirExit, 5000);
+  } else { _yasirExit(); }
+}
+function _yasirExit() {
+  _babImmersion = false; _hideAideBtn(); var _nb = document.getElementById('nav-bar-v2'); if (_nb) _nb.classList.remove('hidden-immersion'); v2GoSanctuaire();
 }
 var _colereMode = 'shadid';
 
@@ -12405,6 +12442,10 @@ window._yasirSouffle          = _yasirSouffle;
 window._yasirSkipSouffle      = _yasirSkipSouffle;
 window._yasirIntention        = _yasirIntention;
 window._yasirChoix            = _yasirChoix;
+window._yasirSudOption        = _yasirSudOption;
+window._yasirSudMesure        = _yasirSudMesure;
+window._yasirSudSave          = _yasirSudSave;
+window._yasirExit             = _yasirExit;
 window.openColereMutawassit   = openColereMutawassit;
 window._mutawassitExit        = _mutawassitExit;
 window._itfaaFaitClick        = _itfaaFaitClick;
