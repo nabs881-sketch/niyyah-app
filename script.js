@@ -4230,6 +4230,8 @@ function _refugeRun(target) {
       endEl = document.getElementById('_refugeEnd'), cycleEl = document.getElementById('_refugeCycle');
   if (!circle || !arEl) return;
   window._refugeStop = false;
+  if (endEl) endEl.style.display = 'none';
+  if (cycleEl) cycleEl.style.display = '';
   function tick() {
     if (window._refugeStop) return;
     n++;
@@ -4255,8 +4257,6 @@ function _refugeRun(target) {
   tick();
 }
 function _refugeExtend(t) {
-  var endEl = document.getElementById('_refugeEnd'), cycleEl = document.getElementById('_refugeCycle');
-  if (endEl) endEl.style.display = 'none'; if (cycleEl) cycleEl.style.display = '';
   window._refugeStop = true;
   setTimeout(function() { _refugeRun(t); }, 100);
 }
@@ -11793,6 +11793,7 @@ window._logSomatic            = _logSomatic;
 window.openItfaaStep1         = openItfaaStep1;
 window.openItfaaAction        = openItfaaAction;
 window.openItfaaRefuge        = openItfaaRefuge;
+window._refugeExtend          = _refugeExtend;
 window.openMuhasabaIntro      = openMuhasabaIntro;
 window.openMuhasabaEmotion    = openMuhasabaEmotion;
 window.openMuhasabaBesoin = openMuhasabaBesoin;
