@@ -3997,7 +3997,8 @@ function openItfaaEmotionSous() {
   var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
     + backBtn
     + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';margin-bottom:8px;">Je suis en col\u00e8re\u2026</div>'
-    + '<div class="itfaa-subtle" style="font-size:14px;margin-bottom:28px;">Et dessous, peut-\u00eatre :</div>'
+    + '<div class="itfaa-subtle" style="font-size:14px;margin-bottom:8px;">Et dessous, peut-\u00eatre :</div>'
+    + '<div style="font-size:12px;font-style:italic;color:rgba(255,255,255,0.35);line-height:1.5;max-width:340px;margin:0 auto 24px;">Reconna\u00eetre l\u2019\u00e9motion sous l\u2019\u00e9motion \u2014 un travail du c\u0153ur.</div>'
     + '<div style="display:flex;flex-direction:column;gap:12px;max-width:320px;margin:0 auto;">';
   for (var i = 0; i < emotions.length; i++) {
     html += '<button onclick="_logEmotionSous(\'' + emotions[i].replace(/'/g,"\\'") + '\')" style="padding:16px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:16px;cursor:pointer;">' + emotions[i] + '</button>';
