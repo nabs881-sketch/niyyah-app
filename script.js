@@ -4114,20 +4114,21 @@ function openItfaaStep1() {
   if (!el) return;
   var c = '#B33A3A';
   var _zPulse = 'animation:_zonePulse 2.5s ease-in-out infinite;';
-  // Coordonnées calibrées sur silhouette debout (viewBox 0 0 100 200, ratio ~1:2)
+  // Coordonnées mesurées sur silhouette-colere.png 1024x1536 (ratio 1:1.5)
+  // viewBox 0 0 100 200, image contain = 100x150 centrée → offset Y +25
   var zones = '<svg viewBox="0 0 100 200" preserveAspectRatio="xMidYMid meet" style="position:absolute;top:0;left:0;width:100%;height:100%;">'
-    + '<circle cx="50" cy="18" r="3" fill="rgba(200,118,58,0.5)" style="' + _zPulse + 'cursor:pointer" onclick="_halo(this,\'tete\')"/>'
-    + '<circle cx="50" cy="18" r="7" fill="transparent" style="cursor:pointer" onclick="_halo(this,\'tete\')"/>'
-    + '<circle cx="50" cy="38" r="2.5" fill="rgba(200,118,58,0.5)" style="' + _zPulse + 'cursor:pointer" onclick="_halo(this,\'gorge\')"/>'
-    + '<circle cx="50" cy="38" r="5" fill="transparent" style="cursor:pointer" onclick="_halo(this,\'gorge\')"/>'
-    + '<circle cx="50" cy="55" r="4" fill="rgba(200,118,58,0.5)" style="' + _zPulse + 'cursor:pointer" onclick="_halo(this,\'poitrine\')"/>'
-    + '<circle cx="50" cy="55" r="9" fill="transparent" style="cursor:pointer" onclick="_halo(this,\'poitrine\')"/>'
-    + '<circle cx="50" cy="78" r="4" fill="rgba(200,118,58,0.5)" style="' + _zPulse + 'cursor:pointer" onclick="_halo(this,\'ventre\')"/>'
-    + '<circle cx="50" cy="78" r="9" fill="transparent" style="cursor:pointer" onclick="_halo(this,\'ventre\')"/>'
-    + '<circle cx="28" cy="95" r="3" fill="rgba(200,118,58,0.5)" style="' + _zPulse + 'cursor:pointer" onclick="_halo(this,\'mains\')"/>'
-    + '<circle cx="28" cy="95" r="7" fill="transparent" style="cursor:pointer" onclick="_halo(this,\'mains\')"/>'
-    + '<circle cx="72" cy="95" r="3" fill="rgba(200,118,58,0.5)" style="' + _zPulse + 'cursor:pointer" onclick="_halo(this,\'mains\')"/>'
-    + '<circle cx="72" cy="95" r="7" fill="transparent" style="cursor:pointer" onclick="_halo(this,\'mains\')"/>'
+    + '<circle cx="50" cy="38" r="3" fill="rgba(200,118,58,0.5)" style="' + _zPulse + 'cursor:pointer" onclick="_halo(this,\'tete\')"/>'
+    + '<circle cx="50" cy="38" r="7" fill="transparent" style="cursor:pointer" onclick="_halo(this,\'tete\')"/>'
+    + '<circle cx="50" cy="52" r="2.5" fill="rgba(200,118,58,0.5)" style="' + _zPulse + 'cursor:pointer" onclick="_halo(this,\'gorge\')"/>'
+    + '<circle cx="50" cy="52" r="5" fill="transparent" style="cursor:pointer" onclick="_halo(this,\'gorge\')"/>'
+    + '<circle cx="50" cy="67" r="4" fill="rgba(200,118,58,0.5)" style="' + _zPulse + 'cursor:pointer" onclick="_halo(this,\'poitrine\')"/>'
+    + '<circle cx="50" cy="67" r="9" fill="transparent" style="cursor:pointer" onclick="_halo(this,\'poitrine\')"/>'
+    + '<circle cx="50" cy="84" r="4" fill="rgba(200,118,58,0.5)" style="' + _zPulse + 'cursor:pointer" onclick="_halo(this,\'ventre\')"/>'
+    + '<circle cx="50" cy="84" r="9" fill="transparent" style="cursor:pointer" onclick="_halo(this,\'ventre\')"/>'
+    + '<circle cx="33" cy="105" r="3" fill="rgba(200,118,58,0.5)" style="' + _zPulse + 'cursor:pointer" onclick="_halo(this,\'mains\')"/>'
+    + '<circle cx="33" cy="105" r="7" fill="transparent" style="cursor:pointer" onclick="_halo(this,\'mains\')"/>'
+    + '<circle cx="67" cy="105" r="3" fill="rgba(200,118,58,0.5)" style="' + _zPulse + 'cursor:pointer" onclick="_halo(this,\'mains\')"/>'
+    + '<circle cx="67" cy="105" r="7" fill="transparent" style="cursor:pointer" onclick="_halo(this,\'mains\')"/>'
     + '</svg>';
   el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 80px;text-align:center;">'
     + '<button onclick="openColereChoix()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:16px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>'
