@@ -4213,6 +4213,7 @@ function openItfaaRefuge() {
     + '<div id="_refugeCircle" style="width:120px;height:120px;border-radius:50%;border:2px solid ' + c + '44;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;transition:transform 4s ease-in-out;"><div id="_refugePhase" style="font-family:var(--serif);font-size:13px;color:' + c + ';opacity:0.7;"></div></div>'
     + '<div id="_refugeAr" style="font-family:\'Scheherazade New\',serif;font-size:32px;color:' + c + ';direction:rtl;opacity:0;transition:opacity 0.8s ease;">' + ar + '</div>'
     + '<div id="_refugeCount" style="font-family:var(--serif);font-size:14px;color:' + c + ';opacity:0.5;margin-top:8px;">1 / 7</div>'
+    + '<div style="margin-top:16px;"><button onclick="_refugeSkip()" style="background:none;border:none;font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(255,255,255,0.3);cursor:pointer;">Sortir maintenant</button></div>'
     + '</div>'
     + '<div id="_refugeEnd" style="display:none;">'
     + '<div style="font-size:13px;color:' + c + ';opacity:0.6;font-style:italic;line-height:1.6;max-width:400px;margin:0 auto 16px;">Quand le calme sera revenu, tu pourras revenir ici \u00e0 froid. La porte t\u2019attend.</div>'
@@ -4259,6 +4260,11 @@ function _refugeRun(target) {
 function _refugeExtend(t) {
   window._refugeStop = true;
   setTimeout(function() { _refugeRun(t); }, 100);
+}
+function _refugeSkip() {
+  window._refugeStop = true;
+  var e = document.getElementById('_refugeEnd'), c = document.getElementById('_refugeCycle');
+  if (e) e.style.display = ''; if (c) c.style.display = 'none';
 }
 
 function openMuhasabaIntro() {
@@ -11794,6 +11800,7 @@ window.openItfaaStep1         = openItfaaStep1;
 window.openItfaaAction        = openItfaaAction;
 window.openItfaaRefuge        = openItfaaRefuge;
 window._refugeExtend          = _refugeExtend;
+window._refugeSkip            = _refugeSkip;
 window.openMuhasabaIntro      = openMuhasabaIntro;
 window.openMuhasabaEmotion    = openMuhasabaEmotion;
 window.openMuhasabaBesoin = openMuhasabaBesoin;
