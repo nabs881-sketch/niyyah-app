@@ -3925,8 +3925,10 @@ function _yasirLaHawla() {
     + '<div style="font-size:14px;color:#E5E0DC;line-height:1.6;max-width:380px;margin-bottom:24px;">Cette irritation, elle vient. Voici une formule qui marche pour tout \u2014 quelqu\u2019un, une situation, un objet, ou toi-m\u00eame.</div>'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:32px;color:#C8A84A;direction:rtl;line-height:1.8;max-width:480px;margin:0 auto 12px;">\u0644\u064e\u0627 \u062d\u064e\u0648\u0652\u0644\u064e \u0648\u064e\u0644\u064e\u0627 \u0642\u064f\u0648\u0651\u064e\u0629\u064e \u0625\u0650\u0644\u0651\u064e\u0627 \u0628\u0650\u0627\u0644\u0644\u0651\u064e\u0647\u0650</div>'
     + '<div style="font-size:16px;font-style:italic;color:rgba(200,168,75,0.6);line-height:1.6;margin-bottom:10px;">L\u00e2 \u1e25awla wa l\u00e2 quwwata ill\u00e2 bill\u00e2h</div>'
-    + '<div class="itfaa-body" style="font-size:14px;line-height:1.6;max-width:380px;margin:0 auto 28px;">Il n\u2019y a de force ni de puissance qu\u2019en All\u00e2h.</div>'
-    + '<button onclick="_yasirIntention()" style="width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:#4a7c59;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>'
+    + '<div class="itfaa-body" style="font-size:14px;line-height:1.6;max-width:380px;margin:0 auto 12px;">Il n\u2019y a de force ni de puissance qu\u2019en All\u00e2h.</div>'
+    + '<div style="font-size:12px;font-style:italic;color:rgba(200,168,75,0.45);line-height:1.5;max-width:380px;margin:0 auto 16px;">Le Proph\u00e8te \uFDFA a appel\u00e9 cette formule un tr\u00e9sor du Paradis. \u2014 Bukh\u00e2r\u00ee 6384</div>'
+    + '<div style="font-size:13px;font-style:italic;color:rgba(255,255,255,0.35);line-height:1.5;max-width:380px;margin:0 auto 24px;">Tu connais peut-\u00eatre cette formule. Cette fois, dis-la consciemment pour cette irritation.</div>'
+    + '<button onclick="_yasirIntention()" style="width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:#4a7c59;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">C\u2019est fait</button>'
     + '</div>';
 }
 
