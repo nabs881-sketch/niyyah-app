@@ -3878,11 +3878,12 @@ function _itfaaSUD(zone, cb) {
   var el = document.getElementById('babAnNafsContent');
   if (!el) { cb(); return; }
   window._itfaaSUDcb = cb;
+  var _sudInit = zone === 'verte' ? 3 : zone === 'orange' ? 5 : 7;
   el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
     + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:8px;">\u00c0 quel point c\u2019est intense\u00a0?</div>'
     + '<div style="font-size:13px;color:rgba(255,255,255,0.4);margin-bottom:28px;">0 = calme \u00b7 10 = \u00e7a me submerge totalement</div>'
-    + '<div id="_sudVal" style="font-family:var(--serif);font-size:32px;color:#C8A84A;margin-bottom:16px;">5</div>'
-    + '<input type="range" min="0" max="10" step="1" value="5" oninput="document.getElementById(\'_sudVal\').textContent=this.value" style="width:100%;max-width:300px;accent-color:#C8A84A;margin-bottom:16px;" />'
+    + '<div id="_sudVal" style="font-family:var(--serif);font-size:32px;color:#C8A84A;margin-bottom:16px;">' + _sudInit + '</div>'
+    + '<input type="range" min="0" max="10" step="1" value="' + _sudInit + '" oninput="document.getElementById(\'_sudVal\').textContent=this.value" style="width:100%;max-width:300px;accent-color:#C8A84A;margin-bottom:16px;" />'
     + '<div style="font-size:12px;font-style:italic;color:rgba(255,255,255,0.35);line-height:1.5;max-width:300px;margin:0 auto 24px;">Mettre un chiffre aide \u00e0 prendre du recul. On te reposera la question apr\u00e8s le Refuge.</div>'
     + '<button onclick="safeSetItem(\'itfaa_sud_avant\',JSON.stringify({valeur:parseInt(document.querySelector(\'input[type=range]\').value,10),ts:Date.now(),zone:\'' + zone + '\'}));window._itfaaSUDcb()" style="width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>'
     + '</div>';
