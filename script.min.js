@@ -4118,8 +4118,16 @@ function _mutawassitEau() {
     + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:16px;">Maintenant, prends un verre d\u2019eau.</div>'
     + '<div class="itfaa-body" style="font-size:14px;line-height:1.6;max-width:360px;margin:0 auto 16px;">Bois lentement, en 3\u00a0gorg\u00e9es. Dis Bismillah avant. Dis Al-hamdulill\u00e2h apr\u00e8s.</div>'
     + '<div style="font-size:12px;font-style:italic;color:rgba(200,168,75,0.45);margin-bottom:28px;">Sunna proph\u00e9tique \u2014 Tirmidh\u00ee 1885</div>'
-    + '<button onclick="_mutawassitExit()" style="width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019ai bu</button>'
+    + '<button id="_eauBtn" disabled style="width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;opacity:0.3;">20</button>'
     + '</div>';
+  var _es = 20;
+  var _ei = setInterval(function() {
+    _es--;
+    var b = document.getElementById('_eauBtn');
+    if (!b) { clearInterval(_ei); return; }
+    if (_es > 0) { b.textContent = _es; }
+    else { clearInterval(_ei); b.textContent = 'J\u2019ai bu'; b.disabled = false; b.style.opacity = '1'; b.onclick = function() { _mutawassitExit(); }; }
+  }, 1000);
 }
 
 function openItfaaEmotionSous() {
