@@ -5037,6 +5037,7 @@ function openMuhasabaSens() {
     + '<button onclick="_muhasabaChoixSens(\'duaa\')" style="padding:10px 24px;border-radius:10px;border:1px solid ' + c + '55;background:' + c + '1a;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">Choisir</button>'
     + '</div>'
     // Bouton aucune
+    + '<div style="font-size:12px;font-style:italic;color:rgba(200,168,75,0.45);line-height:1.5;max-width:400px;margin:16px auto 12px;">Toutes les portes m\u00e8nent \u00e0 All\u00e2h. La du\u2019\u00e2\u2019 est leur sceau. \u2014 \u00ab\u00a0La du\u2019\u00e2\u2019 est l\u2019adoration.\u00a0\u00bb (Tirmidh\u00ee 2969)</div>'
     + '<button onclick="_muhasabaChoixSens(\'aucune\')" style="padding:12px 28px;border-radius:12px;border:1px solid ' + c + '22;background:none;color:' + c + ';opacity:0.5;font-family:var(--serif);font-size:13px;cursor:pointer;margin-top:8px;">Aucune pour l\u2019instant</button>'
     + '</div></div>';
   el.innerHTML = html;
