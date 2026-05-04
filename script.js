@@ -9300,6 +9300,17 @@ function v2OpenSettings() {
             </select>
           </div>
         </div>
+        <div style="padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.04);">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <div style="font-size:14px;color:rgba(240,234,214,0.7);">🌬️ Dhikr du souffle</div>
+            <select onchange="safeSetItem('souffle_mode',this.value)" style="background:#222;color:#D4AF37;border:1px solid rgba(212,175,55,0.3);border-radius:8px;padding:6px 10px;font-size:12px;font-family:var(--sans);outline:none;">
+              <option value="silence" ${(safeGetItem('souffle_mode')||'silence')==='silence'?'selected':''}>Silence</option>
+              <option value="subhanallah" ${safeGetItem('souffle_mode')==='subhanallah'?'selected':''}>Subḥân Allâh</option>
+              <option value="istighfar" ${safeGetItem('souffle_mode')==='istighfar'?'selected':''}>Astaghfiru-llâh</option>
+              <option value="lahawla" ${safeGetItem('souffle_mode')==='lahawla'?'selected':''}>Lâ ḥawla wa lâ quwwata illâ billâh</option>
+            </select>
+          </div>
+        </div>
         <div style="padding:14px 16px;cursor:pointer;"
           onclick="if(typeof confirmReset==='function'){confirmReset();document.getElementById('v2-settings-sheet').remove();}">
           <div style="display:flex;justify-content:space-between;align-items:center;">
