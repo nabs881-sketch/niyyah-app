@@ -4050,7 +4050,8 @@ function openItfaaSomatic() {
   var backBtn = '<button onclick="openItfaaStep1()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
   var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
     + backBtn
-    + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';margin-bottom:28px;">Comment est-ce que \u00e7a se sent\u00a0?</div>'
+    + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';margin-bottom:8px;">Comment est-ce que \u00e7a se sent\u00a0?</div>'
+    + '<div style="font-size:12px;font-style:italic;color:rgba(255,255,255,0.35);line-height:1.6;max-width:340px;margin:0 auto 24px;">Le corps parle quand le c\u0153ur ne sait plus dire. \u2014 al-Mu\u1e25\u00e2sib\u00ee enseignait que le corps est miroir du nafs.</div>'
     + '<div style="display:flex;flex-direction:column;gap:12px;max-width:320px;margin:0 auto;">';
   for (var i = 0; i < sensations.length; i++) {
     html += '<button onclick="_logSomatic(\'' + sensations[i] + '\')" style="padding:16px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:16px;cursor:pointer;">' + sensations[i] + '</button>';
