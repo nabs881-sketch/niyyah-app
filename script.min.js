@@ -4998,6 +4998,23 @@ function _muhasabaCarteTristesse() {
     + '</div>';
 }
 
+function _somaticPatternHtml() {
+  try {
+    var log = JSON.parse(safeGetItem('somatic_log') || '[]');
+    var cutoff = Date.now() - 7 * 86400000;
+    var recent = log.filter(function(e) { return e.ts > cutoff; });
+    if (recent.length < 4) return '';
+    var counts = {}; recent.forEach(function(e) { counts[e.zone] = (counts[e.zone] || 0) + 1; });
+    var top = Object.keys(counts).sort(function(a, b) { return counts[b] - counts[a]; })[0];
+    if (!top || counts[top] / recent.length < 0.5) return '';
+    var msgs = {tete:'Ta col\u00e8re passe par la pens\u00e9e. Le silence et le wu\u1e0d\u00fb\u2019 restent tes alli\u00e9s.',gorge:'Ta col\u00e8re cherche \u00e0 sortir en paroles. Le silence proph\u00e9tique est l\u2019antidote.',poitrine:'Ta col\u00e8re se loge dans le souffle. Respiration et assise sont tes ancres.',ventre:'Ta col\u00e8re se somatise dans le tronc. Assise prolong\u00e9e essentielle.',mains:'Ta col\u00e8re cherche le mouvement. Marche et action canalisent ce feu.'};
+    var lbls = {tete:'la t\u00eate',gorge:'la gorge',poitrine:'la poitrine',ventre:'le ventre',mains:'les mains'};
+    return '<div style="border:1px solid rgba(200,168,75,0.25);border-radius:14px;padding:14px;max-width:400px;margin:0 auto 24px;background:rgba(200,168,74,0.06);text-align:center;">'
+      + '<div style="font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:8px;">Sur 7 derniers jours, tu as nomm\u00e9 ' + escapeHtml(lbls[top] || top) + ' ' + counts[top] + ' fois sur ' + recent.length + '.</div>'
+      + '<div style="font-family:var(--serif);font-size:14px;font-style:italic;color:#E5E0DC;line-height:1.6;">' + (msgs[top] || '') + '</div></div>';
+  } catch(e) { return ''; }
+}
+
 function openMuhasabaCloture() {
   _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
   var el = document.getElementById('babAnNafsContent');
@@ -5006,7 +5023,8 @@ function openMuhasabaCloture() {
   el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:28px;color:' + c + ';direction:rtl;margin-bottom:16px;">\u0645\u062d\u0627\u0633\u0628\u0629</div>'
     + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.8;max-width:400px;margin:0 auto 16px;">Allah voit ce que tu vois.<br>C\u2019est entre toi et Lui maintenant.</div>'
-    + '<div class="itfaa-subtle" style="font-size:12px;max-width:380px;margin:0 auto 32px;">Mur\u00e2qaba \u2014 la vigilance constante du serviteur sous le regard d\u2019Allah.</div>'
+    + '<div class="itfaa-subtle" style="font-size:12px;max-width:380px;margin:0 auto 24px;">Mur\u00e2qaba \u2014 la vigilance constante du serviteur sous le regard d\u2019Allah.</div>'
+    + _somaticPatternHtml()
     + '<button onclick="if(window._muhasabaFromInvite){localStorage.removeItem(\'colere_muhasaba_invite\');localStorage.removeItem(\'colere_muhasaba_snooze\');window._muhasabaFromInvite=false;var _b=document.getElementById(\'_muhasabaInviteBanner\');if(_b)_b.remove();}_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');babCompletPorte(\'colere\')" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Sortir</button>'
     + '</div>';
 }
