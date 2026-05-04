@@ -4184,7 +4184,8 @@ function openItfaaAction() {
   if (zone === 'tete') {
     html += '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.7;max-width:360px;margin:0 auto 8px;">Eau tr\u00e8s froide sur le visage.</div>'
       + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;margin-bottom:8px;">30 secondes pour calmer le feu.</div>'
-      + '<div class="itfaa-subtle" style="font-size:15px;margin-bottom:28px;">Puis fais le wudu complet.</div>'
+      + '<div class="itfaa-subtle" style="font-size:15px;margin-bottom:12px;">Puis fais le wudu complet.</div>'
+      + '<div style="font-size:12px;font-style:italic;color:rgba(200,168,75,0.45);line-height:1.5;max-width:340px;margin:0 auto 24px;">Avant la pri\u00e8re, les savants enseignent le wu\u1e0d\u00fb\u2019 pour le corps et le c\u0153ur. La col\u00e8re y trouve aussi son apaisement.</div>'
       + '<button onclick="_itfaaWuduEtape2()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">C\u2019est fait</button>'
       + '</div>';
     el.innerHTML = html;
