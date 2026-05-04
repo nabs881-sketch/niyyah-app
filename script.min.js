@@ -4354,6 +4354,7 @@ function openItfaaRefuge() {
     source = 'Bukh\u00e2r\u00ee 3282, Muslim 2610'; grade = 'sahih';
   }
   var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
+    + '<div id="_refugeHeader">'
     + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';opacity:0.7;margin-top:60px;margin-bottom:24px;">Cherche refuge.</div>'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:28px;color:' + c + ';direction:rtl;text-align:center;line-height:1.8;max-width:520px;margin:0 auto 12px;">' + ar + '</div>'
     + '<div class="itfaa-body" style="font-size:14px;text-align:center;font-style:italic;margin-bottom:12px;">' + escapeHtml(translit) + '</div>'
@@ -4366,9 +4367,9 @@ function openItfaaRefuge() {
     + '<div style="font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:20px;">R\u00e9p\u00e8te la formule dans ton c\u0153ur \u00e0 chaque cycle.</div>'
     + '<div id="_refugePrep" style="display:flex;flex-direction:column;gap:12px;max-width:340px;margin:0 auto 24px;">'
     + '<button onclick="_refugeSujud()" style="width:100%;padding:14px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:none;color:rgba(200,168,75,0.6);font-family:var(--serif);font-size:14px;cursor:pointer;">\ud83e\uddf4 Pose ton front au sol \u2014 1\u00a0minute</button>'
-    + '<button onclick="document.getElementById(\'_refugePrep\').style.display=\'none\';_refugeRun(3)" style="width:100%;padding:14px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:none;color:rgba(200,168,75,0.6);font-family:var(--serif);font-size:14px;cursor:pointer;">Refuge court \u2014 3\u00a0cycles, 1\u00a0minute</button>'
-    + '<button onclick="document.getElementById(\'_refugePrep\').style.display=\'none\';_refugeRun(7)" style="width:100%;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Refuge standard \u2014 7\u00a0cycles, 2\u00a0minutes</button>'
-    + '</div>'
+    + '<button onclick="document.getElementById(\'_refugeHeader\').style.display=\'none\';_refugeRun(3)" style="width:100%;padding:14px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:none;color:rgba(200,168,75,0.6);font-family:var(--serif);font-size:14px;cursor:pointer;">Refuge court \u2014 3\u00a0cycles, 1\u00a0minute</button>'
+    + '<button onclick="document.getElementById(\'_refugeHeader\').style.display=\'none\';_refugeRun(7)" style="width:100%;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Refuge standard \u2014 7\u00a0cycles, 2\u00a0minutes</button>'
+    + '</div></div>'
     + '<div id="_refugeCycle" style="display:none;margin-bottom:24px;">'
     + '<div id="_refugeCircle" style="width:120px;height:120px;border-radius:50%;border:2px solid ' + c + '44;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;transition:transform 4s ease-in-out;"><div id="_refugePhase" style="font-family:var(--serif);font-size:13px;color:' + c + ';opacity:0.7;"></div></div>'
     + '<div id="_refugeCount" style="font-family:var(--serif);font-size:12px;color:#C8A84A;margin-bottom:4px;">1 / 7</div>'
