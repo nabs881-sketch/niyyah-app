@@ -4617,13 +4617,13 @@ function openMuhasabaSchema() {
     + backBtn
     + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';line-height:1.6;max-width:400px;margin:0 auto 12px;">Y a-t-il un fil rouge dans tes col\u00e8res\u00a0?</div>'
     + '<div class="itfaa-subtle" style="font-size:12px;max-width:380px;margin:0 auto 24px;line-height:1.6;">C\u2019est la mu\u1e25\u00e2saba \u2014 l\u2019examen de conscience que \u2019Umar ibn al-Kha\u1e6d\u1e6d\u00e2b recommandait\u00a0: \u00ab\u00a0Faites vos comptes avant qu\u2019on ne vous les demande.\u00a0\u00bb</div>'
-    + '<div style="display:flex;flex-direction:column;gap:10px;max-width:360px;margin:0 auto 20px;text-align:left;">';
+    + '<div style="display:flex;flex-direction:column;gap:10px;max-width:340px;margin:0 auto 20px;text-align:left;">';
   for (var i = 0; i < items.length; i++) {
     html += '<button data-schema="' + i + '" onclick="this.classList.toggle(\'_schemaOn\')" style="padding:12px 16px;border-radius:10px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;text-align:left;transition:background 0.2s;">' + items[i] + '</button>';
   }
   html += '</div>'
-    + '<textarea id="_schemaLibre" placeholder="Autre chose\u2026 (optionnel)" style="width:100%;max-width:360px;min-height:60px;padding:12px;border-radius:10px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;resize:vertical;margin-bottom:20px;"></textarea>'
-    + '<button onclick="_muhasabaCollectSchema()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>'
+    + '<textarea id="_schemaLibre" placeholder="Autre chose\u2026 (optionnel)" style="width:100%;max-width:340px;min-height:60px;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;resize:vertical;margin:0 auto 20px;display:block;"></textarea>'
+    + '<button onclick="_muhasabaCollectSchema()" style="width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>'
     + '</div>';
   el.innerHTML = html;
 }
