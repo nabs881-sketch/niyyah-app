@@ -4094,11 +4094,13 @@ function openItfaaOuverture() {
     + '<div id="_itfaaAr" style="font-family:\'Scheherazade New\',serif;font-size:64px;color:#C8A84A;direction:rtl;opacity:0;transition:opacity 1.5s ease;">\u0644\u0627\u064e \u062a\u064e\u063a\u0652\u0636\u064e\u0628\u0652</div>'
     + '<div id="_itfaaTranslit" style="font-family:var(--serif);font-size:16px;font-style:italic;color:rgba(200,168,75,0.7);margin-top:12px;opacity:0;transition:opacity 1s ease;">L\u00e2 taghḍab \u2014 Ne te mets pas en col\u00e8re.</div>'
     + '<div id="_itfaaSource" style="font-size:12px;color:rgba(255,255,255,0.35);margin-top:6px;opacity:0;transition:opacity 1s ease;">Bukh\u00e2r\u00ee 6116 \u2014 \u1e63a\u1e25\u00ee\u1e25</div>'
+    + '<div id="_itfaaContext" style="font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);margin-top:8px;max-width:360px;line-height:1.5;opacity:0;transition:opacity 1s ease;">Le conseil le plus court du Proph\u00e8te \uFDFA, r\u00e9p\u00e9t\u00e9 trois fois \u00e0 un homme qui demandait conseil. \u2014 Bukh\u00e2r\u00ee 6116</div>'
     + '</div>';
   requestAnimationFrame(function() { var e = document.getElementById('_itfaaAr'); if (e) e.style.opacity = '1'; });
   setTimeout(function() { var e = document.getElementById('_itfaaTranslit'); if (e) e.style.opacity = '1'; }, 2000);
   setTimeout(function() { var e = document.getElementById('_itfaaSource'); if (e) e.style.opacity = '1'; }, 2500);
-  setTimeout(function() { openItfaaStep1(); }, 4000);
+  setTimeout(function() { var e = document.getElementById('_itfaaContext'); if (e) e.style.opacity = '1'; }, 3000);
+  setTimeout(function() { openItfaaStep1(); }, 5000);
 }
 
 function openItfaaStep1() {
