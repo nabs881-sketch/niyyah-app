@@ -4191,9 +4191,14 @@ function _itfaaSalat() {
   safeSetItem('colere_salat_choisie', String(Date.now()));
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
-  el.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;">'
-    + '<div style="font-family:var(--serif);font-size:20px;color:#C8A84A;line-height:1.8;max-width:360px;opacity:0;transition:opacity 1s ease;" id="_salatMsg">Va prier.<br>Reviens quand tu veux.</div></div>';
+  el.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;">'
+    + '<div style="font-family:var(--serif);font-size:20px;color:#C8A84A;line-height:1.8;max-width:360px;opacity:0;transition:opacity 1s ease;margin-bottom:40px;" id="_salatMsg">Va prier.<br>Reviens quand tu veux.</div>'
+    + '<div id="_salatBtns" style="opacity:0;transition:opacity 0.8s ease;display:flex;flex-direction:column;gap:12px;max-width:320px;width:100%;">'
+    + '<button onclick="localStorage.removeItem(\'colere_salat_choisie\');openMuhasabaIntro()" style="width:100%;padding:16px;border-radius:12px;border:none;background:#B33A3A;color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019ai pri\u00e9</button>'
+    + '<button onclick="localStorage.removeItem(\'colere_salat_choisie\');openItfaaAction()" style="background:none;border:none;font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(255,255,255,0.3);cursor:pointer;">Annuler</button>'
+    + '</div></div>';
   requestAnimationFrame(function() { var e = document.getElementById('_salatMsg'); if (e) e.style.opacity = '1'; });
+  setTimeout(function() { var b = document.getElementById('_salatBtns'); if (b) b.style.opacity = '1'; }, 2000);
 }
 function _checkSalatReturn() {
   var ts = parseInt(safeGetItem('colere_salat_choisie') || '0', 10);
