@@ -4708,7 +4708,8 @@ function openMuhasabaSens() {
   var cardStyle = 'padding:20px;border-radius:14px;border:1px solid ' + c + '33;background:' + c + '08;margin-bottom:14px;text-align:center;';
   var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
     + backBtn
-    + '<div class="itfaa-subtle" style="font-size:15px;line-height:1.6;max-width:420px;margin:0 auto 24px;">L\u2019\u00e2me cherche un sens. 3\u00a0portes s\u2019ouvrent.<br>Choisis-en une, ou aucune.</div>'
+    + '<div class="itfaa-subtle" style="font-size:15px;line-height:1.6;max-width:420px;margin:0 auto 8px;">L\u2019\u00e2me cherche un sens. 3\u00a0portes s\u2019ouvrent.<br>Choisis-en une, ou aucune.</div>'
+    + '<div style="font-size:12px;font-style:italic;color:rgba(255,255,255,0.35);line-height:1.5;max-width:400px;margin:0 auto 24px;">Trois portes vers le sens, identifi\u00e9es par les soignants de l\u2019\u00e2me classiques\u00a0: tirer la le\u00e7on, pardonner, demander \u00e0 All\u00e2h.</div>'
     // Carte 1 : La Leçon
     + '<div style="max-width:340px;margin:0 auto;">'
     + '<div style="' + cardStyle + '">'
