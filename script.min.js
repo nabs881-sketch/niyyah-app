@@ -5343,7 +5343,9 @@ function _cureJ7Finale() {
       + '<button onclick="localStorage.removeItem(\'cure_colere\');openCureColere()" style="width:100%;padding:14px;border-radius:12px;border:1px solid ' + c + '55;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">Reprendre la Cure</button>'
       + '<button onclick="openMuhasabaIntro()" style="width:100%;padding:14px;border-radius:12px;border:1px solid ' + c + '55;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">Ouvrir Mu\u1e25\u00e2saba</button>'
       + '<button onclick="_cureJ7FinaleSucces()" style="width:100%;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>'
-      + '</div></div>';
+      + '</div>'
+      + '<div style="font-size:14px;font-style:italic;color:rgba(200,168,75,0.45);line-height:1.6;max-width:400px;margin:24px auto 0;">Sept jours sont une initiation. Le travail sur le nafs est une lutte de toute une vie. Reviens quand tu en as besoin. Demain, ou dans un an. All\u00e2h ne mesure pas la dur\u00e9e \u2014 Il mesure la sinc\u00e9rit\u00e9.</div>'
+      + '</div>';
     return;
   }
   _cureJ7FinaleSucces();
@@ -5358,6 +5360,7 @@ function _cureJ7FinaleSucces() {
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:28px;color:' + c + ';direction:rtl;margin-bottom:12px;">\u0628\u064e\u0627\u0631\u064e\u0643\u064e \u0627\u0644\u0644\u0651\u064e\u0647\u064f \u0641\u0650\u064a\u0643\u064e</div>'
     + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.8;max-width:400px;margin:0 auto 20px;">Tu as march\u00e9 7\u00a0jours. Allah voit.<br>Reviens quand le c\u0153ur le demandera.</div>'
     + (_cure7.efficacite_j1 && _cure7.efficacite_j7 ? '<div class="itfaa-subtle" style="font-size:14px;margin-bottom:24px;">Au d\u00e9but\u00a0: ' + _cure7.efficacite_j1 + '/10. Aujourd\u2019hui\u00a0: ' + _cure7.efficacite_j7 + '/10.</div>' : '')
+    + '<div style="font-size:14px;font-style:italic;color:rgba(200,168,75,0.45);line-height:1.6;max-width:400px;margin:0 auto 24px;">Sept jours sont une initiation. Le travail sur le nafs est une lutte de toute une vie. Reviens quand tu en as besoin. Demain, ou dans un an. All\u00e2h ne mesure pas la dur\u00e9e \u2014 Il mesure la sinc\u00e9rit\u00e9.</div>'
     + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Retour \u00e0 Ma Niyyah</button>'
     + '</div>';
 }
