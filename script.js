@@ -4348,6 +4348,7 @@ function openItfaaRefuge() {
   html += '<div class="itfaa-subtle" style="font-size:12px;margin-bottom:4px;">\u2014 ' + escapeHtml(source) + '</div>'
     + '<div class="itfaa-subtle" style="font-size:11px;opacity:0.7;margin-bottom:20px;">' + escapeHtml(grade) + '</div>'
     + '<div style="font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:20px;">R\u00e9p\u00e8te la formule dans ton c\u0153ur \u00e0 chaque cycle.</div>'
+    + '<div id="_refugeShort" style="text-align:center;margin-bottom:16px;"><button onclick="document.getElementById(\'_refugeShort\').style.display=\'none\';_refugeRun(3)" style="background:none;border:none;font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(200,168,75,0.45);cursor:pointer;">Crise s\u00e9v\u00e8re\u00a0? Faire un Refuge court (\u00d73, 1\u00a0minute)</button></div>'
     + '<div id="_refugeCycle" style="margin-bottom:24px;">'
     + '<div id="_refugeCircle" style="width:120px;height:120px;border-radius:50%;border:2px solid ' + c + '44;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;transition:transform 4s ease-in-out;"><div id="_refugePhase" style="font-family:var(--serif);font-size:13px;color:' + c + ';opacity:0.7;"></div></div>'
     + '<div id="_refugeCount" style="font-family:var(--serif);font-size:12px;color:#C8A84A;margin-bottom:14px;">1 / 7</div>'
@@ -4365,12 +4366,14 @@ function openItfaaRefuge() {
     + '<div style="display:flex;flex-direction:column;gap:12px;max-width:340px;width:100%;margin:0 auto;">'
     + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');babCompletPorte(\'colere\')" style="width:100%;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Sortir</button>'
     + '<button onclick="try{safeSetItem(\'colere_muhasaba_invite\',JSON.stringify({ts:Date.now(),zone:window._colereZone||\'\'}))}catch(e){}_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');babCompletPorte(\'colere\')" style="width:100%;padding:14px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:none;color:rgba(200,168,75,0.7);font-size:14px;font-family:var(--serif);cursor:pointer;">Plus tard, en Mu\u1e25\u00e2saba</button>'
-    + '<button onclick="_refugeExtend(33)" style="width:100%;padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.2);background:none;color:rgba(255,255,255,0.55);font-family:var(--serif);font-size:14px;cursor:pointer;">Continuer \u00d733</button>'
+    + '<button onclick="_refugeExtend(window._lastRefugeTarget<=3?7:33)" id="_refugeExtBtn" style="width:100%;padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.2);background:none;color:rgba(255,255,255,0.55);font-family:var(--serif);font-size:14px;cursor:pointer;">Continuer</button>'
     + '</div></div></div>';
   el.innerHTML = html;
   if (safeGetItem('refuge_disclosure_seen') !== '1') {
     var _dc = document.getElementById('_refugeCycle');
     if (_dc) _dc.style.display = 'none';
+    var _ds = document.getElementById('_refugeShort');
+    if (_ds) _ds.style.display = 'none';
     var _dd = document.createElement('div');
     _dd.style.cssText = 'max-width:340px;margin:0 auto 20px;padding:12px;border:1px solid rgba(200,168,75,0.3);border-radius:12px;text-align:center;';
     _dd.innerHTML = '<div style="font-size:14px;font-style:italic;color:rgba(200,168,75,0.55);line-height:1.6;margin-bottom:12px;">Le dhikr fait le travail spirituel. La respiration qui l\u2019accompagne aide simplement le corps \u00e0 se poser.</div>'
@@ -4387,11 +4390,14 @@ function _refugeRun(target) {
       endEl = document.getElementById('_refugeEnd'), cycleEl = document.getElementById('_refugeCycle');
   if (!circle || !arEl) return;
   window._refugeStop = false;
+  window._lastRefugeTarget = target;
   if (endEl) endEl.style.display = 'none';
   if (cycleEl) cycleEl.style.display = '';
   var guided = safeGetItem('refuge_breath_guided') !== '0';
   function done() {
     if (cycleEl) cycleEl.style.display = 'none';
+    var eb = document.getElementById('_refugeExtBtn');
+    if (eb) eb.textContent = 'Continuer \u00d7' + (target <= 3 ? '7' : '33');
     var sudEl = document.getElementById('_refugeSudApres');
     if (sudEl) { sudEl.style.display = ''; } else { if (endEl) endEl.style.display = ''; }
   }
