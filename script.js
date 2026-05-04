@@ -4409,13 +4409,15 @@ function _mcReparation(quand) {
   _muhasabaClassiqueFin();
 }
 function _muhasabaClassiqueFin() {
-  // TODO: écran 6 — clôture
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var c = '#B33A3A';
   el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
-    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:12px;">\u00c9cran de cl\u00f4ture en pr\u00e9paration.</div>'
-    + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="padding:14px 28px;border-radius:12px;border:1px solid ' + c + '44;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">Retour</button>'
+    + '<div style="font-family:\'Scheherazade New\',serif;font-size:36px;color:' + c + ';direction:rtl;margin-bottom:20px;">\u0645\u062d\u0627\u0633\u0628\u0629</div>'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.6;max-width:400px;margin:0 auto 16px;">Tu as fait ce qu\u2019al-Mu\u1e25\u00e2sib\u00ee recommandait \u00e0 ses disciples.</div>'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:16px;font-style:italic;line-height:1.6;max-width:400px;margin:0 auto 20px;">L\u2019examen avant l\u2019examen.</div>'
+    + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:32px;">All\u00e2h accepte de toi.</div>'
+    + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');babCompletPorte(\'colere\')" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Retour</button>'
     + '</div>';
 }
 
