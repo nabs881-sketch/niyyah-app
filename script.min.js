@@ -4909,6 +4909,7 @@ function openMuhasabaEmotion() {
   var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
     + backBtn
     + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';margin-bottom:12px;">Sous la col\u00e8re, qu\u2019est-ce qui se cachait\u00a0?</div>'
+    + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.45);line-height:1.5;max-width:400px;margin:0 auto 16px;">Le Proph\u00e8te \uFDFA disait\u00a0: \u00ab\u00a0All\u00e2humma inn\u00ee a\u2019\u00fbdhu bika min al-\u1e25amm wa-l-\u1e25azan\u00a0\u00bb \u2014 All\u00e2h, je cherche refuge contre le souci et la tristesse. \u2014 Bukh\u00e2r\u00ee 6363</div>'
     + '<div class="itfaa-subtle" style="font-size:12px;max-width:400px;margin:0 auto 24px;line-height:1.6;">Reconna\u00eetre l\u2019\u00e9motion sous l\u2019\u00e9motion\u00a0: ma\u2019rifat an-nafs \u2014 la connaissance de soi.<br>Une science enseign\u00e9e par les savants de l\u2019islam classique\u00a0: al-Mu\u1e25\u00e2sib\u00ee (m.\u00a0857), al-Ghaz\u00e2l\u00ee (m.\u00a01111), Ibn al-Qayyim (m.\u00a01350) \u2014 bien avant la psychologie moderne.</div>'
     + '<div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:340px;margin:0 auto 24px;">';
   for (var i = 0; i < emotions.length; i++) {
@@ -4946,6 +4947,7 @@ function openMuhasabaBesoin() {
   var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
     + backBtn
     + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';line-height:1.6;max-width:400px;margin:0 auto 12px;">Sous chaque \u00e9motion, il y a un besoin.<br>Lequel n\u2019a pas \u00e9t\u00e9 combl\u00e9\u00a0?</div>'
+    + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.45);line-height:1.5;max-width:400px;margin:0 auto 16px;">Al-Mu\u1e25\u00e2sib\u00ee enseignait\u00a0: \u00ab\u00a0L\u2019\u00e2me a des droits qu\u2019on n\u00e9glige \u2014 voil\u00e0 le fond de bien des col\u00e8res.\u00a0\u00bb</div>'
     + '<div class="itfaa-subtle" style="font-size:12px;max-width:380px;margin:0 auto 24px;">Cette grille moderne rejoint la tradition\u00a0: al-Ghaz\u00e2l\u00ee reconnaissait dans I\u1e25y\u00e2\u2019 \u2018Ul\u00fbm ad-D\u00een que l\u2019\u00e2me a des besoins l\u00e9gitimes.</div>'
     + '<div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:340px;margin:0 auto;">';
   for (var i = 0; i < besoins.length; i++) {
@@ -4966,6 +4968,7 @@ function openMuhasabaSchema() {
   var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
     + backBtn
     + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';line-height:1.6;max-width:400px;margin:0 auto 12px;">Y a-t-il un fil rouge dans tes col\u00e8res\u00a0?</div>'
+    + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.45);line-height:1.5;max-width:400px;margin:0 auto 16px;">Le Proph\u00e8te \uFDFA a dit\u00a0: \u00ab\u00a0Le croyant ne se fait pas piquer deux fois du m\u00eame trou.\u00a0\u00bb \u2014 Bukh\u00e2r\u00ee 6133</div>'
     + '<div class="itfaa-subtle" style="font-size:12px;max-width:380px;margin:0 auto 24px;line-height:1.6;">C\u2019est la mu\u1e25\u00e2saba \u2014 l\u2019examen de conscience que \u2019Umar ibn al-Kha\u1e6d\u1e6d\u00e2b recommandait\u00a0: \u00ab\u00a0Faites vos comptes avant qu\u2019on ne vous les demande.\u00a0\u00bb</div>'
     + '<div style="display:flex;flex-direction:column;gap:10px;max-width:340px;margin:0 auto 20px;text-align:left;">';
   for (var i = 0; i < items.length; i++) {
