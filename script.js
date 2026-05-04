@@ -4260,7 +4260,7 @@ function openItfaaRefuge() {
     if (_dc) _dc.style.display = 'none';
     var _dd = document.createElement('div');
     _dd.style.cssText = 'max-width:340px;margin:0 auto 20px;padding:12px;border:1px solid rgba(200,168,75,0.3);border-radius:12px;text-align:center;';
-    _dd.innerHTML = '<div style="font-size:14px;font-style:italic;color:rgba(200,168,75,0.55);line-height:1.6;margin-bottom:12px;">La respiration guid\u00e9e utilis\u00e9e ici est une technique moderne qui apaise le corps. Le dhikr fait le travail spirituel.</div>'
+    _dd.innerHTML = '<div style="font-size:14px;font-style:italic;color:rgba(200,168,75,0.55);line-height:1.6;margin-bottom:12px;">Le dhikr fait le travail spirituel. La respiration qui l\u2019accompagne aide simplement le corps \u00e0 se poser.</div>'
       + '<button onclick="safeSetItem(\'refuge_disclosure_seen\',\'1\');this.parentNode.remove();var c=document.getElementById(\'_refugeCycle\');if(c)c.style.display=\'\';_refugeRun(7)" style="padding:10px 24px;border-radius:10px;border:1px solid rgba(200,168,75,0.3);background:none;color:rgba(200,168,75,0.7);font-family:var(--serif);font-size:13px;cursor:pointer;">Compris</button>';
     var _cyc = document.getElementById('_refugeCycle');
     if (_cyc) _cyc.parentNode.insertBefore(_dd, _cyc);
