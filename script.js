@@ -4558,8 +4558,8 @@ function openMuhasabaSens() {
     // Carte 1 : La Leçon
     + '<div style="max-width:360px;margin:0 auto;">'
     + '<div style="' + cardStyle + '">'
-    + '<div style="font-family:var(--serif);font-size:17px;color:' + c + ';margin-bottom:4px;">La Le\u00e7on</div>'
-    + '<div class="itfaa-subtle" style="font-size:13px;margin-bottom:10px;">al-\u2019Ibra</div>'
+    + '<div style="font-family:var(--serif);font-size:16px;color:' + c + ';margin-bottom:2px;">La Le\u00e7on</div>'
+    + '<div style="font-size:12px;font-style:italic;color:rgba(255,255,255,0.4);margin-bottom:10px;">al-\u2019Ibra</div>'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:16px;color:' + c + ';direction:rtl;line-height:1.6;opacity:0.8;margin-bottom:4px;">\u0644\u064e\u0642\u064e\u062f\u0652 \u0643\u064e\u0627\u0646\u064e \u0641\u0650\u064a \u0642\u064e\u0635\u064e\u0635\u0650\u0647\u0650\u0645\u0652 \u0639\u0650\u0628\u0652\u0631\u064e\u0629\u064c \u0644\u0650\u0623\u064f\u0648\u0644\u0650\u064a \u0627\u0644\u0652\u0623\u064e\u0644\u0652\u0628\u064e\u0627\u0628\u0650</div>'
     + '<div class="itfaa-body" style="font-size:11px;font-style:italic;margin-bottom:4px;">Laqad k\u00e2na f\u00ee qa\u1e63a\u1e63ihim \u2019ibratun li-ul\u00ee al-alb\u00e2b</div>'
     + '<div class="itfaa-body" style="font-size:12px;margin-bottom:4px;">Il y a dans leurs r\u00e9cits une le\u00e7on (\u2019ibra) pour les dou\u00e9s d\u2019intelligence.</div>'
@@ -4569,8 +4569,8 @@ function openMuhasabaSens() {
     + '</div>'
     // Carte 2 : Le Pardon
     + '<div style="' + cardStyle + '">'
-    + '<div style="font-family:var(--serif);font-size:17px;color:' + c + ';margin-bottom:4px;">Le Pardon</div>'
-    + '<div class="itfaa-subtle" style="font-size:13px;margin-bottom:10px;">al-\u2019Afw</div>'
+    + '<div style="font-family:var(--serif);font-size:16px;color:' + c + ';margin-bottom:2px;">Le Pardon</div>'
+    + '<div style="font-size:12px;font-style:italic;color:rgba(255,255,255,0.4);margin-bottom:10px;">al-\u2019Afw</div>'
     + (pardonH.ar ? '<div style="font-family:\'Scheherazade New\',serif;font-size:20px;color:' + c + ';direction:rtl;line-height:1.8;margin-bottom:4px;opacity:0.85;">' + pardonH.ar + '</div>' : '')
     + (pardonH.translit ? '<div class="itfaa-body" style="font-size:12px;font-style:italic;margin-bottom:4px;">' + escapeHtml(pardonH.translit) + '</div>' : '')
     + (pardonH.fr ? '<div class="itfaa-body" style="font-size:13px;margin-bottom:6px;">' + escapeHtml(pardonH.fr) + '</div>' : '')
@@ -4580,8 +4580,8 @@ function openMuhasabaSens() {
     + '</div>'
     // Carte 3 : La Demande
     + '<div style="' + cardStyle + '">'
-    + '<div style="font-family:var(--serif);font-size:17px;color:' + c + ';margin-bottom:4px;">La Demande</div>'
-    + '<div class="itfaa-subtle" style="font-size:13px;margin-bottom:10px;">ad-Du\u2019\u00e2\u2019</div>'
+    + '<div style="font-family:var(--serif);font-size:16px;color:' + c + ';margin-bottom:2px;">La Demande</div>'
+    + '<div style="font-size:12px;font-style:italic;color:rgba(255,255,255,0.4);margin-bottom:10px;">ad-Du\u2019\u00e2\u2019</div>'
     + (duaaH.ar ? '<div style="font-family:\'Scheherazade New\',serif;font-size:20px;color:' + c + ';direction:rtl;line-height:1.8;margin-bottom:4px;opacity:0.85;">' + duaaH.ar + '</div>' : '')
     + (duaaH.translit ? '<div class="itfaa-body" style="font-size:12px;font-style:italic;margin-bottom:4px;">' + escapeHtml(duaaH.translit) + '</div>' : '')
     + (duaaH.fr ? '<div class="itfaa-body" style="font-size:13px;margin-bottom:6px;">' + escapeHtml(duaaH.fr) + '</div>' : '')
