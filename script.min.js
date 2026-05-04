@@ -4077,7 +4077,7 @@ function _mutawassitPause() {
     + '<div id="_mutPauseCircle" style="width:100px;height:100px;border-radius:50%;border:2px solid ' + c + '44;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;animation:_zonePulse 3s ease-in-out infinite;">'
     + '<div id="_mutPauseCount" style="font-family:var(--serif);font-size:28px;color:' + c + ';">30</div>'
     + '</div>'
-    + '<button id="_mutPauseBtn" style="display:none;width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;" onclick="_mutawassitEau()">Continuer</button>'
+    + '<button id="_mutPauseBtn" style="display:none;width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;" onclick="_mutawassitDhikr()">Continuer</button>'
     + '</div>';
   var _sec = 30;
   var _iv = setInterval(function() {
@@ -4090,6 +4090,25 @@ function _mutawassitPause() {
       if (ce) ce.textContent = '\u2713';
     }
   }, 1000);
+}
+function _mutawassitDhikr() {
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) { _mutawassitEau(); return; }
+  var c = '#B33A3A';
+  el.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;">'
+    + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:24px;">Pour t\u2019accompagner, choisis\u00a0:</div>'
+    + '<div style="display:flex;flex-direction:column;gap:12px;max-width:340px;width:100%;">'
+    + '<button onclick="safeSetItem(\'mutawassit_dhikr_choisi\',\'lahawla\');_mutawassitEau()" style="width:100%;padding:16px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:none;cursor:pointer;text-align:center;">'
+    + '<div style="font-family:var(--serif);font-size:15px;color:rgba(200,168,75,0.7);">L\u00e2 \u1e25awla wa l\u00e2 quwwata ill\u00e2 bill\u00e2h</div>'
+    + '<div style="font-size:12px;font-style:italic;color:rgba(255,255,255,0.35);margin-top:4px;">L\u00e2cher-prise \u2014 Bukh\u00e2r\u00ee 6384</div>'
+    + '</button>'
+    + '<button onclick="safeSetItem(\'mutawassit_dhikr_choisi\',\'refuge\');_mutawassitEau()" style="width:100%;padding:16px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:none;cursor:pointer;text-align:center;">'
+    + '<div style="font-family:var(--serif);font-size:15px;color:rgba(200,168,75,0.7);">A\u2019\u00fbdhu bill\u00e2hi mina sh-shay\u1e6d\u00e2ni r-raj\u00eem</div>'
+    + '<div style="font-size:12px;font-style:italic;color:rgba(255,255,255,0.35);margin-top:4px;">Refuge l\u00e9ger \u2014 Bukh\u00e2r\u00ee 3282</div>'
+    + '</button>'
+    + '</div>'
+    + '<div style="font-size:13px;font-style:italic;color:rgba(255,255,255,0.3);margin-top:16px;">\u00c0 r\u00e9p\u00e9ter mentalement 3\u00a0fois.</div>'
+    + '</div>';
 }
 function _mutawassitEau() {
   var el = document.getElementById('babAnNafsContent');
@@ -12641,6 +12660,7 @@ window._mutawassitExit        = _mutawassitExit;
 window._mutSudSave            = _mutSudSave;
 window._itfaaFaitClick        = _itfaaFaitClick;
 window._mutawassitPause       = _mutawassitPause;
+window._mutawassitDhikr       = _mutawassitDhikr;
 window._mutawassitEau         = _mutawassitEau;
 window._itfaaSalat            = _itfaaSalat;
 window.openItfaaEmotionSous   = openItfaaEmotionSous;
