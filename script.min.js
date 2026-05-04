@@ -3584,7 +3584,7 @@ function _checkMuhasabaInvite(container) {
   var inv; try { inv = JSON.parse(raw); } catch(e) { inv = {ts:Date.now()}; }
   var age = Date.now() - (inv.ts || 0);
   if (age > 72 * 3600000) { localStorage.removeItem('colere_muhasaba_invite'); return false; }
-  if (age < 6 * 3600000) return false;
+  if (age < 15 * 60000) return false;
   var snooze = parseInt(safeGetItem('colere_muhasaba_snooze') || '0', 10);
   if (snooze && (Date.now() - snooze) < 24 * 3600000) return false;
   var el = container || document.getElementById('babAnNafsContent');
@@ -9156,7 +9156,7 @@ function v2GoSanctuaire() {
     var _mAge = Date.now() - (_mInv.ts || 0);
     var _mSnooze = parseInt(safeGetItem('colere_muhasaba_snooze') || '0', 10);
     if (_mAge > 72 * 3600000) { localStorage.removeItem('colere_muhasaba_invite'); }
-    else if (_mAge >= 6 * 3600000 && (!_mSnooze || (Date.now() - _mSnooze) >= 24 * 3600000)) {
+    else if (_mAge >= 15 * 60000 && (!_mSnooze || (Date.now() - _mSnooze) >= 24 * 3600000)) {
       var _mBanner = document.getElementById('_muhasabaInviteBanner');
       if (!_mBanner) {
         _mBanner = document.createElement('div');
