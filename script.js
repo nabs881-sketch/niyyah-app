@@ -4077,6 +4077,18 @@ function _mutSudSave() {
   }
 }
 
+function _itfaaChoixChemin() {
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) { openItfaaEmotionSous(); return; }
+  var c = '#B33A3A';
+  el.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;">'
+    + '<div style="font-size:14px;color:#E5E0DC;margin-bottom:24px;">Maintenant, deux chemins\u00a0:</div>'
+    + '<div style="display:flex;flex-direction:column;gap:12px;max-width:340px;width:100%;">'
+    + '<button onclick="_itfaaSalat()" style="width:100%;padding:14px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:none;color:rgba(200,168,75,0.7);font-family:var(--serif);font-size:14px;cursor:pointer;">Aller prier 2\u00a0rak\u2019at</button>'
+    + '<button onclick="openItfaaEmotionSous()" style="width:100%;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Refuge \u2014 r\u00e9p\u00e9ter A\u2019\u00fbdhu bill\u00e2h</button>'
+    + '</div></div>';
+}
+
 function _itfaaFaitClick() {
   if (_colereMode === 'mutawassit') _mutawassitPause();
   else openItfaaEmotionSous();
@@ -4384,9 +4396,10 @@ function openItfaaAction() {
   }
   html += '<div style="display:flex;flex-direction:column;gap:12px;max-width:340px;width:100%;margin:20px auto 0;">';
   if (_colereMode === 'shadid') {
-    html += '<button onclick="_itfaaSalat()" style="width:100%;padding:14px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:none;color:rgba(200,168,75,0.7);font-family:var(--serif);font-size:14px;cursor:pointer;">\ud83d\udd4c Si je suis en wu\u1e0d\u00fb\u2019, aller prier 2 rak\u2019at maintenant</button>';
+    html += '<button onclick="_itfaaChoixChemin()" style="width:100%;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019ai fait \u2726</button></div>';
+  } else {
+    html += '<button onclick="_itfaaFaitClick()" style="width:100%;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019ai fait \u2726</button></div>';
   }
-  html += '<button onclick="_itfaaFaitClick()" style="width:100%;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019ai fait \u2726</button></div>'
     + '</div>';
   el.innerHTML = html;
 }
@@ -12693,6 +12706,7 @@ window._yasirExit             = _yasirExit;
 window.openColereMutawassit   = openColereMutawassit;
 window._mutawassitExit        = _mutawassitExit;
 window._mutSudSave            = _mutSudSave;
+window._itfaaChoixChemin      = _itfaaChoixChemin;
 window._itfaaFaitClick        = _itfaaFaitClick;
 window._mutawassitPause       = _mutawassitPause;
 window._mutawassitDhikr       = _mutawassitDhikr;
