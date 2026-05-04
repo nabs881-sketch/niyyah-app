@@ -4367,7 +4367,20 @@ function _muhasabaClassiqueQ2() {
     + '</div>';
 }
 function _muhasabaClassiqueQ3() {
-  // TODO: écran 4 — Ḥaqq an-nafs
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#B33A3A';
+  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;max-width:600px;margin:0 auto;text-align:center;">'
+    + '<div style="font-family:var(--serif);font-size:22px;color:#C8A84A;margin-bottom:24px;">Le droit de mon nafs</div>'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.6;max-width:480px;margin:0 auto 16px;">Dans cette col\u00e8re, ai-je manqu\u00e9 \u00e0 un droit que mon \u00e2me avait sur moi\u00a0?</div>'
+    + '<div class="itfaa-subtle" style="font-size:14px;line-height:1.6;max-width:440px;margin:0 auto 24px;">Ai-je laiss\u00e9 Shay\u1e6d\u00e2n habiter mes pens\u00e9es\u00a0? Ai-je nourri ma rancune\u00a0? Ai-je n\u00e9glig\u00e9 ma paix int\u00e9rieure\u00a0?</div>'
+    + '<textarea id="_mcQ3" rows="4" placeholder="\u00c9cris ce qui vient. Personne ne lira." style="width:100%;max-width:480px;padding:14px;border-radius:10px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;line-height:1.6;resize:vertical;margin-bottom:20px;"></textarea>'
+    + '<div class="itfaa-body" style="font-size:13px;font-style:italic;line-height:1.6;max-width:440px;margin:0 auto 24px;">Le Proph\u00e8te \uFDFA a dit \u00e0 Salm\u00e2n\u00a0: \u00ab\u00a0Ton corps a un droit sur toi. Ton Seigneur a un droit sur toi. Ta famille a un droit sur toi. Donne \u00e0 chacun son droit.\u00a0\u00bb \u2014 Bukh\u00e2r\u00ee\u00a01968</div>'
+    + '<button onclick="window._muhasabaClassique.q3=(document.getElementById(\'_mcQ3\')||{}).value||\'\';_muhasabaClassiqueQ4()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>'
+    + '</div>';
+}
+function _muhasabaClassiqueQ4() {
+  // TODO: écran 5 — al-'Azm (résolution)
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var c = '#B33A3A';
@@ -11905,6 +11918,7 @@ window.openMuhasabaClassique  = openMuhasabaClassique;
 window._muhasabaClassiqueQ1   = _muhasabaClassiqueQ1;
 window._muhasabaClassiqueQ2   = _muhasabaClassiqueQ2;
 window._muhasabaClassiqueQ3   = _muhasabaClassiqueQ3;
+window._muhasabaClassiqueQ4   = _muhasabaClassiqueQ4;
 window.openMuhasabaEmotion    = openMuhasabaEmotion;
 window.openMuhasabaBesoin = openMuhasabaBesoin;
 window.openMuhasabaSchema     = openMuhasabaSchema;
