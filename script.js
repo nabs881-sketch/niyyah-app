@@ -4486,7 +4486,14 @@ function _mcCarteGeste() {
     + '</div>'
     + '<textarea id="_mcAmorceText" rows="2" placeholder="Ton amorce\u2026" style="width:100%;max-width:440px;padding:12px;border-radius:10px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;resize:vertical;"></textarea>'
     + '</div>'
-    + '<button onclick="safeSetItem(\'muhasaba_amorce_repar\',(document.getElementById(\'_mcAmorceText\')||{}).value||\'\');_muhasabaClassiqueFin()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;margin-top:20px;">Continuer</button>'
+    + '<div style="max-width:480px;margin:16px auto 0;text-align:center;">'
+    + '<div style="font-size:13px;color:rgba(255,255,255,0.35);line-height:1.6;margin-bottom:10px;">Si parler est trop dur, \u00e9cris-lui un message court. Pas de d\u00e9bat. Juste l\u2019excuse.</div>'
+    + '<div id="_mcMsgWrap" style="display:none;margin-bottom:12px;">'
+    + '<textarea id="_mcMsgText" rows="3" style="width:100%;max-width:440px;padding:12px;border-radius:10px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;resize:vertical;">Salam, je voulais te dire\u2026</textarea>'
+    + '</div>'
+    + '<button id="_mcMsgBtn" onclick="document.getElementById(\'_mcMsgWrap\').style.display=\'\';this.style.display=\'none\';" style="padding:10px 20px;border-radius:10px;border:1px solid ' + c + '22;background:none;color:' + c + ';font-family:var(--serif);font-size:13px;cursor:pointer;opacity:0.6;">\u00c9crire un message</button>'
+    + '</div>'
+    + '<button onclick="safeSetItem(\'muhasaba_amorce_repar\',(document.getElementById(\'_mcAmorceText\')||{}).value||\'\');var _m=(document.getElementById(\'_mcMsgText\')||{}).value||\'\';if(_m&&_m!==\'Salam, je voulais te dire\u2026\')safeSetItem(\'muhasaba_message_ecrit\',_m);_muhasabaClassiqueFin()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;margin-top:20px;">Continuer</button>'
     + '</div>';
 }
 
