@@ -4455,6 +4455,7 @@ function _mcCarteRetour() {
   var c = '#B33A3A';
   el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;max-width:600px;margin:0 auto;text-align:center;">'
     + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:20px;">Le retour vers All\u00e2h</div>'
+    + '<div style="border:1px solid rgba(200,168,75,0.3);border-radius:14px;padding:14px;max-width:480px;margin:0 auto 24px;background:rgba(200,168,74,0.08);text-align:center;"><div style="font-family:var(--serif);font-size:16px;color:#C8A84A;margin-bottom:8px;">Avant les gestes</div><div style="font-size:14px;font-style:italic;color:#E5E0DC;line-height:1.6;">Allâh t’a vu en colère, et Il ne t’aime pas moins pour ça. Il aime ceux qui reconnaissent leur faute. Tu es exactement où Allâh veut que tu reviennes vers Lui : conscient, vulnérable, présent.</div></div>'
     + '<div style="border:1px solid ' + c + '33;border-radius:14px;padding:20px;max-width:480px;margin:0 auto 24px;text-align:center;">'
     + '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;margin-bottom:14px;">Astaghfirull\u00e2h \u00d73 ne suffit pas si rien ne change demain.</div>'
     + '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;margin-bottom:14px;">Une action aujourd\u2019hui pour Lui\u00a0: un dhikr, une \u1e63adaqa silencieuse, une rak\u2019a de plus, un Coran ouvert.</div>'
@@ -4479,6 +4480,7 @@ function _mcCarteGeste() {
   var c = '#B33A3A';
   el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;max-width:600px;margin:0 auto;text-align:center;">'
     + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:20px;">Le geste vers l\u2019autre</div>'
+    + '<div style="border:1px solid rgba(200,168,75,0.3);border-radius:14px;padding:14px;max-width:480px;margin:0 auto 24px;background:rgba(200,168,74,0.08);text-align:center;"><div style="font-family:var(--serif);font-size:16px;color:#C8A84A;margin-bottom:8px;">Avant les gestes</div><div style="font-size:14px;font-style:italic;color:#E5E0DC;line-height:1.6;">Allâh t’a vu en colère, et Il ne t’aime pas moins pour ça. Il aime ceux qui reconnaissent leur faute. Tu es exactement où Allâh veut que tu reviennes vers Lui : conscient, vulnérable, présent.</div></div>'
     + '<div style="border:1px solid ' + c + '33;border-radius:14px;padding:20px;max-width:480px;margin:0 auto 28px;text-align:center;">'
     + '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;margin-bottom:14px;">Tu as choisi quand lui parler. Voici comment.</div>'
     + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);line-height:1.6;margin-bottom:16px;">\u00ab\u00a0Celui qui croit en All\u00e2h et au Jour Dernier, qu\u2019il dise du bien ou qu\u2019il se taise.\u00a0\u00bb \u2014 Bukh\u00e2r\u00ee 6018</div>'
@@ -4517,6 +4519,7 @@ function _mcCarteSoin() {
   }
   el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;max-width:600px;margin:0 auto;text-align:center;">'
     + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:20px;">Le soin de l\u2019\u00e2me</div>'
+    + '<div style="border:1px solid rgba(200,168,75,0.3);border-radius:14px;padding:14px;max-width:480px;margin:0 auto 24px;background:rgba(200,168,74,0.08);text-align:center;"><div style="font-family:var(--serif);font-size:16px;color:#C8A84A;margin-bottom:8px;">Avant les gestes</div><div style="font-size:14px;font-style:italic;color:#E5E0DC;line-height:1.6;">Allâh t’a vu en colère, et Il ne t’aime pas moins pour ça. Il aime ceux qui reconnaissent leur faute. Tu es exactement où Allâh veut que tu reviennes vers Lui : conscient, vulnérable, présent.</div></div>'
     + '<div style="border:1px solid ' + c + '33;border-radius:14px;padding:20px;max-width:480px;margin:0 auto 24px;text-align:center;">'
     + '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;margin-bottom:14px;">Ton \u00e2me a \u00e9t\u00e9 n\u00e9glig\u00e9e. Une chose, aujourd\u2019hui, pour elle.</div>'
     + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);line-height:1.6;margin-bottom:16px;">\u00ab\u00a0Ton corps a un droit sur toi.\u00a0\u00bb \u2014 Bukh\u00e2r\u00ee 1968</div>'
@@ -4775,6 +4778,7 @@ function _muhasabaCarteHonte() {
   var c = '#B33A3A';
   el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;max-width:600px;margin:0 auto;text-align:center;">'
     + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:20px;">Aller plus loin</div>'
+    + '<div style="border:1px solid rgba(200,168,75,0.3);border-radius:14px;padding:14px;max-width:480px;margin:0 auto 24px;background:rgba(200,168,74,0.08);text-align:center;"><div style="font-family:var(--serif);font-size:16px;color:#C8A84A;margin-bottom:8px;">Avant les gestes</div><div style="font-size:14px;font-style:italic;color:#E5E0DC;line-height:1.6;">Allâh t’a vu en colère, et Il ne t’aime pas moins pour ça. Il aime ceux qui reconnaissent leur faute. Tu es exactement où Allâh veut que tu reviennes vers Lui : conscient, vulnérable, présent.</div></div>'
     + '<div style="border:1px solid ' + c + '33;border-radius:14px;padding:20px;max-width:480px;margin:0 auto 28px;text-align:center;">'
     + '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;margin-bottom:16px;">La honte se gu\u00e9rit dans la tawba, pas dans la cachette.</div>'
     + '<div class="itfaa-body" style="font-size:14px;font-style:italic;line-height:1.6;margin-bottom:6px;">\u00ab\u00a0All\u00e2h aime ceux qui se repentent souvent.\u00a0\u00bb</div>'
@@ -4793,6 +4797,7 @@ function _muhasabaCartePeur() {
   var c = '#B33A3A';
   el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;max-width:600px;margin:0 auto;text-align:center;">'
     + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:20px;">Aller plus loin</div>'
+    + '<div style="border:1px solid rgba(200,168,75,0.3);border-radius:14px;padding:14px;max-width:480px;margin:0 auto 24px;background:rgba(200,168,74,0.08);text-align:center;"><div style="font-family:var(--serif);font-size:16px;color:#C8A84A;margin-bottom:8px;">Avant les gestes</div><div style="font-size:14px;font-style:italic;color:#E5E0DC;line-height:1.6;">Allâh t’a vu en colère, et Il ne t’aime pas moins pour ça. Il aime ceux qui reconnaissent leur faute. Tu es exactement où Allâh veut que tu reviennes vers Lui : conscient, vulnérable, présent.</div></div>'
     + '<div style="border:1px solid ' + c + '33;border-radius:14px;padding:20px;max-width:480px;margin:0 auto 28px;text-align:center;">'
     + '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;margin-bottom:16px;">Tu n\u2019es pas seul devant ce que tu crains.</div>'
     + '<div class="itfaa-body" style="font-size:14px;font-style:italic;line-height:1.6;margin-bottom:6px;">\u00ab\u00a0All\u00e2h ne charge aucune \u00e2me au-del\u00e0 de sa capacit\u00e9.\u00a0\u00bb</div>'
@@ -4825,6 +4830,7 @@ function _muhasabaCarteEpuisement() {
     : '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;">Tu es \u00e9puis\u00e9. Cette col\u00e8re est un sympt\u00f4me, pas une faute. Soigne d\u2019abord ton corps et ton sommeil.</div>';
   el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;max-width:600px;margin:0 auto;text-align:center;">'
     + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:20px;">Aller plus loin</div>'
+    + '<div style="border:1px solid rgba(200,168,75,0.3);border-radius:14px;padding:14px;max-width:480px;margin:0 auto 24px;background:rgba(200,168,74,0.08);text-align:center;"><div style="font-family:var(--serif);font-size:16px;color:#C8A84A;margin-bottom:8px;">Avant les gestes</div><div style="font-size:14px;font-style:italic;color:#E5E0DC;line-height:1.6;">Allâh t’a vu en colère, et Il ne t’aime pas moins pour ça. Il aime ceux qui reconnaissent leur faute. Tu es exactement où Allâh veut que tu reviennes vers Lui : conscient, vulnérable, présent.</div></div>'
     + '<div style="border:1px solid ' + c + '33;border-radius:14px;padding:20px;max-width:480px;margin:0 auto 28px;text-align:center;">'
     + hadith + msg + '</div>'
     + '<div style="border:1px solid #a3372a;border-radius:14px;padding:14px;max-width:480px;margin:0 auto 20px;background:#0a0a0a;text-align:center;"><div style="font-size:14px;color:#E5E0DC;line-height:1.6;">Cet examen ne remplace pas le soin humain. Si la colère revient malgré tes efforts, parle à un humain de confiance — un proche, un imam, un savant local, un thérapeute. Allâh aime ceux qui se font aider.</div></div><button onclick="openMuhasabaCloture()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019avance avec \u00e7a</button>'
@@ -4837,6 +4843,7 @@ function _muhasabaCarteCulpabilite() {
   var c = '#B33A3A';
   el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;max-width:600px;margin:0 auto;text-align:center;">'
     + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:20px;">Aller plus loin</div>'
+    + '<div style="border:1px solid rgba(200,168,75,0.3);border-radius:14px;padding:14px;max-width:480px;margin:0 auto 24px;background:rgba(200,168,74,0.08);text-align:center;"><div style="font-family:var(--serif);font-size:16px;color:#C8A84A;margin-bottom:8px;">Avant les gestes</div><div style="font-size:14px;font-style:italic;color:#E5E0DC;line-height:1.6;">Allâh t’a vu en colère, et Il ne t’aime pas moins pour ça. Il aime ceux qui reconnaissent leur faute. Tu es exactement où Allâh veut que tu reviennes vers Lui : conscient, vulnérable, présent.</div></div>'
     + '<div style="border:1px solid ' + c + '33;border-radius:14px;padding:20px;max-width:480px;margin:0 auto 24px;text-align:center;">'
     + '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;margin-bottom:16px;">La culpabilit\u00e9 juste m\u00e8ne \u00e0 la tawba. La culpabilit\u00e9 injuste m\u00e8ne au d\u00e9sespoir.</div>'
     + '<div class="itfaa-body" style="font-size:14px;font-style:italic;line-height:1.6;margin-bottom:6px;">\u00ab\u00a0Ne d\u00e9sesp\u00e9rez pas de la mis\u00e9ricorde d\u2019All\u00e2h.\u00a0\u00bb</div>'
@@ -4856,6 +4863,7 @@ function _muhasabaCarteTrahison() {
   var c = '#B33A3A';
   el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;max-width:600px;margin:0 auto;text-align:center;">'
     + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:20px;">Aller plus loin</div>'
+    + '<div style="border:1px solid rgba(200,168,75,0.3);border-radius:14px;padding:14px;max-width:480px;margin:0 auto 24px;background:rgba(200,168,74,0.08);text-align:center;"><div style="font-family:var(--serif);font-size:16px;color:#C8A84A;margin-bottom:8px;">Avant les gestes</div><div style="font-size:14px;font-style:italic;color:#E5E0DC;line-height:1.6;">Allâh t’a vu en colère, et Il ne t’aime pas moins pour ça. Il aime ceux qui reconnaissent leur faute. Tu es exactement où Allâh veut que tu reviennes vers Lui : conscient, vulnérable, présent.</div></div>'
     + '<div style="border:1px solid ' + c + '33;border-radius:14px;padding:20px;max-width:480px;margin:0 auto 28px;text-align:center;">'
     + '<div class="itfaa-body" style="font-size:14px;font-style:italic;line-height:1.6;margin-bottom:6px;">Y\u00fbsuf (\u2019alayhi as-sal\u00e2m) a \u00e9t\u00e9 trahi par ses fr\u00e8res. Il a fini par leur dire\u00a0:</div>'
     + '<div class="itfaa-body" style="font-size:14px;font-style:italic;line-height:1.6;margin-bottom:6px;">\u00ab\u00a0Pas de reproche contre vous aujourd\u2019hui. Qu\u2019All\u00e2h vous pardonne.\u00a0\u00bb</div>'
@@ -4872,6 +4880,7 @@ function _muhasabaCarteImpuissance() {
   var c = '#B33A3A';
   el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;max-width:600px;margin:0 auto;text-align:center;">'
     + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:20px;">Aller plus loin</div>'
+    + '<div style="border:1px solid rgba(200,168,75,0.3);border-radius:14px;padding:14px;max-width:480px;margin:0 auto 24px;background:rgba(200,168,74,0.08);text-align:center;"><div style="font-family:var(--serif);font-size:16px;color:#C8A84A;margin-bottom:8px;">Avant les gestes</div><div style="font-size:14px;font-style:italic;color:#E5E0DC;line-height:1.6;">Allâh t’a vu en colère, et Il ne t’aime pas moins pour ça. Il aime ceux qui reconnaissent leur faute. Tu es exactement où Allâh veut que tu reviennes vers Lui : conscient, vulnérable, présent.</div></div>'
     + '<div style="border:1px solid ' + c + '33;border-radius:14px;padding:20px;max-width:480px;margin:0 auto 28px;text-align:center;">'
     + '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;margin-bottom:16px;">Tu as fait ce que tu pouvais faire. Le reste appartient \u00e0 All\u00e2h.</div>'
     + '<div class="itfaa-body" style="font-size:14px;font-style:italic;line-height:1.6;margin-bottom:6px;">\u00ab\u00a0Et c\u2019est \u00e0 All\u00e2h qu\u2019aboutissent toutes choses.\u00a0\u00bb</div>'
@@ -4888,6 +4897,7 @@ function _muhasabaCarteInjustice() {
   var c = '#B33A3A';
   el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;max-width:600px;margin:0 auto;text-align:center;">'
     + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:20px;">Aller plus loin</div>'
+    + '<div style="border:1px solid rgba(200,168,75,0.3);border-radius:14px;padding:14px;max-width:480px;margin:0 auto 24px;background:rgba(200,168,74,0.08);text-align:center;"><div style="font-family:var(--serif);font-size:16px;color:#C8A84A;margin-bottom:8px;">Avant les gestes</div><div style="font-size:14px;font-style:italic;color:#E5E0DC;line-height:1.6;">Allâh t’a vu en colère, et Il ne t’aime pas moins pour ça. Il aime ceux qui reconnaissent leur faute. Tu es exactement où Allâh veut que tu reviennes vers Lui : conscient, vulnérable, présent.</div></div>'
     + '<div style="border:1px solid ' + c + '33;border-radius:14px;padding:20px;max-width:480px;margin:0 auto 28px;text-align:center;">'
     + '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;margin-bottom:16px;">All\u00e2h n\u2019oublie pas l\u2019injustice subie.</div>'
     + '<div class="itfaa-body" style="font-size:14px;font-style:italic;line-height:1.6;margin-bottom:6px;">\u00ab\u00a0La sanction d\u2019une mauvaise action est une mauvaise action identique. Mais quiconque pardonne et fait \u0153uvre de r\u00e9conciliation, son salaire incombe \u00e0 All\u00e2h.\u00a0\u00bb</div>'
@@ -4904,6 +4914,7 @@ function _muhasabaCarteTristesse() {
   var c = '#B33A3A';
   el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;max-width:600px;margin:0 auto;text-align:center;">'
     + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:20px;">Aller plus loin</div>'
+    + '<div style="border:1px solid rgba(200,168,75,0.3);border-radius:14px;padding:14px;max-width:480px;margin:0 auto 24px;background:rgba(200,168,74,0.08);text-align:center;"><div style="font-family:var(--serif);font-size:16px;color:#C8A84A;margin-bottom:8px;">Avant les gestes</div><div style="font-size:14px;font-style:italic;color:#E5E0DC;line-height:1.6;">Allâh t’a vu en colère, et Il ne t’aime pas moins pour ça. Il aime ceux qui reconnaissent leur faute. Tu es exactement où Allâh veut que tu reviennes vers Lui : conscient, vulnérable, présent.</div></div>'
     + '<div style="border:1px solid ' + c + '33;border-radius:14px;padding:20px;max-width:480px;margin:0 auto 28px;text-align:center;">'
     + '<div class="itfaa-body" style="font-size:14px;font-style:italic;line-height:1.6;margin-bottom:6px;">Ya\u2019q\u00fbb (\u2019alayhi as-sal\u00e2m) a dit\u00a0:</div>'
     + '<div class="itfaa-body" style="font-size:14px;font-style:italic;line-height:1.6;margin-bottom:6px;">\u00ab\u00a0Je ne me plains de mon affliction et de ma tristesse qu\u2019\u00e0 All\u00e2h.\u00a0\u00bb</div>'
