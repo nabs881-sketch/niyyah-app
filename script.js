@@ -8479,14 +8479,29 @@ function renderCaverne() {
 }
 
 function onboardRender() {
+  if (_onboardStep === 0) {
+    // Caverne slide
+    var obs = document.getElementById('onboardScreen');
+    if (obs) obs.style.display = 'none';
+    renderCaverne();
+    var btn = document.getElementById('caverne-continue');
+    if (btn) btn.onclick = function() { onboardNext(); };
+    return;
+  }
+  // Steps 1+ → ONBOARD_SLIDES[step - 1]
+  var cav = document.getElementById('onboard-caverne');
+  if (cav) cav.style.display = 'none';
+  var obs = document.getElementById('onboardScreen');
+  if (obs) obs.style.display = '';
+  var slideIdx = _onboardStep - 1;
   requestAnimationFrame(function() {
     var content = document.getElementById('onboardContent');
-    if (content) content.innerHTML = ONBOARD_SLIDES[_onboardStep]();
+    if (content && ONBOARD_SLIDES[slideIdx]) content.innerHTML = ONBOARD_SLIDES[slideIdx]();
     [0,1,2,3,4,5].forEach(function(i) {
       var dot = document.getElementById('dot' + i);
-      if (dot) dot.className = 'onboard-dot' + (i === _onboardStep ? ' active' : '');
+      if (dot) dot.className = 'onboard-dot' + (i === slideIdx ? ' active' : '');
     });
-    if (_onboardStep === 5) {
+    if (slideIdx === 4) {
       setTimeout(function() {
         var el = document.getElementById('onboardCityInput');
         if (el) el.focus();
@@ -8495,7 +8510,7 @@ function onboardRender() {
   });
 }
 function onboardNext() {
-  if (_onboardStep < ONBOARD_SLIDES.length - 1) {
+  if (_onboardStep < ONBOARD_SLIDES.length) {
     _onboardStep++;
     onboardRender();
   } else {
