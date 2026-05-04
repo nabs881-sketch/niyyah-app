@@ -4669,6 +4669,7 @@ function _muhasabaEngage() {
   if (_emoL.indexOf('peur') !== -1) { _muhasabaCartePeur(); return; }
   if (_emoL.indexOf('tristesse') !== -1) { _muhasabaCarteTristesse(); return; }
   if (_emoL.indexOf('injustice') !== -1) { _muhasabaCarteInjustice(); return; }
+  if (_emoL.indexOf('impuissance') !== -1) { _muhasabaCarteImpuissance(); return; }
   openMuhasabaCloture();
 }
 
@@ -4702,6 +4703,22 @@ function _muhasabaCartePeur() {
     + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:16px;">\u2014 Coran 2:286</div>'
     + '<div class="itfaa-body" style="font-size:14px;font-style:italic;line-height:1.6;margin-bottom:6px;">Le Proph\u00e8te \uFDFA disait\u00a0: \u00ab\u00a0All\u00e2humma inn\u00ee a\u2019\u00fbdhu bika min al-\u1e25amm wa-l-\u1e25azan.\u00a0\u00bb \u2014 All\u00e2h, je cherche refuge contre le souci et la tristesse.</div>'
     + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:16px;">\u2014 Bukh\u00e2r\u00ee 6363</div>'
+    + '</div>'
+    + '<button onclick="openMuhasabaCloture()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019avance avec \u00e7a</button>'
+    + '</div>';
+}
+
+function _muhasabaCarteImpuissance() {
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#B33A3A';
+  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;max-width:600px;margin:0 auto;text-align:center;">'
+    + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:20px;">Aller plus loin</div>'
+    + '<div style="border:1px solid ' + c + '33;border-radius:14px;padding:20px;max-width:480px;margin:0 auto 28px;text-align:center;">'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;margin-bottom:16px;">Tu as fait ce que tu pouvais faire. Le reste appartient \u00e0 All\u00e2h.</div>'
+    + '<div class="itfaa-body" style="font-size:14px;font-style:italic;line-height:1.6;margin-bottom:6px;">\u00ab\u00a0Et c\u2019est \u00e0 All\u00e2h qu\u2019aboutissent toutes choses.\u00a0\u00bb</div>'
+    + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:16px;">\u2014 Coran 22:76</div>'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;">Tawakkul\u00a0: confier le r\u00e9sultat sans cesser d\u2019agir l\u00e0 o\u00f9 on peut.</div>'
     + '</div>'
     + '<button onclick="openMuhasabaCloture()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019avance avec \u00e7a</button>'
     + '</div>';
