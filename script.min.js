@@ -4354,7 +4354,7 @@ function openMuhasabaIntro() {
     + '<div style="font-family:var(--serif);font-size:22px;color:' + c + ';margin-bottom:28px;">Comment veux-tu faire ta mu\u1e25\u00e2saba\u00a0?</div>'
     + '<div style="display:flex;flex-direction:column;gap:14px;max-width:340px;width:100%;">'
     + '<button onclick="_muhasabaGuidee()" style="padding:20px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '08;cursor:pointer;text-align:center;"><div style="font-family:var(--serif);font-size:18px;color:' + c + ';">Voie guid\u00e9e</div><div style="font-size:13px;color:#E5E0DC;opacity:0.6;margin-top:4px;">Parcours en 8\u00a0\u00e9tapes</div></button>'
-    + '<button onclick="openMuhasabaClassique()" style="padding:20px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '08;cursor:pointer;text-align:center;"><div style="font-family:var(--serif);font-size:18px;color:' + c + ';">Voie classique</div><div style="font-size:13px;color:#E5E0DC;opacity:0.6;margin-top:4px;">4\u00a0questions selon al-Ghaz\u00e2l\u00ee</div></button>'
+    + '<button onclick="openMuhasabaClassique()" style="padding:20px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '08;cursor:pointer;text-align:center;"><div style="font-family:var(--serif);font-size:18px;color:' + c + ';">Voie classique</div><div style="font-size:13px;color:#E5E0DC;opacity:0.6;margin-top:4px;">4\u00a0questions selon al-Ghaz\u00e2l\u00ee</div><div style="font-size:11px;font-style:italic;color:rgba(255,255,255,0.3);margin-top:6px;">Cette voie est plus exigeante. Si tu traverses une p\u00e9riode difficile, choisis plut\u00f4t la voie guid\u00e9e.</div></button>'
     + '</div></div>';
 }
 function _muhasabaGuidee() {
