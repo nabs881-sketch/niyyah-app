@@ -4671,6 +4671,7 @@ function _muhasabaEngage() {
   if (_emoL.indexOf('injustice') !== -1) { _muhasabaCarteInjustice(); return; }
   if (_emoL.indexOf('impuissance') !== -1) { _muhasabaCarteImpuissance(); return; }
   if (_emoL.indexOf('trahison') !== -1) { _muhasabaCarteTrahison(); return; }
+  if (_emoL.indexOf('culpabilit\u00e9') !== -1) { _muhasabaCarteCulpabilite(); return; }
   openMuhasabaCloture();
 }
 
@@ -4706,6 +4707,25 @@ function _muhasabaCartePeur() {
     + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:16px;">\u2014 Bukh\u00e2r\u00ee 6363</div>'
     + '</div>'
     + '<button onclick="openMuhasabaCloture()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019avance avec \u00e7a</button>'
+    + '</div>';
+}
+
+function _muhasabaCarteCulpabilite() {
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var c = '#B33A3A';
+  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;max-width:600px;margin:0 auto;text-align:center;">'
+    + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:20px;">Aller plus loin</div>'
+    + '<div style="border:1px solid ' + c + '33;border-radius:14px;padding:20px;max-width:480px;margin:0 auto 24px;text-align:center;">'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;margin-bottom:16px;">La culpabilit\u00e9 juste m\u00e8ne \u00e0 la tawba. La culpabilit\u00e9 injuste m\u00e8ne au d\u00e9sespoir.</div>'
+    + '<div class="itfaa-body" style="font-size:14px;font-style:italic;line-height:1.6;margin-bottom:6px;">\u00ab\u00a0Ne d\u00e9sesp\u00e9rez pas de la mis\u00e9ricorde d\u2019All\u00e2h.\u00a0\u00bb</div>'
+    + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:16px;">\u2014 Coran 39:53</div>'
+    + '<div class="itfaa-body" style="font-size:14px;font-style:italic;line-height:1.6;margin-bottom:6px;">\u00ab\u00a0Les bonnes actions effacent les mauvaises.\u00a0\u00bb</div>'
+    + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:16px;">\u2014 Coran 11:114</div>'
+    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;">Astaghfirull\u00e2h, et fais une bonne action en r\u00e9paration.</div>'
+    + '</div>'
+    + '<button onclick="openMuhasabaCloture()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;margin-bottom:16px;">J\u2019avance avec \u00e7a</button>'
+    + '<div><button onclick="openMuhasabaClassique()" style="background:none;border:none;font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);cursor:pointer;">Pour aller plus profond\u00e9ment, tu peux refaire ta mu\u1e25\u00e2saba en voie classique.</button></div>'
     + '</div>';
 }
 
