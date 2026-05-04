@@ -4257,10 +4257,11 @@ function openItfaaRefuge() {
     + '</div>'
     + '<div id="_refugeEnd" style="display:none;">'
     + '<div style="font-size:13px;color:' + c + ';opacity:0.6;font-style:italic;line-height:1.6;max-width:400px;margin:0 auto 16px;">Quand le calme sera revenu, tu pourras revenir ici \u00e0 froid. La porte t\u2019attend.</div>'
-    + '<button onclick="_refugeExtend(33)" style="width:100%;max-width:320px;padding:10px;border-radius:10px;border:1px solid ' + c + '22;background:none;color:' + c + ';font-family:var(--serif);font-size:12px;cursor:pointer;opacity:0.5;margin-bottom:16px;">Continuer \u00d733</button>'
-    + '<button onclick="try{safeSetItem(\'colere_muhasaba_invite\',JSON.stringify({ts:Date.now(),zone:window._colereZone||\'\'}))}catch(e){}_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');babCompletPorte(\'colere\')" style="width:100%;max-width:320px;padding:12px;border-radius:12px;border:1px solid ' + c + '55;background:none;color:' + c + ';font-size:14px;font-family:var(--serif);cursor:pointer;margin-bottom:12px;">Plus tard, en Mu\u1e25\u00e2saba</button>'
-    + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');babCompletPorte(\'colere\')" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Sortir</button>'
-    + '</div></div>';
+    + '<div style="display:flex;flex-direction:column;gap:12px;max-width:340px;width:100%;margin:0 auto;">'
+    + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');babCompletPorte(\'colere\')" style="width:100%;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Sortir</button>'
+    + '<button onclick="try{safeSetItem(\'colere_muhasaba_invite\',JSON.stringify({ts:Date.now(),zone:window._colereZone||\'\'}))}catch(e){}_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');babCompletPorte(\'colere\')" style="width:100%;padding:14px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:none;color:rgba(200,168,75,0.7);font-size:14px;font-family:var(--serif);cursor:pointer;">Plus tard, en Mu\u1e25\u00e2saba</button>'
+    + '<button onclick="_refugeExtend(33)" style="width:100%;padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.2);background:none;color:rgba(255,255,255,0.55);font-family:var(--serif);font-size:14px;cursor:pointer;">Continuer \u00d733</button>'
+    + '</div></div></div>';
   el.innerHTML = html;
   if (safeGetItem('refuge_disclosure_seen') !== '1') {
     var _dc = document.getElementById('_refugeCycle');
