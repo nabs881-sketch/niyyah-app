@@ -6175,6 +6175,12 @@ _cureJourRenderers.colere_7 = function(el) {
     + '<div class="itfaa-body" style="font-size:16px;margin-bottom:8px;">Int\u00e9gration</div>'
     + '<div class="itfaa-subtle" style="font-size:14px;">Aujourd\u2019hui, je r\u00e9colte ce que j\u2019ai sem\u00e9.</div>'
     + '</div>'
+    // 1bis. IMITATION PROPHÉTIQUE
+    + '<div style="text-align:center;margin-bottom:40px;padding:20px;border-radius:14px;border:1px solid rgba(200,168,75,0.2);background:rgba(200,168,74,0.06);">'
+    + '<div style="font-family:var(--serif);font-size:16px;color:#C8A84A;margin-bottom:12px;">Le Proph\u00e8te \uFDFA dans cette \u00e9preuve</div>'
+    + '<div style="font-size:14px;font-style:italic;color:#E5E0DC;line-height:1.6;margin-bottom:8px;">Sa patience face \u00e0 l\u2019insulte. \u2014 Muslim 1063</div>'
+    + '<div style="font-size:14px;color:#E5E0DC;line-height:1.6;">On a essay\u00e9 de le rabaisser. Il a souri. Il savait qu\u2019il \u00e9tait de passage. Cette Cure t\u2019a fait commencer \u00e0 apprendre cette posture.</div>'
+    + '</div>'
     // 2. CONTEMPLATION
     + '<div style="text-align:center;margin-bottom:40px;padding:20px;border-radius:14px;border:1px solid ' + c + '22;background:' + c + '08;">'
     + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.5;margin-bottom:12px;">Contemplation</div>'
