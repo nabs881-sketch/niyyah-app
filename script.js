@@ -8366,6 +8366,7 @@ const ONBOARD_SLIDES = [
     + '<div style="font-size:13px;color:#E5E0DC;line-height:1.6;text-align:center;margin-bottom:8px;">Là où l’or s’amasse. Prier, lire le Coran, faire le dhikr — chaque acte est un diamant à donner.</div>'
     + '<div style="font-size:12px;color:rgba(200,168,75,0.55);font-style:italic;text-align:center;line-height:1.5;">Adhân, Wird, Coran, Tasbih, Qibla, Ramadan, Vendredi.</div>'
     + '</div>'
+    + '<div style="text-align:center;color:rgba(200,168,75,0.35);font-size:14px;margin-bottom:16px;">✦</div>'
     + '<div style="margin-bottom:20px;text-align:center;"><label style="font-family:var(--serif);font-size:13px;color:var(--t3);display:block;margin-bottom:6px;">'+t("ob_chemin_prenom")+' </label>'
     + '<input type="text" maxlength="30" placeholder="Ton pr\u00e9nom..." style="width:100%;max-width:260px;box-sizing:border-box;padding:10px 14px;background:rgba(200,168,75,0.04);border:1px solid rgba(200,168,75,0.2);border-radius:12px;color:var(--t1);font-size:14px;font-family:var(--sans);outline:none;text-align:center;" oninput="safeSetItem(\'niyyah_prenom\',this.value.trim())"></div>'
     + '<button class="onboard-btn" onclick="onboardNext()">'+t('onboard_next')+'</button>'
