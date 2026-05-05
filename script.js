@@ -8470,14 +8470,18 @@ function renderCaverne() {
   var glow = document.getElementById('caverne-glow');
   var btn = document.getElementById('caverne-continue');
   if (glow) glow.style.display = 'block';
-  function showPhrase(html, duration, cb, fadeOut) {
-    if (!stage) { if (cb) cb(); return; }
+  function showPhrase(html, duration, cb) {
+    stage.style.transition = 'opacity 300ms ease';
     stage.style.opacity = '0';
     setTimeout(function() {
       stage.innerHTML = html;
-      stage.style.opacity = '1';
-      setTimeout(cb, duration);
-    }, fadeOut || 350);
+      requestAnimationFrame(function() {
+        requestAnimationFrame(function() {
+          stage.style.opacity = '1';
+          setTimeout(cb, duration);
+        });
+      });
+    }, 350);
   }
   showPhrase('Un homme va au travail.', 1400, function() {
     showPhrase('Tous les matins.', 1200, function() {
