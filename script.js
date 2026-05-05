@@ -8524,7 +8524,7 @@ function renderCaverne() {
   }
   function epilogue() {
     console.log("EPILOGUE start", Date.now());
-    showPhrase('<div style="margin-bottom:14px;"><svg width="20" height="20" viewBox="0 0 20 20" style="opacity:0.6;"><polygon points="10,1 12,7 18,7 13,11 15,18 10,14 5,18 7,11 2,7 8,7" fill="#C8A84A"/><polygon points="10,1 12,7 18,7 13,11 15,18 10,14 5,18 7,11 2,7 8,7" fill="#C8A84A" transform="rotate(22.5 10 10)"/></svg></div><div style="color:rgba(200,168,75,0.65);font-style:italic;font-size:13px;line-height:1.7;">Elle s\u2019ouvre quand tu dis Bismillah,<br>quand tu pardonnes,<br>quand tu te tais.</div>', 3500, showButton);
+    showPhrase('<div style="margin-bottom:14px;"><svg width="20" height="20" viewBox="0 0 20 20" style="opacity:0.6;"><polygon points="10,1 12,7 18,7 13,11 15,18 10,14 5,18 7,11 2,7 8,7" fill="#C8A84A"/><polygon points="10,1 12,7 18,7 13,11 15,18 10,14 5,18 7,11 2,7 8,7" fill="#C8A84A" transform="rotate(22.5 10 10)"/></svg></div><div style="color:rgba(200,168,75,0.65);font-style:italic;font-size:13px;line-height:1.7;">Elle s\u2019ouvre quand tu dis Bismillah,<br>quand tu pardonnes,<br>quand tu te tais.</div>', 200, showButton);
   }
   function showButton() {
     console.log("SHOWBUTTON start", Date.now());
