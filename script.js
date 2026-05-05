@@ -8370,7 +8370,7 @@ const ONBOARD_SLIDES = [
     + '<div style="border:1px solid rgba(200,168,75,0.25);border-radius:14px;padding:16px;max-width:340px;margin:0 auto 16px;background:radial-gradient(ellipse at top, rgba(200,168,75,0.06) 0%, transparent 70%);">' 
     + '<div style="text-align:center;font-size:22px;color:#C8A84A;font-family:Amiri,Scheherazade,serif;direction:rtl;margin-bottom:4px;">تَفَكُّر</div>'
     + '<div style="text-align:center;font-family:var(--serif);font-size:14px;color:#C8A84A;letter-spacing:2px;margin-bottom:12px;">LA CONTEMPLATION</div>'
-    + '<div style="font-size:13px;color:#E5E0DC;line-height:1.7;">🌙 <span style="color:#C8A84A;font-family:var(--serif);">Quand vient la nuit</span> — clore ta journée en 3 actes.<br>📿 <span style="color:#C8A84A;font-family:var(--serif);">Nafs</span> — un trait de l’âme par semaine.<br>👁 <span style="color:#C8A84A;font-family:var(--serif);">Scan Regarde</span> — une fois par jour, sans prévenir, l’app te demande de regarder autour de toi.</div>'
+    + '<div style="font-size:13px;color:#E5E0DC;line-height:1.7;">🌙 <span style="color:#C8A84A;font-family:var(--serif);">Quand vient la nuit</span> — clore ta journée en 3 actes.<br>📿 <span style="color:#C8A84A;font-family:var(--serif);">Nafs</span> — un trait de l’âme par semaine.<br>👁 <span style="color:#C8A84A;font-family:var(--serif);">Scan Regarde</span> — la contemplation par surprise.</div>'
     + '</div>'
     + '<div style="text-align:center;color:rgba(200,168,75,0.35);font-size:14px;margin-bottom:16px;">✦</div>'
     + '<div style="border:1px solid rgba(200,168,75,0.25);border-radius:14px;padding:16px;max-width:340px;margin:0 auto 20px;background:radial-gradient(ellipse at top, rgba(200,168,75,0.06) 0%, transparent 70%);">' 
