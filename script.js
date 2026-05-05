@@ -8469,7 +8469,7 @@ function renderCaverne() {
     });
   });
   function acte2() {
-    showPhrase('Un matin, il passe devant une caverne.', 1700, function() {
+    showPhrase('Sur son chemin, il y a toujours eu une caverne.', 1900, function() {
       glow.style.opacity = '1';
       showPhrase('De l\u2019or. Des diamants. Des bijoux empil\u00e9s.', 2200, function() {
         showPhrase('<span style="color:rgba(255,255,255,0.7);font-style:italic;font-size:14px;">Et une pancarte, simple, \u00e0 l\u2019entr\u00e9e\u00a0:</span>', 1600, function() {
