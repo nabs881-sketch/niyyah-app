@@ -8471,6 +8471,7 @@ function renderCaverne() {
   var btn = document.getElementById('caverne-continue');
   if (glow) glow.style.display = 'block';
   function showPhrase(html, duration, cb) {
+    console.log("SHOWPHRASE", html.substring(0,30), Date.now());
     stage.style.transition = 'opacity 300ms ease';
     stage.style.opacity = '0';
     setTimeout(function() {
@@ -8516,14 +8517,17 @@ function renderCaverne() {
     });
   }
   function chute() {
+    console.log("CHUTE start", Date.now());
     showPhrase('<div style="font-size:22px;color:#C8A84A;font-weight:600;font-family:var(--serif);line-height:1.4;">Niyyah te dit\u00a0:<br>arr\u00eate-toi.</div>', 2800, function() {
       epilogue();
     });
   }
   function epilogue() {
+    console.log("EPILOGUE start", Date.now());
     showPhrase('<div style="margin-bottom:14px;"><svg width="20" height="20" viewBox="0 0 20 20" style="opacity:0.6;"><polygon points="10,1 12,7 18,7 13,11 15,18 10,14 5,18 7,11 2,7 8,7" fill="#C8A84A"/><polygon points="10,1 12,7 18,7 13,11 15,18 10,14 5,18 7,11 2,7 8,7" fill="#C8A84A" transform="rotate(22.5 10 10)"/></svg></div><div style="color:rgba(200,168,75,0.65);font-style:italic;font-size:13px;line-height:1.7;">Elle s\u2019ouvre quand tu dis Bismillah,<br>quand tu pardonnes,<br>quand tu te tais.</div>', 3500, showButton);
   }
   function showButton() {
+    console.log("SHOWBUTTON start", Date.now());
     if (!btn) return;
     btn.style.display = 'inline-block';
     btn.style.opacity = '0';
