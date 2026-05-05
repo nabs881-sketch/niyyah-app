@@ -8478,6 +8478,18 @@ function renderCaverne() {
       });
     });
   }
+  function acte3() {
+    glow.style.opacity = '0.2';
+    showPhrase('<span style="color:rgba(255,255,255,0.45);font-style:italic;font-size:14px;">Il ne s\u2019arr\u00eate pas.</span>', 1200, function() {
+      showPhrase('', 600, function() {
+        showPhrase('Cette caverne existe.', 1300, function() {
+          showPhrase('Elle est ouverte.', 1100, function() {
+            chute();
+          });
+        });
+      });
+    });
+  }
 }
 
 function onboardRender() {
