@@ -8472,7 +8472,9 @@ function renderCaverne() {
     showPhrase('Un matin, il passe devant une caverne.', 1700, function() {
       glow.style.opacity = '1';
       showPhrase('De l\u2019or. Des diamants. Des bijoux empil\u00e9s.', 2200, function() {
-        acte2Pancarte();
+        showPhrase('<div style="font-size:26px;font-weight:700;color:#C8A84A;letter-spacing:2px;text-shadow:0 0 20px rgba(200,168,75,0.4);margin-bottom:14px;font-family:var(--serif);">\u00ab\u00a0\u00c0 DONNER.\u00a0\u00bb</div><div style="font-size:13px;color:#C8A84A;opacity:0.5;letter-spacing:4px;margin-bottom:8px;">\u2726</div><div style="font-size:14px;color:#C8A84A;opacity:0.7;font-style:italic;font-family:var(--serif);">li-Ll\u0101h</div>', 2800, function() {
+          acte3();
+        });
       });
     });
   }
