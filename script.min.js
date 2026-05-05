@@ -8471,9 +8471,31 @@ function renderCaverne() {
   delays[9] = 3000;
   var fadeMs = {};
   fadeMs[11] = 1500;
+  var epilogue = [
+    {text:'\u2726', style:'font-size:16px;color:#C8A84A;margin:16px 0;', fade:1000, delay:1500},
+    {text:'Elle s\u2019ouvre quand tu dis Bismillah.', style:'font-size:14px;font-style:italic;color:rgba(200,168,75,0.6);margin-bottom:16px;', fade:800, delay:2000},
+    {text:'Quand tu pardonnes.', style:'font-size:14px;font-style:italic;color:rgba(200,168,75,0.6);margin-bottom:16px;', fade:800, delay:2000},
+    {text:'Quand tu te tais au lieu de r\u00e9pondre.', style:'font-size:14px;font-style:italic;color:rgba(200,168,75,0.6);margin-bottom:16px;', fade:800, delay:0}
+  ];
+  var ei = 0;
+  function epNext() {
+    if (ei >= epilogue.length) {
+      if (btn) { btn.style.opacity = '0'; btn.style.transition = 'opacity 1.5s ease'; btn.style.display = ''; requestAnimationFrame(function() { btn.style.opacity = '1'; }); }
+      return;
+    }
+    var e = epilogue[ei];
+    var p = document.createElement('div');
+    p.style.cssText = 'opacity:0;transition:opacity ' + e.fade + 'ms ease;' + e.style;
+    p.textContent = e.text;
+    txt.appendChild(p);
+    requestAnimationFrame(function() { p.style.opacity = '1'; });
+    ei++;
+    if (e.delay > 0) setTimeout(epNext, e.delay);
+    else setTimeout(epNext, 1500);
+  }
   function next() {
     if (i >= phrases.length) {
-      if (btn) btn.style.display = '';
+      setTimeout(epNext, 3000);
       return;
     }
     var p = document.createElement('div');
