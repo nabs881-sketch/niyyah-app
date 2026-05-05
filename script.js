@@ -8495,6 +8495,18 @@ function renderCaverne() {
       epilogue();
     });
   }
+  function epilogue() {
+    showPhrase('<div style="color:#C8A84A;opacity:0.5;font-size:16px;margin-bottom:14px;">\u2726</div><div style="color:rgba(200,168,75,0.65);font-style:italic;font-size:13px;line-height:1.7;">Elle s\u2019ouvre quand tu dis Bismillah,<br>quand tu pardonnes,<br>quand tu te tais.</div>', 3500, showButton);
+  }
+  function showButton() {
+    if (!btn) return;
+    btn.style.display = 'inline-block';
+    btn.style.opacity = '0';
+    setTimeout(function() {
+      btn.style.transition = 'opacity 1.2s ease';
+      btn.style.opacity = '1';
+    }, 50);
+  }
 }
 
 function onboardRender() {
