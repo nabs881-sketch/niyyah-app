@@ -8461,18 +8461,30 @@ function renderCaverne() {
     'Niyyah, c\u2019est l\u2019app qui te dit\u00a0: arr\u00eate-toi.'
   ];
   var i = 0;
+  var styles = {};
+  styles[5] = 'font-size:18px;font-weight:700;color:#C8A84A;';
+  styles[6] = 'font-size:14px;font-style:italic;color:rgba(255,255,255,0.4);';
+  styles[8] = 'font-size:14px;font-style:italic;color:rgba(255,255,255,0.4);';
+  styles[11] = 'font-size:18px;color:#C8A84A;';
+  var delays = {};
+  delays[6] = 3500;
+  delays[9] = 3000;
+  var fadeMs = {};
+  fadeMs[11] = 1500;
   function next() {
     if (i >= phrases.length) {
       if (btn) btn.style.display = '';
       return;
     }
     var p = document.createElement('div');
-    p.style.cssText = 'opacity:0;transition:opacity 0.8s ease;margin-bottom:8px;';
+    var fd = fadeMs[i] || 800;
+    p.style.cssText = 'opacity:0;transition:opacity ' + fd + 'ms ease;margin-bottom:8px;' + (styles[i] || '');
     p.textContent = phrases[i];
     txt.appendChild(p);
     requestAnimationFrame(function() { p.style.opacity = '1'; });
+    var d = delays[i] || 2000;
     i++;
-    setTimeout(next, 2000);
+    setTimeout(next, d);
   }
   next();
 }
