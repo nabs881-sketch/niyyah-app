@@ -8468,16 +8468,13 @@ function renderCaverne() {
       });
     });
   });
-  function _acte2After() {
-      glow.style.opacity = '1';
-      showPhrase('De l\u2019or. Des diamants. Des bijoux empil\u00e9s.', 2200, function() {
-        showPhrase('<span style="color:rgba(255,255,255,0.7);font-style:italic;font-size:14px;">Et une pancarte, simple, \u00e0 l\u2019entr\u00e9e\u00a0:</span>', 1600, function() {
-          acte2Pancarte();
-        });
-      });
-  }
   function acte2() {
-    showPhrase('Sur son chemin, il y a toujours eu une caverne.', 1900, _acte2After, 300);
+    showPhrase('Sur son chemin, il y a toujours eu une caverne.', 1900, function() {
+      showPhrase('De l\u2019or. Des diamants. Des bijoux empil\u00e9s.', 2200, function() {
+        showPhrase('<span style="color:rgba(255,255,255,0.7);font-style:italic;font-size:14px;">Et une pancarte, simple, \u00e0 l\u2019entr\u00e9e\u00a0:</span>', 1600, acte2Pancarte);
+      });
+    }, 300);
+    setTimeout(function() { glow.style.opacity = '1'; }, 1250);
   }
   function acte2Pancarte() {
     showPhrase('<div style="font-size:26px;font-weight:700;color:#C8A84A;letter-spacing:2px;text-shadow:0 0 20px rgba(200,168,75,0.4);margin-bottom:14px;font-family:var(--serif);">\u00ab\u00a0\u00c0 DONNER.\u00a0\u00bb</div><div style="margin-bottom:10px;"><svg width="20" height="20" viewBox="0 0 20 20" style="opacity:0.6;"><polygon points="10,1 12,7 18,7 13,11 15,18 10,14 5,18 7,11 2,7 8,7" fill="#C8A84A"/><polygon points="10,1 12,7 18,7 13,11 15,18 10,14 5,18 7,11 2,7 8,7" fill="#C8A84A" transform="rotate(22.5 10 10)"/></svg></div><div style="font-size:14px;color:#C8A84A;opacity:0.7;font-style:italic;font-family:var(--serif);margin-bottom:6px;">li-Ll\u0101h</div><div style="font-size:22px;color:#C8A84A;opacity:0.85;font-family:\'Amiri\',\'Scheherazade\',serif;direction:rtl;">\u0644\u0650\u0644\u0651\u064e\u0670\u0647</div>', 2800, function() {
