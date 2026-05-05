@@ -8477,7 +8477,7 @@ function renderCaverne() {
       stage.innerHTML = html;
       stage.style.opacity = '1';
       setTimeout(cb, duration);
-    }, fadeOut || 250);
+    }, fadeOut || 350);
   }
   showPhrase('Un homme va au travail.', 1400, function() {
     showPhrase('Tous les matins.', 1200, function() {
