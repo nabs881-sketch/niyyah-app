@@ -8461,6 +8461,13 @@ function renderCaverne() {
       setTimeout(cb, duration);
     }, 250);
   }
+  showPhrase('Un homme va au travail.', 1400, function() {
+    showPhrase('Tous les matins.', 1200, function() {
+      showPhrase('Le m\u00eame pas press\u00e9.', 1400, function() {
+        acte2();
+      });
+    });
+  });
 }
 
 function onboardRender() {
