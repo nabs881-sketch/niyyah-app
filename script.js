@@ -8378,6 +8378,7 @@ const ONBOARD_SLIDES = [
     + '<div style="text-align:center;font-family:var(--serif);font-size:14px;color:#C8A84A;letter-spacing:2px;margin-bottom:12px;">L’ÂME</div>'
     + '<div style="font-size:13px;color:#E5E0DC;line-height:1.7;">🚪 <span style="color:#C8A84A;font-family:var(--serif);">Bab an-Nafs</span> — les 7 portes émotionnelles.<br>✦ <span style="color:#C8A84A;font-family:var(--serif);">Scanner Niyyah</span> — sacralise un geste profane.<br>🌱 <span style="color:#C8A84A;font-family:var(--serif);">Mode Tawba</span> — le retour est l’œuvre d’une vie.</div>'
     + '</div>'
+    + '<div style="font-size:12px;font-style:italic;color:rgba(200,168,75,0.5);text-align:center;max-width:300px;margin:0 auto 24px;line-height:1.6;">Et chaque jour, le Sanctuaire t’accueille.</div>'
     + '<div style="margin-bottom:20px;text-align:center;"><label style="font-family:var(--serif);font-size:13px;color:var(--t3);display:block;margin-bottom:6px;">'+t("ob_chemin_prenom")+' </label>'
     + '<input type="text" maxlength="30" placeholder="Ton pr\u00e9nom..." style="width:100%;max-width:260px;box-sizing:border-box;padding:10px 14px;background:rgba(200,168,75,0.04);border:1px solid rgba(200,168,75,0.2);border-radius:12px;color:var(--t1);font-size:14px;font-family:var(--sans);outline:none;text-align:center;" oninput="safeSetItem(\'niyyah_prenom\',this.value.trim())"></div>'
     + '<button class="onboard-btn" onclick="onboardNext()">'+t('onboard_next')+'</button>'
