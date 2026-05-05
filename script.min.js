@@ -8524,7 +8524,7 @@ function renderCaverne() {
   }
   function epilogue() {
     console.log("EPILOGUE start", Date.now());
-    showPhrase('<div style="border:1px solid rgba(200,168,75,0.25); border-radius:14px; padding:24px 20px; max-width:340px; margin:0 auto; background:radial-gradient(ellipse at top, rgba(200,168,75,0.08) 0%, transparent 70%);"><svg width="28" height="28" viewBox="0 0 20 20" style="display:block; margin:0 auto 16px; opacity:0.8;"><polygon points="10,1 12,7 18,7 13,11 15,18 10,14 5,18 7,11 2,7 8,7" fill="#C8A84A"/><polygon points="10,1 12,7 18,7 13,11 15,18 10,14 5,18 7,11 2,7 8,7" fill="#C8A84A" transform="rotate(22.5 10 10)"/></svg><div style="color:rgba(200,168,75,0.65);font-style:italic;font-size:13px;line-height:1.7;">Elle s\u2019ouvre quand tu dis Bismillah,<br>quand tu pardonnes,<br>quand tu te tais.</div>', 200, showButton);
+    showPhrase('<div style="border:1px solid rgba(200,168,75,0.25); border-radius:14px; padding:24px 20px; max-width:340px; margin:0 auto; background:radial-gradient(ellipse at top, rgba(200,168,75,0.08) 0%, transparent 70%);"><svg width="28" height="28" viewBox="0 0 20 20" style="display:block; margin:0 auto 16px; opacity:0.8;"><polygon points="10,1 12,7 18,7 13,11 15,18 10,14 5,18 7,11 2,7 8,7" fill="#C8A84A"/><polygon points="10,1 12,7 18,7 13,11 15,18 10,14 5,18 7,11 2,7 8,7" fill="#C8A84A" transform="rotate(22.5 10 10)"/></svg><div style="color:rgba(200,168,75,0.65);font-style:italic;font-size:13px;line-height:1.7;">Elle s\u2019ouvre quand tu dis Bismillah,<br>quand tu pardonnes,<br>quand tu te tais.</div></div>', 200, showButton);
   }
   function showButton() {
     console.log("SHOWBUTTON start", Date.now());
