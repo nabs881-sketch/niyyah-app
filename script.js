@@ -8440,81 +8440,27 @@ function obSelectMotiv(el, value) {
 }
 function renderCaverne() {
   var el = document.getElementById('onboard-caverne');
-  var txt = document.getElementById('caverne-text');
-  var btn = document.getElementById('caverne-continue');
-  if (!el || !txt) return;
+  if (!el) return;
   el.style.display = 'flex';
-  txt.innerHTML = '';
-  if (btn) btn.style.display = 'none';
   var skip = document.createElement('button');
   skip.id = 'caverne-skip';
   skip.style.cssText = 'position:absolute;top:20px;right:20px;background:transparent;border:none;color:#666;font-size:10px;font-style:italic;cursor:pointer;z-index:3;opacity:0.3;';
   skip.textContent = 'Passer \u2192';
   skip.onclick = function() { onboardNext(); };
   el.appendChild(skip);
-  var phrases = [
-    'Un homme va au travail.',
-    'Tous les matins, le m\u00eame chemin.',
-    'Tous les matins, le m\u00eame pas press\u00e9.',
-    'Un matin, il passe devant une caverne ouverte.',
-    '\u00c0 l\u2019int\u00e9rieur\u00a0: de l\u2019or, des diamants, des bijoux empil\u00e9s.',
-    'Une pancarte simple\u00a0: \u00ab\u00a0\u00c0 DONNER.\u00a0\u00bb',
-    'Il ne s\u2019arr\u00eate pas.',
-    'Il a un travail. Des choses \u00e0 faire.',
-    'Il continue.',
-    'Cette caverne, elle existe.',
-    'Elle est ouverte tout le temps.',
-    'Niyyah, c\u2019est l\u2019app qui te dit\u00a0: arr\u00eate-toi.'
-  ];
-  var i = 0;
-  var styles = {};
-  styles[5] = 'font-size:18px;font-weight:700;color:#C8A84A;';
-  styles[6] = 'font-size:14px;font-style:italic;color:rgba(255,255,255,0.4);';
-  styles[8] = 'font-size:14px;font-style:italic;color:rgba(255,255,255,0.4);';
-  styles[11] = 'font-size:18px;color:#C8A84A;';
-  var delays = {};
-  delays[6] = 3500;
-  delays[9] = 3000;
-  var fadeMs = {};
-  fadeMs[11] = 1500;
-  var epilogue = [
-    {text:'\u2726', style:'font-size:16px;color:#C8A84A;margin:16px 0;', fade:1000, delay:1500},
-    {text:'Elle s\u2019ouvre quand tu dis Bismillah.', style:'font-size:14px;font-style:italic;color:rgba(200,168,75,0.6);margin-bottom:16px;', fade:800, delay:2000},
-    {text:'Quand tu pardonnes.', style:'font-size:14px;font-style:italic;color:rgba(200,168,75,0.6);margin-bottom:16px;', fade:800, delay:2000},
-    {text:'Quand tu te tais au lieu de r\u00e9pondre.', style:'font-size:14px;font-style:italic;color:rgba(200,168,75,0.6);margin-bottom:16px;', fade:800, delay:0}
-  ];
-  var ei = 0;
-  function epNext() {
-    if (ei >= epilogue.length) {
-      if (btn) { btn.style.opacity = '0'; btn.style.transition = 'opacity 1.5s ease'; btn.style.display = ''; requestAnimationFrame(function() { btn.style.opacity = '1'; }); }
-      return;
-    }
-    var e = epilogue[ei];
-    var p = document.createElement('div');
-    p.style.cssText = 'opacity:0;transition:opacity ' + e.fade + 'ms ease;' + e.style;
-    p.textContent = e.text;
-    txt.appendChild(p);
-    requestAnimationFrame(function() { p.style.opacity = '1'; });
-    ei++;
-    if (e.delay > 0) setTimeout(epNext, e.delay);
-    else setTimeout(epNext, 1500);
+  var stage = document.getElementById('caverne-stage');
+  var glow = document.getElementById('caverne-glow');
+  var btn = document.getElementById('caverne-continue');
+  if (glow) glow.style.display = 'block';
+  function showPhrase(html, duration, cb) {
+    if (!stage) { if (cb) cb(); return; }
+    stage.style.opacity = '0';
+    setTimeout(function() {
+      stage.innerHTML = html;
+      stage.style.opacity = '1';
+      setTimeout(cb, duration);
+    }, 250);
   }
-  function next() {
-    if (i >= phrases.length) {
-      setTimeout(epNext, 3000);
-      return;
-    }
-    var p = document.createElement('div');
-    var fd = fadeMs[i] || 800;
-    p.style.cssText = 'opacity:0;transition:opacity ' + fd + 'ms ease;margin-bottom:8px;' + (styles[i] || '');
-    p.textContent = phrases[i];
-    txt.appendChild(p);
-    requestAnimationFrame(function() { p.style.opacity = '1'; });
-    var d = delays[i] || 2000;
-    i++;
-    setTimeout(next, d);
-  }
-  next();
 }
 
 function onboardRender() {
