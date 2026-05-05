@@ -8446,6 +8446,12 @@ function renderCaverne() {
   el.style.display = 'flex';
   txt.innerHTML = '';
   if (btn) btn.style.display = 'none';
+  var skip = document.createElement('button');
+  skip.id = 'caverne-skip';
+  skip.style.cssText = 'position:absolute;top:20px;right:20px;background:transparent;border:none;color:#666;font-size:11px;font-style:italic;cursor:pointer;z-index:1;';
+  skip.textContent = 'Passer \u2192';
+  skip.onclick = function() { onboardNext(); };
+  el.appendChild(skip);
   var phrases = [
     'Un homme va au travail.',
     'Tous les matins, le m\u00eame chemin.',
