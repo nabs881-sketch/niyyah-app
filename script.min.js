@@ -8363,7 +8363,7 @@ const ONBOARD_SLIDES = [
     + '<div style="border:1px solid rgba(200,168,75,0.25);border-radius:14px;padding:16px;max-width:340px;margin:0 auto 16px;background:radial-gradient(ellipse at top, rgba(200,168,75,0.06) 0%, transparent 70%);">' 
     + '<div style="text-align:center;font-size:22px;color:#C8A84A;font-family:Amiri,Scheherazade,serif;direction:rtl;margin-bottom:4px;">عِبَادَة</div>'
     + '<div style="text-align:center;font-family:var(--serif);font-size:14px;color:#C8A84A;letter-spacing:2px;margin-bottom:10px;">LA PRATIQUE</div>'
-    + '<div style="font-size:13px;color:#E5E0DC;line-height:1.6;text-align:center;margin-bottom:8px;">Là où l’or s’amasse. Prier, lire le Coran, faire le dhikr — chaque acte est un diamant à donner.</div>'
+    + '<div style="font-size:13px;color:#E5E0DC;line-height:1.6;text-align:center;margin-bottom:8px;">Là où l’or s’amasse. Chaque acte est un diamant à donner.</div>'
     + '<div style="font-size:12px;color:rgba(200,168,75,0.55);font-style:italic;text-align:center;line-height:1.5;">Adhân, Wird, Coran, Tasbih, Qibla, Ramadan, Vendredi.</div>'
     + '</div>'
     + '<div style="text-align:center;color:rgba(200,168,75,0.35);font-size:14px;margin-bottom:16px;">✦</div>'
