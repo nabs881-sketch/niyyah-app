@@ -8490,6 +8490,11 @@ function renderCaverne() {
       });
     });
   }
+  function chute() {
+    showPhrase('<div style="font-size:22px;color:#C8A84A;font-weight:600;font-family:var(--serif);line-height:1.4;">Niyyah te dit\u00a0:<br>arr\u00eate-toi.</div>', 2800, function() {
+      epilogue();
+    });
+  }
 }
 
 function onboardRender() {
