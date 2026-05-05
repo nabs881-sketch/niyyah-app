@@ -8448,7 +8448,7 @@ function renderCaverne() {
   if (btn) btn.style.display = 'none';
   var skip = document.createElement('button');
   skip.id = 'caverne-skip';
-  skip.style.cssText = 'position:absolute;top:20px;right:20px;background:transparent;border:none;color:#666;font-size:11px;font-style:italic;cursor:pointer;z-index:1;';
+  skip.style.cssText = 'position:absolute;top:20px;right:20px;background:transparent;border:none;color:#666;font-size:10px;font-style:italic;cursor:pointer;z-index:3;opacity:0.3;';
   skip.textContent = 'Passer \u2192';
   skip.onclick = function() { onboardNext(); };
   el.appendChild(skip);
