@@ -8358,7 +8358,7 @@ const ONBOARD_SLIDES = [
   },
   // Slide 4 — Ton chemin
   () => '<div class="onboard-anim">'
-    + '<div style="font-family:var(--serif);font-style:italic;font-size:17px;color:#E5E0DC;text-align:center;margin-bottom:6px;line-height:1.5;">La pratique, la contemplation, l’âme.</div>'
+    + '<div style="font-family:var(--serif);font-style:italic;font-size:17px;color:#E5E0DC;text-align:center;margin-bottom:6px;line-height:1.5;">La pratique, la contemplation, l’âme, la fidélité.</div>'
     + '<div style="text-align:center;color:rgba(200,168,75,0.4);font-size:11px;letter-spacing:3px;margin-bottom:24px;">— ✦ —</div>'
     + '<div style="border:1px solid rgba(200,168,75,0.25);border-radius:14px;padding:16px;max-width:340px;margin:0 auto 16px;background:radial-gradient(ellipse at top, rgba(200,168,75,0.06) 0%, transparent 70%);">' 
     + '<div style="text-align:center;font-size:22px;color:#C8A84A;font-family:Amiri,Scheherazade,serif;direction:rtl;margin-bottom:4px;">عِبَادَة</div>'
