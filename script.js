@@ -8468,6 +8468,14 @@ function renderCaverne() {
       });
     });
   });
+  function acte2() {
+    showPhrase('Un matin, il passe devant une caverne.', 1700, function() {
+      glow.style.opacity = '1';
+      showPhrase('De l\u2019or. Des diamants. Des bijoux empil\u00e9s.', 2200, function() {
+        acte2Pancarte();
+      });
+    });
+  }
 }
 
 function onboardRender() {
