@@ -9122,7 +9122,7 @@ const V2_I18N = {
     ob_motivation_title: 'Niyyah walks with you', ob_motivation_sub: 'Three ways to walk.',
     ob_motiv_routine: 'The Steady', ob_motiv_routine_sub: 'The one who wants to root a solid practice.',
     ob_motiv_reconnecter: 'The Returning', ob_motiv_reconnecter_sub: 'The one who comes back after an absence.',
-    ob_motiv_sacraliser: 'Sanctify my daily life', ob_motiv_sacraliser_sub: 'Give spiritual meaning to every gesture',
+    ob_motiv_sacraliser: 'The Present', ob_motiv_sacraliser_sub: 'The one who wants to sanctify every gesture.',
     ob_chemin_title: 'Niyyah follows your steps', ob_chemin_sub: 'Here\u2019s what accompanies you every day.',
     ob_chemin_serie: 'Streak', ob_chemin_serie_d: 'Consecutive days',
     ob_chemin_nafs: 'Nafs', ob_chemin_nafs_d: '52 soul traits',
