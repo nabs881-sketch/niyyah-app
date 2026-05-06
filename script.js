@@ -11410,6 +11410,7 @@ function updateSpiritualTitle() {
     + '<div style="font-family:\'Inter\',var(--sans);font-size:12px;color:rgba(255,255,255,0.55);letter-spacing:1px;margin-top:12px;">' + t('sp_day_streak').replace('{d}',totalDisplay).replace('{s}',streakDisplay) + '</div>';
 }
 function v2RefreshStats() {
+  console.log("v2RefreshStats CALL #", (window._rsCount = (window._rsCount||0) + 1), "à T+", Date.now() % 100000);
   if (typeof updateSanctuaireNextPrayer === 'function') updateSanctuaireNextPrayer();
   // POINT 3 — Effet visuel Tawba persistant 24h
   try { applyTawbaGlow(); } catch(e) {}
@@ -11458,8 +11459,8 @@ function v2RefreshStats() {
       // Salutation fade-in 2s → visible 7s → fade-out 2s → murmure 1.5s
       var _prenom = _getPrenom();
       var _salamText = _prenom ? (t('greet_salam') + ', ' + _prenom) : t('greet_salam');
-      console.log("SALAM affiche", _salamText);
       grEl.textContent = _salamText;
+      console.log("ECRIT SALAM:", _salamText, "à T+", Date.now() % 100000);
       grEl.style.animation = 'none';
       grEl.offsetHeight;
       grEl.style.animation = 'greetingFadeIn 2s ease-out both';
@@ -11470,6 +11471,7 @@ function v2RefreshStats() {
         grEl.style.opacity = '0';
         setTimeout(function() {
           grEl.textContent = _murmureText;
+          console.log("ECRIT MURMURE:", _murmureText, "à T+", Date.now() % 100000);
           grEl.style.transition = 'opacity 1.5s ease';
           grEl.offsetHeight;
           grEl.style.opacity = '1';
