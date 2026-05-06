@@ -10631,6 +10631,11 @@ function v2OpenSettings() {
         <div style="font-size:11px; color:rgba(200,168,75,0.5); font-style:italic;">${t('settings_orientation_change')} →</div>
       </div>
 
+      <div style="background:#1a1a1a; border-radius:14px; padding:16px; margin-bottom:16px; cursor:pointer;" onclick="replayOnboarding()">
+        <div style="font-size:11px; letter-spacing:2px; color:#C8A84A; opacity:0.7; text-transform:uppercase; margin-bottom:8px;">${t('settings_replay_title')}</div>
+        <div style="font-size:12px; color:rgba(200,168,75,0.5); font-style:italic;">${t('settings_replay_sub')}</div>
+      </div>
+
       <!-- AUTRES RÉGLAGES -->
       <div style="background:#1a1a1a;border:1px solid rgba(255,255,255,0.05);border-radius:12px;overflow:hidden;margin-bottom:14px;">
         <div style="padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.04);">
