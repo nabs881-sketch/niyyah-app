@@ -9120,7 +9120,7 @@ const V2_I18N = {
     ob_deux_gestes: 'Two gestures for your daily life', ob_sacralise: 'Intention sanctifies. The gaze contemplates.', ob_niyyah_title: 'Set an intention', ob_niyyah_desc: 'Point your phone at an everyday object. Niyyah suggests 3 tailored spiritual intentions.', ob_niyyah_example: 'I drink with gratitude toward Allah.', ob_regarde_title: 'Set a gaze', ob_regarde_desc: 'Same gesture. Niyyah suggests 3 contemplative questions. You see Allah\u2019s hand in the ordinary.', ob_regarde_example: 'How many hands prepared this meal before you?',
     alhaya_onboard_title: 'Your spiritual life is yours alone.', alhaya_onboard_body: 'Tap \u2726 in the top right. Niyyah veils your screen. No one will read what you confide to Allah.', alhaya_onboard_quote: 'Al-Haya \u2014 modesty \u2014 is a branch of faith.', alhaya_onboard_cta: 'I understand',
     ob_motivation_title: 'Niyyah walks with you', ob_motivation_sub: 'Three ways to walk.',
-    ob_motiv_routine: 'Spiritual routine', ob_motiv_routine_sub: 'Build a daily practice',
+    ob_motiv_routine: 'The Steady', ob_motiv_routine_sub: 'The one who wants to root a solid practice.',
     ob_motiv_reconnecter: 'Reconnect with Allah', ob_motiv_reconnecter_sub: 'Return after a time away',
     ob_motiv_sacraliser: 'Sanctify my daily life', ob_motiv_sacraliser_sub: 'Give spiritual meaning to every gesture',
     ob_chemin_title: 'Niyyah follows your steps', ob_chemin_sub: 'Here\u2019s what accompanies you every day.',
