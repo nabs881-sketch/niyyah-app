@@ -9013,6 +9013,7 @@ const V2_I18N = {
     welcome_routine: 'Once is enough to begin. Once again is enough to last.',
     welcome_reconnecter: 'Welcome home. All\u00e2h sees you.',
     welcome_sacraliser: 'Even a sip of water, if you drink it for Him, is counted.',
+    evolution_invite_30: 'Are you still the one you thought you were at the threshold?',
     modal_title:    'Anchor your Niyyah',
     modal_sub:      'What is the intention for this day?',
     modal_divider:  'or your own intention',
