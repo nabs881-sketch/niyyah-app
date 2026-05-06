@@ -10761,6 +10761,9 @@ function renderOrientationCards() {
   document.getElementById('orient-modal-title').textContent = t('settings_orientation_modal_title');
   document.getElementById('orient-modal-sub').textContent = t('settings_orientation_modal_sub');
   container.innerHTML = '';
+  container.insertAdjacentHTML('beforeend', _orientCardHtml('routine', '\u0645\u064F\u062F\u064E\u0627\u0648\u064E\u0645\u064E\u0629', t('ob_motiv_routine'), t('ob_motiv_routine_sub')));
+  container.insertAdjacentHTML('beforeend', _orientCardHtml('reconnecter', '\u062A\u064E\u0648\u0652\u0628\u064E\u0629', t('ob_motiv_reconnecter'), t('ob_motiv_reconnecter_sub')));
+  container.insertAdjacentHTML('beforeend', _orientCardHtml('sacraliser', '\u0646\u0650\u064A\u0651\u064E\u0629', t('ob_motiv_sacraliser'), t('ob_motiv_sacraliser_sub')));
 }
 function selectOrientation(value) {
   localStorage.setItem('niyyah_motivation', value);
