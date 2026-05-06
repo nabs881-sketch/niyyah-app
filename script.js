@@ -10726,6 +10726,16 @@ function v2OpenSettings() {
     </div>`;
   sheet.onclick = function(e) { if (e.target === sheet) sheet.remove(); };
   document.body.appendChild(sheet);
+  setTimeout(function() {
+    var el = document.getElementById('settings-orientation-current');
+    if (!el) return;
+    var motiv = localStorage.getItem('niyyah_motivation');
+    var label = motiv === 'routine' ? t('ob_motiv_routine')
+              : motiv === 'reconnecter' ? t('ob_motiv_reconnecter')
+              : motiv === 'sacraliser' ? t('ob_motiv_sacraliser')
+              : '\u2014';
+    el.textContent = label;
+  }, 50);
 }
 
 /* ─────────────────────────────────────────────
