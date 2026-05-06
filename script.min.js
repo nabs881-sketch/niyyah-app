@@ -11546,6 +11546,12 @@ function v2RefreshStats() {
         safeSetItem('niyyah_welcome_shown', '1');
       }
     }
+    var _inst = parseInt(safeGetItem('niyyah_install_date') || '0', 10);
+    var _daysSinceInstall = _inst ? Math.floor((Date.now() - _inst) / 86400000) : 0;
+    if (_daysSinceInstall >= 30 && !localStorage.getItem('niyyah_j30_shown')) {
+      _murmureText = t('evolution_invite_30');
+      safeSetItem('niyyah_j30_shown', '1');
+    }
     if (_lastSalam !== TODAY) {
       // Salutation fade-in 2s → visible 7s → fade-out 2s → murmure 1.5s
       var _prenom = _getPrenom();
