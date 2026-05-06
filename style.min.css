@@ -3503,6 +3503,14 @@ to {
   flex-direction:column;
   gap:4px;
 }
+.ob-geste-niyyah {
+  background: radial-gradient(ellipse at top, rgba(200,168,75,0.08) 0%, rgba(255,255,255,0.03) 70%);
+  border: 1px solid rgba(200,168,75,0.25);
+}
+.ob-geste-regarde {
+  background: radial-gradient(ellipse at top, rgba(160,164,172,0.08) 0%, rgba(255,255,255,0.03) 70%);
+  border: 1px solid rgba(160,164,172,0.25);
+}
 .ob-geste-voile {
   position:absolute;
   inset:0;
