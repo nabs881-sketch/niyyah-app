@@ -11865,7 +11865,7 @@ function updateSanctuaireMoment() {
       + _nextInfo
       + '<div style="font-family:\'Inter\',var(--sans);font-size:12px;color:rgba(255,255,255,0.6);margin-top:4px;">' + blockDone + ' ' + (blockDone > 1 ? t('actes_done_p') : t('actes_done')) + ' · ' + blockRemaining + ' ' + (blockRemaining > 1 ? t('actes_left_p') : t('actes_left')) + '</div>'
       + jourLine
-      + '<button class="btn-bismillah-moment" onclick="event.stopPropagation();selectLevel(currentLevel);" ontouchend="event.stopPropagation();event.preventDefault();selectLevel(currentLevel);">' + t('btn_continue') + '</button>'
+      + '<button class="btn-bismillah-moment" onclick="event.stopPropagation();selectLevel(currentLevel);" ontouchend="event.stopPropagation();event.preventDefault();selectLevel(currentLevel);">' + (t('btn_continue') + (_getPrenom() ? ', ' + _getPrenom() : '')) + '</button>'
       + '</div>';
   }
 }
