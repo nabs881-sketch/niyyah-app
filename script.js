@@ -11411,6 +11411,7 @@ function updateSpiritualTitle() {
 }
 function v2RefreshStats() {
   console.log("v2RefreshStats CALL #", (window._rsCount = (window._rsCount||0) + 1), "à T+", Date.now() % 100000);
+  if (window._salamLocked) return;
   if (typeof updateSanctuaireNextPrayer === 'function') updateSanctuaireNextPrayer();
   // POINT 3 — Effet visuel Tawba persistant 24h
   try { applyTawbaGlow(); } catch(e) {}
@@ -11461,6 +11462,8 @@ function v2RefreshStats() {
       var _salamText = _prenom ? (t('greet_salam') + ', ' + _prenom) : t('greet_salam');
       grEl.textContent = _salamText;
       console.log("ECRIT SALAM:", _salamText, "à T+", Date.now() % 100000);
+      window._salamLocked = true;
+      setTimeout(function() { window._salamLocked = false; }, 9000);
       grEl.style.animation = 'none';
       grEl.offsetHeight;
       grEl.style.animation = 'greetingFadeIn 2s ease-out both';
