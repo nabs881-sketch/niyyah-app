@@ -8733,6 +8733,9 @@ const V2_I18N = {
     greeting_day_4: 'Que tes pas soient justes',
     greeting_day_5: 'Que ta Jumu\'a t\'apaise',
     greeting_day_6: 'Que ta patience te soit rendue',
+    welcome_routine: 'Une fois suffit pour commencer. Encore une fois suffit pour durer.',
+    welcome_reconnecter: 'Bienvenue chez toi. All\u00e2h te voit.',
+    welcome_sacraliser: 'Le moindre verre d\'eau, si tu le bois pour Lui, est compt\u00e9.',
     // Modal
     modal_title:    'Ancrer votre Niyyah',
     modal_sub:      'Quelle est l\'intention de cette journée ?',
