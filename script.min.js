@@ -408,7 +408,15 @@ function initDefiSemaine() {
   const lundi = getLundiDate();
   // Premier lancement — assigner défi id:1 par défaut
   if (!s.current && s.historique.length === 0) {
-    var premierDefi = DEFIS_DB.find(function(d) { return d.id === 1; });
+    var motiv = localStorage.getItem('niyyah_motivation');
+    var niveauCible = motiv === 'routine' ? 2 : (motiv === 'reconnecter' || motiv === 'sacraliser' ? 1 : null);
+    var premierDefi;
+    if (niveauCible) {
+      var pool = DEFIS_DB.filter(function(d) { return d.niveau === niveauCible; });
+      premierDefi = pool[Math.floor(Math.random() * pool.length)];
+    } else {
+      premierDefi = DEFIS_DB.find(function(d) { return d.id === 1; });
+    }
     if (premierDefi) {
       s.current = { id: premierDefi.id, semaine: lundi, jours: [], complete: false, chosenAt: Date.now() };
       s.choixEnAttente = null;
