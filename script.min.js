@@ -8391,7 +8391,7 @@ const ONBOARD_SLIDES = [
     + '</div>',
   // Slide 5 — Notifications 3 cat\u00e9gories
   () => '<div class="onboard-anim">'
-    + '<div class="onboard-title">'+t('ob_notif_title')+'</div>'
+    + '<div class="onboard-title" style="text-shadow:0 0 30px rgba(200,168,75,0.4),0 0 60px rgba(200,168,75,0.2);">'+t('ob_notif_title')+'</div>'
     + '<div class="onboard-sub" style="margin-bottom:20px;">'+t("ob_notif_sub")+'</div>'
     + '<div class="ob-notif-cards">'
     + '<div class="ob-notif-card active" onclick="obToggleNotif(this,\'murmures\')">'
