@@ -10748,6 +10748,13 @@ function openOrientationPicker() {
     c.classList.toggle('selected', c.dataset.value === motiv);
   });
 }
+function selectOrientation(value) {
+  localStorage.setItem('niyyah_motivation', value);
+  localStorage.removeItem('niyyah_welcome_shown');
+  localStorage.removeItem('niyyah_defi_v2');
+  closeOrientationPicker();
+  v2OpenSettings();
+}
 function closeOrientationPicker() {
   var sheet = document.getElementById('orientation-sheet');
   if (!sheet) return;
