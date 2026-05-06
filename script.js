@@ -10738,6 +10738,13 @@ function v2OpenSettings() {
   }, 50);
 }
 
+function openOrientationPicker() {
+  var motiv = localStorage.getItem('niyyah_motivation');
+  var current = motiv === 'routine' ? '1' : motiv === 'reconnecter' ? '2' : '3';
+  var msg = t('settings_orientation_modal_title') + '\n\n' + t('settings_orientation_modal_sub') + '\n\nTape 1, 2 ou 3 :';
+  var choice = prompt(msg, current);
+}
+
 /* ─────────────────────────────────────────────
    MODAL NIYYAH
    ───────────────────────────────────────────── */
