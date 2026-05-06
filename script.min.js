@@ -8903,6 +8903,8 @@ const V2_I18N = {
     settings_orientation_change: 'Toucher pour changer',
     settings_orientation_modal_title: 'Tu peux changer \u00e0 tout moment',
     settings_orientation_modal_sub: 'All\u00e2h sait ton c\u0153ur.',
+    settings_replay_title: 'Revoir l\u2019introduction',
+    settings_replay_sub: 'Replonger dans la parabole et les dimensions de Niyyah.',
     ob_chemin_title: 'Niyyah suit tes pas', ob_chemin_sub: 'Voici ce qui t\u2019accompagne chaque jour.',
     ob_chemin_serie: 'S\u00e9rie', ob_chemin_serie_d: 'Jours cons\u00e9cutifs',
     ob_chemin_nafs: 'Nafs', ob_chemin_nafs_d: '52 traits de l\u2019\u00e2me',
