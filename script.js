@@ -9148,6 +9148,8 @@ const V2_I18N = {
     settings_orientation_change: 'Tap to change',
     settings_orientation_modal_title: 'You can change at any time',
     settings_orientation_modal_sub: 'All\u00e2h knows your heart.',
+    settings_replay_title: 'Replay introduction',
+    settings_replay_sub: 'Revisit the parable and the dimensions of Niyyah.',
     ob_chemin_title: 'Niyyah follows your steps', ob_chemin_sub: 'Here\u2019s what accompanies you every day.',
     ob_chemin_serie: 'Streak', ob_chemin_serie_d: 'Consecutive days',
     ob_chemin_nafs: 'Nafs', ob_chemin_nafs_d: '52 soul traits',
