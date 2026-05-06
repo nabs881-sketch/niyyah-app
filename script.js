@@ -11455,7 +11455,7 @@ function v2RefreshStats() {
     var _lastSalam = localStorage.getItem('niyyah_greet_date');
     var _murmureText = t('greeting_day_' + new Date().getDay());
     console.log("SALAM check, today=", TODAY, "lastSalam=", _lastSalam);
-    if (_lastSalam !== TODAY) {
+    if (true) {
       // Salutation fade-in 2s → visible 7s → fade-out 2s → murmure 1.5s
       var _prenom = _getPrenom();
       var _salamText = _prenom ? (t('greet_salam') + ', ' + _prenom) : t('greet_salam');
@@ -11479,15 +11479,15 @@ function v2RefreshStats() {
           grEl.style.opacity = '1';
         }, 2000);
       }, 9000);
-    } else {
-      // Flag déjà posé : murmure direct (sauf si salam en cours)
-      if (!window._salamLocked) {
-        console.log("MURMURE affiche à la place");
-        grEl.textContent = _murmureText;
-        grEl.style.animation = 'none';
-        grEl.offsetHeight;
-        grEl.style.animation = 'greetingFadeIn 1.5s ease-out 0.3s both';
-      }
+    // } else {
+    //   // Flag déjà posé : murmure direct (sauf si salam en cours)
+    //   if (!window._salamLocked) {
+    //     console.log("MURMURE affiche à la place");
+    //     grEl.textContent = _murmureText;
+    //     grEl.style.animation = 'none';
+    //     grEl.offsetHeight;
+    //     grEl.style.animation = 'greetingFadeIn 1.5s ease-out 0.3s both';
+    //   }
     }
   }
   // Titres spirituels évolutifs (premium only)
