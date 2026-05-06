@@ -10749,7 +10749,8 @@ function openOrientationPicker() {
   });
 }
 function _orientCardHtml(value, calli, title, sub) {
-  return '';
+  var card = '<div class="orient-card" data-value="'+value+'" onclick="selectOrientation(\''+value+'\')" style="border:1px solid rgba(200,168,75,0.25); border-radius:14px; padding:14px 16px; margin-bottom:12px; cursor:pointer; display:flex; align-items:center; gap:14px;">';
+  return card;
 }
 function renderOrientationCards() {
   var container = document.getElementById('orient-cards-container');
