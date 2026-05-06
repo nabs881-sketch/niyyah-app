@@ -178,7 +178,7 @@
   <!-- Greeting -->
   <div class="greeting-v2">
     <div class="greeting-eyebrow" id="v2-greeting-eyebrow">Commencer ma journ&#233;e</div>
-    <div class="greeting-text" id="v2-greeting-text">Que cette journée soit lumineuse</div>
+    <div class="greeting-text" id="v2-greeting-text" onclick="if(localStorage.getItem('niyyah_j30_shown')==='1' && this.textContent.length > 30) openOrientationPicker()" style="cursor:pointer;">Que cette journée soit lumineuse</div>
   </div>
 
   <!-- L'Orbe -->
