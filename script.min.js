@@ -8460,12 +8460,6 @@ function renderCaverne() {
   var el = document.getElementById('onboard-caverne');
   if (!el) return;
   el.style.display = 'flex';
-  var skip = document.createElement('button');
-  skip.id = 'caverne-skip';
-  skip.style.cssText = 'position:absolute;top:20px;right:20px;background:transparent;border:none;color:#666;font-size:10px;font-style:italic;cursor:pointer;z-index:3;opacity:0.3;';
-  skip.textContent = 'Passer \u2192';
-  skip.onclick = function() { onboardNext(); };
-  el.appendChild(skip);
   var stage = document.getElementById('caverne-stage');
   var glow = document.getElementById('caverne-glow');
   var btn = document.getElementById('caverne-continue');
