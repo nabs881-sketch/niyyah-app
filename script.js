@@ -8354,7 +8354,6 @@ const ONBOARD_SLIDES = [
       + '</div>'
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:var(--t3);text-align:center;margin:10px 0 16px;">'+t('ob_sacralise')+'</div>'
       + '<button class="onboard-btn" onclick="onboardNext()">'+t('onboard_next')+'</button>'
-      + '<button class="onboard-skip" onclick="onboardFinish()">' + t('onboard_skip') + '</button>'
       + '</div>';
   },
   // Slide 4 — Ton chemin
