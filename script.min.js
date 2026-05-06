@@ -10620,6 +10620,12 @@ function v2OpenSettings() {
         </div>
       </div>
 
+      <div style="background:#1a1a1a; border-radius:14px; padding:16px; margin-bottom:16px; cursor:pointer;" onclick="openOrientationPicker()">
+        <div style="font-size:11px; letter-spacing:2px; color:#C8A84A; opacity:0.7; text-transform:uppercase; margin-bottom:8px;">${t('settings_orientation_title')}</div>
+        <div id="settings-orientation-current" style="font-family:var(--serif); font-size:16px; color:#E5E0DC; margin-bottom:4px;"></div>
+        <div style="font-size:11px; color:rgba(200,168,75,0.5); font-style:italic;">${t('settings_orientation_change')} →</div>
+      </div>
+
       <!-- AUTRES RÉGLAGES -->
       <div style="background:#1a1a1a;border:1px solid rgba(255,255,255,0.05);border-radius:12px;overflow:hidden;margin-bottom:14px;">
         <div style="padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.04);">
