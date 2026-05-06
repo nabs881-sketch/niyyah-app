@@ -12022,7 +12022,7 @@ function v2Init() {
     langPill0.style.fontSize = V2_LANG === 'ar' ? '13px' : '10px';
   }
   v2GoSanctuaire();
-  setTimeout(() => { v2ApplyI18n(); v2RefreshStats(); }, 100);
+  setTimeout(() => { v2ApplyI18n(); }, 100);
 
   // Sync V1 intention → V2 chip on boot
   try {
