@@ -10633,7 +10633,7 @@ function v2OpenSettings() {
 
       <div style="background:#1a1a1a; border-radius:14px; padding:16px; margin-bottom:16px; cursor:pointer;" onclick="replayOnboarding()">
         <div style="font-size:11px; letter-spacing:2px; color:#C8A84A; opacity:0.7; text-transform:uppercase; margin-bottom:8px;">${t('settings_replay_title')}</div>
-        <div style="font-size:12px; color:rgba(200,168,75,0.5); font-style:italic;">${t('settings_replay_sub')}</div>
+        <div style="font-size:13px; color:#E5E0DC; opacity:0.7; line-height:1.5;">${t('settings_replay_sub')}</div>
       </div>
 
       <!-- AUTRES RÉGLAGES -->
