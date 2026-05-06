@@ -8888,7 +8888,7 @@ const V2_I18N = {
     ob_motivation_title: 'Niyyah accompagne', ob_motivation_sub: 'Trois mani\u00e8res de marcher.',
     ob_motiv_routine: 'Le R\u00e9gulier', ob_motiv_routine_sub: 'Celui qui veut installer une pratique solide.',
     ob_motiv_reconnecter: 'Le Revenant', ob_motiv_reconnecter_sub: 'Celui qui revient apr\u00e8s une absence.',
-    ob_motiv_sacraliser: 'Sacraliser mon quotidien', ob_motiv_sacraliser_sub: 'Donner un sens spirituel \u00e0 chaque geste',
+    ob_motiv_sacraliser: 'Le Pr\u00e9sent', ob_motiv_sacraliser_sub: 'Celui qui veut sacraliser chaque geste.',
     ob_chemin_title: 'Niyyah suit tes pas', ob_chemin_sub: 'Voici ce qui t\u2019accompagne chaque jour.',
     ob_chemin_serie: 'S\u00e9rie', ob_chemin_serie_d: 'Jours cons\u00e9cutifs',
     ob_chemin_nafs: 'Nafs', ob_chemin_nafs_d: '52 traits de l\u2019\u00e2me',
