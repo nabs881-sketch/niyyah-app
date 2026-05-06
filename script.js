@@ -10739,6 +10739,7 @@ function v2OpenSettings() {
 }
 
 function openOrientationPicker() {
+  renderOrientationCards();
   var sheet = document.getElementById('orientation-sheet');
   if (!sheet) return;
   sheet.style.display = 'flex';
