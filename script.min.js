@@ -10751,7 +10751,9 @@ function openOrientationPicker() {
 function _orientCardHtml(value, calli, title, sub) {
   var card = '<div class="orient-card" data-value="'+value+'" onclick="selectOrientation(\''+value+'\')" style="border:1px solid rgba(200,168,75,0.25); border-radius:14px; padding:14px 16px; margin-bottom:12px; cursor:pointer; display:flex; align-items:center; gap:14px;">';
   var calliDiv = '<div style="font-size:24px; color:#C8A84A; font-family:Amiri,serif; direction:rtl; min-width:60px; text-align:center;">'+calli+'</div>';
-  return card + calliDiv;
+  var titleDiv = '<div style="font-family:var(--serif); color:#C8A84A; font-size:13px; letter-spacing:2px; text-transform:uppercase; margin-bottom:4px;">'+title+'</div>';
+  var subDiv = '<div style="font-size:12px; color:#E5E0DC; opacity:0.8;">'+sub+'</div>';
+  return card + calliDiv + '<div>' + titleDiv + subDiv + '</div></div>';
 }
 function renderOrientationCards() {
   var container = document.getElementById('orient-cards-container');
