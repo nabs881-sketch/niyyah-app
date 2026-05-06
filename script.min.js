@@ -8469,7 +8469,6 @@ function renderCaverne() {
   var btn = document.getElementById('caverne-continue');
   if (glow) glow.style.display = 'block';
   function showPhrase(html, duration, cb) {
-    console.log("SHOWPHRASE", html.substring(0,30), Date.now());
     stage.style.transition = 'opacity 300ms ease';
     stage.style.opacity = '0';
     setTimeout(function() {
@@ -8515,17 +8514,14 @@ function renderCaverne() {
     });
   }
   function chute() {
-    console.log("CHUTE start", Date.now());
     showPhrase('<div style="font-size:22px;color:#C8A84A;font-weight:600;font-family:var(--serif);line-height:1.4;">Niyyah te dit\u00a0:<br>arr\u00eate-toi.</div>', 2800, function() {
       epilogue();
     });
   }
   function epilogue() {
-    console.log("EPILOGUE start", Date.now());
     showPhrase('<div style="border:1px solid rgba(200,168,75,0.25); border-radius:14px; padding:24px 20px; max-width:340px; margin:0 auto; background:radial-gradient(ellipse at top, rgba(200,168,75,0.08) 0%, transparent 70%);"><svg width="32" height="32" viewBox="0 0 80 80" style="display:block; margin:0 auto 16px; opacity:0.8;"><defs><radialGradient id="njg1" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#E8D070"/><stop offset="100%" stop-color="#A88838"/></radialGradient></defs><g transform="translate(40,40)"><polygon points="-22,-22 22,-22 22,22 -22,22" fill="url(#njg1)"/><polygon points="-22,-22 22,-22 22,22 -22,22" fill="url(#njg1)" transform="rotate(45)"/><polygon points="-10,-10 10,-10 10,10 -10,10" fill="#0a0a0a"/><polygon points="-10,-10 10,-10 10,10 -10,10" fill="#0a0a0a" transform="rotate(45)"/><circle cx="0" cy="0" r="3" fill="#E8D070"/></g></svg><div style="color:rgba(200,168,75,0.65);font-style:italic;font-size:13px;line-height:1.7;">Elle s\u2019ouvre quand tu dis Bismillah,<br>quand tu pardonnes,<br>quand tu te tais.</div></div>', 200, showButton);
   }
   function showButton() {
-    console.log("SHOWBUTTON start", Date.now());
     if (!btn) return;
     btn.style.display = 'inline-block';
     btn.style.opacity = '0';
@@ -11410,7 +11406,6 @@ function updateSpiritualTitle() {
     + '<div style="font-family:\'Inter\',var(--sans);font-size:12px;color:rgba(255,255,255,0.55);letter-spacing:1px;margin-top:12px;">' + t('sp_day_streak').replace('{d}',totalDisplay).replace('{s}',streakDisplay) + '</div>';
 }
 function v2RefreshStats() {
-  console.log("v2RefreshStats CALL #", (window._rsCount = (window._rsCount||0) + 1), "à T+", Date.now() % 100000);
   if (typeof updateSanctuaireNextPrayer === 'function') updateSanctuaireNextPrayer();
   // POINT 3 — Effet visuel Tawba persistant 24h
   try { applyTawbaGlow(); } catch(e) {}
@@ -11449,20 +11444,15 @@ function v2RefreshStats() {
   // Apply current language first
   v2ApplyI18n();
   // Greeting — salutation 1×/jour puis murmure dans #v2-greeting-text
-  console.log("SALAM fn called, prenom=", _getPrenom(), "lastSalam=", localStorage.getItem('niyyah_greet_date'));
   const grEl = document.getElementById('v2-greeting-text');
   if (grEl) {
     var _lastSalam = localStorage.getItem('niyyah_greet_date');
     var _murmureText = t('greeting_day_' + new Date().getDay());
-    console.log("SALAM check, today=", TODAY, "lastSalam=", _lastSalam);
-    if (true) {
+    if (_lastSalam !== TODAY) {
       // Salutation fade-in 2s → visible 7s → fade-out 2s → murmure 1.5s
       var _prenom = _getPrenom();
       var _salamText = _prenom ? (t('greet_salam') + ', ' + _prenom) : t('greet_salam');
       grEl.textContent = _salamText;
-      console.log("ECRIT SALAM:", _salamText, "à T+", Date.now() % 100000);
-      window._salamLocked = true;
-      setTimeout(function() { window._salamLocked = false; }, 9000);
       grEl.style.animation = 'none';
       grEl.offsetHeight;
       grEl.style.animation = 'greetingFadeIn 2s ease-out both';
@@ -11473,21 +11463,17 @@ function v2RefreshStats() {
         grEl.style.opacity = '0';
         setTimeout(function() {
           grEl.textContent = _murmureText;
-          console.log("ECRIT MURMURE:", _murmureText, "à T+", Date.now() % 100000);
           grEl.style.transition = 'opacity 1.5s ease';
           grEl.offsetHeight;
           grEl.style.opacity = '1';
         }, 2000);
       }, 9000);
-    // } else {
-    //   // Flag déjà posé : murmure direct (sauf si salam en cours)
-    //   if (!window._salamLocked) {
-    //     console.log("MURMURE affiche à la place");
-    //     grEl.textContent = _murmureText;
-    //     grEl.style.animation = 'none';
-    //     grEl.offsetHeight;
-    //     grEl.style.animation = 'greetingFadeIn 1.5s ease-out 0.3s both';
-    //   }
+    } else {
+      // Flag déjà posé : murmure direct
+      grEl.textContent = _murmureText;
+      grEl.style.animation = 'none';
+      grEl.offsetHeight;
+      grEl.style.animation = 'greetingFadeIn 1.5s ease-out 0.3s both';
     }
   }
   // Titres spirituels évolutifs (premium only)
