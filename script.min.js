@@ -10778,6 +10778,14 @@ function selectOrientation(value) {
   closeOrientationPicker();
   v2OpenSettings();
 }
+function replayOnboarding() {
+  if (typeof closeAnyOpenSheet === 'function') closeAnyOpenSheet();
+  var sheet = document.getElementById('v2-settings-sheet');
+  if (sheet) sheet.style.display = 'none';
+  _onboardStep = 0;
+  document.body.classList.add('onboarding-active');
+  onboardRender();
+}
 function closeOrientationPicker() {
   var sheet = document.getElementById('orientation-sheet');
   if (!sheet) return;
