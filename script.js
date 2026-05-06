@@ -10739,16 +10739,14 @@ function v2OpenSettings() {
 }
 
 function openOrientationPicker() {
+  var sheet = document.getElementById('orientation-sheet');
+  if (!sheet) return;
+  sheet.style.display = 'flex';
+  setTimeout(function() { sheet.style.opacity = '1'; }, 10);
   var motiv = localStorage.getItem('niyyah_motivation');
-  var current = motiv === 'routine' ? '1' : motiv === 'reconnecter' ? '2' : '3';
-  var msg = t('settings_orientation_modal_title') + '\n\n' + t('settings_orientation_modal_sub') + '\n\nTape 1, 2 ou 3 :';
-  var choice = prompt(msg, current);
-  if (!choice) return;
-  var newMotiv = choice === '1' ? 'routine' : choice === '2' ? 'reconnecter' : 'sacraliser';
-  localStorage.setItem('niyyah_motivation', newMotiv);
-  localStorage.removeItem('niyyah_welcome_shown');
-  localStorage.removeItem('niyyah_defi_v2');
-  v2OpenSettings();
+  document.querySelectorAll('.orient-card').forEach(function(c) {
+    c.classList.toggle('selected', c.dataset.value === motiv);
+  });
 }
 
 /* ─────────────────────────────────────────────
