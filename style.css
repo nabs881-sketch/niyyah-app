@@ -3612,7 +3612,7 @@ to {
 }
 .ob-notif-card.active {
   border-color:rgba(200,168,75,0.3);
-  background:rgba(200,168,75,0.06);
+  background:radial-gradient(ellipse at top, rgba(200,168,75,0.10) 0%, rgba(255,255,255,0.03) 70%);
 }
 .ob-notif-icon {
   font-size:22px;
