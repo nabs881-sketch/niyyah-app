@@ -11450,14 +11450,17 @@ function v2RefreshStats() {
   // Apply current language first
   v2ApplyI18n();
   // Greeting — salutation 1×/jour puis murmure dans #v2-greeting-text
+  console.log("SALAM fn called, prenom=", _getPrenom(), "lastSalam=", localStorage.getItem('niyyah_greet_date'));
   const grEl = document.getElementById('v2-greeting-text');
   if (grEl) {
     var _lastSalam = localStorage.getItem('niyyah_greet_date');
     var _murmureText = t('greeting_day_' + new Date().getDay());
+    console.log("SALAM check, today=", TODAY, "lastSalam=", _lastSalam);
     if (_lastSalam !== TODAY) {
       // Salutation fade-in 2s → visible 7s → fade-out 2s → murmure 1.5s
       var _prenom = _getPrenom();
       var _salamText = _prenom ? (t('greet_salam') + ', ' + _prenom) : t('greet_salam');
+      console.log("SALAM affiche", _salamText);
       grEl.textContent = _salamText;
       grEl.style.animation = 'none';
       grEl.offsetHeight;
@@ -11476,6 +11479,7 @@ function v2RefreshStats() {
       }, 9000);
     } else {
       // Flag déjà posé : murmure direct
+      console.log("MURMURE affiche à la place");
       grEl.textContent = _murmureText;
       grEl.style.animation = 'none';
       grEl.offsetHeight;
