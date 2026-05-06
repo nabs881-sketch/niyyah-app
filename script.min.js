@@ -11458,13 +11458,16 @@ function v2RefreshStats() {
   if (grEl) {
     var _lastSalam = localStorage.getItem('niyyah_greet_date');
     var _murmureText = t('greeting_day_' + new Date().getDay());
+    console.log("BEFORE welcome check, _murmureText=", _murmureText, "motivation=", localStorage.getItem('niyyah_motivation'), "welcome_shown=", localStorage.getItem('niyyah_welcome_shown'));
     if (!localStorage.getItem('niyyah_welcome_shown')) {
       var _motiv = localStorage.getItem('niyyah_motivation');
       if (_motiv === 'routine' || _motiv === 'reconnecter' || _motiv === 'sacraliser') {
         _murmureText = t('welcome_' + _motiv);
+        console.log("WELCOME OVERRIDE", _motiv, "→", _murmureText);
         safeSetItem('niyyah_welcome_shown', '1');
       }
     }
+    console.log("AFTER welcome check, final _murmureText=", _murmureText);
     if (_lastSalam !== TODAY) {
       // Salutation fade-in 2s → visible 7s → fade-out 2s → murmure 1.5s
       var _prenom = _getPrenom();
