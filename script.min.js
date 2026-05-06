@@ -10748,6 +10748,13 @@ function openOrientationPicker() {
     c.classList.toggle('selected', c.dataset.value === motiv);
   });
 }
+function renderOrientationCards() {
+  var container = document.getElementById('orient-cards-container');
+  if (!container) return;
+  document.getElementById('orient-modal-title').textContent = t('settings_orientation_modal_title');
+  document.getElementById('orient-modal-sub').textContent = t('settings_orientation_modal_sub');
+  container.innerHTML = '';
+}
 function selectOrientation(value) {
   localStorage.setItem('niyyah_motivation', value);
   localStorage.removeItem('niyyah_welcome_shown');
