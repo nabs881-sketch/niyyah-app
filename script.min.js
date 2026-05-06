@@ -10748,6 +10748,12 @@ function openOrientationPicker() {
     c.classList.toggle('selected', c.dataset.value === motiv);
   });
 }
+function closeOrientationPicker() {
+  var sheet = document.getElementById('orientation-sheet');
+  if (!sheet) return;
+  sheet.style.opacity = '0';
+  setTimeout(function() { sheet.style.display = 'none'; }, 200);
+}
 
 /* ─────────────────────────────────────────────
    MODAL NIYYAH
