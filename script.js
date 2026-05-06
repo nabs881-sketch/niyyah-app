@@ -10748,6 +10748,9 @@ function openOrientationPicker() {
     c.classList.toggle('selected', c.dataset.value === motiv);
   });
 }
+function _orientCardHtml(value, calli, title, sub) {
+  return '';
+}
 function renderOrientationCards() {
   var container = document.getElementById('orient-cards-container');
   if (!container) return;
