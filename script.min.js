@@ -1967,8 +1967,6 @@ function showNiyyahScreen() {
   const screen = document.getElementById('niyyahScreen');
   if (screen) { screen.style.display = 'none'; }
   if (typeof v2GoSanctuaire === 'function') {
-    setTimeout(v2GoSanctuaire, 50);
-    setTimeout(v2RefreshStats, 150);
   }
   return; // Skip rest of old function
   // LEGACY CODE BELOW (kept for reference):
