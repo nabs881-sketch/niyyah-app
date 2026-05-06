@@ -8887,7 +8887,7 @@ const V2_I18N = {
     alhaya_onboard_title: 'Ta vie spirituelle t\u2019appartient.', alhaya_onboard_body: 'En public, dans le m\u00e9tro, au bureau \u2014 touche \u2726 en haut \u00e0 droite. Niyyah masque ton \u00e9cran d\u2019un voile zen. Personne ne lira ce que tu confies \u00e0 Allah.', alhaya_onboard_quote: 'Al-Haya \u2014 la pudeur \u2014 est une branche de la foi.', alhaya_onboard_cta: 'J\u2019ai compris',
     ob_motivation_title: 'Niyyah accompagne', ob_motivation_sub: 'Trois mani\u00e8res de marcher.',
     ob_motiv_routine: 'Le R\u00e9gulier', ob_motiv_routine_sub: 'Celui qui veut installer une pratique solide.',
-    ob_motiv_reconnecter: 'Reconnecter avec Allah', ob_motiv_reconnecter_sub: 'Revenir apr\u00e8s une p\u00e9riode d\u2019\u00e9loignement',
+    ob_motiv_reconnecter: 'Le Revenant', ob_motiv_reconnecter_sub: 'Celui qui revient apr\u00e8s une absence.',
     ob_motiv_sacraliser: 'Sacraliser mon quotidien', ob_motiv_sacraliser_sub: 'Donner un sens spirituel \u00e0 chaque geste',
     ob_chemin_title: 'Niyyah suit tes pas', ob_chemin_sub: 'Voici ce qui t\u2019accompagne chaque jour.',
     ob_chemin_serie: 'S\u00e9rie', ob_chemin_serie_d: 'Jours cons\u00e9cutifs',
