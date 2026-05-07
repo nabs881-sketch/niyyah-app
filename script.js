@@ -967,7 +967,7 @@ function renderRamadan() {
   html += '</div>';
   html += '<div class="horaires-link" onclick="openHoraires()">';
   html += '<div class="horaires-icon">🕌</div>';
-  html += '<div class="horaires-body"><div class="horaires-label">Voir les horaires — ' + selectedCity + '</div><div class="horaires-sub">Source officielle · Mosquée / IslamicCalendar.fr</div></div>';
+  html += '<div class="horaires-body"><div class="horaires-label">Voir les horaires — ' + selectedCity + '</div><div class="horaires-sub">Source officielle · <a href="https://www.mosqueedeparis.net" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;" onclick="event.stopPropagation()">Mosquée de Paris</a> / IslamicCalendar.fr</div></div>';
   html += '<div class="horaires-arrow">›</div>';
   html += '</div></div>';
   html += '<div style="background:var(--card);border-radius:var(--r-xl);padding:18px;margin-bottom:8px;">';
