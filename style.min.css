@@ -7803,7 +7803,6 @@ button[style*="gold-v2"] {
   display: flex;
   flex-direction: column;
   font-family: 'Cormorant Garamond', serif;
-  overflow-y: auto;
 }
 .rituel-header {
   text-align: center;
@@ -7843,6 +7842,8 @@ button[style*="gold-v2"] {
 .rituel-content {
   flex: 1;
   padding: 28px 20px 20px;
+  overflow-y: auto;
+  min-height: 0;
 }
 .rituel-item {
   background: rgba(49,52,56,0.55);
