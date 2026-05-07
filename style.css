@@ -7870,6 +7870,8 @@ button[style*="gold-v2"] {
   font-size: 16px;
   color: #f0ead6;
   margin-bottom: 4px;
+  font-feature-settings: "lnum" 1;
+  font-variant-numeric: lining-nums;
 }
 .rituel-item .sub {
   font-size: 12px;
