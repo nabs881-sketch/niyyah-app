@@ -2366,10 +2366,13 @@ function renderLevel(levelId) {
         const _tlOpacity = checked ? 'opacity:0.3;' : '';
         var shareBtn = '';
         if (item.id === 'savais_tu') {
-          shareBtn = '<button class="btn-audio" aria-label="Écouter" ontouchstart="event.stopPropagation()" onclick="shareSavaisTu(event)" title="' + t('btn_share_label') + '" style="font-size:13px;padding:0 8px;width:auto;">📤</button>';
+          shareBtn = '<button class="btn-audio" aria-label="Lire" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openVueSavaisTu();" title="Lire" style="font-size:13px;padding:0 8px;width:auto;">\u{1F4D6}</button>';
         }
+        const customClick = item.id === 'savais_tu'
+          ? 'openVueSavaisTu(); toggleItem(\'' + item.id + '\',event);'
+          : 'toggleItem(\'' + item.id + '\',event)';
         var _tl = tI(item,'label'), _ts = tI(item,'sub');
-        html += '<div class="item' + fridayCls + (checked ? ' checked' : '') + _tlCurrent + '" onclick="toggleItem(\'' + item.id + '\',event)" style="' + _tlOpacity + 'animation-delay:' + delay + 'ms;--i:' + idx + '" id="item-' + item.id + '"><div class="check-circle"><svg class="check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-body"><div class="item-label' + priorityCls + '">' + _tl + optionalBadge + '</div>' + (_ts ? '<div class="item-sub">' + (_ts.includes('·') ? _ts.split('·')[0].trim() : _ts) + '</div>' : '') + arabicHtml + '</div>' + shareBtn + audioBtn + infoBtn + '</div>';
+        html += '<div class="item' + fridayCls + (checked ? ' checked' : '') + _tlCurrent + '" onclick="' + customClick + '" style="' + _tlOpacity + 'animation-delay:' + delay + 'ms;--i:' + idx + '" id="item-' + item.id + '"><div class="check-circle"><svg class="check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-body"><div class="item-label' + priorityCls + '">' + _tl + optionalBadge + '</div>' + (_ts ? '<div class="item-sub">' + (_ts.includes('·') ? _ts.split('·')[0].trim() : _ts) + '</div>' : '') + arabicHtml + '</div>' + shareBtn + audioBtn + infoBtn + '</div>';
       }
     });
     html += '</div>';
@@ -13373,6 +13376,32 @@ function playAudioById(btn) {
   if (audioUrl) playAudio(audioUrl, btn, event);
 }
 window.playAudioById = playAudioById;
+
+function closeVueSavaisTu() {
+  const v = document.getElementById('vue-savais-tu');
+  if (v) v.classList.add('hidden');
+}
+window.closeVueSavaisTu = closeVueSavaisTu;
+
+function openVueSavaisTu() {
+  const v = document.getElementById('vue-savais-tu');
+  if (!v) return;
+  const fait = getSavaisTuFact() || '';
+  const parts = fait.split(' \u2014 ');
+  const texte = parts[0] || fait;
+  const source = parts[1] ? '\u2014 ' + parts[1] + ' \u2014' : '';
+  v.querySelector('.savais-fait').textContent = texte;
+  v.querySelector('.savais-source').textContent = source;
+  v.classList.remove('hidden');
+}
+window.openVueSavaisTu = openVueSavaisTu;
+
+function shareSavaisTuFromVue() {
+  if (typeof shareSavaisTu === 'function') {
+    shareSavaisTu(event);
+  }
+}
+window.shareSavaisTuFromVue = shareSavaisTuFromVue;
 
 init();
 
