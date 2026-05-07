@@ -7902,6 +7902,21 @@ button[style*="gold-v2"] {
   font-family: 'Nunito', sans-serif;
   box-shadow: 0 8px 28px rgba(200,168,74,0.35), 0 0 24px rgba(200,168,74,0.18), inset 0 1px 0 rgba(255,230,150,0.6);
 }
+.rituel-item .btn-audio {
+  background: none;
+  border: 1px solid rgba(200,168,74,0.3);
+  color: rgba(200,168,74,0.7);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.rituel-item .btn-audio:active {
+  background: rgba(200,168,74,0.15);
+}
 .fil-jour-connector {
   text-align: center;
   font-family: 'Cormorant Garamond', serif;

@@ -13296,7 +13296,8 @@ function openVueRituel(prayer) {
     const done = state[it.id] ? 'done' : '';
     const ar = it.arabic ? '<div class="arabic">' + it.arabic + '</div>' : '';
     const sub = it.sub ? '<div class="sub">' + it.sub + '</div>' : '';
-    return '<div class="rituel-item ' + done + '" onclick="toggleItem(\'' + it.id + '\',event); openVueRituel(\'' + prayer + '\');"><div class="check"></div><div><div class="label">' + (it.label||it.id) + '</div>' + sub + ar + '</div></div>';
+    const audio = it.audio ? '<button class="btn-audio" onclick="event.stopPropagation();playAudio(' + JSON.stringify(it.audio) + ',this,event)">🔊</button>' : '';
+    return '<div class="rituel-item ' + done + '" onclick="toggleItem(\'' + it.id + '\',event); openVueRituel(\'' + prayer + '\');"><div class="check"></div><div style="flex:1"><div class="label">' + (it.label||it.id) + '</div>' + sub + ar + '</div>' + audio + '</div>';
   }).join('');
   document.getElementById('rituel-emblem').textContent = '\u0635\u0644\u0627\u0629';
   v.classList.remove('hidden');
@@ -13349,7 +13350,8 @@ function openVueAuFilDuJour() {
     const done = state[it.id] ? 'done' : '';
     const ar = it.arabic ? '<div class="arabic">' + it.arabic + '</div>' : '';
     const sub = it.sub ? '<div class="sub">' + it.sub + '</div>' : '';
-    return '<div class="rituel-item ' + done + '" onclick="toggleItem(\'' + it.id + '\',event); openVueAuFilDuJour();"><div class="check"></div><div><div class="label">' + (it.label||it.id) + '</div>' + sub + ar + '</div></div>';
+    const audio = it.audio ? '<button class="btn-audio" onclick="event.stopPropagation();playAudio(' + JSON.stringify(it.audio) + ',this,event)">🔊</button>' : '';
+    return '<div class="rituel-item ' + done + '" onclick="toggleItem(\'' + it.id + '\',event); openVueAuFilDuJour();"><div class="check"></div><div style="flex:1"><div class="label">' + (it.label||it.id) + '</div>' + sub + ar + '</div>' + audio + '</div>';
   }).join('');
   v.classList.remove('hidden');
   document.getElementById('rituel-emblem').textContent = '\u064A\u064E\u0648\u0652\u0645';
