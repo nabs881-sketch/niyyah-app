@@ -13296,7 +13296,7 @@ function openVueRituel(prayer) {
     const done = state[it.id] ? 'done' : '';
     const ar = it.arabic ? '<div class="arabic">' + it.arabic + '</div>' : '';
     const sub = it.sub ? '<div class="sub">' + it.sub + '</div>' : '';
-    const audio = it.audio ? '<button class="btn-audio" onclick="event.stopPropagation();playAudio(' + JSON.stringify(it.audio) + ',this,event)">🔊</button>' : '';
+    const audio = it.audio ? '<button class="btn-audio" data-audio-id="' + it.id + '" onclick="event.stopPropagation();playAudioById(this)">🔊</button>' : '';
     return '<div class="rituel-item ' + done + '" onclick="toggleItem(\'' + it.id + '\',event); openVueRituel(\'' + prayer + '\');"><div class="check"></div><div style="flex:1"><div class="label">' + (it.label||it.id) + '</div>' + sub + ar + '</div>' + audio + '</div>';
   }).join('');
   document.getElementById('rituel-emblem').textContent = '\u0635\u0644\u0627\u0629';
@@ -13350,13 +13350,29 @@ function openVueAuFilDuJour() {
     const done = state[it.id] ? 'done' : '';
     const ar = it.arabic ? '<div class="arabic">' + it.arabic + '</div>' : '';
     const sub = it.sub ? '<div class="sub">' + it.sub + '</div>' : '';
-    const audio = it.audio ? '<button class="btn-audio" onclick="event.stopPropagation();playAudio(' + JSON.stringify(it.audio) + ',this,event)">🔊</button>' : '';
+    const audio = it.audio ? '<button class="btn-audio" data-audio-id="' + it.id + '" onclick="event.stopPropagation();playAudioById(this)">🔊</button>' : '';
     return '<div class="rituel-item ' + done + '" onclick="toggleItem(\'' + it.id + '\',event); openVueAuFilDuJour();"><div class="check"></div><div style="flex:1"><div class="label">' + (it.label||it.id) + '</div>' + sub + ar + '</div>' + audio + '</div>';
   }).join('');
   v.classList.remove('hidden');
   document.getElementById('rituel-emblem').textContent = '\u064A\u064E\u0648\u0652\u0645';
 }
 window.openVueAuFilDuJour = openVueAuFilDuJour;
+
+function playAudioById(btn) {
+  const id = btn.dataset.audioId;
+  if (!id || !Array.isArray(LEVELS)) return;
+  let audioUrl = null;
+  LEVELS.forEach(lvl => {
+    if (!lvl || !lvl.sections) return;
+    lvl.sections.forEach(s => {
+      (s.items||[]).forEach(it => {
+        if (it.id === id && it.audio) audioUrl = it.audio;
+      });
+    });
+  });
+  if (audioUrl) playAudio(audioUrl, btn, event);
+}
+window.playAudioById = playAudioById;
 
 init();
 
