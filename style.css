@@ -7899,3 +7899,41 @@ button[style*="gold-v2"] {
   font-family: 'Nunito', sans-serif;
   box-shadow: 0 8px 28px rgba(200,168,74,0.35), 0 0 24px rgba(200,168,74,0.18), inset 0 1px 0 rgba(255,230,150,0.6);
 }
+.fil-jour-connector {
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  color: rgba(200,168,74,0.5);
+  font-size: 14px;
+  padding: 18px 0 6px;
+  letter-spacing: 0.05em;
+}
+.fil-jour-card {
+  background: rgba(49,52,56,0.55);
+  border: 1px solid rgba(200,168,74,0.12);
+  border-radius: 14px;
+  padding: 18px 16px;
+  margin: 0 12px 16px;
+  text-align: center;
+  cursor: pointer;
+}
+.fil-jour-card .titre {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #C8A84A;
+  margin-bottom: 4px;
+}
+.fil-jour-card .soustitre {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  color: rgba(240,234,214,0.6);
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+.fil-jour-card .compteur {
+  font-family: 'Nunito', sans-serif;
+  font-size: 12px;
+  color: rgba(240,234,214,0.55);
+  letter-spacing: 0.05em;
+}

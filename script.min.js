@@ -11958,6 +11958,7 @@ function updateSanctuaireMoment() {
       + '<div style="font-family:\'Inter\',var(--sans);font-size:12px;color:rgba(255,255,255,0.6);margin-top:4px;">' + t('bloc_done_sub') + '</div>'
       + jourLine
       + '</div>';
+    el.innerHTML += getFilJourCardHTML();
   } else {
     el.innerHTML = '<div style="text-align:center;padding:8px;">'
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:700;color:#C8A84A;">' + _iconSpan + block.label + '</div>'
@@ -11966,6 +11967,7 @@ function updateSanctuaireMoment() {
       + jourLine
       + '<button class="btn-bismillah-moment" onclick="event.stopPropagation();var _m=getCurrentPrayerBlock();if(_m&&_m.id)openVueRituel(_m.id);else selectLevel(currentLevel);" ontouchend="event.stopPropagation();event.preventDefault();var _m=getCurrentPrayerBlock();if(_m&&_m.id)openVueRituel(_m.id);else selectLevel(currentLevel);">' + t('btn_continue') + '</button>'
       + '</div>';
+    el.innerHTML += getFilJourCardHTML();
   }
 }
 
@@ -13299,6 +13301,35 @@ function openVueRituel(prayer) {
   v.classList.remove('hidden');
 }
 window.openVueRituel = openVueRituel;
+
+function getFilJourCardHTML() {
+  const state = JSON.parse(localStorage.getItem('spiritual_v2') || '{}');
+  let conn = 0, conn_total = 0, ray = 0, ray_total = 0;
+  if (Array.isArray(LEVELS)) {
+    [2,3].forEach(i => {
+      const lvl = LEVELS[i];
+      if (!lvl || !lvl.sections) return;
+      lvl.sections.forEach(s => {
+        (s.items || []).forEach(it => {
+          if (i === 2) { conn_total++; if (state[it.id]) conn++; }
+          else { ray_total++; if (state[it.id]) ray++; }
+        });
+      });
+    });
+  }
+  return '<div class="fil-jour-connector">\u2014 et au fil de tes heures \u2014</div>'
+    + '<div class="fil-jour-card" onclick="openVueAuFilDuJour()">'
+    + '<div class="titre">AU FIL DU JOUR</div>'
+    + '<div class="soustitre">Ce qui demeure entre tes pri\u00e8res</div>'
+    + '<div class="compteur">Connaissance ' + conn + '/' + conn_total + ' \u00b7 Rayonnement ' + ray + '/' + ray_total + '</div>'
+    + '</div>';
+}
+window.getFilJourCardHTML = getFilJourCardHTML;
+
+function openVueAuFilDuJour() {
+  alert('Vue Au-fil-du-jour bient\u00f4t');
+}
+window.openVueAuFilDuJour = openVueAuFilDuJour;
 
 init();
 
