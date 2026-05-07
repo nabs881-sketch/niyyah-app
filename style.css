@@ -7965,6 +7965,55 @@ button[style*="gold-v2"] {
   margin-bottom: 28px;
   font-family: 'Nunito', sans-serif;
 }
+.rituel-vendredi-sep {
+  text-align: center;
+  padding: 24px 0 14px;
+  position: relative;
+  margin-top: 8px;
+}
+.rituel-vendredi-sep::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(70,180,130,0.3), transparent);
+  z-index: 1;
+}
+.rituel-vendredi-sep span {
+  display: inline-block;
+  padding: 0 18px;
+  background: #1a1c1f;
+  position: relative;
+  z-index: 2;
+}
+.rituel-vendredi-sep .ar {
+  font-size: 14px;
+  color: rgba(70,180,130,0.95);
+  font-family: 'Amiri', serif;
+  margin-bottom: 4px;
+}
+.rituel-vendredi-sep .fr {
+  font-size: 10px;
+  letter-spacing: 0.4em;
+  color: rgba(70,180,130,0.85);
+  font-family: 'Nunito', sans-serif;
+}
+.rituel-item.vendredi {
+  background: linear-gradient(135deg, rgba(20,55,40,0.55), rgba(15,40,28,0.65));
+  border: 1px solid rgba(70,180,130,0.25);
+  border-left: 2px solid rgba(70,180,130,0.6);
+}
+.rituel-item.vendredi .check {
+  border-color: rgba(70,180,130,0.5);
+}
+.rituel-item.vendredi.done .check {
+  background: rgba(70,180,130,0.85);
+}
+.rituel-item.vendredi .arabic {
+  color: rgba(70,180,130,0.75);
+}
 .savais-bouton {
   margin: 0 auto 16px;
   padding: 14px 28px;

@@ -13302,6 +13302,16 @@ function openVueRituel(prayer) {
     const audio = it.audio ? '<button class="btn-audio" data-audio-id="' + it.id + '" onclick="event.stopPropagation();playAudioById(this)">🔊</button>' : '';
     return '<div class="rituel-item ' + done + '" onclick="toggleItem(\'' + it.id + '\',event); openVueRituel(\'' + prayer + '\');"><div class="check"></div><div style="flex:1"><div class="label">' + (it.label||it.id) + '</div>' + sub + ar + '</div>' + audio + '</div>';
   }).join('');
+  if (isFriday()) {
+    const state2 = JSON.parse(localStorage.getItem('spiritual_v2') || '{}');
+    let html = '';
+    html = '<div class="rituel-vendredi-sep"><span><div class="ar">\u0627\u0644\u062C\u064F\u0645\u064F\u0639\u064E\u0629</div><div class="fr">VENDREDI</div></span></div>';
+    FRIDAY_ITEMS_GLOBAL.forEach(it => {
+      const done = state2[it.id] ? 'done' : '';
+      html += '<div class="rituel-item vendredi ' + done + '" onclick="toggleFridayItem(\'' + it.id + '\',event); openVueRituel(\'' + prayer + '\');"><div class="check"></div><div style="flex:1"><div class="label">' + it.label + '</div><div class="sub">' + it.sub + '</div><div class="arabic">' + it.arabic + '</div></div></div>';
+    });
+    main.innerHTML += html;
+  }
   document.getElementById('rituel-emblem').textContent = '\u0635\u0644\u0627\u0629';
   v.classList.remove('hidden');
 }
@@ -13402,6 +13412,14 @@ function shareSavaisTuFromVue() {
   }
 }
 window.shareSavaisTuFromVue = shareSavaisTuFromVue;
+
+const FRIDAY_ITEMS_GLOBAL = [
+  { id: 'fri_kahf', label: 'Sourate Al-Kahf', arabic: '\u0633\u064F\u0648\u0631\u064E\u0629\u064F \u0627\u0644\u0643\u064E\u0647\u0652\u0641', sub: 'Lumi\u00e8re entre les deux vendredis' },
+  { id: 'fri_salawat', label: 'Salawat sur le Proph\u00e8te \uFDFA', arabic: '\u0627\u0644\u0644\u0651\u064E\u0647\u064F\u0645\u0651\u064E \u0635\u064E\u0644\u0651\u0650 \u0639\u064E\u0644\u064E\u0649 \u0645\u064F\u062D\u064E\u0645\u0651\u064E\u062F', sub: 'Multipliez le vendredi' },
+  { id: 'fri_doua', label: 'Douaa de l\'heure b\u00e9nie', arabic: '\u0631\u064E\u0628\u0651\u064E\u0646\u064E\u0627 \u0622\u062A\u0650\u0646\u064E\u0627 \u0641\u0650\u064A \u0627\u0644\u062F\u0651\u064F\u0646\u0652\u064A\u064E\u0627 \u062D\u064E\u0633\u064E\u0646\u064E\u0629', sub: 'Heure b\u00e9nie du vendredi' }
+];
+window.FRIDAY_ITEMS_GLOBAL = FRIDAY_ITEMS_GLOBAL;
+window.isFriday = isFriday;
 
 init();
 
