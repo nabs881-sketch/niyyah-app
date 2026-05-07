@@ -13315,16 +13315,6 @@ function openVueRituel(prayer) {
   }
   html += normalItems.map(it => renderItem(it, false)).join('');
   main.innerHTML = html;
-  if (isFriday()) {
-    const state2 = JSON.parse(localStorage.getItem('spiritual_v2') || '{}');
-    let html = '';
-    html = '<div class="rituel-vendredi-sep"><span><div class="ar">\u0627\u0644\u062C\u064F\u0645\u064F\u0639\u064E\u0629</div><div class="fr">VENDREDI</div></span></div>';
-    FRIDAY_ITEMS_GLOBAL.forEach(it => {
-      const done = state2[it.id] ? 'done' : '';
-      html += '<div class="rituel-item vendredi ' + done + '" onclick="toggleFridayItem(\'' + it.id + '\',event); openVueRituel(\'' + prayer + '\');"><div class="check"></div><div style="flex:1"><div class="label">' + it.label + '</div><div class="sub">' + it.sub + '</div><div class="arabic">' + it.arabic + '</div></div></div>';
-    });
-    main.innerHTML += html;
-  }
   document.getElementById('rituel-emblem').textContent = '\u0635\u0644\u0627\u0629';
   v.classList.remove('hidden');
 }
