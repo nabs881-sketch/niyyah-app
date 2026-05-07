@@ -13256,5 +13256,49 @@ function fadeInView(el) {
   });
 }
 
+function closeVueRituel() {
+  const v = document.getElementById('vue-rituel');
+  if (v) v.classList.add('hidden');
+}
+window.closeVueRituel = closeVueRituel;
+
+function getRitualItems(prayer) {
+  if (!Array.isArray(LEVELS)) return [];
+  const items = [];
+  [0,1].forEach(i => {
+    const lvl = LEVELS[i];
+    if (!lvl || !lvl.sections) return;
+    lvl.sections.forEach(s => {
+      (s.items || []).forEach(it => {
+        if (it.id === prayer) return;
+        if (it.block === prayer || it.block === 'jour') {
+          items.push(it);
+        }
+      });
+    });
+  });
+  return items;
+}
+window.getRitualItems = getRitualItems;
+
+function openVueRituel(prayer) {
+  const v = document.getElementById('vue-rituel');
+  if (!v) return;
+  v.querySelector('.rituel-titre').textContent = 'APRÈS ' + prayer.toUpperCase();
+  const next = { fajr:'Dhuhr', dhuhr:'Asr', asr:'Maghrib', maghrib:'Isha', isha:'Fajr' };
+  v.querySelector('.rituel-prochaine').textContent = next[prayer] ? next[prayer].toUpperCase() + ' BIENTÔT' : '';
+  const items = getRitualItems(prayer);
+  const main = v.querySelector('.rituel-content');
+  const state = JSON.parse(localStorage.getItem('spiritual_v2') || '{}');
+  main.innerHTML = items.map(it => {
+    const done = state[it.id] ? 'done' : '';
+    const ar = it.arabic ? '<div class="arabic">' + it.arabic + '</div>' : '';
+    const sub = it.sub ? '<div class="sub">' + it.sub + '</div>' : '';
+    return '<div class="rituel-item ' + done + '" onclick="toggleItem(\'' + it.id + '\',event); openVueRituel(\'' + prayer + '\');"><div class="check"></div><div><div class="label">' + (it.label||it.id) + '</div>' + sub + ar + '</div></div>';
+  }).join('');
+  v.classList.remove('hidden');
+}
+window.openVueRituel = openVueRituel;
+
 init();
 
