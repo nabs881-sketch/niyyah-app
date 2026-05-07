@@ -13298,6 +13298,7 @@ function openVueRituel(prayer) {
     const sub = it.sub ? '<div class="sub">' + it.sub + '</div>' : '';
     return '<div class="rituel-item ' + done + '" onclick="toggleItem(\'' + it.id + '\',event); openVueRituel(\'' + prayer + '\');"><div class="check"></div><div><div class="label">' + (it.label||it.id) + '</div>' + sub + ar + '</div></div>';
   }).join('');
+  document.getElementById('rituel-emblem').textContent = '\u0635\u0644\u0627\u0629';
   v.classList.remove('hidden');
 }
 window.openVueRituel = openVueRituel;
@@ -13351,6 +13352,7 @@ function openVueAuFilDuJour() {
     return '<div class="rituel-item ' + done + '" onclick="toggleItem(\'' + it.id + '\',event); openVueAuFilDuJour();"><div class="check"></div><div><div class="label">' + (it.label||it.id) + '</div>' + sub + ar + '</div></div>';
   }).join('');
   v.classList.remove('hidden');
+  document.getElementById('rituel-emblem').textContent = '\u064A\u064E\u0648\u0652\u0645';
 }
 window.openVueAuFilDuJour = openVueAuFilDuJour;
 
