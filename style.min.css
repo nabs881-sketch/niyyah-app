@@ -8014,6 +8014,63 @@ button[style*="gold-v2"] {
 .rituel-item.vendredi .arabic {
   color: rgba(70,180,130,0.75);
 }
+/* ── REGARDE ALERT ── */
+#regarde-alert-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.92);
+  z-index: 9999;
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+}
+.regarde-alert-card {
+  background: #1a1612;
+  border: 1px solid rgba(200,168,74,0.3);
+  border-radius: 20px;
+  max-width: 340px; width: 100%;
+  padding: 32px 24px;
+  text-align: center;
+}
+.regarde-alert-calligraphy {
+  font-family: 'Amiri', serif;
+  font-size: 56px;
+  color: #C8A84A;
+  margin-bottom: 20px;
+}
+.regarde-alert-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  letter-spacing: 3px;
+  color: #C8A84A;
+  margin-bottom: 16px;
+}
+.regarde-alert-phrase {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-style: italic;
+  color: #f0ebe0;
+  margin-bottom: 28px;
+  line-height: 1.4;
+}
+.regarde-alert-btn {
+  background: linear-gradient(180deg, #E0C870, #C8A84A, #A88828);
+  border: none;
+  color: #1a1612;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  padding: 14px 24px;
+  border-radius: 12px;
+  width: 100%;
+  cursor: pointer;
+}
+.regarde-alert-later {
+  display: block;
+  margin-top: 16px;
+  color: #888;
+  font-size: 13px;
+  cursor: pointer;
+}
 .savais-bouton {
   margin: 0 auto 16px;
   padding: 14px 28px;

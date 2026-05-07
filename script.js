@@ -12100,6 +12100,19 @@ function applyAtmosphereDOM(bgStr, goldStr, goldAlpha) {
   var chip = document.getElementById('v2-intention-chip');
   if (chip) chip.style.borderColor = goldAlpha;
 }
+function showRegardeAlertModal() {
+  const overlay = document.getElementById('regarde-alert-overlay');
+  if (overlay) overlay.style.display = 'flex';
+}
+function checkRegardeAlert() {
+  var last = localStorage.getItem('niyyah_regarde_last_alert');
+  if (last === todayKey()) return;
+  var h = new Date().getHours();
+  if (h < 9 || h >= 21) return;
+  if (Math.random() >= 0.7) return;
+  safeSetItem('niyyah_regarde_last_alert', todayKey());
+  if (typeof showRegardeAlertModal === 'function') showRegardeAlertModal();
+}
 function v2Init() {
   checkMidnightReset();
   applyAtmosphere();
@@ -12126,6 +12139,7 @@ function v2Init() {
     langPill0.style.fontSize = V2_LANG === 'ar' ? '13px' : '10px';
   }
   v2GoSanctuaire();
+  checkRegardeAlert();
   setTimeout(() => { v2ApplyI18n(); }, 100);
 
   // Sync V1 intention → V2 chip on boot
