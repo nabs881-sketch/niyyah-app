@@ -1280,10 +1280,10 @@ const LEVELS = [
     sections: [
       { icon: '📚', title: 'Étude islamique', items: [
         { id: 'hadith1', label: '1er Hadith du jour', sub: 'Lire et méditer 1 hadith — Riyad as-Salihin ou autre recueil', arabic: 'حَدِيثٌ', block: 'jour' },
-        { id: 'sira', label: 'Vie du Prophète ﷺ', sub: '10 min · Série Seerah', arabic: 'السِّيرَةُ النَّبَوِيَّةُ', block: 'jour' },
+        { id: 'sira', label: 'S\u00eera du Prophète ﷺ', sub: '10 min · Série Seerah', arabic: 'السِّيرَةُ النَّبَوِيَّةُ', block: 'jour' },
         { id: 'quran_read', label: 'Lecture du Coran', sub: 'Au moins 1 page avec le sens', arabic: 'قِرَاءَةُ الْقُرْآنِ', block: 'jour' },
         { id: 'arabic', label: "Apprentissage de l'arabe", sub: '10 min · Vocabulaire ou grammaire', arabic: 'تَعَلُّمُ الْعَرَبِيَّةِ', block: 'jour' },
-        { id: 'vie_prophetes', label: 'Vie des Prophètes', sub: '10 min · Nouh, Ibrahim, Moussa, Issa…', arabic: 'قَصَصُ الْأَنْبِيَاءِ', block: 'jour', hadith: '\"Nous te racontons le meilleur des récits\" — Coran 12:3', source: 'Yusuf 12:3' },
+        { id: 'vie_prophetes', label: 'Histoires des Prophètes', sub: '10 min · Nouh, Ibrahim, Moussa, Issa…', arabic: 'قَصَصُ الْأَنْبِيَاءِ', block: 'jour', hadith: '\"Nous te racontons le meilleur des récits\" — Coran 12:3', source: 'Yusuf 12:3' },
         { id: 'vie_compagnons', label: 'Vie des Compagnons', sub: '10 min · Abu Bakr, Omar, Othman, Ali…', arabic: 'سِيَرُ الصَّحَابَةِ', block: 'jour', hadith: '\"Mes Compagnons sont comme les étoiles — qui que vous suiviez, vous serez guidés\" — Bayhaqi', source: 'Bayhaqi' },
         { id: 'fiqh_jour', label: 'Jurisprudence — 1 règle du jour', sub: 'Apprendre une règle de fiqh simple et l\'appliquer', arabic: 'فِقْهٌ', block: 'jour' },
         { id: 'savais_tu', label: 'Le savais-tu ?', sub: getSavaisTuFact(), arabic: 'هَلْ تَعْلَمُ؟', block: 'jour' },
