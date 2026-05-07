@@ -7934,8 +7934,9 @@ button[style*="gold-v2"] {
 }
 .fil-jour-card .compteur {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  gap: 12px;
   font-family: 'Nunito', sans-serif;
   font-size: 11px;
   color: rgba(240,234,214,0.5);
