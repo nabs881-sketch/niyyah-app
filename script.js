@@ -13318,7 +13318,7 @@ function getFilJourCardHTML() {
       });
     });
   }
-  return '<div class="fil-jour-connector">\u2014 et au fil de tes heures \u2014</div>'
+  return '<div class="fil-jour-connector">\u2014 entre tes pri\u00e8res \u2014</div>'
     + '<div class="fil-jour-card" onclick="openVueAuFilDuJour()">'
     + '<div class="titre">AU FIL DU JOUR</div>'
     + '<div class="soustitre">Ce qui demeure entre tes pri\u00e8res</div>'
