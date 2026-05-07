@@ -13327,7 +13327,30 @@ function getFilJourCardHTML() {
 window.getFilJourCardHTML = getFilJourCardHTML;
 
 function openVueAuFilDuJour() {
-  alert('Vue Au-fil-du-jour bient\u00f4t');
+  const v = document.getElementById('vue-rituel');
+  if (!v) return;
+  v.querySelector('.rituel-titre').textContent = 'AU FIL DU JOUR';
+  v.querySelector('.rituel-prochaine').textContent = '';
+  v.querySelector('.rituel-poetique').textContent = 'Ce qui demeure entre tes pri\u00e8res.';
+  const items = [];
+  if (Array.isArray(LEVELS)) {
+    [2,3].forEach(i => {
+      const lvl = LEVELS[i];
+      if (!lvl || !lvl.sections) return;
+      lvl.sections.forEach(s => {
+        (s.items || []).forEach(it => items.push(it));
+      });
+    });
+  }
+  const main = v.querySelector('.rituel-content');
+  const state = JSON.parse(localStorage.getItem('spiritual_v2') || '{}');
+  main.innerHTML = items.map(it => {
+    const done = state[it.id] ? 'done' : '';
+    const ar = it.arabic ? '<div class="arabic">' + it.arabic + '</div>' : '';
+    const sub = it.sub ? '<div class="sub">' + it.sub + '</div>' : '';
+    return '<div class="rituel-item ' + done + '" onclick="toggleItem(\'' + it.id + '\',event); openVueAuFilDuJour();"><div class="check"></div><div><div class="label">' + (it.label||it.id) + '</div>' + sub + ar + '</div></div>';
+  }).join('');
+  v.classList.remove('hidden');
 }
 window.openVueAuFilDuJour = openVueAuFilDuJour;
 
