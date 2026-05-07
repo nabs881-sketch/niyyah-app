@@ -13293,15 +13293,28 @@ function openVueRituel(prayer) {
   const next = { fajr:'Dhuhr', dhuhr:'Asr', asr:'Maghrib', maghrib:'Isha', isha:'Fajr' };
   v.querySelector('.rituel-prochaine').textContent = next[prayer] ? next[prayer].toUpperCase() + ' BIENTÔT' : '';
   const items = getRitualItems(prayer);
+  const fridayIds = ['jumua','fri_kahf','fri_salawat','fri_doua'];
+  const normalItems = items.filter(it => !fridayIds.includes(it.id));
+  const jumua = items.find(it => it.id === 'jumua');
   const main = v.querySelector('.rituel-content');
   const state = JSON.parse(localStorage.getItem('spiritual_v2') || '{}');
-  main.innerHTML = items.map(it => {
+  const renderItem = (it, vendredi) => {
     const done = state[it.id] ? 'done' : '';
     const ar = it.arabic ? '<div class="arabic">' + it.arabic + '</div>' : '';
     const sub = it.sub ? '<div class="sub">' + it.sub + '</div>' : '';
-    const audio = it.audio ? '<button class="btn-audio" data-audio-id="' + it.id + '" onclick="event.stopPropagation();playAudioById(this)">🔊</button>' : '';
-    return '<div class="rituel-item ' + done + '" onclick="toggleItem(\'' + it.id + '\',event); openVueRituel(\'' + prayer + '\');"><div class="check"></div><div style="flex:1"><div class="label">' + (it.label||it.id) + '</div>' + sub + ar + '</div>' + audio + '</div>';
-  }).join('');
+    const audio = it.audio ? '<button class="btn-audio" data-audio-id="' + it.id + '" onclick="event.stopPropagation();playAudioById(this)">\u{1F50A}</button>' : '';
+    const cls = vendredi ? 'rituel-item vendredi ' : 'rituel-item ';
+    const tog = (vendredi && it.id !== 'jumua') ? 'toggleFridayItem' : 'toggleItem';
+    return '<div class="' + cls + done + '" onclick="' + tog + '(\'' + it.id + '\',event); openVueRituel(\'' + prayer + '\');"><div class="check"></div><div style="flex:1"><div class="label">' + (it.label||it.id) + '</div>' + sub + ar + '</div>' + audio + '</div>';
+  };
+  let html = '';
+  if (isFriday()) {
+    html += '<div class="rituel-vendredi-sep"><span><div class="ar">\u0627\u0644\u062C\u064F\u0645\u064F\u0639\u064E\u0629</div><div class="fr">VENDREDI</div></span></div>';
+    const fridayItems = jumua ? [jumua, ...FRIDAY_ITEMS_GLOBAL] : FRIDAY_ITEMS_GLOBAL;
+    html += fridayItems.map(it => renderItem(it, true)).join('');
+  }
+  html += normalItems.map(it => renderItem(it, false)).join('');
+  main.innerHTML = html;
   if (isFriday()) {
     const state2 = JSON.parse(localStorage.getItem('spiritual_v2') || '{}');
     let html = '';
