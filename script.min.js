@@ -13542,15 +13542,32 @@ const SIRA = {
   getTissuesCount() {
     try { return JSON.parse(localStorage.getItem('sira_tissues') || '[]').length; } catch(e) { return 0; }
   },
-  async openDetail(numParam) {
-    await this.load();
-    var num = numParam || this.getCurrentRdvNum();
-    this.currentNum = num;
-    var rdv = this.getRdv(num);
+  _ensureOverlay() {
     var ov = document.getElementById('sira-overlay');
+    if (!ov) {
+      ov = document.createElement('div');
+      ov.id = 'sira-overlay';
+      ov.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;background:#2C2E32;color:#FAF7EE;overflow:auto;opacity:0;transition:opacity 400ms ease;';
+      document.body.appendChild(ov);
+      setTimeout(function() { ov.style.opacity = '1'; }, 10);
+    }
+    return ov;
+  },
+  _closeBtn: '<button onclick="document.getElementById(\'sira-overlay\').remove();" style="position:fixed;top:16px;right:16px;z-index:10000;background:none;border:none;color:#C8A84A;font-size:32px;width:32px;height:32px;cursor:pointer;line-height:1;">\u2715</button>',
+  async openDetail() {
+    await this.load();
+    var ov = this._ensureOverlay();
+    ov.innerHTML = this._closeBtn
+      + '<div id="sira-content" style="max-width:720px;margin:0 auto;padding:80px 20px;">' + this.renderHome() + '</div>';
+    ov.scrollTop = 0;
+  },
+  async openNav(num) {
+    await this.load();
+    this.currentNum = num;
+    var ov = this._ensureOverlay();
     var self = this;
     function _inject() {
-      ov.innerHTML = '<button onclick="document.getElementById(\'sira-overlay\').remove();" style="position:fixed;top:16px;right:16px;z-index:10000;background:none;border:none;color:#C8A84A;font-size:32px;width:32px;height:32px;cursor:pointer;line-height:1;">\u2715</button>'
+      ov.innerHTML = self._closeBtn
         + '<div id="sira-content" style="max-width:720px;margin:0 auto;padding:80px 20px;opacity:0;transition:opacity 300ms ease;">' + self.renderRdv(num) + '</div>';
       ov.scrollTop = 0;
       setTimeout(function() {
@@ -13558,38 +13575,16 @@ const SIRA = {
         var el = document.getElementById('sira-salawat-open'); if (el) { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; }
       }, 30);
     }
-    if (!ov) {
-      ov = document.createElement('div');
-      ov.id = 'sira-overlay';
-      ov.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;background:#2C2E32;color:#FAF7EE;overflow:auto;opacity:0;transition:opacity 400ms ease;';
-      document.body.appendChild(ov);
-      _inject();
-      setTimeout(function() { ov.style.opacity = '1'; }, 10);
-    } else {
-      var ct = document.getElementById('sira-content');
-      if (ct) { ct.style.opacity = '0'; }
+    var ct = document.getElementById('sira-content');
+    if (ct) {
+      ct.style.opacity = '0';
       setTimeout(function() { _inject(); }, 200);
+    } else {
+      _inject();
     }
   },
   openRdv() {
-    var num = this.getCurrentRdvNum();
-    this.currentNum = num;
-    var ct = document.getElementById('sira-content');
-    var self = this;
-    if (ct) {
-      ct.style.opacity = '0';
-      setTimeout(function() {
-        ct.innerHTML = self.renderRdv(num);
-        ct.scrollTop = 0;
-        var ov = document.getElementById('sira-overlay');
-        if (ov) ov.scrollTop = 0;
-        setTimeout(function() {
-          ct.style.opacity = '1';
-          var el = document.getElementById('sira-salawat-open');
-          if (el) { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; }
-        }, 30);
-      }, 300);
-    }
+    this.openNav(this.getCurrentRdvNum());
   },
   renderHome() {
     var num = this.getCurrentRdvNum();
@@ -13633,8 +13628,8 @@ const SIRA = {
     if (rdv.source) h += '<div style="text-align:center;font-style:italic;color:#888;font-size:13px;margin:16px 0 32px;">\u2014 ' + escape(T(rdv.source)) + '</div>';
     var maxNum = this.getCurrentRdvNum();
     h += '<div style="display:flex;justify-content:space-between;align-items:center;padding:24px 0;font-style:italic;font-size:14px;color:#C8A84A;">';
-    h += (num > 1) ? '<span style="cursor:pointer;" onclick="SIRA.openDetail(' + (num - 1) + ')">\u2190 Pr\u00e9c\u00e9dent</span>' : '<span></span>';
-    h += (num < maxNum) ? '<span style="cursor:pointer;" onclick="SIRA.openDetail(' + (num + 1) + ')">Suivant \u2192</span>' : '<span></span>';
+    h += (num > 1) ? '<span style="cursor:pointer;" onclick="SIRA.openNav(' + (num - 1) + ')">\u2190 Pr\u00e9c\u00e9dent</span>' : '<span></span>';
+    h += (num < maxNum) ? '<span style="cursor:pointer;" onclick="SIRA.openNav(' + (num + 1) + ')">Suivant \u2192</span>' : '<span></span>';
     h += '</div>';
     h += '<div style="text-align:center;font-size:48px;color:#C8A84A;margin:28px 0 12px;">\uFDFA</div>';
     h += '<div style="text-align:center;font-size:11px;letter-spacing:3px;font-weight:700;color:#C8A84A;margin:32px 0 8px;">FIL ROUGE</div>';
