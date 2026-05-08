@@ -2420,6 +2420,13 @@ function renderPrayerItem(item, delay, extraClass, forceChecked) {
     + '<div style="width:38px;height:22px;border-radius:11px;background:' + (onTime ? 'var(--green)' : 'rgba(255,255,255,0.1)') + ';border:1px solid ' + (onTime ? 'var(--green)' : 'rgba(255,255,255,0.15)') + ';display:flex;align-items:center;padding:2px;transition:background 0.2s;flex-shrink:0;">'
     + '<div style="width:18px;height:18px;border-radius:50%;background:' + (onTime ? '#fff' : 'rgba(255,255,255,0.4)') + ';margin-left:' + (onTime ? '16px' : '0') + ';transition:margin 0.2s;"></div>'
     + '</div></div>';
+  const atMosquee = !!state[item.id + '_mosquee'];
+  const showMosquee = !(item.id === 'dhuhr' && isFriday());
+  const toggleMosquee = showMosquee ? '<div style="display:flex;align-items:center;gap:6px;flex-shrink:0;margin-top:4px;" onclick="togglePrayerMosquee(\'' + item.id + '\');event.stopPropagation()">'
+    + '<div style="font-size:12px;color:' + (atMosquee ? '#C8A84A' : 'var(--t3)') + ';white-space:nowrap;">\u{1F54C}</div>'
+    + '<div style="width:38px;height:22px;border-radius:11px;background:' + (atMosquee ? '#C8A84A' : 'rgba(255,255,255,0.1)') + ';border:1px solid ' + (atMosquee ? '#C8A84A' : 'rgba(255,255,255,0.15)') + ';display:flex;align-items:center;padding:2px;transition:background 0.2s;flex-shrink:0;">'
+    + '<div style="width:18px;height:18px;border-radius:50%;background:' + (atMosquee ? '#fff' : 'rgba(255,255,255,0.4)') + ';margin-left:' + (atMosquee ? '16px' : '0') + ';transition:margin 0.2s;"></div>'
+    + '</div></div>' : '';
   const priorityCls = item.priority === 'fard' ? ' priority-fard' : item.priority === 'sunnah' ? ' priority-sunnah' : '';
   const _tlOpacity = checked ? 'opacity:0.3;' : '';
   return '<div class="item' + fridayCls + (checked ? ' checked' : '') + (extraClass || '') + '" onclick="toggleItem(\'' + item.id + '\',event)" style="' + _tlOpacity + 'animation-delay:' + delay + 'ms;--i:' + delay + '" id="item-' + item.id + '">'
@@ -2427,7 +2434,12 @@ function renderPrayerItem(item, delay, extraClass, forceChecked) {
     + '<div class="item-body"><div class="item-label' + priorityCls + '">' + tI(item,'label') + '</div>'
     + (item.sub ? '<div class="item-sub">' + tI(item,'sub') + '</div>' : '')
     + arabicHtml + '</div>'
-    + toggle + '</div>';
+    + '<div>' + toggle + toggleMosquee + '</div></div>';
+}
+function togglePrayerMosquee(id) {
+  state[id + '_mosquee'] = !state[id + '_mosquee'];
+  saveState();
+  renderLevel(currentLevel);
 }
 function togglePrayerOnTime(id) {
   state[id + '_ontime'] = !state[id + '_ontime'];
