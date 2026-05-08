@@ -13571,6 +13571,26 @@ const SIRA = {
       setTimeout(function() { _inject(); }, 200);
     }
   },
+  openRdv() {
+    var num = this.getCurrentRdvNum();
+    this.currentNum = num;
+    var ct = document.getElementById('sira-content');
+    var self = this;
+    if (ct) {
+      ct.style.opacity = '0';
+      setTimeout(function() {
+        ct.innerHTML = self.renderRdv(num);
+        ct.scrollTop = 0;
+        var ov = document.getElementById('sira-overlay');
+        if (ov) ov.scrollTop = 0;
+        setTimeout(function() {
+          ct.style.opacity = '1';
+          var el = document.getElementById('sira-salawat-open');
+          if (el) { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; }
+        }, 30);
+      }, 300);
+    }
+  },
   renderHome() {
     var num = this.getCurrentRdvNum();
     var rdv = this.getRdv(num);
