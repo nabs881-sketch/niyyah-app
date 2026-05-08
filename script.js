@@ -13554,6 +13554,13 @@ const SIRA = {
     ov.innerHTML = '<button onclick="document.getElementById(\'sira-overlay\').remove();" style="position:absolute;top:16px;right:16px;background:none;border:none;color:#C8A84A;font-size:32px;width:32px;height:32px;cursor:pointer;line-height:1;">\u2715</button>'
       + '<div style="text-align:center;padding:60px 0;font-family:Cormorant Garamond,serif;font-size:22px;color:#C8A84A;">' + (rdv && rdv.titre && rdv.titre.fr ? rdv.titre.fr : ('RDV #' + num)) + '</div>';
     document.body.appendChild(ov);
+  },
+  renderRdv(num) {
+    var rdv = this.getRdv(num);
+    if (!rdv) return '<div></div>';
+    function T(field) { return (field && field.fr) ? field.fr : ''; }
+    function escape(s) { return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+    return '<div></div>';
   }
 };
 window.SIRA = SIRA;
