@@ -2213,7 +2213,7 @@ function renderLevel(levelId) {
   let fridayBanner = '';
   if (level.id === 1 && isFriday()) {
     const FRIDAY_ITEMS = [
-      { id: 'fri_kahf',    label: 'Sourate Al-Kahf',       arabic: 'سُورَةُ الْكَهْفِ',         hadith: '"Celui qui lit Al-Kahf le vendredi aura une lumière entre les deux vendredis" — Hakim' },
+      { id: 'fri_kahf',    label: 'Sourate Al-Kahf',       arabic: 'سُورَةُ الْكَهْفِ',         audio: 'https://everyayah.com/data/Alafasy_128kbps/018001.mp3', hadith: '"Celui qui lit Al-Kahf le vendredi aura une lumière entre les deux vendredis" — Hakim' },
       { id: 'fri_salawat', label: 'Salawat sur le Prophète ﷺ', arabic: 'اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ كَمَا صَلَّيْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ إِنَّكَ حَمِيدٌ مَجِيدٌ', hadith: '"Le meilleur de vos jours est le vendredi — multipliez la Salawat" — Abu Dawud', phonetic: 'Allahumma salli \'ala Muhammad wa \'ala ali Muhammad kama sallayta \'ala Ibrahim wa \'ala ali Ibrahim innaka hamidun majid', translation: 'Ô Allah, prie sur Muhammad et la famille de Muhammad comme Tu as prié sur Ibrahim et la famille d\'Ibrahim. Tu es certes digne de louanges et de glorification.' },
       { id: 'fri_doua',    label: 'Douaa de l\'heure bénie', arabic: 'رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ', hadith: '"Il y a une heure le vendredi où Allah exauce toute demande" — Bukhari & Muslim', phonetic: 'Rabbanā ātinā fid-dunyā hasanatan wa fil-ākhirati hasanatan wa qinā \'adhāban-nār', translation: 'Notre Seigneur, accorde-nous en ce monde le bien et dans l\'au-delà le bien, et préserve-nous du châtiment du Feu.' },
     ];
