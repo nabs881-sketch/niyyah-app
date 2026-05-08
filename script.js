@@ -13580,6 +13580,11 @@ const SIRA = {
     h += '<div style="text-align:center;color:#C8A84A;margin:24px 0;letter-spacing:4px;font-size:12px;">\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500</div>';
     if (rdv.meditation) h += '<div style="background:rgba(250,247,238,0.04);border-radius:12px;padding:20px 24px;margin:32px 8px;font-style:italic;text-align:center;color:#D4C9A0;font-size:17px;line-height:1.6;">' + escape(T(rdv.meditation)) + '</div>';
     if (rdv.source) h += '<div style="text-align:center;font-style:italic;color:#888;font-size:13px;margin:16px 0 32px;">\u2014 ' + escape(T(rdv.source)) + '</div>';
+    var maxNum = this.getCurrentRdvNum();
+    h += '<div style="display:flex;justify-content:space-between;align-items:center;padding:24px 0;font-style:italic;font-size:14px;color:#C8A84A;">';
+    h += (num > 1) ? '<span style="cursor:pointer;" onclick="SIRA.openDetail(' + (num - 1) + ')">\u2190 Pr\u00e9c\u00e9dent</span>' : '<span></span>';
+    h += (num < maxNum) ? '<span style="cursor:pointer;" onclick="SIRA.openDetail(' + (num + 1) + ')">Suivant \u2192</span>' : '<span></span>';
+    h += '</div>';
     h += '<div style="text-align:center;font-size:48px;color:#C8A84A;margin:28px 0 12px;">\uFDFA</div>';
     h += '<div style="text-align:center;font-size:11px;letter-spacing:3px;font-weight:700;color:#C8A84A;margin:32px 0 8px;">FIL ROUGE</div>';
     if (rdv.fil_rouge) h += '<div style="text-align:center;font-style:italic;color:#999;font-size:14px;line-height:1.5;margin-bottom:24px;">' + escape(T(rdv.fil_rouge)) + '</div>';
