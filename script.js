@@ -13608,6 +13608,7 @@ const SIRA = {
     function T(field) { return (field && field.fr) ? field.fr : ''; }
     function escape(s) { return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
     var h = '';
+    h += '<div onclick="SIRA.openDetail()" style="position:absolute;top:16px;left:16px;font-size:28px;font-weight:300;color:#C8A84A;cursor:pointer;">\u2190</div>';
     h += '<div id="sira-salawat-open" style="text-align:center;font-size:64px;color:#C8A84A;margin-bottom:12px;opacity:0;transform:translateY(20px);transition:opacity 800ms ease-out,transform 800ms ease-out;">\uFDFA</div>';
     h += '<div style="text-align:center;font-size:12px;letter-spacing:4px;font-weight:700;text-transform:uppercase;color:#C8A84A;margin:16px 0 8px;">RENDEZ-VOUS ' + num + '</div>';
     h += '<div style="text-align:center;font-family:Cormorant Garamond,serif;font-size:28px;font-style:italic;font-weight:400;color:#FAF7EE;margin:0 0 32px;">' + escape(T(rdv.titre)) + '</div>';
