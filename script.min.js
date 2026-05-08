@@ -2423,7 +2423,8 @@ function renderPrayerItem(item, delay, extraClass, forceChecked) {
     + '<div style="' + _kn + 'background:' + (onTime ? '#fff' : 'rgba(255,255,255,0.4)') + ';margin-left:' + (onTime ? '14px' : '0') + ';"></div>'
     + '</div></div>';
   const atMosquee = !!state[item.id + '_mosquee'];
-  const toggleMosquee = '<div style="display:flex;align-items:center;gap:4px;flex-shrink:0;" onclick="togglePrayerMosquee(\'' + item.id + '\');event.stopPropagation()">'
+  const _hideMosq = (item.id === 'dhuhr' && isFriday());
+  const toggleMosquee = _hideMosq ? '' : '<div style="display:flex;align-items:center;gap:4px;flex-shrink:0;" onclick="togglePrayerMosquee(\'' + item.id + '\');event.stopPropagation()">'
     + '<div style="font-size:11px;color:' + (atMosquee ? '#C8A84A' : 'var(--t3)') + ';">\u{1F54C}</div>'
     + '<div style="' + _sw + 'background:' + (atMosquee ? '#C8A84A' : 'rgba(255,255,255,0.1)') + ';border:1px solid ' + (atMosquee ? '#C8A84A' : 'rgba(255,255,255,0.15)') + ';">'
     + '<div style="' + _kn + 'background:' + (atMosquee ? '#fff' : 'rgba(255,255,255,0.4)') + ';margin-left:' + (atMosquee ? '14px' : '0') + ';"></div>'
@@ -2449,6 +2450,10 @@ function togglePrayerJumua() {
     var log = state['jumua_log'] || [];
     if (log.indexOf(todayKey()) === -1) log.push(todayKey());
     state['jumua_log'] = log;
+    var mlog = state['mosquee_log'] || [];
+    if (mlog.indexOf(todayKey() + '_jumua') === -1) mlog.push(todayKey() + '_jumua');
+    state['mosquee_log'] = mlog;
+    state['dhuhr_mosquee'] = true;
   }
   saveState();
   renderLevel(currentLevel);
@@ -13364,10 +13369,10 @@ function openVueRituel(prayer) {
     + '<div style="font-size:11px;color:' + (_onTime ? 'var(--green)' : 'rgba(255,255,255,0.35)') + ';">\u23F0</div>'
     + '<div style="' + _sw + 'background:' + (_onTime ? 'var(--green)' : 'rgba(255,255,255,0.1)') + ';border:1px solid ' + (_onTime ? 'var(--green)' : 'rgba(255,255,255,0.15)') + ';">'
     + '<div style="' + _kn + 'background:' + (_onTime ? '#fff' : 'rgba(255,255,255,0.4)') + ';margin-left:' + (_onTime ? '14px' : '0') + ';"></div></div></div>'
-    + '<div style="display:flex;align-items:center;gap:4px;cursor:pointer;" onclick="togglePrayerMosquee(\'' + prayer + '\');openVueRituel(\'' + prayer + '\');">'
+    + (_isJum ? '' : '<div style="display:flex;align-items:center;gap:4px;cursor:pointer;" onclick="togglePrayerMosquee(\'' + prayer + '\');openVueRituel(\'' + prayer + '\');">'
     + '<div style="font-size:11px;color:' + (_atMosq ? '#C8A84A' : 'rgba(255,255,255,0.35)') + ';">\u{1F54C}</div>'
     + '<div style="' + _sw + 'background:' + (_atMosq ? '#C8A84A' : 'rgba(255,255,255,0.1)') + ';border:1px solid ' + (_atMosq ? '#C8A84A' : 'rgba(255,255,255,0.15)') + ';">'
-    + '<div style="' + _kn + 'background:' + (_atMosq ? '#fff' : 'rgba(255,255,255,0.4)') + ';margin-left:' + (_atMosq ? '14px' : '0') + ';"></div></div></div>'
+    + '<div style="' + _kn + 'background:' + (_atMosq ? '#fff' : 'rgba(255,255,255,0.4)') + ';margin-left:' + (_atMosq ? '14px' : '0') + ';"></div></div></div>')
     + (_isJum ? '<div style="display:flex;align-items:center;gap:4px;cursor:pointer;" onclick="togglePrayerJumua();openVueRituel(\'' + prayer + '\');">'
     + '<div style="font-size:11px;color:' + (_atJum ? '#46B482' : 'rgba(255,255,255,0.35)') + ';">\u262A\uFE0F</div>'
     + '<div style="' + _sw + 'background:' + (_atJum ? '#46B482' : 'rgba(255,255,255,0.1)') + ';border:1px solid ' + (_atJum ? '#46B482' : 'rgba(255,255,255,0.15)') + ';">'
