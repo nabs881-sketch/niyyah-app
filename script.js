@@ -13583,6 +13583,21 @@ const SIRA = {
       _inject();
     }
   },
+  renderList() {
+    var max = this.getCurrentRdvNum();
+    var h = '';
+    h += '<div onclick="SIRA.openDetail()" style="position:absolute;top:16px;left:16px;font-size:28px;font-weight:300;color:#C8A84A;cursor:pointer;">\u2190</div>';
+    h += '<div style="text-align:center;font-family:Cormorant Garamond,serif;font-size:24px;font-style:italic;color:#FAF7EE;margin:20px 0 28px;">Tous les rendez-vous tiss\u00e9s</div>';
+    for (var i = 1; i <= max; i++) {
+      var rdv = this.getRdv(i);
+      var titre = (rdv && rdv.titre && rdv.titre.fr) ? rdv.titre.fr : '';
+      h += '<div onclick="SIRA.openNav(' + i + ')" style="padding:16px 20px;border-bottom:1px solid rgba(200,168,74,0.15);cursor:pointer;">'
+        + '<span style="font-size:11px;letter-spacing:2px;font-weight:700;color:#C8A84A;">RDV ' + i + '</span> '
+        + '<span style="font-family:Cormorant Garamond,serif;font-style:italic;font-size:16px;color:#FAF7EE;">' + titre + '</span>'
+        + '</div>';
+    }
+    return h;
+  },
   openRdv() {
     this.openNav(this.getCurrentRdvNum());
   },
