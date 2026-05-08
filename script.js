@@ -13571,6 +13571,22 @@ const SIRA = {
       setTimeout(function() { _inject(); }, 200);
     }
   },
+  renderHome() {
+    var num = this.getCurrentRdvNum();
+    var rdv = this.getRdv(num);
+    var tissues = this.getTissuesCount();
+    var titre = (rdv && rdv.titre && rdv.titre.fr) ? rdv.titre.fr : ('RDV #' + num);
+    var h = '';
+    h += '<div style="text-align:center;font-size:80px;color:#C8A84A;margin:40px 0 20px;">\uFDFA</div>';
+    h += '<div style="text-align:center;font-family:Cormorant Garamond,serif;font-size:32px;font-style:italic;color:#FAF7EE;margin-bottom:12px;">Avec le Messager \uFDFA</div>';
+    h += '<div style="text-align:center;font-style:italic;color:#888;font-size:13px;margin-bottom:32px;">' + tissues + ' rendez-vous tiss\u00e9s</div>';
+    h += '<div style="text-align:center;color:#C8A84A;margin:24px 0;letter-spacing:4px;font-size:12px;">\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500</div>';
+    h += '<div style="text-align:center;font-size:11px;letter-spacing:3px;font-weight:700;color:#C8A84A;margin-bottom:12px;">RENDEZ-VOUS DU JOUR</div>';
+    h += '<div style="text-align:center;font-size:12px;letter-spacing:4px;font-weight:700;text-transform:uppercase;color:#C8A84A;margin-bottom:6px;">RENDEZ-VOUS ' + num + '</div>';
+    h += '<div style="text-align:center;font-family:Cormorant Garamond,serif;font-size:22px;font-style:italic;color:#FAF7EE;margin-bottom:36px;">' + titre + '</div>';
+    h += '<div style="text-align:center;"><button onclick="SIRA.openRdv()" style="background:#C8A84A;color:#2C2E32;padding:14px 28px;border:none;border-radius:24px;font-family:Cormorant Garamond,serif;font-style:italic;font-size:16px;cursor:pointer;">Entrer dans la rencontre \u2192</button></div>';
+    return h;
+  },
   renderRdv(num) {
     var rdv = this.getRdv(num);
     if (!rdv) return '<div></div>';
