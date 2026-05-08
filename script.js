@@ -13547,10 +13547,9 @@ const SIRA = {
     if (old) old.remove();
     var ov = document.createElement('div');
     ov.id = 'sira-overlay';
-    ov.style.cssText = 'position:fixed;inset:0;z-index:9500;background:#2C2E32;color:#f0ead6;overflow-y:auto;padding:20px;';
-    var closeBtn = '<div style="text-align:right;"><button onclick="document.getElementById(\'sira-overlay\').remove();" style="background:none;border:none;color:#C8A84A;font-size:24px;cursor:pointer;padding:8px;">\u2715</button></div>';
-    var content = typeof this.renderRdv === 'function' ? this.renderRdv(num) : '<div style="text-align:center;padding:40px 0;font-family:Cormorant Garamond,serif;font-size:20px;color:#C8A84A;">' + (rdv ? rdv.titre || ('RDV #' + num) : 'Aucun RDV') + '</div>';
-    ov.innerHTML = closeBtn + content;
+    ov.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;background:#2C2E32;color:#FAF7EE;padding:24px;overflow:auto;';
+    ov.innerHTML = '<button onclick="document.getElementById(\'sira-overlay\').remove();" style="position:absolute;top:16px;right:16px;background:none;border:none;color:#C8A84A;font-size:32px;width:32px;height:32px;cursor:pointer;line-height:1;">\u2715</button>'
+      + '<div style="text-align:center;padding:60px 0;font-family:Cormorant Garamond,serif;font-size:22px;color:#C8A84A;">' + (rdv && rdv.titre && rdv.titre.fr ? rdv.titre.fr : ('RDV #' + num)) + '</div>';
     document.body.appendChild(ov);
   }
 };
