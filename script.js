@@ -2423,11 +2423,16 @@ function renderPrayerItem(item, delay, extraClass, forceChecked) {
     + '<div style="' + _kn + 'background:' + (onTime ? '#fff' : 'rgba(255,255,255,0.4)') + ';margin-left:' + (onTime ? '14px' : '0') + ';"></div>'
     + '</div></div>';
   const atMosquee = !!state[item.id + '_mosquee'];
-  const showMosquee = !(item.id === 'dhuhr' && isFriday());
-  const toggleMosquee = showMosquee ? '<div style="display:flex;align-items:center;gap:4px;flex-shrink:0;" onclick="togglePrayerMosquee(\'' + item.id + '\');event.stopPropagation()">'
+  const toggleMosquee = '<div style="display:flex;align-items:center;gap:4px;flex-shrink:0;" onclick="togglePrayerMosquee(\'' + item.id + '\');event.stopPropagation()">'
     + '<div style="font-size:11px;color:' + (atMosquee ? '#C8A84A' : 'var(--t3)') + ';">\u{1F54C}</div>'
     + '<div style="' + _sw + 'background:' + (atMosquee ? '#C8A84A' : 'rgba(255,255,255,0.1)') + ';border:1px solid ' + (atMosquee ? '#C8A84A' : 'rgba(255,255,255,0.15)') + ';">'
     + '<div style="' + _kn + 'background:' + (atMosquee ? '#fff' : 'rgba(255,255,255,0.4)') + ';margin-left:' + (atMosquee ? '14px' : '0') + ';"></div>'
+    + '</div></div>';
+  const atJumua = !!state['dhuhr_jumua'];
+  const toggleJumua = (item.id === 'dhuhr' && isFriday()) ? '<div style="display:flex;align-items:center;gap:4px;flex-shrink:0;" onclick="togglePrayerJumua();event.stopPropagation()">'
+    + '<div style="font-size:11px;color:' + (atJumua ? '#46B482' : 'var(--t3)') + ';">\u262A\uFE0F</div>'
+    + '<div style="' + _sw + 'background:' + (atJumua ? '#46B482' : 'rgba(255,255,255,0.1)') + ';border:1px solid ' + (atJumua ? '#46B482' : 'rgba(255,255,255,0.15)') + ';">'
+    + '<div style="' + _kn + 'background:' + (atJumua ? '#fff' : 'rgba(255,255,255,0.4)') + ';margin-left:' + (atJumua ? '14px' : '0') + ';"></div>'
     + '</div></div>' : '';
   const priorityCls = item.priority === 'fard' ? ' priority-fard' : item.priority === 'sunnah' ? ' priority-sunnah' : '';
   const _tlOpacity = checked ? 'opacity:0.3;' : '';
@@ -2436,7 +2441,17 @@ function renderPrayerItem(item, delay, extraClass, forceChecked) {
     + '<div class="item-body"><div class="item-label' + priorityCls + '">' + tI(item,'label') + '</div>'
     + (item.sub ? '<div class="item-sub">' + tI(item,'sub') + '</div>' : '')
     + arabicHtml + '</div>'
-    + '<div style="display:flex;flex-direction:column;gap:3px;flex-shrink:0;">' + toggle + toggleMosquee + '</div></div>';
+    + '<div style="display:flex;flex-direction:column;gap:3px;flex-shrink:0;">' + toggle + toggleMosquee + toggleJumua + '</div></div>';
+}
+function togglePrayerJumua() {
+  state['dhuhr_jumua'] = !state['dhuhr_jumua'];
+  if (state['dhuhr_jumua']) {
+    var log = state['jumua_log'] || [];
+    if (log.indexOf(todayKey()) === -1) log.push(todayKey());
+    state['jumua_log'] = log;
+  }
+  saveState();
+  renderLevel(currentLevel);
 }
 function togglePrayerMosquee(id) {
   state[id + '_mosquee'] = !state[id + '_mosquee'];
@@ -13340,7 +13355,8 @@ function openVueRituel(prayer) {
   const _atMosq = !!state[prayer + '_mosquee'];
   const _sw = 'width:32px;height:18px;border-radius:9px;display:flex;align-items:center;padding:2px;transition:background 0.2s;flex-shrink:0;';
   const _kn = 'width:14px;height:14px;border-radius:50%;transition:margin 0.2s;';
-  const _showMosq = !(prayer === 'dhuhr' && isFriday());
+  const _atJum = !!state['dhuhr_jumua'];
+  const _isJum = (prayer === 'dhuhr' && isFriday());
   html += '<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 18px;margin-bottom:16px;background:rgba(200,168,74,0.06);border:1px solid rgba(200,168,74,0.18);border-radius:14px;">'
     + '<div style="font-family:Cormorant Garamond,serif;font-size:17px;font-weight:600;color:#C8A84A;">' + prayer.charAt(0).toUpperCase() + prayer.slice(1) + ' accompli\u00a0?</div>'
     + '<div style="display:flex;gap:10px;align-items:center;">'
@@ -13348,10 +13364,14 @@ function openVueRituel(prayer) {
     + '<div style="font-size:11px;color:' + (_onTime ? 'var(--green)' : 'rgba(255,255,255,0.35)') + ';">\u23F0</div>'
     + '<div style="' + _sw + 'background:' + (_onTime ? 'var(--green)' : 'rgba(255,255,255,0.1)') + ';border:1px solid ' + (_onTime ? 'var(--green)' : 'rgba(255,255,255,0.15)') + ';">'
     + '<div style="' + _kn + 'background:' + (_onTime ? '#fff' : 'rgba(255,255,255,0.4)') + ';margin-left:' + (_onTime ? '14px' : '0') + ';"></div></div></div>'
-    + (_showMosq ? '<div style="display:flex;align-items:center;gap:4px;cursor:pointer;" onclick="togglePrayerMosquee(\'' + prayer + '\');openVueRituel(\'' + prayer + '\');">'
+    + '<div style="display:flex;align-items:center;gap:4px;cursor:pointer;" onclick="togglePrayerMosquee(\'' + prayer + '\');openVueRituel(\'' + prayer + '\');">'
     + '<div style="font-size:11px;color:' + (_atMosq ? '#C8A84A' : 'rgba(255,255,255,0.35)') + ';">\u{1F54C}</div>'
     + '<div style="' + _sw + 'background:' + (_atMosq ? '#C8A84A' : 'rgba(255,255,255,0.1)') + ';border:1px solid ' + (_atMosq ? '#C8A84A' : 'rgba(255,255,255,0.15)') + ';">'
-    + '<div style="' + _kn + 'background:' + (_atMosq ? '#fff' : 'rgba(255,255,255,0.4)') + ';margin-left:' + (_atMosq ? '14px' : '0') + ';"></div></div></div>' : '')
+    + '<div style="' + _kn + 'background:' + (_atMosq ? '#fff' : 'rgba(255,255,255,0.4)') + ';margin-left:' + (_atMosq ? '14px' : '0') + ';"></div></div></div>'
+    + (_isJum ? '<div style="display:flex;align-items:center;gap:4px;cursor:pointer;" onclick="togglePrayerJumua();openVueRituel(\'' + prayer + '\');">'
+    + '<div style="font-size:11px;color:' + (_atJum ? '#46B482' : 'rgba(255,255,255,0.35)') + ';">\u262A\uFE0F</div>'
+    + '<div style="' + _sw + 'background:' + (_atJum ? '#46B482' : 'rgba(255,255,255,0.1)') + ';border:1px solid ' + (_atJum ? '#46B482' : 'rgba(255,255,255,0.15)') + ';">'
+    + '<div style="' + _kn + 'background:' + (_atJum ? '#fff' : 'rgba(255,255,255,0.4)') + ';margin-left:' + (_atJum ? '14px' : '0') + ';"></div></div></div>' : '')
     + '</div></div>';
   if (isFriday()) {
     html += '<div class="rituel-vendredi-sep"><span><div class="ar">\u0627\u0644\u062C\u064F\u0645\u064F\u0639\u064E\u0629</div><div class="fr">VENDREDI</div></span></div>';
