@@ -13577,7 +13577,7 @@ const SIRA = {
       });
     }
     h += '<div style="text-align:center;color:#C8A84A;margin:24px 0;letter-spacing:4px;font-size:12px;">\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500</div>';
-    if (rdv.meditation) h += '<div class="meditation">' + escape(T(rdv.meditation)) + '</div>';
+    if (rdv.meditation) h += '<div style="background:rgba(250,247,238,0.04);border-radius:12px;padding:20px 24px;margin:32px 8px;font-style:italic;text-align:center;color:#D4C9A0;font-size:17px;line-height:1.6;">' + escape(T(rdv.meditation)) + '</div>';
     if (rdv.source) h += '<div style="text-align:center;font-style:italic;color:rgba(200,168,74,0.6);font-size:13px;margin-top:16px;">\u2014 ' + escape(T(rdv.source)) + '</div>';
     h += '<div style="text-align:center;font-size:48px;color:#C8A84A;margin:28px 0 12px;">\uFDFA</div>';
     h += '<div style="text-align:center;font-size:10px;letter-spacing:3px;color:#C8A84A;margin-bottom:10px;">FIL ROUGE</div>';
