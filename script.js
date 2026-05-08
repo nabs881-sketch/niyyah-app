@@ -13323,7 +13323,6 @@ function openVueRituel(prayer) {
   const items = getRitualItems(prayer);
   const fridayIds = ['jumua','fri_kahf','fri_salawat','fri_doua'];
   const normalItems = items.filter(it => !fridayIds.includes(it.id));
-  const jumua = items.find(it => it.id === 'jumua');
   const main = v.querySelector('.rituel-content');
   const state = JSON.parse(localStorage.getItem('spiritual_v2') || '{}');
   const renderItem = (it, vendredi) => {
@@ -13356,7 +13355,7 @@ function openVueRituel(prayer) {
     + '</div></div>';
   if (isFriday()) {
     html += '<div class="rituel-vendredi-sep"><span><div class="ar">\u0627\u0644\u062C\u064F\u0645\u064F\u0639\u064E\u0629</div><div class="fr">VENDREDI</div></span></div>';
-    const fridayItems = jumua ? [jumua, ...FRIDAY_ITEMS_GLOBAL] : FRIDAY_ITEMS_GLOBAL;
+    const fridayItems = FRIDAY_ITEMS_GLOBAL;
     html += fridayItems.map(it => renderItem(it, true)).join('');
   }
   html += normalItems.map(it => renderItem(it, false)).join('');
