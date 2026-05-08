@@ -13568,7 +13568,7 @@ const SIRA = {
       rdv.paragraphes.forEach(function(para) {
         var txt = escape(T(para.content));
         if (para.type === 'verset') {
-          h += '<blockquote class="verset">' + txt + '</blockquote>';
+          h += '<blockquote style="background:rgba(250,247,238,0.05);border-left:2px solid #C8A84A;padding:16px 20px;margin:24px 0;font-style:italic;color:#D4C9A0;font-size:17px;text-align:left;"><span style="color:#C8A84A;">\u2726\u00a0\u00a0</span>' + txt + '</blockquote>';
         } else if (para.type === 'italic') {
           h += '<p style="font-family:Georgia,serif;font-size:17px;line-height:1.75;margin-bottom:18px;color:#C8A84A;font-style:italic;text-align:center;margin:24px 16px;">' + txt + '</p>';
         } else {
