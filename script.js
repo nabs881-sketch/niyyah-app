@@ -13336,6 +13336,24 @@ function openVueRituel(prayer) {
     return '<div class="' + cls + done + '" onclick="' + tog + '(\'' + it.id + '\',event); openVueRituel(\'' + prayer + '\');"><div class="check"></div><div style="flex:1"><div class="label">' + (it.label||it.id) + '</div>' + sub + ar + '</div>' + audio + '</div>';
   };
   let html = '';
+  // Bandeau prière avec toggles
+  const _onTime = !!state[prayer + '_ontime'];
+  const _atMosq = !!state[prayer + '_mosquee'];
+  const _sw = 'width:32px;height:18px;border-radius:9px;display:flex;align-items:center;padding:2px;transition:background 0.2s;flex-shrink:0;';
+  const _kn = 'width:14px;height:14px;border-radius:50%;transition:margin 0.2s;';
+  const _showMosq = !(prayer === 'dhuhr' && isFriday());
+  html += '<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 18px;margin-bottom:16px;background:rgba(200,168,74,0.06);border:1px solid rgba(200,168,74,0.18);border-radius:14px;">'
+    + '<div style="font-family:Cormorant Garamond,serif;font-size:17px;font-weight:600;color:#C8A84A;">' + prayer.charAt(0).toUpperCase() + prayer.slice(1) + ' accompli\u00a0?</div>'
+    + '<div style="display:flex;gap:10px;align-items:center;">'
+    + '<div style="display:flex;align-items:center;gap:4px;cursor:pointer;" onclick="togglePrayerOnTime(\'' + prayer + '\');openVueRituel(\'' + prayer + '\');">'
+    + '<div style="font-size:11px;color:' + (_onTime ? 'var(--green)' : 'rgba(255,255,255,0.35)') + ';">\u23F0</div>'
+    + '<div style="' + _sw + 'background:' + (_onTime ? 'var(--green)' : 'rgba(255,255,255,0.1)') + ';border:1px solid ' + (_onTime ? 'var(--green)' : 'rgba(255,255,255,0.15)') + ';">'
+    + '<div style="' + _kn + 'background:' + (_onTime ? '#fff' : 'rgba(255,255,255,0.4)') + ';margin-left:' + (_onTime ? '14px' : '0') + ';"></div></div></div>'
+    + (_showMosq ? '<div style="display:flex;align-items:center;gap:4px;cursor:pointer;" onclick="togglePrayerMosquee(\'' + prayer + '\');openVueRituel(\'' + prayer + '\');">'
+    + '<div style="font-size:11px;color:' + (_atMosq ? '#C8A84A' : 'rgba(255,255,255,0.35)') + ';">\u{1F54C}</div>'
+    + '<div style="' + _sw + 'background:' + (_atMosq ? '#C8A84A' : 'rgba(255,255,255,0.1)') + ';border:1px solid ' + (_atMosq ? '#C8A84A' : 'rgba(255,255,255,0.15)') + ';">'
+    + '<div style="' + _kn + 'background:' + (_atMosq ? '#fff' : 'rgba(255,255,255,0.4)') + ';margin-left:' + (_atMosq ? '14px' : '0') + ';"></div></div></div>' : '')
+    + '</div></div>';
   if (isFriday()) {
     html += '<div class="rituel-vendredi-sep"><span><div class="ar">\u0627\u0644\u062C\u064F\u0645\u064F\u0639\u064E\u0629</div><div class="fr">VENDREDI</div></span></div>';
     const fridayItems = jumua ? [jumua, ...FRIDAY_ITEMS_GLOBAL] : FRIDAY_ITEMS_GLOBAL;
