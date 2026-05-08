@@ -13498,5 +13498,47 @@ const FRIDAY_ITEMS_GLOBAL = [
 window.FRIDAY_ITEMS_GLOBAL = FRIDAY_ITEMS_GLOBAL;
 window.isFriday = isFriday;
 
+/* ── SIRA MODULE ── */
+const SIRA = {
+  data: null,
+  loading: false,
+  async load() {
+    if (this.data || this.loading) return this.data;
+    this.loading = true;
+    try {
+      const res = await fetch('./data/sira.min.json');
+      this.data = await res.json();
+    } catch(e) { console.warn('SIRA load error:', e); }
+    this.loading = false;
+    return this.data;
+  },
+  getCurrentRdvNum() {
+    var start = localStorage.getItem('sira_start_date');
+    if (!start) {
+      start = todayKey();
+      safeSetItem('sira_start_date', start);
+    }
+    var startMs = new Date(start).getTime();
+    var nowMs = new Date(todayKey()).getTime();
+    var day = Math.floor((nowMs - startMs) / 86400000) + 1;
+    var max = (this.data && this.data.rdv) ? this.data.rdv.length : 1;
+    return Math.min(day, max);
+  },
+  getRdv(num) {
+    if (!this.data || !this.data.rdv) return null;
+    return this.data.rdv.find(function(r) { return r.num === num; }) || null;
+  },
+  markTissue(num) {
+    var arr = [];
+    try { arr = JSON.parse(localStorage.getItem('sira_tissues') || '[]'); } catch(e) {}
+    if (arr.indexOf(num) === -1) arr.push(num);
+    safeSetItem('sira_tissues', JSON.stringify(arr));
+  },
+  getTissuesCount() {
+    try { return JSON.parse(localStorage.getItem('sira_tissues') || '[]').length; } catch(e) { return 0; }
+  }
+};
+window.SIRA = SIRA;
+
 init();
 
