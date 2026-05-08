@@ -13598,6 +13598,23 @@ const SIRA = {
     }
     return h;
   },
+  openList() {
+    var ov = this._ensureOverlay();
+    var self = this;
+    var ct = document.getElementById('sira-content');
+    function _inject() {
+      ov.innerHTML = self._closeBtn
+        + '<div id="sira-content" style="max-width:720px;margin:0 auto;padding:80px 20px;opacity:0;transition:opacity 300ms ease;">' + self.renderList() + '</div>';
+      ov.scrollTop = 0;
+      setTimeout(function() { var c = document.getElementById('sira-content'); if (c) c.style.opacity = '1'; }, 30);
+    }
+    if (ct) {
+      ct.style.opacity = '0';
+      setTimeout(function() { _inject(); }, 200);
+    } else {
+      _inject();
+    }
+  },
   openRdv() {
     this.openNav(this.getCurrentRdvNum());
   },
@@ -13607,6 +13624,7 @@ const SIRA = {
     var tissues = this.getTissuesCount();
     var titre = (rdv && rdv.titre && rdv.titre.fr) ? rdv.titre.fr : ('RDV #' + num);
     var h = '';
+    h += '<div onclick="SIRA.openList()" style="position:absolute;top:16px;right:60px;font-size:24px;color:#C8A84A;cursor:pointer;">\u{1F4CB}</div>';
     h += '<div style="text-align:center;font-size:80px;color:#C8A84A;margin:40px 0 20px;">\uFDFA</div>';
     h += '<div style="text-align:center;font-family:Cormorant Garamond,serif;font-size:32px;font-style:italic;color:#FAF7EE;margin-bottom:12px;">Avec le Messager \uFDFA</div>';
     h += '<div style="text-align:center;font-style:italic;color:#888;font-size:13px;margin-bottom:32px;">' + tissues + ' rendez-vous tiss\u00e9s</div>';
