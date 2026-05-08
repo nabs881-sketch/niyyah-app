@@ -13570,9 +13570,9 @@ const SIRA = {
         if (para.type === 'verset') {
           h += '<blockquote class="verset">' + txt + '</blockquote>';
         } else if (para.type === 'italic') {
-          h += '<p class="italic">' + txt + '</p>';
+          h += '<p style="font-family:Georgia,serif;font-size:17px;line-height:1.75;margin-bottom:18px;color:#C8A84A;font-style:italic;text-align:center;margin:24px 16px;">' + txt + '</p>';
         } else {
-          h += '<p>' + txt + '</p>';
+          h += '<p style="font-family:Georgia,serif;font-size:17px;line-height:1.75;margin-bottom:18px;color:#E8E6DD;">' + txt + '</p>';
         }
       });
     }
