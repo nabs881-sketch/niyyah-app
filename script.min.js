@@ -13560,7 +13560,11 @@ const SIRA = {
     if (!rdv) return '<div></div>';
     function T(field) { return (field && field.fr) ? field.fr : ''; }
     function escape(s) { return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
-    return '<div></div>';
+    var h = '';
+    h += '<div style="text-align:center;font-size:64px;color:#C8A84A;margin-bottom:12px;">\uFDFA</div>';
+    h += '<div style="text-align:center;font-size:12px;letter-spacing:4px;color:#C8A84A;margin-bottom:16px;">RENDEZ-VOUS ' + num + '</div>';
+    h += '<div style="text-align:center;font-family:Cormorant Garamond,serif;font-size:28px;font-style:italic;color:#FAF7EE;margin-bottom:24px;">' + escape(T(rdv.titre)) + '</div>';
+    return h;
   }
 };
 window.SIRA = SIRA;
