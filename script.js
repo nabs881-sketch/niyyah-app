@@ -13548,17 +13548,28 @@ const SIRA = {
     this.currentNum = num;
     var rdv = this.getRdv(num);
     var ov = document.getElementById('sira-overlay');
+    var self = this;
+    function _inject() {
+      ov.innerHTML = '<button onclick="document.getElementById(\'sira-overlay\').remove();" style="position:fixed;top:16px;right:16px;z-index:10000;background:none;border:none;color:#C8A84A;font-size:32px;width:32px;height:32px;cursor:pointer;line-height:1;">\u2715</button>'
+        + '<div id="sira-content" style="max-width:720px;margin:0 auto;padding:80px 20px;opacity:0;transition:opacity 300ms ease;">' + self.renderRdv(num) + '</div>';
+      ov.scrollTop = 0;
+      setTimeout(function() {
+        var ct = document.getElementById('sira-content'); if (ct) ct.style.opacity = '1';
+        var el = document.getElementById('sira-salawat-open'); if (el) { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; }
+      }, 30);
+    }
     if (!ov) {
       ov = document.createElement('div');
       ov.id = 'sira-overlay';
       ov.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;background:#2C2E32;color:#FAF7EE;overflow:auto;opacity:0;transition:opacity 400ms ease;';
       document.body.appendChild(ov);
+      _inject();
       setTimeout(function() { ov.style.opacity = '1'; }, 10);
+    } else {
+      var ct = document.getElementById('sira-content');
+      if (ct) { ct.style.opacity = '0'; }
+      setTimeout(function() { _inject(); }, 200);
     }
-    ov.innerHTML = '<button onclick="document.getElementById(\'sira-overlay\').remove();" style="position:fixed;top:16px;right:16px;z-index:10000;background:none;border:none;color:#C8A84A;font-size:32px;width:32px;height:32px;cursor:pointer;line-height:1;">\u2715</button>'
-      + '<div id="sira-content" style="max-width:720px;margin:0 auto;padding:80px 20px;">' + this.renderRdv(num) + '</div>';
-    ov.scrollTop = 0;
-    setTimeout(function() { var el = document.getElementById('sira-salawat-open'); if (el) { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; } }, 200);
   },
   renderRdv(num) {
     var rdv = this.getRdv(num);
