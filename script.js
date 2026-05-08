@@ -13576,6 +13576,9 @@ const SIRA = {
         }
       });
     }
+    h += '<div style="text-align:center;color:#C8A84A;margin:24px 0;letter-spacing:4px;font-size:12px;">\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500</div>';
+    if (rdv.meditation) h += '<div class="meditation">' + escape(T(rdv.meditation)) + '</div>';
+    if (rdv.source) h += '<div style="text-align:center;font-style:italic;color:rgba(200,168,74,0.6);font-size:13px;margin-top:16px;">\u2014 ' + escape(T(rdv.source)) + '</div>';
     return h;
   }
 };
