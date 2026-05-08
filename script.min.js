@@ -13542,9 +13542,10 @@ const SIRA = {
   getTissuesCount() {
     try { return JSON.parse(localStorage.getItem('sira_tissues') || '[]').length; } catch(e) { return 0; }
   },
-  async openDetail() {
+  async openDetail(numParam) {
     await this.load();
-    var num = this.getCurrentRdvNum();
+    var num = numParam || this.getCurrentRdvNum();
+    this.currentNum = num;
     var rdv = this.getRdv(num);
     var old = document.getElementById('sira-overlay');
     if (old) old.remove();
