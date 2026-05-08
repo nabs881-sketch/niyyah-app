@@ -13558,6 +13558,7 @@ const SIRA = {
     ov.innerHTML = '<button onclick="document.getElementById(\'sira-overlay\').remove();" style="position:fixed;top:16px;right:16px;z-index:10000;background:none;border:none;color:#C8A84A;font-size:32px;width:32px;height:32px;cursor:pointer;line-height:1;">\u2715</button>'
       + '<div id="sira-content" style="max-width:720px;margin:0 auto;padding:80px 20px;">' + this.renderRdv(num) + '</div>';
     ov.scrollTop = 0;
+    setTimeout(function() { var el = document.getElementById('sira-salawat-open'); if (el) { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; } }, 200);
   },
   renderRdv(num) {
     var rdv = this.getRdv(num);
@@ -13565,7 +13566,7 @@ const SIRA = {
     function T(field) { return (field && field.fr) ? field.fr : ''; }
     function escape(s) { return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
     var h = '';
-    h += '<div style="text-align:center;font-size:64px;color:#C8A84A;margin-bottom:12px;">\uFDFA</div>';
+    h += '<div id="sira-salawat-open" style="text-align:center;font-size:64px;color:#C8A84A;margin-bottom:12px;opacity:0;transform:translateY(20px);transition:opacity 800ms ease-out,transform 800ms ease-out;">\uFDFA</div>';
     h += '<div style="text-align:center;font-size:12px;letter-spacing:4px;font-weight:700;text-transform:uppercase;color:#C8A84A;margin:16px 0 8px;">RENDEZ-VOUS ' + num + '</div>';
     h += '<div style="text-align:center;font-family:Cormorant Garamond,serif;font-size:28px;font-style:italic;font-weight:400;color:#FAF7EE;margin:0 0 32px;">' + escape(T(rdv.titre)) + '</div>';
     if (rdv.paragraphes && Array.isArray(rdv.paragraphes)) {
