@@ -13538,6 +13538,20 @@ const SIRA = {
   },
   getTissuesCount() {
     try { return JSON.parse(localStorage.getItem('sira_tissues') || '[]').length; } catch(e) { return 0; }
+  },
+  async openDetail() {
+    await this.load();
+    var num = this.getCurrentRdvNum();
+    var rdv = this.getRdv(num);
+    var old = document.getElementById('sira-overlay');
+    if (old) old.remove();
+    var ov = document.createElement('div');
+    ov.id = 'sira-overlay';
+    ov.style.cssText = 'position:fixed;inset:0;z-index:9500;background:#2C2E32;color:#f0ead6;overflow-y:auto;padding:20px;';
+    var closeBtn = '<div style="text-align:right;"><button onclick="document.getElementById(\'sira-overlay\').remove();" style="background:none;border:none;color:#C8A84A;font-size:24px;cursor:pointer;padding:8px;">\u2715</button></div>';
+    var content = typeof this.renderRdv === 'function' ? this.renderRdv(num) : '<div style="text-align:center;padding:40px 0;font-family:Cormorant Garamond,serif;font-size:20px;color:#C8A84A;">' + (rdv ? rdv.titre || ('RDV #' + num) : 'Aucun RDV') + '</div>';
+    ov.innerHTML = closeBtn + content;
+    document.body.appendChild(ov);
   }
 };
 window.SIRA = SIRA;
