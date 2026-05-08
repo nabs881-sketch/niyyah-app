@@ -13564,6 +13564,18 @@ const SIRA = {
     h += '<div style="text-align:center;font-size:64px;color:#C8A84A;margin-bottom:12px;">\uFDFA</div>';
     h += '<div style="text-align:center;font-size:12px;letter-spacing:4px;color:#C8A84A;margin-bottom:16px;">RENDEZ-VOUS ' + num + '</div>';
     h += '<div style="text-align:center;font-family:Cormorant Garamond,serif;font-size:28px;font-style:italic;color:#FAF7EE;margin-bottom:24px;">' + escape(T(rdv.titre)) + '</div>';
+    if (rdv.paragraphes && Array.isArray(rdv.paragraphes)) {
+      rdv.paragraphes.forEach(function(para) {
+        var txt = escape(T(para.content));
+        if (para.type === 'verset') {
+          h += '<blockquote class="verset">' + txt + '</blockquote>';
+        } else if (para.type === 'italic') {
+          h += '<p class="italic">' + txt + '</p>';
+        } else {
+          h += '<p>' + txt + '</p>';
+        }
+      });
+    }
     return h;
   }
 };
