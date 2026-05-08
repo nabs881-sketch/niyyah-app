@@ -13588,7 +13588,7 @@ const SIRA = {
     var tissues = [];
     try { tissues = JSON.parse(localStorage.getItem('sira_tissues') || '[]'); } catch(e) {}
     var h = '';
-    h += '<div onclick="SIRA.openDetail()" style="position:absolute;top:16px;left:16px;font-size:28px;font-weight:300;color:#C8A84A;cursor:pointer;">\u2190</div>';
+    h += '<div onclick="SIRA.openDetail()" style="position:absolute;top:16px;left:16px;font-size:28px;font-weight:300;color:#C8A84A;cursor:pointer;">\u2039</div>';
     h += '<div style="text-align:center;font-family:Cormorant Garamond,serif;font-size:24px;font-style:italic;color:#FAF7EE;margin:20px 0 28px;">Tous les rendez-vous tiss\u00e9s</div>';
     for (var i = 1; i <= max; i++) {
       var rdv = this.getRdv(i);
@@ -13645,7 +13645,7 @@ const SIRA = {
     function T(field) { return (field && field.fr) ? field.fr : ''; }
     function escape(s) { return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
     var h = '';
-    h += '<div onclick="SIRA.openDetail()" style="position:absolute;top:16px;left:16px;font-size:28px;font-weight:300;color:#C8A84A;cursor:pointer;">\u2190</div>';
+    h += '<div onclick="SIRA.openDetail()" style="position:absolute;top:16px;left:16px;font-size:28px;font-weight:300;color:#C8A84A;cursor:pointer;">\u2039</div>';
     h += '<div id="sira-salawat-open" style="text-align:center;font-size:64px;color:#C8A84A;margin-bottom:12px;opacity:0;transform:translateY(20px);transition:opacity 800ms ease-out,transform 800ms ease-out;">\uFDFA</div>';
     h += '<div style="text-align:center;font-size:12px;letter-spacing:4px;font-weight:700;text-transform:uppercase;color:#C8A84A;margin:16px 0 8px;">RENDEZ-VOUS ' + num + '</div>';
     h += '<div style="text-align:center;font-family:Cormorant Garamond,serif;font-size:28px;font-style:italic;font-weight:400;color:#FAF7EE;margin:0 0 32px;">' + escape(T(rdv.titre)) + '</div>';
@@ -13666,8 +13666,8 @@ const SIRA = {
     if (rdv.source) h += '<div style="text-align:center;font-style:italic;color:#888;font-size:13px;margin:16px 0 32px;">\u2014 ' + escape(T(rdv.source)) + '</div>';
     var maxNum = this.getCurrentRdvNum();
     h += '<div style="display:flex;justify-content:space-between;align-items:center;padding:24px 0;font-style:italic;font-size:14px;color:#C8A84A;">';
-    h += (num > 1) ? '<span style="cursor:pointer;" onclick="SIRA.openNav(' + (num - 1) + ')">\u2190 Pr\u00e9c\u00e9dent</span>' : '<span></span>';
-    h += (num < maxNum) ? '<span style="cursor:pointer;" onclick="SIRA.openNav(' + (num + 1) + ')">Suivant \u2192</span>' : '<span></span>';
+    h += (num > 1) ? '<span style="cursor:pointer;" onclick="SIRA.openNav(' + (num - 1) + ')">Pr\u00e9c\u00e9dent</span>' : '<span></span>';
+    h += (num < maxNum) ? '<span style="cursor:pointer;" onclick="SIRA.openNav(' + (num + 1) + ')">Suivant</span>' : '<span></span>';
     h += '</div>';
     h += '<div style="text-align:center;font-size:48px;color:#C8A84A;margin:28px 0 12px;">\uFDFA</div>';
     h += '<div style="text-align:center;font-size:11px;letter-spacing:3px;font-weight:700;color:#C8A84A;margin:32px 0 8px;">FIL ROUGE</div>';
