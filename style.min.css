@@ -7965,6 +7965,18 @@ button[style*="gold-v2"] {
   margin-bottom: 28px;
   font-family: 'Nunito', sans-serif;
 }
+@keyframes siraBreath {
+  0%, 100% { transform: scale(1); opacity: 0.95; }
+  50% { transform: scale(1.03); opacity: 1; }
+}
+.sira-breath {
+  animation: siraBreath 2.5s ease-in-out infinite;
+}
+.sira-breath:hover, .sira-breath:active {
+  animation: none;
+  transform: scale(1);
+  opacity: 1;
+}
 .rituel-vendredi-sep {
   text-align: center;
   padding: 24px 0 14px;

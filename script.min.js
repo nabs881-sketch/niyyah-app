@@ -13636,7 +13636,7 @@ const SIRA = {
     h += '<div style="text-align:center;font-size:11px;letter-spacing:3px;font-weight:700;color:#C8A84A;margin-bottom:12px;">RENDEZ-VOUS DU JOUR</div>';
     h += '<div style="text-align:center;font-size:12px;letter-spacing:4px;font-weight:700;text-transform:uppercase;color:#C8A84A;margin-bottom:6px;">RENDEZ-VOUS ' + num + '</div>';
     h += '<div style="text-align:center;font-family:Cormorant Garamond,serif;font-size:22px;font-style:italic;color:#FAF7EE;margin-bottom:36px;">' + titre + '</div>';
-    h += '<div style="text-align:center;"><button onclick="SIRA.openRdv()" style="background:#C8A84A;color:#2C2E32;padding:14px 28px;border:none;border-radius:24px;font-family:Cormorant Garamond,serif;font-style:italic;font-size:16px;cursor:pointer;">Entrer dans la rencontre \u2192</button></div>';
+    h += '<div style="text-align:center;"><button class="sira-breath" onclick="SIRA.openRdv()" style="background:#C8A84A;color:#2C2E32;padding:14px 28px;border:none;border-radius:24px;font-family:Cormorant Garamond,serif;font-style:italic;font-size:16px;cursor:pointer;">Entrer dans la rencontre \u2192</button></div>';
     return h;
   },
   renderRdv(num) {
