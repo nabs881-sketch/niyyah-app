@@ -13547,14 +13547,16 @@ const SIRA = {
     var num = numParam || this.getCurrentRdvNum();
     this.currentNum = num;
     var rdv = this.getRdv(num);
-    var old = document.getElementById('sira-overlay');
-    if (old) old.remove();
-    var ov = document.createElement('div');
-    ov.id = 'sira-overlay';
-    ov.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;background:#2C2E32;color:#FAF7EE;overflow:auto;';
+    var ov = document.getElementById('sira-overlay');
+    if (!ov) {
+      ov = document.createElement('div');
+      ov.id = 'sira-overlay';
+      ov.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;background:#2C2E32;color:#FAF7EE;overflow:auto;';
+      document.body.appendChild(ov);
+    }
     ov.innerHTML = '<button onclick="document.getElementById(\'sira-overlay\').remove();" style="position:fixed;top:16px;right:16px;z-index:10000;background:none;border:none;color:#C8A84A;font-size:32px;width:32px;height:32px;cursor:pointer;line-height:1;">\u2715</button>'
-      + '<div style="max-width:720px;margin:0 auto;padding:80px 20px;">' + this.renderRdv(num) + '</div>';
-    document.body.appendChild(ov);
+      + '<div id="sira-content" style="max-width:720px;margin:0 auto;padding:80px 20px;">' + this.renderRdv(num) + '</div>';
+    ov.scrollTop = 0;
   },
   renderRdv(num) {
     var rdv = this.getRdv(num);
