@@ -2415,17 +2415,19 @@ function renderPrayerItem(item, delay, extraClass, forceChecked) {
   const onTime    = !!state[item.id + '_ontime'];
   const fridayCls = item.isFriday ? ' friday-item' : '';
   const arabicHtml = item.arabic ? '<div class="item-arabic">' + item.arabic + '</div>' : '';
-  const toggle = '<div style="display:flex;align-items:center;gap:6px;flex-shrink:0;" onclick="togglePrayerOnTime(\'' + item.id + '\');event.stopPropagation()">'
-    + '<div style="font-size:12px;color:' + (onTime ? 'var(--green)' : 'var(--t3)') + ';white-space:nowrap;">À l\'heure</div>'
-    + '<div style="width:38px;height:22px;border-radius:11px;background:' + (onTime ? 'var(--green)' : 'rgba(255,255,255,0.1)') + ';border:1px solid ' + (onTime ? 'var(--green)' : 'rgba(255,255,255,0.15)') + ';display:flex;align-items:center;padding:2px;transition:background 0.2s;flex-shrink:0;">'
-    + '<div style="width:18px;height:18px;border-radius:50%;background:' + (onTime ? '#fff' : 'rgba(255,255,255,0.4)') + ';margin-left:' + (onTime ? '16px' : '0') + ';transition:margin 0.2s;"></div>'
+  const _sw = 'width:32px;height:18px;border-radius:9px;display:flex;align-items:center;padding:2px;transition:background 0.2s;flex-shrink:0;';
+  const _kn = 'width:14px;height:14px;border-radius:50%;transition:margin 0.2s;';
+  const toggle = '<div style="display:flex;align-items:center;gap:4px;flex-shrink:0;" onclick="togglePrayerOnTime(\'' + item.id + '\');event.stopPropagation()">'
+    + '<div style="font-size:11px;color:' + (onTime ? 'var(--green)' : 'var(--t3)') + ';">\u23F0</div>'
+    + '<div style="' + _sw + 'background:' + (onTime ? 'var(--green)' : 'rgba(255,255,255,0.1)') + ';border:1px solid ' + (onTime ? 'var(--green)' : 'rgba(255,255,255,0.15)') + ';">'
+    + '<div style="' + _kn + 'background:' + (onTime ? '#fff' : 'rgba(255,255,255,0.4)') + ';margin-left:' + (onTime ? '14px' : '0') + ';"></div>'
     + '</div></div>';
   const atMosquee = !!state[item.id + '_mosquee'];
   const showMosquee = !(item.id === 'dhuhr' && isFriday());
-  const toggleMosquee = showMosquee ? '<div style="display:flex;align-items:center;gap:6px;flex-shrink:0;margin-top:4px;" onclick="togglePrayerMosquee(\'' + item.id + '\');event.stopPropagation()">'
-    + '<div style="font-size:12px;color:' + (atMosquee ? '#C8A84A' : 'var(--t3)') + ';white-space:nowrap;">\u{1F54C}</div>'
-    + '<div style="width:38px;height:22px;border-radius:11px;background:' + (atMosquee ? '#C8A84A' : 'rgba(255,255,255,0.1)') + ';border:1px solid ' + (atMosquee ? '#C8A84A' : 'rgba(255,255,255,0.15)') + ';display:flex;align-items:center;padding:2px;transition:background 0.2s;flex-shrink:0;">'
-    + '<div style="width:18px;height:18px;border-radius:50%;background:' + (atMosquee ? '#fff' : 'rgba(255,255,255,0.4)') + ';margin-left:' + (atMosquee ? '16px' : '0') + ';transition:margin 0.2s;"></div>'
+  const toggleMosquee = showMosquee ? '<div style="display:flex;align-items:center;gap:4px;flex-shrink:0;" onclick="togglePrayerMosquee(\'' + item.id + '\');event.stopPropagation()">'
+    + '<div style="font-size:11px;color:' + (atMosquee ? '#C8A84A' : 'var(--t3)') + ';">\u{1F54C}</div>'
+    + '<div style="' + _sw + 'background:' + (atMosquee ? '#C8A84A' : 'rgba(255,255,255,0.1)') + ';border:1px solid ' + (atMosquee ? '#C8A84A' : 'rgba(255,255,255,0.15)') + ';">'
+    + '<div style="' + _kn + 'background:' + (atMosquee ? '#fff' : 'rgba(255,255,255,0.4)') + ';margin-left:' + (atMosquee ? '14px' : '0') + ';"></div>'
     + '</div></div>' : '';
   const priorityCls = item.priority === 'fard' ? ' priority-fard' : item.priority === 'sunnah' ? ' priority-sunnah' : '';
   const _tlOpacity = checked ? 'opacity:0.3;' : '';
@@ -2434,7 +2436,7 @@ function renderPrayerItem(item, delay, extraClass, forceChecked) {
     + '<div class="item-body"><div class="item-label' + priorityCls + '">' + tI(item,'label') + '</div>'
     + (item.sub ? '<div class="item-sub">' + tI(item,'sub') + '</div>' : '')
     + arabicHtml + '</div>'
-    + '<div>' + toggle + toggleMosquee + '</div></div>';
+    + '<div style="display:flex;flex-direction:column;gap:3px;flex-shrink:0;">' + toggle + toggleMosquee + '</div></div>';
 }
 function togglePrayerMosquee(id) {
   state[id + '_mosquee'] = !state[id + '_mosquee'];
