@@ -1261,7 +1261,6 @@ const LEVELS = [
     sections: [
       { icon: '🕌', title: 'Approfondissement de la prière', items: [
         { id: 'sunnah_fajr', label: 'Sunnah Fajr', sub: '2 rakaat avant Fajr — le Prophète ﷺ ne les abandonnait jamais', arabic: 'سُنَّةُ الْفَجْرِ', priority: 'sunnah', block: 'fajr', hadith: '\"Les 2 rakaat de l\'aube valent mieux que le monde et ce qu\'il contient\" — Muslim 725', source: 'Muslim 725' },
-        { id: 'mosquee', label: 'Prière à la mosquée', sub: 'Jamaah — wajib selon la majorité pour les hommes · au moins une prière', arabic: 'صَلَاةُ الْجَمَاعَةِ', optional: true, block: 'dhuhr', hadith: '\"La prière en jamaah vaut 27 fois plus que la prière seul\" — Bukhari 645', source: 'Bukhari 645' },
         { id: 'sunnah_prieres', label: 'Prières surérogatoires', sub: 'Rawatib : 12 rakaat supplémentaires', arabic: 'السُّنَنُ الرَّوَاتِبُ', optional: true, block: 'dhuhr', hadith: '\"Celui qui prie 12 rakaat par jour, Allah lui bâtit une maison au Paradis\" — Muslim 728', source: 'Muslim 728' },
       ]},
       { icon: '📿', title: 'Dhikr du cœur', items: [
