@@ -13438,7 +13438,10 @@ function openVueAuFilDuJour() {
     const ar = it.arabic ? '<div class="arabic">' + it.arabic + '</div>' : '';
     const sub = it.sub ? '<div class="sub">' + it.sub + '</div>' : '';
     const audio = it.audio ? '<button class="btn-audio" data-audio-id="' + it.id + '" onclick="event.stopPropagation();playAudioById(this)">🔊</button>' : '';
-    return '<div class="rituel-item ' + done + '" onclick="toggleItem(\'' + it.id + '\',event); openVueAuFilDuJour();"><div class="check"></div><div style="flex:1"><div class="label">' + (it.label||it.id) + '</div>' + sub + ar + '</div>' + audio + '</div>';
+    var _click = it.id === 'sira' ? 'SIRA.openDetail(); toggleItem(\'' + it.id + '\',event);'
+      : it.id === 'savais_tu' ? 'openVueSavaisTu(); toggleItem(\'' + it.id + '\',event);'
+      : 'toggleItem(\'' + it.id + '\',event); openVueAuFilDuJour();';
+    return '<div class="rituel-item ' + done + '" onclick="' + _click + '"><div class="check"></div><div style="flex:1"><div class="label">' + (it.label||it.id) + '</div>' + sub + ar + '</div>' + audio + '</div>';
   }).join('');
   v.classList.remove('hidden');
   document.getElementById('rituel-emblem').textContent = '\u064A\u064E\u0648\u0652\u0645';
