@@ -13583,7 +13583,7 @@ const SIRA = {
         var el = document.getElementById('sira-salawat-open'); if (el) { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; }
       }, 30);
       setTimeout(function() {
-        var badge = document.getElementById('sira-tissue-badge'); if (badge) { badge.style.opacity = '0.85'; badge.style.transform = 'translateY(0)'; }
+        var badge = document.getElementById('sira-tissue-badge'); if (badge) { badge.style.opacity = '1'; badge.style.transform = 'translateY(0)'; }
       }, 1200);
     }
     var ct = document.getElementById('sira-content');
