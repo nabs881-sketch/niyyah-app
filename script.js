@@ -8524,19 +8524,19 @@ function renderCaverne() {
   function acte2() {
     showPhrase('Sur son chemin, il y a toujours eu une caverne.', 1900, function() {
       showPhrase('De l\u2019or. Des diamants. Des bijoux empil\u00e9s.', 2200, function() {
-        showPhrase('<span style="color:rgba(255,255,255,0.7);font-style:italic;font-size:14px;">Et une pancarte, simple, \u00e0 l\u2019entr\u00e9e\u00a0:</span>', 1600, acte2Pancarte);
+        showPhrase('<span style="color:rgba(255,255,255,0.7);font-style:italic;">Et une pancarte, simple, \u00e0 l\u2019entr\u00e9e\u00a0:</span>', 1600, acte2Pancarte);
       });
     }, 300);
     setTimeout(function() { glow.style.opacity = '1'; }, 1250);
   }
   function acte2Pancarte() {
-    showPhrase('<div style="font-size:26px;font-weight:700;color:#C8A84A;letter-spacing:2px;text-shadow:0 0 20px rgba(200,168,75,0.4);margin-bottom:32px;font-family:Scheherazade New,serif;">\u00ab\u00a0\u00c0 DONNER.\u00a0\u00bb</div><div style="font-size:14px;color:#C8A84A;opacity:0.7;font-style:italic;font-family:Scheherazade New,serif;margin-bottom:32px;">li-Ll\u0101h</div><div style="font-size:22px;color:#C8A84A;opacity:0.85;font-family:Amiri,Scheherazade,serif;direction:rtl;">\u0644\u0650\u0644\u0651\u064e\u0670\u0647</div>', 2800, function() {
+    showPhrase('<div style="font-weight:700;color:#C8A84A;letter-spacing:2px;text-shadow:0 0 20px rgba(200,168,75,0.4);margin-bottom:32px;font-family:Scheherazade New,serif;">\u00ab\u00a0\u00c0 DONNER.\u00a0\u00bb</div><div style="color:#C8A84A;opacity:0.7;font-style:italic;font-family:Scheherazade New,serif;margin-bottom:32px;">li-Ll\u0101h</div><div style="font-size:22px;color:#C8A84A;opacity:0.85;font-family:Amiri,Scheherazade,serif;direction:rtl;">\u0644\u0650\u0644\u0651\u064e\u0670\u0647</div>', 2800, function() {
       acte3();
     });
   }
   function acte3() {
     glow.style.opacity = '0.2';
-    showPhrase('<span style="color:rgba(255,255,255,0.45);font-style:italic;font-size:14px;">Il ne s\u2019arr\u00eate pas.</span>', 1200, function() {
+    showPhrase('<span style="color:rgba(255,255,255,0.45);font-style:italic;">Il ne s\u2019arr\u00eate pas.</span>', 1200, function() {
       showPhrase('', 600, function() {
         showPhrase('Cette caverne existe.', 1300, function() {
           showPhrase('Elle est ouverte.', 1100, function() {
@@ -8547,12 +8547,12 @@ function renderCaverne() {
     });
   }
   function chute() {
-    showPhrase('<div style="font-size:22px;color:#C8A84A;font-weight:600;font-family:var(--serif);line-height:1.4;">Niyyah te dit\u00a0:<br>arr\u00eate-toi.</div>', 2800, function() {
+    showPhrase('<div style="color:#C8A84A;font-weight:600;font-family:var(--serif);line-height:1.4;">Niyyah te dit\u00a0:<br>arr\u00eate-toi.</div>', 2800, function() {
       epilogue();
     });
   }
   function epilogue() {
-    showPhrase('<div style="max-width:320px;margin:0 auto;text-align:center;color:rgba(200,168,75,0.65);font-family:Scheherazade New,serif;font-style:italic;font-size:22px;line-height:2;">Elle s\u2019ouvre quand tu dis Bismillah,<br>quand tu pardonnes,<br>quand tu te tais.</div>', 200, showButton);
+    showPhrase('<div style="max-width:320px;margin:0 auto;text-align:center;color:rgba(200,168,75,0.65);font-family:Scheherazade New,serif;font-style:italic;line-height:2;">Elle s\u2019ouvre quand tu dis Bismillah,<br>quand tu pardonnes,<br>quand tu te tais.</div>', 200, showButton);
   }
   function showButton() {
     if (!btn) return;
