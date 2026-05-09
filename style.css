@@ -7792,6 +7792,15 @@ button[style*="gold-v2"] {
 @keyframes _breathe { 0%,100% { transform:scale(1);opacity:0.6; } 50% { transform:scale(1.5);opacity:1; } }
 @keyframes _fdjFadeIn { 0% { opacity:0; transform:translateY(10px); } 100% { opacity:1; transform:translateY(0); } }
 
+/* ── ONBOARDING GUARD ── */
+body.onboarding-active #view-sanctuaire,
+body.onboarding-active #view-accueil,
+body.onboarding-active .topbar-v2,
+body.onboarding-active #topbar-v2,
+body.onboarding-active #nav-bar-v2 {
+  display: none !important;
+}
+
 /* ── VUE RITUEL v2 ── */
 #vue-rituel.hidden { display: none; }
 #vue-rituel {

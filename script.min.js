@@ -1943,6 +1943,7 @@ function init() {
   accueilView.style.display = 'flex';
   document.getElementById('nav-accueil').classList.add('active');
   if (!_onboardDone) {
+    document.body.classList.add('onboarding-active');
     onboardRender();
   } else {
     document.getElementById('onboardScreen').classList.add('hidden');
@@ -8634,6 +8635,7 @@ function onboardRequestGeoloc() {
   }
 }
 function onboardFinish() {
+  document.body.classList.remove('onboarding-active');
   safeSetItem('niyyah_onboard', '1');
   if (!safeGetItem('niyyah_install_date')) safeSetItem('niyyah_install_date', String(Date.now()));
   const screen = document.getElementById('onboardScreen');
