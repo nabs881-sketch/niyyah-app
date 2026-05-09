@@ -13739,7 +13739,8 @@ function openDhikrCounter(config) {
     if (raw.date === todayKey()) saved = raw.count || 0;
   } catch(e) {}
   _dhikrState.count = Math.min(saved, config.target);
-  _dhikrRender();
+  _dhikrBuildDOM();
+  _dhikrUpdate();
   ov.style.display = 'flex';
   // Tap anywhere = +1
   ov.onclick = function(e) {
@@ -13784,12 +13785,29 @@ function _dhikrIncrement() {
     if (typeof playCheckSound === 'function') playCheckSound();
     if (c.onComplete) c.onComplete();
   }
-  _dhikrRender();
+  _dhikrUpdate();
 }
-function _dhikrRender() {
+function _dhikrBuildDOM() {
   var ov = document.getElementById('dhikr-counter-overlay');
-  if (!ov || !_dhikrState.config) return;
+  if (!ov) return;
+  var r = 130;
+  var circ = 2 * Math.PI * r;
+  ov.innerHTML = '<button class="dhikr-close" onclick="event.stopPropagation();closeDhikrCounter();">\u2715</button>'
+    + '<div class="dhikr-info">'
+    + '<div class="arabic" id="dhikr-arabic"></div>'
+    + '<div class="translit" id="dhikr-translit"></div>'
+    + '<div class="trad" id="dhikr-trad"></div>'
+    + '</div>'
+    + '<div class="dhikr-ring">'
+    + '<svg viewBox="0 0 280 280"><circle class="track" cx="140" cy="140" r="' + r + '"/><circle class="progress" id="dhikr-progress" cx="140" cy="140" r="' + r + '" stroke-dasharray="' + circ + '" stroke-dashoffset="' + circ + '"/></svg>'
+    + '<div class="dhikr-count" id="dhikr-num">0</div>'
+    + '</div>'
+    + '<button class="dhikr-btn" onclick="event.stopPropagation();_dhikrIncrement();">+</button>'
+    + '<div class="dhikr-phase" id="dhikr-phase-label"></div>';
+}
+function _dhikrUpdate() {
   var c = _dhikrState.config;
+  if (!c) return;
   var count = _dhikrState.count;
   var phase = _dhikrGetPhase();
   var pct = Math.min(count / c.target, 1);
@@ -13798,19 +13816,21 @@ function _dhikrRender() {
   var offset = circ * (1 - pct);
   var color = (phase && phase.color) ? phase.color : '#C8A84A';
   var done = count >= c.target;
-  ov.innerHTML = '<button class="dhikr-close" onclick="event.stopPropagation();closeDhikrCounter();">\u2715</button>'
-    + '<div class="dhikr-info">'
-    + (phase && phase.arabic ? '<div class="arabic">' + phase.arabic + '</div>' : '')
-    + (phase && phase.translit ? '<div class="translit">' + phase.translit + '</div>' : '')
-    + (phase && phase.fr ? '<div class="trad">' + phase.fr + '</div>' : '')
-    + '</div>'
-    + '<div class="dhikr-ring">'
-    + '<svg viewBox="0 0 280 280"><circle class="track" cx="140" cy="140" r="' + r + '"/><circle class="progress" cx="140" cy="140" r="' + r + '" stroke="' + color + '" stroke-dasharray="' + circ + '" stroke-dashoffset="' + offset + '"/></svg>'
-    + '<div class="dhikr-count" style="color:' + color + ';">' + count + '</div>'
-    + '</div>'
-    + '<button class="dhikr-btn" onclick="event.stopPropagation();_dhikrIncrement();">+</button>'
-    + (done ? '<div class="dhikr-phase" style="color:#C8A84A;">\u2713 Alhamdulillah</div>'
-      : '<div class="dhikr-phase">' + (phase ? phase.fr || '' : '') + ' \u2014 ' + count + '/' + c.target + '</div>');
+  var prog = document.getElementById('dhikr-progress');
+  if (prog) { prog.setAttribute('stroke', color); prog.setAttribute('stroke-dashoffset', offset); }
+  var num = document.getElementById('dhikr-num');
+  if (num) { num.textContent = count; num.style.color = color; }
+  var arEl = document.getElementById('dhikr-arabic');
+  if (arEl) arEl.textContent = (phase && phase.arabic) ? phase.arabic : '';
+  var trEl = document.getElementById('dhikr-translit');
+  if (trEl) trEl.textContent = (phase && phase.translit) ? phase.translit : '';
+  var frEl = document.getElementById('dhikr-trad');
+  if (frEl) frEl.textContent = (phase && phase.fr) ? phase.fr : '';
+  var label = document.getElementById('dhikr-phase-label');
+  if (label) {
+    if (done) { label.textContent = '\u2713 Alhamdulillah'; label.style.color = '#C8A84A'; }
+    else { label.textContent = (phase ? phase.fr || '' : '') + ' \u2014 ' + count + '/' + c.target; label.style.color = ''; }
+  }
 }
 function openTasbihModal() {
   openDhikrCounter({
