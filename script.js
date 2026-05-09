@@ -13653,7 +13653,10 @@ const SIRA = {
     }
     h += '<div class="sira-ornament"></div>';
     h += '<div style="text-align:center;font-size:11px;letter-spacing:4px;font-weight:700;color:#C8A84A;margin-bottom:14px;">AUJOURD\u2019HUI</div>';
-    h += '<div style="text-align:center;font-family:Cormorant Garamond,serif;font-size:24px;font-style:italic;color:#FAF7EE;margin-bottom:36px;">Rendez-vous ' + num + ' \u2014 ' + titre + '</div>';
+    h += '<div style="text-align:center;font-family:Cormorant Garamond,serif;font-size:24px;font-style:italic;color:#FAF7EE;margin-bottom:8px;">Rendez-vous ' + num + ' \u2014 ' + titre + '</div>';
+    var _partie = (rdv && rdv.partie && this.data && this.data.meta && this.data.meta.parties && this.data.meta.parties[rdv.partie]) ? this.data.meta.parties[rdv.partie] : null;
+    var _partieTitre = (_partie && _partie.titre && _partie.titre.fr) ? _partie.titre.fr : '';
+    if (rdv && rdv.partie && _partieTitre) h += '<div style="text-align:center;font-style:italic;color:#999;font-size:12px;letter-spacing:1px;margin-bottom:36px;">Partie ' + rdv.partie + ' \u00b7 ' + _partieTitre + '</div>';
     h += '<div style="text-align:center;"><button class="sira-breath" onclick="SIRA.openRdv()" style="background:#C8A84A;color:#2C2E32;padding:14px 28px;border:none;border-radius:24px;font-family:Cormorant Garamond,serif;font-style:italic;font-size:16px;cursor:pointer;">Entrer dans la rencontre</button></div>';
     h += '<div style="margin-top:60px;padding:24px;max-width:480px;margin-left:auto;margin-right:auto;text-align:center;font-style:italic;color:#999;font-size:13px;line-height:1.7;">Un rendez-vous quotidien avec le Messager d\u2019All\u00e2h \uFDFA. Trois cent soixante-cinq rencontres pour le d\u00e9couvrir, l\u2019aimer, marcher avec lui. Cette feature ne remplace pas l\u2019\u00e9tude rigoureuse de la S\u00eera par les livres et les savants \u2014 elle ouvre la porte de l\u2019amour qui rend l\u2019\u00e9tude d\u00e9sirable.</div>';
     return h;
