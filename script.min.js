@@ -8824,7 +8824,7 @@ const V2_I18N = {
     // Prayer blocks
     block_reveil: 'AU RÉVEIL', block_fajr: 'APRÈS FAJR', block_dhuhr: 'APRÈS DHUHR', block_asr: 'APRÈS ASR', block_maghrib: 'APRÈS MAGHRIB', block_isha: 'APRÈS ISHA', block_nuit: 'La nuit', block_qiyam: 'Qiyam al-Layl',
     // Bandeau pratique
-    bandeau_sub: 'Tes actes du moment', bandeau_nuit: 'Dors avec le Witr', bandeau_qiyam: 'L\'heure du Qiyam al-Layl',
+    bandeau_sub: 'Tes actes du moment', bandeau_nuit: 'Dors avec le Witr', bandeau_qiyam: 'Le rendez-vous de la nuit',
     toggle_all: 'Ma journée complète', toggle_moment: 'Moment actuel',
     // Sanctuaire moment
     actes_done: 'acte accompli', actes_done_p: 'actes accomplis', actes_left: 'restant', actes_left_p: 'restants', bloc_done: '✦ Bloc accompli', bloc_done_sub: 'Barak Allahu fik', btn_continue: 'Bismillah',
@@ -9083,7 +9083,7 @@ const V2_I18N = {
       'To be of benefit to others — and please Allah',
     ],
     block_reveil: 'AT DAWN', block_fajr: 'AFTER FAJR', block_dhuhr: 'AFTER DHUHR', block_asr: 'AFTER ASR', block_maghrib: 'AFTER MAGHRIB', block_isha: 'AFTER ISHA', block_nuit: 'Night', block_qiyam: 'Qiyam al-Layl',
-    bandeau_sub: 'Your acts right now', bandeau_nuit: 'Sleep with Witr', bandeau_qiyam: 'Time for Qiyam al-Layl',
+    bandeau_sub: 'Your acts right now', bandeau_nuit: 'Sleep with Witr', bandeau_qiyam: 'The night\u2019s appointment',
     toggle_all: 'Full day', toggle_moment: 'Current moment',
     actes_done: 'act completed', actes_done_p: 'acts completed', actes_left: 'remaining', actes_left_p: 'remaining', bloc_done: '✦ Block completed', bloc_done_sub: 'Barak Allahu fik', btn_continue: 'Bismillah',
     jour_left: 'daily act remaining', jour_left_p: 'daily acts remaining',
@@ -9316,7 +9316,7 @@ const V2_I18N = {
       'لِأَكُونَ نَافِعًا لِلآخَرِينَ وَأُرْضِيَ اللَّهَ',
     ],
     block_reveil: 'عِنْدَ الِاسْتِيقَاظِ', block_fajr: 'بَعْدَ الْفَجْرِ', block_dhuhr: 'بَعْدَ الظُّهْرِ', block_asr: 'بَعْدَ الْعَصْرِ', block_maghrib: 'بَعْدَ الْمَغْرِبِ', block_isha: 'بَعْدَ الْعِشَاءِ', block_nuit: 'اللَّيْلُ', block_qiyam: 'قِيَامُ اللَّيْلِ',
-    bandeau_sub: 'أَعْمَالُكَ الْآنَ', bandeau_nuit: 'نَمْ مَعَ الْوِتْرِ', bandeau_qiyam: 'وَقْتُ قِيَامِ اللَّيْلِ',
+    bandeau_sub: 'أَعْمَالُكَ الْآنَ', bandeau_nuit: 'نَمْ مَعَ الْوِتْرِ', bandeau_qiyam: '\u0645\u064E\u0648\u0652\u0639\u0650\u062F\u064F \u0627\u0644\u0644\u0651\u064E\u064A\u0652\u0644',
     toggle_all: 'الْيَوْمُ كَامِلًا', toggle_moment: 'اللَّحْظَةُ الْحَالِيَّةُ',
     actes_done: 'عَمَلٌ مُنْجَزٌ', actes_done_p: 'أَعْمَالٌ مُنْجَزَةٌ', actes_left: 'مُتَبَقٍّ', actes_left_p: 'مُتَبَقِّيَةٌ', bloc_done: '✦ أُنْجِزَ الْقِسْمُ', bloc_done_sub: 'بَارَكَ اللَّهُ فِيكَ', btn_continue: 'بِسْمِ اللَّهِ',
     jour_left: 'عَمَلٌ يَوْمِيٌّ مُتَبَقٍّ', jour_left_p: 'أَعْمَالٌ يَوْمِيَّةٌ مُتَبَقِّيَةٌ',
@@ -11951,7 +11951,7 @@ function updateSanctuaireMoment() {
   if (blockId === 'qiyam') {
     var hasLevel4 = state._unlocked && state._unlocked.includes(4);
     var tahajjudDone = hasLevel4 && !!state['tahajjud'];
-    var qSub = hasLevel4 ? (tahajjudDone ? 'Qiyam al-Layl' : t('bandeau_qiyam')) : 'Dors avec le Witr';
+    var qSub = hasLevel4 ? (tahajjudDone ? 'Le rendez-vous de la nuit' : 'Le rendez-vous de la nuit') : 'Dors avec le Witr';
     el.innerHTML = '<div style="text-align:center;padding:8px;">'
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:700;color:#C8A84A;">' + _iconSpan + (hasLevel4 ? t('block_qiyam') : 'La nuit est pour le repos') + '</div>'
       + '<div style="font-family:\'Inter\',var(--sans);font-size:12px;color:rgba(255,255,255,0.6);margin-top:4px;">' + qSub + '</div>'
