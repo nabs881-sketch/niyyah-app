@@ -7971,7 +7971,10 @@ button[style*="gold-v2"] {
 }
 .sira-tissue-mark {
   text-align: center;
-  margin: 32px 0 16px;
+  margin: 40px 0 20px 0;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 600ms ease-out;
 }
 .sira-tissue-circle {
   display: inline-flex;
@@ -7979,18 +7982,19 @@ button[style*="gold-v2"] {
   justify-content: center;
   width: 36px;
   height: 36px;
+  border: 1px solid rgba(200,168,74,0.5);
   border-radius: 50%;
-  border: 1px solid rgba(200,168,74,0.4);
   color: #C8A84A;
-  font-size: 16px;
-  margin-bottom: 8px;
+  font-size: 14px;
+  margin-bottom: 12px;
 }
 .sira-tissue-label {
+  font-family: 'Cormorant Garamond', serif;
   font-style: italic;
+  font-size: 14px;
   color: #C8A84A;
-  font-size: 13px;
-  letter-spacing: 1px;
   opacity: 0.85;
+  letter-spacing: 0.5px;
 }
 .sira-ornament {
   width: 60px;
