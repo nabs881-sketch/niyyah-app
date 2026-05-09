@@ -13838,6 +13838,7 @@ function _dhikrUpdate() {
   var prog = document.getElementById('dhikr-progress');
   var ring = prog ? prog.closest('.dhikr-ring') : null;
   if (prog) prog.style.strokeDashoffset = offset;
+  console.log('[DHIKR]', 'count=', count, 'phase=', phase ? phase.fr : 'NULL', 'color=', color, 'ring=', !!ring);
   if (ring) { ring.style.setProperty('--ring-color', color); ring.style.setProperty('--num-color', color); }
   var num = document.getElementById('dhikr-num');
   if (num) num.textContent = localCount;
