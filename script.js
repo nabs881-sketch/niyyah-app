@@ -11930,15 +11930,14 @@ function updateSanctuaireMoment() {
   var block = getCurrentPrayerBlock();
   var blockId = block.id;
   var _svgNuit = '<svg width="14" height="14" viewBox="0 0 14 14" style="vertical-align:middle;"><path d="M11 7a4.5 4.5 0 1 1-4.5-4.5A3.5 3.5 0 0 0 11 7z" fill="none" stroke="#C8A84A" stroke-width="1.2"/></svg>';
-  var _svgQiyam = '<svg width="14" height="14" viewBox="0 0 14 14" style="vertical-align:middle;"><path d="M7 1.5L8.4 5.6L12.5 5.6L9.2 8.1L10.5 12.2L7 9.7L3.5 12.2L4.8 8.1L1.5 5.6L5.6 5.6Z" fill="none" stroke="#C8A84A" stroke-width="1"/></svg>';
-  var _blockIcons = { nuit:_svgNuit, fajr:'🌅', dhuhr:'🌞', asr:'🌇', maghrib:'🌆', isha:_svgNuit, qiyam:_svgQiyam };
+  var _blockIcons = { nuit:_svgNuit, fajr:'🌅', dhuhr:'🌞', asr:'🌇', maghrib:'🌆', isha:_svgNuit };
   var _momentsImg = ['fajr','dhuhr','asr','maghrib','isha'];
   var _iconSpan;
   if (_momentsImg.indexOf(blockId) !== -1) {
     _iconSpan = '<div class="moment-icon-img moment-icon-'+blockId+'"></div>';
   } else {
-    var _bIcon = _blockIcons[blockId] || '☀️';
-    _iconSpan = '<span style="margin-right:8px;">'+_bIcon+'</span>';
+    var _bIcon = _blockIcons[blockId] || '';
+    _iconSpan = _bIcon ? '<span style="margin-right:8px;">'+_bIcon+'</span>' : '';
   }
   // Nuit et Qiyam — messages spéciaux
   _showBlock();
