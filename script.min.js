@@ -13648,9 +13648,8 @@ const SIRA = {
       h += '<div style="text-align:center;font-style:italic;color:#888;font-size:13px;margin-bottom:32px;">' + tissues + ' rendez-vous tiss\u00e9s</div>';
     }
     h += '<div style="text-align:center;color:#C8A84A;margin:24px 0;letter-spacing:4px;font-size:12px;">\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500</div>';
-    h += '<div style="text-align:center;font-size:11px;letter-spacing:3px;font-weight:700;color:#C8A84A;margin-bottom:12px;">RENDEZ-VOUS DU JOUR</div>';
-    h += '<div style="text-align:center;font-size:12px;letter-spacing:4px;font-weight:700;text-transform:uppercase;color:#C8A84A;margin-bottom:6px;">RENDEZ-VOUS ' + num + '</div>';
-    h += '<div style="text-align:center;font-family:Cormorant Garamond,serif;font-size:22px;font-style:italic;color:#FAF7EE;margin-bottom:36px;">' + titre + '</div>';
+    h += '<div style="text-align:center;font-size:11px;letter-spacing:4px;font-weight:700;color:#C8A84A;margin-bottom:14px;">AUJOURD\u2019HUI</div>';
+    h += '<div style="text-align:center;font-family:Cormorant Garamond,serif;font-size:24px;font-style:italic;color:#FAF7EE;margin-bottom:36px;">Rendez-vous ' + num + ' \u2014 ' + titre + '</div>';
     h += '<div style="text-align:center;"><button class="sira-breath" onclick="SIRA.openRdv()" style="background:#C8A84A;color:#2C2E32;padding:14px 28px;border:none;border-radius:24px;font-family:Cormorant Garamond,serif;font-style:italic;font-size:16px;cursor:pointer;">Entrer dans la rencontre</button></div>';
     h += '<div style="margin-top:60px;padding:24px;max-width:480px;margin-left:auto;margin-right:auto;text-align:center;font-style:italic;color:#999;font-size:13px;line-height:1.7;">Un rendez-vous quotidien avec le Messager d\u2019All\u00e2h \uFDFA. Trois cent soixante-cinq rencontres pour le d\u00e9couvrir, l\u2019aimer, marcher avec lui. Cette feature ne remplace pas l\u2019\u00e9tude rigoureuse de la S\u00eera par les livres et les savants \u2014 elle ouvre la porte de l\u2019amour qui rend l\u2019\u00e9tude d\u00e9sirable.</div>';
     return h;
