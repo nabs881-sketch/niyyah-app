@@ -13370,7 +13370,9 @@ function openVueRituel(prayer) {
     const _click = it.id === 'tasbih' ? 'openTasbihModal(\'' + prayer + '\');'
       : it.id === 'istighfar' ? 'openIstighfarModal();'
       : tog + '(\'' + it.id + '\',event); openVueRituel(\'' + prayer + '\');';
-    return '<div class="' + cls + done + '" id="rituel-item-' + it.id + '" onclick="' + _click + '"><div class="check"></div><div style="flex:1"><div class="label">' + (it.label||it.id) + '</div>' + sub + ar + '</div>' + audio + '</div>';
+    var _dhikrBtn = (it.id === 'tasbih') ? '<button style="background:none;border:none;font-size:22px;color:#C8A84A;cursor:pointer;flex-shrink:0;" onclick="event.stopPropagation();openTasbihModal(\'' + prayer + '\');">\u{1F4FF}</button>'
+      : (it.id === 'istighfar') ? '<button style="background:none;border:none;font-size:22px;color:#C8A84A;cursor:pointer;flex-shrink:0;" onclick="event.stopPropagation();openIstighfarModal();">\u{1F4FF}</button>' : '';
+    return '<div class="' + cls + done + '" id="rituel-item-' + it.id + '" onclick="' + _click + '"><div class="check"></div><div style="flex:1"><div class="label">' + (it.label||it.id) + '</div>' + sub + ar + '</div>' + audio + _dhikrBtn + '</div>';
   };
   let html = '';
   // Bandeau prière avec toggles
