@@ -13367,8 +13367,12 @@ function openVueRituel(prayer) {
   const _kn = 'width:14px;height:14px;border-radius:50%;transition:margin 0.2s;';
   const _atJum = !!state['dhuhr_jumua'];
   const _isJum = (prayer === 'dhuhr' && isFriday());
+  var _prayerChecked = !!state[prayer];
   html += '<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 18px;margin-bottom:16px;background:rgba(200,168,74,0.06);border:1px solid rgba(200,168,74,0.18);border-radius:14px;">'
+    + '<div style="display:flex;align-items:center;gap:12px;cursor:pointer;" onclick="toggleItem(\'' + prayer + '\',event);openVueRituel(\'' + prayer + '\');">'
+    + '<div class="check-circle" style="width:24px;height:24px;border-radius:50%;border:2px solid ' + (_prayerChecked ? '#C8A84A' : 'rgba(200,168,74,0.4)') + ';background:' + (_prayerChecked ? 'var(--gold-grad)' : 'transparent') + ';display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.25s;"><svg width="10" height="8" viewBox="0 0 12 10" fill="none" style="opacity:' + (_prayerChecked ? '1' : '0') + ';"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>'
     + '<div style="font-family:Cormorant Garamond,serif;font-size:17px;font-weight:600;color:#C8A84A;">' + prayer.charAt(0).toUpperCase() + prayer.slice(1) + ' accompli\u00a0?</div>'
+    + '</div>'
     + '<div style="display:flex;gap:10px;align-items:center;">'
     + '<div style="display:flex;align-items:center;gap:4px;cursor:pointer;" onclick="togglePrayerOnTime(\'' + prayer + '\');openVueRituel(\'' + prayer + '\');">'
     + '<div style="font-size:11px;color:' + (_onTime ? 'var(--green)' : 'rgba(255,255,255,0.35)') + ';">\u23F0</div>'
