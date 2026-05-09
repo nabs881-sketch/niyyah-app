@@ -13719,5 +13719,90 @@ const SIRA = {
 };
 window.SIRA = SIRA;
 
+/* ── DHIKR COUNTER ── */
+var _dhikrState = { count: 0, config: null, touchStartY: 0 };
+function openDhikrCounter(config) {
+  var ov = document.getElementById('dhikr-counter-overlay');
+  if (!ov) return;
+  _dhikrState.config = config;
+  // Restore today's count
+  var saved = 0;
+  try {
+    var raw = JSON.parse(localStorage.getItem(config.saveKey) || '{}');
+    if (raw.date === todayKey()) saved = raw.count || 0;
+  } catch(e) {}
+  _dhikrState.count = Math.min(saved, config.target);
+  _dhikrRender();
+  ov.style.display = 'flex';
+  // Tap anywhere = +1
+  ov.onclick = function(e) {
+    if (e.target.closest('.dhikr-close')) return;
+    _dhikrIncrement();
+  };
+  // Swipe down to close
+  ov.ontouchstart = function(e) { _dhikrState.touchStartY = e.touches[0].clientY; };
+  ov.ontouchend = function(e) {
+    var dy = e.changedTouches[0].clientY - _dhikrState.touchStartY;
+    if (dy > 120) closeDhikrCounter();
+  };
+}
+function closeDhikrCounter() {
+  var ov = document.getElementById('dhikr-counter-overlay');
+  if (ov) ov.style.display = 'none';
+}
+function _dhikrGetPhase() {
+  var c = _dhikrState.config;
+  if (!c || !c.phases) return c ? { arabic: '', translit: '', fr: '', color: '#C8A84A' } : null;
+  for (var i = c.phases.length - 1; i >= 0; i--) {
+    if (_dhikrState.count >= c.phases[i].from) return c.phases[i];
+  }
+  return c.phases[0];
+}
+function _dhikrIncrement() {
+  var c = _dhikrState.config;
+  if (!c || _dhikrState.count >= c.target) return;
+  _dhikrState.count++;
+  // Save
+  safeSetItem(c.saveKey, JSON.stringify({ date: todayKey(), count: _dhikrState.count }));
+  // Haptic
+  if (navigator.vibrate) navigator.vibrate(8);
+  if (typeof playCheckSound === 'function' && _dhikrState.count % 33 === 0) playCheckSound();
+  // Complete
+  if (_dhikrState.count >= c.target) {
+    if (navigator.vibrate) navigator.vibrate([30, 50, 100]);
+    if (typeof playCheckSound === 'function') playCheckSound();
+    if (c.onComplete) c.onComplete();
+  }
+  _dhikrRender();
+}
+function _dhikrRender() {
+  var ov = document.getElementById('dhikr-counter-overlay');
+  if (!ov || !_dhikrState.config) return;
+  var c = _dhikrState.config;
+  var count = _dhikrState.count;
+  var phase = _dhikrGetPhase();
+  var pct = count / c.target;
+  var r = 130;
+  var circ = 2 * Math.PI * r;
+  var offset = circ * (1 - pct);
+  var color = (phase && phase.color) ? phase.color : '#C8A84A';
+  var done = count >= c.target;
+  ov.innerHTML = '<button class="dhikr-close" onclick="event.stopPropagation();closeDhikrCounter();">\u2715</button>'
+    + '<div class="dhikr-info">'
+    + (phase && phase.arabic ? '<div class="arabic">' + phase.arabic + '</div>' : '')
+    + (phase && phase.translit ? '<div class="translit">' + phase.translit + '</div>' : '')
+    + (phase && phase.fr ? '<div class="trad">' + phase.fr + '</div>' : '')
+    + '</div>'
+    + '<div class="dhikr-ring">'
+    + '<svg viewBox="0 0 280 280"><circle class="track" cx="140" cy="140" r="' + r + '"/><circle class="progress" cx="140" cy="140" r="' + r + '" stroke="' + color + '" stroke-dasharray="' + circ + '" stroke-dashoffset="' + offset + '"/></svg>'
+    + '<div class="dhikr-count" style="color:' + color + ';">' + count + '</div>'
+    + '</div>'
+    + (done ? '<div class="dhikr-phase" style="color:#C8A84A;font-size:18px;">\u2713 Alhamdulillah</div>'
+      : '<button class="dhikr-btn" onclick="event.stopPropagation();_dhikrIncrement();">+</button>')
+    + (phase && !done ? '<div class="dhikr-phase">' + (phase.fr || '') + ' \u2014 ' + count + '/' + c.target + '</div>' : '');
+}
+window.openDhikrCounter = openDhikrCounter;
+window.closeDhikrCounter = closeDhikrCounter;
+
 init();
 
