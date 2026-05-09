@@ -1265,7 +1265,7 @@ const LEVELS = [
       ]},
       { icon: '📿', title: 'Dhikr du cœur', items: [
         { id: 'istighfar', label: 'Istighfar', sub: 'Astaghfirullah · Je demande pardon à Allah — 100 fois', arabic: 'أَسْتَغْفِرُ اللَّهَ', priority: 'sunnah', type: 'counter', target: 100, block: 'asr', audio: null, /* was sc:172482888 — SoundCloud bloqué par CSP, dhikr personnel */ hadith: '\"Celui qui fait l\'Istighfar régulièrement, Allah lui ouvre une issue dans toute détresse\" — Abu Dawud 1518', source: 'Abu Dawud 1518' },
-        { id: 'tasbih', label: 'Tasbih complet', sub: 'SubhanAllah ×33 · Alhamdulillah ×33 · Allahu Akbar ×33 · puis La ilaha illallah wahdahu…', arabic: 'سُبْحَانَ اللَّهِ · الْحَمْدُ لِلَّهِ · اللَّهُ أَكْبَرُ', priority: 'sunnah', type: 'counter', target: 99, block: 'asr', audio: null, /* was sc:soundcloud — SoundCloud bloqué par CSP, dhikr personnel */ hadith: '\"Les péchés sont effacés même s\'ils sont comme l\'écume de la mer\" — Muslim 597', source: 'Muslim 597', phonetic: "La ilaha illallah wahdahu la sharika lah, lahul mulku wa lahul hamdu wa huwa ala kulli shay'in qadir", translation: 'À 99 : \"Il n\'y a de dieu qu\'Allah Seul, sans associé, à Lui la souveraineté et la louange, Il est Puissant sur toute chose\"' },
+        { id: 'tasbih', label: 'Tasbih complet', sub: 'SubhanAllah ×33 · Alhamdulillah ×33 · Allahu Akbar ×33 · puis La ilaha illallah wahdahu…', arabic: 'سُبْحَانَ اللَّهِ · الْحَمْدُ لِلَّهِ · اللَّهُ أَكْبَرُ', priority: 'sunnah', type: 'counter', target: 99, block: ['fajr','dhuhr','asr','maghrib','isha'], audio: null, /* was sc:soundcloud — SoundCloud bloqué par CSP, dhikr personnel */ hadith: '\"Les péchés sont effacés même s\'ils sont comme l\'écume de la mer\" — Muslim 597', source: 'Muslim 597', phonetic: "La ilaha illallah wahdahu la sharika lah, lahul mulku wa lahul hamdu wa huwa ala kulli shay'in qadir", translation: 'À 99 : \"Il n\'y a de dieu qu\'Allah Seul, sans associé, à Lui la souveraineté et la louange, Il est Puissant sur toute chose\"' },
       ]},
       { icon: '🤲', title: 'Douâas intimes', items: [
         { id: 'doua_soi', label: 'Douâa pour toi-même', sub: 'Rabbi inni lima anzalta ilayya min khayrin faqir · Seigneur, je suis dans le besoin de tout bien que Tu accordes', arabic: 'رَبِّ إِنِّي لِمَا أَنزَلْتَ إِلَيَّ مِنْ خَيْرٍ فَقِيرٌ', block: 'maghrib', audio: 'https://everyayah.com/data/Alafasy_128kbps/028024.mp3', source: 'Coran 28:24 — Douâa de Moussa ﷺ dans sa détresse', phonetic: 'Rabbi inni lima anzalta ilayya min khayrin faqir' },
@@ -2301,7 +2301,7 @@ function renderLevel(levelId) {
       }
       if (!item.block) return true;
       if (item.block === 'ressources') return false;
-      if (item.block === _currentBlock) return true;
+      if (Array.isArray(item.block) ? item.block.includes(_currentBlock) : item.block === _currentBlock) return true;
       if (item.block === 'jour') {
         if (item.id === 'sunnah_jejune') { var d = new Date().getDay(); return d === 1 || d === 4; }
         return true;
@@ -11985,7 +11985,7 @@ function updateSanctuaireMoment() {
   function _isDone(item) { return item.type === 'counter' ? (state[item.id] || 0) >= item.target : !!state[item.id]; }
   var _allUnlocked = LEVELS.filter(function(l) { return state._unlocked && state._unlocked.includes(l.id); })
     .flatMap(function(l) { return l.sections.flatMap(function(s) { return s.items; }); });
-  var blockItems = _allUnlocked.filter(function(item) { return item.block === blockId; });
+  var blockItems = _allUnlocked.filter(function(item) { return Array.isArray(item.block) ? item.block.includes(blockId) : item.block === blockId; });
   var blockTotal = blockItems.length;
   var blockDone = blockItems.filter(_isDone).length;
   var blockRemaining = blockTotal - blockDone;
@@ -13335,7 +13335,8 @@ function getRitualItems(prayer) {
     lvl.sections.forEach(s => {
       (s.items || []).forEach(it => {
         if (it.id === prayer) return;
-        if (it.block === prayer || it.block === 'jour') {
+        var _bm = Array.isArray(it.block) ? it.block.includes(prayer) : (it.block === prayer);
+        if (_bm || it.block === 'jour') {
           items.push(it);
         }
       });
