@@ -7978,11 +7978,20 @@ button[style*="gold-v2"] {
 }
 .sira-breath {
   animation: siraBreath 2.5s ease-in-out infinite;
+  box-shadow: 0 4px 20px rgba(200, 168, 74, 0.25);
+  transition: box-shadow 400ms ease;
 }
-.sira-breath:hover, .sira-breath:active {
+.sira-breath:hover {
   animation: none;
   transform: scale(1);
   opacity: 1;
+  box-shadow: 0 6px 30px rgba(200, 168, 74, 0.4);
+}
+.sira-breath:active {
+  animation: none;
+  transform: scale(1);
+  opacity: 1;
+  box-shadow: 0 2px 10px rgba(200, 168, 74, 0.2);
 }
 .rituel-vendredi-sep {
   text-align: center;
