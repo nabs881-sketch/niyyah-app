@@ -13690,9 +13690,10 @@ const SIRA = {
     if (rdv.meditation) h += '<div style="background:rgba(250,247,238,0.04);border-radius:12px;padding:20px 24px;margin:32px 8px;font-style:italic;text-align:center;color:#D4C9A0;font-size:17px;line-height:1.6;">' + escape(T(rdv.meditation)) + '</div>';
     if (rdv.source) h += '<div style="text-align:center;font-style:italic;color:#888;font-size:13px;margin:16px 0 32px;">\u2014 ' + escape(T(rdv.source)) + '</div>';
     var maxNum = this.getCurrentRdvNum();
-    h += '<div style="display:flex;justify-content:space-between;align-items:center;padding:24px 0;font-style:italic;font-size:14px;color:#C8A84A;">';
-    h += (num > 1) ? '<span style="cursor:pointer;" onclick="SIRA.openNav(' + (num - 1) + ')">Pr\u00e9c\u00e9dent</span>' : '<span></span>';
-    h += (num < maxNum) ? '<span style="cursor:pointer;" onclick="SIRA.openNav(' + (num + 1) + ')">Suivant</span>' : '<span></span>';
+    var _bs = 'padding:10px 22px;border:1px solid rgba(200,168,74,0.4);border-radius:24px;background:rgba(200,168,74,0.05);color:#C8A84A;font-family:Cormorant Garamond,serif;font-style:italic;font-size:15px;cursor:pointer;transition:all 300ms ease;';
+    h += '<div style="display:flex;justify-content:space-between;align-items:center;padding-top:32px;">';
+    h += (num > 1) ? '<span style="' + _bs + '" onclick="SIRA.openNav(' + (num - 1) + ')" onmouseover="this.style.background=\'rgba(200,168,74,0.15)\';this.style.borderColor=\'#C8A84A\'" onmouseout="this.style.background=\'rgba(200,168,74,0.05)\';this.style.borderColor=\'rgba(200,168,74,0.4)\'">Pr\u00e9c\u00e9dent</span>' : '<span></span>';
+    h += (num < maxNum) ? '<span style="' + _bs + '" onclick="SIRA.openNav(' + (num + 1) + ')" onmouseover="this.style.background=\'rgba(200,168,74,0.15)\';this.style.borderColor=\'#C8A84A\'" onmouseout="this.style.background=\'rgba(200,168,74,0.05)\';this.style.borderColor=\'rgba(200,168,74,0.4)\'">Suivant</span>' : '<span></span>';
     h += '</div>';
     h += '<div id="sira-tissue-badge" style="text-align:center;font-style:italic;color:#C8A84A;font-size:13px;letter-spacing:1px;margin:32px 0 16px;opacity:0;transform:translateY(10px);transition:opacity 600ms ease-out,transform 600ms ease-out;">\u2713 Rendez-vous tiss\u00e9</div>';
     h += '<div style="text-align:center;font-size:48px;color:#C8A84A;margin:28px 0 12px;">\uFDFA</div>';
