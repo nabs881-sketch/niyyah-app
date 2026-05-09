@@ -2444,7 +2444,7 @@ function renderPrayerItem(item, delay, extraClass, forceChecked) {
     + '<div class="item-body"><div class="item-label' + priorityCls + '">' + tI(item,'label') + '</div>'
     + (item.sub ? '<div class="item-sub">' + tI(item,'sub') + '</div>' : '')
     + arabicHtml + '</div>'
-    + '<div style="display:flex;flex-direction:column;gap:3px;flex-shrink:0;">' + toggle + toggleMosquee + toggleJumua + '</div></div>';
+    + '<div style="display:flex;flex-direction:column;gap:3px;flex-shrink:0;opacity:' + (checked ? '1' : '0.4') + ';transition:opacity 0.2s;">' + toggle + toggleMosquee + toggleJumua + '</div></div>';
 }
 function togglePrayerJumua() {
   state['dhuhr_jumua'] = !state['dhuhr_jumua'];
@@ -2462,11 +2462,13 @@ function togglePrayerJumua() {
 }
 function togglePrayerMosquee(id) {
   state[id + '_mosquee'] = !state[id + '_mosquee'];
+  if (state[id + '_mosquee'] && !state[id]) state[id] = true;
   saveState();
   renderLevel(currentLevel);
 }
 function togglePrayerOnTime(id) {
   state[id + '_ontime'] = !state[id + '_ontime'];
+  if (state[id + '_ontime'] && !state[id]) state[id] = true;
   saveState();
   renderLevel(currentLevel);
 }
@@ -2709,6 +2711,10 @@ function toggleItem(id, event) {
     event.target.closest('.btn-tasbih-fs')
   )) return;
   state[id] = !state[id];
+  if (!state[id] && ['fajr','dhuhr','asr','maghrib','isha'].indexOf(id) !== -1) {
+    state[id + '_ontime'] = false;
+    state[id + '_mosquee'] = false;
+  }
   saveState();
   const el = document.getElementById('item-' + id);
   if (el) {
@@ -13373,7 +13379,7 @@ function openVueRituel(prayer) {
     + '<div class="check-circle" style="width:24px;height:24px;border-radius:50%;border:2px solid ' + (_prayerChecked ? '#C8A84A' : 'rgba(200,168,74,0.4)') + ';background:' + (_prayerChecked ? 'var(--gold-grad)' : 'transparent') + ';display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.25s;"><svg width="10" height="8" viewBox="0 0 12 10" fill="none" style="opacity:' + (_prayerChecked ? '1' : '0') + ';"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>'
     + '<div style="font-family:Cormorant Garamond,serif;font-size:17px;font-weight:600;color:#C8A84A;">' + prayer.charAt(0).toUpperCase() + prayer.slice(1) + ' accompli\u00a0?</div>'
     + '</div>'
-    + '<div style="display:flex;gap:10px;align-items:center;">'
+    + '<div style="display:flex;gap:10px;align-items:center;opacity:' + (_prayerChecked ? '1' : '0.4') + ';transition:opacity 0.2s;">'
     + '<div style="display:flex;align-items:center;gap:4px;cursor:pointer;" onclick="togglePrayerOnTime(\'' + prayer + '\');openVueRituel(\'' + prayer + '\');">'
     + '<div style="font-size:11px;color:' + (_onTime ? 'var(--green)' : 'rgba(255,255,255,0.35)') + ';">\u23F0</div>'
     + '<div style="' + _sw + 'background:' + (_onTime ? 'var(--green)' : 'rgba(255,255,255,0.1)') + ';border:1px solid ' + (_onTime ? 'var(--green)' : 'rgba(255,255,255,0.15)') + ';">'
