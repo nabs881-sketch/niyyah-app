@@ -13542,6 +13542,10 @@ const SIRA = {
   getTissuesCount() {
     try { return JSON.parse(localStorage.getItem('sira_tissues') || '[]').length; } catch(e) { return 0; }
   },
+  isRdvOfDayRead() {
+    var num = this.getCurrentRdvNum();
+    try { return JSON.parse(localStorage.getItem('sira_tissues') || '[]').indexOf(num) !== -1; } catch(e) { return false; }
+  },
   _ensureOverlay() {
     var ov = document.getElementById('sira-overlay');
     if (!ov) {
