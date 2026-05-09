@@ -13364,7 +13364,9 @@ function openVueRituel(prayer) {
     const audio = it.audio ? '<button class="btn-audio" data-audio-id="' + it.id + '" onclick="event.stopPropagation();playAudioById(this)">\u{1F50A}</button>' : '';
     const cls = vendredi ? 'rituel-item vendredi ' : 'rituel-item ';
     const tog = (vendredi && it.id !== 'jumua') ? 'toggleFridayItem' : 'toggleItem';
-    return '<div class="' + cls + done + '" id="rituel-item-' + it.id + '" onclick="' + tog + '(\'' + it.id + '\',event); openVueRituel(\'' + prayer + '\');"><div class="check"></div><div style="flex:1"><div class="label">' + (it.label||it.id) + '</div>' + sub + ar + '</div>' + audio + '</div>';
+    const _click = it.id === 'tasbih' ? 'openTasbihModal();'
+      : tog + '(\'' + it.id + '\',event); openVueRituel(\'' + prayer + '\');';
+    return '<div class="' + cls + done + '" id="rituel-item-' + it.id + '" onclick="' + _click + '"><div class="check"></div><div style="flex:1"><div class="label">' + (it.label||it.id) + '</div>' + sub + ar + '</div>' + audio + '</div>';
   };
   let html = '';
   // Bandeau prière avec toggles
