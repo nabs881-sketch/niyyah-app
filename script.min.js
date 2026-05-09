@@ -13767,15 +13767,19 @@ function _dhikrGetPhase() {
 }
 function _dhikrIncrement() {
   var c = _dhikrState.config;
-  if (!c || _dhikrState.count >= c.target) return;
+  if (!c) return;
+  var prevPhase = _dhikrGetPhase();
+  var wasComplete = _dhikrState.count >= c.target;
   _dhikrState.count++;
   // Save
   safeSetItem(c.saveKey, JSON.stringify({ date: todayKey(), count: _dhikrState.count }));
   // Haptic
   if (navigator.vibrate) navigator.vibrate(8);
-  if (typeof playCheckSound === 'function' && _dhikrState.count % 33 === 0) playCheckSound();
-  // Complete
-  if (_dhikrState.count >= c.target) {
+  // Phase transition sound (only if phase actually changed and multiple phases exist)
+  var newPhase = _dhikrGetPhase();
+  if (c.phases && c.phases.length > 1 && prevPhase !== newPhase && typeof playCheckSound === 'function') playCheckSound();
+  // Complete (only once)
+  if (!wasComplete && _dhikrState.count >= c.target) {
     if (navigator.vibrate) navigator.vibrate([30, 50, 100]);
     if (typeof playCheckSound === 'function') playCheckSound();
     if (c.onComplete) c.onComplete();
@@ -13788,7 +13792,7 @@ function _dhikrRender() {
   var c = _dhikrState.config;
   var count = _dhikrState.count;
   var phase = _dhikrGetPhase();
-  var pct = count / c.target;
+  var pct = Math.min(count / c.target, 1);
   var r = 130;
   var circ = 2 * Math.PI * r;
   var offset = circ * (1 - pct);
@@ -13804,9 +13808,9 @@ function _dhikrRender() {
     + '<svg viewBox="0 0 280 280"><circle class="track" cx="140" cy="140" r="' + r + '"/><circle class="progress" cx="140" cy="140" r="' + r + '" stroke="' + color + '" stroke-dasharray="' + circ + '" stroke-dashoffset="' + offset + '"/></svg>'
     + '<div class="dhikr-count" style="color:' + color + ';">' + count + '</div>'
     + '</div>'
-    + (done ? '<div class="dhikr-phase" style="color:#C8A84A;font-size:18px;">\u2713 Alhamdulillah</div>'
-      : '<button class="dhikr-btn" onclick="event.stopPropagation();_dhikrIncrement();">+</button>')
-    + (phase && !done ? '<div class="dhikr-phase">' + (phase.fr || '') + ' \u2014 ' + count + '/' + c.target + '</div>' : '');
+    + '<button class="dhikr-btn" onclick="event.stopPropagation();_dhikrIncrement();">+</button>'
+    + (done ? '<div class="dhikr-phase" style="color:#C8A84A;">\u2713 Alhamdulillah</div>'
+      : '<div class="dhikr-phase">' + (phase ? phase.fr || '' : '') + ' \u2014 ' + count + '/' + c.target + '</div>');
 }
 function openTasbihModal() {
   openDhikrCounter({
