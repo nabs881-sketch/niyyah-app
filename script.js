@@ -13821,6 +13821,21 @@ function openTasbihModal() {
     }
   });
 }
+function openIstighfarModal() {
+  openDhikrCounter({
+    target: 100,
+    saveKey: 'istighfar_' + todayKey(),
+    phases: [
+      { from: 0, to: 100, arabic: '\u0623\u064E\u0633\u0652\u062A\u064E\u063A\u0652\u0641\u0650\u0631\u064F \u0671\u0644\u0644\u0651\u064E\u0670\u0647', translit: 'Astaghfirull\u0101h', fr: 'Je demande pardon \u00e0 Allah', color: '#C8A84A' }
+    ],
+    onComplete: function() {
+      state['istighfar'] = true;
+      saveState();
+      showToast('\u2713 Istighfar accompli \u2014 Alhamdulillah');
+    }
+  });
+}
+window.openIstighfarModal = openIstighfarModal;
 window.openTasbihModal = openTasbihModal;
 window.openDhikrCounter = openDhikrCounter;
 window.closeDhikrCounter = closeDhikrCounter;
