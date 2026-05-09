@@ -12168,8 +12168,10 @@ function v2Init() {
     langPill0.style.fontFamily = V2_LANG === 'ar' ? "'Amiri', serif" : "'Cormorant Garamond', serif";
     langPill0.style.fontSize = V2_LANG === 'ar' ? '13px' : '10px';
   }
-  v2GoSanctuaire();
-  checkRegardeAlert();
+  if (_onboardDone) {
+    v2GoSanctuaire();
+    checkRegardeAlert();
+  }
   setTimeout(() => { v2ApplyI18n(); }, 100);
 
   // Sync V1 intention → V2 chip on boot
