@@ -13859,7 +13859,7 @@ function _dhikrUpdate() {
   if (frEl) frEl.textContent = (phase && phase.fr) ? phase.fr : '';
   var label = document.getElementById('dhikr-phase-label');
   if (label) {
-    if (done) { label.textContent = '\u2713 Alhamdulillah'; label.style.color = '#C8A84A'; }
+    if (done) { var doneLabel = phase && phase.fr ? phase.fr : 'Tasbih accompli'; label.textContent = '\u2713 ' + doneLabel; label.style.color = phase && phase.color ? phase.color : '#C8A84A'; }
     else { label.textContent = (phase ? phase.fr || '' : '') + ' \u2014 ' + localCount + '/' + localTarget; label.style.color = ''; }
   }
 }
