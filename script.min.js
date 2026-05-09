@@ -13538,6 +13538,10 @@ const SIRA = {
     try { arr = JSON.parse(localStorage.getItem('sira_tissues') || '[]'); } catch(e) {}
     if (arr.indexOf(num) === -1) arr.push(num);
     safeSetItem('sira_tissues', JSON.stringify(arr));
+    if (!state['sira']) {
+      state['sira'] = true;
+      saveState();
+    }
   },
   getTissuesCount() {
     try { return JSON.parse(localStorage.getItem('sira_tissues') || '[]').length; } catch(e) { return 0; }
