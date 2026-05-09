@@ -7969,6 +7969,29 @@ button[style*="gold-v2"] {
   0%, 100% { transform: scale(1); opacity: 0.95; }
   50% { transform: scale(1.03); opacity: 1; }
 }
+.sira-tissue-mark {
+  text-align: center;
+  margin: 32px 0 16px;
+}
+.sira-tissue-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(200,168,74,0.4);
+  color: #C8A84A;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+.sira-tissue-label {
+  font-style: italic;
+  color: #C8A84A;
+  font-size: 13px;
+  letter-spacing: 1px;
+  opacity: 0.85;
+}
 .sira-ornament {
   width: 60px;
   height: 1px;

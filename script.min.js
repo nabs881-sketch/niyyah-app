@@ -13695,7 +13695,7 @@ const SIRA = {
     h += (num > 1) ? '<span style="' + _bs + '" onclick="SIRA.openNav(' + (num - 1) + ')" onmouseover="this.style.background=\'rgba(200,168,74,0.15)\';this.style.borderColor=\'#C8A84A\'" onmouseout="this.style.background=\'rgba(200,168,74,0.05)\';this.style.borderColor=\'rgba(200,168,74,0.4)\'">Pr\u00e9c\u00e9dent</span>' : '<span></span>';
     h += (num < maxNum) ? '<span style="' + _bs + '" onclick="SIRA.openNav(' + (num + 1) + ')" onmouseover="this.style.background=\'rgba(200,168,74,0.15)\';this.style.borderColor=\'#C8A84A\'" onmouseout="this.style.background=\'rgba(200,168,74,0.05)\';this.style.borderColor=\'rgba(200,168,74,0.4)\'">Suivant</span>' : '<span></span>';
     h += '</div>';
-    h += '<div id="sira-tissue-badge" style="text-align:center;font-style:italic;color:#C8A84A;font-size:13px;letter-spacing:1px;margin:32px 0 16px;opacity:0;transform:translateY(10px);transition:opacity 600ms ease-out,transform 600ms ease-out;">\u2713 Rendez-vous tiss\u00e9</div>';
+    h += '<div id="sira-tissue-badge" class="sira-tissue-mark" style="opacity:0;transform:translateY(10px);transition:opacity 600ms ease-out,transform 600ms ease-out;"><div class="sira-tissue-circle">\u2713</div><div class="sira-tissue-label">Rendez-vous tiss\u00e9</div></div>';
     h += '<div style="text-align:center;font-size:48px;color:#C8A84A;margin:28px 0 12px;">\uFDFA</div>';
     h += '<div style="text-align:center;font-size:11px;letter-spacing:3px;font-weight:700;color:#C8A84A;margin:32px 0 8px;">FIL ROUGE</div>';
     if (rdv.fil_rouge) h += '<div style="text-align:center;font-style:italic;color:#999;font-size:14px;line-height:1.5;margin-bottom:24px;">' + escape(T(rdv.fil_rouge)) + '</div>';
