@@ -13785,6 +13785,7 @@ function _dhikrGetPhase() {
 function _dhikrIncrement() {
   var c = _dhikrState.config;
   if (!c) return;
+  if (_dhikrState.count >= 100) return;
   var prevPhase = _dhikrGetPhase();
   var wasComplete = _dhikrState.count >= c.target;
   _dhikrState.count++;
