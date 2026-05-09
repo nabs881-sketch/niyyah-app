@@ -8548,7 +8548,7 @@ function renderCaverne() {
     });
   }
   function chute() {
-    showPhrase('<div style="color:#C8A84A;font-weight:600;font-family:Scheherazade New,serif;line-height:1.4;">Niyyah te dit\u00a0:<br>arr\u00eate-toi.</div>', 2800, function() {
+    showPhrase('<div style="color:#C8A84A;font-family:Cormorant Garamond,serif;font-style:italic;font-size:28px;font-weight:500;text-align:center;line-height:1.4;letter-spacing:0.02em;">Niyyah te dit\u00a0:<br>arr\u00eate-toi.</div>', 2800, function() {
       epilogue();
     });
   }
