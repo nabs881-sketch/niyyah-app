@@ -2502,8 +2502,12 @@ function renderCounter(item, delay) {
   const arabicHtml = item.arabic ? '<div class="item-arabic" style="' + (done ? 'opacity:0.25' : '') + '">' + item.arabic + '</div>' : '';
   const arabicEsc = (item.arabic || '').replace(/'/g, "\\'");
   const labelEsc  = tI(item,'label').replace(/'/g, "\\'");
-  const fullscreenBtn = '<button class="btn-tasbih-fs" aria-label="Plein écran" onclick="openTasbih(\'' + item.id + '\',' + item.target + ',\'' + labelEsc + '\',\'' + arabicEsc + '\')" title="' + t('btn_fullscreen') + '">⛶</button>';
+  var _isDhikr = (item.id === 'tasbih' || item.id === 'istighfar');
+  const fullscreenBtn = _isDhikr ? '' : '<button class="btn-tasbih-fs" aria-label="Plein écran" onclick="openTasbih(\'' + item.id + '\',' + item.target + ',\'' + labelEsc + '\',\'' + arabicEsc + '\')" title="' + t('btn_fullscreen') + '">⛶</button>';
   const audioBtn = item.audio ? '<button class="btn-audio" aria-label="Écouter" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();playAudio(' + (Array.isArray(item.audio) ? JSON.stringify(item.audio).replace(/"/g,"'") : '\'' + item.audio + '\'') + ',this,event)" title="' + t('btn_listen_recitation') + '">🔊</button>' : '';
+  if (_isDhikr) {
+    return '<div class="item counter-item' + (done ? ' checked' : '') + '" style="animation-delay:' + delay + 'ms" id="item-' + item.id + '"><div class="counter-top"><div class="check-circle" id="cb-' + item.id + '" style="' + (done ? 'background:var(--green-grad);border-color:var(--green);box-shadow:0 0 0 4px var(--green-soft),0 0 16px rgba(52,217,98,0.25)' : '') + '"><svg class="check-svg" style="' + (done ? 'opacity:1;transform:scale(1)' : '') + '" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-body"><div class="item-label">' + tI(item,'label') + '</div><div class="item-sub">' + tI(item,'sub') + '</div>' + arabicHtml + '</div>' + audioBtn + '</div><div class="counter-body"><div class="counter-display"><div class="counter-num" id="cnt-num-' + item.id + '">' + count + '</div><div class="counter-total">/ ' + item.target + '</div><div class="counter-bar-track"><div class="counter-bar-fill" id="cnt-bar-' + item.id + '" style="width:' + Math.min(count/item.target*100,100) + '%"></div></div></div></div></div>';
+  }
   return '<div class="item counter-item' + (done ? ' checked' : '') + '" style="animation-delay:' + delay + 'ms" id="item-' + item.id + '"><div class="counter-top"><div class="check-circle" id="cb-' + item.id + '" style="' + (done ? 'background:var(--green-grad);border-color:var(--green);box-shadow:0 0 0 4px var(--green-soft),0 0 16px rgba(52,217,98,0.25)' : '') + '"><svg class="check-svg" style="' + (done ? 'opacity:1;transform:scale(1)' : '') + '" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-body"><div class="item-label">' + tI(item,'label') + '</div><div class="item-sub">' + tI(item,'sub') + '</div>' + arabicHtml + '</div>' + audioBtn + fullscreenBtn + '</div><div class="counter-body"><button class="btn-cnt-reset" aria-label="Réinitialiser" onclick="resetCounter(\'' + item.id + '\')">↺</button><div class="counter-display"><div class="counter-num" id="cnt-num-' + item.id + '">' + count + '</div><div class="counter-total">/ ' + item.target + '</div><div class="counter-bar-track"><div class="counter-bar-fill" id="cnt-bar-' + item.id + '" style="width:' + Math.min(count/item.target*100,100) + '%"></div></div></div><button class="btn-cnt" aria-label="Incrémenter" onclick="incrementCounter(\'' + item.id + '\',' + item.target + ')">+</button></div></div>';
 }
 function initCounterEl(item) {}
@@ -13791,8 +13795,8 @@ function _dhikrIncrement() {
   _dhikrState.count++;
   // Save
   safeSetItem(c.saveKey, JSON.stringify({ date: todayKey(), count: _dhikrState.count }));
-  if (typeof state !== 'undefined' && typeof saveState === 'function') {
-    state['tasbih'] = _dhikrState.count;
+  if (c.id && typeof state !== 'undefined' && typeof saveState === 'function') {
+    state[c.id] = _dhikrState.count;
     saveState();
   }
   // Haptic
@@ -13862,6 +13866,7 @@ function openTasbihModal(prayer) {
   var _p = prayer || (typeof getCurrentPrayerBlock === 'function' ? getCurrentPrayerBlock().id : 'unknown');
   _dhikrState.prayer = _p;
   openDhikrCounter({
+    id: 'tasbih',
     target: 100,
     saveKey: 'tasbih_' + todayKey() + '_' + _p,
     phases: [
@@ -13878,6 +13883,7 @@ function openTasbihModal(prayer) {
 function openIstighfarModal() {
   _dhikrState.prayer = typeof getCurrentPrayerBlock === 'function' ? getCurrentPrayerBlock().id : null;
   openDhikrCounter({
+    id: 'istighfar',
     target: 100,
     saveKey: 'istighfar_' + todayKey(),
     phases: [
