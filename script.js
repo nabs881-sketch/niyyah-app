@@ -8554,9 +8554,9 @@ function renderCaverne() {
   }
   function epilogue() {
     showPhrase('<div style="max-width:340px;margin:0 auto;border:1px solid rgba(200,168,75,0.25);border-radius:14px;padding:28px 24px;background:radial-gradient(ellipse at top, rgba(200,168,75,0.08) 0%, transparent 70%);">'
-      + '<svg width="32" height="32" viewBox="0 0 80 80" style="display:block;margin:0 auto 20px;opacity:0.8;"><defs><radialGradient id="njgE" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#E8D070"/><stop offset="100%" stop-color="#A88838"/></radialGradient></defs><g transform="translate(40,40)"><polygon points="-22,-22 22,-22 22,22 -22,22" fill="url(#njgE)"/><polygon points="-22,-22 22,-22 22,22 -22,22" fill="url(#njgE)" transform="rotate(45)"/><polygon points="-10,-10 10,-10 10,10 -10,10" fill="#0a0a0a"/><polygon points="-10,-10 10,-10 10,10 -10,10" fill="#0a0a0a" transform="rotate(45)"/><circle cx="0" cy="0" r="3" fill="#E8D070"/></g></svg>'
-      + '<div style="text-align:center;color:rgba(200,168,75,0.65);font-style:italic;font-size:15px;line-height:1.8;">Dire Bismillah.<br>Pardonner.<br>Tenir sa langue.</div>'
-      + '<div style="height:24px;"></div>'
+      + '<svg width="32" height="32" viewBox="0 0 80 80" style="display:block;margin:0 auto 16px;opacity:0.8;"><defs><radialGradient id="njgE" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#E8D070"/><stop offset="100%" stop-color="#A88838"/></radialGradient></defs><g transform="translate(40,40)"><polygon points="-22,-22 22,-22 22,22 -22,22" fill="url(#njgE)"/><polygon points="-22,-22 22,-22 22,22 -22,22" fill="url(#njgE)" transform="rotate(45)"/><polygon points="-10,-10 10,-10 10,10 -10,10" fill="#0a0a0a"/><polygon points="-10,-10 10,-10 10,10 -10,10" fill="#0a0a0a" transform="rotate(45)"/><circle cx="0" cy="0" r="3" fill="#E8D070"/></g></svg>'
+      + '<div style="text-align:center;color:rgba(200,168,75,0.65);font-style:italic;font-size:15px;line-height:1.8;">Dire Bismillah.<br>Pardonner.<br>Tenir sa langue.<br>\u2026</div>'
+      + '<div style="height:28px;"></div>'
       + '<div style="text-align:center;color:#C8A84A;font-family:Cormorant Garamond,serif;font-weight:700;font-size:24px;line-height:1.4;">Arr\u00eate-toi.<br>Tout est l\u00e0.</div>'
       + '</div>', 4000, function() {
       el.style.transition = 'opacity 1500ms ease';
