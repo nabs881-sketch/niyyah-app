@@ -13636,7 +13636,7 @@ const SIRA = {
     var tissues = this.getTissuesCount();
     var titre = (rdv && rdv.titre && rdv.titre.fr) ? rdv.titre.fr : ('RDV #' + num);
     var h = '';
-    h += '<div onclick="SIRA.openList()" style="position:absolute;top:16px;right:60px;font-size:24px;color:#C8A84A;cursor:pointer;">\u{1F4CB}</div>';
+    h += '<svg width="22" height="22" viewBox="0 0 22 22" style="position:absolute;top:18px;right:60px;cursor:pointer;opacity:0.85;" onclick="SIRA.openList()" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.85"><line x1="3" y1="6" x2="19" y2="6" stroke="#C8A84A" stroke-width="1.2" stroke-linecap="round"/><line x1="3" y1="11" x2="19" y2="11" stroke="#C8A84A" stroke-width="1.2" stroke-linecap="round"/><line x1="3" y1="16" x2="19" y2="16" stroke="#C8A84A" stroke-width="1.2" stroke-linecap="round"/></svg>';
     h += '<div style="text-align:center;font-size:80px;color:#C8A84A;margin:40px 0 20px;">\uFDFA</div>';
     h += '<div style="text-align:center;font-family:Cormorant Garamond,serif;font-size:32px;font-style:italic;color:#FAF7EE;margin-bottom:0;">Avec le Messager \uFDFA</div>';
     h += '<div style="text-align:center;font-family:Scheherazade New,Amiri,serif;font-size:28px;color:#C8A84A;direction:rtl;margin:12px 0 8px;">\u0627\u0644\u0633\u0651\u0650\u064A\u0631\u064E\u0629\u064F \u0627\u0644\u0646\u0651\u064E\u0628\u064E\u0648\u0650\u064A\u0651\u064E\u0629\u064F</div>';
