@@ -11955,7 +11955,7 @@ function updateSanctuaireMoment() {
     el.innerHTML = '<div style="text-align:center;padding:8px;">'
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:700;color:#C8A84A;">' + _iconSpan + (hasLevel4 ? t('block_qiyam') : 'La nuit est pour le repos') + '</div>'
       + '<div style="font-family:\'Inter\',var(--sans);font-size:12px;color:rgba(255,255,255,0.6);margin-top:4px;">' + qSub + '</div>'
-      + (hasLevel4 && !tahajjudDone ? '<button onclick="event.stopPropagation();selectLevel(currentLevel);" ontouchend="event.stopPropagation();event.preventDefault();selectLevel(currentLevel);" style="display:block;width:100%;margin-top:8px;padding:0 20px;height:36px;background:transparent;border:1px solid rgba(200,168,75,0.4);border-radius:10px;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:13px;font-weight:600;cursor:pointer;">Prier</button>' : '')
+      + (hasLevel4 && !tahajjudDone ? '<button onclick="event.stopPropagation();state[\'tahajjud\']=true;saveState();showToast(\'Qiyam al-Layl tiss\u00e9 \u2713\');updateSanctuaireMoment();" ontouchend="event.stopPropagation();event.preventDefault();state[\'tahajjud\']=true;saveState();showToast(\'Qiyam al-Layl tiss\u00e9 \u2713\');updateSanctuaireMoment();" style="display:block;width:100%;margin-top:8px;padding:0 20px;height:36px;background:transparent;border:1px solid rgba(200,168,75,0.4);border-radius:10px;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:13px;font-weight:600;cursor:pointer;">Prier</button>' : '')
       + '</div>';
     return;
   }
