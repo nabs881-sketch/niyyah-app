@@ -13638,7 +13638,8 @@ const SIRA = {
     var h = '';
     h += '<div onclick="SIRA.openList()" style="position:absolute;top:16px;right:60px;font-size:24px;color:#C8A84A;cursor:pointer;">\u{1F4CB}</div>';
     h += '<div style="text-align:center;font-size:80px;color:#C8A84A;margin:40px 0 20px;">\uFDFA</div>';
-    h += '<div style="text-align:center;font-family:Cormorant Garamond,serif;font-size:32px;font-style:italic;color:#FAF7EE;margin-bottom:12px;">Avec le Messager \uFDFA</div>';
+    h += '<div style="text-align:center;font-family:Cormorant Garamond,serif;font-size:32px;font-style:italic;color:#FAF7EE;margin-bottom:0;">Avec le Messager \uFDFA</div>';
+    h += '<div style="text-align:center;font-family:Scheherazade New,Amiri,serif;font-size:28px;color:#C8A84A;direction:rtl;margin:12px 0 8px;">\u0627\u0644\u0633\u0651\u0650\u064A\u0631\u064E\u0629\u064F \u0627\u0644\u0646\u0651\u064E\u0628\u064E\u0648\u0650\u064A\u0651\u064E\u0629\u064F</div>';
     if (tissues === 0) {
       h += '<div style="text-align:center;font-style:italic;color:#999;font-size:14px;line-height:1.5;max-width:280px;margin:0 auto 32px;">Aujourd\u2019hui commence ta premi\u00e8re rencontre avec lui \uFDFA</div>';
     } else if (tissues === 1) {
