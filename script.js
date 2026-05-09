@@ -1264,7 +1264,7 @@ const LEVELS = [
         { id: 'sunnah_prieres', label: 'Prières surérogatoires', sub: 'Rawatib : 12 rakaat supplémentaires', arabic: 'السُّنَنُ الرَّوَاتِبُ', optional: true, block: 'dhuhr', hadith: '\"Celui qui prie 12 rakaat par jour, Allah lui bâtit une maison au Paradis\" — Muslim 728', source: 'Muslim 728' },
       ]},
       { icon: '📿', title: 'Dhikr du cœur', items: [
-        { id: 'istighfar', label: 'Istighfar', sub: 'Astaghfirullah · Je demande pardon à Allah — 100 fois', arabic: 'أَسْتَغْفِرُ اللَّهَ', priority: 'sunnah', type: 'counter', target: 100, block: 'asr', audio: null, /* was sc:172482888 — SoundCloud bloqué par CSP, dhikr personnel */ hadith: '\"Celui qui fait l\'Istighfar régulièrement, Allah lui ouvre une issue dans toute détresse\" — Abu Dawud 1518', source: 'Abu Dawud 1518' },
+        { id: 'istighfar', label: 'Istighfar', sub: 'Astaghfirullah · Je demande pardon à Allah — 100 fois', arabic: 'أَسْتَغْفِرُ اللَّهَ', priority: 'sunnah', type: 'counter', target: 100, block: 'jour', alwaysVisible: true, audio: null, /* was sc:172482888 — SoundCloud bloqué par CSP, dhikr personnel */ hadith: '\"Celui qui fait l\'Istighfar régulièrement, Allah lui ouvre une issue dans toute détresse\" — Abu Dawud 1518', source: 'Abu Dawud 1518' },
         { id: 'tasbih', label: 'Tasbih complet', sub: 'SubhanAllah ×33 · Alhamdulillah ×33 · Allahu Akbar ×33 · puis La ilaha illallah wahdahu…', arabic: 'سُبْحَانَ اللَّهِ · الْحَمْدُ لِلَّهِ · اللَّهُ أَكْبَرُ', priority: 'sunnah', type: 'counter', target: 99, block: ['fajr','dhuhr','asr','maghrib','isha'], audio: null, /* was sc:soundcloud — SoundCloud bloqué par CSP, dhikr personnel */ hadith: '\"Les péchés sont effacés même s\'ils sont comme l\'écume de la mer\" — Muslim 597', source: 'Muslim 597', phonetic: "La ilaha illallah wahdahu la sharika lah, lahul mulku wa lahul hamdu wa huwa ala kulli shay'in qadir", translation: 'À 99 : \"Il n\'y a de dieu qu\'Allah Seul, sans associé, à Lui la souveraineté et la louange, Il est Puissant sur toute chose\"' },
       ]},
       { icon: '🤲', title: 'Douâas intimes', items: [
@@ -13329,12 +13329,14 @@ window.closeVueRituel = closeVueRituel;
 function getRitualItems(prayer) {
   if (!Array.isArray(LEVELS)) return [];
   const items = [];
+  const alwaysItems = [];
   [0,1].forEach(i => {
     const lvl = LEVELS[i];
     if (!lvl || !lvl.sections) return;
     lvl.sections.forEach(s => {
       (s.items || []).forEach(it => {
         if (it.id === prayer) return;
+        if (it.alwaysVisible) { alwaysItems.push(it); return; }
         var _bm = Array.isArray(it.block) ? it.block.includes(prayer) : (it.block === prayer);
         if (_bm || it.block === 'jour') {
           items.push(it);
@@ -13342,6 +13344,7 @@ function getRitualItems(prayer) {
       });
     });
   });
+  items.push(...alwaysItems);
   return items;
 }
 window.getRitualItems = getRitualItems;
