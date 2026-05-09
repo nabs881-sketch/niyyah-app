@@ -13368,6 +13368,7 @@ function openVueRituel(prayer) {
     const cls = vendredi ? 'rituel-item vendredi ' : 'rituel-item ';
     const tog = (vendredi && it.id !== 'jumua') ? 'toggleFridayItem' : 'toggleItem';
     const _click = it.id === 'tasbih' ? 'openTasbihModal();'
+      : it.id === 'istighfar' ? 'openIstighfarModal();'
       : tog + '(\'' + it.id + '\',event); openVueRituel(\'' + prayer + '\');';
     return '<div class="' + cls + done + '" id="rituel-item-' + it.id + '" onclick="' + _click + '"><div class="check"></div><div style="flex:1"><div class="label">' + (it.label||it.id) + '</div>' + sub + ar + '</div>' + audio + '</div>';
   };
