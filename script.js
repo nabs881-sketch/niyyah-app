@@ -8531,7 +8531,7 @@ function renderCaverne() {
     setTimeout(function() { glow.style.opacity = '1'; }, 1250);
   }
   function acte2Pancarte() {
-    showPhrase('<div style="font-weight:700;color:#C8A84A;letter-spacing:2px;text-shadow:0 0 20px rgba(200,168,75,0.4);margin-bottom:32px;font-family:Scheherazade New,serif;">\u00ab\u00a0\u00c0 DONNER.\u00a0\u00bb</div><div style="color:#C8A84A;opacity:0.7;font-style:italic;font-family:Scheherazade New,serif;margin-bottom:32px;">li-Ll\u0101h</div><div style="font-size:36px;color:#C8A84A;opacity:0.85;font-family:Amiri,Scheherazade,serif;direction:rtl;line-height:2.2;margin-top:8px;padding:8px 0;">\u0644\u0650\u0644\u0651\u064e\u0670\u0647</div>', 2800, function() {
+    showPhrase('<div style="font-weight:700;color:#C8A84A;letter-spacing:2px;text-shadow:0 0 20px rgba(200,168,75,0.4);margin-bottom:32px;font-family:Scheherazade New,serif;">\u00ab\u00a0\u00c0 DONNER.\u00a0\u00bb</div><div style="color:#C8A84A;opacity:0.7;font-style:italic;font-family:Scheherazade New,serif;margin-bottom:32px;">li-Ll\u0101h</div><div style="font-size:36px;color:#C8A84A;opacity:0.85;font-family:Scheherazade New,serif;direction:rtl;line-height:2.2;margin-top:8px;padding:8px 0;">\u0644\u0650\u0644\u0651\u064e\u0670\u0647</div>', 2800, function() {
       acte3();
     });
   }
