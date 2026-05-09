@@ -13647,7 +13647,7 @@ const SIRA = {
     } else {
       h += '<div style="text-align:center;font-style:italic;color:#888;font-size:13px;margin-bottom:32px;">' + tissues + ' rendez-vous tiss\u00e9s</div>';
     }
-    h += '<div class="sira-ornament">\u275D \u2735 \u275E</div>';
+    h += '<div class="sira-ornament"></div>';
     h += '<div style="text-align:center;font-size:11px;letter-spacing:4px;font-weight:700;color:#C8A84A;margin-bottom:14px;">AUJOURD\u2019HUI</div>';
     h += '<div style="text-align:center;font-family:Cormorant Garamond,serif;font-size:24px;font-style:italic;color:#FAF7EE;margin-bottom:36px;">Rendez-vous ' + num + ' \u2014 ' + titre + '</div>';
     h += '<div style="text-align:center;"><button class="sira-breath" onclick="SIRA.openRdv()" style="background:#C8A84A;color:#2C2E32;padding:14px 28px;border:none;border-radius:24px;font-family:Cormorant Garamond,serif;font-style:italic;font-size:16px;cursor:pointer;">Entrer dans la rencontre</button></div>';
@@ -13676,7 +13676,7 @@ const SIRA = {
         }
       });
     }
-    h += '<div class="sira-ornament">\u275D \u2735 \u275E</div>';
+    h += '<div class="sira-ornament"></div>';
     if (rdv.meditation) h += '<div style="background:rgba(250,247,238,0.04);border-radius:12px;padding:20px 24px;margin:32px 8px;font-style:italic;text-align:center;color:#D4C9A0;font-size:17px;line-height:1.6;">' + escape(T(rdv.meditation)) + '</div>';
     if (rdv.source) h += '<div style="text-align:center;font-style:italic;color:#888;font-size:13px;margin:16px 0 32px;">\u2014 ' + escape(T(rdv.source)) + '</div>';
     var maxNum = this.getCurrentRdvNum();

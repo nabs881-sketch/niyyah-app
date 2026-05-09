@@ -7970,11 +7970,10 @@ button[style*="gold-v2"] {
   50% { transform: scale(1.03); opacity: 1; }
 }
 .sira-ornament {
-  font-size: 18px;
-  color: #C8A84A;
-  text-align: center;
-  letter-spacing: 12px;
-  margin: 32px 0;
+  width: 60px;
+  height: 1px;
+  background: #C8A84A;
+  margin: 32px auto;
   opacity: 0.85;
 }
 .sira-breath {
