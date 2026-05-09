@@ -1358,6 +1358,8 @@ let state; try { state = JSON.parse(safeGetItem('spiritual_v2')); } catch(e) { i
 let history; try { history = JSON.parse(safeGetItem('spiritual_history')); } catch(e) { if (typeof Sentry !== 'undefined') Sentry.captureException(new Error('Parse error: spiritual_history')); } history = history || {days:{},dayMedals:{},streak:0,bestStreak:0,totalDays:0,unlockedBadges:[],weekDays:0,jumuahCount:0};
 let currentLevel = 1;
 if (history.jumuahCount === undefined) history.jumuahCount = 0;
+if (typeof state['tasbih'] === 'boolean') { delete state['tasbih']; saveState(); }
+if (typeof state['istighfar'] === 'boolean') { delete state['istighfar']; saveState(); }
 if (state._date !== TODAY) {
   checkAndSaveYesterdayStreak();
   const ul = state._unlocked || [1];
@@ -13363,6 +13365,13 @@ function openVueRituel(prayer) {
   const renderItem = (it, vendredi) => {
     const done = state[it.id] ? 'done' : '';
     const ar = it.arabic ? '<div class="arabic">' + it.arabic + '</div>' : '';
+    var _dhikrCount = '';
+    if (it.id === 'tasbih' || it.id === 'istighfar') {
+      var _sk = it.id === 'tasbih' ? 'tasbih_' + todayKey() + '_' + prayer : 'istighfar_' + todayKey();
+      var _dc = 0;
+      try { var _dr = JSON.parse(localStorage.getItem(_sk) || '{}'); if (_dr.date === todayKey()) _dc = _dr.count || 0; } catch(e) {}
+      _dhikrCount = '<div style="font-size:12px;font-style:italic;color:#C8A84A;margin-top:2px;">' + (_dc >= 100 ? '100 \u2713' : _dc + ' / 100') + '</div>';
+    }
     const sub = it.sub ? '<div class="sub">' + it.sub + '</div>' : '';
     const audio = it.audio ? '<button class="btn-audio" data-audio-id="' + it.id + '" onclick="event.stopPropagation();playAudioById(this)">\u{1F50A}</button>' : '';
     const cls = vendredi ? 'rituel-item vendredi ' : 'rituel-item ';
@@ -13370,9 +13379,10 @@ function openVueRituel(prayer) {
     const _click = it.id === 'tasbih' ? 'openTasbihModal(\'' + prayer + '\');'
       : it.id === 'istighfar' ? 'openIstighfarModal();'
       : tog + '(\'' + it.id + '\',event); openVueRituel(\'' + prayer + '\');';
-    var _dhikrBtn = (it.id === 'tasbih') ? '<button style="background:none;border:none;font-size:22px;color:#C8A84A;cursor:pointer;flex-shrink:0;" onclick="event.stopPropagation();openTasbihModal(\'' + prayer + '\');">\u{1F4FF}</button>'
-      : (it.id === 'istighfar') ? '<button style="background:none;border:none;font-size:22px;color:#C8A84A;cursor:pointer;flex-shrink:0;" onclick="event.stopPropagation();openIstighfarModal();">\u{1F4FF}</button>' : '';
-    return '<div class="' + cls + done + '" id="rituel-item-' + it.id + '" onclick="' + _click + '"><div class="check"></div><div style="flex:1"><div class="label">' + (it.label||it.id) + '</div>' + sub + ar + '</div>' + audio + _dhikrBtn + '</div>';
+    var _dhikrSvg = '<svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><circle cx="11" cy="11" r="2" fill="#C8A84A" stroke="none"/><line x1="11" y1="1.5" x2="11" y2="3"/></svg>';
+    var _dhikrBtn = (it.id === 'tasbih') ? '<button style="background:none;border:none;cursor:pointer;flex-shrink:0;padding:4px;" onclick="event.stopPropagation();openTasbihModal(\'' + prayer + '\');">' + _dhikrSvg + '</button>'
+      : (it.id === 'istighfar') ? '<button style="background:none;border:none;cursor:pointer;flex-shrink:0;padding:4px;" onclick="event.stopPropagation();openIstighfarModal();">' + _dhikrSvg + '</button>' : '';
+    return '<div class="' + cls + done + '" id="rituel-item-' + it.id + '" onclick="' + _click + '"><div class="check"></div><div style="flex:1"><div class="label">' + (it.label||it.id) + '</div>' + _dhikrCount + sub + ar + '</div>' + audio + _dhikrBtn + '</div>';
   };
   let html = '';
   // Bandeau prière avec toggles
@@ -13729,7 +13739,7 @@ const SIRA = {
 window.SIRA = SIRA;
 
 /* ── DHIKR COUNTER ── */
-var _dhikrState = { count: 0, config: null, touchStartY: 0 };
+var _dhikrState = { count: 0, config: null, touchStartY: 0, prayer: null };
 function openDhikrCounter(config) {
   var ov = document.getElementById('dhikr-counter-overlay');
   if (!ov) return;
@@ -13759,6 +13769,10 @@ function openDhikrCounter(config) {
 function closeDhikrCounter() {
   var ov = document.getElementById('dhikr-counter-overlay');
   if (ov) ov.style.display = 'none';
+  var vr = document.getElementById('vue-rituel');
+  if (vr && !vr.classList.contains('hidden') && _dhikrState.prayer) {
+    openVueRituel(_dhikrState.prayer);
+  }
 }
 function _dhikrGetPhase() {
   var c = _dhikrState.config;
@@ -13813,16 +13827,20 @@ function _dhikrUpdate() {
   if (!c) return;
   var count = _dhikrState.count;
   var phase = _dhikrGetPhase();
-  var pct = Math.min(count / c.target, 1);
+  var localCount = phase ? count - phase.from : count;
+  var localTarget = phase ? phase.to - phase.from : c.target;
+  var pct = Math.min(localCount / localTarget, 1);
   var r = 130;
   var circ = 2 * Math.PI * r;
   var offset = circ * (1 - pct);
   var color = (phase && phase.color) ? phase.color : '#C8A84A';
   var done = count >= c.target;
   var prog = document.getElementById('dhikr-progress');
-  if (prog) { prog.setAttribute('stroke', color); prog.setAttribute('stroke-dashoffset', offset); }
+  var ring = prog ? prog.closest('.dhikr-ring') : null;
+  if (prog) prog.style.strokeDashoffset = offset;
+  if (ring) { ring.style.setProperty('--ring-color', color); ring.style.setProperty('--num-color', color); }
   var num = document.getElementById('dhikr-num');
-  if (num) { num.textContent = count; num.style.color = color; }
+  if (num) num.textContent = localCount;
   var arEl = document.getElementById('dhikr-arabic');
   if (arEl) arEl.textContent = (phase && phase.arabic) ? phase.arabic : '';
   var trEl = document.getElementById('dhikr-translit');
@@ -13832,11 +13850,12 @@ function _dhikrUpdate() {
   var label = document.getElementById('dhikr-phase-label');
   if (label) {
     if (done) { label.textContent = '\u2713 Alhamdulillah'; label.style.color = '#C8A84A'; }
-    else { label.textContent = (phase ? phase.fr || '' : '') + ' \u2014 ' + count + '/' + c.target; label.style.color = ''; }
+    else { label.textContent = (phase ? phase.fr || '' : '') + ' \u2014 ' + localCount + '/' + localTarget; label.style.color = ''; }
   }
 }
 function openTasbihModal(prayer) {
   var _p = prayer || (typeof getCurrentPrayerBlock === 'function' ? getCurrentPrayerBlock().id : 'unknown');
+  _dhikrState.prayer = _p;
   openDhikrCounter({
     target: 100,
     saveKey: 'tasbih_' + todayKey() + '_' + _p,
@@ -13847,13 +13866,12 @@ function openTasbihModal(prayer) {
       { from: 99, to: 100, arabic: '\u0644\u0627 \u0625\u0650\u0644\u064E\u0670\u0647\u064E \u0625\u0650\u0644\u0651\u064E\u0627 \u0671\u0644\u0644\u0651\u064E\u0647\u064F \u0648\u064E\u062D\u0652\u062F\u064E\u0647\u064F \u0644\u0627 \u0634\u064E\u0631\u0650\u064A\u0643\u064E \u0644\u064E\u0647\u064F', translit: 'L\u0101 il\u0101ha illa Ll\u0101hu wa\u1E25dahu l\u0101 shar\u012Bka lah', fr: 'Pas de divinit\u00e9 en dehors d\u2019Allah, Unique, sans associ\u00e9', color: '#F4C95D' }
     ],
     onComplete: function() {
-      state['tasbih'] = true;
-      saveState();
       showToast('\u2713 Tasbih accompli \u2014 Alhamdulillah');
     }
   });
 }
 function openIstighfarModal() {
+  _dhikrState.prayer = typeof getCurrentPrayerBlock === 'function' ? getCurrentPrayerBlock().id : null;
   openDhikrCounter({
     target: 100,
     saveKey: 'istighfar_' + todayKey(),
@@ -13861,8 +13879,6 @@ function openIstighfarModal() {
       { from: 0, to: 100, arabic: '\u0623\u064E\u0633\u0652\u062A\u064E\u063A\u0652\u0641\u0650\u0631\u064F \u0671\u0644\u0644\u0651\u064E\u0670\u0647', translit: 'Astaghfirull\u0101h', fr: 'Je demande pardon \u00e0 Allah', color: '#C8A84A' }
     ],
     onComplete: function() {
-      state['istighfar'] = true;
-      saveState();
       showToast('\u2713 Istighfar accompli \u2014 Alhamdulillah');
     }
   });

@@ -7865,10 +7865,10 @@ body.onboarding-active #nav-bar-v2 {
 }
 .dhikr-ring .progress {
   fill: none;
-  stroke: #C8A84A;
+  stroke: var(--ring-color, #C8A84A);
   stroke-width: 4;
   stroke-linecap: round;
-  transition: stroke-dashoffset 300ms ease, stroke 300ms ease;
+  transition: stroke-dashoffset 600ms ease, stroke 600ms ease;
 }
 .dhikr-count {
   position: absolute;
@@ -7877,8 +7877,9 @@ body.onboarding-active #nav-bar-v2 {
   transform: translate(-50%, -50%);
   font-family: 'Cormorant Garamond', serif;
   font-size: 80px;
-  color: #C8A84A;
+  color: var(--num-color, #C8A84A);
   line-height: 1;
+  transition: color 600ms ease;
 }
 .dhikr-btn {
   width: 80px;
