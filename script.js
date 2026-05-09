@@ -13829,7 +13829,7 @@ function _dhikrUpdate() {
   var phase = _dhikrGetPhase();
   var localCount = phase ? count - phase.from : count;
   var localTarget = phase ? phase.to - phase.from : c.target;
-  var pct = Math.min(localCount / localTarget, 1);
+  var pct = Math.min(count / c.target, 1);
   var r = 130;
   var circ = 2 * Math.PI * r;
   var offset = circ * (1 - pct);
