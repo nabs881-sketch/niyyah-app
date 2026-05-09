@@ -13669,7 +13669,10 @@ const SIRA = {
     var h = '';
     h += '<div onclick="SIRA.openDetail()" style="position:absolute;top:16px;left:16px;font-size:28px;font-weight:300;color:#C8A84A;cursor:pointer;">\u2039</div>';
     h += '<div id="sira-salawat-open" style="text-align:center;font-size:64px;color:#C8A84A;margin-bottom:12px;opacity:0;transform:translateY(20px);transition:opacity 800ms ease-out,transform 800ms ease-out;">\uFDFA</div>';
-    h += '<div style="text-align:center;font-size:12px;letter-spacing:4px;font-weight:700;text-transform:uppercase;color:#C8A84A;margin:16px 0 8px;">RENDEZ-VOUS ' + num + '</div>';
+    h += '<div style="text-align:center;font-size:12px;letter-spacing:4px;font-weight:700;text-transform:uppercase;color:#C8A84A;margin:16px 0 4px;">RENDEZ-VOUS ' + num + '</div>';
+    var _rp = (rdv.partie && this.data && this.data.meta && this.data.meta.parties && this.data.meta.parties[rdv.partie]) ? this.data.meta.parties[rdv.partie] : null;
+    var _rpt = (_rp && _rp.titre && _rp.titre.fr) ? _rp.titre.fr : '';
+    if (rdv.partie && _rpt) h += '<div style="text-align:center;font-style:italic;color:#999;font-size:12px;letter-spacing:1px;margin:4px 0 24px;">Partie ' + rdv.partie + ' \u00b7 ' + _rpt + '</div>';
     h += '<div style="text-align:center;font-family:Cormorant Garamond,serif;font-size:28px;font-style:italic;font-weight:400;color:#FAF7EE;margin:0 0 32px;">' + escape(T(rdv.titre)) + '</div>';
     if (rdv.paragraphes && Array.isArray(rdv.paragraphes)) {
       rdv.paragraphes.forEach(function(para) {
