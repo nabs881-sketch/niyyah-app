@@ -11929,7 +11929,9 @@ function updateSanctuaireMoment() {
   window._sanctuaireMomentRetryCount = 0;
   var block = getCurrentPrayerBlock();
   var blockId = block.id;
-  var _blockIcons = { nuit:'🌙', fajr:'🌅', dhuhr:'🌞', asr:'🌇', maghrib:'🌆', isha:'🌙', qiyam:'✨' };
+  var _svgNuit = '<svg width="14" height="14" viewBox="0 0 14 14" style="vertical-align:middle;"><path d="M11 7a4.5 4.5 0 1 1-4.5-4.5A3.5 3.5 0 0 0 11 7z" fill="none" stroke="#C8A84A" stroke-width="1.2"/></svg>';
+  var _svgQiyam = '<svg width="14" height="14" viewBox="0 0 14 14" style="vertical-align:middle;"><path d="M7 1.5L8.4 5.6L12.5 5.6L9.2 8.1L10.5 12.2L7 9.7L3.5 12.2L4.8 8.1L1.5 5.6L5.6 5.6Z" fill="none" stroke="#C8A84A" stroke-width="1"/></svg>';
+  var _blockIcons = { nuit:_svgNuit, fajr:'🌅', dhuhr:'🌞', asr:'🌇', maghrib:'🌆', isha:_svgNuit, qiyam:_svgQiyam };
   var _momentsImg = ['fajr','dhuhr','asr','maghrib','isha'];
   var _iconSpan;
   if (_momentsImg.indexOf(blockId) !== -1) {
@@ -11950,7 +11952,7 @@ function updateSanctuaireMoment() {
   if (blockId === 'qiyam') {
     var hasLevel4 = state._unlocked && state._unlocked.includes(4);
     var tahajjudDone = hasLevel4 && !!state['tahajjud'];
-    var qSub = hasLevel4 ? (tahajjudDone ? '✦ Qiyam al-Layl' : t('bandeau_qiyam')) : 'Dors avec le Witr';
+    var qSub = hasLevel4 ? (tahajjudDone ? 'Qiyam al-Layl' : t('bandeau_qiyam')) : 'Dors avec le Witr';
     el.innerHTML = '<div style="text-align:center;padding:8px;">'
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:700;color:#C8A84A;">' + _iconSpan + (hasLevel4 ? t('block_qiyam') : 'La nuit est pour le repos') + '</div>'
       + '<div style="font-family:\'Inter\',var(--sans);font-size:12px;color:rgba(255,255,255,0.6);margin-top:4px;">' + qSub + '</div>'
