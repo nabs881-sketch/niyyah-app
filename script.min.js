@@ -13792,7 +13792,8 @@ function _dhikrBuildDOM() {
   if (!ov) return;
   var r = 130;
   var circ = 2 * Math.PI * r;
-  ov.innerHTML = '<button class="dhikr-close" onclick="event.stopPropagation();closeDhikrCounter();">\u2715</button>'
+  ov.innerHTML = '<button style="position:absolute;top:16px;left:16px;background:none;border:none;color:#C8A84A;font-size:24px;cursor:pointer;z-index:2;" onclick="event.stopPropagation();_dhikrReset();">\u21BB</button>'
+    + '<button class="dhikr-close" onclick="event.stopPropagation();closeDhikrCounter();">\u2715</button>'
     + '<div class="dhikr-info">'
     + '<div class="arabic" id="dhikr-arabic"></div>'
     + '<div class="translit" id="dhikr-translit"></div>'
@@ -13866,6 +13867,14 @@ function openIstighfarModal() {
 }
 window.openIstighfarModal = openIstighfarModal;
 window.openTasbihModal = openTasbihModal;
+function _dhikrReset() {
+  if (!confirm('R\u00e9initialiser le compteur ?')) return;
+  var c = _dhikrState.config;
+  _dhikrState.count = 0;
+  if (c) safeSetItem(c.saveKey, JSON.stringify({ date: todayKey(), count: 0 }));
+  _dhikrUpdate();
+}
+window._dhikrReset = _dhikrReset;
 window.openDhikrCounter = openDhikrCounter;
 window.closeDhikrCounter = closeDhikrCounter;
 
