@@ -13863,7 +13863,7 @@ function openTasbihModal(prayer) {
     phases: [
       { from: 0, to: 33, arabic: '\u0633\u064F\u0628\u0652\u062D\u064E\u0627\u0646\u064E \u0671\u0644\u0644\u0651\u064E\u0670\u0647', translit: 'Sub\u1E25\u0101na Ll\u0101h', fr: 'Gloire \u00e0 Allah', color: '#6B4F1D' },
       { from: 33, to: 66, arabic: '\u0671\u0644\u0652\u062D\u064E\u0645\u0652\u062F\u064F \u0644\u0650\u0644\u0651\u064E\u0670\u0647', translit: 'Al-\u1E25amdu li-Ll\u0101h', fr: 'Louange \u00e0 Allah', color: '#C8A84A' },
-      { from: 66, to: 99, arabic: '\u0671\u0644\u0644\u0651\u064E\u0670\u0647\u064F \u0623\u064E\u0643\u0652\u0628\u064E\u0631', translit: 'All\u0101hu Akbar', fr: 'Allah est le plus Grand', color: '#F5DC7E' },
+      { from: 66, to: 99, arabic: '\u0671\u0644\u0644\u0651\u064E\u0670\u0647\u064F \u0623\u064E\u0643\u0652\u0628\u064E\u0631', translit: 'All\u0101hu Akbar', fr: 'Allah est le plus Grand', color: '#73834A' },
       { from: 99, to: 100, arabic: '\u0644\u0627 \u0625\u0650\u0644\u064E\u0670\u0647\u064E \u0625\u0650\u0644\u0651\u064E\u0627 \u0671\u0644\u0644\u0651\u064E\u0647\u064F \u0648\u064E\u062D\u0652\u062F\u064E\u0647\u064F \u0644\u0627 \u0634\u064E\u0631\u0650\u064A\u0643\u064E \u0644\u064E\u0647\u064F', translit: 'L\u0101 il\u0101ha illa Ll\u0101hu wa\u1E25dahu l\u0101 shar\u012Bka lah', fr: 'Pas de divinit\u00e9 en dehors d\u2019Allah, Unique, sans associ\u00e9', color: '#1F5F4A' }
     ],
     onComplete: function() {
