@@ -13367,7 +13367,7 @@ function openVueRituel(prayer) {
     const audio = it.audio ? '<button class="btn-audio" data-audio-id="' + it.id + '" onclick="event.stopPropagation();playAudioById(this)">\u{1F50A}</button>' : '';
     const cls = vendredi ? 'rituel-item vendredi ' : 'rituel-item ';
     const tog = (vendredi && it.id !== 'jumua') ? 'toggleFridayItem' : 'toggleItem';
-    const _click = it.id === 'tasbih' ? 'openTasbihModal();'
+    const _click = it.id === 'tasbih' ? 'openTasbihModal(\'' + prayer + '\');'
       : it.id === 'istighfar' ? 'openIstighfarModal();'
       : tog + '(\'' + it.id + '\',event); openVueRituel(\'' + prayer + '\');';
     return '<div class="' + cls + done + '" id="rituel-item-' + it.id + '" onclick="' + _click + '"><div class="check"></div><div style="flex:1"><div class="label">' + (it.label||it.id) + '</div>' + sub + ar + '</div>' + audio + '</div>';
@@ -13832,10 +13832,11 @@ function _dhikrUpdate() {
     else { label.textContent = (phase ? phase.fr || '' : '') + ' \u2014 ' + count + '/' + c.target; label.style.color = ''; }
   }
 }
-function openTasbihModal() {
+function openTasbihModal(prayer) {
+  var _p = prayer || (typeof getCurrentPrayerBlock === 'function' ? getCurrentPrayerBlock().id : 'unknown');
   openDhikrCounter({
     target: 100,
-    saveKey: 'tasbih_' + todayKey(),
+    saveKey: 'tasbih_' + todayKey() + '_' + _p,
     phases: [
       { from: 0, to: 33, arabic: '\u0633\u064F\u0628\u0652\u062D\u064E\u0627\u0646\u064E \u0671\u0644\u0644\u0651\u064E\u0670\u0647', translit: 'Sub\u1E25\u0101na Ll\u0101h', fr: 'Gloire \u00e0 Allah', color: '#C8A84A' },
       { from: 33, to: 66, arabic: '\u0671\u0644\u0652\u062D\u064E\u0645\u0652\u062F\u064F \u0644\u0650\u0644\u0651\u064E\u0670\u0647', translit: 'Al-\u1E25amdu li-Ll\u0101h', fr: 'Louange \u00e0 Allah', color: '#D4AF37' },
