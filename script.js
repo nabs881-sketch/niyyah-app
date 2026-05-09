@@ -8552,7 +8552,7 @@ function renderCaverne() {
     });
   }
   function epilogue() {
-    showPhrase('<div style="max-width:320px;margin:0 auto;text-align:center;color:rgba(200,168,75,0.65);font-family:Cormorant Garamond,serif;font-style:italic;font-size:18px;line-height:2;">Elle s\u2019ouvre quand tu dis Bismillah,<br>quand tu pardonnes,<br>quand tu te tais.</div>', 200, showButton);
+    showPhrase('<div style="max-width:320px;margin:0 auto;text-align:center;color:rgba(200,168,75,0.65);font-family:Scheherazade New,serif;font-style:italic;font-size:22px;line-height:2;">Elle s\u2019ouvre quand tu dis Bismillah,<br>quand tu pardonnes,<br>quand tu te tais.</div>', 200, showButton);
   }
   function showButton() {
     if (!btn) return;
