@@ -13791,6 +13791,10 @@ function _dhikrIncrement() {
   _dhikrState.count++;
   // Save
   safeSetItem(c.saveKey, JSON.stringify({ date: todayKey(), count: _dhikrState.count }));
+  if (typeof state !== 'undefined' && typeof saveState === 'function') {
+    state['tasbih'] = _dhikrState.count;
+    saveState();
+  }
   // Haptic
   if (navigator.vibrate) navigator.vibrate(8);
   // Phase transition sound (only if phase actually changed and multiple phases exist)
