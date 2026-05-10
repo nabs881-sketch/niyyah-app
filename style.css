@@ -4396,11 +4396,6 @@ to {
 .wird-smart-card:hover,
 .wird-smart-card:active { border-color: rgba(200,168,75,0.45); }
 .wird-smart-card.done { opacity: 0.5; }
-.rituel-content .wird-smart-card {
-  width: 100%;
-  box-sizing: border-box;
-  margin-bottom: 14px;
-}
 .wird-smart-body { flex: 1; min-width: 0; }
 .wird-smart-arabic {
   font-family: 'Scheherazade New', 'Amiri', serif;
