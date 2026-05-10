@@ -13502,6 +13502,20 @@ function getFilJourCardHTML() {
 }
 window.getFilJourCardHTML = getFilJourCardHTML;
 
+function renderWirdAuFilDuJour(item) {
+  var isMatin = item.session === 'matin';
+  var label = isMatin ? 'Wird du Matin' : 'Wird du Soir';
+  var arabic = isMatin ? '\u0648\u0650\u0631\u0652\u062F\u064F \u0627\u0644\u0635\u0651\u064E\u0628\u0627\u062D' : '\u0648\u0650\u0631\u0652\u062F\u064F \u0627\u0644\u0645\u064E\u0633\u0627\u0621';
+  return '<div class="wird-fil-card" onclick="var r=document.getElementById(\'vue-rituel\');if(r)r.classList.add(\'hidden\');v2GoTo(\'wird\');">'
+    + '<div class="wird-fil-body">'
+    + '<div class="wird-fil-arabic">' + arabic + '</div>'
+    + '<div class="wird-fil-label">' + label + '</div>'
+    + '</div>'
+    + '<div class="wird-fil-arrow">\u203A</div>'
+    + '</div>';
+}
+window.renderWirdAuFilDuJour = renderWirdAuFilDuJour;
+
 function openVueAuFilDuJour() {
   const v = document.getElementById('vue-rituel');
   if (!v) return;
@@ -13518,9 +13532,15 @@ function openVueAuFilDuJour() {
       });
     });
   }
+  if (LEVELS[0] && LEVELS[0].sections) {
+    LEVELS[0].sections.forEach(s => {
+      (s.items || []).forEach(it => { if (it.type === 'wird') items.push(it); });
+    });
+  }
   const main = v.querySelector('.rituel-content');
   const state = JSON.parse(localStorage.getItem('spiritual_v2') || '{}');
-  main.innerHTML = items.map(it => {
+  main.innerHTML = items.map(function(it) {
+    if (it.type === 'wird') return renderWirdAuFilDuJour(it);
     const done = state[it.id] ? 'done' : '';
     const ar = it.arabic ? '<div class="arabic">' + it.arabic + '</div>' : '';
     const sub = it.sub ? '<div class="sub">' + it.sub + '</div>' : '';
