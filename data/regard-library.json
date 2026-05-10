@@ -1,0 +1,456 @@
+{
+  "_meta": {
+    "feature": "Scanner Regard",
+    "version": "0.2.0-draft",
+    "categories_total": 7,
+    "versets_total": 56,
+    "statut": "Brouillon pour validation Nabs — non valide Bajrafil",
+    "verset_source": "quran.com/fr — traduction Hamidullah, validee par Nabs le 9 mai 2026",
+    "champs_par_verset": ["texte", "reference", "murmure", "epoque", "contexte", "sabab (optionnel)"],
+    "categories": ["ciel", "eau", "nature", "animal", "nourriture", "habitat", "visage"]
+  },
+  "ciel": {
+    "label": "Ciel",
+    "icon": "🌌",
+    "sous_categories": "nuages, étoiles, soleil, lune, crépuscule, aube",
+    "versets": [
+      {
+        "texte": "En vérité, dans la création des cieux et de la terre, et dans l'alternance de la nuit et du jour, il y a certes des signes pour les doués d'intelligence.",
+        "reference": "Coran, Âl ʿImrân (3:190)",
+        "murmure": "Lève les yeux. C'est écrit là-haut.",
+        "epoque": "Médine, période tardive (~3e à 9e année hégirienne).",
+        "contexte": "Verset de signes appelant les ûlû al-albâb — les doués d'intelligence — à la méditation contemplative. Il est suivi du verset 3:191 qui décrit ces croyants comme ceux « qui invoquent Allah debout, assis, couchés sur leurs côtés, et qui méditent sur la création des cieux et de la terre ».",
+        "sabab": "Rapporté par Ibn Mardawayh, Ibn Abî Hâtim et at-Tabarânî (chaîne hassan) : Aïsha rapporta que le Prophète ﷺ pleura toute la nuit en récitant ce verset, et qu'il dit : « Malheur à celui qui le lit sans y méditer. »"
+      },
+      {
+        "texte": "Et le soleil court vers un gîte qui lui est assigné ; telle est la détermination du Tout-Puissant, de l'Omniscient.",
+        "reference": "Coran, Yâ-Sîn (36:38)",
+        "murmure": "Lui non plus ne s'arrête pas. Et toi ?",
+        "epoque": "Mecque, période moyenne.",
+        "contexte": "Sourate Yâ-Sîn — appelée « le cœur du Coran » par le Prophète ﷺ. Cette section (36:37-40) décrit la course ordonnée des astres comme preuve de la détermination divine."
+      },
+      {
+        "texte": "Et la lune, Nous lui avons déterminé des phases jusqu'à ce qu'elle devienne comme la palme vieillie.",
+        "reference": "Coran, Yâ-Sîn (36:39)",
+        "murmure": "Tu as aussi tes phases. Allâh les connaît.",
+        "epoque": "Mecque, période moyenne.",
+        "contexte": "L'image de la palme desséchée et recourbée évoque la fine lune décroissante. Le verset rappelle que le déclin lui-même est inscrit dans la création — il n'est pas une perte, mais une étape voulue."
+      },
+      {
+        "texte": "Le soleil ne peut rattraper la lune, ni la nuit devancer le jour ; et chacun vogue dans une orbite.",
+        "reference": "Coran, Yâ-Sîn (36:40)",
+        "murmure": "Chaque chose à sa place. Toi aussi.",
+        "epoque": "Mecque, période moyenne.",
+        "contexte": "Continuation de la séquence cosmique de Yâ-Sîn. Les astres ne se concurrencent pas — ils suivent leur trajectoire. Le verset est souvent cité comme un appel à l'humilité : on ne possède pas la place d'un autre."
+      },
+      {
+        "texte": "Celui qui a créé sept cieux superposés sans que tu voies de disproportion en la création du Tout Miséricordieux. Ramène [sur elle] le regard. Y vois-tu une brèche quelconque ?",
+        "reference": "Coran, Al-Mulk (67:3)",
+        "murmure": "Aucune fissure. Cherche bien.",
+        "epoque": "Mecque, période moyenne.",
+        "contexte": "Sourate Al-Mulk — recommandée par le Prophète ﷺ d'être récitée chaque nuit. Le verset défie le regard humain de trouver le moindre défaut dans la création. La réponse implicite : tu ne trouveras rien."
+      },
+      {
+        "texte": "N'ont-ils donc pas observé le ciel au-dessus d'eux, comment Nous l'avons bâti et embelli ; et comment il est sans fissures ?",
+        "reference": "Coran, Qâf (50:6)",
+        "murmure": "Bâti et embelli. Pas seulement bâti.",
+        "epoque": "Mecque, période moyenne.",
+        "contexte": "La sourate Qâf insiste sur deux qualités du ciel : sa solidité (« sans fissures ») et sa beauté (« embelli »). Le Coran ne décrit jamais une création seulement utile — toujours aussi belle. La beauté est un signe au même titre que l'ordre."
+      },
+      {
+        "texte": "Et parmi Ses signes la création des cieux et de la terre et la variété de vos idiomes et de vos couleurs. Il y a en cela des preuves pour les savants.",
+        "reference": "Coran, Ar-Rûm (30:22)",
+        "murmure": "Le ciel et toi. Mêmes signes.",
+        "epoque": "Mecque, période tardive.",
+        "contexte": "Verset remarquable : il met sur le même plan la création cosmique (cieux et terre) et la diversité humaine (langues et couleurs). Pour le Coran, la pluralité humaine est un signe d'Allâh, pas un accident."
+      },
+      {
+        "texte": "C'est Lui qui a fait du soleil une clarté et de la lune une lumière, et Il en a déterminé les phases afin que vous sachiez le nombre des années et le calcul (du temps). Allah n'a créé cela qu'en toute vérité. Il expose les signes pour les gens doués de savoir.",
+        "reference": "Coran, Yûnus (10:5)",
+        "murmure": "Le temps lui-même est un signe.",
+        "epoque": "Mecque, période tardive.",
+        "contexte": "Verset fondateur du calendrier lunaire islamique. La distinction subtile entre ḍiyâʾ (clarté éclatante du soleil) et nûr (lumière douce de la lune) est notée par les commentateurs classiques comme une précision divine — la lune ne brûle pas, elle reflète."
+      }
+    ]
+  },
+  "eau": {
+    "label": "Eau",
+    "icon": "💧",
+    "sous_categories": "rivière, mer, pluie, source, verre d'eau, fontaine",
+    "versets": [
+      {
+        "texte": "Ceux qui ont mécru, n'ont-ils pas vu que les cieux et la Terre formaient une masse compacte ? Ensuite Nous les avons séparés et fait de l'eau toute chose vivante. Ne croiront-ils donc pas ?",
+        "reference": "Coran, Al-Anbiyâʾ (21:30)",
+        "murmure": "Tu vis parce qu'Il l'a voulu.",
+        "epoque": "Mecque, période moyenne.",
+        "contexte": "Verset souvent cité dans le dialogue science-religion. Il affirme deux choses : la séparation cosmologique initiale, et l'origine aqueuse de toute vie. Les commentateurs classiques (Tabarî, Ibn Kathîr) y voyaient déjà un signe accessible à toute époque."
+      },
+      {
+        "texte": "Et Nous avons fait descendre du ciel une eau bénie, avec laquelle Nous avons fait pousser des jardins et le grain qu'on moissonne.",
+        "reference": "Coran, Qâf (50:9)",
+        "murmure": "Bénie. C'est le mot.",
+        "epoque": "Mecque, période moyenne.",
+        "contexte": "Le mot mubârakan (bénie) est rare appliqué à l'eau. Il indique que la pluie n'est pas seulement utile — elle porte une grâce. Chaque goutte est chargée de cette bénédiction."
+      },
+      {
+        "texte": "Et c'est Lui qui envoya les vents comme une annonce précédant Sa miséricorde. Et Nous fîmes descendre du ciel une eau pure et purifiante.",
+        "reference": "Coran, Al-Furqân (25:48)",
+        "murmure": "Pure. Et qui purifie.",
+        "epoque": "Mecque, période moyenne.",
+        "contexte": "L'eau est ṭahûr — à la fois pure en elle-même et capable de purifier autre chose. Ce verset est l'un des fondements juridiques de la pureté rituelle (ṭahâra) en islam : c'est pourquoi l'eau est l'élément de la wuḍû et du ghusl."
+      },
+      {
+        "texte": "Et Nous avons fait descendre l'eau du ciel avec mesure. Puis Nous l'avons maintenue dans la terre, cependant que Nous sommes bien Capable de la faire disparaître.",
+        "reference": "Coran, Al-Muʾminûn (23:18)",
+        "murmure": "Avec mesure. Toujours avec mesure.",
+        "epoque": "Mecque, période tardive.",
+        "contexte": "Le verset insiste sur deux idées : la pluie tombe selon une mesure précise (ni trop, ni trop peu) et l'eau souterraine est un dépôt qu'Allâh peut retirer. C'est un appel implicite à ne jamais tenir l'eau pour acquise."
+      },
+      {
+        "texte": "Voyez-vous donc l'eau que vous buvez ? Est-ce vous qui l'avez fait descendre du nuage ? ou [en] sommes Nous le descendeur ? Si Nous voulions, Nous la rendrions salée. Pourquoi n'êtes-vous donc pas reconnaissants ?",
+        "reference": "Coran, Al-Wâqiʿa (56:68-70)",
+        "murmure": "Et si demain elle était salée ?",
+        "epoque": "Mecque, période primitive.",
+        "contexte": "Sourate Al-Wâqiʿa — sur le Jour du Jugement et les signes du quotidien qu'on néglige. Le verset interpelle directement : avant de demander à Allâh, regarde déjà ce qu'Il t'a donné sans que tu le demandes."
+      },
+      {
+        "texte": "N'as-tu pas vu qu'Allah pousse les nuages ? Ensuite, Il les réunit et Il en fait un amas, et tu vois la pluie sortir de son sein.",
+        "reference": "Coran, An-Nûr (24:43)",
+        "murmure": "Pousse. Réunit. Fait pleuvoir.",
+        "epoque": "Médine, période moyenne.",
+        "contexte": "Verset à trois verbes — chacun désigne une étape météorologique précise (déplacement, agrégation, précipitation). Description d'une exactitude saisissante pour un texte du 7e siècle, souvent commentée par les exégètes contemporains."
+      },
+      {
+        "texte": "De même tu vois la terre desséchée [mais] dès que Nous y faisons descendre de l'eau elle remue, se gonfle, et fait pousser toutes sortes de splendides couples de végétaux.",
+        "reference": "Coran, Al-Hajj (22:5)",
+        "murmure": "Desséchée hier. Vivante demain.",
+        "epoque": "Médine, période moyenne.",
+        "contexte": "Image fréquente dans le Coran : la résurrection de la terre par la pluie est une parabole de la résurrection humaine au Jour Dernier. Si Allâh peut redonner vie à la terre morte, Il peut redonner vie aux corps."
+      },
+      {
+        "texte": "Allah, c'est Lui qui a créé les cieux et la Terre et qui, du ciel, a fait descendre l'eau grâce à laquelle Il a produit des fruits pour vous nourrir. Il a soumis à votre service les vaisseaux qui, par Son ordre, voguent sur la mer. Et Il a soumis à votre service les rivières.",
+        "reference": "Coran, Ibrâhîm (14:32)",
+        "murmure": "Tout cela, soumis pour toi.",
+        "epoque": "Mecque, période tardive.",
+        "contexte": "Le verbe sakhkhara (« soumettre », « mettre au service de ») apparaît plusieurs fois dans le Coran pour décrire la relation de l'homme à la création. L'eau, la mer, les rivières — toutes sont à son service, mais en dépôt, pas en propriété."
+      }
+    ]
+  },
+  "nature": {
+    "label": "Nature",
+    "icon": "🌿",
+    "sous_categories": "arbre, fleur, feuille, plante, jardin, herbe",
+    "versets": [
+      {
+        "texte": "N'as-tu pas vu comment Allah propose en parabole une bonne parole pareille à un bel arbre dont la racine est ferme et la ramure s'élance dans le ciel ?",
+        "reference": "Coran, Ibrâhîm (14:24)",
+        "murmure": "Racine ferme. Ramure haute. C'est ça la foi.",
+        "epoque": "Mecque, période tardive.",
+        "contexte": "Image fondatrice du tawhîd : la chahâda est l'arbre, sa racine est l'attestation, sa ramure les œuvres qui montent. Ibn ʿAbbâs disait : « L'arbre, c'est le croyant. La racine, c'est la chahâda. La ramure, ce sont ses œuvres. »",
+        "sabab": "Rapporté par Bukhari : le Prophète ﷺ posa la question à ses compagnons : « Quel est cet arbre ? » Personne ne sut répondre — sauf Ibn ʿUmar, qui pensa au palmier mais n'osa parler. Le Prophète ﷺ confirma plus tard : « C'est le palmier. »"
+      },
+      {
+        "texte": "Il donne à tout instant ses fruits, par la grâce de son Seigneur. Allah propose ses paraboles à l'intention des gens afin qu'ils se rappellent.",
+        "reference": "Coran, Ibrâhîm (14:25)",
+        "murmure": "À tout instant. Pas seulement quand on regarde.",
+        "epoque": "Mecque, période tardive.",
+        "contexte": "Continuation de la parabole de l'arbre. Le bon arbre — comme le bon croyant — produit en continu, par la grâce de son Seigneur. La régularité spirituelle est un signe de fertilité intérieure."
+      },
+      {
+        "texte": "C'est Lui qui, du ciel, a fait descendre de l'eau qui vous sert de boisson et grâce à laquelle poussent des plantes dont vous nourrissez vos troupeaux.",
+        "reference": "Coran, An-Nahl (16:10)",
+        "murmure": "Eau, plante, lait. Tout est lié.",
+        "epoque": "Mecque, période tardive.",
+        "contexte": "La sourate An-Nahl (« L'Abeille ») est un long inventaire des bienfaits du quotidien. Ce verset trace une chaîne : la pluie nourrit la plante, la plante nourrit l'animal, l'animal nourrit l'homme. Une écologie spirituelle."
+      },
+      {
+        "texte": "D'elle, Il fait pousser pour vous, les cultures, les oliviers, les palmiers, les vignes et aussi toutes sortes de fruits. Voilà bien là une preuve pour des gens qui réfléchissent.",
+        "reference": "Coran, An-Nahl (16:11)",
+        "murmure": "Cinq cultures, une seule pluie.",
+        "epoque": "Mecque, période tardive.",
+        "contexte": "L'olivier, le palmier, la vigne — trois arbres centraux de la civilisation méditerranéenne et arabique, mentionnés ensemble. La diversité issue d'une même eau est présentée comme une preuve de l'unité divine derrière la pluralité."
+      },
+      {
+        "texte": "Regarde donc les effets de la miséricorde d'Allah comment Il redonne la vie à la terre après sa mort. C'est Lui qui fait revivre les morts et Il est Omnipotent.",
+        "reference": "Coran, Ar-Rûm (30:50)",
+        "murmure": "La terre meurt. Puis revit.",
+        "epoque": "Mecque, période tardive.",
+        "contexte": "Sourate Ar-Rûm — révélée à un moment de défaite militaire des Romains face aux Perses. Le verset utilise la résurrection saisonnière de la terre comme preuve concrète de la résurrection des morts. Ce que tes yeux voient en hiver-printemps annonce ce qui t'arrivera."
+      },
+      {
+        "texte": "Et une mauvaise parole est pareille à un mauvais arbre, déraciné de la surface de la terre et qui n'a point de stabilité.",
+        "reference": "Coran, Ibrâhîm (14:26)",
+        "murmure": "Sans racine, rien ne tient.",
+        "epoque": "Mecque, période tardive.",
+        "contexte": "Verset miroir de 14:24. Là où la bonne parole est un arbre solide, la mauvaise est un arbre arraché — visible peut-être un instant, puis emporté. Image classique pour la fragilité du mensonge et de l'idolâtrie."
+      },
+      {
+        "texte": "Quant à la terre, Il l'a étendue pour les êtres vivants : il s'y trouve des fruits, et aussi les palmiers aux fruits recouverts d'enveloppes, tout comme les grains dans leurs balles, et les plantes aromatiques.",
+        "reference": "Coran, Ar-Rahmân (55:10-12)",
+        "murmure": "Étendue. Pour toi. Et pour eux.",
+        "epoque": "Mecque, période primitive.",
+        "contexte": "Sourate Ar-Rahmân (« Le Tout-Miséricordieux ») — célèbre pour son refrain (« Lequel donc des bienfaits de votre Seigneur nierez-vous ? ») répété 31 fois. Ce passage liste les fruits, les céréales, les plantes — tout ce que la terre offre sans qu'on l'ait demandé."
+      },
+      {
+        "texte": "Et c'est Lui qui, du ciel, a fait descendre l'eau. Puis, par elle, Nous fîmes germer toute plante, de quoi Nous fîmes sortir une verdure, d'où Nous produisîmes des grains, superposés les uns sur les autres ; et du palmier, de sa spathe, des régimes de dattes qui se tendent. Et aussi les jardins de raisins, l'olive et la grenade, semblables ou différents les uns des autres. Regardez leurs fruits au moment de leur production et de leur mûrissement. Voilà bien là des signes pour des gens qui croient.",
+        "reference": "Coran, Al-Anʿâm (6:99)",
+        "murmure": "Regarde mûrir. C'est tout le verset.",
+        "epoque": "Mecque, période tardive.",
+        "contexte": "Verset d'une longueur inhabituelle qui décrit avec précision plusieurs étapes botaniques : descente de l'eau, germination, verdure, formation des grains, montée des fleurs en grappes, maturation. L'invitation finale (« regardez leurs fruits ») est explicitement contemplative."
+      }
+    ]
+  },
+  "animal": {
+    "label": "Vivant",
+    "icon": "🦋",
+    "sous_categories": "oiseau, insecte, mammifère, animal domestique",
+    "versets": [
+      {
+        "texte": "N'as-tu pas vu qu'Allah est glorifié par tous ceux qui sont dans les cieux et la Terre ; ainsi que par les oiseaux déployant leurs ailes ? Chacun, certes, a appris sa façon de L'adorer et de Le glorifier. Et Allah sait parfaitement ce qu'ils font.",
+        "reference": "Coran, An-Nûr (24:41)",
+        "murmure": "Cet oiseau prie. Et toi ?",
+        "epoque": "Médine, période moyenne.",
+        "contexte": "Verset central pour comprendre la conception islamique de l'adoration : toute créature glorifie Allâh à sa manière propre. L'oiseau ne pense pas à prier — il prie en volant. L'humain est la seule créature qui doit choisir d'adorer."
+      },
+      {
+        "texte": "Nulle bête ne marche sur terre, nul oiseau volant de ses ailes, qui ne soit comme vous en communauté. Nous n'avons rien omis d'écrire dans le Livre. Puis, c'est vers leur Seigneur qu'ils seront rassemblés.",
+        "reference": "Coran, Al-Anʿâm (6:38)",
+        "murmure": "Eux aussi forment une communauté.",
+        "epoque": "Mecque, période tardive.",
+        "contexte": "Le mot ummam (« communautés ») appliqué aux animaux est puissant. Ils ne sont pas une masse — chaque espèce a sa structure, sa langue, sa vie sociale. Et tous seront rassemblés vers leur Seigneur. Verset souvent cité sur le statut des animaux en islam."
+      },
+      {
+        "texte": "[Et voilà] ce que ton Seigneur révéla aux abeilles : « Prenez des demeures dans les montagnes, les arbres, et les treillages que [les hommes] font. »",
+        "reference": "Coran, An-Nahl (16:68)",
+        "murmure": "Allâh révèle aussi aux abeilles.",
+        "epoque": "Mecque, période tardive.",
+        "contexte": "Verset extraordinaire : il utilise pour l'abeille le même verbe (awḥâ — « révéler ») qui sert pour les Prophètes. L'instinct animal est ainsi présenté comme une forme de wahy non-prophétique — une guidance directe d'Allâh. La sourate elle-même tire son nom An-Nahl (« L'Abeille ») de ce passage."
+      },
+      {
+        "texte": "Puis mangez de toute espèce de fruits, et suivez les sentiers de votre Seigneur, rendus faciles pour vous. De leur ventre, sort une liqueur, aux couleurs variées, dans laquelle il y a une guérison pour les gens. Il y a vraiment là une preuve pour des gens qui réfléchissent.",
+        "reference": "Coran, An-Nahl (16:69)",
+        "murmure": "Une guérison. Du ventre d'un insecte.",
+        "epoque": "Mecque, période tardive.",
+        "contexte": "Verset sur le miel — décrit comme une guérison (shifâʾ) pour les gens. Le Prophète ﷺ en a fait un remède recommandé (rapporté par Bukhari). Le verset insiste sur le contraste : un produit thérapeutique sort du corps même de l'abeille."
+      },
+      {
+        "texte": "N'ont-ils pas vu les oiseaux assujettis [au vol] dans l'atmosphère du ciel sans que rien ne les retienne en dehors d'Allah ? Il y a vraiment là des preuves pour des gens qui croient.",
+        "reference": "Coran, An-Nahl (16:79)",
+        "murmure": "Rien ne le retient. Sauf Lui.",
+        "epoque": "Mecque, période tardive.",
+        "contexte": "Pour un homme du 7e siècle, le vol des oiseaux était mystérieux. Le verset transforme ce mystère en preuve : ce qui te semble inexplicable a une cause — Allâh. La science explique le « comment » ; le verset rappelle le « pourquoi ultime »."
+      },
+      {
+        "texte": "Ne considèrent-ils donc pas les chameaux, comment ils ont été créés.",
+        "reference": "Coran, Al-Ghâshiya (88:17)",
+        "murmure": "Le chameau. Regarde-le bien.",
+        "epoque": "Mecque, période primitive.",
+        "contexte": "Verset court et frappant. Pour l'Arabe du désert, le chameau est l'animal le plus familier — et pourtant, il est invité à le re-regarder. La beauté du verset : Allâh ne demande pas de méditer sur l'extraordinaire, mais sur le familier qu'on ne voit plus."
+      },
+      {
+        "texte": "Et Allah a créé d'eau tout animal. Il y en a qui marche sur le ventre, d'autres marchent sur deux pattes, et d'autres encore marchent sur quatre. Allah créé ce qu'Il veut car Allah est Omnipotent.",
+        "reference": "Coran, An-Nûr (24:45)",
+        "murmure": "Trois manières de marcher. Une seule origine.",
+        "epoque": "Médine, période moyenne.",
+        "contexte": "Verset cité à la fois pour la diversité des modes de locomotion (rampants, bipèdes, quadrupèdes) et pour l'origine commune aqueuse. Plusieurs commentateurs contemporains y voient un écho à la biologie évolutive — sans que ce soit une thèse classique."
+      },
+      {
+        "texte": "Vous avez certes dans les bestiaux, un sujet de méditation : Nous vous donnons à boire de ce qu'ils ont dans le ventre, et vous y trouvez également maintes utilités ; et vous vous en nourrissez.",
+        "reference": "Coran, Al-Muʾminûn (23:21)",
+        "murmure": "Méditation. Le mot est dans le verset.",
+        "epoque": "Mecque, période tardive.",
+        "contexte": "Le mot ʿibra (« méditation », « enseignement à tirer ») est explicitement employé pour les animaux d'élevage. Le verset rappelle que le quotidien le plus utilitaire (lait, laine, viande) cache un enseignement pour qui sait regarder."
+      }
+    ]
+  },
+  "nourriture": {
+    "label": "Repas",
+    "icon": "🍇",
+    "sous_categories": "fruit, plat, table, pain, dattes",
+    "versets": [
+      {
+        "texte": "Que l'homme considère donc sa nourriture. C'est Nous qui versons l'eau abondante.",
+        "reference": "Coran, ʿAbasa (80:24-25)",
+        "murmure": "Considère. Avant de manger.",
+        "epoque": "Mecque, période primitive.",
+        "contexte": "La sourate ʿAbasa s'adresse à l'humanité oublieuse de ses bienfaits. Ce verset court est un commandement direct : avant chaque repas, regarde l'assiette. Ce n'est pas un conseil diététique — c'est un appel à la lucidité."
+      },
+      {
+        "texte": "Mangez donc de ce qu'Allah vous a attribué de licite et de bon ! Et soyez reconnaissants pour les bienfaits d'Allah, si c'est Lui que vous adorez.",
+        "reference": "Coran, An-Nahl (16:114)",
+        "murmure": "Halâl, ṭayyib, shukr. Trois mots.",
+        "epoque": "Mecque, période tardive.",
+        "contexte": "Verset qui condense l'éthique alimentaire islamique : ce qu'on mange doit être halâl (licite) et ṭayyib (bon, pur, sain), suivi de shukr (gratitude). Trois conditions, pas une de moins."
+      },
+      {
+        "texte": "Ô gens ! De ce qui existe sur la terre, mangez le licite et le pur ; ne suivez point les pas du Diable car il est vraiment pour vous, un ennemi déclaré.",
+        "reference": "Coran, Al-Baqara (2:168)",
+        "murmure": "Licite et pur. Sans suivre les pas.",
+        "epoque": "Médine, période primitive.",
+        "contexte": "Verset adressé à toute l'humanité (« Ô gens ») et pas seulement aux croyants — l'éthique alimentaire est universelle. La mention du « Diable qui marche par étapes » suggère que les transgressions alimentaires se font progressivement, pas d'un coup."
+      },
+      {
+        "texte": "Une preuve pour eux est la terre morte, à laquelle Nous redonnons la vie, et d'où Nous faisons sortir des grains dont ils mangent.",
+        "reference": "Coran, Yâ-Sîn (36:33)",
+        "murmure": "Terre morte. Grains vivants.",
+        "epoque": "Mecque, période moyenne.",
+        "contexte": "Le pain quotidien commence dans une terre desséchée. Le verset transforme un fait agricole en méditation : ce que tu manges aujourd'hui sortait d'une terre morte hier. Métaphore de la résurrection."
+      },
+      {
+        "texte": "Et mangez et buvez ; et ne commettez pas d'excès, car Il [Allah] n'aime pas ceux qui commettent des excès.",
+        "reference": "Coran, Al-Aʿrâf (7:31)",
+        "murmure": "Mange. Bois. Pas plus.",
+        "epoque": "Mecque, période tardive.",
+        "contexte": "Verset fondateur de l'éthique de la modération en islam. Le Prophète ﷺ disait (rapporté par at-Tirmidhî) : « Le fils d'Adam n'a jamais rempli un récipient pire que son ventre. Quelques bouchées suffisent à tenir son dos droit. » L'islam n'interdit pas le plaisir — il interdit l'excès."
+      },
+      {
+        "texte": "Et les bestiaux, Il les a créés pour vous ; vous en retirez des [vêtements] chauds ainsi que d'autres profits. Et vous en mangez aussi.",
+        "reference": "Coran, An-Nahl (16:5)",
+        "murmure": "Tout dans la même créature.",
+        "epoque": "Mecque, période tardive.",
+        "contexte": "Verset qui souligne la complétude des bienfaits : un même animal donne chaleur (laine), service (transport), nourriture. L'économie islamique de la création n'a rien d'extractif — elle reconnaît la dignité du don."
+      },
+      {
+        "texte": "Ô les croyants ! Mangez des bonnes choses licites que Nous vous avons attribuées. Et remerciez Allah, si c'est Lui que vous adorez.",
+        "reference": "Coran, Al-Baqara (2:172)",
+        "murmure": "Mange bien. Et remercie.",
+        "epoque": "Médine, période primitive.",
+        "contexte": "Variante du 16:114, adressée cette fois aux croyants. La structure est identique : licéité + qualité + gratitude. La répétition est intentionnelle dans le Coran — ce qui est répété est ce qu'il faut intégrer."
+      },
+      {
+        "texte": "Il y a certes un enseignement pour vous dans les bestiaux : Nous vous abreuvons de ce qui est dans leurs ventres, — [un produit] extrait du chyme et du sang — un lait pur, délicieux pour les buveurs.",
+        "reference": "Coran, An-Nahl (16:66)",
+        "murmure": "Du sang sort un lait pur.",
+        "epoque": "Mecque, période tardive.",
+        "contexte": "Verset connu pour sa précision physiologique : la transformation du chyme intestinal et du sang en lait. Pour les commentateurs contemporains, c'est une description anatomique remarquable pour une époque pré-scientifique. Au-delà de la prouesse : la pureté qui sort de l'impur est un signe spirituel."
+      }
+    ]
+  },
+  "habitat": {
+    "label": "Habitat",
+    "icon": "🏠",
+    "sous_categories": "maison, mosquée, ville, abri, intérieur",
+    "versets": [
+      {
+        "texte": "Dans des maisons [des mosquées] qu'Allah a permis que L'on élève, et où Son Nom est invoqué ; Le glorifient en elles matin et après-midi, des hommes que ni le négoce, ni le troc ne distraient de l'invocation d'Allah, de l'accomplissement de la prière (As-Salât) et de l'acquittement de l'aumône (Az-Zakât), et qui redoutent un Jour où les cœurs seront bouleversés ainsi que les regards.",
+        "reference": "Coran, An-Nûr (24:36-37)",
+        "murmure": "Une maison où Son Nom vit.",
+        "epoque": "Médine, période moyenne.",
+        "contexte": "Verset central du Coran sur la mosquée. Mais le mot buyût (« maisons ») a une portée plus large : tout lieu où Son Nom est invoqué entre dans cette catégorie. Les commentateurs classiques disent : la maison du croyant peut devenir une mosquée par la qualité de ce qui s'y dit."
+      },
+      {
+        "texte": "Et Allah vous a fait de vos maisons une habitation, tout comme Il vous a procuré des maisons faites de peaux de bêtes que vous trouvez légères, le jour où vous vous déplacez et le jour où vous campez.",
+        "reference": "Coran, An-Nahl (16:80)",
+        "murmure": "Sédentaire ou nomade. Toujours abrité.",
+        "epoque": "Mecque, période tardive.",
+        "contexte": "Verset reconnaissant explicitement deux modes de vie : la maison fixe et la tente nomade. Aucune n'est supérieure — toutes deux sont un don. La sourate An-Nahl est un inventaire des bienfaits, et l'abri en est un majeur."
+      },
+      {
+        "texte": "Ne peuplent les mosquées d'Allah que ceux qui croient en Allah et au Jour Dernier, accomplissent la prière (As-Salât), acquittent l'aumône (Az-Zakât) et ne craignent qu'Allah. Il se peut que ceux-là soient du nombre des bien-guidés.",
+        "reference": "Coran, At-Tawba (9:18)",
+        "murmure": "Une mosquée se peuple. Pas se construit.",
+        "epoque": "Médine, période tardive.",
+        "contexte": "Verset distinguant la construction matérielle d'une mosquée et son habitation spirituelle. Le verbe yaʿmuru (« peupler », « animer ») implique une présence vivante, pas seulement architecturale. Une mosquée vide ne « vit » pas, même si elle est belle."
+      },
+      {
+        "texte": "Ô vous qui croyez ! N'entrez pas dans des maisons autres que les vôtres avant de demander la permission [d'une façon délicate] et de saluer leurs habitants. Cela est meilleur pour vous. Peut-être vous souviendrez-vous ?",
+        "reference": "Coran, An-Nûr (24:27)",
+        "murmure": "Frapper. Saluer. Attendre.",
+        "epoque": "Médine, période moyenne.",
+        "contexte": "Verset fondateur de l'adab (étiquette) de la visite. Le mot tasta'nisû (« demander permission délicatement ») dérive de la racine de uns (familiarité, intimité) — entrer chez l'autre n'est pas un droit, c'est un don accordé."
+      },
+      {
+        "texte": "[Et rappelle-toi], quand nous fîmes de la Maison un lieu de visite et un asile pour les gens.",
+        "reference": "Coran, Al-Baqara (2:125)",
+        "murmure": "Lieu de visite. Asile.",
+        "epoque": "Médine, période primitive.",
+        "contexte": "Verset sur la Kaʿba — décrite comme mathâbatan (« lieu où l'on revient ») et amnan (« lieu de sécurité »). Les deux mots sont importants : la Maison sacrée est à la fois magnétique (on y retourne) et apaisante (on y est en paix)."
+      },
+      {
+        "texte": "La première Maison qui a été édifiée pour les gens, c'est bien celle de Bakkah (La Mecque) bénie et une bonne direction pour l'univers.",
+        "reference": "Coran, Âl ʿImrân (3:96)",
+        "murmure": "La première. Avant toutes les autres.",
+        "epoque": "Médine, période tardive.",
+        "contexte": "La Kaʿba est présentée comme la première maison de culte de l'humanité — antérieure à toutes les civilisations. Bakkah est l'ancien nom de la Mecque. Le verset ancre l'islam dans une chaîne pré-abrahamique, voire adamique."
+      },
+      {
+        "texte": "Et de ce qu'Il a créé, Allah vous a procuré des ombrages. Et Il vous a procuré des abris dans les montagnes. Et Il vous a procuré des vêtements qui vous protègent de la chaleur, ainsi que des vêtements qui vous protègent de votre propre violence. C'est ainsi qu'Allah parachève sur vous Son bienfait, peut-être vous soumettrez-vous ?",
+        "reference": "Coran, An-Nahl (16:81)",
+        "murmure": "Ombre, abri, vêtement. Tout pour toi.",
+        "epoque": "Mecque, période tardive.",
+        "contexte": "Verset qui inventorie les protections données : ombrages naturels, abris rocheux, vêtements thermiques, armures de combat. Toute forme d'abri humain — du plus simple au plus complexe — est un don."
+      },
+      {
+        "texte": "Pour eux la Demeure du Salut auprès de leur Seigneur. Et c'est Lui qui est leur Allié pour ce qu'ils faisaient (sur Terre).",
+        "reference": "Coran, Al-Anʿâm (6:127)",
+        "murmure": "La vraie maison vient après.",
+        "epoque": "Mecque, période tardive.",
+        "contexte": "Dâr as-salâm (« Demeure de la Paix ») est l'un des noms du Paradis dans le Coran. Le verset suggère que toute maison terrestre n'est qu'une étape — la véritable demeure est ailleurs. À méditer en regardant son intérieur."
+      }
+    ]
+  },
+  "visage": {
+    "label": "Visage",
+    "icon": "👤",
+    "sous_categories": "humain, foule, miroir, enfant, vieillard",
+    "versets": [
+      {
+        "texte": "Nous avons certes créé l'homme dans la forme la plus parfaite.",
+        "reference": "Coran, At-Tîn (95:4)",
+        "murmure": "La forme la plus parfaite. Toi aussi.",
+        "epoque": "Mecque, période primitive.",
+        "contexte": "Verset court et fondateur. Aḥsan taqwîm (« la meilleure constitution ») n'est pas une beauté esthétique — c'est l'équilibre ontologique entre corps, raison, conscience, et capacité spirituelle. Tout être humain le porte, par création."
+      },
+      {
+        "texte": "Ô hommes ! Nous vous avons créés d'un mâle et d'une femelle, et Nous avons fait de vous des nations et des tribus, pour que vous vous entreconnaissiez. Le plus noble d'entre vous, auprès d'Allah, est le plus pieux. Allah est certes Omniscient et Grand-Connaisseur.",
+        "reference": "Coran, Al-Hujurât (49:13)",
+        "murmure": "Pour vous entreconnaître.",
+        "epoque": "Médine, période tardive.",
+        "contexte": "Verset fondateur de l'anti-racisme islamique. La diversité humaine n'est pas un accident à corriger ni une hiérarchie à imposer — c'est un dispositif voulu pour l'inter-connaissance (taʿâruf). La noblesse n'est pas dans l'origine mais dans la taqwâ.",
+        "sabab": "Rapporté par at-Tabarânî et Ibn al-Mundhir : révélé après la conquête de la Mecque, lorsque Bilâl al-Habashî monta sur la Kaʿba pour faire l'appel à la prière. Certains Arabes commentèrent avec mépris la couleur de sa peau. Le verset descendit en réponse."
+      },
+      {
+        "texte": "Qui t'a créé, puis modelé et constitué harmonieusement ? Il t'a façonné dans la forme qu'Il a voulue.",
+        "reference": "Coran, Al-Infitâr (82:7-8)",
+        "murmure": "Façonné. Comme Il a voulu.",
+        "epoque": "Mecque, période primitive.",
+        "contexte": "Verset à la deuxième personne du singulier : Allâh s'adresse à chaque humain individuellement. Trois verbes successifs (créer, modeler, équilibrer) décrivent une fabrication soignée. Ton visage n'est pas un hasard — il est une intention."
+      },
+      {
+        "texte": "Il y a sur terre des preuves pour ceux qui croient avec certitude ; ainsi qu'en vous-mêmes. N'observez-vous donc pas ?",
+        "reference": "Coran, Adh-Dhâriyât (51:20-21)",
+        "murmure": "Les signes sont aussi en toi.",
+        "epoque": "Mecque, période primitive.",
+        "contexte": "Verset majeur de la spiritualité contemplative islamique : on ne cherche pas Allâh seulement dans le ciel — on Le cherche aussi en soi. Wa fî anfusikum (« et en vous-mêmes ») a inspiré toute la tradition soufie de la connaissance de soi (maʿrifat an-nafs)."
+      },
+      {
+        "texte": "Et parmi Ses signes Il a créé de vous, pour vous, des épouses pour que vous viviez en tranquillité avec elles et Il a mis entre vous de l'affection et de la bonté. Il y a en cela des preuves pour des gens qui réfléchissent.",
+        "reference": "Coran, Ar-Rûm (30:21)",
+        "murmure": "Mawadda. Rahma. Trois mots, un foyer.",
+        "epoque": "Mecque, période tardive.",
+        "contexte": "Verset central sur le mariage. Trois mots-clés : sakîna (tranquillité), mawadda (affection), rahma (miséricorde). Pas de désir mentionné — l'islam place la paix avant la passion. Le visage de l'autre est un signe pour qui sait regarder."
+      },
+      {
+        "texte": "Que l'homme considère donc de quoi il a été créé. Il a été créé d'une giclée d'eau.",
+        "reference": "Coran, At-Târiq (86:5-6)",
+        "murmure": "D'une goutte. Et il oublie.",
+        "epoque": "Mecque, période primitive.",
+        "contexte": "Verset d'humilité radicale. Devant le miroir, l'homme se voit grand — le verset le ramène à sa source : une giclée. Toute la beauté qu'il croit posséder lui a été donnée à partir de presque rien."
+      },
+      {
+        "texte": "Certes, Nous avons honoré les fils d'Adam. Nous les avons transportés sur terre et sur mer, leur avons attribué de bonnes choses comme nourriture, et Nous les avons nettement préférés à plusieurs de Nos créatures.",
+        "reference": "Coran, Al-Isrâʾ (17:70)",
+        "murmure": "Honoré. C'est le mot fondateur.",
+        "epoque": "Mecque, période tardive.",
+        "contexte": "Karramnâ (« Nous avons honoré ») est l'un des verbes les plus chargés du Coran appliqué à l'humanité. La dignité humaine est ici théologique, pas juridique : elle vient d'Allâh avant toute loi. Mépriser un visage, c'est mépriser ce qu'Allâh a honoré."
+      },
+      {
+        "texte": "Nous avons effectivement créé l'homme et Nous savons ce que son âme lui suggère et Nous sommes plus près de lui que sa veine jugulaire.",
+        "reference": "Coran, Qâf (50:16)",
+        "murmure": "Plus près que ta jugulaire.",
+        "epoque": "Mecque, période moyenne.",
+        "contexte": "L'un des versets les plus vertigineux du Coran sur la proximité divine. La veine jugulaire est l'image de la proximité physique extrême — Allâh est plus proche encore. Cité par les soufis comme un fondement de la conscience permanente d'Allâh (murâqaba)."
+      }
+    ]
+  }
+}

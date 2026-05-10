@@ -12188,6 +12188,11 @@ function v2Init() {
     langPill0.style.fontFamily = V2_LANG === 'ar' ? "'Amiri', serif" : "'Cormorant Garamond', serif";
     langPill0.style.fontSize = V2_LANG === 'ar' ? '13px' : '10px';
   }
+  // Charger la bibliothèque de versets Regarde
+  fetch('./data/regard-library.json')
+    .then(r => r.json())
+    .then(d => { window.REGARD_VERSETS = d; })
+    .catch(e => { window.REGARD_VERSETS = null; });
   if (_onboardDone) {
     v2GoSanctuaire();
     checkRegardeAlert();
@@ -12402,6 +12407,32 @@ function _regardeShowQuestion(content, question) {
   content.style.opacity = '1';
 }
 
+function _regardeShowVerset(content, v) {
+  var _esc = function(s) { return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); };
+  var _sabab = v.sabab ? '<div style="margin-top:12px;font-size:13px;color:rgba(250,247,238,0.5);line-height:1.5;"><span style="color:#C8A84A;font-weight:600;">Sabab :</span> ' + _esc(v.sabab) + '</div>' : '';
+  content.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100%;padding:0 8%;">'
+    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:22px;font-style:italic;color:#FAF7EE;line-height:1.7;max-width:85%;opacity:0;animation:regardeFadeIn 1.5s ease forwards;">' + _esc(v.texte) + '</div>'
+    + '<div style="margin-top:16px;font-size:13px;letter-spacing:2px;font-weight:700;text-transform:uppercase;color:#C8A84A;opacity:0;animation:regardeFadeIn 1.5s ease 0.3s forwards;">' + _esc(v.reference) + '</div>'
+    + '<div style="width:60px;height:1px;background:#C8A84A;margin:24px auto;opacity:0.6;"></div>'
+    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#C8A84A;line-height:1.6;max-width:80%;opacity:0;animation:regardeFadeIn 1.5s ease 0.6s forwards;">' + _esc(v.murmure) + '</div>'
+    + '<div style="margin-top:24px;opacity:0;animation:regardeFadeIn 1.5s ease 0.9s forwards;"><button onclick="var b=document.getElementById(\'regarde-ctx\');if(b){b.style.display=b.style.display===\'none\'?\'block\':\'none\';}" style="background:none;border:none;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;cursor:pointer;text-decoration:underline;text-underline-offset:3px;">Contexte</button></div>'
+    + '<div id="regarde-ctx" style="display:none;margin-top:16px;max-width:85%;text-align:center;opacity:0.8;">'
+    + '<div style="font-size:13px;color:rgba(250,247,238,0.6);line-height:1.5;"><span style="color:#C8A84A;font-weight:600;">Epoque :</span> ' + _esc(v.epoque) + '</div>'
+    + '<div style="margin-top:8px;font-size:13px;color:rgba(250,247,238,0.5);line-height:1.5;">' + _esc(v.contexte) + '</div>'
+    + _sabab
+    + '</div>'
+    + '<div style="display:flex;gap:20px;margin-top:32px;opacity:0;animation:regardeFadeIn 1.5s ease 0.5s forwards;">'
+    + '<button id="regarde-btn-star" onclick="regardeToggleStar()" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">☆</button>'
+    + '<button onclick="regardeRefresh()" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">↻</button>'
+    + '<button onclick="regardeToggleNote()" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">✎</button>'
+    + '</div>'
+    + '<div id="regarde-note-wrap" style="display:none;width:100%;max-width:80%;margin-top:20px;opacity:0;transition:opacity 0.3s ease;">'
+    + '<textarea id="regarde-note-input" placeholder="' + t('regarde_note_placeholder') + '" oninput="regardeSaveNote()" style="width:100%;min-height:60px;background:rgba(200,168,75,0.04);border:1px solid rgba(212,175,55,0.25);border-radius:12px;padding:12px;color:#D4AF37;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;resize:none;outline:none;box-sizing:border-box;"></textarea>'
+    + '</div>'
+    + '</div>';
+  content.style.opacity = '1';
+}
+
 function regardeCapture() {
   // Quota Regarde : 5/jour
   try {
@@ -12477,7 +12508,25 @@ function regardeCapture() {
     })
     .then(function(data) {
       if (!data) return;
-      if (data.source === 'ia' && data.question) {
+      if (data.mode === 'verset' && data.category && typeof data.verset_index === 'number'
+        && window.REGARD_VERSETS && window.REGARD_VERSETS[data.category]
+        && window.REGARD_VERSETS[data.category].versets
+        && window.REGARD_VERSETS[data.category].versets[data.verset_index]) {
+        if (_done) return; _done = true;
+        clearTimeout(_toR);
+        var _v = window.REGARD_VERSETS[data.category].versets[data.verset_index];
+        _regardeShowVerset(content, _v);
+        _currentRegardeCat = data.category;
+        _regardeStarred = false;
+        var _jLabel = _v.murmure || _v.texte.substring(0, 80);
+        compressPhoto(dataUrl).then(function(photo) {
+          var entry = addRegardeEntry({ question: _jLabel, category: _currentRegardeCat, photo: photo, bookmark: false, note: '' });
+          _currentRegardeId = entry.id;
+        }).catch(function() {
+          var entry = addRegardeEntry({ question: _jLabel, category: _currentRegardeCat, photo: null, bookmark: false, note: '' });
+          _currentRegardeId = entry.id;
+        });
+      } else if ((data.mode === 'question' || data.source === 'ia') && data.question) {
         saveAndShow(data.question, data.category);
       } else {
         fallback(data.category || 'INDETERMINE');
