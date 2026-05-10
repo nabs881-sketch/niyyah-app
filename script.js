@@ -2476,9 +2476,8 @@ function togglePrayerOnTime(id) {
 }
 var _wirdReturnTo = 'checklist';
 function renderWirdSmartCard(item, delay, origin) {
-  const session = WIRD_DATA && WIRD_DATA[item.session];
-  if (!session || !session.items) return '';
-  const done  = session.items.filter(i => wirdState && wirdState[i.id]).length;
+  const session = WIRD_DATA[item.session];
+  const done  = session.items.filter(i => wirdState[i.id]).length;
   const total = session.items.length;
   const allDone = done === total;
   const pct = Math.round(done / total * 100);
