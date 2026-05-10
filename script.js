@@ -13530,11 +13530,6 @@ function openVueAuFilDuJour() {
       });
     });
   }
-  if (LEVELS[0] && LEVELS[0].sections) {
-    LEVELS[0].sections.forEach(s => {
-      (s.items || []).forEach(it => { if (it.type === 'wird') items.push(it); });
-    });
-  }
   const main = v.querySelector('.rituel-content');
   const state = JSON.parse(localStorage.getItem('spiritual_v2') || '{}');
   main.innerHTML = items.map(function(it, idx) {
