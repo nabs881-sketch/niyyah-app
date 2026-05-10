@@ -10863,6 +10863,7 @@ function v2OpenNiyyahModal() {
   }
 
   const opts = document.getElementById('v2-intention-opts');
+  if (!opts) return;
   opts.innerHTML = '';
   T.intentions.forEach((opt) => {
     const btn = document.createElement('button');
