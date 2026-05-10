@@ -2474,8 +2474,7 @@ function togglePrayerOnTime(id) {
   saveState();
   renderLevel(currentLevel);
 }
-var _wirdReturnTo = 'checklist';
-function renderWirdSmartCard(item, delay, origin) {
+function renderWirdSmartCard(item, delay) {
   const session = WIRD_DATA[item.session];
   const done  = session.items.filter(i => wirdState[i.id]).length;
   const total = session.items.length;
@@ -2484,8 +2483,7 @@ function renderWirdSmartCard(item, delay, origin) {
   const isMatin = item.session === 'matin';
   const arabicLabel = isMatin ? 'وِرْدُ الصَّبَاح' : 'وِرْدُ الْمَسَاء';
   const frLabel = isMatin ? t('wird_matin') : t('wird_soir');
-  var _origin = origin || 'checklist';
-  return '<div class="wird-smart-card' + (allDone ? ' done' : '') + '" id="item-' + item.id + '" style="animation-delay:' + delay + 'ms" onclick="_wirdReturnTo=\'' + _origin + '\';v2GoTo(\'wird\');setTimeout(function(){if(typeof renderWird===\'function\')renderWird();},60)">'
+  return '<div class="wird-smart-card' + (allDone ? ' done' : '') + '" id="item-' + item.id + '" style="animation-delay:' + delay + 'ms" onclick="v2GoTo(\'wird\');setTimeout(function(){if(typeof renderWird===\'function\')renderWird();},60)">'
     + '<div class="wird-smart-body">'
     + '<div class="wird-smart-arabic">' + arabicLabel + '</div>'
     + '<div class="wird-smart-label">' + frLabel + '</div>'
@@ -3603,21 +3601,11 @@ function toggleWirdItem(id, event) {
     setTimeout(() => renderLevel(currentLevel), 60);
   }
 }
-function wirdGoBack() {
-  if (_wirdReturnTo === 'fil-du-jour') {
-    v2GoTo('checklist');
-    setTimeout(openVueAuFilDuJour, 80);
-  } else {
-    v2GoTo('checklist');
-  }
-}
-window.wirdGoBack = wirdGoBack;
 function renderWird() {
   const content = document.getElementById('wirdContent');
   if (!content) return;
   var _wirdArabicSession = {matin:'أَوْرَاد الصَّبَاح',soir:'أَوْرَاد الْمَسَاء'};
-  let html = '<button class="wird-back-btn" onclick="wirdGoBack()" aria-label="Retour">‹</button>';
-  html += '<div class="section-header"><div class="section-arabic">\u0623\u064E\u0648\u0652\u0631\u0627\u062F</div><div class="section-name">' + t('wird_daily') + '</div><div class="section-line"></div></div>';
+  let html = '<div class="section-header"><div class="section-arabic">\u0623\u064E\u0648\u0652\u0631\u0627\u062F</div><div class="section-name">' + t('wird_daily') + '</div><div class="section-line"></div></div>';
   ['matin', 'soir'].forEach(session => {
     const s = WIRD_DATA[session];
     const done = s.items.filter(i => wirdState[i.id]).length;
@@ -13532,10 +13520,7 @@ function openVueAuFilDuJour() {
   }
   const main = v.querySelector('.rituel-content');
   const state = JSON.parse(localStorage.getItem('spiritual_v2') || '{}');
-  main.innerHTML = items.map(function(it, idx) {
-    if (it.type === 'wird') {
-      return renderWirdSmartCard(it, idx * 40, 'fil-du-jour');
-    }
+  main.innerHTML = items.map(it => {
     const done = state[it.id] ? 'done' : '';
     const ar = it.arabic ? '<div class="arabic">' + it.arabic + '</div>' : '';
     const sub = it.sub ? '<div class="sub">' + it.sub + '</div>' : '';

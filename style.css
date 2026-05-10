@@ -4441,30 +4441,6 @@ to {
   border-radius: 1px;
   transition: width 0.5s ease;
 }
-.wird-back-btn {
-  position: sticky;
-  top: 8px;
-  left: 0;
-  z-index: 50;
-  width: 36px;
-  height: 36px;
-  border: 1px solid rgba(200,168,75,0.25);
-  border-radius: 50%;
-  background: rgba(20,18,14,0.85);
-  backdrop-filter: blur(8px);
-  color: #C8A84A;
-  font-size: 22px;
-  line-height: 34px;
-  text-align: center;
-  cursor: pointer;
-  transition: border-color 0.2s, background 0.2s;
-  margin-bottom: 8px;
-}
-.wird-back-btn:hover,
-.wird-back-btn:active {
-  border-color: rgba(200,168,75,0.5);
-  background: rgba(40,36,28,0.9);
-}
 
 .wird-session {
   background: transparent;
@@ -5129,7 +5105,6 @@ to {
 [data-theme="light"] .streak-unit, [data-theme="light"] .streak-footer { color: #7A6040 !important; }
 
 /* ── WIRD ── */
-[data-theme="light"] .wird-back-btn { background: rgba(251,245,229,0.9); border-color: rgba(180,150,80,0.3); color: #9A7B2F; }
 [data-theme="light"] .wird-session { background: #FBF5E5 !important; border: 1px solid rgba(200,160,80,0.16) !important; box-shadow: 0 2px 10px rgba(80,50,20,0.08), inset 0 1px 0 rgba(255,255,255,0.60) !important; backdrop-filter: none !important; }
 [data-theme="light"] .wird-label { color: #2A1F0E !important; }
 [data-theme="light"] .wird-sub { color: #7A6040 !important; }
