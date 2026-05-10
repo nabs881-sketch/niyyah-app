@@ -1,0 +1,906 @@
+{
+  "source": "WAQT_CATALOG",
+  "total": 100,
+  "items": [
+    {
+      "id": 1,
+      "categorie": "matin",
+      "titre": "Avant ton premier acte aujourd’hui, pose une intention secrè...",
+      "description": "Avant ton premier acte aujourd’hui, pose une intention secrète. Une seule. Pour qui ?",
+      "duree": "1 min",
+      "arabe": "قَبْلَ أَوَّلِ فِعْلٍ اليَوْم، ضَعْ نِيَّةً سِرِّيَّة. واحِدَة. لِمَن؟",
+      "reference": ""
+    },
+    {
+      "id": 2,
+      "categorie": "matin",
+      "titre": "Pose la main sur ton cœur. Trois battements de silence. Au q...",
+      "description": "Pose la main sur ton cœur. Trois battements de silence. Au quatrième : SubhanAllah.",
+      "duree": "1 min",
+      "arabe": "ضَعْ يَدَكَ عَلَى قَلْبِك. ثَلاثُ نَبَضاتٍ صامِتَة. عِنْدَ الرّابِعَة: سُبْحانَ اللَّه.",
+      "reference": ""
+    },
+    {
+      "id": 3,
+      "categorie": "matin",
+      "titre": "Ferme les yeux dix secondes. Pas pour dormir. Pour arriver.",
+      "description": "Ferme les yeux dix secondes. Pas pour dormir. Pour arriver.",
+      "duree": "1 min",
+      "arabe": "أَغْلِقْ عَيْنَيْك عَشْرَ ثَوان. لَيْسَ لِلنَّوْم. لِتَصِلَ.",
+      "reference": ""
+    },
+    {
+      "id": 4,
+      "categorie": "matin",
+      "titre": "Regarde tes mains. Elles ont travaillé, serré, donné. Dis-le...",
+      "description": "Regarde tes mains. Elles ont travaillé, serré, donné. Dis-leur merci en silence.",
+      "duree": "1 min",
+      "arabe": "انْظُرْ إِلَى يَدَيْك. عَمِلَتا، ضَمَّتا، أَعْطَتا. اشْكُرْهُما بِصَمْت.",
+      "reference": ""
+    },
+    {
+      "id": 5,
+      "categorie": "matin",
+      "titre": "Choisis une personne que tu croises aujourd’hui. Fais un dua...",
+      "description": "Choisis une personne que tu croises aujourd’hui. Fais un dua pour elle sans qu’elle le sache.",
+      "duree": "1 min",
+      "arabe": "اخْتَرْ شَخْصًا سَتَلْقاهُ اليَوْم. ادْعُ لَهُ دُونَ عِلْمِه.",
+      "reference": ""
+    },
+    {
+      "id": 6,
+      "categorie": "matin",
+      "titre": "Il y a un poids dans ton cœur depuis hier. Nomme-le. Puis lâ...",
+      "description": "Il y a un poids dans ton cœur depuis hier. Nomme-le. Puis lâche-le — pour Allah.",
+      "duree": "1 min",
+      "arabe": "هُناكَ ثِقَلٌ فِي قَلْبِك مُنْذُ الأَمْس. سَمِّه. ثُمَّ أَطْلِقْه — لِلَّه.",
+      "reference": ""
+    },
+    {
+      "id": 7,
+      "categorie": "matin",
+      "titre": "Ne parle pas pendant 60 secondes. Pas par contrainte. Par ch...",
+      "description": "Ne parle pas pendant 60 secondes. Pas par contrainte. Par choix. C’est du sabr.",
+      "duree": "1 min",
+      "arabe": "لا تَتَكَلَّمْ لِسِتِّينَ ثانِيَة. لَيْسَ إِجْبارًا. اخْتِيارًا. هذا صَبْر.",
+      "reference": ""
+    },
+    {
+      "id": 8,
+      "categorie": "matin",
+      "titre": "Ton premier café ce matin — bois-le en pensant à celui qui n...",
+      "description": "Ton premier café ce matin — bois-le en pensant à celui qui n’a que de l’eau.",
+      "duree": "1 min",
+      "arabe": "قَهْوَتُكَ الأُولَى — اشْرَبْها مُتَفَكِّرًا فِيمَنْ لا يَمْلِكُ إِلّا الماء.",
+      "reference": ""
+    },
+    {
+      "id": 9,
+      "categorie": "matin",
+      "titre": "Quel est le premier visage que tu verras aujourd’hui ? Souri...",
+      "description": "Quel est le premier visage que tu verras aujourd’hui ? Souris-lui avant même de parler.",
+      "duree": "1 min",
+      "arabe": "مَنْ أَوَّلُ وَجْهٍ سَتَراهُ اليَوْم؟ ابْتَسِمْ لَهُ قَبْلَ أَنْ تَتَكَلَّم.",
+      "reference": ""
+    },
+    {
+      "id": 10,
+      "categorie": "matin",
+      "titre": "Ar-Razzaq. Celui qui pourvoit. Même à ce que tu n’as pas dem...",
+      "description": "Ar-Razzaq. Celui qui pourvoit. Même à ce que tu n’as pas demandé. Répète Son Nom trois fois.",
+      "duree": "1 min",
+      "arabe": "الرَّزّاق. الَّذِي يَرْزُقُ حَتَّى ما لَمْ تَطْلُب. رَدِّدْ اسْمَهُ ثَلاثًا.",
+      "reference": ""
+    },
+    {
+      "id": 11,
+      "categorie": "matin",
+      "titre": "Pose tes pieds au sol. Sens la terre. Elle te porte sans rie...",
+      "description": "Pose tes pieds au sol. Sens la terre. Elle te porte sans rien demander.",
+      "duree": "1 min",
+      "arabe": "ضَعْ قَدَمَيْكَ عَلَى الأَرْض. اشْعُرْ بِها. تَحْمِلُكَ دُونَ أَنْ تَطْلُبَ شَيْئًا.",
+      "reference": ""
+    },
+    {
+      "id": 12,
+      "categorie": "matin",
+      "titre": "Écoute le premier son autour de toi. Le monde tourne déjà — ...",
+      "description": "Écoute le premier son autour de toi. Le monde tourne déjà — sans ton effort.",
+      "duree": "1 min",
+      "arabe": "اسْتَمِعْ لِأَوَّلِ صَوْتٍ حَوْلَك. العالَمُ يَدُورُ بِالفِعْل — دُونَ جُهْدِك.",
+      "reference": ""
+    },
+    {
+      "id": 13,
+      "categorie": "matin",
+      "titre": "Ne planifie rien pendant 30 secondes. Laisse le qadr respire...",
+      "description": "Ne planifie rien pendant 30 secondes. Laisse le qadr respirer avant toi.",
+      "duree": "1 min",
+      "arabe": "لا تُخَطِّطْ لِشَيْءٍ ٣٠ ثانِيَة. دَعِ القَدَرَ يَتَنَفَّسْ قَبْلَك.",
+      "reference": ""
+    },
+    {
+      "id": 14,
+      "categorie": "matin",
+      "titre": "Le miroir ce matin — regarde-toi comme Allah te regarde : av...",
+      "description": "Le miroir ce matin — regarde-toi comme Allah te regarde : avec miséricorde.",
+      "duree": "1 min",
+      "arabe": "المِرْآةُ هذا الصَّباح — انْظُرْ لِنَفْسِكَ كَما يَنْظُرُ اللَّهُ إِلَيْك: بِرَحْمَة.",
+      "reference": ""
+    },
+    {
+      "id": 15,
+      "categorie": "matin",
+      "titre": "Ton premier mot aujourd’hui — fais-en un salam. Même à toi-m...",
+      "description": "Ton premier mot aujourd’hui — fais-en un salam. Même à toi-même.",
+      "duree": "1 min",
+      "arabe": "أَوَّلُ كَلِمَةٍ اليَوْم — اجْعَلْها سَلامًا. حَتَّى لِنَفْسِك.",
+      "reference": ""
+    },
+    {
+      "id": 16,
+      "categorie": "matin",
+      "titre": "Tu t’es réveillé. Un milliard de cellules ont travaillé pour...",
+      "description": "Tu t’es réveillé. Un milliard de cellules ont travaillé pour toi cette nuit. Dis Alhamdulillah.",
+      "duree": "1 min",
+      "arabe": "اسْتَيْقَظْت. مِليارُ خَلِيَّةٍ عَمِلَتْ لَكَ اللَّيْلَة. قُلِ الحَمْدُ لِلَّه.",
+      "reference": ""
+    },
+    {
+      "id": 17,
+      "categorie": "matin",
+      "titre": "L’eau du wudu sur ton visage — sens sa fraîcheur. Quelqu’un ...",
+      "description": "L’eau du wudu sur ton visage — sens sa fraîcheur. Quelqu’un marche des kilomètres pour la trouver.",
+      "duree": "1 min",
+      "arabe": "ماءُ الوُضُوء عَلَى وَجْهِك — اشْعُرْ بِبَرْدِه. غَيْرُكَ يَمْشِي كِيلومِتْراتٍ لِيَجِدَه.",
+      "reference": ""
+    },
+    {
+      "id": 18,
+      "categorie": "matin",
+      "titre": "Pardonne-toi une erreur d’hier. Tu n’es plus cette personne ...",
+      "description": "Pardonne-toi une erreur d’hier. Tu n’es plus cette personne ce matin.",
+      "duree": "1 min",
+      "arabe": "سامِحْ نَفْسَكَ عَلَى خَطَأِ الأَمْس. لَسْتَ ذلِكَ الشَّخْصَ هذا الصَّباح.",
+      "reference": ""
+    },
+    {
+      "id": 19,
+      "categorie": "matin",
+      "titre": "Quelqu’un t’a blessé sans le savoir. Libère-le dans ton cœur...",
+      "description": "Quelqu’un t’a blessé sans le savoir. Libère-le dans ton cœur — Al-‘Afuww efface aussi.",
+      "duree": "1 min",
+      "arabe": "آذاكَ أَحَدٌ دُونَ عِلْمِه. أَطْلِقْهُ فِي قَلْبِك — العَفُوُّ يَمْحُو أَيْضًا.",
+      "reference": ""
+    },
+    {
+      "id": 20,
+      "categorie": "matin",
+      "titre": "Tu n’as rien accompli encore — et pourtant Allah t’a déjà no...",
+      "description": "Tu n’as rien accompli encore — et pourtant Allah t’a déjà nourri, abrité, réveillé. Le rizq précède l’effort.",
+      "duree": "1 min",
+      "arabe": "لَمْ تُنْجِزْ شَيْئًا بَعْد — ومَعَ ذلِكَ أَطْعَمَكَ اللَّه وآواكَ وأَيْقَظَك. الرِّزْقُ يَسْبِقُ الجُهْد.",
+      "reference": ""
+    },
+    {
+      "id": 21,
+      "categorie": "midi",
+      "titre": "Arrête-toi. Juste arrête-toi. 10 secondes sans rien faire. C...",
+      "description": "Arrête-toi. Juste arrête-toi. 10 secondes sans rien faire. C’est déjà une ibadah.",
+      "duree": "1 min",
+      "arabe": "تَوَقَّف. فَقَط تَوَقَّف. ١٠ ثَوانٍ بِلا شَيْء. هذِهِ عِبادَة.",
+      "reference": ""
+    },
+    {
+      "id": 22,
+      "categorie": "midi",
+      "titre": "Ta première bouchée — ferme les yeux en mâchant. Goûte ce qu...",
+      "description": "Ta première bouchée — ferme les yeux en mâchant. Goûte ce qu’Allah t’a donné.",
+      "duree": "1 min",
+      "arabe": "أَوَّلُ لُقْمَة — أَغْلِقْ عَيْنَيْك وأَنْتَ تَمْضَغ. تَذَوَّقْ ما أَعْطاكَ اللَّه.",
+      "reference": ""
+    },
+    {
+      "id": 23,
+      "categorie": "midi",
+      "titre": "Il y a quelqu’un autour de toi qui porte un poids invisible....",
+      "description": "Il y a quelqu’un autour de toi qui porte un poids invisible. Prie pour lui. Maintenant.",
+      "duree": "1 min",
+      "arabe": "هُناكَ شَخْصٌ قَرِيبٌ يَحْمِلُ ثِقَلًا خَفِيًّا. ادْعُ لَه. الآن.",
+      "reference": ""
+    },
+    {
+      "id": 24,
+      "categorie": "midi",
+      "titre": "Ce repas — combien de mains l’ont préparé avant qu’il n’arri...",
+      "description": "Ce repas — combien de mains l’ont préparé avant qu’il n’arrive à toi ? Pense à elles.",
+      "duree": "1 min",
+      "arabe": "هذا الطَّعام — كَمْ يَدًا أَعَدَّتْهُ قَبْلَ أَنْ يَصِلَ إِلَيْك؟ فَكِّرْ فِيهِم.",
+      "reference": ""
+    },
+    {
+      "id": 25,
+      "categorie": "midi",
+      "titre": "Regarde l’écran que tu fixais. Puis regarde au-delà. Qu’y a-...",
+      "description": "Regarde l’écran que tu fixais. Puis regarde au-delà. Qu’y a-t-il de vrai, là-bas ?",
+      "duree": "1 min",
+      "arabe": "انْظُرْ إِلَى الشّاشَة الَّتِي كُنْتَ تُحَدِّقُها. ثُمَّ انْظُرْ أَبْعَد. ما الحَقِيقِيُّ هُناك؟",
+      "reference": ""
+    },
+    {
+      "id": 26,
+      "categorie": "midi",
+      "titre": "Quelqu’un t’a agacé ce matin. Lâche cette colère — pas pour ...",
+      "description": "Quelqu’un t’a agacé ce matin. Lâche cette colère — pas pour lui. Pour toi.",
+      "duree": "1 min",
+      "arabe": "أَغْضَبَكَ أَحَدٌ هذا الصَّباح. أَطْلِقْ ذلِكَ الغَضَب — لَيْسَ لَه. لَك.",
+      "reference": ""
+    },
+    {
+      "id": 27,
+      "categorie": "midi",
+      "titre": "Pose ta fourchette entre deux bouchées. Respire. C’est la su...",
+      "description": "Pose ta fourchette entre deux bouchées. Respire. C’est la sunnah de manger doucement.",
+      "duree": "1 min",
+      "arabe": "ضَعْ شَوْكَتَك بَيْنَ اللُّقَم. تَنَفَّس. سُنَّةُ الأَكْلِ بِتَأَنٍّ.",
+      "reference": ""
+    },
+    {
+      "id": 28,
+      "categorie": "midi",
+      "titre": "Dis dans ton cœur : « Ya Sabur, accorde-moi Ta patience pour...",
+      "description": "Dis dans ton cœur : « Ya Sabur, accorde-moi Ta patience pour cet après-midi. »",
+      "duree": "1 min",
+      "arabe": "قُلْ فِي قَلْبِك: «يا صَبُور، امْنَحْنِي صَبْرَكَ لِهذا المَساء.»",
+      "reference": ""
+    },
+    {
+      "id": 29,
+      "categorie": "midi",
+      "titre": "Envoie un message à quelqu’un que tu négliges. Juste : « Je ...",
+      "description": "Envoie un message à quelqu’un que tu négliges. Juste : « Je pense à toi. »",
+      "duree": "1 min",
+      "arabe": "أَرْسِلْ رِسالَةً لِمَنْ أَهْمَلْتَه. فَقَط: «أُفَكِّرُ فِيك.»",
+      "reference": ""
+    },
+    {
+      "id": 30,
+      "categorie": "midi",
+      "titre": "As-Sabur. Le Patient. Celui qui ne Se presse pas. Répète Son...",
+      "description": "As-Sabur. Le Patient. Celui qui ne Se presse pas. Répète Son Nom en expirant.",
+      "duree": "1 min",
+      "arabe": "الصَّبُور. الَّذِي لا يَسْتَعْجِل. رَدِّدْ اسْمَهُ مَعَ الزَّفِير.",
+      "reference": ""
+    },
+    {
+      "id": 31,
+      "categorie": "midi",
+      "titre": "Ta charge mentale n’est pas à toi seul. Dépose-la 10 seconde...",
+      "description": "Ta charge mentale n’est pas à toi seul. Dépose-la 10 secondes — Allah est Al-Wakil.",
+      "duree": "1 min",
+      "arabe": "حِمْلُكَ الذِّهْنِيُّ لَيْسَ لَكَ وَحْدَك. ضَعْهُ ١٠ ثَوان — اللَّهُ الوَكِيل.",
+      "reference": ""
+    },
+    {
+      "id": 32,
+      "categorie": "midi",
+      "titre": "Bâille sans honte. Ton corps te demande de ralentir — obéis-...",
+      "description": "Bâille sans honte. Ton corps te demande de ralentir — obéis-lui, c’est du shukr.",
+      "duree": "1 min",
+      "arabe": "تَثاءَبْ دُونَ خَجَل. جَسَدُكَ يَطْلُبُ التَّباطُؤ — أَطِعْه، هذا شُكْر.",
+      "reference": ""
+    },
+    {
+      "id": 33,
+      "categorie": "midi",
+      "titre": "Mets ta paume sur la table. Sens la surface. Reviens ici — p...",
+      "description": "Mets ta paume sur la table. Sens la surface. Reviens ici — pas dans ta tête.",
+      "duree": "1 min",
+      "arabe": "ضَعْ كَفَّكَ عَلَى الطّاوِلَة. اشْعُرْ بِالسَّطْح. عُدْ إِلَى هُنا — لا فِي رَأْسِك.",
+      "reference": ""
+    },
+    {
+      "id": 34,
+      "categorie": "midi",
+      "titre": "La personne en face mange aussi — vous partagez la même prov...",
+      "description": "La personne en face mange aussi — vous partagez la même provision d’Allah en ce moment.",
+      "duree": "1 min",
+      "arabe": "الشَّخْصُ أَمامَك يَأْكُلُ أَيْضًا — تَتَقاسَمانِ رِزْقَ اللَّه الآن.",
+      "reference": ""
+    },
+    {
+      "id": 35,
+      "categorie": "midi",
+      "titre": "Appelle quelqu’un par son prénom, pas par son titre. La conn...",
+      "description": "Appelle quelqu’un par son prénom, pas par son titre. La connexion humaine commence là.",
+      "duree": "1 min",
+      "arabe": "نادِ أَحَدًا بِاسْمِه، لا بِلَقَبِه. الرّابِطُ الإِنْسانِيُّ يَبْدَأُ مِنْ هُنا.",
+      "reference": ""
+    },
+    {
+      "id": 36,
+      "categorie": "midi",
+      "titre": "Ton estomac se remplit — 800 millions n’ont pas ce luxe main...",
+      "description": "Ton estomac se remplit — 800 millions n’ont pas ce luxe maintenant. Alhamdulillah.",
+      "duree": "1 min",
+      "arabe": "مَعِدَتُكَ تَمْتَلِئُ — ٨٠٠ مِليون لا يَمْلِكُونَ هذا الآن. الحَمْدُ لِلَّه.",
+      "reference": ""
+    },
+    {
+      "id": 37,
+      "categorie": "midi",
+      "titre": "La lumière du midi entre par la fenêtre. Gratuite. Inépuisée...",
+      "description": "La lumière du midi entre par la fenêtre. Gratuite. Inépuisée. C’est un verset visible.",
+      "duree": "1 min",
+      "arabe": "ضَوْءُ الظُّهْرِ يَدْخُلُ مِنَ النّافِذَة. مَجّانِيّ. لا يَنْفَد. آيَةٌ مَرْئِيَّة.",
+      "reference": ""
+    },
+    {
+      "id": 38,
+      "categorie": "midi",
+      "titre": "Tu t’es jugé sévèrement ce matin. Arrête. Allah est plus dou...",
+      "description": "Tu t’es jugé sévèrement ce matin. Arrête. Allah est plus doux avec toi que toi-même.",
+      "duree": "1 min",
+      "arabe": "حاسَبْتَ نَفْسَكَ بِقَسْوَةٍ هذا الصَّباح. تَوَقَّف. اللَّهُ أَرْفَقُ بِكَ مِنْك.",
+      "reference": ""
+    },
+    {
+      "id": 39,
+      "categorie": "midi",
+      "titre": "Tu manges seul ? Le Prophète ﷺ détestait manger seul. Partag...",
+      "description": "Tu manges seul ? Le Prophète ﷺ détestait manger seul. Partage ne serait-ce qu’un regard avec quelqu’un.",
+      "duree": "1 min",
+      "arabe": "تَأْكُلُ وَحْدَك؟ النَّبِيُّ ﷺ كانَ يَكْرَهُ الأَكْلَ وَحْدَه. شارِكْ وَلَوْ نَظْرَةً مَعَ أَحَد.",
+      "reference": ""
+    },
+    {
+      "id": 40,
+      "categorie": "midi",
+      "titre": "Le Prophète ﷺ ne remplissait jamais son estomac. Un tiers re...",
+      "description": "Le Prophète ﷺ ne remplissait jamais son estomac. Un tiers repas, un tiers eau, un tiers air.",
+      "duree": "1 min",
+      "arabe": "النَّبِيُّ ﷺ لَمْ يَمْلَأْ مَعِدَتَهُ قَطّ. ثُلُثٌ طَعام، ثُلُثٌ ماء، ثُلُثٌ هَواء.",
+      "reference": ""
+    },
+    {
+      "id": 41,
+      "categorie": "apresmidi",
+      "titre": "L’ombre a tourné depuis ce matin. Remarque-la. Tout bouge sa...",
+      "description": "L’ombre a tourné depuis ce matin. Remarque-la. Tout bouge sauf Celui qui fait bouger.",
+      "duree": "1 min",
+      "arabe": "تَحَوَّلَ الظِّلُّ مُنْذُ الصَّباح. لاحِظْه. كُلُّ شَيْءٍ يَتَحَرَّكُ إِلّا مُحَرِّكَه.",
+      "reference": ""
+    },
+    {
+      "id": 42,
+      "categorie": "apresmidi",
+      "titre": "Regarde par la fenêtre. Pas pour chercher. Pour recevoir ce ...",
+      "description": "Regarde par la fenêtre. Pas pour chercher. Pour recevoir ce qu’Allah te montre.",
+      "duree": "1 min",
+      "arabe": "انْظُرْ مِنَ النّافِذَة. لَيْسَ لِتَبْحَث. لِتَتَلَقَّى ما يُرِيكَ اللَّه.",
+      "reference": ""
+    },
+    {
+      "id": 43,
+      "categorie": "apresmidi",
+      "titre": "Ce que tu fais là, maintenant — pour qui le fais-tu vraiment...",
+      "description": "Ce que tu fais là, maintenant — pour qui le fais-tu vraiment ? Recalibre.",
+      "duree": "1 min",
+      "arabe": "ما تَفْعَلُهُ الآن — لِمَنْ حَقًّا؟ أَعِدْ الضَّبْط.",
+      "reference": ""
+    },
+    {
+      "id": 44,
+      "categorie": "apresmidi",
+      "titre": "Tes parents vieillissent pendant que tu scrolles. Appelle. O...",
+      "description": "Tes parents vieillissent pendant que tu scrolles. Appelle. Ou juste dis : Rabbir hamhuma.",
+      "duree": "1 min",
+      "arabe": "والِداكَ يَكْبُرانِ وأَنْتَ تَتَصَفَّح. اتَّصِلْ. أَوْ قُل: رَبِّ ارْحَمْهُما.",
+      "reference": ""
+    },
+    {
+      "id": 45,
+      "categorie": "apresmidi",
+      "titre": "Choisis un objet devant toi. Pense à qui l’a fabriqué. Fais ...",
+      "description": "Choisis un objet devant toi. Pense à qui l’a fabriqué. Fais un dua pour cette personne.",
+      "duree": "1 min",
+      "arabe": "اخْتَرْ شَيْئًا أَمامَك. فَكِّرْ فِيمَنْ صَنَعَه. ادْعُ لَه.",
+      "reference": ""
+    },
+    {
+      "id": 46,
+      "categorie": "apresmidi",
+      "titre": "Ralentis ton pas. Juste trois foulées au ralenti. Le Prophèt...",
+      "description": "Ralentis ton pas. Juste trois foulées au ralenti. Le Prophète ﷺ marchait avec sérénité.",
+      "duree": "1 min",
+      "arabe": "أَبْطِئْ خُطاك. ثَلاثُ خُطُواتٍ بِبُطْء. كانَ النَّبِيُّ ﷺ يَمْشِي بِسَكِينَة.",
+      "reference": ""
+    },
+    {
+      "id": 47,
+      "categorie": "apresmidi",
+      "titre": "SubhanAllah wa bihamdihi. Une phrase. Un arbre planté au Par...",
+      "description": "SubhanAllah wa bihamdihi. Une phrase. Un arbre planté au Paradis. Répète-la en marchant.",
+      "duree": "1 min",
+      "arabe": "سُبْحانَ اللَّه وبِحَمْدِه. جُمْلَةٌ واحِدَة. شَجَرَةٌ فِي الجَنَّة. رَدِّدْها وأَنْتَ تَمْشِي.",
+      "reference": ""
+    },
+    {
+      "id": 48,
+      "categorie": "apresmidi",
+      "titre": "Expire lentement. Dis en toi : « Hasbiyallah. » Ce que tu po...",
+      "description": "Expire lentement. Dis en toi : « Hasbiyallah. » Ce que tu portes n’est pas à toi seul.",
+      "duree": "1 min",
+      "arabe": "ازْفِرْ بِبُطْء. قُلْ فِي نَفْسِك: «حَسْبِيَ اللَّه.» ما تَحْمِلُه لَيْسَ لَكَ وَحْدَك.",
+      "reference": ""
+    },
+    {
+      "id": 49,
+      "categorie": "apresmidi",
+      "titre": "La personne à côté de toi — imagine son dua le plus profond....",
+      "description": "La personne à côté de toi — imagine son dua le plus profond. Rejoins-le en silence.",
+      "duree": "1 min",
+      "arabe": "الشَّخْصُ بِجانِبِك — تَخَيَّلْ أَعْمَقَ دُعائِه. انْضَمَّ إِلَيْهِ بِصَمْت.",
+      "reference": ""
+    },
+    {
+      "id": 50,
+      "categorie": "apresmidi",
+      "titre": "Al-Wadud. Le Tout-Aimant. Il t’aime même quand tu L’oublies....",
+      "description": "Al-Wadud. Le Tout-Aimant. Il t’aime même quand tu L’oublies. Dis Son Nom trois fois.",
+      "duree": "1 min",
+      "arabe": "الوَدُود. يُحِبُّكَ حَتَّى حِينَ تَنْساه. رَدِّدْ اسْمَهُ ثَلاثًا.",
+      "reference": ""
+    },
+    {
+      "id": 51,
+      "categorie": "apresmidi",
+      "titre": "Ton scroll ne te nourrit pas. Pose le pouce 20 secondes. Le ...",
+      "description": "Ton scroll ne te nourrit pas. Pose le pouce 20 secondes. Le vide est permis.",
+      "duree": "1 min",
+      "arabe": "تَصَفُّحُكَ لا يُغَذِّيك. أَرِحْ إِبْهامَك ٢٠ ثانِيَة. الفَراغُ مُباح.",
+      "reference": ""
+    },
+    {
+      "id": 52,
+      "categorie": "apresmidi",
+      "titre": "Étire tes épaules en arrière. Ton corps porte ta journée — a...",
+      "description": "Étire tes épaules en arrière. Ton corps porte ta journée — allège-le consciemment.",
+      "duree": "1 min",
+      "arabe": "اسْحَبْ كَتِفَيْك لِلخَلْف. جَسَدُكَ يَحْمِلُ يَوْمَك — خَفِّفْ عَنْهُ بِوَعْي.",
+      "reference": ""
+    },
+    {
+      "id": 53,
+      "categorie": "apresmidi",
+      "titre": "Ferme un onglet. Un seul. C’est du désencombrement intérieur...",
+      "description": "Ferme un onglet. Un seul. C’est du désencombrement intérieur.",
+      "duree": "1 min",
+      "arabe": "أَغْلِقْ تَبْويبًا واحِدًا. فَقَط واحِد. هذا تَرْتِيبٌ داخِلِيّ.",
+      "reference": ""
+    },
+    {
+      "id": 54,
+      "categorie": "apresmidi",
+      "titre": "Lève la tête de ton écran et croise un regard. Un vrai. C’es...",
+      "description": "Lève la tête de ton écran et croise un regard. Un vrai. C’est une ibadah oubliée.",
+      "duree": "1 min",
+      "arabe": "ارْفَعْ رَأْسَكَ عَنِ الشّاشَة والْقَ نَظْرَةً حَقِيقِيَّة. عِبادَةٌ مَنْسِيَّة.",
+      "reference": ""
+    },
+    {
+      "id": 55,
+      "categorie": "apresmidi",
+      "titre": "Pense à ton prof préféré. Il ne sait pas qu’il t’a changé. F...",
+      "description": "Pense à ton prof préféré. Il ne sait pas qu’il t’a changé. Fais dua pour lui.",
+      "duree": "1 min",
+      "arabe": "فَكِّرْ فِي مُعَلِّمِكَ المُفَضَّل. لا يَعْلَمُ أَنَّهُ غَيَّرَك. ادْعُ لَه.",
+      "reference": ""
+    },
+    {
+      "id": 56,
+      "categorie": "apresmidi",
+      "titre": "Tu as un toit, un siège, de l’électricité. Trois ni’ma que t...",
+      "description": "Tu as un toit, un siège, de l’électricité. Trois ni’ma que tu n’as pas demandées.",
+      "duree": "1 min",
+      "arabe": "لَدَيْكَ سَقْفٌ ومَقْعَدٌ وكَهْرَباء. ثَلاثُ نِعَمٍ لَمْ تَطْلُبْها.",
+      "reference": ""
+    },
+    {
+      "id": 57,
+      "categorie": "apresmidi",
+      "titre": "Tes yeux lisent ces mots — 285 millions de personnes ne voie...",
+      "description": "Tes yeux lisent ces mots — 285 millions de personnes ne voient pas. Alhamdulillah.",
+      "duree": "1 min",
+      "arabe": "عَيْناكَ تَقْرَآنِ هذا — ٢٨٥ مِليون لا يَرَوْن. الحَمْدُ لِلَّه.",
+      "reference": ""
+    },
+    {
+      "id": 58,
+      "categorie": "apresmidi",
+      "titre": "Ton cerveau tourne en boucle. Écris une seule pensée sur pap...",
+      "description": "Ton cerveau tourne en boucle. Écris une seule pensée sur papier — la sortir de ta tête, c’est déjà du soulagement.",
+      "duree": "1 min",
+      "arabe": "عَقْلُكَ يَدُورُ. اكْتُبْ فِكْرَةً واحِدَةً عَلَى وَرَق — إِخْراجُها مِنْ رَأْسِكَ راحَةٌ بِذاتِها.",
+      "reference": ""
+    },
+    {
+      "id": 59,
+      "categorie": "apresmidi",
+      "titre": "Quelqu’un ne t’a pas répondu. Avant de juger — peut-être qu’...",
+      "description": "Quelqu’un ne t’a pas répondu. Avant de juger — peut-être qu’il porte plus lourd que toi.",
+      "duree": "1 min",
+      "arabe": "لَمْ يَرُدَّ عَلَيْك أَحَد. قَبْلَ الحُكْم — رُبَّما يَحْمِلُ أَثْقَلَ مِنْك.",
+      "reference": ""
+    },
+    {
+      "id": 60,
+      "categorie": "apresmidi",
+      "titre": "Sourate Al-‘Asr : l’homme est en perte, sauf ceux qui s’exho...",
+      "description": "Sourate Al-‘Asr : l’homme est en perte, sauf ceux qui s’exhortent à la patience. Relis-la en toi.",
+      "duree": "1 min",
+      "arabe": "سُورَةُ العَصْر: الإِنْسانَ فِي خُسْر، إِلّا الَّذِينَ تَواصَوْا بِالصَّبْر. أَعِدْها فِي نَفْسِك.",
+      "reference": ""
+    },
+    {
+      "id": 61,
+      "categorie": "soir",
+      "titre": "En franchissant ta porte ce soir, laisse derrière toi le per...",
+      "description": "En franchissant ta porte ce soir, laisse derrière toi le personnage du jour. Entre comme toi.",
+      "duree": "1 min",
+      "arabe": "عِنْدَ دُخُولِك اللَّيْلَة، اتْرُكْ شَخْصِيَّةَ النَّهار خَلْفَك. ادْخُلْ كَما أَنْت.",
+      "reference": ""
+    },
+    {
+      "id": 62,
+      "categorie": "soir",
+      "titre": "Assieds-toi. Ne fais rien. 30 secondes de décompression sacr...",
+      "description": "Assieds-toi. Ne fais rien. 30 secondes de décompression sacrée avant de parler à quiconque.",
+      "duree": "1 min",
+      "arabe": "اجْلِس. لا تَفْعَلْ شَيْئًا. ٣٠ ثانِيَة مُقَدَّسَة قَبْلَ أَنْ تُكَلِّمَ أَحَدًا.",
+      "reference": ""
+    },
+    {
+      "id": 63,
+      "categorie": "soir",
+      "titre": "Ta journée a eu un moment où Allah t’a porté sans que tu le ...",
+      "description": "Ta journée a eu un moment où Allah t’a porté sans que tu le voies. Lequel ?",
+      "duree": "1 min",
+      "arabe": "كانَ فِي يَوْمِك لَحْظَةٌ حَمَلَكَ فِيها اللَّه دُونَ أَنْ تَرَى. أَيُّها؟",
+      "reference": ""
+    },
+    {
+      "id": 64,
+      "categorie": "soir",
+      "titre": "Quelqu’un a été patient avec toi aujourd’hui. Tu ne l’as peu...",
+      "description": "Quelqu’un a été patient avec toi aujourd’hui. Tu ne l’as peut-être pas remarqué. Pense à lui.",
+      "duree": "1 min",
+      "arabe": "كانَ أَحَدٌ صابِرًا مَعَك اليَوْم. رُبَّما لَمْ تَنْتَبِه. فَكِّرْ فِيه.",
+      "reference": ""
+    },
+    {
+      "id": 65,
+      "categorie": "soir",
+      "titre": "Ton corps t’a servi toute la journée sans se plaindre. Remer...",
+      "description": "Ton corps t’a servi toute la journée sans se plaindre. Remercie chaque organe en silence.",
+      "duree": "1 min",
+      "arabe": "خَدَمَك جَسَدُك طَوالَ اليَوْم دُونَ شَكْوَى. اشْكُرْ كُلَّ عُضْوٍ بِصَمْت.",
+      "reference": ""
+    },
+    {
+      "id": 66,
+      "categorie": "soir",
+      "titre": "Il y a une parole que tu as dite aujourd’hui et que tu regre...",
+      "description": "Il y a une parole que tu as dite aujourd’hui et que tu regrettes. Dis Astaghfirullah pour elle.",
+      "duree": "1 min",
+      "arabe": "هُناكَ كَلِمَةٌ قُلْتَها وتَنْدَمُ. قُلْ أَسْتَغْفِرُ اللَّه عَلَيْها.",
+      "reference": ""
+    },
+    {
+      "id": 67,
+      "categorie": "soir",
+      "titre": "Avant de toucher ton téléphone ce soir, touche le front de q...",
+      "description": "Avant de toucher ton téléphone ce soir, touche le front de quelqu’un que tu aimes.",
+      "duree": "1 min",
+      "arabe": "قَبْلَ أَنْ تَلْمَسَ هاتِفَك اللَّيْلَة، الْمِسْ جَبِينَ مَنْ تُحِبّ.",
+      "reference": ""
+    },
+    {
+      "id": 68,
+      "categorie": "soir",
+      "titre": "Al-Ghafur. Le Pardonneur. Il efface même ce que tu n’oses pa...",
+      "description": "Al-Ghafur. Le Pardonneur. Il efface même ce que tu n’oses pas nommer. Respire Son Nom.",
+      "duree": "1 min",
+      "arabe": "الغَفُور. يَمْحُو حَتَّى ما لا تَجْرُؤُ عَلَى تَسْمِيَتِه. تَنَفَّسْ اسْمَه.",
+      "reference": ""
+    },
+    {
+      "id": 69,
+      "categorie": "soir",
+      "titre": "Cette journée est terminée. Tu ne la revivras plus. Qu’en ga...",
+      "description": "Cette journée est terminée. Tu ne la revivras plus. Qu’en gardes-tu pour l’éternité ?",
+      "duree": "1 min",
+      "arabe": "انْتَهَى هذا اليَوْم. لَنْ يَعُود. ماذا تَحْفَظُ مِنْهُ لِلأَبَد؟",
+      "reference": ""
+    },
+    {
+      "id": 70,
+      "categorie": "soir",
+      "titre": "Ce soir tu es en vie. Demain n’est promis à personne. Souris...",
+      "description": "Ce soir tu es en vie. Demain n’est promis à personne. Souris à cette évidence.",
+      "duree": "1 min",
+      "arabe": "اللَّيْلَةَ أَنْتَ حَيّ. غَدًا لَيْسَ مَوْعُودًا لِأَحَد. ابْتَسِمْ لِهذِهِ الحَقِيقَة.",
+      "reference": ""
+    },
+    {
+      "id": 71,
+      "categorie": "soir",
+      "titre": "Enlève tes chaussures lentement. Chaque geste conscient est ...",
+      "description": "Enlève tes chaussures lentement. Chaque geste conscient est une prière silencieuse.",
+      "duree": "1 min",
+      "arabe": "اخْلَعْ حِذاءَكَ بِبُطْء. كُلُّ حَرَكَةٍ واعِيَةٍ صَلاةٌ صامِتَة.",
+      "reference": ""
+    },
+    {
+      "id": 72,
+      "categorie": "soir",
+      "titre": "La douche ce soir — imagine l’eau emporter la fatigue. C’est...",
+      "description": "La douche ce soir — imagine l’eau emporter la fatigue. C’est un ghusl de l’âme.",
+      "duree": "1 min",
+      "arabe": "دُشُ اللَّيْلَة — تَخَيَّلِ الماءَ يَجْرِفُ التَّعَب. غُسْلٌ لِلرُّوح.",
+      "reference": ""
+    },
+    {
+      "id": 73,
+      "categorie": "soir",
+      "titre": "Ne réponds à aucun message pendant 5 minutes. Le silence du ...",
+      "description": "Ne réponds à aucun message pendant 5 minutes. Le silence du soir est un droit.",
+      "duree": "1 min",
+      "arabe": "لا تَرُدَّ عَلَى أَيِّ رِسالَةٍ ٥ دَقائِق. سُكُونُ المَساء حَقّ.",
+      "reference": ""
+    },
+    {
+      "id": 74,
+      "categorie": "soir",
+      "titre": "Demande à quelqu’un chez toi : « Comment tu vas vraiment ? »...",
+      "description": "Demande à quelqu’un chez toi : « Comment tu vas vraiment ? » — et écoute jusqu’au bout.",
+      "duree": "1 min",
+      "arabe": "اسْأَلْ أَحَدًا فِي بَيْتِك: «كَيْفَ حالُكَ حَقًّا؟» — واسْمَعْ حَتَّى النِّهايَة.",
+      "reference": ""
+    },
+    {
+      "id": 75,
+      "categorie": "soir",
+      "titre": "Pose ta main sur l’épaule de quelqu’un sans parler. Le touch...",
+      "description": "Pose ta main sur l’épaule de quelqu’un sans parler. Le toucher dit ce que les mots ne peuvent pas.",
+      "duree": "1 min",
+      "arabe": "ضَعْ يَدَكَ عَلَى كَتِفِ أَحَدٍ دُونَ كَلام. اللَّمْسُ يَقُولُ ما لا تَقُولُهُ الكَلِمات.",
+      "reference": ""
+    },
+    {
+      "id": 76,
+      "categorie": "soir",
+      "titre": "Tu es rentré sain et sauf. Des milliers ne sont pas rentrés ...",
+      "description": "Tu es rentré sain et sauf. Des milliers ne sont pas rentrés ce soir. Alhamdulillah.",
+      "duree": "1 min",
+      "arabe": "عُدْتَ سالِمًا. آلافٌ لَمْ يَعُودُوا اللَّيْلَة. الحَمْدُ لِلَّه.",
+      "reference": ""
+    },
+    {
+      "id": 77,
+      "categorie": "soir",
+      "titre": "Le repas du soir est prêt — ou tu peux le préparer. Les deux...",
+      "description": "Le repas du soir est prêt — ou tu peux le préparer. Les deux sont des ni’ma.",
+      "duree": "1 min",
+      "arabe": "عَشاؤُكَ جاهِزٌ — أَوْ تَسْتَطِيعُ إِعْدادَه. كِلاهُما نِعْمَة.",
+      "reference": ""
+    },
+    {
+      "id": 78,
+      "categorie": "soir",
+      "titre": "Tu n’as pas été ta meilleure version aujourd’hui. C’est huma...",
+      "description": "Tu n’as pas été ta meilleure version aujourd’hui. C’est humain. Demain est une page blanche.",
+      "duree": "1 min",
+      "arabe": "لَمْ تَكُنْ أَفْضَلَ نُسْخَةٍ مِنْكَ اليَوْم. هذا إِنْسانِيّ. غَدًا صَفْحَةٌ بَيْضاء.",
+      "reference": ""
+    },
+    {
+      "id": 79,
+      "categorie": "soir",
+      "titre": "Enlève ta montre. Tu n’as plus besoin de l’heure. Le soir t’...",
+      "description": "Enlève ta montre. Tu n’as plus besoin de l’heure. Le soir t’appartient déjà.",
+      "duree": "1 min",
+      "arabe": "اخْلَعْ ساعَتَك. لَمْ تَعُدْ بِحاجَةٍ لِلوَقْت. المَساءُ لَكَ بِالفِعْل.",
+      "reference": ""
+    },
+    {
+      "id": 80,
+      "categorie": "soir",
+      "titre": "Le Prophète ﷺ rentrait chez lui en servant sa famille. Le fo...",
+      "description": "Le Prophète ﷺ rentrait chez lui en servant sa famille. Le foyer est une ibadah, pas un repos.",
+      "duree": "1 min",
+      "arabe": "النَّبِيُّ ﷺ كانَ يَعُودُ لِيَخْدُمَ أَهْلَه. البَيْتُ عِبادَة، لا راحَةٌ فَقَط.",
+      "reference": ""
+    },
+    {
+      "id": 81,
+      "categorie": "nuit",
+      "titre": "Pose ton téléphone face cachée — la nuit appartient à Allah.",
+      "description": "Pose ton téléphone face cachée — la nuit appartient à Allah.",
+      "duree": "1 min",
+      "arabe": "ضَعْ هاتِفَكَ مَقْلُوبًا — اللَّيْلُ لِلَّه.",
+      "reference": ""
+    },
+    {
+      "id": 82,
+      "categorie": "nuit",
+      "titre": "Écoute ta respiration 5 cycles — chaque souffle est un dépôt...",
+      "description": "Écoute ta respiration 5 cycles — chaque souffle est un dépôt qu’Allah reprendra.",
+      "duree": "1 min",
+      "arabe": "اسْمَعْ ٥ أَنْفاس — كُلُّ نَفَسٍ أَمانَةٌ سَيَسْتَرِدُّها.",
+      "reference": ""
+    },
+    {
+      "id": 83,
+      "categorie": "nuit",
+      "titre": "Nomme dans ton cœur un tort que tu as subi — puis pardonne e...",
+      "description": "Nomme dans ton cœur un tort que tu as subi — puis pardonne en silence.",
+      "duree": "1 min",
+      "arabe": "سَمِّ فِي قَلْبِكَ ظُلْمًا أُصِبْتَ بِهِ — ثُمَّ اعْفُ بِصَمْت.",
+      "reference": ""
+    },
+    {
+      "id": 84,
+      "categorie": "nuit",
+      "titre": "Ferme les yeux et demande-toi : si c’était ma dernière nuit,...",
+      "description": "Ferme les yeux et demande-toi : si c’était ma dernière nuit, suis-je en paix ?",
+      "duree": "1 min",
+      "arabe": "أَغْمِضْ عَيْنَيْكَ وَاسْأَلْ: لَوْ كانَتْ آخِرَ لَيْلَة، هَلْ أَنا راضٍ؟",
+      "reference": ""
+    },
+    {
+      "id": 85,
+      "categorie": "nuit",
+      "titre": "Ne cherche pas le sommeil — cherche le tawakkul. Le sommeil ...",
+      "description": "Ne cherche pas le sommeil — cherche le tawakkul. Le sommeil suivra.",
+      "duree": "1 min",
+      "arabe": "لا تَطْلُبِ النَّوْمَ — اطْلُبِ التَّوَكُّل. النَّوْمُ سَيَأْتِي.",
+      "reference": ""
+    },
+    {
+      "id": 86,
+      "categorie": "nuit",
+      "titre": "La dernière personne à qui tu as parlé aujourd’hui — fais du...",
+      "description": "La dernière personne à qui tu as parlé aujourd’hui — fais dua pour elle maintenant.",
+      "duree": "1 min",
+      "arabe": "آخِرُ شَخْصٍ كَلَّمْتَهُ اليَوْمَ — ادْعُ لَهُ الآن.",
+      "reference": ""
+    },
+    {
+      "id": 87,
+      "categorie": "nuit",
+      "titre": "Remets à Allah un souci que tu ne peux pas résoudre cette nu...",
+      "description": "Remets à Allah un souci que tu ne peux pas résoudre cette nuit.",
+      "duree": "1 min",
+      "arabe": "سَلِّمْ لِلَّه هَمًّا لا تَقْدِرُ عَلى حَلِّهِ اللَّيْلَة.",
+      "reference": ""
+    },
+    {
+      "id": 88,
+      "categorie": "nuit",
+      "titre": "Ton lit est un linceul d’essai — allonge-toi sur le côté dro...",
+      "description": "Ton lit est un linceul d’essai — allonge-toi sur le côté droit comme le Prophète ﷺ.",
+      "duree": "1 min",
+      "arabe": "فِراشُكَ كَفَنٌ تَجْرِيبِيٌّ — اضْطَجِعْ عَلى يَمِينِكَ كالنَّبِيِّ ﷺ.",
+      "reference": ""
+    },
+    {
+      "id": 89,
+      "categorie": "nuit",
+      "titre": "Ne rejoue pas ta journée — elle est déjà écrite. Repose-toi ...",
+      "description": "Ne rejoue pas ta journée — elle est déjà écrite. Repose-toi dans le maktub.",
+      "duree": "1 min",
+      "arabe": "لا تُعِدْ يَوْمَكَ — قَدْ كُتِب. ارْتَحْ فِي المَكْتُوب.",
+      "reference": ""
+    },
+    {
+      "id": 90,
+      "categorie": "nuit",
+      "titre": "Bismika Allahumma amutu wa ahya — puis ne dis plus rien.",
+      "description": "Bismika Allahumma amutu wa ahya — puis ne dis plus rien.",
+      "duree": "1 min",
+      "arabe": "بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيا — ثُمَّ لا تَقُلْ شَيْئًا.",
+      "reference": ""
+    },
+    {
+      "id": 91,
+      "categorie": "nuit",
+      "titre": "L’obscurité n’est pas vide — elle est pleine de Celui qui en...",
+      "description": "L’obscurité n’est pas vide — elle est pleine de Celui qui entend même ce que tu ne dis pas.",
+      "duree": "1 min",
+      "arabe": "الظَّلامُ لَيْسَ فارِغًا — مَلِيءٌ بِمَنْ يَسْمَعُ حَتَّى ما لا تَقُولُه.",
+      "reference": ""
+    },
+    {
+      "id": 92,
+      "categorie": "nuit",
+      "titre": "Relâche ta mâchoire. Tu la serrais sans le savoir. Le corps ...",
+      "description": "Relâche ta mâchoire. Tu la serrais sans le savoir. Le corps prie quand tu le libères.",
+      "duree": "1 min",
+      "arabe": "أَرْخِ فَكَّك. كُنْتَ تَشُدُّهُ دُونَ عِلْمِك. الجَسَدُ يُصَلِّي حِينَ تُحَرِّرُه.",
+      "reference": ""
+    },
+    {
+      "id": 93,
+      "categorie": "nuit",
+      "titre": "Le bruit du monde s’est arrêté. Ne le remplace par rien. Hab...",
+      "description": "Le bruit du monde s’est arrêté. Ne le remplace par rien. Habite le silence.",
+      "duree": "1 min",
+      "arabe": "تَوَقَّفَ ضَجِيجُ العالَم. لا تَسْتَبْدِلْهُ بِشَيْء. اسْكُنِ الصَّمْت.",
+      "reference": ""
+    },
+    {
+      "id": 94,
+      "categorie": "nuit",
+      "titre": "Tes proches dorment à côté de toi. Chaque souffle est une am...",
+      "description": "Tes proches dorment à côté de toi. Chaque souffle est une amana qu’Allah protège.",
+      "duree": "1 min",
+      "arabe": "أَحِبَّتُكَ يَنامُونَ بِجانِبِك. كُلُّ نَفَسٍ أَمانَةٌ يَحْفَظُها اللَّه.",
+      "reference": ""
+    },
+    {
+      "id": 95,
+      "categorie": "nuit",
+      "titre": "Ton cœur bat 100 000 fois par jour sans que tu le lui demand...",
+      "description": "Ton cœur bat 100 000 fois par jour sans que tu le lui demandes. Qui le commande ?",
+      "duree": "1 min",
+      "arabe": "قَلْبُكَ يَنْبِضُ ١٠٠ أَلْف مَرَّة يَوْمِيًّا دُونَ أَنْ تَطْلُب. مَنْ يَأْمُرُه؟",
+      "reference": ""
+    },
+    {
+      "id": 96,
+      "categorie": "nuit",
+      "titre": "Tu as un lit. Un oreiller. La sécurité. Trois luxes invisibl...",
+      "description": "Tu as un lit. Un oreiller. La sécurité. Trois luxes invisibles que des millions n’ont pas.",
+      "duree": "1 min",
+      "arabe": "لَدَيْكَ فِراشٌ ووِسادَةٌ وأَمان. ثَلاثُ رَفاهِياتٍ خَفِيَّة يَفْتَقِدُها مَلايِين.",
+      "reference": ""
+    },
+    {
+      "id": 97,
+      "categorie": "nuit",
+      "titre": "Cette nuit calme — quelqu’un veille dans un hôpital, quelqu’...",
+      "description": "Cette nuit calme — quelqu’un veille dans un hôpital, quelqu’un fuit dans le noir. Alhamdulillah pour ta paix.",
+      "duree": "1 min",
+      "arabe": "هذِهِ اللَّيْلَةُ الهادِئَة — غَيْرُكَ يَسْهَرُ فِي مُسْتَشْفَى، غَيْرُكَ يَفِرُّ فِي الظَّلام. الحَمْدُ لِلَّه عَلَى سَلامِك.",
+      "reference": ""
+    },
+    {
+      "id": 98,
+      "categorie": "nuit",
+      "titre": "Tu as menti aujourd’hui, même un petit mensonge. Reconnais-l...",
+      "description": "Tu as menti aujourd’hui, même un petit mensonge. Reconnais-le. Allah aime ceux qui reviennent.",
+      "duree": "1 min",
+      "arabe": "كَذَبْتَ اليَوْم، حَتَّى كَذِبَةً صَغِيرَة. اعْتَرِفْ بِها. اللَّهُ يُحِبُّ التَّوّابِين.",
+      "reference": ""
+    },
+    {
+      "id": 99,
+      "categorie": "nuit",
+      "titre": "Pardonne à tes parents une douleur ancienne. Ils ont fait ce...",
+      "description": "Pardonne à tes parents une douleur ancienne. Ils ont fait ce qu’ils pouvaient avec ce qu’ils avaient.",
+      "duree": "1 min",
+      "arabe": "سامِحْ والِدَيْكَ عَلَى أَلَمٍ قَدِيم. فَعَلا ما اسْتَطاعا بِما مَلَكا.",
+      "reference": ""
+    },
+    {
+      "id": 100,
+      "categorie": "nuit",
+      "titre": "Le sommeil est une petite mort, le réveil une résurrection. ...",
+      "description": "Le sommeil est une petite mort, le réveil une résurrection. Le Prophète ﷺ en était conscient chaque nuit.",
+      "duree": "1 min",
+      "arabe": "النَّوْمُ مَوْتٌ صَغِير، واليَقَظَةُ بَعْث. النَّبِيُّ ﷺ كانَ يَعِيها كُلَّ لَيْلَة.",
+      "reference": ""
+    }
+  ]
+}

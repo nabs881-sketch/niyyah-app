@@ -1,0 +1,279 @@
+{
+  "source": "SCANNER_LIBRARY",
+  "total": 39,
+  "items": [
+    {
+      "id": 1,
+      "categorie": "Repas",
+      "intention": "Gratitude",
+      "description": "Nourrir ce corps qui est une amanah d'Allah — pour qu'il continue à servir, aimer et se souvenir de Lui.",
+      "reference": ""
+    },
+    {
+      "id": 2,
+      "categorie": "Repas",
+      "intention": "Patience",
+      "description": "Manger lentement, conscient que ce repas est une grâce que d'autres n'ont pas aujourd'hui.",
+      "reference": ""
+    },
+    {
+      "id": 3,
+      "categorie": "Repas",
+      "intention": "Excellence",
+      "description": "Nourrir ce corps avec excellence — car celui qui prend soin de lui sert mieux Allah et les siens.",
+      "reference": ""
+    },
+    {
+      "id": 4,
+      "categorie": "Travail",
+      "intention": "Excellence",
+      "description": "Travailler comme un artisan qui sait qu'Allah voit chaque détail — même ceux que le chef ne verra jamais.",
+      "reference": ""
+    },
+    {
+      "id": 5,
+      "categorie": "Travail",
+      "intention": "Intention",
+      "description": "Transformer ces heures en service — pour ma famille, ma communauté, et celui qui m'a donné ce talent.",
+      "reference": ""
+    },
+    {
+      "id": 6,
+      "categorie": "Travail",
+      "intention": "Présence",
+      "description": "Être pleinement là dans ce travail — chaque tâche accomplie avec soin est une forme d'ibadah.",
+      "reference": ""
+    },
+    {
+      "id": 7,
+      "categorie": "Téléphone",
+      "intention": "Vigilance",
+      "description": "Utiliser cet outil avec conscience — chaque mot envoyé laisse une trace dans mon âme et celle de l'autre.",
+      "reference": ""
+    },
+    {
+      "id": 8,
+      "categorie": "Téléphone",
+      "intention": "Connexion",
+      "description": "Que chaque message soit porteur de bien — une parole douce vaut mieux que mille silences froids.",
+      "reference": ""
+    },
+    {
+      "id": 9,
+      "categorie": "Téléphone",
+      "intention": "Limite",
+      "description": "Poser ce téléphone quand il me distrait d'Allah — la présence vaut plus que le scroll infini.",
+      "reference": ""
+    },
+    {
+      "id": 10,
+      "categorie": "Connaissance",
+      "intention": "Lumière",
+      "description": "Chercher la connaissance comme un acte d'adoration — la lumière qui éclaire le cœur avant d'éclairer l'esprit.",
+      "reference": ""
+    },
+    {
+      "id": 11,
+      "categorie": "Connaissance",
+      "intention": "Humilité",
+      "description": "Apprendre avec l'humilité de celui qui sait qu'il ne sait pas — Al-Ghazali enseigne que la science sans Adab est un danger.",
+      "reference": ""
+    },
+    {
+      "id": 12,
+      "categorie": "Connaissance",
+      "intention": "Service",
+      "description": "Acquérir ce savoir pour servir — pas pour briller, mais pour élever ceux qui m'entourent.",
+      "reference": ""
+    },
+    {
+      "id": 13,
+      "categorie": "Présence",
+      "intention": "Patience",
+      "description": "Être présent avec douceur — ma patience aujourd'hui est la sécurité de ceux que j'aime demain.",
+      "reference": ""
+    },
+    {
+      "id": 14,
+      "categorie": "Présence",
+      "intention": "Adab",
+      "description": "Traiter cette personne comme si le Prophète ﷺ me regardait — avec respect, écoute et noblesse de cœur.",
+      "reference": ""
+    },
+    {
+      "id": 15,
+      "categorie": "Présence",
+      "intention": "Amour",
+      "description": "Voir en l'autre une âme créée par Allah — chaque regard bienveillant est une sadaqa.",
+      "reference": ""
+    },
+    {
+      "id": 16,
+      "categorie": "Prière",
+      "intention": "Présence",
+      "description": "Poser mon front sur cette terre avec la conscience que c'est la station la plus proche d'Allah.",
+      "reference": ""
+    },
+    {
+      "id": 17,
+      "categorie": "Prière",
+      "intention": "Renouveau",
+      "description": "Chaque prière est une nouvelle naissance — je laisse mes soucis à la porte et j'entre en Sa présence.",
+      "reference": ""
+    },
+    {
+      "id": 18,
+      "categorie": "Prière",
+      "intention": "Ihsan",
+      "description": "Prier comme si je Le voyais — et s'Il ne me voit pas, Il me voit certainement.",
+      "reference": ""
+    },
+    {
+      "id": 19,
+      "categorie": "Soi",
+      "intention": "Dignité",
+      "description": "Prendre soin de moi — car ce corps est un dépôt confié par Allah, pas le mien à négliger.",
+      "reference": ""
+    },
+    {
+      "id": 20,
+      "categorie": "Soi",
+      "intention": "Gratitude",
+      "description": "Regarder ce visage et dire Alhamdulillah — je suis vivant, présent, et capable d'aimer aujourd'hui.",
+      "reference": ""
+    },
+    {
+      "id": 21,
+      "categorie": "Soi",
+      "intention": "Renouveau",
+      "description": "Commencer cette journée en prenant soin de moi pour mieux prendre soin des autres.",
+      "reference": ""
+    },
+    {
+      "id": 22,
+      "categorie": "Hydratation",
+      "intention": "Conscience",
+      "description": "Boire avec Bismillah — même l'eau devient ibadah quand le cœur est présent.",
+      "reference": ""
+    },
+    {
+      "id": 23,
+      "categorie": "Hydratation",
+      "intention": "Shukr",
+      "description": "Cette eau est une rizq d'Allah — des millions n'y ont pas accès. Chaque gorgée mérite un Alhamdulillah.",
+      "reference": ""
+    },
+    {
+      "id": 24,
+      "categorie": "Hydratation",
+      "intention": "Corps",
+      "description": "Prendre soin de ce corps qui est une amanah — l'hydrater c'est honorer le dépôt qu'Allah m'a confié.",
+      "reference": ""
+    },
+    {
+      "id": 25,
+      "categorie": "Trajet",
+      "intention": "Présence",
+      "description": "Ce trajet est un souffle de vie offert par Allah — arriver avec plus de conscience qu'on n'est parti.",
+      "reference": ""
+    },
+    {
+      "id": 26,
+      "categorie": "Trajet",
+      "intention": "Gratitude",
+      "description": "Chaque route parcourue en sécurité est une grâce invisible — Alhamdulillah pour ce mouvement libre.",
+      "reference": ""
+    },
+    {
+      "id": 27,
+      "categorie": "Trajet",
+      "intention": "Intention",
+      "description": "Transformer ce déplacement en dhikr — chaque kilomètre peut être un tafakkur si le cœur est présent.",
+      "reference": ""
+    },
+    {
+      "id": 28,
+      "categorie": "Nature",
+      "intention": "Contemplation",
+      "description": "Chaque feuille glorifie Allah à sa façon — cette beauté est un signe pour ceux qui réfléchissent.",
+      "reference": ""
+    },
+    {
+      "id": 29,
+      "categorie": "Nature",
+      "intention": "Gratitude",
+      "description": "La nature ne ment jamais sur la grandeur de son Créateur — laisser ce spectacle nourrir la foi.",
+      "reference": ""
+    },
+    {
+      "id": 30,
+      "categorie": "Nature",
+      "intention": "Paix",
+      "description": "Ce vert est une guérison pour les yeux et pour l'âme — s'arrêter, observer, remercier.",
+      "reference": ""
+    },
+    {
+      "id": 31,
+      "categorie": "Rizq",
+      "intention": "Amanah",
+      "description": "Ce bien est un dépôt d'Allah — le dépenser avec justice, le partager avec générosité, jamais le thésauriser avec peur.",
+      "reference": ""
+    },
+    {
+      "id": 32,
+      "categorie": "Rizq",
+      "intention": "Shukr",
+      "description": "Le rizq vient d'Allah — dépenser Bismillah et donner une part au passage est la façon du croyant.",
+      "reference": ""
+    },
+    {
+      "id": 33,
+      "categorie": "Rizq",
+      "intention": "Tawakkul",
+      "description": "La sécurité n'est pas dans ce que je possède, mais dans Celui qui pourvoit — relâcher la peur, garder la confiance.",
+      "reference": ""
+    },
+    {
+      "id": 34,
+      "categorie": "Repos",
+      "intention": "Gratitude",
+      "description": "Ce lit est un sanctuaire — je pose mes soucis et confie ma nuit à Allah comme le Prophète ﷺ le faisait.",
+      "reference": ""
+    },
+    {
+      "id": 35,
+      "categorie": "Repos",
+      "intention": "Renouveau",
+      "description": "Le sommeil est une petite mort — et chaque réveil, une résurrection offerte. Alhamdulillah illadhi ahyana.",
+      "reference": ""
+    },
+    {
+      "id": 36,
+      "categorie": "Repos",
+      "intention": "Paix",
+      "description": "Fermer les yeux en état de grâce — lire Ayat al-Kursi et laisser les anges veiller.",
+      "reference": ""
+    },
+    {
+      "id": 37,
+      "categorie": "Objet du quotidien",
+      "intention": "Intention",
+      "description": "Transformer cet acte banal en acte sacré — par la Niyyah, le monde entier devient un lieu d'adoration.",
+      "reference": ""
+    },
+    {
+      "id": 38,
+      "categorie": "Objet du quotidien",
+      "intention": "Présence",
+      "description": "Être pleinement là dans ce moment — la présence consciente est la forme la plus rare de la dévotion.",
+      "reference": ""
+    },
+    {
+      "id": 39,
+      "categorie": "Objet du quotidien",
+      "intention": "Gratitude",
+      "description": "Nommer la grâce dans cet instant ordinaire — car le quotidien est fait de petites bénédictions non vues.",
+      "reference": ""
+    }
+  ]
+}

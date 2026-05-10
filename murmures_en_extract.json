@@ -1,0 +1,276 @@
+{
+  "source": "MURMURES_EN",
+  "total": 45,
+  "items": [
+    {
+      "id": 1,
+      "categorie": "se rapprocher d'Allah / matin",
+      "murmure_en": "Your heart remembers Him",
+      "murmure_fr_equivalent": "Ton cœur se souvient de Lui"
+    },
+    {
+      "id": 2,
+      "categorie": "se rapprocher d'Allah / matin",
+      "murmure_en": "A breath of Dhikr before you begin",
+      "murmure_fr_equivalent": "Un souffle de Dhikr avant de commencer"
+    },
+    {
+      "id": 3,
+      "categorie": "se rapprocher d'Allah / matin",
+      "murmure_en": "Allah is near — closer than your jugular vein",
+      "murmure_fr_equivalent": "Allah est proche — plus que ta veine jugulaire"
+    },
+    {
+      "id": 4,
+      "categorie": "se rapprocher d'Allah / midi",
+      "murmure_en": "Between tasks — a moment toward Allah",
+      "murmure_fr_equivalent": "Entre deux tâches — un instant vers Allah"
+    },
+    {
+      "id": 5,
+      "categorie": "se rapprocher d'Allah / midi",
+      "murmure_en": "SubhanAllah. Three seconds. He hears.",
+      "murmure_fr_equivalent": "SubhanAllah. Trois secondes. Il entend."
+    },
+    {
+      "id": 6,
+      "categorie": "se rapprocher d'Allah / midi",
+      "murmure_en": "Your day has a soul. Remember it.",
+      "murmure_fr_equivalent": "Ta journée a une âme. Rappelle-le-toi."
+    },
+    {
+      "id": 7,
+      "categorie": "se rapprocher d'Allah / soir",
+      "murmure_en": "The night is gentle for those who return",
+      "murmure_fr_equivalent": "La nuit est douce pour ceux qui reviennent"
+    },
+    {
+      "id": 8,
+      "categorie": "se rapprocher d'Allah / soir",
+      "murmure_en": "Before closing your eyes — Al-Hamdulillah",
+      "murmure_fr_equivalent": "Avant de fermer les yeux — Al-Hamdulillah"
+    },
+    {
+      "id": 9,
+      "categorie": "se rapprocher d'Allah / soir",
+      "murmure_en": "He kept you today. Thank Him.",
+      "murmure_fr_equivalent": "Il t'a gardé aujourd'hui. Dis-Lui merci."
+    },
+    {
+      "id": 10,
+      "categorie": "tenir mes engagements / matin",
+      "murmure_en": "Your word today — keep it",
+      "murmure_fr_equivalent": "Ta parole d'aujourd'hui — tiens-la"
+    },
+    {
+      "id": 11,
+      "categorie": "tenir mes engagements / matin",
+      "murmure_en": "One commitment kept is worth a thousand intentions",
+      "murmure_fr_equivalent": "Un engagement tenu vaut mille intentions"
+    },
+    {
+      "id": 12,
+      "categorie": "tenir mes engagements / matin",
+      "murmure_en": "Start with the smallest. The rest will follow.",
+      "murmure_fr_equivalent": "Commence par le plus petit. Le reste suivra."
+    },
+    {
+      "id": 13,
+      "categorie": "tenir mes engagements / midi",
+      "murmure_en": "Midday. Your commitments are breathing.",
+      "murmure_fr_equivalent": "Mi-journée. Tes engagements respirent."
+    },
+    {
+      "id": 14,
+      "categorie": "tenir mes engagements / midi",
+      "murmure_en": "What you promised this morning — where are you?",
+      "murmure_fr_equivalent": "Ce que tu avais promis ce matin — où en es-tu ?"
+    },
+    {
+      "id": 15,
+      "categorie": "tenir mes engagements / midi",
+      "murmure_en": "Consistency is a form of nobility",
+      "murmure_fr_equivalent": "La constance est une forme de noblesse"
+    },
+    {
+      "id": 16,
+      "categorie": "tenir mes engagements / soir",
+      "murmure_en": "What you honored today counts",
+      "murmure_fr_equivalent": "Ce que tu as tenu aujourd'hui compte"
+    },
+    {
+      "id": 17,
+      "categorie": "tenir mes engagements / soir",
+      "murmure_en": "Gentle review: what did you keep?",
+      "murmure_fr_equivalent": "Bilan doux : qu'as-tu honoré ?"
+    },
+    {
+      "id": 18,
+      "categorie": "tenir mes engagements / soir",
+      "murmure_en": "Tomorrow, one commitment. Just one.",
+      "murmure_fr_equivalent": "Demain, un engagement. Juste un."
+    },
+    {
+      "id": 19,
+      "categorie": "me reconstruire / matin",
+      "murmure_en": "One brick laid is better than a wall dreamed",
+      "murmure_fr_equivalent": "Une brique posée vaut mieux qu'un mur rêvé"
+    },
+    {
+      "id": 20,
+      "categorie": "me reconstruire / matin",
+      "murmure_en": "You are starting again. That is already a victory.",
+      "murmure_fr_equivalent": "Tu recommences. C'est déjà une victoire."
+    },
+    {
+      "id": 21,
+      "categorie": "me reconstruire / matin",
+      "murmure_en": "Allah loves the one who returns. You are on the path.",
+      "murmure_fr_equivalent": "Allah aime celui qui revient. Tu es en chemin."
+    },
+    {
+      "id": 22,
+      "categorie": "me reconstruire / midi",
+      "murmure_en": "You are moving. Even slowly, you are moving.",
+      "murmure_fr_equivalent": "Tu avances. Même lentement, tu avances."
+    },
+    {
+      "id": 23,
+      "categorie": "me reconstruire / midi",
+      "murmure_en": "One step. Just one. Bismillah.",
+      "murmure_fr_equivalent": "Un pas. Juste un. Bismillah."
+    },
+    {
+      "id": 24,
+      "categorie": "me reconstruire / midi",
+      "murmure_en": "Rebuilding takes time. Patience.",
+      "murmure_fr_equivalent": "La reconstruction prend du temps. Patience."
+    },
+    {
+      "id": 25,
+      "categorie": "me reconstruire / soir",
+      "murmure_en": "Rebuilding takes time. You are on the path.",
+      "murmure_fr_equivalent": "Se reconstruire prend du temps. Tu es en chemin."
+    },
+    {
+      "id": 26,
+      "categorie": "me reconstruire / soir",
+      "murmure_en": "Today you held. That counts immensely.",
+      "murmure_fr_equivalent": "Aujourd'hui tu as tenu. Ça compte infiniment."
+    },
+    {
+      "id": 27,
+      "categorie": "me reconstruire / soir",
+      "murmure_en": "Tomorrow is a blank page offered by Allah.",
+      "murmure_fr_equivalent": "Demain est une page blanche offerte par Allah."
+    },
+    {
+      "id": 28,
+      "categorie": "être reconnaissant / matin",
+      "murmure_en": "Name one beautiful thing about this morning",
+      "murmure_fr_equivalent": "Nomme une chose belle de ce matin"
+    },
+    {
+      "id": 29,
+      "categorie": "être reconnaissant / matin",
+      "murmure_en": "Al-Hamdulillah — the heaviest of words",
+      "murmure_fr_equivalent": "Al-Hamdulillah — la plus lourde des paroles"
+    },
+    {
+      "id": 30,
+      "categorie": "être reconnaissant / matin",
+      "murmure_en": "You breathe. Someone no longer can.",
+      "murmure_fr_equivalent": "Tu respires. Quelqu'un ne le peut plus."
+    },
+    {
+      "id": 31,
+      "categorie": "être reconnaissant / midi",
+      "murmure_en": "Did something smile at you today?",
+      "murmure_fr_equivalent": "Quelque chose t'a souri aujourd'hui ?"
+    },
+    {
+      "id": 32,
+      "categorie": "être reconnaissant / midi",
+      "murmure_en": "A hidden grace in your ordinary day",
+      "murmure_fr_equivalent": "Une grâce cachée dans ta journée ordinaire"
+    },
+    {
+      "id": 33,
+      "categorie": "être reconnaissant / midi",
+      "murmure_en": "Say thank you to someone. It is sadaqa.",
+      "murmure_fr_equivalent": "Dis merci à quelqu'un. C'est une sadaqa."
+    },
+    {
+      "id": 34,
+      "categorie": "être reconnaissant / soir",
+      "murmure_en": "Before sleep — grateful for what?",
+      "murmure_fr_equivalent": "Avant de dormir — merci pour quoi ?"
+    },
+    {
+      "id": 35,
+      "categorie": "être reconnaissant / soir",
+      "murmure_en": "Your day had value. Can you see it?",
+      "murmure_fr_equivalent": "Ta journée avait de la valeur. Tu la vois ?"
+    },
+    {
+      "id": 36,
+      "categorie": "être reconnaissant / soir",
+      "murmure_en": "3 things from today you are grateful for",
+      "murmure_fr_equivalent": "3 choses d'aujourd'hui dont tu es reconnaissant"
+    },
+    {
+      "id": 37,
+      "categorie": "default / matin",
+      "murmure_en": "A moment for your soul before you begin",
+      "murmure_fr_equivalent": "Un instant pour ton âme avant de commencer"
+    },
+    {
+      "id": 38,
+      "categorie": "default / matin",
+      "murmure_en": "Bismillah — every act can be ibadah",
+      "murmure_fr_equivalent": "Bismillah — chaque acte peut être une ibadah"
+    },
+    {
+      "id": 39,
+      "categorie": "default / matin",
+      "murmure_en": "Your day begins with the grace of Allah",
+      "murmure_fr_equivalent": "Ta journée commence avec la grâce d'Allah"
+    },
+    {
+      "id": 40,
+      "categorie": "default / midi",
+      "murmure_en": "A breath of peace in the heart of the day",
+      "murmure_fr_equivalent": "Un souffle de paix au cœur de la journée"
+    },
+    {
+      "id": 41,
+      "categorie": "default / midi",
+      "murmure_en": "Remember why you do what you do",
+      "murmure_fr_equivalent": "Rappelle-toi pourquoi tu fais ce que tu fais"
+    },
+    {
+      "id": 42,
+      "categorie": "default / midi",
+      "murmure_en": "Astaghfirullah. A lighter heart goes further.",
+      "murmure_fr_equivalent": "Astaghfirullah. Le cœur léger continue mieux."
+    },
+    {
+      "id": 43,
+      "categorie": "default / soir",
+      "murmure_en": "The night is a gift. Begin it in peace.",
+      "murmure_fr_equivalent": "La nuit est un cadeau. Commence-la en paix."
+    },
+    {
+      "id": 44,
+      "categorie": "default / soir",
+      "murmure_en": "Your evening Wird awaits. 5 minutes.",
+      "murmure_fr_equivalent": "Ton wird du soir t'attend. 5 minutes."
+    },
+    {
+      "id": 45,
+      "categorie": "default / soir",
+      "murmure_en": "Al-Hamdulillah for this day, whatever it held.",
+      "murmure_fr_equivalent": "Al-Hamdulillah pour cette journée, quoi qu'il en soit."
+    }
+  ]
+}

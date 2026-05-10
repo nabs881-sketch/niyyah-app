@@ -59,7 +59,7 @@ export default {
 
     // ── Santé (open to all) ──
     if (path === '/' && request.method === 'GET') {
-      return jsonResponse({ status: 'ok', service: 'Niyyah API', version: '2.1.0' });
+      return jsonResponse({ status: 'ok', service: 'Niyyah API', version: '2.3.0' });
     }
 
     // ── Origin check for API routes ──
@@ -365,8 +365,7 @@ FORMAT DE SORTIE (JSON strict) :
 {"category": "SOI|AUTRE|OBJET|MONDE|ENFANT|SACRE|INDETERMINE", "suggestions": ["Je ...", "Je ...", "Je ..."]}`;
 }
 
-const REGARDE_CLASSIFIER_PROMPT = `Tu es un classificateur d'images pour une application spirituelle musulmane. Classe l'image dans UNE des 7 catégories : SOI, AUTRE, OBJET, MONDE, ENFANT, SACRE, INDETERMINE.
-Un écran numérique affichant un verset = OBJET, PAS SACRE.
+const REGARDE_CLASSIFIER_PROMPT = `Tu es un classificateur d'images pour une application spirituelle musulmane. Classe l'image dans UNE des 16 catégories : CIEL, EAU, ANIMAL, NATURE, NOURRITURE, HABITAT, VISAGE, INDETERMINE, LUMIERE_OMBRE, MONTAGNE, MORT, OBJET_PERSONNEL, ROUTE, TEXTE, TISSU, VEHICULE.
 Si confidence < 0.80 → INDETERMINE.
 FORMAT (JSON strict) : {"category": "...", "confidence": 0.92}`;
 
@@ -477,7 +476,7 @@ async function handleRegarde(request, env) {
       const classifText = classifResp.content?.[0]?.text || '';
       const classifJson = extractJSON(classifText);
       if (classifJson && classifJson.category) {
-        const validCats = ['SOI', 'AUTRE', 'OBJET', 'MONDE', 'ENFANT', 'SACRE', 'INDETERMINE'];
+        const validCats = ['CIEL', 'EAU', 'ANIMAL', 'NATURE', 'NOURRITURE', 'HABITAT', 'VISAGE', 'INDETERMINE', 'LUMIERE_OMBRE', 'MONTAGNE', 'MORT', 'OBJET_PERSONNEL', 'ROUTE', 'TEXTE', 'TISSU', 'VEHICULE'];
         if (validCats.includes(classifJson.category)) {
           category = classifJson.category;
           confidence = typeof classifJson.confidence === 'number' ? classifJson.confidence : 0.8;
