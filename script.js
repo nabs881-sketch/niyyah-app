@@ -2485,7 +2485,8 @@ function renderWirdSmartCard(item, delay, origin) {
   const arabicLabel = isMatin ? 'وِرْدُ الصَّبَاح' : 'وِرْدُ الْمَسَاء';
   const frLabel = isMatin ? t('wird_matin') : t('wird_soir');
   var _origin = origin || 'checklist';
-  return '<div class="wird-smart-card' + (allDone ? ' done' : '') + '" id="item-' + item.id + '" style="animation-delay:' + delay + 'ms" onclick="_wirdReturnTo=\'' + _origin + '\';v2GoTo(\'wird\');setTimeout(function(){if(typeof renderWird===\'function\')renderWird();},60)">'
+  var _closeOverlay = _origin === 'fil-du-jour' ? 'var _r=document.getElementById(\\\'vue-rituel\\\');if(_r)_r.classList.add(\\\'hidden\\\');' : '';
+  return '<div class="wird-smart-card' + (allDone ? ' done' : '') + '" id="item-' + item.id + '" style="animation-delay:' + delay + 'ms" onclick="_wirdReturnTo=\'' + _origin + '\';' + _closeOverlay + 'v2GoTo(\'wird\');setTimeout(function(){if(typeof renderWird===\'function\')renderWird();},60)">'
     + '<div class="wird-smart-body">'
     + '<div class="wird-smart-arabic">' + arabicLabel + '</div>'
     + '<div class="wird-smart-label">' + frLabel + '</div>'
@@ -3606,7 +3607,7 @@ function toggleWirdItem(id, event) {
 function wirdGoBack() {
   if (_wirdReturnTo === 'fil-du-jour') {
     v2GoTo('checklist');
-    setTimeout(openVueAuFilDuJour, 80);
+    setTimeout(function() { openVueAuFilDuJour(); }, 100);
   } else {
     v2GoTo('checklist');
   }
