@@ -586,6 +586,15 @@ to {
   flex:1;
   min-width:0
 }
+.path-badge {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 14px;
+  color: #C8A84A;
+  opacity: 0.7;
+  pointer-events: none;
+}
 .item-label {
   font-size:16px;
   font-weight:500;

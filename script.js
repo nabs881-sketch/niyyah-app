@@ -2322,8 +2322,10 @@ function renderLevel(levelId) {
     const _tlColor = getPrayerTimelineColor();
     html += '<div class="items-group" style="border-left:2px solid ' + _tlColor + ';padding-left:12px;margin-left:4px;">';
     let _firstUncheckedFound = false;
+    var _motivBib = safeGetItem('niyyah_motivation');
     _filteredItems.forEach((item, idx) => {
       const delay = idx * 30;
+      var _pathBadge = (_motivBib && item.paths && item.paths.includes(_motivBib)) ? '<span class="path-badge">\u2726</span>' : '';
       if (item.type === 'wird') {
         html += renderWirdSmartCard(item, delay, undefined, _currentBlock);
       } else if (item.type === 'counter') {
@@ -2378,7 +2380,7 @@ function renderLevel(levelId) {
           ? 'SIRA.openDetail(); toggleItem(\'' + item.id + '\',event);'
           : 'toggleItem(\'' + item.id + '\',event)';
         var _tl = tI(item,'label'), _ts = tI(item,'sub');
-        html += '<div class="item' + fridayCls + (checked ? ' checked' : '') + _tlCurrent + '" onclick="' + customClick + '" style="' + _tlOpacity + 'animation-delay:' + delay + 'ms;--i:' + idx + '" id="item-' + item.id + '"><div class="check-circle"><svg class="check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-body"><div class="item-label' + priorityCls + '">' + _tl + optionalBadge + '</div>' + (_ts ? '<div class="item-sub">' + (_ts.includes('·') ? _ts.split('·')[0].trim() : _ts) + '</div>' : '') + arabicHtml + '</div>' + shareBtn + audioBtn + infoBtn + '</div>';
+        html += '<div class="item' + fridayCls + (checked ? ' checked' : '') + _tlCurrent + '" onclick="' + customClick + '" style="' + _tlOpacity + 'animation-delay:' + delay + 'ms;--i:' + idx + '" id="item-' + item.id + '">' + _pathBadge + '<div class="check-circle"><svg class="check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-body"><div class="item-label' + priorityCls + '">' + _tl + optionalBadge + '</div>' + (_ts ? '<div class="item-sub">' + (_ts.includes('·') ? _ts.split('·')[0].trim() : _ts) + '</div>' : '') + arabicHtml + '</div>' + shareBtn + audioBtn + infoBtn + '</div>';
       }
     });
     html += '</div>';
