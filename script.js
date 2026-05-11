@@ -12736,13 +12736,14 @@ function regardeCapture() {
     })
     .then(function(data) {
       if (!data) return;
-      if (data.mode === 'verset' && data.category && typeof data.verset_index === 'number'
-        && window.REGARD_VERSETS && window.REGARD_VERSETS[data.category]
-        && window.REGARD_VERSETS[data.category].versets
-        && window.REGARD_VERSETS[data.category].versets[data.verset_index]) {
+      if (data.mode === 'verset' && data.category && typeof data.verset_index === 'number') {
+        var _v = data.verset_override
+          || (window.REGARD_VERSETS && window.REGARD_VERSETS[data.category]
+              && window.REGARD_VERSETS[data.category].versets
+              && window.REGARD_VERSETS[data.category].versets[data.verset_index]);
+        if (!_v) { fallback(data.category); return; }
         if (_done) return; _done = true;
         clearTimeout(_toR);
-        var _v = window.REGARD_VERSETS[data.category].versets[data.verset_index];
         _regardeShowVerset(content, _v);
         _currentRegardeCat = data.category;
         _regardeStarred = false;

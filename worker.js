@@ -59,7 +59,7 @@ export default {
 
     // ── Santé (open to all) ──
     if (path === '/' && request.method === 'GET') {
-      return jsonResponse({ status: 'ok', service: 'Niyyah API', version: '2.4.0' });
+      return jsonResponse({ status: 'ok', service: 'Niyyah API', version: '2.5.0' });
     }
 
     // ── Origin check for API routes ──
@@ -365,7 +365,13 @@ FORMAT DE SORTIE (JSON strict) :
 {"category": "SOI|AUTRE|OBJET|MONDE|ENFANT|SACRE|INDETERMINE", "suggestions": ["Je ...", "Je ...", "Je ..."]}`;
 }
 
-const REGARDE_CLASSIFIER_PROMPT = `Tu es un classificateur d'images pour une application spirituelle musulmane. Classe l'image dans UNE des 16 catégories : CIEL, EAU, ANIMAL, NATURE, NOURRITURE, HABITAT, VISAGE, INDETERMINE, LUMIERE_OMBRE, MONTAGNE, MORT, OBJET_PERSONNEL, ROUTE, TEXTE, TISSU, VEHICULE.
+const REGARDE_CLASSIFIER_PROMPT = `Tu es un classificateur d'images pour une application spirituelle musulmane. Classe l'image dans UNE des 17 catégories : CIEL, EAU, ANIMAL, NATURE, NOURRITURE, HABITAT, VISAGE, INDETERMINE, LUMIERE_OMBRE, MONTAGNE, MORT, OBJET_PERSONNEL, ROUTE, TEXTE, TISSU, VEHICULE, INAPPROPRIE.
+INAPPROPRIE = contenu strictement contraire à la pudeur islamique :
+- Alcool (étiquette clairement identifiable)
+- Occultisme (pentagramme, tarot, zodiaque)
+- Baiser bouche / contact intime
+- Nudité / contenu sexuel
+RÈGLE : en cas de doute → INDETERMINE, jamais INAPPROPRIE.
 Si confidence < 0.80 → INDETERMINE.
 FORMAT (JSON strict) : {"category": "...", "confidence": 0.92}`;
 
@@ -476,7 +482,7 @@ async function handleRegarde(request, env) {
       const classifText = classifResp.content?.[0]?.text || '';
       const classifJson = extractJSON(classifText);
       if (classifJson && classifJson.category) {
-        const validCats = ['CIEL', 'EAU', 'ANIMAL', 'NATURE', 'NOURRITURE', 'HABITAT', 'VISAGE', 'INDETERMINE', 'LUMIERE_OMBRE', 'MONTAGNE', 'MORT', 'OBJET_PERSONNEL', 'ROUTE', 'TEXTE', 'TISSU', 'VEHICULE'];
+        const validCats = ['CIEL', 'EAU', 'ANIMAL', 'NATURE', 'NOURRITURE', 'HABITAT', 'VISAGE', 'INDETERMINE', 'LUMIERE_OMBRE', 'MONTAGNE', 'MORT', 'OBJET_PERSONNEL', 'ROUTE', 'TEXTE', 'TISSU', 'VEHICULE', 'INAPPROPRIE'];
         if (validCats.includes(classifJson.category)) {
           category = classifJson.category;
           confidence = typeof classifJson.confidence === 'number' ? classifJson.confidence : 0.8;
@@ -484,6 +490,20 @@ async function handleRegarde(request, env) {
         }
       }
     } catch (e) { category = 'INDETERMINE'; confidence = 0; }
+    // Filtre pudeur : réponse immédiate sans PASS 2
+    if (category === 'INAPPROPRIE') {
+      return jsonResponseV2({
+        mode: 'verset', category: 'INAPPROPRIE', confidence, verset_index: 0,
+        verset_override: {
+          texte: "Dis aux croyants de baisser leurs regards et de garder leur chasteté. C'est plus pur pour eux. Allah est, certes, Parfaitement Connaisseur de ce qu'ils font.",
+          reference: "An-Nûr 24:30",
+          murmure: "Détourne ton regard.",
+          epoque: "Période médinoise",
+          contexte: "Verset révélé pour établir l'éthique du regard dans la communauté musulmane.",
+          sabab: null
+        }
+      });
+    }
     // Verset index (random 0-7 for the category)
     const verset_index = Math.floor(Math.random() * 8);
     // PASS 2 : Génération Sonnet (optionnelle)
