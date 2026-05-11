@@ -4456,6 +4456,62 @@ to {
   border-color: rgba(200,168,75,0.5);
   background: rgba(40,36,28,0.9);
 }
+.wird-complete-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+.wird-complete-card {
+  text-align: center;
+  padding: 36px 32px;
+  border: 1px solid rgba(200,168,75,0.3);
+  border-radius: 20px;
+  background: radial-gradient(ellipse at top, #2C2E32, #1a1c1f);
+  max-width: 300px;
+  width: calc(100% - 48px);
+}
+.wird-complete-star {
+  font-size: 36px;
+  color: #C8A84A;
+  margin-bottom: 16px;
+}
+.wird-complete-arabic {
+  font-family: 'Scheherazade New', 'Amiri', serif;
+  font-size: 26px;
+  color: #C8A84A;
+  margin-bottom: 8px;
+  text-shadow: 0 0 12px rgba(200,168,75,0.25);
+}
+.wird-complete-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  font-style: italic;
+  color: rgba(200,168,75,0.7);
+  letter-spacing: 0.1em;
+  margin-bottom: 24px;
+}
+.wird-complete-btn {
+  padding: 12px 28px;
+  border-radius: 12px;
+  border: 1px solid rgba(200,168,75,0.35);
+  background: transparent;
+  color: #C8A84A;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.wird-complete-btn:hover,
+.wird-complete-btn:active {
+  border-color: rgba(200,168,75,0.6);
+}
 .wird-smart-rattrapage {
   font-family: 'Nunito', sans-serif;
   font-size: 10px;

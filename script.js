@@ -3613,7 +3613,32 @@ function toggleWirdItem(id, event) {
   if (typeof renderLevel === 'function' && typeof currentLevel !== 'undefined') {
     setTimeout(() => renderLevel(currentLevel), 60);
   }
+  // Check if a full session just completed
+  if (wirdState[id]) {
+    ['matin','soir'].forEach(function(ses) {
+      var s = WIRD_DATA[ses];
+      if (!s || !s.items) return;
+      var allDone = s.items.every(function(i) { return !!wirdState[i.id]; });
+      if (!allDone) return;
+      var key = 'niyyah_wird_done_' + ses + '_' + todayKey();
+      if (safeGetItem(key)) return;
+      safeSetItem(key, '1');
+      showWirdCompleteOverlay();
+    });
+  }
 }
+function showWirdCompleteOverlay() {
+  var ov = document.createElement('div');
+  ov.className = 'wird-complete-overlay';
+  ov.innerHTML = '<div class="wird-complete-card">'
+    + '<div class="wird-complete-star">\u2726</div>'
+    + '<div class="wird-complete-arabic">\u0627\u0644\u0644\u0651\u064E\u0647\u064F\u0645\u0651\u064E \u062A\u064E\u0642\u064E\u0628\u0651\u064E\u0644\u0652</div>'
+    + '<div class="wird-complete-label">All\u00e2humma taqabbal</div>'
+    + '<button class="wird-complete-btn" onclick="this.closest(\'.wird-complete-overlay\').remove();v2GoTo(\'sanctuaire\');">Revenir au sanctuaire</button>'
+    + '</div>';
+  document.body.appendChild(ov);
+}
+window.showWirdCompleteOverlay = showWirdCompleteOverlay;
 function renderWird() {
   const content = document.getElementById('wirdContent');
   if (!content) return;
