@@ -10598,7 +10598,7 @@ function v2GoTo(viewName) {
     if (sanctEl2 && viewName !== 'sanctuaire') sanctEl2.classList.remove('active');
     if (viewName === 'wird' && typeof renderWird === 'function') setTimeout(renderWird, 60);
     if (viewName === 'bab-an-nafs' && typeof renderBabAnNafs === 'function') setTimeout(renderBabAnNafs, 60);
-    if (viewName === 'checklist' && typeof renderLevel === 'function') renderLevel(typeof currentLevel !== 'undefined' ? currentLevel : 1);
+    if (viewName === 'checklist') { if (typeof renderTabs === 'function') renderTabs(); if (typeof renderLevel === 'function') renderLevel(typeof currentLevel !== 'undefined' ? currentLevel : 1); }
     if (viewName === 'progression' && typeof renderProgression === 'function') renderProgression();
   }});
 }
