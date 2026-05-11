@@ -2479,11 +2479,9 @@ function togglePrayerOnTime(id) {
 var _wirdReturnTo = null;
 function wirdGoBack() {
   if (_wirdReturnTo) {
-    v2GoTo('checklist');
-    setTimeout(function() { openVueRituel(_wirdReturnTo); }, 100);
-  } else {
-    v2GoTo('checklist');
+    openVueRituel(_wirdReturnTo);
   }
+  v2GoTo('checklist');
 }
 window.wirdGoBack = wirdGoBack;
 function renderWirdSmartCard(item, delay, origin, currentBlock) {
