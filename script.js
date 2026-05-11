@@ -12335,6 +12335,12 @@ function checkHijriBanner() {
       msg = '\u2726 Eid Mubarak. D\u00e9sactiver le Mode Ramadan\u00a0?';
       btnLabel = 'D\u00e9sactiver';
       action = 'toggleRamadanMode()';
+    } else if (h.month === 'Ramadan' && h.day >= 21 && ramadanState && ramadanState.active) {
+      var _10key = 'hijri_banner_10jours_' + h.year;
+      if (safeGetItem(_10key)) return;
+      msg = '\u2726 Les 10 derniers jours ont commenc\u00e9. C\u2019est le moment de l\u2019intensification.';
+      btnLabel = 'J\u2019ai compris';
+      action = 'safeSetItem(\'' + _10key + '\',\'1\')';
     }
     if (!msg) return;
     var banner = document.createElement('div');
