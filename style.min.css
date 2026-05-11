@@ -4395,7 +4395,7 @@ to {
 }
 .wird-smart-card:hover,
 .wird-smart-card:active { border-color: rgba(200,168,75,0.45); }
-.wird-smart-card.done { opacity: 0.5; }
+.wird-smart-card.done { opacity: 0.3; }
 .wird-fil-card {
   width: 100%;
   box-sizing: border-box;
@@ -8103,18 +8103,23 @@ body.onboarding-active #nav-bar-v2 {
 .rituel-item.done .check {
   background: #C8A84A;
 }
-.fil-acc .rituel-item {
+.fil-acc .rituel-item,
+#vue-rituel .rituel-item {
   transition: opacity 0.4s ease;
 }
-.fil-acc .rituel-item.done {
+.fil-acc .rituel-item.done,
+#vue-rituel .rituel-item.done {
   opacity: 0.3;
 }
-.fil-acc .rituel-item.done .label {
+.fil-acc .rituel-item.done .label,
+#vue-rituel .rituel-item.done .label {
   text-decoration: line-through;
   text-decoration-color: rgba(200,168,75,0.35);
 }
 .fil-acc .rituel-item.done .sub,
-.fil-acc .rituel-item.done .arabic {
+.fil-acc .rituel-item.done .arabic,
+#vue-rituel .rituel-item.done .sub,
+#vue-rituel .rituel-item.done .arabic {
   text-decoration: line-through;
   text-decoration-color: rgba(200,168,75,0.2);
 }
