@@ -12367,6 +12367,18 @@ function checkHijriBanner() {
       msg = '\u2726 Aujourd\u2019hui c\u2019est Arafat. Multiplie dou\u2019as et dhikr.';
       btnLabel = 'All\u00e2humma';
       action = 'safeSetItem(\'' + _dhKey9 + '\',\'1\')';
+    } else if (_isDhulHijjah && h.day === 10) {
+      var _dhKeyEid = 'hijri_banner_dh_eid_' + h.year;
+      if (safeGetItem(_dhKeyEid)) return;
+      msg = '\u2726 A\u00efd al-Adha Mubarak. Qu\u2019All\u00e2h accepte ton sacrifice et tes \u0153uvres.';
+      btnLabel = 'All\u00e2humma akbar';
+      action = 'safeSetItem(\'' + _dhKeyEid + '\',\'1\')';
+    } else if (_isDhulHijjah && [11,12,13].includes(h.day)) {
+      var _dhKeyTash = 'hijri_banner_dh_tashreeq_' + h.year;
+      if (safeGetItem(_dhKeyTash)) return;
+      msg = '\u2726 Jours de Tashreeq. Multiplie le takbir (All\u00e2hu Akbar).';
+      btnLabel = 'J\u2019ai compris';
+      action = 'safeSetItem(\'' + _dhKeyTash + '\',\'1\')';
     }
     if (!msg) return;
     var banner = document.createElement('div');
