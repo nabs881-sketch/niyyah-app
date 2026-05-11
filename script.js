@@ -12842,8 +12842,26 @@ function regardeCapture() {
       });
     }
 
-    function fallback(cat) {
-      saveAndShow(pickRegardeQuestion(cat || 'INDETERMINE'), cat);
+    function fallback() {
+      if (_done) return; _done = true;
+      clearTimeout(_toR);
+      var _fv = window.REGARD_VERSETS && window.REGARD_VERSETS['INDETERMINE'] && window.REGARD_VERSETS['INDETERMINE'].versets && window.REGARD_VERSETS['INDETERMINE'].versets[0];
+      if (_fv) {
+        _regardeShowVerset(content, _fv, true);
+        _currentRegardeCat = 'INDETERMINE';
+        _regardeStarred = false;
+        var _jLabel = _fv.murmure || _fv.texte.substring(0, 80);
+        compressPhoto(dataUrl).then(function(photo) {
+          var entry = addRegardeEntry({ question: _jLabel, category: 'INDETERMINE', photo: photo, bookmark: false, note: '', verset_index: 0 });
+          _currentRegardeId = entry.id;
+        }).catch(function() {
+          var entry = addRegardeEntry({ question: _jLabel, category: 'INDETERMINE', photo: null, bookmark: false, note: '', verset_index: 0 });
+          _currentRegardeId = entry.id;
+        });
+      } else {
+        content.innerHTML = '<div style="text-align:center;padding:20%;font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:rgba(200,168,75,0.7);">Connexion requise pour le premier Regard.</div>';
+        content.style.opacity = '1';
+      }
     }
 
     var _thirtyDaysAgo = Date.now() - 30 * 24 * 3600000;
@@ -12868,7 +12886,7 @@ function regardeCapture() {
           || (window.REGARD_VERSETS && window.REGARD_VERSETS[data.category]
               && window.REGARD_VERSETS[data.category].versets
               && window.REGARD_VERSETS[data.category].versets[data.verset_index]);
-        if (!_v) { fallback(data.category); return; }
+        if (!_v) { fallback(); return; }
         if (_done) return; _done = true;
         clearTimeout(_toR);
         _regardeShowVerset(content, _v, true, !!data.returning_verset);
@@ -12887,11 +12905,11 @@ function regardeCapture() {
       } else if ((data.mode === 'question' || data.source === 'ia') && data.question) {
         saveAndShow(data.question, data.category);
       } else {
-        fallback(data.category || 'INDETERMINE');
+        fallback();
       }
     })
     .catch(function() {
-      fallback('INDETERMINE');
+      fallback();
     });
   }, 400);
 }
@@ -12949,23 +12967,7 @@ function regardeRefresh() {
   if (_currentRegardeId) deleteEntry('regarde', _currentRegardeId);
   _regardeStarred = false;
   _currentRegardeId = null;
-  var q = document.getElementById('regarde-question');
-  if (!q) return;
-  q.style.opacity = '0';
-  setTimeout(function() {
-    var newQuestion = pickRegardeQuestion(_currentRegardeCat || 'INDETERMINE');
-    q.textContent = newQuestion;
-    q.style.opacity = '1';
-    compressPhoto(window._regardeImageData || '').then(function(photo) {
-      var entry = addRegardeEntry({ question: newQuestion, category: _currentRegardeCat, photo: photo, bookmark: false, note: '' });
-      _currentRegardeId = entry.id;
-    }).catch(function() {
-      var entry = addRegardeEntry({ question: newQuestion, category: _currentRegardeCat, photo: null, bookmark: false, note: '' });
-      _currentRegardeId = entry.id;
-    });
-  }, 300);
-  var btn = document.getElementById('regarde-btn-star');
-  if (btn) { btn.textContent = '☆'; btn.style.background = 'transparent'; }
+  regardeOpen();
 }
 
 function openRegardeJournal() {
