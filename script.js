@@ -13532,6 +13532,10 @@ function openVueRituel(prayer) {
   var _renderOne = function(it) {
     return it.type === 'wird' ? renderWirdSmartCard(it, 0, undefined, prayer) : renderItem(it, false);
   };
+  var _sortDone = function(arr) {
+    arr.sort(function(a, b) { return (state[a.id] ? 1 : 0) - (state[b.id] ? 1 : 0); });
+    return arr;
+  };
   if (prayer === 'fajr') {
     var _avant = normalItems.filter(it => it.id === 'sunnah_fajr');
     var _apres = normalItems.filter(it => it.id !== 'sunnah_fajr');
@@ -13540,9 +13544,9 @@ function openVueRituel(prayer) {
       html += _avant.map(_renderOne).join('');
       html += '<div class="rituel-sep-avant"><span>APRÈS LA PRIÈRE</span></div>';
     }
-    html += _apres.map(_renderOne).join('');
+    html += _sortDone(_apres).map(_renderOne).join('');
   } else {
-    html += normalItems.map(_renderOne).join('');
+    html += _sortDone(normalItems).map(_renderOne).join('');
   }
   main.innerHTML = html;
   document.getElementById('rituel-emblem').textContent = '\u0635\u0644\u0627\u0629';
@@ -13633,6 +13637,7 @@ function openVueAuFilDuJour() {
   _catOrder.forEach(function(cat) {
     var group = items.filter(function(it) { return it.category === cat.key; });
     if (!group.length) return;
+    group.sort(function(a, b) { return (state[a.id] ? 1 : 0) - (state[b.id] ? 1 : 0); });
     var doneCount = group.filter(function(it) { return !!state[it.id]; }).length;
     var _openCat = safeGetItem('filjour_open_section');
     var isOpen = _openCat ? _openCat === cat.key : cat.defaultOpen;
