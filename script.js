@@ -13407,7 +13407,9 @@ function getRitualItems(prayer) {
   var _ritualOrder = {
     fajr: ['istighfar','allahumma_salam','tasbih','ayat_kursi','muawwidhat','wird_matin'],
     dhuhr: ['istighfar','allahumma_salam','tasbih','ayat_kursi','muawwidhat','sunnah_prieres'],
-    asr: ['istighfar','allahumma_salam','tasbih','ayat_kursi','muawwidhat']
+    asr: ['istighfar','allahumma_salam','tasbih','ayat_kursi','muawwidhat'],
+    maghrib: ['istighfar','allahumma_salam','tasbih','ayat_kursi','muawwidhat','wird_soir'],
+    isha: ['istighfar','allahumma_salam','tasbih','ayat_kursi','muawwidhat','witr']
   };
   var _order = _ritualOrder[prayer];
   if (_order) {
