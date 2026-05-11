@@ -11964,33 +11964,6 @@ function showFinJourneeActe3() {
     updateFinJourneeCard();
   }, 18100);
 }
-function openFinJourneeConsultation() {
-  var today = todayKey();
-  var hist = [];
-  try { hist = JSON.parse(localStorage.getItem('niyyah_finjournee_history') || '[]'); } catch(e) {}
-  var entry = null;
-  for (var i = hist.length - 1; i >= 0; i--) { if (hist[i].date === today) { entry = hist[i]; break; } }
-  if (!entry) return;
-  var body = '';
-  if (entry.skipped_bontes) {
-    body = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;font-style:italic;color:#C8A84A;line-height:1.7;margin-bottom:8px;">' + t('silent_muhasaba') + '</div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:rgba(200,168,75,0.6);">Alhamdulillah.</div>';
-  } else {
-    body = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:rgba(200,168,75,0.6);margin-bottom:20px;">Ce soir, les 3 bontés qu\'Allah t\'a permis :</div>';
-    entry.bontes.forEach(function(b) {
-      body += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;font-style:italic;color:#C8A84A;line-height:1.8;">\u30fb ' + escapeHtml(b) + '</div>';
-    });
-  }
-  var overlay = document.createElement('div');
-  overlay.id = 'finjournee-consult';
-  overlay.style.cssText = 'position:fixed;inset:0;z-index:10000;background:#000;display:flex;align-items:center;justify-content:center;padding:24px;';
-  overlay.innerHTML = '<div style="max-width:320px;text-align:center;">' + body
-    + '<button onclick="document.getElementById(\'finjournee-consult\').remove()" style="margin-top:36px;padding:12px 32px;border-radius:100px;border:1px solid rgba(200,168,75,0.3);background:none;color:rgba(200,168,75,0.6);font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;cursor:pointer;" aria-label="Fermer">'+t('modal_close')+'</button>'
-    + '</div>';
-  overlay.addEventListener('click', function(e) { if (e.target === overlay) overlay.remove(); });
-  document.body.appendChild(overlay);
-}
-
 function updateFajrChallenge() {
   var card = document.getElementById('fajr-challenge-card');
   if (!card) return;
