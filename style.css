@@ -8204,6 +8204,33 @@ body.onboarding-active #nav-bar-v2 {
   color: rgba(70,180,130,0.85);
   font-family: 'Nunito', sans-serif;
 }
+.rituel-sep-avant {
+  text-align: center;
+  padding: 18px 0 10px;
+  position: relative;
+  margin-top: 4px;
+}
+.rituel-sep-avant::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(200,168,75,0.25), transparent);
+  z-index: 1;
+}
+.rituel-sep-avant span {
+  display: inline-block;
+  padding: 0 14px;
+  background: #1a1c1f;
+  position: relative;
+  z-index: 2;
+  font-size: 10px;
+  letter-spacing: 0.35em;
+  color: rgba(200,168,75,0.7);
+  font-family: 'Nunito', sans-serif;
+}
 .rituel-item.vendredi {
   background: linear-gradient(135deg, rgba(20,55,40,0.55), rgba(15,40,28,0.65));
   border: 1px solid rgba(70,180,130,0.25);

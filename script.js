@@ -13405,7 +13405,7 @@ function getRitualItems(prayer) {
   });
   items.push(...alwaysItems);
   var _ritualOrder = {
-    fajr: ['istighfar','allahumma_salam','tasbih','ayat_kursi','muawwidhat','wird_matin'],
+    fajr: ['sunnah_fajr','istighfar','allahumma_salam','tasbih','ayat_kursi','muawwidhat','wird_matin'],
     dhuhr: ['istighfar','allahumma_salam','tasbih','ayat_kursi','muawwidhat','sunnah_prieres'],
     asr: ['istighfar','allahumma_salam','tasbih','ayat_kursi','muawwidhat'],
     maghrib: ['istighfar','allahumma_salam','tasbih','ayat_kursi','muawwidhat','wird_soir'],
@@ -13490,7 +13490,18 @@ function openVueRituel(prayer) {
     const fridayItems = FRIDAY_ITEMS_GLOBAL;
     html += fridayItems.map(it => renderItem(it, true)).join('');
   }
-  html += normalItems.map(it => renderItem(it, false)).join('');
+  if (prayer === 'fajr') {
+    var _avant = normalItems.filter(it => it.id === 'sunnah_fajr');
+    var _apres = normalItems.filter(it => it.id !== 'sunnah_fajr');
+    if (_avant.length) {
+      html += '<div class="rituel-sep-avant"><span>AVANT LA PRIÈRE</span></div>';
+      html += _avant.map(it => renderItem(it, false)).join('');
+      html += '<div class="rituel-sep-avant"><span>APRÈS LA PRIÈRE</span></div>';
+    }
+    html += _apres.map(it => renderItem(it, false)).join('');
+  } else {
+    html += normalItems.map(it => renderItem(it, false)).join('');
+  }
   main.innerHTML = html;
   document.getElementById('rituel-emblem').textContent = '\u0635\u0644\u0627\u0629';
   v.classList.remove('hidden');
