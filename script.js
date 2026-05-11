@@ -11807,14 +11807,11 @@ function updateFinJourneeCard() {
     show = (nowMin >= 1200) || (nowMin < 300);
   }
   if (!show) { card.style.display = 'none'; return; }
-  card.style.display = 'block';
   var _todayStr = dateToKey(now);
   var done = localStorage.getItem('niyyah_finjournee_date') === _todayStr;
-  if (done) {
-    card.innerHTML = '<img class="finjournee-img" loading="lazy" src="assets/cards/card-findejour.webp" alt="Journée fermée" onclick="openFinJourneeConsultation()">';
-  } else {
-    card.innerHTML = '<img class="finjournee-img" loading="lazy" src="assets/cards/card-findejour.webp" alt="Fin de journée" onclick="openFinJournee()">';
-  }
+  if (done) { card.style.display = 'none'; return; }
+  card.style.display = 'block';
+  card.innerHTML = '<img class="finjournee-img" loading="lazy" src="assets/cards/card-findejour.webp" alt="Fin de journée" onclick="openFinJournee()">';
 }
 function openFinJournee() {
   showAlHayaBtn();
