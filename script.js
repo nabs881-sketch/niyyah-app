@@ -13492,17 +13492,20 @@ function openVueRituel(prayer) {
     const fridayItems = FRIDAY_ITEMS_GLOBAL;
     html += fridayItems.map(it => renderItem(it, true)).join('');
   }
+  var _renderOne = function(it) {
+    return it.type === 'wird' ? renderWirdSmartCard(it, 0, undefined, prayer) : renderItem(it, false);
+  };
   if (prayer === 'fajr') {
     var _avant = normalItems.filter(it => it.id === 'sunnah_fajr');
     var _apres = normalItems.filter(it => it.id !== 'sunnah_fajr');
     if (_avant.length) {
       html += '<div class="rituel-sep-avant"><span>AVANT LA PRIÈRE</span></div>';
-      html += _avant.map(it => renderItem(it, false)).join('');
+      html += _avant.map(_renderOne).join('');
       html += '<div class="rituel-sep-avant"><span>APRÈS LA PRIÈRE</span></div>';
     }
-    html += _apres.map(it => renderItem(it, false)).join('');
+    html += _apres.map(_renderOne).join('');
   } else {
-    html += normalItems.map(it => renderItem(it, false)).join('');
+    html += normalItems.map(_renderOne).join('');
   }
   main.innerHTML = html;
   document.getElementById('rituel-emblem').textContent = '\u0635\u0644\u0627\u0629';
