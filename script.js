@@ -12327,6 +12327,8 @@ function checkHijriBanner() {
     var _monthNorm = h.month ? h.month.normalize('NFD').replace(/[\u0300-\u036f]/g, '') : '';
     var _isDhulHijjah = _monthNorm.indexOf('Hijjah') !== -1;
     var _isMuharram = _monthNorm.indexOf('Muharram') !== -1;
+    var _isRajab = _monthNorm.indexOf('Rajab') !== -1;
+    var _isShaban = _monthNorm.indexOf('Sha') !== -1 && _monthNorm.indexOf('ban') !== -1;
     var sanct = document.getElementById('view-sanctuaire');
     if (!sanct) return;
     var msg = null, btnLabel = null, action = null, _showLater = true;
@@ -12404,6 +12406,18 @@ function checkHijriBanner() {
       btnLabel = 'All\u00e2humma';
       action = 'safeSetItem(\'' + _muhKey10 + '\',\'1\')';
       _showLater = false;
+    } else if (_isRajab && h.day === 1) {
+      var _rajKey = 'hijri_banner_rajab_' + h.year;
+      if (safeGetItem(_rajKey)) return;
+      msg = '\u2726 Le mois sacr\u00e9 de Rajab a commenc\u00e9. All\u00e2humma b\u00e2rik lan\u00e2 f\u00ee Rajab wa Sha\u02bfb\u00e2n wa balli\u03b3n\u00e2 Ramad\u00e2n.';
+      btnLabel = 'J\u2019ai compris';
+      action = 'safeSetItem(\'' + _rajKey + '\',\'1\')';
+    } else if (_isShaban && h.day === 1) {
+      var _shaKey = 'hijri_banner_shaban_' + h.year;
+      if (safeGetItem(_shaKey)) return;
+      msg = '\u2726 Sha\u2019ban a commenc\u00e9. Le Proph\u00e8te \uFDFA je\u00fbnait beaucoup ce mois \u2014 pr\u00e9paration \u00e0 Ramadan.';
+      btnLabel = 'J\u2019ai compris';
+      action = 'safeSetItem(\'' + _shaKey + '\',\'1\')';
     }
     if (!msg) return;
     var banner = document.createElement('div');
