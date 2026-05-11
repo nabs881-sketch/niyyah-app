@@ -2476,6 +2476,16 @@ function togglePrayerOnTime(id) {
   saveState();
   renderLevel(currentLevel);
 }
+var _wirdReturnTo = null;
+function wirdGoBack() {
+  if (_wirdReturnTo) {
+    v2GoTo('checklist');
+    setTimeout(function() { openVueRituel(_wirdReturnTo); }, 100);
+  } else {
+    v2GoTo('checklist');
+  }
+}
+window.wirdGoBack = wirdGoBack;
 function renderWirdSmartCard(item, delay, origin, currentBlock) {
   const session = WIRD_DATA[item.session];
   const done  = session.items.filter(i => wirdState[i.id]).length;
@@ -2486,7 +2496,8 @@ function renderWirdSmartCard(item, delay, origin, currentBlock) {
   const arabicLabel = isMatin ? 'وِرْدُ الصَّبَاح' : 'وِرْدُ الْمَسَاء';
   const frLabel = isMatin ? t('wird_matin') : t('wird_soir');
   var _rattrapage = (currentBlock && item.canonBlock && currentBlock !== item.canonBlock) ? '<div class="wird-smart-rattrapage">(rattrapage)</div>' : '';
-  return '<div class="wird-smart-card' + (allDone ? ' done' : '') + '" id="item-' + item.id + '" style="animation-delay:' + delay + 'ms" onclick="v2GoTo(\'wird\');setTimeout(function(){if(typeof renderWird===\'function\')renderWird();},60)">'
+  var _blockStr = currentBlock ? "'" + currentBlock + "'" : 'null';
+  return '<div class="wird-smart-card' + (allDone ? ' done' : '') + '" id="item-' + item.id + '" style="animation-delay:' + delay + 'ms" onclick="_wirdReturnTo=' + _blockStr + ';var r=document.getElementById(\'vue-rituel\');if(r)r.classList.add(\'hidden\');v2GoTo(\'wird\');setTimeout(function(){if(typeof renderWird===\'function\')renderWird();},60)">'
     + '<div class="wird-smart-body">'
     + '<div class="wird-smart-arabic">' + arabicLabel + '</div>'
     + '<div class="wird-smart-label">' + frLabel + '</div>'
@@ -3609,7 +3620,8 @@ function renderWird() {
   const content = document.getElementById('wirdContent');
   if (!content) return;
   var _wirdArabicSession = {matin:'أَوْرَاد الصَّبَاح',soir:'أَوْرَاد الْمَسَاء'};
-  let html = '<div class="section-header"><div class="section-arabic">\u0623\u064E\u0648\u0652\u0631\u0627\u062F</div><div class="section-name">' + t('wird_daily') + '</div><div class="section-line"></div></div>';
+  let html = '<button class="wird-back-btn" onclick="wirdGoBack()" aria-label="Retour">\u2039</button>';
+  html += '<div class="section-header"><div class="section-arabic">\u0623\u064E\u0648\u0652\u0631\u0627\u062F</div><div class="section-name">' + t('wird_daily') + '</div><div class="section-line"></div></div>';
   ['matin', 'soir'].forEach(session => {
     const s = WIRD_DATA[session];
     const done = s.items.filter(i => wirdState[i.id]).length;
