@@ -13405,7 +13405,9 @@ function getRitualItems(prayer) {
   });
   items.push(...alwaysItems);
   var _ritualOrder = {
-    fajr: ['istighfar','allahumma_salam','tasbih','ayat_kursi','muawwidhat','wird_matin']
+    fajr: ['istighfar','allahumma_salam','tasbih','ayat_kursi','muawwidhat','wird_matin'],
+    dhuhr: ['istighfar','allahumma_salam','tasbih','ayat_kursi','muawwidhat','sunnah_prieres'],
+    asr: ['istighfar','allahumma_salam','tasbih','ayat_kursi','muawwidhat']
   };
   var _order = _ritualOrder[prayer];
   if (_order) {
