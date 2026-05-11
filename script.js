@@ -13531,9 +13531,12 @@ function openVueRituel(prayer) {
     + '<div style="' + _kn + 'background:' + (_atJum ? '#fff' : 'rgba(255,255,255,0.4)') + ';margin-left:' + (_atJum ? '14px' : '0') + ';"></div></div></div>' : '')
     + '</div></div>';
   if (isFriday()) {
-    html += '<div class="rituel-vendredi-sep"><span><div class="ar">\u0627\u0644\u062C\u064F\u0645\u064F\u0639\u064E\u0629</div><div class="fr">VENDREDI</div></span></div>';
-    const fridayItems = FRIDAY_ITEMS_GLOBAL;
-    html += fridayItems.map(it => renderItem(it, true)).join('');
+    var _motivFri = safeGetItem('niyyah_motivation');
+    const fridayItems = FRIDAY_ITEMS_GLOBAL.filter(function(it) { return !_motivFri || !it.paths || it.paths.includes(_motivFri); });
+    if (fridayItems.length) {
+      html += '<div class="rituel-vendredi-sep"><span><div class="ar">\u0627\u0644\u062C\u064F\u0645\u064F\u0639\u064E\u0629</div><div class="fr">VENDREDI</div></span></div>';
+      html += fridayItems.map(it => renderItem(it, true)).join('');
+    }
   }
   var _renderOne = function(it) {
     return it.type === 'wird' ? renderWirdSmartCard(it, 0, undefined, prayer) : renderItem(it, false);
