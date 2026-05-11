@@ -2341,7 +2341,7 @@ function renderLevel(levelId) {
     const _tlColor = getPrayerTimelineColor();
     html += '<div class="items-group" style="border-left:2px solid ' + _tlColor + ';padding-left:12px;margin-left:4px;">';
     let _firstUncheckedFound = false;
-    var _motivBib = safeGetItem('niyyah_motivation');
+    var _motivBib = getEffectiveMotiv();
     _filteredItems.forEach((item, idx) => {
       const delay = idx * 30;
       var _pathBadge = (_motivBib && item.paths && item.paths.includes(_motivBib)) ? '<span class="path-badge">\u2726</span>' : '';
@@ -12053,7 +12053,7 @@ function updateSanctuaireMoment() {
     }
   }
   function _isDone(item) { return item.type === 'counter' ? (state[item.id] || 0) >= item.target : !!state[item.id]; }
-  var _motivS = safeGetItem('niyyah_motivation');
+  var _motivS = getEffectiveMotiv();
   var _allUnlocked = LEVELS.filter(function(l) { return state._unlocked && state._unlocked.includes(l.id); })
     .flatMap(function(l) { return l.sections.flatMap(function(s) { return s.items; }); })
     .filter(function(item) { return !_motivS || !item.paths || item.paths.includes(_motivS); });
@@ -13447,9 +13447,19 @@ function closeVueRituel() {
 }
 window.closeVueRituel = closeVueRituel;
 
+function getEffectiveMotiv() {
+  var m = safeGetItem('niyyah_motivation');
+  if (!m) return m;
+  if (safeGetItem('ramadan_boost') === 'accepted' && typeof ramadanState !== 'undefined' && ramadanState.active) {
+    if (m === 'reconnecter') return 'routine';
+    if (m === 'routine') return 'sacraliser';
+  }
+  return m;
+}
+window.getEffectiveMotiv = getEffectiveMotiv;
 function getRitualItems(prayer) {
   if (!Array.isArray(LEVELS)) return [];
-  var _motiv = safeGetItem('niyyah_motivation');
+  var _motiv = getEffectiveMotiv();
   const items = [];
   const alwaysItems = [];
   [0,1].forEach(i => {
@@ -13550,7 +13560,7 @@ function openVueRituel(prayer) {
     + '<div style="' + _kn + 'background:' + (_atJum ? '#fff' : 'rgba(255,255,255,0.4)') + ';margin-left:' + (_atJum ? '14px' : '0') + ';"></div></div></div>' : '')
     + '</div></div>';
   if (isFriday()) {
-    var _motivFri = safeGetItem('niyyah_motivation');
+    var _motivFri = getEffectiveMotiv();
     const fridayItems = FRIDAY_ITEMS_GLOBAL.filter(function(it) { return !_motivFri || !it.paths || it.paths.includes(_motivFri); });
     if (fridayItems.length) {
       html += '<div class="rituel-vendredi-sep"><span><div class="ar">\u0627\u0644\u062C\u064F\u0645\u064F\u0639\u064E\u0629</div><div class="fr">VENDREDI</div></span></div>';
@@ -13584,7 +13594,7 @@ window.openVueRituel = openVueRituel;
 
 function getFilJourCardHTML() {
   const state = JSON.parse(localStorage.getItem('spiritual_v2') || '{}');
-  var _motivF = safeGetItem('niyyah_motivation');
+  var _motivF = getEffectiveMotiv();
   var _passPath = function(it) { return !_motivF || !it.paths || it.paths.includes(_motivF); };
   let done = 0, total = 0;
   if (Array.isArray(LEVELS)) {
@@ -13638,7 +13648,7 @@ function openVueAuFilDuJour() {
   v.querySelector('.rituel-titre').textContent = 'AU FIL DU JOUR';
   v.querySelector('.rituel-prochaine').textContent = '';
   v.querySelector('.rituel-poetique').textContent = 'Ce qui demeure entre tes pri\u00e8res.';
-  var _motiv = safeGetItem('niyyah_motivation');
+  var _motiv = getEffectiveMotiv();
   const items = [];
   if (Array.isArray(LEVELS)) {
     [2,3].forEach(i => {
