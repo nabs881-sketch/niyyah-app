@@ -10929,7 +10929,8 @@ function selectOrientation(value) {
   localStorage.removeItem('niyyah_welcome_shown');
   localStorage.removeItem('niyyah_defi_v2');
   closeOrientationPicker();
-  v2OpenSettings();
+  if (typeof renderTabs === 'function') renderTabs();
+  if (typeof renderLevel === 'function' && typeof currentLevel !== 'undefined') renderLevel(currentLevel);
 }
 function replayOnboarding() {
   if (typeof closeAnyOpenSheet === 'function') closeAnyOpenSheet();
