@@ -13404,6 +13404,18 @@ function getRitualItems(prayer) {
     });
   });
   items.push(...alwaysItems);
+  var _ritualOrder = {
+    fajr: ['istighfar','allahumma_salam','tasbih','ayat_kursi','muawwidhat','wird_matin']
+  };
+  var _order = _ritualOrder[prayer];
+  if (_order) {
+    items.sort(function(a, b) {
+      var ai = _order.indexOf(a.id), bi = _order.indexOf(b.id);
+      if (ai === -1) ai = _order.length;
+      if (bi === -1) bi = _order.length;
+      return ai - bi;
+    });
+  }
   return items;
 }
 window.getRitualItems = getRitualItems;
