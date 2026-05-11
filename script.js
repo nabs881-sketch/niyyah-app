@@ -2172,6 +2172,15 @@ function renderTabs() {
     else if (done) cls += ' done';
     return '<div class="' + cls + '" onclick="selectLevel(' + l.id + ')">' + t('level_' + l.id) + (done ? ' ✓' : '') + '</div>';
   }).join('');
+  var _cheminEl = document.getElementById('chemin-indicator');
+  var _motivRaw = localStorage.getItem('niyyah_motivation');
+  var _cheminName = _motivRaw === 'reconnecter' ? t('ob_motiv_reconnecter') : _motivRaw === 'routine' ? t('ob_motiv_routine') : _motivRaw === 'sacraliser' ? t('ob_motiv_sacraliser') : '';
+  if (_cheminEl && _cheminName) {
+    _cheminEl.querySelector('.chemin-name').textContent = _cheminName;
+    _cheminEl.style.display = '';
+  } else if (_cheminEl && !_cheminName) {
+    _cheminEl.style.display = 'none';
+  }
 }
 function animateTabSwipe(direction, callback) {
   const content = document.getElementById('content');

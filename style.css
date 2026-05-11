@@ -586,6 +586,37 @@ to {
   flex:1;
   min-width:0
 }
+.chemin-indicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: rgba(200,168,75,0.05);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+}
+.chemin-prefix {
+  font-style: italic;
+  color: rgba(200,168,75,0.55);
+}
+.chemin-name {
+  font-weight: 700;
+  color: rgba(200,168,75,0.85);
+}
+.chemin-change {
+  margin-left: auto;
+  background: none;
+  border: 1px solid rgba(200,168,75,0.2);
+  border-radius: 8px;
+  padding: 3px 10px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 12px;
+  color: rgba(200,168,75,0.6);
+  cursor: pointer;
+}
+.chemin-change:active {
+  border-color: rgba(200,168,75,0.4);
+}
 .hijri-banner {
   padding: 14px 16px;
   margin: 12px 16px;
