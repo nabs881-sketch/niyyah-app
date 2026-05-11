@@ -13613,7 +13613,13 @@ function openVueAuFilDuJour() {
   });
   const main = v.querySelector('.rituel-content');
   const state = JSON.parse(localStorage.getItem('spiritual_v2') || '{}');
-  main.innerHTML = items.map(function(it) {
+  var _catOrder = [
+    { key: 'rituels', title: 'RITUELS DU JOUR' },
+    { key: 'science', title: 'SCIENCE ET LECTURE' },
+    { key: 'bienfaisance', title: 'BIENFAISANCE ET LIENS' },
+    { key: 'duaa', title: "DOU'A ET TAFAKKUR" }
+  ];
+  var _renderFilItem = function(it) {
     const done = state[it.id] ? 'done' : '';
     const ar = it.arabic ? '<div class="arabic">' + it.arabic + '</div>' : '';
     const sub = it.sub ? '<div class="sub">' + it.sub + '</div>' : '';
@@ -13622,7 +13628,17 @@ function openVueAuFilDuJour() {
       : it.id === 'savais_tu' ? 'openVueSavaisTu(); toggleItem(\'' + it.id + '\',event);'
       : 'toggleItem(\'' + it.id + '\',event); openVueAuFilDuJour();';
     return '<div class="rituel-item ' + done + '" id="rituel-item-' + it.id + '" onclick="' + _click + '"><div class="check"></div><div style="flex:1"><div class="label">' + (it.label||it.id) + '</div>' + sub + ar + '</div>' + audio + '</div>';
-  }).join('');
+  };
+  var _html = '';
+  _catOrder.forEach(function(cat) {
+    var group = items.filter(function(it) { return it.category === cat.key; });
+    if (!group.length) return;
+    _html += '<div class="fil-jour-sep"><span>' + cat.title + '</span></div>';
+    _html += group.map(_renderFilItem).join('');
+  });
+  var _uncategorized = items.filter(function(it) { return !it.category; });
+  if (_uncategorized.length) _html += _uncategorized.map(_renderFilItem).join('');
+  main.innerHTML = _html;
   v.classList.remove('hidden');
   document.getElementById('rituel-emblem').textContent = '\u064A\u064E\u0648\u0652\u0645';
 }
