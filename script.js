@@ -12335,12 +12335,18 @@ function checkHijriBanner() {
       msg = '\u2726 Eid Mubarak. D\u00e9sactiver le Mode Ramadan\u00a0?';
       btnLabel = 'D\u00e9sactiver';
       action = 'toggleRamadanMode()';
-    } else if (h.month === 'Ramadan' && h.day >= 21 && ramadanState && ramadanState.active) {
+    } else if (h.month === 'Ramadan' && h.day === 21 && ramadanState && ramadanState.active) {
       var _10key = 'hijri_banner_10jours_' + h.year;
       if (safeGetItem(_10key)) return;
       msg = '\u2726 Les 10 derniers jours ont commenc\u00e9. C\u2019est le moment de l\u2019intensification.';
       btnLabel = 'J\u2019ai compris';
       action = 'safeSetItem(\'' + _10key + '\',\'1\')';
+    } else if (h.month === 'Ramadan' && [21,23,25,27,29].includes(h.day) && ramadanState && ramadanState.active) {
+      var _qadrKey = 'hijri_banner_qadr_' + h.day + '_' + h.year;
+      if (safeGetItem(_qadrKey)) return;
+      msg = '\u2726 Cette nuit pourrait \u00eatre Laylat al-Qadr. Cherche-la dans les nuits impaires des 10 derni\u00e8res.';
+      btnLabel = 'All\u00e2humma';
+      action = 'safeSetItem(\'' + _qadrKey + '\',\'1\')';
     }
     if (!msg) return;
     var banner = document.createElement('div');
