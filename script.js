@@ -110,6 +110,7 @@ function addRegardeEntry(entry) {
     date: new Date().toISOString(),
     question: entry.question || '',
     category: entry.category || 'INDETERMINE',
+    verset_index: typeof entry.verset_index === 'number' ? entry.verset_index : undefined,
     photo: entry.photo || null,
     bookmark: !!entry.bookmark,
     note: entry.note || ''
@@ -12635,12 +12636,14 @@ function _regardeShowQuestion(content, question) {
   content.style.opacity = '1';
 }
 
-function _regardeShowVerset(content, v, slow) {
+function _regardeShowVerset(content, v, slow, returning) {
   var _esc = function(s) { return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); };
   var _sabab = v.sabab ? '<div style="margin-top:12px;font-size:13px;color:rgba(250,247,238,0.5);line-height:1.5;"><span style="color:#C8A84A;font-weight:600;">Sabab :</span> ' + _esc(v.sabab) + '</div>' : '';
   var d = slow ? [0, 2, 5, 5.5, 6, 7] : [0, 0.3, 0.3, 0.3, 0.6, 0.5];
   var dur = slow ? 2 : 1.5;
+  var _retHtml = returning ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.6);margin-bottom:20px;opacity:0;animation:regardeFadeIn 1s ease '+d[0]+'s forwards;">\u00ab Ce verset t\u2019a d\u00e9j\u00e0 visit\u00e9. \u00bb</div>' : '';
   content.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100%;padding:0 8%;">'
+    + _retHtml
     + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:22px;font-style:italic;color:#FAF7EE;line-height:1.7;max-width:85%;opacity:0;animation:regardeFadeIn '+dur+'s ease '+d[0]+'s forwards;">' + _esc(v.texte) + '</div>'
     + '<div style="margin-top:16px;font-size:13px;letter-spacing:2px;font-weight:700;text-transform:uppercase;color:#C8A84A;opacity:0;animation:regardeFadeIn 1s ease '+d[2]+'s forwards;">' + _esc(v.reference) + '</div>'
     + '<div style="width:60px;height:1px;background:#C8A84A;margin:24px auto;opacity:0;animation:regardeFadeIn 0.5s ease '+d[3]+'s forwards;"></div>'
@@ -12725,10 +12728,14 @@ function regardeCapture() {
       saveAndShow(pickRegardeQuestion(cat || 'INDETERMINE'), cat);
     }
 
+    var _thirtyDaysAgo = Date.now() - 30 * 24 * 3600000;
+    var _seenVersets = getRegardeHistory()
+      .filter(function(e) { return new Date(e.date).getTime() > _thirtyDaysAgo && e.category && typeof e.verset_index === 'number'; })
+      .map(function(e) { return { category: e.category, verset_index: e.verset_index }; });
     fetch('https://niyyah-api.nabs881.workers.dev/api/regarde', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ image: base64 }),
+      body: JSON.stringify({ image: base64, seen_versets: _seenVersets }),
       signal: _acR.signal
     })
     .then(function(res) {
@@ -12746,16 +12753,17 @@ function regardeCapture() {
         if (!_v) { fallback(data.category); return; }
         if (_done) return; _done = true;
         clearTimeout(_toR);
-        _regardeShowVerset(content, _v, true);
+        _regardeShowVerset(content, _v, true, !!data.returning_verset);
         _currentRegardeCat = data.category;
         _regardeStarred = false;
         if (data.category === 'INAPPROPRIE') return;
         var _jLabel = _v.murmure || _v.texte.substring(0, 80);
+        var _vIdx = data.verset_index;
         compressPhoto(dataUrl).then(function(photo) {
-          var entry = addRegardeEntry({ question: _jLabel, category: _currentRegardeCat, photo: photo, bookmark: false, note: '' });
+          var entry = addRegardeEntry({ question: _jLabel, category: _currentRegardeCat, photo: photo, bookmark: false, note: '', verset_index: _vIdx });
           _currentRegardeId = entry.id;
         }).catch(function() {
-          var entry = addRegardeEntry({ question: _jLabel, category: _currentRegardeCat, photo: null, bookmark: false, note: '' });
+          var entry = addRegardeEntry({ question: _jLabel, category: _currentRegardeCat, photo: null, bookmark: false, note: '', verset_index: _vIdx });
           _currentRegardeId = entry.id;
         });
       } else if ((data.mode === 'question' || data.source === 'ia') && data.question) {

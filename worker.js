@@ -59,7 +59,7 @@ export default {
 
     // ── Santé (open to all) ──
     if (path === '/' && request.method === 'GET') {
-      return jsonResponse({ status: 'ok', service: 'Niyyah API', version: '2.5.0' });
+      return jsonResponse({ status: 'ok', service: 'Niyyah API', version: '2.6.0' });
     }
 
     // ── Origin check for API routes ──
@@ -465,7 +465,7 @@ async function handleNiyyah(request, env) {
 async function handleRegarde(request, env) {
   try {
     const body = await request.json();
-    const { image } = body;
+    const { image, seen_versets } = body;
     if (!image) return jsonResponseV2({ error: 'image manquante' }, 400);
     if (image.length > 2_000_000) return jsonResponseV2({ error: 'Image too large' }, 413);
     // PASS 1 : Classification Haiku
@@ -504,8 +504,17 @@ async function handleRegarde(request, env) {
         }
       });
     }
-    // Verset index (random 0-7 for the category)
-    const verset_index = Math.floor(Math.random() * 8);
+    // Verset index (anti-repetition from seen_versets)
+    let verset_index, returning_verset = false;
+    const seenForCat = Array.isArray(seen_versets) ? seen_versets.filter(s => s.category === category).map(s => s.verset_index) : [];
+    const allIndices = [0,1,2,3,4,5,6,7];
+    const unseen = allIndices.filter(i => !seenForCat.includes(i));
+    if (unseen.length > 0) {
+      verset_index = unseen[Math.floor(Math.random() * unseen.length)];
+    } else {
+      verset_index = Math.floor(Math.random() * 8);
+      returning_verset = true;
+    }
     // PASS 2 : Génération Sonnet (optionnelle)
     let question = null;
     try {
@@ -528,6 +537,7 @@ async function handleRegarde(request, env) {
     } catch (e) { /* Sonnet failed — verset still returned */ }
     const response = { mode: 'verset', category, confidence, verset_index };
     if (question) response.question = question;
+    if (returning_verset) response.returning_verset = true;
     return jsonResponseV2(response);
   } catch (err) {
     console.error('handleRegarde error:', err);
