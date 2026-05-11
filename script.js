@@ -12846,7 +12846,7 @@ function openRegardeJournal() {
   if (!overlay || !list) return;
   var entries = getRegardeHistory();
   if (entries.length === 0) {
-    list.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">نَظَر</div><div class="empty-state-title">'+t('journal_regarde_title')+'</div><div class="empty-state-text">'+t('journal_regarde_text')+'</div><button class="empty-state-cta" onclick="scannerOpen()">'+t('journal_regarde_cta')+'</button></div>';
+    list.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">\u0646\u064E\u0638\u064E\u0631</div><div class="empty-state-title">'+t('journal_regarde_title')+'</div><div class="empty-state-text">'+t('journal_regarde_text')+'</div><div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.55);margin-top:12px;line-height:1.5;">Le Regard te surprend dans la journ\u00e9e. Reste \u00e0 l\u2019\u00e9coute.</div></div>';
   } else {
     var html = '';
     entries.forEach(function(e) {
