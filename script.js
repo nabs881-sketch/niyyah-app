@@ -12747,6 +12747,7 @@ function regardeCapture() {
         _regardeShowVerset(content, _v);
         _currentRegardeCat = data.category;
         _regardeStarred = false;
+        if (data.category === 'INAPPROPRIE') return;
         var _jLabel = _v.murmure || _v.texte.substring(0, 80);
         compressPhoto(dataUrl).then(function(photo) {
           var entry = addRegardeEntry({ question: _jLabel, category: _currentRegardeCat, photo: photo, bookmark: false, note: '' });
