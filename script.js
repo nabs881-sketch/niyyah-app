@@ -13634,8 +13634,8 @@ function openVueAuFilDuJour() {
     var group = items.filter(function(it) { return it.category === cat.key; });
     if (!group.length) return;
     var doneCount = group.filter(function(it) { return !!state[it.id]; }).length;
-    var stored = safeGetItem('filjour_sec_' + cat.key);
-    var isOpen = stored ? stored === 'open' : cat.defaultOpen;
+    var _openCat = safeGetItem('filjour_open_section');
+    var isOpen = _openCat ? _openCat === cat.key : cat.defaultOpen;
     _html += '<div class="fil-acc" data-cat="' + cat.key + '">'
       + '<div class="fil-acc-header' + (isOpen ? ' open' : '') + '" onclick="toggleFilAccordion(\'' + cat.key + '\')">'
       + '<span class="fil-acc-icon">' + cat.icon + '</span>'
@@ -13655,20 +13655,21 @@ function openVueAuFilDuJour() {
 }
 window.openVueAuFilDuJour = openVueAuFilDuJour;
 function toggleFilAccordion(cat) {
-  var acc = document.querySelector('.fil-acc[data-cat="' + cat + '"]');
-  if (!acc) return;
-  var header = acc.querySelector('.fil-acc-header');
-  var body = acc.querySelector('.fil-acc-body');
-  var isOpen = header.classList.contains('open');
-  if (isOpen) {
-    header.classList.remove('open');
-    body.style.display = 'none';
-    safeSetItem('filjour_sec_' + cat, 'closed');
-  } else {
-    header.classList.add('open');
-    body.style.display = '';
-    safeSetItem('filjour_sec_' + cat, 'open');
-  }
+  var all = document.querySelectorAll('.fil-acc');
+  var clickedOpen = false;
+  all.forEach(function(acc) {
+    var h = acc.querySelector('.fil-acc-header');
+    var b = acc.querySelector('.fil-acc-body');
+    if (acc.dataset.cat === cat && !h.classList.contains('open')) {
+      h.classList.add('open');
+      b.style.display = '';
+      clickedOpen = true;
+    } else {
+      h.classList.remove('open');
+      b.style.display = 'none';
+    }
+  });
+  safeSetItem('filjour_open_section', clickedOpen ? cat : '');
 }
 window.toggleFilAccordion = toggleFilAccordion;
 
