@@ -59,7 +59,7 @@ export default {
 
     // ── Santé (open to all) ──
     if (path === '/' && request.method === 'GET') {
-      return jsonResponse({ status: 'ok', service: 'Niyyah API', version: '2.3.0' });
+      return jsonResponse({ status: 'ok', service: 'Niyyah API', version: '2.4.0' });
     }
 
     // ── Origin check for API routes ──
@@ -484,26 +484,31 @@ async function handleRegarde(request, env) {
         }
       }
     } catch (e) { category = 'INDETERMINE'; confidence = 0; }
-    // PASS 2 : Génération Sonnet
-    const genPrompt = buildRegardeGeneratorPrompt(category);
-    for (let attempt = 0; attempt < 2; attempt++) {
-      const genResp = await callAnthropic(env, {
-        model: MODEL_SONNET, max_tokens: 150, temperature: 0.7,
-        messages: [{ role: 'user', content: [
-          { type: 'image', source: { type: 'base64', media_type: 'image/jpeg', data: image } },
-          { type: 'text', text: genPrompt }
-        ]}]
-      });
-      const rawText = genResp.content?.[0]?.text || '';
-      const parsed = extractJSON(rawText);
-      if (!parsed || !parsed.question) continue;
-      const validation = validateRegardeQuestion(parsed.question);
-      if (validation.valid) {
-        return jsonResponseV2({ question: parsed.question.trim(), category, confidence, source: 'ia' });
+    // Verset index (random 0-7 for the category)
+    const verset_index = Math.floor(Math.random() * 8);
+    // PASS 2 : Génération Sonnet (optionnelle)
+    let question = null;
+    try {
+      const genPrompt = buildRegardeGeneratorPrompt(category);
+      for (let attempt = 0; attempt < 2; attempt++) {
+        const genResp = await callAnthropic(env, {
+          model: MODEL_SONNET, max_tokens: 150, temperature: 0.7,
+          messages: [{ role: 'user', content: [
+            { type: 'image', source: { type: 'base64', media_type: 'image/jpeg', data: image } },
+            { type: 'text', text: genPrompt }
+          ]}]
+        });
+        const rawText = genResp.content?.[0]?.text || '';
+        const parsed = extractJSON(rawText);
+        if (!parsed || !parsed.question) continue;
+        const validation = validateRegardeQuestion(parsed.question);
+        if (validation.valid) { question = parsed.question.trim(); break; }
+        if (['fatwa', 'hadith', 'quran'].includes(validation.reason)) break;
       }
-      if (['fatwa', 'hadith', 'quran'].includes(validation.reason)) break;
-    }
-    return jsonResponseV2({ question: null, category, confidence, source: 'fallback', reason: 'validation_failed_or_religious' });
+    } catch (e) { /* Sonnet failed — verset still returned */ }
+    const response = { mode: 'verset', category, confidence, verset_index };
+    if (question) response.question = question;
+    return jsonResponseV2(response);
   } catch (err) {
     console.error('handleRegarde error:', err);
     if (err.name === 'AbortError') return jsonResponseV2({ error: 'Timeout' }, 504);
