@@ -8599,6 +8599,27 @@ body.onboarding-active #nav-bar-v2 {
   margin: 0 12px 16px;
   cursor: pointer;
 }
+.vendredi-regard-card {
+  background: linear-gradient(135deg, rgba(200,168,75,0.06), rgba(200,168,75,0.02));
+  border: 1px solid rgba(200,168,75,0.2);
+  border-radius: 16px;
+  padding: 18px 20px;
+  margin: 0 12px 16px;
+  cursor: pointer;
+  text-align: center;
+}
+.vendredi-regard-overlay {
+  position: relative;
+  text-align: center;
+  padding: 36px 24px;
+  border: 1px solid rgba(200,168,75,0.3);
+  border-radius: 20px;
+  background: radial-gradient(ellipse at top, #2C2E32, #1a1c1f);
+  max-width: 380px;
+  width: calc(100% - 40px);
+  max-height: 80vh;
+  overflow-y: auto;
+}
 .fil-jour-card .titre {
   font-family: 'Cormorant Garamond', serif;
   font-size: 15px;

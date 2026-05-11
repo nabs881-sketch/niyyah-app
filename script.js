@@ -12136,8 +12136,126 @@ function updateSanctuaireMoment() {
       + '<button class="btn-bismillah-moment" onclick="event.stopPropagation();var _m=getCurrentPrayerBlock();if(_m&&_m.id)openVueRituel(_m.id);else selectLevel(currentLevel);" ontouchend="event.stopPropagation();event.preventDefault();var _m=getCurrentPrayerBlock();if(_m&&_m.id)openVueRituel(_m.id);else selectLevel(currentLevel);">' + t('btn_continue') + '</button>'
       + '</div>';
     el.innerHTML += getFilJourCardHTML();
+    if (isFriday()) el.innerHTML += getVendrediRegardCardHTML();
   }
 }
+
+function getVendrediRegardCardHTML() {
+  return '<div class="vendredi-regard-card" onclick="openVendrediRegard()">'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#FAF7EE;line-height:1.5;">\u00ab Vendredi de paix. Choisis un Regard pour quelqu\u2019un que tu aimes. \u00bb</div>'
+    + '<div style="font-size:11px;letter-spacing:2px;color:rgba(200,168,75,0.55);margin-top:8px;text-transform:uppercase;">REGARD DU VENDREDI</div>'
+    + '</div>';
+}
+function openVendrediRegard() {
+  var sevenDaysAgo = Date.now() - 7 * 24 * 3600000;
+  var favs = getRegardeHistory().filter(function(e) {
+    return e.bookmark && new Date(e.date).getTime() > sevenDaysAgo;
+  });
+  var ov = document.createElement('div');
+  ov.className = 'wird-complete-overlay';
+  var html = '<div class="vendredi-regard-overlay">'
+    + '<button onclick="this.closest(\'.wird-complete-overlay\').remove();" style="position:absolute;top:16px;right:16px;background:none;border:none;color:rgba(200,168,75,0.5);font-size:22px;cursor:pointer;">\u2715</button>'
+    + '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:22px;color:#C8A84A;margin-bottom:16px;">\u0627\u0644\u062C\u064F\u0645\u064F\u0639\u064E\u0629</div>';
+  if (favs.length === 0) {
+    html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(240,234,214,0.7);line-height:1.6;">Aucun Regard ne t\u2019a marqu\u00e9 cette semaine.<br>Reviens vendredi prochain.</div>';
+  } else {
+    html += '<div style="font-size:12px;color:rgba(200,168,75,0.5);letter-spacing:1.5px;margin-bottom:16px;">TES REGARDS FAVORIS</div>';
+    favs.forEach(function(e) {
+      var thumb = e.photo ? '<img src="'+e.photo+'" style="width:50px;height:50px;border-radius:8px;object-fit:cover;flex-shrink:0;">' : '';
+      var q = (e.question || '').substring(0, 60);
+      html += '<div onclick="event.stopPropagation();genRegardCanvas(\''+e.id+'\')" style="display:flex;gap:12px;align-items:center;padding:10px;border:1px solid rgba(200,168,75,0.15);border-radius:10px;margin-bottom:8px;cursor:pointer;text-align:left;">'
+        + thumb
+        + '<div style="flex:1;min-width:0;font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:#D4AF37;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">'+q+'</div>'
+        + '<div style="color:rgba(200,168,75,0.4);font-size:14px;">\u203A</div></div>';
+    });
+  }
+  html += '</div>';
+  ov.innerHTML = html;
+  document.body.appendChild(ov);
+}
+window.openVendrediRegard = openVendrediRegard;
+
+function genRegardCanvas(entryId) {
+  var entries = getRegardeHistory();
+  var e = entries.find(function(x) { return x.id === entryId; });
+  if (!e) return;
+  var texte = e.question || '';
+  var ref = e.category || '';
+  // Try to get verset data from REGARD_VERSETS
+  if (window.REGARD_VERSETS && window.REGARD_VERSETS[e.category] && typeof e.verset_index === 'number') {
+    var v = window.REGARD_VERSETS[e.category].versets[e.verset_index];
+    if (v) { texte = v.texte; ref = v.reference; }
+  }
+  var c = document.createElement('canvas');
+  c.width = 1080; c.height = 1080;
+  var ctx = c.getContext('2d');
+  ctx.fillStyle = '#0A0908';
+  ctx.fillRect(0, 0, 1080, 1080);
+  // Verset (auto-size)
+  ctx.fillStyle = '#FAF7EE';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  var _maxW = 860, _maxH = 700, _sizes = [42,38,34,30,26,24];
+  var lines, lineH, fontSize;
+  for (var _si = 0; _si < _sizes.length; _si++) {
+    fontSize = _sizes[_si];
+    lineH = Math.round(fontSize * 1.4);
+    ctx.font = 'italic ' + fontSize + 'px "Cormorant Garamond", serif';
+    lines = []; var _ln = '';
+    texte.split(' ').forEach(function(w) {
+      var test = _ln ? _ln + ' ' + w : w;
+      if (ctx.measureText(test).width > _maxW) { lines.push(_ln); _ln = w; } else { _ln = test; }
+    });
+    if (_ln) lines.push(_ln);
+    if (lines.length * lineH <= _maxH) break;
+  }
+  var startY = 540 - (lines.length * lineH) / 2;
+  lines.forEach(function(l, i) { ctx.fillText(l, 540, startY + i * lineH); });
+  // Reference
+  ctx.fillStyle = '#C8A84A';
+  ctx.font = 'bold 24px "Cormorant Garamond", serif';
+  ctx.fillText(ref, 540, startY + lines.length * lineH + 40);
+  // Salawat
+  ctx.fillStyle = 'rgba(200,168,75,0.35)';
+  ctx.font = '28px "Scheherazade New", serif';
+  ctx.fillText('\uFDFA', 540, 1020);
+  // Show share overlay
+  c.toBlob(function(blob) {
+    if (!blob) return;
+    var url = URL.createObjectURL(blob);
+    var shareOv = document.createElement('div');
+    shareOv.className = 'wird-complete-overlay';
+    shareOv.style.zIndex = '10010';
+    shareOv.innerHTML = '<div class="vendredi-regard-overlay" style="max-width:360px;">'
+      + '<img src="'+url+'" style="width:100%;border-radius:12px;margin-bottom:16px;">'
+      + '<div style="display:flex;gap:10px;">'
+      + '<button onclick="regardShareImage()" class="wird-complete-btn" style="flex:1;">Partager</button>'
+      + '<button onclick="regardDownloadImage()" class="wird-complete-btn" style="flex:1;">T\u00e9l\u00e9charger</button>'
+      + '</div>'
+      + '<button onclick="this.closest(\'.wird-complete-overlay\').remove();" class="wird-complete-btn" style="margin-top:10px;width:100%;opacity:0.5;">Fermer</button>'
+      + '</div>';
+    document.body.appendChild(shareOv);
+    window._regardCanvasBlob = blob;
+    window._regardCanvasUrl = url;
+  }, 'image/png');
+}
+window.genRegardCanvas = genRegardCanvas;
+
+function regardShareImage() {
+  if (!window._regardCanvasBlob || !navigator.share) { showToast('Partage non disponible'); return; }
+  var file = new File([window._regardCanvasBlob], 'regard-niyyah.png', { type: 'image/png' });
+  navigator.share({ files: [file] }).catch(function() {});
+}
+window.regardShareImage = regardShareImage;
+
+function regardDownloadImage() {
+  if (!window._regardCanvasUrl) return;
+  var a = document.createElement('a');
+  a.href = window._regardCanvasUrl;
+  a.download = 'regard-niyyah.png';
+  a.click();
+}
+window.regardDownloadImage = regardDownloadImage;
 
 function v2UpdateOrbState() {
   const s = v2GetState();
