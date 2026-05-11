@@ -13571,13 +13571,12 @@ function openVueAuFilDuJour() {
     var lvl = LEVELS[i];
     if (!lvl || !lvl.sections) return;
     lvl.sections.forEach(s => {
-      (s.items || []).forEach(it => { if (it.type === 'wird' || it.filDuJour) items.push(it); });
+      (s.items || []).forEach(it => { if (it.filDuJour) items.push(it); });
     });
   });
   const main = v.querySelector('.rituel-content');
   const state = JSON.parse(localStorage.getItem('spiritual_v2') || '{}');
   main.innerHTML = items.map(function(it) {
-    if (it.type === 'wird') return renderWirdAuFilDuJour(it);
     const done = state[it.id] ? 'done' : '';
     const ar = it.arabic ? '<div class="arabic">' + it.arabic + '</div>' : '';
     const sub = it.sub ? '<div class="sub">' + it.sub + '</div>' : '';
