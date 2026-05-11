@@ -845,6 +845,26 @@ function showEidModal() {
   document.body.appendChild(ov);
 }
 window.showEidModal = showEidModal;
+async function getCurrentHijri() {
+  var today = new Date();
+  var dd = String(today.getDate()).padStart(2, '0');
+  var mm = String(today.getMonth() + 1).padStart(2, '0');
+  var yyyy = today.getFullYear();
+  var cacheKey = 'hijri_cache_' + yyyy + '-' + mm + '-' + dd;
+  var cached = safeGetItem(cacheKey);
+  if (cached) { try { return JSON.parse(cached); } catch(e) {} }
+  try {
+    var res = await fetch('https://api.aladhan.com/v1/gToH?date=' + dd + '-' + mm + '-' + yyyy);
+    if (!res.ok) return null;
+    var data = await res.json();
+    var h = data && data.data && data.data.hijri;
+    if (!h) return null;
+    var result = { month: h.month.en, day: parseInt(h.day, 10), year: parseInt(h.year, 10) };
+    safeSetItem(cacheKey, JSON.stringify(result));
+    return result;
+  } catch(e) { return null; }
+}
+window.getCurrentHijri = getCurrentHijri;
 function updateNavRamadan() {
   const nav = document.getElementById('nav-ramadan');
   const icon = document.getElementById('navRamadanIcon');
