@@ -1245,8 +1245,8 @@ const LEVELS = [
         ...(isFriday() ? [{ id: 'jumua', label: 'Jumua ✦', sub: 'Prière du vendredi — obligation spéciale', arabic: 'صَلَاةُ الْجُمُعَةِ', isFriday: true, prayer: true, priority: 'fard', block: 'dhuhr', hadith: '\"Le vendredi est le meilleur jour sur lequel le soleil se lève\" — Muslim 854', source: 'Muslim 854' }] : []),
       ]},
       { icon: '\ud83d\udcff', title: 'Wird quotidien', _descKey: 'wird_desc', get desc(){return t(this._descKey)}, items: [
-        { id: 'wird_matin', label: 'Wird du Matin', sub: 'Après Fajr · Al-Fatiha, Ayat al-Kursi, Muawwidhat…', arabic: 'وِرْدُ الصَّبَاحِ', priority: 'sunnah', optional: true, type: 'wird', session: 'matin', block: 'fajr', hadith: '\"Celui qui dit ces invocations le matin est protégé jusqu\'au soir\" — Abu Dawud 5088', source: 'Abu Dawud 5088' },
-        { id: 'wird_soir',  label: 'Wird du Soir',  sub: 'Après Asr · Al-Baqara 285-286, Al-Mulk…',            arabic: 'وِرْدُ الْمَسَاءِ', priority: 'sunnah', optional: true, type: 'wird', session: 'soir', block: 'maghrib', hadith: '\"Celui qui dit ces invocations le soir est protégé jusqu\'au matin\" — Abu Dawud 5088', source: 'Abu Dawud 5088' },
+        { id: 'wird_matin', label: 'Wird du Matin', sub: 'Après Fajr · Al-Fatiha, Ayat al-Kursi, Muawwidhat…', arabic: 'وِرْدُ الصَّبَاحِ', priority: 'sunnah', optional: true, type: 'wird', session: 'matin', block: ['fajr','dhuhr'], canonBlock: 'fajr', hadith: '\"Celui qui dit ces invocations le matin est protégé jusqu\'au soir\" — Abu Dawud 5088', source: 'Abu Dawud 5088' },
+        { id: 'wird_soir',  label: 'Wird du Soir',  sub: 'Après Asr · Al-Baqara 285-286, Al-Mulk…',            arabic: 'وِرْدُ الْمَسَاءِ', priority: 'sunnah', optional: true, type: 'wird', session: 'soir', block: ['maghrib','isha'], canonBlock: 'maghrib', hadith: '\"Celui qui dit ces invocations le soir est protégé jusqu\'au matin\" — Abu Dawud 5088', source: 'Abu Dawud 5088' },
       ]},
       { icon: '🌙', title: 'Sunnah de base', items: [
         { id: 'ayat_kursi', label: 'Ayat al-Kursi après prière', sub: 'Après chaque prière obligatoire — 1 fois', arabic: 'آيَةُ الْكُرْسِيّ', priority: 'sunnah', block: 'jour', audio: 'https://everyayah.com/data/Alafasy_128kbps/002255.mp3', hadith: '\"Celui qui la récite après chaque prière, rien ne l\'empêche d\'entrer au Paradis sauf la mort\" — Nasa\'i (Sahih)', source: "Nasa'i (Sahih)" },
@@ -2325,7 +2325,7 @@ function renderLevel(levelId) {
     _filteredItems.forEach((item, idx) => {
       const delay = idx * 30;
       if (item.type === 'wird') {
-        html += renderWirdSmartCard(item, delay);
+        html += renderWirdSmartCard(item, delay, undefined, _currentBlock);
       } else if (item.type === 'counter') {
         html += renderCounter(item, delay);
       } else if (item.prayer) {
@@ -2476,7 +2476,7 @@ function togglePrayerOnTime(id) {
   saveState();
   renderLevel(currentLevel);
 }
-function renderWirdSmartCard(item, delay) {
+function renderWirdSmartCard(item, delay, origin, currentBlock) {
   const session = WIRD_DATA[item.session];
   const done  = session.items.filter(i => wirdState[i.id]).length;
   const total = session.items.length;
@@ -2485,10 +2485,12 @@ function renderWirdSmartCard(item, delay) {
   const isMatin = item.session === 'matin';
   const arabicLabel = isMatin ? 'وِرْدُ الصَّبَاح' : 'وِرْدُ الْمَسَاء';
   const frLabel = isMatin ? t('wird_matin') : t('wird_soir');
+  var _rattrapage = (currentBlock && item.canonBlock && currentBlock !== item.canonBlock) ? '<div class="wird-smart-rattrapage">(rattrapage)</div>' : '';
   return '<div class="wird-smart-card' + (allDone ? ' done' : '') + '" id="item-' + item.id + '" style="animation-delay:' + delay + 'ms" onclick="v2GoTo(\'wird\');setTimeout(function(){if(typeof renderWird===\'function\')renderWird();},60)">'
     + '<div class="wird-smart-body">'
     + '<div class="wird-smart-arabic">' + arabicLabel + '</div>'
     + '<div class="wird-smart-label">' + frLabel + '</div>'
+    + _rattrapage
     + '</div>'
     + '<div class="wird-smart-right">'
     + '<div class="wird-smart-count">' + done + '/' + total + '</div>'
@@ -13406,10 +13408,10 @@ function getRitualItems(prayer) {
   items.push(...alwaysItems);
   var _ritualOrder = {
     fajr: ['sunnah_fajr','istighfar','allahumma_salam','tasbih','ayat_kursi','muawwidhat','wird_matin'],
-    dhuhr: ['istighfar','allahumma_salam','tasbih','ayat_kursi','muawwidhat','sunnah_prieres'],
+    dhuhr: ['istighfar','allahumma_salam','tasbih','ayat_kursi','muawwidhat','sunnah_prieres','wird_matin'],
     asr: ['istighfar','allahumma_salam','tasbih','ayat_kursi','muawwidhat'],
     maghrib: ['istighfar','allahumma_salam','tasbih','ayat_kursi','muawwidhat','wird_soir'],
-    isha: ['istighfar','allahumma_salam','tasbih','ayat_kursi','muawwidhat','witr']
+    isha: ['istighfar','allahumma_salam','tasbih','ayat_kursi','muawwidhat','witr','wird_soir']
   };
   var _order = _ritualOrder[prayer];
   if (_order) {

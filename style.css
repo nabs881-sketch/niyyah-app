@@ -4432,6 +4432,13 @@ to {
   flex-shrink: 0;
 }
 .wird-smart-body { flex: 1; min-width: 0; }
+.wird-smart-rattrapage {
+  font-family: 'Nunito', sans-serif;
+  font-size: 10px;
+  font-style: italic;
+  color: rgba(200,168,75,0.45);
+  margin-top: 2px;
+}
 .wird-smart-arabic {
   font-family: 'Scheherazade New', 'Amiri', serif;
   font-size: 20px;
