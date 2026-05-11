@@ -8345,6 +8345,55 @@ body.onboarding-active #nav-bar-v2 {
   color: rgba(200,168,75,0.55);
   font-family: 'Nunito', sans-serif;
 }
+.fil-acc {
+  margin-bottom: 12px;
+  border: 1px solid rgba(200,168,75,0.2);
+  border-radius: 14px;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(200,168,75,0.04), rgba(200,168,75,0.01));
+}
+.fil-acc-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.fil-acc-header:active {
+  background: rgba(200,168,75,0.06);
+}
+.fil-acc-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.fil-acc-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: rgba(200,168,75,0.8);
+  flex: 1;
+}
+.fil-acc-count {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #C8A84A;
+  flex-shrink: 0;
+}
+.fil-acc-chevron {
+  font-size: 14px;
+  color: rgba(200,168,75,0.5);
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+.fil-acc-header.open .fil-acc-chevron {
+  transform: rotate(180deg);
+}
+.fil-acc-body {
+  padding: 0 12px 12px;
+}
 .rituel-item.vendredi {
   background: linear-gradient(135deg, rgba(20,55,40,0.55), rgba(15,40,28,0.65));
   border: 1px solid rgba(70,180,130,0.25);

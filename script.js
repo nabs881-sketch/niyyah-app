@@ -13614,10 +13614,10 @@ function openVueAuFilDuJour() {
   const main = v.querySelector('.rituel-content');
   const state = JSON.parse(localStorage.getItem('spiritual_v2') || '{}');
   var _catOrder = [
-    { key: 'rituels', title: 'RITUELS DU JOUR' },
-    { key: 'science', title: 'SCIENCE ET LECTURE' },
-    { key: 'bienfaisance', title: 'BIENFAISANCE ET LIENS' },
-    { key: 'duaa', title: "DOU'A ET TAFAKKUR" }
+    { key: 'rituels', title: 'RITUELS DU JOUR', icon: '\uD83D\uDD4B', defaultOpen: true },
+    { key: 'science', title: 'SCIENCE ET LECTURE', icon: '\uD83D\uDCD6', defaultOpen: false },
+    { key: 'bienfaisance', title: 'BIENFAISANCE ET LIENS', icon: '\uD83D\uDC9B', defaultOpen: false },
+    { key: 'duaa', title: "DOU'A ET TAFAKKUR", icon: '\uD83E\uDD32', defaultOpen: false }
   ];
   var _renderFilItem = function(it) {
     const done = state[it.id] ? 'done' : '';
@@ -13633,8 +13633,19 @@ function openVueAuFilDuJour() {
   _catOrder.forEach(function(cat) {
     var group = items.filter(function(it) { return it.category === cat.key; });
     if (!group.length) return;
-    _html += '<div class="fil-jour-sep"><span>' + cat.title + '</span></div>';
-    _html += group.map(_renderFilItem).join('');
+    var doneCount = group.filter(function(it) { return !!state[it.id]; }).length;
+    var stored = safeGetItem('filjour_sec_' + cat.key);
+    var isOpen = stored ? stored === 'open' : cat.defaultOpen;
+    _html += '<div class="fil-acc" data-cat="' + cat.key + '">'
+      + '<div class="fil-acc-header' + (isOpen ? ' open' : '') + '" onclick="toggleFilAccordion(\'' + cat.key + '\')">'
+      + '<span class="fil-acc-icon">' + cat.icon + '</span>'
+      + '<span class="fil-acc-title">' + cat.title + '</span>'
+      + '<span class="fil-acc-count">' + doneCount + '/' + group.length + '</span>'
+      + '<span class="fil-acc-chevron">\u25BE</span>'
+      + '</div>'
+      + '<div class="fil-acc-body" style="' + (isOpen ? '' : 'display:none;') + '">'
+      + group.map(_renderFilItem).join('')
+      + '</div></div>';
   });
   var _uncategorized = items.filter(function(it) { return !it.category; });
   if (_uncategorized.length) _html += _uncategorized.map(_renderFilItem).join('');
@@ -13643,6 +13654,23 @@ function openVueAuFilDuJour() {
   document.getElementById('rituel-emblem').textContent = '\u064A\u064E\u0648\u0652\u0645';
 }
 window.openVueAuFilDuJour = openVueAuFilDuJour;
+function toggleFilAccordion(cat) {
+  var acc = document.querySelector('.fil-acc[data-cat="' + cat + '"]');
+  if (!acc) return;
+  var header = acc.querySelector('.fil-acc-header');
+  var body = acc.querySelector('.fil-acc-body');
+  var isOpen = header.classList.contains('open');
+  if (isOpen) {
+    header.classList.remove('open');
+    body.style.display = 'none';
+    safeSetItem('filjour_sec_' + cat, 'closed');
+  } else {
+    header.classList.add('open');
+    body.style.display = '';
+    safeSetItem('filjour_sec_' + cat, 'open');
+  }
+}
+window.toggleFilAccordion = toggleFilAccordion;
 
 function playAudioById(btn) {
   const id = btn.dataset.audioId;
