@@ -2477,6 +2477,7 @@ function togglePrayerOnTime(id) {
   renderLevel(currentLevel);
 }
 var _wirdReturnTo = null;
+var _currentWirdSession = null;
 function wirdGoBack() {
   if (_wirdReturnTo) {
     openVueRituel(_wirdReturnTo);
@@ -2495,7 +2496,7 @@ function renderWirdSmartCard(item, delay, origin, currentBlock) {
   const frLabel = isMatin ? t('wird_matin') : t('wird_soir');
   var _rattrapage = (currentBlock && item.canonBlock && currentBlock !== item.canonBlock) ? '<div class="wird-smart-rattrapage">(rattrapage)</div>' : '';
   var _blockStr = currentBlock ? "'" + currentBlock + "'" : 'null';
-  return '<div class="wird-smart-card' + (allDone ? ' done' : '') + '" id="item-' + item.id + '" style="animation-delay:' + delay + 'ms" onclick="_wirdReturnTo=' + _blockStr + ';var r=document.getElementById(\'vue-rituel\');if(r)r.classList.add(\'hidden\');v2GoTo(\'wird\');setTimeout(function(){if(typeof renderWird===\'function\')renderWird();},60)">'
+  return '<div class="wird-smart-card' + (allDone ? ' done' : '') + '" id="item-' + item.id + '" style="animation-delay:' + delay + 'ms" onclick="_wirdReturnTo=' + _blockStr + ';_currentWirdSession=\'' + item.session + '\';var r=document.getElementById(\'vue-rituel\');if(r)r.classList.add(\'hidden\');v2GoTo(\'wird\');setTimeout(function(){if(typeof renderWird===\'function\')renderWird();},60)">'
     + '<div class="wird-smart-body">'
     + '<div class="wird-smart-arabic">' + arabicLabel + '</div>'
     + '<div class="wird-smart-label">' + frLabel + '</div>'
@@ -3645,7 +3646,8 @@ function renderWird() {
   var _wirdArabicSession = {matin:'أَوْرَاد الصَّبَاح',soir:'أَوْرَاد الْمَسَاء'};
   let html = '<button class="wird-back-btn" onclick="wirdGoBack()" aria-label="Retour">\u2039</button>';
   html += '<div class="section-header"><div class="section-arabic">\u0623\u064E\u0648\u0652\u0631\u0627\u062F</div><div class="section-name">' + t('wird_daily') + '</div><div class="section-line"></div></div>';
-  ['matin', 'soir'].forEach(session => {
+  var _sessions = _currentWirdSession ? [_currentWirdSession] : ['matin', 'soir'];
+  _sessions.forEach(session => {
     const s = WIRD_DATA[session];
     const done = s.items.filter(i => wirdState[i.id]).length;
     const pct = Math.round(done / s.items.length * 100);
@@ -10524,7 +10526,7 @@ function v2GoTo(viewName) {
   if (sanctEl2) sanctEl2.classList.add('no-intro');
   // Transition to target
   _v2TransitionTo('view-' + viewName, { onShow: function() {
-    if (sanctEl2) sanctEl2.classList.remove('active');
+    if (sanctEl2 && viewName !== 'sanctuaire') sanctEl2.classList.remove('active');
     if (viewName === 'wird' && typeof renderWird === 'function') setTimeout(renderWird, 60);
     if (viewName === 'bab-an-nafs' && typeof renderBabAnNafs === 'function') setTimeout(renderBabAnNafs, 60);
     if (viewName === 'checklist' && typeof renderLevel === 'function') renderLevel(typeof currentLevel !== 'undefined' ? currentLevel : 1);
