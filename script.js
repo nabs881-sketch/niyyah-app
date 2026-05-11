@@ -805,8 +805,27 @@ function toggleRamadanMode() {
     renderRamadan();
     showToast(t('ramadan_on'));
     if (navigator.vibrate) navigator.vibrate([30, 40, 60]);
+    if (!safeGetItem('ramadan_modal_shown')) {
+      safeSetItem('ramadan_modal_shown', '1');
+      showRamadanBoostModal();
+    }
   }
 }
+function showRamadanBoostModal() {
+  var ov = document.createElement('div');
+  ov.className = 'wird-complete-overlay';
+  ov.innerHTML = '<div class="wird-complete-card">'
+    + '<div class="wird-complete-star">\u2726</div>'
+    + '<div class="wird-complete-arabic">\u0631\u064E\u0645\u064E\u0636\u064E\u0627\u0646\u064F \u0645\u064F\u0628\u064E\u0627\u0631\u064E\u0643</div>'
+    + '<div class="wird-complete-label" style="margin-bottom:16px;">Ramadan Mubarak</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;color:rgba(240,234,214,0.8);line-height:1.6;margin-bottom:24px;">Le mois est venu. Veux-tu acc\u00e9der \u00e0 des actes suppl\u00e9mentaires durant ces 30\u00a0jours b\u00e9nis\u00a0?<br>Tu reprendras ton rythme habituel apr\u00e8s l\u2019A\u00efd.</div>'
+    + '<div style="display:flex;gap:10px;">'
+    + '<button class="wird-complete-btn" style="flex:1;background:rgba(200,168,75,0.12);" onclick="safeSetItem(\'ramadan_boost\',\'accepted\');this.closest(\'.wird-complete-overlay\').remove();">Oui, intensifier</button>'
+    + '<button class="wird-complete-btn" style="flex:1;" onclick="safeSetItem(\'ramadan_boost\',\'declined\');this.closest(\'.wird-complete-overlay\').remove();">Garder mon rythme</button>'
+    + '</div></div>';
+  document.body.appendChild(ov);
+}
+window.showRamadanBoostModal = showRamadanBoostModal;
 function updateNavRamadan() {
   const nav = document.getElementById('nav-ramadan');
   const icon = document.getElementById('navRamadanIcon');
