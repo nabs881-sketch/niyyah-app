@@ -12329,7 +12329,7 @@ function checkHijriBanner() {
     var _isMuharram = _monthNorm.indexOf('Muharram') !== -1;
     var sanct = document.getElementById('view-sanctuaire');
     if (!sanct) return;
-    var msg = null, btnLabel = null, action = null;
+    var msg = null, btnLabel = null, action = null, _showLater = true;
     if (h.month === 'Ramadan' && (!ramadanState || !ramadanState.active)) {
       msg = '\u2726 Nous sommes en Ramadan. Activer le Mode Ramadan\u00a0?';
       btnLabel = 'Activer';
@@ -12350,6 +12350,7 @@ function checkHijriBanner() {
       msg = '\u2726 Cette nuit pourrait \u00eatre Laylat al-Qadr. Cherche-la dans les nuits impaires des 10 derni\u00e8res.';
       btnLabel = 'All\u00e2humma';
       action = 'safeSetItem(\'' + _qadrKey + '\',\'1\')';
+      _showLater = false;
     } else if (_isDhulHijjah && h.day === 1) {
       var _dhKey1 = 'hijri_banner_dh_10jours_' + h.year;
       if (safeGetItem(_dhKey1)) return;
@@ -12362,18 +12363,21 @@ function checkHijriBanner() {
       msg = '\u2726 Demain c\u2019est Arafat. Je\u00fbner expie 2 ann\u00e9es (Muslim).';
       btnLabel = 'All\u00e2humma';
       action = 'safeSetItem(\'' + _dhKey8 + '\',\'1\')';
+      _showLater = false;
     } else if (_isDhulHijjah && h.day === 9) {
       var _dhKey9 = 'hijri_banner_dh_arafat_' + h.year;
       if (safeGetItem(_dhKey9)) return;
       msg = '\u2726 Aujourd\u2019hui c\u2019est Arafat. Multiplie dou\u2019as et dhikr.';
       btnLabel = 'All\u00e2humma';
       action = 'safeSetItem(\'' + _dhKey9 + '\',\'1\')';
+      _showLater = false;
     } else if (_isDhulHijjah && h.day === 10) {
       var _dhKeyEid = 'hijri_banner_dh_eid_' + h.year;
       if (safeGetItem(_dhKeyEid)) return;
       msg = '\u2726 A\u00efd al-Adha Mubarak. Qu\u2019All\u00e2h accepte ton sacrifice et tes \u0153uvres.';
       btnLabel = 'All\u00e2humma akbar';
       action = 'safeSetItem(\'' + _dhKeyEid + '\',\'1\')';
+      _showLater = false;
     } else if (_isDhulHijjah && [11,12,13].includes(h.day)) {
       var _dhKeyTash = 'hijri_banner_dh_tashreeq_' + h.year;
       if (safeGetItem(_dhKeyTash)) return;
@@ -12392,20 +12396,23 @@ function checkHijriBanner() {
       msg = '\u2726 Demain c\u2019est Achoura. Le Proph\u00e8te \uFDFA recommandait de je\u00fbner le 9 et le 10.';
       btnLabel = 'J\u2019ai compris';
       action = 'safeSetItem(\'' + _muhKey9 + '\',\'1\')';
+      _showLater = false;
     } else if (_isMuharram && h.day === 10) {
       var _muhKey10 = 'hijri_banner_muh_ashura_' + h.year;
       if (safeGetItem(_muhKey10)) return;
       msg = '\u2726 Aujourd\u2019hui c\u2019est Achoura. Je\u00fbner expie les p\u00e9ch\u00e9s de l\u2019ann\u00e9e pass\u00e9e (Muslim).';
       btnLabel = 'All\u00e2humma';
       action = 'safeSetItem(\'' + _muhKey10 + '\',\'1\')';
+      _showLater = false;
     }
     if (!msg) return;
     var banner = document.createElement('div');
     banner.className = 'hijri-banner';
+    var _laterBtn = _showLater ? '<button class="hijri-banner-dismiss" onclick="safeSetItem(\'hijri_banner_dismissed_' + today + '\',\'1\');this.closest(\'.hijri-banner\').remove();">Plus tard</button>' : '';
     banner.innerHTML = '<div class="hijri-banner-text">' + msg + '</div>'
       + '<div class="hijri-banner-actions">'
       + '<button class="hijri-banner-btn" onclick="' + action + ';this.closest(\'.hijri-banner\').remove();">' + btnLabel + '</button>'
-      + '<button class="hijri-banner-dismiss" onclick="safeSetItem(\'hijri_banner_dismissed_' + today + '\',\'1\');this.closest(\'.hijri-banner\').remove();">Plus tard</button>'
+      + _laterBtn
       + '</div>';
     sanct.insertBefore(banner, sanct.firstChild);
   });
