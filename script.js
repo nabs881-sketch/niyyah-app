@@ -12326,6 +12326,7 @@ function checkHijriBanner() {
     if (safeGetItem('hijri_banner_dismissed_' + today)) return;
     var _monthNorm = h.month ? h.month.normalize('NFD').replace(/[\u0300-\u036f]/g, '') : '';
     var _isDhulHijjah = _monthNorm.indexOf('Hijjah') !== -1;
+    var _isMuharram = _monthNorm.indexOf('Muharram') !== -1;
     var sanct = document.getElementById('view-sanctuaire');
     if (!sanct) return;
     var msg = null, btnLabel = null, action = null;
@@ -12379,6 +12380,24 @@ function checkHijriBanner() {
       msg = '\u2726 Jours de Tashreeq. Multiplie le takbir (All\u00e2hu Akbar).';
       btnLabel = 'J\u2019ai compris';
       action = 'safeSetItem(\'' + _dhKeyTash + '\',\'1\')';
+    } else if (_isMuharram && h.day === 1) {
+      var _muhKey1 = 'hijri_banner_muh_new_' + h.year;
+      if (safeGetItem(_muhKey1)) return;
+      msg = '\u2726 Bonne ann\u00e9e hijri. Le mois d\u2019All\u00e2h a commenc\u00e9 \u2014 je\u00fbne recommand\u00e9.';
+      btnLabel = 'J\u2019ai compris';
+      action = 'safeSetItem(\'' + _muhKey1 + '\',\'1\')';
+    } else if (_isMuharram && h.day === 9) {
+      var _muhKey9 = 'hijri_banner_muh_veille_' + h.year;
+      if (safeGetItem(_muhKey9)) return;
+      msg = '\u2726 Demain c\u2019est Achoura. Le Proph\u00e8te \uFDFA recommandait de je\u00fbner le 9 et le 10.';
+      btnLabel = 'J\u2019ai compris';
+      action = 'safeSetItem(\'' + _muhKey9 + '\',\'1\')';
+    } else if (_isMuharram && h.day === 10) {
+      var _muhKey10 = 'hijri_banner_muh_ashura_' + h.year;
+      if (safeGetItem(_muhKey10)) return;
+      msg = '\u2726 Aujourd\u2019hui c\u2019est Achoura. Je\u00fbner expie les p\u00e9ch\u00e9s de l\u2019ann\u00e9e pass\u00e9e (Muslim).';
+      btnLabel = 'All\u00e2humma';
+      action = 'safeSetItem(\'' + _muhKey10 + '\',\'1\')';
     }
     if (!msg) return;
     var banner = document.createElement('div');
