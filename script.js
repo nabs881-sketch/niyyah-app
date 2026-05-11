@@ -13670,6 +13670,10 @@ function toggleFilAccordion(cat) {
     }
   });
   safeSetItem('filjour_open_section', clickedOpen ? cat : '');
+  if (clickedOpen) {
+    var target = document.querySelector('.fil-acc[data-cat="' + cat + '"] .fil-acc-header');
+    if (target) setTimeout(function() { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 220);
+  }
 }
 window.toggleFilAccordion = toggleFilAccordion;
 

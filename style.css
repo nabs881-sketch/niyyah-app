@@ -8359,6 +8359,7 @@ body.onboarding-active #nav-bar-v2 {
   padding: 14px 16px;
   cursor: pointer;
   transition: background 0.2s;
+  scroll-margin-top: 20px;
 }
 .fil-acc-header:active {
   background: rgba(200,168,75,0.06);
