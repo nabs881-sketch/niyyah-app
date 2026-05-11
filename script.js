@@ -12032,8 +12032,10 @@ function updateSanctuaireMoment() {
     }
   }
   function _isDone(item) { return item.type === 'counter' ? (state[item.id] || 0) >= item.target : !!state[item.id]; }
+  var _motivS = safeGetItem('niyyah_motivation');
   var _allUnlocked = LEVELS.filter(function(l) { return state._unlocked && state._unlocked.includes(l.id); })
-    .flatMap(function(l) { return l.sections.flatMap(function(s) { return s.items; }); });
+    .flatMap(function(l) { return l.sections.flatMap(function(s) { return s.items; }); })
+    .filter(function(item) { return !_motivS || !item.paths || item.paths.includes(_motivS); });
   var blockItems = _allUnlocked.filter(function(item) { return Array.isArray(item.block) ? item.block.includes(blockId) : item.block === blockId; });
   var blockTotal = blockItems.length;
   var blockDone = blockItems.filter(_isDone).length;
@@ -13558,15 +13560,27 @@ window.openVueRituel = openVueRituel;
 
 function getFilJourCardHTML() {
   const state = JSON.parse(localStorage.getItem('spiritual_v2') || '{}');
-  let conn = 0, conn_total = 0, ray = 0, ray_total = 0;
+  var _motivF = safeGetItem('niyyah_motivation');
+  var _passPath = function(it) { return !_motivF || !it.paths || it.paths.includes(_motivF); };
+  let done = 0, total = 0;
   if (Array.isArray(LEVELS)) {
     [2,3].forEach(i => {
       const lvl = LEVELS[i];
       if (!lvl || !lvl.sections) return;
       lvl.sections.forEach(s => {
         (s.items || []).forEach(it => {
-          if (i === 2) { conn_total++; if (state[it.id]) conn++; }
-          else { ray_total++; if (state[it.id]) ray++; }
+          if (!_passPath(it)) return;
+          total++; if (state[it.id]) done++;
+        });
+      });
+    });
+    [0,1].forEach(i => {
+      var lvl = LEVELS[i];
+      if (!lvl || !lvl.sections) return;
+      lvl.sections.forEach(s => {
+        (s.items || []).forEach(it => {
+          if (!it.filDuJour || !_passPath(it)) return;
+          total++; if (state[it.id]) done++;
         });
       });
     });
@@ -13575,7 +13589,7 @@ function getFilJourCardHTML() {
     + '<div class="fil-jour-card" onclick="openVueAuFilDuJour()">'
     + '<div class="titre">AU FIL DU JOUR</div>'
     + '<div class="soustitre">Ce qui demeure entre tes pri\u00e8res</div>'
-    + '<div class="compteur"><span>' + (conn+ray) + ' actes accomplis aujourd\'hui</span><span class="pulse"></span></div>'
+    + '<div class="compteur"><span>' + done + ' actes accomplis aujourd\'hui</span><span class="pulse"></span></div>'
     + '</div>';
 }
 window.getFilJourCardHTML = getFilJourCardHTML;
