@@ -12324,6 +12324,8 @@ function checkHijriBanner() {
     if (!h) return;
     var today = todayKey();
     if (safeGetItem('hijri_banner_dismissed_' + today)) return;
+    var _monthNorm = h.month ? h.month.normalize('NFD').replace(/[\u0300-\u036f]/g, '') : '';
+    var _isDhulHijjah = _monthNorm.indexOf('Hijjah') !== -1;
     var sanct = document.getElementById('view-sanctuaire');
     if (!sanct) return;
     var msg = null, btnLabel = null, action = null;
@@ -12347,19 +12349,19 @@ function checkHijriBanner() {
       msg = '\u2726 Cette nuit pourrait \u00eatre Laylat al-Qadr. Cherche-la dans les nuits impaires des 10 derni\u00e8res.';
       btnLabel = 'All\u00e2humma';
       action = 'safeSetItem(\'' + _qadrKey + '\',\'1\')';
-    } else if (h.month && h.month.indexOf('Hijjah') !== -1 && h.day === 1) {
+    } else if (_isDhulHijjah && h.day === 1) {
       var _dhKey1 = 'hijri_banner_dh_10jours_' + h.year;
       if (safeGetItem(_dhKey1)) return;
       msg = '\u2726 Les 10 premiers jours de Dhul-Hijjah ont commenc\u00e9. Les actions les plus aim\u00e9es d\u2019All\u00e2h dans l\u2019ann\u00e9e.';
       btnLabel = 'All\u00e2humma';
       action = 'safeSetItem(\'' + _dhKey1 + '\',\'1\')';
-    } else if (h.month && h.month.indexOf('Hijjah') !== -1 && h.day === 8) {
+    } else if (_isDhulHijjah && h.day === 8) {
       var _dhKey8 = 'hijri_banner_dh_veille_arafat_' + h.year;
       if (safeGetItem(_dhKey8)) return;
       msg = '\u2726 Demain c\u2019est Arafat. Je\u00fbner expie 2 ann\u00e9es (Muslim).';
       btnLabel = 'All\u00e2humma';
       action = 'safeSetItem(\'' + _dhKey8 + '\',\'1\')';
-    } else if (h.month && h.month.indexOf('Hijjah') !== -1 && h.day === 9) {
+    } else if (_isDhulHijjah && h.day === 9) {
       var _dhKey9 = 'hijri_banner_dh_arafat_' + h.year;
       if (safeGetItem(_dhKey9)) return;
       msg = '\u2726 Aujourd\u2019hui c\u2019est Arafat. Multiplie dou\u2019as et dhikr.';
