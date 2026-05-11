@@ -12635,21 +12635,23 @@ function _regardeShowQuestion(content, question) {
   content.style.opacity = '1';
 }
 
-function _regardeShowVerset(content, v) {
+function _regardeShowVerset(content, v, slow) {
   var _esc = function(s) { return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); };
   var _sabab = v.sabab ? '<div style="margin-top:12px;font-size:13px;color:rgba(250,247,238,0.5);line-height:1.5;"><span style="color:#C8A84A;font-weight:600;">Sabab :</span> ' + _esc(v.sabab) + '</div>' : '';
+  var d = slow ? [0, 2, 5, 5.5, 6, 7] : [0, 0.3, 0.3, 0.3, 0.6, 0.5];
+  var dur = slow ? 2 : 1.5;
   content.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100%;padding:0 8%;">'
-    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:22px;font-style:italic;color:#FAF7EE;line-height:1.7;max-width:85%;opacity:0;animation:regardeFadeIn 1.5s ease forwards;">' + _esc(v.texte) + '</div>'
-    + '<div style="margin-top:16px;font-size:13px;letter-spacing:2px;font-weight:700;text-transform:uppercase;color:#C8A84A;opacity:0;animation:regardeFadeIn 1.5s ease 0.3s forwards;">' + _esc(v.reference) + '</div>'
-    + '<div style="width:60px;height:1px;background:#C8A84A;margin:24px auto;opacity:0.6;"></div>'
-    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#C8A84A;line-height:1.6;max-width:80%;opacity:0;animation:regardeFadeIn 1.5s ease 0.6s forwards;">' + _esc(v.murmure) + '</div>'
-    + '<div style="margin-top:24px;opacity:0;animation:regardeFadeIn 1.5s ease 0.9s forwards;"><button onclick="var b=document.getElementById(\'regarde-ctx\');if(b){b.style.display=b.style.display===\'none\'?\'block\':\'none\';}" style="background:none;border:none;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;cursor:pointer;text-decoration:underline;text-underline-offset:3px;">Contexte</button></div>'
+    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:22px;font-style:italic;color:#FAF7EE;line-height:1.7;max-width:85%;opacity:0;animation:regardeFadeIn '+dur+'s ease '+d[0]+'s forwards;">' + _esc(v.texte) + '</div>'
+    + '<div style="margin-top:16px;font-size:13px;letter-spacing:2px;font-weight:700;text-transform:uppercase;color:#C8A84A;opacity:0;animation:regardeFadeIn 1s ease '+d[2]+'s forwards;">' + _esc(v.reference) + '</div>'
+    + '<div style="width:60px;height:1px;background:#C8A84A;margin:24px auto;opacity:0;animation:regardeFadeIn 0.5s ease '+d[3]+'s forwards;"></div>'
+    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#C8A84A;line-height:1.6;max-width:80%;opacity:0;animation:regardeFadeIn 1s ease '+d[4]+'s forwards;">' + _esc(v.murmure) + '</div>'
+    + '<div style="margin-top:24px;opacity:0;animation:regardeFadeIn 1s ease '+d[4]+'s forwards;"><button onclick="var b=document.getElementById(\'regarde-ctx\');if(b){b.style.display=b.style.display===\'none\'?\'block\':\'none\';}" style="background:none;border:none;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;cursor:pointer;text-decoration:underline;text-underline-offset:3px;">Contexte</button></div>'
     + '<div id="regarde-ctx" style="display:none;margin-top:16px;max-width:85%;text-align:center;opacity:0.8;">'
     + '<div style="font-size:13px;color:rgba(250,247,238,0.6);line-height:1.5;"><span style="color:#C8A84A;font-weight:600;">Epoque :</span> ' + _esc(v.epoque) + '</div>'
     + '<div style="margin-top:8px;font-size:13px;color:rgba(250,247,238,0.5);line-height:1.5;">' + _esc(v.contexte) + '</div>'
     + _sabab
     + '</div>'
-    + '<div style="display:flex;gap:20px;margin-top:32px;opacity:0;animation:regardeFadeIn 1.5s ease 0.5s forwards;">'
+    + '<div style="display:flex;gap:20px;margin-top:32px;opacity:0;animation:regardeFadeIn 1s ease '+d[5]+'s forwards;">'
     + '<button id="regarde-btn-star" onclick="regardeToggleStar()" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">☆</button>'
     + '<button onclick="regardeRefresh()" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">↻</button>'
     + '<button onclick="regardeToggleNote()" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">✎</button>'
@@ -12744,7 +12746,7 @@ function regardeCapture() {
         if (!_v) { fallback(data.category); return; }
         if (_done) return; _done = true;
         clearTimeout(_toR);
-        _regardeShowVerset(content, _v);
+        _regardeShowVerset(content, _v, true);
         _currentRegardeCat = data.category;
         _regardeStarred = false;
         if (data.category === 'INAPPROPRIE') return;
