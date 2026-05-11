@@ -795,6 +795,12 @@ function toggleRamadanMode() {
     renderRamadanActivateBtn();
     switchView('checklist'); setTimeout(renderDefiCard, 100);
     showToast(t('ramadan_off'));
+    if (safeGetItem('ramadan_boost') === 'accepted') {
+      showEidModal();
+    } else {
+      localStorage.removeItem('ramadan_boost');
+      localStorage.removeItem('ramadan_modal_shown');
+    }
   } else {
     ramadanState.active = true;
     if (!ramadanState.startDate) ramadanState.startDate = TODAY;
@@ -826,6 +832,19 @@ function showRamadanBoostModal() {
   document.body.appendChild(ov);
 }
 window.showRamadanBoostModal = showRamadanBoostModal;
+function showEidModal() {
+  var ov = document.createElement('div');
+  ov.className = 'wird-complete-overlay';
+  ov.innerHTML = '<div class="wird-complete-card">'
+    + '<div class="wird-complete-star">\u2726</div>'
+    + '<div class="wird-complete-arabic">\u0639\u0650\u064A\u062F\u064C \u0645\u064F\u0628\u064E\u0627\u0631\u064E\u0643</div>'
+    + '<div class="wird-complete-label" style="margin-bottom:16px;">Eid Mubarak</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;color:rgba(240,234,214,0.8);line-height:1.6;margin-bottom:24px;">Le mois est termin\u00e9. Tu retrouves ton rythme habituel.<br>Qu\u2019All\u00e2h accepte tes \u0153uvres de ce Ramadan.</div>'
+    + '<button class="wird-complete-btn" onclick="localStorage.removeItem(\'ramadan_boost\');localStorage.removeItem(\'ramadan_modal_shown\');this.closest(\'.wird-complete-overlay\').remove();">Continuer</button>'
+    + '</div>';
+  document.body.appendChild(ov);
+}
+window.showEidModal = showEidModal;
 function updateNavRamadan() {
   const nav = document.getElementById('nav-ramadan');
   const icon = document.getElementById('navRamadanIcon');
