@@ -586,6 +586,47 @@ to {
   flex:1;
   min-width:0
 }
+.hijri-banner {
+  padding: 14px 16px;
+  margin: 12px 16px;
+  border: 1px solid rgba(200,168,75,0.25);
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(200,168,75,0.08), rgba(200,168,75,0.02));
+  text-align: center;
+}
+.hijri-banner-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  color: rgba(240,234,214,0.85);
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+.hijri-banner-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+.hijri-banner-btn {
+  padding: 8px 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(200,168,75,0.4);
+  background: rgba(200,168,75,0.12);
+  color: #C8A84A;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.hijri-banner-dismiss {
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(200,168,75,0.15);
+  background: transparent;
+  color: rgba(200,168,75,0.55);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  cursor: pointer;
+}
 .path-badge {
   position: absolute;
   top: 8px;

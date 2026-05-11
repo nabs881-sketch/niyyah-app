@@ -12316,6 +12316,36 @@ function v2Init() {
     }
   } catch(e) {}
   v2UpdateOrbState();
+  checkHijriBanner();
+}
+
+function checkHijriBanner() {
+  getCurrentHijri().then(function(h) {
+    if (!h) return;
+    var today = todayKey();
+    if (safeGetItem('hijri_banner_dismissed_' + today)) return;
+    var sanct = document.getElementById('view-sanctuaire');
+    if (!sanct) return;
+    var msg = null, btnLabel = null, action = null;
+    if (h.month === 'Ramadan' && (!ramadanState || !ramadanState.active)) {
+      msg = '\u2726 Nous sommes en Ramadan. Activer le Mode Ramadan\u00a0?';
+      btnLabel = 'Activer';
+      action = 'toggleRamadanMode()';
+    } else if (h.month === 'Shawwal' && h.day <= 3 && ramadanState && ramadanState.active) {
+      msg = '\u2726 Eid Mubarak. D\u00e9sactiver le Mode Ramadan\u00a0?';
+      btnLabel = 'D\u00e9sactiver';
+      action = 'toggleRamadanMode()';
+    }
+    if (!msg) return;
+    var banner = document.createElement('div');
+    banner.className = 'hijri-banner';
+    banner.innerHTML = '<div class="hijri-banner-text">' + msg + '</div>'
+      + '<div class="hijri-banner-actions">'
+      + '<button class="hijri-banner-btn" onclick="' + action + ';this.closest(\'.hijri-banner\').remove();">' + btnLabel + '</button>'
+      + '<button class="hijri-banner-dismiss" onclick="safeSetItem(\'hijri_banner_dismissed_' + today + '\',\'1\');this.closest(\'.hijri-banner\').remove();">Plus tard</button>'
+      + '</div>';
+    sanct.insertBefore(banner, sanct.firstChild);
+  });
 }
 
 // Load Bab an-Nafs external content
