@@ -13426,6 +13426,7 @@ window.closeVueRituel = closeVueRituel;
 
 function getRitualItems(prayer) {
   if (!Array.isArray(LEVELS)) return [];
+  var _motiv = safeGetItem('niyyah_motivation');
   const items = [];
   const alwaysItems = [];
   [0,1].forEach(i => {
@@ -13434,6 +13435,7 @@ function getRitualItems(prayer) {
     lvl.sections.forEach(s => {
       (s.items || []).forEach(it => {
         if (it.id === prayer) return;
+        if (_motiv && it.paths && !it.paths.includes(_motiv)) return;
         if (it.alwaysVisible) { alwaysItems.push(it); return; }
         var _bm = Array.isArray(it.block) ? it.block.includes(prayer) : (it.block === prayer);
         if (_bm || it.block === 'jour') {
@@ -13598,13 +13600,17 @@ function openVueAuFilDuJour() {
   v.querySelector('.rituel-titre').textContent = 'AU FIL DU JOUR';
   v.querySelector('.rituel-prochaine').textContent = '';
   v.querySelector('.rituel-poetique').textContent = 'Ce qui demeure entre tes pri\u00e8res.';
+  var _motiv = safeGetItem('niyyah_motivation');
   const items = [];
   if (Array.isArray(LEVELS)) {
     [2,3].forEach(i => {
       const lvl = LEVELS[i];
       if (!lvl || !lvl.sections) return;
       lvl.sections.forEach(s => {
-        (s.items || []).forEach(it => items.push(it));
+        (s.items || []).forEach(it => {
+          if (_motiv && it.paths && !it.paths.includes(_motiv)) return;
+          items.push(it);
+        });
       });
     });
   }
@@ -13612,7 +13618,11 @@ function openVueAuFilDuJour() {
     var lvl = LEVELS[i];
     if (!lvl || !lvl.sections) return;
     lvl.sections.forEach(s => {
-      (s.items || []).forEach(it => { if (it.filDuJour) items.push(it); });
+      (s.items || []).forEach(it => {
+        if (!it.filDuJour) return;
+        if (_motiv && it.paths && !it.paths.includes(_motiv)) return;
+        items.push(it);
+      });
     });
   });
   const main = v.querySelector('.rituel-content');
