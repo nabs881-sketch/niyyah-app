@@ -11483,8 +11483,18 @@ function updateMedaillonState() {
   var consulted = {};
   try { consulted = JSON.parse(safeGetItem('niyyah_sablier_consulted') || '{}'); } catch(e) {}
   var done = consulted[moment] === todayKey();
+  var wasCuivre = med.classList.contains('medaillon-cuivre');
   med.classList.toggle('medaillon-pierre', done);
   med.classList.toggle('medaillon-cuivre', !done);
+  if (done && wasCuivre && !safeGetItem('niyyah_medaillon_explained')) {
+    var ov = document.createElement('div');
+    ov.className = 'wird-complete-overlay';
+    ov.innerHTML = '<div class="wird-complete-card">'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(240,234,214,0.8);line-height:1.7;margin-bottom:24px;">Le m\u00e9daillon se repose jusqu\u2019\u00e0 la prochaine plage.<br>Il reviendra en cuivre.</div>'
+      + '<button class="wird-complete-btn" onclick="safeSetItem(\'niyyah_medaillon_explained\',\'1\');this.closest(\'.wird-complete-overlay\').remove();">Compris</button>'
+      + '</div>';
+    document.body.appendChild(ov);
+  }
 }
 function openWaqtModal() {
   _nAn('waqt_started');
