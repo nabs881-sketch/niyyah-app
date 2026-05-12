@@ -6082,7 +6082,7 @@ body::before {
   outline: none;
   cursor: pointer;
   z-index: 2;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, filter 1s ease, opacity 1s ease;
   -webkit-appearance: none;
   appearance: none;
   animation: medaillonGlow 3s ease-in-out infinite;
@@ -6094,6 +6094,17 @@ body::before {
 .medaillon-alwaqt:hover,
 .medaillon-alwaqt:active {
   transform: translate(-50%, -50%) scale(1.05);
+}
+.medaillon-alwaqt.medaillon-cuivre {
+  animation: medaillonGlow 3s ease-in-out infinite;
+}
+.medaillon-alwaqt.medaillon-pierre {
+  animation: medaillonPierre 4s ease-in-out infinite;
+  opacity: 0.55;
+}
+@keyframes medaillonPierre {
+  0%,100% { filter: drop-shadow(0 0 12px rgba(180,170,155,0.3)) saturate(0.15) brightness(0.7); }
+  50% { filter: drop-shadow(0 0 20px rgba(180,170,155,0.45)) saturate(0.15) brightness(0.75); }
 }
 
 /* ── Carte marbre de base ── */

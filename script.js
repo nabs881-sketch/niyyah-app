@@ -10491,6 +10491,7 @@ function v2GoSanctuaire() {
     document.querySelectorAll('.nav-v2-item').forEach(function(n) { n.classList.remove('active-nav'); });
     var btn = document.getElementById('v2nav-sanctuaire');
     if (btn) btn.classList.add('active-nav');
+    if (typeof updateMedaillonState === 'function') updateMedaillonState();
   }
   // Skip intro cascade on return visits
   var sanctEl2 = document.getElementById('view-sanctuaire');
@@ -11475,6 +11476,16 @@ function _pickStableWaqt(moment) {
   safeSetItem('niyyah_sablier_history', JSON.stringify(histData));
   return idx;
 }
+function updateMedaillonState() {
+  var med = document.getElementById('medaillon-alwaqt');
+  if (!med) return;
+  var moment = getCurrentMoment();
+  var consulted = {};
+  try { consulted = JSON.parse(safeGetItem('niyyah_sablier_consulted') || '{}'); } catch(e) {}
+  var done = consulted[moment] === todayKey();
+  med.classList.toggle('medaillon-pierre', done);
+  med.classList.toggle('medaillon-cuivre', !done);
+}
 function openWaqtModal() {
   _nAn('waqt_started');
   var moment = getCurrentMoment();
@@ -11488,6 +11499,7 @@ function openWaqtModal() {
   safeSetItem('niyyah_sablier_consulted', JSON.stringify(
     Object.assign({}, JSON.parse(safeGetItem('niyyah_sablier_consulted') || '{}'), (function(){var o={};o[moment]=todayKey();return o;})())
   ));
+  updateMedaillonState();
   var modal = document.getElementById('waqt-modal');
   if (modal) modal.style.display = 'flex';
 }
@@ -12138,6 +12150,7 @@ function updateSanctuaireMoment() {
     el.innerHTML += getFilJourCardHTML();
     if (isFriday()) el.innerHTML += getVendrediRegardCardHTML();
   }
+  if (typeof updateMedaillonState === 'function') updateMedaillonState();
 }
 
 function getVendrediRegardCardHTML() {
