@@ -8639,55 +8639,24 @@ function renderCaverne() {
       });
     }, 350);
   }
-  showPhrase('Un homme va au travail.', 1400, function() {
-    showPhrase('Tous les matins.', 1200, function() {
-      showPhrase('Le m\u00eame pas press\u00e9.', 1400, function() {
-        acte2();
-      });
-    });
-  });
-  function acte2() {
-    showPhrase('Sur son chemin, il y a toujours eu une caverne.', 1900, function() {
-      showPhrase('De l\u2019or. Des diamants. Des bijoux empil\u00e9s.', 2200, function() {
-        showPhrase('<span style="color:rgba(255,255,255,0.7);font-style:italic;">Et une pancarte, simple, \u00e0 l\u2019entr\u00e9e\u00a0:</span>', 1600, acte2Pancarte);
-      });
-    }, 300);
-    setTimeout(function() { glow.style.opacity = '1'; }, 1250);
-  }
-  function acte2Pancarte() {
-    showPhrase('<div style="font-weight:700;color:#C8A84A;letter-spacing:2px;text-shadow:0 0 20px rgba(200,168,75,0.4);margin-bottom:32px;font-family:Scheherazade New,serif;">\u00ab\u00a0\u00c0 DONNER.\u00a0\u00bb</div><div style="color:#C8A84A;opacity:0.7;font-style:italic;font-family:Scheherazade New,serif;margin-bottom:32px;">li-Ll\u0101h</div><div style="font-size:36px;color:#C8A84A;opacity:0.85;font-family:Scheherazade New,serif;direction:rtl;line-height:2.2;margin-top:8px;padding:8px 0;">\u0644\u0650\u0644\u0651\u064e\u0670\u0647</div>', 2800, function() {
-      acte3();
-    });
-  }
-  function acte3() {
-    glow.style.opacity = '0.2';
-    showPhrase('<span style="color:rgba(255,255,255,0.45);font-style:italic;">Il ne s\u2019arr\u00eate pas.</span>', 1200, function() {
-      showPhrase('', 600, function() {
-        showPhrase('Cette caverne existe.', 1300, function() {
-          showPhrase('Elle est ouverte.', 1100, function() {
-            chute();
+  setTimeout(function() { if (glow) glow.style.opacity = '1'; }, 3000);
+  showPhrase('\u00c0 cinquante m\u00e8tres d\u2019ici, une caverne. D\u00e9bordante d\u2019or, de perles et de diamants. Sur son entr\u00e9e, une pancarte\u00a0: \u00ab\u00a0Tout cela est \u00e0 toi. Prends ce que tu veux.\u00a0\u00bb', 5500, function() {
+    showPhrase('Qui passerait devant sans entrer\u00a0? Personne.', 2500, function() {
+      showPhrase('Et pourtant \u2014 chaque matin, une autre caverne s\u2019ouvre devant toi. Une caverne remplie de tr\u00e9sors infiniment plus pr\u00e9cieux encore.', 5000, function() {
+        showPhrase('<span style="color:#C8A84A;">Un Bismillah sinc\u00e8re. Un pardon accord\u00e9. Un silence patient. Un sourire offert.</span> Chaque geste \u2014 un tr\u00e9sor.', 4500, function() {
+          showPhrase('L\u2019or de la terre, tu le laisseras derri\u00e8re toi le jour de ta mort. Mais ces gestes-l\u00e0, tu les emporteras avec toi \u2014 ils p\u00e8seront plus lourd que tout l\u2019or du monde.', 6000, function() {
+            showPhrase('<div style="color:#C8A84A;font-family:Cormorant Garamond,serif;font-style:italic;font-size:22px;line-height:1.6;">La porte est grande ouverte.<br>Personne ne la garde.<br>All\u00e2h est Celui qui donne.</div>', 3500, function() {
+              showPhrase('<div style="color:#C8A84A;font-family:Cormorant Garamond,serif;font-weight:700;font-size:24px;line-height:1.5;text-align:center;">Entre.<br><span style="font-weight:400;font-style:italic;font-size:18px;color:rgba(200,168,75,0.7);">Et chaque jour, Niyyah marchera avec toi \u2014 le compagnon qui te rappelle de t\u2019arr\u00eater devant cette caverne.</span></div>', 5500, function() {
+                el.style.transition = 'opacity 1500ms ease';
+                el.style.opacity = '0';
+                setTimeout(function() { onboardNext(); }, 1600);
+              });
+            });
           });
         });
       });
     });
-  }
-  function chute() {
-    showPhrase('<div style="color:#C8A84A;font-family:Cormorant Garamond,serif;font-style:italic;font-size:28px;font-weight:500;text-align:center;line-height:1.4;letter-spacing:0.02em;">Niyyah te dit\u00a0:<br>arr\u00eate-toi.</div>', 2800, function() {
-      epilogue();
-    });
-  }
-  function epilogue() {
-    showPhrase('<div style="width:88vw;max-width:380px;margin:0 auto;border:1px solid rgba(200,168,75,0.25);border-radius:14px;padding:40px 32px;background:radial-gradient(ellipse at top, rgba(200,168,75,0.08) 0%, transparent 70%);box-sizing:border-box;">'
-      + '<svg width="32" height="32" viewBox="0 0 80 80" style="display:block;margin:0 auto 16px;opacity:0.8;"><defs><radialGradient id="njgE" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#E8D070"/><stop offset="100%" stop-color="#A88838"/></radialGradient></defs><g transform="translate(40,40)"><polygon points="-22,-22 22,-22 22,22 -22,22" fill="url(#njgE)"/><polygon points="-22,-22 22,-22 22,22 -22,22" fill="url(#njgE)" transform="rotate(45)"/><polygon points="-10,-10 10,-10 10,10 -10,10" fill="#0a0a0a"/><polygon points="-10,-10 10,-10 10,10 -10,10" fill="#0a0a0a" transform="rotate(45)"/><circle cx="0" cy="0" r="3" fill="#E8D070"/></g></svg>'
-      + '<div style="text-align:center;color:rgba(200,168,75,0.65);font-style:italic;font-size:15px;line-height:1.8;">Dire Bismillah.<br>Pardonner.<br>Tenir sa langue.<br>\u2026</div>'
-      + '<div style="height:28px;"></div>'
-      + '<div style="text-align:center;color:#C8A84A;font-family:Cormorant Garamond,serif;font-weight:700;font-size:24px;line-height:1.4;">Arr\u00eate-toi.<br>Tout est l\u00e0.</div>'
-      + '</div>', 4000, function() {
-      el.style.transition = 'opacity 1500ms ease';
-      el.style.opacity = '0';
-      setTimeout(function() { onboardNext(); }, 1600);
-    });
-  }
+  });
 }
 
 function onboardRender() {
