@@ -59,7 +59,7 @@ export default {
 
     // ── Santé (open to all) ──
     if (path === '/' && request.method === 'GET') {
-      return jsonResponse({ status: 'ok', service: 'Niyyah API', version: '2.6.0' });
+      return jsonResponse({ status: 'ok', service: 'Niyyah API', version: '2.7.0' });
     }
 
     // ── Origin check for API routes ──
@@ -515,28 +515,7 @@ async function handleRegarde(request, env) {
       verset_index = Math.floor(Math.random() * 8);
       returning_verset = true;
     }
-    // PASS 2 : Génération Sonnet (optionnelle)
-    let question = null;
-    try {
-      const genPrompt = buildRegardeGeneratorPrompt(category);
-      for (let attempt = 0; attempt < 2; attempt++) {
-        const genResp = await callAnthropic(env, {
-          model: MODEL_SONNET, max_tokens: 150, temperature: 0.7,
-          messages: [{ role: 'user', content: [
-            { type: 'image', source: { type: 'base64', media_type: 'image/jpeg', data: image } },
-            { type: 'text', text: genPrompt }
-          ]}]
-        });
-        const rawText = genResp.content?.[0]?.text || '';
-        const parsed = extractJSON(rawText);
-        if (!parsed || !parsed.question) continue;
-        const validation = validateRegardeQuestion(parsed.question);
-        if (validation.valid) { question = parsed.question.trim(); break; }
-        if (['fatwa', 'hadith', 'quran'].includes(validation.reason)) break;
-      }
-    } catch (e) { /* Sonnet failed — verset still returned */ }
     const response = { mode: 'verset', category, confidence, verset_index };
-    if (question) response.question = question;
     if (returning_verset) response.returning_verset = true;
     return jsonResponseV2(response);
   } catch (err) {
