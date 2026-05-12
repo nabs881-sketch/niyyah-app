@@ -8640,11 +8640,11 @@ function renderCaverne() {
     }, 350);
   }
   setTimeout(function() { if (glow) glow.style.opacity = '1'; }, 3000);
-  showPhrase('\u00c0 cinquante m\u00e8tres d\u2019ici, une caverne. D\u00e9bordante d\u2019or, de perles et de diamants. Sur son entr\u00e9e, une pancarte\u00a0: \u00ab\u00a0Tout cela est \u00e0 toi. Prends ce que tu veux.\u00a0\u00bb', 5500, function() {
-    showPhrase('Qui passerait devant sans entrer\u00a0? Personne.', 2500, function() {
-      showPhrase('Et pourtant \u2014 chaque matin, une autre caverne s\u2019ouvre devant toi. Une caverne remplie de tr\u00e9sors infiniment plus pr\u00e9cieux encore.', 5000, function() {
-        showPhrase('<span style="color:#C8A84A;">Un Bismillah sinc\u00e8re. Un pardon accord\u00e9. Un silence patient. Un sourire offert.</span> Chaque geste \u2014 un tr\u00e9sor.', 4500, function() {
-          showPhrase('L\u2019or de la terre, tu le laisseras derri\u00e8re toi le jour de ta mort. Mais ces gestes-l\u00e0, tu les emporteras avec toi \u2014 ils p\u00e8seront plus lourd que tout l\u2019or du monde.', 6000, function() {
+  showPhrase('\u00c0 cinquante m\u00e8tres d\u2019ici, une caverne. D\u00e9bordante d\u2019or, de perles et de diamants. Sur son entr\u00e9e, une pancarte\u00a0: <span style="font-style:italic;color:#C8A84A;">\u00ab\u00a0Tout cela est \u00e0 toi. Prends ce que tu veux.\u00a0\u00bb</span>', 5500, function() {
+    showPhrase('Qui passerait devant sans entrer\u00a0?<br><span style="font-style:italic;color:#C8A84A;font-size:28px;">Personne.</span>', 2500, function() {
+      showPhrase('Et pourtant \u2014 chaque matin, une autre caverne s\u2019ouvre devant toi. Une caverne remplie de tr\u00e9sors <span style="font-weight:500;color:#C8A84A;">infiniment plus pr\u00e9cieux encore</span>.', 5000, function() {
+        showPhrase('<span style="color:#C8A84A;">Un Bismillah sinc\u00e8re.<br><br>Un pardon accord\u00e9.<br><br>Un silence patient.<br><br>Un sourire offert.</span><br><br><span style="font-style:italic;color:#E8D5A0;">Chaque geste \u2014 un tr\u00e9sor.</span>', 4500, function() {
+          showPhrase('L\u2019or de la terre, tu le laisseras derri\u00e8re toi le jour de ta mort. Mais ces gestes-l\u00e0, tu les emporteras avec toi \u2014 ils p\u00e8seront <span style="font-weight:500;color:#C8A84A;">plus lourd que tout l\u2019or du monde</span>.', 6000, function() {
             showPhrase('<div style="color:#C8A84A;font-family:Cormorant Garamond,serif;font-style:italic;font-size:22px;line-height:1.6;">La porte est grande ouverte.<br>Personne ne la garde.<br>All\u00e2h est Celui qui donne.</div>', 3500, function() {
               showPhrase('<div style="color:#C8A84A;font-family:Cormorant Garamond,serif;font-weight:700;font-size:24px;line-height:1.5;text-align:center;">Entre.<br><span style="font-weight:400;font-style:italic;font-size:18px;color:rgba(200,168,75,0.7);">Et chaque jour, Niyyah marchera avec toi \u2014 le compagnon qui te rappelle de t\u2019arr\u00eater devant cette caverne.</span></div>', 5500, function() {
                 el.style.transition = 'opacity 1500ms ease';
