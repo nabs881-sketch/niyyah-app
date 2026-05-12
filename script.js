@@ -11483,8 +11483,20 @@ function updateMedaillonState() {
   var consulted = {};
   try { consulted = JSON.parse(safeGetItem('niyyah_sablier_consulted') || '{}'); } catch(e) {}
   var done = consulted[moment] === todayKey();
-  med.classList.toggle('medaillon-pierre', done);
-  med.classList.toggle('medaillon-cuivre', !done);
+  var wasPierre = med.classList.contains('medaillon-pierre');
+  var wasCuivre = med.classList.contains('medaillon-cuivre');
+  if (done && !wasPierre) {
+    med.style.transition = 'opacity 0.5s ease';
+    med.style.opacity = '0';
+    setTimeout(function() {
+      med.classList.add('medaillon-pierre');
+      med.classList.remove('medaillon-cuivre');
+      med.style.opacity = '1';
+    }, 500);
+  } else if (!done && !wasCuivre) {
+    med.classList.add('medaillon-cuivre');
+    med.classList.remove('medaillon-pierre');
+  }
 }
 function openWaqtModal() {
   _nAn('waqt_started');
