@@ -3391,7 +3391,7 @@ function renderPrayerTimesCard() {
   if (_prayerError) {
     return '<div class="prayer-times-card">' +
       '<div class="prayer-times-header"><div class="prayer-times-title">🕌 Horaires</div>' +
-        '<div class="prayer-times-city" onclick="showCityInput()">\u270f\ufe0f ' + escapeHtml(_prayerCity||'Ville') + '</div>' +
+        '<div class="prayer-times-city" onclick="showCityInput()">\u270f\ufe0f ' + escapeHtml(_prayerCity||'Choisir une ville') + '</div>' +
       '</div>' +
       '<div style="font-size:12px;color:var(--t3);text-align:center;padding:8px;">Erreur — vérifie ta connexion ou la ville</div>' +
       '<div class="city-input-wrap">' +
@@ -3402,7 +3402,7 @@ function renderPrayerTimesCard() {
   }
   if (!_prayerTimes) return '<div class="prayer-times-card">' +
     '<div class="prayer-times-header"><div class="prayer-times-title">' + t('prayer_title') + '</div>' +
-    '<div class="prayer-times-city" onclick="showCityInput()">\u270f\ufe0f ' + escapeHtml(_prayerCity||'Ville') + '</div></div>' +
+    '<div class="prayer-times-city" onclick="showCityInput()">\u270f\ufe0f ' + escapeHtml(_prayerCity||'Choisir une ville') + '</div></div>' +
     '<div style="font-size:12px;color:var(--t3);margin-bottom:10px;">Les horaires n\'ont pas pu être chargés.</div>' +
     '<button class="city-input-btn" style="width:100%;padding:10px;" onclick="loadPrayerTimes()">🔄 Charger les horaires</button>' +
     '</div>';
@@ -12366,8 +12366,22 @@ function checkRegardeAlert() {
   safeSetItem('niyyah_regarde_last_alert', todayKey());
   if (typeof showRegardeAlertModal === 'function') showRegardeAlertModal();
 }
+function _cleanupOldDateKeys() {
+  try {
+    var cutoff = Date.now() - 60 * 24 * 3600000;
+    var toRemove = [];
+    for (var i = 0; i < localStorage.length; i++) {
+      var k = localStorage.key(i);
+      if (!k) continue;
+      var m = k.match(/(\d{4})-(\d{2})-(\d{2})$/);
+      if (m && new Date(m[0]).getTime() < cutoff) toRemove.push(k);
+    }
+    toRemove.forEach(function(k) { localStorage.removeItem(k); });
+  } catch(e) {}
+}
 function v2Init() {
   checkMidnightReset();
+  _cleanupOldDateKeys();
   applyAtmosphere();
   // Add class so CSS knows V2 is active
   document.body.classList.add('v2-mode');
