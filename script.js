@@ -11700,19 +11700,26 @@ function v2RefreshStats() {
   const grEl = document.getElementById('v2-greeting-text');
   if (grEl) {
     var _lastSalam = localStorage.getItem('niyyah_greet_date');
-    var _murmureText = t('greeting_day_' + new Date().getDay());
-    if (!localStorage.getItem('niyyah_welcome_shown')) {
-      var _motiv = localStorage.getItem('niyyah_motivation');
-      if (_motiv === 'routine' || _motiv === 'reconnecter' || _motiv === 'sacraliser') {
-        _murmureText = t('welcome_' + _motiv);
-        safeSetItem('niyyah_welcome_shown', '1');
+    var _murmureText;
+    if (safeGetItem('niyyah_murmur_date') === TODAY) {
+      _murmureText = safeGetItem('niyyah_murmur_text') || t('greeting_day_' + new Date().getDay());
+    } else {
+      _murmureText = t('greeting_day_' + new Date().getDay());
+      if (!localStorage.getItem('niyyah_welcome_shown')) {
+        var _motiv = localStorage.getItem('niyyah_motivation');
+        if (_motiv === 'routine' || _motiv === 'reconnecter' || _motiv === 'sacraliser') {
+          _murmureText = t('welcome_' + _motiv);
+          safeSetItem('niyyah_welcome_shown', '1');
+        }
       }
-    }
-    var _inst = parseInt(safeGetItem('niyyah_install_date') || '0', 10);
-    var _daysSinceInstall = _inst ? Math.floor((Date.now() - _inst) / 86400000) : 0;
-    if (_daysSinceInstall >= 30 && !localStorage.getItem('niyyah_j30_shown')) {
-      _murmureText = t('evolution_invite_30');
-      safeSetItem('niyyah_j30_shown', '1');
+      var _inst = parseInt(safeGetItem('niyyah_install_date') || '0', 10);
+      var _daysSinceInstall = _inst ? Math.floor((Date.now() - _inst) / 86400000) : 0;
+      if (_daysSinceInstall >= 30 && !localStorage.getItem('niyyah_j30_shown')) {
+        _murmureText = t('evolution_invite_30');
+        safeSetItem('niyyah_j30_shown', '1');
+      }
+      safeSetItem('niyyah_murmur_date', TODAY);
+      safeSetItem('niyyah_murmur_text', _murmureText);
     }
     if (_lastSalam !== TODAY) {
       // Salutation fade-in 2s → visible 7s → fade-out 2s → murmure 1.5s
