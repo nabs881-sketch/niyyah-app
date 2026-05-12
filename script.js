@@ -9729,15 +9729,11 @@ function v2ApplyI18n() {
   const logo = document.querySelector('.topbar-logo-v2');
   if (logo) logo.textContent = T.app_name;
 
-  // Greeting — phrase du jour + fade-in
+  // Greeting — géré par le cycle salutation/murmure dans v2Init, ne pas écraser ici
   const grEl = document.getElementById('v2-greeting-text');
   if (grEl) {
-    grEl.textContent = t('greeting_day_' + new Date().getDay());
     grEl.style.direction = T.dir;
     grEl.style.fontFamily = isRTL ? "'Amiri', serif" : "'Cormorant Garamond', serif";
-    grEl.style.animation = 'none';
-    grEl.offsetHeight;
-    grEl.style.animation = 'greetingFadeIn 1.5s ease-out 0.3s both';
   }
 
   // Orb CTA
