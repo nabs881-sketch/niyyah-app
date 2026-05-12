@@ -11452,15 +11452,42 @@ window.getNiyyahStats = function() {
   try { return JSON.parse(localStorage.getItem('niyyah_analytics_v1') || '{}'); } catch(e) { return {}; }
 };
 _nAn('sessions');
+function _pickStableWaqt(moment) {
+  var today = todayKey();
+  var phraseRaw = safeGetItem('niyyah_sablier_phrase');
+  var phraseData = {}; try { phraseData = JSON.parse(phraseRaw) || {}; } catch(e) {}
+  if (phraseData[moment] && phraseData[moment].date === today) {
+    return phraseData[moment].idx;
+  }
+  var pool = WAQT_CATALOG[moment] || WAQT_CATALOG.matin;
+  var histRaw = safeGetItem('niyyah_sablier_history');
+  var histData = {}; try { histData = JSON.parse(histRaw) || {}; } catch(e) {}
+  var hist = Array.isArray(histData[moment]) ? histData[moment] : [];
+  var available = [];
+  for (var i = 0; i < pool.length; i++) { if (hist.indexOf(i) === -1) available.push(i); }
+  if (available.length === 0) { available = []; for (var j = 0; j < pool.length; j++) available.push(j); }
+  var idx = available[Math.floor(Math.random() * available.length)];
+  phraseData[moment] = { date: today, idx: idx };
+  safeSetItem('niyyah_sablier_phrase', JSON.stringify(phraseData));
+  hist.push(idx);
+  if (hist.length > 15) hist = hist.slice(-15);
+  histData[moment] = hist;
+  safeSetItem('niyyah_sablier_history', JSON.stringify(histData));
+  return idx;
+}
 function openWaqtModal() {
   _nAn('waqt_started');
   var moment = getCurrentMoment();
   var pool = WAQT_CATALOG[moment] || WAQT_CATALOG.matin;
-  var item = pool[Math.floor(Math.random() * pool.length)];
+  var idx = _pickStableWaqt(moment);
+  var item = pool[idx] || pool[0];
   var lang = (typeof V2_LANG !== 'undefined') ? V2_LANG : 'fr';
   var txt = item[lang] || item.fr;
   var el = document.getElementById('waqt-action-text');
   if (el) el.textContent = txt;
+  safeSetItem('niyyah_sablier_consulted', JSON.stringify(
+    Object.assign({}, JSON.parse(safeGetItem('niyyah_sablier_consulted') || '{}'), (function(){var o={};o[moment]=todayKey();return o;})())
+  ));
   var modal = document.getElementById('waqt-modal');
   if (modal) modal.style.display = 'flex';
 }
