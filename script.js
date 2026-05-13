@@ -7532,7 +7532,7 @@ function rotateTafakkurPhrase() {
   var el = document.getElementById('tafakkurPhrase');
   if (el) {
     el.style.opacity = '0';
-    setTimeout(function() { var phrase = pool[idx]; if (phrase.includes('<')) { el.innerHTML = phrase; } else { el.textContent = phrase; } el.style.opacity = '1'; }, 300);
+    setTimeout(function() { var phrase = pool[idx]; if (phrase.includes('<') || phrase.includes('\n')) { el.innerHTML = phrase.replace(/\n/g, '<br>'); } else { el.textContent = phrase; } el.style.opacity = '1'; }, 300);
   }
 }
 
