@@ -11725,7 +11725,10 @@ function v2RefreshStats() {
       var _grPool = t('greeting_day_' + new Date().getDay());
       if (Array.isArray(_grPool)) {
         var _wn = Math.floor((Date.now() - new Date(new Date().getFullYear(),0,1).getTime()) / 604800000);
+        var _dbgW = new URLSearchParams(window.location.search).get('debugWeek');
+        if (_dbgW !== null) { _wn = parseInt(_dbgW, 10) || 0; console.log('[murmure debug] forced week=' + _wn); }
         _murmureText = _grPool[_wn % _grPool.length];
+        console.log('[murmure] day=' + new Date().getDay() + ' week=' + _wn + ' idx=' + (_wn % _grPool.length) + ' → "' + _murmureText + '"');
       } else {
         _murmureText = _grPool;
       }
