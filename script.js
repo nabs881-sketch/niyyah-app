@@ -7574,6 +7574,90 @@ const TAWBA_MESSAGES = [
     verse: "Allah étend Sa main la nuit pour le repentir de celui qui a péché le jour.",
     ref: "Muslim 2759", color: "#E9C46A"
   },
+  {
+    title: "Tu n'es pas seul.",
+    sub: "Il y a une pr\u00e9sence qui ne demande rien, ne juge rien, et n'a jamais quitt\u00e9 la pi\u00e8ce.",
+    verse: "Et si Mes serviteurs t'interrogent sur Moi \u2014 Je suis tout proche.",
+    ref: "Coran 2:186", color: "#D4AF37"
+  },
+  {
+    title: "Ce poids n'est pas pour rien.",
+    sub: "Aucune fatigue, aucune douleur, aucun chagrin n'est perdu. Tout est compt\u00e9 \u2014 et tout sera rendu.",
+    verse: "Aucun musulman n'est atteint par une fatigue, une maladie, un souci, une tristesse \u2014 sans qu'Allah n'efface par cela ses fautes.",
+    ref: "Bukhari 5641", color: "#87A96B"
+  },
+  {
+    title: "Tu n'as pas \u00e9t\u00e9 abandonn\u00e9.",
+    sub: "M\u00eame quand le ciel para\u00eet silencieux \u2014 Il est l\u00e0. Le silence de ceux qu'on aime n'est pas l'oubli.",
+    verse: "Ton Seigneur ne t'a pas abandonn\u00e9, et Il n'est pas en col\u00e8re contre toi.",
+    ref: "Coran 93:3", color: "#E9C46A"
+  },
+  {
+    title: "Tu as pleur\u00e9 cette semaine.",
+    sub: "Tes larmes ne tombent pas dans le vide. Allah les a compt\u00e9es avant qu'elles ne touchent ta joue.",
+    verse: "Deux yeux que le Feu ne touchera pas : un \u0153il qui a pleur\u00e9 par crainte d'Allah, et un \u0153il qui a veill\u00e9 pour Sa cause.",
+    ref: "Tirmidhi 1639", color: "#D4AF37"
+  },
+  {
+    title: "Quelqu'un t'a quitt\u00e9.",
+    sub: "Le retour \u00e0 Lui n'est pas une perte \u2014 c'est une remise. Ce que tu as aim\u00e9 t'a \u00e9t\u00e9 confi\u00e9, pas donn\u00e9.",
+    verse: "\u00c0 Allah nous appartenons, et \u00e0 Lui nous retournons.",
+    ref: "Coran 2:156", color: "#87A96B"
+  },
+  {
+    title: "Tu es fatigu\u00e9.",
+    sub: "Cette religion n'a jamais \u00e9t\u00e9 un fardeau. Si tu \u00e9puises, c'est que tu portes ce qu'Il ne t'a pas demand\u00e9 de porter.",
+    verse: "Cette religion est facilit\u00e9. Personne ne la rend dure sans qu'elle ne le vainque.",
+    ref: "Bukhari 39", color: "#E9C46A"
+  },
+  {
+    title: "Ton c\u0153ur p\u00e8se ce soir.",
+    sub: "Il existe une seule chose qui apaise vraiment. Et tu la connais d\u00e9j\u00e0 \u2014 tu l'as juste oubli\u00e9e un moment.",
+    verse: "N'est-ce pas par le rappel d'Allah que les c\u0153urs s'apaisent ?",
+    ref: "Coran 13:28", color: "#D4AF37"
+  },
+  {
+    title: "Le corps t'a l\u00e2ch\u00e9.",
+    sub: "Cette \u00e9preuve n'est pas une punition. Elle est un nettoyage que tu n'as pas demand\u00e9 \u2014 mais qui te lave.",
+    verse: "Lorsqu'Allah veut du bien \u00e0 Son serviteur, Il h\u00e2te sa correction en ce bas-monde.",
+    ref: "Tirmidhi 2396", color: "#87A96B"
+  },
+  {
+    title: "Quelqu'un t'a bless\u00e9.",
+    sub: "Tu n'es pas oblig\u00e9 de pardonner tout de suite. Lui voit ce qui t'a \u00e9t\u00e9 fait. Et Il garde le compte juste.",
+    verse: "Patience, belle patience. C'est Allah dont le secours est implor\u00e9 contre ce que vous racontez.",
+    ref: "Coran 12:18", color: "#E9C46A"
+  },
+  {
+    title: "Tu reviens apr\u00e8s longtemps.",
+    sub: "Le temps \u00e9coul\u00e9 n'est pas une dette \u00e0 r\u00e9gler. Ce qui compte, ce n'est pas combien tu as manqu\u00e9 \u2014 c'est que tu sois l\u00e0 maintenant.",
+    verse: "Et quiconque place sa confiance en Allah \u2014 Il lui suffit.",
+    ref: "Coran 65:3", color: "#D4AF37"
+  },
+  {
+    title: "Tu te crois indigne.",
+    sub: "Tu n'as pas \u00e0 m\u00e9riter Sa mis\u00e9ricorde avant qu'Il te la donne. C'est exactement le contraire. Avance d'un pas.",
+    verse: "Si Mon serviteur s'approche de Moi d'un empan, Je M'approche de lui d'une coud\u00e9e. S'il vient en marchant, Je viens en courant.",
+    ref: "Hadith qudsi \u2014 Bukhari 7405", color: "#87A96B", exclusive: true
+  },
+  {
+    title: "Tu t'es r\u00e9veill\u00e9.",
+    sub: "C'est un cadeau silencieux que tu n'as pas demand\u00e9. Une journ\u00e9e de plus pour recommencer. Sans bilan d'hier.",
+    verse: "Allah saisit les \u00e2mes au moment de leur mort, et celle qui ne meurt pas pendant son sommeil.",
+    ref: "Coran 39:42", color: "#E9C46A"
+  },
+  {
+    title: "Tu as \u00e9chou\u00e9.",
+    sub: "Aucun \u00e9chec n'est total quand tu peux encore tendre les mains. Le r\u00e9sultat ne t'appartient pas \u2014 l'intention oui.",
+    verse: "Les actes ne valent que par leurs intentions.",
+    ref: "Bukhari 1", color: "#D4AF37"
+  },
+  {
+    title: "Tu portes une honte ancienne.",
+    sub: "Il a couvert ce que personne n'a vu. Il a effac\u00e9 ce que tu n'oses pas dire. Avance \u2014 Il ne tient pas le compte que tu tiens contre toi.",
+    verse: "Celui qui couvre les d\u00e9fauts d'un musulman en ce bas-monde \u2014 Allah couvrira les siens le Jour de la R\u00e9surrection.",
+    ref: "Muslim 2580", color: "#87A96B", exclusive: true
+  },
 ];
 
 function checkTawba() {
