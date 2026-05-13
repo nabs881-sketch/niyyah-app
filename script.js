@@ -7039,7 +7039,6 @@ const MEDIT_PHRASES = [
   'Tu marches. Tes pieds savent o\u00f9 poser. Tu n\u2019y penses jamais.',
   'Pense \u00e0 un ami. Demain il pourrait ne plus \u00eatre l\u00e0. Tu lui as dit quoi en dernier ?',
   'L\u2019eau coule du robinet. Elle vient d\u2019o\u00f9, vraiment ?',
-  'Une \u00e9toile que tu vois ce soir, sa lumi\u00e8re a mis des ann\u00e9es \u00e0 arriver. Tu re\u00e7ois un message ancien.',
   'Tu as eu faim. Tu as mang\u00e9. Tu as oubli\u00e9 de remercier.',
   'Quelqu\u2019un quelque part dort dans le froid en ce moment. Toi tu as un toit.',
   'Si tu pouvais parler \u00e0 toi-m\u00eame il y a dix ans, tu lui dirais quoi ?',
@@ -7055,31 +7054,9 @@ const MEDIT_PHRASES = [
   'Avant ta naissance, tu \u00e9tais quoi ?',
   'Si tu pouvais effacer un seul de tes souvenirs, lequel ? Et pourquoi tu h\u00e9sites ?',
   'Tu es vivant. C\u2019est tout ce qu\u2019il y a \u00e0 dire ? Ou il y a plus ?',
-  'Une orange a la peau qui prot\u00e8ge, la chair qui nourrit, le p\u00e9pin qui refait l\u2019arbre. Qui a pens\u00e9 \u00e0 tout ?',
-  'Le nourrisson cherche le sein sans qu\u2019on le lui apprenne. Qui le lui a dit ?',
-  'L\u2019abeille danse pour expliquer o\u00f9 sont les fleurs. Qui lui a appris la g\u00e9om\u00e9trie ?',
-  'Ton \u0153il a 130 millions de cellules qui captent la lumi\u00e8re. Tu en demandais combien ?',
-  'La Terre tourne \u00e0 100\u00a0000 km/h. Tu n\u2019as rien renvers\u00e9 sur la table.',
-  'Le sang coagule pile quand tu te coupes. Pas avant. Pas apr\u00e8s. Qui r\u00e8gle l\u2019horloge ?',
-  'Deux atomes d\u2019hydrog\u00e8ne + un d\u2019oxyg\u00e8ne = de l\u2019eau. Pourquoi pas un poison ?',
-  'Tu peux distinguer 10\u00a0000 odeurs. Tu n\u2019en as jamais demand\u00e9 une seule.',
-  'Un saumon n\u00e9 dans une rivi\u00e8re retrouve la m\u00eame rivi\u00e8re des ann\u00e9es plus tard. Avec quel GPS ?',
-  'Une graine de tomate conna\u00eet la forme finale de la tomate. O\u00f9 est-elle \u00e9crite ?',
-  'Tu as 37 mille milliards de cellules. Toutes savent quoi faire. Aucune ne t\u2019a demand\u00e9.',
-  'La banane m\u00fbrit pile au moment o\u00f9 tu en as besoin. Et l\u2019emballage est inclus.',
-  'Si la Terre \u00e9tait un peu plus pr\u00e8s du soleil, tu br\u00fbles. Un peu plus loin, tu g\u00e8les. Elle est pile.',
-  'Le b\u00e9b\u00e9 dans le ventre respire dans l\u2019eau. Dehors, il respire dans l\u2019air. Il a appris quand ?',
-  'La m\u00e8re reconna\u00eet le cri de son enfant entre mille. Personne ne lui a appris.',
-  'Une larme de tristesse n\u2019a pas la m\u00eame composition chimique qu\u2019une larme de joie. Qui les distingue ?',
-  'Tes empreintes digitales n\u2019existent nulle part ailleurs. Sur 8 milliards. Tu as un signe sur les doigts.',
-  'Le ver de terre laboure ton sol gratuitement chaque nuit. Tu ne lui as jamais dit merci.',
-  'Le miel ne pourrit jamais. On en a trouv\u00e9 dans les pyramides, encore mangeable.',
-  'Mangue, fraise, ananas, past\u00e8que, datte, p\u00eache, raisin, figue, kiwi, grenade. Chacune un go\u00fbt unique. Pourquoi tant ? Personne ne t\u2019aurait fait de proc\u00e8s s\u2019il n\u2019y en avait qu\u2019un.',
   'Tu n\u2019as jamais vu ton propre visage. Seulement son reflet. Qui le voit vraiment ?',
   'Quand tu fermes les yeux pour dormir, tu fais confiance. Tu ne sais m\u00eame pas si tu te r\u00e9veilleras.',
-  'Tu marches sur une boule en suspension dans le vide. Tu ne tombes pas. Personne ne t\u2019a expliqu\u00e9 pourquoi.',
   'Les morts sont plus nombreux que les vivants. Tu vis sur leur silence.',
-  'Une pomme tombe. Newton a vu une loi. Avant lui, qui avait fait tenir les pommes ?',
   'Tu peux fermer ta bouche, pas tes oreilles. Pourquoi ce d\u00e9s\u00e9quilibre ?',
   'Le sommeil est gratuit. La nourriture est gratuite \u00e0 la naissance. L\u2019air l\u2019est tout le temps. Le reste, on te le fait payer.',
   'Une seconde dure une seconde. Mais une seconde de douleur ne dure pas comme une seconde de bonheur.',
@@ -11579,7 +11556,10 @@ var WAQT_CATALOG = {
     {fr:'Au moment o\u00f9 tu lis ceci, des millions de musulmans viennent de prier le Fajr quelque part. La Terre est ronde \u2014 chaque fuseau a sa pri\u00e8re. L\u2019oumma est \u00e9veill\u00e9e 24h/24.',en:'',ar:''},
     {fr:'Le Coran est r\u00e9cit\u00e9 24h/24 sur Terre. Aucune seconde ne passe sans qu\u2019une voix le porte. Cette continuit\u00e9 n\u2019existe pour AUCUN autre livre dans l\u2019histoire humaine.',en:'',ar:''},
     {fr:'Pendant la minute o\u00f9 tu lis ces mots, environ 100 musulmans viennent de na\u00eetre dans le monde. Ils porteront ta foi quand toi tu ne seras plus.',en:'',ar:''},
-    {fr:'Le Proph\u00e8te \uFDFA a dit : \u00ab H\u00e2te-toi d\u2019accomplir tes \u0153uvres avant sept choses : la pauvret\u00e9 qui fait oublier, la richesse qui rend rebelle, la maladie qui handicape, la vieillesse qui affaiblit, la mort soudaine, ou l\u2019Heure. \u00bb Tu n\u2019attends pas. Tu s\u00e8mes maintenant.',en:'',ar:''}
+    {fr:'Le Proph\u00e8te \uFDFA a dit : \u00ab H\u00e2te-toi d\u2019accomplir tes \u0153uvres avant sept choses : la pauvret\u00e9 qui fait oublier, la richesse qui rend rebelle, la maladie qui handicape, la vieillesse qui affaiblit, la mort soudaine, ou l\u2019Heure. \u00bb Tu n\u2019attends pas. Tu s\u00e8mes maintenant.',en:'',ar:''},
+    {fr:'Le nourrisson cherche le sein sans qu\u2019on le lui apprenne. Qui le lui a dit ?',en:'',ar:''},
+    {fr:'Deux atomes d\u2019hydrog\u00e8ne + un d\u2019oxyg\u00e8ne = de l\u2019eau. Pourquoi pas un poison ?',en:'',ar:''},
+    {fr:'Le b\u00e9b\u00e9 dans le ventre respire dans l\u2019eau. Dehors, il respire dans l\u2019air. Il a appris quand ?',en:'',ar:''}
   ],
   midi: [
     {fr:'Arr\u00eate-toi. Juste arr\u00eate-toi. 10 secondes sans rien faire. Puis dis SubhanAllah. C\u2019est d\u00e9j\u00e0 une ibadah.',en:'Stop. Just stop. 10 seconds of doing nothing. That\u2019s already ibadah.',ar:'\u062A\u064E\u0648\u064E\u0642\u0651\u064E\u0641. \u0641\u064E\u0642\u064E\u0637 \u062A\u064E\u0648\u064E\u0642\u0651\u064E\u0641. \u0661\u0660 \u062B\u064E\u0648\u0627\u0646\u064D \u0628\u0650\u0644\u0627 \u0634\u064E\u064A\u0652\u0621. \u0647\u0630\u0650\u0647\u0650 \u0639\u0650\u0628\u0627\u062F\u064E\u0629.'},
@@ -11628,7 +11608,14 @@ var WAQT_CATALOG = {
     {fr:'Pendant que tu manges, plusieurs millions de musulmans sont en prosternation quelque part. Quelqu\u2019un, en ce moment, dit Subhana Rabbiyal A\u2019la. Tu n\u2019es jamais seul dans l\u2019adoration.',en:'',ar:''},
     {fr:'En ce moment, des milliers d\u2019imams r\u00e9citent Sourate Al-Fatiha dans leur pri\u00e8re. La m\u00eame sourate. Les m\u00eames mots. Depuis 14 si\u00e8cles. Une seule m\u00e9lodie r\u00e9p\u00e9t\u00e9e par l\u2019univers musulman.',en:'',ar:''},
     {fr:'Pendant cette plage du dhuhr, environ 500 millions de musulmans s\u2019arr\u00eatent de travailler pour prier. Une \u00e9conomie mondiale qui ralentit pour All\u00e2h, 5 fois par jour, sans contrat.',en:'',ar:''},
-    {fr:'Le Proph\u00e8te \uFDFA a dit : \u00ab Le temps se rapprochera, les \u0153uvres diminueront, l\u2019avarice se r\u00e9pandra, et les \u00e9preuves appara\u00eetront. \u00bb Tu sens le temps qui file plus vite chaque ann\u00e9e ? Tu n\u2019es pas seul. C\u2019est annonc\u00e9. Donc tu peux choisir : courir avec le temps, ou avec ton \u00e2me.',en:'',ar:''}
+    {fr:'Le Proph\u00e8te \uFDFA a dit : \u00ab Le temps se rapprochera, les \u0153uvres diminueront, l\u2019avarice se r\u00e9pandra, et les \u00e9preuves appara\u00eetront. \u00bb Tu sens le temps qui file plus vite chaque ann\u00e9e ? Tu n\u2019es pas seul. C\u2019est annonc\u00e9. Donc tu peux choisir : courir avec le temps, ou avec ton \u00e2me.',en:'',ar:''},
+    {fr:'Une orange a la peau qui prot\u00e8ge, la chair qui nourrit, le p\u00e9pin qui refait l\u2019arbre. Qui a pens\u00e9 \u00e0 tout ?',en:'',ar:''},
+    {fr:'Ton \u0153il a 130 millions de cellules qui captent la lumi\u00e8re. Tu en demandais combien ?',en:'',ar:''},
+    {fr:'Tu peux distinguer 10\u00a0000 odeurs. Tu n\u2019en as jamais demand\u00e9 une seule.',en:'',ar:''},
+    {fr:'Une graine de tomate conna\u00eet la forme finale de la tomate. O\u00f9 est-elle \u00e9crite ?',en:'',ar:''},
+    {fr:'La banane m\u00fbrit pile au moment o\u00f9 tu en as besoin. Et l\u2019emballage est inclus.',en:'',ar:''},
+    {fr:'Le miel ne pourrit jamais. On en a trouv\u00e9 dans les pyramides, encore mangeable.',en:'',ar:''},
+    {fr:'Mangue, fraise, ananas, past\u00e8que, datte, p\u00eache, raisin, figue, kiwi, grenade. Chacune un go\u00fbt unique. Pourquoi tant ? Personne ne t\u2019aurait fait de proc\u00e8s s\u2019il n\u2019y en avait qu\u2019un.',en:'',ar:''}
   ],
   apresmidi: [
     {fr:'L\u2019ombre a tourn\u00e9 depuis ce matin. Remarque-la. Tout bouge sauf Celui qui fait bouger. Dis : Ya Hayy, Ya Qayyum.',en:'The shadow has shifted since morning. Notice it. Everything moves except the One who moves it.',ar:'\u062A\u064E\u062D\u064E\u0648\u0651\u064E\u0644\u064E \u0627\u0644\u0638\u0651\u0650\u0644\u0651\u064F \u0645\u064F\u0646\u0652\u0630\u064F \u0627\u0644\u0635\u0651\u064E\u0628\u0627\u062D. \u0644\u0627\u062D\u0650\u0638\u0652\u0647. \u0643\u064F\u0644\u0651\u064F \u0634\u064E\u064A\u0652\u0621\u064D \u064A\u064E\u062A\u064E\u062D\u064E\u0631\u0651\u064E\u0643\u064F \u0625\u0650\u0644\u0651\u0627 \u0645\u064F\u062D\u064E\u0631\u0651\u0650\u0643\u064E\u0647.'},
@@ -11678,7 +11665,12 @@ var WAQT_CATALOG = {
     {fr:'Pendant cette plage de l\u2019Asr, des centaines de millions de musulmans se pr\u00e9parent \u00e0 prier. Tous ensemble. Un seul Seigneur. Sans coordination. Sans calendrier partag\u00e9. Juste l\u2019appel.',en:'',ar:''},
     {fr:'Quelque part dans le monde, \u00e0 cet instant, un imam m\u00e9morise son 1 000\u00e8me verset du Coran. Un autre vient d\u2019achever le sien. La hifz (m\u00e9morisation) ne s\u2019arr\u00eate jamais. Le Livre reste vivant par c\u0153ur.',en:'',ar:''},
     {fr:'Pendant cette heure, des milliers de musulmans se sont convertis dans le monde. L\u2019islam grandit pendant que tu doutes. Ta foi est jeune dans une oumma qui s\u2019agrandit.',en:'',ar:''},
-    {fr:'Le Proph\u00e8te \uFDFA a dit : \u00ab L\u2019Heure ne viendra pas tant que la science ne dispara\u00eetra et que l\u2019ignorance n\u2019appara\u00eetra. \u00bb Aujourd\u2019hui, l\u2019information est partout. La sagesse, moins. M\u00e9dite cela \u2014 et choisis quel c\u00f4t\u00e9 tu nourris.',en:'',ar:''}
+    {fr:'Le Proph\u00e8te \uFDFA a dit : \u00ab L\u2019Heure ne viendra pas tant que la science ne dispara\u00eetra et que l\u2019ignorance n\u2019appara\u00eetra. \u00bb Aujourd\u2019hui, l\u2019information est partout. La sagesse, moins. M\u00e9dite cela \u2014 et choisis quel c\u00f4t\u00e9 tu nourris.',en:'',ar:''},
+    {fr:'L\u2019abeille danse pour expliquer o\u00f9 sont les fleurs. Qui lui a appris la g\u00e9om\u00e9trie ?',en:'',ar:''},
+    {fr:'Le sang coagule pile quand tu te coupes. Pas avant. Pas apr\u00e8s. Qui r\u00e8gle l\u2019horloge ?',en:'',ar:''},
+    {fr:'Un saumon n\u00e9 dans une rivi\u00e8re retrouve la m\u00eame rivi\u00e8re des ann\u00e9es plus tard. Avec quel GPS ?',en:'',ar:''},
+    {fr:'Tu marches sur une boule en suspension dans le vide. Tu ne tombes pas. Personne ne t\u2019a expliqu\u00e9 pourquoi.',en:'',ar:''},
+    {fr:'Une pomme tombe. Newton a vu une loi. Avant lui, qui avait fait tenir les pommes ?',en:'',ar:''}
   ],
   soir: [
     {fr:'Quand tu rentres ce soir \u2014 laisse derri\u00e8re toi le personnage du jour. Entre comme toi.',en:'As you walk through your door tonight, leave behind the character of the day. Enter as yourself.',ar:'\u0639\u0650\u0646\u0652\u062F\u064E \u062F\u064F\u062E\u064F\u0648\u0644\u0650\u0643 \u0627\u0644\u0644\u0651\u064E\u064A\u0652\u0644\u064E\u0629\u060C \u0627\u062A\u0652\u0631\u064F\u0643\u0652 \u0634\u064E\u062E\u0652\u0635\u0650\u064A\u0651\u064E\u0629\u064E \u0627\u0644\u0646\u0651\u064E\u0647\u0627\u0631 \u062E\u064E\u0644\u0652\u0641\u064E\u0643. \u0627\u062F\u0652\u062E\u064F\u0644\u0652 \u0643\u064E\u0645\u0627 \u0623\u064E\u0646\u0652\u062A.'},
@@ -11727,7 +11719,8 @@ var WAQT_CATALOG = {
     {fr:'Pendant cette heure, environ 5 millions de musulmans dans le monde finissent la lecture compl\u00e8te du Coran ce mois-ci. Une foule silencieuse qui termine le voyage. Tu n\u2019es pas seul \u00e0 lire.',en:'',ar:''},
     {fr:'Quelque part dans le monde, \u00e0 cet instant, un nouveau-n\u00e9 musulman entend son premier adhan dans l\u2019oreille. Ses parents l\u2019accueillent au monde par cet appel. L\u2019oumma s\u2019augmente en silence \u00e0 cet instant.',en:'',ar:''},
     {fr:'Pendant que tu rentres chez toi, des dizaines de milliers de musulmans rentrent de la mosqu\u00e9e. La salat collective ne s\u2019\u00e9teint nulle part. C\u2019est un seul mouvement, en boucle, autour de la plan\u00e8te.',en:'',ar:''},
-    {fr:'On demanda au Proph\u00e8te \uFDFA : \u00ab Quand viendra l\u2019Heure ? \u00bb Il r\u00e9pondit : \u00ab Que vous importe ! Que celui qui interroge se pr\u00e9occupe plut\u00f4t de ce qu\u2019il aura pr\u00e9par\u00e9 pour elle. \u00bb Tu ne sais pas quand. Tu sais quoi faire. C\u2019est la seule certitude utile.',en:'',ar:''}
+    {fr:'On demanda au Proph\u00e8te \uFDFA : \u00ab Quand viendra l\u2019Heure ? \u00bb Il r\u00e9pondit : \u00ab Que vous importe ! Que celui qui interroge se pr\u00e9occupe plut\u00f4t de ce qu\u2019il aura pr\u00e9par\u00e9 pour elle. \u00bb Tu ne sais pas quand. Tu sais quoi faire. C\u2019est la seule certitude utile.',en:'',ar:''},
+    {fr:'La m\u00e8re reconna\u00eet le cri de son enfant entre mille. Personne ne lui a appris.',en:'',ar:''}
   ],
   nuit: [
     {fr:'Pose ton t\u00e9l\u00e9phone face cach\u00e9e \u2014 la nuit appartient \u00e0 Allah.',en:'Place your phone face down \u2014 the night belongs to Allah.',ar:'\u0636\u064E\u0639\u0652 \u0647\u0627\u062A\u0650\u0641\u064E\u0643\u064E \u0645\u064E\u0642\u0652\u0644\u064F\u0648\u0628\u064B\u0627 \u2014 \u0627\u0644\u0644\u0651\u064E\u064A\u0652\u0644\u064F \u0644\u0650\u0644\u0651\u064E\u0647.'},
@@ -11774,7 +11767,9 @@ var WAQT_CATALOG = {
     {fr:'\u00c0 cet instant, dans les minarets du monde, des muezzins se pr\u00e9parent au prochain adhan. Le r\u00e9veil de l\u2019oumma ne s\u2019arr\u00eate nulle part. Pendant ton sommeil, l\u2019oumma travaille.',en:'',ar:''},
     {fr:'Quelque part dans le monde, \u00e0 cet instant, une m\u00e8re musulmane berce son enfant en r\u00e9citant Ayat al-Kursi. Sa voix porte le verset le plus puissant du Coran dans une chambre que tu ne verras jamais. C\u2019est \u00e7a, l\u2019oumma.',en:'',ar:''},
     {fr:'Pendant ton sommeil cette nuit, environ 8 millions de musulmans vont mourir paisiblement quelque part dans le monde et entreront dans l\u2019au-del\u00e0. L\u2019oumma d\u00e9m\u00e9nage en continu. Toi-m\u00eame, un jour. Pas seul.',en:'',ar:''},
-    {fr:'All\u00e2h dit dans le Coran : \u00ab L\u2019Heure approche, et la lune s\u2019est fendue. \u00bb (Coran 54:1) Le verset commence par \u00ab approche \u00bb au pass\u00e9. Le Coran consid\u00e8re que c\u2019est d\u00e9j\u00e0 en marche depuis 14 si\u00e8cles. Tu n\u2019attends pas un \u00e9v\u00e8nement \u2014 tu vis dedans. Que portes-tu en toi \u00e0 cet instant ?',en:'',ar:''}
+    {fr:'All\u00e2h dit dans le Coran : \u00ab L\u2019Heure approche, et la lune s\u2019est fendue. \u00bb (Coran 54:1) Le verset commence par \u00ab approche \u00bb au pass\u00e9. Le Coran consid\u00e8re que c\u2019est d\u00e9j\u00e0 en marche depuis 14 si\u00e8cles. Tu n\u2019attends pas un \u00e9v\u00e8nement \u2014 tu vis dedans. Que portes-tu en toi \u00e0 cet instant ?',en:'',ar:''},
+    {fr:'Une \u00e9toile que tu vois ce soir, sa lumi\u00e8re a mis des ann\u00e9es \u00e0 arriver. Tu re\u00e7ois un message ancien.',en:'',ar:''},
+    {fr:'Le ver de terre laboure ton sol gratuitement chaque nuit. Tu ne lui as jamais dit merci.',en:'',ar:''}
   ]
 };
 function _dateLocale() {
