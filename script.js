@@ -831,6 +831,7 @@ function showRamadanBoostModal() {
     + '<button class="wird-complete-btn" style="flex:1;" onclick="safeSetItem(\'ramadan_boost\',\'declined\');this.closest(\'.wird-complete-overlay\').remove();">Garder mon rythme</button>'
     + '</div></div>';
   document.body.appendChild(ov);
+  return true;
 }
 window.showRamadanBoostModal = showRamadanBoostModal;
 function showEidModal() {
@@ -844,6 +845,7 @@ function showEidModal() {
     + '<button class="wird-complete-btn" onclick="localStorage.removeItem(\'ramadan_boost\');localStorage.removeItem(\'ramadan_modal_shown\');this.closest(\'.wird-complete-overlay\').remove();">Continuer</button>'
     + '</div>';
   document.body.appendChild(ov);
+  return true;
 }
 window.showEidModal = showEidModal;
 async function getCurrentHijri() {
@@ -1615,12 +1617,14 @@ function checkLevelCompletion(levelId) {
       renderTabs();
       showLevelPopup(levelId, nextId, hasNext);
       if (hasNext) autoNextLevel(levelId);
+      return true;
     } else if (hasNext) {
       if (currentLevel === levelId) {
         setTimeout(() => selectLevel(nextId), 800);
       }
     }
   }
+  return false;
 }
 const LEVEL_MESSAGES = {
   1: {
@@ -1995,8 +1999,6 @@ function renderResume() {
 }
 function init() {
   applyTheme(currentTheme);
-  checkWeeklyBilan();
-  checkTawba();
   window.addEventListener('scroll', onScroll, { passive: true });
   currentLevel = 1;
   document.querySelectorAll('.view').forEach(v => { v.classList.remove('active'); v.style.display = 'none'; });
@@ -7662,8 +7664,8 @@ const TAWBA_MESSAGES = [
 
 function checkTawba() {
   const lastDate = localStorage.getItem('niyyah_tawba_shown');
-  if (lastDate === TODAY) return; // déjà montré aujourd'hui
-  if (!history || !history.totalDays || history.totalDays < 1) return; // nouveau
+  if (lastDate === TODAY) return false;
+  if (!history || !history.totalDays || history.totalDays < 1) return false;
 
   /* ══ POINT 4 — Algorithme de détection d'absence ══
    * Calcul : differenceInDays = (Date.now() - lastInteraction) / 86400000
@@ -7674,7 +7676,7 @@ function checkTawba() {
     var differenceInDays = Math.floor((Date.now() - parseInt(_lastInteraction)) / 86400000);
     if (differenceInDays >= 2) {
       setTimeout(function() { showTawba(); }, 1200);
-      return;
+      return true;
     }
   }
 
@@ -7693,7 +7695,7 @@ function checkTawba() {
   if (tawbaForce === '1') {
     localStorage.removeItem('niyyah_tawba_force');
     setTimeout(() => showTawba(), 1200);
-    return;
+    return true;
   }
 
   const yesterday = getDateMinus(TODAY, 1);
@@ -7704,7 +7706,9 @@ function checkTawba() {
   const hadStreak = (history.bestStreak || 0) >= 1;
   if (missedYesterday && missedTwoDays && hadStreak) {
     setTimeout(() => showTawba(), 1200);
+    return true;
   }
+  return false;
 }
 
 function showTawba() {
@@ -7876,7 +7880,9 @@ function checkWeeklyBilan() {
   const thisWeek = getCurrentWeekKey();
   if (isMonday && lastShown !== thisWeek && (history.totalDays || 0) >= 1) {
     setTimeout(showWeeklyBilan, 1500);
+    return true;
   }
+  return false;
 }
 const FREEMIUM_CODES = [];
 const _freemiumUnlocked = safeGetItem('niyyah_pro') === '1';
@@ -12739,14 +12745,27 @@ function showRegardeAlertModal() {
   const overlay = document.getElementById('regarde-alert-overlay');
   if (overlay) overlay.style.display = 'flex';
 }
+window._spontaneousUIShown = false;
+function triggerSpontaneousUI() {
+  if (window._spontaneousUIShown) return;
+  if (checkTawba()) { window._spontaneousUIShown = true; return; }
+  if (_checkMuhasabaInvite()) { window._spontaneousUIShown = true; return; }
+  for (var _li = 1; _li <= LEVELS.length; _li++) { if (checkLevelCompletion(_li)) { window._spontaneousUIShown = true; return; } }
+  if (!safeGetItem('ramadan_modal_shown') && typeof ramadanState !== 'undefined' && ramadanState.active) { safeSetItem('ramadan_modal_shown', '1'); showRamadanBoostModal(); window._spontaneousUIShown = true; return; }
+  if (safeGetItem('ramadan_boost') === 'accepted' && typeof ramadanState !== 'undefined' && !ramadanState.active) { showEidModal(); window._spontaneousUIShown = true; return; }
+  if (checkWeeklyBilan()) { window._spontaneousUIShown = true; return; }
+  if (checkRegardeAlert()) { window._spontaneousUIShown = true; return; }
+  checkHijriBanner();
+}
 function checkRegardeAlert() {
   var last = localStorage.getItem('niyyah_regarde_last_alert');
-  if (last === todayKey()) return;
+  if (last === todayKey()) return false;
   var h = new Date().getHours();
-  if (h < 9 || h >= 21) return;
-  if (Math.random() >= 0.7) return;
+  if (h < 9 || h >= 21) return false;
+  if (Math.random() >= 0.7) return false;
   safeSetItem('niyyah_regarde_last_alert', todayKey());
   if (typeof showRegardeAlertModal === 'function') showRegardeAlertModal();
+  return true;
 }
 function _cleanupOldDateKeys() {
   try {
@@ -12794,7 +12813,6 @@ function v2Init() {
     .catch(e => { window.REGARD_VERSETS = null; });
   if (_onboardDone) {
     v2GoSanctuaire();
-    checkRegardeAlert();
   }
   setTimeout(() => { v2ApplyI18n(); }, 100);
 
@@ -12811,7 +12829,7 @@ function v2Init() {
     }
   } catch(e) {}
   v2UpdateOrbState();
-  checkHijriBanner();
+  triggerSpontaneousUI();
 }
 
 function checkHijriBanner() {
@@ -12924,6 +12942,7 @@ function checkHijriBanner() {
       + _laterBtn
       + '</div>';
     sanct.insertBefore(banner, sanct.firstChild);
+    window._spontaneousUIShown = true;
   });
 }
 
