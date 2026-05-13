@@ -8740,14 +8740,6 @@ const ONBOARD_SLIDES = [
     + '<div class="ob-notif-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 21c3-3 4-7 4-12"/><path d="M10 9c4 0 7 2 9 6"/><path d="M7 15c2-1 5-1 7 0"/></svg></div>'
     + '<div class="ob-notif-body"><div class="ob-notif-name">'+t('ob_notif_murmures')+'</div><div class="ob-notif-desc">'+t('ob_notif_murmures_d')+'</div></div>'
     + '<div class="ob-notif-toggle"><div class="ob-notif-knob"></div></div></div>'
-    + '<div class="ob-notif-card active" onclick="obToggleNotif(this,\'rituels\')">'
-    + '<div class="ob-notif-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></div>'
-    + '<div class="ob-notif-body"><div class="ob-notif-name">'+t('ob_notif_rituels')+'</div><div class="ob-notif-desc">'+t('ob_notif_rituels_d')+'</div></div>'
-    + '<div class="ob-notif-toggle"><div class="ob-notif-knob"></div></div></div>'
-    + '<div class="ob-notif-card active" onclick="obToggleNotif(this,\'encourage\')">'
-    + '<div class="ob-notif-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A4 4 0 0 1 12 4c2.2 0 4 2.5 4 6 0 4-2 5-2 8"/><path d="M10 18h4"/><path d="M12 2v1"/><path d="M14 18c-1 2-3 2-4 0"/></svg></div>'
-    + '<div class="ob-notif-body"><div class="ob-notif-name">'+t('ob_notif_encourage')+'</div><div class="ob-notif-desc">'+t("ob_notif_encourage_d")+'</div></div>'
-    + '<div class="ob-notif-toggle"><div class="ob-notif-knob"></div></div></div>'
     + '</div>'
     + '<button class="onboard-btn" onclick="obActivateNotifs()">'+t('ob_notif_activate')+' <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--bg)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-left:4px;"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></button>'
     + '<button class="onboard-skip" onclick="obSkipNotifs()">'+t('ob_notif_later')+'</button>'
@@ -8761,9 +8753,7 @@ function obToggleNotif(el, key) {
 }
 function obActivateNotifs() {
   // Store prefs (defaults already set to '1' by active class)
-  ['murmures','rituels','encourage'].forEach(function(k) {
-    if (!localStorage.getItem('niyyah_notif_' + k)) safeSetItem('niyyah_notif_' + k, '1');
-  });
+  if (!localStorage.getItem('niyyah_notif_murmures')) safeSetItem('niyyah_notif_murmures', '1');
   var anyOn = document.querySelector('.ob-notif-card.active');
   if (anyOn && 'Notification' in window) {
     Notification.requestPermission().then(function(perm) {
@@ -9220,7 +9210,7 @@ const V2_I18N = {
     ob_chemin_tawba: 'Tawba', ob_chemin_tawba_d: 'Reviens sans jugement',
     ob_chemin_prenom: 'Comment veux-tu qu\u2019on t\u2019appelle\u00a0?', ob_chemin_prenom_ph: 'Ton pr\u00e9nom...',
     ob_chemin_quote: 'Pas de classement. Juste toi et ta constance.',
-    ob_notif_title: 'Reste connect\u00e9', ob_notif_sub: 'Niyyah peut t\u2019inviter \u00e0 recommencer chaque jour.',
+    ob_notif_title: '2 murmures par jour', ob_notif_sub: 'Matin et soir, jamais plus.',
     ob_notif_murmures: 'Murmures du jour', ob_notif_murmures_d: 'Une parole douce quand tu en as besoin',
     ob_notif_rituels: 'Rituels', ob_notif_rituels_d: 'Wird du matin et du soir',
     ob_notif_encourage: 'Encouragements', ob_notif_encourage_d: 'Une main tendue si tu t\u2019\u00e9loignes',
