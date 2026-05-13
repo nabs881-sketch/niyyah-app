@@ -8221,7 +8221,7 @@ function requestNotifPermission() {
   }
 }
 
-// ── Planifier les 3 notifications de la journée ───────────────────────────────
+// ── Planifier les 2 notifications de la journée ───────────────────────────────
 function scheduleAllNotifications() {
   if (isSilenceDay()) return;
   try { if (Notification.permission !== 'granted') return; } catch(e) { return; }
@@ -8229,19 +8229,6 @@ function scheduleAllNotifications() {
 
   const now = new Date();
   const nowMs = now.getTime();
-
-  function scheduleAt(h, m, moment, titlePrefix) {
-    var t = new Date();
-    t.setHours(h, m + Math.floor(Math.random() * 12), 0, 0); // ±12min d'aléatoire anti-habitude
-    var ms = t.getTime() - nowMs;
-    if (ms > 0 && ms < 86400000) {
-      _notifTimers.push(setTimeout(function() {
-        // Logique conditionnelle : adapter selon l'avancement du jour
-        var msg = getMurmureAdaptatif(moment);
-        sendNotification(titlePrefix + ' ' + msg.icon, msg.body, msg.icon, moment);
-      }, ms));
-    }
-  }
 
   // 1. Fajr +15min — Ancrage de l'intention
   if (_prayerTimes && _prayerTimes['Fajr']) {
@@ -8252,20 +8239,22 @@ function scheduleAllNotifications() {
     if (ms > 0 && ms < 86400000) {
       _notifTimers.push(setTimeout(() => {
         const msg = getMurmure('matin');
-        sendNotification('Niyyah ' + msg.icon, msg.body, msg.icon);
+        sendNotification('Niyyah ' + msg.icon, msg.body, msg.icon, 'matin');
       }, ms));
     }
   } else {
-    scheduleAt(7, 0, 'matin', 'Niyyah');
+    var _fajrFb = new Date();
+    _fajrFb.setHours(7, Math.floor(Math.random() * 12), 0, 0);
+    var _fms = _fajrFb.getTime() - nowMs;
+    if (_fms > 0 && _fms < 86400000) {
+      _notifTimers.push(setTimeout(function() {
+        var msg = getMurmure('matin');
+        sendNotification('Niyyah ' + msg.icon, msg.body, msg.icon, 'matin');
+      }, _fms));
+    }
   }
 
-  // 2. 12h30 — Transition déjeuner (pic de stress)
-  scheduleAt(12, 30, 'midi', 'Niyyah');
-
-  // 3. 17h00 — Trajet retour (transition)
-  scheduleAt(17, 0, 'midi', 'Niyyah');
-
-  // 4. Après Maghrib / 21h30 — Solitude nocturne
+  // 2. Après Maghrib +10min / 21h30 fallback — Murmure du soir
   if (_prayerTimes && _prayerTimes['Maghrib']) {
     const parts = _prayerTimes['Maghrib'].split(':');
     const t = new Date();
@@ -8274,11 +8263,19 @@ function scheduleAllNotifications() {
     if (ms > 0 && ms < 86400000) {
       _notifTimers.push(setTimeout(() => {
         const msg = getMurmure('soir');
-        sendNotification('Niyyah ' + msg.icon, msg.body, msg.icon);
+        sendNotification('Niyyah ' + msg.icon, msg.body, msg.icon, 'soir');
       }, ms));
     }
   } else {
-    scheduleAt(21, 30, 'soir', 'Niyyah');
+    var _maghFb = new Date();
+    _maghFb.setHours(21, 30 + Math.floor(Math.random() * 12), 0, 0);
+    var _mms = _maghFb.getTime() - nowMs;
+    if (_mms > 0 && _mms < 86400000) {
+      _notifTimers.push(setTimeout(function() {
+        var msg = getMurmure('soir');
+        sendNotification('Niyyah ' + msg.icon, msg.body, msg.icon, 'soir');
+      }, _mms));
+    }
   }
 }
 
@@ -8349,13 +8346,7 @@ function initNotifications() {
           safeSetItem("niyyah_last_open_prev", Date.now().toString());
 
           if (daysSince >= 5) {
-            // Mode silencieux : 1 seul murmure doux le soir
-            var msg = getMurmure("soir");
-            var t = new Date(); t.setHours(20, 0, 0, 0);
-            var ms = t.getTime() - Date.now();
-            if (ms > 0) setTimeout(function() {
-              sendNotification("Niyyah " + msg.icon, msg.body, msg.icon, "soir");
-            }, ms);
+            // Mode silencieux : pas de notif supplémentaire
           } else {
             scheduleAllNotifications();
           }
