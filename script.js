@@ -11765,7 +11765,8 @@ var WAQT_CATALOG = {
     {fr:'Le Proph\u00e8te \uFDFA a dit : \u00ab H\u00e2te-toi d\u2019accomplir tes \u0153uvres avant sept choses : la pauvret\u00e9 qui fait oublier, la richesse qui rend rebelle, la maladie qui handicape, la vieillesse qui affaiblit, la mort soudaine, ou l\u2019Heure. \u00bb Tu n\u2019attends pas. Tu s\u00e8mes maintenant.',en:'',ar:''},
     {fr:'Le nourrisson cherche le sein sans qu\u2019on le lui apprenne. Qui le lui a dit ?',en:'',ar:''},
     {fr:'Deux atomes d\u2019hydrog\u00e8ne + un d\u2019oxyg\u00e8ne = de l\u2019eau. Pourquoi pas un poison ?',en:'',ar:''},
-    {fr:'Le b\u00e9b\u00e9 dans le ventre respire dans l\u2019eau. Dehors, il respire dans l\u2019air. Il a appris quand ?',en:'',ar:''}
+    {fr:'Le b\u00e9b\u00e9 dans le ventre respire dans l\u2019eau. Dehors, il respire dans l\u2019air. Il a appris quand ?',en:'',ar:''},
+    {fr:'Tu te l\u00e8ves pour Fajr \u2014 \u00e0 la m\u00eame heure que Bilal a appel\u00e9 pour la premi\u00e8re fois \u00e0 M\u00e9dine, il y a 14 si\u00e8cles. La cha\u00eene des voix n\u2019a jamais \u00e9t\u00e9 interrompue.',en:'',ar:''}
   ],
   midi: [
     {fr:'Arr\u00eate-toi. Juste arr\u00eate-toi. 10 secondes sans rien faire. Puis dis SubhanAllah. C\u2019est d\u00e9j\u00e0 une ibadah.',en:'Stop. Just stop. 10 seconds of doing nothing. That\u2019s already ibadah.',ar:'\u062A\u064E\u0648\u064E\u0642\u0651\u064E\u0641. \u0641\u064E\u0642\u064E\u0637 \u062A\u064E\u0648\u064E\u0642\u0651\u064E\u0641. \u0661\u0660 \u062B\u064E\u0648\u0627\u0646\u064D \u0628\u0650\u0644\u0627 \u0634\u064E\u064A\u0652\u0621. \u0647\u0630\u0650\u0647\u0650 \u0639\u0650\u0628\u0627\u062F\u064E\u0629.'},
@@ -11821,7 +11822,9 @@ var WAQT_CATALOG = {
     {fr:'Une graine de tomate conna\u00eet la forme finale de la tomate. O\u00f9 est-elle \u00e9crite ?',en:'',ar:''},
     {fr:'La banane m\u00fbrit pile au moment o\u00f9 tu en as besoin. Et l\u2019emballage est inclus.',en:'',ar:''},
     {fr:'Le miel ne pourrit jamais. On en a trouv\u00e9 dans les pyramides, encore mangeable.',en:'',ar:''},
-    {fr:'Mangue, fraise, ananas, past\u00e8que, datte, p\u00eache, raisin, figue, kiwi, grenade. Chacune un go\u00fbt unique. Pourquoi tant ? Personne ne t\u2019aurait fait de proc\u00e8s s\u2019il n\u2019y en avait qu\u2019un.',en:'',ar:''}
+    {fr:'Mangue, fraise, ananas, past\u00e8que, datte, p\u00eache, raisin, figue, kiwi, grenade. Chacune un go\u00fbt unique. Pourquoi tant ? Personne ne t\u2019aurait fait de proc\u00e8s s\u2019il n\u2019y en avait qu\u2019un.',en:'',ar:''},
+    {fr:'En ce moment, partout dans le monde, des hommes et des femmes m\u00e9morisent le Coran lettre par lettre \u2014 comme on le fait sans interruption depuis 14 si\u00e8cles. C\u2019est l\u2019un des miracles silencieux de l\u2019oumma.',en:'',ar:''},
+    {fr:'\u00c0 Sana\u2019a, en 1972, des ouvriers ont trouv\u00e9 dans le plafond d\u2019une mosqu\u00e9e des manuscrits coraniques du 7e si\u00e8cle, oubli\u00e9s depuis mille ans. All\u00e2h pr\u00e9serve ce qu\u2019Il a choisi de pr\u00e9server.',en:'',ar:''}
   ],
   apresmidi: [
     {fr:'L\u2019ombre a tourn\u00e9 depuis ce matin. Remarque-la. Tout bouge sauf Celui qui fait bouger. Dis : Ya Hayy, Ya Qayyum.',en:'The shadow has shifted since morning. Notice it. Everything moves except the One who moves it.',ar:'\u062A\u064E\u062D\u064E\u0648\u0651\u064E\u0644\u064E \u0627\u0644\u0638\u0651\u0650\u0644\u0651\u064F \u0645\u064F\u0646\u0652\u0630\u064F \u0627\u0644\u0635\u0651\u064E\u0628\u0627\u062D. \u0644\u0627\u062D\u0650\u0638\u0652\u0647. \u0643\u064F\u0644\u0651\u064F \u0634\u064E\u064A\u0652\u0621\u064D \u064A\u064E\u062A\u064E\u062D\u064E\u0631\u0651\u064E\u0643\u064F \u0625\u0650\u0644\u0651\u0627 \u0645\u064F\u062D\u064E\u0631\u0651\u0650\u0643\u064E\u0647.'},
@@ -11876,7 +11879,9 @@ var WAQT_CATALOG = {
     {fr:'Le sang coagule pile quand tu te coupes. Pas avant. Pas apr\u00e8s. Qui r\u00e8gle l\u2019horloge ?',en:'',ar:''},
     {fr:'Un saumon n\u00e9 dans une rivi\u00e8re retrouve la m\u00eame rivi\u00e8re des ann\u00e9es plus tard. Avec quel GPS ?',en:'',ar:''},
     {fr:'Tu marches sur une boule en suspension dans le vide. Tu ne tombes pas. Personne ne t\u2019a expliqu\u00e9 pourquoi.',en:'',ar:''},
-    {fr:'Une pomme tombe. Newton a vu une loi. Avant lui, qui avait fait tenir les pommes ?',en:'',ar:''}
+    {fr:'Une pomme tombe. Newton a vu une loi. Avant lui, qui avait fait tenir les pommes ?',en:'',ar:''},
+    {fr:'Quand tu t\u2019orientes vers la Mecque pour prier \u2014 un milliard d\u2019\u00eatres humains font le m\u00eame geste, vers le m\u00eame point, depuis 14 si\u00e8cles. Aucune religion n\u2019a connu cette pr\u00e9cision g\u00e9ographique.',en:'',ar:''},
+    {fr:'En quelques si\u00e8cles, l\u2019arabe est devenu la langue de la science mondiale \u2014 m\u00e9decine, astronomie, math\u00e9matiques. Les chiffres que tu utilises aujourd\u2019hui pour faire tes comptes sont pass\u00e9s par Bagdad.',en:'',ar:''}
   ],
   soir: [
     {fr:'Quand tu rentres ce soir \u2014 laisse derri\u00e8re toi le personnage du jour. Entre comme toi.',en:'As you walk through your door tonight, leave behind the character of the day. Enter as yourself.',ar:'\u0639\u0650\u0646\u0652\u062F\u064E \u062F\u064F\u062E\u064F\u0648\u0644\u0650\u0643 \u0627\u0644\u0644\u0651\u064E\u064A\u0652\u0644\u064E\u0629\u060C \u0627\u062A\u0652\u0631\u064F\u0643\u0652 \u0634\u064E\u062E\u0652\u0635\u0650\u064A\u0651\u064E\u0629\u064E \u0627\u0644\u0646\u0651\u064E\u0647\u0627\u0631 \u062E\u064E\u0644\u0652\u0641\u064E\u0643. \u0627\u062F\u0652\u062E\u064F\u0644\u0652 \u0643\u064E\u0645\u0627 \u0623\u064E\u0646\u0652\u062A.'},
@@ -11926,7 +11931,9 @@ var WAQT_CATALOG = {
     {fr:'Quelque part dans le monde, \u00e0 cet instant, un nouveau-n\u00e9 musulman entend son premier adhan dans l\u2019oreille. Ses parents l\u2019accueillent au monde par cet appel. L\u2019oumma s\u2019augmente en silence \u00e0 cet instant.',en:'',ar:''},
     {fr:'Pendant que tu rentres chez toi, des dizaines de milliers de musulmans rentrent de la mosqu\u00e9e. La salat collective ne s\u2019\u00e9teint nulle part. C\u2019est un seul mouvement, en boucle, autour de la plan\u00e8te.',en:'',ar:''},
     {fr:'On demanda au Proph\u00e8te \uFDFA : \u00ab Quand viendra l\u2019Heure ? \u00bb Il r\u00e9pondit : \u00ab Que vous importe ! Que celui qui interroge se pr\u00e9occupe plut\u00f4t de ce qu\u2019il aura pr\u00e9par\u00e9 pour elle. \u00bb Tu ne sais pas quand. Tu sais quoi faire. C\u2019est la seule certitude utile.',en:'',ar:''},
-    {fr:'La m\u00e8re reconna\u00eet le cri de son enfant entre mille. Personne ne lui a appris.',en:'',ar:''}
+    {fr:'La m\u00e8re reconna\u00eet le cri de son enfant entre mille. Personne ne lui a appris.',en:'',ar:''},
+    {fr:'Les manuscrits d\u2019Avicenne ont voyag\u00e9 d\u2019Andalousie jusqu\u2019aux universit\u00e9s de Paris et Bologne \u2014 bien avant qu\u2019on imprime un seul livre en Europe. Le savoir n\u2019a pas de fronti\u00e8re, mais il a une dette.',en:'',ar:''},
+    {fr:'Les caravanes des routes commerciales musulmanes reliaient Cordoue \u00e0 P\u00e9kin, Tombouctou \u00e0 Samarcande. L\u2019oumma a toujours march\u00e9 \u2014 bien avant les avions, bien avant les cartes.',en:'',ar:''}
   ],
   nuit: [
     {fr:'Pose ton t\u00e9l\u00e9phone face cach\u00e9e \u2014 la nuit appartient \u00e0 Allah.',en:'Place your phone face down \u2014 the night belongs to Allah.',ar:'\u0636\u064E\u0639\u0652 \u0647\u0627\u062A\u0650\u0641\u064E\u0643\u064E \u0645\u064E\u0642\u0652\u0644\u064F\u0648\u0628\u064B\u0627 \u2014 \u0627\u0644\u0644\u0651\u064E\u064A\u0652\u0644\u064F \u0644\u0650\u0644\u0651\u064E\u0647.'},
@@ -11975,7 +11982,10 @@ var WAQT_CATALOG = {
     {fr:'Pendant ton sommeil cette nuit, environ 8 millions de musulmans vont mourir paisiblement quelque part dans le monde et entreront dans l\u2019au-del\u00e0. L\u2019oumma d\u00e9m\u00e9nage en continu. Toi-m\u00eame, un jour. Pas seul.',en:'',ar:''},
     {fr:'All\u00e2h dit dans le Coran : \u00ab L\u2019Heure approche, et la lune s\u2019est fendue. \u00bb (Coran 54:1) Le verset commence par \u00ab approche \u00bb au pass\u00e9. Le Coran consid\u00e8re que c\u2019est d\u00e9j\u00e0 en marche depuis 14 si\u00e8cles. Tu n\u2019attends pas un \u00e9v\u00e8nement \u2014 tu vis dedans. Que portes-tu en toi \u00e0 cet instant ?',en:'',ar:''},
     {fr:'Une \u00e9toile que tu vois ce soir, sa lumi\u00e8re a mis des ann\u00e9es \u00e0 arriver. Tu re\u00e7ois un message ancien.',en:'',ar:''},
-    {fr:'Le ver de terre laboure ton sol gratuitement chaque nuit. Tu ne lui as jamais dit merci.',en:'',ar:''}
+    {fr:'Le ver de terre laboure ton sol gratuitement chaque nuit. Tu ne lui as jamais dit merci.',en:'',ar:''},
+    {fr:'\u00c0 cet instant, quelque part dans le monde, c\u2019est Tahajjud. Pendant que tu lis ceci, quelqu\u2019un s\u2019est lev\u00e9 pour prier. La cha\u00eene ne dort jamais.',en:'',ar:''},
+    {fr:'Le texte du Coran que tu lis ce soir \u2014 mot pour mot, lettre pour lettre \u2014 est le m\u00eame que celui qu\u2019Aisha (qu\u2019All\u00e2h l\u2019agr\u00e9e) entendait du Proph\u00e8te (paix et b\u00e9n\u00e9dictions sur lui). 14 si\u00e8cles sans variation.',en:'',ar:''},
+    {fr:'Al-Ula, en Arabie, garde dans ses pierres des inscriptions de royaumes oubli\u00e9s. L\u2019oumma marche sur des civilisations enti\u00e8res \u2014 qui toutes ont eu leur temps.',en:'',ar:''}
   ]
 };
 function _dateLocale() {
