@@ -11396,12 +11396,17 @@ function _getPrenom() {
   return (p && p.trim()) ? p.trim() : '';
 }
 function niyyahExportData() {
+  var EXCLUDE_PREFIXES = ['sw_', 'cache_', 'tmp_', '_dev_'];
+  var EXCLUDE_KEYS = ['splash_shown', 'last_visit', 'tawba_force'];
   var data = {};
   for (var i = 0; i < localStorage.length; i++) {
     var key = localStorage.key(i);
-    if (key && (key.indexOf('niyyah') === 0 || key.indexOf('spiritual') === 0 || key.indexOf('ramadan') === 0 || key.indexOf('nafs') === 0)) {
-      data[key] = localStorage.getItem(key);
-    }
+    if (!key) continue;
+    if (EXCLUDE_KEYS.indexOf(key) !== -1) continue;
+    var skip = false;
+    for (var p = 0; p < EXCLUDE_PREFIXES.length; p++) { if (key.indexOf(EXCLUDE_PREFIXES[p]) === 0) { skip = true; break; } }
+    if (skip) continue;
+    data[key] = localStorage.getItem(key);
   }
   var blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
   var a = document.createElement('a');
