@@ -14361,6 +14361,7 @@ window.getEffectiveMotiv = getEffectiveMotiv;
 function getRitualItems(prayer) {
   if (!Array.isArray(LEVELS)) return [];
   var _motiv = getEffectiveMotiv();
+  var _vague = parseInt(safeGetItem('niyyah_star_vague') || '0', 10);
   const items = [];
   const alwaysItems = [];
   [0,1].forEach(i => {
@@ -14369,6 +14370,7 @@ function getRitualItems(prayer) {
     lvl.sections.forEach(s => {
       (s.items || []).forEach(it => {
         if (it.id === prayer) return;
+        if (it.minVague && it.minVague > _vague) return;
         if (_motiv && it.paths && !it.paths.includes(_motiv)) return;
         if (it.alwaysVisible) { alwaysItems.push(it); return; }
         var _bm = Array.isArray(it.block) ? it.block.includes(prayer) : (it.block === prayer);
@@ -14550,6 +14552,7 @@ function openVueAuFilDuJour() {
   v.querySelector('.rituel-prochaine').textContent = '';
   v.querySelector('.rituel-poetique').textContent = 'Ce qui demeure entre tes pri\u00e8res.';
   var _motiv = getEffectiveMotiv();
+  var _vague = parseInt(safeGetItem('niyyah_star_vague') || '0', 10);
   const items = [];
   if (Array.isArray(LEVELS)) {
     [2,3].forEach(i => {
@@ -14557,6 +14560,7 @@ function openVueAuFilDuJour() {
       if (!lvl || !lvl.sections) return;
       lvl.sections.forEach(s => {
         (s.items || []).forEach(it => {
+          if (it.minVague && it.minVague > _vague) return;
           if (_motiv && it.paths && !it.paths.includes(_motiv)) return;
           items.push(it);
         });
@@ -14569,6 +14573,7 @@ function openVueAuFilDuJour() {
     lvl.sections.forEach(s => {
       (s.items || []).forEach(it => {
         if (!it.filDuJour) return;
+        if (it.minVague && it.minVague > _vague) return;
         if (_motiv && it.paths && !it.paths.includes(_motiv)) return;
         items.push(it);
       });
