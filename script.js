@@ -1746,7 +1746,7 @@ const LEVELS = [
         { id: 'vie_prophetes', minVague: 4, label: 'Histoires des Prophètes', sub: '10 min · Nouh, Ibrahim, Moussa, Issa…', arabic: 'قَصَصُ الْأَنْبِيَاءِ', paths: ['routine','sacraliser'], block: 'jour', category: 'science', hadith: '\"Nous te racontons le meilleur des récits\" — Coran 12:3', source: 'Yusuf 12:3' },
         { id: 'vie_compagnons', minVague: 4, label: 'Vie des Compagnons', sub: '10 min · Abu Bakr, Omar, Othman, Ali…', arabic: 'سِيَرُ الصَّحَابَةِ', paths: ['routine','sacraliser'], block: 'jour', category: 'science', hadith: '\"Mes Compagnons sont comme les étoiles — qui que vous suiviez, vous serez guidés\" — Bayhaqi', source: 'Bayhaqi' },
         { id: 'fiqh_jour', minVague: 4, label: 'Jurisprudence — 1 règle du jour', sub: 'Apprendre une règle de fiqh simple et l\'appliquer', arabic: 'فِقْهٌ', paths: ['sacraliser'], block: 'jour', category: 'science' },
-        { id: 'savais_tu', minVague: 4, label: 'Le savais-tu ?', sub: getSavaisTuFact(), arabic: 'هَلْ تَعْلَمُ؟', paths: ['sacraliser'], block: 'jour', category: 'science' },
+        { id: 'savais_tu', minVague: 4, label: 'Le savais-tu ?', sub: (getSavaisTuFact()||'').substring(0,50) + '…', arabic: 'هَلْ تَعْلَمُ؟', paths: ['sacraliser'], block: 'jour', category: 'science' },
       ]},
       { icon: '🎧', title: 'Immersion coranique', items: [
         { id: 'coran_ecoute', minVague: 3, label: 'Écouter le Coran', sub: 'Choisis une sourate et écoute', arabic: 'تِلَاوَةُ الْقُرْآنِ', optional: true, coranPicker: true, paths: ['reconnecter','routine','sacraliser'], block: 'jour', category: 'science', hadith: '\"Récite le Coran car il intercèdera pour ses compagnons le Jour du Jugement\" — Muslim 804', source: 'Muslim 804' },
@@ -14835,10 +14835,11 @@ function openVueAuFilDuJour() {
     const ar = it.arabic ? '<div class="arabic">' + it.arabic + '</div>' : '';
     const sub = it.sub ? '<div class="sub">' + it.sub + '</div>' : '';
     const audio = it.audio ? '<button class="btn-audio" data-audio-id="' + it.id + '" onclick="event.stopPropagation();playAudioById(this)">🔊</button>' : '';
+    var _readBtn = it.id === 'savais_tu' ? '<button class="btn-audio" aria-label="Lire" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openVueSavaisTu();" style="font-size:13px;padding:0 8px;width:auto;">\u{1F4D6}</button>' : '';
     var _click = it.id === 'sira' ? 'SIRA.openDetail(); toggleItem(\'' + it.id + '\',event);'
       : it.id === 'savais_tu' ? 'openVueSavaisTu(); toggleItem(\'' + it.id + '\',event);'
       : 'toggleItem(\'' + it.id + '\',event); openVueAuFilDuJour();';
-    return '<div class="rituel-item ' + done + '" id="rituel-item-' + it.id + '" onclick="' + _click + '"><div class="check"></div><div style="flex:1"><div class="label">' + (it.label||it.id) + '</div>' + sub + ar + '</div>' + audio + '</div>';
+    return '<div class="rituel-item ' + done + '" id="rituel-item-' + it.id + '" onclick="' + _click + '"><div class="check"></div><div style="flex:1"><div class="label">' + (it.label||it.id) + '</div>' + sub + ar + '</div>' + _readBtn + audio + '</div>';
   };
   var _html = '';
   _catOrder.forEach(function(cat) {
