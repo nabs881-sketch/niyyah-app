@@ -1,4 +1,4 @@
-const VERSION = 'niyyah-v1222';
+const VERSION = 'niyyah-v1223';
 const CORE = [
   './index.html',
   './script.min.js',
@@ -11,6 +11,7 @@ const CORE = [
   './rahatal-qulub.mp3',
   './ferme-ta-journee.webp',
   './bab-nafs-content.json',
+  './savais_tu.json',
   './data/sira.min.json',
   './assets/moments/fajr.webp',
   './assets/moments/dhuhr.webp',
