@@ -1700,6 +1700,20 @@ function getLevelItems(levelId) {
   const level = LEVELS.find(l => l.id === levelId);
   return level ? level.sections.flatMap(s => s.items) : [];
 }
+function _checkLevelUnlock() {
+  var streak = (history && history.streak) ? history.streak : 0;
+  var changed = false;
+  var thresholds = [{lvl:2, min:14, label:'Approfondissement'},{lvl:3, min:30, label:'Connaissance'},{lvl:4, min:60, label:'Rayonnement'}];
+  for (var i = 0; i < thresholds.length; i++) {
+    var t = thresholds[i];
+    if (streak >= t.min && !state._unlocked.includes(t.lvl)) {
+      state._unlocked.push(t.lvl);
+      changed = true;
+      showToast(t.label + ' d\u00e9bloqu\u00e9 !');
+    }
+  }
+  if (changed) { saveState(); renderTabs(); }
+}
 function updateGlobalProgress() {
   // Bandeau intention dans la checklist
   const intentionLabel = localStorage.getItem('niyyah_intention_label');
@@ -1753,6 +1767,7 @@ function updateGlobalProgress() {
       setTimeout(() => showToast(m.msg), 800);
     }
   });
+  _checkLevelUnlock();
 }
 function checkLevelCompletion(levelId) {
   if (getLevelProgress(levelId) >= 100) {
