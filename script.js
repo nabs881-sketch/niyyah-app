@@ -2629,9 +2629,10 @@ function renderLevel(levelId) {
     html += '<div class="items-group" style="border-left:2px solid ' + _tlColor + ';padding-left:12px;margin-left:4px;">';
     let _firstUncheckedFound = false;
     var _motivBib = getEffectiveMotiv();
+    var _currentVague = parseInt(safeGetItem('niyyah_star_vague') || '0', 10);
     _filteredItems.forEach((item, idx) => {
       const delay = idx * 30;
-      var _pathBadge = (_motivBib && item.paths && item.paths.includes(_motivBib)) ? '<span class="path-badge">\u2726</span>' : '';
+      var _pathBadge = (_motivBib && item.paths && item.paths.includes(_motivBib) && (!item.minVague || item.minVague <= _currentVague)) ? '<span class="path-badge">\u2726</span>' : '';
       if (item.type === 'wird') {
         html += renderWirdSmartCard(item, delay, undefined, _currentBlock);
       } else if (item.type === 'counter') {
