@@ -1810,7 +1810,35 @@ function _validateDay() {
     }
   }
   safeSetItem('niyyah_silent_streak', String(streak));
+  _checkStarUnlock(streak);
 }
+function _checkStarUnlock(streak) {
+  var vagues = [{seuil:60,vague:5},{seuil:30,vague:4},{seuil:14,vague:3},{seuil:7,vague:2},{seuil:3,vague:1}];
+  var currentUnlock = parseInt(safeGetItem('niyyah_star_vague') || '0', 10);
+  for (var i = 0; i < vagues.length; i++) {
+    if (streak >= vagues[i].seuil && vagues[i].vague > currentUnlock) {
+      safeSetItem('niyyah_star_vague', String(vagues[i].vague));
+      safeSetItem('niyyah_star_unlock_pending', String(vagues[i].vague));
+      return;
+    }
+  }
+}
+function showStarUnlockModal() {
+  var pending = safeGetItem('niyyah_star_unlock_pending');
+  if (!pending) return;
+  localStorage.removeItem('niyyah_star_unlock_pending');
+  var ov = document.createElement('div');
+  ov.className = 'star-unlock-overlay';
+  ov.innerHTML = '<div class="star-unlock-card">'
+    + '<div style="font-size:40px;margin-bottom:16px;">\u2726</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:#FAF7EE;line-height:1.7;max-width:280px;margin:0 auto;">De nouvelles pratiques s\u2019ouvrent dans ton chemin.<br><br>Ta constance porte ses fruits.</div>'
+    + '<div style="margin-top:20px;font-size:28px;">\u2726</div>'
+    + '</div>';
+  document.body.appendChild(ov);
+  requestAnimationFrame(function() { ov.classList.add('show'); });
+  setTimeout(function() { ov.classList.remove('show'); setTimeout(function() { ov.remove(); }, 500); }, 8000);
+}
+window.showStarUnlockModal = showStarUnlockModal;
 function checkLevelCompletion(levelId) {
   if (getLevelProgress(levelId) >= 100) {
     if (levelId === 1) resolveGrace();
@@ -10839,6 +10867,7 @@ function v2GoSanctuaire() {
     var btn = document.getElementById('v2nav-sanctuaire');
     if (btn) btn.classList.add('active-nav');
     if (typeof updateMedaillonState === 'function') updateMedaillonState();
+    if (typeof showStarUnlockModal === 'function') setTimeout(showStarUnlockModal, 800);
     if (typeof openDefiLundiModal === 'function') setTimeout(openDefiLundiModal, 1500);
     setTimeout(_showDefiToastDaily, 2500);
   }
