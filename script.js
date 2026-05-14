@@ -384,8 +384,8 @@ const DEFIS_DB = [
 // LOGIQUE DEFI DE LA SEMAINE
 // ============================================================
 function getDefiState() {
-  var _def = {current:null,historique:[],badges:[],choixEnAttente:null};
-  try { var p = JSON.parse(safeGetItem('niyyah_defi_v2') || '{}'); return {current:p.current||null,historique:Array.isArray(p.historique)?p.historique:[],badges:Array.isArray(p.badges)?p.badges:[],choixEnAttente:p.choixEnAttente||null}; } catch(e) {}
+  var _def = {current:null,historique:[],badges:[],choixEnAttente:null,niveauActuel:null,derniersResultats:[],dernierChangementNiveau:0};
+  try { var p = JSON.parse(safeGetItem('niyyah_defi_v2') || '{}'); return {current:p.current||null,historique:Array.isArray(p.historique)?p.historique:[],badges:Array.isArray(p.badges)?p.badges:[],choixEnAttente:p.choixEnAttente||null,niveauActuel:p.niveauActuel||null,derniersResultats:Array.isArray(p.derniersResultats)?p.derniersResultats:[],dernierChangementNiveau:p.dernierChangementNiveau||0}; } catch(e) {}
   return _def;
 }
 function saveDefiState(s) { safeSetItem('niyyah_defi_v2', JSON.stringify(s)); }
@@ -426,16 +426,48 @@ function _defiMatchesPath(defi) {
   if (!item || !item.paths) return true;
   return item.paths.includes(motiv);
 }
+function _initNiveauActuel(s) {
+  if (s.niveauActuel) return;
+  var motiv = localStorage.getItem('niyyah_motivation');
+  s.niveauActuel = motiv === 'routine' ? 2 : 1;
+  s.derniersResultats = [];
+  s.dernierChangementNiveau = Date.now();
+  saveDefiState(s);
+}
+function _processDefiResult(s, success) {
+  if (_isRevenantProtected()) return;
+  _initNiveauActuel(s);
+  s.derniersResultats.push(success);
+  if (s.derniersResultats.length > 5) s.derniersResultats = s.derniersResultats.slice(-5);
+  var semsSinceChange = (Date.now() - (s.dernierChangementNiveau || 0)) / (4 * 7 * 86400000);
+  if (semsSinceChange < 1) { saveDefiState(s); return; }
+  var r = s.derniersResultats;
+  var len = r.length;
+  if (success && len >= 3 && r[len-1] && r[len-2] && r[len-3] && s.niveauActuel < 3) {
+    s.niveauActuel++;
+    s.dernierChangementNiveau = Date.now();
+    var labels = {2:'Moyens',3:'Intensifs'};
+    showToast('Tu passes aux d\u00e9fis ' + (labels[s.niveauActuel] || '') + ' !');
+  } else if (!success && len >= 2 && !r[len-1] && !r[len-2] && s.niveauActuel > 1) {
+    s.niveauActuel--;
+    s.dernierChangementNiveau = Date.now();
+    var labels2 = {1:'Faciles',2:'Moyens'};
+    showToast('On revient aux d\u00e9fis ' + (labels2[s.niveauActuel] || '') + ' pour reconstruire');
+  }
+  saveDefiState(s);
+}
 function getSuggestionDefi() {
   const s = getDefiState();
+  _initNiveauActuel(s);
   var forceNiv1 = _isRevenantProtected();
+  var niv = forceNiv1 ? 1 : s.niveauActuel;
   const all = DEFIS_DB.filter(function(d) {
     if (s.historique.includes(d.id)) return false;
     if (!_defiMatchesPath(d)) return false;
-    if (forceNiv1 && d.niveau !== 1) return false;
+    if (niv && d.niveau !== niv) return false;
     return true;
   });
-  const pool = all.length > 0 ? all : DEFIS_DB.filter(function(d) { return _defiMatchesPath(d) && (!forceNiv1 || d.niveau === 1); });
+  const pool = all.length > 0 ? all : DEFIS_DB.filter(function(d) { return _defiMatchesPath(d) && (!niv || d.niveau === niv); });
   var finalPool = pool.length > 0 ? pool : DEFIS_DB;
   return finalPool[Math.floor(Math.random() * finalPool.length)];
 }
@@ -502,6 +534,8 @@ function getDefiCourant() {
   const s = initDefiSemaine();
   const lundi = getLundiDate();
   if (!s.current || s.current.semaine !== lundi) {
+    // Archiver résultat du défi précédent si existant
+    if (s.current && s.current.semaine !== lundi && !s.current.complete) _processDefiResult(s, false);
     // Auto-assigner un défi si aucun n'existe pour cette semaine
     var suggestion = getSuggestionDefi();
     if (suggestion) {
@@ -647,6 +681,7 @@ function cocherDefiAujourdhui() {
     if (s.current.jours.length >= defi.cible) {
       s.current.complete = true;
       if (!s.badges.includes(defi.id)) s.badges.push(defi.id);
+      _processDefiResult(s, true);
       showToast(t('defi_done'));
     } else {
       showToast(t('defi_checked'));
