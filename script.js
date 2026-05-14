@@ -1581,6 +1581,7 @@ if (state._date !== TODAY) {
   saveState();
 }
 if (!state._unlocked) state._unlocked = [1];
+if (state._unlocked.length < 4) { [1,2,3,4].forEach(function(id) { if (!state._unlocked.includes(id)) state._unlocked.push(id); }); saveState(); }
 function getCalcLvlPct(lvlId, s) {
   const lvl = LEVELS.find(l => l.id === lvlId);
   const items = lvl.sections.flatMap(sec => sec.items);
@@ -1700,20 +1701,6 @@ function getLevelItems(levelId) {
   const level = LEVELS.find(l => l.id === levelId);
   return level ? level.sections.flatMap(s => s.items) : [];
 }
-function _checkLevelUnlock() {
-  var streak = (history && history.streak) ? history.streak : 0;
-  var changed = false;
-  var thresholds = [{lvl:2, min:14, label:'Approfondissement'},{lvl:3, min:30, label:'Connaissance'},{lvl:4, min:60, label:'Rayonnement'}];
-  for (var i = 0; i < thresholds.length; i++) {
-    var t = thresholds[i];
-    if (streak >= t.min && !state._unlocked.includes(t.lvl)) {
-      state._unlocked.push(t.lvl);
-      changed = true;
-      showToast(t.label + ' d\u00e9bloqu\u00e9 !');
-    }
-  }
-  if (changed) { saveState(); renderTabs(); }
-}
 function updateGlobalProgress() {
   // Bandeau intention dans la checklist
   const intentionLabel = localStorage.getItem('niyyah_intention_label');
@@ -1767,7 +1754,6 @@ function updateGlobalProgress() {
       setTimeout(() => showToast(m.msg), 800);
     }
   });
-  _checkLevelUnlock();
 }
 function checkLevelCompletion(levelId) {
   if (getLevelProgress(levelId) >= 100) {
@@ -2380,8 +2366,8 @@ function animateTabSwipe(direction, callback) {
 
 function selectLevel(id) {
   if (id > 1 && !state._unlocked.includes(id)) {
-    showToast('Compl\u00e8te le niveau pr\u00e9c\u00e9dent pour d\u00e9bloquer celui-ci.');
-    return;
+    state._unlocked.push(id);
+    saveState();
   }
   currentLevel = id;
   safeSetItem('niyyah_current_level', String(id));
