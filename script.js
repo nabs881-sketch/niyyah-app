@@ -397,11 +397,32 @@ function getLundiDate() {
 function getTodayStr() { return todayKey(); }
 
 // Calcule la suggestion selon l'historique et le niveau
+function _defiMatchesPath(defi) {
+  if (!defi.itemId) return true;
+  var motiv = getEffectiveMotiv();
+  if (!motiv) return true;
+  var item = null;
+  for (var _li = 0; _li < LEVELS.length; _li++) {
+    var lvl = LEVELS[_li];
+    if (!lvl || !lvl.sections) continue;
+    for (var _si = 0; _si < lvl.sections.length; _si++) {
+      var items = lvl.sections[_si].items || [];
+      for (var _ii = 0; _ii < items.length; _ii++) {
+        if (items[_ii].id === defi.itemId) { item = items[_ii]; break; }
+      }
+      if (item) break;
+    }
+    if (item) break;
+  }
+  if (!item || !item.paths) return true;
+  return item.paths.includes(motiv);
+}
 function getSuggestionDefi() {
   const s = getDefiState();
-  const all = DEFIS_DB.filter(d => !s.historique.includes(d.id));
-  const pool = all.length > 0 ? all : DEFIS_DB;
-  return pool[Math.floor(Math.random() * pool.length)];
+  const all = DEFIS_DB.filter(d => !s.historique.includes(d.id) && _defiMatchesPath(d));
+  const pool = all.length > 0 ? all : DEFIS_DB.filter(_defiMatchesPath);
+  var finalPool = pool.length > 0 ? pool : DEFIS_DB;
+  return finalPool[Math.floor(Math.random() * finalPool.length)];
 }
 
 function initDefiSemaine() {
@@ -413,7 +434,7 @@ function initDefiSemaine() {
     var niveauCible = motiv === 'routine' ? 2 : (motiv === 'reconnecter' || motiv === 'sacraliser' ? 1 : null);
     var premierDefi;
     if (niveauCible) {
-      var pool = DEFIS_DB.filter(function(d) { return d.niveau === niveauCible; });
+      var pool = DEFIS_DB.filter(function(d) { return d.niveau === niveauCible && _defiMatchesPath(d); });
       premierDefi = pool[Math.floor(Math.random() * pool.length)];
     } else {
       premierDefi = DEFIS_DB.find(function(d) { return d.id === 1; });
