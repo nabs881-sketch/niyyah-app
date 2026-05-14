@@ -724,6 +724,57 @@ function defiTopBannerClick() {
     if (typeof openDefiSelector === 'function') openDefiSelector();
   }
 }
+function openDefiLundiModal() {
+  var today = new Date(TODAY);
+  if (today.getDay() !== 1) return;
+  var weekKey = getLundiDate();
+  if (safeGetItem('niyyah_defi_lundi_shown') === weekKey) return;
+  var courant = getDefiCourant();
+  if (!courant.defi) return;
+  var nom = document.getElementById('defi-nom-lundi');
+  var desc = document.getElementById('defi-desc-lundi');
+  if (nom) nom.textContent = courant.defi.icon + ' ' + tD(courant.defi);
+  if (desc) desc.textContent = courant.defi.ref || '';
+  var s = courant.state;
+  _initNiveauActuel(s);
+  var niv = s.niveauActuel || 1;
+  var choices;
+  if (niv >= 3) {
+    choices = [
+      {icon:'\u2705', label:'Commencer', action:'accept'}
+    ];
+  } else if (niv >= 2) {
+    choices = [
+      {icon:'\u2705', label:'J\u2019accepte', action:'accept'},
+      {icon:'\uD83D\uDD04', label:'Choisir un autre', action:'choose'}
+    ];
+  } else {
+    choices = [
+      {icon:'\u2705', label:'J\u2019accepte', action:'accept'},
+      {icon:'\uD83D\uDD04', label:'Choisir un autre', action:'choose'},
+      {icon:'\u274C', label:'Pas cette semaine', action:'skip'}
+    ];
+  }
+  renderDefiChoices(choices, function(action) {
+    var modal = document.getElementById('defi-lundi-modal');
+    if (modal) modal.style.display = 'none';
+    if (action === 'accept') {
+      showToast(t('defi_launched') + tD(courant.defi) + ' \u2726');
+    } else if (action === 'choose') {
+      openDefiSelector();
+    } else if (action === 'skip') {
+      showToast('Pas de d\u00e9fi cette semaine \u2014 tu reviendras lundi prochain.');
+      var st = getDefiState();
+      st.current = null;
+      saveDefiState(st);
+      renderDefiCard();
+    }
+  });
+  safeSetItem('niyyah_defi_lundi_shown', weekKey);
+  var modal = document.getElementById('defi-lundi-modal');
+  if (modal) modal.style.display = 'flex';
+}
+window.openDefiLundiModal = openDefiLundiModal;
 function renderDefiChoices(choices, onSelect) {
   var container = document.getElementById('defi-choices-lundi');
   if (!container) return;
@@ -10715,6 +10766,7 @@ function v2GoSanctuaire() {
     var btn = document.getElementById('v2nav-sanctuaire');
     if (btn) btn.classList.add('active-nav');
     if (typeof updateMedaillonState === 'function') updateMedaillonState();
+    if (typeof openDefiLundiModal === 'function') setTimeout(openDefiLundiModal, 1500);
   }
   // Skip intro cascade on return visits
   var sanctEl2 = document.getElementById('view-sanctuaire');
