@@ -4537,6 +4537,53 @@ to {
   border-color: rgba(200,168,75,0.5);
   background: rgba(40,36,28,0.9);
 }
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+.modal-defi-luxe {
+  text-align: center;
+  padding: 36px 28px;
+  border: 1px solid rgba(200,168,75,0.3);
+  border-radius: 20px;
+  background: radial-gradient(ellipse at top, #2C2E32, #1a1c1f);
+  max-width: 340px;
+  width: calc(100% - 48px);
+}
+.defi-header {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(200,168,75,0.6);
+  margin-bottom: 16px;
+}
+.defi-nom {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #C8A84A;
+  margin-bottom: 8px;
+}
+.defi-desc {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  font-style: italic;
+  color: rgba(240,234,214,0.7);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.defi-choices {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 .wird-complete-overlay {
   position: fixed;
   inset: 0;
