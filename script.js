@@ -724,6 +724,19 @@ function defiTopBannerClick() {
     if (typeof openDefiSelector === 'function') openDefiSelector();
   }
 }
+function renderDefiChoices(choices, onSelect) {
+  var container = document.getElementById('defi-choices-lundi');
+  if (!container) return;
+  container.innerHTML = '';
+  choices.forEach(function(choice) {
+    var card = document.createElement('div');
+    card.className = 'defi-choice-card';
+    card.onclick = function() { onSelect(choice.action); };
+    card.innerHTML = '<div class="choice-icon">' + choice.icon + '</div><div class="choice-label">' + choice.label + '</div>';
+    container.appendChild(card);
+  });
+}
+window.renderDefiChoices = renderDefiChoices;
 function renderDefiCard() {
   updateDefiBannerTop();
   const card = document.getElementById('accueilDefiCard');

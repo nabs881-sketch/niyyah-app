@@ -4584,6 +4584,29 @@ to {
   flex-direction: column;
   gap: 10px;
 }
+.defi-choice-card {
+  background: rgba(200,168,74,0.08);
+  border-left: 3px solid #C8A84A;
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  text-align: left;
+  transition: transform 200ms ease, background 200ms ease;
+}
+.defi-choice-card:active {
+  transform: scale(0.98);
+  background: rgba(200,168,74,0.14);
+}
+.choice-icon {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+.choice-label {
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  color: #E8DCC0;
+  line-height: 1.4;
+}
 .wird-complete-overlay {
   position: fixed;
   inset: 0;
