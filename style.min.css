@@ -4607,6 +4607,28 @@ to {
   color: #E8DCC0;
   line-height: 1.4;
 }
+.defi-toast-daily {
+  position: fixed;
+  top: calc(16px + var(--safe-top, 0px));
+  left: 50%;
+  transform: translateX(-50%) translateY(-20px);
+  background: rgba(200,168,74,0.95);
+  color: #1A1A1A;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: 14px;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+  box-shadow: 0 4px 16px rgba(200,168,74,0.3);
+}
+.defi-toast-daily.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
 .wird-complete-overlay {
   position: fixed;
   inset: 0;

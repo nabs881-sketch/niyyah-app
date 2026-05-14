@@ -775,6 +775,22 @@ function openDefiLundiModal() {
   if (modal) modal.style.display = 'flex';
 }
 window.openDefiLundiModal = openDefiLundiModal;
+function _showDefiToastDaily() {
+  var dk = todayKey();
+  if (safeGetItem('niyyah_defi_toast_today') === dk) return;
+  var courant = getDefiCourant();
+  if (!courant.defi || !courant.state.current) return;
+  if (courant.state.current.complete) return;
+  var jours = courant.state.current.jours ? courant.state.current.jours.length : 0;
+  var cible = courant.defi.cible || 0;
+  safeSetItem('niyyah_defi_toast_today', dk);
+  var toast = document.createElement('div');
+  toast.className = 'defi-toast-daily';
+  toast.textContent = '\uD83D\uDCFF Ton d\u00e9fi : ' + jours + '/' + cible + ' jours accomplis';
+  document.body.appendChild(toast);
+  requestAnimationFrame(function() { toast.classList.add('show'); });
+  setTimeout(function() { toast.classList.remove('show'); setTimeout(function() { toast.remove(); }, 400); }, 5000);
+}
 function renderDefiChoices(choices, onSelect) {
   var container = document.getElementById('defi-choices-lundi');
   if (!container) return;
@@ -10767,6 +10783,7 @@ function v2GoSanctuaire() {
     if (btn) btn.classList.add('active-nav');
     if (typeof updateMedaillonState === 'function') updateMedaillonState();
     if (typeof openDefiLundiModal === 'function') setTimeout(openDefiLundiModal, 1500);
+    setTimeout(_showDefiToastDaily, 2500);
   }
   // Skip intro cascade on return visits
   var sanctEl2 = document.getElementById('view-sanctuaire');
