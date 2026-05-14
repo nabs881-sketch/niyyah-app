@@ -7312,7 +7312,6 @@ const MEDIT_PHRASES = [
   'Pourquoi ressentons-nous parfois un vide m\u00eame lorsque tout va bien ?',
   'Pourquoi avons-nous besoin que notre souffrance ait un sens ?',
   'Pourquoi certaines rencontres paraissent-elles famili\u00e8res d\u00e8s les premi\u00e8res minutes ?',
-  'Pourquoi la musique peut-elle r\u00e9veiller des \u00e9motions que les mots n\u2019atteignent pas ?',
   'Pourquoi cherchons-nous instinctivement la beaut\u00e9 partout : maisons, v\u00eatements, voix, paysages ?',
   'Pourquoi certains silences entre deux personnes sont-ils plus puissants que des conversations enti\u00e8res ?',
   'Pourquoi une odeur peut-elle rouvrir un souvenir oubli\u00e9 depuis vingt ans ?',
