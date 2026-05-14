@@ -1754,6 +1754,62 @@ function updateGlobalProgress() {
       setTimeout(() => showToast(m.msg), 800);
     }
   });
+  _validateDay();
+}
+function _validateDay() {
+  var dk = todayKey();
+  if (safeGetItem('niyyah_day_validated_' + dk) === '1') return;
+  // Score : items cochés dans LEVELS[0]+LEVELS[1] pour le bloc courant + jour
+  var score = 0;
+  [0,1].forEach(function(i) {
+    var lvl = LEVELS[i];
+    if (!lvl || !lvl.sections) return;
+    lvl.sections.forEach(function(s) {
+      (s.items || []).forEach(function(it) {
+        if (it.type === 'wird') {
+          var ses = WIRD_DATA && WIRD_DATA[it.session];
+          if (ses && ses.items) { var done = ses.items.filter(function(w) { return !!wirdState[w.id]; }).length; if (done === ses.items.length) score += 2; }
+        } else if (it.type === 'counter') {
+          if ((state[it.id] || 0) >= it.target) score++;
+        } else if (state[it.id]) { score++; }
+      });
+    });
+  });
+  // Seuil par profil
+  var motiv = localStorage.getItem('niyyah_motivation');
+  var seuil;
+  if (motiv === 'reconnecter' && _isRevenantProtected()) seuil = 6;
+  else if (motiv === 'reconnecter') seuil = 9;
+  else if (motiv === 'routine') seuil = 12;
+  else if (motiv === 'sacraliser') seuil = 15;
+  else seuil = 9;
+  if (score < seuil) return;
+  safeSetItem('niyyah_day_validated_' + dk, '1');
+  // Streak silencieux avec joker Qadar (1 raté/semaine toléré)
+  var streak = parseInt(safeGetItem('niyyah_silent_streak') || '0', 10);
+  var hier = new Date(); hier.setDate(hier.getDate() - 1);
+  var hierKey = dateToKey(hier);
+  var hierOK = safeGetItem('niyyah_day_validated_' + hierKey) === '1';
+  if (hierOK) {
+    streak++;
+  } else {
+    // Joker Qadar : vérifier avant-hier
+    var avantHier = new Date(); avantHier.setDate(avantHier.getDate() - 2);
+    var avantHierKey = dateToKey(avantHier);
+    var avantHierOK = safeGetItem('niyyah_day_validated_' + avantHierKey) === '1';
+    // Vérifier combien de ratés cette semaine
+    var ratesSemaine = 0;
+    for (var d = 1; d <= 7; d++) {
+      var dd = new Date(); dd.setDate(dd.getDate() - d);
+      if (safeGetItem('niyyah_day_validated_' + dateToKey(dd)) !== '1') ratesSemaine++;
+    }
+    if (avantHierOK && ratesSemaine <= 1) {
+      streak++;
+    } else {
+      streak = 1;
+    }
+  }
+  safeSetItem('niyyah_silent_streak', String(streak));
 }
 function checkLevelCompletion(levelId) {
   if (getLevelProgress(levelId) >= 100) {
