@@ -13708,34 +13708,31 @@ async function scannerOpen() {
   const overlay = document.getElementById('scanner-overlay');
   if (!overlay) return;
 
-  // Demander accès caméra
-  try {
-    _scannerStream = await navigator.mediaDevices.getUserMedia({
-      video: { facingMode: 'environment', width: { ideal: 1280 }, height: { ideal: 720 } }
-    });
-    const video = document.getElementById('scanner-video');
-    video.srcObject = _scannerStream;
-    await video.play();
-  } catch(err) {
-    var _scanContent = document.getElementById('scanner-overlay');
-    if (_scanContent) {
-      _scanContent.classList.add('active');
-      _scanContent.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:16px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#C8A84A;text-align:center;padding:40px;">' + t('camera_denied') + '</div><button onclick="scannerClose();scannerOpen()" style="padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:13px;cursor:pointer;">' + t('btn_retry') + '</button><button onclick="scannerClose()" style="padding:8px 20px;border:none;background:transparent;color:var(--t3);font-size:12px;cursor:pointer;">' + t('btn_close') + '</button></div>';
-    }
-    return;
-  }
-
+  // 1. Afficher DOM immédiatement avec placeholder
   overlay.classList.add('active');
   document.body.style.overflow = 'hidden';
-
-  // Reset état
   document.getElementById('scanner-result').classList.remove('active');
-  document.getElementById('scanner-capture-btn').classList.remove('hidden');
+  document.getElementById('scanner-capture-btn').classList.add('hidden');
   document.getElementById('scanner-orb').classList.remove('scanning');
-  document.getElementById('scanner-hint').textContent = t('scanner_hint');
-  document.getElementById('scanner-hint').style.opacity = '1';
+  var _hint = document.getElementById('scanner-hint');
+  if (_hint) { _hint.textContent = t('scanner_preparing') || 'Préparation...'; _hint.style.opacity = '1'; }
   _scannerResult = null;
 
+  // 2. Lancer caméra au prochain frame (ne bloque pas le rendu)
+  requestAnimationFrame(function() {
+    navigator.mediaDevices.getUserMedia({
+      video: { facingMode: 'environment', width: { ideal: 1280 }, height: { ideal: 720 } }
+    }).then(function(stream) {
+      _scannerStream = stream;
+      var video = document.getElementById('scanner-video');
+      video.srcObject = stream;
+      video.play();
+      document.getElementById('scanner-capture-btn').classList.remove('hidden');
+      if (_hint) _hint.textContent = t('scanner_hint');
+    }).catch(function(err) {
+      overlay.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:16px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#C8A84A;text-align:center;padding:40px;">' + t('camera_denied') + '</div><button onclick="scannerClose();scannerOpen()" style="padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:13px;cursor:pointer;">' + t('btn_retry') + '</button><button onclick="scannerClose()" style="padding:8px 20px;border:none;background:transparent;color:var(--t3);font-size:12px;cursor:pointer;">' + t('btn_close') + '</button></div>';
+    });
+  });
 }
 
 /* ── Journal Niyyah V2 ── */
