@@ -396,6 +396,15 @@ function getLundiDate() {
 }
 function getTodayStr() { return todayKey(); }
 
+function _isRevenantProtected() {
+  if (localStorage.getItem('niyyah_revenant_adaptatif_unlocked') === '1') return false;
+  if (localStorage.getItem('niyyah_motivation') !== 'reconnecter') return false;
+  var inst = parseInt(safeGetItem('niyyah_install_date') || '0', 10);
+  if (!inst) return true;
+  var weeks = (Date.now() - inst) / (7 * 86400000);
+  if (weeks >= 12) { safeSetItem('niyyah_revenant_adaptatif_unlocked', '1'); return false; }
+  return true;
+}
 // Calcule la suggestion selon l'historique et le niveau
 function _defiMatchesPath(defi) {
   if (!defi.itemId) return true;
@@ -419,8 +428,14 @@ function _defiMatchesPath(defi) {
 }
 function getSuggestionDefi() {
   const s = getDefiState();
-  const all = DEFIS_DB.filter(d => !s.historique.includes(d.id) && _defiMatchesPath(d));
-  const pool = all.length > 0 ? all : DEFIS_DB.filter(_defiMatchesPath);
+  var forceNiv1 = _isRevenantProtected();
+  const all = DEFIS_DB.filter(function(d) {
+    if (s.historique.includes(d.id)) return false;
+    if (!_defiMatchesPath(d)) return false;
+    if (forceNiv1 && d.niveau !== 1) return false;
+    return true;
+  });
+  const pool = all.length > 0 ? all : DEFIS_DB.filter(function(d) { return _defiMatchesPath(d) && (!forceNiv1 || d.niveau === 1); });
   var finalPool = pool.length > 0 ? pool : DEFIS_DB;
   return finalPool[Math.floor(Math.random() * finalPool.length)];
 }
@@ -431,7 +446,7 @@ function initDefiSemaine() {
   // Premier lancement — assigner défi id:1 par défaut
   if (!s.current && s.historique.length === 0) {
     var motiv = localStorage.getItem('niyyah_motivation');
-    var niveauCible = motiv === 'routine' ? 2 : (motiv === 'reconnecter' || motiv === 'sacraliser' ? 1 : null);
+    var niveauCible = _isRevenantProtected() ? 1 : (motiv === 'routine' ? 2 : (motiv === 'reconnecter' || motiv === 'sacraliser' ? 1 : null));
     var premierDefi;
     if (niveauCible) {
       var pool = DEFIS_DB.filter(function(d) { return d.niveau === niveauCible && _defiMatchesPath(d); });
