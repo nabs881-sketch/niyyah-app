@@ -9094,7 +9094,7 @@ const V2_I18N = {
     actes_done: 'acte accompli', actes_done_p: 'actes accomplis', actes_left: 'restant', actes_left_p: 'restants', bloc_done: '✦ Bloc accompli', bloc_done_sub: 'Barak Allahu fik', btn_continue: 'Bismillah',
     jour_left: 'acte du jour restant', jour_left_p: 'actes du jour restants',
     // Fajr challenge
-    fajr_title: 'Challenge 30 jours Fajr', fajr_day: 'Jour', fajr_sur: 'sur', fajr_gardien: 'Gardien de Fajr ✦',
+    fajr_title: 'Compagnon de l\u2019aube', fajr_day: 'Fajr', fajr_sur: 'ce mois-ci', fajr_gardien: 'Gardien de Fajr \u2726', fajr_annee: 'cette ann\u00e9e', fajr_total: 'depuis le d\u00e9but',
     // Défi
     defi_none: 'Choisir un défi ✦', defi_tap: 'Appuie pour commencer', defi_browse: 'Appuie pour parcourir les 100 défis →',
     defi_launched: 'Défi lancé : ', defi_done: 'Masha\'Allah ✦ Défi accompli !', defi_checked: '✦ Journée cochée — Continue !', defi_already: 'Déjà coché aujourd\'hui ✓',
@@ -12335,42 +12335,42 @@ function showFinJourneeActe3() {
 function updateFajrChallenge() {
   var card = document.getElementById('fajr-challenge-card');
   if (!card) return;
-  // Compute Fajr streak from history
   var hist = {};
   try { hist = JSON.parse(localStorage.getItem('spiritual_history') || '{}'); } catch(e) {}
-  var fajrStreak = 0;
   var today = new Date();
-  // Check today first
   var todayFajr = !!state['fajr'];
-  // Count backwards from yesterday
-  for (var i = todayFajr ? 0 : 1; i < 30; i++) {
-    var d = new Date(today);
-    d.setDate(d.getDate() - i);
-    var ds = dateToKey(d);
-    // For today, check current state; for past days, check dayScores existence + assume fajr was done if day completed
-    if (i === 0 && todayFajr) { fajrStreak++; continue; }
-    if (i > 0 && hist.days && hist.days[ds]) { fajrStreak++; }
-    else break;
+  var fajrMois = 0, fajrAnnee = 0, fajrTotal = 0;
+  if (hist.days) {
+    var keys = Object.keys(hist.days);
+    var thisMonth = today.getFullYear() + '-' + String(today.getMonth() + 1).padStart(2, '0');
+    var thisYear = String(today.getFullYear());
+    for (var _k = 0; _k < keys.length; _k++) {
+      fajrTotal++;
+      if (keys[_k].indexOf(thisYear) === 0) fajrAnnee++;
+      if (keys[_k].indexOf(thisMonth) === 0) fajrMois++;
+    }
   }
+  if (todayFajr && hist.days && !hist.days[todayKey()]) { fajrMois++; fajrAnnee++; fajrTotal++; }
   card.style.display = 'block';
-  var pct = Math.min(100, Math.round((fajrStreak / 30) * 100));
-  if (fajrStreak >= 30) {
-    card.innerHTML = '<div style="background:#1a1a1a;border:1px solid #C8A84A;border-radius:12px;padding:16px 18px;text-align:center;">'
-      + '<div style="font-family:\'Amiri\',serif;font-size:20px;color:#C8A84A;margin-bottom:4px;">مُحَافِظٌ عَلَى الْفَجْرِ</div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:#E8DCC0;">' + t('fajr_gardien') + '</div>'
-      + '</div>';
-  } else {
-    card.innerHTML = '<div style="background:#1a1a1a;border:1px solid rgba(200,168,75,0.3);border-radius:12px;padding:14px 18px;min-height:90px;box-sizing:border-box;position:relative;display:flex;align-items:center;">'
-      + '<div style="display:flex;align-items:center;gap:12px;width:100%;">'
-      + '<div><img src="./imagessoleil.webp" alt="Soleil" style="width:60px;height:auto;display:block;flex-shrink:0;mix-blend-mode:screen;"></div>'
-      + '<div style="flex:1;text-align:left;">'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:600;color:#C8A84A;">' + t('fajr_title') + '</div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#B0A080;margin-top:2px;">' + t('fajr_day') + ' ' + fajrStreak + ' ' + t('fajr_sur') + ' 30</div>'
-      + '</div></div>'
-      + '<div style="position:absolute;bottom:0;left:0;right:0;height:3px;background:rgba(200,168,75,0.12);border-radius:0 0 14px 14px;overflow:hidden;">'
-      + '<div style="height:100%;width:' + pct + '%;background:linear-gradient(90deg,#C8A84A,#E0C870);transition:width 0.6s ease;"></div>'
-      + '</div></div>';
-  }
+  card.innerHTML = '<div style="background:#1a1a1a;border:1px solid rgba(200,168,75,0.3);border-radius:12px;padding:14px 18px;min-height:90px;box-sizing:border-box;display:flex;align-items:center;">'
+    + '<div style="display:flex;align-items:center;gap:12px;width:100%;">'
+    + '<div><img src="./imagessoleil.webp" alt="Soleil" style="width:60px;height:auto;display:block;flex-shrink:0;mix-blend-mode:screen;"></div>'
+    + '<div style="flex:1;text-align:left;">'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:600;color:#C8A84A;">' + t('fajr_title') + '</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;color:#B0A080;margin-top:4px;line-height:1.5;">'
+    + fajrMois + ' ' + t('fajr_day') + ' ' + t('fajr_sur')
+    + ' \u00b7 ' + fajrAnnee + ' ' + t('fajr_annee')
+    + ' \u00b7 ' + fajrTotal + ' ' + t('fajr_total')
+    + '</div>'
+    + '</div></div></div>';
+  var _fajrHadith, _fajrRef;
+  if (fajrMois >= 100) { _fajrHadith = 'Vraiment, la r\u00e9citation de l\u2019aube est t\u00e9moign\u00e9e.'; _fajrRef = 'Al-Isr\u00e2\u2019 17:78'; }
+  else if (fajrAnnee >= 50) { _fajrHadith = 'All\u00e2h aime celui qui agit avec constance, m\u00eame peu.'; _fajrRef = 'Boukhari/Muslim'; }
+  else { _fajrHadith = 'Les deux raka\u2019as de Fajr sont meilleures que ce monde et ce qu\u2019il contient.'; _fajrRef = 'Muslim 725'; }
+  card.innerHTML += '<div style="margin:8px 0 0;padding:10px 14px;border:1px solid rgba(200,168,75,0.15);border-radius:10px;background:rgba(200,168,75,0.03);">'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.75);line-height:1.5;">\u00ab\u00a0' + _fajrHadith + '\u00a0\u00bb</div>'
+    + '<div style="font-size:11px;color:rgba(200,168,75,0.45);margin-top:4px;text-align:right;">\u2014 ' + _fajrRef + '</div>'
+    + '</div>';
 }
 function updateSanctuaireMoment() {
   var el = document.getElementById('sanctuaire-moment');
