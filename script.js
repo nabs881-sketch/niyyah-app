@@ -936,6 +936,9 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function isFriday() { return new Date().getDay() === 5; }
+var _tapY = 0;
+document.addEventListener('touchstart', function(e) { _tapY = e.touches[0].clientY; }, { passive: true });
+function _isTapNotScroll(e) { if (!e.changedTouches) return true; return Math.abs(e.changedTouches[0].clientY - _tapY) < 12; }
 let ramadanState; try { ramadanState = JSON.parse(safeGetItem('spiritual_ramadan')); } catch(e) { if (typeof Sentry !== 'undefined') Sentry.captureException(new Error('Parse error: spiritual_ramadan')); } ramadanState = ramadanState || {active:false,startDate:null,days:{},laylatul:{}};
 function saveRamadanState() { safeSetItem('spiritual_ramadan', JSON.stringify(ramadanState)); }
 function toggleRamadanMode() {
@@ -12711,7 +12714,7 @@ function updateSanctuaireMoment() {
       + _nextInfo
       + '<div style="font-family:\'Inter\',var(--sans);font-size:12px;color:rgba(255,255,255,0.6);margin-top:4px;">' + blockDone + ' ' + (blockDone > 1 ? t('actes_done_p') : t('actes_done')) + ' · ' + blockRemaining + ' ' + (blockRemaining > 1 ? t('actes_left_p') : t('actes_left')) + '</div>'
       + jourLine
-      + '<button class="btn-bismillah-moment" onclick="event.stopPropagation();var _m=getCurrentPrayerBlock();if(_m&&_m.id)openVueRituel(_m.id);else selectLevel(currentLevel);" ontouchend="event.stopPropagation();event.preventDefault();var _m=getCurrentPrayerBlock();if(_m&&_m.id)openVueRituel(_m.id);else selectLevel(currentLevel);">' + t('btn_continue') + '</button>'
+      + '<button class="btn-bismillah-moment" onclick="event.stopPropagation();var _m=getCurrentPrayerBlock();if(_m&&_m.id)openVueRituel(_m.id);else selectLevel(currentLevel);" ontouchend="if(!_isTapNotScroll(event))return;event.stopPropagation();event.preventDefault();var _m=getCurrentPrayerBlock();if(_m&&_m.id)openVueRituel(_m.id);else selectLevel(currentLevel);">' + t('btn_continue') + '</button>'
       + '</div>';
     el.innerHTML += getFilJourCardHTML();
     if (isFriday()) el.innerHTML += getVendrediRegardCardHTML();
