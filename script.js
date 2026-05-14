@@ -14526,7 +14526,7 @@ function getFilJourCardHTML() {
     + '<div class="fil-jour-card" onclick="openVueAuFilDuJour()">'
     + '<div class="titre">AU FIL DU JOUR</div>'
     + '<div class="soustitre">Ce qui demeure entre tes pri\u00e8res</div>'
-    + '<div class="compteur"><span>' + done + ' actes accomplis aujourd\'hui</span><span class="pulse"></span></div>'
+    + '<div class="compteur"><span>' + done + ' actes accomplis aujourd\'hui</span></div>'
     + '</div>';
 }
 window.getFilJourCardHTML = getFilJourCardHTML;
