@@ -1570,7 +1570,7 @@ window.addEventListener('storage', function(e) {
 });
 let state; try { state = JSON.parse(safeGetItem('spiritual_v2')); } catch(e) { if (typeof Sentry !== 'undefined') Sentry.captureException(new Error('Parse error: spiritual_v2')); } state = state || {};
 let history; try { history = JSON.parse(safeGetItem('spiritual_history')); } catch(e) { if (typeof Sentry !== 'undefined') Sentry.captureException(new Error('Parse error: spiritual_history')); } history = history || {days:{},dayMedals:{},streak:0,bestStreak:0,totalDays:0,unlockedBadges:[],weekDays:0,jumuahCount:0};
-let currentLevel = 1;
+let currentLevel = parseInt(safeGetItem('niyyah_current_level') || '1', 10) || 1;
 if (history.jumuahCount === undefined) history.jumuahCount = 0;
 if (typeof state['tasbih'] === 'boolean') { delete state['tasbih']; saveState(); }
 if (typeof state['istighfar'] === 'boolean') { delete state['istighfar']; saveState(); }
@@ -1581,7 +1581,6 @@ if (state._date !== TODAY) {
   saveState();
 }
 if (!state._unlocked) state._unlocked = [1];
-if (state._unlocked.length < 4) { [1,2,3,4].forEach(function(id) { if (!state._unlocked.includes(id)) state._unlocked.push(id); }); saveState(); }
 function getCalcLvlPct(lvlId, s) {
   const lvl = LEVELS.find(l => l.id === lvlId);
   const items = lvl.sections.flatMap(sec => sec.items);
@@ -2366,10 +2365,11 @@ function animateTabSwipe(direction, callback) {
 
 function selectLevel(id) {
   if (id > 1 && !state._unlocked.includes(id)) {
-    state._unlocked.push(id);
-    saveState();
+    showToast('Compl\u00e8te le niveau pr\u00e9c\u00e9dent pour d\u00e9bloquer celui-ci.');
+    return;
   }
   currentLevel = id;
+  safeSetItem('niyyah_current_level', String(id));
   saveState();
   var checkView = document.getElementById('view-checklist');
   var alreadyOnChecklist = checkView && checkView.classList.contains('active');
