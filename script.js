@@ -1266,6 +1266,33 @@ function getHadithJourRule() {
   var dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(),0,0).getTime()) / 86400000);
   return HADITHS_JOUR[dayOfYear % HADITHS_JOUR.length];
 }
+var _versetJourCache = null;
+function getVersetJour(cb) {
+  var dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(),0,0).getTime()) / 86400000);
+  var n = (dayOfYear % 6236) + 1;
+  var cacheKey = 'verset_jour_' + n;
+  var cached = safeGetItem(cacheKey);
+  if (cached) { try { _versetJourCache = JSON.parse(cached); if (cb) cb(_versetJourCache); return; } catch(e) {} }
+  fetch('https://api.alquran.cloud/v1/ayah/' + n + '/editions/quran-uthmani,fr.hamidullah')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      if (data.code === 200 && data.data && data.data.length >= 2) {
+        var ar = data.data[0], fr = data.data[1];
+        _versetJourCache = { arabe: ar.text, traduction: fr.text, sourate: ar.surah.englishName, sourate_fr: fr.surah.name, numero: ar.numberInSurah, ref: fr.surah.name + ' ' + fr.surah.number + ':' + ar.numberInSurah };
+        safeSetItem(cacheKey, JSON.stringify(_versetJourCache));
+        if (cb) cb(_versetJourCache);
+      }
+    }).catch(function() { if (cb) cb(_versetJourCache); });
+}
+function getVersetJourSync() {
+  if (_versetJourCache) return _versetJourCache;
+  var dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(),0,0).getTime()) / 86400000);
+  var n = (dayOfYear % 6236) + 1;
+  var cached = safeGetItem('verset_jour_' + n);
+  if (cached) { try { _versetJourCache = JSON.parse(cached); return _versetJourCache; } catch(e) {} }
+  return { arabe: '', traduction: '', sourate: '', sourate_fr: '', numero: 0, ref: '' };
+}
+getVersetJour();
 function getSavaisTuFact() {
   if (!SAVAIS_TU.length) return { texte: '', source: '', categorie: '' };
   var dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(),0,0).getTime()) / 86400000);
@@ -1323,7 +1350,7 @@ const LEVELS = [
       { icon: '📚', title: 'Étude islamique', items: [
         { id: 'hadith1', minVague: 3, label: '1er Hadith du jour', get sub() { var h = getHadithJourRule(); return (h.texte_fr || '').substring(0,50) + '\u2026'; }, arabic: '\u062D\u064E\u062F\u0650\u064A\u062B\u064C', paths: ['reconnecter','routine','sacraliser'], block: 'jour', category: 'science' },
         { id: 'sira', minVague: 3, label: 'S\u00eera du Proph\u00e8te \uFDFA', sub: 'Un rendez-vous chaque jour', arabic: '\u0627\u0644\u0633\u0651\u0650\u064A\u0631\u064E\u0629\u064F \u0627\u0644\u0646\u0651\u064E\u0628\u064E\u0648\u0650\u064A\u0651\u064E\u0629\u064F', paths: ['reconnecter','routine','sacraliser'], block: 'jour', category: 'science' },
-        { id: 'quran_read', minVague: 3, label: 'Lecture du Coran', sub: 'Au moins 1 page avec le sens', arabic: 'قِرَاءَةُ الْقُرْآنِ', paths: ['routine','sacraliser'], block: 'jour', category: 'science' },
+        { id: 'quran_read', minVague: 3, label: 'Verset du jour', get sub() { var v = getVersetJourSync(); return (v.traduction || '').substring(0,50) + '\u2026'; }, arabic: '\u0642\u0650\u0631\u064E\u0627\u0621\u064E\u0629\u064F \u0627\u0644\u0652\u0642\u064F\u0631\u0652\u0622\u0646\u0650', paths: ['routine','sacraliser'], block: 'jour', category: 'science' },
         { id: 'arabic', minVague: 4, label: "Apprentissage de l'arabe", sub: '10 min · Vocabulaire ou grammaire', arabic: 'تَعَلُّمُ الْعَرَبِيَّةِ', paths: ['sacraliser'], block: 'jour', category: 'science' },
         { id: 'vie_prophetes', minVague: 4, label: 'Histoires des Proph\u00e8tes', get sub() { var p = getPropheteJour(); return (p.nom_fr && p.episode) ? (p.nom_fr + ' \u2014 ' + p.episode).substring(0,50) + '\u2026' : 'Nouh, Ibrahim, Moussa, Issa\u2026'; }, arabic: '\u0642\u064E\u0635\u064E\u0635\u064F \u0627\u0644\u0623\u064E\u0646\u0628\u0650\u064A\u064E\u0627\u0621\u0650', paths: ['routine','sacraliser'], block: 'jour', category: 'science', hadith: '"Nous te racontons le meilleur des r\u00e9cits" \u2014 Coran 12:3', source: 'Yusuf 12:3' },
         { id: 'vie_compagnons', minVague: 4, label: 'Vie des Compagnons', get sub() { var c = getCompagnonJour(); return (c.nom_fr && c.episode) ? (c.nom_fr + ' \u2014 ' + c.episode).substring(0,50) + '\u2026' : 'Abu Bakr, Omar, Othman, Ali\u2026'; }, arabic: '\u0633\u0650\u064A\u064E\u0631\u064F \u0627\u0644\u0635\u0651\u064E\u062D\u064E\u0627\u0628\u064E\u0629\u0650', paths: ['routine','sacraliser'], block: 'jour', category: 'science', hadith: '"Mes Compagnons sont comme les \u00e9toiles \u2014 qui que vous suiviez, vous serez guid\u00e9s" \u2014 Bayhaqi', source: 'Bayhaqi' },
@@ -2517,6 +2544,8 @@ function renderLevel(levelId) {
           shareBtn = '<button class="btn-audio" aria-label="Lire" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openVueCompagnon();" title="Lire" style="font-size:13px;padding:0 8px;width:auto;">\u{1F4D6}</button>';
         } else if (item.id === 'vie_prophetes') {
           shareBtn = '<button class="btn-audio" aria-label="Lire" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openVuePropheteJour();" title="Lire" style="font-size:13px;padding:0 8px;width:auto;">\u{1F4D6}</button>';
+        } else if (item.id === 'quran_read') {
+          shareBtn = '<button class="btn-audio" aria-label="Lire" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openVueVersetJour();" title="Lire" style="font-size:13px;padding:0 8px;width:auto;">\u{1F4D6}</button>';
         }
         const customClick = item.id === 'savais_tu'
           ? 'openVueSavaisTu(); toggleItem(\'' + item.id + '\',event);'
@@ -2528,6 +2557,8 @@ function renderLevel(levelId) {
           ? 'openVueCompagnon(); toggleItem(\'' + item.id + '\',event);'
           : item.id === 'vie_prophetes'
           ? 'openVuePropheteJour(); toggleItem(\'' + item.id + '\',event);'
+          : item.id === 'quran_read'
+          ? 'openVueVersetJour(); toggleItem(\'' + item.id + '\',event);'
           : item.id === 'sira'
           ? 'SIRA.openDetail(); toggleItem(\'' + item.id + '\',event);'
           : 'toggleItem(\'' + item.id + '\',event)';
@@ -14438,13 +14469,15 @@ function openVueAuFilDuJour() {
       : (it.id === 'fiqh_jour') ? '<button class="btn-audio" aria-label="Lire" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openVueFiqhJour();" style="font-size:13px;padding:0 8px;width:auto;">\u{1F4D6}</button>'
       : (it.id === 'hadith1') ? '<button class="btn-audio" aria-label="Lire" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openVueHadithJour();" style="font-size:13px;padding:0 8px;width:auto;">\u{1F4D6}</button>'
       : (it.id === 'vie_compagnons') ? '<button class="btn-audio" aria-label="Lire" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openVueCompagnon();" style="font-size:13px;padding:0 8px;width:auto;">\u{1F4D6}</button>'
-      : (it.id === 'vie_prophetes') ? '<button class="btn-audio" aria-label="Lire" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openVuePropheteJour();" style="font-size:13px;padding:0 8px;width:auto;">\u{1F4D6}</button>' : '';
+      : (it.id === 'vie_prophetes') ? '<button class="btn-audio" aria-label="Lire" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openVuePropheteJour();" style="font-size:13px;padding:0 8px;width:auto;">\u{1F4D6}</button>'
+      : (it.id === 'quran_read') ? '<button class="btn-audio" aria-label="Lire" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openVueVersetJour();" style="font-size:13px;padding:0 8px;width:auto;">\u{1F4D6}</button>' : '';
     var _click = it.id === 'sira' ? 'SIRA.openDetail(); toggleItem(\'' + it.id + '\',event);'
       : it.id === 'savais_tu' ? 'openVueSavaisTu(); toggleItem(\'' + it.id + '\',event);'
       : it.id === 'fiqh_jour' ? 'openVueFiqhJour(); toggleItem(\'' + it.id + '\',event);'
       : it.id === 'hadith1' ? 'openVueHadithJour(); toggleItem(\'' + it.id + '\',event);'
       : it.id === 'vie_compagnons' ? 'openVueCompagnon(); toggleItem(\'' + it.id + '\',event);'
       : it.id === 'vie_prophetes' ? 'openVuePropheteJour(); toggleItem(\'' + it.id + '\',event);'
+      : it.id === 'quran_read' ? 'openVueVersetJour(); toggleItem(\'' + it.id + '\',event);'
       : 'toggleItem(\'' + it.id + '\',event); openVueAuFilDuJour();';
     return '<div class="rituel-item ' + done + '" id="rituel-item-' + it.id + '" onclick="' + _click + '"><div class="check"></div><div style="flex:1"><div class="label">' + (it.label||it.id) + '</div>' + sub + ar + '</div>' + _readBtn + audio + '</div>';
   };
@@ -14620,6 +14653,30 @@ function openVuePropheteJour() {
   document.getElementById('rituel-emblem').textContent = '\u0623\u064E\u0646\u0628\u0650\u064A\u064E\u0627\u0621';
 }
 window.openVuePropheteJour = openVuePropheteJour;
+
+function openVueVersetJour() {
+  var v = document.getElementById('vue-rituel');
+  if (!v) return;
+  v.querySelector('.rituel-titre').textContent = 'VERSET DU JOUR';
+  v.querySelector('.rituel-prochaine').textContent = '';
+  v.querySelector('.rituel-poetique').textContent = '';
+  var main = v.querySelector('.rituel-content');
+  var _render = function(vj) {
+    if (!vj || !vj.arabe) { main.innerHTML = '<div style="text-align:center;padding:40px 16px;color:rgba(255,255,255,0.4);font-size:14px;">Chargement\u2026</div>'; return; }
+    main.innerHTML = '<div style="padding:20px 16px;text-align:center;">'
+      + '<div class="fiqh-categorie">' + (vj.ref || '').toUpperCase() + '</div>'
+      + '<div style="font-family:\'Amiri\',serif;font-size:24px;line-height:2;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:24px;">' + vj.arabe + '</div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;line-height:1.7;color:rgba(240,234,214,0.95);font-style:italic;margin-bottom:20px;">' + vj.traduction + '</div>'
+      + (vj.sourate_fr ? '<div style="font-size:11px;color:rgba(200,168,74,0.6);letter-spacing:0.1em;">\u2014 ' + vj.sourate_fr + ' \u2014</div>' : '')
+      + '</div>';
+  };
+  var cached = getVersetJourSync();
+  _render(cached);
+  v.classList.remove('hidden');
+  document.getElementById('rituel-emblem').textContent = '\u0642\u064F\u0631\u0652\u0622\u0646';
+  if (!cached.arabe) getVersetJour(function(vj) { _render(vj); });
+}
+window.openVueVersetJour = openVueVersetJour;
 
 function shareSavaisTuFromVue() {
   if (typeof shareSavaisTu === 'function') {
