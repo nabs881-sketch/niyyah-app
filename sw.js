@@ -1,4 +1,4 @@
-const VERSION = 'niyyah-v1225';
+const VERSION = 'niyyah-v1226';
 const CORE = [
   './index.html',
   './script.min.js',
@@ -14,6 +14,7 @@ const CORE = [
   './savais_tu.json',
   './fiqh_jour.json',
   './hadiths_jour.json',
+  './compagnons.json',
   './data/sira.min.json',
   './assets/moments/fajr.webp',
   './assets/moments/dhuhr.webp',
