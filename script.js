@@ -14742,16 +14742,14 @@ const SIRA = {
     return this.data;
   },
   getCurrentRdvNum() {
-    var start = localStorage.getItem('sira_start_date');
+    var start = safeGetItem('niyyah_sira_start');
     if (!start) {
-      start = todayKey();
-      safeSetItem('sira_start_date', start);
+      start = String(Date.now());
+      safeSetItem('niyyah_sira_start', start);
     }
-    var startMs = new Date(start).getTime();
-    var nowMs = new Date(todayKey()).getTime();
-    var day = Math.floor((nowMs - startMs) / 86400000) + 1;
-    var max = (this.data && this.data.rdv) ? this.data.rdv.length : 1;
-    return Math.min(day, max);
+    var daysSince = Math.floor((Date.now() - parseInt(start, 10)) / 86400000);
+    var max = (this.data && this.data.rdv) ? this.data.rdv.length : 365;
+    return (daysSince % max) + 1;
   },
   getRdv(num) {
     if (!this.data || !this.data.rdv) return null;
