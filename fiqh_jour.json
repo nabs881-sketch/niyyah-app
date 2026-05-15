@@ -1,0 +1,1622 @@
+[
+  {
+    "jour": 1,
+    "categorie": "Purification",
+    "sous_theme": "Eau",
+    "regle": "L'eau pure et purifiante (mutlaq) est celle qui n'a subi aucune transformation : eau de pluie, source, mer, rivière, puits, neige fondue.",
+    "explication": "Cette eau est valide pour les ablutions et le ghusl. Sa couleur, son goût et son odeur naturels ne la rendent pas impure.",
+    "source": "Coran 25:48 'Nous fîmes descendre du ciel une eau pure et purifiante' / Consensus 4 écoles",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 2,
+    "categorie": "Purification",
+    "sous_theme": "Eau",
+    "regle": "L'eau devient impure si l'une de ses trois caractéristiques (couleur, goût, odeur) est altérée par une impureté.",
+    "explication": "Si l'eau garde ses propriétés malgré le contact avec une impureté, elle reste pure selon la majorité des écoles.",
+    "source": "Hadith rapporté par Abu Dawud 67 et Tirmidhi 66, déclaré authentique / Consensus implicite",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 3,
+    "categorie": "Purification",
+    "sous_theme": "Eau",
+    "regle": "L'eau de mer est pure et purifiante, même pour celui qui veut faire ses ablutions ou son ghusl.",
+    "explication": "Le Prophète ﷺ a répondu à un homme partant en mer : « Son eau est pure et ce qui y meurt est licite. »",
+    "source": "Hadith Abu Dawud 83, Tirmidhi 69, Nasa'i 59 — authentifié",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 4,
+    "categorie": "Purification",
+    "sous_theme": "Eau",
+    "regle": "L'eau dont on a déjà fait les ablutions (eau usagée) ne sert plus à se purifier une seconde fois selon la majorité.",
+    "explication": "Elle reste pure en soi mais perd sa fonction purificatrice rituelle. Les Hanafites considèrent même qu'elle devient impure.",
+    "source": "Divergence classique entre écoles — Bukhari 187 sur la pratique du Prophète ﷺ",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 5,
+    "categorie": "Purification",
+    "sous_theme": "Eau",
+    "regle": "L'eau impure ne purifie pas. Toute eau dont la pureté est altérée doit être évitée.",
+    "explication": "En cas de doute léger, l'eau reste considérée comme pure (principe de la base : tout est pur jusqu'à preuve du contraire).",
+    "source": "Règle de fiqh classique : « al-asl tahara » — base coranique 5:6",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 6,
+    "categorie": "Purification",
+    "sous_theme": "Ablutions (Wudu)",
+    "regle": "Les ablutions mineures (wudu) sont obligatoires avant chaque prière obligatoire si l'on n'est plus en état de pureté.",
+    "explication": "Sans wudu, la prière est invalide. C'est une condition fondamentale de la salat.",
+    "source": "Coran 5:6 / Consensus 4 écoles",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 7,
+    "categorie": "Purification",
+    "sous_theme": "Ablutions (Wudu)",
+    "regle": "L'intention (niyyah) précède les ablutions. Elle est dans le cœur, pas obligatoirement verbale.",
+    "explication": "Les Hanafites considèrent l'intention comme sunnah pour le wudu ; les 3 autres écoles comme obligatoire.",
+    "source": "Hadith 'Les actions ne valent que par les intentions' — Bukhari 1, Muslim 1907",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 8,
+    "categorie": "Purification",
+    "sous_theme": "Ablutions (Wudu)",
+    "regle": "Dire 'Bismillah' (Au nom d'Allah) avant les ablutions est recommandé. Pour les Hanbalites, c'est même obligatoire.",
+    "explication": "Cette formule sanctifie l'acte. La majorité considère l'oubli sans conséquence.",
+    "source": "Hadith Abu Dawud 101 / Divergence d'écoles",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 9,
+    "categorie": "Purification",
+    "sous_theme": "Ablutions (Wudu)",
+    "regle": "Les actes obligatoires (fard) des ablutions sont quatre selon le verset : laver le visage, les mains jusqu'aux coudes, essuyer la tête, laver les pieds jusqu'aux chevilles.",
+    "explication": "Tout manquement à l'un de ces quatre actes invalide les ablutions. L'ordre et la continuité sont aussi requis selon la majorité.",
+    "source": "Coran 5:6 / Consensus 4 écoles sur le contenu",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 10,
+    "categorie": "Purification",
+    "sous_theme": "Ablutions (Wudu)",
+    "regle": "Se rincer la bouche et le nez fait partie des actes sunnah fortement recommandés du wudu.",
+    "explication": "Le Prophète ﷺ ne les omettait jamais. Les Hanbalites les considèrent comme obligatoires.",
+    "source": "Hadith Bukhari 159, Muslim 235 / Divergence d'écoles",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 11,
+    "categorie": "Purification",
+    "sous_theme": "Ablutions (Wudu)",
+    "regle": "Chaque membre est lavé trois fois selon la sunnah, une fois étant l'obligation minimale.",
+    "explication": "Au-delà de trois fois, c'est considéré comme un excès blâmable (israf) par les savants.",
+    "source": "Hadith Bukhari 158 / Sunnah claire",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 12,
+    "categorie": "Purification",
+    "sous_theme": "Ablutions (Wudu)",
+    "regle": "L'eau doit atteindre la peau. Tout obstacle (vernis, cire, peinture) compromet la validité des ablutions.",
+    "explication": "Il faut retirer ces matières avant de faire le wudu. Le henné naturel n'est pas un obstacle, étant absorbé par la peau.",
+    "source": "Principe fiqhique classique tiré du verset 5:6 / Consensus",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 13,
+    "categorie": "Purification",
+    "sous_theme": "Ablutions (Wudu)",
+    "regle": "Essuyer la tête se fait avec les mains humides. La quantité essuyée varie selon les écoles : un quart pour les Hanafites, tout pour les Malikites et Hanbalites, une partie suffit pour les Shafi'ites.",
+    "explication": "L'essuyage complet de la tête est la pratique du Prophète ﷺ. Pour les femmes voilées en ablutions à l'extérieur, un quart peut suffire selon les écoles permissives.",
+    "source": "Coran 5:6 / Divergence classique entre écoles",
+    "ecole": "Hanafite"
+  },
+  {
+    "jour": 14,
+    "categorie": "Purification",
+    "sous_theme": "Ablutions (Wudu)",
+    "regle": "Les ablutions sont annulées par tout ce qui sort des deux conduits (urine, selles, gaz).",
+    "explication": "C'est l'annulant le plus consensuel. Aucune divergence majeure entre les 4 écoles sur ce point.",
+    "source": "Coran 5:6 / Hadiths Bukhari 137, Muslim 225 / Consensus 4 écoles",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 15,
+    "categorie": "Purification",
+    "sous_theme": "Ablutions (Wudu)",
+    "regle": "Le sommeil profond annule les ablutions selon la majorité des écoles.",
+    "explication": "Un léger assoupissement assis ne les annule pas. La perte de conscience oui (évanouissement, anesthésie).",
+    "source": "Hadith Abu Dawud 203 / Majorité des écoles",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 16,
+    "categorie": "Purification",
+    "sous_theme": "Ablutions (Wudu)",
+    "regle": "Saigner abondamment annule les ablutions selon les Hanafites uniquement. Les 3 autres écoles ne le considèrent pas comme annulant.",
+    "explication": "Une coupure légère ne pose donc question que pour les Hanafites. Les autres peuvent prier sans refaire le wudu.",
+    "source": "Divergence reconnue entre écoles",
+    "ecole": "Hanafite"
+  },
+  {
+    "jour": 17,
+    "categorie": "Purification",
+    "sous_theme": "Ablutions (Ghusl)",
+    "regle": "Le ghusl (grande ablution) est obligatoire après tout rapport conjugal, qu'il y ait éjaculation ou non, dès la pénétration.",
+    "explication": "Hadith : 'Lorsque les deux circoncisions se rencontrent, le ghusl devient obligatoire'.",
+    "source": "Hadith Muslim 350, Tirmidhi 108 / Consensus 4 écoles",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 18,
+    "categorie": "Purification",
+    "sous_theme": "Ablutions (Ghusl)",
+    "regle": "Le ghusl est obligatoire après éjaculation, qu'elle survienne par rêve, action volontaire ou involontaire.",
+    "explication": "Si l'on se réveille avec trace de sperme sans souvenir, le ghusl est obligatoire. Pas de trace = pas de ghusl.",
+    "source": "Hadith Bukhari 282, Muslim 311 sur Umm Salama / Consensus",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 19,
+    "categorie": "Purification",
+    "sous_theme": "Ablutions (Ghusl)",
+    "regle": "Le ghusl est obligatoire à la fin des menstruations et des lochies (saignements post-accouchement).",
+    "explication": "La prière reprend dès la fin du flux et après le ghusl. Pas de rattrapage des prières manquées pendant cette période.",
+    "source": "Hadith Bukhari 320, Muslim 333 / Consensus 4 écoles",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 20,
+    "categorie": "Purification",
+    "sous_theme": "Ablutions (Ghusl)",
+    "regle": "Le ghusl complet comprend : intention, faire couler l'eau sur tout le corps en s'assurant qu'elle atteint la peau (racines des cheveux comprises).",
+    "explication": "Il n'est pas obligatoire de défaire les tresses pour les femmes, à condition que l'eau atteigne le cuir chevelu.",
+    "source": "Hadith Muslim 330 sur Umm Salama / Consensus",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 21,
+    "categorie": "Purification",
+    "sous_theme": "Ablutions (Ghusl)",
+    "regle": "Le ghusl rituel du vendredi avant la prière du Jumua est fortement recommandé pour les hommes (sunnah mu'akkada).",
+    "explication": "Hadith : 'Le ghusl du vendredi est obligatoire pour tout pubère' — entendu par la majorité comme une forte recommandation.",
+    "source": "Hadith Bukhari 879, Muslim 846",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 22,
+    "categorie": "Purification",
+    "sous_theme": "Ablutions (Ghusl)",
+    "regle": "Le ghusl est recommandé avant les deux fêtes (Aïd al-Fitr et Aïd al-Adha), avant l'ihram du Hajj et de la Umrah.",
+    "explication": "Il s'agit de purification rituelle volontaire pour honorer ces moments importants.",
+    "source": "Sunnah rapportée — pratique des Compagnons / Consensus pour le caractère recommandé",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 23,
+    "categorie": "Purification",
+    "sous_theme": "Ablutions (Ghusl)",
+    "regle": "Le ghusl rituel suit un ordre sunnah : intention, basmala, laver les mains, parties intimes, faire les ablutions complètes, verser l'eau sur la tête trois fois, puis sur tout le corps.",
+    "explication": "Cet ordre suit la pratique du Prophète ﷺ rapportée par Aïcha. L'essentiel reste que l'eau atteigne toute la peau.",
+    "source": "Hadith Bukhari 248, Muslim 316",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 24,
+    "categorie": "Purification",
+    "sous_theme": "Ablutions (Ghusl)",
+    "regle": "Si l'on a fait le ghusl avec l'intention de se purifier de l'impureté majeure, il n'est pas nécessaire de refaire des ablutions mineures pour prier.",
+    "explication": "Le ghusl complet englobe le wudu selon la majorité, à condition qu'il y ait eu intention de se purifier rituellement.",
+    "source": "Pratique du Prophète ﷺ / Majorité des écoles",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 25,
+    "categorie": "Purification",
+    "sous_theme": "Tayammum",
+    "regle": "Le tayammum (ablutions sèches) remplace le wudu et le ghusl en cas d'absence d'eau ou d'impossibilité de l'utiliser.",
+    "explication": "Cas valables : pas d'eau accessible, maladie aggravée par l'eau, froid extrême sans moyen de réchauffer l'eau.",
+    "source": "Coran 4:43 et 5:6 / Consensus 4 écoles",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 26,
+    "categorie": "Purification",
+    "sous_theme": "Tayammum",
+    "regle": "Le tayammum se fait avec une surface terreuse pure : sable, pierre, terre sèche, mur de terre.",
+    "explication": "On frappe les mains au sol une fois (Hanafites : deux fois), on essuie le visage, puis les mains/avant-bras.",
+    "source": "Hadith Bukhari 347 / Divergence sur le nombre de frappes",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 27,
+    "categorie": "Purification",
+    "sous_theme": "Tayammum",
+    "regle": "Un tayammum permet d'accomplir une prière obligatoire selon les Shafi'ites. Pour les autres écoles, plusieurs prières sont possibles tant qu'un annulant n'intervient pas.",
+    "explication": "L'intention et la pureté de la surface utilisée sont les conditions essentielles.",
+    "source": "Divergence classique entre écoles",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 28,
+    "categorie": "Purification",
+    "sous_theme": "Tayammum",
+    "regle": "Si l'eau redevient disponible avant la prière, on doit faire les ablutions normales. Si elle apparaît pendant la prière, on continue selon la majorité.",
+    "explication": "Le tayammum est valable jusqu'à ce qu'on trouve de l'eau utilisable. Après, on refait le wudu pour la prière suivante.",
+    "source": "Hadith Abu Dawud 332 / Majorité des écoles",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 29,
+    "categorie": "Purification",
+    "sous_theme": "Impuretés (Najasa)",
+    "regle": "L'urine humaine, les excréments humains, le sang menstruel et les sécrétions sexuelles sont des impuretés majeures.",
+    "explication": "Leur présence sur le corps, les vêtements ou le lieu de prière invalide la prière. Il faut les laver avant.",
+    "source": "Coran 74:4-5 / Hadiths Bukhari 220, Muslim 292 / Consensus",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 30,
+    "categorie": "Purification",
+    "sous_theme": "Impuretés (Najasa)",
+    "regle": "Le sang menstruel ou les saignements sur un vêtement se lavent avec de l'eau jusqu'à disparition visible.",
+    "explication": "Si une trace persiste après lavage soigneux, elle est tolérée. Le Prophète ﷺ a enseigné à Asma : 'Frotte-le, rince-le à l'eau, puis prie avec.'",
+    "source": "Hadith Bukhari 227, Muslim 291",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 31,
+    "categorie": "Purification",
+    "sous_theme": "Impuretés (Najasa)",
+    "regle": "L'urine de nourrisson garçon (avant l'introduction d'aliments solides) se purifie en aspergeant d'eau, contrairement à celle de la fille qui nécessite un lavage complet.",
+    "explication": "Cette règle vient d'un hadith spécifique sur la pratique du Prophète ﷺ avec son petit-fils.",
+    "source": "Hadith Abu Dawud 376, Tirmidhi 610",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 32,
+    "categorie": "Purification",
+    "sous_theme": "Impuretés (Najasa)",
+    "regle": "Le porc et tout ce qui en dérive est impur. Selon les Malikites, le chien vivant n'est pas impur en lui-même mais sa salive l'est.",
+    "explication": "Si la salive de chien touche un récipient, on le lave sept fois dont une avec de la terre selon les Shafi'ites et Hanbalites. Les Malikites lavent par recommandation rituelle.",
+    "source": "Hadith Muslim 279 / Divergence Malikite",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 33,
+    "categorie": "Purification",
+    "sous_theme": "Impuretés (Najasa)",
+    "regle": "Les cadavres d'animaux non sacrifiés rituellement (charogne) sont impurs, à l'exception des poissons et sauterelles.",
+    "explication": "Hadith : 'Deux types de cadavres et deux types de sang nous ont été permis : le poisson et la sauterelle, le foie et la rate.'",
+    "source": "Hadith Ibn Majah 3314, Ahmad",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 34,
+    "categorie": "Purification",
+    "sous_theme": "Impuretés (Najasa)",
+    "regle": "Le vin et toute boisson alcoolisée enivrante sont impures matériellement selon la majorité.",
+    "explication": "Les Hanafites considèrent l'impureté de l'alcool comme moins sévère. Tous s'accordent sur l'interdiction de boire.",
+    "source": "Coran 5:90 / Divergence sur la nature de l'impureté",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 35,
+    "categorie": "Purification",
+    "sous_theme": "Menstruation",
+    "regle": "Pendant les menstruations, la prière est suspendue et n'est pas à rattraper. Le jeûne est interrompu et doit être rattrapé.",
+    "explication": "C'est une particularité : la prière est exemptée définitivement, le jeûne juste reporté. Aïcha questionnée à ce sujet a confirmé cette règle.",
+    "source": "Hadith Bukhari 321, Muslim 335 / Consensus 4 écoles",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 36,
+    "categorie": "Purification",
+    "sous_theme": "Menstruation",
+    "regle": "Pendant les règles, la femme ne peut pas effectuer le tawaf, entrer dans la mosquée pour y séjourner, toucher le Coran selon la majorité.",
+    "explication": "Elle peut lire le Coran de mémoire, faire des invocations, écouter les récitations.",
+    "source": "Hadith Tirmidhi 131 / Majorité des écoles",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 37,
+    "categorie": "Purification",
+    "sous_theme": "Menstruation",
+    "regle": "Les rapports conjugaux sont interdits pendant les menstruations. Les autres formes d'affection restent permises.",
+    "explication": "Coran : 'Tenez-vous écartés des femmes pendant les menstruations.' L'interdiction porte sur la pénétration uniquement.",
+    "source": "Coran 2:222 / Hadith Muslim 302",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 38,
+    "categorie": "Purification",
+    "sous_theme": "Menstruation",
+    "regle": "La durée maximale des règles est de 15 jours selon les Shafi'ites et Hanbalites, 10 jours selon les Hanafites.",
+    "explication": "Au-delà, tout saignement est considéré comme istihada (saignement pathologique) qui ne suspend pas la prière ni le jeûne.",
+    "source": "Divergence d'écoles classique",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 39,
+    "categorie": "Purification",
+    "sous_theme": "Menstruation",
+    "regle": "Après l'accouchement (nifas), la durée maximale est de 40 jours selon la majorité.",
+    "explication": "Si le saignement s'arrête avant 40 jours, la femme fait son ghusl et reprend prière et jeûne. Au-delà, c'est istihada.",
+    "source": "Hadith Abu Dawud 311, Tirmidhi 139 / Majorité des écoles",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 40,
+    "categorie": "Purification",
+    "sous_theme": "Eau",
+    "regle": "En cas de doute sur la pureté d'une eau ou d'un vêtement, on s'en tient à la base : tout est pur jusqu'à preuve du contraire.",
+    "explication": "Principe fondamental du fiqh : al-yaqin la yazulu bi-shak (la certitude n'est pas levée par le doute).",
+    "source": "Hadith Muslim 361 / Règle juridique majeure",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 41,
+    "categorie": "Prière",
+    "sous_theme": "Conditions de validité",
+    "regle": "La prière n'est valide que si elle est accomplie dans son temps prescrit. Prier avant l'entrée du temps est nul.",
+    "explication": "Sauf en cas de jumu' (combinaison Dhuhr-Asr ou Maghrib-Isha) en voyage ou pluie, selon les conditions de chaque école.",
+    "source": "Coran 4:103 'La prière est prescrite aux croyants en des temps déterminés' / Consensus",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 42,
+    "categorie": "Prière",
+    "sous_theme": "Conditions de validité",
+    "regle": "L'orientation vers la Qibla (la Ka'ba) est une condition de validité pour les prières obligatoires.",
+    "explication": "En cas d'impossibilité de déterminer la direction, on s'efforce d'estimer puis on prie. Si on découvre une erreur après, la prière reste valide.",
+    "source": "Coran 2:144 / Consensus 4 écoles",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 43,
+    "categorie": "Prière",
+    "sous_theme": "Conditions de validité",
+    "regle": "Couvrir la 'awra (parties intimes) est obligatoire. Pour l'homme : du nombril aux genoux. Pour la femme : tout le corps sauf le visage et les mains.",
+    "explication": "Si une partie de la 'awra se découvre involontairement pendant la prière, on remédie rapidement et la prière reste valide.",
+    "source": "Hadith Abu Dawud 641 / Consensus pour les principes de base",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 44,
+    "categorie": "Prière",
+    "sous_theme": "Conditions de validité",
+    "regle": "L'état de pureté rituelle (wudu ou ghusl selon le cas) est obligatoire avant chaque prière.",
+    "explication": "Prier sciemment sans pureté rituelle est un péché majeur et la prière est nulle.",
+    "source": "Coran 5:6 / Hadith Bukhari 6954 / Consensus",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 45,
+    "categorie": "Prière",
+    "sous_theme": "Conditions de validité",
+    "regle": "Le lieu de prière doit être pur. Tapis, sol, vêtements ne doivent pas porter d'impureté visible.",
+    "explication": "Une impureté infime invisible peut être tolérée selon la majorité, mais on évite la prière sur ce qu'on sait souillé.",
+    "source": "Hadith Bukhari 220 / Consensus sur la propreté du lieu",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 46,
+    "categorie": "Prière",
+    "sous_theme": "Conditions de validité",
+    "regle": "L'intention (niyyah) est intérieure et précise. On nomme dans son cœur la prière qu'on accomplit (Dhuhr, Asr, etc.).",
+    "explication": "L'intention se forme avant le takbir d'ouverture. Pas besoin de la prononcer à voix haute (déconseillé par la majorité).",
+    "source": "Hadith Bukhari 1, Muslim 1907 / Consensus",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 47,
+    "categorie": "Prière",
+    "sous_theme": "Conditions de validité",
+    "regle": "Connaître l'entrée du temps de la prière est obligatoire. Le doute sur le temps rend nécessaire l'attente certaine.",
+    "explication": "Aujourd'hui, applications et calendriers locaux fiables remplacent l'observation directe. À choisir un horaire validé par sa mosquée.",
+    "source": "Coran 4:103 / Principe de précaution fiqhique",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 48,
+    "categorie": "Prière",
+    "sous_theme": "Conditions de validité",
+    "regle": "L'islam, la raison et le discernement (à partir de 7 ans selon la majorité) sont des conditions préalables à l'obligation de prier.",
+    "explication": "L'enfant est invité à prier à 7 ans et corrigé fermement à 10 ans, selon le hadith bien connu.",
+    "source": "Hadith Abu Dawud 495, Ahmad 6756 / Consensus pédagogique",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 49,
+    "categorie": "Prière",
+    "sous_theme": "Adhan",
+    "regle": "L'adhan (appel à la prière) est une obligation collective (fard kifaya) sur les hommes d'une localité.",
+    "explication": "Si une mosquée du quartier appelle, l'obligation est levée pour les autres. Le particulier qui prie chez lui n'a pas à appeler.",
+    "source": "Hadith Bukhari 7246 / Consensus sur le caractère obligatoire collectif",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 50,
+    "categorie": "Prière",
+    "sous_theme": "Adhan",
+    "regle": "Il est recommandé de répéter ce que dit le muezzin, puis de demander la wasîla (intercession) pour le Prophète ﷺ.",
+    "explication": "Hadith : 'Celui qui dit après l'adhan : Allahumma rabba hadhihi'd-da'wati... ma intercession lui sera due au Jour du Jugement.'",
+    "source": "Hadith Bukhari 614 / Sunnah confirmée",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 51,
+    "categorie": "Prière",
+    "sous_theme": "Adhan",
+    "regle": "Entre l'adhan et l'iqama, l'invocation est recommandée et acceptée.",
+    "explication": "Hadith : 'L'invocation entre l'adhan et l'iqama n'est pas refusée.' C'est un moment privilégié.",
+    "source": "Hadith Abu Dawud 521, Tirmidhi 212 — hasan",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 52,
+    "categorie": "Prière",
+    "sous_theme": "Adhan",
+    "regle": "L'iqama est l'annonce immédiate du début de la prière en groupe. Elle se dit à voix basse.",
+    "explication": "Sa forme diffère légèrement entre les écoles, mais le principe est partagé : annoncer le commencement.",
+    "source": "Hadith Bukhari 605 / Consensus avec variantes",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 53,
+    "categorie": "Prière",
+    "sous_theme": "Piliers (Arkân)",
+    "regle": "Se tenir debout (qiyâm) pendant les prières obligatoires est un pilier pour celui qui en est capable.",
+    "explication": "En cas d'incapacité (maladie, blessure), on prie assis, puis allongé sur le côté droit en dernier recours.",
+    "source": "Coran 2:238 / Hadith Bukhari 1117 / Consensus",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 54,
+    "categorie": "Prière",
+    "sous_theme": "Piliers (Arkân)",
+    "regle": "Le takbir d'ouverture (Allahu Akbar) est un pilier qui inaugure la prière.",
+    "explication": "Sans lui, on n'entre pas dans la prière. C'est la frontière entre le monde profane et le moment sacré.",
+    "source": "Hadith Bukhari 757, Muslim 397 / Consensus",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 55,
+    "categorie": "Prière",
+    "sous_theme": "Piliers (Arkân)",
+    "regle": "Réciter la sourate Al-Fatiha dans chaque rak'ah est un pilier selon la majorité des écoles.",
+    "explication": "Hadith : 'Pas de prière pour celui qui ne récite pas la Fatiha.' Les Hanafites considèrent que toute récitation coranique suffit, mais Al-Fatiha reste fortement recommandée.",
+    "source": "Hadith Bukhari 756, Muslim 394 / Divergence Hanafite",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 56,
+    "categorie": "Prière",
+    "sous_theme": "Piliers (Arkân)",
+    "regle": "L'inclinaison (rukû') est un pilier. Elle s'effectue en posant les mains sur les genoux, dos parallèle au sol.",
+    "explication": "On y dit 'Subhana Rabbiya al-'Adhim' (Gloire à mon Seigneur l'Immense) trois fois minimum.",
+    "source": "Coran 22:77 / Hadith Bukhari 793 / Consensus",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 57,
+    "categorie": "Prière",
+    "sous_theme": "Piliers (Arkân)",
+    "regle": "Se redresser après l'inclinaison (i'tidâl) en disant 'Sami' Allahu liman hamidah' puis 'Rabbana wa laka al-hamd' est un pilier.",
+    "explication": "Pour l'imam et l'individuel : 'Sami' Allahu...'. Pour le suiveur : 'Rabbana wa laka al-hamd'. Les deux pour celui qui prie seul.",
+    "source": "Hadith Bukhari 689, Muslim 411",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 58,
+    "categorie": "Prière",
+    "sous_theme": "Piliers (Arkân)",
+    "regle": "La prosternation (sujûd) est un pilier. Sept membres doivent toucher le sol : front avec nez, deux mains, deux genoux, deux pointes de pieds.",
+    "explication": "Hadith explicite du Prophète ﷺ. On y dit 'Subhana Rabbiya al-A'la' (Gloire à mon Seigneur le Très-Haut).",
+    "source": "Hadith Bukhari 812, Muslim 490 / Consensus",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 59,
+    "categorie": "Prière",
+    "sous_theme": "Piliers (Arkân)",
+    "regle": "S'asseoir entre les deux prosternations (jalsa) est un pilier. On y dit 'Rabbi ighfir li' (Seigneur, pardonne-moi).",
+    "explication": "Le calme et la tranquillité dans cette position sont obligatoires. La précipitation invalide ce pilier.",
+    "source": "Hadith Bukhari 793, Muslim 397",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 60,
+    "categorie": "Prière",
+    "sous_theme": "Piliers (Arkân)",
+    "regle": "La quiétude (tuma'nina) dans chaque position est un pilier. Bouger sans s'arrêter invalide la prière.",
+    "explication": "Le Prophète ﷺ à un homme pressé : 'Retourne et prie, car tu n'as pas prié.' La hâte est l'ennemi de la prière.",
+    "source": "Hadith Bukhari 6251, Muslim 397 / Consensus",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 61,
+    "categorie": "Prière",
+    "sous_theme": "Piliers (Arkân)",
+    "regle": "Le dernier tashahhud (assise finale avec attestation de foi) est un pilier de la prière selon la majorité.",
+    "explication": "On y dit At-Tahiyyatu... et la prière sur le Prophète ﷺ. C'est l'avant-dernier acte de la prière.",
+    "source": "Hadith Bukhari 6230, Muslim 402 / Majorité",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 62,
+    "categorie": "Prière",
+    "sous_theme": "Piliers (Arkân)",
+    "regle": "Les deux salutations finales (taslim) à droite puis à gauche concluent la prière. C'est un pilier.",
+    "explication": "'As-salamu alaykum wa rahmatullah' à droite, puis à gauche. Pour la prière mortuaire, un seul taslim suffit.",
+    "source": "Hadith Muslim 582 / Consensus",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 63,
+    "categorie": "Prière",
+    "sous_theme": "Piliers (Arkân)",
+    "regle": "L'ordre des actes (tartîb) est lui-même un pilier. Inverser un pilier annule la prière s'il est volontaire.",
+    "explication": "Inverser par oubli oblige à recommencer cette portion, puis à faire les prosternations d'oubli (sujûd as-sahw) à la fin.",
+    "source": "Pratique constante du Prophète ﷺ / Consensus",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 64,
+    "categorie": "Prière",
+    "sous_theme": "Actes obligatoires (Wâjib)",
+    "regle": "Tous les takbirs intermédiaires (autres que celui d'ouverture) sont des actes obligatoires.",
+    "explication": "On les dit en passant d'une position à l'autre. Leur oubli oblige aux prosternations d'oubli en fin de prière.",
+    "source": "Hadith Bukhari 803 / Sunnah confirmée par pratique des Compagnons",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 65,
+    "categorie": "Prière",
+    "sous_theme": "Actes obligatoires (Wâjib)",
+    "regle": "Le tashahhud intermédiaire (assise au milieu des prières de 3 ou 4 rak'ah) est un acte obligatoire.",
+    "explication": "L'oublier oblige à compenser par les prosternations d'oubli sans invalider la prière.",
+    "source": "Hadith Bukhari 1224 sur l'oubli du Prophète ﷺ",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 66,
+    "categorie": "Prière",
+    "sous_theme": "Actes obligatoires (Wâjib)",
+    "regle": "Les invocations dans le rukû' (Subhana Rabbiya al-'Adhim) et dans le sujûd (Subhana Rabbiya al-A'la) sont obligatoires.",
+    "explication": "Trois fois minimum est recommandé. Une fois est l'obligation. Les Shafi'ites les considèrent comme sunnah.",
+    "source": "Hadith Abu Dawud 869, 870 / Divergence d'écoles",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 67,
+    "categorie": "Prière",
+    "sous_theme": "Actes obligatoires (Wâjib)",
+    "regle": "Réciter 'Sami' Allahu liman hamidah' en se redressant du rukû' est obligatoire pour l'imam et celui qui prie seul.",
+    "explication": "Le suiveur (ma'mum) dit lui 'Rabbana wa laka al-hamd' en se redressant.",
+    "source": "Hadith Bukhari 689, 795",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 68,
+    "categorie": "Prière",
+    "sous_theme": "Actes obligatoires (Wâjib)",
+    "regle": "L'invocation entre les deux prosternations 'Rabbi ighfir li' (Seigneur, pardonne-moi) est obligatoire pour les Hanbalites.",
+    "explication": "Les autres écoles la considèrent comme sunnah fortement recommandée.",
+    "source": "Hadith Abu Dawud 850 / Divergence d'écoles",
+    "ecole": "Hanbalite"
+  },
+  {
+    "jour": 69,
+    "categorie": "Prière",
+    "sous_theme": "Actes obligatoires (Wâjib)",
+    "regle": "Réciter la prière sur le Prophète ﷺ (As-Salatu al-Ibrahimiyya) dans le dernier tashahhud est obligatoire pour les Shafi'ites et Hanbalites.",
+    "explication": "Les Hanafites et Malikites la considèrent comme sunnah.",
+    "source": "Hadith Bukhari 3370, Muslim 406 / Divergence",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 70,
+    "categorie": "Prière",
+    "sous_theme": "Actes sunnah",
+    "regle": "Lever les mains au takbir d'ouverture (à hauteur des épaules ou des oreilles) est sunnah confirmée.",
+    "explication": "Les Hanafites lèvent jusqu'aux oreilles, les autres aux épaules. Les deux pratiques sont prouvées.",
+    "source": "Hadith Bukhari 738, Muslim 390",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 71,
+    "categorie": "Prière",
+    "sous_theme": "Actes sunnah",
+    "regle": "Croiser les mains sur la poitrine ou au-dessous du nombril pendant le qiyâm est sunnah.",
+    "explication": "Hanbalites et Shafi'ites : sur la poitrine. Hanafites : sous le nombril. Malikites : préfèrent les laisser pendantes (pratique sadl).",
+    "source": "Hadith Muslim 401 / Divergence des écoles",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 72,
+    "categorie": "Prière",
+    "sous_theme": "Actes sunnah",
+    "regle": "Réciter l'invocation d'ouverture (du'a al-istiftah) après le takbir d'entrée est sunnah.",
+    "explication": "Plusieurs formules sont rapportées : 'Subhanaka Allahumma...', 'Wajjahtu wajhi...'.",
+    "source": "Hadith Muslim 771",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 73,
+    "categorie": "Prière",
+    "sous_theme": "Actes sunnah",
+    "regle": "Réciter une sourate après Al-Fatiha dans les deux premières rak'ah des prières est sunnah pour les Hanafites, obligation pour les autres dans certaines prières.",
+    "explication": "Cette divergence porte sur les prières individuelles. En suiveur, on écoute la récitation de l'imam.",
+    "source": "Hadith Bukhari 776 / Divergence d'écoles",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 74,
+    "categorie": "Prière",
+    "sous_theme": "Actes sunnah",
+    "regle": "Récitation à voix audible dans Fajr, les deux premières rak'ah de Maghrib et d'Isha. Récitation silencieuse pour Dhuhr et Asr.",
+    "explication": "Pour l'individuel, le choix est permis selon la majorité, mais suivre la sunnah de l'imam reste préférable.",
+    "source": "Hadith Bukhari 762, Muslim 396",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 75,
+    "categorie": "Prière",
+    "sous_theme": "Actes sunnah",
+    "regle": "Demander la protection contre Satan (ta'awwudh) avant la récitation est sunnah.",
+    "explication": "On dit 'A'udhu billahi mina ash-shaytani r-rajim' avant Al-Fatiha dans la première rak'ah uniquement selon la majorité.",
+    "source": "Coran 16:98 / Pratique constante",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 76,
+    "categorie": "Prière",
+    "sous_theme": "Actes sunnah",
+    "regle": "Dire 'Amîn' après la Fatiha (à voix haute si on prie à voix haute) est sunnah.",
+    "explication": "Hadith : 'Quand l'imam dit Amîn, dites Amîn. Celui dont le Amîn coïncide avec celui des anges verra ses péchés passés pardonnés.'",
+    "source": "Hadith Bukhari 780, Muslim 410",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 77,
+    "categorie": "Prière",
+    "sous_theme": "Actes sunnah",
+    "regle": "Regarder vers le lieu de prosternation pendant la prière est sunnah.",
+    "explication": "Lever les yeux vers le ciel est interdit. Fermer les yeux est déconseillé par la majorité.",
+    "source": "Hadith Bukhari 750 / Pratique du Prophète ﷺ",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 78,
+    "categorie": "Prière",
+    "sous_theme": "Annulants",
+    "regle": "Manger ou boire volontairement pendant la prière l'annule.",
+    "explication": "Le geste involontaire (avaler de la salive, par exemple) ne l'annule pas. La prière redevient nulle si on en prend conscience et continue.",
+    "source": "Consensus 4 écoles",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 79,
+    "categorie": "Prière",
+    "sous_theme": "Annulants",
+    "regle": "Parler volontairement pendant la prière annule celle-ci, sauf rappel sourate ou invocation autorisée.",
+    "explication": "Au début de l'Islam, la parole était permise puis interdite. Sourire ne l'annule pas selon la majorité, rire bruyamment oui.",
+    "source": "Hadith Muslim 537",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 80,
+    "categorie": "Prière",
+    "sous_theme": "Annulants",
+    "regle": "Bouger excessivement et continuellement (3 fois consécutives de mouvement non lié à la prière) l'annule selon la majorité.",
+    "explication": "Un seul geste pour ajuster un vêtement, déplacer un objet pour la sécurité, etc., reste toléré.",
+    "source": "Hadith Bukhari 511 sur le Prophète ﷺ portant sa petite-fille pendant la prière / Majorité",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 81,
+    "categorie": "Prière",
+    "sous_theme": "Annulants",
+    "regle": "Découvrir volontairement la 'awra (parties intimes) pendant la prière l'annule.",
+    "explication": "Si c'est par accident (vent, tissu qui glisse), on remédie immédiatement et la prière reste valide.",
+    "source": "Consensus sur la condition de couverture",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 82,
+    "categorie": "Prière",
+    "sous_theme": "Annulants",
+    "regle": "Perdre la pureté rituelle pendant la prière (gaz, etc.) l'annule. On recommence après ablutions.",
+    "explication": "Aucune excuse n'est valable. On sort de la prière, on refait le wudu, on reprend dès le takbir d'ouverture.",
+    "source": "Hadith Muslim 225 / Consensus",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 83,
+    "categorie": "Prière",
+    "sous_theme": "Prière en groupe",
+    "regle": "La prière en groupe (jama'a) est fortement recommandée pour les hommes, voire obligatoire pour certains savants.",
+    "explication": "Hadith : 'La prière en groupe vaut 27 fois celle accomplie seul.' Pour les femmes, prier à la maison est meilleur sauf exception.",
+    "source": "Hadith Bukhari 645, Muslim 650 / Majorité",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 84,
+    "categorie": "Prière",
+    "sous_theme": "Prière en groupe",
+    "regle": "L'imam doit être choisi parmi les plus savants en Coran et en religion de l'assemblée.",
+    "explication": "Hadith : 'L'imam est celui qui récite le mieux le Livre d'Allah.' Si égalité, on choisit le plus âgé.",
+    "source": "Hadith Muslim 673",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 85,
+    "categorie": "Prière",
+    "sous_theme": "Prière en groupe",
+    "regle": "Le suiveur (ma'mum) doit aligner ses pieds et ses épaules avec ses voisins. Les rangs doivent être serrés.",
+    "explication": "Hadith : 'Alignez vos rangs car aligner les rangs fait partie de la perfection de la prière.' Sinon, Allah peut diviser leurs cœurs.",
+    "source": "Hadith Bukhari 717, Muslim 433",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 86,
+    "categorie": "Prière",
+    "sous_theme": "Prière en groupe",
+    "regle": "Suivre l'imam est obligatoire : ne pas le devancer dans les mouvements, ne pas se laisser distancer.",
+    "explication": "Devancer délibérément l'imam dans le rukû' ou le sujûd invalide cette rak'ah selon la majorité.",
+    "source": "Hadith Bukhari 691, Muslim 427",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 87,
+    "categorie": "Prière",
+    "sous_theme": "Prière du vendredi",
+    "regle": "La prière du vendredi (Jumua) est obligatoire pour tout homme musulman adulte, libre, résident.",
+    "explication": "Les femmes, voyageurs, malades, enfants en sont exemptés. Pour les exemptés, ils prient Dhuhr à la place.",
+    "source": "Coran 62:9 / Hadith Abu Dawud 1067 / Consensus",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 88,
+    "categorie": "Prière",
+    "sous_theme": "Prière du vendredi",
+    "regle": "Le ghusl, le parfum, les vêtements propres, la marche à pied vers la mosquée sont des sunnah du vendredi.",
+    "explication": "Hadith : 'Celui qui fait le ghusl, se parfume, vient tôt et marche à pied... aura à chaque pas la récompense d'une année de jeûne et de prière.'",
+    "source": "Hadith Tirmidhi 496 / Sunnah confirmée",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 89,
+    "categorie": "Prière",
+    "sous_theme": "Prière du vendredi",
+    "regle": "Pendant le sermon (khutba), écouter attentivement et en silence est obligatoire.",
+    "explication": "Hadith : 'Si tu dis à ton compagnon ‘Tais-toi’ pendant que l'imam prêche, tu as commis une futilité.'",
+    "source": "Hadith Bukhari 934, Muslim 851 / Consensus",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 90,
+    "categorie": "Prière",
+    "sous_theme": "Prière du vendredi",
+    "regle": "Lire la sourate Al-Kahf le vendredi est une sunnah hautement recommandée.",
+    "explication": "Hadith : 'Celui qui lit Al-Kahf le vendredi, une lumière l'illuminera entre les deux vendredis.'",
+    "source": "Hadith Hakim, Bayhaqi — authentifié par Al-Albani",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 91,
+    "categorie": "Prière",
+    "sous_theme": "Prières surérogatoires",
+    "regle": "Les prières sunnah confirmées (rawatib) accompagnent les obligatoires : 2 avant Fajr, 4 avant Dhuhr et 2 après, 2 après Maghrib, 2 après Isha.",
+    "explication": "Hadith : 'Celui qui prie 12 rak'ah par jour en surérogatoires, Allah lui construit une maison au Paradis.'",
+    "source": "Hadith Muslim 728",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 92,
+    "categorie": "Prière",
+    "sous_theme": "Prières surérogatoires",
+    "regle": "Les deux rak'ah avant Fajr sont les plus importantes des prières surérogatoires.",
+    "explication": "Hadith : 'Les deux rak'ah de Fajr sont meilleures que ce bas-monde et tout ce qu'il contient.'",
+    "source": "Hadith Muslim 725",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 93,
+    "categorie": "Prière",
+    "sous_theme": "Prières surérogatoires",
+    "regle": "La prière de la nuit (qiyam al-layl ou tahajjud) est la meilleure des prières surérogatoires après les obligatoires.",
+    "explication": "Hadith : 'La meilleure prière après l'obligatoire est celle de la nuit.' Son meilleur moment est le dernier tiers de la nuit.",
+    "source": "Hadith Muslim 1163",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 94,
+    "categorie": "Prière",
+    "sous_theme": "Prières surérogatoires",
+    "regle": "La prière du witr (impair, 1 ou 3 ou 5... rak'ah) est sunnah fortement recommandée, obligatoire selon les Hanafites.",
+    "explication": "Elle se prie après Isha, jusqu'à juste avant Fajr. Elle est la dernière prière de la nuit.",
+    "source": "Hadith Bukhari 472, 998 / Divergence d'écoles",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 95,
+    "categorie": "Prière",
+    "sous_theme": "Prière du voyageur",
+    "regle": "En voyage, on peut raccourcir les prières de 4 rak'ah à 2 (qasr) : Dhuhr, Asr, Isha. Fajr et Maghrib restent inchangées.",
+    "explication": "Le voyage doit dépasser environ 80-90 km selon la majorité. Les Hanafites parlent de 3 jours de marche.",
+    "source": "Coran 4:101 / Hadith Bukhari 1080 / Consensus sur le principe",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 96,
+    "categorie": "Prière",
+    "sous_theme": "Prière du voyageur",
+    "regle": "On peut combiner (jumu') deux prières en voyage : Dhuhr avec Asr, Maghrib avec Isha.",
+    "explication": "Soit en avançant la seconde au temps de la première, soit en repoussant la première au temps de la seconde.",
+    "source": "Hadith Bukhari 1107, Muslim 705",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 97,
+    "categorie": "Jeûne",
+    "sous_theme": "Conditions et obligation",
+    "regle": "Le jeûne du mois de Ramadan est une obligation sur tout musulman adulte, sain d'esprit, capable physiquement, résident.",
+    "explication": "C'est le quatrième pilier de l'Islam. Sont exemptés : enfant pré-pubère, malade chronique, vieillard, voyageur, femme menstruée ou allaitante.",
+    "source": "Coran 2:183-185 / Consensus",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 98,
+    "categorie": "Jeûne",
+    "sous_theme": "Conditions et obligation",
+    "regle": "Le jeûne est obligatoire dès la confirmation du début du mois (par vision lunaire ou calcul fiable selon les écoles).",
+    "explication": "Hadith : 'Jeûnez à sa vision et rompez à sa vision.' Aujourd'hui, les autorités locales fournissent les dates.",
+    "source": "Hadith Bukhari 1909, Muslim 1081",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 99,
+    "categorie": "Jeûne",
+    "sous_theme": "Conditions et obligation",
+    "regle": "Pour le voyageur et le malade, jeûner ou rompre est un choix. Si on rompt, le rattrapage est obligatoire après.",
+    "explication": "Coran : 'Quiconque est malade ou en voyage, qu'il jeûne un nombre égal d'autres jours.'",
+    "source": "Coran 2:184",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 100,
+    "categorie": "Jeûne",
+    "sous_theme": "Conditions et obligation",
+    "regle": "Le malade chronique incapable de jeûner et le très âgé doivent nourrir un pauvre pour chaque jour manqué (fidya).",
+    "explication": "La fidya est d'un repas par jour. Si l'on devient capable de rattraper plus tard, on doit jeûner les jours manqués.",
+    "source": "Coran 2:184 / Consensus",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 101,
+    "categorie": "Jeûne",
+    "sous_theme": "Intention",
+    "regle": "L'intention pour le jeûne obligatoire de Ramadan doit être prise avant l'aube (Fajr).",
+    "explication": "Hadith : 'Pas de jeûne pour qui n'aura pas eu l'intention avant l'aube.' L'intention est une fois pour tout le mois selon les Malikites.",
+    "source": "Hadith Abu Dawud 2454, Tirmidhi 730 / Divergence sur le détail",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 102,
+    "categorie": "Jeûne",
+    "sous_theme": "Intention",
+    "regle": "Pour les jeûnes surérogatoires, l'intention peut être prise après l'aube, avant midi, à condition de n'avoir rien mangé ni bu.",
+    "explication": "Le Prophète ﷺ disait : 'Avez-vous quelque chose à manger ?' Si non : 'Alors je jeûne aujourd'hui.'",
+    "source": "Hadith Muslim 1154",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 103,
+    "categorie": "Jeûne",
+    "sous_theme": "Intention",
+    "regle": "L'intention est dans le cœur. La prononcer à voix haute est innovation pour la majorité.",
+    "explication": "Savoir qu'on va jeûner demain (Ramadan) suffit comme intention selon plusieurs savants.",
+    "source": "Principe général : 'Innama al-a'malu bi-niyyat' / Pratique des Compagnons",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 104,
+    "categorie": "Jeûne",
+    "sous_theme": "Annulants",
+    "regle": "Manger, boire et avoir des rapports conjugaux volontairement entre l'aube et le coucher du soleil annule le jeûne.",
+    "explication": "Si fait par oubli, le jeûne reste valide selon la majorité : 'Allah l'a nourri et abreuvé' (hadith).",
+    "source": "Coran 2:187 / Hadith Bukhari 1933",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 105,
+    "categorie": "Jeûne",
+    "sous_theme": "Annulants",
+    "regle": "Le vomissement volontaire annule le jeûne. Le vomissement involontaire ne l'annule pas.",
+    "explication": "Hadith : 'Celui qui vomit involontairement n'a rien à rattraper. Celui qui se fait vomir doit rattraper.'",
+    "source": "Hadith Tirmidhi 720, Abu Dawud 2380",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 106,
+    "categorie": "Jeûne",
+    "sous_theme": "Annulants",
+    "regle": "L'éjaculation provoquée (regard prolongé, contact) annule le jeûne et oblige au rattrapage.",
+    "explication": "Le rêve nocturne avec éjaculation n'annule pas le jeûne. On fait le ghusl et on continue.",
+    "source": "Consensus sur le caractère annulant de l'acte volontaire",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 107,
+    "categorie": "Jeûne",
+    "sous_theme": "Annulants",
+    "regle": "L'apparition des règles ou des lochies annule immédiatement le jeûne, même quelques minutes avant le coucher du soleil.",
+    "explication": "Le jour doit être rattrapé après le mois de Ramadan. La femme ne prie pas ni ne jeûne pendant ses règles.",
+    "source": "Hadith Bukhari 304 / Consensus",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 108,
+    "categorie": "Jeûne",
+    "sous_theme": "Annulants",
+    "regle": "L'injection intraveineuse de nutriments (perfusion alimentaire) annule le jeûne selon la majorité contemporaine.",
+    "explication": "Une injection musculaire de médicament non nutritif n'annule pas le jeûne selon de nombreux savants modernes.",
+    "source": "Fatwas contemporaines des grands conseils (Académie du fiqh islamique de l'OCI)",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 109,
+    "categorie": "Jeûne",
+    "sous_theme": "Annulants",
+    "regle": "Le brossage des dents avec dentifrice est toléré tant qu'on ne l'avale pas. Mieux vaut le faire en dehors des heures de jeûne.",
+    "explication": "Le siwak (brosse à dents naturelle) est sunnah et n'annule pas le jeûne, à toute heure.",
+    "source": "Hadith Bukhari 887 / Avis savants contemporains",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 110,
+    "categorie": "Jeûne",
+    "sous_theme": "Kaffara et rattrapage",
+    "regle": "Pour un jour de Ramadan rompu volontairement par rapports conjugaux, la kaffara (expiation) est obligatoire en plus du rattrapage.",
+    "explication": "Kaffara : libérer un esclave (impossible aujourd'hui), ou jeûner 60 jours consécutifs, ou nourrir 60 pauvres.",
+    "source": "Hadith Bukhari 1936, Muslim 1111 / Consensus",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 111,
+    "categorie": "Jeûne",
+    "sous_theme": "Kaffara et rattrapage",
+    "regle": "Pour un jour rompu par maladie ou voyage, seul le rattrapage (qada') est obligatoire, pas de kaffara.",
+    "explication": "Le rattrapage peut se faire à tout moment avant le Ramadan suivant. Au-delà, certains imposent fidya en plus.",
+    "source": "Coran 2:184",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 112,
+    "categorie": "Jeûne",
+    "sous_theme": "Kaffara et rattrapage",
+    "regle": "La femme enceinte ou allaitante qui craint pour elle ou son enfant peut rompre. Le rattrapage seul ou avec fidya selon l'école.",
+    "explication": "Hanafites/Malikites : rattrapage seul. Shafi'ites/Hanbalites : rattrapage + fidya si crainte pour l'enfant seul.",
+    "source": "Coran 2:184 / Divergence d'écoles",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 113,
+    "categorie": "Jeûne",
+    "sous_theme": "Kaffara et rattrapage",
+    "regle": "Le rattrapage ne nécessite pas la consécutivité, mais elle est préférable.",
+    "explication": "Si on a 5 jours à rattraper, on peut les espacer dans l'année. Mieux vaut commencer dès que possible.",
+    "source": "Coran 2:184 'ayyamin ukhar' (autres jours)",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 114,
+    "categorie": "Jeûne",
+    "sous_theme": "Jeûnes recommandés",
+    "regle": "Jeûner six jours du mois de Shawwâl (après Ramadan) est fortement recommandé.",
+    "explication": "Hadith : 'Celui qui jeûne Ramadan puis le fait suivre de six jours de Shawwâl, c'est comme s'il avait jeûné toute l'année.'",
+    "source": "Hadith Muslim 1164",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 115,
+    "categorie": "Jeûne",
+    "sous_theme": "Jeûnes recommandés",
+    "regle": "Jeûner le jour de Arafat (9 Dhul-Hijja) est fortement recommandé pour ceux qui ne font pas le Hajj.",
+    "explication": "Hadith : 'Jeûner le jour de Arafat expie les péchés de l'année précédente et de l'année à venir.'",
+    "source": "Hadith Muslim 1162",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 116,
+    "categorie": "Jeûne",
+    "sous_theme": "Jeûnes recommandés",
+    "regle": "Jeûner le 10 Muharram (Ashura) est sunnah confirmée. Mieux vaut y ajouter le 9 ou le 11.",
+    "explication": "Hadith : 'Jeûner Ashura expie les péchés de l'année passée.' On ajoute un jour pour se distinguer des juifs.",
+    "source": "Hadith Muslim 1162, 1134",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 117,
+    "categorie": "Jeûne",
+    "sous_theme": "Jeûnes recommandés",
+    "regle": "Jeûner les lundis et jeudis chaque semaine est sunnah du Prophète ﷺ.",
+    "explication": "Hadith : 'Les actes sont présentés à Allah les lundis et jeudis. J'aime que les miens le soient pendant que je jeûne.'",
+    "source": "Hadith Tirmidhi 747",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 118,
+    "categorie": "Jeûne",
+    "sous_theme": "Layla al-Qadr / I'tikaf",
+    "regle": "La nuit du Destin (Laylat al-Qadr) est cherchée dans les dix dernières nuits impaires du Ramadan.",
+    "explication": "Le Prophète ﷺ y a particulièrement insisté sur la 21e, 23e, 25e, 27e, 29e. Y veiller est immense en récompense.",
+    "source": "Coran 97 / Hadith Bukhari 2017",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 119,
+    "categorie": "Jeûne",
+    "sous_theme": "Layla al-Qadr / I'tikaf",
+    "regle": "L'invocation de la nuit du Destin : 'Allahumma innaka 'afuwwun tuhibbu al-'afwa fa'fu 'annî' (Ô Allah, Tu es Pardonneur, Tu aimes pardonner, pardonne-moi).",
+    "explication": "Aïcha demanda au Prophète ﷺ ce qu'elle devait dire si elle reconnaissait cette nuit. Il lui enseigna cette invocation.",
+    "source": "Hadith Tirmidhi 3513, Ibn Majah 3850 — sahih",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 120,
+    "categorie": "Jeûne",
+    "sous_theme": "Layla al-Qadr / I'tikaf",
+    "regle": "L'i'tikaf (retraite spirituelle à la mosquée) durant les 10 dernières nuits du Ramadan est sunnah confirmée.",
+    "explication": "Le Prophète ﷺ la pratiquait chaque année. Ses femmes l'ont continuée après lui. Pour les femmes, possible à la maison selon certaines écoles.",
+    "source": "Hadith Bukhari 2026, Muslim 1172",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 121,
+    "categorie": "Jeûne",
+    "sous_theme": "Layla al-Qadr / I'tikaf",
+    "regle": "Pendant l'i'tikaf, on reste à la mosquée sauf pour besoins absolument nécessaires (toilettes, ghusl obligatoire).",
+    "explication": "On consacre son temps à la prière, à la lecture du Coran, au dhikr, à l'invocation. Pas de discussions mondaines.",
+    "source": "Hadith Bukhari 2029 / Consensus",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 122,
+    "categorie": "Zakat",
+    "sous_theme": "Conditions d'obligation",
+    "regle": "La zakat est obligatoire sur le musulman libre qui possède un bien atteignant le nisab (seuil) depuis une année lunaire complète (hawl).",
+    "explication": "C'est le troisième pilier de l'Islam. Pour l'or, l'argent, l'argent monétaire, les marchandises de commerce.",
+    "source": "Coran 9:103 / Hadith Bukhari 1395 / Consensus",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 123,
+    "categorie": "Zakat",
+    "sous_theme": "Conditions d'obligation",
+    "regle": "Pour les récoltes, la zakat est due au moment de la récolte, pas après un an.",
+    "explication": "Coran : 'Acquittez-en le droit le jour de la récolte.' Le taux varie : 10% pour terre irriguée naturellement, 5% pour terre arrosée artificiellement.",
+    "source": "Coran 6:141 / Hadith Bukhari 1483",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 124,
+    "categorie": "Zakat",
+    "sous_theme": "Conditions d'obligation",
+    "regle": "Les biens personnels d'usage (maison habitée, voiture personnelle, vêtements) ne sont pas soumis à zakat.",
+    "explication": "Seule la richesse productive ou thésaurisée est concernée. L'or et l'argent portés en bijoux par la femme font l'objet de divergence.",
+    "source": "Consensus pour le principe / Divergence sur les bijoux",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 125,
+    "categorie": "Zakat",
+    "sous_theme": "Conditions d'obligation",
+    "regle": "L'enfant et le malade mental ne sont pas obligés personnellement, mais leur tuteur peut prélever la zakat sur leurs biens selon la majorité.",
+    "explication": "Pour protéger leurs biens et les bénéficiaires. Les Hanafites font exception sur ce point.",
+    "source": "Divergence d'écoles",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 126,
+    "categorie": "Zakat",
+    "sous_theme": "Seuils (nisab)",
+    "regle": "Le nisab de l'or est de 85 grammes d'or pur (équivalent de 20 dinars). En dessous, pas de zakat.",
+    "explication": "Calcul actuel : poids × prix du gramme d'or. Le taux est de 2.5% de la valeur totale, prélevé une fois par an.",
+    "source": "Hadith Abu Dawud 1573 / Consensus",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 127,
+    "categorie": "Zakat",
+    "sous_theme": "Seuils (nisab)",
+    "regle": "Le nisab de l'argent monétaire est l'équivalent de 595 grammes d'argent pur (200 dirhams). C'est généralement plus accessible.",
+    "explication": "Pour l'argent moderne (euros, dollars), on prend le plus avantageux pour le pauvre : le nisab le plus bas entre or et argent.",
+    "source": "Hadith Bukhari 1447 / Avis savants modernes",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 128,
+    "categorie": "Zakat",
+    "sous_theme": "Seuils (nisab)",
+    "regle": "Pour les troupeaux, des seuils précis existent : 5 chameaux, 30 bovins, 40 ovins/caprins minimum.",
+    "explication": "Les barèmes sont détaillés dans les ouvrages classiques de fiqh. Aujourd'hui, peu applicable hors monde rural.",
+    "source": "Hadith Bukhari 1448-1454 / Consensus",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 129,
+    "categorie": "Zakat",
+    "sous_theme": "Seuils (nisab)",
+    "regle": "Pour les récoltes agricoles, le nisab est d'environ 653 kg (5 wasq).",
+    "explication": "S'applique aux denrées stockables : blé, orge, dattes, raisins secs. La majorité étend aux autres récoltes selon la nature locale.",
+    "source": "Hadith Muslim 979 / Consensus pour les céréales et dattes",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 130,
+    "categorie": "Zakat",
+    "sous_theme": "Catégories de biens",
+    "regle": "La zakat porte sur quatre types de biens : monnaie (or, argent, espèces), marchandises de commerce, récoltes agricoles, bétail.",
+    "explication": "Les actions cotées, fonds d'investissement, biens immobiliers de rapport entrent dans une catégorie : 'marchandises de commerce' ou par analogie.",
+    "source": "Consensus classique / Fatwas modernes pour les nouveaux instruments",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 131,
+    "categorie": "Zakat",
+    "sous_theme": "Catégories de biens",
+    "regle": "Les biens immobiliers achetés pour usage personnel ne sont pas soumis à zakat. Ceux destinés à la revente le sont (zakat sur la valeur de revente).",
+    "explication": "Pour un bien locatif : seul le revenu net annuel (loyer encaissé après charges) entre dans l'assiette du nisab.",
+    "source": "Fatwas contemporaines de l'AAOIFI / IFA OCI",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 132,
+    "categorie": "Zakat",
+    "sous_theme": "Catégories de biens",
+    "regle": "L'épargne en compte bancaire (livret A, livret d'épargne) est soumise à zakat dès qu'elle atteint le nisab et est restée un an.",
+    "explication": "On exclut les revenus reçus moins d'un an avant la date de calcul. La méthode du 'tableur annuel' est très répandue.",
+    "source": "Consensus moderne basé sur la qiyas (analogie) avec l'or-argent",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 133,
+    "categorie": "Zakat",
+    "sous_theme": "Catégories de biens",
+    "regle": "Les dettes que l'on doit à autrui se déduisent du calcul. Les dettes que les autres nous doivent s'ajoutent si on est sûr d'être remboursé.",
+    "explication": "Une créance douteuse (peu d'espoir de recouvrement) ne compte que l'année où elle est effectivement reçue.",
+    "source": "Avis majoritaires des écoles",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 134,
+    "categorie": "Zakat",
+    "sous_theme": "Bénéficiaires",
+    "regle": "Les 8 catégories de bénéficiaires de la zakat sont fixées par le Coran : pauvres, indigents, agents de collecte, cœurs à rallier, esclaves (libération), endettés, dans le chemin d'Allah, voyageurs en détresse.",
+    "explication": "On ne peut pas la donner en dehors de ces catégories. On peut donner à une seule ou plusieurs.",
+    "source": "Coran 9:60 / Consensus",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 135,
+    "categorie": "Zakat",
+    "sous_theme": "Bénéficiaires",
+    "regle": "On ne peut pas donner la zakat à ses parents directs (parents, grands-parents) ni à ses descendants (enfants, petits-enfants).",
+    "explication": "Car on est déjà tenu de les entretenir au titre de l'obligation familiale. Sinon, ce serait un double avantage.",
+    "source": "Consensus 4 écoles",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 136,
+    "categorie": "Zakat",
+    "sous_theme": "Bénéficiaires",
+    "regle": "On peut donner la zakat à son frère, sa sœur, son oncle, sa tante, son neveu/nièce s'ils en sont éligibles.",
+    "explication": "C'est même doublement récompensé : aumône + maintien des liens familiaux (silat ar-rahim).",
+    "source": "Hadith Bukhari 1466 / Avis majoritaire",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 137,
+    "categorie": "Zakat",
+    "sous_theme": "Bénéficiaires",
+    "regle": "On ne peut pas donner la zakat à un non-musulman selon la majorité. L'aumône volontaire (sadaqa) oui.",
+    "explication": "Le 'cœur à rallier' (mu'allafa al-qulûb) reste une exception théorique pour la zakat selon certains avis.",
+    "source": "Coran 9:60 / Consensus majoritaire",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 138,
+    "categorie": "Zakat",
+    "sous_theme": "Zakat al-Fitr",
+    "regle": "La zakat al-Fitr est obligatoire pour tout musulman, homme ou femme, libre ou esclave, jeune ou vieux, à la fin du Ramadan.",
+    "explication": "Le chef de famille la verse pour lui-même et toute personne à sa charge. Le montant est fixe : un sa' (~2.5 à 3 kg) d'aliment de base.",
+    "source": "Hadith Bukhari 1503, Muslim 984 / Consensus",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 139,
+    "categorie": "Zakat",
+    "sous_theme": "Zakat al-Fitr",
+    "regle": "La zakat al-Fitr doit être versée avant la prière de l'Aïd al-Fitr. Versée après, elle redevient une aumône ordinaire.",
+    "explication": "Beaucoup de mosquées la collectent dans les derniers jours du Ramadan pour la distribuer à temps aux pauvres.",
+    "source": "Hadith Abu Dawud 1609",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 140,
+    "categorie": "Zakat",
+    "sous_theme": "Zakat al-Fitr",
+    "regle": "On peut donner la zakat al-Fitr en aliments de base (semoule, riz, dattes) ou en valeur monétaire selon les Hanafites.",
+    "explication": "Les 3 autres écoles préfèrent en denrée. Aujourd'hui, donner en valeur monétaire est largement accepté pour faciliter aux pauvres.",
+    "source": "Divergence Hanafite / Pratique contemporaine",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 141,
+    "categorie": "Zakat",
+    "sous_theme": "Zakat al-Fitr",
+    "regle": "Le but premier de la zakat al-Fitr est de permettre aux pauvres de fêter l'Aïd dans la dignité.",
+    "explication": "Hadith : 'Le Prophète ﷺ a prescrit la zakat al-Fitr comme purification du jeûneur et nourriture pour les pauvres.'",
+    "source": "Hadith Abu Dawud 1609 — hasan",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 142,
+    "categorie": "Hajj",
+    "sous_theme": "Conditions et obligation",
+    "regle": "Le Hajj est obligatoire une fois dans la vie pour tout musulman adulte, sain d'esprit, libre, ayant les moyens financiers et physiques.",
+    "explication": "C'est le cinquième pilier de l'Islam. Pour la femme, la majorité exige aussi un mahram (parent proche) pour le voyage.",
+    "source": "Coran 3:97 / Hadith Bukhari 8 / Consensus",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 143,
+    "categorie": "Hajj",
+    "sous_theme": "Conditions et obligation",
+    "regle": "Les moyens (istita'a) comprennent : argent pour le voyage et la subsistance des proches, santé suffisante, route sécurisée.",
+    "explication": "L'endettement excessif pour partir au Hajj n'est pas recommandé. Mieux vaut attendre d'être prêt sereinement.",
+    "source": "Coran 3:97 'man istata'a' / Consensus",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 144,
+    "categorie": "Hajj",
+    "sous_theme": "Conditions et obligation",
+    "regle": "Retarder le Hajj sans excuse alors qu'on en a les moyens est un péché selon la majorité.",
+    "explication": "Hadith : 'Hâtez-vous d'accomplir le Hajj, car nul ne sait ce qui peut survenir.'",
+    "source": "Hadith Ahmad 2867 / Majorité",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 145,
+    "categorie": "Hajj",
+    "sous_theme": "Piliers du Hajj",
+    "regle": "Les piliers du Hajj sont : l'ihram, la station à Arafat, le tawaf al-ifada, le sa'i entre Safa et Marwa.",
+    "explication": "Manquer un pilier sans pouvoir le compenser invalide le Hajj. Les autres écoles ajoutent ou retirent légèrement.",
+    "source": "Hadith Bukhari 1654, Muslim 1218 / Majorité avec variantes",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 146,
+    "categorie": "Hajj",
+    "sous_theme": "Piliers du Hajj",
+    "regle": "La station à Arafat le 9 Dhul-Hijja est le pilier essentiel : 'Le Hajj, c'est Arafat'.",
+    "explication": "Hadith : Quiconque a manqué Arafat doit refaire le Hajj une autre année. C'est le moment d'invocation suprême.",
+    "source": "Hadith Tirmidhi 889, Abu Dawud 1949",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 147,
+    "categorie": "Hajj",
+    "sous_theme": "Piliers du Hajj",
+    "regle": "Le tawaf al-ifada (tournée autour de la Ka'ba après Arafat) est un pilier non substituable.",
+    "explication": "On y fait sept tours autour de la Ka'ba. Il peut être fait jusqu'à la fin du mois de Dhul-Hijja.",
+    "source": "Coran 22:29 / Hadith Bukhari 1685",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 148,
+    "categorie": "Hajj",
+    "sous_theme": "Piliers du Hajj",
+    "regle": "Le sa'i (parcours sept fois entre Safa et Marwa) est un pilier selon la majorité.",
+    "explication": "Il commémore la quête désespérée de Hagar pour trouver de l'eau pour son fils Ismaël.",
+    "source": "Coran 2:158 / Hadith Bukhari 1643 / Majorité",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 149,
+    "categorie": "Hajj",
+    "sous_theme": "Ihram",
+    "regle": "L'ihram est l'état de sacralisation. On entre en ihram aux miqât (frontières géographiques précises) avec l'intention.",
+    "explication": "Pour l'homme : deux pièces de tissu blanc non cousues. Pour la femme : vêtements ordinaires décents, pas de niqab ni de gants.",
+    "source": "Hadith Bukhari 1524, 1838",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 150,
+    "categorie": "Hajj",
+    "sous_theme": "Ihram",
+    "regle": "Pendant l'ihram, sont interdits : se parfumer, se couper les cheveux ou les ongles, chasser, avoir des rapports conjugaux, se disputer.",
+    "explication": "Une violation involontaire d'une de ces interdictions impose une fidya (jeûne, aumône ou sacrifice selon le cas).",
+    "source": "Coran 2:197 / Consensus",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 151,
+    "categorie": "Hajj",
+    "sous_theme": "Ihram",
+    "regle": "La talbiyah ('Labbayka Allahumma labbayk...') est récitée fréquemment pendant l'ihram, surtout en mouvement.",
+    "explication": "C'est la signature sonore du Hajj : la voix qui répond à l'appel d'Allah. À voix haute pour les hommes, basse pour les femmes.",
+    "source": "Hadith Bukhari 5915, Muslim 1184",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 152,
+    "categorie": "Hajj",
+    "sous_theme": "Tawaf et Sa'i",
+    "regle": "Le tawaf (tour autour de la Ka'ba) se fait dans le sens antihoraire, en commençant à hauteur de la pierre noire.",
+    "explication": "Sept tours complets sont obligatoires. On marque le départ et l'arrivée chaque tour à la pierre noire.",
+    "source": "Hadith Bukhari 1610, Muslim 1234",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 153,
+    "categorie": "Hajj",
+    "sous_theme": "Tawaf et Sa'i",
+    "regle": "Le tawaf d'arrivée (tawaf al-qudûm) en début de Hajj est sunnah pour ceux qui font le Hajj ifrâd ou qirân.",
+    "explication": "Il salue la Ka'ba à l'arrivée. Le tawaf al-ifada après Arafat est le pilier obligatoire.",
+    "source": "Hadith Bukhari 1622",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 154,
+    "categorie": "Hajj",
+    "sous_theme": "Tawaf et Sa'i",
+    "regle": "Le tawaf d'adieu (tawaf al-wada') est obligatoire pour quiconque quitte La Mecque, sauf la femme menstruée.",
+    "explication": "C'est le dernier acte du Hajj avant le départ. L'omettre sans excuse oblige à un sacrifice expiatoire (dam) selon la majorité.",
+    "source": "Hadith Bukhari 1755 / Majorité",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 155,
+    "categorie": "Hajj",
+    "sous_theme": "Hajj/Umrah",
+    "regle": "La Umrah peut être accomplie à toute période de l'année. Le Hajj est limité aux mois sacrés (Shawwal, Dhul-Qa'da, Dhul-Hijja).",
+    "explication": "La Umrah est appelée 'le petit pèlerinage'. Elle est sunnah confirmée selon la majorité, fard kifâya selon certains.",
+    "source": "Hadith Bukhari 1773 / Divergence sur le caractère obligatoire",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 156,
+    "categorie": "Hajj",
+    "sous_theme": "Hajj/Umrah",
+    "regle": "Trois types de Hajj existent : tamattu' (Umrah puis Hajj), qirân (Umrah et Hajj combinés), ifrâd (Hajj seul).",
+    "explication": "Le tamattu' est recommandé par le Prophète ﷺ pour celui qui n'a pas amené de sacrifice. Il exige un sacrifice obligatoire.",
+    "source": "Hadith Bukhari 1572, 1691",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 157,
+    "categorie": "Adab quotidien",
+    "sous_theme": "Manger et boire",
+    "regle": "Dire 'Bismillah' avant de manger est sunnah confirmée. Si on oublie au début, on dit 'Bismillah awwalahu wa akhirahu' quand on s'en souvient.",
+    "explication": "Hadith : 'Si l'un de vous mange, qu'il dise Bismillah. S'il oublie, qu'il dise Bismillah au début et à la fin.'",
+    "source": "Hadith Abu Dawud 3767, Tirmidhi 1858",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 158,
+    "categorie": "Adab quotidien",
+    "sous_theme": "Manger et boire",
+    "regle": "Manger avec la main droite est obligatoire selon plusieurs savants, sunnah confirmée selon d'autres.",
+    "explication": "Hadith : 'Que personne d'entre vous ne mange ni ne boive avec la main gauche, car le diable mange et boit avec la main gauche.'",
+    "source": "Hadith Muslim 2020",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 159,
+    "categorie": "Adab quotidien",
+    "sous_theme": "Manger et boire",
+    "regle": "Boire en trois gorgées séparées en faisant des pauses (et non d'un trait) est sunnah du Prophète ﷺ.",
+    "explication": "Il est aussi sunnah de ne pas souffler dans le récipient et de s'asseoir pour boire selon la majorité.",
+    "source": "Hadith Bukhari 5631, Muslim 2028",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 160,
+    "categorie": "Adab quotidien",
+    "sous_theme": "Manger et boire",
+    "regle": "Dire 'Al-hamdu lillah' à la fin du repas est sunnah confirmée. Plusieurs formules détaillées existent.",
+    "explication": "Hadith : 'Celui qui dit après le repas : Al-hamdu lillahi alladhi at'amanî... ses péchés passés sont pardonnés.'",
+    "source": "Hadith Tirmidhi 3458, Abu Dawud 4023 — hasan",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 161,
+    "categorie": "Adab quotidien",
+    "sous_theme": "Manger et boire",
+    "regle": "Ne pas critiquer un repas est une règle d'adab. Si on l'aime, on en mange, si on n'aime pas, on le laisse.",
+    "explication": "Hadith : 'Le Prophète ﷺ n'a jamais critiqué un repas. S'il l'appréciait, il en mangeait, sinon il le laissait sans le dénigrer.'",
+    "source": "Hadith Bukhari 3563, Muslim 2064",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 162,
+    "categorie": "Adab quotidien",
+    "sous_theme": "Salutations",
+    "regle": "Le salam (as-salamu alaykum) est sunnah à initier et obligation à rendre.",
+    "explication": "Rendre le salam est même légèrement supérieur : 'wa alaykum as-salam wa rahmatullah wa barakatuh'.",
+    "source": "Coran 4:86 / Hadith Bukhari 6234",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 163,
+    "categorie": "Adab quotidien",
+    "sous_theme": "Salutations",
+    "regle": "Selon le hadith, c'est le marcheur qui salue l'assis, le plus jeune le plus âgé, le petit groupe le grand groupe.",
+    "explication": "Le but est de répandre la paix : 'Vous n'entrerez pas au Paradis avant de croire, et vous ne croirez pas avant de vous aimer. Voulez-vous que je vous indique une chose qui, si vous la faites, vous fera vous aimer ? Répandez le salam entre vous.'",
+    "source": "Hadith Bukhari 6234 / Muslim 54",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 164,
+    "categorie": "Adab quotidien",
+    "sous_theme": "Salutations",
+    "regle": "Saluer celui qu'on connaît ET celui qu'on ne connaît pas est signe de bonté.",
+    "explication": "Hadith : 'Saluer celui qu'on connaît seulement est l'un des signes de la fin des temps.' Le salam doit être universel entre musulmans.",
+    "source": "Hadith Bukhari 12, Ahmad 3848",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 165,
+    "categorie": "Adab quotidien",
+    "sous_theme": "Parole",
+    "regle": "La médisance (ghîba) est strictement interdite : parler de quelqu'un en son absence d'une chose qu'il n'aimerait pas entendre.",
+    "explication": "Coran : 'L'un d'entre vous aimerait-il manger la chair de son frère mort ?' La médisance est plus grave que la fornication selon plusieurs hadiths.",
+    "source": "Coran 49:12 / Hadith Muslim 2589",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 166,
+    "categorie": "Adab quotidien",
+    "sous_theme": "Parole",
+    "regle": "La calomnie (buhtân) est encore plus grave : dire de quelqu'un une chose qu'il n'a même pas faite.",
+    "explication": "C'est un péché majeur. Coran : 'Ceux qui calomnient les croyantes vertueuses [...] sont maudits dans ce monde et dans l'autre.'",
+    "source": "Coran 24:23 / Consensus",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 167,
+    "categorie": "Adab quotidien",
+    "sous_theme": "Parole",
+    "regle": "Le mensonge est interdit en toutes circonstances, sauf dans trois cas : guerre, réconciliation entre deux personnes, paroles entre époux pour préserver le foyer.",
+    "explication": "Hadith : 'Le mensonge n'est permis que dans trois cas : à la guerre, pour réconcilier les gens, et entre les époux.'",
+    "source": "Hadith Tirmidhi 1939 — hasan / Consensus",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 168,
+    "categorie": "Adab quotidien",
+    "sous_theme": "Parole",
+    "regle": "Garder le silence est meilleur que parler sans nécessité.",
+    "explication": "Hadith : 'Que celui qui croit en Allah et au Jour Dernier dise du bien ou se taise.'",
+    "source": "Hadith Bukhari 6018, Muslim 47",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 169,
+    "categorie": "Adab quotidien",
+    "sous_theme": "Parole",
+    "regle": "Tenir sa promesse est obligatoire. Rompre une promesse sans excuse est signe d'hypocrisie.",
+    "explication": "Hadith : 'Les signes de l'hypocrite sont trois : quand il parle, il ment ; quand il promet, il ne tient pas ; quand on lui confie, il trahit.'",
+    "source": "Hadith Bukhari 33, Muslim 59",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 170,
+    "categorie": "Adab quotidien",
+    "sous_theme": "Sommeil",
+    "regle": "Avant de dormir, l'invocation 'Bismika Allahumma amûtu wa ahyâ' (En Ton Nom ô Allah je meurs et je vis) est sunnah.",
+    "explication": "Le sommeil étant 'la sœur de la mort', on se confie à Allah avant. Au réveil : 'Al-hamdu lillah alladhi ahyana ba'da ma amatana'.",
+    "source": "Hadith Bukhari 6324, 6325",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 171,
+    "categorie": "Adab quotidien",
+    "sous_theme": "Sommeil",
+    "regle": "Dormir sur le côté droit, dans un état de pureté, est la sunnah du Prophète ﷺ.",
+    "explication": "Il est aussi recommandé de réciter l'âyat al-kursî et les trois dernières sourates avant le sommeil.",
+    "source": "Hadith Bukhari 6311 / Sunnah confirmée",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 172,
+    "categorie": "Adab quotidien",
+    "sous_theme": "Sommeil",
+    "regle": "La sieste de la mi-journée (qaylûla) est sunnah recommandée et profite à la prière de la nuit (qiyâm).",
+    "explication": "Hadith : 'Faites la qaylûla, car les diables ne font pas la sieste.'",
+    "source": "Hadith Tabarani / Tradition prophétique bien établie",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 173,
+    "categorie": "Adab quotidien",
+    "sous_theme": "Voyage",
+    "regle": "Avant un voyage, l'invocation du voyageur est sunnah ('Subhana alladhi sakhkhara lana hadha...').",
+    "explication": "Hadith complet rapporté par Ali (ra). L'invocation se récite en montant dans le véhicule.",
+    "source": "Hadith Muslim 1342",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 174,
+    "categorie": "Adab quotidien",
+    "sous_theme": "Voyage",
+    "regle": "Le voyageur a des facilités : raccourcir les prières (qasr), les combiner (jumu'), rompre le jeûne, essuyer sur les khuffs jusqu'à 3 jours.",
+    "explication": "Ces facilités sont des cadeaux d'Allah à ne pas refuser : 'Allah aime que Ses dispenses soient prises comme Il déteste que Ses interdictions soient transgressées.'",
+    "source": "Hadith Ibn Khuzayma 950 / Ahmad",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 175,
+    "categorie": "Adab quotidien",
+    "sous_theme": "Voyage",
+    "regle": "Voyager seul est déconseillé. Mieux vaut au minimum à deux, idéalement à trois ou plus.",
+    "explication": "Hadith : 'Un seul est un démon, deux sont deux démons, trois forment un groupe.' Pour la femme, le mahram est exigé pour les voyages longs selon la majorité.",
+    "source": "Hadith Abu Dawud 2607 — sahih",
+    "ecole": "majorité"
+  },
+  {
+    "jour": 176,
+    "categorie": "Adab quotidien",
+    "sous_theme": "Vêtements",
+    "regle": "Couvrir la 'awra est obligatoire. Pour la femme musulmane en public : tout sauf visage et mains selon la majorité.",
+    "explication": "Le vêtement doit être ample, opaque, ne pas attirer le regard. Le hijab fait l'objet de consensus, les détails de mise en œuvre varient.",
+    "source": "Coran 24:31, 33:59 / Consensus",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 177,
+    "categorie": "Adab quotidien",
+    "sous_theme": "Vêtements",
+    "regle": "Pour l'homme, la soie pure et l'or sont interdits comme vêtements. Pour la femme, c'est permis.",
+    "explication": "Hadith : 'Ces deux choses (soie et or) sont interdites aux hommes de ma communauté et permises à ses femmes.'",
+    "source": "Hadith Abu Dawud 4057, Nasa'i 5147",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 178,
+    "categorie": "Adab quotidien",
+    "sous_theme": "Vêtements",
+    "regle": "L'isbâl (porter son vêtement en dessous des chevilles) est interdit pour l'homme s'il s'agit d'ostentation, fortement déconseillé sinon.",
+    "explication": "Hadith : 'Ce qui est en dessous des chevilles, du izâr (pagne), est dans le Feu.' Pour la femme, c'est au contraire recommandé pour couvrir.",
+    "source": "Hadith Bukhari 5787 / Consensus avec nuances",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 179,
+    "categorie": "Adab quotidien",
+    "sous_theme": "Relations familiales",
+    "regle": "La bienfaisance envers les parents (birr al-wâlidayn) est l'obligation la plus importante après l'adoration d'Allah.",
+    "explication": "Coran : 'Ton Seigneur a décrété : N'adorez que Lui, et soyez bienfaisants envers vos parents.'",
+    "source": "Coran 17:23 / Hadith Bukhari 5971",
+    "ecole": "consensus"
+  },
+  {
+    "jour": 180,
+    "categorie": "Adab quotidien",
+    "sous_theme": "Relations familiales",
+    "regle": "Maintenir les liens familiaux (silat ar-rahim) est obligatoire. Les rompre est un péché majeur.",
+    "explication": "Hadith : 'Celui qui rompt les liens de parenté n'entrera pas au Paradis.' Le maintien se fait par les visites, appels, aide, présence aux événements.",
+    "source": "Hadith Bukhari 5984, Muslim 2556",
+    "ecole": "consensus"
+  }
+]

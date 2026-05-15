@@ -1230,6 +1230,15 @@ var SAVAIS_TU = [];
 (function() {
   fetch('./savais_tu.json').then(function(r) { return r.json(); }).then(function(data) { SAVAIS_TU = data; }).catch(function() {});
 })();
+var FIQH_JOUR = [];
+(function() {
+  fetch('./fiqh_jour.json').then(function(r) { return r.json(); }).then(function(data) { FIQH_JOUR = data; }).catch(function() {});
+})();
+function getFiqhJourRule() {
+  if (!FIQH_JOUR.length) return { categorie: '', sous_theme: '', regle: '', explication: '', source: '', ecole: '' };
+  var dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(),0,0).getTime()) / 86400000);
+  return FIQH_JOUR[dayOfYear % FIQH_JOUR.length];
+}
 function getSavaisTuFact() {
   if (!SAVAIS_TU.length) return { texte: '', source: '', categorie: '' };
   var dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(),0,0).getTime()) / 86400000);
@@ -1291,7 +1300,7 @@ const LEVELS = [
         { id: 'arabic', minVague: 4, label: "Apprentissage de l'arabe", sub: '10 min · Vocabulaire ou grammaire', arabic: 'تَعَلُّمُ الْعَرَبِيَّةِ', paths: ['sacraliser'], block: 'jour', category: 'science' },
         { id: 'vie_prophetes', minVague: 4, label: 'Histoires des Prophètes', sub: '10 min · Nouh, Ibrahim, Moussa, Issa…', arabic: 'قَصَصُ الْأَنْبِيَاءِ', paths: ['routine','sacraliser'], block: 'jour', category: 'science', hadith: '\"Nous te racontons le meilleur des récits\" — Coran 12:3', source: 'Yusuf 12:3' },
         { id: 'vie_compagnons', minVague: 4, label: 'Vie des Compagnons', sub: '10 min · Abu Bakr, Omar, Othman, Ali…', arabic: 'سِيَرُ الصَّحَابَةِ', paths: ['routine','sacraliser'], block: 'jour', category: 'science', hadith: '\"Mes Compagnons sont comme les étoiles — qui que vous suiviez, vous serez guidés\" — Bayhaqi', source: 'Bayhaqi' },
-        { id: 'fiqh_jour', minVague: 4, label: 'Jurisprudence — 1 règle du jour', sub: 'Apprendre une règle de fiqh simple et l\'appliquer', arabic: 'فِقْهٌ', paths: ['sacraliser'], block: 'jour', category: 'science' },
+        { id: 'fiqh_jour', minVague: 4, label: 'Jurisprudence \u2014 1 r\u00e8gle du jour', get sub() { var f = getFiqhJourRule(); return (f.regle || '').substring(0,50) + '\u2026'; }, arabic: '\u0641\u0650\u0642\u0652\u0647\u064C', paths: ['sacraliser'], block: 'jour', category: 'science' },
         { id: 'savais_tu', minVague: 4, label: 'Le savais-tu ?', get sub() { var f = getSavaisTuFact(); return (f.texte || '').substring(0,50) + '\u2026'; }, arabic: 'هَلْ تَعْلَمُ؟', paths: ['sacraliser'], block: 'jour', category: 'science' },
       ]},
       { icon: '🎧', title: 'Immersion coranique', items: [
@@ -2473,9 +2482,13 @@ function renderLevel(levelId) {
         var shareBtn = '';
         if (item.id === 'savais_tu') {
           shareBtn = '<button class="btn-audio" aria-label="Lire" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openVueSavaisTu();" title="Lire" style="font-size:13px;padding:0 8px;width:auto;">\u{1F4D6}</button>';
+        } else if (item.id === 'fiqh_jour') {
+          shareBtn = '<button class="btn-audio" aria-label="Lire" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openVueFiqhJour();" title="Lire" style="font-size:13px;padding:0 8px;width:auto;">\u{1F4D6}</button>';
         }
         const customClick = item.id === 'savais_tu'
           ? 'openVueSavaisTu(); toggleItem(\'' + item.id + '\',event);'
+          : item.id === 'fiqh_jour'
+          ? 'openVueFiqhJour(); toggleItem(\'' + item.id + '\',event);'
           : item.id === 'sira'
           ? 'SIRA.openDetail(); toggleItem(\'' + item.id + '\',event);'
           : 'toggleItem(\'' + item.id + '\',event)';
@@ -14382,9 +14395,11 @@ function openVueAuFilDuJour() {
     const ar = it.arabic ? '<div class="arabic">' + it.arabic + '</div>' : '';
     const sub = it.sub ? '<div class="sub">' + it.sub + '</div>' : '';
     const audio = it.audio ? '<button class="btn-audio" data-audio-id="' + it.id + '" onclick="event.stopPropagation();playAudioById(this)">🔊</button>' : '';
-    var _readBtn = it.id === 'savais_tu' ? '<button class="btn-audio" aria-label="Lire" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openVueSavaisTu();" style="font-size:13px;padding:0 8px;width:auto;">\u{1F4D6}</button>' : '';
+    var _readBtn = (it.id === 'savais_tu') ? '<button class="btn-audio" aria-label="Lire" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openVueSavaisTu();" style="font-size:13px;padding:0 8px;width:auto;">\u{1F4D6}</button>'
+      : (it.id === 'fiqh_jour') ? '<button class="btn-audio" aria-label="Lire" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openVueFiqhJour();" style="font-size:13px;padding:0 8px;width:auto;">\u{1F4D6}</button>' : '';
     var _click = it.id === 'sira' ? 'SIRA.openDetail(); toggleItem(\'' + it.id + '\',event);'
       : it.id === 'savais_tu' ? 'openVueSavaisTu(); toggleItem(\'' + it.id + '\',event);'
+      : it.id === 'fiqh_jour' ? 'openVueFiqhJour(); toggleItem(\'' + it.id + '\',event);'
       : 'toggleItem(\'' + it.id + '\',event); openVueAuFilDuJour();';
     return '<div class="rituel-item ' + done + '" id="rituel-item-' + it.id + '" onclick="' + _click + '"><div class="check"></div><div style="flex:1"><div class="label">' + (it.label||it.id) + '</div>' + sub + ar + '</div>' + _readBtn + audio + '</div>';
   };
@@ -14477,6 +14492,27 @@ function openVueSavaisTu() {
   v.classList.remove('hidden');
 }
 window.openVueSavaisTu = openVueSavaisTu;
+
+function openVueFiqhJour() {
+  var rule = getFiqhJourRule();
+  var v = document.getElementById('vue-rituel');
+  if (!v) return;
+  v.querySelector('.rituel-titre').textContent = 'JURISPRUDENCE';
+  v.querySelector('.rituel-prochaine').textContent = '';
+  v.querySelector('.rituel-poetique').textContent = '';
+  var main = v.querySelector('.rituel-content');
+  main.innerHTML = '<div style="padding:20px 16px;text-align:center;">'
+    + (rule.categorie ? '<div class="fiqh-categorie">' + rule.categorie.toUpperCase() + '</div>' : '')
+    + (rule.sous_theme ? '<div style="font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:16px;">' + rule.sous_theme + '</div>' : '')
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;line-height:1.7;color:rgba(240,234,214,0.95);margin-bottom:20px;">' + (rule.regle || '') + '</div>'
+    + (rule.explication ? '<div style="font-size:14px;line-height:1.6;color:rgba(255,255,255,0.6);margin-bottom:20px;font-style:italic;">' + rule.explication + '</div>' : '')
+    + (rule.source ? '<div style="font-size:11px;color:rgba(200,168,74,0.6);letter-spacing:0.1em;">\u2014 ' + rule.source + ' \u2014</div>' : '')
+    + (rule.ecole ? '<div style="font-size:10px;color:rgba(200,168,74,0.4);margin-top:8px;letter-spacing:1px;">' + rule.ecole.toUpperCase() + '</div>' : '')
+    + '</div>';
+  v.classList.remove('hidden');
+  document.getElementById('rituel-emblem').textContent = '\u0641\u0650\u0642\u0652\u0647';
+}
+window.openVueFiqhJour = openVueFiqhJour;
 
 function shareSavaisTuFromVue() {
   if (typeof shareSavaisTu === 'function') {
