@@ -1258,8 +1258,11 @@ var PROPHETES = [];
 })();
 function getPropheteJour() {
   if (!PROPHETES.length) return { prophete: '', prophete_ar: '', titre: '', recit: '', parole: '', station: '', sources: '', renvoi_module: '' };
-  var dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(),0,0).getTime()) / 86400000);
-  return PROPHETES[dayOfYear % PROPHETES.length];
+  var start = safeGetItem('niyyah_prophetes_start');
+  if (!start) { start = String(Date.now()); safeSetItem('niyyah_prophetes_start', start); }
+  var daysSince = Math.floor((Date.now() - parseInt(start, 10)) / 86400000);
+  var jourParcours = (daysSince % 77) + 1;
+  return PROPHETES.find(function(ep) { return ep.jour === jourParcours; }) || PROPHETES[0];
 }
 function getHadithJourRule() {
   if (!HADITHS_JOUR.length) return { theme: '', texte_ar: '', texte_fr: '', source: '', degre: '' };
