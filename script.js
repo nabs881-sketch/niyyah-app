@@ -1257,7 +1257,7 @@ var PROPHETES = [];
   fetch('./prophetes.json').then(function(r) { return r.json(); }).then(function(data) { PROPHETES = data; }).catch(function() {});
 })();
 function getPropheteJour() {
-  if (!PROPHETES.length) return { nom_fr: '', nom_ar: '', episode: '', recit: '', lecon: '', source: '' };
+  if (!PROPHETES.length) return { prophete: '', prophete_ar: '', titre: '', recit: '', parole: '', station: '', sources: '', renvoi_module: '' };
   var dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(),0,0).getTime()) / 86400000);
   return PROPHETES[dayOfYear % PROPHETES.length];
 }
@@ -1360,7 +1360,7 @@ const LEVELS = [
         { id: 'sira', minVague: 3, label: 'S\u00eera du Proph\u00e8te \uFDFA', sub: 'Un rendez-vous chaque jour', arabic: '\u0627\u0644\u0633\u0651\u0650\u064A\u0631\u064E\u0629\u064F \u0627\u0644\u0646\u0651\u064E\u0628\u064E\u0648\u0650\u064A\u0651\u064E\u0629\u064F', paths: ['reconnecter','routine','sacraliser'], block: 'jour', category: 'science' },
         { id: 'quran_read', minVague: 3, label: 'Versets du jour', get sub() { var vs = getVersetsJourSync(); return vs.length ? (vs[0].traduction || '').substring(0,50) + '\u2026' : '17 versets \u00e0 lire'; }, arabic: '\u0642\u0650\u0631\u064E\u0627\u0621\u064E\u0629\u064F \u0627\u0644\u0652\u0642\u064F\u0631\u0652\u0622\u0646\u0650', paths: ['routine','sacraliser'], block: 'jour', category: 'science' },
         { id: 'arabic', minVague: 4, label: "Apprentissage de l'arabe", sub: '10 min · Vocabulaire ou grammaire', arabic: 'تَعَلُّمُ الْعَرَبِيَّةِ', paths: ['sacraliser'], block: 'jour', category: 'science' },
-        { id: 'vie_prophetes', minVague: 4, label: 'Histoires des Proph\u00e8tes', get sub() { var p = getPropheteJour(); return (p.nom_fr && p.episode) ? (p.nom_fr + ' \u2014 ' + p.episode).substring(0,50) + '\u2026' : 'Nouh, Ibrahim, Moussa, Issa\u2026'; }, arabic: '\u0642\u064E\u0635\u064E\u0635\u064F \u0627\u0644\u0623\u064E\u0646\u0628\u0650\u064A\u064E\u0627\u0621\u0650', paths: ['routine','sacraliser'], block: 'jour', category: 'science', hadith: '"Nous te racontons le meilleur des r\u00e9cits" \u2014 Coran 12:3', source: 'Yusuf 12:3' },
+        { id: 'vie_prophetes', minVague: 4, label: 'Histoires des Proph\u00e8tes', get sub() { var p = getPropheteJour(); return (p.prophete && p.titre) ? (p.prophete + ' \u2014 ' + p.titre).substring(0,50) + '\u2026' : 'Nouh, Ibrahim, Moussa, Issa\u2026'; }, arabic: '\u0642\u064E\u0635\u064E\u0635\u064F \u0627\u0644\u0623\u064E\u0646\u0628\u0650\u064A\u064E\u0627\u0621\u0650', paths: ['routine','sacraliser'], block: 'jour', category: 'science', hadith: '"Nous te racontons le meilleur des r\u00e9cits" \u2014 Coran 12:3', source: 'Yusuf 12:3' },
         { id: 'vie_compagnons', minVague: 4, label: 'Vie des Compagnons', get sub() { var c = getCompagnonJour(); return (c.nom_fr && c.episode) ? (c.nom_fr + ' \u2014 ' + c.episode).substring(0,50) + '\u2026' : 'Abu Bakr, Omar, Othman, Ali\u2026'; }, arabic: '\u0633\u0650\u064A\u064E\u0631\u064F \u0627\u0644\u0635\u0651\u064E\u062D\u064E\u0627\u0628\u064E\u0629\u0650', paths: ['routine','sacraliser'], block: 'jour', category: 'science', hadith: '"Mes Compagnons sont comme les \u00e9toiles \u2014 qui que vous suiviez, vous serez guid\u00e9s" \u2014 Bayhaqi', source: 'Bayhaqi' },
         { id: 'fiqh_jour', minVague: 4, label: 'Jurisprudence \u2014 1 r\u00e8gle du jour', get sub() { var f = getFiqhJourRule(); return (f.regle || '').substring(0,50) + '\u2026'; }, arabic: '\u0641\u0650\u0642\u0652\u0647\u064C', paths: ['sacraliser'], block: 'jour', category: 'science' },
         { id: 'savais_tu', minVague: 4, label: 'Le savais-tu ?', get sub() { var f = getSavaisTuFact(); return (f.texte || '').substring(0,50) + '\u2026'; }, arabic: 'هَلْ تَعْلَمُ؟', paths: ['sacraliser'], block: 'jour', category: 'science' },
@@ -14649,13 +14649,16 @@ function openVuePropheteJour() {
   v.querySelector('.rituel-prochaine').textContent = '';
   v.querySelector('.rituel-poetique').textContent = '';
   var main = v.querySelector('.rituel-content');
+  var _epLabel = (p.episode_num && p.episode_total) ? ' \u2014 ' + p.episode_num + '/' + p.episode_total : '';
   main.innerHTML = '<div style="padding:20px 16px;text-align:center;">'
-    + (p.episode ? '<div class="fiqh-categorie">' + p.episode.toUpperCase() + '</div>' : '')
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-weight:700;color:rgba(240,234,214,0.95);margin-bottom:4px;">' + (p.nom_fr || '') + '</div>'
-    + (p.nom_ar ? '<div style="font-family:\'Amiri\',serif;font-size:18px;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:20px;">' + p.nom_ar + '</div>' : '')
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;line-height:1.8;color:rgba(240,234,214,0.9);text-align:left;margin-bottom:20px;">' + (p.recit || '') + '</div>'
-    + (p.lecon ? '<div style="border:1px solid rgba(200,168,74,0.25);border-radius:10px;padding:12px 16px;margin-bottom:20px;font-style:italic;font-size:14px;line-height:1.6;color:rgba(200,168,74,0.8);">' + p.lecon + '</div>' : '')
-    + (p.source ? '<div style="font-size:11px;color:rgba(200,168,74,0.6);letter-spacing:0.1em;">\u2014 ' + p.source + ' \u2014</div>' : '')
+    + (p.titre ? '<div class="fiqh-categorie">' + p.titre.toUpperCase() + '</div>' : '')
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-weight:700;color:rgba(240,234,214,0.95);margin-bottom:4px;">' + (p.prophete || '') + _epLabel + '</div>'
+    + (p.prophete_ar ? '<div style="font-family:\'Amiri\',serif;font-size:18px;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:20px;">' + p.prophete_ar + '</div>' : '')
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;line-height:1.8;color:rgba(240,234,214,0.9);text-align:left;margin-bottom:20px;">' + (p.recit || '').replace(/\n/g, '<br>') + '</div>'
+    + (p.parole ? '<div style="border-left:2px solid rgba(200,168,74,0.4);padding:8px 16px;margin-bottom:16px;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;line-height:1.6;color:rgba(200,168,74,0.85);text-align:left;">' + p.parole + '</div>' : '')
+    + (p.station ? '<div style="border:1px solid rgba(200,168,74,0.25);border-radius:10px;padding:12px 16px;margin-bottom:20px;font-style:italic;font-size:14px;line-height:1.6;color:rgba(200,168,74,0.8);">' + p.station + '</div>' : '')
+    + (p.sources ? '<div style="font-size:11px;color:rgba(200,168,74,0.6);letter-spacing:0.1em;margin-bottom:16px;">\u2014 ' + p.sources + ' \u2014</div>' : '')
+    + (p.renvoi_module === 'sira' ? '<button onclick="if(typeof SIRA!==\'undefined\')SIRA.openDetail();" style="padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,74,0.4);background:transparent;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:600;cursor:pointer;letter-spacing:0.5px;">Ouvrir la S\u00eera</button>' : '')
     + '</div>';
   v.classList.remove('hidden');
   document.getElementById('rituel-emblem').textContent = '\u0623\u064E\u0646\u0628\u0650\u064A\u064E\u0627\u0621';
