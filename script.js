@@ -1266,33 +1266,41 @@ function getHadithJourRule() {
   var dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(),0,0).getTime()) / 86400000);
   return HADITHS_JOUR[dayOfYear % HADITHS_JOUR.length];
 }
-var _versetJourCache = null;
-function getVersetJour(cb) {
+var _versetsJourCache = [];
+function _getVersetsJourDayKey() {
   var dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(),0,0).getTime()) / 86400000);
-  var n = (dayOfYear % 6236) + 1;
-  var cacheKey = 'verset_jour_' + n;
+  return { dayOfYear: dayOfYear, debut: (dayOfYear - 1) * 17 + 1 };
+}
+function getVersetsJour(cb) {
+  var dk = _getVersetsJourDayKey();
+  var cacheKey = 'versets_jour_' + dk.dayOfYear;
   var cached = safeGetItem(cacheKey);
-  if (cached) { try { _versetJourCache = JSON.parse(cached); if (cb) cb(_versetJourCache); return; } catch(e) {} }
-  fetch('https://api.alquran.cloud/v1/ayah/' + n + '/editions/quran-uthmani,fr.hamidullah')
-    .then(function(r) { return r.json(); })
-    .then(function(data) {
+  if (cached) { try { _versetsJourCache = JSON.parse(cached); if (cb) cb(_versetsJourCache); return; } catch(e) {} }
+  var fetches = [];
+  for (var i = 0; i < 17; i++) {
+    var n = ((dk.debut + i - 1) % 6236) + 1;
+    fetches.push(fetch('https://api.alquran.cloud/v1/ayah/' + n + '/editions/quran-uthmani,fr.hamidullah').then(function(r) { return r.json(); }));
+  }
+  Promise.all(fetches).then(function(results) {
+    _versetsJourCache = results.map(function(data) {
       if (data.code === 200 && data.data && data.data.length >= 2) {
         var ar = data.data[0], fr = data.data[1];
-        _versetJourCache = { arabe: ar.text, traduction: fr.text, sourate: ar.surah.englishName, sourate_fr: fr.surah.name, numero: ar.numberInSurah, ref: fr.surah.name + ' ' + fr.surah.number + ':' + ar.numberInSurah };
-        safeSetItem(cacheKey, JSON.stringify(_versetJourCache));
-        if (cb) cb(_versetJourCache);
+        return { arabe: ar.text, traduction: fr.text, sourate_fr: fr.surah.name, ref: fr.surah.name + ' ' + fr.surah.number + ':' + ar.numberInSurah };
       }
-    }).catch(function() { if (cb) cb(_versetJourCache); });
+      return null;
+    }).filter(Boolean);
+    if (_versetsJourCache.length) safeSetItem(cacheKey, JSON.stringify(_versetsJourCache));
+    if (cb) cb(_versetsJourCache);
+  }).catch(function() { if (cb) cb(_versetsJourCache); });
 }
-function getVersetJourSync() {
-  if (_versetJourCache) return _versetJourCache;
-  var dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(),0,0).getTime()) / 86400000);
-  var n = (dayOfYear % 6236) + 1;
-  var cached = safeGetItem('verset_jour_' + n);
-  if (cached) { try { _versetJourCache = JSON.parse(cached); return _versetJourCache; } catch(e) {} }
-  return { arabe: '', traduction: '', sourate: '', sourate_fr: '', numero: 0, ref: '' };
+function getVersetsJourSync() {
+  if (_versetsJourCache.length) return _versetsJourCache;
+  var dk = _getVersetsJourDayKey();
+  var cached = safeGetItem('versets_jour_' + dk.dayOfYear);
+  if (cached) { try { _versetsJourCache = JSON.parse(cached); return _versetsJourCache; } catch(e) {} }
+  return [];
 }
-getVersetJour();
+getVersetsJour();
 function getSavaisTuFact() {
   if (!SAVAIS_TU.length) return { texte: '', source: '', categorie: '' };
   var dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(),0,0).getTime()) / 86400000);
@@ -1350,7 +1358,7 @@ const LEVELS = [
       { icon: '📚', title: 'Étude islamique', items: [
         { id: 'hadith1', minVague: 3, label: '1er Hadith du jour', get sub() { var h = getHadithJourRule(); return (h.texte_fr || '').substring(0,50) + '\u2026'; }, arabic: '\u062D\u064E\u062F\u0650\u064A\u062B\u064C', paths: ['reconnecter','routine','sacraliser'], block: 'jour', category: 'science' },
         { id: 'sira', minVague: 3, label: 'S\u00eera du Proph\u00e8te \uFDFA', sub: 'Un rendez-vous chaque jour', arabic: '\u0627\u0644\u0633\u0651\u0650\u064A\u0631\u064E\u0629\u064F \u0627\u0644\u0646\u0651\u064E\u0628\u064E\u0648\u0650\u064A\u0651\u064E\u0629\u064F', paths: ['reconnecter','routine','sacraliser'], block: 'jour', category: 'science' },
-        { id: 'quran_read', minVague: 3, label: 'Verset du jour', get sub() { var v = getVersetJourSync(); return (v.traduction || '').substring(0,50) + '\u2026'; }, arabic: '\u0642\u0650\u0631\u064E\u0627\u0621\u064E\u0629\u064F \u0627\u0644\u0652\u0642\u064F\u0631\u0652\u0622\u0646\u0650', paths: ['routine','sacraliser'], block: 'jour', category: 'science' },
+        { id: 'quran_read', minVague: 3, label: 'Versets du jour', get sub() { var vs = getVersetsJourSync(); return vs.length ? (vs[0].traduction || '').substring(0,50) + '\u2026' : '17 versets \u00e0 lire'; }, arabic: '\u0642\u0650\u0631\u064E\u0627\u0621\u064E\u0629\u064F \u0627\u0644\u0652\u0642\u064F\u0631\u0652\u0622\u0646\u0650', paths: ['routine','sacraliser'], block: 'jour', category: 'science' },
         { id: 'arabic', minVague: 4, label: "Apprentissage de l'arabe", sub: '10 min · Vocabulaire ou grammaire', arabic: 'تَعَلُّمُ الْعَرَبِيَّةِ', paths: ['sacraliser'], block: 'jour', category: 'science' },
         { id: 'vie_prophetes', minVague: 4, label: 'Histoires des Proph\u00e8tes', get sub() { var p = getPropheteJour(); return (p.nom_fr && p.episode) ? (p.nom_fr + ' \u2014 ' + p.episode).substring(0,50) + '\u2026' : 'Nouh, Ibrahim, Moussa, Issa\u2026'; }, arabic: '\u0642\u064E\u0635\u064E\u0635\u064F \u0627\u0644\u0623\u064E\u0646\u0628\u0650\u064A\u064E\u0627\u0621\u0650', paths: ['routine','sacraliser'], block: 'jour', category: 'science', hadith: '"Nous te racontons le meilleur des r\u00e9cits" \u2014 Coran 12:3', source: 'Yusuf 12:3' },
         { id: 'vie_compagnons', minVague: 4, label: 'Vie des Compagnons', get sub() { var c = getCompagnonJour(); return (c.nom_fr && c.episode) ? (c.nom_fr + ' \u2014 ' + c.episode).substring(0,50) + '\u2026' : 'Abu Bakr, Omar, Othman, Ali\u2026'; }, arabic: '\u0633\u0650\u064A\u064E\u0631\u064F \u0627\u0644\u0635\u0651\u064E\u062D\u064E\u0627\u0628\u064E\u0629\u0650', paths: ['routine','sacraliser'], block: 'jour', category: 'science', hadith: '"Mes Compagnons sont comme les \u00e9toiles \u2014 qui que vous suiviez, vous serez guid\u00e9s" \u2014 Bayhaqi', source: 'Bayhaqi' },
@@ -14654,28 +14662,48 @@ function openVuePropheteJour() {
 }
 window.openVuePropheteJour = openVuePropheteJour;
 
+var _versetIdx = 0;
 function openVueVersetJour() {
   var v = document.getElementById('vue-rituel');
   if (!v) return;
-  v.querySelector('.rituel-titre').textContent = 'VERSET DU JOUR';
+  v.querySelector('.rituel-titre').textContent = 'VERSETS DU JOUR';
   v.querySelector('.rituel-prochaine').textContent = '';
   v.querySelector('.rituel-poetique').textContent = '';
   var main = v.querySelector('.rituel-content');
-  var _render = function(vj) {
-    if (!vj || !vj.arabe) { main.innerHTML = '<div style="text-align:center;padding:40px 16px;color:rgba(255,255,255,0.4);font-size:14px;">Chargement\u2026</div>'; return; }
-    main.innerHTML = '<div style="padding:20px 16px;text-align:center;">'
-      + '<div class="fiqh-categorie">' + (vj.ref || '').toUpperCase() + '</div>'
-      + '<div style="font-family:\'Amiri\',serif;font-size:24px;line-height:2;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:24px;">' + vj.arabe + '</div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;line-height:1.7;color:rgba(240,234,214,0.95);font-style:italic;margin-bottom:20px;">' + vj.traduction + '</div>'
-      + (vj.sourate_fr ? '<div style="font-size:11px;color:rgba(200,168,74,0.6);letter-spacing:0.1em;">\u2014 ' + vj.sourate_fr + ' \u2014</div>' : '')
-      + '</div>';
+  _versetIdx = 0;
+  var _renderAll = function(versets) {
+    if (!versets || !versets.length) { main.innerHTML = '<div style="text-align:center;padding:40px 16px;color:rgba(255,255,255,0.4);font-size:14px;">Chargement des 17 versets\u2026</div>'; return; }
+    _renderVerset(main, versets);
   };
-  var cached = getVersetJourSync();
-  _render(cached);
+  var cached = getVersetsJourSync();
+  _renderAll(cached);
   v.classList.remove('hidden');
   document.getElementById('rituel-emblem').textContent = '\u0642\u064F\u0631\u0652\u0622\u0646';
-  if (!cached.arabe) getVersetJour(function(vj) { _render(vj); });
+  if (!cached.length) getVersetsJour(function(vs) { _renderAll(vs); });
 }
+function _renderVerset(main, versets) {
+  var vj = versets[_versetIdx];
+  if (!vj) return;
+  var total = versets.length;
+  main.innerHTML = '<div style="padding:20px 16px;text-align:center;">'
+    + '<div class="fiqh-categorie">' + (vj.ref || '').toUpperCase() + '</div>'
+    + '<div style="font-family:\'Amiri\',serif;font-size:24px;line-height:2;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:24px;">' + vj.arabe + '</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;line-height:1.7;color:rgba(240,234,214,0.95);font-style:italic;margin-bottom:20px;">' + vj.traduction + '</div>'
+    + (vj.sourate_fr ? '<div style="font-size:11px;color:rgba(200,168,74,0.6);letter-spacing:0.1em;margin-bottom:20px;">\u2014 ' + vj.sourate_fr + ' \u2014</div>' : '')
+    + '<div style="display:flex;align-items:center;justify-content:center;gap:16px;">'
+    + '<button onclick="_versetNav(-1)" style="padding:8px 16px;border-radius:10px;border:1px solid rgba(200,168,74,' + (_versetIdx > 0 ? '0.4' : '0.1') + ');background:transparent;color:' + (_versetIdx > 0 ? '#C8A84A' : 'rgba(200,168,74,0.2)') + ';font-size:13px;cursor:pointer;">\u25C0 Pr\u00e9c.</button>'
+    + '<span style="font-size:12px;color:rgba(200,168,74,0.5);letter-spacing:1px;">' + (_versetIdx + 1) + ' / ' + total + '</span>'
+    + '<button onclick="_versetNav(1)" style="padding:8px 16px;border-radius:10px;border:1px solid rgba(200,168,74,' + (_versetIdx < total - 1 ? '0.4' : '0.1') + ');background:transparent;color:' + (_versetIdx < total - 1 ? '#C8A84A' : 'rgba(200,168,74,0.2)') + ';font-size:13px;cursor:pointer;">Suiv. \u25B6</button>'
+    + '</div></div>';
+}
+function _versetNav(dir) {
+  var vs = getVersetsJourSync();
+  if (!vs.length) return;
+  _versetIdx = Math.max(0, Math.min(vs.length - 1, _versetIdx + dir));
+  var main = document.querySelector('#vue-rituel .rituel-content');
+  if (main) _renderVerset(main, vs);
+}
+window._versetNav = _versetNav;
 window.openVueVersetJour = openVueVersetJour;
 
 function shareSavaisTuFromVue() {
