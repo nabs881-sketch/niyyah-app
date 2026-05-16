@@ -2561,20 +2561,8 @@ function renderLevel(levelId) {
         const _tlCurrent = (!checked && !_firstUncheckedFound) ? (_firstUncheckedFound = true, ' timeline-current') : '';
         const _tlOpacity = checked ? 'opacity:0.3;' : '';
         var shareBtn = '';
-        if (item.id === 'savais_tu') {
-          shareBtn = '<button class="btn-audio" aria-label="Lire" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openVueSavaisTu();" title="Lire" style="font-size:13px;padding:0 8px;width:auto;">\u{1F4D6}</button>';
-        } else if (item.id === 'fiqh_jour') {
-          shareBtn = '<button class="btn-audio" aria-label="Lire" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openVueFiqhJour();" title="Lire" style="font-size:13px;padding:0 8px;width:auto;">\u{1F4D6}</button>';
-        } else if (item.id === 'hadith1') {
-          shareBtn = '<button class="btn-audio" aria-label="Lire" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openVueHadithJour();" title="Lire" style="font-size:13px;padding:0 8px;width:auto;">\u{1F4D6}</button>';
-        } else if (item.id === 'vie_compagnons') {
-          shareBtn = '<button class="btn-audio" aria-label="Lire" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openVueCompagnon();" title="Lire" style="font-size:13px;padding:0 8px;width:auto;">\u{1F4D6}</button>';
-        } else if (item.id === 'vie_prophetes') {
-          shareBtn = '<button class="btn-audio" aria-label="Lire" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openVuePropheteJour();" title="Lire" style="font-size:13px;padding:0 8px;width:auto;">\u{1F4D6}</button>';
-        } else if (item.id === 'quran_read') {
-          shareBtn = '<button class="btn-audio" aria-label="Lire" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openVueVersetJour();" title="Lire" style="font-size:13px;padding:0 8px;width:auto;">\u{1F4D6}</button>';
-        } else if (item.id === 'sira') {
-          shareBtn = '<button class="btn-audio" aria-label="Lire" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();SIRA.openDetail();" title="Lire" style="font-size:13px;padding:0 8px;width:auto;">\u{1F4D6}</button>';
+        if (_isKnowledge) {
+          shareBtn = '<svg width="14" height="22" viewBox="0 0 14 22" style="opacity:0.7;flex-shrink:0;align-self:center;" aria-hidden="true"><path d="M3 4 L10 11 L3 18" fill="none" stroke="#C8A84A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
         }
         const customClick = item.id === 'savais_tu'
           ? 'openVueSavaisTu();'
@@ -14526,12 +14514,8 @@ function openVueAuFilDuJour() {
     const ar = it.arabic ? '<div class="arabic">' + it.arabic + '</div>' : '';
     const sub = it.sub ? '<div class="sub">' + it.sub + '</div>' : '';
     const audio = it.audio ? '<button class="btn-audio" data-audio-id="' + it.id + '" onclick="event.stopPropagation();playAudioById(this)">🔊</button>' : '';
-    var _readBtn = (it.id === 'savais_tu') ? '<button class="btn-audio" aria-label="Lire" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openVueSavaisTu();" style="font-size:13px;padding:0 8px;width:auto;">\u{1F4D6}</button>'
-      : (it.id === 'fiqh_jour') ? '<button class="btn-audio" aria-label="Lire" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openVueFiqhJour();" style="font-size:13px;padding:0 8px;width:auto;">\u{1F4D6}</button>'
-      : (it.id === 'hadith1') ? '<button class="btn-audio" aria-label="Lire" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openVueHadithJour();" style="font-size:13px;padding:0 8px;width:auto;">\u{1F4D6}</button>'
-      : (it.id === 'vie_compagnons') ? '<button class="btn-audio" aria-label="Lire" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openVueCompagnon();" style="font-size:13px;padding:0 8px;width:auto;">\u{1F4D6}</button>'
-      : (it.id === 'vie_prophetes') ? '<button class="btn-audio" aria-label="Lire" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openVuePropheteJour();" style="font-size:13px;padding:0 8px;width:auto;">\u{1F4D6}</button>'
-      : (it.id === 'quran_read') ? '<button class="btn-audio" aria-label="Lire" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openVueVersetJour();" style="font-size:13px;padding:0 8px;width:auto;">\u{1F4D6}</button>' : '';
+    var _knowledgeIds = ['savais_tu','fiqh_jour','hadith1','vie_compagnons','vie_prophetes','quran_read','sira'];
+    var _readBtn = (_knowledgeIds.indexOf(it.id) !== -1) ? '<svg width="14" height="22" viewBox="0 0 14 22" style="opacity:0.7;flex-shrink:0;align-self:center;" aria-hidden="true"><path d="M3 4 L10 11 L3 18" fill="none" stroke="#C8A84A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>' : '';
     var _click = it.id === 'sira' ? 'SIRA.openDetail();'
       : it.id === 'savais_tu' ? 'openVueSavaisTu();'
       : it.id === 'fiqh_jour' ? 'openVueFiqhJour();'
