@@ -1230,6 +1230,13 @@ var SAVAIS_TU = [];
 (function() {
   fetch('./savais_tu.json').then(function(r) { return r.json(); }).then(function(data) { SAVAIS_TU = data; }).catch(function() {});
 })();
+var duaasData = null;
+function loadDuaas(cb) {
+  if (duaasData) { if (cb) cb(duaasData); return; }
+  fetch('./duaas.json').then(function(r) { return r.json(); }).then(function(data) { duaasData = data; if (cb) cb(data); }).catch(function() { if (cb) cb(null); });
+}
+function getDuaaJourNum() { return parseInt(safeGetItem('niyyah_duaa_progress') || '1', 10); }
+function getDuaaJourPreview() { var n = getDuaaJourNum(); return { jour: n, total: 253 }; }
 var FIQH_JOUR = [];
 (function() {
   fetch('./fiqh_jour.json').then(function(r) { return r.json(); }).then(function(data) { FIQH_JOUR = data; }).catch(function() {});
@@ -1370,6 +1377,7 @@ const LEVELS = [
     sections: [
       { icon: '📚', title: 'Étude islamique', items: [
         { id: 'hadith1', minVague: 3, label: '1er Hadith du jour', get sub() { var h = getHadithJourRule(); return (h.texte_fr || '').substring(0,50) + '\u2026'; }, arabic: '\u062D\u064E\u062F\u0650\u064A\u062B\u064C', paths: ['reconnecter','routine','sacraliser'], block: 'jour', category: 'science' },
+        { id: 'duaa_jour', minVague: 3, label: 'Du\u2019a du jour', get sub() { var d = getDuaaJourPreview(); return '\uD83D\uDCFF Jour ' + d.jour + '/253'; }, arabic: '\u062F\u064F\u0639\u064E\u0627\u0621', paths: ['reconnecter','routine','sacraliser'], block: 'jour', category: 'science' },
         { id: 'sira', minVague: 3, label: 'S\u00eera du Proph\u00e8te \uFDFA', sub: 'Un rendez-vous chaque jour', arabic: '\u0627\u0644\u0633\u0651\u0650\u064A\u0631\u064E\u0629\u064F \u0627\u0644\u0646\u0651\u064E\u0628\u064E\u0648\u0650\u064A\u0651\u064E\u0629\u064F', paths: ['reconnecter','routine','sacraliser'], block: 'jour', category: 'science' },
         { id: 'quran_read', minVague: 3, label: 'Versets du jour', get sub() { var vs = getVersetsJourSync(); return vs.length ? (vs[0].traduction || '').substring(0,50) + '\u2026' : '17 versets \u00e0 lire'; }, arabic: '\u0642\u0650\u0631\u064E\u0627\u0621\u064E\u0629\u064F \u0627\u0644\u0652\u0642\u064F\u0631\u0652\u0622\u0646\u0650', paths: ['routine','sacraliser'], block: 'jour', category: 'science' },
         { id: 'arabic', minVague: 4, label: "Apprentissage de l'arabe", sub: '10 min · Vocabulaire ou grammaire', arabic: 'تَعَلُّمُ الْعَرَبِيَّةِ', paths: ['sacraliser'], block: 'jour', category: 'science' },
@@ -2570,6 +2578,8 @@ function renderLevel(levelId) {
           ? 'openVueFiqhJour();'
           : item.id === 'hadith1'
           ? 'openVueHadithJour();'
+          : item.id === 'duaa_jour'
+          ? 'openVueDuaaJour();'
           : item.id === 'vie_compagnons'
           ? 'openVueCompagnon();'
           : item.id === 'vie_prophetes'
@@ -2580,7 +2590,7 @@ function renderLevel(levelId) {
           ? 'SIRA.openDetail();'
           : 'toggleItem(\'' + item.id + '\',event)';
         var _tl = tI(item,'label'), _ts = tI(item,'sub');
-        var _isKnowledge = ['savais_tu','fiqh_jour','hadith1','vie_compagnons','vie_prophetes','quran_read','sira'].indexOf(item.id) !== -1;
+        var _isKnowledge = ['savais_tu','fiqh_jour','hadith1','duaa_jour','vie_compagnons','vie_prophetes','quran_read','sira'].indexOf(item.id) !== -1;
         var _checkClick = _isKnowledge ? ' onclick="event.stopPropagation();toggleItem(\'' + item.id + '\',event)"' : '';
         html += '<div class="item' + fridayCls + (checked ? ' checked' : '') + _tlCurrent + '" onclick="' + customClick + '" style="' + _tlOpacity + 'animation-delay:' + delay + 'ms;--i:' + idx + '" id="item-' + item.id + '">' + _pathBadge + '<div class="check-circle"' + _checkClick + '><svg class="check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-body"><div class="item-label' + priorityCls + '">' + _tl + optionalBadge + '</div>' + (_ts ? '<div class="item-sub">' + (_ts.includes('·') ? _ts.split('·')[0].trim() : _ts) + '</div>' : '') + arabicHtml + '</div>' + shareBtn + audioBtn + infoBtn + '</div>';
       }
@@ -14514,12 +14524,13 @@ function openVueAuFilDuJour() {
     const ar = it.arabic ? '<div class="arabic">' + it.arabic + '</div>' : '';
     const sub = it.sub ? '<div class="sub">' + it.sub + '</div>' : '';
     const audio = it.audio ? '<button class="btn-audio" data-audio-id="' + it.id + '" onclick="event.stopPropagation();playAudioById(this)">🔊</button>' : '';
-    var _knowledgeIds = ['savais_tu','fiqh_jour','hadith1','vie_compagnons','vie_prophetes','quran_read','sira'];
+    var _knowledgeIds = ['savais_tu','fiqh_jour','hadith1','duaa_jour','vie_compagnons','vie_prophetes','quran_read','sira'];
     var _readBtn = (_knowledgeIds.indexOf(it.id) !== -1) ? '<svg width="14" height="22" viewBox="0 0 14 22" style="opacity:0.7;flex-shrink:0;align-self:center;" aria-hidden="true"><path d="M3 4 L10 11 L3 18" fill="none" stroke="#C8A84A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>' : '';
     var _click = it.id === 'sira' ? 'SIRA.openDetail();'
       : it.id === 'savais_tu' ? 'openVueSavaisTu();'
       : it.id === 'fiqh_jour' ? 'openVueFiqhJour();'
       : it.id === 'hadith1' ? 'openVueHadithJour();'
+      : it.id === 'duaa_jour' ? 'openVueDuaaJour();'
       : it.id === 'vie_compagnons' ? 'openVueCompagnon();'
       : it.id === 'vie_prophetes' ? 'openVuePropheteJour();'
       : it.id === 'quran_read' ? 'openVueVersetJour();'
@@ -14661,6 +14672,35 @@ function openVueHadithJour() {
   document.getElementById('rituel-emblem').textContent = '\u062D\u064E\u062F\u0650\u064A\u062B';
 }
 window.openVueHadithJour = openVueHadithJour;
+
+function openVueDuaaJour() {
+  var v = document.getElementById('vue-rituel');
+  if (!v) return;
+  v.querySelector('.rituel-titre').textContent = 'DU\u2019A DU JOUR';
+  v.querySelector('.rituel-prochaine').textContent = '';
+  v.querySelector('.rituel-poetique').textContent = '';
+  var main = v.querySelector('.rituel-content');
+  var jourNum = getDuaaJourNum();
+  main.innerHTML = '<div style="text-align:center;padding:40px 16px;color:rgba(255,255,255,0.4);font-size:14px;">Chargement\u2026</div>';
+  v.classList.remove('hidden');
+  document.getElementById('rituel-emblem').textContent = '\u062F\u064F\u0639\u064E\u0627\u0621';
+  loadDuaas(function(data) {
+    if (!data) { main.innerHTML = '<div style="text-align:center;padding:40px;color:#C8A84A;">Erreur de chargement</div>'; return; }
+    var duaa = data.find(function(d) { return d.jour === jourNum; }) || data[0];
+    main.innerHTML = '<div style="padding:20px 16px;text-align:center;">'
+      + '<div class="fiqh-categorie">' + (duaa.categorie || '').toUpperCase() + ' \u00b7 JOUR ' + jourNum + '/253</div>'
+      + (duaa.arabe ? '<div style="font-family:\'Amiri\',serif;font-size:22px;line-height:2;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:16px;">' + duaa.arabe + '</div>' : '')
+      + (duaa.phonetique ? '<div style="font-size:13px;color:rgba(255,255,255,0.5);font-style:italic;margin-bottom:16px;">' + duaa.phonetique + '</div>' : '')
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;line-height:1.7;color:rgba(240,234,214,0.95);font-style:italic;margin-bottom:20px;">' + (duaa.traduction || '') + '</div>'
+      + (duaa.occasion ? '<div style="font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:16px;">\uD83D\uDD52 ' + duaa.occasion + '</div>' : '')
+      + (duaa.recit ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;line-height:1.8;color:rgba(240,234,214,0.8);text-align:left;margin-bottom:20px;">' + duaa.recit.replace(/\n/g,'<br>') + '</div>' : '')
+      + (duaa.source ? '<div style="font-size:11px;color:rgba(200,168,74,0.6);letter-spacing:0.1em;">\u2014 ' + duaa.source + ' \u2014</div>' : '')
+      + (duaa.authenticite ? '<div style="font-size:10px;color:rgba(200,168,74,0.4);margin-top:6px;letter-spacing:1px;">' + duaa.authenticite.toUpperCase() + '</div>' : '')
+      + '<button onclick="validerLecture(\'duaa_jour\')" style="margin-top:28px;padding:14px 28px;border:none;border-radius:24px;background:#C8A84A;color:#2C2E32;font-family:Cormorant Garamond,serif;font-size:15px;font-weight:700;cursor:pointer;">J\u2019ai termin\u00e9 ma lecture</button>'
+      + '</div>';
+  });
+}
+window.openVueDuaaJour = openVueDuaaJour;
 
 function openVueCompagnon() {
   var c = getCompagnonJour();
