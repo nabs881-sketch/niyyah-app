@@ -14693,11 +14693,12 @@ function openVueDuaaJour() {
       + (duaa.phonetique ? '<div style="font-size:13px;color:rgba(255,255,255,0.5);font-style:italic;margin-bottom:16px;">' + duaa.phonetique + '</div>' : '')
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;line-height:1.7;color:rgba(240,234,214,0.95);font-style:italic;margin-bottom:20px;">' + (duaa.traduction || '') + '</div>'
       + (duaa.occasion ? '<div style="font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:16px;">\uD83D\uDD52 ' + duaa.occasion + '</div>' : '')
-      + (duaa.recit ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;line-height:1.8;color:rgba(240,234,214,0.8);text-align:left;margin-bottom:20px;">' + duaa.recit.replace(/\n/g,'<br>') + '</div>' : '')
+      + (duaa.recit ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;line-height:1.8;color:rgba(240,234,214,0.8);text-align:justify;margin-bottom:20px;">' + duaa.recit.replace(/\n/g,'<br>') + '</div>' : '')
       + (duaa.source ? '<div style="font-size:11px;color:rgba(200,168,74,0.6);letter-spacing:0.1em;">\u2014 ' + duaa.source + ' \u2014</div>' : '')
       + (duaa.authenticite ? '<div style="font-size:10px;color:rgba(200,168,74,0.4);margin-top:6px;letter-spacing:1px;">' + duaa.authenticite.toUpperCase() + '</div>' : '')
-      + '<button onclick="validerDuaaJour()" style="margin-top:28px;padding:14px 28px;border:none;border-radius:24px;background:#C8A84A;color:#2C2E32;font-family:Cormorant Garamond,serif;font-size:15px;font-weight:700;cursor:pointer;">J\u2019ai termin\u00e9 ma lecture</button>'
       + '</div>';
+    var _footer = v.querySelector('.rituel-footer button');
+    if (_footer) _footer.setAttribute('onclick', 'validerDuaaJour()');
   });
 }
 window.openVueDuaaJour = openVueDuaaJour;
