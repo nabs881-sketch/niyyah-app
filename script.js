@@ -1235,7 +1235,7 @@ function loadDuaas(cb) {
   if (duaasData) { if (cb) cb(duaasData); return; }
   fetch('./duaas.json').then(function(r) { return r.json(); }).then(function(data) { duaasData = data; if (cb) cb(data); }).catch(function() { if (cb) cb(null); });
 }
-function getDuaaJourNum() { return parseInt(safeGetItem('niyyah_duaa_progress') || '1', 10); }
+function getDuaaJourNum() { var p = parseInt(safeGetItem('niyyah_duaa_progress') || '1', 10); return ((p - 1) % 253) + 1; }
 function getDuaaJourPreview() { var n = getDuaaJourNum(); return { jour: n, total: 253 }; }
 var FIQH_JOUR = [];
 (function() {
@@ -14689,18 +14689,25 @@ function openVueDuaaJour() {
     var duaa = data.find(function(d) { return d.jour === jourNum; }) || data[0];
     main.innerHTML = '<div style="padding:20px 16px;text-align:center;">'
       + '<div class="fiqh-categorie">' + (duaa.categorie || '').toUpperCase() + ' \u00b7 JOUR ' + jourNum + '/253</div>'
-      + (duaa.arabe ? '<div style="font-family:\'Amiri\',serif;font-size:22px;line-height:2;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:16px;">' + duaa.arabe + '</div>' : '')
+      + (duaa.arabe ? (duaa.arabe.charAt(0) === '(' ? '<div style="background:rgba(200,168,74,0.08);border-left:3px solid #C8A84A;padding:16px;margin-bottom:16px;text-align:left;direction:ltr;"><div style="font-size:12px;font-weight:700;color:#C8A84A;margin-bottom:8px;">\uD83D\uDCFF Pratique</div><div style="font-size:15px;line-height:1.7;color:rgba(240,234,214,0.9);font-style:italic;">' + duaa.arabe + '</div></div>' : '<div style="font-family:\'Amiri\',serif;font-size:22px;line-height:2;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:16px;">' + duaa.arabe + '</div>') : '')
       + (duaa.phonetique ? '<div style="font-size:13px;color:rgba(255,255,255,0.5);font-style:italic;margin-bottom:16px;">' + duaa.phonetique + '</div>' : '')
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;line-height:1.7;color:rgba(240,234,214,0.95);font-style:italic;margin-bottom:20px;">' + (duaa.traduction || '') + '</div>'
       + (duaa.occasion ? '<div style="font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:16px;">\uD83D\uDD52 ' + duaa.occasion + '</div>' : '')
       + (duaa.recit ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;line-height:1.8;color:rgba(240,234,214,0.8);text-align:left;margin-bottom:20px;">' + duaa.recit.replace(/\n/g,'<br>') + '</div>' : '')
       + (duaa.source ? '<div style="font-size:11px;color:rgba(200,168,74,0.6);letter-spacing:0.1em;">\u2014 ' + duaa.source + ' \u2014</div>' : '')
       + (duaa.authenticite ? '<div style="font-size:10px;color:rgba(200,168,74,0.4);margin-top:6px;letter-spacing:1px;">' + duaa.authenticite.toUpperCase() + '</div>' : '')
-      + '<button onclick="validerLecture(\'duaa_jour\')" style="margin-top:28px;padding:14px 28px;border:none;border-radius:24px;background:#C8A84A;color:#2C2E32;font-family:Cormorant Garamond,serif;font-size:15px;font-weight:700;cursor:pointer;">J\u2019ai termin\u00e9 ma lecture</button>'
+      + '<button onclick="validerDuaaJour()" style="margin-top:28px;padding:14px 28px;border:none;border-radius:24px;background:#C8A84A;color:#2C2E32;font-family:Cormorant Garamond,serif;font-size:15px;font-weight:700;cursor:pointer;">J\u2019ai termin\u00e9 ma lecture</button>'
       + '</div>';
   });
 }
 window.openVueDuaaJour = openVueDuaaJour;
+function validerDuaaJour() {
+  var cur = parseInt(safeGetItem('niyyah_duaa_progress') || '1', 10);
+  cur = cur >= 253 ? 1 : cur + 1;
+  safeSetItem('niyyah_duaa_progress', String(cur));
+  validerLecture('duaa_jour');
+}
+window.validerDuaaJour = validerDuaaJour;
 
 function openVueCompagnon() {
   var c = getCompagnonJour();
