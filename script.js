@@ -14704,11 +14704,34 @@ function openVueDuaaJour() {
 window.openVueDuaaJour = openVueDuaaJour;
 function validerDuaaJour() {
   var cur = parseInt(safeGetItem('niyyah_duaa_progress') || '1', 10);
-  cur = cur >= 253 ? 1 : cur + 1;
-  safeSetItem('niyyah_duaa_progress', String(cur));
+  if (cur >= 253) {
+    _showDuaaCycleModal();
+    validerLecture('duaa_jour');
+    return;
+  }
+  safeSetItem('niyyah_duaa_progress', String(cur + 1));
   validerLecture('duaa_jour');
 }
 window.validerDuaaJour = validerDuaaJour;
+function _showDuaaCycleModal() {
+  var ov = document.createElement('div');
+  ov.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;background:rgba(15,12,8,0.95);display:flex;align-items:center;justify-content:center;padding:24px;';
+  ov.innerHTML = '<div style="text-align:center;max-width:340px;">'
+    + '<div style="font-size:48px;margin-bottom:20px;">\uD83C\uDF19</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:28px;font-weight:700;color:#C8A84A;line-height:1.4;margin-bottom:16px;">Tu as accompli un cycle complet</div>'
+    + '<div style="font-size:15px;color:rgba(240,234,214,0.8);line-height:1.6;margin-bottom:24px;">253 du\u2019as proph\u00e9tiques travers\u00e9es. Alhamdulill\u0101h.</div>'
+    + '<div style="font-family:\'Amiri\',serif;font-size:22px;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:8px;">\u0627\u0644\u0644\u0651\u064E\u0647\u064F\u0645\u0651\u064E \u062A\u064E\u0642\u064E\u0628\u0651\u064E\u0644\u0652 \u0645\u0650\u0646\u0651\u064E\u0627</div>'
+    + '<div style="font-size:13px;color:rgba(255,255,255,0.5);font-style:italic;margin-bottom:6px;">All\u0101humma taqabbal minn\u0101</div>'
+    + '<div style="font-size:14px;color:rgba(240,234,214,0.7);margin-bottom:32px;">\u00d4 Allah, accepte de nous.</div>'
+    + '<button id="_duaaCycleBtn" style="padding:14px 28px;border:none;border-radius:24px;background:#C8A84A;color:#2C2E32;font-family:Cormorant Garamond,serif;font-size:15px;font-weight:700;cursor:pointer;">Commencer un nouveau cycle</button>'
+    + '</div>';
+  document.body.appendChild(ov);
+  document.getElementById('_duaaCycleBtn').onclick = function() {
+    safeSetItem('niyyah_duaa_progress', '1');
+    ov.remove();
+  };
+}
+window._showDuaaCycleModal = _showDuaaCycleModal;
 
 function openVueCompagnon() {
   var c = getCompagnonJour();
