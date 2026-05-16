@@ -1267,6 +1267,13 @@ function getPropheteJour() {
   var jourParcours = (daysSince % 77) + 1;
   return PROPHETES.find(function(ep) { return ep.jour === jourParcours; }) || PROPHETES[0];
 }
+(function _debugParcours() {
+  var _ps = safeGetItem('niyyah_prophetes_start'), _ss = safeGetItem('niyyah_sira_start'), _cs = safeGetItem('niyyah_compagnons_start');
+  if (!_ps) { _ps = String(Date.now()); safeSetItem('niyyah_prophetes_start', _ps); }
+  if (!_ss) { _ss = String(Date.now()); safeSetItem('niyyah_sira_start', _ss); }
+  if (!_cs) { _cs = String(Date.now()); safeSetItem('niyyah_compagnons_start', _cs); }
+  console.log('[Niyyah] Parcours starts — Proph\u00e8tes:', _ps, '| S\u00eera:', _ss, '| Compagnons:', _cs);
+})();
 function getHadithJourRule() {
   if (!HADITHS_JOUR.length) return { theme: '', texte_ar: '', texte_fr: '', source: '', degre: '' };
   var dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(),0,0).getTime()) / 86400000);
