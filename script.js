@@ -14645,8 +14645,9 @@ function openVueFiqhJour() {
     + (rule.explication ? '<div style="font-size:14px;line-height:1.6;color:rgba(255,255,255,0.6);margin-bottom:20px;font-style:italic;">' + rule.explication + '</div>' : '')
     + (rule.source ? '<div style="font-size:11px;color:rgba(200,168,74,0.6);letter-spacing:0.1em;">\u2014 ' + rule.source + ' \u2014</div>' : '')
     + (rule.ecole ? '<div style="font-size:10px;color:rgba(200,168,74,0.4);margin-top:8px;letter-spacing:1px;">' + rule.ecole.toUpperCase() + '</div>' : '')
-    + '<button onclick="validerLecture(\'fiqh_jour\')" style="margin-top:28px;padding:14px 28px;border:none;border-radius:24px;background:#C8A84A;color:#2C2E32;font-family:Cormorant Garamond,serif;font-size:15px;font-weight:700;cursor:pointer;">J\u2019ai termin\u00e9 ma lecture</button>'
     + '</div>';
+  var _footer = v.querySelector('.rituel-footer button');
+  if (_footer) _footer.setAttribute('onclick', "validerLecture('fiqh_jour')");
   v.classList.remove('hidden');
   document.getElementById('rituel-emblem').textContent = '\u0641\u0650\u0642\u0652\u0647';
 }
@@ -14666,8 +14667,9 @@ function openVueHadithJour() {
     + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;line-height:1.7;color:rgba(240,234,214,0.95);font-style:italic;margin-bottom:20px;">' + (h.texte_fr || '') + '</div>'
     + (h.source ? '<div style="font-size:11px;color:rgba(200,168,74,0.6);letter-spacing:0.1em;">\u2014 ' + h.source + ' \u2014</div>' : '')
     + (h.degre ? '<div style="font-size:10px;color:rgba(200,168,74,0.4);margin-top:8px;letter-spacing:1px;">' + h.degre.toUpperCase() + '</div>' : '')
-    + '<button onclick="validerLecture(\'hadith1\')" style="margin-top:28px;padding:14px 28px;border:none;border-radius:24px;background:#C8A84A;color:#2C2E32;font-family:Cormorant Garamond,serif;font-size:15px;font-weight:700;cursor:pointer;">J\u2019ai termin\u00e9 ma lecture</button>'
     + '</div>';
+  var _footer = v.querySelector('.rituel-footer button');
+  if (_footer) _footer.setAttribute('onclick', "validerLecture('hadith1')");
   v.classList.remove('hidden');
   document.getElementById('rituel-emblem').textContent = '\u062D\u064E\u062F\u0650\u064A\u062B';
 }
@@ -14751,8 +14753,9 @@ function openVueCompagnon() {
     + (c.parole ? '<div style="border-left:2px solid rgba(200,168,74,0.4);padding:8px 16px;margin-bottom:16px;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;line-height:1.6;color:rgba(200,168,74,0.85);text-align:left;">' + c.parole + '</div>' : '')
     + (c.station ? '<div style="border:1px solid rgba(200,168,74,0.25);border-radius:10px;padding:12px 16px;margin-bottom:20px;font-style:italic;font-size:14px;line-height:1.6;color:rgba(200,168,74,0.8);">' + c.station + '</div>' : '')
     + (c.source ? '<div style="font-size:11px;color:rgba(255,255,255,0.35);letter-spacing:0.1em;">\u2014 ' + c.source + ' \u2014</div>' : '')
-    + '<button onclick="validerLecture(\'vie_compagnons\')" style="margin-top:28px;padding:14px 28px;border:none;border-radius:24px;background:#C8A84A;color:#2C2E32;font-family:Cormorant Garamond,serif;font-size:15px;font-weight:700;cursor:pointer;">J\u2019ai termin\u00e9 ma lecture</button>'
     + '</div>';
+  var _footer = v.querySelector('.rituel-footer button');
+  if (_footer) _footer.setAttribute('onclick', "validerLecture('vie_compagnons')");
   v.classList.remove('hidden');
   document.getElementById('rituel-emblem').textContent = '\u0635\u064E\u062D\u064E\u0627\u0628\u064E\u0629';
 }
@@ -14776,8 +14779,9 @@ function openVuePropheteJour() {
     + (p.station ? '<div style="border:1px solid rgba(200,168,74,0.25);border-radius:10px;padding:12px 16px;margin-bottom:20px;font-style:italic;font-size:14px;line-height:1.6;color:rgba(200,168,74,0.8);">' + p.station + '</div>' : '')
     + (p.sources ? '<div style="font-size:11px;color:rgba(200,168,74,0.6);letter-spacing:0.1em;margin-bottom:16px;">\u2014 ' + p.sources + ' \u2014</div>' : '')
     + (p.renvoi_module === 'sira' ? '<button onclick="if(typeof SIRA!==\'undefined\')SIRA.openDetail();" style="padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,74,0.4);background:transparent;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:600;cursor:pointer;letter-spacing:0.5px;">Ouvrir la S\u00eera</button>' : '')
-    + '<button onclick="validerLecture(\'vie_prophetes\')" style="margin-top:28px;padding:14px 28px;border:none;border-radius:24px;background:#C8A84A;color:#2C2E32;font-family:Cormorant Garamond,serif;font-size:15px;font-weight:700;cursor:pointer;">J\u2019ai termin\u00e9 ma lecture</button>'
     + '</div>';
+  var _footer = v.querySelector('.rituel-footer button');
+  if (_footer) _footer.setAttribute('onclick', "validerLecture('vie_prophetes')");
   v.classList.remove('hidden');
   document.getElementById('rituel-emblem').textContent = '\u0623\u064E\u0646\u0628\u0650\u064A\u064E\u0627\u0621';
 }
@@ -14798,6 +14802,8 @@ function openVueVersetJour() {
   };
   var cached = getVersetsJourSync();
   _renderAll(cached);
+  var _footer = v.querySelector('.rituel-footer button');
+  if (_footer) _footer.setAttribute('onclick', "validerLecture('quran_read')");
   v.classList.remove('hidden');
   document.getElementById('rituel-emblem').textContent = '\u0642\u064F\u0631\u0652\u0622\u0646';
   if (!cached.length) getVersetsJour(function(vs) { _renderAll(vs); });
@@ -14816,7 +14822,6 @@ function _renderVerset(main, versets) {
     + '<span style="font-size:12px;color:rgba(200,168,74,0.5);letter-spacing:1px;">' + (_versetIdx + 1) + ' / ' + total + '</span>'
     + '<button onclick="_versetNav(1)" style="padding:8px 16px;border-radius:10px;border:1px solid rgba(200,168,74,' + (_versetIdx < total - 1 ? '0.4' : '0.1') + ');background:transparent;color:' + (_versetIdx < total - 1 ? '#C8A84A' : 'rgba(200,168,74,0.2)') + ';font-size:13px;cursor:pointer;">Suiv. \u25B6</button>'
     + '</div>'
-    + '<button onclick="validerLecture(\'quran_read\')" style="margin-top:28px;padding:14px 28px;border:none;border-radius:24px;background:#C8A84A;color:#2C2E32;font-family:Cormorant Garamond,serif;font-size:15px;font-weight:700;cursor:pointer;">J\u2019ai termin\u00e9 ma lecture</button>'
     + '</div>';
 }
 function _versetNav(dir) {
