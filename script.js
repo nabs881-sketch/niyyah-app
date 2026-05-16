@@ -2445,9 +2445,11 @@ function renderLevel(levelId) {
   const scoreBg = scoreJour >= 80 ? 'rgba(200,168,75,0.12)' : scoreJour >= 50 ? 'rgba(52,217,98,0.08)' : 'rgba(255,255,255,0.04)';
   const scoreBorder = scoreJour >= 80 ? 'rgba(200,168,75,0.3)' : scoreJour >= 50 ? 'rgba(52,217,98,0.2)' : 'rgba(255,255,255,0.08)';
   const scoreLabel = scoreJour >= 80 ? 'MashaAllah ✦' : scoreJour >= 50 ? t('score_continue') : t('score_progress');
-  let html = '<div class="level-hero"><div class="hero-label">' + t('level_word') + ' ' + level.id + '</div><div class="hero-title">' + t('level_' + level.id) + '</div><div class="hero-bar-row"><div class="hero-bar-track"><div class="hero-bar-fill" style="width:' + pct + '%"></div></div><div class="hero-pct">' + Math.round(pct) + '%</div></div>'
+  var _lvlItems = getLevelItems(levelId);
+  var _lvlDone = _lvlItems.filter(function(i) { return isItemDone(i, state); }).length;
+  let html = '<div class="level-hero"><div class="hero-label">' + t('level_word') + ' ' + level.id + ' \u2014 ' + _lvlDone + ' / ' + _lvlItems.length + ' items</div><div class="hero-title">' + t('level_' + level.id) + '</div><div class="hero-bar-row"><div class="hero-bar-track"><div class="hero-bar-fill" style="width:' + pct + '%"></div></div><div class="hero-pct">' + Math.round(pct) + '%</div></div>'
     + '<div style="display:flex;align-items:center;justify-content:space-between;margin-top:10px;padding:8px 12px;background:' + scoreBg + ';border:1px solid ' + scoreBorder + ';border-radius:10px;">'
-    + '<div style="font-size:12px;color:var(--t3);letter-spacing:0.5px;">' + t('score_weighted') + '</div>'
+    + '<div style="display:flex;align-items:center;gap:4px;"><span style="font-size:12px;color:var(--t3);letter-spacing:0.5px;">Score du jour</span><span onclick="openScoreInfo()" style="font-size:11px;width:16px;height:16px;border-radius:50%;border:1px solid rgba(200,168,74,0.3);color:rgba(200,168,74,0.6);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;">\u24D8</span></div>'
     + '<div style="display:flex;align-items:center;gap:6px;">'
     + '<div style="font-size:16px;font-weight:800;color:' + scoreColor + ';">' + scoreJour + '</div>'
     + '<div style="font-size:12px;color:' + scoreColor + ';opacity:0.8;">/100</div>'
@@ -3799,6 +3801,23 @@ function getWeightedScore(items, s) {
   const donePts  = items.filter(i => isItemDone(i, s)).reduce((sum, i) => sum + getWeight(i.id), 0);
   return totalPts > 0 ? (donePts / totalPts) * 100 : 0;
 }
+function openScoreInfo() {
+  var overlay = document.createElement('div');
+  overlay.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;background:rgba(0,0,0,0.7);display:flex;align-items:center;justify-content:center;padding:24px;';
+  overlay.onclick = function(e) { if (e.target === overlay) overlay.remove(); };
+  overlay.innerHTML = '<div style="background:#2C2E32;border:1px solid rgba(200,168,74,0.2);border-radius:16px;padding:24px;max-width:320px;width:100%;text-align:center;">'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:700;color:#C8A84A;margin-bottom:12px;">Score du jour</div>'
+    + '<div style="font-size:13px;color:rgba(255,255,255,0.7);line-height:1.7;text-align:left;margin-bottom:16px;">'
+    + 'Le score est pond\u00e9r\u00e9 par importance spirituelle :<br><br>'
+    + '<span style="color:#C8A84A;">\u2022</span> Pri\u00e8res fard (5 salawat) \u2014 <b>\u00d73</b><br>'
+    + '<span style="color:#C8A84A;">\u2022</span> Wirds, sunnahs, dou\u2019as \u2014 <b>\u00d72</b><br>'
+    + '<span style="color:#C8A84A;">\u2022</span> Autres actes (science, bienfaisance) \u2014 <b>\u00d71</b><br><br>'
+    + 'Le score est sur <b>100%</b>. Il mesure ta journ\u00e9e compl\u00e8te, tous niveaux confondus.</div>'
+    + '<button onclick="this.closest(\'div[style]\').parentNode.remove()" style="padding:8px 20px;border-radius:10px;border:1px solid rgba(200,168,74,0.3);background:transparent;color:#C8A84A;font-size:13px;cursor:pointer;">Compris</button>'
+    + '</div>';
+  document.body.appendChild(overlay);
+}
+window.openScoreInfo = openScoreInfo;
 function saveWirdState() {
   safeSetItem('niyyah_wird_' + (todayKey()), JSON.stringify(wirdState));
 }
