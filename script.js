@@ -1245,12 +1245,15 @@ var HADITHS_JOUR = [];
 })();
 var COMPAGNONS = [];
 (function() {
-  fetch('./compagnons.json').then(function(r) { return r.json(); }).then(function(data) { COMPAGNONS = data; }).catch(function() {});
+  fetch('./compagnons.json').then(function(r) { return r.json(); }).then(function(data) { COMPAGNONS = data; console.log('[Niyyah] compagnons.json charg\u00e9 :', data.length, 'entr\u00e9es'); }).catch(function() {});
 })();
 function getCompagnonJour() {
-  if (!COMPAGNONS.length) return { nom_fr: '', nom_ar: '', episode: '', recit: '', lecon: '', source: '' };
-  var dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(),0,0).getTime()) / 86400000);
-  return COMPAGNONS[dayOfYear % COMPAGNONS.length];
+  if (!COMPAGNONS.length) return { compagnon: '', compagnon_ar: '', titre: '', recit: '', parole: '', station: '', source: '', episode_num: 0, episode_total: 0 };
+  var start = safeGetItem('niyyah_compagnons_start');
+  if (!start) { start = String(Date.now()); safeSetItem('niyyah_compagnons_start', start); }
+  var daysSince = Math.floor((Date.now() - parseInt(start, 10)) / 86400000);
+  var jourParcours = (daysSince % COMPAGNONS.length) + 1;
+  return COMPAGNONS.find(function(ep) { return ep.jour === jourParcours; }) || COMPAGNONS[0];
 }
 var PROPHETES = [];
 (function() {
@@ -1364,7 +1367,7 @@ const LEVELS = [
         { id: 'quran_read', minVague: 3, label: 'Versets du jour', get sub() { var vs = getVersetsJourSync(); return vs.length ? (vs[0].traduction || '').substring(0,50) + '\u2026' : '17 versets \u00e0 lire'; }, arabic: '\u0642\u0650\u0631\u064E\u0627\u0621\u064E\u0629\u064F \u0627\u0644\u0652\u0642\u064F\u0631\u0652\u0622\u0646\u0650', paths: ['routine','sacraliser'], block: 'jour', category: 'science' },
         { id: 'arabic', minVague: 4, label: "Apprentissage de l'arabe", sub: '10 min · Vocabulaire ou grammaire', arabic: 'تَعَلُّمُ الْعَرَبِيَّةِ', paths: ['sacraliser'], block: 'jour', category: 'science' },
         { id: 'vie_prophetes', minVague: 4, label: 'Histoires des Proph\u00e8tes', get sub() { var p = getPropheteJour(); return (p.prophete && p.titre) ? (p.prophete + ' \u2014 ' + p.titre).substring(0,50) + '\u2026' : 'Nouh, Ibrahim, Moussa, Issa\u2026'; }, arabic: '\u0642\u064E\u0635\u064E\u0635\u064F \u0627\u0644\u0623\u064E\u0646\u0628\u0650\u064A\u064E\u0627\u0621\u0650', paths: ['routine','sacraliser'], block: 'jour', category: 'science', hadith: '"Nous te racontons le meilleur des r\u00e9cits" \u2014 Coran 12:3', source: 'Yusuf 12:3' },
-        { id: 'vie_compagnons', minVague: 4, label: 'Vie des Compagnons', get sub() { var c = getCompagnonJour(); return (c.nom_fr && c.episode) ? (c.nom_fr + ' \u2014 ' + c.episode).substring(0,50) + '\u2026' : 'Abu Bakr, Omar, Othman, Ali\u2026'; }, arabic: '\u0633\u0650\u064A\u064E\u0631\u064F \u0627\u0644\u0635\u0651\u064E\u062D\u064E\u0627\u0628\u064E\u0629\u0650', paths: ['routine','sacraliser'], block: 'jour', category: 'science', hadith: '"Mes Compagnons sont comme les \u00e9toiles \u2014 qui que vous suiviez, vous serez guid\u00e9s" \u2014 Bayhaqi', source: 'Bayhaqi' },
+        { id: 'vie_compagnons', minVague: 4, label: 'Vie des Compagnons', get sub() { var c = getCompagnonJour(); return (c.compagnon && c.titre) ? (c.compagnon + ' \u2014 ' + c.titre).substring(0,50) + '\u2026' : 'Abu Bakr, Omar, Othman, Ali\u2026'; }, arabic: '\u0633\u0650\u064A\u064E\u0631\u064F \u0627\u0644\u0635\u0651\u064E\u062D\u064E\u0627\u0628\u064E\u0629\u0650', paths: ['routine','sacraliser'], block: 'jour', category: 'science', hadith: '"Mes Compagnons sont comme les \u00e9toiles \u2014 qui que vous suiviez, vous serez guid\u00e9s" \u2014 Bayhaqi', source: 'Bayhaqi' },
         { id: 'fiqh_jour', minVague: 4, label: 'Jurisprudence \u2014 1 r\u00e8gle du jour', get sub() { var f = getFiqhJourRule(); return (f.regle || '').substring(0,50) + '\u2026'; }, arabic: '\u0641\u0650\u0642\u0652\u0647\u064C', paths: ['sacraliser'], block: 'jour', category: 'science' },
         { id: 'savais_tu', minVague: 4, label: 'Le savais-tu ?', get sub() { var f = getSavaisTuFact(); return (f.texte || '').substring(0,50) + '\u2026'; }, arabic: 'هَلْ تَعْلَمُ؟', paths: ['sacraliser'], block: 'jour', category: 'science' },
       ]},
