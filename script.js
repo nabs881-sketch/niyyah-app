@@ -2575,19 +2575,19 @@ function renderLevel(levelId) {
           shareBtn = '<button class="btn-audio" aria-label="Lire" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openVueVersetJour();" title="Lire" style="font-size:13px;padding:0 8px;width:auto;">\u{1F4D6}</button>';
         }
         const customClick = item.id === 'savais_tu'
-          ? 'openVueSavaisTu(); toggleItem(\'' + item.id + '\',event);'
+          ? 'openVueSavaisTu();'
           : item.id === 'fiqh_jour'
-          ? 'openVueFiqhJour(); toggleItem(\'' + item.id + '\',event);'
+          ? 'openVueFiqhJour();'
           : item.id === 'hadith1'
-          ? 'openVueHadithJour(); toggleItem(\'' + item.id + '\',event);'
+          ? 'openVueHadithJour();'
           : item.id === 'vie_compagnons'
-          ? 'openVueCompagnon(); toggleItem(\'' + item.id + '\',event);'
+          ? 'openVueCompagnon();'
           : item.id === 'vie_prophetes'
-          ? 'openVuePropheteJour(); toggleItem(\'' + item.id + '\',event);'
+          ? 'openVuePropheteJour();'
           : item.id === 'quran_read'
-          ? 'openVueVersetJour(); toggleItem(\'' + item.id + '\',event);'
+          ? 'openVueVersetJour();'
           : item.id === 'sira'
-          ? 'SIRA.openDetail(); toggleItem(\'' + item.id + '\',event);'
+          ? 'SIRA.openDetail();'
           : 'toggleItem(\'' + item.id + '\',event)';
         var _tl = tI(item,'label'), _ts = tI(item,'sub');
         html += '<div class="item' + fridayCls + (checked ? ' checked' : '') + _tlCurrent + '" onclick="' + customClick + '" style="' + _tlOpacity + 'animation-delay:' + delay + 'ms;--i:' + idx + '" id="item-' + item.id + '">' + _pathBadge + '<div class="check-circle"><svg class="check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-body"><div class="item-label' + priorityCls + '">' + _tl + optionalBadge + '</div>' + (_ts ? '<div class="item-sub">' + (_ts.includes('·') ? _ts.split('·')[0].trim() : _ts) + '</div>' : '') + arabicHtml + '</div>' + shareBtn + audioBtn + infoBtn + '</div>';
@@ -14264,6 +14264,19 @@ function closeVueRituel() {
   if (v) v.classList.add('hidden');
 }
 window.closeVueRituel = closeVueRituel;
+function validerLecture(id) {
+  if (!state[id]) { state[id] = true; saveState(); updateGlobalProgress(); }
+  closeVueRituel();
+  if (typeof renderLevel === 'function') renderLevel(currentLevel);
+}
+window.validerLecture = validerLecture;
+function validerLectureSira() {
+  if (!state['sira']) { state['sira'] = true; saveState(); updateGlobalProgress(); }
+  var ov = document.getElementById('sira-overlay');
+  if (ov) ov.remove();
+  if (typeof renderLevel === 'function') renderLevel(currentLevel);
+}
+window.validerLectureSira = validerLectureSira;
 
 function getEffectiveMotiv() {
   var m = safeGetItem('niyyah_motivation');
@@ -14515,13 +14528,13 @@ function openVueAuFilDuJour() {
       : (it.id === 'vie_compagnons') ? '<button class="btn-audio" aria-label="Lire" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openVueCompagnon();" style="font-size:13px;padding:0 8px;width:auto;">\u{1F4D6}</button>'
       : (it.id === 'vie_prophetes') ? '<button class="btn-audio" aria-label="Lire" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openVuePropheteJour();" style="font-size:13px;padding:0 8px;width:auto;">\u{1F4D6}</button>'
       : (it.id === 'quran_read') ? '<button class="btn-audio" aria-label="Lire" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openVueVersetJour();" style="font-size:13px;padding:0 8px;width:auto;">\u{1F4D6}</button>' : '';
-    var _click = it.id === 'sira' ? 'SIRA.openDetail(); toggleItem(\'' + it.id + '\',event);'
-      : it.id === 'savais_tu' ? 'openVueSavaisTu(); toggleItem(\'' + it.id + '\',event);'
-      : it.id === 'fiqh_jour' ? 'openVueFiqhJour(); toggleItem(\'' + it.id + '\',event);'
-      : it.id === 'hadith1' ? 'openVueHadithJour(); toggleItem(\'' + it.id + '\',event);'
-      : it.id === 'vie_compagnons' ? 'openVueCompagnon(); toggleItem(\'' + it.id + '\',event);'
-      : it.id === 'vie_prophetes' ? 'openVuePropheteJour(); toggleItem(\'' + it.id + '\',event);'
-      : it.id === 'quran_read' ? 'openVueVersetJour(); toggleItem(\'' + it.id + '\',event);'
+    var _click = it.id === 'sira' ? 'SIRA.openDetail();'
+      : it.id === 'savais_tu' ? 'openVueSavaisTu();'
+      : it.id === 'fiqh_jour' ? 'openVueFiqhJour();'
+      : it.id === 'hadith1' ? 'openVueHadithJour();'
+      : it.id === 'vie_compagnons' ? 'openVueCompagnon();'
+      : it.id === 'vie_prophetes' ? 'openVuePropheteJour();'
+      : it.id === 'quran_read' ? 'openVueVersetJour();'
       : 'toggleItem(\'' + it.id + '\',event); openVueAuFilDuJour();';
     return '<div class="rituel-item ' + done + '" id="rituel-item-' + it.id + '" onclick="' + _click + '"><div class="check"></div><div style="flex:1"><div class="label">' + (it.label||it.id) + '</div>' + sub + ar + '</div>' + _readBtn + audio + '</div>';
   };
@@ -14611,6 +14624,9 @@ function openVueSavaisTu() {
   if (!catEl) { catEl = document.createElement('div'); catEl.className = 'savais-categorie'; var faitEl = v.querySelector('.savais-fait'); if (faitEl) faitEl.parentNode.insertBefore(catEl, faitEl); }
   catEl.textContent = fait.categorie ? fait.categorie.toUpperCase() : '';
   catEl.style.display = fait.categorie ? '' : 'none';
+  var _vBtn = v.querySelector('.savais-valider');
+  if (!_vBtn) { _vBtn = document.createElement('button'); _vBtn.className = 'savais-bouton savais-valider'; _vBtn.style.cssText = 'background:#C8A84A;color:#2C2E32;font-weight:700;margin-top:8px;'; _vBtn.textContent = 'J\u2019ai termin\u00e9 ma lecture'; v.appendChild(_vBtn); }
+  _vBtn.onclick = function() { validerLecture('savais_tu'); v.classList.add('hidden'); };
   v.classList.remove('hidden');
 }
 window.openVueSavaisTu = openVueSavaisTu;
@@ -14630,6 +14646,7 @@ function openVueFiqhJour() {
     + (rule.explication ? '<div style="font-size:14px;line-height:1.6;color:rgba(255,255,255,0.6);margin-bottom:20px;font-style:italic;">' + rule.explication + '</div>' : '')
     + (rule.source ? '<div style="font-size:11px;color:rgba(200,168,74,0.6);letter-spacing:0.1em;">\u2014 ' + rule.source + ' \u2014</div>' : '')
     + (rule.ecole ? '<div style="font-size:10px;color:rgba(200,168,74,0.4);margin-top:8px;letter-spacing:1px;">' + rule.ecole.toUpperCase() + '</div>' : '')
+    + '<button onclick="validerLecture(\'fiqh_jour\')" style="margin-top:28px;padding:14px 28px;border:none;border-radius:24px;background:#C8A84A;color:#2C2E32;font-family:Cormorant Garamond,serif;font-size:15px;font-weight:700;cursor:pointer;">J\u2019ai termin\u00e9 ma lecture</button>'
     + '</div>';
   v.classList.remove('hidden');
   document.getElementById('rituel-emblem').textContent = '\u0641\u0650\u0642\u0652\u0647';
@@ -14650,6 +14667,7 @@ function openVueHadithJour() {
     + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;line-height:1.7;color:rgba(240,234,214,0.95);font-style:italic;margin-bottom:20px;">' + (h.texte_fr || '') + '</div>'
     + (h.source ? '<div style="font-size:11px;color:rgba(200,168,74,0.6);letter-spacing:0.1em;">\u2014 ' + h.source + ' \u2014</div>' : '')
     + (h.degre ? '<div style="font-size:10px;color:rgba(200,168,74,0.4);margin-top:8px;letter-spacing:1px;">' + h.degre.toUpperCase() + '</div>' : '')
+    + '<button onclick="validerLecture(\'hadith1\')" style="margin-top:28px;padding:14px 28px;border:none;border-radius:24px;background:#C8A84A;color:#2C2E32;font-family:Cormorant Garamond,serif;font-size:15px;font-weight:700;cursor:pointer;">J\u2019ai termin\u00e9 ma lecture</button>'
     + '</div>';
   v.classList.remove('hidden');
   document.getElementById('rituel-emblem').textContent = '\u062D\u064E\u062F\u0650\u064A\u062B';
@@ -14674,6 +14692,7 @@ function openVueCompagnon() {
     + (c.parole ? '<div style="border-left:2px solid rgba(200,168,74,0.4);padding:8px 16px;margin-bottom:16px;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;line-height:1.6;color:rgba(200,168,74,0.85);text-align:left;">' + c.parole + '</div>' : '')
     + (c.station ? '<div style="border:1px solid rgba(200,168,74,0.25);border-radius:10px;padding:12px 16px;margin-bottom:20px;font-style:italic;font-size:14px;line-height:1.6;color:rgba(200,168,74,0.8);">' + c.station + '</div>' : '')
     + (c.source ? '<div style="font-size:11px;color:rgba(255,255,255,0.35);letter-spacing:0.1em;">\u2014 ' + c.source + ' \u2014</div>' : '')
+    + '<button onclick="validerLecture(\'vie_compagnons\')" style="margin-top:28px;padding:14px 28px;border:none;border-radius:24px;background:#C8A84A;color:#2C2E32;font-family:Cormorant Garamond,serif;font-size:15px;font-weight:700;cursor:pointer;">J\u2019ai termin\u00e9 ma lecture</button>'
     + '</div>';
   v.classList.remove('hidden');
   document.getElementById('rituel-emblem').textContent = '\u0635\u064E\u062D\u064E\u0627\u0628\u064E\u0629';
@@ -14698,6 +14717,7 @@ function openVuePropheteJour() {
     + (p.station ? '<div style="border:1px solid rgba(200,168,74,0.25);border-radius:10px;padding:12px 16px;margin-bottom:20px;font-style:italic;font-size:14px;line-height:1.6;color:rgba(200,168,74,0.8);">' + p.station + '</div>' : '')
     + (p.sources ? '<div style="font-size:11px;color:rgba(200,168,74,0.6);letter-spacing:0.1em;margin-bottom:16px;">\u2014 ' + p.sources + ' \u2014</div>' : '')
     + (p.renvoi_module === 'sira' ? '<button onclick="if(typeof SIRA!==\'undefined\')SIRA.openDetail();" style="padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,74,0.4);background:transparent;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:600;cursor:pointer;letter-spacing:0.5px;">Ouvrir la S\u00eera</button>' : '')
+    + '<button onclick="validerLecture(\'vie_prophetes\')" style="margin-top:28px;padding:14px 28px;border:none;border-radius:24px;background:#C8A84A;color:#2C2E32;font-family:Cormorant Garamond,serif;font-size:15px;font-weight:700;cursor:pointer;">J\u2019ai termin\u00e9 ma lecture</button>'
     + '</div>';
   v.classList.remove('hidden');
   document.getElementById('rituel-emblem').textContent = '\u0623\u064E\u0646\u0628\u0650\u064A\u064E\u0627\u0621';
@@ -14736,7 +14756,9 @@ function _renderVerset(main, versets) {
     + '<button onclick="_versetNav(-1)" style="padding:8px 16px;border-radius:10px;border:1px solid rgba(200,168,74,' + (_versetIdx > 0 ? '0.4' : '0.1') + ');background:transparent;color:' + (_versetIdx > 0 ? '#C8A84A' : 'rgba(200,168,74,0.2)') + ';font-size:13px;cursor:pointer;">\u25C0 Pr\u00e9c.</button>'
     + '<span style="font-size:12px;color:rgba(200,168,74,0.5);letter-spacing:1px;">' + (_versetIdx + 1) + ' / ' + total + '</span>'
     + '<button onclick="_versetNav(1)" style="padding:8px 16px;border-radius:10px;border:1px solid rgba(200,168,74,' + (_versetIdx < total - 1 ? '0.4' : '0.1') + ');background:transparent;color:' + (_versetIdx < total - 1 ? '#C8A84A' : 'rgba(200,168,74,0.2)') + ';font-size:13px;cursor:pointer;">Suiv. \u25B6</button>'
-    + '</div></div>';
+    + '</div>'
+    + '<button onclick="validerLecture(\'quran_read\')" style="margin-top:28px;padding:14px 28px;border:none;border-radius:24px;background:#C8A84A;color:#2C2E32;font-family:Cormorant Garamond,serif;font-size:15px;font-weight:700;cursor:pointer;">J\u2019ai termin\u00e9 ma lecture</button>'
+    + '</div>';
 }
 function _versetNav(dir) {
   var vs = getVersetsJourSync();
@@ -14957,6 +14979,7 @@ const SIRA = {
     h += '<div style="text-align:center;font-size:48px;color:#C8A84A;margin:28px 0 12px;">\uFDFA</div>';
     h += '<div style="text-align:center;font-size:11px;letter-spacing:3px;font-weight:700;color:#C8A84A;margin:32px 0 8px;">FIL ROUGE</div>';
     if (rdv.fil_rouge) h += '<div style="text-align:center;font-style:italic;color:#999;font-size:14px;line-height:1.5;margin-bottom:24px;">' + escape(T(rdv.fil_rouge)) + '</div>';
+    h += '<div style="text-align:center;margin:32px 0;"><button onclick="validerLectureSira()" style="padding:14px 28px;border:none;border-radius:24px;background:#C8A84A;color:#2C2E32;font-family:Cormorant Garamond,serif;font-size:15px;font-weight:700;cursor:pointer;">J\u2019ai termin\u00e9 ma lecture</button></div>';
     this.markTissue(num);
     return h;
   }
