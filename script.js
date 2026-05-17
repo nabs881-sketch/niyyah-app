@@ -49,7 +49,14 @@ function escapeHtml(str) { return String(str).replace(/[&<>"']/g, function(c) { 
 function _pad2(n) { return n < 10 ? '0' + n : '' + n; }
 function todayKey() { var d = new Date(); return d.getFullYear() + '-' + _pad2(d.getMonth() + 1) + '-' + _pad2(d.getDate()); }
 function dateToKey(d) { return d.getFullYear() + '-' + _pad2(d.getMonth() + 1) + '-' + _pad2(d.getDate()); }
-function safeSetItem(key, value) { try { localStorage.setItem(key, value); return true; } catch(e) { if (typeof showToast === 'function') showToast('M\u00e9moire pleine \u2014 exportez puis r\u00e9initialisez'); return false; } }
+function safeSetItem(key, value) {
+  try { localStorage.setItem(key, value); return true; }
+  catch(e) {
+    cleanOldPhotosIfFull(true);
+    try { localStorage.setItem(key, value); return true; }
+    catch(e2) { if (typeof showToast === 'function') showToast('M\u00e9moire pleine \u2014 exportez puis r\u00e9initialisez'); return false; }
+  }
+}
 function safeGetItem(key) { try { return localStorage.getItem(key); } catch(e) { return null; } }
 function safeParseJSON(key, def) { try { return JSON.parse(localStorage.getItem(key) || (Array.isArray(def) ? '[]' : '{}')) || def; } catch(e) { console.warn('[Niyyah] parse error:', key); return def; } }
 function fetchWithRetry(url, options, maxRetries) {
@@ -90,22 +97,34 @@ function compressPhoto(dataURL) {
   });
 }
 
-function cleanOldPhotosIfFull() {
+function cleanOldPhotosIfFull(force) {
   try {
     var total = 0;
-    for (var i = 0; i < localStorage.length; i++) { total += localStorage.getItem(localStorage.key(i)).length; }
-    if (total < 4 * 1024 * 1024) return;
-    if (typeof showToast === 'function') showToast('M\u00e9moire pleine \u2014 d\u2019anciennes photos vont \u00eatre supprim\u00e9es');
+    for (var i = 0; i < localStorage.length; i++) { total += (localStorage.getItem(localStorage.key(i)) || '').length; }
+    if (!force && total < 4 * 1024 * 1024) return;
+    // 1. Purge verset_cache au-delà de 50
+    var _vcKeys = [];
+    for (var k = 0; k < localStorage.length; k++) { var _kn = localStorage.key(k); if (_kn && _kn.indexOf('verset_cache_') === 0) _vcKeys.push(_kn); }
+    if (_vcKeys.length > 50) { _vcKeys.sort(); var _toRemove = _vcKeys.slice(0, _vcKeys.length - 50); _toRemove.forEach(function(rk) { localStorage.removeItem(rk); }); }
+    // 2. Purge photos 20 par 20, plus anciennes d'abord, max 5 passes
     var _purged = 0;
-    ['niyyah_regarde_history', 'niyyah_niyyah_history'].forEach(function(key) {
-      var arr = safeParseJSON(key, []);
-      var changed = false;
-      for (var j = arr.length - 1; j >= 0; j--) {
-        if (arr[j].photo) { arr[j].photo = null; changed = true; _purged++; }
-      }
-      if (changed) safeSetItem(key, JSON.stringify(arr));
-    });
-    if (_purged > 0 && typeof showToast === 'function') setTimeout(function() { showToast(_purged + ' photo' + (_purged > 1 ? 's' : '') + ' archiv\u00e9e' + (_purged > 1 ? 's' : '') + ' lib\u00e9r\u00e9e' + (_purged > 1 ? 's' : '')); }, 2000);
+    for (var _pass = 0; _pass < 5; _pass++) {
+      total = 0;
+      for (var ii = 0; ii < localStorage.length; ii++) { total += (localStorage.getItem(localStorage.key(ii)) || '').length; }
+      if (total < 4 * 1024 * 1024) break;
+      var _batchDone = false;
+      ['niyyah_regarde_history', 'niyyah_niyyah_history'].forEach(function(key) {
+        if (_batchDone) return;
+        var arr; try { arr = JSON.parse(localStorage.getItem(key) || '[]'); } catch(e) { arr = []; }
+        var count = 0;
+        for (var j = 0; j < arr.length && count < 20; j++) {
+          if (arr[j].photo) { arr[j].photo = null; count++; _purged++; }
+        }
+        if (count > 0) { localStorage.setItem(key, JSON.stringify(arr)); _batchDone = true; }
+      });
+      if (!_batchDone) break;
+    }
+    if (_purged > 0 && typeof showToast === 'function') showToast(_purged + ' photo' + (_purged > 1 ? 's' : '') + ' archiv\u00e9e' + (_purged > 1 ? 's' : '') + ' \u2014 m\u00e9moire lib\u00e9r\u00e9e');
   } catch(e) {}
 }
 
@@ -115,7 +134,9 @@ function _journalGet(key) {
 
 function _journalSave(key, arr) {
   cleanOldPhotosIfFull();
-  safeSetItem(key, JSON.stringify(arr));
+  if (!safeSetItem(key, JSON.stringify(arr))) {
+    if (typeof showToast === 'function') showToast('Sauvegarde impossible \u2014 lib\u00e9rez de l\u2019espace');
+  }
 }
 
 function addRegardeEntry(entry) {
