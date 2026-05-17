@@ -2,6 +2,9 @@
 // NIYYAH DAILY — script.js
 // Généré automatiquement — séparation chirurgicale
 // ═══════════════════════════════════════════════════
+// ── Reduced motion detection ──
+window._reducedMotion = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+window.matchMedia('(prefers-reduced-motion:reduce)').addEventListener('change', function(e) { window._reducedMotion = e.matches; });
 // ── Sentry error monitoring ──
 if (typeof Sentry !== 'undefined') {
   Sentry.init({
@@ -9201,9 +9204,9 @@ if ('serviceWorker' in navigator && location.protocol !== 'null:' && (location.p
             var _updateLabels = {fr:{msg:'Niyyah a \u00e9volu\u00e9',btn:'Reprendre'},en:{msg:'Niyyah has evolved',btn:'Resume'},ar:{msg:'\u0646\u0650\u064a\u0651\u064e\u0629 \u062a\u062d\u062f\u0651\u062b\u062a',btn:'\u0627\u0633\u062a\u0626\u0646\u0627\u0641'}};
             var _ul = _updateLabels[(typeof V2_LANG!=='undefined'?V2_LANG:'fr')] || _updateLabels.fr;
             var banner = document.createElement('div');
-            banner.style.cssText = 'position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(20px);background:#1a1a1a;border:1px solid rgba(200,168,75,0.4);border-radius:12px;padding:12px 20px;z-index:9999;display:flex;align-items:center;gap:12px;box-shadow:0 4px 20px rgba(0,0,0,0.5);opacity:0;transition:opacity 1s ease,transform 1s ease;';
+            banner.style.cssText = 'position:fixed;bottom:20px;left:50%;transform:translateX(-50%)' + (window._reducedMotion ? '' : ' translateY(20px)') + ';background:#1a1a1a;border:1px solid rgba(200,168,75,0.4);border-radius:12px;padding:12px 20px;z-index:9999;display:flex;align-items:center;gap:12px;box-shadow:0 4px 20px rgba(0,0,0,0.5);opacity:' + (window._reducedMotion ? '1' : '0') + ';' + (window._reducedMotion ? '' : 'transition:opacity 1s ease,transform 1s ease;');
             banner.innerHTML = '<span style="font-size:13px;color:var(--t2);font-family:var(--serif);font-style:italic;">' + _ul.msg + '</span><button style="padding:6px 14px;border-radius:8px;border:none;background:#C8A84A;color:#000;font-size:12px;font-weight:600;cursor:pointer;font-family:var(--serif);">' + _ul.btn + '</button>';
-            requestAnimationFrame(function(){requestAnimationFrame(function(){banner.style.opacity='1';banner.style.transform='translateX(-50%) translateY(0)';});});
+            if (!window._reducedMotion) { requestAnimationFrame(function(){requestAnimationFrame(function(){banner.style.opacity='1';banner.style.transform='translateX(-50%) translateY(0)';});}); }
             banner.querySelector('button').onclick = function() { newWorker.postMessage({type:'SKIP_WAITING'}); window.location.reload(); };
             document.body.appendChild(banner);
           }
@@ -10682,22 +10685,23 @@ function renderNafsTrait() {
 
 function _v2TransitionTo(targetId, opts) {
   opts = opts || {};
+  var delay = window._reducedMotion ? 0 : 150;
   var current = document.getElementById('view-sanctuaire');
   if (current && current.classList.contains('active')) {
-    current.classList.add('view-transition','exiting');
+    if (delay) current.classList.add('view-transition','exiting');
     setTimeout(function() {
       current.classList.remove('active','view-transition','exiting');
       _v2ShowTarget(targetId, opts);
-    }, 150);
+    }, delay);
   } else {
     var activeView = document.querySelector('.view.active, .view[style*="display: block"], .view[style*="display:block"]');
     if (activeView) {
-      activeView.classList.add('view-transition','exiting');
+      if (delay) activeView.classList.add('view-transition','exiting');
       setTimeout(function() {
         activeView.classList.remove('active','view-transition','exiting');
         activeView.style.display = 'none';
         _v2ShowTarget(targetId, opts);
-      }, 150);
+      }, delay);
     } else {
       document.querySelectorAll('.view').forEach(function(v) { v.classList.remove('active'); v.style.display = 'none'; });
       _v2ShowTarget(targetId, opts);
@@ -11107,7 +11111,7 @@ function v2OpenSettings() {
   const isRTL = T.dir === 'rtl';
   const sheet = document.createElement('div');
   sheet.id = 'v2-settings-sheet';
-  sheet.style.cssText = 'position:fixed;inset:0;background:rgba(10,10,10,0.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:3000;display:flex;align-items:flex-end;justify-content:center;animation:backdropV2 0.3s ease forwards;';
+  sheet.style.cssText = 'position:fixed;inset:0;background:rgba(10,10,10,0.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:3000;display:flex;align-items:flex-end;justify-content:center;' + (window._reducedMotion ? '' : 'animation:backdropV2 0.3s ease forwards;');
   const ramadanActive = typeof ramadanState !== 'undefined' && ramadanState.active;
   const debugSection = NIYYAH_DEBUG ? '<div style="margin-top:14px;background:#1a1a1a;border:1px solid rgba(255,255,255,0.05);border-radius:12px;padding:16px;"><div style="font-size:12px;letter-spacing:0.28em;color:rgba(255,255,255,0.55);text-transform:uppercase;font-family:Cormorant Garamond,serif;margin-bottom:10px;text-align:center;">🔧 DEBUG</div><button onclick="safeSetItem(\'niyyah_regarde_available_today\',\'true\');showToast(\'Regarde active\');document.getElementById(\'v2-settings-sheet\').remove();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);font-size:12px;cursor:pointer;margin-bottom:8px;">[DEBUG] Activer Regarde</button><button onclick="document.getElementById(\'v2-settings-sheet\').remove();regardeOpen();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);font-size:12px;cursor:pointer;">[DEBUG] Lancer Regarde maintenant</button><button onclick="document.getElementById(\'v2-settings-sheet\').remove();openFinJournee();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);font-size:12px;cursor:pointer;margin-top:8px;">[DEBUG] Forcer Fin de Journée</button></div>' : '';
   sheet.innerHTML = `
@@ -11250,7 +11254,7 @@ function openOrientationPicker() {
   var sheet = document.getElementById('orientation-sheet');
   if (!sheet) return;
   sheet.style.display = 'flex';
-  setTimeout(function() { sheet.style.opacity = '1'; }, 10);
+  if (window._reducedMotion) { sheet.style.opacity = '1'; } else { setTimeout(function() { sheet.style.opacity = '1'; }, 10); }
   var motiv = localStorage.getItem('niyyah_motivation');
   document.querySelectorAll('.orient-card').forEach(function(c) {
     c.classList.toggle('selected', c.dataset.value === motiv);
@@ -11293,7 +11297,7 @@ function closeOrientationPicker() {
   var sheet = document.getElementById('orientation-sheet');
   if (!sheet) return;
   sheet.style.opacity = '0';
-  setTimeout(function() { sheet.style.display = 'none'; }, 200);
+  setTimeout(function() { sheet.style.display = 'none'; }, window._reducedMotion ? 0 : 200);
 }
 
 /* ─────────────────────────────────────────────
