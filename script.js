@@ -2657,7 +2657,7 @@ function renderPrayerItem(item, delay, extraClass, forceChecked) {
     + '<div class="item-body"><div class="item-label' + priorityCls + '">' + tI(item,'label') + '</div>'
     + (item.sub ? '<div class="item-sub">' + tI(item,'sub') + '</div>' : '')
     + arabicHtml + '</div>'
-    + '<div style="display:flex;flex-direction:column;gap:3px;flex-shrink:0;opacity:' + (checked ? '1' : '0.4') + ';transition:opacity 0.2s;">' + toggle + toggleMosquee + toggleJumua + '</div></div>';
+    + '<div style="display:flex;flex-direction:row;gap:8px;flex-shrink:0;align-items:center;opacity:' + (checked ? '1' : '0.4') + ';transition:opacity 0.2s;">' + toggle + toggleMosquee + toggleJumua + '</div></div>';
 }
 function togglePrayerJumua() {
   state['dhuhr_jumua'] = !state['dhuhr_jumua'];
