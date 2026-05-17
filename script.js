@@ -3578,7 +3578,8 @@ function renderPrayerTimesCard() {
       '<div class="prayer-times-header"><div class="prayer-times-title">🕌 Horaires</div>' +
         '<div class="prayer-times-city" onclick="showCityInput()">\u270f\ufe0f ' + escapeHtml(_prayerCity||'Choisir une ville') + '</div>' +
       '</div>' +
-      '<div style="font-size:12px;color:var(--t3);text-align:center;padding:8px;">Erreur — vérifie ta connexion ou la ville</div>' +
+      '<div style="font-size:12px;color:var(--t3);text-align:center;padding:8px;">Erreur \u2014 v\u00e9rifie ta connexion ou la ville</div>' +
+      '<div style="text-align:center;padding:0 0 8px;"><button onclick="_retryPrayerLoad()" style="padding:8px 16px;border-radius:10px;border:1px solid rgba(200,168,74,0.3);background:transparent;color:#C8A84A;font-size:12px;cursor:pointer;">R\u00e9essayer</button></div>' +
       '<div class="city-input-wrap">' +
         '<input class="city-input" id="cityInput" type="text" placeholder="' + t('city_placeholder_prayer') + '" value="' + escapeHtml(_prayerCity||'') + '" onkeydown="if(event.key===\'Enter\')saveCityAndLoad()">' +
         '<button class="city-input-btn" aria-label="Valider la ville" onclick="saveCityAndLoad()">Réessayer</button>' +
@@ -3722,6 +3723,11 @@ function _loadPrayerByCoords(lat, lng) {
       else { _prayerLoading = false; _prayerError = true; renderLevel(currentLevel); }
     });
 }
+function _retryPrayerLoad() {
+  if (_prayerCity) { _loadPrayerByCity(); }
+  else if (navigator.geolocation) { navigator.geolocation.getCurrentPosition(function(p) { _loadPrayerByCoords(p.coords.latitude, p.coords.longitude); }, function() {}, { timeout: 10000 }); }
+}
+window._retryPrayerLoad = _retryPrayerLoad;
 function _loadPrayerByCity() {
   _prayerLoading = true;
   _showCityInput = false;
@@ -10722,7 +10728,7 @@ function journalSwitchTab(tab) {
     if (tabR) { tabR.style.background = 'transparent'; tabR.style.border = '1px solid rgba(200,168,75,0.15)'; tabR.style.color = 'rgba(200,168,75,0.5)'; tabR.style.boxShadow = 'none'; }
     var entries = getNiyyahHistory();
     if (entries.length === 0) {
-      content.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">نِيَّة</div><div class="empty-state-title">'+t('journal_niyyah_title')+'</div><div class="empty-state-text">'+t('journal_niyyah_text')+'</div></div>';
+      content.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">نِيَّة</div><div class="empty-state-title">'+t('journal_niyyah_title')+'</div><div class="empty-state-text">'+t('journal_niyyah_text')+'</div><button class="empty-state-cta" onclick="var o=document.getElementById(\'orb-core-v2\');if(o)o.click();">Poser ma premi\u00e8re intention</button></div>';
     } else {
       var html = '';
       entries.forEach(function(e) {
@@ -13577,7 +13583,7 @@ function openRegardeJournal() {
   if (!overlay || !list) return;
   var entries = getRegardeHistory();
   if (entries.length === 0) {
-    list.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">\u0646\u064E\u0638\u064E\u0631</div><div class="empty-state-title">'+t('journal_regarde_title')+'</div><div class="empty-state-text">'+t('journal_regarde_text')+'</div><div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.55);margin-top:12px;line-height:1.5;">Le Regard te surprend dans la journ\u00e9e. Reste \u00e0 l\u2019\u00e9coute.</div></div>';
+    list.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">\u0646\u064E\u0638\u064E\u0631</div><div class="empty-state-title">'+t('journal_regarde_title')+'</div><div class="empty-state-text">'+t('journal_regarde_text')+'</div><div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.55);margin-top:12px;line-height:1.5;">Le Regard te surprend dans la journ\u00e9e. Reste \u00e0 l\u2019\u00e9coute.</div><button class="empty-state-cta" onclick="scannerOpen()">'+t('journal_regarde_cta')+'</button></div>';
   } else {
     var html = '';
     entries.forEach(function(e) {
@@ -13764,7 +13770,7 @@ function renderNiyyahJournalList(entries) {
   var list = document.getElementById('niyyah-journal-list');
   if (!list) return;
   if (entries.length === 0) {
-    list.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">نِيَّة</div><div class="empty-state-title">'+t('journal_niyyah_title')+'</div><div class="empty-state-text">'+t('journal_niyyah_text')+'</div></div>';
+    list.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">نِيَّة</div><div class="empty-state-title">'+t('journal_niyyah_title')+'</div><div class="empty-state-text">'+t('journal_niyyah_text')+'</div><button class="empty-state-cta" onclick="var o=document.getElementById(\'orb-core-v2\');if(o)o.click();">Poser ma premi\u00e8re intention</button></div>';
     return;
   }
   var html = '';
