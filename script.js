@@ -1303,7 +1303,6 @@ function _fetchVerset(n, cb) {
       } else { cb(null); }
     }).catch(function() { cb(null); });
 }
-getVersetsJour();
 function getSavaisTuFact() {
   if (!SAVAIS_TU.length) return { texte: '', source: '', categorie: '' };
   var dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(),0,0).getTime()) / 86400000);
