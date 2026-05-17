@@ -51,6 +51,7 @@ function todayKey() { var d = new Date(); return d.getFullYear() + '-' + _pad2(d
 function dateToKey(d) { return d.getFullYear() + '-' + _pad2(d.getMonth() + 1) + '-' + _pad2(d.getDate()); }
 function safeSetItem(key, value) { try { localStorage.setItem(key, value); return true; } catch(e) { if (typeof showToast === 'function') showToast('M\u00e9moire pleine \u2014 exportez puis r\u00e9initialisez'); return false; } }
 function safeGetItem(key) { try { return localStorage.getItem(key); } catch(e) { return null; } }
+function safeParseJSON(key, def) { try { return JSON.parse(localStorage.getItem(key) || (Array.isArray(def) ? '[]' : '{}')) || def; } catch(e) { console.warn('[Niyyah] parse error:', key); return def; } }
 
 // ═══════════════════════════════════════════════════
 // JOURNAL V2 — Storage helpers
@@ -83,7 +84,7 @@ function cleanOldPhotosIfFull() {
     if (typeof showToast === 'function') showToast('M\u00e9moire pleine \u2014 d\u2019anciennes photos vont \u00eatre supprim\u00e9es');
     var _purged = 0;
     ['niyyah_regarde_history', 'niyyah_niyyah_history'].forEach(function(key) {
-      var arr = JSON.parse(localStorage.getItem(key) || '[]');
+      var arr = safeParseJSON(key, []);
       var changed = false;
       for (var j = arr.length - 1; j >= 0; j--) {
         if (arr[j].photo) { arr[j].photo = null; changed = true; _purged++; }
@@ -164,7 +165,7 @@ function deleteEntry(type, id) {
 function migrateOldJournal() {
   if (localStorage.getItem('niyyah_migration_v2_done') === '1') return;
   try {
-    var old = JSON.parse(localStorage.getItem('niyyah_scanner_history') || '[]');
+    var old = safeParseJSON('niyyah_scanner_history', []);
     if (old.length > 0) {
       var existing = _journalGet('niyyah_niyyah_history');
       old.forEach(function(entry) {
@@ -4184,7 +4185,7 @@ function _showExitModal() {
 
 function _logColereZone(zone) {
   try {
-    var log = JSON.parse(localStorage.getItem('colere_zone_log') || '[]');
+    var log = safeParseJSON('colere_zone_log', []);
     log.push({date:Date.now(),zone:zone});
     if (log.length > 200) log = log.slice(-200);
     localStorage.setItem('colere_zone_log', JSON.stringify(log));
@@ -4534,7 +4535,7 @@ function openItfaaEmotionSous() {
 
 function _logEmotionSous(emotion) {
   try {
-    var log = JSON.parse(localStorage.getItem('colere_emotion_sous_log') || '[]');
+    var log = safeParseJSON('colere_emotion_sous_log', []);
     log.push({date:Date.now(),emotion:emotion});
     if (log.length > 200) log = log.slice(-200);
     localStorage.setItem('colere_emotion_sous_log', JSON.stringify(log));
@@ -7829,7 +7830,7 @@ function checkTawba() {
 
   // Vérifier message matin du bilan soir d'hier
   try {
-    const morningMsg = JSON.parse(localStorage.getItem('niyyah_morning_msg') || 'null');
+    const morningMsg = safeParseJSON('niyyah_morning_msg', null);
     if (morningMsg && morningMsg.date !== TODAY) {
       // Message d'hier → afficher ce matin
       setTimeout(() => showToast(morningMsg.icon + ' ' + morningMsg.text.substring(0, 80)), 1500);
@@ -7966,7 +7967,7 @@ function showTawba() {
 
   // Débloquer badge Tawba si première fois
   try {
-    const badges = JSON.parse(localStorage.getItem('niyyah_tawba_badges') || '{}');
+    const badges = safeParseJSON('niyyah_tawba_badges', {});
     if (!badges.tawba_return) {
       badges.tawba_return = true;
       safeSetItem('niyyah_tawba_badges', JSON.stringify(badges));
@@ -8211,8 +8212,8 @@ function getMurmureAdaptatif(moment) {
   var state = {};
   var history = {};
   try {
-    state   = JSON.parse(localStorage.getItem("spiritual_v2") || "{}");
-    history = JSON.parse(localStorage.getItem("spiritual_history") || "{}");
+    state   = safeParseJSON("spiritual_v2", {});
+    history = safeParseJSON("spiritual_history", {});
   } catch(e) {}
 
   var todayScore = state._todayScore || state._score || 0;
@@ -9899,7 +9900,7 @@ function v2DetectLang() {
   try {
     var urlLang = new URLSearchParams(window.location.search).get('lang');
     if (urlLang && urlLang !== 'ar' && V2_I18N[urlLang]) {
-      var s = JSON.parse(localStorage.getItem('niyyah_v2_bridge') || '{}'); s.lang = urlLang; safeSetItem('niyyah_v2_bridge', JSON.stringify(s));
+      var s = safeParseJSON('niyyah_v2_bridge', {}); s.lang = urlLang; safeSetItem('niyyah_v2_bridge', JSON.stringify(s));
       history.replaceState(null, '', window.location.pathname);
       return urlLang;
     }
@@ -10039,7 +10040,7 @@ function v2ApplyI18n() {
   const lvlEl = document.getElementById('v2-level-name');
   if (lvlEl) {
     try {
-      const v1s = JSON.parse(localStorage.getItem('spiritual_v2') || '{}');
+      const v1s = safeParseJSON('spiritual_v2', {});
       const unlocked = v1s._unlocked || [1];
       const maxLvl = Math.max(...unlocked);
       lvlEl.textContent = lvlNames[maxLvl - 1] || T.level_1;
@@ -12946,7 +12947,7 @@ function v2Init() {
 
   // Sync V1 intention → V2 chip on boot
   try {
-    const v1state = JSON.parse(localStorage.getItem('spiritual_v2') || '{}');
+    const v1state = safeParseJSON('spiritual_v2', {});
     if (v1state.intention) {
       const s2 = v2GetState();
       if (!s2.intention) {
@@ -13300,7 +13301,7 @@ function _regardeShowVerset(content, v, slow, returning) {
 function regardeCapture() {
   // Quota Regarde : 5/jour
   try {
-    var _rqRaw = JSON.parse(localStorage.getItem('niyyah_regarde_quota') || '[]');
+    var _rqRaw = safeParseJSON('niyyah_regarde_quota', []);
     var _rqToday = todayKey();
     _rqRaw = _rqRaw.filter(function(d) { return d === _rqToday; });
     if (_rqRaw.length >= 5) { showToast(t('regarde_limit')); return; }
@@ -14329,7 +14330,7 @@ function openVueRituel(prayer) {
   const fridayIds = ['jumua','fri_kahf','fri_salawat','fri_doua'];
   const normalItems = items.filter(it => !fridayIds.includes(it.id));
   const main = v.querySelector('.rituel-content');
-  const state = JSON.parse(localStorage.getItem('spiritual_v2') || '{}');
+  const state = safeParseJSON('spiritual_v2', {});
   const renderItem = (it, vendredi) => {
     const done = state[it.id] ? 'done' : '';
     const ar = it.arabic ? '<div class="arabic">' + it.arabic + '</div>' : '';
@@ -14414,7 +14415,7 @@ function openVueRituel(prayer) {
 window.openVueRituel = openVueRituel;
 
 function getFilJourCardHTML() {
-  const state = JSON.parse(localStorage.getItem('spiritual_v2') || '{}');
+  const state = safeParseJSON('spiritual_v2', {});
   var _motivF = getEffectiveMotiv();
   var _passPath = function(it) { return !_motivF || !it.paths || it.paths.includes(_motivF); };
   let done = 0, total = 0;
@@ -14498,7 +14499,7 @@ function openVueAuFilDuJour() {
     });
   });
   const main = v.querySelector('.rituel-content');
-  const state = JSON.parse(localStorage.getItem('spiritual_v2') || '{}');
+  const state = safeParseJSON('spiritual_v2', {});
   var _catOrder = [
     { key: 'rituels', title: 'RITUELS DU JOUR', icon: '\uD83D\uDD4B', defaultOpen: true },
     { key: 'science', title: 'SCIENCE ET LECTURE', icon: '\uD83D\uDCD6', defaultOpen: false },
@@ -15054,7 +15055,7 @@ function openDhikrCounter(config) {
   // Restore today's count
   var saved = 0;
   try {
-    var raw = JSON.parse(localStorage.getItem(config.saveKey) || '{}');
+    var raw = safeParseJSON(config.saveKey, {});
     if (raw.date === todayKey()) saved = raw.count || 0;
   } catch(e) {}
   _dhikrState.count = Math.min(saved, config.target);
