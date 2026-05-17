@@ -13535,7 +13535,7 @@ function openRegardeDetail(id) {
     + '<button onclick="regardeDetailNote(\'' + id + '\')" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;font-size:24px;color:#D4AF37;display:flex;align-items:center;justify-content:center;">✎</button>'
     + '<button onclick="regardeDetailDelete(\'' + id + '\')" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,80,80,0.3);background:transparent;cursor:pointer;font-size:20px;color:rgba(255,80,80,0.6);display:flex;align-items:center;justify-content:center;">🗑</button>'
     + '</div>'
-    + (noteText ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(255,255,255,0.5);text-align:center;padding:12px;background:rgba(200,168,75,0.04);border-radius:10px;">' + noteText + '</div>' : '');
+    + (noteText ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(255,255,255,0.5);text-align:center;padding:12px;background:rgba(200,168,75,0.04);border-radius:10px;">' + escapeHtml(noteText) + '</div>' : '');
   overlay.style.display = 'block';
 }
 
