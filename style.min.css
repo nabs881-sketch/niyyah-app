@@ -533,7 +533,7 @@ to {
 }
 .item {
   display:flex;
-  align-items:center;
+  align-items:flex-start;
   gap:14px;
   padding:16px 16px;
   position:relative;
@@ -564,6 +564,7 @@ to {
   align-items:center;
   justify-content:center;
   flex-shrink:0;
+  margin-top:2px;
   transition:all 0.25s cubic-bezier(0.34,1.56,0.64,1);
   background:transparent
 }
@@ -822,6 +823,7 @@ to {
   cursor:pointer;
   display:flex;
   align-items:center;
+  align-self:center;
   justify-content:center;
   flex-shrink:0;
   margin-left:4px;
@@ -1050,6 +1052,7 @@ to {
   display:flex;
   align-items:center;
   justify-content:center;
+  align-self:center;
   flex-shrink:0;
   transition:all 0.15s;
   -webkit-tap-highlight-color:transparent;
