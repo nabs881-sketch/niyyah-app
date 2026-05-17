@@ -13485,9 +13485,11 @@ function _showSavedIndicator(afterId) {
 function regardeSaveNote() {
   var input = document.getElementById('regarde-note-input');
   if (!input || !_currentRegardeId) return;
-  updateRegardeEntry(_currentRegardeId, { note: input.value });
   clearTimeout(_regardeNoteTimer);
-  _regardeNoteTimer = setTimeout(function() { _showSavedIndicator('regarde-note-input'); }, 800);
+  _regardeNoteTimer = setTimeout(function() {
+    updateRegardeEntry(_currentRegardeId, { note: input.value });
+    _showSavedIndicator('regarde-note-input');
+  }, 500);
 }
 var _currentRegardeCat = 'INDETERMINE';
 function regardeToggleStar() {
@@ -13600,9 +13602,11 @@ var _regardeDetailNoteTimer = null;
 function regardeDetailNoteSave(id) {
   var input = document.getElementById('regarde-detail-note-input');
   if (!input) return;
-  updateRegardeEntry(id, { note: input.value });
   clearTimeout(_regardeDetailNoteTimer);
-  _regardeDetailNoteTimer = setTimeout(function() { _showSavedIndicator('regarde-detail-note-input'); }, 800);
+  _regardeDetailNoteTimer = setTimeout(function() {
+    updateRegardeEntry(id, { note: input.value });
+    _showSavedIndicator('regarde-detail-note-input');
+  }, 500);
 }
 
 function regardeDetailDelete(id) {
