@@ -2564,7 +2564,7 @@ function renderLevel(levelId) {
           const translationEsc = translation.replace(/"/g,'&quot;');
           infoBtn = '<button class="btn-info" aria-label="Détails" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openInfoSheet(\'\',\'\',\'\',\'\',event)" data-label="' + labelEsc2 + '" data-arabic="' + arabicEsc2 + '" data-phonetic="' + phoneticEsc + '" data-translation="' + translationEsc + '" title="' + t('btn_see_phonetic') + '"><i>i</i></button>';
         }
-        const optionalBadge = item.optional ? '<span style="font-size:12px;font-weight:700;letter-spacing:0.8px;color:var(--green);background:rgba(52,217,98,0.12);border:1px solid rgba(52,217,98,0.25);border-radius:6px;padding:1px 5px;margin-left:5px;vertical-align:middle;">BONUS</span>' : '';
+        const optionalBadge = '';
         const priorityCls = item.priority === 'fard' ? ' priority-fard' : item.priority === 'sunnah' ? ' priority-sunnah' : '';
         const _tlCurrent = (!checked && !_firstUncheckedFound) ? (_firstUncheckedFound = true, ' timeline-current') : '';
         const _tlOpacity = checked ? 'opacity:0.3;' : '';
