@@ -13974,12 +13974,24 @@ async function scannerCapture() {
   // Animation scanning
   orb.classList.add('scanning');
 
-  // ✦ Afficher l'overlay de réflexion IA
+  // ✦ Afficher l'overlay de réflexion IA avec feedback dynamique
   const thinkingEl = document.getElementById('scanner-thinking');
   if (thinkingEl) thinkingEl.classList.add('active');
   captBtn.classList.add('hidden');
   hint.textContent = t('scanner_analyzing');
   hint.style.opacity = '0.8';
+  var _thinkMsgs = ['Les mots descendent en eux-m\u00eames\u2026','Quelque chose se d\u00e9plie\u2026','Les nuances se cherchent\u2026','Encore un instant\u2026','Bient\u00f4t\u2026'];
+  var _thinkIdx = 0;
+  var _thinkMsgEl = document.getElementById('scanner-thinking-msg');
+  if (!_thinkMsgEl && thinkingEl) { _thinkMsgEl = document.createElement('div'); _thinkMsgEl.id = 'scanner-thinking-msg'; _thinkMsgEl.style.cssText = 'font-family:Cormorant Garamond,serif;font-size:15px;font-style:italic;color:rgba(255,255,255,0.7);text-align:center;position:absolute;bottom:100px;left:0;right:0;transition:opacity 0.4s;'; thinkingEl.appendChild(_thinkMsgEl); }
+  if (_thinkMsgEl) _thinkMsgEl.textContent = _thinkMsgs[0];
+  var _thinkInterval = setInterval(function() { _thinkIdx++; if (_thinkMsgEl && _thinkIdx < _thinkMsgs.length) { _thinkMsgEl.style.opacity = '0'; setTimeout(function() { _thinkMsgEl.textContent = _thinkMsgs[_thinkIdx]; _thinkMsgEl.style.opacity = '1'; }, 300); } }, 4000);
+  var _thinkBar = document.getElementById('scanner-thinking-bar');
+  if (!_thinkBar && thinkingEl) { _thinkBar = document.createElement('div'); _thinkBar.id = 'scanner-thinking-bar'; _thinkBar.style.cssText = 'position:absolute;bottom:0;left:0;height:2px;background:rgba(200,168,74,0.5);width:0;transition:width 20s linear;'; thinkingEl.appendChild(_thinkBar); }
+  if (_thinkBar) { _thinkBar.style.transition = 'none'; _thinkBar.style.width = '0'; requestAnimationFrame(function() { _thinkBar.style.transition = 'width 20s linear'; _thinkBar.style.width = '90%'; }); }
+  var _thinkCancel = document.getElementById('scanner-thinking-cancel');
+  if (!_thinkCancel && thinkingEl) { _thinkCancel = document.createElement('button'); _thinkCancel.id = 'scanner-thinking-cancel'; _thinkCancel.style.cssText = 'position:absolute;bottom:50px;left:0;right:0;background:none;border:none;color:rgba(255,255,255,0.3);font-size:12px;cursor:pointer;font-family:var(--sans);'; _thinkCancel.textContent = 'Annuler'; thinkingEl.appendChild(_thinkCancel); }
+  if (_thinkCancel) _thinkCancel.onclick = function() { if (window._scannerAC) { try { window._scannerAC.abort(); } catch(e) {} } };
 
   // Capturer l'image depuis la vidéo — compressée max 1024px
   var _vw = video.videoWidth || 1280, _vh = video.videoHeight || 720;
@@ -14001,11 +14013,16 @@ async function scannerCapture() {
     if (thinkingElErr) thinkingElErr.classList.remove('active');
     (window.scannerShowResult || scannerShowResult)({ category: 'default', labels: ['objet'] });
   } finally {
+    // Cleanup feedback dynamique
+    clearInterval(_thinkInterval);
+    if (_thinkBar) { _thinkBar.style.transition = 'width 0.3s'; _thinkBar.style.width = '100%'; }
+    if (_thinkMsgEl) _thinkMsgEl.textContent = '';
     // POINT 4 — Supprimer l'image immédiatement (vie privée)
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     canvas.width = 1; canvas.height = 1;
     orb.classList.remove('scanning');
     if (thinkingEl) thinkingEl.classList.remove('active');
+    if (_thinkBar) setTimeout(function() { _thinkBar.style.width = '0'; }, 500);
   }
 }
 
