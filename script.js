@@ -13274,6 +13274,36 @@ const SCANNER_LIBRARY = {
 /* ── Regarde — helpers ── */
 var _regardeStream = null;
 
+function _askCameraPermission(context) {
+  return new Promise(function(resolve) {
+    if (!navigator.permissions || !navigator.permissions.query) { resolve(true); return; }
+    navigator.permissions.query({ name: 'camera' }).then(function(status) {
+      if (status.state === 'granted') { resolve(true); return; }
+      if (status.state === 'denied') {
+        showToast(t('camera_denied'));
+        resolve(false);
+        return;
+      }
+      // 'prompt' — show explanation modal
+      var _msg = context === 'regarde'
+        ? 'Pour contempler ce que tes yeux ont vu. Cette photo ne quitte pas ton t\u00e9l\u00e9phone.'
+        : 'Pour saisir l\u2019objet que tu offres \u00e0 ton intention du jour. Cet objet ne quitte pas ton t\u00e9l\u00e9phone.';
+      var ov = document.createElement('div');
+      ov.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(15,12,8,0.92);display:flex;align-items:center;justify-content:center;padding:24px;';
+      ov.innerHTML = '<div style="text-align:center;max-width:320px;">'
+        + '<div style="font-size:36px;margin-bottom:16px;">\uD83D\uDCF7</div>'
+        + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;font-weight:700;color:#C8A84A;margin-bottom:12px;">Niyyah a besoin de ta cam\u00e9ra</div>'
+        + '<div style="font-size:14px;color:rgba(240,234,214,0.75);line-height:1.6;margin-bottom:24px;">' + _msg + '</div>'
+        + '<button id="_camContinue" style="padding:14px 28px;border:none;border-radius:24px;background:#C8A84A;color:#2C2E32;font-family:Cormorant Garamond,serif;font-size:15px;font-weight:700;cursor:pointer;margin-right:12px;">Continuer</button>'
+        + '<button id="_camLater" style="padding:14px 20px;border-radius:24px;border:1px solid rgba(200,168,74,0.3);background:transparent;color:rgba(255,255,255,0.5);font-size:13px;cursor:pointer;">Plus tard</button>'
+        + '</div>';
+      document.body.appendChild(ov);
+      document.getElementById('_camContinue').onclick = function() { ov.remove(); resolve(true); };
+      document.getElementById('_camLater').onclick = function() { ov.remove(); resolve(false); };
+    }).catch(function() { resolve(true); });
+  });
+}
+
 async function regardeOpen() {
   _nAn('scanner_tab_visited');
   showAlHayaBtn();
@@ -13284,6 +13314,10 @@ async function regardeOpen() {
   closeRegardeDetail();
   if (typeof closeNiyyahJournal === 'function') closeNiyyahJournal();
   if (typeof closeNiyyahDetail === 'function') closeNiyyahDetail();
+
+  // Pré-écran permission caméra
+  var _camOk = await _askCameraPermission('regarde');
+  if (!_camOk) return;
 
   // Init caméra
   try {
@@ -13671,6 +13705,10 @@ async function scannerOpen() {
   showAlHayaBtn();
   const overlay = document.getElementById('scanner-overlay');
   if (!overlay) return;
+
+  // Pré-écran permission caméra
+  var _camOk = await _askCameraPermission('niyyah');
+  if (!_camOk) return;
 
   // 1. Afficher DOM immédiatement avec placeholder
   overlay.classList.add('active');
