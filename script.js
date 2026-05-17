@@ -1251,12 +1251,13 @@ var HADITHS_JOUR = [];
 (function() {
   fetch('./hadiths_jour.json').then(function(r) { return r.json(); }).then(function(data) { HADITHS_JOUR = data; }).catch(function() {});
 })();
-var COMPAGNONS = [];
-(function() {
-  fetch('./compagnons.json').then(function(r) { return r.json(); }).then(function(data) { COMPAGNONS = data; console.log('[Niyyah] compagnons.json charg\u00e9 :', data.length, 'entr\u00e9es'); }).catch(function() {});
-})();
+var COMPAGNONS = null;
+function loadCompagnons(cb) {
+  if (COMPAGNONS) { if (cb) cb(COMPAGNONS); return; }
+  fetch('./compagnons.json').then(function(r) { return r.json(); }).then(function(data) { COMPAGNONS = data; if (cb) cb(data); }).catch(function() { if (cb) cb(null); });
+}
 function getCompagnonJour() {
-  if (!COMPAGNONS.length) return { compagnon: '', compagnon_ar: '', titre: '', recit: '', parole: '', station: '', source: '', episode_num: 0, episode_total: 0 };
+  if (!COMPAGNONS || !COMPAGNONS.length) return { compagnon: '', compagnon_ar: '', titre: '', recit: '', parole: '', station: '', source: '', episode_num: 0, episode_total: 0 };
   var start = safeGetItem('niyyah_compagnons_start');
   if (!start) { start = String(Date.now()); safeSetItem('niyyah_compagnons_start', start); }
   var daysSince = Math.floor((Date.now() - parseInt(start, 10)) / 86400000);
@@ -14723,28 +14724,32 @@ function _showDuaaCycleModal() {
 window._showDuaaCycleModal = _showDuaaCycleModal;
 
 function openVueCompagnon() {
-  var c = getCompagnonJour();
   var v = document.getElementById('vue-rituel');
   if (!v) return;
   v.querySelector('.rituel-titre').textContent = 'VIE DES COMPAGNONS';
   v.querySelector('.rituel-prochaine').textContent = '';
   v.querySelector('.rituel-poetique').textContent = '';
   var main = v.querySelector('.rituel-content');
-  var _epLabel = (c.episode_num && c.episode_total) ? '\u00c9pisode ' + c.episode_num + '/' + c.episode_total : '';
-  main.innerHTML = '<div style="padding:20px 16px;text-align:center;">'
-    + (c.titre ? '<div class="fiqh-categorie">' + c.titre.toUpperCase() + '</div>' : '')
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-weight:700;color:rgba(240,234,214,0.95);margin-bottom:4px;">Jour ' + (c.jour || '') + ' \u2014 ' + (c.compagnon || '') + '</div>'
-    + (c.compagnon_ar ? '<div style="font-family:\'Amiri\',serif;font-size:18px;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:4px;">' + c.compagnon_ar + '</div>' : '')
-    + (_epLabel ? '<div style="font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:1px;margin-bottom:20px;">' + _epLabel + '</div>' : '')
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;line-height:1.8;color:rgba(240,234,214,0.9);text-align:left;margin-bottom:20px;">' + (c.recit || '').replace(/\n/g, '<br>') + '</div>'
-    + (c.parole ? '<div style="border-left:2px solid rgba(200,168,74,0.4);padding:8px 16px;margin-bottom:16px;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;line-height:1.6;color:rgba(200,168,74,0.85);text-align:left;">' + c.parole + '</div>' : '')
-    + (c.station ? '<div style="border:1px solid rgba(200,168,74,0.25);border-radius:10px;padding:12px 16px;margin-bottom:20px;font-style:italic;font-size:14px;line-height:1.6;color:rgba(200,168,74,0.8);">' + c.station + '</div>' : '')
-    + (c.source ? '<div style="font-size:11px;color:rgba(255,255,255,0.35);letter-spacing:0.1em;">\u2014 ' + c.source + ' \u2014</div>' : '')
-    + '</div>';
+  main.innerHTML = '<div style="text-align:center;padding:40px 16px;color:rgba(255,255,255,0.4);font-size:14px;">Chargement\u2026</div>';
   var _footer = v.querySelector('.rituel-footer button');
   if (_footer) _footer.setAttribute('onclick', "validerLecture('vie_compagnons')");
   v.classList.remove('hidden');
   document.getElementById('rituel-emblem').textContent = '\u0635\u064E\u062D\u064E\u0627\u0628\u064E\u0629';
+  loadCompagnons(function() {
+    var c = getCompagnonJour();
+    if (!c.compagnon) { main.innerHTML = '<div style="text-align:center;padding:40px;color:#C8A84A;">Erreur de chargement</div>'; return; }
+    var _epLabel = (c.episode_num && c.episode_total) ? '\u00c9pisode ' + c.episode_num + '/' + c.episode_total : '';
+    main.innerHTML = '<div style="padding:20px 16px;text-align:center;">'
+      + (c.titre ? '<div class="fiqh-categorie">' + c.titre.toUpperCase() + '</div>' : '')
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-weight:700;color:rgba(240,234,214,0.95);margin-bottom:4px;">Jour ' + (c.jour || '') + ' \u2014 ' + (c.compagnon || '') + '</div>'
+      + (c.compagnon_ar ? '<div style="font-family:\'Amiri\',serif;font-size:18px;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:4px;">' + c.compagnon_ar + '</div>' : '')
+      + (_epLabel ? '<div style="font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:1px;margin-bottom:20px;">' + _epLabel + '</div>' : '')
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;line-height:1.8;color:rgba(240,234,214,0.9);text-align:left;margin-bottom:20px;">' + (c.recit || '').replace(/\n/g, '<br>') + '</div>'
+      + (c.parole ? '<div style="border-left:2px solid rgba(200,168,74,0.4);padding:8px 16px;margin-bottom:16px;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;line-height:1.6;color:rgba(200,168,74,0.85);text-align:left;">' + c.parole + '</div>' : '')
+      + (c.station ? '<div style="border:1px solid rgba(200,168,74,0.25);border-radius:10px;padding:12px 16px;margin-bottom:20px;font-style:italic;font-size:14px;line-height:1.6;color:rgba(200,168,74,0.8);">' + c.station + '</div>' : '')
+      + (c.source ? '<div style="font-size:11px;color:rgba(255,255,255,0.35);letter-spacing:0.1em;">\u2014 ' + c.source + ' \u2014</div>' : '')
+      + '</div>';
+  });
 }
 window.openVueCompagnon = openVueCompagnon;
 
