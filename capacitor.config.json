@@ -12,6 +12,12 @@
     "webContentsDebuggingEnabled": false
   },
   "plugins": {
+    "Camera": {
+      "permissions": ["camera"]
+    },
+    "Geolocation": {
+      "permissions": ["location"]
+    },
     "LocalNotifications": {
       "smallIcon": "ic_stat_niyyah",
       "iconColor": "#D4AF37",
