@@ -52,6 +52,20 @@ function dateToKey(d) { return d.getFullYear() + '-' + _pad2(d.getMonth() + 1) +
 function safeSetItem(key, value) { try { localStorage.setItem(key, value); return true; } catch(e) { if (typeof showToast === 'function') showToast('M\u00e9moire pleine \u2014 exportez puis r\u00e9initialisez'); return false; } }
 function safeGetItem(key) { try { return localStorage.getItem(key); } catch(e) { return null; } }
 function safeParseJSON(key, def) { try { return JSON.parse(localStorage.getItem(key) || (Array.isArray(def) ? '[]' : '{}')) || def; } catch(e) { console.warn('[Niyyah] parse error:', key); return def; } }
+function fetchWithRetry(url, options, maxRetries) {
+  if (maxRetries === undefined) maxRetries = 2;
+  function attempt(n) {
+    return fetch(url, options).then(function(res) {
+      if (res.status >= 500 && n < maxRetries) return wait(n).then(function() { return attempt(n + 1); });
+      return res;
+    }).catch(function(err) {
+      if (n < maxRetries) return wait(n).then(function() { return attempt(n + 1); });
+      throw err;
+    });
+  }
+  function wait(n) { return new Promise(function(r) { setTimeout(r, 1000 * Math.pow(2, n)); }); }
+  return attempt(0);
+}
 
 // ═══════════════════════════════════════════════════
 // JOURNAL V2 — Storage helpers
@@ -1298,7 +1312,7 @@ function _fetchVerset(n, cb) {
   var cacheKey = 'verset_cache_' + n;
   var cached = safeGetItem(cacheKey);
   if (cached) { try { cb(JSON.parse(cached)); return; } catch(e) {} }
-  fetch('https://api.alquran.cloud/v1/ayah/' + n + '/editions/quran-uthmani,fr.hamidullah')
+  fetchWithRetry('https://api.alquran.cloud/v1/ayah/' + n + '/editions/quran-uthmani,fr.hamidullah')
     .then(function(r) { return r.json(); })
     .then(function(data) {
       if (data.code === 200 && data.data && data.data.length >= 2) {
@@ -3663,7 +3677,7 @@ function _loadPrayerByCoords(lat, lng) {
   renderLevel(currentLevel);
   var url = 'https://api.aladhan.com/v1/timings?latitude=' + lat + '&longitude=' + lng + '&method=12&school=0';
   var _ac1 = new AbortController(); var _to1 = setTimeout(function() { _ac1.abort(); }, 10000);
-  fetch(url, { signal: _ac1.signal })
+  fetchWithRetry(url, { signal: _ac1.signal })
     .then(function(r) { clearTimeout(_to1); return r.json(); })
     .then(function(d) {
       if (d.code === 200 && d.data && d.data.timings) {
@@ -3685,7 +3699,7 @@ function _loadPrayerByCity() {
   var _dateStr = String(_today.getDate()).padStart(2,'0') + '-' + String(_today.getMonth()+1).padStart(2,'0') + '-' + _today.getFullYear();
   var url = 'https://api.aladhan.com/v1/timingsByCity/' + _dateStr + '?city=' + encodeURIComponent(_prayerCity) + '&country=' + encodeURIComponent(_prayerCountry || '') + '&method=12';
   var _ac2 = new AbortController(); var _to2 = setTimeout(function() { _ac2.abort(); }, 10000);
-  fetch(url, { signal: _ac2.signal })
+  fetchWithRetry(url, { signal: _ac2.signal })
     .then(function(r) { clearTimeout(_to2); return r.json(); })
     .then(function(d) {
       if (d.code === 200 && d.data && d.data.timings) {
