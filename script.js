@@ -13693,6 +13693,7 @@ async function scannerOpen() {
       video.play();
       document.getElementById('scanner-capture-btn').classList.remove('hidden');
       if (_hint) _hint.textContent = t('scanner_hint');
+      _updateScannerQuotaHint();
     }).catch(function(err) {
       overlay.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:16px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#C8A84A;text-align:center;padding:40px;">' + t('camera_denied') + '</div><button onclick="scannerClose();scannerOpen()" style="padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:13px;cursor:pointer;">' + t('btn_retry') + '</button><button onclick="scannerClose()" style="padding:8px 20px;border:none;background:transparent;color:var(--t3);font-size:12px;cursor:pointer;">' + t('btn_close') + '</button></div>';
     });
@@ -14007,6 +14008,25 @@ function scannerCancelThinking() {
 }
 
 /* Exposer sur window */
+
+function _updateScannerQuotaHint() {
+  var el = document.getElementById('scanner-quota-hint');
+  if (!el) return;
+  var quota = [];
+  try { quota = JSON.parse(localStorage.getItem('niyyah_scanner_quota') || '[]'); } catch(e) {}
+  var weekAgo = new Date(Date.now() - 7 * 86400000).toISOString();
+  quota = quota.filter(function(ts) { return ts > weekAgo; });
+  var limit = (typeof isPremium === 'function' && isPremium()) ? 3 : 1;
+  var remaining = limit - quota.length;
+  if (remaining >= 2) { el.textContent = ''; return; }
+  if (remaining === 1) { el.textContent = 'Un dernier scan possible cette semaine'; return; }
+  // remaining <= 0
+  var oldest = quota.length ? new Date(quota[0]).getTime() : Date.now();
+  var resetMs = oldest + 7 * 86400000 - Date.now();
+  var resetDays = Math.max(1, Math.ceil(resetMs / 86400000));
+  if (limit === 1) { el.textContent = 'Prochain scan dans ' + resetDays + ' jour' + (resetDays > 1 ? 's' : ''); }
+  else { el.textContent = 'Tous tes scans utilis\u00e9s. Reviens dans ' + resetDays + ' jour' + (resetDays > 1 ? 's' : ''); }
+}
 
 /* ── Capturer et Analyser ── */
 async function scannerCapture() {
