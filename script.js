@@ -1227,10 +1227,11 @@ function renderRamadan() {
   html += '</div></div>';
   el.innerHTML = html;
 }
-var SAVAIS_TU = [];
-(function() {
-  fetch('./savais_tu.json').then(function(r) { return r.json(); }).then(function(data) { SAVAIS_TU = data; }).catch(function() {});
-})();
+var SAVAIS_TU = null;
+function loadSavaisTu(cb) {
+  if (SAVAIS_TU) { if (cb) cb(SAVAIS_TU); return; }
+  fetch('./savais_tu.json').then(function(r) { return r.json(); }).then(function(data) { SAVAIS_TU = data; if (cb) cb(data); }).catch(function() { if (cb) cb(null); });
+}
 var duaasData = null;
 function loadDuaas(cb) {
   if (duaasData) { if (cb) cb(duaasData); return; }
@@ -1238,19 +1239,21 @@ function loadDuaas(cb) {
 }
 function getDuaaJourNum() { var p = parseInt(safeGetItem('niyyah_duaa_progress') || '1', 10); return ((p - 1) % 253) + 1; }
 function getDuaaJourPreview() { var n = getDuaaJourNum(); return { jour: n, total: 253 }; }
-var FIQH_JOUR = [];
-(function() {
-  fetch('./fiqh_jour.json').then(function(r) { return r.json(); }).then(function(data) { FIQH_JOUR = data; }).catch(function() {});
-})();
+var FIQH_JOUR = null;
+function loadFiqh(cb) {
+  if (FIQH_JOUR) { if (cb) cb(FIQH_JOUR); return; }
+  fetch('./fiqh_jour.json').then(function(r) { return r.json(); }).then(function(data) { FIQH_JOUR = data; if (cb) cb(data); }).catch(function() { if (cb) cb(null); });
+}
 function getFiqhJourRule() {
-  if (!FIQH_JOUR.length) return { categorie: '', sous_theme: '', regle: '', explication: '', source: '', ecole: '' };
+  if (!FIQH_JOUR || !FIQH_JOUR.length) return { categorie: '', sous_theme: '', regle: '', explication: '', source: '', ecole: '' };
   var dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(),0,0).getTime()) / 86400000);
   return FIQH_JOUR[dayOfYear % FIQH_JOUR.length];
 }
-var HADITHS_JOUR = [];
-(function() {
-  fetch('./hadiths_jour.json').then(function(r) { return r.json(); }).then(function(data) { HADITHS_JOUR = data; }).catch(function() {});
-})();
+var HADITHS_JOUR = null;
+function loadHadiths(cb) {
+  if (HADITHS_JOUR) { if (cb) cb(HADITHS_JOUR); return; }
+  fetch('./hadiths_jour.json').then(function(r) { return r.json(); }).then(function(data) { HADITHS_JOUR = data; if (cb) cb(data); }).catch(function() { if (cb) cb(null); });
+}
 var COMPAGNONS = null;
 function loadCompagnons(cb) {
   if (COMPAGNONS) { if (cb) cb(COMPAGNONS); return; }
@@ -1285,7 +1288,7 @@ function getPropheteJour() {
   console.log('[Niyyah] Parcours starts — Proph\u00e8tes:', _ps, '| S\u00eera:', _ss, '| Compagnons:', _cs);
 })();
 function getHadithJourRule() {
-  if (!HADITHS_JOUR.length) return { theme: '', texte_ar: '', texte_fr: '', source: '', degre: '' };
+  if (!HADITHS_JOUR || !HADITHS_JOUR.length) return { theme: '', texte_ar: '', texte_fr: '', source: '', degre: '' };
   var dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(),0,0).getTime()) / 86400000);
   return HADITHS_JOUR[dayOfYear % HADITHS_JOUR.length];
 }
@@ -1307,7 +1310,7 @@ function _fetchVerset(n, cb) {
     }).catch(function() { cb(null); });
 }
 function getSavaisTuFact() {
-  if (!SAVAIS_TU.length) return { texte: '', source: '', categorie: '' };
+  if (!SAVAIS_TU || !SAVAIS_TU.length) return { texte: '', source: '', categorie: '' };
   var dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(),0,0).getTime()) / 86400000);
   var item = SAVAIS_TU[dayOfYear % SAVAIS_TU.length];
   if (typeof item === 'string') return { texte: item, source: '', categorie: '' };
@@ -14605,62 +14608,74 @@ window.closeVueSavaisTu = closeVueSavaisTu;
 function openVueSavaisTu() {
   const v = document.getElementById('vue-savais-tu');
   if (!v) return;
-  const fait = getSavaisTuFact();
-  v.querySelector('.savais-fait').textContent = fait.texte || '';
-  v.querySelector('.savais-source').textContent = fait.source ? '\u2014 ' + fait.source + ' \u2014' : '';
-  var catEl = v.querySelector('.savais-categorie');
-  if (!catEl) { catEl = document.createElement('div'); catEl.className = 'savais-categorie'; var faitEl = v.querySelector('.savais-fait'); if (faitEl) faitEl.parentNode.insertBefore(catEl, faitEl); }
-  catEl.textContent = fait.categorie ? fait.categorie.toUpperCase() : '';
-  catEl.style.display = fait.categorie ? '' : 'none';
+  v.querySelector('.savais-fait').textContent = 'Chargement\u2026';
+  v.querySelector('.savais-source').textContent = '';
+  v.classList.remove('hidden');
+  loadSavaisTu(function() {
+    var fait = getSavaisTuFact();
+    v.querySelector('.savais-fait').textContent = fait.texte || '';
+    v.querySelector('.savais-source').textContent = fait.source ? '\u2014 ' + fait.source + ' \u2014' : '';
+    var catEl = v.querySelector('.savais-categorie');
+    if (!catEl) { catEl = document.createElement('div'); catEl.className = 'savais-categorie'; var faitEl = v.querySelector('.savais-fait'); if (faitEl) faitEl.parentNode.insertBefore(catEl, faitEl); }
+    catEl.textContent = fait.categorie ? fait.categorie.toUpperCase() : '';
+    catEl.style.display = fait.categorie ? '' : 'none';
+  });
   var _vBtn = v.querySelector('.savais-valider');
   if (!_vBtn) { _vBtn = document.createElement('button'); _vBtn.className = 'savais-bouton savais-valider'; _vBtn.style.cssText = 'background:#C8A84A;color:#2C2E32;font-weight:700;margin-top:8px;'; _vBtn.textContent = 'J\u2019ai termin\u00e9 ma lecture'; v.appendChild(_vBtn); }
   _vBtn.onclick = function() { validerLecture('savais_tu'); v.classList.add('hidden'); };
-  v.classList.remove('hidden');
 }
 window.openVueSavaisTu = openVueSavaisTu;
 
 function openVueFiqhJour() {
-  var rule = getFiqhJourRule();
   var v = document.getElementById('vue-rituel');
   if (!v) return;
   v.querySelector('.rituel-titre').textContent = 'JURISPRUDENCE';
   v.querySelector('.rituel-prochaine').textContent = '';
   v.querySelector('.rituel-poetique').textContent = '';
   var main = v.querySelector('.rituel-content');
-  main.innerHTML = '<div style="padding:20px 16px;text-align:center;">'
-    + (rule.categorie ? '<div class="fiqh-categorie">' + rule.categorie.toUpperCase() + '</div>' : '')
-    + (rule.sous_theme ? '<div style="font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:16px;">' + rule.sous_theme + '</div>' : '')
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;line-height:1.7;color:rgba(240,234,214,0.95);margin-bottom:20px;">' + (rule.regle || '') + '</div>'
-    + (rule.explication ? '<div style="font-size:14px;line-height:1.6;color:rgba(255,255,255,0.6);margin-bottom:20px;font-style:italic;">' + rule.explication + '</div>' : '')
-    + (rule.source ? '<div style="font-size:11px;color:rgba(200,168,74,0.6);letter-spacing:0.1em;">\u2014 ' + rule.source + ' \u2014</div>' : '')
-    + (rule.ecole ? '<div style="font-size:10px;color:rgba(200,168,74,0.4);margin-top:8px;letter-spacing:1px;">' + rule.ecole.toUpperCase() + '</div>' : '')
-    + '</div>';
+  main.innerHTML = '<div style="text-align:center;padding:40px 16px;color:rgba(255,255,255,0.4);font-size:14px;">Chargement\u2026</div>';
   var _footer = v.querySelector('.rituel-footer button');
   if (_footer) _footer.setAttribute('onclick', "validerLecture('fiqh_jour')");
   v.classList.remove('hidden');
   document.getElementById('rituel-emblem').textContent = '\u0641\u0650\u0642\u0652\u0647';
+  loadFiqh(function() {
+    var rule = getFiqhJourRule();
+    if (!rule.regle) { main.innerHTML = '<div style="text-align:center;padding:40px;color:#C8A84A;">Erreur de chargement</div>'; return; }
+    main.innerHTML = '<div style="padding:20px 16px;text-align:center;">'
+      + (rule.categorie ? '<div class="fiqh-categorie">' + rule.categorie.toUpperCase() + '</div>' : '')
+      + (rule.sous_theme ? '<div style="font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:16px;">' + rule.sous_theme + '</div>' : '')
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;line-height:1.7;color:rgba(240,234,214,0.95);margin-bottom:20px;">' + (rule.regle || '') + '</div>'
+      + (rule.explication ? '<div style="font-size:14px;line-height:1.6;color:rgba(255,255,255,0.6);margin-bottom:20px;font-style:italic;">' + rule.explication + '</div>' : '')
+      + (rule.source ? '<div style="font-size:11px;color:rgba(200,168,74,0.6);letter-spacing:0.1em;">\u2014 ' + rule.source + ' \u2014</div>' : '')
+      + (rule.ecole ? '<div style="font-size:10px;color:rgba(200,168,74,0.4);margin-top:8px;letter-spacing:1px;">' + rule.ecole.toUpperCase() + '</div>' : '')
+      + '</div>';
+  });
 }
 window.openVueFiqhJour = openVueFiqhJour;
 
 function openVueHadithJour() {
-  var h = getHadithJourRule();
   var v = document.getElementById('vue-rituel');
   if (!v) return;
   v.querySelector('.rituel-titre').textContent = 'HADITH DU JOUR';
   v.querySelector('.rituel-prochaine').textContent = '';
   v.querySelector('.rituel-poetique').textContent = '';
   var main = v.querySelector('.rituel-content');
-  main.innerHTML = '<div style="padding:20px 16px;text-align:center;">'
-    + (h.theme ? '<div class="fiqh-categorie">' + h.theme.toUpperCase() + '</div>' : '')
-    + (h.texte_ar ? '<div style="font-family:\'Amiri\',serif;font-size:24px;line-height:2;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:20px;">' + h.texte_ar + '</div>' : '')
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;line-height:1.7;color:rgba(240,234,214,0.95);font-style:italic;margin-bottom:20px;">' + (h.texte_fr || '') + '</div>'
-    + (h.source ? '<div style="font-size:11px;color:rgba(200,168,74,0.6);letter-spacing:0.1em;">\u2014 ' + h.source + ' \u2014</div>' : '')
-    + (h.degre ? '<div style="font-size:10px;color:rgba(200,168,74,0.4);margin-top:8px;letter-spacing:1px;">' + h.degre.toUpperCase() + '</div>' : '')
-    + '</div>';
+  main.innerHTML = '<div style="text-align:center;padding:40px 16px;color:rgba(255,255,255,0.4);font-size:14px;">Chargement\u2026</div>';
   var _footer = v.querySelector('.rituel-footer button');
   if (_footer) _footer.setAttribute('onclick', "validerLecture('hadith1')");
   v.classList.remove('hidden');
   document.getElementById('rituel-emblem').textContent = '\u062D\u064E\u062F\u0650\u064A\u062B';
+  loadHadiths(function() {
+    var h = getHadithJourRule();
+    if (!h.texte_fr) { main.innerHTML = '<div style="text-align:center;padding:40px;color:#C8A84A;">Erreur de chargement</div>'; return; }
+    main.innerHTML = '<div style="padding:20px 16px;text-align:center;">'
+      + (h.theme ? '<div class="fiqh-categorie">' + h.theme.toUpperCase() + '</div>' : '')
+      + (h.texte_ar ? '<div style="font-family:\'Amiri\',serif;font-size:24px;line-height:2;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:20px;">' + h.texte_ar + '</div>' : '')
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;line-height:1.7;color:rgba(240,234,214,0.95);font-style:italic;margin-bottom:20px;">' + (h.texte_fr || '') + '</div>'
+      + (h.source ? '<div style="font-size:11px;color:rgba(200,168,74,0.6);letter-spacing:0.1em;">\u2014 ' + h.source + ' \u2014</div>' : '')
+      + (h.degre ? '<div style="font-size:10px;color:rgba(200,168,74,0.4);margin-top:8px;letter-spacing:1px;">' + h.degre.toUpperCase() + '</div>' : '')
+      + '</div>';
+  });
 }
 window.openVueHadithJour = openVueHadithJour;
 
