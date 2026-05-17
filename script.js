@@ -2606,10 +2606,17 @@ function renderLevel(levelId) {
   const nextId = levelId + 1;
   const nextLvl = LEVELS.find(l => l.id === nextId);
   if (nextLvl) {
-    var _locked = !state._unlocked.includes(nextId);
-    html += '<div style="padding:8px 0 24px;text-align:center;">'
-      + '<button class="btn-next-level' + (_locked ? ' locked' : '') + '" onclick="selectLevel(' + nextId + ')">NIVEAU ' + nextId + ' · ' + t('level_' + nextId).toUpperCase() + '</button>'
-      + '</div>';
+    html += '<div style="padding:16px 0 24px;text-align:center;">'
+      + '<button class="btn-next-level-v2" onclick="selectLevel(' + nextId + ')">'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:700;">Passer \u00e0 ' + t('level_' + nextId) + ' \u2192</div>'
+      + '<div style="font-size:12px;font-style:italic;opacity:0.7;margin-top:4px;">' + _lvlDone + ' sur ' + _lvlItems.length + ' items accomplis</div>'
+      + '</button></div>';
+  } else {
+    html += '<div style="padding:16px 0 24px;text-align:center;">'
+      + '<div class="btn-next-level-v2" style="opacity:0.5;cursor:default;">'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:700;">\u2713 Ma journ\u00e9e compl\u00e8te</div>'
+      + '<div style="font-size:12px;font-style:italic;opacity:0.7;margin-top:4px;">Alhamdulill\u0101h</div>'
+      + '</div></div>';
   }
   content.innerHTML = html;
   fadeInView(content);
@@ -9965,9 +9972,6 @@ function applyInfusion(intention) {
   // Orb glow
   const orb = document.getElementById('orb-core-v2');
   if (orb) orb.style.boxShadow = '0 0 80px rgba(' + theme.rgb + ', 0.25), inset 0 0 40px rgba(' + theme.rgb + ', 0.08)';
-  // Bouton Bismillah
-  const bismillah = document.querySelector('.btn-bismillah');
-  if (bismillah) bismillah.style.background = 'linear-gradient(135deg, ' + theme.color + ', ' + theme.color + 'aa)';
 }
 
 function checkMidnightReset() {
