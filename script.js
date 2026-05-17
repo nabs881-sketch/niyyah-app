@@ -2608,7 +2608,7 @@ function renderLevel(levelId) {
   if (nextLvl) {
     html += '<div style="padding:16px 0 24px;text-align:center;">'
       + '<button class="btn-next-level-v2" onclick="selectLevel(' + nextId + ')">'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:700;">Passer \u00e0 ' + t('level_' + nextId) + ' \u2192</div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:700;">Passer \u00e0 ' + t('level_' + nextId) + '<span style="font-size:22px;font-weight:300;margin-left:8px;vertical-align:middle;">\u203A</span></div>'
       + '<div style="font-size:12px;font-style:italic;opacity:0.7;margin-top:4px;">' + _lvlDone + ' sur ' + _lvlItems.length + ' items accomplis</div>'
       + '</button></div>';
   } else {
