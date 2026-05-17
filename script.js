@@ -13521,6 +13521,7 @@ function closeRegardeJournal() {
 }
 
 function openRegardeDetail(id) {
+  _saveScroll();
   var entries = getRegardeHistory();
   var entry = entries.find(function(e) { return e.id === id; });
   if (!entry) return;
@@ -13547,6 +13548,7 @@ function openRegardeDetail(id) {
 function closeRegardeDetail() {
   var overlay = document.getElementById('regarde-detail-overlay');
   if (overlay) overlay.style.display = 'none';
+  _restoreScroll();
 }
 
 function regardeDetailStar(id) {
@@ -13689,6 +13691,7 @@ function renderNiyyahJournalList(entries) {
   list.innerHTML = html;
 }
 function openNiyyahDetail(id) {
+  _saveScroll();
   var entries = getNiyyahHistory();
   var entry = entries.find(function(e) { return e.id === id; });
   if (!entry) return;
@@ -13707,6 +13710,7 @@ function openNiyyahDetail(id) {
 function closeNiyyahDetail() {
   var overlay = document.getElementById('niyyah-detail-overlay');
   if (overlay) overlay.style.display = 'none';
+  _restoreScroll();
 }
 function niyyahDetailDelete(id) {
   if (!confirm('Supprimer cette Niyyah ?')) return;
@@ -14270,21 +14274,36 @@ function fadeInView(el) {
   });
 }
 
+window._scrollMemory = {};
+function _saveScroll() {
+  var v = document.querySelector('.view.active');
+  if (v) _scrollMemory[v.id] = v.scrollTop;
+}
+function _restoreScroll() {
+  requestAnimationFrame(function() {
+    var v = document.querySelector('.view.active');
+    if (v && _scrollMemory[v.id] !== undefined) v.scrollTop = _scrollMemory[v.id];
+  });
+}
 function closeVueRituel() {
   const v = document.getElementById('vue-rituel');
   if (v) v.classList.add('hidden');
+  _restoreScroll();
 }
 window.closeVueRituel = closeVueRituel;
 function validerLecture(id) {
   if (!state[id]) { state[id] = true; saveState(); updateGlobalProgress(); }
-  closeVueRituel();
+  var v = document.getElementById('vue-rituel');
+  if (v) v.classList.add('hidden');
   if (typeof renderLevel === 'function') renderLevel(currentLevel);
+  _restoreScroll();
 }
 window.validerLecture = validerLecture;
 function validerLectureSira() {
   if (!state['sira']) { state['sira'] = true; saveState(); updateGlobalProgress(); }
   var ov = document.getElementById('sira-overlay');
   if (ov) ov.remove();
+  _restoreScroll();
   if (typeof renderLevel === 'function') renderLevel(currentLevel);
 }
 window.validerLectureSira = validerLectureSira;
@@ -14619,10 +14638,12 @@ window.playAudioById = playAudioById;
 function closeVueSavaisTu() {
   const v = document.getElementById('vue-savais-tu');
   if (v) v.classList.add('hidden');
+  _restoreScroll();
 }
 window.closeVueSavaisTu = closeVueSavaisTu;
 
 function openVueSavaisTu() {
+  _saveScroll();
   const v = document.getElementById('vue-savais-tu');
   if (!v) return;
   v.querySelector('.savais-fait').textContent = 'Chargement\u2026';
@@ -14644,6 +14665,7 @@ function openVueSavaisTu() {
 window.openVueSavaisTu = openVueSavaisTu;
 
 function openVueFiqhJour() {
+  _saveScroll();
   var v = document.getElementById('vue-rituel');
   if (!v) return;
   v.querySelector('.rituel-titre').textContent = 'JURISPRUDENCE';
@@ -14671,6 +14693,7 @@ function openVueFiqhJour() {
 window.openVueFiqhJour = openVueFiqhJour;
 
 function openVueHadithJour() {
+  _saveScroll();
   var v = document.getElementById('vue-rituel');
   if (!v) return;
   v.querySelector('.rituel-titre').textContent = 'HADITH DU JOUR';
@@ -14697,6 +14720,7 @@ function openVueHadithJour() {
 window.openVueHadithJour = openVueHadithJour;
 
 function openVueDuaaJour() {
+  _saveScroll();
   var v = document.getElementById('vue-rituel');
   if (!v) return;
   v.querySelector('.rituel-titre').textContent = 'DU\u2019A DU JOUR';
@@ -14757,6 +14781,7 @@ function _showDuaaCycleModal() {
 window._showDuaaCycleModal = _showDuaaCycleModal;
 
 function openVueCompagnon() {
+  _saveScroll();
   var v = document.getElementById('vue-rituel');
   if (!v) return;
   v.querySelector('.rituel-titre').textContent = 'VIE DES COMPAGNONS';
@@ -14787,6 +14812,7 @@ function openVueCompagnon() {
 window.openVueCompagnon = openVueCompagnon;
 
 function openVuePropheteJour() {
+  _saveScroll();
   var v = document.getElementById('vue-rituel');
   if (!v) return;
   v.querySelector('.rituel-titre').textContent = 'HISTOIRES DES PROPH\u00c8TES';
@@ -14817,6 +14843,7 @@ function openVuePropheteJour() {
 window.openVuePropheteJour = openVuePropheteJour;
 
 function openVueVersetJour() {
+  _saveScroll();
   var v = document.getElementById('vue-rituel');
   if (!v) return;
   v.querySelector('.rituel-titre').textContent = 'LECTURE DU CORAN';
@@ -14943,8 +14970,9 @@ const SIRA = {
     }
     return ov;
   },
-  _closeBtn: '<button onclick="document.getElementById(\'sira-overlay\').remove();" style="position:fixed;top:16px;right:16px;z-index:10000;background:none;border:none;color:#C8A84A;font-size:32px;width:32px;height:32px;cursor:pointer;line-height:1;">\u2715</button>',
+  _closeBtn: '<button onclick="document.getElementById(\'sira-overlay\').remove();_restoreScroll();" style="position:fixed;top:16px;right:16px;z-index:10000;background:none;border:none;color:#C8A84A;font-size:32px;width:32px;height:32px;cursor:pointer;line-height:1;">\u2715</button>',
   async openDetail() {
+    _saveScroll();
     await this.load();
     var ov = this._ensureOverlay();
     ov.innerHTML = this._closeBtn
