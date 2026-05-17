@@ -3252,7 +3252,7 @@ function renderProgression() {
   });
   // === GRAPHIQUE 7 JOURS BILANS ===
   var bilansData = {}; try { bilansData = JSON.parse(localStorage.getItem('niyyah_bilans') || '{}'); } catch(e) {}
-  const bilanColors = { distraction: '#6b7280', effort: '#34d962', sincerite: '#ffd60a' };
+  const bilanColors = { distraction: '#B5A685', effort: '#C8A84A', sincerite: '#C8A84A' };
   const bilanEmojis = { distraction: '\u25CB', effort: '\u25D0', sincerite: '\u25CF' };
   const bilanLabels = { distraction: t('bilan_distrait'), effort: t('bilan_effort'), sincerite: t('bilan_sincere') };
   let bilanCells = '';
@@ -7642,9 +7642,9 @@ function closeBilanFeedback() {
 function setBilanSoir(choix) {
   closeBilanSoir();
   var data = {
-    distraction: { icon: '\ud83d\ude36\u200d\ud83c\udf2b\ufe0f', title: t('bilan_fb_distraction_t'), msg: t('bilan_fb_distraction_m') },
-    effort:      { icon: '\ud83c\udf24\ufe0f',  title: t('bilan_fb_effort_t'), msg: t('bilan_fb_effort_m') },
-    sincerite:   { icon: '\u2600\ufe0f',  title: t('bilan_fb_sincerite_t'), msg: t('bilan_fb_sincerite_m') }
+    distraction: { icon: '\u25CB', title: t('bilan_fb_distraction_t'), msg: t('bilan_fb_distraction_m') },
+    effort:      { icon: '\u25D0', title: t('bilan_fb_effort_t'), msg: t('bilan_fb_effort_m') },
+    sincerite:   { icon: '\u25CF', title: t('bilan_fb_sincerite_t'), msg: t('bilan_fb_sincerite_m') }
   };
   const d = data[choix];
   document.getElementById('bilanFeedbackIcon').textContent = d.icon;
