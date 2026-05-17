@@ -74,6 +74,17 @@ function fetchWithRetry(url, options, maxRetries) {
   return attempt(0);
 }
 
+// A11Y: keydown Enter/Space triggers click on role="button"/role="tab"
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter' || e.key === ' ') {
+    var el = e.target;
+    if (el && (el.getAttribute('role') === 'button' || el.getAttribute('role') === 'tab')) {
+      e.preventDefault();
+      el.click();
+    }
+  }
+});
+
 // ═══════════════════════════════════════════════════
 // JOURNAL V2 — Storage helpers
 // ═══════════════════════════════════════════════════

@@ -86,7 +86,7 @@
     <div id="niyyahSub" style="font-family:'Cormorant Garamond',serif;font-size:24px;font-style:italic;color:rgba(255,255,255,0.85);margin-bottom:48px;opacity:0;transition:all 0.8s ease 0.7s;text-align:center;line-height:1.4;">débutes-tu cette journée ?</div>
     <!-- 4 cartes -->
     <div id="niyyahCards" style="width:100%;display:flex;flex-direction:column;gap:10px;opacity:0;transform:translateY(24px);transition:all 0.9s cubic-bezier(0.16,1,0.3,1) 1s;">
-      <div class="niyyah-card" onclick="chooseNiyyah('rapprochement')">
+      <div class="niyyah-card" role="button" tabindex="0" onclick="chooseNiyyah('rapprochement')">
         <div class="niyyah-card-icon" class="u-emoji-lg">🌙</div>
         <div class="niyyah-card-content">
           <div class="niyyah-card-label">Me rapprocher d'Allah</div>
@@ -94,7 +94,7 @@
         </div>
         <div class="niyyah-card-arrow">›</div>
       </div>
-      <div class="niyyah-card" onclick="chooseNiyyah('engagement')">
+      <div class="niyyah-card" role="button" tabindex="0" onclick="chooseNiyyah('engagement')">
         <div class="niyyah-card-icon" class="u-emoji-lg">⚖️</div>
         <div class="niyyah-card-content">
           <div class="niyyah-card-label">Tenir mes engagements</div>
@@ -102,7 +102,7 @@
         </div>
         <div class="niyyah-card-arrow">›</div>
       </div>
-      <div class="niyyah-card" onclick="chooseNiyyah('reconstruction')">
+      <div class="niyyah-card" role="button" tabindex="0" onclick="chooseNiyyah('reconstruction')">
         <div class="niyyah-card-icon" class="u-emoji-lg">🤲</div>
         <div class="niyyah-card-content">
           <div class="niyyah-card-label">Me reconstruire</div>
@@ -110,7 +110,7 @@
         </div>
         <div class="niyyah-card-arrow">›</div>
       </div>
-      <div class="niyyah-card" onclick="chooseNiyyah('gratitude')">
+      <div class="niyyah-card" role="button" tabindex="0" onclick="chooseNiyyah('gratitude')">
         <div class="niyyah-card-icon" style="font-size:20px;color:#c8a84b;">✦</div>
         <div class="niyyah-card-content">
           <div class="niyyah-card-label">Être reconnaissant</div>
@@ -187,7 +187,7 @@
     <div class="orb-ring-v2"></div>
     <div class="orb-ring-v2"></div>
     <div class="orb-ring-v2"></div>
-    <div class="orb-core-v2" id="orb-core-v2" onclick="v2OpenNiyyahModal()">
+    <div class="orb-core-v2" id="orb-core-v2" role="button" tabindex="0" onclick="v2OpenNiyyahModal()">
       <div class="orb-symbol-v2">نِيَّة</div>
       <div class="orb-cta-v2" id="orb-cta-v2">Définir mon intention</div>
     </div>
@@ -288,7 +288,7 @@
       </div>
       <input id="niyyah-journal-search" type="text" placeholder="Rechercher..." oninput="filterNiyyahJournal()" style="width:100%;box-sizing:border-box;padding:10px 14px;background:rgba(200,168,75,0.04);border:1px solid rgba(200,168,75,0.15);border-radius:10px;color:#D4AF37;font-family:'Cormorant Garamond',serif;font-size:14px;outline:none;margin-bottom:16px;">
       <div id="niyyah-journal-list"></div>
-      <div class="u-center-mt24"><span onclick="closeNiyyahJournal();setTimeout(openRegardeJournal,300);" class="u-section-link"><span id="i18n-link-see-regards">Voir mes Regards →</span></span></div>
+      <div class="u-center-mt24"><span role="tab" tabindex="0" onclick="closeNiyyahJournal();setTimeout(openRegardeJournal,300);" class="u-section-link"><span id="i18n-link-see-regards">Voir mes Regards →</span></span></div>
     </div>
   </div>
   <div id="niyyah-detail-overlay" role="dialog" aria-modal="true" style="display:none;position:fixed;inset:0;z-index:10000;background:#000;overflow-y:auto;">
@@ -351,7 +351,7 @@
       <button onclick="closeRegardeJournal()" aria-label="Fermer" class="u-overlay-close" style="position:static;">✕</button>
     </div>
     <div id="regarde-journal-list"></div>
-    <div class="u-center-mt24"><span onclick="closeRegardeJournal();setTimeout(openNiyyahJournal,300);" class="u-section-link"><span id="i18n-link-see-niyyah">Voir mes Niyyah →</span></span></div>
+    <div class="u-center-mt24"><span role="tab" tabindex="0" onclick="closeRegardeJournal();setTimeout(openNiyyahJournal,300);" class="u-section-link"><span id="i18n-link-see-niyyah">Voir mes Niyyah →</span></span></div>
   </div>
 </div>
 <div id="regarde-detail-overlay" role="dialog" aria-modal="true" style="display:none;position:fixed;inset:0;z-index:3100;background:#000;overflow-y:auto;">
@@ -500,7 +500,7 @@
 </div><!-- TASBIH FULLSCREEN -->
 <div class="tasbih-overlay" id="tasbihOverlay" role="dialog" aria-modal="true"><button class="tasbih-close" onclick="closeTasbih()">✕</button><div class="tasbih-label" id="tasbihLabel">Tasbih</div><div class="tasbih-arabic" id="tasbihArabic"></div><div class="tasbih-num" id="tasbihBigNum">0</div><div class="tasbih-total" id="tasbihTotalLabel">/ 99</div><div class="tasbih-tap-zone" id="tasbihTapZone"><div class="tasbih-tap-hint" id="i18n-tasbih-hint">Appuie n'importe où</div></div><button class="tasbih-reset" onclick="resetTasbihOverlay()">↺</button><div class="tasbih-bar-wrap"><div class="tasbih-bar-fill" id="tasbihBarFill" style="width:0%"></div></div>
 </div><!-- NAV BAR -->
-<div class="nav-bar"><div class="nav-item active" id="nav-accueil" aria-label="Accueil" onclick="switchView('accueil')"><div class="nav-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div class="nav-label">Accueil</div></div><div class="nav-item" id="nav-checklist" aria-label="Pratique" onclick="switchView('checklist')"><div class="nav-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div><div class="nav-label">Pratique</div></div><div class="nav-item" id="nav-tafakkur" aria-label="Tafakkur" onclick="openTafakkur()"><div class="nav-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div><div class="nav-label">Tafakkur</div></div><div class="nav-item" id="nav-progression" aria-label="Mon chemin" onclick="switchView('progression')"><div class="nav-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div class="nav-label">Mon chemin</div></div>
+<div class="nav-bar"><div class="nav-item active" id="nav-accueil" role="button" tabindex="0" aria-label="Accueil" onclick="switchView('accueil')"><div class="nav-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div class="nav-label">Accueil</div></div><div class="nav-item" id="nav-checklist" role="button" tabindex="0" aria-label="Pratique" onclick="switchView('checklist')"><div class="nav-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div><div class="nav-label">Pratique</div></div><div class="nav-item" id="nav-tafakkur" role="button" tabindex="0" aria-label="Tafakkur" onclick="openTafakkur()"><div class="nav-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div><div class="nav-label">Tafakkur</div></div><div class="nav-item" id="nav-progression" role="button" tabindex="0" aria-label="Mon chemin" onclick="switchView('progression')"><div class="nav-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div class="nav-label">Mon chemin</div></div>
 </div>
 
 
