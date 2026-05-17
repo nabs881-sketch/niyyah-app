@@ -1264,12 +1264,13 @@ function getCompagnonJour() {
   var jourParcours = (daysSince % COMPAGNONS.length) + 1;
   return COMPAGNONS.find(function(ep) { return ep.jour === jourParcours; }) || COMPAGNONS[0];
 }
-var PROPHETES = [];
-(function() {
-  fetch('./prophetes.json').then(function(r) { return r.json(); }).then(function(data) { PROPHETES = data; }).catch(function() {});
-})();
+var PROPHETES = null;
+function loadProphetes(cb) {
+  if (PROPHETES) { if (cb) cb(PROPHETES); return; }
+  fetch('./prophetes.json').then(function(r) { return r.json(); }).then(function(data) { PROPHETES = data; if (cb) cb(data); }).catch(function() { if (cb) cb(null); });
+}
 function getPropheteJour() {
-  if (!PROPHETES.length) return { prophete: '', prophete_ar: '', titre: '', recit: '', parole: '', station: '', sources: '', renvoi_module: '' };
+  if (!PROPHETES || !PROPHETES.length) return { prophete: '', prophete_ar: '', titre: '', recit: '', parole: '', station: '', sources: '', renvoi_module: '' };
   var start = safeGetItem('niyyah_prophetes_start');
   if (!start) { start = String(Date.now()); safeSetItem('niyyah_prophetes_start', start); }
   var daysSince = Math.floor((Date.now() - parseInt(start, 10)) / 86400000);
@@ -14754,28 +14755,32 @@ function openVueCompagnon() {
 window.openVueCompagnon = openVueCompagnon;
 
 function openVuePropheteJour() {
-  var p = getPropheteJour();
   var v = document.getElementById('vue-rituel');
   if (!v) return;
   v.querySelector('.rituel-titre').textContent = 'HISTOIRES DES PROPH\u00c8TES';
   v.querySelector('.rituel-prochaine').textContent = '';
   v.querySelector('.rituel-poetique').textContent = '';
   var main = v.querySelector('.rituel-content');
-  var _epLabel = (p.episode_num && p.episode_total) ? ' \u2014 ' + p.episode_num + '/' + p.episode_total : '';
-  main.innerHTML = '<div style="padding:20px 16px;text-align:center;">'
-    + (p.titre ? '<div class="fiqh-categorie">' + p.titre.toUpperCase() + '</div>' : '')
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-weight:700;color:rgba(240,234,214,0.95);margin-bottom:4px;">' + (p.prophete || '') + _epLabel + '</div>'
-    + (p.prophete_ar ? '<div style="font-family:\'Amiri\',serif;font-size:18px;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:20px;">' + p.prophete_ar + '</div>' : '')
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;line-height:1.8;color:rgba(240,234,214,0.9);text-align:left;margin-bottom:20px;">' + (p.recit || '').replace(/\n/g, '<br>') + '</div>'
-    + (p.parole ? '<div style="border-left:2px solid rgba(200,168,74,0.4);padding:8px 16px;margin-bottom:16px;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;line-height:1.6;color:rgba(200,168,74,0.85);text-align:left;">' + p.parole + '</div>' : '')
-    + (p.station ? '<div style="border:1px solid rgba(200,168,74,0.25);border-radius:10px;padding:12px 16px;margin-bottom:20px;font-style:italic;font-size:14px;line-height:1.6;color:rgba(200,168,74,0.8);">' + p.station + '</div>' : '')
-    + (p.sources ? '<div style="font-size:11px;color:rgba(200,168,74,0.6);letter-spacing:0.1em;margin-bottom:16px;">\u2014 ' + p.sources + ' \u2014</div>' : '')
-    + (p.renvoi_module === 'sira' ? '<button onclick="if(typeof SIRA!==\'undefined\')SIRA.openDetail();" style="padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,74,0.4);background:transparent;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:600;cursor:pointer;letter-spacing:0.5px;">Ouvrir la S\u00eera</button>' : '')
-    + '</div>';
+  main.innerHTML = '<div style="text-align:center;padding:40px 16px;color:rgba(255,255,255,0.4);font-size:14px;">Chargement\u2026</div>';
   var _footer = v.querySelector('.rituel-footer button');
   if (_footer) _footer.setAttribute('onclick', "validerLecture('vie_prophetes')");
   v.classList.remove('hidden');
   document.getElementById('rituel-emblem').textContent = '\u0623\u064E\u0646\u0628\u0650\u064A\u064E\u0627\u0621';
+  loadProphetes(function() {
+    var p = getPropheteJour();
+    if (!p.prophete) { main.innerHTML = '<div style="text-align:center;padding:40px;color:#C8A84A;">Erreur de chargement</div>'; return; }
+    var _epLabel = (p.episode_num && p.episode_total) ? ' \u2014 ' + p.episode_num + '/' + p.episode_total : '';
+    main.innerHTML = '<div style="padding:20px 16px;text-align:center;">'
+      + (p.titre ? '<div class="fiqh-categorie">' + p.titre.toUpperCase() + '</div>' : '')
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-weight:700;color:rgba(240,234,214,0.95);margin-bottom:4px;">' + (p.prophete || '') + _epLabel + '</div>'
+      + (p.prophete_ar ? '<div style="font-family:\'Amiri\',serif;font-size:18px;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:20px;">' + p.prophete_ar + '</div>' : '')
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;line-height:1.8;color:rgba(240,234,214,0.9);text-align:left;margin-bottom:20px;">' + (p.recit || '').replace(/\n/g, '<br>') + '</div>'
+      + (p.parole ? '<div style="border-left:2px solid rgba(200,168,74,0.4);padding:8px 16px;margin-bottom:16px;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;line-height:1.6;color:rgba(200,168,74,0.85);text-align:left;">' + p.parole + '</div>' : '')
+      + (p.station ? '<div style="border:1px solid rgba(200,168,74,0.25);border-radius:10px;padding:12px 16px;margin-bottom:20px;font-style:italic;font-size:14px;line-height:1.6;color:rgba(200,168,74,0.8);">' + p.station + '</div>' : '')
+      + (p.sources ? '<div style="font-size:11px;color:rgba(200,168,74,0.6);letter-spacing:0.1em;margin-bottom:16px;">\u2014 ' + p.sources + ' \u2014</div>' : '')
+      + (p.renvoi_module === 'sira' ? '<button onclick="if(typeof SIRA!==\'undefined\')SIRA.openDetail();" style="padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,74,0.4);background:transparent;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:600;cursor:pointer;letter-spacing:0.5px;">Ouvrir la S\u00eera</button>' : '')
+      + '</div>';
+  });
 }
 window.openVuePropheteJour = openVuePropheteJour;
 
