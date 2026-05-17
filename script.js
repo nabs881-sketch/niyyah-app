@@ -1488,6 +1488,9 @@ window.addEventListener('storage', function(e) {
       history = JSON.parse(e.newValue) || {};
     } else if (e.key && e.key.startsWith('niyyah_wird_') && e.newValue) {
       wirdState = JSON.parse(e.newValue) || {};
+    } else if (e.key === 'niyyah_regarde_history' || e.key === 'niyyah_niyyah_history') {
+      _journalCache[e.key] = null;
+      return;
     } else { return; }
     if (typeof renderLevel === 'function') renderLevel(currentLevel);
     if (typeof v2RefreshStats === 'function') v2RefreshStats();
@@ -9194,8 +9197,10 @@ function toggleTheme() {
 if ('serviceWorker' in navigator && location.protocol !== 'null:' && (location.protocol === 'https:' || location.protocol === 'http:')) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('./sw.js').then(function(reg) {
-      setInterval(function() { reg.update(); }, 30 * 60 * 1000);
-      window.addEventListener('focus', function() { reg.update(); });
+      var _lastSwCheck = 0;
+      function _throttledSwUpdate() { var now = Date.now(); if (now - _lastSwCheck < 5 * 60 * 1000) return; _lastSwCheck = now; reg.update(); }
+      setInterval(_throttledSwUpdate, 30 * 60 * 1000);
+      window.addEventListener('focus', _throttledSwUpdate);
       reg.addEventListener('updatefound', function() {
         var newWorker = reg.installing;
         if (!newWorker) return;
