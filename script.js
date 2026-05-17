@@ -50,14 +50,15 @@ function _pad2(n) { return n < 10 ? '0' + n : '' + n; }
 function todayKey() { var d = new Date(); return d.getFullYear() + '-' + _pad2(d.getMonth() + 1) + '-' + _pad2(d.getDate()); }
 function dateToKey(d) { return d.getFullYear() + '-' + _pad2(d.getMonth() + 1) + '-' + _pad2(d.getDate()); }
 function safeSetItem(key, value) {
-  try { localStorage.setItem(key, value); return true; }
+  try { localStorage.setItem(key, value); if (key === 'niyyah_star_vague') _starVagueCache = value; return true; }
   catch(e) {
     cleanOldPhotosIfFull(true);
-    try { localStorage.setItem(key, value); return true; }
+    try { localStorage.setItem(key, value); if (key === 'niyyah_star_vague') _starVagueCache = value; return true; }
     catch(e2) { if (typeof showToast === 'function') showToast('M\u00e9moire pleine \u2014 exportez puis r\u00e9initialisez'); return false; }
   }
 }
-function safeGetItem(key) { try { return localStorage.getItem(key); } catch(e) { return null; } }
+var _starVagueCache = null;
+function safeGetItem(key) { try { if (key === 'niyyah_star_vague' && _starVagueCache !== null) return _starVagueCache; var v = localStorage.getItem(key); if (key === 'niyyah_star_vague') _starVagueCache = v; return v; } catch(e) { return null; } }
 function safeParseJSON(key, def) { try { return JSON.parse(localStorage.getItem(key) || (Array.isArray(def) ? '[]' : '{}')) || def; } catch(e) { console.warn('[Niyyah] parse error:', key); return def; } }
 function fetchWithRetry(url, options, maxRetries) {
   if (maxRetries === undefined) maxRetries = 2;
@@ -139,12 +140,15 @@ function cleanOldPhotosIfFull(force) {
   } catch(e) {}
 }
 
+var _journalCache = { niyyah_niyyah_history: null, niyyah_regarde_history: null };
 function _journalGet(key) {
-  try { return JSON.parse(localStorage.getItem(key) || '[]'); } catch(e) { return []; }
+  if (_journalCache[key] !== undefined && _journalCache[key] !== null) return _journalCache[key];
+  try { var arr = JSON.parse(localStorage.getItem(key) || '[]'); _journalCache[key] = arr; return arr; } catch(e) { return []; }
 }
 
 function _journalSave(key, arr) {
   cleanOldPhotosIfFull();
+  _journalCache[key] = arr;
   if (!safeSetItem(key, JSON.stringify(arr))) {
     if (typeof showToast === 'function') showToast('Sauvegarde impossible \u2014 lib\u00e9rez de l\u2019espace');
   }
@@ -9187,6 +9191,8 @@ function toggleTheme() {
 if ('serviceWorker' in navigator && location.protocol !== 'null:' && (location.protocol === 'https:' || location.protocol === 'http:')) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('./sw.js').then(function(reg) {
+      setInterval(function() { reg.update(); }, 30 * 60 * 1000);
+      window.addEventListener('focus', function() { reg.update(); });
       reg.addEventListener('updatefound', function() {
         var newWorker = reg.installing;
         if (!newWorker) return;
@@ -9204,6 +9210,7 @@ if ('serviceWorker' in navigator && location.protocol !== 'null:' && (location.p
         });
       });
     }).catch(() => {});
+    navigator.serviceWorker.addEventListener('controllerchange', function() { window.location.reload(); });
   });
 }
 

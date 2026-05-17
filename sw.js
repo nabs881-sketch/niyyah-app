@@ -1,4 +1,4 @@
-const VERSION = 'niyyah-v1283';
+const VERSION = 'niyyah-v1285';
 const CORE = [
   './index.html',
   './script.min.js',
@@ -27,7 +27,6 @@ const CORE = [
 const FONTS_CACHE = 'niyyah-fonts-v1';
 
 self.addEventListener('install', e => {
-  self.skipWaiting();
   e.waitUntil(caches.open(VERSION).then(c => c.addAll(CORE)));
 });
 
