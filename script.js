@@ -8856,17 +8856,20 @@ const ONBOARD_SLIDES = [
   // Slide 1 — Motivation "'+t('ob_motivation_title')+'"
   () => '<div class="onboard-anim">'
     + '<div class="onboard-title">'+t('ob_motivation_title')+'</div>'
-    + '<div class="onboard-sub" style="margin-bottom:24px;">'+t('ob_motivation_sub')+'</div>'
+    + '<div class="onboard-sub" style="margin-bottom:24px;">Choisis comment Niyyah t\u2019accompagne.</div>'
     + '<div class="ob-motiv-cards">'
-    + '<div class="ob-motiv-card" onclick="obSelectMotiv(this,\'routine\')" style="border:1px solid rgba(200,168,75,0.25); border-radius:14px; padding:14px 16px; background:radial-gradient(ellipse at top, rgba(200,168,75,0.06) 0%, transparent 70%); margin-bottom:12px; cursor:pointer; display:flex; align-items:center; gap:14px;"><div style="font-size:24px; color:#C8A84A; font-family:Amiri,Scheherazade,serif; direction:rtl; min-width:60px; text-align:center;">\u0645\u064F\u062F\u064E\u0627\u0648\u064E\u0645\u064E\u0629</div>'
-    + '<div><div class="ob-motiv-title" style="font-family:var(--serif); color:#C8A84A; font-size:13px; letter-spacing:2px; text-transform:uppercase; margin-bottom:4px;">'+t('ob_motiv_routine')+'</div>'
-    + '<div class="ob-motiv-sub" style="font-size:12px; color:#E5E0DC; opacity:0.8; line-height:1.4;">'+t('ob_motiv_routine_sub')+'</div></div></div>'
+    + '<div class="ob-motiv-card" onclick="obSelectMotiv(this,\'sacraliser\')" style="border:1px solid rgba(200,168,75,0.25); border-radius:14px; padding:14px 16px; background:radial-gradient(ellipse at top, rgba(200,168,75,0.06) 0%, transparent 70%); margin-bottom:12px; cursor:pointer; display:flex; align-items:center; gap:14px;"><div style="font-size:24px; color:#C8A84A; font-family:Amiri,Scheherazade,serif; direction:rtl; min-width:60px; text-align:center;">\u0646\u0650\u064A\u0651\u064E\u0629</div>'
+    + '<div style="flex:1;"><div class="ob-motiv-title" style="font-family:var(--serif); color:#C8A84A; font-size:13px; letter-spacing:2px; text-transform:uppercase; margin-bottom:2px;">'+t('ob_motiv_sacraliser')+'</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif; font-size:13px; font-style:italic; color:#B5A685; line-height:1.4; margin-bottom:4px;">Niyyah se tait. Tu reviens \u00e0 ton rythme.</div>'
+    + '<div class="ob-motiv-sub" style="font-size:11px; color:rgba(229,224,220,0.5); line-height:1.4;">'+t("ob_motiv_sacraliser_sub")+'</div></div><div style="color:#C8A84A;font-size:18px;flex-shrink:0;">\u203A</div></div>'
     + '<div class="ob-motiv-card" onclick="obSelectMotiv(this,\'reconnecter\')" style="border:1px solid rgba(200,168,75,0.25); border-radius:14px; padding:14px 16px; background:radial-gradient(ellipse at top, rgba(200,168,75,0.06) 0%, transparent 70%); margin-bottom:12px; cursor:pointer; display:flex; align-items:center; gap:14px;"><div style="font-size:24px; color:#C8A84A; font-family:Amiri,Scheherazade,serif; direction:rtl; min-width:60px; text-align:center;">\u062A\u064E\u0648\u0652\u0628\u064E\u0629</div>'
-    + '<div><div class="ob-motiv-title" style="font-family:var(--serif); color:#C8A84A; font-size:13px; letter-spacing:2px; text-transform:uppercase; margin-bottom:4px;">'+t('ob_motiv_reconnecter')+'</div>'
-    + '<div class="ob-motiv-sub" style="font-size:12px; color:#E5E0DC; opacity:0.8; line-height:1.4;">'+t("ob_motiv_reconnecter_sub")+'</div></div></div>'
-    + '<div class="ob-motiv-card" onclick="obSelectMotiv(this,\'sacraliser\')" style="border:1px solid rgba(200,168,75,0.25); border-radius:14px; padding:14px 16px; background:radial-gradient(ellipse at top, rgba(200,168,75,0.06) 0%, transparent 70%); margin-bottom:20px; cursor:pointer; display:flex; align-items:center; gap:14px;"><div style="font-size:24px; color:#C8A84A; font-family:Amiri,Scheherazade,serif; direction:rtl; min-width:60px; text-align:center;">\u0646\u0650\u064A\u0651\u064E\u0629</div>'
-    + '<div><div class="ob-motiv-title" style="font-family:var(--serif); color:#C8A84A; font-size:13px; letter-spacing:2px; text-transform:uppercase; margin-bottom:4px;">'+t('ob_motiv_sacraliser')+'</div>'
-    + '<div class="ob-motiv-sub" style="font-size:12px; color:#E5E0DC; opacity:0.8; line-height:1.4;">'+t("ob_motiv_sacraliser_sub")+'</div></div></div>'
+    + '<div style="flex:1;"><div class="ob-motiv-title" style="font-family:var(--serif); color:#C8A84A; font-size:13px; letter-spacing:2px; text-transform:uppercase; margin-bottom:2px;">'+t('ob_motiv_reconnecter')+'</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif; font-size:13px; font-style:italic; color:#B5A685; line-height:1.4; margin-bottom:4px;">Niyyah t\u2019accueille quand tu reviens.</div>'
+    + '<div class="ob-motiv-sub" style="font-size:11px; color:rgba(229,224,220,0.5); line-height:1.4;">'+t("ob_motiv_reconnecter_sub")+'</div></div><div style="color:#C8A84A;font-size:18px;flex-shrink:0;">\u203A</div></div>'
+    + '<div class="ob-motiv-card" onclick="obSelectMotiv(this,\'routine\')" style="border:1px solid rgba(200,168,75,0.25); border-radius:14px; padding:14px 16px; background:radial-gradient(ellipse at top, rgba(200,168,75,0.06) 0%, transparent 70%); margin-bottom:20px; cursor:pointer; display:flex; align-items:center; gap:14px;"><div style="font-size:24px; color:#C8A84A; font-family:Amiri,Scheherazade,serif; direction:rtl; min-width:60px; text-align:center;">\u0645\u064F\u062F\u064E\u0627\u0648\u064E\u0645\u064E\u0629</div>'
+    + '<div style="flex:1;"><div class="ob-motiv-title" style="font-family:var(--serif); color:#C8A84A; font-size:13px; letter-spacing:2px; text-transform:uppercase; margin-bottom:2px;">'+t('ob_motiv_routine')+'</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif; font-size:13px; font-style:italic; color:#B5A685; line-height:1.4; margin-bottom:4px;">Niyyah t\u2019accompagne chaque jour.</div>'
+    + '<div class="ob-motiv-sub" style="font-size:11px; color:rgba(229,224,220,0.5); line-height:1.4;">'+t('ob_motiv_routine_sub')+'</div></div><div style="color:#C8A84A;font-size:18px;flex-shrink:0;">\u203A</div></div>'
     + '</div>'
     + '<div style="font-size:13px; font-style:italic; color:rgba(200,168,75,0.55); text-align:center; margin:20px auto 24px; max-width:300px;">'+t('ob_motivation_outro')+'</div>'
     + '<button class="onboard-btn" id="obMotivBtn" onclick="onboardNext()" style="opacity:0.3; pointer-events:none; padding:16px 48px; border-radius:30px; border:1px solid rgba(200,168,75,0.5); background:linear-gradient(180deg, #E8D070 0%, #D4B85A 50%, #B89540 100%); color:#1a1a1a; font-size:15px; font-weight:600; font-family:var(--serif); letter-spacing:1px; box-shadow:0 0 40px rgba(200,168,75,0.4), 0 4px 12px rgba(0,0,0,0.3);">'+t('onboard_next')+'</button>'
@@ -13065,27 +13068,27 @@ function checkHijriBanner() {
       var _qadrKey = 'hijri_banner_qadr_' + h.day + '_' + h.year;
       if (safeGetItem(_qadrKey)) return;
       msg = '\u2726 Cette nuit pourrait \u00eatre Laylat al-Qadr. Cherche-la dans les nuits impaires des 10 derni\u00e8res.';
-      btnLabel = 'All\u00e2humma';
+      btnLabel = 'Bismill\u0101h';
       action = 'safeSetItem(\'' + _qadrKey + '\',\'1\')';
       _showLater = false;
     } else if (_isDhulHijjah && h.day === 1) {
       var _dhKey1 = 'hijri_banner_dh_10jours_' + h.year;
       if (safeGetItem(_dhKey1)) return;
       msg = '\u2726 Les 10 premiers jours de Dhul-Hijjah ont commenc\u00e9. Les actions les plus aim\u00e9es d\u2019All\u00e2h dans l\u2019ann\u00e9e.';
-      btnLabel = 'All\u00e2humma';
+      btnLabel = 'Bismill\u0101h';
       action = 'safeSetItem(\'' + _dhKey1 + '\',\'1\')';
     } else if (_isDhulHijjah && h.day === 8) {
       var _dhKey8 = 'hijri_banner_dh_veille_arafat_' + h.year;
       if (safeGetItem(_dhKey8)) return;
       msg = '\u2726 Demain c\u2019est Arafat. Je\u00fbner expie 2 ann\u00e9es (Muslim).';
-      btnLabel = 'All\u00e2humma';
+      btnLabel = 'Bismill\u0101h';
       action = 'safeSetItem(\'' + _dhKey8 + '\',\'1\')';
       _showLater = false;
     } else if (_isDhulHijjah && h.day === 9) {
       var _dhKey9 = 'hijri_banner_dh_arafat_' + h.year;
       if (safeGetItem(_dhKey9)) return;
       msg = '\u2726 Aujourd\u2019hui c\u2019est Arafat. Multiplie dou\u2019as et dhikr.';
-      btnLabel = 'All\u00e2humma';
+      btnLabel = 'Bismill\u0101h';
       action = 'safeSetItem(\'' + _dhKey9 + '\',\'1\')';
       _showLater = false;
     } else if (_isDhulHijjah && h.day === 10) {
@@ -13118,7 +13121,7 @@ function checkHijriBanner() {
       var _muhKey10 = 'hijri_banner_muh_ashura_' + h.year;
       if (safeGetItem(_muhKey10)) return;
       msg = '\u2726 Aujourd\u2019hui c\u2019est Achoura. Je\u00fbner expie les p\u00e9ch\u00e9s de l\u2019ann\u00e9e pass\u00e9e (Muslim).';
-      btnLabel = 'All\u00e2humma';
+      btnLabel = 'Bismill\u0101h';
       action = 'safeSetItem(\'' + _muhKey10 + '\',\'1\')';
       _showLater = false;
     } else if (_isRajab && h.day === 1) {

@@ -663,9 +663,9 @@ to {
 .hijri-banner-dismiss {
   padding: 8px 16px;
   border-radius: 10px;
-  border: 1px solid rgba(200,168,75,0.15);
+  border: 1px solid rgba(200,168,75,0.2);
   background: transparent;
-  color: rgba(200,168,75,0.55);
+  color: #B5A685;
   font-family: 'Cormorant Garamond', serif;
   font-size: 13px;
   cursor: pointer;
