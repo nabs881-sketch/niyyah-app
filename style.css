@@ -4617,25 +4617,39 @@ to {
   gap: 10px;
 }
 .defi-choice-card {
-  background: rgba(200,168,74,0.08);
-  border-left: 3px solid #C8A84A;
-  border-radius: 12px;
-  padding: 20px;
+  background: none;
+  border: none;
+  padding: 14px 0;
   cursor: pointer;
   text-align: left;
-  transition: transform 200ms ease, background 200ms ease;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: opacity 200ms ease;
+  border-bottom: 1px solid rgba(200,168,75,0.08);
+}
+.defi-choice-card:last-child {
+  border-bottom: none;
 }
 .defi-choice-card:active {
-  transform: scale(0.98);
-  background: rgba(200,168,74,0.14);
+  opacity: 0.7;
 }
 .choice-icon {
-  font-size: 32px;
-  margin-bottom: 8px;
+  font-size: 18px;
+  color: #C8A84A;
+  width: 24px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.defi-choice-card:nth-child(2) .choice-icon {
+  color: rgba(200,168,75,0.55);
+}
+.defi-choice-card:nth-child(3) .choice-icon {
+  color: #B5A685;
 }
 .choice-label {
-  font-family: 'Nunito', sans-serif;
-  font-size: 16px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
   color: #E8DCC0;
   line-height: 1.4;
 }

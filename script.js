@@ -795,18 +795,18 @@ function openDefiLundiModal() {
   var choices;
   if (niv >= 3) {
     choices = [
-      {icon:'\u2705', label:'Commencer', action:'accept'}
+      {icon:'\u2713', label:'Commencer', action:'accept'}
     ];
   } else if (niv >= 2) {
     choices = [
-      {icon:'\u2705', label:'J\u2019accepte', action:'accept'},
-      {icon:'\uD83D\uDD04', label:'Choisir un autre', action:'choose'}
+      {icon:'\u2713', label:'J\u2019accepte', action:'accept'},
+      {icon:'\u21BB', label:'Choisir un autre', action:'choose'}
     ];
   } else {
     choices = [
-      {icon:'\u2705', label:'J\u2019accepte', action:'accept'},
-      {icon:'\uD83D\uDD04', label:'Choisir un autre', action:'choose'},
-      {icon:'\u274C', label:'Pas cette semaine', action:'skip'}
+      {icon:'\u2713', label:'J\u2019accepte', action:'accept'},
+      {icon:'\u21BB', label:'Choisir un autre', action:'choose'},
+      {icon:'\u2715', label:'Pas cette semaine', action:'skip'}
     ];
   }
   renderDefiChoices(choices, function(action) {
