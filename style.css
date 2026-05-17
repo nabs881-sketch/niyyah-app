@@ -234,11 +234,15 @@ pointer-events:none;
   color:#1a0f00;
   border-color:var(--gold);
   font-weight:700;
-  box-shadow:0 2px 16px rgba(200,168,75,0.35)
+  box-shadow:0 2px 16px rgba(200,168,75,0.35);
+  border-bottom:2px solid currentColor
 }
 .tab.done:not(.active) {
   color:var(--gold);
   border-color:rgba(200,168,75,0.3)
+}
+.tab.done:not(.active)::before {
+  content:'\2713 '
 }
 .content {
   padding:16px 16px 160px
@@ -1002,6 +1006,10 @@ to {
 }
 .counter-item.checked .counter-num {
   color:var(--green)
+}
+.counter-item.checked .counter-num::before {
+  content:'\2713 ';
+  font-size:0.6em
 }
 .counter-total {
   font-size:12px;
@@ -5839,6 +5847,19 @@ body::before {
 .nav-v2-item.active-nav {
   color: var(--gold-v2);
   background: rgba(212,175,55,0.08);
+  font-weight: 600;
+  position: relative;
+}
+.nav-v2-item.active-nav::after {
+  content:'';
+  position:absolute;
+  top:4px;
+  left:50%;
+  transform:translateX(-50%);
+  width:4px;
+  height:4px;
+  border-radius:50%;
+  background:var(--gold-v2);
 }
 .nav-v2-item:hover { color: rgba(240,234,214,0.75); }
 .nav-v2-icon {
