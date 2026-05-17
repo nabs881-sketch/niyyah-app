@@ -634,7 +634,7 @@ function openDefiSelector() {
   const body = document.getElementById('defiSelectorBody');
   if (!ov || !body) return;
 
-  const diffLabel = { facile: '🟢 Facile', moyen: '🟡 Moyen', intensif: '🔴 Intensif' };
+  const diffLabel = { facile: 'Facile', moyen: 'Moyen', intensif: 'Intensif' };
   const diffColor = { facile: '#34d962', moyen: '#ffd60a', intensif: '#ff6b6b' };
   const diffBg    = { facile: 'rgba(52,217,98,0.08)', moyen: 'rgba(255,214,10,0.08)', intensif: 'rgba(255,107,107,0.08)' };
   const diffBorder= { facile: 'rgba(52,217,98,0.2)', moyen: 'rgba(255,214,10,0.2)', intensif: 'rgba(255,107,107,0.2)' };
@@ -2039,7 +2039,7 @@ function renderAccueil() {
   // Medal
   const medalEl = document.getElementById('accueilMedalBadge');
   if (medalEl) {
-    const medalMap = { none: '—', bronze: '🥉 Bronze', silver: '🥈 Argent', gold: '🥇 Or' };
+    const medalMap = { none: '\u2014', bronze: 'Bronze', silver: 'Argent', gold: 'Or' };
     medalEl.textContent = medalMap[medal] || '—';
     if (medal === 'gold') { medalEl.style.background = 'var(--gold-soft)'; medalEl.style.color = 'var(--gold)'; }
     else if (medal === 'silver') { medalEl.style.background = 'rgba(176,196,206,0.1)'; medalEl.style.color = 'var(--silver)'; }
@@ -2049,7 +2049,7 @@ function renderAccueil() {
   // Medal hero
   const mhEl = document.getElementById('accueilMedalHero');
   if (mhEl) {
-    const medalMap2 = { none: '—', bronze: '🥉 Bronze', silver: '🥈 Argent', gold: '🥇 Or' };
+    const medalMap2 = { none: '\u2014', bronze: 'Bronze', silver: 'Argent', gold: 'Or' };
     mhEl.textContent = medalMap2[medal] || '—';
   }
 
@@ -2124,7 +2124,7 @@ function renderResume() {
   const medal = 'none';
   const f3 = document.getElementById('globalFill3');
   if (f3) f3.style.width = globalPct + '%';
-  const emojiMap = { none: '🌱', bronze: '🥉', silver: '🥈', gold: '🥇' };
+  const emojiMap = { none: '\u2726', bronze: '\u2726', silver: '\u2726', gold: '\u2726' };
   const msgMap = {
     none:   { title: t('prog_msg_none'), sub: t('prog_sub_none') },
     bronze: { title: t('prog_msg_bronze'), sub: t('prog_sub_bronze') },
@@ -3253,7 +3253,7 @@ function renderProgression() {
   // === GRAPHIQUE 7 JOURS BILANS ===
   var bilansData = {}; try { bilansData = JSON.parse(localStorage.getItem('niyyah_bilans') || '{}'); } catch(e) {}
   const bilanColors = { distraction: '#6b7280', effort: '#34d962', sincerite: '#ffd60a' };
-  const bilanEmojis = { distraction: '😶', effort: '🌤', sincerite: '☀️' };
+  const bilanEmojis = { distraction: '\u25CB', effort: '\u25D0', sincerite: '\u25CF' };
   const bilanLabels = { distraction: t('bilan_distrait'), effort: t('bilan_effort'), sincerite: t('bilan_sincere') };
   let bilanCells = '';
   for (let i = 6; i >= 0; i--) {
@@ -3274,7 +3274,7 @@ function renderProgression() {
     }
   }
   const hasBilans = Object.keys(bilansData).length > 0;
-  const bilanHTML = hasBilans ? '<div style="margin:0 16px 24px;"><div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;">'+t('bilan_7j_title')+'</div><div style="display:flex;gap:6px;justify-content:space-between;padding:14px 16px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:16px;">' + bilanCells + '</div><div style="display:flex;gap:14px;margin-top:8px;"><div style="display:flex;align-items:center;gap:4px;"><span style="font-size:12px;">😶</span><span style="font-size:12px;color:var(--t3);">'+t('bilan_distrait')+'</span></div><div style="display:flex;align-items:center;gap:4px;"><span style="font-size:12px;">🌤</span><span style="font-size:12px;color:var(--t3);">'+t('bilan_effort')+'</span></div><div style="display:flex;align-items:center;gap:4px;"><span style="font-size:12px;">☀️</span><span style="font-size:12px;color:var(--t3);">'+t('bilan_sincere')+'</span></div></div></div>'
+  const bilanHTML = hasBilans ? '<div style="margin:0 16px 24px;"><div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;">'+t('bilan_7j_title')+'</div><div style="display:flex;gap:6px;justify-content:space-between;padding:14px 16px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:16px;">' + bilanCells + '</div><div style="display:flex;gap:14px;margin-top:8px;"><div style="display:flex;align-items:center;gap:4px;"><span style="font-size:12px;color:#B5A685;">\u25CB</span><span style="font-size:12px;color:var(--t3);">'+t('bilan_distrait')+'</span></div><div style="display:flex;align-items:center;gap:4px;"><span style="font-size:12px;color:#B5A685;">\u25D0</span><span style="font-size:12px;color:var(--t3);">'+t('bilan_effort')+'</span></div><div style="display:flex;align-items:center;gap:4px;"><span style="font-size:12px;color:#C8A84A;">\u25CF</span><span style="font-size:12px;color:var(--t3);">'+t('bilan_sincere')+'</span></div></div></div>'
     : '<div style="margin:0 16px 24px;text-align:center;padding:24px 16px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:16px;">'
     + '<svg viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="rgba(200,168,75,0.4)" stroke-width="1.5" stroke-linecap="round" style="margin-bottom:10px;"><path d="M24 6a12 12 0 1 0 0 16A9 9 0 0 1 24 6z"/></svg>'
     + '<div style="font-family:var(--serif);font-size:14px;font-style:italic;color:var(--t3);margin-bottom:12px;">'+t('empty_bilan')+'</div>'
@@ -3600,7 +3600,7 @@ function renderPrayerTimesCard() {
     '<div class="prayer-times-header"><div class="prayer-times-title">' + t('prayer_title') + '</div>' +
     '<div class="prayer-times-city" onclick="showCityInput()">\u270f\ufe0f ' + escapeHtml(_prayerCity||'Choisir une ville') + '</div></div>' +
     '<div style="font-size:12px;color:var(--t3);margin-bottom:10px;">Les horaires n\'ont pas pu être chargés.</div>' +
-    '<button class="city-input-btn" style="width:100%;padding:10px;" onclick="loadPrayerTimes()">🔄 Charger les horaires</button>' +
+    '<button class="city-input-btn" style="width:100%;padding:10px;" onclick="loadPrayerTimes()">\u21BB Charger les horaires</button>' +
     '</div>';
   const now = new Date();
   const nowMin = now.getHours() * 60 + now.getMinutes();
@@ -8797,7 +8797,7 @@ function renderQiblaCard() {
   const chevron = '<svg width="16" height="16" viewBox="0 0 14 14" style="transition:transform 0.2s;transform:' + (_qiblaOpen ? 'rotate(180deg)' : 'rotate(0deg)') + ';color:var(--gold);flex-shrink:0;"><polyline points="3,5 7,9 11,5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>';
   const headerHtml = '<div class="qibla-card"><div role="button" tabindex="0" aria-expanded="' + (_qiblaOpen ? 'true' : 'false') + '" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;margin-bottom:' + (_qiblaOpen ? '12' : '0') + 'px;" onclick="_qiblaOpen=!_qiblaOpen;if(!_qiblaOpen)stopCompass();renderLevel(currentLevel)"><div class="qibla-title" style="margin-bottom:0;">' + t('qibla_title') + '</div>' + chevron + '</div>';
   if (!_qiblaOpen) return headerHtml + '</div>';
-  if (_qiblaLoading) return headerHtml + '<div style="font-size:13px;color:var(--t3);padding:16px 0;text-align:center;">📍 Localisation...</div></div>';
+  if (_qiblaLoading) return headerHtml + '<div style="font-size:13px;color:var(--t3);padding:16px 0;text-align:center;">✦ Localisation...</div></div>';
   if (_qiblaError) return headerHtml + '<div style="font-size:13px;color:var(--t3);padding:8px 0;">' + _qiblaError + '</div><button class="qibla-btn" aria-label="Réessayer" onclick="loadQibla()">Réessayer</button></div>';
   if (_qiblaAngle === null) return headerHtml + '<div style="font-size:13px;color:var(--t2);margin-bottom:14px;text-align:center;">' + t('qibla_find_text') + '</div><button class="qibla-btn" aria-label="Réessayer" onclick="loadQibla()">' + t('qibla_find_btn') + '</button></div>';
   const angle = Math.round(_qiblaAngle);
@@ -9335,7 +9335,7 @@ const V2_I18N = {
     meditation_done: 'Terminé — Alhamdulillah 🌿', bilan_sincere: '✨ Journée sincère — Barakallahu fik !', tafakkur_done: 'Barakallahu fik — Tafakkur accompli ✦',
     notif_unavailable: 'Rappels non disponibles sur cet appareil', notif_unsupported_device: 'Notifications non supportées sur cet appareil',
     qibla_aligned: '✦ Tu es aligné avec La Mecque !', qibla_turn: '\ud83d\udfe2 Tourne vers l\u2019aiguille verte', qibla_calibrate: '⚠️ Calibre ton téléphone (fais un 8 dans l\'air)',
-    geo_loading: '⏳ Localisation...', geo_found: '✓ Localisé !', geo_locate: '📍 Me localiser',
+    geo_loading: '⏳ Localisation...', geo_found: '✓ Localisé !', geo_locate: '✦ Me localiser',
     nafs_observed_today: '✓ Observé aujourd\'hui', nafs_observe_btn: 'Je l\'ai ressenti aujourd\'hui',
     journal_niyyah_empty: 'Tes premières intentions apparaîtront ici ✦', journal_regarde_empty: 'Tes premiers Regards apparaîtront ici ✦',
     ikhlas_earned: 'Tu as mérité cette intention ✦', tawba_door: '✦ La porte est toujours ouverte', tawba_resume: 'Reprendre le chemin',
@@ -9591,7 +9591,7 @@ const V2_I18N = {
     meditation_done: 'Completed — Alhamdulillah 🌿', bilan_sincere: '✨ Sincere day — Barakallahu fik!', tafakkur_done: 'Barakallahu fik — Tafakkur completed ✦',
     notif_unavailable: 'Reminders not available on this device', notif_unsupported_device: 'Notifications not supported on this device',
     qibla_aligned: '✦ You are aligned with Mecca!', qibla_turn: '\ud83d\udfe2 Turn towards the green needle', qibla_calibrate: '⚠️ Calibrate your phone (make a figure 8 in the air)',
-    geo_loading: '⏳ Locating...', geo_found: '✓ Located!', geo_locate: '📍 Locate me',
+    geo_loading: '⏳ Locating...', geo_found: '✓ Located!', geo_locate: '✦ Locate me',
     nafs_observed_today: '✓ Observed today', nafs_observe_btn: 'I felt it today',
     journal_niyyah_empty: 'Your first intentions will appear here ✦', journal_regarde_empty: 'Your first Regards will appear here ✦',
     ikhlas_earned: 'You have earned this intention ✦', tawba_door: '✦ The door is always open', tawba_resume: 'Resume the path',
@@ -11158,7 +11158,7 @@ function v2OpenSettings() {
         <div style="padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.04);cursor:pointer;"
           onclick="document.getElementById('v2-settings-sheet').remove();localStorage.removeItem('niyyah_coords');showCityInput();">
           <div style="display:flex;justify-content:space-between;align-items:center;">
-            <div style="font-size:14px;color:rgba(240,234,214,0.7);">📍 ${t('settings_city')}</div>
+            <div style="font-size:14px;color:rgba(240,234,214,0.7);">✦ ${t('settings_city')}</div>
             <div style="font-size:12px;color:rgba(240,234,214,0.55);">${escapeHtml(_prayerCity || '\u2014')}</div>
           </div>
         </div>
