@@ -13330,11 +13330,7 @@ function v2Init() {
     langPill0.style.fontFamily = V2_LANG === 'ar' ? "'Amiri', serif" : "'Cormorant Garamond', serif";
     langPill0.style.fontSize = V2_LANG === 'ar' ? '13px' : '10px';
   }
-  // Charger la bibliothèque de versets Regarde
-  fetch('./data/regard-library.json')
-    .then(r => r.json())
-    .then(d => { window.REGARD_VERSETS = d; })
-    .catch(e => { window.REGARD_VERSETS = null; });
+  // Regard library chargée au premier besoin (lazy)
   if (_onboardDone) {
     v2GoSanctuaire();
   }
@@ -13768,6 +13764,10 @@ function _askCameraPermission(context) {
 async function regardeOpen() {
   _nAn('scanner_tab_visited');
   showAlHayaBtn();
+  if (!window.REGARD_VERSETS && !window._regardLibLoading) {
+    window._regardLibLoading = true;
+    fetch('./data/regard-library.json').then(function(r){return r.json();}).then(function(d){window.REGARD_VERSETS=d;window._regardLibLoading=false;}).catch(function(){window._regardLibLoading=false;});
+  }
   var screen = document.getElementById('regarde-screen');
   var content = document.getElementById('regarde-content');
   if (!screen || !content) return;
