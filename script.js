@@ -7108,7 +7108,32 @@ function openPodcastPicker() {
 }
 window.openPodcastPicker = openPodcastPicker;
 
+var _recitsCoranData = null;
+var _recitsCoranLoading = false;
 function openVueRecitsCoran() {
+  if (_recitsCoranData && _recitsCoranData.length > 0) {
+    _renderRecitsCoran(_recitsCoranData);
+    return;
+  }
+  if (_recitsCoranLoading) return;
+  _recitsCoranLoading = true;
+  fetch('./data/recits-coran.json')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      _recitsCoranData = data;
+      _recitsCoranLoading = false;
+      if (data && data.length > 0) {
+        _renderRecitsCoran(data);
+      } else {
+        showToast('Bient\u00f4t disponible');
+      }
+    })
+    .catch(function() {
+      _recitsCoranLoading = false;
+      showToast('Bient\u00f4t disponible');
+    });
+}
+function _renderRecitsCoran(data) {
   showToast('Bient\u00f4t disponible');
 }
 window.openVueRecitsCoran = openVueRecitsCoran;
