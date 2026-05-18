@@ -11399,6 +11399,9 @@ function _settingsCheminInfo() {
   } else if (dateStr) {
     html = 'Tu es ' + label + ' depuis le ' + dateStr + '.';
   }
+  if (motiv && motiv !== 'sacraliser' && html) {
+    html += '<br><span style="color:rgba(181,166,133,0.5);">Avec ta constance, Niyyah te proposera d\u2019aller plus loin.</span>';
+  }
   return html;
 }
 function v2OpenSettings() {
@@ -13357,6 +13360,7 @@ function v2Init() {
   v2UpdateOrbState();
   triggerSpontaneousUI();
   checkEvolutionRevenant();
+  checkEvolutionRoutine();
   // Fade-out splash
   var _splash = document.getElementById('app-splash');
   if (_splash) {
@@ -13414,6 +13418,59 @@ function showEvolutionModal() {
   };
   document.getElementById('evolution-refuse').onclick = function() {
     safeSetItem('niyyah_evolution_refused_date', String(Date.now()));
+    ov.remove();
+    showToast('Niyyah marche avec toi \u00e0 ton rythme.');
+  };
+}
+
+function checkEvolutionRoutine() {
+  if (safeGetItem('niyyah_motivation') !== 'routine') return false;
+  var streak = parseInt(safeGetItem('niyyah_silent_streak') || '0', 10);
+  if (streak < 90) return false;
+  var refusedDate = safeGetItem('niyyah_evolution_routine_refused_date');
+  if (refusedDate) {
+    var daysSinceRefused = (Date.now() - parseInt(refusedDate, 10)) / 86400000;
+    if (daysSinceRefused < 90) return false;
+  }
+  var proposedCount = parseInt(safeGetItem('niyyah_evolution_routine_proposed_count') || '0', 10);
+  if (proposedCount >= 3) return false;
+  if (typeof ramadanState !== 'undefined' && ramadanState.active) return false;
+  var now = new Date();
+  if (now.getDay() === 5) return false;
+  var h = now.getHours();
+  if (h < 8 || h >= 21) return false;
+  if (safeGetItem('niyyah_evolution_routine_proposed_today') === todayKey()) return false;
+  safeSetItem('niyyah_evolution_routine_proposed_today', todayKey());
+  safeSetItem('niyyah_evolution_routine_proposed_count', String(proposedCount + 1));
+  showEvolutionModalRoutine();
+  return true;
+}
+
+function showEvolutionModalRoutine() {
+  var ov = document.createElement('div');
+  ov.id = 'evolution-modal-routine';
+  ov.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(10,8,5,0.92);display:flex;align-items:center;justify-content:center;padding:24px;';
+  ov.innerHTML = '<div style="max-width:340px;width:100%;text-align:center;">'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.7);line-height:1.6;margin-bottom:8px;">\u00ab\u00a0Et pour chaque communaut\u00e9 il y a une direction vers laquelle elle se tourne.\u00a0\u00bb</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;color:rgba(200,168,75,0.4);margin-bottom:24px;">Coran 2:148</div>'
+    + '<div style="font-family:Amiri,serif;font-size:28px;color:#C8A84A;direction:rtl;margin-bottom:20px;">\u0646\u0650\u064A\u0651\u064E\u0629</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;color:#E5E0DC;line-height:1.7;margin-bottom:32px;">Voil\u00e0 quatre-vingt-dix jours.<br>Tu es r\u00e9gulier. Tu es ancr\u00e9.<br><br><span style="font-style:italic;color:#B5A685;">Niyyah peut maintenant t\u2019accompagner dans la compl\u00e9tude, si tu le souhaites.</span></div>'
+    + '<button id="evolution-routine-accept" style="width:100%;padding:14px;border:none;border-radius:12px;background:#C8A84A;color:#2C2E32;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-weight:600;cursor:pointer;margin-bottom:10px;">Compl\u00e9ter</button>'
+    + '<button id="evolution-routine-refuse" style="width:100%;padding:12px;border:1px solid rgba(200,168,75,0.2);border-radius:12px;background:transparent;color:#B5A685;font-family:\'Cormorant Garamond\',serif;font-size:13px;cursor:pointer;">Rester dans ce chemin</button>'
+    + '</div>';
+  document.body.appendChild(ov);
+  document.getElementById('evolution-routine-accept').onclick = function() {
+    if (!safeGetItem('niyyah_evolution_path')) safeSetItem('niyyah_evolution_path', safeGetItem('niyyah_motivation') || 'routine');
+    safeSetItem('niyyah_evolution_date', String(Date.now()));
+    safeSetItem('niyyah_motivation', 'sacraliser');
+    localStorage.removeItem('niyyah_welcome_shown');
+    ov.remove();
+    if (typeof renderLevel === 'function' && typeof currentLevel !== 'undefined') renderLevel(currentLevel);
+    if (typeof updateSanctuaireMoment === 'function') updateSanctuaireMoment();
+    showToast('Niyyah marche d\u00e9sormais \u00e0 tes c\u00f4t\u00e9s en Complet. Sans bruit. Sans h\u00e2te.');
+  };
+  document.getElementById('evolution-routine-refuse').onclick = function() {
+    safeSetItem('niyyah_evolution_routine_refused_date', String(Date.now()));
     ov.remove();
     showToast('Niyyah marche avec toi \u00e0 ton rythme.');
   };
