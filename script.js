@@ -9683,7 +9683,7 @@ const V2_I18N = {
     ob_motivation_title: 'Niyyah accompagne', ob_motivation_sub: 'Trois mani\u00e8res de marcher. Touche la tienne.',
     ob_motiv_routine: 'Le R\u00e9gulier', ob_motiv_routine_sub: 'Celui qui veut installer une pratique solide.',
     ob_motiv_reconnecter: 'Le Revenant', ob_motiv_reconnecter_sub: 'Celui qui revient apr\u00e8s une absence.',
-    ob_motiv_sacraliser: 'Le Pr\u00e9sent', ob_motiv_sacraliser_sub: 'Celui qui veut sacraliser chaque geste.',
+    ob_motiv_sacraliser: 'Le Complet', ob_motiv_sacraliser_sub: 'Celui qui veut sacraliser chaque geste.',
     ob_motivation_outro: 'Tu y trouveras ta porte.',
     settings_orientation_title: 'Mon orientation actuelle',
     settings_orientation_change: 'Toucher pour changer',
@@ -9928,7 +9928,7 @@ const V2_I18N = {
     ob_motivation_title: 'Niyyah walks with you', ob_motivation_sub: 'Three ways to walk. Touch yours.',
     ob_motiv_routine: 'The Steady', ob_motiv_routine_sub: 'The one who wants to root a solid practice.',
     ob_motiv_reconnecter: 'The Returning', ob_motiv_reconnecter_sub: 'The one who comes back after an absence.',
-    ob_motiv_sacraliser: 'The Present', ob_motiv_sacraliser_sub: 'The one who wants to sanctify every gesture.',
+    ob_motiv_sacraliser: 'The Complete', ob_motiv_sacraliser_sub: 'The one who wants to sanctify every gesture.',
     ob_motivation_outro: 'You will find your door.',
     settings_orientation_title: 'My current orientation',
     settings_orientation_change: 'Tap to change',
@@ -11384,7 +11384,7 @@ function toggleSilenceDay() {
 
 function _settingsCheminInfo() {
   var motiv = localStorage.getItem('niyyah_motivation');
-  var labels = { reconnecter: 'Le Revenant', routine: 'Le R\u00e9gulier', sacraliser: 'Le Pr\u00e9sent' };
+  var labels = { reconnecter: 'Le Revenant', routine: 'Le R\u00e9gulier', sacraliser: 'Le Complet' };
   var label = labels[motiv] || motiv || '\u2014';
   var installTs = parseInt(safeGetItem('niyyah_install_date') || '0', 10);
   var dateStr = installTs ? new Date(installTs).toLocaleDateString(_dateLocale(), { day: 'numeric', month: 'long', year: 'numeric' }) : '';
