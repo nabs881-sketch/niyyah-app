@@ -9201,7 +9201,7 @@ if ('serviceWorker' in navigator && location.protocol !== 'null:' && (location.p
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('./sw.js').then(function(reg) {
       var _lastSwCheck = 0;
-      function _throttledSwUpdate() { var now = Date.now(); if (now - _lastSwCheck < 5 * 60 * 1000) return; _lastSwCheck = now; reg.update(); }
+      function _throttledSwUpdate() { var now = Date.now(); if (now - _lastSwCheck < 5 * 60 * 1000) return; _lastSwCheck = now; try { reg.update().catch(function(){}); } catch(e) {} }
       setInterval(_throttledSwUpdate, 30 * 60 * 1000);
       window.addEventListener('focus', _throttledSwUpdate);
       reg.addEventListener('updatefound', function() {
@@ -12686,7 +12686,7 @@ function updateSanctuaireMoment() {
     el.innerHTML = '<div style="text-align:center;padding:8px;">'
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:700;color:#C8A84A;">' + _iconSpan + (hasLevel4 ? t('block_qiyam') : 'La nuit est pour le repos') + '</div>'
       + '<div style="font-family:\'Inter\',var(--sans);font-size:12px;color:rgba(255,255,255,0.6);margin-top:4px;">' + qSub + '</div>'
-      + (hasLevel4 && !tahajjudDone ? '<button onclick="event.stopPropagation();state[\'tahajjud\']=true;saveState();showToast(\'Qiyam al-Layl tiss\u00e9 \u2713\');updateSanctuaireMoment();" ontouchend="event.stopPropagation();event.preventDefault();state[\'tahajjud\']=true;saveState();showToast(\'Qiyam al-Layl tiss\u00e9 \u2713\');updateSanctuaireMoment();" style="display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin-top:10px;padding:14px 28px;background:#C8A84A;border:none;border-radius:12px;color:#2C2E32;font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;cursor:pointer;" ontouchstart="this.style.opacity=\'0.85\'" ontouchmove="this.style.opacity=\'1\'" ontouchcancel="this.style.opacity=\'1\'">Prier <span style="font-size:18px;font-style:normal;color:#2C2E32;">\u203A</span></button>' : '')
+      + (hasLevel4 && !tahajjudDone ? '<button onclick="event.stopPropagation();state[\'tahajjud\']=true;saveState();showToast(\'Qiyam al-Layl tiss\u00e9 \u2713\');updateSanctuaireMoment();" ontouchend="event.stopPropagation();event.preventDefault();state[\'tahajjud\']=true;saveState();showToast(\'Qiyam al-Layl tiss\u00e9 \u2713\');updateSanctuaireMoment();" style="display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin-top:10px;padding:14px 28px;background:linear-gradient(180deg,#C8A84A,#B5934A);border:none;border-radius:12px;color:#2C2E32;font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;cursor:pointer;box-shadow:inset 0 1px 3px rgba(0,0,0,0.15);" ontouchstart="this.style.opacity=\'0.85\'" ontouchmove="this.style.opacity=\'1\'" ontouchcancel="this.style.opacity=\'1\'">Prier <span style="font-size:18px;font-style:normal;color:#2C2E32;">\u203A</span></button>' : '')
       + '</div>';
     return;
   }
