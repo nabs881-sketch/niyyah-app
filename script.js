@@ -1568,7 +1568,7 @@ function checkAndSaveYesterdayStreak() {
     if (!history.dayMedals) history.dayMedals = {};
     history.dayMedals[prevDate] = dayMedal;
     if (!history.dayScores) history.dayScores = {};
-    const prevItems = LEVELS.filter(l => (state._unlocked||[]).includes(l.id)).flatMap(l => getLevelItems(l.id));
+    const prevItems = LEVELS.filter(l => (state._unlocked||[]).includes(l.id)).flatMap(l => getLevelItems(l.id)).filter(_itemMatchesProfile);
     history.dayScores[prevDate] = Math.round(getWeightedScore(prevItems, state));
     const todayDate  = new Date(TODAY + 'T12:00:00');
     const prevDateObj = new Date(prevDate + 'T12:00:00');
@@ -1710,7 +1710,7 @@ function _validateDay() {
     var lvl = LEVELS[i];
     if (!lvl || !lvl.sections) return;
     lvl.sections.forEach(function(s) {
-      (s.items || []).forEach(function(it) {
+      (s.items || []).filter(_itemMatchesProfile).forEach(function(it) {
         if (it.type === 'wird') {
           var ses = WIRD_DATA && WIRD_DATA[it.session];
           if (ses && ses.items) { var done = ses.items.filter(function(w) { return !!wirdState[w.id]; }).length; if (done === ses.items.length) score += 2; }
@@ -2016,7 +2016,7 @@ function renderAccueil() {
   const streakDisplay = history.streak + (getLevelProgress(1) >= 100 ? 1 : 0);
   const bestDisplay = Math.max(history.bestStreak || 0, streakDisplay);
   const totalDisplay = history.totalDays + (getLevelProgress(1) >= 100 ? 1 : 0);
-  const allLvlItems = LEVELS.filter(l => state._unlocked.includes(l.id)).flatMap(l => getLevelItems(l.id));
+  const allLvlItems = LEVELS.filter(l => state._unlocked.includes(l.id)).flatMap(l => getLevelItems(l.id)).filter(_itemMatchesProfile);
   const scoreJour = Math.round(getWeightedScore(allLvlItems, state));
   const pct = Math.min(Math.round(getLevelProgress(1)), 100);
   const currentLvl = LEVELS.find(l => l.id === (state._unlocked ? Math.max(...state._unlocked) : 1));
@@ -2507,7 +2507,7 @@ function renderLevel(levelId) {
     '<div style="font-size:12px;color:var(--t3);margin-top:2px;">' + t('grace_sub') + '</div></div></div>' : '';
   const prayerCard = level.id === 1 ? renderPrayerTimesCard() : '';
   const qiblaCard  = level.id === 1 ? renderQiblaCard() : '';
-  const allLvlItems = LEVELS.filter(l => state._unlocked.includes(l.id)).flatMap(l => getLevelItems(l.id));
+  const allLvlItems = LEVELS.filter(l => state._unlocked.includes(l.id)).flatMap(l => getLevelItems(l.id)).filter(_itemMatchesProfile);
   const scoreJour = Math.round(getWeightedScore(allLvlItems, state));
   const scoreColor = scoreJour >= 80 ? '#c8a84b' : scoreJour >= 50 ? 'var(--green)' : 'var(--t2)';
   const scoreBg = scoreJour >= 80 ? 'rgba(200,168,75,0.12)' : scoreJour >= 50 ? 'rgba(52,217,98,0.08)' : 'rgba(255,255,255,0.04)';
