@@ -1716,7 +1716,8 @@ function _validateDay() {
           if (ses && ses.items) { var done = ses.items.filter(function(w) { return !!wirdState[w.id]; }).length; if (done === ses.items.length) score += 2; }
         } else if (it.type === 'counter') {
           if ((state[it.id] || 0) >= it.target) score++;
-        } else if (state[it.id]) { score++; }
+        } else if (it.prayer && state[it.id]) { score += 3; }
+        else if (state[it.id]) { score++; }
       });
     });
   });
