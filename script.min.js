@@ -2615,7 +2615,7 @@ function renderLevel(levelId) {
           const hadithEsc = item.hadith.replace(/"/g,'&quot;');
           const sourceEsc = (item.source||'').replace(/"/g,'&quot;');
           infoBtn = '<button class="btn-info" aria-label="Détails" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openInfoSheet(\'\',\'\',\'\',\'\',event)" data-label="' + labelEsc2 + '" data-arabic="' + arabicEsc2 + '" data-phonetic="" data-translation="' + hadithEsc + '" title="' + t('btn_why') + '"><i>i</i></button>';
-        } else if (item.sub && tI(item,'sub').includes('·') && item.arabic) {
+        } else if (item.id !== 'arabic' && item.sub && tI(item,'sub').includes('·') && item.arabic) {
           const parts = tI(item,'sub').split('·');
           const phonetic = parts[0].trim();
           const translation = parts.slice(1).join('·').trim();
