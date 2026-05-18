@@ -7088,7 +7088,7 @@ function openPodcastPicker() {
     html += '<div style="color:#C8A84A;font-size:18px;flex-shrink:0;">\u203A</div>';
     html += '</a>';
   });
-  html += '<div style="text-align:center;margin-top:20px;font-family:\'Cormorant Garamond\',serif;font-size:12px;font-style:italic;color:rgba(181,166,133,0.5);">S\u00e9lection externe non affili\u00e9e</div>';
+  html += '<div style="text-align:center;margin-top:20px;font-family:\'Cormorant Garamond\',serif;font-size:12px;font-style:italic;color:rgba(181,166,133,0.5);">S\u00e9lection externe \u2014 cha\u00eenes non affili\u00e9es \u00e0 Niyyah.</div>';
   html += '<button onclick="document.getElementById(\'podcast-picker-overlay\').remove();" style="display:block;margin:20px auto 0;padding:12px 32px;border:1px solid rgba(200,168,75,0.2);border-radius:12px;background:transparent;color:#B5A685;font-family:\'Cormorant Garamond\',serif;font-size:13px;cursor:pointer;">Fermer</button>';
   html += '</div>';
   ov.innerHTML = html;
