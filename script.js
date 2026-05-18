@@ -7072,7 +7072,8 @@ function closeCoranPicker() {
   if (_dr) _dr.style.transform = 'translateY(100%)';
 }
 var _podcastSources = [
-  { label: 'Vie du Proph\u00e8te \uFDFA', sub: 'YouTube \u00b7 S\u00eera', url: 'https://www.youtube.com/watch?v=UB64e9yp8xs' },
+  { label: 'Vie du Proph\u00e8te \uFDFA (vid\u00e9o)', sub: 'YouTube \u00b7 S\u00eera visuelle', url: 'https://www.youtube.com/watch?v=UB64e9yp8xs' },
+  { label: 'Vie du Proph\u00e8te \uFDFA (podcast)', sub: 'Podcast \u00b7 S\u00eera audio', url: 'https://podcasts.apple.com/fr/podcast/la-vie-du-proph%C3%A8te-mohammad-%EF%B7%BA/id1804853747' },
   { label: 'Islam Simplement', sub: 'YouTube \u00b7 Sujets vari\u00e9s', url: 'https://www.youtube.com/@lislamsimplement' },
   { label: "L'Arabe Simplement", sub: 'YouTube \u00b7 Arabe coranique', url: 'https://www.youtube.com/@larabesimplement' },
   { label: 'Hadith Podcast', sub: 'YouTube \u00b7 Hadiths', url: 'https://www.youtube.com/watch?v=G7xdRzxyK1k&list=PLuTJKEpEkfuU-Qo4m69wKGjCWb_p_uAij' }
