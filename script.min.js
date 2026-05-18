@@ -14828,7 +14828,8 @@ function openVueAuFilDuJour() {
     const sub = it.sub ? '<div class="sub">' + it.sub + '</div>' : '';
     const audio = it.audio ? '<button class="btn-audio" data-audio-id="' + it.id + '" onclick="event.stopPropagation();playAudioById(this)">🔊</button>' : '';
     var _knowledgeIds = ['savais_tu','fiqh_jour','hadith1','duaa_jour','vie_compagnons','vie_prophetes','quran_read','sira'];
-    var _readBtn = (_knowledgeIds.indexOf(it.id) !== -1) ? '<svg width="14" height="22" viewBox="0 0 14 22" style="opacity:0.7;flex-shrink:0;align-self:center;" aria-hidden="true"><path d="M3 4 L10 11 L3 18" fill="none" stroke="#C8A84A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>' : '';
+    var _isKnowledgeFil = _knowledgeIds.indexOf(it.id) !== -1;
+    var _readBtn = _isKnowledgeFil ? '<svg width="14" height="22" viewBox="0 0 14 22" style="flex-shrink:0;align-self:center;" aria-hidden="true"><path d="M3 4 L10 11 L3 18" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>' : '';
     var _coranBtn = it.coranPicker ? '<button class="btn-audio" onclick="event.stopPropagation();openCoranPicker(event)" style="font-size:12px;padding:4px 10px;width:auto;white-space:nowrap;font-family:\'Cormorant Garamond\',serif;color:#C8A84A;border:1px solid rgba(200,168,75,0.3);border-radius:8px;background:transparent;cursor:pointer;">\u00c9couter</button>' : '';
     var _click = it.id === 'sira' ? 'SIRA.openDetail();'
       : it.id === 'savais_tu' ? 'openVueSavaisTu();'
@@ -14840,7 +14841,8 @@ function openVueAuFilDuJour() {
       : it.id === 'quran_read' ? 'openVueVersetJour();'
       : it.coranPicker ? 'openCoranPicker(event);'
       : 'toggleItem(\'' + it.id + '\',event); openVueAuFilDuJour();';
-    return '<div class="rituel-item ' + done + '" id="rituel-item-' + it.id + '" onclick="' + _click + '"><div class="check"></div><div style="flex:1"><div class="label">' + (it.label||it.id) + '</div>' + sub + ar + '</div>' + _readBtn + _coranBtn + audio + '</div>';
+    var _filKnBg = _isKnowledgeFil ? ' style="background:rgba(200,168,75,0.04);"' : '';
+    return '<div class="rituel-item ' + done + '"' + _filKnBg + ' id="rituel-item-' + it.id + '" onclick="' + _click + '"><div class="check"></div><div style="flex:1"><div class="label">' + (it.label||it.id) + '</div>' + sub + ar + '</div>' + _readBtn + _coranBtn + audio + '</div>';
   };
   var _html = '';
   _catOrder.forEach(function(cat) {
