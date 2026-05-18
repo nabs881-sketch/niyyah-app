@@ -13265,6 +13265,14 @@ function v2Init() {
   v2UpdateOrbState();
   triggerSpontaneousUI();
   checkEvolutionRevenant();
+  // Fade-out splash
+  var _splash = document.getElementById('app-splash');
+  if (_splash) {
+    requestAnimationFrame(function() {
+      _splash.style.opacity = '0';
+      setTimeout(function() { if (_splash.parentNode) _splash.remove(); }, 400);
+    });
+  }
 }
 
 function checkEvolutionRevenant() {
