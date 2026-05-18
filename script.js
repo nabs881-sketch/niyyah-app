@@ -1435,7 +1435,7 @@ const LEVELS = [
     id: 3, title: 'Connaissance',
     sections: [
       { icon: '📚', title: 'Étude islamique', items: [
-        { id: 'hadith1', minVague: 3, label: '1er Hadith du jour', get sub() { var h = getHadithJourRule(); return (h.texte_fr || '').substring(0,50) + '\u2026'; }, arabic: '\u062D\u064E\u062F\u0650\u064A\u062B\u064C', paths: ['reconnecter','routine','sacraliser'], block: 'jour', category: 'science' },
+        { id: 'hadith1', minVague: 3, label: '1er Hadith du jour', get sub() { var h = getHadithJourRule(); var t = (h.texte_fr || '').substring(0,50); return t ? t + '\u2026' : 'Une parole du Proph\u00e8te \uFDFA'; }, arabic: '\u062D\u064E\u062F\u0650\u064A\u062B\u064C', paths: ['reconnecter','routine','sacraliser'], block: 'jour', category: 'science' },
         { id: 'duaa_jour', minVague: 3, label: 'Du\u2019a du jour', get sub() { var d = getDuaaJourPreview(); return 'Jour ' + d.jour + '/253'; }, arabic: '\u062F\u064F\u0639\u064E\u0627\u0621', paths: ['reconnecter','routine','sacraliser'], block: 'jour', category: 'science' },
         { id: 'sira', minVague: 3, label: 'S\u00eera du Proph\u00e8te \uFDFA', sub: 'Un rendez-vous chaque jour', arabic: '\u0627\u0644\u0633\u0651\u0650\u064A\u0631\u064E\u0629\u064F \u0627\u0644\u0646\u0651\u064E\u0628\u064E\u0648\u0650\u064A\u0651\u064E\u0629\u064F', paths: ['reconnecter','routine','sacraliser'], block: 'jour', category: 'science' },
         { id: 'quran_read', minVague: 3, label: 'Lecture du Coran', get sub() { return 'Verset ' + _getVersetProgress() + ' / 6236'; }, arabic: '\u0642\u0650\u0631\u064E\u0627\u0621\u064E\u0629\u064F \u0627\u0644\u0652\u0642\u064F\u0631\u0652\u0622\u0646\u0650', paths: ['routine','sacraliser'], block: 'jour', category: 'science' },
