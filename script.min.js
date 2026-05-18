@@ -7133,7 +7133,7 @@ function openVueRecitsCoran() {
       showToast('Bient\u00f4t disponible');
     });
 }
-function _getRecitsProgress() { return parseInt(safeGetItem('niyyah_recits_progress') || '1', 10); }
+function _getRecitsProgress() { return parseInt(safeGetItem('niyyah_recits_progress') || '0', 10); }
 function _saveRecitsProgress(num) { safeSetItem('niyyah_recits_progress', String(num)); }
 function _recitsReadToday() { return safeGetItem('niyyah_recits_read_today') === todayKey(); }
 function _recitsMarkReadToday() { safeSetItem('niyyah_recits_read_today', todayKey()); }
@@ -7142,7 +7142,7 @@ function _recitsValidateItem() {
 }
 function _recitsMaxUnlocked(data) {
   var inst = parseInt(safeGetItem('niyyah_install_date') || '0', 10);
-  if (!inst) return 1;
+  if (!inst) { inst = Date.now(); safeSetItem('niyyah_install_date', String(inst)); }
   var days = Math.floor((Date.now() - inst) / 86400000) + 1;
   return Math.min(days, data.length);
 }
@@ -7153,8 +7153,8 @@ function _renderRecitsCoran(data) {
   var total = data.length;
   var maxDay = _recitsMaxUnlocked(data);
   var alreadyReadToday = _recitsReadToday();
-  var nextToRead = progress;
-  if (nextToRead > total || (nextToRead <= maxDay && alreadyReadToday)) {
+  var nextToRead = progress + 1;
+  if (nextToRead > total || alreadyReadToday) {
     nextToRead = null;
   }
   if (nextToRead && nextToRead > maxDay) {
@@ -7167,15 +7167,15 @@ function _renderRecitsCoran(data) {
     var html = '<div style="text-align:center;padding:40px 24px;max-width:340px;">';
     html += '<div style="font-family:Amiri,serif;font-size:28px;color:#C8A84A;direction:rtl;margin-bottom:16px;">\u0642\u064E\u0635\u064E\u0635\u064F \u0627\u0644\u0642\u064F\u0631\u0622\u0646</div>';
     html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:#E5E0DC;line-height:1.6;margin-bottom:8px;">';
-    if (progress > total) {
+    if (progress >= total) {
       html += 'Tu as travers\u00e9 les 20 r\u00e9cits.<br>Alhamdulill\u0101h.';
     } else {
       html += 'Reviens demain,<br>in sh\u0101\u2019 All\u0101h.';
     }
     html += '</div>';
-    html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;color:#B5A685;margin-bottom:32px;">R\u00e9cit ' + Math.min(progress, total) + ' / ' + total + '</div>';
+    html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;color:#B5A685;margin-bottom:32px;">R\u00e9cit ' + Math.min(progress + 1, total) + ' / ' + total + '</div>';
     html += '<button onclick="document.getElementById(\'recits-coran-overlay\').remove();" style="padding:12px 32px;border:1px solid rgba(200,168,75,0.2);border-radius:12px;background:transparent;color:#B5A685;font-family:\'Cormorant Garamond\',serif;font-size:13px;cursor:pointer;margin-bottom:16px;">Fermer</button>';
-    if (progress > total) {
+    if (progress >= total) {
       html += '<div><button onclick="_recitsShowArchive();" style="background:none;border:none;color:rgba(200,168,75,0.4);font-family:\'Cormorant Garamond\',serif;font-size:12px;font-style:italic;cursor:pointer;">Revenir \u00e0 un r\u00e9cit</button></div>';
     }
     html += '</div>';
@@ -7233,8 +7233,8 @@ function _openRecitDetail(num) {
 }
 function _closeRecitDetail(num) {
   var progress = _getRecitsProgress();
-  if (num === progress) {
-    _saveRecitsProgress(progress + 1);
+  if (num === progress + 1) {
+    _saveRecitsProgress(num);
     _recitsMarkReadToday();
     _recitsValidateItem();
     showToast('R\u00e9cit ' + num + ' termin\u00e9 \u2726');
