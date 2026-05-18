@@ -8868,7 +8868,8 @@ const ONBOARD_SLIDES = [
     + '<div style="flex:1;"><div class="ob-motiv-title" style="font-family:var(--serif); color:#C8A84A; font-size:13px; letter-spacing:2px; text-transform:uppercase; margin-bottom:2px;">'+t('ob_motiv_sacraliser')+'</div>'
     + '<div style="font-family:\'Cormorant Garamond\',serif; font-size:13px; font-style:italic; color:#B5A685; line-height:1.4;">Pour sacraliser chaque geste. Exigeant.</div></div><div style="color:#C8A84A;font-size:18px;flex-shrink:0;">\u203A</div></div>'
     + '</div>'
-    + '<div style="font-size:13px; font-style:italic; color:rgba(200,168,75,0.55); text-align:center; margin:20px auto 24px; max-width:300px;">'+t('ob_motivation_outro')+'</div>'
+    + '<div style="font-size:13px; font-style:italic; color:rgba(200,168,75,0.55); text-align:center; margin:20px auto 8px; max-width:300px;">'+t('ob_motivation_outro')+'</div>'
+    + '<div style="font-size:12px; font-style:italic; color:#B5A685; text-align:center; margin:0 auto 24px;">Tu peux changer \u00e0 tout moment dans les R\u00e9glages.</div>'
     + '<button class="onboard-btn" id="obMotivBtn" onclick="onboardNext()" style="opacity:0.3; pointer-events:none; padding:16px 48px; border-radius:30px; border:1px solid rgba(200,168,75,0.5); background:linear-gradient(180deg, #E8D070 0%, #D4B85A 50%, #B89540 100%); color:#1a1a1a; font-size:15px; font-weight:600; font-family:var(--serif); letter-spacing:1px; box-shadow:0 0 40px rgba(200,168,75,0.4), 0 4px 12px rgba(0,0,0,0.3);">'+t('onboard_next')+'</button>'
     + '</div>',
   // Slide 2 — Code de Pudeur Al-Haya
