@@ -1276,7 +1276,7 @@ function renderRamadan() {
   }
   html += '</div></div>';
   html += '<div class="laylatul-card">';
-  html += '<div class="laylatul-stars">✨🌙✨</div>';
+  html += '<div class="laylatul-stars">\u2726 \u2726 \u2726</div>';
   html += '<div class="laylatul-title">Laylat al-Qadr</div>';
   html += '<div class="laylatul-arabic">لَيْلَةُ الْقَدْرِ</div>';
   html += '<div class="laylatul-sub">Les 5 nuits impaires des 10 dernières nuits — meilleure que mille mois</div>';
@@ -1463,10 +1463,10 @@ const LEVELS = [
   {
     id: 4, title: 'Rayonnement',
     sections: [
-      { icon: '✨', title: "Sommet de l'adoration", items: [
+      { icon: '\u2726', title: "Sommet de l'adoration", items: [
         { id: 'tahajjud', minVague: 5, label: 'Qiyam al-Layl', sub: 'Prière nocturne dans le dernier tiers de la nuit — la station des siddiqin', arabic: 'قِيَامُ اللَّيْلِ', optional: true, paths: ['sacraliser'], block: 'isha', category: 'rituels', hadith: '\"Notre Seigneur descend chaque nuit au tiers final — qui M\'invoque ? Je lui réponds\" — Bukhari 1145', source: 'Bukhari 1145' },
       ]},
-      { icon: '💚', title: 'Rayonnement vers les autres', items: [
+      { icon: '\u2726', title: 'Rayonnement vers les autres', items: [
         { id: 'sadaqa', minVague: 5, label: 'Aumône (Sadaqa)', sub: "Même un sourire est une aumône", arabic: 'الصَّدَقَةُ', paths: ['reconnecter','routine','sacraliser'], block: 'jour', category: 'bienfaisance' },
         { id: 'salam', minVague: 5, label: 'Donner le Salam', sub: 'As-salamu alaykum à au moins 3 personnes', arabic: 'السَّلَامُ عَلَيْكُمْ', paths: ['reconnecter','routine','sacraliser'], block: 'jour', category: 'bienfaisance' },
         { id: 'silaturahm', minVague: 5, label: 'Maintenir les liens familiaux', sub: "Appeler ou voir un proche aujourd'hui", arabic: 'صِلَةُ الرَّحِمِ', paths: ['reconnecter','routine','sacraliser'], block: 'jour', category: 'bienfaisance', hadith: '\"Celui qui veut que sa rizq soit élargie et sa vie prolongée, qu\'il maintienne les liens familiaux\" — Bukhari 5986', source: 'Bukhari 5986' },
@@ -1693,8 +1693,8 @@ function updateGlobalProgress() {
   }
   const SADAQA_MILESTONES = [
     { key: '_sadaqa50',  threshold: 50,  msg: '🤲 Tu es à 50% — si tu le peux, donne une petite Sadaqa en remerciement à Allah !' },
-    { key: '_sadaqa80',  threshold: 80,  msg: '💚 80% accompli — MashaAllah ! Une Sadaqa aujourd\'hui multiplierait encore ta récompense.' },
-    { key: '_sadaqa100', threshold: 100, msg: '🌟 Journée complète ! Pense à une Sadaqa — même un sourire est une aumône.' },
+    { key: '_sadaqa80',  threshold: 80,  msg: '80% accompli \u2014 MashaAllah ! Une Sadaqa aujourd\'hui multiplierait encore ta r\u00e9compense.' },
+    { key: '_sadaqa100', threshold: 100, msg: 'Journ\u00e9e compl\u00e8te ! Pense \u00e0 une Sadaqa \u2014 m\u00eame un sourire est une aum\u00f4ne.' },
   ];
   SADAQA_MILESTONES.forEach(m => {
     if (pct >= m.threshold && !state[m.key]) {
@@ -1812,7 +1812,7 @@ function checkLevelCompletion(levelId) {
 }
 const LEVEL_MESSAGES = {
   1: {
-    stars: "🌱",
+    stars: "\u2726",
     eyebrow: t('lvl_eye_1'),
     title: "MashaAllah !",
     arabic: "\u0625\u0650\u0646\u0651\u064E \u0627\u0644\u0644\u0651\u064E\u0647\u064E \u0645\u064E\u0639\u064E \u0627\u0644\u0635\u0651\u064E\u0627\u0628\u0650\u0631\u0650\u064A\u0646\u064E",
@@ -1820,10 +1820,10 @@ const LEVEL_MESSAGES = {
     sub: t('lvl_sub_1'),
     color: "#87A96B",
     glow: "rgba(135,169,107,0.3)",
-    icon: "🌱"
+    icon: "\u2726"
   },
   2: {
-    stars: "🕌",
+    stars: "\u2726",
     eyebrow: t('lvl_eye_2'),
     title: "SubhanAllah !",
     arabic: "\u0648\u064E\u0627\u0633\u0652\u062A\u064E\u0639\u0650\u064A\u0646\u064F\u0648\u0627 \u0628\u0650\u0627\u0644\u0635\u0651\u064E\u0628\u0652\u0631\u0650 \u0648\u064E\u0627\u0644\u0635\u0651\u064E\u0644\u0627\u0629\u0650",
@@ -1831,10 +1831,10 @@ const LEVEL_MESSAGES = {
     sub: t('lvl_sub_2'),
     color: "#D4AF37",
     glow: "rgba(212,175,55,0.3)",
-    icon: "🕌"
+    icon: "\u2726"
   },
   3: {
-    stars: "✦",
+    stars: "\u2726",
     eyebrow: t('lvl_eye_3'),
     title: "Alhamdulillah !",
     arabic: "\u0625\u0650\u0646\u0651\u064E \u0627\u0644\u0644\u0651\u064E\u0647\u064E \u064A\u064F\u062D\u0650\u0628\u0651\u064F \u0625\u0650\u0630\u0627 \u0639\u064E\u0645\u0650\u0644\u064E \u0623\u064E\u062D\u064E\u062F\u064F\u0643\u064F\u0645\u0652 \u0639\u064E\u0645\u064E\u0644\u064B\u0627 \u0623\u064E\u0646\u0652 \u064A\u064F\u062A\u0652\u0642\u0650\u0646\u064E\u0647\u064F",
@@ -1842,10 +1842,10 @@ const LEVEL_MESSAGES = {
     sub: t('lvl_sub_3'),
     color: "#E9C46A",
     glow: "rgba(233,196,106,0.35)",
-    icon: "⚡"
+    icon: "\u2726"
   },
   4: {
-    stars: "☀️",
+    stars: "\u2726",
     eyebrow: t('lvl_eye_4'),
     title: "Allahu Akbar !",
     arabic: "\u0627\u0644\u0644\u0651\u064E\u0647\u064F \u0646\u064F\u0648\u0631\u064F \u0627\u0644\u0633\u0651\u064E\u0645\u064E\u0627\u0648\u0627\u062A\u0650 \u0648\u064E\u0627\u0644\u0623\u064E\u0631\u0652\u0636\u0650",
@@ -1853,7 +1853,7 @@ const LEVEL_MESSAGES = {
     sub: t('lvl_sub_4'),
     color: "#FFD700",
     glow: "rgba(255,215,0,0.4)",
-    icon: "☀️"
+    icon: "\u2726"
   },
 };
 function showLevelPopup(levelId, nextId, hasNext) {
@@ -1898,7 +1898,7 @@ function showLevelPopup(levelId, nextId, hasNext) {
         </button>` : `
         <button class="btn-next-lvl" id="btnNextLvl" style="background:linear-gradient(135deg,#FFD700,#D4AF37);color:#1a0f00;"
           onclick="closeLevelPopup();v2GoSanctuaire()">
-          ☀️ Voir Ma Niyyah
+          Voir Ma Niyyah
         </button>`
       }
       <button class="btn-stay-lvl" aria-label="Rester sur ce niveau" onclick="closeLevelPopup()">Rester sur ce niveau</button>
@@ -2154,7 +2154,7 @@ function renderResume() {
   const strokeDash = (globalPct / 100) * circ;
   const ringColor = medal === 'gold' ? 'var(--gold)' : medal === 'silver' ? 'var(--silver)' : 'var(--green)';
   const ringHtml = '<div style="width:88px;height:88px;position:relative;margin:0 auto 16px;"><svg width="88" height="88" viewBox="0 0 88 88" style="transform:rotate(-90deg)"><circle cx="44" cy="44" r="36" fill="none" stroke="var(--sep2)" stroke-width="5"/><circle cx="44" cy="44" r="36" fill="none" stroke="' + ringColor + '" stroke-width="5" stroke-linecap="round" stroke-dasharray="' + circ.toFixed(1) + '" stroke-dashoffset="' + (circ - strokeDash).toFixed(1) + '" style="transition:stroke-dashoffset 0.8s cubic-bezier(0.34,1.56,0.64,1);filter:drop-shadow(0 0 6px ' + ringColor + ')"/></svg><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:20px;color:var(--t1);letter-spacing:-1px;">' + globalPct + '%</div></div>';
-  const levelIcons = ['🕌', '📿', '📚', '💚'];
+  const levelIcons = ['\u2726', '\u2726', '\u2726', '\u2726'];
   let levelsHtml = '<div class="resume-levels">';
   LEVELS.forEach((lvl, i) => {
     const pct = Math.round(getLevelProgress(lvl.id));
@@ -2503,7 +2503,7 @@ function renderLevel(levelId) {
       fitems += _audioBtnFri;
       fitems += '</div></div>';
     });
-    fridayBanner = '<div class="friday-banner"><div class="friday-header"><div style="font-size:22px">🌟</div><div class="friday-txt"><div class="friday-title">' + t('friday_title') + '</div><div class="friday-sub">' + t('friday_sub') + '</div></div></div><div class="friday-items">' + fitems + '</div></div>';
+    fridayBanner = '<div class="friday-banner"><div class="friday-header"><div style="font-size:18px;color:#C8A84A;">\u2726</div><div class="friday-txt"><div class="friday-title">' + t('friday_title') + '</div><div class="friday-sub">' + t('friday_sub') + '</div></div></div><div class="friday-items">' + fitems + '</div></div>';
   }
   const graceBanner = (level.id === 1 && isGraceActive()) ?
     '<div style="background:linear-gradient(135deg,rgba(255,149,0,0.12),rgba(255,214,10,0.06));border:1px solid rgba(255,149,0,0.25);border-radius:var(--r-lg);padding:12px 16px;margin-bottom:8px;display:flex;align-items:center;gap:12px;">' +
@@ -3829,8 +3829,8 @@ function loadPrayerTimes() {
 const WIRD_DATA = {
   matin: {
     title: 'Wird du Matin',
-    icon: '🌅',
-    subtitle: 'Après Fajr — avant le lever du soleil',
+    icon: '\u2726',
+    subtitle: 'Apr\u00e8s Fajr \u2014 avant le lever du soleil',
     items: [
       { id: 'w_fatiha', label: 'Al-Fatiha', sub: 'Sourate 1 — L\'ouverture', arabic: 'بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ', audio: ['https://everyayah.com/data/Alafasy_128kbps/001001.mp3','https://everyayah.com/data/Alafasy_128kbps/001002.mp3','https://everyayah.com/data/Alafasy_128kbps/001003.mp3','https://everyayah.com/data/Alafasy_128kbps/001004.mp3','https://everyayah.com/data/Alafasy_128kbps/001005.mp3','https://everyayah.com/data/Alafasy_128kbps/001006.mp3','https://everyayah.com/data/Alafasy_128kbps/001007.mp3'], source: 'Coran 1:1-7', phonetic: 'Bismillahi r-rahmani r-rahim...' },
       { id: 'w_ayat_kursi',  label: 'Ayat al-Kursi',      sub: 'Protection — 1 fois',                     arabic: 'اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ', audio: 'https://everyayah.com/data/Alafasy_128kbps/002255.mp3', source: 'Al-Baqara 2:255', phonetic: 'Allahu la ilaha illa huwal hayyul qayyum...' },
@@ -6903,7 +6903,7 @@ function showWeeklyBilan() {
   }).join('');
 
   // Emoji selon niveau
-  const emojis = { perfect: '✨', good: '🌿', average: '🌱', low: '🤲', none: '🌙' };
+  const emojis = { perfect: '\u2726', good: '\u2726', average: '\u2726', low: '\u2726', none: '\u2726' };
 
   const card = document.getElementById('weeklyCard');
   card.innerHTML = `
@@ -7682,7 +7682,7 @@ function setBilanSoir(choix) {
     safeSetItem('niyyah_tawba_force', '1');
     // Message au démarrage demain via toast différé (lu au prochain init)
     safeSetItem('niyyah_morning_msg', JSON.stringify({
-      icon: '🌅', text: 'Nouveau jour, nouveau souffle. Allah t\'a accordé ce matin — commence par Bismillah.', date: today
+      icon: '\u2726', text: 'Nouveau jour, nouveau souffle. Allah t\'a accord\u00e9 ce matin \u2014 commence par Bismillah.', date: today
     }));
   } else if (choix === 'effort') {
     safeSetItem('niyyah_morning_msg', JSON.stringify({
@@ -7691,7 +7691,7 @@ function setBilanSoir(choix) {
   } else if (choix === 'sincerite') {
     // Bonus visuel streak
     safeSetItem('niyyah_morning_msg', JSON.stringify({
-      icon: '✨', text: 'Hier ton cœur était sincère. Que Allah te maintienne dans cet état — c\'est Sa grâce.', date: today
+      icon: '\u2726', text: 'Hier ton c\u0153ur \u00e9tait sinc\u00e8re. Que Allah te maintienne dans cet \u00e9tat \u2014 c\'est Sa gr\u00e2ce.', date: today
     }));
     // Mini animation streak
     showToast(t('bilan_sincere'));
@@ -8084,7 +8084,7 @@ function closeTawba() {
   // Toast de bienvenue fraternel
   var toasts = [
     'Bismillah — Content de te revoir 🌿',
-    'Allah est heureux de ton retour 🌟',
+    'Allah est heureux de ton retour',
     'La porte était ouverte. Elle l\'est toujours. ✦'
   ];
   var t = toasts[Math.floor(Math.random() * toasts.length)];
@@ -8177,116 +8177,116 @@ const MURMURES = {
   // Par intention choisie le matin
   "se rapprocher d\'Allah": {
     matin:  [
-      { body: "Ton cœur se souvient de Lui", icon: "🌟" },
-      { body: "Un souffle de Dhikr avant de commencer", icon: "📿" },
-      { body: "Allah est proche — plus que ta veine jugulaire", icon: "✨" },
+      { body: "Ton cœur se souvient de Lui", icon: "✦" },
+      { body: "Un souffle de Dhikr avant de commencer", icon: "✦" },
+      { body: "Allah est proche — plus que ta veine jugulaire", icon: "✦" },
     ],
     midi:   [
-      { body: "Entre deux tâches — un instant vers Allah", icon: "🌟" },
-      { body: "SubhanAllah. Trois secondes. Il entend.", icon: "📿" },
-      { body: "Ta journée a une âme. Rappelle-le-toi.", icon: "✨" },
+      { body: "Entre deux tâches — un instant vers Allah", icon: "✦" },
+      { body: "SubhanAllah. Trois secondes. Il entend.", icon: "✦" },
+      { body: "Ta journée a une âme. Rappelle-le-toi.", icon: "✦" },
     ],
     soir:   [
-      { body: "La nuit est douce pour ceux qui reviennent", icon: "🌙" },
-      { body: "Avant de fermer les yeux — Al-Hamdulillah", icon: "🌙" },
-      { body: "Il t\'a gardé aujourd\'hui. Dis-Lui merci.", icon: "🌙" },
+      { body: "La nuit est douce pour ceux qui reviennent", icon: "✦" },
+      { body: "Avant de fermer les yeux — Al-Hamdulillah", icon: "✦" },
+      { body: "Il t\'a gardé aujourd\'hui. Dis-Lui merci.", icon: "✦" },
     ],
   },
   "tenir mes engagements": {
     matin:  [
-      { body: "Ta parole d\'aujourd\'hui — tiens-la", icon: "🤝" },
-      { body: "Un engagement tenu vaut mille intentions", icon: "💪" },
-      { body: "Commence par le plus petit. Le reste suivra.", icon: "🎯" },
+      { body: "Ta parole d\'aujourd\'hui — tiens-la", icon: "✦" },
+      { body: "Un engagement tenu vaut mille intentions", icon: "✦" },
+      { body: "Commence par le plus petit. Le reste suivra.", icon: "✦" },
     ],
     midi:   [
-      { body: "Mi-journée. Tes engagements respirent.", icon: "🤝" },
-      { body: "Ce que tu avais promis ce matin — où en es-tu ?", icon: "💪" },
-      { body: "La constance est une forme de noblesse", icon: "⭐" },
+      { body: "Mi-journée. Tes engagements respirent.", icon: "✦" },
+      { body: "Ce que tu avais promis ce matin — où en es-tu ?", icon: "✦" },
+      { body: "La constance est une forme de noblesse", icon: "✦" },
     ],
     soir:   [
-      { body: "Ce que tu as tenu aujourd\'hui compte", icon: "🌙" },
-      { body: "Bilan doux : qu\'as-tu honoré ?", icon: "🌙" },
-      { body: "Demain, un engagement. Juste un.", icon: "🌙" },
+      { body: "Ce que tu as tenu aujourd\'hui compte", icon: "✦" },
+      { body: "Bilan doux : qu\'as-tu honoré ?", icon: "✦" },
+      { body: "Demain, un engagement. Juste un.", icon: "✦" },
     ],
   },
   "me reconstruire": {
     matin:  [
-      { body: "Une brique posée vaut mieux qu\'un mur rêvé", icon: "🌱" },
-      { body: "Tu recommences. C\'est déjà une victoire.", icon: "💚" },
-      { body: "Allah aime celui qui revient. Tu es en chemin.", icon: "🌿" },
+      { body: "Une brique posée vaut mieux qu\'un mur rêvé", icon: "✦" },
+      { body: "Tu recommences. C\'est déjà une victoire.", icon: "✦" },
+      { body: "Allah aime celui qui revient. Tu es en chemin.", icon: "✦" },
     ],
     midi:   [
-      { body: "Tu avances. Même lentement, tu avances.", icon: "🌱" },
-      { body: "Un pas. Juste un. Bismillah.", icon: "💚" },
-      { body: "La reconstruction prend du temps. Patience.", icon: "🌿" },
+      { body: "Tu avances. Même lentement, tu avances.", icon: "✦" },
+      { body: "Un pas. Juste un. Bismillah.", icon: "✦" },
+      { body: "La reconstruction prend du temps. Patience.", icon: "✦" },
     ],
     soir:   [
-      { body: "Se reconstruire prend du temps. Tu es en chemin.", icon: "🌙" },
-      { body: "Aujourd\'hui tu as tenu. Ça compte infiniment.", icon: "🌙" },
-      { body: "Demain est une page blanche offerte par Allah.", icon: "🌙" },
+      { body: "Se reconstruire prend du temps. Tu es en chemin.", icon: "✦" },
+      { body: "Aujourd\'hui tu as tenu. Ça compte infiniment.", icon: "✦" },
+      { body: "Demain est une page blanche offerte par Allah.", icon: "✦" },
     ],
   },
   "être reconnaissant": {
     matin:  [
-      { body: "Nomme une chose belle de ce matin", icon: "🙏" },
-      { body: "Al-Hamdulillah — la plus lourde des paroles", icon: "✨" },
-      { body: "Tu respires. Quelqu\'un ne le peut plus.", icon: "🌸" },
+      { body: "Nomme une chose belle de ce matin", icon: "✦" },
+      { body: "Al-Hamdulillah — la plus lourde des paroles", icon: "✦" },
+      { body: "Tu respires. Quelqu\'un ne le peut plus.", icon: "✦" },
     ],
     midi:   [
-      { body: "Quelque chose t\'a souri aujourd\'hui ?", icon: "🙏" },
-      { body: "Une grâce cachée dans ta journée ordinaire", icon: "✨" },
-      { body: "Dis merci à quelqu\'un. C\'est une sadaqa.", icon: "🌸" },
+      { body: "Quelque chose t\'a souri aujourd\'hui ?", icon: "✦" },
+      { body: "Une grâce cachée dans ta journée ordinaire", icon: "✦" },
+      { body: "Dis merci à quelqu\'un. C\'est une sadaqa.", icon: "✦" },
     ],
     soir:   [
-      { body: "Avant de dormir — merci pour quoi ?", icon: "🌙" },
-      { body: "Ta journée avait de la valeur. Tu la vois ?", icon: "🌙" },
-      { body: "3 choses d\'aujourd\'hui dont tu es reconnaissant", icon: "🌙" },
+      { body: "Avant de dormir — merci pour quoi ?", icon: "✦" },
+      { body: "Ta journée avait de la valeur. Tu la vois ?", icon: "✦" },
+      { body: "3 choses d\'aujourd\'hui dont tu es reconnaissant", icon: "✦" },
     ],
   },
   // Messages généraux (si pas d\'intention ou intention personnalisée)
   default: {
     matin:  [
-      { body: "Un instant pour ton âme avant de commencer", icon: "🌿" },
-      { body: "Bismillah — chaque acte peut être une ibadah", icon: "✨" },
-      { body: "Ta journée commence avec la grâce d\'Allah", icon: "🌟" },
+      { body: "Un instant pour ton âme avant de commencer", icon: "✦" },
+      { body: "Bismillah — chaque acte peut être une ibadah", icon: "✦" },
+      { body: "Ta journée commence avec la grâce d\'Allah", icon: "✦" },
     ],
     midi:   [
-      { body: "Un souffle de paix au cœur de la journée", icon: "🌿" },
-      { body: "Rappelle-toi pourquoi tu fais ce que tu fais", icon: "✨" },
-      { body: "Astaghfirullah. Le cœur léger continue mieux.", icon: "🤲" },
+      { body: "Un souffle de paix au cœur de la journée", icon: "✦" },
+      { body: "Rappelle-toi pourquoi tu fais ce que tu fais", icon: "✦" },
+      { body: "Astaghfirullah. Le cœur léger continue mieux.", icon: "✦" },
     ],
     soir:   [
-      { body: "La nuit est un cadeau. Commence-la en paix.", icon: "🌙" },
-      { body: "Ton wird du soir t\'attend. 5 minutes.", icon: "🌙" },
-      { body: "Al-Hamdulillah pour cette journée, quoi qu\'il en soit.", icon: "🌙" },
+      { body: "La nuit est un cadeau. Commence-la en paix.", icon: "✦" },
+      { body: "Ton wird du soir t\'attend. 5 minutes.", icon: "✦" },
+      { body: "Al-Hamdulillah pour cette journée, quoi qu\'il en soit.", icon: "✦" },
     ],
   },
 };
 const MURMURES_EN = {
   "se rapprocher d'Allah": {
-    matin: [{body:"Your heart remembers Him",icon:"🌟"},{body:"A breath of Dhikr before you begin",icon:"📿"},{body:"Allah is near — closer than your jugular vein",icon:"✨"}],
-    midi: [{body:"Between tasks — a moment toward Allah",icon:"🌟"},{body:"SubhanAllah. Three seconds. He hears.",icon:"📿"},{body:"Your day has a soul. Remember it.",icon:"✨"}],
-    soir: [{body:"The night is gentle for those who return",icon:"🌙"},{body:"Before closing your eyes — Al-Hamdulillah",icon:"🌙"},{body:"He kept you today. Thank Him.",icon:"🌙"}]
+    matin: [{body:"Your heart remembers Him",icon:"✦"},{body:"A breath of Dhikr before you begin",icon:"✦"},{body:"Allah is near — closer than your jugular vein",icon:"✦"}],
+    midi: [{body:"Between tasks — a moment toward Allah",icon:"✦"},{body:"SubhanAllah. Three seconds. He hears.",icon:"✦"},{body:"Your day has a soul. Remember it.",icon:"✦"}],
+    soir: [{body:"The night is gentle for those who return",icon:"✦"},{body:"Before closing your eyes — Al-Hamdulillah",icon:"✦"},{body:"He kept you today. Thank Him.",icon:"✦"}]
   },
   "tenir mes engagements": {
-    matin: [{body:"Your word today — keep it",icon:"🤝"},{body:"One commitment kept is worth a thousand intentions",icon:"💪"},{body:"Start with the smallest. The rest will follow.",icon:"🎯"}],
-    midi: [{body:"Midday. Your commitments are breathing.",icon:"🤝"},{body:"What you promised this morning — where are you?",icon:"💪"},{body:"Consistency is a form of nobility",icon:"⭐"}],
-    soir: [{body:"What you honored today counts",icon:"🌙"},{body:"Gentle review: what did you keep?",icon:"🌙"},{body:"Tomorrow, one commitment. Just one.",icon:"🌙"}]
+    matin: [{body:"Your word today — keep it",icon:"✦"},{body:"One commitment kept is worth a thousand intentions",icon:"✦"},{body:"Start with the smallest. The rest will follow.",icon:"✦"}],
+    midi: [{body:"Midday. Your commitments are breathing.",icon:"✦"},{body:"What you promised this morning — where are you?",icon:"✦"},{body:"Consistency is a form of nobility",icon:"✦"}],
+    soir: [{body:"What you honored today counts",icon:"✦"},{body:"Gentle review: what did you keep?",icon:"✦"},{body:"Tomorrow, one commitment. Just one.",icon:"✦"}]
   },
   "me reconstruire": {
-    matin: [{body:"One brick laid is better than a wall dreamed",icon:"🌱"},{body:"You are starting again. That is already a victory.",icon:"💚"},{body:"Allah loves the one who returns. You are on the path.",icon:"🌿"}],
-    midi: [{body:"You are moving. Even slowly, you are moving.",icon:"🌱"},{body:"One step. Just one. Bismillah.",icon:"💚"},{body:"Rebuilding takes time. Patience.",icon:"🌿"}],
-    soir: [{body:"Rebuilding takes time. You are on the path.",icon:"🌙"},{body:"Today you held. That counts immensely.",icon:"🌙"},{body:"Tomorrow is a blank page offered by Allah.",icon:"🌙"}]
+    matin: [{body:"One brick laid is better than a wall dreamed",icon:"✦"},{body:"You are starting again. That is already a victory.",icon:"✦"},{body:"Allah loves the one who returns. You are on the path.",icon:"✦"}],
+    midi: [{body:"You are moving. Even slowly, you are moving.",icon:"✦"},{body:"One step. Just one. Bismillah.",icon:"✦"},{body:"Rebuilding takes time. Patience.",icon:"✦"}],
+    soir: [{body:"Rebuilding takes time. You are on the path.",icon:"✦"},{body:"Today you held. That counts immensely.",icon:"✦"},{body:"Tomorrow is a blank page offered by Allah.",icon:"✦"}]
   },
   "être reconnaissant": {
-    matin: [{body:"Name one beautiful thing about this morning",icon:"🙏"},{body:"Al-Hamdulillah — the heaviest of words",icon:"✨"},{body:"You breathe. Someone no longer can.",icon:"🌸"}],
-    midi: [{body:"Did something smile at you today?",icon:"🙏"},{body:"A hidden grace in your ordinary day",icon:"✨"},{body:"Say thank you to someone. It is sadaqa.",icon:"🌸"}],
-    soir: [{body:"Before sleep — grateful for what?",icon:"🌙"},{body:"Your day had value. Can you see it?",icon:"🌙"},{body:"3 things from today you are grateful for",icon:"🌙"}]
+    matin: [{body:"Name one beautiful thing about this morning",icon:"✦"},{body:"Al-Hamdulillah — the heaviest of words",icon:"✦"},{body:"You breathe. Someone no longer can.",icon:"✦"}],
+    midi: [{body:"Did something smile at you today?",icon:"✦"},{body:"A hidden grace in your ordinary day",icon:"✦"},{body:"Say thank you to someone. It is sadaqa.",icon:"✦"}],
+    soir: [{body:"Before sleep — grateful for what?",icon:"✦"},{body:"Your day had value. Can you see it?",icon:"✦"},{body:"3 things from today you are grateful for",icon:"✦"}]
   },
   default: {
-    matin: [{body:"A moment for your soul before you begin",icon:"🌿"},{body:"Bismillah — every act can be ibadah",icon:"✨"},{body:"Your day begins with the grace of Allah",icon:"🌟"}],
-    midi: [{body:"A breath of peace in the heart of the day",icon:"🌿"},{body:"Remember why you do what you do",icon:"✨"},{body:"Astaghfirullah. A lighter heart goes further.",icon:"🤲"}],
-    soir: [{body:"The night is a gift. Begin it in peace.",icon:"🌙"},{body:"Your evening Wird awaits. 5 minutes.",icon:"🌙"},{body:"Al-Hamdulillah for this day, whatever it held.",icon:"🌙"}]
+    matin: [{body:"A moment for your soul before you begin",icon:"✦"},{body:"Bismillah — every act can be ibadah",icon:"✦"},{body:"Your day begins with the grace of Allah",icon:"✦"}],
+    midi: [{body:"A breath of peace in the heart of the day",icon:"✦"},{body:"Remember why you do what you do",icon:"✦"},{body:"Astaghfirullah. A lighter heart goes further.",icon:"✦"}],
+    soir: [{body:"The night is a gift. Begin it in peace.",icon:"✦"},{body:"Your evening Wird awaits. 5 minutes.",icon:"✦"},{body:"Al-Hamdulillah for this day, whatever it held.",icon:"✦"}]
   }
 };
 function _getMurmureDict() { return V2_LANG === 'en' ? MURMURES_EN : MURMURES; }
@@ -8308,8 +8308,8 @@ function getMurmureAdaptatif(moment) {
   if (moment === "midi" && todayScore >= 60) {
     var RENFORCEMENT = [
       { body: "MashaAllah — tu tiens ton chemin aujourd'hui", icon: "✦" },
-      { body: "Ta constance ce matin est une lumière", icon: "🌟" },
-      { body: "Allah voit tes efforts. Continue ainsi.", icon: "✨" },
+      { body: "Ta constance ce matin est une lumière", icon: "✦" },
+      { body: "Allah voit tes efforts. Continue ainsi.", icon: "✦" },
     ];
     var idx = Math.floor(Math.random() * RENFORCEMENT.length);
     return RENFORCEMENT[idx];
@@ -8321,9 +8321,9 @@ function getMurmureAdaptatif(moment) {
     var daysSince = Math.floor((Date.now() - parseInt(lastOpen)) / 86400000);
     if (daysSince >= 2) {
       var RETOUR = [
-        { body: "Tu nous as manqué. Pas de jugement. Reviens.", icon: "🌿" },
-        { body: "Allah est Al-Tawwab. Sa porte est ouverte.", icon: "🤲" },
-        { body: "Un seul pas suffit pour recommencer", icon: "🌱" },
+        { body: "Tu nous as manqué. Pas de jugement. Reviens.", icon: "✦" },
+        { body: "Allah est Al-Tawwab. Sa porte est ouverte.", icon: "✦" },
+        { body: "Un seul pas suffit pour recommencer", icon: "✦" },
       ];
       return RETOUR[Math.floor(Math.random() * RETOUR.length)];
     }
@@ -8332,7 +8332,7 @@ function getMurmureAdaptatif(moment) {
   // Si streak élevé (7+) → message d'encouragement spécial
   if (streak >= 7 && moment === "matin") {
     var EXCELLENCE = [
-      { body: streak + " jours. L'Istiqamah est ta marque.", icon: "⭐" },
+      { body: streak + " jours. L'Istiqamah est ta marque.", icon: "✦" },
       { body: "Une semaine de constance — rare et précieux", icon: "✦" },
     ];
     return EXCELLENCE[Math.floor(Math.random() * EXCELLENCE.length)];
@@ -8658,14 +8658,14 @@ function scheduleFajrNotification() {
   if (msUntil <= 0 || msUntil >= 86400000) return;
   var _intentionType = localStorage.getItem('niyyah_intention_type') || '';
   var _msgs = {
-    rapprochement: "🌅 Fajr — Rapproche-toi d'Allah ce matin",
-    engagement: "🌅 Fajr — Tiens tes engagements aujourd'hui",
-    reconstruction: "🌅 Fajr — Chaque matin est une renaissance",
-    gratitude: "🌅 Fajr — Commence par le shukr"
+    rapprochement: "Fajr \u2014 Rapproche-toi d'Allah ce matin",
+    engagement: "Fajr \u2014 Tiens tes engagements aujourd'hui",
+    reconstruction: "Fajr \u2014 Chaque matin est une renaissance",
+    gratitude: "Fajr \u2014 Commence par le shukr"
   };
-  var _body = _msgs[_intentionType] || "🌅 L'heure de Fajr est arrivée · Niyyah Daily";
+  var _body = _msgs[_intentionType] || "L'heure de Fajr est arriv\u00e9e \u00b7 Niyyah Daily";
   var _fp = (typeof _getPrenom === 'function') ? _getPrenom() : '';
-  if (_fp) _body = "🌅 Fajr — Bismillah " + _fp;
+  if (_fp) _body = "Fajr \u2014 Bismillah " + _fp;
   window._fajrNotifTimer = setTimeout(function() {
     new Notification('Niyyah Daily', { body: _body, icon: 'icon-512.png', tag: 'fajr-notif' });
   }, msUntil);
@@ -9345,12 +9345,12 @@ const V2_I18N = {
     defi_checked_today: '✓ Coché aujourd\'hui', defi_check_today: 'Cocher aujourd\'hui ✦',
     defi_enc_0: 'Commence aujourd\'hui — chaque jour compte ✦', defi_enc_1: 'Bien lancé — continue sur cette lancée !', defi_enc_2: 'À mi-chemin — tu y es presque !', defi_enc_3: 'Plus que quelques jours — tiens bon !', defi_enc_4: 'Masha\'Allah — tu es si proche !', defi_enc_5: 'Masha\'Allah ✦ Défi accompli — Barakallahu fik !',
     ramadan_off: 'Mode Ramadan désactivé', ramadan_on: '🌙 Ramadan Mubarak ! Que ce mois soit béni.',
-    ramadan_fast: '🌙 Jeûne du jour enregistré — Barakallahu feek !', ramadan_laylatul: '✨ Nuit ', ramadan_laylatul_end: ' — Qu\'Allah l\'accepte !', ramadan_fallback: 'Barakallahu feek !',
+    ramadan_fast: 'Je\u00fbne du jour enregistr\u00e9 \u2014 Barakallahu feek !', ramadan_laylatul: 'Nuit ', ramadan_laylatul_end: ' \u2014 Qu\'Allah l\'accepte !', ramadan_fallback: 'Barakallahu feek !',
     ramadan_disable_title: 'Désactiver le Mode Ramadan', ramadan_enable_title: 'Activer le Mode Ramadan',
     kahf_listen: 'Écouter Al-Kahf — Alafasy', kahf_play: 'Écouter Al-Kahf', kahf_playing: 'En cours — verset ', kahf_verse: 'Verset ', kahf_verse_end: '/110…', kahf_finished: 'Al-Kahf terminée ✦',
     tasbih_99: '🌿 99 accompli ! Dis maintenant la shahada.', tasbih_done: '🌿 Mashallah ! ',  tasbih_done_end: ' fois accompli !',
     jumuah_done: '🕌 Jumuah accomplie — Barakallahu feek !', new_day: 'Nouvelle journee — Bismillah 🌿',
-    meditation_done: 'Terminé — Alhamdulillah 🌿', bilan_sincere: '✨ Journée sincère — Barakallahu fik !', tafakkur_done: 'Barakallahu fik — Tafakkur accompli ✦',
+    meditation_done: 'Termin\u00e9 \u2014 Alhamdulillah', bilan_sincere: 'Journ\u00e9e sinc\u00e8re \u2014 Barakallahu fik !', tafakkur_done: 'Barakallahu fik \u2014 Tafakkur accompli \u2726',
     notif_unavailable: 'Rappels non disponibles sur cet appareil', notif_unsupported_device: 'Notifications non supportées sur cet appareil',
     qibla_aligned: '✦ Tu es aligné avec La Mecque !', qibla_turn: '\ud83d\udfe2 Tourne vers l\u2019aiguille verte', qibla_calibrate: '⚠️ Calibre ton téléphone (fais un 8 dans l\'air)',
     geo_loading: '⏳ Localisation...', geo_found: '✓ Localisé !', geo_locate: '✦ Me localiser',
@@ -9375,7 +9375,7 @@ const V2_I18N = {
     tasbih_label: 'Tasbih', tasbih_hint: 'Appuie n\'importe où',
     finjournee_label: 'Quand vient la nuit',
     finjournee_sub: 'Muhasaba du soir',
-    fri_kahf_toast: '📖 Al-Kahf récitée — lumière jusqu\'au prochain vendredi !', fri_salawat_toast: '🌟 Salawat envoyées sur le Prophète ﷺ', fri_doua_toast: '🤲 Douaa de l\'heure bénie — qu\'Allah l\'exauce !',
+    fri_kahf_toast: 'Al-Kahf r\u00e9cit\u00e9e \u2014 lumi\u00e8re jusqu\'au prochain vendredi !', fri_salawat_toast: 'Salawat envoy\u00e9es sur le Proph\u00e8te \uFDFA', fri_doua_toast: 'Douaa de l\'heure b\u00e9nie \u2014 qu\'Allah l\'exauce !',
     meta_subtitle: 'Pratique & Élévation', aria_language: 'Langue', aria_settings: 'Réglages',
     aria_pratique: 'Pratique', aria_wird: 'Wird', aria_parcours: 'Mon chemin', aria_tafakkur: 'Tafakkur',
     nafs_weekly: 'un trait par semaine', aria_back_home: 'Retour à Ma Niyyah',
@@ -9601,12 +9601,12 @@ const V2_I18N = {
     defi_checked_today: '✓ Checked today', defi_check_today: 'Check today ✦',
     defi_enc_0: 'Start today — every day counts ✦', defi_enc_1: 'Good start — keep it up!', defi_enc_2: 'Halfway there — you\'re almost done!', defi_enc_3: 'Just a few days left — hold on!', defi_enc_4: 'Masha\'Allah — you\'re so close!', defi_enc_5: 'Masha\'Allah ✦ Challenge completed — Barakallahu fik!',
     ramadan_off: 'Ramadan mode disabled', ramadan_on: '🌙 Ramadan Mubarak! May this month be blessed.',
-    ramadan_fast: '🌙 Fast recorded — Barakallahu feek!', ramadan_laylatul: '✨ Night ', ramadan_laylatul_end: ' — May Allah accept it!', ramadan_fallback: 'Barakallahu feek!',
+    ramadan_fast: 'Fast recorded \u2014 Barakallahu feek!', ramadan_laylatul: 'Night ', ramadan_laylatul_end: ' \u2014 May Allah accept it!', ramadan_fallback: 'Barakallahu feek!',
     ramadan_disable_title: 'Disable Ramadan Mode', ramadan_enable_title: 'Enable Ramadan Mode',
     kahf_listen: 'Listen to Al-Kahf — Alafasy', kahf_play: 'Listen to Al-Kahf', kahf_playing: 'Playing — verse ', kahf_verse: 'Verse ', kahf_verse_end: '/110…', kahf_finished: 'Al-Kahf completed ✦',
     tasbih_99: '🌿 99 completed! Now say the shahada.', tasbih_done: '🌿 Mashallah! ', tasbih_done_end: ' times completed!',
     jumuah_done: '🕌 Jumuah completed — Barakallahu feek!', new_day: 'New day — Bismillah 🌿',
-    meditation_done: 'Completed — Alhamdulillah 🌿', bilan_sincere: '✨ Sincere day — Barakallahu fik!', tafakkur_done: 'Barakallahu fik — Tafakkur completed ✦',
+    meditation_done: 'Completed \u2014 Alhamdulillah', bilan_sincere: 'Sincere day \u2014 Barakallahu fik!', tafakkur_done: 'Barakallahu fik \u2014 Tafakkur completed \u2726',
     notif_unavailable: 'Reminders not available on this device', notif_unsupported_device: 'Notifications not supported on this device',
     qibla_aligned: '✦ You are aligned with Mecca!', qibla_turn: '\ud83d\udfe2 Turn towards the green needle', qibla_calibrate: '⚠️ Calibrate your phone (make a figure 8 in the air)',
     geo_loading: '⏳ Locating...', geo_found: '✓ Located!', geo_locate: '✦ Locate me',
@@ -9631,7 +9631,7 @@ const V2_I18N = {
     tasbih_label: 'Tasbih', tasbih_hint: 'Tap anywhere',
     finjournee_label: 'When night comes',
     finjournee_sub: 'Evening Muhasaba',
-    fri_kahf_toast: '\ud83d\udcd6 Al-Kahf recited — light until next Friday!', fri_salawat_toast: '🌟 Salawat sent upon the Prophet ﷺ', fri_doua_toast: '🤲 Dua of the blessed hour — may Allah accept it!',
+    fri_kahf_toast: 'Al-Kahf recited \u2014 light until next Friday!', fri_salawat_toast: 'Salawat sent upon the Prophet \uFDFA', fri_doua_toast: 'Dua of the blessed hour \u2014 may Allah accept it!',
     meta_subtitle: 'Practice & Elevation', aria_language: 'Language', aria_settings: 'Settings',
     aria_pratique: 'Practice', aria_wird: 'Wird', aria_parcours: 'Journey', aria_tafakkur: 'Tafakkur',
     nafs_weekly: 'one trait per week', aria_back_home: 'Back to My Niyyah',
@@ -10685,7 +10685,7 @@ function renderNafsTrait() {
       '<div class="nafs-reference-source">' + trait.reference.source + '</div>' +
     '</div>' +
     '<div class="nafs-signal-box">' +
-      '<div class="nafs-signal-icon">⚡</div>' +
+      '<div class="nafs-signal-icon">\u2726</div>' +
       '<div>' +
         '<div class="nafs-section-label">Signal d\'alerte</div>' +
         '<div class="nafs-section-text">' + trait.signal + '</div>' +
@@ -12679,7 +12679,7 @@ function updateSanctuaireMoment() {
   var block = getCurrentPrayerBlock();
   var blockId = block.id;
   var _svgNuit = '<svg width="14" height="14" viewBox="0 0 14 14" style="vertical-align:middle;"><path d="M11 7a4.5 4.5 0 1 1-4.5-4.5A3.5 3.5 0 0 0 11 7z" fill="none" stroke="#C8A84A" stroke-width="1.2"/></svg>';
-  var _blockIcons = { nuit:_svgNuit, fajr:'🌅', dhuhr:'🌞', asr:'🌇', maghrib:'🌆', isha:_svgNuit };
+  var _blockIcons = { nuit:_svgNuit, fajr:'\u2726', dhuhr:'\u2726', asr:'\u2726', maghrib:'\u2726', isha:_svgNuit };
   var _momentsImg = ['fajr','dhuhr','asr','maghrib','isha'];
   var _iconSpan;
   if (_momentsImg.indexOf(blockId) !== -1) {
@@ -13327,7 +13327,7 @@ const SCANNER_LIBRARY = {
   },
   // Famille / Personnes
   person: {
-    label: "Présence", icon: "🤝",
+    label: "Présence", icon: "✦",
     nuances: [
       { tag: "Patience",   text: "Être présent avec douceur — ma patience aujourd'hui est la sécurité de ceux que j'aime demain." },
       { tag: "Adab",       text: "Traiter cette personne comme si le Prophète ﷺ me regardait — avec respect, écoute et noblesse de cœur." },
@@ -13336,7 +13336,7 @@ const SCANNER_LIBRARY = {
   },
   // Espace de prière / Tapis
   prayer: {
-    label: "Prière", icon: "🕌",
+    label: "Pri\u00e8re", icon: "\u2726",
     nuances: [
       { tag: "Présence",   text: "Poser mon front sur cette terre avec la conscience que c'est la station la plus proche d'Allah." },
       { tag: "Renouveau",  text: "Chaque prière est une nouvelle naissance — je laisse mes soucis à la porte et j'entre en Sa présence." },
@@ -13345,7 +13345,7 @@ const SCANNER_LIBRARY = {
   },
   // Miroir
   mirror: {
-    label: "Soi", icon: "✨",
+    label: "Soi", icon: "✦",
     nuances: [
       { tag: "Dignité",    text: "Prendre soin de moi — car ce corps est un dépôt confié par Allah, pas le mien à négliger." },
       { tag: "Gratitude",  text: "Regarder ce visage et dire Alhamdulillah — je suis vivant, présent, et capable d'aimer aujourd'hui." },
@@ -13372,7 +13372,7 @@ const SCANNER_LIBRARY = {
   },
   // Nature / Plantes
   nature: {
-    label: "Nature", icon: "🌿",
+    label: "Nature", icon: "✦",
     nuances: [
       { tag: "Contemplation", text: "Chaque feuille glorifie Allah à sa façon — cette beauté est un signe pour ceux qui réfléchissent." },
       { tag: "Gratitude",     text: "La nature ne ment jamais sur la grandeur de son Créateur — laisser ce spectacle nourrir la foi." },
@@ -13390,7 +13390,7 @@ const SCANNER_LIBRARY = {
   },
   // Lit / Repos
   bed: {
-    label: "Repos", icon: "🌙",
+    label: "Repos", icon: "✦",
     nuances: [
       { tag: "Gratitude",  text: "Ce lit est un sanctuaire — je pose mes soucis et confie ma nuit à Allah comme le Prophète ﷺ le faisait." },
       { tag: "Renouveau",  text: "Le sommeil est une petite mort — et chaque réveil, une résurrection offerte. Alhamdulillah illadhi ahyana." },
