@@ -9257,14 +9257,17 @@ if ('serviceWorker' in navigator && location.protocol !== 'null:' && (location.p
         if (!newWorker) return;
         newWorker.addEventListener('statechange', function() {
           if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-            var _updateLabels = {fr:{msg:'Niyyah a \u00e9volu\u00e9',btn:'Reprendre'},en:{msg:'Niyyah has evolved',btn:'Resume'},ar:{msg:'\u0646\u0650\u064a\u0651\u064e\u0629 \u062a\u062d\u062f\u0651\u062b\u062a',btn:'\u0627\u0633\u062a\u0626\u0646\u0627\u0641'}};
+            var _updateLabels = {fr:{msg:'Niyyah a \u00e9volu\u00e9',sub:'Une nouvelle version est pr\u00eate',btn:'Reprendre \u203A'},en:{msg:'Niyyah has evolved',sub:'A new version is ready',btn:'Resume \u203A'},ar:{msg:'\u0646\u0650\u064a\u0651\u064e\u0629 \u062a\u062d\u062f\u0651\u062b\u062a',sub:'\u0646\u0633\u062e\u0629 \u062c\u062f\u064a\u062f\u0629 \u062c\u0627\u0647\u0632\u0629',btn:'\u0627\u0633\u062a\u0626\u0646\u0627\u0641 \u203A'}};
             var _ul = _updateLabels[(typeof V2_LANG!=='undefined'?V2_LANG:'fr')] || _updateLabels.fr;
             var banner = document.createElement('div');
-            banner.style.cssText = 'position:fixed;bottom:20px;left:50%;transform:translateX(-50%)' + (window._reducedMotion ? '' : ' translateY(20px)') + ';background:#1a1a1a;border:1px solid rgba(200,168,75,0.4);border-radius:12px;padding:12px 20px;z-index:9999;display:flex;align-items:center;gap:12px;box-shadow:0 4px 20px rgba(0,0,0,0.5);opacity:' + (window._reducedMotion ? '1' : '0') + ';' + (window._reducedMotion ? '' : 'transition:opacity 1s ease,transform 1s ease;');
-            banner.innerHTML = '<span style="font-size:13px;color:var(--t2);font-family:var(--serif);font-style:italic;">' + _ul.msg + '</span><button style="padding:6px 14px;border-radius:8px;border:none;background:#C8A84A;color:#000;font-size:12px;font-weight:600;cursor:pointer;font-family:var(--serif);">' + _ul.btn + '</button>';
-            if (!window._reducedMotion) { requestAnimationFrame(function(){requestAnimationFrame(function(){banner.style.opacity='1';banner.style.transform='translateX(-50%) translateY(0)';});}); }
-            banner.querySelector('button').onclick = function() { newWorker.postMessage({type:'SKIP_WAITING'}); window.location.reload(); };
+            banner.style.cssText = 'position:fixed;bottom:20px;left:16px;right:16px;max-width:400px;margin:0 auto;background:#2C2E32;border-left:2px solid #C8A84A;border-radius:12px;padding:14px 20px;z-index:9999;display:flex;align-items:center;gap:14px;opacity:' + (window._reducedMotion ? '1' : '0') + ';' + (window._reducedMotion ? '' : 'transition:opacity 0.6s ease;');
+            banner.innerHTML = '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:#C8A84A;">' + _ul.msg + '</div><div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;font-style:italic;color:rgba(229,224,220,0.5);margin-top:2px;">' + _ul.sub + '</div></div><span id="_sw-resume" style="font-family:\'Cormorant Garamond\',serif;font-size:13px;color:#C8A84A;cursor:pointer;flex-shrink:0;white-space:nowrap;">' + _ul.btn + '</span>';
+            if (!window._reducedMotion) { requestAnimationFrame(function(){requestAnimationFrame(function(){banner.style.opacity='1';});}); }
+            document.getElementById('_sw-resume') || banner.querySelector('#_sw-resume');
+            banner.querySelector('#_sw-resume').onclick = function() { newWorker.postMessage({type:'SKIP_WAITING'}); window.location.reload(); };
             document.body.appendChild(banner);
+            setTimeout(function() { banner.style.opacity='0'; setTimeout(function() { if (banner.parentNode) banner.remove(); }, 600); }, 6000);
+            window.addEventListener('scroll', function _swScroll() { banner.style.opacity='0'; setTimeout(function() { if (banner.parentNode) banner.remove(); }, 600); window.removeEventListener('scroll', _swScroll); }, { once: true });
           }
         });
       });
