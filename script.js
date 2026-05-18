@@ -7203,9 +7203,9 @@ function _openRecitDetail(num) {
       var txt = T(p.content);
       if (!txt) return;
       if (p.type === 'italic') {
-        html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.85);line-height:1.7;margin-bottom:16px;text-align:center;">' + txt + '</div>';
+        html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:rgba(200,168,75,0.85);line-height:1.75;margin-bottom:20px;text-align:center;">' + txt + '</div>';
       } else {
-        html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;color:rgba(229,224,220,0.85);line-height:1.8;margin-bottom:14px;">' + txt + '</div>';
+        html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;color:rgba(229,224,220,0.85);line-height:1.85;margin-bottom:18px;">' + txt + '</div>';
       }
     });
   }
@@ -7213,7 +7213,7 @@ function _openRecitDetail(num) {
     var med = T(recit.meditation);
     if (med) {
       html += '<div style="margin:24px 0;padding:16px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.15);border-radius:12px;text-align:center;">';
-      html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#C8A84A;line-height:1.6;">' + med + '</div>';
+      html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:#C8A84A;line-height:1.7;">' + med + '</div>';
       html += '</div>';
     }
   }
