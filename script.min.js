@@ -1447,7 +1447,7 @@ const LEVELS = [
       ]},
       { icon: '🎧', title: 'Immersion coranique', items: [
         { id: 'coran_ecoute', minVague: 3, label: '\u00c9couter le Coran', sub: 'Choisis une sourate et \u00e9coute', arabic: '\u062A\u0650\u0644\u0627\u0648\u064E\u0629\u064F \u0627\u0644\u0642\u064F\u0631\u0622\u0646\u0650', optional: true, coranPicker: true, filDuJour: true, paths: ['reconnecter','routine','sacraliser'], block: 'jour', category: 'science', hadith: '"R\u00e9cite le Coran car il interc\u00e9dera pour ses compagnons le Jour du Jugement" \u2014 Muslim 804', source: 'Muslim 804' },
-        { id: 'podcast', minVague: 4, label: 'Podcast islamique', sub: 'Islam Simplement ou autre contenu', paths: ['sacraliser'], block: 'jour', category: 'science' },
+        { id: 'podcast', minVague: 4, label: 'Podcast islamique', sub: 'Une \u00e9coute libre', paths: ['sacraliser'], block: 'jour', category: 'science' },
       ], links: [
         { label: 'Vie du Prophète ﷺ', sub: "La vie du Prophète Mohammad ﷺ · Podcast", url: 'https://podcasts.apple.com/fr/podcast/la-vie-du-proph%C3%A8te-mohammad-%EF%B7%BA/id1804853747', icon: '🎙' },
         { label: 'Islam Simplement', sub: 'Podcast · Écouter maintenant', url: 'https://open.spotify.com/search/islam%20simplement', icon: '🎙' },
