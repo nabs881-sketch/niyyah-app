@@ -7135,65 +7135,67 @@ function openVueRecitsCoran() {
 }
 function _getRecitsProgress() { return parseInt(safeGetItem('niyyah_recits_progress') || '1', 10); }
 function _saveRecitsProgress(num) { safeSetItem('niyyah_recits_progress', String(num)); }
+function _recitsReadToday() { return safeGetItem('niyyah_recits_read_today') === todayKey(); }
+function _recitsMarkReadToday() { safeSetItem('niyyah_recits_read_today', todayKey()); }
 function _recitsValidateItem() {
   try { if (typeof state !== 'undefined' && typeof saveState === 'function') { state['recits_coran'] = true; saveState(); if (typeof updateGlobalProgress === 'function') updateGlobalProgress(); } } catch(e) {}
+}
+function _recitsMaxUnlocked(data) {
+  var inst = parseInt(safeGetItem('niyyah_install_date') || '0', 10);
+  if (!inst) return 1;
+  var days = Math.floor((Date.now() - inst) / 86400000) + 1;
+  return Math.min(days, data.length);
 }
 function _renderRecitsCoran(data) {
   var existing = document.getElementById('recits-coran-overlay');
   if (existing) existing.remove();
   var progress = _getRecitsProgress();
   var total = data.length;
+  var maxDay = _recitsMaxUnlocked(data);
+  var alreadyReadToday = _recitsReadToday();
+  var nextToRead = progress;
+  if (nextToRead > total || (nextToRead <= maxDay && alreadyReadToday)) {
+    nextToRead = null;
+  }
+  if (nextToRead && nextToRead > maxDay) {
+    nextToRead = null;
+  }
   var ov = document.createElement('div');
   ov.id = 'recits-coran-overlay';
-  ov.style.cssText = 'position:fixed;inset:0;z-index:3000;background:#0a0a0a;display:flex;flex-direction:column;overflow:hidden;';
-  var html = '<div style="padding:calc(var(--safe-top,0px) + 16px) 20px 12px;text-align:center;">';
-  html += '<div style="font-family:Amiri,serif;font-size:24px;color:#C8A84A;direction:rtl;margin-bottom:4px;">\u0642\u064E\u0635\u064E\u0635\u064F \u0627\u0644\u0642\u064F\u0631\u0622\u0646</div>';
-  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.6);">R\u00e9cits du Coran</div>';
-  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;font-style:italic;color:#B5A685;margin-top:6px;">R\u00e9cit ' + Math.min(progress, total) + ' / ' + total + '</div>';
-  html += '</div>';
-  html += '<div id="recits-list" style="flex:1;overflow-y:auto;padding:0 20px calc(20px + var(--safe-bot,0px));-webkit-overflow-scrolling:touch;">';
-  data.forEach(function(r) {
-    var T = function(f) { return (f && f.fr) ? f.fr : ''; };
-    var isRead = r.num < progress;
-    var isCurrent = r.num === progress;
-    var isLocked = r.num > progress;
-    var borderColor = isCurrent ? 'rgba(200,168,75,0.4)' : 'rgba(200,168,75,0.1)';
-    var bg = isCurrent ? 'rgba(200,168,75,0.1)' : isRead ? 'rgba(200,168,75,0.03)' : 'rgba(255,255,255,0.02)';
-    var opacity = isLocked ? 'opacity:0.35;' : '';
-    var click = isLocked ? '' : ' onclick="_openRecitDetail(' + r.num + ')"';
-    var cursor = isLocked ? 'cursor:default;' : 'cursor:pointer;';
-    var touchStart = isLocked ? '' : ' ontouchstart="this.style.opacity=\'0.7\'"';
-    var touchEnd = isLocked ? '' : ' ontouchend="this.style.opacity=\'1\'"';
-    html += '<div id="recit-card-' + r.num + '"' + click + ' style="padding:16px;background:' + bg + ';border:1px solid ' + borderColor + ';border-radius:14px;margin-bottom:10px;' + cursor + opacity + 'display:flex;align-items:center;gap:14px;"' + touchStart + touchEnd + '>';
-    var numContent = isRead ? '\u2713' : r.num;
-    var numBg = isCurrent ? 'rgba(200,168,75,0.2)' : isRead ? 'rgba(200,168,75,0.12)' : 'rgba(255,255,255,0.06)';
-    var numColor = isLocked ? 'rgba(255,255,255,0.3)' : '#C8A84A';
-    html += '<div style="width:36px;height:36px;border-radius:10px;background:' + numBg + ';display:flex;align-items:center;justify-content:center;font-family:\'Cormorant Garamond\',serif;font-size:14px;color:' + numColor + ';flex-shrink:0;">' + numContent + '</div>';
-    var titleColor = isCurrent ? '#C8A84A' : isRead ? 'rgba(200,168,75,0.6)' : 'rgba(255,255,255,0.4)';
-    html += '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;color:' + titleColor + ';' + (isRead ? 'text-decoration:line-through;text-decoration-color:rgba(200,168,75,0.2);' : '') + '">' + T(r.titre) + '</div>';
-    html += '<div style="font-size:12px;color:' + (isLocked ? 'rgba(181,166,133,0.3)' : '#B5A685') + ';margin-top:2px;">' + (r.theme || '') + '</div></div>';
-    if (!isLocked) html += '<div style="color:rgba(200,168,75,0.5);font-size:18px;flex-shrink:0;">\u203A</div>';
-    if (isLocked) html += '<div style="color:rgba(255,255,255,0.15);font-size:14px;flex-shrink:0;">\u2726</div>';
+  ov.style.cssText = 'position:fixed;inset:0;z-index:3000;background:#0a0a0a;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;';
+  if (!nextToRead) {
+    var html = '<div style="text-align:center;padding:40px 24px;max-width:340px;">';
+    html += '<div style="font-family:Amiri,serif;font-size:28px;color:#C8A84A;direction:rtl;margin-bottom:16px;">\u0642\u064E\u0635\u064E\u0635\u064F \u0627\u0644\u0642\u064F\u0631\u0622\u0646</div>';
+    html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:#E5E0DC;line-height:1.6;margin-bottom:8px;">';
+    if (progress > total) {
+      html += 'Tu as travers\u00e9 les 20 r\u00e9cits.<br>Alhamdulill\u0101h.';
+    } else {
+      html += 'Reviens demain,<br>in sh\u0101\u2019 All\u0101h.';
+    }
     html += '</div>';
-  });
-  html += '</div>';
-  html += '<button onclick="document.getElementById(\'recits-coran-overlay\').remove();" style="position:absolute;top:calc(var(--safe-top,0px) + 12px);right:16px;background:none;border:none;color:#B5A685;font-size:24px;cursor:pointer;z-index:1;">\u2715</button>';
-  ov.innerHTML = html;
-  document.body.appendChild(ov);
-  setTimeout(function() {
-    var card = document.getElementById('recit-card-' + progress);
-    if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }, 100);
+    html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;color:#B5A685;margin-bottom:32px;">R\u00e9cit ' + Math.min(progress, total) + ' / ' + total + '</div>';
+    html += '<button onclick="document.getElementById(\'recits-coran-overlay\').remove();" style="padding:12px 32px;border:1px solid rgba(200,168,75,0.2);border-radius:12px;background:transparent;color:#B5A685;font-family:\'Cormorant Garamond\',serif;font-size:13px;cursor:pointer;">Fermer</button>';
+    html += '</div>';
+    ov.innerHTML = html;
+    document.body.appendChild(ov);
+    return;
+  }
+  _openRecitDetail(nextToRead);
 }
 function _openRecitDetail(num) {
   if (!_recitsCoranData) return;
   var recit = _recitsCoranData.find(function(r) { return r.num === num; });
   if (!recit) return;
   var T = function(f) { return (f && f.fr) ? f.fr : ''; };
-  var ov = document.getElementById('recits-coran-overlay');
-  if (!ov) return;
+  var existing = document.getElementById('recits-coran-overlay');
+  if (existing) existing.remove();
+  var ov = document.createElement('div');
+  ov.id = 'recits-coran-overlay';
+  ov.style.cssText = 'position:fixed;inset:0;z-index:3000;background:#0a0a0a;display:flex;flex-direction:column;overflow:hidden;';
+  var progress = _getRecitsProgress();
+  var total = _recitsCoranData.length;
   var html = '<div style="padding:calc(var(--safe-top,0px) + 16px) 20px 12px;text-align:center;">';
-  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:4px;">R\u00e9cit ' + recit.num + '</div>';
+  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:4px;">R\u00e9cit ' + recit.num + ' / ' + total + '</div>';
   html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:24px;font-style:italic;color:#E5E0DC;margin-bottom:4px;">' + T(recit.titre) + '</div>';
   html += '<div style="font-size:12px;color:#B5A685;">' + (recit.theme || '') + '</div>';
   html += '</div>';
@@ -7222,14 +7224,15 @@ function _openRecitDetail(num) {
     if (src) html += '<div style="text-align:center;font-size:12px;color:rgba(200,168,75,0.4);margin-bottom:16px;">' + src + '</div>';
   }
   html += '</div>';
-  html += '<button onclick="_closeRecitDetail(' + num + ');" style="position:absolute;top:calc(var(--safe-top,0px) + 12px);left:16px;background:none;border:none;color:#C8A84A;font-size:22px;cursor:pointer;z-index:1;">\u2039</button>';
   html += '<button onclick="_closeRecitDetail(' + num + ');" style="position:absolute;top:calc(var(--safe-top,0px) + 12px);right:16px;background:none;border:none;color:#B5A685;font-size:24px;cursor:pointer;z-index:1;">\u2715</button>';
   ov.innerHTML = html;
+  document.body.appendChild(ov);
 }
 function _closeRecitDetail(num) {
   var progress = _getRecitsProgress();
   if (num === progress) {
     _saveRecitsProgress(progress + 1);
+    _recitsMarkReadToday();
     _recitsValidateItem();
     showToast('R\u00e9cit ' + num + ' termin\u00e9 \u2726');
   }
