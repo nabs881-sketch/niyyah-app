@@ -11391,11 +11391,16 @@ function _settingsCheminInfo() {
   var dateStr = installTs ? new Date(installTs).toLocaleDateString(_dateLocale(), { day: 'numeric', month: 'long', year: 'numeric' }) : '';
   var evolPath = safeGetItem('niyyah_evolution_path');
   var html = '';
+  var evolCompletTs = safeGetItem('niyyah_evolution_path_complet');
   if (evolPath && dateStr) {
     var initLabel = labels[evolPath] || evolPath;
     var evolTs = parseInt(safeGetItem('niyyah_evolution_date') || '0', 10);
     var evolDate = evolTs ? new Date(evolTs).toLocaleDateString(_dateLocale(), { day: 'numeric', month: 'long', year: 'numeric' }) : '';
     html = 'Tu es ' + label + (evolDate ? ' depuis le ' + evolDate : '') + '.<br>Tu as commenc\u00e9 par ' + initLabel + ' le ' + dateStr + '.';
+    if (evolCompletTs) {
+      var compDate = new Date(parseInt(evolCompletTs, 10)).toLocaleDateString(_dateLocale(), { day: 'numeric', month: 'long', year: 'numeric' });
+      html += '<br>Pass\u00e9 en Complet le ' + compDate + '.';
+    }
   } else if (dateStr) {
     html = 'Tu es ' + label + ' depuis le ' + dateStr + '.';
   }
@@ -13451,16 +13456,18 @@ function showEvolutionModalRoutine() {
   ov.id = 'evolution-modal-routine';
   ov.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(10,8,5,0.92);display:flex;align-items:center;justify-content:center;padding:24px;';
   ov.innerHTML = '<div style="max-width:340px;width:100%;text-align:center;">'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.7);line-height:1.6;margin-bottom:8px;">\u00ab\u00a0Et pour chaque communaut\u00e9 il y a une direction vers laquelle elle se tourne.\u00a0\u00bb</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;color:rgba(200,168,75,0.4);margin-bottom:24px;">Coran 2:148</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.7);line-height:1.6;margin-bottom:8px;">\u00ab\u00a0Ceux qui disent : notre Seigneur est All\u00e2h, puis se tiennent droits \u2014 les anges descendent sur eux.\u00a0\u00bb</div>'
+    + '<div style="font-family:Amiri,serif;font-size:18px;color:rgba(200,168,75,0.5);direction:rtl;line-height:1.8;margin-bottom:4px;">\u0625\u0650\u0646\u0651\u064E \u0627\u0644\u0651\u064E\u0630\u0650\u064A\u0646\u064E \u0642\u064E\u0627\u0644\u064F\u0648\u0627 \u0631\u064E\u0628\u0651\u064F\u0646\u064E\u0627 \u0627\u0644\u0644\u0651\u064E\u0647\u064F \u062B\u064F\u0645\u0651\u064E \u0627\u0633\u0652\u062A\u064E\u0642\u064E\u0627\u0645\u064F\u0648\u0627</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;color:rgba(200,168,75,0.4);margin-bottom:24px;">Coran 41:30</div>'
     + '<div style="font-family:Amiri,serif;font-size:28px;color:#C8A84A;direction:rtl;margin-bottom:20px;">\u0646\u0650\u064A\u0651\u064E\u0629</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;color:#E5E0DC;line-height:1.7;margin-bottom:32px;">Voil\u00e0 quatre-vingt-dix jours.<br>Tu es r\u00e9gulier. Tu es ancr\u00e9.<br><br><span style="font-style:italic;color:#B5A685;">Niyyah peut maintenant t\u2019accompagner dans la compl\u00e9tude, si tu le souhaites.</span></div>'
-    + '<button id="evolution-routine-accept" style="width:100%;padding:14px;border:none;border-radius:12px;background:#C8A84A;color:#2C2E32;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-weight:600;cursor:pointer;margin-bottom:10px;">Compl\u00e9ter</button>'
-    + '<button id="evolution-routine-refuse" style="width:100%;padding:12px;border:1px solid rgba(200,168,75,0.2);border-radius:12px;background:transparent;color:#B5A685;font-family:\'Cormorant Garamond\',serif;font-size:13px;cursor:pointer;">Rester dans ce chemin</button>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;color:#E5E0DC;line-height:1.7;margin-bottom:32px;">Voil\u00e0 quatre-vingt-dix jours.<br>Tu tiens. Ton chemin s\u2019\u00e9largit.<br><br><span style="font-style:italic;color:#B5A685;">Niyyah peut maintenant t\u2019accompagner dans la compl\u00e9tude, si tu le souhaites.</span></div>'
+    + '<button id="evolution-routine-accept" style="width:100%;padding:14px;border:none;border-radius:12px;background:#C8A84A;color:#2C2E32;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-weight:600;cursor:pointer;margin-bottom:10px;">Embrasser tout</button>'
+    + '<button id="evolution-routine-refuse" style="width:100%;padding:12px;border:1px solid rgba(200,168,75,0.2);border-radius:12px;background:transparent;color:#B5A685;font-family:\'Cormorant Garamond\',serif;font-size:13px;cursor:pointer;">Rester ainsi</button>'
     + '</div>';
   document.body.appendChild(ov);
   document.getElementById('evolution-routine-accept').onclick = function() {
-    if (!safeGetItem('niyyah_evolution_path')) safeSetItem('niyyah_evolution_path', safeGetItem('niyyah_motivation') || 'routine');
+    safeSetItem('niyyah_evolution_path_complet', String(Date.now()));
+    if (!safeGetItem('niyyah_evolution_path')) safeSetItem('niyyah_evolution_path', 'routine');
     safeSetItem('niyyah_evolution_date', String(Date.now()));
     safeSetItem('niyyah_motivation', 'sacraliser');
     localStorage.removeItem('niyyah_welcome_shown');
