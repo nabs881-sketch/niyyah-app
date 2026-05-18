@@ -11283,6 +11283,28 @@ function renderOrientationCards() {
   container.insertAdjacentHTML('beforeend', _orientCardHtml('sacraliser', '\u0646\u0650\u064A\u0651\u064E\u0629', t('ob_motiv_sacraliser'), t('ob_motiv_sacraliser_sub')));
 }
 function selectOrientation(value) {
+  var current = localStorage.getItem('niyyah_motivation');
+  if (current && current !== value) {
+    _showOrientConfirm(value);
+    return;
+  }
+  _applyOrientation(value);
+}
+function _showOrientConfirm(value) {
+  var ov = document.createElement('div');
+  ov.id = 'orient-confirm';
+  ov.style.cssText = 'position:fixed;inset:0;z-index:10003;background:rgba(10,8,5,0.92);display:flex;align-items:center;justify-content:center;padding:24px;';
+  ov.innerHTML = '<div style="max-width:320px;width:100%;text-align:center;">'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;color:#C8A84A;margin-bottom:12px;">Changer de chemin</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;color:#B5A685;line-height:1.6;margin-bottom:28px;">Niyyah s\u2019adaptera \u00e0 ton nouveau chemin. Tes d\u00e9fis en cours seront remplac\u00e9s.</div>'
+    + '<button id="orient-confirm-yes" style="width:100%;padding:14px;border:none;border-radius:12px;background:#C8A84A;color:#2C2E32;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-weight:600;cursor:pointer;margin-bottom:10px;">Confirmer</button>'
+    + '<button id="orient-confirm-no" style="width:100%;padding:12px;border:1px solid rgba(200,168,75,0.2);border-radius:12px;background:transparent;color:#B5A685;font-family:\'Cormorant Garamond\',serif;font-size:13px;cursor:pointer;">Annuler</button>'
+    + '</div>';
+  document.body.appendChild(ov);
+  document.getElementById('orient-confirm-yes').onclick = function() { ov.remove(); _applyOrientation(value); };
+  document.getElementById('orient-confirm-no').onclick = function() { ov.remove(); };
+}
+function _applyOrientation(value) {
   localStorage.setItem('niyyah_motivation', value);
   localStorage.removeItem('niyyah_welcome_shown');
   localStorage.removeItem('niyyah_defi_v2');
