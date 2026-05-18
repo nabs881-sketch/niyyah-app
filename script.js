@@ -1523,9 +1523,13 @@ if (state._date !== TODAY) {
 }
 if (!state._unlocked) state._unlocked = [1];
 if (state._unlocked.length < 4) { [1,2,3,4].forEach(function(id) { if (!state._unlocked.includes(id)) state._unlocked.push(id); }); saveState(); }
+function _itemMatchesProfile(item) {
+  var m = getEffectiveMotiv();
+  return !m || !item.paths || item.paths.includes(m);
+}
 function getCalcLvlPct(lvlId, s) {
   const lvl = LEVELS.find(l => l.id === lvlId);
-  const items = lvl.sections.flatMap(sec => sec.items);
+  const items = lvl.sections.flatMap(sec => sec.items).filter(_itemMatchesProfile);
   const weights = {
     fajr:3,dhuhr:3,asr:3,maghrib:3,isha:3,jumua:3,
     wird_matin:2,wird_soir:2,ayat_kursi:2,
@@ -3250,7 +3254,7 @@ function renderProgression() {
     heatmapHTML += '<div style="width:8px;height:8px;border-radius:2px;background:' + color + ';' + (isToday ? 'box-shadow:0 0 6px rgba(200,168,75,0.6);' : '') + '" title="' + dStr + ' · ' + dayPct + '%"></div>';
   }
   // === HERO JOURNÉE (fusion avec ancien Bilan) ===
-  const allItemsP = LEVELS.flatMap(l => l.sections.flatMap(s => s.items));
+  const allItemsP = LEVELS.flatMap(l => l.sections.flatMap(s => s.items)).filter(_itemMatchesProfile);
   const totalDoneP = allItemsP.filter(item => { try { return isItemDone(item, state); } catch(e) { return item.type==='counter'?(state[item.id]||0)>=item.target:!!state[item.id]; } }).reduce((sum,i)=>{ try{return sum+getWeight(i.id);}catch(e){return sum+1;} },0);
   const totalAllP  = allItemsP.reduce((sum,i)=>{ try{return sum+getWeight(i.id);}catch(e){return sum+1;} },0);
   let lvlGridP='';
