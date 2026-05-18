@@ -10552,8 +10552,9 @@ function _nafsGetObservations() {
   try { return JSON.parse(localStorage.getItem('nafs_observations') || '[]'); } catch(e) { return []; }
 }
 
+function _nafsLocalDate(d) { return d.getFullYear() + '-' + _pad2(d.getMonth() + 1) + '-' + _pad2(d.getDate()); }
 function _nafsAlreadyToday(traitId) {
-  var today = new Date().toISOString().slice(0, 10);
+  var today = _nafsLocalDate(new Date());
   return _nafsGetObservations().some(function(o) { return o.traitId === traitId && o.date === today; });
 }
 
@@ -10563,7 +10564,7 @@ function _nafsCountThisWeek(traitId) {
   var monday = new Date(now);
   monday.setDate(now.getDate() - dayOfWeek + 1);
   monday.setHours(0,0,0,0);
-  var mondayStr = monday.toISOString().slice(0, 10);
+  var mondayStr = _nafsLocalDate(monday);
   return _nafsGetObservations().filter(function(o) { return o.traitId === traitId && o.date >= mondayStr; }).length;
 }
 
@@ -10578,7 +10579,7 @@ function _nafsGetWeekMap(traitId) {
   for (var d = 0; d < 7; d++) {
     var date = new Date(monday);
     date.setDate(monday.getDate() + d);
-    var dateStr = date.toISOString().slice(0, 10);
+    var dateStr = _nafsLocalDate(date);
     var match = null;
     for (var i = 0; i < obs.length; i++) {
       if (obs[i].date === dateStr) { match = obs[i]; break; }
@@ -10630,7 +10631,7 @@ function nafsObserve(traitId) {
   if (_nafsAlreadyToday(traitId)) return;
   var noteEl = document.getElementById('nafs-note-input');
   var note = noteEl ? noteEl.value.trim().slice(0, 100) : '';
-  var today = new Date().toISOString().slice(0, 10);
+  var today = _nafsLocalDate(new Date());
   var obs = _nafsGetObservations();
   obs.push({ traitId: traitId, date: today, note: note });
   if (obs.length > 365) obs = obs.slice(-365);
