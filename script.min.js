@@ -14842,7 +14842,8 @@ function openVueAuFilDuJour() {
       : it.coranPicker ? 'openCoranPicker(event);'
       : 'toggleItem(\'' + it.id + '\',event); openVueAuFilDuJour();';
     var _filKnBg = _isKnowledgeFil ? ' style="background:rgba(200,168,75,0.08);border-color:rgba(200,168,75,0.2);"' : '';
-    return '<div class="rituel-item ' + done + '"' + _filKnBg + ' id="rituel-item-' + it.id + '" onclick="' + _click + '"><div class="check"></div><div style="flex:1"><div class="label">' + (it.label||it.id) + '</div>' + sub + ar + '</div>' + _readBtn + _coranBtn + audio + '</div>';
+    var _checkClick = _isKnowledgeFil ? ' onclick="event.stopPropagation();toggleItem(\'' + it.id + '\',event);openVueAuFilDuJour();"' : '';
+    return '<div class="rituel-item ' + done + '"' + _filKnBg + ' id="rituel-item-' + it.id + '" onclick="' + _click + '"><div class="check"' + _checkClick + '></div><div style="flex:1"><div class="label">' + (it.label||it.id) + '</div>' + sub + ar + '</div>' + _readBtn + _coranBtn + audio + '</div>';
   };
   var _html = '';
   _catOrder.forEach(function(cat) {
