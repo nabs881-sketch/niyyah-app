@@ -570,6 +570,7 @@ to {
   flex-shrink:0;
   margin:2px 0;
   position:relative;
+  z-index:1;
   cursor:pointer;
   -webkit-tap-highlight-color:transparent;
   transition:all 0.25s cubic-bezier(0.34,1.56,0.64,1);
