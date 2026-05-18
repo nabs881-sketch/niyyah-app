@@ -1449,10 +1449,10 @@ const LEVELS = [
         { id: 'coran_ecoute', minVague: 3, label: '\u00c9couter le Coran', sub: 'Choisis une sourate et \u00e9coute', arabic: '\u062A\u0650\u0644\u0627\u0648\u064E\u0629\u064F \u0627\u0644\u0642\u064F\u0631\u0622\u0646\u0650', optional: true, coranPicker: true, filDuJour: true, paths: ['reconnecter','routine','sacraliser'], block: 'jour', category: 'science', hadith: '"R\u00e9cite le Coran car il interc\u00e9dera pour ses compagnons le Jour du Jugement" \u2014 Muslim 804', source: 'Muslim 804' },
         { id: 'podcast', minVague: 4, label: 'Podcast islamique', sub: 'Une \u00e9coute libre', paths: ['sacraliser'], block: 'jour', category: 'science' },
       ], links: [
-        { label: 'Vie du Prophète ﷺ', sub: "La vie du Prophète Mohammad ﷺ · Podcast", url: 'https://podcasts.apple.com/fr/podcast/la-vie-du-proph%C3%A8te-mohammad-%EF%B7%BA/id1804853747', icon: '🎙' },
-        { label: 'Islam Simplement', sub: 'Podcast · Écouter maintenant', url: 'https://open.spotify.com/search/islam%20simplement', icon: '🎙' },
-        { label: "L'Arabe Simplement", sub: 'Chaîne YouTube · Arabe coranique', url: 'https://www.youtube.com/@larabesimplement', icon: '📖' },
-        { label: 'Hadith Podcast', sub: 'Hadiths authentiques · YouTube', url: 'https://www.youtube.com/watch?v=G7xdRzxyK1k&list=PLuTJKEpEkfuU-Qo4m69wKGjCWb_p_uAij', icon: '🎙' },
+        { label: 'Vie du Proph\u00e8te \uFDFA', sub: 'Podcast \u00b7 S\u00eera', url: 'https://podcasts.apple.com/fr/podcast/la-vie-du-proph%C3%A8te-mohammad-%EF%B7%BA/id1804853747', iconType: 'lecture' },
+        { label: 'Islam Simplement', sub: 'Podcast \u00b7 Sujets vari\u00e9s', url: 'https://open.spotify.com/search/islam%20simplement', iconType: 'lecture' },
+        { label: "L'Arabe Simplement", sub: 'YouTube \u00b7 Arabe coranique', url: 'https://www.youtube.com/@larabesimplement', iconType: 'lecture' },
+        { label: 'Hadith Podcast', sub: 'YouTube \u00b7 Hadiths', url: 'https://www.youtube.com/watch?v=G7xdRzxyK1k&list=PLuTJKEpEkfuU-Qo4m69wKGjCWb_p_uAij', iconType: 'lecture' },
       ]},
       { icon: '🌙', title: 'Pratiques avancées', items: [
         { id: 'sunnah_jejune', minVague: 4, label: 'Jeûne sunnah', sub: 'Lundi ou jeudi — sunnah du Prophète', arabic: 'صَوْمُ الِاثْنَيْنِ وَالْخَمِيسِ', optional: true, paths: ['routine','sacraliser'], block: 'jour', category: 'rituels', hadith: '\"Les actes sont présentés à Allah le lundi et jeudi, j\'aime jeûner ces jours-là\" — Tirmidhi 747', source: 'Tirmidhi 747' },
@@ -2660,7 +2660,8 @@ function renderLevel(levelId) {
     html += '</div>';
     if (section.links) {
       section.links.forEach(link => {
-        html += '<a class="link-item" href="' + link.url + '" target="_blank" rel="noopener"><div class="link-icon-wrap">' + link.icon + '</div><div><div class="link-label">' + link.label + '</div><div class="link-sub">' + link.sub + '</div></div><div class="link-arrow">›</div></a>';
+        var _linkIcon = link.iconType ? niyyahIcon(link.iconType, 18) : (link.icon || '\u2726');
+        html += '<a class="link-item" href="' + link.url + '" target="_blank" rel="noopener"><div class="link-icon-wrap">' + _linkIcon + '</div><div><div class="link-label">' + link.label + '</div><div class="link-sub">' + link.sub + '</div></div><div class="link-arrow">\u203A</div></a>';
       });
     }
     html += '</div>';
