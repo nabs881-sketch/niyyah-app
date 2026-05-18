@@ -3416,14 +3416,6 @@ to {
 .onboard-screen.hidden {
   display:none
 }
-.onboard-dots {
-  display:flex;
-  gap:6px;
-  position:absolute;
-  top:calc(var(--safe-top)+24px);
-  left:50%;
-  transform:translateX(-50%)
-}
 .onboard-dot {
   width:6px;
   height:6px;

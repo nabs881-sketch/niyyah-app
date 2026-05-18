@@ -619,7 +619,7 @@ function openDefiSelector() {
       var body2 = document.getElementById('defiSelectorBody');
       if (!ov2 || !body2) return;
       body2.innerHTML = '<div style="text-align:center;padding:30px 16px;">'
-        + '<div style="font-size:28px;margin-bottom:14px;">' + (defiActif ? defiActif.icon : '✦') + '</div>'
+        + '<div style="font-size:28px;margin-bottom:14px;color:#C8A84A;">\u2726</div>'
         + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:600;color:#C8A84A;margin-bottom:8px;">' + (defiActif ? tD(defiActif) : 'Défi en cours') + '</div>'
         + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#B0A080;line-height:1.6;margin-bottom:20px;">Ton défi est ta niyyah de la semaine.<br>Tiens-le jusqu\'à dimanche, in sha Allah ✦</div>'
         + '<button onclick="closeDefiSelector()" style="padding:12px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:1px;cursor:pointer;" aria-label="Fermer">'+t('modal_close')+'</button>'
@@ -648,7 +648,7 @@ function openDefiSelector() {
     html += '<div onclick="confirmerDefi(' + suggestion.id + ')" style="background:rgba(200,168,75,0.09);border:1px solid rgba(200,168,75,0.3);border-radius:12px;padding:14px 16px;cursor:pointer;position:relative;overflow:hidden;transition:all 0.2s;" ontouchstart="this.style.opacity=0.8" ontouchend="this.style.opacity=1">';
     html += '<div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(200,168,75,0.6),transparent);"></div>';
     html += '<div style="display:flex;align-items:center;gap:12px;">';
-    html += '<div style="width:44px;height:44px;background:rgba(200,168,75,0.12);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;">' + suggestion.icon + '</div>';
+    html += '<div style="width:44px;height:44px;background:rgba(200,168,75,0.12);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;color:#C8A84A;">\u2726</div>';
     html += '<div style="flex:1;min-width:0;">';
     html += '<div style="font-size:14px;font-weight:600;color:#fff;margin-bottom:4px;line-height:1.3;">' + tD(suggestion) + '</div>';
     html += '<div style="display:flex;align-items:center;gap:8px;">';
@@ -673,7 +673,7 @@ function openDefiSelector() {
     html += '<div id="defiList_' + diff + '" style="display:' + (diff === 'facile' ? 'flex' : 'none') + ';flex-direction:column;gap:7px;">';
     for (const d of defis) {
       html += '<div onclick="confirmerDefi(' + d.id + ')" style="display:flex;align-items:center;gap:12px;background:rgba(255,255,255,0.03);border:0.5px solid rgba(255,255,255,0.07);border-radius:12px;padding:11px 14px;cursor:pointer;transition:all 0.15s;" ontouchstart="this.style.opacity=0.8" ontouchend="this.style.opacity=1">';
-      html += '<div style="font-size:18px;width:36px;height:36px;background:' + diffBg[diff] + ';border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">' + d.icon + '</div>';
+      html += '<div style="font-size:14px;width:36px;height:36px;background:' + diffBg[diff] + ';border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#C8A84A;">\u2726</div>';
       html += '<div style="flex:1;min-width:0;">';
       html += '<div style="font-size:13px;color:rgba(255,255,255,0.88);line-height:1.3;">' + tD(d) + '</div>';
       html += '<div style="font-size:12px;color:rgba(255,255,255,0.55);margin-top:2px;">' + d.cible + ' ' + d.unite + '</div>';
@@ -787,7 +787,7 @@ function openDefiLundiModal() {
   if (!courant.defi) return;
   var nom = document.getElementById('defi-nom-lundi');
   var desc = document.getElementById('defi-desc-lundi');
-  if (nom) nom.textContent = courant.defi.icon + ' ' + tD(courant.defi);
+  if (nom) nom.textContent = tD(courant.defi);
   if (desc) desc.textContent = courant.defi.ref || '';
   var s = courant.state;
   _initNiveauActuel(s);
@@ -912,7 +912,7 @@ function renderDefiCard() {
 function renderDefiOverlay() {
   const { defi, state } = getDefiCourant();
   if (!defi) return;
-  document.getElementById('defiOvIcon').textContent = defi.icon;
+  document.getElementById('defiOvIcon').textContent = '\u2726';
   document.getElementById('defiOvTitre').textContent = tD(defi);
   // Ref
   const refEl = document.getElementById('defiOvRef');
@@ -9064,6 +9064,8 @@ function onboardRender() {
   requestAnimationFrame(function() {
     var content = document.getElementById('onboardContent');
     if (content && ONBOARD_SLIDES[slideIdx]) content.innerHTML = ONBOARD_SLIDES[slideIdx]();
+    var _obScreen = document.getElementById('onboardScreen');
+    if (_obScreen) _obScreen.scrollTop = 0;
     [0,1,2,3,4,5].forEach(function(i) {
       var dot = document.getElementById('dot' + i);
       if (dot) dot.className = 'onboard-dot' + (i === slideIdx ? ' active' : '');
