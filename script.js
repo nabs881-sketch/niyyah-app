@@ -1442,6 +1442,7 @@ const LEVELS = [
         { id: 'quran_read', minVague: 3, label: 'Lecture du Coran', get sub() { return 'Verset ' + _getVersetProgress() + ' / 6236'; }, arabic: '\u0642\u0650\u0631\u064E\u0627\u0621\u064E\u0629\u064F \u0627\u0644\u0652\u0642\u064F\u0631\u0652\u0622\u0646\u0650', paths: ['routine','sacraliser'], block: 'jour', category: 'science' },
         { id: 'arabic', minVague: 4, label: "Apprentissage de l'arabe", sub: 'Quelques minutes par jour', arabic: '\u062A\u064E\u0639\u064E\u0644\u0651\u064F\u0645\u064F \u0627\u0644\u0652\u0639\u064E\u0631\u064E\u0628\u0650\u064A\u0651\u064E\u0629\u0650', paths: ['sacraliser'], block: 'jour', category: 'science' },
         { id: 'vie_prophetes', minVague: 4, label: 'Histoires des Proph\u00e8tes', get sub() { var p = getPropheteJour(); if (!p.prophete) return 'Nouh, Ibrahim, Moussa, Issa\u2026'; var ep = p.episode_num ? ' \u2014 \u00c9p. ' + p.episode_num + '/' + p.episode_total : ''; return p.prophete + ep + ' \u2014 ' + (p.titre || '') + ' \u00b7 Jour ' + (p.jour || '?') + '/77'; }, arabic: '\u0642\u064E\u0635\u064E\u0635\u064F \u0627\u0644\u0623\u064E\u0646\u0628\u0650\u064A\u064E\u0627\u0621\u0650', paths: ['routine','sacraliser'], block: 'jour', category: 'science', hadith: '"Nous te racontons le meilleur des r\u00e9cits" \u2014 Coran 12:3', source: 'Yusuf 12:3' },
+        { id: 'recits_coran', minVague: 3, label: 'R\u00e9cits du Coran', sub: 'Histoires et paraboles r\u00e9v\u00e9l\u00e9es', arabic: '\u0642\u064E\u0635\u064E\u0635\u064F \u0627\u0644\u0642\u064F\u0631\u0622\u0646', paths: ['reconnecter','routine','sacraliser'], block: 'jour', category: 'science' },
         { id: 'vie_compagnons', minVague: 4, label: 'Vie des Compagnons', get sub() { var c = getCompagnonJour(); if (!c.compagnon) return 'Abu Bakr, Omar, Othman, Ali\u2026'; var ep = c.episode_num ? ' \u2014 \u00c9p. ' + c.episode_num + '/' + c.episode_total : ''; return c.compagnon + ep + ' \u2014 ' + (c.titre || '') + ' \u00b7 Jour ' + (c.jour || '?') + '/82'; }, arabic: '\u0633\u0650\u064A\u064E\u0631\u064F \u0627\u0644\u0635\u0651\u064E\u062D\u064E\u0627\u0628\u064E\u0629\u0650', paths: ['routine','sacraliser'], block: 'jour', category: 'science', hadith: '"Mes Compagnons sont comme les \u00e9toiles \u2014 qui que vous suiviez, vous serez guid\u00e9s" \u2014 Bayhaqi', source: 'Bayhaqi' },
         { id: 'fiqh_jour', minVague: 4, label: 'Jurisprudence \u2014 1 r\u00e8gle du jour', get sub() { var f = getFiqhJourRule(); var t = (f.regle || '').substring(0,50); return t ? t + '\u2026' : 'Une r\u00e8gle pratique'; }, arabic: '\u0641\u0650\u0642\u0652\u0647\u064C', paths: ['sacraliser'], block: 'jour', category: 'science' },
         { id: 'savais_tu', minVague: 4, label: 'Le savais-tu ?', get sub() { var f = getSavaisTuFact(); var t = (f.texte || '').substring(0,50); return t ? t + '\u2026' : 'Une perle du savoir'; }, arabic: 'هَلْ تَعْلَمُ؟', paths: ['sacraliser'], block: 'jour', category: 'science' },
@@ -2623,7 +2624,7 @@ function renderLevel(levelId) {
         const _tlCurrent = (!checked && !_firstUncheckedFound) ? (_firstUncheckedFound = true, ' timeline-current') : '';
         const _tlOpacity = checked ? 'opacity:0.3;' : '';
         var _tl = tI(item,'label'), _ts = tI(item,'sub');
-        var _isKnowledge = ['savais_tu','fiqh_jour','hadith1','duaa_jour','vie_compagnons','vie_prophetes','quran_read','sira','podcast'].indexOf(item.id) !== -1;
+        var _isKnowledge = ['savais_tu','fiqh_jour','hadith1','duaa_jour','vie_compagnons','vie_prophetes','quran_read','sira','podcast','recits_coran'].indexOf(item.id) !== -1;
         var _checkClick = _isKnowledge ? ' onclick="event.stopPropagation();toggleItem(\'' + item.id + '\',event)"' : '';
         var _knowledgeBg = _isKnowledge ? 'background:rgba(200,168,75,0.08);' : '';
         const customClick = item.id === 'savais_tu'
@@ -2644,6 +2645,8 @@ function renderLevel(levelId) {
           ? 'SIRA.openDetail();'
           : item.id === 'podcast'
           ? 'openPodcastPicker();'
+          : item.id === 'recits_coran'
+          ? 'openVueRecitsCoran();'
           : 'toggleItem(\'' + item.id + '\',event)';
         var shareBtn = '';
         if (_isKnowledge) {
@@ -7104,6 +7107,11 @@ function openPodcastPicker() {
   document.body.appendChild(ov);
 }
 window.openPodcastPicker = openPodcastPicker;
+
+function openVueRecitsCoran() {
+  showToast('Bient\u00f4t disponible');
+}
+window.openVueRecitsCoran = openVueRecitsCoran;
 
 function filterSourates(q) {
   const filtered = SOURATES.filter(s =>
@@ -11763,6 +11771,7 @@ var ITEMS_I18N = {
     quran_read:{l:'Quran reading',s:'At least 1 page per day'},
     arabic:{l:'Arabic learning',s:'10 min \u00b7 Vocabulary or grammar'},
     vie_prophetes:{l:'Lives of the Prophets',s:'Ibrahim, Moussa, Issa\u2026'},
+    recits_coran:{l:'Stories of the Quran',s:'Revealed stories and parables'},
     vie_compagnons:{l:'Lives of the Companions',s:'Abu Bakr, Omar, Othman, Ali\u2026'},
     fiqh_jour:{l:'Jurisprudence \u2014 1 rule of the day',s:'Learn 1 fiqh rule today'},
     savais_tu:{l:'Did you know?',s:'An Islamic culture fact'},
@@ -14860,7 +14869,7 @@ function openVueAuFilDuJour() {
     const ar = it.arabic ? '<div class="arabic">' + it.arabic + '</div>' : '';
     const sub = it.sub ? '<div class="sub">' + it.sub + '</div>' : '';
     const audio = it.audio ? '<button class="btn-audio" data-audio-id="' + it.id + '" onclick="event.stopPropagation();playAudioById(this)">🔊</button>' : '';
-    var _knowledgeIds = ['savais_tu','fiqh_jour','hadith1','duaa_jour','vie_compagnons','vie_prophetes','quran_read','sira','podcast'];
+    var _knowledgeIds = ['savais_tu','fiqh_jour','hadith1','duaa_jour','vie_compagnons','vie_prophetes','quran_read','sira','podcast','recits_coran'];
     var _isKnowledgeFil = _knowledgeIds.indexOf(it.id) !== -1;
     var _coranBtn = it.coranPicker ? '<button class="btn-audio" onclick="event.stopPropagation();openCoranPicker(event)" style="font-size:12px;padding:4px 10px;width:auto;white-space:nowrap;font-family:\'Cormorant Garamond\',serif;color:#C8A84A;border:1px solid rgba(200,168,75,0.3);border-radius:8px;background:transparent;cursor:pointer;">\u00c9couter</button>' : '';
     var _click = it.id === 'sira' ? 'SIRA.openDetail();'
@@ -14872,6 +14881,7 @@ function openVueAuFilDuJour() {
       : it.id === 'vie_prophetes' ? 'openVuePropheteJour();'
       : it.id === 'quran_read' ? 'openVueVersetJour();'
       : it.id === 'podcast' ? 'openPodcastPicker();'
+      : it.id === 'recits_coran' ? 'openVueRecitsCoran();'
       : it.coranPicker ? 'openCoranPicker(event);'
       : 'toggleItem(\'' + it.id + '\',event); openVueAuFilDuJour();';
     var _readBtn = _isKnowledgeFil ? '<button style="background:none;border:none;cursor:pointer;flex-shrink:0;align-self:center;padding:8px 4px;margin:0;position:relative;z-index:10;isolation:isolate;" onclick="event.stopPropagation();' + _click + '"><svg width="14" height="22" viewBox="0 0 14 22" style="pointer-events:none;" aria-hidden="true"><path d="M3 4 L10 11 L3 18" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>' : '';
