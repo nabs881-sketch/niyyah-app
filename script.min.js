@@ -2633,10 +2633,6 @@ function renderLevel(levelId) {
         var _isKnowledge = ['savais_tu','fiqh_jour','hadith1','duaa_jour','vie_compagnons','vie_prophetes','quran_read','sira'].indexOf(item.id) !== -1;
         var _checkClick = _isKnowledge ? ' onclick="event.stopPropagation();toggleItem(\'' + item.id + '\',event)"' : '';
         var _knowledgeBg = _isKnowledge ? 'background:rgba(200,168,75,0.08);' : '';
-        var shareBtn = '';
-        if (_isKnowledge) {
-          shareBtn = '<svg width="14" height="22" viewBox="0 0 14 22" style="flex-shrink:0;align-self:center;" aria-hidden="true"><path d="M3 4 L10 11 L3 18" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-        }
         const customClick = item.id === 'savais_tu'
           ? 'openVueSavaisTu();'
           : item.id === 'fiqh_jour'
@@ -2654,6 +2650,10 @@ function renderLevel(levelId) {
           : item.id === 'sira'
           ? 'SIRA.openDetail();'
           : 'toggleItem(\'' + item.id + '\',event)';
+        var shareBtn = '';
+        if (_isKnowledge) {
+          shareBtn = '<svg width="14" height="22" viewBox="0 0 14 22" style="flex-shrink:0;align-self:center;cursor:pointer;padding:4px;" aria-hidden="true" onclick="event.stopPropagation();' + customClick + '"><path d="M3 4 L10 11 L3 18" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+        }
         html += '<div class="item' + fridayCls + (checked ? ' checked' : '') + _tlCurrent + '" onclick="' + customClick + '" style="' + _knowledgeBg + _tlOpacity + 'animation-delay:' + delay + 'ms;--i:' + idx + '" id="item-' + item.id + '">' + _pathBadge + '<div class="check-circle"' + _checkClick + '><svg class="check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-body"><div class="item-label' + priorityCls + '">' + _tl + optionalBadge + '</div>' + (_ts ? '<div class="item-sub">' + (_ts.includes('·') ? _ts.split('·')[0].trim() : _ts) + '</div>' : '') + arabicHtml + '</div>' + shareBtn + audioBtn + infoBtn + '</div>';
       }
     });
@@ -14829,7 +14829,6 @@ function openVueAuFilDuJour() {
     const audio = it.audio ? '<button class="btn-audio" data-audio-id="' + it.id + '" onclick="event.stopPropagation();playAudioById(this)">🔊</button>' : '';
     var _knowledgeIds = ['savais_tu','fiqh_jour','hadith1','duaa_jour','vie_compagnons','vie_prophetes','quran_read','sira'];
     var _isKnowledgeFil = _knowledgeIds.indexOf(it.id) !== -1;
-    var _readBtn = _isKnowledgeFil ? '<svg width="14" height="22" viewBox="0 0 14 22" style="flex-shrink:0;align-self:center;" aria-hidden="true"><path d="M3 4 L10 11 L3 18" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>' : '';
     var _coranBtn = it.coranPicker ? '<button class="btn-audio" onclick="event.stopPropagation();openCoranPicker(event)" style="font-size:12px;padding:4px 10px;width:auto;white-space:nowrap;font-family:\'Cormorant Garamond\',serif;color:#C8A84A;border:1px solid rgba(200,168,75,0.3);border-radius:8px;background:transparent;cursor:pointer;">\u00c9couter</button>' : '';
     var _click = it.id === 'sira' ? 'SIRA.openDetail();'
       : it.id === 'savais_tu' ? 'openVueSavaisTu();'
@@ -14841,6 +14840,7 @@ function openVueAuFilDuJour() {
       : it.id === 'quran_read' ? 'openVueVersetJour();'
       : it.coranPicker ? 'openCoranPicker(event);'
       : 'toggleItem(\'' + it.id + '\',event); openVueAuFilDuJour();';
+    var _readBtn = _isKnowledgeFil ? '<svg width="14" height="22" viewBox="0 0 14 22" style="flex-shrink:0;align-self:center;cursor:pointer;padding:4px;" aria-hidden="true" onclick="event.stopPropagation();' + _click + '"><path d="M3 4 L10 11 L3 18" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>' : '';
     var _filKnBg = _isKnowledgeFil ? ' style="background:rgba(200,168,75,0.08);border-color:rgba(200,168,75,0.2);"' : '';
     var _checkClick = _isKnowledgeFil ? ' onclick="event.stopPropagation();toggleItem(\'' + it.id + '\',event);openVueAuFilDuJour();"' : '';
     return '<div class="rituel-item ' + done + '"' + _filKnBg + ' id="rituel-item-' + it.id + '" onclick="' + _click + '"><div class="check"' + _checkClick + '></div><div style="flex:1"><div class="label">' + (it.label||it.id) + '</div>' + sub + ar + '</div>' + _readBtn + _coranBtn + audio + '</div>';
