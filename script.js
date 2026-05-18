@@ -7174,7 +7174,10 @@ function _renderRecitsCoran(data) {
     }
     html += '</div>';
     html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;color:#B5A685;margin-bottom:32px;">R\u00e9cit ' + Math.min(progress, total) + ' / ' + total + '</div>';
-    html += '<button onclick="document.getElementById(\'recits-coran-overlay\').remove();" style="padding:12px 32px;border:1px solid rgba(200,168,75,0.2);border-radius:12px;background:transparent;color:#B5A685;font-family:\'Cormorant Garamond\',serif;font-size:13px;cursor:pointer;">Fermer</button>';
+    html += '<button onclick="document.getElementById(\'recits-coran-overlay\').remove();" style="padding:12px 32px;border:1px solid rgba(200,168,75,0.2);border-radius:12px;background:transparent;color:#B5A685;font-family:\'Cormorant Garamond\',serif;font-size:13px;cursor:pointer;margin-bottom:16px;">Fermer</button>';
+    if (progress > total) {
+      html += '<div><button onclick="_recitsShowArchive();" style="background:none;border:none;color:rgba(200,168,75,0.4);font-family:\'Cormorant Garamond\',serif;font-size:12px;font-style:italic;cursor:pointer;">Revenir \u00e0 un r\u00e9cit</button></div>';
+    }
     html += '</div>';
     ov.innerHTML = html;
     document.body.appendChild(ov);
@@ -7238,9 +7241,84 @@ function _closeRecitDetail(num) {
   }
   _renderRecitsCoran(_recitsCoranData);
 }
+function _recitsShowArchive() {
+  var existing = document.getElementById('recits-coran-overlay');
+  if (existing) existing.remove();
+  var data = _recitsCoranData;
+  if (!data) return;
+  var T = function(f) { return (f && f.fr) ? f.fr : ''; };
+  var ov = document.createElement('div');
+  ov.id = 'recits-coran-overlay';
+  ov.style.cssText = 'position:fixed;inset:0;z-index:3000;background:#0a0a0a;display:flex;flex-direction:column;overflow:hidden;';
+  var html = '<div style="padding:calc(var(--safe-top,0px) + 16px) 20px 12px;text-align:center;">';
+  html += '<div style="font-family:Amiri,serif;font-size:24px;color:#C8A84A;direction:rtl;margin-bottom:4px;">\u0642\u064E\u0635\u064E\u0635\u064F \u0627\u0644\u0642\u064F\u0631\u0622\u0646</div>';
+  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.6);">Tous les r\u00e9cits</div>';
+  html += '</div>';
+  html += '<div style="flex:1;overflow-y:auto;padding:0 20px calc(20px + var(--safe-bot,0px));-webkit-overflow-scrolling:touch;">';
+  data.forEach(function(r) {
+    html += '<div onclick="_openRecitReadOnly(' + r.num + ')" style="padding:14px 16px;background:rgba(200,168,75,0.04);border:1px solid rgba(200,168,75,0.12);border-radius:14px;margin-bottom:8px;cursor:pointer;display:flex;align-items:center;gap:14px;" ontouchstart="this.style.opacity=\'0.7\'" ontouchend="this.style.opacity=\'1\'">';
+    html += '<div style="width:32px;height:32px;border-radius:8px;background:rgba(200,168,75,0.1);display:flex;align-items:center;justify-content:center;font-family:\'Cormorant Garamond\',serif;font-size:13px;color:#C8A84A;flex-shrink:0;">' + r.num + '</div>';
+    html += '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;color:#E5E0DC;">' + T(r.titre) + '</div>';
+    html += '<div style="font-size:11px;color:#B5A685;margin-top:2px;">' + (r.theme || '') + '</div></div>';
+    html += '<div style="color:rgba(200,168,75,0.4);font-size:16px;flex-shrink:0;">\u203A</div>';
+    html += '</div>';
+  });
+  html += '</div>';
+  html += '<button onclick="_renderRecitsCoran(_recitsCoranData);" style="position:absolute;top:calc(var(--safe-top,0px) + 12px);left:16px;background:none;border:none;color:#C8A84A;font-size:22px;cursor:pointer;z-index:1;">\u2039</button>';
+  html += '<button onclick="document.getElementById(\'recits-coran-overlay\').remove();" style="position:absolute;top:calc(var(--safe-top,0px) + 12px);right:16px;background:none;border:none;color:#B5A685;font-size:24px;cursor:pointer;z-index:1;">\u2715</button>';
+  ov.innerHTML = html;
+  document.body.appendChild(ov);
+}
+function _openRecitReadOnly(num) {
+  if (!_recitsCoranData) return;
+  var recit = _recitsCoranData.find(function(r) { return r.num === num; });
+  if (!recit) return;
+  var T = function(f) { return (f && f.fr) ? f.fr : ''; };
+  var existing = document.getElementById('recits-coran-overlay');
+  if (existing) existing.remove();
+  var ov = document.createElement('div');
+  ov.id = 'recits-coran-overlay';
+  ov.style.cssText = 'position:fixed;inset:0;z-index:3000;background:#0a0a0a;display:flex;flex-direction:column;overflow:hidden;';
+  var html = '<div style="padding:calc(var(--safe-top,0px) + 16px) 20px 12px;text-align:center;">';
+  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:4px;">R\u00e9cit ' + recit.num + '</div>';
+  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:24px;font-style:italic;color:#E5E0DC;margin-bottom:4px;">' + T(recit.titre) + '</div>';
+  html += '<div style="font-size:12px;color:#B5A685;">' + (recit.theme || '') + '</div>';
+  html += '</div>';
+  html += '<div style="flex:1;overflow-y:auto;padding:0 24px calc(20px + var(--safe-bot,0px));-webkit-overflow-scrolling:touch;">';
+  if (recit.paragraphes) {
+    recit.paragraphes.forEach(function(p) {
+      var txt = T(p.content);
+      if (!txt) return;
+      if (p.type === 'italic') {
+        html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;font-style:italic;color:rgba(200,168,75,0.85);line-height:1.85;margin-bottom:22px;text-align:center;">' + txt + '</div>';
+      } else {
+        html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:19px;color:rgba(229,224,220,0.85);line-height:1.9;margin-bottom:22px;">' + txt + '</div>';
+      }
+    });
+  }
+  if (recit.meditation) {
+    var med = T(recit.meditation);
+    if (med) {
+      html += '<div style="margin:24px 0;padding:16px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.15);border-radius:12px;text-align:center;">';
+      html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;font-style:italic;color:#C8A84A;line-height:1.8;">' + med + '</div>';
+      html += '</div>';
+    }
+  }
+  if (recit.source) {
+    var src = T(recit.source);
+    if (src) html += '<div style="text-align:center;font-size:12px;color:rgba(200,168,75,0.4);margin-bottom:16px;">' + src + '</div>';
+  }
+  html += '</div>';
+  html += '<button onclick="_recitsShowArchive();" style="position:absolute;top:calc(var(--safe-top,0px) + 12px);left:16px;background:none;border:none;color:#C8A84A;font-size:22px;cursor:pointer;z-index:1;">\u2039</button>';
+  html += '<button onclick="document.getElementById(\'recits-coran-overlay\').remove();" style="position:absolute;top:calc(var(--safe-top,0px) + 12px);right:16px;background:none;border:none;color:#B5A685;font-size:24px;cursor:pointer;z-index:1;">\u2715</button>';
+  ov.innerHTML = html;
+  document.body.appendChild(ov);
+}
 window.openVueRecitsCoran = openVueRecitsCoran;
 window._openRecitDetail = _openRecitDetail;
 window._closeRecitDetail = _closeRecitDetail;
+window._recitsShowArchive = _recitsShowArchive;
+window._openRecitReadOnly = _openRecitReadOnly;
 
 function filterSourates(q) {
   const filtered = SOURATES.filter(s =>
