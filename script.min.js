@@ -11112,9 +11112,28 @@ function toggleSilenceDay() {
   }
 }
 
+function _settingsCheminInfo() {
+  var motiv = localStorage.getItem('niyyah_motivation');
+  var labels = { reconnecter: 'Le Revenant', routine: 'Le R\u00e9gulier', sacraliser: 'Le Pr\u00e9sent' };
+  var label = labels[motiv] || motiv || '\u2014';
+  var installTs = parseInt(safeGetItem('niyyah_install_date') || '0', 10);
+  var dateStr = installTs ? new Date(installTs).toLocaleDateString(_dateLocale(), { day: 'numeric', month: 'long', year: 'numeric' }) : '';
+  var evolPath = safeGetItem('niyyah_evolution_path');
+  var html = '';
+  if (evolPath && dateStr) {
+    var initLabel = labels[evolPath] || evolPath;
+    var evolTs = parseInt(safeGetItem('niyyah_evolution_date') || '0', 10);
+    var evolDate = evolTs ? new Date(evolTs).toLocaleDateString(_dateLocale(), { day: 'numeric', month: 'long', year: 'numeric' }) : '';
+    html = 'Tu es ' + label + (evolDate ? ' depuis le ' + evolDate : '') + '.<br>Tu as commenc\u00e9 par ' + initLabel + ' le ' + dateStr + '.';
+  } else if (dateStr) {
+    html = 'Tu es ' + label + ' depuis le ' + dateStr + '.';
+  }
+  return html;
+}
 function v2OpenSettings() {
   const T = V2_I18N[V2_LANG] || V2_I18N.fr;
   const isRTL = T.dir === 'rtl';
+  const _cheminInfo = _settingsCheminInfo();
   const sheet = document.createElement('div');
   sheet.id = 'v2-settings-sheet';
   sheet.style.cssText = 'position:fixed;inset:0;background:rgba(10,10,10,0.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:3000;display:flex;align-items:flex-end;justify-content:center;' + (window._reducedMotion ? '' : 'animation:backdropV2 0.3s ease forwards;');
@@ -11140,11 +11159,12 @@ function v2OpenSettings() {
         </div>
       </div>
 
-      <div style="background:#1a1a1a; border-radius:14px; padding:16px; margin-bottom:16px; cursor:pointer;" onclick="openOrientationPicker()">
+      <div style="background:#1a1a1a; border-radius:14px; padding:16px; margin-bottom:${_cheminInfo ? '8' : '16'}px; cursor:pointer;" onclick="openOrientationPicker()">
         <div style="font-size:11px; letter-spacing:2px; color:#C8A84A; opacity:0.7; text-transform:uppercase; margin-bottom:8px;">${t('settings_orientation_title')}</div>
         <div id="settings-orientation-current" style="font-family:var(--serif); font-size:16px; color:#E5E0DC; margin-bottom:4px;"></div>
         <div style="font-size:11px; color:rgba(200,168,75,0.5); font-style:italic;">${t('settings_orientation_change')} →</div>
       </div>
+      ${_cheminInfo ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:#B5A685;text-align:center;margin-bottom:16px;line-height:1.5;">' + _cheminInfo + '</div>' : ''}
 
       <div style="background:#1a1a1a; border-radius:14px; padding:16px; margin-bottom:16px; cursor:pointer;" onclick="replayOnboarding()">
         <div style="font-size:11px; letter-spacing:2px; color:#C8A84A; opacity:0.7; text-transform:uppercase; margin-bottom:8px;">${t('settings_replay_title')}</div>
@@ -13095,6 +13115,8 @@ function showEvolutionModal() {
     + '</div>';
   document.body.appendChild(ov);
   document.getElementById('evolution-accept').onclick = function() {
+    if (!safeGetItem('niyyah_evolution_path')) safeSetItem('niyyah_evolution_path', 'reconnecter');
+    safeSetItem('niyyah_evolution_date', String(Date.now()));
     safeSetItem('niyyah_motivation', 'routine');
     localStorage.removeItem('niyyah_welcome_shown');
     ov.remove();
