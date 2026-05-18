@@ -11596,12 +11596,21 @@ function _showOrientConfirm(value) {
   document.getElementById('orient-confirm-no').onclick = function() { ov.remove(); };
 }
 function _applyOrientation(value) {
+  var prev = localStorage.getItem('niyyah_motivation');
   localStorage.setItem('niyyah_motivation', value);
   localStorage.removeItem('niyyah_welcome_shown');
   localStorage.removeItem('niyyah_defi_v2');
   closeOrientationPicker();
   if (typeof renderTabs === 'function') renderTabs();
   if (typeof renderLevel === 'function' && typeof currentLevel !== 'undefined') renderLevel(currentLevel);
+  if (typeof updateSanctuaireMoment === 'function') updateSanctuaireMoment();
+  var rituel = document.getElementById('vue-rituel');
+  if (rituel && !rituel.classList.contains('hidden') && typeof openVueAuFilDuJour === 'function') openVueAuFilDuJour();
+  if (prev && prev !== value) {
+    var order = { reconnecter: 1, routine: 2, sacraliser: 3 };
+    var msg = (order[value] || 0) > (order[prev] || 0) ? 'Ton chemin s\u2019\u00e9largit' : 'Ton chemin se concentre';
+    setTimeout(function() { showToast(msg, 3000); }, 300);
+  }
 }
 function replayOnboarding() {
   if (typeof closeAnyOpenSheet === 'function') closeAnyOpenSheet();
