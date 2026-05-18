@@ -2632,7 +2632,7 @@ function renderLevel(levelId) {
         var _tl = tI(item,'label'), _ts = tI(item,'sub');
         var _isKnowledge = ['savais_tu','fiqh_jour','hadith1','duaa_jour','vie_compagnons','vie_prophetes','quran_read','sira'].indexOf(item.id) !== -1;
         var _checkClick = _isKnowledge ? ' onclick="event.stopPropagation();toggleItem(\'' + item.id + '\',event)"' : '';
-        var _knowledgeBg = _isKnowledge ? 'background:rgba(200,168,75,0.04);' : '';
+        var _knowledgeBg = _isKnowledge ? 'background:rgba(200,168,75,0.08);' : '';
         var shareBtn = '';
         if (_isKnowledge) {
           shareBtn = '<svg width="14" height="22" viewBox="0 0 14 22" style="flex-shrink:0;align-self:center;" aria-hidden="true"><path d="M3 4 L10 11 L3 18" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
@@ -14841,7 +14841,7 @@ function openVueAuFilDuJour() {
       : it.id === 'quran_read' ? 'openVueVersetJour();'
       : it.coranPicker ? 'openCoranPicker(event);'
       : 'toggleItem(\'' + it.id + '\',event); openVueAuFilDuJour();';
-    var _filKnBg = _isKnowledgeFil ? ' style="background:rgba(200,168,75,0.04);"' : '';
+    var _filKnBg = _isKnowledgeFil ? ' style="background:rgba(200,168,75,0.08);border-color:rgba(200,168,75,0.2);"' : '';
     return '<div class="rituel-item ' + done + '"' + _filKnBg + ' id="rituel-item-' + it.id + '" onclick="' + _click + '"><div class="check"></div><div style="flex:1"><div class="label">' + (it.label||it.id) + '</div>' + sub + ar + '</div>' + _readBtn + _coranBtn + audio + '</div>';
   };
   var _html = '';
