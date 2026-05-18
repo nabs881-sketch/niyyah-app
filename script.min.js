@@ -1447,12 +1447,7 @@ const LEVELS = [
       ]},
       { icon: '🎧', title: 'Immersion coranique', items: [
         { id: 'coran_ecoute', minVague: 3, label: '\u00c9couter le Coran', sub: 'Choisis une sourate et \u00e9coute', arabic: '\u062A\u0650\u0644\u0627\u0648\u064E\u0629\u064F \u0627\u0644\u0642\u064F\u0631\u0622\u0646\u0650', optional: true, coranPicker: true, filDuJour: true, paths: ['reconnecter','routine','sacraliser'], block: 'jour', category: 'science', hadith: '"R\u00e9cite le Coran car il interc\u00e9dera pour ses compagnons le Jour du Jugement" \u2014 Muslim 804', source: 'Muslim 804' },
-        { id: 'podcast', minVague: 4, label: 'Podcast islamique', sub: 'Une \u00e9coute libre', paths: ['sacraliser'], block: 'jour', category: 'science' },
-      ], links: [
-        { label: 'Vie du Proph\u00e8te \uFDFA', sub: 'Podcast \u00b7 S\u00eera', url: 'https://podcasts.apple.com/fr/podcast/la-vie-du-proph%C3%A8te-mohammad-%EF%B7%BA/id1804853747', iconType: 'lecture' },
-        { label: 'Islam Simplement', sub: 'Podcast \u00b7 Sujets vari\u00e9s', url: 'https://open.spotify.com/search/islam%20simplement', iconType: 'lecture' },
-        { label: "L'Arabe Simplement", sub: 'YouTube \u00b7 Arabe coranique', url: 'https://www.youtube.com/@larabesimplement', iconType: 'lecture' },
-        { label: 'Hadith Podcast', sub: 'YouTube \u00b7 Hadiths', url: 'https://www.youtube.com/watch?v=G7xdRzxyK1k&list=PLuTJKEpEkfuU-Qo4m69wKGjCWb_p_uAij', iconType: 'lecture' },
+        { id: 'podcast', minVague: 4, label: 'Podcast islamique', sub: 'Une \u00e9coute libre', podcastPicker: true, paths: ['sacraliser'], block: 'jour', category: 'science' },
       ]},
       { icon: '🌙', title: 'Pratiques avancées', items: [
         { id: 'sunnah_jejune', minVague: 4, label: 'Jeûne sunnah', sub: 'Lundi ou jeudi — sunnah du Prophète', arabic: 'صَوْمُ الِاثْنَيْنِ وَالْخَمِيسِ', optional: true, paths: ['routine','sacraliser'], block: 'jour', category: 'rituels', hadith: '\"Les actes sont présentés à Allah le lundi et jeudi, j\'aime jeûner ces jours-là\" — Tirmidhi 747', source: 'Tirmidhi 747' },
@@ -2630,7 +2625,7 @@ function renderLevel(levelId) {
         const _tlCurrent = (!checked && !_firstUncheckedFound) ? (_firstUncheckedFound = true, ' timeline-current') : '';
         const _tlOpacity = checked ? 'opacity:0.3;' : '';
         var _tl = tI(item,'label'), _ts = tI(item,'sub');
-        var _isKnowledge = ['savais_tu','fiqh_jour','hadith1','duaa_jour','vie_compagnons','vie_prophetes','quran_read','sira'].indexOf(item.id) !== -1;
+        var _isKnowledge = ['savais_tu','fiqh_jour','hadith1','duaa_jour','vie_compagnons','vie_prophetes','quran_read','sira','podcast'].indexOf(item.id) !== -1;
         var _checkClick = _isKnowledge ? ' onclick="event.stopPropagation();toggleItem(\'' + item.id + '\',event)"' : '';
         var _knowledgeBg = _isKnowledge ? 'background:rgba(200,168,75,0.08);' : '';
         const customClick = item.id === 'savais_tu'
@@ -2649,6 +2644,8 @@ function renderLevel(levelId) {
           ? 'openVueVersetJour();'
           : item.id === 'sira'
           ? 'SIRA.openDetail();'
+          : item.id === 'podcast'
+          ? 'openPodcastPicker();'
           : 'toggleItem(\'' + item.id + '\',event)';
         var shareBtn = '';
         if (_isKnowledge) {
@@ -7076,6 +7073,39 @@ function closeCoranPicker() {
   if (_ov) { _ov.style.opacity = '0'; _ov.style.pointerEvents = 'none'; }
   if (_dr) _dr.style.transform = 'translateY(100%)';
 }
+var _podcastSources = [
+  { label: 'Vie du Proph\u00e8te \uFDFA', sub: 'Podcast \u00b7 S\u00eera', url: 'https://podcasts.apple.com/fr/podcast/la-vie-du-proph%C3%A8te-mohammad-%EF%B7%BA/id1804853747' },
+  { label: 'Islam Simplement', sub: 'Podcast \u00b7 Sujets vari\u00e9s', url: 'https://open.spotify.com/search/islam%20simplement' },
+  { label: "L'Arabe Simplement", sub: 'YouTube \u00b7 Arabe coranique', url: 'https://www.youtube.com/@larabesimplement' },
+  { label: 'Hadith Podcast', sub: 'YouTube \u00b7 Hadiths', url: 'https://www.youtube.com/watch?v=G7xdRzxyK1k&list=PLuTJKEpEkfuU-Qo4m69wKGjCWb_p_uAij' }
+];
+function openPodcastPicker() {
+  var existing = document.getElementById('podcast-picker-overlay');
+  if (existing) existing.remove();
+  var ov = document.createElement('div');
+  ov.id = 'podcast-picker-overlay';
+  ov.style.cssText = 'position:fixed;inset:0;z-index:3000;background:rgba(10,8,5,0.95);display:flex;flex-direction:column;align-items:center;padding:calc(var(--safe-top,0px) + 60px) 20px calc(40px + var(--safe-bot,0px));overflow-y:auto;';
+  var html = '<div style="width:100%;max-width:400px;">';
+  html += '<div style="text-align:center;margin-bottom:24px;">';
+  html += '<div style="margin-bottom:12px;">' + niyyahIcon('lecture', 28) + '</div>';
+  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;color:#C8A84A;letter-spacing:2px;text-transform:uppercase;">Podcast islamique</div>';
+  html += '</div>';
+  _podcastSources.forEach(function(src) {
+    html += '<a href="' + src.url + '" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:14px;padding:16px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.15);border-radius:14px;margin-bottom:10px;text-decoration:none;cursor:pointer;" ontouchstart="this.style.opacity=\'0.7\'" ontouchend="this.style.opacity=\'1\'">';
+    html += '<div style="flex-shrink:0;">' + niyyahIcon('lecture', 20) + '</div>';
+    html += '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;color:#E5E0DC;">' + src.label + '</div><div style="font-size:12px;color:#B5A685;margin-top:2px;">' + src.sub + '</div></div>';
+    html += '<div style="color:#C8A84A;font-size:18px;flex-shrink:0;">\u203A</div>';
+    html += '</a>';
+  });
+  html += '<div style="text-align:center;margin-top:20px;font-family:\'Cormorant Garamond\',serif;font-size:12px;font-style:italic;color:rgba(181,166,133,0.5);">S\u00e9lection externe non affili\u00e9e</div>';
+  html += '<button onclick="document.getElementById(\'podcast-picker-overlay\').remove();" style="display:block;margin:20px auto 0;padding:12px 32px;border:1px solid rgba(200,168,75,0.2);border-radius:12px;background:transparent;color:#B5A685;font-family:\'Cormorant Garamond\',serif;font-size:13px;cursor:pointer;">Fermer</button>';
+  html += '</div>';
+  ov.innerHTML = html;
+  ov.onclick = function(e) { if (e.target === ov) ov.remove(); };
+  document.body.appendChild(ov);
+}
+window.openPodcastPicker = openPodcastPicker;
+
 function filterSourates(q) {
   const filtered = SOURATES.filter(s =>
     s[1].toLowerCase().includes(q.toLowerCase()) ||
@@ -14828,7 +14858,7 @@ function openVueAuFilDuJour() {
     const ar = it.arabic ? '<div class="arabic">' + it.arabic + '</div>' : '';
     const sub = it.sub ? '<div class="sub">' + it.sub + '</div>' : '';
     const audio = it.audio ? '<button class="btn-audio" data-audio-id="' + it.id + '" onclick="event.stopPropagation();playAudioById(this)">🔊</button>' : '';
-    var _knowledgeIds = ['savais_tu','fiqh_jour','hadith1','duaa_jour','vie_compagnons','vie_prophetes','quran_read','sira'];
+    var _knowledgeIds = ['savais_tu','fiqh_jour','hadith1','duaa_jour','vie_compagnons','vie_prophetes','quran_read','sira','podcast'];
     var _isKnowledgeFil = _knowledgeIds.indexOf(it.id) !== -1;
     var _coranBtn = it.coranPicker ? '<button class="btn-audio" onclick="event.stopPropagation();openCoranPicker(event)" style="font-size:12px;padding:4px 10px;width:auto;white-space:nowrap;font-family:\'Cormorant Garamond\',serif;color:#C8A84A;border:1px solid rgba(200,168,75,0.3);border-radius:8px;background:transparent;cursor:pointer;">\u00c9couter</button>' : '';
     var _click = it.id === 'sira' ? 'SIRA.openDetail();'
@@ -14839,6 +14869,7 @@ function openVueAuFilDuJour() {
       : it.id === 'vie_compagnons' ? 'openVueCompagnon();'
       : it.id === 'vie_prophetes' ? 'openVuePropheteJour();'
       : it.id === 'quran_read' ? 'openVueVersetJour();'
+      : it.id === 'podcast' ? 'openPodcastPicker();'
       : it.coranPicker ? 'openCoranPicker(event);'
       : 'toggleItem(\'' + it.id + '\',event); openVueAuFilDuJour();';
     var _readBtn = _isKnowledgeFil ? '<button style="background:none;border:none;cursor:pointer;flex-shrink:0;align-self:center;padding:8px 4px;margin:0;position:relative;z-index:10;isolation:isolate;" onclick="event.stopPropagation();' + _click + '"><svg width="14" height="22" viewBox="0 0 14 22" style="pointer-events:none;" aria-hidden="true"><path d="M3 4 L10 11 L3 18" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>' : '';
