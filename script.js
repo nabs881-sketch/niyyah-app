@@ -1446,7 +1446,7 @@ const LEVELS = [
         { id: 'savais_tu', minVague: 4, label: 'Le savais-tu ?', get sub() { var f = getSavaisTuFact(); return (f.texte || '').substring(0,50) + '\u2026'; }, arabic: 'هَلْ تَعْلَمُ؟', paths: ['sacraliser'], block: 'jour', category: 'science' },
       ]},
       { icon: '🎧', title: 'Immersion coranique', items: [
-        { id: 'coran_ecoute', minVague: 3, label: 'Écouter le Coran', sub: 'Choisis une sourate et écoute', arabic: 'تِلَاوَةُ الْقُرْآنِ', optional: true, coranPicker: true, paths: ['reconnecter','routine','sacraliser'], block: 'jour', category: 'science', hadith: '\"Récite le Coran car il intercèdera pour ses compagnons le Jour du Jugement\" — Muslim 804', source: 'Muslim 804' },
+        { id: 'coran_ecoute', minVague: 3, label: '\u00c9couter le Coran', sub: 'Choisis une sourate et \u00e9coute', arabic: '\u062A\u0650\u0644\u0627\u0648\u064E\u0629\u064F \u0627\u0644\u0642\u064F\u0631\u0622\u0646\u0650', optional: true, coranPicker: true, filDuJour: true, paths: ['reconnecter','routine','sacraliser'], block: 'jour', category: 'science', hadith: '"R\u00e9cite le Coran car il interc\u00e9dera pour ses compagnons le Jour du Jugement" \u2014 Muslim 804', source: 'Muslim 804' },
         { id: 'podcast', minVague: 4, label: 'Podcast islamique', sub: 'Islam Simplement ou autre contenu', paths: ['sacraliser'], block: 'jour', category: 'science' },
       ], links: [
         { label: 'Vie du Prophète ﷺ', sub: "La vie du Prophète Mohammad ﷺ · Podcast", url: 'https://podcasts.apple.com/fr/podcast/la-vie-du-proph%C3%A8te-mohammad-%EF%B7%BA/id1804853747', icon: '🎙' },
@@ -14828,6 +14828,7 @@ function openVueAuFilDuJour() {
     const audio = it.audio ? '<button class="btn-audio" data-audio-id="' + it.id + '" onclick="event.stopPropagation();playAudioById(this)">🔊</button>' : '';
     var _knowledgeIds = ['savais_tu','fiqh_jour','hadith1','duaa_jour','vie_compagnons','vie_prophetes','quran_read','sira'];
     var _readBtn = (_knowledgeIds.indexOf(it.id) !== -1) ? '<svg width="14" height="22" viewBox="0 0 14 22" style="opacity:0.7;flex-shrink:0;align-self:center;" aria-hidden="true"><path d="M3 4 L10 11 L3 18" fill="none" stroke="#C8A84A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>' : '';
+    var _coranBtn = it.coranPicker ? '<button class="btn-audio" onclick="event.stopPropagation();openCoranPicker(event)" style="font-size:12px;padding:4px 10px;width:auto;white-space:nowrap;font-family:\'Cormorant Garamond\',serif;color:#C8A84A;border:1px solid rgba(200,168,75,0.3);border-radius:8px;background:transparent;cursor:pointer;">\u00c9couter</button>' : '';
     var _click = it.id === 'sira' ? 'SIRA.openDetail();'
       : it.id === 'savais_tu' ? 'openVueSavaisTu();'
       : it.id === 'fiqh_jour' ? 'openVueFiqhJour();'
@@ -14836,8 +14837,9 @@ function openVueAuFilDuJour() {
       : it.id === 'vie_compagnons' ? 'openVueCompagnon();'
       : it.id === 'vie_prophetes' ? 'openVuePropheteJour();'
       : it.id === 'quran_read' ? 'openVueVersetJour();'
+      : it.coranPicker ? 'openCoranPicker(event);'
       : 'toggleItem(\'' + it.id + '\',event); openVueAuFilDuJour();';
-    return '<div class="rituel-item ' + done + '" id="rituel-item-' + it.id + '" onclick="' + _click + '"><div class="check"></div><div style="flex:1"><div class="label">' + (it.label||it.id) + '</div>' + sub + ar + '</div>' + _readBtn + audio + '</div>';
+    return '<div class="rituel-item ' + done + '" id="rituel-item-' + it.id + '" onclick="' + _click + '"><div class="check"></div><div style="flex:1"><div class="label">' + (it.label||it.id) + '</div>' + sub + ar + '</div>' + _readBtn + _coranBtn + audio + '</div>';
   };
   var _html = '';
   _catOrder.forEach(function(cat) {
