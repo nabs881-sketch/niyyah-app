@@ -2596,10 +2596,9 @@ function renderLevel(levelId) {
         html += renderPrayerItem(item, delay, _pTlCurrent, _pChecked);
       } else if (item.coranPicker) {
         const checked = !!state[item.id];
-        const optionalBadge = '<span style="font-size:12px;font-weight:700;letter-spacing:0.8px;color:var(--green);background:rgba(52,217,98,0.12);border:1px solid rgba(52,217,98,0.25);border-radius:6px;padding:1px 5px;margin-left:5px;vertical-align:middle;">BONUS</span>';
         html += '<div class="item' + (checked ? ' checked' : '') + '" onclick="toggleItem(\'' + item.id + '\',event)" style="animation-delay:' + delay + 'ms;--i:' + idx + '" id="item-' + item.id + '">'
           + '<div class="check-circle"><svg class="check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>'
-          + '<div class="item-body"><div class="item-label">' + tI(item,'label') + optionalBadge + '</div><div class="item-sub">' + tI(item,'sub') + '</div>'
+          + '<div class="item-body"><div class="item-label">' + tI(item,'label') + '</div><div class="item-sub">' + tI(item,'sub') + '</div>'
           + '<div class="item-arabic">' + item.arabic + '</div></div>'
           + '<button class="btn-audio" onclick="openCoranPicker(event)" title="' + t('btn_choose_surah') + '" style="font-size:13px;padding:0 10px;width:auto;white-space:nowrap;">📖 Écouter</button>'
           + '</div>';
