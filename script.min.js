@@ -1525,8 +1525,7 @@ if (!state._unlocked) state._unlocked = [1];
 if (state._unlocked.length < 4) { [1,2,3,4].forEach(function(id) { if (!state._unlocked.includes(id)) state._unlocked.push(id); }); saveState(); }
 function getCalcLvlPct(lvlId, s) {
   const lvl = LEVELS.find(l => l.id === lvlId);
-  var _v = parseInt(safeGetItem('niyyah_star_vague') || '0', 10);
-  const items = lvl.sections.flatMap(sec => sec.items).filter(function(i) { return !i.minVague || i.minVague <= _v; });
+  const items = lvl.sections.flatMap(sec => sec.items);
   const weights = {
     fajr:3,dhuhr:3,asr:3,maghrib:3,isha:3,jumua:3,
     wird_matin:2,wird_soir:2,ayat_kursi:2,
@@ -1661,8 +1660,7 @@ function updateGlobalProgress() {
       bar.style.display = 'none';
     }
   }
-  var _gpVague = parseInt(safeGetItem('niyyah_star_vague') || '0', 10);
-  const allItems = LEVELS.flatMap(l => getLevelItems(l.id)).filter(function(i) { return !i.minVague || i.minVague <= _gpVague; });
+  const allItems = LEVELS.flatMap(l => getLevelItems(l.id));
   const totalPts = allItems.reduce((sum, i) => sum + (getWeight ? getWeight(i.id) : 1), 0);
   const donePts  = allItems.filter(i => isItemDone ? isItemDone(i, state) : (i.type==='counter'?(state[i.id]||0)>=i.target:!!state[i.id])).reduce((sum, i) => sum + (getWeight ? getWeight(i.id) : 1), 0);
   const pct = totalPts > 0 ? (donePts / totalPts) * 100 : 0;
@@ -2014,8 +2012,7 @@ function renderAccueil() {
   const streakDisplay = history.streak + (getLevelProgress(1) >= 100 ? 1 : 0);
   const bestDisplay = Math.max(history.bestStreak || 0, streakDisplay);
   const totalDisplay = history.totalDays + (getLevelProgress(1) >= 100 ? 1 : 0);
-  var _scoreVague = parseInt(safeGetItem('niyyah_star_vague') || '0', 10);
-  const allLvlItems = LEVELS.filter(l => state._unlocked.includes(l.id)).flatMap(l => getLevelItems(l.id)).filter(function(i) { return !i.minVague || i.minVague <= _scoreVague; });
+  const allLvlItems = LEVELS.filter(l => state._unlocked.includes(l.id)).flatMap(l => getLevelItems(l.id));
   const scoreJour = Math.round(getWeightedScore(allLvlItems, state));
   const pct = Math.min(Math.round(getLevelProgress(1)), 100);
   const currentLvl = LEVELS.find(l => l.id === (state._unlocked ? Math.max(...state._unlocked) : 1));
@@ -2506,8 +2503,7 @@ function renderLevel(levelId) {
     '<div style="font-size:12px;color:var(--t3);margin-top:2px;">' + t('grace_sub') + '</div></div></div>' : '';
   const prayerCard = level.id === 1 ? renderPrayerTimesCard() : '';
   const qiblaCard  = level.id === 1 ? renderQiblaCard() : '';
-  var _scoreVague = parseInt(safeGetItem('niyyah_star_vague') || '0', 10);
-  const allLvlItems = LEVELS.filter(l => state._unlocked.includes(l.id)).flatMap(l => getLevelItems(l.id)).filter(function(i) { return !i.minVague || i.minVague <= _scoreVague; });
+  const allLvlItems = LEVELS.filter(l => state._unlocked.includes(l.id)).flatMap(l => getLevelItems(l.id));
   const scoreJour = Math.round(getWeightedScore(allLvlItems, state));
   const scoreColor = scoreJour >= 80 ? '#c8a84b' : scoreJour >= 50 ? 'var(--green)' : 'var(--t2)';
   const scoreBg = scoreJour >= 80 ? 'rgba(200,168,75,0.12)' : scoreJour >= 50 ? 'rgba(52,217,98,0.08)' : 'rgba(255,255,255,0.04)';
@@ -14853,7 +14849,6 @@ window.getEffectiveMotiv = getEffectiveMotiv;
 function getRitualItems(prayer) {
   if (!Array.isArray(LEVELS)) return [];
   var _motiv = getEffectiveMotiv();
-  var _vague = parseInt(safeGetItem('niyyah_star_vague') || '0', 10);
   const items = [];
   const alwaysItems = [];
   [0,1].forEach(i => {
@@ -14862,7 +14857,6 @@ function getRitualItems(prayer) {
     lvl.sections.forEach(s => {
       (s.items || []).forEach(it => {
         if (it.id === prayer) return;
-        if (it.minVague && it.minVague > _vague) return;
         if (_motiv && it.paths && !it.paths.includes(_motiv)) return;
         if (it.alwaysVisible) { alwaysItems.push(it); return; }
         var _bm = Array.isArray(it.block) ? it.block.includes(prayer) : (it.block === prayer);
@@ -15044,7 +15038,6 @@ function openVueAuFilDuJour() {
   v.querySelector('.rituel-prochaine').textContent = '';
   v.querySelector('.rituel-poetique').textContent = 'Ce qui demeure entre tes pri\u00e8res.';
   var _motiv = getEffectiveMotiv();
-  var _vague = parseInt(safeGetItem('niyyah_star_vague') || '0', 10);
   const items = [];
   if (Array.isArray(LEVELS)) {
     [2,3].forEach(i => {
@@ -15052,7 +15045,6 @@ function openVueAuFilDuJour() {
       if (!lvl || !lvl.sections) return;
       lvl.sections.forEach(s => {
         (s.items || []).forEach(it => {
-          if (it.minVague && it.minVague > _vague) return;
           if (_motiv && it.paths && !it.paths.includes(_motiv)) return;
           items.push(it);
         });
@@ -15065,7 +15057,6 @@ function openVueAuFilDuJour() {
     lvl.sections.forEach(s => {
       (s.items || []).forEach(it => {
         if (!it.filDuJour) return;
-        if (it.minVague && it.minVague > _vague) return;
         if (_motiv && it.paths && !it.paths.includes(_motiv)) return;
         items.push(it);
       });
