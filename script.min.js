@@ -13032,6 +13032,57 @@ function v2Init() {
   } catch(e) {}
   v2UpdateOrbState();
   triggerSpontaneousUI();
+  checkEvolutionRevenant();
+}
+
+function checkEvolutionRevenant() {
+  if (safeGetItem('niyyah_motivation') !== 'reconnecter') return false;
+  var streak = parseInt(safeGetItem('niyyah_silent_streak') || '0', 10);
+  if (streak < 40) return false;
+  var refusedDate = safeGetItem('niyyah_evolution_refused_date');
+  if (refusedDate) {
+    var daysSinceRefused = (Date.now() - parseInt(refusedDate, 10)) / 86400000;
+    if (daysSinceRefused < 90) return false;
+  }
+  var proposedCount = parseInt(safeGetItem('niyyah_evolution_proposed_count') || '0', 10);
+  if (proposedCount >= 3) return false;
+  if (typeof ramadanState !== 'undefined' && ramadanState.active) return false;
+  var now = new Date();
+  if (now.getDay() === 5) return false;
+  var h = now.getHours();
+  if (h < 8 || h >= 21) return false;
+  if (safeGetItem('niyyah_evolution_proposed_today') === todayKey()) return false;
+  safeSetItem('niyyah_evolution_proposed_today', todayKey());
+  safeSetItem('niyyah_evolution_proposed_count', String(proposedCount + 1));
+  showEvolutionModal();
+  return true;
+}
+
+function showEvolutionModal() {
+  var ov = document.createElement('div');
+  ov.id = 'evolution-modal';
+  ov.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(10,8,5,0.92);display:flex;align-items:center;justify-content:center;padding:24px;';
+  ov.innerHTML = '<div style="max-width:340px;width:100%;text-align:center;">'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.7);line-height:1.6;margin-bottom:8px;">\u00ab\u00a0Quant \u00e0 ceux qui cheminent dans Notre voie,<br>Nous les guidons sur Nos sentiers.\u00a0\u00bb</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;color:rgba(200,168,75,0.4);margin-bottom:24px;">Coran 29:69</div>'
+    + '<div style="font-family:Amiri,serif;font-size:28px;color:#C8A84A;direction:rtl;margin-bottom:20px;">\u0645\u064F\u062F\u064E\u0627\u0648\u064E\u0645\u064E\u0629</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;color:#E5E0DC;line-height:1.7;margin-bottom:32px;">Voil\u00e0 quarante jours.<br>Tu reviens. Tu restes.<br><br><span style="font-style:italic;color:#B5A685;">Niyyah peut maintenant t\u2019accompagner autrement, si tu le souhaites.</span></div>'
+    + '<button id="evolution-accept" style="width:100%;padding:14px;border:none;border-radius:12px;background:#C8A84A;color:#2C2E32;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-weight:600;cursor:pointer;margin-bottom:10px;">Approfondir</button>'
+    + '<button id="evolution-refuse" style="width:100%;padding:12px;border:1px solid rgba(200,168,75,0.2);border-radius:12px;background:transparent;color:#B5A685;font-family:\'Cormorant Garamond\',serif;font-size:13px;cursor:pointer;">Rester dans ce chemin</button>'
+    + '</div>';
+  document.body.appendChild(ov);
+  document.getElementById('evolution-accept').onclick = function() {
+    safeSetItem('niyyah_motivation', 'routine');
+    localStorage.removeItem('niyyah_welcome_shown');
+    ov.remove();
+    if (typeof renderLevel === 'function' && typeof currentLevel !== 'undefined') renderLevel(currentLevel);
+    showToast('Niyyah marche d\u00e9sormais \u00e0 tes c\u00f4t\u00e9s en R\u00e9gulier. Sans bruit. Sans h\u00e2te.');
+  };
+  document.getElementById('evolution-refuse').onclick = function() {
+    safeSetItem('niyyah_evolution_refused_date', String(Date.now()));
+    ov.remove();
+    showToast('Niyyah marche avec toi \u00e0 ton rythme.');
+  };
 }
 
 function checkHijriBanner() {
