@@ -11544,12 +11544,22 @@ function openOrientationPicker() {
     c.classList.toggle('selected', c.dataset.value === motiv);
   });
 }
-function _orientCardHtml(value, calli, title, sub) {
-  var card = '<div class="orient-card" data-value="'+value+'" onclick="selectOrientation(\''+value+'\')" style="border:1px solid rgba(200,168,75,0.25); border-radius:14px; padding:14px 16px; margin-bottom:12px; cursor:pointer; display:flex; align-items:center; gap:14px;">';
-  var calliDiv = '<div style="font-size:24px; color:#C8A84A; font-family:Amiri,serif; direction:rtl; min-width:60px; text-align:center;">'+calli+'</div>';
-  var titleDiv = '<div style="font-family:var(--serif); color:#C8A84A; font-size:13px; letter-spacing:2px; text-transform:uppercase; margin-bottom:4px;">'+title+'</div>';
-  var subDiv = '<div style="font-size:12px; color:#E5E0DC; opacity:0.8;">'+sub+'</div>';
-  return card + calliDiv + '<div>' + titleDiv + subDiv + '</div></div>';
+var _orientDescriptions = {
+  reconnecter: 'Pour reprendre en douceur. Prot\u00e9g\u00e9.',
+  routine: 'Pour installer une pratique stable.',
+  sacraliser: 'Pour sacraliser chaque geste. Exigeant.'
+};
+function _orientCardHtml(value, calli, title) {
+  var desc = _orientDescriptions[value] || '';
+  var motiv = localStorage.getItem('niyyah_motivation');
+  var selected = motiv === value;
+  var borderColor = selected ? 'rgba(200,168,75,0.5)' : 'rgba(200,168,75,0.25)';
+  var bg = selected ? 'rgba(200,168,75,0.1)' : 'radial-gradient(ellipse at top, rgba(200,168,75,0.06) 0%, transparent 70%)';
+  return '<div class="orient-card" data-value="'+value+'" onclick="selectOrientation(\''+value+'\')" style="border:1px solid '+borderColor+'; border-radius:14px; padding:14px 16px; background:'+bg+'; margin-bottom:12px; cursor:pointer; display:flex; align-items:center; gap:14px;">'
+    + '<div style="font-size:24px; color:#C8A84A; font-family:Amiri,Scheherazade,serif; direction:rtl; min-width:60px; text-align:center;">'+calli+'</div>'
+    + '<div style="flex:1;"><div style="font-family:var(--serif); color:#C8A84A; font-size:13px; letter-spacing:2px; text-transform:uppercase; margin-bottom:2px;">'+title+'</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif; font-size:13px; font-style:italic; color:#B5A685; line-height:1.4;">'+desc+'</div></div>'
+    + '<div style="color:#C8A84A;font-size:18px;flex-shrink:0;">\u203A</div></div>';
 }
 function renderOrientationCards() {
   var container = document.getElementById('orient-cards-container');
@@ -11557,9 +11567,10 @@ function renderOrientationCards() {
   document.getElementById('orient-modal-title').textContent = t('settings_orientation_modal_title');
   document.getElementById('orient-modal-sub').textContent = t('settings_orientation_modal_sub');
   container.innerHTML = '';
-  container.insertAdjacentHTML('beforeend', _orientCardHtml('routine', '\u0645\u064F\u062F\u064E\u0627\u0648\u064E\u0645\u064E\u0629', t('ob_motiv_routine'), t('ob_motiv_routine_sub')));
-  container.insertAdjacentHTML('beforeend', _orientCardHtml('reconnecter', '\u062A\u064E\u0648\u0652\u0628\u064E\u0629', t('ob_motiv_reconnecter'), t('ob_motiv_reconnecter_sub')));
-  container.insertAdjacentHTML('beforeend', _orientCardHtml('sacraliser', '\u0646\u0650\u064A\u0651\u064E\u0629', t('ob_motiv_sacraliser'), t('ob_motiv_sacraliser_sub')));
+  container.insertAdjacentHTML('beforeend', _orientCardHtml('reconnecter', '\u062A\u064E\u0648\u0652\u0628\u064E\u0629', t('ob_motiv_reconnecter')));
+  container.insertAdjacentHTML('beforeend', _orientCardHtml('routine', '\u0645\u064F\u062F\u064E\u0627\u0648\u064E\u0645\u064E\u0629', t('ob_motiv_routine')));
+  container.insertAdjacentHTML('beforeend', _orientCardHtml('sacraliser', '\u0646\u0650\u064A\u0651\u064E\u0629', t('ob_motiv_sacraliser')));
+  container.insertAdjacentHTML('beforeend', '<div style="font-size:12px; font-style:italic; color:rgba(181,166,133,0.5); text-align:center; margin-top:8px; line-height:1.5;">Avec ta constance, Niyyah te proposera d\u2019aller plus loin.</div>');
 }
 function selectOrientation(value) {
   var current = localStorage.getItem('niyyah_motivation');
