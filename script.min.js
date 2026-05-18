@@ -7194,7 +7194,7 @@ function _openRecitDetail(num) {
   if (!ov) return;
   var html = '<div style="padding:calc(var(--safe-top,0px) + 16px) 20px 12px;text-align:center;">';
   html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:4px;">R\u00e9cit ' + recit.num + '</div>';
-  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-style:italic;color:#E5E0DC;margin-bottom:4px;">' + T(recit.titre) + '</div>';
+  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:24px;font-style:italic;color:#E5E0DC;margin-bottom:4px;">' + T(recit.titre) + '</div>';
   html += '<div style="font-size:12px;color:#B5A685;">' + (recit.theme || '') + '</div>';
   html += '</div>';
   html += '<div style="flex:1;overflow-y:auto;padding:0 24px calc(20px + var(--safe-bot,0px));-webkit-overflow-scrolling:touch;">';
@@ -7203,9 +7203,9 @@ function _openRecitDetail(num) {
       var txt = T(p.content);
       if (!txt) return;
       if (p.type === 'italic') {
-        html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:rgba(200,168,75,0.85);line-height:1.75;margin-bottom:20px;text-align:center;">' + txt + '</div>';
+        html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;font-style:italic;color:rgba(200,168,75,0.85);line-height:1.85;margin-bottom:22px;text-align:center;">' + txt + '</div>';
       } else {
-        html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;color:rgba(229,224,220,0.85);line-height:1.85;margin-bottom:18px;">' + txt + '</div>';
+        html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:19px;color:rgba(229,224,220,0.85);line-height:1.9;margin-bottom:22px;">' + txt + '</div>';
       }
     });
   }
@@ -7213,7 +7213,7 @@ function _openRecitDetail(num) {
     var med = T(recit.meditation);
     if (med) {
       html += '<div style="margin:24px 0;padding:16px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.15);border-radius:12px;text-align:center;">';
-      html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:#C8A84A;line-height:1.7;">' + med + '</div>';
+      html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;font-style:italic;color:#C8A84A;line-height:1.8;">' + med + '</div>';
       html += '</div>';
     }
   }
