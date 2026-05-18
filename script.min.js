@@ -858,7 +858,7 @@ function _showDefiToastDaily() {
   safeSetItem('niyyah_defi_toast_today', dk);
   var toast = document.createElement('div');
   toast.className = 'defi-toast-daily';
-  toast.textContent = '\uD83D\uDCFF Ton d\u00e9fi : ' + jours + '/' + cible + ' jours accomplis';
+  toast.textContent = 'Le chemin continue. Marche encore.';
   document.body.appendChild(toast);
   requestAnimationFrame(function() { toast.classList.add('show'); });
   setTimeout(function() { toast.classList.remove('show'); setTimeout(function() { toast.remove(); }, 400); }, 5000);
@@ -1771,18 +1771,7 @@ function _checkStarUnlock(streak) {
 }
 function showStarUnlockModal() {
   var pending = safeGetItem('niyyah_star_unlock_pending');
-  if (!pending) return;
-  localStorage.removeItem('niyyah_star_unlock_pending');
-  var ov = document.createElement('div');
-  ov.className = 'star-unlock-overlay';
-  ov.innerHTML = '<div class="star-unlock-card">'
-    + '<div style="font-size:40px;margin-bottom:16px;">\u2726</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:#FAF7EE;line-height:1.7;max-width:280px;margin:0 auto;">De nouvelles pratiques s\u2019ouvrent dans ton chemin.<br><br>Ta constance porte ses fruits.</div>'
-    + '<div style="margin-top:20px;font-size:28px;">\u2726</div>'
-    + '</div>';
-  document.body.appendChild(ov);
-  requestAnimationFrame(function() { ov.classList.add('show'); });
-  setTimeout(function() { ov.classList.remove('show'); setTimeout(function() { ov.remove(); }, 500); }, 8000);
+  if (pending) localStorage.removeItem('niyyah_star_unlock_pending');
 }
 window.showStarUnlockModal = showStarUnlockModal;
 function checkLevelCompletion(levelId) {
@@ -1902,7 +1891,6 @@ function showLevelPopup(levelId, nextId, hasNext) {
     `;
   }
 
-  spawnConfettiTafakkur(msg.color);
   if (navigator.vibrate) navigator.vibrate([30, 50, 30, 50, 60]);
   playCompleteSound();
   document.getElementById('levelPopup').classList.add('show');
@@ -8899,19 +8887,10 @@ function scheduleFajrNotification() {
   if (Notification.permission !== 'granted') return;
   var parts = _prayerTimes['Fajr'].replace(/ *\(.*\)/, '').split(':');
   var fajrTime = new Date();
-  fajrTime.setHours(parseInt(parts[0], 10), parseInt(parts[1], 10), 0, 0);
+  fajrTime.setHours(parseInt(parts[0], 10), parseInt(parts[1], 10) - 15, 0, 0);
   var msUntil = fajrTime.getTime() - Date.now();
   if (msUntil <= 0 || msUntil >= 86400000) return;
-  var _intentionType = localStorage.getItem('niyyah_intention_type') || '';
-  var _msgs = {
-    rapprochement: "Fajr \u2014 Rapproche-toi d'Allah ce matin",
-    engagement: "Fajr \u2014 Tiens tes engagements aujourd'hui",
-    reconstruction: "Fajr \u2014 Chaque matin est une renaissance",
-    gratitude: "Fajr \u2014 Commence par le shukr"
-  };
-  var _body = _msgs[_intentionType] || "L'heure de Fajr est arriv\u00e9e \u00b7 Niyyah Daily";
-  var _fp = (typeof _getPrenom === 'function') ? _getPrenom() : '';
-  if (_fp) _body = "Fajr \u2014 Bismillah " + _fp;
+  var _body = 'L\u2019aube approche. Niyyah t\u2019attend.';
   window._fajrNotifTimer = setTimeout(function() {
     new Notification('Niyyah Daily', { body: _body, icon: 'icon-512.png', tag: 'fajr-notif' });
   }, msUntil);
