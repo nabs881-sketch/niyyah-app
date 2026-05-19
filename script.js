@@ -12918,10 +12918,10 @@ function updateFajrChallenge() {
   var _fajrHadith, _fajrRef;
   if (fajrMois >= 100) { _fajrHadith = 'Vraiment, la r\u00e9citation de l\u2019aube est t\u00e9moign\u00e9e.'; _fajrRef = 'Al-Isr\u00e2\u2019 17:78'; }
   else if (fajrAnnee >= 50) { _fajrHadith = 'All\u00e2h aime celui qui agit avec constance, m\u00eame peu.'; _fajrRef = 'Boukhari/Muslim'; }
-  else { _fajrHadith = 'Les deux raka\u2019as de Fajr sont meilleures que ce monde et ce qu\u2019il contient.'; _fajrRef = 'Muslim 725'; }
-  card.innerHTML += '<div style="margin:8px 0 0;padding:10px 14px;border:1px solid rgba(200,168,75,0.15);border-radius:10px;background:rgba(200,168,75,0.03);">'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.75);line-height:1.5;">\u00ab\u00a0' + _fajrHadith + '\u00a0\u00bb</div>'
-    + '<div style="font-size:11px;color:rgba(200,168,75,0.45);margin-top:4px;text-align:right;">\u2014 ' + _fajrRef + '</div>'
+  else { _fajrHadith = 'Les deux raka\u2019as avant Fajr sont meilleures que ce monde et ce qu\u2019il contient.'; _fajrRef = 'Muslim 725'; }
+  card.innerHTML += '<div style="margin:8px 0 0;padding:12px 14px;border:1px solid rgba(200,168,75,0.15);border-radius:10px;background:rgba(200,168,75,0.03);">'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;font-style:italic;color:rgba(200,168,75,0.75);line-height:1.7;">\u00ab\u00a0' + _fajrHadith + '\u00a0\u00bb</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;color:rgba(200,168,75,0.45);margin-top:6px;text-align:right;">\u2014 ' + _fajrRef + '</div>'
     + '</div>';
 }
 function updateSanctuaireMoment() {
