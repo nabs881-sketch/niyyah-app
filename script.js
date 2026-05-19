@@ -6969,12 +6969,19 @@ function _getWeeklyStats() {
   }
   return { doneDays: doneDays, totalGestes: totalGestes, fajrDays: fajrDays, catCounts: catCounts };
 }
-function _getWeeklyComparison(stats) {
+function _getWeeklyComparison(stats, bilanCount) {
   var archive = null;
   try { archive = JSON.parse(localStorage.getItem('niyyah_week_archive') || 'null'); } catch(e) {}
   if (!archive) return 'Premi\u00e8re semaine enregistr\u00e9e.';
-  if (stats.totalGestes > archive.gestes + 2) return 'Plus de gestes que la semaine pass\u00e9e.';
-  if (stats.totalGestes < archive.gestes - 2) return 'Semaine plus l\u00e9g\u00e8re que la pr\u00e9c\u00e9dente.';
+  var deltas = [
+    { d: stats.fajrDays - (archive.fajr || 0), pos: 'L\u2019aube s\u2019est rapproch\u00e9e.', neg: 'L\u2019aube s\u2019est \u00e9loign\u00e9e doucement.' },
+    { d: stats.doneDays - (archive.journees || 0), pos: 'Plus de journ\u00e9es habit\u00e9es.', neg: 'Quelques jours en moins.' },
+    { d: (bilanCount || 0) - (archive.bilans || 0), pos: 'Le soir t\u2019a accompagn\u00e9 davantage.', neg: 'Le soir t\u2019a \u00e9chapp\u00e9 un peu.' },
+    { d: stats.totalGestes - (archive.gestes || 0), pos: 'Plus de gestes que la semaine pass\u00e9e.', neg: 'Semaine plus l\u00e9g\u00e8re que la pr\u00e9c\u00e9dente.' }
+  ];
+  var best = null, bestAbs = 0;
+  deltas.forEach(function(t) { var a = Math.abs(t.d); if (a >= 2 && a > bestAbs) { bestAbs = a; best = t; } });
+  if (best) return best.d > 0 ? best.pos : best.neg;
   return 'M\u00eame rythme que la semaine pass\u00e9e.';
 }
 function _numToLetters(n) {
@@ -6999,10 +7006,10 @@ function showWeeklyBilan() {
   var verset = _WEEKLY_VERSETS[dominante] || _WEEKLY_VERSETS.equilibre;
   var weekNum = Math.floor(Date.now() / (7 * 86400000));
   var parole = _WEEKLY_PAROLES[weekNum % _WEEKLY_PAROLES.length];
-  var comparison = _getWeeklyComparison(stats);
-  var conseil = _getWeeklyConseil(stats.catCounts);
   var _bilanData = {}; try { _bilanData = JSON.parse(localStorage.getItem('niyyah_bilans') || '{}'); } catch(e) {}
   var _bilanCount = 0; for (var _bi = 0; _bi < 7; _bi++) { if (_bilanData[getDateMinus(TODAY, _bi)]) _bilanCount++; }
+  var comparison = _getWeeklyComparison(stats, _bilanCount);
+  var conseil = _getWeeklyConseil(stats.catCounts);
   var _voicePool = (_NIYYAH_VOICE[dominante] && _NIYYAH_VOICE[dominante][safeGetItem('niyyah_motivation') || 'routine']) || _NIYYAH_VOICE.equilibre.routine;
   var _voiceMsg = _voicePool[Math.floor(Math.random() * _voicePool.length)] || '';
   _voiceMsg = _voiceMsg.replace(/\{\{fajr\}\}/g, _numToLetters(stats.fajrDays)).replace(/\{\{gestes\}\}/g, _numToLetters(stats.totalGestes)).replace(/\{\{journees\}\}/g, _numToLetters(stats.doneDays)).replace(/\{\{bilans\}\}/g, _numToLetters(_bilanCount));
@@ -8455,7 +8462,9 @@ function closeWeeklyBilan() {
   document.body.style.overflow = '';
   safeSetItem('niyyah_bilan_week', getCurrentWeekKey());
   var stats = _getWeeklyStats();
-  safeSetItem('niyyah_week_archive', JSON.stringify({ gestes: stats.totalGestes, journees: stats.doneDays, fajr: stats.fajrDays }));
+  var _bData = {}; try { _bData = JSON.parse(localStorage.getItem('niyyah_bilans') || '{}'); } catch(e) {}
+  var _bCount = 0; for (var _bk = 0; _bk < 7; _bk++) { if (_bData[getDateMinus(TODAY, _bk)]) _bCount++; }
+  safeSetItem('niyyah_week_archive', JSON.stringify({ gestes: stats.totalGestes, journees: stats.doneDays, fajr: stats.fajrDays, bilans: _bCount }));
 }
 function getCurrentWeekKey() {
   const d = new Date(TODAY);
