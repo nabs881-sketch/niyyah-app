@@ -7437,21 +7437,31 @@ function _openRecitDetail(num) {
     var src = T(recit.source);
     if (src) html += '<div style="text-align:center;font-size:12px;color:rgba(200,168,75,0.4);margin-bottom:16px;">' + src + '</div>';
   }
+  html += '<button onclick="validerLectureRecit(' + num + ');" style="display:block;width:calc(100% - 48px);max-width:320px;margin:24px auto 32px;padding:16px;border:none;border-radius:12px;background:#C8A84A;color:#2C2E32;font-family:\'Cormorant Garamond\',serif;font-size:16px;font-weight:600;cursor:pointer;">J\u2019ai termin\u00e9 ma lecture</button>';
   html += '</div>';
   html += '<button onclick="_closeRecitDetail(' + num + ');" style="position:absolute;top:calc(var(--safe-top,0px) + 12px);right:16px;background:none;border:none;color:#B5A685;font-size:24px;cursor:pointer;z-index:1;">\u2715</button>';
   ov.innerHTML = html;
   document.body.appendChild(ov);
 }
 function _closeRecitDetail(num) {
+  var ov = document.getElementById('recits-coran-overlay');
+  if (ov) ov.remove();
+  _renderRecitsCoran(_recitsCoranData);
+}
+function validerLectureRecit(num) {
   var progress = _getRecitsProgress();
   if (num === progress + 1) {
     _saveRecitsProgress(num);
     _recitsMarkReadToday();
-    _recitsValidateItem();
-    showToast('R\u00e9cit ' + num + ' termin\u00e9 \u2726');
   }
+  _recitsValidateItem();
+  var ov = document.getElementById('recits-coran-overlay');
+  if (ov) ov.remove();
   _renderRecitsCoran(_recitsCoranData);
+  showToast('R\u00e9cit ' + num + ' termin\u00e9 \u2726');
+  if (typeof renderLevel === 'function') renderLevel(currentLevel);
 }
+window.validerLectureRecit = validerLectureRecit;
 function _recitsShowArchive() {
   var existing = document.getElementById('recits-coran-overlay');
   if (existing) existing.remove();
