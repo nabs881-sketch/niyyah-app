@@ -1742,6 +1742,7 @@ function _validateDay() {
   else seuil = 9;
   if (score < seuil) return;
   safeSetItem('niyyah_day_validated_' + dk, '1');
+  _saveDailySnapshot(dk);
   // Streak silencieux avec joker Qadar (1 raté/semaine toléré)
   var streak = parseInt(safeGetItem('niyyah_silent_streak') || '0', 10);
   var hier = new Date(); hier.setDate(hier.getDate() - 1);
@@ -1768,6 +1769,23 @@ function _validateDay() {
   }
   safeSetItem('niyyah_silent_streak', String(streak));
   _checkStarUnlock(streak);
+}
+function _saveDailySnapshot(dk) {
+  var s = safeParseJSON('spiritual_v2', {});
+  var gestes = 0, lectures = 0, bienfaisance = 0;
+  var prieres = { fajr: 0, dhuhr: 0, asr: 0, maghrib: 0, isha: 0 };
+  var bienfIds = ['sadaqa','salam','silaturahm','kind_act','ziyara','pardon','maruf'];
+  var lectIds = ['hadith1','duaa_jour','sira','quran_read','recits_coran','fiqh_jour','savais_tu'];
+  var allItems = LEVELS.flatMap(function(l) { return l.sections.flatMap(function(sec) { return sec.items; }); });
+  allItems.forEach(function(it) {
+    var done = it.type === 'counter' ? (s[it.id] || 0) >= (it.target || 1) : !!s[it.id];
+    if (!done) return;
+    gestes++;
+    if (prieres.hasOwnProperty(it.id)) prieres[it.id] = 1;
+    if (bienfIds.indexOf(it.id) !== -1) bienfaisance++;
+    if (lectIds.indexOf(it.id) !== -1) lectures++;
+  });
+  safeSetItem('niyyah_snapshot_' + dk, JSON.stringify({ gestes: gestes, prieres: prieres, lectures: lectures, bienfaisance: bienfaisance }));
 }
 function _checkStarUnlock(streak) {
   var vagues = [{seuil:60,vague:5},{seuil:30,vague:4},{seuil:14,vague:3},{seuil:7,vague:2},{seuil:3,vague:1}];
@@ -6876,17 +6894,18 @@ function _getWeeklyStats() {
   for (var i = 0; i < 7; i++) {
     var d = getDateMinus(TODAY, i);
     if (history.days && history.days[d]) doneDays++;
-  }
-  var s = safeParseJSON('spiritual_v2', {});
-  var allItems = LEVELS.flatMap(function(l) { return l.sections.flatMap(function(sec) { return sec.items; }); });
-  allItems.forEach(function(it) {
-    if (s[it.id] === true || (it.type === 'counter' && (s[it.id] || 0) >= (it.target || 1))) {
-      totalGestes++;
-      if (it.category) catCounts[it.category] = (catCounts[it.category] || 0) + 1;
-      if (it.prayer) catCounts.rituels = (catCounts.rituels || 0) + 1;
+    var snap = null;
+    try { snap = JSON.parse(localStorage.getItem('niyyah_snapshot_' + d) || 'null'); } catch(e) {}
+    if (snap) {
+      totalGestes += snap.gestes || 0;
+      if (snap.prieres && snap.prieres.fajr) fajrDays++;
+      catCounts.bienfaisance += snap.bienfaisance || 0;
+      catCounts.lecture += snap.lectures || 0;
+      var pCount = 0;
+      if (snap.prieres) { ['fajr','dhuhr','asr','maghrib','isha'].forEach(function(p) { pCount += snap.prieres[p] || 0; }); }
+      catCounts.rituels += pCount;
     }
-    if (it.id === 'fajr' && s['fajr']) fajrDays++;
-  });
+  }
   return { doneDays: doneDays, totalGestes: totalGestes, fajrDays: fajrDays, catCounts: catCounts };
 }
 function _getWeeklyComparison(stats) {
