@@ -14127,9 +14127,7 @@ function regardeCapture() {
       });
     }
 
-    function fallback() {
-      if (_done) return; _done = true;
-      clearTimeout(_toR);
+    function _fallbackWithVersets() {
       var _fv = window.REGARD_VERSETS && window.REGARD_VERSETS['INDETERMINE'] && window.REGARD_VERSETS['INDETERMINE'].versets && window.REGARD_VERSETS['INDETERMINE'].versets[0];
       if (_fv) {
         _regardeShowVerset(content, _fv, true);
@@ -14143,10 +14141,35 @@ function regardeCapture() {
           var entry = addRegardeEntry({ question: _jLabel, category: 'INDETERMINE', photo: null, bookmark: false, note: '', verset_index: 0 });
           _currentRegardeId = entry.id;
         });
-      } else {
-        content.innerHTML = '<div style="text-align:center;padding:20%;font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:rgba(200,168,75,0.7);">Connexion requise pour le premier Regard.</div>';
-        content.style.opacity = '1';
+        return true;
       }
+      return false;
+    }
+    function fallback() {
+      if (_done) return; _done = true;
+      clearTimeout(_toR);
+      if (_fallbackWithVersets()) return;
+      if (window._regardLibLoading) {
+        content.innerHTML = '<div style="text-align:center;padding:20%;font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.6);">Charge en cours\u2026</div>';
+        content.style.opacity = '1';
+        var _retryCount = 0;
+        var _retryInterval = setInterval(function() {
+          _retryCount++;
+          if (_fallbackWithVersets()) { clearInterval(_retryInterval); return; }
+          if (_retryCount >= 10) { clearInterval(_retryInterval); content.innerHTML = '<div style="text-align:center;padding:20%;font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.6);">R\u00e9essaie dans un instant.<br><button onclick="regardeOpen()" style="margin-top:16px;padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:13px;cursor:pointer;">R\u00e9essayer</button></div>'; }
+        }, 500);
+        return;
+      }
+      fetch('./data/regard-library.json').then(function(r) { return r.json(); }).then(function(d) {
+        window.REGARD_VERSETS = d;
+        if (!_fallbackWithVersets()) {
+          content.innerHTML = '<div style="text-align:center;padding:20%;font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.6);">Connexion requise pour le premier Regard.<br><button onclick="regardeOpen()" style="margin-top:16px;padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:13px;cursor:pointer;">R\u00e9essayer</button></div>';
+          content.style.opacity = '1';
+        }
+      }).catch(function() {
+        content.innerHTML = '<div style="text-align:center;padding:20%;font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.6);">Connexion requise pour le premier Regard.<br><button onclick="regardeOpen()" style="margin-top:16px;padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:13px;cursor:pointer;">R\u00e9essayer</button></div>';
+        content.style.opacity = '1';
+      });
     }
 
     var _thirtyDaysAgo = Date.now() - 30 * 24 * 3600000;
