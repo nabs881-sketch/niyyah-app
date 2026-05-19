@@ -7068,23 +7068,21 @@ function showWeeklyBilan() {
   var comparison = _getWeeklyComparison(stats, _bilanCount);
   var _profil = safeGetItem('niyyah_motivation') || 'routine';
   var _isPrem = typeof isPremium === 'function' && isPremium();
-  console.log('[bilan-hebdo] premium=' + _isPrem);
   _cleanupPremiumMsgs();
-  var conseil;
+  var _manque = _getZoneManquante(stats.catCounts, _bilanCount);
+  var _conseilStatique = _getWeeklyConseil(dominante, stats.catCounts, _bilanCount, _profil);
+  _conseilStatique = _conseilStatique.replace(/\{\{fajr\}\}/g, _numToLetters(stats.fajrDays)).replace(/\{\{gestes\}\}/g, _numToLetters(stats.totalGestes)).replace(/\{\{journees\}\}/g, _numToLetters(stats.doneDays)).replace(/\{\{bilans\}\}/g, _numToLetters(_bilanCount));
+  if (prenom) _conseilStatique = _conseilStatique.replace(/\{\{prenom\}\}/g, prenom);
+  var conseil = _conseilStatique;
+  var _premiumBadge = '';
+  var _weekKey = 'niyyah_premium_msg_' + _getWeekISO();
   if (_isPrem) {
-    var _weekKey = 'niyyah_premium_msg_' + _getWeekISO();
     var _cached = safeGetItem(_weekKey);
     if (_cached) {
       conseil = _cached;
-    } else {
-      // TODO: appel API IA premium (Prompt 3-4) — stocker dans safeSetItem(_weekKey, response)
-      conseil = _getWeeklyConseil(dominante, stats.catCounts, _bilanCount, _profil);
+      _premiumBadge = '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);margin-bottom:8px;">\u2726 Une lettre de Niyyah, \u00e9crite cette semaine pour toi.</div>';
     }
-  } else {
-    conseil = _getWeeklyConseil(dominante, stats.catCounts, _bilanCount, _profil);
   }
-  conseil = conseil.replace(/\{\{fajr\}\}/g, _numToLetters(stats.fajrDays)).replace(/\{\{gestes\}\}/g, _numToLetters(stats.totalGestes)).replace(/\{\{journees\}\}/g, _numToLetters(stats.doneDays)).replace(/\{\{bilans\}\}/g, _numToLetters(_bilanCount));
-  if (prenom) conseil = conseil.replace(/\{\{prenom\}\}/g, prenom);
   var _voicePool = (_NIYYAH_VOICE[dominante] && _NIYYAH_VOICE[dominante][safeGetItem('niyyah_motivation') || 'routine']) || _NIYYAH_VOICE.equilibre.routine;
   var _voiceMsg = _voicePool[Math.floor(Math.random() * _voicePool.length)] || '';
   _voiceMsg = _voiceMsg.replace(/\{\{fajr\}\}/g, _numToLetters(stats.fajrDays)).replace(/\{\{gestes\}\}/g, _numToLetters(stats.totalGestes)).replace(/\{\{journees\}\}/g, _numToLetters(stats.doneDays)).replace(/\{\{bilans\}\}/g, _numToLetters(_bilanCount));
@@ -7105,7 +7103,8 @@ function showWeeklyBilan() {
     + '<div style="text-align:center;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.4);margin-bottom:8px;">Ce qui a respir\u00e9</div>'
     + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#B5A685;margin-bottom:24px;">' + comparison + '</div>'
     + '<div style="text-align:center;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.4);margin-bottom:12px;">Le chemin qui s\u2019ouvre</div>'
-    + '<div style="text-align:center;max-width:320px;margin:0 auto 24px;">' + conseil.split('\n\n').map(function(p) { return '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#B5A685;line-height:1.7;margin-bottom:12px;">' + p + '</div>'; }).join('') + '</div>'
+    + _premiumBadge
+    + '<div id="_wkConseil" style="text-align:center;max-width:320px;margin:0 auto 24px;">' + conseil.split('\n\n').map(function(p) { return '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#B5A685;line-height:1.7;margin-bottom:12px;">' + p + '</div>'; }).join('') + '</div>'
     + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.6);line-height:1.6;margin-bottom:8px;max-width:280px;margin-left:auto;margin-right:auto;">' + parole + '</div>'
     + '<div style="text-align:center;font-family:Amiri,serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.3);margin-bottom:24px;">Astaghfirull\u00e2h, astaghfirull\u00e2h, astaghfirull\u00e2h.</div>'
     + '</div>'
@@ -7114,6 +7113,25 @@ function showWeeklyBilan() {
   document.getElementById('weeklyOverlay').classList.add('show');
   document.body.style.overflow = 'hidden';
   _animateWeeklyNums([stats.totalGestes, stats.doneDays, stats.fajrDays]);
+  if (_isPrem && !safeGetItem(_weekKey)) {
+    var _conseilEl = document.getElementById('_wkConseil');
+    if (_conseilEl) _conseilEl.innerHTML = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.4);">Niyyah \u00e9crit ta lettre cette semaine\u2026</div>';
+    var _archive = null; try { _archive = JSON.parse(localStorage.getItem('niyyah_week_archive') || 'null'); } catch(e) {}
+    fetch('https://niyyah-api.nabs881.workers.dev/api/bilan-premium', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ prenom: prenom || '', profil: _profil, stats: { gestes: stats.totalGestes, fajr: stats.fajrDays, journees: stats.doneDays, bilans: _bilanCount }, stats_passee: _archive, dominante: dominante, zone_manquante: _manque })
+    }).then(function(r) { return r.json(); }).then(function(data) {
+      if (data && data.message) {
+        safeSetItem(_weekKey, data.message);
+        var el = document.getElementById('_wkConseil');
+        if (el) {
+          el.previousElementSibling && el.previousElementSibling.className === '' || el.insertAdjacentHTML('beforebegin', '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);margin-bottom:8px;">\u2726 Une lettre de Niyyah, \u00e9crite cette semaine pour toi.</div>');
+          el.innerHTML = data.message.split('\n\n').map(function(p) { return '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#B5A685;line-height:1.7;margin-bottom:12px;">' + p + '</div>'; }).join('');
+        }
+      }
+    }).catch(function() {});
+  }
 }
 function _animateWeeklyNums(targets) {
   var duration = 1000;
