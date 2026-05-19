@@ -7080,7 +7080,7 @@ function showWeeklyBilan() {
     var _cached = safeGetItem(_weekKey);
     if (_cached) {
       conseil = _cached;
-      _premiumBadge = '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);margin-bottom:8px;">\u2726 Une lettre de Niyyah, \u00e9crite cette semaine pour toi.</div>';
+      _premiumBadge = '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:12px;font-style:italic;color:#B5A685;margin-bottom:12px;">\u2726 Une lettre de Niyyah, \u00e9crite cette semaine pour toi.</div>';
     }
   }
   var _voicePool = (_NIYYAH_VOICE[dominante] && _NIYYAH_VOICE[dominante][safeGetItem('niyyah_motivation') || 'routine']) || _NIYYAH_VOICE.equilibre.routine;
@@ -7126,7 +7126,7 @@ function showWeeklyBilan() {
         safeSetItem(_weekKey, data.message);
         var el = document.getElementById('_wkConseil');
         if (el) {
-          el.previousElementSibling && el.previousElementSibling.className === '' || el.insertAdjacentHTML('beforebegin', '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);margin-bottom:8px;">\u2726 Une lettre de Niyyah, \u00e9crite cette semaine pour toi.</div>');
+          el.previousElementSibling && el.previousElementSibling.className === '' || el.insertAdjacentHTML('beforebegin', '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:12px;font-style:italic;color:#B5A685;margin-bottom:12px;">\u2726 Une lettre de Niyyah, \u00e9crite cette semaine pour toi.</div>');
           el.innerHTML = data.message.split('\n\n').map(function(p) { return '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#B5A685;line-height:1.7;margin-bottom:12px;">' + p + '</div>'; }).join('');
         }
       }
