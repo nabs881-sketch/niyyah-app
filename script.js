@@ -6997,8 +6997,11 @@ function showWeeklyBilan() {
   var parole = _WEEKLY_PAROLES[weekNum % _WEEKLY_PAROLES.length];
   var comparison = _getWeeklyComparison(stats);
   var conseil = _getWeeklyConseil(stats.catCounts);
+  var _voicePool = (_NIYYAH_VOICE[dominante] && _NIYYAH_VOICE[dominante][safeGetItem('niyyah_motivation') || 'routine']) || _NIYYAH_VOICE.equilibre.routine;
+  var _voiceMsg = _voicePool[Math.floor(Math.random() * _voicePool.length)] || '';
+  if (_voiceMsg && prenom) _voiceMsg = prenom + ', ' + _voiceMsg.charAt(0).toLowerCase() + _voiceMsg.slice(1);
   var card = document.getElementById('weeklyCard');
-  card.innerHTML = '<div style="text-align:center;padding:20px 16px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:#B5A685;">Voix Niyyah \u2014 placeholder</div></div>'
+  card.innerHTML = '<div style="text-align:center;padding:20px 16px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:#B5A685;line-height:1.6;max-width:300px;margin:0 auto;">' + _voiceMsg + '</div></div>'
     + '<div style="padding:12px 0 20px;">'
     + '<div style="text-align:center;font-size:12px;letter-spacing:0.25em;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:20px;font-family:\'Cormorant Garamond\',serif;">' + t('weekly_muhasaba') + '</div>'
     + '<div style="text-align:center;margin-bottom:6px;font-family:\'Cormorant Garamond\',serif;font-size:20px;font-style:italic;color:#E5E0DC;line-height:1.6;max-width:300px;margin-left:auto;margin-right:auto;">' + question + '</div>'
