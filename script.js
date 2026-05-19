@@ -7008,7 +7008,7 @@ function showWeeklyBilan() {
   _voiceMsg = _voiceMsg.replace(/\{\{fajr\}\}/g, _numToLetters(stats.fajrDays)).replace(/\{\{gestes\}\}/g, _numToLetters(stats.totalGestes)).replace(/\{\{journees\}\}/g, _numToLetters(stats.doneDays)).replace(/\{\{bilans\}\}/g, _numToLetters(_bilanCount));
   if (_voiceMsg && prenom) _voiceMsg = prenom + ', ' + _voiceMsg.charAt(0).toLowerCase() + _voiceMsg.slice(1);
   var card = document.getElementById('weeklyCard');
-  card.innerHTML = '<div style="text-align:center;padding:20px 16px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:#B5A685;line-height:1.6;max-width:300px;margin:0 auto;">' + _voiceMsg + '</div></div>'
+  card.innerHTML = '<div style="text-align:center;padding:20px 16px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:#B5A685;line-height:1.6;max-width:300px;margin:0 auto;">' + _voiceMsg + '</div><div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:#B5A685;text-align:right;margin-top:8px;max-width:300px;margin-left:auto;margin-right:auto;">\u2014 Niyyah</div></div>'
     + '<div style="padding:12px 0 20px;">'
     + '<div style="text-align:center;font-size:12px;letter-spacing:0.25em;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:20px;font-family:\'Cormorant Garamond\',serif;">' + t('weekly_muhasaba') + '</div>'
     + '<div style="text-align:center;margin-bottom:6px;font-family:\'Cormorant Garamond\',serif;font-size:20px;font-style:italic;color:#E5E0DC;line-height:1.6;max-width:300px;margin-left:auto;margin-right:auto;">' + question + '</div>'
