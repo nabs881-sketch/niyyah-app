@@ -6823,6 +6823,14 @@ var _WEEKLY_QUESTIONS = {
   quasi_vide: ['Qu\u2019est-ce qui t\u2019a manqu\u00e9 cette semaine ?', 'Si tu ne devais garder qu\u2019un geste \u2014 lequel ?'],
   equilibre: ['Qu\u2019est-ce que tu gardes de cette semaine ?', 'Un mot pour r\u00e9sumer ces sept jours ?']
 };
+var _WEEKLY_VERSETS = {
+  fajr: { text: 'Certes, la pri\u00e8re de l\u2019aube est t\u00e9moin.', ref: 'Coran 17:78' },
+  bienfaisance: { text: 'Vous n\u2019atteindrez la pi\u00e9t\u00e9 que si vous d\u00e9pensez de ce que vous aimez.', ref: 'Coran 3:92' },
+  lecture: { text: 'R\u00e9citez ce qui vous est facile du Coran.', ref: 'Coran 73:20' },
+  bilans_soir: { text: '\u00d4 vous qui croyez, craignez Allah et que chaque \u00e2me regarde ce qu\u2019elle a pr\u00e9par\u00e9.', ref: 'Coran 59:18' },
+  quasi_vide: { text: 'Ne d\u00e9sesp\u00e9rez pas de la mis\u00e9ricorde d\u2019Allah.', ref: 'Coran 39:53' },
+  equilibre: { text: 'Allah n\u2019impose \u00e0 aucune \u00e2me une charge sup\u00e9rieure \u00e0 sa capacit\u00e9.', ref: 'Coran 2:286' }
+};
 var _WEEKLY_PAROLES = [
   'Chaque semaine est une lettre. Tu \u00e9cris ton Livre.',
   'Ce qui compte n\u2019est pas ce que tu as fait \u2014 c\u2019est que tu sois revenu.',
@@ -6835,55 +6843,99 @@ var _WEEKLY_PAROLES = [
   'All\u00e2h n\u2019oublie rien de ce que tu as sem\u00e9.',
   'Avance. M\u00eame lentement. Tu avances.'
 ];
+var _WEEKLY_CONSEILS = {
+  rituels: 'La pri\u00e8re t\u2019attend. Un seul Fajr cette semaine changerait tout.',
+  bienfaisance: 'La bienfaisance t\u2019attend. Un salam, une sadaqa \u2014 pose un geste vers l\u2019autre.',
+  lecture: 'La science t\u2019attend. Un hadith, un verset \u2014 quelques minutes suffisent.',
+  duaa: 'La dou\u2019a t\u2019attend. Une invocation sinc\u00e8re, m\u00eame courte, est entendue.'
+};
 function _getWeeklyDominante() {
   var s = safeParseJSON('spiritual_v2', {});
-  var fajrCount = 0, bienfCount = 0, lectCount = 0;
   var bilanData = {}; try { bilanData = JSON.parse(localStorage.getItem('niyyah_bilans') || '{}'); } catch(e) {}
-  var bilanCount = 0, totalGestes = 0, doneDays = 0;
+  var bilanCount = 0, doneDays = 0;
   var bienfIds = ['sadaqa','salam','silaturahm','kind_act','ziyara','pardon','maruf'];
   var lectIds = ['hadith1','duaa_jour','sira','quran_read','recits_coran','fiqh_jour','savais_tu'];
+  var bienfCount = 0, lectCount = 0;
   for (var i = 0; i < 7; i++) {
     var d = getDateMinus(TODAY, i);
     if (history.days && history.days[d]) doneDays++;
     if (bilanData[d]) bilanCount++;
   }
-  if (s['fajr']) fajrCount++;
   bienfIds.forEach(function(id) { if (s[id]) bienfCount++; });
   lectIds.forEach(function(id) { if (s[id]) lectCount++; });
-  totalGestes = Object.keys(s).filter(function(k) { return s[k] === true; }).length;
   if (doneDays <= 1) return 'quasi_vide';
-  if (fajrCount >= 1 && doneDays >= 5) return 'fajr';
+  if (s['fajr'] && doneDays >= 5) return 'fajr';
   if (bienfCount >= 3) return 'bienfaisance';
   if (lectCount >= 3) return 'lecture';
   if (bilanCount >= 5) return 'bilans_soir';
   return 'equilibre';
 }
-function showWeeklyBilan() {
+function _getWeeklyStats() {
   var doneDays = 0, totalGestes = 0, fajrDays = 0;
+  var catCounts = { rituels: 0, bienfaisance: 0, lecture: 0, duaa: 0 };
   for (var i = 0; i < 7; i++) {
     var d = getDateMinus(TODAY, i);
     if (history.days && history.days[d]) doneDays++;
   }
   var s = safeParseJSON('spiritual_v2', {});
-  totalGestes = Object.keys(s).filter(function(k) { return s[k] === true; }).length;
-  fajrDays = s['fajr'] ? 1 : 0;
+  var allItems = LEVELS.flatMap(function(l) { return l.sections.flatMap(function(sec) { return sec.items; }); });
+  allItems.forEach(function(it) {
+    if (s[it.id] === true || (it.type === 'counter' && (s[it.id] || 0) >= (it.target || 1))) {
+      totalGestes++;
+      if (it.category) catCounts[it.category] = (catCounts[it.category] || 0) + 1;
+      if (it.prayer) catCounts.rituels = (catCounts.rituels || 0) + 1;
+    }
+    if (it.id === 'fajr' && s['fajr']) fajrDays++;
+  });
+  return { doneDays: doneDays, totalGestes: totalGestes, fajrDays: fajrDays, catCounts: catCounts };
+}
+function _getWeeklyComparison(stats) {
+  var archive = null;
+  try { archive = JSON.parse(localStorage.getItem('niyyah_week_archive') || 'null'); } catch(e) {}
+  if (!archive) return 'Premi\u00e8re semaine enregistr\u00e9e.';
+  if (stats.totalGestes > archive.gestes + 2) return 'Plus de gestes que la semaine pass\u00e9e.';
+  if (stats.totalGestes < archive.gestes - 2) return 'Semaine plus l\u00e9g\u00e8re que la pr\u00e9c\u00e9dente.';
+  return 'M\u00eame rythme que la semaine pass\u00e9e.';
+}
+function _getWeeklyConseil(catCounts) {
+  var min = Infinity, minCat = 'rituels';
+  ['rituels','bienfaisance','lecture','duaa'].forEach(function(c) {
+    var v = catCounts[c] || 0;
+    if (v < min) { min = v; minCat = c; }
+  });
+  return _WEEKLY_CONSEILS[minCat] || _WEEKLY_CONSEILS.rituels;
+}
+function showWeeklyBilan() {
+  var stats = _getWeeklyStats();
   var dominante = _getWeeklyDominante();
   var questions = _WEEKLY_QUESTIONS[dominante] || _WEEKLY_QUESTIONS.equilibre;
   var question = questions[Math.floor(Math.random() * questions.length)];
+  var prenom = safeGetItem('niyyah_prenom');
+  if (prenom) question = prenom + ', ' + question.charAt(0).toLowerCase() + question.slice(1);
+  var verset = _WEEKLY_VERSETS[dominante] || _WEEKLY_VERSETS.equilibre;
   var weekNum = Math.floor(Date.now() / (7 * 86400000));
   var parole = _WEEKLY_PAROLES[weekNum % _WEEKLY_PAROLES.length];
+  var comparison = _getWeeklyComparison(stats);
+  var conseil = _getWeeklyConseil(stats.catCounts);
   var card = document.getElementById('weeklyCard');
-  card.innerHTML = '<div style="text-align:center;padding:12px 0 20px;">'
-    + '<div style="font-size:12px;letter-spacing:0.25em;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:20px;font-family:\'Cormorant Garamond\',serif;">' + t('weekly_muhasaba') + '</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;font-style:italic;color:#E5E0DC;line-height:1.6;margin-bottom:28px;max-width:300px;margin-left:auto;margin-right:auto;">' + question + '</div>'
+  card.innerHTML = '<div style="padding:12px 0 20px;">'
+    + '<div style="text-align:center;font-size:12px;letter-spacing:0.25em;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:20px;font-family:\'Cormorant Garamond\',serif;">' + t('weekly_muhasaba') + '</div>'
+    + '<div style="text-align:center;margin-bottom:6px;font-family:\'Cormorant Garamond\',serif;font-size:20px;font-style:italic;color:#E5E0DC;line-height:1.6;max-width:300px;margin-left:auto;margin-right:auto;">' + question + '</div>'
+    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:28px;">\u00ab\u00a0' + verset.text + '\u00a0\u00bb \u2014 ' + verset.ref + '</div>'
+    + '<div style="text-align:center;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.4);margin-bottom:12px;">Ce que la semaine a vu de toi</div>'
     + '<div style="display:flex;justify-content:center;gap:24px;margin-bottom:28px;">'
-    + '<div style="text-align:center;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:28px;font-weight:600;color:#C8A84A;">' + totalGestes + '</div><div style="font-size:11px;color:var(--t3);letter-spacing:1px;text-transform:uppercase;">gestes</div></div>'
+    + '<div style="text-align:center;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:28px;font-weight:600;color:#C8A84A;">' + stats.totalGestes + '</div><div style="font-family:Amiri,serif;font-size:14px;color:rgba(200,168,75,0.5);direction:rtl;">\u0623\u0639\u0652\u0645\u064E\u0627\u0644</div><div style="font-size:11px;color:var(--t3);letter-spacing:1px;">gestes</div></div>'
     + '<div style="width:1px;background:rgba(200,168,75,0.15);"></div>'
-    + '<div style="text-align:center;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:28px;font-weight:600;color:#C8A84A;">' + doneDays + '</div><div style="font-size:11px;color:var(--t3);letter-spacing:1px;text-transform:uppercase;">journ\u00e9es</div></div>'
+    + '<div style="text-align:center;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:28px;font-weight:600;color:#C8A84A;">' + stats.doneDays + '</div><div style="font-family:Amiri,serif;font-size:14px;color:rgba(200,168,75,0.5);direction:rtl;">\u0623\u064E\u064A\u0651\u064E\u0627\u0645</div><div style="font-size:11px;color:var(--t3);letter-spacing:1px;">journ\u00e9es</div></div>'
     + '<div style="width:1px;background:rgba(200,168,75,0.15);"></div>'
-    + '<div style="text-align:center;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:28px;font-weight:600;color:#C8A84A;">' + fajrDays + '</div><div style="font-size:11px;color:var(--t3);letter-spacing:1px;text-transform:uppercase;">Fajr</div></div>'
+    + '<div style="text-align:center;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:28px;font-weight:600;color:#C8A84A;">' + stats.fajrDays + '</div><div style="font-family:Amiri,serif;font-size:14px;color:rgba(200,168,75,0.5);direction:rtl;">\u0641\u064E\u062C\u0652\u0631</div><div style="font-size:11px;color:var(--t3);letter-spacing:1px;">Fajr</div></div>'
     + '</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.6);line-height:1.6;margin-bottom:24px;max-width:280px;margin-left:auto;margin-right:auto;">' + parole + '</div>'
+    + '<div style="text-align:center;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.4);margin-bottom:8px;">Ce qui a respir\u00e9</div>'
+    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#B5A685;margin-bottom:24px;">' + comparison + '</div>'
+    + '<div style="text-align:center;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.4);margin-bottom:8px;">Le chemin qui s\u2019ouvre</div>'
+    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#B5A685;line-height:1.6;margin-bottom:24px;max-width:300px;margin-left:auto;margin-right:auto;">' + conseil + '</div>'
+    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.6);line-height:1.6;margin-bottom:8px;max-width:280px;margin-left:auto;margin-right:auto;">' + parole + '</div>'
+    + '<div style="text-align:center;font-family:Amiri,serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.3);margin-bottom:24px;">Astaghfirull\u00e2h, astaghfirull\u00e2h, astaghfirull\u00e2h.</div>'
     + '</div>'
     + '<button class="weekly-btn" onclick="closeWeeklyBilan()" style="width:100%;padding:15px;border-radius:12px;border:none;background:#C8A84A;color:#2C2E32;font-size:15px;font-weight:700;cursor:pointer;font-family:\'Cormorant Garamond\',serif;letter-spacing:0.05em;">'
     + '\u0628\u0650\u0633\u0652\u0645\u0650 \u0627\u0644\u0644\u0651\u064E\u0647\u0650 \u2014 Nouvelle semaine</button>';
@@ -8296,6 +8348,8 @@ function closeWeeklyBilan() {
   document.getElementById('weeklyOverlay').classList.remove('show');
   document.body.style.overflow = '';
   safeSetItem('niyyah_bilan_week', getCurrentWeekKey());
+  var stats = _getWeeklyStats();
+  safeSetItem('niyyah_week_archive', JSON.stringify({ gestes: stats.totalGestes, journees: stats.doneDays, fajr: stats.fajrDays }));
 }
 function getCurrentWeekKey() {
   const d = new Date(TODAY);
