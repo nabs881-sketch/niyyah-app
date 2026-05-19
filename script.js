@@ -6892,9 +6892,12 @@ function _getWeeklyStats() {
   var doneDays = 0, totalGestes = 0, fajrDays = 0;
   var catCounts = { rituels: 0, bienfaisance: 0, lecture: 0, duaa: 0 };
   var hasSnapshots = false;
+  var _hist = history;
+  try { var _hRaw = safeGetItem('spiritual_history'); if (_hRaw) _hist = JSON.parse(_hRaw) || _hist; } catch(e) {}
   for (var i = 0; i < 7; i++) {
     var d = getDateMinus(TODAY, i);
-    if (history.days && history.days[d]) doneDays++;
+    if (_hist.days && _hist.days[d]) doneDays++;
+    if (safeGetItem('niyyah_day_validated_' + d) === '1' && !(_hist.days && _hist.days[d])) doneDays++;
     var raw = localStorage.getItem('niyyah_snapshot_' + d);
     if (raw) {
       hasSnapshots = true;
