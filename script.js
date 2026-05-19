@@ -13559,6 +13559,14 @@ function v2Init() {
   if (_onboardDone) {
     v2GoSanctuaire();
   }
+  // Fade-out splash dès que le Sanctuaire est rendu
+  var _splash = document.getElementById('app-splash');
+  if (_splash) {
+    requestAnimationFrame(function() {
+      _splash.style.opacity = '0';
+      setTimeout(function() { if (_splash.parentNode) _splash.remove(); }, 400);
+    });
+  }
   setTimeout(() => { v2ApplyI18n(); }, 100);
 
   // Sync V1 intention → V2 chip on boot
@@ -13577,14 +13585,6 @@ function v2Init() {
   triggerSpontaneousUI();
   checkEvolutionRevenant();
   checkEvolutionRoutine();
-  // Fade-out splash
-  var _splash = document.getElementById('app-splash');
-  if (_splash) {
-    requestAnimationFrame(function() {
-      _splash.style.opacity = '0';
-      setTimeout(function() { if (_splash.parentNode) _splash.remove(); }, 400);
-    });
-  }
 }
 
 function checkEvolutionRevenant() {
