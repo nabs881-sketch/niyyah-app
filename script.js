@@ -6924,11 +6924,11 @@ function showWeeklyBilan() {
     + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:28px;">\u00ab\u00a0' + verset.text + '\u00a0\u00bb \u2014 ' + verset.ref + '</div>'
     + '<div style="text-align:center;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.4);margin-bottom:12px;">Ce que la semaine a vu de toi</div>'
     + '<div style="display:flex;justify-content:center;gap:24px;margin-bottom:28px;">'
-    + '<div style="text-align:center;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:28px;font-weight:600;color:#C8A84A;">' + stats.totalGestes + '</div><div style="font-family:Amiri,serif;font-size:14px;color:rgba(200,168,75,0.5);direction:rtl;">\u0623\u0639\u0652\u0645\u064E\u0627\u0644</div><div style="font-size:11px;color:var(--t3);letter-spacing:1px;">gestes</div></div>'
+    + '<div style="text-align:center;"><div id="_wkNum0" style="font-family:\'Cormorant Garamond\',serif;font-size:28px;font-weight:600;color:#C8A84A;">0</div><div style="font-family:Amiri,serif;font-size:14px;color:rgba(200,168,75,0.5);direction:rtl;">\u0623\u0639\u0652\u0645\u064E\u0627\u0644</div><div style="font-size:11px;color:var(--t3);letter-spacing:1px;">gestes</div></div>'
     + '<div style="width:1px;background:rgba(200,168,75,0.15);"></div>'
-    + '<div style="text-align:center;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:28px;font-weight:600;color:#C8A84A;">' + stats.doneDays + '</div><div style="font-family:Amiri,serif;font-size:14px;color:rgba(200,168,75,0.5);direction:rtl;">\u0623\u064E\u064A\u0651\u064E\u0627\u0645</div><div style="font-size:11px;color:var(--t3);letter-spacing:1px;">journ\u00e9es</div></div>'
+    + '<div style="text-align:center;"><div id="_wkNum1" style="font-family:\'Cormorant Garamond\',serif;font-size:28px;font-weight:600;color:#C8A84A;">0</div><div style="font-family:Amiri,serif;font-size:14px;color:rgba(200,168,75,0.5);direction:rtl;">\u0623\u064E\u064A\u0651\u064E\u0627\u0645</div><div style="font-size:11px;color:var(--t3);letter-spacing:1px;">journ\u00e9es</div></div>'
     + '<div style="width:1px;background:rgba(200,168,75,0.15);"></div>'
-    + '<div style="text-align:center;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:28px;font-weight:600;color:#C8A84A;">' + stats.fajrDays + '</div><div style="font-family:Amiri,serif;font-size:14px;color:rgba(200,168,75,0.5);direction:rtl;">\u0641\u064E\u062C\u0652\u0631</div><div style="font-size:11px;color:var(--t3);letter-spacing:1px;">Fajr</div></div>'
+    + '<div style="text-align:center;"><div id="_wkNum2" style="font-family:\'Cormorant Garamond\',serif;font-size:28px;font-weight:600;color:#C8A84A;">0</div><div style="font-family:Amiri,serif;font-size:14px;color:rgba(200,168,75,0.5);direction:rtl;">\u0641\u064E\u062C\u0652\u0631</div><div style="font-size:11px;color:var(--t3);letter-spacing:1px;">Fajr</div></div>'
     + '</div>'
     + '<div style="text-align:center;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.4);margin-bottom:8px;">Ce qui a respir\u00e9</div>'
     + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#B5A685;margin-bottom:24px;">' + comparison + '</div>'
@@ -6941,6 +6941,22 @@ function showWeeklyBilan() {
     + '\u0628\u0650\u0633\u0652\u0645\u0650 \u0627\u0644\u0644\u0651\u064E\u0647\u0650 \u2014 Nouvelle semaine</button>';
   document.getElementById('weeklyOverlay').classList.add('show');
   document.body.style.overflow = 'hidden';
+  _animateWeeklyNums([stats.totalGestes, stats.doneDays, stats.fajrDays]);
+}
+function _animateWeeklyNums(targets) {
+  var duration = 1000;
+  var start = null;
+  function tick(ts) {
+    if (!start) start = ts;
+    var t = Math.min((ts - start) / duration, 1);
+    var ease = 1 - Math.pow(1 - t, 3);
+    for (var i = 0; i < 3; i++) {
+      var el = document.getElementById('_wkNum' + i);
+      if (el) el.textContent = Math.round(ease * targets[i]);
+    }
+    if (t < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
 }
 const SOURATES = [
   [1,'Al-Fatiha','الفاتحة','L\'Ouverture',7],
