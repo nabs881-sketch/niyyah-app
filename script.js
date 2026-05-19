@@ -6835,13 +6835,13 @@ function getWeeklyHadith(level) {
 }
 var _NIYYAH_VOICE = {
   fajr: {
-    reconnecter: ['Six Fajr cette semaine \u2014 l\u2019aube te conna\u00eet d\u00e9j\u00e0.','Tu reviens. Doucement. L\u2019aube t\u2019attend chaque jour.','Plus de matins que pr\u00e9vus. C\u2019est pr\u00e9cieux quand on revient.'],
-    routine: ['Six Fajr cette semaine. Le matin t\u2019appartient.','L\u2019aube est devenue ta complice. Continue.','Tu tiens Fajr. Ce n\u2019est pas rien.'],
-    sacraliser: ['Six Fajr. C\u2019est exactement ce que tu cherches \u2014 la pr\u00e9sence \u00e0 l\u2019aube.','Le matin \u00e9claire ton chemin. Le reste s\u2019organise autour.','Tu honores l\u2019aube. Le jour s\u2019ouvre avec toi.']
+    reconnecter: ['{{fajr}} Fajr cette semaine \u2014 l\u2019aube te conna\u00eet d\u00e9j\u00e0.','Tu reviens. Doucement. L\u2019aube t\u2019attend chaque jour.','Plus de matins que pr\u00e9vus. C\u2019est pr\u00e9cieux quand on revient.'],
+    routine: ['{{fajr}} Fajr cette semaine. Le matin t\u2019appartient.','L\u2019aube est devenue ta complice. Continue.','Tu tiens Fajr. Ce n\u2019est pas rien.'],
+    sacraliser: ['{{fajr}} Fajr. C\u2019est exactement ce que tu cherches \u2014 la pr\u00e9sence \u00e0 l\u2019aube.','Le matin \u00e9claire ton chemin. Le reste s\u2019organise autour.','Tu honores l\u2019aube. Le jour s\u2019ouvre avec toi.']
   },
   bienfaisance: {
     reconnecter: ['Tu es all\u00e9 vers les autres cette semaine. \u00c7a compte beaucoup.','Quelques gestes vers l\u2019ext\u00e9rieur \u2014 le c\u0153ur s\u2019ouvre quand on revient.','Le retour passe souvent par l\u2019autre. Tu l\u2019as senti.'],
-    routine: ['Tu as sem\u00e9 du bien cette semaine. \u00c7a revient toujours.','Trois gestes vers les autres, c\u2019est ta semaine. La gentillesse est ton fil.','Tu donnes sans bruit. C\u2019est la plus belle fa\u00e7on.'],
+    routine: ['Tu as sem\u00e9 du bien cette semaine. \u00c7a revient toujours.','{{gestes}} gestes vers les autres, c\u2019est ta semaine. La gentillesse est ton fil.','Tu donnes sans bruit. C\u2019est la plus belle fa\u00e7on.'],
     sacraliser: ['Tu donnes beaucoup. N\u2019oublie pas de recevoir aussi.','Ta semaine a \u00e9clair\u00e9 d\u2019autres visages. C\u2019est le sens m\u00eame.','Donner devient ta respiration. Continue, doucement.']
   },
   lecture: {
@@ -6850,8 +6850,8 @@ var _NIYYAH_VOICE = {
     sacraliser: ['Tu cherches. Le Livre te r\u00e9pond. Continue.','Lire devient pour toi une forme de pri\u00e8re. C\u2019est juste.','Ta semaine a \u00e9t\u00e9 travers\u00e9e par la parole sacr\u00e9e.']
   },
   bilans_soir: {
-    reconnecter: ['Tu as pos\u00e9 tes bilans cette semaine. Tu t\u2019\u00e9coutes \u2014 c\u2019est rare.','Cinq soirs o\u00f9 tu t\u2019es regard\u00e9. Le retour passe par l\u00e0.','Tu prends le temps avant de dormir. Pr\u00e9cieux.'],
-    routine: ['Tu fais ta muh\u00e2saba chaque soir. La tradition vit en toi.','Cinq bilans pos\u00e9s. Ton soir est devenu un rituel.','Tu te connais mieux que la semaine pass\u00e9e. C\u2019est \u00e7a, le chemin.'],
+    reconnecter: ['Tu as pos\u00e9 tes bilans cette semaine. Tu t\u2019\u00e9coutes \u2014 c\u2019est rare.','{{bilans}} soirs o\u00f9 tu t\u2019es regard\u00e9. Le retour passe par l\u00e0.','Tu prends le temps avant de dormir. Pr\u00e9cieux.'],
+    routine: ['Tu fais ta muh\u00e2saba chaque soir. La tradition vit en toi.','{{bilans}} bilans pos\u00e9s. Ton soir est devenu un rituel.','Tu te connais mieux que la semaine pass\u00e9e. C\u2019est \u00e7a, le chemin.'],
     sacraliser: ['Tu interroges ton \u00e2me chaque soir. C\u2019est le sommet de la pratique.','Le bilan du soir t\u2019habite \u2014 sinc\u00e9rit\u00e9, effort, distraction. Tu nommes ce qui est.','Ta semaine a \u00e9t\u00e9 examin\u00e9e. C\u2019est rare et beau.']
   },
   quasi_vide: {
@@ -6977,6 +6977,11 @@ function _getWeeklyComparison(stats) {
   if (stats.totalGestes < archive.gestes - 2) return 'Semaine plus l\u00e9g\u00e8re que la pr\u00e9c\u00e9dente.';
   return 'M\u00eame rythme que la semaine pass\u00e9e.';
 }
+function _numToLetters(n) {
+  var mots = ['z\u00e9ro','un','deux','trois','quatre','cinq','six','sept','huit','neuf','dix'];
+  if (n >= 0 && n <= 10) return mots[n];
+  return String(n);
+}
 function _getWeeklyConseil(catCounts) {
   var min = Infinity, minCat = 'rituels';
   ['rituels','bienfaisance','lecture','duaa'].forEach(function(c) {
@@ -6997,8 +7002,11 @@ function showWeeklyBilan() {
   var parole = _WEEKLY_PAROLES[weekNum % _WEEKLY_PAROLES.length];
   var comparison = _getWeeklyComparison(stats);
   var conseil = _getWeeklyConseil(stats.catCounts);
+  var _bilanData = {}; try { _bilanData = JSON.parse(localStorage.getItem('niyyah_bilans') || '{}'); } catch(e) {}
+  var _bilanCount = 0; for (var _bi = 0; _bi < 7; _bi++) { if (_bilanData[getDateMinus(TODAY, _bi)]) _bilanCount++; }
   var _voicePool = (_NIYYAH_VOICE[dominante] && _NIYYAH_VOICE[dominante][safeGetItem('niyyah_motivation') || 'routine']) || _NIYYAH_VOICE.equilibre.routine;
   var _voiceMsg = _voicePool[Math.floor(Math.random() * _voicePool.length)] || '';
+  _voiceMsg = _voiceMsg.replace(/\{\{fajr\}\}/g, _numToLetters(stats.fajrDays)).replace(/\{\{gestes\}\}/g, _numToLetters(stats.totalGestes)).replace(/\{\{journees\}\}/g, _numToLetters(stats.doneDays)).replace(/\{\{bilans\}\}/g, _numToLetters(_bilanCount));
   if (_voiceMsg && prenom) _voiceMsg = prenom + ', ' + _voiceMsg.charAt(0).toLowerCase() + _voiceMsg.slice(1);
   var card = document.getElementById('weeklyCard');
   card.innerHTML = '<div style="text-align:center;padding:20px 16px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:#B5A685;line-height:1.6;max-width:300px;margin:0 auto;">' + _voiceMsg + '</div></div>'
