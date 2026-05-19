@@ -12788,6 +12788,7 @@ function updateSpiritualTitle() {
   ];
   var title = titles.find(function(t) { return streakDisplay >= t.min; });
   el.style.display = 'block';
+  el.style.marginTop = '20px';
   el.style.marginBottom = '40px';
   el.innerHTML = '<div style="font-family:\'Amiri\',serif;font-size:40px;color:#C8A84A;line-height:1.3;">' + title.ar + '</div>'
     + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:rgba(200,168,75,0.7);letter-spacing:0.5px;margin-top:4px;">' + t(title.k) + '</div>';
