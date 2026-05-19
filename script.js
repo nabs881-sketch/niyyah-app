@@ -6833,6 +6833,38 @@ function getWeeklyHadith(level) {
   const weekNum = Math.floor(Date.now() / (7 * 24 * 3600 * 1000));
   return arr[weekNum % arr.length];
 }
+var _NIYYAH_VOICE = {
+  fajr: {
+    reconnecter: ['msg_fajr_reconnecter_1','msg_fajr_reconnecter_2','msg_fajr_reconnecter_3'],
+    routine: ['msg_fajr_routine_1','msg_fajr_routine_2','msg_fajr_routine_3'],
+    sacraliser: ['msg_fajr_sacraliser_1','msg_fajr_sacraliser_2','msg_fajr_sacraliser_3']
+  },
+  bienfaisance: {
+    reconnecter: ['msg_bienfaisance_reconnecter_1','msg_bienfaisance_reconnecter_2','msg_bienfaisance_reconnecter_3'],
+    routine: ['msg_bienfaisance_routine_1','msg_bienfaisance_routine_2','msg_bienfaisance_routine_3'],
+    sacraliser: ['msg_bienfaisance_sacraliser_1','msg_bienfaisance_sacraliser_2','msg_bienfaisance_sacraliser_3']
+  },
+  lecture: {
+    reconnecter: ['msg_lecture_reconnecter_1','msg_lecture_reconnecter_2','msg_lecture_reconnecter_3'],
+    routine: ['msg_lecture_routine_1','msg_lecture_routine_2','msg_lecture_routine_3'],
+    sacraliser: ['msg_lecture_sacraliser_1','msg_lecture_sacraliser_2','msg_lecture_sacraliser_3']
+  },
+  bilans_soir: {
+    reconnecter: ['msg_bilans_reconnecter_1','msg_bilans_reconnecter_2','msg_bilans_reconnecter_3'],
+    routine: ['msg_bilans_routine_1','msg_bilans_routine_2','msg_bilans_routine_3'],
+    sacraliser: ['msg_bilans_sacraliser_1','msg_bilans_sacraliser_2','msg_bilans_sacraliser_3']
+  },
+  quasi_vide: {
+    reconnecter: ['msg_vide_reconnecter_1','msg_vide_reconnecter_2','msg_vide_reconnecter_3'],
+    routine: ['msg_vide_routine_1','msg_vide_routine_2','msg_vide_routine_3'],
+    sacraliser: ['msg_vide_sacraliser_1','msg_vide_sacraliser_2','msg_vide_sacraliser_3']
+  },
+  equilibre: {
+    reconnecter: ['msg_equilibre_reconnecter_1','msg_equilibre_reconnecter_2','msg_equilibre_reconnecter_3'],
+    routine: ['msg_equilibre_routine_1','msg_equilibre_routine_2','msg_equilibre_routine_3'],
+    sacraliser: ['msg_equilibre_sacraliser_1','msg_equilibre_sacraliser_2','msg_equilibre_sacraliser_3']
+  }
+};
 var _WEEKLY_QUESTIONS = {
   fajr: ['Qu\u2019est-ce que Fajr a chang\u00e9 dans tes matins ?', 'Le r\u00e9veil \u00e0 l\u2019aube \u2014 qu\u2019as-tu trouv\u00e9 l\u00e0 ?'],
   bienfaisance: ['Quel visage as-tu \u00e9clair\u00e9 cette semaine ?', 'Un geste vers l\u2019autre \u2014 lequel te reste ?'],
