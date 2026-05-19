@@ -6868,21 +6868,27 @@ var _WEEKLY_CONSEILS = {
   duaa: 'La dou\u2019a t\u2019attend. Une invocation sinc\u00e8re, m\u00eame courte, est entendue.'
 };
 function _getWeeklyDominante() {
-  var s = safeParseJSON('spiritual_v2', {});
   var bilanData = {}; try { bilanData = JSON.parse(localStorage.getItem('niyyah_bilans') || '{}'); } catch(e) {}
-  var bilanCount = 0, doneDays = 0;
-  var bienfIds = ['sadaqa','salam','silaturahm','kind_act','ziyara','pardon','maruf'];
-  var lectIds = ['hadith1','duaa_jour','sira','quran_read','recits_coran','fiqh_jour','savais_tu'];
-  var bienfCount = 0, lectCount = 0;
+  var _hist = history;
+  try { var _hRaw = safeGetItem('spiritual_history'); if (_hRaw) _hist = JSON.parse(_hRaw) || _hist; } catch(e) {}
+  var bilanCount = 0, doneDays = 0, fajrCount = 0, bienfCount = 0, lectCount = 0;
   for (var i = 0; i < 7; i++) {
     var d = getDateMinus(TODAY, i);
-    if (history.days && history.days[d]) doneDays++;
+    if ((_hist.days && _hist.days[d]) || safeGetItem('niyyah_day_validated_' + d) === '1') doneDays++;
     if (bilanData[d]) bilanCount++;
+    var raw = localStorage.getItem('niyyah_snapshot_' + d);
+    if (raw) {
+      var snap = null;
+      try { snap = JSON.parse(raw); } catch(e) {}
+      if (snap) {
+        if (snap.prieres && snap.prieres.fajr) fajrCount++;
+        bienfCount += snap.bienfaisance || 0;
+        lectCount += snap.lectures || 0;
+      }
+    }
   }
-  bienfIds.forEach(function(id) { if (s[id]) bienfCount++; });
-  lectIds.forEach(function(id) { if (s[id]) lectCount++; });
   if (doneDays <= 1) return 'quasi_vide';
-  if (s['fajr'] && doneDays >= 5) return 'fajr';
+  if (fajrCount >= 5 && doneDays >= 5) return 'fajr';
   if (bienfCount >= 3) return 'bienfaisance';
   if (lectCount >= 3) return 'lecture';
   if (bilanCount >= 5) return 'bilans_soir';
