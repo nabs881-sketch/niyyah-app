@@ -6893,11 +6893,32 @@ var _WEEKLY_PAROLES = [
   'All\u00e2h n\u2019oublie rien de ce que tu as sem\u00e9.',
   'Avance. M\u00eame lentement. Tu avances.'
 ];
-var _WEEKLY_CONSEILS = {
-  rituels: 'La pri\u00e8re t\u2019attend. Un seul Fajr cette semaine changerait tout.',
-  bienfaisance: 'La bienfaisance t\u2019attend. Un salam, une sadaqa \u2014 pose un geste vers l\u2019autre.',
-  lecture: 'La science t\u2019attend. Un hadith, un verset \u2014 quelques minutes suffisent.',
-  duaa: 'La dou\u2019a t\u2019attend. Une invocation sinc\u00e8re, m\u00eame courte, est entendue.'
+var _CONSEILS_CHEMIN = {
+  fajr_bienfaisance: 'Tu as port\u00e9 Fajr {{fajr}} fois cette semaine. C\u2019est ton sommet du moment.\n\nMaintenant que l\u2019aube est tenue, le chemin peut s\u2019\u00e9largir vers les autres.\n\nCette semaine \u2014 un seul salam \u00e0 un voisin que tu croises sans le saluer. Une fois. \u00c7a suffira.',
+  fajr_lecture: 'Tu as tenu Fajr {{fajr}} fois cette semaine. Le matin t\u2019appartient.\n\nLe corps prie. Le c\u0153ur, lui, a faim de mots.\n\nCette semaine \u2014 cinq minutes de r\u00e9cit apr\u00e8s Maghrib, un seul soir suffit. Une page. Une parole. \u00c7a nourrit.',
+  fajr_bilan_soir: 'Tu te l\u00e8ves avec l\u2019aube. Tu honores le matin.\n\nMais qui s\u2019occupe du soir ?\n\nCette semaine \u2014 avant de dormir, un seul soir, nomme ton \u00e9tat : distraction, effort, sinc\u00e9rit\u00e9. Trois secondes. Le matin tient, le soir m\u00e9rite aussi.',
+  fajr_dua: 'Tu portes l\u2019aube. Tu marches dans le rythme qu\u2019Allah a fix\u00e9.\n\nMais tu pries avec ton corps. Pas encore avec ta voix.\n\nCette semaine \u2014 une seule du\u2019a, une seule fois, pour quelqu\u2019un qui te manque ou que tu aimes. Pas oblig\u00e9 de savoir les formules. Le c\u0153ur suffit.',
+  bienfaisance_fajr: 'Tu as sem\u00e9 du bien cette semaine. Tu vas vers les autres avec naturel.\n\nMais le don commence par ton lien avec Allah. Et ce lien se renforce \u00e0 l\u2019aube.\n\nCette semaine \u2014 choisis UN matin. Pas tous. Un seul. Pose ton r\u00e9veil dix minutes plus t\u00f4t. Vois ce qui se passe.',
+  bienfaisance_lecture: 'Tu donnes aux autres cette semaine. C\u2019est rare et c\u2019est juste.\n\nMais que re\u00e7ois-tu, toi ? La parole d\u2019Allah nourrit ceux qui nourrissent.\n\nCette semaine \u2014 un seul r\u00e9cit du Coran, apr\u00e8s le repas du soir. Cinq minutes. Recevoir avant de redonner.',
+  bienfaisance_bilan_soir: 'Tu \u00e9claires des visages cette semaine. Tu sors de toi-m\u00eame.\n\nMais avant de dormir, qui s\u2019occupe de toi ?\n\nCette semaine \u2014 un seul soir, prends trente secondes. Distraction, effort, sinc\u00e9rit\u00e9 \u2014 o\u00f9 en es-tu ? Toi aussi, tu m\u00e9rites un salam.',
+  bienfaisance_dua: 'Tu donnes du temps, des sourires, des gestes. Tu donnes l\u2019ext\u00e9rieur.\n\nMais ta voix vers Allah, elle, reste discr\u00e8te.\n\nCette semaine \u2014 pour chaque personne \u00e0 qui tu fais du bien, une seule du\u2019a. Une phrase, m\u00eame courte. Le don visible se prolonge dans le don invisible.',
+  lecture_fajr: 'Tu as lu cette semaine. La parole d\u2019Allah t\u2019a habit\u00e9 {{gestes}} fois.\n\nLire ouvre l\u2019esprit. Prier \u00e0 l\u2019aube ancre le c\u0153ur. Tu as la t\u00eate, il te manque les pieds.\n\nCette semaine \u2014 un seul Fajr. Pas tous. Un seul. Ce que tu as lu, vis-le un matin.',
+  lecture_bienfaisance: 'Tu nourris ton c\u0153ur cette semaine. La parole sacr\u00e9e t\u2019accompagne.\n\nMais ce que tu re\u00e7ois doit circuler. La lumi\u00e8re qui reste enferm\u00e9e s\u2019\u00e9teint.\n\nCette semaine \u2014 un seul geste vers l\u2019autre. Un salam \u00e0 un inconnu, un appel \u00e0 quelqu\u2019un. Que ce que tu as lu se voie dans tes mains.',
+  lecture_bilan_soir: 'Tu as lu cette semaine. Tu \u00e9coutes la parole.\n\nMais \u00e9coutes-tu la tienne ? Le bilan du soir est une lecture aussi \u2014 la lecture de ton \u00e2me.\n\nCette semaine \u2014 trois soirs, avant de dormir, nomme ton \u00e9tat. Distraction, effort, sinc\u00e9rit\u00e9. Le Coran te parle. Apprends \u00e0 te r\u00e9pondre.',
+  lecture_dua: 'Tu as re\u00e7u la parole d\u2019Allah cette semaine. Tu lis Son Livre.\n\nMais Lui dis-tu quelque chose en retour ? La lecture sans r\u00e9ponse devient m\u00e9canique.\n\nCette semaine \u2014 apr\u00e8s chaque lecture, une seule phrase \u00e0 Allah. Pas une formule. Tes propres mots. C\u2019est ainsi que na\u00eet le dialogue.',
+  bilans_soir_fajr: 'Tu te regardes chaque soir cette semaine. Tu te connais.\n\nMais le miroir du soir m\u00e9rite d\u2019\u00eatre prolong\u00e9 par la lumi\u00e8re du matin.\n\nCette semaine \u2014 un seul matin, ouvre les yeux avant l\u2019aube. Vois si ce que tu as vu en toi le soir change \u00e0 la lumi\u00e8re du Fajr.',
+  bilans_soir_bienfaisance: 'Tu te regardes chaque soir. Tu te connais bien.\n\nMais que sais-tu de ceux qui t\u2019entourent ? Le miroir int\u00e9rieur peut devenir une prison.\n\nCette semaine \u2014 un coup de fil \u00e0 quelqu\u2019un de ta famille que tu n\u2019as pas appel\u00e9 depuis longtemps. Sors du miroir.',
+  bilans_soir_lecture: 'Tu interroges ton \u00e2me chaque soir. Tu sais nommer ce qui se passe en toi.\n\nMais ton \u00e2me a besoin de nourriture. Le bilan sans lecture devient bavardage.\n\nCette semaine \u2014 cinq minutes de Coran avant le bilan du soir. Recevoir, puis examiner. Le rythme est l\u00e0.',
+  bilans_soir_dua: 'Tu fais ta muh\u00e2saba chaque soir. Tu nommes ce qui est.\n\nMais nommer sans parler \u00e0 Allah devient un journal intime. La muh\u00e2saba se prolonge dans la du\u2019a.\n\nCette semaine \u2014 apr\u00e8s chaque bilan du soir, une seule phrase \u00e0 Allah. \u00ab Aide-moi pour demain. \u00bb Trois mots suffisent.',
+  equilibre_fajr: 'Tu as march\u00e9 cette semaine. Sans exc\u00e8s, sans manque.\n\nC\u2019est pr\u00e9cieux. Mais une pratique \u00e9quilibr\u00e9e demande un point fixe. L\u2019aube est ce point.\n\nCette semaine \u2014 un seul matin, choisi \u00e0 l\u2019avance. Pose ton r\u00e9veil. Vois.',
+  equilibre_bienfaisance: 'Une semaine \u00e0 ton image. R\u00e9guli\u00e8re, fid\u00e8le, tenue.\n\nL\u2019\u00e9quilibre int\u00e9rieur cherche maintenant \u00e0 sortir vers les autres.\n\nCette semaine \u2014 un seul geste vers quelqu\u2019un qui n\u2019attend rien de toi. Pas un proche. Un voisin, un coll\u00e8gue, un inconnu.',
+  equilibre_lecture: 'Tu as pos\u00e9 ce que tu pouvais cette semaine. Ni plus, ni moins.\n\nL\u2019\u00e9quilibre devient routine sans nourriture. La parole d\u2019Allah remet du sens dans le rythme.\n\nCette semaine \u2014 cinq minutes de r\u00e9cit du Coran, un soir. Une phrase, une histoire. Que la constance retrouve sa source.',
+  equilibre_bilan_soir: 'Tu pratiques sans crispation cette semaine. C\u2019est un \u00e9tat rare.\n\nMais sans regard sur soi, l\u2019\u00e9quilibre devient m\u00e9canique. Le bilan du soir est ce qui emp\u00eache la routine de devenir un sommeil.\n\nCette semaine \u2014 trois soirs, avant de dormir, nomme ton \u00e9tat. Distraction, effort, sinc\u00e9rit\u00e9.',
+  equilibre_dua: 'Tu marches avec constance. Tu tiens ton rythme.\n\nMais \u00e0 qui parles-tu pendant que tu marches ? La constance sans dialogue avec Allah devient de la discipline froide.\n\nCette semaine \u2014 une seule du\u2019a par jour. Pour toi, pour quelqu\u2019un d\u2019autre, peu importe. Que ta marche redevienne une conversation.',
+  quasi_vide_reconnecter: 'Tu as ouvert Niyyah cette semaine. C\u2019est d\u00e9j\u00e0 un commencement.\n\nPas besoin de tout reprendre. Le retour se fait par un seul fil.\n\nCette semaine \u2014 choisis UN geste. N\u2019importe lequel. Bismillah avant ton premier caf\u00e9. Une seule fois suffit pour que demain reprenne.',
+  quasi_vide_routine: 'Cette semaine a \u00e9t\u00e9 plus tranquille. \u00c7a arrive.\n\nLa constance n\u2019est pas lin\u00e9aire. Une semaine l\u00e9g\u00e8re ne d\u00e9fait pas un chemin.\n\nCette semaine \u2014 reprends UN seul geste familier. Celui qui te co\u00fbte le moins. Le rythme revient seul.',
+  quasi_vide_sacraliser: 'Tu as choisi le Complet, et cette semaine fut l\u00e9g\u00e8re. C\u2019est aussi une \u00e9tape.\n\nL\u2019exigence demande des respirations. Cette semaine en fut une. Pas de jugement.\n\nCette semaine \u2014 un seul geste que tu aimes vraiment. Pas tous. Celui qui te ressemble le plus. Le chemin reprend.',
+  fallback: 'Cette semaine fut travers\u00e9e. Chaque pas compte, m\u00eame invisible.\n\nNiyyah ne mesure pas la performance. Elle marche \u00e0 ton rythme.\n\nCette semaine \u2014 choisis ce qui te parle le plus. Un seul geste, pos\u00e9 avec pr\u00e9sence. Le reste suivra.'
 };
 function _getWeeklyDominante() {
   var bilanData = {}; try { bilanData = JSON.parse(localStorage.getItem('niyyah_bilans') || '{}'); } catch(e) {}
@@ -6989,13 +7010,25 @@ function _numToLetters(n) {
   if (n >= 0 && n <= 10) return mots[n];
   return String(n);
 }
-function _getWeeklyConseil(catCounts) {
-  var min = Infinity, minCat = 'rituels';
-  ['rituels','bienfaisance','lecture','duaa'].forEach(function(c) {
-    var v = catCounts[c] || 0;
-    if (v < min) { min = v; minCat = c; }
-  });
-  return _WEEKLY_CONSEILS[minCat] || _WEEKLY_CONSEILS.rituels;
+function _getZoneManquante(catCounts, bilanCount) {
+  var zones = [
+    { key: 'fajr', val: catCounts.rituels || 0 },
+    { key: 'bienfaisance', val: catCounts.bienfaisance || 0 },
+    { key: 'lecture', val: catCounts.lecture || 0 },
+    { key: 'bilan_soir', val: bilanCount || 0 },
+    { key: 'dua', val: catCounts.duaa || 0 }
+  ];
+  var min = Infinity, minKey = 'fajr';
+  zones.forEach(function(z) { if (z.val < min) { min = z.val; minKey = z.key; } });
+  return minKey;
+}
+function _getWeeklyConseil(dominante, catCounts, bilanCount, profil) {
+  var manque = _getZoneManquante(catCounts, bilanCount);
+  var key;
+  if (dominante === 'quasi_vide') key = 'quasi_vide_' + profil;
+  else if (dominante === 'equilibre') key = 'equilibre_' + manque;
+  else key = dominante + '_' + manque;
+  return _CONSEILS_CHEMIN[key] || _CONSEILS_CHEMIN.fallback;
 }
 function showWeeklyBilan() {
   var stats = _getWeeklyStats();
@@ -7009,7 +7042,10 @@ function showWeeklyBilan() {
   var _bilanData = {}; try { _bilanData = JSON.parse(localStorage.getItem('niyyah_bilans') || '{}'); } catch(e) {}
   var _bilanCount = 0; for (var _bi = 0; _bi < 7; _bi++) { if (_bilanData[getDateMinus(TODAY, _bi)]) _bilanCount++; }
   var comparison = _getWeeklyComparison(stats, _bilanCount);
-  var conseil = _getWeeklyConseil(stats.catCounts);
+  var _profil = safeGetItem('niyyah_motivation') || 'routine';
+  var conseil = _getWeeklyConseil(dominante, stats.catCounts, _bilanCount, _profil);
+  conseil = conseil.replace(/\{\{fajr\}\}/g, _numToLetters(stats.fajrDays)).replace(/\{\{gestes\}\}/g, _numToLetters(stats.totalGestes)).replace(/\{\{journees\}\}/g, _numToLetters(stats.doneDays)).replace(/\{\{bilans\}\}/g, _numToLetters(_bilanCount));
+  if (prenom) conseil = conseil.replace(/\{\{prenom\}\}/g, prenom);
   var _voicePool = (_NIYYAH_VOICE[dominante] && _NIYYAH_VOICE[dominante][safeGetItem('niyyah_motivation') || 'routine']) || _NIYYAH_VOICE.equilibre.routine;
   var _voiceMsg = _voicePool[Math.floor(Math.random() * _voicePool.length)] || '';
   _voiceMsg = _voiceMsg.replace(/\{\{fajr\}\}/g, _numToLetters(stats.fajrDays)).replace(/\{\{gestes\}\}/g, _numToLetters(stats.totalGestes)).replace(/\{\{journees\}\}/g, _numToLetters(stats.doneDays)).replace(/\{\{bilans\}\}/g, _numToLetters(_bilanCount));
@@ -7029,8 +7065,8 @@ function showWeeklyBilan() {
     + '</div>'
     + '<div style="text-align:center;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.4);margin-bottom:8px;">Ce qui a respir\u00e9</div>'
     + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#B5A685;margin-bottom:24px;">' + comparison + '</div>'
-    + '<div style="text-align:center;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.4);margin-bottom:8px;">Le chemin qui s\u2019ouvre</div>'
-    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#B5A685;line-height:1.6;margin-bottom:24px;max-width:300px;margin-left:auto;margin-right:auto;">' + conseil + '</div>'
+    + '<div style="text-align:center;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.4);margin-bottom:12px;">Le chemin qui s\u2019ouvre</div>'
+    + '<div style="text-align:center;max-width:320px;margin:0 auto 24px;">' + conseil.split('\n\n').map(function(p) { return '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#B5A685;line-height:1.7;margin-bottom:12px;">' + p + '</div>'; }).join('') + '</div>'
     + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.6);line-height:1.6;margin-bottom:8px;max-width:280px;margin-left:auto;margin-right:auto;">' + parole + '</div>'
     + '<div style="text-align:center;font-family:Amiri,serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.3);margin-bottom:24px;">Astaghfirull\u00e2h, astaghfirull\u00e2h, astaghfirull\u00e2h.</div>'
     + '</div>'
