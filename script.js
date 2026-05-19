@@ -3881,7 +3881,7 @@ function openScoreInfo() {
     + '<span style="color:#C8A84A;">\u2022</span> Pri\u00e8res fard (5 salawat) \u2014 <b>\u00d73</b><br>'
     + '<span style="color:#C8A84A;">\u2022</span> Wirds, sunnahs, dou\u2019as \u2014 <b>\u00d72</b><br>'
     + '<span style="color:#C8A84A;">\u2022</span> Autres actes (science, bienfaisance) \u2014 <b>\u00d71</b><br><br>'
-    + 'Le score est sur <b>100%</b>. Il mesure ta journ\u00e9e compl\u00e8te, tous niveaux confondus.</div>'
+    + 'Le score va de 0 \u00e0 <b>100%</b>. Ta journ\u00e9e est valid\u00e9e bien avant le sommet \u2014 chaque pas vaut.</div>'
     + '<button onclick="this.closest(\'div[style]\').parentNode.remove()" style="padding:8px 20px;border-radius:10px;border:1px solid rgba(200,168,74,0.3);background:transparent;color:#C8A84A;font-size:13px;cursor:pointer;">Compris</button>'
     + '</div>';
   document.body.appendChild(overlay);
