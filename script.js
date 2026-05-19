@@ -13588,6 +13588,7 @@ function v2Init() {
 }
 
 function checkEvolutionRevenant() {
+  if (window._spontaneousUIShown) return false;
   if (safeGetItem('niyyah_motivation') !== 'reconnecter') return false;
   var streak = parseInt(safeGetItem('niyyah_silent_streak') || '0', 10);
   if (streak < 40) return false;
@@ -13640,6 +13641,7 @@ function showEvolutionModal() {
 }
 
 function checkEvolutionRoutine() {
+  if (window._spontaneousUIShown) return false;
   if (safeGetItem('niyyah_motivation') !== 'routine') return false;
   var streak = parseInt(safeGetItem('niyyah_silent_streak') || '0', 10);
   if (streak < 90) return false;
