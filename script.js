@@ -3301,7 +3301,7 @@ function renderProgression() {
   el.innerHTML = `
     <div style="padding:0 0 40px;"><!-- 1. TITRE SPIRITUEL --><div id="v2-spiritual-title" style="text-align:center;margin:0 16px 12px;min-height:110px;"></div><!-- 2. PROGRESSION -->${heroSectionP}<!-- 3. DÉFI SEMAINE --><button id="accueilDefiCard" class="defi-card-sanctuaire" onclick="if(typeof openDefiSelector==='function')openDefiSelector()" style="display:none;margin:0 16px 12px;padding:14px 18px;background:#1a1a1a;border:1px solid rgba(200,168,75,0.3);border-radius:12px;cursor:pointer;position:relative;z-index:10;text-align:left;min-height:90px;box-sizing:border-box;font-family:inherit;color:inherit;width:calc(100% - 32px);"><div style="display:flex;align-items:center;gap:12px;width:100%;"><div id="defiCardIcon"><img src="./imagescroissant.webp" alt="Croissant" style="width:60px;height:auto;display:block;flex-shrink:0;"></div><div style="flex:1;text-align:left;"><div id="defiCardTitre" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:#C8A84A;">Défi de la semaine</div><div id="defiCardScore" style="font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:#B0A080;margin-top:2px;"></div></div></div><div id="defiCardDots" style="display:none;"></div><div id="defiCardBar" style="position:absolute;bottom:0;left:0;right:0;height:3px;background:rgba(200,168,75,0.12);border-radius:0 0 14px 14px;overflow:hidden;"><div id="defiCardBarFill" style="height:100%;width:0%;background:#C8A84A;transition:width 0.6s ease;"></div></div></button><!-- 4. CHALLENGE FAJR --><div id="fajr-challenge-card" style="display:none;margin:0 16px 12px;"></div><!-- 5. SÉRIE EN COURS -->${streakSection}<!-- HADITH CONTEXTUEL --><div style="margin:0 16px 24px;padding:20px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.2);border-radius:16px;position:relative;overflow:hidden;"><div style="position:absolute;top:-10px;right:12px;font-size:48px;opacity:0.07;font-family:serif;">"</div><div style="font-size:14px;line-height:1.7;color:var(--t1);font-style:italic;margin-bottom:10px;">${hadith.text}</div><div style="font-size:12px;color:#c8a84b;font-weight:600;letter-spacing:0.5px;">— ${hadith.ref}</div></div><!-- 6. HEATMAP 30 JOURS --><div style="margin:0 16px 24px;"><div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;text-align:center;">${t('prog_heatmap')}</div><div style="display:grid;grid-template-columns:repeat(10,1fr);gap:4px;">
           ${heatmapHTML}
-        </div><div style="font-family:'Inter',var(--sans);font-size:12px;color:rgba(255,255,255,0.5);text-align:center;margin-top:10px;">${(history.totalDays||0)===0?t('today_first'):t('today_pct').replace('{n}',Math.round(getLevelProgress(1)))}</div><button onclick="var c=document.getElementById('yearCalWrap');if(c.style.display==='none'){c.style.display='block';calYear=new Date().getFullYear();renderYearCalendar();this.textContent=t('cal_hide');}else{c.style.display='none';this.textContent=t('cal_annual');}" style="display:block;margin:12px auto 0;background:transparent;border:1px solid rgba(200,168,75,0.25);border-radius:12px;padding:8px 18px;color:var(--gold);font-family:var(--serif);font-size:13px;cursor:pointer;" aria-label="${t('cal_annual')}">🗓️ ${t('cal_annual')}</button><div id="yearCalWrap" style="display:none;margin-top:16px;background:var(--card);border:1px solid rgba(200,168,75,0.15);border-radius:12px;padding:16px;"><div id="yearCalContent"></div></div></div><!-- BILAN 7 JOURS -->${bilanHTML}<!-- 7. GRAINE DE LUMIÈRE --><div style="margin:0 16px 24px;background:linear-gradient(135deg,rgba(200,168,75,0.08),rgba(200,168,75,0.03));border:1px solid rgba(200,168,75,0.25);border-radius:20px;padding:28px;text-align:center;user-select:none;-webkit-user-select:none;"><div style="font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:3px;color:#C8A84A;text-transform:uppercase;margin-bottom:16px;">${t('graine_title')}</div><div style="position:relative;width:160px;height:160px;min-width:160px;min-height:160px;margin:0 auto 16px;"><div style="position:absolute;inset:-20px;border-radius:50%;background:radial-gradient(circle,rgba(200,168,75,0.1) 0%,rgba(200,168,75,0.04) 50%,transparent 70%);"></div><div style="position:relative;">${getGraineSVG((function(){try{return JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length)}</div></div><div style="font-family:'Inter',var(--sans);font-size:16px;color:rgba(255,255,255,0.6);margin-bottom:6px;">${(function(){try{var _gl=JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];return _gl.length===0?t('graine_zero'):_gl.length+' '+t('graine_defis');}catch(e){return t('graine_zero');}})()}</div><div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:#C8A84A;margin-bottom:12px;">${getGraineStageName((function(){try{return JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length)}</div><div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:#C8A84A;opacity:0.7;line-height:1.6;">${t('graine_quote')}</div></div>
+        </div><div style="font-family:'Inter',var(--sans);font-size:12px;color:rgba(255,255,255,0.5);text-align:center;margin-top:10px;">${(history.totalDays||0)===0?t('today_first'):t('today_pct').replace('{n}',Math.round(getLevelProgress(1)))}</div><button onclick="var c=document.getElementById('yearCalWrap');if(c.style.display==='none'){c.style.display='block';calYear=new Date().getFullYear();renderYearCalendar();this.textContent=t('cal_hide');}else{c.style.display='none';this.textContent=t('cal_annual');}" style="display:block;margin:12px auto 0;background:transparent;border:1px solid rgba(200,168,75,0.25);border-radius:12px;padding:8px 18px;color:var(--gold);font-family:var(--serif);font-size:13px;cursor:pointer;" aria-label="${t('cal_annual')}">🗓️ ${t('cal_annual')}</button><div id="yearCalWrap" style="display:none;margin-top:16px;background:var(--card);border:1px solid rgba(200,168,75,0.15);border-radius:12px;padding:16px;"><div id="yearCalContent"></div></div></div><!-- BILAN 7 JOURS -->${bilanHTML}<div style="text-align:center;margin:0 16px 24px;"><button onclick="showWeeklyBilan()" style="background:transparent;border:1px solid rgba(200,168,75,0.2);border-radius:12px;padding:10px 24px;color:#C8A84A;font-family:'Cormorant Garamond',serif;font-size:13px;font-style:italic;cursor:pointer;">Voir ma semaine</button></div><!-- 7. GRAINE DE LUMIÈRE --><div style="margin:0 16px 24px;background:linear-gradient(135deg,rgba(200,168,75,0.08),rgba(200,168,75,0.03));border:1px solid rgba(200,168,75,0.25);border-radius:20px;padding:28px;text-align:center;user-select:none;-webkit-user-select:none;"><div style="font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:3px;color:#C8A84A;text-transform:uppercase;margin-bottom:16px;">${t('graine_title')}</div><div style="position:relative;width:160px;height:160px;min-width:160px;min-height:160px;margin:0 auto 16px;"><div style="position:absolute;inset:-20px;border-radius:50%;background:radial-gradient(circle,rgba(200,168,75,0.1) 0%,rgba(200,168,75,0.04) 50%,transparent 70%);"></div><div style="position:relative;">${getGraineSVG((function(){try{return JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length)}</div></div><div style="font-family:'Inter',var(--sans);font-size:16px;color:rgba(255,255,255,0.6);margin-bottom:6px;">${(function(){try{var _gl=JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];return _gl.length===0?t('graine_zero'):_gl.length+' '+t('graine_defis');}catch(e){return t('graine_zero');}})()}</div><div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:#C8A84A;margin-bottom:12px;">${getGraineStageName((function(){try{return JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length)}</div><div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:#C8A84A;opacity:0.7;line-height:1.6;">${t('graine_quote')}</div></div>
 
       </div>
   `;
@@ -6815,121 +6815,80 @@ function getWeeklyHadith(level) {
   const weekNum = Math.floor(Date.now() / (7 * 24 * 3600 * 1000));
   return arr[weekNum % arr.length];
 }
-function showWeeklyBilan() {
-  const days = [];
-  for (let i = 6; i >= 0; i--) {
-    const d = getDateMinus(TODAY, i);
-    const score = (history.dayScores && history.dayScores[d]) || 0;
-    days.push({ date: d, done: !!history.days[d], score });
+var _WEEKLY_QUESTIONS = {
+  fajr: ['Qu\u2019est-ce que Fajr a chang\u00e9 dans tes matins ?', 'Le r\u00e9veil \u00e0 l\u2019aube \u2014 qu\u2019as-tu trouv\u00e9 l\u00e0 ?'],
+  bienfaisance: ['Quel visage as-tu \u00e9clair\u00e9 cette semaine ?', 'Un geste vers l\u2019autre \u2014 lequel te reste ?'],
+  lecture: ['Quelle parole t\u2019a marqu\u00e9 cette semaine ?', 'Un verset, un hadith \u2014 qu\u2019as-tu gard\u00e9 ?'],
+  bilans_soir: ['Comment as-tu trouv\u00e9 tes soir\u00e9es ?', 'Le soir, ton c\u0153ur \u00e9tait comment ?'],
+  quasi_vide: ['Qu\u2019est-ce qui t\u2019a manqu\u00e9 cette semaine ?', 'Si tu ne devais garder qu\u2019un geste \u2014 lequel ?'],
+  equilibre: ['Qu\u2019est-ce que tu gardes de cette semaine ?', 'Un mot pour r\u00e9sumer ces sept jours ?']
+};
+var _WEEKLY_PAROLES = [
+  'Chaque semaine est une lettre. Tu \u00e9cris ton Livre.',
+  'Ce qui compte n\u2019est pas ce que tu as fait \u2014 c\u2019est que tu sois revenu.',
+  'Le temps passe. Les gestes restent.',
+  'Une semaine de plus sur le chemin. Allah voit.',
+  'Ni trop, ni trop peu. Juste ta pr\u00e9sence.',
+  'La constance n\u2019est pas la perfection. C\u2019est la fid\u00e9lit\u00e9.',
+  'Tu as travers\u00e9 sept jours. Certains l\u00e9gers, d\u2019autres lourds. Tous compt\u00e9s.',
+  'Bismillah. Une nouvelle page.',
+  'All\u00e2h n\u2019oublie rien de ce que tu as sem\u00e9.',
+  'Avance. M\u00eame lentement. Tu avances.'
+];
+function _getWeeklyDominante() {
+  var s = safeParseJSON('spiritual_v2', {});
+  var fajrCount = 0, bienfCount = 0, lectCount = 0;
+  var bilanData = {}; try { bilanData = JSON.parse(localStorage.getItem('niyyah_bilans') || '{}'); } catch(e) {}
+  var bilanCount = 0, totalGestes = 0, doneDays = 0;
+  var bienfIds = ['sadaqa','salam','silaturahm','kind_act','ziyara','pardon','maruf'];
+  var lectIds = ['hadith1','duaa_jour','sira','quran_read','recits_coran','fiqh_jour','savais_tu'];
+  for (var i = 0; i < 7; i++) {
+    var d = getDateMinus(TODAY, i);
+    if (history.days && history.days[d]) doneDays++;
+    if (bilanData[d]) bilanCount++;
   }
-  const doneDays = days.filter(d => d.done).length;
-  const scores = days.filter(d => d.done).map(d => d.score);
-  const avgScore = scores.length > 0 ? Math.round(scores.reduce((a,b) => a+b, 0) / scores.length) : 0;
-
-  // Niveau de la semaine
-  let level = 'none';
-  if (doneDays === 7)      level = 'perfect';
-  else if (doneDays >= 5)  level = 'good';
-  else if (doneDays >= 3)  level = 'average';
-  else if (doneDays >= 1)  level = 'low';
-
-  // Messages Coach Frère — ton fraternel, sans chiffres bruts
-  const COACH_MESSAGES = {
-    perfect: [
-      "Frère, cette semaine tu as montré que la constance est une forme de sagesse. Allah aime l\'action régulière, même petite — tu l\'as choisie grande.",
-      "MashaAllah. Chaque journée de cette semaine a été une lettre écrite à Allah. Que cette constance soit ton visa pour les portes du Paradis.",
-      "Ta semaine a été une prière continue. Le Prophète ﷺ a dit : l\'action la plus aimée d\'Allah est celle qui dure. Tu as choisi la durée."
-    ],
-    good: [
-      "Tu n\'as pas été parfait — et c\'est bien. La perfection appartient à Allah. Ce que tu as été, c\'est présent, sincère, et constant là où ça compte.",
-      "Quelques jours de repos ne brisent pas un chemin. Ils le rendent humain. Reprendre, c\'est déjà une victoire sur le découragement.",
-      "Ta présence régulière cette semaine est une forme d\'Istiqamah. Les moments où tu as choisi de revenir valent autant que ceux où tu n\'es pas parti."
-    ],
-    average: [
-      "Cette semaine a été comme un soleil voilé — présent, mais discret. Ce n\'est pas un échec, c\'est une invitation à rallumer la flamme.",
-      "Même une graine qui pousse lentement finit par percer la terre. Ton effort cette semaine, si petit soit-il, a été enregistré par Celui qui ne perd rien.",
-      "Il y a eu des absences, et c\'est humain. Mais tu es là aujourd\'hui, à lire ce bilan — et ça, c\'est déjà une Niyyah qui compte."
-    ],
-    low: [
-      "Cette semaine a été un repos. Ce n\'est pas une fin — c\'est le creux de la vague avant qu\'elle reprenne de la hauteur. Prépare-toi à t\'élever.",
-      "Allah ne ferme pas Ses portes parce qu\'on s\'est éloigné. Revenir, c\'est la plus belle des Niyyah. Ta nouvelle semaine commence maintenant.",
-      "Les grands se relèvent. Tu es là, et cette présence suffit pour recommencer. Bismillah."
-    ],
-    none: [
-      "Cette semaine a été silencieuse — et parfois le silence précède la plus belle des reconversions. Allah t\'attend avec Sa miséricorde.",
-      "Il n\'y a pas de semaine perdue, seulement des semaines en attente. Ta Niyyah de revenir est déjà une lumière."
-    ]
-  };
-
-  // Hadith de l'Istiqamah
-  const HADITHS_ISTIQAMA = [
-    { text: "L\'action la plus aimée d\'Allah est celle qui est la plus régulière, même si elle est petite.", source: "Bukhari & Muslim" },
-    { text: "Tenez-vous droit sur le chemin, et sachez que la meilleure de vos actions est la prière.", source: "Ibn Majah" },
-    { text: "Dis : Mon Seigneur est Allah, puis reste dans la droiture.", source: "Coran 41:30" },
-    { text: "Le Paradis est encerclé par les choses difficiles, et le Feu est encerclé par les désirs.", source: "Muslim" },
-  ];
-
-  // Conseil du jour
-  const CONSEILS = {
-    perfect: "Cette semaine, ajoute une dimension nouvelle : la qualité de ta présence dans la prière. Un seul Rak\'ah avec le cœur vaut mieux que cent sans lui.",
-    good: "La semaine prochaine, choisis un acte que tu feras chaque jour sans exception — aussi petit soit-il. L\'Istiqamah commence par une seule habitude ancrée.",
-    average: "Commence ta semaine avec une Niyyah écrite. L\'intention posée le matin protège l\'action le soir.",
-    low: "Une seule chose : ouvre l\'app demain matin. Juste ça. Le reste suivra.",
-    none: "Reviens demain. C\'est tout ce qu\'on te demande. Un jour à la fois."
-  };
-
-  const messages = COACH_MESSAGES[level];
-  const coachMsg = messages[Math.floor(Math.random() * messages.length)];
-  const hadith = HADITHS_ISTIQAMA[Math.floor(Math.random() * HADITHS_ISTIQAMA.length)];
-  const conseil = CONSEILS[level];
-
-  // Barre de jours visuelle (points, pas chiffres)
-  const daysHtml = days.map((d, i) => {
-    const labels = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
-    const dot = d.done
-      ? `<div style="width:10px;height:10px;border-radius:50%;background:var(--gold-v2);box-shadow:0 0 6px rgba(212,175,55,0.5);"></div>`
-      : `<div style="width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);"></div>`;
-    return `<div style="display:flex;flex-direction:column;align-items:center;gap:5px;">
-      ${dot}
-      <div style="font-size:12px;font-weight:700;color:rgba(255,255,255,0.55);letter-spacing:0.05em;">${labels[i]}</div>
-    </div>`;
-  }).join('');
-
-  // Emoji selon niveau
-  const emojis = { perfect: '\u2726', good: '\u2726', average: '\u2726', low: '\u2726', none: '\u2726' };
-
-  const card = document.getElementById('weeklyCard');
-  card.innerHTML = `
-    <div style="text-align:center;padding:8px 0 20px;">
-      <div style="font-size:12px;letter-spacing:0.25em;text-transform:uppercase;color:rgba(212,175,55,0.5);margin-bottom:12px;font-family:'Cormorant Garamond',serif;">${t('weekly_muhasaba')}</div>
-      <div style="font-size:40px;margin-bottom:16px;">${emojis[level]}</div>
-      <!-- Jours visuels -->
-      <div style="display:flex;justify-content:center;gap:12px;margin-bottom:20px;">${daysHtml}</div>
-      <!-- Message Coach -->
-      <div style="background:rgba(212,175,55,0.04);border:1px solid rgba(212,175,55,0.12);border-radius:16px;padding:18px 16px;margin-bottom:16px;position:relative;overflow:hidden;">
-        <div style="position:absolute;top:-8px;left:14px;font-size:40px;opacity:0.06;font-family:serif;color:#D4AF37;">"</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:15px;line-height:1.75;color:rgba(240,234,214,0.88);font-style:italic;text-align:left;">${coachMsg}</div>
-      </div>
-      <!-- Hadith Istiqamah -->
-      <div style="margin-bottom:16px;padding:14px 16px;border-left:2px solid rgba(212,175,55,0.3);text-align:left;">
-        <div style="font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(212,175,55,0.65);margin-bottom:6px;font-family:'Cormorant Garamond',serif;">Al-Istiqamah</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:13px;font-style:italic;color:rgba(240,234,214,0.65);line-height:1.6;">"${hadith.text}"</div>
-        <div style="font-size:12px;color:rgba(212,175,55,0.5);margin-top:4px;">— ${hadith.source}</div>
-      </div>
-      <!-- Conseil pour la semaine -->
-      <div style="background:rgba(135,169,107,0.06);border:1px solid rgba(135,169,107,0.15);border-radius:12px;padding:14px 16px;margin-bottom:20px;text-align:left;">
-        <div style="font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(135,169,107,0.6);margin-bottom:6px;font-family:'Cormorant Garamond',serif;">Conseil pour cette semaine</div>
-        <div style="font-size:13px;color:rgba(240,234,214,0.7);line-height:1.6;">${conseil}</div>
-      </div>
-    </div>
-    <button class="weekly-btn" onclick="closeWeeklyBilan()" style="width:100%;padding:15px;border-radius:12px;border:none;background:#C8A84A;color:#2C2E32;font-size:15px;font-weight:700;cursor:pointer;font-family:'Cormorant Garamond',serif;letter-spacing:0.05em;">
-      بِسْمِ اللَّهِ — Nouvelle semaine
-    </button>
-  `;
-
+  if (s['fajr']) fajrCount++;
+  bienfIds.forEach(function(id) { if (s[id]) bienfCount++; });
+  lectIds.forEach(function(id) { if (s[id]) lectCount++; });
+  totalGestes = Object.keys(s).filter(function(k) { return s[k] === true; }).length;
+  if (doneDays <= 1) return 'quasi_vide';
+  if (fajrCount >= 1 && doneDays >= 5) return 'fajr';
+  if (bienfCount >= 3) return 'bienfaisance';
+  if (lectCount >= 3) return 'lecture';
+  if (bilanCount >= 5) return 'bilans_soir';
+  return 'equilibre';
+}
+function showWeeklyBilan() {
+  var doneDays = 0, totalGestes = 0, fajrDays = 0;
+  for (var i = 0; i < 7; i++) {
+    var d = getDateMinus(TODAY, i);
+    if (history.days && history.days[d]) doneDays++;
+  }
+  var s = safeParseJSON('spiritual_v2', {});
+  totalGestes = Object.keys(s).filter(function(k) { return s[k] === true; }).length;
+  fajrDays = s['fajr'] ? 1 : 0;
+  var dominante = _getWeeklyDominante();
+  var questions = _WEEKLY_QUESTIONS[dominante] || _WEEKLY_QUESTIONS.equilibre;
+  var question = questions[Math.floor(Math.random() * questions.length)];
+  var weekNum = Math.floor(Date.now() / (7 * 86400000));
+  var parole = _WEEKLY_PAROLES[weekNum % _WEEKLY_PAROLES.length];
+  var card = document.getElementById('weeklyCard');
+  card.innerHTML = '<div style="text-align:center;padding:12px 0 20px;">'
+    + '<div style="font-size:12px;letter-spacing:0.25em;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:20px;font-family:\'Cormorant Garamond\',serif;">' + t('weekly_muhasaba') + '</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;font-style:italic;color:#E5E0DC;line-height:1.6;margin-bottom:28px;max-width:300px;margin-left:auto;margin-right:auto;">' + question + '</div>'
+    + '<div style="display:flex;justify-content:center;gap:24px;margin-bottom:28px;">'
+    + '<div style="text-align:center;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:28px;font-weight:600;color:#C8A84A;">' + totalGestes + '</div><div style="font-size:11px;color:var(--t3);letter-spacing:1px;text-transform:uppercase;">gestes</div></div>'
+    + '<div style="width:1px;background:rgba(200,168,75,0.15);"></div>'
+    + '<div style="text-align:center;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:28px;font-weight:600;color:#C8A84A;">' + doneDays + '</div><div style="font-size:11px;color:var(--t3);letter-spacing:1px;text-transform:uppercase;">journ\u00e9es</div></div>'
+    + '<div style="width:1px;background:rgba(200,168,75,0.15);"></div>'
+    + '<div style="text-align:center;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:28px;font-weight:600;color:#C8A84A;">' + fajrDays + '</div><div style="font-size:11px;color:var(--t3);letter-spacing:1px;text-transform:uppercase;">Fajr</div></div>'
+    + '</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.6);line-height:1.6;margin-bottom:24px;max-width:280px;margin-left:auto;margin-right:auto;">' + parole + '</div>'
+    + '</div>'
+    + '<button class="weekly-btn" onclick="closeWeeklyBilan()" style="width:100%;padding:15px;border-radius:12px;border:none;background:#C8A84A;color:#2C2E32;font-size:15px;font-weight:700;cursor:pointer;font-family:\'Cormorant Garamond\',serif;letter-spacing:0.05em;">'
+    + '\u0628\u0650\u0633\u0652\u0645\u0650 \u0627\u0644\u0644\u0651\u064E\u0647\u0650 \u2014 Nouvelle semaine</button>';
   document.getElementById('weeklyOverlay').classList.add('show');
   document.body.style.overflow = 'hidden';
-  if (navigator.vibrate) navigator.vibrate([20, 30, 60]);
 }
 const SOURATES = [
   [1,'Al-Fatiha','الفاتحة','L\'Ouverture',7],
