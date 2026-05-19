@@ -6842,12 +6842,12 @@ var _WEEKLY_QUESTIONS = {
   equilibre: ['Qu\u2019est-ce que tu gardes de cette semaine ?', 'Un mot pour r\u00e9sumer ces sept jours ?']
 };
 var _WEEKLY_VERSETS = {
-  fajr: { text: 'Certes, la pri\u00e8re de l\u2019aube est t\u00e9moin.', ref: 'Coran 17:78' },
-  bienfaisance: { text: 'Vous n\u2019atteindrez la pi\u00e9t\u00e9 que si vous d\u00e9pensez de ce que vous aimez.', ref: 'Coran 3:92' },
-  lecture: { text: 'R\u00e9citez ce qui vous est facile du Coran.', ref: 'Coran 73:20' },
-  bilans_soir: { text: '\u00d4 vous qui croyez, craignez Allah et que chaque \u00e2me regarde ce qu\u2019elle a pr\u00e9par\u00e9.', ref: 'Coran 59:18' },
+  fajr: { text: 'La pri\u00e8re de l\u2019aube est t\u00e9moin.', ref: 'Coran 17:78' },
+  bienfaisance: { text: 'La bont\u00e9 v\u00e9ritable est de donner, par amour pour Allah.', ref: 'Coran 2:177' },
+  lecture: { text: 'Ceux qui r\u00e9citent le Livre d\u2019Allah esp\u00e8rent un commerce qui ne p\u00e9rit jamais.', ref: 'Coran 35:29' },
+  bilans_soir: { text: 'Que chacun consid\u00e8re ce qu\u2019il a pr\u00e9par\u00e9 pour demain.', ref: 'Coran 59:18' },
   quasi_vide: { text: 'Ne d\u00e9sesp\u00e9rez pas de la mis\u00e9ricorde d\u2019Allah.', ref: 'Coran 39:53' },
-  equilibre: { text: 'Allah n\u2019impose \u00e0 aucune \u00e2me une charge sup\u00e9rieure \u00e0 sa capacit\u00e9.', ref: 'Coran 2:286' }
+  equilibre: { text: 'Notre Seigneur est Allah, puis se tiennent droits.', ref: 'Coran 41:30' }
 };
 var _WEEKLY_PAROLES = [
   'Chaque semaine est une lettre. Tu \u00e9cris ton Livre.',
