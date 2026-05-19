@@ -6891,20 +6891,40 @@ function _getWeeklyDominante() {
 function _getWeeklyStats() {
   var doneDays = 0, totalGestes = 0, fajrDays = 0;
   var catCounts = { rituels: 0, bienfaisance: 0, lecture: 0, duaa: 0 };
+  var hasSnapshots = false;
   for (var i = 0; i < 7; i++) {
     var d = getDateMinus(TODAY, i);
     if (history.days && history.days[d]) doneDays++;
-    var snap = null;
-    try { snap = JSON.parse(localStorage.getItem('niyyah_snapshot_' + d) || 'null'); } catch(e) {}
-    if (snap) {
-      totalGestes += snap.gestes || 0;
-      if (snap.prieres && snap.prieres.fajr) fajrDays++;
-      catCounts.bienfaisance += snap.bienfaisance || 0;
-      catCounts.lecture += snap.lectures || 0;
-      var pCount = 0;
-      if (snap.prieres) { ['fajr','dhuhr','asr','maghrib','isha'].forEach(function(p) { pCount += snap.prieres[p] || 0; }); }
-      catCounts.rituels += pCount;
+    var raw = localStorage.getItem('niyyah_snapshot_' + d);
+    if (raw) {
+      hasSnapshots = true;
+      var snap = null;
+      try { snap = JSON.parse(raw); } catch(e) {}
+      if (snap) {
+        totalGestes += snap.gestes || 0;
+        if (snap.prieres && snap.prieres.fajr) fajrDays++;
+        catCounts.bienfaisance += snap.bienfaisance || 0;
+        catCounts.lecture += snap.lectures || 0;
+        var pCount = 0;
+        if (snap.prieres) { ['fajr','dhuhr','asr','maghrib','isha'].forEach(function(p) { pCount += snap.prieres[p] || 0; }); }
+        catCounts.rituels += pCount;
+      }
     }
+  }
+  if (!hasSnapshots) {
+    var s = safeParseJSON('spiritual_v2', {});
+    var bienfIds = ['sadaqa','salam','silaturahm','kind_act','ziyara','pardon','maruf'];
+    var lectIds = ['hadith1','duaa_jour','sira','quran_read','recits_coran','fiqh_jour','savais_tu'];
+    var allItems = LEVELS.flatMap(function(l) { return l.sections.flatMap(function(sec) { return sec.items; }); });
+    allItems.forEach(function(it) {
+      var done = it.type === 'counter' ? (s[it.id] || 0) >= (it.target || 1) : !!s[it.id];
+      if (!done) return;
+      totalGestes++;
+      if (it.id === 'fajr') fajrDays = 1;
+      if (bienfIds.indexOf(it.id) !== -1) catCounts.bienfaisance++;
+      if (lectIds.indexOf(it.id) !== -1) catCounts.lecture++;
+      if (it.prayer) catCounts.rituels++;
+    });
   }
   return { doneDays: doneDays, totalGestes: totalGestes, fajrDays: fajrDays, catCounts: catCounts };
 }
