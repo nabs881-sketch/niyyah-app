@@ -7043,7 +7043,15 @@ function showWeeklyBilan() {
   var _bilanCount = 0; for (var _bi = 0; _bi < 7; _bi++) { if (_bilanData[getDateMinus(TODAY, _bi)]) _bilanCount++; }
   var comparison = _getWeeklyComparison(stats, _bilanCount);
   var _profil = safeGetItem('niyyah_motivation') || 'routine';
-  var conseil = _getWeeklyConseil(dominante, stats.catCounts, _bilanCount, _profil);
+  var _isPrem = typeof isPremium === 'function' && isPremium();
+  console.log('[bilan-hebdo] premium=' + _isPrem);
+  var conseil;
+  if (_isPrem) {
+    // TODO: appel API IA premium (Prompt 3-4)
+    conseil = _getWeeklyConseil(dominante, stats.catCounts, _bilanCount, _profil);
+  } else {
+    conseil = _getWeeklyConseil(dominante, stats.catCounts, _bilanCount, _profil);
+  }
   conseil = conseil.replace(/\{\{fajr\}\}/g, _numToLetters(stats.fajrDays)).replace(/\{\{gestes\}\}/g, _numToLetters(stats.totalGestes)).replace(/\{\{journees\}\}/g, _numToLetters(stats.doneDays)).replace(/\{\{bilans\}\}/g, _numToLetters(_bilanCount));
   if (prenom) conseil = conseil.replace(/\{\{prenom\}\}/g, prenom);
   var _voicePool = (_NIYYAH_VOICE[dominante] && _NIYYAH_VOICE[dominante][safeGetItem('niyyah_motivation') || 'routine']) || _NIYYAH_VOICE.equilibre.routine;
