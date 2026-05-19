@@ -6996,7 +6996,6 @@ function showWeeklyBilan() {
   var questions = _WEEKLY_QUESTIONS[dominante] || _WEEKLY_QUESTIONS.equilibre;
   var question = questions[Math.floor(Math.random() * questions.length)];
   var prenom = safeGetItem('niyyah_prenom');
-  if (prenom) question = prenom + ', ' + question.charAt(0).toLowerCase() + question.slice(1);
   var verset = _WEEKLY_VERSETS[dominante] || _WEEKLY_VERSETS.equilibre;
   var weekNum = Math.floor(Date.now() / (7 * 86400000));
   var parole = _WEEKLY_PAROLES[weekNum % _WEEKLY_PAROLES.length];
