@@ -2511,6 +2511,8 @@ function renderLevel(levelId) {
   const scoreJour = Math.round(getWeightedScore(allLvlItems, state));
   const scoreColor = scoreJour >= 76 ? '#c8a84b' : scoreJour >= 51 ? 'var(--t1)' : 'var(--t3)';
   var _parole = _getParoleScore(scoreJour);
+  var _lvlItems = getLevelItems(levelId);
+  var _lvlDone = _lvlItems.filter(function(i) { return isItemDone(i, state); }).length;
   let html = '<div class="level-hero"><div class="hero-title">' + t('level_' + level.id) + '</div><div class="hero-bar-row"><div class="hero-bar-track"><div class="hero-bar-fill" style="width:' + pct + '%"></div></div><div class="hero-pct">' + Math.round(pct) + '%</div></div>'
     + '<div style="display:flex;align-items:center;justify-content:space-between;margin-top:10px;padding:8px 12px;">'
     + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:' + scoreColor + ';">' + _parole + '</div>'
