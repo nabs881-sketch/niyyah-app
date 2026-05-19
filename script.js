@@ -1527,6 +1527,20 @@ function _itemMatchesProfile(item) {
   var m = getEffectiveMotiv();
   return !m || !item.paths || item.paths.includes(m);
 }
+var PAROLES_SCORE = [
+  { max: 0,   text: 'Une journ\u00e9e s\u2019ouvre.' },
+  { max: 25,  text: 'Premier pas pos\u00e9. Continue.' },
+  { max: 50,  text: 'Le chemin se trace.' },
+  { max: 75,  text: 'Tu marches bien aujourd\u2019hui.' },
+  { max: 99,  text: 'Belle journ\u00e9e vivifi\u00e9e.' },
+  { max: 100, text: 'M\u00e2sh\u00e2Allah. Journ\u00e9e pleine.' }
+];
+function _getParoleScore(score) {
+  for (var i = 0; i < PAROLES_SCORE.length; i++) {
+    if (score <= PAROLES_SCORE[i].max) return PAROLES_SCORE[i].text;
+  }
+  return PAROLES_SCORE[PAROLES_SCORE.length - 1].text;
+}
 function getCalcLvlPct(lvlId, s) {
   const lvl = LEVELS.find(l => l.id === lvlId);
   const items = lvl.sections.flatMap(sec => sec.items).filter(_itemMatchesProfile);
@@ -1672,10 +1686,7 @@ function updateGlobalProgress() {
   if (f1) f1.style.width = pct + '%';
   const scoreBadge = document.getElementById('globalScoreBadge');
   if (scoreBadge) {
-    const score = Math.round(pct);
-    scoreBadge.textContent = score + '%';
-    scoreBadge.style.color = score >= 80 ? 'var(--gold)' : score >= 50 ? 'var(--green)' : '#fff';
-    scoreBadge.style.borderColor = score >= 80 ? 'rgba(255,214,10,0.4)' : score >= 50 ? 'rgba(52,217,98,0.4)' : 'rgba(255,255,255,0.2)';
+    scoreBadge.style.display = 'none';
   }
   const lvl1 = getLevelProgress(1);
   if (lvl1 >= 100 && !state._mashaAllahShown) {
@@ -2498,20 +2509,13 @@ function renderLevel(levelId) {
   const qiblaCard  = level.id === 1 ? renderQiblaCard() : '';
   const allLvlItems = LEVELS.filter(l => state._unlocked.includes(l.id)).flatMap(l => getLevelItems(l.id)).filter(_itemMatchesProfile);
   const scoreJour = Math.round(getWeightedScore(allLvlItems, state));
-  const scoreColor = scoreJour >= 80 ? '#c8a84b' : scoreJour >= 50 ? 'var(--green)' : 'var(--t2)';
-  const scoreBg = scoreJour >= 80 ? 'rgba(200,168,75,0.12)' : scoreJour >= 50 ? 'rgba(52,217,98,0.08)' : 'rgba(255,255,255,0.04)';
-  const scoreBorder = scoreJour >= 80 ? 'rgba(200,168,75,0.3)' : scoreJour >= 50 ? 'rgba(52,217,98,0.2)' : 'rgba(255,255,255,0.08)';
-  const scoreLabel = scoreJour >= 80 ? 'MashaAllah ✦' : scoreJour >= 50 ? t('score_continue') : t('score_progress');
-  var _lvlItems = getLevelItems(levelId);
-  var _lvlDone = _lvlItems.filter(function(i) { return isItemDone(i, state); }).length;
-  let html = '<div class="level-hero"><div class="hero-label">' + t('level_word') + ' ' + level.id + ' \u2014 ' + _lvlDone + ' / ' + _lvlItems.length + ' items</div><div class="hero-title">' + t('level_' + level.id) + '</div><div class="hero-bar-row"><div class="hero-bar-track"><div class="hero-bar-fill" style="width:' + pct + '%"></div></div><div class="hero-pct">' + Math.round(pct) + '%</div></div>'
-    + '<div style="display:flex;align-items:center;justify-content:space-between;margin-top:10px;padding:8px 12px;background:' + scoreBg + ';border:1px solid ' + scoreBorder + ';border-radius:10px;">'
-    + '<div style="display:flex;align-items:center;gap:4px;"><span style="font-size:12px;color:var(--t3);letter-spacing:0.5px;">Score du jour</span><span onclick="openScoreInfo()" style="font-size:11px;width:16px;height:16px;border-radius:50%;border:1px solid rgba(200,168,74,0.3);color:rgba(200,168,74,0.6);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;">\u24D8</span></div>'
-    + '<div style="display:flex;align-items:center;gap:6px;">'
-    + '<div style="font-size:16px;font-weight:800;color:' + scoreColor + ';">' + scoreJour + '</div>'
-    + '<div style="font-size:12px;color:' + scoreColor + ';opacity:0.8;">/100</div>'
-    + '<div style="font-size:12px;color:' + scoreColor + ';background:' + scoreBg + ';border:1px solid ' + scoreBorder + ';border-radius:6px;padding:1px 6px;margin-left:2px;">' + scoreLabel + '</div>'
-    + '</div></div>'
+  const scoreColor = scoreJour >= 76 ? '#c8a84b' : scoreJour >= 51 ? 'var(--t1)' : 'var(--t3)';
+  var _parole = _getParoleScore(scoreJour);
+  let html = '<div class="level-hero"><div class="hero-title">' + t('level_' + level.id) + '</div><div class="hero-bar-row"><div class="hero-bar-track"><div class="hero-bar-fill" style="width:' + pct + '%"></div></div><div class="hero-pct">' + Math.round(pct) + '%</div></div>'
+    + '<div style="display:flex;align-items:center;justify-content:space-between;margin-top:10px;padding:8px 12px;">'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:' + scoreColor + ';">' + _parole + '</div>'
+    + '<div style="font-size:14px;font-weight:600;color:' + scoreColor + ';" onclick="openScoreInfo()">' + scoreJour + '%</div>'
+    + '</div>'
     + '</div>' + graceBanner + fridayBanner + prayerCard + qiblaCard;
   var _block = getCurrentPrayerBlock();
   if (!_prayerTimes && (_block.id === 'nuit' || _block.id === 'qiyam')) {
