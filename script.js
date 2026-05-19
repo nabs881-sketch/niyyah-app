@@ -2514,10 +2514,7 @@ function renderLevel(levelId) {
   var _lvlItems = getLevelItems(levelId);
   var _lvlDone = _lvlItems.filter(function(i) { return isItemDone(i, state); }).length;
   let html = '<div class="level-hero"><div class="hero-title">' + t('level_' + level.id) + '</div><div class="hero-bar-row"><div class="hero-bar-track"><div class="hero-bar-fill" style="width:' + pct + '%"></div></div><div class="hero-pct">' + Math.round(pct) + '%</div></div>'
-    + '<div style="display:flex;align-items:center;justify-content:space-between;margin-top:10px;padding:8px 12px;">'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:' + scoreColor + ';">' + _parole + '</div>'
-    + '<div style="font-size:14px;font-weight:600;color:' + scoreColor + ';" onclick="openScoreInfo()">' + scoreJour + '%</div>'
-    + '</div>'
+    + '<div style="text-align:right;margin-top:6px;padding:0 4px;"><div style="font-size:12px;color:' + scoreColor + ';opacity:0.7;" onclick="openScoreInfo()">' + scoreJour + '% du jour</div></div>'
     + '</div>' + graceBanner + fridayBanner + prayerCard + qiblaCard;
   var _block = getCurrentPrayerBlock();
   if (!_prayerTimes && (_block.id === 'nuit' || _block.id === 'qiyam')) {
