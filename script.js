@@ -7010,6 +7010,30 @@ function _numToLetters(n) {
   if (n >= 0 && n <= 10) return mots[n];
   return String(n);
 }
+function _getWeekISO() {
+  var d = new Date();
+  d.setHours(0, 0, 0, 0);
+  d.setDate(d.getDate() + 3 - (d.getDay() + 6) % 7);
+  var week1 = new Date(d.getFullYear(), 0, 4);
+  var wn = 1 + Math.round(((d - week1) / 86400000 - 3 + (week1.getDay() + 6) % 7) / 7);
+  return d.getFullYear() + '-W' + _pad2(wn);
+}
+function _cleanupPremiumMsgs() {
+  try {
+    var now = Date.now();
+    for (var i = 0; i < localStorage.length; i++) {
+      var k = localStorage.key(i);
+      if (k && k.indexOf('niyyah_premium_msg_') === 0) {
+        var parts = k.replace('niyyah_premium_msg_', '').split('-W');
+        if (parts.length === 2) {
+          var yr = parseInt(parts[0], 10), wk = parseInt(parts[1], 10);
+          var refDate = new Date(yr, 0, 1 + (wk - 1) * 7);
+          if (now - refDate.getTime() > 8 * 7 * 86400000) localStorage.removeItem(k);
+        }
+      }
+    }
+  } catch(e) {}
+}
 function _getZoneManquante(catCounts, bilanCount) {
   var zones = [
     { key: 'fajr', val: catCounts.rituels || 0 },
@@ -7045,10 +7069,17 @@ function showWeeklyBilan() {
   var _profil = safeGetItem('niyyah_motivation') || 'routine';
   var _isPrem = typeof isPremium === 'function' && isPremium();
   console.log('[bilan-hebdo] premium=' + _isPrem);
+  _cleanupPremiumMsgs();
   var conseil;
   if (_isPrem) {
-    // TODO: appel API IA premium (Prompt 3-4)
-    conseil = _getWeeklyConseil(dominante, stats.catCounts, _bilanCount, _profil);
+    var _weekKey = 'niyyah_premium_msg_' + _getWeekISO();
+    var _cached = safeGetItem(_weekKey);
+    if (_cached) {
+      conseil = _cached;
+    } else {
+      // TODO: appel API IA premium (Prompt 3-4) — stocker dans safeSetItem(_weekKey, response)
+      conseil = _getWeeklyConseil(dominante, stats.catCounts, _bilanCount, _profil);
+    }
   } else {
     conseil = _getWeeklyConseil(dominante, stats.catCounts, _bilanCount, _profil);
   }
