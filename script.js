@@ -15089,7 +15089,7 @@ function getFilJourCardHTML() {
     + '<div class="fil-jour-card" onclick="openVueAuFilDuJour()">'
     + '<div class="titre">AU FIL DU JOUR</div>'
     + '<div class="soustitre">Ce qui demeure entre tes pri\u00e8res</div>'
-    + '<div class="compteur"><span>' + done + ' actes accomplis aujourd\'hui</span></div>'
+    + '<div class="compteur"><span>' + (done === 0 ? 'La journ\u00e9e s\u2019\u00e9coule. Pose un geste.' : done <= 3 ? 'Tu as sem\u00e9. Continue.' : done <= 7 ? 'Belle travers\u00e9e du jour.' : 'Le jour est habit\u00e9.') + '</span></div>'
     + '</div>';
 }
 window.getFilJourCardHTML = getFilJourCardHTML;
