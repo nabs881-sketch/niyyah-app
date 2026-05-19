@@ -9692,14 +9692,11 @@ if ('serviceWorker' in navigator && location.protocol !== 'null:' && (location.p
             var _updateLabels = {fr:{msg:'Niyyah a \u00e9volu\u00e9',sub:'Une nouvelle version est pr\u00eate',btn:'Reprendre \u203A'},en:{msg:'Niyyah has evolved',sub:'A new version is ready',btn:'Resume \u203A'},ar:{msg:'\u0646\u0650\u064a\u0651\u064e\u0629 \u062a\u062d\u062f\u0651\u062b\u062a',sub:'\u0646\u0633\u062e\u0629 \u062c\u062f\u064a\u062f\u0629 \u062c\u0627\u0647\u0632\u0629',btn:'\u0627\u0633\u062a\u0626\u0646\u0627\u0641 \u203A'}};
             var _ul = _updateLabels[(typeof V2_LANG!=='undefined'?V2_LANG:'fr')] || _updateLabels.fr;
             var banner = document.createElement('div');
-            banner.style.cssText = 'position:fixed;bottom:20px;left:16px;right:16px;max-width:400px;margin:0 auto;background:#2C2E32;border-left:2px solid #C8A84A;border-radius:12px;padding:14px 20px;z-index:9999;display:flex;align-items:center;gap:14px;opacity:' + (window._reducedMotion ? '1' : '0') + ';' + (window._reducedMotion ? '' : 'transition:opacity 0.6s ease;');
-            banner.innerHTML = '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:#C8A84A;">' + _ul.msg + '</div><div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;font-style:italic;color:rgba(229,224,220,0.5);margin-top:2px;">' + _ul.sub + '</div></div><span id="_sw-resume" style="font-family:\'Cormorant Garamond\',serif;font-size:13px;color:#C8A84A;cursor:pointer;flex-shrink:0;white-space:nowrap;">' + _ul.btn + '</span>';
+            banner.style.cssText = 'position:fixed;top:calc(var(--safe-top,0px) + 8px);left:16px;right:16px;max-width:400px;margin:0 auto;background:rgba(20,18,15,0.95);border:1px solid rgba(200,168,75,0.25);border-radius:10px;padding:10px 16px;z-index:9999;display:flex;align-items:center;gap:12px;opacity:' + (window._reducedMotion ? '1' : '0') + ';' + (window._reducedMotion ? '' : 'transition:opacity 0.6s ease;');
+            banner.innerHTML = '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:#C8A84A;">' + _ul.msg + '</div></div><span id="_sw-resume" style="font-family:\'Cormorant Garamond\',serif;font-size:13px;color:#C8A84A;cursor:pointer;flex-shrink:0;white-space:nowrap;">' + _ul.btn + '</span>';
             if (!window._reducedMotion) { requestAnimationFrame(function(){requestAnimationFrame(function(){banner.style.opacity='1';});}); }
-            document.getElementById('_sw-resume') || banner.querySelector('#_sw-resume');
             banner.querySelector('#_sw-resume').onclick = function() { newWorker.postMessage({type:'SKIP_WAITING'}); window.location.reload(); };
             document.body.appendChild(banner);
-            setTimeout(function() { banner.style.opacity='0'; setTimeout(function() { if (banner.parentNode) banner.remove(); }, 600); }, 6000);
-            window.addEventListener('scroll', function _swScroll() { banner.style.opacity='0'; setTimeout(function() { if (banner.parentNode) banner.remove(); }, 600); window.removeEventListener('scroll', _swScroll); }, { once: true });
           }
         });
       });
