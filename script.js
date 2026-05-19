@@ -6835,34 +6835,34 @@ function getWeeklyHadith(level) {
 }
 var _NIYYAH_VOICE = {
   fajr: {
-    reconnecter: ['msg_fajr_reconnecter_1','msg_fajr_reconnecter_2','msg_fajr_reconnecter_3'],
-    routine: ['msg_fajr_routine_1','msg_fajr_routine_2','msg_fajr_routine_3'],
-    sacraliser: ['msg_fajr_sacraliser_1','msg_fajr_sacraliser_2','msg_fajr_sacraliser_3']
+    reconnecter: ['Six Fajr cette semaine \u2014 l\u2019aube te conna\u00eet d\u00e9j\u00e0.','Tu reviens. Doucement. L\u2019aube t\u2019attend chaque jour.','Plus de matins que pr\u00e9vus. C\u2019est pr\u00e9cieux quand on revient.'],
+    routine: ['Six Fajr cette semaine. Le matin t\u2019appartient.','L\u2019aube est devenue ta complice. Continue.','Tu tiens Fajr. Ce n\u2019est pas rien.'],
+    sacraliser: ['Six Fajr. C\u2019est exactement ce que tu cherches \u2014 la pr\u00e9sence \u00e0 l\u2019aube.','Le matin \u00e9claire ton chemin. Le reste s\u2019organise autour.','Tu honores l\u2019aube. Le jour s\u2019ouvre avec toi.']
   },
   bienfaisance: {
-    reconnecter: ['msg_bienfaisance_reconnecter_1','msg_bienfaisance_reconnecter_2','msg_bienfaisance_reconnecter_3'],
-    routine: ['msg_bienfaisance_routine_1','msg_bienfaisance_routine_2','msg_bienfaisance_routine_3'],
-    sacraliser: ['msg_bienfaisance_sacraliser_1','msg_bienfaisance_sacraliser_2','msg_bienfaisance_sacraliser_3']
+    reconnecter: ['Tu es all\u00e9 vers les autres cette semaine. \u00c7a compte beaucoup.','Quelques gestes vers l\u2019ext\u00e9rieur \u2014 le c\u0153ur s\u2019ouvre quand on revient.','Le retour passe souvent par l\u2019autre. Tu l\u2019as senti.'],
+    routine: ['Tu as sem\u00e9 du bien cette semaine. \u00c7a revient toujours.','Trois gestes vers les autres, c\u2019est ta semaine. La gentillesse est ton fil.','Tu donnes sans bruit. C\u2019est la plus belle fa\u00e7on.'],
+    sacraliser: ['Tu donnes beaucoup. N\u2019oublie pas de recevoir aussi.','Ta semaine a \u00e9clair\u00e9 d\u2019autres visages. C\u2019est le sens m\u00eame.','Donner devient ta respiration. Continue, doucement.']
   },
   lecture: {
-    reconnecter: ['msg_lecture_reconnecter_1','msg_lecture_reconnecter_2','msg_lecture_reconnecter_3'],
-    routine: ['msg_lecture_routine_1','msg_lecture_routine_2','msg_lecture_routine_3'],
-    sacraliser: ['msg_lecture_sacraliser_1','msg_lecture_sacraliser_2','msg_lecture_sacraliser_3']
+    reconnecter: ['Tu as lu cette semaine. La parole d\u2019Allah revient vers toi.','Quelques pages, quelques r\u00e9cits \u2014 les portes s\u2019entrouvrent.','Le Livre t\u2019a appel\u00e9. Tu as r\u00e9pondu.'],
+    routine: ['Tu as nourri ton c\u0153ur cette semaine. La lecture t\u2019habite.','Le Coran et ses r\u00e9cits \u2014 ils ont accompagn\u00e9 tes jours.','Tu prends le temps. C\u2019est la plus belle des disciplines.'],
+    sacraliser: ['Tu cherches. Le Livre te r\u00e9pond. Continue.','Lire devient pour toi une forme de pri\u00e8re. C\u2019est juste.','Ta semaine a \u00e9t\u00e9 travers\u00e9e par la parole sacr\u00e9e.']
   },
   bilans_soir: {
-    reconnecter: ['msg_bilans_reconnecter_1','msg_bilans_reconnecter_2','msg_bilans_reconnecter_3'],
-    routine: ['msg_bilans_routine_1','msg_bilans_routine_2','msg_bilans_routine_3'],
-    sacraliser: ['msg_bilans_sacraliser_1','msg_bilans_sacraliser_2','msg_bilans_sacraliser_3']
+    reconnecter: ['Tu as pos\u00e9 tes bilans cette semaine. Tu t\u2019\u00e9coutes \u2014 c\u2019est rare.','Cinq soirs o\u00f9 tu t\u2019es regard\u00e9. Le retour passe par l\u00e0.','Tu prends le temps avant de dormir. Pr\u00e9cieux.'],
+    routine: ['Tu fais ta muh\u00e2saba chaque soir. La tradition vit en toi.','Cinq bilans pos\u00e9s. Ton soir est devenu un rituel.','Tu te connais mieux que la semaine pass\u00e9e. C\u2019est \u00e7a, le chemin.'],
+    sacraliser: ['Tu interroges ton \u00e2me chaque soir. C\u2019est le sommet de la pratique.','Le bilan du soir t\u2019habite \u2014 sinc\u00e9rit\u00e9, effort, distraction. Tu nommes ce qui est.','Ta semaine a \u00e9t\u00e9 examin\u00e9e. C\u2019est rare et beau.']
   },
   quasi_vide: {
-    reconnecter: ['msg_vide_reconnecter_1','msg_vide_reconnecter_2','msg_vide_reconnecter_3'],
-    routine: ['msg_vide_routine_1','msg_vide_routine_2','msg_vide_routine_3'],
-    sacraliser: ['msg_vide_sacraliser_1','msg_vide_sacraliser_2','msg_vide_sacraliser_3']
+    reconnecter: ['Je t\u2019ai attendu cette semaine. Tu es l\u00e0, c\u2019est ce qui compte.','Peu de gestes pos\u00e9s. Le retour se fait pas \u00e0 pas \u2014 pas en un coup.','Tu ouvres Niyyah. C\u2019est d\u00e9j\u00e0 un commencement.'],
+    routine: ['Cette semaine a \u00e9t\u00e9 plus tranquille. \u00c7a arrive \u00e0 tous.','Tu as moins pratiqu\u00e9 \u2014 la vie traverse parfois. Reviens demain.','Quelques gestes seulement. Le peu fid\u00e8le vaut plus que le beaucoup oubli\u00e9.'],
+    sacraliser: ['Tu as choisi le Complet, et cette semaine fut l\u00e9g\u00e8re. C\u2019est aussi une \u00e9tape.','L\u2019exigence demande des respirations. Cette semaine en fut une.','Pas de jugement. Le chemin reprend quand tu le veux.']
   },
   equilibre: {
-    reconnecter: ['msg_equilibre_reconnecter_1','msg_equilibre_reconnecter_2','msg_equilibre_reconnecter_3'],
-    routine: ['msg_equilibre_routine_1','msg_equilibre_routine_2','msg_equilibre_routine_3'],
-    sacraliser: ['msg_equilibre_sacraliser_1','msg_equilibre_sacraliser_2','msg_equilibre_sacraliser_3']
+    reconnecter: ['Tu as march\u00e9 cette semaine. Sans exc\u00e8s, sans manque.','Une semaine ordinaire. C\u2019est dans l\u2019ordinaire que la pratique s\u2019installe.','Tu trouves ton rythme. Doucement.'],
+    routine: ['Une semaine \u00e0 ton image. R\u00e9guli\u00e8re, fid\u00e8le, tenue.','Tu as pos\u00e9 ce que tu pouvais. Ni plus, ni moins. C\u2019est juste.','Pas de pic, pas de creux. Juste la constance. C\u2019est beaucoup.'],
+    sacraliser: ['Une semaine pleine, sans exc\u00e8s. Tu sais doser maintenant.','Ton chemin est devenu une marche fluide. C\u2019est l\u2019horizon que tu cherchais.','Tu pratiques sans crispation. C\u2019est rare.']
   }
 };
 var _WEEKLY_QUESTIONS = {
