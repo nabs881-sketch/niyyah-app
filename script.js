@@ -13999,10 +13999,6 @@ function _askCameraPermission(context) {
 async function regardeOpen() {
   _nAn('scanner_tab_visited');
   showAlHayaBtn();
-  if (!window.REGARD_VERSETS && !window._regardLibLoading) {
-    window._regardLibLoading = true;
-    fetch('./data/regard-library.json').then(function(r){return r.json();}).then(function(d){window.REGARD_VERSETS=d;window._regardLibLoading=false;}).catch(function(){window._regardLibLoading=false;});
-  }
   var screen = document.getElementById('regarde-screen');
   var content = document.getElementById('regarde-content');
   if (!screen || !content) return;
@@ -14010,6 +14006,15 @@ async function regardeOpen() {
   closeRegardeDetail();
   if (typeof closeNiyyahJournal === 'function') closeNiyyahJournal();
   if (typeof closeNiyyahDetail === 'function') closeNiyyahDetail();
+
+  // Charger regard-library AVANT d'activer la capture
+  if (!window.REGARD_VERSETS) {
+    try {
+      var _rlRes = await fetch('./data/regard-library.json');
+      window.REGARD_VERSETS = await _rlRes.json();
+    } catch(e) {}
+    window._regardLibLoading = false;
+  }
 
   // Pré-écran permission caméra
   var _camOk = await _askCameraPermission('regarde');
