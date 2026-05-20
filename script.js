@@ -15635,66 +15635,153 @@ function _showDuaaCycleModal() {
 }
 window._showDuaaCycleModal = _showDuaaCycleModal;
 
+function _compagnonsRenderDetail(c, jour) {
+  var existing = document.getElementById('compagnons-overlay');
+  if (existing) existing.remove();
+  var ov = document.createElement('div');
+  ov.id = 'compagnons-overlay';
+  ov.style.cssText = 'position:fixed;inset:0;z-index:9500;background:#0a0a0a;display:flex;flex-direction:column;overflow:hidden;';
+  var _epLabel = (c.episode_num && c.episode_total) ? '\u00c9pisode ' + c.episode_num + '/' + c.episode_total : '';
+  var html = '<div style="padding:calc(var(--safe-top,0px) + 16px) 20px 12px;text-align:center;">';
+  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:4px;">Jour ' + (c.jour || jour) + ' / ' + COMPAGNONS.length + '</div>';
+  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-weight:700;color:#E5E0DC;margin-bottom:4px;">' + (c.compagnon || '') + '</div>';
+  html += (c.compagnon_ar ? '<div style="font-family:\'Amiri\',serif;font-size:18px;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:4px;">' + c.compagnon_ar + '</div>' : '');
+  html += (_epLabel ? '<div style="font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:1px;">' + _epLabel + '</div>' : '');
+  html += '</div>';
+  html += '<div style="flex:1;overflow-y:auto;padding:0 24px calc(20px + var(--safe-bot,0px));-webkit-overflow-scrolling:touch;">';
+  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;line-height:1.8;color:rgba(240,234,214,0.9);margin-bottom:20px;">' + (c.recit || '').replace(/\n/g, '<br>') + '</div>';
+  if (c.parole) html += '<div style="border-left:2px solid rgba(200,168,74,0.4);padding:8px 16px;margin-bottom:16px;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;line-height:1.6;color:rgba(200,168,74,0.85);">' + c.parole + '</div>';
+  if (c.station) html += '<div style="border:1px solid rgba(200,168,74,0.25);border-radius:10px;padding:12px 16px;margin-bottom:20px;font-style:italic;font-size:14px;line-height:1.6;color:rgba(200,168,74,0.8);">' + c.station + '</div>';
+  if (c.source) html += '<div style="text-align:center;font-size:11px;color:rgba(255,255,255,0.35);letter-spacing:0.1em;margin-bottom:16px;">\u2014 ' + c.source + ' \u2014</div>';
+  html += '<button onclick="validerLecture(\'vie_compagnons\');document.getElementById(\'compagnons-overlay\').remove();" style="display:block;width:calc(100% - 48px);max-width:320px;margin:24px auto 32px;padding:16px;border:none;border-radius:12px;background:#C8A84A;color:#2C2E32;font-family:\'Cormorant Garamond\',serif;font-size:16px;font-weight:600;cursor:pointer;">J\u2019ai termin\u00e9 ma lecture</button>';
+  html += '</div>';
+  html += '<button onclick="_compagnonsShowArchive();" style="position:absolute;top:calc(var(--safe-top,0px) + 12px);left:16px;background:none;border:none;color:#C8A84A;font-size:22px;cursor:pointer;z-index:1;">\u2039</button>';
+  html += '<button onclick="document.getElementById(\'compagnons-overlay\').remove();" style="position:absolute;top:calc(var(--safe-top,0px) + 12px);right:16px;background:none;border:none;color:#B5A685;font-size:24px;cursor:pointer;z-index:1;">\u2715</button>';
+  ov.innerHTML = html;
+  document.body.appendChild(ov);
+}
+function _compagnonsShowArchive() {
+  var existing = document.getElementById('compagnons-overlay');
+  if (existing) existing.remove();
+  if (!COMPAGNONS) return;
+  var start = safeGetItem('niyyah_compagnons_start');
+  if (!start) { start = String(Date.now()); safeSetItem('niyyah_compagnons_start', start); }
+  var maxDay = Math.floor((Date.now() - parseInt(start, 10)) / 86400000) + 1;
+  var ov = document.createElement('div');
+  ov.id = 'compagnons-overlay';
+  ov.style.cssText = 'position:fixed;inset:0;z-index:9500;background:#0a0a0a;display:flex;flex-direction:column;overflow:hidden;';
+  var html = '<div style="padding:calc(var(--safe-top,0px) + 16px) 20px 12px;text-align:center;">';
+  html += '<div style="font-family:Amiri,serif;font-size:24px;color:#C8A84A;direction:rtl;margin-bottom:4px;">\u0635\u064E\u062D\u064E\u0627\u0628\u064E\u0629</div>';
+  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.6);">Tous les compagnons</div>';
+  html += '</div>';
+  html += '<div style="flex:1;overflow-y:auto;padding:0 20px calc(20px + var(--safe-bot,0px));-webkit-overflow-scrolling:touch;">';
+  COMPAGNONS.forEach(function(c) {
+    var jour = c.jour || 0;
+    var unlocked = jour <= maxDay;
+    if (!unlocked) {
+      html += '<div style="padding:14px 16px;background:rgba(200,168,75,0.02);border:1px solid rgba(200,168,75,0.06);border-radius:14px;margin-bottom:8px;opacity:0.35;display:flex;align-items:center;gap:14px;">';
+      html += '<div style="width:32px;height:32px;border-radius:8px;background:rgba(200,168,75,0.05);display:flex;align-items:center;justify-content:center;font-family:\'Cormorant Garamond\',serif;font-size:13px;color:#B5A685;flex-shrink:0;">' + jour + '</div>';
+      html += '<div style="flex:1;font-family:\'Cormorant Garamond\',serif;font-size:14px;color:#B5A685;font-style:italic;">Bient\u00f4t\u2026</div></div>';
+      return;
+    }
+    html += '<div onclick="_compagnonsOpenByJour(' + jour + ')" style="padding:14px 16px;background:rgba(200,168,75,0.04);border:1px solid rgba(200,168,75,0.12);border-radius:14px;margin-bottom:8px;cursor:pointer;display:flex;align-items:center;gap:14px;">';
+    html += '<div style="width:32px;height:32px;border-radius:8px;background:rgba(200,168,75,0.1);display:flex;align-items:center;justify-content:center;font-family:\'Cormorant Garamond\',serif;font-size:13px;color:#C8A84A;flex-shrink:0;">' + jour + '</div>';
+    html += '<div style="flex:1;min-width:0;font-family:\'Cormorant Garamond\',serif;font-size:14px;color:#E5E0DC;">' + (c.compagnon || '') + '</div>';
+    html += '<div style="color:rgba(200,168,75,0.4);font-size:16px;flex-shrink:0;">\u203A</div></div>';
+  });
+  html += '</div>';
+  html += '<button onclick="document.getElementById(\'compagnons-overlay\').remove();" style="position:absolute;top:calc(var(--safe-top,0px) + 12px);right:16px;background:none;border:none;color:#B5A685;font-size:24px;cursor:pointer;z-index:1;">\u2715</button>';
+  ov.innerHTML = html;
+  document.body.appendChild(ov);
+}
+window._compagnonsShowArchive = _compagnonsShowArchive;
+function _compagnonsOpenByJour(jour) {
+  if (!COMPAGNONS) return;
+  var c = COMPAGNONS.find(function(ep) { return ep.jour === jour; });
+  if (c) _compagnonsRenderDetail(c, jour);
+}
+window._compagnonsOpenByJour = _compagnonsOpenByJour;
 function openVueCompagnon() {
-  _saveScroll();
-  a11yOnOverlayOpen();
-  var v = document.getElementById('vue-rituel');
-  if (!v) return;
-  v.querySelector('.rituel-titre').textContent = 'VIE DES COMPAGNONS';
-  v.querySelector('.rituel-prochaine').textContent = '';
-  v.querySelector('.rituel-poetique').textContent = '';
-  var main = v.querySelector('.rituel-content');
-  main.innerHTML = '<div style="text-align:center;padding:40px 16px;color:rgba(255,255,255,0.4);font-size:14px;">Chargement\u2026</div>';
-  var _footer = v.querySelector('.rituel-footer button');
-  if (_footer) _footer.setAttribute('onclick', "validerLecture('vie_compagnons')");
-  v.classList.remove('hidden');
-  document.getElementById('rituel-emblem').textContent = '\u0635\u064E\u062D\u064E\u0627\u0628\u064E\u0629';
   loadCompagnons(function() {
+    if (!COMPAGNONS || !COMPAGNONS.length) { showToast('Erreur de chargement'); return; }
     var c = getCompagnonJour();
-    if (!c.compagnon) { main.innerHTML = '<div style="text-align:center;padding:40px;color:#C8A84A;">Erreur de chargement</div>'; return; }
-    var _epLabel = (c.episode_num && c.episode_total) ? '\u00c9pisode ' + c.episode_num + '/' + c.episode_total : '';
-    main.innerHTML = '<div style="padding:20px 16px;text-align:center;">'
-      + (c.titre ? '<div class="fiqh-categorie">' + c.titre.toUpperCase() + '</div>' : '')
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-weight:700;color:rgba(240,234,214,0.95);margin-bottom:4px;">Jour ' + (c.jour || '') + ' \u2014 ' + (c.compagnon || '') + '</div>'
-      + (c.compagnon_ar ? '<div style="font-family:\'Amiri\',serif;font-size:18px;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:4px;">' + c.compagnon_ar + '</div>' : '')
-      + (_epLabel ? '<div style="font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:1px;margin-bottom:20px;">' + _epLabel + '</div>' : '')
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;line-height:1.8;color:rgba(240,234,214,0.9);text-align:left;margin-bottom:20px;">' + (c.recit || '').replace(/\n/g, '<br>') + '</div>'
-      + (c.parole ? '<div style="border-left:2px solid rgba(200,168,74,0.4);padding:8px 16px;margin-bottom:16px;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;line-height:1.6;color:rgba(200,168,74,0.85);text-align:left;">' + c.parole + '</div>' : '')
-      + (c.station ? '<div style="border:1px solid rgba(200,168,74,0.25);border-radius:10px;padding:12px 16px;margin-bottom:20px;font-style:italic;font-size:14px;line-height:1.6;color:rgba(200,168,74,0.8);">' + c.station + '</div>' : '')
-      + (c.source ? '<div style="font-size:11px;color:rgba(255,255,255,0.35);letter-spacing:0.1em;">\u2014 ' + c.source + ' \u2014</div>' : '')
-      + '</div>';
+    _compagnonsRenderDetail(c, c.jour);
   });
 }
 window.openVueCompagnon = openVueCompagnon;
 
+function _prophetesRenderDetail(p, jour) {
+  var existing = document.getElementById('prophetes-overlay');
+  if (existing) existing.remove();
+  var ov = document.createElement('div');
+  ov.id = 'prophetes-overlay';
+  ov.style.cssText = 'position:fixed;inset:0;z-index:9500;background:#0a0a0a;display:flex;flex-direction:column;overflow:hidden;';
+  var _epLabel = (p.episode_num && p.episode_total) ? ' \u2014 ' + p.episode_num + '/' + p.episode_total : '';
+  var html = '<div style="padding:calc(var(--safe-top,0px) + 16px) 20px 12px;text-align:center;">';
+  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:4px;">Jour ' + (p.jour || jour) + ' / 77</div>';
+  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-weight:700;color:#E5E0DC;margin-bottom:4px;">' + (p.prophete || '') + _epLabel + '</div>';
+  html += (p.prophete_ar ? '<div style="font-family:\'Amiri\',serif;font-size:18px;color:rgba(200,168,74,0.85);direction:rtl;">' + p.prophete_ar + '</div>' : '');
+  html += '</div>';
+  html += '<div style="flex:1;overflow-y:auto;padding:0 24px calc(20px + var(--safe-bot,0px));-webkit-overflow-scrolling:touch;">';
+  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;line-height:1.8;color:rgba(240,234,214,0.9);margin-bottom:20px;">' + (p.recit || '').replace(/\n/g, '<br>') + '</div>';
+  if (p.parole) html += '<div style="border-left:2px solid rgba(200,168,74,0.4);padding:8px 16px;margin-bottom:16px;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;line-height:1.6;color:rgba(200,168,74,0.85);">' + p.parole + '</div>';
+  if (p.station) html += '<div style="border:1px solid rgba(200,168,74,0.25);border-radius:10px;padding:12px 16px;margin-bottom:20px;font-style:italic;font-size:14px;line-height:1.6;color:rgba(200,168,74,0.8);">' + p.station + '</div>';
+  if (p.sources) html += '<div style="text-align:center;font-size:11px;color:rgba(200,168,74,0.6);letter-spacing:0.1em;margin-bottom:16px;">\u2014 ' + p.sources + ' \u2014</div>';
+  if (p.renvoi_module === 'sira') html += '<div style="text-align:center;margin-bottom:16px;"><button onclick="document.getElementById(\'prophetes-overlay\').remove();if(typeof SIRA!==\'undefined\')SIRA.openDetail();" style="padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,74,0.4);background:transparent;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:600;cursor:pointer;">Ouvrir la S\u00eera</button></div>';
+  html += '<button onclick="validerLecture(\'vie_prophetes\');document.getElementById(\'prophetes-overlay\').remove();" style="display:block;width:calc(100% - 48px);max-width:320px;margin:24px auto 32px;padding:16px;border:none;border-radius:12px;background:#C8A84A;color:#2C2E32;font-family:\'Cormorant Garamond\',serif;font-size:16px;font-weight:600;cursor:pointer;">J\u2019ai termin\u00e9 ma lecture</button>';
+  html += '</div>';
+  html += '<button onclick="_prophetesShowArchive();" style="position:absolute;top:calc(var(--safe-top,0px) + 12px);left:16px;background:none;border:none;color:#C8A84A;font-size:22px;cursor:pointer;z-index:1;">\u2039</button>';
+  html += '<button onclick="document.getElementById(\'prophetes-overlay\').remove();" style="position:absolute;top:calc(var(--safe-top,0px) + 12px);right:16px;background:none;border:none;color:#B5A685;font-size:24px;cursor:pointer;z-index:1;">\u2715</button>';
+  ov.innerHTML = html;
+  document.body.appendChild(ov);
+}
+function _prophetesShowArchive() {
+  var existing = document.getElementById('prophetes-overlay');
+  if (existing) existing.remove();
+  if (!PROPHETES) return;
+  var start = safeGetItem('niyyah_prophetes_start');
+  if (!start) { start = String(Date.now()); safeSetItem('niyyah_prophetes_start', start); }
+  var maxDay = Math.min(Math.floor((Date.now() - parseInt(start, 10)) / 86400000) + 1, 77);
+  var ov = document.createElement('div');
+  ov.id = 'prophetes-overlay';
+  ov.style.cssText = 'position:fixed;inset:0;z-index:9500;background:#0a0a0a;display:flex;flex-direction:column;overflow:hidden;';
+  var html = '<div style="padding:calc(var(--safe-top,0px) + 16px) 20px 12px;text-align:center;">';
+  html += '<div style="font-family:Amiri,serif;font-size:24px;color:#C8A84A;direction:rtl;margin-bottom:4px;">\u0623\u064E\u0646\u0628\u0650\u064A\u064E\u0627\u0621</div>';
+  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.6);">Tous les proph\u00e8tes</div>';
+  html += '</div>';
+  html += '<div style="flex:1;overflow-y:auto;padding:0 20px calc(20px + var(--safe-bot,0px));-webkit-overflow-scrolling:touch;">';
+  for (var j = 1; j <= 77; j++) {
+    var ep = PROPHETES.find(function(e) { return e.jour === j; });
+    var name = ep ? (ep.prophete || 'Jour ' + j) : 'Jour ' + j;
+    var unlocked = j <= maxDay;
+    if (!unlocked) {
+      html += '<div style="padding:14px 16px;background:rgba(200,168,75,0.02);border:1px solid rgba(200,168,75,0.06);border-radius:14px;margin-bottom:8px;opacity:0.35;display:flex;align-items:center;gap:14px;">';
+      html += '<div style="width:32px;height:32px;border-radius:8px;background:rgba(200,168,75,0.05);display:flex;align-items:center;justify-content:center;font-family:\'Cormorant Garamond\',serif;font-size:13px;color:#B5A685;flex-shrink:0;">' + j + '</div>';
+      html += '<div style="flex:1;font-family:\'Cormorant Garamond\',serif;font-size:14px;color:#B5A685;font-style:italic;">Bient\u00f4t\u2026</div></div>';
+      continue;
+    }
+    html += '<div onclick="_prophetesOpenByJour(' + j + ')" style="padding:14px 16px;background:rgba(200,168,75,0.04);border:1px solid rgba(200,168,75,0.12);border-radius:14px;margin-bottom:8px;cursor:pointer;display:flex;align-items:center;gap:14px;">';
+    html += '<div style="width:32px;height:32px;border-radius:8px;background:rgba(200,168,75,0.1);display:flex;align-items:center;justify-content:center;font-family:\'Cormorant Garamond\',serif;font-size:13px;color:#C8A84A;flex-shrink:0;">' + j + '</div>';
+    html += '<div style="flex:1;min-width:0;font-family:\'Cormorant Garamond\',serif;font-size:14px;color:#E5E0DC;">' + name + '</div>';
+    html += '<div style="color:rgba(200,168,75,0.4);font-size:16px;flex-shrink:0;">\u203A</div></div>';
+  }
+  html += '</div>';
+  html += '<button onclick="document.getElementById(\'prophetes-overlay\').remove();" style="position:absolute;top:calc(var(--safe-top,0px) + 12px);right:16px;background:none;border:none;color:#B5A685;font-size:24px;cursor:pointer;z-index:1;">\u2715</button>';
+  ov.innerHTML = html;
+  document.body.appendChild(ov);
+}
+window._prophetesShowArchive = _prophetesShowArchive;
+function _prophetesOpenByJour(jour) {
+  if (!PROPHETES) return;
+  var p = PROPHETES.find(function(ep) { return ep.jour === jour; });
+  if (p) _prophetesRenderDetail(p, jour);
+}
+window._prophetesOpenByJour = _prophetesOpenByJour;
 function openVuePropheteJour() {
-  _saveScroll();
-  a11yOnOverlayOpen();
-  var v = document.getElementById('vue-rituel');
-  if (!v) return;
-  v.querySelector('.rituel-titre').textContent = 'HISTOIRES DES PROPH\u00c8TES';
-  v.querySelector('.rituel-prochaine').textContent = '';
-  v.querySelector('.rituel-poetique').textContent = '';
-  var main = v.querySelector('.rituel-content');
-  main.innerHTML = '<div style="text-align:center;padding:40px 16px;color:rgba(255,255,255,0.4);font-size:14px;">Chargement\u2026</div>';
-  var _footer = v.querySelector('.rituel-footer button');
-  if (_footer) _footer.setAttribute('onclick', "validerLecture('vie_prophetes')");
-  v.classList.remove('hidden');
-  document.getElementById('rituel-emblem').textContent = '\u0623\u064E\u0646\u0628\u0650\u064A\u064E\u0627\u0621';
   loadProphetes(function() {
+    if (!PROPHETES || !PROPHETES.length) { showToast('Erreur de chargement'); return; }
     var p = getPropheteJour();
-    if (!p.prophete) { main.innerHTML = '<div style="text-align:center;padding:40px;color:#C8A84A;">Erreur de chargement</div>'; return; }
-    var _epLabel = (p.episode_num && p.episode_total) ? ' \u2014 ' + p.episode_num + '/' + p.episode_total : '';
-    main.innerHTML = '<div style="padding:20px 16px;text-align:center;">'
-      + (p.titre ? '<div class="fiqh-categorie">' + p.titre.toUpperCase() + '</div>' : '')
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-weight:700;color:rgba(240,234,214,0.95);margin-bottom:4px;">' + (p.prophete || '') + _epLabel + '</div>'
-      + (p.prophete_ar ? '<div style="font-family:\'Amiri\',serif;font-size:18px;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:20px;">' + p.prophete_ar + '</div>' : '')
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;line-height:1.8;color:rgba(240,234,214,0.9);text-align:left;margin-bottom:20px;">' + (p.recit || '').replace(/\n/g, '<br>') + '</div>'
-      + (p.parole ? '<div style="border-left:2px solid rgba(200,168,74,0.4);padding:8px 16px;margin-bottom:16px;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;line-height:1.6;color:rgba(200,168,74,0.85);text-align:left;">' + p.parole + '</div>' : '')
-      + (p.station ? '<div style="border:1px solid rgba(200,168,74,0.25);border-radius:10px;padding:12px 16px;margin-bottom:20px;font-style:italic;font-size:14px;line-height:1.6;color:rgba(200,168,74,0.8);">' + p.station + '</div>' : '')
-      + (p.sources ? '<div style="font-size:11px;color:rgba(200,168,74,0.6);letter-spacing:0.1em;margin-bottom:16px;">\u2014 ' + p.sources + ' \u2014</div>' : '')
-      + (p.renvoi_module === 'sira' ? '<button onclick="if(typeof SIRA!==\'undefined\')SIRA.openDetail();" style="padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,74,0.4);background:transparent;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:600;cursor:pointer;letter-spacing:0.5px;">Ouvrir la S\u00eera</button>' : '')
-      + '</div>';
+    _prophetesRenderDetail(p, p.jour);
   });
 }
 window.openVuePropheteJour = openVuePropheteJour;
