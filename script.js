@@ -7429,6 +7429,7 @@ function validerLectureRecit(num) {
   if (ov) ov.remove();
   showToast('R\u00e9cit ' + num + ' termin\u00e9 \u2726');
   if (typeof renderLevel === 'function') renderLevel(currentLevel);
+  _knowledgeReturn();
 }
 window.validerLectureRecit = validerLectureRecit;
 function _recitsShowArchive() {
@@ -15129,22 +15130,29 @@ function closeVueRituel() {
   a11yOnOverlayClose();
 }
 window.closeVueRituel = closeVueRituel;
+function _knowledgeReturn() {
+  if (window._knowledgeFromFil) {
+    window._knowledgeFromFil = false;
+    openVueAuFilDuJour();
+    return;
+  }
+  _restoreScroll();
+  a11yOnOverlayClose();
+}
 function validerLecture(id) {
   if (!state[id]) { state[id] = true; saveState(); updateGlobalProgress(); }
   var v = document.getElementById('vue-rituel');
   if (v) v.classList.add('hidden');
   if (typeof renderLevel === 'function') renderLevel(currentLevel);
-  _restoreScroll();
-  a11yOnOverlayClose();
+  _knowledgeReturn();
 }
 window.validerLecture = validerLecture;
 function validerLectureSira() {
   if (!state['sira']) { state['sira'] = true; saveState(); updateGlobalProgress(); }
   var ov = document.getElementById('sira-overlay');
   if (ov) ov.remove();
-  _restoreScroll();
-  a11yOnOverlayClose();
   if (typeof renderLevel === 'function') renderLevel(currentLevel);
+  _knowledgeReturn();
 }
 window.validerLectureSira = validerLectureSira;
 
@@ -15389,16 +15397,17 @@ function openVueAuFilDuJour() {
     var _knowledgeIds = ['savais_tu','fiqh_jour','hadith1','duaa_jour','vie_compagnons','vie_prophetes','quran_read','sira','podcast','recits_coran'];
     var _isKnowledgeFil = _knowledgeIds.indexOf(it.id) !== -1;
     var _coranBtn = it.coranPicker ? '<button class="btn-audio" onclick="event.stopPropagation();openCoranPicker(event)" style="font-size:12px;padding:4px 10px;width:auto;white-space:nowrap;font-family:\'Cormorant Garamond\',serif;color:#C8A84A;border:1px solid rgba(200,168,75,0.3);border-radius:8px;background:transparent;cursor:pointer;">\u00c9couter</button>' : '';
-    var _click = it.id === 'sira' ? 'SIRA.openDetail();'
-      : it.id === 'savais_tu' ? 'openVueSavaisTu();'
-      : it.id === 'fiqh_jour' ? 'openVueFiqhJour();'
-      : it.id === 'hadith1' ? 'openVueHadithJour();'
-      : it.id === 'duaa_jour' ? 'openVueDuaaJour();'
-      : it.id === 'vie_compagnons' ? 'openVueCompagnon();'
-      : it.id === 'vie_prophetes' ? 'openVuePropheteJour();'
-      : it.id === 'quran_read' ? 'openVueVersetJour();'
-      : it.id === 'podcast' ? 'openPodcastPicker();'
-      : it.id === 'recits_coran' ? 'openVueRecitsCoran();'
+    var _filFlag = 'window._knowledgeFromFil=true;';
+    var _click = it.id === 'sira' ? _filFlag + 'SIRA.openDetail();'
+      : it.id === 'savais_tu' ? _filFlag + 'openVueSavaisTu();'
+      : it.id === 'fiqh_jour' ? _filFlag + 'openVueFiqhJour();'
+      : it.id === 'hadith1' ? _filFlag + 'openVueHadithJour();'
+      : it.id === 'duaa_jour' ? _filFlag + 'openVueDuaaJour();'
+      : it.id === 'vie_compagnons' ? _filFlag + 'openVueCompagnon();'
+      : it.id === 'vie_prophetes' ? _filFlag + 'openVuePropheteJour();'
+      : it.id === 'quran_read' ? _filFlag + 'openVueVersetJour();'
+      : it.id === 'podcast' ? _filFlag + 'openPodcastPicker();'
+      : it.id === 'recits_coran' ? _filFlag + 'openVueRecitsCoran();'
       : it.coranPicker ? 'openCoranPicker(event);'
       : 'toggleItem(\'' + it.id + '\',event); openVueAuFilDuJour();';
     var _readBtn = _isKnowledgeFil ? '<button style="background:none;border:none;cursor:pointer;flex-shrink:0;align-self:center;padding:8px 4px;margin:0;position:relative;z-index:10;isolation:isolate;" onclick="event.stopPropagation();' + _click + '"><svg width="14" height="22" viewBox="0 0 14 22" style="pointer-events:none;" aria-hidden="true"><path d="M3 4 L10 11 L3 18" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>' : '';
@@ -15503,7 +15512,7 @@ function openVueSavaisTu() {
   });
   var _vBtn = v.querySelector('.savais-valider');
   if (!_vBtn) { _vBtn = document.createElement('button'); _vBtn.className = 'savais-bouton savais-valider'; _vBtn.style.cssText = 'background:#C8A84A;color:#2C2E32;font-weight:700;margin-top:8px;'; _vBtn.textContent = 'J\u2019ai termin\u00e9 ma lecture'; v.appendChild(_vBtn); }
-  _vBtn.onclick = function() { validerLecture('savais_tu'); v.classList.add('hidden'); };
+  _vBtn.onclick = function() { v.classList.add('hidden'); validerLecture('savais_tu'); };
 }
 window.openVueSavaisTu = openVueSavaisTu;
 
