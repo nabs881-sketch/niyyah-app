@@ -7380,9 +7380,9 @@ function _openRecitDetail(num) {
   var progress = _getRecitsProgress();
   var total = _recitsCoranData.length;
   var html = '<div style="padding:calc(var(--safe-top,0px) + 16px) 20px 12px;text-align:center;">';
-  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:4px;">R\u00e9cit ' + recit.num + ' / ' + total + '</div>';
   html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:24px;font-style:italic;color:#E5E0DC;margin-bottom:4px;">' + T(recit.titre) + '</div>';
-  html += '<div style="font-size:12px;color:#B5A685;">' + (recit.theme || '') + '</div>';
+  html += '<div style="font-size:12px;color:#B5A685;margin-bottom:8px;">' + (recit.theme || '') + '</div>';
+  html += '<div onclick="_recitsShowArchive();" style="display:inline-block;cursor:pointer;font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.6);border-bottom:1px solid rgba(200,168,75,0.25);padding-bottom:2px;">R\u00e9cit ' + recit.num + ' sur ' + total + ' \u2014 voir les pr\u00e9c\u00e9dents</div>';
   html += '</div>';
   html += '<div style="flex:1;overflow-y:auto;padding:0 24px calc(20px + var(--safe-bot,0px));-webkit-overflow-scrolling:touch;">';
   if (recit.paragraphes) {
@@ -7410,7 +7410,6 @@ function _openRecitDetail(num) {
   }
   html += '<button onclick="validerLectureRecit(' + num + ');" style="display:block;width:calc(100% - 48px);max-width:320px;margin:24px auto 32px;padding:16px;border:none;border-radius:12px;background:#C8A84A;color:#2C2E32;font-family:\'Cormorant Garamond\',serif;font-size:16px;font-weight:600;cursor:pointer;">J\u2019ai termin\u00e9 ma lecture</button>';
   html += '</div>';
-  html += '<button onclick="_recitsShowArchive();" style="position:absolute;top:calc(var(--safe-top,0px) + 12px);left:16px;background:none;border:none;color:#C8A84A;font-size:22px;cursor:pointer;z-index:1;">\u2039</button>';
   html += '<button onclick="document.getElementById(\'recits-coran-overlay\').remove();" style="position:absolute;top:calc(var(--safe-top,0px) + 12px);right:16px;background:none;border:none;color:#B5A685;font-size:24px;cursor:pointer;z-index:1;">\u2715</button>';
   ov.innerHTML = html;
   document.body.appendChild(ov);
@@ -15643,10 +15642,10 @@ function _compagnonsRenderDetail(c, jour) {
   ov.style.cssText = 'position:fixed;inset:0;z-index:9500;background:#0a0a0a;display:flex;flex-direction:column;overflow:hidden;';
   var _epLabel = (c.episode_num && c.episode_total) ? '\u00c9pisode ' + c.episode_num + '/' + c.episode_total : '';
   var html = '<div style="padding:calc(var(--safe-top,0px) + 16px) 20px 12px;text-align:center;">';
-  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:4px;">Jour ' + (c.jour || jour) + ' / ' + COMPAGNONS.length + '</div>';
   html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-weight:700;color:#E5E0DC;margin-bottom:4px;">' + (c.compagnon || '') + '</div>';
   html += (c.compagnon_ar ? '<div style="font-family:\'Amiri\',serif;font-size:18px;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:4px;">' + c.compagnon_ar + '</div>' : '');
-  html += (_epLabel ? '<div style="font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:1px;">' + _epLabel + '</div>' : '');
+  html += (_epLabel ? '<div style="font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:1px;margin-bottom:4px;">' + _epLabel + '</div>' : '');
+  html += '<div onclick="_compagnonsShowArchive();" style="display:inline-block;cursor:pointer;font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.6);border-bottom:1px solid rgba(200,168,75,0.25);padding-bottom:2px;">\u00c9pisode ' + (c.jour || jour) + ' sur ' + COMPAGNONS.length + ' \u2014 voir les pr\u00e9c\u00e9dents</div>';
   html += '</div>';
   html += '<div style="flex:1;overflow-y:auto;padding:0 24px calc(20px + var(--safe-bot,0px));-webkit-overflow-scrolling:touch;">';
   html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;line-height:1.8;color:rgba(240,234,214,0.9);margin-bottom:20px;">' + (c.recit || '').replace(/\n/g, '<br>') + '</div>';
@@ -15655,7 +15654,6 @@ function _compagnonsRenderDetail(c, jour) {
   if (c.source) html += '<div style="text-align:center;font-size:11px;color:rgba(255,255,255,0.35);letter-spacing:0.1em;margin-bottom:16px;">\u2014 ' + c.source + ' \u2014</div>';
   html += '<button onclick="validerLecture(\'vie_compagnons\');document.getElementById(\'compagnons-overlay\').remove();" style="display:block;width:calc(100% - 48px);max-width:320px;margin:24px auto 32px;padding:16px;border:none;border-radius:12px;background:#C8A84A;color:#2C2E32;font-family:\'Cormorant Garamond\',serif;font-size:16px;font-weight:600;cursor:pointer;">J\u2019ai termin\u00e9 ma lecture</button>';
   html += '</div>';
-  html += '<button onclick="_compagnonsShowArchive();" style="position:absolute;top:calc(var(--safe-top,0px) + 12px);left:16px;background:none;border:none;color:#C8A84A;font-size:22px;cursor:pointer;z-index:1;">\u2039</button>';
   html += '<button onclick="document.getElementById(\'compagnons-overlay\').remove();" style="position:absolute;top:calc(var(--safe-top,0px) + 12px);right:16px;background:none;border:none;color:#B5A685;font-size:24px;cursor:pointer;z-index:1;">\u2715</button>';
   ov.innerHTML = html;
   document.body.appendChild(ov);
@@ -15718,9 +15716,9 @@ function _prophetesRenderDetail(p, jour) {
   ov.style.cssText = 'position:fixed;inset:0;z-index:9500;background:#0a0a0a;display:flex;flex-direction:column;overflow:hidden;';
   var _epLabel = (p.episode_num && p.episode_total) ? ' \u2014 ' + p.episode_num + '/' + p.episode_total : '';
   var html = '<div style="padding:calc(var(--safe-top,0px) + 16px) 20px 12px;text-align:center;">';
-  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:4px;">Jour ' + (p.jour || jour) + ' / 77</div>';
   html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-weight:700;color:#E5E0DC;margin-bottom:4px;">' + (p.prophete || '') + _epLabel + '</div>';
-  html += (p.prophete_ar ? '<div style="font-family:\'Amiri\',serif;font-size:18px;color:rgba(200,168,74,0.85);direction:rtl;">' + p.prophete_ar + '</div>' : '');
+  html += (p.prophete_ar ? '<div style="font-family:\'Amiri\',serif;font-size:18px;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:4px;">' + p.prophete_ar + '</div>' : '');
+  html += '<div onclick="_prophetesShowArchive();" style="display:inline-block;cursor:pointer;font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.6);border-bottom:1px solid rgba(200,168,75,0.25);padding-bottom:2px;">\u00c9pisode ' + (p.jour || jour) + ' sur 77 \u2014 voir les pr\u00e9c\u00e9dents</div>';
   html += '</div>';
   html += '<div style="flex:1;overflow-y:auto;padding:0 24px calc(20px + var(--safe-bot,0px));-webkit-overflow-scrolling:touch;">';
   html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;line-height:1.8;color:rgba(240,234,214,0.9);margin-bottom:20px;">' + (p.recit || '').replace(/\n/g, '<br>') + '</div>';
@@ -15730,7 +15728,6 @@ function _prophetesRenderDetail(p, jour) {
   if (p.renvoi_module === 'sira') html += '<div style="text-align:center;margin-bottom:16px;"><button onclick="document.getElementById(\'prophetes-overlay\').remove();if(typeof SIRA!==\'undefined\')SIRA.openDetail();" style="padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,74,0.4);background:transparent;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:600;cursor:pointer;">Ouvrir la S\u00eera</button></div>';
   html += '<button onclick="validerLecture(\'vie_prophetes\');document.getElementById(\'prophetes-overlay\').remove();" style="display:block;width:calc(100% - 48px);max-width:320px;margin:24px auto 32px;padding:16px;border:none;border-radius:12px;background:#C8A84A;color:#2C2E32;font-family:\'Cormorant Garamond\',serif;font-size:16px;font-weight:600;cursor:pointer;">J\u2019ai termin\u00e9 ma lecture</button>';
   html += '</div>';
-  html += '<button onclick="_prophetesShowArchive();" style="position:absolute;top:calc(var(--safe-top,0px) + 12px);left:16px;background:none;border:none;color:#C8A84A;font-size:22px;cursor:pointer;z-index:1;">\u2039</button>';
   html += '<button onclick="document.getElementById(\'prophetes-overlay\').remove();" style="position:absolute;top:calc(var(--safe-top,0px) + 12px);right:16px;background:none;border:none;color:#B5A685;font-size:24px;cursor:pointer;z-index:1;">\u2715</button>';
   ov.innerHTML = html;
   document.body.appendChild(ov);
@@ -16023,13 +16020,13 @@ const SIRA = {
     function T(field) { return (field && field.fr) ? field.fr : ''; }
     function escape(s) { return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
     var h = '';
-    h += '<div onclick="SIRA.openDetail()" style="position:absolute;top:16px;left:16px;font-size:28px;font-weight:300;color:#C8A84A;cursor:pointer;">\u2039</div>';
+    var _siraMax = (this.data && this.data.rdv) ? this.data.rdv.length : 365;
     h += '<div id="sira-salawat-open" style="text-align:center;font-size:64px;color:#C8A84A;margin-bottom:12px;opacity:0;transform:translateY(20px);transition:opacity 800ms ease-out,transform 800ms ease-out;">\uFDFA</div>';
-    h += '<div style="text-align:center;font-size:12px;letter-spacing:4px;font-weight:700;text-transform:uppercase;color:#C8A84A;margin:16px 0 4px;">RENDEZ-VOUS ' + num + '</div>';
+    h += '<div style="text-align:center;font-family:Cormorant Garamond,serif;font-size:28px;font-style:italic;font-weight:400;color:#FAF7EE;margin:16px 0 8px;">' + escape(T(rdv.titre)) + '</div>';
     var _rp = (rdv.partie && this.data && this.data.meta && this.data.meta.parties && this.data.meta.parties[rdv.partie]) ? this.data.meta.parties[rdv.partie] : null;
     var _rpt = (_rp && _rp.titre && _rp.titre.fr) ? _rp.titre.fr : '';
-    if (rdv.partie && _rpt) h += '<div style="text-align:center;font-style:italic;color:#999;font-size:12px;letter-spacing:1px;margin:4px 0 24px;">Partie ' + rdv.partie + ' \u00b7 ' + _rpt + '</div>';
-    h += '<div style="text-align:center;font-family:Cormorant Garamond,serif;font-size:28px;font-style:italic;font-weight:400;color:#FAF7EE;margin:0 0 32px;">' + escape(T(rdv.titre)) + '</div>';
+    if (rdv.partie && _rpt) h += '<div style="text-align:center;font-style:italic;color:#999;font-size:12px;letter-spacing:1px;margin-bottom:8px;">Partie ' + rdv.partie + ' \u00b7 ' + _rpt + '</div>';
+    h += '<div style="text-align:center;margin-bottom:32px;"><span onclick="SIRA.openList()" style="display:inline-block;cursor:pointer;font-family:Cormorant Garamond,serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.6);border-bottom:1px solid rgba(200,168,75,0.25);padding-bottom:2px;">Jour ' + num + ' sur ' + _siraMax + ' \u2014 voir les pr\u00e9c\u00e9dents</span></div>';
     if (rdv.quiz_type) {
       // Quiz mode
       h += '<div style="font-family:Cormorant Garamond,serif;font-size:22px;font-style:italic;color:#FAF7EE;line-height:1.7;text-align:center;margin:24px 0 32px;">' + escape(rdv.quiz_question || '') + '</div>';
