@@ -15950,21 +15950,41 @@ const SIRA = {
     var _rpt = (_rp && _rp.titre && _rp.titre.fr) ? _rp.titre.fr : '';
     if (rdv.partie && _rpt) h += '<div style="text-align:center;font-style:italic;color:#999;font-size:12px;letter-spacing:1px;margin:4px 0 24px;">Partie ' + rdv.partie + ' \u00b7 ' + _rpt + '</div>';
     h += '<div style="text-align:center;font-family:Cormorant Garamond,serif;font-size:28px;font-style:italic;font-weight:400;color:#FAF7EE;margin:0 0 32px;">' + escape(T(rdv.titre)) + '</div>';
-    if (rdv.paragraphes && Array.isArray(rdv.paragraphes)) {
-      rdv.paragraphes.forEach(function(para) {
-        var txt = escape(T(para.content));
-        if (para.type === 'verset') {
-          h += '<blockquote style="background:rgba(250,247,238,0.05);border-left:2px solid #C8A84A;padding:16px 20px;margin:24px 0;font-style:italic;color:#D4C9A0;font-size:17px;text-align:left;"><span style="color:#C8A84A;">\u2726\u00a0\u00a0</span>' + txt + '</blockquote>';
-        } else if (para.type === 'italic') {
-          h += '<p style="font-family:Georgia,serif;font-size:17px;line-height:1.75;margin-bottom:18px;color:#C8A84A;font-style:italic;text-align:center;margin:24px 16px;">' + txt + '</p>';
-        } else {
-          h += '<p style="font-family:Georgia,serif;font-size:17px;line-height:1.75;margin-bottom:18px;color:#E8E6DD;">' + txt + '</p>';
-        }
-      });
+    if (rdv.quiz_type) {
+      // Quiz mode
+      h += '<div style="font-family:Cormorant Garamond,serif;font-size:22px;font-style:italic;color:#FAF7EE;line-height:1.7;text-align:center;margin:24px 0 32px;">' + escape(rdv.quiz_question || '') + '</div>';
+      if (rdv.quiz_type === 'qcm' && rdv.quiz_options) {
+        rdv.quiz_options.forEach(function(opt, i) {
+          h += '<button onclick="_siraQuizReveal(this)" style="display:block;width:100%;padding:14px 20px;margin-bottom:10px;border:1px solid rgba(200,168,75,0.3);border-radius:12px;background:rgba(200,168,75,0.05);color:#E8E6DD;font-family:Cormorant Garamond,serif;font-size:16px;text-align:left;cursor:pointer;transition:border-color 0.2s;">' + escape(opt) + '</button>';
+        });
+      } else {
+        h += '<div style="text-align:center;margin:16px 0;"><button onclick="_siraQuizReveal(this)" style="padding:14px 28px;border:1px solid rgba(200,168,75,0.4);border-radius:24px;background:rgba(200,168,75,0.05);color:#C8A84A;font-family:Cormorant Garamond,serif;font-style:italic;font-size:16px;cursor:pointer;">Voir la r\u00e9ponse</button></div>';
+      }
+      h += '<div id="sira-quiz-reveal" style="opacity:0;max-height:0;overflow:hidden;transition:opacity 300ms ease,max-height 300ms ease;">';
+      h += '<div class="sira-ornament"></div>';
+      h += '<div style="font-family:Cormorant Garamond,serif;font-size:20px;font-weight:600;color:#C8A84A;text-align:center;margin:24px 0 12px;">' + escape(rdv.quiz_reponse_courte || '') + '</div>';
+      h += '<div style="font-family:Georgia,serif;font-size:17px;line-height:1.75;color:#E8E6DD;margin-bottom:24px;">' + escape(rdv.quiz_reponse_developpee || '').replace(/\n/g, '<br>') + '</div>';
+      if (rdv.meditation) h += '<div style="background:rgba(250,247,238,0.04);border-radius:12px;padding:20px 24px;margin:32px 8px;font-style:italic;text-align:center;color:#D4C9A0;font-size:17px;line-height:1.6;">' + escape(T(rdv.meditation)) + '</div>';
+      if (rdv.source) h += '<div style="text-align:center;font-style:italic;color:#888;font-size:13px;margin:16px 0 32px;">\u2014 ' + escape(T(rdv.source)) + '</div>';
+      h += '</div>';
+    } else {
+      // Classic mode
+      if (rdv.paragraphes && Array.isArray(rdv.paragraphes)) {
+        rdv.paragraphes.forEach(function(para) {
+          var txt = escape(T(para.content));
+          if (para.type === 'verset') {
+            h += '<blockquote style="background:rgba(250,247,238,0.05);border-left:2px solid #C8A84A;padding:16px 20px;margin:24px 0;font-style:italic;color:#D4C9A0;font-size:17px;text-align:left;"><span style="color:#C8A84A;">\u2726\u00a0\u00a0</span>' + txt + '</blockquote>';
+          } else if (para.type === 'italic') {
+            h += '<p style="font-family:Georgia,serif;font-size:17px;line-height:1.75;margin-bottom:18px;color:#C8A84A;font-style:italic;text-align:center;margin:24px 16px;">' + txt + '</p>';
+          } else {
+            h += '<p style="font-family:Georgia,serif;font-size:17px;line-height:1.75;margin-bottom:18px;color:#E8E6DD;">' + txt + '</p>';
+          }
+        });
+      }
+      h += '<div class="sira-ornament"></div>';
+      if (rdv.meditation) h += '<div style="background:rgba(250,247,238,0.04);border-radius:12px;padding:20px 24px;margin:32px 8px;font-style:italic;text-align:center;color:#D4C9A0;font-size:17px;line-height:1.6;">' + escape(T(rdv.meditation)) + '</div>';
+      if (rdv.source) h += '<div style="text-align:center;font-style:italic;color:#888;font-size:13px;margin:16px 0 32px;">\u2014 ' + escape(T(rdv.source)) + '</div>';
     }
-    h += '<div class="sira-ornament"></div>';
-    if (rdv.meditation) h += '<div style="background:rgba(250,247,238,0.04);border-radius:12px;padding:20px 24px;margin:32px 8px;font-style:italic;text-align:center;color:#D4C9A0;font-size:17px;line-height:1.6;">' + escape(T(rdv.meditation)) + '</div>';
-    if (rdv.source) h += '<div style="text-align:center;font-style:italic;color:#888;font-size:13px;margin:16px 0 32px;">\u2014 ' + escape(T(rdv.source)) + '</div>';
     var maxNum = this.getCurrentRdvNum();
     var _bs = 'padding:10px 22px;border:1px solid rgba(200,168,74,0.4);border-radius:24px;background:rgba(200,168,74,0.05);color:#C8A84A;font-family:Cormorant Garamond,serif;font-style:italic;font-size:15px;cursor:pointer;transition:all 300ms ease;';
     h += '<div style="display:flex;justify-content:space-between;align-items:center;padding-top:32px;">';
@@ -15981,6 +16001,15 @@ const SIRA = {
   }
 };
 window.SIRA = SIRA;
+function _siraQuizReveal(btn) {
+  var el = document.getElementById('sira-quiz-reveal');
+  if (!el || el.style.opacity === '1') return;
+  el.style.maxHeight = '2000px';
+  el.style.opacity = '1';
+  btn.style.borderColor = '#C8A84A';
+  btn.style.background = 'rgba(200,168,75,0.15)';
+}
+window._siraQuizReveal = _siraQuizReveal;
 
 /* ── DHIKR COUNTER ── */
 var _dhikrState = { count: 0, config: null, touchStartY: 0, prayer: null };
