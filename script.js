@@ -7373,7 +7373,7 @@ function _renderRecitsCoran(data) {
   }
   var ov = document.createElement('div');
   ov.id = 'recits-coran-overlay';
-  ov.style.cssText = 'position:fixed;inset:0;z-index:3000;background:#0a0a0a;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;';
+  ov.style.cssText = 'position:fixed;inset:0;z-index:9500;background:#0a0a0a;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;';
   if (!nextToRead) {
     var html = '<div style="text-align:center;padding:40px 24px;max-width:340px;">';
     html += '<div style="font-family:Amiri,serif;font-size:28px;color:#C8A84A;direction:rtl;margin-bottom:16px;">\u0642\u064E\u0635\u064E\u0635\u064F \u0627\u0644\u0642\u064F\u0631\u0622\u0646</div>';
@@ -7405,7 +7405,7 @@ function _openRecitDetail(num) {
   if (existing) existing.remove();
   var ov = document.createElement('div');
   ov.id = 'recits-coran-overlay';
-  ov.style.cssText = 'position:fixed;inset:0;z-index:3000;background:#0a0a0a;display:flex;flex-direction:column;overflow:hidden;';
+  ov.style.cssText = 'position:fixed;inset:0;z-index:9500;background:#0a0a0a;display:flex;flex-direction:column;overflow:hidden;';
   var progress = _getRecitsProgress();
   var total = _recitsCoranData.length;
   var html = '<div style="padding:calc(var(--safe-top,0px) + 16px) 20px 12px;text-align:center;">';
@@ -7470,7 +7470,7 @@ function _recitsShowArchive() {
   var T = function(f) { return (f && f.fr) ? f.fr : ''; };
   var ov = document.createElement('div');
   ov.id = 'recits-coran-overlay';
-  ov.style.cssText = 'position:fixed;inset:0;z-index:3000;background:#0a0a0a;display:flex;flex-direction:column;overflow:hidden;';
+  ov.style.cssText = 'position:fixed;inset:0;z-index:9500;background:#0a0a0a;display:flex;flex-direction:column;overflow:hidden;';
   var html = '<div style="padding:calc(var(--safe-top,0px) + 16px) 20px 12px;text-align:center;">';
   html += '<div style="font-family:Amiri,serif;font-size:24px;color:#C8A84A;direction:rtl;margin-bottom:4px;">\u0642\u064E\u0635\u064E\u0635\u064F \u0627\u0644\u0642\u064F\u0631\u0622\u0646</div>';
   html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.6);">Tous les r\u00e9cits</div>';
@@ -7499,7 +7499,7 @@ function _openRecitReadOnly(num) {
   if (existing) existing.remove();
   var ov = document.createElement('div');
   ov.id = 'recits-coran-overlay';
-  ov.style.cssText = 'position:fixed;inset:0;z-index:3000;background:#0a0a0a;display:flex;flex-direction:column;overflow:hidden;';
+  ov.style.cssText = 'position:fixed;inset:0;z-index:9500;background:#0a0a0a;display:flex;flex-direction:column;overflow:hidden;';
   var html = '<div style="padding:calc(var(--safe-top,0px) + 16px) 20px 12px;text-align:center;">';
   html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:4px;">R\u00e9cit ' + recit.num + '</div>';
   html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:24px;font-style:italic;color:#E5E0DC;margin-bottom:4px;">' + T(recit.titre) + '</div>';
