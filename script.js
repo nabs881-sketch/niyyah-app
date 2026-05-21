@@ -14074,7 +14074,31 @@ function _regardeShowQuestion(content, question) {
   content.style.opacity = '1';
 }
 
+function _updateRegardStreak() {
+  var raw = {};
+  try { raw = JSON.parse(localStorage.getItem('niyyah_regards_streak') || '{}'); } catch(e) {}
+  var today = todayKey();
+  if (raw.lastDate === today) return;
+  var yesterday = getDateMinus(today, 1);
+  if (raw.lastDate === yesterday) {
+    raw.count = (raw.count || 0) + 1;
+  } else {
+    raw.count = 1;
+  }
+  raw.lastDate = today;
+  safeSetItem('niyyah_regards_streak', JSON.stringify(raw));
+}
+function getRegardStreak() {
+  try {
+    var raw = JSON.parse(localStorage.getItem('niyyah_regards_streak') || '{}');
+    if (raw.lastDate === todayKey() || raw.lastDate === getDateMinus(todayKey(), 1)) return raw.count || 0;
+    return 0;
+  } catch(e) { return 0; }
+}
+window._updateRegardStreak = _updateRegardStreak;
+window.getRegardStreak = getRegardStreak;
 function _renderRegardePremium(content, data, dataUrl) {
+  _updateRegardStreak();
   content.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;"><div style="width:24px;height:24px;border-radius:50%;background:#D4AF37;animation:regardePulse 1.2s ease-in-out infinite;"></div></div>';
   content.style.opacity = '1';
   var ref = (data.reference || '').replace(/\s/g, '');
@@ -14099,7 +14123,8 @@ function _renderRegardePremium(content, data, dataUrl) {
         + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:rgba(229,224,220,0.85);line-height:1.8;max-width:340px;">' + (fr.text || '') + '</div>'
         + _sep
         + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#C8A84A;line-height:1.6;max-width:320px;">' + (data.meditation || '') + '</div>'
-        + '<div style="display:flex;gap:20px;margin-top:28px;">'
+        + (getRegardStreak() > 0 ? '<div style="font-size:11px;color:rgba(200,168,75,0.4);margin-top:16px;">' + getRegardStreak() + ' jour' + (getRegardStreak() > 1 ? 's' : '') + ' de Regards</div>' : '')
+        + '<div style="display:flex;gap:20px;margin-top:' + (getRegardStreak() > 0 ? '12' : '28') + 'px;">'
         + _audioBtn
         + '<button id="regarde-btn-memo" onclick="_regardeMemorise(this)" data-ref="' + ref + '" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;color:#D4AF37;">\uD83D\uDD16</button>'
         + '<button id="regarde-btn-duaa" onclick="_regardeDuaa(\'' + ref + '\')" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;color:#D4AF37;">\uD83E\uDD32</button>'
