@@ -14129,8 +14129,6 @@ function _renderRegardePremium(content, data, dataUrl) {
         + '<button class="btn-regard-premium" id="regarde-btn-memo" onclick="_regardeMemorise(this)" data-ref="' + ref + '" aria-label="M\u00e9moriser">' + _svgMemoIcon + '</button>'
         + '<button class="btn-regard-premium" id="regarde-btn-duaa" onclick="_regardeDuaa(\'' + ref + '\')" aria-label="Du\u02BFa\u02BE li\u00e9e">' + _svgDuaaIcon + '</button>'
         + '<button class="btn-regard-premium" id="regarde-btn-share" onclick="_regardePremiumShare()" aria-label="Partager">' + _svgShareIcon + '</button>'
-        + '<button class="btn-regard-premium" id="regarde-btn-star" onclick="regardeToggleStar()" aria-label="Favori">\u2606</button>'
-        + '<button class="btn-regard-premium" onclick="regardeRefresh()" aria-label="Recharger">\u21BB</button>'
         + '</div>'
         + '</div>';
       window._regardePremiumData = { arText: ar.text || '', frText: fr.text || '', ref: ref, refLabel: refLabel, meditation: data.meditation || '', photo: dataUrl };
