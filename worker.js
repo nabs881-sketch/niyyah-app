@@ -531,6 +531,26 @@ async function handleRegarde(request, env) {
   try {
     const body = await request.json();
     const { image, seen_versets } = body;
+
+    // ── Flow Duʿāʾ ──
+    if (body.request === 'duaa' && body.reference) {
+      try {
+        const duaaResp = await callAnthropic(env, {
+          model: 'claude-sonnet-4-20250514', max_tokens: 200, temperature: 0.7,
+          system: `Tu es un compagnon spirituel. Génère UNE duʿāʾ courte (3-4 lignes max) liée au verset ${body.reference}. Sans tafsir, sans hadith, sans citer de savant. Ton humble et contemplatif. Format : JSON {"duaa": "texte"}`,
+          messages: [{ role: 'user', content: `Génère une duʿāʾ liée au verset ${body.reference}.` }]
+        });
+        const duaaText = duaaResp.content?.[0]?.text || '';
+        const duaaJson = extractJSON(duaaText);
+        if (duaaJson && duaaJson.duaa) {
+          return jsonResponseV2({ mode: 'duaa', duaa: duaaJson.duaa });
+        }
+        return jsonResponseV2({ mode: 'duaa', duaa: duaaText.substring(0, 300) });
+      } catch (e) {
+        return jsonResponseV2({ error: 'Duaa indisponible' }, 502);
+      }
+    }
+
     if (!image) return jsonResponseV2({ error: 'image manquante' }, 400);
     if (image.length > 2_000_000) return jsonResponseV2({ error: 'Image too large' }, 413);
 
