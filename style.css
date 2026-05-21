@@ -8849,3 +8849,66 @@ body.onboarding-active #nav-bar-v2 {
   box-shadow: 0 0 12px rgba(200,168,74,0.7);
   flex-shrink: 0;
 }
+
+/* ══ REGARD PREMIUM BUTTONS ══ */
+.btn-regard-premium {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(200,168,75,0.3);
+  background: transparent;
+  color: rgba(200,168,75,0.85);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn-regard-premium:hover,
+.btn-regard-premium:focus-visible {
+  color: rgba(200,168,75,1);
+  border-color: rgba(200,168,75,0.6);
+  transform: scale(1.05);
+}
+.btn-regard-premium:active {
+  transform: scale(0.95);
+}
+.btn-regard-premium.is-active {
+  color: rgba(200,168,75,1);
+  border-color: rgba(200,168,75,0.8);
+  background: rgba(200,168,75,0.08);
+}
+.btn-regard-premium svg {
+  display: block;
+}
+.regard-actions-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 24px 0 16px;
+  flex-wrap: wrap;
+}
+.regard-streak {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px;
+  color: rgba(200,168,75,0.4);
+  margin-top: 12px;
+  letter-spacing: 0.05em;
+}
+.regard-streak svg {
+  opacity: 0.5;
+}
+.btn-regard-premium .compteur-7x {
+  position: absolute;
+  bottom: -18px;
+  font-size: 10px;
+  color: rgba(200,168,75,0.7);
+  font-family: 'Cormorant Garamond', serif;
+}
