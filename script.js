@@ -14102,6 +14102,7 @@ function _renderRegardePremium(content, data, dataUrl) {
         + '<div style="display:flex;gap:20px;margin-top:28px;">'
         + _audioBtn
         + '<button id="regarde-btn-memo" onclick="_regardeMemorise(this)" data-ref="' + ref + '" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;color:#D4AF37;">\uD83D\uDD16</button>'
+        + '<button id="regarde-btn-duaa" onclick="_regardeDuaa(\'' + ref + '\')" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;color:#D4AF37;">\uD83E\uDD32</button>'
         + '<button id="regarde-btn-star" onclick="regardeToggleStar()" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">\u2606</button>'
         + '<button onclick="regardeRefresh()" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">\u21BB</button>'
         + '</div>'
@@ -14193,6 +14194,39 @@ function _regardeMemorise(btn) {
   alert('Verset ajout\u00e9');
 }
 window._regardeMemorise = _regardeMemorise;
+function _regardeDuaa(ref) {
+  var existing = document.getElementById('regarde-duaa-modal');
+  if (existing) existing.remove();
+  var modal = document.createElement('div');
+  modal.id = 'regarde-duaa-modal';
+  modal.style.cssText = 'position:fixed;inset:0;z-index:10000;background:rgba(10,8,5,0.92);display:flex;align-items:center;justify-content:center;padding:24px;';
+  modal.innerHTML = '<div style="max-width:340px;width:100%;text-align:center;"><div style="width:24px;height:24px;border-radius:50%;background:#D4AF37;animation:regardePulse 1.2s ease-in-out infinite;margin:0 auto 16px;"></div><div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.6);">Recherche d\u2019une du\u02BFa\u02BE\u2026</div></div>';
+  document.body.appendChild(modal);
+  fetch('https://niyyah-api.nabs881.workers.dev/api/regarde', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ reference: ref, request: 'duaa', premium: true })
+  })
+  .then(function(r) { return r.json(); })
+  .then(function(data) {
+    var duaaText = data.duaa || data.meditation || '';
+    if (!duaaText) throw new Error('no duaa');
+    var inner = '<div style="max-width:340px;width:100%;text-align:center;">'
+      + '<div style="font-family:Amiri,serif;font-size:22px;color:#C8A84A;margin-bottom:16px;">\uD83E\uDD32</div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:12px;">Du\u02BFa\u02BE li\u00e9e \u00e0 ' + ref + '</div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;font-style:italic;color:#FAF7EE;line-height:1.7;">' + duaaText + '</div>'
+      + '<button onclick="document.getElementById(\'regarde-duaa-modal\').remove();" style="margin-top:24px;padding:10px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:transparent;color:#B5A685;font-family:\'Cormorant Garamond\',serif;font-size:13px;cursor:pointer;">Fermer</button>'
+      + '</div>';
+    modal.innerHTML = inner;
+  })
+  .catch(function() {
+    modal.innerHTML = '<div style="max-width:340px;width:100%;text-align:center;">'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.6);margin-bottom:16px;">Du\u02BFa\u02BE bient\u00f4t disponible.</div>'
+      + '<button onclick="document.getElementById(\'regarde-duaa-modal\').remove();" style="padding:10px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:transparent;color:#B5A685;font-family:\'Cormorant Garamond\',serif;font-size:13px;cursor:pointer;">Fermer</button>'
+      + '</div>';
+  });
+}
+window._regardeDuaa = _regardeDuaa;
 
 function _regardeShowVerset(content, v, slow, returning) {
   var _esc = function(s) { return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); };
