@@ -14103,10 +14103,12 @@ function _renderRegardePremium(content, data, dataUrl) {
         + _audioBtn
         + '<button id="regarde-btn-memo" onclick="_regardeMemorise(this)" data-ref="' + ref + '" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;color:#D4AF37;">\uD83D\uDD16</button>'
         + '<button id="regarde-btn-duaa" onclick="_regardeDuaa(\'' + ref + '\')" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;color:#D4AF37;">\uD83E\uDD32</button>'
+        + '<button id="regarde-btn-share" onclick="_regardePremiumShare()" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;color:#D4AF37;">\uD83D\uDCE4</button>'
         + '<button id="regarde-btn-star" onclick="regardeToggleStar()" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">\u2606</button>'
         + '<button onclick="regardeRefresh()" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">\u21BB</button>'
         + '</div>'
         + '</div>';
+      window._regardePremiumData = { arText: ar.text || '', frText: fr.text || '', ref: ref, refLabel: refLabel, meditation: data.meditation || '', photo: dataUrl };
       _currentRegardeCat = 'PREMIUM';
       _regardeStarred = false;
       var _jLabel = data.meditation || data.sujet || ref;
@@ -14227,6 +14229,109 @@ function _regardeDuaa(ref) {
   });
 }
 window._regardeDuaa = _regardeDuaa;
+function _regardePremiumShare() {
+  var d = window._regardePremiumData;
+  if (!d) return;
+  var c = document.createElement('canvas');
+  c.width = 1080; c.height = 1080;
+  var ctx = c.getContext('2d');
+  // Fond degrade noir → bleu nuit
+  var grad = ctx.createLinearGradient(0, 0, 0, 1080);
+  grad.addColorStop(0, '#0a0a0a');
+  grad.addColorStop(0.6, '#0a0f1a');
+  grad.addColorStop(1, '#060a12');
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, 1080, 1080);
+  // Photo floutee en arriere-plan
+  function _drawContent() {
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, 1080, 1080);
+    // Reference en haut
+    ctx.fillStyle = 'rgba(200,168,75,0.5)';
+    ctx.font = '24px "Cormorant Garamond", serif';
+    ctx.textAlign = 'center';
+    ctx.fillText(d.refLabel, 540, 80);
+    // Verset arabe
+    ctx.fillStyle = '#C8A84A';
+    ctx.font = '32px "Scheherazade New", Amiri, serif';
+    ctx.textAlign = 'center';
+    var arLines = _wrapText(ctx, d.arText, 900);
+    var arY = 200;
+    arLines.forEach(function(l) { ctx.fillText(l, 540, arY); arY += 50; });
+    // Separateur
+    ctx.fillStyle = 'rgba(200,168,75,0.3)';
+    ctx.fillRect(500, arY + 10, 80, 1);
+    // Traduction
+    ctx.fillStyle = '#FAF7EE';
+    ctx.font = 'italic 18px "Cormorant Garamond", serif';
+    var frLines = _wrapText(ctx, d.frText, 860);
+    var frY = arY + 50;
+    frLines.forEach(function(l) { ctx.fillText(l, 540, frY); frY += 30; });
+    // Separateur
+    ctx.fillStyle = 'rgba(200,168,75,0.3)';
+    ctx.fillRect(500, frY + 10, 80, 1);
+    // Meditation
+    ctx.fillStyle = '#C8A84A';
+    ctx.font = 'italic 14px "Cormorant Garamond", serif';
+    var medLines = _wrapText(ctx, d.meditation, 800);
+    var medY = frY + 50;
+    medLines.forEach(function(l) { ctx.fillText(l, 540, medY); medY += 24; });
+    // Signature
+    ctx.fillStyle = 'rgba(200,168,75,0.35)';
+    ctx.font = '16px "Cormorant Garamond", serif';
+    ctx.fillText('\u2726 Niyyah', 540, 1040);
+    // Afficher
+    _showShareModal(c);
+  }
+  function _wrapText(ctx, text, maxW) {
+    var words = text.split(' '), lines = [], ln = '';
+    words.forEach(function(w) {
+      var test = ln ? ln + ' ' + w : w;
+      if (ctx.measureText(test).width > maxW) { lines.push(ln); ln = w; } else { ln = test; }
+    });
+    if (ln) lines.push(ln);
+    return lines;
+  }
+  if (d.photo) {
+    var img = new Image();
+    img.onload = function() {
+      ctx.globalAlpha = 0.15;
+      ctx.filter = 'blur(20px)';
+      ctx.drawImage(img, -40, -40, 1160, 1160);
+      ctx.filter = 'none';
+      ctx.globalAlpha = 1;
+      // Re-appliquer le degrade par dessus
+      ctx.fillStyle = grad;
+      ctx.globalAlpha = 0.6;
+      ctx.fillRect(0, 0, 1080, 1080);
+      ctx.globalAlpha = 1;
+      _drawContent();
+    };
+    img.onerror = _drawContent;
+    img.src = d.photo;
+  } else {
+    _drawContent();
+  }
+}
+function _showShareModal(canvas) {
+  var existing = document.getElementById('regarde-share-modal');
+  if (existing) existing.remove();
+  canvas.toBlob(function(blob) {
+    if (!blob) return;
+    var url = URL.createObjectURL(blob);
+    var modal = document.createElement('div');
+    modal.id = 'regarde-share-modal';
+    modal.style.cssText = 'position:fixed;inset:0;z-index:10000;background:rgba(10,8,5,0.92);display:flex;align-items:center;justify-content:center;padding:24px;';
+    modal.innerHTML = '<div style="max-width:360px;width:100%;text-align:center;">'
+      + '<img src="' + url + '" style="width:100%;border-radius:12px;margin-bottom:16px;">'
+      + '<div style="display:flex;gap:10px;justify-content:center;">'
+      + '<button onclick="var a=document.createElement(\'a\');a.href=\'' + url + '\';a.download=\'regard-niyyah.png\';a.click();" style="flex:1;padding:12px;border-radius:12px;border:none;background:#C8A84A;color:#2C2E32;font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:600;cursor:pointer;">T\u00e9l\u00e9charger</button>'
+      + '<button onclick="document.getElementById(\'regarde-share-modal\').remove();" style="flex:1;padding:12px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:transparent;color:#B5A685;font-family:\'Cormorant Garamond\',serif;font-size:14px;cursor:pointer;">Fermer</button>'
+      + '</div></div>';
+    document.body.appendChild(modal);
+  }, 'image/png');
+}
+window._regardePremiumShare = _regardePremiumShare;
 
 function _regardeShowVerset(content, v, slow, returning) {
   var _esc = function(s) { return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); };
