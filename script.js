@@ -14125,8 +14125,8 @@ function _renderRegardePremium(content, data, dataUrl) {
         + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#C8A84A;line-height:1.6;max-width:320px;">' + (data.meditation || '') + '</div>'
         + (getRegardStreak() > 0 ? '<div class="regard-streak">' + _svgStreakIcon + '<span>' + getRegardStreak() + ' jour' + (getRegardStreak() > 1 ? 's' : '') + ' de Regards</span></div>' : '')
         + '<div class="regard-actions-row">'
-        + '<button class="btn-regard-premium' + (_hasAudio ? '' : ' is-disabled') + '" id="regarde-premium-audio" onclick="_regardePremiumPlayAudio(this)" data-src="' + (audioUrl || '') + '" aria-label="\u00c9couter"' + (_hasAudio ? '' : ' disabled') + '>' + _svgPlayIcon + '</button>'
-        + '<button class="btn-regard-premium' + (_hasAudio ? '' : ' is-disabled') + '" id="regarde-premium-loop" onclick="_regardePremiumLoop(this)" data-src="' + (audioUrl || '') + '" aria-label="R\u00e9citer 7 fois"' + (_hasAudio ? '' : ' disabled') + '>' + _svg7xIcon + '</button>'
+        + '<button class="btn-regard-premium" id="regarde-premium-audio" onclick="_regardePremiumPlayAudio(this)" data-src="' + (audioUrl || '') + '" aria-label="\u00c9couter">' + _svgPlayIcon + '</button>'
+        + '<button class="btn-regard-premium" id="regarde-premium-loop" onclick="_regardePremiumLoop(this)" data-src="' + (audioUrl || '') + '" aria-label="R\u00e9citer 7 fois">' + _svg7xIcon + '</button>'
         + '<button class="btn-regard-premium" id="regarde-btn-memo" onclick="_regardeMemorise(this)" data-ref="' + ref + '" aria-label="M\u00e9moriser">' + _svgMemoIcon + '</button>'
         + '<button class="btn-regard-premium" id="regarde-btn-duaa" onclick="_regardeDuaa(\'' + ref + '\')" aria-label="Du\u02BFa\u02BE li\u00e9e">' + _svgDuaaIcon + '</button>'
         + '<button class="btn-regard-premium" id="regarde-btn-share" onclick="_regardePremiumShare()" aria-label="Partager">' + _svgShareIcon + '</button>'
@@ -14167,7 +14167,7 @@ function _regardePremiumPlayAudio(btn) {
     return;
   }
   var src = btn.getAttribute('data-src');
-  if (!src) return;
+  if (!src) { showToast('Audio non disponible'); return; }
   if (!_regardePremiumAudio || _regardePremiumAudio.src !== src) {
     if (_regardePremiumAudio) { _regardePremiumAudio.pause(); _regardePremiumAudio = null; }
     _regardePremiumAudio = new Audio(src);
@@ -14190,7 +14190,7 @@ function _regardePremiumLoop(btn) {
     return;
   }
   var src = btn.getAttribute('data-src');
-  if (!src) return;
+  if (!src) { showToast('Audio non disponible'); return; }
   if (_regardePremiumAudio && !_regardePremiumAudio.paused) { _regardePremiumAudio.pause(); var pb = document.getElementById('regarde-premium-audio'); if (pb) pb.innerHTML = _svgPlayIcon; }
   _regardeLoopActive = true;
   _regardeLoopCount = 0;
