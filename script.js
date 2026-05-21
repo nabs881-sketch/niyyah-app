@@ -8594,6 +8594,14 @@ function setPremium(bool) {
 window.isPremium = isPremium;
 window.unlockPremium = unlockPremium;
 window.setPremium = setPremium;
+function isSilentMode() {
+  return localStorage.getItem('niyyah_silent_mode') === 'true';
+}
+function setSilentMode(bool) {
+  localStorage.setItem('niyyah_silent_mode', bool ? 'true' : 'false');
+}
+window.isSilentMode = isSilentMode;
+window.setSilentMode = setSilentMode;
 
 function openGumroad() {
   window.open('https://optimizerprocess.gumroad.com/l/rlivu', '_blank');
@@ -11723,6 +11731,16 @@ function v2OpenSettings() {
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round" style="vertical-align:middle;margin-right:4px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M17 8l-5-5-5 5"/><path d="M12 3v12"/></svg>${t('settings_import')}
         </button>
         <input type="file" id="niyyahImportInput" accept=".json" style="display:none" onchange="niyyahImportData(this)">
+      </div>
+
+      <div style="margin-top:14px;background:#1a1a1a;border:1px solid rgba(255,255,255,0.05);border-radius:12px;padding:14px 16px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;cursor:pointer;" onclick="setSilentMode(!isSilentMode());var d=this.querySelector('[data-sil]');if(d)d.style.background=isSilentMode()?'#C8A84A':'#444';">
+          <div>
+            <div style="font-size:14px;color:rgba(240,234,214,0.7);">Mode silencieux</div>
+            <div style="font-size:13px;color:rgba(255,255,255,0.35);margin-top:2px;">Aucune vibration, aucune notification.</div>
+          </div>
+          <div data-sil style="width:36px;height:20px;border-radius:10px;background:${isSilentMode()?'#C8A84A':'#444'};transition:background 0.2s;flex-shrink:0;"></div>
+        </div>
       </div>
 
       <div style="margin-top:14px;background:#1a1a1a;border:1px solid rgba(200,168,75,0.15);border-radius:12px;padding:16px;text-align:center;">
