@@ -13990,7 +13990,10 @@ async function regardeOpen() {
   if (!window.REGARD_VERSETS) {
     try {
       var _rlRes = await fetch('./data/regard-library.json');
-      window.REGARD_VERSETS = await _rlRes.json();
+      var _rlData = await _rlRes.json();
+      var _rlNorm = {};
+      Object.keys(_rlData).forEach(function(k) { _rlNorm[k.toUpperCase()] = _rlData[k]; });
+      window.REGARD_VERSETS = _rlNorm;
     } catch(e) {}
     window._regardLibLoading = false;
   }
@@ -14150,18 +14153,19 @@ function regardeCapture() {
         var _retryInterval = setInterval(function() {
           _retryCount++;
           if (_fallbackWithVersets()) { clearInterval(_retryInterval); return; }
-          if (_retryCount >= 10) { clearInterval(_retryInterval); content.innerHTML = '<div style="text-align:center;padding:20%;font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.6);">R\u00e9essaie dans un instant.<br><button onclick="regardeOpen()" style="margin-top:16px;padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:13px;cursor:pointer;">R\u00e9essayer</button></div>'; }
+          if (_retryCount >= 10) { clearInterval(_retryInterval); content.innerHTML = '<div style="text-align:center;padding:20%;font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.6);">R\u00e9essaie dans un instant.<br><button onclick="regardeClose();regardeOpen();" style="margin-top:16px;padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:13px;cursor:pointer;">R\u00e9essayer</button></div>'; }
         }, 500);
         return;
       }
       fetch('./data/regard-library.json').then(function(r) { return r.json(); }).then(function(d) {
-        window.REGARD_VERSETS = d;
+        var _n = {}; Object.keys(d).forEach(function(k) { _n[k.toUpperCase()] = d[k]; });
+        window.REGARD_VERSETS = _n;
         if (!_fallbackWithVersets()) {
-          content.innerHTML = '<div style="text-align:center;padding:20%;font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.6);">Connexion requise pour le premier Regard.<br><button onclick="regardeOpen()" style="margin-top:16px;padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:13px;cursor:pointer;">R\u00e9essayer</button></div>';
+          content.innerHTML = '<div style="text-align:center;padding:20%;font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.6);">Aucun verset disponible.<br><button onclick="regardeClose();regardeOpen();" style="margin-top:16px;padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:13px;cursor:pointer;">R\u00e9essayer</button></div>';
           content.style.opacity = '1';
         }
       }).catch(function() {
-        content.innerHTML = '<div style="text-align:center;padding:20%;font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.6);">Connexion requise pour le premier Regard.<br><button onclick="regardeOpen()" style="margin-top:16px;padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:13px;cursor:pointer;">R\u00e9essayer</button></div>';
+        content.innerHTML = '<div style="text-align:center;padding:20%;font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.6);">Connexion requise pour le premier Regard.<br><button onclick="regardeClose();regardeOpen();" style="margin-top:16px;padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:13px;cursor:pointer;">R\u00e9essayer</button></div>';
         content.style.opacity = '1';
       });
     }
