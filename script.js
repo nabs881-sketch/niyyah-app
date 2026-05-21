@@ -11725,6 +11725,13 @@ function v2OpenSettings() {
         <input type="file" id="niyyahImportInput" accept=".json" style="display:none" onchange="niyyahImportData(this)">
       </div>
 
+      <div style="margin-top:14px;background:#1a1a1a;border:1px solid rgba(200,168,75,0.15);border-radius:12px;padding:16px;text-align:center;">
+        ${isPremium()
+          ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#C8A84A;margin-bottom:10px;">\u2726 Premium actif</div><button onclick="setPremium(false);location.reload();" style="padding:6px 16px;border-radius:8px;border:1px solid rgba(255,255,255,0.1);background:none;color:rgba(255,255,255,0.35);font-size:11px;cursor:pointer;">D\u00e9sactiver</button>'
+          : '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;color:#C8A84A;margin-bottom:12px;">\u2726 Niyyah Premium</div><div style="display:flex;gap:8px;justify-content:center;"><input id="premium-code-input" type="text" placeholder="Entrer votre code" style="flex:1;max-width:200px;padding:10px 14px;border-radius:10px;border:1px solid rgba(200,168,75,0.3);background:rgba(200,168,75,0.04);color:#E5E0DC;font-family:\'Cormorant Garamond\',serif;font-size:14px;outline:none;"><button onclick="var c=document.getElementById(\'premium-code-input\');if(unlockPremium(c.value)){alert(\'Premium activ\\u00e9.\');location.reload();}else{alert(\'Code invalide\');}" style="padding:10px 18px;border-radius:10px;border:none;background:#C8A84A;color:#2C2E32;font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:600;cursor:pointer;">Activer</button></div>'
+        }
+      </div>
+
       <div style="padding:14px 16px;cursor:pointer;margin-top:8px;background:rgba(255,60,60,0.04);border:1px solid rgba(255,60,60,0.15);border-radius:12px;"
         onclick="if(confirm('${t('settings_delete_confirm1').replace(/'/g,"\\'")}')){if(confirm('${t('settings_delete_confirm2').replace(/'/g,"\\'")}')){localStorage.clear();location.reload();}}">
         <div style="font-size:13px;color:rgba(255,80,80,0.6);text-align:center;">${t('settings_delete_all')}</div>
