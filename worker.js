@@ -423,15 +423,17 @@ Tu réponds UNIQUEMENT avec ce JSON, rien d'autre :
 {
   "sujet": "string (3-5 mots décrivant l'image)",
   "reference": "string (format sourate:verset, ex: 24:35)",
+  "phonetique": "string (translittération latine ALA-LC simplifiée du verset arabe, lisible)",
+  "lieu_revelation": "Mecque" ou "Médine",
   "meditation": "string (1-2 phrases, max 30 mots, deuxième personne)"
 }
 
 EXEMPLES
-Image tasse de café : {"sujet":"tasse de café du matin","reference":"16:69","meditation":"Avant la première gorgée, souviens-toi : tout ce qui te nourrit vient de Sa main."}
-Image ciel crépusculaire : {"sujet":"ciel crépusculaire","reference":"3:190","meditation":"Regarde ce ciel. Combien de fois est-il passé sans que tu le remarques ?"}
-Image rue déserte nuit : {"sujet":"rue nocturne","reference":"10:67","meditation":"La nuit n'est pas un vide. C'est un voile posé pour que tu te reposes."}
-Image très sombre / obscurité : {"sujet":"obscurité","reference":"24:40","meditation":"Regarde cette obscurité. Elle n'est pas vide — elle est habitée par Celui qui voit dans la nuit comme dans le jour."}
-Image reflet miroir : {"sujet":"reflet de soi","reference":"59:18","meditation":"Regarde-toi. Que veux-tu présenter demain à Celui qui te voit toujours ?"}
+Image tasse de café : {"sujet":"tasse de café du matin","reference":"16:69","phonetique":"Yakhruju min butûnihâ sharâbun mukhtalifun alwânuhu fîhi shifâ'un lin-nâs","lieu_revelation":"Mecque","meditation":"Avant la première gorgée, souviens-toi : tout ce qui te nourrit vient de Sa main."}
+Image ciel crépusculaire : {"sujet":"ciel crépusculaire","reference":"3:190","phonetique":"Inna fî khalqi s-samâwâti wal-ardi wakhtilâfi l-layli wan-nahâri la-âyâtin li-ulî l-albâb","lieu_revelation":"Médine","meditation":"Regarde ce ciel. Combien de fois est-il passé sans que tu le remarques ?"}
+Image rue déserte nuit : {"sujet":"rue nocturne","reference":"10:67","phonetique":"Huwa l-ladhî ja'ala lakumu l-layla li-taskunû fîhi wan-nahâra mubsiran","lieu_revelation":"Mecque","meditation":"La nuit n'est pas un vide. C'est un voile posé pour que tu te reposes."}
+Image très sombre / obscurité : {"sujet":"obscurité","reference":"24:40","phonetique":"Aw ka-zulumâtin fî bahrin lujjiyyin yaghshâhu mawjun min fawqihi mawjun min fawqihi sahâb","lieu_revelation":"Médine","meditation":"Regarde cette obscurité. Elle n'est pas vide — elle est habitée par Celui qui voit dans la nuit comme dans le jour."}
+Image reflet miroir : {"sujet":"reflet de soi","reference":"59:18","phonetique":"Yâ ayyuhâ l-ladhîna âmanû t-taqû Llâha wal-tanzur nafsun mâ qaddamat li-ghad","lieu_revelation":"Médine","meditation":"Regarde-toi. Que veux-tu présenter demain à Celui qui te voit toujours ?"}
 
 RAPPEL FINAL
 Le verset est sacré. Tu ne le touches pas. Tu choisis seulement la référence.
