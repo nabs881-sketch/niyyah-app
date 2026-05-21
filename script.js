@@ -14215,7 +14215,7 @@ function regardeCapture() {
     fetch('https://niyyah-api.nabs881.workers.dev/api/regarde', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ image: base64, seen_versets: _seenVersets }),
+      body: JSON.stringify({ image: base64, seen_versets: _seenVersets, premium: isPremium() }),
       signal: _acR.signal
     })
     .then(function(res) {
