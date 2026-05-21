@@ -8579,8 +8579,21 @@ function closeFreemium(e) {
 }
 /* ══ STATUT PREMIUM ══ */
 function isPremium() {
-  return localStorage.getItem('niyyah_pro') === '1';
+  return localStorage.getItem('niyyah_premium') === 'true' || localStorage.getItem('niyyah_pro') === '1';
 }
+function unlockPremium(code) {
+  if (code && code.toUpperCase() === 'BISMILLAH') {
+    localStorage.setItem('niyyah_premium', 'true');
+    return true;
+  }
+  return false;
+}
+function setPremium(bool) {
+  localStorage.setItem('niyyah_premium', bool ? 'true' : 'false');
+}
+window.isPremium = isPremium;
+window.unlockPremium = unlockPremium;
+window.setPremium = setPremium;
 
 function openGumroad() {
   window.open('https://optimizerprocess.gumroad.com/l/rlivu', '_blank');
