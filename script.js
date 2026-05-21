@@ -14074,6 +14074,12 @@ function _regardeShowQuestion(content, question) {
   content.style.opacity = '1';
 }
 
+function _renderRegardePremium(content, data, dataUrl) {
+  alert('Premium: ' + (data.sujet || '') + ' | ' + (data.reference || '') + ' | ' + (data.meditation || ''));
+  content.style.opacity = '1';
+}
+window._renderRegardePremium = _renderRegardePremium;
+
 function _regardeShowVerset(content, v, slow, returning) {
   var _esc = function(s) { return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); };
   var _sabab = v.sabab ? '<div style="margin-top:12px;font-size:13px;color:rgba(250,247,238,0.5);line-height:1.5;"><span style="color:#C8A84A;font-weight:600;">Sabab :</span> ' + _esc(v.sabab) + '</div>' : '';
@@ -14225,6 +14231,12 @@ function regardeCapture() {
     })
     .then(function(data) {
       if (!data) return;
+      if (data.mode === 'premium') {
+        if (_done) return; _done = true;
+        clearTimeout(_toR);
+        _renderRegardePremium(content, data, dataUrl);
+        return;
+      }
       if (data.mode === 'verset' && data.category && typeof data.verset_index === 'number') {
         var _v = data.verset_override
           || (window.REGARD_VERSETS && window.REGARD_VERSETS[data.category]
