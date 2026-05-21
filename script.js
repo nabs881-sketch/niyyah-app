@@ -14078,17 +14078,19 @@ function _renderRegardePremium(content, data, dataUrl) {
   content.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;"><div style="width:24px;height:24px;border-radius:50%;background:#D4AF37;animation:regardePulse 1.2s ease-in-out infinite;"></div></div>';
   content.style.opacity = '1';
   var ref = (data.reference || '').replace(/\s/g, '');
-  fetch('https://api.alquran.cloud/v1/ayah/' + ref + '/editions/quran-uthmani,fr.hamidullah')
+  fetch('https://api.alquran.cloud/v1/ayah/' + ref + '/editions/quran-uthmani,fr.hamidullah,ar.alafasy')
     .then(function(r) { return r.json(); })
     .then(function(res) {
       if (res.code !== 200 || !res.data || res.data.length < 2) throw new Error('API error');
       var ar = res.data[0];
       var fr = res.data[1];
+      var audioUrl = (res.data[2] && res.data[2].audio) ? res.data[2].audio : '';
       var sourateName = ar.surah ? ar.surah.englishName : '';
       var refLabel = sourateName + ' (' + ref + ')';
       var _lieuHtml = data.lieu_revelation ? ' <span style="font-size:11px;color:rgba(200,168,75,0.45);">(' + data.lieu_revelation + ')</span>' : '';
       var _phoneHtml = data.phonetique ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.5);line-height:1.6;max-width:340px;margin-bottom:8px;">' + data.phonetique + '</div>' : '';
       var _sep = '<div style="width:40px;height:1px;background:rgba(200,168,75,0.3);margin:20px auto;"></div>';
+      var _audioBtn = (!isSilentMode() && audioUrl) ? '<button id="regarde-premium-audio" onclick="_regardePremiumPlayAudio(this)" data-src="' + audioUrl + '" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:20px;color:#D4AF37;">\u25B6</button>' : '';
       content.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100%;padding:40px 24px;text-align:center;">'
         + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;letter-spacing:2px;color:rgba(200,168,75,0.6);margin-bottom:16px;">' + refLabel + _lieuHtml + '</div>'
         + '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:24px;color:#FAF7EE;direction:rtl;line-height:1.8;margin-bottom:8px;">' + (ar.text || '') + '</div>'
@@ -14098,6 +14100,7 @@ function _renderRegardePremium(content, data, dataUrl) {
         + _sep
         + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#C8A84A;line-height:1.6;max-width:320px;">' + (data.meditation || '') + '</div>'
         + '<div style="display:flex;gap:20px;margin-top:28px;">'
+        + _audioBtn
         + '<button id="regarde-btn-star" onclick="regardeToggleStar()" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">\u2606</button>'
         + '<button onclick="regardeRefresh()" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">\u21BB</button>'
         + '</div>'
@@ -14122,6 +14125,24 @@ function _renderRegardePremium(content, data, dataUrl) {
     });
 }
 window._renderRegardePremium = _renderRegardePremium;
+var _regardePremiumAudio = null;
+function _regardePremiumPlayAudio(btn) {
+  if (_regardePremiumAudio && !_regardePremiumAudio.paused) {
+    _regardePremiumAudio.pause();
+    btn.textContent = '\u25B6';
+    return;
+  }
+  var src = btn.getAttribute('data-src');
+  if (!src) return;
+  if (!_regardePremiumAudio || _regardePremiumAudio.src !== src) {
+    if (_regardePremiumAudio) { _regardePremiumAudio.pause(); _regardePremiumAudio = null; }
+    _regardePremiumAudio = new Audio(src);
+    _regardePremiumAudio.onended = function() { btn.textContent = '\u25B6'; };
+  }
+  _regardePremiumAudio.play();
+  btn.textContent = '\u23F8';
+}
+window._regardePremiumPlayAudio = _regardePremiumPlayAudio;
 
 function _regardeShowVerset(content, v, slow, returning) {
   var _esc = function(s) { return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); };
