@@ -8877,6 +8877,10 @@ body.onboarding-active #nav-bar-v2 {
 .btn-regard-premium:active {
   transform: scale(0.95);
 }
+.btn-regard-premium.is-disabled {
+  opacity: 0.25;
+  pointer-events: none;
+}
 .btn-regard-premium.is-active {
   color: rgba(200,168,75,1);
   border-color: rgba(200,168,75,0.8);

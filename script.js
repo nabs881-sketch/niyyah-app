@@ -14114,7 +14114,7 @@ function _renderRegardePremium(content, data, dataUrl) {
       var _lieuHtml = data.lieu_revelation ? ' <span style="font-size:11px;color:rgba(200,168,75,0.45);">(' + data.lieu_revelation + ')</span>' : '';
       var _phoneHtml = data.phonetique ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.5);line-height:1.6;max-width:340px;margin-bottom:8px;">' + data.phonetique + '</div>' : '';
       var _sep = '<div style="width:40px;height:1px;background:rgba(200,168,75,0.3);margin:20px auto;"></div>';
-      var _audioBtn = (!isSilentMode() && audioUrl) ? '<button class="btn-regard-premium" id="regarde-premium-audio" onclick="_regardePremiumPlayAudio(this)" data-src="' + audioUrl + '" aria-label="\u00c9couter">' + _svgPlayIcon + '</button><button class="btn-regard-premium" id="regarde-premium-loop" onclick="_regardePremiumLoop(this)" data-src="' + audioUrl + '" aria-label="R\u00e9citer 7 fois">' + _svg7xIcon + '</button>' : '';
+      var _hasAudio = !isSilentMode() && audioUrl;
       content.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100%;padding:40px 24px;text-align:center;">'
         + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;letter-spacing:2px;color:rgba(200,168,75,0.6);margin-bottom:16px;">' + refLabel + _lieuHtml + '</div>'
         + '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:24px;color:#FAF7EE;direction:rtl;line-height:1.8;margin-bottom:8px;">' + (ar.text || '') + '</div>'
@@ -14125,7 +14125,8 @@ function _renderRegardePremium(content, data, dataUrl) {
         + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#C8A84A;line-height:1.6;max-width:320px;">' + (data.meditation || '') + '</div>'
         + (getRegardStreak() > 0 ? '<div class="regard-streak">' + _svgStreakIcon + '<span>' + getRegardStreak() + ' jour' + (getRegardStreak() > 1 ? 's' : '') + ' de Regards</span></div>' : '')
         + '<div class="regard-actions-row">'
-        + _audioBtn
+        + '<button class="btn-regard-premium' + (_hasAudio ? '' : ' is-disabled') + '" id="regarde-premium-audio" onclick="_regardePremiumPlayAudio(this)" data-src="' + (audioUrl || '') + '" aria-label="\u00c9couter"' + (_hasAudio ? '' : ' disabled') + '>' + _svgPlayIcon + '</button>'
+        + '<button class="btn-regard-premium' + (_hasAudio ? '' : ' is-disabled') + '" id="regarde-premium-loop" onclick="_regardePremiumLoop(this)" data-src="' + (audioUrl || '') + '" aria-label="R\u00e9citer 7 fois"' + (_hasAudio ? '' : ' disabled') + '>' + _svg7xIcon + '</button>'
         + '<button class="btn-regard-premium" id="regarde-btn-memo" onclick="_regardeMemorise(this)" data-ref="' + ref + '" aria-label="M\u00e9moriser">' + _svgMemoIcon + '</button>'
         + '<button class="btn-regard-premium" id="regarde-btn-duaa" onclick="_regardeDuaa(\'' + ref + '\')" aria-label="Du\u02BFa\u02BE li\u00e9e">' + _svgDuaaIcon + '</button>'
         + '<button class="btn-regard-premium" id="regarde-btn-share" onclick="_regardePremiumShare()" aria-label="Partager">' + _svgShareIcon + '</button>'
