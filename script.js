@@ -14075,8 +14075,48 @@ function _regardeShowQuestion(content, question) {
 }
 
 function _renderRegardePremium(content, data, dataUrl) {
-  alert('Premium: ' + (data.sujet || '') + ' | ' + (data.reference || '') + ' | ' + (data.meditation || ''));
+  content.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;"><div style="width:24px;height:24px;border-radius:50%;background:#D4AF37;animation:regardePulse 1.2s ease-in-out infinite;"></div></div>';
   content.style.opacity = '1';
+  var ref = (data.reference || '').replace(/\s/g, '');
+  fetch('https://api.alquran.cloud/v1/ayah/' + ref + '/editions/quran-uthmani,fr.hamidullah')
+    .then(function(r) { return r.json(); })
+    .then(function(res) {
+      if (res.code !== 200 || !res.data || res.data.length < 2) throw new Error('API error');
+      var ar = res.data[0];
+      var fr = res.data[1];
+      var sourateName = ar.surah ? ar.surah.englishName : '';
+      var refLabel = sourateName + ' (' + ref + ')';
+      var _sep = '<div style="width:40px;height:1px;background:rgba(200,168,75,0.3);margin:20px auto;"></div>';
+      content.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100%;padding:40px 24px;text-align:center;">'
+        + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;letter-spacing:2px;color:rgba(200,168,75,0.6);margin-bottom:16px;">' + refLabel + '</div>'
+        + '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:24px;color:#FAF7EE;direction:rtl;line-height:1.8;margin-bottom:8px;">' + (ar.text || '') + '</div>'
+        + _sep
+        + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:rgba(229,224,220,0.85);line-height:1.8;max-width:340px;">' + (fr.text || '') + '</div>'
+        + _sep
+        + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#C8A84A;line-height:1.6;max-width:320px;">' + (data.meditation || '') + '</div>'
+        + '<div style="display:flex;gap:20px;margin-top:28px;">'
+        + '<button id="regarde-btn-star" onclick="regardeToggleStar()" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">\u2606</button>'
+        + '<button onclick="regardeRefresh()" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">\u21BB</button>'
+        + '</div>'
+        + '</div>';
+      _currentRegardeCat = 'PREMIUM';
+      _regardeStarred = false;
+      var _jLabel = data.meditation || data.sujet || ref;
+      compressPhoto(dataUrl).then(function(photo) {
+        var entry = addRegardeEntry({ question: _jLabel, category: 'PREMIUM', photo: photo, bookmark: false, note: '' });
+        _currentRegardeId = entry.id;
+      }).catch(function() {
+        var entry = addRegardeEntry({ question: _jLabel, category: 'PREMIUM', photo: null, bookmark: false, note: '' });
+        _currentRegardeId = entry.id;
+      });
+    })
+    .catch(function() {
+      content.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:16px;padding:40px;">'
+        + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.6);text-align:center;">Verset introuvable (' + ref + ')</div>'
+        + (data.meditation ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#C8A84A;text-align:center;max-width:300px;">' + data.meditation + '</div>' : '')
+        + '<button onclick="_renderRegardePremium(document.getElementById(\'regarde-content\'),' + JSON.stringify(data).replace(/'/g, '\\\'') + ',null);" style="padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:13px;cursor:pointer;">R\u00e9essayer</button>'
+        + '</div>';
+    });
 }
 window._renderRegardePremium = _renderRegardePremium;
 
