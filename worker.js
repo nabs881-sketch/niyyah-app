@@ -375,6 +375,8 @@ RÈGLE : en cas de doute → INDETERMINE, jamais INAPPROPRIE.
 Si confidence < 0.80 → INDETERMINE.
 FORMAT (JSON strict) : {"category": "...", "confidence": 0.92}`;
 
+const REGARDE_PREMIUM_PROMPT = `PLACEHOLDER`;
+
 function buildRegardeGeneratorPrompt(category) {
   return `Tu es un murabbi discret pour un musulman francophone adulte. Il a scanné une image. Pose UNE question contemplative qui pointe vers Allah.
 
@@ -468,6 +470,29 @@ async function handleRegarde(request, env) {
     const { image, seen_versets } = body;
     if (!image) return jsonResponseV2({ error: 'image manquante' }, 400);
     if (image.length > 2_000_000) return jsonResponseV2({ error: 'Image too large' }, 413);
+
+    // ── Flow Premium ──
+    if (body.premium === true) {
+      try {
+        const premResp = await callAnthropic(env, {
+          model: 'claude-sonnet-4-20250514', max_tokens: 400, temperature: 0.6,
+          system: REGARDE_PREMIUM_PROMPT,
+          messages: [{ role: 'user', content: [
+            { type: 'image', source: { type: 'base64', media_type: 'image/jpeg', data: image } },
+            { type: 'text', text: 'Regarde cette image.' }
+          ]}]
+        });
+        const premText = premResp.content?.[0]?.text || '';
+        const premJson = extractJSON(premText);
+        if (premJson && premJson.sujet) {
+          return jsonResponseV2({ mode: 'premium', sujet: premJson.sujet, reference: premJson.reference || '', meditation: premJson.meditation || '' });
+        }
+        return jsonResponseV2({ mode: 'premium', sujet: premText.substring(0, 200), reference: '', meditation: '' });
+      } catch (e) {
+        return jsonResponseV2({ error: 'Premium indisponible' }, 502);
+      }
+    }
+
     // PASS 1 : Classification Haiku
     let category = 'INDETERMINE';
     let confidence = 0;
