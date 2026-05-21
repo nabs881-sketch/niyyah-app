@@ -14101,6 +14101,7 @@ function _renderRegardePremium(content, data, dataUrl) {
         + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#C8A84A;line-height:1.6;max-width:320px;">' + (data.meditation || '') + '</div>'
         + '<div style="display:flex;gap:20px;margin-top:28px;">'
         + _audioBtn
+        + '<button id="regarde-btn-memo" onclick="_regardeMemorise(this)" data-ref="' + ref + '" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;color:#D4AF37;">\uD83D\uDD16</button>'
         + '<button id="regarde-btn-star" onclick="regardeToggleStar()" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">\u2606</button>'
         + '<button onclick="regardeRefresh()" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">\u21BB</button>'
         + '</div>'
@@ -14176,6 +14177,22 @@ function _regardePremiumLoop(btn) {
   _playNext();
 }
 window._regardePremiumLoop = _regardePremiumLoop;
+function _regardeMemorise(btn) {
+  var ref = btn.getAttribute('data-ref');
+  if (!ref) return;
+  var arr = [];
+  try { arr = JSON.parse(localStorage.getItem('niyyah_versets_memorises') || '[]'); } catch(e) {}
+  if (arr.some(function(v) { return v.ref === ref; })) {
+    btn.style.background = 'rgba(212,175,55,0.15)';
+    alert('D\u00e9j\u00e0 m\u00e9moris\u00e9');
+    return;
+  }
+  arr.push({ ref: ref, date_ajout: new Date().toISOString() });
+  safeSetItem('niyyah_versets_memorises', JSON.stringify(arr));
+  btn.style.background = 'rgba(212,175,55,0.15)';
+  alert('Verset ajout\u00e9');
+}
+window._regardeMemorise = _regardeMemorise;
 
 function _regardeShowVerset(content, v, slow, returning) {
   var _esc = function(s) { return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); };
