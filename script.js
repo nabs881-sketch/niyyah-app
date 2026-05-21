@@ -14114,7 +14114,13 @@ function _renderRegardePremium(content, data, dataUrl) {
       var _lieuHtml = data.lieu_revelation ? ' <span style="font-size:11px;color:rgba(200,168,75,0.45);">(' + data.lieu_revelation + ')</span>' : '';
       var _phoneHtml = data.phonetique ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.5);line-height:1.6;max-width:340px;margin-bottom:8px;">' + data.phonetique + '</div>' : '';
       var _sep = '<div style="width:40px;height:1px;background:rgba(200,168,75,0.3);margin:20px auto;"></div>';
-      var _audioBtn = (!isSilentMode() && audioUrl) ? '<button id="regarde-premium-audio" onclick="_regardePremiumPlayAudio(this)" data-src="' + audioUrl + '" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:20px;color:#D4AF37;">\u25B6</button><button id="regarde-premium-loop" onclick="_regardePremiumLoop(this)" data-src="' + audioUrl + '" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:11px;color:#D4AF37;font-family:\'Cormorant Garamond\',serif;font-weight:600;">\uD83D\uDD01 7x</button>' : '';
+      var _svgPlay = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 5.5L18 12L7.5 18.5V5.5Z"/></svg>';
+      var _svg7x = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3.5-7.1"/><polyline points="21 3 21 8 16 8"/><text x="12" y="15" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="9" font-style="italic" stroke="none" fill="currentColor">7</text></svg>';
+      var _svgMemo = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"/></svg>';
+      var _svgDuaa = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11c0-3 1.5-5 3-5"/><path d="M19 11c0-3-1.5-5-3-5"/><path d="M5 11c0 4 2.5 7 7 7s7-3 7-7"/><path d="M12 4v6"/></svg>';
+      var _svgShare = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>';
+      var _svgStreak = '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14a8 8 0 1 1-11.5-9 6.5 6.5 0 0 0 11.5 9z"/></svg>';
+      var _audioBtn = (!isSilentMode() && audioUrl) ? '<button class="btn-regard-premium" id="regarde-premium-audio" onclick="_regardePremiumPlayAudio(this)" data-src="' + audioUrl + '" aria-label="\u00c9couter">' + _svgPlay + '</button><button class="btn-regard-premium" id="regarde-premium-loop" onclick="_regardePremiumLoop(this)" data-src="' + audioUrl + '" aria-label="R\u00e9citer 7 fois">' + _svg7x + '</button>' : '';
       content.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100%;padding:40px 24px;text-align:center;">'
         + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;letter-spacing:2px;color:rgba(200,168,75,0.6);margin-bottom:16px;">' + refLabel + _lieuHtml + '</div>'
         + '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:24px;color:#FAF7EE;direction:rtl;line-height:1.8;margin-bottom:8px;">' + (ar.text || '') + '</div>'
@@ -14123,14 +14129,14 @@ function _renderRegardePremium(content, data, dataUrl) {
         + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:rgba(229,224,220,0.85);line-height:1.8;max-width:340px;">' + (fr.text || '') + '</div>'
         + _sep
         + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#C8A84A;line-height:1.6;max-width:320px;">' + (data.meditation || '') + '</div>'
-        + (getRegardStreak() > 0 ? '<div style="font-size:11px;color:rgba(200,168,75,0.4);margin-top:16px;">' + getRegardStreak() + ' jour' + (getRegardStreak() > 1 ? 's' : '') + ' de Regards</div>' : '')
-        + '<div style="display:flex;gap:20px;margin-top:' + (getRegardStreak() > 0 ? '12' : '28') + 'px;">'
+        + (getRegardStreak() > 0 ? '<div class="regard-streak">' + _svgStreak + '<span>' + getRegardStreak() + ' jour' + (getRegardStreak() > 1 ? 's' : '') + ' de Regards</span></div>' : '')
+        + '<div class="regard-actions-row">'
         + _audioBtn
-        + '<button id="regarde-btn-memo" onclick="_regardeMemorise(this)" data-ref="' + ref + '" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;color:#D4AF37;">\uD83D\uDD16</button>'
-        + '<button id="regarde-btn-duaa" onclick="_regardeDuaa(\'' + ref + '\')" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;color:#D4AF37;">\uD83E\uDD32</button>'
-        + '<button id="regarde-btn-share" onclick="_regardePremiumShare()" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;color:#D4AF37;">\uD83D\uDCE4</button>'
-        + '<button id="regarde-btn-star" onclick="regardeToggleStar()" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">\u2606</button>'
-        + '<button onclick="regardeRefresh()" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">\u21BB</button>'
+        + '<button class="btn-regard-premium" id="regarde-btn-memo" onclick="_regardeMemorise(this)" data-ref="' + ref + '" aria-label="M\u00e9moriser">' + _svgMemo + '</button>'
+        + '<button class="btn-regard-premium" id="regarde-btn-duaa" onclick="_regardeDuaa(\'' + ref + '\')" aria-label="Du\u02BFa\u02BE li\u00e9e">' + _svgDuaa + '</button>'
+        + '<button class="btn-regard-premium" id="regarde-btn-share" onclick="_regardePremiumShare()" aria-label="Partager">' + _svgShare + '</button>'
+        + '<button class="btn-regard-premium" id="regarde-btn-star" onclick="regardeToggleStar()" aria-label="Favori">\u2606</button>'
+        + '<button class="btn-regard-premium" onclick="regardeRefresh()" aria-label="Recharger">\u21BB</button>'
         + '</div>'
         + '</div>';
       window._regardePremiumData = { arText: ar.text || '', frText: fr.text || '', ref: ref, refLabel: refLabel, meditation: data.meditation || '', photo: dataUrl };
@@ -14155,10 +14161,12 @@ function _renderRegardePremium(content, data, dataUrl) {
 }
 window._renderRegardePremium = _renderRegardePremium;
 var _regardePremiumAudio = null;
+var _svgPlayIcon = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 5.5L18 12L7.5 18.5V5.5Z"/></svg>';
+var _svgPauseIcon = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="9" y1="5" x2="9" y2="19"/><line x1="15" y1="5" x2="15" y2="19"/></svg>';
 function _regardePremiumPlayAudio(btn) {
   if (_regardePremiumAudio && !_regardePremiumAudio.paused) {
     _regardePremiumAudio.pause();
-    btn.textContent = '\u25B6';
+    btn.innerHTML = _svgPlayIcon;
     return;
   }
   var src = btn.getAttribute('data-src');
@@ -14166,26 +14174,27 @@ function _regardePremiumPlayAudio(btn) {
   if (!_regardePremiumAudio || _regardePremiumAudio.src !== src) {
     if (_regardePremiumAudio) { _regardePremiumAudio.pause(); _regardePremiumAudio = null; }
     _regardePremiumAudio = new Audio(src);
-    _regardePremiumAudio.onended = function() { btn.textContent = '\u25B6'; };
+    _regardePremiumAudio.onended = function() { btn.innerHTML = _svgPlayIcon; };
   }
   _regardePremiumAudio.play();
-  btn.textContent = '\u23F8';
+  btn.innerHTML = _svgPauseIcon;
 }
 window._regardePremiumPlayAudio = _regardePremiumPlayAudio;
 var _regardeLoopAudio = null;
 var _regardeLoopCount = 0;
 var _regardeLoopActive = false;
+var _svg7xIcon = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3.5-7.1"/><polyline points="21 3 21 8 16 8"/><text x="12" y="15" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="9" font-style="italic" stroke="none" fill="currentColor">7</text></svg>';
 function _regardePremiumLoop(btn) {
   if (_regardeLoopActive) {
     _regardeLoopActive = false;
     if (_regardeLoopAudio) { _regardeLoopAudio.pause(); _regardeLoopAudio = null; }
     _regardeLoopCount = 0;
-    btn.innerHTML = '\uD83D\uDD01 7x';
+    btn.innerHTML = _svg7xIcon;
     return;
   }
   var src = btn.getAttribute('data-src');
   if (!src) return;
-  if (_regardePremiumAudio && !_regardePremiumAudio.paused) { _regardePremiumAudio.pause(); var pb = document.getElementById('regarde-premium-audio'); if (pb) pb.textContent = '\u25B6'; }
+  if (_regardePremiumAudio && !_regardePremiumAudio.paused) { _regardePremiumAudio.pause(); var pb = document.getElementById('regarde-premium-audio'); if (pb) pb.innerHTML = _svgPlayIcon; }
   _regardeLoopActive = true;
   _regardeLoopCount = 0;
   function _playNext() {
@@ -14193,7 +14202,7 @@ function _regardePremiumLoop(btn) {
       _regardeLoopActive = false;
       _regardeLoopCount = 0;
       _regardeLoopAudio = null;
-      btn.innerHTML = '\uD83D\uDD01 7x';
+      btn.innerHTML = _svg7xIcon;
       return;
     }
     _regardeLoopCount++;
@@ -14205,19 +14214,22 @@ function _regardePremiumLoop(btn) {
   _playNext();
 }
 window._regardePremiumLoop = _regardePremiumLoop;
+var _svgMemoActif = '<svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill-opacity="0.25"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"/></svg>';
 function _regardeMemorise(btn) {
   var ref = btn.getAttribute('data-ref');
   if (!ref) return;
   var arr = [];
   try { arr = JSON.parse(localStorage.getItem('niyyah_versets_memorises') || '[]'); } catch(e) {}
   if (arr.some(function(v) { return v.ref === ref; })) {
-    btn.style.background = 'rgba(212,175,55,0.15)';
+    btn.classList.add('is-active');
+    btn.innerHTML = _svgMemoActif;
     alert('D\u00e9j\u00e0 m\u00e9moris\u00e9');
     return;
   }
   arr.push({ ref: ref, date_ajout: new Date().toISOString() });
   safeSetItem('niyyah_versets_memorises', JSON.stringify(arr));
-  btn.style.background = 'rgba(212,175,55,0.15)';
+  btn.classList.add('is-active');
+  btn.innerHTML = _svgMemoActif;
   alert('Verset ajout\u00e9');
 }
 window._regardeMemorise = _regardeMemorise;
