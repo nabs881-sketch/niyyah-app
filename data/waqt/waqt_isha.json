@@ -1,0 +1,322 @@
+[
+  {
+    "source": "waqt_nuit",
+    "plage_origine": "nuit",
+    "fr": "Pose ton téléphone face cachée — la nuit appartient à Allah.",
+    "en": "Place your phone face down — the night belongs to Allah.",
+    "ar": "ضَعْ هاتِفَكَ مَقْلُوبًا — اللَّيْلُ لِلَّه.",
+    "categorie": "SUNNAH"
+  },
+  {
+    "source": "waqt_nuit",
+    "plage_origine": "nuit",
+    "fr": "Écoute ta respiration 5 cycles — chaque souffle est un dépôt qu’Allah reprendra.",
+    "en": "Listen to 5 breaths — each one is a trust Allah will reclaim.",
+    "ar": "اسْمَعْ ٥ أَنْفاس — كُلُّ نَفَسٍ أَمانَةٌ سَيَسْتَرِدُّها.",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_nuit",
+    "plage_origine": "nuit",
+    "fr": "S’il y a un tort que tu portes — nomme-le dans ton cœur. Puis pardonne en silence.",
+    "en": "Name in your heart a wrong done to you — then forgive silently.",
+    "ar": "سَمِّ فِي قَلْبِكَ ظُلْمًا أُصِبْتَ بِهِ — ثُمَّ اعْفُ بِصَمْت.",
+    "categorie": "SUNNAH"
+  },
+  {
+    "source": "waqt_nuit",
+    "plage_origine": "nuit",
+    "fr": "Ferme les yeux et demande-toi : si c’était ma dernière nuit, suis-je en paix ?",
+    "en": "Close your eyes and ask: if this were my last night, am I at peace?",
+    "ar": "أَغْمِضْ عَيْنَيْكَ وَاسْأَلْ: لَوْ كانَتْ آخِرَ لَيْلَة، هَلْ أَنا راضٍ؟",
+    "categorie": "SUNNAH"
+  },
+  {
+    "source": "waqt_nuit",
+    "plage_origine": "nuit",
+    "fr": "Ne cherche pas le sommeil — cherche le tawakkul. Le sommeil suivra.",
+    "en": "Don’t chase sleep — chase tawakkul. Sleep will follow.",
+    "ar": "لا تَطْلُبِ النَّوْمَ — اطْلُبِ التَّوَكُّل. النَّوْمُ سَيَأْتِي.",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_nuit",
+    "plage_origine": "nuit",
+    "fr": "S’il y a eu une dernière personne à qui tu as parlé aujourd’hui — fais dua pour elle.",
+    "en": "The last person you spoke to today — make dua for them now.",
+    "ar": "آخِرُ شَخْصٍ كَلَّمْتَهُ اليَوْمَ — ادْعُ لَهُ الآن.",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_nuit",
+    "plage_origine": "nuit",
+    "fr": "Si tu portes un souci que tu ne peux pas résoudre cette nuit — remets-le à Allah.",
+    "en": "Hand Allah a worry you cannot solve tonight.",
+    "ar": "سَلِّمْ لِلَّه هَمًّا لا تَقْدِرُ عَلى حَلِّهِ اللَّيْلَة.",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_nuit",
+    "plage_origine": "nuit",
+    "fr": "Ton lit est un linceul d’essai — allonge-toi sur le côté droit comme le Prophète ﷺ.",
+    "en": "Your bed is a trial shroud — lie on your right side like the Prophet ﷺ.",
+    "ar": "فِراشُكَ كَفَنٌ تَجْرِيبِيٌّ — اضْطَجِعْ عَلى يَمِينِكَ كالنَّبِيِّ ﷺ.",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_nuit",
+    "plage_origine": "nuit",
+    "fr": "Ne rejoue pas ta journée — elle est déjà écrite. Repose-toi dans le maktub.",
+    "en": "Don’t replay your day — it’s already written. Rest in the maktub.",
+    "ar": "لا تُعِدْ يَوْمَكَ — قَدْ كُتِب. ارْتَحْ فِي المَكْتُوب.",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_nuit",
+    "plage_origine": "nuit",
+    "fr": "Bismika Allahumma amutu wa ahya — puis ne dis plus rien.",
+    "en": "Bismika Allahumma amutu wa ahya — then say nothing more.",
+    "ar": "بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيا — ثُمَّ لا تَقُلْ شَيْئًا.",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_nuit",
+    "plage_origine": "nuit",
+    "fr": "L’obscurité n’est pas vide — elle est pleine de Celui qui entend même ce que tu ne dis pas. Dis : Ya Sami’, Ya ‘Alim.",
+    "en": "The darkness isn’t empty — it’s full of the One who hears even what you don’t say.",
+    "ar": "الظَّلامُ لَيْسَ فارِغًا — مَلِيءٌ بِمَنْ يَسْمَعُ حَتَّى ما لا تَقُولُه.",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_nuit",
+    "plage_origine": "nuit",
+    "fr": "Relâche ta mâchoire. On la serre souvent sans le savoir. Le corps prie quand tu le libères.",
+    "en": "Unclench your jaw. You were tightening it without knowing. The body prays when you free it.",
+    "ar": "أَرْخِ فَكَّك. كُنْتَ تَشُدُّهُ دُونَ عِلْمِك. الجَسَدُ يُصَلِّي حِينَ تُحَرِّرُه.",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_nuit",
+    "plage_origine": "nuit",
+    "fr": "Le bruit du monde s’est arrêté. Ne le remplace par rien. Habite le silence.",
+    "en": "The noise of the world has stopped. Don’t replace it with anything. Inhabit the silence.",
+    "ar": "تَوَقَّفَ ضَجِيجُ العالَم. لا تَسْتَبْدِلْهُ بِشَيْء. اسْكُنِ الصَّمْت.",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_nuit",
+    "plage_origine": "nuit",
+    "fr": "Quelque part, des proches dorment. Chaque souffle est une amana qu’Allah protège.",
+    "en": "Your loved ones sleep beside you. Each breath is a trust Allah protects.",
+    "ar": "أَحِبَّتُكَ يَنامُونَ بِجانِبِك. كُلُّ نَفَسٍ أَمانَةٌ يَحْفَظُها اللَّه.",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_nuit",
+    "plage_origine": "nuit",
+    "fr": "Étends-toi. Sens le poids de ton corps que le lit accueille sans se plaindre. C’est une ni’ma silencieuse.",
+    "en": "You have a bed. A pillow. Safety. Three invisible luxuries millions lack.",
+    "ar": "لَدَيْكَ فِراشٌ ووِسادَةٌ وأَمان. ثَلاثُ رَفاهِياتٍ خَفِيَّة يَفْتَقِدُها مَلايِين.",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_nuit",
+    "plage_origine": "nuit",
+    "fr": "Cette nuit, où que tu sois — quelqu’un veille dans un hôpital, quelqu’un fuit dans le noir. Alhamdulillah pour ta paix.",
+    "en": "This quiet night — someone watches in a hospital, someone flees in the dark. Alhamdulillah for your peace.",
+    "ar": "هذِهِ اللَّيْلَةُ الهادِئَة — غَيْرُكَ يَسْهَرُ فِي مُسْتَشْفَى، غَيْرُكَ يَفِرُّ فِي الظَّلام. الحَمْدُ لِلَّه عَلَى سَلامِك.",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_nuit",
+    "plage_origine": "nuit",
+    "fr": "S’il y a eu un petit mensonge aujourd’hui — reconnais-le. Allah aime ceux qui reviennent.",
+    "en": "You lied today, even a small lie. Acknowledge it. Allah loves those who return.",
+    "ar": "كَذَبْتَ اليَوْم، حَتَّى كَذِبَةً صَغِيرَة. اعْتَرِفْ بِها. اللَّهُ يُحِبُّ التَّوّابِين.",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_nuit",
+    "plage_origine": "nuit",
+    "fr": "S’il y a une douleur ancienne avec tes parents — pardonne. Ils ont fait ce qu’ils pouvaient avec ce qu’ils avaient.",
+    "en": "Forgive your parents an old pain. They did what they could with what they had.",
+    "ar": "سامِحْ والِدَيْكَ عَلَى أَلَمٍ قَدِيم. فَعَلا ما اسْتَطاعا بِما مَلَكا.",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_nuit",
+    "plage_origine": "nuit",
+    "fr": "Le sommeil est une petite mort, le réveil une résurrection. Le Prophète ﷺ disait au réveil : « Alhamdulillah qui nous a rendu la vie après nous avoir donné la mort. »",
+    "en": "Sleep is a small death, waking a resurrection. The Prophet ﷺ was aware of this every night.",
+    "ar": "النَّوْمُ مَوْتٌ صَغِير، واليَقَظَةُ بَعْث. النَّبِيُّ ﷺ كانَ يَعِيها كُلَّ لَيْلَة.",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_nuit",
+    "plage_origine": "nuit",
+    "fr": "Tu vois les étoiles ce soir. Certaines sont mortes depuis des millions d’années. Leur lumière voyage toujours. Celui qui a fait la lumière l’a faite plus durable que les étoiles elles-mêmes.",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_nuit",
+    "plage_origine": "nuit",
+    "fr": "Tu es littéralement fait de poussière d’étoiles. Le carbone de tes os vient d’une étoile qui a explosé il y a 4 milliards d’années. Allâh t’a tissé avec les cendres du ciel.",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_nuit",
+    "plage_origine": "nuit",
+    "fr": "Le Coran défie depuis 14 siècles : « Produisez une seule sourate semblable à celle-ci. » (Coran 2:23). 14 siècles. Aucune sourate équivalente produite, dans aucune langue, par aucun humain. Le défi reste ouvert. Tu peux essayer maintenant.",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_nuit",
+    "plage_origine": "nuit",
+    "fr": "Tu vas rêver cette nuit. Tu seras quelqu’un d’autre, dans des lieux qui n’existent pas, qui te paraîtront réels. Personne ne sait pourquoi nous rêvons. Mais Lui sait. Et Il t’offre ce cinéma chaque nuit.",
+    "en": "",
+    "ar": "",
+    "categorie": "SUNNAH"
+  },
+  {
+    "source": "waqt_nuit",
+    "plage_origine": "nuit",
+    "fr": "Allâh dit dans le Coran : « Toute âme goûtera la mort. » (3:185) GOÛTERA. Pas subira. Pas affrontera. Goûtera. Comme on goûte un fruit. Allâh choisit Ses mots avec une douceur que tu ne soupçonnes pas.",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_nuit",
+    "plage_origine": "nuit",
+    "fr": "Tu rêves cette nuit que tu perds tout — fortune, santé, proches. Tu te réveilles soulagé : ce n’était qu’un rêve. Cette vie est ce rêve. Le réveil — c’est la mort.",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_nuit",
+    "plage_origine": "nuit",
+    "fr": "Une mère porte son enfant 9 mois dans le ventre. L’enfant ne sait rien du monde qui l’attend. Il s’agite, il a peur de la sortie. Tu es ce fœtus. La mort est ta naissance.",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_nuit",
+    "plage_origine": "nuit",
+    "fr": "Le soleil se couche tous les soirs. Personne n’a jamais paniqué en pensant qu’il ne reviendrait pas. Mais quand quelque chose disparaît de TA vie, tu doutes du retour. Allâh n’a pas fait deux lois différentes.",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_nuit",
+    "plage_origine": "nuit",
+    "fr": "Une lampe à huile éclaire une pièce. Quand l’huile est finie, la lampe s’éteint. L’huile, c’est ton souffle. La lampe, c’est ton corps. La lumière, c’est ce que tu auras été. La lumière survit aux deux autres.",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_nuit",
+    "plage_origine": "nuit",
+    "fr": "Tu doutes parfois de ta foi. Le fait même de douter prouve que tu y tiens. Personne ne doute de ce qui ne lui importe pas.",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_nuit",
+    "plage_origine": "nuit",
+    "fr": "Tu vas dormir ce soir. Allâh ne dort pas. Pendant que tu disparais, Il veille sur toi. Ta sécurité de cette nuit est un cadeau silencieux qu’Il te fait.",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_nuit",
+    "plage_origine": "nuit",
+    "fr": "Un enfant musulman se couche ce soir sans toit. Toi tu as ton lit. Dis pour lui une dou’a. Allâh entend le dua silencieux d’un frère pour son frère.",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_nuit",
+    "plage_origine": "nuit",
+    "fr": "Pendant que tu vas dormir, des millions de musulmans se lèvent pour le tahajjud (prière de la nuit) quelque part. Ils prient pour des inconnus. L’un d’eux prie peut-être pour toi sans le savoir.",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_nuit",
+    "plage_origine": "nuit",
+    "fr": "À cet instant, dans les minarets du monde, des muezzins se préparent au prochain adhan. Le réveil de l’oumma ne s’arrête nulle part. Pendant ton sommeil, l’oumma travaille.",
+    "en": "",
+    "ar": "",
+    "categorie": "SUNNAH"
+  },
+  {
+    "source": "waqt_nuit",
+    "plage_origine": "nuit",
+    "fr": "Quelque part dans le monde, à cet instant, une mère musulmane berce son enfant en récitant Ayat al-Kursi. Sa voix porte le verset le plus puissant du Coran dans une chambre que tu ne verras jamais. C’est ça, l’oumma.",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_nuit",
+    "plage_origine": "nuit",
+    "fr": "Pendant ton sommeil cette nuit, environ 8 millions de musulmans vont mourir paisiblement quelque part dans le monde et entreront dans l’au-delà. L’oumma déménage en continu. Toi-même, un jour. Pas seul.",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_nuit",
+    "plage_origine": "nuit",
+    "fr": "Une étoile que tu vois ce soir, sa lumière a mis des années à arriver. Tu reçois un message ancien.",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_nuit",
+    "plage_origine": "nuit",
+    "fr": "Le ver de terre laboure ton sol gratuitement chaque nuit. Tu ne lui as jamais dit merci.",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_nuit",
+    "plage_origine": "nuit",
+    "fr": "À cet instant, quelque part dans le monde, c’est Tahajjud. Pendant que tu lis ceci, quelqu’un s’est levé pour prier. La chaîne ne dort jamais.",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_nuit",
+    "plage_origine": "nuit",
+    "fr": "Le texte du Coran que tu lis ce soir — mot pour mot, lettre pour lettre — est le même que celui qu’Aisha (qu’Allâh l’agrée) entendait du Prophète (paix et bénédictions sur lui). 14 siècles sans variation.",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_nuit",
+    "plage_origine": "nuit",
+    "fr": "Al-Ula, en Arabie, garde dans ses pierres des inscriptions de royaumes oubliés. L’oumma marche sur des civilisations entières — qui toutes ont eu leur temps.",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  }
+]

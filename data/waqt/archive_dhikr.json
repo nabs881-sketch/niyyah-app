@@ -1,0 +1,132 @@
+[
+  {
+    "source": "waqt_matin",
+    "plage_origine": "matin",
+    "fr": "Avant tout, dis Bismillah. Trois syllabes pour ouvrir la journée. Aucune clé n’est plus puissante.",
+    "en": "Place your hand on your heart. Three beats of silence. On the fourth: SubhanAllah.",
+    "ar": "ضَعْ يَدَكَ عَلَى قَلْبِك. ثَلاثُ نَبَضاتٍ صامِتَة. عِنْدَ الرّابِعَة: سُبْحانَ اللَّه.",
+    "categorie": "DHIKR"
+  },
+  {
+    "source": "waqt_matin",
+    "plage_origine": "matin",
+    "fr": "Ne planifie rien pendant 30 secondes. Laisse le qadr respirer avant toi. Dis : Hasbiyallah wa ni’mal Wakil.",
+    "en": "Plan nothing for 30 seconds. Let qadr breathe before you do.",
+    "ar": "لا تُخَطِّطْ لِشَيْءٍ ٣٠ ثانِيَة. دَعِ القَدَرَ يَتَنَفَّسْ قَبْلَك.",
+    "categorie": "DHIKR"
+  },
+  {
+    "source": "waqt_matin",
+    "plage_origine": "matin",
+    "fr": "Avant d’accomplir quoi que ce soit aujourd’hui — Allah t’a déjà nourri, abrité, réveillé. Le rizq précède l’effort. Dis Alhamdulillah.",
+    "en": "You’ve achieved nothing yet — and still Allah has fed, sheltered, and woken you. Rizq precedes effort.",
+    "ar": "لَمْ تُنْجِزْ شَيْئًا بَعْد — ومَعَ ذلِكَ أَطْعَمَكَ اللَّه وآواكَ وأَيْقَظَك. الرِّزْقُ يَسْبِقُ الجُهْد.",
+    "categorie": "DHIKR"
+  },
+  {
+    "source": "waqt_midi",
+    "plage_origine": "midi",
+    "fr": "Arrête-toi. Juste arrête-toi. 10 secondes sans rien faire. Puis dis SubhanAllah. C’est déjà une ibadah.",
+    "en": "Stop. Just stop. 10 seconds of doing nothing. That’s already ibadah.",
+    "ar": "تَوَقَّف. فَقَط تَوَقَّف. ١٠ ثَوانٍ بِلا شَيْء. هذِهِ عِبادَة.",
+    "categorie": "DHIKR"
+  },
+  {
+    "source": "waqt_midi",
+    "plage_origine": "midi",
+    "fr": "Ce qui te nourrit ce midi — ne va pas de soi. Mâche plus lentement. Dis Alhamdulillah.",
+    "en": "Your stomach fills up — 800 million don’t have this luxury right now. Alhamdulillah.",
+    "ar": "مَعِدَتُكَ تَمْتَلِئُ — ٨٠٠ مِليون لا يَمْلِكُونَ هذا الآن. الحَمْدُ لِلَّه.",
+    "categorie": "DHIKR"
+  },
+  {
+    "source": "waqt_apresmidi",
+    "plage_origine": "apresmidi",
+    "fr": "L’ombre a tourné depuis ce matin. Remarque-la. Tout bouge sauf Celui qui fait bouger. Dis : Ya Hayy, Ya Qayyum.",
+    "en": "The shadow has shifted since morning. Notice it. Everything moves except the One who moves it.",
+    "ar": "تَحَوَّلَ الظِّلُّ مُنْذُ الصَّباح. لاحِظْه. كُلُّ شَيْءٍ يَتَحَرَّكُ إِلّا مُحَرِّكَه.",
+    "categorie": "DHIKR"
+  },
+  {
+    "source": "waqt_apresmidi",
+    "plage_origine": "apresmidi",
+    "fr": "SubhanAllah wa bihamdihi. Une phrase. Un arbre planté au Paradis. Répète-la sept fois.",
+    "en": "SubhanAllah wa bihamdihi. One phrase. A tree planted in Paradise. Repeat it as you walk.",
+    "ar": "سُبْحانَ اللَّه وبِحَمْدِه. جُمْلَةٌ واحِدَة. شَجَرَةٌ فِي الجَنَّة. رَدِّدْها وأَنْتَ تَمْشِي.",
+    "categorie": "DHIKR"
+  },
+  {
+    "source": "waqt_apresmidi",
+    "plage_origine": "apresmidi",
+    "fr": "Expire lentement. Dis en toi : « Hasbiyallah. » Ce que tu portes n’est pas à toi seul.",
+    "en": "Exhale slowly. Say within: “Hasbiyallah.” What you carry isn’t yours alone.",
+    "ar": "ازْفِرْ بِبُطْء. قُلْ فِي نَفْسِك: «حَسْبِيَ اللَّه.» ما تَحْمِلُه لَيْسَ لَكَ وَحْدَك.",
+    "categorie": "DHIKR"
+  },
+  {
+    "source": "waqt_apresmidi",
+    "plage_origine": "apresmidi",
+    "fr": "Tu as un toit, un siège, de l’électricité. Trois ni’ma que tu n’as pas demandées. Dis Alhamdulillah pour les ni’ma invisibles.",
+    "en": "You have a roof, a seat, electricity. Three blessings you didn’t ask for.",
+    "ar": "لَدَيْكَ سَقْفٌ ومَقْعَدٌ وكَهْرَباء. ثَلاثُ نِعَمٍ لَمْ تَطْلُبْها.",
+    "categorie": "DHIKR"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "S’il y a une parole que tu regrettes aujourd’hui — dis Astaghfirullah pour elle.",
+    "en": "There’s a word you said today that you regret. Say Astaghfirullah for it.",
+    "ar": "هُناكَ كَلِمَةٌ قُلْتَها وتَنْدَمُ. قُلْ أَسْتَغْفِرُ اللَّه عَلَيْها.",
+    "categorie": "DHIKR"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "Cette journée est terminée. Tu ne la revivras plus. Qu’en gardes-tu pour l’éternité ? Dis Astaghfirullah pour ce qui doit être effacé.",
+    "en": "This day is over. You’ll never live it again. What do you keep for eternity?",
+    "ar": "انْتَهَى هذا اليَوْم. لَنْ يَعُود. ماذا تَحْفَظُ مِنْهُ لِلأَبَد؟",
+    "categorie": "DHIKR"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "Ce soir tu es en vie. Demain n’est promis à personne. Souris à cette évidence — et dis Alhamdulillah qui m’a fait vivre ce jour.",
+    "en": "Tonight you are alive. Tomorrow is promised to no one. Smile at this truth.",
+    "ar": "اللَّيْلَةَ أَنْتَ حَيّ. غَدًا لَيْسَ مَوْعُودًا لِأَحَد. ابْتَسِمْ لِهذِهِ الحَقِيقَة.",
+    "categorie": "DHIKR"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "Tu as traversé une journée de plus. Pose ta main droite sur ton cœur et dis Alhamdulillah.",
+    "en": "You made it home safe. Thousands didn’t make it back tonight. Alhamdulillah.",
+    "ar": "عُدْتَ سالِمًا. آلافٌ لَمْ يَعُودُوا اللَّيْلَة. الحَمْدُ لِلَّه.",
+    "categorie": "DHIKR"
+  },
+  {
+    "source": "waqt_nuit",
+    "plage_origine": "nuit",
+    "fr": "Ton cœur bat 100 000 fois par jour sans que tu le lui demandes. Qui le commande ? Dis : SubhanAllah wa bihamdihi.",
+    "en": "Your heart beats 100,000 times a day without you asking. Who commands it?",
+    "ar": "قَلْبُكَ يَنْبِضُ ١٠٠ أَلْف مَرَّة يَوْمِيًّا دُونَ أَنْ تَطْلُب. مَنْ يَأْمُرُه؟",
+    "categorie": "DHIKR"
+  },
+  {
+    "source": "tafakkur",
+    "id_origine": 4,
+    "fr": "Chaque souffle est un don. Dis Alhamdulillah.",
+    "categorie": "DHIKR"
+  },
+  {
+    "source": "tafakkur",
+    "id_origine": 216,
+    "fr": "Avant le premier souffle de l'univers — il y avait Lui.\\n\\nAl-Mubdi' — Celui qui commence",
+    "categorie": "PREUVES"
+  },
+  {
+    "source": "tafakkur",
+    "id_origine": 221,
+    "fr": "Tout dort dans l'univers à un moment ou un autre. Sauf Un.\\n\\nAl-Qayyūm — L'Immuable",
+    "categorie": "PREUVES"
+  }
+]
