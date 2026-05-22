@@ -12451,26 +12451,43 @@ function updateMedaillonState() {
     document.body.appendChild(ov);
   }
 }
+var _WAQT_AR_NAMES = {fajr:'\u0627\u0644\u0641\u064E\u062C\u0652\u0631',dhuhr:'\u0627\u0644\u0638\u0651\u064F\u0647\u0652\u0631',asr:'\u0627\u0644\u0639\u064E\u0635\u0652\u0631',maghrib:'\u0627\u0644\u0645\u064E\u063A\u0652\u0631\u0650\u0628',isha:'\u0627\u0644\u0639\u0650\u0634\u0627\u0621'};
+function _waqtHashPriere(p) { var h = 0; for (var i = 0; i < p.length; i++) h = (h * 31 + p.charCodeAt(i)) & 0x7fffffff; return h; }
 function openWaqtModal() {
   _nAn('waqt_started');
-  var moment = getCurrentMoment();
-  var pool = WAQT_CATALOG[moment] || WAQT_CATALOG.matin;
-  var idx = _pickStableWaqt(moment);
-  var item = pool[idx] || pool[0];
-  var lang = (typeof V2_LANG !== 'undefined') ? V2_LANG : 'fr';
-  var txt = item[lang] || item.fr;
-  var el = document.getElementById('waqt-action-text');
-  if (el) el.textContent = txt;
-  safeSetItem('niyyah_sablier_consulted', JSON.stringify(
-    Object.assign({}, JSON.parse(safeGetItem('niyyah_sablier_consulted') || '{}'), (function(){var o={};o[moment]=todayKey();return o;})())
-  ));
-  updateMedaillonState();
+  var priere = isWaqtAvailable();
+  if (!priere) {
+    showToast('Prochain Waqt apr\u00e8s la prochaine pri\u00e8re');
+    return;
+  }
+  var pool = (window.WAQT_BY_PRIERE && window.WAQT_BY_PRIERE[priere] && window.WAQT_BY_PRIERE[priere].length > 0) ? window.WAQT_BY_PRIERE[priere] : null;
+  var txt = '';
+  if (pool) {
+    var dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(),0,0).getTime()) / 86400000);
+    var idx = (dayOfYear + _waqtHashPriere(priere)) % pool.length;
+    var item = pool[idx];
+    var lang = (typeof V2_LANG !== 'undefined') ? V2_LANG : 'fr';
+    txt = (typeof item === 'string') ? item : (item[lang] || item.fr || item.texte || '');
+  } else {
+    var moment = getCurrentMoment();
+    var fallbackPool = WAQT_CATALOG[moment] || WAQT_CATALOG.matin;
+    var fallbackIdx = _pickStableWaqt(moment);
+    var fallbackItem = fallbackPool[fallbackIdx] || fallbackPool[0];
+    var lang2 = (typeof V2_LANG !== 'undefined') ? V2_LANG : 'fr';
+    txt = fallbackItem[lang2] || fallbackItem.fr;
+  }
   var modal = document.getElementById('waqt-modal');
-  if (modal) modal.style.display = 'flex';
+  if (!modal) return;
+  var arName = _WAQT_AR_NAMES[priere] || '';
+  document.getElementById('waqt-action-text').innerHTML = '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:28px;color:#C8A84A;direction:rtl;margin-bottom:20px;">' + arName + '</div>' + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:#E5E0DC;line-height:1.7;max-width:320px;">' + txt + '</div>';
+  markWaqtLu(priere);
+  updateMedaillonState();
+  modal.style.display = 'flex';
 }
 function closeWaqtModal() {
   var modal = document.getElementById('waqt-modal');
   if (modal) modal.style.display = 'none';
+  updateMedaillonState();
 }
 function startWaqtTimer() {
   var modal = document.getElementById('waqt-modal');
