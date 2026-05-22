@@ -12773,6 +12773,17 @@ var WAQT_CATALOG = {
     {fr:'Al-Ula, en Arabie, garde dans ses pierres des inscriptions de royaumes oubli\u00e9s. L\u2019oumma marche sur des civilisations enti\u00e8res \u2014 qui toutes ont eu leur temps.',en:'',ar:''}
   ]
 };
+window.WAQT_BY_PRIERE = null;
+(function _loadWaqtByPriere() {
+  var files = {fajr:'data/waqt/waqt_fajr.json',dhuhr:'data/waqt/waqt_dhuhr.json',asr:'data/waqt/waqt_asr.json',maghrib:'data/waqt/waqt_maghrib.json',isha:'data/waqt/waqt_isha.json'};
+  var keys = Object.keys(files);
+  Promise.all(keys.map(function(k) { return fetch(files[k]).then(function(r) { return r.ok ? r.json() : []; }).catch(function() { return []; }); }))
+    .then(function(results) {
+      var obj = {};
+      keys.forEach(function(k, i) { obj[k] = results[i]; });
+      window.WAQT_BY_PRIERE = obj;
+    });
+})();
 function _dateLocale() {
   var lang = (typeof V2_LANG !== 'undefined') ? V2_LANG : 'fr';
   return lang === 'en' ? 'en-US' : lang === 'ar' ? 'ar' : 'fr-FR';
