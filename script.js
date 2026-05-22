@@ -8064,8 +8064,17 @@ var MEDIT_PHRASES_AR = [
   '\u0623\u064E\u0646\u0652\u062A\u064E \u0645\u0627 \u0632\u0650\u0644\u0652\u062A\u064E \u0647\u064F\u0646\u0627. \u0641\u064F\u0631\u0652\u0635\u064E\u0629\u064C \u062C\u064E\u062F\u0650\u064A\u062F\u064E\u0629. \u0645\u0627\u0630\u0627 \u062A\u064E\u0641\u0652\u0639\u064E\u0644\u064F \u0628\u0650\u0647\u0627\u061F',
   '\u0634\u064E\u0647\u0650\u064A\u0642. \u0627\u0644\u0644\u0651\u064E\u0647. \u0632\u064E\u0641\u0650\u064A\u0631. \u0627\u0644\u062D\u064E\u0645\u0652\u062F\u064F \u0644\u0650\u0644\u0651\u064E\u0647. \u0645\u064F\u062C\u064E\u062F\u0651\u064E\u062F\u064B\u0627.'
 ];
+window.TAFAKKUR_POOL = null;
+(function _loadTafakkurPool() {
+  fetch('./data/waqt/tafakkur_final.json').then(function(r) { return r.ok ? r.json() : null; }).then(function(d) {
+    if (d && Array.isArray(d) && d.length > 0) window.TAFAKKUR_POOL = d;
+  }).catch(function() {});
+})();
 function _getTafakkurPool() {
   var lang = (typeof V2_LANG !== 'undefined') ? V2_LANG : 'fr';
+  if (window.TAFAKKUR_POOL && window.TAFAKKUR_POOL.length > 0) {
+    return window.TAFAKKUR_POOL.map(function(item) { return (typeof item === 'string') ? item : (item[lang] || item.fr || ''); }).filter(function(s) { return s; });
+  }
   if (lang === 'en') return MEDIT_PHRASES_EN;
   if (lang === 'ar') return MEDIT_PHRASES_AR;
   return MEDIT_PHRASES;
