@@ -8263,20 +8263,23 @@ function setTafakkurDuration(min, btn) {
 
 function _computeTafakkurEligible() {
   var firstEver = safeGetItem('niyyah_tafakkur_first_ever');
-  console.log('[Tafakkur] _computeTafakkurEligible | first_ever=' + firstEver + ' | duration=' + _tafakkurDuration + ' | remaining=' + _tafakkurRemaining);
-  if (!firstEver) {
-    console.log('[Tafakkur] >>> 1ere seance EVER → force eligible=true');
-    safeSetItem('niyyah_tafakkur_first_ever', '1');
-    safeSetItem('niyyah_tafakkur_recit_eligible', 'true');
-    console.log('[Tafakkur] >>> WRITTEN first_ever=' + safeGetItem('niyyah_tafakkur_first_ever') + ' eligible=' + safeGetItem('niyyah_tafakkur_recit_eligible'));
-    return;
-  }
   var elapsed = _tafakkurDuration - _tafakkurRemaining;
   var seuil = Math.floor(_tafakkurDuration * 0.5);
   var eligible = elapsed >= seuil;
-  console.log('[Tafakkur] elapsed=' + elapsed + 's / duration=' + _tafakkurDuration + 's | seuil50%=' + seuil + 's → eligible=' + eligible);
+  console.log('[Tafakkur] _computeTafakkurEligible | first_ever=' + firstEver + ' | elapsed=' + elapsed + 's / duration=' + _tafakkurDuration + 's | seuil50%=' + seuil + 's');
+  if (!firstEver && eligible) {
+    console.log('[Tafakkur] >>> 1ere seance EVER + seuil atteint → eligible=true, WRITE first_ever');
+    safeSetItem('niyyah_tafakkur_first_ever', '1');
+    safeSetItem('niyyah_tafakkur_recit_eligible', 'true');
+    return;
+  }
+  if (!firstEver && !eligible) {
+    console.log('[Tafakkur] >>> 1ere seance EVER mais seuil NON atteint → eligible=false, PAS de first_ever');
+    safeSetItem('niyyah_tafakkur_recit_eligible', 'false');
+    return;
+  }
+  console.log('[Tafakkur] seance suivante → eligible=' + eligible);
   safeSetItem('niyyah_tafakkur_recit_eligible', eligible ? 'true' : 'false');
-  console.log('[Tafakkur] >>> WRITTEN eligible=' + safeGetItem('niyyah_tafakkur_recit_eligible'));
 }
 function toggleTafakkurTimer() {
   if (_tafakkurRunning) {
