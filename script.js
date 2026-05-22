@@ -8297,12 +8297,17 @@ function toggleTafakkurTimer() {
 }
 
 function _findTafakkurRecit(phrase) {
-  if (!window.TAFAKKUR_Q_MAP || !window.TAFAKKUR_RECITS) return null;
+  console.log('[Tafakkur] _findTafakkurRecit | Q_MAP:', window.TAFAKKUR_Q_MAP ? Object.keys(window.TAFAKKUR_Q_MAP).length + ' entries' : 'NULL', '| RECITS:', window.TAFAKKUR_RECITS ? window.TAFAKKUR_RECITS.length + ' entries' : 'NULL');
+  if (!window.TAFAKKUR_Q_MAP || !window.TAFAKKUR_RECITS) { console.error('[Tafakkur] Q_MAP ou RECITS non charge'); return null; }
   var qId = window.TAFAKKUR_Q_MAP[phrase];
-  if (!qId) return null;
-  return window.TAFAKKUR_RECITS.find(function(r) { return r.question_id === qId; }) || null;
+  console.log('[Tafakkur] phrase lookup:', phrase ? '"' + phrase.substring(0, 60) + '..."' : 'EMPTY', '→ qId:', qId || 'NOT FOUND');
+  if (!qId) { console.error('[Tafakkur] Phrase non trouvee dans Q_MAP (pas une des 200 nouvelles questions)'); return null; }
+  var recit = window.TAFAKKUR_RECITS.find(function(r) { return r.question_id === qId; }) || null;
+  console.log('[Tafakkur] recit pour', qId, ':', recit ? 'FOUND (theme=' + recit.theme + ')' : 'NOT FOUND');
+  return recit;
 }
 function _showTafakkurRecitOverlay(recit) {
+  console.log('[Tafakkur] _showTafakkurRecitOverlay CALLED | question_id=' + recit.question_id + ' | theme=' + recit.theme + ' | texte=' + (recit.recit.texte || '').substring(0, 60) + '...');
   var existing = document.getElementById('tafakkur-recit-overlay');
   if (existing) existing.remove();
   var ov = document.createElement('div');
@@ -8334,9 +8339,11 @@ function _showTafakkurEnd() {
     el.innerHTML = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:#C8A84A;line-height:1.7;max-width:320px;margin:0 auto;">' + _tafakkurCurrentPhrase + '</div>';
     el.style.opacity = '1';
     var recit = _findTafakkurRecit(_tafakkurCurrentPhrase);
-    console.log('[Tafakkur] recit match:', recit ? recit.question_id : 'NONE', '| Q_MAP loaded:', !!window.TAFAKKUR_Q_MAP, '| RECITS loaded:', !!window.TAFAKKUR_RECITS);
     if (recit) {
+      console.log('[Tafakkur] → overlay recit dans 2s');
       setTimeout(function() { _showTafakkurRecitOverlay(recit); }, 2000);
+    } else {
+      console.error('[Tafakkur] PAS de recit pour cette phrase — seul 200/379 phrases ont un recit');
     }
   }, 400);
 }
