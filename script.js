@@ -3029,6 +3029,7 @@ function toggleItem(id, event) {
     state[id + '_mosquee'] = false;
   }
   saveState();
+  if (typeof updateMedaillonState === 'function') updateMedaillonState();
   const el = document.getElementById('rituel-item-' + id) || document.getElementById('item-' + id);
   if (el) {
     if (event) spawnRipple(el, event);
@@ -12413,17 +12414,34 @@ function _pickStableWaqt(moment) {
   safeSetItem('niyyah_sablier_history', JSON.stringify(histData));
   return idx;
 }
+function isWaqtAvailable() {
+  var prieres = ['fajr','dhuhr','asr','maghrib','isha'];
+  var s = safeParseJSON('spiritual_v2', {});
+  var lu = {};
+  try { lu = JSON.parse(safeGetItem('niyyah_waqt_lu_' + todayKey()) || '{}'); } catch(e) {}
+  for (var i = 0; i < prieres.length; i++) {
+    var p = prieres[i];
+    if (s[p] && !lu[p]) return p;
+  }
+  return null;
+}
+function markWaqtLu(priere) {
+  var key = 'niyyah_waqt_lu_' + todayKey();
+  var lu = {};
+  try { lu = JSON.parse(safeGetItem(key) || '{}'); } catch(e) {}
+  lu[priere] = true;
+  safeSetItem(key, JSON.stringify(lu));
+}
+window.isWaqtAvailable = isWaqtAvailable;
+window.markWaqtLu = markWaqtLu;
 function updateMedaillonState() {
   var med = document.getElementById('medaillon-alwaqt');
   if (!med) return;
-  var moment = getCurrentMoment();
-  var consulted = {};
-  try { consulted = JSON.parse(safeGetItem('niyyah_sablier_consulted') || '{}'); } catch(e) {}
-  var done = consulted[moment] === todayKey();
+  var available = isWaqtAvailable();
   var wasCuivre = med.classList.contains('medaillon-cuivre');
-  med.classList.toggle('medaillon-pierre', done);
-  med.classList.toggle('medaillon-cuivre', !done);
-  if (done && wasCuivre && !safeGetItem('niyyah_medaillon_explained')) {
+  med.classList.toggle('medaillon-pierre', !available);
+  med.classList.toggle('medaillon-cuivre', !!available);
+  if (!available && wasCuivre && !safeGetItem('niyyah_medaillon_explained')) {
     var ov = document.createElement('div');
     ov.className = 'wird-complete-overlay';
     ov.innerHTML = '<div class="wird-complete-card">'
