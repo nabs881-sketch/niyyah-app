@@ -8254,7 +8254,6 @@ function toggleTafakkurTimer() {
     _tafakkurInterval = setInterval(() => {
       _tafakkurRemaining--;
       updateTafakkurDisplay();
-      if (_tafakkurRemaining % 60 === 0) rotateTafakkurPhrase();
       if (_tafakkurRemaining <= 0) {
         clearInterval(_tafakkurInterval);
         _tafakkurRunning = false;
