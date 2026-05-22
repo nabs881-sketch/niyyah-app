@@ -656,8 +656,27 @@ VERDICT :
 - DOUTE : un détail semble inexact ou non vérifiable, mais pas d'erreur grave
 - ERREUR : une attribution fausse, un fait historique incorrect, ou une source inventée
 
-FORMAT (JSON strict) :
-{"verdict": "OK|DOUTE|ERREUR", "notes": "explication courte (max 50 mots)", "details": ["point 1", "point 2"]}`;
+RÈGLE ABSOLUE : tu réponds UNIQUEMENT avec un objet JSON valide, sans aucun texte avant ou après. Pas de commentaire, pas d'explication hors JSON.
+
+FORMAT DE RÉPONSE (JSON strict, rien d'autre) :
+{"verdict": "OK", "notes": "explication courte max 50 mots", "details": ["point 1", "point 2"]}
+
+verdict doit être exactement "OK", "DOUTE" ou "ERREUR".`;
+
+async function _callVerify(env, userMsg) {
+  const resp = await callAnthropic(env, {
+    model: MODEL_HAIKU,
+    max_tokens: 300,
+    temperature: 0.1,
+    system: VERIFY_PROMPT,
+    messages: [
+      { role: 'user', content: userMsg },
+      { role: 'assistant', content: '{' }
+    ]
+  });
+  const rawText = '{' + (resp.content?.[0]?.text || '');
+  return extractJSON(rawText);
+}
 
 async function handleVerify(request, env) {
   try {
@@ -672,27 +691,19 @@ SOURCES CITÉES: ${sources || 'aucune'}
 TEXTE À VÉRIFIER:
 ${texte.substring(0, 2000)}`;
 
-    const resp = await callAnthropic(env, {
-      model: MODEL_HAIKU,
-      max_tokens: 300,
-      temperature: 0.1,
-      system: VERIFY_PROMPT,
-      messages: [{ role: 'user', content: userMsg }]
-    });
-
-    const rawText = resp.content?.[0]?.text || '';
-    const parsed = extractJSON(rawText);
-
+    // Attempt 1
+    let parsed = await _callVerify(env, userMsg);
     if (parsed && parsed.verdict) {
-      return jsonResponseV2({
-        verdict: parsed.verdict,
-        notes: parsed.notes || '',
-        details: parsed.details || [],
-        entry_id: entry_id || null
-      });
+      return jsonResponseV2({ verdict: parsed.verdict, notes: parsed.notes || '', details: parsed.details || [], entry_id: entry_id || null });
     }
 
-    return jsonResponseV2({ verdict: 'DOUTE', notes: 'Réponse IA non parseable', details: [rawText.substring(0, 200)], entry_id });
+    // Retry 1
+    parsed = await _callVerify(env, userMsg);
+    if (parsed && parsed.verdict) {
+      return jsonResponseV2({ verdict: parsed.verdict, notes: parsed.notes || '', details: parsed.details || [], entry_id: entry_id || null });
+    }
+
+    return jsonResponseV2({ verdict: 'PARSE_ERROR', notes: 'JSON non parseable apres 2 tentatives', details: [], entry_id });
   } catch (err) {
     console.error('handleVerify error:', err);
     if (err.name === 'AbortError') return jsonResponseV2({ error: 'Timeout' }, 504);
