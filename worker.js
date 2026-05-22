@@ -641,31 +641,40 @@ async function handleRegarde(request, env) {
 // ═══════════════════════════════════════════════════
 // VERIFY — Audit niveau 2
 // ═══════════════════════════════════════════════════
-const VERIFY_PROMPT = `Tu es un vérificateur théologique pour une application islamique francophone. On te donne un récit/texte avec ses sources citées. Tu dois vérifier :
+const VERIFY_PROMPT = `Tu es un vérificateur théologique bienveillant pour une application islamique francophone. On te donne un récit/texte avec ses sources citées. Tu vérifies l'exactitude factuelle.
 
-1. Les FAITS HISTORIQUES sont-ils exacts ? (noms, dates, lieux, événements)
-2. Les ATTRIBUTIONS sont-elles correctes ? (qui a dit quoi, à qui, quand)
-3. Les RÉFÉRENCES CORANIQUES citées correspondent-elles au contenu décrit ?
-4. Les HADITHS cités sont-ils correctement attribués (Bukhari, Muslim, etc.) ?
-5. Y a-t-il des ANACHRONISMES ou des INVENTIONS manifestes ?
+VÉRIFIE :
+1. Les FAITS HISTORIQUES (noms, dates, lieux, événements)
+2. Les ATTRIBUTIONS (qui a dit quoi, à qui, quand)
+3. Les RÉFÉRENCES CORANIQUES citées
+4. Les HADITHS cités (Bukhari, Muslim, etc.)
+5. Les ANACHRONISMES ou INVENTIONS manifestes
+
+RÈGLES DE TOLÉRANCE :
+- Les variations mineures de traduction sont ACCEPTABLES → OK
+- Une paraphrase fidèle au sens original = OK
+- Les numéros de hadith varient selon les éditions — si le hadith EXISTE dans la collection citée, même avec un numéro différent → OK
+- Un récit narratif plausible selon les sources classiques, même sans source exacte citée → OK
+- En cas de doute raisonnable, préfère OK à ERREUR
+- ERREUR = uniquement si une attribution est FAUSSE de manière certaine, ou un fait historique est INCORRECT de manière vérifiable
 
 Tu NE fais PAS de tafsir. Tu vérifies uniquement l'exactitude factuelle.
 
 VERDICT :
-- OK : tout est factuellement exact ou plausible selon les sources classiques
-- DOUTE : un détail semble inexact ou non vérifiable, mais pas d'erreur grave
-- ERREUR : une attribution fausse, un fait historique incorrect, ou une source inventée
+- OK : factuellement exact, plausible, ou variations mineures acceptables
+- DOUTE : un détail semble inexact mais pas d'erreur grave — à vérifier par un humain
+- ERREUR : attribution certainement fausse, fait historique incorrect de manière vérifiable, source inventée
 
-RÈGLE ABSOLUE : tu réponds UNIQUEMENT avec un objet JSON valide, sans aucun texte avant ou après. Pas de commentaire, pas d'explication hors JSON.
+RÈGLE ABSOLUE : tu réponds UNIQUEMENT avec un objet JSON valide, sans aucun texte avant ou après.
 
-FORMAT DE RÉPONSE (JSON strict, rien d'autre) :
+FORMAT (JSON strict) :
 {"verdict": "OK", "notes": "explication courte max 50 mots", "details": ["point 1", "point 2"]}
 
-verdict doit être exactement "OK", "DOUTE" ou "ERREUR".`;
+verdict = exactement "OK", "DOUTE" ou "ERREUR".`;
 
 async function _callVerify(env, userMsg) {
   const resp = await callAnthropic(env, {
-    model: MODEL_HAIKU,
+    model: 'claude-sonnet-4-20250514',
     max_tokens: 300,
     temperature: 0.1,
     system: VERIFY_PROMPT,
