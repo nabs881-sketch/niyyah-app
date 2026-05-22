@@ -8134,8 +8134,8 @@ function openTafakkur() {
     _tScreen.classList.add('show');
     document.getElementById('tafakkurDotEl').style.animation = 'none';
     var hist = _getTafakkurHistory();
-    document.getElementById('tafakkurPhrase').innerHTML = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.7);line-height:1.7;margin-bottom:24px;">Tu as d\u00e9j\u00e0 fait ta halte aujourd\u2019hui.<br>Reviens demain.</div>'
-      + '<div onclick="openTafakkurArchive();closeTafakkur();" style="display:inline-block;cursor:pointer;font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);border-bottom:1px solid rgba(200,168,75,0.25);padding-bottom:2px;">Mes haltes \u2014 ' + hist.length + ' s\u00e9ance' + (hist.length > 1 ? 's' : '') + '</div>';
+    document.getElementById('tafakkurPhrase').innerHTML = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-style:italic;color:rgba(200,168,75,0.9);line-height:1.6;">Tu as d\u00e9j\u00e0 fait ta halte aujourd\u2019hui.<br>Reviens demain.</div>'
+      + '<div onclick="openTafakkurArchive();closeTafakkur();" style="display:inline-block;cursor:pointer;margin-top:48px;font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.7);border-bottom:1px solid rgba(200,168,75,0.25);padding-bottom:2px;">Mes haltes \u2014 ' + hist.length + ' s\u00e9ance' + (hist.length > 1 ? 's' : '') + '</div>';
     document.getElementById('tafakkurTimerDisplay').textContent = '';
     document.querySelectorAll('.tafakkur-timer-btn').forEach(function(b) { b.style.display = 'none'; });
     return;
