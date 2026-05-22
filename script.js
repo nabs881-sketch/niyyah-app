@@ -8081,15 +8081,72 @@ function _getTafakkurPool() {
 }
 
 let _tafakkurAudioMode = 'silence';
+var _tafakkurCurrentPhrase = '';
+function _getTafakkurHistory() {
+  var arr = [];
+  for (var i = 0; i < localStorage.length; i++) {
+    var k = localStorage.key(i);
+    if (k && k.indexOf('niyyah_tafakkur_lu_') === 0) {
+      try { var v = JSON.parse(localStorage.getItem(k)); if (v && v.date) arr.push(v); } catch(e) {}
+    }
+  }
+  arr.sort(function(a, b) { return b.date > a.date ? 1 : -1; });
+  return arr;
+}
+function _tafakkurDoneToday() {
+  return !!safeGetItem('niyyah_tafakkur_lu_' + todayKey());
+}
+function _markTafakkurDone(phrase) {
+  var data = { date: todayKey(), phrase: phrase, theme: 'tafakkur' };
+  safeSetItem('niyyah_tafakkur_lu_' + todayKey(), JSON.stringify(data));
+}
+function openTafakkurArchive() {
+  var hist = _getTafakkurHistory();
+  var existing = document.getElementById('tafakkur-archive-overlay');
+  if (existing) existing.remove();
+  var ov = document.createElement('div');
+  ov.id = 'tafakkur-archive-overlay';
+  ov.style.cssText = 'position:fixed;inset:0;z-index:9500;background:#0a0a0a;display:flex;flex-direction:column;overflow:hidden;';
+  var html = '<div style="padding:calc(var(--safe-top,0px) + 16px) 20px 12px;text-align:center;">';
+  html += '<div style="font-family:Amiri,serif;font-size:24px;color:#C8A84A;direction:rtl;margin-bottom:4px;">\u062A\u064E\u0641\u064E\u0643\u0651\u064F\u0631</div>';
+  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.6);">Mes haltes \u2014 ' + hist.length + ' s\u00e9ance' + (hist.length > 1 ? 's' : '') + '</div>';
+  html += '</div>';
+  html += '<div style="flex:1;overflow-y:auto;padding:0 20px calc(20px + var(--safe-bot,0px));-webkit-overflow-scrolling:touch;">';
+  if (hist.length === 0) {
+    html += '<div style="text-align:center;padding:40px;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.5);">Aucune halte encore.</div>';
+  } else {
+    hist.forEach(function(h) {
+      html += '<div style="padding:14px 16px;background:rgba(200,168,75,0.04);border:1px solid rgba(200,168,75,0.12);border-radius:14px;margin-bottom:8px;">';
+      html += '<div style="font-size:11px;color:rgba(200,168,75,0.5);margin-bottom:6px;">' + h.date + '</div>';
+      html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#E5E0DC;line-height:1.6;">' + (h.phrase || '').substring(0, 150) + (h.phrase && h.phrase.length > 150 ? '\u2026' : '') + '</div>';
+      html += '</div>';
+    });
+  }
+  html += '</div>';
+  html += '<button onclick="document.getElementById(\'tafakkur-archive-overlay\').remove();" style="position:absolute;top:calc(var(--safe-top,0px) + 12px);right:16px;background:none;border:none;color:#B5A685;font-size:24px;cursor:pointer;z-index:1;">\u2715</button>';
+  ov.innerHTML = html;
+  document.body.appendChild(ov);
+}
+window.openTafakkurArchive = openTafakkurArchive;
 function openTafakkur() {
   var _tScreen = document.getElementById('tafakkurScreen');
+  if (_tafakkurDoneToday()) {
+    _tScreen.classList.add('show');
+    document.getElementById('tafakkurDotEl').style.animation = 'none';
+    var hist = _getTafakkurHistory();
+    document.getElementById('tafakkurPhrase').innerHTML = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.7);line-height:1.7;margin-bottom:24px;">Tu as d\u00e9j\u00e0 fait ta halte aujourd\u2019hui.<br>Reviens demain.</div>'
+      + '<div onclick="openTafakkurArchive();closeTafakkur();" style="display:inline-block;cursor:pointer;font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);border-bottom:1px solid rgba(200,168,75,0.25);padding-bottom:2px;">Mes haltes \u2014 ' + hist.length + ' s\u00e9ance' + (hist.length > 1 ? 's' : '') + '</div>';
+    document.getElementById('tafakkurTimerDisplay').textContent = '';
+    document.querySelectorAll('.tafakkur-timer-btn').forEach(function(b) { b.style.display = 'none'; });
+    return;
+  }
   _tScreen.classList.add('show');
+  document.querySelectorAll('.tafakkur-timer-btn').forEach(function(b) { b.style.display = ''; });
   if (!_tScreen._clickBound) { _tScreen.addEventListener('click', function(e) { if (e.target === _tScreen) closeTafakkur(); }); _tScreen._clickBound = true; }
   document.getElementById('tafakkurDotEl').style.animation = 'tafakkurPulse 2.5s ease-in-out infinite';
   _tafakkurRemaining = _tafakkurDuration;
   updateTafakkurDisplay();
   rotateTafakkurPhrase();
-  // Silence par défaut — nasheed seulement si l'utilisateur l'a choisi
   if (_tafakkurAudioMode === 'nasheed') {
     if (!_tafakkurAudio) { _tafakkurAudio = new Audio('./rahatal-qulub.mp3'); _tafakkurAudio.loop = true; _tafakkurAudio.volume = 0.6; }
     _tafakkurAudio.play().catch(() => {});
@@ -8204,6 +8261,7 @@ function toggleTafakkurTimer() {
         document.getElementById('tafakkurPhrase').textContent = t('tafakkur_done');
         document.getElementById('tafakkurDotEl').style.background = '#34d962';
         if (navigator.vibrate) navigator.vibrate([100, 50, 100, 50, 200]);
+        _markTafakkurDone(_tafakkurCurrentPhrase);
       }
     }, 1000);
   }
@@ -8219,10 +8277,12 @@ function updateTafakkurDisplay() {
 function rotateTafakkurPhrase() {
   var pool = _getTafakkurPool();
   var idx = Math.floor(Math.random() * pool.length);
+  var phrase = pool[idx] || '';
+  _tafakkurCurrentPhrase = phrase;
   var el = document.getElementById('tafakkurPhrase');
   if (el) {
     el.style.opacity = '0';
-    setTimeout(function() { var phrase = pool[idx]; if (phrase.includes('<') || phrase.includes('\n') || phrase.includes('\\n')) { el.innerHTML = phrase.replace(/\\n/g, '<br>').replace(/\n/g, '<br>'); } else { el.textContent = phrase; } el.style.opacity = '1'; }, 300);
+    setTimeout(function() { if (phrase.includes('<') || phrase.includes('\n') || phrase.includes('\\n')) { el.innerHTML = phrase.replace(/\\n/g, '<br>').replace(/\n/g, '<br>'); } else { el.textContent = phrase; } el.style.opacity = '1'; }, 300);
   }
 }
 
