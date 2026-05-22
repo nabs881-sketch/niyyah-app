@@ -8266,7 +8266,6 @@ function toggleTafakkurTimer() {
   }
 }
 
-var _tafakkurEndTimer = null;
 function _showTafakkurEnd() {
   var el = document.getElementById('tafakkurPhrase');
   var timerEl = document.getElementById('tafakkurTimerDisplay');
@@ -8274,63 +8273,10 @@ function _showTafakkurEnd() {
   if (!el) return;
   el.style.opacity = '0';
   setTimeout(function() {
-    el.innerHTML = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:#C8A84A;line-height:1.7;max-width:320px;margin:0 auto;">' + _tafakkurCurrentPhrase + '</div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(255,255,255,0.35);margin-top:16px;">Si tu veux la garder\u2026</div>'
-      + '<div id="_tafEndWrite" onclick="_openTafakkurNote()" style="display:inline-block;cursor:pointer;margin-top:24px;font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.6);border-bottom:1px solid rgba(200,168,75,0.2);padding-bottom:2px;">\u2726 \u00c9crire ou parler</div>';
+    el.innerHTML = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:#C8A84A;line-height:1.7;max-width:320px;margin:0 auto;">' + _tafakkurCurrentPhrase + '</div>';
     el.style.opacity = '1';
-    _tafakkurEndTimer = setTimeout(function() { closeTafakkur(); }, 8000);
   }, 400);
 }
-function _openTafakkurNote() {
-  if (_tafakkurEndTimer) { clearTimeout(_tafakkurEndTimer); _tafakkurEndTimer = null; }
-  var el = document.getElementById('tafakkurPhrase');
-  if (!el) return;
-  var _micBtn = ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) ? '<button id="_tafMic" onclick="_tafakkurStartMic()" style="width:40px;height:40px;border-radius:50%;border:1px solid rgba(200,168,75,0.3);background:transparent;color:rgba(200,168,75,0.7);font-size:18px;cursor:pointer;flex-shrink:0;">\uD83C\uDF99</button>' : '';
-  el.innerHTML = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:12px;">' + _tafakkurCurrentPhrase.substring(0, 80) + '\u2026</div>'
-    + '<div style="display:flex;gap:10px;align-items:flex-end;max-width:320px;margin:0 auto;">'
-    + '<textarea id="_tafNote" placeholder="Ce que tu gardes\u2026" style="flex:1;min-height:60px;background:rgba(200,168,75,0.04);border:1px solid rgba(200,168,75,0.2);border-radius:12px;padding:12px;color:#E5E0DC;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;resize:none;outline:none;"></textarea>'
-    + _micBtn
-    + '</div>'
-    + '<button onclick="_saveTafakkurNote()" style="margin-top:16px;padding:10px 28px;border-radius:12px;border:none;background:#C8A84A;color:#2C2E32;font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:600;cursor:pointer;">Enregistrer</button>';
-}
-var _tafakkurRecog = null;
-function _tafakkurStartMic() {
-  var SpeechRecog = window.SpeechRecognition || window.webkitSpeechRecognition;
-  if (!SpeechRecog) return;
-  if (_tafakkurRecog) { _tafakkurRecog.stop(); _tafakkurRecog = null; var mb = document.getElementById('_tafMic'); if (mb) mb.style.background = 'transparent'; return; }
-  _tafakkurRecog = new SpeechRecog();
-  _tafakkurRecog.lang = 'fr-FR';
-  _tafakkurRecog.continuous = true;
-  _tafakkurRecog.interimResults = true;
-  var ta = document.getElementById('_tafNote');
-  var mb = document.getElementById('_tafMic');
-  if (mb) mb.style.background = 'rgba(200,168,75,0.15)';
-  _tafakkurRecog.onresult = function(e) {
-    var txt = '';
-    for (var i = 0; i < e.results.length; i++) txt += e.results[i][0].transcript;
-    if (ta) ta.value = txt;
-  };
-  _tafakkurRecog.onerror = function() { _tafakkurRecog = null; if (mb) mb.style.background = 'transparent'; };
-  _tafakkurRecog.onend = function() { _tafakkurRecog = null; if (mb) mb.style.background = 'transparent'; };
-  _tafakkurRecog.start();
-}
-function _saveTafakkurNote() {
-  if (_tafakkurRecog) { _tafakkurRecog.stop(); _tafakkurRecog = null; }
-  var ta = document.getElementById('_tafNote');
-  var note = ta ? ta.value.trim() : '';
-  if (note) {
-    var key = 'niyyah_tafakkur_lu_' + todayKey();
-    var data = {};
-    try { data = JSON.parse(safeGetItem(key) || '{}'); } catch(e) {}
-    data.note = note;
-    safeSetItem(key, JSON.stringify(data));
-  }
-  showToast('Halte enregistr\u00e9e \u2726');
-  closeTafakkur();
-}
-window._openTafakkurNote = _openTafakkurNote;
-window._tafakkurStartMic = _tafakkurStartMic;
-window._saveTafakkurNote = _saveTafakkurNote;
 function updateTafakkurDisplay() {
   const m = Math.floor(_tafakkurRemaining / 60);
   const s = _tafakkurRemaining % 60;
