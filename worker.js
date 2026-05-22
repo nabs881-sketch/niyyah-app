@@ -89,6 +89,11 @@ export default {
       return handleNiyyah(request, env);
     }
 
+    // ── Route Verify (audit niveau 2) ──
+    if (path === '/api/verify' && request.method === 'POST') {
+      return handleVerify(request, env);
+    }
+
     return jsonResponse({ error: 'Route introuvable' }, 404);
   },
 };
@@ -630,5 +635,67 @@ async function handleRegarde(request, env) {
     console.error('handleRegarde error:', err);
     if (err.name === 'AbortError') return jsonResponseV2({ error: 'Timeout' }, 504);
     return jsonResponseV2({ question: null, category: 'INDETERMINE', confidence: 0, source: 'fallback', reason: 'error' }, 502);
+  }
+}
+
+// ═══════════════════════════════════════════════════
+// VERIFY — Audit niveau 2
+// ═══════════════════════════════════════════════════
+const VERIFY_PROMPT = `Tu es un vérificateur théologique pour une application islamique francophone. On te donne un récit/texte avec ses sources citées. Tu dois vérifier :
+
+1. Les FAITS HISTORIQUES sont-ils exacts ? (noms, dates, lieux, événements)
+2. Les ATTRIBUTIONS sont-elles correctes ? (qui a dit quoi, à qui, quand)
+3. Les RÉFÉRENCES CORANIQUES citées correspondent-elles au contenu décrit ?
+4. Les HADITHS cités sont-ils correctement attribués (Bukhari, Muslim, etc.) ?
+5. Y a-t-il des ANACHRONISMES ou des INVENTIONS manifestes ?
+
+Tu NE fais PAS de tafsir. Tu vérifies uniquement l'exactitude factuelle.
+
+VERDICT :
+- OK : tout est factuellement exact ou plausible selon les sources classiques
+- DOUTE : un détail semble inexact ou non vérifiable, mais pas d'erreur grave
+- ERREUR : une attribution fausse, un fait historique incorrect, ou une source inventée
+
+FORMAT (JSON strict) :
+{"verdict": "OK|DOUTE|ERREUR", "notes": "explication courte (max 50 mots)", "details": ["point 1", "point 2"]}`;
+
+async function handleVerify(request, env) {
+  try {
+    const body = await request.json();
+    const { texte, sources, section, entry_id } = body;
+    if (!texte) return jsonResponseV2({ error: 'texte requis' }, 400);
+
+    const userMsg = `SECTION: ${section || 'inconnue'}
+ENTRY_ID: ${entry_id || 'inconnue'}
+SOURCES CITÉES: ${sources || 'aucune'}
+
+TEXTE À VÉRIFIER:
+${texte.substring(0, 2000)}`;
+
+    const resp = await callAnthropic(env, {
+      model: MODEL_HAIKU,
+      max_tokens: 300,
+      temperature: 0.1,
+      system: VERIFY_PROMPT,
+      messages: [{ role: 'user', content: userMsg }]
+    });
+
+    const rawText = resp.content?.[0]?.text || '';
+    const parsed = extractJSON(rawText);
+
+    if (parsed && parsed.verdict) {
+      return jsonResponseV2({
+        verdict: parsed.verdict,
+        notes: parsed.notes || '',
+        details: parsed.details || [],
+        entry_id: entry_id || null
+      });
+    }
+
+    return jsonResponseV2({ verdict: 'DOUTE', notes: 'Réponse IA non parseable', details: [rawText.substring(0, 200)], entry_id });
+  } catch (err) {
+    console.error('handleVerify error:', err);
+    if (err.name === 'AbortError') return jsonResponseV2({ error: 'Timeout' }, 504);
+    return jsonResponseV2({ error: 'Verify indisponible' }, 502);
   }
 }
