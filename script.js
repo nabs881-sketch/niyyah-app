@@ -8065,9 +8065,17 @@ var MEDIT_PHRASES_AR = [
   '\u0634\u064E\u0647\u0650\u064A\u0642. \u0627\u0644\u0644\u0651\u064E\u0647. \u0632\u064E\u0641\u0650\u064A\u0631. \u0627\u0644\u062D\u064E\u0645\u0652\u062F\u064F \u0644\u0650\u0644\u0651\u064E\u0647. \u0645\u064F\u062C\u064E\u062F\u0651\u064E\u062F\u064B\u0627.'
 ];
 window.TAFAKKUR_POOL = null;
+window.TAFAKKUR_RECITS = null;
+window.TAFAKKUR_Q_MAP = null;
 (function _loadTafakkurPool() {
   fetch('./data/waqt/tafakkur_final.json').then(function(r) { return r.ok ? r.json() : null; }).then(function(d) {
     if (d && Array.isArray(d) && d.length > 0) window.TAFAKKUR_POOL = d;
+  }).catch(function() {});
+  fetch('./data/waqt/tafakkur_nouvelles_questions.json').then(function(r) { return r.ok ? r.json() : null; }).then(function(d) {
+    if (d && Array.isArray(d)) { window.TAFAKKUR_Q_MAP = {}; d.forEach(function(q) { window.TAFAKKUR_Q_MAP[q.fr] = q.id; }); }
+  }).catch(function() {});
+  fetch('./data/waqt/tafakkur_recits.json').then(function(r) { return r.ok ? r.json() : null; }).then(function(d) {
+    if (d && Array.isArray(d) && d.length > 0) window.TAFAKKUR_RECITS = d;
   }).catch(function() {});
 })();
 function _getTafakkurPool() {
@@ -8285,6 +8293,28 @@ function toggleTafakkurTimer() {
   }
 }
 
+function _findTafakkurRecit(phrase) {
+  if (!window.TAFAKKUR_Q_MAP || !window.TAFAKKUR_RECITS) return null;
+  var qId = window.TAFAKKUR_Q_MAP[phrase];
+  if (!qId) return null;
+  return window.TAFAKKUR_RECITS.find(function(r) { return r.question_id === qId; }) || null;
+}
+function _showTafakkurRecitOverlay(recit) {
+  var existing = document.getElementById('tafakkur-recit-overlay');
+  if (existing) existing.remove();
+  var ov = document.createElement('div');
+  ov.id = 'tafakkur-recit-overlay';
+  ov.style.cssText = 'position:fixed;inset:0;z-index:9998;background:rgba(10,8,5,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;transition:opacity 500ms ease;';
+  var srcLabel = recit.recit.source_nom ? '\u2014 ' + recit.recit.source_nom : '';
+  ov.innerHTML = '<div style="max-width:360px;width:100%;max-height:80vh;overflow-y:auto;text-align:center;padding:32px 24px;">'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:16px;">' + (recit.theme || '') + '</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#E5E0DC;line-height:1.8;margin-bottom:24px;">' + (recit.recit.texte || '').replace(/\n/g, '<br>') + '</div>'
+    + (srcLabel ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);margin-bottom:24px;">' + srcLabel + '</div>' : '')
+    + '<button onclick="var o=document.getElementById(\'tafakkur-recit-overlay\');if(o)o.remove();closeTafakkur();" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:20px;cursor:pointer;">\u2715</button>'
+    + '</div>';
+  document.body.appendChild(ov);
+  requestAnimationFrame(function() { ov.style.opacity = '1'; });
+}
 function _showTafakkurEnd() {
   var el = document.getElementById('tafakkurPhrase');
   var timerEl = document.getElementById('tafakkurTimerDisplay');
@@ -8299,6 +8329,10 @@ function _showTafakkurEnd() {
   setTimeout(function() {
     el.innerHTML = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:#C8A84A;line-height:1.7;max-width:320px;margin:0 auto;">' + _tafakkurCurrentPhrase + '</div>';
     el.style.opacity = '1';
+    var recit = _findTafakkurRecit(_tafakkurCurrentPhrase);
+    if (recit) {
+      setTimeout(function() { _showTafakkurRecitOverlay(recit); }, 2000);
+    }
   }, 400);
 }
 function updateTafakkurDisplay() {

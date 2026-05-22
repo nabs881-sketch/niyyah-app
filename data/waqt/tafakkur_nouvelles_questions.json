@@ -1,0 +1,1002 @@
+[
+  {
+    "id": "tafakkur_new_001",
+    "theme": "mort",
+    "fr": "Tu vas mourir. Pas plus tard — un jour précis qui est déjà inscrit.\nCe jour-là, qu'est-ce que tu auras voulu faire avant ?"
+  },
+  {
+    "id": "tafakkur_new_002",
+    "theme": "mort",
+    "fr": "Si tu mourais cette nuit, est-ce que ton téléphone trahirait ta foi\nou la confirmerait ?"
+  },
+  {
+    "id": "tafakkur_new_003",
+    "theme": "mort",
+    "fr": "Tu as déjà enterré quelqu'un. Tu te souviens de ce silence après ?\nQuelqu'un l'aura un jour pour toi."
+  },
+  {
+    "id": "tafakkur_new_004",
+    "theme": "mort",
+    "fr": "Tu pleures ceux qui sont partis. Eux, ils prient peut-être pour\nque tu te réveilles vraiment avant de les rejoindre."
+  },
+  {
+    "id": "tafakkur_new_005",
+    "theme": "mort",
+    "fr": "Tu connais quelqu'un que tu n'as pas appelé depuis longtemps.\nDans six mois, l'un de vous deux peut ne plus être là."
+  },
+  {
+    "id": "tafakkur_new_006",
+    "theme": "mort",
+    "fr": "Ton corps que tu n'aimes pas — un jour, on le lavera doucement,\non l'enveloppera de blanc, on lui dira au revoir.\nComment veux-tu lui parler aujourd'hui ?"
+  },
+  {
+    "id": "tafakkur_new_007",
+    "theme": "mort",
+    "fr": "Les gens parleront de toi à ton enterrement. Toi tu seras dans\nta tombe avec tes œuvres. Lesquelles t'accompagneront ?"
+  },
+  {
+    "id": "tafakkur_new_008",
+    "theme": "mort",
+    "fr": "Tu repousses tes prières d'aujourd'hui à demain.\nMais combien de personnes ont fait pareil et n'ont pas eu demain ?"
+  },
+  {
+    "id": "tafakkur_new_009",
+    "theme": "mort",
+    "fr": "Imagine ta tombe ce soir. Pas pour t'angoisser — juste pour voir\nce qui te resterait. Combien aurais-tu apporté ?"
+  },
+  {
+    "id": "tafakkur_new_010",
+    "theme": "mort",
+    "fr": "Tu veux que tes enfants se souviennent de toi comment ?\nCe que tu fais aujourd'hui écrit cette mémoire."
+  },
+  {
+    "id": "tafakkur_new_011",
+    "theme": "mort",
+    "fr": "Il y a un mot que tu n'as pas dit à quelqu'un que tu aimes.\nEt si tu n'avais que cette semaine pour le dire ?"
+  },
+  {
+    "id": "tafakkur_new_012",
+    "theme": "mort",
+    "fr": "Ton cœur bat sans que tu lui demandes. Un jour il s'arrêtera\nsans te demander non plus. Que fais-tu pendant qu'il bat encore ?"
+  },
+  {
+    "id": "tafakkur_new_013",
+    "theme": "mort",
+    "fr": "Tu prépares ta retraite, tes vacances, ton mariage.\nQue prépares-tu pour le voyage le plus certain ?"
+  },
+  {
+    "id": "tafakkur_new_014",
+    "theme": "mort",
+    "fr": "Le linceul n'a pas de poches. Pourquoi tu accumules encore ?"
+  },
+  {
+    "id": "tafakkur_new_015",
+    "theme": "mort",
+    "fr": "Tu vas être interrogé sur ton temps — comment tu l'as passé,\ndans quoi tu l'as usé. Aujourd'hui compte dans ces heures."
+  },
+  {
+    "id": "tafakkur_new_016",
+    "theme": "mort",
+    "fr": "Si tu pouvais laisser une seule chose après toi —\npas un objet, pas de l'argent —\nqu'est-ce que tu voudrais qui survive de toi ?"
+  },
+  {
+    "id": "tafakkur_new_017",
+    "theme": "mort",
+    "fr": "Tu connais des gens morts jeunes. Tu connais des gens\nmorts vieux. Tu ne sais pas dans quelle catégorie tu seras."
+  },
+  {
+    "id": "tafakkur_new_018",
+    "theme": "mort",
+    "fr": "On t'a dit que la mort est triste. Le Prophète ﷺ\ndisait souvent : \"souvenez-vous de la destructrice des plaisirs.\"\nQu'est-ce qu'il voyait que toi tu ne vois pas encore ?"
+  },
+  {
+    "id": "tafakkur_new_019",
+    "theme": "mort",
+    "fr": "Tu as déjà été sauvé d'un accident, d'une rencontre,\nd'une décision. Tu aurais pu mourir dix fois.\nPourquoi est-ce qu'Il t'a laissé là ?"
+  },
+  {
+    "id": "tafakkur_new_020",
+    "theme": "mort",
+    "fr": "Quand tu auras quitté le monde, quelqu'un héritera de tes affaires.\nMais qui héritera de tes prières, de tes duʿāʾ secrètes,\nde ta meilleure part ?"
+  },
+  {
+    "id": "tafakkur_new_021",
+    "theme": "famille",
+    "fr": "Tes parents vieillissent pendant que tu lis ces mots.\nQuand est-ce que tu les as vraiment regardés pour la dernière fois ?"
+  },
+  {
+    "id": "tafakkur_new_022",
+    "theme": "famille",
+    "fr": "Tu as été enfant. Quelqu'un t'a nourri, lavé, veillé la nuit.\nTu as remboursé combien de ces nuits ?"
+  },
+  {
+    "id": "tafakkur_new_023",
+    "theme": "famille",
+    "fr": "Tu cries plus facilement sur ceux qui t'aiment le plus.\nPourquoi tu réserves ta douceur aux étrangers ?"
+  },
+  {
+    "id": "tafakkur_new_024",
+    "theme": "famille",
+    "fr": "Ton conjoint dort à côté de toi. C'est un dépôt, une amana.\nTu en prends soin comment, vraiment ?"
+  },
+  {
+    "id": "tafakkur_new_025",
+    "theme": "famille",
+    "fr": "Tu as un frère ou une sœur que tu vois moins qu'avant.\nAllah connaît les raisons. Connais-tu les tiennes ?"
+  },
+  {
+    "id": "tafakkur_new_026",
+    "theme": "famille",
+    "fr": "Ta mère a fait des duʿāʾ pour toi avant que tu existes.\nTu fais des duʿāʾ pour qui sans qu'il le sache ?"
+  },
+  {
+    "id": "tafakkur_new_027",
+    "theme": "famille",
+    "fr": "Tu protèges ton image sur les réseaux.\nEt ton image dans le regard de tes enfants — tu la protèges comment ?"
+  },
+  {
+    "id": "tafakkur_new_028",
+    "theme": "famille",
+    "fr": "Il y a une personne dans ta famille à qui tu en veux depuis des années.\nEt si la mort arrivait avant la réconciliation ?"
+  },
+  {
+    "id": "tafakkur_new_029",
+    "theme": "famille",
+    "fr": "Tu donnes à des inconnus. C'est bien.\nMais à ta famille — tu donnes quoi en dehors de l'argent ?"
+  },
+  {
+    "id": "tafakkur_new_030",
+    "theme": "famille",
+    "fr": "Tu te souviens de la dernière fois où tu as embrassé tes parents\nsur le front comme le Prophète ﷺ embrassait Fatima ?"
+  },
+  {
+    "id": "tafakkur_new_031",
+    "theme": "famille",
+    "fr": "Tes enfants apprennent ta foi en te regardant, pas en t'écoutant.\nQu'est-ce qu'ils voient quand tu crois être seul ?"
+  },
+  {
+    "id": "tafakkur_new_032",
+    "theme": "famille",
+    "fr": "Quelqu'un de ta famille porte une douleur sans le dire.\nTu as remarqué laquelle ? Tu as demandé ?"
+  },
+  {
+    "id": "tafakkur_new_033",
+    "theme": "famille",
+    "fr": "Le foyer que tu construis aujourd'hui sera la mémoire que\ntes enfants raconteront à leurs enfants. Quelle mémoire ?"
+  },
+  {
+    "id": "tafakkur_new_034",
+    "theme": "famille",
+    "fr": "Tu as un proche qui t'agace. Le Prophète ﷺ avait des oncles\nqui le combattaient. Lui les a aimés jusqu'à pleurer pour eux."
+  },
+  {
+    "id": "tafakkur_new_035",
+    "theme": "famille",
+    "fr": "Tu as déjà fermé une porte à un membre de ta famille.\nAllah laisse-t-Il fermée la porte qui mène à Lui ?"
+  },
+  {
+    "id": "tafakkur_new_036",
+    "theme": "famille",
+    "fr": "Tes parents diraient quoi de toi à Allah si on leur demandait ?\nEt toi à eux ?"
+  },
+  {
+    "id": "tafakkur_new_037",
+    "theme": "famille",
+    "fr": "Tu écoutes les autres pour répondre, ou pour entendre ?\nAvec tes proches, c'est lequel ?"
+  },
+  {
+    "id": "tafakkur_new_038",
+    "theme": "famille",
+    "fr": "Ton silence dans la maison pèse parfois plus que tes paroles.\nQuel silence portes-tu sans le savoir ?"
+  },
+  {
+    "id": "tafakkur_new_039",
+    "theme": "famille",
+    "fr": "Tu fais des duʿāʾ pour le Paradis. Pour qui d'autre, en plus de toi ?"
+  },
+  {
+    "id": "tafakkur_new_040",
+    "theme": "famille",
+    "fr": "Si tes parents sont vivants, tu as deux portes du Paradis ouvertes.\nTu rentres dedans, ou tu les laisses fermer toutes seules ?"
+  },
+  {
+    "id": "tafakkur_new_041",
+    "theme": "ecrans",
+    "fr": "Tu as passé combien d'heures sur ton téléphone hier ?\nSi Allah te le redemandait, tu répondrais comment ?"
+  },
+  {
+    "id": "tafakkur_new_042",
+    "theme": "ecrans",
+    "fr": "Tu scrolles pour t'endormir. Tu scrolles au réveil.\nEntre les deux, est-ce qu'Il a une place ?"
+  },
+  {
+    "id": "tafakkur_new_043",
+    "theme": "ecrans",
+    "fr": "Tu suis 500 personnes que tu ne connais pas.\nCombien de personnes que tu connais ont besoin que tu les suives ?"
+  },
+  {
+    "id": "tafakkur_new_044",
+    "theme": "ecrans",
+    "fr": "La dernière vidéo qui t'a fait rire — tu te souviens du contenu ?\nLa dernière duʿāʾ que tu as faite — tu te souviens de ses mots ?"
+  },
+  {
+    "id": "tafakkur_new_045",
+    "theme": "ecrans",
+    "fr": "Tu connais les drames des stars que tu ne croiseras jamais.\nTu ignores les drames du voisin que tu croises chaque jour."
+  },
+  {
+    "id": "tafakkur_new_046",
+    "theme": "ecrans",
+    "fr": "Tu défends en ligne des opinions que tu n'oserais pas dire en face.\nAllah lit-Il en ligne ou en face ?"
+  },
+  {
+    "id": "tafakkur_new_047",
+    "theme": "ecrans",
+    "fr": "Tu as scrollé 30 minutes en attendant le bus.\nCes 30 minutes pouvaient être un juz du Coran. Tu as choisi."
+  },
+  {
+    "id": "tafakkur_new_048",
+    "theme": "ecrans",
+    "fr": "Tu te crois informé. Mais qu'est-ce qui a changé en toi\nparce que tu sais ce que tu sais ?"
+  },
+  {
+    "id": "tafakkur_new_049",
+    "theme": "ecrans",
+    "fr": "Quand tu coupes ton wifi un dimanche, tu ressens quoi ?\nCette gêne, c'est quoi ?"
+  },
+  {
+    "id": "tafakkur_new_050",
+    "theme": "ecrans",
+    "fr": "Les notifications arrivent avant ton adhan.\nTu réponds à laquelle en premier ?"
+  },
+  {
+    "id": "tafakkur_new_051",
+    "theme": "ecrans",
+    "fr": "Tu fais défiler des images d'inconnus pendant des heures.\nLe Prophète ﷺ a dit : \"Baissez vos regards.\" Le téléphone aussi est un regard."
+  },
+  {
+    "id": "tafakkur_new_052",
+    "theme": "ecrans",
+    "fr": "Tu connais des hadiths par cœur ? Combien de stories ?\nCompare honnêtement."
+  },
+  {
+    "id": "tafakkur_new_053",
+    "theme": "ecrans",
+    "fr": "Tu compares ta vie à celle d'inconnus mis en scène.\nTu compares ta foi à qui ?"
+  },
+  {
+    "id": "tafakkur_new_054",
+    "theme": "ecrans",
+    "fr": "Si on archivait ton année écoulée en 10 minutes vidéo,\nqu'est-ce qui ressortirait ?"
+  },
+  {
+    "id": "tafakkur_new_055",
+    "theme": "ecrans",
+    "fr": "Le scroll te promet quelque chose qui n'arrive jamais.\nPourtant tu y retournes. Pourquoi cette fidélité ?"
+  },
+  {
+    "id": "tafakkur_new_056",
+    "theme": "ecrans",
+    "fr": "Tu reproches aux autres d'être superficiels.\nLa dernière fois que tu as lu un livre en entier ?"
+  },
+  {
+    "id": "tafakkur_new_057",
+    "theme": "ecrans",
+    "fr": "Tu as 47 onglets ouverts dans ta tête.\nPour le dhikr, tu en gardes lequel ?"
+  },
+  {
+    "id": "tafakkur_new_058",
+    "theme": "ecrans",
+    "fr": "Tu as souvent dit \"je n'ai pas le temps\".\nQuel est ton temps d'écran de la semaine ?"
+  },
+  {
+    "id": "tafakkur_new_059",
+    "theme": "ecrans",
+    "fr": "Tu poses ton téléphone et tu te sens nu.\nCette nudité — c'est peut-être là que tu peux Le rencontrer."
+  },
+  {
+    "id": "tafakkur_new_060",
+    "theme": "ecrans",
+    "fr": "Tu sauras répondre aux notifications du jour.\nSauras-tu répondre aux questions du Qabr ?"
+  },
+  {
+    "id": "tafakkur_new_061",
+    "theme": "argent",
+    "fr": "Tu travailles pour ta retraite. Tu prépares quel salaire\npour ta vraie longue vie ?"
+  },
+  {
+    "id": "tafakkur_new_062",
+    "theme": "argent",
+    "fr": "Tu trouves qu'il manque toujours un peu d'argent.\nÀ quel moment as-tu eu assez ?"
+  },
+  {
+    "id": "tafakkur_new_063",
+    "theme": "argent",
+    "fr": "Tu as dépensé ton argent ce mois-ci. Si Allah te demande\nle ticket de chaque dépense, tu en es fier ou gêné ?"
+  },
+  {
+    "id": "tafakkur_new_064",
+    "theme": "argent",
+    "fr": "Le café que tu as bu ce matin a coûté plus que ce que\ncertains gagnent en une journée. Qu'est-ce que ça te fait ?"
+  },
+  {
+    "id": "tafakkur_new_065",
+    "theme": "argent",
+    "fr": "Tu calcules tes dépenses. Tu calcules ta zakāt avec la même rigueur ?"
+  },
+  {
+    "id": "tafakkur_new_066",
+    "theme": "argent",
+    "fr": "Tu négocies pour un euro au marché. Tu négocies quoi pour ton ākhira ?"
+  },
+  {
+    "id": "tafakkur_new_067",
+    "theme": "argent",
+    "fr": "Tu as déjà reçu de l'argent qui ne t'appartenait pas vraiment.\nPas pris — reçu. Tu as fait quoi ?"
+  },
+  {
+    "id": "tafakkur_new_068",
+    "theme": "argent",
+    "fr": "Tu rêves de ce que tu achèterais si tu étais riche.\nEt si tu étais pauvre, qu'est-ce que tu donnerais quand même ?"
+  },
+  {
+    "id": "tafakkur_new_069",
+    "theme": "argent",
+    "fr": "Allah te donne aujourd'hui ce qu'Il te donne.\nIl sait pourquoi. Tu fais confiance à ce calcul-là ?"
+  },
+  {
+    "id": "tafakkur_new_070",
+    "theme": "argent",
+    "fr": "Tu travailles tard. Pour qui exactement ?\nEt eux, ils te voient combien ?"
+  },
+  {
+    "id": "tafakkur_new_071",
+    "theme": "argent",
+    "fr": "Une ṣadaqa secrète éteint la colère d'Allah comme l'eau éteint le feu.\nQuand est-ce que tu as donné en secret pour la dernière fois ?"
+  },
+  {
+    "id": "tafakkur_new_072",
+    "theme": "argent",
+    "fr": "Tu as un objet dans ta maison que tu n'as pas touché depuis 6 mois.\nQuelqu'un en aurait besoin maintenant."
+  },
+  {
+    "id": "tafakkur_new_073",
+    "theme": "argent",
+    "fr": "Tu vérifies que ta nourriture est ḥalāl.\nTu vérifies l'origine de l'argent qui paie cette nourriture ?"
+  },
+  {
+    "id": "tafakkur_new_074",
+    "theme": "argent",
+    "fr": "Tu envies celui qui a plus que toi. Tu oublies que mille personnes\nt'envient en ce moment précis."
+  },
+  {
+    "id": "tafakkur_new_075",
+    "theme": "argent",
+    "fr": "Quand tu as eu une grosse somme, tu as fait quoi avec ?\nLa réponse en dit plus long que tu ne crois."
+  },
+  {
+    "id": "tafakkur_new_076",
+    "theme": "argent",
+    "fr": "Tu prêtes — tu rappelles. Allah prête sans rappeler.\nTu remarques la différence ?"
+  },
+  {
+    "id": "tafakkur_new_077",
+    "theme": "argent",
+    "fr": "Tu crois que ta sécurité c'est ton compte en banque.\nDemande à ceux qui en avaient un et qui sont morts."
+  },
+  {
+    "id": "tafakkur_new_078",
+    "theme": "argent",
+    "fr": "La plus grande richesse, c'est celle du cœur — al-ghinā ghinā an-nafs.\nLe tien, il est riche ou pauvre en ce moment ?"
+  },
+  {
+    "id": "tafakkur_new_079",
+    "theme": "argent",
+    "fr": "Tu hésites à donner 5 euros à un mendiant.\nAllah donne sans compter à celui qui Le renie. Médite."
+  },
+  {
+    "id": "tafakkur_new_080",
+    "theme": "argent",
+    "fr": "Tu seras enterré dans un linceul que quelqu'un d'autre paiera.\nEt tu auras passé ta vie à courir après quoi ?"
+  },
+  {
+    "id": "tafakkur_new_081",
+    "theme": "pardon",
+    "fr": "Il y a une personne précise dans ta tête en ce moment.\nAllah l'a peut-être pardonnée. Toi ?"
+  },
+  {
+    "id": "tafakkur_new_082",
+    "theme": "pardon",
+    "fr": "Tu demandes à Allah de te pardonner.\nTu pardonnes aux autres avec la même mesure ?"
+  },
+  {
+    "id": "tafakkur_new_083",
+    "theme": "pardon",
+    "fr": "Tu as juré de ne plus parler à quelqu'un.\nAbū Bakr avait juré pareil pour Mistah. Un verset l'a fait revenir."
+  },
+  {
+    "id": "tafakkur_new_084",
+    "theme": "pardon",
+    "fr": "La rancune que tu portes pèse plus sur toi que sur l'autre.\nL'autre dort tranquille. Toi tu y penses encore."
+  },
+  {
+    "id": "tafakkur_new_085",
+    "theme": "pardon",
+    "fr": "Tu te dis : \"il ne mérite pas mon pardon.\"\nToi tu mérites Celui d'Allah ?"
+  },
+  {
+    "id": "tafakkur_new_086",
+    "theme": "pardon",
+    "fr": "Tu as blessé quelqu'un et tu ne l'as jamais reconnu.\nAllah voit. L'autre porte encore la blessure."
+  },
+  {
+    "id": "tafakkur_new_087",
+    "theme": "pardon",
+    "fr": "Tu pardonnes aux étrangers. Pourquoi pas aux proches ?"
+  },
+  {
+    "id": "tafakkur_new_088",
+    "theme": "pardon",
+    "fr": "Il y a un message que tu n'as pas envoyé depuis trop longtemps.\nTu attends quoi ? La mort de l'un de vous deux ?"
+  },
+  {
+    "id": "tafakkur_new_089",
+    "theme": "pardon",
+    "fr": "Tu as été pardonné de choses graves dont tu ne sais rien.\nAllah n'a pas tenu de comptabilité contre toi."
+  },
+  {
+    "id": "tafakkur_new_090",
+    "theme": "pardon",
+    "fr": "La personne qui t'a fait du mal — peut-être qu'elle souffrait elle-même.\nTu as cherché à comprendre, ou juste à juger ?"
+  },
+  {
+    "id": "tafakkur_new_091",
+    "theme": "pardon",
+    "fr": "Tu es fâché avec quelqu'un depuis combien de jours ?\nTrois, c'est la limite que le Prophète ﷺ a posée."
+  },
+  {
+    "id": "tafakkur_new_092",
+    "theme": "pardon",
+    "fr": "Tu portes une histoire ancienne contre tes parents.\nIls ont fait ce qu'ils pouvaient avec ce qu'ils avaient."
+  },
+  {
+    "id": "tafakkur_new_093",
+    "theme": "pardon",
+    "fr": "Tu as été trahi. C'est vrai. C'est lourd.\nMais Allah a vu — et c'est Lui qui jugera, pas toi."
+  },
+  {
+    "id": "tafakkur_new_094",
+    "theme": "pardon",
+    "fr": "Tu te fais des films sur ce que tu vas dire à celui qui t'a blessé.\nCes films, tu les diffuses devant Allah aussi ?"
+  },
+  {
+    "id": "tafakkur_new_095",
+    "theme": "pardon",
+    "fr": "Tu as oublié les bienfaits qu'on t'a faits, tu te souviens des torts.\nLe cœur a une mémoire injuste. Tu peux la corriger."
+  },
+  {
+    "id": "tafakkur_new_096",
+    "theme": "pardon",
+    "fr": "Tu pries pour ton ennemi — vraiment ? Ou juste pour\nqu'il \"comprenne\" ?"
+  },
+  {
+    "id": "tafakkur_new_097",
+    "theme": "pardon",
+    "fr": "Tu as cassé un lien et tu n'as jamais pris de nouvelles depuis.\nEt si c'était ce mois-ci la dernière occasion ?"
+  },
+  {
+    "id": "tafakkur_new_098",
+    "theme": "pardon",
+    "fr": "Tu t'en veux à toi-même depuis des années.\nAllah, Lui, t'a déjà pardonné si tu Lui as demandé."
+  },
+  {
+    "id": "tafakkur_new_099",
+    "theme": "pardon",
+    "fr": "Le pardon ne dit pas \"ce que tu as fait était bien.\"\nLe pardon dit \"je te libère de la dette pour mieux respirer.\""
+  },
+  {
+    "id": "tafakkur_new_100",
+    "theme": "pardon",
+    "fr": "La dernière fois que tu as pardonné en secret, tu as ressenti quoi ?\nCette légèreté — Allah l'a déjà offerte. Pourquoi tu la refuses ?"
+  },
+  {
+    "id": "tafakkur_new_101",
+    "theme": "priere",
+    "fr": "Tu as prié ce matin. Tu te souviens d'une seule pensée\nqui a traversé ton esprit pendant ?"
+  },
+  {
+    "id": "tafakkur_new_102",
+    "theme": "priere",
+    "fr": "Tu pries face à la Kaʿba. Mais ton cœur, il fait face à quoi ?"
+  },
+  {
+    "id": "tafakkur_new_103",
+    "theme": "priere",
+    "fr": "Tu fais ta prière en 3 minutes pour avoir le temps de scroller.\nAllah a-t-Il aussi 3 minutes pour toi ?"
+  },
+  {
+    "id": "tafakkur_new_104",
+    "theme": "priere",
+    "fr": "Tu rates une réunion : tu paniques. Tu rates une prière : tu rattraperas.\nCes deux paniques disent quelque chose de ton ordre intérieur."
+  },
+  {
+    "id": "tafakkur_new_105",
+    "theme": "priere",
+    "fr": "La prière, c'est une rencontre. Tu rencontres qui exactement\nquand tu te tiens debout ?"
+  },
+  {
+    "id": "tafakkur_new_106",
+    "theme": "priere",
+    "fr": "Tu pries pour la forme. Et si la forme nourrissait l'âme\nmême sans que tu le saches ? Continue."
+  },
+  {
+    "id": "tafakkur_new_107",
+    "theme": "priere",
+    "fr": "Bilāl pleurait pour la prière qui venait. Toi tu soupires.\nVous priez le même Allah ?"
+  },
+  {
+    "id": "tafakkur_new_108",
+    "theme": "priere",
+    "fr": "Tu poses ton front sur le tapis. C'est le moment où tu es\nle plus proche d'Allah. Tu y penses à ce moment-là ?"
+  },
+  {
+    "id": "tafakkur_new_109",
+    "theme": "priere",
+    "fr": "Tu fais la prière du Fajr en retard \"exceptionnellement\".\nCombien d'exceptions cette semaine ?"
+  },
+  {
+    "id": "tafakkur_new_110",
+    "theme": "priere",
+    "fr": "Tu te promets de prier mieux demain. Demain devient aujourd'hui\nsans que tu le remarques. C'est aujourd'hui qui meurt."
+  },
+  {
+    "id": "tafakkur_new_111",
+    "theme": "priere",
+    "fr": "Tu pries dans ta chambre fermée. Tu te tiens comme ça\nsi quelqu'un te voyait ? Le ḥusn al-niyyah commence là."
+  },
+  {
+    "id": "tafakkur_new_112",
+    "theme": "priere",
+    "fr": "Tu connais la Fātiḥa par cœur. Tu connais son sens dans ton cœur ?\nLa réciter sans comprendre, c'est une porte fermée à clé."
+  },
+  {
+    "id": "tafakkur_new_113",
+    "theme": "priere",
+    "fr": "Tu pries pour qu'Allah t'aide. Mais Lui, Il attend autre chose\nde toi qu'une liste de demandes."
+  },
+  {
+    "id": "tafakkur_new_114",
+    "theme": "priere",
+    "fr": "Tu fais wuḍūʾ rapidement. Chaque goutte qui tombe\nemporte un péché. Tu as voulu qu'elle emporte quoi ?"
+  },
+  {
+    "id": "tafakkur_new_115",
+    "theme": "priere",
+    "fr": "Tu pries cinq fois par jour. Cinq rendez-vous.\nSi c'était avec quelqu'un que tu aimes, tu arriverais en retard ?"
+  },
+  {
+    "id": "tafakkur_new_116",
+    "theme": "priere",
+    "fr": "Tu te lèves pour la prière fatigué. ʿUmar disait :\n\"Le sommeil que je préfère, c'est celui qui suit le tahajjud.\""
+  },
+  {
+    "id": "tafakkur_new_117",
+    "theme": "priere",
+    "fr": "Tu pries vite. Tu manges lentement. Compare la valeur que\ntu donnes à chacun. Et corrige."
+  },
+  {
+    "id": "tafakkur_new_118",
+    "theme": "priere",
+    "fr": "Pendant le rukūʿ, tu dois dire \"Subḥāna Rabbī al-ʿaẓīm\".\nTu le dis comment quand tu es seul ?"
+  },
+  {
+    "id": "tafakkur_new_119",
+    "theme": "priere",
+    "fr": "La prière empêche la turpitude — c'est le Coran qui le dit.\nSi la tienne ne change rien en toi, demande-toi ce qui manque."
+  },
+  {
+    "id": "tafakkur_new_120",
+    "theme": "priere",
+    "fr": "Tu pries pour la dernière fois ce jour-là. Tu ne le sais pas.\nComment tu prierais ta dernière prière si tu savais ?"
+  },
+  {
+    "id": "tafakkur_new_121",
+    "theme": "solitude",
+    "fr": "Personne ne te voit en ce moment. Allah te voit toujours.\nCette différence — tu la sens ou tu l'oublies ?"
+  },
+  {
+    "id": "tafakkur_new_122",
+    "theme": "solitude",
+    "fr": "Tu fais des choses dans le secret que tu ne ferais pas en public.\nLa pudeur sociale, tu l'as. La pudeur devant Allah, où est-elle ?"
+  },
+  {
+    "id": "tafakkur_new_123",
+    "theme": "solitude",
+    "fr": "Tu te crois différent quand tu es seul.\nAllah voit que tu es exactement le même."
+  },
+  {
+    "id": "tafakkur_new_124",
+    "theme": "solitude",
+    "fr": "Tu pries quand on te voit. Tu pries la nuit aussi ?\nLe secret de ta foi est dans la deuxième réponse."
+  },
+  {
+    "id": "tafakkur_new_125",
+    "theme": "solitude",
+    "fr": "Personne ne sait que tu jeûnes ce lundi-jeudi.\nC'est le secret le plus puissant que tu portes."
+  },
+  {
+    "id": "tafakkur_new_126",
+    "theme": "solitude",
+    "fr": "Tu as fait une bonne action ce mois-ci que personne ne sait.\nGarde-la. C'est ton trésor."
+  },
+  {
+    "id": "tafakkur_new_127",
+    "theme": "solitude",
+    "fr": "Tu utilises l'apparence pour cacher ce que tu es vraiment.\nAllah, Lui, voit derrière le masque. Il t'aime quand même."
+  },
+  {
+    "id": "tafakkur_new_128",
+    "theme": "solitude",
+    "fr": "Personne ne saura cette mauvaise pensée qui vient de te traverser.\nAllah l'a su. Et Il a déjà tendu Sa main vers toi."
+  },
+  {
+    "id": "tafakkur_new_129",
+    "theme": "solitude",
+    "fr": "Tu agis bien quand on te regarde.\nTu agis comment quand seul Allah te regarde ?"
+  },
+  {
+    "id": "tafakkur_new_130",
+    "theme": "solitude",
+    "fr": "Tu prends soin de ton apparence pour les autres.\nDe ton intérieur — pour qui ?"
+  },
+  {
+    "id": "tafakkur_new_131",
+    "theme": "solitude",
+    "fr": "L'iḥsān, c'est adorer Allah comme si tu Le voyais.\nTu adores comme on regarde un écran : distrait."
+  },
+  {
+    "id": "tafakkur_new_132",
+    "theme": "solitude",
+    "fr": "Une duʿāʾ secrète, faite dans la nuit pour quelqu'un d'autre,\nsans que personne ne le sache — c'est une force que tu ignores."
+  },
+  {
+    "id": "tafakkur_new_133",
+    "theme": "solitude",
+    "fr": "Tu pleures parfois la nuit. Allah connaît la cause exacte.\nAucune larme n'est perdue chez Lui."
+  },
+  {
+    "id": "tafakkur_new_134",
+    "theme": "solitude",
+    "fr": "Tu as un péché caché que tu portes depuis longtemps.\nAllah l'a déjà couvert. Demande qu'Il l'efface."
+  },
+  {
+    "id": "tafakkur_new_135",
+    "theme": "solitude",
+    "fr": "Tu reproches aux gens leur hypocrisie.\nLa tienne, devant Allah — tu la regardes en face ?"
+  },
+  {
+    "id": "tafakkur_new_136",
+    "theme": "solitude",
+    "fr": "Tu as eu une pensée généreuse que tu n'as pas suivie.\nAllah l'a comptée comme acte. Mais tu aurais pu la doubler."
+  },
+  {
+    "id": "tafakkur_new_137",
+    "theme": "solitude",
+    "fr": "Tu es seul dans une pièce. Tu fais quoi maintenant ?\nCette réponse, c'est qui tu es vraiment."
+  },
+  {
+    "id": "tafakkur_new_138",
+    "theme": "solitude",
+    "fr": "On vit avec deux foules : celle des hommes, celle des anges.\nÀ laquelle tu fais le plus attention ?"
+  },
+  {
+    "id": "tafakkur_new_139",
+    "theme": "solitude",
+    "fr": "Allah ne regarde pas vos corps ni vos visages — Il regarde vos cœurs.\nSi Il regardait le tien en ce moment, Il verrait quoi ?"
+  },
+  {
+    "id": "tafakkur_new_140",
+    "theme": "solitude",
+    "fr": "Tu pries pour être un bon musulman aux yeux des gens.\nEt si tu priais juste pour être un musulman aux yeux d'Allah ?"
+  },
+  {
+    "id": "tafakkur_new_141",
+    "theme": "epreuves",
+    "fr": "Tu fais une duʿāʾ depuis des années sans réponse.\nEt si la réponse, c'était : pas maintenant — ou : pas ceci ?"
+  },
+  {
+    "id": "tafakkur_new_142",
+    "theme": "epreuves",
+    "fr": "Tu pries pour la patience. Allah envoie ce qui te demande de la patience.\nTu te plains."
+  },
+  {
+    "id": "tafakkur_new_143",
+    "theme": "epreuves",
+    "fr": "Cette douleur que tu portes en ce moment — qu'est-ce qu'elle t'apprend\nsur toi que tu ne savais pas il y a un an ?"
+  },
+  {
+    "id": "tafakkur_new_144",
+    "theme": "epreuves",
+    "fr": "Tu te demandes pourquoi cette épreuve t'arrive.\nYūsuf au fond du puits — il a posé la même question.\nRéponse : 30 ans plus tard, depuis le trône d'Égypte."
+  },
+  {
+    "id": "tafakkur_new_145",
+    "theme": "epreuves",
+    "fr": "Tu cherches à comprendre Allah avec ta tête.\nEt si Lui te comprenait avec un autre instrument ?"
+  },
+  {
+    "id": "tafakkur_new_146",
+    "theme": "epreuves",
+    "fr": "Tu portes une croix que personne ne voit.\nAllah la voit. Et Il a déjà préparé l'allègement."
+  },
+  {
+    "id": "tafakkur_new_147",
+    "theme": "epreuves",
+    "fr": "Tu as prié pour être protégé. Tu n'as jamais su de quoi.\nCompte tes bénédictions invisibles."
+  },
+  {
+    "id": "tafakkur_new_148",
+    "theme": "epreuves",
+    "fr": "La perte que tu as subie t'a appris quoi sur la valeur des choses ?\nTu valorisais quoi avant. Tu valorises quoi maintenant."
+  },
+  {
+    "id": "tafakkur_new_149",
+    "theme": "epreuves",
+    "fr": "Allah éprouve ceux qu'Il aime. Si Il t'éprouve fort,\nqu'est-ce que ça dit de ce qu'Il a vu en toi ?"
+  },
+  {
+    "id": "tafakkur_new_150",
+    "theme": "epreuves",
+    "fr": "Tu accuses Allah du mal qui t'est arrivé.\nTu Le remercies pour tout le bien qui n'arrive jamais aux autres ?"
+  },
+  {
+    "id": "tafakkur_new_151",
+    "theme": "epreuves",
+    "fr": "Tu as connu pire et tu as survécu. Allah l'a fait pour toi avant.\nIl le fera encore."
+  },
+  {
+    "id": "tafakkur_new_152",
+    "theme": "epreuves",
+    "fr": "Tu ne comprends pas pourquoi cette personne s'en va.\nPeut-être qu'elle te coûtait plus qu'elle ne te donnait."
+  },
+  {
+    "id": "tafakkur_new_153",
+    "theme": "epreuves",
+    "fr": "Tu pleures dans la nuit. Le Prophète ﷺ pleurait pour sa communauté.\nLa douleur peut être une forme de prière."
+  },
+  {
+    "id": "tafakkur_new_154",
+    "theme": "epreuves",
+    "fr": "Tu attends que la situation change.\nEt si c'était toi qui devais changer dedans ?"
+  },
+  {
+    "id": "tafakkur_new_155",
+    "theme": "epreuves",
+    "fr": "Allah n'éprouve pas une âme au-delà de sa capacité — Coran 2:286.\nTu es donc capable. C'est Sa parole, pas la tienne."
+  },
+  {
+    "id": "tafakkur_new_156",
+    "theme": "epreuves",
+    "fr": "Cette épreuve te paraît injuste. Allah est le Juste.\nUne de ces deux affirmations est forcément fausse. Laquelle ?"
+  },
+  {
+    "id": "tafakkur_new_157",
+    "theme": "epreuves",
+    "fr": "Tu portes cette douleur depuis trop longtemps.\nPose-la — Il porte tout pour toi. Pose-la vraiment."
+  },
+  {
+    "id": "tafakkur_new_158",
+    "theme": "epreuves",
+    "fr": "Si on te disait : \"10 ans de cette épreuve = Paradis.\"\nTu signerais ? Allah te demande peut-être moins."
+  },
+  {
+    "id": "tafakkur_new_159",
+    "theme": "epreuves",
+    "fr": "La nuit la plus sombre du Prophète ﷺ, ce fut Ṭāʾif.\nLe sang dans les chaussures. Et après — l'Hijra, la victoire."
+  },
+  {
+    "id": "tafakkur_new_160",
+    "theme": "epreuves",
+    "fr": "Tu demandes à Allah de t'épargner. Il te demande de Lui faire confiance.\nTu choisis quoi ?"
+  },
+  {
+    "id": "tafakkur_new_161",
+    "theme": "corps",
+    "fr": "Ton cœur a battu 100 000 fois aujourd'hui sans que tu lui demandes.\nQui le commande ?"
+  },
+  {
+    "id": "tafakkur_new_162",
+    "theme": "corps",
+    "fr": "Tu as vu des images aujourd'hui. Tu n'as pas remercié pour tes yeux.\nCombien d'aveugles auraient donné cher pour ta journée ?"
+  },
+  {
+    "id": "tafakkur_new_163",
+    "theme": "corps",
+    "fr": "Tu te plains de ton corps. Quelqu'un en chambre 314 d'un hôpital\nprie pour avoir le tien."
+  },
+  {
+    "id": "tafakkur_new_164",
+    "theme": "corps",
+    "fr": "Ce souffle que tu prends maintenant — tu ne l'as pas demandé.\nCombien en restent ? Personne ne sait."
+  },
+  {
+    "id": "tafakkur_new_165",
+    "theme": "corps",
+    "fr": "Ton oreille perçoit en ce moment des sons que tu ignores.\nTu as remercié pour ça ?"
+  },
+  {
+    "id": "tafakkur_new_166",
+    "theme": "corps",
+    "fr": "Tu vis dans 37 000 milliards de cellules synchronisées.\nUne seule désaccordée — c'est la maladie. Tu as dit Alhamdulillah ?"
+  },
+  {
+    "id": "tafakkur_new_167",
+    "theme": "corps",
+    "fr": "Tu marches sur tes pieds sans y penser. Demain ils peuvent ne plus marcher.\nAujourd'hui ils te portent. Tu leur as dit merci ?"
+  },
+  {
+    "id": "tafakkur_new_168",
+    "theme": "corps",
+    "fr": "Ta mémoire fonctionne. Tu te souviens du chemin de ton enfance.\nIl y a des gens qui ne se souviennent même plus de leur prénom."
+  },
+  {
+    "id": "tafakkur_new_169",
+    "theme": "corps",
+    "fr": "Tu manges de la nourriture née de la terre, transformée par le soleil,\ntransportée par des inconnus. Combien de mains derrière une bouchée ?"
+  },
+  {
+    "id": "tafakkur_new_170",
+    "theme": "corps",
+    "fr": "Tu respires sans effort. Mais regarde quelqu'un sous oxygène\net tu verras combien d'efforts cachés dans ton \"sans effort\"."
+  },
+  {
+    "id": "tafakkur_new_171",
+    "theme": "corps",
+    "fr": "L'eau qui descend en toi maintenant a traversé des nuages.\nAvant cela, des mers. Avant cela, des volcans. C'est ton intérieur."
+  },
+  {
+    "id": "tafakkur_new_172",
+    "theme": "corps",
+    "fr": "Tu te lèves sans penser. Demain, peut-être que se lever sera\nune victoire. Aujourd'hui c'est encore une grâce."
+  },
+  {
+    "id": "tafakkur_new_173",
+    "theme": "corps",
+    "fr": "Ta peau te protège, ta langue te nourrit, tes mains te servent.\nTu paies tout ce personnel comment ?"
+  },
+  {
+    "id": "tafakkur_new_174",
+    "theme": "corps",
+    "fr": "Tu te regardes dans le miroir et tu n'aimes pas ce que tu vois.\nAllah t'a façonné — Al-Muṣawwir. Tu critiques Son ouvrage ?"
+  },
+  {
+    "id": "tafakkur_new_175",
+    "theme": "corps",
+    "fr": "Ton sommeil cette nuit n'était pas garanti. Tu te réveilles.\nC'est la première résurrection de la journée."
+  },
+  {
+    "id": "tafakkur_new_176",
+    "theme": "corps",
+    "fr": "Tu utilises ton corps pour des choses inutiles, voire nuisibles.\nLe Jour du Jugement, tes membres témoigneront contre toi ou pour toi ?"
+  },
+  {
+    "id": "tafakkur_new_177",
+    "theme": "corps",
+    "fr": "Une seule petite douleur peut t'empêcher de dormir.\nCompte les nuits où tu as dormi sans douleur. Tu remercies ?"
+  },
+  {
+    "id": "tafakkur_new_178",
+    "theme": "corps",
+    "fr": "Tu existes sur 8 milliards d'humains. Ton visage est unique.\nPersonne — jamais — n'aura le tien. Qui a tenu le pinceau ?"
+  },
+  {
+    "id": "tafakkur_new_179",
+    "theme": "corps",
+    "fr": "Le sang circule en toi à 5 litres par minute, sans pause, sans bruit.\nTu n'as jamais à le commander. Quelqu'un veille pour toi."
+  },
+  {
+    "id": "tafakkur_new_180",
+    "theme": "corps",
+    "fr": "Ton corps est un dépôt. Un jour tu le rendras.\nTu le rends comment ? Usé bien ou usé mal ?"
+  },
+  {
+    "id": "tafakkur_new_181",
+    "theme": "compagnons",
+    "fr": "Le Prophète ﷺ raccommodait ses propres sandales.\nToi, tu as quoi à raccommoder dans ton humilité aujourd'hui ?"
+  },
+  {
+    "id": "tafakkur_new_182",
+    "theme": "compagnons",
+    "fr": "Khadīja a cru en lui quand personne ne croyait.\nQui dans ta vie a cru en toi le premier ? Tu lui as fait duʿāʾ ?"
+  },
+  {
+    "id": "tafakkur_new_183",
+    "theme": "compagnons",
+    "fr": "Abū Bakr a tout donné — toute sa fortune. Le Prophète ﷺ\nlui demanda : \"Que reste-t-il pour ta famille ?\"\nIl répondit : \"Allah et Son Messager.\"\nToi tu donnes combien de pourcent ?"
+  },
+  {
+    "id": "tafakkur_new_184",
+    "theme": "compagnons",
+    "fr": "ʿUmar pleurait de craindre Allah malgré son rang.\nToi tu pleures pour quelle raison la plupart du temps ?"
+  },
+  {
+    "id": "tafakkur_new_185",
+    "theme": "compagnons",
+    "fr": "ʿUthmān finançait des armées entières.\nTu finances quoi de durable au-delà de ton confort ?"
+  },
+  {
+    "id": "tafakkur_new_186",
+    "theme": "compagnons",
+    "fr": "ʿAlī dormit à la place du Prophète ﷺ la nuit où les épées\nattendaient à la porte. Toi tu prends quel risque pour ta foi ?"
+  },
+  {
+    "id": "tafakkur_new_187",
+    "theme": "compagnons",
+    "fr": "Bilāl, esclave torturé, ne reniait jamais : Aḥad, Aḥad.\nToi, qu'est-ce qui te fait renier — la moquerie ? la fatigue ?"
+  },
+  {
+    "id": "tafakkur_new_188",
+    "theme": "compagnons",
+    "fr": "Khabbāb a vu sa peau brûler sur le sable.\nLe Prophète ﷺ lui a dit : \"Vous êtes pressés.\" Toi aussi tu es pressé ?"
+  },
+  {
+    "id": "tafakkur_new_189",
+    "theme": "compagnons",
+    "fr": "Salmān al-Fārisī a cherché la vérité de pays en pays, à pied.\nTu cherches encore quelque chose, ou tu te contentes ?"
+  },
+  {
+    "id": "tafakkur_new_190",
+    "theme": "compagnons",
+    "fr": "Le Prophète ﷺ riait, jouait avec ses enfants, courait avec ʿĀʾisha.\nTu joues avec qui dans ta vie ?"
+  },
+  {
+    "id": "tafakkur_new_191",
+    "theme": "compagnons",
+    "fr": "Anas a servi le Prophète ﷺ 10 ans. Jamais une réprimande.\nToi tu sers qui sans rien attendre en retour ?"
+  },
+  {
+    "id": "tafakkur_new_192",
+    "theme": "compagnons",
+    "fr": "Umm Sulaym n'a pas pleuré quand son fils est mort —\nelle attendait que son mari rentre. Tu portes ta douleur comment ?"
+  },
+  {
+    "id": "tafakkur_new_193",
+    "theme": "compagnons",
+    "fr": "Yūnus dans le ventre du poisson, dans les ténèbres.\nLā ilāha illā Anta, Subḥānaka — tu y a recours quand ?"
+  },
+  {
+    "id": "tafakkur_new_194",
+    "theme": "compagnons",
+    "fr": "Maryam donne naissance seule, sous un palmier. Allah lui dit :\n\"Secoue le tronc, il en tombera des dattes fraîches.\" Tu secoues quoi ?"
+  },
+  {
+    "id": "tafakkur_new_195",
+    "theme": "compagnons",
+    "fr": "Ibrāhīm a vieilli avant d'avoir un fils. Patience longue.\nTu attends quoi en ce moment qui te paraît trop long ?"
+  },
+  {
+    "id": "tafakkur_new_196",
+    "theme": "compagnons",
+    "fr": "Mūsā a fui, gardé des troupeaux 10 ans, puis est revenu en mission.\nTa période \"berger silencieux\" — c'est peut-être maintenant."
+  },
+  {
+    "id": "tafakkur_new_197",
+    "theme": "compagnons",
+    "fr": "Sumayya, première martyre de l'islam. Elle a mille ans d'avance sur toi.\nTu honores son sacrifice en restant musulman comment ?"
+  },
+  {
+    "id": "tafakkur_new_198",
+    "theme": "compagnons",
+    "fr": "Le Prophète ﷺ n'a jamais frappé qui que ce soit, sauf au combat.\nTu maîtrises ta main, ta langue, ton regard ?"
+  },
+  {
+    "id": "tafakkur_new_199",
+    "theme": "compagnons",
+    "fr": "Ḥamza a été tué et son corps mutilé. Le Prophète ﷺ a pleuré.\nMais il a interdit la vengeance excessive. Tu sais retenir ta colère ?"
+  },
+  {
+    "id": "tafakkur_new_200",
+    "theme": "compagnons",
+    "fr": "Le Prophète ﷺ rentrait chez lui en servant sa famille.\nLe foyer est une ibādah, pas un repos. Tu rentres comment chez toi ?"
+  }
+]
