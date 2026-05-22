@@ -8254,12 +8254,15 @@ function setTafakkurDuration(min, btn) {
 
 function _computeTafakkurEligible() {
   if (!safeGetItem('niyyah_tafakkur_first_ever')) {
+    console.log('[Tafakkur] 1ere seance ever — force eligible=true');
     safeSetItem('niyyah_tafakkur_first_ever', '1');
     safeSetItem('niyyah_tafakkur_recit_eligible', 'true');
+    console.log('[Tafakkur] first_ever=' + safeGetItem('niyyah_tafakkur_first_ever') + ' eligible=' + safeGetItem('niyyah_tafakkur_recit_eligible'));
     return;
   }
   var elapsed = _tafakkurDuration - _tafakkurRemaining;
   var eligible = elapsed >= _tafakkurDuration * 0.5;
+  console.log('[Tafakkur] elapsed=' + elapsed + '/' + _tafakkurDuration + ' (50%=' + Math.floor(_tafakkurDuration * 0.5) + ') → eligible=' + eligible);
   safeSetItem('niyyah_tafakkur_recit_eligible', eligible ? 'true' : 'false');
 }
 function toggleTafakkurTimer() {
@@ -8321,6 +8324,7 @@ function _showTafakkurEnd() {
   if (timerEl) timerEl.textContent = '';
   if (!el) return;
   var eligible = safeGetItem('niyyah_tafakkur_recit_eligible') === 'true';
+  console.log('[Tafakkur] _showTafakkurEnd eligible=' + eligible + ' phrase="' + _tafakkurCurrentPhrase.substring(0, 50) + '..."');
   if (!eligible) {
     closeTafakkur();
     return;
@@ -8330,6 +8334,7 @@ function _showTafakkurEnd() {
     el.innerHTML = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:#C8A84A;line-height:1.7;max-width:320px;margin:0 auto;">' + _tafakkurCurrentPhrase + '</div>';
     el.style.opacity = '1';
     var recit = _findTafakkurRecit(_tafakkurCurrentPhrase);
+    console.log('[Tafakkur] recit match:', recit ? recit.question_id : 'NONE', '| Q_MAP loaded:', !!window.TAFAKKUR_Q_MAP, '| RECITS loaded:', !!window.TAFAKKUR_RECITS);
     if (recit) {
       setTimeout(function() { _showTafakkurRecitOverlay(recit); }, 2000);
     }
@@ -11767,7 +11772,7 @@ function v2OpenSettings() {
   sheet.id = 'v2-settings-sheet';
   sheet.style.cssText = 'position:fixed;inset:0;background:rgba(10,10,10,0.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:3000;display:flex;align-items:flex-end;justify-content:center;' + (window._reducedMotion ? '' : 'animation:backdropV2 0.3s ease forwards;');
   const ramadanActive = typeof ramadanState !== 'undefined' && ramadanState.active;
-  const debugSection = NIYYAH_DEBUG ? '<div style="margin-top:14px;background:#1a1a1a;border:1px solid rgba(255,255,255,0.05);border-radius:12px;padding:16px;"><div style="font-size:12px;letter-spacing:0.28em;color:rgba(255,255,255,0.55);text-transform:uppercase;font-family:Cormorant Garamond,serif;margin-bottom:10px;text-align:center;">🔧 DEBUG</div><button onclick="safeSetItem(\'niyyah_regarde_available_today\',\'true\');showToast(\'Regarde active\');document.getElementById(\'v2-settings-sheet\').remove();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);font-size:12px;cursor:pointer;margin-bottom:8px;">[DEBUG] Activer Regarde</button><button onclick="document.getElementById(\'v2-settings-sheet\').remove();regardeOpen();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);font-size:12px;cursor:pointer;">[DEBUG] Lancer Regarde maintenant</button><button onclick="document.getElementById(\'v2-settings-sheet\').remove();openFinJournee();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);font-size:12px;cursor:pointer;margin-top:8px;">[DEBUG] Forcer Fin de Journée</button></div>' : '';
+  const debugSection = NIYYAH_DEBUG ? '<div style="margin-top:14px;background:#1a1a1a;border:1px solid rgba(255,255,255,0.05);border-radius:12px;padding:16px;"><div style="font-size:12px;letter-spacing:0.28em;color:rgba(255,255,255,0.55);text-transform:uppercase;font-family:Cormorant Garamond,serif;margin-bottom:10px;text-align:center;">🔧 DEBUG</div><button onclick="safeSetItem(\'niyyah_regarde_available_today\',\'true\');showToast(\'Regarde active\');document.getElementById(\'v2-settings-sheet\').remove();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);font-size:12px;cursor:pointer;margin-bottom:8px;">[DEBUG] Activer Regarde</button><button onclick="document.getElementById(\'v2-settings-sheet\').remove();regardeOpen();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);font-size:12px;cursor:pointer;">[DEBUG] Lancer Regarde maintenant</button><button onclick="document.getElementById(\'v2-settings-sheet\').remove();openFinJournee();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);font-size:12px;cursor:pointer;margin-top:8px;">[DEBUG] Forcer Fin de Journée</button><button onclick="localStorage.removeItem(\'niyyah_tafakkur_first_ever\');localStorage.removeItem(\'niyyah_tafakkur_recit_eligible\');localStorage.removeItem(\'niyyah_tafakkur_lu_\'+todayKey());showToast(\'Tafakkur reset\');document.getElementById(\'v2-settings-sheet\').remove();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);font-size:12px;cursor:pointer;margin-top:8px;">[DEBUG] Reset Tafakkur (1ere seance)</button></div>' : '';
   sheet.innerHTML = `
     <div style="width:100%;max-width:480px;max-height:calc(100vh - env(safe-area-inset-top,0px));overflow-y:auto;background:#111;border-radius:22px 22px 0 0;padding:calc(env(safe-area-inset-top,0px) + 26px) 22px calc(32px + env(safe-area-inset-bottom));border-top:1px solid rgba(212,175,55,0.14);animation:sheetV2 0.4s cubic-bezier(0.23,1,0.32,1) forwards;direction:${T.dir};">
       <div style="width:38px;height:3px;background:rgba(255,255,255,0.1);border-radius:2px;margin:0 auto 22px;"></div>
