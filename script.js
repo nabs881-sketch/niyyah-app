@@ -8240,10 +8240,27 @@ function setTafakkurAudio(mode, btn) {
   }
 }
 
-function closeTafakkur() {
-  if (_tafakkurRunning && _tafakkurDuration > 0) _computeTafakkurEligible();
+function closeTafakkur(forceClose) {
+  console.log('[Tafakkur] closeTafakkur called | running=' + _tafakkurRunning + ' | remaining=' + _tafakkurRemaining + ' | forceClose=' + !!forceClose);
+  // Si timer en cours et pas force → compute eligibilite et montrer fin si eligible
+  if (!forceClose && _tafakkurRunning && _tafakkurDuration > 0) {
+    clearInterval(_tafakkurInterval); _tafakkurInterval = null;
+    _tafakkurRunning = false;
+    _computeTafakkurEligible();
+    var eligible = safeGetItem('niyyah_tafakkur_recit_eligible') === 'true';
+    if (eligible) {
+      console.log('[Tafakkur] eligible=true apres fermeture anticipee → _showTafakkurEnd');
+      _markTafakkurDone(_tafakkurCurrentPhrase);
+      _showTafakkurEnd();
+      return;
+    }
+    console.log('[Tafakkur] eligible=false → fermeture normale');
+  }
+  var existing = document.getElementById('tafakkur-recit-overlay');
+  if (existing) existing.remove();
   document.getElementById('tafakkurScreen').classList.remove('show');
   document.getElementById('tafakkurDotEl').style.animation = 'none';
+  document.getElementById('tafakkurDotEl').style.background = '';
   if (_tafakkurInterval) { clearInterval(_tafakkurInterval); _tafakkurInterval = null; }
   _tafakkurRunning = false;
   _tafakkurGracePauseTime = 0;
@@ -8337,7 +8354,7 @@ function _showTafakkurRecitOverlay(recit) {
     + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:16px;">' + (recit.theme || '') + '</div>'
     + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#E5E0DC;line-height:1.8;margin-bottom:24px;">' + (recit.recit.texte || '').replace(/\n/g, '<br>') + '</div>'
     + (srcLabel ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);margin-bottom:24px;">' + srcLabel + '</div>' : '')
-    + '<button onclick="var o=document.getElementById(\'tafakkur-recit-overlay\');if(o)o.remove();closeTafakkur();" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:20px;cursor:pointer;">\u2715</button>'
+    + '<button onclick="var o=document.getElementById(\'tafakkur-recit-overlay\');if(o)o.remove();closeTafakkur(true);" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:20px;cursor:pointer;">\u2715</button>'
     + '</div>';
   document.body.appendChild(ov);
   console.log('[Tafakkur] overlay appended to body, z-index=9998, triggering fade-in');
@@ -8354,8 +8371,8 @@ function _showTafakkurEnd() {
   console.log('[Tafakkur] _showTafakkurEnd | phrase="' + (_tafakkurCurrentPhrase || 'EMPTY').substring(0, 60) + '"');
   console.log('[Tafakkur] _showTafakkurEnd | Q_MAP=' + (window.TAFAKKUR_Q_MAP ? Object.keys(window.TAFAKKUR_Q_MAP).length : 'NULL') + ' | RECITS=' + (window.TAFAKKUR_RECITS ? window.TAFAKKUR_RECITS.length : 'NULL'));
   if (!eligible) {
-    console.log('[Tafakkur] NOT eligible → closeTafakkur()');
-    closeTafakkur();
+    console.log('[Tafakkur] NOT eligible → closeTafakkur(true)');
+    closeTafakkur(true);
     return;
   }
   el.style.opacity = '0';
