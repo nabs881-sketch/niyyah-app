@@ -8080,6 +8080,10 @@ window.TAFAKKUR_Q_MAP = null;
 })();
 function _getTafakkurPool() {
   var lang = (typeof V2_LANG !== 'undefined') ? V2_LANG : 'fr';
+  if (window.TAFAKKUR_Q_MAP) {
+    var pool200 = Object.keys(window.TAFAKKUR_Q_MAP);
+    if (pool200.length > 0) return pool200;
+  }
   if (window.TAFAKKUR_POOL && window.TAFAKKUR_POOL.length > 0) {
     return window.TAFAKKUR_POOL.map(function(item) { return (typeof item === 'string') ? item : (item[lang] || item.fr || ''); }).filter(function(s) { return s; });
   }
