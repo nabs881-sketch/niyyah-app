@@ -15935,12 +15935,14 @@ function openVueAuFilDuJour() {
   var _motiv = getEffectiveMotiv();
   const items = [];
   if (Array.isArray(LEVELS)) {
+    var _dayOfWeek = new Date().getDay();
     [2,3].forEach(i => {
       const lvl = LEVELS[i];
       if (!lvl || !lvl.sections) return;
       lvl.sections.forEach(s => {
         (s.items || []).forEach(it => {
           if (_motiv && it.paths && !it.paths.includes(_motiv)) return;
+          if (it.id === 'sunnah_jejune' && _dayOfWeek !== 1 && _dayOfWeek !== 4) return;
           items.push(it);
         });
       });
@@ -15953,6 +15955,7 @@ function openVueAuFilDuJour() {
       (s.items || []).forEach(it => {
         if (!it.filDuJour) return;
         if (_motiv && it.paths && !it.paths.includes(_motiv)) return;
+        if (it.id === 'sunnah_jejune' && _dayOfWeek !== 1 && _dayOfWeek !== 4) return;
         items.push(it);
       });
     });
