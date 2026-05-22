@@ -3,630 +3,3872 @@
     "num": 1,
     "id": "recit_001",
     "theme": "L'orgueil",
-    "titre": { "fr": "Nimrod et la mouche", "en": "", "ar": "" },
+    "titre": {
+      "fr": "Nimrod et la mouche",
+      "en": "",
+      "ar": ""
+    },
     "paragraphes": [
-      { "type": "text", "content": { "fr": "Il y avait un homme — et le monde lui appartenait.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "On l'appelait Nimrod. Roi de Babylone, fils de Kush, seigneur des plaines entre les fleuves. Couronne d'or. Murs de marbre. Armées de cuivre. Tout ce qui passait sous son ciel courbait l'échine. Les nuages eux-mêmes — il en était presque sûr — n'osaient passer au-dessus de lui sans permission.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Il avait vécu si longtemps dans cette obéissance qu'il avait fini par croire la chose la plus dangereuse qu'un homme puisse croire :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "qu'il était quelque chose.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Un jour, un voyageur entra dans son palais. Pieds nus. Sans escorte. Sans cadeaux. Il s'avança au pied du trône comme on s'approche d'une fontaine — sans peur. Il s'appelait Ibrâhîm.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Il dit, simplement :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Mon Seigneur fait vivre. Et fait mourir. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Nimrod sourit. Le sourire des hommes qui n'ont plus de doute. Il leva la main. On amena deux prisonniers, chargés de chaînes, le visage gris.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "D'un geste, il fit libérer le premier. D'un geste, il fit tomber le second.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Le sang coula entre les dalles, paisible, sans hâte. Nimrod se tourna vers Ibrâhîm :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Voilà. Moi aussi, je fais vivre. Moi aussi, je fais mourir. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Ibrâhîm ne baissa pas les yeux. Il ne trembla pas. Il regarda Nimrod comme on regarde un enfant qui joue avec le feu — avec une tendresse triste.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Et il dit :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Mon Seigneur fait lever le soleil à l'Orient. Fais-le lever à l'Occident. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Le silence tomba sur la salle comme une pierre dans un puits.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Nimrod ouvrit la bouche. La referma. Regarda ses gardes — qui regardaient ailleurs. Regarda le plafond — qui ne lui appartenait plus. Regarda ses propres mains, et les vit pour ce qu'elles étaient : deux petites choses pâles.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Il n'eut rien à dire.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Le Coran s'arrête là. Il ne le nomme pas — il le laisse dans l'anonymat des hommes vaincus. Mais Ibn Kathîr et les anciens racontent qu'à la fin de cette vie d'orgueil, Nimrod mourut. Et il ne mourut pas d'une lame. Ni d'un poison. Ni d'une révolte.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Il mourut d'une mouche.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Une mouche entra par sa narine. Elle s'installa dans son crâne. Elle bourdonna jour et nuit, des années entières, jusqu'à ce que le roi devienne fou et qu'on le retrouve mort, le visage contre le marbre.", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "Une mouche.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Pas une armée. Pas un dieu rival. Pas même une maladie qui ait un nom digne d'un roi.", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "Une mouche.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Et tout ce qu'il avait — la couronne, les murs, les armées de cuivre — n'avait pas pu la chasser.", "en": "", "ar": "" } }
+      {
+        "type": "text",
+        "content": {
+          "fr": "Il y avait un homme — et le monde lui appartenait.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "On l'appelait Nimrod. Roi de Babylone, fils de Kush, seigneur des plaines entre les fleuves. Couronne d'or. Murs de marbre. Armées de cuivre. Tout ce qui passait sous son ciel courbait l'échine. Les nuages eux-mêmes — il en était presque sûr — n'osaient passer au-dessus de lui sans permission.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Il avait vécu si longtemps dans cette obéissance qu'il avait fini par croire la chose la plus dangereuse qu'un homme puisse croire :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "qu'il était quelque chose.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Un jour, un voyageur entra dans son palais. Pieds nus. Sans escorte. Sans cadeaux. Il s'avança au pied du trône comme on s'approche d'une fontaine — sans peur. Il s'appelait Ibrâhîm.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Il dit, simplement :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Mon Seigneur fait vivre. Et fait mourir. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Nimrod sourit. Le sourire des hommes qui n'ont plus de doute. Il leva la main. On amena deux prisonniers, chargés de chaînes, le visage gris.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "D'un geste, il fit libérer le premier. D'un geste, il fit tomber le second.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Le sang coula entre les dalles, paisible, sans hâte. Nimrod se tourna vers Ibrâhîm :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Voilà. Moi aussi, je fais vivre. Moi aussi, je fais mourir. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Ibrâhîm ne baissa pas les yeux. Il ne trembla pas. Il regarda Nimrod comme on regarde un enfant qui joue avec le feu — avec une tendresse triste.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Et il dit :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Mon Seigneur fait lever le soleil à l'Orient. Fais-le lever à l'Occident. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Le silence tomba sur la salle comme une pierre dans un puits.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Nimrod ouvrit la bouche. La referma. Regarda ses gardes — qui regardaient ailleurs. Regarda le plafond — qui ne lui appartenait plus. Regarda ses propres mains, et les vit pour ce qu'elles étaient : deux petites choses pâles.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Il n'eut rien à dire.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Le Coran s'arrête là. Il ne le nomme pas — il le laisse dans l'anonymat des hommes vaincus. Mais Ibn Kathîr et les anciens racontent qu'à la fin de cette vie d'orgueil, Nimrod mourut. Et il ne mourut pas d'une lame. Ni d'un poison. Ni d'une révolte.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Il mourut d'une mouche.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Une mouche entra par sa narine. Elle s'installa dans son crâne. Elle bourdonna jour et nuit, des années entières, jusqu'à ce que le roi devienne fou et qu'on le retrouve mort, le visage contre le marbre.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "Une mouche.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Pas une armée. Pas un dieu rival. Pas même une maladie qui ait un nom digne d'un roi.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "Une mouche.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Et tout ce qu'il avait — la couronne, les murs, les armées de cuivre — n'avait pas pu la chasser.",
+          "en": "",
+          "ar": ""
+        }
+      }
     ],
-    "meditation": { "fr": "L'orgueilleux ne tombe pas devant ce qui le menace. Il tombe devant ce qu'il croyait trop petit pour le voir.", "en": "", "ar": "" },
-    "source": { "fr": "Sourate Al-Baqara (2:258) — identification traditionnelle (Ibn Kathîr, Tabari)", "en": "", "ar": "" }
+    "meditation": {
+      "fr": "L'orgueilleux ne tombe pas devant ce qui le menace. Il tombe devant ce qu'il croyait trop petit pour le voir.",
+      "en": "",
+      "ar": ""
+    },
+    "source": {
+      "fr": "Sourate Al-Baqara (2:258) — identification traditionnelle (Ibn Kathîr, Tabari)",
+      "en": "",
+      "ar": ""
+    }
   },
   {
     "num": 2,
     "id": "recit_002",
     "theme": "L'ingratitude",
-    "titre": { "fr": "Les deux jardins", "en": "", "ar": "" },
+    "titre": {
+      "fr": "Les deux jardins",
+      "en": "",
+      "ar": ""
+    },
     "paragraphes": [
-      { "type": "text", "content": { "fr": "Deux hommes. Deux voisins. L'un riche, l'autre pauvre.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Le riche avait reçu deux jardins. Pas un jardin — deux. Comme si la terre, en se donnant à lui, avait voulu en rajouter. Des vignes qui couraient sur les murs. Des palmiers droits comme des soldats. Une rivière qui passait entre les deux, sans hâte, comme si elle aussi savait qu'elle était à lui.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Il y entrait chaque matin. Il en sortait chaque soir. Et entre les deux, il marchait — en propriétaire. Les feuilles le caressaient. Le vent semblait passer doucement, pour ne pas le déranger.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Au bout du mur, il y avait son ami. Un homme pauvre, sans terre, qui n'avait jamais possédé qu'un seul mot — Allâh. Ce mot lui suffisait. Il le portait comme d'autres portent un manteau.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Un soir, le riche vint vers lui. Il était plein de lui-même comme une outre est pleine d'eau. Il regarda les deux jardins, et il dit :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« J'ai plus de biens que toi. J'ai plus de monde autour de moi. Et ce jardin — ce jardin ne périra jamais. Et même si l'Heure se levait, je trouverais auprès de mon Seigneur quelque chose de meilleur encore. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "L'autre l'écouta. Il ne répondit pas tout de suite. On ne répond pas vite à un orgueilleux — on lui laisse le temps de s'entendre.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Puis il dit, doucement :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Et quand tu es entré dans ton jardin — n'aurais-tu pas dû dire : ce qu'Allâh a voulu, c'est cela. Il n'est de force qu'en Allâh ? »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Le riche ne répondit rien. Il s'en alla, plus sûr de lui que jamais. Plus sûr — c'est-à-dire plus seul.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "La nuit même, un feu vint du ciel.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Pas un orage. Pas une foudre fortuite. Quelque chose de plus calme, de plus exact. Une décision.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Au matin, le riche revint. Il ouvrit la porte du premier jardin. Il marcha dans les cendres. Les vignes étaient des fils noirs. Les palmiers, des poteaux brûlés. La rivière coulait encore — mais elle ne se reflétait plus dans rien.", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "Il se tordait les mains sur ce qu'il avait dépensé.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Il avait possédé deux jardins. Il lui restait deux mains vides — et un regret immense, qui n'allait plus jamais se taire.", "en": "", "ar": "" } }
+      {
+        "type": "text",
+        "content": {
+          "fr": "Deux hommes. Deux voisins. L'un riche, l'autre pauvre.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Le riche avait reçu deux jardins. Pas un jardin — deux. Comme si la terre, en se donnant à lui, avait voulu en rajouter. Des vignes qui couraient sur les murs. Des palmiers droits comme des soldats. Une rivière qui passait entre les deux, sans hâte, comme si elle aussi savait qu'elle était à lui.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Il y entrait chaque matin. Il en sortait chaque soir. Et entre les deux, il marchait — en propriétaire. Les feuilles le caressaient. Le vent semblait passer doucement, pour ne pas le déranger.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Au bout du mur, il y avait son ami. Un homme pauvre, sans terre, qui n'avait jamais possédé qu'un seul mot — Allâh. Ce mot lui suffisait. Il le portait comme d'autres portent un manteau.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Un soir, le riche vint vers lui. Il était plein de lui-même comme une outre est pleine d'eau. Il regarda les deux jardins, et il dit :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« J'ai plus de biens que toi. J'ai plus de monde autour de moi. Et ce jardin — ce jardin ne périra jamais. Et même si l'Heure se levait, je trouverais auprès de mon Seigneur quelque chose de meilleur encore. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "L'autre l'écouta. Il ne répondit pas tout de suite. On ne répond pas vite à un orgueilleux — on lui laisse le temps de s'entendre.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Puis il dit, doucement :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Et quand tu es entré dans ton jardin — n'aurais-tu pas dû dire : ce qu'Allâh a voulu, c'est cela. Il n'est de force qu'en Allâh ? »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Le riche ne répondit rien. Il s'en alla, plus sûr de lui que jamais. Plus sûr — c'est-à-dire plus seul.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "La nuit même, un feu vint du ciel.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Pas un orage. Pas une foudre fortuite. Quelque chose de plus calme, de plus exact. Une décision.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Au matin, le riche revint. Il ouvrit la porte du premier jardin. Il marcha dans les cendres. Les vignes étaient des fils noirs. Les palmiers, des poteaux brûlés. La rivière coulait encore — mais elle ne se reflétait plus dans rien.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "Il se tordait les mains sur ce qu'il avait dépensé.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Il avait possédé deux jardins. Il lui restait deux mains vides — et un regret immense, qui n'allait plus jamais se taire.",
+          "en": "",
+          "ar": ""
+        }
+      }
     ],
-    "meditation": { "fr": "Tout ce que tu possèdes a été placé entre tes mains. Pas dans tes mains.", "en": "", "ar": "" },
-    "source": { "fr": "Sourate Al-Kahf (18:32-44)", "en": "", "ar": "" }
+    "meditation": {
+      "fr": "Tout ce que tu possèdes a été placé entre tes mains. Pas dans tes mains.",
+      "en": "",
+      "ar": ""
+    },
+    "source": {
+      "fr": "Sourate Al-Kahf (18:32-44)",
+      "en": "",
+      "ar": ""
+    }
   },
   {
     "num": 3,
     "id": "recit_003",
     "theme": "Le refuge",
-    "titre": { "fr": "Les gens de la caverne", "en": "", "ar": "" },
+    "titre": {
+      "fr": "Les gens de la caverne",
+      "en": "",
+      "ar": ""
+    },
     "paragraphes": [
-      { "type": "text", "content": { "fr": "Une cité. Un roi cruel. Une religion oubliée.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Ils étaient jeunes — quelques-uns. Personne ne sait combien exactement. Trois, peut-être. Cinq. Sept. Allâh sait, dit le Coran, et c'est tout ce qu'il faut savoir.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Ils croyaient en Un seul Dieu, dans une ville qui en adorait beaucoup. Ils savaient qu'ils ne pouvaient pas se cacher longtemps — pas dans cette ville, pas dans ces rues où les statues vous regardaient passer. Tôt ou tard, on viendrait les chercher.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Alors un soir, ils se levèrent. Ils n'emportèrent rien. Pas même un sac. Ils quittèrent leurs maisons, leurs mères, leurs petits frères qui dormaient encore. Et ils marchèrent.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Ils marchèrent jusqu'à trouver une caverne. Un trou dans la pierre, au flanc d'une colline, comme une bouche qui s'ouvre pour parler.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Ils entrèrent. Ils se couchèrent. Et avant de s'endormir, ils dirent — et ce sont les seuls mots que le Coran nous donne d'eux :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Notre Seigneur, accorde-nous de Ta part une miséricorde, et trace pour nous une voie droite dans notre situation. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Puis ils fermèrent les yeux.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Allâh ferma leurs oreilles au monde.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Le soleil se levait à l'Est, traversait le ciel, déclinait à l'Ouest — et les épargnait. Il se penchait à droite quand il se levait, à gauche quand il se couchait, comme s'il avait reçu une consigne de discrétion. Leur chien était couché en travers de l'entrée, les pattes étendues, gardien fidèle d'un sommeil qu'il ne comprenait pas.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Ils dormirent.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Ils dormirent trois cents ans. Et neuf de plus.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Pendant ce temps, en haut, le monde changea. Le roi cruel mourut. Son fils mourut. Le petit-fils oublia même le nom du grand-père. La ville tomba, fut reconstruite, fut tombée encore. La religion d'Un commença à grandir, doucement, comme une herbe qui repousse entre les pavés.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Et puis un jour — un jour qui n'avait rien de particulier — l'un d'eux ouvrit un œil.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Il s'étira. Il regarda ses compagnons. Il leur dit, à voix basse :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Combien de temps avons-nous demeuré ici ? »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "L'un répondit :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Un jour. Ou peut-être moins. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Aucun ne savait. Ils avaient faim. L'un d'eux prit une pièce de monnaie dans sa bourse — une pièce qui avait son utilité hier — et il descendit vers la ville pour acheter de la nourriture.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "La ville n'était plus la même ville. Les rues avaient changé. Les visages aussi. Et la pièce qu'il sortit de sa bourse — la pièce que le commerçant prit dans sa main, fit tourner, regarda longuement — était une pièce que personne n'avait vue depuis trois cents ans.", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "La ville avait changé. Le roi cruel était mort. La foi en Un avait grandi.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Le Coran ne dit pas ce qui leur arriva ensuite. Certains disent qu'ils retournèrent dormir. D'autres, qu'on les enterra avec honneur. Allâh sait.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Ce qui reste — ce qui nous reste, à nous qui les lisons — c'est ceci :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "Quand le monde devient trop lourd, Allâh sait fermer des paupières.", "en": "", "ar": "" } }
+      {
+        "type": "text",
+        "content": {
+          "fr": "Une cité. Un roi cruel. Une religion oubliée.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Ils étaient jeunes — quelques-uns. Personne ne sait combien exactement. Trois, peut-être. Cinq. Sept. Allâh sait, dit le Coran, et c'est tout ce qu'il faut savoir.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Ils croyaient en Un seul Dieu, dans une ville qui en adorait beaucoup. Ils savaient qu'ils ne pouvaient pas se cacher longtemps — pas dans cette ville, pas dans ces rues où les statues vous regardaient passer. Tôt ou tard, on viendrait les chercher.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Alors un soir, ils se levèrent. Ils n'emportèrent rien. Pas même un sac. Ils quittèrent leurs maisons, leurs mères, leurs petits frères qui dormaient encore. Et ils marchèrent.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Ils marchèrent jusqu'à trouver une caverne. Un trou dans la pierre, au flanc d'une colline, comme une bouche qui s'ouvre pour parler.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Ils entrèrent. Ils se couchèrent. Et avant de s'endormir, ils dirent — et ce sont les seuls mots que le Coran nous donne d'eux :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Notre Seigneur, accorde-nous de Ta part une miséricorde, et trace pour nous une voie droite dans notre situation. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Puis ils fermèrent les yeux.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Allâh ferma leurs oreilles au monde.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Le soleil se levait à l'Est, traversait le ciel, déclinait à l'Ouest — et les épargnait. Il se penchait à droite quand il se levait, à gauche quand il se couchait, comme s'il avait reçu une consigne de discrétion. Leur chien était couché en travers de l'entrée, les pattes étendues, gardien fidèle d'un sommeil qu'il ne comprenait pas.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Ils dormirent.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Ils dormirent trois cents ans. Et neuf de plus.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Pendant ce temps, en haut, le monde changea. Le roi cruel mourut. Son fils mourut. Le petit-fils oublia même le nom du grand-père. La ville tomba, fut reconstruite, fut tombée encore. La religion d'Un commença à grandir, doucement, comme une herbe qui repousse entre les pavés.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Et puis un jour — un jour qui n'avait rien de particulier — l'un d'eux ouvrit un œil.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Il s'étira. Il regarda ses compagnons. Il leur dit, à voix basse :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Combien de temps avons-nous demeuré ici ? »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "L'un répondit :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Un jour. Ou peut-être moins. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Aucun ne savait. Ils avaient faim. L'un d'eux prit une pièce de monnaie dans sa bourse — une pièce qui avait son utilité hier — et il descendit vers la ville pour acheter de la nourriture.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "La ville n'était plus la même ville. Les rues avaient changé. Les visages aussi. Et la pièce qu'il sortit de sa bourse — la pièce que le commerçant prit dans sa main, fit tourner, regarda longuement — était une pièce que personne n'avait vue depuis trois cents ans.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "La ville avait changé. Le roi cruel était mort. La foi en Un avait grandi.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Le Coran ne dit pas ce qui leur arriva ensuite. Certains disent qu'ils retournèrent dormir. D'autres, qu'on les enterra avec honneur. Allâh sait.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Ce qui reste — ce qui nous reste, à nous qui les lisons — c'est ceci :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "Quand le monde devient trop lourd, Allâh sait fermer des paupières.",
+          "en": "",
+          "ar": ""
+        }
+      }
     ],
-    "meditation": { "fr": "Quand le monde devient invivable, certains fuient. D'autres prient. D'autres dorment — et Allâh veille pour eux.", "en": "", "ar": "" },
-    "source": { "fr": "Sourate Al-Kahf (18:9-26)", "en": "", "ar": "" }
+    "meditation": {
+      "fr": "Quand le monde devient invivable, certains fuient. D'autres prient. D'autres dorment — et Allâh veille pour eux.",
+      "en": "",
+      "ar": ""
+    },
+    "source": {
+      "fr": "Sourate Al-Kahf (18:9-26)",
+      "en": "",
+      "ar": ""
+    }
   },
   {
     "num": 4,
     "id": "recit_004",
     "theme": "La sagesse cachée",
-    "titre": { "fr": "Moussa et Al-Khidr", "en": "", "ar": "" },
+    "titre": {
+      "fr": "Moussa et Al-Khidr",
+      "en": "",
+      "ar": ""
+    },
     "paragraphes": [
-      { "type": "text", "content": { "fr": "Moussa avait été choisi. Allâh lui parlait — directement, sans voile. Il avait fendu la mer. Il avait reçu la Loi. Il était, parmi les prophètes, celui qui pouvait dire : je sais.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Un jour, on lui demanda :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Y a-t-il un homme plus savant que toi ? »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Il répondit non.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Allâh n'aima pas cette réponse. Il révéla à Moussa qu'au confluent des deux mers, vivait un serviteur — un homme à qui Allâh avait donné une science que Moussa n'avait pas.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Moussa partit. Avec son jeune compagnon. Ils marchèrent longtemps, jusqu'à ce qu'ils oublient — qui ils étaient, où ils allaient. Quand ils s'arrêtèrent pour manger, le poisson qu'ils avaient emporté glissa dans la mer, comme s'il avait été vivant tout ce temps.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "C'était le signe. Ils étaient arrivés.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Ils rebroussèrent chemin, et trouvèrent un homme assis sur un rocher. Il portait un manteau vert. Son visage était calme — d'un calme qui dérangeait.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Moussa demanda à le suivre. L'homme — Al-Khidr — le regarda longuement, puis dit :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Tu ne pourras pas patienter avec moi. Comment patienterais-tu sur ce que tu n'embrasses pas en connaissance ? »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Moussa promit. Il jura qu'il ne dirait rien.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Ils marchèrent jusqu'à la mer. Ils montèrent dans un bateau — gratuitement, par compassion des pêcheurs. À peine embarqué, Al-Khidr prit une planche, et perça le fond du bateau.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Moussa cria : « Tu veux les noyer ? »", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Ne t'avais-je pas dit que tu ne pourrais pas patienter ? »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Moussa s'excusa.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Ils descendirent. Ils marchèrent encore. Ils croisèrent un enfant qui jouait. Al-Khidr s'approcha — et tua l'enfant.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Moussa cria de nouveau : « Tu as tué une âme innocente ! »", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Ne t'avais-je pas dit ? »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Moussa promit que ce serait la dernière fois.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Ils marchèrent jusqu'à un village. Les gens du village refusèrent de les héberger, refusèrent de leur donner à manger. Au milieu de cette inhospitalité, Al-Khidr s'arrêta devant un mur qui menaçait ruine — et il le redressa, sans demander un salaire.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Moussa, fatigué, murmura : « Tu aurais pu demander quelque chose en échange. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Al-Khidr s'arrêta. Il se tourna vers Moussa, et dit :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Ceci marque la séparation entre toi et moi. Mais je vais t'informer de ce que tu n'as pas pu supporter. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Le bateau ? Il appartenait à des pauvres. Plus loin sur la mer, un roi confisquait tous les bateaux en bon état. Le perçage l'a sauvé.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "L'enfant ? Ses parents étaient croyants. Lui allait grandir et les entraîner dans le mal. Allâh lui a donné un échange — un autre enfant, meilleur.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Le mur ? Il appartenait à deux orphelins. Sous ses pierres, leur père avait caché un trésor pour eux. Si le mur était tombé maintenant, le trésor aurait été pillé. Il fallait le redresser pour qu'ils le trouvent en grandissant.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Moussa se tut.", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "Il avait été parmi les prophètes celui qui pouvait dire : je sais. Et maintenant, devant cet homme en manteau vert, il comprenait qu'il y a des savoirs qui se reçoivent — pas qui se prennent.", "en": "", "ar": "" } }
+      {
+        "type": "text",
+        "content": {
+          "fr": "Moussa avait été choisi. Allâh lui parlait — directement, sans voile. Il avait fendu la mer. Il avait reçu la Loi. Il était, parmi les prophètes, celui qui pouvait dire : je sais.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Un jour, on lui demanda :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Y a-t-il un homme plus savant que toi ? »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Il répondit non.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Allâh n'aima pas cette réponse. Il révéla à Moussa qu'au confluent des deux mers, vivait un serviteur — un homme à qui Allâh avait donné une science que Moussa n'avait pas.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Moussa partit. Avec son jeune compagnon. Ils marchèrent longtemps, jusqu'à ce qu'ils oublient — qui ils étaient, où ils allaient. Quand ils s'arrêtèrent pour manger, le poisson qu'ils avaient emporté glissa dans la mer, comme s'il avait été vivant tout ce temps.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "C'était le signe. Ils étaient arrivés.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Ils rebroussèrent chemin, et trouvèrent un homme assis sur un rocher. Il portait un manteau vert. Son visage était calme — d'un calme qui dérangeait.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Moussa demanda à le suivre. L'homme — Al-Khidr — le regarda longuement, puis dit :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Tu ne pourras pas patienter avec moi. Comment patienterais-tu sur ce que tu n'embrasses pas en connaissance ? »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Moussa promit. Il jura qu'il ne dirait rien.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Ils marchèrent jusqu'à la mer. Ils montèrent dans un bateau — gratuitement, par compassion des pêcheurs. À peine embarqué, Al-Khidr prit une planche, et perça le fond du bateau.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Moussa cria : « Tu veux les noyer ? »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Ne t'avais-je pas dit que tu ne pourrais pas patienter ? »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Moussa s'excusa.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Ils descendirent. Ils marchèrent encore. Ils croisèrent un enfant qui jouait. Al-Khidr s'approcha — et tua l'enfant.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Moussa cria de nouveau : « Tu as tué une âme innocente ! »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Ne t'avais-je pas dit ? »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Moussa promit que ce serait la dernière fois.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Ils marchèrent jusqu'à un village. Les gens du village refusèrent de les héberger, refusèrent de leur donner à manger. Au milieu de cette inhospitalité, Al-Khidr s'arrêta devant un mur qui menaçait ruine — et il le redressa, sans demander un salaire.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Moussa, fatigué, murmura : « Tu aurais pu demander quelque chose en échange. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Al-Khidr s'arrêta. Il se tourna vers Moussa, et dit :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Ceci marque la séparation entre toi et moi. Mais je vais t'informer de ce que tu n'as pas pu supporter. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Le bateau ? Il appartenait à des pauvres. Plus loin sur la mer, un roi confisquait tous les bateaux en bon état. Le perçage l'a sauvé.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "L'enfant ? Ses parents étaient croyants. Lui allait grandir et les entraîner dans le mal. Allâh lui a donné un échange — un autre enfant, meilleur.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Le mur ? Il appartenait à deux orphelins. Sous ses pierres, leur père avait caché un trésor pour eux. Si le mur était tombé maintenant, le trésor aurait été pillé. Il fallait le redresser pour qu'ils le trouvent en grandissant.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Moussa se tut.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "Il avait été parmi les prophètes celui qui pouvait dire : je sais. Et maintenant, devant cet homme en manteau vert, il comprenait qu'il y a des savoirs qui se reçoivent — pas qui se prennent.",
+          "en": "",
+          "ar": ""
+        }
+      }
     ],
-    "meditation": { "fr": "Tu vois la planche qui troue le bateau. Tu ne vois pas le roi qui attend au bout de la mer.", "en": "", "ar": "" },
-    "source": { "fr": "Sourate Al-Kahf (18:60-82) — identification d'Al-Khidr par les hadiths (Bukhari, Muslim)", "en": "", "ar": "" }
+    "meditation": {
+      "fr": "Tu vois la planche qui troue le bateau. Tu ne vois pas le roi qui attend au bout de la mer.",
+      "en": "",
+      "ar": ""
+    },
+    "source": {
+      "fr": "Sourate Al-Kahf (18:60-82) — identification d'Al-Khidr par les hadiths (Bukhari, Muslim)",
+      "en": "",
+      "ar": ""
+    }
   },
   {
     "num": 5,
     "id": "recit_005",
     "theme": "La richesse aveugle",
-    "titre": { "fr": "Qarun et son trésor", "en": "", "ar": "" },
+    "titre": {
+      "fr": "Qarun et son trésor",
+      "en": "",
+      "ar": ""
+    },
     "paragraphes": [
-      { "type": "text", "content": { "fr": "Qarun était de la maison de Moussa.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Du même peuple. Du même sang. Il avait connu l'exil en Égypte. Il avait traversé la mer. Il avait reçu, comme tous les autres, la promesse — vous serez délivrés.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Mais Qarun, lui, avait été comblé au-delà de tous.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Allâh lui avait donné des trésors si lourds que les clefs de ses coffres pesaient déjà sur les épaules d'une troupe d'hommes vigoureux. Pas l'or. Les clefs. Imaginez ce qu'il y avait derrière.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Au début, peut-être, il a dit al-hamdulillah. Au début, peut-être, il a baissé la tête.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Puis le temps a passé. Les coffres se sont remplis. Les hommes se sont prosternés. Les femmes l'ont regardé passer. Et Qarun a oublié.", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "Il a oublié qui lui avait donné.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Ses propres frères vinrent le trouver. Ils étaient soucieux. Ils lui dirent :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Ne te réjouis pas trop. Allâh n'aime pas ceux qui se réjouissent. Cherche, par ce qu'Allâh t'a donné, la demeure de l'au-delà. N'oublie pas ta part de cette vie. Fais le bien comme Allâh t'a fait le bien. Et ne cherche pas la corruption sur la terre. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Qarun les écouta. Puis il sourit.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Et il leur dit la phrase de tous les hommes qui sont tombés avant lui :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« On me l'a donné — à cause d'une science que je détiens. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Pas Allâh. Moi. Mon intelligence. Mon talent. Mon mérite.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Un matin, il sortit dans la cité. Dans toute sa parure. Tissus brodés, bijoux, escorte, parfums. Les gens du peuple le regardèrent, et certains soupirèrent : si seulement nous avions ce qu'a Qarun. Comme il est chanceux.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "D'autres, plus sages, dirent : malheur à vous. La récompense d'Allâh est meilleure pour celui qui croit.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Allâh entendit.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Le sol, ce sol qui portait Qarun depuis sa naissance — ce sol s'ouvrit.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Sans tremblement, sans bruit. Une lèvre de terre se rabattit sur lui. Sur sa parure. Sur ses bijoux. Sur sa maison entière. Sur tout ce qu'il avait pris pour sien.", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "Et il n'eut aucune armée qui le secourut, en dehors d'Allâh. Et il ne fut pas du nombre de ceux qui se défendent eux-mêmes.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Au matin, ceux qui la veille enviaient sa fortune dirent :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Ah ! C'est Allâh qui donne en abondance ou avec mesure à qui Il veut. Si Allâh ne nous avait pas favorisés, Il nous aurait fait engloutir. »", "en": "", "ar": "" } }
+      {
+        "type": "text",
+        "content": {
+          "fr": "Qarun était de la maison de Moussa.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Du même peuple. Du même sang. Il avait connu l'exil en Égypte. Il avait traversé la mer. Il avait reçu, comme tous les autres, la promesse — vous serez délivrés.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Mais Qarun, lui, avait été comblé au-delà de tous.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Allâh lui avait donné des trésors si lourds que les clefs de ses coffres pesaient déjà sur les épaules d'une troupe d'hommes vigoureux. Pas l'or. Les clefs. Imaginez ce qu'il y avait derrière.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Au début, peut-être, il a dit al-hamdulillah. Au début, peut-être, il a baissé la tête.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Puis le temps a passé. Les coffres se sont remplis. Les hommes se sont prosternés. Les femmes l'ont regardé passer. Et Qarun a oublié.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "Il a oublié qui lui avait donné.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Ses propres frères vinrent le trouver. Ils étaient soucieux. Ils lui dirent :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Ne te réjouis pas trop. Allâh n'aime pas ceux qui se réjouissent. Cherche, par ce qu'Allâh t'a donné, la demeure de l'au-delà. N'oublie pas ta part de cette vie. Fais le bien comme Allâh t'a fait le bien. Et ne cherche pas la corruption sur la terre. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Qarun les écouta. Puis il sourit.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Et il leur dit la phrase de tous les hommes qui sont tombés avant lui :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« On me l'a donné — à cause d'une science que je détiens. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Pas Allâh. Moi. Mon intelligence. Mon talent. Mon mérite.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Un matin, il sortit dans la cité. Dans toute sa parure. Tissus brodés, bijoux, escorte, parfums. Les gens du peuple le regardèrent, et certains soupirèrent : si seulement nous avions ce qu'a Qarun. Comme il est chanceux.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "D'autres, plus sages, dirent : malheur à vous. La récompense d'Allâh est meilleure pour celui qui croit.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Allâh entendit.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Le sol, ce sol qui portait Qarun depuis sa naissance — ce sol s'ouvrit.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Sans tremblement, sans bruit. Une lèvre de terre se rabattit sur lui. Sur sa parure. Sur ses bijoux. Sur sa maison entière. Sur tout ce qu'il avait pris pour sien.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "Et il n'eut aucune armée qui le secourut, en dehors d'Allâh. Et il ne fut pas du nombre de ceux qui se défendent eux-mêmes.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Au matin, ceux qui la veille enviaient sa fortune dirent :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Ah ! C'est Allâh qui donne en abondance ou avec mesure à qui Il veut. Si Allâh ne nous avait pas favorisés, Il nous aurait fait engloutir. »",
+          "en": "",
+          "ar": ""
+        }
+      }
     ],
-    "meditation": { "fr": "Tu peux porter une couronne. Le sol porte la couronne. Ne l'oublie jamais.", "en": "", "ar": "" },
-    "source": { "fr": "Sourate Al-Qasas (28:76-82)", "en": "", "ar": "" }
+    "meditation": {
+      "fr": "Tu peux porter une couronne. Le sol porte la couronne. Ne l'oublie jamais.",
+      "en": "",
+      "ar": ""
+    },
+    "source": {
+      "fr": "Sourate Al-Qasas (28:76-82)",
+      "en": "",
+      "ar": ""
+    }
   },
   {
     "num": 6,
     "id": "recit_006",
     "theme": "Le confort qui endort",
-    "titre": { "fr": "Saba et le déluge du barrage", "en": "", "ar": "" },
+    "titre": {
+      "fr": "Saba et le déluge du barrage",
+      "en": "",
+      "ar": ""
+    },
     "paragraphes": [
-      { "type": "text", "content": { "fr": "Saba.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Une terre bénie. Deux jardins — un à droite, un à gauche — qui couraient le long d'un fleuve. Un barrage immense, construit avec patience, génération après génération, pour retenir les eaux de la montagne. Quand on regardait cette terre, on voyait l'image que les humains se font du Paradis.", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "Mangez de ce que votre Seigneur vous a accordé. Et soyez reconnaissants envers Lui.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Ils étaient. Au début.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Ils marchaient entre les vergers. Ils récoltaient la datte, le raisin, le grenadier. Ils n'avaient pas peur des bêtes — les villages se touchaient presque, on passait d'un toit à l'autre sans craindre la route. La nuit était calme. Le matin se levait sans menace.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Mais le confort, parfois, est plus dangereux que la guerre.", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "Il endort sans qu'on s'en aperçoive.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Saba s'endormit.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Ils oublièrent qui avait construit le barrage. Ils oublièrent qui faisait pleuvoir la montagne. Ils oublièrent qu'on peut tout perdre, en une seule nuit, quand on a tout reçu.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Allâh envoya des messagers. Ils dirent : soyez reconnaissants. Saba répondit en haussant les épaules.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Alors Allâh envoya autre chose.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Il envoya — c'est le Coran qui le dit — le déluge des digues.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Le barrage céda. Pas d'un seul coup, peut-être. Peut-être par fissures. Peut-être un printemps trop chaud, une pluie trop forte, une pierre déplacée. Mais l'eau passa. Et derrière l'eau, le sable.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Les deux jardins furent emportés. À leur place, deux jardins d'épines amères, de tamaris, et de quelques jujubiers clairsemés.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Le peuple de Saba se dispersa. Ils devinrent des récits qu'on raconte aux enfants : vous avez entendu parler de Saba ? Vous savez ce qui leur est arrivé ?", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "C'est ainsi qu'Allâh fait des nations entières — des paroles. Des histoires qu'on se transmet le soir, autour du feu, en se demandant si nous, demain, nous serons reconnaissants.", "en": "", "ar": "" } }
+      {
+        "type": "text",
+        "content": {
+          "fr": "Saba.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Une terre bénie. Deux jardins — un à droite, un à gauche — qui couraient le long d'un fleuve. Un barrage immense, construit avec patience, génération après génération, pour retenir les eaux de la montagne. Quand on regardait cette terre, on voyait l'image que les humains se font du Paradis.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "Mangez de ce que votre Seigneur vous a accordé. Et soyez reconnaissants envers Lui.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Ils étaient. Au début.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Ils marchaient entre les vergers. Ils récoltaient la datte, le raisin, le grenadier. Ils n'avaient pas peur des bêtes — les villages se touchaient presque, on passait d'un toit à l'autre sans craindre la route. La nuit était calme. Le matin se levait sans menace.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Mais le confort, parfois, est plus dangereux que la guerre.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "Il endort sans qu'on s'en aperçoive.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Saba s'endormit.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Ils oublièrent qui avait construit le barrage. Ils oublièrent qui faisait pleuvoir la montagne. Ils oublièrent qu'on peut tout perdre, en une seule nuit, quand on a tout reçu.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Allâh envoya des messagers. Ils dirent : soyez reconnaissants. Saba répondit en haussant les épaules.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Alors Allâh envoya autre chose.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Il envoya — c'est le Coran qui le dit — le déluge des digues.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Le barrage céda. Pas d'un seul coup, peut-être. Peut-être par fissures. Peut-être un printemps trop chaud, une pluie trop forte, une pierre déplacée. Mais l'eau passa. Et derrière l'eau, le sable.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Les deux jardins furent emportés. À leur place, deux jardins d'épines amères, de tamaris, et de quelques jujubiers clairsemés.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Le peuple de Saba se dispersa. Ils devinrent des récits qu'on raconte aux enfants : vous avez entendu parler de Saba ? Vous savez ce qui leur est arrivé ?",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "C'est ainsi qu'Allâh fait des nations entières — des paroles. Des histoires qu'on se transmet le soir, autour du feu, en se demandant si nous, demain, nous serons reconnaissants.",
+          "en": "",
+          "ar": ""
+        }
+      }
     ],
-    "meditation": { "fr": "Le danger n'est pas toujours l'épreuve. Parfois, c'est la douceur qui ne finit pas — et qui te fait oublier qui te la donne.", "en": "", "ar": "" },
-    "source": { "fr": "Sourate Saba (34:15-19)", "en": "", "ar": "" }
+    "meditation": {
+      "fr": "Le danger n'est pas toujours l'épreuve. Parfois, c'est la douceur qui ne finit pas — et qui te fait oublier qui te la donne.",
+      "en": "",
+      "ar": ""
+    },
+    "source": {
+      "fr": "Sourate Saba (34:15-19)",
+      "en": "",
+      "ar": ""
+    }
   },
   {
     "num": 7,
     "id": "recit_007",
     "theme": "L'avarice cachée",
-    "titre": { "fr": "Les gens du jardin", "en": "", "ar": "" },
+    "titre": {
+      "fr": "Les gens du jardin",
+      "en": "",
+      "ar": ""
+    },
     "paragraphes": [
-      { "type": "text", "content": { "fr": "Il y avait, dans un village, un jardin.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Un vieil homme l'avait tenu toute sa vie. Pieux. Modéré. Il faisait sa récolte chaque année, et ce qui était convenu pour les pauvres — un panier, une part, ce qu'Allâh avait fixé — il le donnait sans hésiter. Les pauvres connaissaient le chemin de ce jardin. Ils savaient qu'à la saison, ils y trouveraient de quoi vivre.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Le vieil homme mourut.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Le jardin passa à ses fils.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Ils étaient jeunes. Ils étaient ambitieux. Ils regardèrent la récolte de l'année et ils calculèrent. Le panier des pauvres — ils le voyaient maintenant. Il était plus grand que dans leurs souvenirs d'enfants. Il prenait, à leurs yeux, une place qu'il n'aurait pas dû avoir.", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Demain, dirent-ils, à l'aube. Nous y serons les premiers. Avant qu'aucun pauvre ne se lève. Nous récolterons tout. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Ils dirent cela.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Ils ne dirent pas in shâ' Allâh.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Ils s'endormirent.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Pendant qu'ils dormaient, un visiteur passa sur le jardin. On ne le vit pas. On ne l'entendit pas. Mais au matin, il ne restait plus rien.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Pas une feuille. Pas un fruit. Pas une couleur. Tout était noir, comme une nuit qui aurait pris la place d'une terre.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Ils se levèrent à l'heure prévue. Ils marchèrent vers le jardin en se félicitant. Ils s'imaginaient déjà comptant la récolte.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Quand ils virent — ils crurent s'être trompés de chemin.", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Nous nous sommes égarés. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Mais non. C'était bien leur jardin. C'étaient bien leurs murs. C'était bien leur héritage.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Le plus juste d'entre eux baissa la tête. Il dit, et c'est le Coran qui rapporte ses mots :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Ne vous avais-je pas dit : si seulement vous glorifiez Allâh. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Ils se tournèrent les uns vers les autres, et ils se firent des reproches. Trop tard.", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Notre Seigneur, glorifié sois-Tu. Nous avons été injustes. »", "en": "", "ar": "" } }
+      {
+        "type": "text",
+        "content": {
+          "fr": "Il y avait, dans un village, un jardin.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Un vieil homme l'avait tenu toute sa vie. Pieux. Modéré. Il faisait sa récolte chaque année, et ce qui était convenu pour les pauvres — un panier, une part, ce qu'Allâh avait fixé — il le donnait sans hésiter. Les pauvres connaissaient le chemin de ce jardin. Ils savaient qu'à la saison, ils y trouveraient de quoi vivre.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Le vieil homme mourut.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Le jardin passa à ses fils.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Ils étaient jeunes. Ils étaient ambitieux. Ils regardèrent la récolte de l'année et ils calculèrent. Le panier des pauvres — ils le voyaient maintenant. Il était plus grand que dans leurs souvenirs d'enfants. Il prenait, à leurs yeux, une place qu'il n'aurait pas dû avoir.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Demain, dirent-ils, à l'aube. Nous y serons les premiers. Avant qu'aucun pauvre ne se lève. Nous récolterons tout. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Ils dirent cela.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Ils ne dirent pas in shâ' Allâh.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Ils s'endormirent.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Pendant qu'ils dormaient, un visiteur passa sur le jardin. On ne le vit pas. On ne l'entendit pas. Mais au matin, il ne restait plus rien.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Pas une feuille. Pas un fruit. Pas une couleur. Tout était noir, comme une nuit qui aurait pris la place d'une terre.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Ils se levèrent à l'heure prévue. Ils marchèrent vers le jardin en se félicitant. Ils s'imaginaient déjà comptant la récolte.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Quand ils virent — ils crurent s'être trompés de chemin.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Nous nous sommes égarés. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Mais non. C'était bien leur jardin. C'étaient bien leurs murs. C'était bien leur héritage.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Le plus juste d'entre eux baissa la tête. Il dit, et c'est le Coran qui rapporte ses mots :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Ne vous avais-je pas dit : si seulement vous glorifiez Allâh. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Ils se tournèrent les uns vers les autres, et ils se firent des reproches. Trop tard.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Notre Seigneur, glorifié sois-Tu. Nous avons été injustes. »",
+          "en": "",
+          "ar": ""
+        }
+      }
     ],
-    "meditation": { "fr": "Ce que tu refuses de donner pour Allâh, Il peut te le reprendre — sans bruit, et sans bagages.", "en": "", "ar": "" },
-    "source": { "fr": "Sourate Al-Qalam (68:17-33)", "en": "", "ar": "" }
+    "meditation": {
+      "fr": "Ce que tu refuses de donner pour Allâh, Il peut te le reprendre — sans bruit, et sans bagages.",
+      "en": "",
+      "ar": ""
+    },
+    "source": {
+      "fr": "Sourate Al-Qalam (68:17-33)",
+      "en": "",
+      "ar": ""
+    }
   },
   {
     "num": 8,
     "id": "recit_008",
     "theme": "Le premier sang",
-    "titre": { "fr": "Habil et Qabil", "en": "", "ar": "" },
+    "titre": {
+      "fr": "Habil et Qabil",
+      "en": "",
+      "ar": ""
+    },
     "paragraphes": [
-      { "type": "text", "content": { "fr": "C'était au commencement. Quand le monde était neuf, et que les hommes pouvaient encore se compter sur les doigts d'une seule main.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Adam avait deux fils. Habil — qui élevait des troupeaux. Qabil — qui cultivait la terre.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Un jour, ils présentèrent chacun une offrande. Habil donna sa meilleure bête. Qabil donna ce qu'il avait sous la main.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Allâh accepta l'offrande de Habil. Il n'accepta pas celle de Qabil.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Qabil aurait pu se demander pourquoi. Aurait pu chercher à mieux donner la prochaine fois. Aurait pu se taire et baisser la tête.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Il fit autre chose.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Il regarda son frère. Et il sentit naître en lui, pour la première fois dans l'histoire des hommes, cette chose noire qui allait remplir tant de siècles à venir.", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Je vais te tuer. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Habil ne se défendit pas.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Il regarda son frère, et il dit ces mots — qui sont les premiers mots de la non-violence dans le Coran :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Si tu étends vers moi ta main pour me tuer, je n'étendrai pas vers toi la mienne pour te tuer. Je crains Allâh, Seigneur des mondes. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Qabil l'écouta. Il ne fut pas touché.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Il leva la main. Et il fit tomber son frère.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Du sang coula sur la terre. La première fois.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Qabil se retrouva debout, avec le corps de son frère à ses pieds. Et il s'aperçut, dans un instant terrible, qu'il ne savait pas quoi faire d'un corps. Personne, avant lui, n'avait jamais eu à enterrer quelqu'un.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Allâh envoya un corbeau. Le corbeau se mit à gratter le sol, à creuser un trou pour enterrer un autre corbeau mort.", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Malheur à moi ! Suis-je incapable d'être comme ce corbeau, et d'enterrer le cadavre de mon frère ? »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Et il devint, le Coran le dit, parmi ceux qui regrettent.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Mais c'était trop tard.", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "Ce jour-là, Allâh prescrivit à tous les enfants d'Israël : celui qui tue une âme — autre qu'en représailles d'un meurtre — c'est comme s'il avait tué tous les hommes. Et celui qui sauve une âme — c'est comme s'il avait sauvé tous les hommes.", "en": "", "ar": "" } }
+      {
+        "type": "text",
+        "content": {
+          "fr": "C'était au commencement. Quand le monde était neuf, et que les hommes pouvaient encore se compter sur les doigts d'une seule main.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Adam avait deux fils. Habil — qui élevait des troupeaux. Qabil — qui cultivait la terre.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Un jour, ils présentèrent chacun une offrande. Habil donna sa meilleure bête. Qabil donna ce qu'il avait sous la main.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Allâh accepta l'offrande de Habil. Il n'accepta pas celle de Qabil.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Qabil aurait pu se demander pourquoi. Aurait pu chercher à mieux donner la prochaine fois. Aurait pu se taire et baisser la tête.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Il fit autre chose.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Il regarda son frère. Et il sentit naître en lui, pour la première fois dans l'histoire des hommes, cette chose noire qui allait remplir tant de siècles à venir.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Je vais te tuer. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Habil ne se défendit pas.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Il regarda son frère, et il dit ces mots — qui sont les premiers mots de la non-violence dans le Coran :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Si tu étends vers moi ta main pour me tuer, je n'étendrai pas vers toi la mienne pour te tuer. Je crains Allâh, Seigneur des mondes. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Qabil l'écouta. Il ne fut pas touché.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Il leva la main. Et il fit tomber son frère.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Du sang coula sur la terre. La première fois.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Qabil se retrouva debout, avec le corps de son frère à ses pieds. Et il s'aperçut, dans un instant terrible, qu'il ne savait pas quoi faire d'un corps. Personne, avant lui, n'avait jamais eu à enterrer quelqu'un.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Allâh envoya un corbeau. Le corbeau se mit à gratter le sol, à creuser un trou pour enterrer un autre corbeau mort.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Malheur à moi ! Suis-je incapable d'être comme ce corbeau, et d'enterrer le cadavre de mon frère ? »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Et il devint, le Coran le dit, parmi ceux qui regrettent.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Mais c'était trop tard.",
+          "en": "",
+          "ar": ""
+        }
+      }
     ],
-    "meditation": { "fr": "L'envie ne touche pas l'autre. Elle empoisonne celui qui la porte — jusqu'à ce qu'il devienne capable de l'irréparable.", "en": "", "ar": "" },
-    "source": { "fr": "Sourate Al-Ma'ida (5:27-31)", "en": "", "ar": "" }
+    "meditation": {
+      "fr": "L'envie ne touche pas l'autre. Elle empoisonne celui qui la porte — jusqu'à ce qu'il devienne capable de l'irréparable.",
+      "en": "",
+      "ar": ""
+    },
+    "source": {
+      "fr": "Sourate Al-Ma'ida (5:27-31)",
+      "en": "",
+      "ar": ""
+    }
   },
   {
     "num": 9,
     "id": "recit_009",
     "theme": "La perversion d'un peuple",
-    "titre": { "fr": "Le peuple de Loth", "en": "", "ar": "" },
+    "titre": {
+      "fr": "Le peuple de Loth",
+      "en": "",
+      "ar": ""
+    },
     "paragraphes": [
-      { "type": "text", "content": { "fr": "Loth était neveu d'Ibrâhîm. Il avait quitté Babylone avec son oncle, et marché longtemps, jusqu'à s'installer dans une plaine entre deux montagnes — une terre fertile, qu'on appelait Sodome.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Allâh l'envoya en messager.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Les gens de cette terre avaient inventé quelque chose. Quelque chose qu'aucun peuple avant eux n'avait fait. Ils délaissaient leurs épouses pour aller vers les hommes — non par amour, mais par envie de transgresser. Ils brigandaient leurs visiteurs. Ils insultaient leurs hôtes. Ils faisaient le mal dans leurs assemblées, devant tout le monde, en riant.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Loth leur parlait. Encore. Encore. Il les avertissait avec douceur. Il invoquait la pudeur d'Allâh.", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Allez-vous commettre cet acte odieux que personne avant vous n'a commis ? »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Ils se moquaient.", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Chassez-les de votre cité. Ce sont des gens qui se purifient. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Un jour, des voyageurs entrèrent chez Loth. Trois hommes au visage rayonnant — c'étaient des anges, mais Loth ne le savait pas encore. Il les fit entrer chez lui. Il s'inquiéta. Il savait ce que les gens de la ville feraient.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Et en effet, ils vinrent. Ils frappèrent à sa porte. Ils réclamèrent ses invités.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Loth, désespéré, proposa ses propres filles — pour qu'on les épouse, à la place. Personne n'accepta.", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Ah ! Si je disposais d'une force pour vous résister, ou si je trouvais un appui solide. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Alors les anges se révélèrent. Ils dirent à Loth :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Sors d'ici avec ta famille, en pleine nuit. Et que personne ne se retourne. Ce qui leur arrive arrivera au matin. Le matin n'est-il pas proche ? »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Loth partit. Sa femme — qui n'avait jamais vraiment cru — resta en arrière, par habitude, par attachement à ses voisines.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Au lever du jour, Allâh retourna la cité.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Le sol qui était en haut passa en bas. Le sol qui était en bas passa en haut. Sodome fut bouleversée, comme un sablier qu'on inverse. Et sur les hommes, depuis le ciel, plut une pluie de pierres d'argile cuite — une pierre marquée pour chaque homme.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "La femme de Loth fut atteinte avec les autres.", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "Et leur ruine reste, le long de la route que les caravanes empruntent encore aujourd'hui.", "en": "", "ar": "" } }
+      {
+        "type": "text",
+        "content": {
+          "fr": "Loth était neveu d'Ibrâhîm. Il avait quitté Babylone avec son oncle, et marché longtemps, jusqu'à s'installer dans une plaine entre deux montagnes — une terre fertile, qu'on appelait Sodome.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Allâh l'envoya en messager.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Les gens de cette terre avaient inventé quelque chose. Quelque chose qu'aucun peuple avant eux n'avait fait. Ils délaissaient leurs épouses pour aller vers les hommes — non par amour, mais par envie de transgresser. Ils brigandaient leurs visiteurs. Ils insultaient leurs hôtes. Ils faisaient le mal dans leurs assemblées, devant tout le monde, en riant.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Loth leur parlait. Encore. Encore. Il les avertissait avec douceur. Il invoquait la pudeur d'Allâh.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Allez-vous commettre cet acte odieux que personne avant vous n'a commis ? »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Ils se moquaient.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Chassez-les de votre cité. Ce sont des gens qui se purifient. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Un jour, des voyageurs entrèrent chez Loth. Trois hommes au visage rayonnant — c'étaient des anges, mais Loth ne le savait pas encore. Il les fit entrer chez lui. Il s'inquiéta. Il savait ce que les gens de la ville feraient.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Et en effet, ils vinrent. Ils frappèrent à sa porte. Ils réclamèrent ses invités.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Loth, désespéré, proposa ses propres filles — pour qu'on les épouse, à la place. Personne n'accepta.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Ah ! Si je disposais d'une force pour vous résister, ou si je trouvais un appui solide. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Alors les anges se révélèrent. Ils dirent à Loth :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Sors d'ici avec ta famille, en pleine nuit. Et que personne ne se retourne. Ce qui leur arrive arrivera au matin. Le matin n'est-il pas proche ? »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Loth partit. Sa femme — qui n'avait jamais vraiment cru — resta en arrière, par habitude, par attachement à ses voisines.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Au lever du jour, Allâh retourna la cité.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Le sol qui était en haut passa en bas. Le sol qui était en bas passa en haut. Sodome fut bouleversée, comme un sablier qu'on inverse. Et sur les hommes, depuis le ciel, plut une pluie de pierres d'argile cuite — une pierre marquée pour chaque homme.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "La femme de Loth fut atteinte avec les autres.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "Et leur ruine reste, le long de la route que les caravanes empruntent encore aujourd'hui.",
+          "en": "",
+          "ar": ""
+        }
+      }
     ],
-    "meditation": { "fr": "Une société peut inventer ce qu'elle veut. Allâh, lui, n'invente pas — Il rappelle.", "en": "", "ar": "" },
-    "source": { "fr": "Sourate Hud (11:77-83), Al-Hijr (15:61-77), Ash-Shu'ara (26:160-175)", "en": "", "ar": "" }
+    "meditation": {
+      "fr": "Une société peut inventer ce qu'elle veut. Allâh, lui, n'invente pas — Il rappelle.",
+      "en": "",
+      "ar": ""
+    },
+    "source": {
+      "fr": "Sourate Hud (11:77-83), Al-Hijr (15:61-77), Ash-Shu'ara (26:160-175)",
+      "en": "",
+      "ar": ""
+    }
   },
   {
     "num": 10,
     "id": "recit_010",
     "theme": "Le signe ignoré",
-    "titre": { "fr": "Saleh et la chamelle", "en": "", "ar": "" },
+    "titre": {
+      "fr": "Saleh et la chamelle",
+      "en": "",
+      "ar": ""
+    },
     "paragraphes": [
-      { "type": "text", "content": { "fr": "Les Thamud étaient un peuple puissant.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Ils avaient creusé leurs maisons dans la montagne — dans la roche elle-même. Des palais taillés dans le rocher rouge, avec des colonnes, des fenêtres, des chambres à étages. Quand on les voyait de loin, on aurait cru que la montagne était habitée par des dieux.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Mais ils avaient oublié Celui qui avait dressé la montagne.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Allâh leur envoya Saleh — un homme de leur peuple, un homme qu'ils connaissaient, qu'ils estimaient même. Saleh leur parla d'Un. Il leur demanda de revenir.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Ils dirent — moqueurs :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Si tu es vraiment envoyé, donne-nous un signe. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Allâh leur donna un signe.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "De la roche elle-même — devant leurs yeux — sortit une chamelle. Une chamelle énorme, splendide, qui n'avait pas d'ombre et pas de blessure, qui n'avait pas été engendrée, qui n'avait jamais bu une goutte d'eau qu'Allâh ne lui avait promise.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Saleh leur dit :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Voilà la chamelle d'Allâh. Laissez-la paître librement. Un jour, c'est elle qui boira à la source. Un jour, c'est vous. Ne lui faites aucun mal. Sinon — un châtiment proche vous saisira. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Ils acceptèrent. Pendant un temps.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Mais la chamelle dérangeait. Elle prenait trop de place. Elle buvait trop d'eau. Elle rappelait, à chaque pas, qu'ils n'étaient pas seuls maîtres.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Neuf hommes parmi eux se concertèrent. Une nuit, ils s'embusquèrent. Ils tirèrent leurs sabres. Ils égorgèrent la chamelle.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Saleh apprit la nouvelle au matin. Il dit, calmement :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Profitez de votre vie dans vos maisons pendant trois jours. Voilà une promesse qui ne sera pas démentie. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Le premier jour, leur visage devint jaune.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Le deuxième jour, leur visage devint rouge.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Le troisième jour, leur visage devint noir.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Et au quatrième matin, le Cri vint. Un Cri du ciel, qu'Allâh seul peut envoyer, qui traversa les vallées et fit tomber les hommes là où ils se trouvaient — dans leurs cuisines, dans leurs lits, sur leurs toits, dans leurs palais taillés dans la roche.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Les Thamud disparurent. Comme s'ils n'avaient jamais habité.", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "Leurs maisons creusées dans la pierre sont encore là — vides, intactes, ouvertes au vent. On les visite parfois. On y voit ce que devient une grandeur qui oublie d'où elle vient.", "en": "", "ar": "" } }
+      {
+        "type": "text",
+        "content": {
+          "fr": "Les Thamud étaient un peuple puissant.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Ils avaient creusé leurs maisons dans la montagne — dans la roche elle-même. Des palais taillés dans le rocher rouge, avec des colonnes, des fenêtres, des chambres à étages. Quand on les voyait de loin, on aurait cru que la montagne était habitée par des dieux.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Mais ils avaient oublié Celui qui avait dressé la montagne.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Allâh leur envoya Saleh — un homme de leur peuple, un homme qu'ils connaissaient, qu'ils estimaient même. Saleh leur parla d'Un. Il leur demanda de revenir.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Ils dirent — moqueurs :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Si tu es vraiment envoyé, donne-nous un signe. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Allâh leur donna un signe.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "De la roche elle-même — devant leurs yeux — sortit une chamelle. Une chamelle énorme, splendide, qui n'avait pas d'ombre et pas de blessure, qui n'avait pas été engendrée, qui n'avait jamais bu une goutte d'eau qu'Allâh ne lui avait promise.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Saleh leur dit :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Voilà la chamelle d'Allâh. Laissez-la paître librement. Un jour, c'est elle qui boira à la source. Un jour, c'est vous. Ne lui faites aucun mal. Sinon — un châtiment proche vous saisira. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Ils acceptèrent. Pendant un temps.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Mais la chamelle dérangeait. Elle prenait trop de place. Elle buvait trop d'eau. Elle rappelait, à chaque pas, qu'ils n'étaient pas seuls maîtres.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Neuf hommes parmi eux se concertèrent. Une nuit, ils s'embusquèrent. Ils tirèrent leurs sabres. Ils égorgèrent la chamelle.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Saleh apprit la nouvelle au matin. Il dit, calmement :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Profitez de votre vie dans vos maisons pendant trois jours. Voilà une promesse qui ne sera pas démentie. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Le premier jour, leur visage devint jaune.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Le deuxième jour, leur visage devint rouge.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Le troisième jour, leur visage devint noir.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Et au quatrième matin, le Cri vint. Un Cri du ciel, qu'Allâh seul peut envoyer, qui traversa les vallées et fit tomber les hommes là où ils se trouvaient — dans leurs cuisines, dans leurs lits, sur leurs toits, dans leurs palais taillés dans la roche.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Les Thamud disparurent. Comme s'ils n'avaient jamais habité.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "Leurs maisons creusées dans la pierre sont encore là — vides, intactes, ouvertes au vent. On les visite parfois. On y voit ce que devient une grandeur qui oublie d'où elle vient.",
+          "en": "",
+          "ar": ""
+        }
+      }
     ],
-    "meditation": { "fr": "Allâh ne se prouve pas. Il se rappelle. Quand le rappel ne suffit plus, Il se tait — et le silence devient le châtiment.", "en": "", "ar": "" },
-    "source": { "fr": "Sourate Ash-Shu'ara (26:141-159), Hud (11:61-68), Al-A'raf (7:73-79)", "en": "", "ar": "" }
+    "meditation": {
+      "fr": "Allâh ne se prouve pas. Il se rappelle. Quand le rappel ne suffit plus, Il se tait — et le silence devient le châtiment.",
+      "en": "",
+      "ar": ""
+    },
+    "source": {
+      "fr": "Sourate Ash-Shu'ara (26:141-159), Hud (11:61-68), Al-A'raf (7:73-79)",
+      "en": "",
+      "ar": ""
+    }
   },
   {
     "num": 11,
     "id": "recit_011",
     "theme": "Le géant tombé",
-    "titre": { "fr": "Le peuple de Hud (Ad)", "en": "", "ar": "" },
+    "titre": {
+      "fr": "Le peuple de Hud (Ad)",
+      "en": "",
+      "ar": ""
+    },
     "paragraphes": [
-      { "type": "text", "content": { "fr": "Avant les Thamud, il y avait eu les Ad.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Les Ad étaient des géants. Allâh leur avait donné une taille au-delà des hommes, une force sans pareille, des bras qui pouvaient déplacer des pierres comme on déplace des grains de sable.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Ils habitaient le désert du sud. Ils élevaient des colonnes immenses, à Iram, la cité aux mille piliers — une ville qu'aucun peuple avant eux n'avait pu construire, et qu'aucun peuple après eux n'a pu retrouver.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Et ils étaient fiers.", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Qui est plus fort que nous ? »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Allâh leur envoya Hud. Un homme de leur peuple. Un homme à la voix calme.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Hud leur dit :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Ô mon peuple. Adorez Allâh. Vous n'avez pas d'autre divinité que Lui. Vous bâtissez sur chaque colline des monuments inutiles pour vous divertir. Vous saisissez d'une poigne de tyran. Craignez Allâh — qui vous a accordé ce que vous savez : du bétail, des fils, des jardins, des sources. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Ils rirent.", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Tu nous donnes des leçons ? Toi ? Un homme comme nous ? Apporte-nous donc ton châtiment, si tu es véridique. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Hud se tut.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Vint la sécheresse.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Trois ans sans pluie. Les sources s'asséchèrent. Le bétail mourut. La terre se fissura. Les Ad envoyèrent une délégation aux Maisons sacrées — à La Mecque, déjà, où on disait que les prières étaient exaucées.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Là-bas, ils prièrent pour la pluie.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Et Allâh leur envoya un nuage.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Un nuage immense, noir, qui montait à l'horizon comme une promesse. Les Ad le virent. Ils se réjouirent.", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Voilà le nuage qui va nous apporter la pluie ! »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Hud, dans son coin, dit doucement :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Non. C'est ce que vous vouliez hâter. C'est un vent qui porte un châtiment douloureux. Il détruira tout, sur l'ordre de son Seigneur. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Le nuage arriva. Du nuage, le vent sortit.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Un vent froid, terrible. Pas une tempête ordinaire. Un vent qui souffla sept nuits et huit jours, sans interruption.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Il souleva les Ad — ces géants — comme on soulève des troncs de palmiers creux. Il les jeta à terre. Il les enterra dans le sable. Il rasa Iram aux mille piliers.", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "Et au matin du neuvième jour, on ne voyait plus que leurs maisons.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Iram fut perdue. Aucun voyageur, depuis ce jour, n'a su la retrouver.", "en": "", "ar": "" } }
+      {
+        "type": "text",
+        "content": {
+          "fr": "Avant les Thamud, il y avait eu les Ad.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Les Ad étaient des géants. Allâh leur avait donné une taille au-delà des hommes, une force sans pareille, des bras qui pouvaient déplacer des pierres comme on déplace des grains de sable.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Ils habitaient le désert du sud. Ils élevaient des colonnes immenses, à Iram, la cité aux mille piliers — une ville qu'aucun peuple avant eux n'avait pu construire, et qu'aucun peuple après eux n'a pu retrouver.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Et ils étaient fiers.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Qui est plus fort que nous ? »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Allâh leur envoya Hud. Un homme de leur peuple. Un homme à la voix calme.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Hud leur dit :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Ô mon peuple. Adorez Allâh. Vous n'avez pas d'autre divinité que Lui. Vous bâtissez sur chaque colline des monuments inutiles pour vous divertir. Vous saisissez d'une poigne de tyran. Craignez Allâh — qui vous a accordé ce que vous savez : du bétail, des fils, des jardins, des sources. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Ils rirent.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Tu nous donnes des leçons ? Toi ? Un homme comme nous ? Apporte-nous donc ton châtiment, si tu es véridique. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Hud se tut.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Vint la sécheresse.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Trois ans sans pluie. Les sources s'asséchèrent. Le bétail mourut. La terre se fissura. Les Ad envoyèrent une délégation aux Maisons sacrées — à La Mecque, déjà, où on disait que les prières étaient exaucées.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Là-bas, ils prièrent pour la pluie.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Et Allâh leur envoya un nuage.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Un nuage immense, noir, qui montait à l'horizon comme une promesse. Les Ad le virent. Ils se réjouirent.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Voilà le nuage qui va nous apporter la pluie ! »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Hud, dans son coin, dit doucement :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Non. C'est ce que vous vouliez hâter. C'est un vent qui porte un châtiment douloureux. Il détruira tout, sur l'ordre de son Seigneur. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Le nuage arriva. Du nuage, le vent sortit.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Un vent froid, terrible. Pas une tempête ordinaire. Un vent qui souffla sept nuits et huit jours, sans interruption.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Il souleva les Ad — ces géants — comme on soulève des troncs de palmiers creux. Il les jeta à terre. Il les enterra dans le sable. Il rasa Iram aux mille piliers.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "Et au matin du neuvième jour, on ne voyait plus que leurs maisons.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Iram fut perdue. Aucun voyageur, depuis ce jour, n'a su la retrouver.",
+          "en": "",
+          "ar": ""
+        }
+      }
     ],
-    "meditation": { "fr": "Plus on est fort, plus on tombe vite. Le grand arbre tombe d'un coup. L'herbe se plie et reste.", "en": "", "ar": "" },
-    "source": { "fr": "Sourate Hud (11:50-60), Al-Ahqaf (46:21-26), Al-Fajr (89:6-8)", "en": "", "ar": "" }
+    "meditation": {
+      "fr": "Plus on est fort, plus on tombe vite. Le grand arbre tombe d'un coup. L'herbe se plie et reste.",
+      "en": "",
+      "ar": ""
+    },
+    "source": {
+      "fr": "Sourate Hud (11:50-60), Al-Ahqaf (46:21-26), Al-Fajr (89:6-8)",
+      "en": "",
+      "ar": ""
+    }
   },
   {
     "num": 12,
     "id": "recit_012",
     "theme": "La patience",
-    "titre": { "fr": "Ayoub et l'épreuve", "en": "", "ar": "" },
+    "titre": {
+      "fr": "Ayoub et l'épreuve",
+      "en": "",
+      "ar": ""
+    },
     "paragraphes": [
-      { "type": "text", "content": { "fr": "Ayoub était un homme béni.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Il avait tout. Une grande famille. Des troupeaux. Des terres. Une santé. Une femme qui l'aimait. Et — surtout — une foi profonde, ferme, qui le faisait remercier Allâh à chaque heure.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Allâh lui retira tout.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "D'abord les troupeaux — emportés par les pillards et la maladie. Ayoub dit : al-hamdulillah.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Puis les terres — frappées par la sécheresse. Al-hamdulillah.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Puis les enfants. Un à un. Tous. Al-hamdulillah.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Puis sa santé. Une maladie sans nom envahit son corps. La peau s'ouvrit. Des plaies se mirent à couler. Une odeur s'installa autour de lui — si forte que les voisins, un par un, se mirent à passer de l'autre côté de la rue.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Il fut emporté hors du village. Couché sur un tas de cendres. Privé de tout.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Il ne lui restait qu'une chose : sa femme.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Elle marcha pour lui. Elle mendia pour lui. Elle se vendit même ses cheveux — sa parure — pour pouvoir nourrir Ayoub un jour de plus.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Et Ayoub, sur sa cendre, ne disait qu'un mot — toujours le même.", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "Al-hamdulillah.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Dix-huit ans passèrent ainsi.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Un jour — un jour qui n'avait rien de particulier — sa douleur fut si grande qu'il leva les yeux. Pas pour se plaindre. Pas pour réclamer. Juste pour dire, doucement, à Celui qui savait :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Le mal m'a touché. Et Tu es le plus Miséricordieux des miséricordieux. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Allâh entendit. Allâh avait toujours entendu.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Il dit à Ayoub :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Frappe la terre de ton pied. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Ayoub frappa. Une source jaillit. Une source d'eau pure, fraîche, qu'aucun œil avant lui n'avait vue.", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Voilà une eau pour te laver, et une eau pour boire. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Il se lava. La peau redevint saine. Le corps se redressa. La vigueur revint.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Et Allâh lui rendit sa famille — et autant d'autres avec elle.", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Nous l'avons trouvé patient. Quel excellent serviteur. Il était plein de repentir. »", "en": "", "ar": "" } }
+      {
+        "type": "text",
+        "content": {
+          "fr": "Ayoub était un homme béni.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Il avait tout. Une grande famille. Des troupeaux. Des terres. Une santé. Une femme qui l'aimait. Et — surtout — une foi profonde, ferme, qui le faisait remercier Allâh à chaque heure.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Allâh lui retira tout.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "D'abord les troupeaux — emportés par les pillards et la maladie. Ayoub dit : al-hamdulillah.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Puis les terres — frappées par la sécheresse. Al-hamdulillah.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Puis les enfants. Un à un. Tous. Al-hamdulillah.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Puis sa santé. Une maladie sans nom envahit son corps. La peau s'ouvrit. Des plaies se mirent à couler. Une odeur s'installa autour de lui — si forte que les voisins, un par un, se mirent à passer de l'autre côté de la rue.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Il fut emporté hors du village. Couché sur un tas de cendres. Privé de tout.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Il ne lui restait qu'une chose : sa femme.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Elle marcha pour lui. Elle mendia pour lui. Elle se vendit même ses cheveux — sa parure — pour pouvoir nourrir Ayoub un jour de plus.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Et Ayoub, sur sa cendre, ne disait qu'un mot — toujours le même.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "Al-hamdulillah.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Dix-huit ans passèrent ainsi.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Un jour — un jour qui n'avait rien de particulier — sa douleur fut si grande qu'il leva les yeux. Pas pour se plaindre. Pas pour réclamer. Juste pour dire, doucement, à Celui qui savait :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Le mal m'a touché. Et Tu es le plus Miséricordieux des miséricordieux. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Allâh entendit. Allâh avait toujours entendu.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Il dit à Ayoub :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Frappe la terre de ton pied. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Ayoub frappa. Une source jaillit. Une source d'eau pure, fraîche, qu'aucun œil avant lui n'avait vue.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Voilà une eau pour te laver, et une eau pour boire. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Il se lava. La peau redevint saine. Le corps se redressa. La vigueur revint.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Et Allâh lui rendit sa famille — et autant d'autres avec elle.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Nous l'avons trouvé patient. Quel excellent serviteur. Il était plein de repentir. »",
+          "en": "",
+          "ar": ""
+        }
+      }
     ],
-    "meditation": { "fr": "La patience n'est pas un mur qu'on dresse contre la douleur. C'est une porte qu'on laisse ouverte sur Allâh — même quand on ne sent plus rien.", "en": "", "ar": "" },
-    "source": { "fr": "Sourate Sad (38:41-44), Al-Anbiya (21:83-84)", "en": "", "ar": "" }
+    "meditation": {
+      "fr": "La patience n'est pas un mur qu'on dresse contre la douleur. C'est une porte qu'on laisse ouverte sur Allâh — même quand on ne sent plus rien.",
+      "en": "",
+      "ar": ""
+    },
+    "source": {
+      "fr": "Sourate Sad (38:41-44), Al-Anbiya (21:83-84)",
+      "en": "",
+      "ar": ""
+    }
   },
   {
     "num": 13,
     "id": "recit_013",
     "theme": "La fuite et le retour",
-    "titre": { "fr": "Yunus et le poisson", "en": "", "ar": "" },
+    "titre": {
+      "fr": "Yunus et le poisson",
+      "en": "",
+      "ar": ""
+    },
     "paragraphes": [
-      { "type": "text", "content": { "fr": "Yunus avait été envoyé à Ninive.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Une grande ville. Cent mille habitants, ou plus. Des gens qui adoraient ce qu'ils ne comprenaient pas, et qui se moquaient de ceux qui essayaient de comprendre.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Yunus parla. Encore. Encore.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Personne ne l'écouta.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Un jour, fatigué, il se leva avant l'aube. Sans demander la permission d'Allâh. Sans attendre Son ordre. Il marcha jusqu'au port. Il monta dans un bateau qui partait pour le large.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Il fuyait. Mais on ne fuit pas Allâh.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "À peine en pleine mer, une tempête se leva. Le bateau menaça de couler. Les marins, terrifiés, jetèrent leurs marchandises pour alléger le navire — ça ne suffit pas. La tempête grondait toujours.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Ils dirent : il y a quelqu'un parmi nous qui a fui. Tirons au sort, pour voir qui doit être jeté à la mer.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Le sort tomba sur Yunus.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Ils le regardèrent — c'était un homme de bien, calme, pieux. Ils ne pouvaient pas. Ils tirèrent une deuxième fois. Le sort tomba sur Yunus.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Trois fois.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Alors Yunus comprit. Il se leva. Il monta sur le bord du bateau. Et il se laissa tomber dans la mer.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Un poisson immense — préparé depuis le commencement des mers, pour ce moment précis — l'avala tout entier.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Trois ténèbres entouraient Yunus. La ténèbre de la nuit. La ténèbre de la mer profonde. La ténèbre du ventre du poisson.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Et dans ces trois ténèbres, Yunus appela.", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Il n'y a de dieu que Toi. Gloire à Toi. J'ai été parmi les injustes. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Une seule phrase. Trois propositions. Pas de plainte. Pas de marchandage. Une reconnaissance.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Allâh entendit.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Le poisson remonta vers la surface. Il vomit Yunus sur une plage déserte, le corps nu, la peau brûlée par les sucs de l'estomac, faible comme un nouveau-né.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Allâh fit pousser, au-dessus de lui, un plant de courge — pour qu'il ait de l'ombre. Et il guérit.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Puis il repartit vers Ninive.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Et cette fois — chose unique dans le Coran — la ville entière l'écouta. Cent mille habitants, ou plus, crurent. Et Allâh leur fit grâce.", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Si ce n'est qu'il fut parmi ceux qui glorifient Allâh, il serait demeuré dans son ventre jusqu'au Jour de la Résurrection. »", "en": "", "ar": "" } }
+      {
+        "type": "text",
+        "content": {
+          "fr": "Yunus avait été envoyé à Ninive.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Une grande ville. Cent mille habitants, ou plus. Des gens qui adoraient ce qu'ils ne comprenaient pas, et qui se moquaient de ceux qui essayaient de comprendre.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Yunus parla. Encore. Encore.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Personne ne l'écouta.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Un jour, fatigué, il se leva avant l'aube. Sans demander la permission d'Allâh. Sans attendre Son ordre. Il marcha jusqu'au port. Il monta dans un bateau qui partait pour le large.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Il fuyait. Mais on ne fuit pas Allâh.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "À peine en pleine mer, une tempête se leva. Le bateau menaça de couler. Les marins, terrifiés, jetèrent leurs marchandises pour alléger le navire — ça ne suffit pas. La tempête grondait toujours.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Ils dirent : il y a quelqu'un parmi nous qui a fui. Tirons au sort, pour voir qui doit être jeté à la mer.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Le sort tomba sur Yunus.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Ils le regardèrent — c'était un homme de bien, calme, pieux. Ils ne pouvaient pas. Ils tirèrent une deuxième fois. Le sort tomba sur Yunus.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Trois fois.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Alors Yunus comprit. Il se leva. Il monta sur le bord du bateau. Et il se laissa tomber dans la mer.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Un poisson immense — préparé depuis le commencement des mers, pour ce moment précis — l'avala tout entier.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Trois ténèbres entouraient Yunus. La ténèbre de la nuit. La ténèbre de la mer profonde. La ténèbre du ventre du poisson.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Et dans ces trois ténèbres, Yunus appela.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Il n'y a de dieu que Toi. Gloire à Toi. J'ai été parmi les injustes. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Une seule phrase. Trois propositions. Pas de plainte. Pas de marchandage. Une reconnaissance.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Allâh entendit.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Le poisson remonta vers la surface. Il vomit Yunus sur une plage déserte, le corps nu, la peau brûlée par les sucs de l'estomac, faible comme un nouveau-né.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Allâh fit pousser, au-dessus de lui, un plant de courge — pour qu'il ait de l'ombre. Et il guérit.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Puis il repartit vers Ninive.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Et cette fois — chose unique dans le Coran — la ville entière l'écouta. Cent mille habitants, ou plus, crurent. Et Allâh leur fit grâce.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Si ce n'est qu'il fut parmi ceux qui glorifient Allâh, il serait demeuré dans son ventre jusqu'au Jour de la Résurrection. »",
+          "en": "",
+          "ar": ""
+        }
+      }
     ],
-    "meditation": { "fr": "Allâh ne te lâche pas même quand tu fuis. Surtout quand tu fuis. Le poisson n'est pas un châtiment — c'est un chemin de retour.", "en": "", "ar": "" },
-    "source": { "fr": "Sourate As-Saffat (37:139-148), Al-Anbiya (21:87-88)", "en": "", "ar": "" }
+    "meditation": {
+      "fr": "Allâh ne te lâche pas même quand tu fuis. Surtout quand tu fuis. Le poisson n'est pas un châtiment — c'est un chemin de retour.",
+      "en": "",
+      "ar": ""
+    },
+    "source": {
+      "fr": "Sourate As-Saffat (37:139-148), Al-Anbiya (21:87-88)",
+      "en": "",
+      "ar": ""
+    }
   },
   {
     "num": 14,
     "id": "recit_014",
     "theme": "La royauté juste",
-    "titre": { "fr": "Sulayman et la reine de Saba", "en": "", "ar": "" },
+    "titre": {
+      "fr": "Sulayman et la reine de Saba",
+      "en": "",
+      "ar": ""
+    },
     "paragraphes": [
-      { "type": "text", "content": { "fr": "Sulayman était roi.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Allâh lui avait donné ce qu'aucun roi n'aurait après lui — la langue des oiseaux, la soumission des djinns, le pouvoir sur le vent. Son armée comptait des hommes, des djinns, des oiseaux. Il parlait à la huppe et à la fourmi.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Un jour, il passa en revue ses troupes. La huppe manquait.", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Je la châtierai sévèrement, ou je l'égorgerai, à moins qu'elle ne m'apporte une excuse valable. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "La huppe revint peu après. Elle se posa devant Sulayman, hors d'haleine.", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« J'ai vu ce que tu n'as pas vu. J'ai survolé une terre nommée Saba. Une femme y règne. Elle a un trône immense. Mais elle se prosterne, avec son peuple, devant le soleil. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Sulayman écouta. Il dit : nous verrons si tu dis vrai. Il écrivit une lettre.", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« De la part de Sulayman. Au nom d'Allâh, le Tout-Miséricordieux, le Très-Miséricordieux. Ne soyez pas hautains avec moi. Venez à moi soumis. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Il donna la lettre à la huppe. Va. Jette-la chez elle. Et reviens te tenir à l'écart.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "La huppe partit. Bilqis — la reine de Saba — trouva la lettre sur ses coussins, sans savoir comment elle y était arrivée.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Elle réunit ses conseillers. Elle leur lut la lettre. Elle leur dit :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Une noble lettre m'a été lancée. Que me conseillez-vous ? »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Ses conseillers — des hommes, des soldats — répondirent : nous sommes forts. Faisons la guerre.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Elle, plus sage, dit :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Les rois, quand ils entrent dans une cité, la ruinent. Je vais lui envoyer un cadeau, et voir ce qui me sera renvoyé. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Le cadeau arriva chez Sulayman. Or, soie, esclaves, parfums. Sulayman regarda — sans toucher.", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Vous voulez m'aider avec des biens ? Ce qu'Allâh m'a donné est meilleur que ce qu'Il vous a donné. Renvoyez votre cadeau. Et préparez-vous — nous viendrons à vous avec des armées que vous ne pourrez pas tenir. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Bilqis comprit. Elle vint elle-même. Avec une escorte modeste, par respect.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Sulayman, pour la surprendre, avait demandé à un djinn d'apporter son trône — le trône immense de Saba — avant son arrivée. Il l'avait fait modifier, légèrement, pour voir si elle le reconnaîtrait.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Quand elle entra et vit son propre trône, on lui demanda : est-ce le tien ?", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« On dirait. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Elle avait compris. Pas un roi ordinaire.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Sulayman l'invita à entrer dans le palais. Il avait fait poser un sol de cristal poli, sous lequel coulait de l'eau. Bilqis crut entrer dans un bassin — elle releva sa robe.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Sulayman lui dit, doucement :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« C'est du cristal poli. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Elle laissa retomber sa robe. Elle baissa les yeux. Et elle dit, dans un souffle :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Seigneur, je me suis fait du tort à moi-même. Je me soumets, avec Sulayman, à Allâh, le Seigneur des mondes. »", "en": "", "ar": "" } }
+      {
+        "type": "text",
+        "content": {
+          "fr": "Sulayman était roi.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Allâh lui avait donné ce qu'aucun roi n'aurait après lui — la langue des oiseaux, la soumission des djinns, le pouvoir sur le vent. Son armée comptait des hommes, des djinns, des oiseaux. Il parlait à la huppe et à la fourmi.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Un jour, il passa en revue ses troupes. La huppe manquait.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Je la châtierai sévèrement, ou je l'égorgerai, à moins qu'elle ne m'apporte une excuse valable. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "La huppe revint peu après. Elle se posa devant Sulayman, hors d'haleine.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« J'ai vu ce que tu n'as pas vu. J'ai survolé une terre nommée Saba. Une femme y règne. Elle a un trône immense. Mais elle se prosterne, avec son peuple, devant le soleil. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Sulayman écouta. Il dit : nous verrons si tu dis vrai. Il écrivit une lettre.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« De la part de Sulayman. Au nom d'Allâh, le Tout-Miséricordieux, le Très-Miséricordieux. Ne soyez pas hautains avec moi. Venez à moi soumis. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Il donna la lettre à la huppe. Va. Jette-la chez elle. Et reviens te tenir à l'écart.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "La huppe partit. Bilqis — la reine de Saba — trouva la lettre sur ses coussins, sans savoir comment elle y était arrivée.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Elle réunit ses conseillers. Elle leur lut la lettre. Elle leur dit :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Une noble lettre m'a été lancée. Que me conseillez-vous ? »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Ses conseillers — des hommes, des soldats — répondirent : nous sommes forts. Faisons la guerre.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Elle, plus sage, dit :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Les rois, quand ils entrent dans une cité, la ruinent. Je vais lui envoyer un cadeau, et voir ce qui me sera renvoyé. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Le cadeau arriva chez Sulayman. Or, soie, esclaves, parfums. Sulayman regarda — sans toucher.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Vous voulez m'aider avec des biens ? Ce qu'Allâh m'a donné est meilleur que ce qu'Il vous a donné. Renvoyez votre cadeau. Et préparez-vous — nous viendrons à vous avec des armées que vous ne pourrez pas tenir. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Bilqis comprit. Elle vint elle-même. Avec une escorte modeste, par respect.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Sulayman, pour la surprendre, avait demandé à un djinn d'apporter son trône — le trône immense de Saba — avant son arrivée. Il l'avait fait modifier, légèrement, pour voir si elle le reconnaîtrait.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Quand elle entra et vit son propre trône, on lui demanda : est-ce le tien ?",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« On dirait. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Elle avait compris. Pas un roi ordinaire.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Sulayman l'invita à entrer dans le palais. Il avait fait poser un sol de cristal poli, sous lequel coulait de l'eau. Bilqis crut entrer dans un bassin — elle releva sa robe.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Sulayman lui dit, doucement :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« C'est du cristal poli. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Elle laissa retomber sa robe. Elle baissa les yeux. Et elle dit, dans un souffle :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Seigneur, je me suis fait du tort à moi-même. Je me soumets, avec Sulayman, à Allâh, le Seigneur des mondes. »",
+          "en": "",
+          "ar": ""
+        }
+      }
     ],
-    "meditation": { "fr": "Le vrai roi n'écrase pas. Il propose — et celui qui a un cœur reconnaît, sans qu'on ait à le forcer.", "en": "", "ar": "" },
-    "source": { "fr": "Sourate An-Naml (27:15-44)", "en": "", "ar": "" }
+    "meditation": {
+      "fr": "Le vrai roi n'écrase pas. Il propose — et celui qui a un cœur reconnaît, sans qu'on ait à le forcer.",
+      "en": "",
+      "ar": ""
+    },
+    "source": {
+      "fr": "Sourate An-Naml (27:15-44)",
+      "en": "",
+      "ar": ""
+    }
   },
   {
     "num": 15,
     "id": "recit_015",
     "theme": "L'attention au petit",
-    "titre": { "fr": "Sulayman et les fourmis", "en": "", "ar": "" },
+    "titre": {
+      "fr": "Sulayman et les fourmis",
+      "en": "",
+      "ar": ""
+    },
     "paragraphes": [
-      { "type": "text", "content": { "fr": "Sulayman marchait avec son armée.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Une armée immense — des hommes, des djinns, des oiseaux — qui couvrait la plaine comme une marée. On entendait, de loin, le bruit de leurs pas. La terre tremblait à leur passage.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Ils arrivèrent à la vallée des fourmis.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Une vallée que personne ne remarquait. Une vallée qu'on aurait pu traverser sans même savoir qu'il y avait des fourmis.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Mais Sulayman les vit.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Au bord du chemin, une fourmi — une seule — dit aux autres :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Ô fourmis. Entrez dans vos demeures. Que Sulayman et ses troupes ne vous écrasent pas, sans s'en apercevoir. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Sulayman entendit. Allâh lui avait donné la langue de toutes les créatures.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Il sourit.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Pas le sourire d'un roi qui rit d'une fourmi. Le sourire d'un homme touché — touché par cette créature si petite, qui avait pris soin de son peuple si petit, et qui avait eu, en même temps, la délicatesse de ne pas accuser Sulayman.", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Sans s'en apercevoir », avait-elle dit.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Elle ne disait pas : Sulayman le tyran. Sulayman l'écrase-tout. Elle disait : il ne nous voit pas. Il ne fait pas exprès. C'est une fourmi qui plaide pour la noblesse du roi.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Sulayman pria :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Seigneur, inspire-moi à être reconnaissant pour le bienfait que Tu m'as accordé, à moi et à mes parents, et à faire des œuvres bonnes que Tu agrées. Et fais-moi entrer, par Ta miséricorde, parmi Tes serviteurs vertueux. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Et il ordonna à son armée — sans bruit — de contourner la vallée.", "en": "", "ar": "" } }
+      {
+        "type": "text",
+        "content": {
+          "fr": "Sulayman marchait avec son armée.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Une armée immense — des hommes, des djinns, des oiseaux — qui couvrait la plaine comme une marée. On entendait, de loin, le bruit de leurs pas. La terre tremblait à leur passage.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Ils arrivèrent à la vallée des fourmis.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Une vallée que personne ne remarquait. Une vallée qu'on aurait pu traverser sans même savoir qu'il y avait des fourmis.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Mais Sulayman les vit.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Au bord du chemin, une fourmi — une seule — dit aux autres :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Ô fourmis. Entrez dans vos demeures. Que Sulayman et ses troupes ne vous écrasent pas, sans s'en apercevoir. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Sulayman entendit. Allâh lui avait donné la langue de toutes les créatures.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Il sourit.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Pas le sourire d'un roi qui rit d'une fourmi. Le sourire d'un homme touché — touché par cette créature si petite, qui avait pris soin de son peuple si petit, et qui avait eu, en même temps, la délicatesse de ne pas accuser Sulayman.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Sans s'en apercevoir », avait-elle dit.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Elle ne disait pas : Sulayman le tyran. Sulayman l'écrase-tout. Elle disait : il ne nous voit pas. Il ne fait pas exprès. C'est une fourmi qui plaide pour la noblesse du roi.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Sulayman pria :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Seigneur, inspire-moi à être reconnaissant pour le bienfait que Tu m'as accordé, à moi et à mes parents, et à faire des œuvres bonnes que Tu agrées. Et fais-moi entrer, par Ta miséricorde, parmi Tes serviteurs vertueux. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Et il ordonna à son armée — sans bruit — de contourner la vallée.",
+          "en": "",
+          "ar": ""
+        }
+      }
     ],
-    "meditation": { "fr": "La grandeur ne se mesure pas à ce qu'on écrase. Elle se mesure à ce qu'on prend le temps de ne pas écraser.", "en": "", "ar": "" },
-    "source": { "fr": "Sourate An-Naml (27:18-19)", "en": "", "ar": "" }
+    "meditation": {
+      "fr": "La grandeur ne se mesure pas à ce qu'on écrase. Elle se mesure à ce qu'on prend le temps de ne pas écraser.",
+      "en": "",
+      "ar": ""
+    },
+    "source": {
+      "fr": "Sourate An-Naml (27:18-19)",
+      "en": "",
+      "ar": ""
+    }
   },
   {
     "num": 16,
     "id": "recit_016",
     "theme": "Le faible devant le fort",
-    "titre": { "fr": "Talut, Dawud et le géant", "en": "", "ar": "" },
+    "titre": {
+      "fr": "Talut, Dawud et le géant",
+      "en": "",
+      "ar": ""
+    },
     "paragraphes": [
-      { "type": "text", "content": { "fr": "Les Banu Isra'il étaient menacés.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Un ennemi puissant — Jalut, géant qui dépassait les hommes d'une coudée — pressait leurs frontières. Ils vinrent voir leur prophète. Ils dirent : envoie-nous un roi. Nous combattrons sous son commandement.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Le prophète interrogea Allâh. Allâh choisit Talut.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Quand le prophète annonça le choix, les nobles murmurèrent.", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Lui ? Mais nous avons plus de droit que lui à la royauté. Et il n'a même pas la fortune ! »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Le prophète répondit :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Allâh l'a choisi sur vous. Il l'a comblé en science et en stature. Allâh donne Son pouvoir à qui Il veut. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Talut prit la tête de l'armée. Ils marchèrent.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "En chemin, ils croisèrent une rivière. Talut leur dit :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Allâh va vous éprouver par cette rivière. Quiconque en boira ne sera pas avec moi. Sauf celui qui en puise dans le creux de sa main. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "La plupart burent — à pleines gorgées, sans patience.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Quand ils traversèrent la rivière, ceux qui avaient bu virent les armées de Jalut. Elles étaient immenses. Ils dirent :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Nous n'avons aucune force aujourd'hui contre Jalut et ses troupes. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Ils firent demi-tour.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Les autres — ceux qui avaient juste mouillé leur main — étaient peu nombreux. Mais ils dirent, calmement :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Combien de fois une petite troupe, par la permission d'Allâh, a vaincu une grande troupe. Allâh est avec les patients. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Et parmi eux, il y avait un jeune homme. Le plus petit. Le moins armé. Il s'appelait Dawud.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Quand les deux armées se firent face, Jalut sortit des rangs. Il défiait, en sa voix de tonnerre, qu'on lui envoie un combattant.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Personne ne bougea.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Dawud s'avança.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Sans armure. Sans épée. Avec une fronde et cinq pierres ramassées dans le lit du fleuve.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Jalut rit. Le rire d'un homme qui ne sait pas encore qu'il rit pour la dernière fois.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Dawud arma la fronde. Une seule fois.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "La pierre traversa l'air. Frappa le front de Jalut. Le géant tomba.", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "Allâh donna à Dawud la royauté et la sagesse, et lui enseigna ce qu'Il voulut.", "en": "", "ar": "" } }
+      {
+        "type": "text",
+        "content": {
+          "fr": "Les Banu Isra'il étaient menacés.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Un ennemi puissant — Jalut, géant qui dépassait les hommes d'une coudée — pressait leurs frontières. Ils vinrent voir leur prophète. Ils dirent : envoie-nous un roi. Nous combattrons sous son commandement.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Le prophète interrogea Allâh. Allâh choisit Talut.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Quand le prophète annonça le choix, les nobles murmurèrent.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Lui ? Mais nous avons plus de droit que lui à la royauté. Et il n'a même pas la fortune ! »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Le prophète répondit :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Allâh l'a choisi sur vous. Il l'a comblé en science et en stature. Allâh donne Son pouvoir à qui Il veut. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Talut prit la tête de l'armée. Ils marchèrent.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "En chemin, ils croisèrent une rivière. Talut leur dit :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Allâh va vous éprouver par cette rivière. Quiconque en boira ne sera pas avec moi. Sauf celui qui en puise dans le creux de sa main. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "La plupart burent — à pleines gorgées, sans patience.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Quand ils traversèrent la rivière, ceux qui avaient bu virent les armées de Jalut. Elles étaient immenses. Ils dirent :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Nous n'avons aucune force aujourd'hui contre Jalut et ses troupes. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Ils firent demi-tour.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Les autres — ceux qui avaient juste mouillé leur main — étaient peu nombreux. Mais ils dirent, calmement :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Combien de fois une petite troupe, par la permission d'Allâh, a vaincu une grande troupe. Allâh est avec les patients. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Et parmi eux, il y avait un jeune homme. Le plus petit. Le moins armé. Il s'appelait Dawud.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Quand les deux armées se firent face, Jalut sortit des rangs. Il défiait, en sa voix de tonnerre, qu'on lui envoie un combattant.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Personne ne bougea.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Dawud s'avança.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Sans armure. Sans épée. Avec une fronde et cinq pierres ramassées dans le lit du fleuve.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Jalut rit. Le rire d'un homme qui ne sait pas encore qu'il rit pour la dernière fois.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Dawud arma la fronde. Une seule fois.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "La pierre traversa l'air. Frappa le front de Jalut. Le géant tomba.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "Allâh donna à Dawud la royauté et la sagesse, et lui enseigna ce qu'Il voulut.",
+          "en": "",
+          "ar": ""
+        }
+      }
     ],
-    "meditation": { "fr": "Allâh ne pèse pas les armées. Il pèse les cœurs. Une fronde dans une main qui ne tremble pas suffit à faire tomber un géant.", "en": "", "ar": "" },
-    "source": { "fr": "Sourate Al-Baqara (2:246-251)", "en": "", "ar": "" }
+    "meditation": {
+      "fr": "Allâh ne pèse pas les armées. Il pèse les cœurs. Une fronde dans une main qui ne tremble pas suffit à faire tomber un géant.",
+      "en": "",
+      "ar": ""
+    },
+    "source": {
+      "fr": "Sourate Al-Baqara (2:246-251)",
+      "en": "",
+      "ar": ""
+    }
   },
   {
     "num": 17,
     "id": "recit_017",
     "theme": "L'envahisseur arrêté",
-    "titre": { "fr": "Les Compagnons de l'Éléphant", "en": "", "ar": "" },
+    "titre": {
+      "fr": "Les Compagnons de l'Éléphant",
+      "en": "",
+      "ar": ""
+    },
     "paragraphes": [
-      { "type": "text", "content": { "fr": "L'année où le Prophète Muhammad ﷺ devait naître, un événement avait secoué l'Arabie.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Au Yémen, un vice-roi chrétien nommé Abraha avait construit une grande église — un palais magnifique, qu'il espérait substituer à la Kaaba comme lieu de pèlerinage. Il voulait détourner les Arabes de leur Maison sacrée.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Mais les Arabes continuèrent à se rendre à La Mecque.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Abraha décida de marcher sur la Kaaba — pour la détruire.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Il rassembla une armée immense. Et en tête de cette armée, il plaça un éléphant — un animal jamais vu en Arabie, immense comme une montagne mobile, qui devait terroriser les peuples sur le chemin.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "L'armée avança. Elle écrasa tout. Personne ne pouvait lui résister.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Aux abords de La Mecque, Abraha s'empara des chameaux du chef de la ville — un homme nommé Abd al-Muttalib, qui sera plus tard le grand-père du Prophète ﷺ.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Abd al-Muttalib vint le voir, dans son camp. Pour réclamer ses chameaux.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Abraha lui dit, étonné :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Tu viens me parler de chameaux, alors que je viens détruire la maison de tes pères ? »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Abd al-Muttalib répondit, sans émotion :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Les chameaux sont à moi. La Maison a un Seigneur — qui la défendra. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Il prit ses chameaux. Il rentra à La Mecque. Il dit à ses gens : montez sur la montagne. Laissez la Kaaba à son Seigneur.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Au matin, l'armée d'Abraha avança. L'éléphant en tête.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Mais — chose étrange — quand l'éléphant fut tourné vers La Mecque, il s'agenouilla. Refusa d'avancer. Frappé, piqué, battu — il refusa.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Et alors, du ciel — du ciel que personne ne surveillait — vint une nuée d'oiseaux.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Des oiseaux étranges, par bandes, chacun portant trois pierres. Une dans le bec. Une dans chaque serre. Des pierres d'argile cuite, marquées chacune pour un homme.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Les oiseaux lâchèrent leurs pierres.", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "Et Il les rendit semblables à de la paille mâchée.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "L'armée d'Abraha fut anéantie sur place. Pas un combat. Pas une armée arabe. Juste des oiseaux et des pierres.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Cette année-là, on compta le temps en disant : c'était l'année de l'éléphant.", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "Et cette année-là — quelques semaines après — naquit, à La Mecque, un enfant que sa mère appela Muhammad.", "en": "", "ar": "" } }
+      {
+        "type": "text",
+        "content": {
+          "fr": "L'année où le Prophète Muhammad ﷺ devait naître, un événement avait secoué l'Arabie.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Au Yémen, un vice-roi chrétien nommé Abraha avait construit une grande église — un palais magnifique, qu'il espérait substituer à la Kaaba comme lieu de pèlerinage. Il voulait détourner les Arabes de leur Maison sacrée.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Mais les Arabes continuèrent à se rendre à La Mecque.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Abraha décida de marcher sur la Kaaba — pour la détruire.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Il rassembla une armée immense. Et en tête de cette armée, il plaça un éléphant — un animal jamais vu en Arabie, immense comme une montagne mobile, qui devait terroriser les peuples sur le chemin.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "L'armée avança. Elle écrasa tout. Personne ne pouvait lui résister.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Aux abords de La Mecque, Abraha s'empara des chameaux du chef de la ville — un homme nommé Abd al-Muttalib, qui sera plus tard le grand-père du Prophète ﷺ.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Abd al-Muttalib vint le voir, dans son camp. Pour réclamer ses chameaux.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Abraha lui dit, étonné :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Tu viens me parler de chameaux, alors que je viens détruire la maison de tes pères ? »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Abd al-Muttalib répondit, sans émotion :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Les chameaux sont à moi. La Maison a un Seigneur — qui la défendra. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Il prit ses chameaux. Il rentra à La Mecque. Il dit à ses gens : montez sur la montagne. Laissez la Kaaba à son Seigneur.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Au matin, l'armée d'Abraha avança. L'éléphant en tête.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Mais — chose étrange — quand l'éléphant fut tourné vers La Mecque, il s'agenouilla. Refusa d'avancer. Frappé, piqué, battu — il refusa.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Et alors, du ciel — du ciel que personne ne surveillait — vint une nuée d'oiseaux.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Des oiseaux étranges, par bandes, chacun portant trois pierres. Une dans le bec. Une dans chaque serre. Des pierres d'argile cuite, marquées chacune pour un homme.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Les oiseaux lâchèrent leurs pierres.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "Et Il les rendit semblables à de la paille mâchée.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "L'armée d'Abraha fut anéantie sur place. Pas un combat. Pas une armée arabe. Juste des oiseaux et des pierres.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Cette année-là, on compta le temps en disant : c'était l'année de l'éléphant.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "Et cette année-là — quelques semaines après — naquit, à La Mecque, un enfant que sa mère appela Muhammad.",
+          "en": "",
+          "ar": ""
+        }
+      }
     ],
-    "meditation": { "fr": "Allâh défend ce qui est à Lui. Personne, jamais, ne peut s'approprier ce qui ne lui a pas été donné.", "en": "", "ar": "" },
-    "source": { "fr": "Sourate Al-Fil (105:1-5)", "en": "", "ar": "" }
+    "meditation": {
+      "fr": "Allâh défend ce qui est à Lui. Personne, jamais, ne peut s'approprier ce qui ne lui a pas été donné.",
+      "en": "",
+      "ar": ""
+    },
+    "source": {
+      "fr": "Sourate Al-Fil (105:1-5)",
+      "en": "",
+      "ar": ""
+    }
   },
   {
     "num": 18,
     "id": "recit_018",
     "theme": "Le martyre",
-    "titre": { "fr": "Les gens du fossé", "en": "", "ar": "" },
+    "titre": {
+      "fr": "Les gens du fossé",
+      "en": "",
+      "ar": ""
+    },
     "paragraphes": [
-      { "type": "text", "content": { "fr": "Il y avait, dans une terre lointaine, un peuple qui croyait en Un.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Ils étaient peu nombreux. Ils vivaient simplement. Ils ne faisaient de mal à personne.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Mais le roi de leur terre — un roi qui adorait des idoles — apprit leur existence. Il les fit chercher. Il les fit ramener devant lui.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Il leur ordonna de renier leur foi.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Ils refusèrent.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Le roi avait pour ces hommes la haine particulière des tyrans pour ceux qu'ils ne peuvent pas posséder. Il décida de leur faire payer leur refus — d'une manière qui ferait peur à tous les autres.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Il fit creuser, dans la terre, un long fossé. Un fossé profond, comme une tombe pour cent hommes.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Il fit allumer, au fond, un grand feu. Pas un feu pour cuire. Un feu pour brûler.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Et il fit amener les croyants — les uns après les autres — au bord du fossé.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Il leur dit : reniez. Ou descendez dans le feu.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Aucun ne renia.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Aucun.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Le Coran ne dit pas leur nombre. Il dit seulement qu'ils descendirent, l'un après l'autre, dans le feu — leurs lèvres murmurant Son Nom — et que les bourreaux, autour du fossé, regardaient.", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "Et ils étaient témoins de ce qu'ils faisaient aux croyants.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Une mère, dit la tradition, tenait son enfant dans ses bras. Au moment de se jeter, elle hésita — non pour elle, mais pour le nourrisson qu'elle portait.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "L'enfant, dans ses bras, dit clairement — et c'est rapporté dans les hadiths :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Ma mère, sois patiente. Tu es dans la vérité. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Elle entra dans le feu, l'enfant serré contre elle.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Le Coran ne décrit pas leur mort. Il décrit autre chose. Il décrit le ciel qui regarde — et qui n'oublie pas.", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Ceux qui ont fait subir aux croyants et aux croyantes des épreuves, sans s'en repentir — il y aura pour eux le châtiment de l'Enfer, et pour eux le châtiment du Feu. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Et il dit, des croyants :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Ceux qui croient et accomplissent les bonnes œuvres auront des jardins sous lesquels coulent les ruisseaux. C'est cela le grand succès. »", "en": "", "ar": "" } }
+      {
+        "type": "text",
+        "content": {
+          "fr": "Il y avait, dans une terre lointaine, un peuple qui croyait en Un.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Ils étaient peu nombreux. Ils vivaient simplement. Ils ne faisaient de mal à personne.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Mais le roi de leur terre — un roi qui adorait des idoles — apprit leur existence. Il les fit chercher. Il les fit ramener devant lui.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Il leur ordonna de renier leur foi.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Ils refusèrent.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Le roi avait pour ces hommes la haine particulière des tyrans pour ceux qu'ils ne peuvent pas posséder. Il décida de leur faire payer leur refus — d'une manière qui ferait peur à tous les autres.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Il fit creuser, dans la terre, un long fossé. Un fossé profond, comme une tombe pour cent hommes.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Il fit allumer, au fond, un grand feu. Pas un feu pour cuire. Un feu pour brûler.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Et il fit amener les croyants — les uns après les autres — au bord du fossé.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Il leur dit : reniez. Ou descendez dans le feu.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Aucun ne renia.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Aucun.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Le Coran ne dit pas leur nombre. Il dit seulement qu'ils descendirent, l'un après l'autre, dans le feu — leurs lèvres murmurant Son Nom — et que les bourreaux, autour du fossé, regardaient.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "Et ils étaient témoins de ce qu'ils faisaient aux croyants.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Une mère, dit la tradition, tenait son enfant dans ses bras. Au moment de se jeter, elle hésita — non pour elle, mais pour le nourrisson qu'elle portait.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "L'enfant, dans ses bras, dit clairement — et c'est rapporté dans les hadiths :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Ma mère, sois patiente. Tu es dans la vérité. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Elle entra dans le feu, l'enfant serré contre elle.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Le Coran ne décrit pas leur mort. Il décrit autre chose. Il décrit le ciel qui regarde — et qui n'oublie pas.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Ceux qui ont fait subir aux croyants et aux croyantes des épreuves, sans s'en repentir — il y aura pour eux le châtiment de l'Enfer, et pour eux le châtiment du Feu. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Et il dit, des croyants :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Ceux qui croient et accomplissent les bonnes œuvres auront des jardins sous lesquels coulent les ruisseaux. C'est cela le grand succès. »",
+          "en": "",
+          "ar": ""
+        }
+      }
     ],
-    "meditation": { "fr": "Il y a des feux qui brûlent. Il y a des feux qui purifient. Celui qui descend pour Allâh ne descend pas dans la mort — il descend dans la fidélité.", "en": "", "ar": "" },
-    "source": { "fr": "Sourate Al-Buruj (85:4-10)", "en": "", "ar": "" }
+    "meditation": {
+      "fr": "Il y a des feux qui brûlent. Il y a des feux qui purifient. Celui qui descend pour Allâh ne descend pas dans la mort — il descend dans la fidélité.",
+      "en": "",
+      "ar": ""
+    },
+    "source": {
+      "fr": "Sourate Al-Buruj (85:4-10)",
+      "en": "",
+      "ar": ""
+    }
   },
   {
     "num": 19,
     "id": "recit_019",
     "theme": "Le signe demandé",
-    "titre": { "fr": "Issa et la table descendue du ciel", "en": "", "ar": "" },
+    "titre": {
+      "fr": "Issa et la table descendue du ciel",
+      "en": "",
+      "ar": ""
+    },
     "paragraphes": [
-      { "type": "text", "content": { "fr": "Issa marchait avec ses apôtres.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Ses disciples — quelques-uns. Des pêcheurs, des artisans, des hommes simples qui avaient cru en lui. Ils l'avaient vu guérir l'aveugle, ressusciter le mort, parler avec une langue qu'aucun homme n'avait. Ils croyaient.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Mais ils étaient hommes. Et les hommes — toujours — ont besoin d'un signe de plus.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Un jour, ils dirent à Issa :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Issa, fils de Maryam. Ton Seigneur peut-Il faire descendre du ciel sur nous une table servie ? »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Issa frémit. Pas à cause de la demande — à cause de ce qu'elle révélait.", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Craignez Allâh, si vous êtes croyants. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Ils insistèrent.", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Nous voulons en manger. Que nos cœurs se rassurent. Que nous sachions que tu nous as dit la vérité. Que nous en soyons témoins. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Issa comprit qu'ils n'étaient pas mauvais — ils étaient fragiles. Et il leva les mains vers le ciel. Il dit :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Ô Allâh, notre Seigneur. Fais descendre sur nous, du ciel, une table — qui sera pour nous une fête, pour le premier et le dernier d'entre nous, et un signe venant de Toi. Pourvois-nous. Tu es le meilleur des pourvoyeurs. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Allâh répondit. La table descendit.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Mais avant qu'elle ne descende, Allâh fit une chose terrible. Il dit à Issa, à voix haute, pour que les disciples entendent :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Je vais la faire descendre sur vous. Mais quiconque parmi vous, après cela, refusera de croire — je le châtierai d'un châtiment que Je n'ai infligé à personne d'autre dans les mondes. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Les disciples se turent.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Ils avaient demandé un signe. Ils reçurent en plus une responsabilité.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Le Coran ne dit pas ce qui se passa ensuite. Il laisse la table planer là — entre ciel et terre — comme une question.", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "Un signe est un poids. Plus tu en demandes, plus tu en portes.", "en": "", "ar": "" } }
+      {
+        "type": "text",
+        "content": {
+          "fr": "Issa marchait avec ses apôtres.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Ses disciples — quelques-uns. Des pêcheurs, des artisans, des hommes simples qui avaient cru en lui. Ils l'avaient vu guérir l'aveugle, ressusciter le mort, parler avec une langue qu'aucun homme n'avait. Ils croyaient.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Mais ils étaient hommes. Et les hommes — toujours — ont besoin d'un signe de plus.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Un jour, ils dirent à Issa :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Issa, fils de Maryam. Ton Seigneur peut-Il faire descendre du ciel sur nous une table servie ? »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Issa frémit. Pas à cause de la demande — à cause de ce qu'elle révélait.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Craignez Allâh, si vous êtes croyants. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Ils insistèrent.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Nous voulons en manger. Que nos cœurs se rassurent. Que nous sachions que tu nous as dit la vérité. Que nous en soyons témoins. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Issa comprit qu'ils n'étaient pas mauvais — ils étaient fragiles. Et il leva les mains vers le ciel. Il dit :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Ô Allâh, notre Seigneur. Fais descendre sur nous, du ciel, une table — qui sera pour nous une fête, pour le premier et le dernier d'entre nous, et un signe venant de Toi. Pourvois-nous. Tu es le meilleur des pourvoyeurs. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Allâh répondit. La table descendit.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Mais avant qu'elle ne descende, Allâh fit une chose terrible. Il dit à Issa, à voix haute, pour que les disciples entendent :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Je vais la faire descendre sur vous. Mais quiconque parmi vous, après cela, refusera de croire — je le châtierai d'un châtiment que Je n'ai infligé à personne d'autre dans les mondes. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Les disciples se turent.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Ils avaient demandé un signe. Ils reçurent en plus une responsabilité.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Le Coran ne dit pas ce qui se passa ensuite. Il laisse la table planer là — entre ciel et terre — comme une question.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "Un signe est un poids. Plus tu en demandes, plus tu en portes.",
+          "en": "",
+          "ar": ""
+        }
+      }
     ],
-    "meditation": { "fr": "Avant de demander à voir, demande-toi si tu pourras vivre avec ce que tu auras vu.", "en": "", "ar": "" },
-    "source": { "fr": "Sourate Al-Ma'ida (5:112-115)", "en": "", "ar": "" }
+    "meditation": {
+      "fr": "Avant de demander à voir, demande-toi si tu pourras vivre avec ce que tu auras vu.",
+      "en": "",
+      "ar": ""
+    },
+    "source": {
+      "fr": "Sourate Al-Ma'ida (5:112-115)",
+      "en": "",
+      "ar": ""
+    }
   },
   {
     "num": 20,
     "id": "recit_020",
     "theme": "La résurrection",
-    "titre": { "fr": "L'homme et le village ruiné", "en": "", "ar": "" },
+    "titre": {
+      "fr": "L'homme et le village ruiné",
+      "en": "",
+      "ar": ""
+    },
     "paragraphes": [
-      { "type": "text", "content": { "fr": "Un homme passa, un jour, devant une cité.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Une cité qui avait été grande. Des murs hauts, des portes ouvragées, des marchés bourdonnants. Mais quand l'homme la traversa, il ne restait plus rien. Les toits étaient effondrés. Les puits étaient secs. Les ruelles étaient devenues des chemins pour les renards.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "L'homme s'arrêta. Il regarda. Il dit, plus pour lui-même que pour Allâh :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Comment Allâh la fera-t-Il revivre, après sa mort ? »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Ce n'était pas une moquerie. C'était une vraie question — la question de tous les hommes qui marchent dans les ruines. Comment ce qui est mort peut-il revenir à la vie ?", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Alors Allâh fit quelque chose.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Il fit mourir l'homme.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Pas dans la souffrance. Pas dans la peur. Il l'endormit, simplement, au bord du chemin — avec son âne attaché à côté, et ses provisions encore dans son sac.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "L'homme dormit.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Il dormit cent ans.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Pendant ce temps, la cité fut reconstruite. D'autres habitants vinrent. Les murs furent relevés. Les puits furent rouverts. La vie reprit son cours.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Et un jour — un jour qui n'avait rien de particulier — Allâh réveilla l'homme.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Il ouvrit les yeux. Il s'étira. Il regarda autour de lui.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Allâh lui demanda :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Combien de temps as-tu demeuré ici ? »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "L'homme répondit, sans hésiter :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« J'y suis demeuré un jour. Ou peut-être moins. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Allâh dit :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Non. Tu y es demeuré cent ans. Regarde ta nourriture et ta boisson — elles n'ont pas changé. Regarde ton âne. »", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "L'homme regarda.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Sa nourriture était intacte. Son eau était fraîche. Mais son âne — son âne n'était plus qu'un squelette blanchi, démantelé par le temps, dont les os reposaient là où la mort l'avait laissé tomber, cent ans plus tôt.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Et alors — devant les yeux de l'homme — Allâh fit ce qu'Il avait à faire.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "Les os de l'âne s'élevèrent. Ils se rassemblèrent. Ils se rejoignirent — fémur contre fémur, vertèbre contre vertèbre. La chair les recouvrit. La peau revint. Le souffle entra. L'âne se leva, ouvrit les yeux, et secoua la tête comme s'il sortait d'un long rêve.", "en": "", "ar": "" } },
-      { "type": "text", "content": { "fr": "L'homme regarda. Et il dit, doucement :", "en": "", "ar": "" } },
-      { "type": "italic", "content": { "fr": "« Je sais maintenant qu'Allâh est puissant sur toute chose. »", "en": "", "ar": "" } }
+      {
+        "type": "text",
+        "content": {
+          "fr": "Un homme passa, un jour, devant une cité.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Une cité qui avait été grande. Des murs hauts, des portes ouvragées, des marchés bourdonnants. Mais quand l'homme la traversa, il ne restait plus rien. Les toits étaient effondrés. Les puits étaient secs. Les ruelles étaient devenues des chemins pour les renards.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "L'homme s'arrêta. Il regarda. Il dit, plus pour lui-même que pour Allâh :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Comment Allâh la fera-t-Il revivre, après sa mort ? »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Ce n'était pas une moquerie. C'était une vraie question — la question de tous les hommes qui marchent dans les ruines. Comment ce qui est mort peut-il revenir à la vie ?",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Alors Allâh fit quelque chose.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Il fit mourir l'homme.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Pas dans la souffrance. Pas dans la peur. Il l'endormit, simplement, au bord du chemin — avec son âne attaché à côté, et ses provisions encore dans son sac.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "L'homme dormit.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Il dormit cent ans.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Pendant ce temps, la cité fut reconstruite. D'autres habitants vinrent. Les murs furent relevés. Les puits furent rouverts. La vie reprit son cours.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Et un jour — un jour qui n'avait rien de particulier — Allâh réveilla l'homme.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Il ouvrit les yeux. Il s'étira. Il regarda autour de lui.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Allâh lui demanda :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Combien de temps as-tu demeuré ici ? »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "L'homme répondit, sans hésiter :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« J'y suis demeuré un jour. Ou peut-être moins. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Allâh dit :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Non. Tu y es demeuré cent ans. Regarde ta nourriture et ta boisson — elles n'ont pas changé. Regarde ton âne. »",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "L'homme regarda.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Sa nourriture était intacte. Son eau était fraîche. Mais son âne — son âne n'était plus qu'un squelette blanchi, démantelé par le temps, dont les os reposaient là où la mort l'avait laissé tomber, cent ans plus tôt.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Et alors — devant les yeux de l'homme — Allâh fit ce qu'Il avait à faire.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "Les os de l'âne s'élevèrent. Ils se rassemblèrent. Ils se rejoignirent — fémur contre fémur, vertèbre contre vertèbre. La chair les recouvrit. La peau revint. Le souffle entra. L'âne se leva, ouvrit les yeux, et secoua la tête comme s'il sortait d'un long rêve.",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "fr": "L'homme regarda. Et il dit, doucement :",
+          "en": "",
+          "ar": ""
+        }
+      },
+      {
+        "type": "italic",
+        "content": {
+          "fr": "« Je sais maintenant qu'Allâh est puissant sur toute chose. »",
+          "en": "",
+          "ar": ""
+        }
+      }
     ],
-    "meditation": { "fr": "La question qui te trouble est parfois plus facile à résoudre par un endormissement qu'à comprendre par mille raisonnements.", "en": "", "ar": "" },
-    "source": { "fr": "Sourate Al-Baqara (2:259)", "en": "", "ar": "" }
+    "meditation": {
+      "fr": "La question qui te trouble est parfois plus facile à résoudre par un endormissement qu'à comprendre par mille raisonnements.",
+      "en": "",
+      "ar": ""
+    },
+    "source": {
+      "fr": "Sourate Al-Baqara (2:259)",
+      "en": "",
+      "ar": ""
+    }
   }
 ]
