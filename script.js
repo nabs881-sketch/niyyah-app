@@ -14333,6 +14333,14 @@ function getRegardStreak() {
 }
 window._updateRegardStreak = _updateRegardStreak;
 window.getRegardStreak = getRegardStreak;
+var _svgPlayIcon = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 5.5L18 12L7.5 18.5V5.5Z"/></svg>';
+var _svgPauseIcon = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="9" y1="5" x2="9" y2="19"/><line x1="15" y1="5" x2="15" y2="19"/></svg>';
+var _svg7xIcon = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3.5-7.1"/><polyline points="21 3 21 8 16 8"/><text x="12" y="15" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="9" font-style="italic" stroke="none" fill="currentColor">7</text></svg>';
+var _svgMemoIcon = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"/></svg>';
+var _svgMemoActif = '<svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill-opacity="0.25"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"/></svg>';
+var _svgDuaaIcon = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9c0 7 4 11 8 11s8-4 8-11"/><path d="M4 9c0-2 1-4 3-4s3 2 3 4"/><path d="M14 9c0-2 1-4 3-4s3 2 3 4"/></svg>';
+var _svgShareIcon = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>';
+var _svgStreakIcon = '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14a8 8 0 1 1-11.5-9 6.5 6.5 0 0 0 11.5 9z"/></svg>';
 function _renderRegardePremium(content, data, dataUrl) {
   _updateRegardStreak();
   content.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;"><div style="width:24px;height:24px;border-radius:50%;background:#D4AF37;animation:regardePulse 1.2s ease-in-out infinite;"></div></div>';
@@ -14390,12 +14398,6 @@ function _renderRegardePremium(content, data, dataUrl) {
 }
 window._renderRegardePremium = _renderRegardePremium;
 var _regardePremiumAudio = null;
-var _svgPlayIcon = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 5.5L18 12L7.5 18.5V5.5Z"/></svg>';
-var _svgPauseIcon = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="9" y1="5" x2="9" y2="19"/><line x1="15" y1="5" x2="15" y2="19"/></svg>';
-var _svgMemoIcon = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"/></svg>';
-var _svgDuaaIcon = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9c0 7 4 11 8 11s8-4 8-11"/><path d="M4 9c0-2 1-4 3-4s3 2 3 4"/><path d="M14 9c0-2 1-4 3-4s3 2 3 4"/></svg>';
-var _svgShareIcon = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>';
-var _svgStreakIcon = '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14a8 8 0 1 1-11.5-9 6.5 6.5 0 0 0 11.5 9z"/></svg>';
 function _regardePremiumPlayAudio(btn) {
   if (_regardePremiumAudio && !_regardePremiumAudio.paused) {
     _regardePremiumAudio.pause();
@@ -14416,7 +14418,6 @@ window._regardePremiumPlayAudio = _regardePremiumPlayAudio;
 var _regardeLoopAudio = null;
 var _regardeLoopCount = 0;
 var _regardeLoopActive = false;
-var _svg7xIcon = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3.5-7.1"/><polyline points="21 3 21 8 16 8"/><text x="12" y="15" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="9" font-style="italic" stroke="none" fill="currentColor">7</text></svg>';
 function _regardePremiumLoop(btn) {
   if (_regardeLoopActive) {
     _regardeLoopActive = false;
@@ -14447,7 +14448,6 @@ function _regardePremiumLoop(btn) {
   _playNext();
 }
 window._regardePremiumLoop = _regardePremiumLoop;
-var _svgMemoActif = '<svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill-opacity="0.25"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"/></svg>';
 function _regardeMemorise(btn) {
   var ref = btn.getAttribute('data-ref');
   if (!ref) return;
