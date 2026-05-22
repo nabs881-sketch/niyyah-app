@@ -8082,6 +8082,7 @@ function _getTafakkurPool() {
 
 let _tafakkurAudioMode = 'silence';
 var _tafakkurCurrentPhrase = '';
+var _tafakkurGracePauseTime = 0;
 function _getTafakkurHistory() {
   var arr = [];
   for (var i = 0; i < localStorage.length; i++) {
@@ -8223,10 +8224,12 @@ function setTafakkurAudio(mode, btn) {
 }
 
 function closeTafakkur() {
+  if (_tafakkurRunning && _tafakkurDuration > 0) _computeTafakkurEligible();
   document.getElementById('tafakkurScreen').classList.remove('show');
   document.getElementById('tafakkurDotEl').style.animation = 'none';
   if (_tafakkurInterval) { clearInterval(_tafakkurInterval); _tafakkurInterval = null; }
   _tafakkurRunning = false;
+  _tafakkurGracePauseTime = 0;
   if (_tafakkurAudio) { _tafakkurAudio.pause(); _tafakkurAudio.currentTime = 0; }
 }
 
@@ -8241,14 +8244,29 @@ function setTafakkurDuration(min, btn) {
   toggleTafakkurTimer();
 }
 
+function _computeTafakkurEligible() {
+  if (!safeGetItem('niyyah_tafakkur_first_ever')) {
+    safeSetItem('niyyah_tafakkur_first_ever', '1');
+    safeSetItem('niyyah_tafakkur_recit_eligible', 'true');
+    return;
+  }
+  var elapsed = _tafakkurDuration - _tafakkurRemaining;
+  var eligible = elapsed >= _tafakkurDuration * 0.5;
+  safeSetItem('niyyah_tafakkur_recit_eligible', eligible ? 'true' : 'false');
+}
 function toggleTafakkurTimer() {
   if (_tafakkurRunning) {
     clearInterval(_tafakkurInterval);
     _tafakkurInterval = null;
     _tafakkurRunning = false;
+    _tafakkurGracePauseTime = Date.now();
     document.getElementById('tafakkurDotEl').style.animationPlayState = 'paused';
   } else {
     if (_tafakkurRemaining <= 0) _tafakkurRemaining = _tafakkurDuration;
+    // Grace period 30s : si pause < 30s, reprendre sans penalite
+    if (_tafakkurGracePauseTime && (Date.now() - _tafakkurGracePauseTime) > 30000) {
+      _tafakkurGracePauseTime = 0;
+    }
     _tafakkurRunning = true;
     document.getElementById('tafakkurDotEl').style.animationPlayState = 'running';
     _tafakkurInterval = setInterval(() => {
@@ -8259,6 +8277,7 @@ function toggleTafakkurTimer() {
         _tafakkurRunning = false;
         document.getElementById('tafakkurDotEl').style.background = '#34d962';
         if (navigator.vibrate) navigator.vibrate([100, 50, 100, 50, 200]);
+        _computeTafakkurEligible();
         _markTafakkurDone(_tafakkurCurrentPhrase);
         _showTafakkurEnd();
       }
@@ -8271,6 +8290,11 @@ function _showTafakkurEnd() {
   var timerEl = document.getElementById('tafakkurTimerDisplay');
   if (timerEl) timerEl.textContent = '';
   if (!el) return;
+  var eligible = safeGetItem('niyyah_tafakkur_recit_eligible') === 'true';
+  if (!eligible) {
+    closeTafakkur();
+    return;
+  }
   el.style.opacity = '0';
   setTimeout(function() {
     el.innerHTML = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:#C8A84A;line-height:1.7;max-width:320px;margin:0 auto;">' + _tafakkurCurrentPhrase + '</div>';
