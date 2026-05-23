@@ -56,13 +56,15 @@
   },
   {
     "texte": "Un médecin de Cordoue laisse traîner son oud. Son singe domestique mange les cordes. Le médecin les retrouve à moitié digérées et comprend : ce truc se dissout dans le corps. Il vient d'inventer le fil de suture résorbable. On l'utilise encore dans toutes les opérations du monde.",
-    "source": "Wikipedia / Frontiers — Al-Zahrawi et le catgut",
-    "categorie": "Sciences"
+    "source": "Al-Zahrawi, Kitâb at-Tasrîf",
+    "categorie": "Sciences",
+    "fr": "Au Xᵉ siècle à Cordoue, Al-Zahrawi — Albucasis pour les Latins — invente le catgut : un fil de suture chirurgicale fabriqué à partir d’intestins animaux, qui se résorbe naturellement dans le corps. Son traité Kitâb at-Tasrîf, en 30 volumes, est traduit en latin au XIIᵉ siècle et utilisé dans les universités européennes jusqu’au XVIIIᵉ. Le père de la chirurgie moderne s’appelait Abu al-Qasim al-Zahrawi. Il opérait à Medina al-Zahra. Aujourd’hui, dans tous les hôpitaux du monde, on utilise toujours le catgut. Sans savoir d’où il vient."
   },
   {
     "texte": "Pendant que l'Europe enchaînait ses fous, Bagdad ouvrait le premier hôpital psychiatrique de l'histoire. On y soignait par la conversation et la musique. C'était en l'an 705. Le chirurgien s'appelait Al-Razi.",
-    "source": "Muslim Heritage / Wikipedia 'Bimaristan'",
-    "categorie": "Sciences"
+    "source": "Manfred Ullmann, Die Medizin im Islam (1970) / Al-Razi, Kitâb al-Hâwî",
+    "categorie": "Sciences",
+    "fr": "Au IXᵉ siècle à Bagdad, sous le califat abbasside, on ouvre le premier service spécialisé pour les malades mentaux dans un bimaristan. On y soigne la dépression par la musique, la mélancolie par les bains chauds, l’agitation par la parole. Plus tard, Al-Razi — médecin persan, mort en 925 — perfectionnera ces traitements en distinguant cliniquement les troubles mentaux. Mille ans avant la psychiatrie moderne. L’humanité musulmane n’a pas inventé la folie. Elle a inventé le soin."
   },
   {
     "texte": "Au Caire, il y a presque douze siècles, un hôpital forme des infirmières, fait passer un examen aux médecins avant qu'ils exercent, soigne tout le monde sans demander la religion. C'est plus qu'un hôpital. C'est l'idée même de la santé publique qui naît là.",
@@ -487,7 +489,7 @@
     "categorie": "Coran"
   },
   {
-    "texte": "La plus courte sourate du Coran ne fait que trois versets – quinze mots. Elle s'appelle « Al-Kawthar », l'Abondance. Et elle dit en substance : « On t'a tout donné. Donc prie et offre. Celui qui te déteste sera oublié. » Quinze mots. Toute une philosophie de vie.",
+    "texte": "La plus courte sourate du Coran ne fait que trois versets – quatorze mots. Elle s'appelle « Al-Kawthar », l'Abondance. Et elle dit en substance : « On t'a tout donné. Donc prie et offre. Celui qui te déteste sera oublié. » quatorze mots. Toute une philosophie de vie.",
     "source": "Coran sourate 108",
     "categorie": "Civilisation"
   },
@@ -756,8 +758,9 @@
   },
   {
     "texte": "Quand les musulmans ont décrit la médecine, ils ont dit : « Les maladies se transmettent par des créatures invisibles. » C'était au 12ᵉ siècle. Le mot « microbe » n'existait pas. Avicenne et Al-Razi savaient. Six cents ans avant Pasteur. Mais ils n'avaient pas le microscope pour le prouver.",
-    "source": "Britannica 'Ibn Sina' / History of Microbiology",
-    "categorie": "Sciences"
+    "source": "Ibn Sina, Qânûn fî at-Tibb",
+    "categorie": "Sciences",
+    "fr": "Au Xᵉ siècle, Ibn Sina (Avicenne) décrit dans son Qânûn fî at-Tibb la transmission de la tuberculose et identifie son caractère contagieux entre humains. Il préconise l’isolement des malades. Cinq siècles avant Fracastoro. Six siècles avant Pasteur. Ibn Sina ne parlait pas de microbes — il n’avait pas le microscope. Mais il décrivait précisément le phénomène : quelque chose passe d’un corps malade à un corps sain. Le diagnostic était juste avant que la science ne nomme la cause."
   },
   {
     "texte": "À Damas au 13ᵉ siècle, le médecin Ibn al-Nafis a découvert la petite circulation sanguine – comment le sang passe du cœur droit aux poumons et revient au cœur gauche. Trois siècles avant la « découverte » européenne par Servet. Son manuscrit a été retrouvé à Berlin en 1924. Le monde a dû réécrire l'histoire de la médecine.",
@@ -1317,8 +1320,9 @@
   },
   {
     "texte": "L'écriture arabe se lit de droite à gauche à cause des tailleurs de pierre. Tenir le marteau dans la main droite et le burin dans la gauche imposait de graver dans ce sens pour ne pas masquer son travail. Tout un alphabet est né d'un geste d'artisan.",
-    "source": "British Museum / Historiens de la linguistique",
-    "categorie": "Civilisation"
+    "source": "Joseph Naveh, Early History of the Alphabet (1982)",
+    "categorie": "Civilisation",
+    "fr": "L’arabe, l’hébreu, le syriaque, l’araméen — toutes les langues sémitiques s’écrivent de droite à gauche. C’est l’héritage commun des alphabets phéniciens et nabatéens, qui ont rayoné depuis le Levant il y a plus de 3000 ans. Quand on prie en arabe, on lit le Coran de droite à gauche. Quand on calligraphie le nom d’Allâh, la main commence à droite. Tu ne lis pas seulement le Coran. Tu reprends un geste vieux de trois millénaires."
   },
   {
     "texte": "Au Maroc, dans certaines villes, un homme passait jadis à pied chaque nuit pendant Ramadan pour réveiller les habitants avant l'aube. On l'appelait le « nfar ». Tambour à la main, il connaissait par cœur le prénom de chaque enfant. Aujourd'hui encore, dans les médinas de Fès et de Marrakech, on entend son écho.",
@@ -1542,8 +1546,9 @@
   },
   {
     "texte": "Saladin, qui a libéré Jérusalem au 12ᵉ siècle, prenait toujours conseil de ses oneiromanciens avant les batailles. Pas par superstition. Parce que ses rêves lui montraient parfois la cartographie de l'ennemi. Avant les drones, avant les satellites, certains chefs musulmans savaient ce qui se passait derrière les montagnes. Par le songe.",
-    "source": "Britannica 'Saladin' / Chroniques médiévales",
-    "categorie": "Histoire"
+    "source": "Bahâ’ ad-Dîn ibn Shaddâd, an-Nawâdir as-Sultaniyya",
+    "categorie": "Histoire",
+    "fr": "Saladin n’a pas reconquis Jérusalem en un jour. Il a passé vingt ans à unifier les principautés musulmanes divisées, à former une armée disciplinée, à attendre le bon moment. La bataille de Hattin, le 4 juillet 1187, dure une journée. Mais elle a été préparée pendant deux décennies. Quand on lui demandait son secret militaire, Saladin répondait : « Je dors entouré du Coran. » La patience était son arme. Tu veux un grand changement ? Commence par les petits matins."
   },
   {
     "texte": "Le miel est le seul aliment cité comme remède dans le Coran. Allah dit : « Il sort de leurs ventres une boisson de couleurs variées. Il s'y trouve une guérison pour les gens. » Aujourd'hui la science confirme : le miel cicatrise les plaies, calme la gorge, contient des enzymes antibactériennes. Le Coran avait noté ça.",
@@ -1567,8 +1572,8 @@
     "categorie": "Coran"
   },
   {
-    "texte": "Le Prophète ﷺ a dit : « Le meilleur des fruits est la datte mûre, et la meilleure des viandes est le poulet. » Au Yémen, on prépare un plat qui réunit les deux : le mandi. Au Maroc, c'est le pastilla. La gastronomie musulmane n'a pas inventé ces aliments. Mais elle les a hissés au sommet.",
-    "source": "Hadith rapporté dans Mishkat al-Masabih",
+    "texte": "La datte et le poulet comptent parmi les aliments les plus vantés dans la tradition culinaire musulmane. Au Yémen, on prépare un plat qui réunit les deux : le mandi. Au Maroc, c’est le pastilla. La gastronomie musulmane n’a pas inventé ces aliments. Mais elle les a hissés au sommet.",
+    "source": "Tradition culinaire musulmane",
     "categorie": "Hadith"
   },
   {
