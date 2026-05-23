@@ -64,7 +64,7 @@
     "texte": "Pendant que l'Europe enchaînait ses fous, Bagdad ouvrait le premier hôpital psychiatrique de l'histoire. On y soignait par la conversation et la musique. C'était en l'an 705. Le chirurgien s'appelait Al-Razi.",
     "source": "Manfred Ullmann, Die Medizin im Islam (1970) / Al-Razi, Kitâb al-Hâwî",
     "categorie": "Sciences",
-    "fr": "Au IXᵉ siècle à Bagdad, sous le califat abbasside, on ouvre le premier service spécialisé pour les malades mentaux dans un bimaristan. On y soigne la dépression par la musique, la mélancolie par les bains chauds, l’agitation par la parole. Plus tard, Al-Razi — médecin persan, mort en 925 — perfectionnera ces traitements en distinguant cliniquement les troubles mentaux. Mille ans avant la psychiatrie moderne. L’humanité musulmane n’a pas inventé la folie. Elle a inventé le soin."
+    "fr": "Au IXᵉ siècle à Bagdad, sous le califat abbasside, on ouvre le premier service spécialisé pour les malades mentaux dans un bimaristan. On y soigne la dépression par la musique, la mélancolie par les bains chauds, l’agitation par la parole. Plus tard, Al-Razi — médecin persan, mort en 925 — perfectionnera ces traitements en distinguant cliniquement les troubles mentaux. Mille ans avant la psychiatrie moderne. Les Grecs anciens soignaient déjà les troubles mentaux par les herbes et les bains. Mais c’est la civilisation musulmane qui a inventé l’hôpital psychiatrique public, humain et gratuit. Pas la folie. L’asile digne."
   },
   {
     "texte": "Au Caire, il y a presque douze siècles, un hôpital forme des infirmières, fait passer un examen aux médecins avant qu'ils exercent, soigne tout le monde sans demander la religion. C'est plus qu'un hôpital. C'est l'idée même de la santé publique qui naît là.",
@@ -78,7 +78,7 @@
     "categorie": "Sciences"
   },
   {
-    "texte": "Le mot « camera » qui est dans « caméra », « camescope », « iPhone camera » – il vient d'un mot arabe. Qamara. C'est ainsi qu'un savant musulman appelait sa chambre noire, mille ans avant l'invention de la photo.",
+    "texte": "Ibn al-Haytham — Alhazen pour les Latins — a décrit le premier le principe de la chambre noire. Il appelait sa pièce obscure al-bayt al-muthlim. Les traducteurs latins ont rendu ce concept par camera — chambre. Aujourd'hui, dans chaque iPhone, chaque caméscope, chaque appareil photo, ce mot vit encore. Sans Ibn al-Haytham, pas de caméra moderne. Pas de cinéma. Pas de selfie.",
     "source": "CNN / Al Jazeera / Muslim Heritage Month — Ibn al-Haytham",
     "categorie": "Sciences"
   },
@@ -94,7 +94,7 @@
     "categorie": "Civilisation"
   },
   {
-    "texte": "Un astronome andalou prouve que la Terre est ronde. Avec des observations, des calculs, une démonstration carrée. C'est cinq siècles avant Galilée. Et personne ne le brûle, parce que dans le monde musulman médiéval, la Terre ronde, c'était déjà l'évidence.",
+    "texte": "Un théologien et savant andalou affirme que la Terre est ronde. Avec des observations, des calculs, des arguments coraniques sur l'enroulement de la nuit sur le jour. Il s'appelait Ibn Hazm. Cinq siècles avant que l'Europe ne se déchire sur l'astronomie. Dans le monde musulman médiéval, la rotondité de la Terre n'était pas une révolution. C'était une évidence.",
     "source": "Al Jazeera / 1001 Inventions — Ibn Hazm",
     "categorie": "Sciences"
   },
@@ -159,7 +159,7 @@
     "categorie": "Histoire"
   },
   {
-    "texte": "Ton café du matin a une histoire mystique. Au Yémen, au 9ᵉ siècle, des soufis cherchent comment rester éveillés pour prier toute la nuit. Ils découvrent une baie qui pousse en altitude. Ils la torréfient. Et voilà : le café est né dans une mosquée.",
+    "texte": "Ton café du matin a une histoire mystique. Au Yémen, au 15ᵉ siècle, des soufis cherchent comment rester éveillés pour prier toute la nuit. Le Sheikh Ali ibn Umar al-Shadhili découvre une baie qui pousse en altitude. Il la torréfie. Et voilà : le café est né dans une mosquée.",
     "source": "CNN / Al Jazeera / 1001 Inventions / Britannica",
     "categorie": "Civilisation"
   },
@@ -174,7 +174,7 @@
     "categorie": "Sciences"
   },
   {
-    "texte": "Quand tu dis « shampoo », tu parles bengali. C'est un musulman du Bengale, Sake Dean Mahomed, qui a importé en Angleterre la technique du massage du cuir chevelu. Il est devenu le « shampouineur royal » du roi George IV. Au sens propre. Au sens littéral.",
+    "texte": "Quand tu dis « shampoo », tu parles hindi-ourdou. Le mot chāmpō signifiait « masser, pétrir ». C'est un musulman indien, Sake Dean Mahomed, originaire de Patna, qui a importé en Angleterre la technique du massage du cuir chevelu. Il est devenu le « shampouineur royal » du roi George IV. Au sens propre. Au sens littéral.",
     "source": "British Museum / Wikipedia — Sake Dean Mahomed",
     "categorie": "Histoire"
   },
@@ -209,7 +209,7 @@
     "categorie": "Sîra"
   },
   {
-    "texte": "Un hadith dit qu'une femme ira en Enfer pour avoir enfermé un chat sans le nourrir, jusqu'à ce qu'il meure. Lis cette phrase deux fois. Un seul chat. Pour la même indifférence, le même Paradis se referme.",
+    "texte": "Un hadith dit qu'une femme a été châtiée pour avoir enfermé un chat sans le nourrir, jusqu'à ce qu'il meure. Les commentateurs précisent : cette femme était déjà loin de la foi. Mais cet acte de cruauté gratuite a scellé son sort. La leçon est claire : la cruauté envers une créature innocente peut défaire les œuvres de toute une vie. Le respect du vivant n'est pas un détail.",
     "source": "Sahih Bukhari 3318 / Sahih Muslim 2242",
     "categorie": "Hadith"
   },
@@ -1081,11 +1081,6 @@
     "texte": "Ibn al-Baytar, médecin et botaniste musulman du 13ᵉ siècle, a recensé mille quatre cents plantes médicinales. Trois cents inconnues des Grecs. Il a parcouru à pied l'Espagne, le Maghreb, l'Égypte, la Syrie. Pendant trente ans. Sa Materia Medica est restée référence en Europe pendant six siècles.",
     "source": "Britannica 'Ibn al-Baytar' / Cambridge History of Arabic Science",
     "categorie": "Sciences"
-  },
-  {
-    "texte": "Au 13ᵉ siècle, le savant musulman Al-Jahiz a écrit un livre où il décrit la lutte pour la survie et l'adaptation des espèces. Le « Livre des Animaux ». Six cents ans avant Darwin. Personne n'enseigne ça à l'école française. Pourtant c'est documenté. Catalogué. Cité dans les revues académiques internationales.",
-    "source": "Britannica 'Al-Jahiz' / 1001 Inventions",
-    "categorie": "Histoire"
   },
   {
     "texte": "Au 11ᵉ siècle, le savant Al-Biruni a décrit comment se forment les fossiles. Il a observé des coquillages dans les montagnes. Et il a écrit : « Ces lieux étaient autrefois sous la mer. La terre change. » Sept cents ans avant la géologie moderne. Sans foreuse. Sans satellite. Juste avec les yeux.",
