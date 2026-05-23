@@ -371,11 +371,11 @@
   },
   {
     "jour": 47,
-    "theme": "Cœur",
-    "texte_ar": "أَلَا وَإِنَّ فِي الْجَسَدِ مُضْغَةً",
-    "texte_fr": "Il y a dans le corps un morceau de chair : s'il est bon, tout le corps est bon ; s'il est gâté, tout le corps est gâté. C'est le cœur.",
-    "source": "Bukhari 52, Muslim 1599",
-    "degre": "sahih"
+    "theme": "Auto-examen",
+    "texte_ar": "الْكَيِّسُ مَنْ دَانَ نَفْسَهُ وَعَمِلَ لِمَا بَعْدَ الْمَوْتِ",
+    "texte_fr": "L’homme avisé est celui qui se juge lui-même et œuvre pour ce qui suit la mort. L’incapable est celui qui suit ses passions et compte sur Allah sans agir.",
+    "source": "Tirmidhi 2459 — hasan",
+    "degre": "hasan"
   },
   {
     "jour": 48,
