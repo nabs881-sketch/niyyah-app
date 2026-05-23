@@ -12605,15 +12605,28 @@ function _pickStableWaqt(moment) {
   return idx;
 }
 function isWaqtAvailable() {
-  var prieres = ['fajr','dhuhr','asr','maghrib','isha'];
-  var s = safeParseJSON('spiritual_v2', {});
+  if (!_prayerTimes) return null;
+  var mapping = [
+    { id: 'fajr', key: 'Fajr' },
+    { id: 'dhuhr', key: 'Dhuhr' },
+    { id: 'asr', key: 'Asr' },
+    { id: 'maghrib', key: 'Maghrib' },
+    { id: 'isha', key: 'Isha' }
+  ];
+  var now = new Date();
+  var nowMin = now.getHours() * 60 + now.getMinutes();
   var lu = {};
   try { lu = JSON.parse(safeGetItem('niyyah_waqt_lu_' + todayKey()) || '{}'); } catch(e) {}
-  for (var i = 0; i < prieres.length; i++) {
-    var p = prieres[i];
-    if (s[p] && !lu[p]) return p;
+  var lastPassed = null;
+  for (var i = 0; i < mapping.length; i++) {
+    var t = (_prayerTimes[mapping[i].key] || '').replace(/ *\(.*\)/, '').split(':');
+    var pMin = parseInt(t[0], 10) * 60 + parseInt(t[1], 10);
+    if (isNaN(pMin)) continue;
+    if (nowMin >= pMin) lastPassed = mapping[i].id;
   }
-  return null;
+  if (!lastPassed) return null;
+  if (lu[lastPassed]) return null;
+  return lastPassed;
 }
 function markWaqtLu(priere) {
   var key = 'niyyah_waqt_lu_' + todayKey();
