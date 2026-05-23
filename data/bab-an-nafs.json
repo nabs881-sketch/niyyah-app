@@ -4,7 +4,10 @@
   "portes": [
     {
       "id": "colere",
-      "nom": { "fr": "Colère", "ar": "الغضب" },
+      "nom": {
+        "fr": "Colère",
+        "ar": "الغضب"
+      },
       "couleur": "#B33A3A",
       "image": "assets/cards/porte-colere.webp",
       "rappel": {
@@ -28,7 +31,10 @@
     },
     {
       "id": "anxiete",
-      "nom": { "fr": "Anxiété", "ar": "القلق" },
+      "nom": {
+        "fr": "Anxiété",
+        "ar": "القلق"
+      },
       "couleur": "#3F51B5",
       "image": "assets/cards/porte-anxiete.webp",
       "rappel": {
@@ -38,7 +44,7 @@
         "validated": false
       },
       "action": {
-        "fr": "Pose ta main sur ton cœur. Respire lentement. Répète : Hasbiya Allâhu lâ ilâha illâ Huwa, 'alayhi tawakkaltu wa Huwa Rabbu-l-'arshi-l-'azhîm. (Sept fois matin et soir selon la sunna, ou autant que ton cœur en a besoin.) (Allah me suffit, il n'est de divinité que Lui, je place ma confiance en Lui, Il est le Seigneur du Trône immense.)",
+        "fr": "Pose ta main sur ton cœur. Respire lentement. Répète : Hasbiya Allahu lâ ilâha illâ Huwa, 'alayhi tawakkaltu wa Huwa Rabbu-l-'arshi-l-'azhîm. (Sept fois matin et soir selon la sunna, ou autant que ton cœur en a besoin.) (Allah me suffit, il n'est de divinité que Lui, je place ma confiance en Lui, Il est le Seigneur du Trône immense.)",
         "source": "Abû Dawûd 5081 — d'après Abû ad-Dardâ'",
         "validated": false
       },
@@ -52,7 +58,10 @@
     },
     {
       "id": "regard",
-      "nom": { "fr": "Regard", "ar": "النظر" },
+      "nom": {
+        "fr": "Regard",
+        "ar": "النظر"
+      },
       "couleur": "#2E7D5B",
       "image": "assets/cards/porte-regard.webp",
       "rappel": {
@@ -76,7 +85,10 @@
     },
     {
       "id": "arrogance",
-      "nom": { "fr": "Arrogance", "ar": "الكِبْر" },
+      "nom": {
+        "fr": "Arrogance",
+        "ar": "الكِبْر"
+      },
       "couleur": "#6A1B7A",
       "image": "assets/cards/porte-arrogance.webp",
       "rappel": {
@@ -100,12 +112,15 @@
     },
     {
       "id": "paresse",
-      "nom": { "fr": "Paresse", "ar": "الكَسَل" },
+      "nom": {
+        "fr": "Paresse",
+        "ar": "الكَسَل"
+      },
       "couleur": "#6E6E6E",
       "image": "assets/cards/porte-paresse.webp",
       "rappel": {
         "type": "dua",
-        "fr": "Allâhumma innî a'ûdhu bika min al-'ajzi wa-l-kasal, wa-l-jubni wa-l-bukhl, wa ghalabati-d-dayn wa qahri-r-rijâl. (Ô Allah, je cherche refuge auprès de Toi contre l'incapacité et la paresse, contre la lâcheté et l'avarice, contre l'écrasement des dettes et la domination des hommes.)",
+        "fr": "Allahumma innî a'ûdhu bika min al-'ajzi wa-l-kasal, wa-l-jubni wa-l-bukhl, wa ghalabati-d-dayn wa qahri-r-rijâl. (Ô Allah, je cherche refuge auprès de Toi contre l'incapacité et la paresse, contre la lâcheté et l'avarice, contre l'écrasement des dettes et la domination des hommes.)",
         "source": "Al-Bukhârî 6363 — invocation prophétique régulière du Prophète ﷺ",
         "validated": false
       },
