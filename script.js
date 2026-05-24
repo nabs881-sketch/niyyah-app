@@ -12082,7 +12082,7 @@ function v2OpenNiyyahModal() {
   const mDiv = document.querySelector('.modal-divider-v2');
   if (mDiv) { mDiv.childNodes.forEach(n => { if (n.nodeType === 3) n.textContent = T.modal_divider; }); }
   const mConfirm = document.querySelector('.btn-confirm-v2');
-  if (mConfirm) mConfirm.textContent = T.modal_confirm;
+  if (mConfirm) mConfirm.style.display = 'none'; // replaced by #v2-anchor-btn
   const mCancel = document.querySelector('.btn-cancel-v2');
   if (mCancel) mCancel.textContent = T.modal_cancel;
   const mInput = document.getElementById('v2-custom-intention');
@@ -12125,75 +12125,16 @@ function v2OpenNiyyahModal() {
     btn.style.direction = (V2_I18N[V2_LANG] || V2_I18N.fr).dir;
     btn.style.fontFamily = V2_LANG === 'ar' ? "'Amiri', serif" : "'Cormorant Garamond', serif";
     btn.style.fontSize = V2_LANG === 'ar' ? '16px' : '15px';
-    var _holdTimer = null, _holdHintTimer = null, _holdOverlay = null;
-    function _startHold(e) {
-      e.preventDefault();
-      opts.querySelectorAll('.intention-opt-v2').forEach(function(b) {
-        b.classList.remove('sel-v2', 'intention-pressing');
-        var old = b.querySelector('.hold-overlay'); if (old) old.remove();
-      });
-      btn.classList.add('intention-pressing');
-      btn.style.position = 'relative'; btn.style.overflow = 'hidden';
+    // Simple click to select (replaces hold 3s)
+    btn.addEventListener('click', function() {
+      opts.querySelectorAll('.intention-opt-v2').forEach(function(b) { b.classList.remove('sel-v2'); });
+      btn.classList.add('sel-v2');
+      document.getElementById('v2-custom-intention').value = '';
       if (navigator.vibrate) navigator.vibrate(30);
-      // SVG countdown circle + hint text
-      _holdOverlay = document.createElement('div');
-      _holdOverlay.className = 'hold-overlay';
-      _holdOverlay.innerHTML = '<svg class="hold-ring" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="none" stroke="rgba(200,168,75,0.15)" stroke-width="2"/><circle class="hold-ring-fill" cx="16" cy="16" r="14" fill="none" stroke="#C8A84A" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="87.96" stroke-dashoffset="87.96"/></svg><span class="hold-hint" style="opacity:0;">' + t('hold_hint') + '</span>';
-      btn.appendChild(_holdOverlay);
-      // Animate ring fill
-      requestAnimationFrame(function() {
-        var fill = _holdOverlay.querySelector('.hold-ring-fill');
-        if (fill) fill.style.strokeDashoffset = '0';
-      });
-      // Show hint after 0.5s
-      _holdHintTimer = setTimeout(function() {
-        var hint = btn.querySelector('.hold-hint');
-        if (hint) hint.style.opacity = '1';
-      }, 500);
-      _holdTimer = setTimeout(function() {
-        _cleanupOverlay();
-        btn.classList.remove('intention-pressing');
-        btn.classList.add('sel-v2');
-        document.getElementById('v2-custom-intention').value = '';
-        if (navigator.vibrate) navigator.vibrate([50, 30, 50, 30, 500]);
-        // Gold flash overlay — fade in/out
-        var flash = document.createElement('div');
-        flash.className = 'intention-gold-flash';
-        document.body.appendChild(flash);
-        setTimeout(function() { flash.classList.add('fade-out'); }, 50);
-        setTimeout(function() { flash.remove(); }, 350);
-        // Golden halo + rotating ring
-        btn.classList.add('intention-confirmed-glow');
-        var ring = document.createElement('div');
-        ring.className = 'intention-rotate-ring';
-        btn.appendChild(ring);
-        setTimeout(function() {
-          btn.classList.add('intention-glow-fadeout');
-          setTimeout(function() {
-            btn.classList.remove('intention-confirmed-glow', 'intention-glow-fadeout');
-            if (ring.parentNode) ring.remove();
-          }, 500);
-        }, 2000);
-        // Auto-confirm after hold completes
-        setTimeout(function() { v2ConfirmIntention(); }, 400);
-      }, 3000);
-    }
-    function _cleanupOverlay() {
-      if (_holdHintTimer) { clearTimeout(_holdHintTimer); _holdHintTimer = null; }
-      if (_holdOverlay && _holdOverlay.parentNode) _holdOverlay.remove();
-      _holdOverlay = null;
-    }
-    function _cancelHold() {
-      if (_holdTimer) { clearTimeout(_holdTimer); _holdTimer = null; }
-      _cleanupOverlay();
-      btn.classList.remove('intention-pressing');
-    }
-    btn.addEventListener('touchstart', _startHold, { passive: false });
-    btn.addEventListener('touchend', _cancelHold);
-    btn.addEventListener('touchcancel', _cancelHold);
-    btn.addEventListener('mousedown', _startHold);
-    btn.addEventListener('mouseup', _cancelHold);
-    btn.addEventListener('mouseleave', _cancelHold);
+      // Enable anchor button
+      var anchorBtn = document.getElementById('v2-anchor-btn');
+      if (anchorBtn) { anchorBtn.disabled = false; anchorBtn.style.opacity = '1'; }
+    });
     container.appendChild(btn);
   }
 
@@ -12238,45 +12179,62 @@ function v2OpenNiyyahModal() {
         safeSetItem('niyyah_ikhlas_unlocked', '1');
       }, 500);
     }
-    // Hold logic for ikhlas
-    var _ikTimer = null, _ikHint = null, _ikOv = null;
-    function _ikStart(e) {
-      e.preventDefault();
-      opts.querySelectorAll('.intention-opt-v2').forEach(function(b) { b.classList.remove('sel-v2', 'intention-pressing'); var o = b.querySelector('.hold-overlay'); if (o) o.remove(); });
-      ikhlasBtn.classList.add('intention-pressing');
-      ikhlasBtn.style.position = 'relative'; ikhlasBtn.style.overflow = 'hidden';
+    // Simple click for ikhlas (same as other niyyah buttons)
+    ikhlasBtn.addEventListener('click', function() {
+      opts.querySelectorAll('.intention-opt-v2').forEach(function(b) { b.classList.remove('sel-v2'); });
+      ikhlasBtn.classList.add('sel-v2');
+      document.getElementById('v2-custom-intention').value = '';
       if (navigator.vibrate) navigator.vibrate(30);
-      _ikOv = document.createElement('div');
-      _ikOv.className = 'hold-overlay';
-      _ikOv.innerHTML = '<svg class="hold-ring" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="none" stroke="rgba(200,168,75,0.15)" stroke-width="2"/><circle class="hold-ring-fill" cx="16" cy="16" r="14" fill="none" stroke="#C8A84A" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="87.96" stroke-dashoffset="87.96"/></svg><span class="hold-hint" style="opacity:0;">' + t('hold_hint') + '</span>';
-      ikhlasBtn.appendChild(_ikOv);
-      requestAnimationFrame(function() { var f = _ikOv.querySelector('.hold-ring-fill'); if (f) f.style.strokeDashoffset = '0'; });
-      _ikHint = setTimeout(function() { var h = ikhlasBtn.querySelector('.hold-hint'); if (h) h.style.opacity = '1'; }, 500);
-      _ikTimer = setTimeout(function() {
-        if (_ikOv && _ikOv.parentNode) _ikOv.remove(); _ikOv = null;
-        if (_ikHint) clearTimeout(_ikHint);
-        ikhlasBtn.classList.remove('intention-pressing');
-        ikhlasBtn.classList.add('sel-v2');
-        document.getElementById('v2-custom-intention').value = '';
-        if (navigator.vibrate) navigator.vibrate([50, 30, 50, 30, 500]);
-        ikhlasBtn.classList.add('intention-confirmed-glow');
-        var ring = document.createElement('div'); ring.className = 'intention-rotate-ring'; ikhlasBtn.appendChild(ring);
-        setTimeout(function() { ikhlasBtn.classList.add('intention-glow-fadeout'); setTimeout(function() { ikhlasBtn.classList.remove('intention-confirmed-glow', 'intention-glow-fadeout'); if (ring.parentNode) ring.remove(); }, 500); }, 2000);
-      }, 3000);
-    }
-    function _ikCancel() { if (_ikTimer) { clearTimeout(_ikTimer); _ikTimer = null; } if (_ikHint) { clearTimeout(_ikHint); _ikHint = null; } if (_ikOv && _ikOv.parentNode) _ikOv.remove(); _ikOv = null; ikhlasBtn.classList.remove('intention-pressing'); }
-    ikhlasBtn.addEventListener('touchstart', _ikStart, { passive: false });
-    ikhlasBtn.addEventListener('touchend', _ikCancel);
-    ikhlasBtn.addEventListener('touchcancel', _ikCancel);
-    ikhlasBtn.addEventListener('mousedown', _ikStart);
-    ikhlasBtn.addEventListener('mouseup', _ikCancel);
-    ikhlasBtn.addEventListener('mouseleave', _ikCancel);
+      var anchorBtn = document.getElementById('v2-anchor-btn');
+      if (anchorBtn) { anchorBtn.disabled = false; anchorBtn.style.opacity = '1'; }
+    });
     opts.appendChild(ikhlasBtn);
   }
+
+    // --- ANCHOR BUTTON (explicit confirm) ---
+    var existingAnchor = document.getElementById('v2-anchor-btn');
+    if (existingAnchor) existingAnchor.remove();
+    var anchorBtn = document.createElement('button');
+    anchorBtn.id = 'v2-anchor-btn';
+    anchorBtn.disabled = true;
+    anchorBtn.style.cssText = 'display:block;width:100%;margin-top:18px;padding:16px 0;border:none;border-radius:12px;background:linear-gradient(135deg,#C8A84A,#A68B30);color:#0A0908;font-family:"Cormorant Garamond",serif;font-size:17px;font-weight:700;letter-spacing:0.5px;cursor:pointer;opacity:0.4;transition:opacity 0.3s ease;';
+    anchorBtn.textContent = T.modal_confirm || '\u2726 Ancrer cette Intention';
+    anchorBtn.addEventListener('click', function() {
+      if (anchorBtn.disabled) return;
+      if (navigator.vibrate) navigator.vibrate([50, 30, 50, 30, 500]);
+      // Gold flash
+      var flash = document.createElement('div');
+      flash.className = 'intention-gold-flash';
+      document.body.appendChild(flash);
+      setTimeout(function() { flash.classList.add('fade-out'); }, 50);
+      setTimeout(function() { flash.remove(); }, 350);
+      v2ConfirmIntention();
+    });
+    opts.parentNode.insertBefore(anchorBtn, opts.nextSibling);
+
   }); // end _pickTriadeNiyyah callback
 
+  // Enable anchor button when custom input has text
+  var customInput = document.getElementById('v2-custom-intention');
+  if (customInput) {
+    customInput.addEventListener('input', function() {
+      var anchorBtn = document.getElementById('v2-anchor-btn');
+      if (!anchorBtn) return;
+      var hasText = customInput.value.trim().length > 0;
+      if (hasText) {
+        // Deselect any card when typing custom
+        opts.querySelectorAll('.intention-opt-v2').forEach(function(b) { b.classList.remove('sel-v2'); });
+        anchorBtn.disabled = false;
+        anchorBtn.style.opacity = '1';
+      } else if (!document.querySelector('.intention-opt-v2.sel-v2')) {
+        anchorBtn.disabled = true;
+        anchorBtn.style.opacity = '0.4';
+      }
+    });
+  }
+
   const s = v2GetState();
-  if (s.intention) document.getElementById('v2-custom-intention').value = s.intention;
+  if (s.intention && customInput) customInput.value = '';
 
   document.getElementById('niyyahModal-v2').classList.add('open');
 }
@@ -13805,9 +13763,29 @@ function v2UpdateOrbState() {
     if (orb) orb.classList.add('intention-set-v2');
     if (chip) chip.style.display = 'block';
     if (chipText) {
-      chipText.textContent = s.intention;
+      var fullText = s.intention;
+      var truncLen = 80;
+      var isTruncated = fullText.length > truncLen;
+      chipText.textContent = isTruncated ? fullText.substring(0, truncLen) + '...' : fullText;
       chipText.style.direction = T.dir;
       chipText.style.fontFamily = V2_LANG === 'ar' ? "'Amiri', serif" : "'Cormorant Garamond', serif";
+      chipText.style.cursor = isTruncated ? 'pointer' : 'default';
+      // Tap to expand/collapse
+      chipText.onclick = null;
+      if (isTruncated) {
+        chipText.dataset.fullText = fullText;
+        chipText.dataset.expanded = '0';
+        chipText.onclick = function() {
+          var expanded = chipText.dataset.expanded === '1';
+          if (expanded) {
+            chipText.textContent = fullText.substring(0, truncLen) + '...';
+            chipText.dataset.expanded = '0';
+          } else {
+            chipText.textContent = fullText;
+            chipText.dataset.expanded = '1';
+          }
+        };
+      }
     }
     // Orbe silencieuse — pas de label CTA quand intention posée
     if (cta) { cta.textContent = ''; cta.style.display = 'none'; }
