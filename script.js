@@ -12096,10 +12096,28 @@ function v2OpenNiyyahModal() {
   const opts = document.getElementById('v2-intention-opts');
   if (!opts) return;
   opts.innerHTML = '';
-  T.intentions.forEach((opt) => {
+
+  // Season labels for badge
+  var _seasonLabels = {
+    jumuah: "Aujourd\u2019hui c\u2019est vendredi",
+    ramadan: "Ramadan",
+    laylat_qadr: "Nuits du destin",
+    dhul_hijja: "10 jours b\u00e9nis",
+    muharram: "T\u00e2s\u00fb\u2019\u00e2/\u2019\u00c2sh\u00fbr\u00e2\u2019",
+    jours_blancs: "Jours blancs"
+  };
+
+  function _renderNiyyahBtn(opt, container) {
     const btn = document.createElement('button');
     btn.className = 'intention-opt-v2';
-    btn.textContent = opt;
+    btn.textContent = opt.text || opt;
+    if (opt._seasonLabel) {
+      var badge = document.createElement('div');
+      badge.style.cssText = 'font-size:11px;color:#C8A84A;margin-bottom:4px;font-style:italic;opacity:0.8;';
+      badge.textContent = _seasonLabels[opt._seasonLabel] || '';
+      btn.insertBefore(badge, btn.firstChild);
+    }
+    if (opt.id) btn.dataset.niyyahId = opt.id;
     btn.style.direction = (V2_I18N[V2_LANG] || V2_I18N.fr).dir;
     btn.style.fontFamily = V2_LANG === 'ar' ? "'Amiri', serif" : "'Cormorant Garamond', serif";
     btn.style.fontSize = V2_LANG === 'ar' ? '16px' : '15px';
@@ -12170,10 +12188,19 @@ function v2OpenNiyyahModal() {
     btn.addEventListener('mousedown', _startHold);
     btn.addEventListener('mouseup', _cancelHold);
     btn.addEventListener('mouseleave', _cancelHold);
-    opts.appendChild(btn);
-  });
+    container.appendChild(btn);
+  }
 
-  // 5ème intention cachée — إخلاص (streak >= 30, premium only)
+  // Triade algorithm: pick from pool, fallback to hardcoded
+  _pickTriadeNiyyah(function(triade) {
+    if (triade && triade.length > 0) {
+      triade.forEach(function(n) { _renderNiyyahBtn(n, opts); });
+    } else {
+      // Fallback: use hardcoded intentions if pool not loaded
+      T.intentions.forEach(function(opt) { _renderNiyyahBtn({ text: opt }, opts); });
+    }
+
+    // 5ème intention cachée — إخلاص (streak >= 30, premium only)
   var _ikhlasStreak = 0;
   try { _ikhlasStreak = JSON.parse(localStorage.getItem('spiritual_history') || '{}').streak || 0; } catch(e) {}
   if (_ikhlasStreak >= 30 && typeof isPremium === 'function' && isPremium()) {
@@ -12240,6 +12267,7 @@ function v2OpenNiyyahModal() {
     ikhlasBtn.addEventListener('mouseleave', _ikCancel);
     opts.appendChild(ikhlasBtn);
   }
+  }); // end _pickTriadeNiyyah callback
 
   const s = v2GetState();
   if (s.intention) document.getElementById('v2-custom-intention').value = s.intention;
@@ -12257,6 +12285,11 @@ function v2ConfirmIntention() {
   const custom = document.getElementById('v2-custom-intention').value.trim();
   const intention = custom || (selected ? selected.textContent : null);
   if (!intention) return;
+
+  // Track selected niyyah ID in history (30-day rolling)
+  if (selected && selected.dataset.niyyahId) {
+    _addToNiyyahHistory([parseInt(selected.dataset.niyyahId, 10)]);
+  }
 
   const s = v2GetState();
   s.intention = intention;
@@ -13022,6 +13055,116 @@ window.WAQT_BY_PRIERE = null;
       window.WAQT_BY_PRIERE = obj;
     });
 })();
+
+/* ─────────────────────────────────────────────
+   NIYYAH POOL 1127 — Algorithme Triade
+   ───────────────────────────────────────────── */
+window.NIYYAH_POOL = null;
+(function _loadNiyyahPool() {
+  fetch('./data/niyyah_pool.json').then(function(r) { return r.ok ? r.json() : null; })
+    .then(function(data) { if (data && data.niyyahs) window.NIYYAH_POOL = data.niyyahs; })
+    .catch(function() {});
+})();
+
+function _getNiyyahHistory() {
+  try {
+    var raw = JSON.parse(safeGetItem('niyyah_history') || '[]');
+    var cutoff = Date.now() - 30 * 86400000;
+    return raw.filter(function(e) { return e.ts > cutoff; });
+  } catch(e) { return []; }
+}
+
+function _saveNiyyahHistory(history) {
+  var cutoff = Date.now() - 30 * 86400000;
+  var clean = history.filter(function(e) { return e.ts > cutoff; });
+  safeSetItem('niyyah_history', JSON.stringify(clean));
+}
+
+function _addToNiyyahHistory(ids) {
+  var history = _getNiyyahHistory();
+  var ts = Date.now();
+  ids.forEach(function(id) { history.push({ id: id, ts: ts }); });
+  _saveNiyyahHistory(history);
+}
+
+function _pickFromCategory(pool, category, excludeIds, subcategory) {
+  var candidates = pool.filter(function(n) {
+    if (n.category !== category) return false;
+    if (subcategory && n.subcategory !== subcategory) return false;
+    return excludeIds.indexOf(n.id) === -1;
+  });
+  if (candidates.length === 0) {
+    // Fallback: ignore history if pool exhausted
+    candidates = pool.filter(function(n) {
+      if (n.category !== category) return false;
+      if (subcategory && n.subcategory !== subcategory) return false;
+      return true;
+    });
+  }
+  if (candidates.length === 0) return null;
+  return candidates[Math.floor(Math.random() * candidates.length)];
+}
+
+function _detectSeasonContext(hijri) {
+  var today = new Date();
+  var isFriday = today.getDay() === 5;
+
+  if (hijri) {
+    var m = (hijri.month || '').toLowerCase();
+    var d = hijri.day || 0;
+
+    // Ramadan last third (nights 21-30)
+    if (m === 'ramadan' || m === 'ramadhan' || m === 'ramaḍān') {
+      if (d >= 21) return 'laylat_qadr';
+      return 'ramadan';
+    }
+    // Muharram 9-10
+    if ((m === 'muharram' || m === 'muḥarram') && d >= 9 && d <= 10) return 'muharram';
+    // Dhul-Hijja 1-10
+    if ((m === 'dhul-hijja' || m === 'dhul hijja' || m === 'dhu al-hijjah' || m === 'dhul-hijjah' || m === 'dhū al-ḥijjah') && d >= 1 && d <= 10) return 'dhul_hijja';
+    // Jours blancs 13-14-15
+    if (d >= 13 && d <= 15) return 'jours_blancs';
+  }
+
+  if (isFriday) return 'jumuah';
+  return null;
+}
+
+function _pickTriadeNiyyah(callback) {
+  if (!window.NIYYAH_POOL || window.NIYYAH_POOL.length === 0) {
+    callback(null);
+    return;
+  }
+
+  var history = _getNiyyahHistory();
+  var excludeIds = history.map(function(e) { return e.id; });
+  var pool = window.NIYYAH_POOL;
+
+  var combat = _pickFromCategory(pool, 'combat', excludeIds);
+  var devotion = _pickFromCategory(pool, 'devotion', excludeIds);
+  var service = _pickFromCategory(pool, 'service', excludeIds);
+
+  var result = [];
+  if (combat) result.push(combat);
+  if (devotion) result.push(devotion);
+  if (service) result.push(service);
+
+  // Season detection (async because hijri needs API)
+  getCurrentHijri().then(function(hijri) {
+    var ctx = _detectSeasonContext(hijri);
+    if (ctx) {
+      var saison = _pickFromCategory(pool, 'saison', [], ctx);
+      if (saison) {
+        saison._seasonLabel = ctx;
+        result.push(saison);
+      }
+    }
+    callback(result);
+  }).catch(function() {
+    callback(result);
+  });
+}
+
 function _dateLocale() {
   var lang = (typeof V2_LANG !== 'undefined') ? V2_LANG : 'fr';
   return lang === 'en' ? 'en-US' : lang === 'ar' ? 'ar' : 'fr-FR';
