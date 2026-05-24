@@ -12071,6 +12071,83 @@ function closeOrientationPicker() {
    MODAL NIYYAH
    ───────────────────────────────────────────── */
 function v2OpenNiyyahModal() {
+  // If niyyah already anchored today → show read-only modal
+  var _today = todayKey();
+  if (safeGetItem('niyyah_intention_date') === _today && safeGetItem('niyyah_intention_label')) {
+    _v2ShowNiyyahReadModal();
+    return;
+  }
+  _v2OpenNiyyahPickModal();
+}
+
+function _v2ShowNiyyahReadModal() {
+  showAlHayaBtn();
+  var fullText = safeGetItem('niyyah_intention_label') || '';
+  // Try to get full text from v2 bridge (label may be truncated)
+  try {
+    var bridge = JSON.parse(safeGetItem('niyyah_v2_bridge') || '{}');
+    if (bridge.intention && bridge.intention.length > fullText.length) fullText = bridge.intention;
+  } catch(e) {}
+
+  var existing = document.getElementById('niyyahReadModal-v2');
+  if (existing) existing.remove();
+
+  var ov = document.createElement('div');
+  ov.id = 'niyyahReadModal-v2';
+  ov.style.cssText = 'position:fixed;inset:0;z-index:99990;background:rgba(0,0,0,0.85);display:flex;align-items:center;justify-content:center;padding:24px;animation:fadeSlideV2 0.4s ease forwards;';
+
+  var card = document.createElement('div');
+  card.style.cssText = 'background:#1a1a1a;border:1px solid rgba(200,168,75,0.25);border-radius:16px;padding:32px 24px;max-width:380px;width:100%;text-align:center;';
+
+  var title = document.createElement('div');
+  title.style.cssText = 'font-family:"Cormorant Garamond",serif;font-size:12px;letter-spacing:2px;color:rgba(200,168,75,0.6);margin-bottom:20px;';
+  title.textContent = 'VOTRE NIYYAH DU JOUR';
+
+  var text = document.createElement('div');
+  text.style.cssText = 'font-family:"Cormorant Garamond",serif;font-size:17px;font-style:italic;color:rgba(240,234,214,0.9);line-height:1.7;margin-bottom:28px;';
+  text.textContent = fullText;
+
+  var closeBtn = document.createElement('button');
+  closeBtn.style.cssText = 'display:block;width:100%;padding:14px 0;border:none;border-radius:12px;background:linear-gradient(135deg,#C8A84A,#A68B30);color:#0A0908;font-family:"Cormorant Garamond",serif;font-size:16px;font-weight:700;cursor:pointer;margin-bottom:16px;';
+  closeBtn.textContent = 'Fermer';
+  closeBtn.addEventListener('click', function() {
+    hideAlHayaBtn();
+    ov.remove();
+  });
+
+  var changeLink = document.createElement('div');
+  changeLink.style.cssText = 'font-family:"Cormorant Garamond",serif;font-size:13px;color:rgba(200,168,75,0.5);cursor:pointer;transition:color 0.2s;';
+  changeLink.textContent = 'changer d\u2019intention \u2192';
+  changeLink.addEventListener('mouseenter', function() { changeLink.style.color = '#C8A84A'; });
+  changeLink.addEventListener('mouseleave', function() { changeLink.style.color = 'rgba(200,168,75,0.5)'; });
+  changeLink.addEventListener('click', function() {
+    // Clear current intention
+    localStorage.removeItem('niyyah_intention_date');
+    localStorage.removeItem('niyyah_intention_type');
+    localStorage.removeItem('niyyah_intention_label');
+    var s = v2GetState();
+    s.intention = null;
+    s.intentionDate = null;
+    v2SaveState(s);
+    v2UpdateOrbState();
+    hideAlHayaBtn();
+    ov.remove();
+    // Re-open pick modal
+    _v2OpenNiyyahPickModal();
+  });
+
+  card.appendChild(title);
+  card.appendChild(text);
+  card.appendChild(closeBtn);
+  card.appendChild(changeLink);
+  ov.appendChild(card);
+  ov.addEventListener('click', function(e) {
+    if (e.target === ov) { hideAlHayaBtn(); ov.remove(); }
+  });
+  document.body.appendChild(ov);
+}
+
+function _v2OpenNiyyahPickModal() {
   showAlHayaBtn();
   const T = V2_I18N[V2_LANG] || V2_I18N.fr;
   const isRTL = T.dir === 'rtl';
