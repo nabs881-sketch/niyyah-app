@@ -14013,6 +14013,119 @@ function _cleanupOldDateKeys() {
     toRemove.forEach(function(k) { localStorage.removeItem(k); });
   } catch(e) {}
 }
+/* ─────────────────────────────────────────────
+   MUHÂSABA DU SOIR — rappel niyyah du matin
+   ───────────────────────────────────────────── */
+function _getIshaMinutes() {
+  if (typeof _prayerTimes !== 'undefined' && _prayerTimes && _prayerTimes.Isha) {
+    var parts = _prayerTimes.Isha.replace(/ *\(.*\)/, '').split(':');
+    var m = parseInt(parts[0], 10) * 60 + parseInt(parts[1], 10);
+    if (!isNaN(m)) return m;
+  }
+  return 21 * 60; // fallback 21h
+}
+
+function _shouldShowMuhasaba() {
+  var today = todayKey();
+  // Must have anchored a niyyah today
+  if (safeGetItem('niyyah_intention_date') !== today) return false;
+  // Must not have already answered today
+  if (safeGetItem('niyyah_muhasaba_date') === today) return false;
+  // Must be after isha
+  var now = new Date();
+  var nowMin = now.getHours() * 60 + now.getMinutes();
+  if (nowMin < _getIshaMinutes()) return false;
+  return true;
+}
+
+function _showMuhasabaScreen(onDone) {
+  var fullText = safeGetItem('niyyah_intention_label') || '';
+  try {
+    var bridge = JSON.parse(safeGetItem('niyyah_v2_bridge') || '{}');
+    if (bridge.intention && bridge.intention.length > fullText.length) fullText = bridge.intention;
+  } catch(e) {}
+
+  var ov = document.createElement('div');
+  ov.id = 'muhasaba-screen';
+  ov.style.cssText = 'position:fixed;inset:0;z-index:99995;background:#0A0908;display:flex;align-items:center;justify-content:center;padding:24px;animation:fadeSlideV2 0.5s ease forwards;';
+
+  var card = document.createElement('div');
+  card.style.cssText = 'max-width:380px;width:100%;text-align:center;';
+
+  // Title
+  var title = document.createElement('div');
+  title.style.cssText = 'font-family:"Cormorant Garamond",serif;font-size:11px;letter-spacing:2.5px;color:rgba(200,168,75,0.5);margin-bottom:24px;';
+  title.textContent = 'MUH\u00c2SABA DU SOIR';
+
+  // Niyyah label
+  var label = document.createElement('div');
+  label.style.cssText = 'font-family:"Cormorant Garamond",serif;font-size:12px;letter-spacing:1.5px;color:rgba(200,168,75,0.4);margin-bottom:8px;';
+  label.textContent = 'VOTRE NIYYAH DE CE MATIN';
+
+  // Niyyah text
+  var text = document.createElement('div');
+  text.style.cssText = 'font-family:"Cormorant Garamond",serif;font-size:17px;font-style:italic;color:rgba(240,234,214,0.9);line-height:1.7;margin-bottom:32px;padding:0 8px;';
+  text.textContent = fullText;
+
+  // 3 buttons
+  var btnsWrap = document.createElement('div');
+  btnsWrap.style.cssText = 'display:flex;gap:10px;justify-content:center;margin-bottom:28px;';
+
+  var choices = [
+    { label: 'V\u00e9cue', value: 'vecue', color: 'rgba(200,168,75,0.9)' },
+    { label: 'Effleur\u00e9e', value: 'effleuree', color: 'rgba(200,168,75,0.5)' },
+    { label: 'Oubli\u00e9e', value: 'oubliee', color: 'rgba(200,168,75,0.3)' }
+  ];
+
+  choices.forEach(function(c) {
+    var btn = document.createElement('button');
+    btn.style.cssText = 'flex:1;padding:14px 0;border:1px solid ' + c.color + ';border-radius:10px;background:transparent;color:' + c.color + ';font-family:"Cormorant Garamond",serif;font-size:15px;font-weight:600;cursor:pointer;transition:all 0.2s;';
+    btn.textContent = c.label;
+    btn.addEventListener('click', function() {
+      _saveMuhasaba(c.value);
+      if (navigator.vibrate) navigator.vibrate(40);
+      // Fade out
+      ov.style.opacity = '0';
+      ov.style.transition = 'opacity 0.4s ease';
+      setTimeout(function() {
+        if (ov.parentNode) ov.remove();
+        if (onDone) onDone();
+      }, 400);
+    });
+    btnsWrap.appendChild(btn);
+  });
+
+  // Footer
+  var footer = document.createElement('div');
+  footer.style.cssText = 'font-family:"Cormorant Garamond",serif;font-size:12px;font-style:italic;color:rgba(240,234,214,0.3);';
+  footer.textContent = 'Cette r\u00e9ponse n\u2019est que pour mon propre rappel.';
+
+  card.appendChild(title);
+  card.appendChild(label);
+  card.appendChild(text);
+  card.appendChild(btnsWrap);
+  card.appendChild(footer);
+  ov.appendChild(card);
+  document.body.appendChild(ov);
+}
+
+function _saveMuhasaba(value) {
+  var today = todayKey();
+  safeSetItem('niyyah_muhasaba_date', today);
+  // Append to log
+  var log = [];
+  try { log = JSON.parse(safeGetItem('niyyah_muhasaba_log') || '[]'); } catch(e) {}
+  log.push({
+    date: today,
+    ts: Date.now(),
+    niyyah: safeGetItem('niyyah_intention_label') || '',
+    result: value
+  });
+  // Keep last 90 days
+  if (log.length > 90) log = log.slice(log.length - 90);
+  safeSetItem('niyyah_muhasaba_log', JSON.stringify(log));
+}
+
 function v2Init() {
   checkMidnightReset();
   _cleanupOldDateKeys();
@@ -14041,7 +14154,12 @@ function v2Init() {
   }
   // Regard library chargée au premier besoin (lazy)
   if (_onboardDone) {
-    v2GoSanctuaire();
+    // Muhâsaba check before sanctuaire
+    if (_shouldShowMuhasaba()) {
+      _showMuhasabaScreen(function() { v2GoSanctuaire(); });
+    } else {
+      v2GoSanctuaire();
+    }
   }
   // Fade-out splash dès que le Sanctuaire est rendu
   var _splash = document.getElementById('app-splash');
