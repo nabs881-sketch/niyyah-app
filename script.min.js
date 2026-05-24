@@ -12110,14 +12110,18 @@ function v2OpenNiyyahModal() {
   function _renderNiyyahBtn(opt, container) {
     const btn = document.createElement('button');
     btn.className = 'intention-opt-v2';
-    btn.textContent = opt.text || opt;
+    var niyyahText = opt.text || opt;
+    btn.dataset.niyyahText = niyyahText;
+    if (opt.id) btn.dataset.niyyahId = opt.id;
     if (opt._seasonLabel) {
       var badge = document.createElement('div');
       badge.style.cssText = 'font-size:11px;color:#C8A84A;margin-bottom:4px;font-style:italic;opacity:0.8;';
       badge.textContent = _seasonLabels[opt._seasonLabel] || '';
-      btn.insertBefore(badge, btn.firstChild);
+      btn.appendChild(badge);
     }
-    if (opt.id) btn.dataset.niyyahId = opt.id;
+    var textSpan = document.createElement('span');
+    textSpan.textContent = niyyahText;
+    btn.appendChild(textSpan);
     btn.style.direction = (V2_I18N[V2_LANG] || V2_I18N.fr).dir;
     btn.style.fontFamily = V2_LANG === 'ar' ? "'Amiri', serif" : "'Cormorant Garamond', serif";
     btn.style.fontSize = V2_LANG === 'ar' ? '16px' : '15px';
@@ -12170,6 +12174,8 @@ function v2OpenNiyyahModal() {
             if (ring.parentNode) ring.remove();
           }, 500);
         }, 2000);
+        // Auto-confirm after hold completes
+        setTimeout(function() { v2ConfirmIntention(); }, 400);
       }, 3000);
     }
     function _cleanupOverlay() {
@@ -12283,13 +12289,19 @@ function v2CloseModal() {
 function v2ConfirmIntention() {
   const selected = document.querySelector('.intention-opt-v2.sel-v2');
   const custom = document.getElementById('v2-custom-intention').value.trim();
-  const intention = custom || (selected ? selected.textContent : null);
+  const intention = custom || (selected ? (selected.dataset.niyyahText || selected.textContent) : null);
   if (!intention) return;
 
   // Track selected niyyah ID in history (30-day rolling)
   if (selected && selected.dataset.niyyahId) {
     _addToNiyyahHistory([parseInt(selected.dataset.niyyahId, 10)]);
   }
+
+  // Set cooldown (V1 + V2)
+  var TODAY = todayKey();
+  safeSetItem('niyyah_intention_date', TODAY);
+  safeSetItem('niyyah_intention_type', 'pool');
+  safeSetItem('niyyah_intention_label', intention.length > 60 ? intention.substring(0, 57) + '...' : intention);
 
   const s = v2GetState();
   s.intention = intention;
