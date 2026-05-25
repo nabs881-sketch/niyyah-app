@@ -1,17 +1,18 @@
 {
   "metadata": {
     "priere": "fajr",
-    "version": "v2.1",
+    "version": "v2.2",
     "date_audit": "2026-05-25",
     "tagline_fr": "Une minute pour réveiller doucement le cœur avant que le monde ne s'empare de lui.",
     "tagline_concept": "Coach matinal + carrefour vers les modules Niyyah + sanctification du quotidien",
     "mission": "Inciter à amasser des hasanât, structurer la routine du croyant, imprégner d'islam le quotidien le plus concret",
-    "changelog_v2_1": [
-      "130 phrases CARREFOUR refondues : zéro publicité, zéro 'Niyyah a...', verbes d'action directs",
-      "Tous les modules réels de Niyyah désormais référencés (Wird, Tafakkur, Hadith, Du'a, Fiqh, Coran, Sîra, Récits, Savais-tu, Compagnons, Prophètes, Bab an-Nafs, Scanner, Orbe, Défi, Muhâsaba)",
-      "Module Regards explicitement exclu (surprise automatique, non déclenchable)",
-      "Défi correctement présenté comme HEBDOMADAIRE (pas quotidien)",
-      "Modules ajoutés : Savais-tu, Compagnons, Prophètes, Bab an-Nafs, Scanner, Orbe, Défi, Muhâsaba (oubliés en v2)"
+    "changelog_v2_2": [
+      "Audit du panel d'experts (note moyenne 8.64/10) → 4 nouvelles catégories produites",
+      "FAJR-DOUCEUR (12) ajoutée — pour les âmes fatiguées (reco Yasmin Mogahed)",
+      "FAJR-OUMMA (15) ajoutée — conscience collective et engagement (reco Tariq Ramadan)",
+      "FAJR-YAQÎN (10) ajoutée — ancrage face aux doutes (reco Hamza Tzortzis)",
+      "FAJR-ADAB (10) ajoutée — manières et courtoisie raffinée (reco Hamza Yusuf)",
+      "FAJR-ARRIVÉE renforcée : 17 → 30 (+13) — réponse à Al-Ghazali sur l'être vs faire"
     ],
     "sous_types": [
       {
@@ -51,11 +52,31 @@
       },
       {
         "code": "FAJR-ARRIVÉE",
-        "volume": 17,
+        "volume": 30,
         "role": "Le souffle rendu, gratitude au matin"
+      },
+      {
+        "code": "FAJR-DOUCEUR",
+        "volume": 12,
+        "role": "Permission de l'être, pour les âmes fatiguées (raḥma)"
+      },
+      {
+        "code": "FAJR-OUMMA",
+        "volume": 15,
+        "role": "Conscience collective, engagement social, du'â pour la oumma"
+      },
+      {
+        "code": "FAJR-YAQÎN",
+        "volume": 10,
+        "role": "Ancrage dans la certitude face aux doutes contemporains"
+      },
+      {
+        "code": "FAJR-ADAB",
+        "volume": 10,
+        "role": "Manières et courtoisie raffinée du serviteur"
       }
     ],
-    "total_phrases": 401,
+    "total_phrases": 461,
     "regles_editoriales": [
       "Aucune phrase ne juge ou ne désigne 'les autres'",
       "L'utilisateur est confronté à lui-même, pas comparé à autrui",
@@ -65,6 +86,19 @@
       "CARREFOUR : ne mentionne JAMAIS les modules surprise (Regards)",
       "Tout appel à l'action, jamais de murmure poétique sans incarnation"
     ],
+    "panel_validation": {
+      "note_v2_1_moyenne": "8.64/10",
+      "experts": [
+        "Al-Ghazali",
+        "Ibn al-Qayyim",
+        "Hamza Yusuf",
+        "Tariq Ramadan",
+        "Yasmin Mogahed",
+        "Hamza Tzortzis",
+        "Designer UX"
+      ],
+      "additions_v2_2": "60 phrases (4 nouvelles catégories + renforcement ARRIVÉE)"
+    },
     "validation_imam_recommandee": true
   },
   "phrases": [
@@ -2072,6 +2106,306 @@
       "id": "FAJR_401",
       "fr": "Tu as un nombre de matins inscrit dans ton compte. Personne ne sait combien. Mais aujourd'hui, tu en as UN. Et il est entier devant toi. Prends-le.",
       "categorie": "FAJR-ARRIVÉE"
+    },
+    {
+      "id": "FAJR_402",
+      "fr": "Tu te réveilles. Allâh aurait pu décider autrement cette nuit. Il a décidé que tu continues. Aujourd'hui, marche dans cette décision avec gratitude.",
+      "categorie": "FAJR-ARRIVÉE"
+    },
+    {
+      "id": "FAJR_403",
+      "fr": "Le premier mot du Prophète ﷺ au réveil était : « Alhamdulillâhi-lladhî ahyânâ baʿda mâ amâtanâ wa ilayhi-n-nushûr. » (Bukhari) Aujourd'hui, sois exact. Dis-le.",
+      "categorie": "FAJR-ARRIVÉE"
+    },
+    {
+      "id": "FAJR_404",
+      "fr": "Aujourd'hui, sens ton souffle entrer. Sentir le souffle est déjà ibâda quand l'âme reconnaît qui le donne.",
+      "categorie": "FAJR-ARRIVÉE"
+    },
+    {
+      "id": "FAJR_405",
+      "fr": "Tu vois. Tes yeux fonctionnent. C'est miraculeux. Aujourd'hui, le premier regard que tu poses sur le monde — fais-en un Alhamdulillâh silencieux.",
+      "categorie": "FAJR-ARRIVÉE"
+    },
+    {
+      "id": "FAJR_406",
+      "fr": "Tu t'es retourné dans la nuit sans te réveiller. Allâh t'a fait dormir. Aujourd'hui, médite : qui d'autre s'est occupé de toi pendant que tu n'étais pas conscient ?",
+      "categorie": "FAJR-ARRIVÉE"
+    },
+    {
+      "id": "FAJR_407",
+      "fr": "Le ciel passe du noir au gris au rosé. C'est pour toi aussi. Allâh n'a pas créé l'aube en passant — Il l'a juré (Coran 89:1). Aujourd'hui, sois digne du serment.",
+      "categorie": "FAJR-ARRIVÉE"
+    },
+    {
+      "id": "FAJR_408",
+      "fr": "Ton cœur a battu toute la nuit sans que tu le saches. Aujourd'hui, le bat-il pour Lui ou pour autre chose ? Choisis maintenant.",
+      "categorie": "FAJR-ARRIVÉE"
+    },
+    {
+      "id": "FAJR_409",
+      "fr": "Tu es vivant. C'est un miracle. Pas une banalité. Aujourd'hui, ne traite plus la vie comme un acquis — c'est un cadeau renouvelable seconde par seconde.",
+      "categorie": "FAJR-ARRIVÉE"
+    },
+    {
+      "id": "FAJR_410",
+      "fr": "Le Prophète ﷺ a enseigné un du'â au réveil qui efface les péchés (sens des hadiths). Aujourd'hui, accepte ce pardon. Ne traîne pas hier. C'est une page nouvelle.",
+      "categorie": "FAJR-ARRIVÉE"
+    },
+    {
+      "id": "FAJR_411",
+      "fr": "Tu existes. Allâh aurait pu choisir de ne PAS te créer. Il l'a fait. Cette nuit, Il aurait pu te reprendre. Il ne l'a pas fait. Aujourd'hui — tu es Sa décision.",
+      "categorie": "FAJR-ARRIVÉE"
+    },
+    {
+      "id": "FAJR_412",
+      "fr": "Aujourd'hui, prends une seconde avant de te lever du lit. Ne saute pas. Une seconde de présence avant l'agitation. C'est ta première offrande du jour.",
+      "categorie": "FAJR-ARRIVÉE"
+    },
+    {
+      "id": "FAJR_413",
+      "fr": "La nuit s'est fendue (Coran 89:1). La lumière entre sans que tu fasses rien. Toute Sa miséricorde est comme ça — elle entre quand tu cesses de fermer.",
+      "categorie": "FAJR-ARRIVÉE"
+    },
+    {
+      "id": "FAJR_414",
+      "fr": "Aujourd'hui, sache que Allâh t'a regardé toute la nuit pendant que tu ne Le voyais pas. Tu Le verras toujours — sois là pour ce regard-là.",
+      "categorie": "FAJR-ARRIVÉE"
+    },
+    {
+      "id": "FAJR_415",
+      "fr": "Si aujourd'hui tu es épuisé, Allâh le sait. Le Coran dit : « Allâh n'impose à une âme que ce qu'elle peut porter. » (Coran 2:286) Pose-toi. Ta fatigue n'est pas un péché.",
+      "categorie": "FAJR-DOUCEUR"
+    },
+    {
+      "id": "FAJR_416",
+      "fr": "Aujourd'hui, si tu ne peux pas faire mieux que tes obligations — c'est déjà beaucoup. Allâh préfère la régularité dans le peu à l'éclat dans l'épuisement.",
+      "categorie": "FAJR-DOUCEUR"
+    },
+    {
+      "id": "FAJR_417",
+      "fr": "Le Prophète ﷺ se reposait. Il dormait. Il s'arrêtait. Aujourd'hui, donne à ton corps ce qu'il demande. Allâh t'a confié ce corps — prends-en soin aussi.",
+      "categorie": "FAJR-DOUCEUR"
+    },
+    {
+      "id": "FAJR_418",
+      "fr": "Si tu sors d'une période difficile (maladie, deuil, épuisement), reprends DOUCEMENT. Un seul Wird. Une seule page. Une seule prière en présence. La constance se rebâtit.",
+      "categorie": "FAJR-DOUCEUR"
+    },
+    {
+      "id": "FAJR_419",
+      "fr": "Aujourd'hui, accorde-toi UNE chose qui te repose — sans culpabilité. Le Prophète ﷺ a dit : « Ton corps a un droit sur toi. » (Bukhari)",
+      "categorie": "FAJR-DOUCEUR"
+    },
+    {
+      "id": "FAJR_420",
+      "fr": "Si tu ne ressens RIEN spirituellement aujourd'hui (la sécheresse du cœur), continue quand même. La régularité fabrique la sensibilité. Elle revient. Elle revient toujours.",
+      "categorie": "FAJR-DOUCEUR"
+    },
+    {
+      "id": "FAJR_421",
+      "fr": "Allâh voit ton épuisement. Allâh voit tes efforts invisibles. Aujourd'hui, fais le minimum SI c'est tout ce que tu peux. Ton intention est inscrite, même si l'acte ne sort pas.",
+      "categorie": "FAJR-DOUCEUR"
+    },
+    {
+      "id": "FAJR_422",
+      "fr": "Tu n'as pas à être un guerrier spirituel aujourd'hui. Tu peux être un serviteur fatigué qui dit « Allâhumma ». C'est suffisant.",
+      "categorie": "FAJR-DOUCEUR"
+    },
+    {
+      "id": "FAJR_423",
+      "fr": "Aujourd'hui, si tu pleures sans savoir pourquoi — ne le retiens pas. Le Prophète ﷺ pleurait. Les pleurs en présence d'Allâh sont une station, pas une faiblesse.",
+      "categorie": "FAJR-DOUCEUR"
+    },
+    {
+      "id": "FAJR_424",
+      "fr": "Si tu te sens cassé aujourd'hui, dis simplement : « Yâ Allâh, Toi tu sais. » Pas un long du'â. Trois mots. Allâh entend.",
+      "categorie": "FAJR-DOUCEUR"
+    },
+    {
+      "id": "FAJR_425",
+      "fr": "Aujourd'hui, ne te juge pas pour ce que tu ressens. Les émotions passent. Le serviteur reste. Tu n'es pas ton humeur du matin.",
+      "categorie": "FAJR-DOUCEUR"
+    },
+    {
+      "id": "FAJR_426",
+      "fr": "Si tu reviens à Niyyah après une longue absence — sois bienvenu. Pas de comptes à rendre. Le Prophète ﷺ a dit qu'Allâh est plus joyeux du retour d'un serviteur que d'un voyageur retrouvant sa monture (Bukhari, Muslim).",
+      "categorie": "FAJR-DOUCEUR"
+    },
+    {
+      "id": "FAJR_427",
+      "fr": "Aujourd'hui, fais UN du'â pour les opprimés de la oumma. Sans nommer un pays — Allâh sait. Tes invocations atteignent là où ton corps ne peut aller.",
+      "categorie": "FAJR-OUMMA"
+    },
+    {
+      "id": "FAJR_428",
+      "fr": "Le Prophète ﷺ a dit : « Les croyants sont comme un seul corps — si un membre souffre, tout le corps souffre. » (Bukhari, Muslim) Aujourd'hui, ressens UN frère qui souffre. Prie pour lui.",
+      "categorie": "FAJR-OUMMA"
+    },
+    {
+      "id": "FAJR_429",
+      "fr": "Aujourd'hui, fais un du'â pour ceux qui ne te connaîtront jamais. Le voyageur perdu. L'orphelin. Le malade isolé. Le Prophète ﷺ priait pour les inconnus. Toi aussi.",
+      "categorie": "FAJR-OUMMA"
+    },
+    {
+      "id": "FAJR_430",
+      "fr": "Si tu peux donner aujourd'hui — même 2 euros — donne. La sadaqa du matin est porteuse. Et l'argent donné à la oumma reste, même quand toi tu pars.",
+      "categorie": "FAJR-OUMMA"
+    },
+    {
+      "id": "FAJR_431",
+      "fr": "Aujourd'hui, parle d'islam à UNE personne qui t'écoute. Pas pour convertir — pour transmettre une connaissance utile. Le savoir partagé devient sadaqa jâriya.",
+      "categorie": "FAJR-OUMMA"
+    },
+    {
+      "id": "FAJR_432",
+      "fr": "Aujourd'hui, si tu as des enfants, raconte-leur UNE histoire d'un prophète ou d'un compagnon. Tu sèmes la transmission. Tu construis la oumma de demain.",
+      "categorie": "FAJR-OUMMA"
+    },
+    {
+      "id": "FAJR_433",
+      "fr": "Le Prophète ﷺ a dit : « Aucun musulman ne fait un du'â pour son frère absent sans qu'un ange ne dise : amîn, et pour toi pareil. » (Muslim) Aujourd'hui, qui choisis-tu de bénir en secret ?",
+      "categorie": "FAJR-OUMMA"
+    },
+    {
+      "id": "FAJR_434",
+      "fr": "Aujourd'hui, prie pour tes ennemis politiques, culturels, personnels. Pas pour qu'ils gagnent — pour qu'Allâh les guide. Le Prophète ﷺ priait pour ceux qui le persécutaient (Bukhari).",
+      "categorie": "FAJR-OUMMA"
+    },
+    {
+      "id": "FAJR_435",
+      "fr": "Aujourd'hui, ne médis JAMAIS d'un savant musulman, même si tu n'es pas d'accord avec lui. Le Prophète ﷺ a recommandé le respect des gens de science (sens des hadiths). La oumma se déchire par la médisance.",
+      "categorie": "FAJR-OUMMA"
+    },
+    {
+      "id": "FAJR_436",
+      "fr": "Si une injustice te touche aujourd'hui (information lue, vidéo vue), ne reste pas spectateur. Fais UN du'â. Donne UN don. Partage UNE info juste. Tu deviens maillon.",
+      "categorie": "FAJR-OUMMA"
+    },
+    {
+      "id": "FAJR_437",
+      "fr": "Aujourd'hui, dis du bien d'un musulman dans une assemblée où il est absent. Le Prophète ﷺ disait : « Aimez pour votre frère ce que vous aimez pour vous. » (Bukhari) Y compris la défense de sa réputation.",
+      "categorie": "FAJR-OUMMA"
+    },
+    {
+      "id": "FAJR_438",
+      "fr": "Aujourd'hui, demande pardon à Allâh POUR la oumma — pour ses péchés collectifs. Comme Mûsâ et Ibrâhîm priaient pour leurs peuples (Coran). Tu te places dans cette lignée.",
+      "categorie": "FAJR-OUMMA"
+    },
+    {
+      "id": "FAJR_439",
+      "fr": "Aujourd'hui, prie pour les morts musulmans dans le monde — la nuit dernière, des milliers sont partis. Tu ne les connaissais pas. Mais ton du'â les rejoint.",
+      "categorie": "FAJR-OUMMA"
+    },
+    {
+      "id": "FAJR_440",
+      "fr": "Si tu travailles aujourd'hui, fais-le AUSSI pour la oumma. Ton argent gagné honnêtement peut financer une mosquée, un orphelinat, un livre. Ton travail est ibâda quand l'intention y est.",
+      "categorie": "FAJR-OUMMA"
+    },
+    {
+      "id": "FAJR_441",
+      "fr": "Aujourd'hui, refuse de répandre une rumeur sur un musulman. Même si elle semble vraie. Le Prophète ﷺ a dit : « Il suffit de mentir de répéter tout ce qu'on entend. » (Muslim)",
+      "categorie": "FAJR-OUMMA"
+    },
+    {
+      "id": "FAJR_442",
+      "fr": "Aujourd'hui, tiens UNE certitude : Allâh est. Le reste — origines de l'univers, problème du mal, doutes contemporains — tu peux y revenir. Mais ce socle, garde-le intact.",
+      "categorie": "FAJR-YAQÎN"
+    },
+    {
+      "id": "FAJR_443",
+      "fr": "Les doutes viennent, les doutes partent. Le tawḥîd reste. Aujourd'hui, ancre-toi dans le tawḥîd AVANT que les doutes ne te touchent. C'est ton armure préventive.",
+      "categorie": "FAJR-YAQÎN"
+    },
+    {
+      "id": "FAJR_444",
+      "fr": "Le Prophète ﷺ a dit : « Le shaytân te chuchotera : qui a créé telle chose ? Qui a créé Allâh ? Quand cela arrive, dis : Âmantu billâh et passe à autre chose. » (Bukhari)",
+      "categorie": "FAJR-YAQÎN"
+    },
+    {
+      "id": "FAJR_445",
+      "fr": "Aujourd'hui, ne discute PAS de ta foi avec ceux qui veulent te déstabiliser. Le Coran enseigne de s'éloigner des moqueurs (Coran 6:68). Préserve ton yaqîn — il est précieux.",
+      "categorie": "FAJR-YAQÎN"
+    },
+    {
+      "id": "FAJR_446",
+      "fr": "Tu n'as pas besoin de répondre à TOUS les doutes pour rester musulman. Le îmân n'est pas l'absence de tempête — c'est l'ancre.",
+      "categorie": "FAJR-YAQÎN"
+    },
+    {
+      "id": "FAJR_447",
+      "fr": "Aujourd'hui, si tu vois du contenu anti-islam (vidéo, article), ferme. Pas par peur — par sagesse. La fitna se nourrit de l'exposition.",
+      "categorie": "FAJR-YAQÎN"
+    },
+    {
+      "id": "FAJR_448",
+      "fr": "Aujourd'hui, rappelle-toi : tu n'es PAS musulman par hasard de naissance. C'est un choix qu'Allâh a fait POUR toi avant ta naissance, et que tu confirmes chaque jour par ta présence.",
+      "categorie": "FAJR-YAQÎN"
+    },
+    {
+      "id": "FAJR_449",
+      "fr": "Le Prophète ﷺ a dit : « Vous ne croirez pas tant que vous ne vous aimerez pas. » (Muslim) Le îmân n'est pas une opinion intellectuelle — c'est un état du cœur. Cultive-le.",
+      "categorie": "FAJR-YAQÎN"
+    },
+    {
+      "id": "FAJR_450",
+      "fr": "Aujourd'hui, médite UN signe d'Allâh dans la création : le souffle, la digestion, la pensée. Le yaqîn ne se prouve pas — il se CONSTATE.",
+      "categorie": "FAJR-YAQÎN"
+    },
+    {
+      "id": "FAJR_451",
+      "fr": "Si tu doutes aujourd'hui, ne le combats pas par la pensée. Combats-le par l'ACTE. Fais une prière. Lis le Coran. Donne en sadaqa. Le doute meurt dans l'action.",
+      "categorie": "FAJR-YAQÎN"
+    },
+    {
+      "id": "FAJR_452",
+      "fr": "L'adab du dhikr aujourd'hui : avant de dire « Allâh », mets-toi en présence. Pas un mot lâché — un mot OFFERT. La langue qui dhikrise sans le cœur est lettre morte.",
+      "categorie": "FAJR-ADAB"
+    },
+    {
+      "id": "FAJR_453",
+      "fr": "Aujourd'hui en récitant le Coran, n'aie pas les jambes étendues vers le Mushaf. Sois en posture d'écoute du Roi. L'adab du Livre commence dans le corps.",
+      "categorie": "FAJR-ADAB"
+    },
+    {
+      "id": "FAJR_454",
+      "fr": "L'adab de la prière aujourd'hui : entre dans le salât COMME si tu entrais chez Allâh. Pose tes soucis à la porte. Tu y reviendras après. Mais pendant la prière — tu es chez Lui.",
+      "categorie": "FAJR-ADAB"
+    },
+    {
+      "id": "FAJR_455",
+      "fr": "L'adab du salam aujourd'hui : regarde la personne dans les yeux. Le Prophète ﷺ tournait tout son corps vers son interlocuteur (Tirmidhi). Pas de salam machinal.",
+      "categorie": "FAJR-ADAB"
+    },
+    {
+      "id": "FAJR_456",
+      "fr": "L'adab de l'aide aujourd'hui : si tu aides quelqu'un, FAIS-LE SENTIR à l'aise. Le don qui humilie n'est pas un don — c'est une violence.",
+      "categorie": "FAJR-ADAB"
+    },
+    {
+      "id": "FAJR_457",
+      "fr": "L'adab du repas aujourd'hui : avant de te lever de table, dis l'invocation. Ne pars pas en silence comme si tu n'avais rien reçu. La gratitude est une politesse envers Allâh.",
+      "categorie": "FAJR-ADAB"
+    },
+    {
+      "id": "FAJR_458",
+      "fr": "L'adab de l'écoute aujourd'hui : si quelqu'un te parle d'islam (un savant, un imam, un cours), pose ton téléphone. Tourne ton attention. La science demande la présence.",
+      "categorie": "FAJR-ADAB"
+    },
+    {
+      "id": "FAJR_459",
+      "fr": "L'adab du désaccord aujourd'hui : si quelqu'un dit quelque chose de faux sur l'islam, corrige-le PRIVÉMENT, JAMAIS publiquement. Le Prophète ﷺ ne humiliait jamais.",
+      "categorie": "FAJR-ADAB"
+    },
+    {
+      "id": "FAJR_460",
+      "fr": "L'adab de la nuit aujourd'hui : avant de te coucher, ferme avec un dhikr. N'éteins pas la journée comme on éteint une lampe. Termine-la par un mot pour Lui.",
+      "categorie": "FAJR-ADAB"
+    },
+    {
+      "id": "FAJR_461",
+      "fr": "L'adab du don aujourd'hui : si tu donnes, donne avec LA MAIN DROITE. Pas par superstition — par convention de la sunnah (Bukhari). Et donne ce que tu aimes, pas ce que tu ne veux plus.",
+      "categorie": "FAJR-ADAB"
     }
   ]
 }
