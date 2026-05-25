@@ -1,322 +1,776 @@
-[
-  {
-    "source": "waqt_midi",
-    "plage_origine": "midi",
-    "fr": "Quand tu prendras la première bouchée — ferme les yeux en mâchant. Goûte ce qu’Allah t’a donné.",
-    "en": "Your first bite — close your eyes as you chew. Taste what Allah gave you.",
-    "ar": "أَوَّلُ لُقْمَة — أَغْلِقْ عَيْنَيْك وأَنْتَ تَمْضَغ. تَذَوَّقْ ما أَعْطاكَ اللَّه.",
-    "categorie": "SUNNAH"
-  },
-  {
-    "source": "waqt_midi",
-    "plage_origine": "midi",
-    "fr": "Il y a quelqu’un autour de toi qui porte un poids invisible. Prie pour lui. Maintenant.",
-    "en": "There’s someone near you carrying an invisible weight. Pray for them. Now.",
-    "ar": "هُناكَ شَخْصٌ قَرِيبٌ يَحْمِلُ ثِقَلًا خَفِيًّا. ادْعُ لَه. الآن.",
-    "categorie": "CONTEMPLATIF"
-  },
-  {
-    "source": "waqt_midi",
-    "plage_origine": "midi",
-    "fr": "Ce que tu vas manger aujourd’hui — combien de mains l’ont préparé avant d’arriver à toi ? Pense à elles.",
-    "en": "This meal — how many hands prepared it before it reached you? Think of them.",
-    "ar": "هذا الطَّعام — كَمْ يَدًا أَعَدَّتْهُ قَبْلَ أَنْ يَصِلَ إِلَيْك؟ فَكِّرْ فِيهِم.",
-    "categorie": "SUNNAH"
-  },
-  {
-    "source": "waqt_midi",
-    "plage_origine": "midi",
-    "fr": "S’il reste un agacement de ce matin — lâche-le. Pas pour lui. Pour toi.",
-    "en": "Someone annoyed you this morning. Release that anger — not for them. For you.",
-    "ar": "أَغْضَبَكَ أَحَدٌ هذا الصَّباح. أَطْلِقْ ذلِكَ الغَضَب — لَيْسَ لَه. لَك.",
-    "categorie": "CONTEMPLATIF"
-  },
-  {
-    "source": "waqt_midi",
-    "plage_origine": "midi",
-    "fr": "Quand tu manges — pose ce que tu tiens entre deux bouchées. Respire. C’est la sunnah de manger doucement.",
-    "en": "Put your fork down between bites. Breathe. It’s the sunnah of eating slowly.",
-    "ar": "ضَعْ شَوْكَتَك بَيْنَ اللُّقَم. تَنَفَّس. سُنَّةُ الأَكْلِ بِتَأَنٍّ.",
-    "categorie": "SUNNAH"
-  },
-  {
-    "source": "waqt_midi",
-    "plage_origine": "midi",
-    "fr": "Dis dans ton cœur : « Ya Sabur, accorde-moi Ta patience pour cet après-midi. »",
-    "en": "Say in your heart: “Ya Sabur, grant me Your patience for this afternoon.”",
-    "ar": "قُلْ فِي قَلْبِك: «يا صَبُور، امْنَحْنِي صَبْرَكَ لِهذا المَساء.»",
-    "categorie": "CONTEMPLATIF"
-  },
-  {
-    "source": "waqt_midi",
-    "plage_origine": "midi",
-    "fr": "Envoie un message à quelqu’un que tu négliges. Juste : « Je pense à toi. »",
-    "en": "Send a message to someone you’ve neglected. Just: “Thinking of you.”",
-    "ar": "أَرْسِلْ رِسالَةً لِمَنْ أَهْمَلْتَه. فَقَط: «أُفَكِّرُ فِيك.»",
-    "categorie": "SUNNAH"
-  },
-  {
-    "source": "waqt_midi",
-    "plage_origine": "midi",
-    "fr": "As-Sabur. Le Patient. Celui qui ne Se presse pas. Répète Son Nom en expirant.",
-    "en": "As-Sabur. The Patient. The One who never rushes. Repeat His Name as you exhale.",
-    "ar": "الصَّبُور. الَّذِي لا يَسْتَعْجِل. رَدِّدْ اسْمَهُ مَعَ الزَّفِير.",
-    "categorie": "CONTEMPLATIF"
-  },
-  {
-    "source": "waqt_midi",
-    "plage_origine": "midi",
-    "fr": "Ta charge mentale n’est pas à toi seul. Dépose-la 10 secondes — Allah est Al-Wakil.",
-    "en": "Your mental load isn’t yours alone. Set it down 10 seconds — Allah is Al-Wakil.",
-    "ar": "حِمْلُكَ الذِّهْنِيُّ لَيْسَ لَكَ وَحْدَك. ضَعْهُ ١٠ ثَوان — اللَّهُ الوَكِيل.",
-    "categorie": "CONTEMPLATIF"
-  },
-  {
-    "source": "waqt_midi",
-    "plage_origine": "midi",
-    "fr": "Si tu bâilles, le Prophète ﷺ a dit : « Couvre-toi quand tu bâilles. » Une pudeur jusque dans la fatigue.",
-    "en": "Yawn without shame. Your body asks you to slow down — obey it, that’s shukr.",
-    "ar": "تَثاءَبْ دُونَ خَجَل. جَسَدُكَ يَطْلُبُ التَّباطُؤ — أَطِعْه، هذا شُكْر.",
-    "categorie": "CONTEMPLATIF"
-  },
-  {
-    "source": "waqt_midi",
-    "plage_origine": "midi",
-    "fr": "Pose ta paume sur ce qui est devant toi. Sens la surface. Reviens ici — pas dans ta tête.",
-    "en": "Place your palm on the table. Feel the surface. Come back here — not in your head.",
-    "ar": "ضَعْ كَفَّكَ عَلَى الطّاوِلَة. اشْعُرْ بِالسَّطْح. عُدْ إِلَى هُنا — لا فِي رَأْسِك.",
-    "categorie": "SUNNAH"
-  },
-  {
-    "source": "waqt_midi",
-    "plage_origine": "midi",
-    "fr": "Si quelqu’un mange avec toi — vous partagez la même provision d’Allah en ce moment.",
-    "en": "The person across from you is eating too — you share Allah’s provision right now.",
-    "ar": "الشَّخْصُ أَمامَك يَأْكُلُ أَيْضًا — تَتَقاسَمانِ رِزْقَ اللَّه الآن.",
-    "categorie": "SUNNAH"
-  },
-  {
-    "source": "waqt_midi",
-    "plage_origine": "midi",
-    "fr": "Quand tu parles à quelqu’un aujourd’hui — appelle-le par son prénom. La connexion humaine commence là.",
-    "en": "Call someone by their first name, not their title. Human connection starts there.",
-    "ar": "نادِ أَحَدًا بِاسْمِه، لا بِلَقَبِه. الرّابِطُ الإِنْسانِيُّ يَبْدَأُ مِنْ هُنا.",
-    "categorie": "SUNNAH"
-  },
-  {
-    "source": "waqt_midi",
-    "plage_origine": "midi",
-    "fr": "La lumière du midi — où qu’elle te trouve. Gratuite. Inépuisée. C’est un verset visible. Dis : Allahu Nur as-samawati wal-ard.",
-    "en": "Midday light streams through the window. Free. Inexhaustible. A visible verse.",
-    "ar": "ضَوْءُ الظُّهْرِ يَدْخُلُ مِنَ النّافِذَة. مَجّانِيّ. لا يَنْفَد. آيَةٌ مَرْئِيَّة.",
-    "categorie": "CONTEMPLATIF"
-  },
-  {
-    "source": "waqt_midi",
-    "plage_origine": "midi",
-    "fr": "On se juge tous sévèrement parfois. Allah est plus doux avec toi que toi-même.",
-    "en": "You judged yourself harshly this morning. Stop. Allah is gentler with you than you are.",
-    "ar": "حاسَبْتَ نَفْسَكَ بِقَسْوَةٍ هذا الصَّباح. تَوَقَّف. اللَّهُ أَرْفَقُ بِكَ مِنْك.",
-    "categorie": "CONTEMPLATIF"
-  },
-  {
-    "source": "waqt_midi",
-    "plage_origine": "midi",
-    "fr": "Tu manges seul ? Le Prophète ﷺ détestait manger seul. Partage ne serait-ce qu’un regard avec quelqu’un.",
-    "en": "Eating alone? The Prophet ﷺ disliked eating alone. Share even just a glance with someone.",
-    "ar": "تَأْكُلُ وَحْدَك؟ النَّبِيُّ ﷺ كانَ يَكْرَهُ الأَكْلَ وَحْدَه. شارِكْ وَلَوْ نَظْرَةً مَعَ أَحَد.",
-    "categorie": "SUNNAH"
-  },
-  {
-    "source": "waqt_midi",
-    "plage_origine": "midi",
-    "fr": "Le Prophète ﷺ ne remplissait jamais son estomac. Un tiers repas, un tiers eau, un tiers air.",
-    "en": "The Prophet ﷺ never filled his stomach. One third food, one third water, one third air.",
-    "ar": "النَّبِيُّ ﷺ لَمْ يَمْلَأْ مَعِدَتَهُ قَطّ. ثُلُثٌ طَعام، ثُلُثٌ ماء، ثُلُثٌ هَواء.",
-    "categorie": "CONTEMPLATIF"
-  },
-  {
-    "source": "waqt_midi",
-    "plage_origine": "midi",
-    "fr": "La lumière met 8 minutes à arriver depuis le Soleil. Quand tu la sens, elle est partie il y a 8 minutes. Allah t’écrit en avance. Tu vis dans la trace de Sa décision passée.",
-    "en": "",
-    "ar": "",
-    "categorie": "CONTEMPLATIF"
-  },
-  {
-    "source": "waqt_midi",
-    "plage_origine": "midi",
-    "fr": "Tu lis ces mots. La lumière entre dans tes yeux, devient signal électrique, devient pensée. Aucun scientifique ne sait comment. Et pourtant tu comprends. La compréhension elle-même est une grâce.",
-    "en": "",
-    "ar": "",
-    "categorie": "CONTEMPLATIF"
-  },
-  {
-    "source": "waqt_midi",
-    "plage_origine": "midi",
-    "fr": "« C’est Lui qui a fait deux mers couler côte à côte ; l’une douce et savoureuse, l’autre salée et amère. Il a établi entre les deux une barrière. » (Coran 25:53). Aux embouchures des grands fleuves dans la mer, ce phénomène existe — les eaux se touchent sans se mélanger pendant des kilomètres. Pas une preuve. Une image qui désigne la mesure de Celui qui sépare.",
-    "en": "",
-    "ar": "",
-    "categorie": "CONTEMPLATIF"
-  },
-  {
-    "source": "waqt_midi",
-    "plage_origine": "midi",
-    "fr": "« Et Nous avons fait de l’eau toute chose vivante. Ne croiront-ils donc pas ? » (Coran 21:30). Soixante-dix pour cent de toi est eau. Aucune bactérie ne s’en passe. Aucune feuille. Aucun œil. Le verset dit une chose simple — et qui se voit partout.",
-    "en": "",
-    "ar": "",
-    "categorie": "CONTEMPLATIF"
-  },
-  {
-    "source": "waqt_midi",
-    "plage_origine": "midi",
-    "fr": "Tu as arrêté de prier depuis longtemps ? La porte du tawba n’a JAMAIS de file d’attente. Elle s’ouvre dès que tu te lèves. Allah n’a pas tenu de compte du temps écoulé.",
-    "en": "",
-    "ar": "",
-    "categorie": "SUNNAH"
-  },
-  {
-    "source": "waqt_midi",
-    "plage_origine": "midi",
-    "fr": "Deux hommes au marché. L’un achète tout ce qu’il voit, plein les bras. L’autre n’achète qu’une chose, légère, qu’il portera longtemps. Le second arrive plus loin. Le rizq ne pèse pas sur celui qui choisit.",
-    "en": "",
-    "ar": "",
-    "categorie": "CONTEMPLATIF"
-  },
-  {
-    "source": "waqt_midi",
-    "plage_origine": "midi",
-    "fr": "L’arbre qui donne le plus de fruits est celui que les passants frappent le plus. Si tu reçois des pierres dans ta vie — c’est peut-être parce qu’Il a mis des fruits en toi.",
-    "en": "",
-    "ar": "",
-    "categorie": "SUNNAH"
-  },
-  {
-    "source": "waqt_midi",
-    "plage_origine": "midi",
-    "fr": "Un homme se plaint de devoir prier 5 fois par jour. Le même homme mange 3 fois, boit 8 fois, regarde son téléphone 80 fois. Le corps obtient ses pauses. L’âme aussi en demande. Cinq, c’est très peu.",
-    "en": "",
-    "ar": "",
-    "categorie": "SUNNAH"
-  },
-  {
-    "source": "waqt_midi",
-    "plage_origine": "midi",
-    "fr": "Une rivière ne se plaint pas de la pente. Sans la pente, elle ne coulerait pas. Sans les épreuves, ton iman ne progresserait pas. Remercie ce qui t’oblige à descendre — c’est ce qui te fait avancer.",
-    "en": "",
-    "ar": "",
-    "categorie": "CONTEMPLATIF"
-  },
-  {
-    "source": "waqt_midi",
-    "plage_origine": "midi",
-    "fr": "Tu as ouvert l’app aujourd’hui. Quelqu’un d’autre, pas. Allah t’a guidé à un geste qu’Il valorise. Tu ne t’es pas amené ici tout seul.",
-    "en": "",
-    "ar": "",
-    "categorie": "CONTEMPLATIF"
-  },
-  {
-    "source": "waqt_midi",
-    "plage_origine": "midi",
-    "fr": "Tu existes. Ce mot est petit, mais immense. Sur des milliards de possibilités, c’est TOI qui es là, à lire ceci. Tu as une place réservée dans le réel.",
-    "en": "",
-    "ar": "",
-    "categorie": "CONTEMPLATIF"
-  },
-  {
-    "source": "waqt_midi",
-    "plage_origine": "midi",
-    "fr": "Pendant que tu manges sereinement, un musulman a faim quelque part. Ce n’est pas culpabilité — c’est lien. L’oumma est un seul corps. Quand une partie a mal, l’autre la porte.",
-    "en": "",
-    "ar": "",
-    "categorie": "SUNNAH"
-  },
-  {
-    "source": "waqt_midi",
-    "plage_origine": "midi",
-    "fr": "L’oumma fait plus de 2 milliards d’âmes. Tu n’es pas seul. Ton iman se renforce du leur, le leur se renforce du tien. Aucun musulman ne marche véritablement seul.",
-    "en": "",
-    "ar": "",
-    "categorie": "CONTEMPLATIF"
-  },
-  {
-    "source": "waqt_midi",
-    "plage_origine": "midi",
-    "fr": "Une femme musulmane se cache pour porter son hijab quelque part dans le monde. Toi tu portes le tien (ou pas) librement. La liberté du voile est aussi une cause silencieuse. Honore-la en pensée.",
-    "en": "",
-    "ar": "",
-    "categorie": "CONTEMPLATIF"
-  },
-  {
-    "source": "waqt_midi",
-    "plage_origine": "midi",
-    "fr": "À la Mecque, en ce moment même, des milliers de personnes tournent autour de la Kaaba. Sans arrêt. Jour, nuit, été, hiver. Depuis 1400 ans. Le centre de gravité spirituel du monde ne s’éteint jamais.",
-    "en": "",
-    "ar": "",
-    "categorie": "CONTEMPLATIF"
-  },
-  {
-    "source": "waqt_midi",
-    "plage_origine": "midi",
-    "fr": "Pendant que tu manges, plusieurs millions de musulmans sont en prosternation quelque part. Quelqu’un, en ce moment, dit Subhana Rabbiyal A’la. Tu n’es jamais seul dans l’adoration.",
-    "en": "",
-    "ar": "",
-    "categorie": "SUNNAH"
-  },
-  {
-    "source": "waqt_midi",
-    "plage_origine": "midi",
-    "fr": "Pendant cette plage du dhuhr, environ 500 millions de musulmans s’arrêtent de travailler pour prier. Une économie mondiale qui ralentit pour Allah, 5 fois par jour, sans contrat.",
-    "en": "",
-    "ar": "",
-    "categorie": "CONTEMPLATIF"
-  },
-  {
-    "source": "waqt_midi",
-    "plage_origine": "midi",
-    "fr": "Une orange a la peau qui protège, la chair qui nourrit, le pépin qui refait l’arbre. Qui a pensé à tout ?",
-    "en": "",
-    "ar": "",
-    "categorie": "SUNNAH"
-  },
-  {
-    "source": "waqt_midi",
-    "plage_origine": "midi",
-    "fr": "Tu peux distinguer 10 000 odeurs. Tu n’en as jamais demandé une seule.",
-    "en": "",
-    "ar": "",
-    "categorie": "CONTEMPLATIF"
-  },
-  {
-    "source": "waqt_midi",
-    "plage_origine": "midi",
-    "fr": "La banane mûrit pile au moment où tu en as besoin. Et l’emballage est inclus.",
-    "en": "",
-    "ar": "",
-    "categorie": "CONTEMPLATIF"
-  },
-  {
-    "source": "waqt_midi",
-    "plage_origine": "midi",
-    "fr": "Le miel ne pourrit jamais. On en a trouvé dans les pyramides, encore mangeable.",
-    "en": "",
-    "ar": "",
-    "categorie": "SUNNAH"
-  },
-  {
-    "source": "waqt_midi",
-    "plage_origine": "midi",
-    "fr": "En ce moment, partout dans le monde, des hommes et des femmes mémorisent le Coran lettre par lettre — comme on le fait sans interruption depuis 14 siècles. C’est l’un des miracles silencieux de l’oumma.",
-    "en": "",
-    "ar": "",
-    "categorie": "CONTEMPLATIF"
-  },
-  {
-    "source": "waqt_midi",
-    "plage_origine": "midi",
-    "fr": "À Sana’a, en 1972, des ouvriers ont trouvé dans le plafond d’une mosquée des manuscrits coraniques du 7e siècle, oubliés depuis mille ans. Allah préserve ce qu’Il a choisi de préserver.",
-    "en": "",
-    "ar": "",
-    "categorie": "CONTEMPLATIF"
-  }
-]
+{
+  "phrases": [
+    {
+      "source": "waqt_midi",
+      "plage_origine": "midi",
+      "fr": "Quand tu prendras la première bouchée — ferme les yeux en mâchant. Goûte ce qu’Allah t’a donné.",
+      "en": "Your first bite — close your eyes as you chew. Taste what Allah gave you.",
+      "ar": "أَوَّلُ لُقْمَة — أَغْلِقْ عَيْنَيْك وأَنْتَ تَمْضَغ. تَذَوَّقْ ما أَعْطاكَ اللَّه.",
+      "categorie": "SUNNAH"
+    },
+    {
+      "source": "waqt_midi",
+      "plage_origine": "midi",
+      "fr": "Il y a quelqu’un autour de toi qui porte un poids invisible. Prie pour lui. Maintenant.",
+      "en": "There’s someone near you carrying an invisible weight. Pray for them. Now.",
+      "ar": "هُناكَ شَخْصٌ قَرِيبٌ يَحْمِلُ ثِقَلًا خَفِيًّا. ادْعُ لَه. الآن.",
+      "categorie": "CONTEMPLATIF"
+    },
+    {
+      "source": "waqt_midi",
+      "plage_origine": "midi",
+      "fr": "Ce que tu vas manger aujourd’hui — combien de mains l’ont préparé avant d’arriver à toi ? Pense à elles.",
+      "en": "This meal — how many hands prepared it before it reached you? Think of them.",
+      "ar": "هذا الطَّعام — كَمْ يَدًا أَعَدَّتْهُ قَبْلَ أَنْ يَصِلَ إِلَيْك؟ فَكِّرْ فِيهِم.",
+      "categorie": "SUNNAH"
+    },
+    {
+      "source": "waqt_midi",
+      "plage_origine": "midi",
+      "fr": "S’il reste un agacement de ce matin — lâche-le. Pas pour lui. Pour toi.",
+      "en": "Someone annoyed you this morning. Release that anger — not for them. For you.",
+      "ar": "أَغْضَبَكَ أَحَدٌ هذا الصَّباح. أَطْلِقْ ذلِكَ الغَضَب — لَيْسَ لَه. لَك.",
+      "categorie": "CONTEMPLATIF"
+    },
+    {
+      "source": "waqt_midi",
+      "plage_origine": "midi",
+      "fr": "Quand tu manges — pose ce que tu tiens entre deux bouchées. Respire. C’est la sunnah de manger doucement.",
+      "en": "Put your fork down between bites. Breathe. It’s the sunnah of eating slowly.",
+      "ar": "ضَعْ شَوْكَتَك بَيْنَ اللُّقَم. تَنَفَّس. سُنَّةُ الأَكْلِ بِتَأَنٍّ.",
+      "categorie": "SUNNAH"
+    },
+    {
+      "source": "waqt_midi",
+      "plage_origine": "midi",
+      "fr": "Dis dans ton cœur : « Ya Sabur, accorde-moi Ta patience pour cet après-midi. »",
+      "en": "Say in your heart: “Ya Sabur, grant me Your patience for this afternoon.”",
+      "ar": "قُلْ فِي قَلْبِك: «يا صَبُور، امْنَحْنِي صَبْرَكَ لِهذا المَساء.»",
+      "categorie": "CONTEMPLATIF"
+    },
+    {
+      "source": "waqt_midi",
+      "plage_origine": "midi",
+      "fr": "Envoie un message à quelqu’un que tu négliges. Juste : « Je pense à toi. »",
+      "en": "Send a message to someone you’ve neglected. Just: “Thinking of you.”",
+      "ar": "أَرْسِلْ رِسالَةً لِمَنْ أَهْمَلْتَه. فَقَط: «أُفَكِّرُ فِيك.»",
+      "categorie": "SUNNAH"
+    },
+    {
+      "source": "waqt_midi",
+      "plage_origine": "midi",
+      "fr": "As-Sabur. Le Patient. Celui qui ne Se presse pas. Répète Son Nom en expirant.",
+      "en": "As-Sabur. The Patient. The One who never rushes. Repeat His Name as you exhale.",
+      "ar": "الصَّبُور. الَّذِي لا يَسْتَعْجِل. رَدِّدْ اسْمَهُ مَعَ الزَّفِير.",
+      "categorie": "CONTEMPLATIF"
+    },
+    {
+      "source": "waqt_midi",
+      "plage_origine": "midi",
+      "fr": "Ta charge mentale n’est pas à toi seul. Dépose-la 10 secondes — Allah est Al-Wakil.",
+      "en": "Your mental load isn’t yours alone. Set it down 10 seconds — Allah is Al-Wakil.",
+      "ar": "حِمْلُكَ الذِّهْنِيُّ لَيْسَ لَكَ وَحْدَك. ضَعْهُ ١٠ ثَوان — اللَّهُ الوَكِيل.",
+      "categorie": "CONTEMPLATIF"
+    },
+    {
+      "source": "waqt_midi",
+      "plage_origine": "midi",
+      "fr": "Si tu bâilles, le Prophète ﷺ a dit : « Couvre-toi quand tu bâilles. » Une pudeur jusque dans la fatigue.",
+      "en": "Yawn without shame. Your body asks you to slow down — obey it, that’s shukr.",
+      "ar": "تَثاءَبْ دُونَ خَجَل. جَسَدُكَ يَطْلُبُ التَّباطُؤ — أَطِعْه، هذا شُكْر.",
+      "categorie": "CONTEMPLATIF"
+    },
+    {
+      "source": "waqt_midi",
+      "plage_origine": "midi",
+      "fr": "Pose ta paume sur ce qui est devant toi. Sens la surface. Reviens ici — pas dans ta tête.",
+      "en": "Place your palm on the table. Feel the surface. Come back here — not in your head.",
+      "ar": "ضَعْ كَفَّكَ عَلَى الطّاوِلَة. اشْعُرْ بِالسَّطْح. عُدْ إِلَى هُنا — لا فِي رَأْسِك.",
+      "categorie": "SUNNAH"
+    },
+    {
+      "source": "waqt_midi",
+      "plage_origine": "midi",
+      "fr": "Si quelqu’un mange avec toi — vous partagez la même provision d’Allah en ce moment.",
+      "en": "The person across from you is eating too — you share Allah’s provision right now.",
+      "ar": "الشَّخْصُ أَمامَك يَأْكُلُ أَيْضًا — تَتَقاسَمانِ رِزْقَ اللَّه الآن.",
+      "categorie": "SUNNAH"
+    },
+    {
+      "source": "waqt_midi",
+      "plage_origine": "midi",
+      "fr": "Quand tu parles à quelqu’un aujourd’hui — appelle-le par son prénom. La connexion humaine commence là.",
+      "en": "Call someone by their first name, not their title. Human connection starts there.",
+      "ar": "نادِ أَحَدًا بِاسْمِه، لا بِلَقَبِه. الرّابِطُ الإِنْسانِيُّ يَبْدَأُ مِنْ هُنا.",
+      "categorie": "SUNNAH"
+    },
+    {
+      "source": "waqt_midi",
+      "plage_origine": "midi",
+      "fr": "La lumière du midi — où qu’elle te trouve. Gratuite. Inépuisée. C’est un verset visible. Dis : Allahu Nur as-samawati wal-ard.",
+      "en": "Midday light streams through the window. Free. Inexhaustible. A visible verse.",
+      "ar": "ضَوْءُ الظُّهْرِ يَدْخُلُ مِنَ النّافِذَة. مَجّانِيّ. لا يَنْفَد. آيَةٌ مَرْئِيَّة.",
+      "categorie": "CONTEMPLATIF"
+    },
+    {
+      "source": "waqt_midi",
+      "plage_origine": "midi",
+      "fr": "On se juge tous sévèrement parfois. Allah est plus doux avec toi que toi-même.",
+      "en": "You judged yourself harshly this morning. Stop. Allah is gentler with you than you are.",
+      "ar": "حاسَبْتَ نَفْسَكَ بِقَسْوَةٍ هذا الصَّباح. تَوَقَّف. اللَّهُ أَرْفَقُ بِكَ مِنْك.",
+      "categorie": "CONTEMPLATIF"
+    },
+    {
+      "source": "waqt_midi",
+      "plage_origine": "midi",
+      "fr": "Tu manges seul ? Le Prophète ﷺ détestait manger seul. Partage ne serait-ce qu’un regard avec quelqu’un.",
+      "en": "Eating alone? The Prophet ﷺ disliked eating alone. Share even just a glance with someone.",
+      "ar": "تَأْكُلُ وَحْدَك؟ النَّبِيُّ ﷺ كانَ يَكْرَهُ الأَكْلَ وَحْدَه. شارِكْ وَلَوْ نَظْرَةً مَعَ أَحَد.",
+      "categorie": "SUNNAH"
+    },
+    {
+      "source": "waqt_midi",
+      "plage_origine": "midi",
+      "fr": "Le Prophète ﷺ ne remplissait jamais son estomac. Un tiers repas, un tiers eau, un tiers air.",
+      "en": "The Prophet ﷺ never filled his stomach. One third food, one third water, one third air.",
+      "ar": "النَّبِيُّ ﷺ لَمْ يَمْلَأْ مَعِدَتَهُ قَطّ. ثُلُثٌ طَعام، ثُلُثٌ ماء، ثُلُثٌ هَواء.",
+      "categorie": "CONTEMPLATIF"
+    },
+    {
+      "source": "waqt_midi",
+      "plage_origine": "midi",
+      "fr": "La lumière met 8 minutes à arriver depuis le Soleil. Quand tu la sens, elle est partie il y a 8 minutes. Allah t’écrit en avance. Tu vis dans la trace de Sa décision passée.",
+      "en": "",
+      "ar": "",
+      "categorie": "CONTEMPLATIF"
+    },
+    {
+      "source": "waqt_midi",
+      "plage_origine": "midi",
+      "fr": "Tu lis ces mots. La lumière entre dans tes yeux, devient signal électrique, devient pensée. Aucun scientifique ne sait comment. Et pourtant tu comprends. La compréhension elle-même est une grâce.",
+      "en": "",
+      "ar": "",
+      "categorie": "CONTEMPLATIF"
+    },
+    {
+      "source": "waqt_midi",
+      "plage_origine": "midi",
+      "fr": "« C’est Lui qui a fait deux mers couler côte à côte ; l’une douce et savoureuse, l’autre salée et amère. Il a établi entre les deux une barrière. » (Coran 25:53). Aux embouchures des grands fleuves dans la mer, ce phénomène existe — les eaux se touchent sans se mélanger pendant des kilomètres. Pas une preuve. Une image qui désigne la mesure de Celui qui sépare.",
+      "en": "",
+      "ar": "",
+      "categorie": "CONTEMPLATIF"
+    },
+    {
+      "source": "waqt_midi",
+      "plage_origine": "midi",
+      "fr": "« Et Nous avons fait de l’eau toute chose vivante. Ne croiront-ils donc pas ? » (Coran 21:30). Soixante-dix pour cent de toi est eau. Aucune bactérie ne s’en passe. Aucune feuille. Aucun œil. Le verset dit une chose simple — et qui se voit partout.",
+      "en": "",
+      "ar": "",
+      "categorie": "CONTEMPLATIF"
+    },
+    {
+      "source": "waqt_midi",
+      "plage_origine": "midi",
+      "fr": "Tu as arrêté de prier depuis longtemps ? La porte du tawba n’a JAMAIS de file d’attente. Elle s’ouvre dès que tu te lèves. Allah n’a pas tenu de compte du temps écoulé.",
+      "en": "",
+      "ar": "",
+      "categorie": "SUNNAH"
+    },
+    {
+      "source": "waqt_midi",
+      "plage_origine": "midi",
+      "fr": "Deux hommes au marché. L’un achète tout ce qu’il voit, plein les bras. L’autre n’achète qu’une chose, légère, qu’il portera longtemps. Le second arrive plus loin. Le rizq ne pèse pas sur celui qui choisit.",
+      "en": "",
+      "ar": "",
+      "categorie": "CONTEMPLATIF"
+    },
+    {
+      "source": "waqt_midi",
+      "plage_origine": "midi",
+      "fr": "L’arbre qui donne le plus de fruits est celui que les passants frappent le plus. Si tu reçois des pierres dans ta vie — c’est peut-être parce qu’Il a mis des fruits en toi.",
+      "en": "",
+      "ar": "",
+      "categorie": "SUNNAH"
+    },
+    {
+      "source": "waqt_midi",
+      "plage_origine": "midi",
+      "fr": "Un homme se plaint de devoir prier 5 fois par jour. Le même homme mange 3 fois, boit 8 fois, regarde son téléphone 80 fois. Le corps obtient ses pauses. L’âme aussi en demande. Cinq, c’est très peu.",
+      "en": "",
+      "ar": "",
+      "categorie": "SUNNAH"
+    },
+    {
+      "source": "waqt_midi",
+      "plage_origine": "midi",
+      "fr": "Une rivière ne se plaint pas de la pente. Sans la pente, elle ne coulerait pas. Sans les épreuves, ton iman ne progresserait pas. Remercie ce qui t’oblige à descendre — c’est ce qui te fait avancer.",
+      "en": "",
+      "ar": "",
+      "categorie": "CONTEMPLATIF"
+    },
+    {
+      "source": "waqt_midi",
+      "plage_origine": "midi",
+      "fr": "Tu as ouvert l’app aujourd’hui. Quelqu’un d’autre, pas. Allah t’a guidé à un geste qu’Il valorise. Tu ne t’es pas amené ici tout seul.",
+      "en": "",
+      "ar": "",
+      "categorie": "CONTEMPLATIF"
+    },
+    {
+      "source": "waqt_midi",
+      "plage_origine": "midi",
+      "fr": "Tu existes. Ce mot est petit, mais immense. Sur des milliards de possibilités, c’est TOI qui es là, à lire ceci. Tu as une place réservée dans le réel.",
+      "en": "",
+      "ar": "",
+      "categorie": "CONTEMPLATIF"
+    },
+    {
+      "source": "waqt_midi",
+      "plage_origine": "midi",
+      "fr": "Pendant que tu manges sereinement, un musulman a faim quelque part. Ce n’est pas culpabilité — c’est lien. L’oumma est un seul corps. Quand une partie a mal, l’autre la porte.",
+      "en": "",
+      "ar": "",
+      "categorie": "SUNNAH"
+    },
+    {
+      "source": "waqt_midi",
+      "plage_origine": "midi",
+      "fr": "L’oumma fait plus de 2 milliards d’âmes. Tu n’es pas seul. Ton iman se renforce du leur, le leur se renforce du tien. Aucun musulman ne marche véritablement seul.",
+      "en": "",
+      "ar": "",
+      "categorie": "CONTEMPLATIF"
+    },
+    {
+      "source": "waqt_midi",
+      "plage_origine": "midi",
+      "fr": "Une femme musulmane se cache pour porter son hijab quelque part dans le monde. Toi tu portes le tien (ou pas) librement. La liberté du voile est aussi une cause silencieuse. Honore-la en pensée.",
+      "en": "",
+      "ar": "",
+      "categorie": "CONTEMPLATIF"
+    },
+    {
+      "source": "waqt_midi",
+      "plage_origine": "midi",
+      "fr": "À la Mecque, en ce moment même, des milliers de personnes tournent autour de la Kaaba. Sans arrêt. Jour, nuit, été, hiver. Depuis 1400 ans. Le centre de gravité spirituel du monde ne s’éteint jamais.",
+      "en": "",
+      "ar": "",
+      "categorie": "CONTEMPLATIF"
+    },
+    {
+      "source": "waqt_midi",
+      "plage_origine": "midi",
+      "fr": "Pendant que tu manges, plusieurs millions de musulmans sont en prosternation quelque part. Quelqu’un, en ce moment, dit Subhana Rabbiyal A’la. Tu n’es jamais seul dans l’adoration.",
+      "en": "",
+      "ar": "",
+      "categorie": "SUNNAH"
+    },
+    {
+      "source": "waqt_midi",
+      "plage_origine": "midi",
+      "fr": "Pendant cette plage du dhuhr, environ 500 millions de musulmans s’arrêtent de travailler pour prier. Une économie mondiale qui ralentit pour Allah, 5 fois par jour, sans contrat.",
+      "en": "",
+      "ar": "",
+      "categorie": "CONTEMPLATIF"
+    },
+    {
+      "source": "waqt_midi",
+      "plage_origine": "midi",
+      "fr": "Une orange a la peau qui protège, la chair qui nourrit, le pépin qui refait l’arbre. Qui a pensé à tout ?",
+      "en": "",
+      "ar": "",
+      "categorie": "SUNNAH"
+    },
+    {
+      "source": "waqt_midi",
+      "plage_origine": "midi",
+      "fr": "Tu peux distinguer 10 000 odeurs. Tu n’en as jamais demandé une seule.",
+      "en": "",
+      "ar": "",
+      "categorie": "CONTEMPLATIF"
+    },
+    {
+      "source": "waqt_midi",
+      "plage_origine": "midi",
+      "fr": "La banane mûrit pile au moment où tu en as besoin. Et l’emballage est inclus.",
+      "en": "",
+      "ar": "",
+      "categorie": "CONTEMPLATIF"
+    },
+    {
+      "source": "waqt_midi",
+      "plage_origine": "midi",
+      "fr": "Le miel ne pourrit jamais. On en a trouvé dans les pyramides, encore mangeable.",
+      "en": "",
+      "ar": "",
+      "categorie": "SUNNAH"
+    },
+    {
+      "source": "waqt_midi",
+      "plage_origine": "midi",
+      "fr": "En ce moment, partout dans le monde, des hommes et des femmes mémorisent le Coran lettre par lettre — comme on le fait sans interruption depuis 14 siècles. C’est l’un des miracles silencieux de l’oumma.",
+      "en": "",
+      "ar": "",
+      "categorie": "CONTEMPLATIF"
+    },
+    {
+      "source": "waqt_midi",
+      "plage_origine": "midi",
+      "fr": "À Sana’a, en 1972, des ouvriers ont trouvé dans le plafond d’une mosquée des manuscrits coraniques du 7e siècle, oubliés depuis mille ans. Allah préserve ce qu’Il a choisi de préserver.",
+      "en": "",
+      "ar": "",
+      "categorie": "CONTEMPLATIF"
+    }
+  ],
+  "langue": [
+    {
+      "id": "DHUHR-LANGUE-001",
+      "titre": "L'oiseau plumé",
+      "type_narratif": "PARABOLE_TRADITION",
+      "source": "Histoire largement transmise dans la tradition sapientielle musulmane, parfois attribuée à un imam, parfois à un sage anonyme. Chaîne de transmission précise non établie — traitée comme parabole patrimoniale.",
+      "verif_imam": false,
+      "texte": "Un homme rongé de remords vint trouver un sage de sa ville. Il lui dit : « J'ai parlé contre un de mes frères dans une assemblée. J'ai appris ensuite qu'il avait pleuré en l'apprenant. Je suis allé lui demander pardon. Il m'a pardonné. Pourtant je ne dors plus. Comment réparer vraiment ce que j'ai fait ? »\n\nLe sage le regarda longuement. Puis il dit : « Prends une poule. Plume-la entièrement, plume après plume, et disperse les plumes au vent dans toute la ville. Ensuite, reviens me voir. »\n\nL'homme, étonné, obéit. Il acheta une poule, la plumas, monta sur les toits de sa ville, et laissa le vent emporter les plumes dans toutes les directions. Le lendemain, il revint chez le sage, soulagé d'avoir accompli la tâche.\n\nLe sage lui dit : « Maintenant, retourne. Ramasse toutes les plumes que tu as dispersées. Rapporte-les moi exactement comme elles étaient sur l'oiseau. »\n\nL'homme blêmit. « C'est impossible. Le vent les a portées dans des endroits que je ne connais pas. Je n'en retrouverai pas la moitié. »\n\nLe sage baissa la voix : « Voilà ce qu'est ta médisance. Tu peux demander pardon à ton frère — et tu dois le faire. Mais les paroles que tu as lâchées ont déjà voyagé dans des oreilles que tu ne connais pas, dans des cœurs que tu ne reverras jamais. Tu ne peux plus les rappeler. Ce qui te reste, c'est d'invoquer pour celui dont tu as parlé, plus que tu n'as parlé contre lui — et de ne plus jamais ouvrir cette porte. »",
+      "morale": "La médisance est plus facile à commettre qu'à réparer. Avant que la parole sorte, elle est ton esclave. Une fois sortie, c'est toi qui deviens son esclave — pour la vie. Cet après-midi, à la pause-café, à la sortie de réunion, dans le couloir où l'on parle de celui qui n'est pas là : ferme la bouche AVANT, parce qu'APRÈS, le vent a déjà emporté tes plumes."
+    },
+    {
+      "id": "DHUHR-LANGUE-002",
+      "titre": "Les trois portes du sage",
+      "type_narratif": "PARABOLE_INVENTEE",
+      "source": "Création littéraire originale pour Niyyah, inspirée de plusieurs formulations traditionnelles (filtre à trois questions parfois attribuée à Socrate, parfois reprise dans la sagesse soufie). Composition libre.",
+      "verif_imam": false,
+      "texte": "On raconte qu'un sage avait posé sur la porte de sa maison trois verrous. Personne ne pouvait franchir le seuil sans qu'il ait ouvert les trois.\n\nUn jour, un visiteur vint, pressé de parler. Il toqua. Le sage entrouvrit le premier verrou et demanda :\n\n« Ce que tu viens me dire — est-ce vrai ? »\n\nL'homme hésita. « Je l'ai entendu... mais je n'en suis pas certain. »\n\nLe sage referma le verrou.\n\nUn autre jour, un autre visiteur vint, pressé de parler. Le sage entrouvrit le premier verrou : « Est-ce vrai ? » — « Oui, je l'ai vu de mes propres yeux. » Il entrouvrit le deuxième : « Est-ce utile à dire ? » L'homme réfléchit. « Pas vraiment, mais c'est intéressant. »\n\nLe sage referma.\n\nUn troisième jour, un visiteur vint. « Est-ce vrai ? » — « Oui. » — « Est-ce utile ? » — « Oui, vraiment. » Le sage entrouvrit le troisième verrou : « Est-ce bienveillant envers celui dont tu parles ? » L'homme baissa les yeux. « Non, pas vraiment. »\n\nLe sage referma toutes les portes en silence. Et l'on raconte qu'à partir de ce jour, on n'entendit plus jamais frapper chez lui.",
+      "morale": "Avant qu'une parole sorte de ta bouche, fais-lui passer trois portes : est-ce vrai ? Est-ce utile ? Est-ce bienveillant ? Si elle échoue à une seule des trois, qu'elle reste dans la cour. Le musulman parle peu, mais ce qui franchit ses lèvres a traversé des verrous. Voilà pourquoi sa parole a du poids dans une assemblée, et voilà pourquoi son silence aussi."
+    },
+    {
+      "id": "DHUHR-LANGUE-003",
+      "titre": "Le voyageur qui transportait sa propre parole",
+      "type_narratif": "PARABOLE_INVENTEE",
+      "source": "Création littéraire originale pour Niyyah.",
+      "verif_imam": false,
+      "texte": "Un voyageur s'apprêtait à traverser un grand désert. Avant de partir, il alla voir un vieil homme connu pour sa sagesse, et lui demanda : « Que dois-je emporter avec moi ? »\n\nLe vieil homme lui dit : « Trois outres d'eau, trois pains, et une chose encore. »\n\n« Laquelle ? »\n\n« Toute parole que tu prononces en chemin, tu devras la porter sur ton dos jusqu'à la fin du désert. Tu ne pourras pas la laisser tomber. Tu ne pourras pas l'enterrer. Tu ne pourras la déposer qu'à l'arrivée. Donc — réfléchis bien à ce que tu choisis d'emporter, parce que tu marcheras avec elle pendant des semaines. »\n\nLe voyageur partit. Au début du désert, il maugréa contre la chaleur, contre sa monture, contre un compagnon qui ne marchait pas assez vite. Chaque parole devint un poids supplémentaire sur ses épaules.\n\nÀ la moitié du chemin, il s'effondra de fatigue, écrasé par tout ce qu'il avait dit. Il dut s'arrêter trois jours pour se reposer.\n\nAlors il décida, pour la deuxième moitié, de ne plus dire que ce qui valait la peine d'être porté.\n\nIl arriva léger.",
+      "morale": "Tes paroles ne tombent pas. Elles ne disparaissent pas dans l'air. Tu les portes avec toi, jusqu'au Jour où il faudra les déposer devant ton Seigneur. Cet après-midi, avant d'ouvrir la bouche dans cette conversation difficile, dans ce groupe WhatsApp tendu, dans ce coup de fil agacé : demande-toi si tu as envie de porter ça jusqu'à Maghrib. Jusqu'à demain. Jusqu'à la fin."
+    },
+    {
+      "id": "DHUHR-LANGUE-004",
+      "titre": "Tu m'as donné de tes hasanât",
+      "type_narratif": "SALAF",
+      "source": "Histoire attribuée à plusieurs Compagnons et Tabi'în (notamment Ibn ʿAbbâs et Hasan al-Basri selon les versions) dans la littérature de raqâ'iq. Mention dans Ihyâ ʿUlûm ad-Dîn de Ghazali (Livre des Maux de la Langue). À authentifier précisément en audit final — l'esprit du récit est conforme à plusieurs hadiths sahih sur la transmission des hasanât du calomniateur vers le calomnié (cf. Sahih Muslim 2581).",
+      "verif_imam": true,
+      "texte": "Quelqu'un vint trouver Ibn ʿAbbâs et lui dit, l'air inquiet : « Untel a parlé contre toi dans une assemblée, hier soir. J'ai pensé que tu devais le savoir. »\n\nIbn ʿAbbâs ne se mit pas en colère. Il ne demanda pas quels mots avaient été prononcés. Il dit simplement à son serviteur : « Va, prépare un plat de dattes et de provisions. Apporte-le à cet homme avec mes salutations. »\n\nLe serviteur partit, étonné. Il revint plus tard, ayant accompli la course. Ibn ʿAbbâs sourit légèrement et expliqua à ses élèves présents :\n\n« Cet homme, en parlant contre moi hier, m'a fait un cadeau qu'il ignore. Il m'a transféré une partie de ses bonnes œuvres, parce que celui qui calomnie donne ses hasanât à celui qu'il calomnie. Je suis devenu son débiteur. Le moins que je puisse faire, c'est de lui rendre quelque chose en retour. »\n\nQuand l'homme reçut le plat et apprit ce qui s'était passé, il vint en pleurant chez Ibn ʿAbbâs pour demander pardon. Ibn ʿAbbâs le serra dans ses bras et lui dit : « Tu m'as déjà donné plus que ce que je viens de te rendre. La balance reste en ma faveur. »",
+      "morale": "Quand on te calomnie, ne riposte pas par la parole, ne te justifie pas dans les couloirs, ne mobilise pas tes alliés. Comprends que celui qui parle contre toi te fait un cadeau caché — et toi, tu as l'occasion de répondre par un bienfait. Cet après-midi, si tu apprends que quelqu'un a dit du mal de toi : invoque pour lui, et si tu peux, envoie-lui un signe de paix. Le compte se fait au Ciel — et là-bas, la médisance ruine son auteur, jamais sa cible."
+    },
+    {
+      "id": "DHUHR-LANGUE-005",
+      "titre": "Le silence d'Abû Bakr",
+      "type_narratif": "HISTOIRE_PROPHETIQUE",
+      "source": "Rapporté par Abû Dâwûd (Sunan, n° 4896), classé hasan (bon). L'histoire est célèbre et largement citée dans la littérature de tarbiya.",
+      "verif_imam": true,
+      "texte": "Abû Bakr as-Siddîq, le compagnon le plus proche du Prophète ﷺ, était assis en sa présence. Un homme vint et se mit à l'insulter ouvertement, devant le Prophète ﷺ. Il l'insulta une fois, puis une deuxième fois.\n\nAbû Bakr ne répondit pas. Il baissa les yeux et garda le silence.\n\nLe Prophète ﷺ souriait en regardant la scène.\n\nMais lorsque l'homme insulta Abû Bakr une troisième fois, Abû Bakr, qui était humain, finit par répliquer. Il rendit l'insulte par une parole de défense.\n\nÀ cet instant précis, le Prophète ﷺ se leva et s'en alla.\n\nAbû Bakr, troublé, se précipita derrière lui : « Ô Messager d'Allâh, tu étais assis avec moi pendant qu'il m'insultait. Tu souriais. Et quand j'ai répondu, tu t'es levé. Pourquoi ? »\n\nLe Prophète ﷺ se retourna et dit : « Tant que tu te taisais, un ange répondait pour toi à ta place. Mais dès que tu as répliqué, l'ange est parti et le shaytân est venu prendre sa place. Et je ne reste pas où le shaytân est assis. »",
+      "morale": "Quand tu te tais face à l'insulte, ce n'est pas toi qui te défends — c'est un ange. Quand tu réponds, tu renvoies l'ange et tu invites quelqu'un d'autre à ta table. Cet après-midi, si quelqu'un te blesse en parole — au bureau, en famille, dans un message — souviens-toi : ton silence n'est pas faiblesse. C'est l'espace où ta défense se fait sans toi, et bien mieux que tu ne le ferais."
+    },
+    {
+      "id": "DHUHR-LANGUE-006",
+      "titre": "Le secret confié à la machine à café",
+      "type_narratif": "SCENE_CONTEMPORAINE",
+      "source": "Scène fictive contemporaine. Création littéraire pour Niyyah.",
+      "verif_imam": false,
+      "texte": "Karim travaillait dans un open-space depuis trois ans. Un matin, une collègue à qui il faisait confiance lui glissa, à la machine à café, qu'une autre collègue — Sarah, une fille discrète assise au fond — traversait un divorce difficile. « Elle a craqué hier dans les toilettes, c'est sa cousine qui m'a raconté. Garde ça pour toi. »\n\nKarim hocha la tête, prit son café, et retourna à son poste. À la pause de l'après-midi, un autre collègue lui demanda comment allait Sarah, « parce qu'elle a l'air bizarre en ce moment ». Karim sentit la phrase monter dans sa bouche. Il était tentant de montrer qu'il savait. Il avait l'information, il pouvait être celui qui éclaire.\n\nIl répondit : « Je ne sais pas. Faudrait lui demander. »\n\nLe collègue s'éloigna, un peu déçu.\n\nLe soir, dans le métro, Karim se rendit compte qu'il avait failli trahir une femme qu'il connaissait à peine, à un homme qu'il connaissait à peine, dans une conversation qui n'avait aucun enjeu. Pour quoi ? Pour briller pendant dix secondes.\n\nIl pensa au verset : « Pourquoi dites-vous ce que vous ne faites pas ? » Et à un autre : « Aucune parole n'est prononcée sans qu'il y ait auprès d'elle un observateur prêt à inscrire. »\n\nIl ne dit jamais rien. Six mois plus tard, Sarah, plus apaisée, lui adressa la parole pour la première fois. Karim comprit qu'elle ne lui aurait jamais parlé s'il avait laissé fuiter ce qu'il savait.",
+      "morale": "Un secret qu'on te confie n'est pas une information — c'est un dépôt. Le musulman ne fait pas circuler ce qu'on lui a remis pour qu'il le garde. Cet après-midi, à la machine à café, dans le couloir, dans le message qu'on s'apprête à te poser : si quelqu'un t'a confié quelque chose, considère que tu portes son honneur dans ta poche. On ne sort pas ce genre de chose pour faire passer un moment. Jamais."
+    },
+    {
+      "id": "DHUHR-LANGUE-007",
+      "titre": "Hasan al-Basri et la médisance refusée",
+      "type_narratif": "SALAF",
+      "source": "Histoire rapportée dans la littérature biographique sur Hasan al-Basri (notamment Sifat as-Safwah d'Ibn al-Jawzi et plusieurs ouvrages de zuhd). Variantes multiples. À authentifier en audit final — l'esprit du récit est conforme à la pratique documentée de Hasan al-Basri.",
+      "verif_imam": true,
+      "texte": "Un homme vint à Hasan al-Basri à Bassora et entra chez lui d'un pas pressé. Il s'assit et dit : « Hasan, je viens te dire quelque chose d'important. Untel — tu sais, ce notable que tu fréquentes — il a parlé contre toi hier. Voilà ce qu'il a dit exactement... »\n\nHasan leva la main pour l'interrompre. Il ne le laissa pas finir.\n\n« Mon frère, dit-il d'une voix calme, attends. Avant que tu continues, réponds-moi à trois questions.\n\nPremière question : es-tu venu jusqu'ici pour me rendre service, ou pour décharger ce qui te pesait sur le cœur ? »\n\nL'homme hésita. « Pour... te rendre service. »\n\n« Deuxième question : si je ne sais pas ce qu'il a dit, est-ce que cela me nuit ? »\n\nL'homme réfléchit. « Non, pas vraiment. Tu vis ta vie comme avant. »\n\n« Troisième question : si je le sais, est-ce que je peux changer ce qu'il a dit ? Est-ce que je peux empêcher que ces mots aient été prononcés ? »\n\n« Non. »\n\nHasan se leva. « Alors mon frère, ce que tu me proposes, c'est de salir mon cœur contre un homme que je tiens pour mon frère, pour un bénéfice nul, par un moyen qui ne change rien à ce qui s'est passé. Va. Va en paix. Et ce que tu portais comme parole, dépose-le à la porte en sortant. Cette maison n'en veut pas. »\n\nL'homme partit sans dire un mot de plus. On raconte qu'il ne refit jamais ce voyage.",
+      "morale": "Le musulman ne reçoit pas la médisance — pas plus qu'il ne la prononce. Quand quelqu'un vient te déposer chez toi la parole d'un absent, ferme la porte avant qu'elle entre. Cet après-midi, au bureau, dans le groupe d'amis, à table en famille : si on commence à te raconter « tu sais ce qu'il a dit ? », « tu sais ce qu'elle a fait ? » — coupe. Tu n'es pas une poubelle. Tu n'es pas un canal de transmission. Tu es musulman."
+    },
+    {
+      "id": "DHUHR-LANGUE-008",
+      "titre": "Mu'âdh et le membre le plus dangereux",
+      "type_narratif": "HISTOIRE_PROPHETIQUE",
+      "source": "Rapporté par at-Tirmidhî (Sunan, n° 2616) selon Mu'âdh ibn Jabal, classé hasan sahih. L'un des hadiths les plus célèbres sur la langue.",
+      "verif_imam": true,
+      "texte": "Mu'âdh ibn Jabal, un jeune Compagnon proche du Prophète ﷺ, marchait un jour à ses côtés. Il avait soif de comprendre, soif d'apprendre. Il demanda :\n\n« Ô Messager d'Allâh, dis-moi un acte qui me fera entrer au Paradis et me préservera de l'Enfer. »\n\nLe Prophète ﷺ lui répondit : « Tu m'as demandé une grande chose. Mais elle est facile pour celui à qui Allâh la rend facile. Adore Allâh sans rien Lui associer. Accomplis la prière. Donne la zakât. Jeûne le mois de Ramadan. Et accomplis le pèlerinage si tu le peux. »\n\nPuis le Prophète ﷺ ajouta : « Veux-tu que je te montre les portes du bien ? Le jeûne est un bouclier. L'aumône efface les fautes comme l'eau éteint le feu. Et la prière de l'homme au milieu de la nuit... »\n\nIl récita un verset. Puis il dit : « Veux-tu que je t'informe de la racine de tout cela, de son pilier et de son sommet ? »\n\n« Bien sûr, ô Messager d'Allâh. »\n\n« La racine, c'est l'islam. Le pilier, c'est la prière. Le sommet, c'est le jihâd. »\n\nPuis il dit : « Veux-tu que je t'informe de ce qui maintient tout cela ensemble ? »\n\n« Oui. »\n\nLe Prophète ﷺ saisit alors sa propre langue entre ses doigts et dit : « Retiens ceci. »\n\nMu'âdh, troublé, demanda : « Ô Prophète d'Allâh, serons-nous donc châtiés pour ce que nous disons ? »\n\nLe Prophète ﷺ répondit : « Ta mère te perde, ô Mu'âdh ! Qu'est-ce qui jette les gens dans l'Enfer sur leurs visages — ou sur leurs nez — si ce n'est la récolte de leurs langues ? »",
+      "morale": "Tout ton islam — ta prière, ton jeûne, ton aumône, ta foi — peut se tenir debout pendant des années, et un jour s'effondrer par un seul mot. La langue est ce qui maintient l'édifice OU le démolit. Cet après-midi, tu ne tomberas probablement pas par défaut de prière. Tu tomberas, comme la plupart d'entre nous, par une parole de trop. Saisis ta langue entre tes doigts quand tu le sens venir. Le Prophète ﷺ l'a fait pour toi en exemple."
+    },
+    {
+      "id": "DHUHR-LANGUE-009",
+      "titre": "Le serment d'Ibn al-Mubârak",
+      "type_narratif": "SALAF",
+      "source": "Histoire rapportée dans Siyar A'lâm an-Nubalâ' (Dhahabi) et dans les biographies d'ʿAbdullâh ibn al-Mubârak. À vérifier précision exacte des termes en audit final.",
+      "verif_imam": true,
+      "texte": "ʿAbdullâh ibn al-Mubârak, grand savant de Khorassan, était connu pour deux choses : son immense science, et une discipline étrange qu'il s'imposait sur sa propre langue.\n\nUn de ses élèves, qui le suivait depuis des années, l'observa un jour assis à une assemblée où plusieurs hommes parlaient librement de leurs contemporains — certains en bien, certains en mal. Ibn al-Mubârak restait silencieux. À aucun moment il ne joignit sa voix.\n\nL'élève, intrigué, lui demanda en privé : « Maître, j'ai remarqué que tu ne parles presque jamais des gens. Même quand tu pourrais en dire du bien, tu te tais. Pourquoi ? »\n\nIbn al-Mubârak le regarda et dit : « Mon fils, j'ai fait un serment intérieur, il y a longtemps. Je me suis dit : ʿAbdullâh, si tu commences à parler des gens, même pour en dire du bien, un jour tu glisseras. Tu mélangeras le bien et le mal. Tu citeras un nom dans un contexte qui blesse. Tu rapporteras une parole sans préciser le contexte. Tu seras pris dans le tourbillon. Donc j'ai décidé une chose simple : je ne nomme personne. Ni en bien, ni en mal. Et le jour où je devrai témoigner sur quelqu'un, je ne témoignerai que de ce que j'ai vu moi-même, devant qui de droit, et sans en dire un mot de plus. »\n\nL'élève resta silencieux. Puis il dit : « Maître, c'est dur. »\n\nIbn al-Mubârak sourit : « Ce qui est dur, c'est de défaire les nœuds qu'on a faits avec sa langue. Pas de ne pas en faire. »",
+      "morale": "Le musulman protège sa langue jusque dans le bien — parce qu'il sait que la pente du bien-parler vers le mal-parler est plus glissante qu'il n'y paraît. Cet après-midi, avant de parler de quelqu'un — même en bien, même pour le louer, même pour partager une nouvelle réjouissante — demande-toi : ai-je besoin de citer son nom ? Si non, parle du fait sans la personne. Le silence sur les gens est une muraille qu'on construit pierre par pierre. Une fois debout, elle te protège jusqu'à la mort."
+    },
+    {
+      "id": "DHUHR-LANGUE-010",
+      "titre": "Le mensonge qui réconcilie",
+      "type_narratif": "HISTOIRE_PROPHETIQUE",
+      "source": "Hadith rapporté par al-Bukhârî (Sahih, n° 2692) et Muslim (Sahih, n° 2605) selon Umm Kulthûm bint ʿUqba. Hadith célèbre sur l'exception du mensonge réconciliateur.",
+      "verif_imam": true,
+      "texte": "Le Prophète ﷺ a dit : « N'est pas menteur celui qui réconcilie deux personnes, en rapportant du bien de l'une à l'autre ou en disant du bien de l'une à l'autre. »\n\nUmm Kulthûm bint ʿUqba, qui rapporte ce hadith, précise : « Je n'ai entendu le Prophète ﷺ autoriser le mensonge que dans trois cas : la guerre, la réconciliation entre deux personnes, et les paroles d'un homme à sa femme et d'une femme à son mari. »\n\nL'histoire suivante illustre la pratique de ce principe :\n\nDeux frères musulmans s'étaient brouillés à propos d'une parole prononcée dans la colère. Chacun, depuis, refusait de saluer l'autre. Les semaines passaient. Leur père, vieux et malade, en souffrait sans rien dire.\n\nUn ami commun, voyant la situation pourrir, alla trouver le premier des deux. Il lui dit : « Ton frère m'a parlé de toi hier. Il m'a dit qu'il regrettait amèrement ce qui s'était passé, et qu'il aimerait reprendre les choses, mais qu'il a honte de faire le premier pas. »\n\nLe premier frère, touché, dit : « Vraiment ? »\n\nL'ami alla ensuite voir le deuxième. « Ton frère m'a parlé de toi. Il m'a dit qu'il avait été dur, qu'il aurait voulu effacer ce qu'il avait dit, qu'il pense à toi tous les jours. »\n\nLe deuxième frère, ému, dit : « Vraiment ? »\n\nLes deux se rencontrèrent le surlendemain, chacun croyant que l'autre avait amorcé le geste. Ils s'embrassèrent. Ni l'un ni l'autre n'avait dit exactement ces mots à l'ami commun. Mais ni l'un ni l'autre ne demanda jamais à vérifier.\n\nC'était précisément ce que le Prophète ﷺ avait autorisé.",
+      "morale": "Le musulman ne ment pas. Mais quand deux frères se déchirent, quand un foyer vacille, quand une amitié pourrit dans le silence — il a le droit, et parfois le devoir, d'embellir les paroles pour rapprocher. La vérité froide qui maintient deux cœurs séparés vaut moins que la parole douce qui les réunit. Cet après-midi, si tu connais deux personnes brouillées dans ta famille, au travail, dans la mosquée — tu as une mission que peu de gens comprennent. Va. Réconcilie. Tu n'as pas à mentir grossièrement. Mais tu as licence d'embellir, et ce sera compté pour toi."
+    },
+    {
+      "id": "DHUHR-LANGUE-011",
+      "titre": "Le mail qu'on n'envoie pas",
+      "type_narratif": "SCENE_CONTEMPORAINE",
+      "source": "Scène fictive contemporaine. Création littéraire pour Niyyah.",
+      "verif_imam": false,
+      "texte": "13h47. Yacine, dans son bureau, relit pour la cinquième fois le mail qu'il vient de taper. Il est destiné à Olivier, un collègue qui, en réunion ce matin, l'a publiquement rabaissé devant le directeur, sur un dossier que Yacine maîtrise mieux que lui.\n\nLe mail est cinglant. Précis. Documenté. Il démonte point par point ce qu'Olivier a dit. Il met deux personnes en copie « pour information ». Yacine est en colère. Et il a raison, factuellement, sur tout.\n\nSa main est sur la touche Entrée.\n\nIl hésite.\n\nIl se lève, va aux toilettes, fait le wudu lentement, sent l'eau froide sur son visage. Il revient à son bureau. Il relit le mail une sixième fois — à froid, cette fois.\n\nIl voit autre chose maintenant. Il voit que le mail le grandit aux yeux des deux personnes en copie, mais qu'il en fait, lui, quelqu'un qui règle ses comptes par écrit. Il voit qu'Olivier, le lendemain, sera humilié devant tout le service, et qu'il deviendra son ennemi pour les dix prochaines années. Il voit que le directeur, en lisant ça, ne verra plus deux experts mais deux gamins.\n\nIl ferme le mail. Il le supprime. Brouillon effacé.\n\nÀ la place, il prend son téléphone et appelle Olivier directement.\n\n« Olivier, t'as cinq minutes ? J'aimerais qu'on reparle du dossier de ce matin, à deux, sans personne. »\n\nUn silence à l'autre bout. Puis Olivier, étonné, dit : « Oui, je descends. »\n\nIls eurent la conversation. Yacine dit ce qu'il avait à dire — calmement, sans témoins. Olivier reconnut qu'il avait été dur. Ils sortirent du café avec une relation plus solide qu'avant la réunion.\n\nLe soir, Yacine pensa : si j'avais envoyé ce mail, j'aurais eu raison sur le papier, et tort sur le fond. Allâh m'a fait la grâce de me retenir.",
+      "morale": "Tous les mails écrits sous le coup de l'émotion devraient passer par les toilettes avant la touche Entrée. Le wudu n'est pas seulement pour la prière — c'est aussi pour calmer la main qui s'apprête à blesser. Cet après-midi, si tu écris un message sec, une réponse cinglante, un mail qui « met les choses au point » : sauvegarde en brouillon, va te laver le visage, reviens dix minutes plus tard. Si ce que tu as écrit te paraît encore juste, envoie. Mais neuf fois sur dix, tu supprimeras."
+    },
+    {
+      "id": "DHUHR-LANGUE-012",
+      "titre": "Le bavard et le silencieux au tribunal",
+      "type_narratif": "PARABOLE_INVENTEE",
+      "source": "Création littéraire originale pour Niyyah.",
+      "verif_imam": false,
+      "texte": "On raconte qu'au Jour du Jugement, deux hommes furent amenés devant la balance. Ils avaient eu, dans leur vie, exactement la même quantité de bonnes œuvres : mêmes prières, mêmes jeûnes, mêmes aumônes, même droiture apparente.\n\nLes anges, étonnés, attendaient pour voir comment la balance allait départager.\n\nOn versa d'abord les hasanât du premier homme sur le plateau. Lourdes. Brillantes. Le plateau pencha solidement du côté de la miséricorde.\n\nOn versa les hasanât du deuxième. Aussi lourdes. Aussi brillantes. Le plateau pencha de la même façon.\n\nPuis on versa les sayyi'ât du premier homme. Une vie de péchés ordinaires, comme tous les fils d'Âdam : des regards, des paresses, des oublis. La balance pencha légèrement, mais le bien l'emportait largement.\n\nPuis on versa les sayyi'ât du deuxième.\n\nUn fleuve. Un torrent. Des sacs et des sacs de paroles. Des jugements sur ses voisins. Des médisances à table. Des moqueries. Des secrets trahis. Des promesses non tenues. Des serments légers. Des dénigrements de collègues. Des reproches durs faits à sa femme. Des humiliations à ses enfants. Tout sortait, tout coulait, sans fin.\n\nLe plateau du deuxième s'effondra du côté du châtiment.\n\nLes anges, perplexes, demandèrent : « Tous deux avaient les mêmes hasanât. Comment cela ? »\n\nUne voix leur fut faite entendre : « Le premier a tenu sa langue. Le deuxième l'a laissée libre. Voyez la différence dans ce qu'elle pèse. »",
+      "morale": "Tu peux avoir une vie de prière, et la perdre par ta bouche. Tu peux avoir une vie de péché, et la sauver par ton silence. Le Jour où la balance sera tirée, ce ne sont pas seulement tes œuvres qui pèseront — ce seront tes mots, un par un, ceux que tu auras lâchés depuis l'âge de ta majorité jusqu'à ton dernier souffle. Cet après-midi, ferme un peu plus la bouche que tu n'allais le faire. Tu ne sais pas ce que ce silence pèse là où ça compte."
+    },
+    {
+      "id": "DHUHR-LANGUE-013",
+      "titre": "ʿUqba et la clé du salut",
+      "type_narratif": "HISTOIRE_PROPHETIQUE",
+      "source": "Hadith rapporté par at-Tirmidhî (Sunan, n° 2406) selon ʿUqba ibn ʿÂmir, classé hasan. Hadith célèbre dans la littérature sur la retenue de la langue.",
+      "verif_imam": true,
+      "texte": "ʿUqba ibn ʿÂmir, un Compagnon connu pour sa piété et sa simplicité, vint un jour trouver le Messager d'Allâh ﷺ. Il était dans cet état où l'on cherche une réponse claire à une question lancinante.\n\nIl s'assit devant lui et demanda :\n\n« Ô Messager d'Allâh, qu'est-ce que le salut ? »\n\nLa question est immense. Elle pourrait recevoir mille réponses : prière, jihâd, aumône, sincérité, repentir, science. ʿUqba s'attendait peut-être à un long discours.\n\nLe Prophète ﷺ lui donna une réponse en trois mots — ou plutôt trois actions liées en une seule phrase :\n\n« Retiens ta langue. Que ta maison te contienne. Et pleure sur tes péchés. »\n\nC'est tout.\n\nʿUqba rentra chez lui ce jour-là. Il médita. La première chose que le Prophète ﷺ avait dite, c'était la langue. Avant la maison. Avant les larmes. La langue d'abord.\n\nDe cette assemblée, ʿUqba sortit avec un programme qui allait organiser le reste de sa vie : moins de paroles, plus de retrait, des larmes intérieures sur ses propres fautes plutôt que des paroles sur celles des autres.\n\nIl mourut sur ce programme. Et l'on rapporta de lui qu'il était l'un des Compagnons les plus discrets, et l'un des plus craignants d'Allâh.",
+      "morale": "Le salut tient en trois actions, et la première est la langue. Avant ton lieu, avant tes larmes, avant ta science, avant ton militantisme : ta bouche. Cet après-midi, tu ne sauveras pas ton âme par ton activité, par ton éclat, par tes brillantes prises de parole. Tu la sauveras par ce que tu n'as pas dit. Le Prophète ﷺ a placé la retenue de la langue en premier, parce qu'il savait que tout le reste suit. Commence là où il a commencé."
+    },
+    {
+      "id": "DHUHR-LANGUE-014",
+      "titre": "Le marchand qui jurait",
+      "type_narratif": "PARABOLE_TRADITION",
+      "source": "Histoire de type sapientiel issue de la tradition de zuhd, sans chaîne précise. Variantes multiples dans la littérature musulmane. Traitée comme parabole patrimoniale.",
+      "verif_imam": false,
+      "texte": "Au souk d'une grande ville musulmane vivait un marchand de tissus connu pour deux choses : la qualité de ses étoffes, et sa manie de jurer par Allâh à chaque transaction. « Par Allâh, c'est le meilleur prix. Wallâhi, je le vends à perte. Wallâh al-ʿAzîm, regarde la qualité. »\n\nIl ne mentait pas. Ses étoffes étaient effectivement bonnes. Mais à chaque parole, il invoquait le Nom d'Allâh, comme un sceau qu'il apposait sur tout ce qu'il disait. Cela faisait partie de son commerce. Cela rassurait les clients.\n\nUn jour, un vieux sage de la ville passa devant son étal. Il s'arrêta, regarda les tissus sans en acheter, écouta le marchand débiter ses serments à un client après l'autre.\n\nÀ la fin de la journée, alors que le marchand fermait sa boutique, le sage s'approcha de lui :\n\n« Mon frère, je suis venu te dire une chose, et je m'en irai. Tu fais un commerce honnête. Que les gens disent du bien de tes étoffes est juste. Mais sache une chose : à chaque fois que tu prononces le Nom d'Allâh sur tes tissus, tu uses ton crédit auprès de Lui. Pas Son crédit envers toi — le tien envers Lui. Tu retires de ton compte, à chaque transaction, un peu de la baraka que tu accumules ailleurs. Au bout de quelques années, tu vendras les mêmes étoffes — mais elles ne nourriront plus personne. Réfléchis. »\n\nLe sage partit. Le marchand resta une heure dans sa boutique fermée, immobile.\n\nLe lendemain matin, il ouvrit son étal. Un client demanda un prix. Le marchand répondit, simplement : « Cinq dirhams. C'est juste, je te garantis. » Sans jurer.\n\nIl ne jura plus jamais.\n\nOn rapporte que ses affaires, après une période difficile, prospérèrent comme jamais.",
+      "morale": "Chaque fois que tu jures par Allâh pour faire passer une parole anodine — au téléphone, au marché, dans une conversation — tu uses ton crédit. Le Nom d'Allâh n'est pas une signature pour les transactions du quotidien. C'est un sceau pour les serments graves, pas un appui pour vendre, convaincre, ou se faire croire. Cet après-midi, compte combien de fois tu dis « wallah » dans une journée. Et demande-toi si tu sais vraiment ce que ce mot pèse."
+    },
+    {
+      "id": "DHUHR-LANGUE-015",
+      "titre": "Le miel et le poison",
+      "type_narratif": "PARABOLE_TRADITION",
+      "source": "Parabole soufie de tradition, variantes multiples dans la littérature classique (notamment dans certaines compilations de hikam). Patrimoine anonyme.",
+      "verif_imam": false,
+      "texte": "On raconte qu'un maître prit, un jour, deux jarres devant ses élèves. L'une contenait du miel ambré, brillant, parfumé. L'autre contenait un poison noir, épais, qui dégageait une odeur âcre.\n\nIl désigna les jarres et dit :\n\n« Voici ce qu'est la langue de l'homme. »\n\nLes élèves attendirent l'explication.\n\nLe maître prit la jarre de miel. « Quand un homme bénit son frère, prononce sa loyauté, transmet la science, tient sa parole, dit la vérité avec douceur — sa langue distille ceci. Le miel coule. Il nourrit ceux qui l'entourent. Le maître de cette langue construit autour de lui, sans même le savoir, une demeure de bénédiction où les gens viennent se reposer. »\n\nIl reposa la jarre. Il prit la jarre de poison.\n\n« Quand un homme calomnie son frère, prononce un jugement faux, transmet un secret, brise sa parole, dit la vérité avec dureté, ou simplement parle beaucoup pour ne rien dire — sa langue distille ceci. Le poison coule. Il empoisonne ceux qui l'entourent. Le maître de cette langue détruit autour de lui, sans même le savoir, tout ce que d'autres avaient mis des années à bâtir. »\n\nUn élève demanda : « Maître, comment savoir laquelle des deux jarres se trouve en nous ? »\n\nLe maître sourit. « Demande à ceux qui te quittent à la fin d'une conversation : sortent-ils plus apaisés qu'ils ne sont entrés ? Ou plus lourds ? Si plus apaisés — c'est le miel qui coule. Si plus lourds — c'est l'autre jarre. Et fais le test sur cinq jours, pas un seul. Beaucoup peuvent verser du miel pendant une heure. Peu peuvent le verser pendant cinq jours. »",
+      "morale": "Tu ne mesures pas ta langue à ce que tu ressens en parlant — tu la mesures à l'effet qu'elle laisse sur ceux qui partent. Les gens autour de toi sortent-ils de ta présence apaisés, ou plus chargés ? C'est le test, et il est implacable. Cet après-midi, observe : à la fin de tes conversations, ceux qui s'éloignent emportent-ils du miel ou autre chose ? Pose-toi la question avant Maghrib. La réponse te dira laquelle des deux jarres tu as portée aujourd'hui."
+    },
+    {
+      "id": "DHUHR-LANGUE-016",
+      "titre": "La promesse de ʿAbdullâh ibn ʿAmr",
+      "type_narratif": "HISTOIRE_PROPHETIQUE",
+      "source": "Récit basé sur le hadith rapporté par al-Bukhârî et Muslim concernant ʿAbdullâh ibn ʿAmr ibn al-ʿÂs et son engagement de prière de nuit et de jeûne — formulation narrative pour Niyyah. La leçon centrale sur la promesse tenue est conforme à la pratique documentée. Détails dialogués reconstitués — à présenter avec mention claire de la reconstitution.",
+      "verif_imam": true,
+      "texte": "ʿAbdullâh ibn ʿAmr, jeune Compagnon plein de zèle, vint trouver le Messager d'Allâh ﷺ et lui dit :\n\n« Ô Messager d'Allâh, je jeûnerai tous les jours et prierai toute la nuit, aussi longtemps que je vivrai. »\n\nLe Prophète ﷺ lui demanda : « Est-ce toi qui as dit cela ? »\n\nIl répondit : « Oui, ô Messager d'Allâh. »\n\nLe Prophète ﷺ dit : « Tu n'en seras pas capable. Jeûne et romps. Prie et dors. Jeûne trois jours par mois — c'est comme jeûner toute l'année. »\n\nʿAbdullâh répondit : « Je suis capable de plus que cela. »\n\nLe Prophète ﷺ accepta de monter graduellement. Puis ʿAbdullâh insista encore. À la fin, le Prophète ﷺ lui accorda de jeûner un jour sur deux — le jeûne de Dâwûd ﷺ — et de lire le Coran en sept jours. Il l'avertit : « Ne fais pas plus. »\n\nLes années passèrent. ʿAbdullâh tint sa promesse. Mais en vieillissant, son corps s'affaiblit. Le jeûne devint dur, très dur. La lecture en sept jours, alors qu'il fatiguait, devint pesante.\n\nIl dit, vieillard : « Comme j'aurais aimé accepter l'allègement du Messager d'Allâh ﷺ. »\n\nMais il ne se permit pas de relâcher. Il avait pris l'engagement devant le Prophète ﷺ. Il l'honora jusqu'à la mort.\n\nQuand on lui demandait pourquoi il ne s'autorisait pas plus de souplesse maintenant qu'il était vieux, il disait simplement : « Une parole donnée au Messager d'Allâh ﷺ ne se reprend pas. Si je l'avais su jeune, j'aurais parlé moins fort. Mais j'ai parlé. Donc je tiens. »",
+      "morale": "Une parole donnée n'est pas une intention — c'est une dette. Le musulman pèse ce qu'il s'engage à faire AVANT, parce qu'il sait qu'APRÈS, il faudra tenir, même quand le corps faiblit, même quand l'envie passe. Cet après-midi, avant de promettre un service, un rendez-vous, un retour de mail, une présence — réfléchis si tu pourras tenir dans six mois, dans un an, quand tu seras fatigué. Promets moins, tiens plus. C'est ainsi qu'on bâtit une parole qui pèse."
+    },
+    {
+      "id": "DHUHR-LANGUE-017",
+      "titre": "Le WhatsApp transféré sans réfléchir",
+      "type_narratif": "SCENE_CONTEMPORAINE",
+      "source": "Scène fictive contemporaine. Création littéraire pour Niyyah.",
+      "verif_imam": false,
+      "texte": "Nadia reçut un message vocal sur WhatsApp en plein milieu de l'après-midi. C'était sa cousine, énervée, qui se plaignait du comportement d'une voisine de la famille — la fille d'une tante éloignée. Le vocal durait deux minutes. Il contenait trois informations sensibles que la voisine en question avait probablement confiées dans un cercle restreint et qui, là, étaient déballées avec amertume.\n\nNadia écouta. Elle pensa, brièvement : « Tiens, untel m'a aussi raconté quelque chose là-dessus l'autre jour. »\n\nSa main effleura le bouton « transférer ». Elle pouvait l'envoyer à sa belle-sœur, qui aimait bien les nouvelles de la famille élargie. En trois secondes, un geste, et le vocal partait pour vivre sa propre vie dans un autre cercle.\n\nElle s'arrêta.\n\nElle se demanda : « Si la voisine apprenait, dans six mois, que ce vocal a circulé, qu'est-ce qu'elle ressentirait ? Et si elle apprenait que c'est moi qui l'ai transmis ? »\n\nElle pensa à un hadith qu'elle avait entendu une fois, mal mémorisé, sur les paroles qu'on portera au Jour du Jugement.\n\nElle ferma WhatsApp. Elle alla même plus loin : elle supprima le vocal de ses messages. Pour ne pas être tentée de le réécouter, de le repartager dans un moment de faiblesse, de l'envoyer à quelqu'un dans six mois en disant « tiens, je t'avais pas raconté ? ».\n\nElle répondit à sa cousine un message court : « J'ai entendu. Que peut-on faire pour aider plutôt qu'en parler ? »\n\nSa cousine ne répondit pas tout de suite. Une heure plus tard, elle écrivit : « T'as raison. Je vais l'appeler. Désolée pour le vocal. »\n\nDeux mots qui valaient plus que le silence : « T'as raison. »",
+      "morale": "Le bouton « transférer » est l'arme la plus efficace pour répandre la médisance dans l'époque où nous vivons. En trois secondes, ce que quelqu'un a dit en confiance peut atteindre vingt personnes. Le musulman, à l'ère numérique, a une responsabilité que les anciens n'avaient pas : il est un éditeur. Ce qui passe par lui s'amplifie ou s'arrête. Cet après-midi, avant de transférer un vocal, une capture d'écran, un message piquant — pose ton téléphone dix secondes. Et demande-toi si tu es le bon endroit où cette parole devrait mourir."
+    },
+    {
+      "id": "DHUHR-LANGUE-018",
+      "titre": "Ahmad ibn Hanbal et le boulanger",
+      "type_narratif": "SALAF",
+      "source": "Histoire célèbre dans la littérature biographique sur l'imam Ahmad ibn Hanbal, rapportée notamment dans les ouvrages de manâqib (vertus) d'Ibn al-Jawzi et d'autres. Variantes multiples sur les détails — l'essentiel est conforme à la pratique documentée de l'imam.",
+      "verif_imam": true,
+      "texte": "L'imam Ahmad ibn Hanbal, sur la fin de sa vie, voyageait incognito. Il arriva un soir dans une ville où personne ne le reconnut, et il chercha un endroit où passer la nuit. Il vit une mosquée éclairée, entra, et s'apprêtait à y dormir.\n\nLe gardien de la mosquée, ne le reconnaissant pas, le chassa rudement. « Pas de vagabonds ici. Va dormir ailleurs. »\n\nAhmad sortit. Il erra dans la rue, vieil homme à la barbe blanche, sans gîte. Un boulanger, qui finissait sa journée de travail à côté de son four, l'aperçut et l'invita à passer la nuit chez lui.\n\nAhmad accepta avec gratitude.\n\nPendant la nuit, le boulanger pétrissait sa pâte pour le lendemain matin. Ahmad, qui ne dormait pas, l'observa. Le boulanger pétrissait, et tout en pétrissant, il chuchotait quelque chose, sans interruption. Ahmad tendit l'oreille. Le boulanger faisait du dhikr — la mention d'Allâh — sans cesse.\n\nAhmad lui demanda : « Mon frère, fais-tu cela toutes les nuits ? »\n\nLe boulanger répondit : « Oui, j'ai pris cette habitude depuis longtemps. »\n\nAhmad demanda : « Et quel en est le fruit ? »\n\nLe boulanger sourit. « Par Allâh, je n'ai jamais demandé à Allâh une chose qu'Il ne m'a accordée — sauf une seule. »\n\nAhmad : « Laquelle ? »\n\nLe boulanger : « Voir l'imam Ahmad ibn Hanbal de mes propres yeux avant de mourir. »\n\nAhmad pleura. Et dit : « Mon frère, c'est Allâh qui m'a fait chasser de la mosquée pour m'amener chez toi. »\n\nLe boulanger comprit, et tomba en larmes lui aussi.",
+      "morale": "Le dhikr silencieux d'un humble boulanger pesait plus, dans la balance d'Allâh, que toute la science d'Ahmad ibn Hanbal — au point qu'Allâh fit voyager Son imam à travers le pays pour aller vers cet homme. Cet après-midi, à ton poste de travail, dans ta cuisine, dans ton bureau, dans ta voiture : que ta langue murmure le Nom d'Allâh entre les choses. Tu ne sais pas qui prie pour te voir. Tu ne sais pas vers qui Allâh t'amène. Et tu ne sais pas combien pèse, là-haut, ce que tu marmonnes ici-bas."
+    },
+    {
+      "id": "DHUHR-LANGUE-019",
+      "titre": "Ce qu'il y a entre ses mâchoires",
+      "type_narratif": "HISTOIRE_PROPHETIQUE",
+      "source": "Hadith rapporté par al-Bukhârî (Sahih, n° 6474) selon Sahl ibn Sa'd. Hadith authentique sur la garantie de la langue et du sexe comme garantie du Paradis.",
+      "verif_imam": true,
+      "texte": "Sahl ibn Sa'd, un Compagnon, rapporte que le Messager d'Allâh ﷺ a dit, un jour, devant ses Compagnons réunis :\n\n« Celui qui me garantit ce qu'il y a entre ses mâchoires et ce qu'il y a entre ses jambes — je lui garantis le Paradis. »\n\nLa phrase est tombée. Courte. Tranchante.\n\nLes Compagnons, qui connaissaient le Prophète ﷺ, savaient qu'il ne parlait jamais à la légère. Quand il disait « je garantis le Paradis », c'était littéral.\n\nDeux choses étaient demandées : la langue, et le sexe. Deux organes. Deux gardes. Si tu les tiens — l'éternité auprès d'Allâh.\n\nIl est frappant que dans cette parole, le Prophète ﷺ n'ait pas dit : « Celui qui prie beaucoup, je lui garantis le Paradis. » Ni : « Celui qui fait beaucoup d'aumône. » Ni : « Celui qui jeûne. »\n\nIl a placé deux organes au centre. Parce qu'il savait, ﷺ, que ces deux portes sont par où la plupart des hommes perdent leur âme — non pas par défaut de prière, mais par excès de paroles et par dérèglement du désir.\n\nUn homme peut prier toute sa vie et entrer en Enfer par sa langue.\n\nUn autre peut être un musulman ordinaire, mais avoir surveillé sa bouche et sa pudeur — et entrer au Paradis par cette double garde.\n\nLe Prophète ﷺ a donné le raccourci.",
+      "morale": "Le Paradis, dans cette parole prophétique, ne passe pas par mille obligations exotiques. Il passe par deux organes — l'un est ta bouche, l'autre est en bas. Si tu tiens ces deux portes, le reste suit. Cet après-midi, ne sous-estime pas la garde de la langue : elle n'est pas un détail d'éducation, elle est l'une des deux conditions explicitement nommées par le Prophète ﷺ comme garantie d'éternité. Ferme la bouche un peu plus que tu n'allais le faire. Tu travailles, sans le savoir, à ta place là-haut."
+    },
+    {
+      "id": "DHUHR-LANGUE-020",
+      "titre": "Le pacte des trois sages",
+      "type_narratif": "PARABOLE_INVENTEE",
+      "source": "Création littéraire originale pour Niyyah.",
+      "verif_imam": false,
+      "texte": "On raconte que dans une ville de Khorasan, trois sages vivaient ensemble sous le même toit. Ils étaient connus de toute la région pour la profondeur de leur science et la pureté de leur conduite.\n\nUn voyageur, qui les avait cherchés longtemps, finit par les trouver. Il leur demanda : « Quel est le secret de votre vie commune ? On dit qu'en trente ans, vous ne vous êtes jamais disputés. Cela paraît impossible entre trois hommes. »\n\nLe plus âgé répondit : « Le secret tient en un pacte que nous avons signé le premier jour. Trois règles. Aucune ne supporte d'exception. »\n\nLe voyageur, fasciné, demanda lesquelles.\n\n« La première règle : aucun de nous trois ne parle de l'autre en son absence. Ni en bien — car cela peut nourrir l'orgueil — ni en mal — car cela est interdit. Si nous avons quelque chose à dire d'un frère, nous le lui disons à lui, en face, calmement. À personne d'autre. »\n\n« La deuxième règle : aucun de nous n'écoute ce qu'un visiteur viendrait nous dire d'un autre. Si quelqu'un commence à nous rapporter ce qu'un de nos frères aurait fait ou dit, nous interrompons. Ce qui nous concerne nous concerne entre nous trois. »\n\n« La troisième règle : chaque soir, avant de dormir, nous nous demandons mutuellement pardon pour ce que nous aurions pu blesser dans la journée — même si nous ne nous en souvenons pas. Aucune nuit ne nous trouve avec un nœud non dénoué. »\n\nLe voyageur dit : « C'est tout ? »\n\nLe sage sourit : « C'est tout. Mais essaie de tenir cela à trois, pendant trente ans. Tu verras combien c'est peu, et combien c'est immense. »",
+      "morale": "Beaucoup de fractures dans les familles, les amitiés, les couples, les équipes — ne naissent pas d'événements graves. Elles naissent de la triple violation de ces règles : on parle de l'autre absent, on écoute ce qu'on raconte sur lui, et on s'endort avec des nœuds non défaits. Cet après-midi, prends une de ces trois règles et applique-la dans une seule relation de ta vie. Tu verras le miracle commencer. La paix dans les liens humains ne vient pas du hasard. Elle vient d'un pacte tenu."
+    },
+    {
+      "id": "DHUHR-LANGUE-021",
+      "titre": "La fille au lait",
+      "type_narratif": "SALAF",
+      "source": "Histoire célèbre dans la tradition musulmane sur ʿUmar ibn al-Khattâb et sa découverte nocturne, ancêtre de ʿUmar ibn ʿAbd al-ʿAzîz. Rapportée dans les ouvrages biographiques sur les califes (notamment sur ʿUmar ibn ʿAbd al-ʿAzîz). Variantes de détails — l'essentiel est largement transmis. À confirmer en audit final.",
+      "verif_imam": true,
+      "texte": "Le calife ʿUmar ibn al-Khattâb avait pour habitude, certaines nuits, de patrouiller seul dans Médine. Il voulait voir, de ses propres yeux, comment vivaient ses gens — au-delà de ce qu'on lui rapportait dans la journée.\n\nUne nuit, fatigué, il s'assit contre un mur pour reprendre son souffle. De l'autre côté de la cloison, dans une humble maison, il entendit une voix de femme — une mère, parlant à sa fille.\n\nLa mère disait : « Demain matin, quand tu trairas la vache, mélange un peu d'eau au lait. Personne ne s'en apercevra. Nous vendrons plus, et nous mangerons mieux. »\n\nLa fille répondit : « Mère, le calife ʿUmar a interdit qu'on mélange le lait à l'eau pour le vendre. »\n\nLa mère répliqua : « Le calife n'est pas ici. Il ne nous voit pas. »\n\nIl y eut un silence.\n\nPuis la fille dit, lentement : « Mère. Si le calife ne nous voit pas, le Seigneur du calife nous voit. »\n\nʿUmar, dehors, contre le mur, sentit ses yeux se mouiller. Il retint son souffle. Il attendit que la voix se taise. Il rentra chez lui sans frapper à leur porte.\n\nLe lendemain matin, il convoqua son fils ʿÂsim. Il lui dit : « Mon fils, j'ai entendu hier soir une jeune fille parler. Je n'ai pas vu son visage. Mais j'ai entendu son cœur. Va, trouve-la, et marie-la, si elle veut bien. Elle vaut, à elle seule, plus que beaucoup d'hommes que je connais. »\n\nʿÂsim épousa la fille. D'eux naquit une fille, qui épousa le fils du calife omeyyade. De cette union naquit un homme qui devint le cinquième calife bien-guidé : ʿUmar ibn ʿAbd al-ʿAzîz, l'un des plus justes dirigeants que l'islam ait connus.",
+      "morale": "Une parole prononcée dans l'obscurité, sans témoin humain — « si lui ne nous voit pas, Allâh nous voit » — a engendré une lignée qui a changé le visage du monde musulman. Tu ne sais pas, cet après-midi, ce que tu engendres. Une parole droite dite à voix basse, quand personne ne regarde, vaut peut-être plus qu'un discours public. Allâh tient les registres précis. Et Il élève qui Le craint en secret, parfois à des hauteurs que personne n'avait imaginées."
+    },
+    {
+      "id": "DHUHR-LANGUE-022",
+      "titre": "La réunion où il valait mieux se taire",
+      "type_narratif": "SCENE_CONTEMPORAINE",
+      "source": "Scène fictive contemporaine. Création littéraire pour Niyyah.",
+      "verif_imam": false,
+      "texte": "Mehdi, manager dans une boîte de conseil, animait sa réunion d'équipe du lundi après-midi. Six personnes autour de la table. Sur le projet en cours, l'un des collaborateurs — Thomas — avait raté un délai important. Tout le monde le savait. Le client s'était plaint. Le retard avait coûté à l'entreprise.\n\nThomas était assis, tête baissée, prêt à recevoir la fessée publique.\n\nMehdi avait préparé son intervention. Il avait des arguments. Il pouvait, devant l'équipe, démonter la chronologie du retard, montrer où Thomas avait failli, en faire un exemple pour les autres. C'était même attendu — son N+1 lui avait fait comprendre qu'il fallait « marquer le coup ».\n\nIl ouvrit la bouche.\n\nIl la referma.\n\nIl dit simplement : « On a eu un raté sur le projet X. Je pense qu'on en a tous tiré des leçons. Passons aux suivants. »\n\nIl bougea les ordres du jour.\n\nÀ la fin de la réunion, il prit Thomas à part dans son bureau, porte fermée. Là, en face à face, sans témoin, il lui dit franchement ce qu'il avait à lui dire. Il fut clair. Il fut ferme. Il fut juste. Thomas reconnut, demanda à compenser, repartit avec un plan d'action.\n\nThomas, six mois plus tard, devint le membre le plus fidèle de l'équipe. Il aurait suivi Mehdi dans n'importe quel projet.\n\nLes autres collaborateurs comprirent, sans qu'on le leur explique, que sous Mehdi, on ne se faisait pas humilier en public. Que les erreurs se réglaient dignement.\n\nLe N+1 grommela. Mais l'équipe, elle, gagna en cohésion ce qu'elle ne gagna pas en humiliation publique.",
+      "morale": "Le musulman, quand il a une critique à formuler, la formule en privé, jamais devant l'assemblée. Humilier publiquement est l'arme des faibles — ceux qui veulent montrer qu'ils sont chefs. Reprendre en privé est l'art des forts — ceux qui veulent que la personne grandisse. Cet après-midi, si tu as quelque chose à reprocher à quelqu'un — collègue, conjoint, enfant, employé — porte ton mot à l'oreille, jamais à la salle. La réprimande en privé construit. La réprimande en public détruit."
+    },
+    {
+      "id": "DHUHR-LANGUE-023",
+      "titre": "L'écho qui revient",
+      "type_narratif": "PARABOLE_INVENTEE",
+      "source": "Création littéraire originale pour Niyyah.",
+      "verif_imam": false,
+      "texte": "On raconte qu'un enfant, marchant dans une montagne avec son père, trébucha sur une pierre et cria de douleur : « Aïe ! »\n\nÀ son immense surprise, une voix dans la montagne répéta : « Aïe ! »\n\nL'enfant, troublé, cria plus fort : « Qui es-tu ? »\n\nLa montagne répondit : « Qui es-tu ? »\n\nFurieux d'être imité, l'enfant cria : « Imbécile ! »\n\nLa montagne renvoya : « Imbécile ! »\n\nL'enfant se mit à pleurer. Il dit à son père : « Quelqu'un dans la montagne se moque de moi et m'insulte. »\n\nLe père sourit. Il prit l'enfant par la main et l'amena un peu plus haut. Il lui dit : « Écoute bien. »\n\nLe père cria : « Je t'aime ! »\n\nLa montagne répondit : « Je t'aime ! »\n\nLe père cria : « Tu es magnifique ! »\n\nLa montagne répondit : « Tu es magnifique ! »\n\nL'enfant resta sans voix. Le père s'accroupit à sa hauteur et dit :\n\n« Mon fils, ce n'est pas la montagne. C'est l'écho. Et l'écho ne se moquait pas de toi tout à l'heure. Il répétait simplement ce que tu lui envoyais. Toute parole que tu lances dans le monde revient vers toi — la même parole. Si tu envoies de l'insulte, on t'insultera. Si tu envoies de la bénédiction, on te bénira. Le monde des hommes n'est qu'une grande montagne, et ta vie n'est qu'un long écho de ta propre voix. »",
+      "morale": "Tu te demandes pourquoi les gens te répondent durement, pourquoi les conflits te suivent, pourquoi tu es entouré de tensions ? Écoute ce que tu envoies. Souvent, ce qui revient vers nous est exactement ce que nous avons projeté — en plus dur, parce que l'écho amplifie. Cet après-midi, fais le test : envoie de la bénédiction, du salam, de la louange, de l'encouragement. Et observe ce qui te revient avant Maghrib. La montagne ne t'a jamais détesté. Elle a juste fait son travail."
+    },
+    {
+      "id": "DHUHR-LANGUE-024",
+      "titre": "Mâlik et la question piégée",
+      "type_narratif": "SALAF",
+      "source": "Histoire célèbre dans les biographies de l'imam Mâlik ibn Anas, rapportée notamment dans Tartîb al-Madârik d'al-Qâdî ʿIyâd et dans Siyar A'lâm an-Nubalâ' de Dhahabi. La pratique de Mâlik de répondre « je ne sais pas » à un grand nombre de questions est largement documentée.",
+      "verif_imam": true,
+      "texte": "L'imam Mâlik ibn Anas, fondateur de l'école juridique malikite, était à Médine la référence vivante de son temps. Des gens venaient le consulter de très loin — du Maghreb, d'Égypte, de Damas, du Yémen. Chaque jour, il recevait des dizaines de questions sur la religion.\n\nUn jour, un homme arriva de très loin, après un long voyage. Il avait préparé son entrevue depuis des semaines. Il s'assit devant Mâlik et lui exposa quarante questions précises — sur le fiqh, le hadith, la prière, l'héritage, le commerce.\n\nMâlik écouta calmement. Puis il commença à répondre.\n\nIl répondit à quatre questions.\n\nPour les trente-six autres, il dit : « Je ne sais pas. »\n\nL'homme, abasourdi, s'indigna : « Maître ! J'ai voyagé des mois pour te voir ! Que vais-je dire à ceux qui m'ont envoyé ? Comment vais-je leur expliquer que tu ne sais pas la majorité des choses ? »\n\nMâlik le regarda calmement et dit : « Dis-leur exactement ceci : Mâlik dit qu'il ne sait pas. »\n\nL'homme, furieux, partit.\n\nUn élève de Mâlik, qui assistait à la scène, attendit que le visiteur soit parti. Puis il demanda à son maître : « Vous saviez répondre à plusieurs de ces questions. Pourquoi avez-vous dit \\\"je ne sais pas\\\" si souvent ? »\n\nMâlik répondit : « Mon fils, si je dis quelque chose dont je ne suis pas absolument certain au nom d'Allâh et de Son Messager ﷺ, et que ma parole est ensuite diffusée à travers le monde musulman, jusqu'à des contrées que je n'ai jamais vues — et que je me suis trompé — combien de gens auront été égarés par ma bouche ? Mille ? Dix mille ? Cent mille ? Mieux vaut taire dix vérités que prononcer un seul mensonge. « Je ne sais pas » est la moitié du savoir. »",
+      "morale": "Le musulman qui sait, sait surtout les limites de son savoir. Le piège n'est pas dans l'ignorance — c'est dans l'orgueil de répondre à tout, sur tout, à tout le monde. Cet après-midi, quand on te demande ton avis sur une question de religion, sur une situation que tu ne maîtrises pas, sur une personne que tu connais peu — entraîne-toi à prononcer une phrase qui sauve des âmes : « Je ne sais pas. » C'est une parole d'imam. C'est une parole de Mâlik. C'est une parole qui t'élève."
+    },
+    {
+      "id": "DHUHR-LANGUE-025",
+      "titre": "Le compte des paroles à la fin du jour",
+      "type_narratif": "PARABOLE_TRADITION",
+      "source": "Récit sapientiel de tradition, inspiré de plusieurs pratiques documentées dans la littérature de muhâsaba (Hasan al-Basri, Ahmad ibn Hanbal, Sufyân ath-Thawrî, et autres). Formulation libre pour Niyyah.",
+      "verif_imam": false,
+      "texte": "Un homme pieux des premiers temps avait pris une habitude singulière. Chaque soir, après la prière de ʿIshâ', avant de dormir, il sortait un cahier et faisait une chose qui aurait paru étrange à beaucoup : il comptait ses paroles.\n\nPas toutes — c'était impossible. Mais il essayait de se rappeler les paroles importantes qu'il avait prononcées dans la journée. Il les classait en trois colonnes :\n\nUne colonne pour les paroles utiles : enseignement transmis, conseil donné, mot de réconfort, rappel à Allâh.\n\nUne colonne pour les paroles neutres : transactions du quotidien, conversations ordinaires, salutations.\n\nUne colonne pour les paroles regrettables : médisance échappée, mensonge léger, moquerie, parole prononcée dans la colère, plaisanterie blessante.\n\nIl comptait.\n\nLes premières années, la troisième colonne était de loin la plus longue. Il pleurait souvent en la regardant. Il demandait pardon. Il fermait le cahier.\n\nLes années passèrent. La troisième colonne se rétrécit, lentement, péniblement. Pas par magie — par exercice. Chaque jour, en se rappelant qu'il aurait à compter ce soir, il parlait un peu moins, et un peu mieux.\n\nVers la fin de sa vie, on raconte que les trois colonnes s'équilibraient — et que la première, parfois, dépassait les deux autres.\n\nQuand il sentit la mort approcher, il dit à son fils : « Mon fils, prends ce cahier après moi. Et reprends le compte. Une vie qui ne se compte pas se perd. Une langue qui ne se compte pas se déverse. »\n\nLe fils prit le cahier. Et continua.",
+      "morale": "Tu finiras Dhuhr, puis Asr, puis Maghrib, puis ʿIshâ'. Avant de dormir, fais en pensée le compte de ta journée de paroles. Trois colonnes. Combien d'utiles, combien de neutres, combien de regrettables ? Si la troisième est la plus longue ce soir, ce n'est pas grave — c'est un début. La muhâsaba quotidienne de la langue est un exercice de longue haleine. Mais au bout de quelques années, la première colonne s'allonge. Et là, ta vie commence à peser, dans le bon plateau."
+    },
+    {
+      "id": "DHUHR-LANGUE-026",
+      "titre": "Les anges qui écrivent",
+      "type_narratif": "HISTOIRE_PROPHETIQUE",
+      "source": "Récit basé sur le verset coranique 50:18 (« Il ne prononce pas une parole sans qu'auprès de lui se trouve un observateur prêt à inscrire ») et sur les hadiths concernant les Kirâman Kâtibîn (les anges scribes). Le cadre narratif est une mise en scène pédagogique conforme à la doctrine islamique établie.",
+      "verif_imam": true,
+      "texte": "Un Compagnon vint un jour s'asseoir près du Messager d'Allâh ﷺ après une journée passée au marché. Il était fatigué et un peu irrité. Il avait parlé beaucoup, vendu, négocié, plaisanté, parfois piqué un acheteur d'une remarque vive.\n\nLe Prophète ﷺ le regarda et dit, en réponse à une question que personne n'avait posée : « Sais-tu, mon frère, qu'aucune parole ne sort de toi sans qu'à droite et à gauche, deux anges la consignent ? »\n\nLe Compagnon, surpris, demanda : « Même les paroles ordinaires ? Mes salutations, mes prix, mes plaisanteries ? »\n\nLe Prophète ﷺ récita le verset : « Il ne prononce pas une parole sans qu'auprès de lui se trouve un observateur prêt à inscrire. » Puis il dit : « Tout. Sans exception. La bénédiction comme la médisance. Le rappel d'Allâh comme la moquerie. Le mot doux à ta femme comme le mot dur à ton enfant. Tout est inscrit. »\n\nLe Compagnon resta silencieux longtemps. Puis il demanda : « Ô Messager d'Allâh, alors comment dois-je vivre ? Si chaque mot est compté, ne vais-je pas devenir muet de peur ? »\n\nLe Prophète ﷺ sourit avec douceur : « Non. Vis. Parle. Mais parle comme un homme qui sait qu'il porte deux scribes invisibles sur ses épaules. Ils n'écrivent que ce que tu prononces. Si tu remplis ton registre de bénédictions, de salutations, de rappels d'Allâh, de paroles douces — ils écriront le bien, et tu seras heureux de relire ton registre au Jour de la Rencontre. Si tu le remplis d'autre chose — tu seras seul devant ton propre écrit. »",
+      "morale": "Tu n'es jamais seul quand tu parles. Deux anges sont assis sur tes épaules, plume à la main, encrier ouvert. Ils n'inventent rien : ils notent. Cet après-midi, à la machine à café, dans ton message vocal, dans cette réunion : pense à ce que tes deux scribes sont en train d'écrire en ce moment. Le registre que tu liras à la fin sera exactement ce que tu auras dicté — mot pour mot. Dicte bien."
+    },
+    {
+      "id": "DHUHR-LANGUE-027",
+      "titre": "Le silence de Khadîja",
+      "type_narratif": "HISTOIRE_PROPHETIQUE",
+      "source": "Récit narratif inspiré du caractère documenté de Khadîja bint Khuwaylid (mère des croyants) et de la situation à La Mecque pendant la première période de la prédication. Les dialogues précis sont une reconstitution littéraire — l'esprit du récit est conforme aux qualités attribuées à Khadîja dans la sîra (Ibn Hishâm, Ibn Kathîr). À authentifier en audit final, présenter comme récit reconstitué.",
+      "verif_imam": true,
+      "texte": "Au début de la prédication, à La Mecque, les Quraysh redoublèrent d'efforts pour briser le Prophète ﷺ. Quand l'attaque directe ne suffit pas, ils visèrent ce qu'il avait de plus précieux : son épouse Khadîja.\n\nDes femmes de notables, anciennes amies de Khadîja, vinrent la voir une à une. Sous couvert de visite, elles lui rapportaient les paroles de leurs maris. « Ton mari raconte n'importe quoi. Il met la famille en danger. Tu devrais lui parler. » Une autre : « Tu vas tout perdre, ta fortune, ta réputation, ta place dans Quraysh. »\n\nUne autre encore vint un jour avec un récit plus venimeux : elle prétendit avoir entendu d'autres femmes parler en mal de Khadîja elle-même, l'accusant d'avoir été manipulée, d'avoir perdu la tête, d'être devenue la risée des assemblées féminines.\n\nKhadîja écouta. Elle ne répondit pas. Elle ne plaida pas. Elle ne s'indigna pas.\n\nQuand la femme partit, Khadîja resta seule. Le Prophète ﷺ rentra plus tard, harassé d'une journée d'insultes au-dehors. Il s'assit à côté d'elle. Il la regarda et vit, sur son visage, quelque chose qu'on ne pouvait pas cacher.\n\nElle lui dit, doucement : « Ce qu'elles disent, je ne le rapporterai pas dans cette maison. Cette maison est ton refuge. Elle ne sera pas le déversoir de ce qu'elles déversent ailleurs. Ce que j'ai entendu aujourd'hui s'arrête à cette porte. »\n\nElle ne lui dit jamais ce qu'on avait dit d'elle. Il l'apprit, par d'autres, des années plus tard. Et il pleura.",
+      "morale": "Quand on aime quelqu'un, on filtre ce qu'on rapporte chez lui. Tout ce qu'on a entendu de mauvais dehors n'a pas besoin de franchir la porte. Le foyer du musulman n'est pas un bureau de transmission — c'est un sanctuaire. Cet après-midi, en rentrant chez toi, demande-toi : qu'est-ce que je vais déverser sur ma femme, mon mari, mes enfants, ce soir ? Garde une partie pour toi. Le silence sur ce qui blesse ailleurs est une forme d'amour qu'on confond trop souvent avec de la dissimulation. C'est l'inverse : c'est de la protection."
+    },
+    {
+      "id": "DHUHR-LANGUE-028",
+      "titre": "Le savant et l'apprenti pressé de parler",
+      "type_narratif": "PARABOLE_INVENTEE",
+      "source": "Création littéraire originale pour Niyyah.",
+      "verif_imam": false,
+      "texte": "Un jeune homme vint chez un grand savant pour devenir son élève. Il avait étudié dans d'autres cercles, il connaissait beaucoup de hadiths, il maîtrisait la grammaire et la rhétorique. Il était brillant. Et il le savait.\n\nDans la première assemblée, à peine assis, il prit la parole. Il commenta. Il précisa. Il corrigea poliment un point de détail. Il cita trois références.\n\nLe savant l'écouta sans rien dire.\n\nDans la deuxième assemblée, le jeune homme recommença. Il prit la parole avant qu'on ne le lui demande, il apporta des compléments, il argumenta avec son voisin sur un point secondaire.\n\nLe savant l'écouta encore, sans rien dire.\n\nÀ la fin de la deuxième assemblée, le savant retint le jeune homme. Il lui dit : « Mon fils, viens demain matin avant les autres. J'ai quelque chose à te montrer. »\n\nLe lendemain, le jeune homme arriva tôt. Le savant lui tendit un grand verre vide et une carafe d'eau. Il lui dit : « Verse l'eau dans le verre, doucement. »\n\nLe jeune homme versa. Le verre se remplit normalement.\n\n« Maintenant, dit le savant, verse encore. »\n\nLe jeune homme : « Maître, il est plein. »\n\nLe savant : « Verse quand même. »\n\nLe jeune homme versa. L'eau déborda, coula sur la table, par terre.\n\nLe savant le regarda. « Voilà ton problème. Tu es venu chez moi avec un verre plein. Je ne peux rien y verser. Tout ce que je vais essayer de t'apprendre va déborder à côté, parce que tu parles avant d'écouter. Reviens dans un an, le verre vide. Et là, je remplirai. »",
+      "morale": "Tu ne peux pas apprendre tant que tu parles. Tant que tu remplis l'espace avec ce que tu sais déjà, rien de nouveau ne peut y entrer. Cet après-midi, en réunion, en famille, dans une conversation avec quelqu'un de plus expérimenté : ferme la bouche un peu plus longtemps que d'habitude. Vide ton verre. La vraie science, la vraie sagesse, la vraie information se déposent dans les contenants vides. Si tu arrives plein, tu repartiras plein — et tu auras tout raté."
+    },
+    {
+      "id": "DHUHR-LANGUE-029",
+      "titre": "Ibn Sîrîn et le rêve qu'il refusa d'interpréter",
+      "type_narratif": "SALAF",
+      "source": "Récit de la pratique documentée d'Ibn Sîrîn (interprète des rêves de Bassora) rapporté dans la littérature biographique classique (notamment Siyar A'lâm an-Nubalâ' de Dhahabi). Précision sur le dialogue à confirmer — la pratique de refus d'interpréter sans contexte clair est largement attestée.",
+      "verif_imam": true,
+      "texte": "Muhammad ibn Sîrîn, le plus célèbre interprète de rêves de son époque, vivait à Bassora. Les gens venaient le voir de partout, parfois de très loin, pour qu'il leur explique ce qu'ils avaient vu pendant la nuit. Il avait un don reconnu, mais surtout une science profonde du Coran et des hadiths qui lui permettait de lire les rêves dans la lumière de la révélation.\n\nUn jour, un homme entra chez lui, l'air agité. Il dit : « Maître Ibn Sîrîn, j'ai fait un rêve cette nuit. J'ai vu untel — il le nomma, un personnage connu de la ville — en train de commettre tel acte interdit. »\n\nIbn Sîrîn leva la main pour l'interrompre. Il dit : « Arrête. »\n\nL'homme : « Mais je n'ai pas fini. »\n\nIbn Sîrîn : « Si. Tu as fini. Tu viens de nommer une personne et de lui attribuer un acte interdit, sous prétexte d'un rêve. Je ne sais pas si tu as vraiment fait ce rêve. Je ne sais pas si le rêve, s'il a eu lieu, signifie ce que tu crois. Mais je sais une chose : tu viens de répandre une accusation sur cet homme dans ma maison. »\n\nL'homme protesta : « Mais c'est juste un rêve ! »\n\nIbn Sîrîn dit : « Ce n'est jamais « juste un rêve » quand on nomme quelqu'un. Va. Et la prochaine fois que tu rêves de quelqu'un en mal, demande-toi pourquoi ton cœur a produit ce rêve sur cette personne précise — au lieu de venir le partager ailleurs. Le rêve sur autrui dit plus de toi que de lui. Pars. »\n\nL'homme partit, déstabilisé. Ibn Sîrîn ne le revit jamais.",
+      "morale": "Beaucoup de médisances commencent par : « J'ai juste fait un rêve sur lui... », « Je viens de penser à un truc... », « C'est marrant mais j'ai eu une intuition que... ». Toutes les justifications du monde n'effacent pas le fait que tu prononces le nom d'un absent dans un contexte qui le défavorise. Cet après-midi, méfie-toi des fausses portes par lesquelles la médisance s'invite — le rêve, l'intuition, l'observation innocente, la simple curiosité. Tout ça reste de la médisance, déguisée."
+    },
+    {
+      "id": "DHUHR-LANGUE-030",
+      "titre": "Le client du psy qui ne se taisait jamais",
+      "type_narratif": "SCENE_CONTEMPORAINE",
+      "source": "Scène fictive contemporaine. Création littéraire pour Niyyah.",
+      "verif_imam": false,
+      "texte": "Adel allait voir un psychologue depuis huit mois. Il avait commencé pour gérer un stress chronique, puis les séances étaient devenues une sorte de défouloir. Chaque semaine, pendant cinquante minutes, il parlait. Il parlait de sa femme — ses défauts, leurs disputes, ses agacements. Il parlait de son patron, de ses collègues, de sa mère, de ses voisins. Il déballait. Le psy notait, hochait la tête, posait quelques questions.\n\nUn jour, après huit mois, Adel sortit de sa séance et marcha jusqu'au métro. Sur le quai, il s'arrêta. Une pensée le frappa, brutale.\n\nIl venait de parler pendant cinquante minutes — dont quarante-cinq minutes à dire du mal des gens de sa vie. Des gens qui ne savaient pas qu'il les déshabillait en cabinet. Sa femme, qui ne se doutait pas qu'il racontait leurs disputes à un inconnu. Son patron, qui n'avait pas idée des qualificatifs qu'il employait pour le décrire. Sa mère, qui aurait été détruite si elle avait entendu.\n\nIl avait payé soixante euros pour faire ça. Et il rentrait soi-disant « soulagé ».\n\nAdel repensa à un hadith entendu un jour dans une vidéo : « La médisance, c'est dire de ton frère, en son absence, quelque chose qu'il n'aimerait pas qu'on dise de lui — même si c'est vrai. »\n\nSurtout si c'est vrai, en fait.\n\nIl prit le métro en silence. À la maison, il prit son téléphone et chercha un autre thérapeute — quelqu'un qui pratiquait une approche centrée sur le travail intérieur, pas sur l'inventaire des défauts d'autrui. Il changea.\n\nIl perdit beaucoup au début. Il n'avait plus de défouloir. Il devait se regarder lui-même.\n\nMais il sentit, mois après mois, quelque chose de propre se reposer en lui.",
+      "morale": "Le musulman ne confond pas thérapie et déversement. Il peut parler de lui — de ses blessures, de ses émotions, de ses fautes — mais il ne transforme pas le cabinet, le confident, l'ami proche, le groupe de parole en tribune pour démonter les absents de sa vie. La parole sur autrui reste de la parole sur autrui, payée ou gratuite. Cet après-midi, observe avec qui tu parles, et de qui. Si tu te rends compte que tu utilises les oreilles de quelqu'un pour vider ton sac sur des tiers — change de cible. Parle de toi. Pas d'eux."
+    },
+    {
+      "id": "DHUHR-LANGUE-031",
+      "titre": "Du bien, ou se taire",
+      "type_narratif": "HISTOIRE_PROPHETIQUE",
+      "source": "Hadith rapporté par al-Bukhârî (Sahih, n° 6018) et Muslim (Sahih, n° 47) selon Abû Hurayra. L'un des hadiths les plus connus sur la langue.",
+      "verif_imam": true,
+      "texte": "Le Messager d'Allâh ﷺ s'adressait aux Compagnons réunis. Il leur livrait, ce jour-là, trois conditions liées par une logique implacable.\n\nIl dit : « Celui qui croit en Allâh et au Jour Dernier, qu'il dise du bien ou qu'il se taise. »\n\nIl marqua une pause.\n\n« Celui qui croit en Allâh et au Jour Dernier, qu'il honore son voisin. »\n\nIl marqua encore une pause.\n\n« Celui qui croit en Allâh et au Jour Dernier, qu'il honore son hôte. »\n\nTrois fois la même introduction : « Celui qui croit en Allâh et au Jour Dernier... ». Et la première chose nommée, avant le voisin, avant l'hôte, c'est la parole.\n\nLa formulation est radicale. Le Prophète ﷺ n'a pas dit : « Qu'il évite la médisance. » Il n'a pas dit : « Qu'il parle avec sagesse. » Il a posé une alternative binaire, sans zone grise : ou tu dis du bien, ou tu te tais. Il n'y a pas de troisième option.\n\nLes Compagnons, ce jour-là, comprirent que tout ce qui n'était pas du bien dit devait être du silence porté. La conversation neutre, la discussion oiseuse, le bavardage sans contenu — tout cela tombait dans la catégorie qui devait être avalée.\n\nIls vivaient ainsi. Quand ils avaient quelque chose de bon à dire — un rappel, une louange, un enseignement, une bénédiction, une consolation, une nouvelle réjouissante — ils parlaient. Quand ils n'avaient pas de bien à dire — ils se taisaient. Et ce silence, loin d'être vide, était plein de la présence d'Allâh.",
+      "morale": "Le Prophète ﷺ a lié ta langue à ta foi. Pas tes prières, pas tes jeûnes — ta langue. Celui qui croit en Allâh dit du bien OU se tait. Cet après-midi, la prochaine fois que tu ouvres la bouche, fais ce test interne : ce que je m'apprête à dire — est-ce du bien ? Si oui, dis. Si non — la deuxième option n'est pas « le dire quand même avec précaution ». La deuxième option, c'est SE TAIRE. Le silence est un acte de foi."
+    },
+    {
+      "id": "DHUHR-LANGUE-032",
+      "titre": "Le tisserand et le voyageur médisant",
+      "type_narratif": "PARABOLE_TRADITION",
+      "source": "Parabole de tradition sapientielle, variantes multiples dans la littérature soufie et de zuhd. Patrimoine anonyme.",
+      "verif_imam": false,
+      "texte": "On raconte qu'un voyageur fatigué arriva un soir dans une ville inconnue. Il cherchait un endroit où dormir. Un tisserand humble, qui travaillait à sa fenêtre, l'invita à entrer et à passer la nuit chez lui.\n\nLe tisserand offrit du pain, de l'eau, un coin pour dormir. Pendant le repas, le voyageur, voulant remercier en faisant la conversation, commença à parler des gens qu'il avait croisés sur sa route. « À deux villages d'ici, il y a un imam qui ne vaut rien — je l'ai vu boire en cachette. » « Dans le village précédent, le boulanger triche sur le poids — tout le monde le sait. » « Le qâdî de telle ville prend des pots-de-vin — un homme me l'a affirmé. »\n\nLe tisserand l'écouta sans rien dire. Quand le voyageur eut fini de manger, le tisserand se leva, prit son ouvrage — un tapis qu'il était en train de tisser — et le déposa devant le voyageur.\n\nIl dit : « Regarde. Je travaille à ce tapis depuis trois mois. Tous les jours, je passe le fil. Tous les jours, j'ajoute un nœud. Le motif apparaît lentement. C'est beau. C'est précieux. »\n\nIl prit une paire de ciseaux. Il coupa, d'un geste sec, trois nœuds au centre du tapis.\n\nLe voyageur cria : « Mais que fais-tu ! Tu ruines ton ouvrage ! »\n\nLe tisserand sourit doucement : « Trois nœuds en trois secondes. Trois mois pour les refaire. Voilà ce que tu as fait ce soir, depuis que tu es entré dans ma maison. Tu as coupé, en parlant, trois imams, trois métiers, trois ouvrages que d'autres tissent depuis des années. Tu n'as mis que quelques secondes. Eux mettront des années à recoudre. Demain matin, tu partiras léger. Eux se réveilleront, ne sachant pas que leur tapis a un trou — fait par un homme qui dormait chez un tisserand qu'il ne connaît même pas. »\n\nLe voyageur ne dormit pas cette nuit-là.",
+      "morale": "Tu peux mettre des années à construire une réputation, une œuvre, une fidélité, un travail honnête. Et quelqu'un, en quelques secondes, autour d'un café, dans un mot lâché dans une conversation — peut couper trois nœuds au centre. Tu ne le sauras peut-être jamais. Mais cet après-midi, demande-toi : combien de nœuds ai-je coupés moi-même cette semaine, dans les tapis des autres ? Personne ne le voit, sauf Celui qui voit tout. Pose les ciseaux. Le tisseur souffre déjà assez."
+    },
+    {
+      "id": "DHUHR-LANGUE-033",
+      "titre": "Le serment de l'imam ash-Shâfiʿî",
+      "type_narratif": "SALAF",
+      "source": "Récit issu de la tradition biographique sur l'imam Muhammad ibn Idrîs ash-Shâfiʿî (fondateur de l'école shâfiʿite), rapporté dans plusieurs ouvrages de manâqib. La pratique de retenue de l'imam Shâfiʿî sur les sujets de polémique entre savants est documentée. Précisions de dialogue à confirmer en audit final.",
+      "verif_imam": true,
+      "texte": "L'imam Muhammad ibn Idrîs ash-Shâfiʿî vivait à une époque où les savants se divisaient en écoles, et où les rivalités entre disciples étaient parfois vives. Les élèves d'une école attaquaient l'autre. On rapportait des paroles. On déformait des positions. Les majâlis (assemblées) devenaient parfois des tribunaux d'absents.\n\nUn élève vint un jour trouver Shâfiʿî, indigné. Il dit : « Maître, j'ai entendu untel — un savant d'une autre école — affirmer telle chose contre votre méthodologie. Il a dit que vous étiez dans l'erreur sur tel sujet. Que faites-vous ? Vous ne répondez pas ? »\n\nShâfiʿî leva les yeux de son livre. Il dit calmement : « Mon fils, je me suis fait, il y a longtemps, un serment intérieur. »\n\nL'élève : « Lequel, maître ? »\n\nShâfiʿî : « Je ne discute jamais d'un savant en son absence. Si untel a dit quelque chose contre moi, et que c'est faux — Allâh défendra ma cause sans que j'aie à plaider. Si c'est vrai — alors je dois remercier celui qui m'a corrigé, fût-ce par derrière. Dans les deux cas, ouvrir un débat sur lui devant toi me ferait perdre quelque chose, et ne me ferait gagner que de la fatigue. »\n\nL'élève insista : « Mais maître, votre réputation ! Votre école ! »\n\nShâfiʿî sourit : « Mon fils, la réputation se défend par les œuvres, pas par les paroles. Si mon enseignement est juste, il survivra à mille calomnies. S'il ne l'est pas, mille défenses ne le sauveront pas. Toi, écoute : la prochaine fois qu'on te rapporte qu'un savant a dit quelque chose contre moi, fais comme je fais. Souris. Récite la salawât sur le Prophète ﷺ. Et change de sujet. Tu sortiras de la conversation plus grand que si tu avais répondu. »\n\nL'élève sortit silencieux. On rapporte qu'il devint, des années plus tard, l'un des transmetteurs les plus respectés de l'école shâfiʿite — précisément parce qu'il avait appris cette discipline.",
+      "morale": "Beaucoup d'énergie se perd à défendre une réputation que les œuvres défendent mieux que les paroles. Le musulman ne plaide pas sa cause dans le dos des autres — il fait son ouvrage, propre, durable, et laisse Allâh être son meilleur avocat. Cet après-midi, quand on te rapporte que quelqu'un t'a critiqué — savant, collègue, parent, ami — ne réplique pas dans son dos. Souris. Salue. Change de sujet. Et continue ton travail. Ta meilleure réponse, c'est ce que tu construis pendant que les autres parlent."
+    },
+    {
+      "id": "DHUHR-LANGUE-034",
+      "titre": "Le groupe de prière où l'on parlait trop",
+      "type_narratif": "SCENE_CONTEMPORAINE",
+      "source": "Scène fictive contemporaine. Création littéraire pour Niyyah.",
+      "verif_imam": false,
+      "texte": "Yasmine avait rejoint, depuis quelques mois, un petit groupe de sœurs qui se retrouvait chaque dimanche après-midi pour lire ensemble un texte de tafsîr, prier ʿAsr en commun, et boire un thé.\n\nAu début, c'était précieux. Elle se sentait nourrie, accompagnée, entourée.\n\nMais elle remarqua, semaine après semaine, qu'environ vingt minutes après la prière de ʿAsr — quand le rituel sérieux était fini et que le thé arrivait — la conversation glissait. Une sœur évoquait une autre sœur qui n'était pas venue. « Tu sais qu'elle a refait sa cuisine ? » « Elle a tellement changé depuis son mariage. » « Son mari travaille de moins en moins, paraît-il. »\n\nCela ne durait jamais longtemps. Vingt minutes peut-être. Mais c'était là, chaque dimanche. Le moment où le groupe, après s'être recueilli, redescendait dans le quotidien — et où ce quotidien passait par l'épluchage des absentes.\n\nYasmine ne savait pas quoi faire. Elle ne voulait pas se priver du groupe. Mais elle se sentait sale en rentrant chez elle, certains soirs.\n\nUn dimanche, alors que la conversation commençait à dériver sur une sœur qui « ne portait plus le voile correctement », Yasmine prit son courage à deux mains. Elle dit, doucement : « Les sœurs, je peux dire quelque chose ? Je remarque qu'on a un super moment pour ʿAsr ensemble, et qu'après, parfois, on parle de celles qui ne sont pas là. Je voulais juste dire — moi je le fais aussi, je ne juge personne — mais ça me pèse en rentrant. Est-ce qu'on pourrait essayer une règle, juste pour voir : pendant le thé, on ne parle que de ce qu'on lit ensemble, ou de nos propres vies ? Pas des absentes. »\n\nIl y eut un silence gêné. Une sœur s'agaça un peu. Une autre dit : « T'as raison. C'est vrai qu'on le fait, et je m'étais jamais arrêtée dessus. »\n\nDe ce jour-là, le ton du groupe changea. Pas du jour au lendemain. Mais en quelques semaines, la zone grise se referma. Le groupe devint plus dense, plus vrai. Et Yasmine n'eut plus à rentrer chez elle avec ce poids.",
+      "morale": "Les groupes les plus pieux peuvent glisser vers la médisance, précisément parce qu'on s'y sent en confiance et qu'on baisse la garde. Le musulman qui aime son cercle a parfois la responsabilité de poser un mot — doux, non accusateur, mais clair — pour ramener le groupe à sa hauteur. Cet après-midi, si tu fais partie d'un cercle où la parole glisse parfois sur les absents : sois celui ou celle qui propose la règle. Pas par jugement. Par amour du groupe. C'est ainsi qu'on grandit ensemble."
+    },
+    {
+      "id": "DHUHR-LANGUE-035",
+      "titre": "La plume et le scribe",
+      "type_narratif": "PARABOLE_INVENTEE",
+      "source": "Création littéraire originale pour Niyyah, basée sur les versets coraniques 82:10-12 (Kirâman Kâtibîn) et 50:18.",
+      "verif_imam": false,
+      "texte": "On raconte qu'un homme rêva qu'il était convoqué devant un grand registre. Devant lui se tenait un être de lumière, plume à la main, un livre immense ouvert sur une table.\n\nL'être lui dit : « Voici ton registre. C'est moi qui l'ai tenu pendant toute ta vie. Aujourd'hui, on me demande de te le lire. »\n\nL'homme s'approcha, le cœur battant. Il s'attendait à voir consigné le détail de ses prières, de ses jeûnes, de ses aumônes.\n\nMais en s'approchant, il vit que les pages étaient remplies, principalement, de paroles. Des mots. Des phrases. Des conversations entières. Il lut une page au hasard. Il y reconnut une discussion qu'il avait eue avec un collègue, vingt ans plus tôt, dont il ne se souvenait même plus. Ses paroles étaient là, mot pour mot.\n\nIl tourna une autre page. Il y vit une dispute avec sa femme. Pas le sujet — il l'avait oublié. Mais les mots qu'il avait prononcés. Tous. Y compris ceux qu'il croyait avoir dits à voix basse.\n\nIl tourna encore. Il vit ce qu'il avait dit, un jour, dans le dos d'un ami, à un autre ami. Il croyait ce moment perdu. Il était là, intact.\n\nIl tomba à genoux. Il dit au scribe : « Je ne savais pas que tout cela était noté. »\n\nLe scribe répondit calmement : « Tu le savais. Tu l'as juste oublié. Le verset a été révélé. Le hadith a été dit. Les autres aussi le savaient. Mais ils ont, eux aussi, vécu comme s'ils l'avaient oublié. »\n\nL'homme demanda : « Puis-je effacer ? »\n\nLe scribe : « Tu ne peux plus effacer. Tu peux seulement remplir les pages suivantes différemment. Et invoquer pour que Celui qui efface tout, par Sa miséricorde, efface ce qu'aucune plume ne peut effacer. »\n\nL'homme se réveilla en sueur. Il vécut le restant de ses jours en pensant à ce rêve. Et son registre, dit-on, changea de couleur.",
+      "morale": "Imagine un instant que toutes les paroles de ta vie soient lues à voix haute devant toi — y compris celles que tu as oubliées, celles que tu croyais dites en privé, celles que tu n'as même plus en mémoire. Ce moment viendra. Pas dans un rêve : dans la réalité du Jour de la Rencontre. Cet après-midi, vis comme un homme qui sait que son registre s'écrit en ce moment même. Tu ne peux pas effacer ce qui est déjà inscrit. Mais tu peux choisir ce qui s'écrit à partir de maintenant. La page suivante est blanche. Dicte bien."
+    },
+    {
+      "id": "DHUHR-LANGUE-036",
+      "titre": "ʿÂ'isha et le mot sur Safiyya",
+      "type_narratif": "HISTOIRE_PROPHETIQUE",
+      "source": "Hadith rapporté par Abû Dâwûd (Sunan, n° 4875) et at-Tirmidhî (Sunan, n° 2502) selon ʿÂ'isha. Hadith authentique sur la définition de la médisance comme « une parole qui suffit à atteindre un frère, même brève ».",
+      "verif_imam": true,
+      "texte": "ʿÂ'isha, mère des croyants, rapporte un épisode qui la marqua à vie.\n\nUn jour, en présence du Messager d'Allâh ﷺ, elle parla d'une autre épouse du Prophète ﷺ — Safiyya bint Huyayy. ʿÂ'isha dit simplement, à propos d'elle : « Safiyya est petite », ou selon une autre version : « Il suffit pour toi que Safiyya soit ainsi », en désignant qu'elle était de petite taille.\n\nC'était court. Ce n'était pas méchant en intention. C'était presque anodin — une remarque sur la taille de quelqu'un.\n\nMais le Messager d'Allâh ﷺ se retourna vers elle. Son visage avait changé. Il lui dit : « Tu viens de prononcer un mot tel que, s'il était jeté dans la mer, il en altérerait l'eau. »\n\nʿÂ'isha resta saisie. Le mot était bref. Le Prophète ﷺ disait qu'il pouvait altérer une mer entière. Comment ?\n\nElle comprit, ce jour-là, que la médisance n'était pas une question de longueur de discours, ni de méchanceté intentionnelle, ni de gravité apparente. C'était le simple fait de dire, d'une personne absente, quelque chose qu'elle n'aurait pas aimé entendre — même si c'était vrai, même si c'était bref, même si c'était dit sans malice.\n\nElle rapporta ce hadith pour toute la communauté musulmane. Elle qui était la plus érudite des épouses du Prophète ﷺ, elle qui transmettait des milliers de hadiths, choisit de transmettre celui-ci — où elle apparaît elle-même comme l'auteure de la faute. Elle voulait que toutes les générations à venir comprennent : si elle, en présence du Messager d'Allâh ﷺ, avait pu glisser sur ce mot — alors personne n'était à l'abri.",
+      "morale": "La médisance ne se mesure pas à la méchanceté de l'intention ni à la longueur du propos. Elle se mesure à un seul critère : aurait-il aimé entendre ce que tu dis de lui ? Si la réponse est non, c'est de la médisance. Cet après-midi, observe les petits mots que tu glisses sur les absents — « il est un peu lent », « elle est trop maquillée », « il parle bizarrement », « elle est petite ». Tu crois que c'est rien. Mais ces mots, jetés dans une mer, l'altèrent. Tu n'imagines pas combien."
+    },
+    {
+      "id": "DHUHR-LANGUE-037",
+      "titre": "Hasan ibn ʿAlî et l'esclave qui se trompa",
+      "type_narratif": "SALAF",
+      "source": "Récit traditionnel sur Hasan ibn ʿAlî ibn Abî Tâlib (petit-fils du Prophète ﷺ), rapporté dans plusieurs ouvrages de raqâ'iq et de manâqib. Variantes de détails — l'essentiel est largement transmis dans la tradition. À confirmer en audit final.",
+      "verif_imam": true,
+      "texte": "Al-Hasan ibn ʿAlî, petit-fils du Messager d'Allâh ﷺ, fils d'ʿAlî et de Fâtima, vivait à Médine entouré de son foyer. Un jour, une esclave de sa maison apportait un plat de soupe brûlante pour le repas. Elle marchait trop vite. Elle trébucha.\n\nLe plat se renversa entièrement sur Hasan. La soupe brûlante coula sur sa tunique, sur sa peau. La douleur fut immédiate.\n\nL'esclave, terrorisée, comprit qu'elle venait peut-être de commettre une faute qui lui coûterait cher. Elle vit Hasan se relever, brûlé, le visage marqué. Elle tomba à genoux.\n\nDans la panique, elle se mit à réciter, à voix tremblante, un verset du Coran : « ...ceux qui contiennent leur colère... »\n\nHasan, qui se tenait debout, l'eau brûlante encore sur sa peau, répondit calmement : « J'ai contenu ma colère. »\n\nL'esclave continua, en pleurs : « ...et qui pardonnent aux gens... »\n\nHasan répondit : « Je t'ai pardonné. »\n\nL'esclave acheva le verset : « ...et Allâh aime les bienfaisants. »\n\nHasan dit alors, doucement : « Tu es libre. Je t'affranchis pour l'amour d'Allâh. »\n\nIl n'avait pas seulement contenu sa langue dans la douleur. Il n'avait pas seulement pardonné. Il avait, en réponse à un verset bien placé, transformé une faute en occasion d'élever quelqu'un. Et il l'avait fait en silence, sans publicité, devant les serviteurs de sa propre maison.",
+      "morale": "Au moment précis où la douleur t'envahit et où ta langue veut exploser — c'est là que la lutte se joue. Pas dans les moments calmes. Cet après-midi, quand quelqu'un te blesse — par maladresse, par stupidité, par accident — ton premier mot trahira qui tu es vraiment. Hasan, brûlé, a contenu, pardonné, libéré. Tu n'as pas à libérer un esclave. Mais tu peux contenir le premier mot acide qui veut sortir. Et tu peux le remplacer par un mot qui élève au lieu d'écraser. C'est rare. C'est précisément pour ça que c'est précieux."
+    },
+    {
+      "id": "DHUHR-LANGUE-038",
+      "titre": "L'écharpe arrachée",
+      "type_narratif": "PARABOLE_INVENTEE",
+      "source": "Création littéraire originale pour Niyyah.",
+      "verif_imam": false,
+      "texte": "On raconte qu'un homme du désert avait promis à sa fiancée, le jour de leurs accordailles, qu'il lui rapporterait, lors de son prochain voyage, une écharpe brodée — la plus belle qu'il trouverait au marché de Damas.\n\nIl partit. Il traversa le désert. Il arriva à Damas. Il vit, dans un marché, une écharpe magnifique, tissée d'or, brodée à la main. Mais elle était chère. Plus chère que ce qu'il avait prévu.\n\nIl hésita. Il pensa à sa fiancée. Il pensa à sa promesse. Il acheta l'écharpe.\n\nSur le chemin du retour, il rencontra un caravanier qui marchandait des dattes. L'homme avait soif. Il négocia. Pour économiser, il proposa l'écharpe en échange d'un sac de dattes et d'eau. L'écharpe lui sembla, à cet instant, moins précieuse que sa soif.\n\nLe caravanier accepta. L'homme repartit avec ses dattes.\n\nIl arriva chez sa fiancée. Elle lui demanda : « As-tu pensé à moi pendant ton voyage ? »\n\nIl répondit : « Bien sûr. »\n\n« As-tu rapporté ce que tu m'avais promis ? »\n\nIl mentit : « Le marché était vide. Il n'y avait rien. »\n\nElle baissa les yeux. Elle ne dit rien.\n\nDes années plus tard, ils étaient mariés. Un jour, à un mariage dans une ville voisine, sa femme aperçut, autour du cou d'une autre femme, une écharpe brodée d'or. Elle la reconnut — l'écharpe correspondait exactement à ce que son mari, jeune, avait juré de lui rapporter. Elle interrogea la femme. La femme expliqua : son mari, caravanier, l'avait reçue en échange d'un sac de dattes, dans le désert, des années plus tôt.\n\nLa femme rentra chez elle. Elle ne dit rien à son mari. Mais ce soir-là, et tous les soirs qui suivirent, quelque chose entre eux se fendit imperceptiblement.\n\nIl n'avait pas tenu une promesse. Il avait menti pour la cacher. Il avait pensé que c'était un détail oublié. Mais une promesse rompue à voix basse devient, à voix basse, un grain de sable entre deux cœurs qui essaient de marcher ensemble.",
+      "morale": "Les grandes ruptures dans les couples ne viennent presque jamais de grandes trahisons. Elles viennent de petites promesses non tenues, de petits mensonges pour les couvrir, de mille grains de sable accumulés au fil des années. Cet après-midi, si tu as promis quelque chose à quelqu'un — ta femme, ton mari, tes enfants, un ami, un collègue — et que tu sens que tu vas y faillir : ne mens pas pour cacher. Dis la vérité, même maladroite. Une promesse rompue se réparera. Un mensonge ne se répare jamais — il s'accumule."
+    },
+    {
+      "id": "DHUHR-LANGUE-039",
+      "titre": "L'homme qui pardonnait avant de dormir",
+      "type_narratif": "HISTOIRE_PROPHETIQUE",
+      "source": "Hadith rapporté par Ahmad ibn Hanbal (Musnad) et al-Bazzâr selon Anas ibn Mâlik, classé hasan par plusieurs savants contemporains. Hadith célèbre sur l'homme désigné comme habitant du Paradis. Variantes de détails dans la transmission — l'essentiel est conforme aux versions transmises.",
+      "verif_imam": true,
+      "texte": "Anas ibn Mâlik rapporte qu'un jour, dans une assemblée, le Messager d'Allâh ﷺ regarda autour de lui et dit, en désignant un homme qui entrait : « Voici un homme du peuple du Paradis. »\n\nLes Compagnons regardèrent. L'homme désigné n'avait rien d'extraordinaire à leurs yeux. Il priait, il jeûnait, il faisait l'aumône — comme eux. Il n'était ni des plus savants, ni des plus dévots en apparence.\n\nʿAbdullâh ibn ʿAmr, intrigué, décida d'enquêter. Il demanda à l'homme de l'héberger trois nuits, sous prétexte d'une dispute fictive avec son père qui l'empêchait de rentrer chez lui.\n\nL'homme accepta de bon cœur.\n\nPendant trois nuits, ʿAbdullâh observa tout. Il vit l'homme prier, mais pas plus qu'un autre. Il vit l'homme jeûner certains jours, mais pas spécialement. Rien ne sortait du commun.\n\nAu matin de la troisième nuit, ʿAbdullâh, presque déçu, avoua à son hôte la vérité. Il dit : « Le Messager d'Allâh ﷺ t'a désigné comme un homme du Paradis. Je voulais savoir ce que tu fais de spécial. Je n'ai rien vu. Dis-moi — quelle est ton œuvre ? »\n\nL'homme réfléchit un instant. Il dit : « Mes œuvres sont celles que tu as vues. Rien de plus. Sauf une chose, peut-être : avant de m'endormir chaque soir, je pardonne, dans mon cœur, à tous ceux qui m'ont fait du tort dans la journée. Je ne garde rien contre personne. Je m'endors le cœur vide de tout grief envers qui que ce soit. Peut-être est-ce cela ? Je ne sais pas. »\n\nʿAbdullâh comprit. Et il dit : « C'est cela qui t'a élevé au-dessus de nous. »",
+      "morale": "Ce n'est pas la quantité de prières qui distingue, à un certain niveau. C'est l'état du cœur au moment où la nuit tombe. Le musulman qui s'endort en gardant des griefs contre untel, en ressentant de la rancune envers tel autre, en ressassant ce qu'on lui a fait — porte un poids qui s'accumule. Cet après-midi, à Maghrib, à ʿIshâ', avant de dormir : passe en revue tes blessures de la journée. Pardonne dans ton cœur. Vide. Endors-toi léger. C'est peut-être par cette habitude simple que se gagnent les degrés les plus élevés."
+    },
+    {
+      "id": "DHUHR-LANGUE-040",
+      "titre": "Le post LinkedIn qu'on n'écrit pas",
+      "type_narratif": "SCENE_CONTEMPORAINE",
+      "source": "Scène fictive contemporaine. Création littéraire pour Niyyah.",
+      "verif_imam": false,
+      "texte": "Ilyas venait de se faire évincer d'un projet sur lequel il avait passé deux ans. Son ancien chef de projet, qu'il avait personnellement formé, avait pris sa place — avec, semblait-il, le soutien tacite de la direction. Ilyas l'avait appris la veille, par hasard, lors d'une conversation avec une collègue.\n\nIl ouvrit LinkedIn ce mardi matin. Il commença à taper un post. Il en avait l'expérience — il savait formuler les choses pour que ça pique sans accuser directement.\n\n« Une réflexion sur ce qu'est devenu le management dans la tech française. Quand un junior qu'on a formé pendant deux ans devient l'héritier qu'on n'a pas vu venir. Sans rancune, mais... »\n\nIl s'arrêta. Il relut. Il sentit le frisson — celui qu'on a quand on s'apprête à publier un texte qui va recevoir des likes mais brûler des ponts.\n\nIl continua à écrire, plus précis, plus mordant. Il nomma à demi-mots. Tout son réseau professionnel comprendrait. Son ancien chef, à coup sûr, comprendrait. La direction comprendrait.\n\nSa main resta sur le bouton « Publier ».\n\nIl se leva. Il alla faire le wudu. Pas pour prier — c'était 10h47, pas l'heure. Juste pour ralentir. L'eau froide sur le visage. L'eau froide sur les bras. Il revint à son bureau.\n\nIl relut le post. À froid.\n\nIl vit deux choses qu'il n'avait pas vues à chaud. Premièrement : le post le faisait passer pour l'aigri, pas pour la victime. Deuxièmement : il révélait précisément à toute son industrie qu'il avait été remplacé. Ce que la majorité de son réseau ne savait même pas. En cherchant à blesser un homme, il allait surtout publier sa propre défaite à 2 800 contacts.\n\nIl supprima le brouillon.\n\nÀ la place, il ferma LinkedIn, ouvrit son CV, et passa la matinée à postuler ailleurs. Trois mois plus tard, il avait un nouveau poste — plus intéressant, mieux payé, dans une boîte qui respectait son travail.\n\nIl n'a jamais publié le post. Personne ne sut. Et c'est précisément pour ça que sa nouvelle vie démarra propre.",
+      "morale": "Les réseaux sociaux ont inventé une nouvelle forme de médisance : celle qui s'habille en « réflexion personnelle », en « expérience partagée », en « lanceur d'alerte ». On nomme à demi-mots, on pique avec des hashtags, on règle ses comptes en likes. Le musulman, à l'ère numérique, a la responsabilité de reconnaître ces déguisements. Cet après-midi, avant de publier un post, un thread, un commentaire qui vise même de loin une personne identifiable : passe-le au triple filtre — vrai, utile, bienveillant. Si l'un saute, supprime. Tes 2 800 contacts ne valent pas ton registre."
+    },
+    {
+      "id": "DHUHR-LANGUE-041",
+      "titre": "Junayd et l'élève qui colportait",
+      "type_narratif": "SALAF",
+      "source": "Récit issu de la tradition soufie sur Junayd al-Baghdâdî, grand maître spirituel du IIIe siècle de l'Hégire. Variantes multiples dans la littérature de tasawwuf (Risâla de Qushayrî, Hilyat al-Awliyâ' d'Abû Nu'aym). Précision de dialogue à confirmer.",
+      "verif_imam": true,
+      "texte": "Junayd al-Baghdâdî, maître spirituel de Bagdad, recevait chaque jour un groupe d'élèves dans une petite chambre de sa maison. Parmi eux, un jeune homme prometteur, doué d'une mémoire exceptionnelle, qui retenait tout ce que le maître disait. Mais ce jeune homme avait un défaut : il rapportait à Junayd, à voix basse, ce que les autres élèves disaient entre eux dans la cour, dans la rue, à la sortie des assemblées.\n\nIl pensait servir le maître. Il pensait l'aider à connaître ses disciples, à voir qui était sincère et qui ne l'était pas. Il livrait, presque chaque soir, des bouts d'informations : « Untel a dit que vos enseignements sont trop secs en ce moment. » « Untel ne vous a pas suivi sur tel point. » « Untel doute. »\n\nJunayd l'écoutait, sans réagir. Pendant des semaines.\n\nUn soir, le jeune homme arriva avec une livraison particulièrement chargée. Il s'assit, satisfait, et commença : « Maître, vous ne croirez pas ce qu'untel a dit aujourd'hui... »\n\nJunayd leva la main. Il dit : « Mon fils, arrête-toi. Tu viens chez moi depuis quatre mois. Pendant ces quatre mois, tu m'as rapporté beaucoup de paroles d'autres. Beaucoup. Tu n'as jamais ramené avec toi UNE bénédiction sur eux. Pas une seule. Toujours leurs faiblesses. Toujours leurs doutes. »\n\nLe jeune homme rougit.\n\nJunayd continua : « Sache que celui qui vient chez moi pour me rapporter les paroles des autres, repartira chez les autres pour leur rapporter les miennes. Tu n'es pas mon œil dans la cour. Tu es la bouche qui défait, semaine après semaine, ce que ma bouche essaie de tisser. Je ne te chasse pas. Je te demande seulement : choisis. Ou tu deviens un transmetteur de bénédictions — tu rapportes le bien que tu vois chez tes frères. Ou tu pars. Mais tu ne resteras pas chez moi comme tu es. »\n\nLe jeune homme partit le soir même. On ne sait pas s'il revint changé. Mais on rapporte que d'autres élèves, ayant entendu la scène, comprirent ce jour-là pourquoi Junayd avait écouté en silence pendant quatre mois. Il attendait le bon moment.",
+      "morale": "Celui qui vient te rapporter les paroles des autres, repartira un jour rapporter les tiennes. C'est une loi presque physique : la bouche qui transmet ne s'arrête jamais à toi. Cet après-midi, si quelqu'un autour de toi a pour habitude de venir te livrer ce que disent les autres — collègue, ami, membre de la famille — sache que ce n'est pas par loyauté envers toi. C'est sa nature. Garde tes distances. Ne nourris pas son commerce. Et invoque, pour lui, qu'Allâh transforme sa bouche."
+    },
+    {
+      "id": "DHUHR-LANGUE-042",
+      "titre": "L'homme qui jura de ne plus jurer",
+      "type_narratif": "PARABOLE_INVENTEE",
+      "source": "Création littéraire originale pour Niyyah.",
+      "verif_imam": false,
+      "texte": "On raconte qu'un homme, à force de jurer par Allâh pour un oui ou pour un non, finit par se sentir mal à l'aise. Il jurait pour appuyer un prix au marché. Il jurait pour assurer une parole qu'il aurait dû dire simplement. Il jurait pour convaincre. Il jurait pour s'amuser. « Wallâh, j'ai pas mangé depuis ce matin. » « Wallâh, je viens demain. » « Wallâh, c'est trop bon. »\n\nUn vendredi, après la prière du jumuʿa, l'imam fit un sermon sur le respect du Nom d'Allâh dans les serments. Il dit : « Celui qui jure par Allâh dans les choses légères use son crédit dans les choses graves. Le Jour où tu auras vraiment besoin que ton serment pèse — il ne pèsera plus rien. Tu auras dévalué ta propre monnaie. »\n\nL'homme rentra chez lui. Il se demanda : combien de fois je jure dans une journée ?\n\nIl décida d'essayer une expérience. Il fit un serment — un seul, sincère, intérieur. Il dit, dans son cœur : « Allâhumma, je m'engage : pendant trente jours, je ne prononcerai pas une seule fois Ton Nom dans un serment ordinaire. Pas un wallâh. Pas un wallâhi. Pas un par-Allâh. Si je dois affirmer quelque chose, je dirai oui, ou non, ou je dirai la vérité simplement, sans m'appuyer sur Toi pour qu'on me croie. »\n\nIl commença le lendemain. Le premier jour, il faillit cinq fois. Le deuxième, trois. Le troisième, deux. La langue avait l'habitude. Elle prenait le mot tout seul.\n\nAu bout de la deuxième semaine, il y arriva presque entièrement. Il remarqua quelque chose : les gens commencèrent à le croire DAVANTAGE. Il ne jurait plus, mais sa simple parole, posée, calme, suffisait. Son « oui » était devenu un oui. Son « non » était devenu un non. Il n'avait plus besoin de convoquer le Ciel pour appuyer le quotidien.\n\nAu trentième jour, il continua. Il continua le reste de sa vie.",
+      "morale": "Plus tu invoques Allâh pour de petites choses, moins ton invocation pèse pour les grandes. Le musulman qui jure tout le temps perd la valeur de son serment exactement comme un pays qui imprime trop de monnaie. Cet après-midi, fais le test sur une semaine : aucun wallâh, aucun par-Allâh, aucun serment léger. Ta parole, simple, deviendra plus crédible. Et le jour où tu auras besoin d'un vrai serment pour défendre une vraie cause — il vaudra son poids."
+    },
+    {
+      "id": "DHUHR-LANGUE-043",
+      "titre": "Bilâl et le sobriquet",
+      "type_narratif": "HISTOIRE_PROPHETIQUE",
+      "source": "Récit célèbre rapporté dans la sîra et plusieurs collections de hadiths concernant Abû Dharr al-Ghifârî et Bilâl ibn Rabâh. Hadith proche dans Sahih al-Bukhârî (n° 30) où le Prophète ﷺ reproche à Abû Dharr d'avoir injurié quelqu'un par sa mère (« tu es un homme en qui il reste de la jâhiliyya »). À confirmer en audit final sur la formulation précise.",
+      "verif_imam": true,
+      "texte": "Abû Dharr al-Ghifârî, Compagnon réputé pour sa droiture mais à la langue parfois vive, eut un jour un différend avec Bilâl ibn Rabâh, l'ancien esclave abyssin devenu muezzin du Messager d'Allâh ﷺ.\n\nDans la chaleur de la discussion, Abû Dharr lui lança une insulte — il l'appela par un mot qui faisait référence à la couleur de sa peau ou à son origine, un mot que les Arabes utilisaient avant l'islam pour rabaisser. Il dit, en substance : « Ô fils de noire ! »\n\nBilâl, blessé, se rendit auprès du Prophète ﷺ et rapporta l'incident.\n\nLe Prophète ﷺ convoqua Abû Dharr. Quand celui-ci arriva, le visage du Messager d'Allâh ﷺ était sévère. Il lui dit, devant les Compagnons présents : « Ô Abû Dharr, l'as-tu insulté par sa mère ? Tu es un homme en qui il reste de la jâhiliyya. »\n\nLa parole fut un coup pour Abû Dharr. La jâhiliyya — l'ignorance d'avant l'islam — il croyait l'avoir laissée derrière lui. Et voilà que le Messager d'Allâh ﷺ lui disait qu'elle restait, comme une trace, dans sa façon de parler.\n\nAbû Dharr ne discuta pas. Il sortit de la mosquée immédiatement. Il rentra chez lui. Il prit Bilâl à part. Et là, ce Compagnon noble, plus âgé, vétéran de l'islam, posa sa joue par terre, devant Bilâl, et lui dit : « Bilâl, je ne me relèverai pas tant que tu n'auras pas posé ton pied sur mon visage. Je t'ai offensé. Pose ton pied. C'est ma seule façon de te demander pardon. »\n\nBilâl pleura. Il refusa de poser le pied. Mais il pardonna. Et l'on dit qu'à partir de ce jour, leur fraternité fut plus solide qu'elle n'avait jamais été — précisément parce qu'elle avait été cassée et réparée à fond.",
+      "morale": "Une parole qui rabaisse l'origine, la couleur, la classe, le pays, l'accent d'un frère — porte de la jâhiliyya en elle, peu importe qui la prononce. Le Prophète ﷺ a appelé cela jâhiliyya — un résidu d'ignorance qui n'a pas été nettoyé. Cet après-midi, observe les mots que tu emploies pour parler de ceux qui sont d'origines différentes — même en plaisantant, même entre amis. La plaisanterie qui rabaisse est de la jâhiliyya déguisée. Le musulman, s'il a glissé, ne discute pas — il se rend, comme Abû Dharr, et il répare. C'est un signe de grandeur, pas de faiblesse."
+    },
+    {
+      "id": "DHUHR-LANGUE-044",
+      "titre": "Le grain dans la balance",
+      "type_narratif": "PARABOLE_TRADITION",
+      "source": "Parabole sapientielle de tradition, variantes dans la littérature de raqâ'iq. Patrimoine anonyme à visée pédagogique.",
+      "verif_imam": false,
+      "texte": "On raconte qu'au Jour du Jugement, un homme se présenta devant la balance. Il portait avec lui le sac de ses œuvres. Il était inquiet. Il savait que sa vie n'avait pas été exemplaire. Il avait prié, mais pas toujours. Il avait jeûné, mais pas avec ferveur. Il avait fait l'aumône, mais avec parcimonie.\n\nQuand on versa son sac sur le plateau du bien, le plateau pencha légèrement, mais sans conviction. L'homme baissa la tête. Il s'attendait au pire.\n\nOn versa ensuite ses fautes sur l'autre plateau. Et là, le plateau pencha fortement. Le mauvais côté l'emportait.\n\nL'homme sentit ses jambes lâcher.\n\nMais alors qu'il s'apprêtait à pleurer, un ange s'avança avec un petit pli, un papier roulé, et le déposa sur le plateau du bien. Ce simple petit pli fit basculer la balance. Le plateau du bien descendit. L'homme fut sauvé.\n\nIl demanda, tremblant : « Qu'est-ce qui était écrit sur ce papier ? »\n\nL'ange déroula le pli et lut : « Un jour, dans ta vie, tu as appris une chose mauvaise sur un de tes frères. Tu aurais pu la répandre. Cela aurait fait rire une assemblée. Cela t'aurait fait briller. Tu as choisi de te taire. Tu l'as porté en toi sans le dire à personne. Allâh, qui a vu ce silence, l'a inscrit pour toi sur ce papier. Et ce silence-là, à lui seul, vient de te sauver de l'Enfer. »\n\nL'homme tomba en larmes. Il dit : « Je n'avais même pas conscience d'avoir fait quelque chose. »\n\nL'ange sourit : « C'est précisément pour cela que ça pèse. Tu ne l'as pas fait pour qu'on le voie. Tu l'as fait parce que tu craignais Allâh. »",
+      "morale": "Les silences gardés sur les autres pèsent davantage, dans la balance d'Allâh, que beaucoup d'œuvres visibles. Quand tu te tais sur ce que tu sais d'un frère — un défaut, un péché, un secret embarrassant — ce silence n'est inscrit nulle part chez les hommes. Mais il est inscrit là où ça compte. Cet après-midi, chaque fois que tu pourrais dire quelque chose de blessant sur quelqu'un et que tu choisis de te taire — ne pense pas que c'est rien. C'est peut-être ce qui te sauvera quand ton sac sera vidé sur la balance."
+    },
+    {
+      "id": "DHUHR-LANGUE-045",
+      "titre": "Le vieil homme qui apprenait à se taire",
+      "type_narratif": "SCENE_CONTEMPORAINE",
+      "source": "Scène fictive contemporaine. Création littéraire pour Niyyah.",
+      "verif_imam": false,
+      "texte": "Monsieur Rachid avait soixante-douze ans. Il avait pris sa retraite quelques mois plus tôt. Pendant quarante ans, il avait été chef d'équipe dans une usine textile. Pendant quarante ans, il avait dirigé, commenté, jugé, corrigé, encouragé ou réprimandé. Il parlait beaucoup. C'était son métier.\n\nÀ la retraite, il se retrouva chez lui, avec sa femme. Et il continua. Il commentait tout. Le programme de la télé. Le voisin du dessus. La vendeuse de la boulangerie. La conduite des automobilistes. Le petit-fils qui ne venait pas assez. Le gendre qui faisait tel choix.\n\nSa femme, qui l'aimait tendrement, lui dit un soir, à voix douce : « Rachid, depuis que tu es à la retraite, tu parles trois fois plus qu'avant. Et tu parles surtout des autres. Tu n'avais pas le temps à l'usine. Là, tu rattrapes. »\n\nIl s'apprêta à répliquer. Il se retint. Il ne dit rien.\n\nIl alla se coucher en pensant à ce qu'elle avait dit. Il avait soixante-douze ans. Combien d'années lui restait-il ? Cinq ? Dix ? Quinze ? Et il voulait les passer à juger le boulanger et les automobilistes ?\n\nLe lendemain, il prit une décision. Il s'acheta un petit carnet. Sur la première page, il écrivit : « Apprendre à me taire. »\n\nPendant trois mois, chaque soir, il notait : combien de fois il avait parlé d'un absent ? Combien de fois il avait commenté quelqu'un ? Combien de fois il avait jugé ?\n\nLe premier mois, les pages étaient pleines.\n\nLe deuxième mois, elles se vidaient.\n\nLe troisième mois, il y avait des soirs où la page restait blanche.\n\nIl mourut quatre ans plus tard. Sa femme retrouva le carnet dans sa table de chevet. La dernière page disait simplement : « J'ai mis quarante ans à parler trop. Allâh m'a donné quatre ans pour réapprendre à me taire. Si j'avais su, j'aurais commencé plus tôt. »\n\nElle le déposa dans son cercueil. Personne n'en parla. Mais elle savait, elle, qu'il était parti en paix.",
+      "morale": "Il n'est jamais trop tard pour réapprendre à se taire. Beaucoup de gens vivent des décennies dans le bavardage et se rendent compte sur le tard que la vie aurait pu être plus dense, plus profonde, plus belle, avec moins de mots. Cet après-midi, peu importe ton âge — vingt-cinq ans ou soixante-douze — pose-toi la question : sur les dix dernières conversations que j'ai eues, combien étaient nécessaires ? Le travail commence aujourd'hui. La page de demain peut commencer à se vider."
+    },
+    {
+      "id": "DHUHR-LANGUE-046",
+      "titre": "« Qu'est-ce que la médisance ? »",
+      "type_narratif": "HISTOIRE_PROPHETIQUE",
+      "source": "Hadith rapporté par Muslim (Sahih, n° 2589), at-Tirmidhî (n° 1934), Abû Dâwûd (n° 4874) selon Abû Hurayra. L'un des hadiths fondateurs de la définition de la ghîba en islam.",
+      "verif_imam": true,
+      "texte": "Le Messager d'Allâh ﷺ s'adressait à un groupe de Compagnons. Il leur posa une question, à la manière dont il aimait enseigner — par la question avant l'enseignement.\n\nIl dit : « Savez-vous ce qu'est la médisance ? »\n\nIls répondirent : « Allâh et Son Messager savent mieux. »\n\nIl dit : « C'est mentionner ton frère par ce qu'il déteste. »\n\nUn homme dans l'assemblée demanda : « Ô Messager d'Allâh, et si ce que je dis de lui est vrai ? »\n\nLe Prophète ﷺ répondit : « Si ce que tu dis de lui est vrai, c'est de la médisance. Si ce que tu dis de lui est faux, alors c'est de la calomnie — et c'est encore pire. »\n\nLa réponse tomba comme une porte qui se ferme.\n\nLe Compagnon — et avec lui tous ceux qui écoutaient — comprit ce jour-là quelque chose qui allait restructurer toute leur façon de parler des autres pour le reste de leur vie.\n\nIls avaient pensé, comme la plupart des hommes, que la médisance se définissait par le mensonge. « Je peux dire ce qu'il a vraiment fait, ce que tout le monde a vu, ce qui est de notoriété publique — puisque c'est vrai. »\n\nLe Prophète ﷺ leur dit : non. C'est l'inverse. La médisance n'est pas définie par la fausseté du contenu, mais par le déplaisir de la personne mentionnée. Si tu dis d'elle, en son absence, quelque chose qu'elle n'aimerait pas entendre — peu importe si c'est vrai ou faux — c'est interdit.\n\nLa vérité ne te donne aucun droit sur l'honneur d'un absent. Au contraire, c'est précisément quand c'est vrai que tu touches sa vraie blessure.",
+      "morale": "« Mais c'est vrai ! » est l'excuse la plus utilisée pour justifier la médisance. C'est aussi celle que le Prophète ﷺ a explicitement démolie. Le fait que ce soit vrai ne te donne pas le droit de le dire. La vérité sur autrui, en son absence, devant un public qui ne lui veut pas que du bien, est de la médisance — et ce n'est PIRE que de l'inventer. Cet après-midi, la prochaine fois que tu t'apprêtes à dire quelque chose de quelqu'un en te disant « mais c'est la vérité, j'ai le droit » — souviens-toi : non. Justement pas. C'est précisément ce que le hadith vient interdire."
+    },
+    {
+      "id": "DHUHR-LANGUE-047",
+      "titre": "Sufyân ath-Thawrî et le calife",
+      "type_narratif": "SALAF",
+      "source": "Récit issu de la tradition biographique sur Sufyân ath-Thawrî (grand savant et imam de Kufa), rapporté dans Siyar A'lâm an-Nubalâ' de Dhahabi et dans Hilyat al-Awliyâ' d'Abû Nu'aym. Variantes de détails — la position de Sufyân vis-à-vis des califes abbassides est largement documentée. Précision de dialogue à confirmer.",
+      "verif_imam": true,
+      "texte": "Le calife abbasside, ayant entendu parler de la science et de la piété de Sufyân ath-Thawrî, voulut l'attirer à sa cour. Il envoya plusieurs messagers, offrit honneurs et richesses. Sufyân refusait à chaque fois.\n\nUn jour, le calife réussit à le faire venir pour une audience exceptionnelle. Sufyân se présenta. L'assemblée du palais était nombreuse : ministres, juges, notables, courtisans. Tous attendaient de voir comment ce savant ascétique allait se comporter face au prince des croyants.\n\nLe calife, voulant marquer le coup, demanda à Sufyân : « Ô Sufyân, donne-moi un conseil devant cette assemblée. Quelque chose qui m'élèvera. »\n\nSufyân savait que beaucoup de savants, en cette occasion, auraient flatté. Il connaissait les usages. Il connaissait aussi le pouvoir mortel des califes de son temps.\n\nIl dit, à voix posée : « Ô prince des croyants, je vais te dire trois choses, et je te demande de ne pas m'interrompre. Premièrement : tes courtisans, dans cette assemblée, t'ont rapporté du mal des autres pour t'obtenir des faveurs. Sache que celui qui te rapporte le mal des absents, te rapportera demain ton mal aux absents. Ne le crois pas. Et ne l'aime pas. »\n\nLe calife resta silencieux.\n\n« Deuxièmement : ne juge personne sur ce qu'on te rapporte de lui sans l'avoir entendu se défendre. Allâh, au Jour du Jugement, donnera à chaque homme l'occasion de répondre. Si Allâh fait cela, comment toi, prince mortel, te permettrais-tu de moins ? »\n\nL'assemblée n'osait plus respirer.\n\n« Troisièmement : et c'est le plus important. Ferme ta porte aux délateurs. Pas seulement les délateurs des autres — ferme aussi ta porte à toi-même quand tu te surprends à juger sans savoir. Ta langue, prince des croyants, peut emporter des têtes que des armées n'auraient pas emportées. Garde-la. »\n\nLe calife pâlit. Mais il dit, après un long silence : « Tu peux partir. Tu as dit la vérité. Allâh seul sait si je l'écouterai. »\n\nSufyân sortit. Il rentra à Kufa le jour même. Il ne revint jamais à la cour.",
+      "morale": "Celui qui te rapporte le mal des autres est, par nature, celui qui rapportera ton mal aux autres. C'est une loi. Cet après-midi, dans ton entourage — professionnel, familial, amical — observe : qui passe sa vie à te transmettre ce que les autres disent et font ? Cette personne, peu importe l'affection qu'elle te porte, n'est pas sûre. Ce n'est pas du jugement — c'est de la lucidité. Garde tes distances. Ne nourris pas sa pratique. Et si tu peux, par une parole douce, l'arrêter dans son métier de délateur — tu lui auras peut-être sauvé la vie spirituelle."
+    },
+    {
+      "id": "DHUHR-LANGUE-048",
+      "titre": "Les deux jardins du voisin",
+      "type_narratif": "PARABOLE_INVENTEE",
+      "source": "Création littéraire originale pour Niyyah.",
+      "verif_imam": false,
+      "texte": "On raconte que deux voisins vivaient côte à côte, séparés par un mur bas. Chacun avait un jardin. Pendant des années, ils ne se parlèrent pas — un vieux différend, oublié dans ses origines, gardé dans ses conséquences.\n\nLe premier voisin, chaque matin, regardait par-dessus le mur. Il voyait les défauts du jardin d'à côté : une mauvaise herbe ici, un arbre mal taillé là, une parcelle laissée à l'abandon. Il en parlait à sa femme, à ses enfants, à ses propres invités. « Tu as vu ce qu'il fait avec son jardin ? Quelle catastrophe. » Au bout des années, dans tout le quartier, le voisin avait une réputation : on disait que son jardin était mal tenu.\n\nLe deuxième voisin, lui, regardait aussi par-dessus le mur — mais il voyait autre chose. Il voyait le rosier qui fleurissait au coin. Il voyait l'olivier centenaire que son voisin avait conservé. Il voyait l'effort d'un homme qui essayait, même mal, de faire pousser quelque chose. Il en parlait à sa femme, à ses enfants, à ses invités. « Tu as vu son rosier ? Magnifique. Et il a sauvé l'olivier de son grand-père, ce qui n'est pas rien. » Au bout des années, dans tout le quartier, on disait que ce voisin avait, en plus du sien, un jardin que tout le monde admirait — par procuration.\n\nUn jour, les deux voisins moururent à quelques mois d'intervalle. Leurs jardins furent rachetés.\n\nLes héritiers du premier voisin trouvèrent, dans sa chambre, un cahier où il avait consigné, pendant trente ans, les défauts du jardin d'à côté. Ils brûlèrent le cahier.\n\nLes héritiers du deuxième voisin trouvèrent, dans la sienne, un cahier où il avait consigné, pendant trente ans, les beautés du jardin d'à côté. Ils gardèrent le cahier. Ils en firent un livre. Il fut publié et lu pendant des générations.\n\nDeux hommes. Le même mur. Le même jardin d'à côté. Deux vies. Et une postérité qui se joua sur où ils avaient choisi de poser leurs yeux.",
+      "morale": "Tu vois ce que tu cherches à voir. Si tu cherches les défauts des gens, tu en trouveras partout, et tu finiras par n'avoir qu'eux à raconter. Si tu cherches le bien, tu en trouveras aussi partout, et c'est cela qui sortira de ta bouche. Cet après-midi, observe : sur qui tu vas parler dans la prochaine heure, est-ce que tu vas raconter le rosier ou la mauvaise herbe ? L'œil que tu poses sur les autres détermine la parole que tu auras à leur sujet — et cette parole, à la longue, détermine qui tu deviens."
+    },
+    {
+      "id": "DHUHR-LANGUE-049",
+      "titre": "Umm Sulaym et la mort de l'enfant",
+      "type_narratif": "HISTOIRE_PROPHETIQUE",
+      "source": "Hadith rapporté par al-Bukhârî et Muslim selon Anas ibn Mâlik sur sa mère Umm Sulaym et le décès de son fils. Hadith authentique, célèbre dans la littérature de sabr et de tarbiya. Détails dialogués légèrement reconstitués.",
+      "verif_imam": true,
+      "texte": "Abû Talha avait un jeune fils, qu'il aimait par-dessus tout. Sa femme, Umm Sulaym, était une croyante d'une foi extraordinaire — Anas ibn Mâlik, leur fils aîné, l'a rapporté à toute la communauté.\n\nUn jour, l'enfant tomba gravement malade. Sa mère le veilla longtemps. Abû Talha, ce jour-là, était parti à la mosquée et avait des affaires en ville. Pendant son absence, l'enfant rendit l'âme dans les bras d'Umm Sulaym.\n\nElle pleura. Mais elle réfléchit. Elle savait son mari fragile sur ce point précis. Elle savait que s'il rentrait et apprenait la nouvelle de manière brutale, il serait dévasté pour des semaines.\n\nElle déposa l'enfant. Elle le recouvrit doucement. Elle ferma la porte de la chambre. Elle se prépara pour accueillir son mari — propre, parfumée, sereine en apparence.\n\nAbû Talha rentra. Il demanda : « Comment va l'enfant ? »\n\nElle répondit, avec un calme qui devait lui coûter immensément : « Il est plus apaisé qu'il ne l'a jamais été. »\n\nElle disait la vérité — l'enfant était en paix maintenant. Mais elle laissait à son mari le temps de respirer avant la nouvelle.\n\nElle lui servit le repas. Ils mangèrent ensemble. Plus tard dans la soirée, Abû Talha, reposé, allait dormir.\n\nElle lui dit alors : « Mon époux, j'ai une question pour toi. Si des gens prêtent à d'autres un objet précieux, et qu'ils viennent un jour le réclamer — les autres ont-ils le droit de refuser de le rendre ? »\n\nIl répondit : « Bien sûr que non. Ce qui est prêté doit être rendu. »\n\nElle dit alors : « Allâh nous avait prêté notre fils. Aujourd'hui, Il l'a rappelé. Loue Allâh, mon époux. »\n\nAbû Talha comprit. Il fut frappé. Il pleura. Mais grâce à la façon dont elle avait choisi ses mots — patience d'abord, vérité ensuite, sagesse pour cadrer la nouvelle — il put pleurer en croyant, et non en se brisant.\n\nLe Messager d'Allâh ﷺ, en apprenant la sagesse de cette nuit-là, invoqua pour eux. De cette nuit naquit un autre fils, qui grandit pieux, et dont la lignée donna plusieurs savants de la communauté.",
+      "morale": "La même nouvelle peut briser ou élever, selon les mots qui l'enveloppent. Le musulman sait choisir le moment, le ton, le cadre, pour annoncer une chose dure à un cœur qu'il aime. Cet après-midi, si tu as une nouvelle difficile à donner — un licenciement, une perte, une décision dure — réfléchis. Prépare. Trouve le bon moment. Trouve les bons mots. Ce n'est pas de la manipulation. C'est de la miséricorde envers ceux qui te sont confiés. Umm Sulaym a sauvé son mariage et son foyer cette nuit-là, par une seule phrase bien posée. Apprends d'elle."
+    },
+    {
+      "id": "DHUHR-LANGUE-050",
+      "titre": "Le bilan final",
+      "type_narratif": "PARABOLE_TRADITION",
+      "source": "Création-conclusion en clôture de catégorie. S'appuie sur l'ensemble des hadiths et versets concernant la pesée des paroles au Jour du Jugement (notamment Coran 50:18, et plusieurs hadiths sur la balance des œuvres et des paroles). Composition libre à visée pédagogique.",
+      "verif_imam": false,
+      "texte": "On raconte qu'à la fin d'une vie, chaque homme est conduit dans un grand vestibule, avant d'être présenté à la balance. Dans ce vestibule, il y a une seule chose : un mur immense, couvert du sol au plafond.\n\nSur ce mur sont projetées, en lumière, toutes les paroles que cet homme a prononcées dans sa vie. Toutes. Pas seulement les graves. Toutes.\n\nIl voit défiler les conversations de sa jeunesse, les disputes de sa vingtaine, les blagues lancées en groupe, les paroles dites à ses parents, à ses enfants, à sa femme. Il voit les mails. Il voit les vocaux WhatsApp. Il voit les messages effacés mais jamais perdus. Il voit ce qu'il a dit aux funérailles d'un proche. Il voit ce qu'il a marmonné en colère seul dans sa voiture, devant Allâh qui l'entendait.\n\nLes paroles sont triées en trois colonnes, à mesure qu'elles défilent.\n\nColonne de droite, en or : les paroles utiles. Les rappels d'Allâh. Les bénédictions. Les enseignements. Les mots de réconfort. Les vérités dites avec douceur. Les silences gardés au bon moment, qui comptent comme des paroles d'or non-prononcées.\n\nColonne du milieu, neutre : les paroles ordinaires. Les transactions. Les salutations. Les conversations sans conséquence.\n\nColonne de gauche, en noir : les médisances. Les calomnies. Les mensonges. Les serments légers. Les paroles dures dites en colère. Les jugements sur les absents. Les blagues qui blessaient. Les mots oubliés à l'instant même où ils sortaient, mais qui s'étaient inscrits ailleurs.\n\nL'homme regarde, longtemps. Il voit toute sa vie en lumière. Il comprend, enfin, ce qu'il avait construit. Et ce qu'il avait détruit.\n\nIl est ensuite emmené vers la balance.\n\nMais avant que la lumière du vestibule s'éteigne, une voix lui dit doucement, comme un dernier avertissement adressé à ceux qui regardent depuis l'autre côté du temps : « Ceux qui sont encore vivants ne savent pas qu'ils écrivent leur mur chaque jour. S'ils savaient, ils écriraient mieux. »",
+      "morale": "Cette histoire est la dernière de la série sur la langue, et elle est faite pour rester avec toi. Cet après-midi, à Maghrib, à ʿIshâ', à chaque pause de la journée — pense au mur. Il s'écrit en ce moment même. Aucune parole n'y manque. Aucune n'y sera ajoutée que tu n'aies prononcée. Tu n'as aucun contrôle sur ce qui est déjà inscrit. Mais tu as TOUT contrôle sur ce qui s'écrit à partir du prochain mot. Le mur attend ta prochaine phrase. Choisis-la bien."
+    }
+  ]
+}
