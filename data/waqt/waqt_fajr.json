@@ -1,1840 +1,2075 @@
 {
   "metadata": {
     "priere": "fajr",
-    "version": "v2.0",
+    "version": "v2.1",
     "date_audit": "2026-05-25",
     "tagline_fr": "Une minute pour réveiller doucement le cœur avant que le monde ne s'empare de lui.",
     "tagline_concept": "Coach matinal + carrefour vers les modules Niyyah + sanctification du quotidien",
     "mission": "Inciter à amasser des hasanât, structurer la routine du croyant, imprégner d'islam le quotidien le plus concret",
-    "sous_types": [
-      {"code": "FAJR-CARREFOUR", "volume": 90, "role": "Renvoyer vers les modules Niyyah (Pratique, Coran, Sîra, Du'âs, Tafakkur, Hadiths, Fiqh, Récits)"},
-      {"code": "FAJR-QUOTIDIEN", "volume": 73, "role": "Sunnah du matériel (manger, boire, s'habiller, marcher, dormir)"},
-      {"code": "FAJR-OBJECTIF", "volume": 54, "role": "Objectif de hasanah à atteindre aujourd'hui"},
-      {"code": "FAJR-MOTIVATION", "volume": 36, "role": "Récompenses, multiplication des hasanât"},
-      {"code": "FAJR-TACTIQUE", "volume": 36, "role": "Astuces concrètes pour amasser des hasanât facilement"},
-      {"code": "FAJR-RAPPEL", "volume": 30, "role": "Urgence du temps qui passe"},
-      {"code": "FAJR-CONSCIENCE", "volume": 25, "role": "Valeur d'un acte, importance du choix"},
-      {"code": "FAJR-ARRIVÉE", "volume": 21, "role": "Le souffle rendu, gratitude au matin"}
+    "changelog_v2_1": [
+      "130 phrases CARREFOUR refondues : zéro publicité, zéro 'Niyyah a...', verbes d'action directs",
+      "Tous les modules réels de Niyyah désormais référencés (Wird, Tafakkur, Hadith, Du'a, Fiqh, Coran, Sîra, Récits, Savais-tu, Compagnons, Prophètes, Bab an-Nafs, Scanner, Orbe, Défi, Muhâsaba)",
+      "Module Regards explicitement exclu (surprise automatique, non déclenchable)",
+      "Défi correctement présenté comme HEBDOMADAIRE (pas quotidien)",
+      "Modules ajoutés : Savais-tu, Compagnons, Prophètes, Bab an-Nafs, Scanner, Orbe, Défi, Muhâsaba (oubliés en v2)"
     ],
-    "total_phrases": 361,
-    "audit_theologique": {
-      "methode": "Filtrage strict par Claude (limites assumées)",
-      "phrases_retirees": 4,
-      "phrases_reformulees": 50,
-      "phrases_validees_brut": 311,
-      "validation_imam_recommandee": true
-    },
+    "sous_types": [
+      {
+        "code": "FAJR-CARREFOUR",
+        "volume": 130,
+        "role": "Renvoyer vers les modules Niyyah - SANS publicité, action directe"
+      },
+      {
+        "code": "FAJR-QUOTIDIEN",
+        "volume": 81,
+        "role": "Sunnah du matériel (manger, boire, s'habiller, marcher, dormir)"
+      },
+      {
+        "code": "FAJR-OBJECTIF",
+        "volume": 54,
+        "role": "Objectif de hasanah à atteindre aujourd'hui"
+      },
+      {
+        "code": "FAJR-MOTIVATION",
+        "volume": 32,
+        "role": "Récompenses, multiplication des hasanât"
+      },
+      {
+        "code": "FAJR-TACTIQUE",
+        "volume": 37,
+        "role": "Astuces concrètes pour amasser des hasanât facilement"
+      },
+      {
+        "code": "FAJR-RAPPEL",
+        "volume": 29,
+        "role": "Urgence du temps qui passe"
+      },
+      {
+        "code": "FAJR-CONSCIENCE",
+        "volume": 21,
+        "role": "Valeur d'un acte, importance du choix"
+      },
+      {
+        "code": "FAJR-ARRIVÉE",
+        "volume": 17,
+        "role": "Le souffle rendu, gratitude au matin"
+      }
+    ],
+    "total_phrases": 401,
     "regles_editoriales": [
       "Aucune phrase ne juge ou ne désigne 'les autres'",
       "L'utilisateur est confronté à lui-même, pas comparé à autrui",
       "L'étrangeté du croyant est INTÉRIEURE, jamais comparative",
       "Sources prophétiques uniquement parmi les 6 livres + Hâkim/Ibn Hibbân",
+      "CARREFOUR : verbe d'action direct, jamais de 'Niyyah a' ni de chiffre marketing",
+      "CARREFOUR : ne mentionne JAMAIS les modules surprise (Regards)",
       "Tout appel à l'action, jamais de murmure poétique sans incarnation"
-    ]
+    ],
+    "validation_imam_recommandee": true
   },
   "phrases": [
     {
       "id": "FAJR_001",
-      "fr": "Les adhkâr du matin protègent jusqu'au soir. Niyyah te les a classés par moment. Fais-en au moins 3 avant le lever du soleil. C'est le bouclier de ta journée.",
+      "fr": "Avant le lever du soleil, ouvre le Wird du matin. Les adhkâr authentifiés que le Prophète ﷺ disait à l'aube. Bouclier pour ta journée.",
       "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_002",
-      "fr": "Une seule page de Coran lue avec présence pèse plus qu'une heure de scroll. Niyyah garde la page où tu t'es arrêté. Reprends-la aujourd'hui à 13h.",
+      "fr": "Ce soir à 17h, ouvre le Wird du soir. Sécurité pour la nuit promise par la sunnah. Pose-toi 10 minutes.",
       "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_003",
-      "fr": "Le Prophète ﷺ a vécu 23 ans de mission. Niyyah te fait découvrir un moment de sa vie chaque jour. As-tu lu celui d'aujourd'hui ? Si non, c'est ton hasanah de 10h.",
+      "fr": "Le Wird du matin tient en 10-15 minutes. Investis-les. Tu rachètes les heures de scroll qui suivront.",
       "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_004",
-      "fr": "99 noms d'Allah. Combien connais-tu vraiment ? Niyyah te les fait découvrir un par un. Aujourd'hui, médite-en UN seul. Cette nuit, tu sauras quelque chose que tu ne savais pas ce matin.",
+      "fr": "Aujourd'hui, fais le Wird du matin LENTEMENT. Pas à la vitesse de l'habitude — à la vitesse de la présence. UN passage compris vaut dix récités sans cœur.",
       "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_005",
-      "fr": "Tu connais ta prière. Mais connais-tu tous les détails de ton wudu ? Niyyah a un point de fiqh quotidien. 30 secondes pour apprendre quelque chose dont tu ignorais l'existence.",
+      "fr": "Si tu rates le Wird du matin, fais-le quand tu te souviens. Le Prophète ﷺ a dit : « Quand vous oubliez, faites-le quand vous vous rappelez. » (Bukhari) La sunnah te rattrape.",
       "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_006",
-      "fr": "Le Prophète ﷺ aimait manger des dattes à jeun (Bukhari). Cherche-en aujourd'hui. La sunnah du matin commence par ce qu'on met dans son corps.",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Le Wird du soir efface ce que la journée a sali. Ouvre-le aujourd'hui même si tu es fatigué. Surtout si tu es fatigué.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_007",
-      "fr": "Avant de franchir ta porte ce matin, dis : « Bismillâh, tawakkaltu 'alâ Allâh, lâ hawla wa lâ quwwata illâ billâh. » Niyyah te montre la formule complète. 3 secondes. Protection pour toute la sortie.",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Aujourd'hui, ajoute UN nouveau dhikr à ton Wird du matin. Pas tout le Wird — UN dhikr supplémentaire que tu n'avais jamais mémorisé. Dans 1 mois, ton Wird est plus riche.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_008",
-      "fr": "Le Prophète ﷺ a dit : « Le repas pour deux suffit à trois. Le repas pour trois suffit à quatre. » (Bukhari) C'est ça la barakah. Et elle commence par Bismillah avant la première bouchée.",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Le Prophète ﷺ disait que les adhkâr du matin entrent le serviteur dans la protection d'Allâh (sens de plusieurs hadiths). Aujourd'hui, entre dans cette protection avant 7h.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_009",
-      "fr": "Aujourd'hui, bois assis, en 3 gorgées, en disant Bismillah avant et Alhamdulillah après. C'est la sunnah du Prophète ﷺ. Multiplie par le nombre de fois où tu bois. Compte les hasanât du soir.",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Le Wird du soir n'est pas une option. C'est une armure. Aujourd'hui, mets-la avant que la nuit ne tombe.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_010",
-      "fr": "Quand tu enfiles un vêtement aujourd'hui, dis le du'â de l'habillement que Niyyah te donne. Le Prophète ﷺ avait des invocations pour chaque acte. Combien de fois tu t'habilles dans une vie ?",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Aujourd'hui en faisant le Wird du matin, choisis UN adhkâr et répète-le EN COMPRENANT chaque mot. Pas dans la précipitation. La compréhension multiplie la récompense.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_011",
-      "fr": "Aujourd'hui, vise UNE chose : 100 fois « SubhânAllâhi wa bihamdih ». Le Prophète ﷺ a dit que cela efface les péchés même s'ils sont comme l'écume de la mer (Bukhari, Muslim). Tu as 16 heures.",
-      "categorie": "FAJR-OBJECTIF"
+      "fr": "Si tu as raté plusieurs Wird ces derniers jours, ne te flagelle pas. Aujourd'hui — un seul. Lentement. La constance se rebâtit jour par jour.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_012",
-      "fr": "Vise une bonne action AVANT midi. Une seule. Que personne ne saura. C'est cette catégorie de hasanât qui pèse le plus dans la balance.",
-      "categorie": "FAJR-OBJECTIF"
+      "fr": "Le Wird est plus important que le café du matin. L'un éveille le cœur, l'autre éveille le corps. Aujourd'hui, ne saute pas le bon.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_013",
-      "fr": "Choisis maintenant UNE personne pour qui tu feras un du'â aujourd'hui. Sans qu'elle le sache. Le Prophète ﷺ a dit que le du'â pour l'absent est exaucé (Muslim). Tu reçois ce que tu donnes.",
-      "categorie": "FAJR-OBJECTIF"
+      "fr": "Aujourd'hui, prends 3 minutes pour un Tafakkur. Choisis un thème qui résonne avec ta journée. Le récit débloqué après te suivra.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_014",
-      "fr": "Le Prophète ﷺ a dit : « Deux rak'as à l'aube valent mieux que ce monde et tout ce qu'il contient. » (Muslim) Tu viens de les prier. Mesure ce que tu portes.",
-      "categorie": "FAJR-MOTIVATION"
+      "fr": "Quand tu te sens distrait ou las dans l'après-midi, ouvre un Tafakkur. 3 minutes en silence. Tu retrouves ton centre.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_015",
-      "fr": "Une bonne action vaut 10 récompenses au minimum, parfois 700, parfois plus (Coran 6:160). Combien de hasanât veux-tu emporter au lit ce soir ? Décide maintenant.",
-      "categorie": "FAJR-MOTIVATION"
+      "fr": "Aujourd'hui, médite sur UN nom d'Allah dans un Tafakkur. Porte-le toute la journée comme un secret entre toi et Lui.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_016",
-      "fr": "Une heure passée à apprendre l'islam pèse dans la balance. Niyyah te donne cette heure éparpillée dans la journée.",
-      "categorie": "FAJR-MOTIVATION"
+      "fr": "Le Tafakkur n'est pas un luxe. C'est ce qui sépare une journée vécue d'une journée traversée en automate. Aujourd'hui, sors de l'automate.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_017",
-      "fr": "Hasanah facile pour aujourd'hui : dis « Astaghfirullah » à chaque fois que tu ouvres une porte. Tu ouvriras 30 portes. 30 hasanât. Sans effort visible.",
-      "categorie": "FAJR-TACTIQUE"
+      "fr": "Les pieux prédécesseurs ont dit qu'une heure de tafakkur vaut mieux qu'une nuit de prière (athar). Tu n'as pas une heure ? Donne 5 minutes. C'est déjà énorme.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_018",
-      "fr": "Sur ton trajet aujourd'hui, fais un du'â silencieux pour chaque personne que tu croises. Pas un long. Juste : « Allâhumma ihdihim. » Tu transformes un trajet en pluie de hasanât.",
-      "categorie": "FAJR-TACTIQUE"
+      "fr": "Aujourd'hui, fais un Tafakkur de 10 minutes — version longue. Pas du dhikr distrait — une vraie méditation. Tu remarqueras les choses différemment toute la journée.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_019",
-      "fr": "Tu as 16 heures éveillées devant toi. 960 minutes. À ta mort, on te demandera ce que tu en as fait. Pas globalement. Minute par minute.",
-      "categorie": "FAJR-RAPPEL"
+      "fr": "Si tu choisis le Tafakkur en silence aujourd'hui, écoute aussi ton souffle. Allah le maintient seconde par seconde. La méditation devient gratitude.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_020",
-      "fr": "Le jour viendra où tu donnerais le monde entier pour revenir à ce matin, pour ajouter une seule hasanah. Tu y es. Maintenant. Ne le rate pas.",
-      "categorie": "FAJR-CONSCIENCE"
+      "fr": "Aujourd'hui pendant le Tafakkur, choisis un thème qui te dérange (la mort, l'au-delà, le compte de tes actes). Le confort tue la conscience.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_021",
-      "fr": "Le Prophète ﷺ avait un du'â pour presque chaque situation : monter dans un véhicule, entrer aux toilettes, croiser un cimetière. Niyyah en a 253 classés. Choisis-en UN à mémoriser aujourd'hui.",
+      "fr": "Le récit que tu débloques après le Tafakkur — lis-le LENTEMENT. Ces récits sont sourcés. Ils te suivront longtemps si tu les laisses entrer.",
       "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_022",
-      "fr": "Connais-tu vraiment l'histoire de Yûsuf ? De Mûsâ ? De Maryam ? Niyyah te les a sourcées et résumées. Aujourd'hui, ouvre-en une. Pas demain. Aujourd'hui.",
+      "fr": "Aujourd'hui, fais 2 Tafakkur : un le matin, un le soir. Pas pour faire plus — pour ENCADRER ta journée par la méditation. Le sandwich spirituel.",
       "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_023",
-      "fr": "Aujourd'hui à 17h, ouvre Niyyah pour les adhkâr du soir. C'est la sunnah du Prophète ﷺ tous les jours. Sécurité pour la nuit.",
+      "fr": "Quand tu hésites entre Tafakkur et téléphone aujourd'hui, choisis Tafakkur. Toujours. 3 minutes investies dans Allah valent mieux que 3 heures perdues dans le scroll.",
       "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_024",
-      "fr": "Le Prophète ﷺ enseignait à ses compagnons jour après jour. Niyyah continue ce travail pour toi. Tu apprendras UN hadith aujourd'hui. Mémorise-le. Demain tu en sauras deux.",
+      "fr": "Le Tafakkur de 5 minutes est le sweet spot. Plus court : pas le temps de descendre. Plus long : risque de distraction. Aujourd'hui : 5 minutes.",
       "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_025",
-      "fr": "Niyyah a un module Tafakkur. Pas pour méditer dans le vide — pour méditer UN nom d'Allah. Aujourd'hui, choisis-en un et porte-le toute la journée.",
+      "fr": "Aujourd'hui, lis le hadith du jour. Une parole prophétique courte. Mémorise-la. Le Prophète ﷺ a dit : « Que celui qui était présent transmette à l'absent. » (Bukhari)",
       "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_026",
-      "fr": "Le Prophète ﷺ mangeait avec 3 doigts et léchait ses doigts à la fin du repas (Muslim). Pas par grossièreté — par respect du don. Essaie aujourd'hui à un repas.",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Le hadith du jour t'attend. Une phrase du Messager ﷺ qui peut changer ta semaine. Lis-la lentement. Deux fois.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_027",
-      "fr": "Le Prophète ﷺ ne critiquait JAMAIS un plat. Si ça lui plaisait, il mangeait. Si non, il laissait sans rien dire (Bukhari). Garde-le en mémoire pour ce soir, à table.",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Aujourd'hui, après avoir lu le hadith du jour, NOTE-LE sur papier. Pas dans ton téléphone — sur papier. Le geste de la main grave plus profond que celui du pouce.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_028",
-      "fr": "Aujourd'hui, mange ce qui est devant toi. Ne tends pas la main à travers le plat pour prendre ailleurs (Bukhari). C'est l'adab oublié de notre époque. Réapprends-le.",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Le hadith du jour est court. Apprends-le par cœur en arabe si tu peux. 5 minutes. La langue originelle porte la lumière originelle.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_029",
-      "fr": "Le Prophète ﷺ recommandait de ne pas remplir le ventre (Tirmidhi). Aujourd'hui, lève-toi de table en ayant encore un peu faim. Sens cette légèreté.",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Quand tu finis de lire le hadith du jour, fais-en UN du'â. « Allâhumma fais que je mette en pratique ce que je viens d'apprendre. » Le savoir non pratiqué pèse contre toi.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_030",
-      "fr": "Quand tu rentres dans une pièce où il y a quelqu'un aujourd'hui, dis « As-salâmu 'alaykum. » C'est la sunnah du Prophète ﷺ. Tu déposes la paix là où tu entres.",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Ce soir avant de dormir, RÉCITE-TOI le hadith du jour. À voix basse. Tu testes ta mémoire. Tu inscris la sunnah dans ton sommeil.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_031",
-      "fr": "Aujourd'hui, vise 70 fois « Astaghfirullah ». Le Prophète ﷺ — qui n'avait pas de péché — le disait plus de 70 fois par jour (Bukhari). Toi tu en as. Combien de fois devrais-tu le dire ?",
-      "categorie": "FAJR-OBJECTIF"
+      "fr": "Aujourd'hui, transmets le hadith du jour à UNE personne. En vrai. Pas en transfert WhatsApp — en conversation. Tu deviens relais de la Sunnah.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_032",
-      "fr": "Vise UNE sourate à apprendre par cœur ce mois-ci. Pas aujourd'hui — ce mois. Aujourd'hui : choisis laquelle. Lis-la une fois. Demain pareil. Dans 30 jours, elle est en toi.",
-      "categorie": "FAJR-OBJECTIF"
+      "fr": "Si le hadith du jour est dur ou exigeant, c'est encore plus important de le lire. Les hadiths qui dérangent sont ceux qui forment.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_033",
-      "fr": "Vise une bonne action envers tes parents aujourd'hui. Un appel. Un message. Un service. Le Prophète ﷺ a dit que le paradis est sous les pieds des mères (Hadith). Marche dessus aujourd'hui.",
-      "categorie": "FAJR-OBJECTIF"
+      "fr": "Le degré d'authenticité du hadith du jour est marqué. Sahîh / Hasan. Note-le mentalement. Tu apprends progressivement à distinguer la force des sources.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_034",
-      "fr": "Le Prophète ﷺ a dit : « Quand un homme meurt, ses actes s'arrêtent, sauf trois : une aumône permanente, un savoir utile, ou un enfant pieux qui prie pour lui. » (Muslim) Aujourd'hui, sème dans une de ces trois cases.",
-      "categorie": "FAJR-MOTIVATION"
+      "fr": "Le Prophète ﷺ a dit : « Transmettez de moi, ne serait-ce qu'un verset. » (Bukhari) Le hadith du jour est ta lampe. Allume-la.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_035",
-      "fr": "Une nuit de Laylat al-Qadr vaut mieux que mille mois (Coran 97:3). Mais une bonne action faite ce matin avec une intention pure pèse aussi dans la balance. La qualité dépasse parfois la quantité.",
-      "categorie": "FAJR-MOTIVATION"
+      "fr": "Aujourd'hui, en lisant le hadith du jour, demande-toi : « Comment ce hadith change MA journée maintenant ? » Pas dans l'absolu — concrètement, maintenant.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_036",
-      "fr": "Hasanah facile : à chaque fois que tu vois un musulman aujourd'hui, dis dans ton cœur « Allâhumma maghfirah » pour lui. 5 personnes croisées = 5 du'âs invisibles = pluie de hasanât.",
-      "categorie": "FAJR-TACTIQUE"
+      "fr": "Le hadith du jour change automatiquement demain. Tu l'as raté aujourd'hui ? Sois là demain. Mais essaie d'en lire 2 — celui d'hier ET celui d'aujourd'hui.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_037",
-      "fr": "Quand tu attendras quelque part aujourd'hui (queue, transport, ascenseur), au lieu de prendre ton téléphone, dis : « SubhânAllâh wa-l-hamdulillâh wa lâ ilâha illâ Allâh wa Allâhu akbar. » Le Prophète ﷺ a dit que ces 4 mots sont aimés d'Allah (Muslim).",
-      "categorie": "FAJR-TACTIQUE"
+      "fr": "Aujourd'hui, lis le Du'a du jour. Apprends-le par cœur si tu peux. La prochaine fois que tu en auras besoin, tu l'auras dans le cœur.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_038",
-      "fr": "Hier matin, tu étais comme aujourd'hui. Qu'as-tu fait depuis ? Si la réponse te gêne, alors aujourd'hui n'est pas une autre journée — c'est une seconde chance.",
-      "categorie": "FAJR-RAPPEL"
+      "fr": "Quand quelque chose te blesse aujourd'hui, ouvre le Du'a du jour. Le Prophète ﷺ avait une invocation pour chaque situation. Tu n'es pas désarmé.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_039",
-      "fr": "Pour chaque seconde que tu passes en dhikr, ton compte d'œuvres grandit. Aujourd'hui, ne laisse pas les secondes passer vides.",
-      "categorie": "FAJR-CONSCIENCE"
+      "fr": "Le Du'a du jour vient avec sa traduction et son occasion. Lis les 3 : arabe + français + quand l'utiliser. Tu pars équipé pour ta journée.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_040",
-      "fr": "Le Prophète ﷺ a dit : « La meilleure parole après le Coran est la parole d'Allah. » Niyyah te livre un hadith authentique chaque jour. Lis celui d'aujourd'hui. Une parole prophétique peut changer une vie.",
+      "fr": "Aujourd'hui, dis le Du'a du jour 3 fois à voix audible. La répétition à voix haute INSCRIT. Le silence laisse glisser.",
       "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_041",
-      "fr": "Aujourd'hui en milieu de matinée (vers 9h-10h), prie 2 rak'as de Duhâ. Le Prophète ﷺ a dit que cela acquitte la sadaqa due par les 360 articulations du corps (Muslim).",
+      "fr": "Si le Du'a du jour te semble étranger ou difficile, lis-le quand même. Demain il sera familier. Après-demain, il sera tien.",
       "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_042",
-      "fr": "Niyyah a un module Récits du Coran. 20 histoires de prophètes sourcées (Ibn Kathîr, at-Tabarî). Tes ancêtres spirituels. Aujourd'hui, lis-en une. Tu marcheras avec eux aujourd'hui.",
+      "fr": "Aujourd'hui, ajoute le Du'a du jour à ton arsenal mental. Tu en avais 5 ? Tu en as 6 ce soir. Sur un an : 365 nouvelles invocations en toi.",
       "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_043",
-      "fr": "Tu vas faire le wudu aujourd'hui peut-être 5 fois. Connais-tu vraiment tous les actes recommandés du wudu ? Niyyah a le fiqh complet. Un wudu fait avec présence = une pluie de hasanât.",
+      "fr": "Le Prophète ﷺ a dit : « Le du'â est l'adoration. » (Tirmidhi) Le Du'a du jour est ton adoration quotidienne en mots. Recharge avant ta journée.",
       "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_044",
-      "fr": "Quand tu te sens distrait ou las dans la journée, ouvre Niyyah Tafakkur. Médite UN nom d'Allah. Le Prophète ﷺ a dit : « Allah a 99 noms — celui qui les comprend entre au Paradis. » (Bukhari)",
+      "fr": "Aujourd'hui, dis le Du'a du jour POUR QUELQU'UN d'autre. Pas pour toi — pour ta mère, ton enfant, ton ami. Le du'â pour autrui est exaucé (Muslim).",
       "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_045",
-      "fr": "Aujourd'hui, en entrant aux toilettes, dis : « Allâhumma innî a'ûdhu bika min al-khubthi wa-l-khabâ'ith. » (Bukhari) Un acte que tu fais plusieurs fois par jour devient hasanah cachée.",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Quand tu seras dans une situation similaire à celle évoquée par le Du'a du jour, UTILISE-LE. Pas un autre. Celui-là. Tu honores ta mémoire.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_046",
-      "fr": "Quand tu sortiras des toilettes aujourd'hui, dis « Ghufrânak. » (Tirmidhi) Trois lettres. Pardon demandé. Hasanah gagnée. Sans personne autour.",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Le Du'a du jour change automatiquement. 253 invocations en rotation. Sois là chaque jour. C'est une école de 253 leçons.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_047",
-      "fr": "Le miroir du matin n'est pas un lieu de vanité. C'est un lieu de du'â. Niyyah te donne la formule prophétique à dire devant le miroir.",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Aujourd'hui, écris le Du'a du jour sur un papier que tu mets dans ta poche. À chaque fois que tu le touches, tu le redis. La répétition tactile fixe.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_048",
-      "fr": "Quand tu monteras dans ta voiture/bus/métro aujourd'hui, dis : « Subhâna-lladhî sakhkhara lanâ hâdhâ wa mâ kunnâ lahu muqrinîn. » (Coran 43:13) Niyyah l'a. 10 secondes. Voyage devenu adoration.",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Le Du'a du jour vient avec sa translittération. Pour ceux qui ne lisent pas encore l'arabe — pas d'excuse. Pour ceux qui le lisent — l'effort de la translittération est aussi adoration.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_049",
-      "fr": "Aujourd'hui, soigne ton apparence avant de sortir : propreté, vêtement net, odeur. La sunnah du Prophète ﷺ. Tu es un témoin musulman, même par ton apparence.",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Tu pries depuis combien d'années ? Aujourd'hui, ouvre la règle de fiqh du jour. Tu apprendras peut-être un détail que tu pratiquais mal sans le savoir.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_050",
-      "fr": "Aujourd'hui, vise : ne pas mentir une seule fois. Pas une petite blague. Pas une exagération. Le Prophète ﷺ a dit que le mensonge mène au péché (Bukhari). Une journée propre.",
-      "categorie": "FAJR-OBJECTIF"
+      "fr": "30 secondes pour la règle du jour. Connais-tu vraiment ce qui invalide le wudu ? Ce qui rompt le jeûne ? Aujourd'hui, comble UN trou.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_051",
-      "fr": "Vise UN parent à appeler aujourd'hui. Pas un message. Un appel. Le Prophète ﷺ a sévèrement rappelé l'importance du lien familial (Bukhari). Rétablis si tu as rompu. Renforce si tu n'as pas rompu.",
-      "categorie": "FAJR-OBJECTIF"
+      "fr": "Le fiqh n'est pas une matière d'érudits. C'est ce qui rend ta pratique VALIDE. Aujourd'hui, vérifie UNE règle. La connaissance protège l'ibâda.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_052",
-      "fr": "Aujourd'hui, vise : prier UNE prière en mosquée si tu peux. Une seule. Le Prophète ﷺ a dit qu'une prière collective vaut 27 fois une prière seul (Bukhari). Multiplie ta journée.",
-      "categorie": "FAJR-OBJECTIF"
+      "fr": "Aujourd'hui, lis la règle de fiqh du jour. Note dans quelle école elle est tirée. Tu apprends progressivement les différences sans même les chercher.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_053",
-      "fr": "Le Prophète ﷺ a dit : « Sourire à ton frère est sadaqa. » (Tirmidhi) Le sadaqa n'est pas que financier. Tu peux donner 100 fois aujourd'hui sans dépenser un centime.",
-      "categorie": "FAJR-MOTIVATION"
+      "fr": "Si la règle du jour t'apprend quelque chose que tu pratiquais mal — corrige aujourd'hui. Pas demain. La sunnah retrouvée commence dès le prochain acte.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_054",
-      "fr": "Programme une alarme à 12h aujourd'hui. Quand elle sonne, arrête tout 30 secondes : 10 SubhânAllâh, 10 Alhamdulillâh, 10 Allâhu akbar. C'est une sunnah rapportée à Fatima رضي الله عنها (Bukhari).",
-      "categorie": "FAJR-TACTIQUE"
+      "fr": "Le fiqh quotidien construit ta science par accumulation. 1 règle × 365 jours = un savoir solide en un an. Sois là chaque jour.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_055",
-      "fr": "Si quelqu'un te contrarie aujourd'hui (collègue, automobiliste, famille), au lieu de réagir : dis dans ton cœur « Allâhumma agh-fir lahu wa lî. » Tu désamorces ton ego. Tu gagnes deux hasanât d'un coup.",
-      "categorie": "FAJR-TACTIQUE"
+      "fr": "Aujourd'hui après avoir lu la règle de fiqh, demande-toi : « Est-ce que je pratique cela ? » Si oui — Alhamdulillâh. Si non — change aujourd'hui.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_056",
-      "fr": "Le Prophète ﷺ a dit : « Saisis cinq choses avant cinq : ta jeunesse avant ta vieillesse, ta santé avant ta maladie, ta richesse avant ta pauvreté, ton temps libre avant ton occupation, ta vie avant ta mort. » (Hâkim) Tu en es à quel stade ?",
-      "categorie": "FAJR-RAPPEL"
+      "fr": "Si la règle du jour évoque un sujet que tu ignorais (kaffâra, zakât, hajj), c'est ton signe. Approfondis. L'ignorance dans la pratique pèse.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_057",
-      "fr": "Tu n'as PAS choisi de te réveiller ce matin. Quelqu'un te l'a accordé. Ce souffle que tu prends maintenant — Il peut le reprendre dans 5 minutes. Que veux-tu avoir fait avant ?",
-      "categorie": "FAJR-CONSCIENCE"
+      "fr": "Aujourd'hui, transmets la règle du jour à un proche qui pratique. « Tu savais que... » Tu deviens passeur de fiqh sans en être savant.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_058",
-      "fr": "Avant de dormir ce soir, Niyyah a la sourate Al-Mulk. Le Prophète ﷺ la lisait avant de dormir (Tirmidhi). Programme ton téléphone dès maintenant pour ne pas oublier.",
+      "fr": "Le Prophète ﷺ a dit : « Allâh n'enlève pas la science d'un coup — Il la prend en faisant mourir les savants. » (Bukhari) Aujourd'hui, retiens UNE règle. Tu es maillon.",
       "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_059",
-      "fr": "Niyyah a 253 du'âs prophétiques. Tu en utilises combien actuellement ? 5 ? 10 ? Aujourd'hui, ouvre Du'âs et apprends-en UN nouveau que tu n'avais jamais dit.",
+      "fr": "Aujourd'hui à 13h, ouvre la Lecture du Coran. UNE page là où tu t'es arrêté. Page par page, sur une vie, c'est plusieurs Coran lus. Tout commence aujourd'hui.",
       "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_060",
-      "fr": "Vendredi est le meilleur jour de la semaine selon le Prophète ﷺ (Muslim). Niyyah te rappellera quand il arrive : sourate Al-Kahf, du'â aux heures bénies, ghusl, parfum. Prépare-toi.",
+      "fr": "Le compteur de Lecture du Coran ne ment pas. Si tu n'as pas lu depuis 3 jours, il te le dira. Pas pour culpabiliser — pour rappeler. Aujourd'hui, reprends.",
       "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_061",
-      "fr": "La nuit dernière a peut-être été dure. Aujourd'hui, ouvre Niyyah Pratique > adhkâr du matin. Ces minutes apaisent mieux que n'importe quel rituel moderne. C'est la sunnah qui réconforte.",
+      "fr": "Aujourd'hui, lis le Coran à voix audible. Pas dans ta tête. Les lèvres qui bougent activent la mémoire. Une page récitée vaut plus qu'une page lue.",
       "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_062",
-      "fr": "Quand tu marcheras dans la rue aujourd'hui, sors ton téléphone et ouvre Niyyah Coran. UNE page lue en marchant. Le Prophète ﷺ rendait son temps précieux. Tu le peux aussi.",
+      "fr": "Si tu ne sais pas où tu en es dans le Coran, ouvre le tracker. Il te le dit. Pas d'angoisse à avoir : tu reprends là, exactement.",
       "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_063",
-      "fr": "Aujourd'hui, en sortant de chez toi, dis : « Bismillâh, tawakkaltu 'alâ Allâh, lâ hawla wa lâ quwwata illâ billâh. » (Tirmidhi) Tu sors avec protection. Le shaytân se retire.",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Aujourd'hui, choisis UNE sourate courte que tu lis 3 fois à voix audible. Tu commences à la mémoriser sans même y penser.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_064",
-      "fr": "Quand tu rentres chez toi aujourd'hui, dis « Bismillâh » en entrant et salue ta famille. Le Prophète ﷺ recommandait ces deux actes pour la barakah de la maison (Muslim).",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Le Prophète ﷺ a dit que celui qui lit le Coran reçoit pour chaque lettre une hasanah multipliée (Tirmidhi). UNE page = des milliers de lettres = une pluie de hasanât.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_065",
-      "fr": "Aujourd'hui, dors la sieste de Qaylûla si tu peux (15-20 min après Dhuhr). C'est une sunnah qui te rend plus efficace tout l'après-midi.",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Aujourd'hui, prends 10 minutes pour la Lecture du Coran. Pas plus. Pas moins. La régularité bat l'intensité dans la balance d'Allâh.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_066",
-      "fr": "Quand tu mets ta chaussure droite aujourd'hui, mets-la en premier. La gauche s'enlève en premier (Bukhari). Détail ? Non — c'est la sunnah dans 5 secondes de ta journée.",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Quand tu marches aujourd'hui (transport, déplacement), ouvre la récitation audio du Coran. Une page écoutée vaut le pas que tu fais. Le voyage devient ibâda.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_067",
-      "fr": "Aujourd'hui, dors sur ton côté droit, la main droite sous la joue. C'est la sunnah du sommeil du Prophète ﷺ (Bukhari). Une position qui devient ibâda.",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Aujourd'hui, lis le Coran AVANT de toucher ton téléphone le matin. 5 minutes. Tu inverses la hiérarchie : Coran d'abord, monde ensuite.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_068",
-      "fr": "Vise aujourd'hui : faire SOURIRE quelqu'un. Pas par devoir. Vraiment. Une fois. Le Prophète ﷺ riait souvent et savait sourire (Bukhari). L'islam n'est pas la gravité — c'est la lumière qui se transmet.",
-      "categorie": "FAJR-OBJECTIF"
+      "fr": "Si tu n'as jamais terminé un Coran de ta vie, aujourd'hui est le premier jour. UNE page. Demain pareil. Le compteur garde ta progression.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_069",
-      "fr": "Aujourd'hui, vise : retenir UNE colère. Une seule. Le Prophète ﷺ a dit que le fort n'est pas celui qui terrasse, mais celui qui se contrôle dans la colère (Bukhari). Là où tu te retiens, Allah t'élève.",
-      "categorie": "FAJR-OBJECTIF"
+      "fr": "La sourate que tu lis aujourd'hui — relis-en UN seul verset avec la traduction. Comprendre 1 verset vaut mieux que lire 100 sans comprendre.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_070",
-      "fr": "Vise un effort financier aujourd'hui : 1€, 5€, 50€ — peu importe. Donne en cachette si possible. Le Prophète ﷺ a dit que la sadaqa éteint la faute comme l'eau éteint le feu (Tirmidhi). Éteins quelque chose aujourd'hui.",
-      "categorie": "FAJR-OBJECTIF"
+      "fr": "Aujourd'hui, lis le Coran en pleurant si tu le peux. Le Prophète ﷺ a dit : « Pleurez à la lecture du Coran. Si vous ne pleurez pas, forcez-vous. » (Ibn Mâjah) La sensibilité au Coran se cultive.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_071",
-      "fr": "Le Prophète ﷺ a parlé des degrés du Paradis comme on voit des étoiles à l'horizon (Bukhari). Une seule bonne action sincère peut te faire monter d'un degré. Aujourd'hui, lequel veux-tu gagner ?",
-      "categorie": "FAJR-MOTIVATION"
+      "fr": "Aujourd'hui, ouvre la Sîra. Marche 5 minutes avec le Messager ﷺ à un moment précis de sa mission. Tu reviens à ta journée avec lui dans le cœur.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_072",
-      "fr": "Hasanah cachée : aujourd'hui à un repas, laisse une dernière bouchée. Le Prophète ﷺ ne se rassasiait jamais complètement (Bukhari). Imite-le sans personne autour.",
-      "categorie": "FAJR-TACTIQUE"
+      "fr": "La Sîra n'est pas une histoire. C'est ta GÉNÉALOGIE spirituelle. Aujourd'hui, lis l'épisode du jour. Tu apprends d'où tu viens.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_073",
-      "fr": "Pose une alarme à 15h aujourd'hui. Quand elle sonne, dis 100 fois Astaghfirullah. 5 minutes. Le Prophète ﷺ — qui n'avait aucun péché — disait l'istighfâr plus de 70 fois par jour (Bukhari).",
-      "categorie": "FAJR-TACTIQUE"
+      "fr": "Aujourd'hui dans la Sîra, repère UN détail qui te touche. Une phrase du Prophète ﷺ, un geste, une réaction. Porte ce détail toute la journée.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_074",
-      "fr": "Quand tu salues quelqu'un aujourd'hui, dis « As-salâmu 'alaykum wa rahmatullâhi wa barakâtuh. » La forme complète. Plus tu ajoutes de mots dans la salutation, plus les hasanât augmentent (Abu Dawud).",
-      "categorie": "FAJR-TACTIQUE"
+      "fr": "La Sîra te montre que le Prophète ﷺ a vécu des moments durs aussi. La perte. Le rejet. La trahison. Aujourd'hui, lis-en un. Tu n'es plus seul dans la difficulté.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_075",
-      "fr": "Ce matin, beaucoup ne se sont pas réveillés. Toi si. Cette différence est un sursis. Que vas-tu faire avant que le tien ne s'achève ?",
-      "categorie": "FAJR-RAPPEL"
+      "fr": "Aujourd'hui, lis la Sîra À VOIX HAUTE pour quelqu'un (enfant, conjoint, ami). Tu transmets. Tu inscris la sîra dans ton entourage.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_076",
-      "fr": "Le Prophète ﷺ a dit : « Hâtez-vous d'accomplir des œuvres avant que ne surviennent des épreuves comme des morceaux d'une nuit obscure. » (Muslim) Personne ne sait quand la nuit tombera. Travaille pendant qu'il fait jour.",
-      "categorie": "FAJR-RAPPEL"
+      "fr": "Si tu reprends la Sîra après une longue absence, ne reviens pas en arrière. Continue où tu en étais. La constance bat la perfection.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_077",
-      "fr": "Une seule « Lâ ilâha illâ Allâh » prononcée sincèrement pèse infiniment dans la balance d'Allah. Tu l'as dite combien de fois ce mois-ci avec présence ? Aujourd'hui : une fois. Vraiment.",
-      "categorie": "FAJR-CONSCIENCE"
+      "fr": "Aujourd'hui, dans la Sîra, repère COMMENT le Prophète ﷺ a réagi à une situation. Imite cette réaction dans ta journée. Tu marches dans ses pas concrètement.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_078",
-      "fr": "Si tu te sens vide ou perdu dans la journée, ouvre Niyyah > Récits du Coran. Lis l'histoire de Yûnus dans le ventre du poisson. Tu sortiras de ta nuit comme il est sorti de la sienne.",
+      "fr": "La Sîra propose 335 rencontres. Sur un an, tu vis sa vie avec lui jour par jour. Aujourd'hui est UN de ces 335 jours. Ne le rate pas.",
       "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_079",
-      "fr": "Niyyah Sîra te fait marcher avec le Messager ﷺ. Aujourd'hui tu peux passer 5 minutes avec lui à un moment précis de sa vie. Tu en sors différent.",
+      "fr": "Aujourd'hui, lis la Sîra avant de dormir. Tu emportes le Prophète ﷺ dans tes rêves. La nuit devient compagnonnage.",
       "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_080",
-      "fr": "Niyyah Coran te garde ta progression. Reprends aujourd'hui là où tu t'es arrêté. Le Prophète ﷺ insistait sur la régularité plutôt que la quantité.",
+      "fr": "Aujourd'hui dans la Sîra, suis le Prophète ﷺ dans UNE de ses réactions. Sa douceur, sa patience, sa fermeté. Tu en sors transformé.",
       "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_081",
-      "fr": "Niyyah a un module Fiqh du jour. Une notion par jour. À la fin du mois, tu connais 30 détails que tu ignorais. À la fin de l'année, tu es un musulman différent. Aujourd'hui : 30 secondes.",
+      "fr": "Aujourd'hui, ouvre les Récits du Coran. Choisis l'histoire d'un prophète. Tes ancêtres spirituels — tu vas marcher avec eux.",
       "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_082",
-      "fr": "Quand tu prendras l'orbe Niyyah ce matin pour ton intention de la journée, ne la choisis pas au hasard. Lis-la. Médite-la. Porte-la dans toi toute la journée. C'est elle qui élèvera tes actes.",
+      "fr": "Connais-tu vraiment l'histoire de Yûsuf ? De Mûsâ ? De Maryam ? Aujourd'hui, ouvre les Récits du Coran et lis-en une. Pas demain.",
       "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_083",
-      "fr": "Aujourd'hui, vise : pas une médisance. Une seule fois retenir. Le Coran compare la médisance à manger la chair de son frère mort (49:12). Image qui se grave. Aujourd'hui, ne mange pas.",
-      "categorie": "FAJR-OBJECTIF"
+      "fr": "Les Récits du Coran sont sourcés (Ibn Kathîr, at-Tabarî). Pas des contes. Aujourd'hui, lis-en un avec cette gravité. C'est ta tradition.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_084",
-      "fr": "Vise une lecture aujourd'hui : 2 pages de Coran à 13h. Pas davantage. Sur une vie, 2 pages × 365 jours × 30 ans = un Coran lu de nombreuses fois. Tout commence aujourd'hui.",
-      "categorie": "FAJR-OBJECTIF"
+      "fr": "Aujourd'hui, lis les Récits du Coran avec ton enfant si tu en as. Tu transmets ce qu'AUCUN dessin animé ne transmettra jamais.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_085",
-      "fr": "Vise UNE chose à PROMETTRE à Allah aujourd'hui — entre toi et Lui. Une chose précise. Petite. Tenable. Et tiens-la jusqu'à la nuit. C'est dans les petites promesses tenues que naissent les grands serviteurs.",
-      "categorie": "FAJR-OBJECTIF"
+      "fr": "Quand tu vis une épreuve aujourd'hui, ouvre le récit d'un prophète qui a vécu pire. Yûnus dans le poisson. Yûsuf dans le puits. Ayyûb dans la maladie. Tu n'es jamais seul.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_086",
-      "fr": "Si tu travailles devant un écran aujourd'hui, mets un fond d'écran avec « Allâh ». Pas pour décorer — pour qu'à chaque regard, tu te rappelles devant Qui tu vis.",
-      "categorie": "FAJR-TACTIQUE"
+      "fr": "Aujourd'hui dans les Récits du Coran, repère UN trait du prophète lu. Sa patience ? Sa douceur ? Sa fermeté ? Imite-le aujourd'hui.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_087",
-      "fr": "Cette journée n'a pas de bouton « annuler ». Ce que tu vas dire, faire, regarder, écouter — c'est inscrit. Les deux anges écrivent en ce moment (Coran 50:18). La page de ce matin commence vierge.",
-      "categorie": "FAJR-RAPPEL"
+      "fr": "Les 20 récits du Coran sont à lire et relire. Aujourd'hui, ouvre celui qui te tente — même si tu l'as déjà lu. Une deuxième lecture révèle ce que la première a manqué.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_088",
-      "fr": "Combien de « demain » t'es-tu déjà donnés ? Combien sont déjà passés sans rien faire de ce que tu voulais y mettre ? Aujourd'hui est le seul demain que tu auras jamais reçu en cadeau.",
-      "categorie": "FAJR-RAPPEL"
+      "fr": "Aujourd'hui, après avoir lu un Récit du Coran, fais un du'â POUR ce prophète. « Allâhumma sois satisfait de lui. » Les prophètes méritent nos invocations.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_089",
-      "fr": "Imagine que tu sois face à Allah ce soir. Pas dans 60 ans. Ce soir. Que voudrais-tu avoir fait aujourd'hui ? Maintenant tu sais quoi faire.",
-      "categorie": "FAJR-RAPPEL"
+      "fr": "Pendant un moment d'attente aujourd'hui, ouvre « Le savais-tu ». Un fait sur l'islam que tu ignorais. À midi, transmets-le à un proche. Ta science devient hasanah.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_090",
-      "fr": "Tes deux anges, Raqîb et 'Atîd, sont en place (Coran 50:18). L'un inscrit le bien, l'autre le mal. Aujourd'hui, donne du travail à l'un et du repos à l'autre.",
-      "categorie": "FAJR-CONSCIENCE"
+      "fr": "« Le savais-tu » est ta science légère du jour. 30 secondes pour apprendre un fait que personne autour de toi ne connaît. Tu deviens transmetteur.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_091",
-      "fr": "Le Prophète ﷺ a dit : « Allâh est plus joyeux du retour de Son serviteur que le voyageur qui retrouve sa monture perdue avec toutes ses provisions au milieu du désert. » (Bukhari, Muslim) Imagine cette joie. Donne-la-Lui aujourd'hui.",
-      "categorie": "FAJR-CONSCIENCE"
+      "fr": "Aujourd'hui, lis « Le savais-tu » et NOTE le fait dans ta mémoire avec sa source. Quand tu le réutiliseras un jour, tu sauras où il vient.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_092",
-      "fr": "Chaque pas vers la prière compte (Muslim). Le pas que tu fais maintenant vers Niyyah, qui te ramène à Lui — il est déjà compté.",
-      "categorie": "FAJR-CONSCIENCE"
+      "fr": "Si « Le savais-tu » du jour t'étonne — c'est qu'il a fait son travail. L'islam est immense. Aujourd'hui, tu en as touché un fragment de plus.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_093",
-      "fr": "Ton âme était partie cette nuit. Allah te l'a rendue ce matin (Coran 39:42). Pas par habitude. Par choix. Il aurait pu ne pas. Il l'a fait. Que veux-tu faire de ce cadeau de 16 heures ?",
-      "categorie": "FAJR-ARRIVÉE"
+      "fr": "Aujourd'hui, après avoir lu « Le savais-tu », APPROFONDIS. Tape le sujet sur internet. Lis 2 articles. Ta culture islamique grandit de manière organique.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_094",
-      "fr": "Ton cœur a battu toute la nuit sans que tu ne le commandes. Quelqu'un veille pendant que tu dors. Aujourd'hui, bats aussi pour Lui.",
-      "categorie": "FAJR-ARRIVÉE"
+      "fr": "« Le savais-tu » change chaque jour. Sois là quotidiennement. En 1 an : 365 nouveaux faits ancrés. En 5 ans : tu es cultivé.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_095",
-      "fr": "Tu viens de prier Fajr. Le Prophète ﷺ a dit que celui qui prie Fajr est sous la protection d'Allah jusqu'au soir (Muslim). Sors confiant.",
-      "categorie": "FAJR-ARRIVÉE"
+      "fr": "Aujourd'hui, en lisant « Le savais-tu », demande-toi : « Combien de musulmans autour de moi savent ça ? » Probablement très peu. Tu as un trésor. Partage.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_096",
-      "fr": "À cette seconde précise, l'adhân du Fajr est prononcé quelque part dans le monde. Sans interruption depuis 14 siècles. Tu fais partie d'une chaîne ininterrompue. Honore-la aujourd'hui.",
-      "categorie": "FAJR-ARRIVÉE"
+      "fr": "Le Prophète ﷺ a dit : « Transmettez de moi, ne serait-ce qu'un verset. » (Bukhari) Aujourd'hui, transmets UN fait du « Savais-tu ».",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_097",
-      "fr": "Tu as ouvert les yeux. Tu as prié. Tu as ouvert Niyyah. Tu as lu ces mots. Toutes ces secondes, des décisions invisibles t'ont mené ici. Allah te veut éveillé aujourd'hui. Sois-le.",
-      "categorie": "FAJR-ARRIVÉE"
+      "fr": "Aujourd'hui, ouvre la Vie des Compagnons. Lis l'histoire de celui du jour. Repère UN trait de son caractère. Imite-le dans une situation d'aujourd'hui.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_098",
-      "fr": "Aujourd'hui à 14h, ouvre Niyyah Hadiths. Une parole prophétique courte à mémoriser. Une seule. Le Prophète ﷺ a dit : « Que celui qui était présent transmette à l'absent. » (Bukhari) Demain, transmets-la à quelqu'un.",
+      "fr": "Le Prophète ﷺ a dit : « Mes compagnons sont comme les étoiles — celui que vous suivez, vous guidera. » (Hadith dont le sens est accepté) Aujourd'hui, choisis-en un comme MENTOR de ta journée.",
       "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_099",
-      "fr": "Niyyah a la sourate Al-Kahf. Le Prophète ﷺ a recommandé de la lire le vendredi (Hâkim, sahîh). Aujourd'hui ou ce week-end, lis-la. Une protection promise par sa lecture.",
+      "fr": "Aujourd'hui dans la Vie des Compagnons, repère ce qui les distinguait : leur amour du Prophète ﷺ, leur courage, leur générosité. Tu y vois ce qui te manque.",
       "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_100",
-      "fr": "Quand tu seras dans un moment d'attente aujourd'hui (queue, salle d'attente, transport), au lieu du téléphone : Niyyah Tafakkur. 1 minute sur un nom d'Allah. Tu attendais — tu adores.",
+      "fr": "Si la Vie du Compagnon du jour est dure (martyre, sacrifice, ascétisme) — c'est précisément ce que tu dois lire. Le confort tue la foi.",
       "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_101",
-      "fr": "Niyyah te donne un Fiqh du jour. Tu sais peut-être prier. Mais sais-tu comment réagir si tu te trompes dans la rak'a ? Si tu doutes du nombre ? 30 secondes par jour pour savoir.",
+      "fr": "Aujourd'hui, raconte la Vie du Compagnon du jour à un enfant. Ces vies sont notre vraie école. Pas les super-héros fictifs.",
       "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_102",
-      "fr": "Quand quelque chose te blesse aujourd'hui, ouvre Niyyah Du'âs > du'â de l'épreuve. Le Prophète ﷺ enseignait à dire : « Innâ lillâhi wa innâ ilayhi râji'ûn, Allâhumma'jurnî fî musîbatî... » (Muslim) Tu transformes une blessure en hasanah.",
+      "fr": "Les Compagnons étaient des gens NORMAUX. Marchands, voyageurs, simples gens. C'est leur foi qui les a élevés. Aujourd'hui, tu peux suivre leur chemin.",
       "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_103",
-      "fr": "Aujourd'hui, mange du miel. Le Prophète ﷺ aimait le miel (Bukhari). Une cuillère le matin = sunnah accomplie + corps préservé. La nature et la révélation s'accordent souvent.",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Aujourd'hui, en lisant la Vie d'un Compagnon, fais un du'â POUR LUI : « Allâhumma sois satisfait de lui. » Tu lui rends ce qu'il a transmis.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_104",
-      "fr": "Mets du parfum avant de sortir. Le Prophète ﷺ aimait le parfum (Nasâ'î). Tu sors marqué — sans personne savoir pourquoi.",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "82 Compagnons biographiés. Sur 82 jours, tu connais ta génération fondatrice. Aujourd'hui, sois là pour celui qui tombe.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_105",
-      "fr": "Aujourd'hui, utilise le siwak (ou brosse à dents) avec l'intention de la sunnah. Le Prophète ﷺ disait : « Le siwak purifie la bouche et plaît au Seigneur. » (Ahmad, Nasâ'î)",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Les prophètes ont vécu ce que tu vis — solitude, doute, patience, rejet. Aujourd'hui, ouvre Histoires des Prophètes. Apprends d'un d'eux.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_106",
-      "fr": "Aujourd'hui, dors avec wudu si tu peux. Le Prophète ﷺ recommandait de dormir en état de pureté (Bukhari). Une nuit sous protection particulière.",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Le prophète du jour t'attend. Lis son épisode. Pose-toi : « Pourquoi Allâh a inclus cette histoire dans Sa révélation ? » Il y a un message pour TOI dans son histoire.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_107",
-      "fr": "Bois ton verre d'eau du matin assis. Trois petites gorgées. Bismillah avant. Alhamdulillah après (Muslim). Trois actes de sunnah dans 30 secondes. Multiplie par chaque verre de la journée.",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Aujourd'hui dans Histoires des Prophètes, repère COMMENT le prophète a tenu. Ce qui l'a soutenu. Tu apprends à tenir aussi.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_108",
-      "fr": "Aujourd'hui, vise : ne pas regarder une seule chose qu'Allah n'aime pas voir. Le Prophète ﷺ a parlé du regard comme d'une flèche du shaytân (rapporté par plusieurs voies). Baisse les yeux. Une fois pour commencer.",
-      "categorie": "FAJR-OBJECTIF"
+      "fr": "Si l'histoire du prophète du jour ressemble à ce que tu traverses — pas un hasard. Lis-la lentement. Allâh te parle aujourd'hui par ce miroir.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_109",
-      "fr": "Vise une journée sans téléphone aux toilettes. Pas par modernité — par adab. Tu vas adorer Allah dans cette journée — ne profanes pas tes outils d'adoration en lieu impur.",
-      "categorie": "FAJR-OBJECTIF"
+      "fr": "77 épisodes prophétiques. Sur 77 jours, tu marches avec eux. Aujourd'hui est UN de ces 77 jours. Tu progresses.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_110",
-      "fr": "Aujourd'hui, vise : retenir 1 dhikr nouveau par cœur. Pas demain. Aujourd'hui. Niyyah Du'âs te le fournit. Dans un an, tu auras 365 du'âs en toi. Tu prieras autrement.",
-      "categorie": "FAJR-OBJECTIF"
+      "fr": "Aujourd'hui après avoir lu l'épisode prophétique, dis « Allâhumma j'ai entendu, j'obéis. » Tu te places dans la chaîne.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_111",
-      "fr": "Le Prophète ﷺ a dit : « Celui qui jeûne un jour pour Allah, Allah éloigne son visage de l'Enfer de 70 ans. » (Bukhari, Muslim) Si tu jeûnes lundi prochain — c'est immense. Programme-le.",
-      "categorie": "FAJR-MOTIVATION"
+      "fr": "Les prophètes n'étaient pas des super-humains. Ils avaient peur. Ils pleuraient. Ils doutaient. Et ils tenaient. Aujourd'hui dans leur histoire, tu apprends la VRAIE force.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_112",
-      "fr": "La sadaqa cachée est précieuse en islam (plusieurs hadiths la mentionnent). Donne aujourd'hui sans que personne ne sache. Tu éteins quelque chose dans l'invisible.",
-      "categorie": "FAJR-MOTIVATION"
+      "fr": "Aujourd'hui, après l'épisode prophétique, FAIS UN DU'Â comme le prophète l'a fait. Mêmes mots. Tu pries avec lui à travers les siècles.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_113",
-      "fr": "Pose un Coran ouvert sur ta table de bureau aujourd'hui. À chaque pause, lis UN seul verset. À la fin de la journée, tu auras lu ce que d'autres ne lisent pas en une semaine. Sans effort.",
-      "categorie": "FAJR-TACTIQUE"
+      "fr": "Si une émotion te submerge aujourd'hui — colère, anxiété, regard, arrogance, paresse — ouvre Mes portes. Une des 5 t'attend. C'est ton entraînement intérieur.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_114",
-      "fr": "Quand quelqu'un te fait un service aujourd'hui (caisse, livraison, ouverture de porte), réponds : « Jazâka Allâhu khayran. » (Tirmidhi, hasan) Tu transformes une politesse en transmission de la sunnah.",
-      "categorie": "FAJR-TACTIQUE"
+      "fr": "Aujourd'hui, choisis UNE des 5 portes qui te concerne le plus. Pas toutes — UNE. Le parcours guidé te prend par la main.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_115",
-      "fr": "Le shaytân ne te dit JAMAIS « ne prie pas ». Il te dit : « Tu prieras après ça. » Le piège, c'est le délai. Aujourd'hui, fais maintenant.",
-      "categorie": "FAJR-RAPPEL"
+      "fr": "Bab an-Nafs n'est pas pour les jours faciles. C'est pour les jours OÙ TU SAIS que tu vas être testé. Aujourd'hui, anticipe. Ouvre la porte concernée.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_116",
-      "fr": "Les portes du Paradis sont au nombre de huit. Une seule s'appelle Ar-Rayyân — réservée aux jeûneurs (Bukhari). Aujourd'hui, par quelle porte veux-tu entrer ? Tu choisis maintenant.",
-      "categorie": "FAJR-CONSCIENCE"
+      "fr": "Si tu sens monter la colère aujourd'hui (avec un proche, au travail), ouvre Mes portes > Colère AVANT que ça n'explose. La porte est ton sas.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_117",
-      "fr": "Le ciel devient blanc. Tu vois. Tes yeux fonctionnent — sans que tu les aies fabriqués. Aujourd'hui, le premier hamd est pour ça. Pas par habitude. Vraiment.",
-      "categorie": "FAJR-ARRIVÉE"
+      "fr": "Les 5 portes (colère, anxiété, regard, arrogance, paresse) couvrent l'essentiel des combats de l'âme. Aujourd'hui, identifie la TIENNE. Travaille-la.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_118",
-      "fr": "Niyyah a un module pour les ahadith les plus utiles : Hadiths du jour. Une parole prophétique entrera en toi.",
+      "fr": "Mes portes est une muhâsaba émotionnelle. Aujourd'hui, si tu as eu une réaction qui te dérange (colère explosive, paresse coupable), ouvre la porte associée. Tu apprends de ton erreur.",
       "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_119",
-      "fr": "Si tu te sens fier de toi aujourd'hui — ouvre Niyyah Tafakkur > Al-Mutakabbir. C'est Lui le seul à mériter cet attribut (Coran 59:23). Médite. Tu repartiras humble.",
+      "fr": "Aujourd'hui, choisis UN objet de ton quotidien (stylo, tasse, clés). Scanne-le. Reçois UNE niyyah précise pour cet objet. Ta journée devient ibâda dans le matériel.",
       "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_120",
-      "fr": "Niyyah te garde la trace de tes lectures de Coran. Reprends EXACTEMENT là où tu t'es arrêté. Pas demain. Ouvre maintenant pour voir ta page. Lis-en juste une.",
+      "fr": "Le Scanner Niyyah sanctifie l'ordinaire. Aujourd'hui, scanne ton outil de travail (ordinateur, marteau, ciseaux). Tu transformes ton métier en ibâda.",
       "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_121",
-      "fr": "Le Coran a 6236 versets. Niyyah te les fait tous traverser à ton rythme. Aujourd'hui, médite UN verset. UN seul. C'est plus que tu ne fais habituellement.",
+      "fr": "Si tu manges seul aujourd'hui, scanne ton repas avant de manger. Reçois UNE niyyah pour cet acte. Le simple manger devient adoration consciente.",
       "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_122",
-      "fr": "Aujourd'hui, fais l'orbe Niyyah ET le Waqt Fajr. Les deux sont pensés ensemble : l'orbe te donne UNE intention, le Waqt te donne UN cadre pour cette intention. Tu rentres armé.",
+      "fr": "Le Scanner Niyyah n'est pas un gadget. C'est ce qui CHASSE l'automatisme de tes gestes. Aujourd'hui, sors d'au moins UN automatisme.",
       "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_123",
-      "fr": "Aujourd'hui à un repas, mange ce qui est devant toi sans tendre la main loin (Bukhari). Si tu manges seul, fais-le aussi. La sunnah ne dépend pas du regard des autres.",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Quand tu ouvres l'Orbe ce matin, LIS l'intention. Médite-la 30 secondes. Porte-la toute la journée. C'est elle qui élèvera tes actes ordinaires.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_124",
-      "fr": "Quand tu marcheras aujourd'hui, marche calmement. Le Prophète ﷺ marchait posément, comme s'il descendait une pente (Bukhari). Pas pressé. Pas distrait. Une marche devient un acte d'adoration.",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "L'Orbe te donne UNE niyyah pour aujourd'hui. Pas dix. UNE. Garde-la précieusement. La concentration sur une intention vaut mieux que la dispersion dans plusieurs.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_125",
-      "fr": "Aujourd'hui en payant quelque chose, donne le pourboire qui n'est pas obligatoire. 1 euro de plus à la caissière, au livreur, au serveur. Sans rien attendre. Sans rien montrer. Sadaqa cachée.",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Aujourd'hui, écris la niyyah de l'Orbe sur ton fond d'écran. À chaque déverrouillage du téléphone, tu la verras. La répétition visuelle inscrit.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_126",
-      "fr": "Quand tu rencontreras quelqu'un aujourd'hui, regarde-le en face. Pas le téléphone. Le Prophète ﷺ tournait tout son corps vers la personne qui lui parlait (Tirmidhi). Donne ton attention. C'est la plus belle sadaqa.",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Ce soir avant Isha, REVIENS sur la niyyah de l'Orbe du matin. As-tu agi en conformité ? La Muhâsaba commence par cette question.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_127",
-      "fr": "Aujourd'hui, ouvre la porte à quelqu'un. Cède un siège. Aide à porter. Le Prophète ﷺ a énuméré ces actes parmi les sadaqât (Bukhari, Muslim). Le serviteur est partout dans le service.",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Cette semaine, ton Défi t'attend. Une mission à accomplir avant dimanche. Tiens-le. Le serviteur grandit dans les engagements qu'il honore.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_128",
-      "fr": "Aujourd'hui, vise : prier UNE prière en mosquée si tu peux. Le Prophète ﷺ a dit qu'une prière en groupe vaut 27 fois (Bukhari). Multiplie ta journée.",
-      "categorie": "FAJR-OBJECTIF"
+      "fr": "Si tu n'as pas regardé ton Défi de la semaine — fais-le maintenant. Pas demain. Une semaine sans défi est une semaine sans direction.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_129",
-      "fr": "Vise une lecture aujourd'hui : sourate Al-Ikhlâs 3 fois équivaut à lire un tiers du Coran (Bukhari). En 30 secondes, tu accomplis quelque chose d'immense. Pas remplacement de la lecture complète, mais cadeau divin.",
-      "categorie": "FAJR-OBJECTIF"
+      "fr": "Ce soir après Isha, n'oublie pas la Muhâsaba. 2 minutes. Tu reverras ta Niyyah du matin. Tu sauras si ta journée a tenu ses promesses.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_130",
-      "fr": "Vise UN bon mot envers ton conjoint/parent/ami aujourd'hui. Pas un compliment vide — un mot précis sur quelque chose que tu admires. Le Prophète ﷺ a dit que la bonne parole est sadaqa (Bukhari).",
-      "categorie": "FAJR-OBJECTIF"
+      "fr": "La Muhâsaba est le 5e pilier de la régularité (avec les 5 prières). Pas obligatoire au sens fiqhî — vital au sens spirituel. Ce soir, sois là.",
+      "categorie": "FAJR-CARREFOUR"
     },
     {
       "id": "FAJR_131",
-      "fr": "Le Prophète ﷺ a évoqué que chaque articulation du corps a besoin d'une sadaqa par jour (Muslim). Vois ta journée comme une occasion d'honorer chaque membre par une bonne action.",
-      "categorie": "FAJR-MOTIVATION"
+      "fr": "Le Prophète ﷺ aimait manger des dattes à jeun (Bukhari). Cherche-en aujourd'hui. La sunnah du matin commence par ce qu'on met dans son corps.",
+      "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_132",
-      "fr": "Aujourd'hui, dis « Lâ ilâha illâ Allâh » 70 fois avec présence. C'est la meilleure parole jamais prononcée par les croyants. Tu fais partie de ceux qui la portent.",
-      "categorie": "FAJR-MOTIVATION"
+      "fr": "Avant de franchir ta porte ce matin, dis : « Bismillâh, tawakkaltu 'alâ Allâh, lâ hawla wa lâ quwwata illâ billâh. » Niyyah te montre la formule complète. 3 secondes. Protection pour toute la sortie.",
+      "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_133",
-      "fr": "Hasanah des transitions : à chaque fois que tu changes d'activité aujourd'hui, dis « Alhamdulillah. » 30 transitions × 30 hamd = 30 hasanât invisibles.",
-      "categorie": "FAJR-TACTIQUE"
+      "fr": "Le Prophète ﷺ a dit : « Le repas pour deux suffit à trois. Le repas pour trois suffit à quatre. » (Bukhari) C'est ça la barakah. Et elle commence par Bismillah avant la première bouchée.",
+      "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_134",
-      "fr": "Si tu prends la voiture seul aujourd'hui, mets le Coran à voix audible. Pas la radio. Niyyah a la récitation. Ton trajet devient un cours de Coran.",
-      "categorie": "FAJR-TACTIQUE"
+      "fr": "Aujourd'hui, bois assis, en 3 gorgées, en disant Bismillah avant et Alhamdulillah après. C'est la sunnah du Prophète ﷺ. Multiplie par le nombre de fois où tu bois. Compte les hasanât du soir.",
+      "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_135",
-      "fr": "L'ange de la mort ne prend pas rendez-vous. Aujourd'hui, vis comme s'il pouvait venir cette nuit. Pas avec peur — avec dignité.",
-      "categorie": "FAJR-RAPPEL"
+      "fr": "Quand tu enfiles un vêtement aujourd'hui, dis le du'â de l'habillement que Niyyah te donne. Le Prophète ﷺ avait des invocations pour chaque acte. Combien de fois tu t'habilles dans une vie ?",
+      "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_136",
-      "fr": "Le Prophète ﷺ a dit : « Allâh dit : Je suis selon l'opinion que Mon serviteur a de Moi. » (Bukhari, hadith qudsi) Aujourd'hui, pense bien d'Allah. Crois qu'Il te donnera. Crois qu'Il te pardonnera.",
-      "categorie": "FAJR-CONSCIENCE"
+      "fr": "Aujourd'hui, vise UNE chose : 100 fois « SubhânAllâhi wa bihamdih ». Le Prophète ﷺ a dit que cela efface les péchés même s'ils sont comme l'écume de la mer (Bukhari, Muslim). Tu as 16 heures.",
+      "categorie": "FAJR-OBJECTIF"
     },
     {
       "id": "FAJR_137",
-      "fr": "Allâh a séparé ton âme de ton corps cette nuit (Coran 39:42). Il a regardé ton compte. Et Il a décidé : « Je le renvoie. Il a encore une journée. » Aujourd'hui, mérite cette décision.",
-      "categorie": "FAJR-ARRIVÉE"
+      "fr": "Vise une bonne action AVANT midi. Une seule. Que personne ne saura. C'est cette catégorie de hasanât qui pèse le plus dans la balance.",
+      "categorie": "FAJR-OBJECTIF"
     },
     {
       "id": "FAJR_138",
-      "fr": "Niyyah Pratique a les adhkâr post-prière. Après chaque salât, 33 SubhânAllâh, 33 Alhamdulillâh, 33 Allâhu akbar + Lâ ilâha illâ Allâh wahdahu lâ sharîka lah. Le Prophète ﷺ a dit que cela efface les péchés comme l'écume de la mer (Muslim). Tu prieras 5 fois aujourd'hui.",
-      "categorie": "FAJR-CARREFOUR"
+      "fr": "Choisis maintenant UNE personne pour qui tu feras un du'â aujourd'hui. Sans qu'elle le sache. Le Prophète ﷺ a dit que le du'â pour l'absent est exaucé (Muslim). Tu reçois ce que tu donnes.",
+      "categorie": "FAJR-OBJECTIF"
     },
     {
       "id": "FAJR_139",
-      "fr": "Aujourd'hui pendant ta pause déjeuner, ouvre Niyyah Sîra. 5 minutes avec le Prophète ﷺ à un moment précis. Tu reviens à ton bureau différent.",
-      "categorie": "FAJR-CARREFOUR"
+      "fr": "Le Prophète ﷺ a dit : « Deux rak'as à l'aube valent mieux que ce monde et tout ce qu'il contient. » (Muslim) Tu viens de les prier. Mesure ce que tu portes.",
+      "categorie": "FAJR-MOTIVATION"
     },
     {
       "id": "FAJR_140",
-      "fr": "Niyyah a un module Récits du Coran. 20 histoires sourcées (Ibn Kathîr, at-Tabarî). Aujourd'hui, lis-en une à un de tes enfants ou à un proche. Une transmission directe de l'islam — par toi.",
-      "categorie": "FAJR-CARREFOUR"
+      "fr": "Une bonne action vaut 10 récompenses au minimum, parfois 700, parfois plus (Coran 6:160). Combien de hasanât veux-tu emporter au lit ce soir ? Décide maintenant.",
+      "categorie": "FAJR-MOTIVATION"
     },
     {
       "id": "FAJR_141",
-      "fr": "Si tu doutes d'un point de pratique aujourd'hui, ouvre Niyyah Fiqh du jour. Tu trouveras peut-être la réponse précise. Sinon, tu sauras où chercher. Ne reste pas dans l'ignorance par paresse.",
-      "categorie": "FAJR-CARREFOUR"
+      "fr": "Une heure passée à apprendre l'islam pèse dans la balance. Niyyah te donne cette heure éparpillée dans la journée.",
+      "categorie": "FAJR-MOTIVATION"
     },
     {
       "id": "FAJR_142",
-      "fr": "Niyyah te garde la mémoire des hadiths que tu as lus. Aujourd'hui, relis-en un que tu avais déjà vu. Le Prophète ﷺ répétait ses paroles trois fois pour qu'on retienne (Bukhari).",
-      "categorie": "FAJR-CARREFOUR"
+      "fr": "Hasanah facile pour aujourd'hui : dis « Astaghfirullah » à chaque fois que tu ouvres une porte. Tu ouvriras 30 portes. 30 hasanât. Sans effort visible.",
+      "categorie": "FAJR-TACTIQUE"
     },
     {
       "id": "FAJR_143",
-      "fr": "Aujourd'hui en mangeant, ne souffle PAS dans ton plat ni dans ton verre (Tirmidhi). Détail oublié — mais c'est la sunnah. Un acte que tu fais maintenant en conscience devient une hasanah quotidienne.",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Sur ton trajet aujourd'hui, fais un du'â silencieux pour chaque personne que tu croises. Pas un long. Juste : « Allâhumma ihdihim. » Tu transformes un trajet en pluie de hasanât.",
+      "categorie": "FAJR-TACTIQUE"
     },
     {
       "id": "FAJR_144",
-      "fr": "Quand tu prendras tes médicaments aujourd'hui (si tu en prends), dis Bismillah avant. La barakah s'invite même dans la pharmacologie. Le Prophète ﷺ ne séparait pas le matériel du spirituel.",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Tu as 16 heures éveillées devant toi. 960 minutes. À ta mort, on te demandera ce que tu en as fait. Pas globalement. Minute par minute.",
+      "categorie": "FAJR-RAPPEL"
     },
     {
       "id": "FAJR_145",
-      "fr": "Aujourd'hui en faisant tes courses, dis Bismillah avant d'entrer dans le magasin. Sors avec Alhamdulillah. La barakah dans l'argent dépensé. Pas une superstition — une orientation du cœur.",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Le jour viendra où tu donnerais le monde entier pour revenir à ce matin, pour ajouter une seule hasanah. Tu y es. Maintenant. Ne le rate pas.",
+      "categorie": "FAJR-CONSCIENCE"
     },
     {
       "id": "FAJR_146",
-      "fr": "Aujourd'hui en t'asseyant dans une assemblée, dis Bismillah dans ton cœur. Quand tu te lèveras, dis l'invocation du Prophète ﷺ : « SubhânAka Allâhumma wa bihamdik, ash-hadu an lâ ilâha illâ Anta, astaghfiruka wa atûbu ilayk. » (Tirmidhi)",
+      "fr": "Le Prophète ﷺ mangeait avec 3 doigts et léchait ses doigts à la fin du repas (Muslim). Pas par grossièreté — par respect du don. Essaie aujourd'hui à un repas.",
       "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_147",
-      "fr": "Le Prophète ﷺ partageait ce qu'il mangeait. Aujourd'hui, offre quelque chose à manger à quelqu'un (un collègue, un voisin, un sans-abri). Pas grand chose. Une pomme. Un café. La barakah passe par le don.",
+      "fr": "Le Prophète ﷺ ne critiquait JAMAIS un plat. Si ça lui plaisait, il mangeait. Si non, il laissait sans rien dire (Bukhari). Garde-le en mémoire pour ce soir, à table.",
       "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_148",
-      "fr": "Aujourd'hui, vise : 5 minutes de Coran avant de toucher ton téléphone. Pas après le réveil — APRÈS Fajr. Ces 5 minutes prennent le pas sur les 5 heures de scroll potentiel. Hiérarchise.",
-      "categorie": "FAJR-OBJECTIF"
+      "fr": "Aujourd'hui, mange ce qui est devant toi. Ne tends pas la main à travers le plat pour prendre ailleurs (Bukhari). C'est l'adab oublié de notre époque. Réapprends-le.",
+      "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_149",
-      "fr": "Vise UN salut donné à un musulman que tu ne connais pas aujourd'hui. Croiser dans un magasin, dans la rue, à l'arrêt de bus. « As-salâmu 'alaykum » à un inconnu. Le Prophète ﷺ recommandait de saluer même ceux qu'on ne connaît pas (Bukhari).",
-      "categorie": "FAJR-OBJECTIF"
+      "fr": "Le Prophète ﷺ recommandait de ne pas remplir le ventre (Tirmidhi). Aujourd'hui, lève-toi de table en ayant encore un peu faim. Sens cette légèreté.",
+      "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_150",
-      "fr": "Aujourd'hui, vise : faire entrer la barakah dans un acte que tu fais par habitude. Manger sans Bismillah ? Mets-le. Sortir sans du'â ? Dis-le. Une habitude se transforme en sunnah.",
-      "categorie": "FAJR-OBJECTIF"
+      "fr": "Quand tu rentres dans une pièce où il y a quelqu'un aujourd'hui, dis « As-salâmu 'alaykum. » C'est la sunnah du Prophète ﷺ. Tu déposes la paix là où tu entres.",
+      "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_151",
-      "fr": "Le Prophète ﷺ a dit : « Allâh ne regarde pas vos corps ni vos formes — Il regarde vos cœurs et vos actes. » (Muslim) Aujourd'hui, tu peux concourir contre n'importe qui dans l'invisible. L'intention pèse, pas l'apparence.",
-      "categorie": "FAJR-MOTIVATION"
+      "fr": "Aujourd'hui, vise 70 fois « Astaghfirullah ». Le Prophète ﷺ — qui n'avait pas de péché — le disait plus de 70 fois par jour (Bukhari). Toi tu en as. Combien de fois devrais-tu le dire ?",
+      "categorie": "FAJR-OBJECTIF"
     },
     {
       "id": "FAJR_152",
-      "fr": "Hasanah du regard : aujourd'hui, à chaque fois que tu poses les yeux sur une chose belle (paysage, plat, personne, objet), dis « Mâ shâ' Allâh, tabârak Allâh. »",
-      "categorie": "FAJR-TACTIQUE"
+      "fr": "Vise UNE sourate à apprendre par cœur ce mois-ci. Pas aujourd'hui — ce mois. Aujourd'hui : choisis laquelle. Lis-la une fois. Demain pareil. Dans 30 jours, elle est en toi.",
+      "categorie": "FAJR-OBJECTIF"
     },
     {
       "id": "FAJR_153",
-      "fr": "Quand tu signes ton mail aujourd'hui, ajoute une formule de barakah si la personne est musulmane (« Bârak Allâh fîk »), ou une formule respectueuse sinon. Une signature qui transmet.",
-      "categorie": "FAJR-TACTIQUE"
+      "fr": "Vise une bonne action envers tes parents aujourd'hui. Un appel. Un message. Un service. Le Prophète ﷺ a dit que le paradis est sous les pieds des mères (Hadith). Marche dessus aujourd'hui.",
+      "categorie": "FAJR-OBJECTIF"
     },
     {
       "id": "FAJR_154",
-      "fr": "Hier soir tu as fait des plans pour aujourd'hui. Combien de fois ces plans n'ont rien donné parce qu'autre chose est arrivé ? Aujourd'hui n'appartient pas à tes plans — il appartient à Sa décision. Soumets-toi avant qu'Il ne te soumette.",
-      "categorie": "FAJR-RAPPEL"
+      "fr": "Le Prophète ﷺ a dit : « Quand un homme meurt, ses actes s'arrêtent, sauf trois : une aumône permanente, un savoir utile, ou un enfant pieux qui prie pour lui. » (Muslim) Aujourd'hui, sème dans une de ces trois cases.",
+      "categorie": "FAJR-MOTIVATION"
     },
     {
       "id": "FAJR_155",
-      "fr": "Tu vas mourir. Pas demain peut-être — mais tu vas mourir. Ce qui te reste de vie est inconnu. La seule chose que tu sais avec certitude : ce matin existe. Maintenant existe. Le reste est espoir.",
-      "categorie": "FAJR-CONSCIENCE"
+      "fr": "Une nuit de Laylat al-Qadr vaut mieux que mille mois (Coran 97:3). Mais une bonne action faite ce matin avec une intention pure pèse aussi dans la balance. La qualité dépasse parfois la quantité.",
+      "categorie": "FAJR-MOTIVATION"
     },
     {
       "id": "FAJR_156",
-      "fr": "Ferme les yeux 3 secondes. Sens ton souffle. Tu respires sans avoir à y penser — qui te fait respirer pendant que tu n'y penses pas ? Maintenant tu peux ouvrir les yeux. Tu sais.",
-      "categorie": "FAJR-ARRIVÉE"
+      "fr": "Hasanah facile : à chaque fois que tu vois un musulman aujourd'hui, dis dans ton cœur « Allâhumma maghfirah » pour lui. 5 personnes croisées = 5 du'âs invisibles = pluie de hasanât.",
+      "categorie": "FAJR-TACTIQUE"
     },
     {
       "id": "FAJR_157",
-      "fr": "Aujourd'hui à 21h ouvre Niyyah Pratique > adhkâr du soir. Une protection promise par le Prophète ﷺ pour la nuit (Abu Dawud).",
-      "categorie": "FAJR-CARREFOUR"
+      "fr": "Quand tu attendras quelque part aujourd'hui (queue, transport, ascenseur), au lieu de prendre ton téléphone, dis : « SubhânAllâh wa-l-hamdulillâh wa lâ ilâha illâ Allâh wa Allâhu akbar. » Le Prophète ﷺ a dit que ces 4 mots sont aimés d'Allah (Muslim).",
+      "categorie": "FAJR-TACTIQUE"
     },
     {
       "id": "FAJR_158",
-      "fr": "Niyyah Coran t'autorise à choisir : lecture, récitation, écoute. Aujourd'hui, choisis une modalité différente de d'habitude. Si tu lis toujours, écoute. Si tu écoutes toujours, récite.",
-      "categorie": "FAJR-CARREFOUR"
+      "fr": "Hier matin, tu étais comme aujourd'hui. Qu'as-tu fait depuis ? Si la réponse te gêne, alors aujourd'hui n'est pas une autre journée — c'est une seconde chance.",
+      "categorie": "FAJR-RAPPEL"
     },
     {
       "id": "FAJR_159",
-      "fr": "Si tu as un examen, une difficulté, un rendez-vous important aujourd'hui — ouvre Niyyah Du'âs > du'âs pour les épreuves. Le Prophète ﷺ avait des invocations pour chaque difficulté.",
-      "categorie": "FAJR-CARREFOUR"
+      "fr": "Pour chaque seconde que tu passes en dhikr, ton compte d'œuvres grandit. Aujourd'hui, ne laisse pas les secondes passer vides.",
+      "categorie": "FAJR-CONSCIENCE"
     },
     {
       "id": "FAJR_160",
-      "fr": "Niyyah a un module Hadiths classés par thème. Aujourd'hui choisis-en un : famille, ou repas, ou commerce, ou sommeil. Tu sauras 5 hadiths sur ce thème ce soir.",
-      "categorie": "FAJR-CARREFOUR"
+      "fr": "Aujourd'hui, en entrant aux toilettes, dis : « Allâhumma innî a'ûdhu bika min al-khubthi wa-l-khabâ'ith. » (Bukhari) Un acte que tu fais plusieurs fois par jour devient hasanah cachée.",
+      "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_161",
-      "fr": "Aujourd'hui à 17h, juste avant Maghrib, ouvre Niyyah. Un dernier coup d'œil avant la coupure du soir. Bilan rapide : qu'as-tu déjà fait de bien aujourd'hui ?",
-      "categorie": "FAJR-CARREFOUR"
+      "fr": "Quand tu sortiras des toilettes aujourd'hui, dis « Ghufrânak. » (Tirmidhi) Trois lettres. Pardon demandé. Hasanah gagnée. Sans personne autour.",
+      "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_162",
-      "fr": "Aujourd'hui en faisant un appel téléphonique important, mets ton mobile sur l'oreille droite (sunnah du droit). Pas de la magie — un détail qui rappelle qu'Allah est dans tout, même la posture des appels.",
+      "fr": "Le miroir du matin n'est pas un lieu de vanité. C'est un lieu de du'â. Niyyah te donne la formule prophétique à dire devant le miroir.",
       "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_163",
-      "fr": "Quand tu monteras un escalier aujourd'hui, dis « Allâhu akbar » à chaque marche. Quand tu descendras, dis « SubhânAllâh. » 30 marches = 30 dhikr. Sans effort.",
+      "fr": "Quand tu monteras dans ta voiture/bus/métro aujourd'hui, dis : « Subhâna-lladhî sakhkhara lanâ hâdhâ wa mâ kunnâ lahu muqrinîn. » (Coran 43:13) Niyyah l'a. 10 secondes. Voyage devenu adoration.",
       "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_164",
-      "fr": "Aujourd'hui en t'allongeant pour dormir (ou pour la sieste), allonge-toi sur le côté DROIT, mets la main droite sous ta joue droite (Bukhari). La sunnah du sommeil du Prophète ﷺ.",
+      "fr": "Aujourd'hui, soigne ton apparence avant de sortir : propreté, vêtement net, odeur. La sunnah du Prophète ﷺ. Tu es un témoin musulman, même par ton apparence.",
       "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_165",
-      "fr": "Aujourd'hui en faisant la vaisselle / le ménage / une tâche domestique, dis « Astaghfirullah » en boucle. 10 minutes de ménage = 10 minutes de pardons demandés. La maison se nettoie, l'âme aussi.",
-      "categorie": "FAJR-TACTIQUE"
+      "fr": "Aujourd'hui, vise : ne pas mentir une seule fois. Pas une petite blague. Pas une exagération. Le Prophète ﷺ a dit que le mensonge mène au péché (Bukhari). Une journée propre.",
+      "categorie": "FAJR-OBJECTIF"
     },
     {
       "id": "FAJR_166",
-      "fr": "Aujourd'hui, en bricolant ou en faisant un travail manuel, dis Bismillah avant. La main qui travaille devient une main d'adoration. Le travail honnête est ibâda quand l'intention y est.",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Vise UN parent à appeler aujourd'hui. Pas un message. Un appel. Le Prophète ﷺ a sévèrement rappelé l'importance du lien familial (Bukhari). Rétablis si tu as rompu. Renforce si tu n'as pas rompu.",
+      "categorie": "FAJR-OBJECTIF"
     },
     {
       "id": "FAJR_167",
-      "fr": "Aujourd'hui, vise : NE PAS critiquer une seule personne. Pas ton patron, pas ton voisin, pas un politicien à la télé. Le Prophète ﷺ a dit : « Que celui qui croit en Allâh et au Jour Dernier dise du bien ou se taise. » (Bukhari, Muslim)",
+      "fr": "Aujourd'hui, vise : prier UNE prière en mosquée si tu peux. Une seule. Le Prophète ﷺ a dit qu'une prière collective vaut 27 fois une prière seul (Bukhari). Multiplie ta journée.",
       "categorie": "FAJR-OBJECTIF"
     },
     {
       "id": "FAJR_168",
-      "fr": "Vise une demi-heure aujourd'hui sans le téléphone. Pas pour faire un break — pour PRIER, LIRE, RÉFLÉCHIR. 30 minutes sans écran = 30 minutes données à Allâh. Décide maintenant.",
-      "categorie": "FAJR-OBJECTIF"
+      "fr": "Le Prophète ﷺ a dit : « Sourire à ton frère est sadaqa. » (Tirmidhi) Le sadaqa n'est pas que financier. Tu peux donner 100 fois aujourd'hui sans dépenser un centime.",
+      "categorie": "FAJR-MOTIVATION"
     },
     {
       "id": "FAJR_169",
-      "fr": "Vise un mensonge à effacer aujourd'hui. Pas un nouveau pardon en bloc — UN mensonge précis que tu as dit récemment. Si tu peux corriger, fais-le. Si tu ne peux pas, demande pardon en pensant à cette personne.",
-      "categorie": "FAJR-OBJECTIF"
+      "fr": "Programme une alarme à 12h aujourd'hui. Quand elle sonne, arrête tout 30 secondes : 10 SubhânAllâh, 10 Alhamdulillâh, 10 Allâhu akbar. C'est une sunnah rapportée à Fatima رضي الله عنها (Bukhari).",
+      "categorie": "FAJR-TACTIQUE"
     },
     {
       "id": "FAJR_170",
-      "fr": "Aujourd'hui, fais un du'â pour les opprimés, pour les ignorants, pour ta oumma. Le Prophète ﷺ a dit : « Le du'â du musulman pour son frère en son absence est exaucé. » (Muslim) Ta tristesse devient hasanah.",
-      "categorie": "FAJR-MOTIVATION"
+      "fr": "Si quelqu'un te contrarie aujourd'hui (collègue, automobiliste, famille), au lieu de réagir : dis dans ton cœur « Allâhumma agh-fir lahu wa lî. » Tu désamorces ton ego. Tu gagnes deux hasanât d'un coup.",
+      "categorie": "FAJR-TACTIQUE"
     },
     {
       "id": "FAJR_171",
-      "fr": "Le Prophète ﷺ a dit : « N'est pas croyant celui qui dort le ventre plein pendant que son voisin a faim. » (al-Bukhârî dans al-Adab al-Mufrad ; chaîne classée hasan) Aujourd'hui, pense à un voisin.",
-      "categorie": "FAJR-MOTIVATION"
-    },
-    {
-      "id": "FAJR_172",
-      "fr": "Hasanah de la conduite : si tu conduis aujourd'hui, dis le du'â du voyage en démarrant. Le Prophète ﷺ disait à chaque voyage : « Subhâna-lladhî sakhkhara lanâ hâdhâ... » (Coran 43:13, Muslim). Voyage protégé. Arrête-toi sans agacement aux rouges — c'est du sabr.",
-      "categorie": "FAJR-TACTIQUE"
-    },
-    {
-      "id": "FAJR_173",
-      "fr": "Quand tu auras envie de regarder quelque chose de mauvais aujourd'hui — vidéo, image, conversation — au lieu de juste détourner, ferme l'écran complètement. Puis dis « Astaghfirullah. » Tu as gagné une bataille.",
-      "categorie": "FAJR-TACTIQUE"
-    },
-    {
-      "id": "FAJR_174",
-      "fr": "Demain est un mythe. Le seul vrai temps qu'Allah t'a donné à coup sûr, c'est cette minute-ci. Aujourd'hui, traite chaque minute comme la seule. C'est ainsi que vivaient les compagnons.",
+      "fr": "Le Prophète ﷺ a dit : « Saisis cinq choses avant cinq : ta jeunesse avant ta vieillesse, ta santé avant ta maladie, ta richesse avant ta pauvreté, ton temps libre avant ton occupation, ta vie avant ta mort. » (Hâkim) Tu en es à quel stade ?",
       "categorie": "FAJR-RAPPEL"
     },
     {
-      "id": "FAJR_175",
-      "fr": "Le Prophète ﷺ a dit : « Le serviteur le plus aimé d'Allâh est celui dont les œuvres sont les plus régulières, même si elles sont peu nombreuses. » (Bukhari, Muslim) Aujourd'hui, choisis UNE petite chose à faire — et fais-la chaque jour pendant 30 jours.",
+      "id": "FAJR_172",
+      "fr": "Tu n'as PAS choisi de te réveiller ce matin. Quelqu'un te l'a accordé. Ce souffle que tu prends maintenant — Il peut le reprendre dans 5 minutes. Que veux-tu avoir fait avant ?",
       "categorie": "FAJR-CONSCIENCE"
     },
     {
+      "id": "FAJR_173",
+      "fr": "Aujourd'hui, en sortant de chez toi, dis : « Bismillâh, tawakkaltu 'alâ Allâh, lâ hawla wa lâ quwwata illâ billâh. » (Tirmidhi) Tu sors avec protection. Le shaytân se retire.",
+      "categorie": "FAJR-QUOTIDIEN"
+    },
+    {
+      "id": "FAJR_174",
+      "fr": "Quand tu rentres chez toi aujourd'hui, dis « Bismillâh » en entrant et salue ta famille. Le Prophète ﷺ recommandait ces deux actes pour la barakah de la maison (Muslim).",
+      "categorie": "FAJR-QUOTIDIEN"
+    },
+    {
+      "id": "FAJR_175",
+      "fr": "Aujourd'hui, dors la sieste de Qaylûla si tu peux (15-20 min après Dhuhr). C'est une sunnah qui te rend plus efficace tout l'après-midi.",
+      "categorie": "FAJR-QUOTIDIEN"
+    },
+    {
       "id": "FAJR_176",
-      "fr": "Le ciel passe du noir au gris au rosé au bleu. Pendant que tu lisais ces mots, la lumière a changé. C'est pour toi aussi. Tu changes maintenant. Que reste-t-il du moi de cette nuit ?",
-      "categorie": "FAJR-ARRIVÉE"
+      "fr": "Quand tu mets ta chaussure droite aujourd'hui, mets-la en premier. La gauche s'enlève en premier (Bukhari). Détail ? Non — c'est la sunnah dans 5 secondes de ta journée.",
+      "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_177",
-      "fr": "Niyyah te suit dans ton voyage spirituel. Aujourd'hui, vois où tu en es dans tes habitudes installées. Une habitude tenue 30 jours est une habitude pour la vie. Quelle est la prochaine que tu installeras ?",
-      "categorie": "FAJR-CARREFOUR"
+      "fr": "Aujourd'hui, dors sur ton côté droit, la main droite sous la joue. C'est la sunnah du sommeil du Prophète ﷺ (Bukhari). Une position qui devient ibâda.",
+      "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_178",
-      "fr": "Niyyah Du'âs a une catégorie pour ceux qui souffrent : maladie, deuil, anxiété, doute. Aujourd'hui, si tu connais quelqu'un dans une de ces situations, ouvre la catégorie et fais le du'â pour LUI. Le Prophète ﷺ a dit que le du'â pour l'absent est exaucé (Muslim).",
-      "categorie": "FAJR-CARREFOUR"
-    },
-    {
-      "id": "FAJR_179",
-      "fr": "Niyyah Sîra contient les RDV avec le Prophète ﷺ. Tu les lis dans l'ordre — tu vis sa vie avec lui. Aujourd'hui, lis le RDV du jour ou reprends là où tu t'es arrêté.",
-      "categorie": "FAJR-CARREFOUR"
-    },
-    {
-      "id": "FAJR_180",
-      "fr": "Niyyah Tafakkur t'invite à méditer les noms d'Allah. Pas en bloc — un par un. Aujourd'hui, juste un. Si tu en mémorisais un par semaine, en 2 ans tu connais les 99.",
-      "categorie": "FAJR-CARREFOUR"
-    },
-    {
-      "id": "FAJR_181",
-      "fr": "Aujourd'hui, va dans Niyyah Hadiths et apprends UN hadith par cœur. Pas un long. Un court — 1 ligne. À chaque fois que tu le réciteras à quelqu'un, tu transmettras le bien.",
-      "categorie": "FAJR-CARREFOUR"
-    },
-    {
-      "id": "FAJR_182",
-      "fr": "Aujourd'hui en mangeant une chose nouvelle (un fruit, un plat), regarde-la 2 secondes. Pense à la chaîne qui te l'a apportée : terre, plante, agriculteur, transporteur, vendeur. Allâh derrière chaque maillon. Mange en gratitude.",
-      "categorie": "FAJR-QUOTIDIEN"
-    },
-    {
-      "id": "FAJR_183",
-      "fr": "Quand tu donneras un cadeau aujourd'hui (à ton enfant, ton conjoint, un ami), dis dans ton cœur « Allâhumma j'offre cela pour Toi. » Le cadeau devient sadaqa par l'intention.",
-      "categorie": "FAJR-QUOTIDIEN"
-    },
-    {
-      "id": "FAJR_184",
-      "fr": "Aujourd'hui, mange simplement. Pas de gaspillage. Pas de tri obsessionnel. Le Prophète ﷺ mangeait ce qui était disponible (Bukhari). La simplicité retrouvée.",
-      "categorie": "FAJR-QUOTIDIEN"
-    },
-    {
-      "id": "FAJR_185",
-      "fr": "Aujourd'hui en buvant ton café/thé, prends-le par 3 gorgées séparées. Ne le bois pas d'un trait (Muslim). Une simple boisson devient ibâda.",
-      "categorie": "FAJR-QUOTIDIEN"
-    },
-    {
-      "id": "FAJR_186",
-      "fr": "Aujourd'hui en finissant un repas, dis : « Alhamdulillâhi-lladhî at'amanî hâdhâ wa razaqanîhi min ghayri hawlin minnî wa lâ quwwa. » (Tirmidhi, hasan)",
-      "categorie": "FAJR-QUOTIDIEN"
-    },
-    {
-      "id": "FAJR_187",
-      "fr": "Aujourd'hui, vise : entrer dans la mosquée si tu en croises une. Même 5 minutes. Même juste pour saluer. Le Prophète ﷺ recommandait deux rak'as à l'entrée d'une mosquée (Bukhari, Muslim).",
+      "fr": "Vise aujourd'hui : faire SOURIRE quelqu'un. Pas par devoir. Vraiment. Une fois. Le Prophète ﷺ riait souvent et savait sourire (Bukhari). L'islam n'est pas la gravité — c'est la lumière qui se transmet.",
       "categorie": "FAJR-OBJECTIF"
     },
     {
+      "id": "FAJR_179",
+      "fr": "Aujourd'hui, vise : retenir UNE colère. Une seule. Le Prophète ﷺ a dit que le fort n'est pas celui qui terrasse, mais celui qui se contrôle dans la colère (Bukhari). Là où tu te retiens, Allah t'élève.",
+      "categorie": "FAJR-OBJECTIF"
+    },
+    {
+      "id": "FAJR_180",
+      "fr": "Vise un effort financier aujourd'hui : 1€, 5€, 50€ — peu importe. Donne en cachette si possible. Le Prophète ﷺ a dit que la sadaqa éteint la faute comme l'eau éteint le feu (Tirmidhi). Éteins quelque chose aujourd'hui.",
+      "categorie": "FAJR-OBJECTIF"
+    },
+    {
+      "id": "FAJR_181",
+      "fr": "Le Prophète ﷺ a parlé des degrés du Paradis comme on voit des étoiles à l'horizon (Bukhari). Une seule bonne action sincère peut te faire monter d'un degré. Aujourd'hui, lequel veux-tu gagner ?",
+      "categorie": "FAJR-MOTIVATION"
+    },
+    {
+      "id": "FAJR_182",
+      "fr": "Hasanah cachée : aujourd'hui à un repas, laisse une dernière bouchée. Le Prophète ﷺ ne se rassasiait jamais complètement (Bukhari). Imite-le sans personne autour.",
+      "categorie": "FAJR-TACTIQUE"
+    },
+    {
+      "id": "FAJR_183",
+      "fr": "Pose une alarme à 15h aujourd'hui. Quand elle sonne, dis 100 fois Astaghfirullah. 5 minutes. Le Prophète ﷺ — qui n'avait aucun péché — disait l'istighfâr plus de 70 fois par jour (Bukhari).",
+      "categorie": "FAJR-TACTIQUE"
+    },
+    {
+      "id": "FAJR_184",
+      "fr": "Quand tu salues quelqu'un aujourd'hui, dis « As-salâmu 'alaykum wa rahmatullâhi wa barakâtuh. » La forme complète. Plus tu ajoutes de mots dans la salutation, plus les hasanât augmentent (Abu Dawud).",
+      "categorie": "FAJR-TACTIQUE"
+    },
+    {
+      "id": "FAJR_185",
+      "fr": "Ce matin, beaucoup ne se sont pas réveillés. Toi si. Cette différence est un sursis. Que vas-tu faire avant que le tien ne s'achève ?",
+      "categorie": "FAJR-RAPPEL"
+    },
+    {
+      "id": "FAJR_186",
+      "fr": "Le Prophète ﷺ a dit : « Hâtez-vous d'accomplir des œuvres avant que ne surviennent des épreuves comme des morceaux d'une nuit obscure. » (Muslim) Personne ne sait quand la nuit tombera. Travaille pendant qu'il fait jour.",
+      "categorie": "FAJR-RAPPEL"
+    },
+    {
+      "id": "FAJR_187",
+      "fr": "Une seule « Lâ ilâha illâ Allâh » prononcée sincèrement pèse infiniment dans la balance d'Allah. Tu l'as dite combien de fois ce mois-ci avec présence ? Aujourd'hui : une fois. Vraiment.",
+      "categorie": "FAJR-CONSCIENCE"
+    },
+    {
       "id": "FAJR_188",
-      "fr": "Vise une journée sans murmurer contre une chose (la pluie, le métro en retard, un retard administratif). Tout est ce qu'Allâh décide. Une journée muette = une journée propre.",
+      "fr": "Aujourd'hui, vise : pas une médisance. Une seule fois retenir. Le Coran compare la médisance à manger la chair de son frère mort (49:12). Image qui se grave. Aujourd'hui, ne mange pas.",
       "categorie": "FAJR-OBJECTIF"
     },
     {
       "id": "FAJR_189",
-      "fr": "Vise UNE invocation à voix audible avec un proche aujourd'hui. Pas seul. Trouve quelqu'un pour dire amîn. Le Prophète ﷺ disait beaucoup d'invocations avec ses compagnons (multiples hadiths).",
+      "fr": "Vise une lecture aujourd'hui : 2 pages de Coran à 13h. Pas davantage. Sur une vie, 2 pages × 365 jours × 30 ans = un Coran lu de nombreuses fois. Tout commence aujourd'hui.",
       "categorie": "FAJR-OBJECTIF"
     },
     {
       "id": "FAJR_190",
-      "fr": "Le Coran et la sounnah enseignent que les bonnes actions effacent les mauvaises (Coran 11:114, hadith). Aujourd'hui, si tu te sens chargé de quelque chose, ne cherche pas le pardon dans le vide — fais 1 bonne action. Elle efface.",
-      "categorie": "FAJR-MOTIVATION"
+      "fr": "Vise UNE chose à PROMETTRE à Allah aujourd'hui — entre toi et Lui. Une chose précise. Petite. Tenable. Et tiens-la jusqu'à la nuit. C'est dans les petites promesses tenues que naissent les grands serviteurs.",
+      "categorie": "FAJR-OBJECTIF"
     },
     {
       "id": "FAJR_191",
-      "fr": "Le Prophète ﷺ a dit qu'au Paradis, on dira au porteur du Coran : « Récite et monte. » (Tirmidhi, hasan sahîh) Aujourd'hui, mémorise UN VERSET. Demain pareil. En 1 an, ta place est plus haute.",
-      "categorie": "FAJR-MOTIVATION"
+      "fr": "Si tu travailles devant un écran aujourd'hui, mets un fond d'écran avec « Allâh ». Pas pour décorer — pour qu'à chaque regard, tu te rappelles devant Qui tu vis.",
+      "categorie": "FAJR-TACTIQUE"
     },
     {
       "id": "FAJR_192",
-      "fr": "Aujourd'hui en attendant une vidéo qui charge, un mail qui s'envoie, une page qui s'ouvre — au lieu de scroller pendant les 5 secondes : dis « Astaghfirullah » trois fois. 10 chargements = 30 pardons.",
-      "categorie": "FAJR-TACTIQUE"
+      "fr": "Cette journée n'a pas de bouton « annuler ». Ce que tu vas dire, faire, regarder, écouter — c'est inscrit. Les deux anges écrivent en ce moment (Coran 50:18). La page de ce matin commence vierge.",
+      "categorie": "FAJR-RAPPEL"
     },
     {
       "id": "FAJR_193",
-      "fr": "Si tu vois une mosquée aujourd'hui (en passant, en voiture, en marchant), dis dans ton cœur : « Allâhumma j'aimerais y prier un jour avec sincérité. » Une intention pure compte (hadith).",
-      "categorie": "FAJR-TACTIQUE"
+      "fr": "Combien de « demain » t'es-tu déjà donnés ? Combien sont déjà passés sans rien faire de ce que tu voulais y mettre ? Aujourd'hui est le seul demain que tu auras jamais reçu en cadeau.",
+      "categorie": "FAJR-RAPPEL"
     },
     {
       "id": "FAJR_194",
-      "fr": "Tu as compté combien de Fajr tu as ratés dans ta vie ? Combien de fois tu as eu « envie » de le rattraper et tu ne l'as pas fait ? Aujourd'hui n'est pas la moyenne — c'est l'exception qui peut tout changer si tu le décides maintenant.",
+      "fr": "Imagine que tu sois face à Allah ce soir. Pas dans 60 ans. Ce soir. Que voudrais-tu avoir fait aujourd'hui ? Maintenant tu sais quoi faire.",
       "categorie": "FAJR-RAPPEL"
     },
     {
       "id": "FAJR_195",
-      "fr": "Le Prophète ﷺ a dit : « Il viendra sur les gens un temps où celui qui tient à sa religion sera comme celui qui tient un charbon ardent. » (Tirmidhi, hasan sahîh) Aujourd'hui, tiens. Même si ça brûle.",
+      "fr": "Tes deux anges, Raqîb et 'Atîd, sont en place (Coran 50:18). L'un inscrit le bien, l'autre le mal. Aujourd'hui, donne du travail à l'un et du repos à l'autre.",
       "categorie": "FAJR-CONSCIENCE"
     },
     {
       "id": "FAJR_196",
-      "fr": "200 matins comme celui-ci sont prévus dans ta vie peut-être. Peut-être 5000. Personne ne sait. Mais celui-ci — ce matin précis — il existe maintenant. Tu y es. Tu lis ces derniers mots. C'est ton départ. Va.",
-      "categorie": "FAJR-ARRIVÉE"
+      "fr": "Le Prophète ﷺ a dit : « Allâh est plus joyeux du retour de Son serviteur que le voyageur qui retrouve sa monture perdue avec toutes ses provisions au milieu du désert. » (Bukhari, Muslim) Imagine cette joie. Donne-la-Lui aujourd'hui.",
+      "categorie": "FAJR-CONSCIENCE"
     },
     {
       "id": "FAJR_197",
-      "fr": "Niyyah Pratique a les adhkâr du voyage. Si tu te déplaces aujourd'hui (même 30 minutes), tu es un voyageur. Le voyageur a des du'âs spécifiques. Ouvre.",
-      "categorie": "FAJR-CARREFOUR"
+      "fr": "Chaque pas vers la prière compte (Muslim). Le pas que tu fais maintenant vers Niyyah, qui te ramène à Lui — il est déjà compté.",
+      "categorie": "FAJR-CONSCIENCE"
     },
     {
       "id": "FAJR_198",
-      "fr": "Niyyah a un module pour les enfants si tu en as ou si tu en côtoies. Le Prophète ﷺ enseignait aux enfants avec douceur et amour (Bukhari). Aujourd'hui, raconte une histoire de prophète à un enfant. Tu sèmes pour des années.",
-      "categorie": "FAJR-CARREFOUR"
+      "fr": "Ton âme était partie cette nuit. Allah te l'a rendue ce matin (Coran 39:42). Pas par habitude. Par choix. Il aurait pu ne pas. Il l'a fait. Que veux-tu faire de ce cadeau de 16 heures ?",
+      "categorie": "FAJR-ARRIVÉE"
     },
     {
       "id": "FAJR_199",
-      "fr": "Si tu te demandes « que faire en cas de douleur ? », Niyyah Du'âs a les invocations prophétiques. Ouvre maintenant pour les mémoriser avant qu'elles ne te soient utiles.",
-      "categorie": "FAJR-CARREFOUR"
+      "fr": "Ton cœur a battu toute la nuit sans que tu ne le commandes. Quelqu'un veille pendant que tu dors. Aujourd'hui, bats aussi pour Lui.",
+      "categorie": "FAJR-ARRIVÉE"
     },
     {
       "id": "FAJR_200",
-      "fr": "Niyyah Hadiths a une section sur les épouses du Prophète ﷺ. Ces récits sont peu enseignés. Aujourd'hui, lis-en un. Tu connaîtras quelque chose que beaucoup ignorent.",
-      "categorie": "FAJR-CARREFOUR"
+      "fr": "Tu viens de prier Fajr. Le Prophète ﷺ a dit que celui qui prie Fajr est sous la protection d'Allah jusqu'au soir (Muslim). Sors confiant.",
+      "categorie": "FAJR-ARRIVÉE"
     },
     {
       "id": "FAJR_201",
-      "fr": "Si tu doutes de toi aujourd'hui (perte de confiance, sentiment d'inutilité), ouvre Niyyah Tafakkur > Al-Latîf. Le Tendre. Il connaît tes profondeurs. Une méditation qui répare.",
-      "categorie": "FAJR-CARREFOUR"
+      "fr": "À cette seconde précise, l'adhân du Fajr est prononcé quelque part dans le monde. Sans interruption depuis 14 siècles. Tu fais partie d'une chaîne ininterrompue. Honore-la aujourd'hui.",
+      "categorie": "FAJR-ARRIVÉE"
     },
     {
       "id": "FAJR_202",
-      "fr": "Aujourd'hui en te peignant ou en te coiffant, dis Bismillah. Le Prophète ﷺ se peignait souvent et utilisait le miswak (Bukhari). Un acte de présentation devient acte d'adoration.",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Tu as ouvert les yeux. Tu as prié. Tu as ouvert Niyyah. Tu as lu ces mots. Toutes ces secondes, des décisions invisibles t'ont mené ici. Allah te veut éveillé aujourd'hui. Sois-le.",
+      "categorie": "FAJR-ARRIVÉE"
     },
     {
       "id": "FAJR_203",
-      "fr": "Quand tu paieras quelque chose aujourd'hui (en cash, en carte), dis dans ton cœur « Allâhumma bârik lî fî rizqî. » L'argent dépensé en barakah revient multiplié.",
+      "fr": "Aujourd'hui, mange du miel. Le Prophète ﷺ aimait le miel (Bukhari). Une cuillère le matin = sunnah accomplie + corps préservé. La nature et la révélation s'accordent souvent.",
       "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_204",
-      "fr": "Aujourd'hui en mangeant, dis Bismillah avant la première bouchée. Si tu oublies, dis pendant : « Bismillâhi awwalihi wa âkhirihi. » (Tirmidhi, hasan sahîh) La sunnah te rattrape toujours.",
+      "fr": "Mets du parfum avant de sortir. Le Prophète ﷺ aimait le parfum (Nasâ'î). Tu sors marqué — sans personne savoir pourquoi.",
       "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_205",
-      "fr": "Aujourd'hui en utilisant un objet précieux pour toi (livre, téléphone, voiture), dis « Alhamdulillâh. » Tu protèges l'objet du nazar et tu remercies.",
+      "fr": "Aujourd'hui, utilise le siwak (ou brosse à dents) avec l'intention de la sunnah. Le Prophète ﷺ disait : « Le siwak purifie la bouche et plaît au Seigneur. » (Ahmad, Nasâ'î)",
       "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_206",
-      "fr": "Aujourd'hui, vise : 1 minute de silence avant ta prière. Le Prophète ﷺ marquait un temps avant le takbîr. Un silence préparatoire change la qualité de ta salat.",
-      "categorie": "FAJR-OBJECTIF"
+      "fr": "Aujourd'hui, dors avec wudu si tu peux. Le Prophète ﷺ recommandait de dormir en état de pureté (Bukhari). Une nuit sous protection particulière.",
+      "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_207",
-      "fr": "Vise UN regard de douceur envers ton père/mère aujourd'hui. Le Prophète ﷺ a profondément insisté sur la bonté envers les parents (Bukhari, Muslim). Le bon traitement des parents ouvre des portes immenses.",
-      "categorie": "FAJR-OBJECTIF"
+      "fr": "Bois ton verre d'eau du matin assis. Trois petites gorgées. Bismillah avant. Alhamdulillah après (Muslim). Trois actes de sunnah dans 30 secondes. Multiplie par chaque verre de la journée.",
+      "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_208",
-      "fr": "Aujourd'hui, vise une réconciliation. Pas avec quelqu'un qui t'a fait mal — avec quelqu'un que TU as peut-être déçu. Le Prophète ﷺ a dit que réconcilier est meilleur que la prière, le jeûne et l'aumône surérogatoires (Tirmidhi, hasan).",
+      "fr": "Aujourd'hui, vise : ne pas regarder une seule chose qu'Allah n'aime pas voir. Le Prophète ﷺ a parlé du regard comme d'une flèche du shaytân (rapporté par plusieurs voies). Baisse les yeux. Une fois pour commencer.",
       "categorie": "FAJR-OBJECTIF"
     },
     {
       "id": "FAJR_209",
-      "fr": "Le Prophète ﷺ a dit : « Quiconque dit 100 fois dans la journée : Lâ ilâha illâ Allâh, wahdahu lâ sharîka lah, lahu-l-mulku wa lahu-l-hamd, wa huwa 'alâ kulli shay'in qadîr — a la récompense d'avoir affranchi 10 esclaves, 100 hasanât lui sont inscrites, 100 péchés effacés, et il est protégé du shaytân jusqu'au soir. » (Bukhari, Muslim) Tu peux les dire en quelques minutes.",
-      "categorie": "FAJR-MOTIVATION"
+      "fr": "Vise une journée sans téléphone aux toilettes. Pas par modernité — par adab. Tu vas adorer Allah dans cette journée — ne profanes pas tes outils d'adoration en lieu impur.",
+      "categorie": "FAJR-OBJECTIF"
     },
     {
       "id": "FAJR_210",
-      "fr": "Le Prophète ﷺ a dit : « Celui qui se purifie chez lui puis se rend à la mosquée pour la prière obligatoire, chaque pas qu'il fait élève d'un degré et efface un péché. » (Muslim) Combien de pas pour aller à la mosquée ? Multiplie.",
-      "categorie": "FAJR-MOTIVATION"
+      "fr": "Aujourd'hui, vise : retenir 1 dhikr nouveau par cœur. Pas demain. Aujourd'hui. Niyyah Du'âs te le fournit. Dans un an, tu auras 365 du'âs en toi. Tu prieras autrement.",
+      "categorie": "FAJR-OBJECTIF"
     },
     {
       "id": "FAJR_211",
-      "fr": "Hasanah de l'écoute : aujourd'hui quand quelqu'un te raconte un problème, écoute SANS donner ton avis. Juste écouter. Le Prophète ﷺ écoutait longuement avant de répondre (Bukhari). Une oreille tendue est sadaqa.",
-      "categorie": "FAJR-TACTIQUE"
+      "fr": "Le Prophète ﷺ a dit : « Celui qui jeûne un jour pour Allah, Allah éloigne son visage de l'Enfer de 70 ans. » (Bukhari, Muslim) Si tu jeûnes lundi prochain — c'est immense. Programme-le.",
+      "categorie": "FAJR-MOTIVATION"
     },
     {
       "id": "FAJR_212",
-      "fr": "Quand tu te brosseras les dents aujourd'hui, fais-le en pensant à la sunnah du siwak. Le Prophète ﷺ disait : « Le siwak purifie la bouche et plaît au Seigneur. » (Nasâ'î, Ahmad)",
-      "categorie": "FAJR-TACTIQUE"
+      "fr": "La sadaqa cachée est précieuse en islam (plusieurs hadiths la mentionnent). Donne aujourd'hui sans que personne ne sache. Tu éteins quelque chose dans l'invisible.",
+      "categorie": "FAJR-MOTIVATION"
     },
     {
       "id": "FAJR_213",
-      "fr": "Combien de fois tu as ouvert ton téléphone hier ? Combien de fois tu as dit « SubhânAllâh » hier ? Si la première réponse dépasse trop la seconde — quelque chose à corriger maintenant.",
-      "categorie": "FAJR-RAPPEL"
+      "fr": "Pose un Coran ouvert sur ta table de bureau aujourd'hui. À chaque pause, lis UN seul verset. À la fin de la journée, tu auras lu ce que d'autres ne lisent pas en une semaine. Sans effort.",
+      "categorie": "FAJR-TACTIQUE"
     },
     {
       "id": "FAJR_214",
-      "fr": "Le Prophète ﷺ a dit : « Tout fils d'Adam est pécheur, et les meilleurs des pécheurs sont ceux qui se repentent. » (Tirmidhi, hasan) Aujourd'hui, tu n'es pas un échec — tu es un pécheur qui peut se relever. Relève-toi maintenant.",
-      "categorie": "FAJR-RAPPEL"
+      "fr": "Quand quelqu'un te fait un service aujourd'hui (caisse, livraison, ouverture de porte), réponds : « Jazâka Allâhu khayran. » (Tirmidhi, hasan) Tu transformes une politesse en transmission de la sunnah.",
+      "categorie": "FAJR-TACTIQUE"
     },
     {
       "id": "FAJR_215",
-      "fr": "Allâh est plus proche de toi que ta veine jugulaire (Coran 50:16). Par Sa connaissance. Il sait ce que tu as pensé dans cette dernière minute. Aujourd'hui, vis comme si tu Le voyais.",
-      "categorie": "FAJR-CONSCIENCE"
+      "fr": "Le shaytân ne te dit JAMAIS « ne prie pas ». Il te dit : « Tu prieras après ça. » Le piège, c'est le délai. Aujourd'hui, fais maintenant.",
+      "categorie": "FAJR-RAPPEL"
     },
     {
       "id": "FAJR_216",
-      "fr": "Tu as toujours rêvé d'une journée parfaite. Aujourd'hui peut l'être — pas selon les standards du monde mais selon les standards de l'au-delà. Une journée parfaite = une journée pour Lui. Tu commences maintenant.",
-      "categorie": "FAJR-ARRIVÉE"
+      "fr": "Les portes du Paradis sont au nombre de huit. Une seule s'appelle Ar-Rayyân — réservée aux jeûneurs (Bukhari). Aujourd'hui, par quelle porte veux-tu entrer ? Tu choisis maintenant.",
+      "categorie": "FAJR-CONSCIENCE"
     },
     {
       "id": "FAJR_217",
-      "fr": "Niyyah Pratique te liste les sunan du jour de Jumu'ah : ghusl, parfum, beaux vêtements, sourate Al-Kahf, du'â à la dernière heure. Aujourd'hui (si on est vendredi) ou ce vendredi qui vient, mets-les en pratique.",
-      "categorie": "FAJR-CARREFOUR"
+      "fr": "Le ciel devient blanc. Tu vois. Tes yeux fonctionnent — sans que tu les aies fabriqués. Aujourd'hui, le premier hamd est pour ça. Pas par habitude. Vraiment.",
+      "categorie": "FAJR-ARRIVÉE"
     },
     {
       "id": "FAJR_218",
-      "fr": "Si tu te sens spirituellement sec aujourd'hui, ouvre Niyyah Récits du Coran > histoire de Yûnus. Il était plus bas que toi — dans le ventre d'un poisson dans la nuit dans la mer. Il s'est relevé. Toi aussi.",
-      "categorie": "FAJR-CARREFOUR"
+      "fr": "Aujourd'hui à un repas, mange ce qui est devant toi sans tendre la main loin (Bukhari). Si tu manges seul, fais-le aussi. La sunnah ne dépend pas du regard des autres.",
+      "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_219",
-      "fr": "Niyyah a un module pour les questions des nouveaux musulmans. Si tu connais quelqu'un qui découvre l'islam, partage. Le Prophète ﷺ a dit que celui qui guide à un bien a la récompense de celui qui le fait (Muslim).",
-      "categorie": "FAJR-CARREFOUR"
+      "fr": "Quand tu marcheras aujourd'hui, marche calmement. Le Prophète ﷺ marchait posément, comme s'il descendait une pente (Bukhari). Pas pressé. Pas distrait. Une marche devient un acte d'adoration.",
+      "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_220",
-      "fr": "Niyyah Du'âs > catégorie « demande de pardon ». Plusieurs formulations différentes de demandes de pardon prophétiques. Aujourd'hui, apprends-en UNE nouvelle.",
-      "categorie": "FAJR-CARREFOUR"
+      "fr": "Aujourd'hui en payant quelque chose, donne le pourboire qui n'est pas obligatoire. 1 euro de plus à la caissière, au livreur, au serveur. Sans rien attendre. Sans rien montrer. Sadaqa cachée.",
+      "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_221",
-      "fr": "Niyyah Sîra a une catégorie « compagnons exceptionnels ». Aujourd'hui, lis l'histoire d'Abû Bakr ou de 'Umar. Tu auras un modèle nommé pour ta journée. Imite UN trait précis de leur conduite.",
-      "categorie": "FAJR-CARREFOUR"
+      "fr": "Quand tu rencontreras quelqu'un aujourd'hui, regarde-le en face. Pas le téléphone. Le Prophète ﷺ tournait tout son corps vers la personne qui lui parlait (Tirmidhi). Donne ton attention. C'est la plus belle sadaqa.",
+      "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_222",
-      "fr": "Aujourd'hui en t'asseyant à ton bureau / poste de travail, dis dans ton cœur « Allâhumma j'agis aussi pour Toi. » Ton travail devient travail spirituel. Tes heures deviennent ibâda.",
+      "fr": "Aujourd'hui, ouvre la porte à quelqu'un. Cède un siège. Aide à porter. Le Prophète ﷺ a énuméré ces actes parmi les sadaqât (Bukhari, Muslim). Le serviteur est partout dans le service.",
       "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_223",
-      "fr": "Quand tu rentreras chez toi aujourd'hui, dis Bismillah en franchissant la porte. Puis « As-salâmu 'alaykum » à ta famille ou à toi-même si tu vis seul. La sounnah de la salutation à l'entrée (Muslim).",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Aujourd'hui, vise : prier UNE prière en mosquée si tu peux. Le Prophète ﷺ a dit qu'une prière en groupe vaut 27 fois (Bukhari). Multiplie ta journée.",
+      "categorie": "FAJR-OBJECTIF"
     },
     {
       "id": "FAJR_224",
-      "fr": "Aujourd'hui en jetant un déchet, fais-le dans une vraie poubelle. Pas par terre. Le Prophète ﷺ a parlé du fait d'enlever les nuisances du chemin comme acte de foi (Muslim). Ne fais pas le contraire — laisser une nuisance pour les autres.",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Vise une lecture aujourd'hui : sourate Al-Ikhlâs 3 fois équivaut à lire un tiers du Coran (Bukhari). En 30 secondes, tu accomplis quelque chose d'immense. Pas remplacement de la lecture complète, mais cadeau divin.",
+      "categorie": "FAJR-OBJECTIF"
     },
     {
       "id": "FAJR_225",
-      "fr": "Aujourd'hui en lavant tes mains, lave-les complètement (poignets compris). Le Prophète ﷺ insistait sur l'eau qui atteint complètement les membres du wudu (Bukhari). Fais-le complet.",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Vise UN bon mot envers ton conjoint/parent/ami aujourd'hui. Pas un compliment vide — un mot précis sur quelque chose que tu admires. Le Prophète ﷺ a dit que la bonne parole est sadaqa (Bukhari).",
+      "categorie": "FAJR-OBJECTIF"
     },
     {
       "id": "FAJR_226",
-      "fr": "Aujourd'hui en mangeant ton dessert (si tu en manges), dis « Alhamdulillâh » 3 fois. Pas par habitude — vraiment. Tu remercies pour une douceur. La douceur est aussi don d'Allâh.",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Le Prophète ﷺ a évoqué que chaque articulation du corps a besoin d'une sadaqa par jour (Muslim). Vois ta journée comme une occasion d'honorer chaque membre par une bonne action.",
+      "categorie": "FAJR-MOTIVATION"
     },
     {
       "id": "FAJR_227",
-      "fr": "Aujourd'hui, vise une rak'a surérogatoire (Duhâ, ou Rawâtib). Une seule. Le Prophète ﷺ a dit que les surérogatoires complètent ce qui manque dans les obligatoires (Tirmidhi).",
-      "categorie": "FAJR-OBJECTIF"
+      "fr": "Aujourd'hui, dis « Lâ ilâha illâ Allâh » 70 fois avec présence. C'est la meilleure parole jamais prononcée par les croyants. Tu fais partie de ceux qui la portent.",
+      "categorie": "FAJR-MOTIVATION"
     },
     {
       "id": "FAJR_228",
-      "fr": "Vise UN du'â pour une personne qui t'a blessé aujourd'hui. Pas pour qu'elle change — pour qu'Allâh la guide. Le Prophète ﷺ priait pour ceux qui le persécutaient (Bukhari).",
-      "categorie": "FAJR-OBJECTIF"
+      "fr": "Hasanah des transitions : à chaque fois que tu changes d'activité aujourd'hui, dis « Alhamdulillah. » 30 transitions × 30 hamd = 30 hasanât invisibles.",
+      "categorie": "FAJR-TACTIQUE"
     },
     {
       "id": "FAJR_229",
-      "fr": "Aujourd'hui, vise UNE chose à étudier dans l'islam que tu ignores. Comment fait-on le ghusl ? Quelles sont les paroles du tashahhud ? Niyyah Fiqh te répond. Un trou comblé par jour.",
-      "categorie": "FAJR-OBJECTIF"
+      "fr": "Si tu prends la voiture seul aujourd'hui, mets le Coran à voix audible. Pas la radio. Niyyah a la récitation. Ton trajet devient un cours de Coran.",
+      "categorie": "FAJR-TACTIQUE"
     },
     {
       "id": "FAJR_230",
-      "fr": "Le Prophète ﷺ a transmis (hadith qudsi) : « Quiconque s'approche de Moi d'une coudée, Je M'approche de lui d'un bras. Quiconque vient à Moi en marchant, Je viens à lui en courant. » (Bukhari) Approche-toi aujourd'hui.",
-      "categorie": "FAJR-MOTIVATION"
+      "fr": "L'ange de la mort ne prend pas rendez-vous. Aujourd'hui, vis comme s'il pouvait venir cette nuit. Pas avec peur — avec dignité.",
+      "categorie": "FAJR-RAPPEL"
     },
     {
       "id": "FAJR_231",
-      "fr": "Le Prophète ﷺ a dit : « Les anges se relayent parmi vous — la nuit et le jour. Ils se retrouvent à la prière de Fajr et celle de 'Asr. Ceux qui ont passé la nuit avec vous montent, et leur Seigneur leur demande : Comment avez-vous laissé Mes serviteurs ? Ils répondent : Nous les avons laissés priant et nous les avons trouvés priant. » (Bukhari) Sois ce serviteur trouvé en prière.",
-      "categorie": "FAJR-MOTIVATION"
+      "fr": "Le Prophète ﷺ a dit : « Allâh dit : Je suis selon l'opinion que Mon serviteur a de Moi. » (Bukhari, hadith qudsi) Aujourd'hui, pense bien d'Allah. Crois qu'Il te donnera. Crois qu'Il te pardonnera.",
+      "categorie": "FAJR-CONSCIENCE"
     },
     {
       "id": "FAJR_232",
-      "fr": "Hasanah du visage : aujourd'hui, présente un visage doux à tout le monde. Le Prophète ﷺ a dit : « Ne dédaigne aucun bien, même rencontrer ton frère avec un visage souriant. » (Muslim)",
-      "categorie": "FAJR-TACTIQUE"
+      "fr": "Allâh a séparé ton âme de ton corps cette nuit (Coran 39:42). Il a regardé ton compte. Et Il a décidé : « Je le renvoie. Il a encore une journée. » Aujourd'hui, mérite cette décision.",
+      "categorie": "FAJR-ARRIVÉE"
     },
     {
       "id": "FAJR_233",
-      "fr": "Quand tu te coucheras ce soir, récite Ayât al-Kursî avant de dormir. Le Prophète ﷺ a dit qu'un protecteur d'Allâh reste auprès de toi alors et le shaytân ne s'approche pas (Bukhari).",
-      "categorie": "FAJR-TACTIQUE"
+      "fr": "Aujourd'hui en mangeant, ne souffle PAS dans ton plat ni dans ton verre (Tirmidhi). Détail oublié — mais c'est la sunnah. Un acte que tu fais maintenant en conscience devient une hasanah quotidienne.",
+      "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_234",
-      "fr": "Le Prophète ﷺ a dit : « La patience est lors du premier choc. » (Bukhari) Aujourd'hui, ce qui te dérange est ta première école. Ne t'enfuis pas. C'est là que tu apprends quelque chose de toi.",
-      "categorie": "FAJR-RAPPEL"
+      "fr": "Quand tu prendras tes médicaments aujourd'hui (si tu en prends), dis Bismillah avant. La barakah s'invite même dans la pharmacologie. Le Prophète ﷺ ne séparait pas le matériel du spirituel.",
+      "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_235",
-      "fr": "Combien de personnes que tu connais sont mortes en pensant : « Je le ferai demain » ? Aujourd'hui n'est pas tellement plus probable que demain pour toi. Fais maintenant ce que tu veux laisser comme héritage.",
-      "categorie": "FAJR-RAPPEL"
+      "fr": "Aujourd'hui en faisant tes courses, dis Bismillah avant d'entrer dans le magasin. Sors avec Alhamdulillah. La barakah dans l'argent dépensé. Pas une superstition — une orientation du cœur.",
+      "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_236",
-      "fr": "Le Prophète ﷺ a dit : « L'intelligent est celui qui se contrôle et travaille pour ce qui vient après la mort. L'incapable est celui qui suit ses désirs et compte sur Allâh pour les pardons. » (Tirmidhi) Lequel es-tu aujourd'hui ?",
-      "categorie": "FAJR-CONSCIENCE"
+      "fr": "Aujourd'hui en t'asseyant dans une assemblée, dis Bismillah dans ton cœur. Quand tu te lèveras, dis l'invocation du Prophète ﷺ : « SubhânAka Allâhumma wa bihamdik, ash-hadu an lâ ilâha illâ Anta, astaghfiruka wa atûbu ilayk. » (Tirmidhi)",
+      "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_237",
-      "fr": "Aujourd'hui en attendant une réponse importante (mail, message, appel), au lieu de checker en boucle : ouvre Niyyah Coran 2 minutes. Tu retrouveras la réponse au moment d'Allâh, pas au moment de ton anxiété.",
-      "categorie": "FAJR-CARREFOUR"
+      "fr": "Le Prophète ﷺ partageait ce qu'il mangeait. Aujourd'hui, offre quelque chose à manger à quelqu'un (un collègue, un voisin, un sans-abri). Pas grand chose. Une pomme. Un café. La barakah passe par le don.",
+      "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_238",
-      "fr": "Niyyah te fait découvrir un Fiqh par jour. Aujourd'hui, demande-toi : sais-tu ce qui invalide ton wudu ? Niyyah a la réponse précise pour chaque cas.",
-      "categorie": "FAJR-CARREFOUR"
+      "fr": "Aujourd'hui, vise : 5 minutes de Coran avant de toucher ton téléphone. Pas après le réveil — APRÈS Fajr. Ces 5 minutes prennent le pas sur les 5 heures de scroll potentiel. Hiérarchise.",
+      "categorie": "FAJR-OBJECTIF"
     },
     {
       "id": "FAJR_239",
-      "fr": "Niyyah Hadiths contient une catégorie « patience et épreuves ». Si quelque chose te pèse aujourd'hui — un travail, une famille, une santé — lis 1 hadith de cette catégorie. Ta charge n'est pas la même après.",
-      "categorie": "FAJR-CARREFOUR"
+      "fr": "Vise UN salut donné à un musulman que tu ne connais pas aujourd'hui. Croiser dans un magasin, dans la rue, à l'arrêt de bus. « As-salâmu 'alaykum » à un inconnu. Le Prophète ﷺ recommandait de saluer même ceux qu'on ne connaît pas (Bukhari).",
+      "categorie": "FAJR-OBJECTIF"
     },
     {
       "id": "FAJR_240",
-      "fr": "Niyyah Tafakkur > Al-Wakîl. Le Garant. Quand tu remets une affaire à Allâh, Il s'en occupe. Aujourd'hui, si tu as une chose qui te tient en alerte — médite ce nom. Puis lâche.",
-      "categorie": "FAJR-CARREFOUR"
+      "fr": "Aujourd'hui, vise : faire entrer la barakah dans un acte que tu fais par habitude. Manger sans Bismillah ? Mets-le. Sortir sans du'â ? Dis-le. Une habitude se transforme en sunnah.",
+      "categorie": "FAJR-OBJECTIF"
     },
     {
       "id": "FAJR_241",
-      "fr": "Niyyah Pratique a la sunnah du miswak. Le Prophète ﷺ a dit : « Le siwak purifie la bouche et plaît au Seigneur. » (Nasâ'î, Ahmad) Avant chaque prière, un siwak ou la brosse à dents avec intention.",
-      "categorie": "FAJR-CARREFOUR"
+      "fr": "Le Prophète ﷺ a dit : « Allâh ne regarde pas vos corps ni vos formes — Il regarde vos cœurs et vos actes. » (Muslim) Aujourd'hui, tu peux concourir contre n'importe qui dans l'invisible. L'intention pèse, pas l'apparence.",
+      "categorie": "FAJR-MOTIVATION"
     },
     {
       "id": "FAJR_242",
-      "fr": "Aujourd'hui en prenant ton repas, mange avec ta main droite. Le Prophète ﷺ a dit que le shaytân mange avec la gauche (Muslim). Une habitude à recadrer.",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Hasanah du regard : aujourd'hui, à chaque fois que tu poses les yeux sur une chose belle (paysage, plat, personne, objet), dis « Mâ shâ' Allâh, tabârak Allâh. »",
+      "categorie": "FAJR-TACTIQUE"
     },
     {
       "id": "FAJR_243",
-      "fr": "Quand tu marcheras dans la rue aujourd'hui, marche d'un pas modéré. Pas pressé pour montrer ton importance. Pas traînant par mollesse. Le Prophète ﷺ marchait fermement (Bukhari).",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Quand tu signes ton mail aujourd'hui, ajoute une formule de barakah si la personne est musulmane (« Bârak Allâh fîk »), ou une formule respectueuse sinon. Une signature qui transmet.",
+      "categorie": "FAJR-TACTIQUE"
     },
     {
       "id": "FAJR_244",
-      "fr": "Aujourd'hui en mangeant un fruit, regarde-le et dis : « SubhânAllâh. » Pense à la couleur, la forme, le goût — tout pensé par Allâh. Mange en présence. La satiété arrive plus vite en conscience.",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Hier soir tu as fait des plans pour aujourd'hui. Combien de fois ces plans n'ont rien donné parce qu'autre chose est arrivé ? Aujourd'hui n'appartient pas à tes plans — il appartient à Sa décision. Soumets-toi avant qu'Il ne te soumette.",
+      "categorie": "FAJR-RAPPEL"
     },
     {
       "id": "FAJR_245",
-      "fr": "Aujourd'hui en t'habillant, commence par le côté droit (manche droite avant gauche, chaussure droite avant gauche). Le Prophète ﷺ aimait commencer par le droit dans tout (Bukhari).",
-      "categorie": "FAJR-QUOTIDIEN"
-    },
-    {
-      "id": "FAJR_246",
-      "fr": "Aujourd'hui en prenant des médicaments (si tu en prends), dis Bismillah. Tu reconnais que la guérison vient de Lui — la pilule n'est qu'un moyen. Tu vis par Sa décision.",
-      "categorie": "FAJR-QUOTIDIEN"
-    },
-    {
-      "id": "FAJR_247",
-      "fr": "Aujourd'hui, vise : passer 10 minutes au téléphone avec un parent. Pas SMS. Téléphone. Le Prophète ﷺ a dit que la bonté envers les parents est une porte du Paradis (Tirmidhi, hasan).",
-      "categorie": "FAJR-OBJECTIF"
-    },
-    {
-      "id": "FAJR_248",
-      "fr": "Vise UN voisin auquel tu vas parler aujourd'hui (échange, salut, sourire). Le Prophète ﷺ a tellement insisté sur le voisin qu'il a dit : « J'ai cru qu'il allait hériter de moi. » (Bukhari)",
-      "categorie": "FAJR-OBJECTIF"
-    },
-    {
-      "id": "FAJR_249",
-      "fr": "Aujourd'hui, vise une prière mieux faite. Pas plus de prières — UNE mieux faite. Plus longue rukû'. Plus longue sajda. Plus présent dans la Fâtiha. Le Prophète ﷺ priait avec présence (Bukhari).",
-      "categorie": "FAJR-OBJECTIF"
-    },
-    {
-      "id": "FAJR_250",
-      "fr": "Le Prophète ﷺ a dit : « Les actes ne valent que par les intentions, et chacun n'aura que ce qu'il a eu l'intention de faire. » (Bukhari, Muslim) Ton travail au bureau peut valoir une ibâda — si tu l'intentionnes pour Allâh, pour subvenir à ta famille. Renouvelle l'intention.",
-      "categorie": "FAJR-MOTIVATION"
-    },
-    {
-      "id": "FAJR_251",
-      "fr": "Le Prophète ﷺ a dit : « Quiconque construit une mosquée pour Allâh, Allâh lui construit une maison au Paradis. » (Bukhari, Muslim) Tu ne peux pas en construire une entièrement. Tu peux participer financièrement à une. Une nuit où tu reçois une notification de collecte — sois prêt.",
-      "categorie": "FAJR-MOTIVATION"
-    },
-    {
-      "id": "FAJR_252",
-      "fr": "Hasanah du regard 2 : aujourd'hui en voyant un musulman en difficulté (mendiant, sans-abri, personne âgée), au moins fais un du'â pour lui dans ton cœur. Si tu peux donner, donne. Si tu ne peux pas, prie.",
-      "categorie": "FAJR-TACTIQUE"
-    },
-    {
-      "id": "FAJR_253",
-      "fr": "Pose une alarme à 12h aujourd'hui. Quand elle sonne, dis le Sayyid al-Istighfâr : « Allâhumma anta rabbî, lâ ilâha illâ anta, khalaqtanî wa anâ 'abduka... » (Bukhari) Niyyah Du'âs te le fournit. Le maître des istighfâr.",
-      "categorie": "FAJR-TACTIQUE"
-    },
-    {
-      "id": "FAJR_254",
-      "fr": "Tu peux mourir en travaillant. En conduisant. En marchant. Pendant ta prière. Pendant tes péchés. Pendant ton dhikr. La position dans laquelle Allâh t'arrête est ta position devant Lui. Aujourd'hui, choisis dans quelle position te tenir.",
-      "categorie": "FAJR-RAPPEL"
-    },
-    {
-      "id": "FAJR_255",
-      "fr": "Le tombeau est la première étape de l'au-delà. Aujourd'hui, fais-toi cette pensée : que vais-je y emporter de cette journée ? Le Prophète ﷺ disait : « Visitez les tombes — elles vous rappellent l'au-delà. » (Muslim)",
-      "categorie": "FAJR-RAPPEL"
-    },
-    {
-      "id": "FAJR_256",
-      "fr": "Tu n'es pas dans un système où « il faut être bon ». Tu es dans un système où il faut RECEVOIR Sa miséricorde. Aujourd'hui, tu n'as pas à mériter — tu as à T'OUVRIR. La différence est immense.",
+      "fr": "Tu vas mourir. Pas demain peut-être — mais tu vas mourir. Ce qui te reste de vie est inconnu. La seule chose que tu sais avec certitude : ce matin existe. Maintenant existe. Le reste est espoir.",
       "categorie": "FAJR-CONSCIENCE"
     },
     {
+      "id": "FAJR_246",
+      "fr": "Ferme les yeux 3 secondes. Sens ton souffle. Tu respires sans avoir à y penser — qui te fait respirer pendant que tu n'y penses pas ? Maintenant tu peux ouvrir les yeux. Tu sais.",
+      "categorie": "FAJR-ARRIVÉE"
+    },
+    {
+      "id": "FAJR_247",
+      "fr": "Aujourd'hui en faisant un appel téléphonique important, mets ton mobile sur l'oreille droite (sunnah du droit). Pas de la magie — un détail qui rappelle qu'Allah est dans tout, même la posture des appels.",
+      "categorie": "FAJR-QUOTIDIEN"
+    },
+    {
+      "id": "FAJR_248",
+      "fr": "Quand tu monteras un escalier aujourd'hui, dis « Allâhu akbar » à chaque marche. Quand tu descendras, dis « SubhânAllâh. » 30 marches = 30 dhikr. Sans effort.",
+      "categorie": "FAJR-QUOTIDIEN"
+    },
+    {
+      "id": "FAJR_249",
+      "fr": "Aujourd'hui en t'allongeant pour dormir (ou pour la sieste), allonge-toi sur le côté DROIT, mets la main droite sous ta joue droite (Bukhari). La sunnah du sommeil du Prophète ﷺ.",
+      "categorie": "FAJR-QUOTIDIEN"
+    },
+    {
+      "id": "FAJR_250",
+      "fr": "Aujourd'hui en faisant la vaisselle / le ménage / une tâche domestique, dis « Astaghfirullah » en boucle. 10 minutes de ménage = 10 minutes de pardons demandés. La maison se nettoie, l'âme aussi.",
+      "categorie": "FAJR-TACTIQUE"
+    },
+    {
+      "id": "FAJR_251",
+      "fr": "Aujourd'hui, en bricolant ou en faisant un travail manuel, dis Bismillah avant. La main qui travaille devient une main d'adoration. Le travail honnête est ibâda quand l'intention y est.",
+      "categorie": "FAJR-QUOTIDIEN"
+    },
+    {
+      "id": "FAJR_252",
+      "fr": "Aujourd'hui, vise : NE PAS critiquer une seule personne. Pas ton patron, pas ton voisin, pas un politicien à la télé. Le Prophète ﷺ a dit : « Que celui qui croit en Allâh et au Jour Dernier dise du bien ou se taise. » (Bukhari, Muslim)",
+      "categorie": "FAJR-OBJECTIF"
+    },
+    {
+      "id": "FAJR_253",
+      "fr": "Vise une demi-heure aujourd'hui sans le téléphone. Pas pour faire un break — pour PRIER, LIRE, RÉFLÉCHIR. 30 minutes sans écran = 30 minutes données à Allâh. Décide maintenant.",
+      "categorie": "FAJR-OBJECTIF"
+    },
+    {
+      "id": "FAJR_254",
+      "fr": "Vise un mensonge à effacer aujourd'hui. Pas un nouveau pardon en bloc — UN mensonge précis que tu as dit récemment. Si tu peux corriger, fais-le. Si tu ne peux pas, demande pardon en pensant à cette personne.",
+      "categorie": "FAJR-OBJECTIF"
+    },
+    {
+      "id": "FAJR_255",
+      "fr": "Aujourd'hui, fais un du'â pour les opprimés, pour les ignorants, pour ta oumma. Le Prophète ﷺ a dit : « Le du'â du musulman pour son frère en son absence est exaucé. » (Muslim) Ta tristesse devient hasanah.",
+      "categorie": "FAJR-MOTIVATION"
+    },
+    {
+      "id": "FAJR_256",
+      "fr": "Le Prophète ﷺ a dit : « N'est pas croyant celui qui dort le ventre plein pendant que son voisin a faim. » (al-Bukhârî dans al-Adab al-Mufrad ; chaîne classée hasan) Aujourd'hui, pense à un voisin.",
+      "categorie": "FAJR-MOTIVATION"
+    },
+    {
       "id": "FAJR_257",
-      "fr": "Si tu te sens isolé aujourd'hui — pas de famille proche, pas d'amis musulmans pratiquants — Niyyah te tient compagnie. Pas une compagnie qui remplace l'humain — une compagnie qui te rapproche d'Allâh quand l'humain manque.",
-      "categorie": "FAJR-CARREFOUR"
+      "fr": "Hasanah de la conduite : si tu conduis aujourd'hui, dis le du'â du voyage en démarrant. Le Prophète ﷺ disait à chaque voyage : « Subhâna-lladhî sakhkhara lanâ hâdhâ... » (Coran 43:13, Muslim). Voyage protégé. Arrête-toi sans agacement aux rouges — c'est du sabr.",
+      "categorie": "FAJR-TACTIQUE"
     },
     {
       "id": "FAJR_258",
-      "fr": "Niyyah Coran te suit dans tes lectures. Si tu n'as pas lu depuis 3 jours, l'application te le dira sans culpabiliser. Reviens quand tu veux.",
-      "categorie": "FAJR-CARREFOUR"
+      "fr": "Quand tu auras envie de regarder quelque chose de mauvais aujourd'hui — vidéo, image, conversation — au lieu de juste détourner, ferme l'écran complètement. Puis dis « Astaghfirullah. » Tu as gagné une bataille.",
+      "categorie": "FAJR-TACTIQUE"
     },
     {
       "id": "FAJR_259",
-      "fr": "Niyyah Sîra te montre que le Prophète ﷺ aussi a eu des moments durs — la perte de Khadîjah, l'isolement à La Mecque, les enfants morts. Aujourd'hui, lis un de ces moments. Tu sauras que tu n'es jamais seul dans la douleur.",
-      "categorie": "FAJR-CARREFOUR"
+      "fr": "Demain est un mythe. Le seul vrai temps qu'Allah t'a donné à coup sûr, c'est cette minute-ci. Aujourd'hui, traite chaque minute comme la seule. C'est ainsi que vivaient les compagnons.",
+      "categorie": "FAJR-RAPPEL"
     },
     {
       "id": "FAJR_260",
-      "fr": "Niyyah Du'âs > du'â contre l'anxiété. Le Prophète ﷺ avait des du'âs précis pour l'angoisse (Bukhari). Aujourd'hui, mémorise-en un. La prochaine crise sera désamorcée.",
-      "categorie": "FAJR-CARREFOUR"
+      "fr": "Le Prophète ﷺ a dit : « Le serviteur le plus aimé d'Allâh est celui dont les œuvres sont les plus régulières, même si elles sont peu nombreuses. » (Bukhari, Muslim) Aujourd'hui, choisis UNE petite chose à faire — et fais-la chaque jour pendant 30 jours.",
+      "categorie": "FAJR-CONSCIENCE"
     },
     {
       "id": "FAJR_261",
-      "fr": "Niyyah Pratique te liste les 5 prières + leurs heures locales. Aujourd'hui, regarde combien il te reste de temps pour la prochaine prière. Cette horloge invisible structure ta journée.",
-      "categorie": "FAJR-CARREFOUR"
+      "fr": "Le ciel passe du noir au gris au rosé au bleu. Pendant que tu lisais ces mots, la lumière a changé. C'est pour toi aussi. Tu changes maintenant. Que reste-t-il du moi de cette nuit ?",
+      "categorie": "FAJR-ARRIVÉE"
     },
     {
       "id": "FAJR_262",
-      "fr": "Aujourd'hui en éternuant, dis « Alhamdulillâh. » Si quelqu'un éternue à proximité et dit Alhamdulillâh, dis « Yarhamuka Allâh. » (Bukhari) Une politesse devient adoration.",
+      "fr": "Aujourd'hui en mangeant une chose nouvelle (un fruit, un plat), regarde-la 2 secondes. Pense à la chaîne qui te l'a apportée : terre, plante, agriculteur, transporteur, vendeur. Allâh derrière chaque maillon. Mange en gratitude.",
       "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_263",
-      "fr": "Aujourd'hui en bâillant, retiens-le et couvre ta bouche. Le Prophète ﷺ a dit que le bâillement vient du shaytân et qu'il faut le repousser autant que possible (Bukhari). Un détail oublié.",
+      "fr": "Quand tu donneras un cadeau aujourd'hui (à ton enfant, ton conjoint, un ami), dis dans ton cœur « Allâhumma j'offre cela pour Toi. » Le cadeau devient sadaqa par l'intention.",
       "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_264",
-      "fr": "Aujourd'hui en achetant du pain (si tu en achètes), respecte-le. Ne le pose pas par terre en rentrant. La barakah de la nourriture commence par le respect du don.",
+      "fr": "Aujourd'hui, mange simplement. Pas de gaspillage. Pas de tri obsessionnel. Le Prophète ﷺ mangeait ce qui était disponible (Bukhari). La simplicité retrouvée.",
       "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_265",
-      "fr": "Aujourd'hui en remarquant une chose belle (un ciel, un vol d'oiseau, un enfant qui rit), dis dans ton cœur « Mâ shâ' Allâh. » Tu adores en regardant.",
+      "fr": "Aujourd'hui en buvant ton café/thé, prends-le par 3 gorgées séparées. Ne le bois pas d'un trait (Muslim). Une simple boisson devient ibâda.",
       "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_266",
-      "fr": "Aujourd'hui en travaillant en équipe ou avec des collègues, dis Bismillah dans ton cœur avant de prendre la parole importante. Le mot prononcé avec présence a une puissance que le mot distrait n'a pas.",
+      "fr": "Aujourd'hui en finissant un repas, dis : « Alhamdulillâhi-lladhî at'amanî hâdhâ wa razaqanîhi min ghayri hawlin minnî wa lâ quwwa. » (Tirmidhi, hasan)",
       "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_267",
-      "fr": "Aujourd'hui, vise : NE PAS interrompre quelqu'un qui parle. Le Prophète ﷺ écoutait jusqu'au bout (Bukhari). Un mot retenu = une hasanah cachée.",
+      "fr": "Aujourd'hui, vise : entrer dans la mosquée si tu en croises une. Même 5 minutes. Même juste pour saluer. Le Prophète ﷺ recommandait deux rak'as à l'entrée d'une mosquée (Bukhari, Muslim).",
       "categorie": "FAJR-OBJECTIF"
     },
     {
       "id": "FAJR_268",
-      "fr": "Vise UN moment de solitude aujourd'hui, 15 minutes, pour rester avec Allâh. Pas pour lire, pas pour scroller — juste être avec Lui en pensée et dhikr. Le Prophète ﷺ aimait la khalwa (Bukhari).",
+      "fr": "Vise une journée sans murmurer contre une chose (la pluie, le métro en retard, un retard administratif). Tout est ce qu'Allâh décide. Une journée muette = une journée propre.",
       "categorie": "FAJR-OBJECTIF"
     },
     {
       "id": "FAJR_269",
-      "fr": "Aujourd'hui, vise un effort pour quelqu'un de plus faible que toi (plus jeune, plus âgé, plus pauvre, plus malade). Le Prophète ﷺ disait : « Allâh est avec ses faibles serviteurs. » (Tirmidhi, hasan)",
+      "fr": "Vise UNE invocation à voix audible avec un proche aujourd'hui. Pas seul. Trouve quelqu'un pour dire amîn. Le Prophète ﷺ disait beaucoup d'invocations avec ses compagnons (multiples hadiths).",
       "categorie": "FAJR-OBJECTIF"
     },
     {
       "id": "FAJR_270",
-      "fr": "Le Prophète ﷺ a dit : « Les actes les plus cachés et les plus sincères sont les plus aimés d'Allâh. » (Sens général de plusieurs hadiths) Aujourd'hui, sois caché dans tes hasanât. Allâh suffit comme spectateur.",
+      "fr": "Le Coran et la sounnah enseignent que les bonnes actions effacent les mauvaises (Coran 11:114, hadith). Aujourd'hui, si tu te sens chargé de quelque chose, ne cherche pas le pardon dans le vide — fais 1 bonne action. Elle efface.",
       "categorie": "FAJR-MOTIVATION"
     },
     {
       "id": "FAJR_271",
-      "fr": "Le Prophète ﷺ a dit : « Visitez le malade. » (Bukhari) Une visite courte vaut autant qu'une longue prière. Pas d'effort spirituel solo quand tu peux faire un effort spirituel social.",
+      "fr": "Le Prophète ﷺ a dit qu'au Paradis, on dira au porteur du Coran : « Récite et monte. » (Tirmidhi, hasan sahîh) Aujourd'hui, mémorise UN VERSET. Demain pareil. En 1 an, ta place est plus haute.",
       "categorie": "FAJR-MOTIVATION"
     },
     {
       "id": "FAJR_272",
-      "fr": "Hasanah de l'oubli : si tu oublies de faire un dhikr aujourd'hui, en t'en rappelant — dis-le 3 fois. Allâh accepte la compensation. Tu transformes un oubli en effort.",
+      "fr": "Aujourd'hui en attendant une vidéo qui charge, un mail qui s'envoie, une page qui s'ouvre — au lieu de scroller pendant les 5 secondes : dis « Astaghfirullah » trois fois. 10 chargements = 30 pardons.",
       "categorie": "FAJR-TACTIQUE"
     },
     {
       "id": "FAJR_273",
-      "fr": "Quand tu finiras une réunion / une conversation aujourd'hui, dis dans ton cœur : « SubhânAka Allâhumma wa bihamdik, ash-hadu an lâ ilâha illâ Anta, astaghfiruka wa atûbu ilayk. » (Tirmidhi, hasan sahîh) Tu pars en ayant effacé ce qui s'est dit pendant.",
+      "fr": "Si tu vois une mosquée aujourd'hui (en passant, en voiture, en marchant), dis dans ton cœur : « Allâhumma j'aimerais y prier un jour avec sincérité. » Une intention pure compte (hadith).",
       "categorie": "FAJR-TACTIQUE"
     },
     {
       "id": "FAJR_274",
-      "fr": "Une heure entière sans dhikr est une heure que tu ne récupéreras jamais. Pas par culpabilité — par lucidité. Aujourd'hui combien d'heures peuvent être « pour Lui » — au moins en pensée ?",
+      "fr": "Tu as compté combien de Fajr tu as ratés dans ta vie ? Combien de fois tu as eu « envie » de le rattraper et tu ne l'as pas fait ? Aujourd'hui n'est pas la moyenne — c'est l'exception qui peut tout changer si tu le décides maintenant.",
       "categorie": "FAJR-RAPPEL"
     },
     {
       "id": "FAJR_275",
-      "fr": "Le Prophète ﷺ n'a JAMAIS raté la prière de Fajr. Combien tu en as raté cette semaine ? Cette différence est ton entraînement. Aujourd'hui, tu peux commencer à réduire l'écart.",
-      "categorie": "FAJR-RAPPEL"
+      "fr": "Le Prophète ﷺ a dit : « Il viendra sur les gens un temps où celui qui tient à sa religion sera comme celui qui tient un charbon ardent. » (Tirmidhi, hasan sahîh) Aujourd'hui, tiens. Même si ça brûle.",
+      "categorie": "FAJR-CONSCIENCE"
     },
     {
       "id": "FAJR_276",
-      "fr": "Tu te lèves chaque matin avec une dette d'attention envers Allâh — Il t'a regardé toute la nuit. Aujourd'hui, paye une partie. Une seule attention vers Lui à un moment inattendu.",
-      "categorie": "FAJR-CONSCIENCE"
+      "fr": "200 matins comme celui-ci sont prévus dans ta vie peut-être. Peut-être 5000. Personne ne sait. Mais celui-ci — ce matin précis — il existe maintenant. Tu y es. Tu lis ces derniers mots. C'est ton départ. Va.",
+      "categorie": "FAJR-ARRIVÉE"
     },
     {
       "id": "FAJR_277",
-      "fr": "Niyyah devient ta mémoire spirituelle. Aujourd'hui, ce que tu apprends ici (un hadith, un nom d'Allâh, un du'â) — tu peux le revoir demain. Pas perdre. Pas oublier.",
-      "categorie": "FAJR-CARREFOUR"
+      "fr": "Aujourd'hui en te peignant ou en te coiffant, dis Bismillah. Le Prophète ﷺ se peignait souvent et utilisait le miswak (Bukhari). Un acte de présentation devient acte d'adoration.",
+      "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_278",
-      "fr": "Niyyah Sîra commence à la Mecque. Aujourd'hui, lis le début. Tu y vois le Prophète ﷺ avant d'être prophète — bon, honnête, surnommé Al-Amîn. Cette humilité avant la mission est ton modèle.",
-      "categorie": "FAJR-CARREFOUR"
+      "fr": "Quand tu paieras quelque chose aujourd'hui (en cash, en carte), dis dans ton cœur « Allâhumma bârik lî fî rizqî. » L'argent dépensé en barakah revient multiplié.",
+      "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_279",
-      "fr": "Niyyah Coran a la sourate Yâ-Sîn. Une sourate fortement recommandée selon plusieurs traditions. Aujourd'hui ou ce soir, lis-la une fois.",
-      "categorie": "FAJR-CARREFOUR"
+      "fr": "Aujourd'hui en mangeant, dis Bismillah avant la première bouchée. Si tu oublies, dis pendant : « Bismillâhi awwalihi wa âkhirihi. » (Tirmidhi, hasan sahîh) La sunnah te rattrape toujours.",
+      "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_280",
-      "fr": "Niyyah Fiqh a une section « fiqh des relations ». Aujourd'hui, vois ce qu'est l'adab du salut, de la visite, du repas en société. Tu pratiques mieux ce que tu fais déjà.",
-      "categorie": "FAJR-CARREFOUR"
+      "fr": "Aujourd'hui en utilisant un objet précieux pour toi (livre, téléphone, voiture), dis « Alhamdulillâh. » Tu protèges l'objet du nazar et tu remercies.",
+      "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_281",
-      "fr": "Niyyah Du'âs te suit dans toutes les situations. Aujourd'hui, dis-toi : « Je vais utiliser au moins 3 du'âs prophétiques aujourd'hui. » Choisis-les maintenant. Place-les comme rendez-vous.",
-      "categorie": "FAJR-CARREFOUR"
+      "fr": "Aujourd'hui, vise : 1 minute de silence avant ta prière. Le Prophète ﷺ marquait un temps avant le takbîr. Un silence préparatoire change la qualité de ta salat.",
+      "categorie": "FAJR-OBJECTIF"
     },
     {
       "id": "FAJR_282",
-      "fr": "Aujourd'hui en prenant ta douche / ton bain, fais le wudu d'abord (les actes mineurs). Le Prophète ﷺ recommandait le ghusl entier avec wudu intégré (Bukhari). Une eau qui devient ibâda.",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Vise UN regard de douceur envers ton père/mère aujourd'hui. Le Prophète ﷺ a profondément insisté sur la bonté envers les parents (Bukhari, Muslim). Le bon traitement des parents ouvre des portes immenses.",
+      "categorie": "FAJR-OBJECTIF"
     },
     {
       "id": "FAJR_283",
-      "fr": "Aujourd'hui en regardant le ciel, dis « SubhânAllâh. » Tu reconnais en levant les yeux Qui domine ce que tu vois.",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Aujourd'hui, vise une réconciliation. Pas avec quelqu'un qui t'a fait mal — avec quelqu'un que TU as peut-être déçu. Le Prophète ﷺ a dit que réconcilier est meilleur que la prière, le jeûne et l'aumône surérogatoires (Tirmidhi, hasan).",
+      "categorie": "FAJR-OBJECTIF"
     },
     {
       "id": "FAJR_284",
-      "fr": "Aujourd'hui en faisant la sieste (si possible), fais-la avant Dhuhr (Qaylûla) et pas trop longue. Le Prophète ﷺ la pratiquait. Une sieste qui devient nuit gagnée.",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Le Prophète ﷺ a dit : « Quiconque dit 100 fois dans la journée : Lâ ilâha illâ Allâh, wahdahu lâ sharîka lah, lahu-l-mulku wa lahu-l-hamd, wa huwa 'alâ kulli shay'in qadîr — a la récompense d'avoir affranchi 10 esclaves, 100 hasanât lui sont inscrites, 100 péchés effacés, et il est protégé du shaytân jusqu'au soir. » (Bukhari, Muslim) Tu peux les dire en quelques minutes.",
+      "categorie": "FAJR-MOTIVATION"
     },
     {
       "id": "FAJR_285",
-      "fr": "Aujourd'hui en utilisant un nouvel objet (achat, cadeau reçu), dis : « Alhamdulillâhi-lladhî kasânî hâdhâ wa razaqanîhi min ghayri hawlin minnî wa lâ quwwa. » (Abû Dâwûd, Tirmidhi)",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Le Prophète ﷺ a dit : « Celui qui se purifie chez lui puis se rend à la mosquée pour la prière obligatoire, chaque pas qu'il fait élève d'un degré et efface un péché. » (Muslim) Combien de pas pour aller à la mosquée ? Multiplie.",
+      "categorie": "FAJR-MOTIVATION"
     },
     {
       "id": "FAJR_286",
-      "fr": "Aujourd'hui en croisant un cimetière (en voiture ou à pied), dis : « As-salâmu 'alaykum yâ ahla-d-diyâr min al-mu'minîn wa-l-muslimîn... » (Muslim) Tu salues les morts. Un jour, quelqu'un saluera ta tombe.",
-      "categorie": "FAJR-QUOTIDIEN"
+      "fr": "Hasanah de l'écoute : aujourd'hui quand quelqu'un te raconte un problème, écoute SANS donner ton avis. Juste écouter. Le Prophète ﷺ écoutait longuement avant de répondre (Bukhari). Une oreille tendue est sadaqa.",
+      "categorie": "FAJR-TACTIQUE"
     },
     {
       "id": "FAJR_287",
-      "fr": "Aujourd'hui, vise UNE chose à apprendre par cœur — pas seulement à lire. Un verset, un hadith, un du'â. Apprendre par cœur, c'est INSCRIRE dans le corps. Une fois inscrit, tu l'as pour la vie.",
-      "categorie": "FAJR-OBJECTIF"
+      "fr": "Quand tu te brosseras les dents aujourd'hui, fais-le en pensant à la sunnah du siwak. Le Prophète ﷺ disait : « Le siwak purifie la bouche et plaît au Seigneur. » (Nasâ'î, Ahmad)",
+      "categorie": "FAJR-TACTIQUE"
     },
     {
       "id": "FAJR_288",
-      "fr": "Vise UN sourire offert sans raison aujourd'hui. À un étranger. À ton enfant. À ton conjoint. Le Prophète ﷺ a dit que sourire est sadaqa (Tirmidhi).",
-      "categorie": "FAJR-OBJECTIF"
+      "fr": "Combien de fois tu as ouvert ton téléphone hier ? Combien de fois tu as dit « SubhânAllâh » hier ? Si la première réponse dépasse trop la seconde — quelque chose à corriger maintenant.",
+      "categorie": "FAJR-RAPPEL"
     },
     {
       "id": "FAJR_289",
-      "fr": "Aujourd'hui, vise : ne pas regarder la montre / l'heure pendant tes 5 prières. Présence totale. Pas de « vite vite ». Le Prophète ﷺ priait avec une lenteur sacrée (Bukhari).",
-      "categorie": "FAJR-OBJECTIF"
+      "fr": "Le Prophète ﷺ a dit : « Tout fils d'Adam est pécheur, et les meilleurs des pécheurs sont ceux qui se repentent. » (Tirmidhi, hasan) Aujourd'hui, tu n'es pas un échec — tu es un pécheur qui peut se relever. Relève-toi maintenant.",
+      "categorie": "FAJR-RAPPEL"
     },
     {
       "id": "FAJR_290",
-      "fr": "Le Prophète ﷺ a transmis (hadith qudsi) : « Mon serviteur ne cesse de s'approcher de Moi par les surérogatoires jusqu'à ce que Je l'aime. Quand Je l'aime, Je deviens l'ouïe par laquelle il entend, la vue par laquelle il voit... » (Bukhari) Tu peux devenir cela. Aujourd'hui.",
-      "categorie": "FAJR-MOTIVATION"
-    },
-    {
-      "id": "FAJR_291",
-      "fr": "Si tu as des prières en retard, rattrape-les progressivement. Une par jour à côté des obligatoires. En 1 an, ton compte avance. Le Prophète ﷺ a dit : « Acquittez ce qui est dû à Allâh. » (Bukhari)",
-      "categorie": "FAJR-MOTIVATION"
-    },
-    {
-      "id": "FAJR_292",
-      "fr": "Hasanah de la voix : aujourd'hui, baisse ta voix avec ceux qui t'entourent. Pas chuchoter — juste poser. Le Prophète ﷺ parlait posément (Bukhari).",
-      "categorie": "FAJR-TACTIQUE"
-    },
-    {
-      "id": "FAJR_293",
-      "fr": "Quand tu seras frustré aujourd'hui, dis « A'ûdhu billâhi min ash-shaytâni-r-rajîm. » Le Prophète ﷺ recommandait cette formule contre la colère (Bukhari).",
-      "categorie": "FAJR-TACTIQUE"
-    },
-    {
-      "id": "FAJR_294",
-      "fr": "Tu connais des gens qui sont morts récemment. Tu les as vus. Tu as parlé avec eux. Maintenant ils sont sous terre. Aujourd'hui, fais le du'â pour eux. Tu seras dans le même état un jour. Tu voudras qu'on prie pour toi.",
-      "categorie": "FAJR-RAPPEL"
-    },
-    {
-      "id": "FAJR_295",
-      "fr": "Combien d'années ton imam préféré a-t-il étudié pour atteindre sa science ? Combien toi ? La différence est ta liste de devoirs. Aujourd'hui, ne sois pas honteux — sois affamé.",
-      "categorie": "FAJR-RAPPEL"
-    },
-    {
-      "id": "FAJR_296",
-      "fr": "300 matins viennent de défiler dans ces phrases. Lequel des 300 te ressemble le plus aujourd'hui ? Lequel restera de toi quand on te jugera ? Tu as encore — encore — encore cette journée pour décider. Maintenant.",
-      "categorie": "FAJR-ARRIVÉE"
-    },
-    {
-      "id": "FAJR_297",
-      "fr": "Aujourd'hui à 23h, avant de dormir, ouvre Niyyah Coran sourate Al-Mulk. Le Prophète ﷺ la lisait chaque nuit (Tirmidhi, hasan). Elle intercède pour son lecteur. 7 minutes pour une intercession.",
-      "categorie": "FAJR-CARREFOUR"
-    },
-    {
-      "id": "FAJR_298",
-      "fr": "Niyyah Tafakkur > Al-Wadûd. Celui qui aime profondément. Pas comme nous aimons. Mieux. Sans condition. Sans fatigue. Aujourd'hui, médite ce nom. Tu repars en sachant que tu es aimé.",
-      "categorie": "FAJR-CARREFOUR"
-    },
-    {
-      "id": "FAJR_299",
-      "fr": "Niyyah Hadiths a une section sur le commerce. Si tu travailles, vends, achètes — aujourd'hui, lis-en un. Le Prophète ﷺ a dit : « Le commerçant honnête est avec les prophètes, les véridiques et les martyrs. » (Tirmidhi, hasan)",
-      "categorie": "FAJR-CARREFOUR"
-    },
-    {
-      "id": "FAJR_300",
-      "fr": "Niyyah Du'âs > avant l'examen / la réunion / l'épreuve. Le Prophète ﷺ avait des invocations pour les moments décisifs. Aujourd'hui, mémorise-en UN. La prochaine fois que tu trembles, tu auras une arme.",
-      "categorie": "FAJR-CARREFOUR"
-    },
-    {
-      "id": "FAJR_301",
-      "fr": "Niyyah Sîra te fait découvrir Khadîjah رضي الله عنها aujourd'hui ou demain. La première musulmane. Celle qui a soutenu le Prophète ﷺ avant tout le monde. Lis son histoire. Tu comprendras la grandeur des femmes en islam.",
-      "categorie": "FAJR-CARREFOUR"
-    },
-    {
-      "id": "FAJR_302",
-      "fr": "Aujourd'hui en mettant ta ceinture (voiture), dis Bismillah. Tu peux ne pas rentrer chez toi ce soir. La voiture peut être ta dernière demeure. Bénis ton voyage avant qu'il commence.",
-      "categorie": "FAJR-QUOTIDIEN"
-    },
-    {
-      "id": "FAJR_303",
-      "fr": "Aujourd'hui en éteignant ton ordinateur / téléphone le soir, dis « Astaghfirullah » pour ce que tu y as vu/écrit/regardé qui n'aurait pas dû. Tu fermes la journée digitale avec un effacement.",
-      "categorie": "FAJR-QUOTIDIEN"
-    },
-    {
-      "id": "FAJR_304",
-      "fr": "Aujourd'hui en ouvrant une fenêtre / les volets le matin, dis Bismillah. Tu laisses entrer l'air d'Allah, la lumière d'Allah. Une habitude banale devient acte de gratitude.",
-      "categorie": "FAJR-QUOTIDIEN"
-    },
-    {
-      "id": "FAJR_305",
-      "fr": "Aujourd'hui en posant ton sac / tes clés en rentrant, marque un temps d'arrêt 3 secondes. Dis Alhamdulillah pour être rentré. Beaucoup partent et ne reviennent pas. Toi si.",
-      "categorie": "FAJR-QUOTIDIEN"
-    },
-    {
-      "id": "FAJR_306",
-      "fr": "Aujourd'hui, vise : porter une chose pieuse sur toi de manière visible. Pas par ostentation — par identité. Une tasbih dans la poche. Un parfum noté comme sunnah. Tu existes en tant que musulman, pas par accident.",
-      "categorie": "FAJR-OBJECTIF"
-    },
-    {
-      "id": "FAJR_307",
-      "fr": "Vise UN don de savoir aujourd'hui. Apprends quelque chose à quelqu'un. Pas forcément religieux — un savoir utile. Le Prophète ﷺ a dit : « Le meilleur d'entre vous est celui qui apprend le Coran et l'enseigne. » (Bukhari)",
-      "categorie": "FAJR-OBJECTIF"
-    },
-    {
-      "id": "FAJR_308",
-      "fr": "Aujourd'hui, vise : faire deux rak'as supplémentaires avant Maghrib ou avant 'Ishâ. Le Prophète ﷺ a dit : « Entre chaque adhân et iqâma, il y a une prière pour celui qui le veut. » (Bukhari, Muslim) Cette prière oubliée est ta pépite.",
-      "categorie": "FAJR-OBJECTIF"
-    },
-    {
-      "id": "FAJR_309",
-      "fr": "Le Prophète ﷺ a dit : « Quiconque dit Astaghfirullâh-al-'azhîm al-ladhî lâ ilâha illâ huwa al-Hayy al-Qayyûm wa atûbu ilayh — ses péchés lui sont pardonnés même s'il a fui le champ de bataille. » (Tirmidhi, Abû Dâwûd) Apprends-la.",
-      "categorie": "FAJR-MOTIVATION"
-    },
-    {
-      "id": "FAJR_310",
-      "fr": "Le Prophète ﷺ a dit : « Quiconque suit un sentier pour acquérir un savoir, Allâh lui facilite un sentier vers le Paradis. » (Muslim) Aujourd'hui, suis un sentier de savoir — même 5 minutes. Niyyah te le facilite.",
-      "categorie": "FAJR-MOTIVATION"
-    },
-    {
-      "id": "FAJR_311",
-      "fr": "Hasanah de l'argent : aujourd'hui, donne UN don dont tu seras le seul à savoir le montant. La sadaqa cachée est protégée et précieuse en islam (Bukhari, Muslim).",
-      "categorie": "FAJR-TACTIQUE"
-    },
-    {
-      "id": "FAJR_312",
-      "fr": "Quand tu liras quelque chose de bien aujourd'hui (article, livre, message), partage-le avec quelqu'un. Pas pour montrer — pour transmettre. Le Prophète ﷺ a dit : « Que celui qui était présent transmette à l'absent. » (Bukhari)",
-      "categorie": "FAJR-TACTIQUE"
-    },
-    {
-      "id": "FAJR_313",
-      "fr": "Le Prophète ﷺ a dit : « Le sage est celui qui se prépare pour ce qui vient après la mort. » (Sens du hadith de Tirmidhi) Toi, lequel veux-tu regretter à ta mort : ne pas avoir fait plus de bien, ou ne pas t'être repenti ? Travaille là-dessus aujourd'hui.",
-      "categorie": "FAJR-RAPPEL"
-    },
-    {
-      "id": "FAJR_314",
-      "fr": "Aujourd'hui à un moment, regarde tes parents (si tu peux). Vraiment. Vois leurs rides, leurs cheveux blancs, leurs gestes lents. Un jour ils ne seront plus là. Ce regard d'aujourd'hui — tu en seras nostalgique demain.",
-      "categorie": "FAJR-RAPPEL"
-    },
-    {
-      "id": "FAJR_315",
-      "fr": "Le Prophète ﷺ a transmis (hadith qudsi) : « Ma miséricorde a précédé Ma colère. » (Bukhari) Aujourd'hui, ne désespère JAMAIS de Lui. Même après tes pires actes. Sa porte est plus grande que tes péchés.",
+      "fr": "Allâh est plus proche de toi que ta veine jugulaire (Coran 50:16). Par Sa connaissance. Il sait ce que tu as pensé dans cette dernière minute. Aujourd'hui, vis comme si tu Le voyais.",
       "categorie": "FAJR-CONSCIENCE"
     },
     {
-      "id": "FAJR_316",
-      "fr": "Tu sens ce léger air frais qui te traverse au matin ? Le matin est béni. Le Prophète ﷺ a fait du'â : « Ô Allah, bénis ma communauté dans ses matins. » (Tirmidhi, Abû Dâwûd, hasan) Avance dans cette barakah.",
+      "id": "FAJR_291",
+      "fr": "Tu as toujours rêvé d'une journée parfaite. Aujourd'hui peut l'être — pas selon les standards du monde mais selon les standards de l'au-delà. Une journée parfaite = une journée pour Lui. Tu commences maintenant.",
       "categorie": "FAJR-ARRIVÉE"
     },
     {
+      "id": "FAJR_292",
+      "fr": "Aujourd'hui en t'asseyant à ton bureau / poste de travail, dis dans ton cœur « Allâhumma j'agis aussi pour Toi. » Ton travail devient travail spirituel. Tes heures deviennent ibâda.",
+      "categorie": "FAJR-QUOTIDIEN"
+    },
+    {
+      "id": "FAJR_293",
+      "fr": "Quand tu rentreras chez toi aujourd'hui, dis Bismillah en franchissant la porte. Puis « As-salâmu 'alaykum » à ta famille ou à toi-même si tu vis seul. La sounnah de la salutation à l'entrée (Muslim).",
+      "categorie": "FAJR-QUOTIDIEN"
+    },
+    {
+      "id": "FAJR_294",
+      "fr": "Aujourd'hui en jetant un déchet, fais-le dans une vraie poubelle. Pas par terre. Le Prophète ﷺ a parlé du fait d'enlever les nuisances du chemin comme acte de foi (Muslim). Ne fais pas le contraire — laisser une nuisance pour les autres.",
+      "categorie": "FAJR-QUOTIDIEN"
+    },
+    {
+      "id": "FAJR_295",
+      "fr": "Aujourd'hui en lavant tes mains, lave-les complètement (poignets compris). Le Prophète ﷺ insistait sur l'eau qui atteint complètement les membres du wudu (Bukhari). Fais-le complet.",
+      "categorie": "FAJR-QUOTIDIEN"
+    },
+    {
+      "id": "FAJR_296",
+      "fr": "Aujourd'hui en mangeant ton dessert (si tu en manges), dis « Alhamdulillâh » 3 fois. Pas par habitude — vraiment. Tu remercies pour une douceur. La douceur est aussi don d'Allâh.",
+      "categorie": "FAJR-QUOTIDIEN"
+    },
+    {
+      "id": "FAJR_297",
+      "fr": "Aujourd'hui, vise une rak'a surérogatoire (Duhâ, ou Rawâtib). Une seule. Le Prophète ﷺ a dit que les surérogatoires complètent ce qui manque dans les obligatoires (Tirmidhi).",
+      "categorie": "FAJR-OBJECTIF"
+    },
+    {
+      "id": "FAJR_298",
+      "fr": "Vise UN du'â pour une personne qui t'a blessé aujourd'hui. Pas pour qu'elle change — pour qu'Allâh la guide. Le Prophète ﷺ priait pour ceux qui le persécutaient (Bukhari).",
+      "categorie": "FAJR-OBJECTIF"
+    },
+    {
+      "id": "FAJR_299",
+      "fr": "Aujourd'hui, vise UNE chose à étudier dans l'islam que tu ignores. Comment fait-on le ghusl ? Quelles sont les paroles du tashahhud ? Niyyah Fiqh te répond. Un trou comblé par jour.",
+      "categorie": "FAJR-OBJECTIF"
+    },
+    {
+      "id": "FAJR_300",
+      "fr": "Le Prophète ﷺ a transmis (hadith qudsi) : « Quiconque s'approche de Moi d'une coudée, Je M'approche de lui d'un bras. Quiconque vient à Moi en marchant, Je viens à lui en courant. » (Bukhari) Approche-toi aujourd'hui.",
+      "categorie": "FAJR-MOTIVATION"
+    },
+    {
+      "id": "FAJR_301",
+      "fr": "Le Prophète ﷺ a dit : « Les anges se relayent parmi vous — la nuit et le jour. Ils se retrouvent à la prière de Fajr et celle de 'Asr. Ceux qui ont passé la nuit avec vous montent, et leur Seigneur leur demande : Comment avez-vous laissé Mes serviteurs ? Ils répondent : Nous les avons laissés priant et nous les avons trouvés priant. » (Bukhari) Sois ce serviteur trouvé en prière.",
+      "categorie": "FAJR-MOTIVATION"
+    },
+    {
+      "id": "FAJR_302",
+      "fr": "Hasanah du visage : aujourd'hui, présente un visage doux à tout le monde. Le Prophète ﷺ a dit : « Ne dédaigne aucun bien, même rencontrer ton frère avec un visage souriant. » (Muslim)",
+      "categorie": "FAJR-TACTIQUE"
+    },
+    {
+      "id": "FAJR_303",
+      "fr": "Quand tu te coucheras ce soir, récite Ayât al-Kursî avant de dormir. Le Prophète ﷺ a dit qu'un protecteur d'Allâh reste auprès de toi alors et le shaytân ne s'approche pas (Bukhari).",
+      "categorie": "FAJR-TACTIQUE"
+    },
+    {
+      "id": "FAJR_304",
+      "fr": "Le Prophète ﷺ a dit : « La patience est lors du premier choc. » (Bukhari) Aujourd'hui, ce qui te dérange est ta première école. Ne t'enfuis pas. C'est là que tu apprends quelque chose de toi.",
+      "categorie": "FAJR-RAPPEL"
+    },
+    {
+      "id": "FAJR_305",
+      "fr": "Combien de personnes que tu connais sont mortes en pensant : « Je le ferai demain » ? Aujourd'hui n'est pas tellement plus probable que demain pour toi. Fais maintenant ce que tu veux laisser comme héritage.",
+      "categorie": "FAJR-RAPPEL"
+    },
+    {
+      "id": "FAJR_306",
+      "fr": "Le Prophète ﷺ a dit : « L'intelligent est celui qui se contrôle et travaille pour ce qui vient après la mort. L'incapable est celui qui suit ses désirs et compte sur Allâh pour les pardons. » (Tirmidhi) Lequel es-tu aujourd'hui ?",
+      "categorie": "FAJR-CONSCIENCE"
+    },
+    {
+      "id": "FAJR_307",
+      "fr": "Aujourd'hui en prenant ton repas, mange avec ta main droite. Le Prophète ﷺ a dit que le shaytân mange avec la gauche (Muslim). Une habitude à recadrer.",
+      "categorie": "FAJR-QUOTIDIEN"
+    },
+    {
+      "id": "FAJR_308",
+      "fr": "Quand tu marcheras dans la rue aujourd'hui, marche d'un pas modéré. Pas pressé pour montrer ton importance. Pas traînant par mollesse. Le Prophète ﷺ marchait fermement (Bukhari).",
+      "categorie": "FAJR-QUOTIDIEN"
+    },
+    {
+      "id": "FAJR_309",
+      "fr": "Aujourd'hui en mangeant un fruit, regarde-le et dis : « SubhânAllâh. » Pense à la couleur, la forme, le goût — tout pensé par Allâh. Mange en présence. La satiété arrive plus vite en conscience.",
+      "categorie": "FAJR-QUOTIDIEN"
+    },
+    {
+      "id": "FAJR_310",
+      "fr": "Aujourd'hui en t'habillant, commence par le côté droit (manche droite avant gauche, chaussure droite avant gauche). Le Prophète ﷺ aimait commencer par le droit dans tout (Bukhari).",
+      "categorie": "FAJR-QUOTIDIEN"
+    },
+    {
+      "id": "FAJR_311",
+      "fr": "Aujourd'hui en prenant des médicaments (si tu en prends), dis Bismillah. Tu reconnais que la guérison vient de Lui — la pilule n'est qu'un moyen. Tu vis par Sa décision.",
+      "categorie": "FAJR-QUOTIDIEN"
+    },
+    {
+      "id": "FAJR_312",
+      "fr": "Aujourd'hui, vise : passer 10 minutes au téléphone avec un parent. Pas SMS. Téléphone. Le Prophète ﷺ a dit que la bonté envers les parents est une porte du Paradis (Tirmidhi, hasan).",
+      "categorie": "FAJR-OBJECTIF"
+    },
+    {
+      "id": "FAJR_313",
+      "fr": "Vise UN voisin auquel tu vas parler aujourd'hui (échange, salut, sourire). Le Prophète ﷺ a tellement insisté sur le voisin qu'il a dit : « J'ai cru qu'il allait hériter de moi. » (Bukhari)",
+      "categorie": "FAJR-OBJECTIF"
+    },
+    {
+      "id": "FAJR_314",
+      "fr": "Aujourd'hui, vise une prière mieux faite. Pas plus de prières — UNE mieux faite. Plus longue rukû'. Plus longue sajda. Plus présent dans la Fâtiha. Le Prophète ﷺ priait avec présence (Bukhari).",
+      "categorie": "FAJR-OBJECTIF"
+    },
+    {
+      "id": "FAJR_315",
+      "fr": "Le Prophète ﷺ a dit : « Les actes ne valent que par les intentions, et chacun n'aura que ce qu'il a eu l'intention de faire. » (Bukhari, Muslim) Ton travail au bureau peut valoir une ibâda — si tu l'intentionnes pour Allâh, pour subvenir à ta famille. Renouvelle l'intention.",
+      "categorie": "FAJR-MOTIVATION"
+    },
+    {
+      "id": "FAJR_316",
+      "fr": "Le Prophète ﷺ a dit : « Quiconque construit une mosquée pour Allâh, Allâh lui construit une maison au Paradis. » (Bukhari, Muslim) Tu ne peux pas en construire une entièrement. Tu peux participer financièrement à une. Une nuit où tu reçois une notification de collecte — sois prêt.",
+      "categorie": "FAJR-MOTIVATION"
+    },
+    {
       "id": "FAJR_317",
-      "fr": "Niyyah Pratique te détaille les sunan post-prière. Les compagnons connaissaient plusieurs actes à faire après chaque salât. Aujourd'hui, apprends-en UN nouveau.",
-      "categorie": "FAJR-CARREFOUR"
+      "fr": "Hasanah du regard 2 : aujourd'hui en voyant un musulman en difficulté (mendiant, sans-abri, personne âgée), au moins fais un du'â pour lui dans ton cœur. Si tu peux donner, donne. Si tu ne peux pas, prie.",
+      "categorie": "FAJR-TACTIQUE"
     },
     {
       "id": "FAJR_318",
-      "fr": "Niyyah Coran > sourate Al-Wâqi'ah. Une sourate dont la lecture régulière est recommandée (selon plusieurs traditions). Lis-la quand tu peux pour la barakah de ta provision.",
-      "categorie": "FAJR-CARREFOUR"
+      "fr": "Pose une alarme à 12h aujourd'hui. Quand elle sonne, dis le Sayyid al-Istighfâr : « Allâhumma anta rabbî, lâ ilâha illâ anta, khalaqtanî wa anâ 'abduka... » (Bukhari) Niyyah Du'âs te le fournit. Le maître des istighfâr.",
+      "categorie": "FAJR-TACTIQUE"
     },
     {
       "id": "FAJR_319",
-      "fr": "Niyyah Tafakkur > Al-Fattâh. Celui qui ouvre les portes — fermées par les autres, par ta peur, par ton ignorance. Aujourd'hui si tu te sens coincé, médite ce nom. Une porte va s'ouvrir.",
-      "categorie": "FAJR-CARREFOUR"
+      "fr": "Tu peux mourir en travaillant. En conduisant. En marchant. Pendant ta prière. Pendant tes péchés. Pendant ton dhikr. La position dans laquelle Allâh t'arrête est ta position devant Lui. Aujourd'hui, choisis dans quelle position te tenir.",
+      "categorie": "FAJR-RAPPEL"
     },
     {
       "id": "FAJR_320",
-      "fr": "Niyyah Sîra contient le récit du Mi'râj — le voyage nocturne du Prophète ﷺ. Aujourd'hui ou ce week-end, lis-le. Tu comprendras pourquoi la salât a été descendue. Tu prieras avec plus de présence.",
-      "categorie": "FAJR-CARREFOUR"
+      "fr": "Le tombeau est la première étape de l'au-delà. Aujourd'hui, fais-toi cette pensée : que vais-je y emporter de cette journée ? Le Prophète ﷺ disait : « Visitez les tombes — elles vous rappellent l'au-delà. » (Muslim)",
+      "categorie": "FAJR-RAPPEL"
     },
     {
       "id": "FAJR_321",
-      "fr": "Niyyah Hadiths > section « manières du Prophète ﷺ avec ses femmes ». Lis-en un aujourd'hui. Tu apprendras la tendresse, le respect, le partage. Modèle direct pour ta vie de couple.",
-      "categorie": "FAJR-CARREFOUR"
+      "fr": "Tu n'es pas dans un système où « il faut être bon ». Tu es dans un système où il faut RECEVOIR Sa miséricorde. Aujourd'hui, tu n'as pas à mériter — tu as à T'OUVRIR. La différence est immense.",
+      "categorie": "FAJR-CONSCIENCE"
     },
     {
       "id": "FAJR_322",
-      "fr": "Aujourd'hui en mangeant ta soupe / un plat liquide, fais-le avec une cuillère (pas en aspirant bruyamment). Le Prophète ﷺ mangeait avec dignité. L'adab à table fait partie de la sunnah.",
+      "fr": "Aujourd'hui en éternuant, dis « Alhamdulillâh. » Si quelqu'un éternue à proximité et dit Alhamdulillâh, dis « Yarhamuka Allâh. » (Bukhari) Une politesse devient adoration.",
       "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_323",
-      "fr": "Aujourd'hui en goûtant quelque chose de chaud (café, thé, soupe), ne souffle pas dessus. Attends. Patiente. Le Prophète ﷺ a interdit de souffler dans les boissons (Tirmidhi). Une patience devient ibâda.",
+      "fr": "Aujourd'hui en bâillant, retiens-le et couvre ta bouche. Le Prophète ﷺ a dit que le bâillement vient du shaytân et qu'il faut le repousser autant que possible (Bukhari). Un détail oublié.",
       "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_324",
-      "fr": "Aujourd'hui en mangeant un fruit avec noyau (dattes, olives, prunes), pose le noyau délicatement. Le Prophète ﷺ avait un adab même avec les noyaux (Tirmidhi).",
+      "fr": "Aujourd'hui en achetant du pain (si tu en achètes), respecte-le. Ne le pose pas par terre en rentrant. La barakah de la nourriture commence par le respect du don.",
       "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_325",
-      "fr": "Aujourd'hui en t'essuyant après le wudu, fais-le avec ordre. Le Prophète ﷺ s'essuyait avec une serviette ou de manière soignée (rapporté dans plusieurs voies). Détail oublié de notre rapidité moderne.",
+      "fr": "Aujourd'hui en remarquant une chose belle (un ciel, un vol d'oiseau, un enfant qui rit), dis dans ton cœur « Mâ shâ' Allâh. » Tu adores en regardant.",
       "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_326",
-      "fr": "Aujourd'hui, vise : ne pas regarder une seule chose haram (image suggestive, contenu inapproprié). Le Prophète ﷺ a parlé du regard comme d'une flèche du shaytân (hadith). Une flèche évitée = une bataille gagnée.",
-      "categorie": "FAJR-OBJECTIF"
+      "fr": "Aujourd'hui en travaillant en équipe ou avec des collègues, dis Bismillah dans ton cœur avant de prendre la parole importante. Le mot prononcé avec présence a une puissance que le mot distrait n'a pas.",
+      "categorie": "FAJR-QUOTIDIEN"
     },
     {
       "id": "FAJR_327",
-      "fr": "Vise UN abandon aujourd'hui : abandonne UNE habitude problématique pour cette journée seulement. Pas pour toujours — juste aujourd'hui. Demain tu reprendras peut-être. Mais aujourd'hui, propre.",
+      "fr": "Aujourd'hui, vise : NE PAS interrompre quelqu'un qui parle. Le Prophète ﷺ écoutait jusqu'au bout (Bukhari). Un mot retenu = une hasanah cachée.",
       "categorie": "FAJR-OBJECTIF"
     },
     {
       "id": "FAJR_328",
-      "fr": "Aujourd'hui, vise UN voisin musulman avec qui tu vas échanger 5 minutes. Le Prophète ﷺ a dit : « Personne ne croit vraiment tant que son voisin n'est pas en sécurité face à ses méfaits. » (Bukhari)",
+      "fr": "Vise UN moment de solitude aujourd'hui, 15 minutes, pour rester avec Allâh. Pas pour lire, pas pour scroller — juste être avec Lui en pensée et dhikr. Le Prophète ﷺ aimait la khalwa (Bukhari).",
       "categorie": "FAJR-OBJECTIF"
     },
     {
       "id": "FAJR_329",
-      "fr": "Le Prophète ﷺ a dit : « Allâh aime que lorsque l'un de vous fait un travail, qu'il le fasse avec excellence. » (al-Bayhaqî dans Shu'ab al-Îmân) Aujourd'hui, ton travail fais-le AVEC EXCELLENCE. C'est de l'ihsân.",
-      "categorie": "FAJR-MOTIVATION"
+      "fr": "Aujourd'hui, vise un effort pour quelqu'un de plus faible que toi (plus jeune, plus âgé, plus pauvre, plus malade). Le Prophète ﷺ disait : « Allâh est avec ses faibles serviteurs. » (Tirmidhi, hasan)",
+      "categorie": "FAJR-OBJECTIF"
     },
     {
       "id": "FAJR_330",
-      "fr": "Le Prophète ﷺ a dit : « Celui qui se réveille en sécurité dans sa famille, en bonne santé physique, avec sa subsistance du jour — c'est comme s'il possédait le monde entier. » (Tirmidhi, hasan) Aujourd'hui, énumère ces 3 choses si tu les as.",
+      "fr": "Le Prophète ﷺ a dit : « Les actes les plus cachés et les plus sincères sont les plus aimés d'Allâh. » (Sens général de plusieurs hadiths) Aujourd'hui, sois caché dans tes hasanât. Allâh suffit comme spectateur.",
       "categorie": "FAJR-MOTIVATION"
     },
     {
       "id": "FAJR_331",
-      "fr": "Hasanah du temps mort : aujourd'hui, à chaque ascenseur que tu prendras, dis 10 fois SubhânAllâh. Personne ne sait. Personne ne te voit. Mais Allâh oui. Et la balance pèse.",
-      "categorie": "FAJR-TACTIQUE"
+      "fr": "Le Prophète ﷺ a dit : « Visitez le malade. » (Bukhari) Une visite courte vaut autant qu'une longue prière. Pas d'effort spirituel solo quand tu peux faire un effort spirituel social.",
+      "categorie": "FAJR-MOTIVATION"
     },
     {
       "id": "FAJR_332",
-      "fr": "Quand tu prendras une décision aujourd'hui (même petite : quoi manger, quoi acheter), demande dans ton cœur : « Allâhumma khir lî. » Tu confies tes choix. Tu n'es plus seul.",
+      "fr": "Hasanah de l'oubli : si tu oublies de faire un dhikr aujourd'hui, en t'en rappelant — dis-le 3 fois. Allâh accepte la compensation. Tu transformes un oubli en effort.",
       "categorie": "FAJR-TACTIQUE"
     },
     {
       "id": "FAJR_333",
-      "fr": "Combien de gens ont prié Fajr ce matin dans le monde ? Des centaines de millions. Tu fais partie de cette armée invisible. Une armée qui ne tue personne — qui sauve. Aujourd'hui, tu sauves QUI par tes du'âs ?",
-      "categorie": "FAJR-RAPPEL"
+      "fr": "Quand tu finiras une réunion / une conversation aujourd'hui, dis dans ton cœur : « SubhânAka Allâhumma wa bihamdik, ash-hadu an lâ ilâha illâ Anta, astaghfiruka wa atûbu ilayk. » (Tirmidhi, hasan sahîh) Tu pars en ayant effacé ce qui s'est dit pendant.",
+      "categorie": "FAJR-TACTIQUE"
     },
     {
       "id": "FAJR_334",
-      "fr": "Combien d'enfants nés au moment où tu lisais ces mots ? Combien sont nés dans une famille qui leur parlera d'Allâh dès le premier jour ? Toi, tu connais. C'est un cadeau. Sois reconnaissant.",
+      "fr": "Une heure entière sans dhikr est une heure que tu ne récupéreras jamais. Pas par culpabilité — par lucidité. Aujourd'hui combien d'heures peuvent être « pour Lui » — au moins en pensée ?",
       "categorie": "FAJR-RAPPEL"
     },
     {
       "id": "FAJR_335",
+      "fr": "Le Prophète ﷺ n'a JAMAIS raté la prière de Fajr. Combien tu en as raté cette semaine ? Cette différence est ton entraînement. Aujourd'hui, tu peux commencer à réduire l'écart.",
+      "categorie": "FAJR-RAPPEL"
+    },
+    {
+      "id": "FAJR_336",
+      "fr": "Tu te lèves chaque matin avec une dette d'attention envers Allâh — Il t'a regardé toute la nuit. Aujourd'hui, paye une partie. Une seule attention vers Lui à un moment inattendu.",
+      "categorie": "FAJR-CONSCIENCE"
+    },
+    {
+      "id": "FAJR_337",
+      "fr": "Aujourd'hui en prenant ta douche / ton bain, fais le wudu d'abord (les actes mineurs). Le Prophète ﷺ recommandait le ghusl entier avec wudu intégré (Bukhari). Une eau qui devient ibâda.",
+      "categorie": "FAJR-QUOTIDIEN"
+    },
+    {
+      "id": "FAJR_338",
+      "fr": "Aujourd'hui en regardant le ciel, dis « SubhânAllâh. » Tu reconnais en levant les yeux Qui domine ce que tu vois.",
+      "categorie": "FAJR-QUOTIDIEN"
+    },
+    {
+      "id": "FAJR_339",
+      "fr": "Aujourd'hui en faisant la sieste (si possible), fais-la avant Dhuhr (Qaylûla) et pas trop longue. Le Prophète ﷺ la pratiquait. Une sieste qui devient nuit gagnée.",
+      "categorie": "FAJR-QUOTIDIEN"
+    },
+    {
+      "id": "FAJR_340",
+      "fr": "Aujourd'hui en utilisant un nouvel objet (achat, cadeau reçu), dis : « Alhamdulillâhi-lladhî kasânî hâdhâ wa razaqanîhi min ghayri hawlin minnî wa lâ quwwa. » (Abû Dâwûd, Tirmidhi)",
+      "categorie": "FAJR-QUOTIDIEN"
+    },
+    {
+      "id": "FAJR_341",
+      "fr": "Aujourd'hui en croisant un cimetière (en voiture ou à pied), dis : « As-salâmu 'alaykum yâ ahla-d-diyâr min al-mu'minîn wa-l-muslimîn... » (Muslim) Tu salues les morts. Un jour, quelqu'un saluera ta tombe.",
+      "categorie": "FAJR-QUOTIDIEN"
+    },
+    {
+      "id": "FAJR_342",
+      "fr": "Aujourd'hui, vise UNE chose à apprendre par cœur — pas seulement à lire. Un verset, un hadith, un du'â. Apprendre par cœur, c'est INSCRIRE dans le corps. Une fois inscrit, tu l'as pour la vie.",
+      "categorie": "FAJR-OBJECTIF"
+    },
+    {
+      "id": "FAJR_343",
+      "fr": "Vise UN sourire offert sans raison aujourd'hui. À un étranger. À ton enfant. À ton conjoint. Le Prophète ﷺ a dit que sourire est sadaqa (Tirmidhi).",
+      "categorie": "FAJR-OBJECTIF"
+    },
+    {
+      "id": "FAJR_344",
+      "fr": "Aujourd'hui, vise : ne pas regarder la montre / l'heure pendant tes 5 prières. Présence totale. Pas de « vite vite ». Le Prophète ﷺ priait avec une lenteur sacrée (Bukhari).",
+      "categorie": "FAJR-OBJECTIF"
+    },
+    {
+      "id": "FAJR_345",
+      "fr": "Le Prophète ﷺ a transmis (hadith qudsi) : « Mon serviteur ne cesse de s'approcher de Moi par les surérogatoires jusqu'à ce que Je l'aime. Quand Je l'aime, Je deviens l'ouïe par laquelle il entend, la vue par laquelle il voit... » (Bukhari) Tu peux devenir cela. Aujourd'hui.",
+      "categorie": "FAJR-MOTIVATION"
+    },
+    {
+      "id": "FAJR_346",
+      "fr": "Si tu as des prières en retard, rattrape-les progressivement. Une par jour à côté des obligatoires. En 1 an, ton compte avance. Le Prophète ﷺ a dit : « Acquittez ce qui est dû à Allâh. » (Bukhari)",
+      "categorie": "FAJR-MOTIVATION"
+    },
+    {
+      "id": "FAJR_347",
+      "fr": "Hasanah de la voix : aujourd'hui, baisse ta voix avec ceux qui t'entourent. Pas chuchoter — juste poser. Le Prophète ﷺ parlait posément (Bukhari).",
+      "categorie": "FAJR-TACTIQUE"
+    },
+    {
+      "id": "FAJR_348",
+      "fr": "Quand tu seras frustré aujourd'hui, dis « A'ûdhu billâhi min ash-shaytâni-r-rajîm. » Le Prophète ﷺ recommandait cette formule contre la colère (Bukhari).",
+      "categorie": "FAJR-TACTIQUE"
+    },
+    {
+      "id": "FAJR_349",
+      "fr": "Tu connais des gens qui sont morts récemment. Tu les as vus. Tu as parlé avec eux. Maintenant ils sont sous terre. Aujourd'hui, fais le du'â pour eux. Tu seras dans le même état un jour. Tu voudras qu'on prie pour toi.",
+      "categorie": "FAJR-RAPPEL"
+    },
+    {
+      "id": "FAJR_350",
+      "fr": "Combien d'années ton imam préféré a-t-il étudié pour atteindre sa science ? Combien toi ? La différence est ta liste de devoirs. Aujourd'hui, ne sois pas honteux — sois affamé.",
+      "categorie": "FAJR-RAPPEL"
+    },
+    {
+      "id": "FAJR_351",
+      "fr": "300 matins viennent de défiler dans ces phrases. Lequel des 300 te ressemble le plus aujourd'hui ? Lequel restera de toi quand on te jugera ? Tu as encore — encore — encore cette journée pour décider. Maintenant.",
+      "categorie": "FAJR-ARRIVÉE"
+    },
+    {
+      "id": "FAJR_352",
+      "fr": "Aujourd'hui en mettant ta ceinture (voiture), dis Bismillah. Tu peux ne pas rentrer chez toi ce soir. La voiture peut être ta dernière demeure. Bénis ton voyage avant qu'il commence.",
+      "categorie": "FAJR-QUOTIDIEN"
+    },
+    {
+      "id": "FAJR_353",
+      "fr": "Aujourd'hui en éteignant ton ordinateur / téléphone le soir, dis « Astaghfirullah » pour ce que tu y as vu/écrit/regardé qui n'aurait pas dû. Tu fermes la journée digitale avec un effacement.",
+      "categorie": "FAJR-QUOTIDIEN"
+    },
+    {
+      "id": "FAJR_354",
+      "fr": "Aujourd'hui en ouvrant une fenêtre / les volets le matin, dis Bismillah. Tu laisses entrer l'air d'Allah, la lumière d'Allah. Une habitude banale devient acte de gratitude.",
+      "categorie": "FAJR-QUOTIDIEN"
+    },
+    {
+      "id": "FAJR_355",
+      "fr": "Aujourd'hui en posant ton sac / tes clés en rentrant, marque un temps d'arrêt 3 secondes. Dis Alhamdulillah pour être rentré. Beaucoup partent et ne reviennent pas. Toi si.",
+      "categorie": "FAJR-QUOTIDIEN"
+    },
+    {
+      "id": "FAJR_356",
+      "fr": "Aujourd'hui, vise : porter une chose pieuse sur toi de manière visible. Pas par ostentation — par identité. Une tasbih dans la poche. Un parfum noté comme sunnah. Tu existes en tant que musulman, pas par accident.",
+      "categorie": "FAJR-OBJECTIF"
+    },
+    {
+      "id": "FAJR_357",
+      "fr": "Vise UN don de savoir aujourd'hui. Apprends quelque chose à quelqu'un. Pas forcément religieux — un savoir utile. Le Prophète ﷺ a dit : « Le meilleur d'entre vous est celui qui apprend le Coran et l'enseigne. » (Bukhari)",
+      "categorie": "FAJR-OBJECTIF"
+    },
+    {
+      "id": "FAJR_358",
+      "fr": "Aujourd'hui, vise : faire deux rak'as supplémentaires avant Maghrib ou avant 'Ishâ. Le Prophète ﷺ a dit : « Entre chaque adhân et iqâma, il y a une prière pour celui qui le veut. » (Bukhari, Muslim) Cette prière oubliée est ta pépite.",
+      "categorie": "FAJR-OBJECTIF"
+    },
+    {
+      "id": "FAJR_359",
+      "fr": "Le Prophète ﷺ a dit : « Quiconque dit Astaghfirullâh-al-'azhîm al-ladhî lâ ilâha illâ huwa al-Hayy al-Qayyûm wa atûbu ilayh — ses péchés lui sont pardonnés même s'il a fui le champ de bataille. » (Tirmidhi, Abû Dâwûd) Apprends-la.",
+      "categorie": "FAJR-MOTIVATION"
+    },
+    {
+      "id": "FAJR_360",
+      "fr": "Le Prophète ﷺ a dit : « Quiconque suit un sentier pour acquérir un savoir, Allâh lui facilite un sentier vers le Paradis. » (Muslim) Aujourd'hui, suis un sentier de savoir — même 5 minutes. Niyyah te le facilite.",
+      "categorie": "FAJR-MOTIVATION"
+    },
+    {
+      "id": "FAJR_361",
+      "fr": "Hasanah de l'argent : aujourd'hui, donne UN don dont tu seras le seul à savoir le montant. La sadaqa cachée est protégée et précieuse en islam (Bukhari, Muslim).",
+      "categorie": "FAJR-TACTIQUE"
+    },
+    {
+      "id": "FAJR_362",
+      "fr": "Quand tu liras quelque chose de bien aujourd'hui (article, livre, message), partage-le avec quelqu'un. Pas pour montrer — pour transmettre. Le Prophète ﷺ a dit : « Que celui qui était présent transmette à l'absent. » (Bukhari)",
+      "categorie": "FAJR-TACTIQUE"
+    },
+    {
+      "id": "FAJR_363",
+      "fr": "Le Prophète ﷺ a dit : « Le sage est celui qui se prépare pour ce qui vient après la mort. » (Sens du hadith de Tirmidhi) Toi, lequel veux-tu regretter à ta mort : ne pas avoir fait plus de bien, ou ne pas t'être repenti ? Travaille là-dessus aujourd'hui.",
+      "categorie": "FAJR-RAPPEL"
+    },
+    {
+      "id": "FAJR_364",
+      "fr": "Aujourd'hui à un moment, regarde tes parents (si tu peux). Vraiment. Vois leurs rides, leurs cheveux blancs, leurs gestes lents. Un jour ils ne seront plus là. Ce regard d'aujourd'hui — tu en seras nostalgique demain.",
+      "categorie": "FAJR-RAPPEL"
+    },
+    {
+      "id": "FAJR_365",
+      "fr": "Le Prophète ﷺ a transmis (hadith qudsi) : « Ma miséricorde a précédé Ma colère. » (Bukhari) Aujourd'hui, ne désespère JAMAIS de Lui. Même après tes pires actes. Sa porte est plus grande que tes péchés.",
+      "categorie": "FAJR-CONSCIENCE"
+    },
+    {
+      "id": "FAJR_366",
+      "fr": "Tu sens ce léger air frais qui te traverse au matin ? Le matin est béni. Le Prophète ﷺ a fait du'â : « Ô Allah, bénis ma communauté dans ses matins. » (Tirmidhi, Abû Dâwûd, hasan) Avance dans cette barakah.",
+      "categorie": "FAJR-ARRIVÉE"
+    },
+    {
+      "id": "FAJR_367",
+      "fr": "Aujourd'hui en mangeant ta soupe / un plat liquide, fais-le avec une cuillère (pas en aspirant bruyamment). Le Prophète ﷺ mangeait avec dignité. L'adab à table fait partie de la sunnah.",
+      "categorie": "FAJR-QUOTIDIEN"
+    },
+    {
+      "id": "FAJR_368",
+      "fr": "Aujourd'hui en goûtant quelque chose de chaud (café, thé, soupe), ne souffle pas dessus. Attends. Patiente. Le Prophète ﷺ a interdit de souffler dans les boissons (Tirmidhi). Une patience devient ibâda.",
+      "categorie": "FAJR-QUOTIDIEN"
+    },
+    {
+      "id": "FAJR_369",
+      "fr": "Aujourd'hui en mangeant un fruit avec noyau (dattes, olives, prunes), pose le noyau délicatement. Le Prophète ﷺ avait un adab même avec les noyaux (Tirmidhi).",
+      "categorie": "FAJR-QUOTIDIEN"
+    },
+    {
+      "id": "FAJR_370",
+      "fr": "Aujourd'hui en t'essuyant après le wudu, fais-le avec ordre. Le Prophète ﷺ s'essuyait avec une serviette ou de manière soignée (rapporté dans plusieurs voies). Détail oublié de notre rapidité moderne.",
+      "categorie": "FAJR-QUOTIDIEN"
+    },
+    {
+      "id": "FAJR_371",
+      "fr": "Aujourd'hui, vise : ne pas regarder une seule chose haram (image suggestive, contenu inapproprié). Le Prophète ﷺ a parlé du regard comme d'une flèche du shaytân (hadith). Une flèche évitée = une bataille gagnée.",
+      "categorie": "FAJR-OBJECTIF"
+    },
+    {
+      "id": "FAJR_372",
+      "fr": "Vise UN abandon aujourd'hui : abandonne UNE habitude problématique pour cette journée seulement. Pas pour toujours — juste aujourd'hui. Demain tu reprendras peut-être. Mais aujourd'hui, propre.",
+      "categorie": "FAJR-OBJECTIF"
+    },
+    {
+      "id": "FAJR_373",
+      "fr": "Aujourd'hui, vise UN voisin musulman avec qui tu vas échanger 5 minutes. Le Prophète ﷺ a dit : « Personne ne croit vraiment tant que son voisin n'est pas en sécurité face à ses méfaits. » (Bukhari)",
+      "categorie": "FAJR-OBJECTIF"
+    },
+    {
+      "id": "FAJR_374",
+      "fr": "Le Prophète ﷺ a dit : « Allâh aime que lorsque l'un de vous fait un travail, qu'il le fasse avec excellence. » (al-Bayhaqî dans Shu'ab al-Îmân) Aujourd'hui, ton travail fais-le AVEC EXCELLENCE. C'est de l'ihsân.",
+      "categorie": "FAJR-MOTIVATION"
+    },
+    {
+      "id": "FAJR_375",
+      "fr": "Le Prophète ﷺ a dit : « Celui qui se réveille en sécurité dans sa famille, en bonne santé physique, avec sa subsistance du jour — c'est comme s'il possédait le monde entier. » (Tirmidhi, hasan) Aujourd'hui, énumère ces 3 choses si tu les as.",
+      "categorie": "FAJR-MOTIVATION"
+    },
+    {
+      "id": "FAJR_376",
+      "fr": "Hasanah du temps mort : aujourd'hui, à chaque ascenseur que tu prendras, dis 10 fois SubhânAllâh. Personne ne sait. Personne ne te voit. Mais Allâh oui. Et la balance pèse.",
+      "categorie": "FAJR-TACTIQUE"
+    },
+    {
+      "id": "FAJR_377",
+      "fr": "Quand tu prendras une décision aujourd'hui (même petite : quoi manger, quoi acheter), demande dans ton cœur : « Allâhumma khir lî. » Tu confies tes choix. Tu n'es plus seul.",
+      "categorie": "FAJR-TACTIQUE"
+    },
+    {
+      "id": "FAJR_378",
+      "fr": "Combien de gens ont prié Fajr ce matin dans le monde ? Des centaines de millions. Tu fais partie de cette armée invisible. Une armée qui ne tue personne — qui sauve. Aujourd'hui, tu sauves QUI par tes du'âs ?",
+      "categorie": "FAJR-RAPPEL"
+    },
+    {
+      "id": "FAJR_379",
+      "fr": "Combien d'enfants nés au moment où tu lisais ces mots ? Combien sont nés dans une famille qui leur parlera d'Allâh dès le premier jour ? Toi, tu connais. C'est un cadeau. Sois reconnaissant.",
+      "categorie": "FAJR-RAPPEL"
+    },
+    {
+      "id": "FAJR_380",
       "fr": "Le Prophète ﷺ a dit : « Aucun musulman ne plante un arbre ou ne sème, sans qu'un oiseau, un humain ou une bête n'en mange — sans que cela ne soit comptabilisé comme sadaqa. » (Bukhari, Muslim) Aujourd'hui, plante quelque chose si tu peux.",
       "categorie": "FAJR-CONSCIENCE"
     },
     {
-      "id": "FAJR_336",
+      "id": "FAJR_381",
       "fr": "Tu as ouvert les yeux. Tu as bougé. Tu marches. Tu lis. Toutes ces choses que tu fais « tout seul » en apparence — Quelqu'un te les permet seconde par seconde. Aujourd'hui, dis-Lui merci sans paroles. Juste par ta présence.",
       "categorie": "FAJR-ARRIVÉE"
     },
     {
-      "id": "FAJR_337",
-      "fr": "Niyyah Pratique > du'âs avant le repas. Le Prophète ﷺ avait plusieurs formules selon le contexte. Aujourd'hui, regarde laquelle correspond à ton prochain repas et utilise-la.",
-      "categorie": "FAJR-CARREFOUR"
-    },
-    {
-      "id": "FAJR_338",
-      "fr": "Niyyah te suit dans ton apprentissage. Aujourd'hui regarde dans tes statistiques : combien de du'âs as-tu mémorisés ? Combien de hadiths ? L'islam que tu portes en toi grandit chaque jour. Ne minimise pas tes progrès.",
-      "categorie": "FAJR-CARREFOUR"
-    },
-    {
-      "id": "FAJR_339",
-      "fr": "Niyyah Coran a la sourate Al-Fath. Le Prophète ﷺ aimait cette sourate (Bukhari). Aujourd'hui ou bientôt, lis-la. C'est la sourate de la victoire — celle de l'islam.",
-      "categorie": "FAJR-CARREFOUR"
-    },
-    {
-      "id": "FAJR_340",
-      "fr": "Niyyah Hadiths > catégorie « pardons et miséricorde ». Si tu te sens lourd d'un péché aujourd'hui, lis 3 hadiths de cette section. Tu repartiras autrement.",
-      "categorie": "FAJR-CARREFOUR"
-    },
-    {
-      "id": "FAJR_341",
-      "fr": "Niyyah Sîra > moments avec les petits-fils du Prophète ﷺ : Hassan et Hussein. Sa tendresse envers eux. Si tu as des enfants aujourd'hui, lis et imite. Tu deviens parent dans la sunnah par imitation.",
-      "categorie": "FAJR-CARREFOUR"
-    },
-    {
-      "id": "FAJR_342",
+      "id": "FAJR_382",
       "fr": "Aujourd'hui en te coupant les ongles, le Prophète ﷺ aimait pratiquer les actes de purification le vendredi (Hadith — plusieurs voies). Un détail oublié — la sunnah jusque dans tes ongles.",
       "categorie": "FAJR-QUOTIDIEN"
     },
     {
-      "id": "FAJR_343",
+      "id": "FAJR_383",
       "fr": "Aujourd'hui en buvant un verre d'eau au sortir de l'effort, ralentis. 3 gorgées. Bismillah. Alhamdulillah (Muslim). L'eau bénie est plus désaltérante que l'eau pressée.",
       "categorie": "FAJR-QUOTIDIEN"
     },
     {
-      "id": "FAJR_344",
+      "id": "FAJR_384",
       "fr": "Aujourd'hui en croisant des animaux (chien, chat, oiseau), regarde-les avec bienveillance. Le Prophète ﷺ a raconté l'histoire d'une femme entrée au Paradis pour avoir donné à boire à un chien assoiffé (Bukhari). Personne ne te voit — Lui si.",
       "categorie": "FAJR-QUOTIDIEN"
     },
     {
-      "id": "FAJR_345",
+      "id": "FAJR_385",
       "fr": "Aujourd'hui en t'arrêtant à un feu rouge, lis l'Ayât al-Kursî dans ta tête. Le rouge dure 30-90 secondes — c'est assez. Tu transformes un retard en récompense.",
       "categorie": "FAJR-QUOTIDIEN"
     },
     {
-      "id": "FAJR_346",
+      "id": "FAJR_386",
       "fr": "Aujourd'hui en payant une facture / un impôt / une dette, dis : « Allâhumma j'acquitte mon devoir pour Toi. » Tu remplis ta responsabilité civile — devient acte d'adoration.",
       "categorie": "FAJR-QUOTIDIEN"
     },
     {
-      "id": "FAJR_347",
+      "id": "FAJR_387",
       "fr": "Aujourd'hui, vise : 5 minutes de Coran avec présence. Pas pour le quota. Avec présence. Le Prophète ﷺ priait plus court mais plus présent. La qualité dépasse la quantité dans la balance d'Allâh.",
       "categorie": "FAJR-OBJECTIF"
     },
     {
-      "id": "FAJR_348",
+      "id": "FAJR_388",
       "fr": "Vise UN jeûne dans les prochains jours : lundi ou jeudi. Le Prophète ﷺ jeûnait régulièrement ces deux jours (Tirmidhi). Programme maintenant — ne laisse pas passer.",
       "categorie": "FAJR-OBJECTIF"
     },
     {
-      "id": "FAJR_349",
+      "id": "FAJR_389",
       "fr": "Aujourd'hui, vise un mot de pardon. Pour quelqu'un. Pas un grand discours. Une phrase : « Pardonne-moi si je t'ai blessé. » Si tu ne peux pas la dire en face, dis-la dans ton cœur en pensant à la personne.",
       "categorie": "FAJR-OBJECTIF"
     },
     {
-      "id": "FAJR_350",
+      "id": "FAJR_390",
       "fr": "Le Prophète ﷺ a dit : « Les actes les plus aimés d'Allâh sont les plus constants, même s'ils sont peu nombreux. » (Bukhari, Muslim) Aujourd'hui, choisis UN tout petit acte que tu vas faire QUOTIDIENNEMENT pendant 30 jours. Choisis maintenant.",
       "categorie": "FAJR-MOTIVATION"
     },
     {
-      "id": "FAJR_351",
+      "id": "FAJR_391",
       "fr": "Le Prophète ﷺ a parlé de la sadaqa qui multiplie comme une graine donne une montagne (image inspirée de Coran 2:261). Aujourd'hui, donne UNE petite chose. Une pièce. Un bonbon. Un service. La graine devient montagne.",
       "categorie": "FAJR-MOTIVATION"
     },
     {
-      "id": "FAJR_352",
+      "id": "FAJR_392",
       "fr": "Hasanah de la pluie : si tu vois de la pluie aujourd'hui, dis : « Mutirnâ bi-fadli-llâhi wa rahmatih. » (Bukhari) Tu transformes une météo en dhikr.",
       "categorie": "FAJR-TACTIQUE"
     },
     {
-      "id": "FAJR_353",
+      "id": "FAJR_393",
       "fr": "Si tu vois la lune ce soir, dis : « Allâhumma ahillahu 'alaynâ bi-l-yumni wa-l-îmân, wa-s-salâmati wa-l-islâm. » (Tirmidhi, Ahmad) Tu salues le ciel — tu adores en regardant.",
       "categorie": "FAJR-TACTIQUE"
     },
     {
-      "id": "FAJR_354",
+      "id": "FAJR_394",
       "fr": "Le shaytân a dit à Allâh : « Je tromperai Tes serviteurs jusqu'au dernier, sauf Tes serviteurs sincères. » (Coran 38:82-83) Aujourd'hui, sois cette exception. Sincérité dans tes actes — il ne peut rien contre toi.",
       "categorie": "FAJR-RAPPEL"
     },
     {
-      "id": "FAJR_355",
+      "id": "FAJR_395",
       "fr": "Tes péchés de la semaine dernière, tu te les rappelles ? Probablement pas tous. Mais EUX se rappellent de toi. Ils sont inscrits. Le seul moyen de les effacer : Astaghfirullah maintenant. Pas demain.",
       "categorie": "FAJR-RAPPEL"
     },
     {
-      "id": "FAJR_356",
+      "id": "FAJR_396",
       "fr": "Tu es né. Tu mourras. Entre les deux, il y a aujourd'hui. C'est tout. Le reste est imagination. Aujourd'hui est ce que tu as. Ne le perds pas en pensant à demain.",
       "categorie": "FAJR-CONSCIENCE"
     },
     {
-      "id": "FAJR_357",
+      "id": "FAJR_397",
       "fr": "Le Prophète ﷺ a dit : « Le monde est la prison du croyant et le Paradis du mécréant. » (Muslim) Aujourd'hui, ne te plains pas que ce monde soit dur — c'est le signe que tu es croyant. La douceur que tu cherches ici n'existe pas ici.",
       "categorie": "FAJR-CONSCIENCE"
     },
     {
-      "id": "FAJR_358",
+      "id": "FAJR_398",
       "fr": "Tu vas peut-être te dire ce soir : « Je n'ai pas eu le temps de faire ce que je voulais. » Mais combien de temps tu as passé sur ton téléphone ? Le temps existe — il est utilisé ailleurs. Reprendre le contrôle commence maintenant.",
       "categorie": "FAJR-CONSCIENCE"
     },
     {
-      "id": "FAJR_359",
+      "id": "FAJR_399",
       "fr": "Tu es vivant. C'est la seule certitude de cette seconde-ci. Demain est espoir. Hier est mémoire. Maintenant est réel. Aujourd'hui, vis dans ce réel. Pas dans tes regrets. Pas dans tes plans. Dans ce qui est.",
       "categorie": "FAJR-ARRIVÉE"
     },
     {
-      "id": "FAJR_360",
+      "id": "FAJR_400",
       "fr": "Le souffle que tu prends en lisant cette phrase, tu n'es pas obligé de le penser pour le prendre. Quelqu'un te le donne. Aujourd'hui, à chaque souffle conscient — dis Alhamdulillah. Même 5 fois par jour. C'est déjà énorme.",
       "categorie": "FAJR-ARRIVÉE"
     },
     {
-      "id": "FAJR_361",
+      "id": "FAJR_401",
       "fr": "Tu as un nombre de matins inscrit dans ton compte. Personne ne sait combien. Mais aujourd'hui, tu en as UN. Et il est entier devant toi. Prends-le.",
       "categorie": "FAJR-ARRIVÉE"
     }
