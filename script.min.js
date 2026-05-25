@@ -13098,7 +13098,11 @@ window.WAQT_BY_PRIERE = null;
   Promise.all(keys.map(function(k) { return fetch(files[k]).then(function(r) { return r.ok ? r.json() : []; }).catch(function() { return []; }); }))
     .then(function(results) {
       var obj = {};
-      keys.forEach(function(k, i) { obj[k] = results[i]; });
+      keys.forEach(function(k, i) {
+        var d = results[i];
+        // Support both array format and {metadata, phrases} format
+        obj[k] = Array.isArray(d) ? d : (d && d.phrases ? d.phrases : []);
+      });
       window.WAQT_BY_PRIERE = obj;
     });
 })();
