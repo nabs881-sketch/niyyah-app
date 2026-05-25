@@ -12762,7 +12762,20 @@ function openWaqtModal() {
   var modal = document.getElementById('waqt-modal');
   if (!modal) return;
   var arName = _WAQT_AR_NAMES[priere] || '';
-  document.getElementById('waqt-action-text').innerHTML = '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:28px;color:#C8A84A;direction:rtl;margin-bottom:20px;">' + arName + '</div>' + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:#E5E0DC;line-height:1.7;max-width:320px;">' + txt + '</div>';
+  var actionEl = document.getElementById('waqt-action-text');
+
+  // Enriched render for story items (DHUHR-LANGUE, DHUHR-TRANSACTION, etc.)
+  var story = (pool && pool[idx] && pool[idx]._story) ? pool[idx]._story : null;
+  if (story && story.morale) {
+    var html = '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:28px;color:#C8A84A;direction:rtl;margin-bottom:16px;">' + arName + '</div>';
+    if (story.titre) html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:700;color:#C8A84A;letter-spacing:1px;margin-bottom:12px;">' + story.titre.toUpperCase() + '</div>';
+    html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:rgba(240,234,214,0.9);line-height:1.8;max-width:340px;max-height:45vh;overflow-y:auto;padding-right:4px;margin-bottom:16px;">' + (story.texte || '') + '</div>';
+    html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-weight:700;color:rgba(240,234,214,0.95);line-height:1.6;margin-bottom:12px;">' + story.morale + '</div>';
+    if (story.source) html += '<div style="font-family:\'Inter\',sans-serif;font-size:11px;color:rgba(200,168,75,0.4);line-height:1.4;">' + story.source + '</div>';
+    actionEl.innerHTML = html;
+  } else {
+    actionEl.innerHTML = '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:28px;color:#C8A84A;direction:rtl;margin-bottom:20px;">' + arName + '</div>' + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:#E5E0DC;line-height:1.7;max-width:320px;">' + txt + '</div>';
+  }
   markWaqtLu(priere);
   updateMedaillonState();
   modal.style.display = 'flex';
@@ -13100,8 +13113,24 @@ window.WAQT_BY_PRIERE = null;
       var obj = {};
       keys.forEach(function(k, i) {
         var d = results[i];
-        // Support both array format and {metadata, phrases} format
-        obj[k] = Array.isArray(d) ? d : (d && d.phrases ? d.phrases : []);
+        if (Array.isArray(d)) {
+          obj[k] = d;
+        } else if (d && d.phrases) {
+          // Merge phrases + categories (langue, transaction, etc.) into unified pool
+          var pool = d.phrases.slice();
+          if (d.categories) {
+            Object.keys(d.categories).forEach(function(cat) {
+              if (Array.isArray(d.categories[cat])) {
+                d.categories[cat].forEach(function(h) {
+                  pool.push({ fr: h.texte || h.fr || '', _story: h });
+                });
+              }
+            });
+          }
+          obj[k] = pool;
+        } else {
+          obj[k] = [];
+        }
       });
       window.WAQT_BY_PRIERE = obj;
     });
