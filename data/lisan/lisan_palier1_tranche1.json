@@ -5779,6 +5779,1631 @@
       "type_grammatical": "nom",
       "difficulte": 2,
       "notes_pedagogiques": "Le mot ne signifie pas seulement 'loi' mais 'chemin tracé vers l'eau' (vers la vie spirituelle). La sharîʿa est la voie qu'Allâh a tracée pour conduire les humains à Lui. Mot 150 — milieu du parcours, mot symbolique de la voie complète."
+    },
+    {
+      "id": "lisan_151",
+      "ordre": 151,
+      "palier": 2,
+      "mot_arabe": "قِيَامَة",
+      "translitteration": "Qiyâma",
+      "traductions_fr": [
+        "Résurrection",
+        "redressement"
+      ],
+      "frequence_coran": 70,
+      "racine": {
+        "lettres": "ق و م",
+        "translitteration": "q-w-m",
+        "sens_fondamental": "se lever, se tenir debout"
+      },
+      "exemple_verset": {
+        "reference": "75:1",
+        "arabe": "لَا أُقْسِمُ بِيَوْمِ ٱلْقِيَامَةِ",
+        "translitteration": "Lâ uqsimu bi-yawmi-l-qiyâma",
+        "traduction_fr": "Non ! Je jure par le Jour de la Résurrection",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/075001.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "قَامَ",
+          "translit": "qâma",
+          "sens": "il s'est levé"
+        },
+        {
+          "arabe": "قَوْم",
+          "translit": "qawm",
+          "sens": "peuple"
+        },
+        {
+          "arabe": "مُسْتَقِيم",
+          "translit": "mustaqîm",
+          "sens": "droit (chemin)"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Yawm al-Qiyâma = Jour où les morts SE LÈVENT de leurs tombes. Sourate 75 porte ce nom. Concept central de l'eschatologie islamique."
+    },
+    {
+      "id": "lisan_152",
+      "ordre": 152,
+      "palier": 2,
+      "mot_arabe": "قَبْر",
+      "translitteration": "Qabr",
+      "traductions_fr": [
+        "tombe"
+      ],
+      "frequence_coran": 7,
+      "racine": {
+        "lettres": "ق ب ر",
+        "translitteration": "q-b-r",
+        "sens_fondamental": "enterrer, tombe"
+      },
+      "exemple_verset": {
+        "reference": "102:2",
+        "arabe": "حَتَّىٰ زُرْتُمُ ٱلْمَقَابِرَ",
+        "translitteration": "Hattâ zurtumu-l-maqâbir",
+        "traduction_fr": "Jusqu'à ce que vous visitiez les tombes",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/102002.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "مَقَابِر",
+          "translit": "maqâbir",
+          "sens": "tombes (pluriel)"
+        },
+        {
+          "arabe": "قُبُور",
+          "translit": "qubûr",
+          "sens": "tombes (autre pluriel)"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Étape entre la mort et la résurrection. Selon les hadiths : interrogation des anges Munkar et Nakîr dans la tombe. Le 'ʿadhâb al-qabr' (châtiment de la tombe) est doctrine."
+    },
+    {
+      "id": "lisan_153",
+      "ordre": 153,
+      "palier": 2,
+      "mot_arabe": "بَعْث",
+      "translitteration": "Baʿth",
+      "traductions_fr": [
+        "résurrection",
+        "envoi"
+      ],
+      "frequence_coran": 65,
+      "racine": {
+        "lettres": "ب ع ث",
+        "translitteration": "b-ʿ-th",
+        "sens_fondamental": "envoyer, ressusciter"
+      },
+      "exemple_verset": {
+        "reference": "30:56",
+        "arabe": "لَقَدْ لَبِثْتُمْ فِي كِتَابِ ٱللَّهِ إِلَىٰ يَوْمِ ٱلْبَعْثِ",
+        "translitteration": "La-qad labithtum fî kitâbi-llâhi ilâ yawmi-l-baʿth",
+        "traduction_fr": "Vous y êtes restés selon le décret d'Allâh jusqu'au Jour de la Résurrection",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/030056.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "بَعَثَ",
+          "translit": "baʿatha",
+          "sens": "il a ressuscité/envoyé (vu en mot 98)"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Synonyme de Qiyâma. 'Yawm al-Baʿth' = Jour où Allâh fait sortir les morts de leurs tombes. Croire au baʿth est l'un des piliers de la foi."
+    },
+    {
+      "id": "lisan_154",
+      "ordre": 154,
+      "palier": 2,
+      "mot_arabe": "حَشْر",
+      "translitteration": "Hashr",
+      "traductions_fr": [
+        "rassemblement",
+        "convocation"
+      ],
+      "frequence_coran": 43,
+      "racine": {
+        "lettres": "ح ش ر",
+        "translitteration": "h-sh-r",
+        "sens_fondamental": "rassembler, convoquer"
+      },
+      "exemple_verset": {
+        "reference": "50:44",
+        "arabe": "ذَٰلِكَ حَشْرٌ عَلَيْنَا يَسِيرٌ",
+        "translitteration": "Dhâlika hashrun ʿalaynâ yasîr",
+        "traduction_fr": "Ce rassemblement Nous est aisé",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/050044.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "حَشَرَ",
+          "translit": "hashara",
+          "sens": "il a rassemblé"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Étape après le baʿth : rassemblement des humains dans la plaine du Jugement. Sourate 59 (al-Hashr) porte ce nom. Tous les peuples y seront 'rassemblés'."
+    },
+    {
+      "id": "lisan_155",
+      "ordre": 155,
+      "palier": 2,
+      "mot_arabe": "صُور",
+      "translitteration": "Sûr",
+      "traductions_fr": [
+        "trompe",
+        "corne"
+      ],
+      "frequence_coran": 10,
+      "racine": {
+        "lettres": "ص و ر",
+        "translitteration": "s-w-r",
+        "sens_fondamental": "trompe, instrument à vent"
+      },
+      "exemple_verset": {
+        "reference": "39:68",
+        "arabe": "وَنُفِخَ فِي ٱلصُّورِ",
+        "translitteration": "Wa nufikha fî-s-sûr",
+        "traduction_fr": "Et l'on soufflera dans la trompe",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/039068.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "نَفَخَ",
+          "translit": "nafakha",
+          "sens": "il a soufflé"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "L'instrument qu'Isrâfîl (ange) soufflera deux fois : 1ère fois = anéantissement de la création, 2ème fois = résurrection. À ne pas confondre avec 'sûra' (chapitre du Coran)."
+    },
+    {
+      "id": "lisan_156",
+      "ordre": 156,
+      "palier": 2,
+      "mot_arabe": "مَلَكُ ٱلْمَوْت",
+      "translitteration": "Malak al-Mawt",
+      "traductions_fr": [
+        "Ange de la Mort"
+      ],
+      "frequence_coran": 1,
+      "racine": {
+        "lettres": "م ل ك + م و ت",
+        "translitteration": "m-l-k + m-w-t",
+        "sens_fondamental": "Ange (cf. malak) + Mort (cf. mawt)"
+      },
+      "exemple_verset": {
+        "reference": "32:11",
+        "arabe": "قُلْ يَتَوَفَّاكُم مَّلَكُ ٱلْمَوْتِ ٱلَّذِي وُكِّلَ بِكُمْ",
+        "translitteration": "Qul yatawaffâkum malaku-l-mawti-lladhî wukkila bikum",
+        "traduction_fr": "Dis : L'Ange de la Mort à qui vous êtes confiés vous fera mourir",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/032011.mp3"
+      },
+      "famille_mots": [],
+      "type_grammatical": "nom_compose",
+      "difficulte": 2,
+      "notes_pedagogiques": "Connu dans la tradition sous le nom 'ʿAzrâʾîl' (mais ce nom n'est pas dans le Coran). C'est lui qui saisit les âmes au moment de la mort, par ordre divin."
+    },
+    {
+      "id": "lisan_157",
+      "ordre": 157,
+      "palier": 2,
+      "mot_arabe": "تَوَفَّى",
+      "translitteration": "Tawaffâ",
+      "traductions_fr": [
+        "il a fait mourir",
+        "il a saisi l'âme"
+      ],
+      "frequence_coran": 25,
+      "racine": {
+        "lettres": "و ف ي",
+        "translitteration": "w-f-y",
+        "sens_fondamental": "compléter, accomplir, prendre intégralement"
+      },
+      "exemple_verset": {
+        "reference": "39:42",
+        "arabe": "ٱللَّهُ يَتَوَفَّى ٱلْأَنفُسَ حِينَ مَوْتِهَا",
+        "translitteration": "Allâhu yatawaffâ-l-anfusa hîna mawtihâ",
+        "traduction_fr": "Allâh saisit les âmes au moment de leur mort",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/039042.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "وَفَّى",
+          "translit": "waffâ",
+          "sens": "il a accompli pleinement"
+        },
+        {
+          "arabe": "وَفَاء",
+          "translit": "wafâʾ",
+          "sens": "loyauté"
+        }
+      ],
+      "type_grammatical": "verbe",
+      "difficulte": 2,
+      "notes_pedagogiques": "Plus doux que 'amâta' (faire mourir). 'Tawaffâ' = 'prendre intégralement' (l'âme) — comme on prend un dépôt complet. Allâh ne 'tue' pas, Il REPREND ce qui Lui appartient."
+    },
+    {
+      "id": "lisan_158",
+      "ordre": 158,
+      "palier": 2,
+      "mot_arabe": "جِسْر",
+      "translitteration": "Jisr",
+      "traductions_fr": [
+        "pont"
+      ],
+      "frequence_coran": 0,
+      "racine": {
+        "lettres": "ج س ر",
+        "translitteration": "j-s-r",
+        "sens_fondamental": "pont, traverser"
+      },
+      "exemple_verset": {
+        "reference": "19:71",
+        "arabe": "وَإِن مِّنكُمْ إِلَّا وَارِدُهَا",
+        "translitteration": "Wa in minkum illâ wâriduhâ",
+        "traduction_fr": "Il n'est personne parmi vous qui ne passera par elle",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/019071.mp3"
+      },
+      "famille_mots": [],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Le mot 'jisr' n'apparaît pas dans le Coran pour désigner le pont eschatologique — c'est 'sirât' qui est utilisé. Mais la tradition prophétique appelle le passage au-dessus de l'Enfer 'sirât' ou 'jisr'. À retenir car très utilisé en littérature."
+    },
+    {
+      "id": "lisan_159",
+      "ordre": 159,
+      "palier": 2,
+      "mot_arabe": "كِتَاب (الأَعْمَال)",
+      "translitteration": "Kitâb al-aʿmâl",
+      "traductions_fr": [
+        "Livre des œuvres"
+      ],
+      "frequence_coran": 70,
+      "racine": {
+        "lettres": "ك ت ب",
+        "translitteration": "k-t-b",
+        "sens_fondamental": "écrire, prescrire"
+      },
+      "exemple_verset": {
+        "reference": "17:13",
+        "arabe": "وَنُخْرِجُ لَهُ يَوْمَ ٱلْقِيَامَةِ كِتَابًا يَلْقَاهُ مَنشُورًا",
+        "translitteration": "Wa nukhriju lahu yawma-l-qiyâmati kitâban yalqâhu manshûrâ",
+        "traduction_fr": "Et au Jour de la Résurrection, Nous lui sortirons un livre qu'il trouvera déployé",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/017013.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "أَعْمَال",
+          "translit": "aʿmâl",
+          "sens": "œuvres (pluriel)"
+        }
+      ],
+      "type_grammatical": "nom_compose",
+      "difficulte": 2,
+      "notes_pedagogiques": "Chaque humain recevra son livre d'actes au Jour du Jugement. Les bienheureux le recevront dans la main DROITE, les damnés dans la GAUCHE (ou derrière le dos). Concept majeur 17:13."
+    },
+    {
+      "id": "lisan_160",
+      "ordre": 160,
+      "palier": 2,
+      "mot_arabe": "يَمِين",
+      "translitteration": "Yamîn",
+      "traductions_fr": [
+        "droite",
+        "serment",
+        "main droite"
+      ],
+      "frequence_coran": 71,
+      "racine": {
+        "lettres": "ي م ن",
+        "translitteration": "y-m-n",
+        "sens_fondamental": "droite, bénédiction, serment"
+      },
+      "exemple_verset": {
+        "reference": "69:19",
+        "arabe": "فَأَمَّا مَنْ أُوتِيَ كِتَابَهُ بِيَمِينِهِ",
+        "translitteration": "Fa-ammâ man ûtiya kitâbahu bi-yamînih",
+        "traduction_fr": "Quant à celui qui se verra remettre son livre dans sa main droite",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/069019.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "أَيْمَان",
+          "translit": "aymân",
+          "sens": "serments (pluriel)"
+        },
+        {
+          "arabe": "يُمْن",
+          "translit": "yumn",
+          "sens": "bénédiction"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Triple sens : DROITE (direction), MAIN DROITE (les bienheureux), SERMENT (par opposition à parole vide). 'Ashâb al-yamîn' = les Gens de la droite (paradis)."
+    },
+    {
+      "id": "lisan_161",
+      "ordre": 161,
+      "palier": 2,
+      "mot_arabe": "شِمَال",
+      "translitteration": "Shimâl",
+      "traductions_fr": [
+        "gauche",
+        "nord"
+      ],
+      "frequence_coran": 12,
+      "racine": {
+        "lettres": "ش م ل",
+        "translitteration": "sh-m-l",
+        "sens_fondamental": "gauche, englober"
+      },
+      "exemple_verset": {
+        "reference": "69:25",
+        "arabe": "وَأَمَّا مَنْ أُوتِيَ كِتَابَهُ بِشِمَالِهِ",
+        "translitteration": "Wa ammâ man ûtiya kitâbahu bi-shimâlih",
+        "traduction_fr": "Quant à celui qui se verra remettre son livre dans sa main gauche",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/069025.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "شَامِل",
+          "translit": "shâmil",
+          "sens": "global, complet"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Opposé de 'yamîn'. 'Ashâb ash-shimâl' = les Gens de la gauche (enfer). Symbole négatif dans l'imaginaire coranique."
+    },
+    {
+      "id": "lisan_162",
+      "ordre": 162,
+      "palier": 2,
+      "mot_arabe": "جَهَنَّم",
+      "translitteration": "Jahannam",
+      "traductions_fr": [
+        "Géhenne",
+        "Enfer"
+      ],
+      "frequence_coran": 77,
+      "racine": {
+        "lettres": "—",
+        "translitteration": "nom_propre",
+        "sens_fondamental": "origine sémitique (hébreu Ge-Hinnom)"
+      },
+      "exemple_verset": {
+        "reference": "2:206",
+        "arabe": "فَحَسْبُهُ جَهَنَّمُ ۚ وَلَبِئْسَ ٱلْمِهَادُ",
+        "translitteration": "Fa-hasbuhu jahannam, wa la-biʾsa-l-mihâd",
+        "traduction_fr": "La Géhenne lui suffira et quelle terrible couche !",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002206.mp3"
+      },
+      "famille_mots": [],
+      "type_grammatical": "nom_propre",
+      "difficulte": 1,
+      "notes_pedagogiques": "Nom propre de l'Enfer le plus utilisé. Origine sémitique (Ge-Hinnom = vallée de Hinnom à Jérusalem, lieu d'idolâtrie ancien). Le Coran l'utilise comme nom propre du séjour des damnés."
+    },
+    {
+      "id": "lisan_163",
+      "ordre": 163,
+      "palier": 2,
+      "mot_arabe": "فِرْدَوْس",
+      "translitteration": "Firdaws",
+      "traductions_fr": [
+        "Paradis (le plus élevé)"
+      ],
+      "frequence_coran": 2,
+      "racine": {
+        "lettres": "—",
+        "translitteration": "loanword",
+        "sens_fondamental": "origine perse (pairi-daēza = jardin clos)"
+      },
+      "exemple_verset": {
+        "reference": "23:11",
+        "arabe": "ٱلَّذِينَ يَرِثُونَ ٱلْفِرْدَوْسَ",
+        "translitteration": "Alladhîna yarithûna-l-firdaws",
+        "traduction_fr": "Ceux qui hériteront du Firdaws",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/023011.mp3"
+      },
+      "famille_mots": [],
+      "type_grammatical": "nom_propre",
+      "difficulte": 2,
+      "notes_pedagogiques": "Le Paradis le plus élevé. Selon les hadiths, le Prophète ﷺ recommande de demander 'al-Firdaws al-aʿlâ' (le plus haut Paradis) dans les invocations. Origine perse (= notre 'paradis')."
+    },
+    {
+      "id": "lisan_164",
+      "ordre": 164,
+      "palier": 2,
+      "mot_arabe": "حُور",
+      "translitteration": "Hûr",
+      "traductions_fr": [
+        "houris",
+        "compagnes du paradis"
+      ],
+      "frequence_coran": 4,
+      "racine": {
+        "lettres": "ح و ر",
+        "translitteration": "h-w-r",
+        "sens_fondamental": "blanc intense, beauté pure"
+      },
+      "exemple_verset": {
+        "reference": "44:54",
+        "arabe": "وَزَوَّجْنَاهُم بِحُورٍ عِينٍ",
+        "translitteration": "Wa zawwajnâhum bi-hûrin ʿîn",
+        "traduction_fr": "Nous leur donnerons pour épouses des houris aux yeux noirs",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/044054.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "عِين",
+          "translit": "ʿîn",
+          "sens": "yeux noirs/grands"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Compagnes des bienheureux au paradis. La racine h-w-r évoque la blancheur intense des yeux. Toujours associée à 'ʿîn' (yeux noirs) — beauté du contraste."
+    },
+    {
+      "id": "lisan_165",
+      "ordre": 165,
+      "palier": 2,
+      "mot_arabe": "كَوْثَر",
+      "translitteration": "Kawthar",
+      "traductions_fr": [
+        "Kawthar (fleuve du paradis)"
+      ],
+      "frequence_coran": 1,
+      "racine": {
+        "lettres": "ك ث ر",
+        "translitteration": "k-th-r",
+        "sens_fondamental": "abondance"
+      },
+      "exemple_verset": {
+        "reference": "108:1",
+        "arabe": "إِنَّا أَعْطَيْنَاكَ ٱلْكَوْثَرَ",
+        "translitteration": "Innâ aʿtaynâka-l-kawthar",
+        "traduction_fr": "Nous t'avons certes donné Al-Kawthar",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/108001.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "كَثِير",
+          "translit": "kathîr",
+          "sens": "abondant"
+        },
+        {
+          "arabe": "كَثْرَة",
+          "translit": "kathra",
+          "sens": "abondance"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Sourate 108 (la plus courte) tire son nom de ce mot. Désigne soit un fleuve du paradis, soit l'abondance générale donnée au Prophète ﷺ. Selon les hadiths : c'est un fleuve dont l'eau est plus blanche que le lait."
+    },
+    {
+      "id": "lisan_166",
+      "ordre": 166,
+      "palier": 2,
+      "mot_arabe": "رِضْوَان",
+      "translitteration": "Ridwân",
+      "traductions_fr": [
+        "agrément (divin)"
+      ],
+      "frequence_coran": 13,
+      "racine": {
+        "lettres": "ر ض و",
+        "translitteration": "r-d-w",
+        "sens_fondamental": "agréer, être satisfait"
+      },
+      "exemple_verset": {
+        "reference": "9:72",
+        "arabe": "وَرِضْوَانٌ مِّنَ ٱللَّهِ أَكْبَرُ",
+        "translitteration": "Wa ridwânun mina-llâhi akbar",
+        "traduction_fr": "Et l'agrément d'Allâh est encore plus grand",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/009072.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "رَضِيَ",
+          "translit": "radiya",
+          "sens": "il a agréé"
+        },
+        {
+          "arabe": "مَرْضِيّ",
+          "translit": "mardî",
+          "sens": "agréé"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Sommet du Paradis : l'AGRÉMENT divin (plus grand que les jardins eux-mêmes selon 9:72). 'Radî Allâhu ʿanhum wa radû ʿanhu' (Allâh est satisfait d'eux et ils sont satisfaits de Lui) = formule des Compagnons."
+    },
+    {
+      "id": "lisan_167",
+      "ordre": 167,
+      "palier": 2,
+      "mot_arabe": "نَعِيم",
+      "translitteration": "Naʿîm",
+      "traductions_fr": [
+        "félicité",
+        "douceur"
+      ],
+      "frequence_coran": 17,
+      "racine": {
+        "lettres": "ن ع م",
+        "translitteration": "n-ʿ-m",
+        "sens_fondamental": "douceur, bienfait (cf. niʿma)"
+      },
+      "exemple_verset": {
+        "reference": "5:65",
+        "arabe": "وَأَدْخَلْنَاهُمْ جَنَّاتِ ٱلنَّعِيمِ",
+        "translitteration": "Wa adkhalnâhum jannâti-n-naʿîm",
+        "traduction_fr": "Nous les ferions entrer dans les Jardins de Félicité",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/005065.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "نِعْمَة",
+          "translit": "niʿma",
+          "sens": "bienfait (vu mot 133)"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Le Paradis est souvent appelé 'jannât an-naʿîm' (Jardins de Félicité). Concept de jouissance pure, sans amertume. Sourate 56 (al-Wâqiʿa) en parle longuement."
+    },
+    {
+      "id": "lisan_168",
+      "ordre": 168,
+      "palier": 2,
+      "mot_arabe": "خُلْد",
+      "translitteration": "Khuld",
+      "traductions_fr": [
+        "éternité"
+      ],
+      "frequence_coran": 87,
+      "racine": {
+        "lettres": "خ ل د",
+        "translitteration": "kh-l-d",
+        "sens_fondamental": "éternité, durabilité"
+      },
+      "exemple_verset": {
+        "reference": "25:15",
+        "arabe": "قُلْ أَذَٰلِكَ خَيْرٌ أَمْ جَنَّةُ ٱلْخُلْدِ",
+        "translitteration": "Qul a-dhâlika khayrun am jannatu-l-khuld",
+        "traduction_fr": "Dis : Est-ce mieux, ou bien le Jardin d'Éternité ?",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/025015.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "خَالِد",
+          "translit": "khâlid",
+          "sens": "éternel"
+        },
+        {
+          "arabe": "خَالِدِين",
+          "translit": "khâlidîn",
+          "sens": "demeurant éternellement"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "'Jannat al-Khuld' = Jardin d'Éternité. Formule récurrente : 'khâlidîna fîhâ abadâ' (y demeurant éternellement). Concept clé : paradis et enfer sont éternels."
+    },
+    {
+      "id": "lisan_169",
+      "ordre": 169,
+      "palier": 2,
+      "mot_arabe": "أَبَدًا",
+      "translitteration": "Abadan",
+      "traductions_fr": [
+        "jamais",
+        "à jamais",
+        "éternellement"
+      ],
+      "frequence_coran": 28,
+      "racine": {
+        "lettres": "أ ب د",
+        "translitteration": "ʾ-b-d",
+        "sens_fondamental": "éternité"
+      },
+      "exemple_verset": {
+        "reference": "4:57",
+        "arabe": "خَالِدِينَ فِيهَا أَبَدًا",
+        "translitteration": "Khâlidîna fîhâ abadâ",
+        "traduction_fr": "Ils y demeureront éternellement",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/004057.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "أَبَدِيّ",
+          "translit": "abadî",
+          "sens": "éternel"
+        }
+      ],
+      "type_grammatical": "adverbe",
+      "difficulte": 1,
+      "notes_pedagogiques": "Renforce 'khâlidîn'. Insistance sur l'éternité ABSOLUE. À distinguer de 'abadan' négatif (= jamais, en parlant du passé/futur)."
+    },
+    {
+      "id": "lisan_170",
+      "ordre": 170,
+      "palier": 2,
+      "mot_arabe": "نُوح",
+      "translitteration": "Nûh",
+      "traductions_fr": [
+        "Noé"
+      ],
+      "frequence_coran": 43,
+      "racine": {
+        "lettres": "—",
+        "translitteration": "nom_propre",
+        "sens_fondamental": "origine sémitique"
+      },
+      "exemple_verset": {
+        "reference": "11:25",
+        "arabe": "وَلَقَدْ أَرْسَلْنَا نُوحًا إِلَىٰ قَوْمِهِ",
+        "translitteration": "Wa la-qad arsalnâ Nûhan ilâ qawmih",
+        "traduction_fr": "Nous avons certes envoyé Nûh à son peuple",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/011025.mp3"
+      },
+      "famille_mots": [],
+      "type_grammatical": "nom_propre",
+      "difficulte": 1,
+      "notes_pedagogiques": "Premier des grands prophètes après Adam. Sourate 71 porte son nom. Modèle de patience : 950 ans de prédication selon le Coran (29:14). Le déluge."
+    },
+    {
+      "id": "lisan_171",
+      "ordre": 171,
+      "palier": 2,
+      "mot_arabe": "هُود",
+      "translitteration": "Hûd",
+      "traductions_fr": [
+        "Hûd (prophète)"
+      ],
+      "frequence_coran": 7,
+      "racine": {
+        "lettres": "—",
+        "translitteration": "nom_propre",
+        "sens_fondamental": "origine arabe"
+      },
+      "exemple_verset": {
+        "reference": "11:50",
+        "arabe": "وَإِلَىٰ عَادٍ أَخَاهُمْ هُودًا",
+        "translitteration": "Wa ilâ ʿÂdin akhâhum Hûdâ",
+        "traduction_fr": "Et aux ʿÂd (Nous envoyâmes) leur frère Hûd",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/011050.mp3"
+      },
+      "famille_mots": [],
+      "type_grammatical": "nom_propre",
+      "difficulte": 1,
+      "notes_pedagogiques": "Prophète envoyé au peuple de ʿÂd (Arabie ancienne). Sourate 11 porte son nom. Le peuple fut détruit par un vent violent pour avoir nié."
+    },
+    {
+      "id": "lisan_172",
+      "ordre": 172,
+      "palier": 2,
+      "mot_arabe": "صَالِح",
+      "translitteration": "Sâlih",
+      "traductions_fr": [
+        "Sâlih (prophète)"
+      ],
+      "frequence_coran": 9,
+      "racine": {
+        "lettres": "ص ل ح",
+        "translitteration": "s-l-h",
+        "sens_fondamental": "vertu, droiture (cf. mot 85)"
+      },
+      "exemple_verset": {
+        "reference": "11:61",
+        "arabe": "وَإِلَىٰ ثَمُودَ أَخَاهُمْ صَالِحًا",
+        "translitteration": "Wa ilâ Thamûda akhâhum Sâlihâ",
+        "traduction_fr": "Et aux Thamûd (Nous envoyâmes) leur frère Sâlih",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/011061.mp3"
+      },
+      "famille_mots": [],
+      "type_grammatical": "nom_propre",
+      "difficulte": 1,
+      "notes_pedagogiques": "Prophète envoyé aux Thamûd. Le miracle : la chamelle d'Allâh (nâqat Allâh) qu'ils tuèrent. Le peuple fut détruit par un grand cri."
+    },
+    {
+      "id": "lisan_173",
+      "ordre": 173,
+      "palier": 2,
+      "mot_arabe": "لُوط",
+      "translitteration": "Lût",
+      "traductions_fr": [
+        "Lot"
+      ],
+      "frequence_coran": 27,
+      "racine": {
+        "lettres": "—",
+        "translitteration": "nom_propre",
+        "sens_fondamental": "origine sémitique"
+      },
+      "exemple_verset": {
+        "reference": "11:77",
+        "arabe": "وَلَمَّا جَاءَتْ رُسُلُنَا لُوطًا",
+        "translitteration": "Wa lammâ jâʾat rusulunâ Lûtâ",
+        "traduction_fr": "Et quand Nos messagers (les anges) vinrent à Lût",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/011077.mp3"
+      },
+      "famille_mots": [],
+      "type_grammatical": "nom_propre",
+      "difficulte": 1,
+      "notes_pedagogiques": "Neveu d'Ibrâhîm. Envoyé au peuple de Sodome (homosexualité, violence). Sa cité fut renversée par un châtiment. Sa femme refusa de le suivre et périt."
+    },
+    {
+      "id": "lisan_174",
+      "ordre": 174,
+      "palier": 2,
+      "mot_arabe": "شُعَيْب",
+      "translitteration": "Shuʿayb",
+      "traductions_fr": [
+        "Shuʿayb (prophète)"
+      ],
+      "frequence_coran": 11,
+      "racine": {
+        "lettres": "—",
+        "translitteration": "nom_propre",
+        "sens_fondamental": "diminutif de 'shaʿb' (peuple)"
+      },
+      "exemple_verset": {
+        "reference": "7:85",
+        "arabe": "وَإِلَىٰ مَدْيَنَ أَخَاهُمْ شُعَيْبًا",
+        "translitteration": "Wa ilâ Madyana akhâhum Shuʿaybâ",
+        "traduction_fr": "Et aux Madyan (Nous envoyâmes) leur frère Shuʿayb",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/007085.mp3"
+      },
+      "famille_mots": [],
+      "type_grammatical": "nom_propre",
+      "difficulte": 1,
+      "notes_pedagogiques": "Prophète envoyé aux Madyan (commerçants qui trichaient sur les poids). Beau-père de Mûsâ selon la tradition. Sa lutte contre la fraude commerciale est centrale."
+    },
+    {
+      "id": "lisan_175",
+      "ordre": 175,
+      "palier": 2,
+      "mot_arabe": "أَيُّوب",
+      "translitteration": "Ayyûb",
+      "traductions_fr": [
+        "Job"
+      ],
+      "frequence_coran": 4,
+      "racine": {
+        "lettres": "—",
+        "translitteration": "nom_propre",
+        "sens_fondamental": "origine sémitique"
+      },
+      "exemple_verset": {
+        "reference": "21:83",
+        "arabe": "وَأَيُّوبَ إِذْ نَادَىٰ رَبَّهُ",
+        "translitteration": "Wa Ayyûba idh nâdâ rabbah",
+        "traduction_fr": "Et (rappelle-toi) Ayyûb quand il invoqua son Seigneur",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/021083.mp3"
+      },
+      "famille_mots": [],
+      "type_grammatical": "nom_propre",
+      "difficulte": 1,
+      "notes_pedagogiques": "Modèle du SABR (patience). Frappé par la maladie, la perte de sa famille et de ses biens. Sa du'â est célèbre : 'Le mal m'a touché et Tu es le plus miséricordieux des miséricordieux' (21:83)."
+    },
+    {
+      "id": "lisan_176",
+      "ordre": 176,
+      "palier": 2,
+      "mot_arabe": "يُونُس",
+      "translitteration": "Yûnus",
+      "traductions_fr": [
+        "Jonas"
+      ],
+      "frequence_coran": 4,
+      "racine": {
+        "lettres": "—",
+        "translitteration": "nom_propre",
+        "sens_fondamental": "origine sémitique"
+      },
+      "exemple_verset": {
+        "reference": "10:98",
+        "arabe": "إِلَّا قَوْمَ يُونُسَ",
+        "translitteration": "Illâ qawma Yûnus",
+        "traduction_fr": "Sauf le peuple de Yûnus",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/010098.mp3"
+      },
+      "famille_mots": [],
+      "type_grammatical": "nom_propre",
+      "difficulte": 1,
+      "notes_pedagogiques": "Sourate 10 porte son nom. Histoire connue : avalé par une baleine, il invoque depuis les profondeurs : 'Lâ ilâha illâ anta, subhânaka, innî kuntu mina-z-zâlimîn' (du'â de Yûnus, 21:87)."
+    },
+    {
+      "id": "lisan_177",
+      "ordre": 177,
+      "palier": 2,
+      "mot_arabe": "يُوسُف",
+      "translitteration": "Yûsuf",
+      "traductions_fr": [
+        "Joseph"
+      ],
+      "frequence_coran": 27,
+      "racine": {
+        "lettres": "—",
+        "translitteration": "nom_propre",
+        "sens_fondamental": "origine sémitique"
+      },
+      "exemple_verset": {
+        "reference": "12:4",
+        "arabe": "إِذْ قَالَ يُوسُفُ لِأَبِيهِ",
+        "translitteration": "Idh qâla Yûsufu li-abîh",
+        "traduction_fr": "Quand Yûsuf dit à son père",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/012004.mp3"
+      },
+      "famille_mots": [],
+      "type_grammatical": "nom_propre",
+      "difficulte": 1,
+      "notes_pedagogiques": "Sourate 12 lui est entièrement consacrée — 'la plus belle des histoires' (12:3). Vendu par ses frères, esclave en Égypte, prisonnier, puis ministre. Modèle de pureté et de fidélité dans l'épreuve."
+    },
+    {
+      "id": "lisan_178",
+      "ordre": 178,
+      "palier": 2,
+      "mot_arabe": "دَاوُود",
+      "translitteration": "Dâwûd",
+      "traductions_fr": [
+        "David"
+      ],
+      "frequence_coran": 16,
+      "racine": {
+        "lettres": "—",
+        "translitteration": "nom_propre",
+        "sens_fondamental": "origine sémitique"
+      },
+      "exemple_verset": {
+        "reference": "2:251",
+        "arabe": "وَقَتَلَ دَاوُودُ جَالُوتَ",
+        "translitteration": "Wa qatala Dâwûdu Jâlût",
+        "traduction_fr": "Et Dâwûd tua Jâlût (Goliath)",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002251.mp3"
+      },
+      "famille_mots": [],
+      "type_grammatical": "nom_propre",
+      "difficulte": 1,
+      "notes_pedagogiques": "Prophète et roi. Reçut le Psautier (Zabûr). Tua Goliath (Jâlût) avec une fronde. Sa voix lors de la récitation faisait fondre les montagnes. Père de Sulaymân."
+    },
+    {
+      "id": "lisan_179",
+      "ordre": 179,
+      "palier": 2,
+      "mot_arabe": "سُلَيْمَان",
+      "translitteration": "Sulaymân",
+      "traductions_fr": [
+        "Salomon"
+      ],
+      "frequence_coran": 17,
+      "racine": {
+        "lettres": "—",
+        "translitteration": "nom_propre",
+        "sens_fondamental": "origine sémitique"
+      },
+      "exemple_verset": {
+        "reference": "27:15",
+        "arabe": "وَلَقَدْ آتَيْنَا دَاوُودَ وَسُلَيْمَانَ عِلْمًا",
+        "translitteration": "Wa la-qad âtaynâ Dâwûda wa Sulaymâna ʿilmâ",
+        "traduction_fr": "Et Nous avons certes donné à Dâwûd et à Sulaymân une science",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/027015.mp3"
+      },
+      "famille_mots": [],
+      "type_grammatical": "nom_propre",
+      "difficulte": 1,
+      "notes_pedagogiques": "Roi-prophète d'une puissance unique : commande aux djinns, aux animaux, aux vents. Parle avec les fourmis et la huppe. Histoire avec la reine de Saba (Bilqîs) en 27:20-44."
+    },
+    {
+      "id": "lisan_180",
+      "ordre": 180,
+      "palier": 2,
+      "mot_arabe": "زَكَرِيَّا",
+      "translitteration": "Zakariyyâ",
+      "traductions_fr": [
+        "Zacharie"
+      ],
+      "frequence_coran": 7,
+      "racine": {
+        "lettres": "—",
+        "translitteration": "nom_propre",
+        "sens_fondamental": "origine sémitique"
+      },
+      "exemple_verset": {
+        "reference": "3:38",
+        "arabe": "هُنَالِكَ دَعَا زَكَرِيَّا رَبَّهُ",
+        "translitteration": "Hunâlika daʿâ Zakariyyâ rabbah",
+        "traduction_fr": "Là, Zakariyyâ invoqua son Seigneur",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/003038.mp3"
+      },
+      "famille_mots": [],
+      "type_grammatical": "nom_propre",
+      "difficulte": 1,
+      "notes_pedagogiques": "Père de Yahyâ (Jean-Baptiste). Demanda un fils malgré la vieillesse. Sa du'â (19:4-6) est un modèle d'invocation pour la descendance."
+    },
+    {
+      "id": "lisan_181",
+      "ordre": 181,
+      "palier": 2,
+      "mot_arabe": "يَحْيَىٰ",
+      "translitteration": "Yahyâ",
+      "traductions_fr": [
+        "Jean-Baptiste"
+      ],
+      "frequence_coran": 5,
+      "racine": {
+        "lettres": "ح ي ي",
+        "translitteration": "h-y-y",
+        "sens_fondamental": "vivre (cf. hayy)"
+      },
+      "exemple_verset": {
+        "reference": "19:7",
+        "arabe": "يَا زَكَرِيَّا إِنَّا نُبَشِّرُكَ بِغُلَامٍ ٱسْمُهُ يَحْيَىٰ",
+        "translitteration": "Yâ Zakariyyâ innâ nubashshiruka bi-ghulâmin ismuhu Yahyâ",
+        "traduction_fr": "Ô Zakariyyâ, Nous t'annonçons un garçon dont le nom sera Yahyâ",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/019007.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "يَحْيَا",
+          "translit": "yahyâ",
+          "sens": "il vit (verbe)"
+        }
+      ],
+      "type_grammatical": "nom_propre",
+      "difficulte": 2,
+      "notes_pedagogiques": "Le nom 'Yahyâ' (Il vit) est un nom unique donné par Allâh — personne avant lui ne l'avait porté (19:7). Cousin de ʿÎsâ. Décapité selon la tradition."
+    },
+    {
+      "id": "lisan_182",
+      "ordre": 182,
+      "palier": 2,
+      "mot_arabe": "إِسْمَاعِيل",
+      "translitteration": "Ismâʿîl",
+      "traductions_fr": [
+        "Ismaël"
+      ],
+      "frequence_coran": 12,
+      "racine": {
+        "lettres": "—",
+        "translitteration": "nom_propre",
+        "sens_fondamental": "origine sémitique (Allâh entend)"
+      },
+      "exemple_verset": {
+        "reference": "2:127",
+        "arabe": "وَإِذْ يَرْفَعُ إِبْرَاهِيمُ ٱلْقَوَاعِدَ مِنَ ٱلْبَيْتِ وَإِسْمَاعِيلُ",
+        "translitteration": "Wa idh yarfaʿu Ibrâhîmu-l-qawâʿida mina-l-bayti wa Ismâʿîl",
+        "traduction_fr": "Et lorsque Ibrâhîm élève les fondations de la Maison avec Ismâʿîl",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002127.mp3"
+      },
+      "famille_mots": [],
+      "type_grammatical": "nom_propre",
+      "difficulte": 1,
+      "notes_pedagogiques": "Fils aîné d'Ibrâhîm (de Hâjar). Le sacrifice raconté en 37:101-107. Avec son père, construit la Kaʿba. Ancêtre des Arabes. Sa lignée mène au Prophète Muhammad ﷺ."
+    },
+    {
+      "id": "lisan_183",
+      "ordre": 183,
+      "palier": 2,
+      "mot_arabe": "إِسْحَاق",
+      "translitteration": "Ishâq",
+      "traductions_fr": [
+        "Isaac"
+      ],
+      "frequence_coran": 17,
+      "racine": {
+        "lettres": "—",
+        "translitteration": "nom_propre",
+        "sens_fondamental": "origine sémitique"
+      },
+      "exemple_verset": {
+        "reference": "11:71",
+        "arabe": "فَبَشَّرْنَاهَا بِإِسْحَاقَ",
+        "translitteration": "Fa-bashsharnâhâ bi-Ishâq",
+        "traduction_fr": "Nous lui annonçâmes Ishâq",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/011071.mp3"
+      },
+      "famille_mots": [],
+      "type_grammatical": "nom_propre",
+      "difficulte": 1,
+      "notes_pedagogiques": "Second fils d'Ibrâhîm (de Sâra). Père de Yaʿqûb. Ancêtre des Banî Isrâʾîl. Sa naissance est miraculeuse car ses parents étaient âgés."
+    },
+    {
+      "id": "lisan_184",
+      "ordre": 184,
+      "palier": 2,
+      "mot_arabe": "يَعْقُوب",
+      "translitteration": "Yaʿqûb",
+      "traductions_fr": [
+        "Jacob"
+      ],
+      "frequence_coran": 16,
+      "racine": {
+        "lettres": "—",
+        "translitteration": "nom_propre",
+        "sens_fondamental": "origine sémitique"
+      },
+      "exemple_verset": {
+        "reference": "2:132",
+        "arabe": "وَوَصَّىٰ بِهَا إِبْرَاهِيمُ بَنِيهِ وَيَعْقُوبُ",
+        "translitteration": "Wa wassâ bihâ Ibrâhîmu banîhi wa Yaʿqûb",
+        "traduction_fr": "Et c'est ce qu'Ibrâhîm recommanda à ses fils, ainsi que Yaʿqûb",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002132.mp3"
+      },
+      "famille_mots": [],
+      "type_grammatical": "nom_propre",
+      "difficulte": 1,
+      "notes_pedagogiques": "Fils d'Ishâq, petit-fils d'Ibrâhîm. Père de 12 fils, dont Yûsuf. Aussi appelé 'Isrâʾîl' — d'où le nom 'Banî Isrâʾîl' (Fils d'Israël). Pleure jusqu'à perdre la vue après la disparition de Yûsuf."
+    },
+    {
+      "id": "lisan_185",
+      "ordre": 185,
+      "palier": 2,
+      "mot_arabe": "هَارُون",
+      "translitteration": "Hârûn",
+      "traductions_fr": [
+        "Aaron"
+      ],
+      "frequence_coran": 20,
+      "racine": {
+        "lettres": "—",
+        "translitteration": "nom_propre",
+        "sens_fondamental": "origine sémitique"
+      },
+      "exemple_verset": {
+        "reference": "20:30",
+        "arabe": "هَارُونَ أَخِي",
+        "translitteration": "Hârûna akhî",
+        "traduction_fr": "Hârûn, mon frère",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/020030.mp3"
+      },
+      "famille_mots": [],
+      "type_grammatical": "nom_propre",
+      "difficulte": 1,
+      "notes_pedagogiques": "Frère de Mûsâ, donné comme aide-prophète (20:29-32). Plus éloquent que Mûsâ qui avait un défaut de parole. Ensemble face à Pharaon."
+    },
+    {
+      "id": "lisan_186",
+      "ordre": 186,
+      "palier": 2,
+      "mot_arabe": "فِرْعَوْن",
+      "translitteration": "Firʿawn",
+      "traductions_fr": [
+        "Pharaon"
+      ],
+      "frequence_coran": 74,
+      "racine": {
+        "lettres": "—",
+        "translitteration": "nom_propre",
+        "sens_fondamental": "origine égyptienne"
+      },
+      "exemple_verset": {
+        "reference": "2:50",
+        "arabe": "وَأَغْرَقْنَا آلَ فِرْعَوْنَ",
+        "translitteration": "Wa aghraqnâ âla Firʿawn",
+        "traduction_fr": "Et Nous avons noyé les gens de Pharaon",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002050.mp3"
+      },
+      "famille_mots": [],
+      "type_grammatical": "nom_propre",
+      "difficulte": 1,
+      "notes_pedagogiques": "Adversaire de Mûsâ. Modèle de l'orgueil et de la tyrannie : 'Je suis votre seigneur, le très-haut' (79:24). Noyé dans la mer. Sa repentance au dernier instant fut refusée."
+    },
+    {
+      "id": "lisan_187",
+      "ordre": 187,
+      "palier": 2,
+      "mot_arabe": "بَدْر",
+      "translitteration": "Badr",
+      "traductions_fr": [
+        "Badr (bataille)"
+      ],
+      "frequence_coran": 1,
+      "racine": {
+        "lettres": "ب د ر",
+        "translitteration": "b-d-r",
+        "sens_fondamental": "pleine lune, devancer"
+      },
+      "exemple_verset": {
+        "reference": "3:123",
+        "arabe": "وَلَقَدْ نَصَرَكُمُ ٱللَّهُ بِبَدْرٍ",
+        "translitteration": "Wa la-qad nasarakumu-llâhu bi-Badr",
+        "traduction_fr": "Allâh vous a secourus à Badr",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/003123.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "بَدْر",
+          "translit": "badr",
+          "sens": "pleine lune"
+        }
+      ],
+      "type_grammatical": "nom_propre",
+      "difficulte": 2,
+      "notes_pedagogiques": "Première grande bataille des musulmans (an 2 hégire). Victoire éclatante contre 3 fois plus d'ennemis. Les Compagnons de Badr (313 hommes) ont un statut spécial. Sourate 3 en parle (3:123)."
+    },
+    {
+      "id": "lisan_188",
+      "ordre": 188,
+      "palier": 2,
+      "mot_arabe": "أُحُد",
+      "translitteration": "Uhud",
+      "traductions_fr": [
+        "Uhud (bataille)"
+      ],
+      "frequence_coran": 1,
+      "racine": {
+        "lettres": "—",
+        "translitteration": "nom_propre_de_lieu",
+        "sens_fondamental": "nom d'une montagne"
+      },
+      "exemple_verset": {
+        "reference": "3:140",
+        "arabe": "إِن يَمْسَسْكُمْ قَرْحٌ فَقَدْ مَسَّ ٱلْقَوْمَ قَرْحٌ مِّثْلُهُ",
+        "translitteration": "In yamsaskum qarhun fa-qad massa-l-qawma qarhun mithluh",
+        "traduction_fr": "Si une blessure vous atteint, une blessure semblable a déjà atteint l'autre peuple",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/003140.mp3"
+      },
+      "famille_mots": [],
+      "type_grammatical": "nom_propre",
+      "difficulte": 2,
+      "notes_pedagogiques": "Deuxième grande bataille (an 3 hégire). Demi-défaite musulmane par désobéissance des archers. 70 martyrs dont Hamza (oncle du Prophète ﷺ). Sourate 3 versets 121-179 en parle."
+    },
+    {
+      "id": "lisan_189",
+      "ordre": 189,
+      "palier": 2,
+      "mot_arabe": "أَحْزَاب",
+      "translitteration": "Ahzâb",
+      "traductions_fr": [
+        "coalisés",
+        "factions"
+      ],
+      "frequence_coran": 19,
+      "racine": {
+        "lettres": "ح ز ب",
+        "translitteration": "h-z-b",
+        "sens_fondamental": "parti, faction, groupe"
+      },
+      "exemple_verset": {
+        "reference": "33:22",
+        "arabe": "وَلَمَّا رَأَى ٱلْمُؤْمِنُونَ ٱلْأَحْزَابَ",
+        "translitteration": "Wa lammâ raʾâ-l-muʾminûna-l-ahzâb",
+        "traduction_fr": "Et quand les croyants virent les coalisés",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/033022.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "حِزْب",
+          "translit": "hizb",
+          "sens": "parti, groupe"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Sourate 33 (al-Ahzâb) porte ce nom. Désigne la bataille du Fossé (Khandaq, an 5 H) : coalition de plusieurs tribus contre Médine. Le Prophète ﷺ creusa un fossé sur conseil de Salmân al-Fârisî."
+    },
+    {
+      "id": "lisan_190",
+      "ordre": 190,
+      "palier": 2,
+      "mot_arabe": "هِجْرَة",
+      "translitteration": "Hijra",
+      "traductions_fr": [
+        "émigration"
+      ],
+      "frequence_coran": 31,
+      "racine": {
+        "lettres": "ه ج ر",
+        "translitteration": "h-j-r",
+        "sens_fondamental": "émigrer, quitter, abandonner"
+      },
+      "exemple_verset": {
+        "reference": "16:41",
+        "arabe": "وَٱلَّذِينَ هَاجَرُوا فِي ٱللَّهِ مِن بَعْدِ مَا ظُلِمُوا",
+        "translitteration": "Wa-lladhîna hâjarû fî-llâhi min baʿdi mâ zulimû",
+        "traduction_fr": "Et ceux qui ont émigré pour Allâh après avoir été lésés",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/016041.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "هَاجَرَ",
+          "translit": "hâjara",
+          "sens": "il a émigré"
+        },
+        {
+          "arabe": "مُهَاجِر",
+          "translit": "muhâjir",
+          "sens": "émigrant"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "L'événement fondateur de l'islam : émigration de La Mecque à Médine (622 ap. J.-C.) = an 1 du calendrier hégirien. Sens spirituel aussi : émigrer vers Allâh en abandonnant le mal."
+    },
+    {
+      "id": "lisan_191",
+      "ordre": 191,
+      "palier": 2,
+      "mot_arabe": "مُهَاجِرِين",
+      "translitteration": "Muhâjirîn",
+      "traductions_fr": [
+        "émigrants (de La Mecque)"
+      ],
+      "frequence_coran": 6,
+      "racine": {
+        "lettres": "ه ج ر",
+        "translitteration": "h-j-r",
+        "sens_fondamental": "émigrer (cf. hijra)"
+      },
+      "exemple_verset": {
+        "reference": "9:100",
+        "arabe": "وَٱلسَّابِقُونَ ٱلْأَوَّلُونَ مِنَ ٱلْمُهَاجِرِينَ وَٱلْأَنصَارِ",
+        "translitteration": "Wa-s-sâbiqûna-l-awwalûna mina-l-Muhâjirîna wa-l-Ansâr",
+        "traduction_fr": "Les tout premiers parmi les Émigrés et les Auxiliaires",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/009100.mp3"
+      },
+      "famille_mots": [],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Les Compagnons qui ont émigré de La Mecque vers Médine. Toujours mentionnés en couple avec les 'Ansâr' (Auxiliaires médinois). Symbole du sacrifice pour Allâh."
+    },
+    {
+      "id": "lisan_192",
+      "ordre": 192,
+      "palier": 2,
+      "mot_arabe": "أَنْصَار",
+      "translitteration": "Ansâr",
+      "traductions_fr": [
+        "Auxiliaires (Médinois)"
+      ],
+      "frequence_coran": 9,
+      "racine": {
+        "lettres": "ن ص ر",
+        "translitteration": "n-s-r",
+        "sens_fondamental": "secourir, aider"
+      },
+      "exemple_verset": {
+        "reference": "9:117",
+        "arabe": "لَّقَد تَّابَ ٱللَّهُ عَلَى ٱلنَّبِيِّ وَٱلْمُهَاجِرِينَ وَٱلْأَنصَارِ",
+        "translitteration": "La-qad tâba-llâhu ʿalâ-n-nabiyyi wa-l-Muhâjirîna wa-l-Ansâr",
+        "traduction_fr": "Allâh a accueilli le repentir du Prophète, des Émigrés et des Auxiliaires",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/009117.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "نَصَرَ",
+          "translit": "nasara",
+          "sens": "il a secouru"
+        },
+        {
+          "arabe": "نَصْر",
+          "translit": "nasr",
+          "sens": "victoire"
+        },
+        {
+          "arabe": "نَاصِر",
+          "translit": "nâsir",
+          "sens": "secoureur"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Les musulmans médinois qui ont accueilli les Muhâjirîn. Pacte de fraternité entre les deux groupes — modèle d'entraide. Sourate 110 (an-Nasr) annonce la victoire finale."
+    },
+    {
+      "id": "lisan_193",
+      "ordre": 193,
+      "palier": 2,
+      "mot_arabe": "مَدِينَة",
+      "translitteration": "Madîna",
+      "traductions_fr": [
+        "ville",
+        "Médine"
+      ],
+      "frequence_coran": 17,
+      "racine": {
+        "lettres": "م د ن",
+        "translitteration": "m-d-n",
+        "sens_fondamental": "civilisation, ville"
+      },
+      "exemple_verset": {
+        "reference": "63:8",
+        "arabe": "لَئِن رَّجَعْنَا إِلَى ٱلْمَدِينَةِ",
+        "translitteration": "La-ʾin rajaʿnâ ilâ-l-Madîna",
+        "traduction_fr": "Si nous retournons à Médine",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/063008.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "مَدَائِن",
+          "translit": "madâʾin",
+          "sens": "villes (pluriel)"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Avant l'islam : Yathrib. Renommée 'al-Madîna' (la Cité par excellence) après l'arrivée du Prophète ﷺ. Aussi 'Madînat an-Nabî' (Cité du Prophète). Deuxième ville sacrée de l'islam."
+    },
+    {
+      "id": "lisan_194",
+      "ordre": 194,
+      "palier": 2,
+      "mot_arabe": "مَكَّة",
+      "translitteration": "Makka",
+      "traductions_fr": [
+        "La Mecque"
+      ],
+      "frequence_coran": 1,
+      "racine": {
+        "lettres": "—",
+        "translitteration": "nom_propre",
+        "sens_fondamental": "origine ancienne"
+      },
+      "exemple_verset": {
+        "reference": "48:24",
+        "arabe": "بِبَطْنِ مَكَّةَ مِنْ بَعْدِ أَنْ أَظْفَرَكُمْ عَلَيْهِمْ",
+        "translitteration": "Bi-batni Makkata min baʿdi an azfarakum ʿalayhim",
+        "traduction_fr": "Dans la vallée de La Mecque, après vous avoir donné victoire sur eux",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/048024.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "بَكَّة",
+          "translit": "Bakka",
+          "sens": "La Mecque (variante 3:96)"
+        }
+      ],
+      "type_grammatical": "nom_propre",
+      "difficulte": 1,
+      "notes_pedagogiques": "Le mot 'Makka' n'apparaît qu'une fois dans le Coran (48:24). 'Bakka' (3:96) est une variante. Aussi désignée par 'Umm al-Qurâ' (Mère des Cités, 6:92). Ville sacrée par excellence."
+    },
+    {
+      "id": "lisan_195",
+      "ordre": 195,
+      "palier": 2,
+      "mot_arabe": "جِهَاد",
+      "translitteration": "Jihâd",
+      "traductions_fr": [
+        "effort intense"
+      ],
+      "frequence_coran": 41,
+      "racine": {
+        "lettres": "ج ه د",
+        "translitteration": "j-h-d",
+        "sens_fondamental": "effort, exertion"
+      },
+      "exemple_verset": {
+        "reference": "9:24",
+        "arabe": "وَجِهَادٍ فِي سَبِيلِهِ",
+        "translitteration": "Wa jihâdin fî sabîlih",
+        "traduction_fr": "Et le jihâd dans Son chemin",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/009024.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "جَاهَدَ",
+          "translit": "jâhada",
+          "sens": "il a déployé un effort"
+        },
+        {
+          "arabe": "مُجَاهِد",
+          "translit": "mujâhid",
+          "sens": "celui qui fait effort"
+        },
+        {
+          "arabe": "جُهْد",
+          "translit": "juhd",
+          "sens": "effort"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Sens premier : EFFORT (pas 'guerre sainte'). Triple jihâd selon les hadiths : 1) contre son âme (jihâd al-akbar = plus grand), 2) par la langue/main, 3) armé en dernier recours. Toujours 'fî sabîl Allâh' (sur le chemin d'Allâh)."
+    },
+    {
+      "id": "lisan_196",
+      "ordre": 196,
+      "palier": 2,
+      "mot_arabe": "سَبِيل",
+      "translitteration": "Sabîl",
+      "traductions_fr": [
+        "chemin",
+        "voie",
+        "cause"
+      ],
+      "frequence_coran": 176,
+      "racine": {
+        "lettres": "س ب ل",
+        "translitteration": "s-b-l",
+        "sens_fondamental": "chemin, voie"
+      },
+      "exemple_verset": {
+        "reference": "2:154",
+        "arabe": "وَلَا تَقُولُوا لِمَن يُقْتَلُ فِي سَبِيلِ ٱللَّهِ أَمْوَاتٌ",
+        "translitteration": "Wa lâ taqûlû li-man yuqtalu fî sabîli-llâhi amwât",
+        "traduction_fr": "Ne dites pas de ceux qui sont tués dans le sentier d'Allâh qu'ils sont morts",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002154.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "سُبُل",
+          "translit": "subul",
+          "sens": "chemins (pluriel)"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Très fréquent dans 'fî sabîl Allâh' (dans le chemin d'Allâh) — formule pour toute action faite pour Sa cause : combat, dépense, étude, voyage. À distinguer de 'sirât' (le chemin droit unique)."
+    },
+    {
+      "id": "lisan_197",
+      "ordre": 197,
+      "palier": 2,
+      "mot_arabe": "شَهِيد",
+      "translitteration": "Shahîd",
+      "traductions_fr": [
+        "témoin",
+        "martyr"
+      ],
+      "frequence_coran": 56,
+      "racine": {
+        "lettres": "ش ه د",
+        "translitteration": "sh-h-d",
+        "sens_fondamental": "témoigner, être présent"
+      },
+      "exemple_verset": {
+        "reference": "2:143",
+        "arabe": "وَيَكُونَ ٱلرَّسُولُ عَلَيْكُمْ شَهِيدًا",
+        "translitteration": "Wa yakûna-r-rasûlu ʿalaykum shahîdâ",
+        "traduction_fr": "Et que le Messager soit témoin de vous",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002143.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "شَهَادَة",
+          "translit": "shahâda",
+          "sens": "témoignage / attestation de foi"
+        },
+        {
+          "arabe": "شَهِدَ",
+          "translit": "shahida",
+          "sens": "il a témoigné"
+        },
+        {
+          "arabe": "شُهَدَاء",
+          "translit": "shuhadâʾ",
+          "sens": "martyrs (pluriel)"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Double sens : TÉMOIN (cas légal) ET MARTYR (mort dans le sentier d'Allâh). Le martyr 'témoigne' de sa foi par le don ultime. La shahâda (formule de foi) vient de cette racine."
+    },
+    {
+      "id": "lisan_198",
+      "ordre": 198,
+      "palier": 2,
+      "mot_arabe": "صَفّ",
+      "translitteration": "Saff",
+      "traductions_fr": [
+        "rang",
+        "ligne"
+      ],
+      "frequence_coran": 14,
+      "racine": {
+        "lettres": "ص ف ف",
+        "translitteration": "s-f-f",
+        "sens_fondamental": "aligner, ranger"
+      },
+      "exemple_verset": {
+        "reference": "61:4",
+        "arabe": "إِنَّ ٱللَّهَ يُحِبُّ ٱلَّذِينَ يُقَاتِلُونَ فِي سَبِيلِهِ صَفًّا",
+        "translitteration": "Inna-llâha yuhibbu-lladhîna yuqâtilûna fî sabîlihi saffâ",
+        "traduction_fr": "Allâh aime ceux qui combattent dans Son chemin en rang serré",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/061004.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "صُفُوف",
+          "translit": "sufûf",
+          "sens": "rangs (pluriel)"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Sourate 61 (as-Saff) porte ce nom. Désigne aussi les rangs de la prière en commun. Image de l'unité musulmane : un rang serré et droit."
+    },
+    {
+      "id": "lisan_199",
+      "ordre": 199,
+      "palier": 2,
+      "mot_arabe": "حِزْب",
+      "translitteration": "Hizb",
+      "traductions_fr": [
+        "parti",
+        "groupe",
+        "section du Coran"
+      ],
+      "frequence_coran": 20,
+      "racine": {
+        "lettres": "ح ز ب",
+        "translitteration": "h-z-b",
+        "sens_fondamental": "parti, faction (cf. ahzâb)"
+      },
+      "exemple_verset": {
+        "reference": "58:22",
+        "arabe": "أُولَٰئِكَ حِزْبُ ٱللَّهِ",
+        "translitteration": "Ulâʾika hizbu-llâh",
+        "traduction_fr": "Ceux-là forment le parti d'Allâh",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/058022.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "أَحْزَاب",
+          "translit": "ahzâb",
+          "sens": "groupes/coalisés (vu mot 189)"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Double sens : 'hizb Allâh' (parti d'Allâh = croyants), 'hizb ash-Shaytân' (parti du diable). Aussi : division du Coran en 60 hizb (1 hizb = 1/60 du Coran) pour la mémorisation."
+    },
+    {
+      "id": "lisan_200",
+      "ordre": 200,
+      "palier": 2,
+      "mot_arabe": "نَصْر",
+      "translitteration": "Nasr",
+      "traductions_fr": [
+        "victoire",
+        "secours divin"
+      ],
+      "frequence_coran": 158,
+      "racine": {
+        "lettres": "ن ص ر",
+        "translitteration": "n-s-r",
+        "sens_fondamental": "secourir (cf. Ansâr)"
+      },
+      "exemple_verset": {
+        "reference": "110:1",
+        "arabe": "إِذَا جَاءَ نَصْرُ ٱللَّهِ وَٱلْفَتْحُ",
+        "translitteration": "Idhâ jâʾa nasru-llâhi wa-l-fath",
+        "traduction_fr": "Quand viendra le secours d'Allâh et la victoire",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/110001.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "نَصَرَ",
+          "translit": "nasara",
+          "sens": "il a secouru"
+        },
+        {
+          "arabe": "نَاصِر",
+          "translit": "nâsir",
+          "sens": "secoureur"
+        },
+        {
+          "arabe": "ٱنْتَصَرَ",
+          "translit": "intasara",
+          "sens": "il a obtenu la victoire"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Sourate 110 (an-Nasr) — révélée vers la fin de la vie du Prophète ﷺ — annonce la victoire finale et la conquête de La Mecque. Mot 200 = symbolisme fort : 2/3 du parcours, victoire annoncée."
     }
   ],
   "metadata": {
