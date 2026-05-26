@@ -7404,6 +7404,1895 @@
       "type_grammatical": "nom",
       "difficulte": 1,
       "notes_pedagogiques": "Sourate 110 (an-Nasr) — révélée vers la fin de la vie du Prophète ﷺ — annonce la victoire finale et la conquête de La Mecque. Mot 200 = symbolisme fort : 2/3 du parcours, victoire annoncée."
+    },
+    {
+      "id": "lisan_201",
+      "ordre": 201,
+      "palier": 2,
+      "mot_arabe": "نِكَاح",
+      "translitteration": "Nikâh",
+      "traductions_fr": [
+        "mariage"
+      ],
+      "frequence_coran": 23,
+      "racine": {
+        "lettres": "ن ك ح",
+        "translitteration": "n-k-h",
+        "sens_fondamental": "se marier, union"
+      },
+      "exemple_verset": {
+        "reference": "4:3",
+        "arabe": "فَٱنكِحُوا مَا طَابَ لَكُم مِّنَ ٱلنِّسَاءِ",
+        "translitteration": "Fa-nkihû mâ tâba lakum mina-n-nisâʾ",
+        "traduction_fr": "Épousez ce qui vous semble bon parmi les femmes",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/004003.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "نَكَحَ",
+          "translit": "nakaha",
+          "sens": "il s'est marié"
+        },
+        {
+          "arabe": "أَنْكَحَ",
+          "translit": "ankaha",
+          "sens": "il a marié"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Contrat de mariage en islam. Acte hautement valorisé : 'le mariage est la moitié de la religion' (hadith). Cadre légal et sacré pour l'union des époux."
+    },
+    {
+      "id": "lisan_202",
+      "ordre": 202,
+      "palier": 2,
+      "mot_arabe": "زَوْج",
+      "translitteration": "Zawj",
+      "traductions_fr": [
+        "époux",
+        "couple",
+        "paire"
+      ],
+      "frequence_coran": 81,
+      "racine": {
+        "lettres": "ز و ج",
+        "translitteration": "z-w-j",
+        "sens_fondamental": "couple, paire"
+      },
+      "exemple_verset": {
+        "reference": "30:21",
+        "arabe": "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا",
+        "translitteration": "Wa min âyâtihi an khalaqa lakum min anfusikum azwâjâ",
+        "traduction_fr": "Parmi Ses signes : Il vous a créé de vous-mêmes des épouses",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/030021.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "أَزْوَاج",
+          "translit": "azwâj",
+          "sens": "époux/épouses (pluriel)"
+        },
+        {
+          "arabe": "زَوْجَة",
+          "translit": "zawja",
+          "sens": "épouse (féminin)"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Désigne l'un des deux époux (masculin ou féminin), aussi : paire en général (créatures par paires en 51:49). Verset 30:21 sur le mariage comme signe divin."
+    },
+    {
+      "id": "lisan_203",
+      "ordre": 203,
+      "palier": 2,
+      "mot_arabe": "مَهْر",
+      "translitteration": "Mahr",
+      "traductions_fr": [
+        "dot",
+        "douaire"
+      ],
+      "frequence_coran": 0,
+      "racine": {
+        "lettres": "م ه ر",
+        "translitteration": "m-h-r",
+        "sens_fondamental": "dot, prix de mariage"
+      },
+      "exemple_verset": {
+        "reference": "4:4",
+        "arabe": "وَآتُوا ٱلنِّسَاءَ صَدُقَاتِهِنَّ نِحْلَةً",
+        "translitteration": "Wa âtû-n-nisâʾa saduqâtihinna nihla",
+        "traduction_fr": "Donnez aux femmes leur mahr librement",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/004004.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "صَدُقَات",
+          "translit": "saduqât",
+          "sens": "dot (mot coranique)"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Le Coran utilise 'sadâq' (de la racine s-d-q, sincérité) pour la dot. 'Mahr' est le terme courant en jurisprudence. C'est un droit de l'épouse, librement convenu, jamais une obligation pour la femme."
+    },
+    {
+      "id": "lisan_204",
+      "ordre": 204,
+      "palier": 2,
+      "mot_arabe": "طَلَاق",
+      "translitteration": "Talâq",
+      "traductions_fr": [
+        "divorce",
+        "répudiation"
+      ],
+      "frequence_coran": 23,
+      "racine": {
+        "lettres": "ط ل ق",
+        "translitteration": "t-l-q",
+        "sens_fondamental": "libérer, délier"
+      },
+      "exemple_verset": {
+        "reference": "2:229",
+        "arabe": "ٱلطَّلَاقُ مَرَّتَانِ ۖ فَإِمْسَاكٌ بِمَعْرُوفٍ",
+        "translitteration": "At-talâqu marratân, fa-imsâkun bi-maʿrûf",
+        "traduction_fr": "Le divorce est par deux fois : reprendre la femme avec bon traitement",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002229.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "طَلَّقَ",
+          "translit": "tallaqa",
+          "sens": "il a divorcé"
+        },
+        {
+          "arabe": "مُطَلَّقَة",
+          "translit": "mutallaqa",
+          "sens": "divorcée"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Sourate 65 (at-Talâq) porte ce nom. Le divorce en islam est révocable deux fois, irrévocable la troisième. Encadré strictement par le Coran (versets 2:226-241, sourate 65)."
+    },
+    {
+      "id": "lisan_205",
+      "ordre": 205,
+      "palier": 2,
+      "mot_arabe": "عِدَّة",
+      "translitteration": "ʿIdda",
+      "traductions_fr": [
+        "délai d'attente",
+        "période de retrait"
+      ],
+      "frequence_coran": 6,
+      "racine": {
+        "lettres": "ع د د",
+        "translitteration": "ʿ-d-d",
+        "sens_fondamental": "compter, nombre"
+      },
+      "exemple_verset": {
+        "reference": "65:1",
+        "arabe": "فَطَلِّقُوهُنَّ لِعِدَّتِهِنَّ وَأَحْصُوا ٱلْعِدَّةَ",
+        "translitteration": "Fa-talliqû-hunna li-ʿiddatihinna wa ahsû-l-ʿidda",
+        "traduction_fr": "Répudiez-les selon leur délai d'attente et comptez ce délai",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/065001.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "عَدَد",
+          "translit": "ʿadad",
+          "sens": "nombre"
+        },
+        {
+          "arabe": "عَدَّ",
+          "translit": "ʿadda",
+          "sens": "il a compté"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Période d'attente obligatoire après divorce ou veuvage (3 cycles menstruels ou 4 mois 10 jours pour les veuves). Permet de vérifier l'absence de grossesse et offre une période de réflexion."
+    },
+    {
+      "id": "lisan_206",
+      "ordre": 206,
+      "palier": 2,
+      "mot_arabe": "مِيرَاث",
+      "translitteration": "Mîrâth",
+      "traductions_fr": [
+        "héritage"
+      ],
+      "frequence_coran": 1,
+      "racine": {
+        "lettres": "و ر ث",
+        "translitteration": "w-r-th",
+        "sens_fondamental": "hériter"
+      },
+      "exemple_verset": {
+        "reference": "3:180",
+        "arabe": "وَلِلَّهِ مِيرَاثُ ٱلسَّمَاوَاتِ وَٱلْأَرْضِ",
+        "translitteration": "Wa li-llâhi mîrâthu-s-samâwâti wa-l-ard",
+        "traduction_fr": "À Allâh appartient l'héritage des cieux et de la terre",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/003180.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "وَرِثَ",
+          "translit": "waritha",
+          "sens": "il a hérité"
+        },
+        {
+          "arabe": "وَارِث",
+          "translit": "wârith",
+          "sens": "héritier"
+        },
+        {
+          "arabe": "وُرَّاث",
+          "translit": "wurrâth",
+          "sens": "héritiers"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Les règles d'héritage en islam sont précisément définies par le Coran (sourate 4, versets 11-12, 176). Système fixe de parts pour chaque héritier."
+    },
+    {
+      "id": "lisan_207",
+      "ordre": 207,
+      "palier": 2,
+      "mot_arabe": "وَصِيَّة",
+      "translitteration": "Wasiyya",
+      "traductions_fr": [
+        "testament",
+        "recommandation"
+      ],
+      "frequence_coran": 17,
+      "racine": {
+        "lettres": "و ص ي",
+        "translitteration": "w-s-y",
+        "sens_fondamental": "recommander, transmettre"
+      },
+      "exemple_verset": {
+        "reference": "2:180",
+        "arabe": "كُتِبَ عَلَيْكُمْ إِذَا حَضَرَ أَحَدَكُمُ ٱلْمَوْتُ ٱلْوَصِيَّةُ",
+        "translitteration": "Kutiba ʿalaykum idhâ hadara ahadakumu-l-mawtu-l-wasiyya",
+        "traduction_fr": "Il vous est prescrit, quand l'un de vous est sur le point de mourir, de faire un testament",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002180.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "وَصَّى",
+          "translit": "wassâ",
+          "sens": "il a recommandé"
+        },
+        {
+          "arabe": "وَصِيّ",
+          "translit": "wasî",
+          "sens": "exécuteur testamentaire"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Recommandé en islam, mais limité à 1/3 de l'héritage et ne peut bénéficier qu'aux non-héritiers (les héritiers ayant déjà leurs parts fixes)."
+    },
+    {
+      "id": "lisan_208",
+      "ordre": 208,
+      "palier": 2,
+      "mot_arabe": "يَتِيم",
+      "translitteration": "Yatîm",
+      "traductions_fr": [
+        "orphelin"
+      ],
+      "frequence_coran": 23,
+      "racine": {
+        "lettres": "ي ت م",
+        "translitteration": "y-t-m",
+        "sens_fondamental": "être orphelin, isolé"
+      },
+      "exemple_verset": {
+        "reference": "2:177",
+        "arabe": "وَآتَى ٱلْمَالَ عَلَىٰ حُبِّهِ ذَوِي ٱلْقُرْبَىٰ وَٱلْيَتَامَىٰ",
+        "translitteration": "Wa âtâ-l-mâla ʿalâ hubbihi dhawi-l-qurbâ wa-l-yatâmâ",
+        "traduction_fr": "Donner les biens, par amour pour Allâh, aux proches, aux orphelins",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002177.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "يَتَامَىٰ",
+          "translit": "yatâmâ",
+          "sens": "orphelins (pluriel)"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "L'orphelin en islam = celui qui a perdu son père avant la puberté. Catégorie hautement protégée. 'Manger les biens de l'orphelin' = péché majeur. Le Prophète ﷺ lui-même était orphelin."
+    },
+    {
+      "id": "lisan_209",
+      "ordre": 209,
+      "palier": 2,
+      "mot_arabe": "مِسْكِين",
+      "translitteration": "Miskîn",
+      "traductions_fr": [
+        "pauvre",
+        "indigent"
+      ],
+      "frequence_coran": 23,
+      "racine": {
+        "lettres": "س ك ن",
+        "translitteration": "s-k-n",
+        "sens_fondamental": "calme, immobilité, silence par faiblesse"
+      },
+      "exemple_verset": {
+        "reference": "2:184",
+        "arabe": "فَدِيَةٌ طَعَامُ مِسْكِينٍ",
+        "translitteration": "Fa-fidyatun taʿâmu miskîn",
+        "traduction_fr": "Le rachat est la nourriture d'un pauvre",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002184.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "مَسَاكِين",
+          "translit": "masâkîn",
+          "sens": "pauvres (pluriel)"
+        },
+        {
+          "arabe": "سَكَن",
+          "translit": "sakan",
+          "sens": "demeure, calme"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "À distinguer de 'faqîr' (pauvre extrême). Le miskîn a parfois un peu, mais reste dans le besoin. Bénéficiaire de la zakât et catégorie majeure de bienfaisance."
+    },
+    {
+      "id": "lisan_210",
+      "ordre": 210,
+      "palier": 2,
+      "mot_arabe": "فَقِير",
+      "translitteration": "Faqîr",
+      "traductions_fr": [
+        "pauvre (extrême)"
+      ],
+      "frequence_coran": 13,
+      "racine": {
+        "lettres": "ف ق ر",
+        "translitteration": "f-q-r",
+        "sens_fondamental": "pauvreté extrême, dos brisé"
+      },
+      "exemple_verset": {
+        "reference": "9:60",
+        "arabe": "إِنَّمَا ٱلصَّدَقَاتُ لِلْفُقَرَاءِ وَٱلْمَسَاكِينِ",
+        "translitteration": "Innamâ-s-sadaqâtu li-l-fuqarâʾi wa-l-masâkîn",
+        "traduction_fr": "Les aumônes sont uniquement pour les pauvres, les indigents",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/009060.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "فُقَرَاء",
+          "translit": "fuqarâʾ",
+          "sens": "pauvres (pluriel)"
+        },
+        {
+          "arabe": "فَقْر",
+          "translit": "faqr",
+          "sens": "pauvreté"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Racine évoque 'le dos brisé' par la pauvreté. Premier bénéficiaire de la zakât (9:60). En soufisme, le 'faqîr' désigne aussi l'homme spirituellement pauvre devant Allâh (besoin absolu de Lui)."
+    },
+    {
+      "id": "lisan_211",
+      "ordre": 211,
+      "palier": 2,
+      "mot_arabe": "مَال",
+      "translitteration": "Mâl",
+      "traductions_fr": [
+        "bien",
+        "richesse",
+        "argent"
+      ],
+      "frequence_coran": 86,
+      "racine": {
+        "lettres": "م و ل",
+        "translitteration": "m-w-l",
+        "sens_fondamental": "ce qui penche, ce qu'on possède"
+      },
+      "exemple_verset": {
+        "reference": "2:177",
+        "arabe": "وَآتَى ٱلْمَالَ عَلَىٰ حُبِّهِ",
+        "translitteration": "Wa âtâ-l-mâla ʿalâ hubbih",
+        "traduction_fr": "Et donner ses biens, par amour pour Allâh",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002177.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "أَمْوَال",
+          "translit": "amwâl",
+          "sens": "biens (pluriel)"
+        },
+        {
+          "arabe": "مَالِيّ",
+          "translit": "mâlî",
+          "sens": "financier"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Vue islamique : le mâl appartient à Allâh, confié temporairement à l'humain. Donc dépense pour Lui = restitution. 'Lâ tuʿtû-s-sufahâʾa amwâlakum' (Ne donnez pas vos biens aux insensés, 4:5)."
+    },
+    {
+      "id": "lisan_212",
+      "ordre": 212,
+      "palier": 2,
+      "mot_arabe": "كَنْز",
+      "translitteration": "Kanz",
+      "traductions_fr": [
+        "trésor"
+      ],
+      "frequence_coran": 9,
+      "racine": {
+        "lettres": "ك ن ز",
+        "translitteration": "k-n-z",
+        "sens_fondamental": "amasser, thésauriser"
+      },
+      "exemple_verset": {
+        "reference": "9:34",
+        "arabe": "وَٱلَّذِينَ يَكْنِزُونَ ٱلذَّهَبَ وَٱلْفِضَّةَ",
+        "translitteration": "Wa-lladhîna yaknizûna-dh-dhahaba wa-l-fidda",
+        "traduction_fr": "Ceux qui thésaurisent l'or et l'argent",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/009034.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "كُنُوز",
+          "translit": "kunûz",
+          "sens": "trésors (pluriel)"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Sens négatif en 9:34 : thésauriser SANS donner la zakât est un péché majeur. Promesse de châtiment terrible. Sens positif aussi : 'trésor caché' (18:82)."
+    },
+    {
+      "id": "lisan_213",
+      "ordre": 213,
+      "palier": 2,
+      "mot_arabe": "ذَهَب",
+      "translitteration": "Dhahab",
+      "traductions_fr": [
+        "or"
+      ],
+      "frequence_coran": 8,
+      "racine": {
+        "lettres": "ذ ه ب",
+        "translitteration": "dh-h-b",
+        "sens_fondamental": "or, partir (cf. dhahaba)"
+      },
+      "exemple_verset": {
+        "reference": "3:14",
+        "arabe": "وَٱلْقَنَاطِيرِ ٱلْمُقَنطَرَةِ مِنَ ٱلذَّهَبِ وَٱلْفِضَّةِ",
+        "translitteration": "Wa-l-qanâtîri-l-muqantarati mina-dh-dhahabi wa-l-fidda",
+        "traduction_fr": "Et les quintaux et quintaux d'or et d'argent",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/003014.mp3"
+      },
+      "famille_mots": [],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "L'or est l'unité de mesure principale en jurisprudence islamique (nisab de la zakât). Interdit comme bijou pour l'homme, permis pour la femme."
+    },
+    {
+      "id": "lisan_214",
+      "ordre": 214,
+      "palier": 2,
+      "mot_arabe": "فِضَّة",
+      "translitteration": "Fidda",
+      "traductions_fr": [
+        "argent (métal)"
+      ],
+      "frequence_coran": 6,
+      "racine": {
+        "lettres": "ف ض ض",
+        "translitteration": "f-d-d",
+        "sens_fondamental": "argent (métal), disperser"
+      },
+      "exemple_verset": {
+        "reference": "9:34",
+        "arabe": "وَلَا يُنفِقُونَهَا فِي سَبِيلِ ٱللَّهِ",
+        "translitteration": "Wa lâ yunfiqûnahâ fî sabîli-llâh",
+        "traduction_fr": "Et ne la dépensent pas dans le chemin d'Allâh",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/009034.mp3"
+      },
+      "famille_mots": [],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Couplée à 'dhahab' (or) dans le Coran. Deux métaux de référence. Le dirham (monnaie) vient du grec drachme, en argent."
+    },
+    {
+      "id": "lisan_215",
+      "ordre": 215,
+      "palier": 2,
+      "mot_arabe": "بَيْع",
+      "translitteration": "Bayʿ",
+      "traductions_fr": [
+        "vente",
+        "commerce"
+      ],
+      "frequence_coran": 7,
+      "racine": {
+        "lettres": "ب ي ع",
+        "translitteration": "b-y-ʿ",
+        "sens_fondamental": "vendre, commerce"
+      },
+      "exemple_verset": {
+        "reference": "2:275",
+        "arabe": "وَأَحَلَّ ٱللَّهُ ٱلْبَيْعَ وَحَرَّمَ ٱلرِّبَا",
+        "translitteration": "Wa ahalla-llâhu-l-bayʿa wa harrama-r-ribâ",
+        "traduction_fr": "Allâh a rendu licite le commerce et illicite l'usure",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002275.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "بَاعَ",
+          "translit": "bâʿa",
+          "sens": "il a vendu"
+        },
+        {
+          "arabe": "ٱبْتَاعَ",
+          "translit": "ibtâʿa",
+          "sens": "il a acheté"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Verset 2:275 fondamental : le bayʿ (commerce honnête) est permis, le ribâ (usure) est interdit. Distinction théologique majeure entre profit licite et exploitation."
+    },
+    {
+      "id": "lisan_216",
+      "ordre": 216,
+      "palier": 2,
+      "mot_arabe": "رِبَا",
+      "translitteration": "Ribâ",
+      "traductions_fr": [
+        "usure",
+        "intérêt"
+      ],
+      "frequence_coran": 8,
+      "racine": {
+        "lettres": "ر ب و",
+        "translitteration": "r-b-w",
+        "sens_fondamental": "croître, augmenter"
+      },
+      "exemple_verset": {
+        "reference": "2:275",
+        "arabe": "ٱلَّذِينَ يَأْكُلُونَ ٱلرِّبَا",
+        "translitteration": "Alladhîna yaʾkulûna-r-ribâ",
+        "traduction_fr": "Ceux qui mangent l'usure",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002275.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "أَرْبَىٰ",
+          "translit": "arbâ",
+          "sens": "il a augmenté"
+        },
+        {
+          "arabe": "رَابِية",
+          "translit": "râbiya",
+          "sens": "qui croît"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Péché majeur en islam. Interdit dans toute transaction (prêt à intérêt, échange inégal de mêmes biens). Versets 2:275-281 : déclaration de guerre divine contre les usuriers. Fondement de la finance islamique."
+    },
+    {
+      "id": "lisan_217",
+      "ordre": 217,
+      "palier": 2,
+      "mot_arabe": "دَيْن",
+      "translitteration": "Dayn",
+      "traductions_fr": [
+        "dette"
+      ],
+      "frequence_coran": 6,
+      "racine": {
+        "lettres": "د ي ن",
+        "translitteration": "d-y-n",
+        "sens_fondamental": "dette, obligation (cf. dîn)"
+      },
+      "exemple_verset": {
+        "reference": "2:282",
+        "arabe": "إِذَا تَدَايَنتُم بِدَيْنٍ إِلَىٰ أَجَلٍ مُّسَمًّى فَٱكْتُبُوهُ",
+        "translitteration": "Idhâ tadâyantum bi-daynin ilâ ajalin musamman fa-ktubûh",
+        "traduction_fr": "Quand vous contractez une dette à terme fixé, écrivez-la",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002282.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "دُيُون",
+          "translit": "duyûn",
+          "sens": "dettes (pluriel)"
+        },
+        {
+          "arabe": "مَدِين",
+          "translit": "madîn",
+          "sens": "endetté"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Verset 2:282 (le plus long du Coran) — règle minutieusement la rédaction des contrats de dette : par écrit, avec 2 témoins. La dette est sérieuse : 'tout est pardonné au martyr sauf la dette' (hadith)."
+    },
+    {
+      "id": "lisan_218",
+      "ordre": 218,
+      "palier": 2,
+      "mot_arabe": "أَجَل",
+      "translitteration": "Ajal",
+      "traductions_fr": [
+        "terme",
+        "échéance",
+        "moment fixé"
+      ],
+      "frequence_coran": 56,
+      "racine": {
+        "lettres": "أ ج ل",
+        "translitteration": "ʾ-j-l",
+        "sens_fondamental": "terme, délai fixé"
+      },
+      "exemple_verset": {
+        "reference": "63:11",
+        "arabe": "وَلَن يُؤَخِّرَ ٱللَّهُ نَفْسًا إِذَا جَاءَ أَجَلُهَا",
+        "translitteration": "Wa lan yuʾakhkhira-llâhu nafsan idhâ jâʾa ajaluhâ",
+        "traduction_fr": "Allâh ne reportera jamais une âme une fois son terme venu",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/063011.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "آجَال",
+          "translit": "âjâl",
+          "sens": "termes (pluriel)"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Double sens : ÉCHÉANCE d'un contrat ET TERME DE LA VIE (l'heure de la mort). Chaque âme a son 'ajal' fixé par Allâh, immuable une fois venu."
+    },
+    {
+      "id": "lisan_219",
+      "ordre": 219,
+      "palier": 2,
+      "mot_arabe": "كَيْل",
+      "translitteration": "Kayl",
+      "traductions_fr": [
+        "mesure (de capacité)"
+      ],
+      "frequence_coran": 16,
+      "racine": {
+        "lettres": "ك ي ل",
+        "translitteration": "k-y-l",
+        "sens_fondamental": "mesurer (en volume)"
+      },
+      "exemple_verset": {
+        "reference": "83:1",
+        "arabe": "وَيْلٌ لِّلْمُطَفِّفِينَ",
+        "translitteration": "Waylun li-l-mutaffifîn",
+        "traduction_fr": "Malheur aux fraudeurs sur la mesure",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/083001.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "كَالَ",
+          "translit": "kâla",
+          "sens": "il a mesuré"
+        },
+        {
+          "arabe": "مِكْيَال",
+          "translit": "mikyâl",
+          "sens": "instrument de mesure"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Sourate 83 (al-Mutaffifîn) condamne les fraudeurs. Donner mesure pleine = obligation. Tricher = péché. Application pratique de la sincérité commerciale."
+    },
+    {
+      "id": "lisan_220",
+      "ordre": 220,
+      "palier": 2,
+      "mot_arabe": "وَزْن",
+      "translitteration": "Wazn",
+      "traductions_fr": [
+        "poids",
+        "pesage"
+      ],
+      "frequence_coran": 23,
+      "racine": {
+        "lettres": "و ز ن",
+        "translitteration": "w-z-n",
+        "sens_fondamental": "peser (cf. mîzân, mot 144)"
+      },
+      "exemple_verset": {
+        "reference": "55:9",
+        "arabe": "وَأَقِيمُوا ٱلْوَزْنَ بِٱلْقِسْطِ",
+        "translitteration": "Wa aqîmû-l-wazna bi-l-qist",
+        "traduction_fr": "Et donnez le poids avec équité",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/055009.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "مِيزَان",
+          "translit": "mîzân",
+          "sens": "balance (mot 144)"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Couple avec 'kayl' (mesure de capacité). 'Aqîmû-l-wazna bi-l-qist' (donner poids avec équité) = devoir économique. Lien direct avec la justice."
+    },
+    {
+      "id": "lisan_221",
+      "ordre": 221,
+      "palier": 2,
+      "mot_arabe": "قِسْط",
+      "translitteration": "Qist",
+      "traductions_fr": [
+        "équité",
+        "justice"
+      ],
+      "frequence_coran": 26,
+      "racine": {
+        "lettres": "ق س ط",
+        "translitteration": "q-s-t",
+        "sens_fondamental": "équité, juste partage"
+      },
+      "exemple_verset": {
+        "reference": "5:8",
+        "arabe": "وَلَا يَجْرِمَنَّكُمْ شَنَآنُ قَوْمٍ عَلَىٰ أَلَّا تَعْدِلُوا ۚ ٱعْدِلُوا هُوَ أَقْرَبُ لِلتَّقْوَىٰ",
+        "translitteration": "Wa lâ yajrimannakum shanaʾânu qawmin ʿalâ allâ taʿdilû, iʿdilû huwa aqrabu li-t-taqwâ",
+        "traduction_fr": "Que la haine d'un peuple ne vous incite pas à être injustes. Soyez équitables, c'est plus proche de la piété",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/005008.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "مُقْسِط",
+          "translit": "muqsit",
+          "sens": "équitable"
+        },
+        {
+          "arabe": "أَقْسَطَ",
+          "translit": "aqsata",
+          "sens": "il a été équitable"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Synonyme de 'ʿadl' mais plus axé sur la JUSTE PROPORTION dans le partage. Allâh aime les 'muqsitîn' (équitables, 5:42). Même envers ceux qu'on déteste."
+    },
+    {
+      "id": "lisan_222",
+      "ordre": 222,
+      "palier": 2,
+      "mot_arabe": "عَدْل",
+      "translitteration": "ʿAdl",
+      "traductions_fr": [
+        "justice",
+        "équilibre"
+      ],
+      "frequence_coran": 28,
+      "racine": {
+        "lettres": "ع د ل",
+        "translitteration": "ʿ-d-l",
+        "sens_fondamental": "justice, équilibre"
+      },
+      "exemple_verset": {
+        "reference": "16:90",
+        "arabe": "إِنَّ ٱللَّهَ يَأْمُرُ بِٱلْعَدْلِ وَٱلْإِحْسَانِ",
+        "translitteration": "Inna-llâha yaʾmuru bi-l-ʿadli wa-l-ihsân",
+        "traduction_fr": "Allâh commande la justice et l'excellence",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/016090.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "عَادِل",
+          "translit": "ʿâdil",
+          "sens": "juste"
+        },
+        {
+          "arabe": "عَدَلَ",
+          "translit": "ʿadala",
+          "sens": "il a été juste"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Vertu cardinale. Verset 16:90 est récité dans chaque khutba du vendredi. 'Al-ʿAdl' est aussi un nom d'Allâh. Différence avec 'qist' : ʿadl = principe général, qist = application concrète."
+    },
+    {
+      "id": "lisan_223",
+      "ordre": 223,
+      "palier": 2,
+      "mot_arabe": "إِحْسَان",
+      "translitteration": "Ihsân",
+      "traductions_fr": [
+        "excellence",
+        "bienfaisance"
+      ],
+      "frequence_coran": 12,
+      "racine": {
+        "lettres": "ح س ن",
+        "translitteration": "h-s-n",
+        "sens_fondamental": "beauté, excellence"
+      },
+      "exemple_verset": {
+        "reference": "16:90",
+        "arabe": "إِنَّ ٱللَّهَ يَأْمُرُ بِٱلْعَدْلِ وَٱلْإِحْسَانِ",
+        "translitteration": "Inna-llâha yaʾmuru bi-l-ʿadli wa-l-ihsân",
+        "traduction_fr": "Allâh commande la justice et l'excellence",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/016090.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "حَسَن",
+          "translit": "hasan",
+          "sens": "beau, bon"
+        },
+        {
+          "arabe": "أَحْسَنَ",
+          "translit": "ahsana",
+          "sens": "il a fait avec excellence"
+        },
+        {
+          "arabe": "مُحْسِن",
+          "translit": "muhsin",
+          "sens": "celui qui fait avec ihsân"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Le SOMMET spirituel selon le hadith de Gabriel. Le Prophète ﷺ : 'Adorer Allâh comme si tu Le voyais ; si tu ne Le vois pas, Lui te voit.' Plus élevé qu'islam et îmân."
+    },
+    {
+      "id": "lisan_224",
+      "ordre": 224,
+      "palier": 2,
+      "mot_arabe": "مَعْرُوف",
+      "translitteration": "Maʿrûf",
+      "traductions_fr": [
+        "convenable",
+        "bien reconnu"
+      ],
+      "frequence_coran": 38,
+      "racine": {
+        "lettres": "ع ر ف",
+        "translitteration": "ʿ-r-f",
+        "sens_fondamental": "connaître, reconnaître"
+      },
+      "exemple_verset": {
+        "reference": "3:104",
+        "arabe": "يَأْمُرُونَ بِٱلْمَعْرُوفِ وَيَنْهَوْنَ عَنِ ٱلْمُنكَرِ",
+        "translitteration": "Yaʾmurûna bi-l-maʿrûfi wa yanhawna ʿani-l-munkar",
+        "traduction_fr": "Ils ordonnent le convenable et interdisent le blâmable",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/003104.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "عَرَفَ",
+          "translit": "ʿarafa",
+          "sens": "il a connu"
+        },
+        {
+          "arabe": "مَعْرِفَة",
+          "translit": "maʿrifa",
+          "sens": "connaissance"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Litt. 'ce qui est reconnu (comme bien)'. La sagesse traditionnelle du bien-vivre. Couplé à 'munkar' (blâmable). 'Al-amr bi-l-maʿrûf wa-n-nahy ʿani-l-munkar' = ordonner le bien et interdire le mal."
+    },
+    {
+      "id": "lisan_225",
+      "ordre": 225,
+      "palier": 2,
+      "mot_arabe": "مُنْكَر",
+      "translitteration": "Munkar",
+      "traductions_fr": [
+        "blâmable",
+        "réprouvé"
+      ],
+      "frequence_coran": 16,
+      "racine": {
+        "lettres": "ن ك ر",
+        "translitteration": "n-k-r",
+        "sens_fondamental": "nier, ignorer, réprouver"
+      },
+      "exemple_verset": {
+        "reference": "3:104",
+        "arabe": "وَيَنْهَوْنَ عَنِ ٱلْمُنكَرِ",
+        "translitteration": "Wa yanhawna ʿani-l-munkar",
+        "traduction_fr": "Et qui interdisent le blâmable",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/003104.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "أَنْكَرَ",
+          "translit": "ankara",
+          "sens": "il a renié, désapprouvé"
+        },
+        {
+          "arabe": "مُنْكِر",
+          "translit": "Munkir",
+          "sens": "Munkir (un des deux anges interrogateurs)"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Opposé de 'maʿrûf'. Tout ce que la fitra (nature humaine saine) et la révélation réprouvent. Munkar et Nakîr sont aussi les deux anges qui interrogent dans la tombe."
+    },
+    {
+      "id": "lisan_226",
+      "ordre": 226,
+      "palier": 2,
+      "mot_arabe": "نَهَى",
+      "translitteration": "Nahâ",
+      "traductions_fr": [
+        "il a interdit",
+        "il a empêché"
+      ],
+      "frequence_coran": 49,
+      "racine": {
+        "lettres": "ن ه ي",
+        "translitteration": "n-h-y",
+        "sens_fondamental": "interdire, fin, limite"
+      },
+      "exemple_verset": {
+        "reference": "5:79",
+        "arabe": "كَانُوا لَا يَتَنَاهَوْنَ عَن مُّنكَرٍ فَعَلُوهُ",
+        "translitteration": "Kânû lâ yatanâhawna ʿan munkarin faʿalûh",
+        "traduction_fr": "Ils ne s'interdisaient pas mutuellement un blâmable qu'ils commettaient",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/005079.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "نَهْي",
+          "translit": "nahy",
+          "sens": "interdiction"
+        },
+        {
+          "arabe": "ٱنْتَهَى",
+          "translit": "intahâ",
+          "sens": "il a cessé"
+        },
+        {
+          "arabe": "نِهَايَة",
+          "translit": "nihâya",
+          "sens": "fin"
+        }
+      ],
+      "type_grammatical": "verbe",
+      "difficulte": 2,
+      "notes_pedagogiques": "Pendant de 'amara' (ordonner). 'Nahâ ʿan' (interdire de) = formule juridique fréquente. Le 'nahy' (l'interdiction) est l'une des 5 catégories de la sharîʿa avec wâjib, mandûb, mubâh, makrûh."
+    },
+    {
+      "id": "lisan_227",
+      "ordre": 227,
+      "palier": 2,
+      "mot_arabe": "أَمَرَ",
+      "translitteration": "Amara",
+      "traductions_fr": [
+        "il a ordonné",
+        "il a commandé"
+      ],
+      "frequence_coran": 161,
+      "racine": {
+        "lettres": "أ م ر",
+        "translitteration": "ʾ-m-r",
+        "sens_fondamental": "ordonner (cf. amr, mot 58)"
+      },
+      "exemple_verset": {
+        "reference": "16:90",
+        "arabe": "إِنَّ ٱللَّهَ يَأْمُرُ بِٱلْعَدْلِ",
+        "translitteration": "Inna-llâha yaʾmuru bi-l-ʿadl",
+        "traduction_fr": "Allâh commande la justice",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/016090.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "أَمْر",
+          "translit": "amr",
+          "sens": "ordre (mot 58)"
+        },
+        {
+          "arabe": "آمِر",
+          "translit": "âmir",
+          "sens": "celui qui ordonne"
+        }
+      ],
+      "type_grammatical": "verbe",
+      "difficulte": 1,
+      "notes_pedagogiques": "Verbe de l'autorité. Allâh 'amara' (commande). Le Prophète ﷺ 'amara' (commande). Les parents 'amara'. Couple inséparable avec 'nahâ' (interdire) — duo de l'éducation islamique."
+    },
+    {
+      "id": "lisan_228",
+      "ordre": 228,
+      "palier": 2,
+      "mot_arabe": "حَقّ (الله)",
+      "translitteration": "Haqq Allâh",
+      "traductions_fr": [
+        "droit d'Allâh"
+      ],
+      "frequence_coran": 287,
+      "racine": {
+        "lettres": "ح ق ق",
+        "translitteration": "h-q-q",
+        "sens_fondamental": "vérité/droit (cf. haqq, mot 35)"
+      },
+      "exemple_verset": {
+        "reference": "2:228",
+        "arabe": "وَلَهُنَّ مِثْلُ ٱلَّذِي عَلَيْهِنَّ بِٱلْمَعْرُوفِ",
+        "translitteration": "Wa lahunna mithlu-lladhî ʿalayhinna bi-l-maʿrûf",
+        "traduction_fr": "Elles ont des droits équivalents à leurs devoirs, selon la convenance",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002228.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "حُقُوق",
+          "translit": "huqûq",
+          "sens": "droits (pluriel)"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "En droit islamique : double catégorie de droits — huqûq Allâh (droits d'Allâh) et huqûq al-ʿibâd (droits des serviteurs). Allâh pardonne Ses droits, mais Il ne pardonne pas les droits dus aux humains tant qu'on n'a pas demandé pardon à ceux-ci."
+    },
+    {
+      "id": "lisan_229",
+      "ordre": 229,
+      "palier": 2,
+      "mot_arabe": "وَلِيّ",
+      "translitteration": "Walî",
+      "traductions_fr": [
+        "allié",
+        "tuteur",
+        "protecteur"
+      ],
+      "frequence_coran": 86,
+      "racine": {
+        "lettres": "و ل ي",
+        "translitteration": "w-l-y",
+        "sens_fondamental": "proche, allié, gouverner"
+      },
+      "exemple_verset": {
+        "reference": "2:257",
+        "arabe": "ٱللَّهُ وَلِيُّ ٱلَّذِينَ آمَنُوا",
+        "translitteration": "Allâhu waliyyu-lladhîna âmanû",
+        "traduction_fr": "Allâh est l'Allié de ceux qui ont cru",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002257.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "أَوْلِيَاء",
+          "translit": "awliyâʾ",
+          "sens": "alliés (pluriel)"
+        },
+        {
+          "arabe": "وِلَايَة",
+          "translit": "wilâya",
+          "sens": "tutelle, alliance"
+        },
+        {
+          "arabe": "مَوْلَى",
+          "translit": "mawlâ",
+          "sens": "patron, maître"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Multiples sens : 1) Allié spirituel (Allâh comme walî des croyants), 2) Tuteur légal (walî de la mariée), 3) Protecteur, 4) Saint (walî Allâh). En jurisprudence, le walî est essentiel pour valider le mariage."
+    },
+    {
+      "id": "lisan_230",
+      "ordre": 230,
+      "palier": 2,
+      "mot_arabe": "شَهَادَة",
+      "translitteration": "Shahâda",
+      "traductions_fr": [
+        "témoignage",
+        "attestation de foi"
+      ],
+      "frequence_coran": 26,
+      "racine": {
+        "lettres": "ش ه د",
+        "translitteration": "sh-h-d",
+        "sens_fondamental": "témoigner (cf. shahîd, mot 197)"
+      },
+      "exemple_verset": {
+        "reference": "2:282",
+        "arabe": "وَٱسْتَشْهِدُوا شَهِيدَيْنِ مِن رِّجَالِكُمْ",
+        "translitteration": "Wa-stash-hidû shahîdayni min rijâlikum",
+        "traduction_fr": "Faites témoigner deux témoins parmi vos hommes",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002282.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "شَهِيد",
+          "translit": "shahîd",
+          "sens": "témoin/martyr (mot 197)"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "1) Témoignage légal (besoin de 2 témoins en justice), 2) Shahâda = attestation de foi (Ash-hadu an lâ ilâha illâ Allâh wa ash-hadu anna Muhammadan rasûl Allâh). 1er pilier de l'islam."
+    },
+    {
+      "id": "lisan_231",
+      "ordre": 231,
+      "palier": 2,
+      "mot_arabe": "كِتَابَة",
+      "translitteration": "Kitâba",
+      "traductions_fr": [
+        "écriture",
+        "rédaction"
+      ],
+      "frequence_coran": 7,
+      "racine": {
+        "lettres": "ك ت ب",
+        "translitteration": "k-t-b",
+        "sens_fondamental": "écrire (cf. kitâb, mot 20)"
+      },
+      "exemple_verset": {
+        "reference": "2:282",
+        "arabe": "وَلْيَكْتُب بَّيْنَكُمْ كَاتِبٌ بِٱلْعَدْلِ",
+        "translitteration": "Wa-l-yaktub baynakum kâtibun bi-l-ʿadl",
+        "traduction_fr": "Qu'un scribe l'écrive entre vous équitablement",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002282.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "كَاتِب",
+          "translit": "kâtib",
+          "sens": "scribe"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Le Coran encourage l'ÉCRITURE des contrats — révolution juridique à une époque essentiellement orale. Verset 2:282 (le plus long du Coran) consacre cette obligation."
+    },
+    {
+      "id": "lisan_232",
+      "ordre": 232,
+      "palier": 2,
+      "mot_arabe": "حُرّ",
+      "translitteration": "Hurr",
+      "traductions_fr": [
+        "libre"
+      ],
+      "frequence_coran": 5,
+      "racine": {
+        "lettres": "ح ر ر",
+        "translitteration": "h-r-r",
+        "sens_fondamental": "libre, chaleur"
+      },
+      "exemple_verset": {
+        "reference": "2:178",
+        "arabe": "ٱلْحُرُّ بِٱلْحُرِّ",
+        "translitteration": "Al-hurru bi-l-hurr",
+        "traduction_fr": "Le libre pour le libre",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002178.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "حُرِّيَّة",
+          "translit": "hurriyya",
+          "sens": "liberté"
+        },
+        {
+          "arabe": "تَحْرِير",
+          "translit": "tahrîr",
+          "sens": "libération, édition"
+        }
+      ],
+      "type_grammatical": "adjectif",
+      "difficulte": 1,
+      "notes_pedagogiques": "Opposé de 'ʿabd' (esclave/serviteur). L'islam a progressivement aboli l'esclavage par la libération comme acte hautement valorisé : c'est l'expiation pour de nombreux péchés."
+    },
+    {
+      "id": "lisan_233",
+      "ordre": 233,
+      "palier": 2,
+      "mot_arabe": "عَبْد",
+      "translitteration": "ʿAbd",
+      "traductions_fr": [
+        "serviteur",
+        "esclave"
+      ],
+      "frequence_coran": 156,
+      "racine": {
+        "lettres": "ع ب د",
+        "translitteration": "ʿ-b-d",
+        "sens_fondamental": "servir (cf. ʿibâd, mot 56)"
+      },
+      "exemple_verset": {
+        "reference": "17:1",
+        "arabe": "سُبْحَانَ ٱلَّذِي أَسْرَىٰ بِعَبْدِهِ",
+        "translitteration": "Subhâna-lladhî asrâ bi-ʿabdih",
+        "traduction_fr": "Gloire à Celui qui a fait voyager Son serviteur",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/017001.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "عِبَاد",
+          "translit": "ʿibâd",
+          "sens": "serviteurs (mot 56)"
+        },
+        {
+          "arabe": "عَبْدُ ٱللَّه",
+          "translit": "ʿAbd Allâh",
+          "sens": "Serviteur d'Allâh (prénom)"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Singulier de 'ʿibâd'. Le Prophète ﷺ est appelé 'ʿabd' (Son serviteur) dans le verset du Voyage nocturne (17:1) — titre suprême. Statut idéal du croyant face à Allâh."
+    },
+    {
+      "id": "lisan_234",
+      "ordre": 234,
+      "palier": 2,
+      "mot_arabe": "أَمَة",
+      "translitteration": "Ama",
+      "traductions_fr": [
+        "servante",
+        "esclave (femme)"
+      ],
+      "frequence_coran": 2,
+      "racine": {
+        "lettres": "أ م و",
+        "translitteration": "ʾ-m-w",
+        "sens_fondamental": "servante"
+      },
+      "exemple_verset": {
+        "reference": "2:221",
+        "arabe": "وَلَأَمَةٌ مُّؤْمِنَةٌ خَيْرٌ مِّن مُّشْرِكَةٍ",
+        "translitteration": "Wa la-amatun muʾminatun khayrun min mushrika",
+        "traduction_fr": "Une servante croyante vaut mieux qu'une polythéiste",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002221.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "إِمَاء",
+          "translit": "imâʾ",
+          "sens": "servantes (pluriel)"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Féminin de 'ʿabd'. Mot rare dans le Coran. Le verset 2:221 valorise la foi par-dessus le statut social — une servante croyante vaut plus qu'une femme libre polythéiste."
+    },
+    {
+      "id": "lisan_235",
+      "ordre": 235,
+      "palier": 2,
+      "mot_arabe": "حُكُومَة",
+      "translitteration": "Hukûma",
+      "traductions_fr": [
+        "gouvernement",
+        "jugement"
+      ],
+      "frequence_coran": 1,
+      "racine": {
+        "lettres": "ح ك م",
+        "translitteration": "h-k-m",
+        "sens_fondamental": "juger, gouverner (cf. hukm, mot 149)"
+      },
+      "exemple_verset": {
+        "reference": "5:43",
+        "arabe": "وَكَيْفَ يُحَكِّمُونَكَ وَعِندَهُمُ ٱلتَّوْرَاةُ فِيهَا حُكْمُ ٱللَّهِ",
+        "translitteration": "Wa kayfa yuhakkimûnaka wa ʿindahumu-t-tawrâtu fîhâ hukmu-llâh",
+        "traduction_fr": "Comment te prendraient-ils pour juge alors qu'ils ont la Torah, contenant le jugement d'Allâh ?",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/005043.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "حَاكِم",
+          "translit": "hâkim",
+          "sens": "gouvernant, juge"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Concept de gouvernance et de jugement. Le Coran ne donne pas un modèle politique unique, mais des principes : justice (ʿadl), consultation (shûrâ), application du hukm d'Allâh."
+    },
+    {
+      "id": "lisan_236",
+      "ordre": 236,
+      "palier": 2,
+      "mot_arabe": "شُورَىٰ",
+      "translitteration": "Shûrâ",
+      "traductions_fr": [
+        "concertation",
+        "consultation"
+      ],
+      "frequence_coran": 1,
+      "racine": {
+        "lettres": "ش و ر",
+        "translitteration": "sh-w-r",
+        "sens_fondamental": "consulter, conseiller"
+      },
+      "exemple_verset": {
+        "reference": "42:38",
+        "arabe": "وَأَمْرُهُمْ شُورَىٰ بَيْنَهُمْ",
+        "translitteration": "Wa amruhum shûrâ baynahum",
+        "traduction_fr": "Leurs affaires sont des consultations entre eux",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/042038.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "شَاوَرَ",
+          "translit": "shâwara",
+          "sens": "il a consulté"
+        },
+        {
+          "arabe": "تَشَاوَرَ",
+          "translit": "tashâwara",
+          "sens": "ils se sont concertés"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Principe politique majeur. Sourate 42 (ash-Shûrâ) porte ce nom. Les Compagnons étaient consultés par le Prophète ﷺ. Fondement de la démocratie participative en islam."
+    },
+    {
+      "id": "lisan_237",
+      "ordre": 237,
+      "palier": 2,
+      "mot_arabe": "أَمَانَة",
+      "translitteration": "Amâna",
+      "traductions_fr": [
+        "dépôt",
+        "confiance"
+      ],
+      "frequence_coran": 6,
+      "racine": {
+        "lettres": "أ م ن",
+        "translitteration": "ʾ-m-n",
+        "sens_fondamental": "sécurité, foi (cf. âmana, mot 27)"
+      },
+      "exemple_verset": {
+        "reference": "4:58",
+        "arabe": "إِنَّ ٱللَّهَ يَأْمُرُكُمْ أَن تُؤَدُّوا ٱلْأَمَانَاتِ إِلَىٰ أَهْلِهَا",
+        "translitteration": "Inna-llâha yaʾmurukum an tuʾaddû-l-amânâti ilâ ahlihâ",
+        "traduction_fr": "Allâh vous commande de rendre les dépôts à leurs ayants droit",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/004058.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "أَمِين",
+          "translit": "amîn",
+          "sens": "fiable"
+        },
+        {
+          "arabe": "أَمَانَات",
+          "translit": "amânât",
+          "sens": "dépôts (pluriel)"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Concept déjà vu en mot 146 (responsabilité morale). Ici sens concret : DÉPÔT confié (objet, secret, fonction publique). Restituer l'amâna = trait du musulman. Verset 4:58 base éthique de toute fonction publique."
+    },
+    {
+      "id": "lisan_238",
+      "ordre": 238,
+      "palier": 2,
+      "mot_arabe": "خِيَانَة",
+      "translitteration": "Khiyâna",
+      "traductions_fr": [
+        "trahison"
+      ],
+      "frequence_coran": 16,
+      "racine": {
+        "lettres": "خ و ن",
+        "translitteration": "kh-w-n",
+        "sens_fondamental": "trahir"
+      },
+      "exemple_verset": {
+        "reference": "8:27",
+        "arabe": "لَا تَخُونُوا ٱللَّهَ وَٱلرَّسُولَ وَتَخُونُوا أَمَانَاتِكُمْ",
+        "translitteration": "Lâ takhûnû-llâha wa-r-rasûla wa takhûnû amânâtikum",
+        "traduction_fr": "Ne trahissez pas Allâh et le Messager, ni vos dépôts",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/008027.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "خَائِن",
+          "translit": "khâʾin",
+          "sens": "traître"
+        },
+        {
+          "arabe": "خَانَ",
+          "translit": "khâna",
+          "sens": "il a trahi"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Pendant négatif de l'amâna. Trahir = violer la confiance reçue. Allâh n'aime pas les 'khâʾinîn' (traîtres, 8:58). Trait des hypocrites selon le hadith : 'le signe de l'hypocrite est qu'il trahit sa parole'."
+    },
+    {
+      "id": "lisan_239",
+      "ordre": 239,
+      "palier": 2,
+      "mot_arabe": "صَدِيق",
+      "translitteration": "Sadîq",
+      "traductions_fr": [
+        "ami sincère"
+      ],
+      "frequence_coran": 4,
+      "racine": {
+        "lettres": "ص د ق",
+        "translitteration": "s-d-q",
+        "sens_fondamental": "vérité, sincérité (cf. sidq)"
+      },
+      "exemple_verset": {
+        "reference": "26:101",
+        "arabe": "وَلَا صَدِيقٍ حَمِيمٍ",
+        "translitteration": "Wa lâ sadîqin hamîm",
+        "traduction_fr": "Ni un ami chaleureux",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/026101.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "صِدِّيق",
+          "translit": "siddîq",
+          "sens": "véridique (qualificatif élevé)"
+        },
+        {
+          "arabe": "صَدَاقَة",
+          "translit": "sadâqa",
+          "sens": "amitié"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "L'ami vrai. Yûsuf est appelé 'as-siddîq' (le véridique, 12:46). Abû Bakr fut appelé 'as-Siddîq' pour avoir cru immédiatement au voyage nocturne du Prophète ﷺ. Plus haut grade après les prophètes."
+    },
+    {
+      "id": "lisan_240",
+      "ordre": 240,
+      "palier": 2,
+      "mot_arabe": "عَدُوّ",
+      "translitteration": "ʿAduww",
+      "traductions_fr": [
+        "ennemi"
+      ],
+      "frequence_coran": 92,
+      "racine": {
+        "lettres": "ع د و",
+        "translitteration": "ʿ-d-w",
+        "sens_fondamental": "ennemi, transgresser"
+      },
+      "exemple_verset": {
+        "reference": "2:168",
+        "arabe": "إِنَّهُ لَكُمْ عَدُوٌّ مُّبِينٌ",
+        "translitteration": "Innahu lakum ʿaduwwun mubîn",
+        "traduction_fr": "Il est pour vous un ennemi déclaré",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002168.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "أَعْدَاء",
+          "translit": "aʿdâʾ",
+          "sens": "ennemis (pluriel)"
+        },
+        {
+          "arabe": "عَدَاوَة",
+          "translit": "ʿadâwa",
+          "sens": "inimitié"
+        },
+        {
+          "arabe": "ٱعْتَدَى",
+          "translit": "iʿtadâ",
+          "sens": "il a transgressé"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Le Shaytân est l'ennemi déclaré (ʿaduwwun mubîn, 2:168, 12:5). L'inimitié est aussi entre Banî Âdam — d'où l'invitation au pardon et à la réconciliation."
+    },
+    {
+      "id": "lisan_241",
+      "ordre": 241,
+      "palier": 2,
+      "mot_arabe": "حُبّ",
+      "translitteration": "Hubb",
+      "traductions_fr": [
+        "amour"
+      ],
+      "frequence_coran": 95,
+      "racine": {
+        "lettres": "ح ب ب",
+        "translitteration": "h-b-b",
+        "sens_fondamental": "aimer, graine"
+      },
+      "exemple_verset": {
+        "reference": "2:165",
+        "arabe": "وَٱلَّذِينَ آمَنُوا أَشَدُّ حُبًّا لِّلَّهِ",
+        "translitteration": "Wa-lladhîna âmanû ashaddu hubban li-llâh",
+        "traduction_fr": "Ceux qui croient sont les plus ardents en l'amour d'Allâh",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002165.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "أَحَبَّ",
+          "translit": "ahabba",
+          "sens": "il a aimé"
+        },
+        {
+          "arabe": "حَبِيب",
+          "translit": "habîb",
+          "sens": "bien-aimé"
+        },
+        {
+          "arabe": "مَحَبَّة",
+          "translit": "mahabba",
+          "sens": "amour, affection"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Le Prophète ﷺ est 'al-Habîb' (le Bien-Aimé d'Allâh). L'amour pour Allâh DOIT dépasser tous les autres amours. Hadith : 'Aucun de vous n'a foi tant qu'il ne m'aime pas plus que son père, son fils et tous les gens.'"
+    },
+    {
+      "id": "lisan_242",
+      "ordre": 242,
+      "palier": 2,
+      "mot_arabe": "بُغْض",
+      "translitteration": "Bughd",
+      "traductions_fr": [
+        "haine"
+      ],
+      "frequence_coran": 5,
+      "racine": {
+        "lettres": "ب غ ض",
+        "translitteration": "b-gh-d",
+        "sens_fondamental": "haïr, détester"
+      },
+      "exemple_verset": {
+        "reference": "5:14",
+        "arabe": "فَأَغْرَيْنَا بَيْنَهُمُ ٱلْعَدَاوَةَ وَٱلْبَغْضَاءَ",
+        "translitteration": "Fa-aghraynâ baynahumu-l-ʿadâwata wa-l-baghdâʾ",
+        "traduction_fr": "Nous avons suscité entre eux l'inimitié et la haine",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/005014.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "أَبْغَضَ",
+          "translit": "abghada",
+          "sens": "il a détesté"
+        },
+        {
+          "arabe": "بَغْضَاء",
+          "translit": "baghdâʾ",
+          "sens": "haine intense"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Hadith : 'Tu n'entreras pas au Paradis tant que tu n'aimeras pas, et tu n'aimeras pas tant que tu ne t'aimeras pas mutuellement.' La haine bloque l'entrée au Paradis sauf pour le mal."
+    },
+    {
+      "id": "lisan_243",
+      "ordre": 243,
+      "palier": 2,
+      "mot_arabe": "أَخْلَاق",
+      "translitteration": "Akhlâq",
+      "traductions_fr": [
+        "caractère",
+        "moralité"
+      ],
+      "frequence_coran": 2,
+      "racine": {
+        "lettres": "خ ل ق",
+        "translitteration": "kh-l-q",
+        "sens_fondamental": "créer (cf. khalaqa, mot 26)"
+      },
+      "exemple_verset": {
+        "reference": "68:4",
+        "arabe": "وَإِنَّكَ لَعَلَىٰ خُلُقٍ عَظِيمٍ",
+        "translitteration": "Wa innaka la-ʿalâ khuluqin ʿazîm",
+        "traduction_fr": "Tu es certes d'une moralité immense",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/068004.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "خُلُق",
+          "translit": "khuluq",
+          "sens": "caractère (singulier)"
+        },
+        {
+          "arabe": "خَلِيقَة",
+          "translit": "khalîqa",
+          "sens": "nature, tempérament"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Le Prophète ﷺ : 'Je n'ai été envoyé que pour parfaire les akhlâq.' Sa moralité décrite en 68:4 — verset essentiel. Centre de toute la spiritualité musulmane : akhlâq > rituels seuls."
+    },
+    {
+      "id": "lisan_244",
+      "ordre": 244,
+      "palier": 2,
+      "mot_arabe": "كَرَم",
+      "translitteration": "Karam",
+      "traductions_fr": [
+        "générosité",
+        "noblesse"
+      ],
+      "frequence_coran": 30,
+      "racine": {
+        "lettres": "ك ر م",
+        "translitteration": "k-r-m",
+        "sens_fondamental": "noble, généreux, honoré"
+      },
+      "exemple_verset": {
+        "reference": "27:40",
+        "arabe": "إِنَّ رَبِّي غَنِيٌّ كَرِيمٌ",
+        "translitteration": "Inna rabbî ghaniyyun karîm",
+        "traduction_fr": "Mon Seigneur est suffisant à Soi, généreux",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/027040.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "كَرِيم",
+          "translit": "Karîm",
+          "sens": "Généreux (nom divin)"
+        },
+        {
+          "arabe": "أَكْرَمَ",
+          "translit": "akrama",
+          "sens": "il a honoré, généreux envers"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "'Al-Karîm' (le Généreux) est un nom d'Allâh. 'Al-Qurʾân al-Karîm' = le Coran Noble. La générosité = noblesse en arabe (sens fusionné)."
+    },
+    {
+      "id": "lisan_245",
+      "ordre": 245,
+      "palier": 2,
+      "mot_arabe": "بُخْل",
+      "translitteration": "Bukhl",
+      "traductions_fr": [
+        "avarice"
+      ],
+      "frequence_coran": 12,
+      "racine": {
+        "lettres": "ب خ ل",
+        "translitteration": "b-kh-l",
+        "sens_fondamental": "avarice, retenir"
+      },
+      "exemple_verset": {
+        "reference": "4:37",
+        "arabe": "ٱلَّذِينَ يَبْخَلُونَ وَيَأْمُرُونَ ٱلنَّاسَ بِٱلْبُخْلِ",
+        "translitteration": "Alladhîna yabkhalûna wa yaʾmurûna-n-nâsa bi-l-bukhl",
+        "traduction_fr": "Ceux qui sont avares et ordonnent aux gens l'avarice",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/004037.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "بَخِيل",
+          "translit": "bakhîl",
+          "sens": "avare"
+        },
+        {
+          "arabe": "بَخِلَ",
+          "translit": "bakhila",
+          "sens": "il a été avare"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Opposé de 'karam'. Vice majeur. Allâh n'aime pas les avares (4:36-37). Hadith : 'Un avare ne peut être musulman parfait.' L'avarice est l'une des causes de la destruction des peuples."
+    },
+    {
+      "id": "lisan_246",
+      "ordre": 246,
+      "palier": 2,
+      "mot_arabe": "حَيَاء",
+      "translitteration": "Hayâʾ",
+      "traductions_fr": [
+        "pudeur",
+        "modestie"
+      ],
+      "frequence_coran": 1,
+      "racine": {
+        "lettres": "ح ي ي",
+        "translitteration": "h-y-y",
+        "sens_fondamental": "vie, pudeur"
+      },
+      "exemple_verset": {
+        "reference": "28:25",
+        "arabe": "فَجَاءَتْهُ إِحْدَاهُمَا تَمْشِي عَلَى ٱسْتِحْيَاءٍ",
+        "translitteration": "Fa-jâʾat-hu ihdâhumâ tamshî ʿalâ-stihyâʾ",
+        "traduction_fr": "Alors l'une des deux vint à lui, marchant avec pudeur",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/028025.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "ٱسْتَحْيَا",
+          "translit": "istahyâ",
+          "sens": "il a éprouvé de la pudeur"
+        },
+        {
+          "arabe": "حَيِيّ",
+          "translit": "Hayî",
+          "sens": "Pudique (qualificatif d'Allâh)"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Vertu cardinale. Hadith : 'Le hayâʾ est une branche de la foi.' Couvre la pudeur sexuelle, la modestie sociale, la retenue spirituelle. Allâh aime cette qualité."
+    },
+    {
+      "id": "lisan_247",
+      "ordre": 247,
+      "palier": 2,
+      "mot_arabe": "غَضَب",
+      "translitteration": "Ghadab",
+      "traductions_fr": [
+        "colère"
+      ],
+      "frequence_coran": 24,
+      "racine": {
+        "lettres": "غ ض ب",
+        "translitteration": "gh-d-b",
+        "sens_fondamental": "colère, fureur"
+      },
+      "exemple_verset": {
+        "reference": "1:7",
+        "arabe": "غَيْرِ ٱلْمَغْضُوبِ عَلَيْهِمْ",
+        "translitteration": "Ghayri-l-maghdûbi ʿalayhim",
+        "traduction_fr": "Non de ceux qui ont encouru la colère",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/001007.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "غَضِبَ",
+          "translit": "ghadiba",
+          "sens": "il s'est mis en colère"
+        },
+        {
+          "arabe": "مَغْضُوب",
+          "translit": "maghdûb",
+          "sens": "objet de colère"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "La colère d'Allâh est crainte par les croyants. La colère humaine est blâmée comme excès. Hadith : 'Ne te mets pas en colère' (répété 3 fois) est le résumé de toute la religion."
+    },
+    {
+      "id": "lisan_248",
+      "ordre": 248,
+      "palier": 2,
+      "mot_arabe": "حِلْم",
+      "translitteration": "Hilm",
+      "traductions_fr": [
+        "mansuétude",
+        "indulgence"
+      ],
+      "frequence_coran": 15,
+      "racine": {
+        "lettres": "ح ل م",
+        "translitteration": "h-l-m",
+        "sens_fondamental": "patience, indulgence, rêve"
+      },
+      "exemple_verset": {
+        "reference": "11:75",
+        "arabe": "إِنَّ إِبْرَاهِيمَ لَحَلِيمٌ أَوَّاهٌ مُّنِيبٌ",
+        "translitteration": "Inna Ibrâhîma la-halîmun awwâhun munîb",
+        "traduction_fr": "Certes, Ibrâhîm était indulgent, soupirant, repentant",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/011075.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "حَلِيم",
+          "translit": "Halîm",
+          "sens": "Indulgent (nom divin)"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "'Al-Halîm' = Celui qui retient Sa colère malgré la provocation. Ibrâhîm est qualifié 'halîm' (11:75). Vertu suprême : ne pas réagir immédiatement à la colère."
+    },
+    {
+      "id": "lisan_249",
+      "ordre": 249,
+      "palier": 2,
+      "mot_arabe": "عَفْو",
+      "translitteration": "ʿAfw",
+      "traductions_fr": [
+        "pardon",
+        "indulgence"
+      ],
+      "frequence_coran": 35,
+      "racine": {
+        "lettres": "ع ف و",
+        "translitteration": "ʿ-f-w",
+        "sens_fondamental": "effacer, pardonner"
+      },
+      "exemple_verset": {
+        "reference": "7:199",
+        "arabe": "خُذِ ٱلْعَفْوَ وَأْمُرْ بِٱلْعُرْفِ",
+        "translitteration": "Khudhi-l-ʿafwa wa ʾmur bi-l-ʿurf",
+        "traduction_fr": "Prends le pardon et ordonne le convenable",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/007199.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "عَفُوّ",
+          "translit": "ʿAfuww",
+          "sens": "Tout-Pardonneur (nom divin)"
+        },
+        {
+          "arabe": "عَفَا",
+          "translit": "ʿafâ",
+          "sens": "il a pardonné"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Plus que 'maghfira' (pardon couvrant) — 'ʿafw' = EFFACEMENT complet. Du'â de la Nuit du Destin : 'Allâhumma innaka ʿafuwwun tuhibbu-l-ʿafwa fa-ʿfu ʿannî' (Ô Allâh, Tu es Tout-Pardonneur, aimes pardonner, pardonne-moi)."
+    },
+    {
+      "id": "lisan_250",
+      "ordre": 250,
+      "palier": 2,
+      "mot_arabe": "صُلْح",
+      "translitteration": "Sulh",
+      "traductions_fr": [
+        "réconciliation",
+        "paix"
+      ],
+      "frequence_coran": 18,
+      "racine": {
+        "lettres": "ص ل ح",
+        "translitteration": "s-l-h",
+        "sens_fondamental": "réparer, réformer, paix (cf. sâlih)"
+      },
+      "exemple_verset": {
+        "reference": "4:128",
+        "arabe": "وَٱلصُّلْحُ خَيْرٌ",
+        "translitteration": "Wa-s-sulhu khayr",
+        "traduction_fr": "La réconciliation est meilleure",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/004128.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "أَصْلَحَ",
+          "translit": "aslaha",
+          "sens": "il a réformé / réconcilié"
+        },
+        {
+          "arabe": "مُصْلِح",
+          "translit": "muslih",
+          "sens": "réformateur"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Verset 4:128 : 'La réconciliation est meilleure'. Réconcilier deux croyants > prière surérogatoire selon les hadiths. Mot 250 = 5/6 du parcours, clôture sur l'idée de paix."
     }
   ],
   "metadata": {
