@@ -2666,7 +2666,25 @@ function renderLevel(levelId) {
         if (_isKnowledge) {
           shareBtn = '<button style="background:none;border:none;cursor:pointer;flex-shrink:0;align-self:center;padding:8px 4px;margin:0;position:relative;z-index:10;isolation:isolate;" onclick="event.stopPropagation();' + customClick + '"><svg width="14" height="22" viewBox="0 0 14 22" style="pointer-events:none;" aria-hidden="true"><path d="M3 4 L10 11 L3 18" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>';
         }
-        html += '<div class="item' + fridayCls + (checked ? ' checked' : '') + _tlCurrent + '" onclick="' + customClick + '" style="' + _knowledgeBg + _tlOpacity + 'animation-delay:' + delay + 'ms;--i:' + idx + '" id="item-' + item.id + '">' + _pathBadge + '<div class="check-circle"' + _checkClick + '><svg class="check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-body"><div class="item-label' + priorityCls + '">' + _tl + optionalBadge + '</div>' + (_ts ? '<div class="item-sub">' + (_ts.includes('·') ? _ts.split('·')[0].trim() : _ts) + '</div>' : '') + arabicHtml + '</div>' + shareBtn + audioBtn + infoBtn + '</div>';
+        if (item.id === 'lisan') {
+          // Premium luxe render for "Comprendre le Coran"
+          var _lisanChecked = checked ? ' checked' : '';
+          var _lisanOpacity = checked ? 'opacity:0.35;' : '';
+          html += '<div class="item' + fridayCls + _lisanChecked + _tlCurrent + '" onclick="' + customClick + '" style="' + _lisanOpacity + 'background:linear-gradient(135deg,rgba(200,168,75,0.10),rgba(200,168,75,0.04));border:1px solid rgba(200,168,75,0.25);border-radius:14px;padding:16px 14px;margin-top:6px;margin-bottom:6px;position:relative;transition:box-shadow 0.2s,border-color 0.2s;animation-delay:' + delay + 'ms;--i:' + idx + '" id="item-' + item.id + '" onmouseenter="this.style.boxShadow=\'0 0 16px rgba(200,168,75,0.15)\';this.style.borderColor=\'rgba(200,168,75,0.45)\'" onmouseleave="this.style.boxShadow=\'none\';this.style.borderColor=\'rgba(200,168,75,0.25)\'">'
+            + '<div style="position:absolute;top:8px;left:10px;font-size:10px;color:rgba(200,168,75,0.4);">\u2727</div>'
+            + '<div style="position:absolute;top:8px;right:8px;">' + infoBtn + '</div>'
+            + _pathBadge
+            + '<div class="check-circle"' + _checkClick + '><svg class="check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>'
+            + '<div class="item-body">'
+            + '<div class="item-label" style="font-size:15.5px;color:rgba(240,234,214,0.95);font-weight:600;">' + _tl + '</div>'
+            + (_ts ? '<div class="item-sub" style="color:rgba(200,168,75,0.55);font-size:12.5px;">' + _ts + '</div>' : '')
+            + '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:22px;color:#C9A961;direction:rtl;text-align:right;margin-top:10px;">' + (item.arabic || '') + '</div>'
+            + '</div>'
+            + shareBtn
+            + '</div>';
+        } else {
+        html += '<div class="item' + fridayCls + (checked ? ' checked' : '') + _tlCurrent + '" onclick="' + customClick + '" style="' + _knowledgeBg + _tlOpacity + 'animation-delay:' + delay + 'ms;--i:' + idx + '" id="item-' + item.id + '">' + _pathBadge + '<div class="check-circle"' + _checkClick + '><svg class="check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-body"><div class="item-label' + priorityCls + '">' + _tl + optionalBadge + '</div>' + (_ts ? '<div class="item-sub">' + (_ts.includes('\u00b7') ? _ts.split('\u00b7')[0].trim() : _ts) + '</div>' : '') + arabicHtml + '</div>' + shareBtn + audioBtn + infoBtn + '</div>';
+        }
       }
     });
     html += '</div>';
@@ -16521,7 +16539,7 @@ function openVueLisan() {
   // Header
   html += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;">';
   var _lisanPalier = day <= 100 ? 1 : day <= 200 ? 2 : 3;
-  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:11px;letter-spacing:2px;color:rgba(200,168,75,0.5);">COMPRENDRE LE CORAN \u00b7 Mot ' + day + '/' + total + ' \u2014 Palier ' + _lisanPalier + '</div>';
+  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:11px;letter-spacing:2px;color:rgba(200,168,75,0.5);">COMPRENDRE LE CORAN \u00b7 Jour ' + day + ' sur ' + total + ' \u2014 Palier ' + _lisanPalier + '</div>';
   html += '<button onclick="document.getElementById(\'lisan-overlay\').remove();_restoreScroll();" style="background:none;border:none;color:rgba(255,255,255,0.4);font-size:22px;cursor:pointer;padding:4px 8px;">\u00d7</button>';
   html += '</div>';
 
