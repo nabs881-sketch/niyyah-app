@@ -2994,6 +2994,206 @@
         "texte": "On raconte qu'un voyageur, à la fin de sa vie, fut interrogé par son petit-fils. Le grand-père avait beaucoup voyagé — d'un pays à l'autre, d'un métier à l'autre, d'une ville à l'autre. Il avait été émigré toute sa vie, sans jamais s'installer durablement.\n\nLe petit-fils dit : \"Grand-père, tu as connu beaucoup de gens dans tes voyages. Lesquels te restent vraiment ?\"\n\nLe grand-père réfléchit. Il dit : \"Mon fils, je vais te répondre. Pendant 60 ans de voyage, j'ai croisé peut-être 10 000 personnes. La majorité sont effacées de ma mémoire. Quelques-unes me restent. Mais voici la chose étrange — celles qui me restent ne sont PAS celles avec qui j'ai eu de longues amitiés. Celles qui me restent sont, dans 80% des cas, des INCONNUS croisés une seule fois.\n\n\"Je vais te les nommer.\n\n\"L'homme qui m'a offert un repas chaud à 19 ans quand j'arrivais affamé à Paris sans connaître personne. Je me souviens encore de son visage. Je ne sais toujours pas son nom.\n\n\"La femme dans le train qui m'a tendu un mouchoir quand je pleurais après le décès de ma mère. Trois minutes de présence. Quarante ans plus tard, je me souviens d'elle.\n\n\"Le vieil homme à Alger qui m'a indiqué le chemin de la mosquée quand j'étais perdu un vendredi. Il m'a accompagné jusqu'à la porte, alors qu'il allait dans une autre direction.\n\n\"Le chauffeur de taxi à Casa qui n'a pas voulu être payé quand il a appris que je revenais pour enterrer mon frère.\n\n\"Le jeune homme à Strasbourg qui s'est levé pour me céder sa place dans le train alors que j'étais épuisé.\n\n\"Le restaurateur à Marseille qui m'a offert le café après mon repas parce qu'il voyait que je pleurais discrètement.\n\n\"L'infirmière qui m'a tenu la main pendant 20 minutes à l'hôpital pendant que j'attendais un diagnostic dur. Elle ne me connaissait pas.\n\n\"Mon fils, ces gens-là — ces inconnus d'un instant — ont marqué ma vie plus profondément que beaucoup de gens que j'ai vus pendant des années.\n\n\"Et tu sais ce que ça veut dire ? Cela veut dire que toi — DANS TON QUOTIDIEN — tu marques peut-être la vie de gens que tu croises une seule fois. Sans savoir. Pour 60 ans après, ils se souviendront de ton sourire, de ton geste, de ta présence. Comme moi je me souviens de ces 10 visages anonymes.\n\n\"Donc voici ma transmission : sois conscient de l'IMPORTANCE des inconnus que tu croises. Chacun est, potentiellement, un de ces visages qui marque une vie. Ne passe pas vite. Sois présent. Ce que tu offres à un inconnu en cinq minutes peut résonner 60 ans après chez lui.\"\n\nLe petit-fils ne dit rien pendant longtemps. Puis il dit : \"Grand-père, je vais essayer.\"\n\nLe grand-père sourit. Il dit : \"Tu vas mieux qu'essayer. Tu vas devenir, dans la vie de gens que tu ne connais pas, l'un de leurs visages anonymes qu'ils n'oublieront pas. C'est ce que je te souhaite. La gloire invisible de l'inconnu bienveillant. Allâh seul la voit. Et c'est mieux ainsi.\"",
         "morale": "Cette histoire est la dernière de DHUHR-INCONNUS. Garde-la. Les inconnus que tu croises chaque jour — caissier, chauffeur, voyageur, SDF, voisin de transport — peuvent être marqués par TES gestes pendant 60 ans après, sans que tu le saches jamais. Cet après-midi, prends la décision du petit-fils du récit : être, dans la vie de gens que tu ne connais pas, l'un de ces \"visages anonymes\" qu'ils n'oublieront pas. Sourire offert. Place cédée. Cinq minutes données. Mouchoir tendu. Café payé. Conseil donné. Tu construis, sans le voir, une trace invisible dans la mémoire des autres. Et chez Allâh, cette trace est inscrite — toute. À toi de la rendre belle."
       }
+    ],
+    "carrefour": [
+      {
+        "id": "DHUHR-CARREFOUR-001",
+        "titre": "Le visage qui te manque",
+        "type_narratif": "SCENE_CONTEMPORAINE",
+        "module_cible": "sira",
+        "verbe_action": "RENCONTRE",
+        "source": "Mini-scène fictive contemporaine. Création littéraire pour Niyyah.",
+        "verif_imam": false,
+        "texte": "Tu marches dans la rue, vendredi 13h15. Tu sors du déjeuner. Tu n'as pas pu prier Jumuʿa parce que tu étais en réunion. Tu ressens un vide.\n\nTu sors ton téléphone. Tu scrolles sans but. Instagram. WhatsApp. Rien ne remplit ce vide.\n\nTu repenses à quelque chose qu'un imam avait dit dans un sermon il y a longtemps : « Si tu te sens loin, ce n'est pas Allâh qui s'est éloigné. C'est toi qui as cessé de fréquenter le Visage du Messager ﷺ. Sa vie, ses gestes, sa manière d'être — quand tu cesses de les visiter, tu te dessèches. »\n\nTu te dis : c'est exactement ça. Cela fait combien de temps que je n'ai pas \"vu\" le Messager d'Allâh ﷺ ? Que je n'ai pas marché à côté de lui dans une scène, que je n'ai pas écouté sa voix dans un hadith, que je n'ai pas senti son visage devant moi ?\n\nTu repenses à la dernière fois où tu as lu une histoire de sa vie. Plusieurs semaines, peut-être plusieurs mois.\n\nTu te dis : aujourd'hui, je vais le retrouver. Pas une longue lecture savante. Juste une scène. Cinq minutes. Pour me rappeler à QUI je veux ressembler.",
+        "morale": "Cet après-midi, OUVRE le module Sîra de Niyyah. RENCONTRE le Messager ﷺ dans une seule scène. Cinq minutes suffisent. Ton cœur a besoin de ce visage plus que tu ne le crois."
+      },
+      {
+        "id": "DHUHR-CARREFOUR-002",
+        "titre": "L'invocation qui te parle aujourd'hui",
+        "type_narratif": "SCENE_CONTEMPORAINE",
+        "module_cible": "dua",
+        "verbe_action": "INVOQUE",
+        "source": "Mini-scène fictive contemporaine. Création littéraire pour Niyyah.",
+        "verif_imam": false,
+        "texte": "Tu es au bureau. 13h30. Ta réunion de l'après-midi te stresse à l'avance. Tu as une décision difficile à prendre. Une présentation devant des gens importants.\n\nTu sens ton cœur battre plus vite. Les pensées tournent.\n\nTu te rappelles ce que ta mère t'a dit, il y a longtemps : « Mon fils, avant chaque grande chose, ne fonce pas. Tourne-toi vers Allâh d'abord. Demande-Lui. Une seule invocation, sincère, change le cours d'une journée. »\n\nTu te dis : qu'est-ce que je connais comme du'â pour ça ? Tu cherches dans ta mémoire. Tu connais des fragments. \"Allahumma...\" Mais quoi après ?\n\nTu te dis : il existe sûrement une du'â précise pour ce que je vis. Quelque chose que le Prophète ﷺ a prononcé, qu'on a transmis pendant 14 siècles, qui correspond exactement à mon moment.\n\nAvant 14h, dans tes cinq minutes de marge, tu peux la chercher. La lire. La dire.\n\nPas en t'imposant 50 invocations. Juste UNE. La bonne. Celle qui parle à ton moment exact.",
+        "morale": "OUVRE le module Du'a du jour de Niyyah maintenant. INVOQUE — une seule du'â qui correspond à ce que tu vis. Pas plus. Le Prophète ﷺ a transmis une du'â précise pour presque chaque situation humaine. Trouve la tienne aujourd'hui."
+      },
+      {
+        "id": "DHUHR-CARREFOUR-003",
+        "titre": "La porte que tu n'as pas voulu voir",
+        "type_narratif": "SCENE_CONTEMPORAINE",
+        "module_cible": "portes",
+        "verbe_action": "AFFRONTE",
+        "source": "Mini-scène fictive contemporaine. Création littéraire pour Niyyah.",
+        "verif_imam": false,
+        "texte": "Tu rentres dans ton bureau après la pause. Tu te rassois. Tu te connectes.\n\nUn message arrive sur ton téléphone. Notification. Un nom qui apparaît. Ton cœur se serre.\n\nC'est cette personne. Celle dont tu sais que la relation est devenue toxique. Tu lui as parlé hier soir, et tu en es ressorti vidé, en colère, mal.\n\nTu sais — au fond — qu'il y a quelque chose à régler. Pas avec elle. Avec TOI. Quelque chose dans ta façon de te laisser entraîner. Ton incapacité à dire stop. Ta peur de blesser. Ton besoin d'approbation.\n\nC'est UNE PORTE.\n\nL'islam parle d'al-Nafs — l'âme qui résiste. Et de portes par lesquelles le shaytân entre. Cette personne, dans ta vie en ce moment — c'est peut-être la porte par laquelle tu te trahis toi-même chaque semaine. Pas elle. La porte EN TOI.\n\nTu sens que tu évites de regarder ça. Tu sens que c'est plus facile de penser à autre chose. Mais ce soir, tu sais qu'il faut regarder.",
+        "morale": "OUVRE le module Portes / Bab an-Nafs de Niyyah ce soir. AFFRONTE la porte que tu évites en ce moment. Une seule porte. Pas toutes en même temps. Mais cette UNE porte que tu sais — au fond — qu'il faut commencer à fermer."
+      },
+      {
+        "id": "DHUHR-CARREFOUR-004",
+        "titre": "Le verset que tu n'as plus relu",
+        "type_narratif": "SCENE_CONTEMPORAINE",
+        "module_cible": "versets",
+        "verbe_action": "RELIS",
+        "source": "Mini-scène fictive contemporaine. Création littéraire pour Niyyah.",
+        "verif_imam": false,
+        "texte": "Tu marches dans la rue, 14h. Tu as quinze minutes avant ton prochain rendez-vous.\n\nTu repenses à un verset que tu avais lu, il y a longtemps. Tu ne sais plus exactement où il était. Mais il t'avait frappé. C'était quelque chose comme : \"Et lorsque Mes serviteurs t'interrogent à Mon sujet... Je suis tout proche...\"\n\nTu te rappelles que ce verset t'avait fait pleurer la première fois.\n\nDepuis combien de temps tu ne l'as pas relu ?\n\nDepuis combien de temps tu ne lis plus le Coran tout court — pas pour mémoriser, pas pour réciter dans la prière, juste pour LIRE ? Comme on lit une lettre d'un proche qu'on aime ?\n\nTu te dis : ces 15 minutes, je pourrais les remplir avec mon téléphone, des scrolls inutiles. Ou je pourrais les remplir avec un verset.\n\nUn seul. Pas dix pages. UN verset que tu lis, que tu médites, que tu laisses descendre en toi.",
+        "morale": "OUVRE le module Versets de Niyyah maintenant. RELIS un seul verset. Pas une longue session. UN verset. Le Coran est un livre que tu peux REVOIR comme un visage aimé — pas seulement réciter mécaniquement."
+      },
+      {
+        "id": "DHUHR-CARREFOUR-005",
+        "titre": "L'histoire que tu n'as jamais entendue",
+        "type_narratif": "SCENE_CONTEMPORAINE",
+        "module_cible": "recits_coran",
+        "verbe_action": "DÉCOUVRE",
+        "source": "Mini-scène fictive contemporaine. Création littéraire pour Niyyah.",
+        "verif_imam": false,
+        "texte": "Tu es dans le bus, 13h45. Tu rentres au boulot après ta pause déjeuner. Le bus est lent. Tu as 25 minutes.\n\nTu sors ton téléphone par habitude.\n\nTu te rappelles que ton grand-père, quand tu étais petit, te racontait des histoires des prophètes. Mûsâ traversant la mer. Ibrâhîm dans le feu. Yûsuf au fond du puits. Ces histoires t'enchantaient.\n\nMais cela fait 20 ans que tu n'en as plus écouté une seule. Tu connais les versions courtes — qu'on apprend à l'école coranique. Mais les VRAIES histoires, avec les détails, les contextes, les leçons qui t'éclairent comme adulte — tu ne les connais plus.\n\nTu te dis : il y a sûrement, dans ma religion, des dizaines de récits que je n'ai jamais lus en détail. Des histoires qu'Allâh a CHOISI de placer dans Son Livre pour les générations à venir. Et moi, je passe à côté.\n\nDans 25 minutes de bus, je peux découvrir une histoire que je n'ai jamais vraiment lue. Pas une histoire courte de Wikipédia. Une vraie. Avec les sources classiques. Avec les contextes.",
+        "morale": "OUVRE le module Récits du Coran de Niyyah pendant ton trajet. DÉCOUVRE une histoire que tu ne connais pas en détail. Le Coran contient 20 récits majeurs — combien en as-tu vraiment lus, pas juste entendus ? Cet après-midi, fais-toi ce cadeau."
+      },
+      {
+        "id": "DHUHR-CARREFOUR-006",
+        "titre": "L'intention que tu as oubliée",
+        "type_narratif": "SCENE_CONTEMPORAINE",
+        "module_cible": "scanner",
+        "verbe_action": "SCANNE",
+        "source": "Mini-scène fictive contemporaine. Création littéraire pour Niyyah.",
+        "verif_imam": false,
+        "texte": "Tu es au bureau, 14h30. Tu travailles depuis 9h. Tu as fait beaucoup de choses ce matin — emails, réunion, présentation, appels.\n\nTu prends une seconde. Tu te demandes : pour QUI je fais tout ça ?\n\nTu n'as pas de réponse immédiate. La journée a déroulé toute seule. Habitude. Inertie. Performance attendue.\n\nTu te rappelles le hadith : « Les actes ne valent que par les intentions. » Sans intention, même la meilleure action ne pèse rien dans la balance divine.\n\nEt toi, depuis 9h, tu as fait combien d'actes pour Allâh consciemment ? Tu réponds honnêtement : peut-être zéro. Tu n'as pas pris le temps de POSER l'intention.\n\nÇa veut dire que toute ta matinée — 5h30 de travail — n'a peut-être aucune valeur spirituelle. Pas par manque d'effort. Par manque de NIYYAH.\n\nIl est encore temps. Tu peux scanner ce qui reste de la journée. Reposer l'intention sur tes actes à venir. Sauver l'après-midi.",
+        "morale": "OUVRE le module Scanner Niyyah maintenant. SCANNE le reste de ta journée. Pose une intention claire sur tes prochains actes. Ce qui a été fait sans niyyah ce matin est perdu — mais ce qui reste de la journée peut encore être sauvé."
+      },
+      {
+        "id": "DHUHR-CARREFOUR-007",
+        "titre": "Le bilan que tu fuis",
+        "type_narratif": "SCENE_CONTEMPORAINE",
+        "module_cible": "bilan",
+        "verbe_action": "REGARDE",
+        "source": "Mini-scène fictive contemporaine. Création littéraire pour Niyyah.",
+        "verif_imam": false,
+        "texte": "Vendredi 14h. Tu repenses à ta semaine.\n\nLundi tu étais motivé. Tu t'étais dit que cette semaine, tu allais prier mieux, lire plus de Coran, contrôler ta langue, être patient avec ta famille.\n\nOn est vendredi. Tu n'as fait rien de tout ça avec régularité. Tu as oublié dans les six premières heures du lundi.\n\nTu te dis : encore une semaine qui se termine sans qu'on s'examine.\n\nTu sais — au fond — que sans bilan régulier, rien ne change. Tu prends les mêmes engagements le lundi suivant. Tu les oublies aussi vite. Cinq ans plus tard, tu es au même point.\n\nLe Prophète ﷺ disait : « Faites votre compte avant qu'on ne le fasse pour vous. »\n\nFaire son compte — c'est un acte. Pas une vague pensée \"j'aurais dû mieux faire\". Un VRAI bilan. Avec des questions précises. Avec une voix qui te parle sans te flatter.\n\nTu n'as pas envie. C'est inconfortable. Mais tu sais que c'est précisément CE qui te manque pour que la semaine prochaine soit différente.",
+        "morale": "OUVRE le module Bilan Hebdomadaire de Niyyah aujourd'hui ou demain. REGARDE ta semaine sans complaisance. La Voix Niyyah te parlera honnêtement. C'est inconfortable cinq minutes. Cela change les six prochains mois."
+      },
+      {
+        "id": "DHUHR-CARREFOUR-008",
+        "titre": "Le RDV manqué avec lui",
+        "type_narratif": "SCENE_CONTEMPORAINE",
+        "module_cible": "sira",
+        "verbe_action": "REJOINS",
+        "source": "Mini-scène fictive contemporaine. Création littéraire pour Niyyah.",
+        "verif_imam": false,
+        "texte": "Tu rentres à pied, fin d'après-midi. Tu repenses à un truc.\n\nQuand tu avais quinze ans, tu te disais : un jour, je vais lire toute la sîra du Prophète ﷺ. Pas en survol. En profondeur. Comme on apprend à connaître quelqu'un qu'on aime.\n\nTu as maintenant trente, quarante, cinquante ans. Tu n'as jamais vraiment fait ce travail. Des bouts. Des résumés. Des conférences sur YouTube. Mais jamais ce rapport régulier, hebdomadaire, où tu retrouves le Messager d'Allâh ﷺ dans des scènes précises de sa vie.\n\nTu te dis : pourquoi je ne le fais pas ?\n\nLa réponse honnête : par paresse. Parce que ça paraît grand. Parce que je me dis qu'il faut un bloc de temps que je n'ai pas.\n\nMais en fait — il suffirait d'un RDV par semaine. Dix minutes. Une scène. Pendant un an, ça fait 52 scènes. Pendant trois ans, près de 200. Au bout de quelques années, tu connais le Prophète ﷺ comme un proche.",
+        "morale": "OUVRE le module Sîra de Niyyah. PRENDS un RDV régulier — pas une obligation lourde, juste une scène par semaine. Le vendredi, par exemple. Au bout d'un an, tu auras rencontré le Messager d'Allâh ﷺ 52 fois. C'est un chemin qui transforme."
+      },
+      {
+        "id": "DHUHR-CARREFOUR-009",
+        "titre": "L'invocation pour ce qui te ronge",
+        "type_narratif": "SCENE_CONTEMPORAINE",
+        "module_cible": "dua",
+        "verbe_action": "DEMANDE",
+        "source": "Mini-scène fictive contemporaine. Création littéraire pour Niyyah.",
+        "verif_imam": false,
+        "texte": "Tu es chez toi, 19h. Tu finis ta journée. Tu repenses à ce qui t'a stressé toute la semaine.\n\nUne anxiété qui revient. Une question financière non résolue. Une santé qui te préoccupe. Une personne que tu n'arrives pas à pardonner. Une faute que tu portes.\n\nTu te dis : j'ai parlé de ça à mon conjoint. À mon ami. À mon père. J'ai cherché des conseils sur Google.\n\nMais je n'en ai pas parlé à QUI tient les clés.\n\nLe Prophète ﷺ disait : « L'invocation est l'arme du croyant. »\n\nTu te demandes : combien de fois cette semaine ai-je fait une vraie invocation pour ce sujet ? Pas une formule rituelle prononcée vite. Une INVOCATION longue, sincère, où je dépose ce poids devant Allâh ?\n\nLa réponse honnête : peut-être zéro. Tu as parlé à tous SAUF Lui sur ce sujet précis.",
+        "morale": "OUVRE le module Du'a du jour de Niyyah ce soir. CHERCHE une invocation qui correspond à ce qui te ronge. Pas une du'â générique. Une PRÉCISE. Le Prophète ﷺ en a transmis pour la dette, l'anxiété, la peur, le pardon, la santé, la décision. Trouve la tienne. Et dis-la, sincèrement."
+      },
+      {
+        "id": "DHUHR-CARREFOUR-010",
+        "titre": "La porte du regard",
+        "type_narratif": "SCENE_CONTEMPORAINE",
+        "module_cible": "portes",
+        "verbe_action": "FERME",
+        "source": "Mini-scène fictive contemporaine. Création littéraire pour Niyyah.",
+        "verif_imam": false,
+        "texte": "Tu es dans le métro, 13h. Une jeune femme s'assoit en face de toi. Habillée légèrement. Ton regard glisse, par instinct.\n\nTu te reprends immédiatement. Tu détournes les yeux. Tu sais le verset 24:30 : « Dis aux croyants de baisser leurs regards. »\n\nMais c'est plus que cet instant. Tu te rends compte que pendant tout l'été, ton regard glisse souvent. Sur les écrans aussi. Dans le métro. Sur la rue. Tu ne provoques rien — mais tu ne fermes pas non plus assez vite la porte.\n\nC'est UNE PORTE — la porte du regard. Bab an-nazar.\n\nElle paraît mineure. Elle ne l'est pas. Elle est la porte par laquelle entre, lentement, une fissuration du cœur. À chaque regard non baissé, le cœur s'habitue. À chaque fois, il devient moins sensible.\n\nÀ long terme, c'est ainsi qu'on perd la khushûʿ dans la prière. C'est ainsi qu'on perd le goût du Coran. Pas par un grand péché. Par mille petites portes ouvertes.\n\nTu sens que tu dois travailler là-dessus.",
+        "morale": "OUVRE le module Portes de Niyyah. FERME la porte du regard cette semaine. Pas en théorie. En pratique : à chaque fois que ton regard glisse, ramène-le immédiatement. Sept jours d'effort changent une habitude installée depuis des années."
+      },
+      {
+        "id": "DHUHR-CARREFOUR-011",
+        "titre": "Le verset qui répond à ta question",
+        "type_narratif": "SCENE_CONTEMPORAINE",
+        "module_cible": "versets",
+        "verbe_action": "CHERCHE",
+        "source": "Mini-scène fictive contemporaine. Création littéraire pour Niyyah.",
+        "verif_imam": false,
+        "texte": "Tu es au café, 13h, en train de boire ton thé après le déjeuner. Une question te tourne dans la tête depuis trois jours.\n\nUne décision à prendre. Un choix de vie. Tu hésites entre deux voies. Tu en as parlé à plein de gens. Chacun te donne son avis selon SES valeurs.\n\nTu te dis : si je posais cette question à Allâh, qu'est-ce qu'Il me répondrait ?\n\nTu sais — au fond — que la réponse est dans le Coran. Pas explicitement comme un GPS qui dit \"tourne à droite\". Mais quelque part, dans un verset, un principe que tu n'as pas encore croisé, qui éclairerait précisément ton dilemme.\n\nTu n'as pas pris le temps de chercher. Tu as cherché des conseils humains — pas des conseils divins.\n\nTu te dis : et si je passais 15 minutes à parcourir le Coran avec ma question précise en tête, qu'est-ce qui pourrait surgir ?",
+        "morale": "OUVRE le module Versets de Niyyah. CHERCHE avec ta question précise en tête. Le Coran est dialogal — il répond à qui le consulte avec une vraie question. Pas en ouvrant au hasard. En parcourant attentivement. Tu seras peut-être surpris de ce que tu trouves."
+      },
+      {
+        "id": "DHUHR-CARREFOUR-012",
+        "titre": "L'histoire qui te ressemble",
+        "type_narratif": "SCENE_CONTEMPORAINE",
+        "module_cible": "recits_coran",
+        "verbe_action": "RECONNAIS",
+        "source": "Mini-scène fictive contemporaine. Création littéraire pour Niyyah.",
+        "verif_imam": false,
+        "texte": "Tu rentres à pied, fin de journée. Tu repenses à ce que tu vis en ce moment.\n\nTu te sens parfois bloqué. Comme si Allâh t'avait mis dans une situation injuste. Tu as fait des efforts, tu as été patient, et pourtant ça n'avance pas. Tu te dis presque, par moments, qu'Allâh t'a oublié.\n\nTu te rappelles soudainement de Yûsuf — Joseph. Dans le puits, vendu, accusé à tort, jeté en prison. Pendant DES ANNÉES. Sans que rien ne change. Sans qu'on l'écoute. Sans qu'on le voie.\n\nEt à la fin, l'élévation. La providence d'Allâh qui apparaît seulement à l'envers de toute cette patience.\n\nTu te dis : peut-être que ce que je vis, ce n'est pas un abandon. Peut-être que c'est mon \"puits\". Mon \"prison\". Le moment où Allâh me forme silencieusement avant l'élévation.\n\nMais pour le RECONNAÎTRE, il faudrait que je relise l'histoire de Yûsuf en détail. Pas la version courte. Pas le résumé. Le VRAI récit, avec les nuances, les détails de sa patience, la psychologie de ses épreuves.",
+        "morale": "OUVRE le module Récits du Coran de Niyyah ce soir. RECONNAIS-toi dans l'histoire d'un prophète qui a vécu ce que tu vis maintenant. Les 20 récits coraniques ne sont pas des contes anciens — ce sont des miroirs. Trouve le tien."
+      },
+      {
+        "id": "DHUHR-CARREFOUR-013",
+        "titre": "Le scanner du matin oublié",
+        "type_narratif": "SCENE_CONTEMPORAINE",
+        "module_cible": "scanner",
+        "verbe_action": "POSE",
+        "source": "Mini-scène fictive contemporaine. Création littéraire pour Niyyah.",
+        "verif_imam": false,
+        "texte": "Tu es au bureau, 14h. Tu réalises que ce matin, tu t'es levé en mode automatique. Douche, café, métro, bureau. Pas une seconde pour poser une intention sur la journée.\n\nTu t'es jeté dans le travail comme on se jette dans une rivière. Tu as bien fait des choses. Mais tu n'as pas posé de balise spirituelle.\n\nTu te dis : si je continue comme ça, ma vie est une suite de journées efficaces mais vides. Comme une voiture qui roule beaucoup sans destination.\n\nIl est encore temps. La journée n'est pas finie. Il reste cinq, peut-être six heures éveillé. Si tu poses MAINTENANT une intention claire pour ce qui reste — une intention que tu peux suivre — la fin de journée peut être rachetée.\n\nUne intention simple. Pas dix. Une. Par exemple : \"Allâh, ce qui reste de mon après-midi, je le fais pour Toi. Si je travaille, c'est pour subvenir à ma famille avec hilal. Si je parle à un collègue, je tiens ma langue. Si je rentre chez moi, j'embrasse mes enfants comme tu m'as embrassé par leur existence.\"",
+        "morale": "OUVRE le module Scanner Niyyah de Niyyah maintenant. POSE une intention claire sur ce qui reste de la journée. Pas dix intentions — une SEULE. Suffisamment précise pour que tu puisses la vérifier en fin de journée. Le reste de la journée peut encore être rattrapé."
+      },
+      {
+        "id": "DHUHR-CARREFOUR-014",
+        "titre": "Le bilan que tu n'oses pas faire",
+        "type_narratif": "SCENE_CONTEMPORAINE",
+        "module_cible": "bilan",
+        "verbe_action": "OSE",
+        "source": "Mini-scène fictive contemporaine. Création littéraire pour Niyyah.",
+        "verif_imam": false,
+        "texte": "Tu rentres chez toi, vendredi 19h. La semaine se termine.\n\nTu pourrais — comme d'habitude — passer dans la routine du week-end. Courses, ménage, sortie, Netflix, dimanche.\n\nMais tu sens, en passant la porte de ton appart, une petite voix qui te dit : « Tu as tenu un mois sans faire un vrai bilan. La semaine prochaine, encore les mêmes erreurs. Encore les mêmes oublis. Quand vas-tu t'arrêter pour regarder ? »\n\nTu sais que cette voix a raison. Tu n'oses pas la suivre parce que regarder honnêtement, ça pique. Tu vas voir tes faiblesses. Tu vas voir tes lâchetés. Tu vas voir les promesses que tu n'as pas tenues.\n\nMais sans ce regard, rien ne change.\n\nTu te dis : ce week-end, 15 minutes. Pas plus. 15 minutes pour ouvrir le bilan, lire les questions, répondre honnêtement. La Voix Niyyah ne va pas te flageller — elle va te parler comme un ami qui t'aime. Mais qui ne ment pas.",
+        "morale": "OUVRE le module Bilan Hebdomadaire de Niyyah ce week-end. OSE le faire. 15 minutes — pas plus. Tu n'es pas obligé de tout changer la semaine prochaine. Juste de REGARDER honnêtement cette semaine. C'est le premier pas, et le plus difficile."
+      },
+      {
+        "id": "DHUHR-CARREFOUR-015",
+        "titre": "Le compagnon que tu n'as pas vu depuis longtemps",
+        "type_narratif": "SCENE_CONTEMPORAINE",
+        "module_cible": "sira",
+        "verbe_action": "RETROUVE",
+        "source": "Mini-scène fictive contemporaine. Création littéraire pour Niyyah.",
+        "verif_imam": false,
+        "texte": "Tu prends un café, 13h. Tu vois passer dans la rue un homme âgé qui ressemble à ton oncle décédé il y a deux ans. Ton cœur se serre.\n\nTu te rappelles ton oncle. Il te racontait, quand tu étais enfant, des histoires des Compagnons du Prophète ﷺ. Abû Bakr, ʿUmar, ʿUthmân, ʿAlî. Khâlid ibn al-Walîd. Bilâl al-Habachi. Salmân al-Fârisî.\n\nTu te dis : depuis combien de temps je n'ai pas \"vu\" ces gens-là ? Combien de temps qu'aucune de ces figures ne s'est tenue à côté de moi dans ma vie quotidienne ?\n\nIls étaient des humains comme toi. Pas des saints lointains. Des marchands, des artisans, des esclaves affranchis, des bergers. Et leur compagnie spirituelle peut encore te tenir aujourd'hui — si tu les fréquentes.\n\nMais tu ne les fréquentes plus. Tu les as laissés dans la mémoire ancienne. Tu vis avec les célébrités contemporaines. Pas avec eux.",
+        "morale": "OUVRE le module Sîra de Niyyah. RETROUVE l'un des Compagnons que tu connaissais enfant et que tu as oublié adulte. Une scène. Cinq minutes. Le visage d'un Compagnon retrouvé peut, parfois, te tenir mieux compagnie qu'un long appel téléphonique. Réinvite-les dans ta vie."
+      },
+      {
+        "id": "DHUHR-CARREFOUR-016",
+        "titre": "L'invocation collective oubliée",
+        "type_narratif": "SCENE_CONTEMPORAINE",
+        "module_cible": "dua",
+        "verbe_action": "INTERCÈDE",
+        "source": "Mini-scène fictive contemporaine. Création littéraire pour Niyyah.",
+        "verif_imam": false,
+        "texte": "Tu vois aux infos, 13h, des images de la souffrance dans le monde. Un conflit qui dure. Des enfants. Une famine. Tu changes de chaîne — tu n'en peux plus.\n\nMais tu ressens un poids. Tu te dis : qu'est-ce que je peux faire ? Je suis loin. Je n'ai pas les moyens d'aller là-bas. Je donne de temps en temps à une asso, mais c'est tout.\n\nTu te rappelles le hadith : « L'invocation pour son frère absent — l'ange dit « amîn » et te répond la même chose pour toi-même. »\n\nL'invocation pour la communauté souffrante n'est pas un acte secondaire. Elle est, dans certains hadiths, considérée comme l'une des armes les plus puissantes du musulman. \n\nTu n'as pas fait d'invocation sincère pour les souffrants depuis combien de temps ? Peut-être plusieurs semaines. Peut-être un mois. Tu \"sais\" intellectuellement qu'ils souffrent. Mais ton cœur n'a pas pris cinq minutes pour les remettre dans la prière.",
+        "morale": "OUVRE le module Du'a du jour de Niyyah. INTERCÈDE pour la communauté souffrante. Cinq minutes d'invocation sincère pour ceux qui n'ont rien d'autre que tes prières. C'est un acte qui dépasse les frontières et qui te rapporte autant que ce que tu offres."
+      },
+      {
+        "id": "DHUHR-CARREFOUR-017",
+        "titre": "La porte de la langue",
+        "type_narratif": "SCENE_CONTEMPORAINE",
+        "module_cible": "portes",
+        "verbe_action": "TIENS",
+        "source": "Mini-scène fictive contemporaine. Création littéraire pour Niyyah.",
+        "verif_imam": false,
+        "texte": "Tu sors de réunion, 14h. Tu as bavardé avec un collègue, et — tu t'en aperçois maintenant — tu as parlé en mal d'un autre collègue absent. Pas méchamment. Juste un commentaire. \"Il est sympa mais il est pas très efficace ces derniers temps.\"\n\nTu te dis : c'est de la ghîba. Le hadith dit que la ghîba consiste à mentionner quelque chose de ton frère qu'il n'aimerait pas. Tu viens de le faire. En 30 secondes. Sans préméditation.\n\nC'est UNE PORTE. La porte de la langue. Bab al-lisân.\n\nElle est, selon le Prophète ﷺ, l'une des plus grandes portes par lesquelles le shaytân entre. Et toi, tu la laisses entrouverte — pas grande ouverte, mais entrouverte — plusieurs fois par jour. Une petite remarque ici. Une plaisanterie sur quelqu'un là. Un commentaire en passant.\n\nDans la balance, cela s'accumule. Tu accumules des sayyi'ât sans même t'en rendre compte. Et ces sayyi'ât, tu les portes envers la personne absente — qui aura un \"compte\" sur tes hasanât au Jour du Jugement.",
+        "morale": "OUVRE le module Portes de Niyyah. TIENS la porte de ta langue cette semaine. Discipline simple : à chaque fois que tu vas dire quelque chose sur un absent, demande-toi 'Le dirais-je devant lui ?' Si non, tais-toi. Sept jours d'effort transforment une habitude vieille de années."
+      },
+      {
+        "id": "DHUHR-CARREFOUR-018",
+        "titre": "Le verset qui te connaît",
+        "type_narratif": "SCENE_CONTEMPORAINE",
+        "module_cible": "versets",
+        "verbe_action": "LAISSE-TOI LIRE",
+        "source": "Mini-scène fictive contemporaine. Création littéraire pour Niyyah.",
+        "verif_imam": false,
+        "texte": "Tu es seul chez toi, 14h, jour de congé. Tu pourrais faire mille choses. Tu n'as envie de rien.\n\nTu as une petite tristesse vague. Pas une grosse dépression. Juste un voile gris. Tu ne sais même pas pourquoi.\n\nTu te dis : si je sortais le Coran maintenant — pas pour réciter par habitude, mais pour me laisser LIRE par lui — qu'est-ce qui se passerait ?\n\nC'est un renversement étrange. Le Coran n'est pas seulement un texte que TU lis. C'est aussi un texte qui te LIT, qui sait des choses sur toi, qui peut te parler exactement à l'endroit où tu es.\n\nSi tu l'ouvres aujourd'hui, dans cet état précis, tu vas peut-être tomber sur un verset qui te parlera précisément de ce voile gris que tu portes. Pas par magie. Par cette particularité du Coran d'être toujours actuel.\n\nMais tu n'oses pas l'ouvrir. Tu préfères scroller. Tu te dis que tu n'es pas \"en état\" de lire le Coran.\n\nEn fait, c'est exactement le contraire. C'est PRÉCISÉMENT dans cet état que tu en as le plus besoin.",
+        "morale": "OUVRE le module Versets de Niyyah maintenant. LAISSE-TOI LIRE — pas l'inverse. Ouvre à un endroit, lis un passage, laisse-le te parler. Le Coran a 14 siècles d'expérience à parler aux cœurs gris. Donne-lui une chance d'opérer sur le tien."
+      }
     ]
   }
 }
