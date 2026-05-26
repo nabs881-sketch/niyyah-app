@@ -1440,7 +1440,7 @@ const LEVELS = [
         { id: 'duaa_jour', minVague: 3, label: 'Du\u2019a du jour', get sub() { var d = getDuaaJourPreview(); return 'Jour ' + d.jour + '/253'; }, arabic: '\u062F\u064F\u0639\u064E\u0627\u0621', paths: ['reconnecter','routine','sacraliser'], block: 'jour', category: 'science' },
         { id: 'sira', minVague: 3, label: 'S\u00eera du Proph\u00e8te \uFDFA', sub: 'Un rendez-vous chaque jour', arabic: '\u0627\u0644\u0633\u0651\u0650\u064A\u0631\u064E\u0629\u064F \u0627\u0644\u0646\u0651\u064E\u0628\u064E\u0648\u0650\u064A\u0651\u064E\u0629\u064F', paths: ['reconnecter','routine','sacraliser'], block: 'jour', category: 'science' },
         { id: 'quran_read', minVague: 3, label: 'Lecture du Coran', get sub() { return 'Verset ' + _getVersetProgress() + ' / 6236'; }, arabic: '\u0642\u0650\u0631\u064E\u0627\u0621\u064E\u0629\u064F \u0627\u0644\u0652\u0642\u064F\u0631\u0652\u0622\u0646\u0650', paths: ['routine','sacraliser'], block: 'jour', category: 'science' },
-        { id: 'arabic', minVague: 4, label: "Apprentissage de l'arabe", sub: 'Quelques minutes par jour', arabic: '\u062A\u064E\u0639\u064E\u0644\u0651\u064F\u0645\u064F \u0627\u0644\u0652\u0639\u064E\u0631\u064E\u0628\u0650\u064A\u0651\u064E\u0629\u0650', paths: ['sacraliser'], block: 'jour', category: 'science' },
+        { id: 'lisan', minVague: 3, label: 'Lis\u00e2n al-Qur\u2019\u00e2n', get sub() { var d = _getLisanDay(); return 'Mot ' + d + '/30 \u2014 Palier 1'; }, arabic: '\u0644\u0650\u0633\u064E\u0627\u0646\u064F \u0627\u0644\u0642\u064F\u0631\u0622\u0646\u0650', paths: ['reconnecter','routine','sacraliser'], block: 'jour', category: 'science' },
         { id: 'vie_prophetes', minVague: 4, label: 'Histoires des Proph\u00e8tes', get sub() { var p = getPropheteJour(); if (!p.prophete) return 'Nouh, Ibrahim, Moussa, Issa\u2026'; var ep = p.episode_num ? ' \u2014 \u00c9p. ' + p.episode_num + '/' + p.episode_total : ''; return p.prophete + ep + ' \u2014 ' + (p.titre || '') + ' \u00b7 Jour ' + (p.jour || '?') + '/77'; }, arabic: '\u0642\u064E\u0635\u064E\u0635\u064F \u0627\u0644\u0623\u064E\u0646\u0628\u0650\u064A\u064E\u0627\u0621\u0650', paths: ['routine','sacraliser'], block: 'jour', category: 'science', hadith: '"Nous te racontons le meilleur des r\u00e9cits" \u2014 Coran 12:3', source: 'Yusuf 12:3' },
         { id: 'recits_coran', minVague: 3, label: 'R\u00e9cits du Coran', sub: 'Histoires et paraboles r\u00e9v\u00e9l\u00e9es', arabic: '\u0642\u064E\u0635\u064E\u0635\u064F \u0627\u0644\u0642\u064F\u0631\u0622\u0646', paths: ['reconnecter','routine','sacraliser'], block: 'jour', category: 'science' },
         { id: 'vie_compagnons', minVague: 4, label: 'Vie des Compagnons', get sub() { var c = getCompagnonJour(); if (!c.compagnon) return 'Abu Bakr, Omar, Othman, Ali\u2026'; var ep = c.episode_num ? ' \u2014 \u00c9p. ' + c.episode_num + '/' + c.episode_total : ''; return c.compagnon + ep + ' \u2014 ' + (c.titre || '') + ' \u00b7 Jour ' + (c.jour || '?') + '/82'; }, arabic: '\u0633\u0650\u064A\u064E\u0631\u064F \u0627\u0644\u0635\u0651\u064E\u062D\u064E\u0627\u0628\u064E\u0629\u0650', paths: ['routine','sacraliser'], block: 'jour', category: 'science', hadith: '"Mes Compagnons sont comme les \u00e9toiles \u2014 qui que vous suiviez, vous serez guid\u00e9s" \u2014 Bayhaqi', source: 'Bayhaqi' },
@@ -2634,7 +2634,7 @@ function renderLevel(levelId) {
         const _tlCurrent = (!checked && !_firstUncheckedFound) ? (_firstUncheckedFound = true, ' timeline-current') : '';
         const _tlOpacity = checked ? 'opacity:0.3;' : '';
         var _tl = tI(item,'label'), _ts = tI(item,'sub');
-        var _isKnowledge = ['savais_tu','fiqh_jour','hadith1','duaa_jour','vie_compagnons','vie_prophetes','quran_read','sira','podcast','recits_coran'].indexOf(item.id) !== -1;
+        var _isKnowledge = ['savais_tu','fiqh_jour','hadith1','duaa_jour','vie_compagnons','vie_prophetes','quran_read','sira','podcast','recits_coran','lisan'].indexOf(item.id) !== -1;
         var _checkClick = _isKnowledge ? ' onclick="event.stopPropagation();toggleItem(\'' + item.id + '\',event)"' : '';
         var _knowledgeBg = _isKnowledge ? 'background:rgba(200,168,75,0.08);' : '';
         const customClick = item.id === 'savais_tu'
@@ -2657,6 +2657,8 @@ function renderLevel(levelId) {
           ? 'openPodcastPicker();'
           : item.id === 'recits_coran'
           ? 'openVueRecitsCoran();'
+          : item.id === 'lisan'
+          ? 'openVueLisan();'
           : 'toggleItem(\'' + item.id + '\',event)';
         var shareBtn = '';
         if (_isKnowledge) {
@@ -16347,7 +16349,7 @@ function openVueAuFilDuJour() {
     const ar = it.arabic ? '<div class="arabic">' + it.arabic + '</div>' : '';
     const sub = it.sub ? '<div class="sub">' + it.sub + '</div>' : '';
     const audio = it.audio ? '<button class="btn-audio" data-audio-id="' + it.id + '" onclick="event.stopPropagation();playAudioById(this)">🔊</button>' : '';
-    var _knowledgeIds = ['savais_tu','fiqh_jour','hadith1','duaa_jour','vie_compagnons','vie_prophetes','quran_read','sira','podcast','recits_coran'];
+    var _knowledgeIds = ['savais_tu','fiqh_jour','hadith1','duaa_jour','vie_compagnons','vie_prophetes','quran_read','sira','podcast','recits_coran','lisan'];
     var _isKnowledgeFil = _knowledgeIds.indexOf(it.id) !== -1;
     var _coranBtn = it.coranPicker ? '<button class="btn-audio" onclick="event.stopPropagation();openCoranPicker(event)" style="font-size:12px;padding:4px 10px;width:auto;white-space:nowrap;font-family:\'Cormorant Garamond\',serif;color:#C8A84A;border:1px solid rgba(200,168,75,0.3);border-radius:8px;background:transparent;cursor:pointer;">\u00c9couter</button>' : '';
     var _filFlag = 'window._knowledgeFromFil=true;';
@@ -16361,6 +16363,7 @@ function openVueAuFilDuJour() {
       : it.id === 'quran_read' ? _filFlag + 'openVueVersetJour();'
       : it.id === 'podcast' ? _filFlag + 'openPodcastPicker();'
       : it.id === 'recits_coran' ? _filFlag + 'openVueRecitsCoran();'
+      : it.id === 'lisan' ? _filFlag + 'openVueLisan();'
       : it.coranPicker ? 'openCoranPicker(event);'
       : 'toggleItem(\'' + it.id + '\',event); openVueAuFilDuJour();';
     var _readBtn = _isKnowledgeFil ? '<button style="background:none;border:none;cursor:pointer;flex-shrink:0;align-self:center;padding:8px 4px;margin:0;position:relative;z-index:10;isolation:isolate;" onclick="event.stopPropagation();' + _click + '"><svg width="14" height="22" viewBox="0 0 14 22" style="pointer-events:none;" aria-hidden="true"><path d="M3 4 L10 11 L3 18" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>' : '';
@@ -16468,6 +16471,125 @@ function openVueSavaisTu() {
   _vBtn.onclick = function() { v.classList.add('hidden'); validerLecture('savais_tu'); };
 }
 window.openVueSavaisTu = openVueSavaisTu;
+
+/* ─────────────────────────────────────────────
+   LIS\u00c2N AL-QUR\u2019\u00c2N — 1 mot du Coran par jour
+   ───────────────────────────────────────────── */
+window.LISAN_DATA = null;
+(function _loadLisan() {
+  fetch('./data/lisan/lisan_palier1_tranche1.json')
+    .then(function(r) { return r.ok ? r.json() : null; })
+    .then(function(d) { if (d && d.items) window.LISAN_DATA = d.items; })
+    .catch(function() {});
+})();
+
+function _getLisanDay() {
+  var start = safeGetItem('niyyah_lisan_start');
+  if (!start) { safeSetItem('niyyah_lisan_start', todayKey()); return 1; }
+  var s = new Date(start), n = new Date(todayKey());
+  var diff = Math.floor((n - s) / 86400000) + 1;
+  var total = (window.LISAN_DATA && window.LISAN_DATA.length) || 30;
+  return Math.min(diff, total);
+}
+window._getLisanDay = _getLisanDay;
+
+function _getLisanMot() {
+  if (!window.LISAN_DATA || window.LISAN_DATA.length === 0) return null;
+  var day = _getLisanDay();
+  return window.LISAN_DATA[day - 1] || window.LISAN_DATA[0];
+}
+
+function openVueLisan() {
+  _saveScroll();
+  a11yOnOverlayOpen();
+  var mot = _getLisanMot();
+  if (!mot) { showToast('Chargement en cours...'); return; }
+
+  var existing = document.getElementById('lisan-overlay');
+  if (existing) existing.remove();
+
+  var ov = document.createElement('div');
+  ov.id = 'lisan-overlay';
+  ov.style.cssText = 'position:fixed;inset:0;z-index:9999;background:#0A0908;overflow-y:auto;-webkit-overflow-scrolling:touch;animation:fadeSlideV2 0.4s ease forwards;';
+
+  var day = _getLisanDay();
+  var total = window.LISAN_DATA.length;
+
+  var html = '<div style="max-width:420px;margin:0 auto;padding:24px 20px 40px;">';
+  // Header
+  html += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;">';
+  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:11px;letter-spacing:2px;color:rgba(200,168,75,0.5);">LIS\u00c2N AL-QUR\u2019\u00c2N \u00b7 Mot ' + day + '/' + total + '</div>';
+  html += '<button onclick="document.getElementById(\'lisan-overlay\').remove();_restoreScroll();" style="background:none;border:none;color:rgba(255,255,255,0.4);font-size:22px;cursor:pointer;padding:4px 8px;">\u00d7</button>';
+  html += '</div>';
+
+  // Mot arabe (grand)
+  html += '<div style="text-align:center;margin-bottom:8px;">';
+  html += '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:52px;color:#C8A84A;direction:rtl;line-height:1.3;">' + (mot.mot_arabe || '') + '</div>';
+  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;color:rgba(240,234,214,0.6);font-style:italic;margin-top:4px;">\u00ab ' + (mot.translitteration || '') + ' \u00bb</div>';
+  html += '</div>';
+
+  // Traductions
+  html += '<div style="text-align:center;margin-bottom:24px;">';
+  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;color:#C8A84A;font-style:italic;">' + (mot.traductions_fr || []).join(' \u00b7 ') + '</div>';
+  html += '</div>';
+
+  // Racine
+  if (mot.racine && mot.racine.lettres !== '\u2014') {
+    html += '<div style="border:1px solid rgba(200,168,75,0.15);border-radius:10px;padding:12px 16px;margin-bottom:20px;background:rgba(200,168,75,0.04);">';
+    html += '<div style="font-family:\'Inter\',sans-serif;font-size:11px;color:rgba(200,168,75,0.5);letter-spacing:1px;margin-bottom:4px;">RACINE</div>';
+    html += '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:22px;color:#C8A84A;direction:rtl;display:inline;">' + mot.racine.lettres + '</div>';
+    html += '<span style="font-family:\'Cormorant Garamond\',serif;font-size:14px;color:rgba(240,234,214,0.5);margin-left:12px;">(' + mot.racine.translitteration + ') \u2014 ' + mot.racine.sens_fondamental + '</span>';
+    html += '</div>';
+  }
+
+  // Verset exemple
+  if (mot.exemple_verset) {
+    var v = mot.exemple_verset;
+    html += '<div style="border:1px solid rgba(200,168,75,0.12);border-radius:10px;padding:16px;margin-bottom:20px;background:rgba(200,168,75,0.03);">';
+    html += '<div style="font-family:\'Inter\',sans-serif;font-size:11px;color:rgba(200,168,75,0.5);letter-spacing:1px;margin-bottom:10px;">CORAN ' + (v.reference || '') + '</div>';
+    html += '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:24px;color:rgba(240,234,214,0.9);direction:rtl;line-height:1.8;margin-bottom:8px;">' + (v.arabe || '') + '</div>';
+    html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;color:rgba(240,234,214,0.5);font-style:italic;margin-bottom:6px;">' + (v.translitteration || '') + '</div>';
+    html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;color:rgba(240,234,214,0.8);line-height:1.6;">' + (v.traduction_fr || '') + '</div>';
+    if (v.audio_url) {
+      html += '<button onclick="var a=new Audio(\'' + v.audio_url + '\');a.play().catch(function(){});" style="margin-top:10px;background:none;border:1px solid rgba(200,168,75,0.25);border-radius:8px;padding:6px 16px;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:13px;cursor:pointer;">\ud83d\udd0a \u00c9couter le verset</button>';
+    }
+    html += '</div>';
+  }
+
+  // Famille de mots
+  if (mot.famille_mots && mot.famille_mots.length > 0) {
+    html += '<div style="margin-bottom:20px;">';
+    html += '<div style="font-family:\'Inter\',sans-serif;font-size:11px;color:rgba(200,168,75,0.5);letter-spacing:1px;margin-bottom:8px;">FAMILLE DU MOT</div>';
+    mot.famille_mots.forEach(function(fm) {
+      html += '<div style="display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid rgba(200,168,75,0.08);">';
+      html += '<span style="font-family:\'Scheherazade New\',Amiri,serif;font-size:20px;color:#C8A84A;direction:rtl;min-width:60px;text-align:right;">' + fm.arabe + '</span>';
+      html += '<span style="font-family:\'Cormorant Garamond\',serif;font-size:13px;color:rgba(240,234,214,0.5);font-style:italic;min-width:70px;">' + fm.translit + '</span>';
+      html += '<span style="font-family:\'Cormorant Garamond\',serif;font-size:14px;color:rgba(240,234,214,0.7);">' + fm.sens + '</span>';
+      html += '</div>';
+    });
+    html += '</div>';
+  }
+
+  // Notes pédagogiques
+  if (mot.notes_pedagogiques) {
+    html += '<div style="border-top:1px solid rgba(200,168,75,0.1);padding-top:16px;margin-bottom:20px;">';
+    html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(240,234,214,0.6);line-height:1.7;">' + mot.notes_pedagogiques + '</div>';
+    html += '</div>';
+  }
+
+  // Fréquence
+  html += '<div style="text-align:center;margin-bottom:24px;">';
+  html += '<div style="font-family:\'Inter\',sans-serif;font-size:11px;color:rgba(200,168,75,0.4);">Appara\u00eet ' + (mot.frequence_coran || '?') + ' fois dans le Coran</div>';
+  html += '</div>';
+
+  // Bouton validation
+  html += '<button onclick="validerLecture(\'lisan\');document.getElementById(\'lisan-overlay\').remove();_restoreScroll();" style="display:block;width:100%;padding:16px 0;border:none;border-radius:12px;background:linear-gradient(135deg,#C8A84A,#A68B30);color:#0A0908;font-family:\'Cormorant Garamond\',serif;font-size:16px;font-weight:700;cursor:pointer;">\u2713 J\u2019ai appris ce mot</button>';
+
+  html += '</div>';
+  ov.innerHTML = html;
+  document.body.appendChild(ov);
+}
+window.openVueLisan = openVueLisan;
 
 function openVueFiqhJour() {
   _saveScroll();

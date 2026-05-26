@@ -1,0 +1,872 @@
+{
+  "module": "LISAN_AL_QURAN",
+  "palier": 1,
+  "tranche": 1,
+  "version": "1.0",
+  "date_production": "2026-05-26",
+  "format": "1 mot par jour - apprentissage progressif",
+  "but": "Compréhension passive du Coran à l'écoute. Couverture estimée tranche 1 : ~25% des occurrences du Coran (300 mots = ~70%).",
+  "source_audio": "EveryAyah.com - Mishary Alafasy 128kbps",
+  "regles_audit": {
+    "translitterations": "Système académique (â = alif long, î = yâʾ long, û = wâw long, ʾ = hamza, ʿ = ʿayn)",
+    "frequences": "Sources : Quranic Arabic Corpus (corpus.quran.com)",
+    "racines": "Validées via Lane's Lexicon et corpus.quran.com",
+    "audio_urls": "Format everyayah.com/data/Alafasy_128kbps/SSSAAA.mp3 où SSS=sourate AAA=verset"
+  },
+  "items": [
+    {
+      "id": "lisan_001",
+      "ordre": 1,
+      "palier": 1,
+      "mot_arabe": "اللّٰه",
+      "translitteration": "Allâh",
+      "traductions_fr": ["Allâh", "Dieu"],
+      "frequence_coran": 2699,
+      "racine": {
+        "lettres": "أ ل ه",
+        "translitteration": "ʾ-l-h",
+        "sens_fondamental": "divinité, ce qui est adoré"
+      },
+      "exemple_verset": {
+        "reference": "1:1",
+        "arabe": "بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيمِ",
+        "translitteration": "Bismi-llâhi-r-Rahmâni-r-Rahîm",
+        "traduction_fr": "Au nom d'Allâh, le Tout-Miséricordieux, le Très-Miséricordieux",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/001001.mp3"
+      },
+      "famille_mots": [],
+      "type_grammatical": "nom_propre",
+      "difficulte": 1,
+      "notes_pedagogiques": "Le nom d'Allâh. Mot le plus important du Coran. Toujours précédé de l'article 'al' qu'on entend dans la prononciation : 'al-lâh'."
+    },
+    {
+      "id": "lisan_002",
+      "ordre": 2,
+      "palier": 1,
+      "mot_arabe": "رَبّ",
+      "translitteration": "Rabb",
+      "traductions_fr": ["Seigneur", "Maître", "Éducateur"],
+      "frequence_coran": 967,
+      "racine": {
+        "lettres": "ر ب ب",
+        "translitteration": "r-b-b",
+        "sens_fondamental": "élever, éduquer, prendre soin de"
+      },
+      "exemple_verset": {
+        "reference": "1:2",
+        "arabe": "ٱلْحَمْدُ لِلّٰهِ رَبِّ ٱلْعَالَمِينَ",
+        "translitteration": "Al-hamdu li-llâhi rabbi-l-ʿâlamîn",
+        "traduction_fr": "Louange à Allâh, Seigneur des mondes",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/001002.mp3"
+      },
+      "famille_mots": [
+        {"arabe": "تَرْبِيَة", "translit": "tarbiya", "sens": "éducation"},
+        {"arabe": "رَبَّانِيّ", "translit": "rabbânî", "sens": "divin, qui appartient au Seigneur"},
+        {"arabe": "أَرْبَاب", "translit": "arbâb", "sens": "seigneurs (pluriel)"}
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Plus que 'Seigneur' au sens politique. Rabb désigne Celui qui prend soin, élève, fait grandir. Mot-clé pour comprendre la relation de l'homme à Allâh."
+    },
+    {
+      "id": "lisan_003",
+      "ordre": 3,
+      "palier": 1,
+      "mot_arabe": "يَوْم",
+      "translitteration": "Yawm",
+      "traductions_fr": ["jour"],
+      "frequence_coran": 405,
+      "racine": {
+        "lettres": "ي و م",
+        "translitteration": "y-w-m",
+        "sens_fondamental": "jour, période de lumière"
+      },
+      "exemple_verset": {
+        "reference": "1:4",
+        "arabe": "مَالِكِ يَوْمِ ٱلدِّينِ",
+        "translitteration": "Mâliki yawmi-d-dîn",
+        "traduction_fr": "Maître du Jour de la Rétribution",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/001004.mp3"
+      },
+      "famille_mots": [
+        {"arabe": "أَيَّام", "translit": "ayyâm", "sens": "jours (pluriel)"},
+        {"arabe": "يَوْمَئِذٍ", "translit": "yawmaʾidhin", "sens": "ce jour-là"}
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Apparaît très souvent dans 'Yawm ad-Dîn' (Jour du Jugement) et 'Yawm al-Qiyâma' (Jour de la Résurrection). Mot-clé eschatologique."
+    },
+    {
+      "id": "lisan_004",
+      "ordre": 4,
+      "palier": 1,
+      "mot_arabe": "قَالَ",
+      "translitteration": "Qâla",
+      "traductions_fr": ["il a dit", "il dit"],
+      "frequence_coran": 1722,
+      "racine": {
+        "lettres": "ق و ل",
+        "translitteration": "q-w-l",
+        "sens_fondamental": "dire, parler"
+      },
+      "exemple_verset": {
+        "reference": "2:30",
+        "arabe": "وَإِذْ قَالَ رَبُّكَ لِلْمَلَائِكَةِ",
+        "translitteration": "Wa-idh qâla rabbuka li-l-malâʾikati",
+        "traduction_fr": "Et lorsque ton Seigneur dit aux anges",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002030.mp3"
+      },
+      "famille_mots": [
+        {"arabe": "قَوْل", "translit": "qawl", "sens": "parole, dit"},
+        {"arabe": "قُلْ", "translit": "qul", "sens": "dis ! (impératif)"},
+        {"arabe": "يَقُول", "translit": "yaqûlu", "sens": "il dit (présent)"}
+      ],
+      "type_grammatical": "verbe",
+      "difficulte": 2,
+      "notes_pedagogiques": "Verbe le plus fréquent du Coran. Introduit toutes les paroles rapportées : 'qâla Allâh' (Allâh a dit), 'qâlû' (ils ont dit), 'qul' (dis !)."
+    },
+    {
+      "id": "lisan_005",
+      "ordre": 5,
+      "palier": 1,
+      "mot_arabe": "كَانَ",
+      "translitteration": "Kâna",
+      "traductions_fr": ["il était", "il fut", "il a été"],
+      "frequence_coran": 1361,
+      "racine": {
+        "lettres": "ك و ن",
+        "translitteration": "k-w-n",
+        "sens_fondamental": "être, exister"
+      },
+      "exemple_verset": {
+        "reference": "2:117",
+        "arabe": "وَإِذَا قَضَىٰ أَمْرًا فَإِنَّمَا يَقُولُ لَهُ كُن فَيَكُونُ",
+        "translitteration": "Wa-idhâ qadâ amran fa-innamâ yaqûlu lahu kun fa-yakûn",
+        "traduction_fr": "Quand Il décrète une chose, Il lui dit seulement : 'Sois' — et elle est",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002117.mp3"
+      },
+      "famille_mots": [
+        {"arabe": "كُن", "translit": "kun", "sens": "sois ! (impératif divin)"},
+        {"arabe": "يَكُون", "translit": "yakûn", "sens": "il est, sera"},
+        {"arabe": "مَكَان", "translit": "makân", "sens": "lieu"}
+      ],
+      "type_grammatical": "verbe",
+      "difficulte": 2,
+      "notes_pedagogiques": "2e verbe le plus fréquent. Le célèbre 'Kun fa-yakûn' (Sois et cela est) — formule de la création divine."
+    },
+    {
+      "id": "lisan_006",
+      "ordre": 6,
+      "palier": 1,
+      "mot_arabe": "فِي",
+      "translitteration": "Fî",
+      "traductions_fr": ["dans", "en", "à l'intérieur de"],
+      "frequence_coran": 1701,
+      "racine": {
+        "lettres": "—",
+        "translitteration": "particule",
+        "sens_fondamental": "préposition de lieu/temps"
+      },
+      "exemple_verset": {
+        "reference": "2:7",
+        "arabe": "خَتَمَ ٱللَّهُ عَلَىٰ قُلُوبِهِمْ وَعَلَىٰ سَمْعِهِمْ ۖ وَعَلَىٰ أَبْصَارِهِمْ غِشَاوَةٌ",
+        "translitteration": "Khatama-llâhu ʿalâ qulûbihim wa ʿalâ samʿihim, wa ʿalâ abṣârihim ghishâwa",
+        "traduction_fr": "Allâh a scellé leurs cœurs et leur ouïe, et leurs yeux sont voilés",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002007.mp3"
+      },
+      "famille_mots": [],
+      "type_grammatical": "particule_preposition",
+      "difficulte": 1,
+      "notes_pedagogiques": "Préposition la plus fréquente. Indique le lieu, le temps, ou la situation : fî-l-bayt (dans la maison), fî-l-âkhira (dans l'Au-delà)."
+    },
+    {
+      "id": "lisan_007",
+      "ordre": 7,
+      "palier": 1,
+      "mot_arabe": "مِنْ",
+      "translitteration": "Min",
+      "traductions_fr": ["de", "à partir de", "parmi"],
+      "frequence_coran": 3226,
+      "racine": {
+        "lettres": "—",
+        "translitteration": "particule",
+        "sens_fondamental": "origine, provenance, partition"
+      },
+      "exemple_verset": {
+        "reference": "2:23",
+        "arabe": "وَإِن كُنتُمْ فِي رَيْبٍ مِّمَّا نَزَّلْنَا عَلَىٰ عَبْدِنَا",
+        "translitteration": "Wa-in kuntum fî raybin mimmâ nazzalnâ ʿalâ ʿabdinâ",
+        "traduction_fr": "Si vous avez un doute sur ce que Nous avons fait descendre sur Notre Serviteur",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002023.mp3"
+      },
+      "famille_mots": [],
+      "type_grammatical": "particule_preposition",
+      "difficulte": 1,
+      "notes_pedagogiques": "Préposition la plus fréquente du Coran. Marque l'origine ('venir de') ou la partition ('parmi')."
+    },
+    {
+      "id": "lisan_008",
+      "ordre": 8,
+      "palier": 1,
+      "mot_arabe": "لَا",
+      "translitteration": "Lâ",
+      "traductions_fr": ["non", "ne... pas"],
+      "frequence_coran": 1772,
+      "racine": {
+        "lettres": "—",
+        "translitteration": "particule",
+        "sens_fondamental": "négation"
+      },
+      "exemple_verset": {
+        "reference": "2:2",
+        "arabe": "ذَٰلِكَ ٱلْكِتَابُ لَا رَيْبَ ۛ فِيهِ",
+        "translitteration": "Dhâlika-l-kitâbu lâ rayba fîh",
+        "traduction_fr": "Ce Livre, nul doute en lui",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002002.mp3"
+      },
+      "famille_mots": [
+        {"arabe": "لَن", "translit": "lan", "sens": "ne... jamais (futur)"},
+        {"arabe": "لَيْسَ", "translit": "laysa", "sens": "il n'est pas"}
+      ],
+      "type_grammatical": "particule_negation",
+      "difficulte": 1,
+      "notes_pedagogiques": "Négation la plus fréquente. Premier mot de la shahâda : 'lâ ilâha illâ Allâh' (il n'y a de divinité qu'Allâh)."
+    },
+    {
+      "id": "lisan_009",
+      "ordre": 9,
+      "palier": 1,
+      "mot_arabe": "إِنَّ",
+      "translitteration": "Inna",
+      "traductions_fr": ["certes", "en vérité", "vraiment"],
+      "frequence_coran": 1683,
+      "racine": {
+        "lettres": "—",
+        "translitteration": "particule",
+        "sens_fondamental": "affirmation, insistance"
+      },
+      "exemple_verset": {
+        "reference": "2:6",
+        "arabe": "إِنَّ ٱلَّذِينَ كَفَرُوا سَوَاءٌ عَلَيْهِمْ",
+        "translitteration": "Inna-lladhîna kafarû sawâʾun ʿalayhim",
+        "traduction_fr": "Certes, ceux qui ont mécru, c'est égal pour eux",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002006.mp3"
+      },
+      "famille_mots": [
+        {"arabe": "إِنَّمَا", "translit": "innamâ", "sens": "ce n'est que, seulement"},
+        {"arabe": "أَنَّ", "translit": "anna", "sens": "que (conjonction)"}
+      ],
+      "type_grammatical": "particule_emphase",
+      "difficulte": 2,
+      "notes_pedagogiques": "Renforce l'affirmation. Souvent traduit 'certes' mais plus proche de 'en vérité, c'est ainsi'. Très fréquent au début des phrases coraniques."
+    },
+    {
+      "id": "lisan_010",
+      "ordre": 10,
+      "palier": 1,
+      "mot_arabe": "مَا",
+      "translitteration": "Mâ",
+      "traductions_fr": ["ce que", "quoi", "ne... pas (avec verbe au passé)"],
+      "frequence_coran": 2670,
+      "racine": {
+        "lettres": "—",
+        "translitteration": "particule",
+        "sens_fondamental": "interrogation / relatif / négation"
+      },
+      "exemple_verset": {
+        "reference": "2:3",
+        "arabe": "وَمِمَّا رَزَقْنَاهُمْ يُنفِقُونَ",
+        "translitteration": "Wa mimmâ razaqnâhum yunfiqûn",
+        "traduction_fr": "Et de ce que Nous leur avons attribué, ils dépensent",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002003.mp3"
+      },
+      "famille_mots": [
+        {"arabe": "مَاذَا", "translit": "mâdhâ", "sens": "qu'est-ce que ?"}
+      ],
+      "type_grammatical": "particule_polyvalente",
+      "difficulte": 2,
+      "notes_pedagogiques": "Mot polyvalent : peut être relatif (ce que), interrogatif (quoi ?) ou négation. Le contexte tranche."
+    },
+    {
+      "id": "lisan_011",
+      "ordre": 11,
+      "palier": 1,
+      "mot_arabe": "عَلَىٰ",
+      "translitteration": "ʿAlâ",
+      "traductions_fr": ["sur", "contre", "à propos de"],
+      "frequence_coran": 1444,
+      "racine": {
+        "lettres": "ع ل و",
+        "translitteration": "ʿ-l-w",
+        "sens_fondamental": "élévation, hauteur"
+      },
+      "exemple_verset": {
+        "reference": "2:5",
+        "arabe": "أُولَٰئِكَ عَلَىٰ هُدًى مِّن رَّبِّهِمْ",
+        "translitteration": "Ulâʾika ʿalâ hudan min rabbihim",
+        "traduction_fr": "Ceux-là sont sur une guidance de leur Seigneur",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002005.mp3"
+      },
+      "famille_mots": [
+        {"arabe": "أَعْلَىٰ", "translit": "aʿlâ", "sens": "le plus haut"},
+        {"arabe": "تَعَالَىٰ", "translit": "taʿâlâ", "sens": "qu'Il soit élevé"}
+      ],
+      "type_grammatical": "particule_preposition",
+      "difficulte": 1,
+      "notes_pedagogiques": "Préposition spatiale (sur) mais aussi figurée (à propos de, contre)."
+    },
+    {
+      "id": "lisan_012",
+      "ordre": 12,
+      "palier": 1,
+      "mot_arabe": "إِلَىٰ",
+      "translitteration": "Ilâ",
+      "traductions_fr": ["vers", "jusqu'à", "à"],
+      "frequence_coran": 742,
+      "racine": {
+        "lettres": "—",
+        "translitteration": "particule",
+        "sens_fondamental": "direction, destination"
+      },
+      "exemple_verset": {
+        "reference": "2:14",
+        "arabe": "وَإِذَا خَلَوْا إِلَىٰ شَيَاطِينِهِمْ",
+        "translitteration": "Wa-idhâ khalaw ilâ shayâṭînihim",
+        "traduction_fr": "Et quand ils se retrouvent seuls avec leurs diables",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002014.mp3"
+      },
+      "famille_mots": [],
+      "type_grammatical": "particule_preposition",
+      "difficulte": 1,
+      "notes_pedagogiques": "Direction : 'vers', 'jusqu'à'. À ne pas confondre avec 'illâ' (إِلَّا = sauf), qui s'écrit différemment."
+    },
+    {
+      "id": "lisan_013",
+      "ordre": 13,
+      "palier": 1,
+      "mot_arabe": "لَهُ",
+      "translitteration": "Lahu",
+      "traductions_fr": ["à lui", "pour lui"],
+      "frequence_coran": 671,
+      "racine": {
+        "lettres": "—",
+        "translitteration": "particule + suffixe",
+        "sens_fondamental": "préposition 'pour' + pronom 'lui'"
+      },
+      "exemple_verset": {
+        "reference": "2:255",
+        "arabe": "لَهُ مَا فِي ٱلسَّمَاوَاتِ وَمَا فِي ٱلْأَرْضِ",
+        "translitteration": "Lahu mâ fî-s-samâwâti wa mâ fî-l-arḍ",
+        "traduction_fr": "À Lui appartient ce qui est dans les cieux et sur la terre",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002255.mp3"
+      },
+      "famille_mots": [
+        {"arabe": "لِي", "translit": "lî", "sens": "à moi"},
+        {"arabe": "لَكَ", "translit": "laka", "sens": "à toi"},
+        {"arabe": "لَهُمْ", "translit": "lahum", "sens": "à eux"}
+      ],
+      "type_grammatical": "particule_pronom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Combine la préposition 'li' (pour, à) + suffixe '-hu' (lui). Apprends ce modèle : il s'applique à toutes les prépositions."
+    },
+    {
+      "id": "lisan_014",
+      "ordre": 14,
+      "palier": 1,
+      "mot_arabe": "كُلّ",
+      "translitteration": "Kull",
+      "traductions_fr": ["tout", "chaque", "chacun"],
+      "frequence_coran": 376,
+      "racine": {
+        "lettres": "ك ل ل",
+        "translitteration": "k-l-l",
+        "sens_fondamental": "totalité, tout"
+      },
+      "exemple_verset": {
+        "reference": "2:20",
+        "arabe": "وَٱللَّهُ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ",
+        "translitteration": "Wa-llâhu ʿalâ kulli shayʾin qadîr",
+        "traduction_fr": "Allâh est, sur toute chose, Tout-Puissant",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002020.mp3"
+      },
+      "famille_mots": [
+        {"arabe": "كُلَّمَا", "translit": "kullamâ", "sens": "chaque fois que"}
+      ],
+      "type_grammatical": "nom_quantificateur",
+      "difficulte": 1,
+      "notes_pedagogiques": "Apparaît souvent dans 'kulli shayʾin' (toute chose) — formule pour parler de la puissance universelle d'Allâh."
+    },
+    {
+      "id": "lisan_015",
+      "ordre": 15,
+      "palier": 1,
+      "mot_arabe": "هَٰذَا",
+      "translitteration": "Hâdhâ",
+      "traductions_fr": ["ceci", "celui-ci", "ce"],
+      "frequence_coran": 416,
+      "racine": {
+        "lettres": "—",
+        "translitteration": "demonstratif",
+        "sens_fondamental": "démonstratif de proximité (masculin)"
+      },
+      "exemple_verset": {
+        "reference": "2:25",
+        "arabe": "هَٰذَا ٱلَّذِي رُزِقْنَا مِن قَبْلُ",
+        "translitteration": "Hâdhâ-lladhî ruziqnâ min qabl",
+        "traduction_fr": "Ceci est ce qui nous a été attribué auparavant",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002025.mp3"
+      },
+      "famille_mots": [
+        {"arabe": "هَٰذِهِ", "translit": "hâdhihi", "sens": "celle-ci (féminin)"},
+        {"arabe": "هَٰؤُلَاءِ", "translit": "hâʾulâʾi", "sens": "ceux-ci (pluriel)"},
+        {"arabe": "ذَٰلِكَ", "translit": "dhâlika", "sens": "celui-là (éloignement)"}
+      ],
+      "type_grammatical": "demonstratif",
+      "difficulte": 1,
+      "notes_pedagogiques": "Démonstratif de proximité masculin. À retenir avec son homologue 'dhâlika' (cela, éloignement) qui ouvre sourate 2 : 'Dhâlika-l-kitâb' (Ce Livre)."
+    },
+    {
+      "id": "lisan_016",
+      "ordre": 16,
+      "palier": 1,
+      "mot_arabe": "ٱلَّذِي",
+      "translitteration": "Alladhî",
+      "traductions_fr": ["celui qui", "qui", "que"],
+      "frequence_coran": 1464,
+      "racine": {
+        "lettres": "—",
+        "translitteration": "relatif",
+        "sens_fondamental": "pronom relatif masculin singulier"
+      },
+      "exemple_verset": {
+        "reference": "2:21",
+        "arabe": "ٱعْبُدُوا رَبَّكُمُ ٱلَّذِي خَلَقَكُمْ",
+        "translitteration": "Uʿbudû rabbakumu-lladhî khalaqakum",
+        "traduction_fr": "Adorez votre Seigneur qui vous a créés",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002021.mp3"
+      },
+      "famille_mots": [
+        {"arabe": "ٱلَّتِي", "translit": "allatî", "sens": "celle qui (féminin)"},
+        {"arabe": "ٱلَّذِينَ", "translit": "alladhîna", "sens": "ceux qui (pluriel masculin)"}
+      ],
+      "type_grammatical": "pronom_relatif",
+      "difficulte": 2,
+      "notes_pedagogiques": "Pronom relatif masculin singulier. Construit toute la grammaire des phrases descriptives sur Allâh : 'Alladhî khalaqa' (Celui qui a créé), 'Alladhî yarzuq' (Celui qui pourvoit)."
+    },
+    {
+      "id": "lisan_017",
+      "ordre": 17,
+      "palier": 1,
+      "mot_arabe": "ثُمَّ",
+      "translitteration": "Thumma",
+      "traductions_fr": ["puis", "ensuite"],
+      "frequence_coran": 338,
+      "racine": {
+        "lettres": "—",
+        "translitteration": "particule",
+        "sens_fondamental": "succession dans le temps"
+      },
+      "exemple_verset": {
+        "reference": "2:28",
+        "arabe": "ثُمَّ يُمِيتُكُمْ ثُمَّ يُحْيِيكُمْ",
+        "translitteration": "Thumma yumîtukum thumma yuhyîkum",
+        "traduction_fr": "Puis Il vous fera mourir, puis Il vous fera revivre",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002028.mp3"
+      },
+      "famille_mots": [],
+      "type_grammatical": "particule_conjonction",
+      "difficulte": 1,
+      "notes_pedagogiques": "Marque une succession temporelle (avec délai). À distinguer de 'fa' (فَ) qui marque la succession immédiate."
+    },
+    {
+      "id": "lisan_018",
+      "ordre": 18,
+      "palier": 1,
+      "mot_arabe": "إِلَّا",
+      "translitteration": "Illâ",
+      "traductions_fr": ["sauf", "excepté", "si ce n'est"],
+      "frequence_coran": 663,
+      "racine": {
+        "lettres": "—",
+        "translitteration": "particule",
+        "sens_fondamental": "exception"
+      },
+      "exemple_verset": {
+        "reference": "2:9",
+        "arabe": "وَمَا يَخْدَعُونَ إِلَّا أَنفُسَهُمْ",
+        "translitteration": "Wa mâ yakhdaʿûna illâ anfusahum",
+        "traduction_fr": "Ils ne trompent qu'eux-mêmes",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002009.mp3"
+      },
+      "famille_mots": [],
+      "type_grammatical": "particule_exception",
+      "difficulte": 1,
+      "notes_pedagogiques": "Particule centrale de la shahâda : 'lâ ilâha ILLÂ Allâh' (il n'y a de divinité SAUF Allâh). La structure 'lâ... illâ' exprime l'unicité absolue."
+    },
+    {
+      "id": "lisan_019",
+      "ordre": 19,
+      "palier": 1,
+      "mot_arabe": "نَاس",
+      "translitteration": "Nâs",
+      "traductions_fr": ["gens", "hommes (humanité)"],
+      "frequence_coran": 248,
+      "racine": {
+        "lettres": "ن و س",
+        "translitteration": "n-w-s",
+        "sens_fondamental": "humanité, les humains"
+      },
+      "exemple_verset": {
+        "reference": "2:8",
+        "arabe": "وَمِنَ ٱلنَّاسِ مَن يَقُولُ آمَنَّا بِٱللَّهِ",
+        "translitteration": "Wa mina-n-nâsi man yaqûlu âmannâ bi-llâh",
+        "traduction_fr": "Et parmi les gens, il y a ceux qui disent : 'Nous croyons en Allâh'",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002008.mp3"
+      },
+      "famille_mots": [
+        {"arabe": "إِنسَان", "translit": "insân", "sens": "être humain (singulier)"}
+      ],
+      "type_grammatical": "nom_collectif",
+      "difficulte": 1,
+      "notes_pedagogiques": "Désigne 'les gens', l'humanité en général. Apparaît dans le nom de la dernière sourate du Coran : 'An-Nâs' (Les Hommes)."
+    },
+    {
+      "id": "lisan_020",
+      "ordre": 20,
+      "palier": 1,
+      "mot_arabe": "كِتَاب",
+      "translitteration": "Kitâb",
+      "traductions_fr": ["livre", "Écriture"],
+      "frequence_coran": 261,
+      "racine": {
+        "lettres": "ك ت ب",
+        "translitteration": "k-t-b",
+        "sens_fondamental": "écrire, prescrire"
+      },
+      "exemple_verset": {
+        "reference": "2:2",
+        "arabe": "ذَٰلِكَ ٱلْكِتَابُ لَا رَيْبَ فِيهِ",
+        "translitteration": "Dhâlika-l-kitâbu lâ rayba fîh",
+        "traduction_fr": "Ce Livre, nul doute en lui",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002002.mp3"
+      },
+      "famille_mots": [
+        {"arabe": "كَتَبَ", "translit": "kataba", "sens": "il a écrit / décrété"},
+        {"arabe": "كَاتِب", "translit": "kâtib", "sens": "scribe"},
+        {"arabe": "مَكْتُوب", "translit": "maktûb", "sens": "écrit, prescrit (destin)"},
+        {"arabe": "كُتُب", "translit": "kutub", "sens": "livres (pluriel)"}
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Désigne le Coran lui-même ('Al-Kitâb' = LE Livre par excellence) mais aussi les Écritures antérieures (Torah, Évangile). Racine k-t-b extrêmement productive."
+    },
+    {
+      "id": "lisan_021",
+      "ordre": 21,
+      "palier": 1,
+      "mot_arabe": "ٱلَّذِينَ",
+      "translitteration": "Alladhîna",
+      "traductions_fr": ["ceux qui"],
+      "frequence_coran": 1464,
+      "racine": {
+        "lettres": "—",
+        "translitteration": "relatif",
+        "sens_fondamental": "pronom relatif masculin pluriel"
+      },
+      "exemple_verset": {
+        "reference": "2:3",
+        "arabe": "ٱلَّذِينَ يُؤْمِنُونَ بِٱلْغَيْبِ",
+        "translitteration": "Alladhîna yuʾminûna bi-l-ghayb",
+        "traduction_fr": "Ceux qui croient à l'invisible",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002003.mp3"
+      },
+      "famille_mots": [
+        {"arabe": "ٱلَّذِي", "translit": "alladhî", "sens": "celui qui (singulier)"},
+        {"arabe": "ٱللَّاتِي", "translit": "allâtî", "sens": "celles qui (pluriel féminin)"}
+      ],
+      "type_grammatical": "pronom_relatif",
+      "difficulte": 2,
+      "notes_pedagogiques": "Pluriel masculin du relatif. Introduit les groupes : 'Alladhîna âmanû' (ceux qui ont cru), 'Alladhîna kafarû' (ceux qui ont mécru). Très fréquent au début des phrases."
+    },
+    {
+      "id": "lisan_022",
+      "ordre": 22,
+      "palier": 1,
+      "mot_arabe": "وَ",
+      "translitteration": "Wa",
+      "traductions_fr": ["et"],
+      "frequence_coran": 22000,
+      "racine": {
+        "lettres": "—",
+        "translitteration": "particule",
+        "sens_fondamental": "conjonction de coordination"
+      },
+      "exemple_verset": {
+        "reference": "1:7",
+        "arabe": "غَيْرِ ٱلْمَغْضُوبِ عَلَيْهِمْ وَلَا ٱلضَّالِّينَ",
+        "translitteration": "Ghayri-l-maghdûbi ʿalayhim wa lâ-d-dâllîn",
+        "traduction_fr": "Non de ceux qui ont encouru la colère, ni des égarés",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/001007.mp3"
+      },
+      "famille_mots": [],
+      "type_grammatical": "particule_conjonction",
+      "difficulte": 1,
+      "notes_pedagogiques": "Le 'et' arabe. Mot le plus fréquent du Coran (toutes catégories confondues). Attaché au mot suivant (jamais détaché). Très facile à reconnaître à l'oreille."
+    },
+    {
+      "id": "lisan_023",
+      "ordre": 23,
+      "palier": 1,
+      "mot_arabe": "أَنْ",
+      "translitteration": "An",
+      "traductions_fr": ["que (avec subjonctif)", "de (faire qqch)"],
+      "frequence_coran": 1080,
+      "racine": {
+        "lettres": "—",
+        "translitteration": "particule",
+        "sens_fondamental": "particule subjonctive"
+      },
+      "exemple_verset": {
+        "reference": "2:26",
+        "arabe": "إِنَّ ٱللَّهَ لَا يَسْتَحْيِي أَن يَضْرِبَ مَثَلًا",
+        "translitteration": "Inna-llâha lâ yastahyî an yaḍriba mathalâ",
+        "traduction_fr": "Allâh n'a certes pas honte de proposer un exemple",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002026.mp3"
+      },
+      "famille_mots": [
+        {"arabe": "أَنَّ", "translit": "anna", "sens": "que (avec indicatif)"},
+        {"arabe": "أَنَا", "translit": "anâ", "sens": "moi, je"}
+      ],
+      "type_grammatical": "particule_subjonctive",
+      "difficulte": 2,
+      "notes_pedagogiques": "Introduit une proposition subordonnée verbale. À distinguer de 'anna' (أَنَّ) qui introduit une subordonnée nominale."
+    },
+    {
+      "id": "lisan_024",
+      "ordre": 24,
+      "palier": 1,
+      "mot_arabe": "بِ",
+      "translitteration": "Bi",
+      "traductions_fr": ["par", "avec", "au moyen de"],
+      "frequence_coran": 2750,
+      "racine": {
+        "lettres": "—",
+        "translitteration": "particule",
+        "sens_fondamental": "moyen, instrument"
+      },
+      "exemple_verset": {
+        "reference": "1:1",
+        "arabe": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ",
+        "translitteration": "Bi-smi-llâhi-r-Rahmâni-r-Rahîm",
+        "traduction_fr": "Au nom d'Allâh, le Tout-Miséricordieux, le Très-Miséricordieux",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/001001.mp3"
+      },
+      "famille_mots": [],
+      "type_grammatical": "particule_preposition",
+      "difficulte": 1,
+      "notes_pedagogiques": "Préposition attachée au mot suivant (jamais détachée). Le célèbre 'Bismillâh' commence par cette particule : 'Bi-smi' (par/au nom de)."
+    },
+    {
+      "id": "lisan_025",
+      "ordre": 25,
+      "palier": 1,
+      "mot_arabe": "مَلَك",
+      "translitteration": "Malak",
+      "traductions_fr": ["ange"],
+      "frequence_coran": 88,
+      "racine": {
+        "lettres": "م ل ك",
+        "translitteration": "m-l-k",
+        "sens_fondamental": "posséder, régner, messager"
+      },
+      "exemple_verset": {
+        "reference": "2:30",
+        "arabe": "وَإِذْ قَالَ رَبُّكَ لِلْمَلَائِكَةِ",
+        "translitteration": "Wa-idh qâla rabbuka li-l-malâʾikati",
+        "traduction_fr": "Et lorsque ton Seigneur dit aux anges",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002030.mp3"
+      },
+      "famille_mots": [
+        {"arabe": "مَلَائِكَة", "translit": "malâʾika", "sens": "anges (pluriel)"},
+        {"arabe": "مَالِك", "translit": "mâlik", "sens": "maître, propriétaire"},
+        {"arabe": "مُلْك", "translit": "mulk", "sens": "royaume, souveraineté"},
+        {"arabe": "مَلِك", "translit": "malik", "sens": "roi"}
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Racine très productive : malak (ange), malik (roi), mâlik (maître), mulk (royaume). Le pluriel 'malâʾika' (anges) est plus fréquent que le singulier."
+    },
+    {
+      "id": "lisan_026",
+      "ordre": 26,
+      "palier": 1,
+      "mot_arabe": "خَلَقَ",
+      "translitteration": "Khalaqa",
+      "traductions_fr": ["il a créé", "il crée"],
+      "frequence_coran": 248,
+      "racine": {
+        "lettres": "خ ل ق",
+        "translitteration": "kh-l-q",
+        "sens_fondamental": "créer, façonner à partir de rien"
+      },
+      "exemple_verset": {
+        "reference": "2:29",
+        "arabe": "هُوَ ٱلَّذِي خَلَقَ لَكُم مَّا فِي ٱلْأَرْضِ جَمِيعًا",
+        "translitteration": "Huwa-lladhî khalaqa lakum mâ fî-l-arḍi jamîʿâ",
+        "traduction_fr": "C'est Lui qui a créé pour vous tout ce qui est sur la terre",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002029.mp3"
+      },
+      "famille_mots": [
+        {"arabe": "خَلْق", "translit": "khalq", "sens": "création"},
+        {"arabe": "خَالِق", "translit": "khâliq", "sens": "Créateur"},
+        {"arabe": "مَخْلُوق", "translit": "makhlûq", "sens": "créature"}
+      ],
+      "type_grammatical": "verbe",
+      "difficulte": 1,
+      "notes_pedagogiques": "Verbe de la création ex nihilo, attribut exclusif d'Allâh. Très fréquent dans les versets qui parlent du pouvoir divin."
+    },
+    {
+      "id": "lisan_027",
+      "ordre": 27,
+      "palier": 1,
+      "mot_arabe": "آمَنَ",
+      "translitteration": "Âmana",
+      "traductions_fr": ["il a cru", "il croit"],
+      "frequence_coran": 537,
+      "racine": {
+        "lettres": "أ م ن",
+        "translitteration": "ʾ-m-n",
+        "sens_fondamental": "être en sécurité, faire confiance, croire"
+      },
+      "exemple_verset": {
+        "reference": "2:3",
+        "arabe": "ٱلَّذِينَ يُؤْمِنُونَ بِٱلْغَيْبِ",
+        "translitteration": "Alladhîna yuʾminûna bi-l-ghayb",
+        "traduction_fr": "Ceux qui croient à l'invisible",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002003.mp3"
+      },
+      "famille_mots": [
+        {"arabe": "إِيمَان", "translit": "îmân", "sens": "foi"},
+        {"arabe": "مُؤْمِن", "translit": "muʾmin", "sens": "croyant"},
+        {"arabe": "أَمِين", "translit": "amîn", "sens": "digne de confiance, fidèle"},
+        {"arabe": "أَمَان", "translit": "amân", "sens": "sécurité, paix"}
+      ],
+      "type_grammatical": "verbe",
+      "difficulte": 1,
+      "notes_pedagogiques": "Racine ʾ-m-n : sécurité ET foi. En arabe, croire (âmana) et être en sécurité (amân) partagent la même racine. La foi est une sécurité intérieure."
+    },
+    {
+      "id": "lisan_028",
+      "ordre": 28,
+      "palier": 1,
+      "mot_arabe": "أَرْض",
+      "translitteration": "Arḍ",
+      "traductions_fr": ["terre", "sol"],
+      "frequence_coran": 461,
+      "racine": {
+        "lettres": "أ ر ض",
+        "translitteration": "ʾ-r-ḍ",
+        "sens_fondamental": "terre, sol"
+      },
+      "exemple_verset": {
+        "reference": "2:11",
+        "arabe": "لَا تُفْسِدُوا فِي ٱلْأَرْضِ",
+        "translitteration": "Lâ tufsidû fî-l-arḍ",
+        "traduction_fr": "Ne semez pas la corruption sur la terre",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002011.mp3"
+      },
+      "famille_mots": [],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Apparaît souvent en couple avec 'samâwât' (cieux) dans 'as-samâwâti wa-l-arḍ' (les cieux et la terre) — formule pour désigner toute la création."
+    },
+    {
+      "id": "lisan_029",
+      "ordre": 29,
+      "palier": 1,
+      "mot_arabe": "سَمَاء",
+      "translitteration": "Samâʾ",
+      "traductions_fr": ["ciel"],
+      "frequence_coran": 310,
+      "racine": {
+        "lettres": "س م و",
+        "translitteration": "s-m-w",
+        "sens_fondamental": "ce qui est élevé, hauteur"
+      },
+      "exemple_verset": {
+        "reference": "2:22",
+        "arabe": "وَأَنزَلَ مِنَ ٱلسَّمَاءِ مَاءً",
+        "translitteration": "Wa anzala mina-s-samâʾi mâʾâ",
+        "traduction_fr": "Et fit descendre du ciel une eau",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002022.mp3"
+      },
+      "famille_mots": [
+        {"arabe": "سَمَاوَات", "translit": "samâwât", "sens": "cieux (pluriel)"},
+        {"arabe": "ٱسْم", "translit": "ism", "sens": "nom (même racine)"}
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Toujours couplé à 'arḍ' (terre) dans les versets cosmologiques. Le pluriel 'samâwât' (cieux) est plus fréquent — référence aux sept cieux mentionnés dans le Coran."
+    },
+    {
+      "id": "lisan_030",
+      "ordre": 30,
+      "palier": 1,
+      "mot_arabe": "نَفْس",
+      "translitteration": "Nafs",
+      "traductions_fr": ["âme", "soi", "personne"],
+      "frequence_coran": 295,
+      "racine": {
+        "lettres": "ن ف س",
+        "translitteration": "n-f-s",
+        "sens_fondamental": "âme, souffle, soi-même"
+      },
+      "exemple_verset": {
+        "reference": "2:48",
+        "arabe": "لَا تَجْزِي نَفْسٌ عَن نَّفْسٍ شَيْئًا",
+        "translitteration": "Lâ tajzî nafsun ʿan nafsin shayʾâ",
+        "traduction_fr": "Aucune âme ne sera utile à une autre âme en quoi que ce soit",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002048.mp3"
+      },
+      "famille_mots": [
+        {"arabe": "أَنْفُس", "translit": "anfus", "sens": "âmes (pluriel)"},
+        {"arabe": "تَنَفَّسَ", "translit": "tanaffasa", "sens": "respirer"}
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Mot central de l'anthropologie coranique. Désigne l'âme, le soi profond. Le module 'Bab an-Nafs' dans Niyyah utilise ce concept. À comprendre absolument."
+    }
+  ],
+  "metadata": {
+    "total_items": 30,
+    "couverture_estimee_coran": "Environ 40% des occurrences (mots ultra-fréquents)",
+    "repartition": {
+      "noms": 9,
+      "verbes": 4,
+      "particules_prepositions": 6,
+      "particules_negation_emphase": 4,
+      "demonstratifs_relatifs": 4,
+      "noms_quantificateurs": 1,
+      "noms_propres": 1,
+      "pronoms_combines": 1
+    },
+    "racines_introduites": [
+      "أ ل ه (ʾ-l-h) - divinité",
+      "ر ب ب (r-b-b) - éduquer",
+      "ي و م (y-w-m) - jour",
+      "ق و ل (q-w-l) - dire",
+      "ك و ن (k-w-n) - être",
+      "ع ل و (ʿ-l-w) - élévation",
+      "ك ل ل (k-l-l) - totalité",
+      "ن و س (n-w-s) - humanité",
+      "ك ت ب (k-t-b) - écrire",
+      "م ل ك (m-l-k) - posséder/régner",
+      "خ ل ق (kh-l-q) - créer",
+      "أ م ن (ʾ-m-n) - sécurité/foi",
+      "أ ر ض (ʾ-r-ḍ) - terre",
+      "س م و (s-m-w) - élévation/ciel",
+      "ن ف س (n-f-s) - âme"
+    ],
+    "suite_tranche2": "Mots 31-60 — Continuera par : raḥma, ʿibâda, dîn, hudâ, nûr, ḥaqq, ʿilm, nabî, rasûl, dunyâ, âkhira, jannâ, nâr, ṣalât, zakât, ṣawm, ʾâya, sûra, ṣirât, ṣabr, taqwâ, jihâd, tawba, dhanb, ghafara, raḥima, halâl, harâm, ʿibâd, hamd."
+  }
+}

@@ -1,4 +1,4 @@
-const VERSION = 'niyyah-v1518';
+const VERSION = 'niyyah-v1519';
 const CORE = [
   './index.html',
   './script.min.js',
@@ -29,6 +29,7 @@ const CORE = [
   './data/waqt/tafakkur_nouvelles_questions.json',
   './data/waqt/tafakkur_recits.json',
   './data/niyyah_pool.json',
+  './data/lisan/lisan_palier1_tranche1.json',
   './assets/moments/fajr.webp',
   './assets/moments/dhuhr.webp',
   './assets/moments/asr.webp',
