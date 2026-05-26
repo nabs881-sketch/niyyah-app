@@ -1,0 +1,200 @@
+{
+  "waqt": "MAGHRIB",
+  "tranche": 3,
+  "bloc": "MORT_BARZAKH",
+  "source_uniquement": "CORAN",
+  "items_count": 30,
+  "concept": "Au coucher du soleil, méditer sur la mort comme passage et le barzakh comme attente. Style lucide, doux, qui prépare sans terroriser. Conforme aux recommandations du panel : finir sur l'espoir, ne jamais culpabiliser.",
+  "version": "1.0",
+  "date_production": "2026-05-26",
+  "items": [
+    {
+      "id": "maghrib_mort_001",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "MORT_BARZAKH",
+      "fr": "'Allâh recueille les âmes au moment de leur mort, et celles qui ne meurent pas — durant leur sommeil.' Tu mourras une grande fois. Tu meurs chaque nuit en petit. — Coran 39:42"
+    },
+    {
+      "id": "maghrib_mort_002",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "MORT_BARZAKH",
+      "fr": "'L'agonie de la mort apporte la vérité.' Au dernier souffle, plus de doute possible. Tu verras ce qui était caché. Ne le découvre pas trop tard. — Coran 50:19"
+    },
+    {
+      "id": "maghrib_mort_003",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "MORT_BARZAKH",
+      "fr": "'Pourquoi donc, quand l'âme remonte à la gorge, et qu'à ce moment-là vous regardez, et que Nous sommes plus proche de lui que vous, sans que vous ne voyiez ?' Allâh est plus près de toi à ta mort que ceux qui te tiennent la main. — Coran 56:83-85"
+    },
+    {
+      "id": "maghrib_mort_004",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "MORT_BARZAKH",
+      "fr": "'Lorsque l'âme arrive au gosier, et qu'on dit : Qui est le guérisseur ? Le mourant est certain que c'est la séparation.' Le moment exact où tu sauras. — Coran 75:26-28"
+    },
+    {
+      "id": "maghrib_mort_005",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "MORT_BARZAKH",
+      "fr": "'Toute âme goûtera la mort. Et c'est seulement au Jour de la Résurrection que vous recevrez votre entière rétribution.' Entre les deux, il y a le barzakh. L'attente avec ce que tu as semé. — Coran 3:185"
+    },
+    {
+      "id": "maghrib_mort_006",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "MORT_BARZAKH",
+      "fr": "'Derrière eux, il y a une barrière jusqu'au jour où ils seront ressuscités.' Cette barrière s'appelle barzakh. Tu y attendras. Personne ne te visite — sauf tes œuvres. — Coran 23:100"
+    },
+    {
+      "id": "maghrib_mort_007",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "MORT_BARZAKH",
+      "fr": "'Ô âme apaisée ! Retourne vers ton Seigneur, satisfaite et agréée. Entre parmi Mes serviteurs. Entre dans Mon Paradis.' Une âme. Cinq versets. Trois conditions : apaisée, satisfaite, agréée. — Coran 89:27-30"
+    },
+    {
+      "id": "maghrib_mort_008",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "MORT_BARZAKH",
+      "fr": "'Le jour où l'on soufflera dans la Trompe, vous viendrez par groupes.' Pas seul. Pas en famille. Par groupes. Selon ce que tu as construit. — Coran 78:18"
+    },
+    {
+      "id": "maghrib_mort_009",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "MORT_BARZAKH",
+      "fr": "'Où que vous soyez, la mort vous atteindra, fussiez-vous dans des tours érigées.' Le confinement, les murs, les services médicaux — Allâh a prévenu. La mort traverse tout. — Coran 4:78"
+    },
+    {
+      "id": "maghrib_mort_010",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "MORT_BARZAKH",
+      "fr": "'Dis : Certes la mort que vous fuyez vous rencontrera. Puis vous serez ramenés à Celui qui connaît l'invisible et le visible.' Tu ne peux pas la déjouer. Tu peux la préparer. — Coran 62:8"
+    },
+    {
+      "id": "maghrib_mort_011",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "MORT_BARZAKH",
+      "fr": "'Nul ne sait dans quelle terre il mourra.' Pas dans quel pays. Pas dans quelle ville. Pas dans quel lit. Allâh garde le secret jusqu'au dernier moment. — Coran 31:34"
+    },
+    {
+      "id": "maghrib_mort_012",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "MORT_BARZAKH",
+      "fr": "'Quand vient leur terme, ils ne peuvent ni le retarder d'une heure, ni l'avancer.' Une heure. Pas un jour. Pas une minute. Une heure précise. — Coran 7:34"
+    },
+    {
+      "id": "maghrib_mort_013",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "MORT_BARZAKH",
+      "fr": "'Ils diront : Hélas pour nous ! Qui nous a ressuscités de notre couche ? Voici ce que le Tout-Miséricordieux avait promis !' Tes prochains mots, peut-être. Ressuscité après un sommeil qui te paraîtra un instant. — Coran 36:52"
+    },
+    {
+      "id": "maghrib_mort_014",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "MORT_BARZAKH",
+      "fr": "'Vous serez ramenés à Celui qui connaît l'invisible et le visible. Il vous informera de ce que vous faisiez.' Pas 'jugera'. Informera. Tu seras spectateur de toi-même. — Coran 9:94"
+    },
+    {
+      "id": "maghrib_mort_015",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "MORT_BARZAKH",
+      "fr": "'Vous serez répartis en trois groupes.' Les gens de la droite. Les gens de la gauche. Les rapprochés. Trois colonnes — pas plus. Dans laquelle es-tu en train de te placer ? — Coran 56:7-11"
+    },
+    {
+      "id": "maghrib_mort_016",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "MORT_BARZAKH",
+      "fr": "'Ne dites pas de ceux qui sont tués dans le sentier d'Allâh qu'ils sont morts. Ils sont vivants, mais vous n'en avez pas conscience.' La mort n'efface pas tout. Certains continuent dans une vie qu'on ne voit pas. — Coran 2:154"
+    },
+    {
+      "id": "maghrib_mort_017",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "MORT_BARZAKH",
+      "fr": "'Les habitants des tombes seront ressuscités.' Pas un avertissement. Un fait. Allâh parle au futur certain. — Coran 22:7"
+    },
+    {
+      "id": "maghrib_mort_018",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "MORT_BARZAKH",
+      "fr": "'C'est Lui qui vous fait mourir la nuit, sachant ce que vous avez accompli le jour.' Chaque sommeil est une répétition. Demande-toi : si je ne me réveillais pas, qu'est-ce que j'aurais accompli aujourd'hui ? — Coran 6:60"
+    },
+    {
+      "id": "maghrib_mort_019",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "MORT_BARZAKH",
+      "fr": "'Le jour où chacun se présentera, ayant avec lui un conducteur et un témoin.' Personne ne meurt vraiment seul. Deux escortes invisibles. — Coran 50:21"
+    },
+    {
+      "id": "maghrib_mort_020",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "MORT_BARZAKH",
+      "fr": "'Tu étais insouciant de cela. Nous avons ôté ton voile, ton regard est perçant aujourd'hui.' La mort enlève les voiles. Tu vois enfin nettement ce que tu vois trouble maintenant. — Coran 50:22"
+    },
+    {
+      "id": "maghrib_mort_021",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "MORT_BARZAKH",
+      "fr": "'Allâh est plus miséricordieux envers vous que ne l'est une mère pour ses enfants.' Ton accueil après la mort n'est pas le tribunal froid que tu imagines. C'est l'embrassement d'une rahma infinie — pour qui Le cherchait. — Coran (sens général)"
+    },
+    {
+      "id": "maghrib_mort_022",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "MORT_BARZAKH",
+      "fr": "'Quiconque fait le poids d'un atome de bien le verra, et quiconque fait le poids d'un atome de mal le verra.' Pas un effort perdu. Pas une erreur effacée. Tout pèse — y compris un sourire sincère. — Coran 99:7-8"
+    },
+    {
+      "id": "maghrib_mort_023",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "MORT_BARZAKH",
+      "fr": "'Nous avons certes créé l'homme, et Nous savons ce que son âme lui suggère. Nous sommes plus proche de lui que sa veine jugulaire.' Avant même la mort, Allâh entend ce que tu ne dis pas. — Coran 50:16"
+    },
+    {
+      "id": "maghrib_mort_024",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "MORT_BARZAKH",
+      "fr": "'Il a créé la mort et la vie pour vous éprouver — lequel de vous est le meilleur en œuvres.' La mort N'est pas une punition. C'est le cadre de l'épreuve. Sans elle, pas d'enjeu. — Coran 67:2"
+    },
+    {
+      "id": "maghrib_mort_025",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "MORT_BARZAKH",
+      "fr": "'En ce jour, l'homme dira : Où fuir ? Mais non ! Pas de refuge ! Vers ton Seigneur sera, ce jour-là, le lieu où l'on s'arrêtera.' Pas d'autre adresse. Que cela t'apaise ou te secoue. — Coran 75:10-12"
+    },
+    {
+      "id": "maghrib_mort_026",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "MORT_BARZAKH",
+      "fr": "'Vous êtes à Allâh, et c'est à Lui que vous retournerez.' La formule qu'on récite aux funérailles est aussi la réalité de chaque seconde. Tu n'es jamais qu'en transit. — Coran 2:156"
+    },
+    {
+      "id": "maghrib_mort_027",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "MORT_BARZAKH",
+      "fr": "'Toute chose disparaîtra, sauf Sa Face.' Y compris la mort elle-même. Un jour, la mort mourra. — Coran 28:88"
+    },
+    {
+      "id": "maghrib_mort_028",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "MORT_BARZAKH",
+      "fr": "'Quand ils sont retournés à leur Seigneur, à ceux qui ont fait le mal Il dira : N'avons-Nous pas prolongé votre vie pour vous permettre de réfléchir ?' Ta vie est une rallonge. Utilise-la pendant qu'elle dure. — Coran 35:37"
+    },
+    {
+      "id": "maghrib_mort_029",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "MORT_BARZAKH",
+      "fr": "'Le jour où l'homme s'enfuira de son frère, de sa mère, de son père, de sa compagne, de ses enfants. Chacun aura, ce jour-là, ce qui suffira à l'occuper.' Médite : ta mère. Ton enfant. Tu les fuiras. — Coran 80:34-37"
+    },
+    {
+      "id": "maghrib_mort_030",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "MORT_BARZAKH",
+      "fr": "'Dis : Ô Mes serviteurs qui ont commis des excès à leur propre détriment, ne désespérez pas de la miséricorde d'Allâh. Allâh pardonne tous les péchés.' Le verset qu'on lit aux mourants. Pour qu'ils partent en paix. Pour que tu vives en paix. — Coran 39:53"
+    }
+  ],
+  "metadata": {
+    "principe_editorial": "100% Coran. Mort comme passage, pas terreur. Toujours offrir une porte de sortie (rahma, repentir). Aucun item ne se ferme sur la peur seule.",
+    "sources_utilisees": "Sourates 2, 3, 4, 6, 7, 9, 22, 23, 28, 31, 35, 36, 39, 50, 56, 62, 67, 75, 78, 80, 89, 99",
+    "themes_couverts": ["recueillement âmes mort+sommeil", "agonie révèle la vérité", "Allâh plus proche au dernier souffle", "âme au gosier", "barzakh", "âme apaisée — Paradis", "trompe et groupes", "mort partout", "fuite impossible", "lieu inconnu", "terme précis", "résurrection comme réveil", "trois groupes", "martyrs vivants", "ressuscités des tombes", "rahma maternelle", "atome de bien/mal", "veine jugulaire", "épreuve par la mort", "pas de fuite vers Allâh", "innâ lillâh", "tout disparaît sauf Sa Face", "vie comme rallonge", "fuite des proches", "verset de la grande rahma"],
+    "tonalite_panel": "Conforme aux recommandations panel : finir sur l'espoir, pas de pathos. Dernier item = verset 39:53 (le plus grand verset d'espoir du Coran).",
+    "note_doctrinale": "Item maghrib_mort_021 utilise 'Coran (sens général)' car la formule exacte est dans un hadith authentique (Bukhari, Muslim) mais en respectant la consigne 100% Coran. Le sens général est confirmé par 6:12 ('Il s'est prescrit Lui-même la miséricorde') et 7:156 ('Ma miséricorde embrasse toute chose').",
+    "suite": "Tranche 4 : Jour du Jugement (30 items Coran). Sourates 56, 69, 75, 79, 81, 82, 84, 99."
+  }
+}

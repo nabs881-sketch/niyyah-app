@@ -1,0 +1,152 @@
+{
+  "waqt": "MAGHRIB",
+  "tranche": 7,
+  "tranche_finale": true,
+  "MVP_COMPLET": true,
+  "TOTAL_FINAL_MAGHRIB": 365,
+  "bloc": "DUAS_DU_SOIR",
+  "source_uniquement": "CORAN",
+  "items_count": 20,
+  "concept": "Clôture du waqt MAGHRIB. Versets-du'âs du Coran à dire avant la nuit. Pas de description abstraite — l'utilisateur reçoit DIRECTEMENT le verset à réciter ce soir. Cohérence : après JANNAH, DUNYA, MORT, JUGEMENT, JAHANNAM, TAWBA — voici les mots pour parler à Allâh maintenant.",
+  "version": "1.0",
+  "date_production": "2026-05-26",
+  "items": [
+    {
+      "id": "maghrib_duas_001",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUAS_DU_SOIR",
+      "fr": "Ce soir, récite Âyatu-l-Kursî. Le Prophète ﷺ a dit que quiconque la lit avant de dormir reçoit un gardien d'Allâh jusqu'au matin. 'Allâh, point de divinité que Lui, le Vivant, Celui qui subsiste par Lui-même...' — Coran 2:255"
+    },
+    {
+      "id": "maghrib_duas_002",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUAS_DU_SOIR",
+      "fr": "Récite ce soir : 'Notre Seigneur ! Accorde-nous le bien ici-bas, le bien dans l'au-delà, et préserve-nous du châtiment du Feu.' Une du'â pour les deux mondes en une phrase. — Coran 2:201"
+    },
+    {
+      "id": "maghrib_duas_003",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUAS_DU_SOIR",
+      "fr": "'Mon Seigneur, augmente ma science.' Cinq mots. Le seul du'â qu'Allâh enseigne directement au Prophète ﷺ. À dire chaque soir. — Coran 20:114"
+    },
+    {
+      "id": "maghrib_duas_004",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUAS_DU_SOIR",
+      "fr": "Ce soir, récite Al-Ikhlâs trois fois. 'Dis : Il est Allâh, Unique. Allâh, Le Seul à être imploré. Il n'a jamais engendré et n'a pas été engendré. Et nul n'est égal à Lui.' Le tiers du Coran condensé. — Coran 112"
+    },
+    {
+      "id": "maghrib_duas_005",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUAS_DU_SOIR",
+      "fr": "Récite Al-Falaq. 'Je cherche refuge auprès du Seigneur de l'aube naissante, contre le mal de ce qu'Il a créé, contre le mal de l'obscurité quand elle envahit...' La protection contre tout ce que tu ne vois pas. — Coran 113"
+    },
+    {
+      "id": "maghrib_duas_006",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUAS_DU_SOIR",
+      "fr": "Récite An-Nâs. 'Je cherche refuge auprès du Seigneur des hommes, du Roi des hommes, du Dieu des hommes, contre le mal du chuchoteur sournois...' Contre les voix dans ta tête, les murmures qui rongent. — Coran 114"
+    },
+    {
+      "id": "maghrib_duas_007",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUAS_DU_SOIR",
+      "fr": "Ce soir, du'â de Mûsâ : 'Mon Seigneur ! Ouvre-moi la poitrine, facilite-moi ma tâche, dénoue le nœud de ma langue, afin qu'ils comprennent ma parole.' Si tu dois parler demain. Si tu dois agir. — Coran 20:25-28"
+    },
+    {
+      "id": "maghrib_duas_008",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUAS_DU_SOIR",
+      "fr": "Ce soir, du'â de Yûnus dans le ventre de la baleine : 'Point de divinité que Toi ! Subhân ! J'ai été du nombre des injustes !' Toute du'â similaire est exaucée — l'a dit le Prophète ﷺ. — Coran 21:87"
+    },
+    {
+      "id": "maghrib_duas_009",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUAS_DU_SOIR",
+      "fr": "'Notre Seigneur, ne dévie pas nos cœurs après que Tu nous as guidés ; accorde-nous Ta miséricorde. C'est Toi, certes, Le Grand Donateur.' La du'â de ceux qui ont peur de perdre leur foi. À dire chaque soir. — Coran 3:8"
+    },
+    {
+      "id": "maghrib_duas_010",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUAS_DU_SOIR",
+      "fr": "Du'â d'Ibrâhîm pour ses enfants : 'Mon Seigneur, fais de moi quelqu'un qui accomplit la salât. Et de ma descendance aussi.' Si tu as des enfants. Si tu en veux. Si tu pries pour ceux qui viendront après toi. — Coran 14:40"
+    },
+    {
+      "id": "maghrib_duas_011",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUAS_DU_SOIR",
+      "fr": "Du'â de Zakariyya : 'Mon Seigneur, ne me laisse pas seul. Tu es le meilleur héritier.' Si la solitude pèse ce soir. Allâh n'a pas laissé Zakariyya seul. Il ne te laissera pas. — Coran 21:89"
+    },
+    {
+      "id": "maghrib_duas_012",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUAS_DU_SOIR",
+      "fr": "Du'â d'Ayyûb (Job) dans la souffrance : 'Le mal m'a touché. Mais Tu es le plus miséricordieux des miséricordieux.' Pas de plainte. Pas d'accusation. Juste la reconnaissance de Sa rahma. Allâh l'a guéri. — Coran 21:83"
+    },
+    {
+      "id": "maghrib_duas_013",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUAS_DU_SOIR",
+      "fr": "Du'â universelle des croyants : 'Notre Seigneur, nous avons cru — pardonne-nous, fais-nous miséricorde. Tu es le meilleur des miséricordieux.' Sept mots à laisser sur tes lèvres avant le sommeil. — Coran 23:109"
+    },
+    {
+      "id": "maghrib_duas_014",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUAS_DU_SOIR",
+      "fr": "Du'â de la fortification : 'Hasbiya-llâhu, lâ ilâha illâ Huwa ; 'alayhi tawakkaltu, wa Huwa Rabb al-'arsh il-'azîm.' Allâh me suffit ; il n'y a pas d'autre divinité que Lui ; je place ma confiance en Lui. — Coran 9:129"
+    },
+    {
+      "id": "maghrib_duas_015",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUAS_DU_SOIR",
+      "fr": "Du'â des deux derniers versets d'al-Baqara : 'Notre Seigneur ! Ne nous tiens pas rigueur si nous oublions ou commettons une erreur.' Le Prophète ﷺ a dit que ces deux versets suffisent pour la nuit entière. — Coran 2:285-286"
+    },
+    {
+      "id": "maghrib_duas_016",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUAS_DU_SOIR",
+      "fr": "Du'â de Sulaymân : 'Mon Seigneur ! Permets-moi de Te rendre grâce pour le bienfait dont Tu m'as comblé moi et mes parents.' Si tu veux apprendre la gratitude. Le verbe est apprendre — 'awzi'nî'. — Coran 27:19"
+    },
+    {
+      "id": "maghrib_duas_017",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUAS_DU_SOIR",
+      "fr": "Du'â pour les parents : 'Mon Seigneur ! Sois miséricordieux envers eux, comme ils l'ont été envers moi quand j'étais petit.' À dire chaque soir, qu'ils soient vivants ou décédés. — Coran 17:24"
+    },
+    {
+      "id": "maghrib_duas_018",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUAS_DU_SOIR",
+      "fr": "Du'â de protection : 'Mon Seigneur, je me réfugie auprès de Toi contre les suggestions des démons.' Trois mots à dire à voix basse quand les pensées noires reviennent. — Coran 23:97"
+    },
+    {
+      "id": "maghrib_duas_019",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUAS_DU_SOIR",
+      "fr": "Du'â pour les croyants morts : 'Notre Seigneur, pardonne-nous et pardonne à nos frères qui nous ont précédés dans la foi. Ne mets en nos cœurs aucune haine envers ceux qui ont cru.' Tu prends soin de ceux qui sont partis. — Coran 59:10"
+    },
+    {
+      "id": "maghrib_duas_020",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUAS_DU_SOIR",
+      "fr": "La dernière du'â de cette journée. La plus simple. La plus parfaite. 'Al-hamdu li-llâhi Rabbi-l-'âlamîn.' Louange à Allâh, Seigneur des mondes. C'est tout. C'est assez. Tu peux dormir. — Coran 1:2"
+    }
+  ],
+  "metadata": {
+    "principe_editorial": "CLÔTURE DU MVP MAGHRIB. Versets-du'âs concrets à réciter le soir. Format 'invitation directe' — pas description. L'utilisateur ressort avec un OUTIL en main, pas seulement une émotion.",
+    "sources_utilisees": "Sourates 1, 2, 3, 9, 14, 17, 20, 21, 23, 27, 59, 112, 113, 114. Tous versets-du'âs vérifiés via web_search.",
+    "themes_couverts": ["Âyatu-l-Kursî", "du'â des deux mondes", "augmente ma science", "Al-Ikhlâs", "Al-Falaq", "An-Nâs", "Mûsâ ouvre poitrine", "Yûnus baleine", "ne dévie pas nos cœurs", "Ibrâhîm descendance", "Zakariyya solitude", "Ayyûb souffrance", "pardonne miséricorde", "Hasbiya-llâhu", "fin d'al-Baqara", "Sulaymân gratitude", "parents rahma", "anti-démons", "morts croyants", "al-hamdu li-llâh"],
+    "tonalite_panel": "Conforme : 100% espoir actif. Aucune description abstraite. L'utilisateur reçoit des OUTILS pour le soir.",
+    "STATUT_FINAL": "MVP MAGHRIB COMPLET — 365 items intégrés (165 existants + 30 JANNAH + 30 DUNYA + 30 MORT + 30 JUGEMENT + 30 JAHANNAM + 30 TAWBA + 20 DU'ÂS). Clôture officielle du waqt.",
+    "ARC_NARRATIF_COMPLET_MAGHRIB": {
+      "tranche_1": "JANNAH — l'espoir comme point de départ (versets Paradis)",
+      "tranche_2": "DUNYA passe / ÂKHIRA reste — relativisation des illusions",
+      "tranche_3": "MORT/BARZAKH — le passage assumé sans terreur",
+      "tranche_4": "JOUR DU JUGEMENT — le rappel sérieux + porte ouverte",
+      "tranche_5": "JAHANNAM — rappel sobre avec ratio rahma strict",
+      "tranche_6": "REPENTIR/RETOUR — la porte de sortie complète",
+      "tranche_7": "DU'ÂS DU SOIR — les outils pour dormir avec Allâh"
+    },
+    "cloture_symbolique": "Le dernier item du MVP MAGHRIB se termine par 'Al-hamdu li-llâh Rabbi-l-'âlamîn' — le premier verset du Coran après la basmala. La boucle est bouclée : le coucher du soleil te ramène au début de la louange. Tu peux dormir."
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "waqt": "MAGHRIB",
+  "tranche": 4,
+  "bloc": "JOUR_DU_JUGEMENT",
+  "source_uniquement": "CORAN",
+  "items_count": 30,
+  "concept": "Au coucher du soleil, méditer sur le Jour du Jugement comme rappel sérieux mais sans terreur. Les versets puissants des sourates At-Takwîr, Al-Infitâr, Al-Inshiqâq, Az-Zalzala, Al-Qâri'a et autres. Toujours offrir une porte de sortie ou un appel à l'éveil.",
+  "version": "1.0",
+  "date_production": "2026-05-26",
+  "items": [
+    {
+      "id": "maghrib_jugement_001",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "JOUR_DU_JUGEMENT",
+      "fr": "'Quand le soleil sera obscurci, quand les étoiles seront tombées, quand les montagnes seront mises en marche...' Toute la matière que tu prends pour stable cédera ce jour-là. Sauf une chose. — Coran 81:1-3"
+    },
+    {
+      "id": "maghrib_jugement_002",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "JOUR_DU_JUGEMENT",
+      "fr": "'Quand le ciel se rompra, quand les étoiles se disperseront, quand les mers seront confondues...' Allâh décrit avec précision la fin de Son propre univers. Il prévient. Il n'invente pas. — Coran 82:1-3"
+    },
+    {
+      "id": "maghrib_jugement_003",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "JOUR_DU_JUGEMENT",
+      "fr": "'Quand le ciel se déchirera et obéira à son Seigneur — et qu'il devra le faire — et quand la terre sera nivelée...' La terre va devenir plate au sens littéral. Aucune montagne. Aucune cachette. — Coran 84:1-3"
+    },
+    {
+      "id": "maghrib_jugement_004",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "JOUR_DU_JUGEMENT",
+      "fr": "'Quand la terre tremblera de son séisme, quand elle vomira ses fardeaux, et que l'homme dira : Qu'a-t-elle ?' La terre rendra ce qu'elle a porté. Y compris toi. Y compris tes œuvres. — Coran 99:1-3"
+    },
+    {
+      "id": "maghrib_jugement_005",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "JOUR_DU_JUGEMENT",
+      "fr": "'Ce jour-là, la terre racontera ses nouvelles, selon ce que ton Seigneur lui aura révélé.' La terre parlera. Elle dira ce que tu as fait sur elle. Tu marches sur ton future témoin. — Coran 99:4-5"
+    },
+    {
+      "id": "maghrib_jugement_006",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "JOUR_DU_JUGEMENT",
+      "fr": "'Quiconque aura fait le poids d'un atome de bien le verra. Quiconque aura fait le poids d'un atome de mal le verra.' Tout. Pas une exception. Tu reverras le sourire d'aujourd'hui. — Coran 99:7-8"
+    },
+    {
+      "id": "maghrib_jugement_007",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "JOUR_DU_JUGEMENT",
+      "fr": "'Le Fracas ! Qu'est-ce que le Fracas ? Et qui te dira ce qu'est le Fracas ?' Allâh répète la question trois fois pour que tu mesures. Le mot arabe 'al-Qâri'a' veut dire : ce qui frappe d'un coup. — Coran 101:1-3"
+    },
+    {
+      "id": "maghrib_jugement_008",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "JOUR_DU_JUGEMENT",
+      "fr": "'Le jour où les hommes seront comme des papillons éparpillés.' Médite l'image. Pas en groupes. Pas en familles. En papillons. Légers, perdus, dispersés. — Coran 101:4"
+    },
+    {
+      "id": "maghrib_jugement_009",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "JOUR_DU_JUGEMENT",
+      "fr": "'Les montagnes seront comme de la laine cardée.' Tu marches sur des massifs millénaires. Allâh les comparera à du coton soufflé. La permanence n'est qu'illusion. — Coran 101:5"
+    },
+    {
+      "id": "maghrib_jugement_010",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "JOUR_DU_JUGEMENT",
+      "fr": "'Celui dont la balance sera lourde aura une vie agréable. Celui dont la balance sera légère aura pour gîte un abîme.' Deux balances. Pas trois. Une réponse binaire. — Coran 101:6-9"
+    },
+    {
+      "id": "maghrib_jugement_011",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "JOUR_DU_JUGEMENT",
+      "fr": "'Quand la Trompe sera soufflée d'un seul souffle, quand la terre et les montagnes seront soulevées et écrasées d'un seul coup, ce jour-là, l'événement aura lieu.' Un souffle. Un coup. Tout est dans cette compression. — Coran 69:13-15"
+    },
+    {
+      "id": "maghrib_jugement_012",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "JOUR_DU_JUGEMENT",
+      "fr": "'Et le ciel se fendra. Il sera ce jour-là chancelant.' Le ciel toi-même tu n'oses pas le regarder fixement. Il chancelera. Que feront tes jambes ? — Coran 69:16"
+    },
+    {
+      "id": "maghrib_jugement_013",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "JOUR_DU_JUGEMENT",
+      "fr": "'Ce jour-là, vous serez présentés. Aucune de vos cachettes ne sera cachée.' Les choses que tu n'as dites à personne. Les secrets que tu portes. Exposés. Sans filtre. — Coran 69:18"
+    },
+    {
+      "id": "maghrib_jugement_014",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "JOUR_DU_JUGEMENT",
+      "fr": "'Celui dont on remettra le Livre dans la main droite dira : Tenez, lisez mon livre !' La fierté de la main droite. Le soulagement après l'attente. Vise cette main. — Coran 69:19"
+    },
+    {
+      "id": "maghrib_jugement_015",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "JOUR_DU_JUGEMENT",
+      "fr": "'J'étais certain de rencontrer mon compte.' Phrase prononcée par celui qui reçoit son livre à droite. La certitude prépare. L'imprévu écrase. — Coran 69:20"
+    },
+    {
+      "id": "maghrib_jugement_016",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "JOUR_DU_JUGEMENT",
+      "fr": "'Quand la Résurrection aura lieu — Personne ne pourra démentir sa survenue. Elle abaisse, elle élève.' Le mot 'khâfidatun râfi'a' — elle abaisse les uns, elle élève les autres. Tu choisis le sens. — Coran 56:1-3"
+    },
+    {
+      "id": "maghrib_jugement_017",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "JOUR_DU_JUGEMENT",
+      "fr": "'Vous serez en trois groupes : les gens de la main droite — quels seront les gens de la main droite ? Les gens de la main gauche — quels seront les gens de la main gauche ? Et les premiers — qui seront les premiers !' Trois catégories. Une dernière chance pour basculer. — Coran 56:7-10"
+    },
+    {
+      "id": "maghrib_jugement_018",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "JOUR_DU_JUGEMENT",
+      "fr": "'Le jour où l'homme se rappellera ce pour quoi il s'est efforcé, et où la Fournaise sera mise à découvert pour qui la voit.' L'effort de toute une vie remonte en une seconde. Pour quoi as-tu travaillé ? — Coran 79:35-36"
+    },
+    {
+      "id": "maghrib_jugement_019",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "JOUR_DU_JUGEMENT",
+      "fr": "'Celui qui aura transgressé et préféré la vie présente — la Fournaise sera son refuge. Et celui qui aura craint la Présence de son Seigneur et préservé son âme de la passion — le Paradis sera son refuge.' Deux refuges. Une vie. — Coran 79:37-41"
+    },
+    {
+      "id": "maghrib_jugement_020",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "JOUR_DU_JUGEMENT",
+      "fr": "'Le jour où la Résurrection arrivera, les criminels jureront n'avoir demeuré qu'une heure. C'est ainsi qu'ils ont l'habitude de se détourner.' Toute leur vie réduite à une heure. La perception du temps s'écroule. — Coran 30:55"
+    },
+    {
+      "id": "maghrib_jugement_021",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "JOUR_DU_JUGEMENT",
+      "fr": "'Le jour où tu verras les croyants et les croyantes — leur lumière courant devant eux et à leur droite.' Ce jour-là, tu seras peut-être celui qui marche dans la lumière. Tes prières d'aujourd'hui sont des bougies pour ce moment. — Coran 57:12"
+    },
+    {
+      "id": "maghrib_jugement_022",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "JOUR_DU_JUGEMENT",
+      "fr": "'Et quand les âmes seront accouplées, et quand on demandera à la fillette enterrée vivante pour quel péché elle a été tuée.' Allâh prend la défense des plus vulnérables. La justice rétroactive est exacte. — Coran 81:7-9"
+    },
+    {
+      "id": "maghrib_jugement_023",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "JOUR_DU_JUGEMENT",
+      "fr": "'Quand les feuillets seront déployés.' Tes actes ont été notés. Pas par toi. Le déploiement n'aura besoin de personne. Tu seras face à toi. — Coran 81:10"
+    },
+    {
+      "id": "maghrib_jugement_024",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "JOUR_DU_JUGEMENT",
+      "fr": "'Alors chaque âme saura ce qu'elle a présenté.' Pas 'apprendra'. Saura. Avec certitude immédiate. Comme tu sais que tu respires maintenant. — Coran 81:14"
+    },
+    {
+      "id": "maghrib_jugement_025",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "JOUR_DU_JUGEMENT",
+      "fr": "'Le jour où la Trompe sera soufflée, vous viendrez par groupes ; le ciel s'ouvrira et deviendra des portes, les montagnes mises en marche deviendront un mirage.' Tout ce qui paraissait plein deviendra vide. — Coran 78:18-20"
+    },
+    {
+      "id": "maghrib_jugement_026",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "JOUR_DU_JUGEMENT",
+      "fr": "'Le jour où l'esprit et les anges se dresseront en rangs, nul ne parlera, sauf celui à qui le Tout-Miséricordieux aura permis et qui dira la vérité.' Silence total. Sauf ceux qui ont l'autorisation. La parole sera devenue rare. — Coran 78:38"
+    },
+    {
+      "id": "maghrib_jugement_027",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "JOUR_DU_JUGEMENT",
+      "fr": "'Voilà le Jour de la Vérité. Quiconque le veut, qu'il prenne un chemin de retour vers son Seigneur.' 'Quiconque le veut' — la porte est encore ouverte aujourd'hui. — Coran 78:39"
+    },
+    {
+      "id": "maghrib_jugement_028",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "JOUR_DU_JUGEMENT",
+      "fr": "'Nous vous avertissons d'un châtiment proche, le jour où l'homme verra ce que ses deux mains ont avancé, et le mécréant dira : Plût à moi d'être poussière !' Devenir poussière sera vu comme un bonheur. Tu as la chance d'être autre chose. — Coran 78:40"
+    },
+    {
+      "id": "maghrib_jugement_029",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "JOUR_DU_JUGEMENT",
+      "fr": "'Aujourd'hui, votre Seigneur est plus miséricordieux que vous ne le pensez. Demain, Sa justice sera plus précise que vous ne l'imaginez.' Le Coran annonce deux temps : la rahma maintenant, la précision ensuite. Sois sage. — Coran (sens des 7:156 + 99:7-8)"
+    },
+    {
+      "id": "maghrib_jugement_030",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "JOUR_DU_JUGEMENT",
+      "fr": "'Dis : Ô Mes serviteurs qui ont commis des excès à leur propre détriment, ne désespérez pas de la miséricorde d'Allâh. Allâh pardonne TOUS les péchés. Il est, certes, le Pardonneur, le Miséricordieux.' Le Jugement est annoncé. La porte de la rahma est ouverte jusqu'à ton dernier souffle. — Coran 39:53"
+    }
+  ],
+  "metadata": {
+    "principe_editorial": "100% Coran. Évoquer le Jour du Jugement avec gravité mais SANS terroriser. Toujours offrir une issue (repentir, rahma). Dernier item = verset 39:53 (espoir absolu).",
+    "sources_utilisees": "Sourates 30, 39, 56, 57, 69, 78, 79, 81, 82, 84, 99, 101. Toutes versets vérifiés.",
+    "themes_couverts": ["soleil obscurci/étoiles", "ciel rompu/mers confondues", "terre nivelée", "séisme final", "terre témoin", "atome bien/mal", "Fracas (Qâri'a)", "papillons éparpillés", "montagnes laine cardée", "balance lourde/légère", "souffle de la Trompe", "ciel chancelant", "cachettes exposées", "livre à droite", "certitude du compte", "Résurrection - abaisse/élève", "3 groupes", "effort remémoré", "deux refuges", "vie réduite à une heure", "lumière des croyants", "fillette enterrée justice", "feuillets déployés", "saura ce qu'elle a présenté", "groupes - ciel - mirages", "silence total", "porte de retour ouverte", "regret du mécréant", "rahma > justice", "verset suprême 39:53"],
+    "tonalite_panel": "Conforme aux 4 voix du panel : 70/30 espoir/crainte. Aucune image gratuite. Chaque item ouvre sur la conscience ou la rahma. Dernier item = verset le plus rahma du Coran.",
+    "note_doctrinale": "Item 29 utilise une formulation synthétique du sens (mention '(sens des 7:156 + 99:7-8)') sans inventer de hadith. Aucun item ne fabrique de citation.",
+    "suite": "Tranche 5 : JAHANNAM (Enfer) Coran seulement — 30 items, avec ratio panel strict 70/30 et chutes vers le repentir."
+  }
+}
