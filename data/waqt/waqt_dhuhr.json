@@ -3193,6 +3193,193 @@
         "verif_imam": false,
         "texte": "Tu es seul chez toi, 14h, jour de congé. Tu pourrais faire mille choses. Tu n'as envie de rien.\n\nTu as une petite tristesse vague. Pas une grosse dépression. Juste un voile gris. Tu ne sais même pas pourquoi.\n\nTu te dis : si je sortais le Coran maintenant — pas pour réciter par habitude, mais pour me laisser LIRE par lui — qu'est-ce qui se passerait ?\n\nC'est un renversement étrange. Le Coran n'est pas seulement un texte que TU lis. C'est aussi un texte qui te LIT, qui sait des choses sur toi, qui peut te parler exactement à l'endroit où tu es.\n\nSi tu l'ouvres aujourd'hui, dans cet état précis, tu vas peut-être tomber sur un verset qui te parlera précisément de ce voile gris que tu portes. Pas par magie. Par cette particularité du Coran d'être toujours actuel.\n\nMais tu n'oses pas l'ouvrir. Tu préfères scroller. Tu te dis que tu n'es pas \"en état\" de lire le Coran.\n\nEn fait, c'est exactement le contraire. C'est PRÉCISÉMENT dans cet état que tu en as le plus besoin.",
         "morale": "OUVRE le module Versets de Niyyah maintenant. LAISSE-TOI LIRE — pas l'inverse. Ouvre à un endroit, lis un passage, laisse-le te parler. Le Coran a 14 siècles d'expérience à parler aux cœurs gris. Donne-lui une chance d'opérer sur le tien."
+      },
+      {
+        "id": "DHUHR-CARREFOUR-019",
+        "titre": "La traversée de Mûsâ",
+        "type_narratif": "SCENE_CONTEMPORAINE",
+        "module_cible": "recits_coran",
+        "verbe_action": "TRAVERSE",
+        "source": "Mini-scène fictive contemporaine. Création littéraire pour Niyyah.",
+        "verif_imam": false,
+        "texte": "Tu es coincé. Vraiment coincé. Une situation que tu vis depuis des mois — financière, professionnelle, sentimentale, peu importe — qui ne s'ouvre pas. Tu as tout essayé. Rien.\n\nTu te sens comme acculé. Devant toi, un obstacle qui ne bouge pas. Derrière toi, on te pousse. Tu n'as nulle part où aller.\n\nTu te rappelles, soudainement, Mûsâ devant la Mer Rouge. Devant lui : l'eau, infranchissable. Derrière lui : Pharaon et son armée, qui vont arriver dans quelques heures. Les Banî Isrâ'îl en panique : « Nous sommes pris ! »\n\nEt Mûsâ — calmement — dit : « Non. Mon Seigneur est avec moi. Il me guidera. »\n\nIl frappe la mer avec son bâton. Elle s'ouvre. Le chemin apparaît là où il n'y en avait aucun.\n\nTu te dis : qu'est-ce que je sais, vraiment, de cette histoire ? Pas le résumé pour enfants. La vraie scène — l'attente, l'angoisse, la foi qui résiste, le miracle. Si je lis cette histoire avec ce que je vis MAINTENANT, peut-être que je vais y trouver quelque chose pour MOI.",
+        "morale": "OUVRE le module Récits du Coran. TRAVERSE l'histoire de Mûsâ face à la mer. Pas pour la connaître. Pour la TRAVERSER toi-même intérieurement. Allâh place Ses récits dans le Coran précisément pour les moments où tu te sens acculé. C'est ton moment. C'est ton histoire."
+      },
+      {
+        "id": "DHUHR-CARREFOUR-020",
+        "titre": "L'intention sur ta colère",
+        "type_narratif": "SCENE_CONTEMPORAINE",
+        "module_cible": "scanner",
+        "verbe_action": "INTENTIONNE",
+        "source": "Mini-scène fictive contemporaine. Création littéraire pour Niyyah.",
+        "verif_imam": false,
+        "texte": "Tu es en colère. Une dispute ce matin avec ton conjoint. Ça t'a pourri ta matinée. Tu es au bureau, mais ta tête est encore dans la cuisine de 8h.\n\nTu sens que cette colère t'habite. Tu sais qu'elle va te faire dire ou faire des choses dont tu vas te repentir.\n\nTu te dis : si je posais une intention CONTRE cette colère — pas juste \"essayer de me calmer\", mais une vraie intention spirituelle — qu'est-ce que ça changerait ?\n\nIntention concrète : \"Allâh, je porte une colère qui ne vient pas de Toi. Aide-moi à ne pas en faire un péché. Le reste de ma journée, je la travaille POUR Toi, en sachant que je suis en colère. Ne me laisse pas ajouter des fautes à ma faute initiale.\"\n\nC'est différent d'un effort psychologique. C'est un acte intérieur spirituel. Tu DÉPOSES la colère dans l'intention. Tu la rends visible. Tu engages Allâh dans ta journée.",
+        "morale": "OUVRE le module Scanner Niyyah. INTENTIONNE PRÉCISÉMENT contre ce qui te ronge maintenant — colère, anxiété, jalousie. L'intention n'est pas une formule générique. C'est un acte ciblé. Pose l'intention juste sur le mal du jour, et tu désamorces la moitié des péchés à venir."
+      },
+      {
+        "id": "DHUHR-CARREFOUR-021",
+        "titre": "Le bilan du mois",
+        "type_narratif": "SCENE_CONTEMPORAINE",
+        "module_cible": "bilan",
+        "verbe_action": "MESURE",
+        "source": "Mini-scène fictive contemporaine. Création littéraire pour Niyyah.",
+        "verif_imam": false,
+        "texte": "Premier du mois. Tu prends ton café, tu réalises soudainement : un mois entier s'est écoulé depuis le 1er du mois dernier.\n\nUn mois entier. 30 jours. 720 heures. Et tu te demandes : qu'est-ce que j'ai vraiment construit spirituellement ce mois ?\n\nLa réponse t'échappe. Tu te souviens des choses pratiques — les réunions, les emails, les factures, les courses. Mais sur le plan spirituel : as-tu progressé ? Régressé ? Stagné ?\n\nLes bilans hebdomadaires sont utiles. Mais le bilan MENSUEL voit ce que la semaine ne voit pas. Il voit les TENDANCES. Si tu as commencé à manquer la fajr trois semaines sur quatre — c'est une tendance, pas un accident. Si ta lecture du Coran a chuté à zéro pendant 30 jours — c'est une chute, pas une pause.\n\nTu te dis : je dois mesurer le mois. Pas juste sentir vaguement \"je vais bien\" ou \"je vais mal\". Vraiment MESURER. Avec des questions précises.",
+        "morale": "OUVRE le module Bilan Hebdomadaire de Niyyah. MESURE ton mois — pas juste ta semaine. Le bilan mensuel révèle les tendances que la semaine cache. Si tu n'as pas fait de bilan ce mois-ci, fais-le aujourd'hui. Tu seras peut-être surpris de ce que tu vois — en bien ou en mal."
+      },
+      {
+        "id": "DHUHR-CARREFOUR-022",
+        "titre": "Ibrâhîm dans le feu",
+        "type_narratif": "SCENE_CONTEMPORAINE",
+        "module_cible": "recits_coran",
+        "verbe_action": "AFFRONTE",
+        "source": "Mini-scène fictive contemporaine. Création littéraire pour Niyyah.",
+        "verif_imam": false,
+        "texte": "Tu as une décision à prendre. Tu sais ce qui est juste. Mais le prix de cette décision est lourd — tu vas perdre des amis, une position, peut-être un job, peut-être l'approbation de ta famille.\n\nTu te dis : si je fais ce qui est juste, je vais me retrouver isolé. Tout le monde contre moi.\n\nTu te rappelles Ibrâhîm. Seul contre tout son peuple. Les idoles brisées. Le roi Nimrod en face. Le bûcher allumé. Soixante jours d'attente avant que la torche soit lancée.\n\nIbrâhîm n'a pas reculé. Quand on lui a demandé en chemin vers le feu : \"As-tu besoin de quelque chose ?\", il a répondu : \"De Toi, ô peuple — non. D'Allâh — Il sait mon état, je n'ai rien à Lui demander.\"\n\nLe feu a été allumé. Il a été jeté dedans. Et Allâh a dit : \"Ô feu, sois froid et pacifique pour Ibrâhîm.\"\n\nTu te dis : cette histoire est dans le Coran pour DES gens comme moi, en cet instant. Pas pour la collection mythologique. Pour ME donner un modèle quand ma vérité va coûter cher.",
+        "morale": "OUVRE le module Récits du Coran. AFFRONTE l'histoire d'Ibrâhîm en détail. Pas pour t'inspirer vaguement — pour étudier comment un homme tient face à la pression universelle. Et puis prends ta décision aujourd'hui en sachant que tu n'es pas le premier à avoir choisi la voie difficile."
+      },
+      {
+        "id": "DHUHR-CARREFOUR-023",
+        "titre": "La porte de l'orgueil",
+        "type_narratif": "SCENE_CONTEMPORAINE",
+        "module_cible": "portes",
+        "verbe_action": "ABAISSE",
+        "source": "Mini-scène fictive contemporaine. Création littéraire pour Niyyah.",
+        "verif_imam": false,
+        "texte": "Tu sors d'une réunion. Tu as eu raison, dans un débat avec un collègue. Tu sens cette petite satisfaction — \"j'ai gagné\". Tu en parles à un ami au téléphone après. Tu racontes en mettant en avant ta brillance.\n\nTu remarques quelque chose. Plus tu parles, plus tu te sens bien. Pas du bien tranquille — du bien GONFLÉ. Comme si quelque chose en toi enflait à chaque mot.\n\nC'est UNE PORTE. La porte du kibr — l'orgueil.\n\nLe hadith dit : « N'entrera pas au Paradis celui qui a une once d'orgueil dans le cœur. » Une once. Pas un kilo. Une once.\n\nTu as gagné un débat ce matin. Vrai. Mais tu es en train d'en faire un poids spirituel — par la manière dont tu en parles. La satisfaction de la victoire devient orgueil quand tu commences à la mettre en scène.\n\nLa porte de l'orgueil se ferme par un acte simple : ABAISSER. T'abaisser. Te rappeler que tu es poussière. Que ton intelligence est un don, pas une propriété. Que ton interlocuteur de ce matin est ton frère humain, pas un trophée.",
+        "morale": "OUVRE le module Portes de Niyyah. ABAISSE-TOI consciemment cette semaine — pas par humiliation, par discipline. Chaque fois que tu sens monter l'orgueil après une victoire, dis intérieurement : \"Allâh, c'est de Toi.\" Chaque fois que tu veux raconter ta brillance, tais-toi. La porte de l'orgueil ferme par ces gestes minuscules répétés."
+      },
+      {
+        "id": "DHUHR-CARREFOUR-024",
+        "titre": "La du'â d'Ayyûb",
+        "type_narratif": "SCENE_CONTEMPORAINE",
+        "module_cible": "dua",
+        "verbe_action": "IMPLORE",
+        "source": "Mini-scène fictive contemporaine. Création littéraire pour Niyyah.",
+        "verif_imam": false,
+        "texte": "Tu portes une épreuve depuis longtemps. Maladie, deuil, dette, problème de couple, problème d'enfant. Tu en es à un point où tu ne sais plus comment continuer.\n\nTu pries. Tu fais tes rakaʿat. Mais ta du'â reste générique. Tu n'oses pas vraiment IMPLORER. Tu te dis : \"il y a des gens qui souffrent plus que moi, je n'ai pas à me plaindre\".\n\nMais voici quelque chose que tu as oublié.\n\nAyyûb — le prophète Job — a fait, dans son épreuve qui a duré des années, une du'â qu'Allâh a immortalisée dans le Coran. Une du'â qui n'a que dix mots arabes. Mais ces dix mots ont DÉCLENCHÉ son rétablissement total.\n\nLa du'â : « Annî massaniya-dh-dhurr wa anta arham ar-râhimîn. » \"Le mal m'a touché — et Tu es le plus miséricordieux des miséricordieux.\"\n\nCette du'â est dans le Coran. Tu peux la prendre. Elle a guéri Ayyûb. Pourquoi tu te prives ?\n\nLe Prophète ﷺ a transmis des dizaines de du'â précises pour chaque type d'épreuve. Si tu cherches, tu en trouves au moins une qui correspond exactement à ce que tu vis.",
+        "morale": "OUVRE le module Du'a du jour. IMPLORE avec une du'â précise — pas générique. Pour l'épreuve longue, la du'â d'Ayyûb. Pour la dette, celle d'ʿAlî. Pour l'anxiété, celle des compagnons de la grotte. Chaque épreuve a sa du'â transmise. Le Coran et les hadiths sont une pharmacopée d'invocations. Sors la bonne pour ton mal."
+      },
+      {
+        "id": "DHUHR-CARREFOUR-025",
+        "titre": "Le compagnon qui priait la nuit",
+        "type_narratif": "SCENE_CONTEMPORAINE",
+        "module_cible": "sira",
+        "verbe_action": "OBSERVE",
+        "source": "Mini-scène fictive contemporaine. Création littéraire pour Niyyah.",
+        "verif_imam": false,
+        "texte": "Tu te lèves le matin, fatigué. Tu n'as pas fait la fajr à l'heure. Encore. Tu te dis : \"je n'arrive pas à me lever\". Tu culpabilises vaguement, et tu passes à autre chose.\n\nMais tu sens qu'il y a un truc. Un manque. Quelque chose que les premiers musulmans avaient et que toi tu as perdu.\n\nTu te rappelles vaguement que les Compagnons du Prophète ﷺ priaient beaucoup la nuit. Le qiyâm al-layl. Tahajjud. Ils se levaient à 3h, 4h du matin, et ils priaient longuement.\n\nTu te dis : c'était une autre époque. Pas applicable à ma vie moderne.\n\nMais en réalité, certains Compagnons travaillaient à l'aube (caravanes, marchés) et pourtant ils trouvaient le temps. ʿUmar gouvernait un empire et il faisait tahajjud. Abû Bakr récitait le Coran en pleurant en pleine nuit.\n\nTu n'as pas besoin de faire pareil. Mais peut-être que LIRE comment ils faisaient — leurs scènes nocturnes précises, leurs visages, leurs voix — pourrait te toucher autrement que la culpabilité matinale.",
+        "morale": "OUVRE le module Sîra de Niyyah. OBSERVE un Compagnon dans sa pratique nocturne. Pas pour copier exactement. Pour SENTIR ce qu'ils sentaient. La lumière intérieure d'un homme qui prie pendant que le monde dort. Ce témoignage peut, parfois, réveiller en toi ce que cent rappels matinaux n'arrivent pas à faire."
+      },
+      {
+        "id": "DHUHR-CARREFOUR-026",
+        "titre": "L'intention sur ton argent",
+        "type_narratif": "SCENE_CONTEMPORAINE",
+        "module_cible": "scanner",
+        "verbe_action": "CONSACRE",
+        "source": "Mini-scène fictive contemporaine. Création littéraire pour Niyyah.",
+        "verif_imam": false,
+        "texte": "Tu reçois ton salaire ce matin. Notification bancaire. Tu regardes le montant.\n\nTu te dis : \"je vais payer mes factures, mettre un peu de côté, et m'acheter le truc que je voulais\".\n\nC'est tout ? C'est ce que tu fais avec chaque salaire depuis 15 ans. Cycle automatique. Sans intention spirituelle.\n\nTu te rappelles que l'argent, en islam, n'est pas neutre. Il porte une baraka — ou il en est dépourvu — selon l'INTENTION qui le traverse.\n\nIntention : « Allâh, ce salaire vient de Toi. Je le consacre à : nourrir ma famille selon ce que Tu prescris ; payer mes dettes ; donner une part en sadaqa cette semaine ; ne pas le dépenser en futilités haram ou makrûh. »\n\nC'est une intention en 3 minutes. Et cela peut transformer toute l'utilisation des 3000 euros qui viennent d'arriver. Pas par magie — par la conscience que tu portes à chaque dépense ensuite.",
+        "morale": "OUVRE le module Scanner Niyyah de Niyyah à chaque salaire qui arrive. CONSACRE l'argent reçu — par une intention claire. Trois minutes au moment du virement. Cette discipline simple, sur des années, transforme la baraka de toute ta vie financière. L'argent intentionné vaut spirituellement infiniment plus que l'argent qui passe sans regard."
+      },
+      {
+        "id": "DHUHR-CARREFOUR-027",
+        "titre": "Maryam dans le désert",
+        "type_narratif": "SCENE_CONTEMPORAINE",
+        "module_cible": "recits_coran",
+        "verbe_action": "REÇOIS",
+        "source": "Mini-scène fictive contemporaine. Création littéraire pour Niyyah.",
+        "verif_imam": false,
+        "texte": "Tu es femme. Tu portes quelque chose de difficile en ce moment. Une situation qui te rend invisible. Ou injuste. Ou solitaire.\n\nTu te rappelles Maryam — Marie, mère de ʿÎsâ (Jésus). Une jeune femme. Enceinte par miracle. Personne ne pourrait la croire. Elle savait qu'en retournant à son peuple, elle allait être lynchée — calomniée, rejetée, lapidée peut-être.\n\nEt Allâh, dans la sourate Maryam, raconte sa scène. Elle se retire dans un endroit isolé. Elle accouche seule, sous un palmier. Elle pleure. Elle dit : \"Que je serais morte avant cela ! Et que je sois oubliée !\"\n\nEt Allâh lui répond — à elle, jeune femme effrayée, seule sous un palmier — par une voix : « Ne t'attriste pas. Ton Seigneur a fait jaillir une source à tes pieds. Secoue le palmier — il en tombera des dattes mûres. »\n\nDes femmes vivent, depuis 2000 ans, leurs propres \"déserts\". Solitude, injustice, calomnie. Et la voix qui a parlé à Maryam parle encore à celles qui prennent le temps de l'écouter.",
+        "morale": "OUVRE le module Récits du Coran. REÇOIS l'histoire de Maryam — pas la version résumée. La VRAIE histoire, avec les détails de sa solitude, sa peur, son courage, la voix qui la console. Si tu es femme et que tu portes une épreuve invisible, cette histoire est pour TOI. Allâh l'a placée dans Son Livre pour que tu y trouves ta voix."
+      },
+      {
+        "id": "DHUHR-CARREFOUR-028",
+        "titre": "Le bilan de l'année",
+        "type_narratif": "SCENE_CONTEMPORAINE",
+        "module_cible": "bilan",
+        "verbe_action": "SOLDE",
+        "source": "Mini-scène fictive contemporaine. Création littéraire pour Niyyah.",
+        "verif_imam": false,
+        "texte": "Fin de Ramadan. Ou fin de l'année hégirienne. Ou ton anniversaire personnel. Un de ces moments où on peut prendre une vraie photo de l'année écoulée.\n\nTu y penses brièvement. Puis tu passes à autre chose — les fêtes, les obligations, le travail.\n\nMais en y réfléchissant honnêtement, tu te rends compte que tu n'as JAMAIS fait un vrai bilan annuel spirituel. Tu as fait des bilans pros (au travail). Tu as fait des bilans financiers (impôts). Tu n'as jamais fait un bilan où tu réponds : qu'est-ce que j'ai construit pour Allâh cette année ? Qu'est-ce que j'ai détruit ? Sur quelle pente j'avance ?\n\nL'année qui vient va passer aussi vite que la précédente. Sans bilan annuel, tu vas, statistiquement, refaire les mêmes erreurs.\n\nUn bilan annuel honnête prend 30 à 60 minutes. Pas plus. Trois questions clés :\n1. Qu'est-ce qu'Allâh a fait pour moi cette année dont je n'avais pas conscience ?\n2. Sur quels axes spirituels j'ai progressé ?\n3. Sur quels axes j'ai régressé ?",
+        "morale": "OUVRE le module Bilan Hebdomadaire de Niyyah à la prochaine échéance annuelle qui te touche — fin de Ramadan, nouvelle année hégirienne, ton anniversaire. SOLDE l'année écoulée par un bilan vraiment annuel. Pas un résumé social pour les autres. Un solde devant Allâh. C'est ce qui te permet de ne pas refaire les mêmes erreurs sur 10 ans."
+      },
+      {
+        "id": "DHUHR-CARREFOUR-029",
+        "titre": "Le verset qui parle de toi maintenant",
+        "type_narratif": "SCENE_CONTEMPORAINE",
+        "module_cible": "versets",
+        "verbe_action": "ÉCOUTE",
+        "source": "Mini-scène fictive contemporaine. Création littéraire pour Niyyah.",
+        "verif_imam": false,
+        "texte": "Tu es dans une situation où tu hésites à dire la vérité. Tu pourrais facilement mentir — petit mensonge social qui te tirerait d'affaire. Personne ne saurait. Mais tu hésites.\n\nTu te rappelles vaguement qu'il y a, dans le Coran, des versets sur les menteurs. Tu n'arrives pas à te souvenir précisément.\n\nTu ouvres ton Mushaf. Tu cherches. Tu tombes sur : « Allâh ne guide pas le menteur, ingrat. » (Az-Zumar 39:3)\n\nEt aussi : « Malheur à tout grand calomniateur, plein de péchés... » (Al-Humaza 104:1)\n\nEt aussi : « La parole véridique vous est plus profitable, si vous saviez. » (déduction du sens général de plusieurs versets sur la sidq)\n\nTu lis ces versets. Ils parlent de TOI. De ce que tu allais faire dans cinq minutes. Le Coran n'est pas un livre lointain — il est un miroir présent.\n\nTu refermes le Mushaf. Tu vas dire la vérité.",
+        "morale": "OUVRE le module Versets de Niyyah à chaque carrefour moral concret de ta journée. ÉCOUTE ce que le Coran dit sur ce que tu vas faire. Il a un mot pour chaque situation — si tu prends le temps de chercher. Et entendre la parole d'Allâh sur ton dilemme exact peut changer en cinq minutes ce que des heures de raisonnement ne changeraient pas."
+      },
+      {
+        "id": "DHUHR-CARREFOUR-030",
+        "titre": "La porte de la jalousie",
+        "type_narratif": "SCENE_CONTEMPORAINE",
+        "module_cible": "portes",
+        "verbe_action": "BÉNIS",
+        "source": "Mini-scène fictive contemporaine. Création littéraire pour Niyyah.",
+        "verif_imam": false,
+        "texte": "Tu scrolles Instagram. Une connaissance — pas une amie proche, juste quelqu'un que tu suis depuis le lycée — vient d'acheter une grande maison. Photos partout. Le couple souriant. Les enfants joyeux. Le jardin.\n\nTu sens, malgré toi, une douleur sourde. Pas vraiment de la haine. Quelque chose entre la frustration et la déception. \"Pourquoi elle et pas moi ?\" \"Qu'est-ce que j'ai fait de moins ?\" \"Allâh m'oublie peut-être.\"\n\nC'est UNE PORTE. La porte de la hasad. Le shaytân y entre subtilement par le scroll quotidien.\n\nLa hasad n'attaque pas l'autre seulement — elle te ronge TOI. Chaque comparaison te diminue. Tu vis dans la maison qu'Allâh t'a donnée, mais ton cœur habite dans la maison que tu n'as pas.\n\nLa porte se ferme par un acte simple : BÉNIR. Pas dans le sens religieux strict — dans le sens du cœur. Tu vois la maison de cette connaissance et tu dis intérieurement : \"Allâh, bénis-la pour elle. Donne-lui la baraka dans cette maison. Et donne-moi la sérénité dans la mienne.\"\n\nDes mots. Mais qui changent ton rapport au scroll.",
+        "morale": "OUVRE le module Portes de Niyyah. BÉNIS systématiquement ce que tu envies sur les réseaux sociaux. La porte de la jalousie ferme par cette discipline minuscule. À chaque post qui te pince, dis intérieurement : \"Allâh, bénis-le pour eux.\" Trois mots. Pratiqués mille fois, ils transforment ton cœur et ton rapport au monde."
+      },
+      {
+        "id": "DHUHR-CARREFOUR-031",
+        "titre": "La sîra avant Médine",
+        "type_narratif": "SCENE_CONTEMPORAINE",
+        "module_cible": "sira",
+        "verbe_action": "SOUFFRE",
+        "source": "Mini-scène fictive contemporaine. Création littéraire pour Niyyah.",
+        "verif_imam": false,
+        "texte": "Tu vis une période difficile. Tu pries, tu fais ce qu'il faut, et pourtant rien ne s'ouvre. Tu te dis presque, dans tes pires moments : « Allâh ne m'écoute pas. »\n\nTu te rappelles soudain. La période de La Mecque, avant l'Hégire. Treize ans. TREIZE ANS de prédication du Prophète ﷺ avant qu'il ne soit autorisé à émigrer à Médine.\n\nTreize ans pendant lesquels il a été persécuté. Sa famille proche torturée. Bilâl battu sous une pierre. Sumayya tuée. Yâsir tué. Le boycott des trois ans dans la vallée — où il a perdu son oncle Abû Tâlib et sa femme Khadija.\n\nLe Messager d'Allâh ﷺ — le plus aimé d'Allâh — a SOUFFERT pendant 13 ans avant que la voie s'ouvre.\n\nToi tu en es à combien ? Quelques mois ? Un an ? Deux ans ? \n\nTu te dis : si Allâh a laissé Son Bien-Aimé attendre 13 ans, qui suis-je pour exiger que mon épreuve dure moins ?\n\nMais pour le SENTIR vraiment, il faut lire les scènes précises de cette période meccoise. Pas la version résumée. Les VRAIS détails.",
+        "morale": "OUVRE le module Sîra de Niyyah. SOUFFRE avec le Messager ﷺ dans une scène de la période meccoise. Pas pour t'auto-flageller. Pour comprendre qu'attendre est NORMAL dans la voie du croyant. Le Prophète ﷺ a attendu 13 ans. Tu peux attendre les tiens. Et son exemple te tient quand rien d'autre ne te tient."
+      },
+      {
+        "id": "DHUHR-CARREFOUR-032",
+        "titre": "La du'â de la peur",
+        "type_narratif": "SCENE_CONTEMPORAINE",
+        "module_cible": "dua",
+        "verbe_action": "PROTÈGE-TOI",
+        "source": "Mini-scène fictive contemporaine. Création littéraire pour Niyyah.",
+        "verif_imam": false,
+        "texte": "Tu as peur. Une peur précise. Quelque chose dans ta vie qui te terrifie en silence. Tu ne le dis à personne — c'est intime. Une peur pour ta santé, pour un enfant, pour ton avenir, pour quelque chose qui peut arriver.\n\nLa peur te ronge la nuit. Elle te suit le jour. Tu vis avec elle comme avec un parasite invisible.\n\nTu te rappelles le hadith : « Ô Allâh, je cherche refuge auprès de Toi contre l'anxiété et la tristesse... »\n\nC'est une du'â précise, transmise par le Prophète ﷺ. Pas pour une peur générale. Pour TON type de peur. Les du'â de la protection sont parmi les plus puissantes en islam — elles ne suppriment pas magiquement l'objet de la peur, mais elles SUPPRIMENT la peur elle-même. Tu peux porter la situation difficile sans porter le poids de la peur.\n\nDis cette du'â trois fois le matin, trois fois le soir. Pendant quarante jours. Et observe ce qui change en TOI — même si la situation extérieure ne change pas tout de suite.",
+        "morale": "OUVRE le module Du'a du jour de Niyyah. PROTÈGE-TOI avec les invocations spécifiques contre la peur, l'anxiété, le mauvais œil. Le Prophète ﷺ en a transmis plusieurs. Quarante jours de pratique régulière transforment ton rapport intérieur à ta peur — même si l'objet de la peur reste là. C'est, en termes spirituels, la meilleure thérapie qui existe."
+      },
+      {
+        "id": "DHUHR-CARREFOUR-033",
+        "titre": "Nûh et l'arche",
+        "type_narratif": "SCENE_CONTEMPORAINE",
+        "module_cible": "recits_coran",
+        "verbe_action": "CONSTRUIS",
+        "source": "Mini-scène fictive contemporaine. Création littéraire pour Niyyah.",
+        "verif_imam": false,
+        "texte": "Tu te sens dépassé. Le monde autour de toi va vite, dans une direction que tu ne reconnais pas comme la tienne. Tes valeurs paraissent obsolètes. Ta foi est moquée ou ignorée. Tu te demandes parfois : « Suis-je en train de me tromper ? »\n\nTu te rappelles Nûh. Le prophète qui a prêché à son peuple pendant 950 ans. NEUF CENT CINQUANTE. Une longueur de temps inimaginable. Et ses gens ne l'écoutaient pas.\n\nÀ un moment, Allâh lui ordonna : \"Construis une arche.\"\n\nLes gens se moquèrent. \"Un bateau au milieu du désert ? Tu es fou.\"\n\nNûh construisit quand même. Année après année. Bois après bois. Le déluge vint. Ceux qui étaient dans l'arche furent sauvés. Les autres engloutis.\n\nLa leçon n'est pas la fin spectaculaire. La leçon est dans les ANNÉES de construction sous les moqueries. Nûh n'a pas attendu que le monde change. Il a CONSTRUIT son arche pendant que le monde se moquait.\n\nToi aussi tu construis quelque chose — silencieusement. Ta pratique. Ta famille. Ta foi. Pendant que le monde autour roule dans l'autre sens. C'est ton arche. Ne l'abandonne pas parce qu'on te moque.",
+        "morale": "OUVRE le module Récits du Coran de Niyyah. CONSTRUIS ton arche en lisant l'histoire de Nûh en détail. Pas le résumé. La vraie histoire — les années, les moqueries, la persévérance, le déluge. Ton arche, c'est ta vie spirituelle dans un monde qui ne la valorise pas. Continue à la construire — comme Nûh, malgré tout."
+      },
+      {
+        "id": "DHUHR-CARREFOUR-034",
+        "titre": "La porte du doute",
+        "type_narratif": "SCENE_CONTEMPORAINE",
+        "module_cible": "portes",
+        "verbe_action": "ANCRE-TOI",
+        "source": "Mini-scène fictive contemporaine. Création littéraire pour Niyyah.",
+        "verif_imam": false,
+        "texte": "Tu lis un article ou tu écoutes un podcast. Quelqu'un attaque l'islam intellectuellement. Brillant. Articulé. Tu n'as pas les réponses immédiates.\n\nUn doute s'insinue. Pas un gros doute. Une petite porte qui s'entrouvre. \"Et si...\"\n\nC'est UNE PORTE. La porte du shakk — le doute.\n\nLe shaytân y entre subtilement. Il n'attaque pas par la grosse négation. Il chuchote des petits \"et si\". Et si Allâh n'existe pas ? Et si le Coran est juste un livre humain ? Et si je perds mon temps ?\n\nUne fois la porte ouverte, elle élargit. Une semaine plus tard, tu pratiques mollement. Un mois plus tard, tu rates des prières. Un an plus tard, tu te demandes pourquoi tu te disais musulman.\n\nLa porte se ferme par un acte précis : ANCRE-TOI. Pas par des arguments contre les arguments. Par des EXPÉRIENCES de la présence d'Allâh dans ta propre vie. Une du'â exaucée. Un moment de khushûʿ. Une scène qui t'a touché. Une délivrance reçue.\n\nLes arguments ont peu de poids. Les expériences vécues ont un poids absolu. Le doute s'évanouit devant le souvenir d'une seule expérience authentique.",
+        "morale": "OUVRE le module Portes de Niyyah. ANCRE-TOI dans tes propres expériences quand le doute monte. Pas dans les débats. Pas dans les réponses intellectuelles. Dans ta propre histoire avec Allâh — les fois où tu L'as senti, où tu as été exaucé, où tu as reçu. La porte du doute ferme par la mémoire active de Sa présence dans TA vie. Pas par la philosophie."
+      },
+      {
+        "id": "DHUHR-CARREFOUR-035",
+        "titre": "Le pacte du soir",
+        "type_narratif": "PARABOLE_TRADITION",
+        "module_cible": "bilan",
+        "verbe_action": "ENGAGE-TOI",
+        "source": "Composition finale en clôture de la catégorie DHUHR-CARREFOUR. Composition libre à visée pédagogique.",
+        "verif_imam": false,
+        "texte": "Tu es à la fin de cette dernière mini-scène de DHUHR-CARREFOUR. 35 carrefours t'auront été présentés au fil du temps — chacun te ramenant vers UN module de Niyyah.\n\nMais voici la vérité simple. Tu peux voir 35 carrefours, 100 carrefours, 1000 carrefours. Si tu ne PRENDS pas un de ces chemins, rien ne change.\n\nL'app Niyyah est un outil. Un outil incroyablement riche. Mais un outil. Et un outil n'agit pas par lui-même. Il a besoin de TOI.\n\nCe soir, ou demain matin, ou ce week-end — engage-toi sur UN module. Un seul. Pour deux semaines minimum.\n\n- Soit le Sîra : un RDV par semaine avec le Messager ﷺ.\n- Soit le Du'a du jour : une invocation par matin.\n- Soit le Bab an-Nafs : une porte à travailler.\n- Soit les Versets : 10 minutes de lecture par jour.\n- Soit les Récits du Coran : une histoire par semaine.\n- Soit le Scanner Niyyah : une intention par matin.\n- Soit le Bilan Hebdomadaire : un bilan tous les vendredis.\n\nUn seul. Pendant deux semaines. PUIS on évalue. PUIS on ajoute peut-être un deuxième.\n\nMais sans engagement précis sur un point précis pour une durée précise — Niyyah reste une belle app que tu ouvres et fermes sans qu'elle change ta vie.\n\nLe pacte du soir, c'est avec TOI-MÊME. Pas avec Niyyah. Avec ton âme.",
+        "morale": "OUVRE le module Bilan Hebdomadaire de Niyyah ce soir. ENGAGE-TOI sur UN module à pratiquer régulièrement pendant deux semaines. Note ton engagement. Note la date de la prochaine évaluation. C'est ce pacte clair, daté, mesurable, qui transforme une app en outil de croissance. Sans cet engagement, tout reste vague. Avec cet engagement, tout devient possible."
       }
     ]
   }
