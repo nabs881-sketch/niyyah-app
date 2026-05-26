@@ -2619,7 +2619,9 @@ function renderLevel(levelId) {
           const hadithEsc = item.hadith.replace(/"/g,'&quot;');
           const sourceEsc = (item.source||'').replace(/"/g,'&quot;');
           infoBtn = '<button class="btn-info" aria-label="Détails" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openInfoSheet(\'\',\'\',\'\',\'\',event)" data-label="' + labelEsc2 + '" data-arabic="' + arabicEsc2 + '" data-phonetic="" data-translation="' + hadithEsc + '" title="' + t('btn_why') + '"><i>i</i></button>';
-        } else if (item.id !== 'arabic' && item.sub && tI(item,'sub').includes('·') && item.arabic) {
+        } else if (item.id === 'lisan') {
+          infoBtn = '<button class="btn-info" aria-label="M\u00e9thode" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openLisanMethode()" title="M\u00e9thode"><i>i</i></button>';
+        } else if (item.id !== 'arabic' && item.sub && tI(item,'sub').includes('\u00b7') && item.arabic) {
           const parts = tI(item,'sub').split('·');
           const phonetic = parts[0].trim();
           const translation = parts.slice(1).join('·').trim();
@@ -16591,6 +16593,78 @@ function openVueLisan() {
   document.body.appendChild(ov);
 }
 window.openVueLisan = openVueLisan;
+
+window.LISAN_METHODE = null;
+(function _loadLisanMethode() {
+  fetch('./data/lisan/lisan_methode.json')
+    .then(function(r) { return r.ok ? r.json() : null; })
+    .then(function(d) { if (d) window.LISAN_METHODE = d; })
+    .catch(function() {});
+})();
+
+function openLisanMethode() {
+  var m = window.LISAN_METHODE;
+  if (!m) { showToast('Chargement...'); return; }
+
+  var existing = document.getElementById('lisan-methode-overlay');
+  if (existing) existing.remove();
+
+  var ov = document.createElement('div');
+  ov.id = 'lisan-methode-overlay';
+  ov.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.88);display:flex;align-items:center;justify-content:center;padding:20px;animation:fadeSlideV2 0.4s ease forwards;';
+
+  var card = document.createElement('div');
+  card.style.cssText = 'background:#141310;border:1px solid rgba(200,168,75,0.2);border-radius:16px;padding:28px 22px;max-width:400px;width:100%;max-height:85vh;overflow-y:auto;-webkit-overflow-scrolling:touch;';
+
+  var html = '';
+  // Titre
+  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:11px;letter-spacing:2.5px;color:rgba(200,168,75,0.5);margin-bottom:6px;">M\u00c9THODE</div>';
+  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-weight:700;color:#C8A84A;margin-bottom:4px;">' + m.titre + '</div>';
+  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(240,234,214,0.6);margin-bottom:20px;">' + m.sous_titre + '</div>';
+
+  // Intro
+  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;color:rgba(240,234,214,0.8);line-height:1.7;margin-bottom:24px;">' + m.intro + '</div>';
+
+  // 3 sections
+  m.sections.forEach(function(s) {
+    html += '<div style="border-left:2px solid rgba(200,168,75,0.2);padding-left:14px;margin-bottom:18px;">';
+    html += '<div style="font-size:14px;margin-bottom:4px;"><span style="margin-right:6px;">' + s.icone + '</span><span style="font-family:\'Cormorant Garamond\',serif;font-weight:700;color:rgba(240,234,214,0.9);">' + s.titre + '</span></div>';
+    html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;color:rgba(240,234,214,0.65);line-height:1.6;">' + s.texte + '</div>';
+    html += '</div>';
+  });
+
+  // Rythme
+  html += '<div style="border-top:1px solid rgba(200,168,75,0.1);padding-top:16px;margin-bottom:14px;">';
+  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-weight:700;color:#C8A84A;margin-bottom:4px;">' + m.rythme.titre + '</div>';
+  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;color:rgba(240,234,214,0.7);line-height:1.6;">' + m.rythme.texte + '</div>';
+  html += '</div>';
+
+  // Promesse
+  html += '<div style="margin-bottom:14px;">';
+  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-weight:700;color:#C8A84A;margin-bottom:4px;">' + m.promesse.titre + '</div>';
+  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;color:rgba(240,234,214,0.7);line-height:1.6;">' + m.promesse.texte + '</div>';
+  html += '</div>';
+
+  // Limite
+  html += '<div style="margin-bottom:14px;">';
+  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-weight:700;color:rgba(240,234,214,0.5);margin-bottom:4px;">' + m.limite.titre + '</div>';
+  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(240,234,214,0.5);line-height:1.6;">' + m.limite.texte + '</div>';
+  html += '</div>';
+
+  // Note bas
+  html += '<div style="border-top:1px solid rgba(200,168,75,0.08);padding-top:12px;margin-bottom:20px;">';
+  html += '<div style="font-family:\'Inter\',sans-serif;font-size:10px;color:rgba(200,168,75,0.3);line-height:1.5;">' + m.note_bas + '</div>';
+  html += '</div>';
+
+  // Fermer
+  html += '<button onclick="document.getElementById(\'lisan-methode-overlay\').remove();" style="display:block;width:100%;padding:14px 0;border:none;border-radius:10px;background:linear-gradient(135deg,#C8A84A,#A68B30);color:#0A0908;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-weight:700;cursor:pointer;">Fermer</button>';
+
+  card.innerHTML = html;
+  ov.appendChild(card);
+  ov.addEventListener('click', function(e) { if (e.target === ov) ov.remove(); });
+  document.body.appendChild(ov);
+}
+window.openLisanMethode = openLisanMethode;
 
 function openVueFiqhJour() {
   _saveScroll();

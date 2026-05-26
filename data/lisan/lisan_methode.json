@@ -1,0 +1,35 @@
+{
+  "titre": "La méthode",
+  "sous_titre": "Comprendre le Coran sans manuel de grammaire",
+  "intro": "Une méthode qui n'a pas été inventée. Elle combine trois approches reconnues, adaptées pour un francophone qui ne lit pas l'arabe.",
+  "sections": [
+    {
+      "icone": "🌿",
+      "titre": "Les mots qui reviennent le plus",
+      "texte": "Le Coran contient près de 78 000 mots, mais seuls les 300 plus fréquents couvrent 80 à 85% du texte. C'est par eux qu'on commence."
+    },
+    {
+      "icone": "🌳",
+      "titre": "Les racines qui déverrouillent",
+      "texte": "L'arabe fonctionne par racines de trois lettres. Une racine apprise débloque 5 à 20 mots dérivés. Vous apprenez 300 mots, vous en comprenez 2 000."
+    },
+    {
+      "icone": "🎧",
+      "titre": "L'écoute qui infuse",
+      "texte": "Pas de mémorisation par cœur. Chaque mot vient avec un verset récité par Mishary al-Afasy. Le sens entre par l'oreille, naturellement."
+    }
+  ],
+  "rythme": {
+    "titre": "Le rythme",
+    "texte": "Un mot par jour. Dix mois. Pas de pression. Pas de course."
+  },
+  "promesse": {
+    "titre": "La promesse",
+    "texte": "À la fin, vous reconnaîtrez 80 à 85% des mots du Coran à l'écoute. Vous ouvrirez la Fâtiha et comprendrez chaque verset. Vous entendrez Ar-Rahmân et saisirez le sens sans traduction."
+  },
+  "limite": {
+    "titre": "Ce que ce n'est pas",
+    "texte": "Ce n'est pas un cours d'arabe. Vous ne deviendrez pas arabisant en 300 jours. Mais vous entendrez le Coran différemment. C'est tout ce que cette méthode promet — et c'est déjà beaucoup."
+  },
+  "note_bas": "Inspiré du Quranic Arabic Corpus (Université de Leeds), de la méthode des racines trilatères (Université de Médine), et de la théorie de l'input compréhensible (Stephen Krashen). Nom original : Lisân al-Qur'ân (« la langue du Coran »)."
+}
