@@ -16631,11 +16631,83 @@ function openVueLisan(viewDay) {
     html += '<button onclick="validerLecture(\'lisan\');document.getElementById(\'lisan-overlay\').remove();_restoreScroll();" style="display:block;width:100%;padding:16px 0;border:none;border-radius:12px;background:linear-gradient(135deg,#C8A84A,#A68B30);color:#0A0908;font-family:\'Cormorant Garamond\',serif;font-size:16px;font-weight:700;cursor:pointer;">\u2713 J\u2019ai appris ce mot</button>';
   }
 
+  // Bouton glossaire
+  html += '<button onclick="openLisanGlossaire()" style="display:block;width:100%;margin-top:12px;padding:12px 0;border:1px solid rgba(200,168,75,0.2);border-radius:10px;background:transparent;color:rgba(200,168,75,0.6);font-family:\'Cormorant Garamond\',serif;font-size:14px;cursor:pointer;transition:border-color 0.2s;" onmouseenter="this.style.borderColor=\'rgba(200,168,75,0.5)\'" onmouseleave="this.style.borderColor=\'rgba(200,168,75,0.2)\'">\u229e Mes mots (' + todayDay + '/' + total + ')</button>';
+
   html += '</div>';
   ov.innerHTML = html;
   document.body.appendChild(ov);
 }
 window.openVueLisan = openVueLisan;
+
+function openLisanGlossaire() {
+  if (!window.LISAN_DATA || window.LISAN_DATA.length === 0) return;
+  var todayDay = _getLisanDay();
+  var unlocked = window.LISAN_DATA.slice(0, todayDay);
+
+  var existing = document.getElementById('lisan-glossaire');
+  if (existing) existing.remove();
+
+  var ov = document.createElement('div');
+  ov.id = 'lisan-glossaire';
+  ov.style.cssText = 'position:fixed;inset:0;z-index:10000;background:#0A0908;overflow-y:auto;-webkit-overflow-scrolling:touch;animation:fadeSlideV2 0.3s ease forwards;';
+
+  var html = '<div style="max-width:420px;margin:0 auto;padding:20px 16px 40px;">';
+
+  // Header
+  html += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">';
+  html += '<div>';
+  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:11px;letter-spacing:2px;color:rgba(200,168,75,0.5);">MES MOTS</div>';
+  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;color:rgba(200,168,75,0.35);margin-top:2px;">' + todayDay + ' mots d\u00e9bloqu\u00e9s sur ' + window.LISAN_DATA.length + '</div>';
+  html += '</div>';
+  html += '<button onclick="document.getElementById(\'lisan-glossaire\').remove();" style="background:none;border:none;color:rgba(255,255,255,0.4);font-size:22px;cursor:pointer;padding:4px 8px;">\u00d7</button>';
+  html += '</div>';
+
+  // Search
+  html += '<div style="margin-bottom:16px;">';
+  html += '<input id="lisan-glossaire-search" type="text" placeholder="Rechercher un mot\u2026" oninput="_filterLisanGlossaire()" style="width:100%;box-sizing:border-box;padding:10px 14px;border:1px solid rgba(200,168,75,0.15);border-radius:10px;background:rgba(200,168,75,0.04);color:rgba(240,234,214,0.9);font-family:\'Cormorant Garamond\',serif;font-size:15px;outline:none;" />';
+  html += '</div>';
+
+  // Word list
+  html += '<div id="lisan-glossaire-list">';
+  for (var i = unlocked.length - 1; i >= 0; i--) {
+    var m = unlocked[i];
+    var dayNum = i + 1;
+    var isToday = dayNum === todayDay;
+    html += '<div class="lisan-gl-row" data-search="' + (m.mot_arabe + ' ' + m.translitteration + ' ' + (m.traductions_fr || []).join(' ')).replace(/"/g, '&quot;').toLowerCase() + '" onclick="document.getElementById(\'lisan-glossaire\').remove();openVueLisan(' + dayNum + ')" style="display:flex;align-items:center;gap:12px;padding:12px 10px;border-bottom:1px solid rgba(200,168,75,0.06);cursor:pointer;transition:background 0.15s;" onmouseenter="this.style.background=\'rgba(200,168,75,0.06)\'" onmouseleave="this.style.background=\'transparent\'">';
+    // Jour
+    html += '<div style="min-width:28px;text-align:center;font-family:\'Inter\',sans-serif;font-size:10px;color:rgba(200,168,75,0.3);">' + dayNum + '</div>';
+    // Arabe
+    html += '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:22px;color:#C8A84A;direction:rtl;min-width:55px;text-align:right;">' + m.mot_arabe + '</div>';
+    // Translit + traduction
+    html += '<div style="flex:1;min-width:0;">';
+    html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;color:rgba(240,234,214,0.7);font-style:italic;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + m.translitteration + '</div>';
+    html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;color:rgba(200,168,75,0.4);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + (m.traductions_fr || []).join(', ') + '</div>';
+    html += '</div>';
+    // Today dot
+    if (isToday) html += '<div style="width:6px;height:6px;border-radius:50%;background:#C8A84A;flex-shrink:0;"></div>';
+    // Chevron
+    html += '<div style="color:rgba(200,168,75,0.2);font-size:14px;flex-shrink:0;">\u203a</div>';
+    html += '</div>';
+  }
+  html += '</div>';
+
+  html += '</div>';
+  ov.innerHTML = html;
+  document.body.appendChild(ov);
+}
+window.openLisanGlossaire = openLisanGlossaire;
+
+function _filterLisanGlossaire() {
+  var q = (document.getElementById('lisan-glossaire-search') || {}).value || '';
+  q = q.toLowerCase().trim();
+  var rows = document.querySelectorAll('.lisan-gl-row');
+  rows.forEach(function(row) {
+    var data = row.dataset.search || '';
+    row.style.display = (!q || data.includes(q)) ? 'flex' : 'none';
+  });
+}
+window._filterLisanGlossaire = _filterLisanGlossaire;
 
 window.LISAN_METHODE = null;
 (function _loadLisanMethode() {
