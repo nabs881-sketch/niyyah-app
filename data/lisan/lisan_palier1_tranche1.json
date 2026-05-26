@@ -9293,6 +9293,1772 @@
       "type_grammatical": "nom",
       "difficulte": 1,
       "notes_pedagogiques": "Verset 4:128 : 'La réconciliation est meilleure'. Réconcilier deux croyants > prière surérogatoire selon les hadiths. Mot 250 = 5/6 du parcours, clôture sur l'idée de paix."
+    },
+    {
+      "id": "lisan_251",
+      "ordre": 251,
+      "palier": 2,
+      "mot_arabe": "إِخْلَاص",
+      "translitteration": "Ikhlâs",
+      "traductions_fr": [
+        "sincérité",
+        "pureté d'intention"
+      ],
+      "frequence_coran": 31,
+      "racine": {
+        "lettres": "خ ل ص",
+        "translitteration": "kh-l-s",
+        "sens_fondamental": "pur, sans mélange"
+      },
+      "exemple_verset": {
+        "reference": "98:5",
+        "arabe": "وَمَا أُمِرُوا إِلَّا لِيَعْبُدُوا ٱللَّهَ مُخْلِصِينَ لَهُ ٱلدِّينَ",
+        "translitteration": "Wa mâ umirû illâ li-yaʿbudû-llâha mukhlisîna lahu-d-dîn",
+        "traduction_fr": "Il ne leur a été commandé que d'adorer Allâh, en Lui vouant un culte pur",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/098005.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "أَخْلَصَ",
+          "translit": "akhlasa",
+          "sens": "il a purifié"
+        },
+        {
+          "arabe": "مُخْلِص",
+          "translit": "mukhlis",
+          "sens": "sincère"
+        },
+        {
+          "arabe": "خَالِص",
+          "translit": "khâlis",
+          "sens": "pur"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Sourate 112 (al-Ikhlâs) porte ce nom — sourate de l'unicité pure d'Allâh. L'ikhlâs = faire un acte UNIQUEMENT pour Allâh, sans mélange (riyâʾ, recherche de gloire). Vertu cardinale, condition d'acceptation des œuvres."
+    },
+    {
+      "id": "lisan_252",
+      "ordre": 252,
+      "palier": 2,
+      "mot_arabe": "يَقِين",
+      "translitteration": "Yaqîn",
+      "traductions_fr": [
+        "certitude"
+      ],
+      "frequence_coran": 28,
+      "racine": {
+        "lettres": "ي ق ن",
+        "translitteration": "y-q-n",
+        "sens_fondamental": "certitude, conviction"
+      },
+      "exemple_verset": {
+        "reference": "15:99",
+        "arabe": "وَٱعْبُدْ رَبَّكَ حَتَّىٰ يَأْتِيَكَ ٱلْيَقِينُ",
+        "translitteration": "Wa-ʿbud rabbaka hattâ yaʾtiyaka-l-yaqîn",
+        "traduction_fr": "Adore ton Seigneur jusqu'à ce que vienne à toi la certitude",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/015099.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "مُوقِن",
+          "translit": "mûqin",
+          "sens": "celui qui a la certitude"
+        },
+        {
+          "arabe": "أَيْقَنَ",
+          "translit": "ayqana",
+          "sens": "il a eu la certitude"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Plus que la foi (îmân) : conviction profonde inébranlable. 'Le yaqîn' (15:99) désigne aussi la mort — moment où toute illusion s'évanouit. Trois degrés : ʿilm al-yaqîn (savoir), ʿayn al-yaqîn (voir), haqq al-yaqîn (vérité)."
+    },
+    {
+      "id": "lisan_253",
+      "ordre": 253,
+      "palier": 2,
+      "mot_arabe": "خُشُوع",
+      "translitteration": "Khushûʿ",
+      "traductions_fr": [
+        "humilité",
+        "recueillement"
+      ],
+      "frequence_coran": 17,
+      "racine": {
+        "lettres": "خ ش ع",
+        "translitteration": "kh-sh-ʿ",
+        "sens_fondamental": "s'humilier, baisser la voix"
+      },
+      "exemple_verset": {
+        "reference": "23:1-2",
+        "arabe": "قَدْ أَفْلَحَ ٱلْمُؤْمِنُونَ ٱلَّذِينَ هُمْ فِي صَلَاتِهِمْ خَاشِعُونَ",
+        "translitteration": "Qad aflaha-l-muʾminûn, alladhîna hum fî salâtihim khâshiʿûn",
+        "traduction_fr": "Ont réussi les croyants, ceux qui sont humbles dans leur prière",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/023002.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "خَاشِع",
+          "translit": "khâshiʿ",
+          "sens": "humble, recueilli"
+        },
+        {
+          "arabe": "خَشَعَ",
+          "translit": "khashaʿa",
+          "sens": "il a été humble"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "État spirituel de la prière vraie. La prière sans khushûʿ = corps sans âme. Première caractéristique des croyants ayant 'réussi' (23:1-2). Concept clé pour la spiritualité musulmane."
+    },
+    {
+      "id": "lisan_254",
+      "ordre": 254,
+      "palier": 2,
+      "mot_arabe": "رِضَا",
+      "translitteration": "Ridâ",
+      "traductions_fr": [
+        "agrément",
+        "satisfaction"
+      ],
+      "frequence_coran": 13,
+      "racine": {
+        "lettres": "ر ض و",
+        "translitteration": "r-d-w",
+        "sens_fondamental": "agréer (cf. Ridwân, mot 166)"
+      },
+      "exemple_verset": {
+        "reference": "5:119",
+        "arabe": "رَّضِيَ ٱللَّهُ عَنْهُمْ وَرَضُوا عَنْهُ",
+        "translitteration": "Radiya-llâhu ʿanhum wa radû ʿanh",
+        "traduction_fr": "Allâh les agrée et ils L'agréent",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/005119.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "رِضْوَان",
+          "translit": "ridwân",
+          "sens": "agrément suprême (mot 166)"
+        },
+        {
+          "arabe": "مَرْضِيّ",
+          "translit": "mardî",
+          "sens": "agréé"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Sommet spirituel : Allâh est satisfait de toi ET tu es satisfait d'Allâh (5:119). Réciprocité parfaite. Acceptation du qadar avec sérénité = ridâ. Plus élevé que la patience."
+    },
+    {
+      "id": "lisan_255",
+      "ordre": 255,
+      "palier": 2,
+      "mot_arabe": "إِنَابَة",
+      "translitteration": "Inâba",
+      "traductions_fr": [
+        "retour à Allâh",
+        "repentir profond"
+      ],
+      "frequence_coran": 18,
+      "racine": {
+        "lettres": "ن و ب",
+        "translitteration": "n-w-b",
+        "sens_fondamental": "revenir, se tourner vers"
+      },
+      "exemple_verset": {
+        "reference": "31:15",
+        "arabe": "وَٱتَّبِعْ سَبِيلَ مَنْ أَنَابَ إِلَيَّ",
+        "translitteration": "Wa-ttabiʿ sabîla man anâba ilayy",
+        "traduction_fr": "Et suis le chemin de celui qui se tourne vers Moi",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/031015.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "أَنَابَ",
+          "translit": "anâba",
+          "sens": "il s'est tourné vers Allâh"
+        },
+        {
+          "arabe": "مُنِيب",
+          "translit": "munîb",
+          "sens": "celui qui revient à Allâh"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Plus que tawba (repentir d'un péché) : retour CONTINU vers Allâh, à chaque instant. État permanent du croyant. Ibrâhîm est qualifié 'munîb' (11:75)."
+    },
+    {
+      "id": "lisan_256",
+      "ordre": 256,
+      "palier": 2,
+      "mot_arabe": "خَشْيَة",
+      "translitteration": "Khashya",
+      "traductions_fr": [
+        "crainte révérencielle"
+      ],
+      "frequence_coran": 48,
+      "racine": {
+        "lettres": "خ ش ي",
+        "translitteration": "kh-sh-y",
+        "sens_fondamental": "craindre par révérence"
+      },
+      "exemple_verset": {
+        "reference": "35:28",
+        "arabe": "إِنَّمَا يَخْشَى ٱللَّهَ مِنْ عِبَادِهِ ٱلْعُلَمَاءُ",
+        "translitteration": "Innamâ yakhshâ-llâha min ʿibâdihi-l-ʿulamâʾ",
+        "traduction_fr": "Seuls les savants parmi Ses serviteurs craignent Allâh",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/035028.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "خَشِيَ",
+          "translit": "khashiya",
+          "sens": "il a craint"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Différente du 'khawf' (peur générale) : khashya = crainte avec SAVOIR de Sa grandeur. 35:28 dit que seuls les ʿulamâʾ (savants en Allâh) la possèdent vraiment. Crainte amoureuse, pas paralysante."
+    },
+    {
+      "id": "lisan_257",
+      "ordre": 257,
+      "palier": 2,
+      "mot_arabe": "رَجَاء",
+      "translitteration": "Rajâʾ",
+      "traductions_fr": [
+        "espoir",
+        "espérance"
+      ],
+      "frequence_coran": 28,
+      "racine": {
+        "lettres": "ر ج و",
+        "translitteration": "r-j-w",
+        "sens_fondamental": "espérer"
+      },
+      "exemple_verset": {
+        "reference": "33:21",
+        "arabe": "لِّمَن كَانَ يَرْجُو ٱللَّهَ وَٱلْيَوْمَ ٱلْآخِرَ",
+        "translitteration": "Li-man kâna yarjû-llâha wa-l-yawma-l-âkhir",
+        "traduction_fr": "Pour quiconque espère en Allâh et au Jour Dernier",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/033021.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "رَجَا",
+          "translit": "rajâ",
+          "sens": "il a espéré"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Couple inséparable avec 'khashya' (crainte) en spiritualité : voler avec les deux ailes. Trop de khawf seul = désespoir. Trop de rajâʾ seul = négligence. Équilibre essentiel."
+    },
+    {
+      "id": "lisan_258",
+      "ordre": 258,
+      "palier": 2,
+      "mot_arabe": "تَفَكُّر",
+      "translitteration": "Tafakkur",
+      "traductions_fr": [
+        "méditation",
+        "réflexion"
+      ],
+      "frequence_coran": 18,
+      "racine": {
+        "lettres": "ف ك ر",
+        "translitteration": "f-k-r",
+        "sens_fondamental": "réfléchir, penser"
+      },
+      "exemple_verset": {
+        "reference": "3:191",
+        "arabe": "وَيَتَفَكَّرُونَ فِي خَلْقِ ٱلسَّمَاوَاتِ وَٱلْأَرْضِ",
+        "translitteration": "Wa yatafakkarûna fî khalqi-s-samâwâti wa-l-ard",
+        "traduction_fr": "Et qui méditent sur la création des cieux et de la terre",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/003191.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "فَكَّرَ",
+          "translit": "fakkara",
+          "sens": "il a réfléchi"
+        },
+        {
+          "arabe": "فِكْر",
+          "translit": "fikr",
+          "sens": "pensée"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Module 'Tafakkur' dans Niyyah ! (379 questions + 379 récits). Acte spirituel majeur — méditation sur la création comme preuve d'Allâh. Hadith : 'Une heure de tafakkur vaut mieux qu'une nuit d'adoration.'"
+    },
+    {
+      "id": "lisan_259",
+      "ordre": 259,
+      "palier": 2,
+      "mot_arabe": "تَدَبُّر",
+      "translitteration": "Tadabbur",
+      "traductions_fr": [
+        "méditation du Coran"
+      ],
+      "frequence_coran": 4,
+      "racine": {
+        "lettres": "د ب ر",
+        "translitteration": "d-b-r",
+        "sens_fondamental": "considérer les conséquences"
+      },
+      "exemple_verset": {
+        "reference": "4:82",
+        "arabe": "أَفَلَا يَتَدَبَّرُونَ ٱلْقُرْآنَ",
+        "translitteration": "A-fa-lâ yatadabbarûna-l-Qurʾân",
+        "traduction_fr": "Ne méditent-ils donc pas sur le Coran ?",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/004082.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "تَدَبَّرَ",
+          "translit": "tadabbara",
+          "sens": "il a médité"
+        },
+        {
+          "arabe": "دُبُر",
+          "translit": "dubur",
+          "sens": "ce qui est derrière"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Spécifiquement la méditation DU CORAN (vs tafakkur = réflexion générale). Le Coran reproche aux gens de ne PAS méditer ses versets (4:82). Recommandé : lire LENTEMENT en cherchant le sens."
+    },
+    {
+      "id": "lisan_260",
+      "ordre": 260,
+      "palier": 2,
+      "mot_arabe": "تَرْتِيل",
+      "translitteration": "Tartîl",
+      "traductions_fr": [
+        "récitation posée"
+      ],
+      "frequence_coran": 4,
+      "racine": {
+        "lettres": "ر ت ل",
+        "translitteration": "r-t-l",
+        "sens_fondamental": "ordonner, réciter lentement"
+      },
+      "exemple_verset": {
+        "reference": "73:4",
+        "arabe": "وَرَتِّلِ ٱلْقُرْآنَ تَرْتِيلًا",
+        "translitteration": "Wa rattili-l-Qurʾâna tartîlâ",
+        "traduction_fr": "Et récite le Coran avec une récitation posée",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/073004.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "رَتَّلَ",
+          "translit": "rattala",
+          "sens": "il a récité posément"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Manière coranique de réciter : LENTEMENT, distinctement, avec respect des règles du tajwîd. Pas en vitesse. 73:4 ordonne ce mode au Prophète ﷺ. À distinguer de hadr (récitation rapide)."
+    },
+    {
+      "id": "lisan_261",
+      "ordre": 261,
+      "palier": 2,
+      "mot_arabe": "تَجْوِيد",
+      "translitteration": "Tajwîd",
+      "traductions_fr": [
+        "embellissement de la récitation"
+      ],
+      "frequence_coran": 0,
+      "racine": {
+        "lettres": "ج و د",
+        "translitteration": "j-w-d",
+        "sens_fondamental": "exceller, bonté"
+      },
+      "exemple_verset": {
+        "reference": "—",
+        "arabe": "—",
+        "translitteration": "—",
+        "traduction_fr": "Le mot n'apparaît pas comme tel dans le Coran, mais l'ordre 'wa rattili-l-Qurʾâna tartîlâ' (73:4) fonde cette science.",
+        "audio_url": ""
+      },
+      "famille_mots": [
+        {
+          "arabe": "جَيِّد",
+          "translit": "jayyid",
+          "sens": "bon, excellent"
+        },
+        {
+          "arabe": "أَجْوَدَ",
+          "translit": "ajwada",
+          "sens": "il a fait mieux"
+        }
+      ],
+      "type_grammatical": "nom_technique",
+      "difficulte": 2,
+      "notes_pedagogiques": "Science de la PRONONCIATION CORRECTE du Coran : règles des lettres (makhârij), allongements (madd), nasalisations (ghunna), arrêts (waqf). Obligatoire pour la récitation. Mot non coranique mais essentiel à la science coranique."
+    },
+    {
+      "id": "lisan_262",
+      "ordre": 262,
+      "palier": 2,
+      "mot_arabe": "حَافِظ",
+      "translitteration": "Hâfiz",
+      "traductions_fr": [
+        "gardien",
+        "qui retient"
+      ],
+      "frequence_coran": 51,
+      "racine": {
+        "lettres": "ح ف ظ",
+        "translitteration": "h-f-z",
+        "sens_fondamental": "garder, préserver, mémoriser"
+      },
+      "exemple_verset": {
+        "reference": "15:9",
+        "arabe": "إِنَّا نَحْنُ نَزَّلْنَا ٱلذِّكْرَ وَإِنَّا لَهُ لَحَافِظُونَ",
+        "translitteration": "Innâ nahnu nazzalnâ-dh-dhikra wa innâ lahu la-hâfizûn",
+        "traduction_fr": "C'est Nous qui avons fait descendre le Rappel, et c'est Nous qui en sommes Gardiens",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/015009.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "حَفِظَ",
+          "translit": "hafiza",
+          "sens": "il a gardé/mémorisé"
+        },
+        {
+          "arabe": "حِفْظ",
+          "translit": "hifz",
+          "sens": "mémorisation"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Double sens : 1) Allâh est 'al-Hâfiz' (Gardien du Coran, 15:9), 2) Hâfiz = humain qui a mémorisé tout le Coran. Statut d'honneur. Allâh préserve Son Livre dans les cœurs de milliers de hâfiz à travers les siècles."
+    },
+    {
+      "id": "lisan_263",
+      "ordre": 263,
+      "palier": 2,
+      "mot_arabe": "تِلَاوَة",
+      "translitteration": "Tilâwa",
+      "traductions_fr": [
+        "récitation",
+        "suite (de versets)"
+      ],
+      "frequence_coran": 63,
+      "racine": {
+        "lettres": "ت ل و",
+        "translitteration": "t-l-w",
+        "sens_fondamental": "suivre, réciter"
+      },
+      "exemple_verset": {
+        "reference": "2:121",
+        "arabe": "ٱلَّذِينَ آتَيْنَاهُمُ ٱلْكِتَابَ يَتْلُونَهُ حَقَّ تِلَاوَتِهِ",
+        "translitteration": "Alladhîna âtaynâhumu-l-kitâba yatlûnahu haqqa tilâwatih",
+        "traduction_fr": "Ceux à qui Nous avons donné le Livre, qui le récitent comme il doit l'être",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002121.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "تَلَا",
+          "translit": "talâ",
+          "sens": "il a récité"
+        },
+        {
+          "arabe": "تَالٍ",
+          "translit": "tâlin",
+          "sens": "récitant"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Plus que 'qarâʾa' (lire) : 'talâ' = lire à voix haute en suivant, en méditant. 'Tilâwa haqqa' = récitation digne, avec compréhension et application — pas juste mécanique."
+    },
+    {
+      "id": "lisan_264",
+      "ordre": 264,
+      "palier": 2,
+      "mot_arabe": "وُضُوء",
+      "translitteration": "Wudûʾ",
+      "traductions_fr": [
+        "ablutions mineures"
+      ],
+      "frequence_coran": 0,
+      "racine": {
+        "lettres": "و ض أ",
+        "translitteration": "w-d-ʾ",
+        "sens_fondamental": "luminosité, propreté"
+      },
+      "exemple_verset": {
+        "reference": "5:6",
+        "arabe": "يَا أَيُّهَا ٱلَّذِينَ آمَنُوا إِذَا قُمْتُمْ إِلَى ٱلصَّلَاةِ فَٱغْسِلُوا وُجُوهَكُمْ",
+        "translitteration": "Yâ ayyuhâ-lladhîna âmanû idhâ qumtum ilâ-s-salâti fa-ghsilû wujûhakum",
+        "traduction_fr": "Ô vous qui croyez, quand vous vous levez pour la prière, lavez vos visages",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/005006.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "وَضُوء",
+          "translit": "wadûʾ",
+          "sens": "eau pour les ablutions"
+        },
+        {
+          "arabe": "تَوَضَّأَ",
+          "translit": "tawaddaʾa",
+          "sens": "il a fait les ablutions"
+        }
+      ],
+      "type_grammatical": "nom_technique",
+      "difficulte": 1,
+      "notes_pedagogiques": "Le mot n'est pas dans le Coran sous cette forme, mais l'acte est décrit en 5:6. Condition de validité de la prière. Lavage : mains, bouche, nez, visage, bras, tête, oreilles, pieds. Lumière intérieure du croyant."
+    },
+    {
+      "id": "lisan_265",
+      "ordre": 265,
+      "palier": 2,
+      "mot_arabe": "غُسْل",
+      "translitteration": "Ghusl",
+      "traductions_fr": [
+        "ablution majeure",
+        "lavage complet"
+      ],
+      "frequence_coran": 1,
+      "racine": {
+        "lettres": "غ س ل",
+        "translitteration": "gh-s-l",
+        "sens_fondamental": "laver"
+      },
+      "exemple_verset": {
+        "reference": "5:6",
+        "arabe": "وَإِن كُنتُمْ جُنُبًا فَٱطَّهَّرُوا",
+        "translitteration": "Wa in kuntum junuban fa-ttahharû",
+        "traduction_fr": "Si vous êtes en état d'impureté majeure, alors purifiez-vous",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/005006.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "ٱغْتَسَلَ",
+          "translit": "ightasala",
+          "sens": "il a fait le ghusl"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Lavage rituel complet du corps. Obligatoire après janâba (impureté majeure), menstruations, accouchement. Recommandé : vendredi avant la Jumuʿa, fêtes."
+    },
+    {
+      "id": "lisan_266",
+      "ordre": 266,
+      "palier": 2,
+      "mot_arabe": "طَهَارَة",
+      "translitteration": "Tahâra",
+      "traductions_fr": [
+        "pureté rituelle"
+      ],
+      "frequence_coran": 31,
+      "racine": {
+        "lettres": "ط ه ر",
+        "translitteration": "t-h-r",
+        "sens_fondamental": "purifier"
+      },
+      "exemple_verset": {
+        "reference": "2:222",
+        "arabe": "إِنَّ ٱللَّهَ يُحِبُّ ٱلتَّوَّابِينَ وَيُحِبُّ ٱلْمُتَطَهِّرِينَ",
+        "translitteration": "Inna-llâha yuhibbu-t-tawwâbîna wa yuhibbu-l-mutatahhirîn",
+        "traduction_fr": "Allâh aime ceux qui se repentent et ceux qui se purifient",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002222.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "طَاهِر",
+          "translit": "tâhir",
+          "sens": "pur"
+        },
+        {
+          "arabe": "طَهَّرَ",
+          "translit": "tahhara",
+          "sens": "il a purifié"
+        },
+        {
+          "arabe": "مُطَهَّر",
+          "translit": "mutahhar",
+          "sens": "purifié"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Pureté à la fois rituelle ET spirituelle. Le hadith : 'La tahâra est la moitié de la foi.' Maryam est qualifiée 'mutahhara' (purifiée, 3:42). La pureté ouvre la porte de l'amour divin."
+    },
+    {
+      "id": "lisan_267",
+      "ordre": 267,
+      "palier": 2,
+      "mot_arabe": "نَجَاسَة",
+      "translitteration": "Najâsa",
+      "traductions_fr": [
+        "impureté"
+      ],
+      "frequence_coran": 10,
+      "racine": {
+        "lettres": "ن ج س",
+        "translitteration": "n-j-s",
+        "sens_fondamental": "impur, souillé"
+      },
+      "exemple_verset": {
+        "reference": "9:28",
+        "arabe": "إِنَّمَا ٱلْمُشْرِكُونَ نَجَسٌ",
+        "translitteration": "Innamâ-l-mushrikûna najas",
+        "traduction_fr": "Les polythéistes sont une impureté",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/009028.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "نَجِس",
+          "translit": "najis",
+          "sens": "impur"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Concept technique en jurisprudence. Najâsa physique (sang, urine, etc.) qu'on nettoie par l'eau. 9:28 : l'impureté des mushrikîn est spirituelle, pas physique selon les commentateurs."
+    },
+    {
+      "id": "lisan_268",
+      "ordre": 268,
+      "palier": 2,
+      "mot_arabe": "قِيَام (اللَّيْل)",
+      "translitteration": "Qiyâm al-layl",
+      "traductions_fr": [
+        "veille de la nuit",
+        "prière nocturne"
+      ],
+      "frequence_coran": 4,
+      "racine": {
+        "lettres": "ق و م + ل ي ل",
+        "translitteration": "q-w-m + l-y-l",
+        "sens_fondamental": "se lever (cf. qiyâma) + nuit (cf. layl)"
+      },
+      "exemple_verset": {
+        "reference": "73:6",
+        "arabe": "إِنَّ نَاشِئَةَ ٱللَّيْلِ هِيَ أَشَدُّ وَطْئًا",
+        "translitteration": "Inna nâshiʾata-l-layli hiya ashaddu watʾâ",
+        "traduction_fr": "Certes, la veillée de la nuit est plus efficace",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/073006.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "قَائِم",
+          "translit": "qâʾim",
+          "sens": "celui qui se tient debout (en prière)"
+        }
+      ],
+      "type_grammatical": "nom_compose",
+      "difficulte": 2,
+      "notes_pedagogiques": "Pratique des prophètes et des saints. Sourate 73 (al-Muzzammil) ordonne au Prophète ﷺ de prier la nuit. Récompenses immenses. 'Plus de proximité avec Allâh dans le dernier tiers de la nuit' (hadith)."
+    },
+    {
+      "id": "lisan_269",
+      "ordre": 269,
+      "palier": 2,
+      "mot_arabe": "تَهَجُّد",
+      "translitteration": "Tahajjud",
+      "traductions_fr": [
+        "prière du milieu de la nuit"
+      ],
+      "frequence_coran": 1,
+      "racine": {
+        "lettres": "ه ج د",
+        "translitteration": "h-j-d",
+        "sens_fondamental": "veiller la nuit, sommeil"
+      },
+      "exemple_verset": {
+        "reference": "17:79",
+        "arabe": "وَمِنَ ٱللَّيْلِ فَتَهَجَّدْ بِهِ نَافِلَةً لَّكَ",
+        "translitteration": "Wa mina-l-layli fa-tahajjad bihi nâfilatan lak",
+        "traduction_fr": "Et une partie de la nuit, fais la veillée pour toi en surérogation",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/017079.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "تَهَجَّدَ",
+          "translit": "tahajjada",
+          "sens": "il a veillé en prière"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Sens étymologique paradoxal : 'tahajjud' vient de 'hajada' (dormir) — c'est se réveiller APRÈS avoir dormi pour prier. Différent de qiyâm al-layl qui peut commencer avant le sommeil. Pratique la plus aimée d'Allâh."
+    },
+    {
+      "id": "lisan_270",
+      "ordre": 270,
+      "palier": 2,
+      "mot_arabe": "وَتْر",
+      "translitteration": "Witr",
+      "traductions_fr": [
+        "prière impaire"
+      ],
+      "frequence_coran": 1,
+      "racine": {
+        "lettres": "و ت ر",
+        "translitteration": "w-t-r",
+        "sens_fondamental": "impair, unique"
+      },
+      "exemple_verset": {
+        "reference": "89:3",
+        "arabe": "وَٱلشَّفْعِ وَٱلْوَتْرِ",
+        "translitteration": "Wa-sh-shafʿi wa-l-watr",
+        "traduction_fr": "Par le pair et l'impair",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/089003.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "أَوْتَر",
+          "translit": "awtara",
+          "sens": "il a prié witr"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Prière surérogatoire d'une rakaʿa impaire (1, 3, 5, 7, 9 ou 11) après ʿishâ. 'Allâh est Watr (Impair, Unique) et aime le witr' (hadith). Conclusion de la journée de prière."
+    },
+    {
+      "id": "lisan_271",
+      "ordre": 271,
+      "palier": 2,
+      "mot_arabe": "نَافِلَة",
+      "translitteration": "Nâfila",
+      "traductions_fr": [
+        "surérogatoire"
+      ],
+      "frequence_coran": 5,
+      "racine": {
+        "lettres": "ن ف ل",
+        "translitteration": "n-f-l",
+        "sens_fondamental": "surplus, butin"
+      },
+      "exemple_verset": {
+        "reference": "17:79",
+        "arabe": "نَافِلَةً لَّكَ",
+        "translitteration": "Nâfilatan lak",
+        "traduction_fr": "(comme acte) surérogatoire pour toi",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/017079.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "نَوَافِل",
+          "translit": "nawâfil",
+          "sens": "actes surérogatoires (pluriel)"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Catégorie d'actes : non obligatoires mais hautement récompensés. Hadith qudsi célèbre : 'Mon serviteur ne cesse de se rapprocher de Moi par les nawâfil jusqu'à ce que Je l'aime.' Voie d'élévation spirituelle."
+    },
+    {
+      "id": "lisan_272",
+      "ordre": 272,
+      "palier": 2,
+      "mot_arabe": "فَرْض",
+      "translitteration": "Fard",
+      "traductions_fr": [
+        "obligatoire",
+        "prescrit"
+      ],
+      "frequence_coran": 18,
+      "racine": {
+        "lettres": "ف ر ض",
+        "translitteration": "f-r-d",
+        "sens_fondamental": "imposer, prescrire"
+      },
+      "exemple_verset": {
+        "reference": "2:197",
+        "arabe": "ٱلْحَجُّ أَشْهُرٌ مَّعْلُومَاتٌ ۚ فَمَن فَرَضَ فِيهِنَّ ٱلْحَجَّ",
+        "translitteration": "Al-hajju ashhurun maʿlûmât, fa-man farada fîhinna-l-hajj",
+        "traduction_fr": "Le pèlerinage a lieu dans des mois connus. Quiconque s'y oblige au pèlerinage",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002197.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "فَرَائِض",
+          "translit": "farâʾid",
+          "sens": "obligations (pluriel)"
+        },
+        {
+          "arabe": "ٱفْتَرَضَ",
+          "translit": "iftarada",
+          "sens": "il a prescrit"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Opposé de 'nâfila'. Fard = obligation absolue (les 5 prières, Ramadan, zakât, etc.). Abandonner un fard = péché majeur. Cinq catégories légales : wâjib (=fard), mandûb, mubâh, makrûh, harâm."
+    },
+    {
+      "id": "lisan_273",
+      "ordre": 273,
+      "palier": 2,
+      "mot_arabe": "سُنَّة",
+      "translitteration": "Sunna",
+      "traductions_fr": [
+        "tradition (du Prophète ﷺ)"
+      ],
+      "frequence_coran": 16,
+      "racine": {
+        "lettres": "س ن ن",
+        "translitteration": "s-n-n",
+        "sens_fondamental": "voie, manière établie"
+      },
+      "exemple_verset": {
+        "reference": "33:62",
+        "arabe": "سُنَّةَ ٱللَّهِ فِي ٱلَّذِينَ خَلَوْا مِن قَبْلُ",
+        "translitteration": "Sunnata-llâhi fî-lladhîna khalaw min qabl",
+        "traduction_fr": "Telle est la sunna d'Allâh à l'égard de ceux qui ont vécu auparavant",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/033062.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "سُنَن",
+          "translit": "sunan",
+          "sens": "traditions (pluriel)"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Dans le Coran : 'sunnat Allâh' = lois immuables d'Allâh. Plus tardivement : 'Sunna' = tradition du Prophète ﷺ (paroles, actes, approbations). Deuxième source du droit islamique après le Coran."
+    },
+    {
+      "id": "lisan_274",
+      "ordre": 274,
+      "palier": 2,
+      "mot_arabe": "حَدِيث",
+      "translitteration": "Hadîth",
+      "traductions_fr": [
+        "récit",
+        "parole du Prophète ﷺ"
+      ],
+      "frequence_coran": 23,
+      "racine": {
+        "lettres": "ح د ث",
+        "translitteration": "h-d-th",
+        "sens_fondamental": "advenir, nouveau, raconter"
+      },
+      "exemple_verset": {
+        "reference": "12:111",
+        "arabe": "مَا كَانَ حَدِيثًا يُفْتَرَىٰ",
+        "translitteration": "Mâ kâna hadîthan yuftarâ",
+        "traduction_fr": "Ce n'est pas un récit inventé",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/012111.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "أَحَادِيث",
+          "translit": "ahâdîth",
+          "sens": "hadiths (pluriel)"
+        },
+        {
+          "arabe": "حَدَّثَ",
+          "translit": "haddatha",
+          "sens": "il a raconté"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Sens originel : récit, parole, événement nouveau. Sens technique : parole rapportée du Prophète ﷺ. Science du hadith (ʿilm al-hadîth) : critères d'authenticité (sahîh, hasan, daʿîf, mawdûʿ)."
+    },
+    {
+      "id": "lisan_275",
+      "ordre": 275,
+      "palier": 2,
+      "mot_arabe": "أَثَر",
+      "translitteration": "Athar",
+      "traductions_fr": [
+        "trace",
+        "parole des Compagnons"
+      ],
+      "frequence_coran": 21,
+      "racine": {
+        "lettres": "أ ث ر",
+        "translitteration": "ʾ-th-r",
+        "sens_fondamental": "trace, empreinte"
+      },
+      "exemple_verset": {
+        "reference": "30:50",
+        "arabe": "فَٱنظُرْ إِلَىٰ آثَارِ رَحْمَتِ ٱللَّهِ",
+        "translitteration": "Fa-nzur ilâ âthâri rahmati-llâh",
+        "traduction_fr": "Regarde donc les traces de la miséricorde d'Allâh",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/030050.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "آثَار",
+          "translit": "âthâr",
+          "sens": "traces (pluriel)"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Sens littéral : trace, vestige. Sens technique : parole rapportée d'un Compagnon ou Tâbiʿî (génération suivante). Niveau inférieur au hadîth (qui remonte au Prophète ﷺ). Une fois validé en chaîne par Niyyah."
+    },
+    {
+      "id": "lisan_276",
+      "ordre": 276,
+      "palier": 2,
+      "mot_arabe": "إِجْمَاع",
+      "translitteration": "Ijmâʿ",
+      "traductions_fr": [
+        "consensus (des savants)"
+      ],
+      "frequence_coran": 5,
+      "racine": {
+        "lettres": "ج م ع",
+        "translitteration": "j-m-ʿ",
+        "sens_fondamental": "rassembler"
+      },
+      "exemple_verset": {
+        "reference": "10:71",
+        "arabe": "فَأَجْمِعُوا أَمْرَكُمْ",
+        "translitteration": "Fa-ajmiʿû amrakum",
+        "traduction_fr": "Réunissez-vous donc sur votre décision",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/010071.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "جَمْع",
+          "translit": "jamʿ",
+          "sens": "rassemblement"
+        },
+        {
+          "arabe": "جَامِع",
+          "translit": "jâmiʿ",
+          "sens": "qui rassemble (aussi : grande mosquée)"
+        }
+      ],
+      "type_grammatical": "nom_technique",
+      "difficulte": 2,
+      "notes_pedagogiques": "3e source du droit après Coran et Sunna. Consensus des savants d'une époque sur une question. Hadith : 'Ma communauté ne s'accorde pas sur une erreur.' Outil de stabilité doctrinale."
+    },
+    {
+      "id": "lisan_277",
+      "ordre": 277,
+      "palier": 2,
+      "mot_arabe": "قِيَاس",
+      "translitteration": "Qiyâs",
+      "traductions_fr": [
+        "analogie juridique"
+      ],
+      "frequence_coran": 0,
+      "racine": {
+        "lettres": "ق ي س",
+        "translitteration": "q-y-s",
+        "sens_fondamental": "mesurer, comparer"
+      },
+      "exemple_verset": {
+        "reference": "—",
+        "arabe": "—",
+        "translitteration": "—",
+        "traduction_fr": "Mot non coranique mais base de la jurisprudence islamique",
+        "audio_url": ""
+      },
+      "famille_mots": [
+        {
+          "arabe": "قَاسَ",
+          "translit": "qâsa",
+          "sens": "il a comparé"
+        },
+        {
+          "arabe": "مِقْيَاس",
+          "translit": "miqyâs",
+          "sens": "mesure"
+        }
+      ],
+      "type_grammatical": "nom_technique",
+      "difficulte": 2,
+      "notes_pedagogiques": "4e source du droit. Étendre une règle coranique à un cas non explicitement mentionné par analogie. Ex : interdiction du vin (mentionné) → interdiction de toute substance intoxicante (par qiyâs sur la cause = intoxication)."
+    },
+    {
+      "id": "lisan_278",
+      "ordre": 278,
+      "palier": 2,
+      "mot_arabe": "فَتْوَىٰ",
+      "translitteration": "Fatwâ",
+      "traductions_fr": [
+        "avis juridique"
+      ],
+      "frequence_coran": 9,
+      "racine": {
+        "lettres": "ف ت ي",
+        "translitteration": "f-t-y",
+        "sens_fondamental": "jeune homme, donner un avis"
+      },
+      "exemple_verset": {
+        "reference": "4:127",
+        "arabe": "وَيَسْتَفْتُونَكَ فِي ٱلنِّسَاءِ ۖ قُلِ ٱللَّهُ يُفْتِيكُمْ فِيهِنَّ",
+        "translitteration": "Wa yastaftûnaka fî-n-nisâʾ, quli-llâhu yuftîkum fîhinn",
+        "traduction_fr": "Ils te demandent une fatwa au sujet des femmes. Dis : Allâh vous donne Sa fatwa à leur sujet",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/004127.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "مُفْتِي",
+          "translit": "muftî",
+          "sens": "celui qui donne la fatwa"
+        },
+        {
+          "arabe": "ٱسْتَفْتَى",
+          "translit": "istaftâ",
+          "sens": "il a demandé une fatwa"
+        }
+      ],
+      "type_grammatical": "nom_technique",
+      "difficulte": 2,
+      "notes_pedagogiques": "Avis religieux rendu par un savant qualifié (muftî) sur une question. Le Coran utilise déjà le verbe (yuftûnaka, yastaftûnaka). Le muftî est consulté pour les cas nouveaux ou complexes."
+    },
+    {
+      "id": "lisan_279",
+      "ordre": 279,
+      "palier": 2,
+      "mot_arabe": "ٱجْتِهَاد",
+      "translitteration": "Ijtihâd",
+      "traductions_fr": [
+        "effort interprétatif"
+      ],
+      "frequence_coran": 0,
+      "racine": {
+        "lettres": "ج ه د",
+        "translitteration": "j-h-d",
+        "sens_fondamental": "effort (cf. jihâd, mot 195)"
+      },
+      "exemple_verset": {
+        "reference": "—",
+        "arabe": "—",
+        "translitteration": "—",
+        "traduction_fr": "Concept technique de la jurisprudence islamique",
+        "audio_url": ""
+      },
+      "famille_mots": [
+        {
+          "arabe": "مُجْتَهِد",
+          "translit": "mujtahid",
+          "sens": "savant exerçant l'ijtihâd"
+        }
+      ],
+      "type_grammatical": "nom_technique",
+      "difficulte": 2,
+      "notes_pedagogiques": "Effort intellectuel pour déduire les règles religieuses à partir des sources. Pratique des grands imams (Abû Hanîfa, Mâlik, ash-Shâfiʿî, Ibn Hanbal). Hadith : 'Le mujtahid juste obtient 2 récompenses, le mujtahid qui se trompe en obtient 1.'"
+    },
+    {
+      "id": "lisan_280",
+      "ordre": 280,
+      "palier": 2,
+      "mot_arabe": "مَذْهَب",
+      "translitteration": "Madhhab",
+      "traductions_fr": [
+        "école juridique"
+      ],
+      "frequence_coran": 0,
+      "racine": {
+        "lettres": "ذ ه ب",
+        "translitteration": "dh-h-b",
+        "sens_fondamental": "aller (cf. dhahaba, mot 80)"
+      },
+      "exemple_verset": {
+        "reference": "—",
+        "arabe": "—",
+        "translitteration": "—",
+        "traduction_fr": "Concept technique : 'ce vers quoi on va', voie suivie",
+        "audio_url": ""
+      },
+      "famille_mots": [
+        {
+          "arabe": "مَذَاهِب",
+          "translit": "madhâhib",
+          "sens": "écoles (pluriel)"
+        }
+      ],
+      "type_grammatical": "nom_technique",
+      "difficulte": 2,
+      "notes_pedagogiques": "Les 4 madhâhib sunnites : Hanafî, Mâlikî, Shâfiʿî, Hanbalî — tous orthodoxes. Différences sur des détails de jurisprudence, pas sur les fondements. Le musulman peut suivre l'un d'eux."
+    },
+    {
+      "id": "lisan_281",
+      "ordre": 281,
+      "palier": 2,
+      "mot_arabe": "عَرْش",
+      "translitteration": "ʿArsh",
+      "traductions_fr": [
+        "Trône (divin)"
+      ],
+      "frequence_coran": 26,
+      "racine": {
+        "lettres": "ع ر ش",
+        "translitteration": "ʿ-r-sh",
+        "sens_fondamental": "trône, structure élevée"
+      },
+      "exemple_verset": {
+        "reference": "20:5",
+        "arabe": "ٱلرَّحْمَٰنُ عَلَى ٱلْعَرْشِ ٱسْتَوَىٰ",
+        "translitteration": "Ar-Rahmânu ʿalâ-l-ʿarshi-stawâ",
+        "traduction_fr": "Le Tout-Miséricordieux S'est élevé sur le Trône",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/020005.mp3"
+      },
+      "famille_mots": [],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Plus grande création d'Allâh. Allâh y est 'établi' selon Sa majesté (sans assimilation à un trône humain). 'Rabb al-ʿArsh' = Seigneur du Trône. Concept à comprendre selon les versets et hadiths sans spéculation."
+    },
+    {
+      "id": "lisan_282",
+      "ordre": 282,
+      "palier": 2,
+      "mot_arabe": "كُرْسِيّ",
+      "translitteration": "Kursî",
+      "traductions_fr": [
+        "Piédestal"
+      ],
+      "frequence_coran": 2,
+      "racine": {
+        "lettres": "ك ر س",
+        "translitteration": "k-r-s",
+        "sens_fondamental": "siège, base"
+      },
+      "exemple_verset": {
+        "reference": "2:255",
+        "arabe": "وَسِعَ كُرْسِيُّهُ ٱلسَّمَاوَاتِ وَٱلْأَرْضَ",
+        "translitteration": "Wasiʿa kursiyyuhu-s-samâwâti wa-l-ard",
+        "traduction_fr": "Son Kursî s'étend sur les cieux et la terre",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002255.mp3"
+      },
+      "famille_mots": [],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Verset 2:255 (Âyat al-Kursî) — le plus grand verset du Coran selon le Prophète ﷺ. Le Kursî est plus petit que le ʿArsh selon les hadiths. Lecture le matin, soir et avant sommeil = protection."
+    },
+    {
+      "id": "lisan_283",
+      "ordre": 283,
+      "palier": 2,
+      "mot_arabe": "لَوْح",
+      "translitteration": "Lawh",
+      "traductions_fr": [
+        "Tablette"
+      ],
+      "frequence_coran": 5,
+      "racine": {
+        "lettres": "ل و ح",
+        "translitteration": "l-w-h",
+        "sens_fondamental": "tablette, surface plate"
+      },
+      "exemple_verset": {
+        "reference": "85:22",
+        "arabe": "فِي لَوْحٍ مَّحْفُوظٍ",
+        "translitteration": "Fî lawhin mahfûz",
+        "traduction_fr": "Dans une Tablette préservée",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/085022.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "أَلْوَاح",
+          "translit": "alwâh",
+          "sens": "tablettes (pluriel)"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "'Al-Lawh al-Mahfûz' (la Tablette préservée) — où est inscrit tout ce qui existe et arrive depuis avant la création. Le Coran y est inscrit (85:22). Image du qadar (décret divin)."
+    },
+    {
+      "id": "lisan_284",
+      "ordre": 284,
+      "palier": 2,
+      "mot_arabe": "قَلَم",
+      "translitteration": "Qalam",
+      "traductions_fr": [
+        "calame",
+        "plume"
+      ],
+      "frequence_coran": 4,
+      "racine": {
+        "lettres": "ق ل م",
+        "translitteration": "q-l-m",
+        "sens_fondamental": "tailler (un roseau pour écrire)"
+      },
+      "exemple_verset": {
+        "reference": "68:1",
+        "arabe": "ن ۚ وَٱلْقَلَمِ وَمَا يَسْطُرُونَ",
+        "translitteration": "Nûn, wa-l-qalami wa mâ yasturûn",
+        "traduction_fr": "Nûn. Par le calame et ce qu'ils écrivent",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/068001.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "أَقْلَام",
+          "translit": "aqlâm",
+          "sens": "calames (pluriel)"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Sourate 68 (al-Qalam) porte ce nom. Le premier qalam aurait été créé par Allâh pour écrire les destins. Aussi mentionné en 96:4 — Allâh a enseigné par le qalam, valorisation de l'écriture."
+    },
+    {
+      "id": "lisan_285",
+      "ordre": 285,
+      "palier": 2,
+      "mot_arabe": "بَرْزَخ",
+      "translitteration": "Barzakh",
+      "traductions_fr": [
+        "barrière",
+        "intervalle"
+      ],
+      "frequence_coran": 3,
+      "racine": {
+        "lettres": "ب ر ز خ",
+        "translitteration": "b-r-z-kh",
+        "sens_fondamental": "barrière, séparation"
+      },
+      "exemple_verset": {
+        "reference": "23:100",
+        "arabe": "وَمِن وَرَائِهِم بَرْزَخٌ إِلَىٰ يَوْمِ يُبْعَثُونَ",
+        "translitteration": "Wa min warâʾihim barzakhun ilâ yawmi yubʿathûn",
+        "traduction_fr": "Et derrière eux est un barzakh jusqu'au jour où ils seront ressuscités",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/023100.mp3"
+      },
+      "famille_mots": [],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Intervalle entre la mort et la résurrection. L'âme y demeure dans la 'vie de la tombe'. Aussi : barrière entre deux mers (25:53, 55:20). Concept eschatologique majeur."
+    },
+    {
+      "id": "lisan_286",
+      "ordre": 286,
+      "palier": 2,
+      "mot_arabe": "صِبْغَة",
+      "translitteration": "Sibgha",
+      "traductions_fr": [
+        "empreinte (d'Allâh)"
+      ],
+      "frequence_coran": 2,
+      "racine": {
+        "lettres": "ص ب غ",
+        "translitteration": "s-b-gh",
+        "sens_fondamental": "teindre, colorer"
+      },
+      "exemple_verset": {
+        "reference": "2:138",
+        "arabe": "صِبْغَةَ ٱللَّهِ ۖ وَمَنْ أَحْسَنُ مِنَ ٱللَّهِ صِبْغَةً",
+        "translitteration": "Sibghata-llâh, wa man ahsanu mina-llâhi sibgha",
+        "traduction_fr": "Telle est la sibgha d'Allâh ! Et qui mieux qu'Allâh peut teindre ?",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002138.mp3"
+      },
+      "famille_mots": [],
+      "type_grammatical": "nom",
+      "difficulte": 3,
+      "notes_pedagogiques": "Métaphore : la fitra (nature originelle) reçue d'Allâh est comme une 'teinture' indélébile. L'islam est cette empreinte naturelle. Mot rare mais profond."
+    },
+    {
+      "id": "lisan_287",
+      "ordre": 287,
+      "palier": 2,
+      "mot_arabe": "فِطْرَة",
+      "translitteration": "Fitra",
+      "traductions_fr": [
+        "nature originelle"
+      ],
+      "frequence_coran": 1,
+      "racine": {
+        "lettres": "ف ط ر",
+        "translitteration": "f-t-r",
+        "sens_fondamental": "créer, fendre"
+      },
+      "exemple_verset": {
+        "reference": "30:30",
+        "arabe": "فِطْرَتَ ٱللَّهِ ٱلَّتِي فَطَرَ ٱلنَّاسَ عَلَيْهَا",
+        "translitteration": "Fitrata-llâhi-llatî fatara-n-nâsa ʿalayhâ",
+        "traduction_fr": "La fitra d'Allâh selon laquelle Il a créé les hommes",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/030030.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "فَطَرَ",
+          "translit": "fatara",
+          "sens": "il a créé"
+        },
+        {
+          "arabe": "فَاطِر",
+          "translit": "Fâtir",
+          "sens": "Créateur (nom divin)"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Concept central : chaque être humain naît sur la fitra (disposition naturelle vers Allâh, vers le bien). Hadith : 'Tout nouveau-né naît sur la fitra ; ce sont ses parents qui le font juif, chrétien ou zoroastrien.'"
+    },
+    {
+      "id": "lisan_288",
+      "ordre": 288,
+      "palier": 2,
+      "mot_arabe": "مِلَّة",
+      "translitteration": "Milla",
+      "traductions_fr": [
+        "voie religieuse",
+        "communauté de foi"
+      ],
+      "frequence_coran": 17,
+      "racine": {
+        "lettres": "م ل ل",
+        "translitteration": "m-l-l",
+        "sens_fondamental": "voie suivie"
+      },
+      "exemple_verset": {
+        "reference": "2:135",
+        "arabe": "بَلْ مِلَّةَ إِبْرَاهِيمَ حَنِيفًا",
+        "translitteration": "Bal millata Ibrâhîma hanîfâ",
+        "traduction_fr": "Mais (suivez plutôt) la voie d'Ibrâhîm, hanîf",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002135.mp3"
+      },
+      "famille_mots": [],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "'Millat Ibrâhîm' = la voie pure d'Ibrâhîm, prototype du monothéisme. L'islam s'identifie à cette milla originelle. Concept : la vraie religion est UNE depuis Adam, mais nommée 'islam' avec Muhammad ﷺ."
+    },
+    {
+      "id": "lisan_289",
+      "ordre": 289,
+      "palier": 2,
+      "mot_arabe": "حَنِيف",
+      "translitteration": "Hanîf",
+      "traductions_fr": [
+        "monothéiste pur"
+      ],
+      "frequence_coran": 10,
+      "racine": {
+        "lettres": "ح ن ف",
+        "translitteration": "h-n-f",
+        "sens_fondamental": "pencher (vers la vérité), s'éloigner (de l'erreur)"
+      },
+      "exemple_verset": {
+        "reference": "3:67",
+        "arabe": "وَلَٰكِن كَانَ حَنِيفًا مُّسْلِمًا",
+        "translitteration": "Wa lâkin kâna hanîfan musliman",
+        "traduction_fr": "Mais il était hanîf, musulman",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/003067.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "حُنَفَاء",
+          "translit": "hunafâʾ",
+          "sens": "hanîfs (pluriel)"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Qualificatif d'Ibrâhîm : ni juif ni chrétien, mais hanîf — pure unicité, en marge des religions corrompues de son temps. Le musulman authentique est hanîf."
+    },
+    {
+      "id": "lisan_290",
+      "ordre": 290,
+      "palier": 2,
+      "mot_arabe": "إِسْلَام",
+      "translitteration": "Islâm",
+      "traductions_fr": [
+        "soumission",
+        "Islam"
+      ],
+      "frequence_coran": 8,
+      "racine": {
+        "lettres": "س ل م",
+        "translitteration": "s-l-m",
+        "sens_fondamental": "soumettre, paix"
+      },
+      "exemple_verset": {
+        "reference": "3:19",
+        "arabe": "إِنَّ ٱلدِّينَ عِندَ ٱللَّهِ ٱلْإِسْلَامُ",
+        "translitteration": "Inna-d-dîna ʿinda-llâhi-l-islâm",
+        "traduction_fr": "La religion auprès d'Allâh est l'Islam",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/003019.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "مُسْلِم",
+          "translit": "muslim",
+          "sens": "musulman"
+        },
+        {
+          "arabe": "أَسْلَمَ",
+          "translit": "aslama",
+          "sens": "il s'est soumis"
+        },
+        {
+          "arabe": "سَلَام",
+          "translit": "salâm",
+          "sens": "paix"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Racine s-l-m extraordinaire : SOUMISSION (à Allâh) + PAIX (intérieure et avec autrui) + SÉCURITÉ (du salâm). L'islam = se soumettre pour trouver la paix. Verset 3:19 fondamental."
+    },
+    {
+      "id": "lisan_291",
+      "ordre": 291,
+      "palier": 2,
+      "mot_arabe": "إِيمَان",
+      "translitteration": "Îmân",
+      "traductions_fr": [
+        "foi"
+      ],
+      "frequence_coran": 45,
+      "racine": {
+        "lettres": "أ م ن",
+        "translitteration": "ʾ-m-n",
+        "sens_fondamental": "sécurité, croire (cf. âmana, mot 27)"
+      },
+      "exemple_verset": {
+        "reference": "49:14",
+        "arabe": "قَالَتِ ٱلْأَعْرَابُ آمَنَّا ۖ قُل لَّمْ تُؤْمِنُوا وَلَٰكِن قُولُوا أَسْلَمْنَا وَلَمَّا يَدْخُلِ ٱلْإِيمَانُ فِي قُلُوبِكُمْ",
+        "translitteration": "Qâlati-l-aʿrâbu âmannâ, qul lam tuʾminû wa lâkin qûlû aslamnâ wa lammâ yadkhuli-l-îmânu fî qulûbikum",
+        "traduction_fr": "Les Bédouins disent : Nous avons cru. Dis : Vous n'avez pas cru. Dites plutôt : Nous nous sommes soumis, car la foi n'est pas encore entrée dans vos cœurs",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/049014.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "مُؤْمِن",
+          "translit": "muʾmin",
+          "sens": "croyant"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Différent de l'islâm ! Verset 49:14 distingue : islâm = soumission EXTÉRIEURE, îmân = foi INTÉRIEURE. L'îmân entre dans le cœur, augmente et diminue. Plus profond que l'islâm."
+    },
+    {
+      "id": "lisan_292",
+      "ordre": 292,
+      "palier": 2,
+      "mot_arabe": "تَوْحِيد",
+      "translitteration": "Tawhîd",
+      "traductions_fr": [
+        "unicité d'Allâh"
+      ],
+      "frequence_coran": 0,
+      "racine": {
+        "lettres": "و ح د",
+        "translitteration": "w-h-d",
+        "sens_fondamental": "un, unique (cf. wâhid, mot 102)"
+      },
+      "exemple_verset": {
+        "reference": "112:1",
+        "arabe": "قُلْ هُوَ ٱللَّهُ أَحَدٌ",
+        "translitteration": "Qul huwa-llâhu ahad",
+        "traduction_fr": "Dis : Il est Allâh, Unique",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/112001.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "وَحْدَة",
+          "translit": "wahda",
+          "sens": "unité"
+        },
+        {
+          "arabe": "مُوَحِّد",
+          "translit": "muwahhid",
+          "sens": "celui qui proclame l'unicité"
+        }
+      ],
+      "type_grammatical": "nom_technique",
+      "difficulte": 1,
+      "notes_pedagogiques": "Mot non coranique mais CONCEPT central de tout l'islam. Trois catégories : tawhîd ar-rubûbiyya (Allâh seul Créateur), tawhîd al-ulûhiyya (Allâh seul à adorer), tawhîd al-asmâʾ wa-s-sifât (Allâh seul à porter Ses noms parfaits)."
+    },
+    {
+      "id": "lisan_293",
+      "ordre": 293,
+      "palier": 2,
+      "mot_arabe": "كَلِمَة (التَّوْحِيد)",
+      "translitteration": "Kalimat at-Tawhîd",
+      "traductions_fr": [
+        "parole de l'unicité (shahâda)"
+      ],
+      "frequence_coran": 0,
+      "racine": {
+        "lettres": "ك ل م + و ح د",
+        "translitteration": "k-l-m + w-h-d",
+        "sens_fondamental": "parole (cf. kalima, mot 114) + unicité"
+      },
+      "exemple_verset": {
+        "reference": "37:35",
+        "arabe": "إِنَّهُمْ كَانُوا إِذَا قِيلَ لَهُمْ لَا إِلَٰهَ إِلَّا ٱللَّهُ يَسْتَكْبِرُونَ",
+        "translitteration": "Innahum kânû idhâ qîla lahum lâ ilâha illâ-llâhu yastakbirûn",
+        "traduction_fr": "Quand on leur disait : Il n'y a pas de divinité sauf Allâh, ils s'enflaient d'orgueil",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/037035.mp3"
+      },
+      "famille_mots": [],
+      "type_grammatical": "nom_compose",
+      "difficulte": 1,
+      "notes_pedagogiques": "La FORMULE 'lâ ilâha illâ Allâh' (il n'y a de divinité sauf Allâh) = clé du paradis. Premier élément de la shahâda. Hadith : 'Celui qui meurt en disant lâ ilâha illâ Allâh entre au Paradis.'"
+    },
+    {
+      "id": "lisan_294",
+      "ordre": 294,
+      "palier": 2,
+      "mot_arabe": "أَسْمَاء (الله)",
+      "translitteration": "Asmâʾ Allâh",
+      "traductions_fr": [
+        "Noms d'Allâh"
+      ],
+      "frequence_coran": 50,
+      "racine": {
+        "lettres": "س م و",
+        "translitteration": "s-m-w",
+        "sens_fondamental": "nom, élévation"
+      },
+      "exemple_verset": {
+        "reference": "7:180",
+        "arabe": "وَلِلَّهِ ٱلْأَسْمَاءُ ٱلْحُسْنَىٰ فَٱدْعُوهُ بِهَا",
+        "translitteration": "Wa li-llâhi-l-asmâʾu-l-husnâ fa-dʿûhu bihâ",
+        "traduction_fr": "À Allâh appartiennent les plus beaux Noms : invoquez-Le par eux",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/007180.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "ٱسْم",
+          "translit": "ism",
+          "sens": "nom"
+        }
+      ],
+      "type_grammatical": "nom_compose",
+      "difficulte": 1,
+      "notes_pedagogiques": "Les 99 plus beaux noms d'Allâh (al-asmâʾ al-husnâ). Hadith : 'Allâh a 99 noms — celui qui les compte (= médite et applique) entre au Paradis.' Méditation centrale en spiritualité."
+    },
+    {
+      "id": "lisan_295",
+      "ordre": 295,
+      "palier": 2,
+      "mot_arabe": "صِفَات",
+      "translitteration": "Sifât",
+      "traductions_fr": [
+        "Attributs (divins)"
+      ],
+      "frequence_coran": 0,
+      "racine": {
+        "lettres": "و ص ف",
+        "translitteration": "w-s-f",
+        "sens_fondamental": "décrire, qualifier"
+      },
+      "exemple_verset": {
+        "reference": "37:159",
+        "arabe": "سُبْحَانَ ٱللَّهِ عَمَّا يَصِفُونَ",
+        "translitteration": "Subhâna-llâhi ʿammâ yasifûn",
+        "traduction_fr": "Gloire à Allâh par-dessus ce qu'ils décrivent",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/037159.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "وَصَفَ",
+          "translit": "wasafa",
+          "sens": "il a décrit"
+        }
+      ],
+      "type_grammatical": "nom_technique",
+      "difficulte": 2,
+      "notes_pedagogiques": "Les Attributs d'Allâh (entendre, voir, savoir, vouloir, etc.) — affirmés sans assimilation aux créatures. Discipline : 'ʿilm at-tawhîd'. Principe : 'Lâ ka-mithlihi shayʾ' (Rien ne Lui ressemble, 42:11)."
+    },
+    {
+      "id": "lisan_296",
+      "ordre": 296,
+      "palier": 2,
+      "mot_arabe": "قَدِير",
+      "translitteration": "Qadîr",
+      "traductions_fr": [
+        "Tout-Puissant"
+      ],
+      "frequence_coran": 45,
+      "racine": {
+        "lettres": "ق د ر",
+        "translitteration": "q-d-r",
+        "sens_fondamental": "pouvoir, décréter (cf. qadar, mot 145)"
+      },
+      "exemple_verset": {
+        "reference": "2:20",
+        "arabe": "إِنَّ ٱللَّهَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ",
+        "translitteration": "Inna-llâha ʿalâ kulli shayʾin qadîr",
+        "traduction_fr": "Allâh est sur toute chose Tout-Puissant",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002020.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "قَادِر",
+          "translit": "qâdir",
+          "sens": "puissant"
+        },
+        {
+          "arabe": "قُدْرَة",
+          "translit": "qudra",
+          "sens": "puissance"
+        }
+      ],
+      "type_grammatical": "nom_divin",
+      "difficulte": 1,
+      "notes_pedagogiques": "Nom divin majeur. Formule récurrente : 'inna-llâha ʿalâ kulli shayʾin qadîr' (Allâh est sur toute chose Tout-Puissant) — répétée des dizaines de fois dans le Coran. Affirmation de la puissance absolue."
+    },
+    {
+      "id": "lisan_297",
+      "ordre": 297,
+      "palier": 2,
+      "mot_arabe": "عَلِيم",
+      "translitteration": "ʿAlîm",
+      "traductions_fr": [
+        "Omniscient"
+      ],
+      "frequence_coran": 162,
+      "racine": {
+        "lettres": "ع ل م",
+        "translitteration": "ʿ-l-m",
+        "sens_fondamental": "savoir (cf. ʿilm, mot 36)"
+      },
+      "exemple_verset": {
+        "reference": "2:32",
+        "arabe": "إِنَّكَ أَنتَ ٱلْعَلِيمُ ٱلْحَكِيمُ",
+        "translitteration": "Innaka anta-l-ʿAlîmu-l-Hakîm",
+        "traduction_fr": "C'est Toi l'Omniscient, le Sage",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002032.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "عَالِم",
+          "translit": "ʿâlim",
+          "sens": "savant"
+        },
+        {
+          "arabe": "عَلَّامَة",
+          "translit": "ʿallâma",
+          "sens": "très savant"
+        }
+      ],
+      "type_grammatical": "nom_divin",
+      "difficulte": 1,
+      "notes_pedagogiques": "Nom divin extrêmement fréquent (162 fois !). Souvent couplé à 'Hakîm' (Sage) : 'al-ʿAlîm al-Hakîm'. Allâh sait tout : passé, présent, futur, secret, manifeste, possible, impossible."
+    },
+    {
+      "id": "lisan_298",
+      "ordre": 298,
+      "palier": 2,
+      "mot_arabe": "غَفُور",
+      "translitteration": "Ghafûr",
+      "traductions_fr": [
+        "Pardonneur"
+      ],
+      "frequence_coran": 91,
+      "racine": {
+        "lettres": "غ ف ر",
+        "translitteration": "gh-f-r",
+        "sens_fondamental": "pardonner (cf. ghafara, mot 53)"
+      },
+      "exemple_verset": {
+        "reference": "2:173",
+        "arabe": "إِنَّ ٱللَّهَ غَفُورٌ رَّحِيمٌ",
+        "translitteration": "Inna-llâha Ghafûrun Rahîm",
+        "traduction_fr": "Allâh est Pardonneur, Très-Miséricordieux",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002173.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "غَفَّار",
+          "translit": "Ghaffâr",
+          "sens": "Pardonneur intense"
+        }
+      ],
+      "type_grammatical": "nom_divin",
+      "difficulte": 1,
+      "notes_pedagogiques": "Nom divin réconfortant. Formule récurrente : 'inna-llâha Ghafûrun Rahîm' (Allâh est Pardonneur, Miséricordieux). Pardonne quel que soit le péché à condition du repentir sincère."
+    },
+    {
+      "id": "lisan_299",
+      "ordre": 299,
+      "palier": 2,
+      "mot_arabe": "رَحِيم",
+      "translitteration": "Rahîm",
+      "traductions_fr": [
+        "Très-Miséricordieux"
+      ],
+      "frequence_coran": 227,
+      "racine": {
+        "lettres": "ر ح م",
+        "translitteration": "r-h-m",
+        "sens_fondamental": "miséricorde (cf. rahma, mot 31)"
+      },
+      "exemple_verset": {
+        "reference": "1:3",
+        "arabe": "ٱلرَّحْمَٰنِ ٱلرَّحِيمِ",
+        "translitteration": "Ar-Rahmâni-r-Rahîm",
+        "traduction_fr": "Le Tout-Miséricordieux, le Très-Miséricordieux",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/001003.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "رَحْمَٰن",
+          "translit": "Rahmân",
+          "sens": "Tout-Miséricordieux"
+        }
+      ],
+      "type_grammatical": "nom_divin",
+      "difficulte": 1,
+      "notes_pedagogiques": "L'un des deux noms divins ouvrant le Coran avec 'Rahmân'. Différence : Rahmân = miséricorde universelle pour toutes Ses créatures, Rahîm = miséricorde particulière pour les croyants. Couple inséparable."
+    },
+    {
+      "id": "lisan_300",
+      "ordre": 300,
+      "palier": 2,
+      "mot_arabe": "رَحْمَٰن",
+      "translitteration": "Rahmân",
+      "traductions_fr": [
+        "Tout-Miséricordieux"
+      ],
+      "frequence_coran": 57,
+      "racine": {
+        "lettres": "ر ح م",
+        "translitteration": "r-h-m",
+        "sens_fondamental": "miséricorde matricielle (cf. rahma, mot 31)"
+      },
+      "exemple_verset": {
+        "reference": "55:1-2",
+        "arabe": "ٱلرَّحْمَٰنُ ۝ عَلَّمَ ٱلْقُرْآنَ",
+        "translitteration": "Ar-Rahmân, ʿallama-l-Qurʾân",
+        "traduction_fr": "Le Tout-Miséricordieux. Il a enseigné le Coran",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/055001.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "رَحِيم",
+          "translit": "Rahîm",
+          "sens": "Très-Miséricordieux (mot 299)"
+        },
+        {
+          "arabe": "رَحْمَة",
+          "translit": "rahma",
+          "sens": "miséricorde (mot 31)"
+        },
+        {
+          "arabe": "رَحِم",
+          "translit": "rahim",
+          "sens": "matrice, lien de parenté"
+        }
+      ],
+      "type_grammatical": "nom_divin",
+      "difficulte": 1,
+      "notes_pedagogiques": "MOT FINAL DU MVP — LA RAHMA EN COURONNE. Sourate 55 (ar-Rahmân) commence par ce nom et énumère les bienfaits divins. Hadith : 'La rahma d'Allâh prend ses sources dans la rahima (matrice).' L'islam est, depuis le premier verset du Coran (Bismillâhi-r-Rahmâni-r-Rahîm) jusqu'au mot 300 de ton apprentissage, une histoire de MISÉRICORDE. Tu as parcouru 300 mots du Coran. Tu peux maintenant entendre la sourate Ar-Rahmân et comprendre. Tu peux ouvrir la Fâtiha et reconnaître chaque mot. Tu peux écouter une récitation et capter le sens. C'est le don de ton effort. Wa-l-hamdu li-llâhi rabbi-l-ʿâlamîn."
     }
   ],
   "metadata": {
