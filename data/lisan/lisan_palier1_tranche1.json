@@ -20,7 +20,10 @@
       "palier": 1,
       "mot_arabe": "اللّٰه",
       "translitteration": "Allâh",
-      "traductions_fr": ["Allâh", "Dieu"],
+      "traductions_fr": [
+        "Allâh",
+        "Dieu"
+      ],
       "frequence_coran": 2699,
       "racine": {
         "lettres": "أ ل ه",
@@ -45,7 +48,11 @@
       "palier": 1,
       "mot_arabe": "رَبّ",
       "translitteration": "Rabb",
-      "traductions_fr": ["Seigneur", "Maître", "Éducateur"],
+      "traductions_fr": [
+        "Seigneur",
+        "Maître",
+        "Éducateur"
+      ],
       "frequence_coran": 967,
       "racine": {
         "lettres": "ر ب ب",
@@ -60,9 +67,21 @@
         "audio_url": "https://everyayah.com/data/Alafasy_128kbps/001002.mp3"
       },
       "famille_mots": [
-        {"arabe": "تَرْبِيَة", "translit": "tarbiya", "sens": "éducation"},
-        {"arabe": "رَبَّانِيّ", "translit": "rabbânî", "sens": "divin, qui appartient au Seigneur"},
-        {"arabe": "أَرْبَاب", "translit": "arbâb", "sens": "seigneurs (pluriel)"}
+        {
+          "arabe": "تَرْبِيَة",
+          "translit": "tarbiya",
+          "sens": "éducation"
+        },
+        {
+          "arabe": "رَبَّانِيّ",
+          "translit": "rabbânî",
+          "sens": "divin, qui appartient au Seigneur"
+        },
+        {
+          "arabe": "أَرْبَاب",
+          "translit": "arbâb",
+          "sens": "seigneurs (pluriel)"
+        }
       ],
       "type_grammatical": "nom",
       "difficulte": 1,
@@ -74,7 +93,9 @@
       "palier": 1,
       "mot_arabe": "يَوْم",
       "translitteration": "Yawm",
-      "traductions_fr": ["jour"],
+      "traductions_fr": [
+        "jour"
+      ],
       "frequence_coran": 405,
       "racine": {
         "lettres": "ي و م",
@@ -89,8 +110,16 @@
         "audio_url": "https://everyayah.com/data/Alafasy_128kbps/001004.mp3"
       },
       "famille_mots": [
-        {"arabe": "أَيَّام", "translit": "ayyâm", "sens": "jours (pluriel)"},
-        {"arabe": "يَوْمَئِذٍ", "translit": "yawmaʾidhin", "sens": "ce jour-là"}
+        {
+          "arabe": "أَيَّام",
+          "translit": "ayyâm",
+          "sens": "jours (pluriel)"
+        },
+        {
+          "arabe": "يَوْمَئِذٍ",
+          "translit": "yawmaʾidhin",
+          "sens": "ce jour-là"
+        }
       ],
       "type_grammatical": "nom",
       "difficulte": 1,
@@ -102,7 +131,10 @@
       "palier": 1,
       "mot_arabe": "قَالَ",
       "translitteration": "Qâla",
-      "traductions_fr": ["il a dit", "il dit"],
+      "traductions_fr": [
+        "il a dit",
+        "il dit"
+      ],
       "frequence_coran": 1722,
       "racine": {
         "lettres": "ق و ل",
@@ -117,9 +149,21 @@
         "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002030.mp3"
       },
       "famille_mots": [
-        {"arabe": "قَوْل", "translit": "qawl", "sens": "parole, dit"},
-        {"arabe": "قُلْ", "translit": "qul", "sens": "dis ! (impératif)"},
-        {"arabe": "يَقُول", "translit": "yaqûlu", "sens": "il dit (présent)"}
+        {
+          "arabe": "قَوْل",
+          "translit": "qawl",
+          "sens": "parole, dit"
+        },
+        {
+          "arabe": "قُلْ",
+          "translit": "qul",
+          "sens": "dis ! (impératif)"
+        },
+        {
+          "arabe": "يَقُول",
+          "translit": "yaqûlu",
+          "sens": "il dit (présent)"
+        }
       ],
       "type_grammatical": "verbe",
       "difficulte": 2,
@@ -131,7 +175,11 @@
       "palier": 1,
       "mot_arabe": "كَانَ",
       "translitteration": "Kâna",
-      "traductions_fr": ["il était", "il fut", "il a été"],
+      "traductions_fr": [
+        "il était",
+        "il fut",
+        "il a été"
+      ],
       "frequence_coran": 1361,
       "racine": {
         "lettres": "ك و ن",
@@ -146,9 +194,21 @@
         "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002117.mp3"
       },
       "famille_mots": [
-        {"arabe": "كُن", "translit": "kun", "sens": "sois ! (impératif divin)"},
-        {"arabe": "يَكُون", "translit": "yakûn", "sens": "il est, sera"},
-        {"arabe": "مَكَان", "translit": "makân", "sens": "lieu"}
+        {
+          "arabe": "كُن",
+          "translit": "kun",
+          "sens": "sois ! (impératif divin)"
+        },
+        {
+          "arabe": "يَكُون",
+          "translit": "yakûn",
+          "sens": "il est, sera"
+        },
+        {
+          "arabe": "مَكَان",
+          "translit": "makân",
+          "sens": "lieu"
+        }
       ],
       "type_grammatical": "verbe",
       "difficulte": 2,
@@ -160,7 +220,11 @@
       "palier": 1,
       "mot_arabe": "فِي",
       "translitteration": "Fî",
-      "traductions_fr": ["dans", "en", "à l'intérieur de"],
+      "traductions_fr": [
+        "dans",
+        "en",
+        "à l'intérieur de"
+      ],
       "frequence_coran": 1701,
       "racine": {
         "lettres": "—",
@@ -185,7 +249,11 @@
       "palier": 1,
       "mot_arabe": "مِنْ",
       "translitteration": "Min",
-      "traductions_fr": ["de", "à partir de", "parmi"],
+      "traductions_fr": [
+        "de",
+        "à partir de",
+        "parmi"
+      ],
       "frequence_coran": 3226,
       "racine": {
         "lettres": "—",
@@ -210,7 +278,10 @@
       "palier": 1,
       "mot_arabe": "لَا",
       "translitteration": "Lâ",
-      "traductions_fr": ["non", "ne... pas"],
+      "traductions_fr": [
+        "non",
+        "ne... pas"
+      ],
       "frequence_coran": 1772,
       "racine": {
         "lettres": "—",
@@ -225,8 +296,16 @@
         "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002002.mp3"
       },
       "famille_mots": [
-        {"arabe": "لَن", "translit": "lan", "sens": "ne... jamais (futur)"},
-        {"arabe": "لَيْسَ", "translit": "laysa", "sens": "il n'est pas"}
+        {
+          "arabe": "لَن",
+          "translit": "lan",
+          "sens": "ne... jamais (futur)"
+        },
+        {
+          "arabe": "لَيْسَ",
+          "translit": "laysa",
+          "sens": "il n'est pas"
+        }
       ],
       "type_grammatical": "particule_negation",
       "difficulte": 1,
@@ -238,7 +317,11 @@
       "palier": 1,
       "mot_arabe": "إِنَّ",
       "translitteration": "Inna",
-      "traductions_fr": ["certes", "en vérité", "vraiment"],
+      "traductions_fr": [
+        "certes",
+        "en vérité",
+        "vraiment"
+      ],
       "frequence_coran": 1683,
       "racine": {
         "lettres": "—",
@@ -253,8 +336,16 @@
         "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002006.mp3"
       },
       "famille_mots": [
-        {"arabe": "إِنَّمَا", "translit": "innamâ", "sens": "ce n'est que, seulement"},
-        {"arabe": "أَنَّ", "translit": "anna", "sens": "que (conjonction)"}
+        {
+          "arabe": "إِنَّمَا",
+          "translit": "innamâ",
+          "sens": "ce n'est que, seulement"
+        },
+        {
+          "arabe": "أَنَّ",
+          "translit": "anna",
+          "sens": "que (conjonction)"
+        }
       ],
       "type_grammatical": "particule_emphase",
       "difficulte": 2,
@@ -266,7 +357,11 @@
       "palier": 1,
       "mot_arabe": "مَا",
       "translitteration": "Mâ",
-      "traductions_fr": ["ce que", "quoi", "ne... pas (avec verbe au passé)"],
+      "traductions_fr": [
+        "ce que",
+        "quoi",
+        "ne... pas (avec verbe au passé)"
+      ],
       "frequence_coran": 2670,
       "racine": {
         "lettres": "—",
@@ -281,7 +376,11 @@
         "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002003.mp3"
       },
       "famille_mots": [
-        {"arabe": "مَاذَا", "translit": "mâdhâ", "sens": "qu'est-ce que ?"}
+        {
+          "arabe": "مَاذَا",
+          "translit": "mâdhâ",
+          "sens": "qu'est-ce que ?"
+        }
       ],
       "type_grammatical": "particule_polyvalente",
       "difficulte": 2,
@@ -293,7 +392,11 @@
       "palier": 1,
       "mot_arabe": "عَلَىٰ",
       "translitteration": "ʿAlâ",
-      "traductions_fr": ["sur", "contre", "à propos de"],
+      "traductions_fr": [
+        "sur",
+        "contre",
+        "à propos de"
+      ],
       "frequence_coran": 1444,
       "racine": {
         "lettres": "ع ل و",
@@ -308,8 +411,16 @@
         "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002005.mp3"
       },
       "famille_mots": [
-        {"arabe": "أَعْلَىٰ", "translit": "aʿlâ", "sens": "le plus haut"},
-        {"arabe": "تَعَالَىٰ", "translit": "taʿâlâ", "sens": "qu'Il soit élevé"}
+        {
+          "arabe": "أَعْلَىٰ",
+          "translit": "aʿlâ",
+          "sens": "le plus haut"
+        },
+        {
+          "arabe": "تَعَالَىٰ",
+          "translit": "taʿâlâ",
+          "sens": "qu'Il soit élevé"
+        }
       ],
       "type_grammatical": "particule_preposition",
       "difficulte": 1,
@@ -321,7 +432,11 @@
       "palier": 1,
       "mot_arabe": "إِلَىٰ",
       "translitteration": "Ilâ",
-      "traductions_fr": ["vers", "jusqu'à", "à"],
+      "traductions_fr": [
+        "vers",
+        "jusqu'à",
+        "à"
+      ],
       "frequence_coran": 742,
       "racine": {
         "lettres": "—",
@@ -346,7 +461,10 @@
       "palier": 1,
       "mot_arabe": "لَهُ",
       "translitteration": "Lahu",
-      "traductions_fr": ["à lui", "pour lui"],
+      "traductions_fr": [
+        "à lui",
+        "pour lui"
+      ],
       "frequence_coran": 671,
       "racine": {
         "lettres": "—",
@@ -361,9 +479,21 @@
         "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002255.mp3"
       },
       "famille_mots": [
-        {"arabe": "لِي", "translit": "lî", "sens": "à moi"},
-        {"arabe": "لَكَ", "translit": "laka", "sens": "à toi"},
-        {"arabe": "لَهُمْ", "translit": "lahum", "sens": "à eux"}
+        {
+          "arabe": "لِي",
+          "translit": "lî",
+          "sens": "à moi"
+        },
+        {
+          "arabe": "لَكَ",
+          "translit": "laka",
+          "sens": "à toi"
+        },
+        {
+          "arabe": "لَهُمْ",
+          "translit": "lahum",
+          "sens": "à eux"
+        }
       ],
       "type_grammatical": "particule_pronom",
       "difficulte": 2,
@@ -375,7 +505,11 @@
       "palier": 1,
       "mot_arabe": "كُلّ",
       "translitteration": "Kull",
-      "traductions_fr": ["tout", "chaque", "chacun"],
+      "traductions_fr": [
+        "tout",
+        "chaque",
+        "chacun"
+      ],
       "frequence_coran": 376,
       "racine": {
         "lettres": "ك ل ل",
@@ -390,7 +524,11 @@
         "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002020.mp3"
       },
       "famille_mots": [
-        {"arabe": "كُلَّمَا", "translit": "kullamâ", "sens": "chaque fois que"}
+        {
+          "arabe": "كُلَّمَا",
+          "translit": "kullamâ",
+          "sens": "chaque fois que"
+        }
       ],
       "type_grammatical": "nom_quantificateur",
       "difficulte": 1,
@@ -402,7 +540,11 @@
       "palier": 1,
       "mot_arabe": "هَٰذَا",
       "translitteration": "Hâdhâ",
-      "traductions_fr": ["ceci", "celui-ci", "ce"],
+      "traductions_fr": [
+        "ceci",
+        "celui-ci",
+        "ce"
+      ],
       "frequence_coran": 416,
       "racine": {
         "lettres": "—",
@@ -417,9 +559,21 @@
         "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002025.mp3"
       },
       "famille_mots": [
-        {"arabe": "هَٰذِهِ", "translit": "hâdhihi", "sens": "celle-ci (féminin)"},
-        {"arabe": "هَٰؤُلَاءِ", "translit": "hâʾulâʾi", "sens": "ceux-ci (pluriel)"},
-        {"arabe": "ذَٰلِكَ", "translit": "dhâlika", "sens": "celui-là (éloignement)"}
+        {
+          "arabe": "هَٰذِهِ",
+          "translit": "hâdhihi",
+          "sens": "celle-ci (féminin)"
+        },
+        {
+          "arabe": "هَٰؤُلَاءِ",
+          "translit": "hâʾulâʾi",
+          "sens": "ceux-ci (pluriel)"
+        },
+        {
+          "arabe": "ذَٰلِكَ",
+          "translit": "dhâlika",
+          "sens": "celui-là (éloignement)"
+        }
       ],
       "type_grammatical": "demonstratif",
       "difficulte": 1,
@@ -431,7 +585,11 @@
       "palier": 1,
       "mot_arabe": "ٱلَّذِي",
       "translitteration": "Alladhî",
-      "traductions_fr": ["celui qui", "qui", "que"],
+      "traductions_fr": [
+        "celui qui",
+        "qui",
+        "que"
+      ],
       "frequence_coran": 1464,
       "racine": {
         "lettres": "—",
@@ -446,8 +604,16 @@
         "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002021.mp3"
       },
       "famille_mots": [
-        {"arabe": "ٱلَّتِي", "translit": "allatî", "sens": "celle qui (féminin)"},
-        {"arabe": "ٱلَّذِينَ", "translit": "alladhîna", "sens": "ceux qui (pluriel masculin)"}
+        {
+          "arabe": "ٱلَّتِي",
+          "translit": "allatî",
+          "sens": "celle qui (féminin)"
+        },
+        {
+          "arabe": "ٱلَّذِينَ",
+          "translit": "alladhîna",
+          "sens": "ceux qui (pluriel masculin)"
+        }
       ],
       "type_grammatical": "pronom_relatif",
       "difficulte": 2,
@@ -459,7 +625,10 @@
       "palier": 1,
       "mot_arabe": "ثُمَّ",
       "translitteration": "Thumma",
-      "traductions_fr": ["puis", "ensuite"],
+      "traductions_fr": [
+        "puis",
+        "ensuite"
+      ],
       "frequence_coran": 338,
       "racine": {
         "lettres": "—",
@@ -484,7 +653,11 @@
       "palier": 1,
       "mot_arabe": "إِلَّا",
       "translitteration": "Illâ",
-      "traductions_fr": ["sauf", "excepté", "si ce n'est"],
+      "traductions_fr": [
+        "sauf",
+        "excepté",
+        "si ce n'est"
+      ],
       "frequence_coran": 663,
       "racine": {
         "lettres": "—",
@@ -509,7 +682,10 @@
       "palier": 1,
       "mot_arabe": "نَاس",
       "translitteration": "Nâs",
-      "traductions_fr": ["gens", "hommes (humanité)"],
+      "traductions_fr": [
+        "gens",
+        "hommes (humanité)"
+      ],
       "frequence_coran": 248,
       "racine": {
         "lettres": "ن و س",
@@ -524,7 +700,11 @@
         "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002008.mp3"
       },
       "famille_mots": [
-        {"arabe": "إِنسَان", "translit": "insân", "sens": "être humain (singulier)"}
+        {
+          "arabe": "إِنسَان",
+          "translit": "insân",
+          "sens": "être humain (singulier)"
+        }
       ],
       "type_grammatical": "nom_collectif",
       "difficulte": 1,
@@ -536,7 +716,10 @@
       "palier": 1,
       "mot_arabe": "كِتَاب",
       "translitteration": "Kitâb",
-      "traductions_fr": ["livre", "Écriture"],
+      "traductions_fr": [
+        "livre",
+        "Écriture"
+      ],
       "frequence_coran": 261,
       "racine": {
         "lettres": "ك ت ب",
@@ -551,10 +734,26 @@
         "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002002.mp3"
       },
       "famille_mots": [
-        {"arabe": "كَتَبَ", "translit": "kataba", "sens": "il a écrit / décrété"},
-        {"arabe": "كَاتِب", "translit": "kâtib", "sens": "scribe"},
-        {"arabe": "مَكْتُوب", "translit": "maktûb", "sens": "écrit, prescrit (destin)"},
-        {"arabe": "كُتُب", "translit": "kutub", "sens": "livres (pluriel)"}
+        {
+          "arabe": "كَتَبَ",
+          "translit": "kataba",
+          "sens": "il a écrit / décrété"
+        },
+        {
+          "arabe": "كَاتِب",
+          "translit": "kâtib",
+          "sens": "scribe"
+        },
+        {
+          "arabe": "مَكْتُوب",
+          "translit": "maktûb",
+          "sens": "écrit, prescrit (destin)"
+        },
+        {
+          "arabe": "كُتُب",
+          "translit": "kutub",
+          "sens": "livres (pluriel)"
+        }
       ],
       "type_grammatical": "nom",
       "difficulte": 1,
@@ -566,7 +765,9 @@
       "palier": 1,
       "mot_arabe": "ٱلَّذِينَ",
       "translitteration": "Alladhîna",
-      "traductions_fr": ["ceux qui"],
+      "traductions_fr": [
+        "ceux qui"
+      ],
       "frequence_coran": 1464,
       "racine": {
         "lettres": "—",
@@ -581,8 +782,16 @@
         "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002003.mp3"
       },
       "famille_mots": [
-        {"arabe": "ٱلَّذِي", "translit": "alladhî", "sens": "celui qui (singulier)"},
-        {"arabe": "ٱللَّاتِي", "translit": "allâtî", "sens": "celles qui (pluriel féminin)"}
+        {
+          "arabe": "ٱلَّذِي",
+          "translit": "alladhî",
+          "sens": "celui qui (singulier)"
+        },
+        {
+          "arabe": "ٱللَّاتِي",
+          "translit": "allâtî",
+          "sens": "celles qui (pluriel féminin)"
+        }
       ],
       "type_grammatical": "pronom_relatif",
       "difficulte": 2,
@@ -594,7 +803,9 @@
       "palier": 1,
       "mot_arabe": "وَ",
       "translitteration": "Wa",
-      "traductions_fr": ["et"],
+      "traductions_fr": [
+        "et"
+      ],
       "frequence_coran": 22000,
       "racine": {
         "lettres": "—",
@@ -619,7 +830,10 @@
       "palier": 1,
       "mot_arabe": "أَنْ",
       "translitteration": "An",
-      "traductions_fr": ["que (avec subjonctif)", "de (faire qqch)"],
+      "traductions_fr": [
+        "que (avec subjonctif)",
+        "de (faire qqch)"
+      ],
       "frequence_coran": 1080,
       "racine": {
         "lettres": "—",
@@ -634,8 +848,16 @@
         "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002026.mp3"
       },
       "famille_mots": [
-        {"arabe": "أَنَّ", "translit": "anna", "sens": "que (avec indicatif)"},
-        {"arabe": "أَنَا", "translit": "anâ", "sens": "moi, je"}
+        {
+          "arabe": "أَنَّ",
+          "translit": "anna",
+          "sens": "que (avec indicatif)"
+        },
+        {
+          "arabe": "أَنَا",
+          "translit": "anâ",
+          "sens": "moi, je"
+        }
       ],
       "type_grammatical": "particule_subjonctive",
       "difficulte": 2,
@@ -647,7 +869,11 @@
       "palier": 1,
       "mot_arabe": "بِ",
       "translitteration": "Bi",
-      "traductions_fr": ["par", "avec", "au moyen de"],
+      "traductions_fr": [
+        "par",
+        "avec",
+        "au moyen de"
+      ],
       "frequence_coran": 2750,
       "racine": {
         "lettres": "—",
@@ -672,7 +898,9 @@
       "palier": 1,
       "mot_arabe": "مَلَك",
       "translitteration": "Malak",
-      "traductions_fr": ["ange"],
+      "traductions_fr": [
+        "ange"
+      ],
       "frequence_coran": 88,
       "racine": {
         "lettres": "م ل ك",
@@ -687,10 +915,26 @@
         "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002030.mp3"
       },
       "famille_mots": [
-        {"arabe": "مَلَائِكَة", "translit": "malâʾika", "sens": "anges (pluriel)"},
-        {"arabe": "مَالِك", "translit": "mâlik", "sens": "maître, propriétaire"},
-        {"arabe": "مُلْك", "translit": "mulk", "sens": "royaume, souveraineté"},
-        {"arabe": "مَلِك", "translit": "malik", "sens": "roi"}
+        {
+          "arabe": "مَلَائِكَة",
+          "translit": "malâʾika",
+          "sens": "anges (pluriel)"
+        },
+        {
+          "arabe": "مَالِك",
+          "translit": "mâlik",
+          "sens": "maître, propriétaire"
+        },
+        {
+          "arabe": "مُلْك",
+          "translit": "mulk",
+          "sens": "royaume, souveraineté"
+        },
+        {
+          "arabe": "مَلِك",
+          "translit": "malik",
+          "sens": "roi"
+        }
       ],
       "type_grammatical": "nom",
       "difficulte": 1,
@@ -702,7 +946,10 @@
       "palier": 1,
       "mot_arabe": "خَلَقَ",
       "translitteration": "Khalaqa",
-      "traductions_fr": ["il a créé", "il crée"],
+      "traductions_fr": [
+        "il a créé",
+        "il crée"
+      ],
       "frequence_coran": 248,
       "racine": {
         "lettres": "خ ل ق",
@@ -717,9 +964,21 @@
         "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002029.mp3"
       },
       "famille_mots": [
-        {"arabe": "خَلْق", "translit": "khalq", "sens": "création"},
-        {"arabe": "خَالِق", "translit": "khâliq", "sens": "Créateur"},
-        {"arabe": "مَخْلُوق", "translit": "makhlûq", "sens": "créature"}
+        {
+          "arabe": "خَلْق",
+          "translit": "khalq",
+          "sens": "création"
+        },
+        {
+          "arabe": "خَالِق",
+          "translit": "khâliq",
+          "sens": "Créateur"
+        },
+        {
+          "arabe": "مَخْلُوق",
+          "translit": "makhlûq",
+          "sens": "créature"
+        }
       ],
       "type_grammatical": "verbe",
       "difficulte": 1,
@@ -731,7 +990,10 @@
       "palier": 1,
       "mot_arabe": "آمَنَ",
       "translitteration": "Âmana",
-      "traductions_fr": ["il a cru", "il croit"],
+      "traductions_fr": [
+        "il a cru",
+        "il croit"
+      ],
       "frequence_coran": 537,
       "racine": {
         "lettres": "أ م ن",
@@ -746,10 +1008,26 @@
         "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002003.mp3"
       },
       "famille_mots": [
-        {"arabe": "إِيمَان", "translit": "îmân", "sens": "foi"},
-        {"arabe": "مُؤْمِن", "translit": "muʾmin", "sens": "croyant"},
-        {"arabe": "أَمِين", "translit": "amîn", "sens": "digne de confiance, fidèle"},
-        {"arabe": "أَمَان", "translit": "amân", "sens": "sécurité, paix"}
+        {
+          "arabe": "إِيمَان",
+          "translit": "îmân",
+          "sens": "foi"
+        },
+        {
+          "arabe": "مُؤْمِن",
+          "translit": "muʾmin",
+          "sens": "croyant"
+        },
+        {
+          "arabe": "أَمِين",
+          "translit": "amîn",
+          "sens": "digne de confiance, fidèle"
+        },
+        {
+          "arabe": "أَمَان",
+          "translit": "amân",
+          "sens": "sécurité, paix"
+        }
       ],
       "type_grammatical": "verbe",
       "difficulte": 1,
@@ -761,7 +1039,10 @@
       "palier": 1,
       "mot_arabe": "أَرْض",
       "translitteration": "Arḍ",
-      "traductions_fr": ["terre", "sol"],
+      "traductions_fr": [
+        "terre",
+        "sol"
+      ],
       "frequence_coran": 461,
       "racine": {
         "lettres": "أ ر ض",
@@ -786,7 +1067,9 @@
       "palier": 1,
       "mot_arabe": "سَمَاء",
       "translitteration": "Samâʾ",
-      "traductions_fr": ["ciel"],
+      "traductions_fr": [
+        "ciel"
+      ],
       "frequence_coran": 310,
       "racine": {
         "lettres": "س م و",
@@ -801,8 +1084,16 @@
         "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002022.mp3"
       },
       "famille_mots": [
-        {"arabe": "سَمَاوَات", "translit": "samâwât", "sens": "cieux (pluriel)"},
-        {"arabe": "ٱسْم", "translit": "ism", "sens": "nom (même racine)"}
+        {
+          "arabe": "سَمَاوَات",
+          "translit": "samâwât",
+          "sens": "cieux (pluriel)"
+        },
+        {
+          "arabe": "ٱسْم",
+          "translit": "ism",
+          "sens": "nom (même racine)"
+        }
       ],
       "type_grammatical": "nom",
       "difficulte": 1,
@@ -814,7 +1105,11 @@
       "palier": 1,
       "mot_arabe": "نَفْس",
       "translitteration": "Nafs",
-      "traductions_fr": ["âme", "soi", "personne"],
+      "traductions_fr": [
+        "âme",
+        "soi",
+        "personne"
+      ],
       "frequence_coran": 295,
       "racine": {
         "lettres": "ن ف س",
@@ -829,12 +1124,1210 @@
         "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002048.mp3"
       },
       "famille_mots": [
-        {"arabe": "أَنْفُس", "translit": "anfus", "sens": "âmes (pluriel)"},
-        {"arabe": "تَنَفَّسَ", "translit": "tanaffasa", "sens": "respirer"}
+        {
+          "arabe": "أَنْفُس",
+          "translit": "anfus",
+          "sens": "âmes (pluriel)"
+        },
+        {
+          "arabe": "تَنَفَّسَ",
+          "translit": "tanaffasa",
+          "sens": "respirer"
+        }
       ],
       "type_grammatical": "nom",
       "difficulte": 1,
       "notes_pedagogiques": "Mot central de l'anthropologie coranique. Désigne l'âme, le soi profond. Le module 'Bab an-Nafs' dans Niyyah utilise ce concept. À comprendre absolument."
+    },
+    {
+      "id": "lisan_031",
+      "ordre": 31,
+      "palier": 1,
+      "mot_arabe": "رَحْمَة",
+      "translitteration": "Rahma",
+      "traductions_fr": [
+        "miséricorde",
+        "compassion"
+      ],
+      "frequence_coran": 114,
+      "racine": {
+        "lettres": "ر ح م",
+        "translitteration": "r-h-m",
+        "sens_fondamental": "matrice, sein maternel, compassion enveloppante"
+      },
+      "exemple_verset": {
+        "reference": "2:218",
+        "arabe": "أُولَٰئِكَ يَرْجُونَ رَحْمَتَ ٱللَّهِ",
+        "translitteration": "Ulâʾika yarjûna rahmata-llâh",
+        "traduction_fr": "Ceux-là espèrent la miséricorde d'Allâh",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002218.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "رَحْمَٰن",
+          "translit": "Rahmân",
+          "sens": "le Tout-Miséricordieux"
+        },
+        {
+          "arabe": "رَحِيم",
+          "translit": "Rahîm",
+          "sens": "le Très-Miséricordieux"
+        },
+        {
+          "arabe": "رَحِم",
+          "translit": "rahim",
+          "sens": "utérus, lien de parenté"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Racine r-h-m liée au sein maternel (rahim). La miséricorde d'Allâh est une enveloppe maternelle, pas un froid pardon judiciaire."
+    },
+    {
+      "id": "lisan_032",
+      "ordre": 32,
+      "palier": 1,
+      "mot_arabe": "دِين",
+      "translitteration": "Dîn",
+      "traductions_fr": [
+        "religion",
+        "jugement",
+        "voie"
+      ],
+      "frequence_coran": 92,
+      "racine": {
+        "lettres": "د ي ن",
+        "translitteration": "d-y-n",
+        "sens_fondamental": "rétribution, voie suivie, dette envers Allâh"
+      },
+      "exemple_verset": {
+        "reference": "1:4",
+        "arabe": "مَالِكِ يَوْمِ ٱلدِّينِ",
+        "translitteration": "Mâliki yawmi-d-dîn",
+        "traduction_fr": "Maître du Jour du Jugement",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/001004.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "مَدِين",
+          "translit": "madîn",
+          "sens": "endetté"
+        },
+        {
+          "arabe": "تَدَيُّن",
+          "translit": "tadayyun",
+          "sens": "religiosité"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Deux sens majeurs : 'religion' (la voie suivie) ET 'jugement' (le jour où on rend compte). Les deux sens sont liés : la voie qu'on suit ici détermine le jugement là-bas."
+    },
+    {
+      "id": "lisan_033",
+      "ordre": 33,
+      "palier": 1,
+      "mot_arabe": "هُدَى",
+      "translitteration": "Hudâ",
+      "traductions_fr": [
+        "guidance",
+        "bonne direction"
+      ],
+      "frequence_coran": 79,
+      "racine": {
+        "lettres": "ه د ي",
+        "translitteration": "h-d-y",
+        "sens_fondamental": "guider, montrer le chemin"
+      },
+      "exemple_verset": {
+        "reference": "2:2",
+        "arabe": "ذَٰلِكَ ٱلْكِتَابُ لَا رَيْبَ فِيهِ ۛ هُدًى لِّلْمُتَّقِينَ",
+        "translitteration": "Dhâlika-l-kitâbu lâ rayba fîh, hudan li-l-muttaqîn",
+        "traduction_fr": "Ce Livre, nul doute en lui, est une guidance pour les pieux",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002002.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "هَادِي",
+          "translit": "hâdî",
+          "sens": "Celui qui guide"
+        },
+        {
+          "arabe": "ٱهْدِنَا",
+          "translit": "ihdinâ",
+          "sens": "guide-nous (Fâtiha)"
+        },
+        {
+          "arabe": "مُهْتَدِي",
+          "translit": "muhtadî",
+          "sens": "bien guidé"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Le Coran est appelé 'hudâ' (guidance) dès le second verset de Baqara. On invoque cette guidance dans la Fâtiha : 'ihdinâ-s-sirâta-l-mustaqîm' (Guide-nous sur le chemin droit)."
+    },
+    {
+      "id": "lisan_034",
+      "ordre": 34,
+      "palier": 1,
+      "mot_arabe": "نُور",
+      "translitteration": "Nûr",
+      "traductions_fr": [
+        "lumière"
+      ],
+      "frequence_coran": 43,
+      "racine": {
+        "lettres": "ن و ر",
+        "translitteration": "n-w-r",
+        "sens_fondamental": "lumière, illumination"
+      },
+      "exemple_verset": {
+        "reference": "24:35",
+        "arabe": "ٱللَّهُ نُورُ ٱلسَّمَاوَاتِ وَٱلْأَرْضِ",
+        "translitteration": "Allâhu nûru-s-samâwâti wa-l-ard",
+        "traduction_fr": "Allâh est la Lumière des cieux et de la terre",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/024035.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "نَار",
+          "translit": "nâr",
+          "sens": "feu (même racine, autre sens)"
+        },
+        {
+          "arabe": "مُنِير",
+          "translit": "munîr",
+          "sens": "lumineux"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Le Coran lui-même est appelé 'nûr' (lumière). Une sourate entière (24) porte ce nom. À distinguer de 'nâr' (feu) — même racine, sens opposés."
+    },
+    {
+      "id": "lisan_035",
+      "ordre": 35,
+      "palier": 1,
+      "mot_arabe": "حَقّ",
+      "translitteration": "Haqq",
+      "traductions_fr": [
+        "vérité",
+        "droit",
+        "réalité"
+      ],
+      "frequence_coran": 287,
+      "racine": {
+        "lettres": "ح ق ق",
+        "translitteration": "h-q-q",
+        "sens_fondamental": "ce qui est établi, vrai, dû"
+      },
+      "exemple_verset": {
+        "reference": "2:42",
+        "arabe": "وَلَا تَلْبِسُوا ٱلْحَقَّ بِٱلْبَاطِلِ",
+        "translitteration": "Wa lâ talbisû-l-haqqa bi-l-bâtil",
+        "traduction_fr": "Ne mêlez pas la vérité au mensonge",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002042.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "حَقِيقَة",
+          "translit": "haqîqa",
+          "sens": "réalité"
+        },
+        {
+          "arabe": "حُقُوق",
+          "translit": "huqûq",
+          "sens": "droits (pluriel)"
+        },
+        {
+          "arabe": "تَحْقِيق",
+          "translit": "tahqîq",
+          "sens": "vérification"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "'Al-Haqq' est aussi un nom d'Allâh : 'La Vérité absolue'. S'oppose à 'al-bâtil' (le faux, le vain). En arabe, 'avoir raison' = 'avoir le haqq'."
+    },
+    {
+      "id": "lisan_036",
+      "ordre": 36,
+      "palier": 1,
+      "mot_arabe": "عِلْم",
+      "translitteration": "ʿIlm",
+      "traductions_fr": [
+        "science",
+        "savoir",
+        "connaissance"
+      ],
+      "frequence_coran": 105,
+      "racine": {
+        "lettres": "ع ل م",
+        "translitteration": "ʿ-l-m",
+        "sens_fondamental": "savoir, connaître"
+      },
+      "exemple_verset": {
+        "reference": "2:32",
+        "arabe": "لَا عِلْمَ لَنَا إِلَّا مَا عَلَّمْتَنَا",
+        "translitteration": "Lâ ʿilma lanâ illâ mâ ʿallamtanâ",
+        "traduction_fr": "Nous n'avons aucun savoir sauf ce que Tu nous as enseigné",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002032.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "عَالِم",
+          "translit": "ʿâlim",
+          "sens": "savant"
+        },
+        {
+          "arabe": "عُلَمَاء",
+          "translit": "ʿulamâʾ",
+          "sens": "savants (pluriel)"
+        },
+        {
+          "arabe": "مَعْلُوم",
+          "translit": "maʿlûm",
+          "sens": "connu"
+        },
+        {
+          "arabe": "تَعْلِيم",
+          "translit": "taʿlîm",
+          "sens": "enseignement"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Le premier mot révélé du Coran (96:1) est 'iqra' (lis !), et le second verset parle de 'qalam' et 'ʿilm'. La connaissance est au cœur de la révélation."
+    },
+    {
+      "id": "lisan_037",
+      "ordre": 37,
+      "palier": 1,
+      "mot_arabe": "نَبِيّ",
+      "translitteration": "Nabî",
+      "traductions_fr": [
+        "prophète"
+      ],
+      "frequence_coran": 75,
+      "racine": {
+        "lettres": "ن ب أ",
+        "translitteration": "n-b-ʾ",
+        "sens_fondamental": "annoncer, nouvelle importante"
+      },
+      "exemple_verset": {
+        "reference": "2:177",
+        "arabe": "وَٱلْكِتَابِ وَٱلنَّبِيِّينَ",
+        "translitteration": "Wa-l-kitâbi wa-n-nabiyyîn",
+        "traduction_fr": "Au Livre et aux prophètes",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002177.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "نَبَأ",
+          "translit": "nabaʾ",
+          "sens": "nouvelle, annonce"
+        },
+        {
+          "arabe": "أَنْبِيَاء",
+          "translit": "anbiyâʾ",
+          "sens": "prophètes (pluriel)"
+        },
+        {
+          "arabe": "نُبُوَّة",
+          "translit": "nubuwwa",
+          "sens": "prophétie"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Le Nabî est celui qui annonce une nouvelle de la part d'Allâh. À distinguer du Rasûl (envoyé porteur d'une loi nouvelle). Tout Rasûl est Nabî, mais pas l'inverse."
+    },
+    {
+      "id": "lisan_038",
+      "ordre": 38,
+      "palier": 1,
+      "mot_arabe": "رَسُول",
+      "translitteration": "Rasûl",
+      "traductions_fr": [
+        "messager",
+        "envoyé"
+      ],
+      "frequence_coran": 332,
+      "racine": {
+        "lettres": "ر س ل",
+        "translitteration": "r-s-l",
+        "sens_fondamental": "envoyer, dépêcher"
+      },
+      "exemple_verset": {
+        "reference": "2:108",
+        "arabe": "أَمْ تُرِيدُونَ أَن تَسْأَلُوا رَسُولَكُمْ",
+        "translitteration": "Am turîdûna an tasʾalû rasûlakum",
+        "traduction_fr": "Voulez-vous questionner votre Messager ?",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002108.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "رِسَالَة",
+          "translit": "risâla",
+          "sens": "message"
+        },
+        {
+          "arabe": "رُسُل",
+          "translit": "rusul",
+          "sens": "messagers (pluriel)"
+        },
+        {
+          "arabe": "أَرْسَلَ",
+          "translit": "arsala",
+          "sens": "il a envoyé"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Le Messager d'Allâh ﷺ est appelé 'Rasûl Allâh'. La shahâda contient ce mot : 'Muhammad rasûl Allâh' (Muhammad est le Messager d'Allâh)."
+    },
+    {
+      "id": "lisan_039",
+      "ordre": 39,
+      "palier": 1,
+      "mot_arabe": "دُنْيَا",
+      "translitteration": "Dunyâ",
+      "traductions_fr": [
+        "bas-monde",
+        "vie d'ici-bas"
+      ],
+      "frequence_coran": 115,
+      "racine": {
+        "lettres": "د ن و",
+        "translitteration": "d-n-w",
+        "sens_fondamental": "ce qui est proche, bas, immédiat"
+      },
+      "exemple_verset": {
+        "reference": "2:201",
+        "arabe": "رَبَّنَا آتِنَا فِي ٱلدُّنْيَا حَسَنَةً",
+        "translitteration": "Rabbanâ âtinâ fî-d-dunyâ hasana",
+        "traduction_fr": "Notre Seigneur, donne-nous en ce bas-monde du bien",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002201.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "أَدْنَىٰ",
+          "translit": "adnâ",
+          "sens": "le plus bas, le plus proche"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Littéralement 'la plus proche' (sous-entendu : des deux vies). S'oppose à 'âkhira' (l'autre vie, l'au-delà). Toujours associée à l'idée de provisoire."
+    },
+    {
+      "id": "lisan_040",
+      "ordre": 40,
+      "palier": 1,
+      "mot_arabe": "آخِرَة",
+      "translitteration": "Âkhira",
+      "traductions_fr": [
+        "au-delà",
+        "vie dernière"
+      ],
+      "frequence_coran": 115,
+      "racine": {
+        "lettres": "أ خ ر",
+        "translitteration": "ʾ-kh-r",
+        "sens_fondamental": "ce qui vient après, dernier"
+      },
+      "exemple_verset": {
+        "reference": "2:201",
+        "arabe": "وَفِي ٱلْآخِرَةِ حَسَنَةً",
+        "translitteration": "Wa fî-l-âkhirati hasana",
+        "traduction_fr": "Et dans l'au-delà du bien",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002201.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "آخِر",
+          "translit": "âkhir",
+          "sens": "dernier"
+        },
+        {
+          "arabe": "أُخْرَىٰ",
+          "translit": "ukhrâ",
+          "sens": "autre (féminin)"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Couple inséparable avec 'dunyâ'. Le binôme dunyâ/âkhira structure toute la cosmologie coranique. La vraie vie est là-bas, l'ici-bas est passage."
+    },
+    {
+      "id": "lisan_041",
+      "ordre": 41,
+      "palier": 1,
+      "mot_arabe": "جَنَّة",
+      "translitteration": "Janna",
+      "traductions_fr": [
+        "jardin",
+        "paradis"
+      ],
+      "frequence_coran": 147,
+      "racine": {
+        "lettres": "ج ن ن",
+        "translitteration": "j-n-n",
+        "sens_fondamental": "couvrir, voiler, abriter"
+      },
+      "exemple_verset": {
+        "reference": "2:25",
+        "arabe": "لَهُمْ جَنَّاتٍ تَجْرِي مِن تَحْتِهَا ٱلْأَنْهَارُ",
+        "translitteration": "Lahum jannâtin tajrî min tahtihâ-l-anhâr",
+        "traduction_fr": "Ils auront des jardins sous lesquels coulent les rivières",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002025.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "جَنَّات",
+          "translit": "jannât",
+          "sens": "jardins (pluriel)"
+        },
+        {
+          "arabe": "جِنّ",
+          "translit": "jinn",
+          "sens": "djinns (créatures invisibles)"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "La racine j-n-n signifie 'couvrir'. Un jardin couvre le sol d'arbres. Un djinn est invisible (couvert). Le paradis est un jardin de couverture éternelle."
+    },
+    {
+      "id": "lisan_042",
+      "ordre": 42,
+      "palier": 1,
+      "mot_arabe": "نَار",
+      "translitteration": "Nâr",
+      "traductions_fr": [
+        "feu",
+        "Enfer"
+      ],
+      "frequence_coran": 145,
+      "racine": {
+        "lettres": "ن و ر",
+        "translitteration": "n-w-r",
+        "sens_fondamental": "feu, lumière"
+      },
+      "exemple_verset": {
+        "reference": "2:24",
+        "arabe": "فَٱتَّقُوا ٱلنَّارَ ٱلَّتِي وَقُودُهَا ٱلنَّاسُ",
+        "translitteration": "Fa-ttaqû-n-nâra-llatî waqûduhâ-n-nâs",
+        "traduction_fr": "Craignez donc le Feu dont le combustible sont les gens",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002024.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "نُور",
+          "translit": "nûr",
+          "sens": "lumière (même racine)"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Même racine que 'nûr' (lumière) mais sens opposé : le feu qui détruit vs la lumière qui éclaire. Souvent utilisé pour désigner l'Enfer."
+    },
+    {
+      "id": "lisan_043",
+      "ordre": 43,
+      "palier": 1,
+      "mot_arabe": "صَلَاة",
+      "translitteration": "Salât",
+      "traductions_fr": [
+        "prière",
+        "invocation"
+      ],
+      "frequence_coran": 99,
+      "racine": {
+        "lettres": "ص ل و",
+        "translitteration": "s-l-w",
+        "sens_fondamental": "se lier, lien, connexion"
+      },
+      "exemple_verset": {
+        "reference": "2:3",
+        "arabe": "وَيُقِيمُونَ ٱلصَّلَاةَ",
+        "translitteration": "Wa yuqîmûna-s-salât",
+        "traduction_fr": "Et ils accomplissent la prière",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002003.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "مُصَلِّي",
+          "translit": "musallî",
+          "sens": "celui qui prie"
+        },
+        {
+          "arabe": "صَلَوَات",
+          "translit": "salawât",
+          "sens": "prières (pluriel)"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Le deuxième pilier de l'islam. Racine s-l-w évoque le LIEN — la prière est ce qui lie le serviteur à Allâh, cinq fois par jour."
+    },
+    {
+      "id": "lisan_044",
+      "ordre": 44,
+      "palier": 1,
+      "mot_arabe": "زَكَاة",
+      "translitteration": "Zakât",
+      "traductions_fr": [
+        "aumône légale",
+        "purification"
+      ],
+      "frequence_coran": 32,
+      "racine": {
+        "lettres": "ز ك و",
+        "translitteration": "z-k-w",
+        "sens_fondamental": "purifier, faire croître"
+      },
+      "exemple_verset": {
+        "reference": "2:43",
+        "arabe": "وَأَقِيمُوا ٱلصَّلَاةَ وَآتُوا ٱلزَّكَاةَ",
+        "translitteration": "Wa aqîmû-s-salâta wa âtû-z-zakât",
+        "traduction_fr": "Accomplissez la prière et donnez la zakât",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002043.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "تَزْكِيَة",
+          "translit": "tazkiya",
+          "sens": "purification (de l'âme)"
+        },
+        {
+          "arabe": "زَكِيّ",
+          "translit": "zakî",
+          "sens": "pur"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "3e pilier de l'islam. La zakât 'purifie' (zakkâ) les biens et les fait CROÎTRE. Donner = faire croître son patrimoine spirituel. Toujours couplée à 'salât' dans le Coran."
+    },
+    {
+      "id": "lisan_045",
+      "ordre": 45,
+      "palier": 1,
+      "mot_arabe": "صَوْم",
+      "translitteration": "Sawm",
+      "traductions_fr": [
+        "jeûne"
+      ],
+      "frequence_coran": 13,
+      "racine": {
+        "lettres": "ص و م",
+        "translitteration": "s-w-m",
+        "sens_fondamental": "s'abstenir, retenir"
+      },
+      "exemple_verset": {
+        "reference": "2:183",
+        "arabe": "كُتِبَ عَلَيْكُمُ ٱلصِّيَامُ",
+        "translitteration": "Kutiba ʿalaykumu-s-siyâm",
+        "traduction_fr": "Le jeûne vous est prescrit",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002183.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "صِيَام",
+          "translit": "siyâm",
+          "sens": "jeûne (forme verbale)"
+        },
+        {
+          "arabe": "صَائِم",
+          "translit": "sâʾim",
+          "sens": "jeûneur"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "4e pilier de l'islam. Le jeûne du Ramadan. Racine s-w-m : s'abstenir non seulement de nourriture mais de toute parole ou geste vain."
+    },
+    {
+      "id": "lisan_046",
+      "ordre": 46,
+      "palier": 1,
+      "mot_arabe": "آيَة",
+      "translitteration": "Âya",
+      "traductions_fr": [
+        "signe",
+        "verset"
+      ],
+      "frequence_coran": 382,
+      "racine": {
+        "lettres": "أ ي ي",
+        "translitteration": "ʾ-y-y",
+        "sens_fondamental": "signe, indication"
+      },
+      "exemple_verset": {
+        "reference": "2:106",
+        "arabe": "مَا نَنسَخْ مِنْ آيَةٍ أَوْ نُنسِهَا",
+        "translitteration": "Mâ nansakh min âyatin aw nunsihâ",
+        "traduction_fr": "Tout verset que Nous abrogeons ou faisons oublier",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002106.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "آيَات",
+          "translit": "âyât",
+          "sens": "signes / versets (pluriel)"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Double sens majeur : 'signe' (preuve de l'existence d'Allâh dans la nature) ET 'verset' (signe-parole du Coran). Le Coran lui-même est appelé 'âyât' — des signes."
+    },
+    {
+      "id": "lisan_047",
+      "ordre": 47,
+      "palier": 1,
+      "mot_arabe": "سُورَة",
+      "translitteration": "Sûra",
+      "traductions_fr": [
+        "sourate",
+        "chapitre"
+      ],
+      "frequence_coran": 9,
+      "racine": {
+        "lettres": "س و ر",
+        "translitteration": "s-w-r",
+        "sens_fondamental": "enclos, mur, ce qui entoure"
+      },
+      "exemple_verset": {
+        "reference": "2:23",
+        "arabe": "فَأْتُوا بِسُورَةٍ مِّن مِّثْلِهِ",
+        "translitteration": "Fa-ʾtû bi-sûratin min mithlih",
+        "traduction_fr": "Apportez une sourate semblable à ceci",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002023.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "سُور",
+          "translit": "sûr",
+          "sens": "muraille"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Une sourate est comme un 'enclos' qui entoure et organise un ensemble de versets. Le Coran contient 114 sourates."
+    },
+    {
+      "id": "lisan_048",
+      "ordre": 48,
+      "palier": 1,
+      "mot_arabe": "صِرَاط",
+      "translitteration": "Sirât",
+      "traductions_fr": [
+        "chemin",
+        "voie"
+      ],
+      "frequence_coran": 45,
+      "racine": {
+        "lettres": "ص ر ط",
+        "translitteration": "s-r-t",
+        "sens_fondamental": "chemin large et droit"
+      },
+      "exemple_verset": {
+        "reference": "1:6",
+        "arabe": "ٱهْدِنَا ٱلصِّرَاطَ ٱلْمُسْتَقِيمَ",
+        "translitteration": "Ihdinâ-s-sirâta-l-mustaqîm",
+        "traduction_fr": "Guide-nous sur le chemin droit",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/001006.mp3"
+      },
+      "famille_mots": [],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Mot central de la Fâtiha. Le 'sirât mustaqîm' (chemin droit) est l'invocation principale du musulman, répétée 17 fois par jour dans les prières."
+    },
+    {
+      "id": "lisan_049",
+      "ordre": 49,
+      "palier": 1,
+      "mot_arabe": "صَبْر",
+      "translitteration": "Sabr",
+      "traductions_fr": [
+        "patience",
+        "endurance",
+        "persévérance"
+      ],
+      "frequence_coran": 103,
+      "racine": {
+        "lettres": "ص ب ر",
+        "translitteration": "s-b-r",
+        "sens_fondamental": "retenir, lier, persévérer"
+      },
+      "exemple_verset": {
+        "reference": "2:153",
+        "arabe": "ٱسْتَعِينُوا بِٱلصَّبْرِ وَٱلصَّلَاةِ",
+        "translitteration": "Istaʿînû bi-s-sabri wa-s-salât",
+        "traduction_fr": "Cherchez secours dans la patience et la prière",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002153.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "صَابِر",
+          "translit": "sâbir",
+          "sens": "patient"
+        },
+        {
+          "arabe": "صَبَّار",
+          "translit": "sabbâr",
+          "sens": "très patient"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Vertu cardinale du Coran. 'As-sâbirîn' (les patients) est l'un des groupes les plus loués. Le sabr n'est pas passivité — c'est la force de tenir bon."
+    },
+    {
+      "id": "lisan_050",
+      "ordre": 50,
+      "palier": 1,
+      "mot_arabe": "تَقْوَىٰ",
+      "translitteration": "Taqwâ",
+      "traductions_fr": [
+        "piété",
+        "crainte révérencielle"
+      ],
+      "frequence_coran": 17,
+      "racine": {
+        "lettres": "و ق ي",
+        "translitteration": "w-q-y",
+        "sens_fondamental": "se protéger, faire bouclier"
+      },
+      "exemple_verset": {
+        "reference": "2:197",
+        "arabe": "وَتَزَوَّدُوا فَإِنَّ خَيْرَ ٱلزَّادِ ٱلتَّقْوَىٰ",
+        "translitteration": "Wa tazawwadû fa-inna khayra-z-zâdi-t-taqwâ",
+        "traduction_fr": "Prenez vos provisions, car la meilleure provision est la taqwâ",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002197.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "مُتَّقِي",
+          "translit": "muttaqî",
+          "sens": "pieux"
+        },
+        {
+          "arabe": "ٱتَّقَىٰ",
+          "translit": "ittaqâ",
+          "sens": "il a craint Allâh"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 2,
+      "notes_pedagogiques": "Concept central. Racine w-q-y = 'se protéger'. La taqwâ est la conscience qui te protège du mal. Pas peur paralysante — vigilance amoureuse."
+    },
+    {
+      "id": "lisan_051",
+      "ordre": 51,
+      "palier": 1,
+      "mot_arabe": "تَوْبَة",
+      "translitteration": "Tawba",
+      "traductions_fr": [
+        "repentir",
+        "retour"
+      ],
+      "frequence_coran": 87,
+      "racine": {
+        "lettres": "ت و ب",
+        "translitteration": "t-w-b",
+        "sens_fondamental": "revenir, faire demi-tour"
+      },
+      "exemple_verset": {
+        "reference": "2:37",
+        "arabe": "فَتَلَقَّىٰ آدَمُ مِن رَّبِّهِ كَلِمَاتٍ فَتَابَ عَلَيْهِ",
+        "translitteration": "Fa-talaqqâ Âdamu min rabbihi kalimâtin fa-tâba ʿalayh",
+        "traduction_fr": "Adam reçut de son Seigneur des paroles, et Il se retourna vers lui",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002037.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "تَائِب",
+          "translit": "tâʾib",
+          "sens": "repentant"
+        },
+        {
+          "arabe": "تَوَّاب",
+          "translit": "tawwâb",
+          "sens": "Celui qui accueille le repentir (Allâh)"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Repentir = RETOUR. Le pécheur retourne vers Allâh, et Allâh 'se retourne' vers lui. C'est un mouvement réciproque. Allâh est 'at-Tawwâb' — Celui qui accepte le retour."
+    },
+    {
+      "id": "lisan_052",
+      "ordre": 52,
+      "palier": 1,
+      "mot_arabe": "ذَنْب",
+      "translitteration": "Dhanb",
+      "traductions_fr": [
+        "péché",
+        "faute"
+      ],
+      "frequence_coran": 39,
+      "racine": {
+        "lettres": "ذ ن ب",
+        "translitteration": "dh-n-b",
+        "sens_fondamental": "queue, suite, conséquence"
+      },
+      "exemple_verset": {
+        "reference": "3:135",
+        "arabe": "وَمَن يَغْفِرُ ٱلذُّنُوبَ إِلَّا ٱللَّهُ",
+        "translitteration": "Wa man yaghfiru-dh-dhunûba illâ-llâh",
+        "traduction_fr": "Et qui pardonne les péchés sinon Allâh ?",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/003135.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "ذُنُوب",
+          "translit": "dhunûb",
+          "sens": "péchés (pluriel)"
+        },
+        {
+          "arabe": "مُذْنِب",
+          "translit": "mudhnib",
+          "sens": "pécheur"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Le mot 'dhanb' vient de 'queue' — comme si le péché 'traîne derrière' la personne, conséquence qui suit. Mais le pardon d'Allâh efface cette traîne."
+    },
+    {
+      "id": "lisan_053",
+      "ordre": 53,
+      "palier": 1,
+      "mot_arabe": "غَفَرَ",
+      "translitteration": "Ghafara",
+      "traductions_fr": [
+        "il a pardonné",
+        "il pardonne"
+      ],
+      "frequence_coran": 234,
+      "racine": {
+        "lettres": "غ ف ر",
+        "translitteration": "gh-f-r",
+        "sens_fondamental": "couvrir, voiler, effacer"
+      },
+      "exemple_verset": {
+        "reference": "2:284",
+        "arabe": "فَيَغْفِرُ لِمَن يَشَاءُ",
+        "translitteration": "Fa-yaghfiru li-man yashâʾ",
+        "traduction_fr": "Il pardonne à qui Il veut",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002284.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "غَفُور",
+          "translit": "Ghafûr",
+          "sens": "Le Pardonneur (nom divin)"
+        },
+        {
+          "arabe": "ٱسْتَغْفَرَ",
+          "translit": "istaghfara",
+          "sens": "demander pardon"
+        },
+        {
+          "arabe": "مَغْفِرَة",
+          "translit": "maghfira",
+          "sens": "pardon"
+        }
+      ],
+      "type_grammatical": "verbe",
+      "difficulte": 1,
+      "notes_pedagogiques": "Le pardon islamique = COUVRIR le péché. Allâh ne 'oublie' pas, Il VOILE. Le célèbre 'astaghfirullâh' vient de cette racine."
+    },
+    {
+      "id": "lisan_054",
+      "ordre": 54,
+      "palier": 1,
+      "mot_arabe": "حَلَال",
+      "translitteration": "Halâl",
+      "traductions_fr": [
+        "licite",
+        "permis"
+      ],
+      "frequence_coran": 6,
+      "racine": {
+        "lettres": "ح ل ل",
+        "translitteration": "h-l-l",
+        "sens_fondamental": "délier, défaire un nœud, rendre licite"
+      },
+      "exemple_verset": {
+        "reference": "2:168",
+        "arabe": "كُلُوا مِمَّا فِي ٱلْأَرْضِ حَلَالًا طَيِّبًا",
+        "translitteration": "Kulû mimmâ fî-l-ardi halâlan tayyibâ",
+        "traduction_fr": "Mangez de ce qui est sur la terre, licite et bon",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002168.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "أَحَلَّ",
+          "translit": "ahalla",
+          "sens": "il a rendu licite"
+        }
+      ],
+      "type_grammatical": "adjectif",
+      "difficulte": 1,
+      "notes_pedagogiques": "Racine h-l-l = délier. Ce qui est halâl est 'délié' (libre d'usage). S'oppose à harâm (lié, interdit). Souvent couplé à 'tayyib' (bon)."
+    },
+    {
+      "id": "lisan_055",
+      "ordre": 55,
+      "palier": 1,
+      "mot_arabe": "حَرَام",
+      "translitteration": "Harâm",
+      "traductions_fr": [
+        "illicite",
+        "interdit",
+        "sacré"
+      ],
+      "frequence_coran": 19,
+      "racine": {
+        "lettres": "ح ر م",
+        "translitteration": "h-r-m",
+        "sens_fondamental": "interdit, sacré, séparé"
+      },
+      "exemple_verset": {
+        "reference": "2:173",
+        "arabe": "إِنَّمَا حَرَّمَ عَلَيْكُمُ ٱلْمَيْتَةَ وَٱلدَّمَ",
+        "translitteration": "Innamâ harrama ʿalaykumu-l-maytata wa-d-dam",
+        "traduction_fr": "Il vous a seulement interdit la bête morte et le sang",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002173.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "حَرَّمَ",
+          "translit": "harrama",
+          "sens": "il a rendu illicite"
+        },
+        {
+          "arabe": "مَحْرَم",
+          "translit": "mahram",
+          "sens": "parent à qui le mariage est interdit"
+        },
+        {
+          "arabe": "حَرَم",
+          "translit": "haram",
+          "sens": "lieu sacré (La Mecque)"
+        }
+      ],
+      "type_grammatical": "adjectif",
+      "difficulte": 1,
+      "notes_pedagogiques": "Double sens fort : INTERDIT (haram à manger) ET SACRÉ (al-Masjid al-Harâm = la Mosquée sacrée). Ce qui est mis à part : soit interdit, soit sacré."
+    },
+    {
+      "id": "lisan_056",
+      "ordre": 56,
+      "palier": 1,
+      "mot_arabe": "عِبَاد",
+      "translitteration": "ʿIbâd",
+      "traductions_fr": [
+        "serviteurs"
+      ],
+      "frequence_coran": 144,
+      "racine": {
+        "lettres": "ع ب د",
+        "translitteration": "ʿ-b-d",
+        "sens_fondamental": "servir, adorer, se soumettre"
+      },
+      "exemple_verset": {
+        "reference": "2:186",
+        "arabe": "وَإِذَا سَأَلَكَ عِبَادِي عَنِّي فَإِنِّي قَرِيبٌ",
+        "translitteration": "Wa idhâ saʾalaka ʿibâdî ʿannî fa-innî qarîb",
+        "traduction_fr": "Et quand Mes serviteurs t'interrogent sur Moi, Je suis tout proche",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002186.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "عَبْد",
+          "translit": "ʿabd",
+          "sens": "serviteur (singulier)"
+        },
+        {
+          "arabe": "عِبَادَة",
+          "translit": "ʿibâda",
+          "sens": "adoration"
+        },
+        {
+          "arabe": "عَبَدَ",
+          "translit": "ʿabada",
+          "sens": "il a adoré"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Tous les croyants sont 'ʿibâd Allâh' (serviteurs d'Allâh). Le célèbre prénom 'ʿAbd Allâh' (serviteur d'Allâh) vient de cette racine."
+    },
+    {
+      "id": "lisan_057",
+      "ordre": 57,
+      "palier": 1,
+      "mot_arabe": "حَمْد",
+      "translitteration": "Hamd",
+      "traductions_fr": [
+        "louange"
+      ],
+      "frequence_coran": 65,
+      "racine": {
+        "lettres": "ح م د",
+        "translitteration": "h-m-d",
+        "sens_fondamental": "louer, complimenter"
+      },
+      "exemple_verset": {
+        "reference": "1:2",
+        "arabe": "ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَالَمِينَ",
+        "translitteration": "Al-hamdu li-llâhi rabbi-l-ʿâlamîn",
+        "traduction_fr": "Louange à Allâh, Seigneur des mondes",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/001002.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "مُحَمَّد",
+          "translit": "Muhammad",
+          "sens": "le très louangé (nom du Prophète ﷺ)"
+        },
+        {
+          "arabe": "حَامِد",
+          "translit": "hâmid",
+          "sens": "celui qui loue"
+        },
+        {
+          "arabe": "مَحْمُود",
+          "translit": "Mahmûd",
+          "sens": "le loué"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Premier mot après Bismillâh dans la Fâtiha. Racine h-m-d donne aussi 'Muhammad' (le très louangé) — nom du Prophète ﷺ. Plus que 'merci' : c'est louer pour ce qu'Il EST."
+    },
+    {
+      "id": "lisan_058",
+      "ordre": 58,
+      "palier": 1,
+      "mot_arabe": "أَمْر",
+      "translitteration": "Amr",
+      "traductions_fr": [
+        "ordre",
+        "affaire",
+        "commandement"
+      ],
+      "frequence_coran": 248,
+      "racine": {
+        "lettres": "أ م ر",
+        "translitteration": "ʾ-m-r",
+        "sens_fondamental": "ordonner, commander, affaire"
+      },
+      "exemple_verset": {
+        "reference": "2:117",
+        "arabe": "وَإِذَا قَضَىٰ أَمْرًا فَإِنَّمَا يَقُولُ لَهُ كُن",
+        "translitteration": "Wa idhâ qadâ amran fa-innamâ yaqûlu lahu kun",
+        "traduction_fr": "Quand Il décrète une affaire, Il lui dit seulement : Sois",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002117.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "أَمَرَ",
+          "translit": "amara",
+          "sens": "il a ordonné"
+        },
+        {
+          "arabe": "أَمِير",
+          "translit": "amîr",
+          "sens": "chef, commandeur"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Double sens : ORDRE (commandement) et AFFAIRE (chose qui arrive). Quand Allâh décrète une 'amr', l'événement se produit. L'ordre divin = la réalité."
+    },
+    {
+      "id": "lisan_059",
+      "ordre": 59,
+      "palier": 1,
+      "mot_arabe": "قَلْب",
+      "translitteration": "Qalb",
+      "traductions_fr": [
+        "cœur"
+      ],
+      "frequence_coran": 132,
+      "racine": {
+        "lettres": "ق ل ب",
+        "translitteration": "q-l-b",
+        "sens_fondamental": "retourner, changer, cœur"
+      },
+      "exemple_verset": {
+        "reference": "2:74",
+        "arabe": "ثُمَّ قَسَتْ قُلُوبُكُم مِّن بَعْدِ ذَٰلِكَ",
+        "translitteration": "Thumma qasat qulûbukum min baʿdi dhâlik",
+        "traduction_fr": "Puis vos cœurs se sont endurcis après cela",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002074.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "قُلُوب",
+          "translit": "qulûb",
+          "sens": "cœurs (pluriel)"
+        },
+        {
+          "arabe": "ٱنْقَلَبَ",
+          "translit": "inqalaba",
+          "sens": "il s'est retourné"
+        }
+      ],
+      "type_grammatical": "nom",
+      "difficulte": 1,
+      "notes_pedagogiques": "Racine q-l-b = 'qui se retourne'. Le cœur s'appelle ainsi car il CHANGE constamment d'état. Du'â du Prophète ﷺ : 'Ô Toi qui retournes les cœurs (muqallib al-qulûb), fixe mon cœur sur Ta religion.'"
+    },
+    {
+      "id": "lisan_060",
+      "ordre": 60,
+      "palier": 1,
+      "mot_arabe": "خَيْر",
+      "translitteration": "Khayr",
+      "traductions_fr": [
+        "bien",
+        "bon",
+        "meilleur"
+      ],
+      "frequence_coran": 186,
+      "racine": {
+        "lettres": "خ ي ر",
+        "translitteration": "kh-y-r",
+        "sens_fondamental": "choisir, ce qui est bon"
+      },
+      "exemple_verset": {
+        "reference": "2:184",
+        "arabe": "وَأَن تَصُومُوا خَيْرٌ لَّكُمْ",
+        "translitteration": "Wa an tasûmû khayrun lakum",
+        "traduction_fr": "Et que vous jeûniez est meilleur pour vous",
+        "audio_url": "https://everyayah.com/data/Alafasy_128kbps/002184.mp3"
+      },
+      "famille_mots": [
+        {
+          "arabe": "ٱخْتَارَ",
+          "translit": "ikhtâra",
+          "sens": "il a choisi"
+        },
+        {
+          "arabe": "أَخْيَار",
+          "translit": "akhyâr",
+          "sens": "les meilleurs"
+        }
+      ],
+      "type_grammatical": "nom_adjectif",
+      "difficulte": 1,
+      "notes_pedagogiques": "Mot polyvalent : 'bien' (en général), 'meilleur' (comparatif), ou 'le mieux' (superlatif). 'Khayr' s'oppose à 'sharr' (mal). Lié à 'ikhtiyâr' (choix)."
     }
   ],
   "metadata": {
