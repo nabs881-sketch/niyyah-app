@@ -16519,29 +16519,52 @@ function _getLisanMot() {
   return window.LISAN_DATA[day - 1] || window.LISAN_DATA[0];
 }
 
-function openVueLisan() {
-  _saveScroll();
-  a11yOnOverlayOpen();
-  var mot = _getLisanMot();
-  if (!mot) { showToast('Chargement en cours...'); return; }
+function openVueLisan(viewDay) {
+  if (!window.LISAN_DATA || window.LISAN_DATA.length === 0) { showToast('Chargement en cours...'); return; }
+  var todayDay = _getLisanDay();
+  var currentDay = typeof viewDay === 'number' ? viewDay : todayDay;
+  if (currentDay < 1) currentDay = 1;
+  if (currentDay > todayDay) currentDay = todayDay;
+  var mot = window.LISAN_DATA[currentDay - 1];
+  if (!mot) return;
+  var isToday = currentDay === todayDay;
+
+  // First call: save scroll + a11y
+  if (typeof viewDay === 'undefined') { _saveScroll(); a11yOnOverlayOpen(); }
 
   var existing = document.getElementById('lisan-overlay');
   if (existing) existing.remove();
 
   var ov = document.createElement('div');
   ov.id = 'lisan-overlay';
-  ov.style.cssText = 'position:fixed;inset:0;z-index:9999;background:#0A0908;overflow-y:auto;-webkit-overflow-scrolling:touch;animation:fadeSlideV2 0.4s ease forwards;';
+  ov.style.cssText = 'position:fixed;inset:0;z-index:9999;background:#0A0908;overflow-y:auto;-webkit-overflow-scrolling:touch;animation:fadeSlideV2 0.3s ease forwards;';
 
-  var day = _getLisanDay();
   var total = window.LISAN_DATA.length;
+  var _lisanPalier = currentDay <= 100 ? 1 : currentDay <= 200 ? 2 : 3;
+  var canPrev = currentDay > 1;
+  var canNext = currentDay < todayDay;
 
   var html = '<div style="max-width:420px;margin:0 auto;padding:24px 20px 40px;">';
-  // Header
-  html += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;">';
-  var _lisanPalier = day <= 100 ? 1 : day <= 200 ? 2 : 3;
-  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:11px;letter-spacing:2px;color:rgba(200,168,75,0.5);">COMPRENDRE LE CORAN \u00b7 Jour ' + day + ' sur ' + total + ' \u2014 Palier ' + _lisanPalier + '</div>';
-  html += '<button onclick="document.getElementById(\'lisan-overlay\').remove();_restoreScroll();" style="background:none;border:none;color:rgba(255,255,255,0.4);font-size:22px;cursor:pointer;padding:4px 8px;">\u00d7</button>';
+
+  // Header with navigation
+  html += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">';
+  html += '<button onclick="openVueLisan(' + (currentDay - 1) + ')" style="background:none;border:none;font-size:20px;cursor:pointer;padding:4px 10px;color:' + (canPrev ? '#C8A84A' : 'rgba(200,168,75,0.15)') + ';' + (canPrev ? '' : 'pointer-events:none;') + '">\u2039</button>';
+  html += '<div style="text-align:center;">';
+  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:11px;letter-spacing:2px;color:rgba(200,168,75,0.5);">COMPRENDRE LE CORAN</div>';
+  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;color:rgba(200,168,75,0.4);margin-top:2px;">Jour ' + currentDay + ' sur ' + total + ' \u2014 Palier ' + _lisanPalier + '</div>';
   html += '</div>';
+  html += '<button onclick="openVueLisan(' + (currentDay + 1) + ')" style="background:none;border:none;font-size:20px;cursor:pointer;padding:4px 10px;color:' + (canNext ? '#C8A84A' : 'rgba(200,168,75,0.15)') + ';' + (canNext ? '' : 'pointer-events:none;') + '">\u203a</button>';
+  html += '</div>';
+
+  // Today indicator
+  if (isToday) {
+    html += '<div style="text-align:center;margin-bottom:16px;"><span style="display:inline-block;background:#C8A84A;color:#0A0908;font-family:\'Inter\',sans-serif;font-size:9px;font-weight:700;letter-spacing:1.5px;padding:3px 10px;border-radius:10px;">AUJOURD\u2019HUI</span></div>';
+  } else {
+    html += '<div style="text-align:center;margin-bottom:16px;"><span style="font-family:\'Cormorant Garamond\',serif;font-size:12px;font-style:italic;color:rgba(200,168,75,0.3);">R\u00e9vision</span></div>';
+  }
+
+  // Close button
+  html += '<div style="text-align:right;margin-top:-48px;margin-bottom:24px;"><button onclick="document.getElementById(\'lisan-overlay\').remove();_restoreScroll();" style="background:none;border:none;color:rgba(255,255,255,0.4);font-size:22px;cursor:pointer;padding:4px 8px;">\u00d7</button></div>';
 
   // Mot arabe (grand)
   html += '<div style="text-align:center;margin-bottom:8px;">';
@@ -16603,8 +16626,10 @@ function openVueLisan() {
   html += '<div style="font-family:\'Inter\',sans-serif;font-size:11px;color:rgba(200,168,75,0.4);">Appara\u00eet ' + (mot.frequence_coran || '?') + ' fois dans le Coran</div>';
   html += '</div>';
 
-  // Bouton validation
-  html += '<button onclick="validerLecture(\'lisan\');document.getElementById(\'lisan-overlay\').remove();_restoreScroll();" style="display:block;width:100%;padding:16px 0;border:none;border-radius:12px;background:linear-gradient(135deg,#C8A84A,#A68B30);color:#0A0908;font-family:\'Cormorant Garamond\',serif;font-size:16px;font-weight:700;cursor:pointer;">\u2713 J\u2019ai appris ce mot</button>';
+  // Bouton validation — uniquement pour le mot du jour
+  if (isToday) {
+    html += '<button onclick="validerLecture(\'lisan\');document.getElementById(\'lisan-overlay\').remove();_restoreScroll();" style="display:block;width:100%;padding:16px 0;border:none;border-radius:12px;background:linear-gradient(135deg,#C8A84A,#A68B30);color:#0A0908;font-family:\'Cormorant Garamond\',serif;font-size:16px;font-weight:700;cursor:pointer;">\u2713 J\u2019ai appris ce mot</button>';
+  }
 
   html += '</div>';
   ov.innerHTML = html;
