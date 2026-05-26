@@ -1,0 +1,199 @@
+{
+  "waqt": "MAGHRIB",
+  "tranche": 2,
+  "bloc": "DUNYA_AKHIRA",
+  "source_uniquement": "CORAN",
+  "items_count": 30,
+  "concept": "Au coucher du soleil, méditer sur le caractère éphémère de la vie ici-bas et la solidité de l'au-delà. Ton doux, lucide, anti-attachement aux illusions.",
+  "version": "1.0",
+  "date_production": "2026-05-26",
+  "items": [
+    {
+      "id": "maghrib_dunya_001",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUNYA_AKHIRA",
+      "fr": "'L'au-delà est meilleur et plus durable.' Trois mots résument tout : meilleur, ET, durable. Pas l'un sans l'autre. — Coran 87:17"
+    },
+    {
+      "id": "maghrib_dunya_002",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUNYA_AKHIRA",
+      "fr": "'Cette vie d'ici-bas n'est qu'amusement et jeu. La Demeure de l'au-delà est la vraie vie. S'ils savaient !' Tu vis dans la salle d'attente. Pas dans la maison. — Coran 29:64"
+    },
+    {
+      "id": "maghrib_dunya_003",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUNYA_AKHIRA",
+      "fr": "'Toute âme goûtera la mort.' Pas 'rencontrera'. Pas 'subira'. Goûtera. Comme un repas. C'est la dernière saveur que tu auras ici. — Coran 3:185"
+    },
+    {
+      "id": "maghrib_dunya_004",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUNYA_AKHIRA",
+      "fr": "'La vie présente n'est qu'une jouissance trompeuse.' Trompeuse — le mot est précis. Ce n'est pas elle qui te ment. C'est toi qui te trompes sur elle. — Coran 3:185"
+    },
+    {
+      "id": "maghrib_dunya_005",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUNYA_AKHIRA",
+      "fr": "'Ce qui est auprès d'Allâh est meilleur et plus durable.' Tout ce qui te semble grand ici sera vu plus tard comme petit. Tout ce qui semblait sans importance comptera. — Coran 28:60"
+    },
+    {
+      "id": "maghrib_dunya_006",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUNYA_AKHIRA",
+      "fr": "'Ne laissez pas la vie présente vous tromper, et que le grand trompeur ne vous trompe pas à propos d'Allâh.' Deux mensonges à éviter chaque jour : sur la vie, sur Allâh. — Coran 35:5"
+    },
+    {
+      "id": "maghrib_dunya_007",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUNYA_AKHIRA",
+      "fr": "'On a enjolivé aux gens l'amour des choses désirées : femmes, enfants, trésors d'or et d'argent, chevaux, bétail, champs.' Allâh sait ce que tu désires. Il ne le condamne pas. Il rappelle juste que c'est passager. — Coran 3:14"
+    },
+    {
+      "id": "maghrib_dunya_008",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUNYA_AKHIRA",
+      "fr": "'La vie présente est comparable à une eau que Nous faisons descendre du ciel. Elle se mélange aux plantes... puis tout devient des débris.' Toute floraison se termine. La tienne aussi. — Coran 10:24"
+    },
+    {
+      "id": "maghrib_dunya_009",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUNYA_AKHIRA",
+      "fr": "'La vie présente n'est que jeu, amusement, vaine parure, course à l'orgueil entre vous, et rivalité dans l'acquisition des richesses et des enfants.' Allâh décrit Instagram avant qu'Instagram existe. — Coran 57:20"
+    },
+    {
+      "id": "maghrib_dunya_010",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUNYA_AKHIRA",
+      "fr": "'Vous, vous préférez la vie d'ici-bas, alors que l'au-delà est meilleur et plus durable.' Le verbe 'préférer' est précis. Tu as choisi. Tu peux re-choisir. — Coran 87:16-17"
+    },
+    {
+      "id": "maghrib_dunya_011",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUNYA_AKHIRA",
+      "fr": "'La rivalité dans l'acquisition vous distrait — jusqu'à ce que vous visitiez les tombes.' Pas 'jusqu'à votre mort'. Jusqu'à votre visite des tombes. Tu y vas comment, la prochaine fois ? — Coran 102:1-2"
+    },
+    {
+      "id": "maghrib_dunya_012",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUNYA_AKHIRA",
+      "fr": "Allâh a juré : 'Par le temps qui s'écoule, l'homme est en perdition — sauf...' Le 'sauf' tient en quatre conditions. Foi, bonnes œuvres, vérité, patience. Pas plus. — Coran 103"
+    },
+    {
+      "id": "maghrib_dunya_013",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUNYA_AKHIRA",
+      "fr": "'Combien de générations Nous avons fait périr avant eux !' Tu marches sur des cimetières que tu ne vois pas. Des millions ont cru leur époque éternelle. — Coran 19:74"
+    },
+    {
+      "id": "maghrib_dunya_014",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUNYA_AKHIRA",
+      "fr": "'Le jour où vous le verrez, la femme qui allaite oubliera son nourrisson, la femme enceinte perdra sa charge.' Médite le choc. C'est Allâh qui décrit la fin. — Coran 22:2"
+    },
+    {
+      "id": "maghrib_dunya_015",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUNYA_AKHIRA",
+      "fr": "'Chaque âme aura, ce jour-là, ce qui suffira à l'occuper.' Tu n'auras plus le temps des autres. Tu n'auras le temps que de ton compte. — Coran 80:37"
+    },
+    {
+      "id": "maghrib_dunya_016",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUNYA_AKHIRA",
+      "fr": "'Il viendra à Allâh avec un cœur sain.' Pas une fortune. Pas une réputation. Un cœur sain. La seule chose qui passera la frontière. — Coran 26:89"
+    },
+    {
+      "id": "maghrib_dunya_017",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUNYA_AKHIRA",
+      "fr": "'Ils ont oublié ce qu'on leur avait rappelé, et Nous leur avons ouvert les portes de toutes choses. Puis, alors qu'ils se réjouissaient de ce qui leur avait été donné, Nous les avons saisis brusquement.' L'aisance peut être un piège. — Coran 6:44"
+    },
+    {
+      "id": "maghrib_dunya_018",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUNYA_AKHIRA",
+      "fr": "'Comparée à l'au-delà, la jouissance de la vie présente est bien peu de chose.' Le mot arabe 'qalîl' veut dire : un rien. Une miette. — Coran 9:38"
+    },
+    {
+      "id": "maghrib_dunya_019",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUNYA_AKHIRA",
+      "fr": "'Les biens et les enfants sont la parure de la vie présente. Mais les bonnes œuvres durables ont, auprès de ton Seigneur, meilleure récompense.' Pas méprisés — relativisés. — Coran 18:46"
+    },
+    {
+      "id": "maghrib_dunya_020",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUNYA_AKHIRA",
+      "fr": "'Le jour où l'homme verra ce que ses deux mains ont avancé, et où le mécréant dira : Plût à Allâh que je sois poussière !' La poussière deviendra un rêve, pour celui qui a tout misé sur l'ici-bas. — Coran 78:40"
+    },
+    {
+      "id": "maghrib_dunya_021",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUNYA_AKHIRA",
+      "fr": "'Ne tends pas tes yeux vers ce dont Nous avons donné jouissance à certains. C'est l'éclat de la vie d'ici-bas — pour les éprouver.' Ce qui éclate aux yeux peut être une épreuve, pas une récompense. — Coran 20:131"
+    },
+    {
+      "id": "maghrib_dunya_022",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUNYA_AKHIRA",
+      "fr": "'Toute âme goûtera la mort. C'est le Jour de la Résurrection que vous recevrez votre rétribution complète.' La vie ne paye qu'un acompte. Le solde se règle après. — Coran 3:185"
+    },
+    {
+      "id": "maghrib_dunya_023",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUNYA_AKHIRA",
+      "fr": "'Toute chose périra, sauf Sa face.' Tout. Sans exception. Sauf une réalité. Le reste passe — y compris ton visage dans le miroir. — Coran 28:88"
+    },
+    {
+      "id": "maghrib_dunya_024",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUNYA_AKHIRA",
+      "fr": "'Tout ce qui est sur la terre disparaîtra. Seul subsistera le Visage de ton Seigneur, plein de Majesté et de Magnificence.' Médite : 'tout'. C'est total. — Coran 55:26-27"
+    },
+    {
+      "id": "maghrib_dunya_025",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUNYA_AKHIRA",
+      "fr": "'Sois content de ce qu'Allâh t'a accordé.' Pas heureux. Pas exubérant. Content. La paix d'esprit pèse plus que la joie qui passe. — Coran 28:77"
+    },
+    {
+      "id": "maghrib_dunya_026",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUNYA_AKHIRA",
+      "fr": "'Ils diront : Nous n'avons demeuré que peu de temps.' Quand tu seras à la fin, toute ta vie te semblera un week-end. Médite cette compression à venir. — Coran 79:46"
+    },
+    {
+      "id": "maghrib_dunya_027",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUNYA_AKHIRA",
+      "fr": "'Vous riez peu, vous devriez pleurer beaucoup.' Pas un appel à la tristesse. Un rappel de la disproportion. Tu prends légèrement ce qui est grave. — Coran 9:82"
+    },
+    {
+      "id": "maghrib_dunya_028",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUNYA_AKHIRA",
+      "fr": "'Le jour où l'on soufflera dans la trompe, tout ce qui est dans les cieux et la terre sera bouleversé — sauf qui Allâh voudra.' Le 'sauf' est ta porte de sortie. Cherche-la. — Coran 27:87"
+    },
+    {
+      "id": "maghrib_dunya_029",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUNYA_AKHIRA",
+      "fr": "'À Allâh appartient ce qui est dans les cieux et la terre. C'est à Lui que toute affaire est ramenée.' Toute affaire. Y compris celle qui t'obsède en ce moment. — Coran 3:109"
+    },
+    {
+      "id": "maghrib_dunya_030",
+      "categorie": "CONTEMPLATIF",
+      "sous_categorie": "DUNYA_AKHIRA",
+      "fr": "'Et vous trouverez auprès d'Allâh ce que vous avez avancé de bien.' Avancé — comme un acompte. Tes œuvres ne disparaissent pas — elles t'attendent. — Coran 2:110"
+    }
+  ],
+  "metadata": {
+    "principe_editorial": "100% Coran. Style murmuré du soir. Ton lucide, pas culpabilisant. Anti-attachement aux illusions. Cohérence avec MAGHRIB existant.",
+    "sources_utilisees": "Sourates 2, 3, 6, 9, 10, 18, 19, 20, 22, 26, 27, 28, 29, 35, 55, 57, 78, 79, 80, 87, 102, 103",
+    "themes_couverts": ["mort certaine", "vie comme jouissance trompeuse", "âkhira plus durable", "désirs reconnus mais relativisés", "bonnes œuvres comme acompte", "tout disparaîtra sauf Sa face", "compression du temps à la fin", "rappel sans culpabilisation"],
+    "tonalite_panel": "Conforme 70/30 — anti-attachement sans terreur. Aucun item ne se termine sur la peur seule. Chaque chute ouvre sur la conscience ou l'espoir.",
+    "suite": "Tranche 3 : Jour du Jugement (30 items Coran). Sourates 56, 69, 75, 79, 81, 82, 84, 99."
+  }
+}
