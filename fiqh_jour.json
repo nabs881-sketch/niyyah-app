@@ -31,7 +31,7 @@
     "categorie": "Purification",
     "sous_theme": "Eau",
     "regle": "L'eau dont on a déjà fait les ablutions (eau usagée) ne sert plus à se purifier une seconde fois selon la majorité.",
-    "explication": "Elle reste pure en soi mais perd sa fonction purificatrice rituelle. Les Hanafites considèrent même qu'elle devient impure.",
+    "explication": "Pour les Hanafites, l'eau usagée (musta'mal) devient non-purifiante (tâhir ghayr mutahhir), mais n'est pas impure au sens najis. Les autres écoles divergent.",
     "source": "Divergence classique entre écoles — Bukhari 187 sur la pratique du Prophète ﷺ",
     "ecole": "majorité"
   },
@@ -111,7 +111,7 @@
     "jour": 13,
     "categorie": "Purification",
     "sous_theme": "Ablutions (Wudu)",
-    "regle": "Essuyer la tête se fait avec les mains humides. La quantité essuyée varie selon les écoles : un quart pour les Hanafites, tout pour les Malikites et Hanbalites, une partie suffit pour les Shafi'ites.",
+    "regle": "Essuyer la tête se fait avec les mains humides. La quantité essuyée varie : Hanafites = un quart de la tête. Shâfi'îtes = une portion même minimale suffit. Mâlikîtes = toute la tête. Hanbalites = toute la tête + oreilles (les oreilles font partie de la tête).",
     "explication": "L'essuyage complet de la tête est la pratique du Prophète ﷺ. Pour les femmes voilées en ablutions à l'extérieur, un quart peut suffire selon les écoles permissives.",
     "source": "Coran 5:6 / Divergence classique entre écoles",
     "ecole": "Hanafite"
@@ -138,8 +138,8 @@
     "jour": 16,
     "categorie": "Purification",
     "sous_theme": "Ablutions (Wudu)",
-    "regle": "Saigner abondamment annule les ablutions selon les Hanafites uniquement. Les 3 autres écoles ne le considèrent pas comme annulant.",
-    "explication": "Une coupure légère ne pose donc question que pour les Hanafites. Les autres peuvent prier sans refaire le wudu.",
+    "regle": "Le saignement annule les ablutions selon les Hanafites (tout saignement, même léger). Les Shâfi'îtes et Mâlikîtes : le sang n'annule pas. Les Hanbalites : annule si abondant.",
+    "explication": "La divergence est reconnue entre les quatre écoles. En pratique, seuls les Hanafites sont stricts sur tout saignement.",
     "source": "Divergence reconnue entre écoles",
     "ecole": "Hanafite"
   },
@@ -229,7 +229,7 @@
     "categorie": "Purification",
     "sous_theme": "Tayammum",
     "regle": "Le tayammum se fait avec une surface terreuse pure : sable, pierre, terre sèche, mur de terre.",
-    "explication": "On frappe les mains au sol une fois (Hanafites : deux fois), on essuie le visage, puis les mains/avant-bras.",
+    "explication": "Mâlikîtes/Shâfi'îtes/Hanbalites : deux frappes — une pour le visage, une pour les mains/avant-bras. Hanafites : deux frappes distinctes également, mais avec inclusion des avant-bras jusqu'aux coudes.",
     "source": "Hadith Bukhari 347 / Divergence sur le nombre de frappes",
     "ecole": "majorité"
   },
@@ -274,7 +274,7 @@
     "categorie": "Purification",
     "sous_theme": "Impuretés (Najasa)",
     "regle": "L'urine de nourrisson garçon (avant l'introduction d'aliments solides) se purifie en aspergeant d'eau, contrairement à celle de la fille qui nécessite un lavage complet.",
-    "explication": "Cette règle vient d'un hadith spécifique sur la pratique du Prophète ﷺ avec son petit-fils.",
+    "explication": "Cette règle (aspersion pour le garçon, lavage pour la fille) vient d'un hadith spécifique. Les Mâlikîtes ne font pas cette distinction et exigent le lavage dans les deux cas.",
     "source": "Hadith Abu Dawud 376, Tirmidhi 610",
     "ecole": "majorité"
   },
@@ -283,7 +283,7 @@
     "categorie": "Purification",
     "sous_theme": "Impuretés (Najasa)",
     "regle": "Le porc et tout ce qui en dérive est impur. Selon les Malikites, le chien vivant n'est pas impur en lui-même mais sa salive l'est.",
-    "explication": "Si la salive de chien touche un récipient, on le lave sept fois dont une avec de la terre selon les Shafi'ites et Hanbalites. Les Malikites lavent par recommandation rituelle.",
+    "explication": "Si la salive de chien touche un récipient, on le lave sept fois dont une avec de la terre selon les Shâfi'îtes et Hanbalites. Les Mâlikîtes considèrent que le chien est pur en lui-même, mais on lave par obéissance rituelle au hadith ('ibâda ta'abbudiyya).",
     "source": "Hadith Muslim 279 / Divergence Malikite",
     "ecole": "majorité"
   },
@@ -319,7 +319,7 @@
     "categorie": "Purification",
     "sous_theme": "Menstruation",
     "regle": "Pendant les règles, la femme ne peut pas effectuer le tawaf, entrer dans la mosquée pour y séjourner, toucher le Coran selon la majorité.",
-    "explication": "Elle peut lire le Coran de mémoire, faire des invocations, écouter les récitations.",
+    "explication": "Elle peut lire le Coran de mémoire, faire des invocations, écouter les récitations. Les Mâlikîtes permettent à la femme menstruée d'enseigner le Coran. Plusieurs savants (Ibn Taymiyya, al-Albâni) lui permettent aussi de toucher le mushaf en cas de besoin.",
     "source": "Hadith Tirmidhi 131 / Majorité des écoles",
     "ecole": "majorité"
   },
@@ -336,7 +336,7 @@
     "jour": 38,
     "categorie": "Purification",
     "sous_theme": "Menstruation",
-    "regle": "La durée maximale des règles est de 15 jours selon les Shafi'ites et Hanbalites, 10 jours selon les Hanafites.",
+    "regle": "La durée maximale des règles est de 15 jours selon les Shâfi'îtes, Mâlikîtes et Hanbalites. 10 jours selon les Hanafites.",
     "explication": "Au-delà, tout saignement est considéré comme istihada (saignement pathologique) qui ne suspend pas la prière ni le jeûne.",
     "source": "Divergence d'écoles classique",
     "ecole": "majorité"
@@ -436,7 +436,7 @@
     "categorie": "Prière",
     "sous_theme": "Adhan",
     "regle": "L'adhan (appel à la prière) est une obligation collective (fard kifaya) sur les hommes d'une localité.",
-    "explication": "Si une mosquée du quartier appelle, l'obligation est levée pour les autres. Le particulier qui prie chez lui n'a pas à appeler.",
+    "explication": "L'adhan est fard kifâya selon la majorité. Pour les Hanbalites, c'est fard 'ayn sur chaque communauté qui accomplit la prière en groupe.",
     "source": "Hadith Bukhari 7246 / Consensus sur le caractère obligatoire collectif",
     "ecole": "consensus"
   },
@@ -490,7 +490,7 @@
     "categorie": "Prière",
     "sous_theme": "Piliers (Arkân)",
     "regle": "Réciter la sourate Al-Fatiha dans chaque rak'ah est un pilier selon la majorité des écoles.",
-    "explication": "Hadith : 'Pas de prière pour celui qui ne récite pas la Fatiha.' Les Hanafites considèrent que toute récitation coranique suffit, mais Al-Fatiha reste fortement recommandée.",
+    "explication": "Hadith : 'Pas de prière pour celui qui ne récite pas la Fatiha.' Pour les Hanafites, le pilier est la récitation coranique (trois petits versets ou un verset long), pas spécifiquement Al-Fâtiha — mais elle reste fortement recommandée chez eux.",
     "source": "Hadith Bukhari 756, Muslim 394 / Divergence Hanafite",
     "ecole": "majorité"
   },
@@ -760,7 +760,7 @@
     "categorie": "Prière",
     "sous_theme": "Prière en groupe",
     "regle": "Le suiveur (ma'mum) doit aligner ses pieds et ses épaules avec ses voisins. Les rangs doivent être serrés.",
-    "explication": "Hadith : 'Alignez vos rangs car aligner les rangs fait partie de la perfection de la prière.' Sinon, Allah peut diviser leurs cœurs.",
+    "explication": "Hadith : 'Alignez vos rangs car aligner les rangs fait partie de la perfection de la prière.' Sinon, Allâh causera la discorde entre vous (sens classique de 'diviser vos cœurs').",
     "source": "Hadith Bukhari 717, Muslim 433",
     "ecole": "consensus"
   },
@@ -778,7 +778,7 @@
     "categorie": "Prière",
     "sous_theme": "Prière du vendredi",
     "regle": "La prière du vendredi (Jumua) est obligatoire pour tout homme musulman adulte, libre, résident.",
-    "explication": "Les femmes, voyageurs, malades, enfants en sont exemptés. Pour les exemptés, ils prient Dhuhr à la place.",
+    "explication": "Les femmes, voyageurs, malades, enfants en sont exemptés. Si une femme assiste à la Jumu'a, sa prière est valide et remplit son obligation de Dhuhr (pas besoin de re-prier).",
     "source": "Coran 62:9 / Hadith Abu Dawud 1067 / Consensus",
     "ecole": "consensus"
   },
@@ -806,7 +806,7 @@
     "sous_theme": "Prière du vendredi",
     "regle": "Lire la sourate Al-Kahf le vendredi est une sunnah hautement recommandée.",
     "explication": "Hadith : 'Celui qui lit Al-Kahf le vendredi, une lumière l'illuminera entre les deux vendredis.'",
-    "source": "Hadith Hakim, Bayhaqi — authentifié par Al-Albani",
+    "source": "Hadith Hakim, Bayhaqi — classé sahîh li-ghayrihi par Al-Albâni (sahîh par combinaison de chaînes, pas directement)",
     "ecole": "consensus"
   },
   {
@@ -850,7 +850,7 @@
     "categorie": "Prière",
     "sous_theme": "Prière du voyageur",
     "regle": "En voyage, on peut raccourcir les prières de 4 rak'ah à 2 (qasr) : Dhuhr, Asr, Isha. Fajr et Maghrib restent inchangées.",
-    "explication": "Le voyage doit dépasser environ 80-90 km selon la majorité. Les Hanafites parlent de 3 jours de marche.",
+    "explication": "La majorité (Mâlikîtes, Shâfi'îtes, Hanbalites) fixe la distance à environ 83-89 km (4 barid). Les Hanafites retiennent 3 jours de marche (~85 km en pratique). Certains contemporains (dont l'Académie OCI) acceptent des distances plus courtes.",
     "source": "Coran 4:101 / Hadith Bukhari 1080 / Consensus sur le principe",
     "ecole": "consensus"
   },
@@ -859,7 +859,7 @@
     "categorie": "Prière",
     "sous_theme": "Prière du voyageur",
     "regle": "On peut combiner (jumu') deux prières en voyage : Dhuhr avec Asr, Maghrib avec Isha.",
-    "explication": "Soit en avançant la seconde au temps de la première, soit en repoussant la première au temps de la seconde.",
+    "explication": "Les Mâlikîtes, Shâfi'îtes et Hanbalites permettent la combinaison en voyage. Les Hanafites ne l'autorisent que dans des cas très restreints (Arafat et Muzdalifa lors du Hajj).",
     "source": "Hadith Bukhari 1107, Muslim 705",
     "ecole": "majorité"
   },
@@ -1003,7 +1003,7 @@
     "categorie": "Jeûne",
     "sous_theme": "Kaffara et rattrapage",
     "regle": "La femme enceinte ou allaitante qui craint pour elle ou son enfant peut rompre. Le rattrapage seul ou avec fidya selon l'école.",
-    "explication": "Hanafites/Malikites : rattrapage seul. Shafi'ites/Hanbalites : rattrapage + fidya si crainte pour l'enfant seul.",
+    "explication": "Hanafites/Mâlikîtes : rattrapage seul. Shâfi'îtes : rattrapage + fidya si crainte pour l'enfant seul. Hanbalites : position nuancée — Ibn 'Abbâs et certains hanbalites disent fidya seule sans rattrapage pour celle qui craint pour son enfant.",
     "source": "Coran 2:184 / Divergence d'écoles",
     "ecole": "majorité"
   },
@@ -1228,7 +1228,7 @@
     "categorie": "Zakat",
     "sous_theme": "Bénéficiaires",
     "regle": "On ne peut pas donner la zakat à un non-musulman selon la majorité. L'aumône volontaire (sadaqa) oui.",
-    "explication": "Le 'cœur à rallier' (mu'allafa al-qulûb) reste une exception théorique pour la zakat selon certains avis.",
+    "explication": "La catégorie 'mu'allafa al-qulûb' (cœurs à rallier) est mentionnée dans le Coran (9:60). Les Hanafites considèrent que 'Umar a abrogé cette catégorie. D'autres écoles la maintiennent. Plusieurs savants contemporains (Yûsuf al-Qaradâwî, Académie OCI) l'appliquent activement à la da'wa moderne.",
     "source": "Coran 9:60 / Consensus majoritaire",
     "ecole": "majorité"
   },
@@ -1273,7 +1273,7 @@
     "categorie": "Hajj",
     "sous_theme": "Conditions et obligation",
     "regle": "Le Hajj est obligatoire une fois dans la vie pour tout musulman adulte, sain d'esprit, libre, ayant les moyens financiers et physiques.",
-    "explication": "C'est le cinquième pilier de l'Islam. Pour la femme, la majorité exige aussi un mahram (parent proche) pour le voyage.",
+    "explication": "C'est le cinquième pilier de l'Islam. La majorité (Hanafites, Mâlikîtes, Hanbalites) exige un mahram pour la femme. Les Shâfi'îtes acceptent qu'elle parte avec un groupe de femmes sûres, sans mahram.",
     "source": "Coran 3:97 / Hadith Bukhari 8 / Consensus",
     "ecole": "consensus"
   },
@@ -1292,7 +1292,7 @@
     "sous_theme": "Conditions et obligation",
     "regle": "Retarder le Hajj sans excuse alors qu'on en a les moyens est un péché selon la majorité.",
     "explication": "Hadith : 'Hâtez-vous d'accomplir le Hajj, car nul ne sait ce qui peut survenir.'",
-    "source": "Hadith Ahmad 2867 / Majorité",
+    "source": "Hadith Ahmad 2867, Ibn Mâja 2883 — chaîne contestée (hasan selon certains, da'îf selon d'autres) / Majorité",
     "ecole": "majorité"
   },
   {
@@ -1300,7 +1300,7 @@
     "categorie": "Hajj",
     "sous_theme": "Piliers du Hajj",
     "regle": "Les piliers du Hajj sont : l'ihram, la station à Arafat, le tawaf al-ifada, le sa'i entre Safa et Marwa.",
-    "explication": "Manquer un pilier sans pouvoir le compenser invalide le Hajj. Les autres écoles ajoutent ou retirent légèrement.",
+    "explication": "Selon la majorité (Shâfi'îtes/Hanbalites) : ihrâm, Arafat, tawâf, sa'î. Mâlikîtes ajoutent le rasage/raccourcir des cheveux. Hanafites ne comptent que deux piliers (ruknân) : Arafat et tawâf al-ifâda.",
     "source": "Hadith Bukhari 1654, Muslim 1218 / Majorité avec variantes",
     "ecole": "majorité"
   },
@@ -1381,7 +1381,7 @@
     "categorie": "Hajj",
     "sous_theme": "Tawaf et Sa'i",
     "regle": "Le tawaf d'adieu (tawaf al-wada') est obligatoire pour quiconque quitte La Mecque, sauf la femme menstruée.",
-    "explication": "C'est le dernier acte du Hajj avant le départ. L'omettre sans excuse oblige à un sacrifice expiatoire (dam) selon la majorité.",
+    "explication": "C'est le dernier acte du Hajj avant le départ. L'omettre sans excuse oblige à un sacrifice expiatoire (dam) selon la majorité. Les Mâlikîtes le considèrent comme sunnah (recommandé), pas obligatoire.",
     "source": "Hadith Bukhari 1755 / Majorité",
     "ecole": "majorité"
   },
@@ -1416,10 +1416,10 @@
     "jour": 158,
     "categorie": "Adab quotidien",
     "sous_theme": "Manger et boire",
-    "regle": "Manger avec la main droite est obligatoire selon plusieurs savants, sunnah confirmée selon d'autres.",
+    "regle": "Manger avec la main droite est sunnah mu'akkadah (fortement recommandée) selon la majorité. Ibn Hazm et certains contemporains le jugent obligatoire.",
     "explication": "Hadith : 'Que personne d'entre vous ne mange ni ne boive avec la main gauche, car le diable mange et boit avec la main gauche.'",
     "source": "Hadith Muslim 2020",
-    "ecole": "consensus"
+    "ecole": "majorité"
   },
   {
     "jour": 159,
@@ -1480,7 +1480,7 @@
     "categorie": "Adab quotidien",
     "sous_theme": "Parole",
     "regle": "La médisance (ghîba) est strictement interdite : parler de quelqu'un en son absence d'une chose qu'il n'aimerait pas entendre.",
-    "explication": "Coran : 'L'un d'entre vous aimerait-il manger la chair de son frère mort ?' La médisance est plus grave que la fornication selon plusieurs hadiths.",
+    "explication": "Coran : 'L'un d'entre vous aimerait-il manger la chair de son frère mort ?' Certains hadiths la qualifient comme particulièrement grave (rapporté par al-Bayhaqî, Shu'ab al-Îmân — chaîne contestée).",
     "source": "Coran 49:12 / Hadith Muslim 2589",
     "ecole": "consensus"
   },
@@ -1544,7 +1544,7 @@
     "sous_theme": "Sommeil",
     "regle": "La sieste de la mi-journée (qaylûla) est sunnah recommandée et profite à la prière de la nuit (qiyâm).",
     "explication": "Hadith : 'Faites la qaylûla, car les diables ne font pas la sieste.'",
-    "source": "Hadith Tabarani / Tradition prophétique bien établie",
+    "source": "Hadith Tabarânî (Al-Mu'jam al-Awsat) — classé hasan li-ghayrihi par Al-Albâni (Sahîh al-Jâmi' 4307). Pratique sunna recommandée.",
     "ecole": "consensus"
   },
   {
@@ -1570,7 +1570,7 @@
     "categorie": "Adab quotidien",
     "sous_theme": "Voyage",
     "regle": "Voyager seul est déconseillé. Mieux vaut au minimum à deux, idéalement à trois ou plus.",
-    "explication": "Hadith : 'Un seul est un démon, deux sont deux démons, trois forment un groupe.' Pour la femme, le mahram est exigé pour les voyages longs selon la majorité.",
+    "explication": "Hadith : 'Un cavalier seul est un cavalier de Shayṭân, deux cavaliers sont deux cavaliers de Shayṭân, trois forment un groupe.' Sens : voyager seul expose au danger. Pour la femme, le mahram est exigé pour les voyages longs selon la majorité.",
     "source": "Hadith Abu Dawud 2607 — sahih",
     "ecole": "majorité"
   },
@@ -1597,7 +1597,7 @@
     "categorie": "Adab quotidien",
     "sous_theme": "Vêtements",
     "regle": "L'isbâl (porter son vêtement en dessous des chevilles) est interdit pour l'homme s'il s'agit d'ostentation, fortement déconseillé sinon.",
-    "explication": "Hadith : 'Ce qui est en dessous des chevilles, du izâr (pagne), est dans le Feu.' Pour la femme, c'est au contraire recommandé pour couvrir.",
+    "explication": "Hadith : 'Ce qui est en dessous des chevilles, du izâr (pagne), est dans le Feu.' Al-Nawawî et la majorité shâfi'îte : l'isbâl sans arrogance est makrûh (déconseillé), pas harâm. Hanbalites et certains hanafites : harâm dans tous les cas. Pour la femme, c'est au contraire recommandé pour couvrir.",
     "source": "Hadith Bukhari 5787 / Consensus avec nuances",
     "ecole": "consensus"
   },
