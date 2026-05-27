@@ -14615,7 +14615,8 @@ function _aidTakeoverSanctuaire(evt) {
   wrap.innerHTML = hdr + cnt;
   sanct.appendChild(wrap);
 
-  // Hide nav bar + topbar (oeil, burger)
+  // Hide nav bar + topbar (oeil, burger) via body class
+  document.body.classList.add('aid-immersive-mode');
   var nav = document.getElementById('nav-bar-v2');
   if (nav) nav.classList.add('hidden-immersion');
   var topbar = document.getElementById('topbar-v2');
@@ -14638,6 +14639,7 @@ function _aidRestoreSanctuaire() {
     }
   });
   // Restore nav bar + topbar
+  document.body.classList.remove('aid-immersive-mode');
   var nav = document.getElementById('nav-bar-v2');
   if (nav) nav.classList.remove('hidden-immersion');
   var topbar = document.getElementById('topbar-v2');
@@ -14722,6 +14724,7 @@ function _aidInjectStyles() {
   var s = document.createElement('style');
   s.id = 'aid-styles';
   s.textContent =
+    'body.aid-immersive-mode #topbar-v2,body.aid-immersive-mode #nav-bar-v2{display:none !important}' +
     '.aid-subtitle{font-family:"Cormorant Garamond",serif;font-size:17px;font-weight:700;color:#C8A84A;margin:24px 0 12px;letter-spacing:.5px}' +
     '.aid-question{font-family:"Cormorant Garamond",serif;font-size:15px;color:rgba(240,234,214,.8);line-height:1.7;margin-bottom:10px;padding-left:8px}' +
     '.aid-story{margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid rgba(200,168,74,.1)}' +
