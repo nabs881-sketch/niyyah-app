@@ -14070,7 +14070,6 @@ function triggerSpontaneousUI() {
   if (checkWeeklyBilan()) { window._spontaneousUIShown = true; return; }
   if (checkRegardeAlert()) { window._spontaneousUIShown = true; return; }
   checkHijriBanner();
-  _aidBoot();
 }
 function checkRegardeAlert() {
   var last = localStorage.getItem('niyyah_regarde_last_alert');
@@ -14267,6 +14266,7 @@ function v2Init() {
   } catch(e) {}
   v2UpdateOrbState();
   triggerSpontaneousUI();
+  _aidBoot();
   checkEvolutionRevenant();
   checkEvolutionRoutine();
 }
@@ -14698,15 +14698,29 @@ function _aidInjectStyles() {
 
 // ── Boot module Aïd ──
 function _aidBoot() {
+  console.log('[Aid] _aidBoot called, onboard:', _onboardDone, 'data:', !!window._AID_DATA);
   if (!_onboardDone) return;
   _aidInjectStyles();
+  if (!window._AID_DATA) {
+    // Data not yet loaded — retry once after short delay
+    setTimeout(function() {
+      console.log('[Aid] retry, data:', !!window._AID_DATA);
+      if (window._AID_DATA) _aidBootInner();
+    }, 1500);
+    return;
+  }
+  _aidBootInner();
+}
+function _aidBootInner() {
   getCurrentHijri().then(function(hijri) {
+    console.log('[Aid] hijri:', JSON.stringify(hijri));
     var evt = _aidDetectEvent(hijri);
-    if (!evt) return;
+    if (!evt) { console.log('[Aid] no active event'); return; }
     window._AID_ACTIVE = evt;
+    console.log('[Aid] active:', evt.key, 'day:', evt.dayNum);
     _aidShowOverlay(evt);
     setTimeout(function() { _aidShowBanner(evt); }, 500);
-  });
+  }).catch(function(e) { console.warn('[Aid] hijri error:', e); });
 }
 
 // Load Bab an-Nafs external content
