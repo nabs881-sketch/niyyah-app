@@ -14884,68 +14884,84 @@ function _aidVoeuxGenerate() {
   canvas.width = W; canvas.height = H;
   var ctx = canvas.getContext('2d');
 
-  // Background gradient
-  var grad = ctx.createLinearGradient(0, 0, 0, H);
-  grad.addColorStop(0, '#0a0a0a');
-  grad.addColorStop(1, '#1a1410');
-  ctx.fillStyle = grad;
-  ctx.fillRect(0, 0, W, H);
+  // Load background image first
+  var bg = new Image();
+  bg.onload = function() {
+    ctx.drawImage(bg, 0, 0, W, H);
+    _aidVoeuxDrawText(ctx, d, W, H);
+    _aidVoeuxExport(canvas);
+  };
+  bg.onerror = function() {
+    // Fallback: dark gradient if image fails
+    var grad = ctx.createLinearGradient(0, 0, 0, H);
+    grad.addColorStop(0, '#0a0a0a'); grad.addColorStop(1, '#1a1410');
+    ctx.fillStyle = grad; ctx.fillRect(0, 0, W, H);
+    _aidVoeuxDrawText(ctx, d, W, H);
+    _aidVoeuxExport(canvas);
+  };
+  bg.src = 'assets/aid_card_bg.png';
+}
 
-  // Center halo
-  var halo = ctx.createRadialGradient(W/2, H*0.35, 0, W/2, H*0.35, 500);
-  halo.addColorStop(0, 'rgba(200,168,74,0.06)');
-  halo.addColorStop(1, 'rgba(200,168,74,0)');
-  ctx.fillStyle = halo;
-  ctx.fillRect(0, 0, W, H);
-
-  // Arabic title
+function _aidVoeuxDrawText(ctx, d, W, H) {
   ctx.textAlign = 'center';
-  ctx.fillStyle = '#C8A84A';
-  ctx.font = '120px Amiri, Scheherazade New, serif';
-  ctx.fillText('\u0639\u064a\u062f \u0645\u0628\u0627\u0631\u0643', W/2, 340);
 
-  // Separator
-  ctx.font = '40px serif';
-  ctx.fillStyle = 'rgba(200,168,74,0.3)';
-  ctx.fillText('\u2726', W/2, 440);
-
-  // Message — word-wrap
+  // Arabic title — top of halo zone
   ctx.fillStyle = '#E8D9A8';
-  ctx.font = '46px Cormorant Garamond, Georgia, serif';
-  var lines = [];
+  ctx.font = '80px Amiri, Scheherazade New, serif';
+  ctx.fillText('\u0639\u064a\u062f \u0645\u0628\u0627\u0631\u0643', W/2, 560);
+
+  // Message — adaptive font size, centered in halo
+  var msgLines = [];
+  var fontSize = 52;
+  ctx.font = fontSize + 'px Cormorant Garamond, Georgia, serif';
+  var maxW = W - 200;
   d.msg.split('\n').forEach(function(para) {
-    if (para.trim() === '') { lines.push(''); return; }
+    if (para.trim() === '') { msgLines.push(''); return; }
     var words = para.split(' ');
     var line = '';
     words.forEach(function(w) {
       var test = line ? line + ' ' + w : w;
-      if (ctx.measureText(test).width > W - 160) { lines.push(line); line = w; }
+      if (ctx.measureText(test).width > maxW) { msgLines.push(line); line = w; }
       else line = test;
     });
-    if (line) lines.push(line);
+    if (line) msgLines.push(line);
   });
-  var lineH = 68;
-  var startY = 520;
-  lines.forEach(function(l, i) { ctx.fillText(l, W/2, startY + i * lineH); });
 
-  // Signature
-  if (d.sig) {
-    ctx.fillStyle = 'rgba(200,168,74,0.5)';
-    ctx.font = '38px Cormorant Garamond, Georgia, serif';
-    ctx.fillText('\u2014 ' + d.sig, W/2, startY + lines.length * lineH + 50);
+  // Shrink font if too many lines
+  if (msgLines.length > 12) { fontSize = 40; }
+  else if (msgLines.length > 8) { fontSize = 44; }
+  var lineH = Math.round(fontSize * 1.45);
+  ctx.font = fontSize + 'px Cormorant Garamond, Georgia, serif';
+
+  // Re-wrap with final font size
+  if (fontSize !== 52) {
+    msgLines = [];
+    ctx.font = fontSize + 'px Cormorant Garamond, Georgia, serif';
+    d.msg.split('\n').forEach(function(para) {
+      if (para.trim() === '') { msgLines.push(''); return; }
+      var words = para.split(' ');
+      var line = '';
+      words.forEach(function(w) {
+        var test = line ? line + ' ' + w : w;
+        if (ctx.measureText(test).width > maxW) { msgLines.push(line); line = w; }
+        else line = test;
+      });
+      if (line) msgLines.push(line);
+    });
   }
 
-  // Niyyah branding — logo
-  var _logo = new Image();
-  _logo.onload = function() {
-    var lh = 80, lw = lh * (_logo.naturalWidth / _logo.naturalHeight);
-    ctx.globalAlpha = 0.5;
-    ctx.drawImage(_logo, (W - lw) / 2, H - 120, lw, lh);
-    ctx.globalAlpha = 1;
-    _aidVoeuxExport(canvas);
-  };
-  _logo.onerror = function() { _aidVoeuxExport(canvas); };
-  _logo.src = 'logo2.webp';
+  var totalTextH = msgLines.length * lineH;
+  var startY = 660;
+  ctx.fillStyle = '#E8D9A8';
+  ctx.font = fontSize + 'px Cormorant Garamond, Georgia, serif';
+  msgLines.forEach(function(l, i) { ctx.fillText(l, W/2, startY + i * lineH); });
+
+  // Signature — italic, bottom of halo
+  if (d.sig) {
+    ctx.fillStyle = 'rgba(232,217,168,0.6)';
+    ctx.font = 'italic 36px Cormorant Garamond, Georgia, serif';
+    ctx.fillText('\u2014 ' + d.sig, W/2, startY + totalTextH + 50);
+  }
 }
 
 function _aidVoeuxExport(canvas) {
