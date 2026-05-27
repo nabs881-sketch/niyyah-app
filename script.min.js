@@ -14782,9 +14782,10 @@ function _aidBootInner() {
     }
     window._AID_ACTIVE = evt;
     console.log('[Aid] active:', evt.key, 'day:', evt.dayNum);
-    // Sanctuaire stays hidden — Aid takes over
+    // Takeover first (hides children via display:none), then reveal container
+    _aidTakeoverSanctuaire(evt);
+    _aidRevealSanctuaire();
     _aidShowOverlay(evt);
-    setTimeout(function() { _aidTakeoverSanctuaire(evt); }, 500);
   }).catch(function(e) { console.warn('[Aid] hijri error:', e); _aidRevealSanctuaire(); });
 }
 
