@@ -14840,7 +14840,7 @@ function _aidOpenVoeux() {
     + '<select id="aid-voeux-style" onchange="_aidVoeuxPreview()" style="width:100%;box-sizing:border-box;padding:10px 14px;background:#1a1610;border:1px solid rgba(200,168,74,0.2);border-radius:12px;color:#E5DCC8;font-size:14px;font-family:Inter,sans-serif;outline:none;">' + opts + '</select>'
     + '</div>'
     // Preview
-    + '<div id="aid-voeux-preview" style="background:linear-gradient(to bottom,#0a0a0a,#1a1410);border:1px solid rgba(200,168,74,0.15);border-radius:16px;padding:28px 20px;text-align:center;margin-bottom:16px;min-height:200px;"></div>'
+    + '<div id="aid-voeux-preview" style="position:relative;border-radius:16px;overflow:hidden;margin-bottom:16px;aspect-ratio:9/16;background:#0a0a0a;"><img src="assets/aid_card_bg.png" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"><div id="aid-voeux-preview-text" style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px 16px;text-align:center;"></div></div>'
     // Actions
     + '<div style="display:flex;gap:10px;">'
     + '<button onclick="_aidVoeuxGenerate()" style="flex:1;padding:14px;border-radius:14px;border:none;background:linear-gradient(135deg,#c8a84b,#e8cc6a);color:#1a0f00;font-size:14px;font-weight:700;font-family:\'Cormorant Garamond\',serif;cursor:pointer;">G\u00e9n\u00e9rer la carte</button>'
@@ -14867,13 +14867,12 @@ function _aidVoeuxGetMsg() {
 }
 
 function _aidVoeuxPreview() {
-  var el = document.getElementById('aid-voeux-preview');
+  var el = document.getElementById('aid-voeux-preview-text');
   if (!el) return;
   var d = _aidVoeuxGetMsg();
-  var html = '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:32px;color:#C8A84A;margin-bottom:12px;">\u0639\u064a\u062f \u0645\u0628\u0627\u0631\u0643</div>';
-  html += '<div style="color:rgba(200,168,74,0.3);margin-bottom:14px;">\u2726</div>';
-  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;color:#E8D9A8;line-height:1.8;white-space:pre-line;">' + d.msg + '</div>';
-  if (d.sig) html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;color:rgba(200,168,74,0.5);margin-top:16px;">\u2014 ' + d.sig + '</div>';
+  var html = '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:24px;color:#E8D9A8;margin-bottom:8px;">\u0639\u064a\u062f \u0645\u0628\u0627\u0631\u0643</div>';
+  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;color:#E8D9A8;line-height:1.7;white-space:pre-line;max-width:90%;">' + d.msg + '</div>';
+  if (d.sig) html += '<div style="font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:11px;color:rgba(232,217,168,0.6);margin-top:10px;">\u2014 ' + d.sig + '</div>';
   el.innerHTML = html;
 }
 
