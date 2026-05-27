@@ -1126,5 +1126,965 @@
     "id_origine": 256,
     "fr": "Il sait depuis avant ta naissance ce que tu feras demain. Et Il attend.\n\nAs-Sabūr — Le Patient",
     "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "Dans le Paradis, il y a 'des jardins sous lesquels coulent des ruisseaux'. Tu connais cette phrase. Mais l'as-tu vraiment vue ? Allâh l'a répétée 35 fois dans le Coran. Tu rates quelque chose. — Coran 2:25",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "Le Paradis a quatre fleuves : un d'eau, un de lait, un de vin pur, un de miel pur. La Terre a fait des guerres pour le pétrole. Le Paradis offre ses rivières gratuitement. — Coran 47:15",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "Au Paradis, 'aucune fatigue ne les y touchera, et nul ne les en fera sortir'. Pas d'épuisement. Pas d'expulsion. Deux choses que tu redoutes ici, abolies. — Coran 15:48",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "Allâh dit aux habitants du Paradis : 'Mangez et buvez en toute paix, pour ce que vous avez avancé dans les jours passés.' Tout ce que tu fais maintenant t'est ré-offert là-bas. Rien ne se perd. — Coran 69:24",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "Au Paradis, 'ils auront ce qu'ils désirent — et Nous en avons davantage'. Imagine ce qui dépasse ton imagination. C'est cela, le 'davantage'. — Coran 50:35",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "Là-bas, 'aucune parole vaine, aucune mauvaise parole'. Pas de critique. Pas de bruit. Pas de notification. Le silence du cœur retrouvé. — Coran 78:35",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "Au Paradis, 'des sources jaillissantes'. Pas de robinet. Pas de facture. L'eau gicle comme tu respires. — Coran 88:12",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "Le Paradis est appelé 'Dâr as-salâm' — la Demeure de la Paix. Tu cherches la paix dans des retraites, des thérapies, des voyages. Une seule demeure la garantit pour toujours. — Coran 10:25",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "Au Paradis, 'rien de pénible ne nous y atteindra'. Imagine : pas un mal de tête. Pas une rancune. Pas une dette. La vie sans poids. — Coran 35:35",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "Allâh fait sortir de toi 'la rancune' avant de t'ouvrir le Paradis. Tu y entreras nettoyé. Les choses qui te rongent aujourd'hui n'auront plus de place là-bas. — Coran 7:43",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "Les habitants du Paradis se diront : 'La louange à Allâh qui a éloigné de nous la tristesse.' Pas atténué — éloigné. Le verbe est radical. — Coran 35:34",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "Le Paradis est promis aux 'patients'. Pas aux parfaits. Pas aux brillants. Aux patients. Tu as patienté aujourd'hui. Allâh l'a vu. — Coran 16:96",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "Le degré le plus élevé du Paradis s'appelle al-Firdaws. Le Prophète ﷺ disait : 'Demandez al-Firdaws.' Ne demande pas le minimum. — Coran 23:11",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "Au Paradis, 'les visages seront radieux'. Le mot arabe 'nâdira' évoque la fraîcheur d'une fleur. Ton visage fatigué d'aujourd'hui sera la fleur de demain. — Coran 75:22",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "Le plus grand délice du Paradis n'est pas dans le Coran décrit en images. C'est : 'Ils regarderont leur Seigneur.' Tout le reste n'est que préparation à cette vue. — Coran 75:23",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "Allâh dira aux gens du Paradis : 'Êtes-vous satisfaits ?' Ils diront oui. Il dira : 'Je vous accorde Mon agrément suprême — et plus jamais Je ne Me fâcherai contre vous.' L'agrément ETERNEL. — Coran 9:72",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "Le Paradis est promis à ceux dont 'le côté se détache des couches' — ceux qui se lèvent la nuit pour prier. Tu te lèves pour ton réveil. Lève-toi parfois pour Lui aussi. — Coran 32:16",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "Au Paradis, les fruits seront 'à portée de main, à cueillir sans effort'. Aucun supermarché. Aucun panier. Aucune queue. La main qui s'étend, et c'est suffisant. — Coran 76:14",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "Les serviteurs du Paradis offrent une boisson 'à la saveur du gingembre, mêlée de Kâfûr'. Allâh n'a pas oublié les goûts. Tes papilles te suivront là-bas. — Coran 76:5 + 76:17",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "Au Paradis, 'on leur fera porter des bracelets d'argent'. Argent — pas or. Allâh choisit la sobriété même dans Sa générosité. Le luxe vrai n'a pas besoin de tape-à-l'œil. — Coran 76:21",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "Au Paradis, 'leur récompense est l'agrément de leur Seigneur'. Pas les jardins. Pas les fleuves. L'agrément. Allâh content de toi — c'est le sommet. — Coran 98:8",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "Le Paradis a 'des ombres étendues'. Tu cherches l'ombre l'été en marchant. Là-bas, elle te suit partout sans que tu la demandes. — Coran 56:30",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "Au Paradis, 'pas de chaleur de soleil ni de froid glacial'. Une seule température, parfaite. Ton corps fatigué cherche ça toute sa vie. — Coran 76:13",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "Allâh dit du Paradis : 'Personne ne sait ce qui leur est caché comme réjouissance des yeux.' Même le Coran refuse de décrire la totalité. C'est trop pour des mots. — Coran 32:17",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "L'âme rassurée entendra : 'Retourne vers ton Seigneur, satisfaite et agréée. Entre parmi Mes serviteurs. Entre dans Mon Paradis.' Tu portes en toi celle qui entendra ces mots. — Coran 89:27-30",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "Le Paradis est promis à ceux qui dépensent 'dans l'aisance et dans l'adversité'. Pas seulement quand tu as. Quand tu n'as pas non plus. Le don au pire moment est le plus aimé d'Allâh. — Coran 3:134",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "Au Paradis, les couches seront 'aux doublures de brocart'. Allâh prend soin du détail. Même la doublure — pas seulement le dessus. L'invisible compte autant. — Coran 55:54",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Les habitants du Paradis se salueront mutuellement : Salâm.' Pas 'bonjour'. Pas 'comment ça va'. Paix. La parole première et dernière sera Salâm. — Coran 14:23",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "Sourate al-Kawthar — la plus courte du Coran : 'Nous t'avons accordé al-Kawthar (l'abondance). Prie ton Seigneur et offre le sacrifice. Celui qui te déteste sera sans postérité.' Trois versets. Tout y est. — Coran 108",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "Allâh dit : 'Pour ceux qui font le bien, il y a le meilleur — et un surplus.' Le surplus, c'est Le voir. Le bien que tu fais aujourd'hui te prépare un visage à Le contempler. — Coran 10:26",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'L'au-delà est meilleur et plus durable.' Trois mots résument tout : meilleur, ET, durable. Pas l'un sans l'autre. — Coran 87:17",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Cette vie d'ici-bas n'est qu'amusement et jeu. La Demeure de l'au-delà est la vraie vie. S'ils savaient !' Tu vis dans la salle d'attente. Pas dans la maison. — Coran 29:64",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Toute âme goûtera la mort.' Pas 'rencontrera'. Pas 'subira'. Goûtera. Comme un repas. C'est la dernière saveur que tu auras ici. — Coran 3:185",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'La vie présente n'est qu'une jouissance trompeuse.' Trompeuse — le mot est précis. Ce n'est pas elle qui te ment. C'est toi qui te trompes sur elle. — Coran 3:185",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Ce qui est auprès d'Allâh est meilleur et plus durable.' Tout ce qui te semble grand ici sera vu plus tard comme petit. Tout ce qui semblait sans importance comptera. — Coran 28:60",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Ne laissez pas la vie présente vous tromper, et que le grand trompeur ne vous trompe pas à propos d'Allâh.' Deux mensonges à éviter chaque jour : sur la vie, sur Allâh. — Coran 35:5",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'On a enjolivé aux gens l'amour des choses désirées : femmes, enfants, trésors d'or et d'argent, chevaux, bétail, champs.' Allâh sait ce que tu désires. Il ne le condamne pas. Il rappelle juste que c'est passager. — Coran 3:14",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'La vie présente est comparable à une eau que Nous faisons descendre du ciel. Elle se mélange aux plantes... puis tout devient des débris.' Toute floraison se termine. La tienne aussi. — Coran 10:24",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'La vie présente n'est que jeu, amusement, vaine parure, course à l'orgueil entre vous, et rivalité dans l'acquisition des richesses et des enfants.' Allâh décrit Instagram avant qu'Instagram existe. — Coran 57:20",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Vous, vous préférez la vie d'ici-bas, alors que l'au-delà est meilleur et plus durable.' Le verbe 'préférer' est précis. Tu as choisi. Tu peux re-choisir. — Coran 87:16-17",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'La rivalité dans l'acquisition vous distrait — jusqu'à ce que vous visitiez les tombes.' Pas 'jusqu'à votre mort'. Jusqu'à votre visite des tombes. Tu y vas comment, la prochaine fois ? — Coran 102:1-2",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "Allâh a juré : 'Par le temps qui s'écoule, l'homme est en perdition — sauf...' Le 'sauf' tient en quatre conditions. Foi, bonnes œuvres, vérité, patience. Pas plus. — Coran 103",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Combien de générations Nous avons fait périr avant eux !' Tu marches sur des cimetières que tu ne vois pas. Des millions ont cru leur époque éternelle. — Coran 19:74",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Le jour où vous le verrez, la femme qui allaite oubliera son nourrisson, la femme enceinte perdra sa charge.' Médite le choc. C'est Allâh qui décrit la fin. — Coran 22:2",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Chaque âme aura, ce jour-là, ce qui suffira à l'occuper.' Tu n'auras plus le temps des autres. Tu n'auras le temps que de ton compte. — Coran 80:37",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Il viendra à Allâh avec un cœur sain.' Pas une fortune. Pas une réputation. Un cœur sain. La seule chose qui passera la frontière. — Coran 26:89",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Ils ont oublié ce qu'on leur avait rappelé, et Nous leur avons ouvert les portes de toutes choses. Puis, alors qu'ils se réjouissaient de ce qui leur avait été donné, Nous les avons saisis brusquement.' L'aisance peut être un piège. — Coran 6:44",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Comparée à l'au-delà, la jouissance de la vie présente est bien peu de chose.' Le mot arabe 'qalîl' veut dire : un rien. Une miette. — Coran 9:38",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Les biens et les enfants sont la parure de la vie présente. Mais les bonnes œuvres durables ont, auprès de ton Seigneur, meilleure récompense.' Pas méprisés — relativisés. — Coran 18:46",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Le jour où l'homme verra ce que ses deux mains ont avancé, et où le mécréant dira : Plût à Allâh que je sois poussière !' La poussière deviendra un rêve, pour celui qui a tout misé sur l'ici-bas. — Coran 78:40",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Ne tends pas tes yeux vers ce dont Nous avons donné jouissance à certains. C'est l'éclat de la vie d'ici-bas — pour les éprouver.' Ce qui éclate aux yeux peut être une épreuve, pas une récompense. — Coran 20:131",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Toute âme goûtera la mort. C'est le Jour de la Résurrection que vous recevrez votre rétribution complète.' La vie ne paye qu'un acompte. Le solde se règle après. — Coran 3:185",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Toute chose périra, sauf Sa face.' Tout. Sans exception. Sauf une réalité. Le reste passe — y compris ton visage dans le miroir. — Coran 28:88",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Tout ce qui est sur la terre disparaîtra. Seul subsistera le Visage de ton Seigneur, plein de Majesté et de Magnificence.' Médite : 'tout'. C'est total. — Coran 55:26-27",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Sois content de ce qu'Allâh t'a accordé.' Pas heureux. Pas exubérant. Content. La paix d'esprit pèse plus que la joie qui passe. — Coran 28:77",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Ils diront : Nous n'avons demeuré que peu de temps.' Quand tu seras à la fin, toute ta vie te semblera un week-end. Médite cette compression à venir. — Coran 79:46",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Vous riez peu, vous devriez pleurer beaucoup.' Pas un appel à la tristesse. Un rappel de la disproportion. Tu prends légèrement ce qui est grave. — Coran 9:82",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Le jour où l'on soufflera dans la trompe, tout ce qui est dans les cieux et la terre sera bouleversé — sauf qui Allâh voudra.' Le 'sauf' est ta porte de sortie. Cherche-la. — Coran 27:87",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'À Allâh appartient ce qui est dans les cieux et la terre. C'est à Lui que toute affaire est ramenée.' Toute affaire. Y compris celle qui t'obsède en ce moment. — Coran 3:109",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Et vous trouverez auprès d'Allâh ce que vous avez avancé de bien.' Avancé — comme un acompte. Tes œuvres ne disparaissent pas — elles t'attendent. — Coran 2:110",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Allâh recueille les âmes au moment de leur mort, et celles qui ne meurent pas — durant leur sommeil.' Tu mourras une grande fois. Tu meurs chaque nuit en petit. — Coran 39:42",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'L'agonie de la mort apporte la vérité.' Au dernier souffle, plus de doute possible. Tu verras ce qui était caché. Ne le découvre pas trop tard. — Coran 50:19",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Pourquoi donc, quand l'âme remonte à la gorge, et qu'à ce moment-là vous regardez, et que Nous sommes plus proche de lui que vous, sans que vous ne voyiez ?' Allâh est plus près de toi à ta mort que ceux qui te tiennent la main. — Coran 56:83-85",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Lorsque l'âme arrive au gosier, et qu'on dit : Qui est le guérisseur ? Le mourant est certain que c'est la séparation.' Le moment exact où tu sauras. — Coran 75:26-28",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Toute âme goûtera la mort. Et c'est seulement au Jour de la Résurrection que vous recevrez votre entière rétribution.' Entre les deux, il y a le barzakh. L'attente avec ce que tu as semé. — Coran 3:185",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Derrière eux, il y a une barrière jusqu'au jour où ils seront ressuscités.' Cette barrière s'appelle barzakh. Tu y attendras. Personne ne te visite — sauf tes œuvres. — Coran 23:100",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Ô âme apaisée ! Retourne vers ton Seigneur, satisfaite et agréée. Entre parmi Mes serviteurs. Entre dans Mon Paradis.' Une âme. Cinq versets. Trois conditions : apaisée, satisfaite, agréée. — Coran 89:27-30",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Le jour où l'on soufflera dans la Trompe, vous viendrez par groupes.' Pas seul. Pas en famille. Par groupes. Selon ce que tu as construit. — Coran 78:18",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Où que vous soyez, la mort vous atteindra, fussiez-vous dans des tours érigées.' Le confinement, les murs, les services médicaux — Allâh a prévenu. La mort traverse tout. — Coran 4:78",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Dis : Certes la mort que vous fuyez vous rencontrera. Puis vous serez ramenés à Celui qui connaît l'invisible et le visible.' Tu ne peux pas la déjouer. Tu peux la préparer. — Coran 62:8",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Nul ne sait dans quelle terre il mourra.' Pas dans quel pays. Pas dans quelle ville. Pas dans quel lit. Allâh garde le secret jusqu'au dernier moment. — Coran 31:34",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Quand vient leur terme, ils ne peuvent ni le retarder d'une heure, ni l'avancer.' Une heure. Pas un jour. Pas une minute. Une heure précise. — Coran 7:34",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Ils diront : Hélas pour nous ! Qui nous a ressuscités de notre couche ? Voici ce que le Tout-Miséricordieux avait promis !' Tes prochains mots, peut-être. Ressuscité après un sommeil qui te paraîtra un instant. — Coran 36:52",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Vous serez ramenés à Celui qui connaît l'invisible et le visible. Il vous informera de ce que vous faisiez.' Pas 'jugera'. Informera. Tu seras spectateur de toi-même. — Coran 9:94",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Vous serez répartis en trois groupes.' Les gens de la droite. Les gens de la gauche. Les rapprochés. Trois colonnes — pas plus. Dans laquelle es-tu en train de te placer ? — Coran 56:7-11",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Ne dites pas de ceux qui sont tués dans le sentier d'Allâh qu'ils sont morts. Ils sont vivants, mais vous n'en avez pas conscience.' La mort n'efface pas tout. Certains continuent dans une vie qu'on ne voit pas. — Coran 2:154",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Les habitants des tombes seront ressuscités.' Pas un avertissement. Un fait. Allâh parle au futur certain. — Coran 22:7",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'C'est Lui qui vous fait mourir la nuit, sachant ce que vous avez accompli le jour.' Chaque sommeil est une répétition. Demande-toi : si je ne me réveillais pas, qu'est-ce que j'aurais accompli aujourd'hui ? — Coran 6:60",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Le jour où chacun se présentera, ayant avec lui un conducteur et un témoin.' Personne ne meurt vraiment seul. Deux escortes invisibles. — Coran 50:21",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Tu étais insouciant de cela. Nous avons ôté ton voile, ton regard est perçant aujourd'hui.' La mort enlève les voiles. Tu vois enfin nettement ce que tu vois trouble maintenant. — Coran 50:22",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Allâh est plus miséricordieux envers vous que ne l'est une mère pour ses enfants.' Ton accueil après la mort n'est pas le tribunal froid que tu imagines. C'est l'embrassement d'une rahma infinie — pour qui Le cherchait. — Coran (sens général)",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Quiconque fait le poids d'un atome de bien le verra, et quiconque fait le poids d'un atome de mal le verra.' Pas un effort perdu. Pas une erreur effacée. Tout pèse — y compris un sourire sincère. — Coran 99:7-8",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Nous avons certes créé l'homme, et Nous savons ce que son âme lui suggère. Nous sommes plus proche de lui que sa veine jugulaire.' Avant même la mort, Allâh entend ce que tu ne dis pas. — Coran 50:16",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Il a créé la mort et la vie pour vous éprouver — lequel de vous est le meilleur en œuvres.' La mort N'est pas une punition. C'est le cadre de l'épreuve. Sans elle, pas d'enjeu. — Coran 67:2",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'En ce jour, l'homme dira : Où fuir ? Mais non ! Pas de refuge ! Vers ton Seigneur sera, ce jour-là, le lieu où l'on s'arrêtera.' Pas d'autre adresse. Que cela t'apaise ou te secoue. — Coran 75:10-12",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Vous êtes à Allâh, et c'est à Lui que vous retournerez.' La formule qu'on récite aux funérailles est aussi la réalité de chaque seconde. Tu n'es jamais qu'en transit. — Coran 2:156",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Toute chose disparaîtra, sauf Sa Face.' Y compris la mort elle-même. Un jour, la mort mourra. — Coran 28:88",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Quand ils sont retournés à leur Seigneur, à ceux qui ont fait le mal Il dira : N'avons-Nous pas prolongé votre vie pour vous permettre de réfléchir ?' Ta vie est une rallonge. Utilise-la pendant qu'elle dure. — Coran 35:37",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Le jour où l'homme s'enfuira de son frère, de sa mère, de son père, de sa compagne, de ses enfants. Chacun aura, ce jour-là, ce qui suffira à l'occuper.' Médite : ta mère. Ton enfant. Tu les fuiras. — Coran 80:34-37",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Dis : Ô Mes serviteurs qui ont commis des excès à leur propre détriment, ne désespérez pas de la miséricorde d'Allâh. Allâh pardonne tous les péchés.' Le verset qu'on lit aux mourants. Pour qu'ils partent en paix. Pour que tu vives en paix. — Coran 39:53",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Quand le soleil sera obscurci, quand les étoiles seront tombées, quand les montagnes seront mises en marche...' Toute la matière que tu prends pour stable cédera ce jour-là. Sauf une chose. — Coran 81:1-3",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Quand le ciel se rompra, quand les étoiles se disperseront, quand les mers seront confondues...' Allâh décrit avec précision la fin de Son propre univers. Il prévient. Il n'invente pas. — Coran 82:1-3",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Quand le ciel se déchirera et obéira à son Seigneur — et qu'il devra le faire — et quand la terre sera nivelée...' La terre va devenir plate au sens littéral. Aucune montagne. Aucune cachette. — Coran 84:1-3",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Quand la terre tremblera de son séisme, quand elle vomira ses fardeaux, et que l'homme dira : Qu'a-t-elle ?' La terre rendra ce qu'elle a porté. Y compris toi. Y compris tes œuvres. — Coran 99:1-3",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Ce jour-là, la terre racontera ses nouvelles, selon ce que ton Seigneur lui aura révélé.' La terre parlera. Elle dira ce que tu as fait sur elle. Tu marches sur ton future témoin. — Coran 99:4-5",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Quiconque aura fait le poids d'un atome de bien le verra. Quiconque aura fait le poids d'un atome de mal le verra.' Tout. Pas une exception. Tu reverras le sourire d'aujourd'hui. — Coran 99:7-8",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Le Fracas ! Qu'est-ce que le Fracas ? Et qui te dira ce qu'est le Fracas ?' Allâh répète la question trois fois pour que tu mesures. Le mot arabe 'al-Qâri'a' veut dire : ce qui frappe d'un coup. — Coran 101:1-3",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Le jour où les hommes seront comme des papillons éparpillés.' Médite l'image. Pas en groupes. Pas en familles. En papillons. Légers, perdus, dispersés. — Coran 101:4",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Les montagnes seront comme de la laine cardée.' Tu marches sur des massifs millénaires. Allâh les comparera à du coton soufflé. La permanence n'est qu'illusion. — Coran 101:5",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Celui dont la balance sera lourde aura une vie agréable. Celui dont la balance sera légère aura pour gîte un abîme.' Deux balances. Pas trois. Une réponse binaire. — Coran 101:6-9",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Quand la Trompe sera soufflée d'un seul souffle, quand la terre et les montagnes seront soulevées et écrasées d'un seul coup, ce jour-là, l'événement aura lieu.' Un souffle. Un coup. Tout est dans cette compression. — Coran 69:13-15",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Et le ciel se fendra. Il sera ce jour-là chancelant.' Le ciel toi-même tu n'oses pas le regarder fixement. Il chancelera. Que feront tes jambes ? — Coran 69:16",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Ce jour-là, vous serez présentés. Aucune de vos cachettes ne sera cachée.' Les choses que tu n'as dites à personne. Les secrets que tu portes. Exposés. Sans filtre. — Coran 69:18",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Celui dont on remettra le Livre dans la main droite dira : Tenez, lisez mon livre !' La fierté de la main droite. Le soulagement après l'attente. Vise cette main. — Coran 69:19",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'J'étais certain de rencontrer mon compte.' Phrase prononcée par celui qui reçoit son livre à droite. La certitude prépare. L'imprévu écrase. — Coran 69:20",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Quand la Résurrection aura lieu — Personne ne pourra démentir sa survenue. Elle abaisse, elle élève.' Le mot 'khâfidatun râfi'a' — elle abaisse les uns, elle élève les autres. Tu choisis le sens. — Coran 56:1-3",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Vous serez en trois groupes : les gens de la main droite — quels seront les gens de la main droite ? Les gens de la main gauche — quels seront les gens de la main gauche ? Et les premiers — qui seront les premiers !' Trois catégories. Une dernière chance pour basculer. — Coran 56:7-10",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Le jour où l'homme se rappellera ce pour quoi il s'est efforcé, et où la Fournaise sera mise à découvert pour qui la voit.' L'effort de toute une vie remonte en une seconde. Pour quoi as-tu travaillé ? — Coran 79:35-36",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Celui qui aura transgressé et préféré la vie présente — la Fournaise sera son refuge. Et celui qui aura craint la Présence de son Seigneur et préservé son âme de la passion — le Paradis sera son refuge.' Deux refuges. Une vie. — Coran 79:37-41",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Le jour où la Résurrection arrivera, les criminels jureront n'avoir demeuré qu'une heure. C'est ainsi qu'ils ont l'habitude de se détourner.' Toute leur vie réduite à une heure. La perception du temps s'écroule. — Coran 30:55",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Le jour où tu verras les croyants et les croyantes — leur lumière courant devant eux et à leur droite.' Ce jour-là, tu seras peut-être celui qui marche dans la lumière. Tes prières d'aujourd'hui sont des bougies pour ce moment. — Coran 57:12",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Et quand les âmes seront accouplées, et quand on demandera à la fillette enterrée vivante pour quel péché elle a été tuée.' Allâh prend la défense des plus vulnérables. La justice rétroactive est exacte. — Coran 81:7-9",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Quand les feuillets seront déployés.' Tes actes ont été notés. Pas par toi. Le déploiement n'aura besoin de personne. Tu seras face à toi. — Coran 81:10",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Alors chaque âme saura ce qu'elle a présenté.' Pas 'apprendra'. Saura. Avec certitude immédiate. Comme tu sais que tu respires maintenant. — Coran 81:14",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Le jour où la Trompe sera soufflée, vous viendrez par groupes ; le ciel s'ouvrira et deviendra des portes, les montagnes mises en marche deviendront un mirage.' Tout ce qui paraissait plein deviendra vide. — Coran 78:18-20",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Le jour où l'esprit et les anges se dresseront en rangs, nul ne parlera, sauf celui à qui le Tout-Miséricordieux aura permis et qui dira la vérité.' Silence total. Sauf ceux qui ont l'autorisation. La parole sera devenue rare. — Coran 78:38",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Voilà le Jour de la Vérité. Quiconque le veut, qu'il prenne un chemin de retour vers son Seigneur.' 'Quiconque le veut' — la porte est encore ouverte aujourd'hui. — Coran 78:39",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Nous vous avertissons d'un châtiment proche, le jour où l'homme verra ce que ses deux mains ont avancé, et le mécréant dira : Plût à moi d'être poussière !' Devenir poussière sera vu comme un bonheur. Tu as la chance d'être autre chose. — Coran 78:40",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Aujourd'hui, votre Seigneur est plus miséricordieux que vous ne le pensez. Demain, Sa justice sera plus précise que vous ne l'imaginez.' Le Coran annonce deux temps : la rahma maintenant, la précision ensuite. Sois sage. — Coran (sens des 7:156 + 99:7-8)",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
+  },
+  {
+    "source": "waqt_soir",
+    "plage_origine": "soir",
+    "fr": "'Dis : Ô Mes serviteurs qui ont commis des excès à leur propre détriment, ne désespérez pas de la miséricorde d'Allâh. Allâh pardonne TOUS les péchés. Il est, certes, le Pardonneur, le Miséricordieux.' Le Jugement est annoncé. La porte de la rahma est ouverte jusqu'à ton dernier souffle. — Coran 39:53",
+    "en": "",
+    "ar": "",
+    "categorie": "CONTEMPLATIF"
   }
 ]
