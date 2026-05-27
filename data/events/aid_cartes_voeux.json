@@ -1,0 +1,254 @@
+{
+  "module": "AID_CARTES_VOEUX",
+  "version": "1.0",
+  "date_production": "2026-05-27",
+  "description": "Cartes vœux Aïd Moubarak personnalisables. Templates avec {prenom} variable. Génération image côté client via Canvas API ou html2canvas.",
+  "concept": "Générateur de vœux Aïd dans la section Aïd. L'utilisateur tape le prénom du destinataire, choisit un template, génère une carte image, partage via API native.",
+  "templates_aid_al_adha": [
+    {
+      "id": "voeux_adha_01",
+      "style": "Spirituel - sacrifice",
+      "message": "Cher(e) {prenom},\n\nAïd Moubarak.\n\nQue Allâh accepte de toi ce qu'Il a accepté d'Ibrâhîm ﷺ : un cœur entier, une intention pure, et la paix qui suit l'épreuve.\n\nTaqabbala-llâhu minnâ wa minkum.",
+      "message_generique": "Aïd Moubarak.\n\nQue Allâh accepte de toi ce qu'Il a accepté d'Ibrâhîm ﷺ : un cœur entier, une intention pure, et la paix qui suit l'épreuve.\n\nTaqabbala-llâhu minnâ wa minkum."
+    },
+    {
+      "id": "voeux_adha_02",
+      "style": "Court et chaleureux",
+      "message": "{prenom},\n\nعيد مبارك\n\nQue Allâh te comble de Sa miséricorde en ce jour béni. Pour toi, ta famille, et tous ceux que tu aimes.",
+      "message_generique": "عيد مبارك\n\nQue Allâh te comble de Sa miséricorde en ce jour béni. Pour toi, ta famille, et tous ceux que tu aimes."
+    },
+    {
+      "id": "voeux_adha_03",
+      "style": "Poétique",
+      "message": "{prenom},\n\nLe soleil se lève sur le 10 Dhûl-Hijja.\nÀ Minâ, des millions prient.\nIci, je pense à toi.\n\nAïd Moubarak. Que ta journée soit dorée.",
+      "message_generique": "Le soleil se lève sur le 10 Dhûl-Hijja.\nÀ Minâ, des millions prient.\nIci, je pense à toi.\n\nAïd Moubarak. Que ta journée soit dorée."
+    },
+    {
+      "id": "voeux_adha_04",
+      "style": "Familial",
+      "message": "Cher(e) {prenom},\n\nQue Allâh bénisse toute ta famille en ce jour de l'Aïd al-Adha. Que vos liens soient solides comme ceux d'Ibrâhîm et Ismâ'îl ﷺ.\n\nTaqabbala-llâhu minnâ wa minkum.",
+      "message_generique": "Que Allâh bénisse toute ta famille en ce jour de l'Aïd al-Adha. Que vos liens soient solides comme ceux d'Ibrâhîm et Ismâ'îl ﷺ.\n\nTaqabbala-llâhu minnâ wa minkum."
+    },
+    {
+      "id": "voeux_adha_05",
+      "style": "Formel et respectueux",
+      "message": "Salam aleykoum cher(e) {prenom},\n\nÀ l'occasion de l'Aïd al-Adha, je te souhaite ainsi qu'à ta famille la plus belle des fêtes. Que Allâh agrée vos efforts et vos sacrifices.\n\nAïd Moubarak.",
+      "message_generique": "Salam aleykoum cher(e) À l'occasion de l'Aïd al-Adha, je te souhaite ainsi qu'à ta famille la plus belle des fêtes. Que Allâh agrée vos efforts et vos sacrifices.\n\nAïd Moubarak."
+    },
+    {
+      "id": "voeux_adha_06",
+      "style": "Pour quelqu'un de cher",
+      "message": "{prenom},\n\nEn ce jour de l'Aïd, mon cœur pense à toi avec gratitude. Que Allâh te rende ce que tu as donné, multiplié, et te garde dans Sa lumière.\n\nAïd Moubarak. Avec affection.",
+      "message_generique": "En ce jour de l'Aïd, mon cœur pense à toi avec gratitude. Que Allâh te rende ce que tu as donné, multiplié, et te garde dans Sa lumière.\n\nAïd Moubarak. Avec affection."
+    },
+    {
+      "id": "voeux_adha_07",
+      "style": "Court SMS",
+      "message": "Aïd Moubarak {prenom} ! Taqabbala-llâhu minnâ wa minkum. 🌙",
+      "message_generique": "Aïd Moubarak à toi et aux tiens ! Taqabbala-llâhu minnâ wa minkum. 🌙"
+    },
+    {
+      "id": "voeux_adha_08",
+      "style": "Pour les voisins/collègues",
+      "message": "{prenom},\n\nAïd Moubarak. Que ce jour de fête te trouve en bonne santé et en paix. Que ton année soit aussi belle que ce matin.\n\nAvec mes meilleurs vœux.",
+      "message_generique": "Aïd Moubarak. Que ce jour de fête te trouve en bonne santé et en paix. Que ton année soit aussi belle que ce matin.\n\nAvec mes meilleurs vœux."
+    },
+    {
+      "id": "voeux_adha_09",
+      "style": "Profond - sacrifice intérieur",
+      "message": "{prenom},\n\nIbrâhîm ﷺ n'a pas sacrifié son fils — il a sacrifié sa peur de Le perdre. Aujourd'hui, que Allâh allège ton cœur de tes propres peurs.\n\nAïd Moubarak.",
+      "message_generique": "Ibrâhîm ﷺ n'a pas sacrifié son fils — il a sacrifié sa peur de Le perdre. Aujourd'hui, que Allâh allège ton cœur de tes propres peurs.\n\nAïd Moubarak."
+    },
+    {
+      "id": "voeux_adha_10",
+      "style": "Pour quelqu'un qui traverse une épreuve",
+      "message": "Cher(e) {prenom},\n\nAïd Moubarak.\n\nQue Allâh, qui a remplacé le couteau d'Ibrâhîm par un bélier, remplace tes épreuves par Sa rahma. Tu n'es pas oublié.\n\nTaqabbala-llâhu minnâ wa minkum.",
+      "message_generique": "Aïd Moubarak.\n\nQue Allâh, qui a remplacé le couteau d'Ibrâhîm par un bélier, remplace tes épreuves par Sa rahma. Tu n'es pas oublié.\n\nTaqabbala-llâhu minnâ wa minkum."
+    }
+  ],
+  "templates_aid_al_fitr": [
+    {
+      "id": "voeux_fitr_01",
+      "style": "Spirituel - jeûne accepté",
+      "message": "Cher(e) {prenom},\n\nAïd Moubarak.\n\nQue Allâh accepte de toi ce Ramadan : tes jeûnes, tes Tarâwih, tes lectures, tes silences. Et qu'Il te fasse parvenir au prochain.\n\nTaqabbala-llâhu minnâ wa minkum.",
+      "message_generique": "Aïd Moubarak.\n\nQue Allâh accepte de toi ce Ramadan : tes jeûnes, tes Tarâwih, tes lectures, tes silences. Et qu'Il te fasse parvenir au prochain.\n\nTaqabbala-llâhu minnâ wa minkum."
+    },
+    {
+      "id": "voeux_fitr_02",
+      "style": "Court et chaleureux",
+      "message": "{prenom},\n\nعيد مبارك\n\nQue la barakah de Ramadan continue à éclairer toute ton année.",
+      "message_generique": "عيد مبارك\n\nQue la barakah de Ramadan continue à éclairer toute ton année."
+    },
+    {
+      "id": "voeux_fitr_03",
+      "style": "Poétique",
+      "message": "{prenom},\n\nTrente jours ont passé.\nLa lune renaît.\nNos cœurs aussi.\n\nAïd al-Fitr Moubarak.",
+      "message_generique": "Trente jours ont passé.\nLa lune renaît.\nNos cœurs aussi.\n\nAïd al-Fitr Moubarak."
+    },
+    {
+      "id": "voeux_fitr_04",
+      "style": "Familial",
+      "message": "Cher(e) {prenom},\n\nAïd Moubarak à toi et toute ta famille. Que Allâh préserve vos liens et accepte vos efforts de ce Ramadan béni.\n\nTaqabbala-llâhu minnâ wa minkum.",
+      "message_generique": "Aïd Moubarak à toi et aux tiens et toute ta famille. Que Allâh préserve vos liens et accepte vos efforts de ce Ramadan béni.\n\nTaqabbala-llâhu minnâ wa minkum."
+    },
+    {
+      "id": "voeux_fitr_05",
+      "style": "Formel",
+      "message": "Salam aleykoum cher(e) {prenom},\n\nÀ l'occasion de l'Aïd al-Fitr, je te souhaite à toi et aux tiens une fête remplie de joie, de paix et de barakah.\n\nAïd Moubarak.",
+      "message_generique": "Salam aleykoum cher(e) À l'occasion de l'Aïd al-Fitr, je te souhaite à toi et aux tiens une fête remplie de joie, de paix et de barakah.\n\nAïd Moubarak."
+    },
+    {
+      "id": "voeux_fitr_06",
+      "style": "Pour quelqu'un de cher",
+      "message": "{prenom},\n\nNous avons jeûné ensemble en cœur cette année. Aujourd'hui, je célèbre cette grâce avec toi. Aïd Moubarak.\n\nAvec affection.",
+      "message_generique": "Nous avons jeûné ensemble en cœur cette année. Aujourd'hui, je célèbre cette grâce avec toi. Aïd Moubarak.\n\nAvec affection."
+    },
+    {
+      "id": "voeux_fitr_07",
+      "style": "Court SMS",
+      "message": "Aïd Moubarak {prenom} ! Taqabbala-llâhu minnâ wa minkum. 🌙",
+      "message_generique": "Aïd Moubarak à toi et aux tiens ! Taqabbala-llâhu minnâ wa minkum. 🌙"
+    },
+    {
+      "id": "voeux_fitr_08",
+      "style": "Pour les voisins/collègues",
+      "message": "{prenom},\n\nAïd al-Fitr Moubarak. Que ce jour t'apporte joie et sérénité. Que ton année soit douce et bénie.\n\nAvec mes meilleurs vœux.",
+      "message_generique": "Aïd al-Fitr Moubarak. Que ce jour t'apporte joie et sérénité. Que ton année soit douce et bénie.\n\nAvec mes meilleurs vœux."
+    },
+    {
+      "id": "voeux_fitr_09",
+      "style": "Profond - transformation",
+      "message": "{prenom},\n\nTu n'es plus la même personne qu'il y a 30 jours. Garde un signe de ce Ramadan en toi toute l'année.\n\nAïd Moubarak.",
+      "message_generique": "Tu n'es plus la même personne qu'il y a 30 jours. Garde un signe de ce Ramadan en toi toute l'année.\n\nAïd Moubarak."
+    },
+    {
+      "id": "voeux_fitr_10",
+      "style": "Pour quelqu'un qui n'a pas pu jeûner",
+      "message": "Cher(e) {prenom},\n\nAïd Moubarak.\n\nQue ce jour soit pour toi aussi un nouveau départ. Allâh regarde l'intention, pas seulement les actes. Tu es aimé(e).\n\nTaqabbala-llâhu minnâ wa minkum.",
+      "message_generique": "Aïd Moubarak.\n\nQue ce jour soit pour toi aussi un nouveau départ. Allâh regarde l'intention, pas seulement les actes. Tu es aimé(e).\n\nTaqabbala-llâhu minnâ wa minkum."
+    }
+  ],
+  "specifications_design": {
+    "format_carte": {
+      "ratio": "9:16 (mobile portrait) — optimal pour partage WhatsApp/Instagram Stories",
+      "dimensions_px": "1080x1920 (haute résolution pour qualité)",
+      "background": "Dégradé sombre : #0a0a0a (haut) → #1a1410 (bas) avec halo or central subtil",
+      "couleur_principale": "#C8A84A (or Niyyah)",
+      "couleur_secondaire": "#8B7332 (or atténué)",
+      "couleur_texte_message": "#E8D9A8 (or clair pour lisibilité)"
+    },
+    "composition_visuelle": {
+      "haut": "Calligraphie arabe 'عيد مبارك' grande (~150px), police Amiri ou Scheherazade, couleur or",
+      "milieu_haut": "Petit séparateur ✦ ou étoile or",
+      "milieu": "Message personnalisé (texte), police Cormorant Garamond Light, taille variable selon longueur (40-60px)",
+      "milieu_bas": "Séparateur ondulé or",
+      "bas": "Petit logo Niyyah discret (taille ~80px) + 'niyyah.app' en très petit (opacity 0.5)"
+    },
+    "animations_optionnelles": {
+      "etoiles_fond": "Particules dorées scintillantes très légères en arrière-plan (optional, V2)",
+      "fade_in": "Apparition du message en fondu après chargement (V2)"
+    },
+    "polices_utilisees": {
+      "arabe": "Amiri ou Scheherazade New (déjà chargées dans l'app)",
+      "francais": "Cormorant Garamond (déjà chargée)",
+      "fallback": "Georgia, serif"
+    }
+  },
+  "specifications_techniques": {
+    "library_recommended": "html2canvas (génération côté client, pas besoin de serveur)",
+    "alternative": "Canvas API natif (plus de contrôle, plus de code)",
+    "flow_utilisateur": [
+      "1. Dans la section Aïd, clic sur bouton '✦ Envoyer Aïd Moubarak'",
+      "2. Modal s'ouvre : champ 'À qui ?' (prénom)",
+      "3. Liste déroulante : choix du template (les 10)",
+      "4. Aperçu en temps réel du message",
+      "5. Bouton 'Générer la carte' → html2canvas crée l'image",
+      "6. Affichage de la carte image générée",
+      "7. Boutons : 'Partager' (Web Share API) | 'Télécharger' | 'Recommencer'",
+      "8. Web Share API ouvre le sélecteur natif (WhatsApp, SMS, Email, Instagram, etc.)"
+    ],
+    "fallback_partage": "Si Web Share API non supportée (desktop), proposer téléchargement de l'image",
+    "code_pseudo": "function generateCard(prenom, templateId) {\n  const template = templates.find(t => t.id === templateId);\n  const message = template.message.replace('{prenom}', prenom);\n  // Render HTML dans div temporaire avec design\n  html2canvas(div).then(canvas => {\n    canvas.toBlob(blob => {\n      // Web Share API\n      if (navigator.share) {\n        navigator.share({\n          files: [new File([blob], 'aid-moubarak.png', {type: 'image/png'})],\n          title: 'Aïd Moubarak',\n          text: 'Aïd Moubarak'\n        });\n      } else {\n        // Fallback: download\n        downloadBlob(blob, 'aid-moubarak.png');\n      }\n    });\n  });\n}",
+    "comportement_champ_prenom": {
+      "champ_rempli": "Utiliser template.message (avec {prenom} remplacé)",
+      "champ_vide": "Utiliser template.message_generique (version générique)",
+      "signature_auto": "Toujours ajouter en bas: '— [prénom utilisateur from onboarding]' si existe"
+    }
+  },
+  "bouton_dans_section_aid": {
+    "position": "En haut de la section Aïd, juste sous les tabs (visible immédiatement)",
+    "texte": "✦ Envoyer un Aïd Moubarak",
+    "style": "Bordure or, fond transparent, hover : fond or léger",
+    "icone_optionnelle": "✦ ou 💌 ou enveloppe SVG",
+    "comportement": "Ouvre modal de génération"
+  },
+  "modal_specifications": {
+    "title": "Envoyer un Aïd Moubarak",
+    "champs": [
+      {
+        "id": "prenom_destinataire",
+        "label": "À qui ?",
+        "type": "text",
+        "placeholder": "Prénom (ex: Ahmed, Fatima)",
+        "max_length": 30,
+        "required": true
+      },
+      {
+        "id": "template_choice",
+        "label": "Style du message",
+        "type": "select",
+        "options": "Les 10 templates selon l'événement actuel (Adha ou Fitr)",
+        "default": "Premier template"
+      }
+    ],
+    "preview": "Aperçu du message en temps réel (avec {prenom} remplacé)",
+    "boutons": [
+      {
+        "id": "btn_generer",
+        "label": "Générer la carte",
+        "style": "Or plein, primaire"
+      },
+      {
+        "id": "btn_annuler",
+        "label": "Annuler",
+        "style": "Transparent, secondaire"
+      }
+    ]
+  },
+  "ecran_resultat": {
+    "affichage": "Carte image générée en grand (centrée, format mobile)",
+    "actions": [
+      {
+        "id": "btn_partager",
+        "label": "✦ Partager",
+        "style": "Or plein, primaire",
+        "action": "Web Share API"
+      },
+      {
+        "id": "btn_telecharger",
+        "label": "Télécharger",
+        "style": "Or bordure",
+        "action": "Download blob as PNG"
+      },
+      {
+        "id": "btn_recommencer",
+        "label": "Recommencer",
+        "style": "Transparent",
+        "action": "Retour au modal"
+      }
+    ]
+  },
+  "messages_systeme": {
+    "champ_vide": "Indique un prénom pour personnaliser ta carte",
+    "generation_en_cours": "Création de ta carte...",
+    "succes_partage": "Carte envoyée ✓",
+    "echec_partage": "Partage annulé. Tu peux télécharger l'image à la place."
+  },
+  "resume": {
+    "templates_total": 20,
+    "templates_adha": 10,
+    "templates_fitr": 10,
+    "elements_design": "Specs complètes pour design fidèle à l'esthétique Niyyah",
+    "specs_techniques": "html2canvas + Web Share API natif"
+  }
+}

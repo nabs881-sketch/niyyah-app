@@ -13178,9 +13178,13 @@ window.WAQT_BY_PRIERE = null;
    ───────────────────────────────────────────── */
 window._AID_DATA = null;
 window._AID_ACTIVE = null;
+window._AID_VOEUX = null;
 (function _loadAidData() {
   fetch('./data/events/aid_module_complet.json').then(function(r) { return r.ok ? r.json() : null; })
     .then(function(d) { if (d) window._AID_DATA = d; })
+    .catch(function() {});
+  fetch('./data/events/aid_cartes_voeux.json').then(function(r) { return r.ok ? r.json() : null; })
+    .then(function(d) { if (d) window._AID_VOEUX = d; })
     .catch(function() {});
 })();
 
@@ -14612,7 +14616,15 @@ function _aidTakeoverSanctuaire(evt) {
     cnt += '<div id="aid-tab-' + t.id + '" class="aid-tab-content" style="padding:20px;display:' + (i === 0 ? 'block' : 'none') + ';">' + t.html + '</div>';
   });
 
-  wrap.innerHTML = hdr + cnt;
+  // Bouton cartes voeux (Adha + Fitr only)
+  var voeuxBtn = '';
+  if (evt.key === 'AID_AL_ADHA' || evt.key === 'AID_AL_FITR') {
+    voeuxBtn = '<div style="text-align:center;padding:16px 20px 8px;">'
+      + '<button onclick="_aidOpenVoeux()" style="background:linear-gradient(135deg,rgba(200,168,74,0.15),rgba(200,168,74,0.05));border:1px solid rgba(200,168,74,0.3);border-radius:14px;padding:12px 24px;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:15px;cursor:pointer;letter-spacing:0.5px;">\u2726 Envoyer un A\u00efd Moubarak</button>'
+      + '</div>';
+  }
+
+  wrap.innerHTML = hdr + voeuxBtn + cnt;
   sanct.appendChild(wrap);
 
   // Hide nav bar + topbar (oeil, burger) via body class
@@ -14787,6 +14799,161 @@ function _aidBootInner() {
     _aidRevealSanctuaire();
     _aidShowOverlay(evt);
   }).catch(function(e) { console.warn('[Aid] hijri error:', e); _aidRevealSanctuaire(); });
+}
+
+/* ═══════════════════════════════════════════════════
+   CARTES VOEUX AÏD MOUBARAK
+   ═══════════════════════════════════════════════════ */
+function _aidOpenVoeux() {
+  var evt = window._AID_ACTIVE;
+  var voeux = window._AID_VOEUX;
+  if (!evt || !voeux) { showToast('Chargement en cours...'); return; }
+  var templates = evt.key === 'AID_AL_FITR' ? voeux.templates_aid_al_fitr : voeux.templates_aid_al_adha;
+  if (!templates || !templates.length) return;
+  var userPrenom = safeGetItem('niyyah_prenom') || '';
+
+  var ex = document.getElementById('aid-voeux-modal');
+  if (ex) ex.remove();
+
+  var modal = document.createElement('div');
+  modal.id = 'aid-voeux-modal';
+  modal.style.cssText = 'position:fixed;inset:0;z-index:9999;background:#0d0a04;overflow-y:auto;-webkit-overflow-scrolling:touch;';
+
+  // Template options
+  var opts = '';
+  templates.forEach(function(t, i) { opts += '<option value="' + i + '">' + t.style + '</option>'; });
+
+  modal.innerHTML =
+    '<div style="max-width:420px;margin:0 auto;padding:20px;">'
+    + '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;color:#C8A84A;">\u2726 Carte de v\u0153ux</div>'
+    + '<button onclick="document.getElementById(\'aid-voeux-modal\').remove()" style="background:none;border:none;color:rgba(255,255,255,0.4);font-size:20px;cursor:pointer;padding:8px;">\u2715</button>'
+    + '</div>'
+    // Champ destinataire
+    + '<div style="margin-bottom:14px;">'
+    + '<label style="font-family:Inter,sans-serif;font-size:11px;color:rgba(200,168,74,0.5);letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:6px;">\u00c0 qui ?</label>'
+    + '<input id="aid-voeux-prenom" type="text" maxlength="30" placeholder="Laisse vide pour message g\u00e9n\u00e9ral" style="width:100%;box-sizing:border-box;padding:10px 14px;background:rgba(200,168,74,0.04);border:1px solid rgba(200,168,74,0.2);border-radius:12px;color:#E5DCC8;font-size:14px;font-family:Inter,sans-serif;outline:none;" oninput="_aidVoeuxPreview()">'
+    + '</div>'
+    // Choix template
+    + '<div style="margin-bottom:14px;">'
+    + '<label style="font-family:Inter,sans-serif;font-size:11px;color:rgba(200,168,74,0.5);letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:6px;">Style</label>'
+    + '<select id="aid-voeux-style" onchange="_aidVoeuxPreview()" style="width:100%;box-sizing:border-box;padding:10px 14px;background:#1a1610;border:1px solid rgba(200,168,74,0.2);border-radius:12px;color:#E5DCC8;font-size:14px;font-family:Inter,sans-serif;outline:none;">' + opts + '</select>'
+    + '</div>'
+    // Preview
+    + '<div id="aid-voeux-preview" style="background:linear-gradient(to bottom,#0a0a0a,#1a1410);border:1px solid rgba(200,168,74,0.15);border-radius:16px;padding:28px 20px;text-align:center;margin-bottom:16px;min-height:200px;"></div>'
+    // Actions
+    + '<div style="display:flex;gap:10px;">'
+    + '<button onclick="_aidVoeuxGenerate()" style="flex:1;padding:14px;border-radius:14px;border:none;background:linear-gradient(135deg,#c8a84b,#e8cc6a);color:#1a0f00;font-size:14px;font-weight:700;font-family:\'Cormorant Garamond\',serif;cursor:pointer;">G\u00e9n\u00e9rer la carte</button>'
+    + '</div>'
+    + '</div>';
+
+  document.body.appendChild(modal);
+  _aidVoeuxPreview();
+}
+
+function _aidVoeuxGetMsg() {
+  var evt = window._AID_ACTIVE;
+  var voeux = window._AID_VOEUX;
+  if (!evt || !voeux) return { msg: '', sig: '' };
+  var templates = evt.key === 'AID_AL_FITR' ? voeux.templates_aid_al_fitr : voeux.templates_aid_al_adha;
+  var sel = document.getElementById('aid-voeux-style');
+  var idx = sel ? parseInt(sel.value, 10) : 0;
+  var t = templates[idx] || templates[0];
+  var prenom = (document.getElementById('aid-voeux-prenom') || {}).value || '';
+  prenom = prenom.trim();
+  var msg = prenom ? t.message.replace(/\{prenom\}/g, prenom) : t.message_generique;
+  var sig = safeGetItem('niyyah_prenom') || '';
+  return { msg: msg, sig: sig };
+}
+
+function _aidVoeuxPreview() {
+  var el = document.getElementById('aid-voeux-preview');
+  if (!el) return;
+  var d = _aidVoeuxGetMsg();
+  var html = '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:32px;color:#C8A84A;margin-bottom:12px;">\u0639\u064a\u062f \u0645\u0628\u0627\u0631\u0643</div>';
+  html += '<div style="color:rgba(200,168,74,0.3);margin-bottom:14px;">\u2726</div>';
+  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;color:#E8D9A8;line-height:1.8;white-space:pre-line;">' + d.msg + '</div>';
+  if (d.sig) html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;color:rgba(200,168,74,0.5);margin-top:16px;">\u2014 ' + d.sig + '</div>';
+  el.innerHTML = html;
+}
+
+function _aidVoeuxGenerate() {
+  var d = _aidVoeuxGetMsg();
+  var W = 1080, H = 1920;
+  var canvas = document.createElement('canvas');
+  canvas.width = W; canvas.height = H;
+  var ctx = canvas.getContext('2d');
+
+  // Background gradient
+  var grad = ctx.createLinearGradient(0, 0, 0, H);
+  grad.addColorStop(0, '#0a0a0a');
+  grad.addColorStop(1, '#1a1410');
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, W, H);
+
+  // Center halo
+  var halo = ctx.createRadialGradient(W/2, H*0.35, 0, W/2, H*0.35, 500);
+  halo.addColorStop(0, 'rgba(200,168,74,0.06)');
+  halo.addColorStop(1, 'rgba(200,168,74,0)');
+  ctx.fillStyle = halo;
+  ctx.fillRect(0, 0, W, H);
+
+  // Arabic title
+  ctx.textAlign = 'center';
+  ctx.fillStyle = '#C8A84A';
+  ctx.font = '120px Amiri, Scheherazade New, serif';
+  ctx.fillText('\u0639\u064a\u062f \u0645\u0628\u0627\u0631\u0643', W/2, 340);
+
+  // Separator
+  ctx.font = '40px serif';
+  ctx.fillStyle = 'rgba(200,168,74,0.3)';
+  ctx.fillText('\u2726', W/2, 440);
+
+  // Message — word-wrap
+  ctx.fillStyle = '#E8D9A8';
+  ctx.font = '46px Cormorant Garamond, Georgia, serif';
+  var lines = [];
+  d.msg.split('\n').forEach(function(para) {
+    if (para.trim() === '') { lines.push(''); return; }
+    var words = para.split(' ');
+    var line = '';
+    words.forEach(function(w) {
+      var test = line ? line + ' ' + w : w;
+      if (ctx.measureText(test).width > W - 160) { lines.push(line); line = w; }
+      else line = test;
+    });
+    if (line) lines.push(line);
+  });
+  var lineH = 68;
+  var startY = 520;
+  lines.forEach(function(l, i) { ctx.fillText(l, W/2, startY + i * lineH); });
+
+  // Signature
+  if (d.sig) {
+    ctx.fillStyle = 'rgba(200,168,74,0.5)';
+    ctx.font = '38px Cormorant Garamond, Georgia, serif';
+    ctx.fillText('\u2014 ' + d.sig, W/2, startY + lines.length * lineH + 50);
+  }
+
+  // Niyyah branding
+  ctx.fillStyle = 'rgba(200,168,74,0.25)';
+  ctx.font = '28px Inter, sans-serif';
+  ctx.fillText('niyyah.app', W/2, H - 80);
+
+  canvas.toBlob(function(blob) {
+    if (!blob) { showToast('Erreur g\u00e9n\u00e9ration'); return; }
+    var file = new File([blob], 'aid-moubarak.png', { type: 'image/png' });
+    if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
+      navigator.share({ files: [file], title: 'A\u00efd Moubarak', text: 'A\u00efd Moubarak' }).catch(function() {});
+    } else {
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'aid-moubarak.png';
+      a.click();
+      setTimeout(function() { URL.revokeObjectURL(a.href); }, 5000);
+    }
+    showToast('Carte g\u00e9n\u00e9r\u00e9e \u2726');
+  }, 'image/png');
 }
 
 // Load Bab an-Nafs external content
