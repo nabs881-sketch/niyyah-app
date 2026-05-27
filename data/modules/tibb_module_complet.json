@@ -3,12 +3,11 @@
   "name_fr": "Médecine prophétique",
   "name_ar": "الطب النبوي",
   "version": "1.0",
-  "items_count": 60,
+  "items_count": 41,
   "date_production": "2026-05-27",
   "concept": "Connaissance pratique sur les remèdes prophétiques selon le Coran, la Sunna, et l'ouvrage référence d'Ibn Qayyim al-Jawziyya 'Zâd al-Ma'âd'. À intégrer dans Connaissance.",
   "integration_recommandee": "Bloc 'Remède du jour' dans la section Connaissance — affichage 1 item/jour pendant 60 jours, puis cycle.",
   "avertissement_important": "Ce module est INFORMATIF. Toujours consulter un médecin pour les maladies sérieuses. La médecine prophétique COMPLÈTE la médecine moderne, elle ne la REMPLACE PAS.",
-
   "disclaimer": {
     "overlay_premiere_ouverture": {
       "titre": "Avertissement",
@@ -53,7 +52,6 @@
       ]
     }
   },
-
   "items": [
     {
       "id": "tibb_001",
@@ -84,15 +82,6 @@
     },
     {
       "id": "tibb_004",
-      "remede_fr": "L'huile d'olive",
-      "remede_ar": "زيت الزيتون",
-      "pour_quoi": "Santé cardiovasculaire, peau, cheveux, digestion",
-      "methode": "Interne : 1-2 cuillères à soupe par jour sur la nourriture. Externe : massages, application sur la peau et les cheveux.",
-      "source_hadith": "Coran 24:35 (An-Nûr) — 'arbre béni'. Hadith Tirmidhî : 'Mangez de l'olive et oignez-vous-en, car elle provient d'un arbre béni.'",
-      "note_medicale": "Des études suggèrent que le régime méditerranéen réduit le risque cardiovasculaire de 30%. Acide oléique, vitamine E, antioxydants."
-    },
-    {
-      "id": "tibb_005",
       "remede_fr": "La talbîna (bouillie d'orge)",
       "remede_ar": "التلبينة",
       "pour_quoi": "Tristesse, dépression légère, deuil, anxiété, problèmes digestifs",
@@ -101,7 +90,7 @@
       "note_medicale": "Orge : riche en bêta-glucane (fibres solubles), tryptophane (précurseur sérotonine). Des effets calmants ont été observés."
     },
     {
-      "id": "tibb_006",
+      "id": "tibb_005",
       "remede_fr": "L'eau de Zamzam",
       "remede_ar": "ماء زمزم",
       "pour_quoi": "Tout ce pour quoi on la boit (du'â spécifique)",
@@ -110,7 +99,7 @@
       "note_medicale": "Analyses : eau alcaline (pH 8), riche en minéraux (calcium, magnésium). Stabilité bactériologique remarquable malgré âge."
     },
     {
-      "id": "tibb_007",
+      "id": "tibb_006",
       "remede_fr": "Le siwâk / miswâk (arak)",
       "remede_ar": "السواك",
       "pour_quoi": "Hygiène buccale, gencives saines, prévention caries",
@@ -119,25 +108,7 @@
       "note_medicale": "Études : antibactérien naturel (silice, tanins). OMS le recommande comme moyen d'hygiène orale dans certains pays."
     },
     {
-      "id": "tibb_008",
-      "remede_fr": "Le sanâ (séné) — laxatif",
-      "remede_ar": "السنا",
-      "pour_quoi": "Constipation, détoxification intestinale",
-      "methode": "Infusion de feuilles séchées (1 cuillère à café dans une tasse d'eau bouillante). Boire le soir, effet 8-12h plus tard.",
-      "source_hadith": "Ibn Mâja 3457 : 'Faites usage du sanâ et du sanût, car ils contiennent un remède contre toute maladie sauf as-sâm (la mort).' Les savants expliquent qu'il est une cause de guérison pour de nombreuses maladies, par la permission d'Allâh.",
-      "note_medicale": "Laxatif stimulant reconnu en pharmacopée. À utiliser ponctuellement, pas en continu (risque de dépendance intestinale). Contre-indiqué chez les femmes enceintes ou allaitantes, et chez les personnes souffrant d'inflammations chroniques du côlon (Crohn, RCH)."
-    },
-    {
-      "id": "tibb_009",
-      "remede_fr": "La gomme arabique (samgh)",
-      "remede_ar": "الصمغ العربي",
-      "pour_quoi": "Maux d'estomac, ulcères, équilibre de la flore intestinale",
-      "methode": "Diluer 1 cuillère dans un verre d'eau tiède. Boire le matin à jeun.",
-      "source_hadith": "Hadith d'Ibn Mâja (faible mais cité par Ibn al-Qayyim) : recommandation traditionnelle pour les troubles digestifs.",
-      "note_medicale": "Prébiotique reconnu. Améliore la flore intestinale. Études récentes : effets bénéfiques sur le côlon."
-    },
-    {
-      "id": "tibb_010",
+      "id": "tibb_007",
       "remede_fr": "La sourate Al-Fâtiha (roqya)",
       "remede_ar": "سورة الفاتحة",
       "pour_quoi": "Toute maladie (avec foi), douleur, mauvais œil, sorcellerie",
@@ -146,7 +117,7 @@
       "note_medicale": "Le Coran est une guérison réelle et spirituelle par la volonté d'Allâh. Cet effet peut aussi se traduire par un apaisement neurobiologique perceptible. La foi et le tawakkul apportent un soutien spirituel reconnu, dont l'expérience confirme aussi les effets sur le corps."
     },
     {
-      "id": "tibb_011",
+      "id": "tibb_008",
       "remede_fr": "Les Mu'awwidhât (sourates 113, 114)",
       "remede_ar": "المعوذتان",
       "pour_quoi": "Protection mauvais œil, sorcellerie, anxiété, insomnie",
@@ -155,25 +126,7 @@
       "note_medicale": "Protection spirituelle légiférée par la sunna, accompagnée d'un effet apaisant possible."
     },
     {
-      "id": "tibb_012",
-      "remede_fr": "Le jeûne thérapeutique",
-      "remede_ar": "الصيام العلاجي",
-      "pour_quoi": "Détoxification, perte de poids, régulation glycémie, longévité",
-      "methode": "Jeûne complet du lever au coucher du soleil. Boire après iftar. Comme Ramadan ou jeûnes sunna (lundi-jeudi, jours blancs).",
-      "source_hadith": "Hadith : 'Jeûnez, vous serez en bonne santé' (da'îf selon Al-Albâni et Al-'Irâqî. Hadith faible dans sa chaîne, mais dont le sens est corroboré par les règles générales de modération alimentaire en Islam).",
-      "note_medicale": "Autophagie cellulaire (Prix Nobel 2016). Effets prouvés sur diabète, inflammation, fonctions cognitives, longévité."
-    },
-    {
-      "id": "tibb_013",
-      "remede_fr": "Le repos après la salât du midi (qaylûla)",
-      "remede_ar": "القيلولة",
-      "pour_quoi": "Récupération, mémoire, productivité après-midi",
-      "methode": "Sieste courte (15-30 min) après la salât de Dhuhr. Idéalement avant 14h. Pas plus longtemps (risque d'engourdissement).",
-      "source_hadith": "Hadith Tirmidhî : 'Faites la qaylûla, car les démons ne la font pas.' Pratique courante du Prophète ﷺ et des Compagnons.",
-      "note_medicale": "Études : sieste courte améliore mémoire de 30%, vigilance, créativité. Évite l'épuisement de l'après-midi."
-    },
-    {
-      "id": "tibb_014",
+      "id": "tibb_009",
       "remede_fr": "L'huile de cumin noir + miel (kalonji)",
       "remede_ar": "كلونجي مع العسل",
       "pour_quoi": "Immunité, allergies saisonnières, énergie générale",
@@ -182,16 +135,7 @@
       "note_medicale": "Synergie immunostimulante. Études confirmées sur asthme allergique et infections respiratoires."
     },
     {
-      "id": "tibb_015",
-      "remede_fr": "Le henné (usage médicinal)",
-      "remede_ar": "الحناء",
-      "pour_quoi": "Maux de tête, brûlures, blessures cutanées, fièvre",
-      "methode": "Pâte de henné fraîche appliquée sur le front (maux de tête) ou la zone affectée. Laisser agir 30 min, rincer.",
-      "source_hadith": "Hadith Tirmidhî : 'Si quelqu'un se plaignait d'un mal de tête, le Prophète ﷺ disait : Appliquez-y du henné.' Hadith Abû Dâwûd : recommandation pour les blessures.",
-      "note_medicale": "Henné contient lawsone, antibactérien et anti-inflammatoire. Effet rafraîchissant prouvé."
-    },
-    {
-      "id": "tibb_016",
+      "id": "tibb_010",
       "remede_fr": "Le costus (qist al-hindî)",
       "remede_ar": "القسط الهندي",
       "pour_quoi": "Maux de gorge, amygdalite, problèmes respiratoires",
@@ -200,7 +144,7 @@
       "note_medicale": "Études : antibactérien, anti-inflammatoire, expectorant. Acheter uniquement du costus certifié sans acide aristolochique (risque de toxicité rénale en cas de contamination)."
     },
     {
-      "id": "tibb_017",
+      "id": "tibb_011",
       "remede_fr": "L'eau froide pour la fièvre",
       "remede_ar": "الماء البارد للحمى",
       "pour_quoi": "Fièvre",
@@ -209,7 +153,7 @@
       "note_medicale": "Médicalement validé : refroidissement externe + hydratation. Mais consulter si fièvre persistante ou >39°C."
     },
     {
-      "id": "tibb_018",
+      "id": "tibb_012",
       "remede_fr": "Le repos en cas de maladie",
       "remede_ar": "الراحة عند المرض",
       "pour_quoi": "Toute maladie",
@@ -218,7 +162,7 @@
       "note_medicale": "Repos = première ligne de défense immunitaire. Le sommeil est anti-inflammatoire."
     },
     {
-      "id": "tibb_019",
+      "id": "tibb_013",
       "remede_fr": "Le lait de chamelle",
       "remede_ar": "حليب الإبل",
       "pour_quoi": "Troubles digestifs, foie, diabète, allergies",
@@ -227,7 +171,7 @@
       "note_medicale": "Composition unique : sans bêta-lactoglobuline (responsable allergies au lait de vache). Études récentes : effets bénéfiques diabète type 1."
     },
     {
-      "id": "tibb_020",
+      "id": "tibb_014",
       "remede_fr": "L'urine de chamelle (usage médicinal)",
       "remede_ar": "بول الإبل",
       "pour_quoi": "Maladies digestives, foie (selon le hadith)",
@@ -236,7 +180,7 @@
       "note_medicale": "Études controversées. La majorité des médecins déconseillent. Le lait de chamelle est l'alternative recommandée."
     },
     {
-      "id": "tibb_021",
+      "id": "tibb_015",
       "remede_fr": "L'eau et la dhikr pour le mauvais œil",
       "remede_ar": "العين",
       "pour_quoi": "Mauvais œil ('ayn)",
@@ -245,7 +189,7 @@
       "note_medicale": "Ces moyens font partie des causes légiférées rapportées dans la sunna ; leur effet relève de la permission d'Allâh."
     },
     {
-      "id": "tibb_022",
+      "id": "tibb_016",
       "remede_fr": "L'Âyatu-l-Kursî contre le sorcellerie",
       "remede_ar": "آية الكرسي",
       "pour_quoi": "Protection contre la sorcellerie, les jinns, les cauchemars",
@@ -254,34 +198,7 @@
       "note_medicale": "Effet apaisant prouvé du dhikr sur le système nerveux parasympathique."
     },
     {
-      "id": "tibb_023",
-      "remede_fr": "Le jus de grenade",
-      "remede_ar": "عصير الرمان",
-      "pour_quoi": "Cœur, circulation, mémoire, prévention cancers",
-      "methode": "Un verre de jus frais par jour (sans sucre ajouté). De préférence le matin.",
-      "source_hadith": "Coran 55:68 — grenadiers du Paradis. Hadith : 'Il n'y a pas une grenade qui n'a pas été fécondée par une goutte de l'eau du Paradis.'",
-      "note_medicale": "Des études suggèrent : antioxydants puissants, baisse de la pression artérielle, protection contre Alzheimer."
-    },
-    {
-      "id": "tibb_024",
-      "remede_fr": "L'eau au matin à jeun",
-      "remede_ar": "الماء صباحا",
-      "pour_quoi": "Détoxification, énergie, digestion",
-      "methode": "1-2 verres d'eau tiède (ou avec citron, miel) au réveil avant tout repas.",
-      "source_hadith": "Pratique du Prophète ﷺ : boire de l'eau au réveil. Plusieurs hadiths le mentionnent.",
-      "note_medicale": "Réhydratation après 6-8h de jeûne nocturne. Active le métabolisme. Aide la digestion."
-    },
-    {
-      "id": "tibb_025",
-      "remede_fr": "Marcher après les repas",
-      "remede_ar": "المشي بعد الأكل",
-      "pour_quoi": "Digestion, glycémie, métabolisme",
-      "methode": "Marcher 10-15 minutes à allure modérée après chaque repas principal.",
-      "source_hadith": "Pratique du Prophète ﷺ : ne pas s'allonger après manger. Tradition reprise par Ibn al-Qayyim.",
-      "note_medicale": "Études : marche post-repas baisse glycémie de 30%, améliore digestion."
-    },
-    {
-      "id": "tibb_026",
+      "id": "tibb_017",
       "remede_fr": "Le gingembre",
       "remede_ar": "الزنجبيل",
       "pour_quoi": "Nausées, troubles digestifs, refroidissement, douleurs articulaires",
@@ -290,16 +207,7 @@
       "note_medicale": "Anti-inflammatoire puissant. Des effets ont été observés contre les nausées (grossesse, chimiothérapie). Réchauffe le corps."
     },
     {
-      "id": "tibb_027",
-      "remede_fr": "La sourate Yâsîn pour le malade",
-      "remede_ar": "سورة يس للمريض",
-      "pour_quoi": "Réconfort spirituel, accompagnement maladies graves, agonie",
-      "methode": "Réciter la sourate Yâsîn sur le malade. Particulièrement aux moments difficiles.",
-      "source_hadith": "Abû Dâwûd 3121 (chaîne faible). Plusieurs savants ont étendu l'usage aux malades graves.",
-      "note_medicale": "Effet apaisant de la récitation. Soutien psychologique majeur."
-    },
-    {
-      "id": "tibb_028",
+      "id": "tibb_018",
       "remede_fr": "Du'â pour la guérison",
       "remede_ar": "دعاء الشفاء",
       "pour_quoi": "Toute maladie",
@@ -308,7 +216,7 @@
       "note_medicale": "Acte d'espérance et de remise. Effet psycho-spirituel reconnu."
     },
     {
-      "id": "tibb_029",
+      "id": "tibb_019",
       "remede_fr": "La main sur la zone douloureuse + dhikr",
       "remede_ar": "اليد على الألم",
       "pour_quoi": "Douleur localisée",
@@ -317,7 +225,7 @@
       "note_medicale": "Toucher + verbalisation + foi = libération d'endorphines. Effet anti-douleur prouvé."
     },
     {
-      "id": "tibb_030",
+      "id": "tibb_020",
       "remede_fr": "L'évitement des excès alimentaires",
       "remede_ar": "تجنب الإسراف في الأكل",
       "pour_quoi": "Prévention de toutes maladies métaboliques",
@@ -326,7 +234,7 @@
       "note_medicale": "Restriction calorique modérée : longévité prouvée. Prévention diabète, obésité, maladies cardiaques."
     },
     {
-      "id": "tibb_031",
+      "id": "tibb_021",
       "remede_fr": "Le sourire et la patience",
       "remede_ar": "الابتسامة والصبر",
       "pour_quoi": "Stress, anxiété, dépression, douleur chronique",
@@ -335,16 +243,7 @@
       "note_medicale": "Sourire libère endorphines même forcé. Patience = résilience neurobiologique."
     },
     {
-      "id": "tibb_032",
-      "remede_fr": "L'huile de moutarde (sarson ka tel)",
-      "remede_ar": "زيت الخردل",
-      "pour_quoi": "Douleurs articulaires, cheveux, peau",
-      "methode": "Massage sur les articulations douloureuses. Sur le cuir chevelu pour renforcer les cheveux.",
-      "source_hadith": "Pratique traditionnelle dans le sous-continent indien.",
-      "note_medicale": "Riche en oméga-3, vitamine E. Anti-inflammatoire. Tradition ayurvédique reconnue."
-    },
-    {
-      "id": "tibb_033",
+      "id": "tibb_022",
       "remede_fr": "Le repos sur le côté droit",
       "remede_ar": "النوم على الجنب الأيمن",
       "pour_quoi": "Sommeil, digestion, cœur",
@@ -353,7 +252,7 @@
       "note_medicale": "Études : meilleur drainage lymphatique, soulage le cœur (moins de pression sur l'oreillette gauche). Sommeil plus réparateur."
     },
     {
-      "id": "tibb_034",
+      "id": "tibb_023",
       "remede_fr": "L'application de cire d'abeille",
       "remede_ar": "شمع العسل",
       "pour_quoi": "Plaies, brûlures, peau sèche",
@@ -362,7 +261,7 @@
       "note_medicale": "Antibactérienne. Protège les plaies. Hydrate la peau. Effets cicatrisants."
     },
     {
-      "id": "tibb_035",
+      "id": "tibb_024",
       "remede_fr": "L'eau de rose",
       "remede_ar": "ماء الورد",
       "pour_quoi": "Yeux fatigués, peau, anxiété",
@@ -371,7 +270,7 @@
       "note_medicale": "Astringent doux, apaisant, antioxydant. Reconnu en cosmétique."
     },
     {
-      "id": "tibb_036",
+      "id": "tibb_025",
       "remede_fr": "Le tasbîh (chapelet) contre l'anxiété",
       "remede_ar": "التسبيح ضد القلق",
       "pour_quoi": "Anxiété, ruminations, insomnie",
@@ -380,7 +279,7 @@
       "note_medicale": "Répétition rythmique = méditation. Active le système parasympathique. Apaise."
     },
     {
-      "id": "tibb_037",
+      "id": "tibb_026",
       "remede_fr": "Boire dans des récipients en terre",
       "remede_ar": "الشرب من الفخار",
       "pour_quoi": "Hydratation optimale",
@@ -389,16 +288,7 @@
       "note_medicale": "Terre cuite préserve la fraîcheur naturellement, sans plastique. Minéralisation légère."
     },
     {
-      "id": "tibb_038",
-      "remede_fr": "Le câprier (kabar)",
-      "remede_ar": "الكبر",
-      "pour_quoi": "Foie, rate, hépatite",
-      "methode": "Décoction de racines ou consommation des bourgeons (câpres) avec modération.",
-      "source_hadith": "Mentionné par Ibn al-Qayyim dans Tibb an-Nabawî comme remède traditionnel pour le foie.",
-      "note_medicale": "Études récentes : effets hépatoprotecteurs. Antioxydants reconnus."
-    },
-    {
-      "id": "tibb_039",
+      "id": "tibb_027",
       "remede_fr": "Le vinaigre de pomme",
       "remede_ar": "خل التفاح",
       "pour_quoi": "Glycémie, digestion, perte de poids",
@@ -407,7 +297,7 @@
       "note_medicale": "Études nombreuses : régule glycémie post-prandiale, aide la perte de poids légère."
     },
     {
-      "id": "tibb_040",
+      "id": "tibb_028",
       "remede_fr": "La sourate Al-Baqara pour la protection de la maison",
       "remede_ar": "سورة البقرة للمنزل",
       "pour_quoi": "Protection spirituelle de la maison, contre les jinns",
@@ -416,7 +306,7 @@
       "note_medicale": "Effet psychologique : sentiment de sécurité, sérénité de l'espace de vie."
     },
     {
-      "id": "tibb_041",
+      "id": "tibb_029",
       "remede_fr": "Le repos visuel (regarder le vert)",
       "remede_ar": "النظر إلى الأخضر",
       "pour_quoi": "Yeux fatigués, stress, écrans",
@@ -425,7 +315,7 @@
       "note_medicale": "Des études rejoignent cette méthode en ophtalmologie pour la fatigue oculaire moderne."
     },
     {
-      "id": "tibb_042",
+      "id": "tibb_030",
       "remede_fr": "La salât comme exercice physique",
       "remede_ar": "الصلاة كرياضة",
       "pour_quoi": "Articulations, dos, circulation, méditation active",
@@ -434,7 +324,7 @@
       "note_medicale": "Études : équivalent à 5 séances de yoga doux par jour. Améliore flexibilité, dos, circulation."
     },
     {
-      "id": "tibb_043",
+      "id": "tibb_031",
       "remede_fr": "Le jeûne du lundi-jeudi",
       "remede_ar": "صيام الإثنين والخميس",
       "pour_quoi": "Détoxification, métabolisme, longévité",
@@ -443,7 +333,7 @@
       "note_medicale": "Jeûne intermittent = autophagie cellulaire. Effets longévité, énergie, cognition."
     },
     {
-      "id": "tibb_044",
+      "id": "tibb_032",
       "remede_fr": "L'oignon contre les piqûres",
       "remede_ar": "البصل ضد اللسعات",
       "pour_quoi": "Piqûres d'insectes, brûlures légères",
@@ -452,7 +342,7 @@
       "note_medicale": "Oignon contient quercétine (anti-inflammatoire) et soufre (antibactérien). Validé empiriquement."
     },
     {
-      "id": "tibb_045",
+      "id": "tibb_033",
       "remede_fr": "L'ail à jeun",
       "remede_ar": "الثوم على الريق",
       "pour_quoi": "Tension artérielle, immunité, circulation",
@@ -461,7 +351,7 @@
       "note_medicale": "Études : baisse pression artérielle, cholestérol, effet antibactérien. Plusieurs méta-analyses positives."
     },
     {
-      "id": "tibb_046",
+      "id": "tibb_034",
       "remede_fr": "Le concombre cru",
       "remede_ar": "القثاء",
       "pour_quoi": "Hydratation, peau, digestion",
@@ -470,16 +360,7 @@
       "note_medicale": "96% d'eau. Riche en silice (peau, cheveux). Frais et apaisant."
     },
     {
-      "id": "tibb_047",
-      "remede_fr": "Le repos après le coucher du soleil",
-      "remede_ar": "الراحة بعد الغروب",
-      "pour_quoi": "Sommeil, rythme circadien",
-      "methode": "Réduire les écrans après Maghrib. Activités calmes. Du'â avant de dormir.",
-      "source_hadith": "Tradition prophétique : pas de discussions tardives sauf nécessité. Hadith : 'Le Prophète ﷺ détestait dormir avant 'Ishâ et discuter après.' (Bukhari).",
-      "note_medicale": "Mélatonine stimulée par obscurité. Écrans bleus perturbent le sommeil. Coucher tôt = santé prouvée."
-    },
-    {
-      "id": "tibb_048",
+      "id": "tibb_035",
       "remede_fr": "Boire de l'eau lentement",
       "remede_ar": "شرب الماء ببطء",
       "pour_quoi": "Digestion, hydratation cellulaire",
@@ -488,16 +369,7 @@
       "note_medicale": "Boire trop vite dilate l'estomac. Lent = meilleure absorption cellulaire."
     },
     {
-      "id": "tibb_049",
-      "remede_fr": "Le rire modéré",
-      "remede_ar": "الضحك المعتدل",
-      "pour_quoi": "Stress, dépression, immunité",
-      "methode": "Sourire et rire avec mesure. Ne pas rire aux éclats répétés (le Prophète ﷺ souriait plus qu'il ne riait).",
-      "source_hadith": "Hadith Tirmidhî 2305 (da'îf) : 'Le plus souvent, son rire ﷺ était un sourire.' Hadith Bukhari : 'Ne riez pas trop, car beaucoup rire fait mourir le cœur.'",
-      "note_medicale": "Rire stimule endorphines, immunité, oxygénation. Excès = épuisement nerveux."
-    },
-    {
-      "id": "tibb_050",
+      "id": "tibb_036",
       "remede_fr": "L'olive entière (fruit)",
       "remede_ar": "الزيتون",
       "pour_quoi": "Foie, cœur, antioxydants",
@@ -506,7 +378,7 @@
       "note_medicale": "Acide oléique, polyphénols. Étude PREDIMED : régime méditerranéen réduit risque cardiovasculaire."
     },
     {
-      "id": "tibb_051",
+      "id": "tibb_037",
       "remede_fr": "Le lait + miel le soir",
       "remede_ar": "الحليب والعسل ليلا",
       "pour_quoi": "Insomnie, anxiété, gorge irritée",
@@ -515,25 +387,7 @@
       "note_medicale": "Lait = tryptophane (mélatonine). Miel = glucose lent. Effet apaisant et soporifique."
     },
     {
-      "id": "tibb_052",
-      "remede_fr": "La marche pieds nus (earthing)",
-      "remede_ar": "المشي حافي القدمين",
-      "pour_quoi": "Connexion à la terre, stress, inflammation",
-      "methode": "Marcher pieds nus sur l'herbe, le sable, la terre 10-20 min/jour.",
-      "source_hadith": "Il est rapporté dans certains récits qu'il ﷺ marchait parfois pieds nus.",
-      "note_medicale": "Le concept moderne 'earthing' est insuffisamment prouvé scientifiquement. Les bénéfices observés relèvent surtout de la réduction du stress et de la stimulation mécanique du pied, pas nécessairement de 'l'échange d'électrons avec la Terre'."
-    },
-    {
-      "id": "tibb_053",
-      "remede_fr": "Le fenouil après les repas",
-      "remede_ar": "الشمر بعد الأكل",
-      "pour_quoi": "Digestion, ballonnements, mauvaise haleine",
-      "methode": "Mâcher 1 cuillère à café de graines de fenouil après le repas.",
-      "source_hadith": "Tradition arabe ancienne, validée par Ibn al-Qayyim. Cohérente avec la sunna.",
-      "note_medicale": "Anéthol (composant actif) = digestif éprouvé. Antispasmodique."
-    },
-    {
-      "id": "tibb_054",
+      "id": "tibb_038",
       "remede_fr": "Le repas chaud avant le repos",
       "remede_ar": "الطعام الدافئ",
       "pour_quoi": "Digestion, sommeil",
@@ -542,25 +396,7 @@
       "note_medicale": "Chaud = meilleure digestion. Froid demande énergie pour réchauffement interne."
     },
     {
-      "id": "tibb_055",
-      "remede_fr": "Le bain à l'eau salée",
-      "remede_ar": "حمام الماء المالح",
-      "pour_quoi": "Détente musculaire, peau, stress",
-      "methode": "Bain tiède + 200g de sel marin ou Epsom. 20 minutes.",
-      "source_hadith": "Pratique de purification (ghusl) au cœur de l'islam. Sel comme purificateur dans plusieurs traditions.",
-      "note_medicale": "Magnésium absorbé par la peau. Apaise tensions, articulations, peau."
-    },
-    {
-      "id": "tibb_056",
-      "remede_fr": "Le lever à Fajr",
-      "remede_ar": "الاستيقاظ للفجر",
-      "pour_quoi": "Rythme circadien, énergie, productivité",
-      "methode": "Se lever à l'adhân du Fajr (avant l'aube). Prier puis bouger. Ne pas se rendormir.",
-      "source_hadith": "Du'â du Prophète ﷺ : 'Ô Allâh, bénis ma communauté dans les premières heures du matin.' (Abû Dâwûd 2606, Tirmidhî 1212, Ibn Mâja 2236 — hasan).",
-      "note_medicale": "Des études suggèrent que le lever tôt favorise la santé mentale, la productivité et l'espérance de vie. Cortisol matinal naturel."
-    },
-    {
-      "id": "tibb_057",
+      "id": "tibb_039",
       "remede_fr": "Du'â de Yûnus pour la détresse",
       "remede_ar": "دعاء يونس",
       "pour_quoi": "Détresse profonde, crise, ne sait plus quoi faire",
@@ -569,7 +405,7 @@
       "note_medicale": "Verbalisation + reconnaissance + remise = libération psychologique. Effet thérapeutique reconnu."
     },
     {
-      "id": "tibb_058",
+      "id": "tibb_040",
       "remede_fr": "La satisfaction (ridâ)",
       "remede_ar": "الرضا",
       "pour_quoi": "Bonheur, anxiété, ruminations",
@@ -578,16 +414,7 @@
       "note_medicale": "Études en psychologie positive : acceptation > combat. Réduit stress, dépression."
     },
     {
-      "id": "tibb_059",
-      "remede_fr": "L'isolement bref (khalwa)",
-      "remede_ar": "الخلوة",
-      "pour_quoi": "Burn-out, sur-stimulation, surmenage",
-      "methode": "Se retirer 30 min/jour : silence, dhikr, méditation, sans téléphone.",
-      "source_hadith": "Pratique du Prophète ﷺ avant la révélation (grotte de Hirâ'). Tradition spirituelle confirmée.",
-      "note_medicale": "Études : 10 min silence/jour = baisse cortisol, neuroplasticité, créativité accrue."
-    },
-    {
-      "id": "tibb_060",
+      "id": "tibb_041",
       "remede_fr": "Le triple remède du Prophète ﷺ",
       "remede_ar": "الشفاء في ثلاث",
       "pour_quoi": "Principe général de la médecine prophétique",
@@ -596,7 +423,6 @@
       "note_medicale": "Certaines approches modernes rejoignent partiellement cette logique de complémentarité : naturel + médical + psycho-spirituel peut contribuer à une prise en charge globale."
     }
   ],
-  
   "metadata": {
     "principe_editorial": "Source principale : 'Zâd al-Ma'âd' d'Ibn Qayyim al-Jawziyya + hadiths authentiques Bukhari/Muslim. Chaque remède a sa source ET une validation médicale moderne quand disponible.",
     "avertissement_legal": "Ce module est éducatif. Ne remplace pas un avis médical. En cas de maladie sérieuse, consulter un médecin. La médecine prophétique COMPLÈTE la médecine moderne.",
