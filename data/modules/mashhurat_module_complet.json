@@ -1,0 +1,323 @@
+{
+  "module": "MASHHURAT",
+  "name_fr": "Mythes & Vérités",
+  "name_ar": "المشهورات",
+  "version": "1.0",
+  "items_count": 50,
+  "date_production": "2026-05-27",
+  "concept": "Déconstruction des idées reçues fausses ou simplifiées qui circulent dans la culture musulmane et non-musulmane. Format 'Savais-tu' : idée reçue + vérité + source. À intégrer dans le module SAVAIS-TU existant.",
+  "integration_recommandee": "Ajouter comme catégorie 'MYTHES_VERITES' dans le pool Savais-tu existant (450 items + 50 = 500 items).",
+  "principe_editorial": "Chaque mythe est SOURCÉ. Présentation NUANCÉE (différentes opinions des écoles juridiques quand pertinent). Ne pas affirmer une fatwa, mais clarifier ce qui est consensus vs divergence.",
+  "avertissement": "En cas de doute sur un point précis, consulter un savant local. Ce module est éducatif et informatif.",
+  
+  "items": [
+    {
+      "id": "mashhurat_001",
+      "idee_recue": "Toucher un chien rend impur",
+      "verite": "FAUX. Seule la SALIVE du chien est considérée impure selon la majorité (école Shâfi'î, Hanbali). L'école Mâlikî dit que MÊME la salive n'est pas impure — le chien lui-même est pur. Tu peux caresser un chien, le toucher, l'élever — il faut juste te laver les mains avant de prier si tu as eu sa salive sur toi.",
+      "source": "Hadith Bukhari : 'Quand le chien lèche un récipient, lavez-le sept fois.' (concerne la salive). Imam Mâlik : pureté générale du chien (Al-Muwatta')."
+    },
+    {
+      "id": "mashhurat_002",
+      "idee_recue": "La musique est totalement interdite (haram absolu)",
+      "verite": "DIVERGENCE. La majorité des savants modernes interdisent les instruments à corde et les chants licencieux. MAIS certains savants permettent : le duff (tambour), les chants spirituels (anâshîd), la musique sans paroles licencieuses. Les hadiths cités pour l'interdiction sont parfois discutés (Bukhari 5590 considéré comme mu'allaq). Ce n'est PAS un consensus absolu.",
+      "source": "Hadith Bukhari sur les instruments (controversé). Position de Ghazâlî (Ihyâ'), Ibn Hazm (autorisation). Avis modernes nuancés (Yûsuf al-Qaradâwî)."
+    },
+    {
+      "id": "mashhurat_003",
+      "idee_recue": "Le tatouage est haram point final",
+      "verite": "MAJORITÉ : oui interdit (hadith Bukhari sur la modification de la création). MAIS divergences : certains savants permettent le tatouage temporaire (henné), et même certains permettent le tatouage permanent si motifs autorisés et nettement non figurés. Le sujet n'est pas aussi simple qu'une interdiction absolue.",
+      "source": "Hadith Bukhari : 'Maudit soit le tatoueur et la tatouée.' Mais nuances chez Ibn 'Outhaymîn et autres modernes."
+    },
+    {
+      "id": "mashhurat_004",
+      "idee_recue": "La femme ne peut pas voyager seule",
+      "verite": "RÈGLE HISTORIQUE LIÉE AU CONTEXTE. Le hadith demandait un mahram pour les longs voyages dangereux en caravane (3 jours). Aujourd'hui, avec avions et trains sécurisés, plusieurs grands savants (dont Ibn 'Outhaymîn dans certains avis, Sheikh al-Qaradâwî) permettent à la femme musulmane de voyager seule si le trajet est sûr.",
+      "source": "Hadith Bukhari : 'Que la femme ne voyage pas plus d'un jour et une nuit sans mahram.' Contextualisation moderne par les savants contemporains."
+    },
+    {
+      "id": "mashhurat_005",
+      "idee_recue": "Tous les hadiths se valent",
+      "verite": "ABSOLUMENT FAUX. Les hadiths sont classés en degrés : sahîh (authentique), hassan (bon), da'îf (faible), mawdû' (forgé). Les savants comme Bukhari ont rejeté des dizaines de milliers de hadiths sur 600 000 collectés. Un hadith faible n'a PAS la même valeur qu'un hadith sahîh. Beaucoup d'idées reçues viennent de hadiths faibles propagés sans vérification.",
+      "source": "Science du hadith ('ilm al-hadîth). Imam Bukhari, Muslim, Tirmidhî, Ibn Hajar, Albânî sur l'authentification."
+    },
+    {
+      "id": "mashhurat_006",
+      "idee_recue": "Islam et science s'opposent",
+      "verite": "HISTORIQUEMENT FAUX. Pendant des siècles, la civilisation islamique a porté la science mondiale : Al-Khawârizmî (algèbre), Ibn Sînâ/Avicenne (médecine), Ibn al-Haytham (optique), Al-Bîrûnî (astronomie). Le Coran appelle 750+ fois à la réflexion, à l'observation, au savoir. Le premier mot révélé est 'Iqra' (Lis !). L'opposition apparente est moderne et politique, pas religieuse.",
+      "source": "Histoire de la science islamique (Bayt al-Hikma à Bagdad). Travaux d'Ibn al-Haytham (méthode scientifique avant Bacon)."
+    },
+    {
+      "id": "mashhurat_007",
+      "idee_recue": "L'islam impose le voile intégral (niqab)",
+      "verite": "Le NIQAB (visage couvert) est un avis MINORITAIRE. La majorité des savants disent que le visage et les mains peuvent rester visibles. Le hijab (cheveux couverts + corps modeste) est consensus. Le niqab est une OPTION qui dépend du contexte culturel et de l'avis suivi.",
+      "source": "Coran 24:31 (An-Nûr). 4 écoles juridiques classiques : 3 disent visage non obligatoire (Hanafî, Mâlikî, certains Shâfi'î), 1 le recommande (Hanbalî)."
+    },
+    {
+      "id": "mashhurat_008",
+      "idee_recue": "Allâh est arabe ou favorise les Arabes",
+      "verite": "FAUX. Le Prophète ﷺ a dit (hadith Ahmad) : 'L'Arabe n'est pas supérieur au non-Arabe, ni le non-Arabe à l'Arabe, sauf par la piété.' Allâh transcende toute ethnicité. Le Coran est descendu en arabe pour le contexte historique, pas par préférence ethnique.",
+      "source": "Coran 49:13 (Al-Hujurât) : 'Le plus noble parmi vous auprès d'Allâh est le plus pieux.' Hadith du Pèlerinage d'Adieu."
+    },
+    {
+      "id": "mashhurat_009",
+      "idee_recue": "On peut pas être ami avec un non-musulman",
+      "verite": "FAUX. L'islam interdit la mawalat (alliance contre les musulmans), pas l'amitié bienveillante avec des non-musulmans. Le Prophète ﷺ avait des relations cordiales avec ses voisins juifs et chrétiens. Il aidait les non-musulmans pauvres de Médine.",
+      "source": "Coran 60:8 (Al-Mumtahana) : 'Allâh ne vous interdit pas d'être bienfaisants et équitables envers ceux qui ne vous ont pas combattus.'"
+    },
+    {
+      "id": "mashhurat_010",
+      "idee_recue": "Manger 7 dattes le matin protège DÉFINITIVEMENT contre la sorcellerie",
+      "verite": "CONDITIONNÉ. Le hadith spécifie les dattes AJWA de Médine. Les autres dattes ont aussi des bénéfices mais le hadith précis vise Ajwa. Ne pas généraliser à 'n'importe quelles dattes'. Et c'est un moyen recommandé, pas une garantie absolue.",
+      "source": "Hadith Bukhari 5768 : 'Celui qui mange 7 dattes AJWA le matin...' Cheikh al-'Albânî et autres précisent la condition."
+    },
+    {
+      "id": "mashhurat_011",
+      "idee_recue": "On ne peut pas couper ses cheveux/ongles en état de menstruation",
+      "verite": "FAUX SELON LA MAJORITÉ. Le hadith parfois cité est faible (mawdû' selon plusieurs muhaddithîn). La femme en menstruation peut tout faire SAUF : prier, jeûner, rapports sexuels, toucher le Coran. Cheveux et ongles peuvent être coupés normalement.",
+      "source": "Pas de hadith authentique l'interdisant. Avis majoritaire des 4 écoles juridiques."
+    },
+    {
+      "id": "mashhurat_012",
+      "idee_recue": "Toute image d'être vivant est haram",
+      "verite": "DIVERGENCE. La majorité interdit les sculptures et statues d'êtres vivants. Mais les images plates (photos, dessins) sont PERMISES selon de nombreux savants modernes (Ibn 'Outhaymîn, al-Albânî pour les nécessités). Le contexte (idolâtrie) du hadith est central : ce qui est interdit, c'est ce qui mène à l'adoration.",
+      "source": "Hadith Bukhari sur les sculpteurs ('musawwirîn'). Distinction sculpture/image plate par Ibn 'Outhaymîn."
+    },
+    {
+      "id": "mashhurat_013",
+      "idee_recue": "Le mariage temporaire (mut'a) est permis en sunna",
+      "verite": "FAUX pour les sunnites. Le mariage temporaire (mut'a) fut autorisé brièvement puis ABROGÉ par le Prophète ﷺ (consensus sunnite). Il reste pratiqué dans le chiisme dualité, mais c'est une divergence majeure entre les deux courants.",
+      "source": "Hadith Muslim : Le Prophète ﷺ a interdit la mut'a définitivement à Khaybar. Consensus de l'islam sunnite."
+    },
+    {
+      "id": "mashhurat_014",
+      "idee_recue": "La polygamie est obligatoire ou recommandée",
+      "verite": "FAUX. La polygamie est PERMISE sous strictes conditions (équité entre épouses) mais pas obligatoire ni recommandée. Le Coran dit même : 'Si vous craignez de ne pas être justes, alors une seule.' La majorité des musulmans dans le monde sont monogames.",
+      "source": "Coran 4:3 (An-Nisâ') : 'Mais si vous craignez de n'être pas justes, alors une seule.'"
+    },
+    {
+      "id": "mashhurat_015",
+      "idee_recue": "La femme hérite de la moitié de l'homme dans tous les cas",
+      "verite": "INEXACT. Dans CERTAINS cas (fille/fils par exemple), oui — mais cela est compensé par les obligations financières de l'homme. La femme n'a AUCUNE obligation de dépenser pour la famille. Dans d'autres cas, la femme hérite AUTANT ou PLUS que l'homme (par exemple, la mère dans certaines configurations). Plus de 30 configurations existent.",
+      "source": "Coran 4:11-12 (An-Nisâ'). Analyse fiqh détaillée des cas d'héritage."
+    },
+    {
+      "id": "mashhurat_016",
+      "idee_recue": "L'islam autorise les violences conjugales",
+      "verite": "FAUX. Le Prophète ﷺ a dit : 'Le meilleur d'entre vous est celui qui se comporte le mieux avec sa femme.' Il n'a JAMAIS frappé une de ses épouses. Le verset 4:34 mal interprété parle d'une situation extrême et la majorité des savants interprètent comme symbolique (avec un siwâk).",
+      "source": "Hadith Tirmidhî : 'Le meilleur d'entre vous...' Pratique du Prophète ﷺ qui n'a jamais frappé Aïcha ni aucune épouse."
+    },
+    {
+      "id": "mashhurat_017",
+      "idee_recue": "Le jihad signifie la guerre contre les non-musulmans",
+      "verite": "FAUX. Le mot jihâd vient de 'jhd' = effort. Le grand jihad (al-jihâd al-akbar) selon un hadith = la lutte contre son ego. Le petit jihad = défense militaire UNIQUEMENT en cas de défense légitime, avec règles strictes (pas de civils, pas d'arbres, pas de femmes ni enfants).",
+      "source": "Hadith Bayhaqî : 'Nous revenons du petit jihad au plus grand : le jihad contre l'âme.' Coran 22:39 (jihad défensif uniquement)."
+    },
+    {
+      "id": "mashhurat_018",
+      "idee_recue": "Le crucifix dans la maison annule les anges",
+      "verite": "PARTIEL. Le hadith dit que les anges n'entrent pas dans une maison avec des STATUES (timthâl) — pas spécifiquement crucifix. Mais comme le crucifix est une image figurative, plusieurs savants déconseillent de le garder visiblement. Une photo de famille est différente d'une statue d'adoration.",
+      "source": "Hadith Bukhari : 'Les anges n'entrent pas dans une maison où il y a un chien ou une statue (timthâl).'"
+    },
+    {
+      "id": "mashhurat_019",
+      "idee_recue": "Les femmes ne peuvent pas conduire en islam",
+      "verite": "RIEN dans le Coran ou la sunna ne l'interdit. C'était une loi spécifique de l'Arabie saoudite, abolie en 2018. Les femmes du Prophète ﷺ montaient des chameaux et des chevaux (équivalents de l'époque). La règle vient d'une lecture politique, pas religieuse.",
+      "source": "Aïcha (rad) montait son chameau. Hadith Bukhari multiples. Pas de texte sacré l'interdisant."
+    },
+    {
+      "id": "mashhurat_020",
+      "idee_recue": "On meurt à l'heure de notre destin et rien ne peut le changer",
+      "verite": "NUANCÉ. Oui Allâh sait tout (Coran 6:59). MAIS le Prophète ﷺ a dit : 'La du'â et le destin se combattent au-dessus des nuages.' La du'â et la sadaqa peuvent prolonger la vie selon plusieurs hadiths. Le qadar n'est pas un fatalisme aveugle.",
+      "source": "Hadith Tirmidhî sur du'â. Hadith Bukhari : 'Le maintien des liens du sang prolonge la vie.'"
+    },
+    {
+      "id": "mashhurat_021",
+      "idee_recue": "Le Prophète ﷺ s'est marié avec Aïcha à 6 ans",
+      "verite": "DÉBAT HISTORIQUE. Le hadith Bukhari mentionne 6 ans pour les fiançailles et 9 ans pour la consommation. MAIS de nombreuses analyses historiques modernes (Adil Salahi, Tahir-ul-Qadri, etc.) suggèrent qu'Aïcha avait entre 17-19 ans, en croisant les âges de sa sœur Asma' et les événements historiques. Pas de consensus absolu.",
+      "source": "Hadith Bukhari (chiffre 6/9 traditionnel). Analyses historiques modernes croisées."
+    },
+    {
+      "id": "mashhurat_022",
+      "idee_recue": "Manger pendant la salât rompt le wudu",
+      "verite": "DIVERGENCE. Manger ne rompt PAS les ablutions selon la majorité (3 écoles sur 4). Sauf la viande de chameau spécifiquement, selon un hadith (école Hanbalî, autres divergent). Les autres aliments n'ont aucun effet sur le wudu.",
+      "source": "Hadith Muslim sur la viande de chameau. Avis des écoles juridiques."
+    },
+    {
+      "id": "mashhurat_023",
+      "idee_recue": "On doit dire 'Salam Aleykoum' à un non-musulman en premier",
+      "verite": "DIVERGENCE. Le hadith dit : 'Ne commencez pas le salam aux gens du Livre.' MAIS de nombreux savants modernes nuancent : on peut dire 'Bonjour' normalement (pas Salam Aleykoum exclusivement), et même certains permettent le Salam. La règle initiale était dans un contexte de tension.",
+      "source": "Hadith Muslim. Nuances chez Yûsuf al-Qaradâwî et autres contemporains."
+    },
+    {
+      "id": "mashhurat_024",
+      "idee_recue": "Une femme ne peut pas conduire la prière",
+      "verite": "CONSENSUS : devant des hommes, non. MAIS elle PEUT mener la prière d'autres femmes (consensus des 4 écoles, sauf détails). Et une mère peut conduire la prière de ses jeunes enfants. La restriction est pour le mixte adulte.",
+      "source": "Hadith Abû Dâwûd : Umm Waraqa désignée par le Prophète ﷺ pour conduire la prière des femmes de sa maison."
+    },
+    {
+      "id": "mashhurat_025",
+      "idee_recue": "Le bain rituel (ghusl) nécessite de l'eau salée ou un savon spécifique",
+      "verite": "FAUX. Le ghusl nécessite seulement de l'eau pure (de quelque source). Aucun savon spécifique. Aucun rituel d'eau salée. Il faut juste : intention, rinçage de la bouche/nez, eau sur tout le corps, frottement.",
+      "source": "Hadith Bukhari et Muslim sur la méthode du ghusl du Prophète ﷺ. Description par Aïcha (rad)."
+    },
+    {
+      "id": "mashhurat_026",
+      "idee_recue": "Lailat al-Qadr c'est forcément la 27e nuit du Ramadan",
+      "verite": "PROBABILITÉ FORTE mais pas certitude. Le Prophète ﷺ a dit : 'Cherchez-la dans les nuits impaires des 10 derniers jours.' (21, 23, 25, 27, 29). Plusieurs hadiths penchent vers le 27, mais Allâh l'a volontairement cachée pour qu'on prie toutes ces nuits.",
+      "source": "Hadith Bukhari et Muslim sur les nuits impaires des 10 derniers jours."
+    },
+    {
+      "id": "mashhurat_027",
+      "idee_recue": "La gélatine est toujours haram",
+      "verite": "DÉPEND. La gélatine de porc est harâm. La gélatine de bœuf halal est halal. La gélatine de poisson est halal sans conditions. La gélatine 'générique' sans précision est douteuse — privilégier les produits certifiés.",
+      "source": "Principe coranique : éviter le douteux. Hadith Bukhari sur le douteux."
+    },
+    {
+      "id": "mashhurat_028",
+      "idee_recue": "Les non-musulmans iront tous en Enfer",
+      "verite": "NUANCE THÉOLOGIQUE. Le Coran dit qu'Allâh est juste (60:8) et qu'Il ne charge personne au-delà de ses moyens (2:286). Beaucoup de savants distinguent : ceux qui ont reçu le message ET l'ont rejeté volontairement vs ceux qui n'ont pas eu l'occasion réelle de connaître. Allâh juge avec justice et clémence. Ne pas se substituer à Sa décision finale.",
+      "source": "Coran 2:286, 60:8, 17:15. Discussions des théologiens comme Ghazâlî sur le sort des non-musulmans (al-Iqtisâd fî-l-i'tiqâd)."
+    },
+    {
+      "id": "mashhurat_029",
+      "idee_recue": "Il faut faire la khutba (sermon) du vendredi en arabe",
+      "verite": "DIVERGENCE. La majorité (Hanafî, Mâlikî, Hanbalî) accepte que la khutba soit en langue locale pour être comprise. Seule certaine école Shâfi'î impose l'arabe pour les versets cités. La compréhension est essentielle.",
+      "source": "Principe islamique de la compréhension du message. Avis des 4 écoles juridiques sur la khutba."
+    },
+    {
+      "id": "mashhurat_030",
+      "idee_recue": "On doit prier dans une mosquée pour que ce soit valide",
+      "verite": "FAUX. La salât est valide partout (sauf endroits manifestement impurs ou cimetières). Le Prophète ﷺ a dit : 'La terre entière m'a été faite mosquée.' Prier à la maison, au travail, dans la nature — tout est valide. La mosquée est recommandée pour le jum'a et le rassemblement, mais pas obligatoire pour les 5 prières quotidiennes (sauf jum'a pour les hommes).",
+      "source": "Hadith Bukhari : 'La terre entière m'a été faite mosquée et pure.'"
+    },
+    {
+      "id": "mashhurat_031",
+      "idee_recue": "Le Prophète ﷺ avait de la magie noire qu'on lui a faite (l'a touché)",
+      "verite": "VRAI selon le hadith authentique. Le Prophète ﷺ a été touché par un sortilège (Labîd ibn al-A'sam) mais Allâh l'a guéri. Cela ne diminue pas son statut — il restait protégé dans sa mission prophétique. Pour les humains ordinaires : la sorcellerie existe, mais Allâh nous protège par les Mu'awwidhât.",
+      "source": "Hadith Bukhari sur l'épisode du sortilège. Sourates Al-Falaq et An-Nâs révélées en partie pour cela."
+    },
+    {
+      "id": "mashhurat_032",
+      "idee_recue": "Les rêves sont toujours significatifs",
+      "verite": "NUANCE. Les rêves sont de 3 types : (1) bon rêve d'Allâh, (2) cauchemar du diable (cracher 3 fois à gauche et chercher refuge), (3) rêve de l'âme (reflet de la journée). Tous ne sont pas significatifs. Le Prophète ﷺ a dit que les 'rêves véridiques' sont 1/46 de la prophétie.",
+      "source": "Hadith Bukhari : Les 3 types de rêves. Du'â anti-cauchemar."
+    },
+    {
+      "id": "mashhurat_033",
+      "idee_recue": "Le hijab est récent (innovation moderne)",
+      "verite": "FAUX. Le hijab existe depuis la révélation du Coran (24:31 et 33:59) au temps du Prophète ﷺ. Les Compagnonnes le portaient. L'INTERPRÉTATION du style varie selon les époques et cultures, mais le principe de pudeur féminine est coranique.",
+      "source": "Coran 24:31, 33:59. Pratique des Compagnonnes (rad)."
+    },
+    {
+      "id": "mashhurat_034",
+      "idee_recue": "Un croyant ne peut pas avoir de dépression",
+      "verite": "DANGEREUX et FAUX. Les prophètes eux-mêmes ont eu de la tristesse profonde : Ya'qûb ﷺ a pleuré jusqu'à devenir aveugle. Le Prophète ﷺ a vécu 'l'année de la tristesse' (Khadîja + Abû Tâlib). La dépression est une maladie, pas un manque de foi. La traiter est OBLIGATOIRE.",
+      "source": "Coran 12:84 (Ya'qûb). Vie du Prophète ﷺ. Avis des oulémas modernes (mufti Menk, Omar Suleiman, etc.) sur la santé mentale."
+    },
+    {
+      "id": "mashhurat_035",
+      "idee_recue": "Il faut absolument jeûner pendant le Ramadan, peu importe la santé",
+      "verite": "FAUX. Allâh dit explicitement (Coran 2:184-185) : les malades, voyageurs, femmes enceintes/allaitantes, personnes âgées peuvent NE PAS jeûner. Ils rattraperont (qadâ') ou paieront la kaffâra. Forcer son corps malade au jeûne contre l'avis médical est péché, pas piété.",
+      "source": "Coran 2:184-185 (Al-Baqara) explicite."
+    },
+    {
+      "id": "mashhurat_036",
+      "idee_recue": "Un enfant illégitime est maudit pour toujours",
+      "verite": "FAUX TOTAL. L'enfant n'est JAMAIS responsable des péchés de ses parents. Coran 6:164 : 'Aucune âme ne portera le fardeau d'une autre.' L'enfant a tous les droits d'un musulman : il sera jugé sur SES propres œuvres.",
+      "source": "Coran 6:164, 17:15. Consensus des savants."
+    },
+    {
+      "id": "mashhurat_037",
+      "idee_recue": "Les anges n'entrent pas dans une maison avec un chien",
+      "verite": "VRAI mais nuancé. Le hadith dit oui (Bukhari). MAIS les chiens utiles (garde de troupeau, garde de champ, chasse) sont autorisés selon le même hadith. Et il s'agit des anges de la rahma — les anges scribes restent. Posséder un chien utile est permis.",
+      "source": "Hadith Bukhari : avec ses exceptions explicites."
+    },
+    {
+      "id": "mashhurat_038",
+      "idee_recue": "Il faut être obligatoirement marié pour avoir des relations spirituelles complètes",
+      "verite": "NUANCE. Le mariage est 'la moitié de la religion' (hadith). MAIS de nombreux saints, savants, et croyants célibataires ont eu une vie spirituelle remarquable. Le mariage facilite, ne conditionne pas. Allâh juge sur la pureté du cœur.",
+      "source": "Hadith Bukhari : 'Le mariage est la moitié de la religion.' Mais Coran 35:32 mentionne diverses voies."
+    },
+    {
+      "id": "mashhurat_039",
+      "idee_recue": "L'islam favorise les hommes contre les femmes",
+      "verite": "INTERPRÉTATION MODERNE FAUSSE. À l'époque de la révélation, l'islam a DONNÉ aux femmes : droit à l'héritage (inexistant avant), droit au divorce (khul'), droit à la propriété, à l'éducation, à témoigner. C'était une révolution sociale. Les distorsions modernes viennent des cultures patriarcales, pas de la religion.",
+      "source": "Coran 4:7 (héritage femmes). Pratiques de Khadîja (commerçante), Aïcha (savante). Histoire comparée."
+    },
+    {
+      "id": "mashhurat_040",
+      "idee_recue": "On doit dormir orienté vers la Qibla",
+      "verite": "RECOMMANDÉ, pas obligatoire. Le Prophète ﷺ se couchait sur le côté droit, face à la Qibla (selon plusieurs hadiths). Mais ce n'est pas une obligation stricte. Pour les défunts, oui — orienter vers la Qibla est sunna confirmée.",
+      "source": "Hadith Bukhari sur la position du Prophète ﷺ au coucher."
+    },
+    {
+      "id": "mashhurat_041",
+      "idee_recue": "Le Coran a été modifié au cours des siècles",
+      "verite": "FAUX. Le Coran a été préservé intégralement depuis 1400 ans. Méthodes de préservation : (1) mémorisation par milliers de hâfizh dès le 1er siècle, (2) compilation sous Abû Bakr et 'Uthmân (655), (3) manuscrits multiples conservés (Topkapi, Tachkent). Les variantes de lecture (qirâ'ât) sont 10, toutes authentifiées et concordantes sur le sens.",
+      "source": "Coran 15:9 : 'C'est Nous qui avons fait descendre le Coran, et c'est Nous qui en sommes gardien.' Études historiques (codex de Sana'a, Birmingham)."
+    },
+    {
+      "id": "mashhurat_042",
+      "idee_recue": "Les soufis ne sont pas des vrais musulmans",
+      "verite": "GÉNÉRALISATION FAUSSE. Le soufisme classique (Ghazâlî, Junayd, Ibn 'Atâ' Allâh) est une dimension spirituelle de l'islam reconnue par les savants sunnites. CERTAINES dérives modernes existent (associations innovées, tombeaux vénérés) mais ne représentent pas le tasawwuf classique.",
+      "source": "Œuvres d'Imam Ghazâlî, Ibn al-Qayyim (qui validait le tasawwuf classique). Distinction tasawwuf vs déviances."
+    },
+    {
+      "id": "mashhurat_043",
+      "idee_recue": "Les chiites ne sont pas musulmans",
+      "verite": "DIVERGENCE INTERNE, pas exclusion. Les chiites sunnites partagent les 5 piliers, le Coran, le Prophète ﷺ. Les divergences théologiques portent sur la succession ('Alî vs Abû Bakr) et certaines pratiques. Les grands savants (al-Azhar, Yûsuf al-Qaradâwî) reconnaissent leur islamité. Les divergences sont sérieuses mais pas takfîr (exclusion).",
+      "source": "Position d'al-Azhar (Cheikh Shaltût, 1959). Avis des oulémas sunnites majoritaires."
+    },
+    {
+      "id": "mashhurat_044",
+      "idee_recue": "Le voile a été imposé pour cacher la beauté féminine",
+      "verite": "NUANCE. Le hijab est demandé pour la pudeur et la dignité, pas par 'honte' de la femme. Il est un acte de foi et de choix (Coran 33:59 explique la raison : qu'elles soient reconnues et ne soient pas importunées). Une femme voilée n'est pas 'cachée', elle est libre du regard.",
+      "source": "Coran 24:31, 33:59. Témoignages de musulmanes contemporaines sur leur expérience du hijab."
+    },
+    {
+      "id": "mashhurat_045",
+      "idee_recue": "L'islam interdit la contraception",
+      "verite": "DIVERGENCE. La planification familiale (espacement des naissances) est PERMISE selon la majorité des savants — y compris contraception réversible. L'AVORTEMENT après 120 jours est interdit. Avant 120 jours, divergences. La stérilisation permanente est généralement déconseillée.",
+      "source": "Position majoritaire des oulémas modernes (Mufti Menk, Yûsuf al-Qaradâwî). Avis al-Azhar."
+    },
+    {
+      "id": "mashhurat_046",
+      "idee_recue": "Le Prophète ﷺ a interdit aux femmes d'aller à la mosquée",
+      "verite": "FAUX. Hadith Muslim : 'N'empêchez pas les servantes d'Allâh d'aller dans les mosquées d'Allâh.' Les Compagnonnes priaient à la mosquée du Prophète ﷺ. L'interdiction culturelle dans certains pays vient de pratiques locales, pas de la sunna.",
+      "source": "Hadith Muslim cité. Hadith Bukhari : Aïcha priait à la mosquée."
+    },
+    {
+      "id": "mashhurat_047",
+      "idee_recue": "Apprendre la musique d'instruments est haram absolument",
+      "verite": "Le débat sur la musique inclut son apprentissage. Selon les savants qui l'autorisent partiellement (anâshîd, duff), l'apprentissage de ces formes est permis. Ceux qui l'interdisent totalement interdisent aussi son apprentissage. Position : 'pas de consensus rigide.'",
+      "source": "Voir item 002 (musique). Mêmes sources, mêmes nuances."
+    },
+    {
+      "id": "mashhurat_048",
+      "idee_recue": "Un musulman ne peut pas être homosexuel",
+      "verite": "DISTINCTION : l'ACTE est interdit (consensus). MAIS les ATTIRANCES peuvent exister sans être un péché tant qu'on lutte contre. Beaucoup de musulmans LGBT existent et essaient de vivre leur foi. La compassion et la nuance sont essentielles — pas la persécution.",
+      "source": "Coran 7:80-84 (Lot). Distinction acte vs inclination dans la jurisprudence."
+    },
+    {
+      "id": "mashhurat_049",
+      "idee_recue": "Tous les hadiths Sahih Bukhari et Muslim sont 100% incontestables",
+      "verite": "PRESQUE. Sahîh Bukhari et Sahîh Muslim sont les plus authentiques après le Coran. MAIS certains savants ont critiqué quelques hadiths spécifiques (Ibn Hazm, Albânî). 99% sont consensus. Les <1% font débat académique sur authenticité ou interprétation, pas sur la validité globale des œuvres.",
+      "source": "Travaux critiques de Albânî (Silsila), Ibn Hazm. Position majoritaire d'autorité de ces deux ouvrages."
+    },
+    {
+      "id": "mashhurat_050",
+      "idee_recue": "Faire le Hajj efface TOUS les péchés sans exception",
+      "verite": "PRESQUE. Le hadith Bukhari dit : 'Quiconque fait le Hajj sans turpitude ni transgression revient comme le jour où sa mère l'a mis au monde.' MAIS cela efface les péchés ENVERS ALLÂH. Les péchés envers les HUMAINS (vol, calomnie, etc.) nécessitent de rendre les droits aux personnes lésées d'abord.",
+      "source": "Hadith Bukhari sur le Hajj. Principe islamique : les droits humains exigent restitution."
+    }
+  ],
+  
+  "metadata": {
+    "principe_editorial": "Présenter avec NUANCE. Mentionner les divergences entre écoles juridiques quand pertinent. Sourcer Coran + hadiths authentiques. Ne pas trancher pour le lecteur — éduquer.",
+    "ton_general": "Pédagogique, respectueux, factuel. Pas polémique. Ouvrir le dialogue, pas le fermer.",
+    "integration": "Catégorie 'MYTHES_VERITES' à ajouter dans le pool Savais-tu existant (450 items).",
+    "principe_nuance": "Beaucoup de questions n'ont pas de réponse unique. L'islam est riche d'opinions juridiques. Préserver cette richesse.",
+    "avertissement": "Pour des questions personnelles précises (mariage, divorce, héritage), consulter un savant local de confiance."
+  }
+}

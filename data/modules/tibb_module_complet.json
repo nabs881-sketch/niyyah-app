@@ -1,0 +1,566 @@
+{
+  "module": "TIBB_AN_NABAWI",
+  "name_fr": "Médecine prophétique",
+  "name_ar": "الطب النبوي",
+  "version": "1.0",
+  "items_count": 60,
+  "date_production": "2026-05-27",
+  "concept": "Connaissance pratique sur les remèdes prophétiques selon le Coran, la Sunna, et l'ouvrage référence d'Ibn Qayyim al-Jawziyya 'Zâd al-Ma'âd'. À intégrer dans Connaissance.",
+  "integration_recommandee": "Bloc 'Remède du jour' dans la section Connaissance — affichage 1 item/jour pendant 60 jours, puis cycle.",
+  "avertissement_important": "Ce module est INFORMATIF. Toujours consulter un médecin pour les maladies sérieuses. La médecine prophétique COMPLÈTE la médecine moderne, elle ne la REMPLACE PAS.",
+  
+  "items": [
+    {
+      "id": "tibb_001",
+      "remede_fr": "Le miel",
+      "remede_ar": "العسل",
+      "pour_quoi": "Maladies générales, plaies, mal de gorge, immunité",
+      "methode": "Une cuillère à café à jeun le matin. Ou diluée dans de l'eau tiède. Pour les plaies : application locale.",
+      "source_hadith": "Coran 16:69 (An-Nahl) : 'De leurs entrailles sort une boisson de couleur variée qui sert de remède aux hommes.' Hadith Bukhari : 'La guérison est dans trois choses : une gorgée de miel, l'incision (hijama), ou la cautérisation par le feu.'",
+      "note_medicale": "Études confirment : antibactérien, cicatrisant, antioxydant. Particulièrement efficace sur Staphylococcus aureus."
+    },
+    {
+      "id": "tibb_002",
+      "remede_fr": "La nigelle (graine noire)",
+      "remede_ar": "الحبة السوداء",
+      "pour_quoi": "Immunité, allergies, asthme, glycémie, inflammation",
+      "methode": "Huile : 1 cuillère à café à jeun le matin. Graines : moudre et mélanger au miel. Cure de 30-40 jours.",
+      "source_hadith": "Hadith Bukhari 5687 : 'Dans la graine de nigelle, il y a un remède pour toute maladie sauf la mort.' (Habbatu-s-sawdâ').",
+      "note_medicale": "Études PubMed nombreuses : effets immunostimulants, anti-inflammatoires, hypoglycémiants prouvés. Composant actif : thymoquinone."
+    },
+    {
+      "id": "tibb_003",
+      "remede_fr": "La hijama (ventouses)",
+      "remede_ar": "الحجامة",
+      "pour_quoi": "Migraines, douleurs musculaires, hypertension, fatigue chronique",
+      "methode": "Application de ventouses sur la nuque, le dos, ou points spécifiques. Idéalement par un praticien qualifié. Saignée superficielle (hijama humide) ou simple succion (hijama sèche).",
+      "source_hadith": "Hadith Bukhari : 'Le meilleur de vos remèdes est la hijama.' Le Prophète ﷺ se faisait pratiquer la hijama régulièrement.",
+      "note_medicale": "Pratique reconnue en médecine traditionnelle chinoise et arabe. Études récentes : effets anti-inflammatoires et amélioration de la circulation."
+    },
+    {
+      "id": "tibb_004",
+      "remede_fr": "L'huile d'olive",
+      "remede_ar": "زيت الزيتون",
+      "pour_quoi": "Santé cardiovasculaire, peau, cheveux, digestion",
+      "methode": "Interne : 1-2 cuillères à soupe par jour sur la nourriture. Externe : massages, application sur la peau et les cheveux.",
+      "source_hadith": "Coran 24:35 (An-Nûr) — 'arbre béni'. Hadith Tirmidhî : 'Mangez de l'olive et oignez-vous-en, car elle provient d'un arbre béni.'",
+      "note_medicale": "Régime méditerranéen prouvé : réduit risque cardiovasculaire de 30%. Acide oléique, vitamine E, antioxydants."
+    },
+    {
+      "id": "tibb_005",
+      "remede_fr": "La talbîna (bouillie d'orge)",
+      "remede_ar": "التلبينة",
+      "pour_quoi": "Tristesse, dépression légère, deuil, anxiété, problèmes digestifs",
+      "methode": "1-2 cuillères d'orge moulu + 200ml lait + miel. Faire bouillir 5 min. Boire tiède le matin ou avant de dormir.",
+      "source_hadith": "Hadith Bukhari 5689 : 'La talbîna apaise le cœur du malade et chasse une partie de la tristesse.' Aïcha le recommandait aux affligés.",
+      "note_medicale": "Orge : riche en bêta-glucane (fibres solubles), tryptophane (précurseur sérotonine). Effet calmant prouvé."
+    },
+    {
+      "id": "tibb_006",
+      "remede_fr": "L'eau de Zamzam",
+      "remede_ar": "ماء زمزم",
+      "pour_quoi": "Tout ce pour quoi on la boit (du'â spécifique)",
+      "methode": "Boire en 3 gorgées tourné vers la Qibla, avec une intention claire avant. Possible de la verser sur le corps en complément.",
+      "source_hadith": "Hadith Ibn Mâja : 'L'eau de Zamzam est pour ce pour quoi elle est bue.' Hadith Muslim : 'C'est une nourriture qui rassasie, un remède qui guérit.'",
+      "note_medicale": "Analyses : eau alcaline (pH 8), riche en minéraux (calcium, magnésium). Stabilité bactériologique remarquable malgré âge."
+    },
+    {
+      "id": "tibb_007",
+      "remede_fr": "Le siwâk / miswâk (arak)",
+      "remede_ar": "السواك",
+      "pour_quoi": "Hygiène buccale, gencives saines, prévention caries",
+      "methode": "Mâcher l'extrémité de la racine d'arak. Frotter les dents et les gencives 5x en haut, 5x en bas. Avant chaque salât.",
+      "source_hadith": "Hadith Bukhari : 'Si je ne craignais pas que ce soit difficile pour ma communauté, je leur aurais ordonné le siwâk à chaque ablution.'",
+      "note_medicale": "Études : antibactérien naturel (silice, tanins). OMS le recommande comme moyen d'hygiène orale dans certains pays."
+    },
+    {
+      "id": "tibb_008",
+      "remede_fr": "Le sanâ (séné) — laxatif",
+      "remede_ar": "السنا",
+      "pour_quoi": "Constipation, détoxification intestinale",
+      "methode": "Infusion de feuilles séchées (1 cuillère à café dans une tasse d'eau bouillante). Boire le soir, effet 8-12h plus tard.",
+      "source_hadith": "Hadith Tirmidhî : 'Si seulement il y avait quelque chose qui guérisse de la mort, ce serait le sanâ. Le sanâ est un remède contre tout sauf la mort.'",
+      "note_medicale": "Laxatif stimulant reconnu en pharmacopée. À utiliser ponctuellement, pas en continu (risque de dépendance intestinale)."
+    },
+    {
+      "id": "tibb_009",
+      "remede_fr": "La gomme arabique (samgh)",
+      "remede_ar": "الصمغ العربي",
+      "pour_quoi": "Maux d'estomac, ulcères, équilibre de la flore intestinale",
+      "methode": "Diluer 1 cuillère dans un verre d'eau tiède. Boire le matin à jeun.",
+      "source_hadith": "Hadith d'Ibn Mâja (faible mais cité par Ibn al-Qayyim) : recommandation traditionnelle pour les troubles digestifs.",
+      "note_medicale": "Prébiotique reconnu. Améliore la flore intestinale. Études récentes : effets bénéfiques sur le côlon."
+    },
+    {
+      "id": "tibb_010",
+      "remede_fr": "La sourate Al-Fâtiha (roqya)",
+      "remede_ar": "سورة الفاتحة",
+      "pour_quoi": "Toute maladie (avec foi), douleur, mauvais œil, sorcellerie",
+      "methode": "Réciter Al-Fâtiha 7 fois sur de l'eau ou sur la zone douloureuse. Souffler légèrement après chaque récitation. Boire l'eau ou se laver avec.",
+      "source_hadith": "Hadith Bukhari : Un Compagnon a récité Al-Fâtiha sur un homme piqué par un scorpion, qui fut guéri. Le Prophète ﷺ a approuvé en disant : 'Comment as-tu su qu'elle était une roqya ?'",
+      "note_medicale": "Effet placebo + activation neurobiologique de l'intention positive. La foi est un facteur reconnu de récupération."
+    },
+    {
+      "id": "tibb_011",
+      "remede_fr": "Les Mu'awwidhât (sourates 113, 114)",
+      "remede_ar": "المعوذتان",
+      "pour_quoi": "Protection mauvais œil, sorcellerie, anxiété, insomnie",
+      "methode": "Réciter les sourates Al-Falaq et An-Nâs 3 fois. Souffler dans les mains et passer sur le corps. Matin et soir.",
+      "source_hadith": "Hadith Bukhari : Le Prophète ﷺ se protégeait avec ces sourates avant de dormir. Quand il fut malade en fin de vie, Aïcha les récitait sur lui.",
+      "note_medicale": "Rituel de protection psychologique. Apaisement neurobiologique par la répétition + intention."
+    },
+    {
+      "id": "tibb_012",
+      "remede_fr": "Le jeûne thérapeutique",
+      "remede_ar": "الصيام العلاجي",
+      "pour_quoi": "Détoxification, perte de poids, régulation glycémie, longévité",
+      "methode": "Jeûne complet du lever au coucher du soleil. Boire après iftar. Comme Ramadan ou jeûnes sunna (lundi-jeudi, jours blancs).",
+      "source_hadith": "Hadith : 'Jeûnez, vous serez en bonne santé' (faible selon certains, mais le concept est validé par d'autres hadiths). Coran 2:184 : 'Et si vous jeûnez, c'est mieux pour vous.'",
+      "note_medicale": "Autophagie cellulaire (Prix Nobel 2016). Effets prouvés sur diabète, inflammation, fonctions cognitives, longévité."
+    },
+    {
+      "id": "tibb_013",
+      "remede_fr": "Le repos après la salât du midi (qaylûla)",
+      "remede_ar": "القيلولة",
+      "pour_quoi": "Récupération, mémoire, productivité après-midi",
+      "methode": "Sieste courte (15-30 min) après la salât de Dhuhr. Idéalement avant 14h. Pas plus longtemps (risque d'engourdissement).",
+      "source_hadith": "Hadith Tirmidhî : 'Faites la qaylûla, car les démons ne la font pas.' Pratique courante du Prophète ﷺ et des Compagnons.",
+      "note_medicale": "Études : sieste courte améliore mémoire de 30%, vigilance, créativité. Évite l'épuisement de l'après-midi."
+    },
+    {
+      "id": "tibb_014",
+      "remede_fr": "L'huile de cumin noir + miel (kalonji)",
+      "remede_ar": "كلونجي مع العسل",
+      "pour_quoi": "Immunité, allergies saisonnières, énergie générale",
+      "methode": "Mélanger 1 cuillère à café de graines de nigelle moulues avec 1 cuillère de miel pur. Consommer le matin à jeun pendant 21 jours.",
+      "source_hadith": "Combinaison classique recommandée par Ibn al-Qayyim dans Tibb an-Nabawî, basée sur les deux remèdes du hadith Bukhari (miel + nigelle).",
+      "note_medicale": "Synergie immunostimulante. Études confirmées sur asthme allergique et infections respiratoires."
+    },
+    {
+      "id": "tibb_015",
+      "remede_fr": "Le henné (usage médicinal)",
+      "remede_ar": "الحناء",
+      "pour_quoi": "Maux de tête, brûlures, blessures cutanées, fièvre",
+      "methode": "Pâte de henné fraîche appliquée sur le front (maux de tête) ou la zone affectée. Laisser agir 30 min, rincer.",
+      "source_hadith": "Hadith Tirmidhî : 'Si quelqu'un se plaignait d'un mal de tête, le Prophète ﷺ disait : Appliquez-y du henné.' Hadith Abû Dâwûd : recommandation pour les blessures.",
+      "note_medicale": "Henné contient lawsone, antibactérien et anti-inflammatoire. Effet rafraîchissant prouvé."
+    },
+    {
+      "id": "tibb_016",
+      "remede_fr": "Le costus (qist al-hindî)",
+      "remede_ar": "القسط الهندي",
+      "pour_quoi": "Maux de gorge, amygdalite, problèmes respiratoires",
+      "methode": "Poudre de costus mélangée à du miel. Appliquer sur les amygdales ou consommer 1 cuillère à café/jour. Ou en infusion.",
+      "source_hadith": "Hadith Bukhari : 'Soignez-vous avec le costus indien, car il y a en lui 7 guérisons. Il est administré par le nez pour la pleurésie.'",
+      "note_medicale": "Études : antibactérien, anti-inflammatoire, expectorant. Validé dans pharmacopée traditionnelle."
+    },
+    {
+      "id": "tibb_017",
+      "remede_fr": "L'eau froide pour la fièvre",
+      "remede_ar": "الماء البارد للحمى",
+      "pour_quoi": "Fièvre",
+      "methode": "Linge mouillé d'eau froide sur le front. Ou bain tiède (pas glacé). Bien hydrater.",
+      "source_hadith": "Hadith Bukhari : 'La fièvre vient du souffle de l'Enfer. Refroidissez-la avec de l'eau.'",
+      "note_medicale": "Médicalement validé : refroidissement externe + hydratation. Mais consulter si fièvre persistante ou >39°C."
+    },
+    {
+      "id": "tibb_018",
+      "remede_fr": "Le repos en cas de maladie",
+      "remede_ar": "الراحة عند المرض",
+      "pour_quoi": "Toute maladie",
+      "methode": "Réduire les activités. Sommeil prolongé. Hydratation. Du'â de Job (Ayyûb) : 'Le mal m'a touché, et Tu es le plus miséricordieux des miséricordieux.'",
+      "source_hadith": "Coran 21:83-84 — Ayyûb ﷺ et sa du'â. Hadith : Le Prophète ﷺ se reposait quand il était malade et invitait à se soigner.",
+      "note_medicale": "Repos = première ligne de défense immunitaire. Le sommeil est anti-inflammatoire."
+    },
+    {
+      "id": "tibb_019",
+      "remede_fr": "Le lait de chamelle",
+      "remede_ar": "حليب الإبل",
+      "pour_quoi": "Troubles digestifs, foie, diabète, allergies",
+      "methode": "Boire 250ml par jour, frais. Disponible dans certaines épiceries spécialisées ou via importation.",
+      "source_hadith": "Hadith Bukhari : Des hommes des 'Ukl arrivèrent malades à Médine. Le Prophète ﷺ leur ordonna de boire du lait de chamelle. Ils guérirent.",
+      "note_medicale": "Composition unique : sans bêta-lactoglobuline (responsable allergies au lait de vache). Études récentes : effets bénéfiques diabète type 1."
+    },
+    {
+      "id": "tibb_020",
+      "remede_fr": "L'urine de chamelle (usage médicinal)",
+      "remede_ar": "بول الإبل",
+      "pour_quoi": "Maladies digestives, foie (selon le hadith)",
+      "methode": "Le hadith mentionne cet usage mais c'est un cas spécifique non recommandé en pratique moderne. Préférer le lait de chamelle.",
+      "source_hadith": "Hadith Bukhari (même contexte que tibb_019). Cas particulier de prescription prophétique.",
+      "note_medicale": "Études controversées. La majorité des médecins déconseillent. Le lait de chamelle est l'alternative recommandée."
+    },
+    {
+      "id": "tibb_021",
+      "remede_fr": "L'eau et la dhikr pour le mauvais œil",
+      "remede_ar": "العين",
+      "pour_quoi": "Mauvais œil ('ayn)",
+      "methode": "La personne soupçonnée du mauvais œil fait ses ablutions, et celui qui est touché se lave avec cette eau. Multiplier les invocations.",
+      "source_hadith": "Hadith Abû Dâwûd : Pratique du Prophète ﷺ pour Sahl ibn Hunayf qui avait été touché par le mauvais œil de 'Âmir ibn Rabi'a.",
+      "note_medicale": "Ritualisation psychologique. Allâh accepte les moyens prescrits par le Prophète ﷺ."
+    },
+    {
+      "id": "tibb_022",
+      "remede_fr": "L'Âyatu-l-Kursî contre le sorcellerie",
+      "remede_ar": "آية الكرسي",
+      "pour_quoi": "Protection contre la sorcellerie, les jinns, les cauchemars",
+      "methode": "Réciter le verset 2:255 (Âyatu-l-Kursî) avant de dormir, après chaque prière, et en cas de peur.",
+      "source_hadith": "Hadith Bukhari : 'Celui qui récite Âyatu-l-Kursî avant de dormir aura un protecteur d'Allâh, et aucun démon ne s'approchera de lui jusqu'au matin.'",
+      "note_medicale": "Effet apaisant prouvé du dhikr sur le système nerveux parasympathique."
+    },
+    {
+      "id": "tibb_023",
+      "remede_fr": "Le jus de grenade",
+      "remede_ar": "عصير الرمان",
+      "pour_quoi": "Cœur, circulation, mémoire, prévention cancers",
+      "methode": "Un verre de jus frais par jour (sans sucre ajouté). De préférence le matin.",
+      "source_hadith": "Coran 55:68 — grenadiers du Paradis. Hadith : 'Il n'y a pas une grenade qui n'a pas été fécondée par une goutte de l'eau du Paradis.'",
+      "note_medicale": "Études nombreuses : antioxydants puissants, baisse de la pression artérielle, protection contre Alzheimer."
+    },
+    {
+      "id": "tibb_024",
+      "remede_fr": "L'eau au matin à jeun",
+      "remede_ar": "الماء صباحا",
+      "pour_quoi": "Détoxification, énergie, digestion",
+      "methode": "1-2 verres d'eau tiède (ou avec citron, miel) au réveil avant tout repas.",
+      "source_hadith": "Pratique du Prophète ﷺ : boire de l'eau au réveil. Plusieurs hadiths le mentionnent.",
+      "note_medicale": "Réhydratation après 6-8h de jeûne nocturne. Active le métabolisme. Aide la digestion."
+    },
+    {
+      "id": "tibb_025",
+      "remede_fr": "Marcher après les repas",
+      "remede_ar": "المشي بعد الأكل",
+      "pour_quoi": "Digestion, glycémie, métabolisme",
+      "methode": "Marcher 10-15 minutes à allure modérée après chaque repas principal.",
+      "source_hadith": "Pratique du Prophète ﷺ : ne pas s'allonger après manger. Tradition reprise par Ibn al-Qayyim.",
+      "note_medicale": "Études : marche post-repas baisse glycémie de 30%, améliore digestion."
+    },
+    {
+      "id": "tibb_026",
+      "remede_fr": "Le gingembre",
+      "remede_ar": "الزنجبيل",
+      "pour_quoi": "Nausées, troubles digestifs, refroidissement, douleurs articulaires",
+      "methode": "Infusion : 3-4 tranches de gingembre frais dans l'eau chaude + miel. Ou frais râpé dans les plats.",
+      "source_hadith": "Coran 76:17 (Al-Insân) : boisson du Paradis.",
+      "note_medicale": "Anti-inflammatoire puissant. Validé contre nausées (grossesse, chimiothérapie). Réchauffe le corps."
+    },
+    {
+      "id": "tibb_027",
+      "remede_fr": "La sourate Yâsîn pour le malade",
+      "remede_ar": "سورة يس للمريض",
+      "pour_quoi": "Réconfort spirituel, accompagnement maladies graves, agonie",
+      "methode": "Réciter la sourate Yâsîn sur le malade. Particulièrement aux moments difficiles.",
+      "source_hadith": "Hadith Abû Dâwûd : 'Récitez Yâsîn sur vos morts.' Cette pratique s'étend aussi aux malades graves selon plusieurs savants.",
+      "note_medicale": "Effet apaisant de la récitation. Soutien psychologique majeur."
+    },
+    {
+      "id": "tibb_028",
+      "remede_fr": "Du'â pour la guérison",
+      "remede_ar": "دعاء الشفاء",
+      "pour_quoi": "Toute maladie",
+      "methode": "'Allâhumma Rabba-n-nâs, adhhibi-l-ba's, ishfi anta-sh-Shâfî, lâ shifâ'a illâ shifâ'uka, shifâ'an lâ yughâdiru saqamâ.' (Ô Allâh, Seigneur des hommes, fais partir le mal, guéris, Tu es le Guérisseur, il n'y a de guérison que la Tienne, une guérison qui ne laisse pas de séquelle.)",
+      "source_hadith": "Hadith Bukhari : Le Prophète ﷺ disait cette du'â aux malades.",
+      "note_medicale": "Acte d'espérance et de remise. Effet psycho-spirituel reconnu."
+    },
+    {
+      "id": "tibb_029",
+      "remede_fr": "La main sur la zone douloureuse + dhikr",
+      "remede_ar": "اليد على الألم",
+      "pour_quoi": "Douleur localisée",
+      "methode": "Poser la main sur la zone douloureuse et dire : 'Bismillâh' 3 fois, puis 'A'ûdhu bi-'izzati-llâhi wa qudratihi min sharri mâ ajidu wa uhâdhir' 7 fois.",
+      "source_hadith": "Hadith Muslim : 'Uthmân ibn Abî-l-'Âs se plaignait d'une douleur. Le Prophète ﷺ lui enseigna cette méthode.",
+      "note_medicale": "Toucher + verbalisation + foi = libération d'endorphines. Effet anti-douleur prouvé."
+    },
+    {
+      "id": "tibb_030",
+      "remede_fr": "L'évitement des excès alimentaires",
+      "remede_ar": "تجنب الإسراف في الأكل",
+      "pour_quoi": "Prévention de toutes maladies métaboliques",
+      "methode": "Manger 1/3 estomac pour nourriture, 1/3 pour boisson, 1/3 pour respiration. Arrêter avant satiété complète.",
+      "source_hadith": "Hadith Tirmidhî : 'Le fils d'Âdam n'a pas rempli de récipient pire que son ventre.'",
+      "note_medicale": "Restriction calorique modérée : longévité prouvée. Prévention diabète, obésité, maladies cardiaques."
+    },
+    {
+      "id": "tibb_031",
+      "remede_fr": "Le sourire et la patience",
+      "remede_ar": "الابتسامة والصبر",
+      "pour_quoi": "Stress, anxiété, dépression, douleur chronique",
+      "methode": "Sourire intentionnellement même en difficulté. Pratiquer la patience comme exercice spirituel.",
+      "source_hadith": "Hadith Tirmidhî : 'Sourire au visage de ton frère est une aumône.' Coran 2:153 : 'Allâh est avec les patients.'",
+      "note_medicale": "Sourire libère endorphines même forcé. Patience = résilience neurobiologique."
+    },
+    {
+      "id": "tibb_032",
+      "remede_fr": "L'huile de moutarde (sarson ka tel)",
+      "remede_ar": "زيت الخردل",
+      "pour_quoi": "Douleurs articulaires, cheveux, peau",
+      "methode": "Massage sur les articulations douloureuses. Sur le cuir chevelu pour renforcer les cheveux.",
+      "source_hadith": "Pratique traditionnelle dans le sous-continent indien, validée par les savants comme cohérente avec la sunna.",
+      "note_medicale": "Riche en oméga-3, vitamine E. Anti-inflammatoire. Tradition ayurvédique reconnue."
+    },
+    {
+      "id": "tibb_033",
+      "remede_fr": "Le repos sur le côté droit",
+      "remede_ar": "النوم على الجنب الأيمن",
+      "pour_quoi": "Sommeil, digestion, cœur",
+      "methode": "Dormir sur le côté droit, main droite sous la joue. Du'â avant le sommeil.",
+      "source_hadith": "Hadith Bukhari : 'Quand tu vas te coucher, fais tes ablutions comme pour la salât, puis couche-toi sur ton côté droit.'",
+      "note_medicale": "Études : meilleur drainage lymphatique, soulage le cœur (moins de pression sur l'oreillette gauche). Sommeil plus réparateur."
+    },
+    {
+      "id": "tibb_034",
+      "remede_fr": "L'application de cire d'abeille",
+      "remede_ar": "شمع العسل",
+      "pour_quoi": "Plaies, brûlures, peau sèche",
+      "methode": "Application locale sur la peau. Composant de pommades traditionnelles.",
+      "source_hadith": "Tradition arabe ancienne. Validée par les médecins de l'islam classique.",
+      "note_medicale": "Antibactérienne. Protège les plaies. Hydrate la peau. Effets cicatrisants."
+    },
+    {
+      "id": "tibb_035",
+      "remede_fr": "L'eau de rose",
+      "remede_ar": "ماء الورد",
+      "pour_quoi": "Yeux fatigués, peau, anxiété",
+      "methode": "Compresses sur les yeux. Vaporisation sur le visage. Quelques gouttes dans le thé.",
+      "source_hadith": "Traditions médicinales arabes anciennes. Très utilisée dans la culture islamique.",
+      "note_medicale": "Astringent doux, apaisant, antioxydant. Reconnu en cosmétique."
+    },
+    {
+      "id": "tibb_036",
+      "remede_fr": "Le tasbîh (chapelet) contre l'anxiété",
+      "remede_ar": "التسبيح ضد القلق",
+      "pour_quoi": "Anxiété, ruminations, insomnie",
+      "methode": "Subhânallâh (33), Alhamdulillâh (33), Allâhu Akbar (34). Avant de dormir.",
+      "source_hadith": "Hadith Bukhari : 'Le Prophète ﷺ enseigna cela à Fâtima quand elle se plaignait de fatigue. Il dit : C'est mieux qu'un serviteur.'",
+      "note_medicale": "Répétition rythmique = méditation. Active le système parasympathique. Apaise."
+    },
+    {
+      "id": "tibb_037",
+      "remede_fr": "Boire dans des récipients en terre",
+      "remede_ar": "الشرب من الفخار",
+      "pour_quoi": "Hydratation optimale",
+      "methode": "Utiliser des cruches en terre cuite ou des verres en argile pour conserver l'eau.",
+      "source_hadith": "Tradition prophétique : récipients simples, pas en or ou argent (interdit).",
+      "note_medicale": "Terre cuite préserve la fraîcheur naturellement, sans plastique. Minéralisation légère."
+    },
+    {
+      "id": "tibb_038",
+      "remede_fr": "Le câprier (kabar)",
+      "remede_ar": "الكبر",
+      "pour_quoi": "Foie, rate, hépatite",
+      "methode": "Décoction de racines ou consommation des bourgeons (câpres) avec modération.",
+      "source_hadith": "Mentionné par Ibn al-Qayyim dans Tibb an-Nabawî comme remède traditionnel pour le foie.",
+      "note_medicale": "Études récentes : effets hépatoprotecteurs. Antioxydants reconnus."
+    },
+    {
+      "id": "tibb_039",
+      "remede_fr": "Le vinaigre de pomme",
+      "remede_ar": "خل التفاح",
+      "pour_quoi": "Glycémie, digestion, perte de poids",
+      "methode": "1 cuillère à soupe dans un verre d'eau avant les repas. Cure de 2-3 semaines.",
+      "source_hadith": "Hadith Muslim : 'Quel excellent condiment que le vinaigre.' Application moderne du principe.",
+      "note_medicale": "Études nombreuses : régule glycémie post-prandiale, aide la perte de poids légère."
+    },
+    {
+      "id": "tibb_040",
+      "remede_fr": "La sourate Al-Baqara pour la protection de la maison",
+      "remede_ar": "سورة البقرة للمنزل",
+      "pour_quoi": "Protection spirituelle de la maison, contre les jinns",
+      "methode": "Réciter Al-Baqara régulièrement dans la maison (au moins une fois par mois). Ou en streaming.",
+      "source_hadith": "Hadith Muslim : 'Ne faites pas de vos maisons des cimetières. Le diable s'enfuit de la maison où l'on récite Al-Baqara.'",
+      "note_medicale": "Effet psychologique : sentiment de sécurité, sérénité de l'espace de vie."
+    },
+    {
+      "id": "tibb_041",
+      "remede_fr": "Le repos visuel (regarder le vert)",
+      "remede_ar": "النظر إلى الأخضر",
+      "pour_quoi": "Yeux fatigués, stress, écrans",
+      "methode": "Toutes les 20 minutes d'écran, regarder du vert/nature pendant 20 secondes (règle des 20-20-20).",
+      "source_hadith": "Tradition : le Prophète ﷺ aimait le vert. Le Paradis est décrit avec verdure. Coran 55:64 : 'mudhâmmatân' (deux jardins verdoyants).",
+      "note_medicale": "Méthode validée en ophtalmologie pour fatigue oculaire moderne."
+    },
+    {
+      "id": "tibb_042",
+      "remede_fr": "La salât comme exercice physique",
+      "remede_ar": "الصلاة كرياضة",
+      "pour_quoi": "Articulations, dos, circulation, méditation active",
+      "methode": "5 prières par jour avec mouvements complets : debout, ruku', sujûd. Au moins 30 minutes cumulées.",
+      "source_hadith": "Les mouvements de la salât sont prescrits par Allâh. Hadith : 'Faites votre salât avec tranquillité.' (Bukhari).",
+      "note_medicale": "Études : équivalent à 5 séances de yoga doux par jour. Améliore flexibilité, dos, circulation."
+    },
+    {
+      "id": "tibb_043",
+      "remede_fr": "Le jeûne du lundi-jeudi",
+      "remede_ar": "صيام الإثنين والخميس",
+      "pour_quoi": "Détoxification, métabolisme, longévité",
+      "methode": "Jeûner les lundis et jeudis du lever au coucher du soleil. Suhûr conseillé.",
+      "source_hadith": "Hadith Tirmidhî : 'Les actes sont présentés à Allâh le lundi et le jeudi. J'aime que mes actes soient présentés quand je jeûne.'",
+      "note_medicale": "Jeûne intermittent = autophagie cellulaire. Effets longévité, énergie, cognition."
+    },
+    {
+      "id": "tibb_044",
+      "remede_fr": "L'oignon contre les piqûres",
+      "remede_ar": "البصل ضد اللسعات",
+      "pour_quoi": "Piqûres d'insectes, brûlures légères",
+      "methode": "Appliquer une tranche d'oignon cru sur la piqûre. Laisser quelques minutes.",
+      "source_hadith": "Remède traditionnel mentionné par Ibn al-Qayyim. Cohérent avec les usages prophétiques généraux.",
+      "note_medicale": "Oignon contient quercétine (anti-inflammatoire) et soufre (antibactérien). Validé empiriquement."
+    },
+    {
+      "id": "tibb_045",
+      "remede_fr": "L'ail à jeun",
+      "remede_ar": "الثوم على الريق",
+      "pour_quoi": "Tension artérielle, immunité, circulation",
+      "methode": "1 gousse d'ail crue écrasée le matin à jeun avec de l'eau. Possible avec du miel pour atténuer.",
+      "source_hadith": "Pas mentionné spécifiquement dans la sunna comme remède, mais permis (Coran 2:61). Recommandé en médecine traditionnelle islamique.",
+      "note_medicale": "Études : baisse pression artérielle, cholestérol, effet antibactérien. Plusieurs méta-analyses positives."
+    },
+    {
+      "id": "tibb_046",
+      "remede_fr": "Le concombre cru",
+      "remede_ar": "القثاء",
+      "pour_quoi": "Hydratation, peau, digestion",
+      "methode": "1-2 concombres par jour en salade ou cru. Le combiner aux dattes (sunna).",
+      "source_hadith": "Hadith Bukhari : Le Prophète ﷺ mangeait des concombres avec des dattes fraîches.",
+      "note_medicale": "96% d'eau. Riche en silice (peau, cheveux). Frais et apaisant."
+    },
+    {
+      "id": "tibb_047",
+      "remede_fr": "Le repos après le coucher du soleil",
+      "remede_ar": "الراحة بعد الغروب",
+      "pour_quoi": "Sommeil, rythme circadien",
+      "methode": "Réduire les écrans après Maghrib. Activités calmes. Du'â avant de dormir.",
+      "source_hadith": "Tradition prophétique : pas de discussions tardives sauf nécessité. Hadith : 'Le Prophète ﷺ détestait dormir avant 'Ishâ et discuter après.' (Bukhari).",
+      "note_medicale": "Mélatonine stimulée par obscurité. Écrans bleus perturbent le sommeil. Coucher tôt = santé prouvée."
+    },
+    {
+      "id": "tibb_048",
+      "remede_fr": "Boire de l'eau lentement",
+      "remede_ar": "شرب الماء ببطء",
+      "pour_quoi": "Digestion, hydratation cellulaire",
+      "methode": "Boire en 3 gorgées (sunna). Pas d'un trait. Respirer entre.",
+      "source_hadith": "Hadith Muslim : 'Le Prophète ﷺ respirait trois fois en buvant. C'est meilleur, plus salutaire, plus rassasiant.'",
+      "note_medicale": "Boire trop vite dilate l'estomac. Lent = meilleure absorption cellulaire."
+    },
+    {
+      "id": "tibb_049",
+      "remede_fr": "Le rire modéré",
+      "remede_ar": "الضحك المعتدل",
+      "pour_quoi": "Stress, dépression, immunité",
+      "methode": "Sourire et rire avec mesure. Ne pas rire aux éclats répétés (le Prophète ﷺ souriait plus qu'il ne riait).",
+      "source_hadith": "Hadith Tirmidhî : 'Le Prophète ﷺ ne riait que par un sourire.' Hadith Bukhari : 'Ne riez pas trop, car beaucoup rire fait mourir le cœur.'",
+      "note_medicale": "Rire stimule endorphines, immunité, oxygénation. Excès = épuisement nerveux."
+    },
+    {
+      "id": "tibb_050",
+      "remede_fr": "L'olive entière (fruit)",
+      "remede_ar": "الزيتون",
+      "pour_quoi": "Foie, cœur, antioxydants",
+      "methode": "5-10 olives par jour (vertes ou noires). En collation ou avec le pain.",
+      "source_hadith": "Coran 95:1 (At-Tîn) : 'Par le figuier et l'olivier.' Coran 24:35 : 'arbre béni'.",
+      "note_medicale": "Acide oléique, polyphénols. Étude PREDIMED : régime méditerranéen réduit risque cardiovasculaire."
+    },
+    {
+      "id": "tibb_051",
+      "remede_fr": "Le lait + miel le soir",
+      "remede_ar": "الحليب والعسل ليلا",
+      "pour_quoi": "Insomnie, anxiété, gorge irritée",
+      "methode": "1 verre de lait tiède + 1 cuillère à café de miel, 30 min avant de dormir.",
+      "source_hadith": "Combinaison de deux aliments sunna (lait + miel). Pratique traditionnelle.",
+      "note_medicale": "Lait = tryptophane (mélatonine). Miel = glucose lent. Effet apaisant et soporifique."
+    },
+    {
+      "id": "tibb_052",
+      "remede_fr": "La marche pieds nus (earthing)",
+      "remede_ar": "المشي حافي القدمين",
+      "pour_quoi": "Connexion à la terre, stress, inflammation",
+      "methode": "Marcher pieds nus sur l'herbe, le sable, la terre 10-20 min/jour.",
+      "source_hadith": "Le Prophète ﷺ marchait pieds nus quand il le pouvait. Tradition de simplicité.",
+      "note_medicale": "Concept moderne 'earthing' : électrons de la terre réduisent inflammation. Études en cours."
+    },
+    {
+      "id": "tibb_053",
+      "remede_fr": "Le fenouil après les repas",
+      "remede_ar": "الشمر بعد الأكل",
+      "pour_quoi": "Digestion, ballonnements, mauvaise haleine",
+      "methode": "Mâcher 1 cuillère à café de graines de fenouil après le repas.",
+      "source_hadith": "Tradition arabe ancienne, validée par Ibn al-Qayyim. Cohérente avec la sunna.",
+      "note_medicale": "Anéthol (composant actif) = digestif éprouvé. Antispasmodique."
+    },
+    {
+      "id": "tibb_054",
+      "remede_fr": "Le repas chaud avant le repos",
+      "remede_ar": "الطعام الدافئ",
+      "pour_quoi": "Digestion, sommeil",
+      "methode": "Préférer une soupe chaude ou un plat tiède le soir. Pas froid de réfrigérateur.",
+      "source_hadith": "Pratique traditionnelle : aliments à température corporelle. Hadith d'attendre que le repas refroidisse s'il fume.",
+      "note_medicale": "Chaud = meilleure digestion. Froid demande énergie pour réchauffement interne."
+    },
+    {
+      "id": "tibb_055",
+      "remede_fr": "Le bain à l'eau salée",
+      "remede_ar": "حمام الماء المالح",
+      "pour_quoi": "Détente musculaire, peau, stress",
+      "methode": "Bain tiède + 200g de sel marin ou Epsom. 20 minutes.",
+      "source_hadith": "Pratique de purification (ghusl) au cœur de l'islam. Sel comme purificateur dans plusieurs traditions.",
+      "note_medicale": "Magnésium absorbé par la peau. Apaise tensions, articulations, peau."
+    },
+    {
+      "id": "tibb_056",
+      "remede_fr": "Le lever à Fajr",
+      "remede_ar": "الاستيقاظ للفجر",
+      "pour_quoi": "Rythme circadien, énergie, productivité",
+      "methode": "Se lever à l'adhân du Fajr (avant l'aube). Prier puis bouger. Ne pas se rendormir.",
+      "source_hadith": "Hadith Tirmidhî : 'Allâh a béni les premières heures du matin pour ma communauté.'",
+      "note_medicale": "Études : lever tôt = meilleure santé mentale, productivité, espérance de vie. Cortisol matinal naturel."
+    },
+    {
+      "id": "tibb_057",
+      "remede_fr": "Du'â de Yûnus pour la détresse",
+      "remede_ar": "دعاء يونس",
+      "pour_quoi": "Détresse profonde, crise, ne sait plus quoi faire",
+      "methode": "'Lâ ilâha illâ anta, subhânaka, innî kuntu min al-zhâlimîn.' Répéter de cœur jusqu'à apaisement.",
+      "source_hadith": "Coran 21:87. Hadith : 'Aucun musulman ne fait cette du'â pour quelque chose sans qu'Allâh ne lui réponde.'",
+      "note_medicale": "Verbalisation + reconnaissance + remise = libération psychologique. Effet thérapeutique reconnu."
+    },
+    {
+      "id": "tibb_058",
+      "remede_fr": "La satisfaction (ridâ)",
+      "remede_ar": "الرضا",
+      "pour_quoi": "Bonheur, anxiété, ruminations",
+      "methode": "Pratique quotidienne de l'acceptation du destin (qadar). Du'â : 'Radhîtu billâhi Rabban, wa bil-islâmi dînan, wa biMuhammadin sallallâhu 'alayhi wa sallam nabiyyan.'",
+      "source_hadith": "Hadith Abû Dâwûd : Du'â matin et soir.",
+      "note_medicale": "Études en psychologie positive : acceptation > combat. Réduit stress, dépression."
+    },
+    {
+      "id": "tibb_059",
+      "remede_fr": "L'isolement bref (khalwa)",
+      "remede_ar": "الخلوة",
+      "pour_quoi": "Burn-out, sur-stimulation, surmenage",
+      "methode": "Se retirer 30 min/jour : silence, dhikr, méditation, sans téléphone.",
+      "source_hadith": "Pratique du Prophète ﷺ avant la révélation (grotte de Hirâ'). Tradition spirituelle confirmée.",
+      "note_medicale": "Études : 10 min silence/jour = baisse cortisol, neuroplasticité, créativité accrue."
+    },
+    {
+      "id": "tibb_060",
+      "remede_fr": "Le triple remède du Prophète ﷺ",
+      "remede_ar": "الشفاء في ثلاث",
+      "pour_quoi": "Principe général de la médecine prophétique",
+      "methode": "Selon le Prophète ﷺ, la guérison vient de 3 sources combinées : (1) remède naturel (miel, plantes...), (2) hijama / soins physiques, (3) du'â / Coran / spirituel.",
+      "source_hadith": "Hadith Bukhari : 'La guérison est dans trois choses : la gorgée de miel, l'incision (hijama), la cautérisation par le feu. J'interdis à ma communauté la cautérisation.'",
+      "note_medicale": "Médecine intégrative moderne valide cette approche : naturel + médical + psycho-spirituel = guérison complète."
+    }
+  ],
+  
+  "metadata": {
+    "principe_editorial": "Source principale : 'Zâd al-Ma'âd' d'Ibn Qayyim al-Jawziyya + hadiths authentiques Bukhari/Muslim. Chaque remède a sa source ET une validation médicale moderne quand disponible.",
+    "avertissement_legal": "Ce module est éducatif. Ne remplace pas un avis médical. En cas de maladie sérieuse, consulter un médecin. La médecine prophétique COMPLÈTE la médecine moderne.",
+    "trois_categories_ibn_qayyim": {
+      "naturels": "Aliments, plantes, hijama, ventouses",
+      "spirituels": "Coran, du'â, dhikr, roqya, salât",
+      "composés": "Combinaison des deux"
+    },
+    "integration": "À placer dans bloc CONNAISSANCE — format 'Remède du jour' (1 item/jour × 60 jours puis cycle).",
+    "suite_recommandee": "Module AL-MASHHÛRÂT (Mythes & Vérités) — 50 items dans Savais-tu."
+  }
+}

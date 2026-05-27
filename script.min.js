@@ -1310,6 +1310,31 @@ function loadDuaas(cb) {
 }
 function getDuaaJourNum() { var p = parseInt(safeGetItem('niyyah_duaa_progress') || '1', 10); return ((p - 1) % 253) + 1; }
 function getDuaaJourPreview() { var n = getDuaaJourNum(); return { jour: n, total: 253 }; }
+var GHIDAA_DATA = null;
+function loadGhidaa(cb) {
+  if (GHIDAA_DATA) { if (cb) cb(GHIDAA_DATA); return; }
+  fetch('./data/modules/ghidaa_module_complet.json').then(function(r) { return r.json(); }).then(function(d) { GHIDAA_DATA = d && d.items ? d.items : []; if (cb) cb(GHIDAA_DATA); }).catch(function() { if (cb) cb(null); });
+}
+function getGhidaaJour() {
+  if (!GHIDAA_DATA || !GHIDAA_DATA.length) return null;
+  var dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(),0,0).getTime()) / 86400000);
+  return GHIDAA_DATA[dayOfYear % GHIDAA_DATA.length];
+}
+var TIBB_DATA = null;
+function loadTibb(cb) {
+  if (TIBB_DATA) { if (cb) cb(TIBB_DATA); return; }
+  fetch('./data/modules/tibb_module_complet.json').then(function(r) { return r.json(); }).then(function(d) { TIBB_DATA = d && d.items ? d.items : []; if (cb) cb(TIBB_DATA); }).catch(function() { if (cb) cb(null); });
+}
+function getTibbJour() {
+  if (!TIBB_DATA || !TIBB_DATA.length) return null;
+  var dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(),0,0).getTime()) / 86400000);
+  return TIBB_DATA[dayOfYear % TIBB_DATA.length];
+}
+var MASHHURAT_DATA = null;
+function loadMashhurat(cb) {
+  if (MASHHURAT_DATA) { if (cb) cb(MASHHURAT_DATA); return; }
+  fetch('./data/modules/mashhurat_module_complet.json').then(function(r) { return r.json(); }).then(function(d) { MASHHURAT_DATA = d && d.items ? d.items : []; if (cb) cb(MASHHURAT_DATA); }).catch(function() { if (cb) cb(null); });
+}
 var FIQH_JOUR = null;
 function loadFiqh(cb) {
   if (FIQH_JOUR) { if (cb) cb(FIQH_JOUR); return; }
@@ -1445,6 +1470,8 @@ const LEVELS = [
         { id: 'recits_coran', minVague: 3, label: 'R\u00e9cits du Coran', sub: 'Histoires et paraboles r\u00e9v\u00e9l\u00e9es', arabic: '\u0642\u064E\u0635\u064E\u0635\u064F \u0627\u0644\u0642\u064F\u0631\u0622\u0646', paths: ['reconnecter','routine','sacraliser'], block: 'jour', category: 'science' },
         { id: 'vie_compagnons', minVague: 4, label: 'Vie des Compagnons', get sub() { var c = getCompagnonJour(); if (!c.compagnon) return 'Abu Bakr, Omar, Othman, Ali\u2026'; var ep = c.episode_num ? ' \u2014 \u00c9p. ' + c.episode_num + '/' + c.episode_total : ''; return c.compagnon + ep + ' \u2014 ' + (c.titre || '') + ' \u00b7 Jour ' + (c.jour || '?') + '/82'; }, arabic: '\u0633\u0650\u064A\u064E\u0631\u064F \u0627\u0644\u0635\u0651\u064E\u062D\u064E\u0627\u0628\u064E\u0629\u0650', paths: ['routine','sacraliser'], block: 'jour', category: 'science', hadith: '"Mes Compagnons sont comme les \u00e9toiles \u2014 qui que vous suiviez, vous serez guid\u00e9s" \u2014 Bayhaqi', source: 'Bayhaqi' },
         { id: 'fiqh_jour', minVague: 4, label: 'Jurisprudence \u2014 1 r\u00e8gle du jour', get sub() { var f = getFiqhJourRule(); var t = (f.regle || '').substring(0,50); return t ? t + '\u2026' : 'Une r\u00e8gle pratique'; }, arabic: '\u0641\u0650\u0642\u0652\u0647\u064C', paths: ['sacraliser'], block: 'jour', category: 'science' },
+        { id: 'ghidaa_jour', minVague: 4, label: 'Aliment du jour', get sub() { var g = getGhidaaJour(); return g ? g.nom_fr + ' \u2014 ' + g.nom_ar : 'Nutrition proph\u00e9tique'; }, arabic: '\u063A\u0650\u0630\u064E\u0627\u0621', paths: ['sacraliser'], block: 'jour', category: 'science' },
+        { id: 'tibb_jour', minVague: 4, label: 'Rem\u00e8de du jour', get sub() { var t = getTibbJour(); return t ? t.remede_fr + ' \u2014 ' + t.pour_quoi.substring(0,40) : 'M\u00e9decine proph\u00e9tique'; }, arabic: '\u0637\u0650\u0628\u0651', paths: ['sacraliser'], block: 'jour', category: 'science' },
         { id: 'savais_tu', minVague: 4, label: 'Le savais-tu ?', get sub() { var f = getSavaisTuFact(); var t = (f.texte || '').substring(0,50); return t ? t + '\u2026' : 'Une perle du savoir'; }, arabic: 'هَلْ تَعْلَمُ؟', paths: ['sacraliser'], block: 'jour', category: 'science' },
       ]},
       { icon: '🎧', title: 'Immersion coranique', items: [
@@ -1775,7 +1802,7 @@ function _saveDailySnapshot(dk) {
   var gestes = 0, lectures = 0, bienfaisance = 0;
   var prieres = { fajr: 0, dhuhr: 0, asr: 0, maghrib: 0, isha: 0 };
   var bienfIds = ['sadaqa','salam','silaturahm','kind_act','ziyara','pardon','maruf'];
-  var lectIds = ['hadith1','duaa_jour','sira','quran_read','recits_coran','fiqh_jour','savais_tu'];
+  var lectIds = ['hadith1','duaa_jour','sira','quran_read','recits_coran','fiqh_jour','savais_tu','ghidaa_jour','tibb_jour'];
   var allItems = LEVELS.flatMap(function(l) { return l.sections.flatMap(function(sec) { return sec.items; }); });
   allItems.forEach(function(it) {
     var done = it.type === 'counter' ? (s[it.id] || 0) >= (it.target || 1) : !!s[it.id];
@@ -2636,7 +2663,7 @@ function renderLevel(levelId) {
         const _tlCurrent = (!checked && !_firstUncheckedFound) ? (_firstUncheckedFound = true, ' timeline-current') : '';
         const _tlOpacity = checked ? 'opacity:0.3;' : '';
         var _tl = tI(item,'label'), _ts = tI(item,'sub');
-        var _isKnowledge = ['savais_tu','fiqh_jour','hadith1','duaa_jour','vie_compagnons','vie_prophetes','quran_read','sira','podcast','recits_coran','lisan'].indexOf(item.id) !== -1;
+        var _isKnowledge = ['savais_tu','fiqh_jour','hadith1','duaa_jour','vie_compagnons','vie_prophetes','quran_read','sira','podcast','recits_coran','lisan','ghidaa_jour','tibb_jour'].indexOf(item.id) !== -1;
         var _checkClick = _isKnowledge ? ' onclick="event.stopPropagation();toggleItem(\'' + item.id + '\',event)"' : '';
         var _knowledgeBg = _isKnowledge ? 'background:rgba(200,168,75,0.08);' : '';
         const customClick = item.id === 'savais_tu'
@@ -2661,6 +2688,10 @@ function renderLevel(levelId) {
           ? 'openVueRecitsCoran();'
           : item.id === 'lisan'
           ? 'openVueLisan();'
+          : item.id === 'ghidaa_jour'
+          ? 'openVueGhidaaJour();'
+          : item.id === 'tibb_jour'
+          ? 'openVueTibbJour();'
           : 'toggleItem(\'' + item.id + '\',event)';
         var shareBtn = '';
         if (_isKnowledge) {
@@ -6999,7 +7030,7 @@ function _getWeeklyStats() {
   if (!hasSnapshots) {
     var s = safeParseJSON('spiritual_v2', {});
     var bienfIds = ['sadaqa','salam','silaturahm','kind_act','ziyara','pardon','maruf'];
-    var lectIds = ['hadith1','duaa_jour','sira','quran_read','recits_coran','fiqh_jour','savais_tu'];
+    var lectIds = ['hadith1','duaa_jour','sira','quran_read','recits_coran','fiqh_jour','savais_tu','ghidaa_jour','tibb_jour'];
     var allItems = LEVELS.flatMap(function(l) { return l.sections.flatMap(function(sec) { return sec.items; }); });
     allItems.forEach(function(it) {
       var done = it.type === 'counter' ? (s[it.id] || 0) >= (it.target || 1) : !!s[it.id];
@@ -17004,6 +17035,89 @@ function openVueSavaisTu() {
   _vBtn.onclick = function() { v.classList.add('hidden'); validerLecture('savais_tu'); };
 }
 window.openVueSavaisTu = openVueSavaisTu;
+
+// ── Mashhurat: inject into Savais-Tu pool ──
+(function _mergeMashhurat() {
+  loadMashhurat(function(items) {
+    if (!items || !items.length) return;
+    loadSavaisTu(function() {
+      if (!SAVAIS_TU) return;
+      var existing = new Set(SAVAIS_TU.map(function(s) { return s.texte; }));
+      items.forEach(function(m) {
+        var txt = '\u2753 ' + m.idee_recue + '\n\n\u2714\uFE0F ' + m.verite;
+        if (!existing.has(txt)) {
+          SAVAIS_TU.push({ texte: txt, source: m.source || '', categorie: 'MYTHES_VERITES' });
+        }
+      });
+      console.log('[Mashhurat] merged, pool now:', SAVAIS_TU.length);
+    });
+  });
+})();
+
+/* ─────────────────────────────────────────────
+   GHID\u00c2\u2019 — Aliment du jour
+   ───────────────────────────────────────────── */
+function openVueGhidaaJour() {
+  _saveScroll();
+  a11yOnOverlayOpen();
+  var v = document.getElementById('vue-rituel');
+  if (!v) return;
+  v.querySelector('.rituel-titre').textContent = 'ALIMENT DU JOUR';
+  v.querySelector('.rituel-prochaine').textContent = '';
+  v.querySelector('.rituel-poetique').textContent = '';
+  var main = v.querySelector('.rituel-content');
+  main.innerHTML = '<div style="text-align:center;padding:40px 16px;color:rgba(255,255,255,0.4);font-size:14px;">Chargement\u2026</div>';
+  var _footer = v.querySelector('.rituel-footer button');
+  if (_footer) _footer.setAttribute('onclick', "validerLecture('ghidaa_jour')");
+  v.classList.remove('hidden');
+  document.getElementById('rituel-emblem').textContent = '\u063A\u0650\u0630\u064E\u0627\u0621';
+  loadGhidaa(function() {
+    var g = getGhidaaJour();
+    if (!g) { main.innerHTML = '<div style="text-align:center;padding:40px;color:#C8A84A;">Erreur de chargement</div>'; return; }
+    main.innerHTML = '<div style="padding:20px 16px;text-align:center;">'
+      + '<div class="fiqh-categorie">' + (g.categorie || '').toUpperCase() + '</div>'
+      + '<div style="font-family:\'Amiri\',serif;font-size:28px;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:8px;">' + (g.nom_ar || '') + '</div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-weight:700;color:#C8A84A;margin-bottom:4px;">' + (g.nom_fr || '') + '</div>'
+      + '<div style="font-size:11px;color:rgba(200,168,74,0.5);margin-bottom:20px;letter-spacing:1px;">' + (g.statut || '') + '</div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;line-height:1.7;color:rgba(240,234,214,0.95);margin-bottom:20px;">' + (g.bienfaits || '') + '</div>'
+      + (g.source_coran_hadith ? '<div style="font-size:12px;line-height:1.6;color:rgba(200,168,74,0.6);font-style:italic;margin-bottom:16px;">' + g.source_coran_hadith + '</div>' : '')
+      + (g.comment_le_consommer ? '<div style="font-size:13px;line-height:1.6;color:rgba(255,255,255,0.6);background:rgba(200,168,74,0.05);border-radius:12px;padding:14px;text-align:left;">\uD83C\uDF7D\uFE0F ' + g.comment_le_consommer + '</div>' : '')
+      + '</div>';
+  });
+}
+window.openVueGhidaaJour = openVueGhidaaJour;
+
+/* ─────────────────────────────────────────────
+   TIBB — Rem\u00e8de du jour
+   ───────────────────────────────────────────── */
+function openVueTibbJour() {
+  _saveScroll();
+  a11yOnOverlayOpen();
+  var v = document.getElementById('vue-rituel');
+  if (!v) return;
+  v.querySelector('.rituel-titre').textContent = 'REM\u00c8DE DU JOUR';
+  v.querySelector('.rituel-prochaine').textContent = '';
+  v.querySelector('.rituel-poetique').textContent = '';
+  var main = v.querySelector('.rituel-content');
+  main.innerHTML = '<div style="text-align:center;padding:40px 16px;color:rgba(255,255,255,0.4);font-size:14px;">Chargement\u2026</div>';
+  var _footer = v.querySelector('.rituel-footer button');
+  if (_footer) _footer.setAttribute('onclick', "validerLecture('tibb_jour')");
+  v.classList.remove('hidden');
+  document.getElementById('rituel-emblem').textContent = '\u0637\u0650\u0628\u0651';
+  loadTibb(function() {
+    var t = getTibbJour();
+    if (!t) { main.innerHTML = '<div style="text-align:center;padding:40px;color:#C8A84A;">Erreur de chargement</div>'; return; }
+    main.innerHTML = '<div style="padding:20px 16px;text-align:center;">'
+      + '<div style="font-family:\'Amiri\',serif;font-size:28px;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:8px;">' + (t.remede_ar || '') + '</div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-weight:700;color:#C8A84A;margin-bottom:4px;">' + (t.remede_fr || '') + '</div>'
+      + '<div style="font-size:12px;color:rgba(200,168,74,0.5);margin-bottom:20px;letter-spacing:0.5px;">' + (t.pour_quoi || '') + '</div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;line-height:1.7;color:rgba(240,234,214,0.95);margin-bottom:20px;text-align:left;">' + (t.methode || '') + '</div>'
+      + (t.source_hadith ? '<div style="font-size:12px;line-height:1.6;color:rgba(200,168,74,0.6);font-style:italic;margin-bottom:16px;">' + t.source_hadith + '</div>' : '')
+      + (t.note_medicale ? '<div style="font-size:12px;line-height:1.5;color:rgba(255,255,255,0.5);background:rgba(200,100,100,0.08);border:1px solid rgba(200,100,100,0.15);border-radius:12px;padding:14px;text-align:left;">\u26A0\uFE0F ' + t.note_medicale + '</div>' : '')
+      + '</div>';
+  });
+}
+window.openVueTibbJour = openVueTibbJour;
 
 /* ─────────────────────────────────────────────
    LIS\u00c2N AL-QUR\u2019\u00c2N — 1 mot du Coran par jour

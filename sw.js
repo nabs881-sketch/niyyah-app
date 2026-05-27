@@ -1,4 +1,4 @@
-const VERSION = 'niyyah-v1556';
+const VERSION = 'niyyah-v1557';
 const CORE = [
   './index.html',
   './script.min.js',
@@ -22,6 +22,9 @@ const CORE = [
   './data/regard-library.json',
   './data/events/aid_module_complet.json',
   './data/events/aid_cartes_voeux.json',
+  './data/modules/ghidaa_module_complet.json',
+  './data/modules/tibb_module_complet.json',
+  './data/modules/mashhurat_module_complet.json',
   './data/waqt/waqt_fajr.json',
   './data/waqt/waqt_dhuhr.json',
   './data/waqt/waqt_asr.json',
