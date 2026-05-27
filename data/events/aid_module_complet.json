@@ -577,7 +577,7 @@
         },
         {
           "id": "aid_fitr_med_005",
-          "texte": "La Zakât al-Fitr n'est PAS une option. C'est une obligation pour chaque musulman. Si tu l'as oubliée, donne-la aujourd'hui même comme aumône. Allâh accepte le repentir tant que le soleil ne s'est pas levé à l'Ouest."
+          "texte": "Si tu l'as manquée, verse-la sans tarder — passée la prière de l'Aïd, elle vaut aumône ordinaire, pas Zakât al-Fitr."
         },
         {
           "id": "aid_fitr_med_006",
@@ -739,7 +739,7 @@
       "meditations": [
         {
           "id": "ashura_med_001",
-          "texte": "Le Prophète ﷺ a dit : 'Le jeûne d'Ashûrâ efface les péchés de l'année précédente.' (Muslim). Une journée. Une année. Le ratio est divin."
+          "texte": "Le Prophète ﷺ a dit : 'Le jeûne d'Ashûrâ expie les péchés mineurs de l'année précédente.' (Muslim). Une journée. Une année. Le ratio est divin."
         },
         {
           "id": "ashura_med_002",
