@@ -14647,6 +14647,8 @@ function _aidRestoreSanctuaire() {
   // Remove prayer pill
   var pill = document.getElementById('aid-prayer-pill');
   if (pill) pill.remove();
+  // Reveal sanctuaire
+  _aidRevealSanctuaire();
 }
 
 // ── Floating prayer times pill ──
@@ -14750,39 +14752,20 @@ function _aidInjectStyles() {
 }
 
 // ── Boot module Aïd ──
-function _aidShowSplash() {
-  if (document.getElementById('aid-splash')) return;
+// Sanctuaire hidden by inline <style> in <head>.
+// _aidRevealSanctuaire() is the ONLY way to make it visible.
+function _aidRevealSanctuaire() {
   var sanct = document.getElementById('view-sanctuaire');
-  if (sanct) sanct.style.visibility = 'hidden';
-  var sp = document.createElement('div');
-  sp.id = 'aid-splash';
-  sp.style.cssText = 'position:fixed;inset:0;z-index:9999;background:#0d0a04;display:flex;flex-direction:column;align-items:center;justify-content:center;';
-  sp.innerHTML = '<img src="logo2.webp" alt="" style="width:64px;height:64px;margin-bottom:20px;opacity:0.7;">'
-    + '<div style="width:24px;height:24px;border:2px solid rgba(200,168,74,0.2);border-top-color:#C8A84A;border-radius:50%;animation:aid-spin .8s linear infinite;"></div>';
-  document.body.appendChild(sp);
-  if (!document.getElementById('aid-spin-style')) {
-    var ks = document.createElement('style');
-    ks.id = 'aid-spin-style';
-    ks.textContent = '@keyframes aid-spin{to{transform:rotate(360deg)}}';
-    document.head.appendChild(ks);
-  }
-}
-function _aidRemoveSplash() {
-  var sp = document.getElementById('aid-splash');
-  if (sp) { sp.style.opacity = '0'; sp.style.transition = 'opacity 0.3s'; setTimeout(function() { if (sp.parentNode) sp.remove(); }, 300); }
-  var sanct = document.getElementById('view-sanctuaire');
-  if (sanct) sanct.style.visibility = '';
+  if (sanct) sanct.style.visibility = 'visible';
 }
 function _aidBoot() {
   console.log('[Aid] _aidBoot called, onboard:', _onboardDone, 'data:', !!window._AID_DATA);
-  if (!_onboardDone) return;
+  if (!_onboardDone) { _aidRevealSanctuaire(); return; }
   _aidInjectStyles();
-  // Immediately hide sanctuaire + show splash while detecting
-  _aidShowSplash();
   if (!window._AID_DATA) {
     setTimeout(function() {
       console.log('[Aid] retry, data:', !!window._AID_DATA);
-      if (window._AID_DATA) { _aidBootInner(); } else { _aidRemoveSplash(); }
+      if (window._AID_DATA) { _aidBootInner(); } else { _aidRevealSanctuaire(); }
     }, 1500);
     return;
   }
@@ -14794,15 +14777,15 @@ function _aidBootInner() {
     var evt = _aidDetectEvent(hijri);
     if (!evt) {
       console.log('[Aid] no active event');
-      _aidRemoveSplash();
+      _aidRevealSanctuaire();
       return;
     }
     window._AID_ACTIVE = evt;
     console.log('[Aid] active:', evt.key, 'day:', evt.dayNum);
-    _aidRemoveSplash();
+    // Sanctuaire stays hidden — Aid takes over
     _aidShowOverlay(evt);
     setTimeout(function() { _aidTakeoverSanctuaire(evt); }, 500);
-  }).catch(function(e) { console.warn('[Aid] hijri error:', e); _aidRemoveSplash(); });
+  }).catch(function(e) { console.warn('[Aid] hijri error:', e); _aidRevealSanctuaire(); });
 }
 
 // Load Bab an-Nafs external content
