@@ -14427,26 +14427,6 @@ function checkHijriBanner() {
       btnLabel = 'Bismill\u0101h';
       action = 'safeSetItem(\'' + _dhKey8 + '\',\'1\')';
       _showLater = false;
-    } else if (_isDhulHijjah && h.day === 9) {
-      var _dhKey9 = 'hijri_banner_dh_arafat_' + h.year;
-      if (safeGetItem(_dhKey9)) return;
-      msg = '\u2726 Aujourd\u2019hui c\u2019est Arafat. Multiplie dou\u2019as et dhikr.';
-      btnLabel = 'Bismill\u0101h';
-      action = 'safeSetItem(\'' + _dhKey9 + '\',\'1\')';
-      _showLater = false;
-    } else if (_isDhulHijjah && h.day === 10) {
-      var _dhKeyEid = 'hijri_banner_dh_eid_' + h.year;
-      if (safeGetItem(_dhKeyEid)) return;
-      msg = '\u2726 A\u00efd al-Adha Mubarak. Qu\u2019All\u00e2h accepte ton sacrifice et tes \u0153uvres.';
-      btnLabel = 'All\u00e2humma akbar';
-      action = 'safeSetItem(\'' + _dhKeyEid + '\',\'1\')';
-      _showLater = false;
-    } else if (_isDhulHijjah && [11,12,13].includes(h.day)) {
-      var _dhKeyTash = 'hijri_banner_dh_tashreeq_' + h.year;
-      if (safeGetItem(_dhKeyTash)) return;
-      msg = '\u2726 Jours de Tashreeq. Multiplie le takbir (All\u00e2hu Akbar).';
-      btnLabel = 'J\u2019ai compris';
-      action = 'safeSetItem(\'' + _dhKeyTash + '\',\'1\')';
     } else if (_isMuharram && h.day === 1) {
       var _muhKey1 = 'hijri_banner_muh_new_' + h.year;
       if (safeGetItem(_muhKey1)) return;
@@ -14459,13 +14439,6 @@ function checkHijriBanner() {
       msg = '\u2726 Demain c\u2019est Achoura. Le Proph\u00e8te \uFDFA recommandait de je\u00fbner le 9 et le 10.';
       btnLabel = 'J\u2019ai compris';
       action = 'safeSetItem(\'' + _muhKey9 + '\',\'1\')';
-      _showLater = false;
-    } else if (_isMuharram && h.day === 10) {
-      var _muhKey10 = 'hijri_banner_muh_ashura_' + h.year;
-      if (safeGetItem(_muhKey10)) return;
-      msg = '\u2726 Aujourd\u2019hui c\u2019est Achoura. Je\u00fbner expie les p\u00e9ch\u00e9s de l\u2019ann\u00e9e pass\u00e9e (Muslim).';
-      btnLabel = 'Bismill\u0101h';
-      action = 'safeSetItem(\'' + _muhKey10 + '\',\'1\')';
       _showLater = false;
     } else if (_isRajab && h.day === 1) {
       var _rajKey = 'hijri_banner_rajab_' + h.year;
@@ -14725,6 +14698,7 @@ function _aidInjectStyles() {
 
 // ── Boot module Aïd ──
 function _aidBoot() {
+  if (!_onboardDone) return;
   _aidInjectStyles();
   getCurrentHijri().then(function(hijri) {
     var evt = _aidDetectEvent(hijri);
