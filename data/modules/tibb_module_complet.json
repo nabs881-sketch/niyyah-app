@@ -60,7 +60,7 @@
       "remede_fr": "L'eau de Zamzam",
       "remede_ar": "ماء زمزم",
       "pour_quoi": "Tout ce pour quoi on la boit (du'â spécifique)",
-      "methode": "Boire en 3 gorgées tourné vers la Qibla, avec une intention claire avant. Possible de la verser sur le corps en complément.",
+      "methode": "Boire en 3 gorgées (sunna recommandée), avec une intention claire avant. Il est aussi rapporté de manière authentique (Bukhari 1637) que le Prophète ﷺ a bu du Zamzam debout. Les deux modalités sont donc permises. Possible de la verser sur le corps en complément.",
       "source_hadith": "Hadith Ibn Mâja 3062 (hasan) : 'L'eau de Zamzam est pour ce pour quoi elle est bue.' Hadith rapporté par Tayâlisî / Bayhaqî : 'C'est une nourriture qui rassasie, un remède qui guérit.'",
       "note_medicale": "Analyses : eau alcaline (pH 8), riche en minéraux (calcium, magnésium). Stabilité bactériologique remarquable malgré âge."
     },
@@ -80,7 +80,7 @@
       "pour_quoi": "Constipation, détoxification intestinale",
       "methode": "Infusion de feuilles séchées (1 cuillère à café dans une tasse d'eau bouillante). Boire le soir, effet 8-12h plus tard.",
       "source_hadith": "Ibn Mâja 3457 : 'Faites usage du sanâ et du sanût, car ils contiennent un remède contre toute maladie sauf as-sâm (la mort).' Les savants expliquent qu'il est une cause de guérison pour de nombreuses maladies, par la permission d'Allâh.",
-      "note_medicale": "Laxatif stimulant reconnu en pharmacopée. À utiliser ponctuellement, pas en continu (risque de dépendance intestinale)."
+      "note_medicale": "Laxatif stimulant reconnu en pharmacopée. À utiliser ponctuellement, pas en continu (risque de dépendance intestinale). Contre-indiqué chez les femmes enceintes ou allaitantes, et chez les personnes souffrant d'inflammations chroniques du côlon (Crohn, RCH)."
     },
     {
       "id": "tibb_009",
@@ -152,7 +152,7 @@
       "pour_quoi": "Maux de gorge, amygdalite, problèmes respiratoires",
       "methode": "Poudre de costus mélangée à du miel. Appliquer sur les amygdales ou consommer 1 cuillère à café/jour. Ou en infusion.",
       "source_hadith": "Hadith Bukhari 5692 : 'Soignez-vous avec le costus indien, car il y a en lui 7 guérisons. Il est administré par le nez pour la pleurésie.'",
-      "note_medicale": "Études : antibactérien, anti-inflammatoire, expectorant. Validé dans pharmacopée traditionnelle."
+      "note_medicale": "Études : antibactérien, anti-inflammatoire, expectorant. Acheter uniquement du costus certifié sans acide aristolochique (risque de toxicité rénale en cas de contamination)."
     },
     {
       "id": "tibb_017",
@@ -476,7 +476,7 @@
       "pour_quoi": "Connexion à la terre, stress, inflammation",
       "methode": "Marcher pieds nus sur l'herbe, le sable, la terre 10-20 min/jour.",
       "source_hadith": "Il est rapporté dans certains récits qu'il ﷺ marchait parfois pieds nus.",
-      "note_medicale": "Concept moderne 'earthing' : électrons de la terre réduisent inflammation. Études en cours."
+      "note_medicale": "Le concept moderne 'earthing' est insuffisamment prouvé scientifiquement. Les bénéfices observés relèvent surtout de la réduction du stress et de la stimulation mécanique du pied, pas nécessairement de 'l'échange d'électrons avec la Terre'."
     },
     {
       "id": "tibb_053",
