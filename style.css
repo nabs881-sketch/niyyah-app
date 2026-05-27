@@ -4753,6 +4753,192 @@ to {
 .wird-complete-btn:active {
   border-color: rgba(200,168,75,0.6);
 }
+/* ── TIBB DISCLAIMER OVERLAY ── */
+.tibb-disclaimer-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10001;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+.tibb-disclaimer-closing {
+  animation: fadeOut 0.3s ease forwards;
+}
+@keyframes fadeOut { to { opacity: 0; } }
+.tibb-disclaimer-card {
+  text-align: center;
+  padding: 36px 28px;
+  border: 1px solid rgba(200,168,75,0.3);
+  border-radius: 20px;
+  background: radial-gradient(ellipse at top, #2C2E32, #1a1c1f);
+  max-width: 340px;
+  width: calc(100% - 40px);
+}
+.tibb-disclaimer-icon {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+.tibb-disclaimer-titre {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #C8A84A;
+  margin-bottom: 16px;
+  letter-spacing: 0.05em;
+}
+.tibb-disclaimer-texte {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(240,234,214,0.85);
+  text-align: left;
+  margin-bottom: 24px;
+}
+.tibb-disclaimer-btn {
+  padding: 14px 36px;
+  border-radius: 12px;
+  border: 1px solid rgba(200,168,75,0.4);
+  background: transparent;
+  color: #C8A84A;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+.tibb-disclaimer-btn:hover,
+.tibb-disclaimer-btn:active {
+  border-color: #C8A84A;
+  background: rgba(200,168,75,0.1);
+}
+
+/* ── TIBB INFO BUTTON (header ⓘ) ── */
+.tibb-info-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  padding: 4px;
+}
+.tibb-info-btn:hover { opacity: 1; }
+
+/* ── TIBB À PROPOS PAGE ── */
+.tibb-apropos-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10001;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+.tibb-apropos-card {
+  position: relative;
+  max-width: 420px;
+  width: calc(100% - 32px);
+  max-height: 85vh;
+  border: 1px solid rgba(200,168,75,0.25);
+  border-radius: 20px;
+  background: radial-gradient(ellipse at top, #2C2E32, #1a1c1f);
+  overflow: hidden;
+}
+.tibb-apropos-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: rgba(200,168,75,0.6);
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 2;
+  line-height: 1;
+}
+.tibb-apropos-close:hover { color: #C8A84A; }
+.tibb-apropos-scroll {
+  padding: 32px 24px 24px;
+  overflow-y: auto;
+  max-height: 85vh;
+  -webkit-overflow-scrolling: touch;
+}
+.tibb-apropos-titre {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #C8A84A;
+  text-align: center;
+  margin-bottom: 24px;
+  letter-spacing: 0.03em;
+}
+.tibb-apropos-section {
+  margin-bottom: 20px;
+}
+.tibb-apropos-section-titre {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #C8A84A;
+  margin-bottom: 8px;
+}
+.tibb-apropos-points {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.tibb-apropos-points li {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  line-height: 1.65;
+  color: rgba(240,234,214,0.8);
+  padding-left: 16px;
+  position: relative;
+  margin-bottom: 6px;
+}
+.tibb-apropos-points li::before {
+  content: '·';
+  position: absolute;
+  left: 4px;
+  color: rgba(200,168,75,0.5);
+}
+.tibb-apropos-texte {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  line-height: 1.65;
+  color: rgba(240,234,214,0.8);
+}
+.tibb-apropos-footer {
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  font-style: italic;
+  color: rgba(200,168,75,0.6);
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(200,168,75,0.12);
+}
+.tibb-apropos-signaler {
+  display: block;
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 12px;
+  color: rgba(200,168,75,0.45);
+  margin-top: 16px;
+  text-decoration: none;
+  letter-spacing: 0.3px;
+}
+.tibb-apropos-signaler:hover {
+  color: #C8A84A;
+}
+
 .wird-smart-rattrapage {
   font-family: 'Nunito', sans-serif;
   font-size: 10px;
@@ -8309,6 +8495,7 @@ body.onboarding-active #nav-bar-v2 {
   font-family: 'Cormorant Garamond', serif;
 }
 .rituel-header {
+  position: relative;
   text-align: center;
   padding: 40px 20px 24px;
   border-bottom: 1px solid rgba(200,168,74,0.15);

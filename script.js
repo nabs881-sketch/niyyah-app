@@ -1321,9 +1321,14 @@ function getGhidaaJour() {
   return GHIDAA_DATA[dayOfYear % GHIDAA_DATA.length];
 }
 var TIBB_DATA = null;
+var TIBB_DISCLAIMER = null;
 function loadTibb(cb) {
   if (TIBB_DATA) { if (cb) cb(TIBB_DATA); return; }
-  fetch('./data/modules/tibb_module_complet.json').then(function(r) { return r.json(); }).then(function(d) { TIBB_DATA = d && d.items ? d.items : []; if (cb) cb(TIBB_DATA); }).catch(function() { if (cb) cb(null); });
+  fetch('./data/modules/tibb_module_complet.json').then(function(r) { return r.json(); }).then(function(d) {
+    TIBB_DATA = d && d.items ? d.items : [];
+    if (d && d.disclaimer) TIBB_DISCLAIMER = d.disclaimer;
+    if (cb) cb(TIBB_DATA);
+  }).catch(function() { if (cb) cb(null); });
 }
 function getTibbJour() {
   if (!TIBB_DATA || !TIBB_DATA.length) return null;
@@ -17105,8 +17110,22 @@ function openVueTibbJour() {
   v.classList.remove('hidden');
   document.getElementById('rituel-emblem').textContent = '\u0637\u0650\u0628\u0651';
   loadTibb(function() {
+    /* ── Overlay disclaimer 1ère ouverture ── */
+    if (safeGetItem('niyyah_tibb_disclaimer_seen') !== 'true' && TIBB_DISCLAIMER) {
+      _showTibbDisclaimer();
+    }
     var t = getTibbJour();
     if (!t) { main.innerHTML = '<div style="text-align:center;padding:40px;color:#C8A84A;">Erreur de chargement</div>'; return; }
+    /* ── Icône ⓘ dans le header ── */
+    var hdr = v.querySelector('.rituel-header');
+    if (hdr && !hdr.querySelector('.tibb-info-btn')) {
+      var infoBtn = document.createElement('button');
+      infoBtn.className = 'tibb-info-btn';
+      infoBtn.setAttribute('aria-label', '\u00c0 propos du module Tibb');
+      infoBtn.innerHTML = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>';
+      infoBtn.onclick = function() { openTibbAPropos(); };
+      hdr.appendChild(infoBtn);
+    }
     main.innerHTML = '<div style="padding:20px 16px;text-align:center;">'
       + '<div style="font-family:\'Amiri\',serif;font-size:28px;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:8px;">' + (t.remede_ar || '') + '</div>'
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-weight:700;color:#C8A84A;margin-bottom:4px;">' + (t.remede_fr || '') + '</div>'
@@ -17118,6 +17137,71 @@ function openVueTibbJour() {
   });
 }
 window.openVueTibbJour = openVueTibbJour;
+
+/* ─────────────────────────────────────────────
+   TIBB — Overlay disclaimer (1ère ouverture)
+   ───────────────────────────────────────────── */
+function _showTibbDisclaimer() {
+  var d = TIBB_DISCLAIMER.overlay_premiere_ouverture;
+  if (!d) return;
+  var ov = document.createElement('div');
+  ov.className = 'tibb-disclaimer-overlay';
+  ov.innerHTML = '<div class="tibb-disclaimer-card">'
+    + '<div class="tibb-disclaimer-icon">\u26A0\uFE0F</div>'
+    + '<div class="tibb-disclaimer-titre">' + (d.titre || 'Avertissement') + '</div>'
+    + '<div class="tibb-disclaimer-texte">' + (d.texte || '').replace(/\n/g, '<br>') + '</div>'
+    + '<button class="tibb-disclaimer-btn" id="tibb-disclaimer-accept">' + (d.bouton || "J\u2019ai compris") + '</button>'
+    + '</div>';
+  document.body.appendChild(ov);
+  document.getElementById('tibb-disclaimer-accept').onclick = function() {
+    safeSetItem('niyyah_tibb_disclaimer_seen', 'true');
+    ov.classList.add('tibb-disclaimer-closing');
+    setTimeout(function() { ov.remove(); }, 300);
+  };
+}
+window._showTibbDisclaimer = _showTibbDisclaimer;
+
+/* ─────────────────────────────────────────────
+   TIBB — Page « À propos du module »
+   ───────────────────────────────────────────── */
+function openTibbAPropos() {
+  if (!TIBB_DISCLAIMER || !TIBB_DISCLAIMER.page_a_propos) return;
+  var ap = TIBB_DISCLAIMER.page_a_propos;
+  var html = '<div class="tibb-apropos-scroll">'
+    + '<div class="tibb-apropos-titre">' + (ap.titre || '\u00c0 propos') + '</div>';
+  var icons = ['\uD83E\uDE7A', '\uD83D\uDCD6', '\u2696\uFE0F', '\uD83E\uDD32'];
+  if (ap.sections) {
+    ap.sections.forEach(function(sec, i) {
+      html += '<div class="tibb-apropos-section">';
+      html += '<div class="tibb-apropos-section-titre">' + (icons[i] || '') + ' ' + sec.titre + '</div>';
+      if (sec.points) {
+        html += '<ul class="tibb-apropos-points">';
+        sec.points.forEach(function(p) { html += '<li>' + p + '</li>'; });
+        html += '</ul>';
+      }
+      if (sec.texte) {
+        html += '<div class="tibb-apropos-texte">' + sec.texte + '</div>';
+      }
+      html += '</div>';
+    });
+  }
+  html += '<div class="tibb-apropos-footer">Wa All\u00e2hu a\u2019lam \u2014 Et All\u00e2h sait mieux.</div>';
+  html += '<a class="tibb-apropos-signaler" href="mailto:niyyah.app.contact@gmail.com?subject=Signalement%20erreur%20th%C3%A9ologique%20%E2%80%94%20Module%20Tibb">Signaler une erreur th\u00e9ologique \u2192</a>';
+  html += '</div>';
+
+  var ov = document.createElement('div');
+  ov.className = 'tibb-apropos-overlay';
+  ov.innerHTML = '<div class="tibb-apropos-card">'
+    + '<button class="tibb-apropos-close" aria-label="Fermer">\u00D7</button>'
+    + html
+    + '</div>';
+  document.body.appendChild(ov);
+  ov.querySelector('.tibb-apropos-close').onclick = function() {
+    ov.classList.add('tibb-disclaimer-closing');
+    setTimeout(function() { ov.remove(); }, 300);
+  };
+}
+window.openTibbAPropos = openTibbAPropos;
 
 /* ─────────────────────────────────────────────
    LIS\u00c2N AL-QUR\u2019\u00c2N — 1 mot du Coran par jour
