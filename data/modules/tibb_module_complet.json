@@ -17,7 +17,7 @@
       "pour_quoi": "Maladies générales, plaies, mal de gorge, immunité",
       "methode": "Une cuillère à café à jeun le matin. Ou diluée dans de l'eau tiède. Pour les plaies : application locale.",
       "source_hadith": "Coran 16:69 (An-Nahl) : 'De leurs entrailles sort une boisson de couleur variée qui sert de remède aux hommes.' Hadith Bukhari 5680 : 'La guérison est dans trois choses : une gorgée de miel, l'incision (hijama), ou la cautérisation par le feu.'",
-      "note_medicale": "Études confirment : antibactérien, cicatrisant, antioxydant. Particulièrement efficace sur Staphylococcus aureus."
+      "note_medicale": "Des études suggèrent des propriétés antibactériennes, cicatrisantes et antioxydantes. Des effets ont été observés sur Staphylococcus aureus."
     },
     {
       "id": "tibb_002",
@@ -26,7 +26,7 @@
       "pour_quoi": "Immunité, allergies, asthme, glycémie, inflammation",
       "methode": "Huile : 1 cuillère à café à jeun le matin. Graines : moudre et mélanger au miel. Cure de 30-40 jours.",
       "source_hadith": "Hadith Bukhari 5687 : 'Dans la graine de nigelle, il y a un remède pour toute maladie sauf la mort.' (Habbatu-s-sawdâ'). Les savants expliquent qu'elle est une cause de guérison pour de nombreuses maladies, par la permission d'Allâh.",
-      "note_medicale": "Études PubMed nombreuses : effets immunostimulants, anti-inflammatoires, hypoglycémiants prouvés. Composant actif : thymoquinone."
+      "note_medicale": "Études PubMed nombreuses : des effets immunostimulants, anti-inflammatoires et hypoglycémiants ont été observés. Composant actif : thymoquinone."
     },
     {
       "id": "tibb_003",
@@ -44,7 +44,7 @@
       "pour_quoi": "Santé cardiovasculaire, peau, cheveux, digestion",
       "methode": "Interne : 1-2 cuillères à soupe par jour sur la nourriture. Externe : massages, application sur la peau et les cheveux.",
       "source_hadith": "Coran 24:35 (An-Nûr) — 'arbre béni'. Hadith Tirmidhî : 'Mangez de l'olive et oignez-vous-en, car elle provient d'un arbre béni.'",
-      "note_medicale": "Régime méditerranéen prouvé : réduit risque cardiovasculaire de 30%. Acide oléique, vitamine E, antioxydants."
+      "note_medicale": "Des études suggèrent que le régime méditerranéen réduit le risque cardiovasculaire de 30%. Acide oléique, vitamine E, antioxydants."
     },
     {
       "id": "tibb_005",
@@ -53,7 +53,7 @@
       "pour_quoi": "Tristesse, dépression légère, deuil, anxiété, problèmes digestifs",
       "methode": "1-2 cuillères d'orge moulu + 200ml lait + miel. Faire bouillir 5 min. Boire tiède le matin ou avant de dormir.",
       "source_hadith": "Hadith Bukhari 5417 : 'La talbîna apaise le cœur du malade et chasse une partie de la tristesse.' Aïcha le recommandait aux affligés.",
-      "note_medicale": "Orge : riche en bêta-glucane (fibres solubles), tryptophane (précurseur sérotonine). Effet calmant prouvé."
+      "note_medicale": "Orge : riche en bêta-glucane (fibres solubles), tryptophane (précurseur sérotonine). Des effets calmants ont été observés."
     },
     {
       "id": "tibb_006",
@@ -215,7 +215,7 @@
       "pour_quoi": "Cœur, circulation, mémoire, prévention cancers",
       "methode": "Un verre de jus frais par jour (sans sucre ajouté). De préférence le matin.",
       "source_hadith": "Coran 55:68 — grenadiers du Paradis. Hadith : 'Il n'y a pas une grenade qui n'a pas été fécondée par une goutte de l'eau du Paradis.'",
-      "note_medicale": "Études nombreuses : antioxydants puissants, baisse de la pression artérielle, protection contre Alzheimer."
+      "note_medicale": "Des études suggèrent : antioxydants puissants, baisse de la pression artérielle, protection contre Alzheimer."
     },
     {
       "id": "tibb_024",
@@ -242,7 +242,7 @@
       "pour_quoi": "Nausées, troubles digestifs, refroidissement, douleurs articulaires",
       "methode": "Infusion : 3-4 tranches de gingembre frais dans l'eau chaude + miel. Ou frais râpé dans les plats.",
       "source_hadith": "Coran 76:17 (Al-Insân) : boisson du Paradis.",
-      "note_medicale": "Anti-inflammatoire puissant. Validé contre nausées (grossesse, chimiothérapie). Réchauffe le corps."
+      "note_medicale": "Anti-inflammatoire puissant. Des effets ont été observés contre les nausées (grossesse, chimiothérapie). Réchauffe le corps."
     },
     {
       "id": "tibb_027",
@@ -377,7 +377,7 @@
       "pour_quoi": "Yeux fatigués, stress, écrans",
       "methode": "Toutes les 20 minutes d'écran, regarder du vert/nature pendant 20 secondes (règle des 20-20-20).",
       "source_hadith": "Tradition : le Prophète ﷺ aimait le vert. Le Paradis est décrit avec verdure. Coran 55:64 : 'mudhâmmatân' (deux jardins verdoyants).",
-      "note_medicale": "Méthode validée en ophtalmologie pour fatigue oculaire moderne."
+      "note_medicale": "Des études rejoignent cette méthode en ophtalmologie pour la fatigue oculaire moderne."
     },
     {
       "id": "tibb_042",
@@ -512,7 +512,7 @@
       "pour_quoi": "Rythme circadien, énergie, productivité",
       "methode": "Se lever à l'adhân du Fajr (avant l'aube). Prier puis bouger. Ne pas se rendormir.",
       "source_hadith": "Du'â du Prophète ﷺ : 'Ô Allâh, bénis ma communauté dans les premières heures du matin.' (Abû Dâwûd 2606, Tirmidhî 1212, Ibn Mâja 2236 — hasan).",
-      "note_medicale": "Études : lever tôt = meilleure santé mentale, productivité, espérance de vie. Cortisol matinal naturel."
+      "note_medicale": "Des études suggèrent que le lever tôt favorise la santé mentale, la productivité et l'espérance de vie. Cortisol matinal naturel."
     },
     {
       "id": "tibb_057",
