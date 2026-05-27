@@ -16,7 +16,7 @@
       "remede_ar": "العسل",
       "pour_quoi": "Maladies générales, plaies, mal de gorge, immunité",
       "methode": "Une cuillère à café à jeun le matin. Ou diluée dans de l'eau tiède. Pour les plaies : application locale.",
-      "source_hadith": "Coran 16:69 (An-Nahl) : 'De leurs entrailles sort une boisson de couleur variée qui sert de remède aux hommes.' Hadith Bukhari : 'La guérison est dans trois choses : une gorgée de miel, l'incision (hijama), ou la cautérisation par le feu.'",
+      "source_hadith": "Coran 16:69 (An-Nahl) : 'De leurs entrailles sort une boisson de couleur variée qui sert de remède aux hommes.' Hadith Bukhari 5680 : 'La guérison est dans trois choses : une gorgée de miel, l'incision (hijama), ou la cautérisation par le feu.'",
       "note_medicale": "Études confirment : antibactérien, cicatrisant, antioxydant. Particulièrement efficace sur Staphylococcus aureus."
     },
     {
@@ -34,7 +34,7 @@
       "remede_ar": "الحجامة",
       "pour_quoi": "Migraines, douleurs musculaires, hypertension, fatigue chronique",
       "methode": "Application de ventouses sur la nuque, le dos, ou points spécifiques. Idéalement par un praticien qualifié. Saignée superficielle (hijama humide) ou simple succion (hijama sèche).",
-      "source_hadith": "Hadith Bukhari : 'Le meilleur de vos remèdes est la hijama.' Le Prophète ﷺ se faisait pratiquer la hijama régulièrement.",
+      "source_hadith": "Hadith Bukhari 5371 / Muslim 1577 : 'Le meilleur de vos remèdes est la hijama.' Le Prophète ﷺ se faisait pratiquer la hijama régulièrement.",
       "note_medicale": "Pratique reconnue en médecine traditionnelle chinoise et arabe. Études récentes : effets anti-inflammatoires et amélioration de la circulation."
     },
     {
@@ -52,7 +52,7 @@
       "remede_ar": "التلبينة",
       "pour_quoi": "Tristesse, dépression légère, deuil, anxiété, problèmes digestifs",
       "methode": "1-2 cuillères d'orge moulu + 200ml lait + miel. Faire bouillir 5 min. Boire tiède le matin ou avant de dormir.",
-      "source_hadith": "Hadith Bukhari 5689 : 'La talbîna apaise le cœur du malade et chasse une partie de la tristesse.' Aïcha le recommandait aux affligés.",
+      "source_hadith": "Hadith Bukhari 5417 : 'La talbîna apaise le cœur du malade et chasse une partie de la tristesse.' Aïcha le recommandait aux affligés.",
       "note_medicale": "Orge : riche en bêta-glucane (fibres solubles), tryptophane (précurseur sérotonine). Effet calmant prouvé."
     },
     {
@@ -61,7 +61,7 @@
       "remede_ar": "ماء زمزم",
       "pour_quoi": "Tout ce pour quoi on la boit (du'â spécifique)",
       "methode": "Boire en 3 gorgées tourné vers la Qibla, avec une intention claire avant. Possible de la verser sur le corps en complément.",
-      "source_hadith": "Hadith Ibn Mâja : 'L'eau de Zamzam est pour ce pour quoi elle est bue.' Hadith Muslim : 'C'est une nourriture qui rassasie, un remède qui guérit.'",
+      "source_hadith": "Hadith Ibn Mâja 3062 (hasan) : 'L'eau de Zamzam est pour ce pour quoi elle est bue.' Hadith rapporté par Tayâlisî / Bayhaqî : 'C'est une nourriture qui rassasie, un remède qui guérit.'",
       "note_medicale": "Analyses : eau alcaline (pH 8), riche en minéraux (calcium, magnésium). Stabilité bactériologique remarquable malgré âge."
     },
     {
@@ -70,7 +70,7 @@
       "remede_ar": "السواك",
       "pour_quoi": "Hygiène buccale, gencives saines, prévention caries",
       "methode": "Mâcher l'extrémité de la racine d'arak. Frotter les dents et les gencives 5x en haut, 5x en bas. Avant chaque salât.",
-      "source_hadith": "Hadith Bukhari : 'Si je ne craignais pas que ce soit difficile pour ma communauté, je leur aurais ordonné le siwâk à chaque ablution.'",
+      "source_hadith": "Hadith Bukhari 887 : 'Si je ne craignais pas que ce soit difficile pour ma communauté, je leur aurais ordonné le siwâk à chaque ablution.'",
       "note_medicale": "Études : antibactérien naturel (silice, tanins). OMS le recommande comme moyen d'hygiène orale dans certains pays."
     },
     {
@@ -79,7 +79,7 @@
       "remede_ar": "السنا",
       "pour_quoi": "Constipation, détoxification intestinale",
       "methode": "Infusion de feuilles séchées (1 cuillère à café dans une tasse d'eau bouillante). Boire le soir, effet 8-12h plus tard.",
-      "source_hadith": "Hadith Tirmidhî : 'Si seulement il y avait quelque chose qui guérisse de la mort, ce serait le sanâ. Le sanâ est un remède contre tout sauf la mort.'",
+      "source_hadith": "Ibn Mâja 3457 : 'Faites usage du sanâ et du sanût, car ils contiennent un remède contre toute maladie sauf as-sâm (la mort).'",
       "note_medicale": "Laxatif stimulant reconnu en pharmacopée. À utiliser ponctuellement, pas en continu (risque de dépendance intestinale)."
     },
     {
@@ -97,7 +97,7 @@
       "remede_ar": "سورة الفاتحة",
       "pour_quoi": "Toute maladie (avec foi), douleur, mauvais œil, sorcellerie",
       "methode": "Réciter Al-Fâtiha 7 fois sur de l'eau ou sur la zone douloureuse. Souffler légèrement après chaque récitation. Boire l'eau ou se laver avec.",
-      "source_hadith": "Hadith Bukhari : Un Compagnon a récité Al-Fâtiha sur un homme piqué par un scorpion, qui fut guéri. Le Prophète ﷺ a approuvé en disant : 'Comment as-tu su qu'elle était une roqya ?'",
+      "source_hadith": "Hadith Bukhari 5736 : Un Compagnon a récité Al-Fâtiha sur un homme piqué par un scorpion, qui fut guéri. Le Prophète ﷺ a approuvé en disant : 'Comment as-tu su qu'elle était une roqya ?'",
       "note_medicale": "Effet placebo + activation neurobiologique de l'intention positive. La foi est un facteur reconnu de récupération."
     },
     {
@@ -106,7 +106,7 @@
       "remede_ar": "المعوذتان",
       "pour_quoi": "Protection mauvais œil, sorcellerie, anxiété, insomnie",
       "methode": "Réciter les sourates Al-Falaq et An-Nâs 3 fois. Souffler dans les mains et passer sur le corps. Matin et soir.",
-      "source_hadith": "Hadith Bukhari : Le Prophète ﷺ se protégeait avec ces sourates avant de dormir. Quand il fut malade en fin de vie, Aïcha les récitait sur lui.",
+      "source_hadith": "Hadith Bukhari 5017 : Le Prophète ﷺ se protégeait avec ces sourates avant de dormir. Quand il fut malade en fin de vie, Aïcha les récitait sur lui.",
       "note_medicale": "Rituel de protection psychologique. Apaisement neurobiologique par la répétition + intention."
     },
     {
@@ -115,7 +115,7 @@
       "remede_ar": "الصيام العلاجي",
       "pour_quoi": "Détoxification, perte de poids, régulation glycémie, longévité",
       "methode": "Jeûne complet du lever au coucher du soleil. Boire après iftar. Comme Ramadan ou jeûnes sunna (lundi-jeudi, jours blancs).",
-      "source_hadith": "Hadith : 'Jeûnez, vous serez en bonne santé' (faible selon certains, mais le concept est validé par d'autres hadiths). Coran 2:184 : 'Et si vous jeûnez, c'est mieux pour vous.'",
+      "source_hadith": "Hadith : 'Jeûnez, vous serez en bonne santé' (da'îf selon Al-Albâni et Al-'Irâqî. Hadith faible dans sa chaîne, mais dont le sens est corroboré par les règles générales de modération alimentaire en Islam).",
       "note_medicale": "Autophagie cellulaire (Prix Nobel 2016). Effets prouvés sur diabète, inflammation, fonctions cognitives, longévité."
     },
     {
@@ -151,7 +151,7 @@
       "remede_ar": "القسط الهندي",
       "pour_quoi": "Maux de gorge, amygdalite, problèmes respiratoires",
       "methode": "Poudre de costus mélangée à du miel. Appliquer sur les amygdales ou consommer 1 cuillère à café/jour. Ou en infusion.",
-      "source_hadith": "Hadith Bukhari : 'Soignez-vous avec le costus indien, car il y a en lui 7 guérisons. Il est administré par le nez pour la pleurésie.'",
+      "source_hadith": "Hadith Bukhari 5692 : 'Soignez-vous avec le costus indien, car il y a en lui 7 guérisons. Il est administré par le nez pour la pleurésie.'",
       "note_medicale": "Études : antibactérien, anti-inflammatoire, expectorant. Validé dans pharmacopée traditionnelle."
     },
     {
@@ -160,7 +160,7 @@
       "remede_ar": "الماء البارد للحمى",
       "pour_quoi": "Fièvre",
       "methode": "Linge mouillé d'eau froide sur le front. Ou bain tiède (pas glacé). Bien hydrater.",
-      "source_hadith": "Hadith Bukhari : 'La fièvre vient du souffle de l'Enfer. Refroidissez-la avec de l'eau.'",
+      "source_hadith": "Hadith Bukhari 3263 / 5723 : 'La fièvre vient du souffle de l'Enfer. Refroidissez-la avec de l'eau.'",
       "note_medicale": "Médicalement validé : refroidissement externe + hydratation. Mais consulter si fièvre persistante ou >39°C."
     },
     {
@@ -178,7 +178,7 @@
       "remede_ar": "حليب الإبل",
       "pour_quoi": "Troubles digestifs, foie, diabète, allergies",
       "methode": "Boire 250ml par jour, frais. Disponible dans certaines épiceries spécialisées ou via importation.",
-      "source_hadith": "Hadith Bukhari : Des hommes des 'Ukl arrivèrent malades à Médine. Le Prophète ﷺ leur ordonna de boire du lait de chamelle. Ils guérirent.",
+      "source_hadith": "Hadith Bukhari 5686 : Des hommes des 'Ukl arrivèrent malades à Médine. Le Prophète ﷺ leur ordonna de boire du lait de chamelle. Ils guérirent.",
       "note_medicale": "Composition unique : sans bêta-lactoglobuline (responsable allergies au lait de vache). Études récentes : effets bénéfiques diabète type 1."
     },
     {
@@ -187,7 +187,7 @@
       "remede_ar": "بول الإبل",
       "pour_quoi": "Maladies digestives, foie (selon le hadith)",
       "methode": "Le hadith mentionne cet usage mais c'est un cas spécifique non recommandé en pratique moderne. Préférer le lait de chamelle.",
-      "source_hadith": "Hadith Bukhari (même contexte que tibb_019). Cas particulier de prescription prophétique.",
+      "source_hadith": "Hadith Bukhari 5686 / 233 (même contexte que tibb_019). Cas particulier de prescription prophétique.",
       "note_medicale": "Études controversées. La majorité des médecins déconseillent. Le lait de chamelle est l'alternative recommandée."
     },
     {
@@ -205,7 +205,7 @@
       "remede_ar": "آية الكرسي",
       "pour_quoi": "Protection contre la sorcellerie, les jinns, les cauchemars",
       "methode": "Réciter le verset 2:255 (Âyatu-l-Kursî) avant de dormir, après chaque prière, et en cas de peur.",
-      "source_hadith": "Hadith Bukhari : 'Celui qui récite Âyatu-l-Kursî avant de dormir aura un protecteur d'Allâh, et aucun démon ne s'approchera de lui jusqu'au matin.'",
+      "source_hadith": "Hadith Bukhari 2311 : 'Celui qui récite Âyatu-l-Kursî avant de dormir aura un protecteur d'Allâh, et aucun démon ne s'approchera de lui jusqu'au matin.'",
       "note_medicale": "Effet apaisant prouvé du dhikr sur le système nerveux parasympathique."
     },
     {
@@ -250,7 +250,7 @@
       "remede_ar": "سورة يس للمريض",
       "pour_quoi": "Réconfort spirituel, accompagnement maladies graves, agonie",
       "methode": "Réciter la sourate Yâsîn sur le malade. Particulièrement aux moments difficiles.",
-      "source_hadith": "Hadith Abû Dâwûd : 'Récitez Yâsîn sur vos morts.' Cette pratique s'étend aussi aux malades graves selon plusieurs savants.",
+      "source_hadith": "Abû Dâwûd 3121 (chaîne faible). Plusieurs savants ont étendu l'usage aux malades graves.",
       "note_medicale": "Effet apaisant de la récitation. Soutien psychologique majeur."
     },
     {
@@ -259,7 +259,7 @@
       "remede_ar": "دعاء الشفاء",
       "pour_quoi": "Toute maladie",
       "methode": "'Allâhumma Rabba-n-nâs, adhhibi-l-ba's, ishfi anta-sh-Shâfî, lâ shifâ'a illâ shifâ'uka, shifâ'an lâ yughâdiru saqamâ.' (Ô Allâh, Seigneur des hommes, fais partir le mal, guéris, Tu es le Guérisseur, il n'y a de guérison que la Tienne, une guérison qui ne laisse pas de séquelle.)",
-      "source_hadith": "Hadith Bukhari : Le Prophète ﷺ disait cette du'â aux malades.",
+      "source_hadith": "Hadith Bukhari 5675 : Le Prophète ﷺ disait cette du'â aux malades.",
       "note_medicale": "Acte d'espérance et de remise. Effet psycho-spirituel reconnu."
     },
     {
@@ -268,7 +268,7 @@
       "remede_ar": "اليد على الألم",
       "pour_quoi": "Douleur localisée",
       "methode": "Poser la main sur la zone douloureuse et dire : 'Bismillâh' 3 fois, puis 'A'ûdhu bi-'izzati-llâhi wa qudratihi min sharri mâ ajidu wa uhâdhir' 7 fois.",
-      "source_hadith": "Hadith Muslim : 'Uthmân ibn Abî-l-'Âs se plaignait d'une douleur. Le Prophète ﷺ lui enseigna cette méthode.",
+      "source_hadith": "Hadith Muslim 2202 : 'Uthmân ibn Abî-l-'Âs se plaignait d'une douleur. Le Prophète ﷺ lui enseigna cette méthode.",
       "note_medicale": "Toucher + verbalisation + foi = libération d'endorphines. Effet anti-douleur prouvé."
     },
     {
@@ -304,7 +304,7 @@
       "remede_ar": "النوم على الجنب الأيمن",
       "pour_quoi": "Sommeil, digestion, cœur",
       "methode": "Dormir sur le côté droit, main droite sous la joue. Du'â avant le sommeil.",
-      "source_hadith": "Hadith Bukhari : 'Quand tu vas te coucher, fais tes ablutions comme pour la salât, puis couche-toi sur ton côté droit.'",
+      "source_hadith": "Hadith Bukhari 247 : 'Quand tu vas te coucher, fais tes ablutions comme pour la salât, puis couche-toi sur ton côté droit.'",
       "note_medicale": "Études : meilleur drainage lymphatique, soulage le cœur (moins de pression sur l'oreillette gauche). Sommeil plus réparateur."
     },
     {
@@ -331,7 +331,7 @@
       "remede_ar": "التسبيح ضد القلق",
       "pour_quoi": "Anxiété, ruminations, insomnie",
       "methode": "Subhânallâh (33), Alhamdulillâh (33), Allâhu Akbar (34). Avant de dormir.",
-      "source_hadith": "Hadith Bukhari : 'Le Prophète ﷺ enseigna cela à Fâtima quand elle se plaignait de fatigue. Il dit : C'est mieux qu'un serviteur.'",
+      "source_hadith": "Hadith Bukhari 3705 : 'Le Prophète ﷺ enseigna cela à Fâtima quand elle se plaignait de fatigue. Il dit : C'est mieux qu'un serviteur.'",
       "note_medicale": "Répétition rythmique = méditation. Active le système parasympathique. Apaise."
     },
     {
@@ -358,7 +358,7 @@
       "remede_ar": "خل التفاح",
       "pour_quoi": "Glycémie, digestion, perte de poids",
       "methode": "1 cuillère à soupe dans un verre d'eau avant les repas. Cure de 2-3 semaines.",
-      "source_hadith": "Hadith Muslim : 'Quel excellent condiment que le vinaigre.' Application moderne du principe.",
+      "source_hadith": "Hadith Muslim 2052 : 'Quel excellent condiment que le vinaigre.' Application moderne du principe.",
       "note_medicale": "Études nombreuses : régule glycémie post-prandiale, aide la perte de poids légère."
     },
     {
@@ -367,7 +367,7 @@
       "remede_ar": "سورة البقرة للمنزل",
       "pour_quoi": "Protection spirituelle de la maison, contre les jinns",
       "methode": "Réciter Al-Baqara régulièrement dans la maison (au moins une fois par mois). Ou en streaming.",
-      "source_hadith": "Hadith Muslim : 'Ne faites pas de vos maisons des cimetières. Le diable s'enfuit de la maison où l'on récite Al-Baqara.'",
+      "source_hadith": "Hadith Muslim 780 : 'Ne faites pas de vos maisons des cimetières. Le diable s'enfuit de la maison où l'on récite Al-Baqara.'",
       "note_medicale": "Effet psychologique : sentiment de sécurité, sérénité de l'espace de vie."
     },
     {
@@ -439,7 +439,7 @@
       "remede_ar": "شرب الماء ببطء",
       "pour_quoi": "Digestion, hydratation cellulaire",
       "methode": "Boire en 3 gorgées (sunna). Pas d'un trait. Respirer entre.",
-      "source_hadith": "Hadith Muslim : 'Le Prophète ﷺ respirait trois fois en buvant. C'est meilleur, plus salutaire, plus rassasiant.'",
+      "source_hadith": "Hadith Muslim 2028 : 'Le Prophète ﷺ respirait trois fois en buvant. C'est meilleur, plus salutaire, plus rassasiant.'",
       "note_medicale": "Boire trop vite dilate l'estomac. Lent = meilleure absorption cellulaire."
     },
     {
@@ -448,7 +448,7 @@
       "remede_ar": "الضحك المعتدل",
       "pour_quoi": "Stress, dépression, immunité",
       "methode": "Sourire et rire avec mesure. Ne pas rire aux éclats répétés (le Prophète ﷺ souriait plus qu'il ne riait).",
-      "source_hadith": "Hadith Tirmidhî : 'Le Prophète ﷺ ne riait que par un sourire.' Hadith Bukhari : 'Ne riez pas trop, car beaucoup rire fait mourir le cœur.'",
+      "source_hadith": "Hadith Tirmidhî 2305 (da'îf) : 'Le plus souvent, son rire ﷺ était un sourire.' Hadith Bukhari : 'Ne riez pas trop, car beaucoup rire fait mourir le cœur.'",
       "note_medicale": "Rire stimule endorphines, immunité, oxygénation. Excès = épuisement nerveux."
     },
     {
@@ -511,7 +511,7 @@
       "remede_ar": "الاستيقاظ للفجر",
       "pour_quoi": "Rythme circadien, énergie, productivité",
       "methode": "Se lever à l'adhân du Fajr (avant l'aube). Prier puis bouger. Ne pas se rendormir.",
-      "source_hadith": "Hadith Tirmidhî : 'Allâh a béni les premières heures du matin pour ma communauté.'",
+      "source_hadith": "Du'â du Prophète ﷺ : 'Ô Allâh, bénis ma communauté dans les premières heures du matin.' (Abû Dâwûd 2606, Tirmidhî 1212, Ibn Mâja 2236 — hasan).",
       "note_medicale": "Études : lever tôt = meilleure santé mentale, productivité, espérance de vie. Cortisol matinal naturel."
     },
     {
@@ -547,7 +547,7 @@
       "remede_ar": "الشفاء في ثلاث",
       "pour_quoi": "Principe général de la médecine prophétique",
       "methode": "Selon le Prophète ﷺ, la guérison vient de 3 sources combinées : (1) remède naturel (miel, plantes...), (2) hijama / soins physiques, (3) du'â / Coran / spirituel.",
-      "source_hadith": "Hadith Bukhari : 'La guérison est dans trois choses : la gorgée de miel, l'incision (hijama), la cautérisation par le feu. J'interdis à ma communauté la cautérisation.'",
+      "source_hadith": "Hadith Bukhari 5680 : 'La guérison est dans trois choses : la gorgée de miel, l'incision (hijama), la cautérisation par le feu. ...mais je déconseille à ma communauté la cautérisation.' (Les savants y voient une karâhah tanzîhiyyah — forte détestation — et non un harâm absolu, vu le cas de Sa'd ibn Mu'âdh.)",
       "note_medicale": "Médecine intégrative moderne valide cette approche : naturel + médical + psycho-spirituel = guérison complète."
     }
   ],
