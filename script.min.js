@@ -14615,9 +14615,11 @@ function _aidTakeoverSanctuaire(evt) {
   wrap.innerHTML = hdr + cnt;
   sanct.appendChild(wrap);
 
-  // Hide nav bar
+  // Hide nav bar + topbar (oeil, burger)
   var nav = document.getElementById('nav-bar-v2');
-  if (nav) { nav._aidWasDisplay = nav.style.display; nav.style.display = 'none'; }
+  if (nav) nav.classList.add('hidden-immersion');
+  var topbar = document.getElementById('topbar-v2');
+  if (topbar) topbar.classList.add('hidden-immersion');
 
   // Floating prayer times pill
   _aidShowPrayerPill();
@@ -14635,9 +14637,11 @@ function _aidRestoreSanctuaire() {
       delete child._aidWasDisplay;
     }
   });
-  // Restore nav bar
+  // Restore nav bar + topbar
   var nav = document.getElementById('nav-bar-v2');
-  if (nav && nav._aidWasDisplay !== undefined) { nav.style.display = nav._aidWasDisplay; delete nav._aidWasDisplay; }
+  if (nav) nav.classList.remove('hidden-immersion');
+  var topbar = document.getElementById('topbar-v2');
+  if (topbar) topbar.classList.remove('hidden-immersion');
   // Remove prayer pill
   var pill = document.getElementById('aid-prayer-pill');
   if (pill) pill.remove();
