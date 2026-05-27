@@ -53,7 +53,7 @@
         {
           "id": "aid_adha_hajj_j5",
           "titre": "Tawâf al-Wadâ' — l'adieu",
-          "texte": "Avant de quitter La Mecque, le pèlerin fait un dernier tour autour de la Ka'ba. C'est le 'Tawâf de l'adieu'. Beaucoup pleurent. Personne ne sait s'il reviendra. Le Hajj transforme — il ne se répète pas comme une vacance. Chaque pèlerin redevient comme un nouveau-né, sans péché. Le Prophète ﷺ l'a dit (Bukhari)."
+          "texte": "Avant de quitter La Mecque, le pèlerin fait un dernier tour autour de la Ka'ba. C'est le 'Tawâf de l'adieu'. Beaucoup pleurent. Personne ne sait s'il reviendra. Le Hajj transforme — il ne se répète pas comme une vacance. Le pèlerin dont le Hajj est accepté (mabrûr) revient purifié de ses péchés. Le Prophète ﷺ l'a dit (Bukhari)."
         }
       ],
       "duas": [
@@ -306,7 +306,7 @@
         },
         {
           "id": "aid_adha_med_008",
-          "texte": "Ibrâhîm est appelé 'Khalîl Allâh' — l'ami privilégié d'Allâh. Pas Son serviteur. Son AMI. L'amitié avec Allâh se gagne par l'obéissance dans ce qui coûte le plus. Tu peux la gagner aussi."
+          "texte": "Ibrâhîm est appelé 'Khalîl Allâh' — l'ami privilégié d'Allâh. Serviteur ET intime. Cette proximité s'obtient par la foi et l'obéissance, par Sa grâce dans ce qui coûte le plus. Tu peux la gagner aussi."
         },
         {
           "id": "aid_adha_med_009",
@@ -347,7 +347,7 @@
         "DHUHR_jour_2": "Aujourd'hui, on visite les proches qu'on n'a pas vus hier. On reprend le lien. Le Prophète ﷺ a dit : 'Quiconque rompt les liens du sang n'entrera pas au Paradis' (Bukhari). L'Aïd répare ce que l'année a brisé.",
         "ASR_jour_2": "Les jours de Tachrîq sont appelés 'jours de manger, boire et se souvenir d'Allâh' (hadith Muslim). Ne te culpabilise pas du repas. Profite. Allâh a inscrit la joie dans le rite.",
         "MAGHRIB_jour_2": "Le deuxième jour se ferme. As-tu vu un proche qui était fâché contre toi ? L'Aïd est le moment idéal pour briser les ruptures. Demain est encore là — utilise-le.",
-        "ISHA_jour_2": "Les Takbîrât du soir. Les anges écoutent. Ils ne se lassent pas d'entendre Allâhu Akbar répété par les croyants. Tu fais partie de ce chœur mondial.",
+        "ISHA_jour_2": "Les Takbîrât du soir. Les anges assistent aux assemblées de dhikr, comme l'indiquent les textes. Allâhu Akbar répété par les croyants. Tu fais partie de ce chœur mondial.",
         "FAJR_jour_3": "12 Dhûl-Hijja — deuxième jour de Tachrîq. Si tu n'as pas encore donné aux pauvres, c'est l'occasion. Le rite ne se ferme pas le premier jour. Tu as encore deux jours.",
         "DHUHR_jour_3": "Tu commences peut-être à oublier que c'est l'Aïd. Le quotidien revient. Maintiens un petit acte symbolique aujourd'hui : un appel, un don, une visite. Garde le feu allumé.",
         "ASR_jour_3": "L'après-midi du 12 Dhûl-Hijja. Les pèlerins terminent leurs derniers rites à Minâ. Ils repartent transformés vers leur pays. Toi aussi tu peux être transformé par ces 4 jours.",
@@ -378,7 +378,7 @@
       "sens_du_jeune": {
         "id": "aid_fitr_recit_jeune",
         "titre": "Pourquoi as-tu jeûné ?",
-        "texte": "Tu viens de passer 30 jours sans boire ni manger du lever au coucher du soleil. Tu as eu faim. Tu as eu soif. Tu as parfois grondé sans raison apparente. Tu as priée Tarâwih. Tu as lu le Coran. Tu as veillé.\n\nMaintenant, c'est fini.\n\nMais l'Aïd al-Fitr n'est PAS la récompense du jeûne. C'est la CÉLÉBRATION qu'Allâh a accepté.\n\nLe verset le dit clairement (2:185) : 'Le mois de Ramadan, dans lequel a été descendu le Coran... Allâh veut pour vous la facilité, et Il ne veut pas la difficulté. Il veut que vous accomplissiez le compte, et que vous proclamiez Sa grandeur pour vous avoir guidés, et afin que vous soyez reconnaissants.'\n\nDeux ordres : proclamer la grandeur (les Takbîrât d'Aïd) et être reconnaissant (la joie, le partage, la Zakât al-Fitr).\n\nTu n'as pas jeûné pour TOI. Tu as jeûné pour Lui. Et maintenant, tu te réjouis pour Lui.\n\nDeux choses sont uniques aujourd'hui :\n\n1. La **Zakât al-Fitr** — une aumône obligatoire avant la prière de l'Aïd. Elle purifie tes manquements pendant le Ramadan. Elle nourrit les pauvres pour qu'eux aussi fêtent.\n\n2. La **Prière de l'Aïd** — en plein air, idéalement. Avec toute la communauté. Hommes, femmes, enfants. Le Prophète ﷺ y emmenait même les femmes en menstruation pour qu'elles assistent à la khutba (Bukhari).\n\nL'Aïd al-Fitr n'est pas seulement la fin du Ramadan. C'est le commencement de l'année spirituelle nouvelle. Tu n'es plus la même personne qu'il y a 30 jours. Garde un signe."
+        "texte": "Tu viens de passer 30 jours sans boire ni manger du lever au coucher du soleil. Tu as eu faim. Tu as eu soif. Tu as parfois grondé sans raison apparente. Tu as priée Tarâwih. Tu as lu le Coran. Tu as veillé.\n\nMaintenant, c'est fini.\n\nMais l'Aïd al-Fitr n'est PAS la récompense du jeûne. C'est la célébration dans l'espérance qu'Allâh a accepté.\n\nLe verset le dit clairement (2:185) : 'Le mois de Ramadan, dans lequel a été descendu le Coran... Allâh veut pour vous la facilité, et Il ne veut pas la difficulté. Il veut que vous accomplissiez le compte, et que vous proclamiez Sa grandeur pour vous avoir guidés, et afin que vous soyez reconnaissants.'\n\nDeux ordres : proclamer la grandeur (les Takbîrât d'Aïd) et être reconnaissant (la joie, le partage, la Zakât al-Fitr).\n\nTu n'as pas jeûné pour TOI. Tu as jeûné pour Lui. Et maintenant, tu te réjouis pour Lui.\n\nDeux choses sont uniques aujourd'hui :\n\n1. La **Zakât al-Fitr** — une aumône obligatoire avant la prière de l'Aïd. Elle purifie tes manquements pendant le Ramadan. Elle nourrit les pauvres pour qu'eux aussi fêtent.\n\n2. La **Prière de l'Aïd** — en plein air, idéalement. Avec toute la communauté. Hommes, femmes, enfants. Le Prophète ﷺ y emmenait même les femmes en menstruation pour qu'elles assistent à la khutba (Bukhari).\n\nL'Aïd al-Fitr n'est pas seulement la fin du Ramadan. C'est le commencement de l'année spirituelle nouvelle. Tu n'es plus la même personne qu'il y a 30 jours. Garde un signe."
       },
       "bilan_ramadan": [
         {
