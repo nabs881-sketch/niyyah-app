@@ -14935,11 +14935,20 @@ function _aidVoeuxGenerate() {
     ctx.fillText('\u2014 ' + d.sig, W/2, startY + lines.length * lineH + 50);
   }
 
-  // Niyyah branding
-  ctx.fillStyle = 'rgba(200,168,74,0.25)';
-  ctx.font = '28px Inter, sans-serif';
-  ctx.fillText('niyyah.app', W/2, H - 80);
+  // Niyyah branding — logo
+  var _logo = new Image();
+  _logo.onload = function() {
+    var lh = 80, lw = lh * (_logo.naturalWidth / _logo.naturalHeight);
+    ctx.globalAlpha = 0.5;
+    ctx.drawImage(_logo, (W - lw) / 2, H - 120, lw, lh);
+    ctx.globalAlpha = 1;
+    _aidVoeuxExport(canvas);
+  };
+  _logo.onerror = function() { _aidVoeuxExport(canvas); };
+  _logo.src = 'logo2.webp';
+}
 
+function _aidVoeuxExport(canvas) {
   canvas.toBlob(function(blob) {
     if (!blob) { showToast('Erreur g\u00e9n\u00e9ration'); return; }
     var file = new File([blob], 'aid-moubarak.png', { type: 'image/png' });
