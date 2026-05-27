@@ -14612,13 +14612,15 @@ function _aidTakeoverSanctuaire(evt) {
     cnt += '<div id="aid-tab-' + t.id + '" class="aid-tab-content" style="padding:20px;display:' + (i === 0 ? 'block' : 'none') + ';">' + t.html + '</div>';
   });
 
-  // Footer link to normal sanctuaire
-  var footer = '<div style="text-align:center;padding:24px 20px 40px;">'
-    + '<button onclick="_aidRestoreSanctuaire()" style="background:none;border:none;font-family:\'Cormorant Garamond\',serif;font-size:14px;color:rgba(200,168,74,0.5);cursor:pointer;padding:10px 20px;">Voir la suite de mon parcours \u2192</button>'
-    + '</div>';
-
-  wrap.innerHTML = hdr + cnt + footer;
+  wrap.innerHTML = hdr + cnt;
   sanct.appendChild(wrap);
+
+  // Hide nav bar
+  var nav = document.getElementById('nav-bar-v2');
+  if (nav) { nav._aidWasDisplay = nav.style.display; nav.style.display = 'none'; }
+
+  // Floating prayer times pill
+  _aidShowPrayerPill();
 }
 
 function _aidRestoreSanctuaire() {
@@ -14633,6 +14635,48 @@ function _aidRestoreSanctuaire() {
       delete child._aidWasDisplay;
     }
   });
+  // Restore nav bar
+  var nav = document.getElementById('nav-bar-v2');
+  if (nav && nav._aidWasDisplay !== undefined) { nav.style.display = nav._aidWasDisplay; delete nav._aidWasDisplay; }
+  // Remove prayer pill
+  var pill = document.getElementById('aid-prayer-pill');
+  if (pill) pill.remove();
+}
+
+// ── Floating prayer times pill ──
+function _aidShowPrayerPill() {
+  if (document.getElementById('aid-prayer-pill')) return;
+  if (!_prayerTimes) return;
+  var names = ['Fajr','Dhuhr','Asr','Maghrib','Isha'];
+  var now = new Date();
+  var nowMin = now.getHours() * 60 + now.getMinutes();
+  var rows = '';
+  names.forEach(function(p) {
+    var t = _prayerTimes[p];
+    if (!t) return;
+    var parts = t.split(':');
+    var pMin = parseInt(parts[0],10) * 60 + parseInt(parts[1],10);
+    var isNext = false;
+    if (!rows._foundNext && pMin > nowMin) { isNext = true; rows._foundNext = true; }
+    var style = isNext ? 'color:#C8A84A;font-weight:700;' : 'color:rgba(200,168,74,0.5);';
+    rows += '<div style="display:flex;justify-content:space-between;gap:12px;' + style + '"><span>' + p + '</span><span>' + t + '</span></div>';
+  });
+  var pill = document.createElement('div');
+  pill.id = 'aid-prayer-pill';
+  pill.style.cssText = 'position:fixed;bottom:16px;right:12px;z-index:9990;background:rgba(26,22,16,0.92);border:1px solid rgba(200,168,74,0.2);border-radius:14px;padding:10px 14px;font-family:Inter,sans-serif;font-size:11px;line-height:1.6;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);cursor:pointer;transition:transform 0.3s,opacity 0.3s;';
+  pill.innerHTML = rows;
+  pill._expanded = true;
+  pill.onclick = function() {
+    pill._expanded = !pill._expanded;
+    if (pill._expanded) {
+      pill.innerHTML = rows;
+      pill.style.padding = '10px 14px';
+    } else {
+      pill.innerHTML = '<div style="color:rgba(200,168,74,0.6);font-size:12px;">\u2726</div>';
+      pill.style.padding = '8px 10px';
+    }
+  };
+  document.body.appendChild(pill);
 }
 
 // ── Legacy: _aidOpenSection redirects to takeover ──
