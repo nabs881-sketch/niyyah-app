@@ -14564,8 +14564,8 @@ function _aidShowBanner(evt) {
   var sanct = document.getElementById('view-sanctuaire');
   if (!sanct) return;
   var momentBlock = sanct.querySelector('.moment-level-block');
-  if (momentBlock && momentBlock.nextSibling) {
-    sanct.insertBefore(banner, momentBlock.nextSibling);
+  if (momentBlock && momentBlock.parentNode === sanct) {
+    momentBlock.insertAdjacentElement('afterend', banner);
   } else {
     sanct.insertBefore(banner, sanct.firstChild);
   }
