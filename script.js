@@ -12801,6 +12801,21 @@ function openWaqtModal() {
   markWaqtLu(priere);
   updateMedaillonState();
   modal.style.display = 'flex';
+  // ── Aid waqt special message — 3s intro ──
+  if (window._AID_ACTIVE) {
+    var _aidWm = _aidGetWaqtMessage(window._AID_ACTIVE, priere);
+    if (_aidWm && actionEl) {
+      var _normalHtml = actionEl.innerHTML;
+      actionEl.style.transition = 'opacity 0.4s';
+      actionEl.innerHTML = '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:28px;color:#C8A84A;direction:rtl;margin-bottom:20px;">' + arName + '</div>'
+        + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;color:rgba(200,168,74,0.85);line-height:1.8;max-width:320px;font-style:italic;">' + _aidWm + '</div>';
+      setTimeout(function() {
+        if (!actionEl) return;
+        actionEl.style.opacity = '0';
+        setTimeout(function() { actionEl.innerHTML = _normalHtml; actionEl.style.opacity = '1'; }, 400);
+      }, 3000);
+    }
+  }
 }
 function closeWaqtModal() {
   var modal = document.getElementById('waqt-modal');
@@ -13156,6 +13171,17 @@ window.WAQT_BY_PRIERE = null;
       });
       window.WAQT_BY_PRIERE = obj;
     });
+})();
+
+/* ─────────────────────────────────────────────
+   MODULE AÏD — Chargement données événements
+   ───────────────────────────────────────────── */
+window._AID_DATA = null;
+window._AID_ACTIVE = null;
+(function _loadAidData() {
+  fetch('./data/events/aid_module_complet.json').then(function(r) { return r.ok ? r.json() : null; })
+    .then(function(d) { if (d) window._AID_DATA = d; })
+    .catch(function() {});
 })();
 
 /* ─────────────────────────────────────────────
@@ -14044,6 +14070,7 @@ function triggerSpontaneousUI() {
   if (checkWeeklyBilan()) { window._spontaneousUIShown = true; return; }
   if (checkRegardeAlert()) { window._spontaneousUIShown = true; return; }
   checkHijriBanner();
+  _aidBoot();
 }
 function checkRegardeAlert() {
   var last = localStorage.getItem('niyyah_regarde_last_alert');
@@ -14464,6 +14491,247 @@ function checkHijriBanner() {
       + '</div>';
     sanct.insertBefore(banner, sanct.firstChild);
     window._spontaneousUIShown = true;
+  });
+}
+
+/* ═══════════════════════════════════════════════════
+   MODULE AÏD — 5 événements islamiques majeurs
+   Aïd al-Adha, Aïd al-Fitr, Arafat, Lailat al-Qadr, Ashura
+   ═══════════════════════════════════════════════════ */
+
+// ── Détection de l'événement actif via date Hijri ──
+function _aidDetectEvent(hijri) {
+  if (!hijri || !window._AID_DATA) return null;
+  var m = (hijri.month || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  var d = hijri.day;
+  var ev = window._AID_DATA.events;
+  var isDH = m.indexOf('hijjah') !== -1 || m.indexOf('hijja') !== -1;
+  if (isDH && d === 9) return { key: 'JOUR_ARAFAT', data: ev.JOUR_ARAFAT, dayNum: 1 };
+  if (isDH && d >= 10 && d <= 13) return { key: 'AID_AL_ADHA', data: ev.AID_AL_ADHA, dayNum: d - 9 };
+  var isSh = m.indexOf('shawwal') !== -1 || m.indexOf('shaww') !== -1;
+  if (isSh && d === 1) return { key: 'AID_AL_FITR', data: ev.AID_AL_FITR, dayNum: 1 };
+  var isRam = m.indexOf('ramad') !== -1;
+  if (isRam && [21,23,25,27,29].indexOf(d) !== -1) return { key: 'LAILAT_AL_QADR', data: ev.LAILAT_AL_QADR, dayNum: 1 };
+  var isMuh = m.indexOf('muharram') !== -1;
+  if (isMuh && d === 10) return { key: 'ASHURA', data: ev.ASHURA, dayNum: 1 };
+  return null;
+}
+
+// ── Overlay d'ouverture plein écran (1×/jour) ──
+function _aidShowOverlay(evt) {
+  var key = 'aid_overlay_' + todayKey();
+  if (safeGetItem(key)) return;
+  safeSetItem(key, '1');
+  var ov = evt.data.overlay_opening;
+  if (!ov) return;
+  var el = document.createElement('div');
+  el.id = 'aid-overlay';
+  el.style.cssText = 'position:fixed;inset:0;z-index:99999;background:radial-gradient(ellipse at center,#2a1f0a 0%,#0d0a04 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;opacity:0;transition:opacity 0.6s;cursor:pointer;padding:40px 24px;';
+  el.innerHTML =
+    '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:44px;color:#C8A84A;margin-bottom:14px;">' + (ov.title_ar || '') + '</div>' +
+    '<div style="font-family:\'Cormorant Garamond\',serif;font-size:26px;color:#E5DCC8;font-weight:300;margin-bottom:22px;">' + (ov.title_fr || '') + '</div>' +
+    '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;color:rgba(200,168,74,0.7);line-height:1.7;max-width:300px;margin-bottom:32px;">' + (ov.subtitle || '') + '</div>' +
+    '<div style="font-family:Inter,sans-serif;font-size:11px;color:rgba(255,255,255,0.2);letter-spacing:2px;text-transform:uppercase;">' + (ov.instruction || 'Tap pour entrer') + '</div>';
+  el.onclick = function() { _aidDismissOverlay(el); };
+  document.body.appendChild(el);
+  requestAnimationFrame(function() { el.style.opacity = '1'; });
+  setTimeout(function() { _aidDismissOverlay(el); }, 4000);
+}
+function _aidDismissOverlay(el) {
+  if (!el || el._gone) return;
+  el._gone = true;
+  el.style.opacity = '0';
+  setTimeout(function() { if (el.parentNode) el.remove(); }, 600);
+}
+
+// ── Bandeau permanent cliquable ──
+function _aidShowBanner(evt) {
+  var old = document.getElementById('aid-event-banner');
+  if (old) old.remove();
+  var bt = evt.data.banner_text;
+  var text = '';
+  if (bt) {
+    text = bt['day_' + evt.dayNum] || bt['day_1'] || evt.data.name_fr;
+  } else {
+    var fallbacks = { JOUR_ARAFAT: '\u262a Yawm Arafat \u2014 Le plus grand jour du Hajj', LAILAT_AL_QADR: '\u262a Lailat al-Qadr \u2014 La nuit qui vaut mille mois', ASHURA: '\u262a \u2018\u00c2sh\u00fbr\u00e2\u2019 \u2014 Je\u00fbne et repentance' };
+    text = fallbacks[evt.key] || evt.data.name_fr;
+  }
+  var banner = document.createElement('div');
+  banner.id = 'aid-event-banner';
+  banner.style.cssText = 'background:linear-gradient(135deg,rgba(200,168,74,0.15),rgba(200,168,74,0.05));border:1px solid rgba(200,168,74,0.25);border-radius:12px;padding:12px 16px;margin:8px 16px;cursor:pointer;text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:14px;color:#C8A84A;letter-spacing:0.5px;transition:background 0.3s;';
+  banner.textContent = text;
+  banner.onclick = function() { _aidOpenSection(evt); };
+  var sanct = document.getElementById('view-sanctuaire');
+  if (!sanct) return;
+  var momentBlock = sanct.querySelector('.moment-level-block');
+  if (momentBlock && momentBlock.nextSibling) {
+    sanct.insertBefore(banner, momentBlock.nextSibling);
+  } else {
+    sanct.insertBefore(banner, sanct.firstChild);
+  }
+}
+
+// ── Render helpers ──
+function _aidHtml(item) {
+  var h = '<div class="aid-story">';
+  if (item.titre) h += '<div class="aid-story-titre">' + item.titre + '</div>';
+  h += '<div class="aid-story-text">' + (item.texte || '').replace(/\n/g, '<br>') + '</div>';
+  if (item.morale) h += '<div class="aid-story-morale">' + item.morale + '</div>';
+  return h + '</div>';
+}
+
+// ── Section dédiée Aïd — overlay avec tabs ──
+function _aidOpenSection(evt) {
+  var ex = document.getElementById('aid-section-overlay');
+  if (ex) ex.remove();
+  var ev = evt.data;
+  var tabs = [];
+
+  // Tab Récit
+  var rc = '';
+  if (ev.histoire_ibrahim) rc += _aidHtml(ev.histoire_ibrahim);
+  if (ev.sens_du_jeune) rc += _aidHtml(typeof ev.sens_du_jeune === 'string' ? { texte: ev.sens_du_jeune } : ev.sens_du_jeune);
+  if (ev.concept) rc += '<div class="aid-story"><div class="aid-story-text">' + (typeof ev.concept === 'string' ? ev.concept : ev.concept.texte || '').replace(/\n/g, '<br>') + '</div></div>';
+  if (ev.hajj_jour_par_jour) ev.hajj_jour_par_jour.forEach(function(h) { rc += _aidHtml(h); });
+  if (ev.sens_du_qurbani) { rc += '<div class="aid-subtitle">Le sens du Qurb\u00e2ni</div>'; ev.sens_du_qurbani.forEach(function(h) { rc += _aidHtml(h); }); }
+  if (ev.bilan_ramadan) { rc += '<div class="aid-subtitle">Bilan Ramadan</div>'; ev.bilan_ramadan.forEach(function(b) { rc += '<div class="aid-question">\u2192 ' + b.question + '</div>'; }); }
+  if (ev.zakat_al_fitr) { rc += '<div class="aid-subtitle">Zak\u00e2t al-Fitr</div>'; ev.zakat_al_fitr.forEach(function(z) { rc += _aidHtml(z); }); }
+  if (rc) tabs.push({ id: 'recit', label: 'R\u00e9cit', html: rc });
+
+  // Tab Du'âs
+  if (ev.duas && ev.duas.length) {
+    var dh = '';
+    ev.duas.forEach(function(d) {
+      dh += '<div class="aid-dua">';
+      if (d.occasion) dh += '<div class="aid-dua-occasion">' + d.occasion + '</div>';
+      if (d.texte_ar) dh += '<div class="aid-dua-ar">' + d.texte_ar + '</div>';
+      if (d.texte_fr) dh += '<div class="aid-dua-fr">' + d.texte_fr + '</div>';
+      if (d.source) dh += '<div class="aid-source">' + d.source + '</div>';
+      dh += '</div>';
+    });
+    tabs.push({ id: 'duas', label: 'Du\u2019\u00e2s', html: dh });
+  }
+
+  // Tab Méditations
+  if (ev.meditations && ev.meditations.length) {
+    var mh = '';
+    ev.meditations.forEach(function(m) { mh += '<div class="aid-med">' + (m.texte || '').replace(/\n/g, '<br>') + '</div>'; });
+    tabs.push({ id: 'med', label: 'M\u00e9ditations', html: mh });
+  }
+
+  // Tab Versets
+  var va = ev.versets_cles || (ev.verset_cle ? (Array.isArray(ev.verset_cle) ? ev.verset_cle : [ev.verset_cle]) : []);
+  if (va.length) {
+    var vh = '';
+    va.forEach(function(v) {
+      vh += '<div class="aid-verset"><div class="aid-verset-ref">' + (v.reference || '') + '</div><div class="aid-verset-text">' + (v.texte || '') + '</div>';
+      if (v.commentaire) vh += '<div class="aid-verset-comment">' + v.commentaire + '</div>';
+      vh += '</div>';
+    });
+    tabs.push({ id: 'versets', label: 'Versets', html: vh });
+  }
+
+  // Tab Takbîrât
+  if (ev.takbirat && ev.takbirat.length) {
+    var th = '';
+    ev.takbirat.forEach(function(t) {
+      th += '<div class="aid-takbir">';
+      if (t.titre) th += '<div class="aid-takbir-titre">' + t.titre + '</div>';
+      if (t.texte_ar) th += '<div class="aid-takbir-ar">' + t.texte_ar + '</div>';
+      if (t.transliteration) th += '<div class="aid-takbir-trans">' + t.transliteration + '</div>';
+      if (t.traduction) th += '<div class="aid-takbir-trad">' + t.traduction + '</div>';
+      th += '</div>';
+    });
+    tabs.push({ id: 'takbirat', label: 'Takb\u00eer\u00e2t', html: th });
+  }
+
+  if (tabs.length === 0) return;
+
+  var ov = document.createElement('div');
+  ov.id = 'aid-section-overlay';
+  ov.style.cssText = 'position:fixed;inset:0;z-index:9998;background:#1a1610;overflow-y:auto;-webkit-overflow-scrolling:touch;';
+
+  var hdr = '<div style="position:sticky;top:0;z-index:2;background:#1a1610;padding:16px 20px 0;">';
+  hdr += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">';
+  hdr += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;color:#C8A84A;font-weight:300;">' + (ev.name_fr || evt.key) + '</div>';
+  hdr += '<button onclick="document.getElementById(\'aid-section-overlay\').remove()" style="background:none;border:none;color:rgba(255,255,255,0.4);font-size:22px;cursor:pointer;padding:8px;">\u2715</button>';
+  hdr += '</div>';
+  hdr += '<div id="aid-tabs-bar" style="display:flex;gap:6px;overflow-x:auto;padding-bottom:12px;border-bottom:1px solid rgba(200,168,74,0.15);scrollbar-width:none;">';
+  tabs.forEach(function(t, i) {
+    var ac = i === 0;
+    hdr += '<button class="aid-tab-btn' + (ac ? ' aid-tab-active' : '') + '" data-tab="' + t.id + '" onclick="_aidSwitchTab(\'' + t.id + '\')" style="flex-shrink:0;white-space:nowrap;padding:8px 14px;border-radius:20px;border:1px solid ' + (ac ? 'rgba(200,168,74,0.5)' : 'rgba(200,168,74,0.15)') + ';background:' + (ac ? 'rgba(200,168,74,0.12)' : 'transparent') + ';color:' + (ac ? '#C8A84A' : 'rgba(200,168,74,0.5)') + ';font-family:\'Cormorant Garamond\',serif;font-size:13px;cursor:pointer;">' + t.label + '</button>';
+  });
+  hdr += '</div></div>';
+
+  var cnt = '';
+  tabs.forEach(function(t, i) {
+    cnt += '<div id="aid-tab-' + t.id + '" class="aid-tab-content" style="padding:20px;display:' + (i === 0 ? 'block' : 'none') + ';">' + t.html + '</div>';
+  });
+
+  ov.innerHTML = hdr + cnt;
+  document.body.appendChild(ov);
+}
+
+function _aidSwitchTab(tabId) {
+  document.querySelectorAll('.aid-tab-content').forEach(function(el) { el.style.display = 'none'; });
+  document.querySelectorAll('.aid-tab-btn').forEach(function(btn) {
+    var ac = btn.getAttribute('data-tab') === tabId;
+    btn.style.border = '1px solid ' + (ac ? 'rgba(200,168,74,0.5)' : 'rgba(200,168,74,0.15)');
+    btn.style.background = ac ? 'rgba(200,168,74,0.12)' : 'transparent';
+    btn.style.color = ac ? '#C8A84A' : 'rgba(200,168,74,0.5)';
+  });
+  var tab = document.getElementById('aid-tab-' + tabId);
+  if (tab) tab.style.display = 'block';
+  var overlay = document.getElementById('aid-section-overlay');
+  if (overlay) overlay.scrollTop = 0;
+}
+
+// ── Message Waqt spécial (3s intro) ──
+function _aidGetWaqtMessage(evt, priere) {
+  if (!evt || !evt.data || !evt.data.messages_waqts) return null;
+  var key = priere.toUpperCase() + '_jour_' + evt.dayNum;
+  return evt.data.messages_waqts[key] || null;
+}
+
+// ── CSS du module Aïd ──
+function _aidInjectStyles() {
+  if (document.getElementById('aid-styles')) return;
+  var s = document.createElement('style');
+  s.id = 'aid-styles';
+  s.textContent =
+    '.aid-subtitle{font-family:"Cormorant Garamond",serif;font-size:17px;font-weight:700;color:#C8A84A;margin:24px 0 12px;letter-spacing:.5px}' +
+    '.aid-question{font-family:"Cormorant Garamond",serif;font-size:15px;color:rgba(240,234,214,.8);line-height:1.7;margin-bottom:10px;padding-left:8px}' +
+    '.aid-story{margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid rgba(200,168,74,.1)}' +
+    '.aid-story-titre{font-family:"Cormorant Garamond",serif;font-size:17px;font-weight:700;color:#C8A84A;margin-bottom:10px}' +
+    '.aid-story-text{font-family:"Cormorant Garamond",serif;font-size:15px;color:rgba(240,234,214,.85);line-height:1.8}' +
+    '.aid-story-morale{font-family:"Cormorant Garamond",serif;font-size:15px;font-weight:700;color:rgba(240,234,214,.95);line-height:1.6;margin-top:14px;padding-top:10px;border-top:1px solid rgba(200,168,74,.12)}' +
+    '.aid-dua{margin-bottom:24px;padding-bottom:18px;border-bottom:1px solid rgba(200,168,74,.08)}' +
+    '.aid-dua-occasion{font-family:Inter,sans-serif;font-size:11px;color:rgba(200,168,74,.6);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}' +
+    '.aid-dua-ar{font-family:"Scheherazade New",Amiri,serif;font-size:22px;color:#C8A84A;direction:rtl;text-align:right;line-height:1.8;margin-bottom:8px}' +
+    '.aid-dua-fr{font-family:"Cormorant Garamond",serif;font-size:15px;font-style:italic;color:rgba(240,234,214,.8);line-height:1.6;margin-bottom:6px}' +
+    '.aid-source{font-family:Inter,sans-serif;font-size:10px;color:rgba(200,168,74,.35)}' +
+    '.aid-med{font-family:"Cormorant Garamond",serif;font-size:16px;color:rgba(240,234,214,.85);line-height:1.8;margin-bottom:24px;padding-bottom:18px;border-bottom:1px solid rgba(200,168,74,.08)}' +
+    '.aid-verset{margin-bottom:24px;padding-bottom:18px;border-bottom:1px solid rgba(200,168,74,.08)}' +
+    '.aid-verset-ref{font-family:Inter,sans-serif;font-size:11px;color:rgba(200,168,74,.6);letter-spacing:.5px;margin-bottom:8px}' +
+    '.aid-verset-text{font-family:"Cormorant Garamond",serif;font-size:16px;font-style:italic;color:rgba(240,234,214,.9);line-height:1.8;margin-bottom:8px}' +
+    '.aid-verset-comment{font-family:"Cormorant Garamond",serif;font-size:14px;color:rgba(200,168,74,.5);line-height:1.6}' +
+    '.aid-takbir{margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid rgba(200,168,74,.08)}' +
+    '.aid-takbir-titre{font-family:"Cormorant Garamond",serif;font-size:14px;color:rgba(200,168,74,.6);margin-bottom:12px}' +
+    '.aid-takbir-ar{font-family:"Scheherazade New",Amiri,serif;font-size:24px;color:#C8A84A;direction:rtl;text-align:right;line-height:1.8;margin-bottom:10px}' +
+    '.aid-takbir-trans{font-family:"Cormorant Garamond",serif;font-size:14px;font-style:italic;color:rgba(240,234,214,.6);line-height:1.6;margin-bottom:8px}' +
+    '.aid-takbir-trad{font-family:"Cormorant Garamond",serif;font-size:15px;color:rgba(240,234,214,.8);line-height:1.7}';
+  document.head.appendChild(s);
+}
+
+// ── Boot module Aïd ──
+function _aidBoot() {
+  _aidInjectStyles();
+  getCurrentHijri().then(function(hijri) {
+    var evt = _aidDetectEvent(hijri);
+    if (!evt) return;
+    window._AID_ACTIVE = evt;
+    _aidShowOverlay(evt);
+    setTimeout(function() { _aidShowBanner(evt); }, 500);
   });
 }
 

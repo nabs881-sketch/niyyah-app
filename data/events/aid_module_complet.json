@@ -1,0 +1,782 @@
+{
+  "module": "AID_EVENTS",
+  "version": "1.0",
+  "description": "Module événements islamiques majeurs. Contient Aïd al-Adha, Aïd al-Fitr, Jour d'Arafat, Lailat al-Qadr, Ashûrâ. Activé automatiquement par détection de date dans l'app.",
+  "date_production": "2026-05-27",
+  "concept": "Quand un événement islamique majeur arrive, l'app bascule en mode festif/contemplatif avec overlay d'ouverture, bandeau permanent, section dédiée, et messages waqts adaptés.",
+  "events": {
+    "AID_AL_ADHA": {
+      "name_fr": "Aïd al-Adha",
+      "name_ar": "عيد الأضحى",
+      "alt_name": "Aïd el-Kébir / Fête du Sacrifice",
+      "duration_days": 4,
+      "date_calculation": "10-13 Dhûl-Hijja",
+      "overlay_opening": {
+        "title_ar": "عيد مبارك",
+        "title_fr": "Aïd Moubarak",
+        "subtitle": "Aujourd'hui est le 10 Dhûl-Hijja. Le jour le plus grand aux yeux d'Allâh.",
+        "verse_reference": "Hadith Abû Dâwûd",
+        "instruction": "Tap pour entrer"
+      },
+      "banner_text": {
+        "day_1": "🌙 Aïd al-Adha — Jour 1/4 · Yawm an-Nahr",
+        "day_2": "🌙 Aïd al-Adha — Jour 2/4 · Tachrîq",
+        "day_3": "🌙 Aïd al-Adha — Jour 3/4 · Tachrîq",
+        "day_4": "🌙 Aïd al-Adha — Jour 4/4 · Dernière Takbîrât"
+      },
+      "histoire_ibrahim": {
+        "id": "aid_adha_recit_ibrahim",
+        "titre": "L'épreuve d'Ibrâhîm ﷺ et Ismâ'îl ﷺ",
+        "texte": "Ibrâhîm ﷺ est vieux. Il a attendu un enfant toute sa vie. Quand Ismâ'îl est né, il a remercié Allâh chaque jour. L'enfant grandit. Il devient un compagnon, un fils précieux, la lumière des yeux de son père.\n\nUne nuit, Ibrâhîm fait un rêve. Allâh lui demande d'égorger Ismâ'îl. Les rêves des prophètes sont vérité. Il n'y a pas de doute possible.\n\nIl ne se précipite pas. Il en parle à son fils.\n\n— « Ô mon fils, je me vois en songe en train de t'immoler. Vois donc ce que tu en penses. » (As-Sâffât 37:102)\n\nIsmâ'îl, à peine adolescent, répond avec une foi qui dépasse son âge :\n— « Ô mon père, fais ce qu'on t'a ordonné. Tu me trouveras, s'il plaît à Allâh, du nombre des endurants. »\n\nIls partent ensemble vers Minâ. En chemin, Iblîs apparaît trois fois. Une fois à Ibrâhîm, une fois à Ismâ'îl, une fois à Hâjar la mère. Il tente de les détourner : « Ne fais pas ça. Allâh ne demande pas cela. Tu vas perdre ton fils. » Trois fois, Ibrâhîm jette des pierres sur lui. C'est l'origine du rite de la lapidation à Minâ que les pèlerins du Hajj accomplissent encore aujourd'hui.\n\nArrivé sur place, Ibrâhîm bande les yeux de son fils — par tendresse, pour ne pas le voir souffrir. Et se les bande aussi — pour que l'amour parental ne l'arrête pas. Il prend le couteau. Il l'approche du cou de son fils.\n\nLe couteau ne coupe pas.\n\nIbrâhîm essaie encore. Le couteau glisse comme sur du verre. Allâh a retiré au métal sa nature tranchante.\n\nAlors une voix descend du ciel :\n— « Ô Ibrâhîm ! Tu as cru et t'es conformé à la vision. C'est ainsi que Nous récompensons les bienfaisants. C'était là, certes, l'épreuve manifeste. » (As-Sâffât 37:104-106)\n\nUn bélier est envoyé du Paradis. Ibrâhîm le sacrifie à la place de son fils.\n\n— « Et Nous le rachetâmes par un sacrifice immense. » (As-Sâffât 37:107)\n\nL'épreuve n'a jamais été le sang d'Ismâ'îl. C'était la disposition du cœur d'Ibrâhîm. Allâh ne voulait pas un fils — Il voulait une preuve d'amour absolu. Une fois la preuve donnée, Il a tout rendu.\n\nDepuis ce jour, chaque année, le monde musulman sacrifie un animal en mémoire de cette épreuve. Pas pour reproduire le sacrifice. Pour se rappeler que tout — tout ce qu'on aime, tout ce qu'on tient, tout ce qu'on protège — appartient à Allâh d'abord. Et qu'Il peut tout rendre quand Il voit que le cœur a compris."
+      },
+      "hajj_jour_par_jour": [
+        {
+          "id": "aid_adha_hajj_j1",
+          "titre": "8 Dhûl-Hijja — Yawm at-Tarwiyah",
+          "texte": "Aujourd'hui, des millions de pèlerins ont quitté La Mecque pour Minâ. Ils dormiront sur place, dans une mer de tentes blanches. Ils se préparent intérieurement à demain. Ce jour s'appelle 'Yawm at-Tarwiyah' — le jour de l'abreuvement, car autrefois les pèlerins remplissaient leurs gourdes pour le lendemain. Aujourd'hui encore, on prépare son cœur."
+        },
+        {
+          "id": "aid_adha_hajj_j2",
+          "titre": "9 Dhûl-Hijja — Yawm Arafat",
+          "texte": "C'est le jour le plus important du Hajj. Tous les pèlerins sont au mont Arafat, vêtus de blanc, du matin au coucher du soleil. Ils invoquent Allâh à voix haute. Le Prophète ﷺ a dit : 'Le meilleur des du'âs est celui du jour d'Arafat.' Pour ceux qui ne font pas le Hajj, jeûner ce jour-là efface les péchés de l'année précédente et de l'année qui vient (Muslim)."
+        },
+        {
+          "id": "aid_adha_hajj_j3",
+          "titre": "10 Dhûl-Hijja — Yawm an-Nahr (jour du sacrifice)",
+          "texte": "Le jour de l'Aïd al-Adha. Les pèlerins lapident la grande stèle (Jamrat al-'Aqaba), sacrifient leur animal, se rasent ou coupent leurs cheveux. Pour le reste du monde musulman, c'est la prière de l'Aïd au matin, puis le sacrifice. Le Prophète ﷺ a dit : 'Le jour le plus grand aux yeux d'Allâh est le jour du sacrifice' (Abû Dâwûd)."
+        },
+        {
+          "id": "aid_adha_hajj_j4",
+          "titre": "11-13 Dhûl-Hijja — Ayyâm at-Tachrîq",
+          "texte": "Les trois jours qui suivent l'Aïd. Les pèlerins reviennent à Minâ et lapident les trois stèles chaque jour. C'est aussi le moment où on récite les Takbîrât après chaque prière obligatoire. Manger, boire et se rappeler d'Allâh — ces trois jours sont une fête sacrée."
+        },
+        {
+          "id": "aid_adha_hajj_j5",
+          "titre": "Tawâf al-Wadâ' — l'adieu",
+          "texte": "Avant de quitter La Mecque, le pèlerin fait un dernier tour autour de la Ka'ba. C'est le 'Tawâf de l'adieu'. Beaucoup pleurent. Personne ne sait s'il reviendra. Le Hajj transforme — il ne se répète pas comme une vacance. Chaque pèlerin redevient comme un nouveau-né, sans péché. Le Prophète ﷺ l'a dit (Bukhari)."
+        }
+      ],
+      "duas": [
+        {
+          "id": "aid_adha_dua_001",
+          "occasion": "Avant la prière de l'Aïd",
+          "texte_ar": "اللَّهُمَّ بَلِّغْنَا رَمَضَانَ، وَأَعِنَّا عَلَى صِيَامِهِ وَقِيَامِهِ",
+          "texte_fr": "Ô Allâh, fais-nous parvenir à Ramadan, aide-nous à le jeûner et à veiller dans la prière.",
+          "source": "Du'â traditionnelle des Salafs"
+        },
+        {
+          "id": "aid_adha_dua_002",
+          "occasion": "Pendant les Takbîrât",
+          "texte_ar": "اللهُ أَكْبَرُ، اللهُ أَكْبَرُ، اللهُ أَكْبَرُ، لاَ إِلَهَ إِلاَّ اللهُ، اللهُ أَكْبَرُ، اللهُ أَكْبَرُ، وَلِلَّهِ الْحَمْدُ",
+          "texte_fr": "Allâhu Akbar, Allâhu Akbar, Allâhu Akbar. Lâ ilâha illâ-Llâh. Allâhu Akbar, Allâhu Akbar, wa li-Llâhi-l-hamd.",
+          "source": "Takbîrât d'Aïd — formule rapportée par 'Umar ibn al-Khattâb"
+        },
+        {
+          "id": "aid_adha_dua_003",
+          "occasion": "Au moment du sacrifice",
+          "texte_ar": "بِسْمِ اللهِ، وَاللهُ أَكْبَرُ، اللَّهُمَّ مِنْكَ وَلَكَ",
+          "texte_fr": "Au nom d'Allâh, et Allâh est le plus Grand. Ô Allâh, cela vient de Toi et c'est pour Toi.",
+          "source": "Hadith authentique, rapporté par Muslim"
+        },
+        {
+          "id": "aid_adha_dua_004",
+          "occasion": "Le jour d'Arafat (veille)",
+          "texte_ar": "لاَ إِلَهَ إِلاَّ اللهُ وَحْدَهُ لاَ شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ",
+          "texte_fr": "Il n'y a de divinité qu'Allâh, seul, sans associé. À Lui la souveraineté, à Lui la louange, et Il est puissant sur toute chose.",
+          "source": "Hadith Tirmidhî : 'La meilleure du'â est celle du jour d'Arafat, et la meilleure chose que j'ai dite, moi et les prophètes avant moi, est...'"
+        },
+        {
+          "id": "aid_adha_dua_005",
+          "occasion": "Rencontre Aïd avec les autres",
+          "texte_ar": "تَقَبَّلَ اللهُ مِنَّا وَمِنْكُمْ",
+          "texte_fr": "Que Allâh accepte de nous et de vous.",
+          "source": "Formule rapportée par Ibn Hibbân, dite entre Compagnons le jour de l'Aïd"
+        },
+        {
+          "id": "aid_adha_dua_006",
+          "occasion": "Du'â universelle de l'Aïd",
+          "texte_ar": "رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ",
+          "texte_fr": "Notre Seigneur ! Accorde-nous une belle part ici-bas et une belle part dans l'au-delà, et préserve-nous du châtiment du Feu.",
+          "source": "Coran 2:201"
+        },
+        {
+          "id": "aid_adha_dua_007",
+          "occasion": "Du'â de gratitude pour parvenir à l'Aïd",
+          "texte_ar": "الْحَمْدُ لِلَّهِ الَّذِي بَلَّغَنَا هَذَا الْيَوْمَ",
+          "texte_fr": "Louange à Allâh qui nous a fait parvenir à ce jour.",
+          "source": "Formule de gratitude traditionnelle"
+        },
+        {
+          "id": "aid_adha_dua_008",
+          "occasion": "Du'â d'Ibrâhîm ﷺ pour les pieux",
+          "texte_ar": "رَبِّ هَبْ لِي مِنَ الصَّالِحِينَ",
+          "texte_fr": "Mon Seigneur, fais-moi don d'une [descendance] parmi les pieux.",
+          "source": "Coran 37:100 — du'â d'Ibrâhîm avant la naissance d'Ismâ'îl"
+        },
+        {
+          "id": "aid_adha_dua_009",
+          "occasion": "Pour la famille",
+          "texte_ar": "رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا",
+          "texte_fr": "Notre Seigneur, donne-nous, en nos épouses et notre descendance, la consolation des yeux, et fais de nous des modèles pour les pieux.",
+          "source": "Coran 25:74"
+        },
+        {
+          "id": "aid_adha_dua_010",
+          "occasion": "Avant de dormir le soir de l'Aïd",
+          "texte_ar": "اللَّهُمَّ تَقَبَّلْ مِنَّا، إِنَّكَ أَنْتَ السَّمِيعُ الْعَلِيمُ",
+          "texte_fr": "Ô Allâh, accepte de nous, certes Tu es l'Audient, l'Omniscient.",
+          "source": "Coran 2:127 — du'â d'Ibrâhîm et Ismâ'îl en construisant la Ka'ba"
+        }
+      ],
+      "sens_du_qurbani": [
+        {
+          "id": "aid_adha_qurbani_001",
+          "titre": "Pourquoi sacrifier ?",
+          "texte": "Le Qurbani ne nourrit pas Allâh — Il n'a besoin de rien. Allâh dit dans le Coran : 'Ni leurs chairs ni leur sang n'atteignent Allâh. Ce qui L'atteint, c'est votre piété.' (Hajj 22:37). Tu sacrifies pour PROUVER quelque chose à toi-même : tu peux te détacher de ce que tu aimes pour Lui."
+        },
+        {
+          "id": "aid_adha_qurbani_002",
+          "titre": "Les trois parts",
+          "texte": "La viande du sacrifice se partage en trois : un tiers pour ta famille, un tiers pour tes amis et voisins, un tiers pour les pauvres. Pas plus. Pas moins. Allâh a inscrit la générosité dans le rituel même. Tu ne peux pas garder tout pour toi sans trahir le sens du jour."
+        },
+        {
+          "id": "aid_adha_qurbani_003",
+          "titre": "Pourquoi un bélier ?",
+          "texte": "Le Prophète ﷺ sacrifiait préférentiellement un bélier blanc avec des taches noires (Bukhari). Le bélier symbolise la docilité — l'animal qui ne résiste pas. C'est aussi ce qu'Allâh aime en toi : la soumission douce, pas le combat."
+        },
+        {
+          "id": "aid_adha_qurbani_004",
+          "titre": "La règle du sang",
+          "texte": "Le sang doit couler vers le bas — pas resté dans la viande. Le rite islamique exige une saignée complète. Mais le Coran rappelle (Hajj 22:37) que ce n'est PAS le sang qui compte aux yeux d'Allâh. C'est l'intention de celui qui donne."
+        },
+        {
+          "id": "aid_adha_qurbani_005",
+          "titre": "Le sacrifice par procuration",
+          "texte": "Si tu vis dans un pays où l'abattage à domicile est interdit, tu peux déléguer le sacrifice (al-wakâla) à une ONG islamique. Le sacrifice est valide. Allâh sait l'intention. La forme suit le lieu, mais l'intention reste intacte."
+        },
+        {
+          "id": "aid_adha_qurbani_006",
+          "titre": "Pour ceux qui n'ont pas les moyens",
+          "texte": "Le sacrifice n'est PAS obligatoire pour celui qui n'a pas les moyens. C'est une sunna recommandée, pas un pilier. Si tu ne peux pas, tu n'as pas péché. Donne une aumône à la mesure de tes moyens. Allâh accepte."
+        },
+        {
+          "id": "aid_adha_qurbani_007",
+          "titre": "Et après le sacrifice ?",
+          "texte": "Une fois la viande partagée, la fête commence vraiment. Visiter la famille. Manger ensemble. Pardonner ceux qu'on n'a pas vus depuis longtemps. L'Aïd al-Adha n'est PAS un jour de tristesse — c'est un jour de joie. Allâh aime voir Ses serviteurs heureux après l'épreuve."
+        }
+      ],
+      "versets_cles": [
+        {
+          "id": "aid_adha_verset_001",
+          "reference": "Coran 37:102-107 (As-Sâffât)",
+          "texte": "Quand celui-ci fut en âge de l'accompagner, [Ibrâhîm] dit : 'Ô mon fils, je me vois en songe en train de t'immoler. Vois donc ce que tu en penses.' Il dit : 'Ô mon père, fais ce qu'on t'a ordonné : tu me trouveras, s'il plaît à Allâh, du nombre des endurants.' [...] Et Nous le rachetâmes par un sacrifice immense.",
+          "commentaire": "Le récit central du sacrifice. Notez la consultation du père au fils — pas un ordre, un dialogue."
+        },
+        {
+          "id": "aid_adha_verset_002",
+          "reference": "Coran 22:37 (Al-Hajj)",
+          "texte": "Ni leurs chairs ni leur sang n'atteignent Allâh, mais ce qui L'atteint de votre part, c'est la piété.",
+          "commentaire": "Le verset clé qui définit le sens du Qurbani. La piété compte plus que la viande."
+        },
+        {
+          "id": "aid_adha_verset_003",
+          "reference": "Coran 22:34 (Al-Hajj)",
+          "texte": "À chaque communauté, Nous avons assigné un rite sacrificiel, afin qu'ils prononcent le nom d'Allâh sur la bête de cheptel qu'Il leur a attribuée.",
+          "commentaire": "Le sacrifice est universel — toutes les communautés prophétiques l'ont eu."
+        },
+        {
+          "id": "aid_adha_verset_004",
+          "reference": "Coran 108 (Al-Kawthar)",
+          "texte": "Nous t'avons certes accordé al-Kawthar (l'abondance). Accomplis la prière pour ton Seigneur et offre le sacrifice. Celui qui te déteste sera certes, sans postérité.",
+          "commentaire": "La sourate la plus courte. Trois versets. Une consigne directe pour l'Aïd : prière + sacrifice."
+        },
+        {
+          "id": "aid_adha_verset_005",
+          "reference": "Coran 2:196 (Al-Baqara)",
+          "texte": "Et accomplissez pour Allâh le Pèlerinage et la 'Umra... Quiconque ne trouve pas [le sacrifice], qu'il jeûne trois jours pendant le Pèlerinage et sept une fois rentré chez lui — soit en tout dix jours.",
+          "commentaire": "L'islam offre toujours une alternative pour ceux qui n'ont pas les moyens."
+        },
+        {
+          "id": "aid_adha_verset_006",
+          "reference": "Coran 22:28 (Al-Hajj)",
+          "texte": "Afin qu'ils témoignent des avantages [qui leur sont assurés] et qu'ils invoquent le nom d'Allâh durant les jours fixés sur la bête de cheptel.",
+          "commentaire": "Référence aux 'jours fixés' = 10-13 Dhûl-Hijja. Les 4 jours de l'Aïd al-Adha."
+        },
+        {
+          "id": "aid_adha_verset_007",
+          "reference": "Coran 5:27 (Al-Mâ'ida)",
+          "texte": "Allâh n'accepte que de la part des pieux.",
+          "commentaire": "Verset dit à propos du sacrifice d'Hâbil (Abel) et Qâbil (Caïn). Seul le pieux voit son sacrifice accepté."
+        },
+        {
+          "id": "aid_adha_verset_008",
+          "reference": "Coran 22:36 (Al-Hajj)",
+          "texte": "Mangez-en, nourrissez-en l'indigent et le mendiant.",
+          "commentaire": "Ordre direct du Coran sur le partage de la viande sacrifiée. Manger + nourrir."
+        },
+        {
+          "id": "aid_adha_verset_009",
+          "reference": "Coran 14:35-37 (Ibrâhîm)",
+          "texte": "Notre Seigneur ! J'ai établi une partie de ma descendance dans une vallée sans agriculture, près de Ta Maison sacrée [la Ka'ba], ô notre Seigneur, afin qu'ils accomplissent la salât.",
+          "commentaire": "Du'â d'Ibrâhîm quand il a laissé Hâjar et Ismâ'îl à La Mecque. La Mecque existe grâce à cette du'â."
+        },
+        {
+          "id": "aid_adha_verset_010",
+          "reference": "Coran 37:108-111 (As-Sâffât)",
+          "texte": "Et Nous perpétuâmes son renom dans la postérité : 'Paix sur Ibrâhîm.' Ainsi récompensons-Nous les bienfaisants, car il était de Nos serviteurs croyants.",
+          "commentaire": "La récompense d'Ibrâhîm : son nom est béni à jamais. Chaque prière musulmane le mentionne (tashahhud)."
+        },
+        {
+          "id": "aid_adha_verset_011",
+          "reference": "Coran 2:127-128 (Al-Baqara)",
+          "texte": "Et quand Ibrâhîm et Ismâ'îl élevaient les assises de la Maison : 'Notre Seigneur, accepte ceci de notre part ! Car Tu es l'Audient, l'Omniscient.'",
+          "commentaire": "Père et fils ensemble pour bâtir la Ka'ba. Le sacrifice n'a pas brisé leur lien — il l'a sacré."
+        },
+        {
+          "id": "aid_adha_verset_012",
+          "reference": "Coran 3:67 (Âl 'Imrân)",
+          "texte": "Ibrâhîm n'était ni juif ni chrétien. Il était entièrement soumis à Allâh (musulman), et il n'était point du nombre des associateurs.",
+          "commentaire": "Ibrâhîm précède toutes les religions monothéistes. Il est leur racine commune."
+        },
+        {
+          "id": "aid_adha_verset_013",
+          "reference": "Coran 16:120-121 (An-Nahl)",
+          "texte": "Ibrâhîm était un guide parfait. Il était entièrement soumis à Allâh, voué exclusivement à Lui, et il n'était point du nombre des associateurs. Il était reconnaissant pour Ses bienfaits.",
+          "commentaire": "Le portrait d'Ibrâhîm en 2 versets : soumission, unicité, gratitude."
+        },
+        {
+          "id": "aid_adha_verset_014",
+          "reference": "Coran 60:4 (Al-Mumtahana)",
+          "texte": "Certes, vous avez eu un bel exemple en Ibrâhîm et en ceux qui étaient avec lui.",
+          "commentaire": "Allâh désigne explicitement Ibrâhîm comme modèle pour les croyants."
+        },
+        {
+          "id": "aid_adha_verset_015",
+          "reference": "Coran 4:125 (An-Nisâ')",
+          "texte": "Qui est meilleur en religion que celui qui soumet à Allâh son être, tout en se conformant à la voie d'Ibrâhîm ? Allâh prit Ibrâhîm pour ami privilégié.",
+          "commentaire": "Ibrâhîm est appelé 'Khalîl Allâh' — l'ami privilégié d'Allâh. Le sacrifice était le prix de cette amitié."
+        }
+      ],
+      "takbirat": [
+        {
+          "id": "aid_adha_takbir_court",
+          "titre": "Version courte (à dire après chaque prière, du Fajr du 9 Dhûl-Hijja au 'Asr du 13)",
+          "texte_ar": "اللهُ أَكْبَرُ، اللهُ أَكْبَرُ، اللهُ أَكْبَرُ، لاَ إِلَهَ إِلاَّ اللهُ، وَاللهُ أَكْبَرُ، اللهُ أَكْبَرُ، وَلِلَّهِ الْحَمْدُ",
+          "transliteration": "Allâhu Akbar, Allâhu Akbar, Allâhu Akbar. Lâ ilâha illâ-Llâh. Wa-Llâhu Akbar, Allâhu Akbar, wa li-Llâhi-l-hamd.",
+          "traduction": "Allâh est le plus Grand. Allâh est le plus Grand. Allâh est le plus Grand. Il n'y a de divinité qu'Allâh. Allâh est le plus Grand. Allâh est le plus Grand. Et à Allâh la louange.",
+          "source": "Rapporté par 'Umar ibn al-Khattâb, Ibn Mas'ûd, et Ibn 'Abbâs"
+        },
+        {
+          "id": "aid_adha_takbir_long",
+          "titre": "Version longue (pour le matin de l'Aïd, en route vers la mosquée)",
+          "texte_ar": "اللهُ أَكْبَرُ كَبِيرًا، وَالْحَمْدُ لِلَّهِ كَثِيرًا، وَسُبْحَانَ اللهِ بُكْرَةً وَأَصِيلاً، لاَ إِلَهَ إِلاَّ اللهُ وَحْدَهُ، صَدَقَ وَعْدَهُ، وَنَصَرَ عَبْدَهُ، وَأَعَزَّ جُنْدَهُ، وَهَزَمَ الأَحْزَابَ وَحْدَهُ، لاَ إِلَهَ إِلاَّ اللهُ، وَاللهُ أَكْبَرُ",
+          "transliteration": "Allâhu Akbar kabîrâ, wa-l-hamdu li-Llâhi kathîrâ, wa subhâna-Llâhi bukratan wa asîlâ. Lâ ilâha illâ-Llâh wahdah, sadaqa wa'dah, wa nasara 'abdah, wa a'azza jundah, wa hazama-l-ahzâba wahdah. Lâ ilâha illâ-Llâh, wa-Llâhu Akbar.",
+          "traduction": "Allâh est le plus Grand, grandement, et la louange à Allâh, abondamment, et gloire à Allâh, matin et soir. Il n'y a de divinité qu'Allâh, seul. Il a tenu Sa promesse, secouru Son serviteur, fortifié Son armée, et défait les coalitions à Lui seul. Il n'y a de divinité qu'Allâh, et Allâh est le plus Grand.",
+          "source": "Formule rapportée par le Prophète ﷺ le jour de la conquête de La Mecque"
+        }
+      ],
+      "meditations": [
+        {
+          "id": "aid_adha_med_001",
+          "texte": "Ibrâhîm a attendu un enfant toute sa vie. Quand Allâh le lui a donné, Il a demandé de le rendre. L'épreuve ne change pas l'appartenance — Ismâ'îl appartenait à Allâh avant même de naître. Elle révèle au croyant sa propre disposition. Qu'est-ce qu'Il pourrait te demander aujourd'hui pour te révéler à toi-même ?"
+        },
+        {
+          "id": "aid_adha_med_002",
+          "texte": "Le sacrifice d'Ibrâhîm n'a pas eu lieu. Allâh a arrêté le couteau au dernier moment. Ce qu'Il voulait n'était pas le sang — c'était la disposition du cœur. Souvent, ce qu'on craint de perdre, on ne le perd pas. Mais il fallait être prêt."
+        },
+        {
+          "id": "aid_adha_med_003",
+          "texte": "Ismâ'îl n'avait pas l'âge de la rébellion. Il aurait pu fuir. Il a dit : 'Fais ce qu'on t'a ordonné.' L'obéissance de l'enfant a sauvé le père. Médite : ton obéissance peut alléger le fardeau de quelqu'un d'autre."
+        },
+        {
+          "id": "aid_adha_med_004",
+          "texte": "Iblîs a apparu trois fois à Ibrâhîm en chemin vers le sacrifice. Chaque fois, Ibrâhîm a jeté des pierres. Aujourd'hui encore, les pèlerins lapident les trois stèles. Ton waswasa intérieur est lapidé par ta foi. Lance les pierres."
+        },
+        {
+          "id": "aid_adha_med_005",
+          "texte": "Le Coran dit : 'Ni leurs chairs ni leur sang n'atteignent Allâh.' (22:37). Ce n'est PAS le mouton qui compte. C'est ce que tu donnes de toi-même. Sans cette intention, l'Aïd n'est qu'un barbecue."
+        },
+        {
+          "id": "aid_adha_med_006",
+          "texte": "La viande du Qurbani se partage en trois. Un tiers pour ta famille. Un tiers pour tes voisins. Un tiers pour les pauvres. Allâh a inscrit la générosité dans le rite même. Tu ne peux pas être à l'Aïd ET être avare."
+        },
+        {
+          "id": "aid_adha_med_007",
+          "texte": "Tu as fait des sacrifices cette année. Des choses tues. Des envies refoulées. Des relations rompues pour Allâh. Aujourd'hui, Allâh les regarde comme Il a regardé Ibrâhîm. Ton couteau aussi a été suspendu."
+        },
+        {
+          "id": "aid_adha_med_008",
+          "texte": "Ibrâhîm est appelé 'Khalîl Allâh' — l'ami privilégié d'Allâh. Pas Son serviteur. Son AMI. L'amitié avec Allâh se gagne par l'obéissance dans ce qui coûte le plus. Tu peux la gagner aussi."
+        },
+        {
+          "id": "aid_adha_med_009",
+          "texte": "Le Prophète ﷺ a dit : 'Aucune œuvre durant ces dix jours [de Dhûl-Hijja] n'est plus aimée d'Allâh que celles-ci.' (Bukhari). Médite : qu'as-tu fait pendant ces dix jours ? Si tu n'as rien fait, l'Aïd reste — et la sadaqa du jour rattrape."
+        },
+        {
+          "id": "aid_adha_med_010",
+          "texte": "La Ka'ba a été élevée par Ibrâhîm et Ismâ'îl. Père et fils. Le sacrifice n'a pas brisé leur lien — il l'a sacré. L'épreuve qui te déchire peut devenir le ciment de ta famille. Si tu la traverses ensemble."
+        },
+        {
+          "id": "aid_adha_med_011",
+          "texte": "Hâjar a été laissée seule par Ibrâhîm dans le désert avec son bébé Ismâ'îl. Elle a couru sept fois entre Safâ et Marwâ pour chercher de l'eau. Allâh a fait jaillir Zamzam sous les pieds du bébé. Aujourd'hui, des millions boivent encore cette eau. La détresse d'une mère peut faire jaillir une source pour le monde."
+        },
+        {
+          "id": "aid_adha_med_012",
+          "texte": "Les Takbîrât que tu récites aujourd'hui sont les mêmes que celles des Sahaba. Mêmes mots. Même intention. Quatorze siècles séparent ta voix de la leur — mais elles disent la même chose. Allâh entend les deux ensemble."
+        },
+        {
+          "id": "aid_adha_med_013",
+          "texte": "Le sacrifice d'Ibrâhîm n'était pas pour Allâh. Allâh n'a besoin de rien. C'était pour Ibrâhîm. Pour qu'il SACHE qu'il pouvait. Tu peux aussi. Tu ne le sauras qu'en essayant."
+        },
+        {
+          "id": "aid_adha_med_014",
+          "texte": "Aujourd'hui, des millions de musulmans dans le monde font le même geste. Pas de hiérarchie. Pas de richesses. Le riche et le pauvre sacrifient leur mouton. L'égalité de l'Aïd n'a pas d'équivalent ailleurs."
+        },
+        {
+          "id": "aid_adha_med_015",
+          "texte": "Demain, l'Aïd sera fini. Tu retourneras au quotidien. Garde un signe — une intention nouvelle, une habitude changée, un geste de générosité prolongé. L'Aïd n'est pas un événement isolé. C'est une porte qui doit rester ouverte."
+        }
+      ],
+      "messages_waqts": {
+        "FAJR_jour_1": "Le soleil se lève sur le 10 Dhûl-Hijja. À Minâ, des millions de pèlerins lancent leurs pierres et préparent le sacrifice. Toi, prépare ton cœur pour la prière de l'Aïd. Aujourd'hui n'est pas un jour ordinaire.",
+        "DHUHR_jour_1": "Tu as prié l'Aïd. Tu as embrassé tes proches. Tu as peut-être déjà sacrifié. Maintenant, c'est l'heure de la viande, du repas, du partage. Allâh aime te voir heureux après l'effort.",
+        "ASR_jour_1": "L'après-midi du 10 Dhûl-Hijja. Les pèlerins reviennent de Minâ. Le Prophète ﷺ a dit : 'Le jour le plus grand aux yeux d'Allâh est ce jour-là.' Médite cela. Tu vis le jour le plus grand de l'année.",
+        "MAGHRIB_jour_1": "Le premier jour de l'Aïd se ferme. Tu as mangé. Tu as partagé. Tu as ri. Allâh a vu chaque geste. Avant de dormir, dis : 'Allâhumma taqabbal minnâ' — Ô Allâh, accepte de nous.",
+        "ISHA_jour_1": "La nuit du premier jour de l'Aïd. Garde quelques Takbîrât avant de fermer les yeux. Allâhu Akbar, Allâhu Akbar, lâ ilâha illâ-Llâh, wa-Llâhu Akbar. La paix vient.",
+        "FAJR_jour_2": "11 Dhûl-Hijja — premier jour de Tachrîq. Les pèlerins lapident les stèles aujourd'hui. Toi, continue les Takbîrât après chaque prière. La fête continue.",
+        "DHUHR_jour_2": "Aujourd'hui, on visite les proches qu'on n'a pas vus hier. On reprend le lien. Le Prophète ﷺ a dit : 'Quiconque rompt les liens du sang n'entrera pas au Paradis' (Bukhari). L'Aïd répare ce que l'année a brisé.",
+        "ASR_jour_2": "Les jours de Tachrîq sont appelés 'jours de manger, boire et se souvenir d'Allâh' (hadith Muslim). Ne te culpabilise pas du repas. Profite. Allâh a inscrit la joie dans le rite.",
+        "MAGHRIB_jour_2": "Le deuxième jour se ferme. As-tu vu un proche qui était fâché contre toi ? L'Aïd est le moment idéal pour briser les ruptures. Demain est encore là — utilise-le.",
+        "ISHA_jour_2": "Les Takbîrât du soir. Les anges écoutent. Ils ne se lassent pas d'entendre Allâhu Akbar répété par les croyants. Tu fais partie de ce chœur mondial.",
+        "FAJR_jour_3": "12 Dhûl-Hijja — deuxième jour de Tachrîq. Si tu n'as pas encore donné aux pauvres, c'est l'occasion. Le rite ne se ferme pas le premier jour. Tu as encore deux jours.",
+        "DHUHR_jour_3": "Tu commences peut-être à oublier que c'est l'Aïd. Le quotidien revient. Maintiens un petit acte symbolique aujourd'hui : un appel, un don, une visite. Garde le feu allumé.",
+        "ASR_jour_3": "L'après-midi du 12 Dhûl-Hijja. Les pèlerins terminent leurs derniers rites à Minâ. Ils repartent transformés vers leur pays. Toi aussi tu peux être transformé par ces 4 jours.",
+        "MAGHRIB_jour_3": "Trois jours d'Aïd passés. Bilan : qu'as-tu donné ? À qui ? Combien ? La quantité importe moins que la sincérité. Allâh sait.",
+        "ISHA_jour_3": "Le dhikr d'Allâh ne se limite pas aux Takbîrât. Garde 5 minutes ce soir pour Subhânallâh, Alhamdulillâh, Allâhu Akbar. Le Prophète ﷺ a dit que ces mots remplissent la balance (Muslim).",
+        "FAJR_jour_4": "13 Dhûl-Hijja — dernier jour de Tachrîq. Les pèlerins font leur Tawâf al-Wadâ' et quittent La Mecque. C'est aussi ton dernier jour de Takbîrât. Profite.",
+        "DHUHR_jour_4": "Aujourd'hui, après chaque prière, garde les Takbîrât. C'est la dernière fois cette année. La sunna se termine au 'Asr.",
+        "ASR_jour_4": "Après cette prière, plus de Takbîrât d'Aïd. C'est l'heure de clore. Récite-les une dernière fois avec présence. L'année prochaine, Allâh le sait.",
+        "MAGHRIB_jour_4": "L'Aïd se ferme officiellement. Tu n'es plus la même personne qu'il y a 4 jours. Si rien n'a changé en toi, c'est que tu as raté la fête. Demande à Allâh de te donner un cœur qui retient.",
+        "ISHA_jour_4": "Dernière nuit d'Aïd. Allâhu Akbar — une dernière fois. Allâh accepte de nous. Bonne nuit, Nabs. Tu as traversé l'Aïd avec Lui."
+      }
+    },
+    "AID_AL_FITR": {
+      "name_fr": "Aïd al-Fitr",
+      "name_ar": "عيد الفطر",
+      "alt_name": "Aïd es-Séghir / Fête de la rupture du jeûne",
+      "duration_days": 1,
+      "date_calculation": "1er Shawwâl",
+      "overlay_opening": {
+        "title_ar": "عيد مبارك",
+        "title_fr": "Aïd Moubarak",
+        "subtitle": "Aujourd'hui est le 1er Shawwâl. Allâh accepte ton Ramadan.",
+        "instruction": "Tap pour entrer"
+      },
+      "banner_text": {
+        "day_1": "🌙 Aïd al-Fitr — Allâh accepte de nous"
+      },
+      "sens_du_jeune": {
+        "id": "aid_fitr_recit_jeune",
+        "titre": "Pourquoi as-tu jeûné ?",
+        "texte": "Tu viens de passer 30 jours sans boire ni manger du lever au coucher du soleil. Tu as eu faim. Tu as eu soif. Tu as parfois grondé sans raison apparente. Tu as priée Tarâwih. Tu as lu le Coran. Tu as veillé.\n\nMaintenant, c'est fini.\n\nMais l'Aïd al-Fitr n'est PAS la récompense du jeûne. C'est la CÉLÉBRATION qu'Allâh a accepté.\n\nLe verset le dit clairement (2:185) : 'Le mois de Ramadan, dans lequel a été descendu le Coran... Allâh veut pour vous la facilité, et Il ne veut pas la difficulté. Il veut que vous accomplissiez le compte, et que vous proclamiez Sa grandeur pour vous avoir guidés, et afin que vous soyez reconnaissants.'\n\nDeux ordres : proclamer la grandeur (les Takbîrât d'Aïd) et être reconnaissant (la joie, le partage, la Zakât al-Fitr).\n\nTu n'as pas jeûné pour TOI. Tu as jeûné pour Lui. Et maintenant, tu te réjouis pour Lui.\n\nDeux choses sont uniques aujourd'hui :\n\n1. La **Zakât al-Fitr** — une aumône obligatoire avant la prière de l'Aïd. Elle purifie tes manquements pendant le Ramadan. Elle nourrit les pauvres pour qu'eux aussi fêtent.\n\n2. La **Prière de l'Aïd** — en plein air, idéalement. Avec toute la communauté. Hommes, femmes, enfants. Le Prophète ﷺ y emmenait même les femmes en menstruation pour qu'elles assistent à la khutba (Bukhari).\n\nL'Aïd al-Fitr n'est pas seulement la fin du Ramadan. C'est le commencement de l'année spirituelle nouvelle. Tu n'es plus la même personne qu'il y a 30 jours. Garde un signe."
+      },
+      "bilan_ramadan": [
+        {
+          "id": "aid_fitr_bilan_001",
+          "question": "Qu'est-ce que tu as découvert sur toi pendant ces 30 jours que tu ignorais avant ?"
+        },
+        {
+          "id": "aid_fitr_bilan_002",
+          "question": "Quel verset du Coran t'a frappé le plus cette année ? Cherche-le maintenant et relis-le."
+        },
+        {
+          "id": "aid_fitr_bilan_003",
+          "question": "Quel péché as-tu réussi à abandonner pendant Ramadan ? Peux-tu le maintenir hors de toi pour les 11 mois qui viennent ?"
+        },
+        {
+          "id": "aid_fitr_bilan_004",
+          "question": "À qui as-tu pardonné pendant Ramadan ? Si tu n'as pardonné à personne, l'Aïd est le bon moment."
+        },
+        {
+          "id": "aid_fitr_bilan_005",
+          "question": "Combien de Tarâwih as-tu manquées ? Sans culpabilité — juste pour noter et faire mieux l'année prochaine."
+        },
+        {
+          "id": "aid_fitr_bilan_006",
+          "question": "Quelle du'â as-tu répétée le plus ? Allâh l'entend en boucle — c'est la signature de ton année."
+        },
+        {
+          "id": "aid_fitr_bilan_007",
+          "question": "As-tu donné plus que d'habitude ? À qui ? Pour qui ? Ce flux de générosité — peut-il continuer ?"
+        },
+        {
+          "id": "aid_fitr_bilan_008",
+          "question": "Ta prière a-t-elle changé ? Plus présente ? Plus régulière ? Plus longue ? Note la différence."
+        },
+        {
+          "id": "aid_fitr_bilan_009",
+          "question": "Qu'est-ce qui te manquera de Ramadan le plus ? Cette nostalgie est un signe que tu as profité."
+        },
+        {
+          "id": "aid_fitr_bilan_010",
+          "question": "Une seule chose à garder de Ramadan pour toute l'année — quelle est-elle ?"
+        }
+      ],
+      "zakat_al_fitr": [
+        {
+          "id": "aid_fitr_zakat_001",
+          "titre": "Qu'est-ce que c'est ?",
+          "texte": "La Zakât al-Fitr est une aumône obligatoire pour TOUS les musulmans — homme, femme, enfant, libre, esclave. Le chef de famille la donne pour chaque membre de son foyer. Le Prophète ﷺ l'a ordonnée pour 'purifier le jeûneur des paroles vaines et indécentes, et pour nourrir les pauvres.' (Abû Dâwûd)."
+        },
+        {
+          "id": "aid_fitr_zakat_002",
+          "titre": "Combien ?",
+          "texte": "Le Prophète ﷺ l'a fixée à 1 sâ' de dattes, d'orge, de raisin sec ou de blé (environ 2,5 à 3 kg de nourriture de base). En argent aujourd'hui, environ 7-10€ par personne selon les pays. Vérifie avec ta mosquée locale pour le montant exact de l'année."
+        },
+        {
+          "id": "aid_fitr_zakat_003",
+          "titre": "Quand ?",
+          "texte": "AVANT la prière de l'Aïd, au plus tard. Si tu la donnes après la prière, c'est une aumône ordinaire, plus une Zakât al-Fitr (Abû Dâwûd). Tu peux la donner dès les derniers jours de Ramadan pour être tranquille."
+        },
+        {
+          "id": "aid_fitr_zakat_004",
+          "titre": "À qui ?",
+          "texte": "Aux pauvres et nécessiteux. Pas à des organisations qui financent autre chose. Le but est qu'un pauvre puisse manger le jour de l'Aïd avec sa famille. Le Prophète ﷺ a dit : 'Affranchissez-les ce jour de devoir mendier.'"
+        }
+      ],
+      "duas": [
+        {
+          "id": "aid_fitr_dua_001",
+          "occasion": "Au matin de l'Aïd",
+          "texte_ar": "اللَّهُمَّ تَقَبَّلْ مِنَّا صِيَامَنَا وَقِيَامَنَا",
+          "texte_fr": "Ô Allâh, accepte de nous notre jeûne et nos veilles.",
+          "source": "Du'â traditionnelle"
+        },
+        {
+          "id": "aid_fitr_dua_002",
+          "occasion": "Takbîrât d'Aïd",
+          "texte_ar": "اللهُ أَكْبَرُ، اللهُ أَكْبَرُ، لاَ إِلَهَ إِلاَّ اللهُ، اللهُ أَكْبَرُ، اللهُ أَكْبَرُ، وَلِلَّهِ الْحَمْدُ",
+          "texte_fr": "Allâhu Akbar, Allâhu Akbar, lâ ilâha illâ-Llâh, Allâhu Akbar, Allâhu Akbar, wa li-Llâhi-l-hamd.",
+          "source": "Formule rapportée par Ibn Mas'ûd"
+        },
+        {
+          "id": "aid_fitr_dua_003",
+          "occasion": "Pour Allâh accepte le Ramadan",
+          "texte_ar": "اللَّهُمَّ تَقَبَّلْ مِنَّا، إِنَّكَ أَنْتَ السَّمِيعُ الْعَلِيمُ",
+          "texte_fr": "Ô Allâh, accepte de nous. Tu es l'Audient, l'Omniscient.",
+          "source": "Coran 2:127"
+        },
+        {
+          "id": "aid_fitr_dua_004",
+          "occasion": "Rencontre Aïd",
+          "texte_ar": "تَقَبَّلَ اللهُ مِنَّا وَمِنْكُمْ",
+          "texte_fr": "Que Allâh accepte de nous et de vous.",
+          "source": "Formule des Sahaba (Ibn Hibbân)"
+        },
+        {
+          "id": "aid_fitr_dua_005",
+          "occasion": "Pour parvenir à Ramadan l'année prochaine",
+          "texte_ar": "اللَّهُمَّ بَلِّغْنَا رَمَضَانَ، وَتَقَبَّلْ مِنَّا",
+          "texte_fr": "Ô Allâh, fais-nous parvenir au Ramadan prochain, et accepte de nous.",
+          "source": "Du'â des Salafs"
+        },
+        {
+          "id": "aid_fitr_dua_006",
+          "occasion": "Pour préserver les bonnes habitudes",
+          "texte_ar": "يَا مُقَلِّبَ الْقُلُوبِ ثَبِّتْ قَلْبِي عَلَى دِينِكَ",
+          "texte_fr": "Ô Toi qui retournes les cœurs, affermis mon cœur sur Ta religion.",
+          "source": "Hadith Tirmidhî, du'â fréquente du Prophète ﷺ"
+        },
+        {
+          "id": "aid_fitr_dua_007",
+          "occasion": "Du'â de gratitude",
+          "texte_ar": "الْحَمْدُ لِلَّهِ الَّذِي بَلَّغَنَا هَذَا الْيَوْمَ",
+          "texte_fr": "Louange à Allâh qui nous a fait parvenir à ce jour.",
+          "source": "Formule traditionnelle"
+        },
+        {
+          "id": "aid_fitr_dua_008",
+          "occasion": "Pour la famille",
+          "texte_ar": "اللَّهُمَّ بَارِكْ لَنَا فِي أَهْلِنَا، وَاجْعَلْنَا أُسْرَةً صَالِحَةً",
+          "texte_fr": "Ô Allâh, bénis-nous dans notre famille, et fais de nous une famille pieuse.",
+          "source": "Du'â traditionnelle"
+        },
+        {
+          "id": "aid_fitr_dua_009",
+          "occasion": "Pour les défunts",
+          "texte_ar": "اللَّهُمَّ ارْحَمْ مَوْتَانَا وَأَلْحِقْنَا بِهِمْ فِي الصَّالِحَاتِ",
+          "texte_fr": "Ô Allâh, fais miséricorde à nos défunts, et fais-nous les rejoindre dans le bien.",
+          "source": "Du'â traditionnelle des soirs d'Aïd"
+        },
+        {
+          "id": "aid_fitr_dua_010",
+          "occasion": "Pour la nation musulmane",
+          "texte_ar": "اللَّهُمَّ أَصْلِحْ أُمَّةَ مُحَمَّدٍ ﷺ",
+          "texte_fr": "Ô Allâh, rétablis la communauté de Muhammad ﷺ.",
+          "source": "Du'â universelle des Aïds"
+        }
+      ],
+      "versets_cles": [
+        {
+          "id": "aid_fitr_verset_001",
+          "reference": "Coran 2:185 (Al-Baqara)",
+          "texte": "Le mois de Ramadan dans lequel a été descendu le Coran... Allâh veut pour vous la facilité, et Il ne veut pas la difficulté. Et que vous accomplissiez le compte, et que vous proclamiez Sa grandeur pour vous avoir guidés, et afin que vous soyez reconnaissants.",
+          "commentaire": "Le verset fondateur de Ramadan ET de l'Aïd. 'Proclamer Sa grandeur' = Takbîrât. 'Être reconnaissants' = la joie du jour."
+        },
+        {
+          "id": "aid_fitr_verset_002",
+          "reference": "Coran 97 (Al-Qadr)",
+          "texte": "Nous l'avons fait descendre durant la nuit d'al-Qadr. Et qui te dira ce qu'est la nuit d'al-Qadr ? La nuit d'al-Qadr est meilleure que mille mois.",
+          "commentaire": "Le Coran t'a peut-être touché cette année pendant Lailat al-Qadr. Cette grâce reste avec toi."
+        },
+        {
+          "id": "aid_fitr_verset_003",
+          "reference": "Coran 87:14-15 (Al-A'lâ)",
+          "texte": "Réussira certes celui qui se purifie, et qui mentionne le nom de son Seigneur, puis prie.",
+          "commentaire": "Le verset clé de l'Aïd al-Fitr : se purifier (Zakât al-Fitr), mentionner Allâh (Takbîrât), prier (prière de l'Aïd). Trois actes successifs."
+        },
+        {
+          "id": "aid_fitr_verset_004",
+          "reference": "Coran 2:201",
+          "texte": "Notre Seigneur, accorde-nous une belle part ici-bas et une belle part dans l'au-delà.",
+          "commentaire": "La du'â la plus universelle de l'islam. Parfaite pour le jour de l'Aïd."
+        },
+        {
+          "id": "aid_fitr_verset_005",
+          "reference": "Coran 14:7",
+          "texte": "Si vous êtes reconnaissants, J'augmenterai certes pour vous. Mais si vous êtes ingrats, alors Mon châtiment est terrible.",
+          "commentaire": "La reconnaissance n'est pas seulement une émotion. C'est une condition pour qu'Allâh augmente Ses bienfaits."
+        }
+      ],
+      "takbirat": [
+        {
+          "id": "aid_fitr_takbir",
+          "titre": "Takbîrât d'Aïd al-Fitr (à dire de la nuit du 1er Shawwâl jusqu'à la prière de l'Aïd)",
+          "texte_ar": "اللهُ أَكْبَرُ، اللهُ أَكْبَرُ، لاَ إِلَهَ إِلاَّ اللهُ، اللهُ أَكْبَرُ، اللهُ أَكْبَرُ، وَلِلَّهِ الْحَمْدُ",
+          "transliteration": "Allâhu Akbar, Allâhu Akbar, lâ ilâha illâ-Llâh, Allâhu Akbar, Allâhu Akbar, wa li-Llâhi-l-hamd.",
+          "traduction": "Allâh est le plus Grand, Allâh est le plus Grand. Il n'y a de divinité qu'Allâh. Allâh est le plus Grand, Allâh est le plus Grand. Et à Allâh la louange.",
+          "source": "Formule rapportée par Ibn Mas'ûd"
+        }
+      ],
+      "meditations": [
+        {
+          "id": "aid_fitr_med_001",
+          "texte": "Tu as jeûné 30 jours. Pas pour Allâh — Il n'a besoin de rien. Pour toi. Pour découvrir ta propre force. Aujourd'hui tu sais : tu peux te priver. Tu peux te discipliner. Tu peux. C'est ce que Ramadan t'a appris."
+        },
+        {
+          "id": "aid_fitr_med_002",
+          "texte": "L'Aïd al-Fitr n'est PAS la fin de Ramadan. C'est la commencement du 'reste de l'année'. Les bonnes habitudes prises pendant le mois — elles peuvent rester. C'est ton choix maintenant."
+        },
+        {
+          "id": "aid_fitr_med_003",
+          "texte": "Le Prophète ﷺ a dit : 'Celui qui jeûne Ramadan, puis y ajoute six jours de Shawwâl, c'est comme s'il avait jeûné toute l'année.' (Muslim). Le mois qui commence aujourd'hui contient cette grâce. Profite."
+        },
+        {
+          "id": "aid_fitr_med_004",
+          "texte": "Tu as eu faim et soif chaque jour pendant 30 jours. Maintenant tu peux manger librement. Mais l'écho de la faim doit rester en toi — pour te souvenir des pauvres qui ont faim toute l'année."
+        },
+        {
+          "id": "aid_fitr_med_005",
+          "texte": "La Zakât al-Fitr n'est PAS une option. C'est une obligation pour chaque musulman. Si tu l'as oubliée, donne-la aujourd'hui même comme aumône. Allâh accepte le repentir tant que le soleil ne s'est pas couché à l'Ouest."
+        },
+        {
+          "id": "aid_fitr_med_006",
+          "texte": "Pendant Ramadan, tu as appris à attendre. Tu n'as pas cédé. Tu n'as pas pris ce qui était à portée. Cette qualité s'appelle sabr. Elle se transporte dans le reste de ta vie. Tu peux attendre — pour le bon moment, la bonne personne, la bonne décision."
+        },
+        {
+          "id": "aid_fitr_med_007",
+          "texte": "Hier, tu priais Tarâwih à la mosquée. Aujourd'hui, c'est fini. Mais le verset que tu as entendu un soir reste avec toi. Lequel ? Garde-le. C'est ton souvenir de Ramadan 1447."
+        },
+        {
+          "id": "aid_fitr_med_008",
+          "texte": "L'Aïd al-Fitr s'appelle aussi 'Aïd es-Séghir' — la petite fête. Pas parce qu'elle est moins importante. Parce qu'elle est plus intime. Une seule journée. Pas de sacrifice spectaculaire. Juste la joie de Lui avoir obéi pendant un mois."
+        },
+        {
+          "id": "aid_fitr_med_009",
+          "texte": "Aujourd'hui est interdit le jeûne. Allâh a INTERDIT de jeûner le jour de l'Aïd al-Fitr (Bukhari). Pour une fois, manger est une obéissance. Profite sans culpabilité. C'est la fête."
+        },
+        {
+          "id": "aid_fitr_med_010",
+          "texte": "Tu sors ce matin vers la prière de l'Aïd par un chemin. Reviens par un autre chemin — c'est la sunna du Prophète ﷺ (Bukhari). Symbolique : tu n'es plus le même qui est sorti. Change de route."
+        },
+        {
+          "id": "aid_fitr_med_011",
+          "texte": "Tu as peut-être lu le Coran en entier ce Ramadan. Tu as peut-être manqué. Allâh ne juge pas la quantité — Il juge la sincérité. Si tu as lu une page avec présence, c'est mieux que 30 pages distrait."
+        },
+        {
+          "id": "aid_fitr_med_012",
+          "texte": "Les Compagnons disaient : 'Pendant six mois, ils suppliaient Allâh de leur faire vivre Ramadan. Pendant six mois après, ils suppliaient qu'Il accepte leur Ramadan.' La vie entière encadrée par Ramadan. Médite ce rythme."
+        },
+        {
+          "id": "aid_fitr_med_013",
+          "texte": "Aujourd'hui, embrasse tes parents. Tes enfants. Tes proches. L'Aïd est un jour de liens, pas seulement de jeûne fini. Le Prophète ﷺ visitait sa famille le matin de l'Aïd. Imite."
+        },
+        {
+          "id": "aid_fitr_med_014",
+          "texte": "Si tu as offensé quelqu'un pendant Ramadan, c'est le jour pour demander pardon. La porte de l'humanité est encore ouverte. Demain elle se referme — il faudra attendre une autre occasion."
+        },
+        {
+          "id": "aid_fitr_med_015",
+          "texte": "Le soir de l'Aïd al-Fitr, demande à Allâh d'accepter ton Ramadan. Pas seulement de te récompenser — d'ACCEPTER. C'est la différence entre l'effort et le don. L'acceptation est un cadeau qu'Il fait."
+        }
+      ],
+      "messages_waqts": {
+        "FAJR_jour_1": "Le 1er Shawwâl s'ouvre. Ton dernier suhûr était hier. Aujourd'hui, manger est une obéissance. Le Prophète ﷺ commençait l'Aïd al-Fitr en mangeant des dattes en nombre impair avant la prière (Bukhari). Imite.",
+        "DHUHR_jour_1": "Tu as prié l'Aïd. Tu as donné la Zakât al-Fitr (ou tu vas la donner). Tu as embrassé tes proches. Maintenant, c'est l'heure du repas. Pas de jeûne aujourd'hui — Allâh l'a interdit. Profite sans culpabilité.",
+        "ASR_jour_1": "L'après-midi de l'Aïd al-Fitr. Visite quelqu'un qui n'a personne. Une mère seule, un voisin âgé, un ami que personne ne pense à inviter. L'Aïd se fête à plusieurs. Toi seul ne suffit pas.",
+        "MAGHRIB_jour_1": "L'Aïd al-Fitr se ferme. Tu as fêté. Tu as ri. Tu as mangé. Allâh a vu chaque geste. Avant de dormir, demande-Lui d'accepter ton Ramadan. Pas demander la récompense — demander l'ACCEPTATION.",
+        "ISHA_jour_1": "Le soir de l'Aïd al-Fitr. Demain, le monde reprend son cours. Mais quelque chose en toi a changé pendant ces 30 jours. Note-le avant que ce ne s'estompe. L'Aïd est court. Le souvenir doit durer."
+      }
+    },
+    "JOUR_ARAFAT": {
+      "name_fr": "Jour d'Arafat",
+      "name_ar": "يوم عرفة",
+      "date_calculation": "9 Dhûl-Hijja (veille de l'Aïd al-Adha)",
+      "duration_days": 1,
+      "concept": "Le jour le plus saint de l'année islamique pour ceux qui font le Hajj. Pour ceux qui ne le font pas, jour de jeûne recommandé.",
+      "overlay_opening": {
+        "title_fr": "Yawm Arafat",
+        "subtitle": "Le jour qu'Allâh a élu. Le jour où le Hajj se joue.",
+        "instruction": "Tap pour entrer"
+      },
+      "meditations": [
+        {
+          "id": "arafat_med_001",
+          "texte": "Aujourd'hui, des millions de pèlerins se tiennent debout à Arafat, du lever du soleil au coucher. Vêtus de deux pièces de tissu blanc. Sans hiérarchie. Sans distinction. Le riche et le pauvre côte à côte. C'est l'image la plus pure de l'humanité devant Allâh."
+        },
+        {
+          "id": "arafat_med_002",
+          "texte": "Le Prophète ﷺ a dit : 'Le Hajj, c'est Arafat.' (Tirmidhî). Sans Arafat, pas de Hajj. C'est le pivot. Si tu n'as pas pu faire le Hajj cette année, jeûne aujourd'hui — Allâh efface les péchés des deux années (Muslim)."
+        },
+        {
+          "id": "arafat_med_003",
+          "texte": "Le Prophète ﷺ a dit : 'La meilleure du'â est celle du jour d'Arafat.' (Tirmidhî). Aujourd'hui, multiplie tes du'âs. Allâh ouvre une porte qu'Il ferme demain."
+        },
+        {
+          "id": "arafat_med_004",
+          "texte": "À Arafat, le Prophète ﷺ a prononcé son dernier sermon — le 'Khutbatu-l-Wadâ'. Il a dit : 'Aujourd'hui, J'ai parachevé pour vous votre religion' (Coran 5:3). Ces mots ont été révélés à Arafat. Le dernier verset du Coran sur la religion."
+        },
+        {
+          "id": "arafat_med_005",
+          "texte": "À Arafat, Allâh est plus proche que d'habitude. Il dit aux anges : 'Regardez Mes serviteurs venus à Moi en pleureurs et poussiéreux. Que veulent-ils ?' (hadith authentique, Muslim). Allâh se vante de toi devant les anges aujourd'hui."
+        },
+        {
+          "id": "arafat_med_006",
+          "texte": "Si tu ne fais pas le Hajj cette année — ne désespère pas. Jeûne aujourd'hui. Lis le Coran. Multiplie les du'âs. Tu peux récupérer une partie de la grâce d'Arafat sans quitter ta maison."
+        },
+        {
+          "id": "arafat_med_007",
+          "texte": "Le jour d'Arafat est appelé 'le jour de la libération du Feu'. Allâh libère ce jour-là plus de Ses serviteurs du Feu qu'aucun autre jour. Demande-Lui de t'inscrire parmi eux."
+        },
+        {
+          "id": "arafat_med_008",
+          "texte": "À Arafat, les pèlerins prient Dhuhr et 'Asr ensemble (jam'). Toi, tu prieras à l'heure normale. Mais sois conscient : quelque chose se joue aujourd'hui pour les croyants du monde."
+        }
+      ],
+      "duas": [
+        {
+          "id": "arafat_dua_001",
+          "occasion": "La meilleure du'â selon le Prophète ﷺ",
+          "texte_ar": "لاَ إِلَهَ إِلاَّ اللهُ وَحْدَهُ لاَ شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ",
+          "texte_fr": "Il n'y a de divinité qu'Allâh, seul, sans associé. À Lui la souveraineté, à Lui la louange, et Il est puissant sur toute chose.",
+          "source": "Hadith Tirmidhî : 'La meilleure du'â est celle d'Arafat, et la meilleure chose que j'ai dite, moi et les prophètes avant moi, est : Lâ ilâha illâ-Llâh wahdah lâ sharîka lah...'"
+        }
+      ],
+      "verset_cle": {
+        "reference": "Coran 5:3",
+        "texte": "Aujourd'hui, J'ai parachevé pour vous votre religion, et accompli sur vous Mon bienfait. Et J'agrée l'Islam comme religion pour vous.",
+        "commentaire": "Verset révélé au Prophète ﷺ à Arafat lors du Pèlerinage d'Adieu. Le dernier verset à propos de la complétion de la religion."
+      }
+    },
+    "LAILAT_AL_QADR": {
+      "name_fr": "Nuit du Destin",
+      "name_ar": "ليلة القدر",
+      "date_calculation": "Une des nuits impaires des 10 derniers jours du Ramadan (typiquement 27e nuit)",
+      "duration_days": 1,
+      "concept": "La nuit la plus précieuse de l'année. Une seule prière y vaut plus de 1000 mois de prières (83 ans).",
+      "overlay_opening": {
+        "title_fr": "Lailat al-Qadr",
+        "subtitle": "La nuit qui vaut plus de mille mois.",
+        "instruction": "Tap pour entrer"
+      },
+      "meditations": [
+        {
+          "id": "qadr_med_001",
+          "texte": "'La nuit d'al-Qadr est meilleure que mille mois.' (Coran 97:3). Mille mois = 83 ans et 4 mois. Une prière, une du'â, une lecture du Coran cette nuit — vaut plus que toute une vie d'efforts."
+        },
+        {
+          "id": "qadr_med_002",
+          "texte": "Le Prophète ﷺ a recommandé une du'â unique pour cette nuit : 'Allâhumma innaka 'afuwwun, tuhibbu-l-'afwa, fa-'fu 'annî' — Ô Allâh, Tu es Pardonneur, Tu aimes le pardon, pardonne-moi. (Tirmidhî). Répète-la cette nuit."
+        },
+        {
+          "id": "qadr_med_003",
+          "texte": "Personne ne sait quelle nuit exacte est Lailat al-Qadr. Le Prophète ﷺ a dit : 'Cherchez-la dans les nuits impaires des dix derniers jours.' (Bukhari). C'est volontaire — Allâh veut que tu pries chaque nuit pour ne pas la manquer."
+        },
+        {
+          "id": "qadr_med_004",
+          "texte": "Cette nuit, les anges descendent en masse. 'Les anges et l'Esprit descendent... avec la permission de leur Seigneur pour toute affaire.' (Coran 97:4). La terre est plus peuplée d'anges que d'humains cette nuit-là."
+        },
+        {
+          "id": "qadr_med_005",
+          "texte": "La sourate al-Qadr fait 5 versets. Le Coran a été descendu d'un seul coup cette nuit-là (selon les commentateurs) avant d'être révélé progressivement. Le mot 'descendre' est utilisé 3 fois dans la sourate."
+        },
+        {
+          "id": "qadr_med_006",
+          "texte": "Le mot 'Qadr' a deux sens : Destin (Allâh décrète les événements de l'année à venir cette nuit) ET Honneur (l'honneur de cette nuit dépasse toute autre)."
+        },
+        {
+          "id": "qadr_med_007",
+          "texte": "Aïcha (qu'Allâh soit content d'elle) a demandé au Prophète ﷺ : 'Que dois-je dire si je rencontre Lailat al-Qadr ?' Il a répondu : 'Dis : Allâhumma innaka 'afuwwun, tuhibbu-l-'afwa, fa-'fu 'annî.' (Tirmidhî)"
+        }
+      ]
+    },
+    "ASHURA": {
+      "name_fr": "Jour d'Ashûrâ",
+      "name_ar": "يوم عاشوراء",
+      "date_calculation": "10 Muharram",
+      "duration_days": 1,
+      "concept": "Jour de jeûne recommandé. Anniversaire de la libération de Mûsâ ﷺ de Pharaon.",
+      "meditations": [
+        {
+          "id": "ashura_med_001",
+          "texte": "Le Prophète ﷺ a dit : 'Le jeûne d'Ashûrâ efface les péchés de l'année précédente.' (Muslim). Une journée. Une année. Le ratio est divin."
+        },
+        {
+          "id": "ashura_med_002",
+          "texte": "Le 10 Muharram, Allâh a libéré Mûsâ et les Banî Isrâ'îl de Pharaon. La mer s'est ouverte. Pharaon s'est noyé. Le Prophète ﷺ jeûnait ce jour-là en hommage."
+        },
+        {
+          "id": "ashura_med_003",
+          "texte": "Pour se distinguer des juifs qui jeûnaient aussi ce jour, le Prophète ﷺ a recommandé de jeûner le 9 ET le 10 (ou le 10 et le 11). Tâsû'â et Ashûrâ ensemble."
+        },
+        {
+          "id": "ashura_med_004",
+          "texte": "Muharram est l'un des quatre 'mois sacrés' du Coran. Les bonnes actions y sont multipliées. Jeûner Ashûrâ est la plus grande œuvre du mois."
+        },
+        {
+          "id": "ashura_med_005",
+          "texte": "Si tu n'as pas pu jeûner le 10 Muharram, jeûne le 9 ou le 11 — la sunna se prolonge. Allâh préfère un effort partiel à un abandon total."
+        }
+      ]
+    }
+  },
+  "METADATA_TECHNIQUE": {
+    "fichier_recommandé": "data/events/aid_events.json",
+    "detection_dates": "Calcul lunaire Hijri à intégrer dans script.js — utiliser la même bibliothèque que pour les prayer times (AlAdhan API méthode 12 déjà active)",
+    "logique_overlay": "1ère ouverture du jour J → overlay plein écran (3-5s) avec animation. Stocker dans localStorage 'aid_overlay_shown_YYYY-MM-DD' pour ne pas le re-afficher le même jour.",
+    "logique_banner": "Bandeau permanent en haut de l'app pendant toute la période de l'événement. Cliquable → ouvre la section dédiée.",
+    "logique_section": "Nouvelle page 'Aïd' accessible depuis le bandeau, contenant tous les blocs (récit, du'âs, méditations, versets, takbîrât).",
+    "logique_waqts": "Avant le contenu normal d'un waqt, afficher le message spécifique au jour (FAJR_jour_1, DHUHR_jour_1, etc.) pendant 3 secondes ou tap pour passer.",
+    "audio_takbirat": "Recommandé en V2 : enregistrement audio des Takbîrât en boucle douce (option activable).",
+    "couleurs": "Mode festif : palette or (#C8A84A) intensifié + accents verts (#2D5016) pour évoquer la verdure du Paradis et les bannières de l'Aïd. Reste cohérent avec le design Niyyah existant.",
+    "i18n": "Tous les textes en FR pour V1. EN/AR à produire en V2 selon priorité globale i18n FAJR."
+  },
+  "RESUME_VOLUME": {
+    "aid_al_adha": "1 récit Ibrâhîm + 5 récits Hajj + 10 du'âs + 7 sens Qurbani + 15 versets + 2 takbîrât + 15 méditations + 20 messages waqts = 75 items",
+    "aid_al_fitr": "1 récit jeûne + 10 questions bilan + 4 zakât + 10 du'âs + 5 versets + 1 takbîr + 15 méditations + 5 messages waqts = 51 items",
+    "jour_arafat": "8 méditations + 1 du'â + 1 verset = 10 items",
+    "lailat_al_qadr": "7 méditations = 7 items",
+    "ashura": "5 méditations = 5 items",
+    "TOTAL": "148 items + architecture technique + 4 overlays + 2 bandeaux"
+  }
+}

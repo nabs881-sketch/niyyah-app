@@ -1,4 +1,4 @@
-const VERSION = 'niyyah-v1541';
+const VERSION = 'niyyah-v1542';
 const CORE = [
   './index.html',
   './script.min.js',
@@ -20,6 +20,7 @@ const CORE = [
   './data/sira.min.json',
   './data/recits-coran.json',
   './data/regard-library.json',
+  './data/events/aid_module_complet.json',
   './data/waqt/waqt_fajr.json',
   './data/waqt/waqt_dhuhr.json',
   './data/waqt/waqt_asr.json',
