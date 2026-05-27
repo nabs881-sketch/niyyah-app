@@ -8,7 +8,52 @@
   "concept": "Connaissance pratique sur les remèdes prophétiques selon le Coran, la Sunna, et l'ouvrage référence d'Ibn Qayyim al-Jawziyya 'Zâd al-Ma'âd'. À intégrer dans Connaissance.",
   "integration_recommandee": "Bloc 'Remède du jour' dans la section Connaissance — affichage 1 item/jour pendant 60 jours, puis cycle.",
   "avertissement_important": "Ce module est INFORMATIF. Toujours consulter un médecin pour les maladies sérieuses. La médecine prophétique COMPLÈTE la médecine moderne, elle ne la REMPLACE PAS.",
-  
+
+  "disclaimer": {
+    "overlay_premiere_ouverture": {
+      "titre": "Avertissement",
+      "texte": "Ce module rassemble des remèdes de la médecine prophétique (Tibb an-Nabawî) et des pratiques traditionnelles. Il ne remplace pas un avis médical. En cas de maladie, consultez un médecin. Certains remèdes ont des contre-indications (grossesse, traitements en cours, pathologies chroniques).\n\nLes hadiths cités sont vérifiés selon les sources classiques (Bukhârî, Muslim, Tirmidhî, Ibn Mâja, Abû Dâwûd). La guérison appartient à Allâh — les remèdes sont des causes (asbâb), pas des garanties.",
+      "bouton": "J'ai compris"
+    },
+    "page_a_propos": {
+      "titre": "À propos du module Tibb an-Nabawî",
+      "sections": [
+        {
+          "titre": "Avertissement médical",
+          "points": [
+            "Ces remèdes ne remplacent pas un diagnostic, une prescription, ou un suivi médical professionnel.",
+            "En cas de maladie grave, persistante, ou de symptômes inhabituels, consultez un médecin.",
+            "Certains remèdes ont des contre-indications (grossesse, allaitement, enfants, pathologies chroniques, interactions médicamenteuses).",
+            "N'arrêtez jamais un traitement médical prescrit sans l'avis de votre médecin.",
+            "En cas d'urgence, appelez le 15 (SAMU) ou le 112."
+          ]
+        },
+        {
+          "titre": "Avertissement théologique",
+          "points": [
+            "Les hadiths cités sont rapportés selon les recueils canoniques (Bukhârî, Muslim, Tirmidhî, Ibn Mâja, Abû Dâwûd, Ahmad).",
+            "Les grades (sahîh / hasan / da'îf) sont indiqués lorsque pertinent.",
+            "Pour les questions de fiqh liées à certains remèdes, référez-vous à un imam ou un savant compétent de votre école.",
+            "La guérison (shifâ') appartient à Allâh seul. Les remèdes sont des causes (asbâb) légiférées ou permises ; leur effet relève de la permission divine.",
+            "La roqya et le Coran sont des moyens spirituels réels établis par la sunna, pas de simples placebos."
+          ]
+        },
+        {
+          "titre": "Limites",
+          "points": [
+            "Les bienfaits scientifiques mentionnés sont issus d'études disponibles ; ils peuvent être suggérés plutôt que prouvés dans certains cas.",
+            "Certaines pratiques sont en cours d'évaluation par la médecine moderne.",
+            "Ce module n'est pas un substitut à un parcours de soin coordonné par un professionnel de santé."
+          ]
+        },
+        {
+          "titre": "Esprit du module",
+          "texte": "Ce module invite à intégrer la sunna dans une approche équilibrée : adoration, soin du corps, recours aux moyens légaux modernes. Le Prophète ﷺ a dit : 'Soignez-vous, ô serviteurs d'Allâh' (Abû Dâwûd, Tirmidhî). Wa Allâhu a'lam — Et Allâh sait mieux."
+        }
+      ]
+    }
+  },
+
   "items": [
     {
       "id": "tibb_001",
