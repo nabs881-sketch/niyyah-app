@@ -14518,32 +14518,6 @@ function _aidDismissOverlay(el) {
 }
 
 // ── Bandeau permanent cliquable ──
-function _aidShowBanner(evt) {
-  var old = document.getElementById('aid-event-banner');
-  if (old) old.remove();
-  var bt = evt.data.banner_text;
-  var text = '';
-  if (bt) {
-    text = bt['day_' + evt.dayNum] || bt['day_1'] || evt.data.name_fr;
-  } else {
-    var fallbacks = { JOUR_ARAFAT: '\u262a Yawm Arafat \u2014 Le plus grand jour du Hajj', LAILAT_AL_QADR: '\u262a Lailat al-Qadr \u2014 La nuit qui vaut mille mois', ASHURA: '\u262a \u2018\u00c2sh\u00fbr\u00e2\u2019 \u2014 Je\u00fbne et repentance' };
-    text = fallbacks[evt.key] || evt.data.name_fr;
-  }
-  var banner = document.createElement('div');
-  banner.id = 'aid-event-banner';
-  banner.style.cssText = 'background:linear-gradient(135deg,rgba(200,168,74,0.15),rgba(200,168,74,0.05));border:1px solid rgba(200,168,74,0.25);border-radius:12px;padding:12px 16px;margin:8px 16px;cursor:pointer;text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:14px;color:#C8A84A;letter-spacing:0.5px;transition:background 0.3s;';
-  banner.textContent = text;
-  banner.onclick = function() { _aidOpenSection(evt); };
-  var sanct = document.getElementById('view-sanctuaire');
-  if (!sanct) return;
-  var momentBlock = sanct.querySelector('.moment-level-block');
-  if (momentBlock && momentBlock.parentNode === sanct) {
-    momentBlock.insertAdjacentElement('afterend', banner);
-  } else {
-    sanct.insertBefore(banner, sanct.firstChild);
-  }
-}
-
 // ── Render helpers ──
 function _aidHtml(item) {
   var h = '<div class="aid-story">';
@@ -14553,14 +14527,8 @@ function _aidHtml(item) {
   return h + '</div>';
 }
 
-// ── Section dédiée Aïd — overlay avec tabs ──
-function _aidOpenSection(evt) {
-  var ex = document.getElementById('aid-section-overlay');
-  if (ex) ex.remove();
-  var ev = evt.data;
+function _aidBuildTabs(ev) {
   var tabs = [];
-
-  // Tab Récit
   var rc = '';
   if (ev.histoire_ibrahim) rc += _aidHtml(ev.histoire_ibrahim);
   if (ev.sens_du_jeune) rc += _aidHtml(typeof ev.sens_du_jeune === 'string' ? { texte: ev.sens_du_jeune } : ev.sens_du_jeune);
@@ -14570,79 +14538,113 @@ function _aidOpenSection(evt) {
   if (ev.bilan_ramadan) { rc += '<div class="aid-subtitle">Bilan Ramadan</div>'; ev.bilan_ramadan.forEach(function(b) { rc += '<div class="aid-question">\u2192 ' + b.question + '</div>'; }); }
   if (ev.zakat_al_fitr) { rc += '<div class="aid-subtitle">Zak\u00e2t al-Fitr</div>'; ev.zakat_al_fitr.forEach(function(z) { rc += _aidHtml(z); }); }
   if (rc) tabs.push({ id: 'recit', label: 'R\u00e9cit', html: rc });
-
-  // Tab Du'âs
   if (ev.duas && ev.duas.length) {
     var dh = '';
-    ev.duas.forEach(function(d) {
-      dh += '<div class="aid-dua">';
-      if (d.occasion) dh += '<div class="aid-dua-occasion">' + d.occasion + '</div>';
-      if (d.texte_ar) dh += '<div class="aid-dua-ar">' + d.texte_ar + '</div>';
-      if (d.texte_fr) dh += '<div class="aid-dua-fr">' + d.texte_fr + '</div>';
-      if (d.source) dh += '<div class="aid-source">' + d.source + '</div>';
-      dh += '</div>';
-    });
+    ev.duas.forEach(function(d) { dh += '<div class="aid-dua">' + (d.occasion ? '<div class="aid-dua-occasion">' + d.occasion + '</div>' : '') + (d.texte_ar ? '<div class="aid-dua-ar">' + d.texte_ar + '</div>' : '') + (d.texte_fr ? '<div class="aid-dua-fr">' + d.texte_fr + '</div>' : '') + (d.source ? '<div class="aid-source">' + d.source + '</div>' : '') + '</div>'; });
     tabs.push({ id: 'duas', label: 'Du\u2019\u00e2s', html: dh });
   }
-
-  // Tab Méditations
   if (ev.meditations && ev.meditations.length) {
     var mh = '';
     ev.meditations.forEach(function(m) { mh += '<div class="aid-med">' + (m.texte || '').replace(/\n/g, '<br>') + '</div>'; });
     tabs.push({ id: 'med', label: 'M\u00e9ditations', html: mh });
   }
-
-  // Tab Versets
   var va = ev.versets_cles || (ev.verset_cle ? (Array.isArray(ev.verset_cle) ? ev.verset_cle : [ev.verset_cle]) : []);
   if (va.length) {
     var vh = '';
-    va.forEach(function(v) {
-      vh += '<div class="aid-verset"><div class="aid-verset-ref">' + (v.reference || '') + '</div><div class="aid-verset-text">' + (v.texte || '') + '</div>';
-      if (v.commentaire) vh += '<div class="aid-verset-comment">' + v.commentaire + '</div>';
-      vh += '</div>';
-    });
+    va.forEach(function(v) { vh += '<div class="aid-verset"><div class="aid-verset-ref">' + (v.reference || '') + '</div><div class="aid-verset-text">' + (v.texte || '') + '</div>' + (v.commentaire ? '<div class="aid-verset-comment">' + v.commentaire + '</div>' : '') + '</div>'; });
     tabs.push({ id: 'versets', label: 'Versets', html: vh });
   }
-
-  // Tab Takbîrât
   if (ev.takbirat && ev.takbirat.length) {
     var th = '';
-    ev.takbirat.forEach(function(t) {
-      th += '<div class="aid-takbir">';
-      if (t.titre) th += '<div class="aid-takbir-titre">' + t.titre + '</div>';
-      if (t.texte_ar) th += '<div class="aid-takbir-ar">' + t.texte_ar + '</div>';
-      if (t.transliteration) th += '<div class="aid-takbir-trans">' + t.transliteration + '</div>';
-      if (t.traduction) th += '<div class="aid-takbir-trad">' + t.traduction + '</div>';
-      th += '</div>';
-    });
+    ev.takbirat.forEach(function(t) { th += '<div class="aid-takbir">' + (t.titre ? '<div class="aid-takbir-titre">' + t.titre + '</div>' : '') + (t.texte_ar ? '<div class="aid-takbir-ar">' + t.texte_ar + '</div>' : '') + (t.transliteration ? '<div class="aid-takbir-trans">' + t.transliteration + '</div>' : '') + (t.traduction ? '<div class="aid-takbir-trad">' + t.traduction + '</div>' : '') + '</div>'; });
     tabs.push({ id: 'takbirat', label: 'Takb\u00eer\u00e2t', html: th });
   }
+  return tabs;
+}
 
+// ── Mode immersif : remplace le sanctuaire entier ──
+function _aidTakeoverSanctuaire(evt) {
+  var sanct = document.getElementById('view-sanctuaire');
+  if (!sanct) return;
+  // Already taken over?
+  if (document.getElementById('aid-immersive')) return;
+
+  var ev = evt.data;
+  var tabs = _aidBuildTabs(ev);
   if (tabs.length === 0) return;
 
-  var ov = document.createElement('div');
-  ov.id = 'aid-section-overlay';
-  ov.style.cssText = 'position:fixed;inset:0;z-index:9998;background:#1a1610;overflow-y:auto;-webkit-overflow-scrolling:touch;';
+  // Hide all existing sanctuaire children
+  Array.from(sanct.children).forEach(function(child) {
+    child._aidWasDisplay = child.style.display;
+    child.style.display = 'none';
+  });
 
-  var hdr = '<div style="position:sticky;top:0;z-index:2;background:#1a1610;padding:16px 20px 0;">';
-  hdr += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">';
-  hdr += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;color:#C8A84A;font-weight:300;">' + (ev.name_fr || evt.key) + '</div>';
-  hdr += '<button onclick="document.getElementById(\'aid-section-overlay\').remove()" style="background:none;border:none;color:rgba(255,255,255,0.4);font-size:22px;cursor:pointer;padding:8px;">\u2715</button>';
+  // Build immersive section
+  var wrap = document.createElement('div');
+  wrap.id = 'aid-immersive';
+  wrap.style.cssText = 'width:100%;min-height:80vh;';
+
+  // Banner text
+  var bt = ev.banner_text;
+  var bannerText = '';
+  if (bt) bannerText = bt['day_' + evt.dayNum] || bt['day_1'] || '';
+  var fallbacks = { JOUR_ARAFAT: 'Yawm Arafat \u2014 Le plus grand jour du Hajj', LAILAT_AL_QADR: 'Lailat al-Qadr \u2014 La nuit qui vaut mille mois', ASHURA: '\u2018\u00c2sh\u00fbr\u00e2\u2019 \u2014 Je\u00fbne et repentance' };
+  if (!bannerText) bannerText = fallbacks[evt.key] || '';
+
+  // Header
+  var hdr = '<div style="padding:20px 20px 0;text-align:center;">';
+  if (ev.name_ar) hdr += '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:36px;color:#C8A84A;margin-bottom:6px;">' + ev.name_ar + '</div>';
+  hdr += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;color:#E5DCC8;font-weight:300;margin-bottom:6px;">' + (ev.name_fr || evt.key) + '</div>';
+  if (bannerText) hdr += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;color:rgba(200,168,74,0.6);margin-bottom:16px;">' + bannerText + '</div>';
   hdr += '</div>';
-  hdr += '<div id="aid-tabs-bar" style="display:flex;gap:6px;overflow-x:auto;padding-bottom:12px;border-bottom:1px solid rgba(200,168,74,0.15);scrollbar-width:none;">';
+
+  // Tabs bar
+  hdr += '<div id="aid-tabs-bar" style="display:flex;gap:6px;overflow-x:auto;padding:0 20px 12px;border-bottom:1px solid rgba(200,168,74,0.15);scrollbar-width:none;">';
   tabs.forEach(function(t, i) {
     var ac = i === 0;
     hdr += '<button class="aid-tab-btn' + (ac ? ' aid-tab-active' : '') + '" data-tab="' + t.id + '" onclick="_aidSwitchTab(\'' + t.id + '\')" style="flex-shrink:0;white-space:nowrap;padding:8px 14px;border-radius:20px;border:1px solid ' + (ac ? 'rgba(200,168,74,0.5)' : 'rgba(200,168,74,0.15)') + ';background:' + (ac ? 'rgba(200,168,74,0.12)' : 'transparent') + ';color:' + (ac ? '#C8A84A' : 'rgba(200,168,74,0.5)') + ';font-family:\'Cormorant Garamond\',serif;font-size:13px;cursor:pointer;">' + t.label + '</button>';
   });
-  hdr += '</div></div>';
+  hdr += '</div>';
 
+  // Tab contents
   var cnt = '';
   tabs.forEach(function(t, i) {
     cnt += '<div id="aid-tab-' + t.id + '" class="aid-tab-content" style="padding:20px;display:' + (i === 0 ? 'block' : 'none') + ';">' + t.html + '</div>';
   });
 
-  ov.innerHTML = hdr + cnt;
-  document.body.appendChild(ov);
+  // Footer link to normal sanctuaire
+  var footer = '<div style="text-align:center;padding:24px 20px 40px;">'
+    + '<button onclick="_aidRestoreSanctuaire()" style="background:none;border:none;font-family:\'Cormorant Garamond\',serif;font-size:14px;color:rgba(200,168,74,0.5);cursor:pointer;padding:10px 20px;">Voir la suite de mon parcours \u2192</button>'
+    + '</div>';
+
+  wrap.innerHTML = hdr + cnt + footer;
+  sanct.appendChild(wrap);
+}
+
+function _aidRestoreSanctuaire() {
+  var sanct = document.getElementById('view-sanctuaire');
+  if (!sanct) return;
+  var immersive = document.getElementById('aid-immersive');
+  if (immersive) immersive.remove();
+  // Restore hidden children
+  Array.from(sanct.children).forEach(function(child) {
+    if (child._aidWasDisplay !== undefined) {
+      child.style.display = child._aidWasDisplay;
+      delete child._aidWasDisplay;
+    }
+  });
+}
+
+// ── Legacy: _aidOpenSection redirects to takeover ──
+function _aidOpenSection(evt) {
+  var sanct = document.getElementById('view-sanctuaire');
+  if (sanct) {
+    // If not on sanctuaire view, navigate there first
+    if (typeof v2GoSanctuaire === 'function') v2GoSanctuaire();
+  }
+  // Remove existing then re-takeover
+  _aidRestoreSanctuaire();
+  _aidTakeoverSanctuaire(evt || window._AID_ACTIVE);
 }
 
 function _aidSwitchTab(tabId) {
@@ -14719,7 +14721,7 @@ function _aidBootInner() {
     window._AID_ACTIVE = evt;
     console.log('[Aid] active:', evt.key, 'day:', evt.dayNum);
     _aidShowOverlay(evt);
-    setTimeout(function() { _aidShowBanner(evt); }, 500);
+    setTimeout(function() { _aidTakeoverSanctuaire(evt); }, 500);
   }).catch(function(e) { console.warn('[Aid] hijri error:', e); });
 }
 
