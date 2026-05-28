@@ -14900,7 +14900,7 @@ function _aidInjectTachriqCard(evt) {
   card.innerHTML =
     '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:28px;color:#5C4A1E;margin-bottom:8px;">\u0639\u064A\u062F \u0645\u0628\u0627\u0631\u0643</div>' +
     '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;color:#4A3B18;font-weight:500;margin-bottom:8px;letter-spacing:0.3px;">' + (bannerText || ('A\u00efd al-Adha \u00b7 Jour ' + evt.dayNum + '/4')) + '</div>' +
-    '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;color:rgba(92,74,30,0.6);letter-spacing:0.4px;">Les takb\u00eer\u00e2t continuent \u00b7 Tap pour ouvrir \u2726</div>';
+    '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;color:#6B5520;letter-spacing:0.4px;">Les takb\u00eer\u00e2t continuent \u00b7 Tap pour ouvrir \u2726</div>';
   // Insert inside the centered wrapper, just above .quick-actions-v2
   var quickGrid = sanct.querySelector('.quick-actions-v2');
   if (quickGrid && quickGrid.parentNode) {
