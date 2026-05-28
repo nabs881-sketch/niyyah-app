@@ -13197,12 +13197,13 @@ window.GREETING_MURMURES = null;
 (function _loadGreetingMurmures() {
   fetch('./data/greeting_murmures.json')
     .then(function(r) { return r.ok ? r.json() : null; })
-    .then(function(d) { if (d && d.days) window.GREETING_MURMURES = d.days; })
+    .then(function(d) { if (d) window.GREETING_MURMURES = d; })
     .catch(function() {});
 })();
 function getGreetingPhrases(dayIndex) {
   var src = window.GREETING_MURMURES;
-  if (src && src['day_' + dayIndex]) return src['day_' + dayIndex];
+  var entry = src && src['greeting_day_' + dayIndex];
+  if (entry && entry.phrases && entry.phrases.length > 0) return entry.phrases;
   // Fallback : i18n inline
   var pool = t('greeting_day_' + dayIndex);
   return Array.isArray(pool) ? pool : [pool];
@@ -13445,16 +13446,12 @@ function v2RefreshStats() {
     if (safeGetItem('niyyah_murmur_date') === TODAY) {
       _murmureText = safeGetItem('niyyah_murmur_text') || t('greeting_day_' + new Date().getDay());
     } else {
-      var _grPool = t('greeting_day_' + new Date().getDay());
-      if (Array.isArray(_grPool)) {
-        var _wn = Math.floor((Date.now() - new Date(new Date().getFullYear(),0,1).getTime()) / 604800000);
-        var _dbgW = new URLSearchParams(window.location.search).get('debugWeek');
-        if (_dbgW !== null) { _wn = parseInt(_dbgW, 10) || 0; console.log('[murmure debug] forced week=' + _wn); }
-        _murmureText = _grPool[_wn % _grPool.length];
-        console.log('[murmure] day=' + new Date().getDay() + ' week=' + _wn + ' idx=' + (_wn % _grPool.length) + ' → "' + _murmureText + '"');
-      } else {
-        _murmureText = _grPool;
-      }
+      var _grPool = getGreetingPhrases(new Date().getDay());
+      var _wn = Math.floor((Date.now() - new Date(new Date().getFullYear(),0,1).getTime()) / 604800000);
+      var _dbgW = new URLSearchParams(window.location.search).get('debugWeek');
+      if (_dbgW !== null) { _wn = parseInt(_dbgW, 10) || 0; console.log('[murmure debug] forced week=' + _wn); }
+      _murmureText = _grPool[_wn % _grPool.length];
+      console.log('[murmure] day=' + new Date().getDay() + ' week=' + _wn + ' pool=' + _grPool.length + ' idx=' + (_wn % _grPool.length) + ' → "' + _murmureText + '"');
       if (!localStorage.getItem('niyyah_welcome_shown')) {
         var _motiv = localStorage.getItem('niyyah_motivation');
         if (_motiv === 'routine' || _motiv === 'reconnecter' || _motiv === 'sacraliser') {
