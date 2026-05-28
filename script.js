@@ -11532,8 +11532,8 @@ function v2GoNafs() {
   // Avertissement à la 1ère ouverture
   if (!safeGetItem('nafs_avertissement_seen')) _showWaswasaScreen();
   setupTopUI('nafs');
+  document.body.classList.add('in-nafs-view');
   _nAn('nafs_visited');
-  showAlHayaBtn();
   var tbEl = document.getElementById('topbar-v2');
   if (tbEl) tbEl.classList.remove('active');
   document.querySelectorAll('.nav-v2-item').forEach(function(n) { n.classList.remove('active-nav'); });
@@ -11548,6 +11548,7 @@ function v2GoNafs() {
 function setupTopUI(screen) {
   hideAlHayaBtn();
   document.body.classList.remove('in-bab-an-nafs');
+  document.body.classList.remove('in-nafs-view');
   _hideAideBtn();
   var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.remove('hidden-immersion');
   var backBtn = document.getElementById('v2-back-btn');
