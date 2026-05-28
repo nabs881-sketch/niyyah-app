@@ -6882,9 +6882,11 @@ body::before {
 .v2-mode .nav-bar { display: none !important; }
 .v2-mode .nav-bar-v2 { display: flex !important; }
 .v2-mode .topbar-v2 { display: flex !important; }
+.bab-wrap { position: relative; }
 body.in-bab-an-nafs .topbar-v2,
 body.in-bab-an-nafs #alhaya-btn,
-body.in-bab-an-nafs #alhaya-overlay { display: none !important; }
+body.in-bab-an-nafs #alhaya-overlay,
+body.in-bab-an-nafs .nav-bar-v2 { display: none !important; }
 body.pratique-active .topbar-v2 { display: none !important; }
 #alhaya-btn {
   position: fixed;

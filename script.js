@@ -4093,7 +4093,8 @@ function renderBabAnNafs() {
   if (_checkMuhasabaInvite()) return;
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
-  var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;">'
+  var html = '<div style="padding:calc(var(--safe-top)+16px) 16px 120px;">'
+    + '<button onclick="v2GoSanctuaire()" aria-label="Retour" style="position:absolute;top:calc(var(--safe-top,0px) + 12px);left:16px;z-index:10;background:none;border:none;color:#C8A84A;cursor:pointer;padding:8px;"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#C8A84A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>'
     + '<div style="font-family:var(--serif);font-size:22px;color:#C8A84A;text-align:center;margin-bottom:6px;">Mes portes</div>'
     + '<div style="font-size:13px;color:var(--t3);text-align:center;margin-bottom:24px;font-style:italic;">Les portes de ton \u00e2me</div>';
   if (BAB_AN_NAFS.portes.some(function(p) { return p.validated === false; })) {
