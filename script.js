@@ -12775,6 +12775,7 @@ function markWaqtLu(priere) {
 }
 window.isWaqtAvailable = isWaqtAvailable;
 window.markWaqtLu = markWaqtLu;
+var _waqtConsumedByClick = false;
 function updateMedaillonState() {
   var med = document.getElementById('medaillon-alwaqt');
   if (!med) return;
@@ -12782,7 +12783,11 @@ function updateMedaillonState() {
   var wasCuivre = med.classList.contains('medaillon-cuivre');
   med.classList.toggle('medaillon-pierre', !available);
   med.classList.toggle('medaillon-cuivre', !!available);
-  if (!available && wasCuivre && !safeGetItem('niyyah_medaillon_explained')) {
+  /* L'overlay "se repose" ne s'affiche QUE si l'utilisateur a explicitement
+     consommé le médaillon (clic → lecture → fermeture du modal waqt).
+     Les transitions cuivre→pierre dues à navigation/re-render ne déclenchent rien. */
+  if (!available && wasCuivre && _waqtConsumedByClick && !safeGetItem('niyyah_medaillon_explained')) {
+    _waqtConsumedByClick = false;
     var ov = document.createElement('div');
     ov.className = 'wird-complete-overlay';
     ov.innerHTML = '<div class="wird-complete-card">'
@@ -12859,6 +12864,7 @@ function closeWaqtModal() {
   if (_waqtModalPriere) {
     markWaqtLu(_waqtModalPriere);
     _waqtModalPriere = null;
+    _waqtConsumedByClick = true;
   }
   updateMedaillonState();
 }
@@ -14895,9 +14901,13 @@ function _aidInjectTachriqCard(evt) {
     '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:24px;color:#C8A84A;margin-bottom:6px;">\u0639\u064A\u062F \u0645\u0628\u0627\u0631\u0643</div>' +
     '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;color:#E5DCC8;font-weight:300;margin-bottom:6px;">' + (bannerText || ('A\u00efd al-Adha \u00b7 Jour ' + evt.dayNum + '/4')) + '</div>' +
     '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;color:rgba(200,168,74,0.55);letter-spacing:0.3px;">Les takb\u00eer\u00e2t continuent \u00b7 Tap pour ouvrir</div>';
-  // Insert at the top of sanctuaire content
-  if (sanct.firstChild) { sanct.insertBefore(card, sanct.firstChild); }
-  else { sanct.appendChild(card); }
+  // Insert inside the centered wrapper, just above .quick-actions-v2
+  var quickGrid = sanct.querySelector('.quick-actions-v2');
+  if (quickGrid && quickGrid.parentNode) {
+    quickGrid.parentNode.insertBefore(card, quickGrid);
+  } else {
+    sanct.appendChild(card);
+  }
 }
 
 function _aidOpenFromCard(evt) {
