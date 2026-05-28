@@ -8455,7 +8455,9 @@ function updateTafakkurDisplay() {
 
 function rotateTafakkurPhrase() {
   var pool = _getTafakkurPool();
-  var idx = Math.floor(Math.random() * pool.length);
+  // Déterministe : même question toute la journée (dayOfYear % pool.length)
+  var dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(), 0, 0).getTime()) / 86400000);
+  var idx = pool.length > 0 ? (dayOfYear % pool.length) : 0;
   var phrase = pool[idx] || '';
   _tafakkurCurrentPhrase = phrase;
   var el = document.getElementById('tafakkurPhrase');
