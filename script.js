@@ -6266,78 +6266,7 @@ function openCureColere() {
 }
 
 // ── Sérieusement renderers for Porte Colère ──
-_cureJourRenderers.colere_1 = function(el) {
-  var c = '#B33A3A';
-  var j = window.CURE_COLERE_CYCLE1 && window.CURE_COLERE_CYCLE1.jours && window.CURE_COLERE_CYCLE1.jours[0];
-  if (!j) { el.innerHTML = '<div style="padding:60px 24px;text-align:center;color:rgba(255,255,255,0.4);">Contenu en cours de chargement\u2026</div>'; return; }
-  var duaa = j.duaa_cloture || {};
-  var travail = (j.travaux && j.travaux[0]) || {};
-  var filRouge = (window.CURE_COLERE_CYCLE1._transversal && window.CURE_COLERE_CYCLE1._transversal.fil_rouge_bas) || '';
-  var backBtn = '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
-  var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;">'
-    + backBtn
-    // TITRE
-    + '<div style="text-align:center;margin-bottom:40px;">'
-    + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:' + c + ';direction:rtl;margin-bottom:6px;">\u0631\u0650\u064a\u064e\u0627\u0636\u064e\u0629 \u0646\u064e\u0641\u0652\u0633\u0650\u064a\u0651\u064e\u0629</div>'
-    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:4px;">Riy\u00e2\u1e0dat an-nafs \u2014 Jour ' + j.jour + '</div>'
-    + '<div class="itfaa-body" style="font-size:16px;margin-bottom:6px;">' + escapeHtml(j.titre) + '</div>'
-    + '</div>';
-  // TEXTE D'OUVERTURE
-  if (j.texte_ouverture && j.texte_ouverture.paragraphes) {
-    html += '<div style="margin-bottom:40px;">';
-    j.texte_ouverture.paragraphes.forEach(function(p) {
-      html += '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.8;max-width:420px;margin:0 auto 16px;">' + escapeHtml(p) + '</div>';
-    });
-    if (j.texte_ouverture.sources) {
-      j.texte_ouverture.sources.forEach(function(s) {
-        html += '<div class="itfaa-subtle" style="font-size:11px;text-align:center;">\u2014 ' + escapeHtml(s.ref) + '</div>';
-      });
-    }
-    html += '</div>';
-  }
-  // TRAVAIL
-  if (travail.intro) {
-    html += '<div style="text-align:center;margin-bottom:40px;">'
-      + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.5;margin-bottom:12px;">Travail du jour</div>'
-      + '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;max-width:400px;margin:0 auto 16px;">' + escapeHtml(travail.intro) + '</div>';
-    if (travail.amorce) {
-      html += '<div style="font-family:var(--serif);font-size:14px;font-style:italic;color:' + c + ';line-height:1.6;max-width:380px;margin:0 auto 12px;padding:14px;border:1px dashed ' + c + '44;border-radius:12px;background:' + c + '0d;">' + escapeHtml(travail.amorce) + '</div>';
-    }
-    if (travail.exemples) {
-      travail.exemples.forEach(function(ex) {
-        html += '<div class="itfaa-subtle" style="font-size:12px;max-width:380px;margin:0 auto 6px;text-align:left;">\u2022 ' + escapeHtml(ex) + '</div>';
-      });
-    }
-    var ph = (travail.champ && travail.champ.placeholder) || '';
-    var maxC = (travail.champ && travail.champ.max_chars) || 200;
-    html += '<textarea id="_cureJ1Travail" maxlength="' + maxC + '" placeholder="' + escapeHtml(ph) + '" style="width:100%;max-width:380px;min-height:80px;padding:12px;border-radius:10px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;resize:vertical;margin-top:16px;"></textarea>';
-    if (travail.sous_texte_gris) {
-      html += '<div style="font-size:12px;font-style:italic;color:rgba(255,255,255,0.3);max-width:380px;margin:8px auto 0;">' + escapeHtml(travail.sous_texte_gris) + '</div>';
-    }
-    html += '</div>';
-  }
-  // FIL ROUGE
-  if (filRouge) {
-    html += '<div style="text-align:center;margin-bottom:40px;padding:16px;border-radius:14px;border:1px solid rgba(200,168,75,0.2);background:rgba(200,168,75,0.04);">'
-      + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#C8A84A;opacity:0.5;margin-bottom:8px;">Fil rouge</div>'
-      + '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:#C8A84A;line-height:1.6;">' + escapeHtml(filRouge) + '</div>'
-      + '</div>';
-  }
-  // CLÔTURE DU'Â
-  if (duaa.arabe) {
-    html += '<div style="text-align:center;margin-bottom:20px;padding:20px;border-radius:14px;border:1px solid ' + c + '22;background:' + c + '08;">'
-      + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.5;margin-bottom:12px;">Cl\u00f4ture</div>'
-      + '<div style="font-family:\'Scheherazade New\',serif;font-size:22px;color:' + c + ';direction:rtl;line-height:1.8;margin-bottom:6px;">' + duaa.arabe + '</div>'
-      + (duaa.translitteration ? '<div class="itfaa-body" style="font-size:13px;font-style:italic;margin-bottom:6px;">' + escapeHtml(duaa.translitteration) + '</div>' : '')
-      + '<div class="itfaa-body" style="font-size:14px;margin-bottom:6px;">' + escapeHtml(duaa.traduction || '') + '</div>'
-      + '<div class="itfaa-subtle" style="font-size:11px;margin-bottom:16px;">\u2014 ' + escapeHtml(duaa.source || '') + '</div>'
-      + _cureForDemainHtml(1, '_cureColereJ1Save')
-      + '</div>';
-  }
-  html += '</div>';
-  el.innerHTML = html;
-  el.innerHTML += _exitLinkHtml;
-};
+_cureJourRenderers.colere_1 = function(el) { _cureColereGenericDay(el, 1); };
 
 // Jours 2–7 : renderer générique depuis CURE_COLERE_CYCLE1
 function _cureColereGenericDay(el, dayNum) {
