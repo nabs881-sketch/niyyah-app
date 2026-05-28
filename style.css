@@ -6887,6 +6887,10 @@ body.in-nafs-view .nav-bar-v2,
 body.in-nafs-view .topbar-v2,
 body.in-nafs-view #alhaya-btn { display: none !important; }
 body.in-nafs-view #nafs-back-btn { display: flex !important; }
+body.in-journal-view .nav-bar-v2,
+body.in-journal-view .topbar-v2,
+body.in-journal-view #alhaya-btn { display: none !important; }
+body.in-journal-view #journal-back-btn { display: flex !important; }
 body.in-bab-an-nafs .topbar-v2,
 body.in-bab-an-nafs #alhaya-btn,
 body.in-bab-an-nafs #alhaya-overlay,

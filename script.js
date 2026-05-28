@@ -11461,8 +11461,8 @@ function _v2ShowTarget(targetId, opts) {
 
 function v2GoJournal() {
   setupTopUI('journal');
+  document.body.classList.add('in-journal-view');
   _nAn('journal_visited');
-  showAlHayaBtn();
   var tbEl = document.getElementById('topbar-v2');
   if (tbEl) tbEl.classList.remove('active');
   document.querySelectorAll('.nav-v2-item').forEach(function(n) { n.classList.remove('active-nav'); });
@@ -11549,6 +11549,7 @@ function setupTopUI(screen) {
   hideAlHayaBtn();
   document.body.classList.remove('in-bab-an-nafs');
   document.body.classList.remove('in-nafs-view');
+  document.body.classList.remove('in-journal-view');
   _hideAideBtn();
   var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.remove('hidden-immersion');
   var backBtn = document.getElementById('v2-back-btn');
