@@ -12794,6 +12794,7 @@ function updateMedaillonState() {
 }
 var _WAQT_AR_NAMES = {fajr:'\u0627\u0644\u0641\u064E\u062C\u0652\u0631',dhuhr:'\u0627\u0644\u0638\u0651\u064F\u0647\u0652\u0631',asr:'\u0627\u0644\u0639\u064E\u0635\u0652\u0631',maghrib:'\u0627\u0644\u0645\u064E\u063A\u0652\u0631\u0650\u0628',isha:'\u0627\u0644\u0639\u0650\u0634\u0627\u0621'};
 function _waqtHashPriere(p) { var h = 0; for (var i = 0; i < p.length; i++) h = (h * 31 + p.charCodeAt(i)) & 0x7fffffff; return h; }
+var _waqtModalPriere = null;
 function openWaqtModal() {
   _nAn('waqt_started');
   var priere = isWaqtAvailable();
@@ -12801,6 +12802,7 @@ function openWaqtModal() {
     showToast('Prochain Waqt apr\u00e8s la prochaine pri\u00e8re');
     return;
   }
+  _waqtModalPriere = priere;
   var pool = (window.WAQT_BY_PRIERE && window.WAQT_BY_PRIERE[priere] && window.WAQT_BY_PRIERE[priere].length > 0) ? window.WAQT_BY_PRIERE[priere] : null;
   var txt = '';
   if (pool) {
@@ -12834,8 +12836,6 @@ function openWaqtModal() {
   } else {
     actionEl.innerHTML = '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:28px;color:#C8A84A;direction:rtl;margin-bottom:20px;">' + arName + '</div>' + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:#E5E0DC;line-height:1.7;max-width:320px;">' + txt + '</div>';
   }
-  markWaqtLu(priere);
-  updateMedaillonState();
   modal.style.display = 'flex';
   // ── Aid waqt special message — 3s intro ──
   if (window._AID_ACTIVE) {
@@ -12856,6 +12856,10 @@ function openWaqtModal() {
 function closeWaqtModal() {
   var modal = document.getElementById('waqt-modal');
   if (modal) modal.style.display = 'none';
+  if (_waqtModalPriere) {
+    markWaqtLu(_waqtModalPriere);
+    _waqtModalPriere = null;
+  }
   updateMedaillonState();
 }
 function startWaqtTimer() {
