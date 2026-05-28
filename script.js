@@ -10971,8 +10971,7 @@ function v2ApplyI18nHTML() {
   _cards.forEach(function(c) { var el = document.querySelector('[aria-label="'+c[0]+'"]'); if (el) el.setAttribute('aria-label', t(c[1])); });
   _s('i18n-waqt-eyebrow', 'waqt_eyebrow');
   _s('i18n-waqt-offer', 'waqt_offer_minute');
-  var _wsb = document.getElementById('waqt-start-btn'); if (_wsb) _wsb.textContent = t('waqt_start');
-  var _wcb = document.getElementById('waqt-close-btn'); if (_wcb) _wcb.textContent = t('waqt_close');
+  // waqt-start-btn et waqt-close-btn retirés (timer supprimé)
   _s('i18n-alhaya-resting', 'alhaya_resting');
   _s('i18n-alhaya-tap', 'alhaya_tap_wake');
   _s('i18n-finjournee-skip', 'onboard_skip');
@@ -12877,42 +12876,6 @@ function closeWaqtModal() {
     _waqtConsumedByClick = true;
   }
   updateMedaillonState();
-}
-function startWaqtTimer() {
-  var modal = document.getElementById('waqt-modal');
-  if (!modal) return;
-  var actionText = document.getElementById('waqt-action-text');
-  var startBtn = document.getElementById('waqt-start-btn');
-  var closeBtn = document.getElementById('waqt-close-btn');
-  if (startBtn) startBtn.style.display = 'none';
-  if (closeBtn) closeBtn.style.display = 'none';
-  // Inject timer ring
-  var ring = document.createElement('div');
-  ring.id = 'waqt-timer-wrap';
-  ring.style.cssText = 'margin-bottom:32px;';
-  ring.innerHTML = '<svg width="180" height="180" viewBox="0 0 180 180"><circle cx="90" cy="90" r="80" fill="none" stroke="rgba(200,168,74,0.1)" stroke-width="3"/><circle id="waqt-timer-arc" cx="90" cy="90" r="80" fill="none" stroke="#C8A84A" stroke-width="3" stroke-linecap="round" transform="rotate(-90 90 90)" stroke-dasharray="502.65" stroke-dashoffset="0"/></svg><div id="waqt-timer-num" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:\'Cormorant Garamond\',serif;font-size:48px;font-weight:300;color:#C8A84A;">60</div>';
-  ring.style.position = 'relative';
-  if (actionText) actionText.parentNode.insertBefore(ring, actionText.nextSibling);
-  var arc = document.getElementById('waqt-timer-arc');
-  var numEl = document.getElementById('waqt-timer-num');
-  var circ = 502.65;
-  var sec = 60;
-  if (window._waqtIv) clearInterval(window._waqtIv);
-  window._waqtIv = setInterval(function() {
-    sec--;
-    if (numEl) numEl.textContent = String(sec);
-    if (arc) arc.setAttribute('stroke-dashoffset', String(circ * ((60 - sec) / 60)));
-    if (sec <= 0) {
-      clearInterval(window._waqtIv); window._waqtIv = null;
-      if (ring) ring.style.opacity = '0'; ring.style.transition = 'opacity 0.5s';
-      setTimeout(function() {
-        if (ring) ring.remove();
-        if (actionText) actionText.textContent = t('waqt_done');
-        _nAn('waqt_completed');
-        if (closeBtn) { closeBtn.style.display = ''; closeBtn.textContent = t('waqt_close'); }
-      }, 600);
-    }
-  }, 1000);
 }
 function getCurrentMoment() {
   var h = new Date().getHours();
