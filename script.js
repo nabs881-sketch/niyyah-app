@@ -14823,6 +14823,34 @@ function _aidBootInner() {
   getCurrentHijri().then(function(hijri) {
     console.log('[Aid] hijri:', JSON.stringify(hijri));
     var evt = _aidDetectEvent(hijri);
+
+    /* ── Garde-fou Grégorien (sunset/API lag fix) ──
+       L'API Aladhan peut retourner le même jour Hijri pour 2 jours
+       Grégoriens consécutifs (car le jour islamique change à Maghrib,
+       pas à minuit). On déduit la date Grégorienne du jour 1 de
+       l'événement via dayNum, et on coupe si on dépasse duration_days. */
+    if (evt) {
+      var maxDays = (evt.data && evt.data.duration_days) || 1;
+      var gKey = 'aid_greg_day1_' + evt.key;
+      var today = new Date(todayKey());
+      // Déduire le jour Grégorien du 1er jour de l'événement
+      var gregDay1Str = safeGetItem(gKey);
+      if (!gregDay1Str) {
+        // 1re détection : jour 1 = aujourd'hui - (dayNum - 1) jours
+        var d1 = new Date(today);
+        d1.setDate(d1.getDate() - (evt.dayNum - 1));
+        gregDay1Str = d1.getFullYear() + '-' + String(d1.getMonth() + 1).padStart(2, '0') + '-' + String(d1.getDate()).padStart(2, '0');
+        safeSetItem(gKey, gregDay1Str);
+      }
+      var elapsed = Math.round((today - new Date(gregDay1Str)) / 86400000);
+      console.log('[Aid] greg guard:', evt.key, 'day1=' + gregDay1Str, 'elapsed=' + elapsed, 'max=' + maxDays);
+      if (elapsed >= maxDays) {
+        console.log('[Aid] event expired (greg guard) — cutting off');
+        try { localStorage.removeItem(gKey); } catch(e) {}
+        evt = null;
+      }
+    }
+
     if (!evt) {
       console.log('[Aid] no active event');
       _aidRevealSanctuaire();
