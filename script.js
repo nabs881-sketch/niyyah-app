@@ -14862,12 +14862,54 @@ function _aidBootInner() {
     }
     window._AID_ACTIVE = evt;
     console.log('[Aid] active:', evt.key, 'day:', evt.dayNum);
-    // Takeover first (hides children via display:none), then reveal container
-    _aidTakeoverSanctuaire(evt);
-    _aidRevealSanctuaire();
-    _aidShowOverlay(evt);
+
+    /* ── Adha jour 1 vs jours 2-4 (Tachrîq) ──
+       Jour 1 : takeover complet + overlay (comme avant).
+       Jours 2-4 : app normale + carte discrète Tachrîq dans le sanctuaire.
+       Les messages waqt spéciaux continuent les 4 jours. */
+    if (evt.key === 'AID_AL_ADHA' && evt.dayNum >= 2) {
+      console.log('[Aid] Tachr\u00eeq mode (jour', evt.dayNum + ') \u2014 carte discr\u00e8te');
+      _aidRevealSanctuaire();
+      _aidInjectTachriqCard(evt);
+    } else {
+      _aidTakeoverSanctuaire(evt);
+      _aidRevealSanctuaire();
+      _aidShowOverlay(evt);
+    }
   }).catch(function(e) { console.warn('[Aid] hijri error:', e); _aidRevealSanctuaire(); });
 }
+
+/* ═══════════════════════════════════════════════════
+   TACHRÎQ — Carte discrète jours 2-4 Aïd al-Adha
+   ═══════════════════════════════════════════════════ */
+function _aidInjectTachriqCard(evt) {
+  var sanct = document.getElementById('view-sanctuaire');
+  if (!sanct || document.getElementById('aid-tachriq-card')) return;
+  var bt = evt.data.banner_text;
+  var bannerText = bt ? (bt['day_' + evt.dayNum] || '') : '';
+  var card = document.createElement('div');
+  card.id = 'aid-tachriq-card';
+  card.onclick = function() { _aidOpenFromCard(evt); };
+  card.style.cssText = 'margin:16px 20px;padding:18px 20px;border-radius:16px;border:1px solid rgba(200,168,74,0.25);background:linear-gradient(135deg,rgba(200,168,74,0.08),rgba(200,168,74,0.02));cursor:pointer;text-align:center;';
+  card.innerHTML =
+    '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:24px;color:#C8A84A;margin-bottom:6px;">\u0639\u064A\u062F \u0645\u0628\u0627\u0631\u0643</div>' +
+    '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;color:#E5DCC8;font-weight:300;margin-bottom:6px;">' + (bannerText || ('A\u00efd al-Adha \u00b7 Jour ' + evt.dayNum + '/4')) + '</div>' +
+    '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;color:rgba(200,168,74,0.55);letter-spacing:0.3px;">Les takb\u00eer\u00e2t continuent \u00b7 Tap pour ouvrir</div>';
+  // Insert at the top of sanctuaire content
+  if (sanct.firstChild) { sanct.insertBefore(card, sanct.firstChild); }
+  else { sanct.appendChild(card); }
+}
+
+function _aidOpenFromCard(evt) {
+  // Build the full immersive Aid view, then switch to Takbîrât tab
+  _aidTakeoverSanctuaire(evt);
+  // Switch to takbirat tab if it exists
+  setTimeout(function() {
+    if (typeof _aidSwitchTab === 'function') _aidSwitchTab('takbirat');
+  }, 100);
+}
+window._aidOpenFromCard = _aidOpenFromCard;
+window._aidInjectTachriqCard = _aidInjectTachriqCard;
 
 /* ═══════════════════════════════════════════════════
    CARTES VOEUX AÏD MOUBARAK
