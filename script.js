@@ -14522,6 +14522,9 @@ function checkHijriBanner() {
    Aïd al-Adha, Aïd al-Fitr, Arafat, Lailat al-Qadr, Ashura
    ═══════════════════════════════════════════════════ */
 
+// ── Helper : extraire FR d'un champ string ou {fr,en,ar} ──
+function _aidT(val) { return (val && typeof val === 'object') ? (val.fr || val.en || '') : (val || ''); }
+
 // ── Détection de l'événement actif via date Hijri ──
 function _aidDetectEvent(hijri) {
   if (!hijri || !window._AID_DATA) return null;
@@ -14553,8 +14556,8 @@ function _aidShowOverlay(evt) {
   el.innerHTML =
     '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:44px;color:#C8A84A;margin-bottom:14px;">' + (ov.title_ar || '') + '</div>' +
     '<div style="font-family:\'Cormorant Garamond\',serif;font-size:26px;color:#E5DCC8;font-weight:300;margin-bottom:22px;">' + (ov.title_fr || '') + '</div>' +
-    '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;color:rgba(200,168,74,0.7);line-height:1.7;max-width:300px;margin-bottom:32px;">' + (ov.subtitle || '') + '</div>' +
-    '<div style="font-family:Inter,sans-serif;font-size:11px;color:rgba(255,255,255,0.2);letter-spacing:2px;text-transform:uppercase;">' + (ov.instruction || 'Tap pour entrer') + '</div>';
+    '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;color:rgba(200,168,74,0.7);line-height:1.7;max-width:300px;margin-bottom:32px;">' + _aidT(ov.subtitle) + '</div>' +
+    '<div style="font-family:Inter,sans-serif;font-size:11px;color:rgba(255,255,255,0.2);letter-spacing:2px;text-transform:uppercase;">' + (_aidT(ov.instruction) || 'Tap pour entrer') + '</div>';
   el.onclick = function() { _aidDismissOverlay(el); };
   document.body.appendChild(el);
   requestAnimationFrame(function() { el.style.opacity = '1'; });
@@ -14637,7 +14640,7 @@ function _aidTakeoverSanctuaire(evt) {
   // Banner text
   var bt = ev.banner_text;
   var bannerText = '';
-  if (bt) bannerText = bt['day_' + evt.dayNum] || bt['day_1'] || '';
+  if (bt) bannerText = _aidT(bt['day_' + evt.dayNum]) || _aidT(bt['day_1']) || '';
   var fallbacks = { JOUR_ARAFAT: 'Yawm Arafat \u2014 Le plus grand jour du Hajj', LAILAT_AL_QADR: 'Lailat al-Qadr \u2014 La nuit qui vaut mille mois', ASHURA: '\u2018\u00c2sh\u00fbr\u00e2\u2019 \u2014 Je\u00fbne et repentance' };
   if (!bannerText) bannerText = fallbacks[evt.key] || '';
 
@@ -14775,7 +14778,8 @@ function _aidSwitchTab(tabId) {
 function _aidGetWaqtMessage(evt, priere) {
   if (!evt || !evt.data || !evt.data.messages_waqts) return null;
   var key = priere.toUpperCase() + '_jour_' + evt.dayNum;
-  return evt.data.messages_waqts[key] || null;
+  var msg = evt.data.messages_waqts[key] || null;
+  return msg ? _aidT(msg) : null;
 }
 
 // ── CSS du module Aïd ──
@@ -14892,7 +14896,7 @@ function _aidInjectTachriqCard(evt) {
   var sanct = document.getElementById('view-sanctuaire');
   if (!sanct || document.getElementById('aid-tachriq-card')) return;
   var bt = evt.data.banner_text;
-  var bannerText = bt ? (bt['day_' + evt.dayNum] || '') : '';
+  var bannerText = bt ? (_aidT(bt['day_' + evt.dayNum]) || '') : '';
   var card = document.createElement('div');
   card.id = 'aid-tachriq-card';
   card.onclick = function() { _aidOpenFromCard(evt); };

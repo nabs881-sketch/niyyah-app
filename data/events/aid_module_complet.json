@@ -686,6 +686,40 @@
         "reference": "Coran 5:3",
         "texte": "Aujourd'hui, J'ai parachevé pour vous votre religion, et accompli sur vous Mon bienfait. Et J'agrée l'Islam comme religion pour vous.",
         "commentaire": "Verset révélé au Prophète ﷺ à Arafat lors du Pèlerinage d'Adieu. Le dernier verset à propos de la complétion de la religion."
+      },
+      "banner_text": {
+        "day_1": {
+          "fr": "Yawm ‘Arafa · Le jour du pardon",
+          "en": "Yawm ‘Arafa · The day of forgiveness",
+          "ar": "يوم عرفة · يوم المغفرة"
+        }
+      },
+      "messages_waqts": {
+        "FAJR_jour_1": {
+          "fr": "Aujourd’hui, Yawm ‘Arafa. Si tu ne fais pas le Hajj, le jeûne de ce jour efface les péchés de deux années — l’année passée et celle qui vient. (Muslim 1162)",
+          "en": "Today is Yawm ‘Arafa. If you are not performing Hajj, fasting this day expiates the sins of two years — the past and the coming one. (Muslim 1162)",
+          "ar": "اليوم يوم عرفة. إن لم تكن حاجًّا، فصيام هذا اليوم يكفّر ذنوب سنتين — الماضية والقادمة. (مسلم ١١٦٢)"
+        },
+        "DHUHR_jour_1": {
+          "fr": "En ce moment, les pèlerins se tiennent à ‘Arafa, têtes nues sous le soleil, mains levées. Joins ta voix à la leur, où que tu sois.",
+          "en": "Right now, the pilgrims stand at ‘Arafa, bareheaded under the sun, hands raised. Join your voice to theirs, wherever you are.",
+          "ar": "في هذه اللحظة، الحجّاج يقفون بعرفة، حاسري الرؤوس تحت الشمس، رافعي الأيدي. انضمّ إليهم بدعائك أينما كنت."
+        },
+        "ASR_jour_1": {
+          "fr": "C’est l’heure la plus précieuse du jour. Multiplie la meilleure des paroles : Lâ ilâha illâ-Llâh.",
+          "en": "This is the most precious hour of the day. Multiply the best of words: La ilaha illa-Llah.",
+          "ar": "هذه أغلى ساعات اليوم. أكثر من أفضل الكلام: لا إله إلا الله."
+        },
+        "MAGHRIB_jour_1": {
+          "fr": "Le soleil de ‘Arafa se couche. Allâh, en ce jour, affranchit du Feu plus de serviteurs que tout autre jour. (Muslim 1348)",
+          "en": "The sun of ‘Arafa sets. On this day, Allah frees more servants from the Fire than on any other day. (Muslim 1348)",
+          "ar": "غربت شمس عرفة. في هذا اليوم يعتق الله من النار أكثر مما يعتق في أيّ يوم آخر. (مسلم ١٣٤٨)"
+        },
+        "ISHA_jour_1": {
+          "fr": "La nuit de ‘Arafa s’installe. Demain, l’Aïd. Demande pardon une dernière fois avant que ce jour béni ne s’achève.",
+          "en": "The night of ‘Arafa settles. Tomorrow is Eid. Ask for forgiveness one last time before this blessed day ends.",
+          "ar": "حلّ ليل عرفة. غدًا العيد. استغفر مرّة أخيرة قبل أن ينتهي هذا اليوم المبارك."
+        }
       }
     },
     "LAILAT_AL_QADR": {
@@ -728,7 +762,41 @@
           "id": "qadr_med_007",
           "texte": "Aïcha (qu'Allâh soit content d'elle) a demandé au Prophète ﷺ : 'Que dois-je dire si je rencontre Lailat al-Qadr ?' Il a répondu : 'Dis : Allâhumma innaka 'afuwwun, tuhibbu-l-'afwa, fa-'fu 'annî.' (Tirmidhî)"
         }
-      ]
+      ],
+      "banner_text": {
+        "day_1": {
+          "fr": "Lailat al-Qadr · Mieux que mille mois",
+          "en": "Lailat al-Qadr · Better than a thousand months",
+          "ar": "ليلة القدر · خيرٌ من ألف شهر"
+        }
+      },
+      "messages_waqts": {
+        "FAJR_jour_1": {
+          "fr": "Peut-être cette nuit était-elle Lailat al-Qadr. Qui l’a passée en prière avec foi et espérance voit ses péchés passés pardonnés. (Bukhari 1901)",
+          "en": "Perhaps last night was Lailat al-Qadr. Whoever spent it in prayer with faith and hope has their past sins forgiven. (Bukhari 1901)",
+          "ar": "لعلّ الليلة الماضية كانت ليلة القدر. من قامها إيمانًا واحتسابًا غُفر له ما تقدّم من ذنبه. (البخاري ١٩٠١)"
+        },
+        "DHUHR_jour_1": {
+          "fr": "Le jour qui suit une nuit possible de Qadr. Garde le cœur tourné vers elle : elle vaut mieux que mille mois. (Coran 97:3)",
+          "en": "The day after a possible night of Qadr. Keep your heart turned toward it: it is better than a thousand months. (Quran 97:3)",
+          "ar": "اليوم الذي يلي ليلة محتملة للقدر. اجعل قلبك متعلّقًا بها: خيرٌ من ألف شهر. (القدر ٣)"
+        },
+        "ASR_jour_1": {
+          "fr": "Prépare ton cœur pour la nuit qui vient. Cette nuit vaut mieux que mille mois — plus qu’une vie entière. (Coran 97:3)",
+          "en": "Prepare your heart for the coming night. This night is better than a thousand months — more than an entire lifetime. (Quran 97:3)",
+          "ar": "هيّئ قلبك لليلة القادمة. هذه الليلة خيرٌ من ألف شهر — أكثر من عمر بأكمله. (القدر ٣)"
+        },
+        "MAGHRIB_jour_1": {
+          "fr": "La nuit descend. Ce soir peut-être, les anges descendent en nombre jusqu’à l’aube, avec la paix. (Coran 97:4-5)",
+          "en": "Night falls. Perhaps tonight, the angels descend in multitude until dawn, with peace. (Quran 97:4-5)",
+          "ar": "حلّ الليل. لعلّ الليلة، تنزّل الملائكة حتى مطلع الفجر، سلامٌ هي. (القدر ٤-٥)"
+        },
+        "ISHA_jour_1": {
+          "fr": "La nuit est là. Répète l’invocation que le Prophète ﷺ enseigna à ‘Â’isha : Allâhumma innaka ‘afuwwun tuhibbu-l-‘afwa fa’fu ‘annî. (Tirmidhî 3513, hasan sahîh)",
+          "en": "The night is here. Repeat the supplication the Prophet ﷺ taught ‘A’isha: Allahumma innaka ‘afuwwun tuhibbu-l-‘afwa fa’fu ‘anni. (Tirmidhi 3513, hasan sahih)",
+          "ar": "حلّ الليل. ردّد الدعاء الذي علّمه النبيّ ﷺ لعائشة: اللَّهُمَّ إِنَّكَ عَفُوٌّ تُحِبُّ العَفْوَ فَاعْفُ عَنِّي. (الترمذي ٣٥١٣)"
+        }
+      }
     },
     "ASHURA": {
       "name_fr": "Jour d'Ashûrâ",
@@ -757,7 +825,57 @@
           "id": "ashura_med_005",
           "texte": "Si tu n'as pas pu jeûner le 10 Muharram, jeûne le 9 ou le 11 — la sunna se prolonge. Un effort partiel reste méritoire — Allâh ne perd aucune œuvre sincère."
         }
-      ]
+      ],
+      "overlay_opening": {
+        "title_ar": "عاشوراء",
+        "title_fr": "‘Âshûrâ’",
+        "title_en": "‘Ashura’",
+        "subtitle": {
+          "fr": "10 Muharram. ‘Âshûrâ’. Le jour où Allâh sauva Mûsâ et son peuple des eaux.",
+          "en": "10 Muharram. ‘Ashura’. The day Allah saved Musa and his people from the waters.",
+          "ar": "١٠ محرّم. عاشوراء. اليوم الذي نجّى الله فيه موسى وقومه من الغرق."
+        },
+        "instruction": {
+          "fr": "Le Prophète ﷺ jeûnait ce jour et nous invitait à le jeûner — en y joignant le 9.",
+          "en": "The Prophet ﷺ fasted this day and encouraged us to fast it — adding the 9th.",
+          "ar": "كان النبيّ ﷺ يصوم هذا اليوم ويحثّنا على صيامه مع التاسع."
+        },
+        "source": "Bukhari 2004, Muslim 1130, Muslim 1134"
+      },
+      "banner_text": {
+        "day_1": {
+          "fr": "‘Âshûrâ’ · Le jour de Mûsâ",
+          "en": "‘Ashura’ · The day of Musa",
+          "ar": "عاشوراء · يوم موسى"
+        }
+      },
+      "messages_waqts": {
+        "FAJR_jour_1": {
+          "fr": "Aujourd’hui ‘Âshûrâ’. Le jeûne de ce jour efface les péchés de l’année passée. (Muslim 1162)",
+          "en": "Today is ‘Ashura’. Fasting this day expiates the sins of the past year. (Muslim 1162)",
+          "ar": "اليوم عاشوراء. صيام هذا اليوم يكفّر ذنوب السنة الماضية. (مسلم ١١٢)"
+        },
+        "DHUHR_jour_1": {
+          "fr": "C’est le jour où Mûsâ et les Banî Isrâ’îl furent sauvés de Pharaon. Mûsâ jeûna par gratitude — et le Prophète ﷺ dit : ‘Je suis plus proche de Mûsâ qu’eux.’ (Bukhari 2004)",
+          "en": "This is the day Musa and the Children of Israel were saved from Pharaoh. Musa fasted out of gratitude — and the Prophet ﷺ said: ‘I am closer to Musa than them.’ (Bukhari 2004)",
+          "ar": "هذا اليوم نجّى الله فيه موسى وبني إسرائيل من فرعون. صامه موسى شكرًا — وقال النبيّ ﷺ: «أنا أولى بموسى منهم». (البخاري ٢٠٠٤)"
+        },
+        "ASR_jour_1": {
+          "fr": "Le Prophète ﷺ regrettait de ne pas avoir joint le 9 au 10. Si tu n’as pas jeûné hier, tu peux jeûner demain (le 11) pour suivre l’esprit de la sunna. (Muslim 1134)",
+          "en": "The Prophet ﷺ wished he had fasted the 9th along with the 10th. If you didn’t fast yesterday, you can fast tomorrow (the 11th) to follow the spirit of the sunnah. (Muslim 1134)",
+          "ar": "تمنّى النبيّ ﷺ أن يصوم التاسع مع العاشر. إن لم تصم أمس، يمكنك صيام غد (الحادي عشر) اتباعًا لروح السنّة. (مسلم ١١٣٤)"
+        },
+        "MAGHRIB_jour_1": {
+          "fr": "Un jour de gratitude. Allâh a sauvé un prophète et son peuple en ce jour — et la délivrance d’Allâh n’a pas de date de péremption.",
+          "en": "A day of gratitude. Allah saved a prophet and his people on this day — and the deliverance of Allah has no expiration date.",
+          "ar": "يوم شكر. نجّى الله نبيًّا وقومه في هذا اليوم — وفرج الله لا ينتهي."
+        },
+        "ISHA_jour_1": {
+          "fr": "‘Âshûrâ’ s’achève. Le jeûne efface une année — mais c’est la miséricorde d’Allâh, non le geste seul, qui sauve.",
+          "en": "‘Ashura’ ends. Fasting expiates a year — but it is the mercy of Allah, not the act alone, that saves.",
+          "ar": "انتهى يوم عاشوراء. الصيام يكفّر سنة — لكنّ رحمة الله، لا العمل وحده، هي التي تنجي."
+        }
+      }
     }
   },
   "METADATA_TECHNIQUE": {
