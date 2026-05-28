@@ -6268,79 +6268,75 @@ function openCureColere() {
 // ── Sérieusement renderers for Porte Colère ──
 _cureJourRenderers.colere_1 = function(el) {
   var c = '#B33A3A';
-  // Hadith Bukhârî 6116 (lâ taghḍab)
-  var h6116 = {ar:'\u0644\u064e\u0627 \u062a\u064e\u063a\u0652\u0636\u064e\u0628',translit:'L\u00e2 taghḍab',fr:'Ne te mets pas en col\u00e8re.',source:'Al-Bukh\u00e2r\u00ee 6116'};
-  try {
-    var raps = BAB_AN_NAFS.portes[0].rappels;
-    for (var _ri = 0; _ri < raps.length; _ri++) {
-      if (raps[_ri].source && raps[_ri].source.indexOf('6116') !== -1) { h6116.fr = raps[_ri].fr; h6116.source = raps[_ri].source; break; }
-    }
-  } catch(e) {}
-  // Duʿâ' an-Nasâ'î 1305
-  var duaa = {ar:'\u0627\u0644\u0644\u0651\u064e\u0647\u064f\u0645\u0651\u064e \u0625\u0650\u0646\u0651\u0650\u064a \u0623\u064e\u0633\u0652\u0623\u064e\u0644\u064f\u0643\u064e \u0643\u064e\u0644\u0650\u0645\u064e\u0629\u064e \u0627\u0644\u0652\u062d\u064e\u0642\u0651\u0650 \u0641\u0650\u064a \u0627\u0644\u0631\u0651\u0650\u0636\u064e\u0627 \u0648\u064e\u0627\u0644\u0652\u063a\u064e\u0636\u064e\u0628\u0650',translit:'All\u00e2humma inn\u00ee as\u2019aluka kalimata al-\u1e25aqqi fi r-ri\u1e0d\u00e2 wa al-gha\u1e0dab',fr:'\u00d4 Allah, je Te demande la parole juste dans le contentement et dans la col\u00e8re.',source:'an-Nas\u00e2\u2019\u00ee 1305'};
-  if (window.babNafsContent && window.babNafsContent.colere && window.babNafsContent.colere.muhasaba && window.babNafsContent.colere.muhasaba.etape6_duaa_parole_juste) {
-    var _d = window.babNafsContent.colere.muhasaba.etape6_duaa_parole_juste;
-    if (_d.ar) duaa = _d;
-  }
+  var j = window.CURE_COLERE_CYCLE1 && window.CURE_COLERE_CYCLE1.jours && window.CURE_COLERE_CYCLE1.jours[0];
+  if (!j) { el.innerHTML = '<div style="padding:60px 24px;text-align:center;color:rgba(255,255,255,0.4);">Contenu en cours de chargement\u2026</div>'; return; }
+  var duaa = j.duaa_cloture || {};
+  var travail = (j.travaux && j.travaux[0]) || {};
+  var filRouge = (window.CURE_COLERE_CYCLE1._transversal && window.CURE_COLERE_CYCLE1._transversal.fil_rouge_bas) || '';
   var backBtn = '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
   var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;">'
     + backBtn
-    // 1. OUVERTURE
+    // TITRE
     + '<div style="text-align:center;margin-bottom:40px;">'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:' + c + ';direction:rtl;margin-bottom:6px;">\u0631\u0650\u064a\u064e\u0627\u0636\u064e\u0629 \u0646\u064e\u0641\u0652\u0633\u0650\u064a\u0651\u064e\u0629</div>'
-    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:4px;">Riy\u00e2\u1e0dat an-nafs \u2014 Jour 1</div>'
-    + '<div class="itfaa-body" style="font-size:16px;margin-bottom:6px;">Reconna\u00eetre le feu</div>'
-    + '<div style="font-size:12px;font-style:italic;color:rgba(255,255,255,0.35);line-height:1.5;max-width:360px;margin:0 auto 20px;">al-Ghaz\u00e2l\u00ee comparait la col\u00e8re \u00e0 un feu\u00a0: si tu ne le vois pas, il te br\u00fble.</div>'
-    + '<div class="itfaa-subtle" style="font-size:13px;margin-bottom:8px;">Pose ton intention avant de commencer :</div>'
-    + '<textarea id="_cureNiyyah" placeholder="Ma niyyah pour ce travail\u2026" style="width:100%;max-width:360px;min-height:50px;padding:12px;border-radius:10px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;resize:vertical;"></textarea>'
-    + '</div>'
-    // 1bis. EFFICACITÉ
-    + '<div style="text-align:center;margin-bottom:40px;">'
-    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:16px;line-height:1.7;max-width:380px;margin:0 auto 16px;">Sur 10, \u00e0 quel point te sens-tu capable de g\u00e9rer ta prochaine col\u00e8re\u00a0?</div>'
-    + '<div id="_efficJ1" style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;max-width:320px;margin:0 auto;"></div>'
-    + '</div>'
-    // 2. CONTEMPLATION
-    + '<div style="text-align:center;margin-bottom:40px;padding:20px;border-radius:14px;border:1px solid ' + c + '22;background:' + c + '08;">'
-    + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.5;margin-bottom:12px;">Contemplation</div>'
-    + '<div style="font-family:\'Scheherazade New\',serif;font-size:28px;color:' + c + ';direction:rtl;line-height:1.8;margin-bottom:8px;">' + h6116.ar + '</div>'
-    + '<div class="itfaa-body" style="font-size:14px;font-style:italic;margin-bottom:8px;">' + escapeHtml(h6116.translit) + '</div>'
-    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:16px;line-height:1.7;margin-bottom:8px;">' + escapeHtml(h6116.fr) + '</div>'
-    + '<div class="itfaa-subtle" style="font-size:11px;">\u2014 ' + escapeHtml(h6116.source) + '</div>'
-    + '</div>'
-    // 3. EXERCICE
-    + '<div style="text-align:center;margin-bottom:40px;">'
-    + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.5;margin-bottom:12px;">Exercice du jour</div>'
-    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:16px;line-height:1.7;max-width:400px;margin:0 auto 16px;">Aujourd\u2019hui, observe tes col\u00e8res. Note-les en 1\u00a0ligne.</div>'
-    + '<textarea id="_cureNotes" placeholder="Ce qui m\u2019a mis en col\u00e8re aujourd\u2019hui\u2026" style="width:100%;max-width:360px;min-height:80px;padding:12px;border-radius:10px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;resize:vertical;"></textarea>'
-    + '</div>'
-    // 4. CLÔTURE
-    + '<div style="text-align:center;margin-bottom:20px;padding:20px;border-radius:14px;border:1px solid ' + c + '22;background:' + c + '08;">'
-    + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.5;margin-bottom:12px;">Cl\u00f4ture</div>'
-    + '<div style="font-family:\'Scheherazade New\',serif;font-size:22px;color:' + c + ';direction:rtl;line-height:1.8;margin-bottom:6px;">' + duaa.ar + '</div>'
-    + '<div class="itfaa-body" style="font-size:13px;font-style:italic;margin-bottom:6px;">' + escapeHtml(duaa.translit) + '</div>'
-    + '<div class="itfaa-body" style="font-size:14px;margin-bottom:6px;">' + escapeHtml(duaa.fr) + '</div>'
-    + '<div class="itfaa-subtle" style="font-size:11px;margin-bottom:16px;">\u2014 ' + escapeHtml(duaa.source) + '</div>'
-    + _cureForDemainHtml(1, '_cureColereJ1Save')
-    + '</div>'
+    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:4px;">Riy\u00e2\u1e0dat an-nafs \u2014 Jour ' + j.jour + '</div>'
+    + '<div class="itfaa-body" style="font-size:16px;margin-bottom:6px;">' + escapeHtml(j.titre) + '</div>'
     + '</div>';
+  // TEXTE D'OUVERTURE
+  if (j.texte_ouverture && j.texte_ouverture.paragraphes) {
+    html += '<div style="margin-bottom:40px;">';
+    j.texte_ouverture.paragraphes.forEach(function(p) {
+      html += '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.8;max-width:420px;margin:0 auto 16px;">' + escapeHtml(p) + '</div>';
+    });
+    if (j.texte_ouverture.sources) {
+      j.texte_ouverture.sources.forEach(function(s) {
+        html += '<div class="itfaa-subtle" style="font-size:11px;text-align:center;">\u2014 ' + escapeHtml(s.ref) + '</div>';
+      });
+    }
+    html += '</div>';
+  }
+  // TRAVAIL
+  if (travail.intro) {
+    html += '<div style="text-align:center;margin-bottom:40px;">'
+      + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.5;margin-bottom:12px;">Travail du jour</div>'
+      + '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;max-width:400px;margin:0 auto 16px;">' + escapeHtml(travail.intro) + '</div>';
+    if (travail.amorce) {
+      html += '<div style="font-family:var(--serif);font-size:14px;font-style:italic;color:' + c + ';line-height:1.6;max-width:380px;margin:0 auto 12px;padding:14px;border:1px dashed ' + c + '44;border-radius:12px;background:' + c + '0d;">' + escapeHtml(travail.amorce) + '</div>';
+    }
+    if (travail.exemples) {
+      travail.exemples.forEach(function(ex) {
+        html += '<div class="itfaa-subtle" style="font-size:12px;max-width:380px;margin:0 auto 6px;text-align:left;">\u2022 ' + escapeHtml(ex) + '</div>';
+      });
+    }
+    var ph = (travail.champ && travail.champ.placeholder) || '';
+    var maxC = (travail.champ && travail.champ.max_chars) || 200;
+    html += '<textarea id="_cureJ1Travail" maxlength="' + maxC + '" placeholder="' + escapeHtml(ph) + '" style="width:100%;max-width:380px;min-height:80px;padding:12px;border-radius:10px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;resize:vertical;margin-top:16px;"></textarea>';
+    if (travail.sous_texte_gris) {
+      html += '<div style="font-size:12px;font-style:italic;color:rgba(255,255,255,0.3);max-width:380px;margin:8px auto 0;">' + escapeHtml(travail.sous_texte_gris) + '</div>';
+    }
+    html += '</div>';
+  }
+  // FIL ROUGE
+  if (filRouge) {
+    html += '<div style="text-align:center;margin-bottom:40px;padding:16px;border-radius:14px;border:1px solid rgba(200,168,75,0.2);background:rgba(200,168,75,0.04);">'
+      + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#C8A84A;opacity:0.5;margin-bottom:8px;">Fil rouge</div>'
+      + '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:#C8A84A;line-height:1.6;">' + escapeHtml(filRouge) + '</div>'
+      + '</div>';
+  }
+  // CLÔTURE DU'Â
+  if (duaa.arabe) {
+    html += '<div style="text-align:center;margin-bottom:20px;padding:20px;border-radius:14px;border:1px solid ' + c + '22;background:' + c + '08;">'
+      + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.5;margin-bottom:12px;">Cl\u00f4ture</div>'
+      + '<div style="font-family:\'Scheherazade New\',serif;font-size:22px;color:' + c + ';direction:rtl;line-height:1.8;margin-bottom:6px;">' + duaa.arabe + '</div>'
+      + (duaa.translitteration ? '<div class="itfaa-body" style="font-size:13px;font-style:italic;margin-bottom:6px;">' + escapeHtml(duaa.translitteration) + '</div>' : '')
+      + '<div class="itfaa-body" style="font-size:14px;margin-bottom:6px;">' + escapeHtml(duaa.traduction || '') + '</div>'
+      + '<div class="itfaa-subtle" style="font-size:11px;margin-bottom:16px;">\u2014 ' + escapeHtml(duaa.source || '') + '</div>'
+      + _cureForDemainHtml(1, '_cureColereJ1Save')
+      + '</div>';
+  }
+  html += '</div>';
   el.innerHTML = html;
   el.innerHTML += _exitLinkHtml;
-  // Render 10 boutons efficacité
-  var _eWrap = document.getElementById('_efficJ1');
-  if (_eWrap) {
-    for (var _ei = 1; _ei <= 10; _ei++) {
-      var _b = document.createElement('button');
-      _b.textContent = _ei;
-      _b.style.cssText = 'width:40px;height:40px;border-radius:50%;border:1px solid #B33A3A44;background:#B33A3A0d;color:#B33A3A;font-family:var(--serif);font-size:15px;cursor:pointer;';
-      _b.setAttribute('data-score', _ei);
-      _b.onclick = function() {
-        document.querySelectorAll('#_efficJ1 button').forEach(function(b) { b.style.background = '#B33A3A0d'; b.style.fontWeight = '400'; });
-        this.style.background = '#B33A3A33'; this.style.fontWeight = '700';
-        window._efficJ1Score = parseInt(this.getAttribute('data-score'), 10);
-      };
-      _eWrap.appendChild(_b);
-    }
-  }
 };
 
 _cureJourRenderers.colere_2 = function(el) {
