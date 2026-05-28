@@ -1025,8 +1025,8 @@ function toggleRamadanMode() {
     if (safeGetItem('ramadan_boost') === 'accepted') {
       showEidModal();
     } else {
-      localStorage.removeItem('ramadan_boost');
-      localStorage.removeItem('ramadan_modal_shown');
+      try { localStorage.removeItem('ramadan_boost'); } catch(e) {}
+      try { localStorage.removeItem('ramadan_modal_shown'); } catch(e) {}
     }
   } else {
     ramadanState.active = true;
@@ -4343,7 +4343,7 @@ function _logColereZone(zone) {
     var log = safeParseJSON('colere_zone_log', []);
     log.push({date:Date.now(),zone:zone});
     if (log.length > 200) log = log.slice(-200);
-    localStorage.setItem('colere_zone_log', JSON.stringify(log));
+    safeSetItem('colere_zone_log', JSON.stringify(log));
   } catch(e) {}
 }
 
@@ -4693,7 +4693,7 @@ function _logEmotionSous(emotion) {
     var log = safeParseJSON('colere_emotion_sous_log', []);
     log.push({date:Date.now(),emotion:emotion});
     if (log.length > 200) log = log.slice(-200);
-    localStorage.setItem('colere_emotion_sous_log', JSON.stringify(log));
+    safeSetItem('colere_emotion_sous_log', JSON.stringify(log));
   } catch(e) {}
   openItfaaRefuge();
 }
@@ -8832,13 +8832,13 @@ function isPremium() {
 }
 function unlockPremium(code) {
   if (code && code.toUpperCase() === 'BISMILLAH') {
-    localStorage.setItem('niyyah_premium', 'true');
+    safeSetItem('niyyah_premium', 'true');
     return true;
   }
   return false;
 }
 function setPremium(bool) {
-  localStorage.setItem('niyyah_premium', bool ? 'true' : 'false');
+  safeSetItem('niyyah_premium', bool ? 'true' : 'false');
 }
 window.isPremium = isPremium;
 window.unlockPremium = unlockPremium;
@@ -8847,7 +8847,7 @@ function isSilentMode() {
   return localStorage.getItem('niyyah_silent_mode') === 'true';
 }
 function setSilentMode(bool) {
-  localStorage.setItem('niyyah_silent_mode', bool ? 'true' : 'false');
+  safeSetItem('niyyah_silent_mode', bool ? 'true' : 'false');
 }
 window.isSilentMode = isSilentMode;
 window.setSilentMode = setSilentMode;
@@ -12095,7 +12095,7 @@ function _showOrientConfirm(value) {
 }
 function _applyOrientation(value) {
   var prev = localStorage.getItem('niyyah_motivation');
-  localStorage.setItem('niyyah_motivation', value);
+  safeSetItem('niyyah_motivation', value);
   localStorage.removeItem('niyyah_welcome_shown');
   localStorage.removeItem('niyyah_defi_v2');
   closeOrientationPicker();
