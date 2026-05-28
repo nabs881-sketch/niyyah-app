@@ -4128,8 +4128,8 @@ function openBabPorte(id, step) {
   document.body.classList.add('in-bab-an-nafs');
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
-  // Guard Colère → écran choix de mode
-  if (id === 'colere' && (!step || step === 1)) { openPorteChoix(id); return; }
+  // Colère → directement Cure 7 jours
+  if (id === 'colere') { openCureColere(); return; }
   var porte = BAB_AN_NAFS.portes.find(function(p) { return p.id === id; });
   if (!porte) { console.warn('Bab an-Nafs: porte manquante:', id); return; }
   // Porte vide ou non validée sans contenu → écran "en préparation"
