@@ -7,8 +7,8 @@ echo "▸ Minifying style.css → style.min.css"
 npx clean-css-cli -o style.min.css style.css
 
 # Auto-bump SW version
-OLD_VER=$(grep -oP 'niyyah-v[0-9]+' sw.js)
-OLD_NUM=$(echo "$OLD_VER" | grep -oP '[0-9]+')
+OLD_VER=$(grep -o 'niyyah-v[0-9]*' sw.js | head -1)
+OLD_NUM=$(echo "$OLD_VER" | sed 's/niyyah-v//')
 NEW_NUM=$((OLD_NUM + 1))
 NEW_VER="niyyah-v${NEW_NUM}"
 sed -i "s/${OLD_VER}/${NEW_VER}/" sw.js

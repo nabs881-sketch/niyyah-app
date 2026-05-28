@@ -14896,11 +14896,11 @@ function _aidInjectTachriqCard(evt) {
   var card = document.createElement('div');
   card.id = 'aid-tachriq-card';
   card.onclick = function() { _aidOpenFromCard(evt); };
-  card.style.cssText = 'margin:16px 20px;padding:18px 20px;border-radius:16px;border:1px solid rgba(200,168,74,0.25);background:linear-gradient(135deg,rgba(200,168,74,0.08),rgba(200,168,74,0.02));cursor:pointer;text-align:center;';
+  card.style.cssText = 'width:100%;box-sizing:border-box;margin:0 auto 12px;padding:22px 20px;border-radius:14px;border:1px solid rgba(200,168,74,0.4);background:linear-gradient(135deg,rgba(200,168,74,0.18) 0%,rgba(200,168,74,0.07) 60%,rgba(42,31,10,0.9) 100%);cursor:pointer;text-align:center;box-shadow:0 0 24px rgba(200,168,74,0.12),inset 0 1px 0 rgba(200,168,74,0.15);';
   card.innerHTML =
-    '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:24px;color:#C8A84A;margin-bottom:6px;">\u0639\u064A\u062F \u0645\u0628\u0627\u0631\u0643</div>' +
-    '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;color:#E5DCC8;font-weight:300;margin-bottom:6px;">' + (bannerText || ('A\u00efd al-Adha \u00b7 Jour ' + evt.dayNum + '/4')) + '</div>' +
-    '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;color:rgba(200,168,74,0.55);letter-spacing:0.3px;">Les takb\u00eer\u00e2t continuent \u00b7 Tap pour ouvrir</div>';
+    '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:28px;color:#C8A84A;margin-bottom:8px;text-shadow:0 0 18px rgba(200,168,74,0.3);">\u0639\u064A\u062F \u0645\u0628\u0627\u0631\u0643</div>' +
+    '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;color:#E5DCC8;font-weight:400;margin-bottom:8px;letter-spacing:0.3px;">' + (bannerText || ('A\u00efd al-Adha \u00b7 Jour ' + evt.dayNum + '/4')) + '</div>' +
+    '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;color:rgba(200,168,74,0.65);letter-spacing:0.4px;">Les takb\u00eer\u00e2t continuent \u00b7 Tap pour ouvrir \u2726</div>';
   // Insert inside the centered wrapper, just above .quick-actions-v2
   var quickGrid = sanct.querySelector('.quick-actions-v2');
   if (quickGrid && quickGrid.parentNode) {
