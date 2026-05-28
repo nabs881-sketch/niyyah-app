@@ -14913,6 +14913,18 @@ function _aidInjectTachriqCard(evt) {
 function _aidOpenFromCard(evt) {
   // Build the full immersive Aid view, then switch to Takbîrât tab
   _aidTakeoverSanctuaire(evt);
+  // Inject close button (Tachrîq only — not day 1 full takeover)
+  var immersive = document.getElementById('aid-immersive');
+  if (immersive && !immersive.querySelector('.aid-close-card')) {
+    var btn = document.createElement('button');
+    btn.className = 'aid-close-card';
+    btn.setAttribute('aria-label', 'Retour');
+    btn.style.cssText = 'position:absolute;top:14px;left:16px;z-index:10;background:rgba(200,168,74,0.12);border:1px solid rgba(200,168,74,0.3);border-radius:10px;padding:6px 14px;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:13px;cursor:pointer;display:flex;align-items:center;gap:6px;';
+    btn.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#C8A84A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>Retour';
+    btn.onclick = function() { _aidRestoreSanctuaire(); };
+    immersive.style.position = 'relative';
+    immersive.insertBefore(btn, immersive.firstChild);
+  }
   // Switch to takbirat tab if it exists
   setTimeout(function() {
     if (typeof _aidSwitchTab === 'function') _aidSwitchTab('takbirat');
