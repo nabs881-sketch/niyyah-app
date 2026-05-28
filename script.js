@@ -11812,9 +11812,11 @@ function openNiyyahMenu() {
   backdrop.onclick = function(e) { if (e.target === backdrop) closeNiyyahMenu(); };
   backdrop.innerHTML = '<div class="niyyah-menu-panel">'
     + '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;"><div style="font-family:var(--serif);font-size:20px;color:#C8A84A;">Niyyah</div><button onclick="closeNiyyahMenu()" aria-label="Fermer le menu" style="background:none;border:none;color:var(--t3);font-size:22px;cursor:pointer;min-width:44px;min-height:44px;">\u2715</button></div>'
+    /* Langue masquée pour beta FR — réactiver quand EN/AR prêts
     + '<div class="niyyah-menu-section">Langue</div>'
     + '<div class="niyyah-menu-item" onclick="v2SetLanguage(\'fr\');closeNiyyahMenu()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>' + (V2_LANG === 'fr' ? '<strong>Fran\u00e7ais</strong>' : 'Fran\u00e7ais') + '</div>'
     + '<div class="niyyah-menu-item" onclick="v2SetLanguage(\'en\');closeNiyyahMenu()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>' + (V2_LANG === 'en' ? '<strong>English</strong>' : 'English') + '</div>'
+    */
     + '<div class="niyyah-menu-section">R\u00e9glages</div>'
     + '<div class="niyyah-menu-item" onclick="closeNiyyahMenu();v2OpenSettings()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>Param\u00e8tres</div>'
     + '<div class="niyyah-menu-item" onclick="closeNiyyahMenu();niyyahExportData()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Exporter</div>'
@@ -11884,20 +11886,9 @@ function v2OpenSettings() {
       <div style="width:38px;height:3px;background:rgba(255,255,255,0.1);border-radius:2px;margin:0 auto 22px;"></div>
       <div style="font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:#D4AF37;text-align:center;margin-bottom:22px;">${T.settings_title}</div>
 
-      <!-- LANGUE -->
-      <div style="margin-bottom:14px;">
-        <div style="font-size:12px;letter-spacing:0.28em;color:rgba(212,175,55,0.65);text-transform:uppercase;font-family:'Cormorant Garamond',serif;margin-bottom:10px;text-align:center;">${T.settings_lang}</div>
-        <div style="display:flex;gap:8px;justify-content:center;">
-          <button id="v2-lang-fr" onclick="v2SetLanguage('fr')"
-            style="padding:9px 20px;border-radius:100px;border:1px solid ${V2_LANG==='fr'?'rgba(212,175,55,0.5)':'rgba(255,255,255,0.1)'};background:${V2_LANG==='fr'?'rgba(212,175,55,0.1)':'none'};color:${V2_LANG==='fr'?'#D4AF37':'rgba(240,234,214,0.5)'};font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:0.15em;cursor:pointer;transition:all 0.2s;">
-            FR
-          </button>
-          <button id="v2-lang-en" onclick="v2SetLanguage('en')"
-            style="padding:9px 20px;border-radius:100px;border:1px solid ${V2_LANG==='en'?'rgba(212,175,55,0.5)':'rgba(255,255,255,0.1)'};background:${V2_LANG==='en'?'rgba(212,175,55,0.1)':'none'};color:${V2_LANG==='en'?'#D4AF37':'rgba(240,234,214,0.5)'};font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:0.15em;cursor:pointer;transition:all 0.2s;">
-            EN
-          </button>
-        </div>
-      </div>
+      ${''}
+      ${/* LANGUE masquée pour beta FR — réactiver quand EN/AR prêts */ ''}
+
 
       <div style="background:#1a1a1a; border-radius:14px; padding:16px; margin-bottom:${_cheminInfo ? '8' : '16'}px; cursor:pointer;" onclick="openOrientationPicker()">
         <div style="font-size:11px; letter-spacing:2px; color:#C8A84A; opacity:0.7; text-transform:uppercase; margin-bottom:8px;">${t('settings_orientation_title')}</div>
