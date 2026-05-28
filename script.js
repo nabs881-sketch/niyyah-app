@@ -12833,18 +12833,21 @@ function openWaqtModal() {
   if (!modal) return;
   var arName = _WAQT_AR_NAMES[priere] || '';
   var actionEl = document.getElementById('waqt-action-text');
+  // Banner image par prière
+  var banner = document.getElementById('waqt-banner');
+  if (banner) banner.style.backgroundImage = 'url(assets/moments/' + priere + '.webp)';
 
   // Enriched render for story items (DHUHR-LANGUE, DHUHR-TRANSACTION, etc.)
   var story = (pool && pool[idx] && pool[idx]._story) ? pool[idx]._story : null;
   if (story && story.morale) {
     var html = '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:28px;color:#C8A84A;direction:rtl;margin-bottom:16px;">' + arName + '</div>';
     if (story.titre) html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:700;color:#C8A84A;letter-spacing:1px;margin-bottom:12px;">' + story.titre.toUpperCase() + '</div>';
-    html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:rgba(240,234,214,0.9);line-height:1.8;max-width:340px;max-height:45vh;overflow-y:auto;padding-right:4px;margin-bottom:16px;">' + (story.texte || '') + '</div>';
-    html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-weight:700;color:rgba(240,234,214,0.95);line-height:1.6;margin-bottom:12px;">' + story.morale + '</div>';
+    html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#e9ddc7;line-height:1.75;max-width:340px;margin-bottom:16px;">' + (story.texte || '') + '</div>';
+    html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-weight:700;color:#e9ddc7;line-height:1.6;margin-bottom:12px;">' + story.morale + '</div>';
     if (story.source) html += '<div style="font-family:\'Inter\',sans-serif;font-size:11px;color:rgba(200,168,75,0.4);line-height:1.4;">' + story.source + '</div>';
     actionEl.innerHTML = html;
   } else {
-    actionEl.innerHTML = '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:28px;color:#C8A84A;direction:rtl;margin-bottom:20px;">' + arName + '</div>' + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:#E5E0DC;line-height:1.7;max-width:320px;">' + txt + '</div>';
+    actionEl.innerHTML = '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:28px;color:#C8A84A;direction:rtl;margin-bottom:20px;">' + arName + '</div>' + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:#e9ddc7;line-height:1.75;max-width:340px;">' + txt + '</div>';
   }
   modal.style.display = 'flex';
   document.body.classList.add('in-waqt-modal');
