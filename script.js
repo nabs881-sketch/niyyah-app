@@ -14896,11 +14896,14 @@ function _aidInjectTachriqCard(evt) {
   var card = document.createElement('div');
   card.id = 'aid-tachriq-card';
   card.onclick = function() { _aidOpenFromCard(evt); };
-  card.style.cssText = 'width:100%;box-sizing:border-box;margin:0 auto 12px;padding:22px 20px;border-radius:14px;border:1px solid rgba(200,168,74,0.5);background:linear-gradient(135deg,#F5E9D0 0%,#EBD9B0 50%,#E0CFA0 100%);cursor:pointer;text-align:center;box-shadow:0 0 28px rgba(200,168,74,0.18),0 2px 8px rgba(0,0,0,0.15);';
+  card.style.cssText = 'width:100%;box-sizing:border-box;margin:0 auto 12px;padding:28px 20px;border-radius:14px;border:1px solid rgba(200,168,74,0.45);background:url(assets/tachriq-bg.webp) center/cover no-repeat,#1a1610;cursor:pointer;text-align:center;box-shadow:0 0 28px rgba(200,168,74,0.18),0 2px 8px rgba(0,0,0,0.3);overflow:hidden;position:relative;';
   card.innerHTML =
-    '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:28px;color:#5C4A1E;margin-bottom:8px;">\u0639\u064A\u062F \u0645\u0628\u0627\u0631\u0643</div>' +
-    '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;color:#4A3B18;font-weight:500;margin-bottom:8px;letter-spacing:0.3px;">' + (bannerText || ('A\u00efd al-Adha \u00b7 Jour ' + evt.dayNum + '/4')) + '</div>' +
-    '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;color:#6B5520;letter-spacing:0.4px;">Les takb\u00eer\u00e2t continuent \u00b7 Tap pour ouvrir \u2726</div>';
+    '<div style="position:absolute;inset:0;background:rgba(15,12,8,0.45);border-radius:14px;"></div>' +
+    '<div style="position:relative;z-index:1;">' +
+    '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:28px;color:#C8A84A;margin-bottom:8px;text-shadow:0 1px 6px rgba(0,0,0,0.5);">\u0639\u064A\u062F \u0645\u0628\u0627\u0631\u0643</div>' +
+    '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;color:#E5DCC8;font-weight:400;margin-bottom:8px;letter-spacing:0.3px;text-shadow:0 1px 4px rgba(0,0,0,0.4);">' + (bannerText || ('A\u00efd al-Adha \u00b7 Jour ' + evt.dayNum + '/4')) + '</div>' +
+    '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;color:#C8A84A;letter-spacing:0.4px;">Les takb\u00eer\u00e2t continuent \u00b7 Tap pour ouvrir \u2726</div>' +
+    '</div>';
   // Insert inside the centered wrapper, just above .quick-actions-v2
   var quickGrid = sanct.querySelector('.quick-actions-v2');
   if (quickGrid && quickGrid.parentNode) {

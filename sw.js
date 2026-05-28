@@ -1,4 +1,4 @@
-const VERSION = 'niyyah-v1563';
+const VERSION = 'niyyah-v1564';
 const CORE = [
   './index.html',
   './script.min.js',
@@ -41,6 +41,7 @@ const CORE = [
   './assets/moments/asr.webp',
   './assets/moments/maghrib.webp',
   './assets/moments/isha.webp',
+  './assets/tachriq-bg.webp',
 ];
 const FONTS_CACHE = 'niyyah-fonts-v1';
 
