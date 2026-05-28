@@ -1,0 +1,693 @@
+{
+  "_meta": {
+    "porte": "colere",
+    "cycle": 1,
+    "version": "1.0.0",
+    "date": "2026-05-29",
+    "description": "Contenu structuré pour remplacer _cureJourRenderers.colere_1 à _7 dans script.js. Architecture basée sur les 6 stations ghazâliennes du Livre 38 de l'Ihyâ' + 1 jour de bilan/tajallî. Sources vérifiées par triangulation IA (Claude + Gemini + GPT)."
+  },
+
+  "_transversal": {
+    "fil_rouge_bas": "Quel mensonge ton nafs te souffle aujourd'hui ?",
+    "fil_rouge_lexique_note": "Lexique 'mensonge / souffle' = cohérence avec sourate 114 (al-waswâs al-khannâs). Présent J1 à J6. Récupéré dans la Q5 du J6. Absent au J7.",
+    "phrase_pivot": "Tu n'es pas chargé de devenir impeccable. Tu es chargé de revenir vers Allah quand tu tombes.",
+    "phrase_pivot_emplacement": "Affichée au verrou final étape 3 du J3."
+  },
+
+  "jours": [
+
+    {
+      "id": "colere_1",
+      "jour": 1,
+      "station": "musharata",
+      "titre": "Le pacte du matin",
+
+      "texte_ouverture": {
+        "paragraphes": [
+          "Chaque matin, Ghazâlî enseigne au croyant de s'asseoir un instant avec son âme. Il lui parle. Il lui pose une condition pour la journée. « Aujourd'hui, voilà ce que je te demande. » Cette parole adressée au nafs s'appelle la musharata : le pacte.",
+          "Le Prophète ﷺ disait : « Toutes les œuvres dépendent des intentions. » (Bukhârî, Muslim) La musharata est la mise en pratique de ce hadith : tu prends ton intention en main, tu la nommes, tu la confies à ton âme à voix haute.",
+          "Aujourd'hui, tu commences une cure de 7 jours sur la porte de la colère. Le J1 te demande une seule chose. Vraiment une seule."
+        ],
+        "sources": [
+          { "type": "hadith", "ref": "Bukhârî 1, Muslim 1907", "rapporteur": "'Umar ibn al-Khattâb", "grade": "sahîh" },
+          { "type": "ouvrage", "ref": "Ghazâlî, Ihyâ' 'Ulûm ad-Dîn, Livre 38, station 1 (musharata)" }
+        ]
+      },
+
+      "travaux": [
+        {
+          "id": "j1_pacte",
+          "type": "champ_texte_avec_amorce",
+          "intro": "Maintenant, prends un instant. Pose ta main sur ton cœur. Adresse-toi à ton âme, à voix haute. Complète la phrase :",
+          "amorce": "Ô mon âme, aujourd'hui je te demande une chose, une seule : ___",
+          "exemples": [
+            "Pas \"être patient\". Plutôt : \"ne pas hausser la voix avec X\".",
+            "Pas \"moins m'énerver\". Plutôt : \"respirer trois fois avant de répondre quand quelqu'un me coupe la parole\"."
+          ],
+          "consigne_format": "Une situation concrète. Une réponse concrète.",
+          "champ": { "placeholder": "Ô mon âme, aujourd'hui je te demande une chose, une seule : ___", "max_chars": 150, "optionnel": false },
+          "sous_texte_gris": "Tu poses un engagement, pas un serment. Si tu trébuches, reviens.",
+          "stockage_cle": "cure_colere_j1_pacte"
+        }
+      ],
+
+      "fil_rouge_bas": true,
+
+      "duaa_cloture": {
+        "arabe": "اللَّهُمَّ أَعِنِّي عَلَىٰ ذِكْرِكَ وَشُكْرِكَ وَحُسْنِ عِبَادَتِكَ",
+        "translitteration": "Allâhumma a'innî 'alâ dhikrika wa shukrika wa husni 'ibâdatik.",
+        "traduction": "Ô Allah, aide-moi à T'évoquer, à Te remercier, et à T'adorer de la meilleure manière.",
+        "source": "Abû Dâwûd 1522, Nasâ'î 1303 — sahîh. Recommandé par le Prophète ﷺ à Mu'âdh ibn Jabal."
+      }
+    },
+
+    {
+      "id": "colere_2",
+      "jour": 2,
+      "station": "muraqaba",
+      "titre": "La veille du cœur",
+
+      "texte_ouverture": {
+        "paragraphes": [
+          "Hier, tu as posé un pacte avec ton âme. Aujourd'hui, tu vas le tenir — et pour le tenir, il te faut veiller.",
+          "Veiller, c'est savoir qu'Allah te voit. Le Coran dit : « N'est-Il pas conscient, Lui qui a créé, le Subtil, le Bien-Informé ? » (Mulk, 14). Et le Prophète ﷺ a défini cette veille en un mot : l'ihsân. Quand Jibrîl lui a demandé ce qu'était l'ihsân, il a répondu : « C'est adorer Allah comme si tu Le voyais ; si tu ne Le vois pas, Lui te voit. » (Bukhârî, Muslim)",
+          "Cette veille s'appelle la murâqaba.",
+          "Ghazâlî conseille au débutant de ne pas chercher à veiller sur tout d'un coup. Il dit : concentre-toi d'abord sur les moments de danger. Les autres viendront."
+        ],
+        "sources": [
+          { "type": "coran", "ref": "al-Mulk 14" },
+          { "type": "hadith", "ref": "Bukhârî 50, Muslim 8", "rapporteur": "'Umar ibn al-Khattâb", "grade": "sahîh" },
+          { "type": "ouvrage", "ref": "Ghazâlî, Ihyâ' Livre 38 — mawâdi' al-khatar" }
+        ]
+      },
+
+      "travaux": [
+        {
+          "id": "j2_point_bascule",
+          "type": "champ_texte_avec_option",
+          "titre": "Le point de bascule",
+          "intro": "Aujourd'hui, ta porte risque de s'ouvrir à un moment précis. Lequel ? Regarde ta journée à venir. Identifie un moment, une situation, une personne où tu sais que la colère peut monter. Pas trois, pas deux. Un.",
+          "champ": { "placeholder": "Aujourd'hui, ma porte risque de s'ouvrir surtout ___", "max_chars": 140, "optionnel": false },
+          "sous_texte_gris": "Tu n'évites pas ce moment. Tu te prépares à y être présent.",
+          "option_opt_in": { "label": "M'envoyer un rappel discret à ce moment", "default": false, "stockage_cle": "cure_colere_j2_notif" },
+          "stockage_cle": "cure_colere_j2_bascule"
+        },
+        {
+          "id": "j2_phrase_ancre",
+          "type": "choix_phrase_defaut_ou_personnalisee",
+          "titre": "La phrase-ancre",
+          "intro": "Quand la porte commencera à s'ouvrir, une phrase peut te ramener. Garde celle-ci, ou écris la tienne :",
+          "phrase_defaut": "Allah me voit. Je n'ai rien à prouver.",
+          "bouton_defaut": "Garder cette phrase",
+          "champ_alternatif": { "placeholder": "Écrire la mienne", "max_chars": 120 },
+          "sous_texte_gris": "Le shaytân souffle (waswasa) — sourate 114. Une phrase claire couvre le soufflement.",
+          "stockage_cle": "cure_colere_j2_ancre"
+        }
+      ],
+
+      "fil_rouge_bas": true,
+
+      "duaa_cloture": {
+        "arabe": "يَا حَيُّ يَا قَيُّومُ، بِرَحْمَتِكَ أَسْتَغِيثُ، أَصْلِحْ لِي شَأْنِي كُلَّهُ، وَلَا تَكِلْنِي إِلَىٰ نَفْسِي طَرْفَةَ عَيْنٍ",
+        "translitteration": "Yâ Hayyu yâ Qayyûm, bi-rahmatika astaghîth, aslih lî sha'nî kullah, wa lâ takilnî ilâ nafsî tarfata 'ayn.",
+        "traduction": "Ô Vivant, ô Subsistant, par Ta miséricorde j'implore secours. Rectifie pour moi toute mon affaire, et ne me confie pas à mon âme le clin d'un œil.",
+        "source": "Nasâ'î al-Kubrâ 10330 ; al-Hâkim, Mustadrak 2000 — hasan/sahîh. Rapporté par Anas ibn Mâlik."
+      }
+    },
+
+    {
+      "id": "colere_3",
+      "jour": 3,
+      "station": "muhasaba",
+      "titre": "Demander des comptes",
+
+      "note_therapeutique": "Jour le plus délicat thérapeutiquement. Verrou non-skippable obligatoire. Pas d'historique consultable.",
+
+      "texte_ouverture": {
+        "paragraphes": [
+          "Trois jours que tu as posé un pacte et que tu veilles. Ce soir, tu t'assieds avec ton âme pour lui demander des comptes.",
+          "'Umar ibn al-Khattâb (raḍiya Allâhu 'anhu) disait : « Demandez-vous des comptes avant qu'on ne vous en demande. Pesez vos œuvres avant qu'elles ne soient pesées. » (Athar attribué à 'Umar — notamment chez Ibn Abî Shayba dans al-Musannaf. Parole reçue dans la tradition de la tazkiya et citée par al-Ghazâlî dans l'Ihyâ'.)",
+          "C'est la muhâsaba.",
+          "Mais attention : la muhâsaba sans la rahma ne corrige pas — elle écrase. Ghazâlî met en garde : un croyant qui s'examine sans miséricorde glisse vers le qunût — le désespoir de la miséricorde d'Allah — qui est lui-même un péché.",
+          "Donc tu regardes, et tu reviens. Tu nommes, et tu remets. Ce que tu vas écrire ici, tu le confies à Allah. Et ce qu'Allah accueille, Il l'efface."
+        ],
+        "sources": [
+          { "type": "athar", "ref": "Ibn Abî Shayba, al-Musannaf", "rapporteur": "'Umar ibn al-Khattâb" },
+          { "type": "ouvrage", "ref": "Ghazâlî, Ihyâ' Livre 38 — concept du qunût" }
+        ]
+      },
+
+      "bifurcation_entree": {
+        "type": "selection_avec_categorie",
+        "champ_libre": { "placeholder": "Aujourd'hui, où ta porte s'est-elle ouverte ?", "max_chars": 200, "optionnel": false, "stockage_cle": "cure_colere_j3_moment", "effacement_nocturne": true },
+        "selecteur_categorie": {
+          "intro": "Sous le champ libre, coche la catégorie de la personne concernée (optionnel) :",
+          "options": [
+            { "id": "famille_proche", "label": "Famille proche" },
+            { "id": "voisin_collegue", "label": "Voisin ou collègue" },
+            { "id": "croise_brievement", "label": "Quelqu'un croisé brièvement" },
+            { "id": "soi_ou_personne", "label": "Personne en particulier / Moi-même" }
+          ],
+          "stockage_cle": "cure_colere_j3_categorie",
+          "optionnel": true
+        },
+        "bouton_rien_a_signaler": { "label": "Rien à signaler", "branche": "gratitude" },
+        "sous_texte_gris_champ": "Ce que tu écris reste entre toi et Allah. Il sera effacé cette nuit. C'est voulu."
+      },
+
+      "travaux": [
+        {
+          "id": "j3_voix_haute",
+          "type": "invitation_sans_champ",
+          "titre": "La parole",
+          "texte": "Maintenant, dis-le à voix haute. Tu l'as écrit. Maintenant, dis-le. À voix haute, seul. Sans détailler — la phrase suffit.",
+          "sous_texte_gris": "La rumination est silencieuse. La parole sort.",
+          "bouton_continuer": "Continuer"
+        }
+      ],
+
+      "verrou_final": {
+        "non_skippable": true,
+        "etapes": [
+          {
+            "id": "j3_verrou_1",
+            "type": "tawba_compteur",
+            "titre": "Tawba verbale × 3",
+            "intro": "Maintenant, à voix haute, trois fois.",
+            "arabe": "أَسْتَغْفِرُ اللَّهَ وَأَتُوبُ إِلَيْه",
+            "translitteration": "Astaghfirullâh wa atûbu ilayh.",
+            "traduction": "J'implore le pardon d'Allah et reviens à Lui.",
+            "compteur": { "total": 3, "type": "cercles_a_remplir" },
+            "source": "Sahîh al-Bukhârî 6307 — sahîh, d'après Abû Hurayra. Le Prophète ﷺ disait l'istighfâr plus de 70 fois par jour."
+          },
+          {
+            "id": "j3_verrou_2",
+            "type": "champ_action_demain",
+            "titre": "L'action concrète pour demain",
+            "intro": "Demain, quand cette situation se présentera à nouveau, que feras-tu différemment ? UNE action. Concrète. Faisable.",
+            "champ": { "placeholder": "Demain, quand ___, je ferai ___ au lieu de ___", "max_chars": 150 },
+            "sous_texte_gris": "Tu prépares le J5. Ce que tu écris ici sera ton combat de demain.",
+            "stockage_cle": "cure_colere_j3_action_demain"
+          },
+          {
+            "id": "j3_verrou_3",
+            "type": "phrase_pivot_a_valider",
+            "phrase": "Tu n'es pas chargé de devenir impeccable. Tu es chargé de revenir vers Allah quand tu tombes.",
+            "bouton": "Amîn",
+            "ferme_jour": true
+          }
+        ]
+      },
+
+      "branche_gratitude": {
+        "declenchee_par": "bouton_rien_a_signaler",
+        "texte": [
+          "Alhamdulillâh.",
+          "Une journée tenue n'est pas un mérite de ton âme. C'est un don d'Allah qui a écarté la tentation, ou voilé le déclencheur, ou rendu ton cœur lourd au bon moment.",
+          "Pas de tawba forcée ce soir. Juste un remerciement."
+        ],
+        "formule": {
+          "arabe": "الْحَمْدُ لِلَّهِ الَّذِي بِنِعْمَتِهِ تَتِمُّ الصَّالِحَات",
+          "translitteration": "Alhamdulillâhi alladhî bi-ni'matihi tatimmu-s-sâlihât.",
+          "traduction": "Louange à Allah par la grâce de Qui s'accomplissent les bonnes œuvres.",
+          "source": "Ibn Mâjah 3803 — sahîh selon al-Albânî. Rapporté par 'Â'isha."
+        },
+        "bouton": "Amîn"
+      },
+
+      "fil_rouge_bas": true,
+      "duaa_cloture": null,
+      "duaa_cloture_note": "Aucun du'â séparé — le verrou final EST la clôture. Choix structurel volontaire."
+    },
+
+    {
+      "id": "colere_4",
+      "jour": 4,
+      "station": "muaqaba",
+      "titre": "Payer le prix",
+
+      "note_therapeutique": "Trois pathologies à éviter : waswâs, masochisme déguisé, orgueil inversé. Plafonds serrés sur montants.",
+
+      "texte_ouverture": {
+        "paragraphes": [
+          "Hier, tu as nommé un manquement. Aujourd'hui, tu payes le prix.",
+          "Pas pour te punir. Pour apprendre.",
+          "Quand 'Umar ibn al-Khattâb (raḍiya Allâhu 'anhu) ratait une prière en groupe, il donnait son jardin en sadaqa. Quand son fils Ibn 'Umar ratait al-'Asr en groupe, il libérait un esclave. (Rapporté par al-Bayhaqî dans as-Sunan al-Kubrâ.)",
+          "Ce n'était pas de la dureté envers eux-mêmes. C'était une école pour l'âme. L'âme apprend qu'il y a un coût — alors elle hésite la prochaine fois.",
+          "C'est la mu'âqaba.",
+          "Mais attention : la mu'âqaba a une frontière, et le Prophète ﷺ l'a posée nettement : « Pas de monachisme en Islam. » (Musnad Ahmad 14122 — édition Al-Risâla. Chaîne discutée. Sens confirmé par Coran 57:27 et hadith de Saad ibn Abî Waqqâs dans les Sahîhayn.) Tu ne te prives pas. Tu ne te blesses pas. Tu paies, modestement — et le prix sert quelqu'un d'autre, ou élève ton adoration. C'est tout."
+        ],
+        "sources": [
+          { "type": "athar", "ref": "al-Bayhaqî, as-Sunan al-Kubrâ", "concerne": "pratiques de 'Umar et Ibn 'Umar" },
+          { "type": "hadith", "ref": "Musnad Ahmad 14122 (éd. Al-Risâla)", "grade": "chaîne discutée, sens sahîh", "confirme_par": "Coran 57:27 + hadith Saad ibn Abî Waqqâs dans Sahîhayn" }
+        ]
+      },
+
+      "bifurcation_entree": {
+        "type": "lecture_silencieuse_j3",
+        "regle": "Lire la valeur de la clé cure_colere_j3_moment. Si non-vide → Branche A. Si bouton_rien_a_signaler coché au J3 → Branche B."
+      },
+
+      "branche_A": {
+        "condition": "chute nommée au J3",
+        "travaux": [
+          {
+            "id": "j4_A_sadaqa",
+            "type": "actions_tirees_au_sort_plus_alternative",
+            "titre": "La sadaqa-compensation",
+            "intro": "Tu vas faire une bonne action aujourd'hui. Elle paie le prix d'hier. Voici trois propositions de service rendu. Une te conviendra peut-être plus que les autres.",
+            "actions_tirees": { "nombre": 3, "source": "_banque_actions", "algorithme": "voir_algorithme_tirage" },
+            "alternative": {
+              "intro": "Ou, si tu préfères, fais une sadaqa :",
+              "montants": [1, 2, 5],
+              "unite": "€",
+              "champ_libre_bloque": true
+            },
+            "sous_texte_gris": "Aujourd'hui, petit et réel. Un jour, plus grand et toujours réel."
+          },
+          {
+            "id": "j4_A_surplus",
+            "type": "choix_unique_radio",
+            "titre": "Le surplus d'adoration",
+            "intro": "Un seul des trois. Pas les trois ensemble.",
+            "options": [
+              { "id": "rakaa", "label": "2 rak'a de prière surérogatoire" },
+              { "id": "istighfar_100", "label": "100 Astaghfirullâh" },
+              { "id": "page_coran", "label": "1 page de Coran" }
+            ],
+            "sous_texte_gris": "L'acte le plus aimé d'Allah est le plus constant, même s'il est petit. (Bukhârî, Muslim — d'après 'Â'isha)",
+            "stockage_cle": "cure_colere_j4_surplus"
+          }
+        ]
+      },
+
+      "branche_B": {
+        "condition": "rien à signaler au J3",
+        "intro": "Alhamdulillâh. Pas de chute identifiable hier ? Ce n'est pas un mérite de ton âme. C'est ce qu'Allah t'a donné de tenir. Ce qui ne se corrige pas se remercie.",
+        "titre": "Aujourd'hui, choisis un acte de gratitude :",
+        "options": [
+          { "id": "sadaqa_shukr", "label": "Une sadaqa de shukr (1€ / 2€ / 5€)", "montants": [1, 2, 5] },
+          { "id": "rakaa_shukr", "label": "2 rak'a de shukr" },
+          { "id": "alhamdulillah_100", "label": "100 Alhamdulillâh" }
+        ],
+        "sous_texte_gris": "Le shukr est une œuvre, pas une politesse.",
+        "stockage_cle": "cure_colere_j4_shukr"
+      },
+
+      "bouton_sortie": {
+        "label": "Je passe la mu'âqaba aujourd'hui",
+        "message": "Sage. La mu'âqaba forcée n'est pas la mu'âqaba. Reviens demain au cycle."
+      },
+
+      "fil_rouge_bas": true,
+
+      "duaa_cloture": {
+        "arabe": "اللَّهُمَّ إِنِّي أَسْأَلُكَ عَمَلًا مُتَقَبَّلًا، وَرِزْقًا طَيِّبًا، وَعِلْمًا نَافِعًا",
+        "translitteration": "Allâhumma innî as'aluka 'amalan mutaqabbalan, wa rizqan tayyiban, wa 'ilman nâfi'an.",
+        "traduction": "Ô Allah, je Te demande une œuvre acceptée, une subsistance pure, et une science utile.",
+        "source": "Ibn Mâjah 925 — sahîh selon al-Albânî. Rapporté par Umm Salama. Du'â du Prophète ﷺ récité après la prière du Fajr."
+      }
+    },
+
+    {
+      "id": "colere_5",
+      "jour": 5,
+      "station": "mujahada",
+      "titre": "Le grand combat",
+
+      "texte_ouverture": {
+        "paragraphes": [
+          "Quatre jours que tu travailles. Aujourd'hui, tu passes à l'attaque.",
+          "Allah dit dans Son Livre : « Et ceux qui combattent (jâhadû) pour Nous, Nous les guiderons certes sur Nos sentiers. » (al-'Ankabût, 69). Ce combat porte un nom en arabe : la mujâhada. Et selon une parole attribuée au Prophète ﷺ, c'est le grand jihâd — le combat contre le nafs — qui est plus difficile et plus haut en mérite que le combat extérieur.",
+          "Ghazâlî pose le principe : on ne corrige pas un vice par son absence, on le corrige par son contraire pratiqué. L'avare ne devient pas généreux en cessant d'être avare. Il le devient en se forçant à donner.",
+          "Aujourd'hui, tu fais le contraire de ce que ton nafs réclame. Une fois. Avec une personne."
+        ],
+        "sources": [
+          { "type": "coran", "ref": "al-'Ankabût 69" },
+          { "type": "hadith", "ref": "al-Bayhaqî, az-Zuhd al-Kabîr — chaîne discutée", "ancrage": "Concept confirmé par Tirmidhî 1671" },
+          { "type": "ouvrage", "ref": "Ghazâlî, Ihyâ' Livre 38 — principe du contraire pratiqué" }
+        ]
+      },
+
+      "travaux": [
+        {
+          "id": "j5_acte_contraire",
+          "type": "double_champ",
+          "titre": "L'acte-contraire ciblé",
+          "intro": "Une situation. Une réponse inverse. Aujourd'hui, ton nafs va te réclamer la colère à un moment précis. Décide maintenant comment tu lui répondras.",
+          "champs": [
+            { "placeholder": "Situation où ma porte risque de s'ouvrir : ___", "max_chars": 120 },
+            { "placeholder": "J'y répondrai par : ___", "max_chars": 120 }
+          ],
+          "placeholder_explicite": "UNE situation. Pas une liste. La suivante viendra demain.",
+          "sous_texte_gris": "Tu changes la manière, pas le droit. Le Prophète ﷺ aussi exprimait son désaccord — avec ses mots, jamais avec sa voix haussée.",
+          "stockage_cle": "cure_colere_j5_acte"
+        },
+        {
+          "id": "j5_douceur_gratuite",
+          "type": "double_champ",
+          "titre": "La douceur gratuite",
+          "intro": "La personne envers qui ta porte s'ouvre le plus souvent, elle a un nom. Écris-le. Puis pose pour elle un acte de douceur — sans attendre que la situation se présente. Avant le déclencheur. Aujourd'hui.",
+          "champs": [
+            { "placeholder": "Cette personne : ___", "max_chars": 80 },
+            { "placeholder": "Acte de douceur gratuite pour elle aujourd'hui : ___", "max_chars": 150 }
+          ],
+          "sous_texte_gris": "Tu offres pour Allah. Pas pour récolter une réponse.",
+          "stockage_cle": "cure_colere_j5_douceur"
+        }
+      ],
+
+      "bouton_sortie": {
+        "label": "Je passe la mujâhada aujourd'hui",
+        "message": "Le combat reprend demain au J6, in shâ' Allah. Aucune dette n'est inscrite."
+      },
+
+      "fil_rouge_bas": true,
+
+      "duaa_cloture": {
+        "arabe": "اللَّهُمَّ كَمَا حَسَّنْتَ خَلْقِي فَحَسِّنْ خُلُقِي",
+        "translitteration": "Allâhumma kamâ hassanta khalqî, fa-hassin khuluqî.",
+        "traduction": "Ô Allah, comme Tu as embelli ma création, embellis aussi mon caractère.",
+        "source": "Musnad Ahmad 3823 — sahîh. Rapporté par 'Abdullâh ibn Mas'ûd. Le Prophète ﷺ demandait à Allah d'embellir son caractère (khuluq) comme Il avait embelli son apparence (khalq)."
+      }
+    },
+
+    {
+      "id": "colere_6",
+      "jour": 6,
+      "station": "muataba",
+      "titre": "Parler à son âme",
+
+      "note_therapeutique": "Deuxième jour à risque après J3. Surcouche rahma d'entrée obligatoire. Verrou final non-skippable. Détection signal faible si >15 min sur la page.",
+
+      "surcouche_entree_non_skippable": {
+        "texte": [
+          "Avant de commencer.",
+          "Aujourd'hui, tu vas parler à ton âme avec franchise. Pas avec dureté.",
+          "Le Coran évoque l'âme qui se blâme — an-nafs al-lawwâma (al-Qiyâma, 2). C'est une station de croissance, pas un procès. On parle à son âme comme on parlerait à un enfant qu'on aime mais qu'on doit reprendre :",
+          "Ferme. Jamais cruel."
+        ],
+        "bouton": "J'ai lu",
+        "source": { "type": "coran", "ref": "al-Qiyâma 2" }
+      },
+
+      "texte_ouverture": {
+        "paragraphes": [
+          "Cinq jours que tu travailles. Tu as posé un pacte, tu as veillé, tu t'es examiné, tu as payé, tu as combattu. Aujourd'hui, tu t'arrêtes. Et tu parles à ton âme.",
+          "Hassan al-Basrî (raḥimahu Allâh) disait : « Le croyant est le critique de son âme. Il s'arrête, il dit : qu'est-ce que je voulais par cela ? Qu'est-ce que j'ai cherché ? Par Allah, je ne le referai pas. »",
+          "C'est la mu'âtaba.",
+          "Elle est différente de la muhâsaba (J3) : la muhâsaba constate ce qui s'est passé. La mu'âtaba adresse des questions directes au nafs. Elle l'appelle, elle l'interpelle, elle attend qu'il réponde.",
+          "Voici trois questions pour ton âme. Lis-les lentement. Si tu veux répondre par écrit, fais-le. Si tu préfères que ça reste entre toi et Allah, c'est aussi juste."
+        ],
+        "sources": [
+          { "type": "coran", "ref": "al-Qiyâma 2" },
+          { "type": "athar", "ref": "Ahmad, az-Zuhd ; Ibn Abî Shayba, al-Musannaf", "rapporteur": "Hassan al-Basrî" },
+          { "type": "ouvrage", "ref": "Ghazâlî, Ihyâ' Livre 38 — distinction muhâsaba/mu'âtaba" }
+        ]
+      },
+
+      "pool_questions": {
+        "description": "Pool de 6 questions, rotation par cycle. Cycle 1 affiche Q1+Q4+Q5 (les plus structurantes : début / mi-cycle / fil rouge).",
+        "questions": [
+          { "id": "q1", "texte": "Ô mon âme, te souviens-tu de la condition que je t'avais donnée au J1 ? L'as-tu honorée ?" },
+          { "id": "q2", "texte": "Ô mon âme, qu'as-tu fait de la sadaqa ou du service rendu au J4 ? Était-ce pour Allah, ou pour te donner bonne conscience ?" },
+          { "id": "q3", "texte": "Ô mon âme, la personne envers qui ma porte s'ouvre le plus — l'as-tu vraiment regardée hier au J5, ou seulement décidé de la regarder ?" },
+          { "id": "q4", "texte": "Ô mon âme, si je devais rendre compte de ces 5 jours à Allah, qu'aurais-je envie de Lui dire en premier ?" },
+          { "id": "q5", "texte": "Ô mon âme, le mensonge que ton nafs me souffle depuis 5 jours — peux-tu enfin le nommer aujourd'hui ?", "fil_rouge_recupere": true },
+          { "id": "q6", "texte": "Ô mon âme, y a-t-il quelqu'un dont tu portes encore la colère ? Peux-tu, devant Allah, lui pardonner ce soir ?", "ancrage_pardon": "Muslim 2588 — « Allah n'augmente nul serviteur en pardonnant sans l'élever en honneur. »" }
+        ],
+        "cycle_1_selection": ["q1", "q4", "q5"],
+        "champ_par_question": { "max_chars": 100, "optionnel": true },
+        "sous_texte_q5": "C'est la question que tu portes au bas de chaque jour. Aujourd'hui, elle attend une réponse."
+      },
+
+      "outil_miroir_opt_in": {
+        "afficher_apres": "pool_questions",
+        "separateur_visuel": "trait_fin",
+        "texte": [
+          "Si tu te sens prêt — un pas de plus.",
+          "Va devant un miroir. Regarde-toi dans les yeux. Et redis l'une de ces questions à voix haute, à toi-même.",
+          "Une du'â prophétique convient ici :"
+        ],
+        "duaa": {
+          "arabe": "اللَّهُمَّ كَمَا حَسَّنْتَ خَلْقِي فَحَسِّنْ خُلُقِي",
+          "translitteration": "Allâhumma kamâ hassanta khalqî, fa-hassin khuluqî.",
+          "traduction": "Ô Allah, comme Tu as embelli ma création, embellis aussi mon caractère.",
+          "source": "Musnad Ahmad 3823 — sahîh. Rapporté par 'Abdullâh ibn Mas'ûd. Du'â déjà rencontrée au J5."
+        },
+        "sous_texte_gris": "Si tu ne te sens pas prêt pour le miroir, dis simplement la question à voix haute. Ça suffit.",
+        "note_redactionnelle": "Le miroir est ici un support pédagogique. Les versions liant explicitement cette du'â au geste de se regarder dans le miroir comportent des chaînes faibles (da'îf jiddan selon al-Albânî). Pas de validation, l'utilisateur fait ou ne fait pas — Allah voit.",
+        "pas_de_bouton_validation": true
+      },
+
+      "verrou_final": {
+        "non_skippable": true,
+        "etapes": [
+          {
+            "id": "j6_verrou_1",
+            "type": "tawba_compteur",
+            "intro": "À voix haute, une fois.",
+            "arabe": "أَسْتَغْفِرُ اللَّهَ وَأَتُوبُ إِلَيْه",
+            "translitteration": "Astaghfirullâh wa atûbu ilayh.",
+            "traduction": "J'implore le pardon d'Allah et reviens à Lui.",
+            "compteur": { "total": 1, "type": "cercles_a_remplir" },
+            "source": "Sahîh al-Bukhârî 6307 — sahîh, d'après Abû Hurayra.",
+            "note_asymetrie": "1 fois au J6 vs 3 fois au J3 — asymétrie intentionnelle. Au J6 on est au cœur du cycle, l'utilisateur a déjà fait sa muhâsaba complète au J3."
+          },
+          {
+            "id": "j6_verrou_2",
+            "type": "phrase_bascule_a_valider",
+            "phrase": "Ô mon âme, je t'ai parlé durement parce que je veux te ramener. Par Allah, je ne le referai pas. Allah est plus doux avec toi que moi-même. Reviens.",
+            "note": "La résolution « Par Allah, je ne le referai pas » reprend mot pour mot la formule de Hassan al-Basrî citée en texte d'ouverture. La mu'âtaba ghazâlienne ne se ferme pas sur un sentiment de paix, mais sur une résolution active.",
+            "bouton": "Amîn"
+          },
+          {
+            "id": "j6_verrou_3",
+            "type": "verset_de_fermeture",
+            "arabe": "يَا أَيَّتُهَا النَّفْسُ الْمُطْمَئِنَّةُ ارْجِعِي إِلَىٰ رَبِّكِ رَاضِيَةً مَّرْضِيَّةً",
+            "translitteration": "Yâ ayyatuhâ-n-nafsu-l-mutma'inna, irji'î ilâ Rabbiki râdiyatan mardiyya.",
+            "traduction": "Ô âme apaisée, retourne vers ton Seigneur, satisfaite et agréée.",
+            "source": "Coran, sourate al-Fajr, versets 27-28.",
+            "note_pedagogique_gris": "Lawwâma → mutma'inna. C'est le passage de ce jour.",
+            "pas_de_bouton": true,
+            "ferme_jour": "utilisateur_ferme_quand_il_veut"
+          }
+        ]
+      },
+
+      "bouton_sortie": {
+        "label": "Je passe la mu'âtaba aujourd'hui",
+        "disponible_uniquement": "avant_les_questions",
+        "message": "L'âme qu'on force à se réprimander finit par se durcir contre Allah. Repose-toi. Reviens demain au bilan."
+      },
+
+      "detection_signal_faible": {
+        "a_coder_phase_2": true,
+        "declencheur": "> 15 min sur la page",
+        "surcouche": "Tu y as passé du temps. C'est bien que tu prennes ce moment au sérieux. Mais ton âme a aussi besoin d'air. Ferme cet écran maintenant. Ce que tu as fait suffit pour aujourd'hui.",
+        "bouton": "D'accord",
+        "action": "saute_au_verrou_etape_2"
+      },
+
+      "fil_rouge_bas": false,
+      "fil_rouge_recupere_dans": "pool_questions.q5",
+
+      "duaa_cloture": null,
+      "duaa_cloture_note": "Aucun du'â séparé — verset al-Fajr 27-28 EST la clôture. Cohérence avec J3."
+    },
+
+    {
+      "id": "colere_7",
+      "jour": 7,
+      "station": "bilan_tajalli",
+      "titre": "Le don n'a pas de calendrier",
+
+      "note_structurelle": "Dernier jour. Exception : 3 outils au lieu de 2 max les autres jours, car 3 fonctions distinctes (reconnaissance sans audit, attribution corporelle à Allah, continuité ouverte). Le J7 n'est pas une station ghazâlienne classique — ajout pédagogique pour clore le rythme hebdomadaire.",
+
+      "texte_ouverture": {
+        "paragraphes": [
+          "Sept jours. Tu as posé un pacte, tu as veillé, tu t'es examiné, tu as payé, tu as combattu, tu as parlé à ton âme. Aujourd'hui, tu t'arrêtes pour de bon.",
+          "Ghazâlî posait six stations dans l'Ihyâ'. Ce septième jour n'en est pas une. C'est un point d'arrêt pour clore la semaine — pour regarder ce qu'Allah a permis, et pour décider de la suite. Sans cet arrêt, la tazkiya devient un mouvement sans pause. Et l'âme qui ne s'arrête pas ne reçoit pas.",
+          "Mais tu ne te notes pas. Tu ne fais pas ton bilan comme on fait un bilan de fin d'année. Tu regardes simplement ce qu'Allah a permis — et tu remercies.",
+          "Le Prophète ﷺ a dit : « Aucun de vous n'entrera au Paradis par ses œuvres. — Pas même toi, ô Messager d'Allah ? — Pas même moi, sauf qu'Allah me couvre de Sa miséricorde. » (Bukhârî, Muslim)",
+          "Donc ne te félicite pas. Ne te juge pas non plus.",
+          "Ghazâlî appelle tajallî ce qui se dévoile à l'âme après qu'elle a travaillé : non pas un résultat acquis par l'effort, mais un don (hiba) d'Allah. Le tajallî ne se cherche pas. Il se reçoit."
+        ],
+        "sources": [
+          { "type": "hadith", "ref": "Bukhârî 6463, Muslim 2816", "rapporteur": "Abû Hurayra", "grade": "sahîh" },
+          { "type": "ouvrage", "ref": "Ghazâlî, Ihyâ' Livre 36 (al-mahabba) et Livre 38" }
+        ]
+      },
+
+      "travaux": [
+        {
+          "id": "j7_tajalli_nomme",
+          "type": "champ_optionnel_avec_bouton_reporter",
+          "titre": "Le tajallî nommé",
+          "intro": "Une seule question. Tu peux ne pas y répondre.",
+          "question": "Pendant ces 7 jours, qu'est-ce qu'Allah t'a montré que tu ne voyais pas avant ?",
+          "champ": { "max_chars": 150, "optionnel": true, "stockage_cle": "cure_colere_j7_tajalli" },
+          "bouton_reporter": "Plus tard, in shâ' Allah",
+          "sous_texte_gris": "Si rien ne vient, c'est bien aussi. Parfois le tajallî vient plus tard. Le don n'a pas de calendrier."
+        },
+        {
+          "id": "j7_sajda_shukr",
+          "type": "invitation_sajda",
+          "titre": "La sajda de shukr",
+          "separateur_visuel": "trait_fin",
+          "intro": [
+            "Maintenant, prosterne-toi.",
+            "Une sajda. Une seule. Et dans cette sajda, dis :"
+          ],
+          "formule": {
+            "arabe": "الْحَمْدُ لِلَّهِ عَلَىٰ كُلِّ حَالٍ",
+            "translitteration": "Alhamdulillâhi 'alâ kulli hâl.",
+            "traduction": "Louange à Allah en toute situation."
+          },
+          "source": "Sajda de shukr — sunna prophétique attestée (Abû Dâwûd, Tirmidhî, Ibn Mâjah) dans les contextes de joie ou de bonne nouvelle. Formule de louange « Alhamdulillâh 'alâ kulli hâl » — formule prophétique générale.",
+          "alternative_discrete": "Si la sajda n'est pas encore familière pour toi, place simplement ta main droite sur ton cœur et dis la même formule. Allah voit ce qui est dans le cœur, pas la position du corps.",
+          "pas_de_validation": true
+        },
+        {
+          "id": "j7_orientation",
+          "type": "choix_3_options",
+          "titre": "Et maintenant ? Tu choisis.",
+          "separateur_visuel": "trait_fin",
+          "intro": "Trois chemins, tous justes. Aucun n'est meilleur que l'autre. Lis-les calmement.",
+          "options": [
+            {
+              "id": "reprendre",
+              "label": "Reprendre.",
+              "phrase_premiere_personne": "Je sens qu'il y a encore du travail.",
+              "explication_gris": "Un nouveau cycle de 7 jours sur la porte de la colère, avec d'autres questions.",
+              "action_technique": "demarrer_cycle_2_avec_rotation_questions"
+            },
+            {
+              "id": "veiller",
+              "label": "Veiller.",
+              "phrase_premiere_personne": "Je continue à porter ce que j'ai reçu.",
+              "explication_gris": "Une vue brève une fois par semaine, pour ne pas oublier.",
+              "action_technique": "stocker_choix_implementer_plus_tard"
+            },
+            {
+              "id": "laisser_reposer",
+              "label": "Laisser reposer.",
+              "phrase_premiere_personne": "Je reviendrai quand le moment sera juste.",
+              "explication_gris": "Aucune notification, aucune relance. Tu reviens quand tu veux.",
+              "action_technique": "zero_notification_zero_relance"
+            }
+          ],
+          "sous_texte_global_gris": "On ne ferme jamais avec sa colère. On la laisse au repos, et un jour on revient.",
+          "stockage_cle": "cure_colere_j7_orientation"
+        }
+      ],
+
+      "bouton_report": {
+        "label": "Reporter le bilan à demain",
+        "comportement": "sans_culpabilisation_meme_point_demain"
+      },
+
+      "fil_rouge_bas": false,
+      "fil_rouge_recupere_au_j6": true,
+
+      "duaa_cloture": {
+        "arabe": "لَّا إِلَٰهَ إِلَّا أَنتَ سُبْحَانَكَ إِنِّي كُنتُ مِنَ الظَّالِمِينَ",
+        "translitteration": "Lâ ilâha illâ anta, subhânaka innî kuntu mina-z-zâlimîn.",
+        "traduction": "Il n'y a de divinité que Toi. Gloire à Toi. Vraiment, j'ai été parmi les injustes.",
+        "source": "Coran, al-Anbiyâ' 87 — du'â de Yûnus. Promesse coranique universelle d'exaucement pour tout croyant qui la dit (verset 88).",
+        "justification_presence": "Asymétrie volontaire avec J3 et J6 : ceux-ci n'ont pas de du'â de clôture séparé (leur verrou interne est leur clôture). Le J7, lui, en a un, parce que ses 3 travaux ne forment pas un verrou liturgique — et parce qu'il clôt le cycle entier, pas seulement le jour."
+      }
+    }
+
+  ],
+
+  "_banque_actions": {
+    "description": "Banque utilisée au J4 (branche A, Travail 1) et potentiellement réutilisable au J5. Algorithme de tirage raffiné selon la catégorie cochée au J3.",
+
+    "algorithme_tirage": {
+      "regle_base": "Tirer 3 actions au total. Dépriorisation des actions affichées dans les 14 derniers jours (clé cure_colere_actions_recentes).",
+      "filtre_par_categorie_j3": {
+        "famille_proche": { "categorie_principale": "silat_ar_rahim", "nombre_principale": 2, "complement": "liens_silencieux", "nombre_complement": 1 },
+        "voisin_collegue": { "categorie_principale": "voisinage_communaute", "nombre_principale": 2, "complement": "liens_silencieux", "nombre_complement": 1 },
+        "croise_brievement": { "categorie_principale": "quotidien_invisible", "nombre_principale": 2, "complement": "liens_silencieux", "nombre_complement": 1 },
+        "soi_ou_personne": { "type": "tirage_standard_equilibre", "description": "1 action par catégorie (3 catégories sur 4 par rotation)" }
+      },
+      "cas_aucune_categorie_cochee": "tirage_standard_equilibre",
+      "justification_ghazalienne": "La mu'âqaba doit racheter l'acte précis, pas faire une bonne action générique. Le filtre par cible relie la compensation à la chute. Fidèle à 'Umar (jardin pour prière ratée) et Ibn 'Umar (esclave pour 'Asr ratée) — la nature de la compensation correspondait à la nature de la faute."
+    },
+
+    "categories": [
+      {
+        "id": "silat_ar_rahim",
+        "label": "Liens familiaux",
+        "actions": [
+          { "id": "s1", "texte": "Appeler un parent ou un grand-parent juste pour prendre des nouvelles, sans demande à formuler derrière." },
+          { "id": "s2", "texte": "Envoyer un message bienveillant à un frère ou une sœur de sang avec qui tu as eu une tension récente." },
+          { "id": "s3", "texte": "Demander à ton conjoint, à ton père ou à ta mère : « Qu'est-ce que je peux faire pour toi aujourd'hui ? » — et faire ce qui est demandé." },
+          { "id": "s4", "texte": "Rendre visite à un parent âgé, même brièvement, sans téléphone à la main." },
+          { "id": "s5", "texte": "Prendre le temps d'écouter une histoire (de jeunesse, de souvenir) d'un parent ou d'un proche, sans couper, sans regarder l'heure." }
+        ]
+      },
+      {
+        "id": "voisinage_communaute",
+        "label": "Voisinage et communauté",
+        "actions": [
+          { "id": "v1", "texte": "Apporter quelque chose à manger à un voisin, ou simplement frapper et dire salâm." },
+          { "id": "v2", "texte": "Donner une place dans une file d'attente à quelqu'un de pressé ou de fatigué." },
+          { "id": "v3", "texte": "Tenir la porte plus longtemps que d'habitude pour la personne qui suit, et lui sourire en croisant son regard." },
+          { "id": "v4", "texte": "Aider une personne âgée ou chargée à porter ses sacs ou ouvrir une porte qu'elle n'arrive pas à pousser." },
+          { "id": "v5", "texte": "Envoyer un message à un frère ou une sœur de la communauté (mosquée, école, travail) que tu n'as pas vu depuis longtemps." }
+        ]
+      },
+      {
+        "id": "quotidien_invisible",
+        "label": "Quotidien invisible",
+        "actions": [
+          { "id": "q1", "texte": "Remercier explicitement quelqu'un dont tu utilises le travail sans jamais le voir (caissier, livreur, agent d'entretien) — par un mot, un regard, un « barakaAllâhu fîk » sincère." },
+          { "id": "q2", "texte": "Laisser un pourboire plus large que d'habitude à un serveur ou un livreur — sans le dire, sans le compter, sans le mentionner ensuite." },
+          { "id": "q3", "texte": "Tenir la porte d'un ascenseur pour quelqu'un qui arrive, même si ça te fait perdre 30 secondes." },
+          { "id": "q4", "texte": "Aller voir un collègue ou un voisin discret, qu'on ne remarque jamais, et lui adresser un vrai bonjour avec attention." }
+        ]
+      },
+      {
+        "id": "liens_silencieux",
+        "label": "Liens silencieux (entre toi et Allah)",
+        "actions": [
+          { "id": "l1", "texte": "Faire une du'â sincère pour quelqu'un que tu as eu envie de juger récemment, en demandant pour lui ce que tu demanderais pour toi." },
+          { "id": "l2", "texte": "Ramasser un déchet dans la rue ou écarter une gêne du chemin — « Imâtatu al-adhâ 'ani-t-tarîq shu'batun mina-l-îmân » : « Écarter ce qui gêne du chemin est une branche de la foi » (Bukhârî 9, Muslim 35)." },
+          { "id": "l3", "texte": "Envoyer une sadaqa anonyme (en ligne, ou glissée discrètement), de telle façon que personne ne sache que c'est toi." },
+          { "id": "l4", "texte": "Faire le travail du foyer (vaisselle, linge, rangement) qui revient habituellement à quelqu'un d'autre, sans l'annoncer, sans attendre de remerciement." }
+        ]
+      }
+    ]
+  },
+
+  "_cles_localstorage_a_creer": {
+    "description": "Nouvelles clés à créer pour cette refonte. Elles s'ajoutent aux clés existantes de cure_colere — elles ne les remplacent pas.",
+    "cles": [
+      "cure_colere_j1_pacte",
+      "cure_colere_j2_bascule",
+      "cure_colere_j2_notif",
+      "cure_colere_j2_ancre",
+      "cure_colere_j3_moment",
+      "cure_colere_j3_categorie",
+      "cure_colere_j3_action_demain",
+      "cure_colere_j4_surplus",
+      "cure_colere_j4_shukr",
+      "cure_colere_j5_acte",
+      "cure_colere_j5_douceur",
+      "cure_colere_j6_reponses_questions",
+      "cure_colere_j7_tajalli",
+      "cure_colere_j7_orientation",
+      "cure_colere_actions_recentes"
+    ],
+    "effacement_nocturne": ["cure_colere_j3_moment"],
+    "note_compatibilite": "Les clés cure_colere existantes (cure_colere, cure_mode) restent inchangées. On ajoute des sous-clés spécifiques à chaque jour. Aucun utilisateur déjà engagé dans une ancienne cure n'est cassé."
+  },
+
+  "_integration_mode_doux_serieux": {
+    "description": "L'existant a déjà un mode 'doucement' (allégé, 2 min/jour) et 'sérieusement' (10 min/jour). Notre rédaction = mode 'sérieusement'. Le mode 'doucement' reste à rédiger ultérieurement.",
+    "mode_serieusement": "Notre contenu complet ci-dessus",
+    "mode_doucement": "À rédiger phase 2 — version allégée des 7 jours, 2 min/jour, structure simplifiée"
+  }
+}

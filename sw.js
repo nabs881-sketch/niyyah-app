@@ -1,4 +1,4 @@
-const VERSION = 'niyyah-v1586';
+const VERSION = 'niyyah-v1587';
 const CORE = [
   './index.html',
   './script.min.js',
@@ -11,6 +11,7 @@ const CORE = [
   './rahatal-qulub.mp3',
   './ferme-ta-journee.webp',
   './bab-nafs-content.json',
+  './cure-colere-cycle1.json',
   './savais_tu.json',
   './fiqh_jour.json',
   './hadiths_jour.json',
