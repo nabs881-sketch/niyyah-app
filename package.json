@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "build": "bash build.sh"
+  },
+  "dependencies": {
+    "docx": "^9.6.1"
+  }
+}
