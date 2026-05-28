@@ -12847,6 +12847,7 @@ function openWaqtModal() {
     actionEl.innerHTML = '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:28px;color:#C8A84A;direction:rtl;margin-bottom:20px;">' + arName + '</div>' + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:#E5E0DC;line-height:1.7;max-width:320px;">' + txt + '</div>';
   }
   modal.style.display = 'flex';
+  document.body.classList.add('in-waqt-modal');
   // ── Aid waqt special message — 3s intro ──
   if (window._AID_ACTIVE) {
     var _aidWm = _aidGetWaqtMessage(window._AID_ACTIVE, priere);
@@ -12866,6 +12867,7 @@ function openWaqtModal() {
 function closeWaqtModal() {
   var modal = document.getElementById('waqt-modal');
   if (modal) modal.style.display = 'none';
+  document.body.classList.remove('in-waqt-modal');
   if (_waqtModalPriere) {
     markWaqtLu(_waqtModalPriere);
     _waqtModalPriere = null;
