@@ -4107,7 +4107,7 @@ function renderBabAnNafs() {
     if (p.id === 'colere') {
       try { var _cc = JSON.parse(safeGetItem('cure_colere') || '{}'); if (_cc.completed) _cureMarker = '<div style="position:absolute;top:6px;right:6px;font-size:14px;color:#C8A84A;text-shadow:0 0 6px rgba(200,168,75,0.5);" title="Tu as travers\u00e9 Riy\u00e2\u1e0dat an-nafs.">\u2726</div>'; } catch(e) {}
     }
-    html += '<button onclick="openBabPorte(\'' + p.id + '\')" style="position:relative;aspect-ratio:1/1;border-radius:12px;border:1px solid var(--gold,#C8A84A);background:url(assets/cards/porte-' + p.id + '.png) center/cover no-repeat,#111;cursor:pointer;padding:0;">' + _cureMarker + '</button>';
+    html += '<button onclick="openBabPorte(\'' + p.id + '\')" style="position:relative;aspect-ratio:1/1;border-radius:12px;border:1px solid var(--gold,#C8A84A);background:url(assets/cards/porte-' + p.id + '.webp) center/cover no-repeat,#111;cursor:pointer;padding:0;">' + _cureMarker + '</button>';
   });
   html += '</div></div>';
   el.innerHTML = html;
@@ -11029,7 +11029,7 @@ var BAB_AN_NAFS = {version:'0.2',validated:false,portes:[
 {id:'regard',nom:{fr:'Regard',ar:'\u0627\u0644\u0646\u0638\u0631'},couleur:'#2E7D5B',image:'assets/cards/porte-regard.webp',rappels:[{fr:'Dis aux croyants de baisser leurs regards et de pr\u00e9server leur chastet\u00e9. C\u2019est plus pur pour eux.',source:'Coran, An-N\u00fbr (24), 30'},{fr:'Jar\u00eer ibn \u2019Abdill\u00e2h a dit : J\u2019ai interrog\u00e9 le Messager d\u2019Allah \uFDFA sur le regard fortuit. Il m\u2019a ordonn\u00e9 de d\u00e9tourner mon regard.',source:'Muslim 2159'},{fr:'Le Proph\u00e8te \uFDFA a dit \u00e0 \u2019Al\u00ee : Ne fais pas suivre un regard d\u2019un autre. Le premier est pour toi, le second contre toi.',source:'Ab\u00fb Daw\u00fbd 2149, Tirmidhî 2777'}],actions:[{fr:'D\u00e9tourne ton regard maintenant. L\u00e8ve les yeux vers le haut, ou ferme-les un instant. Un seul mouvement suffit.',source:'Muslim 2159'},{fr:'Si l\u2019\u00e9cran t\u2019a pi\u00e9g\u00e9, ferme-le. Pose ton t\u00e9l\u00e9phone face contre la table. L\u00e8ve-toi, change de pi\u00e8ce, bois un verre d\u2019eau.',source:'Application de Muslim 2159'},{fr:'Dis int\u00e9rieurement : A\u2019\u00fbdhu bill\u00e2hi mina-sh-shayt\u00e2ni-r-raj\u00eem. Puis pense \u00e0 la mort, pendant trois respirations.',source:'Coran, An-Nahl (16), 98'}],intentions:[{fr:'Y\u00e2 Allah, je pr\u00e9serve mon regard pour Toi. Garde mon c\u0153ur pur.'},{fr:'Y\u00e2 Allah, ne fais pas de mes yeux des tra\u00eetres \u00e0 mon \u00e2me.'}],clotures:[{fr:'Tu as franchi la porte. Ce que tu n\u2019as pas regard\u00e9, Allah l\u2019a vu.'},{fr:'Tu as franchi la porte. Le regard que tu as d\u00e9tourn\u00e9, ton c\u0153ur en b\u00e9n\u00e9ficie d\u00e9j\u00e0.'}]},
 {id:'arrogance',nom:{fr:'Arrogance',ar:'\u0627\u0644\u0643\u0650\u0628\u0652\u0631'},couleur:'#6A1B7A',image:'assets/cards/porte-arrogance.webp',rappels:[{fr:'N\u2019entrera pas au Paradis celui qui a dans le c\u0153ur le poids d\u2019un atome d\u2019orgueil. \u2014 Et l\u2019orgueil ? \u2014 C\u2019est rejeter la v\u00e9rit\u00e9 et m\u00e9priser les gens.',source:'Muslim 91'},{fr:'Ne d\u00e9tourne pas ton visage des hommes par m\u00e9pris, et ne marche pas sur la terre avec arrogance.',source:'Coran, Luqm\u00e2n (31), 18'},{fr:'Allah m\u2019a r\u00e9v\u00e9l\u00e9 d\u2019\u00eatre humble jusqu\u2019\u00e0 ce que personne n\u2019opprime personne.',source:'Muslim 2865'}],actions:[{fr:'Prosterne-toi. Front contre le sol. Reste-y le temps de trois respirations. Ton front \u2014 tu le poses au plus bas.',source:'Muslim 482'},{fr:'Reconnais \u00e0 voix basse une erreur que tu n\u2019as jamais admise. Une seule phrase : \u00ab J\u2019ai eu tort. \u00bb',source:'Tirmidhî 3540'},{fr:'Salue le premier quelqu\u2019un que tu aurais ignor\u00e9. Que ton sal\u00e2m soit sinc\u00e8re, sans regarder de haut.',source:'Muslim 54'}],intentions:[{fr:'Y\u00e2 Allah, je ne suis rien sans Toi. Brise mon orgueil, garde ma dignit\u00e9.'},{fr:'Y\u00e2 Allah, fais que je voie les autres comme Tu les vois.'}],clotures:[{fr:'Tu as franchi la porte. Le front qui se baisse, Allah le rel\u00e8ve.'},{fr:'Tu as franchi la porte. Ce que tu as reconnu, Il l\u2019a d\u00e9j\u00e0 couvert.'}]},
 {id:'paresse',nom:{fr:'Paresse',ar:'\u0627\u0644\u0643\u064E\u0633\u064E\u0644'},couleur:'#6E6E6E',image:'assets/cards/porte-paresse.webp',rappels:[{fr:'\u00d4 Allah, je cherche refuge aupr\u00e8s de Toi contre l\u2019incapacit\u00e9 et la paresse, contre la l\u00e2chet\u00e9 et l\u2019avarice.',source:'Al-Bukh\u00e2r\u00ee 6363'},{fr:'Le rus\u00e9 est celui qui se juge lui-m\u00eame et \u0153uvre pour ce qui vient apr\u00e8s la mort. L\u2019incapable suit ses passions et nourrit chez Allah de vains espoirs.',source:'Tirmidhî 2459'},{fr:'Saisis cinq choses avant cinq autres : ta jeunesse avant ta vieillesse, ta sant\u00e9 avant ta maladie, ta richesse avant ta pauvret\u00e9, ton temps libre avant ton occupation, et ta vie avant ta mort.',source:'H\u00e2kim 7846'}],actions:[{fr:'L\u00e8ve-toi maintenant. Une seule action, la plus petite : deux rak\u2019\u00e2t, ou un verre d\u2019eau bu debout, ou trois pas dehors.',source:'Al-Bukh\u00e2r\u00ee 6464'},{fr:'Fais le wud\u00fb maintenant, m\u00eame si tu n\u2019en as pas besoin. L\u2019eau r\u00e9veille le corps, et le corps entra\u00eene l\u2019\u00e2me.',source:'Muslim 251'},{fr:'R\u00e9cite la du\u2019\u00e2 contre la paresse trois fois : All\u00e2humma inn\u00ee a\u2019\u00fbdhu bika mina-l-\u2019ajzi wa-l-kasal. Puis fais imm\u00e9diatement une chose.',source:'Al-Bukh\u00e2r\u00ee 6363'}],intentions:[{fr:'Y\u00e2 Allah, ranime ce que la paresse a \u00e9teint. Je commence, m\u00eame petit.'},{fr:'Y\u00e2 Allah, le temps est Ton d\u00e9p\u00f4t. Aide-moi \u00e0 ne pas le gaspiller.'}],clotures:[{fr:'Tu as franchi la porte. Ce premier pas, Allah l\u2019a vu \u2014 et c\u2019est lui qui compte.'},{fr:'Tu as franchi la porte. Petit acte, grande sinc\u00e9rit\u00e9.'}]},
-{id:'medisance',nom:{fr:'M\u00e9disance',ar:'\u0627\u0644\u063A\u064A\u0628\u0629'},couleur:'#8D6E63',image:'assets/cards/porte-medisance.png',validated:true,rappels:[{fr:'\u00d4 vous qui avez cru ! \u00c9vitez de trop conjecturer... et ne m\u00e9disez pas les uns des autres. L\u2019un de vous aimerait-il manger la chair de son fr\u00e8re mort ?',source:'Coran 49:12'},{fr:'Savez-vous ce qu\u2019est la m\u00e9disance ? C\u2019est mentionner \u00e0 propos de ton fr\u00e8re ce qu\u2019il d\u00e9teste.',source:'Muslim 2589'},{fr:'Celui qui croit en Allah et au Jour Dernier, qu\u2019il dise du bien ou qu\u2019il se taise.',source:'Bukhari 6018'}],actions:[{fr:'Dire 3 fois : Astaghfirullah (\u0623\u0633\u062A\u063A\u0641\u0631 \u0627\u0644\u0644\u0647) \u2014 pour soi et pour celui dont on a parl\u00e9.'},{fr:'D\u00e9tourner la conversation : changer de sujet ou dire un mot de bien sur l\u2019absent.'},{fr:'Se rappeler ses propres d\u00e9fauts : Heureux celui que ses d\u00e9fauts occupent au point d\u2019oublier ceux des autres.'}],intentions:[{fr:'Aujourd\u2019hui, je tiendrai ma langue. Si je ne peux dire du bien, je me tairai.'},{fr:'Quand on parlera mal d\u2019un absent, je d\u00e9tournerai la conversation ou je me retirerai.'},{fr:'Ma bouche est un lieu de dhikr. Je la pr\u00e9serve de ce qui la salit.'}],clotures:[{fr:'Un mot non dit est une charit\u00e9 silencieuse.'},{fr:'Ta langue est un tr\u00e9sor \u2014 prot\u00e8ge-la, elle te prot\u00e9gera.'}]}
+{id:'medisance',nom:{fr:'M\u00e9disance',ar:'\u0627\u0644\u063A\u064A\u0628\u0629'},couleur:'#8D6E63',image:'assets/cards/porte-medisance.webp',validated:true,rappels:[{fr:'\u00d4 vous qui avez cru ! \u00c9vitez de trop conjecturer... et ne m\u00e9disez pas les uns des autres. L\u2019un de vous aimerait-il manger la chair de son fr\u00e8re mort ?',source:'Coran 49:12'},{fr:'Savez-vous ce qu\u2019est la m\u00e9disance ? C\u2019est mentionner \u00e0 propos de ton fr\u00e8re ce qu\u2019il d\u00e9teste.',source:'Muslim 2589'},{fr:'Celui qui croit en Allah et au Jour Dernier, qu\u2019il dise du bien ou qu\u2019il se taise.',source:'Bukhari 6018'}],actions:[{fr:'Dire 3 fois : Astaghfirullah (\u0623\u0633\u062A\u063A\u0641\u0631 \u0627\u0644\u0644\u0647) \u2014 pour soi et pour celui dont on a parl\u00e9.'},{fr:'D\u00e9tourner la conversation : changer de sujet ou dire un mot de bien sur l\u2019absent.'},{fr:'Se rappeler ses propres d\u00e9fauts : Heureux celui que ses d\u00e9fauts occupent au point d\u2019oublier ceux des autres.'}],intentions:[{fr:'Aujourd\u2019hui, je tiendrai ma langue. Si je ne peux dire du bien, je me tairai.'},{fr:'Quand on parlera mal d\u2019un absent, je d\u00e9tournerai la conversation ou je me retirerai.'},{fr:'Ma bouche est un lieu de dhikr. Je la pr\u00e9serve de ce qui la salit.'}],clotures:[{fr:'Un mot non dit est une charit\u00e9 silencieuse.'},{fr:'Ta langue est un tr\u00e9sor \u2014 prot\u00e8ge-la, elle te prot\u00e9gera.'}]}
 ]};
 var NAFS_TRAITS = [
   // === SAISON 1 : maladies_coeur (1-13) ===
@@ -14979,7 +14979,7 @@ function _aidOpenVoeux() {
     + '<select id="aid-voeux-style" onchange="_aidVoeuxPreview()" style="width:100%;box-sizing:border-box;padding:10px 14px;background:#1a1610;border:1px solid rgba(200,168,74,0.2);border-radius:12px;color:#E5DCC8;font-size:14px;font-family:Inter,sans-serif;outline:none;">' + opts + '</select>'
     + '</div>'
     // Preview
-    + '<div id="aid-voeux-preview" style="position:relative;border-radius:16px;overflow:hidden;margin-bottom:16px;aspect-ratio:9/16;background:#0a0a0a;"><img src="assets/aid_card_bg.png" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"><div id="aid-voeux-preview-text" style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px 16px;text-align:center;"></div></div>'
+    + '<div id="aid-voeux-preview" style="position:relative;border-radius:16px;overflow:hidden;margin-bottom:16px;aspect-ratio:9/16;background:#0a0a0a;"><img src="assets/aid_card_bg.webp" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"><div id="aid-voeux-preview-text" style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px 16px;text-align:center;"></div></div>'
     // Actions
     + '<div style="display:flex;gap:10px;">'
     + '<button onclick="_aidVoeuxGenerate()" style="flex:1;padding:14px;border-radius:14px;border:none;background:linear-gradient(135deg,#c8a84b,#e8cc6a);color:#1a0f00;font-size:14px;font-weight:700;font-family:\'Cormorant Garamond\',serif;cursor:pointer;">G\u00e9n\u00e9rer la carte</button>'
@@ -15037,7 +15037,7 @@ function _aidVoeuxGenerate() {
     _aidVoeuxDrawText(ctx, d, W, H);
     _aidVoeuxExport(canvas);
   };
-  bg.src = 'assets/aid_card_bg.png';
+  bg.src = 'assets/aid_card_bg.webp';
 }
 
 function _aidVoeuxDrawText(ctx, d, W, H) {
@@ -17129,7 +17129,7 @@ function openVueSavaisTu() {
   v.querySelector('.savais-fait').textContent = 'Chargement\u2026';
   v.querySelector('.savais-source').textContent = '';
   v.classList.remove('hidden');
-  loadSavaisTu(function() {
+  _mergeMashhurat(function() { loadSavaisTu(function() {
     var fait = getSavaisTuFact();
     v.querySelector('.savais-fait').textContent = fait.texte || '';
     v.querySelector('.savais-source').textContent = fait.source ? '\u2014 ' + fait.source + ' \u2014' : '';
@@ -17137,19 +17137,21 @@ function openVueSavaisTu() {
     if (!catEl) { catEl = document.createElement('div'); catEl.className = 'savais-categorie'; var faitEl = v.querySelector('.savais-fait'); if (faitEl) faitEl.parentNode.insertBefore(catEl, faitEl); }
     catEl.textContent = fait.categorie ? fait.categorie.toUpperCase() : '';
     catEl.style.display = fait.categorie ? '' : 'none';
-  });
+  }); });
   var _vBtn = v.querySelector('.savais-valider');
   if (!_vBtn) { _vBtn = document.createElement('button'); _vBtn.className = 'savais-bouton savais-valider'; _vBtn.style.cssText = 'background:#C8A84A;color:#2C2E32;font-weight:700;margin-top:8px;'; _vBtn.textContent = 'J\u2019ai termin\u00e9 ma lecture'; v.appendChild(_vBtn); }
   _vBtn.onclick = function() { v.classList.add('hidden'); validerLecture('savais_tu'); };
 }
 window.openVueSavaisTu = openVueSavaisTu;
 
-// ── Mashhurat: inject into Savais-Tu pool ──
-(function _mergeMashhurat() {
+// ── Mashhurat: inject into Savais-Tu pool (lazy — on first openVueSavaisTu) ──
+var _mashhuratMerged = false;
+function _mergeMashhurat(cb) {
+  if (_mashhuratMerged) { if (cb) cb(); return; }
   loadMashhurat(function(items) {
-    if (!items || !items.length) return;
+    if (!items || !items.length) { _mashhuratMerged = true; if (cb) cb(); return; }
     loadSavaisTu(function() {
-      if (!SAVAIS_TU) return;
+      if (!SAVAIS_TU) { if (cb) cb(); return; }
       var existing = new Set(SAVAIS_TU.map(function(s) { return s.texte; }));
       items.forEach(function(m) {
         var txt = '\u2753 ' + m.idee_recue + '\n\n\u2714\uFE0F ' + m.verite;
@@ -17157,10 +17159,12 @@ window.openVueSavaisTu = openVueSavaisTu;
           SAVAIS_TU.push({ texte: txt, source: m.source || '', categorie: 'MYTHES_VERITES' });
         }
       });
+      _mashhuratMerged = true;
       console.log('[Mashhurat] merged, pool now:', SAVAIS_TU.length);
+      if (cb) cb();
     });
   });
-})();
+}
 
 /* ─────────────────────────────────────────────
    GHID\u00c2\u2019 — Aliment du jour
