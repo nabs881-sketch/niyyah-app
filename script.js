@@ -10075,11 +10075,11 @@ const V2_I18N = {
     journal_search: 'Rechercher...', modal_close: 'Fermer', btn_later: 'Plus tard',
     tawba_ameen: 'Ameen', defi_change: 'Changer de défi', notif_accept: 'Oui, je veux ces rappels',
     level_word: 'Niveau', level_accomplished: 'Niveau accompli', level_next: 'Niveau suivant \u2192', level_stay: 'Rester sur ce niveau',
-    freemium_title: 'Niyyah+', freemium_sub: 'Scanner illimit\u00e9 + futurs avantages cloud.',
+    freemium_title: 'Niyyah+', freemium_sub: 'Scanner illimit\u00e9 + fonctionnalit\u00e9s exclusives.',
     freemium_buy: 'Obtenir Niyyah+ \u2014 4,99\u20ac', freemium_code_placeholder: 'CODE D\'ACC\u00c8S', freemium_free: 'Continuer en gratuit',
-    freemium_f1: 'Scanner de Niyyah illimit\u00e9 (vs 1/semaine)', freemium_f2: 'Synchronisation cloud (bient\u00f4t)',
-    freemium_f3: 'Sauvegarde automatique multi-appareils', freemium_f4: 'Fonctionnalit\u00e9s exclusives futures',
-    freemium_f5: 'Soutenir le d\u00e9veloppement de Niyyah', freemium_f6: '',
+    freemium_f1: 'Scanner de Niyyah illimit\u00e9 (vs 1/semaine)', freemium_f2: 'Fonctionnalit\u00e9s exclusives futures',
+    freemium_f3: 'Soutenir le d\u00e9veloppement de Niyyah', freemium_f4: '',
+    freemium_f5: '', freemium_f6: '',
     bilan_title: 'Bilan du soir', bilan_question: 'Comment était ton cœur aujourd\'hui ?', bilan_subtitle: 'Allah regarde la sincérité, pas le score.',
     bilan_distraction: 'Distraction', bilan_effort: 'Effort', bilan_sincerite: 'Sincérité',
     bilan_distraction_sub: 'غفلة — le cœur absent', bilan_effort_sub: 'مجاهدة — le combat intérieur', bilan_sincerite_sub: 'إخلاص — l\'état recherché',
@@ -10333,8 +10333,8 @@ const V2_I18N = {
     level_word: 'Level', level_accomplished: 'Level accomplished', level_next: 'Next level \u2192', level_stay: 'Stay on this level',
     freemium_title: 'Niyyah+', freemium_sub: 'Unlimited scanner + future cloud features.',
     freemium_buy: 'Get Niyyah+ \u2014 \u20ac4.99', freemium_code_placeholder: 'ACCESS CODE', freemium_free: 'Continue for free',
-    freemium_f1: 'Unlimited Niyyah Scanner (vs 1/week)', freemium_f2: 'Cloud sync (coming soon)',
-    freemium_f3: 'Automatic multi-device backup', freemium_f4: 'Future exclusive features',
+    freemium_f1: 'Unlimited Niyyah Scanner (vs 1/week)', freemium_f2: 'Future exclusive features',
+    freemium_f3: 'Support Niyyah development', freemium_f4: '',
     freemium_f5: 'Support Niyyah development', freemium_f6: '',
     bilan_title: 'Evening review', bilan_question: 'How was your heart today?', bilan_subtitle: 'Allah looks at sincerity, not the score.',
     bilan_distraction: 'Distraction', bilan_effort: 'Effort', bilan_sincerite: 'Sincerity',
@@ -15417,8 +15417,8 @@ function _renderRegardePremium(content, data, dataUrl) {
         + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#C8A84A;line-height:1.6;max-width:320px;">' + (data.meditation || '') + '</div>'
         + (getRegardStreak() > 0 ? '<div class="regard-streak">' + _svgStreakIcon + '<span>' + getRegardStreak() + ' jour' + (getRegardStreak() > 1 ? 's' : '') + ' de Regards</span></div>' : '')
         + '<div class="regard-actions-row">'
-        + '<button class="btn-regard-premium" id="regarde-premium-audio" onclick="_regardePremiumPlayAudio(this)" data-src="' + (audioUrl || '') + '" aria-label="\u00c9couter">' + _svgPlayIcon + '</button>'
-        + '<button class="btn-regard-premium" id="regarde-premium-loop" onclick="_regardePremiumLoop(this)" data-src="' + (audioUrl || '') + '" aria-label="R\u00e9citer 7 fois">' + _svg7xIcon + '</button>'
+        + (audioUrl ? '<button class="btn-regard-premium" id="regarde-premium-audio" onclick="_regardePremiumPlayAudio(this)" data-src="' + audioUrl + '" aria-label="\u00c9couter">' + _svgPlayIcon + '</button>' : '')
+        + (audioUrl ? '<button class="btn-regard-premium" id="regarde-premium-loop" onclick="_regardePremiumLoop(this)" data-src="' + audioUrl + '" aria-label="R\u00e9citer 7 fois">' + _svg7xIcon + '</button>' : '')
         + '<button class="btn-regard-premium" id="regarde-btn-memo" onclick="_regardeMemorise(this)" data-ref="' + ref + '" aria-label="M\u00e9moriser">' + _svgMemoIcon + '</button>'
         + '<button class="btn-regard-premium" id="regarde-btn-duaa" onclick="_regardeDuaa(\'' + ref + '\')" aria-label="Du\u02BFa\u02BE li\u00e9e">' + _svgDuaaIcon + '</button>'
         + '<button class="btn-regard-premium" id="regarde-btn-share" onclick="_regardePremiumShare()" aria-label="Partager">' + _svgShareIcon + '</button>'
@@ -17537,7 +17537,7 @@ window.LISAN_METHODE = null;
 
 function openLisanMethode() {
   var m = window.LISAN_METHODE;
-  if (!m) { showToast('Chargement...'); return; }
+  if (!m || (typeof m === 'object' && Object.keys(m).length === 0) || (Array.isArray(m) && m.length === 0)) { showToast('M\u00e9thode Lis\u00e2n \u2014 bient\u00f4t disponible'); return; }
 
   var existing = document.getElementById('lisan-methode-overlay');
   if (existing) existing.remove();
