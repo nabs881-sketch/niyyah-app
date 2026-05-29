@@ -5532,6 +5532,83 @@ _outilAnxieteRenderers.double_slider = function(o, c) {
   return html;
 };
 
+// 3.5 — respiration_interactive
+_outilAnxieteRenderers.respiration_interactive = function(o, c) {
+  var r = o.rythme || {};
+  var n = o.noms_divins || {};
+  var inspSec = r.inspir_sec || 4;
+  var expSec = r.expir_sec || 6;
+  var cycleSec = inspSec + expSec;
+  var duree = o.duree_visee_sec || 120;
+  var sk = o.stockage || 'cure_anxiete_respiration';
+  var breathId = '_breath_' + o.id;
+  var html = '';
+  if (o.instructions) html += '<div style="font-family:var(--serif);font-size:13px;color:rgba(240,234,214,0.6);line-height:1.6;text-align:center;margin-bottom:20px;white-space:pre-line;">' + escapeHtml(o.instructions) + '</div>';
+  // Circle + text container
+  html += '<div id="' + breathId + '" style="display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;">';
+  html += '<div style="position:relative;width:180px;height:180px;display:flex;align-items:center;justify-content:center;">';
+  // SVG circle
+  html += '<svg width="180" height="180" viewBox="0 0 180 180" style="position:absolute;inset:0;">'
+    + '<circle cx="90" cy="90" r="80" fill="none" stroke="' + c + '22" stroke-width="2"/>'
+    + '<circle id="' + breathId + '_ring" cx="90" cy="90" r="80" fill="none" stroke="' + c + '" stroke-width="3" opacity="0.6"/>'
+    + '</svg>';
+  // Inner pulsing circle
+  html += '<div id="' + breathId + '_pulse" style="width:100px;height:100px;border-radius:50%;background:radial-gradient(circle,' + c + '18 0%,' + c + '08 60%,transparent 100%);border:1px solid ' + c + '33;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:transform ' + inspSec + 's ease-in-out;">';
+  html += '<div id="' + breathId + '_ar" style="font-family:\'Scheherazade New\',serif;font-size:22px;color:#C8A84A;direction:rtl;">' + escapeHtml(n.inspir_ar || '') + '</div>';
+  html += '<div id="' + breathId + '_label" style="font-family:var(--serif);font-size:11px;color:rgba(200,168,75,0.5);font-style:italic;margin-top:2px;">' + escapeHtml(n.inspir_translit || '') + '</div>';
+  html += '</div></div>';
+  // Timer
+  html += '<div id="' + breathId + '_timer" style="font-family:var(--serif);font-size:12px;color:rgba(200,168,75,0.4);margin-top:10px;">0:00</div>';
+  html += '</div>';
+  // Terminate button
+  html += '<button id="' + breathId + '_stop" onclick="_breathStop(\'' + breathId + '\',\'' + sk + '\')" style="display:block;margin:0 auto;padding:10px 28px;border-radius:10px;border:1px solid ' + c + '33;background:none;color:rgba(200,168,75,0.6);font-family:var(--serif);font-size:13px;cursor:pointer;">Terminer</button>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-top:16px;">' + escapeHtml(o.note_spi) + '</div>';
+  // Start animation after render
+  setTimeout(function() { _breathStart(breathId, inspSec, expSec, duree, n, sk); }, 300);
+  return html;
+};
+function _breathStart(id, inspSec, expSec, duree, noms, sk) {
+  var pulse = document.getElementById(id + '_pulse');
+  var arEl = document.getElementById(id + '_ar');
+  var labelEl = document.getElementById(id + '_label');
+  var timerEl = document.getElementById(id + '_timer');
+  if (!pulse) return;
+  var startTs = Date.now();
+  var cycleSec = inspSec + expSec;
+  var isInspir = true;
+  function setCycle(inspir) {
+    isInspir = inspir;
+    pulse.style.transition = 'transform ' + (inspir ? inspSec : expSec) + 's ease-in-out';
+    pulse.style.transform = inspir ? 'scale(1.5)' : 'scale(1)';
+    if (arEl) arEl.textContent = inspir ? (noms.inspir_ar || '') : (noms.expir_ar || '');
+    if (labelEl) labelEl.textContent = inspir ? (noms.inspir_translit || '') : (noms.expir_translit || '');
+  }
+  setCycle(true);
+  var interval = setInterval(function() {
+    var elapsed = (Date.now() - startTs) / 1000;
+    var posInCycle = elapsed % cycleSec;
+    var shouldInspir = posInCycle < inspSec;
+    if (shouldInspir !== isInspir) setCycle(shouldInspir);
+    if (timerEl) { var m = Math.floor(elapsed / 60); var s = Math.floor(elapsed % 60); timerEl.textContent = m + ':' + (s < 10 ? '0' : '') + s; }
+  }, 250);
+  window['_breathInterval_' + id] = interval;
+  window['_breathStart_' + id] = startTs;
+}
+function _breathStop(id, sk) {
+  var interval = window['_breathInterval_' + id];
+  if (interval) clearInterval(interval);
+  var startTs = window['_breathStart_' + id];
+  if (startTs) {
+    var elapsed = Math.round((Date.now() - startTs) / 1000);
+    safeSetItem(sk, String(elapsed));
+  }
+  var stopBtn = document.getElementById(id + '_stop');
+  if (stopBtn) { stopBtn.textContent = 'Termin\u00e9'; stopBtn.disabled = true; stopBtn.style.opacity = '0.4'; }
+  var pulse = document.getElementById(id + '_pulse');
+  if (pulse) { pulse.style.transition = 'transform 1s ease'; pulse.style.transform = 'scale(1)'; }
+}
+window._breathStop = _breathStop;
+
 // 3.4 — checkboxes_avec_message_dynamique
 _outilAnxieteRenderers.checkboxes_avec_message_dynamique = function(o, c) {
   var opts = o.options || [];
