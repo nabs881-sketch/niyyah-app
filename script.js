@@ -6268,18 +6268,20 @@ function openCureColere() {
 // ── Sérieusement renderers for Porte Colère ──
 _cureJourRenderers.colere_1 = function(el) { _cureColereGenericDay(el, 1); };
 
-// Jours 2–7 : renderer générique depuis CURE_COLERE_CYCLE1
+// Jours 1–7 : renderer générique depuis CURE_COLERE_CYCLE1
 function _cureColereGenericDay(el, dayNum) {
   var c = '#B33A3A';
-  var j = window.CURE_COLERE_CYCLE1 && window.CURE_COLERE_CYCLE1.jours && window.CURE_COLERE_CYCLE1.jours[dayNum - 1];
+  var data = window.CURE_COLERE_CYCLE1;
+  var j = data && data.jours && data.jours[dayNum - 1];
   if (!j) { el.innerHTML = '<div style="padding:60px 24px;text-align:center;color:rgba(255,255,255,0.4);">Contenu en cours de chargement\u2026</div>'; return; }
   var duaa = j.duaa_cloture || {};
   var travaux = j.travaux || [];
-  var filRouge = (window.CURE_COLERE_CYCLE1._transversal && window.CURE_COLERE_CYCLE1._transversal.fil_rouge_bas) || '';
+  var filRouge = (data._transversal && data._transversal.fil_rouge_bas) || '';
   var isLast = (dayNum === 7);
   var backBtn = '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
   var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;">'
     + backBtn
+    // TITRE
     + '<div style="text-align:center;margin-bottom:40px;">'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:' + c + ';direction:rtl;margin-bottom:6px;">\u0631\u0650\u064a\u064e\u0627\u0636\u064e\u0629 \u0646\u064e\u0641\u0652\u0633\u0650\u064a\u0651\u064e\u0629</div>'
     + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:4px;">Riy\u00e2\u1e0dat an-nafs \u2014 Jour ' + j.jour + '</div>'
@@ -6298,39 +6300,18 @@ function _cureColereGenericDay(el, dayNum) {
     }
     html += '</div>';
   }
-  // TRAVAUX
-  travaux.forEach(function(travail, ti) {
-    html += '<div style="text-align:center;margin-bottom:40px;">'
-      + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.5;margin-bottom:12px;">Travail' + (travaux.length > 1 ? ' ' + (ti + 1) : ' du jour') + '</div>';
-    if (travail.intro) {
-      html += '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;max-width:400px;margin:0 auto 16px;">' + escapeHtml(travail.intro) + '</div>';
-    }
-    if (travail.amorce) {
-      html += '<div style="font-family:var(--serif);font-size:14px;font-style:italic;color:' + c + ';line-height:1.6;max-width:380px;margin:0 auto 12px;padding:14px;border:1px dashed ' + c + '44;border-radius:12px;background:' + c + '0d;">' + escapeHtml(travail.amorce) + '</div>';
-    }
-    if (travail.exemples) {
-      travail.exemples.forEach(function(ex) {
-        html += '<div class="itfaa-subtle" style="font-size:12px;max-width:380px;margin:0 auto 6px;text-align:left;">\u2022 ' + escapeHtml(ex) + '</div>';
-      });
-    }
-    if (travail.champ) {
-      var ph = travail.champ.placeholder || '';
-      var maxC = travail.champ.max_chars || 200;
-      html += '<textarea id="_cureJ' + dayNum + 'T' + ti + '" maxlength="' + maxC + '" placeholder="' + escapeHtml(ph) + '" style="width:100%;max-width:380px;min-height:80px;padding:12px;border-radius:10px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;resize:vertical;margin-top:16px;"></textarea>';
-    }
-    if (travail.sous_texte_gris) {
-      html += '<div style="font-size:12px;font-style:italic;color:rgba(255,255,255,0.3);max-width:380px;margin:8px auto 0;">' + escapeHtml(travail.sous_texte_gris) + '</div>';
-    }
-    html += '</div>';
+  // TRAVAUX (tous types)
+  travaux.forEach(function(t, ti) {
+    html += _cureTravailHtml(t, ti, travaux.length, dayNum, c);
   });
-  // FIL ROUGE
+  // FIL ROUGE (J1-J6)
   if (filRouge && !isLast) {
     html += '<div style="text-align:center;margin-bottom:40px;padding:16px;border-radius:14px;border:1px solid rgba(200,168,75,0.2);background:rgba(200,168,75,0.04);">'
       + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#C8A84A;opacity:0.5;margin-bottom:8px;">Fil rouge</div>'
       + '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:#C8A84A;line-height:1.6;">' + escapeHtml(filRouge) + '</div>'
       + '</div>';
   }
-  // CLÔTURE DU'Â
+  // CL\u00d4TURE DU'\u00c2
   if (duaa.arabe) {
     html += '<div style="text-align:center;margin-bottom:20px;padding:20px;border-radius:14px;border:1px solid ' + c + '22;background:' + c + '08;">'
       + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.5;margin-bottom:12px;">Cl\u00f4ture</div>'
@@ -6344,18 +6325,131 @@ function _cureColereGenericDay(el, dayNum) {
       html += _cureForDemainHtml(dayNum, '_cureColereJ' + dayNum + 'Save');
     }
     html += '</div>';
-  } else if (isLast) {
-    html += '<div style="text-align:center;margin-bottom:20px;">'
-      + '<button onclick="_cureColereJ7Save()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Terminer Riy\u00e2\u1e0dat</button>'
-      + '</div>';
   } else {
-    html += '<div style="text-align:center;margin-bottom:20px;">'
-      + _cureForDemainHtml(dayNum, '_cureColereJ' + dayNum + 'Save')
-      + '</div>';
+    html += '<div style="text-align:center;margin-bottom:20px;">';
+    if (isLast) {
+      html += '<button onclick="_cureColereJ7Save()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Terminer Riy\u00e2\u1e0dat</button>';
+    } else {
+      html += _cureForDemainHtml(dayNum, '_cureColereJ' + dayNum + 'Save');
+    }
+    html += '</div>';
   }
   html += '</div>';
   el.innerHTML = html;
   el.innerHTML += _exitLinkHtml;
+}
+
+// \u2500\u2500 Renderer par type de travail \u2500\u2500
+function _cureTravailHtml(t, ti, total, dayNum, c) {
+  var h = '<div style="text-align:center;margin-bottom:40px;">';
+  var label = total > 1 ? 'Travail ' + (ti + 1) : 'Travail du jour';
+  if (t.titre) label = t.titre;
+  h += '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.5;margin-bottom:12px;">' + escapeHtml(label) + '</div>';
+  if (t.intro) h += '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;max-width:400px;margin:0 auto 16px;">' + escapeHtml(t.intro) + '</div>';
+  if (t.texte) h += '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;max-width:400px;margin:0 auto 16px;">' + escapeHtml(t.texte) + '</div>';
+
+  var type = t.type || '';
+  var sk = t.stockage_cle || t.id || ('cure_j' + dayNum + '_t' + ti);
+
+  // \u2500\u2500 champ_texte_avec_amorce (J1) \u2500\u2500
+  if (type === 'champ_texte_avec_amorce' || type === 'champ_texte_avec_option') {
+    if (t.amorce) h += '<div style="font-family:var(--serif);font-size:14px;font-style:italic;color:' + c + ';line-height:1.6;max-width:380px;margin:0 auto 12px;padding:14px;border:1px dashed ' + c + '44;border-radius:12px;background:' + c + '0d;">' + escapeHtml(t.amorce) + '</div>';
+    if (t.exemples) t.exemples.forEach(function(ex) { h += '<div class="itfaa-subtle" style="font-size:12px;max-width:380px;margin:0 auto 6px;text-align:left;">\u2022 ' + escapeHtml(ex) + '</div>'; });
+    var ch = t.champ || {};
+    h += '<textarea id="_cure_' + sk + '" maxlength="' + (ch.max_chars || 200) + '" placeholder="' + escapeHtml(ch.placeholder || '') + '" style="width:100%;max-width:380px;min-height:80px;padding:12px;border-radius:10px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;resize:vertical;margin-top:16px;"></textarea>';
+    // opt-in checkbox (J2)
+    if (t.option_opt_in) {
+      var oi = t.option_opt_in;
+      h += '<label style="display:flex;align-items:flex-start;gap:10px;max-width:380px;margin:16px auto 0;cursor:pointer;text-align:left;">'
+        + '<input type="checkbox" id="_cure_optin_' + sk + '" style="margin-top:3px;accent-color:' + c + ';">'
+        + '<span style="font-size:13px;color:rgba(255,255,255,0.5);line-height:1.5;">' + escapeHtml(oi.label || '') + '</span></label>';
+    }
+  }
+  // \u2500\u2500 choix_phrase_defaut_ou_personnalisee (J2) \u2500\u2500
+  else if (type === 'choix_phrase_defaut_ou_personnalisee') {
+    if (t.phrase_defaut) {
+      h += '<div style="font-family:var(--serif);font-size:16px;font-style:italic;color:#C8A84A;line-height:1.6;max-width:380px;margin:0 auto 12px;padding:16px;border:1px solid rgba(200,168,75,0.3);border-radius:12px;background:rgba(200,168,75,0.06);">' + escapeHtml(t.phrase_defaut) + '</div>';
+      h += '<button onclick="safeSetItem(\'' + sk + '\',\'' + escapeHtml(t.phrase_defaut).replace(/'/g, '') + '\');this.textContent=\'\u2713 Adopt\u00e9e\';this.style.opacity=\'0.4\';this.disabled=true;" style="padding:10px 24px;border-radius:10px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;margin-bottom:12px;">' + escapeHtml(t.bouton_defaut || 'Adopter cette phrase') + '</button>';
+    }
+    if (t.champ_alternatif) {
+      var ca = t.champ_alternatif;
+      h += '<div class="itfaa-subtle" style="font-size:12px;margin:12px auto 8px;">ou \u00e9cris la tienne :</div>';
+      h += '<textarea id="_cure_' + sk + '_custom" maxlength="' + (ca.max_chars || 120) + '" placeholder="' + escapeHtml(ca.placeholder || '') + '" style="width:100%;max-width:380px;min-height:50px;padding:12px;border-radius:10px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;resize:vertical;"></textarea>';
+    }
+  }
+  // \u2500\u2500 respiration_visuelle_guidee (J2) \u2500\u2500
+  else if (type === 'respiration_visuelle_guidee') {
+    if (t.instruction) h += '<div class="itfaa-body" style="font-size:14px;font-style:italic;max-width:380px;margin:0 auto 16px;">' + escapeHtml(t.instruction) + '</div>';
+    // SVG cercle pulsant
+    h += '<div id="_cureBreath_' + sk + '" style="display:none;margin:20px auto;text-align:center;">'
+      + '<svg width="120" height="120" viewBox="0 0 120 120"><circle id="_cureBreathCircle_' + sk + '" cx="60" cy="60" r="30" fill="none" stroke="' + c + '" stroke-width="2" opacity="0.6"><animate attributeName="r" values="30;50;30" dur="8s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0.3;0.6" dur="8s" repeatCount="indefinite"/></circle></svg>'
+      + '<div id="_cureBreathLabel_' + sk + '" style="font-family:var(--serif);font-size:14px;color:' + c + ';margin-top:8px;">Inspire\u2026</div>'
+      + '</div>';
+    var dur = t.duree_secondes || 60;
+    h += '<button id="_cureBreathBtn_' + sk + '" onclick="var w=document.getElementById(\'_cureBreath_' + sk + '\');if(w){w.style.display=\'\';this.style.display=\'none\';safeSetItem(\'' + sk + '\',\'done\');setTimeout(function(){w.innerHTML=\'<div class=itfaa-body style=font-size:15px;color:#C8A84A;>Termin\u00e9. Reviens \u00e0 toi.</div>\'},' + (dur * 1000) + ')}" style="padding:12px 28px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">' + escapeHtml(t.bouton_commencer || 'Commencer') + '</button>';
+    if (t.bouton_passer) h += '<div class="itfaa-subtle" style="font-size:12px;margin-top:8px;cursor:pointer;" onclick="safeSetItem(\'' + sk + '\',\'skipped\');">' + escapeHtml(t.bouton_passer) + '</div>';
+  }
+  // \u2500\u2500 invitation_sans_champ (J3) \u2500\u2500
+  else if (type === 'invitation_sans_champ') {
+    // Just text, already rendered via intro/texte above. Add continue button.
+    if (t.bouton_continuer) h += '<button onclick="this.textContent=\'\u2713\';this.style.opacity=\'0.4\';this.disabled=true;" style="padding:10px 24px;border-radius:10px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;margin-top:12px;">' + escapeHtml(t.bouton_continuer) + '</button>';
+  }
+  // \u2500\u2500 double_champ (J5) \u2500\u2500
+  else if (type === 'double_champ') {
+    if (t.champs) {
+      t.champs.forEach(function(ch, ci) {
+        if (ch.label) h += '<div style="font-size:13px;color:rgba(255,255,255,0.5);max-width:380px;margin:12px auto 6px;text-align:left;">' + escapeHtml(ch.label) + '</div>';
+        h += '<textarea id="_cure_' + sk + '_' + ci + '" maxlength="' + (ch.max_chars || 200) + '" placeholder="' + escapeHtml(ch.placeholder || '') + '" style="width:100%;max-width:380px;min-height:60px;padding:12px;border-radius:10px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;resize:vertical;"></textarea>';
+      });
+    }
+  }
+  // \u2500\u2500 choix_unique_radio (J4) \u2500\u2500
+  else if (type === 'choix_unique_radio') {
+    if (t.options) {
+      t.options.forEach(function(opt) {
+        h += '<button onclick="document.querySelectorAll(\'[data-radio-' + sk + ']\').forEach(function(b){b.style.background=\'' + c + '0d\';b.style.fontWeight=\'400\'});this.style.background=\'' + c + '22\';this.style.fontWeight=\'700\';safeSetItem(\'' + sk + '\',\'' + escapeHtml(opt.id || opt.label) + '\')" data-radio-' + sk + ' style="display:block;width:100%;max-width:380px;margin:0 auto 10px;padding:14px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:15px;cursor:pointer;text-align:left;">' + escapeHtml(opt.label || opt) + '</button>';
+      });
+    }
+  }
+  // \u2500\u2500 invitation_sajda (J7) \u2500\u2500
+  else if (type === 'invitation_sajda') {
+    if (t.formule) {
+      h += '<div style="font-family:var(--serif);font-size:16px;font-style:italic;color:#C8A84A;line-height:1.6;max-width:380px;margin:0 auto 8px;padding:16px;border:1px solid rgba(200,168,75,0.25);border-radius:12px;background:rgba(200,168,75,0.06);">' + escapeHtml(typeof t.formule === 'string' ? t.formule : (t.formule.arabe || '')) + '</div>';
+      if (t.formule.translitteration) h += '<div class="itfaa-subtle" style="font-size:12px;margin:0 auto 4px;">' + escapeHtml(t.formule.translitteration) + '</div>';
+      if (t.formule.traduction) h += '<div class="itfaa-body" style="font-size:13px;margin:0 auto 8px;">' + escapeHtml(t.formule.traduction) + '</div>';
+    }
+    if (t.source) h += '<div class="itfaa-subtle" style="font-size:11px;">\u2014 ' + escapeHtml(t.source) + '</div>';
+    if (t.alternative_discrete) h += '<div class="itfaa-subtle" style="font-size:11px;margin-top:8px;">' + escapeHtml(t.alternative_discrete) + '</div>';
+  }
+  // \u2500\u2500 choix_3_options (J7) \u2500\u2500
+  else if (type === 'choix_3_options') {
+    if (t.options) {
+      t.options.forEach(function(opt) {
+        h += '<button onclick="safeSetItem(\'' + sk + '\',\'' + escapeHtml(opt.id || '') + '\');this.style.background=\'rgba(200,168,75,0.15)\';this.style.borderColor=\'rgba(200,168,75,0.5)\';" style="display:block;width:100%;max-width:380px;margin:0 auto 10px;padding:16px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '0d;cursor:pointer;text-align:left;">'
+          + '<div style="font-family:var(--serif);font-size:16px;color:' + c + ';margin-bottom:4px;">' + escapeHtml(opt.label || '') + '</div>'
+          + (opt.explication_gris ? '<div style="font-size:12px;color:rgba(255,255,255,0.35);line-height:1.5;">' + escapeHtml(opt.explication_gris) + '</div>' : '')
+          + '</button>';
+      });
+      if (t.sous_texte_global_gris) h += '<div class="itfaa-subtle" style="font-size:12px;margin-top:8px;">' + escapeHtml(t.sous_texte_global_gris) + '</div>';
+    }
+  }
+  // \u2500\u2500 champ_optionnel_avec_bouton_reporter (J7) \u2500\u2500
+  else if (type === 'champ_optionnel_avec_bouton_reporter') {
+    if (t.question) h += '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;max-width:400px;margin:0 auto 16px;">' + escapeHtml(t.question) + '</div>';
+    var ch7 = t.champ || {};
+    var sk7 = ch7.stockage_cle || sk;
+    h += '<textarea id="_cure_' + sk7 + '" maxlength="' + (ch7.max_chars || 150) + '" placeholder="' + escapeHtml(ch7.placeholder || '') + '" style="width:100%;max-width:380px;min-height:60px;padding:12px;border-radius:10px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;resize:vertical;"></textarea>';
+    if (t.bouton_reporter) h += '<div class="itfaa-subtle" style="font-size:12px;margin-top:8px;cursor:pointer;" onclick="this.textContent=\'Report\u00e9\';">' + escapeHtml(t.bouton_reporter) + '</div>';
+  }
+
+  if (t.sous_texte_gris && type !== 'champ_texte_avec_amorce' && type !== 'champ_texte_avec_option') {
+    h += '<div style="font-size:12px;font-style:italic;color:rgba(255,255,255,0.3);max-width:380px;margin:8px auto 0;">' + escapeHtml(t.sous_texte_gris) + '</div>';
+  }
+  if (t.source && type !== 'invitation_sajda') {
+    h += '<div class="itfaa-subtle" style="font-size:11px;margin-top:8px;">\u2014 ' + escapeHtml(typeof t.source === 'string' ? t.source : t.source.ref || '') + '</div>';
+  }
+  h += '</div>';
+  return h;
 }
 _cureJourRenderers.colere_2 = function(el) { _cureColereGenericDay(el, 2); };
 _cureJourRenderers.colere_3 = function(el) { _cureColereGenericDay(el, 3); };
