@@ -6102,6 +6102,13 @@ function _cureJ7Finale() {
 }
 
 function _cureJ7FinaleSucces() {
+  // Si l'utilisateur a choisi "Reprendre" au J7 → relancer immédiatement
+  var orientation = safeGetItem('cure_colere_j7_orientation') || '';
+  if (orientation === 'reprendre') {
+    localStorage.removeItem('cure_colere');
+    openCureColere();
+    return;
+  }
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var c = '#B33A3A';
@@ -6256,6 +6263,7 @@ function openCureColere() {
       + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:#C8A84A;direction:rtl;margin-bottom:12px;">\u0631\u0650\u064a\u064e\u0627\u0636\u064e\u0629 \u0646\u064e\u0641\u0652\u0633\u0650\u064a\u0651\u064e\u0629</div>'
       + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;line-height:1.7;max-width:400px;margin:0 auto 32px;">Tu as travers\u00e9 Riy\u00e2\u1e0dat an-nafs. La porte reste ouverte derri\u00e8re toi.</div>'
       + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="padding:14px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:none;color:#C8A84A;font-family:var(--serif);font-size:14px;cursor:pointer;">Retour</button>'
+      + '<button onclick="localStorage.removeItem(\'cure_colere\');openCureColere()" style="display:block;margin:16px auto 0;background:none;border:none;font-size:12px;color:rgba(255,255,255,0.3);font-family:var(--serif);cursor:pointer;font-style:italic;">Recommencer un nouveau cycle</button>'
       + '</div>';
     return;
   }
