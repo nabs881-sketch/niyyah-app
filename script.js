@@ -12181,7 +12181,44 @@ function showFinJourneeActe3() {
     safeSetItem('niyyah_finjournee_history', JSON.stringify(hist));
     closeFinJournee();
     updateFinJourneeCard();
+    _maybeShowNotifCard(hist);
   }, 18100);
+}
+function _maybeShowNotifCard(hist) {
+  if (safeGetItem('niyyah_notif_asked') === '1') return;
+  if (safeGetItem('niyyah_notif_perm') === '1') return;
+  if (!('Notification' in window)) return;
+  if (Notification.permission === 'granted') return;
+  if (!hist || hist.length !== 1) return;
+  setTimeout(function() {
+    var existing = document.getElementById('niyyah-notif-invite');
+    if (existing) return;
+    var card = document.createElement('div');
+    card.id = 'niyyah-notif-invite';
+    card.style.cssText = 'max-width:340px;width:calc(100% - 32px);margin:16px auto;padding:20px;background:#141310;border:1px solid rgba(200,168,75,0.2);border-radius:14px;text-align:center;';
+    card.innerHTML = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;color:#C8A84A;margin-bottom:8px;">Niyyah peut t\u2019appeler chaque soir.</div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;color:rgba(240,234,214,0.6);line-height:1.6;margin-bottom:18px;">Un seul murmure, apr\u00e8s Maghrib. Et un autre au matin. Jamais plus.</div>'
+      + '<button id="niyyah-notif-accept" style="display:block;width:100%;padding:14px 0;border:none;border-radius:10px;background:linear-gradient(135deg,#C8A84A,#A68B30);color:#0A0908;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-weight:700;cursor:pointer;margin-bottom:10px;">Activer</button>'
+      + '<div id="niyyah-notif-later" style="font-family:\'Cormorant Garamond\',serif;font-size:12px;color:rgba(200,168,75,0.5);cursor:pointer;">Plus tard</div>';
+    var sanctuaire = document.getElementById('view-sanctuaire');
+    if (!sanctuaire) return;
+    var wrapper = sanctuaire.querySelector('.quick-actions-v2') || sanctuaire.firstElementChild;
+    if (wrapper && wrapper.parentNode) wrapper.parentNode.insertBefore(card, wrapper.nextSibling);
+    else sanctuaire.appendChild(card);
+    document.getElementById('niyyah-notif-accept').addEventListener('click', function() {
+      try {
+        Notification.requestPermission().then(function(p) {
+          if (p === 'granted') { safeSetItem('niyyah_notif_perm', '1'); if (typeof scheduleAllNotifications === 'function') scheduleAllNotifications(); showToast('\u2713 Murmures activ\u00e9s'); }
+          safeSetItem('niyyah_notif_asked', '1');
+          card.remove();
+        }).catch(function() { safeSetItem('niyyah_notif_asked', '1'); card.remove(); });
+      } catch(e) { safeSetItem('niyyah_notif_asked', '1'); card.remove(); }
+    });
+    document.getElementById('niyyah-notif-later').addEventListener('click', function() {
+      safeSetItem('niyyah_notif_asked', '1');
+      card.remove();
+    });
+  }, 1500);
 }
 function updateFajrChallenge() {
   var card = document.getElementById('fajr-challenge-card');
