@@ -5884,8 +5884,9 @@ function openCureJour(porte, num) {
   document.body.classList.add('in-bab-an-nafs');
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
-  if (num >= 2 && !window._cureEpisodeAsked) { _cureEpisodeCheck(porte, num); return; }
-  window._cureEpisodeAsked = false;
+  // Écrans intercalaires désactivés pour cure Colère (données non utilisées)
+  // if (num >= 2 && !window._cureEpisodeAsked) { _cureEpisodeCheck(porte, num); return; }
+  // window._cureEpisodeAsked = false;
   if (safeGetItem('cure_mode') === 'doucement') { _cureDoucement(num, '_cureJourSave_' + porte + '_' + num); _injectCureProgress(num); return; }
   var renderer = _cureJourRenderers[porte + '_' + num];
   if (renderer) { renderer(el); _injectCureProgress(num); }
