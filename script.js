@@ -16308,7 +16308,7 @@ function openLisanMethode() {
   // 3 sections
   m.sections.forEach(function(s) {
     html += '<div style="border-left:2px solid rgba(200,168,75,0.2);padding-left:14px;margin-bottom:18px;">';
-    html += '<div style="font-size:14px;margin-bottom:4px;"><span style="margin-right:6px;">' + s.icone + '</span><span style="font-family:\'Cormorant Garamond\',serif;font-weight:700;color:rgba(240,234,214,0.9);">' + s.titre + '</span></div>';
+    html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:700;color:rgba(240,234,214,0.9);margin-bottom:4px;">' + s.titre + '</div>';
     html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;color:rgba(240,234,214,0.65);line-height:1.6;">' + s.texte + '</div>';
     html += '</div>';
   });
