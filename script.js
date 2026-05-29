@@ -2708,11 +2708,10 @@ function renderLevel(levelId) {
           var _lisanOpacity = checked ? 'opacity:0.35;' : '';
           html += '<div class="item' + fridayCls + _lisanChecked + _tlCurrent + '" onclick="' + customClick + '" style="' + _lisanOpacity + 'background:linear-gradient(135deg,rgba(200,168,75,0.10),rgba(200,168,75,0.04));border:1px solid rgba(200,168,75,0.25);border-radius:14px;padding:16px 14px;margin-top:6px;margin-bottom:6px;position:relative;transition:box-shadow 0.2s,border-color 0.2s;animation-delay:' + delay + 'ms;--i:' + idx + '" id="item-' + item.id + '" onmouseenter="this.style.boxShadow=\'0 0 16px rgba(200,168,75,0.15)\';this.style.borderColor=\'rgba(200,168,75,0.45)\'" onmouseleave="this.style.boxShadow=\'none\';this.style.borderColor=\'rgba(200,168,75,0.25)\'">'
             + '<div style="position:absolute;top:8px;left:10px;font-size:10px;color:rgba(200,168,75,0.4);">\u2727</div>'
-            + '<div style="position:absolute;top:8px;right:8px;">' + infoBtn + '</div>'
             + _pathBadge
             + '<div class="check-circle"' + _checkClick + '><svg class="check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>'
             + '<div class="item-body">'
-            + '<div class="item-label" style="font-size:15.5px;color:rgba(240,234,214,0.95);font-weight:600;">' + _tl + '</div>'
+            + '<div style="display:flex;align-items:center;gap:8px;"><div class="item-label" style="font-size:15.5px;color:rgba(240,234,214,0.95);font-weight:600;">' + _tl + '</div><button style="background:none;border:none;cursor:pointer;padding:2px 4px;margin:0;flex-shrink:0;" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openLisanMethode()" title="Méthode"><span style="font-size:14px;color:#C8A84A;opacity:0.6;">ⓘ</span></button></div>'
             + (_ts ? '<div class="item-sub" style="color:rgba(200,168,75,0.55);font-size:12.5px;">' + _ts + '</div>' : '')
             + '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:22px;color:#C9A961;direction:rtl;text-align:right;margin-top:10px;">' + (item.arabic || '') + '</div>'
             + '</div>'
