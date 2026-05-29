@@ -5867,10 +5867,10 @@ function _cureTransition(jourFait) {
   document.body.classList.add('in-bab-an-nafs');
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
-  var _jd = _getCureJourData(jourFait);
-  var l1 = (_jd && _jd.transitionApres) || '';
+  var _cj = window.CURE_COLERE_CYCLE1 && window.CURE_COLERE_CYCLE1.jours && window.CURE_COLERE_CYCLE1.jours[jourFait - 1];
+  var hierTitre = (_cj && _cj.titre) || '';
   el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
-    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.7;max-width:400px;margin:0 auto 24px;">' + l1 + '</div>'
+    + (hierTitre ? '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.7;max-width:400px;margin:0 auto 24px;">Hier\u00a0: ' + escapeHtml(hierTitre) + '.</div>' : '')
     + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.7;max-width:400px;margin:0 auto 24px;">Aujourd\u2019hui, attends.</div>'
     + '<div class="itfaa-subtle" style="font-family:var(--serif);font-size:16px;max-width:400px;margin:0 auto 40px;">La porte rouvre demain.</div>'
     + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="padding:14px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:none;color:#C8A84A;font-family:var(--serif);font-size:14px;cursor:pointer;">Retour</button>'
@@ -6049,8 +6049,8 @@ function _cureJourSave(porte, num) {
   if (num === 7) {
     _cureJ7Finale(); return;
   }
-  var jd = _getCureJourData(num + 1);
-  var nextTitle = (jd && jd.titre_fr) || '';
+  var _cjNext = window.CURE_COLERE_CYCLE1 && window.CURE_COLERE_CYCLE1.jours && window.CURE_COLERE_CYCLE1.jours[num];
+  var nextTitle = (_cjNext && _cjNext.titre) || '';
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var c = '#B33A3A';
