@@ -4227,74 +4227,9 @@ function openBabPorte(id, step) {
   el.innerHTML = html;
 }
 
-function openPorteChoix(porte) {
-  document.body.classList.add('in-bab-an-nafs');
-  _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  // Écran accueil 1.5s
-  el.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;">'
-    + '<div id="_colAccueil1" style="font-family:var(--serif);font-size:18px;color:#E5E0DC;line-height:1.8;max-width:360px;opacity:0;transition:opacity 1s ease;">Tu es venu. C\u2019est d\u00e9j\u00e0 un travail.</div>'
-    + '<div id="_colAccueil2" style="font-family:var(--serif);font-size:16px;color:rgba(200,168,75,0.7);margin-top:16px;opacity:0;transition:opacity 1s ease;">Comment es-tu maintenant\u00a0?</div>'
-    + '</div>';
-  requestAnimationFrame(function() { var e = document.getElementById('_colAccueil1'); if (e) e.style.opacity = '1'; });
-  setTimeout(function() { var e = document.getElementById('_colAccueil2'); if (e) e.style.opacity = '1'; }, 800);
-  setTimeout(function() { _renderThermometre(); }, 2500);
-}
+// openPorteChoix supprimé (code mort)
 
-function _renderThermometre() {
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  var backBtn = '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
-  var _thermoStats = '';
-  try {
-    var _zL = JSON.parse(safeGetItem('colere_zone_log') || '[]');
-    var _ct = Date.now() - 7 * 86400000;
-    var _rc = _zL.filter(function(e) { return e.date > _ct; });
-    if (_rc.length >= 2) {
-      var _zc = {}; _rc.forEach(function(e) { _zc[e.zone] = (_zc[e.zone] || 0) + 1; });
-      var _dm = Object.keys(_zc).sort(function(a, b) { return _zc[b] - _zc[a]; })[0] || '';
-      var _dl = {verte:'\u00c7a me chatouille',orange:'\u00c7a me prend',rouge:'\u00c7a me submerge'}[_dm] || _dm;
-      var _txt = 'Cette semaine : ' + _rc.length + ' visites \u00b7 Plus souvent : ' + _dl;
-      var _rg = _rc.filter(function(e) { return e.zone === 'rouge'; });
-      if (_rg.length >= 2) {
-        var _cp = JSON.parse(safeGetItem('colere_completions') || '[]');
-        var _du = []; _rg.forEach(function(r) { for (var ci = 0; ci < _cp.length; ci++) { if (_cp[ci] > r.date && (_cp[ci] - r.date) < 3600000) { _du.push(Math.round((_cp[ci] - r.date) / 60000)); break; } } });
-        _du.sort(function(a, b) { return a - b; });
-        if (_du.length > 0) _txt += ' \u00b7 R\u00e9cup : ' + _du[Math.floor(_du.length / 2)] + ' min';
-      }
-      _thermoStats = '<div style="text-align:center;font-size:12px;font-style:italic;color:#888;margin-bottom:16px;max-width:340px;margin-left:auto;margin-right:auto;">' + _txt + '</div>';
-    }
-  } catch(e) {}
-  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;">'
-    + backBtn
-    + _thermoStats
-    + '<div style="display:flex;flex-direction:column;gap:14px;max-width:340px;margin:0 auto;">'
-    + '<button onclick="_logColereZone(\'verte\');_itfaaSUD(\'verte\',openColereYasir)" style="padding:20px;border-radius:14px;border:1px solid rgba(74,124,89,0.5);background:rgba(74,124,89,0.1);cursor:pointer;text-align:left;">'
-    + '<div style="font-family:var(--serif);font-size:18px;color:#4a7c59;margin-bottom:4px;">\u00c7a me chatouille.</div>'
-    + '<div style="font-size:13px;color:#E5E0DC;opacity:0.7;margin-bottom:6px;">je peux encore respirer calmement</div>'
-    + '<div style="font-family:\'Scheherazade New\',serif;font-size:14px;color:rgba(255,255,255,0.3);direction:rtl;">Yas\u00eer</div>'
-    + '<div style="font-size:10px;color:rgba(255,255,255,0.25);">l\u00e9ger</div>'
-    + '</button>'
-    + '<button onclick="_logColereZone(\'orange\');_itfaaSUD(\'orange\',openColereMutawassit)" style="padding:20px;border-radius:14px;border:1px solid rgba(200,118,58,0.5);background:rgba(200,118,58,0.1);cursor:pointer;text-align:left;">'
-    + '<div style="font-family:var(--serif);font-size:18px;color:#c8763a;margin-bottom:4px;">\u00c7a me prend.</div>'
-    + '<div style="font-size:13px;color:#E5E0DC;opacity:0.7;margin-bottom:6px;">mon corps se serre, mon c\u0153ur bat plus fort</div>'
-    + '<div style="font-family:\'Scheherazade New\',serif;font-size:14px;color:rgba(255,255,255,0.3);direction:rtl;">Mutawassi\u1e6d</div>'
-    + '<div style="font-size:10px;color:rgba(255,255,255,0.25);">moyen</div>'
-    + '</button>'
-    + '<button onclick="_logColereZone(\'rouge\');_itfaaSUD(\'rouge\',openColereShadid)" style="padding:20px;border-radius:14px;border:1px solid rgba(163,55,42,0.5);background:rgba(163,55,42,0.1);cursor:pointer;text-align:left;">'
-    + '<div style="font-family:var(--serif);font-size:18px;color:#a3372a;margin-bottom:4px;">\u00c7a me submerge.</div>'
-    + '<div style="font-size:13px;color:#E5E0DC;opacity:0.7;margin-bottom:6px;">je vais exploser, je n\u2019arrive plus \u00e0 penser</div>'
-    + '<div style="font-family:\'Scheherazade New\',serif;font-size:14px;color:rgba(255,255,255,0.3);direction:rtl;">Shad\u00eed</div>'
-    + '<div style="font-size:10px;color:rgba(255,255,255,0.25);">intense</div>'
-    + '</button>'
-    + '</div>'
-    + '<div style="text-align:center;margin-top:28px;color:rgba(255,255,255,0.12);font-size:14px;letter-spacing:4px;margin-bottom:10px;">\u2E3B \u2726 \u2E3B</div>'
-    + '<div style="text-align:center;font-size:13px;font-style:italic;color:rgba(255,255,255,0.3);margin-bottom:16px;">Ou pour autre chose\u00a0:</div>'
-    + '<button onclick="openMuhasabaIntro()" style="width:100%;max-width:340px;margin:0 auto 12px;display:block;padding:14px;border-radius:12px;border:1px solid rgba(200,168,75,0.2);background:#0a0a0a;cursor:pointer;text-align:center;"><div style="font-size:15px;color:rgba(240,234,214,0.6);">Je viens \u00e0 froid.</div><div style="font-size:12px;font-style:italic;color:rgba(255,255,255,0.3);margin-top:4px;">Pour examiner une col\u00e8re pass\u00e9e.</div></button>'
-    + '<button onclick="openCureColere()" style="width:100%;max-width:340px;margin:0 auto;display:block;padding:14px 24px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:rgba(200,168,75,0.05);cursor:pointer;text-align:center;"><div style="font-family:var(--serif);font-size:16px;color:#C8A84A;">Travailler ma col\u00e8re en profondeur</div><div style="font-size:12px;color:rgba(255,255,255,0.35);font-style:italic;margin-top:4px;">Une d\u00e9marche de 7 jours \u00b7 Riy\u00e2\u1e0dat an-nafs</div><div style="font-size:11px;color:rgba(255,255,255,0.25);font-style:italic;margin-top:4px;">Pour tout musulman qui veut prendre soin de son c\u0153ur.</div></button>'
-    + '</div>';
-}
+// _renderThermometre supprimé (code mort)
 
 // ── LE SOUFFLE (composant réutilisable) ──
 function afficheLeSouffle(parentEl, couleur) {
@@ -4339,61 +4274,10 @@ function _showExitModal() {
   document.body.appendChild(ov);
 }
 
-function _logColereZone(zone) {
-  try {
-    var log = safeParseJSON('colere_zone_log', []);
-    log.push({date:Date.now(),zone:zone});
-    if (log.length > 200) log = log.slice(-200);
-    safeSetItem('colere_zone_log', JSON.stringify(log));
-  } catch(e) {}
-}
+// _logColereZone supprimé (code mort)
 
-function _itfaaSUD(zone, cb) {
-  _babImmersion = true; var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
-  document.body.classList.add('in-bab-an-nafs');
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) { cb(); return; }
-  window._itfaaSUDcb = cb;
-  var _sudInit = zone === 'verte' ? 3 : zone === 'orange' ? 5 : 7;
-  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
-    + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:8px;">\u00c0 quel point c\u2019est intense\u00a0?</div>'
-    + '<div style="font-size:13px;color:rgba(255,255,255,0.4);margin-bottom:28px;">0 = calme \u00b7 10 = \u00e7a me submerge totalement</div>'
-    + '<div id="_sudVal" style="font-family:var(--serif);font-size:32px;color:#C8A84A;margin-bottom:16px;">' + _sudInit + '</div>'
-    + '<input type="range" min="0" max="10" step="1" value="' + _sudInit + '" oninput="document.getElementById(\'_sudVal\').textContent=this.value" style="width:100%;max-width:300px;accent-color:#C8A84A;margin-bottom:16px;" />'
-    + '<div style="font-size:12px;font-style:italic;color:rgba(255,255,255,0.35);line-height:1.5;max-width:300px;margin:0 auto 24px;">Mettre un chiffre aide \u00e0 prendre du recul. On te reposera la question apr\u00e8s le Refuge.</div>'
-    + '<button onclick="var _sv=parseInt(document.querySelector(\'input[type=range]\').value,10);safeSetItem(\'itfaa_sud_avant\',JSON.stringify({valeur:_sv,ts:Date.now(),zone:\'' + zone + '\'}));if(_sv>=9&&\'' + zone + '\'===\'rouge\'){_itfaaUrgence();}else{window._itfaaSUDcb();}" style="width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>'
-    + '</div>';
-}
-function _itfaaUrgence() {
-  safeSetItem('itfaa_urgence', 'true');
-  _colereMode = 'shadid';
-  _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
-  document.body.classList.add('in-bab-an-nafs');
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
-    + '<div style="font-family:var(--serif);font-size:14px;color:#C8A84A;margin-bottom:20px;">Tu es submerg\u00e9. Refuge imm\u00e9diat.</div>'
-    + '<div style="font-family:\'Scheherazade New\',serif;font-size:28px;color:#B33A3A;direction:rtl;line-height:1.8;max-width:480px;margin:0 auto 12px;">\u0623\u064e\u0639\u064f\u0648\u0630\u064f \u0628\u0650\u0627\u0644\u0644\u0651\u064e\u0647\u0650 \u0645\u0650\u0646\u064e \u0627\u0644\u0634\u0651\u064e\u064a\u0652\u0637\u064e\u0627\u0646\u0650 \u0627\u0644\u0631\u0651\u064e\u062c\u0650\u064a\u0645\u0650</div>'
-    + '<div id="_refugeCycle" style="margin-bottom:24px;">'
-    + '<div id="_refugeCircle" style="width:120px;height:120px;border-radius:50%;border:2px solid #B33A3A44;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;transition:transform 4s ease-in-out;"><div id="_refugePhase" style="font-family:var(--serif);font-size:13px;color:#B33A3A;opacity:0.7;"></div></div>'
-    + '<div id="_refugeCount" style="font-family:var(--serif);font-size:12px;color:#C8A84A;margin-bottom:4px;">1 / 3</div>'
-    + '<div id="_refugeTimer" style="font-size:11px;color:rgba(255,255,255,0.3);font-style:italic;margin-bottom:14px;"></div>'
-    + '<div id="_refugeAr" style="font-family:\'Scheherazade New\',serif;font-size:32px;color:#B33A3A;direction:rtl;opacity:0;transition:opacity 0.8s ease;">\u0623\u064e\u0639\u064f\u0648\u0630\u064f \u0628\u0650\u0627\u0644\u0644\u0651\u064e\u0647\u0650 \u0645\u0650\u0646\u064e \u0627\u0644\u0634\u0651\u064e\u064a\u0652\u0637\u064e\u0627\u0646\u0650 \u0627\u0644\u0631\u0651\u064e\u062c\u0650\u064a\u0645\u0650</div>'
-    + '<div style="margin-top:16px;"><button onclick="_refugeSkip()" style="background:none;border:none;font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(255,255,255,0.3);cursor:pointer;">Sortir maintenant</button></div>'
-    + '</div>'
-    + '<div id="_refugeSudApres" style="display:none;text-align:center;margin-bottom:24px;">'
-    + '<div style="font-family:var(--serif);font-size:16px;color:#C8A84A;margin-bottom:8px;">Et maintenant, \u00e0 quel point c\u2019est intense\u00a0?</div>'
-    + '<div id="_sudApresVal" style="font-family:var(--serif);font-size:32px;color:#C8A84A;margin-bottom:12px;">5</div>'
-    + '<input type="range" min="0" max="10" step="1" value="5" oninput="document.getElementById(\'_sudApresVal\').textContent=this.value" style="width:100%;max-width:300px;accent-color:#C8A84A;margin-bottom:16px;" />'
-    + '<div><button onclick="_refugeSudSave()" style="padding:12px 28px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Valider</button></div>'
-    + '</div>'
-    + '<div id="_refugeEnd" style="display:none;">'
-    + '<div style="display:flex;flex-direction:column;gap:12px;max-width:340px;width:100%;margin:0 auto;">'
-    + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');babCompletPorte(\'colere\')" style="width:100%;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Sortir</button>'
-    + '<button onclick="_refugeExtend(7)" id="_refugeExtBtn" style="width:100%;padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.2);background:none;color:rgba(255,255,255,0.55);font-family:var(--serif);font-size:14px;cursor:pointer;">Continuer \u00d77</button>'
-    + '</div></div></div>';
-  _refugeRun(3);
-}
+// _itfaaSUD supprimé (code mort)
+// _itfaaUrgence supprimé (code mort)
 
 // openPorteYasir supprimé (code mort Itfâ')
 
@@ -4402,19 +4286,7 @@ function _yasirSkipSouffle() {
   if (window._yasirTimer) { clearTimeout(window._yasirTimer); window._yasirTimer = null; }
   _yasirLaHawla();
 }
-function _yasirLaHawla() {
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) { _yasirIntention(); return; }
-  el.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;background:#000;">'
-    + '<div style="font-size:14px;color:#E5E0DC;line-height:1.6;max-width:380px;margin-bottom:24px;">Cette irritation, elle vient. Voici une formule qui marche pour tout \u2014 quelqu\u2019un, une situation, un objet, ou toi-m\u00eame.</div>'
-    + '<div style="font-family:\'Scheherazade New\',serif;font-size:32px;color:#C8A84A;direction:rtl;line-height:1.8;max-width:480px;margin:0 auto 12px;">\u0644\u064e\u0627 \u062d\u064e\u0648\u0652\u0644\u064e \u0648\u064e\u0644\u064e\u0627 \u0642\u064f\u0648\u0651\u064e\u0629\u064e \u0625\u0650\u0644\u0651\u064e\u0627 \u0628\u0650\u0627\u0644\u0644\u0651\u064e\u0647\u0650</div>'
-    + '<div style="font-size:16px;font-style:italic;color:rgba(200,168,75,0.6);line-height:1.6;margin-bottom:10px;">L\u00e2 \u1e25awla wa l\u00e2 quwwata ill\u00e2 bill\u00e2h</div>'
-    + '<div class="itfaa-body" style="font-size:14px;line-height:1.6;max-width:380px;margin:0 auto 12px;">Il n\u2019y a de force ni de puissance qu\u2019en All\u00e2h.</div>'
-    + '<div style="font-size:12px;font-style:italic;color:rgba(200,168,75,0.45);line-height:1.5;max-width:380px;margin:0 auto 16px;">Le Proph\u00e8te \uFDFA a appel\u00e9 cette formule un tr\u00e9sor du Paradis. \u2014 Bukh\u00e2r\u00ee 6384</div>'
-    + '<div style="font-size:13px;font-style:italic;color:rgba(255,255,255,0.35);line-height:1.5;max-width:380px;margin:0 auto 24px;">Tu connais peut-\u00eatre cette formule. Cette fois, dis-la consciemment pour cette irritation.</div>'
-    + '<button onclick="_yasirIntention()" style="width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:#4a7c59;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">C\u2019est fait</button>'
-    + '</div>';
-}
+// _yasirLaHawla supprimé (code mort)
 
 function _yasirIntention() {
   var el = document.getElementById('babAnNafsContent');
@@ -4475,24 +4347,10 @@ function _yasirSudSave() {
     setTimeout(_yasirExit, 5000);
   } else { _yasirExit(); }
 }
-function _yasirExit() {
-  _babImmersion = false; _hideAideBtn(); var _nb = document.getElementById('nav-bar-v2'); if (_nb) _nb.classList.remove('hidden-immersion'); v2GoSanctuaire();
-}
+// _yasirExit supprimé (code mort)
 var _colereMode = 'shadid';
 
-function _showIntentionRappel(cb) {
-  var raw = safeGetItem('colere_intention_prochaine');
-  if (!raw) { cb(); return; }
-  var obj; try { obj = JSON.parse(raw); } catch(e) { obj = {value:raw,ts:Date.now()}; }
-  if (!obj.value || (Date.now() - (obj.ts||0)) > 30*86400000) { cb(); return; }
-  _babImmersion = true; var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
-  document.body.classList.add('in-bab-an-nafs');
-  var el = document.getElementById('babAnNafsContent'); if (!el) { cb(); return; }
-  el.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;">'
-    + '<div style="font-family:var(--serif);font-size:18px;color:#E5E0DC;line-height:1.8;max-width:360px;opacity:0;transition:opacity 1s ease;" id="_rappelTxt">Tu m\u2019avais dit\u00a0: \u00ab\u00a0' + escapeHtml(obj.value) + '\u00a0\u00bb.<br>C\u2019est maintenant.</div></div>';
-  requestAnimationFrame(function() { var e = document.getElementById('_rappelTxt'); if (e) e.style.opacity = '1'; });
-  setTimeout(cb, 3000);
-}
+// _showIntentionRappel supprimé (code mort)
 
 // openPorteMutawassit supprimé (code mort Itfâ')
 
@@ -4657,27 +4515,7 @@ function _halo(el, z) {
   setTimeout(function() { openItfaaSomatic(); var o = document.getElementById('_haloOverlay'); if (o) o.remove(); }, 6000);
 }
 
-function openItfaaSomatic() {
-  _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  var c = '#B33A3A';
-  var zone = window._colereZone || 'poitrine';
-  var sensations = ['Chaud','Serr\u00e9','Vibrant','Lourd'];
-  var backBtn = '<button onclick="openItfaaStep1()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
-  var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
-    + backBtn
-    + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';margin-bottom:8px;">Comment est-ce que \u00e7a se sent\u00a0?</div>'
-    + '<div style="font-size:12px;font-style:italic;color:rgba(255,255,255,0.35);line-height:1.6;max-width:340px;margin:0 auto 24px;">Le corps parle quand le c\u0153ur ne sait plus dire. \u2014 al-Mu\u1e25\u00e2sib\u00ee enseignait que le corps est miroir du nafs.</div>'
-    + '<div style="display:flex;flex-direction:column;gap:12px;max-width:320px;margin:0 auto;">';
-  for (var i = 0; i < sensations.length; i++) {
-    html += '<button onclick="_logSomatic(\'' + sensations[i] + '\')" style="padding:16px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:16px;cursor:pointer;">' + sensations[i] + '</button>';
-  }
-  html += '<button onclick="openItfaaAction()" style="padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.2);background:none;color:rgba(255,255,255,0.55);font-family:var(--serif);font-size:14px;cursor:pointer;margin-top:16px;">Passer</button>'
-    + '</div></div>';
-  el.innerHTML = html;
-  el.innerHTML += _exitLinkHtml;
-}
+// openItfaaSomatic supprimé (code mort)
 
 function _logSomatic(sensation) {
   try {
@@ -4695,163 +4533,12 @@ function _logSomatic(sensation) {
 
 // openItfaaStep1 supprimé (code mort Itfâ')
 
-function openItfaaAction() {
-  _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  var c = '#B33A3A';
-  var zone = window._colereZone || 'poitrine';
-  var labels = {tete:'T\u00eate',gorge:'Gorge',poitrine:'Poitrine',ventre:'Ventre',mains:'Mains'};
-  // Mapping zone → action + clé JSON
-  var actions = {
-    tete: {fr:'L\u2019eau apaise. Va faire les ablutions. Le contact de l\u2019eau sur le visage est un retour au calme.',key:'etape2_wudu'},
-    gorge: {fr:'Tais-toi. Ne dis rien pendant une minute. Pas un mot, pas un message, pas un cri. Le silence est ton bouclier.',key:'etape2_silence'},
-    poitrine: {fr:'Si tu es debout, assieds-toi. Si tu es assis, allonge-toi. Le corps qui descend, le feu qui retombe.',key:'etape2_assise'},
-    ventre: {fr:'Si tu es debout, assieds-toi. Si tu es assis, allonge-toi. Le corps qui descend, le feu qui retombe.',key:'etape2_assise'},
-    mains: {fr:'Marche une minute. Respire profond\u00e9ment. Chaque pas \u00e9loigne le feu.',key:null}
-  };
-  var act = actions[zone] || actions.poitrine;
-  // Enrichissement arabe/translit depuis JSON
-  var ar = '', translit = '', source = '', grade = '';
-  if (act.key && window.babNafsContent && window.babNafsContent.colere && window.babNafsContent.colere.itfaa) {
-    var h = window.babNafsContent.colere.itfaa[act.key];
-    if (h) { ar = h.ar || ''; translit = h.translit || ''; source = h.source || ''; grade = h.grade || ''; }
-  }
-  var backBtn = '<button onclick="openItfaaStep1()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
-  var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
-    + backBtn
-    + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.6;margin-bottom:16px;">' + escapeHtml(labels[zone] || zone) + '</div>';
-  // Zone TETE : parcours wudu en 2 étapes
-  if (zone === 'tete') {
-    html += '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.7;max-width:360px;margin:0 auto 8px;">Eau tr\u00e8s froide sur le visage.</div>'
-      + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;margin-bottom:8px;">30 secondes pour calmer le feu.</div>'
-      + '<div class="itfaa-subtle" style="font-size:15px;margin-bottom:12px;">Puis fais le wudu complet.</div>'
-      + '<div style="font-size:12px;font-style:italic;color:rgba(200,168,75,0.45);line-height:1.5;max-width:340px;margin:0 auto 24px;">Avant la pri\u00e8re, les savants enseignent le wu\u1e0d\u00fb\u2019 pour le corps et le c\u0153ur. La col\u00e8re y trouve aussi son apaisement.</div>'
-      + '<button onclick="_itfaaWuduEtape2()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">C\u2019est fait</button>'
-      + '</div>';
-    el.innerHTML = html;
-    return;
-  }
-  // Zone MAINS : cercle respiratoire via composant réutilisable
-  if (zone === 'mains') {
-    html += '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;margin-bottom:24px;">Marche une minute. Respire.</div>'
-      + '<div id="_souffleContainer"></div>'
-      + '<div style="font-size:12px;font-style:italic;color:rgba(200,168,75,0.45);text-align:center;max-width:400px;margin:0 auto 24px;">Marcher apaise le corps. Le c\u0153ur suit.</div>'
-      + '<button id="_souffleBtnFait" onclick="_itfaaFaitClick()" style="display:none;width:100%;max-width:340px;margin:0 auto;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019ai fait \u2726</button>'
-      + '</div>';
-    el.innerHTML = html;
-    afficheLeSouffle(document.getElementById('_souffleContainer'), c);
-    setTimeout(function() { var b = document.getElementById('_souffleBtnFait'); if (b) b.style.display = 'block'; }, 30000);
-    return;
-  }
-  // Zones standard (tête/gorge/poitrine/ventre)
-  html += '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.5;margin-bottom:12px;">L\u2019action proph\u00e9tique</div>';
-  html += '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.7;max-width:520px;margin:0 auto 20px;">' + escapeHtml(act.fr) + '</div>';
-  if (ar) {
-    html += '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:' + c + ';direction:rtl;text-align:center;line-height:1.8;margin:16px auto 6px;max-width:520px;opacity:0.85;">' + ar + '</div>';
-  }
-  if (translit) {
-    html += '<div class="itfaa-body" style="font-size:13px;text-align:center;font-style:italic;margin-bottom:6px;">' + escapeHtml(translit) + '</div>';
-  }
-  if (source) {
-    html += '<div class="itfaa-subtle" style="font-size:14px;text-align:center;margin-bottom:4px;">\u2014 ' + escapeHtml(source) + '</div>';
-  }
-  if (grade) {
-    html += '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);text-align:center;margin-bottom:24px;">' + escapeHtml(grade) + '</div>';
-  }
-  if (zone === 'tete' && !ar) {
-    html += '<div class="itfaa-subtle" style="font-size:11px;text-align:center;max-width:400px;margin:0 auto 24px;">Pratique recommand\u00e9e par la tradition musulmane.</div>';
-  }
-  html += '<div style="display:flex;flex-direction:column;gap:12px;max-width:340px;width:100%;margin:20px auto 0;">';
-  if (_colereMode === 'shadid') {
-    html += '<button onclick="_itfaaChoixChemin()" style="width:100%;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019ai fait \u2726</button></div>';
-  } else {
-    html += '<button onclick="_itfaaFaitClick()" style="width:100%;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019ai fait \u2726</button></div>';
-  }
-    + '</div>';
-  el.innerHTML = html;
-}
+// openItfaaAction supprimé (code mort)
 // _itfaaSalat supprimé (code mort Itfâ')
-function _checkSalatReturn() {
-  var ts = parseInt(safeGetItem('colere_salat_choisie') || '0', 10);
-  if (!ts || (Date.now() - ts) > 30 * 60000) { localStorage.removeItem('colere_salat_choisie'); return; }
-  localStorage.removeItem('colere_salat_choisie');
-  _babImmersion = true; var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
-  document.body.classList.add('in-bab-an-nafs');
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  el.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;">'
-    + '<div style="font-family:var(--serif);font-size:20px;color:#C8A84A;line-height:1.8;max-width:360px;opacity:0;transition:opacity 1s ease;" id="_salatReturnMsg">Tu as pri\u00e9. Allah a entendu.<br>Maintenant regarde.</div></div>';
-  requestAnimationFrame(function() { var e = document.getElementById('_salatReturnMsg'); if (e) e.style.opacity = '1'; });
-  setTimeout(function() { openMuhasabaIntro(); }, 3000);
-}
-document.addEventListener('visibilitychange', function() { if (!document.hidden) _checkSalatReturn(); });
+// _checkSalatReturn supprimé (code mort)
+// document.addEventListener('visibilitychange', function() { if (!document.hidden) _checkSalatReturn(); }); // supprimé
 
-function openItfaaRefuge() {
-  _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  var c = '#B33A3A';
-  // Lire depuis JSON
-  var ar = '', translit = '', fr = '', source = '', grade = '', context = '';
-  if (window.babNafsContent && window.babNafsContent.colere && window.babNafsContent.colere.itfaa && window.babNafsContent.colere.itfaa.etape7_refuge) {
-    var h = window.babNafsContent.colere.itfaa.etape7_refuge;
-    ar = h.ar || ''; translit = h.translit || ''; fr = h.fr || ''; source = h.source || ''; grade = h.grade || ''; context = h.context || '';
-  } else {
-    ar = '\u0623\u0639\u0648\u0630\u0627 \u0628\u0627\u0644\u0644\u0647\u0650 \u0645\u0650\u0646\u064e \u0627\u0644\u0634\u064e\u0651\u064a\u0637\u064e\u0627\u0646\u0650 \u0627\u0644\u0631\u064e\u0651\u062c\u0650\u064a\u0645\u0650';
-    translit = 'A\u2019\u00fbdhu bill\u00e2hi mina sh-shayt\u00e2ni r-raj\u00eem';
-    fr = 'Je cherche refuge aupr\u00e8s d\u2019Allah contre Satan le lapid\u00e9.';
-    source = 'Bukh\u00e2r\u00ee 3282, Muslim 2610'; grade = 'sahih';
-  }
-  var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
-    + '<div id="_refugeHeader">'
-    + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';opacity:0.7;margin-top:60px;margin-bottom:24px;">Cherche refuge.</div>'
-    + '<div style="font-family:\'Scheherazade New\',serif;font-size:28px;color:' + c + ';direction:rtl;text-align:center;line-height:1.8;max-width:520px;margin:0 auto 12px;">' + ar + '</div>'
-    + '<div class="itfaa-body" style="font-size:14px;text-align:center;font-style:italic;margin-bottom:12px;">' + escapeHtml(translit) + '</div>'
-    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:16px;line-height:1.7;max-width:520px;margin:0 auto 16px;">' + escapeHtml(fr) + '</div>';
-  if (context) {
-    html += '<div class="itfaa-subtle" style="font-size:13px;line-height:1.6;max-width:480px;margin:0 auto 16px;">' + escapeHtml(context) + '</div>';
-  }
-  html += '<div class="itfaa-subtle" style="font-size:12px;margin-bottom:4px;">\u2014 ' + escapeHtml(source) + '</div>'
-    + '<div class="itfaa-subtle" style="font-size:11px;opacity:0.7;margin-bottom:20px;">' + escapeHtml(grade) + '</div>'
-    + '<div style="font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:20px;">R\u00e9p\u00e8te la formule dans ton c\u0153ur \u00e0 chaque cycle.</div>'
-    + '<div id="_refugePrep" style="display:flex;flex-direction:column;gap:12px;max-width:340px;margin:0 auto 24px;">'
-    + '<button onclick="_refugeSujud()" style="width:100%;padding:14px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:none;color:rgba(200,168,75,0.6);font-family:var(--serif);font-size:14px;cursor:pointer;">\ud83e\uddf4 Pose ton front au sol \u2014 1\u00a0minute</button>'
-    + '<button onclick="document.getElementById(\'_refugeHeader\').style.display=\'none\';_refugeRun(3)" style="width:100%;padding:14px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:none;color:rgba(200,168,75,0.6);font-family:var(--serif);font-size:14px;cursor:pointer;">Refuge court \u2014 3\u00a0cycles, 1\u00a0minute</button>'
-    + '<button onclick="document.getElementById(\'_refugeHeader\').style.display=\'none\';_refugeRun(7)" style="width:100%;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Refuge standard \u2014 7\u00a0cycles, 2\u00a0minutes</button>'
-    + '</div></div>'
-    + '<div id="_refugeCycle" style="display:none;margin-bottom:24px;">'
-    + '<div id="_refugeCircle" style="width:120px;height:120px;border-radius:50%;border:2px solid ' + c + '44;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;transition:transform 4s ease-in-out;"><div id="_refugePhase" style="font-family:var(--serif);font-size:13px;color:' + c + ';opacity:0.7;"></div></div>'
-    + '<div id="_refugeCount" style="font-family:var(--serif);font-size:12px;color:#C8A84A;margin-bottom:4px;">1 / 7</div>'
-    + '<div id="_refugeTimer" style="font-size:11px;color:rgba(255,255,255,0.3);font-style:italic;margin-bottom:14px;"></div>'
-    + '<div id="_refugeAr" style="font-family:\'Scheherazade New\',serif;font-size:32px;color:' + c + ';direction:rtl;opacity:0;transition:opacity 0.8s ease;">' + ar + '</div>'
-    + '<div style="margin-top:16px;"><button onclick="_refugeSkip()" style="background:none;border:none;font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(255,255,255,0.3);cursor:pointer;">Sortir maintenant</button></div>'
-    + '</div>'
-    + '<div id="_refugeSudApres" style="display:none;text-align:center;margin-bottom:24px;">'
-    + '<div style="font-family:var(--serif);font-size:16px;color:#C8A84A;margin-bottom:8px;">Et maintenant, \u00e0 quel point c\u2019est intense\u00a0?</div>'
-    + '<div id="_sudApresVal" style="font-family:var(--serif);font-size:32px;color:#C8A84A;margin-bottom:12px;">5</div>'
-    + '<input type="range" min="0" max="10" step="1" value="5" oninput="document.getElementById(\'_sudApresVal\').textContent=this.value" style="width:100%;max-width:300px;accent-color:#C8A84A;margin-bottom:16px;" />'
-    + '<div><button onclick="_refugeSudSave()" style="padding:12px 28px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Valider</button></div>'
-    + '</div>'
-    + '<div id="_refugeEnd" style="display:none;">'
-    + '<div style="font-size:13px;color:' + c + ';opacity:0.6;font-style:italic;line-height:1.6;max-width:400px;margin:0 auto 16px;">Quand le calme sera revenu, tu pourras revenir ici \u00e0 froid. La porte t\u2019attend.</div>'
-    + '<div style="display:flex;flex-direction:column;gap:12px;max-width:340px;width:100%;margin:0 auto;">'
-    + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');babCompletPorte(\'colere\')" style="width:100%;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Sortir</button>'
-    + '<button onclick="try{safeSetItem(\'colere_muhasaba_invite\',JSON.stringify({ts:Date.now(),zone:window._colereZone||\'\'}))}catch(e){}_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');babCompletPorte(\'colere\')" style="width:100%;padding:14px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:none;color:rgba(200,168,75,0.7);font-size:14px;font-family:var(--serif);cursor:pointer;">Plus tard, en Mu\u1e25\u00e2saba</button>'
-    + '<button onclick="_refugeExtend(window._lastRefugeTarget<=3?7:33)" id="_refugeExtBtn" style="width:100%;padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.2);background:none;color:rgba(255,255,255,0.55);font-family:var(--serif);font-size:14px;cursor:pointer;">Continuer</button>'
-    + '</div></div></div>';
-  el.innerHTML = html;
-  if (safeGetItem('refuge_disclosure_seen') !== '1') {
-    var _prep = document.getElementById('_refugePrep');
-    if (_prep) _prep.style.display = 'none';
-    var _dd = document.createElement('div');
-    _dd.style.cssText = 'max-width:340px;margin:0 auto 20px;padding:12px;border:1px solid rgba(200,168,75,0.3);border-radius:12px;text-align:center;';
-    _dd.innerHTML = '<div style="font-size:14px;font-style:italic;color:rgba(200,168,75,0.55);line-height:1.6;margin-bottom:12px;">Le dhikr fait le travail spirituel. La respiration qui l\u2019accompagne aide simplement le corps \u00e0 se poser.</div>'
-      + '<button onclick="safeSetItem(\'refuge_disclosure_seen\',\'1\');this.parentNode.remove();var p=document.getElementById(\'_refugePrep\');if(p)p.style.display=\'\';" style="padding:10px 24px;border-radius:10px;border:1px solid rgba(200,168,75,0.3);background:none;color:rgba(200,168,75,0.7);font-family:var(--serif);font-size:13px;cursor:pointer;">Compris</button>';
-    var _prep2 = document.getElementById('_refugePrep');
-    if (_prep2) _prep2.parentNode.insertBefore(_dd, _prep2);
-  }
-}
+// openItfaaRefuge supprimé (code mort)
 function _refugeRun(target) {
   var n = 0, circle = document.getElementById('_refugeCircle'), arEl = document.getElementById('_refugeAr'),
       countEl = document.getElementById('_refugeCount'), phaseEl = document.getElementById('_refugePhase'),
@@ -4983,164 +4670,20 @@ function openMuhasabaIntro() {
     + '</div></div>';
 }
 // _muhasabaGuidee supprimé (code mort Muhâsaba guidée)
-function openMuhasabaClassique() {
-  window._muhasabaClassique = {};
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  var c = '#B33A3A';
-  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;max-width:600px;margin:0 auto;">'
-    + '<div style="font-family:var(--serif);font-size:24px;color:#C8A84A;margin-bottom:24px;">Bismill\u00e2h</div>'
-    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:16px;font-style:italic;line-height:1.6;max-width:440px;margin:0 auto 24px;">\u2019Umar ibn al-Kha\u1e6d\u1e6d\u00e2b (RA) disait\u00a0: \u00ab\u00a0Faites le compte de vos \u00e2mes avant qu\u2019on vous le fasse rendre.\u00a0\u00bb</div>'
-    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:16px;line-height:1.6;max-width:440px;margin:0 auto 32px;">Quatre questions vont t\u2019\u00eatre pos\u00e9es. Pas plus. Pas moins.</div>'
-    + '<button onclick="_mcIntro()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Commencer</button>'
-    + '</div>';
-}
-function _mcIntro() {
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  var c = '#B33A3A';
-  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;max-width:600px;margin:0 auto;text-align:center;">'
-    + '<div style="font-family:var(--serif);font-size:22px;color:#C8A84A;margin-bottom:20px;">Avant les 3\u00a0questions</div>'
-    + '<div style="font-size:14px;color:#E5E0DC;line-height:1.6;max-width:440px;margin:0 auto 20px;">Tu vas te poser 3\u00a0questions, dans l\u2019ordre o\u00f9 les savants les ont pos\u00e9es.</div>'
-    + '<div style="font-size:14px;font-style:italic;color:rgba(200,168,75,0.55);line-height:1.6;max-width:440px;margin:0 auto 12px;">Le droit d\u2019All\u00e2h\u00a0: t\u2019es-tu rappel\u00e9 qu\u2019Il te voyait pendant cette col\u00e8re\u00a0?</div>'
-    + '<div style="font-size:14px;font-style:italic;color:rgba(200,168,75,0.55);line-height:1.6;max-width:440px;margin:0 auto 12px;">Le droit des autres\u00a0: as-tu bless\u00e9 quelqu\u2019un par tes paroles, gestes, silences\u00a0?</div>'
-    + '<div style="font-size:14px;font-style:italic;color:rgba(200,168,75,0.55);line-height:1.6;max-width:440px;margin:0 auto 20px;">Le droit de ton \u00e2me\u00a0: as-tu pris soin de toi ou t\u2019es-tu trahi\u00a0?</div>'
-    + '<div style="font-size:13px;color:rgba(255,255,255,0.35);margin-bottom:24px;">Pas besoin de r\u00e9ponses parfaites. Juste regarder.</div>'
-    + '<button onclick="_muhasabaClassiqueQ1()" style="width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Commencer</button>'
-    + '</div>';
-}
-function _muhasabaClassiqueQ1() {
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  var c = '#B33A3A';
-  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;max-width:600px;margin:0 auto;text-align:center;">'
-    + '<div style="font-family:var(--serif);font-size:22px;color:#C8A84A;margin-bottom:24px;">Le droit d\u2019All\u00e2h</div>'
-    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.6;max-width:480px;margin:0 auto 16px;">Dans cette col\u00e8re, ai-je manqu\u00e9 \u00e0 un droit qu\u2019All\u00e2h a sur moi\u00a0?</div>'
-    + '<div class="itfaa-subtle" style="font-size:14px;line-height:1.6;max-width:440px;margin:0 auto 12px;">Ai-je oubli\u00e9 Sa pr\u00e9sence\u00a0? Ai-je pr\u00e9f\u00e9r\u00e9 ma satisfaction \u00e0 la Sienne\u00a0?</div>'
-    + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.45);line-height:1.5;max-width:440px;margin:0 auto 24px;">\u00ab\u00a0Et ne soyez pas comme ceux qui ont oubli\u00e9 All\u00e2h, et qu\u2019Il a fait s\u2019oublier eux-m\u00eames.\u00a0\u00bb \u2014 Coran 59:19</div>'
-    + '<textarea id="_mcQ1" rows="4" placeholder="\u00c9cris ce qui vient. Personne ne lira." style="width:100%;max-width:480px;padding:14px;border-radius:10px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;line-height:1.6;resize:vertical;margin-bottom:24px;"></textarea>'
-    + '<button onclick="window._muhasabaClassique.q1=(document.getElementById(\'_mcQ1\')||{}).value||\'\';_muhasabaClassiqueQ2()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>'
-    + '</div>';
-  el.innerHTML += _exitLinkHtml;
-}
-function _muhasabaClassiqueQ2() {
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  var c = '#B33A3A';
-  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;max-width:600px;margin:0 auto;text-align:center;">'
-    + '<div style="font-family:var(--serif);font-size:22px;color:#C8A84A;margin-bottom:24px;">Le droit des autres</div>'
-    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.6;max-width:480px;margin:0 auto 16px;">Dans cette col\u00e8re, ai-je manqu\u00e9 \u00e0 un droit qu\u2019un autre humain avait sur moi\u00a0?</div>'
-    + '<div class="itfaa-subtle" style="font-size:14px;line-height:1.6;max-width:440px;margin:0 auto 24px;">Ai-je bless\u00e9 par mes paroles\u00a0? Par mes gestes\u00a0? Par mon silence\u00a0?</div>'
-    + '<textarea id="_mcQ2" rows="4" placeholder="\u00c9cris ce qui vient. Personne ne lira." style="width:100%;max-width:480px;padding:14px;border-radius:10px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;line-height:1.6;resize:vertical;margin-bottom:20px;"></textarea>'
-    + '<div class="itfaa-body" style="font-size:13px;font-style:italic;line-height:1.6;max-width:440px;margin:0 auto 12px;">Le Proph\u00e8te \uFDFA a dit\u00a0: \u00ab\u00a0Le musulman est celui dont les autres musulmans sont pr\u00e9serv\u00e9s de sa langue et de sa main.\u00a0\u00bb \u2014 Bukh\u00e2r\u00ee\u00a010</div>'
-    + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.45);line-height:1.5;max-width:440px;margin:0 auto 24px;">\u00ab\u00a0Et accomplissez vos engagements, car on sera interrog\u00e9 au sujet des engagements.\u00a0\u00bb \u2014 Coran 17:34</div>'
-    + '<button onclick="window._muhasabaClassique.q2=(document.getElementById(\'_mcQ2\')||{}).value||\'\';_muhasabaClassiqueQ3()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>'
-    + '</div>';
-  el.innerHTML += _exitLinkHtml;
-}
-function _muhasabaClassiqueQ3() {
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  var c = '#B33A3A';
-  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;max-width:600px;margin:0 auto;text-align:center;">'
-    + '<div style="font-family:var(--serif);font-size:22px;color:#C8A84A;margin-bottom:24px;">Le droit de mon nafs</div>'
-    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.6;max-width:480px;margin:0 auto 16px;">Dans cette col\u00e8re, ai-je manqu\u00e9 \u00e0 un droit que mon \u00e2me avait sur moi\u00a0?</div>'
-    + '<div class="itfaa-subtle" style="font-size:14px;line-height:1.6;max-width:440px;margin:0 auto 24px;">Ai-je laiss\u00e9 Shay\u1e6d\u00e2n habiter mes pens\u00e9es\u00a0? Ai-je nourri ma rancune\u00a0? Ai-je n\u00e9glig\u00e9 ma paix int\u00e9rieure\u00a0?</div>'
-    + '<textarea id="_mcQ3" rows="4" placeholder="\u00c9cris ce qui vient. Personne ne lira." style="width:100%;max-width:480px;padding:14px;border-radius:10px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;line-height:1.6;resize:vertical;margin-bottom:20px;"></textarea>'
-    + '<div class="itfaa-body" style="font-size:13px;font-style:italic;line-height:1.6;max-width:440px;margin:0 auto 12px;">Le Proph\u00e8te \uFDFA a dit \u00e0 Salm\u00e2n\u00a0: \u00ab\u00a0Ton corps a un droit sur toi. Ton Seigneur a un droit sur toi. Ta famille a un droit sur toi. Donne \u00e0 chacun son droit.\u00a0\u00bb \u2014 Bukh\u00e2r\u00ee\u00a01968</div>'
-    + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.45);line-height:1.5;max-width:440px;margin:0 auto 24px;">\u00ab\u00a0Quiconque purifie son \u00e2me r\u00e9ussit, quiconque la corrompt \u00e9choue.\u00a0\u00bb \u2014 Coran 91:9-10</div>'
-    + '<button onclick="window._muhasabaClassique.q3=(document.getElementById(\'_mcQ3\')||{}).value||\'\';_muhasabaClassiqueQ4()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>'
-    + '</div>';
-  el.innerHTML += _exitLinkHtml;
-}
-function _muhasabaClassiqueQ4() {
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  var c = '#B33A3A';
-  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;max-width:600px;margin:0 auto;text-align:center;">'
-    + '<div style="font-family:var(--serif);font-size:22px;color:#C8A84A;margin-bottom:16px;">Demander pardon, et r\u00e9parer</div>'
-    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:16px;line-height:1.6;max-width:440px;margin:0 auto 28px;">Maintenant que tu vois, deux gestes restent.</div>'
-    + '<div id="_mcIstighfar" style="border:1px solid rgba(200,168,75,0.3);border-radius:14px;padding:16px;max-width:480px;margin:0 auto 24px;text-align:center;">'
-    + '<div style="font-family:var(--serif);font-size:14px;color:#C8A84A;margin-bottom:12px;">L\u2019istighf\u00e2r \u2014 entre toi et All\u00e2h</div>'
-    + '<div style="font-family:\'Scheherazade New\',serif;font-size:28px;color:' + c + ';direction:rtl;line-height:1.8;margin-bottom:8px;">\u0623\u064e\u0633\u0652\u062a\u064e\u063a\u0652\u0641\u0650\u0631\u064f \u0627\u0644\u0644\u0651\u064e\u0647\u064e \u0627\u0644\u0652\u0639\u064e\u0638\u0650\u064a\u0645\u064e \u0648\u064e\u0623\u064e\u062a\u064f\u0648\u0628\u064f \u0625\u0650\u0644\u064e\u064a\u0652\u0647\u0650</div>'
-    + '<div class="itfaa-body" style="font-size:16px;font-style:italic;line-height:1.6;margin-bottom:16px;">Astaghfirull\u00e2h al-a\u1e93\u00eem wa at\u00fbbu ilayh.</div>'
-    + '<button onclick="this.textContent=\'\u2713 Acquitt\u00e9\';this.style.opacity=\'0.4\';this.disabled=true;var s2=document.getElementById(\'_mcSection2\');if(s2)s2.style.display=\'\';" style="padding:12px 28px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">J\u2019ai dit l\u2019istighf\u00e2r</button>'
-    + '</div>'
-    + '<div id="_mcSection2" style="display:none;margin-top:24px;">'
-    + '<div style="border:1px solid rgba(255,255,255,0.15);border-radius:14px;padding:16px;max-width:480px;margin:0 auto;text-align:center;">'
-    + '<div style="font-family:var(--serif);font-size:14px;color:rgba(255,255,255,0.55);margin-bottom:12px;">La r\u00e9paration \u2014 envers la personne</div>'
-    + '<div class="itfaa-body" style="font-size:14px;line-height:1.6;max-width:420px;margin:0 auto 16px;">Si tu as bless\u00e9 quelqu\u2019un, ton istighf\u00e2r ne suffit pas. Tu dois aussi aller voir cette personne.</div>'
-    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:16px;line-height:1.6;margin-bottom:16px;">Quand vas-tu lui parler\u00a0?</div>'
-    + '<div style="display:flex;flex-direction:column;gap:10px;max-width:320px;margin:0 auto;">'
-    + '<button onclick="_mcReparation(\'aujourdhui\')" style="padding:14px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:15px;cursor:pointer;">Aujourd\u2019hui</button>'
-    + '<button onclick="_mcReparation(\'demain\')" style="padding:14px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:15px;cursor:pointer;">Demain</button>'
-    + '<button onclick="_mcReparation(\'plus_tard\')" style="padding:14px;border-radius:12px;border:1px solid ' + c + '22;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;opacity:0.6;">Plus tard, mais je m\u2019engage</button>'
-    + '</div></div></div></div>';
-  el.innerHTML += _exitLinkHtml;
-}
-function _mcReparation(quand) {
-  safeSetItem('muhasaba_classique_reparation', JSON.stringify({quand:quand, ts:Date.now()}));
-  window._muhasabaClassique.reparation = quand;
-  if ((window._muhasabaClassique.q1 || '').trim()) { _mcCarteRetour(); return; }
-  if ((window._muhasabaClassique.q2 || '').trim()) { _mcCarteGeste(); return; }
-  _muhasabaClassiqueFin();
-}
-function _mcCarteRetour() {
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  var c = '#B33A3A';
-  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;max-width:600px;margin:0 auto;text-align:center;">'
-    + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:20px;">Le retour vers All\u00e2h</div>'
-    + '<div style="border:1px solid rgba(200,168,75,0.3);border-radius:14px;padding:14px;max-width:480px;margin:0 auto 24px;background:rgba(200,168,74,0.08);text-align:center;"><div style="font-family:var(--serif);font-size:16px;color:#C8A84A;margin-bottom:8px;">Avant les gestes</div><div style="font-size:14px;font-style:italic;color:#E5E0DC;line-height:1.6;">Allâh t’a vu, et Sa raḥma englobe toute chose.<br>Il aime ceux qui reconnaissent leur faute. — Coran 2:222<br>Reviens vers Lui maintenant : avec ton dhikr, avec ton iftiqâr, avec ta tawba.</div></div>'
-    + '<div style="border:1px solid ' + c + '33;border-radius:14px;padding:20px;max-width:480px;margin:0 auto 24px;text-align:center;">'
-    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;margin-bottom:14px;">Astaghfirull\u00e2h a sa pleine valeur. Si tu peux faire en plus une action aujourd\u2019hui pour Lui, c\u2019est un cadeau pour ton \u00e2me\u00a0:</div>'
-    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;margin-bottom:14px;">Une action aujourd\u2019hui pour Lui\u00a0: un dhikr, une \u1e63adaqa silencieuse, une rak\u2019a de plus, un Coran ouvert.</div>'
-    + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);line-height:1.6;">\u00ab\u00a0Et fais le bien comme All\u00e2h t\u2019a fait du bien.\u00a0\u00bb \u2014 Coran 28:77</div>'
-    + '</div>'
-    + '<div id="_mcRetourAction" style="max-width:480px;margin:0 auto 24px;display:none;">'
-    + '<input id="_mcHaqqAction" type="text" placeholder="Mon action pour Lui aujourd\u2019hui\u2026" style="width:100%;padding:14px;border-radius:10px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;margin-bottom:12px;" />'
-    + '<div style="text-align:center;margin-bottom:16px;"><button onclick="_mcRappelMort()" style="background:none;border:none;font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(200,168,75,0.45);cursor:pointer;">Pour aller plus loin encore →</button></div>'
-    + '<div style="border:1px solid #a3372a;border-radius:14px;padding:14px;max-width:480px;margin:0 auto 20px;background:#0a0a0a;text-align:center;"><div style="font-size:14px;color:#E5E0DC;line-height:1.6;">Cet examen ne remplace pas le soin humain. Si la colère revient malgré tes efforts, parle à un humain de confiance — un proche, un imam, un savant local, un thérapeute. Allâh aime ceux qui se font aider.</div></div>'
-    + '<button onclick="safeSetItem(\'muhasaba_action_haqq_allah\',document.getElementById(\'_mcHaqqAction\').value||\'.\');_mcAfterRetour()" style="width:100%;max-width:340px;padding:16px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>'
-    + '</div>'
-    + '<button id="_mcRetourBtn" onclick="document.getElementById(\'_mcRetourAction\').style.display=\'\';this.style.display=\'none\';" style="width:100%;max-width:340px;padding:16px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019identifie une action</button>'
-    + '</div>';
-}
+// openMuhasabaClassique supprimé (code mort)
+// _mcIntro supprimé (code mort)
+// _muhasabaClassiqueQ1 supprimé (code mort)
+// _muhasabaClassiqueQ2 supprimé (code mort)
+// _muhasabaClassiqueQ3 supprimé (code mort)
+// _muhasabaClassiqueQ4 supprimé (code mort)
+// _mcReparation supprimé (code mort)
+// _mcCarteRetour supprimé (code mort)
 function _mcAfterRetour() {
   if ((window._muhasabaClassique.q2 || '').trim()) { _mcCarteGeste(); return; }
   if ((window._muhasabaClassique.q3 || '').trim()) { _mcCarteSoin(); return; }
   _muhasabaClassiqueFin();
 }
-function _mcCarteGeste() {
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  var c = '#B33A3A';
-  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;max-width:600px;margin:0 auto;text-align:center;">'
-    + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:20px;">Le geste vers l\u2019autre</div>'
-    + '<div style="border:1px solid rgba(200,168,75,0.3);border-radius:14px;padding:14px;max-width:480px;margin:0 auto 24px;background:rgba(200,168,74,0.08);text-align:center;"><div style="font-family:var(--serif);font-size:16px;color:#C8A84A;margin-bottom:8px;">Avant les gestes</div><div style="font-size:14px;font-style:italic;color:#E5E0DC;line-height:1.6;">Allâh t’a vu, et Sa raḥma englobe toute chose.<br>Il aime ceux qui reconnaissent leur faute. — Coran 2:222<br>Reviens vers Lui maintenant : avec ton dhikr, avec ton iftiqâr, avec ta tawba.</div></div>'
-    + '<div style="border:1px solid ' + c + '33;border-radius:14px;padding:20px;max-width:480px;margin:0 auto 28px;text-align:center;">'
-    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;margin-bottom:14px;">Tu as choisi quand lui parler. Voici comment.</div>'
-    + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);line-height:1.6;margin-bottom:16px;">\u00ab\u00a0Celui qui croit en All\u00e2h et au Jour Dernier, qu\u2019il dise du bien ou qu\u2019il se taise.\u00a0\u00bb \u2014 Bukh\u00e2r\u00ee 6018</div>'
-    + '<div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:12px;">'
-    + '<button onclick="_mcAmorce(this)" style="padding:8px 14px;border-radius:10px;border:1px solid ' + c + '33;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:13px;cursor:pointer;">Je viens te demander pardon</button>'
-    + '<button onclick="_mcAmorce(this)" style="padding:8px 14px;border-radius:10px;border:1px solid ' + c + '33;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:13px;cursor:pointer;">J\u2019ai eu tort, \u00e9coute-moi</button>'
-    + '<button onclick="_mcAmorce(this)" style="padding:8px 14px;border-radius:10px;border:1px solid ' + c + '33;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:13px;cursor:pointer;">Je veux qu\u2019on en parle calmement</button>'
-    + '<button onclick="_mcAmorce(this)" style="padding:8px 14px;border-radius:10px;border:1px solid ' + c + '33;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:13px;cursor:pointer;">Si tu ne veux pas parler maintenant, je t\u2019attendrai</button>'
-    + '</div>'
-    + '<textarea id="_mcAmorceText" rows="2" placeholder="Ton amorce\u2026" style="width:100%;max-width:440px;padding:12px;border-radius:10px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;resize:vertical;"></textarea>'
-    + '</div>'
-    + '<div style="max-width:480px;margin:16px auto 0;text-align:center;">'
-    + '<div style="font-size:13px;color:rgba(255,255,255,0.35);line-height:1.6;margin-bottom:10px;">Si parler est trop dur, \u00e9cris-lui un message court. Pas de d\u00e9bat. Juste l\u2019excuse.</div>'
-    + '<div id="_mcMsgWrap" style="display:none;margin-bottom:12px;">'
-    + '<textarea id="_mcMsgText" rows="3" style="width:100%;max-width:440px;padding:12px;border-radius:10px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;resize:vertical;">Salam, je voulais te dire\u2026</textarea>'
-    + '</div>'
-    + '<button id="_mcMsgBtn" onclick="document.getElementById(\'_mcMsgWrap\').style.display=\'\';this.style.display=\'none\';" style="padding:10px 20px;border-radius:10px;border:1px solid ' + c + '22;background:none;color:' + c + ';font-family:var(--serif);font-size:13px;cursor:pointer;opacity:0.6;">\u00c9crire un message</button>'
-    + '</div>'
-    + '<div style="text-align:center;margin-bottom:16px;"><button onclick="_mcRappelMort()" style="background:none;border:none;font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(200,168,75,0.45);cursor:pointer;">Pour aller plus loin encore →</button></div>'
-    + '<div style="border:1px solid #a3372a;border-radius:14px;padding:14px;max-width:480px;margin:0 auto 20px;background:#0a0a0a;text-align:center;"><div style="font-size:14px;color:#E5E0DC;line-height:1.6;">Cet examen ne remplace pas le soin humain. Si la colère revient malgré tes efforts, parle à un humain de confiance — un proche, un imam, un savant local, un thérapeute. Allâh aime ceux qui se font aider.</div></div>'
-    + '<button onclick="safeSetItem(\'muhasaba_amorce_repar\',(document.getElementById(\'_mcAmorceText\')||{}).value||\'\');var _m=(document.getElementById(\'_mcMsgText\')||{}).value||\'\';if(_m&&_m!==\'Salam, je voulais te dire\u2026\')safeSetItem(\'muhasaba_message_ecrit\',_m);_mcAfterGeste()" style="width:100%;max-width:340px;padding:16px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;margin-top:20px;">Continuer</button>'
-    + '</div>';
-}
+// _mcCarteGeste supprimé (code mort)
 
 function _mcAfterGeste() {
   if ((window._muhasabaClassique.q3 || '').trim()) { _mcCarteSoin(); return; }
@@ -5195,19 +4738,7 @@ function _mcAmorce(btn) {
   if (ta) ta.value = btn.textContent;
 }
 
-function _muhasabaClassiqueFin() {
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  var c = '#B33A3A';
-  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
-    + '<div style="font-family:\'Scheherazade New\',serif;font-size:36px;color:' + c + ';direction:rtl;margin-bottom:20px;">\u0645\u062d\u0627\u0633\u0628\u0629</div>'
-    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.6;max-width:400px;margin:0 auto 16px;">Tu as fait al-mu\u1e25\u00e2saba \u2014 l\u2019examen de l\u2019\u00e2me.</div>'
-    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:14px;font-style:italic;line-height:1.6;max-width:400px;margin:0 auto 20px;color:rgba(255,255,255,0.5);">Une discipline enseign\u00e9e depuis al-Mu\u1e25\u00e2sib\u00ee (m.\u00a0857) et reprise par al-Ghaz\u00e2l\u00ee, Ibn al-Qayyim, et toute la tradition.</div>'
-    + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:24px;">All\u00e2h accepte de toi.</div>'
-    + _shareEngagementHtml('classique')
-    + '<button onclick="if(window._muhasabaFromInvite){localStorage.removeItem(\'colere_muhasaba_invite\');localStorage.removeItem(\'colere_muhasaba_snooze\');window._muhasabaFromInvite=false;var _b=document.getElementById(\'_muhasabaInviteBanner\');if(_b)_b.remove();}_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');babCompletPorte(\'colere\')" style="width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Retour</button>'
-    + '</div>';
-}
+// _muhasabaClassiqueFin supprimé (code mort)
 
 // openMuhasabaEmotion supprimé (code mort Muhâsaba guidée)
 // _muhasabaToggleEmo supprimé (code mort Muhâsaba guidée)
@@ -5231,104 +4762,15 @@ function _muhasabaClassiqueFin() {
 
 // _muhasabaCartePeur supprimé (code mort Muhâsaba guidée)
 
-function _muhasabaCarteEpuisement() {
-  // Log + compter sur 7j
-  try {
-    var log = JSON.parse(safeGetItem('muhasaba_emotion_log') || '[]');
-    log.push({emotion:'\u00e9puisement',ts:Date.now()});
-    if (log.length > 200) log = log.slice(-200);
-    safeSetItem('muhasaba_emotion_log', JSON.stringify(log));
-    var cutoff = Date.now() - 7 * 86400000;
-    var count = log.filter(function(e){ return e.emotion === '\u00e9puisement' && e.ts > cutoff; }).length;
-  } catch(e) { var count = 0; }
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  var c = '#B33A3A';
-  var hadith = '<div class="itfaa-body" style="font-size:14px;font-style:italic;line-height:1.6;margin-bottom:6px;">Le Proph\u00e8te \uFDFA a dit\u00a0: \u00ab\u00a0Ton corps a un droit sur toi.\u00a0\u00bb</div>'
-    + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:16px;">\u2014 Bukh\u00e2r\u00ee 1968</div>';
-  var msg = count >= 3
-    ? '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;margin-bottom:16px;">Tu as nomm\u00e9 l\u2019\u00e9puisement plusieurs fois cette semaine. Ce n\u2019est plus juste de la fatigue passag\u00e8re. All\u00e2h n\u2019aime pas qu\u2019on n\u00e9glige son corps.</div>'
-    + '<div style="font-family:var(--serif);font-size:16px;font-weight:bold;font-style:italic;color:#C8A84A;line-height:1.6;">Parle \u00e0 un m\u00e9decin. L\u2019\u00e9puisement r\u00e9p\u00e9t\u00e9 m\u00e9rite une attention m\u00e9dicale.</div>'
-    : '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;">Tu es \u00e9puis\u00e9. Cette col\u00e8re est un sympt\u00f4me, pas une faute. Soigne d\u2019abord ton corps et ton sommeil.</div>';
-  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;max-width:600px;margin:0 auto;text-align:center;">'
-    + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:20px;">Aller plus loin</div>'
-    + '<div style="border:1px solid rgba(200,168,75,0.3);border-radius:14px;padding:14px;max-width:480px;margin:0 auto 24px;background:rgba(200,168,74,0.08);text-align:center;"><div style="font-family:var(--serif);font-size:16px;color:#C8A84A;margin-bottom:8px;">Avant les gestes</div><div style="font-size:14px;font-style:italic;color:#E5E0DC;line-height:1.6;">Allâh t’a vu, et Sa raḥma englobe toute chose.<br>Il aime ceux qui reconnaissent leur faute. — Coran 2:222<br>Reviens vers Lui maintenant : avec ton dhikr, avec ton iftiqâr, avec ta tawba.</div></div>'
-    + '<div style="border:1px solid ' + c + '33;border-radius:14px;padding:20px;max-width:480px;margin:0 auto 28px;text-align:center;">'
-    + hadith + msg + '</div>'
-    + '<div style="border:1px solid #a3372a;border-radius:14px;padding:14px;max-width:480px;margin:0 auto 20px;background:#0a0a0a;text-align:center;"><div style="font-size:14px;color:#E5E0DC;line-height:1.6;">Cet examen ne remplace pas le soin humain. Si la colère revient malgré tes efforts, parle à un humain de confiance — un proche, un imam, un savant local, un thérapeute. Allâh aime ceux qui se font aider.</div></div><button onclick="openMuhasabaCloture()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019avance avec \u00e7a</button>'
-    + '</div>';
-}
+// _muhasabaCarteEpuisement supprimé (code mort)
 
-function _muhasabaCarteCulpabilite() {
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  var c = '#B33A3A';
-  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;max-width:600px;margin:0 auto;text-align:center;">'
-    + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:20px;">Aller plus loin</div>'
-    + '<div style="border:1px solid rgba(200,168,75,0.3);border-radius:14px;padding:14px;max-width:480px;margin:0 auto 24px;background:rgba(200,168,74,0.08);text-align:center;"><div style="font-family:var(--serif);font-size:16px;color:#C8A84A;margin-bottom:8px;">Avant les gestes</div><div style="font-size:14px;font-style:italic;color:#E5E0DC;line-height:1.6;">Allâh t’a vu, et Sa raḥma englobe toute chose.<br>Il aime ceux qui reconnaissent leur faute. — Coran 2:222<br>Reviens vers Lui maintenant : avec ton dhikr, avec ton iftiqâr, avec ta tawba.</div></div>'
-    + '<div style="border:1px solid ' + c + '33;border-radius:14px;padding:20px;max-width:480px;margin:0 auto 24px;text-align:center;">'
-    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;margin-bottom:16px;">La culpabilit\u00e9 juste m\u00e8ne \u00e0 la tawba. La culpabilit\u00e9 injuste m\u00e8ne au d\u00e9sespoir.</div>'
-    + '<div class="itfaa-body" style="font-size:14px;font-style:italic;line-height:1.6;margin-bottom:6px;">\u00ab\u00a0Ne d\u00e9sesp\u00e9rez pas de la mis\u00e9ricorde d\u2019All\u00e2h.\u00a0\u00bb</div>'
-    + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:16px;">\u2014 Coran 39:53</div>'
-    + '<div class="itfaa-body" style="font-size:14px;font-style:italic;line-height:1.6;margin-bottom:6px;">\u00ab\u00a0Les bonnes actions effacent les mauvaises.\u00a0\u00bb</div>'
-    + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:16px;">\u2014 Coran 11:114</div>'
-    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;">Astaghfirull\u00e2h, et fais une bonne action en r\u00e9paration.</div>'
-    + '</div>'
-    + '<div style="border:1px solid #a3372a;border-radius:14px;padding:14px;max-width:480px;margin:0 auto 20px;background:#0a0a0a;text-align:center;"><div style="font-size:14px;color:#E5E0DC;line-height:1.6;">Cet examen ne remplace pas le soin humain. Si la colère revient malgré tes efforts, parle à un humain de confiance — un proche, un imam, un savant local, un thérapeute. Allâh aime ceux qui se font aider.</div></div><button onclick="openMuhasabaCloture()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;margin-bottom:16px;">J\u2019avance avec \u00e7a</button>'
-    + '<div><button onclick="openMuhasabaClassique()" style="background:none;border:none;font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);cursor:pointer;">Pour aller plus profond\u00e9ment, tu peux refaire ta mu\u1e25\u00e2saba en voie classique.</button></div>'
-    + '</div>';
-}
+// _muhasabaCarteCulpabilite supprimé (code mort)
 
-function _muhasabaCarteTrahison() {
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  var c = '#B33A3A';
-  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;max-width:600px;margin:0 auto;text-align:center;">'
-    + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:20px;">Aller plus loin</div>'
-    + '<div style="border:1px solid rgba(200,168,75,0.3);border-radius:14px;padding:14px;max-width:480px;margin:0 auto 24px;background:rgba(200,168,74,0.08);text-align:center;"><div style="font-family:var(--serif);font-size:16px;color:#C8A84A;margin-bottom:8px;">Avant les gestes</div><div style="font-size:14px;font-style:italic;color:#E5E0DC;line-height:1.6;">Allâh t’a vu, et Sa raḥma englobe toute chose.<br>Il aime ceux qui reconnaissent leur faute. — Coran 2:222<br>Reviens vers Lui maintenant : avec ton dhikr, avec ton iftiqâr, avec ta tawba.</div></div>'
-    + '<div style="border:1px solid ' + c + '33;border-radius:14px;padding:20px;max-width:480px;margin:0 auto 28px;text-align:center;">'
-    + '<div class="itfaa-body" style="font-size:14px;font-style:italic;line-height:1.6;margin-bottom:6px;">Y\u00fbsuf (\u2019alayhi as-sal\u00e2m) a \u00e9t\u00e9 trahi par ses fr\u00e8res. Il a fini par leur dire\u00a0:</div>'
-    + '<div class="itfaa-body" style="font-size:14px;font-style:italic;line-height:1.6;margin-bottom:6px;">\u00ab\u00a0Pas de reproche contre vous aujourd\u2019hui. Qu\u2019All\u00e2h vous pardonne.\u00a0\u00bb</div>'
-    + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:16px;">\u2014 Coran 12:92</div>'
-    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;">Le pardon arrive quand il arrive. Tu n\u2019as pas \u00e0 le forcer. Y\u00fbsuf a pardonn\u00e9 apr\u00e8s des ann\u00e9es, apr\u00e8s que la justice ait \u00e9t\u00e9 r\u00e9tablie.</div>'
-    + '</div>'
-    + '<div style="border:1px solid #a3372a;border-radius:14px;padding:14px;max-width:480px;margin:0 auto 20px;background:#0a0a0a;text-align:center;"><div style="font-size:14px;color:#E5E0DC;line-height:1.6;">Cet examen ne remplace pas le soin humain. Si la colère revient malgré tes efforts, parle à un humain de confiance — un proche, un imam, un savant local, un thérapeute. Allâh aime ceux qui se font aider.</div></div><button onclick="openMuhasabaCloture()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019avance avec \u00e7a</button>'
-    + '</div>';
-}
+// _muhasabaCarteTrahison supprimé (code mort)
 
-function _muhasabaCarteImpuissance() {
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  var c = '#B33A3A';
-  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;max-width:600px;margin:0 auto;text-align:center;">'
-    + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:20px;">Aller plus loin</div>'
-    + '<div style="border:1px solid rgba(200,168,75,0.3);border-radius:14px;padding:14px;max-width:480px;margin:0 auto 24px;background:rgba(200,168,74,0.08);text-align:center;"><div style="font-family:var(--serif);font-size:16px;color:#C8A84A;margin-bottom:8px;">Avant les gestes</div><div style="font-size:14px;font-style:italic;color:#E5E0DC;line-height:1.6;">Allâh t’a vu, et Sa raḥma englobe toute chose.<br>Il aime ceux qui reconnaissent leur faute. — Coran 2:222<br>Reviens vers Lui maintenant : avec ton dhikr, avec ton iftiqâr, avec ta tawba.</div></div>'
-    + '<div style="border:1px solid ' + c + '33;border-radius:14px;padding:20px;max-width:480px;margin:0 auto 28px;text-align:center;">'
-    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;margin-bottom:16px;">Tu as fait ce que tu pouvais faire. Le reste appartient \u00e0 All\u00e2h.</div>'
-    + '<div class="itfaa-body" style="font-size:14px;font-style:italic;line-height:1.6;margin-bottom:6px;">\u00ab\u00a0Et c\u2019est \u00e0 All\u00e2h qu\u2019aboutissent toutes choses.\u00a0\u00bb</div>'
-    + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:16px;">\u2014 Coran 22:76</div>'
-    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;">Tawakkul\u00a0: confier le r\u00e9sultat sans cesser d\u2019agir l\u00e0 o\u00f9 on peut.</div>'
-    + '</div>'
-    + '<div style="border:1px solid #a3372a;border-radius:14px;padding:14px;max-width:480px;margin:0 auto 20px;background:#0a0a0a;text-align:center;"><div style="font-size:14px;color:#E5E0DC;line-height:1.6;">Cet examen ne remplace pas le soin humain. Si la colère revient malgré tes efforts, parle à un humain de confiance — un proche, un imam, un savant local, un thérapeute. Allâh aime ceux qui se font aider.</div></div><button onclick="openMuhasabaCloture()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019avance avec \u00e7a</button>'
-    + '</div>';
-}
+// _muhasabaCarteImpuissance supprimé (code mort)
 
-function _muhasabaCarteInjustice() {
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  var c = '#B33A3A';
-  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;max-width:600px;margin:0 auto;text-align:center;">'
-    + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:20px;">Aller plus loin</div>'
-    + '<div style="border:1px solid rgba(200,168,75,0.3);border-radius:14px;padding:14px;max-width:480px;margin:0 auto 24px;background:rgba(200,168,74,0.08);text-align:center;"><div style="font-family:var(--serif);font-size:16px;color:#C8A84A;margin-bottom:8px;">Avant les gestes</div><div style="font-size:14px;font-style:italic;color:#E5E0DC;line-height:1.6;">Allâh t’a vu, et Sa raḥma englobe toute chose.<br>Il aime ceux qui reconnaissent leur faute. — Coran 2:222<br>Reviens vers Lui maintenant : avec ton dhikr, avec ton iftiqâr, avec ta tawba.</div></div>'
-    + '<div style="border:1px solid ' + c + '33;border-radius:14px;padding:20px;max-width:480px;margin:0 auto 28px;text-align:center;">'
-    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;margin-bottom:16px;">All\u00e2h n\u2019oublie pas l\u2019injustice subie.</div>'
-    + '<div class="itfaa-body" style="font-size:14px;font-style:italic;line-height:1.6;margin-bottom:6px;">\u00ab\u00a0La sanction d\u2019une mauvaise action est une mauvaise action identique. Mais quiconque pardonne et fait \u0153uvre de r\u00e9conciliation, son salaire incombe \u00e0 All\u00e2h.\u00a0\u00bb</div>'
-    + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:16px;">\u2014 Coran 42:40</div>'
-    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;">Tu peux choisir\u00a0: la riposte juste, ou le pardon. All\u00e2h accepte les deux.</div>'
-    + '</div>'
-    + '<div style="border:1px solid #a3372a;border-radius:14px;padding:14px;max-width:480px;margin:0 auto 20px;background:#0a0a0a;text-align:center;"><div style="font-size:14px;color:#E5E0DC;line-height:1.6;">Cet examen ne remplace pas le soin humain. Si la colère revient malgré tes efforts, parle à un humain de confiance — un proche, un imam, un savant local, un thérapeute. Allâh aime ceux qui se font aider.</div></div><button onclick="openMuhasabaCloture()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019avance avec \u00e7a</button>'
-    + '</div>';
-}
+// _muhasabaCarteInjustice supprimé (code mort)
 
 // _muhasabaCarteTristesse supprimé (code mort Muhâsaba guidée)
 
@@ -6201,19 +5643,7 @@ window._cureJourSave_colere_5 = function() { _cureJourSave('colere', 5); };
 window._cureJourSave_colere_6 = function() { _cureJourSave('colere', 6); };
 window._cureJourSave_colere_7 = function() { _cureJourSave('colere', 7); };
 
-function _itfaaDepistageEncart() {
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) { renderBabAnNafs(); return; }
-  var c = '#B33A3A';
-  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;max-width:600px;margin:0 auto;text-align:center;">'
-    + '<div style="border:1px solid #a3372a;border-radius:14px;padding:14px;max-width:480px;margin:0 auto 28px;background:#0a0a0a;text-align:center;">'
-    + '<div style="font-size:15px;color:#E5E0DC;line-height:1.6;">Tu as utilis\u00e9 l\u2019I\u1e6df\u00e2\u2019 Shad\u00eed 5\u00a0fois en 2\u00a0semaines. Cette fr\u00e9quence m\u00e9rite un avis m\u00e9dical pour v\u00e9rifier qu\u2019il n\u2019y a pas de cause sous-jacente (trouble explosif, d\u00e9pression, autre).</div>'
-    + '</div>'
-    + '<div style="display:flex;flex-direction:column;gap:12px;max-width:340px;margin:0 auto;">'
-    + '<button onclick="safeSetItem(\'itfaa_depistage_vu\',String(Date.now()));_cureDepistage()" style="width:100%;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Faire le d\u00e9pistage</button>'
-    + '<button onclick="safeSetItem(\'itfaa_depistage_vu\',String(Date.now()));_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');v2GoSanctuaire()" style="width:100%;padding:14px;border-radius:12px;border:1px solid rgba(200,168,75,0.2);background:none;color:rgba(200,168,75,0.5);font-family:var(--serif);font-size:14px;cursor:pointer;">Plus tard</button>'
-    + '</div></div>';
-}
+// _itfaaDepistageEncart supprimé (code mort)
 
 function babCompletPorte(id) {
   try {
@@ -15984,15 +15414,15 @@ window.regardeCancelThinking  = regardeCancelThinking;
 window.openRegardeJournal     = openRegardeJournal;
 window.renderBabAnNafs        = renderBabAnNafs;
 window.openBabPorte           = openBabPorte;
-window.openPorteChoix         = openPorteChoix;
+// window.openPorteChoix         = openPorteChoix; // supprimé
 // window.openPorteYasir         = openPorteYasir; // supprimé (code mort)
 // window.openPorteMutawassit    = openPorteMutawassit; // supprimé (code mort)
 // window.openPorteShadid        = openPorteShadid; // supprimé (code mort)
 window.openPorteSeuilTherapeute = openPorteSeuilTherapeute;
 window.openColereChoix        = openColereChoix;
-window._renderThermometre     = _renderThermometre;
+// window._renderThermometre     = _renderThermometre; // supprimé
 window._showExitModal          = _showExitModal;
-window._logColereZone         = _logColereZone;
+// window._logColereZone         = _logColereZone; // supprimé
 window.afficheLeSouffle       = afficheLeSouffle;
 window._showAideBtn           = _showAideBtn;
 window._hideAideBtn           = _hideAideBtn;
@@ -16028,21 +15458,21 @@ window.openMuhasabaRappel    = openMuhasabaRappel;
 window._halo                  = _halo;
 // window._itfaaWuduEtape2       = _itfaaWuduEtape2; // supprimé (code mort)
 // window.openItfaaOuverture     = openItfaaOuverture; // supprimé (code mort)
-window._itfaaSUD              = _itfaaSUD;
+// window._itfaaSUD              = _itfaaSUD; // supprimé
 // window.openColereYasir supprimé (code mort)
 // window._yasirSouffle          = _yasirSouffle; // supprimé (code mort)
 window._yasirSkipSouffle      = _yasirSkipSouffle;
 window._yasirIntention        = _yasirIntention;
 window._yasirChoix            = _yasirChoix;
-window._yasirLaHawla          = _yasirLaHawla;
+// window._yasirLaHawla          = _yasirLaHawla; // supprimé
 window._yasirSudOption        = _yasirSudOption;
 window._yasirSudMesure        = _yasirSudMesure;
 window._yasirSudSave          = _yasirSudSave;
-window._yasirExit             = _yasirExit;
+// window._yasirExit             = _yasirExit; // supprimé
 // window.openColereMutawassit supprimé (code mort)
 window._mutawassitExit        = _mutawassitExit;
 window._mutSudSave            = _mutSudSave;
-window._itfaaUrgence          = _itfaaUrgence;
+// window._itfaaUrgence          = _itfaaUrgence; // supprimé
 // window._itfaaChoixChemin      = _itfaaChoixChemin; // supprimé (code mort)
 // window._itfaaFaitClick        = _itfaaFaitClick; // supprimé (code mort)
 window._mutawassitPause       = _mutawassitPause;
@@ -16053,11 +15483,11 @@ window._mutawassitEau         = _mutawassitEau;
 // window.openItfaaEmotionSous   = openItfaaEmotionSous; // supprimé (code mort)
 window._logEmotionSous        = _logEmotionSous;
 // window.openColereShadid supprimé (code mort)
-window.openItfaaSomatic       = openItfaaSomatic;
+// window.openItfaaSomatic       = openItfaaSomatic; // supprimé
 window._logSomatic            = _logSomatic;
 // window.openItfaaStep1         = openItfaaStep1; // supprimé (code mort)
-window.openItfaaAction        = openItfaaAction;
-window.openItfaaRefuge        = openItfaaRefuge;
+// window.openItfaaAction        = openItfaaAction; // supprimé
+// window.openItfaaRefuge        = openItfaaRefuge; // supprimé
 window._refugeRun             = _refugeRun;
 window._refugeExtend          = _refugeExtend;
 window._refugeSujud           = _refugeSujud;
@@ -16065,22 +15495,22 @@ window._refugeSujud           = _refugeSujud;
 window._refugeSudSave         = _refugeSudSave;
 window.openMuhasabaIntro      = openMuhasabaIntro;
 // window._muhasabaGuidee        = _muhasabaGuidee; // supprimé
-window.openMuhasabaClassique  = openMuhasabaClassique;
-window._mcIntro               = _mcIntro;
-window._muhasabaClassiqueQ1   = _muhasabaClassiqueQ1;
-window._muhasabaClassiqueQ2   = _muhasabaClassiqueQ2;
-window._muhasabaClassiqueQ3   = _muhasabaClassiqueQ3;
-window._muhasabaClassiqueQ4   = _muhasabaClassiqueQ4;
-window._mcReparation          = _mcReparation;
-window._mcCarteRetour         = _mcCarteRetour;
+// window.openMuhasabaClassique  = openMuhasabaClassique; // supprimé
+// window._mcIntro               = _mcIntro; // supprimé
+// window._muhasabaClassiqueQ1   = _muhasabaClassiqueQ1; // supprimé
+// window._muhasabaClassiqueQ2   = _muhasabaClassiqueQ2; // supprimé
+// window._muhasabaClassiqueQ3   = _muhasabaClassiqueQ3; // supprimé
+// window._muhasabaClassiqueQ4   = _muhasabaClassiqueQ4; // supprimé
+// window._mcReparation          = _mcReparation; // supprimé
+// window._mcCarteRetour         = _mcCarteRetour; // supprimé
 window._mcAfterRetour         = _mcAfterRetour;
-window._mcCarteGeste          = _mcCarteGeste;
+// window._mcCarteGeste          = _mcCarteGeste; // supprimé
 window._mcRappelMort          = _mcRappelMort;
 window._mcAmorce              = _mcAmorce;
 window._mcAfterGeste          = _mcAfterGeste;
 window._mcCarteSoin           = _mcCarteSoin;
 window._mcSoinSave            = _mcSoinSave;
-window._muhasabaClassiqueFin  = _muhasabaClassiqueFin;
+// window._muhasabaClassiqueFin  = _muhasabaClassiqueFin; // supprimé
 // window.openMuhasabaEmotion    = openMuhasabaEmotion; // supprimé
 // window._muhasabaToggleEmo     = _muhasabaToggleEmo; // supprimé
 // window._muhasabaEmoSubmit     = _muhasabaEmoSubmit; // supprimé
@@ -16092,7 +15522,7 @@ window._muhasabaClassiqueFin  = _muhasabaClassiqueFin;
 // window.openMuhasabaAction     = openMuhasabaAction; // supprimé
 // window._muhasabaEngage        = _muhasabaEngage; // supprimé
 // window.openMuhasabaCloture    = openMuhasabaCloture; // supprimé
-window._itfaaDepistageEncart   = _itfaaDepistageEncart;
+// window._itfaaDepistageEncart   = _itfaaDepistageEncart; // supprimé
 window.babCompletPorte        = babCompletPorte;
 
 // A11y: overlay list used by Escape + focus trap
