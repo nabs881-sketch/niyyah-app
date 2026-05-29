@@ -8199,27 +8199,7 @@ const ONBOARD_SLIDES = [
     + '<div style="font-size:12px; font-style:italic; color:rgba(181,166,133,0.5); text-align:center; margin:0 auto 24px; max-width:280px; line-height:1.5;">Ton chemin pourra s\u2019\u00e9largir avec le temps.<br>Niyyah marche \u00e0 ton rythme.</div>'
     + '<button class="onboard-btn" id="obMotivBtn" onclick="onboardNext()" style="opacity:0.3; pointer-events:none; padding:16px 48px; border-radius:30px; border:1px solid rgba(200,168,75,0.5); background:linear-gradient(180deg, #E8D070 0%, #D4B85A 50%, #B89540 100%); color:#1a1a1a; font-size:15px; font-weight:600; font-family:var(--serif); letter-spacing:1px; box-shadow:0 0 40px rgba(200,168,75,0.4), 0 4px 12px rgba(0,0,0,0.3);">'+t('onboard_next')+'</button>'
     + '</div>',
-  // Slide 2 — Code de Pudeur Al-Haya
-  () => {
-    setTimeout(function() {
-      var pulseBtn = document.getElementById('ob-alhaya-pulse');
-      if (pulseBtn) { pulseBtn.classList.add('ob-alhaya-anim'); setTimeout(function() { pulseBtn.classList.remove('ob-alhaya-anim'); }, 1600); }
-    }, 800);
-    return '<div class="onboard-anim" style="text-align:center;">'
-      + '<svg viewBox="0 0 80 80" width="80" height="80" fill="none" stroke="#C8A84A" stroke-width="2" stroke-linecap="round" style="margin-bottom:20px;">'
-      + '<ellipse cx="40" cy="40" rx="28" ry="20"/>'
-      + '<circle cx="40" cy="40" r="8"/>'
-      + '<circle cx="40" cy="40" r="3" fill="#C8A84A"/>'
-      + '<line x1="10" y1="70" x2="70" y2="10" stroke-width="3"/>'
-      + '</svg>'
-      + '<div class="onboard-title">'+t('alhaya_onboard_title')+'</div>'
-      + '<div class="onboard-sub" style="margin-bottom:20px;line-height:1.7;">'+t('alhaya_onboard_body')+'</div>'
-      + '<div id="ob-alhaya-pulse" style="display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;background:radial-gradient(circle, rgba(200,168,75,0.25) 0%, rgba(200,168,75,0.05) 60%, transparent 100%);border:1px solid rgba(200,168,75,0.3);margin-bottom:16px;box-shadow:0 0 30px rgba(200,168,75,0.3);"><svg width="32" height="32" viewBox="0 0 80 80"><defs><radialGradient id="njg3" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#E8D070"/><stop offset="100%" stop-color="#A88838"/></radialGradient></defs><g transform="translate(40,40)"><polygon points="-22,-22 22,-22 22,22 -22,22" fill="url(#njg3)"/><polygon points="-22,-22 22,-22 22,22 -22,22" fill="url(#njg3)" transform="rotate(45)"/><polygon points="-10,-10 10,-10 10,10 -10,10" fill="#0a0a0a"/><polygon points="-10,-10 10,-10 10,10 -10,10" fill="#0a0a0a" transform="rotate(45)"/><circle cx="0" cy="0" r="3" fill="#E8D070"/></g></svg></div>'
-      + '<div style="border:1px solid rgba(200,168,75,0.25); border-radius:14px; padding:16px 20px; max-width:340px; margin:0 auto 24px; background:radial-gradient(ellipse at top, rgba(200,168,75,0.06) 0%, transparent 70%);"><div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.85);line-height:1.7;text-align:center;">\u00ab '+t('alhaya_onboard_quote')+' \u00bb</div></div>'
-      + '<button class="onboard-btn" onclick="onboardNext()">'+t('alhaya_onboard_cta')+'</button>'
-      + '</div>';
-  },
-  // Slide 3 — Deux gestes : Niyyah + Regarde
+  // Slide 2 — Deux gestes : Niyyah + Regarde
   () => {
     setTimeout(function() { if (document.getElementById('obTypeNiyyah')) obTypeWriter('obTypeNiyyah', t('ob_niyyah_example'), 0); }, 600);
     setTimeout(function() { if (document.getElementById('obTypeRegarde')) obTypeWriter('obTypeRegarde', t('ob_regarde_example'), 0); }, 1200);
@@ -8392,7 +8372,7 @@ function onboardRender() {
     if (content && ONBOARD_SLIDES[slideIdx]) content.innerHTML = ONBOARD_SLIDES[slideIdx]();
     var _obScreen = document.getElementById('onboardScreen');
     if (_obScreen) _obScreen.scrollTop = 0;
-    [0,1,2,3,4,5].forEach(function(i) {
+    [0,1,2,3,4].forEach(function(i) {
       var dot = document.getElementById('dot' + i);
       if (dot) dot.className = 'onboard-dot' + (i === slideIdx ? ' active' : '');
     });
