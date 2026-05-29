@@ -5935,76 +5935,8 @@ function _injectCureProgress(current) {
   if (first && first.firstChild) first.insertBefore(bar, first.firstChild);
   else el.insertBefore(bar, el.firstChild);
 }
-function _cureEpisodeCheck(porte, num) {
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  var c = '#B33A3A';
-  var opts = ['Aucun','L\u00e9ger','Moyen','Fort'];
-  var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
-    + '<div style="font-family:var(--serif);font-size:16px;color:#C8A84A;margin-bottom:8px;">Depuis hier, comment \u00e7a s\u2019est pass\u00e9\u00a0?</div>'
-    + '<div style="font-size:14px;color:rgba(255,255,255,0.4);margin-bottom:24px;">As-tu eu un \u00e9pisode de col\u00e8re\u00a0?</div>'
-    + '<div style="display:flex;flex-direction:column;gap:10px;max-width:340px;width:100%;margin-bottom:20px;">';
-  for (var i = 0; i < opts.length; i++) {
-    html += '<button data-ep="' + opts[i] + '" onclick="_cureEpSelect(this)" style="width:100%;padding:12px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;transition:background 0.2s;">' + opts[i] + '</button>';
-  }
-  html += '</div>'
-    + '<button id="_cureEpBtn" disabled onclick="_cureEpSave(' + num + ',\'' + porte + '\')" style="width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;opacity:0.3;">Continuer</button>'
-    + '</div>';
-  el.innerHTML = html;
-}
-function _cureEpSelect(btn) {
-  document.querySelectorAll('[data-ep]').forEach(function(b) { b.style.background = '#B33A3A0d'; b.style.fontWeight = '400'; });
-  btn.style.background = 'rgba(200,168,75,0.15)'; btn.style.fontWeight = '600';
-  btn.classList.add('_epSel');
-  var cb = document.getElementById('_cureEpBtn');
-  if (cb) { cb.disabled = false; cb.style.opacity = '1'; }
-}
-function _cureEpSave(num, porte) {
-  var sel = document.querySelector('[data-ep]._epSel');
-  var val = sel ? sel.getAttribute('data-ep') : '';
-  try {
-    var log = JSON.parse(safeGetItem('cure_episodes_log') || '[]');
-    log.push({jour:num, intensite:val, ts:Date.now()});
-    safeSetItem('cure_episodes_log', JSON.stringify(log));
-  } catch(e) {}
-  _cureActionCheck(porte, num);
-}
-function _cureActionCheck(porte, num) {
-  var prevAction = _cureActionTexte(num - 1);
-  if (!prevAction) { window._cureEpisodeAsked = true; openCureJour(porte, num); return; }
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) { window._cureEpisodeAsked = true; openCureJour(porte, num); return; }
-  var c = '#B33A3A';
-  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
-    + '<div style="font-family:var(--serif);font-size:16px;color:#C8A84A;margin-bottom:8px;">As-tu pu faire l\u2019action d\u2019hier\u00a0?</div>'
-    + '<div style="font-size:13px;font-style:italic;color:rgba(255,255,255,0.35);line-height:1.5;max-width:340px;margin:0 auto 20px;">' + escapeHtml(prevAction) + '</div>'
-    + '<div style="display:flex;flex-direction:column;gap:10px;max-width:340px;width:100%;margin-bottom:20px;">'
-    + '<button data-ac="oui" onclick="_cureActSelect(this)" style="width:100%;padding:12px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">Oui</button>'
-    + '<button data-ac="pas_encore" onclick="_cureActSelect(this)" style="width:100%;padding:12px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">Pas encore</button>'
-    + '<button data-ac="oublie" onclick="_cureActSelect(this)" style="width:100%;padding:12px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">J\u2019ai oubli\u00e9</button>'
-    + '</div>'
-    + '<button id="_cureActBtn" disabled onclick="_cureActSave(' + num + ',\'' + porte + '\')" style="width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;opacity:0.3;">Continuer</button>'
-    + '</div>';
-}
-function _cureActSelect(btn) {
-  document.querySelectorAll('[data-ac]').forEach(function(b) { b.style.background = '#B33A3A0d'; b.style.fontWeight = '400'; });
-  btn.style.background = 'rgba(200,168,75,0.15)'; btn.style.fontWeight = '600';
-  btn.classList.add('_acSel');
-  var cb = document.getElementById('_cureActBtn');
-  if (cb) { cb.disabled = false; cb.style.opacity = '1'; }
-}
-function _cureActSave(num, porte) {
-  var sel = document.querySelector('[data-ac]._acSel');
-  var val = sel ? sel.getAttribute('data-ac') : '';
-  var prevAction = _cureActionTexte(num - 1);
-  try {
-    var log = JSON.parse(safeGetItem('cure_action_log') || '[]');
-    log.push({jour:num, action:prevAction, statut:val, ts:Date.now()});
-    safeSetItem('cure_action_log', JSON.stringify(log));
-  } catch(e) {}
-  window._cureEpisodeAsked = true;
-  openCureJour(porte, num);
-}
+// _cureEpisodeCheck, _cureEpSelect, _cureEpSave, _cureActionCheck, _cureActSelect, _cureActSave
+// supprimés (écrans intercalaires code mort — données jamais relues)
 
 function _cureJourSave(porte, num) {
   var notesEl = document.getElementById('_cureJ' + num + 'Notes') || document.getElementById('_cureNotes');
@@ -16528,12 +16460,8 @@ window._hideAideBtn           = _hideAideBtn;
 window.openColereSeuilTherapeute = openColereSeuilTherapeute;
 window._resolveRef            = _resolveRef;
 window._getCureJourData       = _getCureJourData;
-window._cureEpisodeCheck      = _cureEpisodeCheck;
-window._cureEpSelect          = _cureEpSelect;
-window._cureEpSave            = _cureEpSave;
-window._cureActionCheck       = _cureActionCheck;
-window._cureActSelect         = _cureActSelect;
-window._cureActSave           = _cureActSave;
+// window._cureEpisodeCheck supprimé (code mort)
+// window._cureEpSelect/_cureEpSave/_cureActionCheck/_cureActSelect/_cureActSave supprimés (code mort)
 window._cureDoucement         = _cureDoucement;
 window._cureDepistage         = _cureDepistage;
 window._depToggle             = _depToggle;
