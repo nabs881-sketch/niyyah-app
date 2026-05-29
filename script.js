@@ -4908,9 +4908,9 @@ function _injectCureProgress(current) {
     var col = done || active ? '#fff' : 'rgba(255,255,255,0.3)';
     var cursor = done ? 'cursor:pointer;' : '';
     var onclick = done ? ' onclick="openCureJour(\'colere\',' + d + ')"' : '';
-    bar.innerHTML += '<div style="text-align:center;' + cursor + '"' + onclick + '>'
+    bar.innerHTML += '<div style="text-align:center;' + cursor + 'background:rgba(0,0,0,0.5);border-radius:12px;padding:6px 4px 4px;"' + onclick + '>'
       + '<div style="width:28px;height:28px;border-radius:50%;border:2px solid ' + bdr + ';background:' + bg + ';display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:11px;color:' + col + ';">' + d + '</div>'
-      + '<div style="font-size:9px;color:rgba(255,255,255,0.3);margin-top:2px;">J' + d + '</div></div>';
+      + '<div style="font-size:9px;color:rgba(255,255,255,0.4);margin-top:2px;">J' + d + '</div></div>';
   }
   var first = el.firstChild;
   if (first && first.firstChild) first.insertBefore(bar, first.firstChild);
@@ -5144,9 +5144,9 @@ function _cureWizardRender(el) {
 
   // TITRE (always)
   html += '<div style="text-align:center;margin-bottom:32px;">'
-    + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:' + c + ';direction:rtl;margin-bottom:6px;">\u0631\u0650\u064a\u064e\u0627\u0636\u064e\u0629 \u0646\u064e\u0641\u0652\u0633\u0650\u064a\u0651\u064e\u0629</div>'
-    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:4px;">Riy\u00e2\u1e0dat an-nafs \u2014 Jour ' + dayNum + '</div>'
-    + '<div class="itfaa-body" style="font-size:16px;">' + escapeHtml(j.titre) + '</div>'
+    + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:#E0B870;direction:rtl;margin-bottom:6px;text-shadow:0 1px 3px rgba(0,0,0,0.7);">\u0631\u0650\u064a\u064e\u0627\u0636\u064e\u0629 \u0646\u064e\u0641\u0652\u0633\u0650\u064a\u0651\u064e\u0629</div>'
+    + '<div style="font-family:var(--serif);font-size:20px;color:#E0B870;margin-bottom:4px;text-shadow:0 1px 3px rgba(0,0,0,0.7);">Riy\u00e2\u1e0dat an-nafs \u2014 Jour ' + dayNum + '</div>'
+    + '<div class="itfaa-body" style="font-size:16px;text-shadow:0 1px 2px rgba(0,0,0,0.5);">' + escapeHtml(j.titre) + '</div>'
     + '</div>';
 
   // ── STEP CONTENT ──
@@ -5161,7 +5161,7 @@ function _cureWizardRender(el) {
         });
       }
     }
-    html += '<div style="text-align:center;margin-top:32px;"><button onclick="_cureWizardNext()" style="width:100%;max-width:320px;padding:14px;border-radius:12px;border:1px solid ' + c + '55;background:' + c + '1a;color:' + c + ';font-size:15px;font-family:var(--serif);cursor:pointer;">Commencer</button></div>';
+    html += '<div style="text-align:center;margin-top:32px;"><button onclick="_cureWizardNext()" style="width:100%;max-width:320px;padding:14px;border-radius:12px;border:none;background:rgba(179,58,58,0.85);color:#F5EDE0;font-size:15px;font-weight:600;font-family:var(--serif);cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.4);">Commencer</button></div>';
   }
 
   else if (step.type === '_bifurcation') {
