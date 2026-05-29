@@ -4868,7 +4868,6 @@ function openCureJour(porte, num) {
   // Écrans intercalaires désactivés pour cure Colère (données non utilisées)
   // if (num >= 2 && !window._cureEpisodeAsked) { _cureEpisodeCheck(porte, num); return; }
   // window._cureEpisodeAsked = false;
-  if (safeGetItem('cure_mode') === 'doucement') { _cureDoucement(num, '_cureJourSave_' + porte + '_' + num); _injectCureProgress(num); return; }
   var renderer = _cureJourRenderers[porte + '_' + num];
   if (renderer) { renderer(el); _injectCureProgress(num); }
 }
@@ -4979,16 +4978,6 @@ function _cureJ7Finale() {
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var c = '#B33A3A';
-  if (safeGetItem('cure_mode') === 'doucement') {
-    el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
-      + '<div style="font-family:var(--serif);font-size:20px;color:#C8A84A;margin-bottom:16px;">Tu as tenu sept jours.</div>'
-      + '<div class="itfaa-body" style="font-size:16px;line-height:1.7;max-width:380px;margin:0 auto 32px;">Tu peux passer en S\u00e9rieusement pour la prochaine fois.</div>'
-      + '<div style="display:flex;flex-direction:column;gap:12px;max-width:320px;width:100%;">'
-      + '<button onclick="safeSetItem(\'cure_mode\',\'serieusement\');_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');v2GoSanctuaire()" style="width:100%;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Passer en S\u00e9rieusement</button>'
-      + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');v2GoSanctuaire()" style="width:100%;padding:14px;border-radius:12px;border:1px solid rgba(200,168,75,0.2);background:none;color:rgba(200,168,75,0.5);font-family:var(--serif);font-size:14px;cursor:pointer;">Rester en Doucement</button>'
-      + '</div></div>';
-    return;
-  }
   // Branche échec : effJ7 <= effJ1
   var _cure7 = {}; try { _cure7 = JSON.parse(safeGetItem('cure_colere') || '{}'); } catch(e) {}
   if (_cure7.efficacite_j1 && _cure7.efficacite_j7 && _cure7.efficacite_j7 <= _cure7.efficacite_j1) {
