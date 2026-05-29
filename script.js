@@ -5532,6 +5532,26 @@ _outilAnxieteRenderers.double_slider = function(o, c) {
   return html;
 };
 
+// 3.2 — double_champ_lie
+_outilAnxieteRenderers.double_champ_lie = function(o, c) {
+  var c1 = o.champ_1 || {};
+  var c2 = o.champ_2 || {};
+  var sk1 = c1.stockage || 'cure_anxiete_champ1';
+  var sk2 = c2.stockage || 'cure_anxiete_champ2';
+  var v1 = safeGetItem(sk1) || '';
+  var v2 = safeGetItem(sk2) || '';
+  var html = '<div style="border:1px solid ' + c + '22;border-radius:14px;padding:20px;margin-bottom:16px;line-height:2.2;">';
+  html += '<span style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.7);">' + escapeHtml(o.amorce_avant || '') + ' </span>';
+  html += '<input type="text" value="' + escapeHtml(v1) + '" placeholder="' + escapeHtml(c1.placeholder || '...') + '" oninput="safeSetItem(\'' + sk1 + '\',this.value)" style="background:none;border:none;border-bottom:1px solid ' + c + '44;color:#E5E0DC;font-family:var(--serif);font-size:15px;padding:2px 4px;width:100%;max-width:260px;outline:none;margin-bottom:8px;">';
+  html += '<span style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.7);">' + escapeHtml(o.amorce_milieu || '') + ' </span>';
+  html += '<input type="text" value="' + escapeHtml(v2) + '" placeholder="' + escapeHtml(c2.placeholder || '...') + '" oninput="safeSetItem(\'' + sk2 + '\',this.value)" style="background:none;border:none;border-bottom:1px solid ' + c + '44;color:#E5E0DC;font-family:var(--serif);font-size:15px;padding:2px 4px;width:100%;max-width:260px;outline:none;">';
+  html += '</div>';
+  if (o.note_spi) {
+    html += '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-bottom:8px;">' + escapeHtml(o.note_spi) + '</div>';
+  }
+  return html;
+};
+
 function _cureAnxieteWizardRender(el) {
   if (!el) el = document.getElementById('babAnNafsContent');
   if (!el) return;
