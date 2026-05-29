@@ -5489,6 +5489,49 @@ function _cureAnxieteGenericDay(el, dayNum) {
   _cureAnxieteWizardRender(el);
 }
 
+function _renderOutilAnxiete(o, c) {
+  var renderer = _outilAnxieteRenderers[o.type];
+  if (renderer) return renderer(o, c);
+  return '<div style="border:1px solid ' + c + '33;border-radius:14px;padding:20px;margin-bottom:16px;text-align:center;">'
+    + '<div style="font-size:13px;color:rgba(200,168,75,0.5);font-style:italic;">Outil \u00e0 venir \u2014 type\u00a0: ' + escapeHtml(o.type) + '</div></div>';
+}
+var _outilAnxieteRenderers = {};
+
+// 3.1 — double_slider
+_outilAnxieteRenderers.double_slider = function(o, c) {
+  var sz = o.slider_zone || {};
+  var si = o.slider_intensite || {};
+  var options = sz.options || [];
+  var skZ = sz.stockage || 'cure_anxiete_zone';
+  var skI = si.stockage || 'cure_anxiete_intensite';
+  var savedZ = safeGetItem(skZ) || '';
+  var savedI = safeGetItem(skI) || '';
+  var html = '';
+  // Zone selector
+  html += '<div style="margin-bottom:24px;">';
+  html += '<div style="font-family:var(--serif);font-size:13px;color:rgba(200,168,75,0.6);margin-bottom:10px;text-align:center;">O\u00f9 la sens-tu\u00a0?</div>';
+  html += '<div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;">';
+  options.forEach(function(opt) {
+    var sel = savedZ === opt;
+    html += '<button onclick="this.parentNode.querySelectorAll(\'button\').forEach(function(b){b.style.background=\'rgba(200,168,75,0.06)\';b.style.borderColor=\'rgba(200,168,75,0.2)\';b.style.color=\'rgba(240,234,214,0.6)\';});this.style.background=\'' + c + '22\';this.style.borderColor=\'' + c + '\';this.style.color=\'#C8A84A\';safeSetItem(\'' + skZ + '\',\'' + escapeHtml(opt) + '\')" style="padding:10px 16px;border-radius:10px;border:1px solid ' + (sel ? c : 'rgba(200,168,75,0.2)') + ';background:' + (sel ? c + '22' : 'rgba(200,168,75,0.06)') + ';color:' + (sel ? '#C8A84A' : 'rgba(240,234,214,0.6)') + ';font-family:var(--serif);font-size:14px;cursor:pointer;">' + escapeHtml(opt.charAt(0).toUpperCase() + opt.slice(1)) + '</button>';
+  });
+  html += '</div></div>';
+  // Intensity slider
+  html += '<div style="margin-bottom:16px;">';
+  html += '<div style="font-family:var(--serif);font-size:13px;color:rgba(200,168,75,0.6);margin-bottom:10px;text-align:center;">Intensit\u00e9</div>';
+  html += '<div style="display:flex;align-items:center;gap:10px;max-width:340px;margin:0 auto;">';
+  html += '<div style="font-size:11px;color:rgba(200,168,75,0.4);font-style:italic;min-width:60px;text-align:right;">' + escapeHtml(si.label_min || '0') + '</div>';
+  html += '<input type="range" min="' + (si.min || 0) + '" max="' + (si.max || 10) + '" value="' + (savedI || '5') + '" oninput="safeSetItem(\'' + skI + '\',this.value);this.nextElementSibling.textContent=this.value" style="flex:1;accent-color:' + c + ';">';
+  html += '<div style="font-size:18px;color:#C8A84A;font-family:var(--serif);font-weight:600;min-width:24px;text-align:center;">' + (savedI || '5') + '</div>';
+  html += '<div style="font-size:11px;color:rgba(200,168,75,0.4);font-style:italic;min-width:60px;">' + escapeHtml(si.label_max || '10') + '</div>';
+  html += '</div></div>';
+  // Notes (psy + spi)
+  if (o.note_spi) {
+    html += '<div style="border-top:1px solid rgba(200,168,75,0.1);margin-top:16px;padding-top:12px;font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;">' + escapeHtml(o.note_spi) + '</div>';
+  }
+  return html;
+};
+
 function _cureAnxieteWizardRender(el) {
   if (!el) el = document.getElementById('babAnNafsContent');
   if (!el) return;
@@ -5523,14 +5566,13 @@ function _cureAnxieteWizardRender(el) {
       + '</div></div>';
   } else if (step.type === '_outil_anxiete') {
     var o = step.data;
+    var outilHtml = _renderOutilAnxiete(o, c);
     html = backBtn
       + '<div style="padding:calc(var(--safe-top,0px)+60px) 24px 120px;">'
       + progress
       + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;text-align:center;margin-bottom:8px;">' + escapeHtml(o.titre || '') + '</div>'
       + (o.consigne ? '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:20px;">' + escapeHtml(o.consigne) + '</div>' : '')
-      + '<div style="border:1px solid ' + c + '33;border-radius:14px;padding:20px;margin-bottom:16px;text-align:center;">'
-      + '<div style="font-size:13px;color:rgba(200,168,75,0.5);font-style:italic;">Outil \u00e0 venir \u2014 type\u00a0: ' + escapeHtml(o.type) + '</div>'
-      + '</div>'
+      + outilHtml
       + nextBtn
       + '</div>';
   } else if (step.type === '_ancre_anxiete') {
