@@ -5532,6 +5532,38 @@ _outilAnxieteRenderers.double_slider = function(o, c) {
   return html;
 };
 
+// 3.3 — radio_unique
+_outilAnxieteRenderers.radio_unique = function(o, c) {
+  var opts = o.options || [];
+  var sk = o.stockage || 'cure_anxiete_radio';
+  var saved = safeGetItem(sk) || '';
+  var html = '';
+  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
+  html += '<div style="display:flex;flex-direction:column;gap:10px;max-width:340px;margin:0 auto 16px;">';
+  opts.forEach(function(opt) {
+    var sel = saved === opt.id;
+    html += '<button onclick="this.parentNode.querySelectorAll(\'button\').forEach(function(b){b.style.borderColor=\'' + c + '22\';b.style.background=\'rgba(200,168,75,0.03)\';b.querySelector(\'.rq-dot\').style.background=\'transparent\';});this.style.borderColor=\'' + c + '\';this.style.background=\'' + c + '12\';this.querySelector(\'.rq-dot\').style.background=\'' + c + '\';safeSetItem(\'' + sk + '\',\'' + opt.id + '\')" style="display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:12px;border:1px solid ' + (sel ? c : c + '22') + ';background:' + (sel ? c + '12' : 'rgba(200,168,75,0.03)') + ';cursor:pointer;text-align:left;">'
+      + '<div class="rq-dot" style="width:16px;height:16px;border-radius:50%;border:2px solid ' + c + ';flex-shrink:0;background:' + (sel ? c : 'transparent') + ';"></div>'
+      + '<div style="flex:1;">'
+      + '<div style="font-family:\'Scheherazade New\',serif;font-size:20px;color:#C8A84A;direction:rtl;margin-bottom:2px;">' + escapeHtml(opt.label_ar || '') + '</div>'
+      + '<div style="font-family:var(--serif);font-size:14px;font-weight:600;color:rgba(240,234,214,0.9);margin-bottom:2px;">' + escapeHtml(opt.label_fr || '') + '</div>'
+      + '<div style="font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(240,234,214,0.55);">' + escapeHtml(opt.definition || '') + '</div>'
+      + '</div></button>';
+  });
+  html += '</div>';
+  if (o.rappel_supplique) {
+    var rs = o.rappel_supplique;
+    html += '<div style="border:1px solid ' + c + '15;border-radius:12px;padding:14px;margin-bottom:12px;text-align:center;">'
+      + '<div style="font-family:\'Scheherazade New\',serif;font-size:18px;color:#C8A84A;direction:rtl;line-height:1.6;margin-bottom:6px;">' + escapeHtml(rs.texte_ar || '') + '</div>'
+      + '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.55);margin-bottom:4px;">' + escapeHtml(rs.translit || '') + '</div>'
+      + '<div style="font-family:var(--serif);font-size:13px;color:rgba(240,234,214,0.7);margin-bottom:4px;">' + escapeHtml(rs.traduction || '') + '</div>'
+      + '<div style="font-size:11px;color:rgba(200,168,75,0.4);">\u2014 ' + escapeHtml(rs.source || '') + '</div>'
+      + '</div>';
+  }
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;">' + escapeHtml(o.note_spi) + '</div>';
+  return html;
+};
+
 // 3.2 — double_champ_lie
 _outilAnxieteRenderers.double_champ_lie = function(o, c) {
   var c1 = o.champ_1 || {};
