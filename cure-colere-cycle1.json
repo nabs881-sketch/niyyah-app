@@ -102,6 +102,31 @@
           "champ_alternatif": { "placeholder": "Écrire la mienne", "max_chars": 120 },
           "sous_texte_gris": "Le shaytân souffle (waswasa) — sourate 114. Une phrase claire couvre le soufflement.",
           "stockage_cle": "cure_colere_j2_ancre"
+        },
+        {
+          "id": "j2_respiration_ancree",
+          "type": "respiration_visuelle_guidee",
+          "titre": "La respiration ancrée",
+          "intro": "La phrase-ancre devient plus forte si tu la respires.",
+          "instruction": [
+            "Inspire en disant en toi-même : Allah me voit.",
+            "Expire : je n'ai rien à prouver.",
+            "Trois fois. Suis le cercle."
+          ],
+          "outil_visuel": {
+            "type": "cercle_pulsant",
+            "cycles": 3,
+            "duree_inspiration_ms": 4000,
+            "duree_expiration_ms": 6000,
+            "texte_inspiration": "Allah me voit",
+            "texte_expiration": "Je n'ai rien à prouver"
+          },
+          "sous_texte_gris": "Le souffle (nafas) partage sa racine avec le mot nafs. Respirer en mention d'Allah, c'est rendre à son âme ce qu'elle reçoit.",
+          "source": "Pratique du dhikr respiré attestée dans les écrits soufis (Ibn 'Atâ' Allâh, Hikam ; Ghazâlî, Ihyâ' Livre 32).",
+          "optionnel": true,
+          "bouton_passer": "Passer",
+          "bouton_commencer": "Commencer la respiration",
+          "stockage_cle": "cure_colere_j2_respiration_fait"
         }
       ],
 
@@ -669,6 +694,7 @@
       "cure_colere_j2_bascule",
       "cure_colere_j2_notif",
       "cure_colere_j2_ancre",
+      "cure_colere_j2_respiration_fait",
       "cure_colere_j3_moment",
       "cure_colere_j3_categorie",
       "cure_colere_j3_action_demain",
