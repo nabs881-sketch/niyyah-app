@@ -6820,9 +6820,7 @@ function openPorteSeuilTherapeute(porte) {
 
 // ── Backward-compatible wrappers (ouverture porte) ──
 function openColereChoix() { openPorteChoix('colere'); }
-function openColereYasir() { openPorteYasir('colere'); }
-function openColereMutawassit() { openPorteMutawassit('colere'); }
-function openColereShadid() { openPorteShadid('colere'); }
+// openColereYasir/Mutawassit/Shadid supprimés (code mort — ancien thermomètre)
 function openColereSeuilTherapeute() { openPorteSeuilTherapeute('colere'); }
 
 const WEEKLY_HADITHS = {
@@ -16564,7 +16562,7 @@ window._halo                  = _halo;
 window._itfaaWuduEtape2       = _itfaaWuduEtape2;
 window.openItfaaOuverture     = openItfaaOuverture;
 window._itfaaSUD              = _itfaaSUD;
-window.openColereYasir        = openColereYasir;
+// window.openColereYasir supprimé (code mort)
 window._yasirSouffle          = _yasirSouffle;
 window._yasirSkipSouffle      = _yasirSkipSouffle;
 window._yasirIntention        = _yasirIntention;
@@ -16574,7 +16572,7 @@ window._yasirSudOption        = _yasirSudOption;
 window._yasirSudMesure        = _yasirSudMesure;
 window._yasirSudSave          = _yasirSudSave;
 window._yasirExit             = _yasirExit;
-window.openColereMutawassit   = openColereMutawassit;
+// window.openColereMutawassit supprimé (code mort)
 window._mutawassitExit        = _mutawassitExit;
 window._mutSudSave            = _mutSudSave;
 window._itfaaUrgence          = _itfaaUrgence;
@@ -16587,7 +16585,7 @@ window._mutawassitEau         = _mutawassitEau;
 window._itfaaSalat            = _itfaaSalat;
 window.openItfaaEmotionSous   = openItfaaEmotionSous;
 window._logEmotionSous        = _logEmotionSous;
-window.openColereShadid       = openColereShadid;
+// window.openColereShadid supprimé (code mort)
 window.openItfaaSomatic       = openItfaaSomatic;
 window._logSomatic            = _logSomatic;
 window.openItfaaStep1         = openItfaaStep1;
