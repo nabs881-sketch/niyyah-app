@@ -5151,13 +5151,14 @@ function _cureWizardRender(el) {
 
   // ── STEP CONTENT ──
   if (step.type === '_ouverture') {
+    var _hasBg = !!_bgStyle;
     if (j.texte_ouverture && j.texte_ouverture.paragraphes) {
       j.texte_ouverture.paragraphes.forEach(function(p) {
-        html += '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.8;max-width:420px;margin:0 auto 16px;">' + escapeHtml(p) + '</div>';
+        html += '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.8;max-width:420px;margin:0 auto 16px;' + (_hasBg ? 'color:#FFFFFF;font-weight:500;text-shadow:0 1px 3px rgba(0,0,0,0.8);' : '') + '">' + escapeHtml(p) + '</div>';
       });
       if (j.texte_ouverture.sources) {
         j.texte_ouverture.sources.forEach(function(src) {
-          html += '<div class="itfaa-subtle" style="font-size:11px;text-align:center;">\u2014 ' + escapeHtml(src.ref) + '</div>';
+          html += '<div class="itfaa-subtle" style="font-size:11px;text-align:center;' + (_hasBg ? 'color:rgba(255,255,255,0.7);text-shadow:0 1px 2px rgba(0,0,0,0.7);' : '') + '">\u2014 ' + escapeHtml(src.ref) + '</div>';
         });
       }
     }
