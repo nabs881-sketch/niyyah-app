@@ -16278,7 +16278,13 @@ window.LISAN_METHODE = null;
 
 function openLisanMethode() {
   var m = window.LISAN_METHODE;
-  if (!m || (typeof m === 'object' && Object.keys(m).length === 0) || (Array.isArray(m) && m.length === 0)) { showToast('M\u00e9thode Lis\u00e2n \u2014 bient\u00f4t disponible'); return; }
+  if (!m) {
+    fetch('./data/lisan/lisan_methode.json')
+      .then(function(r) { return r.ok ? r.json() : null; })
+      .then(function(d) { if (d) { window.LISAN_METHODE = d; openLisanMethode(); } else { showToast('Méthode Lisân — chargement impossible'); } })
+      .catch(function() { showToast('Méthode Lisân — chargement impossible'); });
+    return;
+  }
 
   var existing = document.getElementById('lisan-methode-overlay');
   if (existing) existing.remove();
