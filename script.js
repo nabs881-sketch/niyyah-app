@@ -9928,7 +9928,8 @@ if ('serviceWorker' in navigator && location.protocol !== 'null:' && (location.p
         });
       });
     }).catch(() => {});
-    navigator.serviceWorker.addEventListener('controllerchange', function() { window.location.reload(); });
+    // Ne pas reload automatiquement — le banner "Mise à jour" (ligne 9920) suffit
+    // navigator.serviceWorker.addEventListener('controllerchange', function() { window.location.reload(); });
   });
 }
 
@@ -14003,8 +14004,8 @@ document.addEventListener('touchend', e => {
   var _tgt = e.target;
   if (_tgt && (_tgt.closest('.btn-audio') || _tgt.closest('.btn-info') || _tgt.closest('.btn-tasbih-fs') || _tgt.closest('.btn-wird-audio'))) return;
   const dx = e.changedTouches[0].clientX - _v2TouchStartX;
-  if (dx > 80 && v2CurrentView !== 'sanctuaire') {
-    // Swipe right → back to sanctuaire
+  // Seuil 150px + exclusion vues immersives (bab-an-nafs, cure)
+  if (dx > 150 && v2CurrentView !== 'sanctuaire' && v2CurrentView.indexOf('bab') === -1 && !document.body.classList.contains('in-bab-an-nafs')) {
     v2GoSanctuaire();
   }
 }, { passive: true });
