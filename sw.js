@@ -1,4 +1,4 @@
-const VERSION = 'niyyah-v1604';
+const VERSION = 'niyyah-v1605';
 const CORE = [
   './index.html',
   './script.min.js',
@@ -43,6 +43,7 @@ const CORE = [
   './assets/moments/maghrib.webp',
   './assets/moments/isha.webp',
   './assets/tachriq-bg.webp',
+  './assets/cure-colere/j1.webp',
   './data/greeting_murmures.json',
 ];
 const FONTS_CACHE = 'niyyah-fonts-v1';
