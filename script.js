@@ -8248,20 +8248,6 @@ const ONBOARD_SLIDES = [
     + '<div style="margin-bottom:20px;text-align:center;"><label style="font-family:var(--serif);font-size:13px;color:var(--t3);display:block;margin-bottom:6px;">'+t("ob_chemin_prenom")+' </label>'
     + '<input type="text" maxlength="30" placeholder="Ton pr\u00e9nom..." style="width:100%;max-width:260px;box-sizing:border-box;padding:10px 14px;background:rgba(200,168,75,0.04);border:1px solid rgba(200,168,75,0.2);border-radius:12px;color:var(--t1);font-size:14px;font-family:var(--sans);outline:none;text-align:center;" oninput="safeSetItem(\'niyyah_prenom\',this.value.trim())"></div>'
     + '<button class="onboard-btn" onclick="onboardNext()">'+t('onboard_next')+'</button>'
-    + '</div>',
-  // Slide 5 — Notifications 3 cat\u00e9gories
-  () => '<div class="onboard-anim">'
-    + '<div class="onboard-title" style="text-shadow:0 0 30px rgba(200,168,75,0.4),0 0 60px rgba(200,168,75,0.2);">'+t('ob_notif_title')+'</div>'
-    + '<div class="onboard-sub" style="margin-bottom:20px;">'+t("ob_notif_sub")+'</div>'
-    + '<div class="ob-notif-cards">'
-    + '<div class="ob-notif-card active" onclick="obToggleNotif(this,\'murmures\')">'
-    + '<div class="ob-notif-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 21c3-3 4-7 4-12"/><path d="M10 9c4 0 7 2 9 6"/><path d="M7 15c2-1 5-1 7 0"/></svg></div>'
-    + '<div class="ob-notif-body"><div class="ob-notif-name">'+t('ob_notif_murmures')+'</div><div class="ob-notif-desc">'+t('ob_notif_murmures_d')+'</div></div>'
-    + '<div class="ob-notif-toggle"><div class="ob-notif-knob"></div></div></div>'
-    + '</div>'
-    + '<button class="onboard-btn" onclick="obActivateNotifs()">'+t('ob_notif_activate')+' <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--bg)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-left:4px;"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></button>'
-    + '<button class="onboard-skip" onclick="obSkipNotifs()">'+t('ob_notif_later')+'</button>'
-    + '<div style="font-size:12px;color:var(--t3);margin-top:12px;cursor:pointer;">'+t("ob_notif_settings")+'</div>'
     + '</div>'
 ];
 function obToggleNotif(el, key) {
@@ -8368,7 +8354,7 @@ function onboardRender() {
     if (content && ONBOARD_SLIDES[slideIdx]) content.innerHTML = ONBOARD_SLIDES[slideIdx]();
     var _obScreen = document.getElementById('onboardScreen');
     if (_obScreen) _obScreen.scrollTop = 0;
-    [0,1,2,3,4].forEach(function(i) {
+    [0,1,2,3].forEach(function(i) {
       var dot = document.getElementById('dot' + i);
       if (dot) dot.className = 'onboard-dot' + (i === slideIdx ? ' active' : '');
     });
