@@ -1,0 +1,779 @@
+{
+  "id": "anxiete",
+  "cycle": 1,
+  "version": "1.0",
+  "date_creation": "2026-05-30",
+  "porte": {
+    "nom_fr": "Anxiété",
+    "nom_ar": "القلق",
+    "translitteration": "Al-Qalaq",
+    "couleur": "#3F51B5"
+  },
+  "principes_editoriaux": {
+    "ton": "Bobin / McCarthy / Ghazâlî — sobriété contemplative",
+    "anti_gamification": "Pas de score, pas de streak imposé, pas de pression de continuité",
+    "duree_par_jour": "5 à 7 minutes",
+    "approche": "Croisement tradition islamique (Al-Balkhi, Ghazâlî, Ibn al-Qayyim, Ibn 'Atâ'illâh) et psychologie evidence-based (CBT, ACT, mindfulness)"
+  },
+  "jours": {
+    "j1": {
+      "numero": 1,
+      "station_ar": "التشخيص",
+      "station_translitteration": "At-Tashkhîs",
+      "station_fr": "Le Constat",
+      "titre_jour": "Nommer ce qui pèse",
+      "image_fond": "j1.webp",
+      "citation_ouverture": {
+        "texte": "Le monde est demeure d'anxiété, de tristesse et de calamité. On peut vivre longtemps sans douleur du corps, mais il est rare de passer un jour sans expérimenter quelque chose qui cause anxiété, tristesse ou abattement.",
+        "source": "Abu Zayd al-Balkhi, Masâlih al-Abdân wa al-Anfus, IXe siècle"
+      },
+      "introduction": "Tu es anxieux. Tu le sais.\n\nMais sais-tu de quoi ?\n\nL'anxiété aime le flou. Tant qu'elle reste sans nom, elle grossit. Quand on la nomme, elle ne disparaît pas — mais elle prend une taille.\n\nAujourd'hui, on lui donne un nom.",
+      "outils": [
+        {
+          "id": "barometre_somatique",
+          "ordre": 1,
+          "type": "double_slider",
+          "titre": "Où, et combien",
+          "consigne": "À cet instant, où la peur se loge-t-elle dans ton corps ?",
+          "slider_zone": {
+            "options": ["gorge", "poitrine", "ventre", "épaules", "partout"],
+            "stockage": "cure_anxiete_j1_zone"
+          },
+          "slider_intensite": {
+            "min": 0,
+            "max": 10,
+            "label_min": "plume légère",
+            "label_max": "montagne de granit",
+            "stockage": "cure_anxiete_j1_intensite"
+          },
+          "note_psy": "Affect labeling (CBT) : nommer la sensation somatique réduit l'activation amygdalienne. Extériorisation d'une diffusion intérieure.",
+          "note_spi": "Le cœur ne se réforme qu'après avoir vu sa maladie. — Al-Ghazâlî"
+        },
+        {
+          "id": "champ_miroir",
+          "ordre": 2,
+          "type": "double_champ_lie",
+          "titre": "Le miroir",
+          "consigne": "Complète, sans réfléchir trop longtemps.",
+          "amorce_avant": "Si je n'avais plus peur de",
+          "champ_1": {
+            "placeholder": "...",
+            "stockage": "cure_anxiete_j1_peur"
+          },
+          "amorce_milieu": "je pourrais enfin",
+          "champ_2": {
+            "placeholder": "...",
+            "stockage": "cure_anxiete_j1_desir_empeche"
+          },
+          "note_psy": "ACT : expose le noyau anxieux et le désir empêché. L'anxiété cesse d'être une brume — elle devient une phrase.",
+          "note_spi": "Sortir le mal de l'invisible (ghayb) pour le ramener à sa dimension de créature gérable. — Al-Balkhi"
+        },
+        {
+          "id": "distinguer_hamm_huzn_khawf",
+          "ordre": 3,
+          "type": "radio_unique",
+          "titre": "Les trois mots du Prophète ﷺ",
+          "introduction": "Dans sa supplique de refuge, le Prophète ﷺ distinguait trois mots :",
+          "consigne": "Lequel reconnais-tu en toi ce matin ?",
+          "options": [
+            {
+              "id": "hamm",
+              "label_ar": "هَمّ",
+              "label_fr": "Hamm",
+              "definition": "Anxiété du futur. « Et si… »"
+            },
+            {
+              "id": "huzn",
+              "label_ar": "حُزْن",
+              "label_fr": "Huzn",
+              "definition": "Tristesse du passé. « J'aurais dû… »"
+            },
+            {
+              "id": "khawf",
+              "label_ar": "خَوْف",
+              "label_fr": "Khawf",
+              "definition": "Peur précise. Cette chose, cette personne, cette situation."
+            }
+          ],
+          "stockage": "cure_anxiete_j1_categorie",
+          "rappel_supplique": {
+            "texte_ar": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْهَمِّ وَالْحُزْنِ",
+            "translit": "Allâhumma innî a'ûdhu bika min al-hammi wa-l-huzn",
+            "traduction": "Ô Allah, je cherche refuge en Toi contre l'anxiété et la tristesse.",
+            "source": "Bukhârî 6369"
+          },
+          "note_psy": "Catégoriser une émotion réduit son intensité (étude UCLA Lieberman 2007). La pédagogie islamique fournit ici les catégories.",
+          "note_spi": "Le Prophète ﷺ nommait précisément ce dont il cherchait refuge. Tu fais de même, à ton humble niveau."
+        },
+        {
+          "id": "depistage_doux",
+          "ordre": 4,
+          "type": "checkboxes_avec_message_dynamique",
+          "titre": "Une minute pour toi",
+          "introduction": "Avant d'aller plus loin, prends une minute. Coche ce qui te concerne :",
+          "options": [
+            {
+              "id": "sommeil",
+              "label": "Mon anxiété m'empêche de dormir presque chaque nuit"
+            },
+            {
+              "id": "panique",
+              "label": "J'ai des crises de panique (cœur qui s'emballe, vertige, peur de mourir)"
+            },
+            {
+              "id": "duree",
+              "label": "Mon anxiété dure depuis plus de 6 mois sans répit"
+            },
+            {
+              "id": "invalidante",
+              "label": "Elle m'empêche de faire des choses importantes de ma vie"
+            }
+          ],
+          "stockage": "cure_anxiete_depistage",
+          "message_si_coche": {
+            "titre": "Le corps est une amâna — un dépôt confié.",
+            "texte": "Cette cure peut t'accompagner, mais elle ne remplace pas un thérapeute.\n\nLe Prophète ﷺ a dit : « Soignez-vous, car Allah n'a créé aucune maladie sans créer son remède. » (Tirmidhî)\n\nVa voir un professionnel en parallèle. C'est aussi prendre soin du dépôt qui t'a été confié."
+          },
+          "message_si_aucun_coche": {
+            "texte": "Bien. La cure t'accompagne."
+          }
+        }
+      ],
+      "phrase_ancre": "Je donne un nom à ce qui pèse.",
+      "cloture": {
+        "texte": "Tu as fait le constat.\nTu as donné un nom.\nTu as distingué.\n\nDemain — l'ancrage.",
+        "bouton": "J'ai nommé. À demain.",
+        "stockage": "cure_anxiete = { current_day: 1, completed_j1: true }"
+      },
+      "murmure_sortie_sanctuaire": "Nommer, c'est déjà déposer."
+    },
+    "j2": {
+      "numero": 2,
+      "station_ar": "الحضور",
+      "station_translitteration": "Al-Hudûr",
+      "station_fr": "L'Ancrage",
+      "titre_jour": "Revenir ici",
+      "image_fond": "j2.webp",
+      "citation_ouverture": {
+        "texte": "Le serviteur n'a de sa prière que ce qu'il a accompli avec présence d'esprit.",
+        "source": "Ibn al-Qayyim al-Jawziyya, Madârij as-Sâlikîn"
+      },
+      "introduction": "Hier tu as nommé.\n\nAujourd'hui — tu reviens.\n\nL'anxieux vit dans deux temps qui n'existent pas : un futur qu'il craint, un passé qu'il rumine. Mais Allah ne se trouve que dans un seul temps — celui-ci.\n\nReviens ici.",
+      "outils": [
+        {
+          "id": "respiration_dhikr",
+          "ordre": 1,
+          "type": "respiration_interactive",
+          "titre": "Le souffle du Vivant",
+          "consigne": "Inspire en pensant Yâ Hayy (Le Vivant). Expire en pensant as-Salâm (La Paix).",
+          "instructions": "Suis le cercle.\nQuand il s'élargit, inspire 4 secondes.\nQuand il se rétracte, expire 6 secondes.",
+          "duree_visee_sec": 120,
+          "rythme": {
+            "inspir_sec": 4,
+            "expir_sec": 6
+          },
+          "noms_divins": {
+            "inspir_ar": "يَا حَيّ",
+            "inspir_translit": "Yâ Hayy",
+            "inspir_sens": "Le Vivant",
+            "expir_ar": "السَّلام",
+            "expir_translit": "as-Salâm",
+            "expir_sens": "La Paix"
+          },
+          "stockage": "cure_anxiete_j2_respiration_sec",
+          "note_psy": "L'expiration prolongée stimule le nerf vague et active la réponse parasympathique (relaxation). Effet physiologique immédiat sur le rythme cardiaque.",
+          "note_spi": "Le dhikr synchronisé au souffle (anfâs) rappelle que chaque inspiration est un don direct du Vivant. Pratique de Ghazâlî, Ihyâ' 'Ulûm ad-Dîn."
+        },
+        {
+          "id": "portes_des_sens",
+          "ordre": 2,
+          "type": "checkboxes_sequentielles",
+          "titre": "Les portes des sens",
+          "introduction": "Le shaytan murmure dans la rumination. Pour le faire taire, ramène ton attention au réel.",
+          "consigne": "Regarde autour de toi. Coche au fur et à mesure.",
+          "etapes": [
+            {
+              "label": "3 choses que je vois",
+              "champs_libres": 3,
+              "placeholder": "ex : la lumière de la fenêtre"
+            },
+            {
+              "label": "2 sons que j'entends",
+              "champs_libres": 2,
+              "placeholder": "ex : le bruit d'un moteur"
+            },
+            {
+              "label": "1 sensation physique",
+              "champs_libres": 1,
+              "placeholder": "ex : le tissu sur ma peau"
+            }
+          ],
+          "stockage": "cure_anxiete_j2_sens",
+          "note_psy": "Technique de grounding 5-4-3-2-1 (CBT). Sature la mémoire de travail avec des stimuli sensoriels présents, interrompant le circuit de la rumination.",
+          "note_spi": "Contemplation immédiate de la création (shuhûd). « Et c'est par le rappel d'Allah que les cœurs s'apaisent. » — Ar-Ra'd 13:28"
+        },
+        {
+          "id": "horloge_des_pensees",
+          "ordre": 3,
+          "type": "drag_and_drop_3_categories",
+          "titre": "L'horloge des pensées",
+          "introduction": "L'esprit anxieux confond les temps. Une hypothèse devient urgence. Un passé devient présent.",
+          "consigne": "Note 3 pensées qui tournent en boucle. Glisse chacune dans sa case réelle.",
+          "categories": [
+            {
+              "id": "maintenant",
+              "label": "Maintenant",
+              "description": "C'est vraiment en train d'arriver."
+            },
+            {
+              "id": "plus_tard",
+              "label": "Plus tard",
+              "description": "C'est peut-être. Ce n'est pas encore."
+            },
+            {
+              "id": "jamais",
+              "label": "Jamais arrivé",
+              "description": "C'est une hypothèse, pas un fait."
+            }
+          ],
+          "nombre_pensees_min": 3,
+          "stockage": "cure_anxiete_j2_horloge",
+          "note_psy": "Défusion temporelle (ACT). Le cerveau anxieux traite les hypothèses futures avec la même intensité que les urgences réelles. Distinguer ramène à la proportion.",
+          "note_spi": "Le Prophète ﷺ recommande de vivre dans l'instant : « Dans ce monde, sois comme un étranger ou un voyageur. » — Bukhârî 6416"
+        }
+      ],
+      "phrase_ancre": "Je suis ici. Maintenant.",
+      "cloture": {
+        "texte": "Tu as respiré.\nTu es revenu aux sens.\nTu as remis les pensées à leur place.\n\nDemain — accueillir ce qui reste.",
+        "bouton": "Je suis revenu. À demain.",
+        "stockage": "cure_anxiete = { current_day: 2, completed_j2: true }"
+      },
+      "murmure_sortie_sanctuaire": "Le présent est le seul lieu où Il se trouve."
+    },
+    "j3": {
+      "numero": 3,
+      "station_ar": "القبول",
+      "station_translitteration": "Al-Qubûl",
+      "station_fr": "L'Acceptation",
+      "titre_jour": "Ne plus combattre la vague",
+      "image_fond": "j3.webp",
+      "citation_ouverture": {
+        "texte": "Le serviteur n'atteindra pas la vraie foi tant qu'il n'aura pas su que ce qui l'a atteint ne pouvait le manquer, et que ce qui l'a manqué ne pouvait l'atteindre.",
+        "source": "Hadith — Tirmidhî 2144"
+      },
+      "introduction": "Tu as nommé. Tu es revenu ici.\n\nMais l'anxiété est toujours là. Elle ne part pas parce que tu la regardes.\n\nVoici la vérité difficile : ce que tu fuis te poursuit. Plus tu luttes contre la vague, plus elle te submerge.\n\nAujourd'hui — tu arrêtes le combat.",
+      "outils": [
+        {
+          "id": "cartographie_somatique",
+          "ordre": 1,
+          "type": "silhouette_interactive",
+          "titre": "Où elle vit",
+          "consigne": "Touche la zone de ton corps où la tension se loge en ce moment.",
+          "zones": [
+            { "id": "front", "label": "Front / tempes", "description_typique": "pression, brouillard" },
+            { "id": "gorge", "label": "Gorge", "description_typique": "serrement, voix qui se bloque" },
+            { "id": "poitrine", "label": "Poitrine", "description_typique": "oppression, cœur qui s'emballe" },
+            { "id": "ventre", "label": "Ventre", "description_typique": "nœud, papillons noirs" },
+            { "id": "epaules", "label": "Épaules / nuque", "description_typique": "tension, lourdeur" },
+            { "id": "jambes", "label": "Jambes", "description_typique": "agitation, faiblesse" },
+            { "id": "partout", "label": "Partout à la fois", "description_typique": "diffus, sans localisation précise" }
+          ],
+          "stockage": "cure_anxiete_j3_zone",
+          "note_psy": "Localiser physiquement une émotion la rend matérielle, donc tolérable. ACT : sortir de la panique globale en pointant une zone précise.",
+          "note_spi": "Le corps est un dépôt (amâna). Reconnaître où la tension se loge, c'est honorer ce dépôt — ni le maudire, ni le nier."
+        },
+        {
+          "id": "main_sur_le_coeur",
+          "ordre": 2,
+          "type": "pression_tactile_maintenue",
+          "titre": "La main posée",
+          "introduction": "Le Prophète ﷺ, dans la peur, mettait la main sur sa poitrine. Tu fais le même geste.",
+          "consigne": "Pose ta main sur la zone de tension. Maintiens ce contact pendant 30 secondes.",
+          "duree_sec": 30,
+          "phrase_a_repeter": {
+            "fr": "Allah voit cet instant. Je n'ai pas besoin de Lui cacher ce que je ressens.",
+            "ar": "اللَّهُ يَرَى",
+            "translit": "Allâhu yarâ"
+          },
+          "instruction_finale": "Ne cherche pas à changer la sensation. Sois juste avec elle, comme on tient la main d'un enfant qui pleure.",
+          "stockage": "cure_anxiete_j3_main_sec",
+          "note_psy": "Auto-apaisement parasympathique par le toucher prolongé. Réduit le cortisol. ACT : exposition douce aux sensations intéroceptives sans évitement.",
+          "note_spi": "Ar-Ridâ — l'agrément du décret divin. Ghazâlî, Ihyâ' : « La patience commence par l'absence de plainte intérieure. »"
+        },
+        {
+          "id": "phrase_non_lutte",
+          "ordre": 3,
+          "type": "double_champ_lie",
+          "titre": "Le pacte de non-lutte",
+          "consigne": "Complète. Sans réfléchir.",
+          "amorce_avant": "Aujourd'hui, je peux ressentir",
+          "champ_1": {
+            "placeholder": "cette tension dans...",
+            "stockage": "cure_anxiete_j3_sensation"
+          },
+          "amorce_milieu": "sans fuir vers",
+          "champ_2": {
+            "placeholder": "ex : le téléphone, la nourriture, le déni",
+            "stockage": "cure_anxiete_j3_evitement"
+          },
+          "note_psy": "Exposition aux comportements de sécurité (CBT). L'anxieux fuit la sensation par des évitements (téléphone, grignotage, distraction). Les nommer, c'est commencer à les voir.",
+          "note_spi": "Le sabr du Coran n'est pas suppression — c'est accueil. « Et certes, Nous vous éprouverons... mais annonce la bonne nouvelle aux endurants. » — Al-Baqara 2:155"
+        }
+      ],
+      "phrase_ancre": "Tu es là. Je te vois.",
+      "cloture": {
+        "texte": "Tu as localisé.\nTu as posé la main.\nTu as nommé ce vers quoi tu fuis.\n\nDemain — séparer ce qui t'appartient de ce qui Lui appartient.",
+        "bouton": "Je ne combats plus. À demain.",
+        "stockage": "cure_anxiete = { current_day: 3, completed_j3: true }"
+      },
+      "murmure_sortie_sanctuaire": "Ce qu'on accueille s'allège."
+    },
+    "j4": {
+      "numero": 4,
+      "station_ar": "الفصل",
+      "station_translitteration": "Al-Fasl",
+      "station_fr": "Le Tri",
+      "titre_jour": "Ce qui m'appartient, ce qui Lui appartient",
+      "image_fond": "j4.webp",
+      "citation_ouverture": {
+        "texte": "Repose-toi de la gestion de tes affaires : ce qu'un Autre a entrepris de faire à ta place, ne t'en occupe pas toi-même.",
+        "source": "Ibn 'Atâ'illâh al-Iskandarî, Al-Hikam"
+      },
+      "introduction": "L'anxieux porte deux fardeaux : le sien, et celui d'Allah.\n\nIl s'inquiète de ce qu'il peut changer — sans agir.\nIl s'inquiète de ce qu'il ne peut changer — au lieu de confier.\n\nLes deux fardeaux ensemble écrasent.\n\nAujourd'hui — tu sépares.",
+      "outils": [
+        {
+          "id": "double_colonne",
+          "ordre": 1,
+          "type": "drag_and_drop_2_colonnes",
+          "titre": "Les deux mains",
+          "introduction": "Note 3 à 5 soucis qui te tournent dans la tête. Puis glisse chacun dans la colonne juste.",
+          "consigne": "Pas de mauvaise réponse. Sois honnête.",
+          "colonnes": [
+            {
+              "id": "mes_mains",
+              "label_fr": "Entre mes mains",
+              "label_ar": "بِيَدَيَّ",
+              "description": "Mes actions, mes choix, mes paroles"
+            },
+            {
+              "id": "ses_mains",
+              "label_fr": "Entre Ses mains",
+              "label_ar": "بِيَدِهِ",
+              "description": "Le résultat, le destin, ce qui m'échappe"
+            }
+          ],
+          "nombre_min": 3,
+          "nombre_max": 5,
+          "stockage": "cure_anxiete_j4_tri",
+          "note_psy": "Cercle de contrôle (CBT). Réduit l'illusion d'hyper-contrôle, source majeure d'anxiété généralisée. Distinguer pour agir là où c'est possible, et confier le reste.",
+          "note_spi": "« Ce qui devait t'atteindre ne pouvait te manquer, et ce qui devait te manquer ne pouvait t'atteindre. » — Tirmidhî 2144. Le tawhîd pratique commence par cette ligne de partage."
+        },
+        {
+          "id": "micro_action",
+          "ordre": 2,
+          "type": "choix_unique_avec_engagement",
+          "titre": "La plus petite action",
+          "introduction": "Pour ce qui est entre tes mains — une action honnête, dans les 12 prochaines heures.",
+          "consigne": "Choisis-en une.",
+          "options": [
+            { "id": "appeler", "label": "Appeler quelqu'un (1 minute suffit)" },
+            { "id": "marcher", "label": "Marcher 10 minutes dehors" },
+            { "id": "ranger", "label": "Ranger une seule chose (une étagère, un bureau)" },
+            { "id": "ecrire", "label": "Écrire un message difficile" },
+            { "id": "demander_aide", "label": "Demander de l'aide à quelqu'un" },
+            {
+              "id": "autre",
+              "label": "Autre — j'écris la mienne",
+              "champ_libre": true,
+              "placeholder": "Ma petite action..."
+            }
+          ],
+          "stockage": "cure_anxiete_j4_action",
+          "note_psy": "Activation comportementale (CBT). La paralysie anxieuse se brise par UN seul acte concret. Pas dix. Un. Le suivant viendra plus facilement.",
+          "note_spi": "Sabab — la causalité prophétique. « Attache ta chamelle, puis place ta confiance en Allah » (Tirmidhî 2517). Faire le geste humain, laisser le reste au divin."
+        },
+        {
+          "id": "dissolution_et_si",
+          "ordre": 3,
+          "type": "texte_qui_s_efface",
+          "titre": "Le dépôt du « Et si »",
+          "introduction": "Pour ce qui est entre Ses mains — tu n'as pas à le résoudre. Tu as à le déposer.",
+          "consigne": "Écris ton « Et si... » le plus pénible.",
+          "amorce": "Et si",
+          "champ": {
+            "placeholder": "...ce que tu redoutes le plus",
+            "stockage_uniquement_thematique": true
+          },
+          "action_validation": {
+            "bouton": "Déposer",
+            "animation": "Le texte s'efface lentement, remplacé par la calligraphie",
+            "calligraphie_finale_ar": "حَسْبُنَا اللَّهُ",
+            "calligraphie_finale_translit": "HasbunÂllâh",
+            "calligraphie_finale_sens": "Allah nous suffit"
+          },
+          "note_psy": "Externalisation cognitive + lâcher-prise symbolique. Le geste rituel de la dissolution rompt l'attachement à la pensée catastrophique.",
+          "note_spi": "Réponse coranique à l'angoisse : « Allah nous suffit, et quel excellent Garant ! » — Âl 'Imrân 3:173"
+        }
+      ],
+      "phrase_ancre": "Ce qui m'appartient, j'agis. Ce qui Lui appartient, je dépose.",
+      "cloture": {
+        "texte": "Tu as séparé les deux mains.\nTu as choisi une seule action.\nTu as déposé le « Et si ».\n\nDemain — observer les pensées passer.",
+        "bouton": "J'ai trié. À demain.",
+        "stockage": "cure_anxiete = { current_day: 4, completed_j4: true }"
+      },
+      "murmure_sortie_sanctuaire": "Allah ne demande pas que tu portes tout."
+    },
+    "j5": {
+      "numero": 5,
+      "station_ar": "التجريد",
+      "station_translitteration": "At-Tajrîd",
+      "station_fr": "Le Dépouillement",
+      "titre_jour": "Mes pensées ne sont pas la vérité",
+      "image_fond": "j5.webp",
+      "citation_ouverture": {
+        "texte": "Les pensées sont comme des oiseaux qui passent au-dessus de ta tête : tu ne peux pas les empêcher de voler, mais tu peux les empêcher de faire leur nid dans tes cheveux.",
+        "source": "Ibn al-Qayyim, sur les khawâtir (pensées intrusives)"
+      },
+      "introduction": "L'anxieux croit ses pensées.\n\nQuand son esprit dit « tout va s'effondrer », il pense que tout va s'effondrer. Quand son esprit dit « personne ne m'aime », il pense que personne ne l'aime.\n\nMais une pensée n'est pas une vérité. C'est juste un bruit dans la tête.\n\nAujourd'hui — tu observes les pensées passer sans les croire.",
+      "outils": [
+        {
+          "id": "pensee_ou_realite",
+          "ordre": 1,
+          "type": "tri_radio_apprentissage",
+          "titre": "Pensée ou réalité ?",
+          "introduction": "L'esprit confond les deux. Voici 5 énoncés. Pour chacun, identifie : est-ce un fait observable, ou une interprétation que ton esprit ajoute ?",
+          "consigne": "Lis chaque ligne, choisis fait ou interprétation.",
+          "exemples": [
+            { "texte": "Mon collègue ne m'a pas répondu à mon message ce matin.", "bonne_reponse": "fait" },
+            { "texte": "Mon collègue m'en veut, je l'ai énervé.", "bonne_reponse": "interpretation" },
+            { "texte": "Ma poitrine est serrée en ce moment.", "bonne_reponse": "fait" },
+            { "texte": "Je vais faire une crise cardiaque, c'est sûr.", "bonne_reponse": "interpretation" },
+            { "texte": "Je n'ai pas terminé ma to-do d'aujourd'hui.", "bonne_reponse": "fait" }
+          ],
+          "options_par_question": [
+            { "id": "fait", "label": "Fait observable" },
+            { "id": "interpretation", "label": "Interprétation ajoutée" }
+          ],
+          "feedback_correct_fait": "Oui. C'est un fait neutre.",
+          "feedback_correct_interpretation": "Oui. C'est ton esprit qui raconte une histoire.",
+          "feedback_incorrect_inverse": "Regarde encore. Demande-toi : si je filmais cette scène, qu'est-ce que la caméra verrait vraiment ?",
+          "stockage": "cure_anxiete_j5_pensee_realite",
+          "note_psy": "Distorsions cognitives (CBT — Aaron Beck). Identifier la frontière entre fait et interprétation est la première étape de la restructuration cognitive. L'utilisateur apprend à la voir par lui-même.",
+          "note_spi": "Al-Balkhi distinguait déjà entre la réalité observable et le wahm (illusion mentale) au IXe siècle. La méthode du muhâsib — celui qui demande des comptes à son nafs — commence par cet examen lucide."
+        },
+        {
+          "id": "mon_esprit_me_raconte",
+          "ordre": 2,
+          "type": "champ_avec_amorce_obligatoire",
+          "titre": "Ce que mon esprit raconte",
+          "introduction": "Une pensée catastrophe te tourne dans la tête ? Réécris-la — mais avec une amorce précise.",
+          "consigne": "Tu DOIS commencer par ces mots :",
+          "amorce_obligatoire": "Mon esprit me raconte l'histoire que",
+          "champ": {
+            "placeholder": "...continue ta phrase",
+            "stockage": "cure_anxiete_j5_histoire"
+          },
+          "instruction_finale": "Maintenant relis ta phrase à voix basse. Tu remarques quelque chose ?",
+          "note_psy": "Défusion cognitive (ACT — Steven Hayes). En préfixant la pensée avec « mon esprit me raconte l'histoire que », l'utilisateur sort de la fusion (je SUIS la pensée) pour entrer dans l'observation (je VOIS la pensée). C'est l'une des techniques les plus efficaces contre la rumination.",
+          "note_spi": "Le Prophète ﷺ a dit : « Allah a pardonné à ma communauté ce qui lui passe par l'esprit, tant qu'elle n'agit pas ni n'en parle. » (Bukhârî 5269). Les khawâtir (pensées intrusives) ne sont pas des péchés. Elles passent."
+        },
+        {
+          "id": "invocation_silencieuse",
+          "ordre": 3,
+          "type": "ecran_sombre_avec_dhikr",
+          "titre": "Yâ Latîf",
+          "introduction": "Le Nom Al-Latîf — Le Subtil, Le Bienveillant — est invoqué par les sages contre l'angoisse depuis des siècles.",
+          "consigne": "Pose ton téléphone à plat. Garde les yeux ouverts sur l'écran.\nÀ chaque expir, dis intérieurement :",
+          "dhikr": {
+            "ar": "يَا لَطِيف",
+            "translit": "Yâ Latîf",
+            "sens": "Ô Toi, Le Subtil"
+          },
+          "duree_sec": 60,
+          "animation": "Calligraphie qui pulse doucement au rythme respiratoire (4s/6s). Pas de chrono visible. Pas de chiffres.",
+          "stockage": "cure_anxiete_j5_yalatif_sec",
+          "note_psy": "Ancrage attentionnel par répétition d'un point focal. Réduit la charge mentale en occupant la mémoire de travail avec un stimulus simple et neutre.",
+          "note_spi": "Ibn 'Atâ'illâh recommandait Yâ Latîf pour les serrements du cœur. Le Nom Al-Latîf évoque la douceur d'Allah dans les épreuves invisibles — Il connaît ce que toi-même tu ne vois pas. « Allah est subtil envers Ses serviteurs. » — Ach-Chûrâ 42:19"
+        }
+      ],
+      "phrase_ancre": "Mes pensées ne sont pas la vérité.",
+      "cloture": {
+        "texte": "Tu as séparé le fait de l'interprétation.\nTu as nommé ton esprit comme narrateur, pas comme vérité.\nTu as invoqué Le Subtil.\n\nDemain — confier.",
+        "bouton": "Je sors de la fusion. À demain.",
+        "stockage": "cure_anxiete = { current_day: 5, completed_j5: true }"
+      },
+      "murmure_sortie_sanctuaire": "Je remarque la pensée. Je ne suis pas la pensée."
+    },
+    "j6": {
+      "numero": 6,
+      "station_ar": "التوكل",
+      "station_translitteration": "At-Tawakkul",
+      "station_fr": "L'Abandon",
+      "titre_jour": "Remettre entre les Mains",
+      "image_fond": "j6.webp",
+      "citation_ouverture": {
+        "texte": "Et quiconque place sa confiance en Allah, Il lui suffit. Allah parvient à Son but. Allah a assigné une mesure à toute chose.",
+        "source": "Coran, At-Talâq 65:3"
+      },
+      "introduction": "Tu as nommé. Tu es revenu. Tu as accueilli. Tu as trié. Tu as observé.\n\nIl reste un dernier geste — le plus difficile pour l'anxieux.\n\nConfier.\n\nNon pas abandonner. Pas démissionner. Confier — c'est faire son maximum, puis poser le résultat entre les Mains d'un Autre que soi.",
+      "outils": [
+        {
+          "id": "depot_nocturne",
+          "ordre": 1,
+          "type": "champ_qui_disparait",
+          "titre": "Le dépôt",
+          "introduction": "Le tawakkul n'est pas un concept. C'est un geste.\n\nÉcris ici ce que tu veux remettre à Allah ce soir.",
+          "consigne": "Sois précis. Pas « tout ». Quelque chose de défini.",
+          "amorce": "Ô Allah, je Te confie",
+          "champ": {
+            "placeholder": "...cette chose précise",
+            "stockage_thematique_uniquement": true,
+            "note_stockage": "Le texte brut n'est PAS conservé. Seule la thématique (1 mot-clé choisi par l'utilisateur après écriture) est gardée."
+          },
+          "etape_apres_ecriture": {
+            "instruction": "Maintenant choisis le mot qui résume :",
+            "options_thematiques": [
+              "santé", "argent", "famille", "travail", "avenir",
+              "passé", "relation", "soi-même", "autre"
+            ],
+            "stockage": "cure_anxiete_j6_theme_depot"
+          },
+          "action_validation": {
+            "bouton_ar": "أُسَلِّمُ",
+            "bouton_translit": "Usallim",
+            "bouton_fr": "Je remets",
+            "animation": "Le texte écrit disparaît lentement (fade-out 3 secondes). À sa place apparaît une calligraphie centrée :",
+            "calligraphie_finale_ar": "اللَّهُ الوَكِيل",
+            "calligraphie_finale_translit": "Allâhu al-Wakîl",
+            "calligraphie_finale_sens": "Allah est Le Garant"
+          },
+          "note_psy": "Clôture cognitive rituelle (closure). Le geste de \"déposer\" réduit la charge mentale liée à la rumination chronique. L'effet est physiologique : libération de la boucle de stress.",
+          "note_spi": "Tafwîd — la remise confiante des affaires à Allah. Ibn al-Qayyim distingue le tawakkul (confiance préalable, avec action) du tafwîd (remise finale, après l'action). Aujourd'hui c'est le tafwîd."
+        },
+        {
+          "id": "balance_interieure",
+          "ordre": 2,
+          "type": "double_slider_compare",
+          "titre": "Mes efforts, mon besoin de contrôle",
+          "introduction": "Le tawakkul authentique a deux mains : la main qui agit, et la main qui lâche.\n\nL'anxieux a souvent la deuxième main fermée.",
+          "consigne": "Évalue honnêtement les deux.",
+          "sliders": [
+            {
+              "id": "efforts",
+              "label": "Mes efforts concrets aujourd'hui pour ce que je peux changer",
+              "min": 0,
+              "max": 10,
+              "label_min": "rien fait",
+              "label_max": "tout donné",
+              "stockage": "cure_anxiete_j6_efforts"
+            },
+            {
+              "id": "controle",
+              "label": "Mon besoin de contrôler le résultat final",
+              "min": 0,
+              "max": 10,
+              "label_min": "lâché",
+              "label_max": "obsessionnel",
+              "stockage": "cure_anxiete_j6_controle"
+            }
+          ],
+          "lecture_du_resultat": {
+            "si_efforts_bas_controle_haut": "Tu veux contrôler ce que tu n'as pas encore essayé de changer. Le tawakkul commence par l'action, pas par l'angoisse.",
+            "si_efforts_haut_controle_haut": "Tu as fait ta part. Maintenant — pose le résultat. C'est l'étape qui te manque.",
+            "si_efforts_haut_controle_bas": "Tu as compris. Action, puis dépôt. C'est la voie du Prophète ﷺ.",
+            "si_efforts_bas_controle_bas": "Soit tu as déjà tout déposé sereinement. Soit tu te résignes au lieu de confier. Lequel des deux ?"
+          },
+          "note_psy": "Auto-évaluation lucide. L'anxiété est souvent un déséquilibre entre faire (insuffisant) et lâcher (impossible). Voir les deux chiffres face à face révèle le déséquilibre.",
+          "note_spi": "« Attache ta chamelle, puis place ta confiance en Allah. » — Tirmidhî 2517. Le hadith fonde l'équilibre entre sabab (cause humaine) et tawakkul (confiance divine)."
+        },
+        {
+          "id": "verset_respire",
+          "ordre": 3,
+          "type": "lecture_synchronisee_souffle",
+          "titre": "Le verset respiré",
+          "introduction": "Pour clôturer le jour, un verset à recevoir lentement.\nChaque mot apparaît au rythme de ta respiration.",
+          "consigne": "Pose ton téléphone. Respire calmement. Laisse les mots venir.",
+          "verset": {
+            "reference": "At-Talâq 65:3",
+            "ar_segmente": [
+              "وَمَنْ",
+              "يَتَوَكَّلْ",
+              "عَلَى",
+              "اللَّهِ",
+              "فَهُوَ",
+              "حَسْبُهُ"
+            ],
+            "translit_segmentee": [
+              "Wa man",
+              "yatawakkal",
+              "'ala-llâhi",
+              "fa-huwa",
+              "hasbuh"
+            ],
+            "fr_segmentee": [
+              "Et quiconque",
+              "place sa confiance",
+              "en Allah,",
+              "Il",
+              "lui suffit."
+            ]
+          },
+          "rythme": {
+            "duree_par_segment_sec": 5,
+            "total_sec": 30
+          },
+          "animation": "Chaque segment apparaît en fondu (1s), reste affiché (3s), s'efface (1s). Aucun chrono visible. Aucun bouton skip.",
+          "stockage": "cure_anxiete_j6_verset_complete",
+          "note_psy": "Encodage émotionnel lent. Le système nerveux apprend la sécurité par cadence régulière — l'inverse du tempo anxieux.",
+          "note_spi": "Le Coran lu à mesure (tartîl) est une pratique prophétique. « Et récite le Coran avec tartîl » — Al-Muzzammil 73:4. Pas vite. Pas par cœur. Avec mesure et présence."
+        }
+      ],
+      "phrase_ancre": "Je fais ma part. Je remets le reste.",
+      "cloture": {
+        "texte": "Tu as déposé.\nTu as mesuré tes deux mains.\nTu as reçu le verset.\n\nDemain — ouvrir.",
+        "bouton": "J'ai confié. À demain.",
+        "stockage": "cure_anxiete = { current_day: 6, completed_j6: true }"
+      },
+      "murmure_sortie_sanctuaire": "Ce qui est entre Ses Mains est en sécurité."
+    },
+    "j7": {
+      "numero": 7,
+      "station_ar": "الانفتاح",
+      "station_translitteration": "Al-Infitâh",
+      "station_fr": "L'Ouverture",
+      "titre_jour": "Trois portes devant toi",
+      "image_fond": "j7.webp",
+      "citation_ouverture": {
+        "texte": "Certes, après la difficulté vient la facilité. Certes, après la difficulté vient la facilité.",
+        "source": "Coran, Ach-Charh 94:5-6"
+      },
+      "introduction": "Sept jours.\n\nTu as traversé. Pas vaincu — traversé.\n\nL'anxiété n'a peut-être pas disparu. Mais quelque chose en toi sait maintenant qu'elle n'est pas toi. Qu'elle passe. Qu'elle peut être nommée, accueillie, déposée.\n\nMaintenant — trois portes s'ouvrent. Ton cœur sait laquelle franchir.",
+      "outils": [
+        {
+          "id": "lettre_au_coeur_futur",
+          "ordre": 1,
+          "type": "champ_texte_long",
+          "titre": "Une lettre à toi-même",
+          "introduction": "Un jour, l'anxiété reviendra. Pas exactement comme cette semaine. Mais elle reviendra.\n\nÉcris-toi une lettre courte, à lire ce jour-là.",
+          "consigne": "Pas de phrases parfaites. Juste ce que tu voudrais te rappeler.",
+          "amorce": "Quand l'angoisse reviendra, rappelle-toi que",
+          "champ": {
+            "placeholder": "...ce que tu as appris cette semaine",
+            "max_caracteres": 500,
+            "stockage": "cure_anxiete_j7_lettre"
+          },
+          "note_finale": "Cette lettre est conservée. Elle te sera proposée si tu reviens à cette porte un jour.",
+          "note_psy": "Self-compassion writing (Kristin Neff). Crée une voix interne apaisante mobilisable lors des futures rechutes. La voix de soi-même est plus crédible que tout conseil extérieur.",
+          "note_spi": "« Et rappelle, car le rappel profite aux croyants. » — Adh-Dhâriyât 51:55. Le rappel à soi-même est une sunna intérieure."
+        },
+        {
+          "id": "traces_de_lumiere",
+          "ordre": 2,
+          "type": "checkboxes_multiple",
+          "titre": "Ce que tu as retrouvé",
+          "introduction": "Pendant ces 7 jours, certaines choses sont revenues à toi.",
+          "consigne": "Coche ce qui résonne. Plusieurs réponses possibles.",
+          "options": [
+            { "id": "souffle", "label_fr": "Le souffle", "label_ar": "النَّفَس" },
+            { "id": "presence", "label_fr": "Le présent", "label_ar": "الحضور" },
+            { "id": "patience", "label_fr": "La patience", "label_ar": "الصَّبر" },
+            { "id": "limite", "label_fr": "Une limite saine", "label_ar": "الحَدّ" },
+            { "id": "corps", "label_fr": "Mon corps", "label_ar": "الجَسَد" },
+            { "id": "allah", "label_fr": "Allah", "label_ar": "اللَّه" },
+            { "id": "silence", "label_fr": "Le silence", "label_ar": "السَّكينة" },
+            { "id": "autre_chose", "label_fr": "Autre — j'écris", "champ_libre": true }
+          ],
+          "stockage": "cure_anxiete_j7_traces",
+          "note_psy": "Consolidation mémoire émotionnelle positive. L'utilisateur ancre les apprentissages de la cure dans des mots concrets. Le mécanisme — savoring — est validé pour réduire les rechutes anxieuses.",
+          "note_spi": "« Mentionne les bienfaits d'Allah sur toi. » — Al-A'râf 7:69. Reconnaître ce qu'on a reçu est une posture coranique fondamentale (shukr)."
+        },
+        {
+          "id": "trois_portes",
+          "ordre": 3,
+          "type": "choix_unique_sortie",
+          "titre": "Choisis ta posture",
+          "introduction": "La cure se termine. Ton cœur sait de quoi il a besoin pour la suite. Aucune réponse n'est meilleure qu'une autre.",
+          "consigne": "Choisis sans culpabilité.",
+          "options": [
+            {
+              "id": "reprendre",
+              "label_fr": "Reprendre",
+              "label_ar": "الاستئناف",
+              "subtitle": "Le renouveau",
+              "description": "Recommencer le cycle dès demain. Le sillon n'est pas assez profond. Une terre aride qu'on arrose à nouveau.",
+              "consequence_app": "Le J1 redevient accessible dès demain. Les phrases-ancres précédentes sont conservées en mémoire."
+            },
+            {
+              "id": "veiller",
+              "label_fr": "Veiller",
+              "label_ar": "اليقظة",
+              "subtitle": "La présence",
+              "description": "Quitter les outils, mais rester témoin silencieux. Observer ses pensées au quotidien, sans exercice contraignant. Je reviendrai ici quand le cœur le demandera.",
+              "consequence_app": "La porte Anxiété redevient discrète dans Bab an-Nafs. Aucune notification. Aucun rappel."
+            },
+            {
+              "id": "reposer",
+              "label_fr": "Laisser reposer",
+              "label_ar": "السكون",
+              "subtitle": "Le silence",
+              "description": "Fermer cet espace. Ne rien faire. Laisser l'âme infuser ce qu'elle a reçu, dans la confiance.",
+              "consequence_app": "La porte Anxiété se met en sommeil. Aucune sollicitation. Le retour est toujours possible."
+            }
+          ],
+          "stockage": "cure_anxiete_j7_orientation",
+          "note_psy": "Autonomie thérapeutique. Aucune mécanique de rétention abusive. L'utilisateur reprend la main sur son rythme.",
+          "note_spi": "Respect du suluk — le rythme propre à chaque âme."
+        },
+        {
+          "id": "fermeture_silencieuse",
+          "ordre": 4,
+          "type": "ecran_final_sans_action",
+          "titre": null,
+          "contenu": {
+            "ar_centre": "السَّلَام",
+            "translit": "as-Salâm",
+            "fr": "La Paix"
+          },
+          "duree_affichage_sec": 8,
+          "animation": "Fondu lent (3s) de la calligraphie. Reste affichée 5 secondes. Aucun bouton. Aucun chrono. Aucune action demandée.",
+          "sortie_automatique": "Après 8 secondes, retour silencieux au Sanctuaire.",
+          "stockage": null,
+          "note_psy": "Clôture sans performance. Pas de récompense, pas de validation finale. Le calme comme sortie, non comme accomplissement.",
+          "note_spi": "as-Salâm est l'un des plus beaux Noms d'Allah (Al-Hashr 59:23). Il signifie La Paix, La Source de Paix, Celui qui sauve."
+        }
+      ],
+      "phrase_ancre": "J'ai traversé. Je marche en paix.",
+      "cloture": {
+        "texte": null,
+        "bouton": null,
+        "note": "Pas de bouton de clôture. L'écran final (as-Salâm) ferme la cure sans cérémonie."
+      },
+      "murmure_sortie_sanctuaire_par_orientation": {
+        "reprendre": "Une autre traversée commence demain. Avec douceur.",
+        "veiller": "Tu sais où me trouver. Marche en paix.",
+        "reposer": "Va. Ce que tu as reçu travaillera en silence."
+      }
+    }
+  },
+  "metadata": {
+    "outils_total": 24,
+    "duree_estimee_jour_min": 5,
+    "duree_estimee_jour_max": 7,
+    "verbes_centraux": ["Nommer", "Revenir", "Accueillir", "Trier", "Observer", "Remettre", "Ouvrir"],
+    "sources_islamiques": [
+      "Coran : Ar-Ra'd 13:28, Âl 'Imrân 3:173, At-Talâq 65:3, Ach-Charh 94:5-6, Al-Hashr 59:23, Al-Baqara 2:155, Ach-Chûrâ 42:19, Adh-Dhâriyât 51:55, Al-A'râf 7:69, Al-Muzzammil 73:4",
+      "Hadiths : Bukhârî 6369 (du'â refuge), Bukhârî 6416 (étranger ou voyageur), Bukhârî 5269 (pensées intrusives), Tirmidhî 2144 (ce qui t'atteint), Tirmidhî 2517 (chamelle attachée)",
+      "Savants : Al-Balkhi (Masâlih al-Abdân wa al-Anfus), Al-Ghazâlî (Ihyâ' 'Ulûm ad-Dîn), Ibn al-Qayyim (Madârij as-Sâlikîn), Ibn 'Atâ'illâh (Al-Hikam)"
+    ],
+    "sources_psy": [
+      "CBT (Aaron Beck) : restructuration cognitive, distorsions",
+      "ACT (Steven Hayes) : défusion cognitive, acceptation, valeurs",
+      "Mindfulness (Kabat-Zinn, MBCT) : grounding, présence",
+      "Self-compassion (Kristin Neff)",
+      "Étude UCLA Lieberman 2007 : affect labeling"
+    ],
+    "images_a_generer": "Famille visuelle cohérente : eau/brume comme fil conducteur, paysages s'éclaircissant J1 (brume dense) → J7 (eau calme reflétant le ciel). Style aligné avec cure-colere (arche orientale + lanterne au premier plan ou variation).",
+    "audit_theologique_requis": "Validation par Nabs avec ses livres de référence avant intégration production",
+    "depistage_doux_obligatoire": "Le dépistage J1 oriente vers thérapeute si symptômes critiques. Cette cure ne remplace pas un suivi médical/psychologique."
+  }
+}

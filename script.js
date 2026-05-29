@@ -13647,6 +13647,8 @@ function _aidVoeuxExport(canvas) {
 fetch('bab-nafs-content.json').then(function(r){return r.json()}).then(function(d){window.babNafsContent=d;console.log('Bab an-Nafs content loaded: v'+d.version)}).catch(function(){console.warn('bab-nafs-content.json not found')});
 window.CURE_COLERE_CYCLE1 = null;
 fetch('cure-colere-cycle1.json').then(function(r){return r.ok?r.json():null}).then(function(d){if(d){window.CURE_COLERE_CYCLE1=d;console.log('Cure Colère Cycle 1 loaded')}}).catch(function(){});
+window.CURE_ANXIETE_CYCLE1 = null;
+fetch('cure-anxiete-cycle1.json').then(function(r){return r.ok?r.json():null}).then(function(d){if(d){window.CURE_ANXIETE_CYCLE1=d;console.log('Cure Anxiété Cycle 1 loaded')}}).catch(function(){});
 
 // Boot after V1's own DOMContentLoaded fires
 if (document.readyState === 'loading') {
