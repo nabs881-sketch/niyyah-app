@@ -8201,21 +8201,20 @@ const ONBOARD_SLIDES = [
     setTimeout(function() { if (document.getElementById('obTypeNiyyah')) obTypeWriter('obTypeNiyyah', t('ob_niyyah_example'), 0); }, 600);
     setTimeout(function() { if (document.getElementById('obTypeRegarde')) obTypeWriter('obTypeRegarde', t('ob_regarde_example'), 0); }, 1200);
     return '<div class="onboard-anim">'
-      + '<div class="onboard-title" style="margin-bottom:8px;">'+t('ob_deux_gestes')+'</div>'
+      + '<div class="onboard-title" style="margin-bottom:8px;">Deux gestes</div>'
       + '<div class="ob-deux-gestes">'
       + '<div class="ob-geste-card ob-geste-niyyah">'
-      + '<div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;"><img src="images/niyyah-glass.webp" alt="" style="width:100px;height:auto;flex-shrink:0;"><div><div class="ob-geste-ar" style="color:#C8A84A;font-size:22px;margin-bottom:2px;">نِيَّة</div><div style="font-size:14px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#C8A84A;">'+t('ob_niyyah_title')+'</div><div style="font-size:12px;color:rgba(200,168,75,0.5);">'+t('ob_avant_acte')+'</div></div></div>'
-      + '<div style="font-size:13px;color:rgba(200,168,75,0.7);line-height:1.4;">'+t('ob_niyyah_desc')+'</div>'
+      + '<div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;"><img src="images/niyyah-glass.webp" alt="" style="width:100px;height:auto;flex-shrink:0;"><div><div class="ob-geste-ar" style="color:#C8A84A;font-size:22px;margin-bottom:2px;">\u0646\u0650\u064A\u0651\u064E\u0629</div><div style="font-size:14px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#C8A84A;">Pose une intention</div></div></div>'
+      + '<div style="font-size:13px;color:rgba(200,168,75,0.7);line-height:1.5;">Pointe ton t\u00e9l\u00e9phone vers ce que tu fais.<br>Niyyah te propose une intention.</div>'
       + '<div class="ob-geste-txt" id="obTypeNiyyah" style="color:rgba(200,168,75,0.8);font-size:13px;font-style:italic;margin-top:4px;">&nbsp;</div>'
       + '</div>'
       + '<div class="ob-geste-card ob-geste-regarde">'
-      + '<div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;"><img src="images/regarde-hand.webp" alt="" style="width:100px;height:auto;flex-shrink:0;"><div><div class="ob-geste-ar" style="color:#A0A4AC;font-size:22px;margin-bottom:2px;">نَظَر</div><div style="font-size:14px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#A0A4AC;">'+t('ob_regarde_title')+'</div><div style="font-size:12px;color:rgba(160,164,172,0.5);">'+t('ob_apres_acte')+'</div></div></div>'
-      + '<div style="font-size:13px;color:rgba(160,164,172,0.7);line-height:1.4;">'+t('ob_regarde_desc')+'</div>'
+      + '<div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;"><img src="images/regarde-hand.webp" alt="" style="width:100px;height:auto;flex-shrink:0;"><div><div class="ob-geste-ar" style="color:#A0A4AC;font-size:22px;margin-bottom:2px;">\u0646\u064E\u0638\u064E\u0631</div><div style="font-size:14px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#A0A4AC;">Pose un regard</div></div></div>'
+      + '<div style="font-size:13px;color:rgba(160,164,172,0.7);line-height:1.5;">Pointe vers ce que tu vois.<br>Niyyah cherche le verset qui \u00e9claire.</div>'
       + '<div class="ob-geste-txt" id="obTypeRegarde" style="color:rgba(160,164,172,0.8);font-size:13px;font-style:italic;margin-top:4px;">&nbsp;</div>'
       + '</div>'
       + '</div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:var(--t3);text-align:center;margin:10px 0 16px;">'+t('ob_sacralise')+'</div>'
-      + '<button class="onboard-btn" onclick="onboardNext()">'+t('onboard_next')+'</button>'
+      + '<button class="onboard-btn" onclick="onboardNext()" style="margin-top:16px;">'+t('onboard_next')+'</button>'
       + '</div>';
   },
   // Slide 4 — Ton chemin
