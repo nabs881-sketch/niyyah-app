@@ -8181,22 +8181,19 @@ const ONBOARD_SLIDES = [
       + '</div>',
   // Slide 1 — Motivation "'+t('ob_motivation_title')+'"
   () => '<div class="onboard-anim">'
-    + '<div class="onboard-title">'+t('ob_motivation_title')+'</div>'
-    + '<div class="onboard-sub" style="margin-bottom:24px;">Choisis comment Niyyah t\u2019accompagne.</div>'
+    + '<div class="onboard-title">Choisis ton chemin.</div>'
     + '<div class="ob-motiv-cards">'
     + '<div class="ob-motiv-card" onclick="obSelectMotiv(this,\'reconnecter\')" style="border:1px solid rgba(200,168,75,0.25); border-radius:14px; padding:14px 16px; background:radial-gradient(ellipse at top, rgba(200,168,75,0.06) 0%, transparent 70%); margin-bottom:12px; cursor:pointer; display:flex; align-items:center; gap:14px;"><div style="font-size:24px; color:#C8A84A; font-family:Amiri,Scheherazade,serif; direction:rtl; min-width:60px; text-align:center;">\u062A\u064E\u0648\u0652\u0628\u064E\u0629</div>'
     + '<div style="flex:1;"><div class="ob-motiv-title" style="font-family:var(--serif); color:#C8A84A; font-size:13px; letter-spacing:2px; text-transform:uppercase; margin-bottom:2px;">'+t('ob_motiv_reconnecter')+'</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif; font-size:13px; font-style:italic; color:#B5A685; line-height:1.4;">Pour reprendre en douceur. Prot\u00e9g\u00e9.</div></div><div style="color:#C8A84A;font-size:18px;flex-shrink:0;">\u203A</div></div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif; font-size:13px; font-style:italic; color:#B5A685; line-height:1.4;">Tu reprends.</div></div><div style="color:#C8A84A;font-size:18px;flex-shrink:0;">\u203A</div></div>'
     + '<div class="ob-motiv-card" onclick="obSelectMotiv(this,\'routine\')" style="border:1px solid rgba(200,168,75,0.25); border-radius:14px; padding:14px 16px; background:radial-gradient(ellipse at top, rgba(200,168,75,0.06) 0%, transparent 70%); margin-bottom:12px; cursor:pointer; display:flex; align-items:center; gap:14px;"><div style="font-size:24px; color:#C8A84A; font-family:Amiri,Scheherazade,serif; direction:rtl; min-width:60px; text-align:center;">\u0645\u064F\u062F\u064E\u0627\u0648\u064E\u0645\u064E\u0629</div>'
     + '<div style="flex:1;"><div class="ob-motiv-title" style="font-family:var(--serif); color:#C8A84A; font-size:13px; letter-spacing:2px; text-transform:uppercase; margin-bottom:2px;">'+t('ob_motiv_routine')+'</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif; font-size:13px; font-style:italic; color:#B5A685; line-height:1.4;">Pour installer une pratique stable.</div></div><div style="color:#C8A84A;font-size:18px;flex-shrink:0;">\u203A</div></div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif; font-size:13px; font-style:italic; color:#B5A685; line-height:1.4;">Tu pratiques avec r\u00e9gularit\u00e9.</div></div><div style="color:#C8A84A;font-size:18px;flex-shrink:0;">\u203A</div></div>'
     + '<div class="ob-motiv-card" onclick="obSelectMotiv(this,\'sacraliser\')" style="border:1px solid rgba(200,168,75,0.25); border-radius:14px; padding:14px 16px; background:radial-gradient(ellipse at top, rgba(200,168,75,0.06) 0%, transparent 70%); margin-bottom:20px; cursor:pointer; display:flex; align-items:center; gap:14px;"><div style="font-size:24px; color:#C8A84A; font-family:Amiri,Scheherazade,serif; direction:rtl; min-width:60px; text-align:center;">\u0646\u0650\u064A\u0651\u064E\u0629</div>'
     + '<div style="flex:1;"><div class="ob-motiv-title" style="font-family:var(--serif); color:#C8A84A; font-size:13px; letter-spacing:2px; text-transform:uppercase; margin-bottom:2px;">'+t('ob_motiv_sacraliser')+'</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif; font-size:13px; font-style:italic; color:#B5A685; line-height:1.4;">Pour sacraliser chaque geste. Exigeant.</div></div><div style="color:#C8A84A;font-size:18px;flex-shrink:0;">\u203A</div></div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif; font-size:13px; font-style:italic; color:#B5A685; line-height:1.4;">Tu sacralises chaque geste.</div></div><div style="color:#C8A84A;font-size:18px;flex-shrink:0;">\u203A</div></div>'
     + '</div>'
-    + '<div style="font-size:13px; font-style:italic; color:rgba(200,168,75,0.55); text-align:center; margin:20px auto 8px; max-width:300px;">'+t('ob_motivation_outro')+'</div>'
-    + '<div style="font-size:12px; font-style:italic; color:#B5A685; text-align:center; margin:0 auto 8px;">Tu peux changer \u00e0 tout moment dans les R\u00e9glages.</div>'
-    + '<div style="font-size:12px; font-style:italic; color:rgba(181,166,133,0.5); text-align:center; margin:0 auto 24px; max-width:280px; line-height:1.5;">Ton chemin pourra s\u2019\u00e9largir avec le temps.<br>Niyyah marche \u00e0 ton rythme.</div>'
+    + '<div style="font-size:12px; font-style:italic; color:rgba(200,168,75,0.55); text-align:center; margin:20px auto 24px; max-width:300px;">Tu pourras changer \u00e0 tout moment.</div>'
     + '<button class="onboard-btn" id="obMotivBtn" onclick="onboardNext()" style="opacity:0.3; pointer-events:none; padding:16px 48px; border-radius:30px; border:1px solid rgba(200,168,75,0.5); background:linear-gradient(180deg, #E8D070 0%, #D4B85A 50%, #B89540 100%); color:#1a1a1a; font-size:15px; font-weight:600; font-family:var(--serif); letter-spacing:1px; box-shadow:0 0 40px rgba(200,168,75,0.4), 0 4px 12px rgba(0,0,0,0.3);">'+t('onboard_next')+'</button>'
     + '</div>',
   // Slide 2 — Deux gestes : Niyyah + Regarde
