@@ -5035,128 +5035,16 @@ function _cureJ7FinaleSucces() {
     + '</div>';
 }
 
-function _cureDepistage() {
-  _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
-  document.body.classList.add('in-bab-an-nafs');
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  var c = '#B33A3A';
-  var qs = ['Tes col\u00e8res sont-elles disproportionn\u00e9es par rapport au d\u00e9clencheur\u00a0?','Reviennent-elles plus de 3 fois par semaine\u00a0?','Continuent-elles depuis plus de 6 mois\u00a0?'];
-  var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;max-width:600px;margin:0 auto;text-align:center;">'
-    + '<div style="font-family:var(--serif);font-size:22px;color:#C8A84A;margin-bottom:12px;">Avant de commencer</div>'
-    + '<div class="itfaa-body" style="font-size:15px;margin-bottom:28px;">Trois questions rapides.</div>';
-  for (var i = 0; i < qs.length; i++) {
-    html += '<div style="max-width:340px;margin:0 auto 20px;text-align:left;">'
-      + '<div class="itfaa-body" style="font-family:var(--serif);font-size:14px;line-height:1.6;margin-bottom:10px;">' + qs[i] + '</div>'
-      + '<div style="display:flex;gap:10px;">'
-      + '<button data-dq="' + i + '" data-val="oui" onclick="_depToggle(this)" style="flex:1;padding:10px;border-radius:10px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;transition:background 0.2s;">Oui</button>'
-      + '<button data-dq="' + i + '" data-val="non" onclick="_depToggle(this)" style="flex:1;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:none;color:rgba(255,255,255,0.55);font-family:var(--serif);font-size:14px;cursor:pointer;transition:background 0.2s;">Non</button>'
-      + '</div></div>';
-  }
-  html += '<button onclick="_depSave()" style="width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;margin-top:8px;">Continuer</button>'
-    + '</div>';
-  el.innerHTML = html;
-}
-function _depToggle(btn) {
-  var q = btn.getAttribute('data-dq');
-  document.querySelectorAll('[data-dq="' + q + '"]').forEach(function(b) { b.style.background = 'none'; b.style.fontWeight = '400'; });
-  btn.style.background = btn.getAttribute('data-val') === 'oui' ? '#B33A3A22' : 'rgba(255,255,255,0.08)';
-  btn.style.fontWeight = '600';
-  btn.classList.add('_depSel');
-}
-function _depSave() {
-  var r = {};
-  for (var i = 0; i < 3; i++) {
-    var sel = document.querySelector('[data-dq="' + i + '"]._depSel');
-    r['q' + (i + 1)] = sel ? sel.getAttribute('data-val') : '';
-  }
-  r.ts = Date.now();
-  safeSetItem('cure_depistage', JSON.stringify(r));
-  if (r.q1 === 'oui' && r.q2 === 'oui' && r.q3 === 'oui') { _cureOrientationMedicale(); return; }
-  _cureChoixMode();
-}
-function _cureOrientationMedicale() {
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  var c = '#B33A3A';
-  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;max-width:600px;margin:0 auto;text-align:center;">'
-    + '<div style="border:1px solid #a3372a;border-radius:14px;padding:14px;max-width:480px;margin:0 auto 28px;background:#0a0a0a;text-align:center;">'
-    + '<div style="font-size:15px;color:#E5E0DC;line-height:1.6;">Tes r\u00e9ponses sugg\u00e8rent que ces col\u00e8res pourraient avoir une cause m\u00e9dicale. La Cure peut t\u2019accompagner mais pas remplacer un avis professionnel.<br><br><strong style="color:#C8A84A;">Prends rendez-vous avec un m\u00e9decin ou un th\u00e9rapeute.</strong></div>'
-    + '</div>'
-    + '<div style="display:flex;flex-direction:column;gap:12px;max-width:340px;margin:0 auto;">'
-    + '<button onclick="safeSetItem(\'cure_orientation_medicale\',String(Date.now()));_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');v2GoSanctuaire()" style="width:100%;padding:14px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:none;color:rgba(200,168,75,0.7);font-family:var(--serif);font-size:14px;cursor:pointer;">Je vais consulter d\u2019abord</button>'
-    + '<button onclick="_cureChoixMode()" style="width:100%;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Je commence la Cure quand m\u00eame</button>'
-    + '</div></div>';
-}
+// _cureDepistage supprimé
+// _depToggle supprimé
+// _depSave supprimé
+// _cureOrientationMedicale supprimé
 
-function _cureChoixMode() {
-  _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
-  document.body.classList.add('in-bab-an-nafs');
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  var backBtn = '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
-  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
-    + backBtn
-    + '<div style="font-family:var(--serif);font-size:20px;color:#C8A84A;margin-bottom:8px;">Tu commences ce travail.</div>'
-    + '<div class="itfaa-subtle" style="font-size:15px;margin-bottom:32px;">Comment es-tu aujourd\u2019hui\u00a0?</div>'
-    + '<div style="display:flex;flex-direction:column;gap:14px;max-width:320px;margin:0 auto;">'
-    + '<button onclick="safeSetItem(\'cure_mode\',\'doucement\');openCureColere()" style="padding:20px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:rgba(200,168,75,0.05);cursor:pointer;text-align:center;">'
-    + '<div style="font-size:24px;margin-bottom:6px;">\ud83c\udf31</div>'
-    + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:4px;">Doucement</div>'
-    + '<div style="font-size:13px;color:#E5E0DC;opacity:0.7;">Je teste, je n\u2019engage pas plus de 2 minutes par jour</div>'
-    + '</button>'
-    + '<button onclick="safeSetItem(\'cure_mode\',\'serieusement\');openCureColere()" style="padding:20px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:rgba(200,168,75,0.05);cursor:pointer;text-align:center;">'
-    + '<div style="font-size:24px;margin-bottom:6px;">\ud83c\udf33</div>'
-    + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:4px;">S\u00e9rieusement</div>'
-    + '<div style="font-size:13px;color:#E5E0DC;opacity:0.7;">Je donne 10 minutes par jour</div>'
-    + '</button>'
-    + '</div>'
-    + '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(255,255,255,0.3);margin-top:24px;">Tu pourras changer plus tard.</div>'
-    + '</div>';
-}
+// _cureChoixMode supprimé
 
-function _cureDoucement(jour, saveFn) {
-  var jd = _getCureJourData(jour);
-  var doux = jd && jd.doucement || {};
-  var sousTitre = (jd && jd.titre_fr) || '';
-  var voix1 = doux.voixTemoin1 || '';
-  var voix2 = doux.voixTemoin2 || '';
-  var btnLabel = doux.boutonAction || 'J\u2019ai fait';
-  // Résoudre hadith
-  var hadithAr = '', hadithFr = '', hadithSrc = '';
-  var ref = jd && (jd.hadithRef || jd.versetRef);
-  if (ref) {
-    var h = _resolveRef(ref);
-    if (h) { hadithAr = h.ar || ''; hadithFr = h.fr || ''; hadithSrc = h.source || ''; }
-  }
-  if (!hadithAr && jd && jd.citation) { hadithFr = jd.citation; }
-  _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
-  document.body.classList.add('in-bab-an-nafs');
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  var c = '#B33A3A';
-  var backBtn = '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
-  var fnName = 'openCureColereJour' + jour;
-  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
-    + backBtn
-    + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:' + c + ';direction:rtl;margin-bottom:6px;">\u0631\u0650\u064a\u064e\u0627\u0636\u064e\u0629 \u0646\u064e\u0641\u0652\u0633\u0650\u064a\u0651\u064e\u0629</div>'
-    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:4px;">Riy\u00e2\u1e0dat an-nafs \u2014 Jour ' + jour + '</div>'
-    + '<div class="itfaa-body" style="font-size:16px;margin-bottom:28px;">' + escapeHtml(sousTitre) + '</div>'
-    + (hadithAr || hadithFr ? '<div style="margin-bottom:28px;padding:20px;border-radius:14px;border:1px solid ' + c + '22;background:' + c + '08;text-align:center;">'
-    + (hadithAr ? '<div style="font-family:\'Scheherazade New\',serif;font-size:28px;color:' + c + ';direction:rtl;line-height:1.8;margin-bottom:8px;">' + hadithAr + '</div>' : '')
-    + '<div class="itfaa-body" style="font-size:15px;margin-bottom:6px;">' + escapeHtml(hadithFr) + '</div>'
-    + (hadithSrc ? '<div class="itfaa-subtle" style="font-size:11px;">' + escapeHtml(hadithSrc) + '</div>' : '')
-    + '</div>' : '')
-    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:17px;line-height:1.7;max-width:360px;margin:0 auto 8px;">' + escapeHtml(voix1) + '</div>'
-    + '<div class="itfaa-subtle" style="font-size:15px;margin-bottom:28px;">' + escapeHtml(voix2) + '</div>'
-    + '<button onclick="' + saveFn + '()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">' + escapeHtml(btnLabel) + '</button>'
-    + '<div style="margin-top:24px;"><button onclick="safeSetItem(\'cure_mode\',\'serieusement\');' + fnName + '()" style="background:none;border:none;font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(255,255,255,0.3);cursor:pointer;">Tu veux aller plus loin aujourd\u2019hui ? Passer en S\u00e9rieusement \u2192</button></div>'
-    + '</div>';
-}
+// _cureDoucement supprimé
 
 function openCureColere() {
-  // Calibrage mode si pas encore choisi
-  if (!safeGetItem('cure_mode')) { if (!safeGetItem('cure_depistage')) { _cureDepistage(); return; } _cureChoixMode(); return; }
   var cure = {}; try { cure = JSON.parse(safeGetItem('cure_colere') || '{}'); } catch(e) {}
   var day = cure.current_day || 1;
   if (cure.completed === true) day = 'complete';
@@ -15433,12 +15321,12 @@ window._resolveRef            = _resolveRef;
 window._getCureJourData       = _getCureJourData;
 // window._cureEpisodeCheck supprimé (code mort)
 // window._cureEpSelect/_cureEpSave/_cureActionCheck/_cureActSelect/_cureActSave supprimés (code mort)
-window._cureDoucement         = _cureDoucement;
-window._cureDepistage         = _cureDepistage;
-window._depToggle             = _depToggle;
-window._depSave               = _depSave;
+// window._cureDoucement         = _cureDoucement; // supprimé
+// window._cureDepistage         = _cureDepistage; // supprimé
+// window._depToggle             = _depToggle; // supprimé
+// window._depSave               = _depSave; // supprimé
 window._cureJ7FinaleSucces    = _cureJ7FinaleSucces;
-window._cureChoixMode         = _cureChoixMode;
+// window._cureChoixMode         = _cureChoixMode; // supprimé
 window.openCureColere         = openCureColere;
 window._showWaswasaScreen     = _showWaswasaScreen;
 window.openCureColereJour1    = openCureColereJour1;
