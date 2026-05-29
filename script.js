@@ -7764,71 +7764,6 @@ function clearNotifTimers() {
   _notifTimers = [];
 }
 
-// ── Afficher l'écran de permission après onboarding ──────────────────────────
-function showNotifPermScreen() {
-  try {
-  if (localStorage.getItem('niyyah_notif_asked') === '1') return;
-  if (!('Notification' in window)) return;
-  if (Notification.permission === 'granted') {
-    safeSetItem('niyyah_notif_asked', '1');
-    scheduleAllNotifications();
-    return;
-  }
-  const screen = document.getElementById('notifPermScreen');
-  if (screen) {
-    screen.classList.add('show');
-  }
-  } catch(e) { /* MIUI */ }
-}
-
-function dismissNotifScreen() {
-  const screen = document.getElementById('notifPermScreen');
-  if (screen) {
-    screen.style.opacity = '0';
-    setTimeout(() => screen.classList.remove('show'), 400);
-  }
-  safeSetItem('niyyah_notif_asked', '1');
-  // Si on vient de l'onboarding, lancer l'écran Niyyah
-  if (!localStorage.getItem('niyyah_intention_date') || 
-      localStorage.getItem('niyyah_intention_date') !== todayKey()) {
-    setTimeout(() => showNiyyahScreen(), 450);
-  }
-}
-
-function requestNotifPermission() {
-  if (!('Notification' in window)) {
-    dismissNotifScreen();
-    showToast(t('notif_unsupported'));
-    return;
-  }
-  try {
-    Notification.requestPermission().then(permission => {
-      dismissNotifScreen();
-      if (permission === 'granted') {
-        showToast(t('notif_enabled'));
-        safeSetItem('niyyah_notif_perm', '1');
-        scheduleAllNotifications();
-      } else if (permission === 'denied') {
-        showToast(t('notif_denied'));
-        setTimeout(function() {
-          var tip = document.createElement('div');
-          tip.style.cssText = 'position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:#1a1a1a;border:1px solid rgba(200,168,75,0.3);border-radius:12px;padding:16px 20px;max-width:300px;z-index:9999;text-align:center;';
-          tip.innerHTML = '<div style="font-size:13px;color:var(--t2);line-height:1.6;margin-bottom:10px;">' + t('notif_denied_help') + '</div><button onclick="this.parentNode.remove()" style="padding:6px 16px;border-radius:8px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:12px;cursor:pointer;">OK</button>';
-          document.body.appendChild(tip);
-          setTimeout(function() { if (tip.parentNode) tip.remove(); }, 10000);
-        }, 500);
-      } else {
-        showToast(t('notif_later'));
-      }
-    }).catch(() => {
-      dismissNotifScreen();
-      showToast(t('notif_unavailable'));
-    });
-  } catch(e) {
-    dismissNotifScreen();
-    showToast(t('notif_unavailable'));
-  }
-}
 
 // ── Planifier les 2 notifications de la journée ───────────────────────────────
 function scheduleAllNotifications() {
@@ -7977,7 +7912,13 @@ function toggleNotifications() {
     safeSetItem('niyyah_notif_perm', '0');
     showToast(t('notif_disabled'));
   } else {
-    requestNotifPermission();
+    try {
+      Notification.requestPermission().then(function(p) {
+        if (p === 'granted') { showToast(t('notif_enabled')); safeSetItem('niyyah_notif_perm', '1'); scheduleAllNotifications(); }
+        else if (p === 'denied') { showToast(t('notif_denied')); }
+        else { showToast(t('notif_later')); }
+      }).catch(function() { showToast(t('notif_unavailable')); });
+    } catch(e) { showToast(t('notif_unavailable')); }
   }
 }
 // ══════════════════════════════════════════════════════════════════════════════
@@ -8527,13 +8468,9 @@ function onboardFinish() {
       if (typeof _loadPrayerByCoords === 'function') _loadPrayerByCoords(pos.coords.latitude, pos.coords.longitude);
     }, function() {}, { enableHighAccuracy: false, timeout: 10000, maximumAge: 300000 });
   }
-  // Afficher l'écran de permission notifications après l'onboarding
+  // Aller directement au Sanctuaire
   setTimeout(() => {
-    if (localStorage.getItem('niyyah_notif_asked') !== '1') {
-      showNotifPermScreen();
-    } else {
-      showNiyyahScreen();
-    }
+    showNiyyahScreen();
   }, 500);
 }
 function applyScrollScale() {
@@ -10233,7 +10170,7 @@ function v2GoSanctuaire() {
     document.body.classList.add('v2-mode');
     const backBtn = document.getElementById('v2-back-btn');
     if (backBtn) backBtn.classList.remove('visible');
-    ['niyyahScreen','notifPermScreen'].forEach(function(id) {
+    ['niyyahScreen'].forEach(function(id) {
       var el = document.getElementById(id);
       if (el) { el.style.display = 'none'; el.style.pointerEvents = 'none'; }
     });
