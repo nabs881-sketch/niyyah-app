@@ -6013,14 +6013,10 @@ function _cureJourSave(porte, num) {
     var _cureKey = 'cure_' + porte;
     var cure = JSON.parse(safeGetItem(_cureKey) || '{}');
     if (num === 1) {
-      var niyyah = (document.getElementById('_cureNiyyah') || {}).value || '';
-      if (!niyyah.trim() && safeGetItem('cure_mode') !== 'doucement') {
-        var field = document.getElementById('_cureNiyyah');
-        if (field) { field.style.borderColor = '#B33A3A'; field.focus(); }
-        return;
-      }
-      cure.niyyah = niyyah;
-      if (window._efficJ1Score) cure.efficacite_j1 = window._efficJ1Score;
+      // Lire le pacte J1 depuis le textarea du nouveau renderer
+      var pacteEl = document.getElementById('_cure_cure_colere_j1_pacte');
+      var pacte = pacteEl ? pacteEl.value || '' : '';
+      if (pacte.trim()) { cure.niyyah = pacte; safeSetItem('cure_colere_j1_pacte', pacte); }
       cure.started = cure.started || new Date().toISOString();
     }
     if (num === 2) {
@@ -6436,7 +6432,7 @@ function _cureColereGenericDay(el, dayNum) {
     if (isLast) {
       html += '<button onclick="_cureColereJ7Save()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Terminer Riy\u00e2\u1e0dat</button>';
     } else {
-      html += _cureForDemainHtml(dayNum, '_cureColereJ' + dayNum + 'Save');
+      html += '<button onclick="_cureColereJ' + dayNum + 'Save()" style="width:100%;max-width:320px;padding:14px;border-radius:12px;border:1px solid ' + c + '55;background:' + c + '1a;color:' + c + ';font-size:15px;font-family:var(--serif);cursor:pointer;">Continuer demain \u2192</button>';
     }
     html += '</div>';
   } else {
@@ -6444,13 +6440,12 @@ function _cureColereGenericDay(el, dayNum) {
     if (isLast) {
       html += '<button onclick="_cureColereJ7Save()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Terminer Riy\u00e2\u1e0dat</button>';
     } else {
-      html += _cureForDemainHtml(dayNum, '_cureColereJ' + dayNum + 'Save');
+      html += '<button onclick="_cureColereJ' + dayNum + 'Save()" style="width:100%;max-width:320px;padding:14px;border-radius:12px;border:1px solid ' + c + '55;background:' + c + '1a;color:' + c + ';font-size:15px;font-family:var(--serif);cursor:pointer;">Continuer demain \u2192</button>';
     }
     html += '</div>';
   }
   html += '</div>';
   el.innerHTML = html;
-  el.innerHTML += _exitLinkHtml;
 }
 
 // ── Branche gratitude (J3 "rien à signaler") ──
@@ -6470,10 +6465,9 @@ function _cureShowBrancheGratitude(dayNum) {
     html += '<div style="font-family:\'Scheherazade New\',serif;font-size:22px;color:#C8A84A;direction:rtl;line-height:1.8;margin:20px auto 6px;">' + bg.formule.arabe + '</div>';
     if (bg.formule.translitteration) html += '<div class="itfaa-subtle" style="font-size:12px;">' + escapeHtml(bg.formule.translitteration) + '</div>';
   }
-  html += '<div style="margin-top:32px;">' + _cureForDemainHtml(dayNum, '_cureColereJ' + dayNum + 'Save') + '</div>';
+  html += '<div style="margin-top:32px;text-align:center;"><button onclick="_cureColereJ' + dayNum + 'Save()" style="width:100%;max-width:320px;padding:14px;border-radius:12px;border:1px solid #B33A3A55;background:#B33A3A1a;color:#B33A3A;font-size:15px;font-family:var(--serif);cursor:pointer;">Continuer demain \u2192</button></div>';
   html += '</div>';
   el.innerHTML = html;
-  el.innerHTML += _exitLinkHtml;
 }
 window._cureShowBrancheGratitude = _cureShowBrancheGratitude;
 
