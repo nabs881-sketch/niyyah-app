@@ -6637,9 +6637,9 @@ body::before {
 .intention-opts-v2 { display: flex; flex-direction: column; gap: 9px; margin-bottom: 20px; }
 .intention-opt-v2 {
   background: #1a1a1a; border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 15px; padding: 13px 15px; cursor: pointer;
+  border-radius: 15px; padding: 14px 16px; cursor: pointer;
   color: var(--pearl-v2); font-family: 'Cormorant Garamond', serif;
-  font-size: 15px; font-weight: 300; font-style: italic;
+  font-size: 16px; font-weight: 300; font-style: italic; line-height: 1.55;
   transition: all 0.25s var(--ease-silk-v2); text-align: left;
 }
 .intention-opt-v2:hover, .intention-opt-v2.sel-v2 {
