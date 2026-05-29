@@ -4051,6 +4051,7 @@ function openBabPorte(id, step) {
   if (!el) return;
   // Colère → directement Cure 7 jours
   if (id === 'colere') { openCureColere(); return; }
+  if (id === 'anxiete') { openCureAnxiete(); return; }
   var porte = BAB_AN_NAFS.portes.find(function(p) { return p.id === id; });
   if (!porte) { console.warn('Bab an-Nafs: porte manquante:', id); return; }
   // Porte vide ou non validée sans contenu → écran "en préparation"
@@ -4823,11 +4824,13 @@ function _injectCureProgress(current) {
   bar.style.cssText = 'display:flex;justify-content:center;gap:8px;max-width:340px;margin:0 auto 20px;padding-top:8px;';
   for (var d = 1; d <= 7; d++) {
     var done = d < current, active = d === current, future = d > current;
-    var bg = done ? '#C8A84A' : active ? '#a3372a' : 'transparent';
-    var bdr = done ? '#C8A84A' : active ? '#a3372a' : 'rgba(255,255,255,0.2)';
+    var _prt = (_cureWizardState && _cureWizardState.porte) || 'colere';
+    var _prtColor = _prt === 'anxiete' ? '#3F51B5' : '#a3372a';
+    var bg = done ? '#C8A84A' : active ? _prtColor : 'transparent';
+    var bdr = done ? '#C8A84A' : active ? _prtColor : 'rgba(255,255,255,0.2)';
     var col = done || active ? '#fff' : 'rgba(255,255,255,0.3)';
     var cursor = done ? 'cursor:pointer;' : '';
-    var onclick = done ? ' onclick="openCureJour(\'colere\',' + d + ')"' : '';
+    var onclick = done ? ' onclick="openCureJour(\'' + _prt + '\',' + d + ')"' : '';
     bar.innerHTML += '<div style="text-align:center;' + cursor + 'background:rgba(0,0,0,0.5);border-radius:12px;padding:6px 4px 4px;"' + onclick + '>'
       + '<div style="width:28px;height:28px;border-radius:50%;border:2px solid ' + bdr + ';background:' + bg + ';display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:11px;color:' + col + ';">' + d + '</div>'
       + '<div style="font-size:9px;color:#F5EDE0;font-weight:500;margin-top:2px;text-shadow:0 1px 3px rgba(0,0,0,0.8);">J' + d + '</div></div>';
@@ -5027,7 +5030,7 @@ function _cureColereGenericDay(el, dayNum) {
   // Final: fil rouge + du'â + bouton jour suivant
   steps.push({ type: '_finale', data: j });
 
-  _cureWizardState = { dayNum: dayNum, step: 0, steps: steps, saved: {}, isLast: isLast, filRouge: filRouge, c: c };
+  _cureWizardState = { dayNum: dayNum, step: 0, steps: steps, saved: {}, isLast: isLast, filRouge: filRouge, c: c, porte: 'colere' };
   _cureWizardRender(el);
 }
 
@@ -5419,6 +5422,162 @@ _cureJourRenderers.colere_4 = function(el) { _cureColereGenericDay(el, 4); };
 _cureJourRenderers.colere_5 = function(el) { _cureColereGenericDay(el, 5); };
 _cureJourRenderers.colere_6 = function(el) { _cureColereGenericDay(el, 6); };
 _cureJourRenderers.colere_7 = function(el) { _cureColereGenericDay(el, 7); };
+
+// ── CURE ANXIÉTÉ ──────────────────────────────────────────────────────────────
+function openCureAnxiete() {
+  var cure = {}; try { cure = JSON.parse(safeGetItem('cure_anxiete') || '{}'); } catch(e) {}
+  var day = cure.current_day || 1;
+  if (cure.completed === true) day = 'complete';
+  var today = new Date().toISOString().slice(0, 10);
+  var lastDay = cure['jour' + (day - 1) + '_date'] ? cure['jour' + (day - 1) + '_date'].slice(0, 10) : null;
+  if (lastDay === today && day !== 'complete' && day > 1) {
+    _cureTransition(day - 1);
+    return;
+  }
+  if (day === 'complete') {
+    _babImmersion = true; _showAideBtn(); var nb2 = document.getElementById('nav-bar-v2'); if (nb2) nb2.classList.add('hidden-immersion');
+    document.body.classList.add('in-bab-an-nafs');
+    var el2 = document.getElementById('babAnNafsContent');
+    if (!el2) return;
+    var c = '#3F51B5';
+    el2.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
+      + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:#C8A84A;direction:rtl;margin-bottom:12px;">\u0627\u0644\u0633\u0651\u064E\u0644\u0627\u0645</div>'
+      + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;line-height:1.7;max-width:400px;margin:0 auto 32px;">Tu as travers\u00e9 la Cure. La porte reste ouverte derri\u00e8re toi.</div>'
+      + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="padding:14px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:none;color:#C8A84A;font-family:var(--serif);font-size:14px;cursor:pointer;">Retour</button>'
+      + '<button onclick="localStorage.removeItem(\'cure_anxiete\');openCureAnxiete()" style="display:block;margin:16px auto 0;background:none;border:none;font-size:12px;color:rgba(255,255,255,0.3);font-family:var(--serif);cursor:pointer;font-style:italic;">Recommencer un nouveau cycle</button>'
+      + '</div>';
+    return;
+  }
+  openCureJour('anxiete', typeof day === 'number' ? day : 1);
+}
+window.openCureAnxiete = openCureAnxiete;
+
+function _cureAnxieteGenericDay(el, dayNum) {
+  var c = '#3F51B5';
+  var data = window.CURE_ANXIETE_CYCLE1;
+  var j = data && data.jours && data.jours['j' + dayNum];
+  if (!j) { el.innerHTML = '<div style="padding:60px 24px;text-align:center;color:rgba(255,255,255,0.4);">Contenu en cours de chargement\u2026</div>'; return; }
+  var isLast = (dayNum === 7);
+
+  // Build steps array
+  var steps = [];
+  // Step 0: ouverture (citation + introduction + image)
+  steps.push({ type: '_ouverture_anxiete', data: j, dayNum: dayNum });
+  // Outils
+  var outils = j.outils || [];
+  outils.forEach(function(o, oi) { steps.push({ type: '_outil_anxiete', data: o, idx: oi, total: outils.length }); });
+  // Phrase-ancre
+  if (j.phrase_ancre) { steps.push({ type: '_ancre_anxiete', data: j.phrase_ancre }); }
+  // Clôture
+  steps.push({ type: '_finale_anxiete', data: j, dayNum: dayNum });
+
+  _cureWizardState = { dayNum: dayNum, step: 0, steps: steps, saved: {}, isLast: isLast, filRouge: '', c: c, porte: 'anxiete' };
+  _cureAnxieteWizardRender(el);
+}
+
+function _cureAnxieteWizardRender(el) {
+  if (!el) el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var s = _cureWizardState;
+  var step = s.steps[s.step];
+  if (!step) return;
+  var c = s.c;
+  var dayNum = s.dayNum;
+  var data = window.CURE_ANXIETE_CYCLE1;
+  var j = data && data.jours && data.jours['j' + dayNum];
+  var totalSteps = s.steps.length;
+
+  var backBtn = '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="position:fixed;top:calc(var(--safe-top,0px) + 12px);left:16px;z-index:9990;background:rgba(10,10,10,0.7);border:1px solid rgba(200,168,74,0.3);border-radius:50%;color:#C8A84A;cursor:pointer;padding:0;width:40px;height:40px;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#C8A84A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>';
+  var progress = '<div style="text-align:center;margin-bottom:24px;font-size:11px;letter-spacing:0.2em;color:rgba(200,168,75,0.4);">' + (s.step + 1) + '/' + totalSteps + '</div>';
+  var nextBtn = '<button onclick="_cureWizardState.step++;_cureAnxieteWizardRender()" style="display:block;width:100%;max-width:340px;margin:24px auto 0;padding:14px;border-radius:12px;border:none;background:' + c + ';color:#fff;font-size:15px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>';
+
+  var html = '';
+  if (step.type === '_ouverture_anxiete') {
+    var imgPath = 'assets/cure-anxiete/j' + dayNum + '.webp';
+    var cit = j.citation_ouverture || {};
+    html = backBtn
+      + '<div style="position:relative;min-height:100vh;padding:0;">'
+      + '<div style="position:fixed;inset:0;z-index:-1;"><img src="' + imgPath + '" style="width:100%;height:100%;object-fit:cover;" alt=""><div style="position:absolute;inset:0;background:rgba(0,0,0,0.55);"></div></div>'
+      + '<div style="padding:calc(var(--safe-top,0px)+60px) 24px 120px;position:relative;z-index:1;">'
+      + progress
+      + '<div style="font-family:\'Scheherazade New\',serif;font-size:20px;color:#C8A84A;direction:rtl;text-align:center;margin-bottom:4px;">' + escapeHtml(j.station_ar || '') + '</div>'
+      + '<div style="font-family:var(--serif);font-size:11px;letter-spacing:2px;color:rgba(200,168,75,0.5);text-align:center;margin-bottom:20px;">' + escapeHtml((j.station_fr || '').toUpperCase()) + '</div>'
+      + '<div style="font-family:var(--serif);font-size:20px;font-weight:600;color:#C8A84A;text-align:center;margin-bottom:24px;">Jour ' + dayNum + ' \u2014 ' + escapeHtml(j.titre_jour || '') + '</div>'
+      + (cit.texte ? '<div style="border-left:2px solid ' + c + '44;padding-left:14px;margin-bottom:20px;"><div style="font-family:var(--serif);font-size:14px;font-style:italic;color:rgba(240,234,214,0.75);line-height:1.7;">' + escapeHtml(cit.texte) + '</div><div style="font-size:12px;color:rgba(200,168,75,0.5);margin-top:6px;">\u2014 ' + escapeHtml(cit.source || '') + '</div></div>' : '')
+      + '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.85);line-height:1.8;white-space:pre-line;">' + escapeHtml(j.introduction || '') + '</div>'
+      + nextBtn
+      + '</div></div>';
+  } else if (step.type === '_outil_anxiete') {
+    var o = step.data;
+    html = backBtn
+      + '<div style="padding:calc(var(--safe-top,0px)+60px) 24px 120px;">'
+      + progress
+      + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;text-align:center;margin-bottom:8px;">' + escapeHtml(o.titre || '') + '</div>'
+      + (o.consigne ? '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:20px;">' + escapeHtml(o.consigne) + '</div>' : '')
+      + '<div style="border:1px solid ' + c + '33;border-radius:14px;padding:20px;margin-bottom:16px;text-align:center;">'
+      + '<div style="font-size:13px;color:rgba(200,168,75,0.5);font-style:italic;">Outil \u00e0 venir \u2014 type\u00a0: ' + escapeHtml(o.type) + '</div>'
+      + '</div>'
+      + nextBtn
+      + '</div>';
+  } else if (step.type === '_ancre_anxiete') {
+    var ancre = step.data;
+    html = backBtn
+      + '<div style="padding:calc(var(--safe-top,0px)+60px) 24px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:70vh;text-align:center;">'
+      + progress
+      + (ancre.ar ? '<div style="font-family:\'Scheherazade New\',serif;font-size:28px;color:#C8A84A;direction:rtl;margin-bottom:12px;">' + escapeHtml(ancre.ar) + '</div>' : '')
+      + (ancre.translitteration ? '<div style="font-family:var(--serif);font-size:14px;color:rgba(200,168,75,0.6);font-style:italic;margin-bottom:8px;">' + escapeHtml(ancre.translitteration) + '</div>' : '')
+      + '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.85);line-height:1.7;max-width:340px;">' + escapeHtml(ancre.fr || '') + '</div>'
+      + (ancre.source ? '<div style="font-size:12px;color:rgba(200,168,75,0.4);margin-top:10px;">\u2014 ' + escapeHtml(ancre.source) + '</div>' : '')
+      + nextBtn
+      + '</div>';
+  } else if (step.type === '_finale_anxiete') {
+    var clot = j.cloture || {};
+    var murmure = j.murmure_sortie_sanctuaire || {};
+    var saveFn = '_cureAnxieteSave(' + dayNum + ')';
+    html = backBtn
+      + '<div style="padding:calc(var(--safe-top,0px)+60px) 24px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:70vh;text-align:center;">'
+      + progress
+      + (clot.ar ? '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:#C8A84A;direction:rtl;margin-bottom:12px;">' + escapeHtml(clot.ar) + '</div>' : '')
+      + '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.85);line-height:1.7;max-width:360px;margin-bottom:24px;">' + escapeHtml(clot.fr || 'Tu as travers\u00e9 ce jour.') + '</div>'
+      + '<button onclick="' + saveFn + '" style="display:block;width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:' + c + ';color:#fff;font-size:15px;font-weight:600;font-family:var(--serif);cursor:pointer;">' + (s.isLast ? 'Terminer la Cure' : 'Jour ' + dayNum + ' accompli') + '</button>'
+      + '</div>';
+  }
+
+  el.innerHTML = html;
+  el.scrollTop = 0;
+}
+
+function _cureAnxieteSave(num) {
+  var nextDay = num < 7 ? num + 1 : 'complete';
+  try {
+    var cure = JSON.parse(safeGetItem('cure_anxiete') || '{}');
+    if (num === 1) { cure.started = cure.started || new Date().toISOString(); }
+    if (num === 7) {
+      cure.active = false;
+      cure.completed = true;
+      cure.completed_date = new Date().toISOString();
+      var count = parseInt(safeGetItem('cures_anxiete_count') || '0', 10);
+      safeSetItem('cures_anxiete_count', String(count + 1));
+    }
+    cure.current_day = nextDay;
+    cure['jour' + num + '_date'] = new Date().toISOString();
+    safeSetItem('cure_anxiete', JSON.stringify(cure));
+  } catch(e) {}
+  if (num === 7) {
+    openCureAnxiete();
+  } else {
+    _cureTransition(num);
+  }
+}
+window._cureAnxieteSave = _cureAnxieteSave;
+
+_cureJourRenderers.anxiete_1 = function(el) { _cureAnxieteGenericDay(el, 1); };
+_cureJourRenderers.anxiete_2 = function(el) { _cureAnxieteGenericDay(el, 2); };
+_cureJourRenderers.anxiete_3 = function(el) { _cureAnxieteGenericDay(el, 3); };
+_cureJourRenderers.anxiete_4 = function(el) { _cureAnxieteGenericDay(el, 4); };
+_cureJourRenderers.anxiete_5 = function(el) { _cureAnxieteGenericDay(el, 5); };
+_cureJourRenderers.anxiete_6 = function(el) { _cureAnxieteGenericDay(el, 6); };
+_cureJourRenderers.anxiete_7 = function(el) { _cureAnxieteGenericDay(el, 7); };
 
 // ── Backward-compatible wrappers ──
 function openCureColereJour1() { openCureJour('colere', 1); }
