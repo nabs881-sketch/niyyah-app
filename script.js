@@ -4395,32 +4395,9 @@ function _itfaaUrgence() {
   _refugeRun(3);
 }
 
-function openPorteYasir(porte) {
-  _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
-  document.body.classList.add('in-bab-an-nafs');
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  el.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;">'
-    + '<div id="_yasir1" style="font-family:var(--serif);font-size:18px;color:#E5E0DC;line-height:1.8;max-width:360px;opacity:0;transition:opacity 1s ease;">Tu es venu en moment calme.</div>'
-    + '<div id="_yasir2" style="font-family:var(--serif);font-size:16px;color:#4a7c59;margin-top:16px;opacity:0;transition:opacity 1s ease;">C\u2019est ici qu\u2019on pr\u00e9pare les moments durs.</div>'
-    + '</div>';
-  requestAnimationFrame(function() { var e = document.getElementById('_yasir1'); if (e) e.style.opacity = '1'; });
-  setTimeout(function() { var e = document.getElementById('_yasir2'); if (e) e.style.opacity = '1'; }, 1000);
-  setTimeout(function() { _yasirSouffle(); }, 3000);
-}
+// openPorteYasir supprimé (code mort Itfâ')
 
-function _yasirSouffle() {
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  var c = '#4a7c59';
-  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:70vh;text-align:center;">'
-    + '<div style="font-family:var(--serif);font-size:16px;font-style:italic;color:' + c + ';opacity:0.8;margin-bottom:24px;max-width:320px;">Dans ton souffle\u00a0: A\u2019\u00fbdhu bill\u00e2h</div>'
-    + '<div id="_yasirSouffleWrap"></div>'
-    + '<button onclick="_yasirSkipSouffle()" style="margin-top:32px;padding:12px 28px;border-radius:12px;border:1px solid ' + c + '33;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;opacity:0.6;">Continuer</button>'
-    + '</div>';
-  afficheLeSouffle(document.getElementById('_yasirSouffleWrap'), c);
-  window._yasirTimer = setTimeout(function() { window._yasirTimer = null; _yasirLaHawla(); }, 30000);
-}
+// _yasirSouffle supprimé (code mort Itfâ')
 function _yasirSkipSouffle() {
   if (window._yasirTimer) { clearTimeout(window._yasirTimer); window._yasirTimer = null; }
   _yasirLaHawla();
@@ -4517,14 +4494,7 @@ function _showIntentionRappel(cb) {
   setTimeout(cb, 3000);
 }
 
-function openPorteMutawassit(porte) {
-  _colereMode = 'mutawassit';
-  _showIntentionRappel(function() {
-    _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
-    document.body.classList.add('in-bab-an-nafs');
-    openItfaaStep1();
-  });
-}
+// openPorteMutawassit supprimé (code mort Itfâ')
 
 function _mutawassitExit() {
   // Afficher message AVANT babCompletPorte (qui appelle renderBabAnNafs)
@@ -4583,22 +4553,9 @@ function _mutSudSave() {
   }
 }
 
-function _itfaaChoixChemin() {
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) { openItfaaEmotionSous(); return; }
-  var c = '#B33A3A';
-  el.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;">'
-    + '<div style="font-size:14px;color:#E5E0DC;margin-bottom:24px;">Maintenant, deux chemins\u00a0:</div>'
-    + '<div style="display:flex;flex-direction:column;gap:12px;max-width:340px;width:100%;">'
-    + '<button onclick="_itfaaSalat()" style="width:100%;padding:14px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:none;color:rgba(200,168,75,0.7);font-family:var(--serif);font-size:14px;cursor:pointer;">Aller prier 2\u00a0rak\u2019at</button>'
-    + '<button onclick="openItfaaEmotionSous()" style="width:100%;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Refuge \u2014 r\u00e9p\u00e9ter A\u2019\u00fbdhu bill\u00e2h</button>'
-    + '</div></div>';
-}
+// _itfaaChoixChemin supprimé (code mort Itfâ')
 
-function _itfaaFaitClick() {
-  if (_colereMode === 'mutawassit') _mutawassitPause();
-  else openItfaaEmotionSous();
-}
+// _itfaaFaitClick supprimé (code mort Itfâ')
 function _mutawassitPause() {
   var el = document.getElementById('babAnNafsContent');
   if (!el) { _mutawassitEau(); return; }
@@ -4667,27 +4624,7 @@ function _mutawassitEau() {
   }, 1000);
 }
 
-function openItfaaEmotionSous() {
-  _babImmersion = true; var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  var c = '#B33A3A';
-  var emotions = ['Triste','Bless\u00e9','Impuissant','Trahi','\u00c9puis\u00e9','Je ne sais pas'];
-  var backBtn = '<button onclick="openItfaaStep1()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
-  var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
-    + backBtn
-    + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';margin-bottom:8px;">Je suis en col\u00e8re\u2026</div>'
-    + '<div class="itfaa-subtle" style="font-size:14px;margin-bottom:8px;">Et dessous, peut-\u00eatre :</div>'
-    + '<div style="font-size:12px;font-style:italic;color:rgba(255,255,255,0.35);line-height:1.5;max-width:340px;margin:0 auto 24px;">Reconna\u00eetre l\u2019\u00e9motion sous l\u2019\u00e9motion \u2014 un travail du c\u0153ur.</div>'
-    + '<div style="display:flex;flex-direction:column;gap:12px;max-width:320px;margin:0 auto;">';
-  for (var i = 0; i < emotions.length; i++) {
-    html += '<button onclick="_logEmotionSous(\'' + emotions[i].replace(/'/g,"\\'") + '\')" style="padding:16px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:16px;cursor:pointer;">' + emotions[i] + '</button>';
-  }
-  html += '<button onclick="openItfaaRefuge()" style="padding:14px;border-radius:12px;border:1px solid ' + c + '22;background:none;color:' + c + ';opacity:0.6;font-family:var(--serif);font-size:14px;cursor:pointer;margin-top:8px;">Passer</button>'
-    + '</div></div>';
-  el.innerHTML = html;
-  el.innerHTML += _exitLinkHtml;
-}
+// openItfaaEmotionSous supprimé (code mort Itfâ')
 
 function _logEmotionSous(emotion) {
   try {
@@ -4699,10 +4636,7 @@ function _logEmotionSous(emotion) {
   openItfaaRefuge();
 }
 
-function openPorteShadid(porte) {
-  _colereMode = 'shadid';
-  _showIntentionRappel(function() { openItfaaOuverture(); });
-}
+// openPorteShadid supprimé (code mort Itfâ')
 
 function _halo(el, z) {
   el.setAttribute('fill', 'rgba(200,168,75,0.3)');
@@ -4755,83 +4689,11 @@ function _logSomatic(sensation) {
   openItfaaAction();
 }
 
-function _itfaaWuduEtape2() {
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  var c = '#B33A3A';
-  var backBtn = '<button onclick="openItfaaStep1()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
-  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
-    + backBtn
-    + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.6;margin-bottom:16px;">T\u00eate</div>'
-    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.7;max-width:360px;margin:0 auto 12px;">Maintenant, compl\u00e8te les ablutions.</div>'
-    + '<div style="font-family:var(--serif);font-size:20px;color:#C8A84A;font-style:italic;margin-bottom:28px;">Bismill\u00e2h.</div>'
-    + '<button onclick="_itfaaFaitClick()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019ai fait \u2726</button>'
-    + '</div>';
-}
+// _itfaaWuduEtape2 supprimé (code mort Itfâ')
 
-function openItfaaOuverture() {
-  _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
-  document.body.classList.add('in-bab-an-nafs');
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  el.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;background:#000;padding:24px;">'
-    + '<div id="_itfaaAr" style="font-family:\'Scheherazade New\',serif;font-size:64px;color:#C8A84A;direction:rtl;opacity:0;transition:opacity 1.5s ease;">\u0644\u0627\u064e \u062a\u064e\u063a\u0652\u0636\u064e\u0628\u0652</div>'
-    + '<div id="_itfaaTranslit" style="font-family:var(--serif);font-size:16px;font-style:italic;color:rgba(200,168,75,0.7);margin-top:12px;opacity:0;transition:opacity 1s ease;">L\u00e2 taghḍab \u2014 Ne te mets pas en col\u00e8re.</div>'
-    + '<div id="_itfaaSource" style="font-size:12px;color:rgba(255,255,255,0.35);margin-top:6px;opacity:0;transition:opacity 1s ease;">Bukh\u00e2r\u00ee 6116 \u2014 \u1e63a\u1e25\u00ee\u1e25</div>'
-    + '<div id="_itfaaContext" style="font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);margin-top:8px;max-width:360px;line-height:1.5;opacity:0;transition:opacity 1s ease;">Le conseil le plus court du Proph\u00e8te \uFDFA, r\u00e9p\u00e9t\u00e9 trois fois \u00e0 un homme qui demandait conseil. \u2014 Bukh\u00e2r\u00ee 6116</div>'
-    + '<button id="_itfaaBtn" onclick="openItfaaStep1()" style="margin-top:28px;width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;opacity:0;transition:opacity 0.8s ease;">Continuer</button>'
-    + '</div>';
-  requestAnimationFrame(function() { var e = document.getElementById('_itfaaAr'); if (e) e.style.opacity = '1'; });
-  setTimeout(function() { var e = document.getElementById('_itfaaTranslit'); if (e) e.style.opacity = '1'; }, 2000);
-  setTimeout(function() { var e = document.getElementById('_itfaaSource'); if (e) e.style.opacity = '1'; }, 2500);
-  setTimeout(function() { var e = document.getElementById('_itfaaContext'); if (e) e.style.opacity = '1'; }, 3000);
-  setTimeout(function() { var e = document.getElementById('_itfaaBtn'); if (e) e.style.opacity = '1'; }, 3500);
-}
+// openItfaaOuverture supprimé (code mort Itfâ')
 
-function openItfaaStep1() {
-  _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  var c = '#B33A3A';
-  var _zPulse = 'animation:_zonePulse 2.5s ease-in-out infinite;';
-  // Coordonnées mesurées sur silhouette-colere.png 1024x1536 (ratio 1:1.5)
-  // viewBox 0 0 100 200, image contain = 100x150 centrée → offset Y +25
-  var zones = '<svg viewBox="0 0 100 200" preserveAspectRatio="xMidYMid meet" style="position:absolute;top:0;left:0;width:100%;height:100%;">'
-    + '<circle cx="50" cy="38" r="3" fill="rgba(200,118,58,0.5)" style="' + _zPulse + 'cursor:pointer" onclick="_halo(this,\'tete\')"/>'
-    + '<circle cx="50" cy="38" r="7" fill="transparent" style="cursor:pointer" onclick="_halo(this,\'tete\')"/>'
-    + '<circle cx="50" cy="52" r="2.5" fill="rgba(200,118,58,0.5)" style="' + _zPulse + 'cursor:pointer" onclick="_halo(this,\'gorge\')"/>'
-    + '<circle cx="50" cy="52" r="5" fill="transparent" style="cursor:pointer" onclick="_halo(this,\'gorge\')"/>'
-    + '<circle cx="50" cy="67" r="4" fill="rgba(200,118,58,0.5)" style="' + _zPulse + 'cursor:pointer" onclick="_halo(this,\'poitrine\')"/>'
-    + '<circle cx="50" cy="67" r="9" fill="transparent" style="cursor:pointer" onclick="_halo(this,\'poitrine\')"/>'
-    + '<circle cx="50" cy="84" r="4" fill="rgba(200,118,58,0.5)" style="' + _zPulse + 'cursor:pointer" onclick="_halo(this,\'ventre\')"/>'
-    + '<circle cx="50" cy="84" r="9" fill="transparent" style="cursor:pointer" onclick="_halo(this,\'ventre\')"/>'
-    + '<circle cx="33" cy="105" r="3" fill="rgba(200,118,58,0.5)" style="' + _zPulse + 'cursor:pointer" onclick="_halo(this,\'mains\')"/>'
-    + '<circle cx="33" cy="105" r="7" fill="transparent" style="cursor:pointer" onclick="_halo(this,\'mains\')"/>'
-    + '<circle cx="67" cy="105" r="3" fill="rgba(200,118,58,0.5)" style="' + _zPulse + 'cursor:pointer" onclick="_halo(this,\'mains\')"/>'
-    + '<circle cx="67" cy="105" r="7" fill="transparent" style="cursor:pointer" onclick="_halo(this,\'mains\')"/>'
-    + '</svg>';
-  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 80px;text-align:center;">'
-    + '<button onclick="openColereChoix()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:16px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>'
-    + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';margin-bottom:20px;">O\u00f9 sens-tu la col\u00e8re dans ton corps\u00a0?</div>'
-    + '<div style="position:relative;width:280px;height:85vh;max-height:680px;margin:0 auto;">'
-    + '<div style="position:absolute;top:-10%;left:-10%;width:120%;height:120%;border-radius:50%;background:radial-gradient(ellipse at center,#B33A3A44 0%,transparent 70%);filter:blur(12px);animation:_haloBreath 5s ease-in-out infinite;z-index:0;"></div>'
-    + '<div style="position:relative;width:100%;height:100%;background:url(\'images/silhouette-colere.png\') center/contain no-repeat;z-index:1;">'
-    + zones
-    + '</div>'
-    + '</div>';
-  // Ancrage islamique en bas
-  var _cH = {ar:'\u0644\u064e\u064a\u0652\u0633\u064e \u0627\u0644\u0634\u0651\u064e\u062f\u0650\u064a\u062f\u064f \u0628\u0650\u0627\u0644\u0635\u0651\u064f\u0631\u064e\u0639\u064e\u0629\u0650\u060c \u0625\u0650\u0646\u0651\u064e\u0645\u064e\u0627 \u0627\u0644\u0634\u0651\u064e\u062f\u0650\u064a\u062f\u064f \u0627\u0644\u0651\u064e\u0630\u0650\u064a \u064a\u064e\u0645\u0652\u0644\u0650\u0643\u064f \u0646\u064e\u0641\u0652\u0633\u064e\u0647\u064f \u0639\u0650\u0646\u0652\u062f\u064e \u0627\u0644\u0652\u063a\u064e\u0636\u064e\u0628\u0650',fr:'Le fort n\u2019est pas celui qui terrasse les hommes. Le fort est celui qui se ma\u00eetrise dans la col\u00e8re.',source:'Bukh\u00e2r\u00ee 6114, Muslim 2609 \u2014 sahih'};
-  if (window.babNafsContent && window.babNafsContent.colere && window.babNafsContent.colere.itfaa && window.babNafsContent.colere.itfaa.etape1_corps_general) {
-    var _h = window.babNafsContent.colere.itfaa.etape1_corps_general;
-    if (_h.ar) { _cH.ar = _h.ar; _cH.fr = _h.fr || _cH.fr; _cH.source = (_h.source || '') + ' \u2014 ' + (_h.grade || ''); }
-  }
-  el.innerHTML += '<div style="max-width:320px;margin:16px auto 0;text-align:center;">'
-    + '<div style="font-family:\'Scheherazade New\',serif;font-size:16px;color:#B33A3A;direction:rtl;line-height:1.6;opacity:0.7;">' + _cH.ar + '</div>'
-    + '<div class="itfaa-body" style="font-size:12px;margin:4px 0 2px;">' + escapeHtml(_cH.fr) + '</div>'
-    + '<div class="itfaa-subtle" style="font-size:10px;">' + escapeHtml(_cH.source) + '</div>'
-    + '</div>'
-    + '</div>';
-}
+// openItfaaStep1 supprimé (code mort Itfâ')
 
 function openItfaaAction() {
   _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
@@ -4909,19 +4771,7 @@ function openItfaaAction() {
     + '</div>';
   el.innerHTML = html;
 }
-function _itfaaSalat() {
-  safeSetItem('colere_salat_choisie', String(Date.now()));
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  el.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;">'
-    + '<div style="font-family:var(--serif);font-size:20px;color:#C8A84A;line-height:1.8;max-width:360px;opacity:0;transition:opacity 1s ease;margin-bottom:40px;" id="_salatMsg">Va prier.<br>Reviens quand tu veux.</div>'
-    + '<div id="_salatBtns" style="opacity:0;transition:opacity 0.8s ease;display:flex;flex-direction:column;gap:12px;max-width:320px;width:100%;">'
-    + '<button onclick="localStorage.removeItem(\'colere_salat_choisie\');openMuhasabaIntro()" style="width:100%;padding:16px;border-radius:12px;border:none;background:#B33A3A;color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019ai pri\u00e9</button>'
-    + '<button onclick="localStorage.removeItem(\'colere_salat_choisie\');openItfaaAction()" style="background:none;border:none;font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(255,255,255,0.3);cursor:pointer;">Annuler</button>'
-    + '</div></div>';
-  requestAnimationFrame(function() { var e = document.getElementById('_salatMsg'); if (e) e.style.opacity = '1'; });
-  setTimeout(function() { var b = document.getElementById('_salatBtns'); if (b) b.style.opacity = '1'; }, 2000);
-}
+// _itfaaSalat supprimé (code mort Itfâ')
 function _checkSalatReturn() {
   var ts = parseInt(safeGetItem('colere_salat_choisie') || '0', 10);
   if (!ts || (Date.now() - ts) > 30 * 60000) { localStorage.removeItem('colere_salat_choisie'); return; }
@@ -5097,13 +4947,7 @@ function _refugeSujud() {
     + '</div>';
 }
 
-function _refugeSkip() {
-  window._refugeStop = true;
-  var c = document.getElementById('_refugeCycle');
-  if (c) c.style.display = 'none';
-  var sud = document.getElementById('_refugeSudApres');
-  if (sud) { sud.style.display = ''; } else { var e = document.getElementById('_refugeEnd'); if (e) e.style.display = ''; }
-}
+// _refugeSkip supprimé (code mort Itfâ')
 function _refugeSudSave() {
   var v = parseInt((document.querySelector('#_refugeSudApres input[type=range]') || {}).value || '5', 10);
   var avant = 5; try { var a = JSON.parse(safeGetItem('itfaa_sud_avant') || '{}'); avant = a.valeur || 5; } catch(e) {}
@@ -16446,9 +16290,9 @@ window.openRegardeJournal     = openRegardeJournal;
 window.renderBabAnNafs        = renderBabAnNafs;
 window.openBabPorte           = openBabPorte;
 window.openPorteChoix         = openPorteChoix;
-window.openPorteYasir         = openPorteYasir;
-window.openPorteMutawassit    = openPorteMutawassit;
-window.openPorteShadid        = openPorteShadid;
+// window.openPorteYasir         = openPorteYasir; // supprimé (code mort)
+// window.openPorteMutawassit    = openPorteMutawassit; // supprimé (code mort)
+// window.openPorteShadid        = openPorteShadid; // supprimé (code mort)
 window.openPorteSeuilTherapeute = openPorteSeuilTherapeute;
 window.openColereChoix        = openColereChoix;
 window._renderThermometre     = _renderThermometre;
@@ -16487,11 +16331,11 @@ window._cureColereJ7Save      = _cureColereJ7Save;
 window.openMuhasabaRappel    = openMuhasabaRappel;
 window._muhasabaRappelReponse = _muhasabaRappelReponse;
 window._halo                  = _halo;
-window._itfaaWuduEtape2       = _itfaaWuduEtape2;
-window.openItfaaOuverture     = openItfaaOuverture;
+// window._itfaaWuduEtape2       = _itfaaWuduEtape2; // supprimé (code mort)
+// window.openItfaaOuverture     = openItfaaOuverture; // supprimé (code mort)
 window._itfaaSUD              = _itfaaSUD;
 // window.openColereYasir supprimé (code mort)
-window._yasirSouffle          = _yasirSouffle;
+// window._yasirSouffle          = _yasirSouffle; // supprimé (code mort)
 window._yasirSkipSouffle      = _yasirSkipSouffle;
 window._yasirIntention        = _yasirIntention;
 window._yasirChoix            = _yasirChoix;
@@ -16504,25 +16348,25 @@ window._yasirExit             = _yasirExit;
 window._mutawassitExit        = _mutawassitExit;
 window._mutSudSave            = _mutSudSave;
 window._itfaaUrgence          = _itfaaUrgence;
-window._itfaaChoixChemin      = _itfaaChoixChemin;
-window._itfaaFaitClick        = _itfaaFaitClick;
+// window._itfaaChoixChemin      = _itfaaChoixChemin; // supprimé (code mort)
+// window._itfaaFaitClick        = _itfaaFaitClick; // supprimé (code mort)
 window._mutawassitPause       = _mutawassitPause;
 window._mutawassitDhikr       = _mutawassitDhikr;
 window._hasbIncr              = _hasbIncr;
 window._mutawassitEau         = _mutawassitEau;
-window._itfaaSalat            = _itfaaSalat;
-window.openItfaaEmotionSous   = openItfaaEmotionSous;
+// window._itfaaSalat            = _itfaaSalat; // supprimé (code mort)
+// window.openItfaaEmotionSous   = openItfaaEmotionSous; // supprimé (code mort)
 window._logEmotionSous        = _logEmotionSous;
 // window.openColereShadid supprimé (code mort)
 window.openItfaaSomatic       = openItfaaSomatic;
 window._logSomatic            = _logSomatic;
-window.openItfaaStep1         = openItfaaStep1;
+// window.openItfaaStep1         = openItfaaStep1; // supprimé (code mort)
 window.openItfaaAction        = openItfaaAction;
 window.openItfaaRefuge        = openItfaaRefuge;
 window._refugeRun             = _refugeRun;
 window._refugeExtend          = _refugeExtend;
 window._refugeSujud           = _refugeSujud;
-window._refugeSkip            = _refugeSkip;
+// window._refugeSkip            = _refugeSkip; // supprimé (code mort)
 window._refugeSudSave         = _refugeSudSave;
 window.openMuhasabaIntro      = openMuhasabaIntro;
 window._muhasabaGuidee        = _muhasabaGuidee;
