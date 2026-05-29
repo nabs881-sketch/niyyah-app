@@ -5532,6 +5532,89 @@ _outilAnxieteRenderers.double_slider = function(o, c) {
   return html;
 };
 
+// 3.7 — drag_and_drop_3_categories
+_outilAnxieteRenderers.drag_and_drop_3_categories = function(o, c) {
+  var cats = o.categories || [];
+  var nb = o.nombre_pensees_min || 3;
+  var sk = o.stockage || 'cure_anxiete_dnd3';
+  var saved = {}; try { saved = JSON.parse(safeGetItem(sk) || '{}'); } catch(e) {}
+  var pensees = saved.pensees || [];
+  var classement = saved.classement || {};
+  var dndId = '_dnd3_' + o.id;
+  var html = '';
+  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
+  // Input fields for thoughts
+  html += '<div style="margin-bottom:20px;">';
+  for (var i = 0; i < nb; i++) {
+    var v = pensees[i] || '';
+    html += '<input type="text" id="' + dndId + '_p' + i + '" value="' + escapeHtml(v) + '" placeholder="Pens\u00e9e ' + (i + 1) + '..." oninput="_dnd3SavePensees(\'' + dndId + '\',\'' + sk + '\',' + nb + ')" style="display:block;width:100%;box-sizing:border-box;margin-bottom:8px;padding:10px 12px;border-radius:8px;border:1px solid ' + c + '33;background:rgba(200,168,75,0.04);color:#E5E0DC;font-family:var(--serif);font-size:14px;outline:none;">';
+  }
+  html += '</div>';
+  // Category bins
+  html += '<div style="display:flex;gap:8px;margin-bottom:12px;">';
+  cats.forEach(function(cat) {
+    html += '<div style="flex:1;min-height:100px;border:1px solid ' + c + '22;border-radius:12px;padding:10px 8px;text-align:center;background:rgba(200,168,75,0.02);">'
+      + '<div style="font-family:var(--serif);font-size:13px;font-weight:600;color:#C8A84A;margin-bottom:4px;">' + escapeHtml(cat.label) + '</div>'
+      + '<div style="font-size:10px;color:rgba(200,168,75,0.4);font-style:italic;margin-bottom:8px;line-height:1.3;">' + escapeHtml(cat.description) + '</div>'
+      + '<div id="' + dndId + '_bin_' + cat.id + '" style="min-height:30px;">';
+    // Show already-classified thoughts
+    for (var pi = 0; pi < nb; pi++) {
+      if (classement['p' + pi] === cat.id && pensees[pi] && pensees[pi].trim()) {
+        html += '<div style="font-size:12px;color:rgba(240,234,214,0.7);padding:4px 6px;margin-bottom:4px;border-radius:6px;background:' + c + '15;font-style:italic;">' + escapeHtml(pensees[pi]) + '</div>';
+      }
+    }
+    html += '</div></div>';
+  });
+  html += '</div>';
+  // Tap-to-classify: for each unclassified thought, show buttons
+  var anyUnclassified = false;
+  for (var pi2 = 0; pi2 < nb; pi2++) {
+    if (pensees[pi2] && pensees[pi2].trim() && !classement['p' + pi2]) {
+      anyUnclassified = true;
+      html += '<div style="border:1px solid ' + c + '22;border-radius:10px;padding:10px;margin-bottom:8px;">'
+        + '<div style="font-family:var(--serif);font-size:13px;color:rgba(240,234,214,0.8);margin-bottom:8px;font-style:italic;">\u00ab ' + escapeHtml(pensees[pi2]) + ' \u00bb</div>'
+        + '<div style="display:flex;gap:6px;">';
+      cats.forEach(function(cat) {
+        html += '<button onclick="_dnd3Classify(\'' + dndId + '\',\'' + sk + '\',' + pi2 + ',\'' + cat.id + '\',' + nb + ')" style="flex:1;padding:8px 4px;border-radius:8px;border:1px solid ' + c + '33;background:none;color:rgba(200,168,75,0.7);font-family:var(--serif);font-size:11px;cursor:pointer;">' + escapeHtml(cat.label) + '</button>';
+      });
+      html += '</div></div>';
+    }
+  }
+  if (!anyUnclassified && pensees.some(function(p) { return p && p.trim(); })) {
+    html += '<div style="font-family:var(--serif);font-size:13px;color:rgba(200,168,75,0.5);text-align:center;font-style:italic;margin-bottom:8px;">\u2713 Toutes class\u00e9es.</div>';
+  }
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
+  return html;
+};
+function _dnd3SavePensees(dndId, sk, nb) {
+  var saved = {}; try { saved = JSON.parse(safeGetItem(sk) || '{}'); } catch(e) {}
+  var pensees = [];
+  for (var i = 0; i < nb; i++) {
+    var el = document.getElementById(dndId + '_p' + i);
+    pensees.push(el ? el.value : '');
+  }
+  saved.pensees = pensees;
+  safeSetItem(sk, JSON.stringify(saved));
+}
+window._dnd3SavePensees = _dnd3SavePensees;
+function _dnd3Classify(dndId, sk, pIdx, catId, nb) {
+  var saved = {}; try { saved = JSON.parse(safeGetItem(sk) || '{}'); } catch(e) {}
+  if (!saved.classement) saved.classement = {};
+  saved.classement['p' + pIdx] = catId;
+  safeSetItem(sk, JSON.stringify(saved));
+  // Re-render the whole outil
+  var data = window.CURE_ANXIETE_CYCLE1;
+  if (!data) return;
+  var o = null;
+  Object.keys(data.jours).forEach(function(jk) {
+    data.jours[jk].outils.forEach(function(t) { if (t.id === dndId.replace('_dnd3_', '')) o = t; });
+  });
+  if (!o) return;
+  _cureWizardState.step = _cureWizardState.step; // keep current
+  _cureAnxieteWizardRender();
+}
+window._dnd3Classify = _dnd3Classify;
+
 // 3.6 — checkboxes_sequentielles
 _outilAnxieteRenderers.checkboxes_sequentielles = function(o, c) {
   var etapes = o.etapes || [];
