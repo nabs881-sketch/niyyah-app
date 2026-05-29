@@ -6273,17 +6273,16 @@ function openCureColere() {
 // ── Sérieusement renderers for Porte Colère ──
 _cureJourRenderers.colere_1 = function(el) { _cureColereGenericDay(el, 1); };
 
-// Jours 1–7 : renderer générique enrichi depuis CURE_COLERE_CYCLE1
+// Jours 1–7 : renderer wizard (un écran par étape) depuis CURE_COLERE_CYCLE1
+var _cureWizardState = { dayNum: 0, step: 0, steps: [], saved: {} };
+
 function _cureColereGenericDay(el, dayNum) {
   var c = '#B33A3A';
   var data = window.CURE_COLERE_CYCLE1;
   var j = data && data.jours && data.jours[dayNum - 1];
   if (!j) { el.innerHTML = '<div style="padding:60px 24px;text-align:center;color:rgba(255,255,255,0.4);">Contenu en cours de chargement\u2026</div>'; return; }
-  var duaa = j.duaa_cloture || {};
-  var travaux = j.travaux || [];
-  var filRouge = (data._transversal && data._transversal.fil_rouge_bas) || '';
   var isLast = (dayNum === 7);
-  var backBtn = '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
+  var filRouge = (data._transversal && data._transversal.fil_rouge_bas) || '';
 
   // SURCOUCHE ENTRÉE NON-SKIPPABLE (J6)
   if (j.surcouche_entree_non_skippable && !safeGetItem('cure_surcouche_j' + dayNum + '_vu')) {
@@ -6297,91 +6296,84 @@ function _cureColereGenericDay(el, dayNum) {
     return;
   }
 
-  var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;">'
-    + backBtn
-    // TITRE
-    + '<div style="text-align:center;margin-bottom:40px;">'
+  // Build steps array
+  var steps = [];
+  // Step 0: ouverture
+  steps.push({ type: '_ouverture', data: j });
+  // Bifurcation (J3 sélecteur, J4 branches)
+  if (j.bifurcation_entree) {
+    steps.push({ type: '_bifurcation', data: j.bifurcation_entree, jour: j });
+  }
+  // Travaux standard
+  var travaux = j.travaux || [];
+  travaux.forEach(function(t, ti) { steps.push({ type: '_travail', data: t, idx: ti, total: travaux.length }); });
+  // Pool questions (J6)
+  if (j.pool_questions) { steps.push({ type: '_pool_questions', data: j.pool_questions }); }
+  // Outil miroir (J6)
+  if (j.outil_miroir_opt_in) { steps.push({ type: '_miroir', data: j.outil_miroir_opt_in }); }
+  // Verrou final (J3, J6)
+  if (j.verrou_final && j.verrou_final.non_skippable) { steps.push({ type: '_verrou', data: j.verrou_final }); }
+  // Final: fil rouge + du'â + bouton jour suivant
+  steps.push({ type: '_finale', data: j });
+
+  _cureWizardState = { dayNum: dayNum, step: 0, steps: steps, saved: {}, isLast: isLast, filRouge: filRouge, c: c };
+  _cureWizardRender(el);
+}
+
+function _cureWizardRender(el) {
+  if (!el) el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var s = _cureWizardState;
+  var step = s.steps[s.step];
+  if (!step) return;
+  var c = s.c;
+  var dayNum = s.dayNum;
+  var data = window.CURE_COLERE_CYCLE1;
+  var j = data && data.jours && data.jours[dayNum - 1];
+  var totalSteps = s.steps.length;
+
+  var backBtn = '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="position:fixed;top:calc(var(--safe-top,0px) + 12px);left:16px;z-index:9990;background:rgba(10,10,10,0.7);border:1px solid rgba(200,168,74,0.3);border-radius:50%;color:#C8A84A;cursor:pointer;padding:0;width:40px;height:40px;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#C8A84A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>';
+
+  // Progress indicator
+  var progress = '<div style="text-align:center;margin-bottom:24px;font-size:11px;letter-spacing:0.2em;color:rgba(200,168,75,0.4);">' + (s.step + 1) + '/' + totalSteps + '</div>';
+
+  var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;">' + backBtn + progress;
+
+  // TITRE (always)
+  html += '<div style="text-align:center;margin-bottom:32px;">'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:' + c + ';direction:rtl;margin-bottom:6px;">\u0631\u0650\u064a\u064e\u0627\u0636\u064e\u0629 \u0646\u064e\u0641\u0652\u0633\u0650\u064a\u0651\u064e\u0629</div>'
-    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:4px;">Riy\u00e2\u1e0dat an-nafs \u2014 Jour ' + j.jour + '</div>'
-    + '<div class="itfaa-body" style="font-size:16px;margin-bottom:6px;">' + escapeHtml(j.titre) + '</div>'
+    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:4px;">Riy\u00e2\u1e0dat an-nafs \u2014 Jour ' + dayNum + '</div>'
+    + '<div class="itfaa-body" style="font-size:16px;">' + escapeHtml(j.titre) + '</div>'
     + '</div>';
 
-  // TEXTE D'OUVERTURE
-  if (j.texte_ouverture && j.texte_ouverture.paragraphes) {
-    html += '<div style="margin-bottom:40px;">';
-    j.texte_ouverture.paragraphes.forEach(function(p) {
-      html += '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.8;max-width:420px;margin:0 auto 16px;">' + escapeHtml(p) + '</div>';
-    });
-    if (j.texte_ouverture.sources) {
-      j.texte_ouverture.sources.forEach(function(s) {
-        html += '<div class="itfaa-subtle" style="font-size:11px;text-align:center;">\u2014 ' + escapeHtml(s.ref) + '</div>';
+  // ── STEP CONTENT ──
+  if (step.type === '_ouverture') {
+    if (j.texte_ouverture && j.texte_ouverture.paragraphes) {
+      j.texte_ouverture.paragraphes.forEach(function(p) {
+        html += '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.8;max-width:420px;margin:0 auto 16px;">' + escapeHtml(p) + '</div>';
       });
-    }
-    html += '</div>';
-  }
-
-  // BIFURCATION ENTRÉE (J3 sélecteur catégorie, J4 lecture J3)
-  if (j.bifurcation_entree) {
-    var bif = j.bifurcation_entree;
-    if (bif.type === 'selection_avec_categorie') {
-      // J3: champ libre + sélecteur catégorie + bouton rien
-      var cl = bif.champ_libre || {};
-      html += '<div style="text-align:center;margin-bottom:40px;">'
-        + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.5;margin-bottom:12px;">Mu\u1e25\u00e2saba du jour</div>';
-      if (cl.placeholder) {
-        html += '<textarea id="_cure_bif_champ" maxlength="' + (cl.max_chars || 200) + '" placeholder="' + escapeHtml(cl.placeholder) + '" style="width:100%;max-width:380px;min-height:80px;padding:12px;border-radius:10px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;resize:vertical;"></textarea>';
-      }
-      if (bif.selecteur_categorie && bif.selecteur_categorie.options) {
-        html += '<div style="font-size:12px;color:rgba(255,255,255,0.4);margin:12px auto 8px;">' + escapeHtml(bif.selecteur_categorie.intro || '') + '</div>';
-        html += '<div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;max-width:380px;margin:0 auto 16px;">';
-        bif.selecteur_categorie.options.forEach(function(opt) {
-          html += '<button data-cat-bif onclick="document.querySelectorAll(\'[data-cat-bif]\').forEach(function(b){b.style.background=\'' + c + '0d\';b.style.fontWeight=\'400\'});this.style.background=\'' + c + '22\';this.style.fontWeight=\'700\';window._cureBifCat=\'' + escapeHtml(opt.id || opt.label) + '\'" style="padding:8px 14px;border-radius:10px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:13px;cursor:pointer;">' + escapeHtml(opt.label) + '</button>';
+      if (j.texte_ouverture.sources) {
+        j.texte_ouverture.sources.forEach(function(src) {
+          html += '<div class="itfaa-subtle" style="font-size:11px;text-align:center;">\u2014 ' + escapeHtml(src.ref) + '</div>';
         });
-        html += '</div>';
-      }
-      if (bif.bouton_rien_a_signaler) {
-        html += '<div style="margin-top:16px;"><button onclick="safeSetItem(\'cure_colere_j3_rien\',\'1\');_cureShowBrancheGratitude(' + dayNum + ')" style="background:none;border:none;font-size:13px;color:rgba(255,255,255,0.3);font-family:var(--serif);cursor:pointer;font-style:italic;">' + escapeHtml(bif.bouton_rien_a_signaler.label || 'Rien \u00e0 signaler') + '</button></div>';
-      }
-      html += '</div>';
-    } else if (bif.type === 'lecture_silencieuse_j3') {
-      // J4: route selon J3
-      var j3val = safeGetItem('cure_colere_j3_moment') || '';
-      var j3rien = safeGetItem('cure_colere_j3_rien') === '1';
-      var branche = (j3rien || !j3val) ? j.branche_B : j.branche_A;
-      if (branche) {
-        html += '<div style="text-align:center;margin-bottom:40px;">';
-        if (branche.titre) html += '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.5;margin-bottom:12px;">' + escapeHtml(branche.titre) + '</div>';
-        if (branche.intro) html += '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;max-width:400px;margin:0 auto 16px;">' + escapeHtml(branche.intro) + '</div>';
-        if (branche.options) {
-          branche.options.forEach(function(opt) {
-            html += '<button onclick="safeSetItem(\'cure_colere_j4_choix\',\'' + escapeHtml(opt.id || '') + '\');this.style.background=\'rgba(200,168,75,0.15)\';this.style.borderColor=\'rgba(200,168,75,0.5)\'" style="display:block;width:100%;max-width:380px;margin:0 auto 10px;padding:14px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '0d;cursor:pointer;text-align:left;">'
-              + '<div style="font-family:var(--serif);font-size:15px;color:' + c + ';">' + escapeHtml(opt.label || '') + '</div>'
-              + (opt.explication_gris ? '<div style="font-size:12px;color:rgba(255,255,255,0.35);margin-top:4px;">' + escapeHtml(opt.explication_gris) + '</div>' : '')
-              + '</button>';
-          });
-        }
-        // Branche A travaux
-        if (branche.travaux) {
-          branche.travaux.forEach(function(t, ti) {
-            html += _cureTravailHtml(t, ti, branche.travaux.length, dayNum, c);
-          });
-        }
-        html += '</div>';
       }
     }
+    html += '<div style="text-align:center;margin-top:32px;"><button onclick="_cureWizardNext()" style="width:100%;max-width:320px;padding:14px;border-radius:12px;border:1px solid ' + c + '55;background:' + c + '1a;color:' + c + ';font-size:15px;font-family:var(--serif);cursor:pointer;">Commencer</button></div>';
   }
 
-  // TRAVAUX STANDARD
-  travaux.forEach(function(t, ti) {
-    html += _cureTravailHtml(t, ti, travaux.length, dayNum, c);
-  });
+  else if (step.type === '_bifurcation') {
+    html += _cureBifurcationWizardHtml(step.data, step.jour, dayNum, c);
+  }
 
-  // POOL QUESTIONS (J6)
-  if (j.pool_questions) {
-    var pq = j.pool_questions;
+  else if (step.type === '_travail') {
+    html += _cureTravailHtml(step.data, step.idx, step.total, dayNum, c);
+    html += '<div style="text-align:center;margin-top:16px;"><button onclick="_cureWizardSaveTravail();_cureWizardNext()" style="width:100%;max-width:320px;padding:14px;border-radius:12px;border:1px solid ' + c + '55;background:' + c + '1a;color:' + c + ';font-size:15px;font-family:var(--serif);cursor:pointer;">Continuer</button></div>';
+  }
+
+  else if (step.type === '_pool_questions') {
+    var pq = step.data;
     var sel = pq.cycle_1_selection || [];
     var qs = pq.questions || [];
-    html += '<div style="margin-bottom:40px;">';
     html += '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.5;margin-bottom:16px;text-align:center;">Questions \u00e0 ton \u00e2me</div>';
     qs.forEach(function(q) {
       if (sel.indexOf(q.id) === -1) return;
@@ -6391,13 +6383,12 @@ function _cureColereGenericDay(el, dayNum) {
         + '<textarea id="_cure_' + qsk + '" placeholder="\u00c9cris ce qui vient\u2026" maxlength="300" style="width:100%;min-height:60px;padding:10px;border-radius:8px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:13px;resize:vertical;"></textarea>'
         + '</div>';
     });
-    html += '</div>';
+    html += '<div style="text-align:center;margin-top:16px;"><button onclick="_cureWizardNext()" style="width:100%;max-width:320px;padding:14px;border-radius:12px;border:1px solid ' + c + '55;background:' + c + '1a;color:' + c + ';font-size:15px;font-family:var(--serif);cursor:pointer;">Continuer</button></div>';
   }
 
-  // OUTIL MIROIR OPT-IN (J6)
-  if (j.outil_miroir_opt_in) {
-    var mir = j.outil_miroir_opt_in;
-    html += '<div style="text-align:center;margin-bottom:40px;padding:16px;border-radius:14px;border:1px solid rgba(200,168,75,0.15);background:rgba(200,168,75,0.03);">';
+  else if (step.type === '_miroir') {
+    var mir = step.data;
+    html += '<div style="text-align:center;padding:16px;border-radius:14px;border:1px solid rgba(200,168,75,0.15);background:rgba(200,168,75,0.03);margin-bottom:24px;">';
     (mir.texte || []).forEach(function(p) {
       html += '<div class="itfaa-body" style="font-family:var(--serif);font-size:14px;line-height:1.7;max-width:380px;margin:0 auto 10px;">' + escapeHtml(p) + '</div>';
     });
@@ -6407,55 +6398,133 @@ function _cureColereGenericDay(el, dayNum) {
       if (mir.duaa.traduction) html += '<div class="itfaa-body" style="font-size:13px;margin-top:4px;">' + escapeHtml(mir.duaa.traduction) + '</div>';
     }
     html += '</div>';
+    html += '<div style="text-align:center;"><button onclick="_cureWizardNext()" style="width:100%;max-width:320px;padding:14px;border-radius:12px;border:1px solid ' + c + '55;background:' + c + '1a;color:' + c + ';font-size:15px;font-family:var(--serif);cursor:pointer;">Continuer</button></div>';
   }
 
-  // BOUTON SORTIE OPTIONNEL (J4, J5, J6)
-  if (j.bouton_sortie) {
+  else if (step.type === '_verrou') {
+    html += _cureVerrouHtml(step.data, dayNum, c);
+    html += '<div style="text-align:center;margin-top:16px;"><button onclick="_cureWizardNext()" style="width:100%;max-width:320px;padding:14px;border-radius:12px;border:1px solid ' + c + '55;background:' + c + '1a;color:' + c + ';font-size:15px;font-family:var(--serif);cursor:pointer;">Continuer</button></div>';
+  }
+
+  else if (step.type === '_finale') {
+    var duaa = j.duaa_cloture || {};
+    // Fil rouge (J1-J6)
+    if (s.filRouge && !s.isLast) {
+      html += '<div style="text-align:center;margin-bottom:40px;padding:16px;border-radius:14px;border:1px solid rgba(200,168,75,0.2);background:rgba(200,168,75,0.04);">'
+        + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#C8A84A;opacity:0.5;margin-bottom:8px;">Fil rouge</div>'
+        + '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:#C8A84A;line-height:1.6;">' + escapeHtml(s.filRouge) + '</div>'
+        + '</div>';
+    }
+    // Du'â
+    if (duaa.arabe) {
+      html += '<div style="text-align:center;margin-bottom:20px;padding:20px;border-radius:14px;border:1px solid ' + c + '22;background:' + c + '08;">'
+        + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.5;margin-bottom:12px;">Cl\u00f4ture</div>'
+        + '<div style="font-family:\'Scheherazade New\',serif;font-size:22px;color:' + c + ';direction:rtl;line-height:1.8;margin-bottom:6px;">' + duaa.arabe + '</div>'
+        + (duaa.translitteration ? '<div class="itfaa-body" style="font-size:13px;font-style:italic;margin-bottom:6px;">' + escapeHtml(duaa.translitteration) + '</div>' : '')
+        + '<div class="itfaa-body" style="font-size:14px;margin-bottom:6px;">' + escapeHtml(duaa.traduction || '') + '</div>'
+        + '<div class="itfaa-subtle" style="font-size:11px;margin-bottom:16px;">\u2014 ' + escapeHtml(duaa.source || '') + '</div>'
+        + '</div>';
+    }
+    // Bouton final
+    if (s.isLast) {
+      html += '<div style="text-align:center;"><button onclick="_cureColereJ7Save()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Terminer Riy\u00e2\u1e0dat</button></div>';
+    } else {
+      html += '<div style="text-align:center;"><button onclick="_cureColereJ' + dayNum + 'Save()" style="width:100%;max-width:320px;padding:14px;border-radius:12px;border:1px solid ' + c + '55;background:' + c + '1a;color:' + c + ';font-size:15px;font-family:var(--serif);cursor:pointer;">Continuer demain \u2192</button></div>';
+    }
+  }
+
+  // Bouton sortie optionnel (J4, J5, J6) — sauf sur ouverture et finale
+  if (j.bouton_sortie && step.type !== '_ouverture' && step.type !== '_finale') {
     var bs = j.bouton_sortie;
-    html += '<div style="text-align:center;margin-bottom:24px;">'
+    html += '<div style="text-align:center;margin-top:24px;">'
       + '<button onclick="showToast(\'' + escapeHtml(bs.message || '').replace(/'/g, '') + '\');setTimeout(function(){_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()},2000)" style="background:none;border:none;font-size:12px;color:rgba(255,255,255,0.25);font-family:var(--serif);cursor:pointer;font-style:italic;">' + escapeHtml(bs.label || 'Passer') + '</button>'
       + '</div>';
   }
 
-  // FIL ROUGE (J1-J6)
-  if (filRouge && !isLast) {
-    html += '<div style="text-align:center;margin-bottom:40px;padding:16px;border-radius:14px;border:1px solid rgba(200,168,75,0.2);background:rgba(200,168,75,0.04);">'
-      + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#C8A84A;opacity:0.5;margin-bottom:8px;">Fil rouge</div>'
-      + '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:#C8A84A;line-height:1.6;">' + escapeHtml(filRouge) + '</div>'
-      + '</div>';
-  }
-
-  // VERROU FINAL NON-SKIPPABLE (J3, J6)
-  if (j.verrou_final && j.verrou_final.non_skippable) {
-    html += _cureVerrouHtml(j.verrou_final, dayNum, c);
-  }
-
-  // CLÔTURE DU'Â
-  if (duaa.arabe) {
-    html += '<div style="text-align:center;margin-bottom:20px;padding:20px;border-radius:14px;border:1px solid ' + c + '22;background:' + c + '08;">'
-      + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.5;margin-bottom:12px;">Cl\u00f4ture</div>'
-      + '<div style="font-family:\'Scheherazade New\',serif;font-size:22px;color:' + c + ';direction:rtl;line-height:1.8;margin-bottom:6px;">' + duaa.arabe + '</div>'
-      + (duaa.translitteration ? '<div class="itfaa-body" style="font-size:13px;font-style:italic;margin-bottom:6px;">' + escapeHtml(duaa.translitteration) + '</div>' : '')
-      + '<div class="itfaa-body" style="font-size:14px;margin-bottom:6px;">' + escapeHtml(duaa.traduction || '') + '</div>'
-      + '<div class="itfaa-subtle" style="font-size:11px;margin-bottom:16px;">\u2014 ' + escapeHtml(duaa.source || '') + '</div>';
-    if (isLast) {
-      html += '<button onclick="_cureColereJ7Save()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Terminer Riy\u00e2\u1e0dat</button>';
-    } else {
-      html += '<button onclick="_cureColereJ' + dayNum + 'Save()" style="width:100%;max-width:320px;padding:14px;border-radius:12px;border:1px solid ' + c + '55;background:' + c + '1a;color:' + c + ';font-size:15px;font-family:var(--serif);cursor:pointer;">Continuer demain \u2192</button>';
-    }
-    html += '</div>';
-  } else {
-    html += '<div style="text-align:center;margin-bottom:20px;">';
-    if (isLast) {
-      html += '<button onclick="_cureColereJ7Save()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Terminer Riy\u00e2\u1e0dat</button>';
-    } else {
-      html += '<button onclick="_cureColereJ' + dayNum + 'Save()" style="width:100%;max-width:320px;padding:14px;border-radius:12px;border:1px solid ' + c + '55;background:' + c + '1a;color:' + c + ';font-size:15px;font-family:var(--serif);cursor:pointer;">Continuer demain \u2192</button>';
-    }
-    html += '</div>';
-  }
   html += '</div>';
   el.innerHTML = html;
+  el.scrollTop = 0;
 }
+
+function _cureWizardNext() {
+  _cureWizardState.step++;
+  if (_cureWizardState.step >= _cureWizardState.steps.length) {
+    _cureWizardState.step = _cureWizardState.steps.length - 1;
+  }
+  _cureWizardRender();
+}
+window._cureWizardNext = _cureWizardNext;
+
+function _cureWizardSaveTravail() {
+  // Save any textarea values on current step before moving on
+  var textareas = document.querySelectorAll('[id^="_cure_"]');
+  textareas.forEach(function(ta) {
+    if (ta.value && ta.value.trim()) {
+      var key = ta.id.replace('_cure_', '');
+      safeSetItem(key, ta.value.trim());
+    }
+  });
+  // Save checkboxes
+  var checks = document.querySelectorAll('[id^="_cure_optin_"]');
+  checks.forEach(function(cb) {
+    if (cb.checked) {
+      var key = cb.id.replace('_cure_optin_', '') + '_optin';
+      safeSetItem(key, '1');
+    }
+  });
+}
+window._cureWizardSaveTravail = _cureWizardSaveTravail;
+
+function _cureBifurcationWizardHtml(bif, jour, dayNum, c) {
+  var h = '';
+  if (bif.type === 'selection_avec_categorie') {
+    var cl = bif.champ_libre || {};
+    h += '<div style="text-align:center;margin-bottom:40px;">'
+      + '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.5;margin-bottom:12px;">Mu\u1e25\u00e2saba du jour</div>';
+    if (cl.placeholder) {
+      h += '<textarea id="_cure_bif_champ" maxlength="' + (cl.max_chars || 200) + '" placeholder="' + escapeHtml(cl.placeholder) + '" style="width:100%;max-width:380px;min-height:80px;padding:12px;border-radius:10px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;resize:vertical;"></textarea>';
+    }
+    if (bif.selecteur_categorie && bif.selecteur_categorie.options) {
+      h += '<div style="font-size:12px;color:rgba(255,255,255,0.4);margin:12px auto 8px;">' + escapeHtml(bif.selecteur_categorie.intro || '') + '</div>';
+      h += '<div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;max-width:380px;margin:0 auto 16px;">';
+      bif.selecteur_categorie.options.forEach(function(opt) {
+        h += '<button data-cat-bif onclick="document.querySelectorAll(\'[data-cat-bif]\').forEach(function(b){b.style.background=\'' + c + '0d\';b.style.fontWeight=\'400\'});this.style.background=\'' + c + '22\';this.style.fontWeight=\'700\';window._cureBifCat=\'' + escapeHtml(opt.id || opt.label) + '\'" style="padding:8px 14px;border-radius:10px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:13px;cursor:pointer;">' + escapeHtml(opt.label) + '</button>';
+      });
+      h += '</div>';
+    }
+    h += '<div style="text-align:center;margin-top:16px;"><button onclick="_cureWizardSaveTravail();var v=document.getElementById(\'_cure_bif_champ\');if(v&&v.value.trim())safeSetItem(\'cure_colere_j3_moment\',v.value.trim());_cureWizardNext()" style="width:100%;max-width:320px;padding:14px;border-radius:12px;border:1px solid ' + c + '55;background:' + c + '1a;color:' + c + ';font-size:15px;font-family:var(--serif);cursor:pointer;">Continuer</button></div>';
+    if (bif.bouton_rien_a_signaler) {
+      h += '<div style="margin-top:16px;text-align:center;"><button onclick="safeSetItem(\'cure_colere_j3_rien\',\'1\');_cureShowBrancheGratitude(' + dayNum + ')" style="background:none;border:none;font-size:13px;color:rgba(255,255,255,0.3);font-family:var(--serif);cursor:pointer;font-style:italic;">' + escapeHtml(bif.bouton_rien_a_signaler.label || 'Rien \u00e0 signaler') + '</button></div>';
+    }
+    h += '</div>';
+  } else if (bif.type === 'lecture_silencieuse_j3') {
+    var j3val = safeGetItem('cure_colere_j3_moment') || '';
+    var j3rien = safeGetItem('cure_colere_j3_rien') === '1';
+    var branche = (j3rien || !j3val) ? jour.branche_B : jour.branche_A;
+    if (branche) {
+      h += '<div style="text-align:center;margin-bottom:40px;">';
+      if (branche.titre) h += '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + c + ';opacity:0.5;margin-bottom:12px;">' + escapeHtml(branche.titre) + '</div>';
+      if (branche.intro) h += '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;max-width:400px;margin:0 auto 16px;">' + escapeHtml(branche.intro) + '</div>';
+      if (branche.options) {
+        branche.options.forEach(function(opt) {
+          h += '<button onclick="safeSetItem(\'cure_colere_j4_choix\',\'' + escapeHtml(opt.id || '') + '\');this.style.background=\'rgba(200,168,75,0.15)\';this.style.borderColor=\'rgba(200,168,75,0.5)\'" style="display:block;width:100%;max-width:380px;margin:0 auto 10px;padding:14px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '0d;cursor:pointer;text-align:left;">'
+            + '<div style="font-family:var(--serif);font-size:15px;color:' + c + ';">' + escapeHtml(opt.label || '') + '</div>'
+            + (opt.explication_gris ? '<div style="font-size:12px;color:rgba(255,255,255,0.35);margin-top:4px;">' + escapeHtml(opt.explication_gris) + '</div>' : '')
+            + '</button>';
+        });
+      }
+      if (branche.travaux) {
+        branche.travaux.forEach(function(t, ti) {
+          h += _cureTravailHtml(t, ti, branche.travaux.length, 4, c);
+        });
+      }
+      h += '<div style="text-align:center;margin-top:16px;"><button onclick="_cureWizardSaveTravail();_cureWizardNext()" style="width:100%;max-width:320px;padding:14px;border-radius:12px;border:1px solid ' + c + '55;background:' + c + '1a;color:' + c + ';font-size:15px;font-family:var(--serif);cursor:pointer;">Continuer</button></div>';
+      h += '</div>';
+    }
+  }
+  return h;
+}
+
 
 // ── Branche gratitude (J3 "rien à signaler") ──
 function _cureShowBrancheGratitude(dayNum) {
