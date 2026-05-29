@@ -5532,6 +5532,64 @@ _outilAnxieteRenderers.double_slider = function(o, c) {
   return html;
 };
 
+// 3.4 — checkboxes_avec_message_dynamique
+_outilAnxieteRenderers.checkboxes_avec_message_dynamique = function(o, c) {
+  var opts = o.options || [];
+  var sk = o.stockage || 'cure_anxiete_cb';
+  var saved = []; try { saved = JSON.parse(safeGetItem(sk) || '[]'); } catch(e) {}
+  var msgId = '_cbMsg_' + o.id;
+  var html = '';
+  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);line-height:1.6;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
+  html += '<div style="display:flex;flex-direction:column;gap:8px;max-width:340px;margin:0 auto 16px;">';
+  opts.forEach(function(opt) {
+    var chk = saved.indexOf(opt.id) !== -1;
+    html += '<label style="display:flex;align-items:flex-start;gap:12px;padding:12px 14px;border-radius:10px;border:1px solid rgba(200,168,75,0.12);background:rgba(200,168,75,0.03);cursor:pointer;">'
+      + '<input type="checkbox" ' + (chk ? 'checked' : '') + ' onchange="_cbDynUpdate(\'' + escapeHtml(o.id) + '\',\'' + opt.id + '\',this.checked,\'' + sk + '\',\'' + msgId + '\')" style="accent-color:' + c + ';margin-top:3px;flex-shrink:0;">'
+      + '<span style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.8);line-height:1.5;">' + escapeHtml(opt.label) + '</span>'
+      + '</label>';
+  });
+  html += '</div>';
+  // Dynamic message zone
+  var hasChecked = saved.length > 0;
+  var msg = hasChecked ? o.message_si_coche : o.message_si_aucun_coche;
+  html += '<div id="' + msgId + '">';
+  if (msg) {
+    html += '<div style="border:1px solid ' + (hasChecked ? '#FFA00033' : c + '15') + ';border-radius:12px;padding:14px;margin-bottom:12px;background:' + (hasChecked ? 'rgba(255,160,0,0.06)' : 'transparent') + ';">';
+    if (msg.titre) html += '<div style="font-family:var(--serif);font-size:14px;font-weight:600;color:' + (hasChecked ? '#FFA000' : '#C8A84A') + ';margin-bottom:8px;">' + escapeHtml(msg.titre) + '</div>';
+    if (msg.texte) html += '<div style="font-family:var(--serif);font-size:13px;color:rgba(240,234,214,0.75);line-height:1.7;white-space:pre-line;">' + escapeHtml(msg.texte) + '</div>';
+    html += '</div>';
+  }
+  html += '</div>';
+  return html;
+};
+function _cbDynUpdate(outilId, optId, checked, sk, msgId) {
+  var saved = []; try { saved = JSON.parse(safeGetItem(sk) || '[]'); } catch(e) {}
+  if (checked && saved.indexOf(optId) === -1) saved.push(optId);
+  if (!checked) saved = saved.filter(function(x) { return x !== optId; });
+  safeSetItem(sk, JSON.stringify(saved));
+  // Re-render message
+  var data = window.CURE_ANXIETE_CYCLE1;
+  if (!data) return;
+  var o = null;
+  Object.keys(data.jours).forEach(function(jk) {
+    data.jours[jk].outils.forEach(function(t) { if (t.id === outilId) o = t; });
+  });
+  if (!o) return;
+  var el = document.getElementById(msgId);
+  if (!el) return;
+  var hasChecked = saved.length > 0;
+  var msg = hasChecked ? o.message_si_coche : o.message_si_aucun_coche;
+  var h = '';
+  if (msg) {
+    h += '<div style="border:1px solid ' + (hasChecked ? '#FFA00033' : '#3F51B515') + ';border-radius:12px;padding:14px;margin-bottom:12px;background:' + (hasChecked ? 'rgba(255,160,0,0.06)' : 'transparent') + ';transition:all 0.3s;">';
+    if (msg.titre) h += '<div style="font-family:var(--serif);font-size:14px;font-weight:600;color:' + (hasChecked ? '#FFA000' : '#C8A84A') + ';margin-bottom:8px;">' + escapeHtml(msg.titre) + '</div>';
+    if (msg.texte) h += '<div style="font-family:var(--serif);font-size:13px;color:rgba(240,234,214,0.75);line-height:1.7;white-space:pre-line;">' + escapeHtml(msg.texte) + '</div>';
+    h += '</div>';
+  }
+  el.innerHTML = h;
+}
+window._cbDynUpdate = _cbDynUpdate;
+
 // 3.3 — radio_unique
 _outilAnxieteRenderers.radio_unique = function(o, c) {
   var opts = o.options || [];
