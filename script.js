@@ -4775,8 +4775,15 @@ function _cureTransition(jourFait) {
   document.body.classList.add('in-bab-an-nafs');
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
-  var _cj = window.CURE_COLERE_CYCLE1 && window.CURE_COLERE_CYCLE1.jours && window.CURE_COLERE_CYCLE1.jours[jourFait - 1];
-  var hierTitre = (_cj && _cj.titre) || '';
+  var hierTitre = '';
+  var _prt = (_cureWizardState && _cureWizardState.porte) || 'colere';
+  if (_prt === 'anxiete') {
+    var _cja = window.CURE_ANXIETE_CYCLE1 && window.CURE_ANXIETE_CYCLE1.jours && window.CURE_ANXIETE_CYCLE1.jours['j' + jourFait];
+    hierTitre = (_cja && _cja.titre_jour) || '';
+  } else {
+    var _cj = window.CURE_COLERE_CYCLE1 && window.CURE_COLERE_CYCLE1.jours && window.CURE_COLERE_CYCLE1.jours[jourFait - 1];
+    hierTitre = (_cj && _cj.titre) || '';
+  }
   el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
     + (hierTitre ? '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.7;max-width:400px;margin:0 auto 24px;">Hier\u00a0: ' + escapeHtml(hierTitre) + '.</div>' : '')
     + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.7;max-width:400px;margin:0 auto 24px;">Aujourd\u2019hui, attends.</div>'
@@ -5435,6 +5442,7 @@ function openCureAnxiete() {
   if (cure.completed === true) day = 'complete';
   var today = new Date().toISOString().slice(0, 10);
   var lastDay = cure['jour' + (day - 1) + '_date'] ? cure['jour' + (day - 1) + '_date'].slice(0, 10) : null;
+  _cureWizardState.porte = 'anxiete';
   if (lastDay === today && day !== 'complete' && day > 1) {
     _cureTransition(day - 1);
     return;
@@ -5570,13 +5578,39 @@ function _cureAnxieteSave(num) {
     cure['jour' + num + '_date'] = new Date().toISOString();
     safeSetItem('cure_anxiete', JSON.stringify(cure));
   } catch(e) {}
+  // Murmure de sortie
+  var data = window.CURE_ANXIETE_CYCLE1;
+  var j = data && data.jours && data.jours['j' + num];
+  var murmure = j && j.murmure_sortie_sanctuaire;
+  if (murmure && murmure.fr) {
+    safeSetItem('niyyah_murmure_retour', murmure.fr);
+  }
   if (num === 7) {
     openCureAnxiete();
-  } else {
-    _cureTransition(num);
+    return;
   }
+  // Confirmation screen with next day preview
+  var c = '#3F51B5';
+  var nextJ = data && data.jours && data.jours['j' + (num + 1)];
+  var nextTitle = (nextJ && nextJ.titre_jour) || '';
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
+    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:12px;">Jour ' + num + ' enregistr\u00e9.</div>'
+    + (nextTitle ? '<div class="itfaa-body" style="font-size:16px;line-height:1.7;max-width:400px;margin:0 auto 32px;">Demain, Jour ' + (num + 1) + '\u00a0: ' + escapeHtml(nextTitle) + '.</div>' : '')
+    + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs();_showMurmureRetour()" style="padding:14px 28px;border-radius:12px;border:1px solid ' + c + '44;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">Retour</button>'
+    + '</div>';
 }
 window._cureAnxieteSave = _cureAnxieteSave;
+
+function _showMurmureRetour() {
+  var msg = safeGetItem('niyyah_murmure_retour');
+  if (msg) {
+    localStorage.removeItem('niyyah_murmure_retour');
+    setTimeout(function() { showToast(msg); }, 800);
+  }
+}
+window._showMurmureRetour = _showMurmureRetour;
 
 _cureJourRenderers.anxiete_1 = function(el) { _cureAnxieteGenericDay(el, 1); };
 _cureJourRenderers.anxiete_2 = function(el) { _cureAnxieteGenericDay(el, 2); };
