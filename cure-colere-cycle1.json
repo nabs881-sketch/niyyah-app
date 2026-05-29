@@ -591,7 +591,7 @@
               "id": "veiller",
               "label": "Veiller.",
               "phrase_premiere_personne": "Je continue à porter ce que j'ai reçu.",
-              "explication_gris": "Une vue brève une fois par semaine, pour ne pas oublier.",
+              "explication_gris": "Je reviendrai ici quand le c\u0153ur le demandera.",
               "action_technique": "stocker_choix_implementer_plus_tard"
             },
             {
