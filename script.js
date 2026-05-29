@@ -4982,17 +4982,7 @@ function openMuhasabaIntro() {
     + '<button onclick="openMuhasabaClassique()" style="padding:20px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '08;cursor:pointer;text-align:center;"><div style="font-family:var(--serif);font-size:18px;color:' + c + ';">Voie classique</div><div style="font-size:13px;color:#E5E0DC;opacity:0.6;margin-top:4px;">4\u00a0questions selon al-Ghaz\u00e2l\u00ee</div><div style="font-size:11px;font-style:italic;color:rgba(255,255,255,0.3);margin-top:6px;">Cette voie est plus exigeante. Si tu traverses une p\u00e9riode difficile, choisis plut\u00f4t la voie guid\u00e9e.</div></button>'
     + '</div></div>';
 }
-function _muhasabaGuidee() {
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  var c = '#B33A3A';
-  window._muhasabaReponses = {};
-  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
-    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:20px;line-height:1.8;max-width:400px;margin:0 auto;animation:_zoneFade 3s ease forwards;">Bismillah.<br>Ce que je vais regarder, c\u2019est entre Allah et moi.</div>'
-    + '<div class="itfaa-subtle" style="font-size:13px;margin-top:16px;animation:_zoneFade 3s ease forwards;">Niyyah \u2014 l\u2019intention juste qui pr\u00e9c\u00e8de l\u2019acte.</div>'
-    + '</div>';
-  setTimeout(function() { openMuhasabaEmotion(); }, 3000);
-}
+// _muhasabaGuidee supprimé (code mort Muhâsaba guidée)
 function openMuhasabaClassique() {
   window._muhasabaClassique = {};
   var el = document.getElementById('babAnNafsContent');
@@ -5219,270 +5209,27 @@ function _muhasabaClassiqueFin() {
     + '</div>';
 }
 
-function openMuhasabaEmotion() {
-  _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  var c = '#B33A3A';
-  var emotions = ['Honte','Peur','Tristesse','Injustice','Impuissance','Trahison','Culpabilit\u00e9','\u00c9puisement'];
-  var backBtn = '<button onclick="openColereChoix()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
-  var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
-    + backBtn
-    + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';margin-bottom:12px;">Sous la col\u00e8re, qu\u2019est-ce qui se cachait\u00a0?</div>'
-    + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.45);line-height:1.5;max-width:400px;margin:0 auto 16px;">Le Proph\u00e8te \uFDFA disait\u00a0: \u00ab\u00a0All\u00e2humma inn\u00ee a\u2019\u00fbdhu bika min al-\u1e25amm wa-l-\u1e25azan\u00a0\u00bb \u2014 All\u00e2h, je cherche refuge contre le souci et la tristesse. \u2014 Bukh\u00e2r\u00ee 6363</div>'
-    + '<div class="itfaa-subtle" style="font-size:12px;max-width:400px;margin:0 auto 24px;line-height:1.6;">Reconna\u00eetre l\u2019\u00e9motion sous l\u2019\u00e9motion\u00a0: ma\u2019rifat an-nafs \u2014 la connaissance de soi.<br>Une science enseign\u00e9e par les savants de l\u2019islam classique\u00a0: al-Mu\u1e25\u00e2sib\u00ee (m.\u00a0857), al-Ghaz\u00e2l\u00ee (m.\u00a01111), Ibn al-Qayyim (m.\u00a01350) \u2014 bien avant la psychologie moderne.</div>'
-    + '<div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:340px;margin:0 auto 24px;">';
-  for (var i = 0; i < emotions.length; i++) {
-    html += '<button data-emo-g="' + emotions[i] + '" onclick="_muhasabaToggleEmo(this)" style="padding:12px 20px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:15px;cursor:pointer;transition:background 0.2s,border-color 0.2s;">' + emotions[i] + '</button>';
-  }
-  html += '</div>'
-    + '<button id="_muhasabaEmoContinue" disabled onclick="_muhasabaEmoSubmit()" style="width:100%;max-width:340px;padding:16px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;opacity:0.3;transition:opacity 0.2s;">Continuer</button>'
-    + '</div>';
-  el.innerHTML = html;
-  el.innerHTML += _exitLinkHtml;
-}
-function _muhasabaToggleEmo(btn) {
-  btn.classList.toggle('_schemaOn');
-  var on = btn.classList.contains('_schemaOn');
-  btn.style.background = on ? 'rgba(200,168,75,0.15)' : '#B33A3A0d';
-  btn.style.borderColor = on ? 'rgba(200,168,75,0.5)' : '#B33A3A44';
-  var any = document.querySelectorAll('[data-emo-g]._schemaOn').length > 0;
-  var cb = document.getElementById('_muhasabaEmoContinue');
-  if (cb) { cb.disabled = !any; cb.style.opacity = any ? '1' : '0.3'; }
-}
-function _muhasabaEmoSubmit() {
-  var sel = document.querySelectorAll('[data-emo-g]._schemaOn');
-  var arr = []; sel.forEach(function(b) { arr.push(b.getAttribute('data-emo-g')); });
-  window._muhasabaReponses.emotion = arr;
-  openMuhasabaBesoin();
-}
+// openMuhasabaEmotion supprimé (code mort Muhâsaba guidée)
+// _muhasabaToggleEmo supprimé (code mort Muhâsaba guidée)
+// _muhasabaEmoSubmit supprimé (code mort Muhâsaba guidée)
 
-function openMuhasabaBesoin() {
-  _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  var c = '#B33A3A';
-  var besoins = ['Reconnaissance','S\u00e9curit\u00e9','Justice','Respect','Appartenance','Comp\u00e9tence'];
-  var backBtn = '<button onclick="openMuhasabaEmotion()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
-  var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
-    + backBtn
-    + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';line-height:1.6;max-width:400px;margin:0 auto 12px;">Sous chaque \u00e9motion, il y a un besoin.<br>Lequel n\u2019a pas \u00e9t\u00e9 combl\u00e9\u00a0?</div>'
-    + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.45);line-height:1.5;max-width:400px;margin:0 auto 16px;">Al-Mu\u1e25\u00e2sib\u00ee enseignait\u00a0: \u00ab\u00a0L\u2019\u00e2me a des droits qu\u2019on n\u00e9glige \u2014 voil\u00e0 le fond de bien des col\u00e8res.\u00a0\u00bb</div>'
-    + '<div class="itfaa-subtle" style="font-size:12px;max-width:380px;margin:0 auto 24px;">Cette grille moderne rejoint la tradition\u00a0: al-Ghaz\u00e2l\u00ee reconnaissait dans I\u1e25y\u00e2\u2019 \u2018Ul\u00fbm ad-D\u00een que l\u2019\u00e2me a des besoins l\u00e9gitimes.</div>'
-    + '<div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:340px;margin:0 auto;">';
-  for (var i = 0; i < besoins.length; i++) {
-    html += '<button onclick="window._muhasabaReponses.besoin=\'' + besoins[i] + '\';openMuhasabaSchema()" style="padding:12px 20px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:15px;cursor:pointer;">' + besoins[i] + '</button>';
-  }
-  html += '</div></div>';
-  el.innerHTML = html;
-  el.innerHTML += _exitLinkHtml;
-}
+// openMuhasabaBesoin supprimé (code mort Muhâsaba guidée)
 
-function openMuhasabaSchema() {
-  _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  var c = '#B33A3A';
-  var items = ['M\u00eame personne','M\u00eame contexte','M\u00eame moment (fatigue/faim/fin journ\u00e9e)','M\u00eame besoin touch\u00e9','Quand pas dormi/mang\u00e9/pri\u00e9'];
-  var backBtn = '<button onclick="openMuhasabaBesoin()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
-  var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
-    + backBtn
-    + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';line-height:1.6;max-width:400px;margin:0 auto 12px;">Y a-t-il un fil rouge dans tes col\u00e8res\u00a0?</div>'
-    + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.45);line-height:1.5;max-width:400px;margin:0 auto 16px;">Le Proph\u00e8te \uFDFA a dit\u00a0: \u00ab\u00a0Le croyant ne se fait pas piquer deux fois du m\u00eame trou.\u00a0\u00bb \u2014 Bukh\u00e2r\u00ee 6133</div>'
-    + '<div class="itfaa-subtle" style="font-size:12px;max-width:380px;margin:0 auto 24px;line-height:1.6;">C\u2019est la mu\u1e25\u00e2saba \u2014 l\u2019examen de conscience que \u2019Umar ibn al-Kha\u1e6d\u1e6d\u00e2b recommandait\u00a0: \u00ab\u00a0Faites vos comptes avant qu\u2019on ne vous les demande.\u00a0\u00bb</div>'
-    + '<div style="display:flex;flex-direction:column;gap:10px;max-width:340px;margin:0 auto 20px;text-align:left;">';
-  for (var i = 0; i < items.length; i++) {
-    html += '<button data-schema="' + i + '" onclick="this.classList.toggle(\'_schemaOn\')" style="padding:12px 16px;border-radius:10px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;text-align:left;transition:background 0.2s;">' + items[i] + '</button>';
-  }
-  html += '</div>'
-    + '<textarea id="_schemaLibre" placeholder="Autre chose\u2026 (optionnel)" style="width:100%;max-width:340px;min-height:60px;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;resize:vertical;margin:0 auto 20px;display:block;"></textarea>'
-    + '<button onclick="_muhasabaCollectSchema()" style="width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>'
-    + '</div>';
-  el.innerHTML = html;
-  el.innerHTML += _exitLinkHtml;
-}
+// openMuhasabaSchema supprimé (code mort Muhâsaba guidée)
 
-function _muhasabaCollectSchema() {
-  var checked = [];
-  document.querySelectorAll('._schemaOn').forEach(function(b) { checked.push(b.textContent); });
-  var libre = (document.getElementById('_schemaLibre') || {}).value || '';
-  window._muhasabaReponses.schema = checked;
-  window._muhasabaReponses.schemaLibre = libre;
-  openMuhasabaSens();
-}
+// _muhasabaCollectSchema supprimé (code mort Muhâsaba guidée)
 
-function openMuhasabaSens() {
-  _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  var c = '#B33A3A';
-  // Lire hadiths depuis JSON
-  var pardonH = {ar:'',translit:'',fr:'',source:'Muslim 2588'}, duaaH = {ar:'',translit:'',fr:'',source:"an-Nas\u00e2'\u00ee 1305"};
-  if (window.babNafsContent && window.babNafsContent.colere && window.babNafsContent.colere.muhasaba) {
-    var m = window.babNafsContent.colere.muhasaba;
-    if (m.etape6_pardon) { pardonH = m.etape6_pardon; }
-    if (m.etape6_duaa_parole_juste) { duaaH = m.etape6_duaa_parole_juste; }
-  }
-  var backBtn = '<button onclick="openMuhasabaSchema()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
-  var cardStyle = 'padding:20px;border-radius:14px;border:1px solid ' + c + '33;background:' + c + '08;margin-bottom:14px;text-align:center;';
-  var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
-    + backBtn
-    + '<div class="itfaa-subtle" style="font-size:15px;line-height:1.6;max-width:420px;margin:0 auto 8px;">L\u2019\u00e2me cherche un sens. 3\u00a0portes s\u2019ouvrent.<br>Choisis-en une, ou aucune.</div>'
-    + '<div style="font-size:12px;font-style:italic;color:rgba(255,255,255,0.35);line-height:1.5;max-width:400px;margin:0 auto 24px;">Trois portes vers le sens, identifi\u00e9es par les soignants de l\u2019\u00e2me classiques\u00a0: tirer la le\u00e7on, pardonner, demander \u00e0 All\u00e2h.</div>'
-    // Carte 1 : La Leçon
-    + '<div style="max-width:340px;margin:0 auto;">'
-    + '<div style="' + cardStyle + '">'
-    + '<div style="font-family:var(--serif);font-size:16px;color:' + c + ';margin-bottom:2px;">La Le\u00e7on</div>'
-    + '<div style="font-size:12px;font-style:italic;color:rgba(255,255,255,0.4);margin-bottom:10px;">al-\u2019Ibra</div>'
-    + '<div style="font-family:\'Scheherazade New\',serif;font-size:16px;color:' + c + ';direction:rtl;line-height:1.6;opacity:0.8;margin-bottom:4px;">\u0644\u064e\u0642\u064e\u062f\u0652 \u0643\u064e\u0627\u0646\u064e \u0641\u0650\u064a \u0642\u064e\u0635\u064e\u0635\u0650\u0647\u0650\u0645\u0652 \u0639\u0650\u0628\u0652\u0631\u064e\u0629\u064c \u0644\u0650\u0623\u064f\u0648\u0644\u0650\u064a \u0627\u0644\u0652\u0623\u064e\u0644\u0652\u0628\u064e\u0627\u0628\u0650</div>'
-    + '<div class="itfaa-body" style="font-size:11px;font-style:italic;margin-bottom:4px;">Laqad k\u00e2na f\u00ee qa\u1e63a\u1e63ihim \u2019ibratun li-ul\u00ee al-alb\u00e2b</div>'
-    + '<div class="itfaa-body" style="font-size:12px;margin-bottom:4px;">Il y a dans leurs r\u00e9cits une le\u00e7on (\u2019ibra) pour les dou\u00e9s d\u2019intelligence.</div>'
-    + '<div class="itfaa-subtle" style="font-size:10px;margin-bottom:10px;">Coran, Y\u00fbsuf 12:111</div>'
-    + '<textarea id="_sensLecon" placeholder="Qu\u2019est-ce que cette col\u00e8re m\u2019apprend\u2026" style="width:100%;min-height:50px;padding:10px;border-radius:8px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:13px;resize:vertical;"></textarea>'
-    + '<button onclick="_muhasabaChoixSens(\'lecon\')" style="margin-top:8px;padding:10px 24px;border-radius:10px;border:1px solid ' + c + '55;background:' + c + '1a;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">Choisir</button>'
-    + '</div>'
-    // Carte 2 : Le Pardon
-    + '<div style="' + cardStyle + '">'
-    + '<div style="font-family:var(--serif);font-size:16px;color:' + c + ';margin-bottom:2px;">Le Pardon</div>'
-    + '<div style="font-size:12px;font-style:italic;color:rgba(255,255,255,0.4);margin-bottom:10px;">al-\u2019Afw</div>'
-    + (pardonH.ar ? '<div style="font-family:\'Scheherazade New\',serif;font-size:20px;color:' + c + ';direction:rtl;line-height:1.8;margin-bottom:4px;opacity:0.85;">' + pardonH.ar + '</div>' : '')
-    + (pardonH.translit ? '<div class="itfaa-body" style="font-size:12px;font-style:italic;margin-bottom:4px;">' + escapeHtml(pardonH.translit) + '</div>' : '')
-    + (pardonH.fr ? '<div class="itfaa-body" style="font-size:13px;margin-bottom:6px;">' + escapeHtml(pardonH.fr) + '</div>' : '')
-    + '<div class="itfaa-subtle" style="font-size:11px;margin-bottom:8px;">\u2014 ' + escapeHtml(pardonH.source) + '</div>'
-    + '<textarea id="_sensPardon" placeholder="\u00c0 qui ai-je besoin de pardonner\u2026" style="width:100%;min-height:50px;padding:10px;border-radius:8px;border:1px solid ' + c + '33;background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:13px;resize:vertical;"></textarea>'
-    + '<button onclick="_muhasabaChoixSens(\'pardon\')" style="margin-top:8px;padding:10px 24px;border-radius:10px;border:1px solid ' + c + '55;background:' + c + '1a;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">Choisir</button>'
-    + '</div>'
-    // Carte 3 : La Demande
-    + '<div style="' + cardStyle + '">'
-    + '<div style="font-family:var(--serif);font-size:16px;color:' + c + ';margin-bottom:2px;">La Demande</div>'
-    + '<div style="font-size:12px;font-style:italic;color:rgba(255,255,255,0.4);margin-bottom:10px;">ad-Du\u2019\u00e2\u2019</div>'
-    + (duaaH.ar ? '<div style="font-family:\'Scheherazade New\',serif;font-size:20px;color:' + c + ';direction:rtl;line-height:1.8;margin-bottom:4px;opacity:0.85;">' + duaaH.ar + '</div>' : '')
-    + (duaaH.translit ? '<div class="itfaa-body" style="font-size:12px;font-style:italic;margin-bottom:4px;">' + escapeHtml(duaaH.translit) + '</div>' : '')
-    + (duaaH.fr ? '<div class="itfaa-body" style="font-size:13px;margin-bottom:6px;">' + escapeHtml(duaaH.fr) + '</div>' : '')
-    + '<div class="itfaa-subtle" style="font-size:11px;margin-bottom:8px;">\u2014 ' + escapeHtml(duaaH.source) + '</div>'
-    + '<button onclick="_muhasabaChoixSens(\'duaa\')" style="padding:10px 24px;border-radius:10px;border:1px solid ' + c + '55;background:' + c + '1a;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">Choisir</button>'
-    + '</div>'
-    // Bouton aucune
-    + '<div style="font-size:12px;font-style:italic;color:rgba(200,168,75,0.45);line-height:1.5;max-width:400px;margin:16px auto 12px;">Toutes les portes m\u00e8nent \u00e0 All\u00e2h. La du\u2019\u00e2\u2019 est leur sceau. \u2014 \u00ab\u00a0La du\u2019\u00e2\u2019 est l\u2019adoration.\u00a0\u00bb (Tirmidh\u00ee 2969)</div>'
-    + '<button onclick="_muhasabaChoixSens(\'aucune\')" style="padding:12px 28px;border-radius:12px;border:1px solid ' + c + '22;background:none;color:' + c + ';opacity:0.5;font-family:var(--serif);font-size:13px;cursor:pointer;margin-top:8px;">Aucune pour l\u2019instant</button>'
-    + '</div></div>';
-  el.innerHTML = html;
-  el.innerHTML += _exitLinkHtml;
-}
+// openMuhasabaSens supprimé (code mort Muhâsaba guidée)
 
-function _muhasabaChoixSens(porte) {
-  var texte = '';
-  if (porte === 'lecon') texte = (document.getElementById('_sensLecon') || {}).value || '';
-  if (porte === 'pardon') texte = (document.getElementById('_sensPardon') || {}).value || '';
-  window._muhasabaReponses.sens = porte;
-  window._muhasabaReponses.sensTexte = texte;
-  openMuhasabaAction();
-}
+// _muhasabaChoixSens supprimé (code mort Muhâsaba guidée)
 
-function openMuhasabaAction() {
-  _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  var c = '#B33A3A';
-  var actions = ['Une parole (parler, expliquer, m\u2019excuser)','Un silence (laisser passer, accepter)','Un changement (habitude, situation)','Une du\u2019\u00e2\u2019 (entre Allah et moi)'];
-  var backBtn = '<button onclick="openMuhasabaSens()" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
-  // Hadith niyyât depuis JSON
-  var niyH = {ar:'\u0625\u0650\u0646\u0651\u064e\u0645\u064e\u0627 \u0627\u0644\u0623\u0639\u0645\u0627\u0644\u064f \u0628\u0650\u0627\u0644\u0646\u0651\u0650\u064a\u0651\u064e\u0627\u062a\u0650',translit:'Innam\u00e2 al-a\u2019m\u00e2lu bi-n-niyy\u00e2t',fr:'Les actions ne valent que par les intentions.',source:'Bukh\u00e2r\u00ee 1, Muslim 1907',narrator:'\u2019Umar ibn al-Kha\u1e6d\u1e6d\u00e2b',grade:'sahih'};
-  if (window.babNafsContent && window.babNafsContent.colere && window.babNafsContent.colere.muhasaba && window.babNafsContent.colere.muhasaba.etape7_intention) {
-    var _h = window.babNafsContent.colere.muhasaba.etape7_intention;
-    if (_h.ar) niyH = _h;
-  }
-  var html = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;text-align:center;">'
-    + backBtn
-    + '<div style="max-width:400px;margin:0 auto 24px;padding:16px;border-radius:12px;border:1px solid ' + c + '22;background:' + c + '08;text-align:center;">'
-    + '<div style="font-family:\'Scheherazade New\',serif;font-size:22px;color:' + c + ';direction:rtl;line-height:1.8;margin-bottom:6px;">' + niyH.ar + '</div>'
-    + '<div class="itfaa-body" style="font-size:13px;font-style:italic;margin-bottom:6px;">' + escapeHtml(niyH.translit) + '</div>'
-    + '<div class="itfaa-body" style="font-size:14px;margin-bottom:6px;">' + escapeHtml(niyH.fr) + '</div>'
-    + '<div class="itfaa-subtle" style="font-size:11px;">\u2014 ' + escapeHtml(niyH.source) + ' \u2014 ' + escapeHtml(niyH.narrator) + ' \u2014 ' + escapeHtml(niyH.grade) + '</div>'
-    + '</div>'
-    + '<div style="font-family:var(--serif);font-size:18px;color:' + c + ';line-height:1.6;max-width:420px;margin:0 auto 24px;">Maintenant que tu vois clair, qu\u2019est-ce qui demande \u00e0 \u00eatre fait\u00a0?</div>'
-    + '<div style="display:flex;flex-direction:column;gap:12px;max-width:340px;margin:0 auto 20px;">';
-  for (var i = 0; i < actions.length; i++) {
-    html += '<button data-act="' + i + '" onclick="document.querySelectorAll(\'[data-act]\').forEach(function(b){b.classList.remove(\'_schemaOn\')});this.classList.add(\'_schemaOn\')" style="padding:14px 16px;border-radius:12px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;text-align:left;transition:background 0.2s;">' + actions[i] + '</button>';
-  }
-  html += '</div>'
-    + '<textarea id="_actionConcreteTexte" placeholder="Pour la prochaine fois, je vais essayer de\u2026" style="width:100%;max-width:340px;min-height:60px;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:#0a0a0a;color:#E5E0DC;font-family:var(--serif);font-size:14px;resize:vertical;margin-bottom:20px;"></textarea>'
-    + '<button onclick="_muhasabaEngage()" style="width:100%;max-width:340px;padding:16px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Je m\u2019engage</button>'
-    + '</div>';
-  el.innerHTML = html;
-  el.innerHTML += _exitLinkHtml;
-}
+// openMuhasabaAction supprimé (code mort Muhâsaba guidée)
 
-function _muhasabaEngage() {
-  var sel = document.querySelector('[data-act]._schemaOn');
-  var actionType = sel ? sel.textContent : '';
-  var actionTexte = (document.getElementById('_actionConcreteTexte') || {}).value || '';
-  window._muhasabaReponses.action = actionType;
-  window._muhasabaReponses.actionTexte = actionTexte;
-  // Sauvegarde en localStorage
-  try {
-    var key = 'muhasaba_colere_' + Date.now();
-    safeSetItem(key, JSON.stringify(window._muhasabaReponses));
-  } catch(e) {}
-  // Engagement J+7
-  try {
-    var engagements = JSON.parse(safeGetItem('muhasaba_engagements') || '[]');
-    engagements.push({action:actionType,actionTexte:actionTexte,dateRappel:Date.now()+7*86400000,traite:false,created:Date.now()});
-    safeSetItem('muhasaba_engagements', JSON.stringify(engagements));
-  } catch(e) {}
-  // Demander permission notifications
-  if (typeof Notification !== 'undefined' && Notification.permission === 'default') {
-    try { Notification.requestPermission(); } catch(e) {}
-  }
-  var _emos = window._muhasabaReponses.emotion || [];
-  var _emoL = Array.isArray(_emos) ? _emos.map(function(e){return e.toLowerCase();}) : [String(_emos).toLowerCase()];
-  if (_emoL.indexOf('honte') !== -1) { _muhasabaCarteHonte(); return; }
-  if (_emoL.indexOf('peur') !== -1) { _muhasabaCartePeur(); return; }
-  if (_emoL.indexOf('tristesse') !== -1) { _muhasabaCarteTristesse(); return; }
-  if (_emoL.indexOf('injustice') !== -1) { _muhasabaCarteInjustice(); return; }
-  if (_emoL.indexOf('impuissance') !== -1) { _muhasabaCarteImpuissance(); return; }
-  if (_emoL.indexOf('trahison') !== -1) { _muhasabaCarteTrahison(); return; }
-  if (_emoL.indexOf('culpabilit\u00e9') !== -1) { _muhasabaCarteCulpabilite(); return; }
-  if (_emoL.indexOf('\u00e9puisement') !== -1) { _muhasabaCarteEpuisement(); return; }
-  openMuhasabaCloture();
-}
+// _muhasabaEngage supprimé (code mort Muhâsaba guidée)
 
-function _muhasabaCarteHonte() {
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  var c = '#B33A3A';
-  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;max-width:600px;margin:0 auto;text-align:center;">'
-    + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:20px;">Aller plus loin</div>'
-    + '<div style="border:1px solid rgba(200,168,75,0.3);border-radius:14px;padding:14px;max-width:480px;margin:0 auto 24px;background:rgba(200,168,74,0.08);text-align:center;"><div style="font-family:var(--serif);font-size:16px;color:#C8A84A;margin-bottom:8px;">Avant les gestes</div><div style="font-size:14px;font-style:italic;color:#E5E0DC;line-height:1.6;">Allâh t’a vu, et Sa raḥma englobe toute chose.<br>Il aime ceux qui reconnaissent leur faute. — Coran 2:222<br>Reviens vers Lui maintenant : avec ton dhikr, avec ton iftiqâr, avec ta tawba.</div></div>'
-    + '<div style="border:1px solid ' + c + '33;border-radius:14px;padding:20px;max-width:480px;margin:0 auto 28px;text-align:center;">'
-    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;margin-bottom:16px;">La honte se gu\u00e9rit dans la tawba, pas dans la cachette.</div>'
-    + '<div class="itfaa-body" style="font-size:14px;font-style:italic;line-height:1.6;margin-bottom:6px;">\u00ab\u00a0All\u00e2h aime ceux qui se repentent souvent.\u00a0\u00bb</div>'
-    + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:16px;">\u2014 Coran 2:222</div>'
-    + '<div class="itfaa-body" style="font-size:14px;font-style:italic;line-height:1.6;margin-bottom:6px;">Le Proph\u00e8te \uFDFA a dit\u00a0: \u00ab\u00a0Si vous ne p\u00e9chiez pas, All\u00e2h ferait dispara\u00eetre votre groupe et le remplacerait par un peuple qui p\u00e8che, demande pardon, et qu\u2019Il pardonne.\u00a0\u00bb</div>'
-    + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:16px;">\u2014 Muslim 2748</div>'
-    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;">All\u00e2h veut que tu reviennes vers Lui. Ta honte n\u2019est pas un obstacle, c\u2019est un chemin.</div>'
-    + '</div>'
-    + '<div style="border:1px solid #a3372a;border-radius:14px;padding:14px;max-width:480px;margin:0 auto 20px;background:#0a0a0a;text-align:center;"><div style="font-size:14px;color:#E5E0DC;line-height:1.6;">Cet examen ne remplace pas le soin humain. Si la colère revient malgré tes efforts, parle à un humain de confiance — un proche, un imam, un savant local, un thérapeute. Allâh aime ceux qui se font aider.</div></div><button onclick="openMuhasabaCloture()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019avance avec \u00e7a</button>'
-    + '</div>';
-}
+// _muhasabaCarteHonte supprimé (code mort Muhâsaba guidée)
 
-function _muhasabaCartePeur() {
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  var c = '#B33A3A';
-  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;max-width:600px;margin:0 auto;text-align:center;">'
-    + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:20px;">Aller plus loin</div>'
-    + '<div style="border:1px solid rgba(200,168,75,0.3);border-radius:14px;padding:14px;max-width:480px;margin:0 auto 24px;background:rgba(200,168,74,0.08);text-align:center;"><div style="font-family:var(--serif);font-size:16px;color:#C8A84A;margin-bottom:8px;">Avant les gestes</div><div style="font-size:14px;font-style:italic;color:#E5E0DC;line-height:1.6;">Allâh t’a vu, et Sa raḥma englobe toute chose.<br>Il aime ceux qui reconnaissent leur faute. — Coran 2:222<br>Reviens vers Lui maintenant : avec ton dhikr, avec ton iftiqâr, avec ta tawba.</div></div>'
-    + '<div style="border:1px solid ' + c + '33;border-radius:14px;padding:20px;max-width:480px;margin:0 auto 28px;text-align:center;">'
-    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;margin-bottom:16px;">Tu n\u2019es pas seul devant ce que tu crains.</div>'
-    + '<div class="itfaa-body" style="font-size:14px;font-style:italic;line-height:1.6;margin-bottom:6px;">\u00ab\u00a0All\u00e2h ne charge aucune \u00e2me au-del\u00e0 de sa capacit\u00e9.\u00a0\u00bb</div>'
-    + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:16px;">\u2014 Coran 2:286</div>'
-    + '<div class="itfaa-body" style="font-size:14px;font-style:italic;line-height:1.6;margin-bottom:6px;">Le Proph\u00e8te \uFDFA disait\u00a0: \u00ab\u00a0All\u00e2humma inn\u00ee a\u2019\u00fbdhu bika min al-\u1e25amm wa-l-\u1e25azan.\u00a0\u00bb \u2014 All\u00e2h, je cherche refuge contre le souci et la tristesse.</div>'
-    + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:16px;">\u2014 Bukh\u00e2r\u00ee 6363</div>'
-    + '</div>'
-    + '<div style="border:1px solid #a3372a;border-radius:14px;padding:14px;max-width:480px;margin:0 auto 20px;background:#0a0a0a;text-align:center;"><div style="font-size:14px;color:#E5E0DC;line-height:1.6;">Cet examen ne remplace pas le soin humain. Si la colère revient malgré tes efforts, parle à un humain de confiance — un proche, un imam, un savant local, un thérapeute. Allâh aime ceux qui se font aider.</div></div><button onclick="openMuhasabaCloture()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019avance avec \u00e7a</button>'
-    + '</div>';
-}
+// _muhasabaCartePeur supprimé (code mort Muhâsaba guidée)
 
 function _muhasabaCarteEpuisement() {
   // Log + compter sur 7j
@@ -5583,28 +5330,7 @@ function _muhasabaCarteInjustice() {
     + '</div>';
 }
 
-function _muhasabaCarteTristesse() {
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  var c = '#B33A3A';
-  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;max-width:600px;margin:0 auto;text-align:center;">'
-    + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:20px;">Aller plus loin</div>'
-    + '<div style="border:1px solid rgba(200,168,75,0.3);border-radius:14px;padding:14px;max-width:480px;margin:0 auto 24px;background:rgba(200,168,74,0.08);text-align:center;"><div style="font-family:var(--serif);font-size:16px;color:#C8A84A;margin-bottom:8px;">Avant les gestes</div><div style="font-size:14px;font-style:italic;color:#E5E0DC;line-height:1.6;">Allâh t’a vu, et Sa raḥma englobe toute chose.<br>Il aime ceux qui reconnaissent leur faute. — Coran 2:222<br>Reviens vers Lui maintenant : avec ton dhikr, avec ton iftiqâr, avec ta tawba.</div></div>'
-    + '<div style="border:1px solid ' + c + '33;border-radius:14px;padding:20px;max-width:480px;margin:0 auto 28px;text-align:center;">'
-    + '<div class="itfaa-body" style="font-size:14px;font-style:italic;line-height:1.6;margin-bottom:6px;">Ya\u2019q\u00fbb (\u2019alayhi as-sal\u00e2m) a dit\u00a0:</div>'
-    + '<div class="itfaa-body" style="font-size:14px;font-style:italic;line-height:1.6;margin-bottom:6px;">\u00ab\u00a0Je ne me plains de mon affliction et de ma tristesse qu\u2019\u00e0 All\u00e2h.\u00a0\u00bb</div>'
-    + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:12px;">\u2014 Coran 12:86</div>'
-    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:15px;line-height:1.7;margin-bottom:16px;">Tu peux faire pareil. Maintenant.</div>'
-    + '<div class="itfaa-body" style="font-size:14px;font-style:italic;line-height:1.6;margin-bottom:6px;">Le Proph\u00e8te \uFDFA a dit\u00a0: \u00ab\u00a0Jamais un musulman ne fait la du\u2019\u00e2\u2019 de Y\u00fbnus dans un moment de d\u00e9tresse sans qu\u2019All\u00e2h n\u2019y r\u00e9ponde.\u00a0\u00bb</div>'
-    + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:16px;">\u2014 Tirmidh\u00ee 3505</div>'
-    + '<div style="font-family:\'Scheherazade New\',serif;font-size:28px;color:' + c + ';direction:rtl;line-height:1.8;margin-bottom:8px;">\u0644\u064e\u0627 \u0625\u0650\u0644\u064e\u0670\u0647\u064e \u0625\u0650\u0644\u0651\u064e\u0627 \u0623\u064e\u0646\u0652\u062a\u064e \u0633\u064f\u0628\u0652\u062d\u064e\u0627\u0646\u064e\u0643\u064e \u0625\u0650\u0646\u0651\u0650\u064a \u0643\u064f\u0646\u0652\u062a\u064f \u0645\u0650\u0646\u064e \u0627\u0644\u0638\u0651\u064e\u0627\u0644\u0650\u0645\u0650\u064a\u0646\u064e</div>'
-    + '<div class="itfaa-body" style="font-size:14px;font-style:italic;margin-bottom:4px;">L\u00e2 il\u00e2ha ill\u00e2 anta, sub\u1e25\u00e2naka, inn\u00ee kuntu min a\u1e93-\u1e93\u00e2lim\u00een</div>'
-    + '<div style="font-size:13px;color:rgba(200,168,75,0.5);margin-bottom:4px;">\u00ab\u00a0Il n\u2019y a de divinit\u00e9 que Toi. Gloire \u00e0 Toi. J\u2019ai \u00e9t\u00e9 parmi les injustes.\u00a0\u00bb</div>'
-    + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:0;">\u2014 Coran 21:87</div>'
-    + '</div>'
-    + '<div style="border:1px solid #a3372a;border-radius:14px;padding:14px;max-width:480px;margin:0 auto 20px;background:#0a0a0a;text-align:center;"><div style="font-size:14px;color:#E5E0DC;line-height:1.6;">Cet examen ne remplace pas le soin humain. Si la colère revient malgré tes efforts, parle à un humain de confiance — un proche, un imam, un savant local, un thérapeute. Allâh aime ceux qui se font aider.</div></div><button onclick="openMuhasabaCloture()" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019avance avec \u00e7a</button>'
-    + '</div>';
-}
+// _muhasabaCarteTristesse supprimé (code mort Muhâsaba guidée)
 
 function _shareEngagementHtml(voie) {
   var txt = '';
@@ -5633,20 +5359,7 @@ function _somaticPatternHtml() {
   } catch(e) { return ''; }
 }
 
-function openMuhasabaCloture() {
-  _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  var c = '#B33A3A';
-  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
-    + '<div style="font-family:\'Scheherazade New\',serif;font-size:28px;color:' + c + ';direction:rtl;margin-bottom:16px;">\u0645\u062d\u0627\u0633\u0628\u0629</div>'
-    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.8;max-width:400px;margin:0 auto 16px;">Allah voit ce que tu vois.<br>C\u2019est entre toi et Lui maintenant.</div>'
-    + '<div class="itfaa-subtle" style="font-size:12px;max-width:380px;margin:0 auto 24px;">Mur\u00e2qaba \u2014 la vigilance constante du serviteur sous le regard d\u2019Allah.</div>'
-    + _somaticPatternHtml()
-    + _shareEngagementHtml('guidee')
-    + '<button onclick="if(window._muhasabaFromInvite){localStorage.removeItem(\'colere_muhasaba_invite\');localStorage.removeItem(\'colere_muhasaba_snooze\');window._muhasabaFromInvite=false;var _b=document.getElementById(\'_muhasabaInviteBanner\');if(_b)_b.remove();}_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');babCompletPorte(\'colere\')" style="width:100%;max-width:320px;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Sortir</button>'
-    + '</div>';
-}
+// openMuhasabaCloture supprimé (code mort Muhâsaba guidée)
 
 function openMuhasabaRappel(idx) {
   var el = document.getElementById('babAnNafsContent');
@@ -5668,25 +5381,7 @@ function openMuhasabaRappel(idx) {
     + '</div></div>';
 }
 
-function _muhasabaRappelReponse(idx, reponse) {
-  try {
-    var engs = JSON.parse(safeGetItem('muhasaba_engagements') || '[]');
-    if (engs[idx]) { engs[idx].traite = true; engs[idx].reponse = reponse; }
-    safeSetItem('muhasaba_engagements', JSON.stringify(engs));
-  } catch(e) {}
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  var c = '#B33A3A';
-  var phrases = {
-    fait: 'M\u00e2 sh\u00e2\u2019 All\u00e2h. Ce que tu as fait, Allah l\u2019a vu.',
-    chemin: 'Le chemin compte autant que l\u2019arriv\u00e9e. Continue.',
-    pas_pu: 'Pas de jugement. Reviens quand tu es pr\u00eat. La porte reste ouverte.'
-  };
-  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:50vh;text-align:center;">'
-    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.8;max-width:400px;margin:0 auto 32px;">' + (phrases[reponse] || phrases.chemin) + '</div>'
-    + '<button onclick="renderBabAnNafs()" style="padding:14px 28px;border-radius:12px;border:1px solid ' + c + '44;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">Continuer</button>'
-    + '</div>';
-}
+// _muhasabaRappelReponse supprimé (code mort Muhâsaba guidée)
 
 // ── CURE 7 JOURS COLÈRE ──
 function _resolveRef(ref) {
@@ -16329,7 +16024,7 @@ window._cureColereJ6Save      = _cureColereJ6Save;
 window.openCureColereJour7    = openCureColereJour7;
 window._cureColereJ7Save      = _cureColereJ7Save;
 window.openMuhasabaRappel    = openMuhasabaRappel;
-window._muhasabaRappelReponse = _muhasabaRappelReponse;
+// window._muhasabaRappelReponse = _muhasabaRappelReponse; // supprimé
 window._halo                  = _halo;
 // window._itfaaWuduEtape2       = _itfaaWuduEtape2; // supprimé (code mort)
 // window.openItfaaOuverture     = openItfaaOuverture; // supprimé (code mort)
@@ -16369,7 +16064,7 @@ window._refugeSujud           = _refugeSujud;
 // window._refugeSkip            = _refugeSkip; // supprimé (code mort)
 window._refugeSudSave         = _refugeSudSave;
 window.openMuhasabaIntro      = openMuhasabaIntro;
-window._muhasabaGuidee        = _muhasabaGuidee;
+// window._muhasabaGuidee        = _muhasabaGuidee; // supprimé
 window.openMuhasabaClassique  = openMuhasabaClassique;
 window._mcIntro               = _mcIntro;
 window._muhasabaClassiqueQ1   = _muhasabaClassiqueQ1;
@@ -16386,17 +16081,17 @@ window._mcAfterGeste          = _mcAfterGeste;
 window._mcCarteSoin           = _mcCarteSoin;
 window._mcSoinSave            = _mcSoinSave;
 window._muhasabaClassiqueFin  = _muhasabaClassiqueFin;
-window.openMuhasabaEmotion    = openMuhasabaEmotion;
-window._muhasabaToggleEmo     = _muhasabaToggleEmo;
-window._muhasabaEmoSubmit     = _muhasabaEmoSubmit;
-window.openMuhasabaBesoin = openMuhasabaBesoin;
-window.openMuhasabaSchema     = openMuhasabaSchema;
-window._muhasabaCollectSchema = _muhasabaCollectSchema;
-window.openMuhasabaSens       = openMuhasabaSens;
-window._muhasabaChoixSens     = _muhasabaChoixSens;
-window.openMuhasabaAction     = openMuhasabaAction;
-window._muhasabaEngage        = _muhasabaEngage;
-window.openMuhasabaCloture    = openMuhasabaCloture;
+// window.openMuhasabaEmotion    = openMuhasabaEmotion; // supprimé
+// window._muhasabaToggleEmo     = _muhasabaToggleEmo; // supprimé
+// window._muhasabaEmoSubmit     = _muhasabaEmoSubmit; // supprimé
+// window.openMuhasabaBesoin = openMuhasabaBesoin; // supprimé
+// window.openMuhasabaSchema     = openMuhasabaSchema; // supprimé
+// window._muhasabaCollectSchema = _muhasabaCollectSchema; // supprimé
+// window.openMuhasabaSens       = openMuhasabaSens; // supprimé
+// window._muhasabaChoixSens     = _muhasabaChoixSens; // supprimé
+// window.openMuhasabaAction     = openMuhasabaAction; // supprimé
+// window._muhasabaEngage        = _muhasabaEngage; // supprimé
+// window.openMuhasabaCloture    = openMuhasabaCloture; // supprimé
 window._itfaaDepistageEncart   = _itfaaDepistageEncart;
 window.babCompletPorte        = babCompletPorte;
 
