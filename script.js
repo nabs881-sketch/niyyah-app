@@ -796,57 +796,6 @@ function defiTopBannerClick() {
     if (typeof openDefiSelector === 'function') openDefiSelector();
   }
 }
-function openDefiLundiModal() {
-  var today = new Date(TODAY);
-  if (today.getDay() !== 1) return;
-  var weekKey = getLundiDate();
-  if (safeGetItem('niyyah_defi_lundi_shown') === weekKey) return;
-  var courant = getDefiCourant();
-  if (!courant.defi) return;
-  var nom = document.getElementById('defi-nom-lundi');
-  var desc = document.getElementById('defi-desc-lundi');
-  if (nom) nom.textContent = tD(courant.defi);
-  if (desc) desc.textContent = courant.defi.ref || '';
-  var s = courant.state;
-  _initNiveauActuel(s);
-  var niv = s.niveauActuel || 1;
-  var choices;
-  if (niv >= 3) {
-    choices = [
-      {icon:'\u2713', label:'Commencer', action:'accept'}
-    ];
-  } else if (niv >= 2) {
-    choices = [
-      {icon:'\u2713', label:'J\u2019accepte', action:'accept'},
-      {icon:'\u21BB', label:'Choisir un autre', action:'choose'}
-    ];
-  } else {
-    choices = [
-      {icon:'\u2713', label:'J\u2019accepte', action:'accept'},
-      {icon:'\u21BB', label:'Choisir un autre', action:'choose'},
-      {icon:'\u2715', label:'Pas cette semaine', action:'skip'}
-    ];
-  }
-  renderDefiChoices(choices, function(action) {
-    var modal = document.getElementById('defi-lundi-modal');
-    if (modal) modal.style.display = 'none';
-    if (action === 'accept') {
-      showToast(t('defi_launched') + tD(courant.defi) + ' \u2726');
-    } else if (action === 'choose') {
-      openDefiSelector();
-    } else if (action === 'skip') {
-      showToast('Pas de d\u00e9fi cette semaine \u2014 tu reviendras lundi prochain.');
-      var st = getDefiState();
-      st.current = null;
-      saveDefiState(st);
-      renderDefiCard();
-    }
-  });
-  safeSetItem('niyyah_defi_lundi_shown', weekKey);
-  var modal = document.getElementById('defi-lundi-modal');
-  if (modal) modal.style.display = 'flex';
-}
-window.openDefiLundiModal = openDefiLundiModal;
 function _showDefiToastDaily() {
   var dk = todayKey();
   if (safeGetItem('niyyah_defi_toast_today') === dk) return;
@@ -1825,16 +1774,10 @@ function _checkStarUnlock(streak) {
   for (var i = 0; i < vagues.length; i++) {
     if (streak >= vagues[i].seuil && vagues[i].vague > currentUnlock) {
       safeSetItem('niyyah_star_vague', String(vagues[i].vague));
-      safeSetItem('niyyah_star_unlock_pending', String(vagues[i].vague));
       return;
     }
   }
 }
-function showStarUnlockModal() {
-  var pending = safeGetItem('niyyah_star_unlock_pending');
-  if (pending) localStorage.removeItem('niyyah_star_unlock_pending');
-}
-window.showStarUnlockModal = showStarUnlockModal;
 function checkLevelCompletion(levelId) {
   if (getLevelProgress(levelId) >= 100) {
     if (levelId === 1) resolveGrace();
@@ -4052,26 +3995,6 @@ function resetWirdSession(session) {
 // ── BAB AN-NAFS ──
 var _babImmersion = false;
 // BAB_AN_NAFS_AR supprimé — AR intégré dans BAB_AN_NAFS.portes[].nom.ar
-function _checkMuhasabaInvite(container) {
-  var raw = safeGetItem('colere_muhasaba_invite');
-  if (!raw) return false;
-  var inv; try { inv = JSON.parse(raw); } catch(e) { inv = {ts:Date.now()}; }
-  var age = Date.now() - (inv.ts || 0);
-  if (age > 72 * 3600000) { localStorage.removeItem('colere_muhasaba_invite'); return false; }
-  if (age < 15 * 60000) return false;
-  var snooze = parseInt(safeGetItem('colere_muhasaba_snooze') || '0', 10);
-  if (snooze && (Date.now() - snooze) < 24 * 3600000) return false;
-  var el = container || document.getElementById('babAnNafsContent');
-  if (!el) return false;
-  var c = '#B33A3A';
-  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
-    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.8;max-width:380px;margin:0 auto 28px;">Tu as choisi de revenir \u00e0 froid.<br>La porte t\u2019attend.</div>'
-    + '<div style="display:flex;flex-direction:column;gap:12px;max-width:320px;width:100%;">'
-    + '<button onclick="window._muhasabaFromInvite=true;openMuhasabaIntro()" style="width:100%;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Ouvrir Mu\u1e25\u00e2saba</button>'
-    + '<button onclick="safeSetItem(\'colere_muhasaba_snooze\',String(Date.now()));renderBabAnNafs()" style="width:100%;padding:14px;border-radius:12px;border:1px solid ' + c + '33;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;opacity:0.7;">Plus tard</button>'
-    + '</div></div>';
-  return true;
-}
 
 function renderBabAnNafs() {
   document.body.classList.add('in-bab-an-nafs');
@@ -4089,7 +4012,6 @@ function renderBabAnNafs() {
       }
     }
   } catch(e) {}
-  if (_checkMuhasabaInvite()) return;
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var html = '<div style="padding:calc(var(--safe-top)+16px) 16px 120px;">'
@@ -7023,20 +6945,7 @@ function setBilanSoir(choix) {
   if (choix === 'distraction') {
     // Activer Mode Tawba pour demain : forcer le flag niyyah_tawba_force
     safeSetItem('niyyah_tawba_force', '1');
-    // Message au démarrage demain via toast différé (lu au prochain init)
-    safeSetItem('niyyah_morning_msg', JSON.stringify({
-      icon: '\u2726', text: 'Nouveau jour, nouveau souffle. Allah t\'a accord\u00e9 ce matin \u2014 commence par Bismillah.', date: today
-    }));
-  } else if (choix === 'effort') {
-    safeSetItem('niyyah_morning_msg', JSON.stringify({
-      icon: '🌿', text: 'Hier tu as fait des efforts. Aujourd\'hui, continue — la constance est plus aimée d\'Allah que l\'intensité.', date: today
-    }));
   } else if (choix === 'sincerite') {
-    // Bonus visuel streak
-    safeSetItem('niyyah_morning_msg', JSON.stringify({
-      icon: '\u2726', text: 'Hier ton c\u0153ur \u00e9tait sinc\u00e8re. Que Allah te maintienne dans cet \u00e9tat \u2014 c\'est Sa gr\u00e2ce.', date: today
-    }));
-    // Mini animation streak
     showToast(t('bilan_sincere'));
   }
 }
@@ -7364,15 +7273,6 @@ function checkTawba() {
     }
   }
 
-  // Vérifier message matin du bilan soir d'hier
-  try {
-    const morningMsg = safeParseJSON('niyyah_morning_msg', null);
-    if (morningMsg && morningMsg.date !== TODAY) {
-      // Message d'hier → afficher ce matin
-      setTimeout(() => showToast(morningMsg.icon + ' ' + morningMsg.text.substring(0, 80)), 1500);
-      localStorage.removeItem('niyyah_morning_msg');
-    }
-  } catch(e) {}
 
   // Tawba forcée par bilan soir "distrait"
   const tawbaForce = localStorage.getItem('niyyah_tawba_force');
@@ -10341,8 +10241,6 @@ function v2GoSanctuaire() {
     var btn = document.getElementById('v2nav-sanctuaire');
     if (btn) btn.classList.add('active-nav');
     if (typeof updateMedaillonState === 'function') updateMedaillonState();
-    if (typeof showStarUnlockModal === 'function') setTimeout(showStarUnlockModal, 800);
-    if (typeof openDefiLundiModal === 'function') setTimeout(openDefiLundiModal, 1500);
     setTimeout(_showDefiToastDaily, 2500);
   }
   // Skip intro cascade on return visits
@@ -10397,27 +10295,6 @@ function v2GoSanctuaire() {
       }
     } catch(e) {}
   })();
-  // Invitation douce Muḥâsaba si en attente
-  var _mInvRaw = safeGetItem('colere_muhasaba_invite');
-  if (_mInvRaw) {
-    try { var _mInv = JSON.parse(_mInvRaw); } catch(e) { var _mInv = {ts:Date.now()}; }
-    var _mAge = Date.now() - (_mInv.ts || 0);
-    var _mSnooze = parseInt(safeGetItem('colere_muhasaba_snooze') || '0', 10);
-    if (_mAge > 72 * 3600000) { localStorage.removeItem('colere_muhasaba_invite'); }
-    else if (_mAge >= 15 * 60000 && (!_mSnooze || (Date.now() - _mSnooze) >= 24 * 3600000)) {
-      var _mBanner = document.getElementById('_muhasabaInviteBanner');
-      if (!_mBanner) {
-        _mBanner = document.createElement('div');
-        _mBanner.id = '_muhasabaInviteBanner';
-        _mBanner.style.cssText = 'position:fixed;bottom:80px;left:50%;transform:translateX(-50%);max-width:340px;width:calc(100% - 32px);background:#1a1a1a;border:1px solid #B33A3A44;border-radius:14px;padding:16px;z-index:2000;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,0.5);';
-        _mBanner.innerHTML = '<div style="font-family:var(--serif);font-size:15px;color:#E5E0DC;line-height:1.6;margin-bottom:14px;">Tu as choisi de revenir \u00e0 froid. La porte t\u2019attend.</div>'
-          + '<div style="display:flex;gap:10px;"><button onclick="this.closest(\'#_muhasabaInviteBanner\').remove();v2GoTo(\'bab-an-nafs\');setTimeout(openMuhasabaIntro,300);window._muhasabaFromInvite=true" style="flex:1;padding:12px;border-radius:10px;border:none;background:#B33A3A;color:#000;font-family:var(--serif);font-size:14px;font-weight:600;cursor:pointer;">Mu\u1e25\u00e2saba</button>'
-          + '<button onclick="safeSetItem(\'colere_muhasaba_snooze\',String(Date.now()));this.closest(\'#_muhasabaInviteBanner\').remove()" style="flex:1;padding:12px;border-radius:10px;border:1px solid #B33A3A33;background:none;color:#B33A3A;font-family:var(--serif);font-size:14px;cursor:pointer;opacity:0.7;">Plus tard</button></div>';
-        var _sanctEl = document.getElementById('view-sanctuaire');
-        if (_sanctEl) _sanctEl.appendChild(_mBanner);
-      }
-    }
-  }
 }
 
 function v2GoTo(viewName) {
@@ -12855,7 +12732,6 @@ window._spontaneousUIShown = false;
 function triggerSpontaneousUI() {
   if (window._spontaneousUIShown) return;
   if (checkTawba()) { window._spontaneousUIShown = true; return; }
-  if (_checkMuhasabaInvite()) { window._spontaneousUIShown = true; return; }
   for (var _li = 1; _li <= LEVELS.length; _li++) { if (checkLevelCompletion(_li)) { window._spontaneousUIShown = true; return; } }
   if (!safeGetItem('ramadan_modal_shown') && typeof ramadanState !== 'undefined' && ramadanState.active) { safeSetItem('ramadan_modal_shown', '1'); showRamadanBoostModal(); window._spontaneousUIShown = true; return; }
   if (safeGetItem('ramadan_boost') === 'accepted' && typeof ramadanState !== 'undefined' && !ramadanState.active) { showEidModal(); window._spontaneousUIShown = true; return; }
