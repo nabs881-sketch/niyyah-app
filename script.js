@@ -4909,7 +4909,7 @@ function _injectCureProgress(current) {
     var onclick = done ? ' onclick="openCureJour(\'colere\',' + d + ')"' : '';
     bar.innerHTML += '<div style="text-align:center;' + cursor + 'background:rgba(0,0,0,0.5);border-radius:12px;padding:6px 4px 4px;"' + onclick + '>'
       + '<div style="width:28px;height:28px;border-radius:50%;border:2px solid ' + bdr + ';background:' + bg + ';display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:11px;color:' + col + ';">' + d + '</div>'
-      + '<div style="font-size:9px;color:rgba(255,255,255,0.4);margin-top:2px;">J' + d + '</div></div>';
+      + '<div style="font-size:9px;color:#F5EDE0;font-weight:500;margin-top:2px;text-shadow:0 1px 3px rgba(0,0,0,0.8);">J' + d + '</div></div>';
   }
   var first = el.firstChild;
   if (first && first.firstChild) first.insertBefore(bar, first.firstChild);
