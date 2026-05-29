@@ -5127,8 +5127,9 @@ function _cureWizardRender(el) {
   // Progress indicator
   var progress = '<div style="text-align:center;margin-bottom:24px;font-size:11px;letter-spacing:0.2em;color:rgba(200,168,75,0.4);">' + (s.step + 1) + '/' + totalSteps + '</div>';
 
-  var _bgStyle = (step.type === '_ouverture' && dayNum === 1) ? 'background:url(assets/cure-colere/j1.webp) center/cover no-repeat #0a0a0a;' : '';
-  var _overlayHtml = _bgStyle ? '<div style="position:absolute;inset:0;background:rgba(0,0,0,0.55);z-index:0;"></div>' : '';
+  var _bgStyle = (step.type === '_ouverture') ? 'background:url(assets/cure-colere/j' + dayNum + '.webp) center/cover no-repeat #0a0a0a;' : '';
+  var _overlayOpacity = (dayNum === 2 || dayNum === 6) ? '0.45' : '0.55';
+  var _overlayHtml = _bgStyle ? '<div style="position:absolute;inset:0;background:rgba(0,0,0,' + _overlayOpacity + ');z-index:0;"></div>' : '';
   var html = '<div style="' + _bgStyle + 'position:relative;padding:calc(var(--safe-top)+60px) 16px 120px;min-height:100vh;">' + _overlayHtml + '<div style="position:relative;z-index:1;">' + backBtn + progress;
 
   // TITRE (always)
