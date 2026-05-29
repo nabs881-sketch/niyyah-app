@@ -1,0 +1,407 @@
+{
+  "id": "coffret-anxiete",
+  "version": "1.0",
+  "date_creation": "2026-05-30",
+  "titre_ar": "خَزَائِن الطُّمَأْنِينَة",
+  "titre_translit": "Khazâ'in at-Tuma'nîna",
+  "titre_fr": "Les coffres de l'apaisement",
+  "sous_titre": "Pour aller plus loin avec le Coran, la Sunna, et la tradition.",
+
+  "introduction": "Ce coffret rassemble les références fondamentales de l'islam sur l'anxiété, la peur, la tristesse et le doute. Il complète la cure 7 jours.\n\nTu peux le consulter à tout moment. Pas pour le mémoriser d'un coup. Pour qu'il soit là quand tu en auras besoin.",
+
+  "sections": [
+    {
+      "id": "versets",
+      "titre_ar": "الآيات",
+      "titre_translit": "Al-Âyât",
+      "titre_fr": "Versets du Coran",
+      "description": "Les versets centraux pour les nuits d'angoisse, le poids du futur, le désespoir.",
+      "entrees": [
+        {
+          "id": "baqara_286",
+          "ar": "لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا",
+          "translit": "Lâ yukallifu-llâhu nafsan illâ wus'ahâ",
+          "fr": "Allah n'impose à aucune âme une charge supérieure à ses moyens.",
+          "source": "Al-Baqara 2:286",
+          "quand": "Quand tu te sens écrasé par ce qui t'arrive. Allah Lui-même garantit que tu peux le porter."
+        },
+        {
+          "id": "tawba_51",
+          "ar": "قُل لَّن يُصِيبَنَا إِلَّا مَا كَتَبَ اللَّهُ لَنَا",
+          "translit": "Qul lan yusîbanâ illâ mâ kataba-llâhu lanâ",
+          "fr": "Dis : rien ne nous atteindra en dehors de ce qu'Allah a prescrit pour nous.",
+          "source": "At-Tawba 9:51",
+          "quand": "Contre la peur des 'et si'. Ce qui doit arriver arrivera. Ce qui ne doit pas, n'arrivera pas."
+        },
+        {
+          "id": "rad_28",
+          "ar": "أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ",
+          "translit": "Alâ bi-dhikri-llâhi tatma'innu-l-qulûb",
+          "fr": "N'est-ce point par le rappel d'Allah que les cœurs s'apaisent ?",
+          "source": "Ar-Ra'd 13:28",
+          "quand": "Le verset-pivot de l'apaisement (iṭmi'nân) dans le Coran. À répéter quand le cœur s'agite."
+        },
+        {
+          "id": "imran_173",
+          "ar": "حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ",
+          "translit": "Hasbunâ-llâhu wa ni'ma-l-wakîl",
+          "fr": "Allah nous suffit. Et quel excellent Garant !",
+          "source": "Âl 'Imrân 3:173",
+          "quand": "Quand la situation t'échappe et que tu as fait ta part. C'est la phrase du tafwîd — la remise."
+        },
+        {
+          "id": "anbiya_87_88",
+          "ar": "لَّا إِلَٰهَ إِلَّا أَنتَ سُبْحَانَكَ إِنِّي كُنتُ مِنَ الظَّالِمِينَ ۚ فَاسْتَجَبْنَا لَهُ وَنَجَّيْنَاهُ مِنَ الْغَمِّ ۚ وَكَذَٰلِكَ نُنجِي الْمُؤْمِنِينَ",
+          "translit": "Lâ ilâha illâ Anta, subhânaka, innî kuntu min adh-dhâlimîn. Fastajabnâ lahu wa najjaynâhu min al-ghamm. Wa kadhâlika nunjî-l-mu'minîn.",
+          "fr": "Il n'y a de divinité que Toi. Gloire à Toi. J'ai été parmi les injustes. Nous lui répondîmes et le sauvâmes de l'angoisse. Et c'est ainsi que Nous sauvons les croyants.",
+          "source": "Al-Anbiyâ' 21:87-88",
+          "quand": "Le verset le plus puissant contre l'angoisse insurmontable. Ce que Yûnus a dit dans le ventre du poisson. Allah promet de sauver pareillement les croyants."
+        },
+        {
+          "id": "zumar_53",
+          "ar": "لَا تَقْنَطُوا مِن رَّحْمَةِ اللَّهِ ۚ إِنَّ اللَّهَ يَغْفِرُ الذُّنُوبَ جَمِيعًا",
+          "translit": "Lâ taqnatû min rahmati-llâh. Inna-llâha yaghfiru-dh-dhunûba jamî'an",
+          "fr": "Ne désespérez pas de la miséricorde d'Allah. Certes, Allah pardonne tous les péchés.",
+          "source": "Az-Zumar 39:53",
+          "quand": "Le verset contre le ya's — le désespoir spirituel. Quand tu penses avoir tout gâché."
+        },
+        {
+          "id": "inshirah_1_8",
+          "ar": "أَلَمْ نَشْرَحْ لَكَ صَدْرَكَ ۝ وَوَضَعْنَا عَنكَ وِزْرَكَ ۝ الَّذِي أَنقَضَ ظَهْرَكَ ۝ وَرَفَعْنَا لَكَ ذِكْرَكَ ۝ فَإِنَّ مَعَ الْعُسْرِ يُسْرًا ۝ إِنَّ مَعَ الْعُسْرِ يُسْرًا",
+          "translit": "Alam nashrah laka sadrak ? Wa wada'nâ 'anka wizrak. Alladhî anqada dhahrak. Wa rafa'nâ laka dhikrak. Fa-inna ma'a-l-'usri yusrâ. Inna ma'a-l-'usri yusrâ.",
+          "fr": "N'avons-Nous pas ouvert pour toi ta poitrine ? Et déchargé de toi ton fardeau qui pesait sur ton dos ? Et élevé haut ta renommée ? À côté de la difficulté est, certes, une facilité. À côté de la difficulté est, certes, une facilité.",
+          "source": "Ach-Charh 94:1-6 (extraits)",
+          "quand": "Sourate révélée pour apaiser le Prophète ﷺ pendant ses moments de doute. À lire entière quand le cœur est lourd."
+        },
+        {
+          "id": "duha_3",
+          "ar": "مَا وَدَّعَكَ رَبُّكَ وَمَا قَلَىٰ",
+          "translit": "Mâ wadda'aka rabbuka wa mâ qalâ",
+          "fr": "Ton Seigneur ne t'a ni abandonné, ni détesté.",
+          "source": "Ad-Duhâ 93:3",
+          "quand": "Quand tu sens qu'Allah s'est éloigné de toi. C'est une illusion de l'esprit anxieux."
+        },
+        {
+          "id": "qaf_16",
+          "ar": "وَنَحْنُ أَقْرَبُ إِلَيْهِ مِنْ حَبْلِ الْوَرِيدِ",
+          "translit": "Wa nahnu aqrabu ilayhi min habli-l-warîd",
+          "fr": "Nous sommes plus proche de lui que sa veine jugulaire.",
+          "source": "Qâf 50:16",
+          "quand": "Quand tu te sens seul, abandonné, isolé dans ta peur. Il est plus proche que ta propre veine."
+        },
+        {
+          "id": "talaq_3",
+          "ar": "وَمَن يَتَوَكَّلْ عَلَى اللَّهِ فَهُوَ حَسْبُهُ",
+          "translit": "Wa man yatawakkal 'ala-llâhi fa-huwa hasbuh",
+          "fr": "Et quiconque place sa confiance en Allah, Il lui suffit.",
+          "source": "At-Talâq 65:3",
+          "quand": "Le verset du tawakkul. À méditer lentement, mot par mot, pour ancrer la confiance."
+        },
+        {
+          "id": "baqara_153",
+          "ar": "يَا أَيُّهَا الَّذِينَ آمَنُوا اسْتَعِينُوا بِالصَّبْرِ وَالصَّلَاةِ ۚ إِنَّ اللَّهَ مَعَ الصَّابِرِينَ",
+          "translit": "Yâ ayyuha-lladhîna âmanû, ista'înû bi-s-sabri wa-s-salâh. Inna-llâha ma'a-s-sâbirîn",
+          "fr": "Ô vous qui croyez, cherchez secours dans la patience et la prière. Allah est avec ceux qui sont endurants.",
+          "source": "Al-Baqara 2:153",
+          "quand": "Quand tu ne sais plus quoi faire. Deux outils : sabr et salât. Rien de plus, rien de moins."
+        }
+      ]
+    },
+
+    {
+      "id": "hadiths",
+      "titre_ar": "الأحاديث",
+      "titre_translit": "Al-Ahâdîth",
+      "titre_fr": "Paroles du Prophète ﷺ",
+      "description": "Les hadiths centraux sur l'anxiété, la peur, le doute, l'épreuve.",
+      "entrees": [
+        {
+          "id": "etonnante_affaire",
+          "ar": "عَجَبًا لِأَمْرِ الْمُؤْمِنِ ۖ إِنَّ أَمْرَهُ كُلَّهُ خَيْرٌ ۖ وَلَيْسَ ذَاكَ لِأَحَدٍ إِلَّا لِلْمُؤْمِنِ ۖ إِنْ أَصَابَتْهُ سَرَّاءُ شَكَرَ ۖ فَكَانَ خَيْرًا لَهُ ۖ وَإِنْ أَصَابَتْهُ ضَرَّاءُ صَبَرَ ۖ فَكَانَ خَيْرًا لَهُ",
+          "translit": "'Ajaban li-amri-l-mu'min. Inna amrahu kullahu khayr. Wa laysa dhâka li-ahadin illâ li-l-mu'min. In asâbathu sarrâ'u shakar, fa-kâna khayran lahu. Wa in asâbathu darrâ'u sabar, fa-kâna khayran lahu.",
+          "fr": "Étonnante est l'affaire du croyant ! Toute son affaire est un bien — et cela n'est pour personne d'autre que lui. Si une joie l'atteint, il rend grâce, et c'est un bien pour lui. Si un malheur l'atteint, il endure, et c'est un bien pour lui.",
+          "source": "Muslim 2999, d'après Suhayb ibn Sinân",
+          "quand": "Quand tu doutes du sens de ce qui t'arrive. Tout, absolument tout, peut devenir bien — par la gratitude ou la patience."
+        },
+        {
+          "id": "ce_qui_atteint",
+          "ar": "وَاعْلَمْ أَنَّ مَا أَصَابَكَ لَمْ يَكُنْ لِيُخْطِئَكَ، وَأَنَّ مَا أَخْطَأَكَ لَمْ يَكُنْ لِيُصِيبَكَ",
+          "translit": "Wa'lam anna mâ asâbaka lam yakun li-yukhti'ak, wa anna mâ akhta'aka lam yakun li-yusîbak",
+          "fr": "Sache que ce qui devait t'atteindre ne pouvait te manquer, et que ce qui devait te manquer ne pouvait t'atteindre.",
+          "source": "Tirmidhî 2516 (hadith d'Ibn 'Abbâs, dit 'le hadith de la jeunesse')",
+          "quand": "Contre l'illusion d'hyper-contrôle. Ton avenir est déjà écrit, ton rôle est d'agir avec sincérité, pas de tout maîtriser."
+        },
+        {
+          "id": "hadith_jeunesse_complet",
+          "ar": "احْفَظِ اللَّهَ يَحْفَظْكَ، احْفَظِ اللَّهَ تَجِدْهُ تُجَاهَكَ",
+          "translit": "Ihfadhi-llâha yahfadhka. Ihfadhi-llâha tajidhu tujâhak.",
+          "fr": "Sois attentif à Allah, Il te protégera. Sois attentif à Allah, tu Le trouveras devant toi.",
+          "source": "Tirmidhî 2516 (suite, hadith d'Ibn 'Abbâs)",
+          "quand": "Quand tu te sens abandonné. La fidélité à Allah crée Sa proximité protectrice."
+        },
+        {
+          "id": "dua_yunus_promise",
+          "ar": "دَعْوَةُ ذِي النُّونِ إِذْ دَعَا وَهُوَ فِي بَطْنِ الْحُوتِ ۖ لَا إِلَهَ إِلَّا أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِينَ ۖ فَإِنَّهُ لَمْ يَدْعُ بِهَا رَجُلٌ مُسْلِمٌ فِي شَيْءٍ قَطُّ إِلَّا اسْتَجَابَ اللَّهُ لَهُ",
+          "translit": "Da'watu Dhî-n-Nûni idh da'â wa huwa fî batni-l-hût : Lâ ilâha illâ Anta subhânaka innî kuntu min adh-dhâlimîn. Fa-innahu lam yad'u bihâ rajulun muslimun fî shay'in qattu illâ-stajâba-llâhu lah.",
+          "fr": "La supplique de Dhû-n-Nûn (Yûnus) lorsqu'il l'invoqua dans le ventre du poisson : 'Il n'y a de divinité que Toi. Gloire à Toi. J'ai été parmi les injustes.' Aucun musulman ne l'invoque pour quoi que ce soit sans qu'Allah ne lui réponde.",
+          "source": "Tirmidhî 3505 — hasan",
+          "quand": "Quand l'angoisse semble sans issue. Promesse explicite : Allah RÉPOND à cette du'â."
+        },
+        {
+          "id": "chamelle",
+          "ar": "اعْقِلْهَا وَتَوَكَّلْ",
+          "translit": "I'qilhâ wa tawakkal",
+          "fr": "Attache ta chamelle, puis place ta confiance.",
+          "source": "Tirmidhî 2517",
+          "quand": "Quand tu confonds tawakkul et passivité. Le tawakkul ARRIVE après l'action, pas à sa place."
+        },
+        {
+          "id": "refuge_complet",
+          "ar": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْهَمِّ وَالْحُزْنِ، وَأَعُوذُ بِكَ مِنَ الْعَجْزِ وَالْكَسَلِ، وَأَعُوذُ بِكَ مِنَ الْجُبْنِ وَالْبُخْلِ، وَأَعُوذُ بِكَ مِنْ غَلَبَةِ الدَّيْنِ وَقَهْرِ الرِّجَالِ",
+          "translit": "Allâhumma innî a'ûdhu bika min al-hammi wa-l-huzn, wa a'ûdhu bika min al-'ajzi wa-l-kasal, wa a'ûdhu bika min al-jubni wa-l-bukhl, wa a'ûdhu bika min ghalabati-d-dayni wa qahri-r-rijâl.",
+          "fr": "Ô Allah, je cherche refuge en Toi contre l'anxiété et la tristesse, contre l'impuissance et la paresse, contre la lâcheté et l'avarice, contre l'écrasement de la dette et l'oppression des hommes.",
+          "source": "Bukhârî 6369, d'après Anas ibn Mâlik",
+          "quand": "Le matin et le soir. C'est la du'â de refuge complète du Prophète ﷺ contre les huit fardeaux du cœur."
+        },
+        {
+          "id": "pensees_intrusives",
+          "ar": "إِنَّ اللَّهَ تَجَاوَزَ عَنْ أُمَّتِي مَا وَسْوَسَتْ بِهِ صُدُورُهَا، مَا لَمْ تَعْمَلْ بِهِ أَوْ تَتَكَلَّمْ",
+          "translit": "Inna-llâha tajâwaza 'an ummatî mâ waswasat bihi sudûruhâ, mâ lam ta'mal bihi aw tatakallam",
+          "fr": "Allah a pardonné à ma communauté ce qui lui passe par l'esprit, tant qu'elle n'agit pas ni n'en parle.",
+          "source": "Bukhârî 5269, Muslim 127",
+          "quand": "Contre le waswâs — les pensées intrusives, dérangeantes, parfois blasphématoires. Elles ne sont pas des péchés. Elles passent."
+        },
+        {
+          "id": "etranger_voyageur",
+          "ar": "كُنْ فِي الدُّنْيَا كَأَنَّكَ غَرِيبٌ أَوْ عَابِرُ سَبِيلٍ",
+          "translit": "Kun fi-d-dunyâ ka-annaka gharîbun aw 'âbiru sabîl",
+          "fr": "Sois dans ce monde comme un étranger ou un voyageur.",
+          "source": "Bukhârî 6416, d'après Ibn 'Umar",
+          "quand": "Quand l'attachement excessif (au résultat, au regard, au confort) génère de l'angoisse. Allège ton pas."
+        },
+        {
+          "id": "istighfar_issue",
+          "ar": "مَنْ لَزِمَ الِاسْتِغْفَارَ جَعَلَ اللَّهُ لَهُ مِنْ كُلِّ هَمٍّ فَرَجًا، وَمِنْ كُلِّ ضِيقٍ مَخْرَجًا",
+          "translit": "Man lazima-l-istighfâra ja'ala-llâhu lahu min kulli hammin farajan, wa min kulli dîqin makhrajan",
+          "fr": "Celui qui s'astreint à l'istighfâr, Allah lui ouvre une issue à toute angoisse et un chemin à toute oppression.",
+          "source": "Abû Dâwûd 1518, Ibn Mâja 3819, Ahmad — hasan",
+          "quand": "Quand tu es bloqué et ne sais plus quoi faire. L'istighfâr est la clé qui débloque."
+        }
+      ]
+    },
+
+    {
+      "id": "duas",
+      "titre_ar": "الأدعية",
+      "titre_translit": "Al-Ad'iya",
+      "titre_fr": "Du'âs à mémoriser",
+      "description": "Les invocations prophétiques contre l'anxiété — courtes, mémorisables, à intégrer dans le quotidien.",
+      "entrees": [
+        {
+          "id": "yunus",
+          "ar": "لَا إِلَهَ إِلَّا أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِينَ",
+          "translit": "Lâ ilâha illâ Anta, subhânaka, innî kuntu min adh-dhâlimîn",
+          "fr": "Il n'y a de divinité que Toi. Gloire à Toi. J'ai été parmi les injustes.",
+          "source": "Du'â de Yûnus — Al-Anbiyâ' 21:87 + Tirmidhî 3505",
+          "quand": "Dans les nuits d'angoisse insurmontable. Promesse : Allah répond toujours à cette du'â."
+        },
+        {
+          "id": "hasbi_allah",
+          "ar": "حَسْبِيَ اللَّهُ لَا إِلَهَ إِلَّا هُوَ، عَلَيْهِ تَوَكَّلْتُ، وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ",
+          "translit": "Hasbiya-llâhu lâ ilâha illâ huwa, 'alayhi tawakkaltu, wa huwa rabbu-l-'arshi-l-'adhîm",
+          "fr": "Allah me suffit. Il n'y a de divinité que Lui. À Lui je m'en remets. Il est le Seigneur du Trône immense.",
+          "source": "Abû Dâwûd 5081 — à dire 7 fois matin et soir",
+          "quand": "Le matin et le soir, 7 fois. Le Prophète ﷺ a dit que celui qui le dit ainsi, Allah lui suffit pour tout ce qui le préoccupe."
+        },
+        {
+          "id": "ya_hayy",
+          "ar": "يَا حَيُّ يَا قَيُّومُ بِرَحْمَتِكَ أَسْتَغِيثُ",
+          "translit": "Yâ Hayyu Yâ Qayyûm, bi-rahmatika astaghîth",
+          "fr": "Ô Vivant, ô Subsistant par Soi-même, j'implore Ta miséricorde au secours.",
+          "source": "Nasâ'î al-Kubrâ 10330, Tirmidhî 3524 — hasan",
+          "quand": "Quand tu as un besoin urgent, une angoisse qui demande secours immédiat. Ces deux Noms ouvrent la porte."
+        },
+        {
+          "id": "ibn_masud",
+          "ar": "اللَّهُمَّ إِنِّي عَبْدُكَ، ابْنُ عَبْدِكَ، ابْنُ أَمَتِكَ، نَاصِيَتِي بِيَدِكَ، مَاضٍ فِيَّ حُكْمُكَ، عَدْلٌ فِيَّ قَضَاؤُكَ، أَسْأَلُكَ بِكُلِّ اسْمٍ هُوَ لَكَ، سَمَّيْتَ بِهِ نَفْسَكَ، أَوْ أَنْزَلْتَهُ فِي كِتَابِكَ، أَوْ عَلَّمْتَهُ أَحَدًا مِنْ خَلْقِكَ، أَوِ اسْتَأْثَرْتَ بِهِ فِي عِلْمِ الْغَيْبِ عِنْدَكَ، أَنْ تَجْعَلَ الْقُرْآنَ رَبِيعَ قَلْبِي، وَنُورَ صَدْرِي، وَجَلَاءَ حُزْنِي، وَذَهَابَ هَمِّي",
+          "translit": "Allâhumma innî 'abduka, ibnu 'abdika, ibnu amatika, nâsiyatî bi-yadika, mâdin fiyya hukmuka, 'adlun fiyya qadâ'uka. As'aluka bi-kulli ismin huwa lak, sammayta bihi nafsak, aw anzaltahu fî kitâbik, aw 'allamtahu ahadan min khalqik, awi-sta'tharta bihi fî 'ilmi-l-ghaybi 'indak, an taj'ala-l-Qur'âna rabî'a qalbî, wa nûra sadrî, wa jalâ'a huznî, wa dhahâba hammî.",
+          "fr": "Ô Allah, je suis Ton serviteur, fils de Ton serviteur, fils de Ta servante. Mon toupet est dans Ta main. Ton décret s'accomplit en moi. Ta sentence à mon égard est juste. Je Te demande par tous les Noms qui sont à Toi — ceux par lesquels Tu T'es nommé, que Tu as révélés dans Ton Livre, enseignés à l'une de Tes créatures, ou que Tu as gardés pour Toi dans la science du Caché — de faire du Coran le printemps de mon cœur, la lumière de ma poitrine, le départ de ma tristesse et la disparition de mon angoisse.",
+          "source": "Ahmad 3712, Ibn Hibbân — sahîh",
+          "quand": "La du'â la plus puissante contre la tristesse et l'angoisse — révélée à Ibn Mas'ûd. Le Prophète ﷺ a promis qu'Allah remplace alors la tristesse par la joie."
+        },
+        {
+          "id": "tawajjuh",
+          "ar": "اللَّهُمَّ رَحْمَتَكَ أَرْجُو، فَلَا تَكِلْنِي إِلَى نَفْسِي طَرْفَةَ عَيْنٍ، وَأَصْلِحْ لِي شَأْنِي كُلَّهُ، لَا إِلَهَ إِلَّا أَنْتَ",
+          "translit": "Allâhumma rahmataka arjû, fa-lâ takilnî ilâ nafsî tarfata 'ayn, wa aslih lî sha'nî kullah, lâ ilâha illâ Ant",
+          "fr": "Ô Allah, c'est en Ta miséricorde que j'espère. Ne m'abandonne pas à moi-même le temps d'un clin d'œil. Réforme pour moi toute mon affaire. Il n'y a de divinité que Toi.",
+          "source": "Abû Dâwûd 5090 — sahîh",
+          "quand": "Quand tu te sens dépassé par toi-même, par ta tête, par tes ruminations. Demande à ne pas être laissé seul avec toi."
+        },
+        {
+          "id": "lailaha_wahdahu",
+          "ar": "لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ",
+          "translit": "Lâ ilâha illâ-llâhu wahdahu lâ sharîka lah. Lahu-l-mulku wa lahu-l-hamd. Wa huwa 'alâ kulli shay'in qadîr.",
+          "fr": "Il n'y a de divinité qu'Allah, Unique, sans associé. À Lui la royauté, à Lui la louange. Il est tout-puissant sur toute chose.",
+          "source": "Bukhârî 6403, Muslim 2691",
+          "quand": "Le matin, le soir, ou à toute heure d'anxiété. Le rappel du tawhîd dissout la peur des causes secondaires."
+        }
+      ]
+    },
+
+    {
+      "id": "lexique",
+      "titre_ar": "المُفْرَدَات",
+      "titre_translit": "Al-Mufradât",
+      "titre_fr": "Le vocabulaire de l'anxiété",
+      "description": "Les mots arabes qui distinguent les différents visages de l'anxiété. Connaître les mots, c'est apprendre à se connaître.",
+      "entrees": [
+        {
+          "id": "hamm",
+          "ar": "هَمّ",
+          "translit": "Hamm",
+          "definition": "L'anxiété tournée vers le futur. Le 'et si'. L'oppression de l'inconnu qui vient."
+        },
+        {
+          "id": "huzn",
+          "ar": "حُزْن",
+          "translit": "Huzn",
+          "definition": "La tristesse tournée vers le passé. Le 'j'aurais dû'. Le poids d'une perte ou d'un regret."
+        },
+        {
+          "id": "ghamm",
+          "ar": "غَمّ",
+          "translit": "Ghamm",
+          "definition": "L'angoisse oppressante, sans objet précis. Le serrement de poitrine."
+        },
+        {
+          "id": "khawf",
+          "ar": "خَوْف",
+          "translit": "Khawf",
+          "definition": "La peur identifiée — d'une chose, d'une personne, d'une situation précise. Différente de l'anxiété diffuse."
+        },
+        {
+          "id": "jaza",
+          "ar": "جَزَع",
+          "translit": "Jaza'",
+          "definition": "La panique paralysante. L'angoisse qui submerge et bloque toute action."
+        },
+        {
+          "id": "yas",
+          "ar": "يَأْس",
+          "translit": "Ya's",
+          "definition": "Le désespoir. Croire que la miséricorde d'Allah n'est plus possible. Considéré comme une maladie spirituelle grave."
+        },
+        {
+          "id": "qanut",
+          "ar": "قُنُوط",
+          "translit": "Qunût",
+          "definition": "Désespoir profond et durable. Mentionné dans le Coran (39:53) comme une posture interdite au croyant."
+        },
+        {
+          "id": "wasawis",
+          "ar": "وَسَاوِس",
+          "translit": "Wasâwis",
+          "definition": "Les chuchotements répétitifs — pensées intrusives qui tournent en boucle. Peuvent être satanique (de Shaytân) ou intérieures (de l'âme)."
+        },
+        {
+          "id": "khawatir",
+          "ar": "خَوَاطِر",
+          "translit": "Khawâtir",
+          "definition": "Les pensées qui passent — sans qu'on les ait demandées. Ne sont pas des péchés tant qu'on ne les choisit pas."
+        },
+        {
+          "id": "qalaq",
+          "ar": "قَلَق",
+          "translit": "Qalaq",
+          "definition": "L'agitation, l'instabilité du cœur. Le mot moderne arabe le plus proche de 'anxiété'."
+        },
+        {
+          "id": "itmiminan",
+          "ar": "اطْمِئْنَان",
+          "translit": "Iṭmi'nân",
+          "definition": "L'apaisement, le repos du cœur après l'agitation. État recherché par le dhikr (Ar-Ra'd 13:28)."
+        },
+        {
+          "id": "sakina",
+          "ar": "سَكِينَة",
+          "translit": "Sakîna",
+          "definition": "La sérénité profonde, descendue d'Allah. Un état au-delà de l'iṭmi'nân — un don, pas un acquis."
+        },
+        {
+          "id": "tawakkul",
+          "ar": "تَوَكُّل",
+          "translit": "Tawakkul",
+          "definition": "La confiance active en Allah après avoir agi selon ses moyens. Ce n'est pas la passivité."
+        },
+        {
+          "id": "tafwid",
+          "ar": "تَفْوِيض",
+          "translit": "Tafwîd",
+          "definition": "La remise finale du résultat à Allah après l'action. Étape qui suit le tawakkul."
+        },
+        {
+          "id": "sabr",
+          "ar": "صَبْر",
+          "translit": "Sabr",
+          "definition": "L'endurance — accueillir l'épreuve sans plainte intérieure. Ce n'est pas suppression, c'est dignité."
+        },
+        {
+          "id": "rida",
+          "ar": "رِضَا",
+          "translit": "Ridâ",
+          "definition": "L'agrément du décret divin. Étape au-delà du sabr — non seulement endurer, mais accepter intérieurement."
+        }
+      ]
+    },
+
+    {
+      "id": "savants",
+      "titre_ar": "العُلَمَاء",
+      "titre_translit": "Al-'Ulamâ'",
+      "titre_fr": "Pour aller plus loin",
+      "description": "Les savants qui ont écrit sur l'âme et l'anxiété, classés par époque.",
+      "entrees": [
+        {
+          "id": "balkhi",
+          "nom": "Abû Zayd al-Balkhi",
+          "dates": "850-934 (IXe siècle, Khurâsân)",
+          "oeuvre": "Masâlih al-Abdân wa-l-Anfus (« Subsistance des corps et des âmes »)",
+          "apport": "Le premier psychologue cognitif de l'histoire. A décrit, 1100 ans avant la CBT moderne, les techniques de restructuration cognitive ('ilâj bi-d-didd — traitement par l'opposé) et la distinction entre causes connues et inconnues de l'anxiété."
+        },
+        {
+          "id": "ghazali",
+          "nom": "Abû Hâmid al-Ghazâlî",
+          "dates": "1058-1111 (XIe-XIIe siècle, Khurâsân puis Bagdad)",
+          "oeuvre": "Ihyâ' 'Ulûm ad-Dîn (« Revivification des sciences religieuses »)",
+          "apport": "Le grand maître de la science du cœur. A développé les concepts de murâqaba (vigilance), muhâsaba (examen), riyâda (entraînement de l'âme). Sa thérapie passe par le dhikr structuré, le sabr, et le tawakkul."
+        },
+        {
+          "id": "ibn_qayyim",
+          "nom": "Ibn al-Qayyim al-Jawziyya",
+          "dates": "1292-1350 (XIIIe-XIVe siècle, Damas)",
+          "oeuvre": "Madârij as-Sâlikîn (« Les stations des marcheurs »)",
+          "apport": "Disciple d'Ibn Taymiyya. A écrit sur les khawâtir (pensées intrusives), les stations spirituelles (tawakkul, tafwîd, ridâ, taslîm), et la médecine du cœur. Référence majeure pour la thérapie spirituelle islamique."
+        },
+        {
+          "id": "ibn_ataillah",
+          "nom": "Ibn 'Atâ'illâh al-Iskandarî",
+          "dates": "v. 1259-1309 (XIIIe-XIVe siècle, Alexandrie)",
+          "oeuvre": "Al-Hikam (« Les Sagesses »)",
+          "apport": "Maître soufi chadhili. Auteur des aphorismes les plus cités sur le lâcher-prise spirituel. « Repose-toi de la gestion de tes affaires : ce qu'un Autre a entrepris de faire à ta place, ne t'en occupe pas toi-même. »"
+        }
+      ]
+    }
+  ],
+
+  "metadata": {
+    "entrees_total": 38,
+    "versets": 12,
+    "hadiths": 9,
+    "duas": 6,
+    "lexique": 16,
+    "savants": 4,
+    "note": "Toutes les références doivent être validées par Nabs avec ses livres de référence avant intégration production. Numéros de hadiths donnés selon les conventions Sunnah.com (Bukhârî, Muslim, Tirmidhî, Abû Dâwûd, Nasâ'î, Ibn Mâja, Ahmad).",
+    "image_de_fond": "Style cohérent avec Cure Anxiété : eau/brume, lanterne arabe, sobre",
+    "ton": "Sobriété contemplative, pas d'emojis, calligraphies arabes en doré #C8A84A"
+  }
+}

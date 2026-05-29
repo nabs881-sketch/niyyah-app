@@ -4029,9 +4029,14 @@ function renderBabAnNafs() {
     if (p.id === 'colere') {
       try { var _cc = JSON.parse(safeGetItem('cure_colere') || '{}'); if (_cc.completed) _cureMarker = '<div style="position:absolute;top:6px;right:6px;font-size:14px;color:#C8A84A;text-shadow:0 0 6px rgba(200,168,75,0.5);" title="Tu as travers\u00e9 Riy\u00e2\u1e0dat an-nafs.">\u2726</div>'; } catch(e) {}
     }
+    if (p.id === 'anxiete') {
+      try { var _ca = JSON.parse(safeGetItem('cure_anxiete') || '{}'); if (_ca.completed) _cureMarker = '<div style="position:absolute;top:6px;right:6px;font-size:14px;color:#C8A84A;text-shadow:0 0 6px rgba(200,168,75,0.5);" title="Cure Anxi\u00e9t\u00e9 accomplie.">\u2726</div>'; } catch(e) {}
+    }
     html += '<button onclick="openBabPorte(\'' + p.id + '\')" style="position:relative;aspect-ratio:1/1;border-radius:12px;border:1px solid var(--gold,#C8A84A);background:url(assets/cards/porte-' + p.id + '.webp) center/cover no-repeat,#111;cursor:pointer;padding:0;">' + _cureMarker + '</button>';
   });
-  html += '</div></div>';
+  html += '</div>';
+  html += '<button onclick="openCoffretAnxiete()" style="display:block;width:100%;max-width:320px;margin:20px auto 0;padding:12px;border-radius:12px;border:1px solid rgba(200,168,75,0.2);background:none;color:rgba(200,168,75,0.6);font-size:13px;font-family:var(--serif);cursor:pointer;font-style:italic;">Coffret de l\u2019apaisement</button>';
+  html += '</div>';
   el.innerHTML = html;
 }
 
@@ -5444,6 +5449,7 @@ function openCureAnxiete() {
       + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:#C8A84A;direction:rtl;margin-bottom:12px;">\u0627\u0644\u0633\u0651\u064E\u0644\u0627\u0645</div>'
       + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;line-height:1.7;max-width:400px;margin:0 auto 32px;">Tu as travers\u00e9 la Cure. La porte reste ouverte derri\u00e8re toi.</div>'
       + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="padding:14px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:none;color:#C8A84A;font-family:var(--serif);font-size:14px;cursor:pointer;">Retour</button>'
+      + '<button onclick="openCoffretAnxiete()" style="display:block;width:100%;max-width:340px;margin:12px auto 0;padding:12px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:none;color:#C8A84A;font-size:13px;font-family:var(--serif);cursor:pointer;font-style:italic;">Coffret de l\u2019apaisement</button>'
       + '<button onclick="localStorage.removeItem(\'cure_anxiete\');openCureAnxiete()" style="display:block;margin:16px auto 0;background:none;border:none;font-size:12px;color:rgba(255,255,255,0.3);font-family:var(--serif);cursor:pointer;font-style:italic;">Recommencer un nouveau cycle</button>'
       + '</div>';
     return;
@@ -5540,6 +5546,7 @@ function _cureAnxieteWizardRender(el) {
       + (clot.ar ? '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:#C8A84A;direction:rtl;margin-bottom:12px;">' + escapeHtml(clot.ar) + '</div>' : '')
       + '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.85);line-height:1.7;max-width:360px;margin-bottom:24px;">' + escapeHtml(clot.fr || 'Tu as travers\u00e9 ce jour.') + '</div>'
       + '<button onclick="' + saveFn + '" style="display:block;width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:' + c + ';color:#fff;font-size:15px;font-weight:600;font-family:var(--serif);cursor:pointer;">' + (s.isLast ? 'Terminer la Cure' : 'Jour ' + dayNum + ' accompli') + '</button>'
+      + (s.isLast ? '<button onclick="openCoffretAnxiete()" style="display:block;width:100%;max-width:340px;margin:12px auto 0;padding:12px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:none;color:#C8A84A;font-size:13px;font-family:var(--serif);cursor:pointer;font-style:italic;">Coffret de l\u2019apaisement</button>' : '')
       + '</div>';
   }
 
@@ -5578,6 +5585,59 @@ _cureJourRenderers.anxiete_4 = function(el) { _cureAnxieteGenericDay(el, 4); };
 _cureJourRenderers.anxiete_5 = function(el) { _cureAnxieteGenericDay(el, 5); };
 _cureJourRenderers.anxiete_6 = function(el) { _cureAnxieteGenericDay(el, 6); };
 _cureJourRenderers.anxiete_7 = function(el) { _cureAnxieteGenericDay(el, 7); };
+
+// ── COFFRET ANXIÉTÉ ───────────────────────────────────────────────────────────
+function openCoffretAnxiete(section) {
+  var d = window.COFFRET_ANXIETE;
+  if (!d) { fetch('coffret-anxiete.json').then(function(r){return r.ok?r.json():null}).then(function(data){if(data){window.COFFRET_ANXIETE=data;openCoffretAnxiete(section);}else{showToast('Coffret \u2014 chargement impossible');}}).catch(function(){showToast('Coffret \u2014 chargement impossible');}); return; }
+  var existing = document.getElementById('coffret-anxiete-overlay');
+  if (existing) existing.remove();
+  var ov = document.createElement('div');
+  ov.id = 'coffret-anxiete-overlay';
+  ov.style.cssText = 'position:fixed;inset:0;z-index:9999;background:#0A0908;display:flex;flex-direction:column;overflow:hidden;animation:fadeSlideV2 0.4s ease forwards;';
+  var activeSection = section || (d.sections[0] && d.sections[0].id) || 'versets';
+  ov.innerHTML = _coffretAnxieteHtml(d, activeSection);
+  document.body.appendChild(ov);
+}
+window.openCoffretAnxiete = openCoffretAnxiete;
+
+function _coffretAnxieteHtml(d, activeId) {
+  var closeBtn = '<button onclick="document.getElementById(\'coffret-anxiete-overlay\').remove()" style="position:fixed;top:calc(var(--safe-top,0px)+12px);right:16px;z-index:10000;background:rgba(10,10,10,0.7);border:1px solid rgba(200,168,74,0.3);border-radius:50%;color:#C8A84A;cursor:pointer;padding:0;width:40px;height:40px;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px);font-size:18px;">\u2715</button>';
+  var html = closeBtn;
+  html += '<div style="padding:calc(var(--safe-top,0px)+16px) 20px 0;text-align:center;">';
+  html += '<div style="font-family:\'Scheherazade New\',serif;font-size:22px;color:#C8A84A;direction:rtl;margin-bottom:4px;">' + escapeHtml(d.titre_ar) + '</div>';
+  html += '<div style="font-family:var(--serif);font-size:11px;letter-spacing:2px;color:rgba(200,168,75,0.5);margin-bottom:16px;">' + escapeHtml(d.titre_fr.toUpperCase()) + '</div>';
+  html += '</div>';
+  // Tabs
+  html += '<div style="display:flex;gap:0;border-bottom:1px solid rgba(200,168,75,0.15);padding:0 12px;overflow-x:auto;flex-shrink:0;">';
+  d.sections.forEach(function(s) {
+    var active = s.id === activeId;
+    html += '<button onclick="document.getElementById(\'coffret-anxiete-overlay\').innerHTML=_coffretAnxieteHtml(window.COFFRET_ANXIETE,\'' + s.id + '\')" style="flex-shrink:0;padding:10px 14px;border:none;background:none;font-family:var(--serif);font-size:12px;color:' + (active ? '#C8A84A' : 'rgba(240,234,214,0.4)') + ';cursor:pointer;border-bottom:2px solid ' + (active ? '#C8A84A' : 'transparent') + ';letter-spacing:0.5px;">' + escapeHtml(s.titre_fr) + '</button>';
+  });
+  html += '</div>';
+  // Content
+  var sec = d.sections.find(function(s) { return s.id === activeId; });
+  if (!sec) return html;
+  html += '<div style="flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:16px 20px 100px;">';
+  if (sec.description) html += '<div style="font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:16px;line-height:1.5;">' + escapeHtml(sec.description) + '</div>';
+  sec.entrees.forEach(function(e) {
+    html += '<div style="border:1px solid rgba(200,168,75,0.12);border-radius:12px;padding:16px;margin-bottom:12px;background:rgba(200,168,75,0.03);">';
+    if (e.ar) html += '<div style="font-family:\'Scheherazade New\',serif;font-size:20px;color:#C8A84A;direction:rtl;text-align:right;line-height:1.6;margin-bottom:8px;">' + escapeHtml(e.ar) + '</div>';
+    if (e.translit) html += '<div style="font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(200,168,75,0.55);margin-bottom:6px;">' + escapeHtml(e.translit) + '</div>';
+    if (e.fr) html += '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.85);line-height:1.6;margin-bottom:6px;">' + escapeHtml(e.fr) + '</div>';
+    if (e.definition) html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.75);line-height:1.6;margin-bottom:6px;">' + escapeHtml(e.definition) + '</div>';
+    if (e.source) html += '<div style="font-size:11px;color:rgba(200,168,75,0.4);">\u2014 ' + escapeHtml(e.source) + '</div>';
+    if (e.quand) html += '<div style="font-size:12px;color:rgba(240,234,214,0.5);font-style:italic;line-height:1.5;margin-top:6px;border-top:1px solid rgba(200,168,75,0.08);padding-top:6px;">' + escapeHtml(e.quand) + '</div>';
+    // Savants format
+    if (e.nom) html += '<div style="font-family:var(--serif);font-size:16px;color:#C8A84A;margin-bottom:4px;">' + escapeHtml(e.nom) + (e.dates ? ' <span style="font-size:12px;color:rgba(200,168,75,0.5);">(' + escapeHtml(e.dates) + ')</span>' : '') + '</div>';
+    if (e.oeuvre) html += '<div style="font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(240,234,214,0.7);margin-bottom:4px;">' + escapeHtml(e.oeuvre) + '</div>';
+    if (e.apport) html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.75);line-height:1.6;">' + escapeHtml(e.apport) + '</div>';
+    html += '</div>';
+  });
+  html += '</div>';
+  return html;
+}
+window._coffretAnxieteHtml = _coffretAnxieteHtml;
 
 // ── Backward-compatible wrappers ──
 function openCureColereJour1() { openCureJour('colere', 1); }
@@ -13808,6 +13868,8 @@ window.CURE_COLERE_CYCLE1 = null;
 fetch('cure-colere-cycle1.json').then(function(r){return r.ok?r.json():null}).then(function(d){if(d){window.CURE_COLERE_CYCLE1=d;console.log('Cure Colère Cycle 1 loaded')}}).catch(function(){});
 window.CURE_ANXIETE_CYCLE1 = null;
 fetch('cure-anxiete-cycle1.json').then(function(r){return r.ok?r.json():null}).then(function(d){if(d){window.CURE_ANXIETE_CYCLE1=d;console.log('Cure Anxiété Cycle 1 loaded')}}).catch(function(){});
+window.COFFRET_ANXIETE = null;
+fetch('coffret-anxiete.json').then(function(r){return r.ok?r.json():null}).then(function(d){if(d){window.COFFRET_ANXIETE=d;console.log('Coffret Anxiété loaded')}}).catch(function(){});
 
 // Boot after V1's own DOMContentLoaded fires
 if (document.readyState === 'loading') {
