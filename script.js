@@ -8250,35 +8250,6 @@ const ONBOARD_SLIDES = [
     + '<button class="onboard-btn" onclick="onboardNext()">'+t('onboard_next')+'</button>'
     + '</div>'
 ];
-function obToggleNotif(el, key) {
-  el.classList.toggle('active');
-  var isOn = el.classList.contains('active');
-  safeSetItem('niyyah_notif_' + key, isOn ? '1' : '0');
-}
-function obActivateNotifs() {
-  // Store prefs (defaults already set to '1' by active class)
-  if (!localStorage.getItem('niyyah_notif_murmures')) safeSetItem('niyyah_notif_murmures', '1');
-  var anyOn = document.querySelector('.ob-notif-card.active');
-  if (anyOn && 'Notification' in window) {
-    Notification.requestPermission().then(function(perm) {
-      if (perm === 'granted') {
-        safeSetItem('niyyah_notif_perm', '1');
-        safeSetItem('niyyah_notif_asked', '1');
-        if (typeof scheduleAllNotifications === 'function') scheduleAllNotifications();
-      }
-      onboardFinish();
-    }).catch(function() { onboardFinish(); });
-  } else {
-    onboardFinish();
-  }
-}
-function obSkipNotifs() {
-  safeSetItem('niyyah_notif_murmures', '0');
-  safeSetItem('niyyah_notif_rituels', '0');
-  safeSetItem('niyyah_notif_encourage', '0');
-  safeSetItem('niyyah_notif_asked', '1');
-  onboardFinish();
-}
 function obTypeWriter(elId, text, i) {
   var el = document.getElementById(elId);
   if (!el || i >= text.length) return;
