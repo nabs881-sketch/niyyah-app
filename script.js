@@ -4032,6 +4032,9 @@ function renderBabAnNafs() {
     if (p.id === 'anxiete') {
       try { var _ca = JSON.parse(safeGetItem('cure_anxiete') || '{}'); if (_ca.completed) _cureMarker = '<div style="position:absolute;top:6px;right:6px;font-size:14px;color:#C8A84A;text-shadow:0 0 6px rgba(200,168,75,0.5);" title="Cure Anxi\u00e9t\u00e9 accomplie.">\u2726</div>'; } catch(e) {}
     }
+    if (p.id === 'regard') {
+      try { var _cr = JSON.parse(safeGetItem('cure_regard') || '{}'); if (_cr.completed) _cureMarker = '<div style="position:absolute;top:6px;right:6px;font-size:14px;color:#C8A84A;text-shadow:0 0 6px rgba(200,168,75,0.5);" title="Cure Regard accomplie.">\u2726</div>'; } catch(e) {}
+    }
     html += '<button onclick="openBabPorte(\'' + p.id + '\')" style="position:relative;aspect-ratio:1/1;border-radius:12px;border:1px solid var(--gold,#C8A84A);background:url(assets/cards/porte-' + p.id + '.webp) center/cover no-repeat,#111;cursor:pointer;padding:0;">' + _cureMarker + '</button>';
   });
   html += '</div>';
@@ -4060,6 +4063,7 @@ function openBabPorte(id, step) {
   // Colère → directement Cure 7 jours
   if (id === 'colere') { openCureColere(); return; }
   if (id === 'anxiete') { openCureAnxiete(); return; }
+  if (id === 'regard') { openCureRegard(); return; }
   var porte = BAB_AN_NAFS.portes.find(function(p) { return p.id === id; });
   if (!porte) { console.warn('Bab an-Nafs: porte manquante:', id); return; }
   // Porte vide ou non validée sans contenu → écran "en préparation"
@@ -4840,7 +4844,7 @@ function _injectCureProgress(current) {
   for (var d = 1; d <= 7; d++) {
     var done = d < current, active = d === current, future = d > current;
     var _prt = (_cureWizardState && _cureWizardState.porte) || 'colere';
-    var _prtColor = _prt === 'anxiete' ? '#3F51B5' : '#a3372a';
+    var _prtColor = (_curePorteConfig[_prt] && _curePorteConfig[_prt].color) || (_prt === 'colere' ? '#a3372a' : '#3F51B5');
     var bg = done ? '#C8A84A' : active ? _prtColor : 'transparent';
     var bdr = done ? '#C8A84A' : active ? _prtColor : 'rgba(255,255,255,0.2)';
     var col = done || active ? '#fff' : 'rgba(255,255,255,0.3)';
@@ -5458,7 +5462,7 @@ function openCureAnxiete() {
     document.body.classList.add('in-bab-an-nafs');
     var el2 = document.getElementById('babAnNafsContent');
     if (!el2) return;
-    var c = '#3F51B5';
+    var c = _getCureColor();
     el2.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
       + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:#C8A84A;direction:rtl;margin-bottom:12px;">\u0627\u0644\u0633\u0651\u064E\u0644\u0627\u0645</div>'
       + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;line-height:1.7;max-width:400px;margin:0 auto 32px;">Tu as travers\u00e9 la Cure. La porte reste ouverte derri\u00e8re toi.</div>'
@@ -5472,9 +5476,27 @@ function openCureAnxiete() {
 }
 window.openCureAnxiete = openCureAnxiete;
 
+var _curePorteConfig = {
+  anxiete: { color: '#3F51B5', dataKey: 'CURE_ANXIETE_CYCLE1', storageKey: 'cure_anxiete', imgDir: 'assets/cure-anxiete' },
+  regard:  { color: '#6B5B9A', dataKey: 'CURE_REGARD_CYCLE1',  storageKey: 'cure_regard',  imgDir: 'assets/cure-regard' }
+};
+function _getCureData() {
+  var porte = (_cureWizardState && _cureWizardState.porte) || 'anxiete';
+  var cfg = _curePorteConfig[porte] || _curePorteConfig.anxiete;
+  return window[cfg.dataKey] || null;
+}
+function _getCureColor() {
+  var porte = (_cureWizardState && _cureWizardState.porte) || 'anxiete';
+  return (_curePorteConfig[porte] || _curePorteConfig.anxiete).color;
+}
+function _getCureImgDir() {
+  var porte = (_cureWizardState && _cureWizardState.porte) || 'anxiete';
+  return (_curePorteConfig[porte] || _curePorteConfig.anxiete).imgDir;
+}
+
 function _cureAnxieteGenericDay(el, dayNum) {
-  var c = '#3F51B5';
-  var data = window.CURE_ANXIETE_CYCLE1;
+  var c = _getCureColor();
+  var data = _getCureData();
   var j = data && data.jours && data.jours['j' + dayNum];
   if (!j) { el.innerHTML = '<div style="padding:60px 24px;text-align:center;color:rgba(255,255,255,0.4);">Contenu en cours de chargement\u2026</div>'; return; }
   var isLast = (dayNum === 7);
@@ -5772,7 +5794,7 @@ function _dscDiagText(o, dscId) {
 function _dscUpdate(dscId) {
   var diagEl = document.getElementById(dscId + '_diag');
   if (!diagEl) return;
-  var data = window.CURE_ANXIETE_CYCLE1;
+  var data = _getCureData();
   if (!data) return;
   var o = null;
   Object.keys(data.jours).forEach(function(jk) { data.jours[jk].outils.forEach(function(t) { if (('_dsc_' + t.id) === dscId) o = t; }); });
@@ -5964,7 +5986,7 @@ function _triAnswer(triId, sk, qIdx, answer, correct) {
   safeSetItem(sk, JSON.stringify(saved));
   var fbEl = document.getElementById(triId + '_fb');
   if (fbEl) {
-    var data = window.CURE_ANXIETE_CYCLE1;
+    var data = _getCureData();
     var o = null;
     Object.keys(data.jours).forEach(function(jk) { data.jours[jk].outils.forEach(function(t) { if (t.id === triId.replace('_tri_', '')) o = t; }); });
     var fbText = '';
@@ -6344,7 +6366,7 @@ function _dnd3Classify(dndId, sk, pIdx, catId, nb) {
   saved.classement['p' + pIdx] = catId;
   safeSetItem(sk, JSON.stringify(saved));
   // Re-render the whole outil
-  var data = window.CURE_ANXIETE_CYCLE1;
+  var data = _getCureData();
   if (!data) return;
   var o = null;
   Object.keys(data.jours).forEach(function(jk) {
@@ -6395,7 +6417,7 @@ function _seqFieldUpdate(seqId, sk, etapeIdx, fieldIdx, value) {
   saved['etape_' + etapeIdx][fieldIdx] = value;
   safeSetItem(sk, JSON.stringify(saved));
   // Re-render to unlock next step
-  var data = window.CURE_ANXIETE_CYCLE1;
+  var data = _getCureData();
   if (!data) return;
   var o = null;
   Object.keys(data.jours).forEach(function(jk) {
@@ -6405,7 +6427,7 @@ function _seqFieldUpdate(seqId, sk, etapeIdx, fieldIdx, value) {
   var el = document.getElementById(seqId);
   if (!el) return;
   var parent = el.parentNode;
-  var c = '#3F51B5';
+  var c = _getCureColor();
   var newHtml = _outilAnxieteRenderers.checkboxes_sequentielles(o, c);
   // Extract inner content only (between the seq div tags)
   var temp = document.createElement('div');
@@ -6528,7 +6550,7 @@ function _cbDynUpdate(outilId, optId, checked, sk, msgId) {
   if (!checked) saved = saved.filter(function(x) { return x !== optId; });
   safeSetItem(sk, JSON.stringify(saved));
   // Re-render message
-  var data = window.CURE_ANXIETE_CYCLE1;
+  var data = _getCureData();
   if (!data) return;
   var o = null;
   Object.keys(data.jours).forEach(function(jk) {
@@ -6610,11 +6632,11 @@ function _cureAnxieteWizardRender(el) {
   if (!step) return;
   var c = s.c;
   var dayNum = s.dayNum;
-  var data = window.CURE_ANXIETE_CYCLE1;
+  var data = _getCureData();
   var j = data && data.jours && data.jours['j' + dayNum];
   var totalSteps = s.steps.length;
 
-  var imgPath = 'assets/cure-anxiete/j' + dayNum + '.webp';
+  var imgPath = _getCureImgDir() + '/j' + dayNum + '.webp';
   var bgWrap = '<div style="position:fixed;inset:0;z-index:-1;"><img src="' + imgPath + '" style="width:100%;height:100%;object-fit:cover;" alt=""><div style="position:absolute;inset:0;background:rgba(0,0,0,0.7);"></div></div>';
   var backBtn = '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="position:fixed;top:calc(var(--safe-top,0px) + 12px);left:16px;z-index:9990;background:rgba(10,10,10,0.7);border:1px solid rgba(200,168,74,0.3);border-radius:50%;color:#C8A84A;cursor:pointer;padding:0;width:40px;height:40px;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#C8A84A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>';
   var progress = '<div style="text-align:center;margin-bottom:24px;font-size:15px;letter-spacing:0.2em;color:rgba(200,168,75,0.4);">' + (s.step + 1) + '/' + totalSteps + '</div>';
@@ -6753,12 +6775,14 @@ function _cureAnxieteWizardRender(el) {
 }
 
 function _cureAnxieteSave(num) {
+  var porte = (_cureWizardState && _cureWizardState.porte) || 'anxiete';
+  var sk = (_curePorteConfig[porte] && _curePorteConfig[porte].storageKey) || 'cure_anxiete';
   var nextDay = num < 7 ? num + 1 : 'complete';
   try {
-    var cure = JSON.parse(safeGetItem('cure_anxiete') || '{}');
+    var cure = JSON.parse(safeGetItem(sk) || '{}');
     if (num === 1) { cure.started = cure.started || new Date().toISOString(); }
     if (num === 7) {
-      var orientation = safeGetItem('cure_anxiete_j7_orientation') || 'veiller';
+      var orientation = safeGetItem(sk + '_j7_orientation') || 'veiller';
       cure.orientation = orientation;
       if (orientation === 'reprendre') {
         cure.current_day = 1;
@@ -6768,27 +6792,28 @@ function _cureAnxieteSave(num) {
         cure.active = false;
         cure.completed = true;
         cure.completed_date = new Date().toISOString();
-        var count = parseInt(safeGetItem('cures_anxiete_count') || '0', 10);
-        safeSetItem('cures_anxiete_count', String(count + 1));
+        var count = parseInt(safeGetItem('cures_' + porte + '_count') || '0', 10);
+        safeSetItem('cures_' + porte + '_count', String(count + 1));
       }
     }
     if (num < 7) cure.current_day = nextDay;
     cure['jour' + num + '_date'] = new Date().toISOString();
-    safeSetItem('cure_anxiete', JSON.stringify(cure));
+    safeSetItem(sk, JSON.stringify(cure));
   } catch(e) {}
   // Murmure de sortie
-  var data = window.CURE_ANXIETE_CYCLE1;
+  var data = _getCureData();
   var j = data && data.jours && data.jours['j' + num];
   var murmure = j && j.murmure_sortie_sanctuaire;
   if (murmure && murmure.fr) {
     safeSetItem('niyyah_murmure_retour', murmure.fr);
   }
   if (num === 7) {
-    openCureAnxiete();
+    var _openFn = { anxiete: openCureAnxiete, regard: openCureRegard };
+    (_openFn[porte] || openCureAnxiete)();
     return;
   }
   // Confirmation screen with next day preview
-  var c = '#3F51B5';
+  var c = _getCureColor();
   var nextJ = data && data.jours && data.jours['j' + (num + 1)];
   var nextTitle = (nextJ && nextJ.titre_jour) || '';
   var el = document.getElementById('babAnNafsContent');
@@ -6817,6 +6842,50 @@ _cureJourRenderers.anxiete_4 = function(el) { _cureAnxieteGenericDay(el, 4); };
 _cureJourRenderers.anxiete_5 = function(el) { _cureAnxieteGenericDay(el, 5); };
 _cureJourRenderers.anxiete_6 = function(el) { _cureAnxieteGenericDay(el, 6); };
 _cureJourRenderers.anxiete_7 = function(el) { _cureAnxieteGenericDay(el, 7); };
+
+// ── CURE REGARD ───────────────────────────────────────────────────────────────
+function openCureRegard() {
+  var sk = 'cure_regard';
+  var cure = {}; try { cure = JSON.parse(safeGetItem(sk) || '{}'); } catch(e) {}
+  var day = cure.current_day || 1;
+  if (cure.completed === true) day = 'complete';
+  var today = new Date().toISOString().slice(0, 10);
+  var lastDay = cure['jour' + (day - 1) + '_date'] ? cure['jour' + (day - 1) + '_date'].slice(0, 10) : null;
+  _cureWizardState.porte = 'regard';
+  if (lastDay === today && day !== 'complete' && day > 1) {
+    _cureTransition(day - 1);
+    return;
+  }
+  if (day === 'complete') {
+    _babImmersion = true; _showAideBtn(); var nb2 = document.getElementById('nav-bar-v2'); if (nb2) nb2.classList.add('hidden-immersion');
+    document.body.classList.add('in-bab-an-nafs');
+    var el2 = document.getElementById('babAnNafsContent');
+    if (!el2) return;
+    var c = '#6B5B9A';
+    el2.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
+      + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:#C8A84A;direction:rtl;margin-bottom:12px;">\u0627\u0644\u0646\u0651\u064E\u0638\u064E\u0631</div>'
+      + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;line-height:1.7;max-width:400px;margin:0 auto 32px;">Tu as travers\u00e9 la Cure. La porte reste ouverte derri\u00e8re toi.</div>'
+      + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="padding:14px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:none;color:#C8A84A;font-family:var(--serif);font-size:14px;cursor:pointer;">Retour</button>'
+      + '<button onclick="localStorage.removeItem(\'' + sk + '\');openCureRegard()" style="display:block;margin:16px auto 0;background:none;border:none;font-size:12px;color:rgba(255,255,255,0.3);font-family:var(--serif);cursor:pointer;font-style:italic;">Recommencer un nouveau cycle</button>'
+      + '</div>';
+    return;
+  }
+  openCureJour('regard', typeof day === 'number' ? day : 1);
+}
+window.openCureRegard = openCureRegard;
+
+function _cureRegardGenericDay(el, dayNum) {
+  _cureWizardState.porte = 'regard';
+  _cureAnxieteGenericDay(el, dayNum);
+}
+
+_cureJourRenderers.regard_1 = function(el) { _cureRegardGenericDay(el, 1); };
+_cureJourRenderers.regard_2 = function(el) { _cureRegardGenericDay(el, 2); };
+_cureJourRenderers.regard_3 = function(el) { _cureRegardGenericDay(el, 3); };
+_cureJourRenderers.regard_4 = function(el) { _cureRegardGenericDay(el, 4); };
+_cureJourRenderers.regard_5 = function(el) { _cureRegardGenericDay(el, 5); };
+_cureJourRenderers.regard_6 = function(el) { _cureRegardGenericDay(el, 6); };
+_cureJourRenderers.regard_7 = function(el) { _cureRegardGenericDay(el, 7); };
 
 // ── COFFRET ANXIÉTÉ ───────────────────────────────────────────────────────────
 // ── COFFRET GÉNÉRIQUE (réutilisé par Anxiété + Colère) ────────────────────────
@@ -15108,6 +15177,8 @@ window.COFFRET_ANXIETE = null;
 fetch('coffret-anxiete.json').then(function(r){return r.ok?r.json():null}).then(function(d){if(d){window.COFFRET_ANXIETE=d;console.log('Coffret Anxiété loaded')}}).catch(function(){});
 window.COFFRET_COLERE = null;
 fetch('coffret-colere.json').then(function(r){return r.ok?r.json():null}).then(function(d){if(d){window.COFFRET_COLERE=d;console.log('Coffret Colère loaded')}}).catch(function(){});
+window.CURE_REGARD_CYCLE1 = null;
+fetch('cure-regard-cycle1.json').then(function(r){return r.ok?r.json():null}).then(function(d){if(d){window.CURE_REGARD_CYCLE1=d;console.log('Cure Regard Cycle 1 loaded')}}).catch(function(){});
 
 // Boot after V1's own DOMContentLoaded fires
 if (document.readyState === 'loading') {

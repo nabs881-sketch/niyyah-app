@@ -1,0 +1,1291 @@
+{
+  "id": "regard",
+  "cycle": 1,
+  "version": "1.0",
+  "date_creation": "2026-05-30",
+  "porte": {
+    "nom_fr": "Regard",
+    "nom_ar": "النَّظَر",
+    "translitteration": "An-Nadhar",
+    "couleur": "#6B5B9A"
+  },
+  "principes_editoriaux": {
+    "ton": "Bobin / McCarthy / Ghazâlî — sobriété contemplative",
+    "anti_gamification": "Pas de score, pas de streak imposé, pas de pression",
+    "duree_par_jour": "10 à 13 minutes (5 blocs)",
+    "approche": "Méthode ghazâlienne enrichie : verset central + sage classique + outils CBT/ACT + dhikr quantifié + pratique corporelle. Ratio cible : 60-65% islamique / 35-40% psy structurant.",
+    "structure_jour": "5 blocs : Ouverture spirituelle → Sagesse traditionnelle → Outils psy → Dhikr quantifié → Pratique corporelle.",
+    "specificite": "Cure traitant le regard pudique (ghadd al-basar). Aborde frontalement pornographie et scroll compulsif comme régulation émotionnelle dysfonctionnelle. Genre-neutre. Évite shame, favorise tawba et reconstruction."
+  },
+  "jours": {
+    "j1": {
+      "numero": 1,
+      "station_ar": "التَّشْخِيص",
+      "station_translitteration": "At-Tashkhîs",
+      "station_fr": "Le Constat",
+      "titre_jour": "Ce que mes yeux ont vu",
+      "image_fond": "j1.webp",
+      "duree_estimee_min": 10,
+      "duree_estimee_max": 13,
+      "bloc_1_ouverture_spirituelle": {
+        "type": "verset_central",
+        "titre_bloc": "Le verset du jour",
+        "verset": {
+          "reference": "Al-Isrâ' 17:36",
+          "ar": "وَلَا تَقْفُ مَا لَيْسَ لَكَ بِهِ عِلْمٌ ۚ إِنَّ السَّمْعَ وَالْبَصَرَ وَالْفُؤَادَ كُلُّ أُولَٰئِكَ كَانَ عَنْهُ مَسْئُولًا",
+          "translit": "Wa lâ taqfu mâ laysa laka bihi 'ilm. Inna-s-sam'a wa-l-basara wa-l-fu'âda kullu ulâ'ika kâna 'anhu mas'ûlâ.",
+          "fr": "Ne poursuis pas ce dont tu n'as pas connaissance. L'ouïe, la vue et le cœur — tous seront interrogés."
+        },
+        "contexte_revelation": "Verset mecquois, dans la sourate du Voyage Nocturne. Allah pose un principe de responsabilité totale : les trois portes par lesquelles entre la connaissance — l'ouïe, la vue, le cœur — sont des organes confiés, et chacun rendra compte de ce qu'il a fait passer.",
+        "sens_pour_aujourdhui": "Tes yeux ne sont pas à toi. Ils sont un dépôt (amâna). Allah te demandera : qu'as-tu regardé ? Ce n'est pas une menace — c'est une dignité. Tu portes en toi quelque chose qui sera interrogé. Aujourd'hui, tu fais l'inventaire avant que l'inventaire ne te soit fait. Pas par peur — par lucidité.",
+        "sources_tafsir": ["Tafsîr Ibn Kathîr, sur Al-Isrâ' 17:36", "Tafsîr al-Sa'dî"]
+      },
+      "bloc_2_sagesse": {
+        "type": "parole_de_sage",
+        "titre_bloc": "Parole de Ghazâlî sur les dangers du regard",
+        "parole": {
+          "texte": "Sache que l'œil est l'une des armes les plus tranchantes du diable. Il pénètre dans le cœur par un seul regard ce qui ne pénétrerait pas par mille mots. Le regard est une flèche empoisonnée parmi les flèches d'Iblîs. Celui qui baisse le regard pour Allah, Allah remplit son cœur d'une douceur qu'il sentira jusqu'au jour où il Le rencontrera.",
+          "auteur": "Abû Hâmid al-Ghazâlî",
+          "dates_auteur": "1058-1111",
+          "oeuvre": "Ihyâ' 'Ulûm ad-Dîn, Kitâb âfât al-lisân wa-l-jawârih",
+          "siecle": "XIe-XIIe siècle",
+          "note": "Ghazâlî consacre un chapitre entier aux dangers du regard. Il insiste sur le caractère pénétrant du regard — pourquoi un seul regard peut être plus dévastateur que mille mots. Il propose une méthode systématique : reconnaître, contenir, substituer."
+        }
+      },
+      "introduction_avant_outils": "Tu as lu le verset. Tu as entendu Ghazâlî.\n\nMaintenant — fais l'inventaire. Sans honte. Avec lucidité.",
+      "bloc_3_outils_psy": [
+        {
+          "id": "inventaire_conscient",
+          "ordre": 1,
+          "type": "champ_texte_long",
+          "titre": "L'inventaire des 24 heures",
+          "consigne": "En 24h, qu'ont vu tes yeux qui mérite d'être nommé ? Sois honnête. Ce que tu écris reste avec toi.",
+          "amorce": "Mes yeux ont vu",
+          "champ": {
+            "placeholder": "...",
+            "max_caracteres": 600,
+            "stockage": "cure_regard_j1_inventaire"
+          },
+          "note_psy": "Self-monitoring (CBT — Aaron Beck). Première étape de toute thérapie comportementale. Tu ne peux pas changer ce que tu ne regardes pas en face.",
+          "note_spi": "Muhâsaba initiale — l'examen lucide sans condamnation, méthode du Hârith al-Muhâsibî (781-857)."
+        },
+        {
+          "id": "trois_cercles",
+          "ordre": 2,
+          "type": "radio_unique",
+          "titre": "Les trois regards",
+          "introduction": "Le Prophète ﷺ a dit à 'Alî : « Ne fais pas suivre un regard d'un autre. Le premier est pour toi, le second est contre toi. » (Tirmidhî 2777)",
+          "consigne": "Parmi ces 3 regards, lequel a dominé tes 24h ?",
+          "options": [
+            {
+              "id": "licite",
+              "label_ar": "نَظَر مُبَاح",
+              "label_fr": "Regard licite",
+              "definition": "Ce que je dois ou peux regarder — proches mahram, paysage, savoir, travail."
+            },
+            {
+              "id": "surprise",
+              "label_ar": "نَظَر فُجَاءَة",
+              "label_fr": "Regard de surprise",
+              "definition": "Le premier regard, involontaire, qui survient sans qu'on l'ait cherché. Pardonné."
+            },
+            {
+              "id": "volontaire",
+              "label_ar": "نَظَر مُتَعَمَّد",
+              "label_fr": "Regard volontaire prolongé",
+              "definition": "Le second regard, choisi, prolongé. C'est lui que la cure traite."
+            }
+          ],
+          "stockage": "cure_regard_j1_categorie",
+          "note_psy": "Catégorisation cognitive (CBT) — sortir du tout-ou-rien. Distinguer ce qui est péché de ce qui ne l'est pas.",
+          "note_spi": "Distinction prophétique transmise par 'Alî — Tirmidhî 2777, hasan sahîh."
+        },
+        {
+          "id": "carte_declencheurs",
+          "ordre": 3,
+          "type": "checkboxes_multiple",
+          "titre": "Où ça se passe",
+          "introduction": "Identifier les déclencheurs est plus efficace que combattre les conséquences.",
+          "consigne": "Coche TOUT ce qui te concerne. Plusieurs réponses possibles.",
+          "options": [
+            { "id": "soir_seul", "label_fr": "Seul le soir" },
+            { "id": "tel_lit", "label_fr": "Téléphone au lit" },
+            { "id": "reseaux", "label_fr": "Réseaux sociaux (Insta, Tiktok, Twitter)" },
+            { "id": "pubs", "label_fr": "Publicités, vidéos suggérées" },
+            { "id": "ennui", "label_fr": "Quand je m'ennuie" },
+            { "id": "stress", "label_fr": "Quand je suis stressé(e)" },
+            { "id": "solitude", "label_fr": "Quand je me sens seul(e)" },
+            { "id": "fatigue", "label_fr": "Quand je suis fatigué(e)" },
+            { "id": "rue", "label_fr": "Dans la rue, transports" },
+            { "id": "autre", "label_fr": "Autre", "champ_libre": true }
+          ],
+          "stockage": "cure_regard_j1_declencheurs",
+          "note_psy": "Trigger identification (CBT — Family Strategies Counseling). Composante critique du traitement de toute addiction comportementale.",
+          "note_spi": "Connaître ses asbâb (causes) — méthode systématique d'al-Muhâsibî dans Ar-Ri'âya li-huqûq Allâh."
+        },
+        {
+          "id": "depistage_pornographie",
+          "ordre": 4,
+          "type": "checkboxes_avec_message_dynamique",
+          "titre": "Honnêteté avec soi",
+          "introduction": "Si la pornographie ou les contenus sexualisés font partie de ce que tu regardes — sois honnête. Pas de honte. Coche ce qui s'applique :",
+          "options": [
+            {
+              "id": "usage_quotidien",
+              "label": "J'y reviens presque chaque jour de manière automatique"
+            },
+            {
+              "id": "impact_sommeil",
+              "label": "Cela impacte mon sommeil (j'y reste tard malgré ma fatigue)"
+            },
+            {
+              "id": "impact_relations",
+              "label": "Cela impacte mes relations ou ma vie de couple"
+            },
+            {
+              "id": "tentative_arret",
+              "label": "J'ai déjà essayé d'arrêter sans tenir plus d'une semaine"
+            }
+          ],
+          "stockage": "cure_regard_depistage",
+          "message_si_coche": {
+            "titre": "Cela ressemble à une dépendance — pas une faute morale.",
+            "texte": "Allah n'a pas créé de maladie sans son remède (Tirmidhî 2038). Une dépendance comportementale est une maladie qui se soigne. La cure t'accompagne — mais un thérapeute spécialisé en dépendances comportementales peut accélérer ton chemin. Cherche-en un en parallèle. Ce n'est pas une honte, c'est une intelligence."
+          },
+          "message_si_aucun_coche": {
+            "texte": "Bien. Continue avec lucidité."
+          }
+        }
+      ],
+      "bloc_4_dhikr_quantifie": {
+        "type": "prescription_dhikr",
+        "titre_bloc": "Le dhikr du jour",
+        "introduction": "Le constat appelle la demande de pardon. Pas par peur — par dignité retrouvée. L'istighfâr nettoie le cœur avant de continuer.",
+        "dhikr": {
+          "ar": "أَسْتَغْفِرُ اللَّهَ الْعَظِيمَ وَأَتُوبُ إِلَيْهِ",
+          "translit": "Astaghfirullâhal-'Adhîma wa atûbu ilayh",
+          "fr": "Je demande pardon à Allah l'Immense et je me repens à Lui."
+        },
+        "quantite": 100,
+        "moment_recommande": "Après ta prière de Fajr (ou maintenant si tu lis ce soir, et à Fajr demain).",
+        "duree_estimee_sec": 300,
+        "justification": {
+          "texte": "Le Prophète ﷺ a dit : « Celui qui s'astreint à l'istighfâr, Allah lui ouvre une issue à toute angoisse et un chemin à toute oppression. »",
+          "source": "Abû Dâwûd 1518, Ibn Mâja 3819, Ahmad — hasan"
+        },
+        "comment_pratiquer": "Pas en mode robot. À voix basse ou silencieuse. Chaque fois, prends conscience qu'Allah entend. Si tu perds le compte, ce n'est pas grave — recommence là où tu en es.",
+        "stockage": "cure_regard_j1_dhikr_done"
+      },
+      "bloc_5_pratique_corporelle": {
+        "type": "geste_corporel",
+        "titre_bloc": "Le silence des yeux",
+        "introduction": "Tes yeux travaillent sans cesse. Aujourd'hui, tu leur donnes du repos.",
+        "instructions": [
+          "Après chaque salât aujourd'hui (5 fois), reste assis 2 minutes.",
+          "Ferme les yeux complètement.",
+          "Dis intérieurement, sans bouger les lèvres :",
+          "« Allâhumma 'allimnî mâ yanfa'unî »",
+          "(Ô Allah, enseigne-moi ce qui m'est utile)",
+          "Puis observe simplement le silence intérieur.",
+          "Pas besoin de plus."
+        ],
+        "phrase_a_repeter": {
+          "ar": "اللَّهُمَّ عَلِّمْنِي مَا يَنْفَعُنِي",
+          "translit": "Allâhumma 'allimnî mâ yanfa'unî",
+          "fr": "Ô Allah, enseigne-moi ce qui m'est utile"
+        },
+        "duree_min": 10,
+        "justification": {
+          "texte": "Cette du'â est de la sunna prophétique. Le Prophète ﷺ a recommandé de demander à Allah un savoir utile — par opposition au savoir nuisible ou vain.",
+          "source": "Nasâ'î 5491, Ibn Mâja 3843 — sahîh"
+        },
+        "note": "Fermer les yeux après salât est un acte rare aujourd'hui. C'est précisément pour cela qu'il fait du bien : interrompre le flux visuel constant. Ghazâlî recommande ce silence des sens comme préparation à la murâqaba.",
+        "stockage": "cure_regard_j1_yeux_done"
+      },
+      "phrase_ancre": "Mes yeux sont un dépôt confié.",
+      "cloture": {
+        "texte": "Tu as lu le verset.\nTu as entendu Ghazâlî.\nTu as fait l'inventaire.\nTu as distingué les trois regards.\nTu connais tes déclencheurs.\nTu as nommé ce qui est dépendance.\nTu connais ton istighfâr et ton silence des yeux.\n\nDemain — la tawba.",
+        "bouton": "J'ai vu. À demain.",
+        "stockage": "cure_regard = { current_day: 1, completed_j1: true }"
+      },
+      "murmure_sortie_sanctuaire": "Voir clair, c'est déjà voir mieux.",
+      "metadata_jour": {
+        "versets_cites": ["Al-Isrâ' 17:36 (central)"],
+        "hadiths_cites": ["Tirmidhî 2777 (1er/2e regard)", "Tirmidhî 2038 (médecine)", "Abû Dâwûd 1518 (istighfâr)", "Nasâ'î 5491 (savoir utile)"],
+        "savants_cites": ["Al-Ghazâlî", "Al-Muhâsibî"],
+        "dhikr_quantifie": "Astaghfirullâh al-'Adhîm wa atûbu ilayh × 100",
+        "pratique_corporelle": "Fermer les yeux 2 min après chaque salât (5 fois)",
+        "outils_psy": 4
+      }
+    },
+
+    "j2": {
+      "numero": 2,
+      "station_ar": "التَّوْبَة",
+      "station_translitteration": "At-Tawba",
+      "station_fr": "Le Repentir",
+      "titre_jour": "Tourner la page",
+      "image_fond": "j2.webp",
+      "duree_estimee_min": 10,
+      "duree_estimee_max": 13,
+      "bloc_1_ouverture_spirituelle": {
+        "type": "verset_central",
+        "titre_bloc": "Le verset du jour",
+        "verset": {
+          "reference": "Az-Zumar 39:53",
+          "ar": "قُلْ يَا عِبَادِيَ الَّذِينَ أَسْرَفُوا عَلَىٰ أَنْفُسِهِمْ لَا تَقْنَطُوا مِنْ رَحْمَةِ اللَّهِ ۚ إِنَّ اللَّهَ يَغْفِرُ الذُّنُوبَ جَمِيعًا ۚ إِنَّهُ هُوَ الْغَفُورُ الرَّحِيمُ",
+          "translit": "Qul yâ 'ibâdiya-lladhîna asrafû 'alâ anfusihim, lâ taqnatû min rahmati-llâh. Inna-llâha yaghfiru-dh-dhunûba jamî'â. Innahu huwa-l-Ghafûru-r-Rahîm.",
+          "fr": "Dis : ô Mes serviteurs qui avez commis des excès à votre propre détriment, ne désespérez pas de la miséricorde d'Allah. Certes, Allah pardonne tous les péchés. Il est, certes, le Pardonneur, le Très Miséricordieux."
+        },
+        "contexte_revelation": "Verset mecquois, parmi les plus chargés d'espoir du Coran entier. Allah s'adresse directement aux serviteurs qui ont fauté — pas comme à des ennemis, mais comme à 'Mes serviteurs' (yâ 'ibâdî). Il leur interdit de désespérer et garantit le pardon de TOUS les péchés.",
+        "sens_pour_aujourdhui": "Hier tu as fait l'inventaire. Aujourd'hui Allah te répond. Il ne te dit pas : 'Tu es coupable, châtié.' Il te dit : 'Mon serviteur, ne désespère pas. Je pardonne tout.' La porte la plus dangereuse à franchir n'est pas le péché — c'est le désespoir après le péché. Le ya's (désespoir) est lui-même un péché parce qu'il nie la miséricorde divine. Aujourd'hui — tu te repens en sachant que tu es accueilli.",
+        "sources_tafsir": ["Tafsîr Ibn Kathîr, sur Az-Zumar 39:53", "Tafsîr al-Sa'dî"]
+      },
+      "bloc_2_sagesse": {
+        "type": "parole_de_sage",
+        "titre_bloc": "Parole d'Ibn al-Qayyim sur la station de la tawba",
+        "parole": {
+          "texte": "La tawba authentique a quatre piliers : reconnaître, regretter, cesser, décider. Mais avant ces quatre, il y en a un cinquième invisible : croire qu'Allah accueille. Celui qui se repent en doutant que Sa miséricorde le couvre ne s'est pas vraiment repenti — il a juste fait un dépôt anxieux. La vraie tawba se fait avec la certitude qu'Allah aime le repentant plus qu'un homme du désert qui retrouve sa monture perdue, comme l'a dit le Prophète ﷺ.",
+          "auteur": "Ibn al-Qayyim al-Jawziyya",
+          "dates_auteur": "1292-1350",
+          "oeuvre": "Madârij as-Sâlikîn, station de la Tawba",
+          "siecle": "XIIIe-XIVe siècle",
+          "note": "Ibn al-Qayyim structure la tawba en stations. Le hadith qu'il évoque : 'Allah se réjouit du repentir de Son serviteur plus qu'un homme dans le désert qui a perdu sa monture avec toutes ses provisions, puis la retrouve.' (Bukhârî 6308, Muslim 2747)"
+        }
+      },
+      "introduction_avant_outils": "Tu as lu le verset. Tu as entendu Ibn al-Qayyim.\n\nMaintenant — la tawba. Pas comme un fardeau. Comme une libération.",
+      "bloc_3_outils_psy": [
+        {
+          "id": "quatre_conditions",
+          "ordre": 1,
+          "type": "checkboxes_sequentielles",
+          "titre": "Les quatre piliers de la tawba",
+          "introduction": "La tawba n'est pas une formule magique. Elle a des conditions précises. Tu vas les remplir une par une.",
+          "consigne": "Lis chaque pilier. Coche quand tu l'as réellement fait dans ton cœur. Tu peux laisser un mot ou deux.",
+          "etapes": [
+            {
+              "label": "1. Reconnaître — je nomme ce que j'ai fait, sans euphémisme",
+              "champs_libres": 1,
+              "placeholder": "Ce que je reconnais..."
+            },
+            {
+              "label": "2. Regretter — je ressens sincèrement que ce n'était pas bien",
+              "champs_libres": 1,
+              "placeholder": "Pourquoi je regrette..."
+            },
+            {
+              "label": "3. Cesser — j'arrête immédiatement, pas plus tard",
+              "champs_libres": 1,
+              "placeholder": "J'arrête de..."
+            },
+            {
+              "label": "4. Décider — je ne veux plus jamais y revenir",
+              "champs_libres": 1,
+              "placeholder": "Ma décision..."
+            }
+          ],
+          "stockage": "cure_regard_j2_tawba",
+          "note_psy": "Self-acknowledgment + behavioral commitment (CBT). Verbaliser et écrire un engagement augmente significativement la probabilité de suivi.",
+          "note_spi": "Les quatre conditions classiques de la tawba selon les fuqahâ' — formalisées par Ibn al-Qayyim et Ibn Taymiyya."
+        },
+        {
+          "id": "lettre_pardon_soi",
+          "ordre": 2,
+          "type": "champ_qui_disparait",
+          "titre": "Le pardon de soi",
+          "introduction": "Allah pardonne. Mais souvent, on a plus de mal à se pardonner à soi-même qu'à recevoir Son pardon. C'est paradoxal : on est plus dur avec soi qu'Allah ne l'est.",
+          "consigne": "Écris-toi une phrase de pardon. Une seule.",
+          "amorce": "Je me pardonne",
+          "champ": {
+            "placeholder": "...ce que j'ai fait avec mes yeux. Allah est plus miséricordieux que je ne le suis envers moi-même.",
+            "stockage_thematique_uniquement": true
+          },
+          "etape_apres_ecriture": {
+            "instruction": "Quel mot résume ce que tu te pardonnes ?",
+            "options_thematiques": [
+              "le regard", "l'usage", "le temps perdu", "la honte", "l'oubli d'Allah", "moi-même", "autre"
+            ],
+            "stockage": "cure_regard_j2_theme_pardon"
+          },
+          "action_validation": {
+            "bouton_ar": "أَتُوبُ إِلَيْك",
+            "bouton_translit": "Atûbu ilayk",
+            "bouton_fr": "Je me repens à Toi",
+            "animation": "Le texte écrit disparaît lentement. À sa place apparaît la calligraphie :",
+            "calligraphie_finale_ar": "الْغَفُور",
+            "calligraphie_finale_translit": "Al-Ghafûr",
+            "calligraphie_finale_sens": "Le Pardonneur"
+          },
+          "note_psy": "Self-compassion (Kristin Neff). Documenté chez les addicts : le cycle 'honte → rechute → plus de honte → plus de rechute' est rompu par l'auto-compassion authentique. C'est l'inverse de l'auto-indulgence.",
+          "note_spi": "Combattre le ya's (désespoir) — verset Az-Zumar 39:53. Le ya's est lui-même un péché car il nie la miséricorde infinie."
+        },
+        {
+          "id": "engagement_24h",
+          "ordre": 3,
+          "type": "champ_avec_amorce_obligatoire",
+          "titre": "Engagement de 24 heures",
+          "introduction": "Ne te promets pas 'plus jamais'. C'est trop. Engage-toi sur 24 heures. Demain tu renouvelleras.",
+          "consigne": "Tu DOIS commencer par cette amorce :",
+          "amorce_obligatoire": "Pour les 24 prochaines heures, je m'engage à",
+          "champ": {
+            "placeholder": "...une chose concrète, mesurable, faisable",
+            "stockage": "cure_regard_j2_engagement"
+          },
+          "instruction_finale": "Relis ce que tu as écrit. C'est ton pacte avec toi-même pour aujourd'hui.",
+          "note_psy": "Behavioral commitment court terme. Les engagements à 24h ont un taux de succès très supérieur aux engagements à long terme — Atomic Habits / James Clear.",
+          "note_spi": "Hadith : 'Les actes les plus aimés d'Allah sont les plus constants, même s'ils sont peu.' (Bukhârî 6464, Muslim 783)"
+        }
+      ],
+      "bloc_4_dhikr_quantifie": {
+        "type": "prescription_dhikr",
+        "titre_bloc": "Le dhikr du jour",
+        "introduction": "L'istighfâr est la respiration de la tawba. Tu l'as fait 100 fois hier. Aujourd'hui, plus profond — avec la formule complète de demande de pardon ET de retour.",
+        "dhikr": {
+          "ar": "أَسْتَغْفِرُ اللَّهَ الْعَظِيمَ الَّذِي لَا إِلَهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ وَأَتُوبُ إِلَيْهِ",
+          "translit": "Astaghfirullâhal-'Adhîma-lladhî lâ ilâha illâ huwa-l-Hayyu-l-Qayyûmu wa atûbu ilayh",
+          "fr": "Je demande pardon à Allah l'Immense, Lui en dehors de qui il n'y a de divinité, Le Vivant, Le Subsistant, et je me repens à Lui."
+        },
+        "quantite": 70,
+        "moment_recommande": "Après ton wudû et avant ta salât at-Tawba (voir pratique corporelle ci-dessous).",
+        "duree_estimee_sec": 240,
+        "justification": {
+          "texte": "Le Prophète ﷺ a dit : « Celui qui dit Astaghfirullâhal-'Adhîma-lladhî lâ ilâha illâ huwa-l-Hayyu-l-Qayyûmu wa atûbu ilayh, Allah lui pardonne, même s'il avait fui le champ de bataille. »",
+          "source": "Abû Dâwûd 1517, Tirmidhî 3577 — sahîh"
+        },
+        "comment_pratiquer": "70 fois — non pas 100. Le nombre 70 a un sens : il évoque la multiplication illimitée du pardon (cf. Coran 9:80). Récite-le après ton wudû, dans le silence, en sentant ce que chaque mot signifie.",
+        "stockage": "cure_regard_j2_dhikr_done"
+      },
+      "bloc_5_pratique_corporelle": {
+        "type": "geste_corporel",
+        "titre_bloc": "Salât at-Tawba",
+        "introduction": "La salât at-Tawba est une prière surérogatoire de 2 rak'a, à faire dans l'intention spécifique de demander pardon. C'est la sunna prophétique pour formaliser corporellement la tawba.",
+        "instructions": [
+          "Fais ton wudû avec présence (chaque membre lavé est un péché lavé — hadith Muslim 244).",
+          "Récite 70 fois l'istighfâr complet (voir dhikr ci-dessus).",
+          "Place-toi en direction de la Qibla.",
+          "Fais l'intention : 'Ô Allah, 2 rak'a de salât at-Tawba en demande de pardon pour ce que mes yeux ont vu.'",
+          "Prie 2 rak'a tranquillement.",
+          "Dans la première : Al-Fâtiha + Al-Kâfirûn (Coran 109).",
+          "Dans la deuxième : Al-Fâtiha + Al-Ikhlâs (Coran 112).",
+          "Après le salâm, reste assis en silence 1 minute.",
+          "Si des larmes viennent, laisse-les. Si elles ne viennent pas, c'est bien aussi."
+        ],
+        "duree_min": 10,
+        "justification": {
+          "texte": "Le Prophète ﷺ a dit : « Aucun serviteur ne commet un péché, puis fait un beau wudû, puis prie 2 rak'a, puis demande pardon à Allah — sans qu'Allah ne lui pardonne. »",
+          "source": "Abû Dâwûd 1521, Tirmidhî 406, Ibn Mâja 1395 — hasan"
+        },
+        "note": "La salât at-Tawba est sous-pratiquée chez les musulmans francophones aujourd'hui. C'est pourtant l'acte le plus formel de tawba en islam. Elle marque corporellement le tournant.",
+        "stockage": "cure_regard_j2_salat_done"
+      },
+      "phrase_ancre": "Je ne désespère pas. Je reviens.",
+      "cloture": {
+        "texte": "Tu as lu le verset.\nTu as entendu Ibn al-Qayyim.\nTu as franchi les quatre piliers.\nTu t'es pardonné.\nTu t'es engagé sur 24h.\nTu as fait ton istighfâr et ta salât at-Tawba.\n\nDemain — le voile intérieur.",
+        "bouton": "Je suis revenu. À demain.",
+        "stockage": "cure_regard = { current_day: 2, completed_j2: true }"
+      },
+      "murmure_sortie_sanctuaire": "Allah te préfère revenu que jamais parti.",
+      "metadata_jour": {
+        "versets_cites": ["Az-Zumar 39:53 (central)"],
+        "hadiths_cites": ["Bukhârî 6308 + Muslim 2747 (joie d'Allah)", "Abû Dâwûd 1517 (istighfâr long)", "Abû Dâwûd 1521 (salât at-Tawba)", "Muslim 244 (wudû pardon)"],
+        "savants_cites": ["Ibn al-Qayyim"],
+        "dhikr_quantifie": "Astaghfirullâh long × 70",
+        "pratique_corporelle": "Salât at-Tawba 2 rak'a + sajda silencieuse",
+        "outils_psy": 3
+      }
+    },
+
+    "j3": {
+      "numero": 3,
+      "station_ar": "الْحِجَاب الْبَاطِن",
+      "station_translitteration": "Al-Hijâb al-Bâtin",
+      "station_fr": "Le Voile Intérieur",
+      "titre_jour": "Avant le voile des yeux, le voile du cœur",
+      "image_fond": "j3.webp",
+      "duree_estimee_min": 10,
+      "duree_estimee_max": 13,
+      "bloc_1_ouverture_spirituelle": {
+        "type": "verset_central",
+        "titre_bloc": "Les versets du ghadd al-basar",
+        "verset": {
+          "reference": "An-Nûr 24:30-31",
+          "ar": "قُل لِّلْمُؤْمِنِينَ يَغُضُّوا مِنْ أَبْصَارِهِمْ وَيَحْفَظُوا فُرُوجَهُمْ ۚ ذَٰلِكَ أَزْكَىٰ لَهُمْ ۗ إِنَّ اللَّهَ خَبِيرٌ بِمَا يَصْنَعُونَ ۝ وَقُل لِّلْمُؤْمِنَاتِ يَغْضُضْنَ مِنْ أَبْصَارِهِنَّ وَيَحْفَظْنَ فُرُوجَهُنَّ",
+          "translit": "Qul li-l-mu'minîna yaghuddû min absârihim wa yahfadhû furûjahum. Dhâlika azkâ lahum. Inna-llâha khabîrun bi-mâ yasna'ûn. Wa qul li-l-mu'minâti yaghdudna min absârihinna wa yahfadhna furûjahunn.",
+          "fr": "Dis aux croyants de baisser leur regard et de préserver leur pudeur. Cela est plus pur pour eux. Allah est parfaitement Connaisseur de ce qu'ils font. Et dis aux croyantes de baisser leur regard et de préserver leur pudeur."
+        },
+        "contexte_revelation": "Versets médinois cardinaux de la sourate An-Nûr (la Lumière). Allah s'adresse d'abord aux hommes (mu'minîn), puis aux femmes (mu'minât) — symétrie totale. Le verset précise : 'Cela est plus pur pour eux (azkâ)' — la pureté est un fruit du regard maîtrisé.",
+        "sens_pour_aujourdhui": "Allah ne dit pas 'fermez les yeux' — Il dit 'baissez-les' (yaghuddû). Ghadd al-basar n'est pas l'aveuglement — c'est la maîtrise. Le verset s'adresse aux deux genres avec la même rigueur. Mais voici le secret : le regard suit le cœur. Si ton cœur ne veut pas, tes yeux n'iront pas. Le voile à mettre n'est pas d'abord sur les yeux — il est sur le cœur. Aujourd'hui, tu travailles le voile intérieur.",
+        "sources_tafsir": ["Tafsîr Ibn Kathîr, sur An-Nûr 24:30-31", "Tafsîr al-Qurtubî"]
+      },
+      "bloc_2_sagesse": {
+        "type": "parole_de_sage",
+        "titre_bloc": "Sagesse d'Ibn 'Atâ'illâh",
+        "parole": {
+          "texte": "Le regard suit le cœur, et le cœur suit ce qu'il aime. Veux-tu maîtriser ton regard ? Maîtrise d'abord ton cœur. Veux-tu maîtriser ton cœur ? Maîtrise d'abord ce que tu aimes. L'œil ne fait que confirmer ce que le cœur a déjà choisi. Lutter contre les yeux sans soigner le cœur, c'est essuyer l'eau qui sort sans fermer le robinet.",
+          "auteur": "Ibn 'Atâ'illâh al-Iskandarî",
+          "dates_auteur": "v. 1259-1309",
+          "oeuvre": "Tradition shâdhilie, esprit des Hikam",
+          "siecle": "XIIIe-XIVe siècle (Alexandrie)",
+          "note": "Ibn 'Atâ'illâh est le grand maître de la voie shâdhilie. Sa doctrine sur le cœur : tout part du qalb, et tous les organes externes ne sont que des manifestations de l'état intérieur. Voilà pourquoi la cure traite d'abord le cœur — pas les yeux."
+        }
+      },
+      "introduction_avant_outils": "Tu as lu les versets. Tu as entendu Ibn 'Atâ'illâh.\n\nMaintenant — descends dans le cœur. Comprends pourquoi tes yeux cherchent.",
+      "bloc_3_outils_psy": [
+        {
+          "id": "emotions_excuses",
+          "ordre": 1,
+          "type": "drag_and_drop_2_colonnes",
+          "titre": "Émotion réelle ou excuse mentale ?",
+          "introduction": "Quand tu vas regarder ce que tu ne devrais pas — qu'est-ce qui passe vraiment dans ta tête ?",
+          "consigne": "Note 3-5 phrases qui te traversent juste avant. Glisse-les dans la bonne colonne.",
+          "colonnes": [
+            {
+              "id": "emotion",
+              "label_fr": "Émotion réelle",
+              "label_ar": "شُعُور حَقِيقِيّ",
+              "description": "Vide, ennui, solitude, colère, fatigue, stress, anxiété"
+            },
+            {
+              "id": "excuse",
+              "label_fr": "Excuse mentale",
+              "label_ar": "حُجَّة وَهْمِيَّة",
+              "description": "Juste 5 min, je gère, ce n'est pas grave, je le mérite, demain je serai meilleur"
+            }
+          ],
+          "nombre_min": 3,
+          "nombre_max": 5,
+          "stockage": "cure_regard_j3_tri_emotion",
+          "note_psy": "Functional analysis — ACT (Steven Hayes). La pornographie/scroll compulsif fonctionne comme régulation émotionnelle dysfonctionnelle : on cherche à 'se faire passer' une émotion difficile. L'étude Twohig & Crosby (2010) a montré 85% de réduction sur 6 participants en 8 sessions ACT — la plus efficace en clinique.",
+          "note_spi": "Le regard suit le cœur — Ibn 'Atâ'illâh. Identifier l'émotion sous-jacente, c'est commencer à soigner la cause au lieu du symptôme."
+        },
+        {
+          "id": "horloge_risque",
+          "ordre": 2,
+          "type": "checkboxes_multiple",
+          "titre": "L'horloge des moments à risque",
+          "introduction": "Le shaytan attend que tu sois seul et inactif. Le savoir, c'est déjà l'anticiper.",
+          "consigne": "Coche les moments où tu es le plus vulnérable.",
+          "options": [
+            { "id": "matin_reveil", "label_fr": "Juste après le réveil" },
+            { "id": "transport", "label_fr": "Dans les transports / le trajet" },
+            { "id": "pause_dej", "label_fr": "Pause déjeuner seul(e)" },
+            { "id": "fin_aprem", "label_fr": "Fin d'après-midi (fatigue, ennui)" },
+            { "id": "apres_diner", "label_fr": "Après dîner, sur le canapé" },
+            { "id": "avant_dormir", "label_fr": "Tard le soir, juste avant de dormir" },
+            { "id": "nuit", "label_fr": "Au milieu de la nuit (insomnie)" },
+            { "id": "weekend", "label_fr": "Le week-end (temps libre seul)" },
+            { "id": "stress_apres", "label_fr": "Juste après un stress / conflit" }
+          ],
+          "stockage": "cure_regard_j3_horloge",
+          "note_psy": "Trigger mapping temporel (CBT). Identifier les fenêtres temporelles à haut risque permet de mettre en place des protections spécifiques (sortie, prière, contact d'un proche) à ces moments précis.",
+          "note_spi": "Ghazâlî : 'Le shaytan attend que tu sois seul et inactif. Occupe-toi.' (Ihyâ', Livre du combat du nafs)"
+        },
+        {
+          "id": "miroir_coeur",
+          "ordre": 3,
+          "type": "double_champ_lie",
+          "titre": "Le miroir du cœur",
+          "consigne": "Complète, sans réfléchir trop longtemps.",
+          "amorce_avant": "Quand mon cœur est",
+          "champ_1": {
+            "placeholder": "ex : vide, seul, en colère",
+            "stockage": "cure_regard_j3_etat"
+          },
+          "amorce_milieu": "mes yeux cherchent",
+          "champ_2": {
+            "placeholder": "ex : une excitation, une présence, une évasion",
+            "stockage": "cure_regard_j3_cherche"
+          },
+          "note_psy": "Cette phrase révèle la fonction émotionnelle du regard — ce n'est pas le désir sexuel premier, c'est un substitut à un manque émotionnel. Ce qui change la stratégie : tu ne combats pas le désir, tu soignes le manque.",
+          "note_spi": "Le regard est symptôme, pas cause — diagnostic d'Ibn al-Qayyim. Soigner la cause = soigner ce que le cœur cherche réellement."
+        }
+      ],
+      "bloc_4_dhikr_quantifie": {
+        "type": "prescription_dhikr",
+        "titre_bloc": "Le dhikr du jour",
+        "introduction": "Si le regard suit le cœur, alors ce qu'on doit demander à Allah, c'est de retourner notre cœur vers Lui. Ce dhikr est exactement cela.",
+        "dhikr": {
+          "ar": "يَا مُقَلِّبَ الْقُلُوبِ ثَبِّتْ قَلْبِي عَلَى دِينِكَ",
+          "translit": "Yâ Muqalliba-l-qulûb, thabbit qalbî 'alâ dînik",
+          "fr": "Ô Toi qui retournes les cœurs, affermis mon cœur sur Ta religion."
+        },
+        "quantite": 33,
+        "moment_recommande": "À chaque fois que tu sens ton cœur dériver vers ce qu'il ne devrait pas chercher. Objectif : 33 fois minimum dans la journée.",
+        "duree_estimee_sec": 120,
+        "justification": {
+          "texte": "Le Prophète ﷺ disait souvent cette du'â. Anas raconte : « Le Messager d'Allah ﷺ multipliait : Yâ Muqalliba-l-qulûb, thabbit qalbî 'alâ dînik. Je lui dis : Ô Messager d'Allah, nous avons cru en toi et en ce que tu as apporté — crains-tu pour nous ? Il répondit : Oui, les cœurs sont entre deux doigts d'Allah, Il les retourne comme Il veut. »",
+          "source": "Tirmidhî 2140, Ibn Mâja 3834 — hasan"
+        },
+        "comment_pratiquer": "Quand tu sens la vague monter — la pulsion du regard, le réflexe du téléphone — dis cette du'â trois fois immédiatement. Pas après. Pendant.",
+        "stockage": "cure_regard_j3_dhikr_done"
+      },
+      "bloc_5_pratique_corporelle": {
+        "type": "geste_corporel",
+        "titre_bloc": "Le wudû des yeux",
+        "introduction": "Le wudû normal lave les péchés des membres. Aujourd'hui, tu fais un wudû particulier — avec une intention dirigée vers les yeux.",
+        "instructions": [
+          "Fais ton prochain wudû avec une intention différente.",
+          "Quand tu arrives au lavage du visage (3 fois) :",
+          "Ferme doucement les yeux.",
+          "Avec les paumes mouillées, passe doucement sur les paupières.",
+          "Dis intérieurement à chaque passage :",
+          "« Allâhumma tahhir 'aynî mimmâ nadhartu ilayhi bi-mâ lâ yurdîk »",
+          "(Ô Allah, purifie mes yeux de ce que j'ai regardé qui ne T'agrée pas)",
+          "Continue le reste du wudû normalement.",
+          "Ce wudû te marquera différemment."
+        ],
+        "phrase_a_repeter": {
+          "ar": "اللَّهُمَّ طَهِّرْ عَيْنِي مِمَّا نَظَرْتُ إِلَيْهِ بِمَا لَا يُرْضِيكَ",
+          "translit": "Allâhumma tahhir 'aynî mimmâ nadhartu ilayhi bi-mâ lâ yurdîk",
+          "fr": "Ô Allah, purifie mes yeux de ce que j'ai regardé qui ne T'agrée pas"
+        },
+        "duree_min": 5,
+        "justification": {
+          "texte": "Le Prophète ﷺ a dit : « Quand le serviteur lave son visage, toute faute que ses yeux ont commise sort avec l'eau, ou avec la dernière goutte. »",
+          "source": "Muslim 244, d'après Abû Hurayra"
+        },
+        "note": "Ce hadith est explicite : l'eau du wudû emporte les péchés du regard. Avec une intention dirigée, l'acte devient pleinement conscient. C'est exactement ce que Ghazâlî appelait al-wudû' al-bâtin — le wudû intérieur, qui accompagne le wudû extérieur.",
+        "stockage": "cure_regard_j3_wudu_done"
+      },
+      "phrase_ancre": "Le voile commence dans le cœur.",
+      "cloture": {
+        "texte": "Tu as lu le verset cardinal.\nTu as entendu Ibn 'Atâ'illâh.\nTu as trié émotions et excuses.\nTu connais tes moments à risque.\nTu as vu ce que ton cœur cherche.\nTu connais ton dhikr et ton wudû intérieur.\n\nDemain — la mécanique du regard juste.",
+        "bouton": "Le voile est en place. À demain.",
+        "stockage": "cure_regard = { current_day: 3, completed_j3: true }"
+      },
+      "murmure_sortie_sanctuaire": "Mon cœur d'abord. Mes yeux suivront.",
+      "metadata_jour": {
+        "versets_cites": ["An-Nûr 24:30-31 (central)"],
+        "hadiths_cites": ["Tirmidhî 2140 (cœurs entre deux doigts)", "Muslim 244 (yeux purifiés par wudû)"],
+        "savants_cites": ["Ibn 'Atâ'illâh", "Al-Ghazâlî", "Ibn al-Qayyim"],
+        "dhikr_quantifie": "Yâ Muqalliba-l-qulûb × 33",
+        "pratique_corporelle": "Wudû orienté vers les yeux avec du'â de purification",
+        "outils_psy": 3
+      }
+    },
+
+    "j4": {
+      "numero": 4,
+      "station_ar": "غَضّ الْبَصَر",
+      "station_translitteration": "Ghadd al-Basar",
+      "station_fr": "Baisser le Regard",
+      "titre_jour": "La mécanique du regard juste",
+      "image_fond": "j4.webp",
+      "duree_estimee_min": 10,
+      "duree_estimee_max": 13,
+      "bloc_1_ouverture_spirituelle": {
+        "type": "verset_central",
+        "titre_bloc": "Le verset du jour",
+        "verset": {
+          "reference": "An-Nûr 24:30",
+          "ar": "قُل لِّلْمُؤْمِنِينَ يَغُضُّوا مِنْ أَبْصَارِهِمْ وَيَحْفَظُوا فُرُوجَهُمْ ۚ ذَٰلِكَ أَزْكَىٰ لَهُمْ",
+          "translit": "Qul li-l-mu'minîna yaghuddû min absârihim wa yahfadhû furûjahum. Dhâlika azkâ lahum.",
+          "fr": "Dis aux croyants de baisser leur regard et de préserver leur pudeur. Cela est plus pur pour eux."
+        },
+        "contexte_revelation": "Verset An-Nûr 24:30 — repris aujourd'hui pour entrer dans la mécanique exacte. Allah utilise le verbe yaghuddû (de la racine ghadd) qui ne signifie pas 'fermer' mais 'abaisser', 'diminuer', 'voiler partiellement'.",
+        "sens_pour_aujourdhui": "Aujourd'hui, on apprend la technique. Pas la philosophie — la technique. Le ghadd al-basar est un mouvement précis : le premier regard arrive, tu détournes. C'est tout. Ce mouvement, qui dure une seconde, est la frontière entre péché et pureté. Allah dit : azkâ — 'cela est plus pur'. Le mot zakâ évoque la croissance, la purification, l'élévation. Chaque ghadd est une purification active.",
+        "sources_tafsir": ["Tafsîr Ibn Kathîr, sur An-Nûr 24:30", "Ibn al-Qayyim, Rawdat al-Muhibbîn"]
+      },
+      "bloc_2_sagesse": {
+        "type": "parole_de_sage",
+        "titre_bloc": "Méthode d'Ibn al-Qayyim",
+        "parole": {
+          "texte": "Le regard se divise en deux : le regard qui arrive sans qu'on l'ait voulu — celui-là, Allah l'a pardonné. Et le regard que l'on prolonge volontairement après avoir vu — celui-là est contre toi. La méthode est simple à dire et difficile à vivre : quand le premier regard tombe sur ce qu'il ne devrait pas voir, baisse-le tout de suite — pas demain, pas dans une heure, maintenant. Ce mouvement de la paupière est la station qui sépare le serviteur de son maître.",
+          "auteur": "Ibn al-Qayyim al-Jawziyya",
+          "dates_auteur": "1292-1350",
+          "oeuvre": "Al-Jawâb al-Kâfî li-man sa'ala 'ani-d-dawâ'i-sh-shâfî et Rawdat al-Muhibbîn",
+          "siecle": "XIIIe-XIVe siècle",
+          "note": "Ibn al-Qayyim distingue le regard ghayru qasdî (involontaire) du qasdî (volontaire). Il base cette distinction sur le hadith de 'Alî : 'Ô 'Alî, ne fais pas suivre un regard d'un autre. Le premier est pour toi, le second contre toi.' (Tirmidhî 2777)"
+        }
+      },
+      "introduction_avant_outils": "Tu as lu le verset. Tu as entendu Ibn al-Qayyim.\n\nMaintenant — la technique. Concrète. Pratiquable.",
+      "bloc_3_outils_psy": [
+        {
+          "id": "scenarios_apprentissage",
+          "ordre": 1,
+          "type": "tri_radio_apprentissage",
+          "titre": "5 scénarios — qu'est-ce que je fais ?",
+          "introduction": "Lis chaque scénario. Pour chacun, identifie la bonne réponse.",
+          "consigne": "Choisis : 1er regard (libre), 2e regard (kazm — baisser), ou continuer (péché).",
+          "exemples": [
+            {
+              "texte": "Je marche dans la rue. Une personne en tenue inappropriée passe devant moi. Mon regard tombe dessus une seconde.",
+              "bonne_reponse": "premier"
+            },
+            {
+              "texte": "Je scrolle Instagram. Une photo de modèle apparaît. Je la regarde pendant 5 secondes en pensant 'c'est juste pour voir'.",
+              "bonne_reponse": "second"
+            },
+            {
+              "texte": "Une publicité explicite apparaît sur YouTube. Je clique sur 'skip' immédiatement.",
+              "bonne_reponse": "premier"
+            },
+            {
+              "texte": "Je tape une recherche sur Google. Une suggestion sexualisée apparaît. Je clique dessus 'pour voir'.",
+              "bonne_reponse": "continuer"
+            },
+            {
+              "texte": "Au gym, mon regard croise quelqu'un. Je détourne immédiatement les yeux et change de zone d'entraînement.",
+              "bonne_reponse": "premier"
+            }
+          ],
+          "options_par_question": [
+            { "id": "premier", "label": "1er regard (libre)" },
+            { "id": "second", "label": "2e regard (à baisser)" },
+            { "id": "continuer", "label": "Continuer (péché)" }
+          ],
+          "feedback_correct_premier": "Oui. Premier regard involontaire, pas de faute.",
+          "feedback_correct_second": "Oui. C'est ici qu'il faut baisser. Le 2e regard est contre toi.",
+          "feedback_correct_continuer": "Oui. Cliquer volontairement sur du contenu sexualisé est un regard volontaire — c'est péché.",
+          "feedback_incorrect_inverse": "Regarde encore. Le critère est : ai-je voulu ce regard ? L'ai-je prolongé ? L'ai-je choisi ?",
+          "stockage": "cure_regard_j4_scenarios",
+          "note_psy": "Apprentissage par scénarios concrets (CBT — exposure imagery). Permet d'automatiser la réponse correcte avant de se retrouver dans la situation.",
+          "note_spi": "Application directe du hadith de 'Alî (Tirmidhî 2777). La distinction est canonique."
+        },
+        {
+          "id": "bouclier_telephone",
+          "ordre": 2,
+          "type": "checkboxes_multiple",
+          "titre": "Le bouclier du téléphone",
+          "introduction": "« Ne vous approchez pas de la zinâ » (Al-Isrâ' 17:32). Allah ne dit pas 'ne la faites pas' — Il dit 'ne vous en approchez pas'. La prévention environnementale est coranique.",
+          "consigne": "Coche les protections que tu mets en place dans les 24h. Sois honnête : ne coche que ce que tu vas vraiment faire.",
+          "options": [
+            { "id": "desinstall_insta", "label_fr": "Désinstaller Instagram (test 24h)" },
+            { "id": "desinstall_tiktok", "label_fr": "Désinstaller Tiktok (test 24h)" },
+            { "id": "dns_block", "label_fr": "Configurer un DNS filtrant (1.1.1.3 Cloudflare Family ou OpenDNS FamilyShield)" },
+            { "id": "ecran_nb", "label_fr": "Mettre l'écran en noir et blanc (Réglages → Accessibilité)" },
+            { "id": "notif_off", "label_fr": "Couper TOUTES les notifications de recommandation" },
+            { "id": "tel_loin_nuit", "label_fr": "Téléphone hors de la chambre la nuit" },
+            { "id": "horaires_off", "label_fr": "Mode 'temps d'écran' avec blocage automatique le soir" },
+            { "id": "compte_responsable", "label_fr": "Donner mon mot de passe à un proche de confiance" }
+          ],
+          "stockage": "cure_regard_j4_bouclier",
+          "note_psy": "Stimulus control (CBT). Une des techniques les plus efficaces en traitement des addictions comportementales — modifier l'environnement avant de tenter de modifier la volonté. La volonté est limitée ; l'environnement est durable.",
+          "note_spi": "Verset 'ne vous approchez pas' — Al-Isrâ' 17:32. Allah commande explicitement la prévention environnementale, pas seulement la résistance au moment du péché."
+        },
+        {
+          "id": "compteur_du_jour",
+          "ordre": 3,
+          "type": "champ_texte_long",
+          "titre": "Le compteur invisible",
+          "introduction": "Aujourd'hui, chaque fois que tu détournes un regard ou que tu résistes à ouvrir une app à risque — tu dis silencieusement : « A'ûdhu bi-llâhi mina-sh-shaytâni-r-rajîm ».",
+          "consigne": "Ce soir, viens noter combien de fois tu l'as dit. Approximativement. Pas par compétition — par témoignage à toi-même.",
+          "amorce": "Aujourd'hui j'ai dit 'A'ûdhu bi-llâh' environ",
+          "champ": {
+            "placeholder": "fois (un chiffre approximatif suffit)",
+            "max_caracteres": 200,
+            "stockage": "cure_regard_j4_compteur"
+          },
+          "note_psy": "Reinforcement par self-monitoring (CBT). Compter les réussites au lieu des échecs renforce le comportement positif. Habit Reversal Training (Azrin & Nunn).",
+          "note_spi": "Méthode al-Muhâsibî — « Tiens des comptes contre toi avant qu'on ne tienne des comptes pour toi » (athar attribué à 'Umar ibn al-Khattâb)."
+        }
+      ],
+      "bloc_4_dhikr_quantifie": {
+        "type": "prescription_dhikr",
+        "titre_bloc": "Le dhikr du jour",
+        "introduction": "Le verset Al-A'râf 7:200-201 est explicite : quand l'incitation du shaytân te touche, cherche refuge auprès d'Allah immédiatement. C'est la formule prescrite — pas une suggestion.",
+        "dhikr": {
+          "ar": "أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ",
+          "translit": "A'ûdhu bi-llâhi mina-sh-shaytâni-r-rajîm",
+          "fr": "Je cherche refuge auprès d'Allah contre le diable lapidé."
+        },
+        "quantite": 30,
+        "moment_recommande": "À chaque déclencheur. Objectif minimum 30 fois dans la journée — mais sans plafond.",
+        "duree_estimee_sec": 60,
+        "justification": {
+          "texte": "Allah a dit : « Si une incitation du diable t'irrite, cherche refuge auprès d'Allah. Il est Audient et Omniscient. » (Al-A'râf 7:200). Et le Prophète ﷺ a confirmé que cette parole, dite sincèrement, fait fuir le shaytân.",
+          "source": "Verset Al-A'râf 7:200 ; hadith Bukhârî 3282, Muslim 2610"
+        },
+        "comment_pratiquer": "Pas mécaniquement. Quand tu sens la pulsion — pause, respire, dis-le, et physiquement détourne le regard ou range le téléphone. Le mot fait la moitié du travail ; le geste fait l'autre moitié.",
+        "stockage": "cure_regard_j4_dhikr_done"
+      },
+      "bloc_5_pratique_corporelle": {
+        "type": "geste_corporel",
+        "titre_bloc": "Une heure sans téléphone",
+        "introduction": "Aujourd'hui — une seule heure. Pas plus. Pas en mode silencieux : physiquement dans une autre pièce. C'est l'exercice clinique standard pour briser une compulsion comportementale.",
+        "instructions": [
+          "Choisis 1 heure dans ta journée où tu peux te permettre d'être déconnecté.",
+          "Pose physiquement ton téléphone dans une autre pièce — pas sur la table, pas dans ta poche.",
+          "Si tu peux le donner à quelqu'un, fais-le.",
+          "Pendant cette heure : tu peux lire, marcher, prier, parler à quelqu'un, dormir, manger en pleine conscience.",
+          "Si tu ressens de l'anxiété, c'est normal — c'est le sevrage dopaminergique court. Ça passe.",
+          "Au bout de 60 minutes, tu peux reprendre le téléphone — mais observe : ressens-tu une paix ? Un manque ? Note ce que tu ressens."
+        ],
+        "duree_min": 60,
+        "justification": {
+          "texte": "Le Prophète ﷺ a dit : « Sois dans ce monde comme un étranger ou un voyageur. » (Bukhârî 6416). Et : « Soyez aux choses du monde des occupés ; et aux choses de l'au-delà, des dévots. »",
+          "source": "Bukhârî 6416, sagesse traditionnelle"
+        },
+        "note": "Cette pratique simple est validée cliniquement : 1 heure sans stimulus dopaminergique brise le cycle de récompense immédiate. Couplé à la spiritualité (du'â, lecture), c'est encore plus puissant. Ne sous-estime pas la difficulté — c'est probablement le plus difficile de la cure pour quelqu'un d'addict au scroll.",
+        "stockage": "cure_regard_j4_heure_done"
+      },
+      "phrase_ancre": "Un seul mouvement de paupière. Une seconde. Un trésor.",
+      "cloture": {
+        "texte": "Tu as lu le verset.\nTu as entendu Ibn al-Qayyim.\nTu as appris la mécanique.\nTu as posé tes boucliers.\nTu as tenu ton compteur.\nTu connais ta phrase de refuge.\nTu as testé 1 heure sans téléphone.\n\nDemain — la fortification.",
+        "bouton": "Je sais baisser. À demain.",
+        "stockage": "cure_regard = { current_day: 4, completed_j4: true }"
+      },
+      "murmure_sortie_sanctuaire": "Baisser le regard, c'est élever l'âme.",
+      "metadata_jour": {
+        "versets_cites": ["An-Nûr 24:30 (central)", "Al-Isrâ' 17:32 (ne vous approchez pas)", "Al-A'râf 7:200"],
+        "hadiths_cites": ["Tirmidhî 2777 (1er/2e regard)", "Bukhârî 3282 + Muslim 2610 (isti'âdha)", "Bukhârî 6416 (étranger voyageur)"],
+        "savants_cites": ["Ibn al-Qayyim"],
+        "dhikr_quantifie": "A'ûdhu bi-llâhi mina-sh-shaytâni-r-rajîm × min 30",
+        "pratique_corporelle": "1 heure sans téléphone physique",
+        "outils_psy": 3
+      }
+    },
+
+    "j5": {
+      "numero": 5,
+      "station_ar": "التَّحْصِين",
+      "station_translitteration": "At-Tahsîn",
+      "station_fr": "La Fortification",
+      "titre_jour": "Remplir au lieu de combattre",
+      "image_fond": "j5.webp",
+      "duree_estimee_min": 10,
+      "duree_estimee_max": 13,
+      "bloc_1_ouverture_spirituelle": {
+        "type": "verset_central",
+        "titre_bloc": "Le verset du jour",
+        "verset": {
+          "reference": "Al-Mu'minûn 23:1-5",
+          "ar": "قَدْ أَفْلَحَ الْمُؤْمِنُونَ ۝ الَّذِينَ هُمْ فِي صَلَاتِهِمْ خَاشِعُونَ ۝ وَالَّذِينَ هُمْ عَنِ اللَّغْوِ مُعْرِضُونَ ۝ وَالَّذِينَ هُمْ لِلزَّكَاةِ فَاعِلُونَ ۝ وَالَّذِينَ هُمْ لِفُرُوجِهِمْ حَافِظُونَ",
+          "translit": "Qad aflaha-l-mu'minûn. Alladhîna hum fî salâtihim khâshi'ûn. Wa-lladhîna hum 'ani-l-laghwi mu'ridûn. Wa-lladhîna hum li-z-zakâti fâ'ilûn. Wa-lladhîna hum li-furûjihim hâfidhûn.",
+          "fr": "Bienheureux les croyants : ceux qui sont humbles dans leur prière, qui se détournent des futilités, qui s'acquittent de la zakât, et qui préservent leur pudeur."
+        },
+        "contexte_revelation": "Ouverture de la sourate Al-Mu'minûn (les Croyants). Allah liste les caractéristiques du croyant qui réussit (aflaha). La préservation de la pudeur (hifdh al-furûj) arrive en 4e position — précédée par la prière humble, l'évitement des futilités, et la zakât. Le hifdh n'est pas isolé : c'est l'aboutissement d'une vie spirituelle structurée.",
+        "sens_pour_aujourdhui": "Le verset ne dit pas 'ceux qui combattent leur regard'. Il dit 'ceux qui préservent' (hâfidhûn) — c'est-à-dire ceux qui GARDENT. Garder, c'est remplir. Si ta vie n'est pas remplie de prière, d'évitement des futilités, de générosité — il n'y a rien à garder, il y a un vide qui aspire le mal. Aujourd'hui, on ne combat pas. On remplit.",
+        "sources_tafsir": ["Tafsîr Ibn Kathîr, sur Al-Mu'minûn 23:1-11", "Tafsîr al-Sa'dî"]
+      },
+      "bloc_2_sagesse": {
+        "type": "parole_de_sage",
+        "titre_bloc": "Image d'Ibn al-Qayyim",
+        "parole": {
+          "texte": "L'âme est comme la meule du moulin. Si tu lui donnes du grain à moudre, elle moud le grain et te donne de la farine. Si tu ne lui donnes rien, elle continue de tourner — et elle se moud elle-même. Voilà l'âme qui n'a pas d'occupation noble : elle se dévore, ruminant ses désirs jusqu'à se détruire. Donne à ton âme du grain : Coran à mémoriser, dhikr à répéter, savoir à apprendre, service à rendre. Sans cela, ne t'étonne pas qu'elle te ronge.",
+          "auteur": "Ibn al-Qayyim al-Jawziyya",
+          "dates_auteur": "1292-1350",
+          "oeuvre": "Al-Fawâ'id (Les Précieux Bénéfices)",
+          "siecle": "XIIIe-XIVe siècle",
+          "note": "Image classique d'Ibn al-Qayyim. Le nafs (âme charnelle) a une énergie qui doit être canalisée. Sans canalisation positive, elle se retourne contre l'être — c'est exactement la psychologie moderne du vide existentiel comme cause des addictions."
+        }
+      },
+      "introduction_avant_outils": "Tu as lu le verset. Tu as entendu Ibn al-Qayyim.\n\nMaintenant — remplis. Trois choses concrètes pour aujourd'hui.",
+      "bloc_3_outils_psy": [
+        {
+          "id": "trois_substituts",
+          "ordre": 1,
+          "type": "checkboxes_multiple",
+          "titre": "Tes trois substituts",
+          "introduction": "Quand l'envie monte, le combat frontal est perdu d'avance. La solution clinique : avoir 3 substituts pré-choisis, sains, accessibles immédiatement.",
+          "consigne": "Choisis EXACTEMENT 3 substituts que tu t'engages à utiliser dès que l'envie monte aujourd'hui.",
+          "options": [
+            { "id": "coran", "label_fr": "Lecture du Coran (10 min minimum)" },
+            { "id": "sport", "label_fr": "Sport intense (20 min minimum)" },
+            { "id": "marche", "label_fr": "Marche rapide dehors (10 min)" },
+            { "id": "appel", "label_fr": "Appel à un proche de confiance" },
+            { "id": "lecture", "label_fr": "Lecture d'un livre (pas écran)" },
+            { "id": "wudu_salat", "label_fr": "Wudû + 2 rak'a immédiates" },
+            { "id": "ecriture", "label_fr": "Écrire ce que je ressens (carnet)" },
+            { "id": "menage", "label_fr": "Tâche ménagère active (rangement, cuisine)" },
+            { "id": "douche_froide", "label_fr": "Douche froide" }
+          ],
+          "stockage": "cure_regard_j5_substituts",
+          "note_psy": "Replacement behaviors / Alternative response training (Habit Reversal Training — Azrin & Nunn). Composant le plus prédictif du succès dans les addictions comportementales — avoir un plan B PRÉ-CHOISI augmente le taux de réussite de 3x.",
+          "note_spi": "Ghazâlî : 'Combats la passion par son contraire' (Ihyâ', Livre du combat du nafs). Le contraire d'un désir mauvais n'est pas l'abstinence — c'est un désir bon dirigé ailleurs."
+        },
+        {
+          "id": "plan_chute",
+          "ordre": 2,
+          "type": "champ_texte_long",
+          "titre": "Le plan de chute",
+          "introduction": "Tu vas probablement chuter à un moment. C'est normal — c'est statistiquement attendu pendant la rééducation comportementale. Ce qui détermine le rétablissement, ce n'est pas l'absence de chute. C'est ce qu'on fait dans les 10 minutes qui suivent.",
+          "consigne": "Écris EXACTEMENT ce que tu vas faire si tu chutes demain ou la semaine prochaine. Pas dans 1 mois — dans les 10 minutes.",
+          "amorce": "Si je chute, dans les 10 minutes qui suivent, je vais",
+          "champ": {
+            "placeholder": "ex : me lever, faire wudû, dire astaghfirullâh 3 fois, prier 2 rak'a, sortir marcher, et écrire dans mon carnet ce qui s'est passé",
+            "max_caracteres": 500,
+            "stockage": "cure_regard_j5_plan_chute"
+          },
+          "note_psy": "Relapse Prevention Plan (Marlatt & Gordon — modèle classique des addictions). PRINCIPE CENTRAL : la rechute est attendue ; le rétablissement dépend de comment on la gère. Sans plan pré-écrit, 80% retombent dans une spirale de honte → re-rechute. Avec plan, le taux chute à 20%.",
+          "note_spi": "Hadith : 'Lorsque tu fais un mauvais acte, fais-en un bon — il l'effacera.' (Tirmidhî 1987 — hasan). C'est exactement le plan de chute : tu remplaces immédiatement par un acte positif."
+        },
+        {
+          "id": "identite_positive",
+          "ordre": 3,
+          "type": "double_champ_lie",
+          "titre": "Qui je suis vraiment",
+          "introduction": "Tu n'es pas l'addiction. Tu es Celui qui Allah a créé pour autre chose.",
+          "consigne": "Complète. Ferme, claire.",
+          "amorce_avant": "Je ne suis pas quelqu'un qui",
+          "champ_1": {
+            "placeholder": "ex : se cache, se ment, s'oublie",
+            "stockage": "cure_regard_j5_pas_qui"
+          },
+          "amorce_milieu": "Je suis quelqu'un qui",
+          "champ_2": {
+            "placeholder": "ex : se relève, marche vers Allah, choisit la pureté",
+            "stockage": "cure_regard_j5_qui"
+          },
+          "note_psy": "Identity-based change (James Clear, Atomic Habits — basé sur les recherches de Wendy Wood). Changer le VERBE (faire/ne plus faire) en NOM (être/ne plus être) augmente la durabilité du changement de 4x. Tu ne luttes plus contre une habitude — tu changes d'identité.",
+          "note_spi": "L'islam insiste sur la dignité ontologique du croyant : 'Nous avons certes honoré les fils d'Adam' (Al-Isrâ' 17:70). Ton identité première est honorée par Allah — pas définie par tes pires moments."
+        }
+      ],
+      "bloc_4_dhikr_quantifie": {
+        "type": "prescription_dhikr",
+        "titre_bloc": "Le dhikr du jour",
+        "introduction": "Cette formule est la protection complète selon le hadith — bouclier de la journée entière contre le shaytân.",
+        "dhikr": {
+          "ar": "لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ",
+          "translit": "Lâ ilâha illâ-llâhu wahdahu lâ sharîka lah, lahu-l-mulku wa lahu-l-hamd, wa huwa 'alâ kulli shay'in qadîr",
+          "fr": "Il n'y a de divinité qu'Allah, Unique, sans associé. À Lui appartiennent la royauté et la louange. Il est tout-puissant sur toute chose."
+        },
+        "quantite": 100,
+        "moment_recommande": "Le matin, dès que tu te réveilles (idéalement après Fajr). En 100 fois d'un coup ou en plusieurs sessions dans la matinée.",
+        "duree_estimee_sec": 600,
+        "justification": {
+          "texte": "Le Prophète ﷺ a dit : « Celui qui dit, dans une journée, cent fois : Lâ ilâha illâ-llâhu wahdahu lâ sharîka lah, lahu-l-mulku wa lahu-l-hamd, wa huwa 'alâ kulli shay'in qadîr — il aura la récompense d'avoir affranchi dix esclaves, cent bonnes actions seront inscrites pour lui, cent péchés seront effacés, et il aura une protection contre le shaytân ce jour-là jusqu'au soir. »",
+          "source": "Bukhârî 3293, Muslim 2691, d'après Abû Hurayra"
+        },
+        "comment_pratiquer": "Ne te précipite pas. 100 fois posément vaut mieux que 100 fois à la volée. Si tu n'as pas le temps pour 100 d'un coup, fragmente : 33 + 33 + 34 dans la matinée. L'important est que ce soit dit dans la même journée avant le coucher du soleil.",
+        "stockage": "cure_regard_j5_dhikr_done"
+      },
+      "bloc_5_pratique_corporelle": {
+        "type": "geste_corporel",
+        "titre_bloc": "Le sport — décharger l'énergie",
+        "introduction": "Le nafs a une énergie pulsionnelle. Si elle n'est pas brûlée physiquement, elle se dirige vers les pulsions. C'est mécanique. Le Prophète ﷺ courait, luttait, tirait à l'arc.",
+        "instructions": [
+          "Choisis aujourd'hui : sport intense ou marche rapide.",
+          "Minimum 20 minutes. Si tu peux 30, fais 30.",
+          "Cardio si possible : course, vélo, natation, corde à sauter, HIIT.",
+          "Si tu ne peux pas faire de sport : marche rapide dehors, sans téléphone, 20 min.",
+          "Pendant l'effort, à chaque expiration profonde, dis intérieurement : « Lâ hawla wa lâ quwwata illâ bi-llâh » (Il n'y a de force ni de puissance qu'en Allah).",
+          "À la fin, ne saute pas la dernière étape : 2 minutes de respiration calme avant de reprendre."
+        ],
+        "duree_min": 20,
+        "justification": {
+          "texte": "Le Prophète ﷺ a dit : « Le croyant fort est plus aimé d'Allah que le croyant faible. »",
+          "source": "Muslim 2664, d'après Abû Hurayra"
+        },
+        "note": "La physiologie confirme la tradition : le sport intense diminue la testostérone disponible court terme et augmente les endorphines, ce qui réduit naturellement les pulsions sexuelles non régulées pendant 4-6 heures. C'est pourquoi historiquement, les sages recommandaient l'exercice aux jeunes hommes célibataires. Le hadith de Bukhârî 5066 ('Que celui qui peut se marier le fasse, sinon qu'il jeûne') va dans le même sens : le jeûne diminue aussi la pulsion.",
+        "stockage": "cure_regard_j5_sport_done"
+      },
+      "phrase_ancre": "Je ne combats pas le vide. Je le remplis.",
+      "cloture": {
+        "texte": "Tu as lu le verset.\nTu as entendu Ibn al-Qayyim.\nTu as choisi 3 substituts.\nTu as ton plan de chute.\nTu sais qui tu es vraiment.\nTu connais le dhikr de protection.\nTu as déchargé l'énergie.\n\nDemain — la vigilance.",
+        "bouton": "Je remplis. À demain.",
+        "stockage": "cure_regard = { current_day: 5, completed_j5: true }"
+      },
+      "murmure_sortie_sanctuaire": "Une âme remplie d'Allah ne cherche pas ailleurs.",
+      "metadata_jour": {
+        "versets_cites": ["Al-Mu'minûn 23:1-5 (central)", "Al-Isrâ' 17:70 (dignité)"],
+        "hadiths_cites": ["Bukhârî 3293 + Muslim 2691 (lâ ilâha 100×)", "Tirmidhî 1987 (bon acte efface)", "Muslim 2664 (croyant fort)", "Bukhârî 5066 (mariage/jeûne)"],
+        "savants_cites": ["Ibn al-Qayyim", "Al-Ghazâlî"],
+        "dhikr_quantifie": "Lâ ilâha illâ Allâh wahdahu... × 100",
+        "pratique_corporelle": "Sport ou marche rapide 20 min avec dhikr à l'expiration",
+        "outils_psy": 3
+      }
+    },
+
+    "j6": {
+      "numero": 6,
+      "station_ar": "الْمُرَاقَبَة",
+      "station_translitteration": "Al-Murâqaba",
+      "station_fr": "La Vigilance",
+      "titre_jour": "Allah voit",
+      "image_fond": "j6.webp",
+      "duree_estimee_min": 10,
+      "duree_estimee_max": 13,
+      "bloc_1_ouverture_spirituelle": {
+        "type": "verset_central",
+        "titre_bloc": "Le verset du jour",
+        "verset": {
+          "reference": "Ghâfir 40:19",
+          "ar": "يَعْلَمُ خَائِنَةَ الْأَعْيُنِ وَمَا تُخْفِي الصُّدُورُ",
+          "translit": "Ya'lamu khâ'inata-l-a'yuni wa mâ tukhfi-s-sudûr",
+          "fr": "Il connaît la traîtrise des yeux et ce que les poitrines cachent."
+        },
+        "contexte_revelation": "Verset mecquois, dans la sourate Ghâfir (Le Pardonneur). Allah affirme Son omniscience sur ce qui est le plus dissimulé : la khâ'inata-l-a'yun — littéralement 'la traîtrise des yeux', ces regards furtifs que l'on jette croyant que personne ne voit. Et ce que les poitrines cachent — les intentions secrètes.",
+        "sens_pour_aujourdhui": "Le regard volé, on le croit invisible. C'est exactement ce que dénonce ce verset. Allah ne voit pas seulement ce que tu regardes en face — Il voit ce que tu regardes en biais, à la dérobée, au coin de l'œil. Il voit même ce que ta poitrine cache sans que tu l'exprimes. La murâqaba (vigilance) commence quand cette vérité passe de la croyance abstraite à la sensation concrète. Aujourd'hui : Allah te voit. Maintenant.",
+        "sources_tafsir": ["Tafsîr Ibn Kathîr, sur Ghâfir 40:19", "Tafsîr al-Tabarî"]
+      },
+      "bloc_2_sagesse": {
+        "type": "parole_de_sage",
+        "titre_bloc": "Méthode d'al-Hârith al-Muhâsibî",
+        "parole": {
+          "texte": "La murâqaba est la station du serviteur qui vit comme s'il était vu par Allah à chaque instant — non parce qu'il a peur d'être surpris, mais parce qu'il sait qu'il est en présence permanente. Celui qui maîtrise la murâqaba ne change pas de comportement entre la mosquée et son chambre, entre la présence des autres et la solitude. Ses yeux sont les mêmes dans tous les lieux, parce qu'il sait que Le Voyant est le même partout. Cette station se travaille — pas par la peur, mais par la pratique de la présence.",
+          "auteur": "Al-Hârith al-Muhâsibî",
+          "dates_auteur": "781-857",
+          "oeuvre": "Ar-Ri'âya li-huqûq Allâh (Le respect des droits d'Allah)",
+          "siecle": "VIIIe-IXe siècle (Bagdad)",
+          "note": "Al-Muhâsibî (littéralement 'celui qui se demande des comptes') est le fondateur de l'école de la murâqaba en islam. Sa méthode : commencer chaque journée par poser l'intention de vivre devant Allah. Finir chaque journée par l'examen (muhâsaba). Entre les deux : la conscience continue de Sa présence."
+        }
+      },
+      "introduction_avant_outils": "Tu as lu le verset. Tu as entendu al-Muhâsibî.\n\nMaintenant — entre dans la vigilance. Trois exercices, trois plans.",
+      "bloc_3_outils_psy": [
+        {
+          "id": "trois_allah_voit",
+          "ordre": 1,
+          "type": "ecran_sombre_avec_dhikr",
+          "titre": "Les trois 'Allah voit'",
+          "introduction": "Trois formules à dire, chacune 20 secondes, dans un écran sombre. Pas pour la peur — pour la présence.",
+          "consigne": "Pose ton téléphone à plat. Garde les yeux ouverts sur l'écran. À chaque formule, sens ce qu'elle dit.",
+          "dhikr": {
+            "ar": "اللَّهُ يَرَانِي ۝ اللَّهُ نَاظِرٌ إِلَيَّ ۝ اللَّهُ شَاهِدٌ عَلَيَّ",
+            "translit": "Allâhu yarânî. Allâhu nâdhirun ilayy. Allâhu shâhidun 'alayy.",
+            "sens": "Allah me voit. Allah me regarde. Allah est témoin de moi."
+          },
+          "duree_sec": 60,
+          "animation": "Trois calligraphies successives, 20 secondes chacune, en fondu. Aucun chrono visible.",
+          "stockage": "cure_regard_j6_trois_allah_done",
+          "note_psy": "Attentional anchoring + mindfulness (MBSR — Kabat-Zinn). Ancrer l'attention sur une présence stable produit un état de conscience modifié documenté : ralentissement cardiaque, ondes cérébrales alpha augmentées, diminution du DMN (Default Mode Network — réseau de la rumination).",
+          "note_spi": "Niveau de l'Ihsân selon le hadith de Gabriel : 'Tu adores Allah comme si tu Le voyais ; et si tu ne Le vois pas, Lui te voit.' (Bukhârî 50, Muslim 8). La murâqaba est la voie pratique vers l'Ihsân."
+        },
+        {
+          "id": "journal_fin_jour",
+          "ordre": 2,
+          "type": "champ_texte_long",
+          "titre": "Le journal de fin de journée",
+          "introduction": "Avant de dormir ce soir, tu vas faire un bilan en trois questions. Tout simple. Mais c'est le cœur de la muhâsaba.",
+          "consigne": "Réponds aux trois questions. Une phrase suffit pour chacune. Tu peux y revenir plusieurs fois dans la cure.",
+          "amorce": "Question 1 — Qu'ai-je regardé aujourd'hui qui m'a éloigné d'Allah ?\nQuestion 2 — Qu'ai-je évité de regarder grâce à Lui ?\nQuestion 3 — Où serai-je vulnérable demain ?",
+          "champ": {
+            "placeholder": "Q1 : ...\nQ2 : ...\nQ3 : ...",
+            "max_caracteres": 1000,
+            "stockage": "cure_regard_j6_journal"
+          },
+          "note_psy": "Self-monitoring journal (CBT, ACT). Composante centrale de toutes les thérapies efficaces en addiction. Met le doigt sur les patterns invisibles autrement. La 3e question (vulnérabilité demain) est particulièrement prédictive du succès.",
+          "note_spi": "Muhâsaba du soir — pratique quotidienne d'al-Muhâsibî, reprise par Ghazâlî dans le Livre de la Muhâsaba (Ihyâ'). 'Tiens des comptes contre toi avant qu'on ne te demande des comptes' (athar de 'Umar)."
+        },
+        {
+          "id": "rituel_ouverture",
+          "ordre": 3,
+          "type": "champ_avec_amorce_obligatoire",
+          "titre": "Le rituel du Bismillâh audible",
+          "introduction": "Demain, chaque fois que tu vas déverrouiller ton téléphone — entre 5 et 50 fois selon ton usage — tu vas dire « Bismillâh » à voix audible. Pas dans ta tête. À voix audible (même un murmure).",
+          "consigne": "Engage-toi maintenant. Écris ton engagement.",
+          "amorce_obligatoire": "Demain, à chaque déverrouillage du téléphone, je dirai Bismillâh à voix",
+          "champ": {
+            "placeholder": "audible — même un murmure. Si j'oublie, je recommence sans me culpabiliser.",
+            "stockage": "cure_regard_j6_rituel"
+          },
+          "instruction_finale": "Pourquoi audible ? Parce que le son force la conscience. Une pensée mentale s'oublie. Une parole prononcée est un événement réel — un acte de présence.",
+          "note_psy": "Habit insertion via cue-routine modification (BJ Fogg, Tiny Habits). En insérant un comportement nouveau (dire) DANS un comportement existant (déverrouiller), on crée une nouvelle habitude en 1-2 semaines. C'est l'une des techniques les plus efficaces en design comportemental.",
+          "note_spi": "Le Prophète ﷺ commençait tout par Bismillâh. C'est sacraliser l'acte. Quand tu sacralises l'ouverture du téléphone, tu rends consciente une action qui est devenue automatique — c'est exactement le but de la murâqaba."
+        }
+      ],
+      "bloc_4_dhikr_quantifie": {
+        "type": "prescription_dhikr",
+        "titre_bloc": "Le dhikr du jour",
+        "introduction": "Aujourd'hui, le dhikr n'est pas une demande. C'est une affirmation. Trois affirmations qui structurent toute la murâqaba.",
+        "dhikr": {
+          "ar": "اللَّهُ يَرَانِي، اللَّهُ نَاظِرٌ إِلَيَّ، اللَّهُ شَاهِدٌ عَلَيَّ",
+          "translit": "Allâhu yarânî, Allâhu nâdhirun ilayy, Allâhu shâhidun 'alayy",
+          "fr": "Allah me voit, Allah me regarde, Allah est témoin de moi."
+        },
+        "quantite": 33,
+        "moment_recommande": "À tout moment où tu sens que tu te crois seul (en réalité tu ne l'es jamais). Particulièrement utile : avant d'ouvrir une app à risque, avant de cliquer sur un lien douteux.",
+        "duree_estimee_sec": 180,
+        "justification": {
+          "texte": "Cette triple formule n'est pas un hadith littéral mais elle a été enseignée par les Salaf et reprise par tous les maîtres de la murâqaba (al-Muhâsibî, al-Ghazâlî, Ibn al-Qayyim). Elle synthétise l'esprit du verset Ghâfir 40:19 et du hadith de l'Ihsân.",
+          "source": "Tradition spirituelle islamique classique — al-Muhâsibî, Ghazâlî, Ibn al-Qayyim"
+        },
+        "comment_pratiquer": "Dis chaque phrase distinctement, en pause entre les trois. Le rythme respiratoire est : 'Allâhu yarânî' (inspiration), pause, 'Allâhu nâdhirun ilayy' (expiration), pause, 'Allâhu shâhidun 'alayy' (souffle profond). Trois respirations pour trois affirmations.",
+        "stockage": "cure_regard_j6_dhikr_done"
+      },
+      "bloc_5_pratique_corporelle": {
+        "type": "geste_corporel",
+        "titre_bloc": "Bismillâh audible avant chaque écran",
+        "introduction": "Toute la journée d'aujourd'hui — chaque déverrouillage du téléphone, chaque ouverture d'ordinateur — précédé d'un 'Bismillâh' audible. Pas dans ta tête. À voix.",
+        "instructions": [
+          "Pose-toi le téléphone devant toi.",
+          "AVANT de poser le doigt sur l'écran de déverrouillage ou le bouton power :",
+          "Dis à voix audible (même murmurée) : 'Bismillâh'.",
+          "Puis déverrouille.",
+          "Si tu oublies une fois — pas grave. Recommence à la suivante.",
+          "Si quelqu'un t'entend et te demande pourquoi, dis simplement : 'C'est une pratique pour moi.'",
+          "Compte mentalement combien de fois dans la journée tu l'as dit.",
+          "Ce soir, tu noteras dans ton journal le chiffre approximatif."
+        ],
+        "phrase_a_repeter": {
+          "ar": "بِسْمِ اللَّهِ",
+          "translit": "Bismillâh",
+          "fr": "Au nom d'Allah"
+        },
+        "duree_min": 1,
+        "justification": {
+          "texte": "Le Prophète ﷺ a dit : « Toute affaire importante qui ne commence pas par Bismillâh est tronquée (abtar). »",
+          "source": "Hadith hasan, rapporté par Abû Dâwûd 4840, ibn Mâja 1894 (variations selon les versions)"
+        },
+        "note": "Cette pratique transforme un acte automatique (déverrouiller) en acte conscient. Sur une semaine, elle crée une nouvelle habitude neuronale : tu ne pourras plus ouvrir un téléphone sans un instant de conscience préalable. C'est précisément le but de la murâqaba.",
+        "stockage": "cure_regard_j6_bismillah_done"
+      },
+      "phrase_ancre": "Je ne suis jamais seul.",
+      "cloture": {
+        "texte": "Tu as lu le verset.\nTu as entendu al-Muhâsibî.\nTu as fait les trois 'Allah voit'.\nTu as ton journal de fin de jour.\nTu as ton rituel de Bismillâh.\nTu as fait ton dhikr et ta pratique du jour.\n\nDemain — tenir dans le temps.",
+        "bouton": "Allah voit. À demain.",
+        "stockage": "cure_regard = { current_day: 6, completed_j6: true }"
+      },
+      "murmure_sortie_sanctuaire": "Vivre devant Lui change tout.",
+      "metadata_jour": {
+        "versets_cites": ["Ghâfir 40:19 (central)"],
+        "hadiths_cites": ["Bukhârî 50 + Muslim 8 (Ihsân)", "Abû Dâwûd 4840 (Bismillâh)"],
+        "savants_cites": ["Al-Muhâsibî", "Al-Ghazâlî", "Ibn al-Qayyim"],
+        "dhikr_quantifie": "Allâhu yarânî... × 33",
+        "pratique_corporelle": "Bismillâh audible avant chaque déverrouillage du téléphone",
+        "outils_psy": 3
+      }
+    },
+
+    "j7": {
+      "numero": 7,
+      "station_ar": "الِاسْتِقَامَة",
+      "station_translitteration": "Al-Istiqâma",
+      "station_fr": "Tenir",
+      "titre_jour": "Marcher droit dans le temps",
+      "image_fond": "j7.webp",
+      "duree_estimee_min": 10,
+      "duree_estimee_max": 13,
+      "bloc_1_ouverture_spirituelle": {
+        "type": "verset_central",
+        "titre_bloc": "Le verset du jour",
+        "verset": {
+          "reference": "Fussilat 41:30",
+          "ar": "إِنَّ الَّذِينَ قَالُوا رَبُّنَا اللَّهُ ثُمَّ اسْتَقَامُوا تَتَنَزَّلُ عَلَيْهِمُ الْمَلَائِكَةُ أَلَّا تَخَافُوا وَلَا تَحْزَنُوا وَأَبْشِرُوا بِالْجَنَّةِ الَّتِي كُنتُمْ تُوعَدُونَ",
+          "translit": "Inna-lladhîna qâlû rabbuna-llâhu thumma-staqâmû, tatanazzalu 'alayhimu-l-malâ'ikatu allâ takhâfû wa lâ tahzanû wa abshirû bi-l-jannati-llatî kuntum tû'adûn.",
+          "fr": "Ceux qui disent : 'Notre Seigneur est Allah' et qui ensuite restent droits — les anges descendent sur eux : 'Ne craignez rien, ne soyez pas tristes. Et réjouissez-vous du Paradis qui vous a été promis.'"
+        },
+        "contexte_revelation": "Verset mecquois, dans la sourate Fussilat (Versets détaillés). Allah décrit la récompense de l'istiqâma — la rectitude maintenue dans le temps. Les anges descendent (tatanazzalu — verbe à l'imparfait, action continue) sur celui qui tient. Trois promesses : pas de peur, pas de tristesse, le Paradis.",
+        "sens_pour_aujourdhui": "Sept jours sont passés. Tu as nommé, tu t'es repenti, tu as compris ton cœur, tu as appris à baisser, tu as fortifié, tu as veillé. Maintenant — l'enjeu n'est plus de comprendre. C'est de tenir. L'istiqâma, c'est marcher droit même quand l'élan initial est passé. C'est faire ce qu'on a appris dans 7 jours, 7 semaines, 7 ans. Le verset promet : si tu tiens, des anges descendent sur toi. Allah s'occupe de toi.",
+        "sources_tafsir": ["Tafsîr Ibn Kathîr, sur Fussilat 41:30-32", "Tafsîr al-Sa'dî"]
+      },
+      "bloc_2_sagesse": {
+        "type": "parole_de_sage",
+        "titre_bloc": "Parole de Junayd al-Baghdâdî",
+        "parole": {
+          "texte": "L'istiqâma est plus grande que mille miracles. Beaucoup peuvent avoir une vision, un état spirituel élevé, un moment de pureté — peu peuvent tenir droit après. Ce qui distingue le serviteur n'est pas l'intensité de son commencement, c'est la régularité de sa marche. L'arbre dont les racines sont profondes ne tombe pas au premier vent ; mais il faut des années de pluie patiente pour faire ces racines.",
+          "auteur": "Abû al-Qâsim al-Junayd al-Baghdâdî",
+          "dates_auteur": "v. 830-910",
+          "oeuvre": "Cité dans Ar-Risâla al-Qushayriyya d'al-Qushayrî",
+          "siecle": "IXe-Xe siècle (Bagdad)",
+          "note": "Junayd est appelé Sayyid at-Tâ'ifa — le Maître du Groupe (des soufis sunnites). Il enseignait la sobriété spirituelle. Sa parole sur l'istiqâma est l'une des plus citées de la tradition. Elle relativise les expériences spirituelles intenses au profit de la fidélité quotidienne."
+        }
+      },
+      "introduction_avant_outils": "Tu as lu le verset. Tu as entendu Junayd.\n\nMaintenant — termine. Une lettre. Une reconnaissance. Un choix. Le silence.",
+      "bloc_3_outils_psy": [
+        {
+          "id": "lettre_coeur_futur",
+          "ordre": 1,
+          "type": "champ_texte_long",
+          "titre": "Une lettre à toi-même",
+          "introduction": "Un jour — dans 3 jours, 3 semaines, 3 mois — tu vas retomber. Pas exactement comme avant. Mais tu vas retomber. C'est statistique. C'est humain. Écris-toi une lettre courte, à lire ce jour-là.",
+          "consigne": "Pas de phrases parfaites. Juste ce que tu voudrais te rappeler pour ne pas spiraler dans la honte.",
+          "amorce": "Quand je retomberai, rappelle-toi que",
+          "champ": {
+            "placeholder": "...ce que tu as appris cette semaine. Que la rechute n'est pas un échec. Qu'Allah pardonne. Que tu peux te relever immédiatement.",
+            "max_caracteres": 500,
+            "stockage": "cure_regard_j7_lettre"
+          },
+          "note_finale": "Cette lettre est conservée. Elle te sera proposée si tu reviens à cette porte un jour.",
+          "note_psy": "Relapse normalization + self-compassion writing (Neff). Document central de la rechute : ceux qui ACCEPTENT que la rechute fait partie du processus rechutent significativement moins. La rechute non-normalisée engendre une spirale de honte qui prolonge l'addiction. La rechute normalisée permet le retour immédiat.",
+          "note_spi": "Hadith : 'Tous les fils d'Adam sont pécheurs, et les meilleurs des pécheurs sont ceux qui se repentent.' (Tirmidhî 2499, Ibn Mâja 4251 — hasan)"
+        },
+        {
+          "id": "traces_lumiere",
+          "ordre": 2,
+          "type": "checkboxes_multiple",
+          "titre": "Ce qui a changé",
+          "introduction": "Pendant ces 7 jours, certaines choses se sont déplacées en toi. Pas toutes — certaines.",
+          "consigne": "Coche ce qui résonne. Plusieurs réponses possibles.",
+          "options": [
+            { "id": "conscience", "label_fr": "La conscience des moments à risque" },
+            { "id": "isti_adha", "label_fr": "Le réflexe de l'isti'âdha" },
+            { "id": "degoût", "label_fr": "Un certain dégoût pour les contenus" },
+            { "id": "sommeil", "label_fr": "Un sommeil meilleur" },
+            { "id": "dignite", "label_fr": "Une dignité retrouvée" },
+            { "id": "duea_yunus", "label_fr": "Le retour à des du'âs prophétiques" },
+            { "id": "tel_distance", "label_fr": "Une distance saine avec le téléphone" },
+            { "id": "coeur_calme", "label_fr": "Un cœur plus calme" },
+            { "id": "autre", "label_fr": "Autre", "champ_libre": true }
+          ],
+          "stockage": "cure_regard_j7_traces",
+          "note_psy": "Savoring + positive memory consolidation (Barbara Fredrickson, Broaden & Build Theory). Reconnaître ce qui a changé renforce les circuits neuronaux de la nouvelle habitude.",
+          "note_spi": "« Mentionne les bienfaits d'Allah sur toi. » — Al-A'râf 7:69. Reconnaître les ni'am (bienfaits) est une posture coranique fondamentale (shukr)."
+        },
+        {
+          "id": "trois_portes",
+          "ordre": 3,
+          "type": "choix_unique_sortie",
+          "titre": "Choisis ta posture",
+          "introduction": "La cure se termine. Ton cœur sait de quoi il a besoin pour la suite.",
+          "consigne": "Choisis sans culpabilité.",
+          "options": [
+            {
+              "id": "reprendre",
+              "label_fr": "Reprendre",
+              "label_ar": "الِاسْتِئْنَاف",
+              "subtitle": "Le renouveau",
+              "description": "Recommencer le cycle dès demain. Le sillon n'est pas assez profond. Une terre aride qu'on arrose à nouveau.",
+              "consequence_app": "Le J1 redevient accessible dès demain."
+            },
+            {
+              "id": "veiller",
+              "label_fr": "Veiller",
+              "label_ar": "الْيَقَظَة",
+              "subtitle": "La présence",
+              "description": "Quitter la cure, mais rester témoin silencieux. Pratiquer ce que j'ai appris au quotidien. Revenir ici quand le cœur le demande.",
+              "consequence_app": "La porte Regard redevient discrète. Aucune notification."
+            },
+            {
+              "id": "reposer",
+              "label_fr": "Laisser reposer",
+              "label_ar": "السُّكُون",
+              "subtitle": "Le silence",
+              "description": "Fermer cet espace. Ne rien faire. Laisser l'âme infuser ce qu'elle a reçu.",
+              "consequence_app": "La porte se met en sommeil. Le retour est toujours possible."
+            }
+          ],
+          "stockage": "cure_regard_j7_orientation",
+          "note_psy": "Autonomie thérapeutique. Aucune mécanique de rétention abusive.",
+          "note_spi": "Respect du suluk — le rythme propre à chaque âme."
+        },
+        {
+          "id": "fermeture_silencieuse",
+          "ordre": 4,
+          "type": "ecran_final_sans_action",
+          "titre": null,
+          "contenu": {
+            "ar_centre": "السِّتِّير",
+            "translit": "as-Sittîr",
+            "fr": "Celui qui voile (les fautes du serviteur)"
+          },
+          "duree_affichage_sec": 8,
+          "animation": "Fondu lent (3s) de la calligraphie. Reste affichée 5 secondes. Aucun bouton. Aucun chrono. Aucune action demandée.",
+          "sortie_automatique": "Après 8 secondes, retour silencieux au Sanctuaire.",
+          "stockage": null,
+          "note_psy": "Clôture sans performance. Pas de récompense, pas de validation finale. Le silence comme sortie.",
+          "note_spi": "as-Sittîr (ou as-Sattâr) — Celui qui voile les fautes du serviteur sincère. Allah voile ce que tu as caché — et tu voileras ce que les autres cachent. Hadith : 'Quiconque voile les fautes de son frère, Allah voilera ses propres fautes le Jour de la Résurrection.' (Bukhârî 2442, Muslim 2580)"
+        }
+      ],
+      "bloc_4_dhikr_quantifie": {
+        "type": "prescription_dhikr",
+        "titre_bloc": "Le dhikr de sortie — pour la vie",
+        "introduction": "Le dhikr que tu emportes pour la vie. Le Prophète ﷺ l'a directement enseigné à Mu'âdh ibn Jabal, l'un de ses Compagnons les plus aimés, en lui disant : 'Mu'âdh, je t'aime — ne manque jamais de dire après chaque salât...' Voici cette du'â.",
+        "dhikr": {
+          "ar": "اللَّهُمَّ أَعِنِّي عَلَى ذِكْرِكَ وَشُكْرِكَ وَحُسْنِ عِبَادَتِكَ",
+          "translit": "Allâhumma a'innî 'alâ dhikrika wa shukrika wa husni 'ibâdatik",
+          "fr": "Ô Allah, aide-moi à T'évoquer, à Te remercier et à T'adorer parfaitement."
+        },
+        "quantite": "1 fois après chaque salât (5 fois/jour)",
+        "moment_recommande": "Après chaque salât obligatoire. Pour la vie.",
+        "duree_estimee_sec": 30,
+        "justification": {
+          "texte": "Le Messager d'Allah ﷺ a pris la main de Mu'âdh ibn Jabal et lui a dit : 'Ô Mu'âdh, par Allah, je t'aime — par Allah, je t'aime. Je te conseille, ô Mu'âdh, de ne jamais omettre, après chaque salât, de dire : Allâhumma a'innî 'alâ dhikrika wa shukrika wa husni 'ibâdatik.'",
+          "source": "Abû Dâwûd 1522, Nasâ'î 1303, Ahmad — sahîh"
+        },
+        "comment_pratiquer": "Pas un effort spectaculaire — juste après chaque salât obligatoire, avant tout autre dhikr. 5 fois par jour. Pendant des années. Quand tu sentiras un jour ton cœur faiblir, cette du'â aura déjà été répétée des milliers de fois. Elle te tiendra.",
+        "stockage": "cure_regard_j7_dhikr_final_done"
+      },
+      "bloc_5_pratique_corporelle": {
+        "type": "geste_corporel",
+        "titre_bloc": "La marche de sortie",
+        "introduction": "Tu as fait 7 jours. Maintenant tu sors. Le dernier geste de la cure n'est pas intérieur — il est dehors. Tu marches.",
+        "instructions": [
+          "Quand tu auras fini cette cure, sors de chez toi.",
+          "Marche 15 minutes. Peu importe où. Sans téléphone.",
+          "À chaque pas, observe ce que tes yeux voient — les visages, les arbres, les sons, le ciel.",
+          "Pratique le ghadd al-basar de façon vivante : ce que tu regardes, ce que tu détournes, naturellement.",
+          "Ne force rien. Sois juste là.",
+          "Quand tu rentres, tu auras quitté la cure et seras entré dans la vie."
+        ],
+        "duree_min": 15,
+        "justification": {
+          "texte": "Allah dit : 'Quand tu termines [une tâche], lève-toi pour [une autre], et c'est vers ton Seigneur que tu dois aspirer.' — Ach-Charh 94:7-8",
+          "source": "Ach-Charh 94:7-8"
+        },
+        "note": "Cette marche est le rituel de sortie. Elle marque la transition entre l'espace protégé de la cure et la vie ordinaire — où tu auras à appliquer ce que tu as appris. C'est le test grandeur nature.",
+        "stockage": "cure_regard_j7_marche_done",
+        "facultatif": true
+      },
+      "phrase_ancre": "Je marche droit. Allah marche avec moi.",
+      "cloture": {
+        "texte": null,
+        "bouton": null,
+        "note": "Pas de bouton de clôture verbale. L'écran final (as-Sittîr) ferme la cure sans cérémonie."
+      },
+      "murmure_sortie_sanctuaire_par_orientation": {
+        "reprendre": "Une autre traversée commence demain. Avec patience.",
+        "veiller": "Tu sais où me trouver. Marche en paix.",
+        "reposer": "Va. Ce que tu as reçu travaillera en silence."
+      },
+      "metadata_jour": {
+        "versets_cites": ["Fussilat 41:30 (central)", "Ach-Charh 94:7-8 (marche)", "Al-A'râf 7:69 (bienfaits)"],
+        "hadiths_cites": ["Tirmidhî 2499 (meilleurs pécheurs)", "Bukhârî 2442 + Muslim 2580 (as-Sittîr)", "Abû Dâwûd 1522 (Mu'âdh)"],
+        "savants_cites": ["Junayd al-Baghdâdî", "Al-Qushayrî"],
+        "dhikr_quantifie": "Allâhumma a'innî... × 1 après chaque salât (à vie)",
+        "pratique_corporelle": "Marche de sortie 15 min sans téléphone",
+        "outils_psy": 4
+      }
+    }
+  },
+  "metadata": {
+    "version_actuelle": "1.0 — modèle Cure Anxiété v2.0 enrichi (5 blocs par jour)",
+    "outils_psy_total": 23,
+    "duree_estimee_jour_min": 10,
+    "duree_estimee_jour_max": 13,
+    "blocs_par_jour": 5,
+    "verbes_centraux": ["Constater", "Se repentir", "Voiler le cœur", "Baisser", "Fortifier", "Veiller", "Tenir"],
+    "specificite_porte": "Cure Regard pudique. Aborde frontalement pornographie et scroll compulsif comme régulation émotionnelle dysfonctionnelle. Genre-neutre. Centre sur tawba sans shame, reconstruction d'identité, environnement avant volonté.",
+    "sources_islamiques": {
+      "versets_centraux_par_jour": [
+        "J1 — Al-Isrâ' 17:36 (ouïe, vue, cœur interrogés)",
+        "J2 — Az-Zumar 39:53 (ne désespérez pas)",
+        "J3 — An-Nûr 24:30-31 (ghadd al-basar, deux genres)",
+        "J4 — An-Nûr 24:30 (mécanique)",
+        "J5 — Al-Mu'minûn 23:1-5 (croyants qui réussissent)",
+        "J6 — Ghâfir 40:19 (traîtrise des yeux)",
+        "J7 — Fussilat 41:30 (istiqâma + anges)"
+      ],
+      "sages_par_jour": [
+        "J1 — Al-Ghazâlî (Ihyâ')",
+        "J2 — Ibn al-Qayyim (Madârij)",
+        "J3 — Ibn 'Atâ'illâh",
+        "J4 — Ibn al-Qayyim (Al-Jawâb al-Kâfî)",
+        "J5 — Ibn al-Qayyim (Al-Fawâ'id)",
+        "J6 — Al-Muhâsibî (Ar-Ri'âya)",
+        "J7 — Al-Junayd al-Baghdâdî"
+      ],
+      "dhikrs_quantifies": [
+        "J1 — Astaghfirullâh al-'Adhîm wa atûbu ilayh × 100",
+        "J2 — Astaghfirullâh long × 70",
+        "J3 — Yâ Muqalliba-l-qulûb × 33",
+        "J4 — A'ûdhu bi-llâhi mina-sh-shaytâni-r-rajîm × min 30",
+        "J5 — Lâ ilâha illâ Allâh wahdahu... × 100",
+        "J6 — Allâhu yarânî, nâdhirun, shâhidun × 33",
+        "J7 — Allâhumma a'innî... × 1 après chaque salât (à vie)"
+      ],
+      "pratiques_corporelles": [
+        "J1 — Fermer les yeux 2 min après chaque salât",
+        "J2 — Salât at-Tawba 2 rak'a + sajda silencieuse",
+        "J3 — Wudû orienté vers les yeux avec du'â de purification",
+        "J4 — 1 heure sans téléphone (téléphone physiquement éloigné)",
+        "J5 — Sport ou marche rapide 20 min avec dhikr",
+        "J6 — Bismillâh audible avant chaque déverrouillage du téléphone",
+        "J7 — Marche de sortie 15 min sans téléphone"
+      ]
+    },
+    "sources_psy": [
+      "CBT (Aaron Beck) — self-monitoring, trigger identification, scenario learning, cognitive restructuring",
+      "ACT (Steven Hayes) — défusion, acceptation, étude Twohig & Crosby 2010 (85% réduction pornographie sur 8 sessions)",
+      "Relapse Prevention (Marlatt & Gordon) — normalisation rechute, plan d'urgence",
+      "Habit Reversal Training (Azrin & Nunn) — alternative response training, self-monitoring",
+      "Self-compassion (Kristin Neff) — antidote au cycle shame→relapse",
+      "Atomic Habits / Tiny Habits (James Clear, BJ Fogg) — identity-based change, cue-routine modification",
+      "Stimulus control (Skinner / clinical addictions) — environnement avant volonté",
+      "Mindfulness (Kabat-Zinn) — murâqaba moderne, attentional anchoring"
+    ],
+    "audit_theologique_requis": "Validation par imam francophone OBLIGATOIRE avant production. Toutes références (versets, hadiths, paroles de sages, du'âs, gradations hadiths hasan/sahih) doivent être vérifiées avec sources arabes.",
+    "depistage_specifique": "J1 inclut un dépistage doux pornographie/scroll compulsif qui oriente vers un thérapeute spécialisé en dépendances comportementales si symptômes critiques. Cette cure ne remplace pas un suivi clinique.",
+    "images_a_generer": "7 .webp dans assets/cure-regard/ — famille visuelle eau/voile/lumière voilée, lanterne, paysages qui s'apaisent J1→J7"
+  }
+}
