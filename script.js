@@ -6866,7 +6866,8 @@ function openCureRegard() {
     el2.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
       + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:#C8A84A;direction:rtl;margin-bottom:12px;">\u0627\u0644\u0646\u0651\u064E\u0638\u064E\u0631</div>'
       + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;line-height:1.7;max-width:400px;margin:0 auto 32px;">Tu as travers\u00e9 la Cure. La porte reste ouverte derri\u00e8re toi.</div>'
-      + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="padding:14px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:none;color:#C8A84A;font-family:var(--serif);font-size:14px;cursor:pointer;">Retour</button>'
+      + _regardStreakHtml()
+      + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="padding:14px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:none;color:#C8A84A;font-family:var(--serif);font-size:14px;cursor:pointer;margin-top:20px;">Retour</button>'
       + '<button onclick="openCoffretRegard()" style="display:block;width:100%;max-width:320px;margin:12px auto 0;padding:12px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:none;color:#C8A84A;font-size:13px;font-family:var(--serif);cursor:pointer;font-style:italic;">Coffret du regard juste</button>'
       + '<button onclick="localStorage.removeItem(\'' + sk + '\');openCureRegard()" style="display:block;margin:16px auto 0;background:none;border:none;font-size:12px;color:rgba(255,255,255,0.3);font-family:var(--serif);cursor:pointer;font-style:italic;">Recommencer un nouveau cycle</button>'
       + '</div>';
@@ -6875,6 +6876,54 @@ function openCureRegard() {
   openCureJour('regard', typeof day === 'number' ? day : 1);
 }
 window.openCureRegard = openCureRegard;
+
+// ── Compteur "Jours en silence" (Porte Regard) ──────────────────────────────
+function _regardStreakHtml() {
+  var today = new Date().toISOString().slice(0, 10);
+  var current = parseInt(safeGetItem('niyyah_regard_streak_current') || '0', 10);
+  var record = parseInt(safeGetItem('niyyah_regard_streak_record') || '0', 10);
+  var lastCheck = safeGetItem('niyyah_regard_streak_last_check') || '';
+  var doneToday = lastCheck === today;
+  // Check if streak broken (last check was not yesterday and not today)
+  if (lastCheck && !doneToday) {
+    var yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
+    if (lastCheck !== yesterday) { current = 0; safeSetItem('niyyah_regard_streak_current', '0'); }
+  }
+  var c = '#6B5B9A';
+  var html = '<div style="border:1px solid ' + c + '22;border-radius:14px;padding:16px;max-width:320px;margin:20px auto 0;text-align:center;">';
+  html += '<div style="font-family:var(--serif);font-size:15px;color:rgba(200,168,75,0.6);margin-bottom:8px;">Jours en silence</div>';
+  html += '<div style="font-family:var(--serif);font-size:36px;color:#C8A84A;font-weight:600;margin-bottom:4px;">' + current + '</div>';
+  if (record > 0) html += '<div style="font-size:12px;color:rgba(200,168,75,0.35);margin-bottom:12px;">Record\u00a0: ' + record + ' jours</div>';
+  if (doneToday) {
+    html += '<button disabled style="width:100%;padding:12px;border-radius:10px;border:1px solid ' + c + '22;background:none;color:rgba(200,168,75,0.35);font-family:var(--serif);font-size:14px;cursor:default;opacity:0.5;">Revu demain</button>';
+  } else {
+    html += '<button onclick="_regardStreakTap()" style="width:100%;padding:12px;border-radius:10px;border:1px solid ' + c + ';background:' + c + '15;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">J\u2019ai tenu aujourd\u2019hui</button>';
+  }
+  html += '</div>';
+  return html;
+}
+function _regardStreakTap() {
+  var today = new Date().toISOString().slice(0, 10);
+  var lastCheck = safeGetItem('niyyah_regard_streak_last_check') || '';
+  if (lastCheck === today) return;
+  var current = parseInt(safeGetItem('niyyah_regard_streak_current') || '0', 10);
+  var record = parseInt(safeGetItem('niyyah_regard_streak_record') || '0', 10);
+  current++;
+  if (current > record) record = current;
+  safeSetItem('niyyah_regard_streak_current', String(current));
+  safeSetItem('niyyah_regard_streak_record', String(record));
+  safeSetItem('niyyah_regard_streak_last_check', today);
+  // Save to history
+  var hist = []; try { hist = JSON.parse(safeGetItem('niyyah_regard_streak_history') || '[]'); } catch(e) {}
+  hist.push({ date: today, streak: current });
+  if (hist.length > 365) hist = hist.slice(-365);
+  safeSetItem('niyyah_regard_streak_history', JSON.stringify(hist));
+  if (navigator.vibrate) navigator.vibrate(30);
+  showToast('\u2713 Jour ' + current);
+  // Re-render the complete screen
+  openCureRegard();
+}
+window._regardStreakTap = _regardStreakTap;
 
 function _cureRegardGenericDay(el, dayNum) {
   _cureWizardState.porte = 'regard';
