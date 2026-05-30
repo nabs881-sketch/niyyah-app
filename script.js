@@ -5579,11 +5579,11 @@ _outilAnxieteRenderers.choix_unique_sortie = function(o, c) {
     var sel = saved === opt.id;
     html += '<button onclick="_sortieSelect(\'' + sk + '\',\'' + opt.id + '\')" style="display:block;text-align:left;padding:16px;border-radius:14px;border:1px solid ' + (sel ? c : 'rgba(200,168,75,0.15)') + ';background:' + (sel ? c + '12' : 'rgba(200,168,75,0.03)') + ';cursor:pointer;transition:all 0.2s;">'
       + '<div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">'
-      + '<div style="font-family:\'Scheherazade New\',serif;font-size:18px;color:#C8A84A;direction:rtl;">' + escapeHtml(opt.label_ar || '') + '</div>'
-      + '<div style="font-family:var(--serif);font-size:15px;font-weight:600;color:' + (sel ? '#C8A84A' : 'rgba(240,234,214,0.9)') + ';">' + escapeHtml(opt.label_fr) + '</div>'
+      + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:#C8A84A;direction:rtl;">' + escapeHtml(opt.label_ar || '') + '</div>'
+      + '<div style="font-family:var(--serif);font-size:17px;font-weight:600;color:' + (sel ? '#C8A84A' : 'rgba(240,234,214,0.9)') + ';">' + escapeHtml(opt.label_fr) + '</div>'
       + '<div style="font-family:var(--serif);font-size:15px;color:rgba(200,168,75,0.5);font-style:italic;">' + escapeHtml(opt.subtitle || '') + '</div>'
       + '</div>'
-      + '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.6);line-height:1.5;">' + escapeHtml(opt.description) + '</div>'
+      + '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.6);line-height:1.5;">' + escapeHtml(opt.description) + '</div>'
       + '</button>';
   });
   html += '</div>';
@@ -5617,7 +5617,7 @@ _outilAnxieteRenderers.checkboxes_multiple = function(o, c) {
       + '<input type="checkbox" ' + (chk ? 'checked' : '') + ' onchange="_cbmToggle(\'' + sk + '\',\'' + opt.id + '\',this.checked)" style="accent-color:' + c + ';flex-shrink:0;">'
       + '<div style="flex:1;">'
       + '<span style="font-family:var(--serif);font-size:16px;color:' + (chk ? '#C8A84A' : 'rgba(240,234,214,0.8)') + ';">' + escapeHtml(opt.label_fr) + '</span>';
-    if (opt.label_ar) html += ' <span style="font-family:\'Scheherazade New\',serif;font-size:15px;color:rgba(200,168,75,0.5);direction:rtl;margin-left:6px;">' + escapeHtml(opt.label_ar) + '</span>';
+    if (opt.label_ar) html += ' <span style="font-family:\'Scheherazade New\',serif;font-size:24px;color:rgba(200,168,75,0.5);direction:rtl;margin-left:6px;">' + escapeHtml(opt.label_ar) + '</span>';
     html += '</div></label>';
     if (opt.champ_libre) {
       html += '<div style="margin-left:36px;' + (chk ? '' : 'display:none;') + '">'
@@ -5666,7 +5666,7 @@ _outilAnxieteRenderers.lecture_synchronisee_souffle = function(o, c) {
   var done = safeGetItem(sk) === '1';
   var html = '';
   if (o.introduction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.6);line-height:1.6;text-align:center;margin-bottom:12px;white-space:pre-line;">' + escapeHtml(o.introduction) + '</div>';
-  if (o.consigne) html += '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.45);text-align:center;margin-bottom:20px;">' + escapeHtml(o.consigne) + '</div>';
+  if (o.consigne) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.45);text-align:center;margin-bottom:20px;">' + escapeHtml(o.consigne) + '</div>';
   // Reading zone
   html += '<div id="' + lsId + '" style="background:#000;border-radius:16px;min-height:220px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:16px;padding:24px 16px;text-align:center;">';
   if (done) {
@@ -5678,7 +5678,7 @@ _outilAnxieteRenderers.lecture_synchronisee_souffle = function(o, c) {
   } else {
     html += '<div id="' + lsId + '_ar" style="font-family:\'Scheherazade New\',serif;font-size:28px;color:#C8A84A;direction:rtl;min-height:40px;opacity:0;transition:opacity 1s ease;"></div>';
     html += '<div id="' + lsId + '_tr" style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.5);min-height:20px;margin-top:6px;opacity:0;transition:opacity 1s ease;"></div>';
-    html += '<div id="' + lsId + '_fr" style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.75);min-height:20px;margin-top:4px;opacity:0;transition:opacity 1s ease;"></div>';
+    html += '<div id="' + lsId + '_fr" style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.75);min-height:20px;margin-top:4px;opacity:0;transition:opacity 1s ease;"></div>';
   }
   html += '</div>';
   // Button appears only after reading
@@ -5734,7 +5734,7 @@ _outilAnxieteRenderers.double_slider_compare = function(o, c) {
     var sk = sl.stockage || 'cure_anxiete_sl' + idx;
     var saved = safeGetItem(sk) || '5';
     html += '<div style="margin-bottom:20px;">';
-    html += '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.75);margin-bottom:8px;line-height:1.4;">' + escapeHtml(sl.label) + '</div>';
+    html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.75);margin-bottom:8px;line-height:1.4;">' + escapeHtml(sl.label) + '</div>';
     html += '<div style="display:flex;align-items:center;gap:8px;max-width:340px;margin:0 auto;">';
     html += '<div style="font-size:15px;color:rgba(200,168,75,0.4);font-style:italic;min-width:50px;text-align:right;">' + escapeHtml(sl.label_min) + '</div>';
     html += '<input type="range" id="' + dscId + '_s' + idx + '" min="' + (sl.min || 0) + '" max="' + (sl.max || 10) + '" value="' + saved + '" oninput="safeSetItem(\'' + sk + '\',this.value);this.nextElementSibling.textContent=this.value;_dscUpdate(\'' + dscId + '\')" style="flex:1;accent-color:' + c + ';">';
@@ -5762,7 +5762,7 @@ function _dscDiagText(o, dscId) {
   else if (v0 > mid && v1 > mid) txt = lecture.si_efforts_haut_controle_haut || '';
   else if (v0 > mid && v1 <= mid) txt = lecture.si_efforts_haut_controle_bas || '';
   else txt = lecture.si_efforts_bas_controle_bas || '';
-  return '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.75);line-height:1.6;font-style:italic;">' + escapeHtml(txt) + '</div>';
+  return '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.75);line-height:1.6;font-style:italic;">' + escapeHtml(txt) + '</div>';
 }
 function _dscUpdate(dscId) {
   var diagEl = document.getElementById(dscId + '_diag');
@@ -5802,7 +5802,7 @@ _outilAnxieteRenderers.champ_qui_disparait = function(o, c) {
     html += '</div>';
     html += '<div style="font-size:15px;color:rgba(200,168,75,0.5);text-align:center;margin-bottom:12px;">Th\u00e8me\u00a0: ' + escapeHtml(savedTheme) + '</div>';
     html += '<button onclick="_dispDeposer(\'' + dispId + '\',\'' + sk + '\')" style="display:block;width:100%;max-width:280px;margin:0 auto;padding:14px;border-radius:10px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:15px;cursor:pointer;">'
-      + '<span style="font-family:\'Scheherazade New\',serif;font-size:16px;margin-right:8px;">' + escapeHtml(act.bouton_ar || '') + '</span>'
+      + '<span style="font-family:\'Scheherazade New\',serif;font-size:24px;margin-right:8px;">' + escapeHtml(act.bouton_ar || '') + '</span>'
       + escapeHtml(act.bouton_fr || 'Je remets')
       + '</button>';
     html += '</div>';
@@ -5817,7 +5817,7 @@ _outilAnxieteRenderers.champ_qui_disparait = function(o, c) {
     html += '<span style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.7);">' + escapeHtml(o.amorce || '') + ' </span>';
     html += '<input type="text" id="' + dispId + '_input" placeholder="' + escapeHtml((o.champ && o.champ.placeholder) || '...') + '" style="background:none;border:none;border-bottom:1px solid ' + c + '44;color:#E5E0DC;font-family:var(--serif);font-size:15px;padding:2px 4px;width:100%;max-width:260px;outline:none;">';
     html += '</div>';
-    if (etape.instruction) html += '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.6);text-align:center;margin-bottom:10px;">' + escapeHtml(etape.instruction) + '</div>';
+    if (etape.instruction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.6);text-align:center;margin-bottom:10px;">' + escapeHtml(etape.instruction) + '</div>';
     var themes = etape.options_thematiques || [];
     html += '<div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:16px;">';
     themes.forEach(function(th) {
@@ -5849,7 +5849,7 @@ _outilAnxieteRenderers.ecran_sombre_avec_dhikr = function(o, c) {
   var dhkId = '_dhk_' + o.id;
   var html = '';
   if (o.introduction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.6);line-height:1.6;text-align:center;margin-bottom:12px;">' + escapeHtml(o.introduction) + '</div>';
-  if (o.consigne) html += '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.5);line-height:1.5;text-align:center;margin-bottom:20px;white-space:pre-line;">' + escapeHtml(o.consigne) + '</div>';
+  if (o.consigne) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.5);line-height:1.5;text-align:center;margin-bottom:20px;white-space:pre-line;">' + escapeHtml(o.consigne) + '</div>';
   // Dark meditation screen
   html += '<div id="' + dhkId + '" style="background:#000;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:260px;margin-bottom:16px;position:relative;overflow:hidden;">';
   // Pulsing calligraphy
@@ -5930,7 +5930,7 @@ _outilAnxieteRenderers.tri_radio_apprentissage = function(o, c) {
     for (var ci = 0; ci < exemples.length; ci++) { if (saved['q' + ci] && saved['q' + ci].correct) correct++; }
     html += '<div style="text-align:center;padding:20px 0;">'
       + '<div style="font-family:var(--serif);font-size:16px;color:#C8A84A;margin-bottom:8px;">' + correct + '/' + exemples.length + ' justes</div>'
-      + '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.6);font-style:italic;">Tu apprends \u00e0 d\u00e9m\u00ealer ce que tu vois de ce que ton esprit raconte.</div>'
+      + '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.6);font-style:italic;">Tu apprends \u00e0 d\u00e9m\u00ealer ce que tu vois de ce que ton esprit raconte.</div>'
       + '</div>';
   } else {
     var ex = exemples[currentQ];
@@ -6081,13 +6081,13 @@ _outilAnxieteRenderers.drag_and_drop_2_colonnes = function(o, c) {
   html += '<div style="display:flex;gap:10px;margin-bottom:12px;">';
   cols.forEach(function(col) {
     html += '<div style="flex:1;min-height:110px;border:1px solid ' + c + '22;border-radius:12px;padding:10px 8px;text-align:center;background:rgba(200,168,75,0.02);">'
-      + '<div style="font-family:\'Scheherazade New\',serif;font-size:18px;color:#C8A84A;direction:rtl;margin-bottom:2px;">' + escapeHtml(col.label_ar || '') + '</div>'
-      + '<div style="font-family:var(--serif);font-size:15px;font-weight:600;color:#C8A84A;margin-bottom:4px;">' + escapeHtml(col.label_fr) + '</div>'
+      + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:#C8A84A;direction:rtl;margin-bottom:2px;">' + escapeHtml(col.label_ar || '') + '</div>'
+      + '<div style="font-family:var(--serif);font-size:17px;font-weight:600;color:#C8A84A;margin-bottom:4px;">' + escapeHtml(col.label_fr) + '</div>'
       + '<div style="font-size:15px;color:rgba(200,168,75,0.4);font-style:italic;margin-bottom:8px;line-height:1.3;">' + escapeHtml(col.description) + '</div>'
       + '<div id="' + dndId + '_col_' + col.id + '" style="min-height:24px;">';
     for (var si = 0; si < nbMax; si++) {
       if (classement['s' + si] === col.id && soucis[si] && soucis[si].trim()) {
-        html += '<div style="font-size:15px;color:rgba(240,234,214,0.7);padding:4px 6px;margin-bottom:4px;border-radius:6px;background:' + c + '15;font-style:italic;">' + escapeHtml(soucis[si]) + '</div>';
+        html += '<div style="font-size:16px;color:rgba(240,234,214,0.7);padding:4px 6px;margin-bottom:4px;border-radius:6px;background:' + c + '15;font-style:italic;">' + escapeHtml(soucis[si]) + '</div>';
       }
     }
     html += '</div></div>';
@@ -6099,7 +6099,7 @@ _outilAnxieteRenderers.drag_and_drop_2_colonnes = function(o, c) {
     if (soucis[si2] && soucis[si2].trim() && !classement['s' + si2]) {
       anyUnclassified = true;
       html += '<div style="border:1px solid ' + c + '22;border-radius:10px;padding:10px;margin-bottom:8px;">'
-        + '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.8);margin-bottom:8px;font-style:italic;">\u00ab ' + escapeHtml(soucis[si2]) + ' \u00bb</div>'
+        + '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.8);margin-bottom:8px;font-style:italic;">\u00ab ' + escapeHtml(soucis[si2]) + ' \u00bb</div>'
         + '<div style="display:flex;gap:8px;">';
       cols.forEach(function(col) {
         html += '<button onclick="_dnd2Classify(\'' + dndId + '\',\'' + sk + '\',' + si2 + ',\'' + col.id + '\',' + nbMax + ')" style="flex:1;padding:10px 4px;border-radius:8px;border:1px solid ' + c + '33;background:none;color:rgba(200,168,75,0.7);font-family:var(--serif);font-size:15px;cursor:pointer;">' + escapeHtml(col.label_fr) + '</button>';
@@ -6142,7 +6142,7 @@ _outilAnxieteRenderers.pression_tactile_maintenue = function(o, c) {
   var html = '';
   if (o.introduction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
   // Phrase to repeat
-  if (phrase.ar) html += '<div style="font-family:\'Scheherazade New\',serif;font-size:22px;color:#C8A84A;direction:rtl;text-align:center;margin-bottom:4px;">' + escapeHtml(phrase.ar) + '</div>';
+  if (phrase.ar) html += '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:#C8A84A;direction:rtl;text-align:center;margin-bottom:4px;">' + escapeHtml(phrase.ar) + '</div>';
   if (phrase.translit) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.55);text-align:center;margin-bottom:6px;">' + escapeHtml(phrase.translit) + '</div>';
   if (phrase.fr) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.75);text-align:center;margin-bottom:20px;line-height:1.5;">' + escapeHtml(phrase.fr) + '</div>';
   // Touch zone with progress ring
@@ -6162,7 +6162,7 @@ _outilAnxieteRenderers.pression_tactile_maintenue = function(o, c) {
   html += '</div>';
   html += '<div id="' + pressId + '_hint" style="font-size:15px;color:rgba(200,168,75,0.4);font-style:italic;margin-top:8px;">Maintiens le contact</div>';
   html += '</div>';
-  if (o.instruction_finale) html += '<div id="' + pressId + '_final" style="display:none;font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.65);text-align:center;line-height:1.6;margin-bottom:12px;font-style:italic;">' + escapeHtml(o.instruction_finale) + '</div>';
+  if (o.instruction_finale) html += '<div id="' + pressId + '_final" style="display:none;font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.65);text-align:center;line-height:1.6;margin-bottom:12px;font-style:italic;">' + escapeHtml(o.instruction_finale) + '</div>';
   if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
   // Wire up touch/mouse events after render
   setTimeout(function() { _pressInit(pressId, duree, circumference, sk); }, 200);
@@ -6290,13 +6290,13 @@ _outilAnxieteRenderers.drag_and_drop_3_categories = function(o, c) {
   html += '<div style="display:flex;gap:8px;margin-bottom:12px;">';
   cats.forEach(function(cat) {
     html += '<div style="flex:1;min-height:100px;border:1px solid ' + c + '22;border-radius:12px;padding:10px 8px;text-align:center;background:rgba(200,168,75,0.02);">'
-      + '<div style="font-family:var(--serif);font-size:15px;font-weight:600;color:#C8A84A;margin-bottom:4px;">' + escapeHtml(cat.label) + '</div>'
+      + '<div style="font-family:var(--serif);font-size:17px;font-weight:600;color:#C8A84A;margin-bottom:4px;">' + escapeHtml(cat.label) + '</div>'
       + '<div style="font-size:15px;color:rgba(200,168,75,0.4);font-style:italic;margin-bottom:8px;line-height:1.3;">' + escapeHtml(cat.description) + '</div>'
       + '<div id="' + dndId + '_bin_' + cat.id + '" style="min-height:30px;">';
     // Show already-classified thoughts
     for (var pi = 0; pi < nb; pi++) {
       if (classement['p' + pi] === cat.id && pensees[pi] && pensees[pi].trim()) {
-        html += '<div style="font-size:15px;color:rgba(240,234,214,0.7);padding:4px 6px;margin-bottom:4px;border-radius:6px;background:' + c + '15;font-style:italic;">' + escapeHtml(pensees[pi]) + '</div>';
+        html += '<div style="font-size:16px;color:rgba(240,234,214,0.7);padding:4px 6px;margin-bottom:4px;border-radius:6px;background:' + c + '15;font-style:italic;">' + escapeHtml(pensees[pi]) + '</div>';
       }
     }
     html += '</div></div>';
@@ -6308,7 +6308,7 @@ _outilAnxieteRenderers.drag_and_drop_3_categories = function(o, c) {
     if (pensees[pi2] && pensees[pi2].trim() && !classement['p' + pi2]) {
       anyUnclassified = true;
       html += '<div style="border:1px solid ' + c + '22;border-radius:10px;padding:10px;margin-bottom:8px;">'
-        + '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.8);margin-bottom:8px;font-style:italic;">\u00ab ' + escapeHtml(pensees[pi2]) + ' \u00bb</div>'
+        + '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.8);margin-bottom:8px;font-style:italic;">\u00ab ' + escapeHtml(pensees[pi2]) + ' \u00bb</div>'
         + '<div style="display:flex;gap:6px;">';
       cats.forEach(function(cat) {
         html += '<button onclick="_dnd3Classify(\'' + dndId + '\',\'' + sk + '\',' + pi2 + ',\'' + cat.id + '\',' + nb + ')" style="flex:1;padding:8px 4px;border-radius:8px;border:1px solid ' + c + '33;background:none;color:rgba(200,168,75,0.7);font-family:var(--serif);font-size:15px;cursor:pointer;">' + escapeHtml(cat.label) + '</button>';
@@ -6373,7 +6373,7 @@ _outilAnxieteRenderers.checkboxes_sequentielles = function(o, c) {
     var future = idx > currentStep;
     var vals = saved['etape_' + idx] || [];
     html += '<div style="margin-bottom:16px;opacity:' + (future ? '0.3' : '1') + ';transition:opacity 0.3s;">';
-    html += '<div style="font-family:var(--serif);font-size:16px;font-weight:600;color:' + (done ? '#C8A84A' : active ? '#E5E0DC' : 'rgba(240,234,214,0.4)') + ';margin-bottom:8px;">' + (done ? '\u2713 ' : '') + escapeHtml(et.label) + '</div>';
+    html += '<div style="font-family:var(--serif);font-size:17px;font-weight:600;color:' + (done ? '#C8A84A' : active ? '#E5E0DC' : 'rgba(240,234,214,0.4)') + ';margin-bottom:8px;">' + (done ? '\u2713 ' : '') + escapeHtml(et.label) + '</div>';
     for (var fi = 0; fi < et.champs_libres; fi++) {
       var v = vals[fi] || '';
       html += '<input type="text" value="' + escapeHtml(v) + '" placeholder="' + escapeHtml(et.placeholder || '...') + '" ' + (future ? 'disabled' : '') + ' oninput="_seqFieldUpdate(\'' + seqId + '\',\'' + sk + '\',' + idx + ',' + fi + ',this.value)" style="display:block;width:100%;box-sizing:border-box;margin-bottom:6px;padding:10px 12px;border-radius:8px;border:1px solid ' + (future ? 'rgba(200,168,75,0.1)' : c + '33') + ';background:' + (future ? 'transparent' : 'rgba(200,168,75,0.04)') + ';color:#E5E0DC;font-family:var(--serif);font-size:16px;outline:none;">';
@@ -6421,7 +6421,7 @@ _outilAnxieteRenderers.respiration_interactive = function(o, c) {
   var sk = o.stockage || 'cure_anxiete_respiration';
   var breathId = '_breath_' + o.id;
   var html = '';
-  if (o.instructions) html += '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.6);line-height:1.6;text-align:center;margin-bottom:20px;white-space:pre-line;">' + escapeHtml(o.instructions) + '</div>';
+  if (o.instructions) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.6);line-height:1.6;text-align:center;margin-bottom:20px;white-space:pre-line;">' + escapeHtml(o.instructions) + '</div>';
   // Circle + text container
   html += '<div id="' + breathId + '" style="display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;">';
   html += '<div style="position:relative;width:180px;height:180px;display:flex;align-items:center;justify-content:center;">';
@@ -6432,7 +6432,7 @@ _outilAnxieteRenderers.respiration_interactive = function(o, c) {
     + '</svg>';
   // Inner pulsing circle
   html += '<div id="' + breathId + '_pulse" style="width:100px;height:100px;border-radius:50%;background:radial-gradient(circle,' + c + '18 0%,' + c + '08 60%,transparent 100%);border:1px solid ' + c + '33;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:transform ' + inspSec + 's ease-in-out;">';
-  html += '<div id="' + breathId + '_ar" style="font-family:\'Scheherazade New\',serif;font-size:22px;color:#C8A84A;direction:rtl;">' + escapeHtml(n.inspir_ar || '') + '</div>';
+  html += '<div id="' + breathId + '_ar" style="font-family:\'Scheherazade New\',serif;font-size:24px;color:#C8A84A;direction:rtl;">' + escapeHtml(n.inspir_ar || '') + '</div>';
   html += '<div id="' + breathId + '_label" style="font-family:var(--serif);font-size:15px;color:rgba(200,168,75,0.5);font-style:italic;margin-top:2px;">' + escapeHtml(n.inspir_translit || '') + '</div>';
   html += '</div></div>';
   // Timer
@@ -6510,8 +6510,8 @@ _outilAnxieteRenderers.checkboxes_avec_message_dynamique = function(o, c) {
   html += '<div id="' + msgId + '">';
   if (msg) {
     html += '<div style="border:1px solid ' + (hasChecked ? '#FFA00033' : c + '15') + ';border-radius:12px;padding:14px;margin-bottom:12px;background:' + (hasChecked ? 'rgba(255,160,0,0.06)' : 'transparent') + ';">';
-    if (msg.titre) html += '<div style="font-family:var(--serif);font-size:16px;font-weight:600;color:' + (hasChecked ? '#FFA000' : '#C8A84A') + ';margin-bottom:8px;">' + escapeHtml(msg.titre) + '</div>';
-    if (msg.texte) html += '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.75);line-height:1.7;white-space:pre-line;">' + escapeHtml(msg.texte) + '</div>';
+    if (msg.titre) html += '<div style="font-family:var(--serif);font-size:17px;font-weight:600;color:' + (hasChecked ? '#FFA000' : '#C8A84A') + ';margin-bottom:8px;">' + escapeHtml(msg.titre) + '</div>';
+    if (msg.texte) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.75);line-height:1.7;white-space:pre-line;">' + escapeHtml(msg.texte) + '</div>';
     html += '</div>';
   }
   html += '</div>';
@@ -6537,8 +6537,8 @@ function _cbDynUpdate(outilId, optId, checked, sk, msgId) {
   var h = '';
   if (msg) {
     h += '<div style="border:1px solid ' + (hasChecked ? '#FFA00033' : '#3F51B515') + ';border-radius:12px;padding:14px;margin-bottom:12px;background:' + (hasChecked ? 'rgba(255,160,0,0.06)' : 'transparent') + ';transition:all 0.3s;">';
-    if (msg.titre) h += '<div style="font-family:var(--serif);font-size:16px;font-weight:600;color:' + (hasChecked ? '#FFA000' : '#C8A84A') + ';margin-bottom:8px;">' + escapeHtml(msg.titre) + '</div>';
-    if (msg.texte) h += '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.75);line-height:1.7;white-space:pre-line;">' + escapeHtml(msg.texte) + '</div>';
+    if (msg.titre) h += '<div style="font-family:var(--serif);font-size:17px;font-weight:600;color:' + (hasChecked ? '#FFA000' : '#C8A84A') + ';margin-bottom:8px;">' + escapeHtml(msg.titre) + '</div>';
+    if (msg.texte) h += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.75);line-height:1.7;white-space:pre-line;">' + escapeHtml(msg.texte) + '</div>';
     h += '</div>';
   }
   el.innerHTML = h;
@@ -6558,18 +6558,18 @@ _outilAnxieteRenderers.radio_unique = function(o, c) {
     html += '<button onclick="this.parentNode.querySelectorAll(\'button\').forEach(function(b){b.style.borderColor=\'' + c + '22\';b.style.background=\'rgba(200,168,75,0.03)\';b.querySelector(\'.rq-dot\').style.background=\'transparent\';});this.style.borderColor=\'' + c + '\';this.style.background=\'' + c + '12\';this.querySelector(\'.rq-dot\').style.background=\'' + c + '\';safeSetItem(\'' + sk + '\',\'' + opt.id + '\')" style="display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:12px;border:1px solid ' + (sel ? c : c + '22') + ';background:' + (sel ? c + '12' : 'rgba(200,168,75,0.03)') + ';cursor:pointer;text-align:left;">'
       + '<div class="rq-dot" style="width:16px;height:16px;border-radius:50%;border:2px solid ' + c + ';flex-shrink:0;background:' + (sel ? c : 'transparent') + ';"></div>'
       + '<div style="flex:1;">'
-      + '<div style="font-family:\'Scheherazade New\',serif;font-size:20px;color:#C8A84A;direction:rtl;margin-bottom:2px;">' + escapeHtml(opt.label_ar || '') + '</div>'
-      + '<div style="font-family:var(--serif);font-size:16px;font-weight:600;color:rgba(240,234,214,0.9);margin-bottom:2px;">' + escapeHtml(opt.label_fr || '') + '</div>'
-      + '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(240,234,214,0.55);">' + escapeHtml(opt.definition || '') + '</div>'
+      + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:#C8A84A;direction:rtl;margin-bottom:2px;">' + escapeHtml(opt.label_ar || '') + '</div>'
+      + '<div style="font-family:var(--serif);font-size:17px;font-weight:600;color:rgba(240,234,214,0.9);margin-bottom:2px;">' + escapeHtml(opt.label_fr || '') + '</div>'
+      + '<div style="font-family:var(--serif);font-size:16px;font-style:italic;color:rgba(240,234,214,0.55);">' + escapeHtml(opt.definition || '') + '</div>'
       + '</div></button>';
   });
   html += '</div>';
   if (o.rappel_supplique) {
     var rs = o.rappel_supplique;
     html += '<div style="border:1px solid ' + c + '15;border-radius:12px;padding:14px;margin-bottom:12px;text-align:center;">'
-      + '<div style="font-family:\'Scheherazade New\',serif;font-size:18px;color:#C8A84A;direction:rtl;line-height:1.6;margin-bottom:6px;">' + escapeHtml(rs.texte_ar || '') + '</div>'
+      + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:#C8A84A;direction:rtl;line-height:1.6;margin-bottom:6px;">' + escapeHtml(rs.texte_ar || '') + '</div>'
       + '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.55);margin-bottom:4px;">' + escapeHtml(rs.translit || '') + '</div>'
-      + '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.7);margin-bottom:4px;">' + escapeHtml(rs.traduction || '') + '</div>'
+      + '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);margin-bottom:4px;">' + escapeHtml(rs.traduction || '') + '</div>'
       + '<div style="font-size:15px;color:rgba(200,168,75,0.4);">\u2014 ' + escapeHtml(rs.source || '') + '</div>'
       + '</div>';
   }
@@ -6613,7 +6613,7 @@ function _cureAnxieteWizardRender(el) {
   var bgWrap = '<div style="position:fixed;inset:0;z-index:-1;"><img src="' + imgPath + '" style="width:100%;height:100%;object-fit:cover;" alt=""><div style="position:absolute;inset:0;background:rgba(0,0,0,0.7);"></div></div>';
   var backBtn = '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="position:fixed;top:calc(var(--safe-top,0px) + 12px);left:16px;z-index:9990;background:rgba(10,10,10,0.7);border:1px solid rgba(200,168,74,0.3);border-radius:50%;color:#C8A84A;cursor:pointer;padding:0;width:40px;height:40px;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#C8A84A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>';
   var progress = '<div style="text-align:center;margin-bottom:24px;font-size:15px;letter-spacing:0.2em;color:rgba(200,168,75,0.4);">' + (s.step + 1) + '/' + totalSteps + '</div>';
-  var nextBtn = '<button onclick="_cureWizardState.step++;_cureAnxieteWizardRender()" style="display:block;width:100%;max-width:340px;margin:24px auto 0;padding:14px;border-radius:12px;border:none;background:' + c + ';color:#fff;font-size:15px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>';
+  var nextBtn = '<button onclick="_cureWizardState.step++;_cureAnxieteWizardRender()" style="display:block;width:100%;max-width:340px;margin:24px auto 0;padding:14px;border-radius:12px;border:none;background:' + c + ';color:#fff;font-size:17px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>';
 
   var html = '';
   if (step.type === '_ouverture_anxiete') {
@@ -6622,11 +6622,11 @@ function _cureAnxieteWizardRender(el) {
       + '<div style="position:relative;min-height:100vh;padding:0;">'
       + '<div data-cure-content style="padding:calc(var(--safe-top,0px)+60px) 20px 120px;position:relative;z-index:1;max-width:600px;margin:0 auto;box-sizing:border-box;">'
       + progress
-      + '<div style="font-family:\'Scheherazade New\',serif;font-size:20px;color:#C8A84A;direction:rtl;text-align:center;margin-bottom:4px;">' + escapeHtml(j.station_ar || '') + '</div>'
+      + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:#C8A84A;direction:rtl;text-align:center;margin-bottom:4px;">' + escapeHtml(j.station_ar || '') + '</div>'
       + '<div style="font-family:var(--serif);font-size:15px;letter-spacing:2px;color:rgba(200,168,75,0.5);text-align:center;margin-bottom:20px;">' + escapeHtml((j.station_fr || '').toUpperCase()) + '</div>'
       + '<div style="font-family:var(--serif);font-size:20px;font-weight:600;color:#C8A84A;text-align:center;margin-bottom:24px;">Jour ' + dayNum + ' \u2014 ' + escapeHtml(j.titre_jour || '') + '</div>'
       + (cit.texte ? '<div style="border-left:2px solid ' + c + '44;padding-left:14px;margin-bottom:20px;max-width:360px;margin-left:auto;margin-right:auto;"><div style="font-family:var(--serif);font-size:16px;font-style:italic;color:rgba(240,234,214,0.75);line-height:1.7;">' + escapeHtml(cit.texte) + '</div><div style="font-size:15px;color:rgba(200,168,75,0.5);margin-top:6px;">\u2014 ' + escapeHtml(cit.source || '') + '</div></div>' : '')
-      + '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.85);line-height:1.8;white-space:pre-line;text-align:center;max-width:360px;margin:0 auto;">' + escapeHtml(j.introduction_avant_outils || j.introduction || '') + '</div>'
+      + '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.85);line-height:1.8;white-space:pre-line;text-align:center;max-width:360px;margin:0 auto;">' + escapeHtml(j.introduction_avant_outils || j.introduction || '') + '</div>'
       + nextBtn
       + '</div></div>';
   } else if (step.type === '_outil_anxiete') {
@@ -6648,12 +6648,12 @@ function _cureAnxieteWizardRender(el) {
       + progress
       + '<div style="font-family:var(--serif);font-size:15px;letter-spacing:2px;color:rgba(200,168,75,0.5);text-align:center;margin-bottom:16px;">' + escapeHtml((bv.titre_bloc || '').toUpperCase()) + '</div>'
       + '<div style="border:1px solid ' + c + '22;border-radius:14px;padding:20px;margin-bottom:16px;text-align:center;">'
-      + (v.ar ? '<div style="font-family:\'Scheherazade New\',serif;font-size:22px;color:#C8A84A;direction:rtl;line-height:1.6;margin-bottom:10px;">' + escapeHtml(v.ar) + '</div>' : '')
+      + (v.ar ? '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:#C8A84A;direction:rtl;line-height:1.6;margin-bottom:10px;">' + escapeHtml(v.ar) + '</div>' : '')
       + (v.translit ? '<div style="font-family:var(--serif);font-size:16px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:6px;">' + escapeHtml(v.translit) + '</div>' : '')
       + (v.fr ? '<div style="font-family:var(--serif);font-size:17px;color:rgba(240,234,214,0.85);line-height:1.6;margin-bottom:8px;">' + escapeHtml(v.fr) + '</div>' : '')
       + (v.reference ? '<div style="font-size:15px;color:rgba(200,168,75,0.4);">\u2014 ' + escapeHtml(v.reference) + '</div>' : '')
       + '</div>'
-      + (bv.contexte_revelation ? '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.6);line-height:1.6;margin-bottom:12px;">' + escapeHtml(bv.contexte_revelation) + '</div>' : '')
+      + (bv.contexte_revelation ? '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.6);line-height:1.6;margin-bottom:12px;">' + escapeHtml(bv.contexte_revelation) + '</div>' : '')
       + (bv.sens_pour_aujourdhui ? '<div style="font-family:var(--serif);font-size:16px;font-style:italic;color:rgba(200,168,75,0.65);line-height:1.6;margin-bottom:12px;">' + escapeHtml(bv.sens_pour_aujourdhui) + '</div>' : '')
       + nextBtn
       + '</div>';
@@ -6672,7 +6672,7 @@ function _cureAnxieteWizardRender(el) {
       + (p.dates_auteur ? '<div style="font-size:15px;color:rgba(200,168,75,0.4);">' + escapeHtml(p.dates_auteur) + '</div>' : '')
       + (p.oeuvre ? '<div style="font-family:var(--serif);font-size:16px;font-style:italic;color:rgba(200,168,75,0.5);">' + escapeHtml(p.oeuvre) + '</div>' : '')
       + '</div>'
-      + (p.note_editoriale ? '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.55);line-height:1.5;">' + escapeHtml(p.note_editoriale) + '</div>' : '')
+      + (p.note_editoriale ? '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.55);line-height:1.5;">' + escapeHtml(p.note_editoriale) + '</div>' : '')
       + nextBtn
       + '</div>';
   } else if (step.type === '_bloc_dhikr') {
@@ -6690,8 +6690,8 @@ function _cureAnxieteWizardRender(el) {
       + (dh.sens ? '<div style="font-family:var(--serif);font-size:16px;color:rgba(200,168,75,0.45);font-style:italic;margin-bottom:8px;">' + escapeHtml(dh.sens) + '</div>' : '')
       + '<div style="font-family:var(--serif);font-size:22px;color:#C8A84A;font-weight:600;">\u00d7 ' + (bd.quantite || '') + '</div>'
       + '</div>'
-      + (bd.moment_recommande ? '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.6);text-align:center;margin-bottom:8px;">' + escapeHtml(bd.moment_recommande) + '</div>' : '')
-      + (bd.comment_pratiquer ? '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.55);line-height:1.6;margin-bottom:12px;">' + escapeHtml(bd.comment_pratiquer) + '</div>' : '')
+      + (bd.moment_recommande ? '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.6);text-align:center;margin-bottom:8px;">' + escapeHtml(bd.moment_recommande) + '</div>' : '')
+      + (bd.comment_pratiquer ? '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.55);line-height:1.6;margin-bottom:12px;">' + escapeHtml(bd.comment_pratiquer) + '</div>' : '')
       + (bd.justification && bd.justification.hadith ? '<div style="font-size:16px;color:rgba(200,168,75,0.4);font-style:italic;text-align:center;">\u2014 ' + escapeHtml(bd.justification.hadith) + '</div>' : '')
       + nextBtn
       + '</div>';
@@ -6738,7 +6738,7 @@ function _cureAnxieteWizardRender(el) {
       + progress
       + (clot.ar ? '<div style="font-family:\'Scheherazade New\',serif;font-size:26px;color:#C8A84A;direction:rtl;margin-bottom:12px;">' + escapeHtml(clot.ar) + '</div>' : '')
       + '<div style="font-family:var(--serif);font-size:18px;color:rgba(240,234,214,0.85);line-height:1.7;max-width:360px;margin-bottom:24px;">' + escapeHtml(clot.fr || 'Tu as travers\u00e9 ce jour.') + '</div>'
-      + '<button onclick="' + saveFn + '" style="display:block;width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:' + c + ';color:#fff;font-size:15px;font-weight:600;font-family:var(--serif);cursor:pointer;">' + (s.isLast ? 'Terminer la Cure' : 'Jour ' + dayNum + ' accompli') + '</button>'
+      + '<button onclick="' + saveFn + '" style="display:block;width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:' + c + ';color:#fff;font-size:17px;font-weight:600;font-family:var(--serif);cursor:pointer;">' + (s.isLast ? 'Terminer la Cure' : 'Jour ' + dayNum + ' accompli') + '</button>'
       + (s.isLast ? '<button onclick="openCoffretAnxiete()" style="display:block;width:100%;max-width:340px;margin:12px auto 0;padding:12px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:none;color:#C8A84A;font-size:15px;font-family:var(--serif);cursor:pointer;font-style:italic;">Coffret de l\u2019apaisement</button>' : '')
       + '</div>';
   }
