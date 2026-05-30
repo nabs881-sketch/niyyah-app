@@ -6950,7 +6950,15 @@ function _regardStreakTap() {
   if (hist.length > 365) hist = hist.slice(-365);
   safeSetItem('niyyah_regard_streak_history', JSON.stringify(hist));
   if (navigator.vibrate) navigator.vibrate(30);
-  showToast('\u2713 Jour ' + current);
+  // Paliers (1× chacun)
+  var _paliers = {7:'Une semaine. Tu as tenu 7\u00a0jours.',30:'Un mois lunaire. Un Ramadan du regard.',40:'Quarante. Le nombre de la transformation.',100:'Cent. Comme l\u2019istighf\u00e2r quotidien.',365:'Une ann\u00e9e compl\u00e8te.'};
+  var _palierKey = 'niyyah_regard_palier_' + current;
+  if (_paliers[current] && safeGetItem(_palierKey) !== '1') {
+    safeSetItem(_palierKey, '1');
+    showToast(_paliers[current]);
+  } else {
+    showToast('\u2713 Jour ' + current);
+  }
   // Re-render the complete screen
   openCureRegard();
 }
