@@ -3619,7 +3619,7 @@ function renderPrayerTimesCard() {
         '<div class="prayer-times-city" onclick="showCityInput()">\u270f\ufe0f ' + escapeHtml(_prayerCity||'Choisir une ville') + '</div>' +
       '</div>' +
       '<div style="font-size:12px;color:var(--t3);text-align:center;padding:8px;">Erreur \u2014 v\u00e9rifie ta connexion ou la ville</div>' +
-      '<div style="text-align:center;padding:0 0 8px;"><button onclick="_retryPrayerLoad()" style="padding:8px 16px;border-radius:10px;border:1px solid rgba(200,168,74,0.3);background:transparent;color:#C8A84A;font-size:12px;cursor:pointer;">R\u00e9essayer</button></div>' +
+      '<div style="text-align:center;padding:0 0 8px;"><button onclick="_retryPrayerLoad()" style="padding:8px 16px;border-radius:10px;border:1px solid rgba(200,168,74,0.3);background:transparent;color:#C8A84A;font-size:15px;cursor:pointer;">R\u00e9essayer</button></div>' +
       '<div class="city-input-wrap">' +
         '<input class="city-input" id="cityInput" type="text" placeholder="' + t('city_placeholder_prayer') + '" value="' + escapeHtml(_prayerCity||'') + '" onkeydown="if(event.key===\'Enter\')saveCityAndLoad()">' +
         '<button class="city-input-btn" aria-label="Valider la ville" onclick="saveCityAndLoad()">Réessayer</button>' +
@@ -5502,7 +5502,7 @@ function _renderOutilAnxiete(o, c) {
   var renderer = _outilAnxieteRenderers[o.type];
   if (renderer) return renderer(o, c);
   return '<div style="border:1px solid ' + c + '33;border-radius:14px;padding:20px;margin-bottom:16px;text-align:center;">'
-    + '<div style="font-size:13px;color:rgba(200,168,75,0.5);font-style:italic;">Outil \u00e0 venir \u2014 type\u00a0: ' + escapeHtml(o.type) + '</div></div>';
+    + '<div style="font-size:15px;color:rgba(200,168,75,0.5);font-style:italic;">Outil \u00e0 venir \u2014 type\u00a0: ' + escapeHtml(o.type) + '</div></div>';
 }
 var _outilAnxieteRenderers = {};
 
@@ -5518,25 +5518,25 @@ _outilAnxieteRenderers.double_slider = function(o, c) {
   var html = '';
   // Zone selector
   html += '<div style="margin-bottom:24px;">';
-  html += '<div style="font-family:var(--serif);font-size:13px;color:rgba(200,168,75,0.6);margin-bottom:10px;text-align:center;">O\u00f9 la sens-tu\u00a0?</div>';
+  html += '<div style="font-family:var(--serif);font-size:15px;color:rgba(200,168,75,0.6);margin-bottom:10px;text-align:center;">O\u00f9 la sens-tu\u00a0?</div>';
   html += '<div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;">';
   options.forEach(function(opt) {
     var sel = savedZ === opt;
-    html += '<button onclick="this.parentNode.querySelectorAll(\'button\').forEach(function(b){b.style.background=\'rgba(200,168,75,0.06)\';b.style.borderColor=\'rgba(200,168,75,0.2)\';b.style.color=\'rgba(240,234,214,0.6)\';});this.style.background=\'' + c + '22\';this.style.borderColor=\'' + c + '\';this.style.color=\'#C8A84A\';safeSetItem(\'' + skZ + '\',\'' + escapeHtml(opt) + '\')" style="padding:10px 16px;border-radius:10px;border:1px solid ' + (sel ? c : 'rgba(200,168,75,0.2)') + ';background:' + (sel ? c + '22' : 'rgba(200,168,75,0.06)') + ';color:' + (sel ? '#C8A84A' : 'rgba(240,234,214,0.6)') + ';font-family:var(--serif);font-size:14px;cursor:pointer;">' + escapeHtml(opt.charAt(0).toUpperCase() + opt.slice(1)) + '</button>';
+    html += '<button onclick="this.parentNode.querySelectorAll(\'button\').forEach(function(b){b.style.background=\'rgba(200,168,75,0.06)\';b.style.borderColor=\'rgba(200,168,75,0.2)\';b.style.color=\'rgba(240,234,214,0.6)\';});this.style.background=\'' + c + '22\';this.style.borderColor=\'' + c + '\';this.style.color=\'#C8A84A\';safeSetItem(\'' + skZ + '\',\'' + escapeHtml(opt) + '\')" style="padding:10px 16px;border-radius:10px;border:1px solid ' + (sel ? c : 'rgba(200,168,75,0.2)') + ';background:' + (sel ? c + '22' : 'rgba(200,168,75,0.06)') + ';color:' + (sel ? '#C8A84A' : 'rgba(240,234,214,0.6)') + ';font-family:var(--serif);font-size:16px;cursor:pointer;">' + escapeHtml(opt.charAt(0).toUpperCase() + opt.slice(1)) + '</button>';
   });
   html += '</div></div>';
   // Intensity slider
   html += '<div style="margin-bottom:16px;">';
-  html += '<div style="font-family:var(--serif);font-size:13px;color:rgba(200,168,75,0.6);margin-bottom:10px;text-align:center;">Intensit\u00e9</div>';
+  html += '<div style="font-family:var(--serif);font-size:15px;color:rgba(200,168,75,0.6);margin-bottom:10px;text-align:center;">Intensit\u00e9</div>';
   html += '<div style="display:flex;align-items:center;gap:10px;max-width:340px;margin:0 auto;">';
-  html += '<div style="font-size:11px;color:rgba(200,168,75,0.4);font-style:italic;min-width:60px;text-align:right;">' + escapeHtml(si.label_min || '0') + '</div>';
+  html += '<div style="font-size:15px;color:rgba(200,168,75,0.4);font-style:italic;min-width:60px;text-align:right;">' + escapeHtml(si.label_min || '0') + '</div>';
   html += '<input type="range" min="' + (si.min || 0) + '" max="' + (si.max || 10) + '" value="' + (savedI || '5') + '" oninput="safeSetItem(\'' + skI + '\',this.value);this.nextElementSibling.textContent=this.value" style="flex:1;accent-color:' + c + ';">';
   html += '<div style="font-size:18px;color:#C8A84A;font-family:var(--serif);font-weight:600;min-width:24px;text-align:center;">' + (savedI || '5') + '</div>';
-  html += '<div style="font-size:11px;color:rgba(200,168,75,0.4);font-style:italic;min-width:60px;">' + escapeHtml(si.label_max || '10') + '</div>';
+  html += '<div style="font-size:15px;color:rgba(200,168,75,0.4);font-style:italic;min-width:60px;">' + escapeHtml(si.label_max || '10') + '</div>';
   html += '</div></div>';
   // Notes (psy + spi)
   if (o.note_spi) {
-    html += '<div style="border-top:1px solid rgba(200,168,75,0.1);margin-top:16px;padding-top:12px;font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;">' + escapeHtml(o.note_spi) + '</div>';
+    html += '<div style="border-top:1px solid rgba(200,168,75,0.1);margin-top:16px;padding-top:12px;font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;">' + escapeHtml(o.note_spi) + '</div>';
   }
   return html;
 };
@@ -5549,7 +5549,7 @@ _outilAnxieteRenderers.ecran_final_sans_action = function(o, c) {
   var html = '<div id="' + efId + '" style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:50vh;text-align:center;">';
   html += '<div id="' + efId + '_cal" style="opacity:0;transition:opacity 3s ease;">';
   html += '<div style="font-family:\'Scheherazade New\',serif;font-size:48px;color:#C8A84A;direction:rtl;margin-bottom:12px;">' + escapeHtml(contenu.ar_centre || '') + '</div>';
-  if (contenu.translit) html += '<div style="font-family:var(--serif);font-size:14px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:6px;">' + escapeHtml(contenu.translit) + '</div>';
+  if (contenu.translit) html += '<div style="font-family:var(--serif);font-size:16px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:6px;">' + escapeHtml(contenu.translit) + '</div>';
   if (contenu.fr) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(200,168,75,0.6);">' + escapeHtml(contenu.fr) + '</div>';
   html += '</div></div>';
   // Fade in after render, then auto-advance after duration
@@ -5573,7 +5573,7 @@ _outilAnxieteRenderers.choix_unique_sortie = function(o, c) {
   var sk = o.stockage || 'cure_anxiete_sortie';
   var saved = safeGetItem(sk) || '';
   var html = '';
-  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
+  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
   html += '<div style="display:flex;flex-direction:column;gap:12px;max-width:340px;margin:0 auto 16px;">';
   opts.forEach(function(opt) {
     var sel = saved === opt.id;
@@ -5581,13 +5581,13 @@ _outilAnxieteRenderers.choix_unique_sortie = function(o, c) {
       + '<div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">'
       + '<div style="font-family:\'Scheherazade New\',serif;font-size:18px;color:#C8A84A;direction:rtl;">' + escapeHtml(opt.label_ar || '') + '</div>'
       + '<div style="font-family:var(--serif);font-size:15px;font-weight:600;color:' + (sel ? '#C8A84A' : 'rgba(240,234,214,0.9)') + ';">' + escapeHtml(opt.label_fr) + '</div>'
-      + '<div style="font-family:var(--serif);font-size:12px;color:rgba(200,168,75,0.5);font-style:italic;">' + escapeHtml(opt.subtitle || '') + '</div>'
+      + '<div style="font-family:var(--serif);font-size:15px;color:rgba(200,168,75,0.5);font-style:italic;">' + escapeHtml(opt.subtitle || '') + '</div>'
       + '</div>'
-      + '<div style="font-family:var(--serif);font-size:13px;color:rgba(240,234,214,0.6);line-height:1.5;">' + escapeHtml(opt.description) + '</div>'
+      + '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.6);line-height:1.5;">' + escapeHtml(opt.description) + '</div>'
       + '</button>';
   });
   html += '</div>';
-  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;">' + escapeHtml(o.note_spi) + '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;">' + escapeHtml(o.note_spi) + '</div>';
   return html;
 };
 function _sortieSelect(sk, optId) {
@@ -5609,24 +5609,24 @@ _outilAnxieteRenderers.checkboxes_multiple = function(o, c) {
   var checked = saved.checked || [];
   var customVal = saved.custom || '';
   var html = '';
-  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
+  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
   html += '<div style="display:flex;flex-direction:column;gap:8px;max-width:340px;margin:0 auto 16px;">';
   opts.forEach(function(opt) {
     var chk = checked.indexOf(opt.id) !== -1;
     html += '<label style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:10px;border:1px solid ' + (chk ? c : 'rgba(200,168,75,0.12)') + ';background:' + (chk ? c + '10' : 'rgba(200,168,75,0.03)') + ';cursor:pointer;transition:all 0.2s;">'
       + '<input type="checkbox" ' + (chk ? 'checked' : '') + ' onchange="_cbmToggle(\'' + sk + '\',\'' + opt.id + '\',this.checked)" style="accent-color:' + c + ';flex-shrink:0;">'
       + '<div style="flex:1;">'
-      + '<span style="font-family:var(--serif);font-size:14px;color:' + (chk ? '#C8A84A' : 'rgba(240,234,214,0.8)') + ';">' + escapeHtml(opt.label_fr) + '</span>';
+      + '<span style="font-family:var(--serif);font-size:16px;color:' + (chk ? '#C8A84A' : 'rgba(240,234,214,0.8)') + ';">' + escapeHtml(opt.label_fr) + '</span>';
     if (opt.label_ar) html += ' <span style="font-family:\'Scheherazade New\',serif;font-size:15px;color:rgba(200,168,75,0.5);direction:rtl;margin-left:6px;">' + escapeHtml(opt.label_ar) + '</span>';
     html += '</div></label>';
     if (opt.champ_libre) {
       html += '<div style="margin-left:36px;' + (chk ? '' : 'display:none;') + '">'
-        + '<input type="text" value="' + escapeHtml(customVal) + '" placeholder="..." oninput="var _s={};try{_s=JSON.parse(safeGetItem(\'' + sk + '\')||\'{}\')}catch(e){}_s.custom=this.value;safeSetItem(\'' + sk + '\',JSON.stringify(_s))" style="width:100%;box-sizing:border-box;padding:8px 12px;border-radius:8px;border:1px solid ' + c + '33;background:rgba(200,168,75,0.04);color:#E5E0DC;font-family:var(--serif);font-size:14px;outline:none;">'
+        + '<input type="text" value="' + escapeHtml(customVal) + '" placeholder="..." oninput="var _s={};try{_s=JSON.parse(safeGetItem(\'' + sk + '\')||\'{}\')}catch(e){}_s.custom=this.value;safeSetItem(\'' + sk + '\',JSON.stringify(_s))" style="width:100%;box-sizing:border-box;padding:8px 12px;border-radius:8px;border:1px solid ' + c + '33;background:rgba(200,168,75,0.04);color:#E5E0DC;font-family:var(--serif);font-size:16px;outline:none;">'
         + '</div>';
     }
   });
   html += '</div>';
-  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;">' + escapeHtml(o.note_spi) + '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;">' + escapeHtml(o.note_spi) + '</div>';
   return html;
 };
 function _cbmToggle(sk, optId, isChecked) {
@@ -5646,12 +5646,12 @@ _outilAnxieteRenderers.champ_texte_long = function(o, c) {
   var saved = safeGetItem(sk) || '';
   var maxCar = champ.max_caracteres || 500;
   var html = '';
-  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;white-space:pre-line;">' + escapeHtml(o.introduction) + '</div>';
+  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;white-space:pre-line;">' + escapeHtml(o.introduction) + '</div>';
   if (o.amorce) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.7);margin-bottom:8px;">' + escapeHtml(o.amorce) + '</div>';
   html += '<textarea maxlength="' + maxCar + '" placeholder="' + escapeHtml(champ.placeholder || '...') + '" oninput="safeSetItem(\'' + sk + '\',this.value);var c=this.parentNode.querySelector(\'._ctLong\');if(c)c.textContent=this.value.length+\'/' + maxCar + '\'" style="display:block;width:100%;box-sizing:border-box;min-height:120px;padding:14px;border-radius:12px;border:1px solid ' + c + '33;background:rgba(200,168,75,0.04);color:#E5E0DC;font-family:var(--serif);font-size:15px;line-height:1.6;outline:none;resize:vertical;">' + escapeHtml(saved) + '</textarea>';
-  html += '<div class="_ctLong" style="font-size:11px;color:rgba(200,168,75,0.3);text-align:right;margin-top:4px;">' + saved.length + '/' + maxCar + '</div>';
-  if (o.note_finale) html += '<div style="font-family:var(--serif);font-size:12px;color:rgba(200,168,75,0.45);text-align:center;font-style:italic;margin-top:12px;line-height:1.5;">' + escapeHtml(o.note_finale) + '</div>';
-  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.35);text-align:center;line-height:1.5;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
+  html += '<div class="_ctLong" style="font-size:15px;color:rgba(200,168,75,0.3);text-align:right;margin-top:4px;">' + saved.length + '/' + maxCar + '</div>';
+  if (o.note_finale) html += '<div style="font-family:var(--serif);font-size:15px;color:rgba(200,168,75,0.45);text-align:center;font-style:italic;margin-top:12px;line-height:1.5;">' + escapeHtml(o.note_finale) + '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.35);text-align:center;line-height:1.5;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
   return html;
 };
 
@@ -5665,31 +5665,31 @@ _outilAnxieteRenderers.lecture_synchronisee_souffle = function(o, c) {
   var lsId = '_ls_' + o.id;
   var done = safeGetItem(sk) === '1';
   var html = '';
-  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.6);line-height:1.6;text-align:center;margin-bottom:12px;white-space:pre-line;">' + escapeHtml(o.introduction) + '</div>';
-  if (o.consigne) html += '<div style="font-family:var(--serif);font-size:13px;color:rgba(240,234,214,0.45);text-align:center;margin-bottom:20px;">' + escapeHtml(o.consigne) + '</div>';
+  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.6);line-height:1.6;text-align:center;margin-bottom:12px;white-space:pre-line;">' + escapeHtml(o.introduction) + '</div>';
+  if (o.consigne) html += '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.45);text-align:center;margin-bottom:20px;">' + escapeHtml(o.consigne) + '</div>';
   // Reading zone
   html += '<div id="' + lsId + '" style="background:#000;border-radius:16px;min-height:220px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:16px;padding:24px 16px;text-align:center;">';
   if (done) {
     // Show full verse
     html += '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:#C8A84A;direction:rtl;line-height:1.6;margin-bottom:10px;">' + escapeHtml(arSegs.join(' ')) + '</div>';
-    html += '<div style="font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(200,168,75,0.55);margin-bottom:6px;">' + escapeHtml(trSegs.join(' ')) + '</div>';
-    html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);">' + escapeHtml(frSegs.join(' ')) + '</div>';
-    html += '<div style="font-size:11px;color:rgba(200,168,75,0.4);margin-top:8px;">\u2014 ' + escapeHtml(verset.reference || '') + '</div>';
+    html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.55);margin-bottom:6px;">' + escapeHtml(trSegs.join(' ')) + '</div>';
+    html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);">' + escapeHtml(frSegs.join(' ')) + '</div>';
+    html += '<div style="font-size:15px;color:rgba(200,168,75,0.4);margin-top:8px;">\u2014 ' + escapeHtml(verset.reference || '') + '</div>';
   } else {
     html += '<div id="' + lsId + '_ar" style="font-family:\'Scheherazade New\',serif;font-size:28px;color:#C8A84A;direction:rtl;min-height:40px;opacity:0;transition:opacity 1s ease;"></div>';
-    html += '<div id="' + lsId + '_tr" style="font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);min-height:20px;margin-top:6px;opacity:0;transition:opacity 1s ease;"></div>';
+    html += '<div id="' + lsId + '_tr" style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.5);min-height:20px;margin-top:6px;opacity:0;transition:opacity 1s ease;"></div>';
     html += '<div id="' + lsId + '_fr" style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.75);min-height:20px;margin-top:4px;opacity:0;transition:opacity 1s ease;"></div>';
   }
   html += '</div>';
   // Button appears only after reading
   html += '<div id="' + lsId + '_btn" style="text-align:center;' + (done ? '' : 'display:none;') + '">';
   if (done) {
-    html += '<div style="font-size:12px;color:rgba(200,168,75,0.4);font-style:italic;">\u2713 Lu</div>';
+    html += '<div style="font-size:15px;color:rgba(200,168,75,0.4);font-style:italic;">\u2713 Lu</div>';
   } else {
-    html += '<button onclick="safeSetItem(\'' + sk + '\',\'1\')" style="padding:10px 28px;border-radius:10px;border:1px solid rgba(200,168,75,0.2);background:none;color:rgba(200,168,75,0.6);font-family:var(--serif);font-size:13px;cursor:pointer;">Termin\u00e9</button>';
+    html += '<button onclick="safeSetItem(\'' + sk + '\',\'1\')" style="padding:10px 28px;border-radius:10px;border:1px solid rgba(200,168,75,0.2);background:none;color:rgba(200,168,75,0.6);font-family:var(--serif);font-size:15px;cursor:pointer;">Termin\u00e9</button>';
   }
   html += '</div>';
-  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.35);text-align:center;line-height:1.5;margin-top:12px;">' + escapeHtml(o.note_spi) + '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.35);text-align:center;line-height:1.5;margin-top:12px;">' + escapeHtml(o.note_spi) + '</div>';
   if (!done) setTimeout(function() { _lsPlay(lsId, arSegs, trSegs, frSegs, sk); }, 500);
   return html;
 };
@@ -5729,24 +5729,24 @@ _outilAnxieteRenderers.double_slider_compare = function(o, c) {
   var lecture = o.lecture_du_resultat || {};
   var dscId = '_dsc_' + o.id;
   var html = '';
-  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;white-space:pre-line;">' + escapeHtml(o.introduction) + '</div>';
+  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;white-space:pre-line;">' + escapeHtml(o.introduction) + '</div>';
   sliders.forEach(function(sl, idx) {
     var sk = sl.stockage || 'cure_anxiete_sl' + idx;
     var saved = safeGetItem(sk) || '5';
     html += '<div style="margin-bottom:20px;">';
-    html += '<div style="font-family:var(--serif);font-size:13px;color:rgba(240,234,214,0.75);margin-bottom:8px;line-height:1.4;">' + escapeHtml(sl.label) + '</div>';
+    html += '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.75);margin-bottom:8px;line-height:1.4;">' + escapeHtml(sl.label) + '</div>';
     html += '<div style="display:flex;align-items:center;gap:8px;max-width:340px;margin:0 auto;">';
-    html += '<div style="font-size:10px;color:rgba(200,168,75,0.4);font-style:italic;min-width:50px;text-align:right;">' + escapeHtml(sl.label_min) + '</div>';
+    html += '<div style="font-size:15px;color:rgba(200,168,75,0.4);font-style:italic;min-width:50px;text-align:right;">' + escapeHtml(sl.label_min) + '</div>';
     html += '<input type="range" id="' + dscId + '_s' + idx + '" min="' + (sl.min || 0) + '" max="' + (sl.max || 10) + '" value="' + saved + '" oninput="safeSetItem(\'' + sk + '\',this.value);this.nextElementSibling.textContent=this.value;_dscUpdate(\'' + dscId + '\')" style="flex:1;accent-color:' + c + ';">';
     html += '<div style="font-size:18px;color:#C8A84A;font-family:var(--serif);font-weight:600;min-width:24px;text-align:center;">' + saved + '</div>';
-    html += '<div style="font-size:10px;color:rgba(200,168,75,0.4);font-style:italic;min-width:50px;">' + escapeHtml(sl.label_max) + '</div>';
+    html += '<div style="font-size:15px;color:rgba(200,168,75,0.4);font-style:italic;min-width:50px;">' + escapeHtml(sl.label_max) + '</div>';
     html += '</div></div>';
   });
   // Diagnostic reading
   html += '<div id="' + dscId + '_diag" style="border:1px solid ' + c + '22;border-radius:12px;padding:14px;margin-bottom:12px;text-align:center;min-height:40px;">';
   html += _dscDiagText(o, dscId);
   html += '</div>';
-  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
   // Wire live update after render
   setTimeout(function() { _dscUpdate(dscId); }, 200);
   return html;
@@ -5762,7 +5762,7 @@ function _dscDiagText(o, dscId) {
   else if (v0 > mid && v1 > mid) txt = lecture.si_efforts_haut_controle_haut || '';
   else if (v0 > mid && v1 <= mid) txt = lecture.si_efforts_haut_controle_bas || '';
   else txt = lecture.si_efforts_bas_controle_bas || '';
-  return '<div style="font-family:var(--serif);font-size:13px;color:rgba(240,234,214,0.75);line-height:1.6;font-style:italic;">' + escapeHtml(txt) + '</div>';
+  return '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.75);line-height:1.6;font-style:italic;">' + escapeHtml(txt) + '</div>';
 }
 function _dscUpdate(dscId) {
   var diagEl = document.getElementById(dscId + '_diag');
@@ -5784,15 +5784,15 @@ _outilAnxieteRenderers.champ_qui_disparait = function(o, c) {
   var dispId = '_disp_' + o.id;
   var done = safeGetItem(sk + '_done') === '1';
   var html = '';
-  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;white-space:pre-line;">' + escapeHtml(o.introduction) + '</div>';
+  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;white-space:pre-line;">' + escapeHtml(o.introduction) + '</div>';
   if (done) {
     // Already done — show calligraphy
     html += '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:140px;text-align:center;margin-bottom:12px;">'
       + '<div style="font-family:\'Scheherazade New\',serif;font-size:32px;color:#C8A84A;direction:rtl;margin-bottom:8px;">' + escapeHtml(act.calligraphie_finale_ar || '') + '</div>'
-      + '<div style="font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(200,168,75,0.55);">' + escapeHtml(act.calligraphie_finale_translit || '') + '</div>'
-      + '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);margin-top:4px;">' + escapeHtml(act.calligraphie_finale_sens || '') + '</div>'
+      + '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.55);">' + escapeHtml(act.calligraphie_finale_translit || '') + '</div>'
+      + '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);margin-top:4px;">' + escapeHtml(act.calligraphie_finale_sens || '') + '</div>'
       + '</div>';
-    if (savedTheme) html += '<div style="font-size:12px;color:rgba(200,168,75,0.4);text-align:center;font-style:italic;">Th\u00e8me d\u00e9pos\u00e9\u00a0: ' + escapeHtml(savedTheme) + '</div>';
+    if (savedTheme) html += '<div style="font-size:15px;color:rgba(200,168,75,0.4);text-align:center;font-style:italic;">Th\u00e8me d\u00e9pos\u00e9\u00a0: ' + escapeHtml(savedTheme) + '</div>';
   } else if (savedTheme) {
     // Theme chosen, ready to deposit
     html += '<div id="' + dispId + '_form">';
@@ -5800,7 +5800,7 @@ _outilAnxieteRenderers.champ_qui_disparait = function(o, c) {
     html += '<span style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.7);">' + escapeHtml(o.amorce || '') + ' </span>';
     html += '<input type="text" id="' + dispId + '_input" placeholder="' + escapeHtml((o.champ && o.champ.placeholder) || '...') + '" style="background:none;border:none;border-bottom:1px solid ' + c + '44;color:#E5E0DC;font-family:var(--serif);font-size:15px;padding:2px 4px;width:100%;max-width:260px;outline:none;">';
     html += '</div>';
-    html += '<div style="font-size:12px;color:rgba(200,168,75,0.5);text-align:center;margin-bottom:12px;">Th\u00e8me\u00a0: ' + escapeHtml(savedTheme) + '</div>';
+    html += '<div style="font-size:15px;color:rgba(200,168,75,0.5);text-align:center;margin-bottom:12px;">Th\u00e8me\u00a0: ' + escapeHtml(savedTheme) + '</div>';
     html += '<button onclick="_dispDeposer(\'' + dispId + '\',\'' + sk + '\')" style="display:block;width:100%;max-width:280px;margin:0 auto;padding:14px;border-radius:10px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:15px;cursor:pointer;">'
       + '<span style="font-family:\'Scheherazade New\',serif;font-size:16px;margin-right:8px;">' + escapeHtml(act.bouton_ar || '') + '</span>'
       + escapeHtml(act.bouton_fr || 'Je remets')
@@ -5808,8 +5808,8 @@ _outilAnxieteRenderers.champ_qui_disparait = function(o, c) {
     html += '</div>';
     html += '<div id="' + dispId + '_cal" style="display:none;text-align:center;">'
       + '<div style="font-family:\'Scheherazade New\',serif;font-size:32px;color:#C8A84A;direction:rtl;margin-bottom:8px;">' + escapeHtml(act.calligraphie_finale_ar || '') + '</div>'
-      + '<div style="font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(200,168,75,0.55);">' + escapeHtml(act.calligraphie_finale_translit || '') + '</div>'
-      + '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);margin-top:4px;">' + escapeHtml(act.calligraphie_finale_sens || '') + '</div>'
+      + '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.55);">' + escapeHtml(act.calligraphie_finale_translit || '') + '</div>'
+      + '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);margin-top:4px;">' + escapeHtml(act.calligraphie_finale_sens || '') + '</div>'
       + '</div>';
   } else {
     // Step 1: write + choose theme
@@ -5817,15 +5817,15 @@ _outilAnxieteRenderers.champ_qui_disparait = function(o, c) {
     html += '<span style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.7);">' + escapeHtml(o.amorce || '') + ' </span>';
     html += '<input type="text" id="' + dispId + '_input" placeholder="' + escapeHtml((o.champ && o.champ.placeholder) || '...') + '" style="background:none;border:none;border-bottom:1px solid ' + c + '44;color:#E5E0DC;font-family:var(--serif);font-size:15px;padding:2px 4px;width:100%;max-width:260px;outline:none;">';
     html += '</div>';
-    if (etape.instruction) html += '<div style="font-family:var(--serif);font-size:13px;color:rgba(240,234,214,0.6);text-align:center;margin-bottom:10px;">' + escapeHtml(etape.instruction) + '</div>';
+    if (etape.instruction) html += '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.6);text-align:center;margin-bottom:10px;">' + escapeHtml(etape.instruction) + '</div>';
     var themes = etape.options_thematiques || [];
     html += '<div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:16px;">';
     themes.forEach(function(th) {
-      html += '<button onclick="safeSetItem(\'' + sk + '\',\'' + escapeHtml(th) + '\');_cureAnxieteWizardRender()" style="padding:8px 14px;border-radius:8px;border:1px solid ' + c + '33;background:rgba(200,168,75,0.04);color:rgba(240,234,214,0.7);font-family:var(--serif);font-size:13px;cursor:pointer;">' + escapeHtml(th) + '</button>';
+      html += '<button onclick="safeSetItem(\'' + sk + '\',\'' + escapeHtml(th) + '\');_cureAnxieteWizardRender()" style="padding:8px 14px;border-radius:8px;border:1px solid ' + c + '33;background:rgba(200,168,75,0.04);color:rgba(240,234,214,0.7);font-family:var(--serif);font-size:15px;cursor:pointer;">' + escapeHtml(th) + '</button>';
     });
     html += '</div>';
   }
-  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-top:12px;">' + escapeHtml(o.note_spi) + '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-top:12px;">' + escapeHtml(o.note_spi) + '</div>';
   return html;
 };
 function _dispDeposer(dispId, sk) {
@@ -5848,18 +5848,18 @@ _outilAnxieteRenderers.ecran_sombre_avec_dhikr = function(o, c) {
   var sk = o.stockage || 'cure_anxiete_dhikr';
   var dhkId = '_dhk_' + o.id;
   var html = '';
-  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.6);line-height:1.6;text-align:center;margin-bottom:12px;">' + escapeHtml(o.introduction) + '</div>';
-  if (o.consigne) html += '<div style="font-family:var(--serif);font-size:13px;color:rgba(240,234,214,0.5);line-height:1.5;text-align:center;margin-bottom:20px;white-space:pre-line;">' + escapeHtml(o.consigne) + '</div>';
+  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.6);line-height:1.6;text-align:center;margin-bottom:12px;">' + escapeHtml(o.introduction) + '</div>';
+  if (o.consigne) html += '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.5);line-height:1.5;text-align:center;margin-bottom:20px;white-space:pre-line;">' + escapeHtml(o.consigne) + '</div>';
   // Dark meditation screen
   html += '<div id="' + dhkId + '" style="background:#000;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:260px;margin-bottom:16px;position:relative;overflow:hidden;">';
   // Pulsing calligraphy
   html += '<div id="' + dhkId + '_cal" style="font-family:\'Scheherazade New\',serif;font-size:42px;color:#C8A84A;direction:rtl;opacity:0.8;animation:_dhkPulse 10s ease-in-out infinite;">' + escapeHtml(dhikr.ar || '') + '</div>';
-  html += '<div style="font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(200,168,75,0.4);margin-top:8px;">' + escapeHtml(dhikr.translit || '') + '</div>';
-  html += '<div style="font-family:var(--serif);font-size:12px;color:rgba(200,168,75,0.3);margin-top:4px;">' + escapeHtml(dhikr.sens || '') + '</div>';
+  html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);margin-top:8px;">' + escapeHtml(dhikr.translit || '') + '</div>';
+  html += '<div style="font-family:var(--serif);font-size:15px;color:rgba(200,168,75,0.3);margin-top:4px;">' + escapeHtml(dhikr.sens || '') + '</div>';
   html += '</div>';
   // Terminate button
-  html += '<button id="' + dhkId + '_stop" onclick="_dhkStop(\'' + dhkId + '\',\'' + sk + '\')" style="display:block;margin:0 auto;padding:10px 28px;border-radius:10px;border:1px solid rgba(200,168,75,0.2);background:none;color:rgba(200,168,75,0.4);font-family:var(--serif);font-size:13px;cursor:pointer;">Terminer</button>';
-  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.35);text-align:center;line-height:1.5;margin-top:16px;">' + escapeHtml(o.note_spi) + '</div>';
+  html += '<button id="' + dhkId + '_stop" onclick="_dhkStop(\'' + dhkId + '\',\'' + sk + '\')" style="display:block;margin:0 auto;padding:10px 28px;border-radius:10px;border:1px solid rgba(200,168,75,0.2);background:none;color:rgba(200,168,75,0.4);font-family:var(--serif);font-size:15px;cursor:pointer;">Terminer</button>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.35);text-align:center;line-height:1.5;margin-top:16px;">' + escapeHtml(o.note_spi) + '</div>';
   // Inject keyframe + start timer
   setTimeout(function() {
     if (!document.getElementById('_dhkPulseStyle')) {
@@ -5891,7 +5891,7 @@ _outilAnxieteRenderers.champ_avec_amorce_obligatoire = function(o, c) {
   var amId = '_am_' + o.id;
   var validated = safeGetItem(sk + '_done') === '1';
   var html = '';
-  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
+  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
   // Amorce + field
   html += '<div style="border:1px solid ' + c + '22;border-radius:14px;padding:16px;margin-bottom:16px;">';
   html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.8);line-height:1.8;">'
@@ -5900,12 +5900,12 @@ _outilAnxieteRenderers.champ_avec_amorce_obligatoire = function(o, c) {
     + '</div>';
   html += '</div>';
   if (!validated) {
-    html += '<button onclick="safeSetItem(\'' + sk + '_done\',\'1\');_cureAnxieteWizardRender()" style="display:block;width:100%;max-width:260px;margin:0 auto 12px;padding:12px;border-radius:10px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">J\u2019ai \u00e9crit</button>';
+    html += '<button onclick="safeSetItem(\'' + sk + '_done\',\'1\');_cureAnxieteWizardRender()" style="display:block;width:100%;max-width:260px;margin:0 auto 12px;padding:12px;border-radius:10px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:16px;cursor:pointer;">J\u2019ai \u00e9crit</button>';
   }
   if (validated && o.instruction_finale) {
-    html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.75);text-align:center;line-height:1.6;margin-bottom:12px;font-style:italic;">' + escapeHtml(o.instruction_finale) + '</div>';
+    html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.75);text-align:center;line-height:1.6;margin-bottom:12px;font-style:italic;">' + escapeHtml(o.instruction_finale) + '</div>';
   }
-  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
   return html;
 };
 
@@ -5924,18 +5924,18 @@ _outilAnxieteRenderers.tri_radio_apprentissage = function(o, c) {
   }
   var allDone = currentQ >= exemples.length;
   var html = '';
-  if (o.introduction && currentQ === 0) html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
+  if (o.introduction && currentQ === 0) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
   if (allDone) {
     var correct = 0;
     for (var ci = 0; ci < exemples.length; ci++) { if (saved['q' + ci] && saved['q' + ci].correct) correct++; }
     html += '<div style="text-align:center;padding:20px 0;">'
       + '<div style="font-family:var(--serif);font-size:16px;color:#C8A84A;margin-bottom:8px;">' + correct + '/' + exemples.length + ' justes</div>'
-      + '<div style="font-family:var(--serif);font-size:13px;color:rgba(240,234,214,0.6);font-style:italic;">Tu apprends \u00e0 d\u00e9m\u00ealer ce que tu vois de ce que ton esprit raconte.</div>'
+      + '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.6);font-style:italic;">Tu apprends \u00e0 d\u00e9m\u00ealer ce que tu vois de ce que ton esprit raconte.</div>'
       + '</div>';
   } else {
     var ex = exemples[currentQ];
     // Counter
-    html += '<div style="font-size:11px;color:rgba(200,168,75,0.4);text-align:center;margin-bottom:12px;">' + (currentQ + 1) + '/' + exemples.length + '</div>';
+    html += '<div style="font-size:15px;color:rgba(200,168,75,0.4);text-align:center;margin-bottom:12px;">' + (currentQ + 1) + '/' + exemples.length + '</div>';
     // Statement
     html += '<div style="border:1px solid ' + c + '22;border-radius:12px;padding:16px;margin-bottom:16px;text-align:center;">'
       + '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.9);line-height:1.5;font-style:italic;">\u00ab ' + escapeHtml(ex.texte) + ' \u00bb</div>'
@@ -5943,13 +5943,13 @@ _outilAnxieteRenderers.tri_radio_apprentissage = function(o, c) {
     // Options
     html += '<div style="display:flex;gap:10px;max-width:340px;margin:0 auto 16px;">';
     opts.forEach(function(opt) {
-      html += '<button onclick="_triAnswer(\'' + triId + '\',\'' + sk + '\',' + currentQ + ',\'' + opt.id + '\',\'' + ex.bonne_reponse + '\')" style="flex:1;padding:14px 8px;border-radius:10px;border:1px solid ' + c + '33;background:rgba(200,168,75,0.03);color:rgba(240,234,214,0.8);font-family:var(--serif);font-size:14px;cursor:pointer;">' + escapeHtml(opt.label) + '</button>';
+      html += '<button onclick="_triAnswer(\'' + triId + '\',\'' + sk + '\',' + currentQ + ',\'' + opt.id + '\',\'' + ex.bonne_reponse + '\')" style="flex:1;padding:14px 8px;border-radius:10px;border:1px solid ' + c + '33;background:rgba(200,168,75,0.03);color:rgba(240,234,214,0.8);font-family:var(--serif);font-size:16px;cursor:pointer;">' + escapeHtml(opt.label) + '</button>';
     });
     html += '</div>';
     // Feedback zone
     html += '<div id="' + triId + '_fb" style="min-height:40px;"></div>';
   }
-  if (o.note_spi && allDone) html += '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
+  if (o.note_spi && allDone) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
   return html;
 };
 function _triAnswer(triId, sk, qIdx, answer, correct) {
@@ -5968,7 +5968,7 @@ function _triAnswer(triId, sk, qIdx, answer, correct) {
     } else {
       fbText = (o && o.feedback_incorrect_inverse) || 'Regarde encore.';
     }
-    fbEl.innerHTML = '<div style="font-family:var(--serif);font-size:14px;color:' + (isCorrect ? '#C8A84A' : '#FFA000') + ';text-align:center;line-height:1.5;padding:8px;">' + escapeHtml(fbText) + '</div>';
+    fbEl.innerHTML = '<div style="font-family:var(--serif);font-size:16px;color:' + (isCorrect ? '#C8A84A' : '#FFA000') + ';text-align:center;line-height:1.5;padding:8px;">' + escapeHtml(fbText) + '</div>';
     setTimeout(function() { _cureAnxieteWizardRender(); }, isCorrect ? 1500 : 2500);
   }
 }
@@ -5981,13 +5981,13 @@ _outilAnxieteRenderers.texte_qui_s_efface = function(o, c) {
   var act = o.action_validation || {};
   var effId = '_eff_' + o.id;
   var html = '';
-  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
+  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
   if (saved === 'done') {
     // Already deposited — show calligraphy
     html += '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:160px;text-align:center;">'
       + '<div style="font-family:\'Scheherazade New\',serif;font-size:32px;color:#C8A84A;direction:rtl;margin-bottom:8px;">' + escapeHtml(act.calligraphie_finale_ar || '') + '</div>'
-      + '<div style="font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(200,168,75,0.55);">' + escapeHtml(act.calligraphie_finale_translit || '') + '</div>'
-      + '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);margin-top:4px;">' + escapeHtml(act.calligraphie_finale_sens || '') + '</div>'
+      + '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.55);">' + escapeHtml(act.calligraphie_finale_translit || '') + '</div>'
+      + '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);margin-top:4px;">' + escapeHtml(act.calligraphie_finale_sens || '') + '</div>'
       + '</div>';
   } else {
     html += '<div id="' + effId + '">';
@@ -5995,16 +5995,16 @@ _outilAnxieteRenderers.texte_qui_s_efface = function(o, c) {
     if (o.amorce) html += '<span style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.7);flex-shrink:0;">' + escapeHtml(o.amorce) + '</span>';
     html += '<input type="text" id="' + effId + '_input" placeholder="' + escapeHtml((o.champ && o.champ.placeholder) || '...') + '" style="flex:1;background:none;border:none;border-bottom:1px solid ' + c + '44;color:#E5E0DC;font-family:var(--serif);font-size:15px;padding:4px 2px;outline:none;">';
     html += '</div>';
-    html += '<button onclick="_effDeposer(\'' + effId + '\',\'' + sk + '\')" style="display:block;width:100%;max-width:260px;margin:0 auto;padding:12px;border-radius:10px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">' + escapeHtml(act.bouton || 'D\u00e9poser') + '</button>';
+    html += '<button onclick="_effDeposer(\'' + effId + '\',\'' + sk + '\')" style="display:block;width:100%;max-width:260px;margin:0 auto;padding:12px;border-radius:10px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:16px;cursor:pointer;">' + escapeHtml(act.bouton || 'D\u00e9poser') + '</button>';
     html += '</div>';
     // Calligraphy hidden, will appear after fade
     html += '<div id="' + effId + '_cal" style="display:none;text-align:center;">'
       + '<div style="font-family:\'Scheherazade New\',serif;font-size:32px;color:#C8A84A;direction:rtl;margin-bottom:8px;">' + escapeHtml(act.calligraphie_finale_ar || '') + '</div>'
-      + '<div style="font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(200,168,75,0.55);">' + escapeHtml(act.calligraphie_finale_translit || '') + '</div>'
-      + '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);margin-top:4px;">' + escapeHtml(act.calligraphie_finale_sens || '') + '</div>'
+      + '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.55);">' + escapeHtml(act.calligraphie_finale_translit || '') + '</div>'
+      + '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);margin-top:4px;">' + escapeHtml(act.calligraphie_finale_sens || '') + '</div>'
       + '</div>';
   }
-  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-top:16px;">' + escapeHtml(o.note_spi) + '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-top:16px;">' + escapeHtml(o.note_spi) + '</div>';
   return html;
 };
 function _effDeposer(effId, sk) {
@@ -6030,22 +6030,22 @@ _outilAnxieteRenderers.choix_unique_avec_engagement = function(o, c) {
   var customVal = saved.custom || '';
   var engId = '_eng_' + o.id;
   var html = '';
-  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
+  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
   html += '<div style="display:flex;flex-direction:column;gap:8px;max-width:340px;margin:0 auto 16px;">';
   opts.forEach(function(opt) {
     var sel = selectedId === opt.id;
     html += '<button onclick="_engSelect(\'' + engId + '\',\'' + sk + '\',\'' + opt.id + '\',' + (opt.champ_libre ? 'true' : 'false') + ')" style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:10px;border:1px solid ' + (sel ? c : 'rgba(200,168,75,0.15)') + ';background:' + (sel ? c + '12' : 'rgba(200,168,75,0.03)') + ';cursor:pointer;text-align:left;">'
       + '<div style="width:16px;height:16px;border-radius:50%;border:2px solid ' + c + ';flex-shrink:0;background:' + (sel ? c : 'transparent') + ';"></div>'
-      + '<span style="font-family:var(--serif);font-size:14px;color:' + (sel ? '#C8A84A' : 'rgba(240,234,214,0.8)') + ';">' + escapeHtml(opt.label) + '</span>'
+      + '<span style="font-family:var(--serif);font-size:16px;color:' + (sel ? '#C8A84A' : 'rgba(240,234,214,0.8)') + ';">' + escapeHtml(opt.label) + '</span>'
       + '</button>';
     if (opt.champ_libre) {
       html += '<div id="' + engId + '_custom" style="display:' + (sel ? 'block' : 'none') + ';margin-left:28px;">'
-        + '<input type="text" value="' + escapeHtml(customVal) + '" placeholder="' + escapeHtml(opt.placeholder || '...') + '" oninput="var _s={};try{_s=JSON.parse(safeGetItem(\'' + sk + '\')||\'{}\')}catch(e){}_s.custom=this.value;safeSetItem(\'' + sk + '\',JSON.stringify(_s))" style="width:100%;box-sizing:border-box;padding:10px 12px;border-radius:8px;border:1px solid ' + c + '33;background:rgba(200,168,75,0.04);color:#E5E0DC;font-family:var(--serif);font-size:14px;outline:none;">'
+        + '<input type="text" value="' + escapeHtml(customVal) + '" placeholder="' + escapeHtml(opt.placeholder || '...') + '" oninput="var _s={};try{_s=JSON.parse(safeGetItem(\'' + sk + '\')||\'{}\')}catch(e){}_s.custom=this.value;safeSetItem(\'' + sk + '\',JSON.stringify(_s))" style="width:100%;box-sizing:border-box;padding:10px 12px;border-radius:8px;border:1px solid ' + c + '33;background:rgba(200,168,75,0.04);color:#E5E0DC;font-family:var(--serif);font-size:16px;outline:none;">'
         + '</div>';
     }
   });
   html += '</div>';
-  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;">' + escapeHtml(o.note_spi) + '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;">' + escapeHtml(o.note_spi) + '</div>';
   return html;
 };
 function _engSelect(engId, sk, optId, hasCustom) {
@@ -6067,14 +6067,14 @@ _outilAnxieteRenderers.drag_and_drop_2_colonnes = function(o, c) {
   var classement = saved.classement || {};
   var dndId = '_dnd2_' + o.id;
   var html = '';
-  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
+  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
   // Dynamic input fields
   var nbFields = Math.max(nbMin, soucis.filter(function(s) { return s && s.trim(); }).length + 1);
   if (nbFields > nbMax) nbFields = nbMax;
   html += '<div style="margin-bottom:20px;">';
   for (var i = 0; i < nbFields; i++) {
     var v = soucis[i] || '';
-    html += '<input type="text" id="' + dndId + '_s' + i + '" value="' + escapeHtml(v) + '" placeholder="Souci ' + (i + 1) + '..." oninput="_dnd2SaveSoucis(\'' + dndId + '\',\'' + sk + '\',' + nbMax + ')" style="display:block;width:100%;box-sizing:border-box;margin-bottom:8px;padding:10px 12px;border-radius:8px;border:1px solid ' + c + '33;background:rgba(200,168,75,0.04);color:#E5E0DC;font-family:var(--serif);font-size:14px;outline:none;">';
+    html += '<input type="text" id="' + dndId + '_s' + i + '" value="' + escapeHtml(v) + '" placeholder="Souci ' + (i + 1) + '..." oninput="_dnd2SaveSoucis(\'' + dndId + '\',\'' + sk + '\',' + nbMax + ')" style="display:block;width:100%;box-sizing:border-box;margin-bottom:8px;padding:10px 12px;border-radius:8px;border:1px solid ' + c + '33;background:rgba(200,168,75,0.04);color:#E5E0DC;font-family:var(--serif);font-size:16px;outline:none;">';
   }
   html += '</div>';
   // Two columns
@@ -6082,12 +6082,12 @@ _outilAnxieteRenderers.drag_and_drop_2_colonnes = function(o, c) {
   cols.forEach(function(col) {
     html += '<div style="flex:1;min-height:110px;border:1px solid ' + c + '22;border-radius:12px;padding:10px 8px;text-align:center;background:rgba(200,168,75,0.02);">'
       + '<div style="font-family:\'Scheherazade New\',serif;font-size:18px;color:#C8A84A;direction:rtl;margin-bottom:2px;">' + escapeHtml(col.label_ar || '') + '</div>'
-      + '<div style="font-family:var(--serif);font-size:13px;font-weight:600;color:#C8A84A;margin-bottom:4px;">' + escapeHtml(col.label_fr) + '</div>'
-      + '<div style="font-size:10px;color:rgba(200,168,75,0.4);font-style:italic;margin-bottom:8px;line-height:1.3;">' + escapeHtml(col.description) + '</div>'
+      + '<div style="font-family:var(--serif);font-size:15px;font-weight:600;color:#C8A84A;margin-bottom:4px;">' + escapeHtml(col.label_fr) + '</div>'
+      + '<div style="font-size:15px;color:rgba(200,168,75,0.4);font-style:italic;margin-bottom:8px;line-height:1.3;">' + escapeHtml(col.description) + '</div>'
       + '<div id="' + dndId + '_col_' + col.id + '" style="min-height:24px;">';
     for (var si = 0; si < nbMax; si++) {
       if (classement['s' + si] === col.id && soucis[si] && soucis[si].trim()) {
-        html += '<div style="font-size:12px;color:rgba(240,234,214,0.7);padding:4px 6px;margin-bottom:4px;border-radius:6px;background:' + c + '15;font-style:italic;">' + escapeHtml(soucis[si]) + '</div>';
+        html += '<div style="font-size:15px;color:rgba(240,234,214,0.7);padding:4px 6px;margin-bottom:4px;border-radius:6px;background:' + c + '15;font-style:italic;">' + escapeHtml(soucis[si]) + '</div>';
       }
     }
     html += '</div></div>';
@@ -6099,18 +6099,18 @@ _outilAnxieteRenderers.drag_and_drop_2_colonnes = function(o, c) {
     if (soucis[si2] && soucis[si2].trim() && !classement['s' + si2]) {
       anyUnclassified = true;
       html += '<div style="border:1px solid ' + c + '22;border-radius:10px;padding:10px;margin-bottom:8px;">'
-        + '<div style="font-family:var(--serif);font-size:13px;color:rgba(240,234,214,0.8);margin-bottom:8px;font-style:italic;">\u00ab ' + escapeHtml(soucis[si2]) + ' \u00bb</div>'
+        + '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.8);margin-bottom:8px;font-style:italic;">\u00ab ' + escapeHtml(soucis[si2]) + ' \u00bb</div>'
         + '<div style="display:flex;gap:8px;">';
       cols.forEach(function(col) {
-        html += '<button onclick="_dnd2Classify(\'' + dndId + '\',\'' + sk + '\',' + si2 + ',\'' + col.id + '\',' + nbMax + ')" style="flex:1;padding:10px 4px;border-radius:8px;border:1px solid ' + c + '33;background:none;color:rgba(200,168,75,0.7);font-family:var(--serif);font-size:12px;cursor:pointer;">' + escapeHtml(col.label_fr) + '</button>';
+        html += '<button onclick="_dnd2Classify(\'' + dndId + '\',\'' + sk + '\',' + si2 + ',\'' + col.id + '\',' + nbMax + ')" style="flex:1;padding:10px 4px;border-radius:8px;border:1px solid ' + c + '33;background:none;color:rgba(200,168,75,0.7);font-family:var(--serif);font-size:15px;cursor:pointer;">' + escapeHtml(col.label_fr) + '</button>';
       });
       html += '</div></div>';
     }
   }
   if (!anyUnclassified && soucis.some(function(s) { return s && s.trim(); })) {
-    html += '<div style="font-family:var(--serif);font-size:13px;color:rgba(200,168,75,0.5);text-align:center;font-style:italic;margin-bottom:8px;">\u2713 Tout est r\u00e9parti.</div>';
+    html += '<div style="font-family:var(--serif);font-size:15px;color:rgba(200,168,75,0.5);text-align:center;font-style:italic;margin-bottom:8px;">\u2713 Tout est r\u00e9parti.</div>';
   }
-  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
   return html;
 };
 function _dnd2SaveSoucis(dndId, sk, nbMax) {
@@ -6140,11 +6140,11 @@ _outilAnxieteRenderers.pression_tactile_maintenue = function(o, c) {
   var sk = o.stockage || 'cure_anxiete_pression';
   var pressId = '_press_' + o.id;
   var html = '';
-  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
+  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
   // Phrase to repeat
   if (phrase.ar) html += '<div style="font-family:\'Scheherazade New\',serif;font-size:22px;color:#C8A84A;direction:rtl;text-align:center;margin-bottom:4px;">' + escapeHtml(phrase.ar) + '</div>';
-  if (phrase.translit) html += '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.55);text-align:center;margin-bottom:6px;">' + escapeHtml(phrase.translit) + '</div>';
-  if (phrase.fr) html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.75);text-align:center;margin-bottom:20px;line-height:1.5;">' + escapeHtml(phrase.fr) + '</div>';
+  if (phrase.translit) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.55);text-align:center;margin-bottom:6px;">' + escapeHtml(phrase.translit) + '</div>';
+  if (phrase.fr) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.75);text-align:center;margin-bottom:20px;line-height:1.5;">' + escapeHtml(phrase.fr) + '</div>';
   // Touch zone with progress ring
   html += '<div style="display:flex;flex-direction:column;align-items:center;margin-bottom:16px;">';
   html += '<div id="' + pressId + '_zone" style="position:relative;width:160px;height:160px;display:flex;align-items:center;justify-content:center;cursor:pointer;-webkit-user-select:none;user-select:none;">';
@@ -6157,13 +6157,13 @@ _outilAnxieteRenderers.pression_tactile_maintenue = function(o, c) {
   // Center text
   html += '<div style="text-align:center;z-index:1;">'
     + '<div id="' + pressId + '_icon" style="font-size:36px;color:' + c + ';opacity:0.6;margin-bottom:4px;">\u270B</div>'
-    + '<div id="' + pressId + '_time" style="font-family:var(--serif);font-size:14px;color:rgba(200,168,75,0.5);">0/' + duree + 's</div>'
+    + '<div id="' + pressId + '_time" style="font-family:var(--serif);font-size:16px;color:rgba(200,168,75,0.5);">0/' + duree + 's</div>'
     + '</div>';
   html += '</div>';
-  html += '<div id="' + pressId + '_hint" style="font-size:12px;color:rgba(200,168,75,0.4);font-style:italic;margin-top:8px;">Maintiens le contact</div>';
+  html += '<div id="' + pressId + '_hint" style="font-size:15px;color:rgba(200,168,75,0.4);font-style:italic;margin-top:8px;">Maintiens le contact</div>';
   html += '</div>';
-  if (o.instruction_finale) html += '<div id="' + pressId + '_final" style="display:none;font-family:var(--serif);font-size:13px;color:rgba(240,234,214,0.65);text-align:center;line-height:1.6;margin-bottom:12px;font-style:italic;">' + escapeHtml(o.instruction_finale) + '</div>';
-  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
+  if (o.instruction_finale) html += '<div id="' + pressId + '_final" style="display:none;font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.65);text-align:center;line-height:1.6;margin-bottom:12px;font-style:italic;">' + escapeHtml(o.instruction_finale) + '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
   // Wire up touch/mouse events after render
   setTimeout(function() { _pressInit(pressId, duree, circumference, sk); }, 200);
   return html;
@@ -6254,12 +6254,12 @@ _outilAnxieteRenderers.silhouette_interactive = function(o, c) {
   zones.forEach(function(z) {
     var sel = saved === z.id;
     html += '<button onclick="_silSelect(\'' + silId + '\',\'' + sk + '\',\'' + z.id + '\')" style="display:block;width:100%;text-align:left;padding:8px 10px;border-radius:8px;border:1px solid ' + (sel ? c : 'rgba(200,168,75,0.12)') + ';background:' + (sel ? c + '15' : 'rgba(200,168,75,0.03)') + ';cursor:pointer;transition:all 0.2s;">'
-      + '<div style="font-family:var(--serif);font-size:13px;color:' + (sel ? '#C8A84A' : 'rgba(240,234,214,0.8)') + ';font-weight:' + (sel ? '600' : '400') + ';">' + escapeHtml(z.label) + '</div>'
-      + '<div style="font-size:11px;color:rgba(200,168,75,0.4);font-style:italic;">' + escapeHtml(z.description_typique) + '</div>'
+      + '<div style="font-family:var(--serif);font-size:15px;color:' + (sel ? '#C8A84A' : 'rgba(240,234,214,0.8)') + ';font-weight:' + (sel ? '600' : '400') + ';">' + escapeHtml(z.label) + '</div>'
+      + '<div style="font-size:15px;color:rgba(200,168,75,0.4);font-style:italic;">' + escapeHtml(z.description_typique) + '</div>'
       + '</button>';
   });
   html += '</div></div>';
-  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
   return html;
 };
 function _silSelect(silId, sk, zoneId) {
@@ -6278,25 +6278,25 @@ _outilAnxieteRenderers.drag_and_drop_3_categories = function(o, c) {
   var classement = saved.classement || {};
   var dndId = '_dnd3_' + o.id;
   var html = '';
-  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
+  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
   // Input fields for thoughts
   html += '<div style="margin-bottom:20px;">';
   for (var i = 0; i < nb; i++) {
     var v = pensees[i] || '';
-    html += '<input type="text" id="' + dndId + '_p' + i + '" value="' + escapeHtml(v) + '" placeholder="Pens\u00e9e ' + (i + 1) + '..." oninput="_dnd3SavePensees(\'' + dndId + '\',\'' + sk + '\',' + nb + ')" style="display:block;width:100%;box-sizing:border-box;margin-bottom:8px;padding:10px 12px;border-radius:8px;border:1px solid ' + c + '33;background:rgba(200,168,75,0.04);color:#E5E0DC;font-family:var(--serif);font-size:14px;outline:none;">';
+    html += '<input type="text" id="' + dndId + '_p' + i + '" value="' + escapeHtml(v) + '" placeholder="Pens\u00e9e ' + (i + 1) + '..." oninput="_dnd3SavePensees(\'' + dndId + '\',\'' + sk + '\',' + nb + ')" style="display:block;width:100%;box-sizing:border-box;margin-bottom:8px;padding:10px 12px;border-radius:8px;border:1px solid ' + c + '33;background:rgba(200,168,75,0.04);color:#E5E0DC;font-family:var(--serif);font-size:16px;outline:none;">';
   }
   html += '</div>';
   // Category bins
   html += '<div style="display:flex;gap:8px;margin-bottom:12px;">';
   cats.forEach(function(cat) {
     html += '<div style="flex:1;min-height:100px;border:1px solid ' + c + '22;border-radius:12px;padding:10px 8px;text-align:center;background:rgba(200,168,75,0.02);">'
-      + '<div style="font-family:var(--serif);font-size:13px;font-weight:600;color:#C8A84A;margin-bottom:4px;">' + escapeHtml(cat.label) + '</div>'
-      + '<div style="font-size:10px;color:rgba(200,168,75,0.4);font-style:italic;margin-bottom:8px;line-height:1.3;">' + escapeHtml(cat.description) + '</div>'
+      + '<div style="font-family:var(--serif);font-size:15px;font-weight:600;color:#C8A84A;margin-bottom:4px;">' + escapeHtml(cat.label) + '</div>'
+      + '<div style="font-size:15px;color:rgba(200,168,75,0.4);font-style:italic;margin-bottom:8px;line-height:1.3;">' + escapeHtml(cat.description) + '</div>'
       + '<div id="' + dndId + '_bin_' + cat.id + '" style="min-height:30px;">';
     // Show already-classified thoughts
     for (var pi = 0; pi < nb; pi++) {
       if (classement['p' + pi] === cat.id && pensees[pi] && pensees[pi].trim()) {
-        html += '<div style="font-size:12px;color:rgba(240,234,214,0.7);padding:4px 6px;margin-bottom:4px;border-radius:6px;background:' + c + '15;font-style:italic;">' + escapeHtml(pensees[pi]) + '</div>';
+        html += '<div style="font-size:15px;color:rgba(240,234,214,0.7);padding:4px 6px;margin-bottom:4px;border-radius:6px;background:' + c + '15;font-style:italic;">' + escapeHtml(pensees[pi]) + '</div>';
       }
     }
     html += '</div></div>';
@@ -6308,18 +6308,18 @@ _outilAnxieteRenderers.drag_and_drop_3_categories = function(o, c) {
     if (pensees[pi2] && pensees[pi2].trim() && !classement['p' + pi2]) {
       anyUnclassified = true;
       html += '<div style="border:1px solid ' + c + '22;border-radius:10px;padding:10px;margin-bottom:8px;">'
-        + '<div style="font-family:var(--serif);font-size:13px;color:rgba(240,234,214,0.8);margin-bottom:8px;font-style:italic;">\u00ab ' + escapeHtml(pensees[pi2]) + ' \u00bb</div>'
+        + '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.8);margin-bottom:8px;font-style:italic;">\u00ab ' + escapeHtml(pensees[pi2]) + ' \u00bb</div>'
         + '<div style="display:flex;gap:6px;">';
       cats.forEach(function(cat) {
-        html += '<button onclick="_dnd3Classify(\'' + dndId + '\',\'' + sk + '\',' + pi2 + ',\'' + cat.id + '\',' + nb + ')" style="flex:1;padding:8px 4px;border-radius:8px;border:1px solid ' + c + '33;background:none;color:rgba(200,168,75,0.7);font-family:var(--serif);font-size:11px;cursor:pointer;">' + escapeHtml(cat.label) + '</button>';
+        html += '<button onclick="_dnd3Classify(\'' + dndId + '\',\'' + sk + '\',' + pi2 + ',\'' + cat.id + '\',' + nb + ')" style="flex:1;padding:8px 4px;border-radius:8px;border:1px solid ' + c + '33;background:none;color:rgba(200,168,75,0.7);font-family:var(--serif);font-size:15px;cursor:pointer;">' + escapeHtml(cat.label) + '</button>';
       });
       html += '</div></div>';
     }
   }
   if (!anyUnclassified && pensees.some(function(p) { return p && p.trim(); })) {
-    html += '<div style="font-family:var(--serif);font-size:13px;color:rgba(200,168,75,0.5);text-align:center;font-style:italic;margin-bottom:8px;">\u2713 Toutes class\u00e9es.</div>';
+    html += '<div style="font-family:var(--serif);font-size:15px;color:rgba(200,168,75,0.5);text-align:center;font-style:italic;margin-bottom:8px;">\u2713 Toutes class\u00e9es.</div>';
   }
-  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
   return html;
 };
 function _dnd3SavePensees(dndId, sk, nb) {
@@ -6365,7 +6365,7 @@ _outilAnxieteRenderers.checkboxes_sequentielles = function(o, c) {
   }
   if (currentStep >= etapes.length) currentStep = etapes.length - 1;
   var html = '';
-  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
+  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
   html += '<div id="' + seqId + '">';
   etapes.forEach(function(et, idx) {
     var done = idx < currentStep;
@@ -6373,15 +6373,15 @@ _outilAnxieteRenderers.checkboxes_sequentielles = function(o, c) {
     var future = idx > currentStep;
     var vals = saved['etape_' + idx] || [];
     html += '<div style="margin-bottom:16px;opacity:' + (future ? '0.3' : '1') + ';transition:opacity 0.3s;">';
-    html += '<div style="font-family:var(--serif);font-size:14px;font-weight:600;color:' + (done ? '#C8A84A' : active ? '#E5E0DC' : 'rgba(240,234,214,0.4)') + ';margin-bottom:8px;">' + (done ? '\u2713 ' : '') + escapeHtml(et.label) + '</div>';
+    html += '<div style="font-family:var(--serif);font-size:16px;font-weight:600;color:' + (done ? '#C8A84A' : active ? '#E5E0DC' : 'rgba(240,234,214,0.4)') + ';margin-bottom:8px;">' + (done ? '\u2713 ' : '') + escapeHtml(et.label) + '</div>';
     for (var fi = 0; fi < et.champs_libres; fi++) {
       var v = vals[fi] || '';
-      html += '<input type="text" value="' + escapeHtml(v) + '" placeholder="' + escapeHtml(et.placeholder || '...') + '" ' + (future ? 'disabled' : '') + ' oninput="_seqFieldUpdate(\'' + seqId + '\',\'' + sk + '\',' + idx + ',' + fi + ',this.value)" style="display:block;width:100%;box-sizing:border-box;margin-bottom:6px;padding:10px 12px;border-radius:8px;border:1px solid ' + (future ? 'rgba(200,168,75,0.1)' : c + '33') + ';background:' + (future ? 'transparent' : 'rgba(200,168,75,0.04)') + ';color:#E5E0DC;font-family:var(--serif);font-size:14px;outline:none;">';
+      html += '<input type="text" value="' + escapeHtml(v) + '" placeholder="' + escapeHtml(et.placeholder || '...') + '" ' + (future ? 'disabled' : '') + ' oninput="_seqFieldUpdate(\'' + seqId + '\',\'' + sk + '\',' + idx + ',' + fi + ',this.value)" style="display:block;width:100%;box-sizing:border-box;margin-bottom:6px;padding:10px 12px;border-radius:8px;border:1px solid ' + (future ? 'rgba(200,168,75,0.1)' : c + '33') + ';background:' + (future ? 'transparent' : 'rgba(200,168,75,0.04)') + ';color:#E5E0DC;font-family:var(--serif);font-size:16px;outline:none;">';
     }
     html += '</div>';
   });
   html += '</div>';
-  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
   return html;
 };
 function _seqFieldUpdate(seqId, sk, etapeIdx, fieldIdx, value) {
@@ -6421,7 +6421,7 @@ _outilAnxieteRenderers.respiration_interactive = function(o, c) {
   var sk = o.stockage || 'cure_anxiete_respiration';
   var breathId = '_breath_' + o.id;
   var html = '';
-  if (o.instructions) html += '<div style="font-family:var(--serif);font-size:13px;color:rgba(240,234,214,0.6);line-height:1.6;text-align:center;margin-bottom:20px;white-space:pre-line;">' + escapeHtml(o.instructions) + '</div>';
+  if (o.instructions) html += '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.6);line-height:1.6;text-align:center;margin-bottom:20px;white-space:pre-line;">' + escapeHtml(o.instructions) + '</div>';
   // Circle + text container
   html += '<div id="' + breathId + '" style="display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;">';
   html += '<div style="position:relative;width:180px;height:180px;display:flex;align-items:center;justify-content:center;">';
@@ -6433,14 +6433,14 @@ _outilAnxieteRenderers.respiration_interactive = function(o, c) {
   // Inner pulsing circle
   html += '<div id="' + breathId + '_pulse" style="width:100px;height:100px;border-radius:50%;background:radial-gradient(circle,' + c + '18 0%,' + c + '08 60%,transparent 100%);border:1px solid ' + c + '33;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:transform ' + inspSec + 's ease-in-out;">';
   html += '<div id="' + breathId + '_ar" style="font-family:\'Scheherazade New\',serif;font-size:22px;color:#C8A84A;direction:rtl;">' + escapeHtml(n.inspir_ar || '') + '</div>';
-  html += '<div id="' + breathId + '_label" style="font-family:var(--serif);font-size:11px;color:rgba(200,168,75,0.5);font-style:italic;margin-top:2px;">' + escapeHtml(n.inspir_translit || '') + '</div>';
+  html += '<div id="' + breathId + '_label" style="font-family:var(--serif);font-size:15px;color:rgba(200,168,75,0.5);font-style:italic;margin-top:2px;">' + escapeHtml(n.inspir_translit || '') + '</div>';
   html += '</div></div>';
   // Timer
-  html += '<div id="' + breathId + '_timer" style="font-family:var(--serif);font-size:12px;color:rgba(200,168,75,0.4);margin-top:10px;">0:00</div>';
+  html += '<div id="' + breathId + '_timer" style="font-family:var(--serif);font-size:15px;color:rgba(200,168,75,0.4);margin-top:10px;">0:00</div>';
   html += '</div>';
   // Terminate button
-  html += '<button id="' + breathId + '_stop" onclick="_breathStop(\'' + breathId + '\',\'' + sk + '\')" style="display:block;margin:0 auto;padding:10px 28px;border-radius:10px;border:1px solid ' + c + '33;background:none;color:rgba(200,168,75,0.6);font-family:var(--serif);font-size:13px;cursor:pointer;">Terminer</button>';
-  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-top:16px;">' + escapeHtml(o.note_spi) + '</div>';
+  html += '<button id="' + breathId + '_stop" onclick="_breathStop(\'' + breathId + '\',\'' + sk + '\')" style="display:block;margin:0 auto;padding:10px 28px;border-radius:10px;border:1px solid ' + c + '33;background:none;color:rgba(200,168,75,0.6);font-family:var(--serif);font-size:15px;cursor:pointer;">Terminer</button>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-top:16px;">' + escapeHtml(o.note_spi) + '</div>';
   // Start animation after render
   setTimeout(function() { _breathStart(breathId, inspSec, expSec, duree, n, sk); }, 300);
   return html;
@@ -6494,13 +6494,13 @@ _outilAnxieteRenderers.checkboxes_avec_message_dynamique = function(o, c) {
   var saved = []; try { saved = JSON.parse(safeGetItem(sk) || '[]'); } catch(e) {}
   var msgId = '_cbMsg_' + o.id;
   var html = '';
-  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);line-height:1.6;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
+  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);line-height:1.6;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
   html += '<div style="display:flex;flex-direction:column;gap:8px;max-width:340px;margin:0 auto 16px;">';
   opts.forEach(function(opt) {
     var chk = saved.indexOf(opt.id) !== -1;
     html += '<label style="display:flex;align-items:flex-start;gap:12px;padding:12px 14px;border-radius:10px;border:1px solid rgba(200,168,75,0.12);background:rgba(200,168,75,0.03);cursor:pointer;">'
       + '<input type="checkbox" ' + (chk ? 'checked' : '') + ' onchange="_cbDynUpdate(\'' + escapeHtml(o.id) + '\',\'' + opt.id + '\',this.checked,\'' + sk + '\',\'' + msgId + '\')" style="accent-color:' + c + ';margin-top:3px;flex-shrink:0;">'
-      + '<span style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.8);line-height:1.5;">' + escapeHtml(opt.label) + '</span>'
+      + '<span style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.8);line-height:1.5;">' + escapeHtml(opt.label) + '</span>'
       + '</label>';
   });
   html += '</div>';
@@ -6510,8 +6510,8 @@ _outilAnxieteRenderers.checkboxes_avec_message_dynamique = function(o, c) {
   html += '<div id="' + msgId + '">';
   if (msg) {
     html += '<div style="border:1px solid ' + (hasChecked ? '#FFA00033' : c + '15') + ';border-radius:12px;padding:14px;margin-bottom:12px;background:' + (hasChecked ? 'rgba(255,160,0,0.06)' : 'transparent') + ';">';
-    if (msg.titre) html += '<div style="font-family:var(--serif);font-size:14px;font-weight:600;color:' + (hasChecked ? '#FFA000' : '#C8A84A') + ';margin-bottom:8px;">' + escapeHtml(msg.titre) + '</div>';
-    if (msg.texte) html += '<div style="font-family:var(--serif);font-size:13px;color:rgba(240,234,214,0.75);line-height:1.7;white-space:pre-line;">' + escapeHtml(msg.texte) + '</div>';
+    if (msg.titre) html += '<div style="font-family:var(--serif);font-size:16px;font-weight:600;color:' + (hasChecked ? '#FFA000' : '#C8A84A') + ';margin-bottom:8px;">' + escapeHtml(msg.titre) + '</div>';
+    if (msg.texte) html += '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.75);line-height:1.7;white-space:pre-line;">' + escapeHtml(msg.texte) + '</div>';
     html += '</div>';
   }
   html += '</div>';
@@ -6537,8 +6537,8 @@ function _cbDynUpdate(outilId, optId, checked, sk, msgId) {
   var h = '';
   if (msg) {
     h += '<div style="border:1px solid ' + (hasChecked ? '#FFA00033' : '#3F51B515') + ';border-radius:12px;padding:14px;margin-bottom:12px;background:' + (hasChecked ? 'rgba(255,160,0,0.06)' : 'transparent') + ';transition:all 0.3s;">';
-    if (msg.titre) h += '<div style="font-family:var(--serif);font-size:14px;font-weight:600;color:' + (hasChecked ? '#FFA000' : '#C8A84A') + ';margin-bottom:8px;">' + escapeHtml(msg.titre) + '</div>';
-    if (msg.texte) h += '<div style="font-family:var(--serif);font-size:13px;color:rgba(240,234,214,0.75);line-height:1.7;white-space:pre-line;">' + escapeHtml(msg.texte) + '</div>';
+    if (msg.titre) h += '<div style="font-family:var(--serif);font-size:16px;font-weight:600;color:' + (hasChecked ? '#FFA000' : '#C8A84A') + ';margin-bottom:8px;">' + escapeHtml(msg.titre) + '</div>';
+    if (msg.texte) h += '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.75);line-height:1.7;white-space:pre-line;">' + escapeHtml(msg.texte) + '</div>';
     h += '</div>';
   }
   el.innerHTML = h;
@@ -6551,7 +6551,7 @@ _outilAnxieteRenderers.radio_unique = function(o, c) {
   var sk = o.stockage || 'cure_anxiete_radio';
   var saved = safeGetItem(sk) || '';
   var html = '';
-  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
+  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
   html += '<div style="display:flex;flex-direction:column;gap:10px;max-width:340px;margin:0 auto 16px;">';
   opts.forEach(function(opt) {
     var sel = saved === opt.id;
@@ -6559,8 +6559,8 @@ _outilAnxieteRenderers.radio_unique = function(o, c) {
       + '<div class="rq-dot" style="width:16px;height:16px;border-radius:50%;border:2px solid ' + c + ';flex-shrink:0;background:' + (sel ? c : 'transparent') + ';"></div>'
       + '<div style="flex:1;">'
       + '<div style="font-family:\'Scheherazade New\',serif;font-size:20px;color:#C8A84A;direction:rtl;margin-bottom:2px;">' + escapeHtml(opt.label_ar || '') + '</div>'
-      + '<div style="font-family:var(--serif);font-size:14px;font-weight:600;color:rgba(240,234,214,0.9);margin-bottom:2px;">' + escapeHtml(opt.label_fr || '') + '</div>'
-      + '<div style="font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(240,234,214,0.55);">' + escapeHtml(opt.definition || '') + '</div>'
+      + '<div style="font-family:var(--serif);font-size:16px;font-weight:600;color:rgba(240,234,214,0.9);margin-bottom:2px;">' + escapeHtml(opt.label_fr || '') + '</div>'
+      + '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(240,234,214,0.55);">' + escapeHtml(opt.definition || '') + '</div>'
       + '</div></button>';
   });
   html += '</div>';
@@ -6568,12 +6568,12 @@ _outilAnxieteRenderers.radio_unique = function(o, c) {
     var rs = o.rappel_supplique;
     html += '<div style="border:1px solid ' + c + '15;border-radius:12px;padding:14px;margin-bottom:12px;text-align:center;">'
       + '<div style="font-family:\'Scheherazade New\',serif;font-size:18px;color:#C8A84A;direction:rtl;line-height:1.6;margin-bottom:6px;">' + escapeHtml(rs.texte_ar || '') + '</div>'
-      + '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.55);margin-bottom:4px;">' + escapeHtml(rs.translit || '') + '</div>'
-      + '<div style="font-family:var(--serif);font-size:13px;color:rgba(240,234,214,0.7);margin-bottom:4px;">' + escapeHtml(rs.traduction || '') + '</div>'
-      + '<div style="font-size:11px;color:rgba(200,168,75,0.4);">\u2014 ' + escapeHtml(rs.source || '') + '</div>'
+      + '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.55);margin-bottom:4px;">' + escapeHtml(rs.translit || '') + '</div>'
+      + '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.7);margin-bottom:4px;">' + escapeHtml(rs.traduction || '') + '</div>'
+      + '<div style="font-size:15px;color:rgba(200,168,75,0.4);">\u2014 ' + escapeHtml(rs.source || '') + '</div>'
       + '</div>';
   }
-  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;">' + escapeHtml(o.note_spi) + '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;">' + escapeHtml(o.note_spi) + '</div>';
   return html;
 };
 
@@ -6592,7 +6592,7 @@ _outilAnxieteRenderers.double_champ_lie = function(o, c) {
   html += '<input type="text" value="' + escapeHtml(v2) + '" placeholder="' + escapeHtml(c2.placeholder || '...') + '" oninput="safeSetItem(\'' + sk2 + '\',this.value)" style="display:block;width:100%;box-sizing:border-box;background:none;border:none;border-bottom:1px solid ' + c + '44;color:#E5E0DC;font-family:var(--serif);font-size:17px;padding:6px 4px;outline:none;"></div>';
   html += '</div>';
   if (o.note_spi) {
-    html += '<div style="font-family:var(--serif);font-size:14px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-bottom:8px;">' + escapeHtml(o.note_spi) + '</div>';
+    html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-bottom:8px;">' + escapeHtml(o.note_spi) + '</div>';
   }
   return html;
 };
@@ -6612,7 +6612,7 @@ function _cureAnxieteWizardRender(el) {
   var imgPath = 'assets/cure-anxiete/j' + dayNum + '.webp';
   var bgWrap = '<div style="position:fixed;inset:0;z-index:-1;"><img src="' + imgPath + '" style="width:100%;height:100%;object-fit:cover;" alt=""><div style="position:absolute;inset:0;background:rgba(0,0,0,0.7);"></div></div>';
   var backBtn = '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="position:fixed;top:calc(var(--safe-top,0px) + 12px);left:16px;z-index:9990;background:rgba(10,10,10,0.7);border:1px solid rgba(200,168,74,0.3);border-radius:50%;color:#C8A84A;cursor:pointer;padding:0;width:40px;height:40px;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#C8A84A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>';
-  var progress = '<div style="text-align:center;margin-bottom:24px;font-size:13px;letter-spacing:0.2em;color:rgba(200,168,75,0.4);">' + (s.step + 1) + '/' + totalSteps + '</div>';
+  var progress = '<div style="text-align:center;margin-bottom:24px;font-size:15px;letter-spacing:0.2em;color:rgba(200,168,75,0.4);">' + (s.step + 1) + '/' + totalSteps + '</div>';
   var nextBtn = '<button onclick="_cureWizardState.step++;_cureAnxieteWizardRender()" style="display:block;width:100%;max-width:340px;margin:24px auto 0;padding:14px;border-radius:12px;border:none;background:' + c + ';color:#fff;font-size:15px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>';
 
   var html = '';
@@ -6623,9 +6623,9 @@ function _cureAnxieteWizardRender(el) {
       + '<div data-cure-content style="padding:calc(var(--safe-top,0px)+60px) 20px 120px;position:relative;z-index:1;max-width:600px;margin:0 auto;box-sizing:border-box;">'
       + progress
       + '<div style="font-family:\'Scheherazade New\',serif;font-size:20px;color:#C8A84A;direction:rtl;text-align:center;margin-bottom:4px;">' + escapeHtml(j.station_ar || '') + '</div>'
-      + '<div style="font-family:var(--serif);font-size:11px;letter-spacing:2px;color:rgba(200,168,75,0.5);text-align:center;margin-bottom:20px;">' + escapeHtml((j.station_fr || '').toUpperCase()) + '</div>'
+      + '<div style="font-family:var(--serif);font-size:15px;letter-spacing:2px;color:rgba(200,168,75,0.5);text-align:center;margin-bottom:20px;">' + escapeHtml((j.station_fr || '').toUpperCase()) + '</div>'
       + '<div style="font-family:var(--serif);font-size:20px;font-weight:600;color:#C8A84A;text-align:center;margin-bottom:24px;">Jour ' + dayNum + ' \u2014 ' + escapeHtml(j.titre_jour || '') + '</div>'
-      + (cit.texte ? '<div style="border-left:2px solid ' + c + '44;padding-left:14px;margin-bottom:20px;max-width:360px;margin-left:auto;margin-right:auto;"><div style="font-family:var(--serif);font-size:14px;font-style:italic;color:rgba(240,234,214,0.75);line-height:1.7;">' + escapeHtml(cit.texte) + '</div><div style="font-size:12px;color:rgba(200,168,75,0.5);margin-top:6px;">\u2014 ' + escapeHtml(cit.source || '') + '</div></div>' : '')
+      + (cit.texte ? '<div style="border-left:2px solid ' + c + '44;padding-left:14px;margin-bottom:20px;max-width:360px;margin-left:auto;margin-right:auto;"><div style="font-family:var(--serif);font-size:16px;font-style:italic;color:rgba(240,234,214,0.75);line-height:1.7;">' + escapeHtml(cit.texte) + '</div><div style="font-size:15px;color:rgba(200,168,75,0.5);margin-top:6px;">\u2014 ' + escapeHtml(cit.source || '') + '</div></div>' : '')
       + '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.85);line-height:1.8;white-space:pre-line;text-align:center;max-width:360px;margin:0 auto;">' + escapeHtml(j.introduction_avant_outils || j.introduction || '') + '</div>'
       + nextBtn
       + '</div></div>';
@@ -6635,8 +6635,8 @@ function _cureAnxieteWizardRender(el) {
     html = backBtn + bgWrap
       + '<div data-cure-content style="padding:calc(var(--safe-top,0px)+60px) 20px 120px;position:relative;z-index:1;max-width:600px;margin:0 auto;box-sizing:border-box;">'
       + progress
-      + (o.titre ? '<div style="font-family:var(--serif);font-size:20px;color:#C8A84A;text-align:center;margin-bottom:8px;">' + escapeHtml(o.titre) + '</div>' : '')
-      + (o.consigne ? '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:20px;">' + escapeHtml(o.consigne) + '</div>' : '')
+      + (o.titre ? '<div style="font-family:var(--serif);font-size:22px;color:#C8A84A;text-align:center;margin-bottom:8px;">' + escapeHtml(o.titre) + '</div>' : '')
+      + (o.consigne ? '<div style="font-family:var(--serif);font-size:17px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:20px;">' + escapeHtml(o.consigne) + '</div>' : '')
       + outilHtml
       + (o.type === 'ecran_final_sans_action' ? '' : nextBtn)
       + '</div>';
@@ -6646,12 +6646,12 @@ function _cureAnxieteWizardRender(el) {
     html = backBtn + bgWrap
       + '<div data-cure-content style="padding:calc(var(--safe-top,0px)+60px) 20px 120px;position:relative;z-index:1;max-width:600px;margin:0 auto;box-sizing:border-box;">'
       + progress
-      + '<div style="font-family:var(--serif);font-size:13px;letter-spacing:2px;color:rgba(200,168,75,0.5);text-align:center;margin-bottom:16px;">' + escapeHtml((bv.titre_bloc || '').toUpperCase()) + '</div>'
+      + '<div style="font-family:var(--serif);font-size:15px;letter-spacing:2px;color:rgba(200,168,75,0.5);text-align:center;margin-bottom:16px;">' + escapeHtml((bv.titre_bloc || '').toUpperCase()) + '</div>'
       + '<div style="border:1px solid ' + c + '22;border-radius:14px;padding:20px;margin-bottom:16px;text-align:center;">'
       + (v.ar ? '<div style="font-family:\'Scheherazade New\',serif;font-size:22px;color:#C8A84A;direction:rtl;line-height:1.6;margin-bottom:10px;">' + escapeHtml(v.ar) + '</div>' : '')
-      + (v.translit ? '<div style="font-family:var(--serif);font-size:14px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:6px;">' + escapeHtml(v.translit) + '</div>' : '')
+      + (v.translit ? '<div style="font-family:var(--serif);font-size:16px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:6px;">' + escapeHtml(v.translit) + '</div>' : '')
       + (v.fr ? '<div style="font-family:var(--serif);font-size:17px;color:rgba(240,234,214,0.85);line-height:1.6;margin-bottom:8px;">' + escapeHtml(v.fr) + '</div>' : '')
-      + (v.reference ? '<div style="font-size:13px;color:rgba(200,168,75,0.4);">\u2014 ' + escapeHtml(v.reference) + '</div>' : '')
+      + (v.reference ? '<div style="font-size:15px;color:rgba(200,168,75,0.4);">\u2014 ' + escapeHtml(v.reference) + '</div>' : '')
       + '</div>'
       + (bv.contexte_revelation ? '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.6);line-height:1.6;margin-bottom:12px;">' + escapeHtml(bv.contexte_revelation) + '</div>' : '')
       + (bv.sens_pour_aujourdhui ? '<div style="font-family:var(--serif);font-size:16px;font-style:italic;color:rgba(200,168,75,0.65);line-height:1.6;margin-bottom:12px;">' + escapeHtml(bv.sens_pour_aujourdhui) + '</div>' : '')
@@ -6663,14 +6663,14 @@ function _cureAnxieteWizardRender(el) {
     html = backBtn + bgWrap
       + '<div data-cure-content style="padding:calc(var(--safe-top,0px)+60px) 20px 120px;position:relative;z-index:1;max-width:600px;margin:0 auto;box-sizing:border-box;">'
       + progress
-      + '<div style="font-family:var(--serif);font-size:13px;letter-spacing:2px;color:rgba(200,168,75,0.5);text-align:center;margin-bottom:16px;">' + escapeHtml((bs.titre_bloc || '').toUpperCase()) + '</div>'
+      + '<div style="font-family:var(--serif);font-size:15px;letter-spacing:2px;color:rgba(200,168,75,0.5);text-align:center;margin-bottom:16px;">' + escapeHtml((bs.titre_bloc || '').toUpperCase()) + '</div>'
       + '<div style="border-left:2px solid ' + c + '44;padding-left:16px;margin-bottom:16px;">'
       + '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(240,234,214,0.8);line-height:1.7;">' + escapeHtml(p.texte || '') + '</div>'
       + '</div>'
       + '<div style="text-align:right;margin-bottom:16px;">'
       + '<div style="font-family:var(--serif);font-size:16px;color:#C8A84A;">' + escapeHtml(p.auteur || '') + '</div>'
-      + (p.dates_auteur ? '<div style="font-size:13px;color:rgba(200,168,75,0.4);">' + escapeHtml(p.dates_auteur) + '</div>' : '')
-      + (p.oeuvre ? '<div style="font-family:var(--serif);font-size:14px;font-style:italic;color:rgba(200,168,75,0.5);">' + escapeHtml(p.oeuvre) + '</div>' : '')
+      + (p.dates_auteur ? '<div style="font-size:15px;color:rgba(200,168,75,0.4);">' + escapeHtml(p.dates_auteur) + '</div>' : '')
+      + (p.oeuvre ? '<div style="font-family:var(--serif);font-size:16px;font-style:italic;color:rgba(200,168,75,0.5);">' + escapeHtml(p.oeuvre) + '</div>' : '')
       + '</div>'
       + (p.note_editoriale ? '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.55);line-height:1.5;">' + escapeHtml(p.note_editoriale) + '</div>' : '')
       + nextBtn
@@ -6681,18 +6681,18 @@ function _cureAnxieteWizardRender(el) {
     html = backBtn + bgWrap
       + '<div data-cure-content style="padding:calc(var(--safe-top,0px)+60px) 20px 120px;position:relative;z-index:1;max-width:600px;margin:0 auto;box-sizing:border-box;">'
       + progress
-      + '<div style="font-family:var(--serif);font-size:13px;letter-spacing:2px;color:rgba(200,168,75,0.5);text-align:center;margin-bottom:16px;">' + escapeHtml((bd.titre_bloc || '').toUpperCase()) + '</div>'
+      + '<div style="font-family:var(--serif);font-size:15px;letter-spacing:2px;color:rgba(200,168,75,0.5);text-align:center;margin-bottom:16px;">' + escapeHtml((bd.titre_bloc || '').toUpperCase()) + '</div>'
       + (bd.introduction ? '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(bd.introduction) + '</div>' : '')
       + '<div style="border:1px solid ' + c + '22;border-radius:14px;padding:20px;margin-bottom:16px;text-align:center;">'
       + (dh.ar ? '<div style="font-family:\'Scheherazade New\',serif;font-size:30px;color:#C8A84A;direction:rtl;margin-bottom:8px;">' + escapeHtml(dh.ar) + '</div>' : '')
       + (dh.translit ? '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.55);margin-bottom:4px;">' + escapeHtml(dh.translit) + '</div>' : '')
       + (dh.fr ? '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.8);margin-bottom:8px;">' + escapeHtml(dh.fr) + '</div>' : '')
-      + (dh.sens ? '<div style="font-family:var(--serif);font-size:14px;color:rgba(200,168,75,0.45);font-style:italic;margin-bottom:8px;">' + escapeHtml(dh.sens) + '</div>' : '')
+      + (dh.sens ? '<div style="font-family:var(--serif);font-size:16px;color:rgba(200,168,75,0.45);font-style:italic;margin-bottom:8px;">' + escapeHtml(dh.sens) + '</div>' : '')
       + '<div style="font-family:var(--serif);font-size:22px;color:#C8A84A;font-weight:600;">\u00d7 ' + (bd.quantite || '') + '</div>'
       + '</div>'
       + (bd.moment_recommande ? '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.6);text-align:center;margin-bottom:8px;">' + escapeHtml(bd.moment_recommande) + '</div>' : '')
       + (bd.comment_pratiquer ? '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.55);line-height:1.6;margin-bottom:12px;">' + escapeHtml(bd.comment_pratiquer) + '</div>' : '')
-      + (bd.justification && bd.justification.hadith ? '<div style="font-size:14px;color:rgba(200,168,75,0.4);font-style:italic;text-align:center;">\u2014 ' + escapeHtml(bd.justification.hadith) + '</div>' : '')
+      + (bd.justification && bd.justification.hadith ? '<div style="font-size:16px;color:rgba(200,168,75,0.4);font-style:italic;text-align:center;">\u2014 ' + escapeHtml(bd.justification.hadith) + '</div>' : '')
       + nextBtn
       + '</div>';
   } else if (step.type === '_bloc_corporel') {
@@ -6701,7 +6701,7 @@ function _cureAnxieteWizardRender(el) {
     html = backBtn + bgWrap
       + '<div data-cure-content style="padding:calc(var(--safe-top,0px)+60px) 20px 120px;position:relative;z-index:1;max-width:600px;margin:0 auto;box-sizing:border-box;">'
       + progress
-      + '<div style="font-family:var(--serif);font-size:13px;letter-spacing:2px;color:rgba(200,168,75,0.5);text-align:center;margin-bottom:16px;">' + escapeHtml((bc.titre_bloc || '').toUpperCase()) + '</div>'
+      + '<div style="font-family:var(--serif);font-size:15px;letter-spacing:2px;color:rgba(200,168,75,0.5);text-align:center;margin-bottom:16px;">' + escapeHtml((bc.titre_bloc || '').toUpperCase()) + '</div>'
       + (bc.introduction ? '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(bc.introduction) + '</div>' : '')
       + '<div style="border:1px solid ' + c + '22;border-radius:14px;padding:16px;margin-bottom:16px;">';
     var instr = bc.instructions || [];
@@ -6712,11 +6712,11 @@ function _cureAnxieteWizardRender(el) {
     if (ph.ar) {
       html += '<div style="text-align:center;margin-bottom:12px;">'
         + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:#C8A84A;direction:rtl;margin-bottom:4px;">' + escapeHtml(ph.ar) + '</div>'
-        + (ph.translit ? '<div style="font-family:var(--serif);font-size:14px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:4px;">' + escapeHtml(ph.translit) + '</div>' : '')
+        + (ph.translit ? '<div style="font-family:var(--serif);font-size:16px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:4px;">' + escapeHtml(ph.translit) + '</div>' : '')
         + (ph.fr ? '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);">' + escapeHtml(ph.fr) + '</div>' : '')
         + '</div>';
     }
-    if (bc.duree_min) html += '<div style="font-size:14px;color:rgba(200,168,75,0.4);text-align:center;margin-bottom:8px;">' + bc.duree_min + ' min</div>';
+    if (bc.duree_min) html += '<div style="font-size:16px;color:rgba(200,168,75,0.4);text-align:center;margin-bottom:8px;">' + bc.duree_min + ' min</div>';
     html += nextBtn + '</div>';
   } else if (step.type === '_ancre_anxiete') {
     var ancre = step.data;
@@ -6726,7 +6726,7 @@ function _cureAnxieteWizardRender(el) {
       + (ancre.ar ? '<div style="font-family:\'Scheherazade New\',serif;font-size:30px;color:#C8A84A;direction:rtl;margin-bottom:12px;">' + escapeHtml(ancre.ar) + '</div>' : '')
       + (ancre.translitteration ? '<div style="font-family:var(--serif);font-size:16px;color:rgba(200,168,75,0.6);font-style:italic;margin-bottom:8px;">' + escapeHtml(ancre.translitteration) + '</div>' : '')
       + '<div style="font-family:var(--serif);font-size:18px;color:rgba(240,234,214,0.85);line-height:1.7;max-width:340px;">' + escapeHtml(ancre.fr || '') + '</div>'
-      + (ancre.source ? '<div style="font-size:14px;color:rgba(200,168,75,0.4);margin-top:10px;">\u2014 ' + escapeHtml(ancre.source) + '</div>' : '')
+      + (ancre.source ? '<div style="font-size:16px;color:rgba(200,168,75,0.4);margin-top:10px;">\u2014 ' + escapeHtml(ancre.source) + '</div>' : '')
       + nextBtn
       + '</div>';
   } else if (step.type === '_finale_anxiete') {
@@ -6739,7 +6739,7 @@ function _cureAnxieteWizardRender(el) {
       + (clot.ar ? '<div style="font-family:\'Scheherazade New\',serif;font-size:26px;color:#C8A84A;direction:rtl;margin-bottom:12px;">' + escapeHtml(clot.ar) + '</div>' : '')
       + '<div style="font-family:var(--serif);font-size:18px;color:rgba(240,234,214,0.85);line-height:1.7;max-width:360px;margin-bottom:24px;">' + escapeHtml(clot.fr || 'Tu as travers\u00e9 ce jour.') + '</div>'
       + '<button onclick="' + saveFn + '" style="display:block;width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:' + c + ';color:#fff;font-size:15px;font-weight:600;font-family:var(--serif);cursor:pointer;">' + (s.isLast ? 'Terminer la Cure' : 'Jour ' + dayNum + ' accompli') + '</button>'
-      + (s.isLast ? '<button onclick="openCoffretAnxiete()" style="display:block;width:100%;max-width:340px;margin:12px auto 0;padding:12px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:none;color:#C8A84A;font-size:13px;font-family:var(--serif);cursor:pointer;font-style:italic;">Coffret de l\u2019apaisement</button>' : '')
+      + (s.isLast ? '<button onclick="openCoffretAnxiete()" style="display:block;width:100%;max-width:340px;margin:12px auto 0;padding:12px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:none;color:#C8A84A;font-size:15px;font-family:var(--serif);cursor:pointer;font-style:italic;">Coffret de l\u2019apaisement</button>' : '')
       + '</div>';
   }
 
@@ -11840,7 +11840,7 @@ function v2OpenSettings() {
   sheet.id = 'v2-settings-sheet';
   sheet.style.cssText = 'position:fixed;inset:0;background:rgba(10,10,10,0.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:3000;display:flex;align-items:flex-end;justify-content:center;' + (window._reducedMotion ? '' : 'animation:backdropV2 0.3s ease forwards;');
   const ramadanActive = typeof ramadanState !== 'undefined' && ramadanState.active;
-  const debugSection = NIYYAH_DEBUG ? '<div style="margin-top:14px;background:#1a1a1a;border:1px solid rgba(255,255,255,0.05);border-radius:12px;padding:16px;"><div style="font-size:12px;letter-spacing:0.28em;color:rgba(255,255,255,0.55);text-transform:uppercase;font-family:Cormorant Garamond,serif;margin-bottom:10px;text-align:center;">🔧 DEBUG</div><button onclick="safeSetItem(\'niyyah_regarde_available_today\',\'true\');showToast(\'Regarde active\');document.getElementById(\'v2-settings-sheet\').remove();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);font-size:12px;cursor:pointer;margin-bottom:8px;">[DEBUG] Activer Regarde</button><button onclick="document.getElementById(\'v2-settings-sheet\').remove();regardeOpen();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);font-size:12px;cursor:pointer;">[DEBUG] Lancer Regarde maintenant</button><button onclick="document.getElementById(\'v2-settings-sheet\').remove();openFinJournee();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);font-size:12px;cursor:pointer;margin-top:8px;">[DEBUG] Forcer Fin de Journée</button><button onclick="localStorage.removeItem(\'niyyah_tafakkur_first_ever\');localStorage.removeItem(\'niyyah_tafakkur_recit_eligible\');localStorage.removeItem(\'niyyah_tafakkur_lu_\'+todayKey());showToast(\'Tafakkur reset\');document.getElementById(\'v2-settings-sheet\').remove();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);font-size:12px;cursor:pointer;margin-top:8px;">[DEBUG] Reset Tafakkur (1ere seance)</button></div>' : '';
+  const debugSection = NIYYAH_DEBUG ? '<div style="margin-top:14px;background:#1a1a1a;border:1px solid rgba(255,255,255,0.05);border-radius:12px;padding:16px;"><div style="font-size:12px;letter-spacing:0.28em;color:rgba(255,255,255,0.55);text-transform:uppercase;font-family:Cormorant Garamond,serif;margin-bottom:10px;text-align:center;">🔧 DEBUG</div><button onclick="safeSetItem(\'niyyah_regarde_available_today\',\'true\');showToast(\'Regarde active\');document.getElementById(\'v2-settings-sheet\').remove();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);font-size:12px;cursor:pointer;margin-bottom:8px;">[DEBUG] Activer Regarde</button><button onclick="document.getElementById(\'v2-settings-sheet\').remove();regardeOpen();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);font-size:15px;cursor:pointer;">[DEBUG] Lancer Regarde maintenant</button><button onclick="document.getElementById(\'v2-settings-sheet\').remove();openFinJournee();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);font-size:12px;cursor:pointer;margin-top:8px;">[DEBUG] Forcer Fin de Journée</button><button onclick="localStorage.removeItem(\'niyyah_tafakkur_first_ever\');localStorage.removeItem(\'niyyah_tafakkur_recit_eligible\');localStorage.removeItem(\'niyyah_tafakkur_lu_\'+todayKey());showToast(\'Tafakkur reset\');document.getElementById(\'v2-settings-sheet\').remove();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);font-size:12px;cursor:pointer;margin-top:8px;">[DEBUG] Reset Tafakkur (1ere seance)</button></div>' : '';
   sheet.innerHTML = `
     <div style="width:100%;max-width:480px;max-height:calc(100vh - env(safe-area-inset-top,0px));overflow-y:auto;background:#111;border-radius:22px 22px 0 0;padding:calc(env(safe-area-inset-top,0px) + 26px) 22px calc(32px + env(safe-area-inset-bottom));border-top:1px solid rgba(212,175,55,0.14);animation:sheetV2 0.4s cubic-bezier(0.23,1,0.32,1) forwards;direction:${T.dir};">
       <div style="width:38px;height:3px;background:rgba(255,255,255,0.1);border-radius:2px;margin:0 auto 22px;"></div>
@@ -11945,7 +11945,7 @@ function v2OpenSettings() {
 
       <div style="margin-top:14px;background:#1a1a1a;border:1px solid rgba(200,168,75,0.15);border-radius:12px;padding:16px;text-align:center;">
         ${isPremium()
-          ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#C8A84A;margin-bottom:10px;">\u2726 Premium actif</div><button onclick="setPremium(false);location.reload();" style="padding:6px 16px;border-radius:8px;border:1px solid rgba(255,255,255,0.1);background:none;color:rgba(255,255,255,0.35);font-size:11px;cursor:pointer;">D\u00e9sactiver</button>'
+          ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#C8A84A;margin-bottom:10px;">\u2726 Premium actif</div><button onclick="setPremium(false);location.reload();" style="padding:6px 16px;border-radius:8px;border:1px solid rgba(255,255,255,0.1);background:none;color:rgba(255,255,255,0.35);font-size:15px;cursor:pointer;">D\u00e9sactiver</button>'
           : '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;color:#C8A84A;margin-bottom:12px;">\u2726 Niyyah Premium</div><div style="display:flex;gap:8px;justify-content:center;"><input id="premium-code-input" type="text" placeholder="Entrer votre code" style="flex:1;max-width:200px;padding:10px 14px;border-radius:10px;border:1px solid rgba(200,168,75,0.3);background:rgba(200,168,75,0.04);color:#E5E0DC;font-family:\'Cormorant Garamond\',serif;font-size:14px;outline:none;"><button onclick="var c=document.getElementById(\'premium-code-input\');if(unlockPremium(c.value)){alert(\'Premium activ\\u00e9.\');location.reload();}else{alert(\'Code invalide\');}" style="padding:10px 18px;border-radius:10px;border:none;background:#C8A84A;color:#2C2E32;font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:600;cursor:pointer;">Activer</button></div>'
         }
       </div>
@@ -16038,7 +16038,7 @@ async function scannerOpen() {
       if (_hint) _hint.textContent = t('scanner_hint');
       _updateScannerQuotaHint();
     }).catch(function(err) {
-      overlay.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:16px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#C8A84A;text-align:center;padding:40px;">' + t('camera_denied') + '</div><button onclick="scannerClose();scannerOpen()" style="padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:13px;cursor:pointer;">' + t('btn_retry') + '</button><button onclick="scannerClose()" style="padding:8px 20px;border:none;background:transparent;color:var(--t3);font-size:12px;cursor:pointer;">' + t('btn_close') + '</button></div>';
+      overlay.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:16px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#C8A84A;text-align:center;padding:40px;">' + t('camera_denied') + '</div><button onclick="scannerClose();scannerOpen()" style="padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:13px;cursor:pointer;">' + t('btn_retry') + '</button><button onclick="scannerClose()" style="padding:8px 20px;border:none;background:transparent;color:var(--t3);font-size:15px;cursor:pointer;">' + t('btn_close') + '</button></div>';
     });
   });
 }
