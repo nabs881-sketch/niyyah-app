@@ -1,0 +1,423 @@
+{
+  "id": "coffret-medisance",
+  "version": "1.0",
+  "date_creation": "2026-05-30",
+  "titre_ar": "خَزَائِنُ اللِّسَان",
+  "titre_translit": "Khazâ'in al-lisân",
+  "titre_fr": "Les coffres de la langue",
+  "sous_titre": "Pour aller plus loin avec le Coran, la Sunna et la tradition sur la langue, la médisance et la bonne parole.",
+  "introduction": "Ce coffret rassemble les références fondamentales de l'islam sur la médisance (ghîba), le colportage (namîma), la garde de la langue (hifz al-lisân) et la bonne parole. Il complète la cure 7 jours.\n\nTu peux le consulter à tout moment. Pas pour le mémoriser d'un coup. Pour qu'il soit là quand tu en auras besoin.",
+  "sections": [
+    {
+      "id": "versets",
+      "titre_ar": "الآيات",
+      "titre_translit": "Al-Âyât",
+      "titre_fr": "Versets du Coran",
+      "description": "Les versets sur la langue, la médisance, le colportage et la bonne parole.",
+      "entrees": [
+        {
+          "id": "hujurat_12_lahm",
+          "ar": "وَلَا يَغْتَب بَّعْضُكُم بَعْضًا ۚ أَيُحِبُّ أَحَدُكُمْ أَن يَأْكُلَ لَحْمَ أَخِيهِ مَيْتًا فَكَرِهْتُمُوهُ",
+          "translit": "Wa lâ yaghtab ba'dukum ba'dâ. A-yuhibbu ahadukum an ya'kula lahma akhîhi maytan fa-karihtumûh",
+          "fr": "Ne médisez pas les uns des autres. L'un de vous aimerait-il manger la chair de son frère mort ? Vous en éprouveriez du dégoût.",
+          "source": "al-Hujurât 49:12",
+          "quand": "Le verset cardinal de la porte. L'image qui rend la médisance aussi répugnante qu'elle l'est en vérité."
+        },
+        {
+          "id": "qaf_18",
+          "ar": "مَا يَلْفِظُ مِن قَوْلٍ إِلَّا لَدَيْهِ رَقِيبٌ عَتِيدٌ",
+          "translit": "Mâ yalfizu min qawlin illâ ladayhi raqîbun 'atîd",
+          "fr": "Il ne prononce aucune parole sans avoir auprès de lui un observateur prêt [à l'inscrire].",
+          "source": "Qâf 50:18",
+          "quand": "À se rappeler avant de parler : chaque mot est consigné. La langue n'est jamais seule."
+        },
+        {
+          "id": "hujurat_12_zann",
+          "ar": "يَا أَيُّهَا الَّذِينَ آمَنُوا اجْتَنِبُوا كَثِيرًا مِّنَ الظَّنِّ ... وَلَا تَجَسَّسُوا وَلَا يَغْتَب بَّعْضُكُم بَعْضًا",
+          "translit": "...ijtanibû kathîran mina-z-zann ... wa lâ tajassasû wa lâ yaghtab ba'dukum ba'dâ",
+          "fr": "Évitez de trop conjecturer... N'espionnez pas, et ne médisez pas les uns des autres.",
+          "source": "al-Hujurât 49:12",
+          "quand": "La chaîne du mal : soupçon → espionnage → médisance. Couper dès le premier maillon."
+        },
+        {
+          "id": "nur_16",
+          "ar": "وَلَوْلَا إِذْ سَمِعْتُمُوهُ قُلْتُم مَّا يَكُونُ لَنَا أَن نَّتَكَلَّمَ بِهَٰذَا سُبْحَانَكَ هَٰذَا بُهْتَانٌ عَظِيمٌ",
+          "translit": "Wa lawlâ idh sami'tumûhu qultum mâ yakûnu lanâ an natakallama bi-hâdhâ subhânaka hâdhâ buhtânun 'azîm",
+          "fr": "Pourquoi, en l'entendant, n'avez-vous pas dit : « Il ne nous appartient pas d'en parler. Gloire à Toi ! C'est une énorme calomnie » ?",
+          "source": "an-Nûr 24:16",
+          "quand": "La réponse exacte à donner quand une médisance ou calomnie t'atteint. L'auditeur n'est pas neutre."
+        },
+        {
+          "id": "qalam_10_11",
+          "ar": "وَلَا تُطِعْ كُلَّ حَلَّافٍ مَّهِينٍ ۝ هَمَّازٍ مَّشَّاءٍ بِنَمِيمٍ",
+          "translit": "Wa lâ tuti' kulla hallâfin mahîn. Hammâzin mashshâ'in bi-namîm",
+          "fr": "N'obéis pas au grand jureur méprisable, diffamateur, qui s'en va colportant la calomnie.",
+          "source": "al-Qalam 68:10-11",
+          "quand": "Le portrait du colporteur (namîma) parmi les pires traits. Ne pas l'être, ni lui obéir."
+        },
+        {
+          "id": "ibrahim_24",
+          "ar": "أَلَمْ تَرَ كَيْفَ ضَرَبَ اللَّهُ مَثَلًا كَلِمَةً طَيِّبَةً كَشَجَرَةٍ طَيِّبَةٍ أَصْلُهَا ثَابِتٌ وَفَرْعُهَا فِي السَّمَاءِ",
+          "translit": "Alam tara kayfa daraba-llâhu mathalan kalimatan tayyibatan ka-shajaratin tayyibatin asluhâ thâbitun wa far'uhâ fi-s-samâ'",
+          "fr": "N'as-tu pas vu comment Allah propose en parabole une bonne parole, semblable à un bel arbre : racine ferme, branches dans le ciel ?",
+          "source": "Ibrâhîm 14:24",
+          "quand": "La récompense de la bonne parole : un arbre fécond. Ne pas seulement retenir le mal, mais planter le bien."
+        },
+        {
+          "id": "ahzab_70",
+          "ar": "يَا أَيُّهَا الَّذِينَ آمَنُوا اتَّقُوا اللَّهَ وَقُولُوا قَوْلًا سَدِيدًا",
+          "translit": "Yâ ayyuha-lladhîna âmanu-ttaqu-llâha wa qûlû qawlan sadîdâ",
+          "fr": "Ô vous qui croyez ! Craignez Allah et dites une parole juste et droite.",
+          "source": "al-Ahzab 33:70",
+          "quand": "La consigne positive : non seulement éviter le mauvais mot, mais viser le mot droit (sadîd)."
+        },
+        {
+          "id": "hujurat_11_lamz",
+          "ar": "وَلَا تَلْمِزُوا أَنفُسَكُمْ وَلَا تَنَابَزُوا بِالْأَلْقَابِ",
+          "translit": "Wa lâ talmizû anfusakum wa lâ tanâbazû bi-l-alqâb",
+          "fr": "Ne vous dénigrez pas les uns les autres, et ne vous lancez pas de sobriquets [offensants].",
+          "source": "al-Hujurât 49:11",
+          "quand": "Contre la pique (lamz) et les surnoms moqueurs — des fléaux quotidiens de la langue."
+        },
+        {
+          "id": "baqara_263",
+          "ar": "قَوْلٌ مَّعْرُوفٌ وَمَغْفِرَةٌ خَيْرٌ مِّن صَدَقَةٍ يَتْبَعُهَا أَذًى",
+          "translit": "Qawlun ma'rûfun wa maghfiratun khayrun min sadaqatin yatba'uhâ adhâ",
+          "fr": "Une parole convenable et un pardon valent mieux qu'une aumône suivie d'un tort.",
+          "source": "al-Baqara 2:263",
+          "quand": "La parole bonne pèse plus qu'une aumône gâchée par une parole blessante. La langue compte autant que la main."
+        },
+        {
+          "id": "fussilat_33",
+          "ar": "وَمَنْ أَحْسَنُ قَوْلًا مِّمَّن دَعَا إِلَى اللَّهِ وَعَمِلَ صَالِحًا",
+          "translit": "Wa man ahsanu qawlan mimman da'â ilâ-llâhi wa 'amila sâlihâ",
+          "fr": "Qui tient plus beau langage que celui qui appelle à Allah, fait le bien...?",
+          "source": "Fussilat 41:33",
+          "quand": "La plus belle parole est celle qui rapproche d'Allah. Voilà vers quoi rediriger la langue."
+        },
+        {
+          "id": "muminun_3",
+          "ar": "وَالَّذِينَ هُمْ عَنِ اللَّغْوِ مُعْرِضُونَ",
+          "translit": "Wa-lladhîna hum 'ani-l-laghwi mu'ridûn",
+          "fr": "Et ceux qui se détournent des paroles vaines.",
+          "source": "al-Mu'minûn 23:3",
+          "quand": "Trait des croyants qui réussissent : se détourner du laghw (le futile, le vain) — la matière première de la médisance."
+        },
+        {
+          "id": "hujurat_6",
+          "ar": "إِن جَاءَكُمْ فَاسِقٌ بِنَبَإٍ فَتَبَيَّنُوا أَن تُصِيبُوا قَوْمًا بِجَهَالَةٍ",
+          "translit": "In jâ'akum fâsiqun bi-naba'in fa-tabayyanû an tusîbû qawman bi-jahâla",
+          "fr": "Si un pervers vous apporte une nouvelle, vérifiez-la, de peur d'atteindre des gens par ignorance.",
+          "source": "al-Hujurât 49:6",
+          "quand": "Le devoir de tabayyun (vérifier) avant de transmettre — l'antidote du colportage et des rumeurs."
+        }
+      ]
+    },
+    {
+      "id": "hadiths",
+      "titre_ar": "الأحاديث",
+      "titre_translit": "Al-Ahâdîth",
+      "titre_fr": "Paroles du Prophète ﷺ",
+      "description": "La définition de la ghîba, sa gravité, et l'éloge de la parole maîtrisée.",
+      "entrees": [
+        {
+          "id": "def_ghiba",
+          "ar": "ذِكْرُكَ أَخَاكَ بِمَا يَكْرَهُ ... إِنْ كَانَ فِيهِ مَا تَقُولُ فَقَدِ اغْتَبْتَهُ، وَإِنْ لَمْ يَكُنْ فِيهِ فَقَدْ بَهَتَّهُ",
+          "translit": "Dhikruka akhâka bi-mâ yakrah ... in kâna fîhi mâ taqûlu fa-qadi-ghtabtah, wa in lam yakun fîhi fa-qad bahattah",
+          "fr": "(La médisance, c'est) mentionner ton frère par ce qu'il déteste. — Et s'il a vraiment ce que je dis ? — Si c'est en lui, tu l'as médit ; sinon, tu l'as calomnié.",
+          "source": "Sahîh Muslim 2589",
+          "quand": "LA définition prophétique de la ghîba, et la différence avec le buhtân (calomnie). Le socle de la porte."
+        },
+        {
+          "id": "muflis",
+          "ar": "أَتَدْرُونَ مَا الْمُفْلِسُ؟ ... يَأْتِي وَقَدْ شَتَمَ هَذَا وَقَذَفَ هَذَا ... فَيُعْطَى هَذَا مِنْ حَسَنَاتِهِ",
+          "translit": "A-tadrûna ma-l-muflis? ... ya'tî wa qad shatama hâdhâ wa qadhafa hâdhâ ... fa-yu'tâ hâdhâ min hasanâtih",
+          "fr": "Savez-vous qui est le banqueroutier ? ... Il vient ayant insulté l'un, calomnié l'autre... alors on donne à chacun de ses bonnes actions.",
+          "source": "Sahîh Muslim 2581",
+          "quand": "La médisance transfère tes hasanât à ta victime. Le coût caché, payé le Jour du Jugement."
+        },
+        {
+          "id": "khayran_aw_samt",
+          "ar": "مَنْ كَانَ يُؤْمِنُ بِاللَّهِ وَالْيَوْمِ الْآخِرِ فَلْيَقُلْ خَيْرًا أَوْ لِيَصْمُتْ",
+          "translit": "Man kâna yu'minu bi-llâhi wa-l-yawmi-l-âkhiri fa-l-yaqul khayran aw li-yasmut",
+          "fr": "Quiconque croit en Allah et au Jour dernier, qu'il dise du bien ou qu'il se taise.",
+          "source": "Bukhârî 6018 ; Muslim 47",
+          "quand": "Le remède en une phrase. Entre dire du bien et se taire, pas de troisième porte permise."
+        },
+        {
+          "id": "nammam",
+          "ar": "لَا يَدْخُلُ الْجَنَّةَ نَمَّامٌ",
+          "translit": "Lâ yadkhulu-l-jannata nammâm",
+          "fr": "N'entrera pas au Paradis un colporteur.",
+          "source": "Bukhârî 6056 ; Muslim 105",
+          "quand": "La gravité de la namîma (colportage), qui brise les liens entre les gens."
+        },
+        {
+          "id": "radd_ird",
+          "ar": "مَنْ رَدَّ عَنْ عِرْضِ أَخِيهِ، رَدَّ اللَّهُ عَنْ وَجْهِهِ النَّارَ يَوْمَ الْقِيَامَةِ",
+          "translit": "Man radda 'an 'irdi akhîhi, radda-llâhu 'an wajhihi-n-nâra yawma-l-qiyâma",
+          "fr": "Quiconque défend l'honneur de son frère [absent], Allah écartera le Feu de son visage au Jour de la Résurrection.",
+          "source": "Tirmidhî 1931 — hasan",
+          "quand": "Le devoir et la récompense de l'auditeur : défendre l'absent au lieu de jouir de sa médisance."
+        },
+        {
+          "id": "kalima_sadaqa",
+          "ar": "الْكَلِمَةُ الطَّيِّبَةُ صَدَقَةٌ",
+          "translit": "Al-kalimatu-t-tayyibatu sadaqa",
+          "fr": "La bonne parole est une aumône.",
+          "source": "Bukhârî 2989 ; Muslim 1009",
+          "quand": "La même langue qui pouvait blesser peut donner l'aumône à chaque phrase."
+        },
+        {
+          "id": "kalimatan",
+          "ar": "كَلِمَتَانِ خَفِيفَتَانِ عَلَى اللِّسَانِ، ثَقِيلَتَانِ فِي الْمِيزَانِ ... سُبْحَانَ اللَّهِ وَبِحَمْدِهِ، سُبْحَانَ اللَّهِ الْعَظِيمِ",
+          "translit": "Kalimatâni khafîfatâni 'ala-l-lisân, thaqîlatâni fi-l-mîzân ... Subhâna-llâhi wa bi-hamdih, Subhâna-llâhi-l-'Azîm",
+          "fr": "Deux mots légers sur la langue, lourds dans la balance, aimés du Tout-Miséricordieux : SubhânaLlâhi wa bihamdih, SubhânaLlâhi-l-'Azîm.",
+          "source": "Bukhârî 6406 ; Muslim 2694",
+          "quand": "De quoi remplir la langue libérée : les mots les plus légers et les plus lourds à la fois."
+        },
+        {
+          "id": "kalima_nar",
+          "ar": "إِنَّ الْعَبْدَ لَيَتَكَلَّمُ بِالْكَلِمَةِ مَا يَتَبَيَّنُ فِيهَا، يَزِلُّ بِهَا فِي النَّارِ أَبْعَدَ مِمَّا بَيْنَ الْمَشْرِقِ وَالْمَغْرِبِ",
+          "translit": "Inna-l-'abda la-yatakallamu bi-l-kalimati mâ yatabayyanu fîhâ, yazillu bihâ fi-n-nâri ab'ada mimmâ bayna-l-mashriqi wa-l-maghrib",
+          "fr": "Le serviteur prononce parfois une parole sans y prêter attention, et elle le fait glisser en Enfer plus loin que la distance entre l'orient et l'occident.",
+          "source": "Bukhârî 6477 ; Muslim 2988",
+          "quand": "La gravité d'un seul mot lancé sans réfléchir. Le poids réel de ce qui « sort tout seul »."
+        },
+        {
+          "id": "kuff_lisan",
+          "ar": "أَلَا أُخْبِرُكَ بِمَلَاكِ ذَلِكَ كُلِّهِ؟ ... كُفَّ عَلَيْكَ هَذَا — وَأَشَارَ إِلَى لِسَانِهِ",
+          "translit": "Alâ ukhbiruka bi-malâki dhâlika kullih? ... Kuff 'alayka hâdhâ — wa ashâra ilâ lisânih",
+          "fr": "Veux-tu que je t'informe de la clé de tout cela ? ... Retiens ceci — et il montra sa langue.",
+          "source": "Tirmidhî 2616 — hasan sahîh",
+          "quand": "La langue est la clé de tout le reste. La maîtriser, c'est tenir l'essentiel de la religion."
+        },
+        {
+          "id": "muslim_man_salim",
+          "ar": "الْمُسْلِمُ مَنْ سَلِمَ الْمُسْلِمُونَ مِنْ لِسَانِهِ وَيَدِهِ",
+          "translit": "Al-muslimu man salima-l-muslimûna min lisânihi wa yadih",
+          "fr": "Le musulman est celui dont les [autres] musulmans sont préservés de la langue et de la main.",
+          "source": "Bukhârî 10 ; Muslim 40",
+          "quand": "La définition du musulman commence par la langue : qu'autrui en soit sauf. Fondamental."
+        }
+      ]
+    },
+    {
+      "id": "duas",
+      "titre_ar": "الأدعية",
+      "titre_translit": "Al-Ad'iya",
+      "titre_fr": "Du'âs à mémoriser",
+      "description": "Les invocations pour garder la langue, répondre à la calomnie et réparer.",
+      "entrees": [
+        {
+          "id": "kaffarat_majlis",
+          "ar": "سُبْحَانَكَ اللَّهُمَّ وَبِحَمْدِكَ، أَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا أَنْتَ، أَسْتَغْفِرُكَ وَأَتُوبُ إِلَيْكَ",
+          "translit": "Subhânaka-llâhumma wa bi-hamdik, ashhadu an lâ ilâha illâ ant, astaghfiruka wa atûbu ilayk",
+          "fr": "Gloire et louange à Toi, ô Allah. J'atteste qu'il n'y a de divinité que Toi. Je Te demande pardon et je me repens à Toi.",
+          "source": "Tirmidhî 3433 — sahîh",
+          "quand": "La kaffârat al-majlis : à dire à la fin d'une assise pour effacer ce que la langue y a laissé échapper."
+        },
+        {
+          "id": "muadh",
+          "ar": "اللَّهُمَّ أَعِنِّي عَلَى ذِكْرِكَ وَشُكْرِكَ وَحُسْنِ عِبَادَتِكَ",
+          "translit": "Allâhumma a'innî 'alâ dhikrika wa shukrika wa husni 'ibâdatik",
+          "fr": "Ô Allah, aide-moi à T'évoquer, à Te remercier, et à T'adorer de la plus belle manière.",
+          "source": "Abû Dâwûd 1522 — sahîh",
+          "quand": "Du'â de Muʿâdh, après chaque prière : occuper la langue par le meilleur pour qu'il reste moins de place au pire."
+        },
+        {
+          "id": "buhtan",
+          "ar": "سُبْحَانَكَ هَٰذَا بُهْتَانٌ عَظِيمٌ",
+          "translit": "Subhânaka hâdhâ buhtânun 'azîm",
+          "fr": "Gloire à Toi ! C'est une énorme calomnie.",
+          "source": "an-Nûr 24:16",
+          "quand": "À dire quand une médisance ou une calomnie t'atteint : la réponse même qu'Allah a enseignée."
+        },
+        {
+          "id": "dua_pour_lui",
+          "ar": "اللَّهُمَّ اغْفِرْ لَهُ وَارْحَمْهُ وَعَافِهِ",
+          "translit": "Allâhumma-ghfir lahu wa-rhamhu wa 'âfih",
+          "fr": "Ô Allah, pardonne-lui, fais-lui miséricorde, et accorde-lui le bien-être.",
+          "source": "Esprit de Sahîh Muslim 2733 (du'â pour l'absent exaucée)",
+          "quand": "La réparation : pour qui tu as médit, demande le bien dans son dos — l'inverse exact de la médisance."
+        },
+        {
+          "id": "munkarat",
+          "ar": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ مُنْكَرَاتِ الْأَخْلَاقِ وَالْأَعْمَالِ وَالْأَهْوَاءِ",
+          "translit": "Allâhumma innî a'ûdhu bika min munkarâti-l-akhlâqi wa-l-a'mâli wa-l-ahwâ'",
+          "fr": "Ô Allah, je cherche refuge en Toi contre les caractères, les actes et les passions blâmables.",
+          "source": "Tirmidhî 3591 — hasan",
+          "quand": "Refuge contre les défauts de caractère (colère, envie) qui sont les ressorts de la médisance."
+        },
+        {
+          "id": "hamazat",
+          "ar": "رَّبِّ أَعُوذُ بِكَ مِنْ هَمَزَاتِ الشَّيَاطِينِ",
+          "translit": "Rabbi a'ûdhu bika min hamazâti-sh-shayâtîn",
+          "fr": "Mon Seigneur, je cherche refuge en Toi contre les incitations des diables.",
+          "source": "al-Mu'minûn 23:97",
+          "quand": "Contre les soufflets du diable qui poussent à parler des autres — c'est lui qui « sème la discorde » (17:53)."
+        }
+      ]
+    },
+    {
+      "id": "lexique",
+      "titre_ar": "المُفْرَدَات",
+      "titre_translit": "Al-Mufradât",
+      "titre_fr": "Le vocabulaire de la langue",
+      "description": "Les mots-clés arabes pour distinguer finement les fléaux et leurs remèdes.",
+      "entrees": [
+        {
+          "id": "ghiba",
+          "ar": "غِيبَة",
+          "translit": "Ghîba",
+          "definition": "La médisance : mentionner un absent par ce qu'il détesterait, même si c'est vrai (Muslim 2589). Si c'est faux, cela devient buhtân."
+        },
+        {
+          "id": "namima",
+          "ar": "نَمِيمَة",
+          "translit": "Namîma",
+          "definition": "Le colportage : porter les paroles d'un côté à l'autre pour semer la rupture (« il a dit de toi… »). Plus grave que la ghîba car elle brise les liens."
+        },
+        {
+          "id": "buhtan",
+          "ar": "بُهْتَان",
+          "translit": "Buhtân",
+          "definition": "La calomnie : dire de l'absent ce qui est faux. Plus grave encore que la médisance."
+        },
+        {
+          "id": "hifz_lisan",
+          "ar": "حِفْظُ اللِّسَان",
+          "translit": "Hifz al-lisân",
+          "definition": "La garde de la langue : ne laisser sortir que le bien, ou se taire. Une branche de la foi."
+        },
+        {
+          "id": "laghw",
+          "ar": "لَغْو",
+          "translit": "Laghw",
+          "definition": "La parole vaine, futile, sans utilité ni mal manifeste — mais qui use le temps et ouvre la porte au pire."
+        },
+        {
+          "id": "fudul_kalam",
+          "ar": "فُضُولُ الكَلَام",
+          "translit": "Fudûl al-kalâm",
+          "definition": "L'excès de paroles, parler de ce qui ne nous regarde pas — le premier des fléaux de la langue selon Ghazâlî."
+        },
+        {
+          "id": "samt",
+          "ar": "صَمْت",
+          "translit": "Samt",
+          "definition": "Le silence volontaire : non un vide, mais une discipline. Les sages le pratiquaient pour maîtriser la langue."
+        },
+        {
+          "id": "lamz",
+          "ar": "لَمْز",
+          "translit": "Lamz",
+          "definition": "Piquer, dénigrer quelqu'un (souvent en face ou par allusion). Interdit dans al-Hujurât 49:11."
+        },
+        {
+          "id": "hamz",
+          "ar": "هَمْز",
+          "translit": "Hamz",
+          "definition": "Diffamer, médire dans le dos (le hammâz d'al-Qalam 68:11) — proche du lamz mais en l'absence de la personne."
+        },
+        {
+          "id": "sukhriya",
+          "ar": "سُخْرِيَة",
+          "translit": "Sukhriya",
+          "definition": "La moquerie : tourner quelqu'un en ridicule. Interdite (al-Hujurât 49:11), car « peut-être est-il meilleur »."
+        },
+        {
+          "id": "kalima_tayyiba",
+          "ar": "كَلِمَة طَيِّبَة",
+          "translit": "Kalima tayyiba",
+          "definition": "La bonne parole : comme un bel arbre enraciné et fécond (Ibrâhîm 14:24). Ce qu'on plante à la place du mal."
+        },
+        {
+          "id": "qawl_sadid",
+          "ar": "قَوْل سَدِيد",
+          "translit": "Qawl sadîd",
+          "definition": "La parole droite, juste, qui vise vrai — l'idéal de la parole du croyant (al-Ahzab 33:70)."
+        },
+        {
+          "id": "husn_dhann",
+          "ar": "حُسْنُ الظَّنّ",
+          "translit": "Husn adh-dhann",
+          "definition": "Penser du bien d'autrui : l'antidote en amont, car la médisance naît souvent d'un mauvais soupçon nourri."
+        },
+        {
+          "id": "ird",
+          "ar": "عِرْض",
+          "translit": "'Ird",
+          "definition": "L'honneur, la dignité de la personne. Inviolable comme son sang et son bien (sermon de l'Adieu). La ghîba l'attaque."
+        },
+        {
+          "id": "tabayyun",
+          "ar": "تَبَيُّن",
+          "translit": "Tabayyun",
+          "definition": "Vérifier une information avant de la transmettre (al-Hujurât 49:6) — le frein du colportage et des rumeurs."
+        },
+        {
+          "id": "kaffarat_majlis",
+          "ar": "كَفَّارَةُ المَجْلِس",
+          "translit": "Kaffârat al-majlis",
+          "definition": "L'expiation de l'assise : le dhikr qui clôt une réunion et efface ce qui s'y est dit de trop."
+        }
+      ]
+    },
+    {
+      "id": "savants",
+      "titre_ar": "الْعُلَمَاء",
+      "titre_translit": "Al-'Ulamâ'",
+      "titre_fr": "Pour aller plus loin",
+      "description": "Les œuvres classiques de référence sur la langue et la médisance.",
+      "entrees": [
+        {
+          "id": "ghazali",
+          "nom": "Abû Hâmid al-Ghazâlî",
+          "dates": "1058-1111",
+          "oeuvre": "Ihyâ' 'Ulûm ad-Dîn — Livre XXIV : Kitâb âfât al-lisân (Les fléaux de la langue)",
+          "apport": "La référence sur la langue. Ghazâlî recense vingt fléaux, du plus discret (parler de ce qui ne nous regarde pas) au plus grave (médisance, colportage). Pour chacun : la définition, le ressort dans l'âme, ses manifestations, et le remède. Toute la porte suit son plan."
+        },
+        {
+          "id": "nawawi",
+          "nom": "Yahyâ ibn Sharaf an-Nawawî",
+          "dates": "1233-1277",
+          "oeuvre": "al-Adhkâr ; Riyâd as-Sâlihîn (chapitres sur hifz al-lisân et la ghîba)",
+          "apport": "Référence pratique majeure. an-Nawawî codifie les règles de la langue : ce qu'est la ghîba, sa gravité, et surtout les six cas où parler d'autrui est légitime (mise en garde, justice, conseil…). Indispensable pour éviter aussi bien la médisance que le scrupule excessif."
+        },
+        {
+          "id": "ibn_abi_dunya",
+          "nom": "Ibn Abî ad-Dunyâ",
+          "dates": "823-894",
+          "oeuvre": "Kitâb as-Samt wa âdâb al-lisân (Le Livre du silence et de l'étiquette de la langue)",
+          "apport": "Un ouvrage entier consacré au silence et à la discipline de la parole. Recueil de versets, de hadiths et de paroles des anciens sur la garde de la langue — la source classique dédiée au sujet."
+        },
+        {
+          "id": "ibn_rajab",
+          "nom": "Ibn Rajab al-Hanbalî",
+          "dates": "1335-1393",
+          "oeuvre": "Jâmi' al-'Ulûm wa-l-Hikam",
+          "apport": "Son commentaire du hadith « qu'il dise du bien ou se taise » et de « kuff 'alayka lisânak » est une référence : il y relie la maîtrise de la langue à la santé du cœur et à la sincérité de la foi."
+        },
+        {
+          "id": "ibn_taymiyya",
+          "nom": "Ibn Taymiyya",
+          "dates": "1263-1328",
+          "oeuvre": "Majmû' al-Fatâwâ (sur la tawba de la ghîba)",
+          "apport": "Référence pour le fiqh de la réparation : il soutient que si la médisance n'est pas parvenue à la personne, on ne l'informe pas — on fait plutôt du'â pour elle et l'on dit du bien d'elle. L'un des deux grands avis sur la kaffâra de la ghîba."
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "entrees_total": 49,
+    "versets": 12,
+    "hadiths": 10,
+    "duas": 6,
+    "lexique": 16,
+    "savants": 5,
+    "note": "Toutes les références doivent être validées avec les éditions critiques (Sunnah.com, Tafsîr Ibn Kathîr et al-Sa'dî, éditions critiques pour Ghazâlî/Nawawî) avant intégration production. Points sensibles : grades hasan (Tirmidhî 3433, 3591, 1931) et le cadrage fiqh de la réparation de la ghîba (deux avis, Nawawî vs Ibn Taymiyya).",
+    "style": "Cohérent avec coffret-regard.json et coffret-arrogance.json : 5 sections (versets, hadiths, du'âs, lexique, savants), même structure d'entrée, ton sobre.",
+    "audit_theologique_requis": "Validation imam francophone avant production publique."
+  }
+}
