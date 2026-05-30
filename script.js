@@ -5532,6 +5532,44 @@ _outilAnxieteRenderers.double_slider = function(o, c) {
   return html;
 };
 
+// 3.20 — checkboxes_multiple
+_outilAnxieteRenderers.checkboxes_multiple = function(o, c) {
+  var opts = o.options || [];
+  var sk = o.stockage || 'cure_anxiete_cbm';
+  var saved = {}; try { saved = JSON.parse(safeGetItem(sk) || '{}'); } catch(e) {}
+  var checked = saved.checked || [];
+  var customVal = saved.custom || '';
+  var html = '';
+  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
+  html += '<div style="display:flex;flex-direction:column;gap:8px;max-width:340px;margin:0 auto 16px;">';
+  opts.forEach(function(opt) {
+    var chk = checked.indexOf(opt.id) !== -1;
+    html += '<label style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:10px;border:1px solid ' + (chk ? c : 'rgba(200,168,75,0.12)') + ';background:' + (chk ? c + '10' : 'rgba(200,168,75,0.03)') + ';cursor:pointer;transition:all 0.2s;">'
+      + '<input type="checkbox" ' + (chk ? 'checked' : '') + ' onchange="_cbmToggle(\'' + sk + '\',\'' + opt.id + '\',this.checked)" style="accent-color:' + c + ';flex-shrink:0;">'
+      + '<div style="flex:1;">'
+      + '<span style="font-family:var(--serif);font-size:14px;color:' + (chk ? '#C8A84A' : 'rgba(240,234,214,0.8)') + ';">' + escapeHtml(opt.label_fr) + '</span>';
+    if (opt.label_ar) html += ' <span style="font-family:\'Scheherazade New\',serif;font-size:15px;color:rgba(200,168,75,0.5);direction:rtl;margin-left:6px;">' + escapeHtml(opt.label_ar) + '</span>';
+    html += '</div></label>';
+    if (opt.champ_libre) {
+      html += '<div style="margin-left:36px;' + (chk ? '' : 'display:none;') + '">'
+        + '<input type="text" value="' + escapeHtml(customVal) + '" placeholder="..." oninput="var _s={};try{_s=JSON.parse(safeGetItem(\'' + sk + '\')||\'{}\')}catch(e){}_s.custom=this.value;safeSetItem(\'' + sk + '\',JSON.stringify(_s))" style="width:100%;box-sizing:border-box;padding:8px 12px;border-radius:8px;border:1px solid ' + c + '33;background:rgba(200,168,75,0.04);color:#E5E0DC;font-family:var(--serif);font-size:14px;outline:none;">'
+        + '</div>';
+    }
+  });
+  html += '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;">' + escapeHtml(o.note_spi) + '</div>';
+  return html;
+};
+function _cbmToggle(sk, optId, isChecked) {
+  var saved = {}; try { saved = JSON.parse(safeGetItem(sk) || '{}'); } catch(e) {}
+  if (!saved.checked) saved.checked = [];
+  if (isChecked && saved.checked.indexOf(optId) === -1) saved.checked.push(optId);
+  if (!isChecked) saved.checked = saved.checked.filter(function(x) { return x !== optId; });
+  safeSetItem(sk, JSON.stringify(saved));
+  _cureAnxieteWizardRender();
+}
+window._cbmToggle = _cbmToggle;
+
 // 3.19 — champ_texte_long
 _outilAnxieteRenderers.champ_texte_long = function(o, c) {
   var champ = o.champ || {};
