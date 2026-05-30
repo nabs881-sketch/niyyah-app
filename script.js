@@ -5532,6 +5532,22 @@ _outilAnxieteRenderers.double_slider = function(o, c) {
   return html;
 };
 
+// 3.19 — champ_texte_long
+_outilAnxieteRenderers.champ_texte_long = function(o, c) {
+  var champ = o.champ || {};
+  var sk = champ.stockage || 'cure_anxiete_long';
+  var saved = safeGetItem(sk) || '';
+  var maxCar = champ.max_caracteres || 500;
+  var html = '';
+  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;white-space:pre-line;">' + escapeHtml(o.introduction) + '</div>';
+  if (o.amorce) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.7);margin-bottom:8px;">' + escapeHtml(o.amorce) + '</div>';
+  html += '<textarea maxlength="' + maxCar + '" placeholder="' + escapeHtml(champ.placeholder || '...') + '" oninput="safeSetItem(\'' + sk + '\',this.value);var c=this.parentNode.querySelector(\'._ctLong\');if(c)c.textContent=this.value.length+\'/' + maxCar + '\'" style="display:block;width:100%;box-sizing:border-box;min-height:120px;padding:14px;border-radius:12px;border:1px solid ' + c + '33;background:rgba(200,168,75,0.04);color:#E5E0DC;font-family:var(--serif);font-size:15px;line-height:1.6;outline:none;resize:vertical;">' + escapeHtml(saved) + '</textarea>';
+  html += '<div class="_ctLong" style="font-size:11px;color:rgba(200,168,75,0.3);text-align:right;margin-top:4px;">' + saved.length + '/' + maxCar + '</div>';
+  if (o.note_finale) html += '<div style="font-family:var(--serif);font-size:12px;color:rgba(200,168,75,0.45);text-align:center;font-style:italic;margin-top:12px;line-height:1.5;">' + escapeHtml(o.note_finale) + '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.35);text-align:center;line-height:1.5;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
+  return html;
+};
+
 // 3.18 — lecture_synchronisee_souffle
 _outilAnxieteRenderers.lecture_synchronisee_souffle = function(o, c) {
   var verset = o.verset || {};
