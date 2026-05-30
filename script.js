@@ -5532,6 +5532,71 @@ _outilAnxieteRenderers.double_slider = function(o, c) {
   return html;
 };
 
+// 3.13 — tri_radio_apprentissage
+_outilAnxieteRenderers.tri_radio_apprentissage = function(o, c) {
+  var exemples = o.exemples || [];
+  var opts = o.options_par_question || [];
+  var sk = o.stockage || 'cure_anxiete_tri';
+  var saved = {}; try { saved = JSON.parse(safeGetItem(sk) || '{}'); } catch(e) {}
+  var triId = '_tri_' + o.id;
+  // Determine current question index
+  var currentQ = 0;
+  for (var qi = 0; qi < exemples.length; qi++) {
+    if (saved['q' + qi] && saved['q' + qi].answered) currentQ = qi + 1;
+    else break;
+  }
+  var allDone = currentQ >= exemples.length;
+  var html = '';
+  if (o.introduction && currentQ === 0) html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
+  if (allDone) {
+    var correct = 0;
+    for (var ci = 0; ci < exemples.length; ci++) { if (saved['q' + ci] && saved['q' + ci].correct) correct++; }
+    html += '<div style="text-align:center;padding:20px 0;">'
+      + '<div style="font-family:var(--serif);font-size:16px;color:#C8A84A;margin-bottom:8px;">' + correct + '/' + exemples.length + ' justes</div>'
+      + '<div style="font-family:var(--serif);font-size:13px;color:rgba(240,234,214,0.6);font-style:italic;">Tu apprends \u00e0 d\u00e9m\u00ealer ce que tu vois de ce que ton esprit raconte.</div>'
+      + '</div>';
+  } else {
+    var ex = exemples[currentQ];
+    // Counter
+    html += '<div style="font-size:11px;color:rgba(200,168,75,0.4);text-align:center;margin-bottom:12px;">' + (currentQ + 1) + '/' + exemples.length + '</div>';
+    // Statement
+    html += '<div style="border:1px solid ' + c + '22;border-radius:12px;padding:16px;margin-bottom:16px;text-align:center;">'
+      + '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.9);line-height:1.5;font-style:italic;">\u00ab ' + escapeHtml(ex.texte) + ' \u00bb</div>'
+      + '</div>';
+    // Options
+    html += '<div style="display:flex;gap:10px;max-width:340px;margin:0 auto 16px;">';
+    opts.forEach(function(opt) {
+      html += '<button onclick="_triAnswer(\'' + triId + '\',\'' + sk + '\',' + currentQ + ',\'' + opt.id + '\',\'' + ex.bonne_reponse + '\')" style="flex:1;padding:14px 8px;border-radius:10px;border:1px solid ' + c + '33;background:rgba(200,168,75,0.03);color:rgba(240,234,214,0.8);font-family:var(--serif);font-size:14px;cursor:pointer;">' + escapeHtml(opt.label) + '</button>';
+    });
+    html += '</div>';
+    // Feedback zone
+    html += '<div id="' + triId + '_fb" style="min-height:40px;"></div>';
+  }
+  if (o.note_spi && allDone) html += '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
+  return html;
+};
+function _triAnswer(triId, sk, qIdx, answer, correct) {
+  var saved = {}; try { saved = JSON.parse(safeGetItem(sk) || '{}'); } catch(e) {}
+  var isCorrect = answer === correct;
+  saved['q' + qIdx] = { answer: answer, correct: isCorrect, answered: true };
+  safeSetItem(sk, JSON.stringify(saved));
+  var fbEl = document.getElementById(triId + '_fb');
+  if (fbEl) {
+    var data = window.CURE_ANXIETE_CYCLE1;
+    var o = null;
+    Object.keys(data.jours).forEach(function(jk) { data.jours[jk].outils.forEach(function(t) { if (t.id === triId.replace('_tri_', '')) o = t; }); });
+    var fbText = '';
+    if (isCorrect) {
+      fbText = answer === 'fait' ? (o && o.feedback_correct_fait || 'Correct.') : (o && o.feedback_correct_interpretation || 'Correct.');
+    } else {
+      fbText = (o && o.feedback_incorrect_inverse) || 'Regarde encore.';
+    }
+    fbEl.innerHTML = '<div style="font-family:var(--serif);font-size:14px;color:' + (isCorrect ? '#C8A84A' : '#FFA000') + ';text-align:center;line-height:1.5;padding:8px;">' + escapeHtml(fbText) + '</div>';
+    setTimeout(function() { _cureAnxieteWizardRender(); }, isCorrect ? 1500 : 2500);
+  }
+}
+window._triAnswer = _triAnswer;
+
 // 3.12 — texte_qui_s_efface
 _outilAnxieteRenderers.texte_qui_s_efface = function(o, c) {
   var sk = o.stockage || 'cure_anxiete_efface';
