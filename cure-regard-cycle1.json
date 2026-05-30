@@ -38,7 +38,10 @@
         },
         "contexte_revelation": "Verset mecquois, dans la sourate du Voyage Nocturne. Allah pose un principe de responsabilité totale : les trois portes par lesquelles entre la connaissance — l'ouïe, la vue, le cœur — sont des organes confiés, et chacun rendra compte de ce qu'il a fait passer.",
         "sens_pour_aujourdhui": "Tes yeux ne sont pas à toi. Ils sont un dépôt (amâna). Allah te demandera : qu'as-tu regardé ? Ce n'est pas une menace — c'est une dignité. Tu portes en toi quelque chose qui sera interrogé. Aujourd'hui, tu fais l'inventaire avant que l'inventaire ne te soit fait. Pas par peur — par lucidité.",
-        "sources_tafsir": ["Tafsîr Ibn Kathîr, sur Al-Isrâ' 17:36", "Tafsîr al-Sa'dî"]
+        "sources_tafsir": [
+          "Tafsîr Ibn Kathîr, sur Al-Isrâ' 17:36",
+          "Tafsîr al-Sa'dî"
+        ]
       },
       "bloc_2_sagesse": {
         "type": "parole_de_sage",
@@ -108,16 +111,47 @@
           "introduction": "Identifier les déclencheurs est plus efficace que combattre les conséquences.",
           "consigne": "Coche TOUT ce qui te concerne. Plusieurs réponses possibles.",
           "options": [
-            { "id": "soir_seul", "label_fr": "Seul le soir" },
-            { "id": "tel_lit", "label_fr": "Téléphone au lit" },
-            { "id": "reseaux", "label_fr": "Réseaux sociaux (Insta, Tiktok, Twitter)" },
-            { "id": "pubs", "label_fr": "Publicités, vidéos suggérées" },
-            { "id": "ennui", "label_fr": "Quand je m'ennuie" },
-            { "id": "stress", "label_fr": "Quand je suis stressé(e)" },
-            { "id": "solitude", "label_fr": "Quand je me sens seul(e)" },
-            { "id": "fatigue", "label_fr": "Quand je suis fatigué(e)" },
-            { "id": "rue", "label_fr": "Dans la rue, transports" },
-            { "id": "autre", "label_fr": "Autre", "champ_libre": true }
+            {
+              "id": "soir_seul",
+              "label_fr": "Seul le soir"
+            },
+            {
+              "id": "tel_lit",
+              "label_fr": "Téléphone au lit"
+            },
+            {
+              "id": "reseaux",
+              "label_fr": "Réseaux sociaux (Insta, Tiktok, Twitter)"
+            },
+            {
+              "id": "pubs",
+              "label_fr": "Publicités, vidéos suggérées"
+            },
+            {
+              "id": "ennui",
+              "label_fr": "Quand je m'ennuie"
+            },
+            {
+              "id": "stress",
+              "label_fr": "Quand je suis stressé(e)"
+            },
+            {
+              "id": "solitude",
+              "label_fr": "Quand je me sens seul(e)"
+            },
+            {
+              "id": "fatigue",
+              "label_fr": "Quand je suis fatigué(e)"
+            },
+            {
+              "id": "rue",
+              "label_fr": "Dans la rue, transports"
+            },
+            {
+              "id": "autre",
+              "label_fr": "Autre",
+              "champ_libre": true
+            }
           ],
           "stockage": "cure_regard_j1_declencheurs",
           "note_psy": "Trigger identification (CBT — Family Strategies Counseling). Composante critique du traitement de toute addiction comportementale.",
@@ -210,15 +244,24 @@
       },
       "murmure_sortie_sanctuaire": "Voir clair, c'est déjà voir mieux.",
       "metadata_jour": {
-        "versets_cites": ["Al-Isrâ' 17:36 (central)"],
-        "hadiths_cites": ["Tirmidhî 2777 (1er/2e regard)", "Tirmidhî 2038 (médecine)", "Abû Dâwûd 1518 (istighfâr)", "Nasâ'î 5491 (savoir utile)"],
-        "savants_cites": ["Al-Ghazâlî", "Al-Muhâsibî"],
+        "versets_cites": [
+          "Al-Isrâ' 17:36 (central)"
+        ],
+        "hadiths_cites": [
+          "Tirmidhî 2777 (1er/2e regard)",
+          "Tirmidhî 2038 (médecine)",
+          "Abû Dâwûd 1518 (istighfâr)",
+          "Nasâ'î 5491 (savoir utile)"
+        ],
+        "savants_cites": [
+          "Al-Ghazâlî",
+          "Al-Muhâsibî"
+        ],
         "dhikr_quantifie": "Astaghfirullâh al-'Adhîm wa atûbu ilayh × 100",
         "pratique_corporelle": "Fermer les yeux 2 min après chaque salât (5 fois)",
         "outils_psy": 4
       }
     },
-
     "j2": {
       "numero": 2,
       "station_ar": "التَّوْبَة",
@@ -239,7 +282,10 @@
         },
         "contexte_revelation": "Verset mecquois, parmi les plus chargés d'espoir du Coran entier. Allah s'adresse directement aux serviteurs qui ont fauté — pas comme à des ennemis, mais comme à 'Mes serviteurs' (yâ 'ibâdî). Il leur interdit de désespérer et garantit le pardon de TOUS les péchés.",
         "sens_pour_aujourdhui": "Hier tu as fait l'inventaire. Aujourd'hui Allah te répond. Il ne te dit pas : 'Tu es coupable, châtié.' Il te dit : 'Mon serviteur, ne désespère pas. Je pardonne tout.' La porte la plus dangereuse à franchir n'est pas le péché — c'est le désespoir après le péché. Le ya's (désespoir) est lui-même un péché parce qu'il nie la miséricorde divine. Aujourd'hui — tu te repens en sachant que tu es accueilli.",
-        "sources_tafsir": ["Tafsîr Ibn Kathîr, sur Az-Zumar 39:53", "Tafsîr al-Sa'dî"]
+        "sources_tafsir": [
+          "Tafsîr Ibn Kathîr, sur Az-Zumar 39:53",
+          "Tafsîr al-Sa'dî"
+        ]
       },
       "bloc_2_sagesse": {
         "type": "parole_de_sage",
@@ -303,7 +349,13 @@
           "etape_apres_ecriture": {
             "instruction": "Quel mot résume ce que tu te pardonnes ?",
             "options_thematiques": [
-              "le regard", "l'usage", "le temps perdu", "la honte", "l'oubli d'Allah", "moi-même", "autre"
+              "le regard",
+              "l'usage",
+              "le temps perdu",
+              "la honte",
+              "l'oubli d'Allah",
+              "moi-même",
+              "autre"
             ],
             "stockage": "cure_regard_j2_theme_pardon"
           },
@@ -386,15 +438,23 @@
       },
       "murmure_sortie_sanctuaire": "Allah te préfère revenu que jamais parti.",
       "metadata_jour": {
-        "versets_cites": ["Az-Zumar 39:53 (central)"],
-        "hadiths_cites": ["Bukhârî 6308 + Muslim 2747 (joie d'Allah)", "Abû Dâwûd 1517 (istighfâr long)", "Abû Dâwûd 1521 (salât at-Tawba)", "Muslim 244 (wudû pardon)"],
-        "savants_cites": ["Ibn al-Qayyim"],
+        "versets_cites": [
+          "Az-Zumar 39:53 (central)"
+        ],
+        "hadiths_cites": [
+          "Bukhârî 6308 + Muslim 2747 (joie d'Allah)",
+          "Abû Dâwûd 1517 (istighfâr long)",
+          "Abû Dâwûd 1521 (salât at-Tawba)",
+          "Muslim 244 (wudû pardon)"
+        ],
+        "savants_cites": [
+          "Ibn al-Qayyim"
+        ],
         "dhikr_quantifie": "Astaghfirullâh long × 70",
         "pratique_corporelle": "Salât at-Tawba 2 rak'a + sajda silencieuse",
         "outils_psy": 3
       }
     },
-
     "j3": {
       "numero": 3,
       "station_ar": "الْحِجَاب الْبَاطِن",
@@ -415,7 +475,10 @@
         },
         "contexte_revelation": "Versets médinois cardinaux de la sourate An-Nûr (la Lumière). Allah s'adresse d'abord aux hommes (mu'minîn), puis aux femmes (mu'minât) — symétrie totale. Le verset précise : 'Cela est plus pur pour eux (azkâ)' — la pureté est un fruit du regard maîtrisé.",
         "sens_pour_aujourdhui": "Allah ne dit pas 'fermez les yeux' — Il dit 'baissez-les' (yaghuddû). Ghadd al-basar n'est pas l'aveuglement — c'est la maîtrise. Le verset s'adresse aux deux genres avec la même rigueur. Mais voici le secret : le regard suit le cœur. Si ton cœur ne veut pas, tes yeux n'iront pas. Le voile à mettre n'est pas d'abord sur les yeux — il est sur le cœur. Aujourd'hui, tu travailles le voile intérieur.",
-        "sources_tafsir": ["Tafsîr Ibn Kathîr, sur An-Nûr 24:30-31", "Tafsîr al-Qurtubî"]
+        "sources_tafsir": [
+          "Tafsîr Ibn Kathîr, sur An-Nûr 24:30-31",
+          "Tafsîr al-Qurtubî"
+        ]
       },
       "bloc_2_sagesse": {
         "type": "parole_de_sage",
@@ -455,7 +518,7 @@
           "nombre_min": 3,
           "nombre_max": 5,
           "stockage": "cure_regard_j3_tri_emotion",
-          "note_psy": "Functional analysis — ACT (Steven Hayes). La pornographie/scroll compulsif fonctionne comme régulation émotionnelle dysfonctionnelle : on cherche à 'se faire passer' une émotion difficile. L'étude Twohig & Crosby (2010) a montré 85% de réduction sur 6 participants en 8 sessions ACT — la plus efficace en clinique.",
+          "note_psy": "Ce que tu regardes en boucle n'est presque jamais une affaire de désir. C'est une fuite. Quand le cœur porte une émotion lourde — l'ennui, la solitude, la colère, le vide — le nafs cherche le soulagement le plus rapide, et l'écran le tend en une seconde. Le vrai problème n'est pas l'œil : c'est ce que le cœur n'arrive pas à nommer. Demande-toi : qu'est-ce que je fuyais, juste avant ? Ce que tu fuyais est la vraie porte. L'œil n'en est que le messager.",
           "note_spi": "Le regard suit le cœur — Ibn 'Atâ'illâh. Identifier l'émotion sous-jacente, c'est commencer à soigner la cause au lieu du symptôme."
         },
         {
@@ -466,15 +529,42 @@
           "introduction": "Le shaytan attend que tu sois seul et inactif. Le savoir, c'est déjà l'anticiper.",
           "consigne": "Coche les moments où tu es le plus vulnérable.",
           "options": [
-            { "id": "matin_reveil", "label_fr": "Juste après le réveil" },
-            { "id": "transport", "label_fr": "Dans les transports / le trajet" },
-            { "id": "pause_dej", "label_fr": "Pause déjeuner seul(e)" },
-            { "id": "fin_aprem", "label_fr": "Fin d'après-midi (fatigue, ennui)" },
-            { "id": "apres_diner", "label_fr": "Après dîner, sur le canapé" },
-            { "id": "avant_dormir", "label_fr": "Tard le soir, juste avant de dormir" },
-            { "id": "nuit", "label_fr": "Au milieu de la nuit (insomnie)" },
-            { "id": "weekend", "label_fr": "Le week-end (temps libre seul)" },
-            { "id": "stress_apres", "label_fr": "Juste après un stress / conflit" }
+            {
+              "id": "matin_reveil",
+              "label_fr": "Juste après le réveil"
+            },
+            {
+              "id": "transport",
+              "label_fr": "Dans les transports / le trajet"
+            },
+            {
+              "id": "pause_dej",
+              "label_fr": "Pause déjeuner seul(e)"
+            },
+            {
+              "id": "fin_aprem",
+              "label_fr": "Fin d'après-midi (fatigue, ennui)"
+            },
+            {
+              "id": "apres_diner",
+              "label_fr": "Après dîner, sur le canapé"
+            },
+            {
+              "id": "avant_dormir",
+              "label_fr": "Tard le soir, juste avant de dormir"
+            },
+            {
+              "id": "nuit",
+              "label_fr": "Au milieu de la nuit (insomnie)"
+            },
+            {
+              "id": "weekend",
+              "label_fr": "Le week-end (temps libre seul)"
+            },
+            {
+              "id": "stress_apres",
+              "label_fr": "Juste après un stress / conflit"
+            }
           ],
           "stockage": "cure_regard_j3_horloge",
           "note_psy": "Trigger mapping temporel (CBT). Identifier les fenêtres temporelles à haut risque permet de mettre en place des protections spécifiques (sortie, prière, contact d'un proche) à ces moments précis.",
@@ -555,15 +645,23 @@
       },
       "murmure_sortie_sanctuaire": "Mon cœur d'abord. Mes yeux suivront.",
       "metadata_jour": {
-        "versets_cites": ["An-Nûr 24:30-31 (central)"],
-        "hadiths_cites": ["Tirmidhî 2140 (cœurs entre deux doigts)", "Muslim 244 (yeux purifiés par wudû)"],
-        "savants_cites": ["Ibn 'Atâ'illâh", "Al-Ghazâlî", "Ibn al-Qayyim"],
+        "versets_cites": [
+          "An-Nûr 24:30-31 (central)"
+        ],
+        "hadiths_cites": [
+          "Tirmidhî 2140 (cœurs entre deux doigts)",
+          "Muslim 244 (yeux purifiés par wudû)"
+        ],
+        "savants_cites": [
+          "Ibn 'Atâ'illâh",
+          "Al-Ghazâlî",
+          "Ibn al-Qayyim"
+        ],
         "dhikr_quantifie": "Yâ Muqalliba-l-qulûb × 33",
         "pratique_corporelle": "Wudû orienté vers les yeux avec du'â de purification",
         "outils_psy": 3
       }
     },
-
     "j4": {
       "numero": 4,
       "station_ar": "غَضّ الْبَصَر",
@@ -584,7 +682,10 @@
         },
         "contexte_revelation": "Verset An-Nûr 24:30 — repris aujourd'hui pour entrer dans la mécanique exacte. Allah utilise le verbe yaghuddû (de la racine ghadd) qui ne signifie pas 'fermer' mais 'abaisser', 'diminuer', 'voiler partiellement'.",
         "sens_pour_aujourdhui": "Aujourd'hui, on apprend la technique. Pas la philosophie — la technique. Le ghadd al-basar est un mouvement précis : le premier regard arrive, tu détournes. C'est tout. Ce mouvement, qui dure une seconde, est la frontière entre péché et pureté. Allah dit : azkâ — 'cela est plus pur'. Le mot zakâ évoque la croissance, la purification, l'élévation. Chaque ghadd est une purification active.",
-        "sources_tafsir": ["Tafsîr Ibn Kathîr, sur An-Nûr 24:30", "Ibn al-Qayyim, Rawdat al-Muhibbîn"]
+        "sources_tafsir": [
+          "Tafsîr Ibn Kathîr, sur An-Nûr 24:30",
+          "Ibn al-Qayyim, Rawdat al-Muhibbîn"
+        ]
       },
       "bloc_2_sagesse": {
         "type": "parole_de_sage",
@@ -630,9 +731,18 @@
             }
           ],
           "options_par_question": [
-            { "id": "premier", "label": "1er regard (libre)" },
-            { "id": "second", "label": "2e regard (à baisser)" },
-            { "id": "continuer", "label": "Continuer (péché)" }
+            {
+              "id": "premier",
+              "label": "1er regard (libre)"
+            },
+            {
+              "id": "second",
+              "label": "2e regard (à baisser)"
+            },
+            {
+              "id": "continuer",
+              "label": "Continuer (péché)"
+            }
           ],
           "feedback_correct_premier": "Oui. Premier regard involontaire, pas de faute.",
           "feedback_correct_second": "Oui. C'est ici qu'il faut baisser. Le 2e regard est contre toi.",
@@ -650,14 +760,38 @@
           "introduction": "« Ne vous approchez pas de la zinâ » (Al-Isrâ' 17:32). Allah ne dit pas 'ne la faites pas' — Il dit 'ne vous en approchez pas'. La prévention environnementale est coranique.",
           "consigne": "Coche les protections que tu mets en place dans les 24h. Sois honnête : ne coche que ce que tu vas vraiment faire.",
           "options": [
-            { "id": "desinstall_insta", "label_fr": "Désinstaller Instagram (test 24h)" },
-            { "id": "desinstall_tiktok", "label_fr": "Désinstaller Tiktok (test 24h)" },
-            { "id": "dns_block", "label_fr": "Configurer un DNS filtrant (1.1.1.3 Cloudflare Family ou OpenDNS FamilyShield)" },
-            { "id": "ecran_nb", "label_fr": "Mettre l'écran en noir et blanc (Réglages → Accessibilité)" },
-            { "id": "notif_off", "label_fr": "Couper TOUTES les notifications de recommandation" },
-            { "id": "tel_loin_nuit", "label_fr": "Téléphone hors de la chambre la nuit" },
-            { "id": "horaires_off", "label_fr": "Mode 'temps d'écran' avec blocage automatique le soir" },
-            { "id": "compte_responsable", "label_fr": "Donner mon mot de passe à un proche de confiance" }
+            {
+              "id": "desinstall_insta",
+              "label_fr": "Désinstaller Instagram (test 24h)"
+            },
+            {
+              "id": "desinstall_tiktok",
+              "label_fr": "Désinstaller Tiktok (test 24h)"
+            },
+            {
+              "id": "dns_block",
+              "label_fr": "Configurer un DNS filtrant (1.1.1.3 Cloudflare Family ou OpenDNS FamilyShield)"
+            },
+            {
+              "id": "ecran_nb",
+              "label_fr": "Mettre l'écran en noir et blanc (Réglages → Accessibilité)"
+            },
+            {
+              "id": "notif_off",
+              "label_fr": "Couper TOUTES les notifications de recommandation"
+            },
+            {
+              "id": "tel_loin_nuit",
+              "label_fr": "Téléphone hors de la chambre la nuit"
+            },
+            {
+              "id": "horaires_off",
+              "label_fr": "Mode 'temps d'écran' avec blocage automatique le soir"
+            },
+            {
+              "id": "compte_responsable",
+              "label_fr": "Donner mon mot de passe à un proche de confiance"
+            }
           ],
           "stockage": "cure_regard_j4_bouclier",
           "note_psy": "Stimulus control (CBT). Une des techniques les plus efficaces en traitement des addictions comportementales — modifier l'environnement avant de tenter de modifier la volonté. La volonté est limitée ; l'environnement est durable.",
@@ -727,15 +861,24 @@
       },
       "murmure_sortie_sanctuaire": "Baisser le regard, c'est élever l'âme.",
       "metadata_jour": {
-        "versets_cites": ["An-Nûr 24:30 (central)", "Al-Isrâ' 17:32 (ne vous approchez pas)", "Al-A'râf 7:200"],
-        "hadiths_cites": ["Tirmidhî 2777 (1er/2e regard)", "Bukhârî 3282 + Muslim 2610 (isti'âdha)", "Bukhârî 6416 (étranger voyageur)"],
-        "savants_cites": ["Ibn al-Qayyim"],
+        "versets_cites": [
+          "An-Nûr 24:30 (central)",
+          "Al-Isrâ' 17:32 (ne vous approchez pas)",
+          "Al-A'râf 7:200"
+        ],
+        "hadiths_cites": [
+          "Tirmidhî 2777 (1er/2e regard)",
+          "Bukhârî 3282 + Muslim 2610 (isti'âdha)",
+          "Bukhârî 6416 (étranger voyageur)"
+        ],
+        "savants_cites": [
+          "Ibn al-Qayyim"
+        ],
         "dhikr_quantifie": "A'ûdhu bi-llâhi mina-sh-shaytâni-r-rajîm × min 30",
         "pratique_corporelle": "1 heure sans téléphone physique",
         "outils_psy": 3
       }
     },
-
     "j5": {
       "numero": 5,
       "station_ar": "التَّحْصِين",
@@ -756,7 +899,10 @@
         },
         "contexte_revelation": "Ouverture de la sourate Al-Mu'minûn (les Croyants). Allah liste les caractéristiques du croyant qui réussit (aflaha). La préservation de la pudeur (hifdh al-furûj) arrive en 4e position — précédée par la prière humble, l'évitement des futilités, et la zakât. Le hifdh n'est pas isolé : c'est l'aboutissement d'une vie spirituelle structurée.",
         "sens_pour_aujourdhui": "Le verset ne dit pas 'ceux qui combattent leur regard'. Il dit 'ceux qui préservent' (hâfidhûn) — c'est-à-dire ceux qui GARDENT. Garder, c'est remplir. Si ta vie n'est pas remplie de prière, d'évitement des futilités, de générosité — il n'y a rien à garder, il y a un vide qui aspire le mal. Aujourd'hui, on ne combat pas. On remplit.",
-        "sources_tafsir": ["Tafsîr Ibn Kathîr, sur Al-Mu'minûn 23:1-11", "Tafsîr al-Sa'dî"]
+        "sources_tafsir": [
+          "Tafsîr Ibn Kathîr, sur Al-Mu'minûn 23:1-11",
+          "Tafsîr al-Sa'dî"
+        ]
       },
       "bloc_2_sagesse": {
         "type": "parole_de_sage",
@@ -780,15 +926,42 @@
           "introduction": "Quand l'envie monte, le combat frontal est perdu d'avance. La solution clinique : avoir 3 substituts pré-choisis, sains, accessibles immédiatement.",
           "consigne": "Choisis EXACTEMENT 3 substituts que tu t'engages à utiliser dès que l'envie monte aujourd'hui.",
           "options": [
-            { "id": "coran", "label_fr": "Lecture du Coran (10 min minimum)" },
-            { "id": "sport", "label_fr": "Sport intense (20 min minimum)" },
-            { "id": "marche", "label_fr": "Marche rapide dehors (10 min)" },
-            { "id": "appel", "label_fr": "Appel à un proche de confiance" },
-            { "id": "lecture", "label_fr": "Lecture d'un livre (pas écran)" },
-            { "id": "wudu_salat", "label_fr": "Wudû + 2 rak'a immédiates" },
-            { "id": "ecriture", "label_fr": "Écrire ce que je ressens (carnet)" },
-            { "id": "menage", "label_fr": "Tâche ménagère active (rangement, cuisine)" },
-            { "id": "douche_froide", "label_fr": "Douche froide" }
+            {
+              "id": "coran",
+              "label_fr": "Lecture du Coran (10 min minimum)"
+            },
+            {
+              "id": "sport",
+              "label_fr": "Sport intense (20 min minimum)"
+            },
+            {
+              "id": "marche",
+              "label_fr": "Marche rapide dehors (10 min)"
+            },
+            {
+              "id": "appel",
+              "label_fr": "Appel à un proche de confiance"
+            },
+            {
+              "id": "lecture",
+              "label_fr": "Lecture d'un livre (pas écran)"
+            },
+            {
+              "id": "wudu_salat",
+              "label_fr": "Wudû + 2 rak'a immédiates"
+            },
+            {
+              "id": "ecriture",
+              "label_fr": "Écrire ce que je ressens (carnet)"
+            },
+            {
+              "id": "menage",
+              "label_fr": "Tâche ménagère active (rangement, cuisine)"
+            },
+            {
+              "id": "douche_froide",
+              "label_fr": "Douche froide"
+            }
           ],
           "stockage": "cure_regard_j5_substituts",
           "note_psy": "Replacement behaviors / Alternative response training (Habit Reversal Training — Azrin & Nunn). Composant le plus prédictif du succès dans les addictions comportementales — avoir un plan B PRÉ-CHOISI augmente le taux de réussite de 3x.",
@@ -878,15 +1051,25 @@
       },
       "murmure_sortie_sanctuaire": "Une âme remplie d'Allah ne cherche pas ailleurs.",
       "metadata_jour": {
-        "versets_cites": ["Al-Mu'minûn 23:1-5 (central)", "Al-Isrâ' 17:70 (dignité)"],
-        "hadiths_cites": ["Bukhârî 3293 + Muslim 2691 (lâ ilâha 100×)", "Tirmidhî 1987 (bon acte efface)", "Muslim 2664 (croyant fort)", "Bukhârî 5066 (mariage/jeûne)"],
-        "savants_cites": ["Ibn al-Qayyim", "Al-Ghazâlî"],
+        "versets_cites": [
+          "Al-Mu'minûn 23:1-5 (central)",
+          "Al-Isrâ' 17:70 (dignité)"
+        ],
+        "hadiths_cites": [
+          "Bukhârî 3293 + Muslim 2691 (lâ ilâha 100×)",
+          "Tirmidhî 1987 (bon acte efface)",
+          "Muslim 2664 (croyant fort)",
+          "Bukhârî 5066 (mariage/jeûne)"
+        ],
+        "savants_cites": [
+          "Ibn al-Qayyim",
+          "Al-Ghazâlî"
+        ],
         "dhikr_quantifie": "Lâ ilâha illâ Allâh wahdahu... × 100",
         "pratique_corporelle": "Sport ou marche rapide 20 min avec dhikr à l'expiration",
         "outils_psy": 3
       }
     },
-
     "j6": {
       "numero": 6,
       "station_ar": "الْمُرَاقَبَة",
@@ -907,7 +1090,10 @@
         },
         "contexte_revelation": "Verset mecquois, dans la sourate Ghâfir (Le Pardonneur). Allah affirme Son omniscience sur ce qui est le plus dissimulé : la khâ'inata-l-a'yun — littéralement 'la traîtrise des yeux', ces regards furtifs que l'on jette croyant que personne ne voit. Et ce que les poitrines cachent — les intentions secrètes.",
         "sens_pour_aujourdhui": "Le regard volé, on le croit invisible. C'est exactement ce que dénonce ce verset. Allah ne voit pas seulement ce que tu regardes en face — Il voit ce que tu regardes en biais, à la dérobée, au coin de l'œil. Il voit même ce que ta poitrine cache sans que tu l'exprimes. La murâqaba (vigilance) commence quand cette vérité passe de la croyance abstraite à la sensation concrète. Aujourd'hui : Allah te voit. Maintenant.",
-        "sources_tafsir": ["Tafsîr Ibn Kathîr, sur Ghâfir 40:19", "Tafsîr al-Tabarî"]
+        "sources_tafsir": [
+          "Tafsîr Ibn Kathîr, sur Ghâfir 40:19",
+          "Tafsîr al-Tabarî"
+        ]
       },
       "bloc_2_sagesse": {
         "type": "parole_de_sage",
@@ -1028,15 +1214,23 @@
       },
       "murmure_sortie_sanctuaire": "Vivre devant Lui change tout.",
       "metadata_jour": {
-        "versets_cites": ["Ghâfir 40:19 (central)"],
-        "hadiths_cites": ["Bukhârî 50 + Muslim 8 (Ihsân)", "Abû Dâwûd 4840 (Bismillâh)"],
-        "savants_cites": ["Al-Muhâsibî", "Al-Ghazâlî", "Ibn al-Qayyim"],
+        "versets_cites": [
+          "Ghâfir 40:19 (central)"
+        ],
+        "hadiths_cites": [
+          "Bukhârî 50 + Muslim 8 (Ihsân)",
+          "Abû Dâwûd 4840 (Bismillâh)"
+        ],
+        "savants_cites": [
+          "Al-Muhâsibî",
+          "Al-Ghazâlî",
+          "Ibn al-Qayyim"
+        ],
         "dhikr_quantifie": "Allâhu yarânî... × 33",
         "pratique_corporelle": "Bismillâh audible avant chaque déverrouillage du téléphone",
         "outils_psy": 3
       }
     },
-
     "j7": {
       "numero": 7,
       "station_ar": "الِاسْتِقَامَة",
@@ -1057,7 +1251,10 @@
         },
         "contexte_revelation": "Verset mecquois, dans la sourate Fussilat (Versets détaillés). Allah décrit la récompense de l'istiqâma — la rectitude maintenue dans le temps. Les anges descendent (tatanazzalu — verbe à l'imparfait, action continue) sur celui qui tient. Trois promesses : pas de peur, pas de tristesse, le Paradis.",
         "sens_pour_aujourdhui": "Sept jours sont passés. Tu as nommé, tu t'es repenti, tu as compris ton cœur, tu as appris à baisser, tu as fortifié, tu as veillé. Maintenant — l'enjeu n'est plus de comprendre. C'est de tenir. L'istiqâma, c'est marcher droit même quand l'élan initial est passé. C'est faire ce qu'on a appris dans 7 jours, 7 semaines, 7 ans. Le verset promet : si tu tiens, des anges descendent sur toi. Allah s'occupe de toi.",
-        "sources_tafsir": ["Tafsîr Ibn Kathîr, sur Fussilat 41:30-32", "Tafsîr al-Sa'dî"]
+        "sources_tafsir": [
+          "Tafsîr Ibn Kathîr, sur Fussilat 41:30-32",
+          "Tafsîr al-Sa'dî"
+        ]
       },
       "bloc_2_sagesse": {
         "type": "parole_de_sage",
@@ -1098,15 +1295,43 @@
           "introduction": "Pendant ces 7 jours, certaines choses se sont déplacées en toi. Pas toutes — certaines.",
           "consigne": "Coche ce qui résonne. Plusieurs réponses possibles.",
           "options": [
-            { "id": "conscience", "label_fr": "La conscience des moments à risque" },
-            { "id": "isti_adha", "label_fr": "Le réflexe de l'isti'âdha" },
-            { "id": "degoût", "label_fr": "Un certain dégoût pour les contenus" },
-            { "id": "sommeil", "label_fr": "Un sommeil meilleur" },
-            { "id": "dignite", "label_fr": "Une dignité retrouvée" },
-            { "id": "duea_yunus", "label_fr": "Le retour à des du'âs prophétiques" },
-            { "id": "tel_distance", "label_fr": "Une distance saine avec le téléphone" },
-            { "id": "coeur_calme", "label_fr": "Un cœur plus calme" },
-            { "id": "autre", "label_fr": "Autre", "champ_libre": true }
+            {
+              "id": "conscience",
+              "label_fr": "La conscience des moments à risque"
+            },
+            {
+              "id": "isti_adha",
+              "label_fr": "Le réflexe de l'isti'âdha"
+            },
+            {
+              "id": "degoût",
+              "label_fr": "Un certain dégoût pour les contenus"
+            },
+            {
+              "id": "sommeil",
+              "label_fr": "Un sommeil meilleur"
+            },
+            {
+              "id": "dignite",
+              "label_fr": "Une dignité retrouvée"
+            },
+            {
+              "id": "duea_yunus",
+              "label_fr": "Le retour à des du'âs prophétiques"
+            },
+            {
+              "id": "tel_distance",
+              "label_fr": "Une distance saine avec le téléphone"
+            },
+            {
+              "id": "coeur_calme",
+              "label_fr": "Un cœur plus calme"
+            },
+            {
+              "id": "autre",
+              "label_fr": "Autre",
+              "champ_libre": true
+            }
           ],
           "stockage": "cure_regard_j7_traces",
           "note_psy": "Savoring + positive memory consolidation (Barbara Fredrickson, Broaden & Build Theory). Reconnaître ce qui a changé renforce les circuits neuronaux de la nouvelle habitude.",
@@ -1219,9 +1444,20 @@
         "reposer": "Va. Ce que tu as reçu travaillera en silence."
       },
       "metadata_jour": {
-        "versets_cites": ["Fussilat 41:30 (central)", "Ach-Charh 94:7-8 (marche)", "Al-A'râf 7:69 (bienfaits)"],
-        "hadiths_cites": ["Tirmidhî 2499 (meilleurs pécheurs)", "Bukhârî 2442 + Muslim 2580 (as-Sittîr)", "Abû Dâwûd 1522 (Mu'âdh)"],
-        "savants_cites": ["Junayd al-Baghdâdî", "Al-Qushayrî"],
+        "versets_cites": [
+          "Fussilat 41:30 (central)",
+          "Ach-Charh 94:7-8 (marche)",
+          "Al-A'râf 7:69 (bienfaits)"
+        ],
+        "hadiths_cites": [
+          "Tirmidhî 2499 (meilleurs pécheurs)",
+          "Bukhârî 2442 + Muslim 2580 (as-Sittîr)",
+          "Abû Dâwûd 1522 (Mu'âdh)"
+        ],
+        "savants_cites": [
+          "Junayd al-Baghdâdî",
+          "Al-Qushayrî"
+        ],
         "dhikr_quantifie": "Allâhumma a'innî... × 1 après chaque salât (à vie)",
         "pratique_corporelle": "Marche de sortie 15 min sans téléphone",
         "outils_psy": 4
@@ -1234,7 +1470,15 @@
     "duree_estimee_jour_min": 10,
     "duree_estimee_jour_max": 13,
     "blocs_par_jour": 5,
-    "verbes_centraux": ["Constater", "Se repentir", "Voiler le cœur", "Baisser", "Fortifier", "Veiller", "Tenir"],
+    "verbes_centraux": [
+      "Constater",
+      "Se repentir",
+      "Voiler le cœur",
+      "Baisser",
+      "Fortifier",
+      "Veiller",
+      "Tenir"
+    ],
     "specificite_porte": "Cure Regard pudique. Aborde frontalement pornographie et scroll compulsif comme régulation émotionnelle dysfonctionnelle. Genre-neutre. Centre sur tawba sans shame, reconstruction d'identité, environnement avant volonté.",
     "sources_islamiques": {
       "versets_centraux_par_jour": [
