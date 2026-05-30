@@ -6584,14 +6584,14 @@ _outilAnxieteRenderers.double_champ_lie = function(o, c) {
   var sk2 = c2.stockage || 'cure_anxiete_champ2';
   var v1 = safeGetItem(sk1) || '';
   var v2 = safeGetItem(sk2) || '';
-  var html = '<div style="border:1px solid ' + c + '22;border-radius:14px;padding:20px;margin-bottom:16px;line-height:2.2;">';
-  html += '<span style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.7);">' + escapeHtml(o.amorce_avant || '') + ' </span>';
-  html += '<input type="text" value="' + escapeHtml(v1) + '" placeholder="' + escapeHtml(c1.placeholder || '...') + '" oninput="safeSetItem(\'' + sk1 + '\',this.value)" style="background:none;border:none;border-bottom:1px solid ' + c + '44;color:#E5E0DC;font-family:var(--serif);font-size:15px;padding:2px 4px;width:100%;max-width:260px;outline:none;margin-bottom:8px;">';
-  html += '<span style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.7);">' + escapeHtml(o.amorce_milieu || '') + ' </span>';
-  html += '<input type="text" value="' + escapeHtml(v2) + '" placeholder="' + escapeHtml(c2.placeholder || '...') + '" oninput="safeSetItem(\'' + sk2 + '\',this.value)" style="background:none;border:none;border-bottom:1px solid ' + c + '44;color:#E5E0DC;font-family:var(--serif);font-size:15px;padding:2px 4px;width:100%;max-width:260px;outline:none;">';
+  var html = '<div style="border:1px solid ' + c + '22;border-radius:14px;padding:20px;margin-bottom:16px;display:flex;flex-direction:column;gap:12px;">';
+  html += '<div><div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(200,168,75,0.7);margin-bottom:6px;">' + escapeHtml(o.amorce_avant || '') + '</div>';
+  html += '<input type="text" value="' + escapeHtml(v1) + '" placeholder="' + escapeHtml(c1.placeholder || '...') + '" oninput="safeSetItem(\'' + sk1 + '\',this.value)" style="display:block;width:100%;box-sizing:border-box;background:none;border:none;border-bottom:1px solid ' + c + '44;color:#E5E0DC;font-family:var(--serif);font-size:17px;padding:6px 4px;outline:none;"></div>';
+  html += '<div><div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(200,168,75,0.7);margin-bottom:6px;">' + escapeHtml(o.amorce_milieu || '') + '</div>';
+  html += '<input type="text" value="' + escapeHtml(v2) + '" placeholder="' + escapeHtml(c2.placeholder || '...') + '" oninput="safeSetItem(\'' + sk2 + '\',this.value)" style="display:block;width:100%;box-sizing:border-box;background:none;border:none;border-bottom:1px solid ' + c + '44;color:#E5E0DC;font-family:var(--serif);font-size:17px;padding:6px 4px;outline:none;"></div>';
   html += '</div>';
   if (o.note_spi) {
-    html += '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-bottom:8px;">' + escapeHtml(o.note_spi) + '</div>';
+    html += '<div style="font-family:var(--serif);font-size:14px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-bottom:8px;">' + escapeHtml(o.note_spi) + '</div>';
   }
   return html;
 };
@@ -6608,17 +6608,17 @@ function _cureAnxieteWizardRender(el) {
   var j = data && data.jours && data.jours['j' + dayNum];
   var totalSteps = s.steps.length;
 
+  var imgPath = 'assets/cure-anxiete/j' + dayNum + '.webp';
+  var bgWrap = '<div style="position:fixed;inset:0;z-index:-1;"><img src="' + imgPath + '" style="width:100%;height:100%;object-fit:cover;" alt=""><div style="position:absolute;inset:0;background:rgba(0,0,0,0.7);"></div></div>';
   var backBtn = '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="position:fixed;top:calc(var(--safe-top,0px) + 12px);left:16px;z-index:9990;background:rgba(10,10,10,0.7);border:1px solid rgba(200,168,74,0.3);border-radius:50%;color:#C8A84A;cursor:pointer;padding:0;width:40px;height:40px;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#C8A84A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>';
-  var progress = '<div style="text-align:center;margin-bottom:24px;font-size:11px;letter-spacing:0.2em;color:rgba(200,168,75,0.4);">' + (s.step + 1) + '/' + totalSteps + '</div>';
+  var progress = '<div style="text-align:center;margin-bottom:24px;font-size:13px;letter-spacing:0.2em;color:rgba(200,168,75,0.4);">' + (s.step + 1) + '/' + totalSteps + '</div>';
   var nextBtn = '<button onclick="_cureWizardState.step++;_cureAnxieteWizardRender()" style="display:block;width:100%;max-width:340px;margin:24px auto 0;padding:14px;border-radius:12px;border:none;background:' + c + ';color:#fff;font-size:15px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>';
 
   var html = '';
   if (step.type === '_ouverture_anxiete') {
-    var imgPath = 'assets/cure-anxiete/j' + dayNum + '.webp';
     var cit = j.citation_ouverture || {};
-    html = backBtn
+    html = backBtn + bgWrap
       + '<div style="position:relative;min-height:100vh;padding:0;">'
-      + '<div style="position:fixed;inset:0;z-index:-1;"><img src="' + imgPath + '" style="width:100%;height:100%;object-fit:cover;" alt=""><div style="position:absolute;inset:0;background:rgba(0,0,0,0.55);"></div></div>'
       + '<div style="padding:calc(var(--safe-top,0px)+60px) 24px 120px;position:relative;z-index:1;">'
       + progress
       + '<div style="font-family:\'Scheherazade New\',serif;font-size:20px;color:#C8A84A;direction:rtl;text-align:center;margin-bottom:4px;">' + escapeHtml(j.station_ar || '') + '</div>'
@@ -6631,112 +6631,112 @@ function _cureAnxieteWizardRender(el) {
   } else if (step.type === '_outil_anxiete') {
     var o = step.data;
     var outilHtml = _renderOutilAnxiete(o, c);
-    html = backBtn
-      + '<div style="padding:calc(var(--safe-top,0px)+60px) 24px 120px;">'
+    html = backBtn + bgWrap
+      + '<div style="padding:calc(var(--safe-top,0px)+60px) 24px 120px;position:relative;z-index:1;">'
       + progress
-      + (o.titre ? '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;text-align:center;margin-bottom:8px;">' + escapeHtml(o.titre) + '</div>' : '')
-      + (o.consigne ? '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:20px;">' + escapeHtml(o.consigne) + '</div>' : '')
+      + (o.titre ? '<div style="font-family:var(--serif);font-size:20px;color:#C8A84A;text-align:center;margin-bottom:8px;">' + escapeHtml(o.titre) + '</div>' : '')
+      + (o.consigne ? '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:20px;">' + escapeHtml(o.consigne) + '</div>' : '')
       + outilHtml
       + (o.type === 'ecran_final_sans_action' ? '' : nextBtn)
       + '</div>';
   } else if (step.type === '_bloc_verset') {
     var bv = step.data;
     var v = bv.verset || {};
-    html = backBtn
-      + '<div style="padding:calc(var(--safe-top,0px)+60px) 24px 120px;">'
+    html = backBtn + bgWrap
+      + '<div style="padding:calc(var(--safe-top,0px)+60px) 24px 120px;position:relative;z-index:1;">'
       + progress
-      + '<div style="font-family:var(--serif);font-size:11px;letter-spacing:2px;color:rgba(200,168,75,0.5);text-align:center;margin-bottom:16px;">' + escapeHtml((bv.titre_bloc || '').toUpperCase()) + '</div>'
+      + '<div style="font-family:var(--serif);font-size:13px;letter-spacing:2px;color:rgba(200,168,75,0.5);text-align:center;margin-bottom:16px;">' + escapeHtml((bv.titre_bloc || '').toUpperCase()) + '</div>'
       + '<div style="border:1px solid ' + c + '22;border-radius:14px;padding:20px;margin-bottom:16px;text-align:center;">'
       + (v.ar ? '<div style="font-family:\'Scheherazade New\',serif;font-size:22px;color:#C8A84A;direction:rtl;line-height:1.6;margin-bottom:10px;">' + escapeHtml(v.ar) + '</div>' : '')
-      + (v.translit ? '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:6px;">' + escapeHtml(v.translit) + '</div>' : '')
-      + (v.fr ? '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.85);line-height:1.6;margin-bottom:8px;">' + escapeHtml(v.fr) + '</div>' : '')
-      + (v.reference ? '<div style="font-size:11px;color:rgba(200,168,75,0.4);">\u2014 ' + escapeHtml(v.reference) + '</div>' : '')
+      + (v.translit ? '<div style="font-family:var(--serif);font-size:14px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:6px;">' + escapeHtml(v.translit) + '</div>' : '')
+      + (v.fr ? '<div style="font-family:var(--serif);font-size:17px;color:rgba(240,234,214,0.85);line-height:1.6;margin-bottom:8px;">' + escapeHtml(v.fr) + '</div>' : '')
+      + (v.reference ? '<div style="font-size:13px;color:rgba(200,168,75,0.4);">\u2014 ' + escapeHtml(v.reference) + '</div>' : '')
       + '</div>'
-      + (bv.contexte_revelation ? '<div style="font-family:var(--serif);font-size:13px;color:rgba(240,234,214,0.6);line-height:1.6;margin-bottom:12px;">' + escapeHtml(bv.contexte_revelation) + '</div>' : '')
-      + (bv.sens_pour_aujourdhui ? '<div style="font-family:var(--serif);font-size:14px;font-style:italic;color:rgba(200,168,75,0.65);line-height:1.6;margin-bottom:12px;">' + escapeHtml(bv.sens_pour_aujourdhui) + '</div>' : '')
+      + (bv.contexte_revelation ? '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.6);line-height:1.6;margin-bottom:12px;">' + escapeHtml(bv.contexte_revelation) + '</div>' : '')
+      + (bv.sens_pour_aujourdhui ? '<div style="font-family:var(--serif);font-size:16px;font-style:italic;color:rgba(200,168,75,0.65);line-height:1.6;margin-bottom:12px;">' + escapeHtml(bv.sens_pour_aujourdhui) + '</div>' : '')
       + nextBtn
       + '</div>';
   } else if (step.type === '_bloc_sagesse') {
     var bs = step.data;
     var p = bs.parole || {};
-    html = backBtn
-      + '<div style="padding:calc(var(--safe-top,0px)+60px) 24px 120px;">'
+    html = backBtn + bgWrap
+      + '<div style="padding:calc(var(--safe-top,0px)+60px) 24px 120px;position:relative;z-index:1;">'
       + progress
-      + '<div style="font-family:var(--serif);font-size:11px;letter-spacing:2px;color:rgba(200,168,75,0.5);text-align:center;margin-bottom:16px;">' + escapeHtml((bs.titre_bloc || '').toUpperCase()) + '</div>'
+      + '<div style="font-family:var(--serif);font-size:13px;letter-spacing:2px;color:rgba(200,168,75,0.5);text-align:center;margin-bottom:16px;">' + escapeHtml((bs.titre_bloc || '').toUpperCase()) + '</div>'
       + '<div style="border-left:2px solid ' + c + '44;padding-left:16px;margin-bottom:16px;">'
-      + '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(240,234,214,0.8);line-height:1.7;">' + escapeHtml(p.texte || '') + '</div>'
+      + '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(240,234,214,0.8);line-height:1.7;">' + escapeHtml(p.texte || '') + '</div>'
       + '</div>'
       + '<div style="text-align:right;margin-bottom:16px;">'
-      + '<div style="font-family:var(--serif);font-size:14px;color:#C8A84A;">' + escapeHtml(p.auteur || '') + '</div>'
-      + (p.dates_auteur ? '<div style="font-size:11px;color:rgba(200,168,75,0.4);">' + escapeHtml(p.dates_auteur) + '</div>' : '')
-      + (p.oeuvre ? '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.5);">' + escapeHtml(p.oeuvre) + '</div>' : '')
+      + '<div style="font-family:var(--serif);font-size:16px;color:#C8A84A;">' + escapeHtml(p.auteur || '') + '</div>'
+      + (p.dates_auteur ? '<div style="font-size:13px;color:rgba(200,168,75,0.4);">' + escapeHtml(p.dates_auteur) + '</div>' : '')
+      + (p.oeuvre ? '<div style="font-family:var(--serif);font-size:14px;font-style:italic;color:rgba(200,168,75,0.5);">' + escapeHtml(p.oeuvre) + '</div>' : '')
       + '</div>'
-      + (p.note_editoriale ? '<div style="font-family:var(--serif);font-size:13px;color:rgba(240,234,214,0.55);line-height:1.5;">' + escapeHtml(p.note_editoriale) + '</div>' : '')
+      + (p.note_editoriale ? '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.55);line-height:1.5;">' + escapeHtml(p.note_editoriale) + '</div>' : '')
       + nextBtn
       + '</div>';
   } else if (step.type === '_bloc_dhikr') {
     var bd = step.data;
     var dh = bd.dhikr || {};
-    html = backBtn
-      + '<div style="padding:calc(var(--safe-top,0px)+60px) 24px 120px;">'
+    html = backBtn + bgWrap
+      + '<div style="padding:calc(var(--safe-top,0px)+60px) 24px 120px;position:relative;z-index:1;">'
       + progress
-      + '<div style="font-family:var(--serif);font-size:11px;letter-spacing:2px;color:rgba(200,168,75,0.5);text-align:center;margin-bottom:16px;">' + escapeHtml((bd.titre_bloc || '').toUpperCase()) + '</div>'
-      + (bd.introduction ? '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(bd.introduction) + '</div>' : '')
+      + '<div style="font-family:var(--serif);font-size:13px;letter-spacing:2px;color:rgba(200,168,75,0.5);text-align:center;margin-bottom:16px;">' + escapeHtml((bd.titre_bloc || '').toUpperCase()) + '</div>'
+      + (bd.introduction ? '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(bd.introduction) + '</div>' : '')
       + '<div style="border:1px solid ' + c + '22;border-radius:14px;padding:20px;margin-bottom:16px;text-align:center;">'
-      + (dh.ar ? '<div style="font-family:\'Scheherazade New\',serif;font-size:28px;color:#C8A84A;direction:rtl;margin-bottom:8px;">' + escapeHtml(dh.ar) + '</div>' : '')
-      + (dh.translit ? '<div style="font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(200,168,75,0.55);margin-bottom:4px;">' + escapeHtml(dh.translit) + '</div>' : '')
-      + (dh.fr ? '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.8);margin-bottom:8px;">' + escapeHtml(dh.fr) + '</div>' : '')
-      + (dh.sens ? '<div style="font-family:var(--serif);font-size:12px;color:rgba(200,168,75,0.45);font-style:italic;margin-bottom:8px;">' + escapeHtml(dh.sens) + '</div>' : '')
-      + '<div style="font-family:var(--serif);font-size:20px;color:#C8A84A;font-weight:600;">\u00d7 ' + (bd.quantite || '') + '</div>'
+      + (dh.ar ? '<div style="font-family:\'Scheherazade New\',serif;font-size:30px;color:#C8A84A;direction:rtl;margin-bottom:8px;">' + escapeHtml(dh.ar) + '</div>' : '')
+      + (dh.translit ? '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.55);margin-bottom:4px;">' + escapeHtml(dh.translit) + '</div>' : '')
+      + (dh.fr ? '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.8);margin-bottom:8px;">' + escapeHtml(dh.fr) + '</div>' : '')
+      + (dh.sens ? '<div style="font-family:var(--serif);font-size:14px;color:rgba(200,168,75,0.45);font-style:italic;margin-bottom:8px;">' + escapeHtml(dh.sens) + '</div>' : '')
+      + '<div style="font-family:var(--serif);font-size:22px;color:#C8A84A;font-weight:600;">\u00d7 ' + (bd.quantite || '') + '</div>'
       + '</div>'
-      + (bd.moment_recommande ? '<div style="font-family:var(--serif);font-size:13px;color:rgba(240,234,214,0.6);text-align:center;margin-bottom:8px;">' + escapeHtml(bd.moment_recommande) + '</div>' : '')
-      + (bd.comment_pratiquer ? '<div style="font-family:var(--serif);font-size:13px;color:rgba(240,234,214,0.55);line-height:1.6;margin-bottom:12px;">' + escapeHtml(bd.comment_pratiquer) + '</div>' : '')
-      + (bd.justification && bd.justification.hadith ? '<div style="font-size:12px;color:rgba(200,168,75,0.4);font-style:italic;text-align:center;">\u2014 ' + escapeHtml(bd.justification.hadith) + '</div>' : '')
+      + (bd.moment_recommande ? '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.6);text-align:center;margin-bottom:8px;">' + escapeHtml(bd.moment_recommande) + '</div>' : '')
+      + (bd.comment_pratiquer ? '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.55);line-height:1.6;margin-bottom:12px;">' + escapeHtml(bd.comment_pratiquer) + '</div>' : '')
+      + (bd.justification && bd.justification.hadith ? '<div style="font-size:14px;color:rgba(200,168,75,0.4);font-style:italic;text-align:center;">\u2014 ' + escapeHtml(bd.justification.hadith) + '</div>' : '')
       + nextBtn
       + '</div>';
   } else if (step.type === '_bloc_corporel') {
     var bc = step.data;
     var ph = bc.phrase_a_repeter || {};
-    html = backBtn
-      + '<div style="padding:calc(var(--safe-top,0px)+60px) 24px 120px;">'
+    html = backBtn + bgWrap
+      + '<div style="padding:calc(var(--safe-top,0px)+60px) 24px 120px;position:relative;z-index:1;">'
       + progress
-      + '<div style="font-family:var(--serif);font-size:11px;letter-spacing:2px;color:rgba(200,168,75,0.5);text-align:center;margin-bottom:16px;">' + escapeHtml((bc.titre_bloc || '').toUpperCase()) + '</div>'
-      + (bc.introduction ? '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(bc.introduction) + '</div>' : '')
+      + '<div style="font-family:var(--serif);font-size:13px;letter-spacing:2px;color:rgba(200,168,75,0.5);text-align:center;margin-bottom:16px;">' + escapeHtml((bc.titre_bloc || '').toUpperCase()) + '</div>'
+      + (bc.introduction ? '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(bc.introduction) + '</div>' : '')
       + '<div style="border:1px solid ' + c + '22;border-radius:14px;padding:16px;margin-bottom:16px;">';
     var instr = bc.instructions || [];
     instr.forEach(function(line) {
-      html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.8);line-height:1.7;margin-bottom:6px;padding-left:12px;border-left:2px solid ' + c + '33;">' + escapeHtml(line) + '</div>';
+      html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.8);line-height:1.7;margin-bottom:6px;padding-left:12px;border-left:2px solid ' + c + '33;">' + escapeHtml(line) + '</div>';
     });
     html += '</div>';
     if (ph.ar) {
       html += '<div style="text-align:center;margin-bottom:12px;">'
-        + '<div style="font-family:\'Scheherazade New\',serif;font-size:22px;color:#C8A84A;direction:rtl;margin-bottom:4px;">' + escapeHtml(ph.ar) + '</div>'
-        + (ph.translit ? '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:4px;">' + escapeHtml(ph.translit) + '</div>' : '')
-        + (ph.fr ? '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);">' + escapeHtml(ph.fr) + '</div>' : '')
+        + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:#C8A84A;direction:rtl;margin-bottom:4px;">' + escapeHtml(ph.ar) + '</div>'
+        + (ph.translit ? '<div style="font-family:var(--serif);font-size:14px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:4px;">' + escapeHtml(ph.translit) + '</div>' : '')
+        + (ph.fr ? '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);">' + escapeHtml(ph.fr) + '</div>' : '')
         + '</div>';
     }
-    if (bc.duree_min) html += '<div style="font-size:12px;color:rgba(200,168,75,0.4);text-align:center;margin-bottom:8px;">' + bc.duree_min + ' min</div>';
+    if (bc.duree_min) html += '<div style="font-size:14px;color:rgba(200,168,75,0.4);text-align:center;margin-bottom:8px;">' + bc.duree_min + ' min</div>';
     html += nextBtn + '</div>';
   } else if (step.type === '_ancre_anxiete') {
     var ancre = step.data;
-    html = backBtn
-      + '<div style="padding:calc(var(--safe-top,0px)+60px) 24px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:70vh;text-align:center;">'
+    html = backBtn + bgWrap
+      + '<div style="padding:calc(var(--safe-top,0px)+60px) 24px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:70vh;text-align:center;position:relative;z-index:1;">'
       + progress
-      + (ancre.ar ? '<div style="font-family:\'Scheherazade New\',serif;font-size:28px;color:#C8A84A;direction:rtl;margin-bottom:12px;">' + escapeHtml(ancre.ar) + '</div>' : '')
-      + (ancre.translitteration ? '<div style="font-family:var(--serif);font-size:14px;color:rgba(200,168,75,0.6);font-style:italic;margin-bottom:8px;">' + escapeHtml(ancre.translitteration) + '</div>' : '')
-      + '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.85);line-height:1.7;max-width:340px;">' + escapeHtml(ancre.fr || '') + '</div>'
-      + (ancre.source ? '<div style="font-size:12px;color:rgba(200,168,75,0.4);margin-top:10px;">\u2014 ' + escapeHtml(ancre.source) + '</div>' : '')
+      + (ancre.ar ? '<div style="font-family:\'Scheherazade New\',serif;font-size:30px;color:#C8A84A;direction:rtl;margin-bottom:12px;">' + escapeHtml(ancre.ar) + '</div>' : '')
+      + (ancre.translitteration ? '<div style="font-family:var(--serif);font-size:16px;color:rgba(200,168,75,0.6);font-style:italic;margin-bottom:8px;">' + escapeHtml(ancre.translitteration) + '</div>' : '')
+      + '<div style="font-family:var(--serif);font-size:18px;color:rgba(240,234,214,0.85);line-height:1.7;max-width:340px;">' + escapeHtml(ancre.fr || '') + '</div>'
+      + (ancre.source ? '<div style="font-size:14px;color:rgba(200,168,75,0.4);margin-top:10px;">\u2014 ' + escapeHtml(ancre.source) + '</div>' : '')
       + nextBtn
       + '</div>';
   } else if (step.type === '_finale_anxiete') {
     var clot = j.cloture || {};
     var murmure = j.murmure_sortie_sanctuaire || {};
     var saveFn = '_cureAnxieteSave(' + dayNum + ')';
-    html = backBtn
-      + '<div style="padding:calc(var(--safe-top,0px)+60px) 24px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:70vh;text-align:center;">'
+    html = backBtn + bgWrap
+      + '<div style="padding:calc(var(--safe-top,0px)+60px) 24px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:70vh;text-align:center;position:relative;z-index:1;">'
       + progress
-      + (clot.ar ? '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:#C8A84A;direction:rtl;margin-bottom:12px;">' + escapeHtml(clot.ar) + '</div>' : '')
-      + '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.85);line-height:1.7;max-width:360px;margin-bottom:24px;">' + escapeHtml(clot.fr || 'Tu as travers\u00e9 ce jour.') + '</div>'
+      + (clot.ar ? '<div style="font-family:\'Scheherazade New\',serif;font-size:26px;color:#C8A84A;direction:rtl;margin-bottom:12px;">' + escapeHtml(clot.ar) + '</div>' : '')
+      + '<div style="font-family:var(--serif);font-size:18px;color:rgba(240,234,214,0.85);line-height:1.7;max-width:360px;margin-bottom:24px;">' + escapeHtml(clot.fr || 'Tu as travers\u00e9 ce jour.') + '</div>'
       + '<button onclick="' + saveFn + '" style="display:block;width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:' + c + ';color:#fff;font-size:15px;font-weight:600;font-family:var(--serif);cursor:pointer;">' + (s.isLast ? 'Terminer la Cure' : 'Jour ' + dayNum + ' accompli') + '</button>'
       + (s.isLast ? '<button onclick="openCoffretAnxiete()" style="display:block;width:100%;max-width:340px;margin:12px auto 0;padding:12px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:none;color:#C8A84A;font-size:13px;font-family:var(--serif);cursor:pointer;font-style:italic;">Coffret de l\u2019apaisement</button>' : '')
       + '</div>';
