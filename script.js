@@ -4035,6 +4035,9 @@ function renderBabAnNafs() {
     if (p.id === 'regard') {
       try { var _cr = JSON.parse(safeGetItem('cure_regard') || '{}'); if (_cr.completed) _cureMarker = '<div style="position:absolute;top:6px;right:6px;font-size:14px;color:#C8A84A;text-shadow:0 0 6px rgba(200,168,75,0.5);" title="Cure Regard accomplie.">\u2726</div>'; } catch(e) {}
     }
+    if (p.id === 'arrogance') {
+      try { var _cag = JSON.parse(safeGetItem('cure_arrogance') || '{}'); if (_cag.completed) _cureMarker = '<div style="position:absolute;top:6px;right:6px;font-size:14px;color:#C8A84A;text-shadow:0 0 6px rgba(200,168,75,0.5);" title="Cure Arrogance accomplie.">\u2726</div>'; } catch(e) {}
+    }
     html += '<button onclick="openBabPorte(\'' + p.id + '\')" style="position:relative;aspect-ratio:1/1;border-radius:12px;border:1px solid var(--gold,#C8A84A);background:url(assets/cards/porte-' + p.id + '.webp) center/cover no-repeat,#111;cursor:pointer;padding:0;">' + _cureMarker + '</button>';
   });
   html += '</div>';
@@ -4066,6 +4069,7 @@ function openBabPorte(id, step) {
   if (id === 'colere') { openCureColere(); return; }
   if (id === 'anxiete') { openCureAnxiete(); return; }
   if (id === 'regard') { openCureRegard(); return; }
+  if (id === 'arrogance') { openCureArrogance(); return; }
   var porte = BAB_AN_NAFS.portes.find(function(p) { return p.id === id; });
   if (!porte) { console.warn('Bab an-Nafs: porte manquante:', id); return; }
   // Porte vide ou non validée sans contenu → écran "en préparation"
@@ -6812,7 +6816,7 @@ function _cureAnxieteSave(num) {
     safeSetItem('niyyah_murmure_retour', murmure.fr);
   }
   if (num === 7) {
-    var _openFn = { anxiete: openCureAnxiete, regard: openCureRegard };
+    var _openFn = { anxiete: openCureAnxiete, regard: openCureRegard, arrogance: openCureArrogance };
     (_openFn[porte] || openCureAnxiete)();
     return;
   }
@@ -6980,6 +6984,50 @@ _cureJourRenderers.regard_4 = function(el) { _cureRegardGenericDay(el, 4); };
 _cureJourRenderers.regard_5 = function(el) { _cureRegardGenericDay(el, 5); };
 _cureJourRenderers.regard_6 = function(el) { _cureRegardGenericDay(el, 6); };
 _cureJourRenderers.regard_7 = function(el) { _cureRegardGenericDay(el, 7); };
+
+// ── CURE ARROGANCE ────────────────────────────────────────────────────────────
+function openCureArrogance() {
+  var sk = 'cure_arrogance';
+  var cure = {}; try { cure = JSON.parse(safeGetItem(sk) || '{}'); } catch(e) {}
+  var day = cure.current_day || 1;
+  if (cure.completed === true) day = 'complete';
+  var today = new Date().toISOString().slice(0, 10);
+  var lastDay = cure['jour' + (day - 1) + '_date'] ? cure['jour' + (day - 1) + '_date'].slice(0, 10) : null;
+  _cureWizardState.porte = 'arrogance';
+  if (lastDay === today && day !== 'complete' && day > 1) {
+    _cureTransition(day - 1);
+    return;
+  }
+  if (day === 'complete') {
+    _babImmersion = true; _showAideBtn(); var nb2 = document.getElementById('nav-bar-v2'); if (nb2) nb2.classList.add('hidden-immersion');
+    document.body.classList.add('in-bab-an-nafs');
+    var el2 = document.getElementById('babAnNafsContent');
+    if (!el2) return;
+    var c = '#6A1B7A';
+    el2.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
+      + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:#C8A84A;direction:rtl;margin-bottom:12px;">\u0627\u0644\u0643\u0650\u0628\u0652\u0631</div>'
+      + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;line-height:1.7;max-width:400px;margin:0 auto 32px;">Tu as travers\u00e9 la Cure. La porte reste ouverte derri\u00e8re toi.</div>'
+      + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="padding:14px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:none;color:#C8A84A;font-family:var(--serif);font-size:14px;cursor:pointer;">Retour</button>'
+      + '<button onclick="localStorage.removeItem(\'' + sk + '\');openCureArrogance()" style="display:block;margin:16px auto 0;background:none;border:none;font-size:12px;color:rgba(255,255,255,0.3);font-family:var(--serif);cursor:pointer;font-style:italic;">Recommencer un nouveau cycle</button>'
+      + '</div>';
+    return;
+  }
+  openCureJour('arrogance', typeof day === 'number' ? day : 1);
+}
+window.openCureArrogance = openCureArrogance;
+
+function _cureArroganceGenericDay(el, dayNum) {
+  _cureWizardState.porte = 'arrogance';
+  _cureAnxieteGenericDay(el, dayNum);
+}
+
+_cureJourRenderers.arrogance_1 = function(el) { _cureArroganceGenericDay(el, 1); };
+_cureJourRenderers.arrogance_2 = function(el) { _cureArroganceGenericDay(el, 2); };
+_cureJourRenderers.arrogance_3 = function(el) { _cureArroganceGenericDay(el, 3); };
+_cureJourRenderers.arrogance_4 = function(el) { _cureArroganceGenericDay(el, 4); };
+_cureJourRenderers.arrogance_5 = function(el) { _cureArroganceGenericDay(el, 5); };
+_cureJourRenderers.arrogance_6 = function(el) { _cureArroganceGenericDay(el, 6); };
+_cureJourRenderers.arrogance_7 = function(el) { _cureArroganceGenericDay(el, 7); };
 
 // ── COFFRET ANXIÉTÉ ───────────────────────────────────────────────────────────
 // ── COFFRET GÉNÉRIQUE (réutilisé par Anxiété + Colère) ────────────────────────
