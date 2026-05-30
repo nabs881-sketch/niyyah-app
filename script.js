@@ -5574,7 +5574,7 @@ _outilAnxieteRenderers.choix_unique_sortie = function(o, c) {
   var saved = safeGetItem(sk) || '';
   var html = '';
   if (o.introduction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
-  html += '<div style="display:flex;flex-direction:column;gap:12px;max-width:340px;margin:0 auto 16px;">';
+  html += '<div style="display:flex;flex-direction:column;gap:12px;16px;">';
   opts.forEach(function(opt) {
     var sel = saved === opt.id;
     html += '<button onclick="_sortieSelect(\'' + sk + '\',\'' + opt.id + '\')" style="display:block;text-align:left;padding:16px;border-radius:14px;border:1px solid ' + (sel ? c : 'rgba(200,168,75,0.15)') + ';background:' + (sel ? c + '12' : 'rgba(200,168,75,0.03)') + ';cursor:pointer;transition:all 0.2s;">'
@@ -5610,7 +5610,7 @@ _outilAnxieteRenderers.checkboxes_multiple = function(o, c) {
   var customVal = saved.custom || '';
   var html = '';
   if (o.introduction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
-  html += '<div style="display:flex;flex-direction:column;gap:8px;max-width:340px;margin:0 auto 16px;">';
+  html += '<div style="display:flex;flex-direction:column;gap:8px;16px;">';
   opts.forEach(function(opt) {
     var chk = checked.indexOf(opt.id) !== -1;
     html += '<label style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:10px;border:1px solid ' + (chk ? c : 'rgba(200,168,75,0.12)') + ';background:' + (chk ? c + '10' : 'rgba(200,168,75,0.03)') + ';cursor:pointer;transition:all 0.2s;">'
@@ -5735,7 +5735,7 @@ _outilAnxieteRenderers.double_slider_compare = function(o, c) {
     var saved = safeGetItem(sk) || '5';
     html += '<div style="margin-bottom:20px;">';
     html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.75);margin-bottom:8px;line-height:1.4;">' + escapeHtml(sl.label) + '</div>';
-    html += '<div style="display:flex;align-items:center;gap:8px;max-width:340px;margin:0 auto;">';
+    html += '<div style="display:flex;align-items:center;gap:8px;">';
     html += '<div style="font-size:15px;color:rgba(200,168,75,0.4);font-style:italic;min-width:50px;text-align:right;">' + escapeHtml(sl.label_min) + '</div>';
     html += '<input type="range" id="' + dscId + '_s' + idx + '" min="' + (sl.min || 0) + '" max="' + (sl.max || 10) + '" value="' + saved + '" oninput="safeSetItem(\'' + sk + '\',this.value);this.nextElementSibling.textContent=this.value;_dscUpdate(\'' + dscId + '\')" style="flex:1;accent-color:' + c + ';">';
     html += '<div style="font-size:18px;color:#C8A84A;font-family:var(--serif);font-weight:600;min-width:24px;text-align:center;">' + saved + '</div>';
@@ -5801,7 +5801,7 @@ _outilAnxieteRenderers.champ_qui_disparait = function(o, c) {
     html += '<input type="text" id="' + dispId + '_input" placeholder="' + escapeHtml((o.champ && o.champ.placeholder) || '...') + '" style="background:none;border:none;border-bottom:1px solid ' + c + '44;color:#E5E0DC;font-family:var(--serif);font-size:15px;padding:2px 4px;width:100%;max-width:260px;outline:none;">';
     html += '</div>';
     html += '<div style="font-size:15px;color:rgba(200,168,75,0.5);text-align:center;margin-bottom:12px;">Th\u00e8me\u00a0: ' + escapeHtml(savedTheme) + '</div>';
-    html += '<button onclick="_dispDeposer(\'' + dispId + '\',\'' + sk + '\')" style="display:block;width:100%;max-width:280px;margin:0 auto;padding:14px;border-radius:10px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:15px;cursor:pointer;">'
+    html += '<button onclick="_dispDeposer(\'' + dispId + '\',\'' + sk + '\')" style="display:block;width:100%;padding:14px;border-radius:10px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:15px;cursor:pointer;">'
       + '<span style="font-family:\'Scheherazade New\',serif;font-size:24px;margin-right:8px;">' + escapeHtml(act.bouton_ar || '') + '</span>'
       + escapeHtml(act.bouton_fr || 'Je remets')
       + '</button>';
@@ -5900,7 +5900,7 @@ _outilAnxieteRenderers.champ_avec_amorce_obligatoire = function(o, c) {
     + '</div>';
   html += '</div>';
   if (!validated) {
-    html += '<button onclick="safeSetItem(\'' + sk + '_done\',\'1\');_cureAnxieteWizardRender()" style="display:block;width:100%;max-width:260px;margin:0 auto 12px;padding:12px;border-radius:10px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:16px;cursor:pointer;">J\u2019ai \u00e9crit</button>';
+    html += '<button onclick="safeSetItem(\'' + sk + '_done\',\'1\');_cureAnxieteWizardRender()" style="display:block;width:100%;12px;padding:12px;border-radius:10px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:16px;cursor:pointer;">J\u2019ai \u00e9crit</button>';
   }
   if (validated && o.instruction_finale) {
     html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.75);text-align:center;line-height:1.6;margin-bottom:12px;font-style:italic;">' + escapeHtml(o.instruction_finale) + '</div>';
@@ -5941,7 +5941,7 @@ _outilAnxieteRenderers.tri_radio_apprentissage = function(o, c) {
       + '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.9);line-height:1.5;font-style:italic;">\u00ab ' + escapeHtml(ex.texte) + ' \u00bb</div>'
       + '</div>';
     // Options
-    html += '<div style="display:flex;gap:10px;max-width:340px;margin:0 auto 16px;">';
+    html += '<div style="display:flex;gap:10px;16px;">';
     opts.forEach(function(opt) {
       html += '<button onclick="_triAnswer(\'' + triId + '\',\'' + sk + '\',' + currentQ + ',\'' + opt.id + '\',\'' + ex.bonne_reponse + '\')" style="flex:1;padding:14px 8px;border-radius:10px;border:1px solid ' + c + '33;background:rgba(200,168,75,0.03);color:rgba(240,234,214,0.8);font-family:var(--serif);font-size:16px;cursor:pointer;">' + escapeHtml(opt.label) + '</button>';
     });
@@ -5995,7 +5995,7 @@ _outilAnxieteRenderers.texte_qui_s_efface = function(o, c) {
     if (o.amorce) html += '<span style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.7);flex-shrink:0;">' + escapeHtml(o.amorce) + '</span>';
     html += '<input type="text" id="' + effId + '_input" placeholder="' + escapeHtml((o.champ && o.champ.placeholder) || '...') + '" style="flex:1;background:none;border:none;border-bottom:1px solid ' + c + '44;color:#E5E0DC;font-family:var(--serif);font-size:15px;padding:4px 2px;outline:none;">';
     html += '</div>';
-    html += '<button onclick="_effDeposer(\'' + effId + '\',\'' + sk + '\')" style="display:block;width:100%;max-width:260px;margin:0 auto;padding:12px;border-radius:10px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:16px;cursor:pointer;">' + escapeHtml(act.bouton || 'D\u00e9poser') + '</button>';
+    html += '<button onclick="_effDeposer(\'' + effId + '\',\'' + sk + '\')" style="display:block;width:100%;padding:12px;border-radius:10px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:16px;cursor:pointer;">' + escapeHtml(act.bouton || 'D\u00e9poser') + '</button>';
     html += '</div>';
     // Calligraphy hidden, will appear after fade
     html += '<div id="' + effId + '_cal" style="display:none;text-align:center;">'
@@ -6031,7 +6031,7 @@ _outilAnxieteRenderers.choix_unique_avec_engagement = function(o, c) {
   var engId = '_eng_' + o.id;
   var html = '';
   if (o.introduction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
-  html += '<div style="display:flex;flex-direction:column;gap:8px;max-width:340px;margin:0 auto 16px;">';
+  html += '<div style="display:flex;flex-direction:column;gap:8px;16px;">';
   opts.forEach(function(opt) {
     var sel = selectedId === opt.id;
     html += '<button onclick="_engSelect(\'' + engId + '\',\'' + sk + '\',\'' + opt.id + '\',' + (opt.champ_libre ? 'true' : 'false') + ')" style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:10px;border:1px solid ' + (sel ? c : 'rgba(200,168,75,0.15)') + ';background:' + (sel ? c + '12' : 'rgba(200,168,75,0.03)') + ';cursor:pointer;text-align:left;">'
@@ -6495,7 +6495,7 @@ _outilAnxieteRenderers.checkboxes_avec_message_dynamique = function(o, c) {
   var msgId = '_cbMsg_' + o.id;
   var html = '';
   if (o.introduction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);line-height:1.6;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
-  html += '<div style="display:flex;flex-direction:column;gap:8px;max-width:340px;margin:0 auto 16px;">';
+  html += '<div style="display:flex;flex-direction:column;gap:8px;16px;">';
   opts.forEach(function(opt) {
     var chk = saved.indexOf(opt.id) !== -1;
     html += '<label style="display:flex;align-items:flex-start;gap:12px;padding:12px 14px;border-radius:10px;border:1px solid rgba(200,168,75,0.12);background:rgba(200,168,75,0.03);cursor:pointer;">'
@@ -6552,7 +6552,7 @@ _outilAnxieteRenderers.radio_unique = function(o, c) {
   var saved = safeGetItem(sk) || '';
   var html = '';
   if (o.introduction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
-  html += '<div style="display:flex;flex-direction:column;gap:10px;max-width:340px;margin:0 auto 16px;">';
+  html += '<div style="display:flex;flex-direction:column;gap:10px;16px;">';
   opts.forEach(function(opt) {
     var sel = saved === opt.id;
     html += '<button onclick="this.parentNode.querySelectorAll(\'button\').forEach(function(b){b.style.borderColor=\'' + c + '22\';b.style.background=\'rgba(200,168,75,0.03)\';b.querySelector(\'.rq-dot\').style.background=\'transparent\';});this.style.borderColor=\'' + c + '\';this.style.background=\'' + c + '12\';this.querySelector(\'.rq-dot\').style.background=\'' + c + '\';safeSetItem(\'' + sk + '\',\'' + opt.id + '\')" style="display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:12px;border:1px solid ' + (sel ? c : c + '22') + ';background:' + (sel ? c + '12' : 'rgba(200,168,75,0.03)') + ';cursor:pointer;text-align:left;">'
@@ -6620,7 +6620,7 @@ function _cureAnxieteWizardRender(el) {
     var cit = j.citation_ouverture || {};
     html = backBtn + bgWrap
       + '<div style="position:relative;min-height:100vh;padding:0;">'
-      + '<div data-cure-content style="padding:calc(var(--safe-top,0px)+60px) 20px 120px;position:relative;z-index:1;max-width:600px;margin:0 auto;box-sizing:border-box;">'
+      + '<div data-cure-content style="padding:calc(var(--safe-top,0px)+60px) 20px 120px;position:relative;z-index:1;max-width:400px;margin:0 auto;box-sizing:border-box;">'
       + progress
       + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:#C8A84A;direction:rtl;text-align:center;margin-bottom:4px;">' + escapeHtml(j.station_ar || '') + '</div>'
       + '<div style="font-family:var(--serif);font-size:15px;letter-spacing:2px;color:rgba(200,168,75,0.5);text-align:center;margin-bottom:20px;">' + escapeHtml((j.station_fr || '').toUpperCase()) + '</div>'
@@ -6633,7 +6633,7 @@ function _cureAnxieteWizardRender(el) {
     var o = step.data;
     var outilHtml = _renderOutilAnxiete(o, c);
     html = backBtn + bgWrap
-      + '<div data-cure-content style="padding:calc(var(--safe-top,0px)+60px) 20px 120px;position:relative;z-index:1;max-width:600px;margin:0 auto;box-sizing:border-box;">'
+      + '<div data-cure-content style="padding:calc(var(--safe-top,0px)+60px) 20px 120px;position:relative;z-index:1;max-width:400px;margin:0 auto;box-sizing:border-box;">'
       + progress
       + (o.titre ? '<div style="font-family:var(--serif);font-size:22px;color:#C8A84A;text-align:center;margin-bottom:8px;">' + escapeHtml(o.titre) + '</div>' : '')
       + (o.consigne ? '<div style="font-family:var(--serif);font-size:17px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:20px;">' + escapeHtml(o.consigne) + '</div>' : '')
@@ -6644,7 +6644,7 @@ function _cureAnxieteWizardRender(el) {
     var bv = step.data;
     var v = bv.verset || {};
     html = backBtn + bgWrap
-      + '<div data-cure-content style="padding:calc(var(--safe-top,0px)+60px) 20px 120px;position:relative;z-index:1;max-width:600px;margin:0 auto;box-sizing:border-box;">'
+      + '<div data-cure-content style="padding:calc(var(--safe-top,0px)+60px) 20px 120px;position:relative;z-index:1;max-width:400px;margin:0 auto;box-sizing:border-box;">'
       + progress
       + '<div style="font-family:var(--serif);font-size:15px;letter-spacing:2px;color:rgba(200,168,75,0.5);text-align:center;margin-bottom:16px;">' + escapeHtml((bv.titre_bloc || '').toUpperCase()) + '</div>'
       + '<div style="border:1px solid ' + c + '22;border-radius:14px;padding:20px;margin-bottom:16px;text-align:center;">'
@@ -6661,7 +6661,7 @@ function _cureAnxieteWizardRender(el) {
     var bs = step.data;
     var p = bs.parole || {};
     html = backBtn + bgWrap
-      + '<div data-cure-content style="padding:calc(var(--safe-top,0px)+60px) 20px 120px;position:relative;z-index:1;max-width:600px;margin:0 auto;box-sizing:border-box;">'
+      + '<div data-cure-content style="padding:calc(var(--safe-top,0px)+60px) 20px 120px;position:relative;z-index:1;max-width:400px;margin:0 auto;box-sizing:border-box;">'
       + progress
       + '<div style="font-family:var(--serif);font-size:15px;letter-spacing:2px;color:rgba(200,168,75,0.5);text-align:center;margin-bottom:16px;">' + escapeHtml((bs.titre_bloc || '').toUpperCase()) + '</div>'
       + '<div style="border-left:2px solid ' + c + '44;padding-left:16px;margin-bottom:16px;">'
@@ -6679,7 +6679,7 @@ function _cureAnxieteWizardRender(el) {
     var bd = step.data;
     var dh = bd.dhikr || {};
     html = backBtn + bgWrap
-      + '<div data-cure-content style="padding:calc(var(--safe-top,0px)+60px) 20px 120px;position:relative;z-index:1;max-width:600px;margin:0 auto;box-sizing:border-box;">'
+      + '<div data-cure-content style="padding:calc(var(--safe-top,0px)+60px) 20px 120px;position:relative;z-index:1;max-width:400px;margin:0 auto;box-sizing:border-box;">'
       + progress
       + '<div style="font-family:var(--serif);font-size:15px;letter-spacing:2px;color:rgba(200,168,75,0.5);text-align:center;margin-bottom:16px;">' + escapeHtml((bd.titre_bloc || '').toUpperCase()) + '</div>'
       + (bd.introduction ? '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(bd.introduction) + '</div>' : '')
@@ -6699,7 +6699,7 @@ function _cureAnxieteWizardRender(el) {
     var bc = step.data;
     var ph = bc.phrase_a_repeter || {};
     html = backBtn + bgWrap
-      + '<div data-cure-content style="padding:calc(var(--safe-top,0px)+60px) 20px 120px;position:relative;z-index:1;max-width:600px;margin:0 auto;box-sizing:border-box;">'
+      + '<div data-cure-content style="padding:calc(var(--safe-top,0px)+60px) 20px 120px;position:relative;z-index:1;max-width:400px;margin:0 auto;box-sizing:border-box;">'
       + progress
       + '<div style="font-family:var(--serif);font-size:15px;letter-spacing:2px;color:rgba(200,168,75,0.5);text-align:center;margin-bottom:16px;">' + escapeHtml((bc.titre_bloc || '').toUpperCase()) + '</div>'
       + (bc.introduction ? '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(bc.introduction) + '</div>' : '')
@@ -6721,7 +6721,7 @@ function _cureAnxieteWizardRender(el) {
   } else if (step.type === '_ancre_anxiete') {
     var ancre = step.data;
     html = backBtn + bgWrap
-      + '<div data-cure-content style="padding:calc(var(--safe-top,0px)+60px) 20px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:70vh;text-align:center;position:relative;z-index:1;max-width:600px;margin:0 auto;box-sizing:border-box;">'
+      + '<div data-cure-content style="padding:calc(var(--safe-top,0px)+60px) 20px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:70vh;text-align:center;position:relative;z-index:1;max-width:400px;margin:0 auto;box-sizing:border-box;">'
       + progress
       + (ancre.ar ? '<div style="font-family:\'Scheherazade New\',serif;font-size:30px;color:#C8A84A;direction:rtl;margin-bottom:12px;">' + escapeHtml(ancre.ar) + '</div>' : '')
       + (ancre.translitteration ? '<div style="font-family:var(--serif);font-size:16px;color:rgba(200,168,75,0.6);font-style:italic;margin-bottom:8px;">' + escapeHtml(ancre.translitteration) + '</div>' : '')
@@ -6734,7 +6734,7 @@ function _cureAnxieteWizardRender(el) {
     var murmure = j.murmure_sortie_sanctuaire || {};
     var saveFn = '_cureAnxieteSave(' + dayNum + ')';
     html = backBtn + bgWrap
-      + '<div data-cure-content style="padding:calc(var(--safe-top,0px)+60px) 20px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:70vh;text-align:center;position:relative;z-index:1;max-width:600px;margin:0 auto;box-sizing:border-box;">'
+      + '<div data-cure-content style="padding:calc(var(--safe-top,0px)+60px) 20px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:70vh;text-align:center;position:relative;z-index:1;max-width:400px;margin:0 auto;box-sizing:border-box;">'
       + progress
       + (clot.ar ? '<div style="font-family:\'Scheherazade New\',serif;font-size:26px;color:#C8A84A;direction:rtl;margin-bottom:12px;">' + escapeHtml(clot.ar) + '</div>' : '')
       + '<div style="font-family:var(--serif);font-size:18px;color:rgba(240,234,214,0.85);line-height:1.7;max-width:360px;margin-bottom:24px;">' + escapeHtml(clot.fr || 'Tu as travers\u00e9 ce jour.') + '</div>'
