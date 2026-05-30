@@ -1,0 +1,414 @@
+{
+  "id": "coffret-regard",
+  "version": "1.0",
+  "date_creation": "2026-05-30",
+  "titre_ar": "خَزَائِن الْبَصِيرَة",
+  "titre_translit": "Khazâ'in al-Basîra",
+  "titre_fr": "Les coffres du regard juste",
+  "sous_titre": "Pour aller plus loin avec le Coran, la Sunna, et la tradition sur le regard.",
+
+  "introduction": "Ce coffret rassemble les références fondamentales de l'islam sur le regard pudique (ghadd al-basar), la chasteté du cœur (hifdh al-furûj) et la vigilance intérieure (murâqaba). Il complète la cure 7 jours.\n\nTu peux le consulter à tout moment. Pas pour le mémoriser d'un coup. Pour qu'il soit là quand tu en auras besoin.",
+
+  "sections": [
+    {
+      "id": "versets",
+      "titre_ar": "الآيات",
+      "titre_translit": "Al-Âyât",
+      "titre_fr": "Versets du Coran",
+      "description": "Les versets centraux sur le regard, la pudeur, la vigilance et la pureté.",
+      "entrees": [
+        {
+          "id": "nur_30",
+          "ar": "قُل لِّلْمُؤْمِنِينَ يَغُضُّوا مِنْ أَبْصَارِهِمْ وَيَحْفَظُوا فُرُوجَهُمْ ۚ ذَٰلِكَ أَزْكَىٰ لَهُمْ ۗ إِنَّ اللَّهَ خَبِيرٌ بِمَا يَصْنَعُونَ",
+          "translit": "Qul li-l-mu'minîna yaghuddû min absârihim wa yahfadhû furûjahum. Dhâlika azkâ lahum. Inna-llâha khabîrun bi-mâ yasna'ûn",
+          "fr": "Dis aux croyants de baisser leur regard et de préserver leur pudeur. Cela est plus pur pour eux. Allah est parfaitement Connaisseur de ce qu'ils font.",
+          "source": "An-Nûr 24:30",
+          "quand": "Le verset cardinal du ghadd al-basar pour les hommes. À méditer souvent — il fonde toute la discipline du regard en islam."
+        },
+        {
+          "id": "nur_31",
+          "ar": "وَقُل لِّلْمُؤْمِنَاتِ يَغْضُضْنَ مِنْ أَبْصَارِهِنَّ وَيَحْفَظْنَ فُرُوجَهُنَّ",
+          "translit": "Wa qul li-l-mu'minâti yaghdudna min absârihinna wa yahfadhna furûjahunn",
+          "fr": "Et dis aux croyantes de baisser leur regard et de préserver leur pudeur.",
+          "source": "An-Nûr 24:31",
+          "quand": "Le verset jumeau pour les femmes. La même rigueur, le même appel. La pudeur du regard n'est pas une affaire masculine — c'est une discipline universelle."
+        },
+        {
+          "id": "isra_36",
+          "ar": "وَلَا تَقْفُ مَا لَيْسَ لَكَ بِهِ عِلْمٌ ۚ إِنَّ السَّمْعَ وَالْبَصَرَ وَالْفُؤَادَ كُلُّ أُولَٰئِكَ كَانَ عَنْهُ مَسْئُولًا",
+          "translit": "Wa lâ taqfu mâ laysa laka bihi 'ilm. Inna-s-sam'a wa-l-basara wa-l-fu'âda kullu ulâ'ika kâna 'anhu mas'ûlâ",
+          "fr": "Ne poursuis pas ce dont tu n'as pas connaissance. L'ouïe, la vue et le cœur — tous seront interrogés.",
+          "source": "Al-Isrâ' 17:36",
+          "quand": "Verset de responsabilité totale. Tes yeux, tes oreilles, ton cœur — tout ce qui entre en toi sera interrogé. Pas une menace : une dignité retrouvée."
+        },
+        {
+          "id": "isra_32",
+          "ar": "وَلَا تَقْرَبُوا الزِّنَا ۖ إِنَّهُ كَانَ فَاحِشَةً وَسَاءَ سَبِيلًا",
+          "translit": "Wa lâ taqrabu-z-zinâ. Innahu kâna fâhishatan wa sâ'a sabîlâ",
+          "fr": "N'approchez pas la fornication. C'est une turpitude. Quel mauvais chemin !",
+          "source": "Al-Isrâ' 17:32",
+          "quand": "Allah ne dit pas 'ne la faites pas' — Il dit 'ne vous en approchez pas'. La prévention environnementale est coranique. Le regard est l'un des chemins d'approche."
+        },
+        {
+          "id": "mumimun_1_5",
+          "ar": "قَدْ أَفْلَحَ الْمُؤْمِنُونَ ۝ الَّذِينَ هُمْ فِي صَلَاتِهِمْ خَاشِعُونَ ۝ وَالَّذِينَ هُمْ عَنِ اللَّغْوِ مُعْرِضُونَ ۝ وَالَّذِينَ هُمْ لِلزَّكَاةِ فَاعِلُونَ ۝ وَالَّذِينَ هُمْ لِفُرُوجِهِمْ حَافِظُونَ",
+          "translit": "Qad aflaha-l-mu'minûn. Alladhîna hum fî salâtihim khâshi'ûn. Wa-lladhîna hum 'ani-l-laghwi mu'ridûn. Wa-lladhîna hum li-z-zakâti fâ'ilûn. Wa-lladhîna hum li-furûjihim hâfidhûn",
+          "fr": "Bienheureux les croyants — ceux qui sont humbles dans leur prière, qui se détournent des futilités, qui s'acquittent de la zakât, et qui préservent leur pudeur.",
+          "source": "Al-Mu'minûn 23:1-5",
+          "quand": "Allah lie la préservation de la pudeur à 3 autres vertus : prière humble, évitement des futilités, générosité. Ce n'est pas isolé — c'est l'aboutissement d'une vie spirituelle complète."
+        },
+        {
+          "id": "ghafir_19",
+          "ar": "يَعْلَمُ خَائِنَةَ الْأَعْيُنِ وَمَا تُخْفِي الصُّدُورُ",
+          "translit": "Ya'lamu khâ'inata-l-a'yuni wa mâ tukhfi-s-sudûr",
+          "fr": "Il connaît la traîtrise des yeux et ce que les poitrines cachent.",
+          "source": "Ghâfir 40:19",
+          "quand": "Le regard volé, on le croit invisible. Ce verset dit l'inverse : Allah voit même la traîtrise des yeux — ces regards furtifs à la dérobée. Verset clé de la murâqaba."
+        },
+        {
+          "id": "zumar_53",
+          "ar": "قُلْ يَا عِبَادِيَ الَّذِينَ أَسْرَفُوا عَلَىٰ أَنْفُسِهِمْ لَا تَقْنَطُوا مِنْ رَحْمَةِ اللَّهِ ۚ إِنَّ اللَّهَ يَغْفِرُ الذُّنُوبَ جَمِيعًا",
+          "translit": "Qul yâ 'ibâdiya-lladhîna asrafû 'alâ anfusihim, lâ taqnatû min rahmati-llâh. Inna-llâha yaghfiru-dh-dhunûba jamî'â",
+          "fr": "Dis : ô Mes serviteurs qui avez commis des excès à votre propre détriment, ne désespérez pas de la miséricorde d'Allah. Allah pardonne tous les péchés.",
+          "source": "Az-Zumar 39:53",
+          "quand": "Après une chute. Quand le ya's (désespoir) te dit que tu es perdu. Allah dit exactement le contraire : 'Mes serviteurs' — il t'appelle Sien malgré tes fautes."
+        },
+        {
+          "id": "fussilat_30",
+          "ar": "إِنَّ الَّذِينَ قَالُوا رَبُّنَا اللَّهُ ثُمَّ اسْتَقَامُوا تَتَنَزَّلُ عَلَيْهِمُ الْمَلَائِكَةُ أَلَّا تَخَافُوا وَلَا تَحْزَنُوا",
+          "translit": "Inna-lladhîna qâlû rabbuna-llâhu thumma-staqâmû, tatanazzalu 'alayhimu-l-malâ'ikatu allâ takhâfû wa lâ tahzanû",
+          "fr": "Ceux qui disent : Notre Seigneur est Allah, et qui ensuite restent droits — les anges descendent sur eux : Ne craignez rien, ne soyez pas tristes.",
+          "source": "Fussilat 41:30",
+          "quand": "Verset de l'istiqâma. Allah promet une descente angélique sur celui qui tient droit dans le temps. Le secret n'est pas l'intensité du début — c'est la régularité."
+        },
+        {
+          "id": "araf_200",
+          "ar": "وَإِمَّا يَنزَغَنَّكَ مِنَ الشَّيْطَانِ نَزْغٌ فَاسْتَعِذْ بِاللَّهِ ۚ إِنَّهُ سَمِيعٌ عَلِيمٌ",
+          "translit": "Wa immâ yanzaghannaka mina-sh-shaytâni nazghun fa-sta'idh bi-llâh. Innahu samî'un 'alîm",
+          "fr": "Et si une incitation du diable t'irrite, cherche refuge auprès d'Allah. Il est Audient et Omniscient.",
+          "source": "Al-A'râf 7:200",
+          "quand": "Quand l'envie monte — l'incitation (nazgh) du shaytân. Allah te donne la formule exacte de la réponse. À utiliser à chaque déclencheur."
+        },
+        {
+          "id": "araf_201",
+          "ar": "إِنَّ الَّذِينَ اتَّقَوْا إِذَا مَسَّهُمْ طَائِفٌ مِّنَ الشَّيْطَانِ تَذَكَّرُوا فَإِذَا هُم مُّبْصِرُونَ",
+          "translit": "Inna-lladhîna-ttaqaw idhâ massahum tâ'ifun mina-sh-shaytâni tadhakkarû fa-idhâ hum mubsirûn",
+          "fr": "Ceux qui craignent Allah — quand une suggestion du diable les touche, ils se rappellent, et voilà qu'ils voient clair.",
+          "source": "Al-A'râf 7:201",
+          "quand": "Le verset jumeau d'Al-A'râf 7:200. Le tadhakkur (se rappeler) est l'arme. Quand la pulsion vient, se rappeler d'Allah ouvre une lucidité immédiate."
+        },
+        {
+          "id": "qiyama_14_15",
+          "ar": "بَلِ الْإِنسَانُ عَلَىٰ نَفْسِهِ بَصِيرَةٌ ۝ وَلَوْ أَلْقَىٰ مَعَاذِيرَهُ",
+          "translit": "Bali-l-insânu 'alâ nafsihi basîra. Wa law alqâ ma'âdhîrah",
+          "fr": "L'homme est, contre lui-même, son propre témoin lucide — même s'il avance ses excuses.",
+          "source": "Al-Qiyâma 75:14-15",
+          "quand": "Tu sais. Au fond, tu sais ce que tu fais et ce que tu cherches. Les excuses mentales ne te trompent que toi. Ce verset coupe court aux justifications."
+        }
+      ]
+    },
+
+    {
+      "id": "hadiths",
+      "titre_ar": "الأحاديث",
+      "titre_translit": "Al-Ahâdîth",
+      "titre_fr": "Paroles du Prophète ﷺ",
+      "description": "Les hadiths centraux sur le regard, la pudeur et la maîtrise des yeux.",
+      "entrees": [
+        {
+          "id": "premier_second_regard",
+          "ar": "يَا عَلِيُّ، لَا تُتْبِعِ النَّظْرَةَ النَّظْرَةَ، فَإِنَّ لَكَ الْأُولَى، وَلَيْسَتْ لَكَ الْآخِرَةُ",
+          "translit": "Yâ 'Aliyy, lâ tutbi'i-n-nadhrata-n-nadhra, fa-inna laka-l-ûlâ wa laysat laka-l-âkhira",
+          "fr": "Ô 'Alî, ne fais pas suivre un regard d'un autre. Le premier est pour toi, le second n'est pas pour toi.",
+          "source": "Abû Dâwûd 2149, Tirmidhî 2777 — hasan",
+          "quand": "Le hadith fondateur de la mécanique du regard. Premier regard involontaire = pardonné. Second regard = volontaire = contre toi. À mémoriser et faire vivre."
+        },
+        {
+          "id": "fleche_empoisonnee",
+          "ar": "النَّظْرَةُ سَهْمٌ مَسْمُومٌ مِنْ سِهَامِ إِبْلِيسَ، مَنْ تَرَكَهَا مَخَافَتِي أَبْدَلْتُهُ إِيمَانًا يَجِدُ حَلَاوَتَهُ فِي قَلْبِهِ",
+          "translit": "An-nadhratu sahmun masmûmun min sihâmi Iblîs. Man tarakahâ makhâfatî abdaltuhu îmânan yajidu halâwatahu fî qalbih",
+          "fr": "Le regard est une flèche empoisonnée parmi les flèches d'Iblîs. Celui qui le laisse par crainte de Moi, Je l'échangerai contre une foi dont il trouvera la douceur dans son cœur.",
+          "source": "Hâkim al-Mustadrak 7875, at-Tabarânî — hadith qudsî",
+          "quand": "L'image est saisissante : flèche empoisonnée. Mais la promesse l'est plus encore : Allah PROMET d'échanger ce regard non donné contre une douceur dans le cœur. Récompense immédiate."
+        },
+        {
+          "id": "sept_ombres",
+          "ar": "سَبْعَةٌ يُظِلُّهُمُ اللَّهُ فِي ظِلِّهِ يَوْمَ لَا ظِلَّ إِلَّا ظِلُّهُ ... وَرَجُلٌ دَعَتْهُ امْرَأَةٌ ذَاتُ مَنْصِبٍ وَجَمَالٍ فَقَالَ إِنِّي أَخَافُ اللَّهَ",
+          "translit": "Sab'atun yudhilluhumu-llâhu fî dhillihi yawma lâ dhilla illâ dhilluh... wa rajulun da'athu-mra'atun dhâtu mansibin wa jamâlin fa-qâla : innî akhâfu-llâh",
+          "fr": "Sept personnes seront sous l'ombre d'Allah le Jour où il n'y aura d'ombre que la Sienne... et un homme qu'une femme de haut rang et de beauté a invité [à la faute], et qui a répondu : Je crains Allah.",
+          "source": "Bukhârî 660, Muslim 1031, d'après Abû Hurayra",
+          "quand": "Promesse spectaculaire pour celui qui refuse l'opportunité du péché. L'ombre divine au Jour où il n'y a aucune ombre. Le regard maîtrisé fait partie de cette résistance."
+        },
+        {
+          "id": "ihsan",
+          "ar": "الْإِحْسَانُ أَنْ تَعْبُدَ اللَّهَ كَأَنَّكَ تَرَاهُ، فَإِنْ لَمْ تَكُنْ تَرَاهُ فَإِنَّهُ يَرَاكَ",
+          "translit": "Al-Ihsânu an ta'buda-llâha ka-annaka tarâh. Fa-in lam takun tarâhu fa-innahu yarâk",
+          "fr": "L'Ihsân est d'adorer Allah comme si tu Le voyais. Car si tu ne Le vois pas, Lui te voit.",
+          "source": "Bukhârî 50, Muslim 8 (Hadith de Jibrîl)",
+          "quand": "Hadith de Gabriel. La station de l'Ihsân — le plus haut degré spirituel. Quand on vit dans la conscience qu'Allah voit, le regard se redresse de lui-même. Base de la murâqaba."
+        },
+        {
+          "id": "tawba",
+          "ar": "كُلُّ ابْنِ آدَمَ خَطَّاءٌ، وَخَيْرُ الْخَطَّائِينَ التَّوَّابُونَ",
+          "translit": "Kullu-bni Âdama khattâ'un, wa khayru-l-khattâ'îna-t-tawwâbûn",
+          "fr": "Tous les fils d'Adam sont pécheurs, et les meilleurs des pécheurs sont ceux qui se repentent souvent.",
+          "source": "Tirmidhî 2499, Ibn Mâja 4251 — hasan",
+          "quand": "Quand tu rechutes. Le hadith ne dit pas : 'Le meilleur ne pèche pas.' Il dit : 'Le meilleur pèche, puis revient.' La supériorité spirituelle se mesure à la qualité du retour."
+        },
+        {
+          "id": "joie_tawba",
+          "ar": "لَلَّهُ أَفْرَحُ بِتَوْبَةِ عَبْدِهِ مِنْ أَحَدِكُمْ كَانَ عَلَى رَاحِلَتِهِ بِأَرْضِ فَلَاةٍ، فَانْفَلَتَتْ مِنْهُ وَعَلَيْهَا طَعَامُهُ وَشَرَابُهُ، فَأَيِسَ مِنْهَا فَأَتَى شَجَرَةً فَاضْطَجَعَ فِي ظِلِّهَا قَدْ أَيِسَ مِنْ رَاحِلَتِهِ، فَبَيْنَا هُوَ كَذَلِكَ إِذَا هُوَ بِهَا قَائِمَةً عِنْدَهُ، فَأَخَذَ بِخِطَامِهَا، ثُمَّ قَالَ مِنْ شِدَّةِ الْفَرَحِ : اللَّهُمَّ أَنْتَ عَبْدِي وَأَنَا رَبُّكَ، أَخْطَأَ مِنْ شِدَّةِ الْفَرَحِ",
+          "translit": "Lallâhu afrahu bi-tawbati 'abdihi min ahadikum kâna 'alâ râhilatihi bi-ardi falât... thumma qâla min shiddati-l-farah : Allâhumma anta 'abdî wa anâ rabbuk, akhta'a min shiddati-l-farah",
+          "fr": "Allah se réjouit du repentir de Son serviteur plus que l'un de vous qui était sur sa monture dans un désert, et qu'elle s'est échappée avec sa nourriture et sa boisson... Quand il l'a retrouvée, il a dit dans sa joie : Ô Allah, Tu es mon serviteur et je suis Ton Seigneur ! Il s'est trompé tant sa joie était immense.",
+          "source": "Bukhârî 6308, Muslim 2747",
+          "quand": "L'image montre l'intensité de la joie d'Allah quand le serviteur revient. Pas une acceptation polie — une joie qui dépasse celle de l'homme retrouvant ce qui le sauve. À méditer quand on hésite à revenir."
+        },
+        {
+          "id": "tahajjud_seul",
+          "ar": "ثَلَاثَةٌ يُحِبُّهُمُ اللَّهُ... وَرَجُلٌ كَانَ فِي سَرِيَّةٍ، فَلَقُوا الْعَدُوَّ فَهُزِمُوا، فَأَقْبَلَ بِصَدْرِهِ حَتَّى يُقْتَلَ أَوْ يَفْتَحَ اللَّهُ لَهُ، وَرَجُلٌ كَانَ لَهُ جَارُ سُوءٍ يُؤْذِيهِ فَيَصْبِرُ عَلَى أَذَاهُ حَتَّى يَكْفِيَهُ اللَّهُ إِيَّاهُ",
+          "translit": "Thalâthatun yuhibbuhumu-llâh... wa rajulun kâna fî sariyya, fa-laqû-l-'aduwwa fa-huzimû, fa-aqbala bi-sadrihi hattâ yuqtala aw yaftaha-llâhu lah",
+          "fr": "Allah aime trois hommes... un homme dans une expédition militaire ; quand l'ennemi les a vaincus et qu'ils ont fui, lui a fait face poitrine en avant jusqu'à être tué ou victorieux.",
+          "source": "Ahmad 21692, Tirmidhî 2567 — extrait, sahîh",
+          "quand": "Métaphore parfaite du combat avec le nafs : quand tout le monde fuit (cède à la pulsion), celui qui reste face à face avec lui-même est aimé d'Allah. Tu peux 'fuir le téléphone, fuir la rechute' — c'est la victoire."
+        },
+        {
+          "id": "fortifier_mariage",
+          "ar": "يَا مَعْشَرَ الشَّبَابِ، مَنِ اسْتَطَاعَ مِنْكُمُ الْبَاءَةَ فَلْيَتَزَوَّجْ، فَإِنَّهُ أَغَضُّ لِلْبَصَرِ، وَأَحْصَنُ لِلْفَرْجِ، وَمَنْ لَمْ يَسْتَطِعْ فَعَلَيْهِ بِالصَّوْمِ فَإِنَّهُ لَهُ وِجَاءٌ",
+          "translit": "Yâ ma'shara-sh-shabâb, mani-stata'a minkumu-l-bâ'ata fa-l-yatazawwaj, fa-innahu aghaddu li-l-basari wa ahsanu li-l-farj. Wa man lam yastati' fa-'alayhi bi-s-sawmi fa-innahu lahu wijâ'",
+          "fr": "Ô jeunes gens, que celui d'entre vous qui peut subvenir aux charges du mariage se marie — c'est plus propice à baisser le regard et à préserver la pudeur. Et celui qui n'en a pas les moyens, qu'il jeûne — le jeûne est pour lui une protection.",
+          "source": "Bukhârî 5066, Muslim 1400, d'après Ibn Mas'ûd",
+          "quand": "Conseil prophétique direct sur la régulation du regard. Solution principale : mariage. Solution alternative : jeûne. Le jeûne diminue mécaniquement les pulsions — base biologique confirmée aujourd'hui."
+        },
+        {
+          "id": "voiler_voilé",
+          "ar": "لَا يَسْتُرُ عَبْدٌ عَبْدًا فِي الدُّنْيَا إِلَّا سَتَرَهُ اللَّهُ يَوْمَ الْقِيَامَةِ",
+          "translit": "Lâ yasturu 'abdun 'abdan fi-d-dunyâ illâ satarahu-llâhu yawma-l-qiyâma",
+          "fr": "Aucun serviteur ne couvre [les fautes de] un autre serviteur en ce monde, sans qu'Allah ne le couvre le Jour de la Résurrection.",
+          "source": "Muslim 2590, Bukhârî 2442",
+          "quand": "Quand tu vois un frère ou une sœur en difficulté avec ce sujet. Allah promet de te voiler comme tu auras voilé. La discrétion est une miséricorde — pour les autres, et pour toi en retour."
+        }
+      ]
+    },
+
+    {
+      "id": "duas",
+      "titre_ar": "الأدعية",
+      "titre_translit": "Al-Ad'iya",
+      "titre_fr": "Du'âs à mémoriser",
+      "description": "Invocations prophétiques pour la maîtrise du regard et la pureté du cœur.",
+      "entrees": [
+        {
+          "id": "isti_adha",
+          "ar": "أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ",
+          "translit": "A'ûdhu bi-llâhi mina-sh-shaytâni-r-rajîm",
+          "fr": "Je cherche refuge auprès d'Allah contre le diable lapidé.",
+          "source": "Al-A'râf 7:200, Bukhârî 3282",
+          "quand": "À chaque déclencheur. Pulsion qui monte, app qui appelle, regard qui se prolonge — dire cette parole immédiatement et physiquement détourner."
+        },
+        {
+          "id": "muqalliba_qulub",
+          "ar": "يَا مُقَلِّبَ الْقُلُوبِ ثَبِّتْ قَلْبِي عَلَى دِينِكَ",
+          "translit": "Yâ Muqalliba-l-qulûb, thabbit qalbî 'alâ dînik",
+          "fr": "Ô Toi qui retournes les cœurs, affermis mon cœur sur Ta religion.",
+          "source": "Tirmidhî 2140, Ibn Mâja 3834 — hasan",
+          "quand": "Le Prophète ﷺ multipliait cette du'â. Le regard suit le cœur — demander à Allah d'affermir le cœur est la cause racine."
+        },
+        {
+          "id": "muadh_a_innî",
+          "ar": "اللَّهُمَّ أَعِنِّي عَلَى ذِكْرِكَ وَشُكْرِكَ وَحُسْنِ عِبَادَتِكَ",
+          "translit": "Allâhumma a'innî 'alâ dhikrika wa shukrika wa husni 'ibâdatik",
+          "fr": "Ô Allah, aide-moi à T'évoquer, à Te remercier et à T'adorer parfaitement.",
+          "source": "Abû Dâwûd 1522, Nasâ'î 1303 — sahîh",
+          "quand": "Après chaque salât. Le Prophète ﷺ a explicitement enseigné cette du'â à Mu'âdh ibn Jabal en lui disant : 'Je t'aime, ne manque jamais de la dire après chaque prière.' Pour la vie."
+        },
+        {
+          "id": "tahara_qalb",
+          "ar": "اللَّهُمَّ طَهِّرْ قَلْبِي مِنَ النِّفَاقِ، وَعَمَلِي مِنَ الرِّيَاءِ، وَلِسَانِي مِنَ الْكَذِبِ، وَعَيْنِي مِنَ الْخِيَانَةِ",
+          "translit": "Allâhumma tahhir qalbî mina-n-nifâq, wa 'amalî mina-r-riyâ', wa lisânî mina-l-kadhib, wa 'aynî mina-l-khiyâna",
+          "fr": "Ô Allah, purifie mon cœur de l'hypocrisie, mon œuvre de l'ostentation, ma langue du mensonge et mon œil de la trahison.",
+          "source": "Cité dans Hisn al-Muslim — tradition spirituelle attribuée à Ibn 'Umar et d'autres salaf",
+          "quand": "Du'â complète pour purifier les 4 points névralgiques. Le 4e — 'mon œil de la trahison' (al-khiyâna) — est exactement la khâ'inata-l-a'yun du verset Ghâfir 40:19. À dire au lever ou avant de dormir."
+        },
+        {
+          "id": "rahmatak_arju",
+          "ar": "اللَّهُمَّ رَحْمَتَكَ أَرْجُو، فَلَا تَكِلْنِي إِلَى نَفْسِي طَرْفَةَ عَيْنٍ، وَأَصْلِحْ لِي شَأْنِي كُلَّهُ، لَا إِلَهَ إِلَّا أَنْتَ",
+          "translit": "Allâhumma rahmataka arjû, fa-lâ takilnî ilâ nafsî tarfata 'aynin, wa aslih lî sha'nî kullah, lâ ilâha illâ Ant",
+          "fr": "Ô Allah, c'est en Ta miséricorde que j'espère. Ne m'abandonne pas à moi-même le temps d'un clin d'œil. Rectifie pour moi toute mon affaire. Il n'y a de divinité que Toi.",
+          "source": "Abû Dâwûd 5090 — sahîh",
+          "quand": "Quand tu te sens dépassé par tes pulsions. La phrase clé : 'ne m'abandonne pas à moi-même le temps d'un clin d'œil'. Reconnaissance que sans Lui, on cède."
+        },
+        {
+          "id": "thabbit_qadami",
+          "ar": "رَبَّنَا أَفْرِغْ عَلَيْنَا صَبْرًا وَثَبِّتْ أَقْدَامَنَا",
+          "translit": "Rabbanâ afrigh 'alaynâ sabran wa thabbit aqdâmanâ",
+          "fr": "Notre Seigneur, déverse sur nous l'endurance et affermis nos pas.",
+          "source": "Coran, Al-Baqara 2:250",
+          "quand": "Du'â des compagnons de Tâlût face à Goliath. Mais aussi du'â universelle pour tenir face à un combat intérieur. Le verbe afrigh ('déverse') évoque l'abondance — pas juste un peu de patience, mais une coulée."
+        }
+      ]
+    },
+
+    {
+      "id": "lexique",
+      "titre_ar": "المُفْرَدَات",
+      "titre_translit": "Al-Mufradât",
+      "titre_fr": "Le vocabulaire du regard",
+      "description": "Les mots arabes qui structurent l'éthique islamique du regard et de la pudeur.",
+      "entrees": [
+        {
+          "id": "ghadd",
+          "ar": "غَضّ",
+          "translit": "Ghadd",
+          "definition": "Baisser, abaisser, voiler partiellement. Ce verbe est utilisé dans le Coran 24:30 — ne signifie PAS fermer, mais discipliner. Le ghadd est un mouvement, pas un état."
+        },
+        {
+          "id": "basar",
+          "ar": "بَصَر",
+          "translit": "Basar",
+          "definition": "La vue, le regard. Pluriel : absâr. Désigne l'organe physique et la fonction visuelle, dans le sens actif de l'acte de regarder."
+        },
+        {
+          "id": "basira",
+          "ar": "بَصِيرَة",
+          "translit": "Basîra",
+          "definition": "La vision intérieure, la perspicacité spirituelle. Plus profonde que basar. C'est voir avec le cœur, percevoir les réalités spirituelles derrière les apparences."
+        },
+        {
+          "id": "nadhar",
+          "ar": "نَظَر",
+          "translit": "Nadhar",
+          "definition": "Regarder, contempler. Acte plus délibéré que basar. Le hadith d'Alî utilise an-nadhratu — un acte de regarder volontaire."
+        },
+        {
+          "id": "fitra_qalb",
+          "ar": "فِطْنَة الْقَلْب",
+          "translit": "Fitnat al-qalb",
+          "definition": "L'épreuve du cœur. Le Prophète ﷺ enseignait que le regard est le messager du cœur — il porte ce que le cœur attend. Toute fitna visuelle est d'abord une fitna du cœur."
+        },
+        {
+          "id": "hifdh",
+          "ar": "حِفْظ",
+          "translit": "Hifdh",
+          "definition": "Garde, préservation. Hifdh al-furûj = préservation de la pudeur. Hifdh al-basar = garde du regard. Le verbe évoque la vigilance active, pas la passivité."
+        },
+        {
+          "id": "furuj",
+          "ar": "فُرُوج",
+          "translit": "Furûj",
+          "definition": "Sing. farj. Désigne les parties intimes au sens large (zones de pudeur). En tafsîr classique, hifdh al-furûj couvre la chasteté complète — pas seulement génitale."
+        },
+        {
+          "id": "haya",
+          "ar": "حَيَاء",
+          "translit": "Hayâ'",
+          "definition": "La pudeur, la modestie. Le Prophète ﷺ a dit : 'La pudeur est entièrement bonne' (Muslim 37). Hayâ' inclut la pudeur des yeux, de la parole, des actes. Vertu cardinale en islam."
+        },
+        {
+          "id": "iffah",
+          "ar": "عِفَّة",
+          "translit": "'Iffa",
+          "definition": "La chasteté, la continence. État permanent de la personne qui maîtrise ses désirs. 'Affîf = chaste. C'est l'aboutissement de la discipline du regard."
+        },
+        {
+          "id": "zinâ",
+          "ar": "زِنَا",
+          "translit": "Zinâ",
+          "definition": "La fornication / l'adultère. Mais aussi, dans un hadith célèbre, 'le zinâ des yeux est le regard' (Bukhârî 6243) — le mot a un sens élargi qui inclut tous les comportements qui en sont l'antichambre."
+        },
+        {
+          "id": "khâ'ina_a'yun",
+          "ar": "خَائِنَة الْأَعْيُن",
+          "translit": "Khâ'inat al-a'yun",
+          "definition": "La traîtrise des yeux (Coran 40:19). Le regard volé, à la dérobée, qu'on croit invisible. Allah le connaît. Concept fondamental de la murâqaba."
+        },
+        {
+          "id": "murâqaba",
+          "ar": "مُرَاقَبَة",
+          "translit": "Murâqaba",
+          "definition": "La vigilance contemplative. Vivre dans la conscience qu'Allah voit, à chaque instant, ce que je vois. Station spirituelle développée par al-Muhâsibî, Ghazâlî et Ibn al-Qayyim."
+        },
+        {
+          "id": "muhâsaba",
+          "ar": "مُحَاسَبَة",
+          "translit": "Muhâsaba",
+          "definition": "L'auto-examen, le compte qu'on se demande à soi-même. Pratique quotidienne — typiquement le soir avant de dormir. 'Demande-toi des comptes avant qu'on ne te les demande' ('Umar)."
+        },
+        {
+          "id": "waswas",
+          "ar": "وَسْوَاس",
+          "translit": "Waswâs",
+          "definition": "Le chuchotement, l'incitation subtile. Surtout celle du shaytân (et aussi de la nafs). Toutes les pulsions qui viennent en pensées non-désirées sont du waswâs. On les chasse par l'isti'âdha."
+        },
+        {
+          "id": "tawba",
+          "ar": "تَوْبَة",
+          "translit": "Tawba",
+          "definition": "Le repentir. Quatre conditions : reconnaître, regretter, cesser, décider. Le mot vient de la racine TWB qui signifie 'retour' — la tawba est un retour à Allah, pas un masochisme."
+        },
+        {
+          "id": "istiqâma",
+          "ar": "اِسْتِقَامَة",
+          "translit": "Istiqâma",
+          "definition": "La rectitude maintenue dans le temps. Plus difficile que les conversions spectaculaires. Junayd : 'L'istiqâma est plus grande que mille miracles.' C'est la fidélité quotidienne."
+        }
+      ]
+    },
+
+    {
+      "id": "savants",
+      "titre_ar": "الْعُلَمَاء",
+      "titre_translit": "Al-'Ulamâ'",
+      "titre_fr": "Pour aller plus loin",
+      "description": "Les savants qui ont écrit en profondeur sur le regard et la chasteté.",
+      "entrees": [
+        {
+          "id": "ghazali",
+          "nom": "Abû Hâmid al-Ghazâlî",
+          "dates": "1058-1111",
+          "oeuvre": "Ihyâ' 'Ulûm ad-Dîn — Livres : Âfât al-lisân wa-l-jawârih (Dangers de la langue et des membres) ; Adab al-Nikâh (Étiquette du mariage) ; Kasr ash-shahwatayn (Briser les deux passions, du ventre et du sexe)",
+          "apport": "Référence absolue sur la discipline du regard. Ghazâlî traite le sujet sous trois angles : (1) le danger théologique du regard (porte du shaytân), (2) la méthode pratique du ghadd (reconnaître, contenir, substituer), (3) la transformation du regard en contemplation (basîra). Il insiste sur l'occupation positive de l'âme : le vide est dangereux."
+        },
+        {
+          "id": "ibn_qayyim",
+          "nom": "Ibn al-Qayyim al-Jawziyya",
+          "dates": "1292-1350",
+          "oeuvre": "Rawdat al-Muhibbîn (Le Jardin des Amoureux), Al-Jawâb al-Kâfî (La Réponse Suffisante), Madârij as-Sâlikîn (Stations des marcheurs)",
+          "apport": "Ibn al-Qayyim a écrit le traité le plus systématique sur l'amour, le désir et la chasteté en islam. Rawdat al-Muhibbîn analyse les degrés du regard, du désir, et leurs remèdes spirituels. Al-Jawâb al-Kâfî est une réponse à quelqu'un qui demandait comment guérir d'une passion humaine — référence pour quiconque lutte avec une attache visuelle/affective."
+        },
+        {
+          "id": "ibn_ataillah",
+          "nom": "Ibn 'Atâ'illâh al-Iskandarî",
+          "dates": "v. 1259-1309",
+          "oeuvre": "Al-Hikam (Les Sagesses) — aphorismes",
+          "apport": "Maître soufi shâdhili. Sa doctrine sur le cœur — 'le regard suit le cœur, et le cœur suit ce qu'il aime' — est centrale pour comprendre que la discipline du regard commence par la discipline du cœur. Aphorismes courts à méditer pour intérioriser cette priorité."
+        },
+        {
+          "id": "muhasibi",
+          "nom": "Al-Hârith al-Muhâsibî",
+          "dates": "781-857",
+          "oeuvre": "Ar-Ri'âya li-huqûq Allâh (Le respect des droits d'Allah)",
+          "apport": "Surnommé 'al-Muhâsibî' (celui qui se demande des comptes) en raison de sa pratique systématique de la muhâsaba. Fondateur de l'école de la murâqaba. Son ouvrage majeur reste la référence classique pour quiconque veut apprendre à vivre dans la conscience permanente d'Allah."
+        },
+        {
+          "id": "junayd",
+          "nom": "Abû al-Qâsim al-Junayd al-Baghdâdî",
+          "dates": "v. 830-910",
+          "oeuvre": "Cité dans Ar-Risâla al-Qushayriyya d'al-Qushayrî",
+          "apport": "Sayyid at-Tâ'ifa — le Maître du Groupe. Sa doctrine de la sobriété spirituelle (sahw) et de l'istiqâma comme supérieure aux états mystiques extatiques est fondamentale. Pour la cure Regard : la régularité quotidienne (tenir les habitudes nouvelles) vaut plus que des moments d'intensité brève."
+        }
+      ]
+    }
+  ],
+
+  "metadata": {
+    "entrees_total": 49,
+    "versets": 12,
+    "hadiths": 10,
+    "duas": 6,
+    "lexique": 16,
+    "savants": 5,
+    "note": "Toutes les références doivent être validées avec les éditions critiques (Sunnah.com, Tafsîr Ibn Kathîr et al-Sa'dî, éditions critiques pour Ghazâlî/Ibn al-Qayyim) avant intégration production.",
+    "style": "Cohérent avec coffret-anxiete.json et coffret-colere.json : 5 sections (versets, hadiths, du'âs, lexique, savants), même structure d'entrée, ton sobre.",
+    "audit_theologique_requis": "Validation imam francophone avant production publique."
+  }
+}

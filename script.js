@@ -4038,9 +4038,10 @@ function renderBabAnNafs() {
     html += '<button onclick="openBabPorte(\'' + p.id + '\')" style="position:relative;aspect-ratio:1/1;border-radius:12px;border:1px solid var(--gold,#C8A84A);background:url(assets/cards/porte-' + p.id + '.webp) center/cover no-repeat,#111;cursor:pointer;padding:0;">' + _cureMarker + '</button>';
   });
   html += '</div>';
-  html += '<div style="display:flex;gap:10px;max-width:320px;margin:20px auto 0;">'
-    + '<button onclick="openCoffretColere()" style="flex:1;padding:12px 8px;border-radius:12px;border:1px solid rgba(200,168,75,0.2);background:none;color:rgba(200,168,75,0.6);font-size:13px;font-family:var(--serif);cursor:pointer;font-style:italic;">Coffret longanimit\u00e9</button>'
-    + '<button onclick="openCoffretAnxiete()" style="flex:1;padding:12px 8px;border-radius:12px;border:1px solid rgba(200,168,75,0.2);background:none;color:rgba(200,168,75,0.6);font-size:13px;font-family:var(--serif);cursor:pointer;font-style:italic;">Coffret apaisement</button>'
+  html += '<div style="display:flex;flex-wrap:wrap;gap:8px;max-width:320px;margin:20px auto 0;justify-content:center;">'
+    + '<button onclick="openCoffretColere()" style="flex:1;min-width:90px;padding:10px 6px;border-radius:12px;border:1px solid rgba(200,168,75,0.2);background:none;color:rgba(200,168,75,0.6);font-size:12px;font-family:var(--serif);cursor:pointer;font-style:italic;">Longanimit\u00e9</button>'
+    + '<button onclick="openCoffretAnxiete()" style="flex:1;min-width:90px;padding:10px 6px;border-radius:12px;border:1px solid rgba(200,168,75,0.2);background:none;color:rgba(200,168,75,0.6);font-size:12px;font-family:var(--serif);cursor:pointer;font-style:italic;">Apaisement</button>'
+    + '<button onclick="openCoffretRegard()" style="flex:1;min-width:90px;padding:10px 6px;border-radius:12px;border:1px solid rgba(200,168,75,0.2);background:none;color:rgba(200,168,75,0.6);font-size:12px;font-family:var(--serif);cursor:pointer;font-style:italic;">Regard juste</button>'
     + '</div>';
   html += '</div>';
   el.innerHTML = html;
@@ -6766,7 +6767,7 @@ function _cureAnxieteWizardRender(el) {
       + (clot.ar ? '<div style="font-family:\'Scheherazade New\',serif;font-size:26px;color:#C8A84A;direction:rtl;margin-bottom:12px;">' + escapeHtml(clot.ar) + '</div>' : '')
       + '<div style="font-family:var(--serif);font-size:18px;color:rgba(240,234,214,0.85);line-height:1.7;max-width:360px;margin-bottom:24px;">' + escapeHtml(clot.fr || 'Tu as travers\u00e9 ce jour.') + '</div>'
       + '<button onclick="' + saveFn + '" style="display:block;width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:' + c + ';color:#fff;font-size:17px;font-weight:600;font-family:var(--serif);cursor:pointer;">' + (s.isLast ? 'Terminer la Cure' : 'Jour ' + dayNum + ' accompli') + '</button>'
-      + (s.isLast ? '<button onclick="openCoffretAnxiete()" style="display:block;width:100%;max-width:340px;margin:12px auto 0;padding:12px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:none;color:#C8A84A;font-size:15px;font-family:var(--serif);cursor:pointer;font-style:italic;">Coffret de l\u2019apaisement</button>' : '')
+      + (s.isLast ? (function() { var _cfn = {anxiete:'openCoffretAnxiete()',regard:'openCoffretRegard()'}; var _clbl = {anxiete:'Coffret de l\u2019apaisement',regard:'Coffret du regard juste'}; var _p = s.porte || 'anxiete'; return '<button onclick="' + (_cfn[_p]||_cfn.anxiete) + '" style="display:block;width:100%;max-width:340px;margin:12px auto 0;padding:12px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:none;color:#C8A84A;font-size:15px;font-family:var(--serif);cursor:pointer;font-style:italic;">' + (_clbl[_p]||_clbl.anxiete) + '</button>'; })() : '')
       + '</div>';
   }
 
@@ -6866,6 +6867,7 @@ function openCureRegard() {
       + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:#C8A84A;direction:rtl;margin-bottom:12px;">\u0627\u0644\u0646\u0651\u064E\u0638\u064E\u0631</div>'
       + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;line-height:1.7;max-width:400px;margin:0 auto 32px;">Tu as travers\u00e9 la Cure. La porte reste ouverte derri\u00e8re toi.</div>'
       + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="padding:14px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:none;color:#C8A84A;font-family:var(--serif);font-size:14px;cursor:pointer;">Retour</button>'
+      + '<button onclick="openCoffretRegard()" style="display:block;width:100%;max-width:320px;margin:12px auto 0;padding:12px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:none;color:#C8A84A;font-size:13px;font-family:var(--serif);cursor:pointer;font-style:italic;">Coffret du regard juste</button>'
       + '<button onclick="localStorage.removeItem(\'' + sk + '\');openCureRegard()" style="display:block;margin:16px auto 0;background:none;border:none;font-size:12px;color:rgba(255,255,255,0.3);font-family:var(--serif);cursor:pointer;font-style:italic;">Recommencer un nouveau cycle</button>'
       + '</div>';
     return;
@@ -6943,6 +6945,8 @@ function openCoffretAnxiete(section) { _openCoffret('anxiete', 'coffret-anxiete.
 window.openCoffretAnxiete = openCoffretAnxiete;
 function openCoffretColere(section) { _openCoffret('colere', 'coffret-colere.json', section); }
 window.openCoffretColere = openCoffretColere;
+function openCoffretRegard(section) { _openCoffret('regard', 'coffret-regard.json', section); }
+window.openCoffretRegard = openCoffretRegard;
 
 // ── Backward-compatible wrappers ──
 function openCureColereJour1() { openCureJour('colere', 1); }
@@ -15179,6 +15183,8 @@ window.COFFRET_COLERE = null;
 fetch('coffret-colere.json').then(function(r){return r.ok?r.json():null}).then(function(d){if(d){window.COFFRET_COLERE=d;console.log('Coffret Colère loaded')}}).catch(function(){});
 window.CURE_REGARD_CYCLE1 = null;
 fetch('cure-regard-cycle1.json').then(function(r){return r.ok?r.json():null}).then(function(d){if(d){window.CURE_REGARD_CYCLE1=d;console.log('Cure Regard Cycle 1 loaded')}}).catch(function(){});
+window.COFFRET_REGARD = null;
+fetch('coffret-regard.json').then(function(r){return r.ok?r.json():null}).then(function(d){if(d){window.COFFRET_REGARD=d;console.log('Coffret Regard loaded')}}).catch(function(){});
 
 // Boot after V1's own DOMContentLoaded fires
 if (document.readyState === 'loading') {
