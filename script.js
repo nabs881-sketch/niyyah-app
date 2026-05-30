@@ -5532,6 +5532,32 @@ _outilAnxieteRenderers.double_slider = function(o, c) {
   return html;
 };
 
+// 3.22 — ecran_final_sans_action
+_outilAnxieteRenderers.ecran_final_sans_action = function(o, c) {
+  var contenu = o.contenu || {};
+  var duree = (o.duree_affichage_sec || 8) * 1000;
+  var efId = '_ef_' + (o.id || 'final');
+  var html = '<div id="' + efId + '" style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:50vh;text-align:center;">';
+  html += '<div id="' + efId + '_cal" style="opacity:0;transition:opacity 3s ease;">';
+  html += '<div style="font-family:\'Scheherazade New\',serif;font-size:48px;color:#C8A84A;direction:rtl;margin-bottom:12px;">' + escapeHtml(contenu.ar_centre || '') + '</div>';
+  if (contenu.translit) html += '<div style="font-family:var(--serif);font-size:14px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:6px;">' + escapeHtml(contenu.translit) + '</div>';
+  if (contenu.fr) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(200,168,75,0.6);">' + escapeHtml(contenu.fr) + '</div>';
+  html += '</div></div>';
+  // Fade in after render, then auto-advance after duration
+  setTimeout(function() {
+    var cal = document.getElementById(efId + '_cal');
+    if (cal) cal.style.opacity = '1';
+    setTimeout(function() {
+      // Auto-advance to next wizard step (the finale/save step)
+      if (_cureWizardState && _cureWizardState.step < _cureWizardState.steps.length - 1) {
+        _cureWizardState.step++;
+        _cureAnxieteWizardRender();
+      }
+    }, duree);
+  }, 300);
+  return html;
+};
+
 // 3.21 — choix_unique_sortie
 _outilAnxieteRenderers.choix_unique_sortie = function(o, c) {
   var opts = o.options || [];
