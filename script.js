@@ -4038,6 +4038,7 @@ function renderBabAnNafs() {
     html += '<button onclick="openBabPorte(\'' + p.id + '\')" style="position:relative;aspect-ratio:1/1;border-radius:12px;border:1px solid var(--gold,#C8A84A);background:url(assets/cards/porte-' + p.id + '.webp) center/cover no-repeat,#111;cursor:pointer;padding:0;">' + _cureMarker + '</button>';
   });
   html += '</div>';
+  html += _regardStreakInline();
   html += '<div style="display:flex;flex-wrap:wrap;gap:8px;max-width:320px;margin:20px auto 0;justify-content:center;">'
     + '<button onclick="openCoffretColere()" style="flex:1;min-width:90px;padding:10px 6px;border-radius:12px;border:1px solid rgba(200,168,75,0.2);background:none;color:rgba(200,168,75,0.6);font-size:12px;font-family:var(--serif);cursor:pointer;font-style:italic;">Longanimit\u00e9</button>'
     + '<button onclick="openCoffretAnxiete()" style="flex:1;min-width:90px;padding:10px 6px;border-radius:12px;border:1px solid rgba(200,168,75,0.2);background:none;color:rgba(200,168,75,0.6);font-size:12px;font-family:var(--serif);cursor:pointer;font-style:italic;">Apaisement</button>'
@@ -6640,7 +6641,8 @@ function _cureAnxieteWizardRender(el) {
   var imgPath = _getCureImgDir() + '/j' + dayNum + '.webp';
   var bgWrap = '<div style="position:fixed;inset:0;z-index:-1;"><img src="' + imgPath + '" style="width:100%;height:100%;object-fit:cover;" alt=""><div style="position:absolute;inset:0;background:rgba(0,0,0,0.7);"></div></div>';
   var backBtn = '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="position:fixed;top:calc(var(--safe-top,0px) + 12px);left:16px;z-index:9990;background:rgba(10,10,10,0.7);border:1px solid rgba(200,168,74,0.3);border-radius:50%;color:#C8A84A;cursor:pointer;padding:0;width:40px;height:40px;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#C8A84A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>';
-  var progress = '<div style="text-align:center;margin-bottom:24px;font-size:15px;letter-spacing:0.2em;color:rgba(200,168,75,0.4);">' + (s.step + 1) + '/' + totalSteps + '</div>';
+  var progress = '<div style="text-align:center;margin-bottom:24px;font-size:15px;letter-spacing:0.2em;color:rgba(200,168,75,0.4);">' + (s.step + 1) + '/' + totalSteps + '</div>'
+    + (s.porte === 'regard' ? _regardStreakInline() : '');
   var nextBtn = '<button onclick="_cureWizardState.step++;_cureAnxieteWizardRender()" style="display:block;width:100%;max-width:340px;margin:24px auto 0;padding:14px;border-radius:12px;border:none;background:' + c + ';color:#fff;font-size:17px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>';
 
   var html = '';
@@ -6878,6 +6880,22 @@ function openCureRegard() {
 window.openCureRegard = openCureRegard;
 
 // ── Compteur "Jours en silence" (Porte Regard) ──────────────────────────────
+function _regardStreakInline() {
+  var current = parseInt(safeGetItem('niyyah_regard_streak_current') || '0', 10);
+  var today = new Date().toISOString().slice(0, 10);
+  var lastCheck = safeGetItem('niyyah_regard_streak_last_check') || '';
+  if (lastCheck && lastCheck !== today) {
+    var yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
+    if (lastCheck !== yesterday) { current = 0; }
+  }
+  var doneToday = lastCheck === today;
+  return '<div style="display:flex;align-items:center;justify-content:center;gap:10px;margin:8px auto;max-width:320px;">'
+    + '<span style="font-family:var(--serif);font-size:13px;color:rgba(200,168,75,0.6);">' + current + ' jour' + (current > 1 ? 's' : '') + ' en silence</span>'
+    + (doneToday ? '' : '<button onclick="_regardStreakTap()" style="background:none;border:1px solid rgba(200,168,75,0.25);border-radius:8px;padding:4px 10px;color:rgba(200,168,75,0.5);font-family:var(--serif);font-size:12px;cursor:pointer;">+1</button>')
+    + (current > 0 ? '<button onclick="_regardStreakFall()" style="background:none;border:none;padding:4px 8px;color:rgba(200,168,75,0.25);font-family:var(--serif);font-size:11px;cursor:pointer;">Recommencer</button>' : '')
+    + '</div>';
+}
+
 function _regardStreakHtml() {
   var today = new Date().toISOString().slice(0, 10);
   var current = parseInt(safeGetItem('niyyah_regard_streak_current') || '0', 10);
