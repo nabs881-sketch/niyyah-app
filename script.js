@@ -5532,6 +5532,74 @@ _outilAnxieteRenderers.double_slider = function(o, c) {
   return html;
 };
 
+// 3.18 — lecture_synchronisee_souffle
+_outilAnxieteRenderers.lecture_synchronisee_souffle = function(o, c) {
+  var verset = o.verset || {};
+  var arSegs = verset.ar_segmente || [];
+  var trSegs = verset.translit_segmentee || [];
+  var frSegs = verset.fr_segmentee || [];
+  var sk = o.stockage || 'cure_anxiete_verset';
+  var lsId = '_ls_' + o.id;
+  var done = safeGetItem(sk) === '1';
+  var html = '';
+  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.6);line-height:1.6;text-align:center;margin-bottom:12px;white-space:pre-line;">' + escapeHtml(o.introduction) + '</div>';
+  if (o.consigne) html += '<div style="font-family:var(--serif);font-size:13px;color:rgba(240,234,214,0.45);text-align:center;margin-bottom:20px;">' + escapeHtml(o.consigne) + '</div>';
+  // Reading zone
+  html += '<div id="' + lsId + '" style="background:#000;border-radius:16px;min-height:220px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:16px;padding:24px 16px;text-align:center;">';
+  if (done) {
+    // Show full verse
+    html += '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:#C8A84A;direction:rtl;line-height:1.6;margin-bottom:10px;">' + escapeHtml(arSegs.join(' ')) + '</div>';
+    html += '<div style="font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(200,168,75,0.55);margin-bottom:6px;">' + escapeHtml(trSegs.join(' ')) + '</div>';
+    html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);">' + escapeHtml(frSegs.join(' ')) + '</div>';
+    html += '<div style="font-size:11px;color:rgba(200,168,75,0.4);margin-top:8px;">\u2014 ' + escapeHtml(verset.reference || '') + '</div>';
+  } else {
+    html += '<div id="' + lsId + '_ar" style="font-family:\'Scheherazade New\',serif;font-size:28px;color:#C8A84A;direction:rtl;min-height:40px;opacity:0;transition:opacity 1s ease;"></div>';
+    html += '<div id="' + lsId + '_tr" style="font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);min-height:20px;margin-top:6px;opacity:0;transition:opacity 1s ease;"></div>';
+    html += '<div id="' + lsId + '_fr" style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.75);min-height:20px;margin-top:4px;opacity:0;transition:opacity 1s ease;"></div>';
+  }
+  html += '</div>';
+  // Button appears only after reading
+  html += '<div id="' + lsId + '_btn" style="text-align:center;' + (done ? '' : 'display:none;') + '">';
+  if (done) {
+    html += '<div style="font-size:12px;color:rgba(200,168,75,0.4);font-style:italic;">\u2713 Lu</div>';
+  } else {
+    html += '<button onclick="safeSetItem(\'' + sk + '\',\'1\')" style="padding:10px 28px;border-radius:10px;border:1px solid rgba(200,168,75,0.2);background:none;color:rgba(200,168,75,0.6);font-family:var(--serif);font-size:13px;cursor:pointer;">Termin\u00e9</button>';
+  }
+  html += '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.35);text-align:center;line-height:1.5;margin-top:12px;">' + escapeHtml(o.note_spi) + '</div>';
+  if (!done) setTimeout(function() { _lsPlay(lsId, arSegs, trSegs, frSegs, sk); }, 500);
+  return html;
+};
+function _lsPlay(id, arSegs, trSegs, frSegs, sk) {
+  var arEl = document.getElementById(id + '_ar');
+  var trEl = document.getElementById(id + '_tr');
+  var frEl = document.getElementById(id + '_fr');
+  var btnEl = document.getElementById(id + '_btn');
+  if (!arEl) return;
+  var total = arSegs.length;
+  var idx = 0;
+  function showSeg() {
+    if (idx >= total) {
+      // Show full verse + button
+      arEl.textContent = arSegs.join(' '); arEl.style.opacity = '1'; arEl.style.fontSize = '24px';
+      trEl.textContent = trSegs.join(' '); trEl.style.opacity = '1';
+      frEl.textContent = frSegs.join(' '); frEl.style.opacity = '1';
+      if (btnEl) { btnEl.style.display = 'block'; }
+      return;
+    }
+    // Fade in
+    arEl.textContent = arSegs[idx]; arEl.style.opacity = '1';
+    trEl.textContent = trSegs[idx] || ''; trEl.style.opacity = '1';
+    frEl.textContent = frSegs[idx] || ''; frEl.style.opacity = '1';
+    // Hold 3s then fade out 1s
+    setTimeout(function() {
+      arEl.style.opacity = '0'; trEl.style.opacity = '0'; frEl.style.opacity = '0';
+      setTimeout(function() { idx++; showSeg(); }, 1000);
+    }, 3000);
+  }
+  showSeg();
+}
+
 // 3.17 — double_slider_compare
 _outilAnxieteRenderers.double_slider_compare = function(o, c) {
   var sliders = o.sliders || [];
