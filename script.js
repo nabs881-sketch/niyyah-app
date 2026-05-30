@@ -5532,6 +5532,53 @@ _outilAnxieteRenderers.double_slider = function(o, c) {
   return html;
 };
 
+// 3.12 — texte_qui_s_efface
+_outilAnxieteRenderers.texte_qui_s_efface = function(o, c) {
+  var sk = o.stockage || 'cure_anxiete_efface';
+  var saved = safeGetItem(sk);
+  var act = o.action_validation || {};
+  var effId = '_eff_' + o.id;
+  var html = '';
+  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
+  if (saved === 'done') {
+    // Already deposited — show calligraphy
+    html += '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:160px;text-align:center;">'
+      + '<div style="font-family:\'Scheherazade New\',serif;font-size:32px;color:#C8A84A;direction:rtl;margin-bottom:8px;">' + escapeHtml(act.calligraphie_finale_ar || '') + '</div>'
+      + '<div style="font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(200,168,75,0.55);">' + escapeHtml(act.calligraphie_finale_translit || '') + '</div>'
+      + '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);margin-top:4px;">' + escapeHtml(act.calligraphie_finale_sens || '') + '</div>'
+      + '</div>';
+  } else {
+    html += '<div id="' + effId + '">';
+    html += '<div style="display:flex;align-items:baseline;gap:6px;margin-bottom:12px;">';
+    if (o.amorce) html += '<span style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.7);flex-shrink:0;">' + escapeHtml(o.amorce) + '</span>';
+    html += '<input type="text" id="' + effId + '_input" placeholder="' + escapeHtml((o.champ && o.champ.placeholder) || '...') + '" style="flex:1;background:none;border:none;border-bottom:1px solid ' + c + '44;color:#E5E0DC;font-family:var(--serif);font-size:15px;padding:4px 2px;outline:none;">';
+    html += '</div>';
+    html += '<button onclick="_effDeposer(\'' + effId + '\',\'' + sk + '\')" style="display:block;width:100%;max-width:260px;margin:0 auto;padding:12px;border-radius:10px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">' + escapeHtml(act.bouton || 'D\u00e9poser') + '</button>';
+    html += '</div>';
+    // Calligraphy hidden, will appear after fade
+    html += '<div id="' + effId + '_cal" style="display:none;text-align:center;">'
+      + '<div style="font-family:\'Scheherazade New\',serif;font-size:32px;color:#C8A84A;direction:rtl;margin-bottom:8px;">' + escapeHtml(act.calligraphie_finale_ar || '') + '</div>'
+      + '<div style="font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(200,168,75,0.55);">' + escapeHtml(act.calligraphie_finale_translit || '') + '</div>'
+      + '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);margin-top:4px;">' + escapeHtml(act.calligraphie_finale_sens || '') + '</div>'
+      + '</div>';
+  }
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-top:16px;">' + escapeHtml(o.note_spi) + '</div>';
+  return html;
+};
+function _effDeposer(effId, sk) {
+  var form = document.getElementById(effId);
+  var cal = document.getElementById(effId + '_cal');
+  if (!form) return;
+  form.style.transition = 'opacity 3s ease';
+  form.style.opacity = '0';
+  setTimeout(function() {
+    form.style.display = 'none';
+    if (cal) { cal.style.display = 'block'; cal.style.opacity = '0'; cal.style.transition = 'opacity 1.5s ease'; setTimeout(function() { cal.style.opacity = '1'; }, 50); }
+    safeSetItem(sk, 'done');
+  }, 3000);
+}
+window._effDeposer = _effDeposer;
+
 // 3.11 — choix_unique_avec_engagement
 _outilAnxieteRenderers.choix_unique_avec_engagement = function(o, c) {
   var opts = o.options || [];
