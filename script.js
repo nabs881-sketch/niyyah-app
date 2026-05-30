@@ -6899,9 +6899,22 @@ function _regardStreakHtml() {
   } else {
     html += '<button onclick="_regardStreakTap()" style="width:100%;padding:12px;border-radius:10px;border:1px solid ' + c + ';background:' + c + '15;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">J\u2019ai tenu aujourd\u2019hui</button>';
   }
+  if (current > 0) html += '<div onclick="_regardStreakFall()" style="font-family:var(--serif);font-size:12px;color:rgba(200,168,75,0.3);cursor:pointer;margin-top:10px;">J\u2019ai chut\u00e9</div>';
   html += '</div>';
   return html;
 }
+function _regardStreakFall() {
+  var today = new Date().toISOString().slice(0, 10);
+  safeSetItem('niyyah_regard_streak_current', '0');
+  var hist = []; try { hist = JSON.parse(safeGetItem('niyyah_regard_streak_history') || '[]'); } catch(e) {}
+  hist.push({ date: today, streak: 0, fall: true });
+  if (hist.length > 365) hist = hist.slice(-365);
+  safeSetItem('niyyah_regard_streak_history', JSON.stringify(hist));
+  showToast('Hier est fini. Aujourd\u2019hui recommence.');
+  openCureRegard();
+}
+window._regardStreakFall = _regardStreakFall;
+
 function _regardStreakTap() {
   var today = new Date().toISOString().slice(0, 10);
   var lastCheck = safeGetItem('niyyah_regard_streak_last_check') || '';
