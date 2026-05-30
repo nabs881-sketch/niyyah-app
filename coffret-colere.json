@@ -1,0 +1,385 @@
+{
+  "id": "coffret-colere",
+  "version": "1.0",
+  "date_creation": "2026-05-30",
+  "titre_ar": "خَزَائِن الْحِلْم",
+  "titre_translit": "Khazâ'in al-Hilm",
+  "titre_fr": "Les coffres de la longanimité",
+  "sous_titre": "Pour aller plus loin avec le Coran, la Sunna, et la tradition sur la colère.",
+
+  "introduction": "Ce coffret rassemble les références fondamentales de l'islam sur la colère (ghadab), la maîtrise de soi (hilm) et le contrôle de la rage (kazm al-ghayz). Il complète la cure 7 jours.\n\nTu peux le consulter à tout moment. Pas pour le mémoriser d'un coup. Pour qu'il soit là quand tu en auras besoin.",
+
+  "sections": [
+    {
+      "id": "versets",
+      "titre_ar": "الآيات",
+      "titre_translit": "Al-Âyât",
+      "titre_fr": "Versets du Coran",
+      "description": "Les versets centraux sur la colère, la patience et la maîtrise des passions.",
+      "entrees": [
+        {
+          "id": "imran_134",
+          "ar": "وَالْكَاظِمِينَ الْغَيْظَ وَالْعَافِينَ عَنِ النَّاسِ ۗ وَاللَّهُ يُحِبُّ الْمُحْسِنِينَ",
+          "translit": "Wa-l-kâdhimîna-l-ghayza wa-l-'âfîna 'ani-n-nâs. Wa-llâhu yuhibbu-l-muhsinîn",
+          "fr": "Ceux qui contiennent leur rage et qui pardonnent aux gens — Allah aime les bienfaisants.",
+          "source": "Âl 'Imrân 3:134",
+          "quand": "Le verset central de la maîtrise de la colère. Kazm al-ghayz — contenir la rage — est nommé comme qualité des bienfaisants aimés d'Allah."
+        },
+        {
+          "id": "shura_37",
+          "ar": "وَالَّذِينَ يَجْتَنِبُونَ كَبَائِرَ الْإِثْمِ وَالْفَوَاحِشَ وَإِذَا مَا غَضِبُوا هُمْ يَغْفِرُونَ",
+          "translit": "Wa-lladhîna yajtanibûna kabâ'ira-l-ithmi wa-l-fawâhish, wa idhâ mâ ghadibû hum yaghfirûn",
+          "fr": "Ceux qui évitent les grands péchés et les turpitudes, et qui, lorsqu'ils sont en colère, pardonnent.",
+          "source": "Ach-Chûrâ 42:37",
+          "quand": "Allah décrit ici une qualité essentielle du croyant : pardonner DANS la colère, pas après. C'est l'inverse du réflexe humain habituel."
+        },
+        {
+          "id": "araf_199",
+          "ar": "خُذِ الْعَفْوَ وَأْمُرْ بِالْعُرْفِ وَأَعْرِضْ عَنِ الْجَاهِلِينَ",
+          "translit": "Khudhi-l-'afwa wa'mur bi-l-'urfi wa-a'rid 'ani-l-jâhilîn",
+          "fr": "Prends ce qui t'est facile à accepter, ordonne ce qui est convenable, et éloigne-toi des ignorants.",
+          "source": "Al-A'râf 7:199",
+          "quand": "Un verset triple pour la colère : pardonner, commander le bien, et S'ÉLOIGNER des ignorants au lieu d'engager le combat."
+        },
+        {
+          "id": "fussilat_34_35",
+          "ar": "ادْفَعْ بِالَّتِي هِيَ أَحْسَنُ فَإِذَا الَّذِي بَيْنَكَ وَبَيْنَهُ عَدَاوَةٌ كَأَنَّهُ وَلِيٌّ حَمِيمٌ ۝ وَمَا يُلَقَّاهَا إِلَّا الَّذِينَ صَبَرُوا وَمَا يُلَقَّاهَا إِلَّا ذُو حَظٍّ عَظِيمٍ",
+          "translit": "Idfa' bi-llatî hiya ahsan, fa-idhâ-lladhî baynaka wa baynahu 'adâwatun ka-annahu waliyyun hamîm. Wa mâ yulaqqâhâ illâ-lladhîna sabarû, wa mâ yulaqqâhâ illâ dhû hadhdhin 'adhîm.",
+          "fr": "Repousse [le mal] par ce qui est meilleur — et voilà que celui qu'une inimitié séparait de toi se tient comme un ami chaleureux. Mais cela n'est donné qu'à ceux qui endurent, et qu'à celui qui possède une part immense.",
+          "source": "Fussilat 41:34-35",
+          "quand": "Le verset alchimique de la colère : transformer l'inimitié en amitié par la qualité supérieure de la réponse. Allah lie explicitement ce pouvoir au sabr."
+        },
+        {
+          "id": "baqara_153",
+          "ar": "يَا أَيُّهَا الَّذِينَ آمَنُوا اسْتَعِينُوا بِالصَّبْرِ وَالصَّلَاةِ ۚ إِنَّ اللَّهَ مَعَ الصَّابِرِينَ",
+          "translit": "Yâ ayyuha-lladhîna âmanû, ista'înû bi-s-sabri wa-s-salâh. Inna-llâha ma'a-s-sâbirîn",
+          "fr": "Ô vous qui croyez, cherchez secours dans la patience et la prière. Allah est avec ceux qui sont endurants.",
+          "source": "Al-Baqara 2:153",
+          "quand": "Quand la colère monte, deux outils : sabr (contenir) et salât (se tourner vers Lui). C'est la prescription coranique de base."
+        },
+        {
+          "id": "araf_200_201",
+          "ar": "وَإِمَّا يَنزَغَنَّكَ مِنَ الشَّيْطَانِ نَزْغٌ فَاسْتَعِذْ بِاللَّهِ ۚ إِنَّهُ سَمِيعٌ عَلِيمٌ ۝ إِنَّ الَّذِينَ اتَّقَوْا إِذَا مَسَّهُمْ طَائِفٌ مِّنَ الشَّيْطَانِ تَذَكَّرُوا فَإِذَا هُم مُّبْصِرُونَ",
+          "translit": "Wa immâ yanzaghannaka mina-sh-shaytâni nazghun fa-sta'idh bi-llâh. Innahu samî'un 'alîm. Inna-lladhîna-ttaqaw idhâ massahum tâ'ifun mina-sh-shaytâni tadhakkarû fa-idhâ hum mubsirûn.",
+          "fr": "Et si une incitation du diable t'irrite, cherche refuge auprès d'Allah. Il est Audient et Omniscient. Ceux qui craignent Allah, lorsqu'une suggestion du diable les touche, se rappellent — et voilà qu'ils voient clair.",
+          "source": "Al-A'râf 7:200-201",
+          "quand": "Allah identifie ici la colère comme une 'incitation' (nazgh) du shaytân, et donne la solution exacte : isti'âdha (chercher refuge) + tadhakkur (se rappeler)."
+        },
+        {
+          "id": "qalam_4",
+          "ar": "وَإِنَّكَ لَعَلَىٰ خُلُقٍ عَظِيمٍ",
+          "translit": "Wa innaka la-'alâ khuluqin 'adhîm",
+          "fr": "Et tu es certes d'une moralité éminente.",
+          "source": "Al-Qalam 68:4",
+          "quand": "Allah décrit le caractère du Prophète ﷺ — qui ne se mettait jamais en colère pour sa personne. Modèle absolu du khuluq (caractère) musulman."
+        },
+        {
+          "id": "tawba_119",
+          "ar": "يَا أَيُّهَا الَّذِينَ آمَنُوا اتَّقُوا اللَّهَ وَكُونُوا مَعَ الصَّادِقِينَ",
+          "translit": "Yâ ayyuha-lladhîna âmanû-ttaqu-llâha wa kûnû ma'a-s-sâdiqîn",
+          "fr": "Ô vous qui croyez, craignez Allah et soyez avec les véridiques.",
+          "source": "At-Tawba 9:119",
+          "quand": "La taqwa (crainte révérencielle) est l'antidote profond à la colère réactive. Verset à méditer pour ancrer l'éthique du croyant face à la provocation."
+        },
+        {
+          "id": "muminun_96",
+          "ar": "ادْفَعْ بِالَّتِي هِيَ أَحْسَنُ السَّيِّئَةَ ۚ نَحْنُ أَعْلَمُ بِمَا يَصِفُونَ",
+          "translit": "Idfa' bi-llatî hiya ahsanu-s-sayyi'a. Nahnu a'lamu bi-mâ yasifûn.",
+          "fr": "Repousse le mal par ce qui est meilleur. Nous savons mieux ce qu'ils décrivent.",
+          "source": "Al-Mu'minûn 23:96",
+          "quand": "Verset jumeau de Fussilat 41:34. Allah te demande de répondre au mal par le bien — pas par neutralité, mais par excellence."
+        },
+        {
+          "id": "rad_22",
+          "ar": "وَيَدْرَءُونَ بِالْحَسَنَةِ السَّيِّئَةَ أُولَٰئِكَ لَهُمْ عُقْبَى الدَّارِ",
+          "translit": "Wa yadra'ûna bi-l-hasanati-s-sayyi'a. Ulâ'ika lahum 'uqba-d-dâr",
+          "fr": "Et ils repoussent le mal par le bien. Ceux-là auront le séjour final.",
+          "source": "Ar-Ra'd 13:22",
+          "quand": "Promesse divine pour ceux qui répondent au mal par le bien : le 'séjour final' (jannat 'adn). La colère contrôlée a une récompense immense."
+        }
+      ]
+    },
+
+    {
+      "id": "hadiths",
+      "titre_ar": "الأحاديث",
+      "titre_translit": "Al-Ahâdîth",
+      "titre_fr": "Paroles du Prophète ﷺ",
+      "description": "Les hadiths centraux sur la colère et sa maîtrise.",
+      "entrees": [
+        {
+          "id": "fort_lutteur",
+          "ar": "لَيْسَ الشَّدِيدُ بِالصُّرَعَةِ ، إِنَّمَا الشَّدِيدُ الَّذِي يَمْلِكُ نَفْسَهُ عِنْدَ الْغَضَبِ",
+          "translit": "Laysa-sh-shadîdu bi-s-sura'a. Inna-mâ-sh-shadîdu-lladhî yamliku nafsahu 'inda-l-ghadab.",
+          "fr": "Le fort n'est pas celui qui terrasse les hommes. Le fort, c'est celui qui se maîtrise lui-même dans la colère.",
+          "source": "Bukhârî 6114, Muslim 2609",
+          "quand": "La définition prophétique de la vraie force. Toute la masculinité guerrière retournée : le héros n'est pas celui qui frappe le plus fort, c'est celui qui se contient."
+        },
+        {
+          "id": "ne_te_mets_pas_en_colere",
+          "ar": "لَا تَغْضَبْ",
+          "translit": "Lâ taghdab",
+          "fr": "Ne te mets pas en colère.",
+          "source": "Bukhârî 6116, d'après Abû Hurayra",
+          "quand": "Un homme dit au Prophète ﷺ : 'Conseille-moi.' Il répond : 'Ne te mets pas en colère.' L'homme répète, le Prophète ﷺ répète. Tout le conseil prophétique tient en deux mots."
+        },
+        {
+          "id": "wudu_eteint",
+          "ar": "إِنَّ الْغَضَبَ مِنَ الشَّيْطَانِ ، وَإِنَّ الشَّيْطَانَ خُلِقَ مِنَ النَّارِ ، وَإِنَّمَا تُطْفَأُ النَّارُ بِالْمَاءِ ، فَإِذَا غَضِبَ أَحَدُكُمْ فَلْيَتَوَضَّأْ",
+          "translit": "Inna-l-ghadaba mina-sh-shaytân, wa inna-sh-shaytâna khuliqa mina-n-nâr. Wa inna-mâ tutfa'u-n-nâru bi-l-mâ'. Fa-idhâ ghadiba ahadukum fa-l-yatawadda'.",
+          "fr": "La colère vient du diable, et le diable a été créé du feu. Or, le feu ne s'éteint que par l'eau. Donc, quand l'un de vous se met en colère, qu'il fasse les ablutions.",
+          "source": "Abû Dâwûd 4784, Ahmad 17985 — hasan",
+          "quand": "Hadith fondateur de la pratique du wudû comme antidote à la colère. Théologie + physiologie : l'eau froide active le nerf vague et le wudû ramène à la présence."
+        },
+        {
+          "id": "changer_position",
+          "ar": "إِذَا غَضِبَ أَحَدُكُمْ وَهُوَ قَائِمٌ فَلْيَجْلِسْ ، فَإِنْ ذَهَبَ عَنْهُ الْغَضَبُ وَإِلَّا فَلْيَضْطَجِعْ",
+          "translit": "Idhâ ghadiba ahadukum wa huwa qâ'imun fa-l-yajlis. Fa-in dhahaba 'anhu-l-ghadabu wa illâ fa-l-yadtaji'.",
+          "fr": "Si l'un de vous est en colère alors qu'il est debout, qu'il s'asseye. Si la colère ne le quitte pas, qu'il s'allonge.",
+          "source": "Abû Dâwûd 4782, Ahmad 21348 — sahîh",
+          "quand": "Hadith pratique sur le changement de posture pour briser le cycle de la colère. La biomécanique sert la régulation émotionnelle — prescrit 1400 ans avant les neurosciences."
+        },
+        {
+          "id": "isti_adha",
+          "ar": "إِنِّي لَأَعْلَمُ كَلِمَةً لَوْ قَالَهَا لَذَهَبَ عَنْهُ مَا يَجِدُ ، لَوْ قَالَ : أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ ، ذَهَبَ عَنْهُ مَا يَجِدُ",
+          "translit": "Innî la-a'lamu kalimatan law qâlahâ la-dhahaba 'anhu mâ yajid. Law qâla : A'ûdhu bi-llâhi mina-sh-shaytâni-r-rajîm — dhahaba 'anhu mâ yajid.",
+          "fr": "Je connais une parole qui, s'il la disait, ferait disparaître ce qu'il ressent. S'il disait : 'Je cherche refuge auprès d'Allah contre le diable maudit' — ce qu'il ressent s'en irait.",
+          "source": "Bukhârî 3282, Muslim 2610",
+          "quand": "Le Prophète ﷺ vit deux hommes s'insulter, l'un rouge de colère. Il dit ces mots — la prescription : isti'âdha (refuge auprès d'Allah). C'est la première ligne de défense."
+        },
+        {
+          "id": "silence",
+          "ar": "إِذَا غَضِبَ أَحَدُكُمْ فَلْيَسْكُتْ",
+          "translit": "Idhâ ghadiba ahadukum fa-l-yaskut",
+          "fr": "Si l'un de vous se met en colère, qu'il se taise.",
+          "source": "Ahmad 2136, d'après Ibn 'Abbâs — sahîh",
+          "quand": "Trois mots, une stratégie : se taire. Les paroles de colère sont les plus regrettées. Le silence ne 'refoule' pas — il préserve."
+        },
+        {
+          "id": "promesse_houris",
+          "ar": "مَنْ كَظَمَ غَيْظًا وَهُوَ قَادِرٌ عَلَى أَنْ يُنْفِذَهُ ، دَعَاهُ اللَّهُ عَلَى رُءُوسِ الْخَلَائِقِ يَوْمَ الْقِيَامَةِ حَتَّى يُخَيِّرَهُ مِنَ الْحُورِ مَا شَاءَ",
+          "translit": "Man kadhama ghaydhan wa huwa qâdirun 'alâ an yunfidhah, da'âhu-llâhu 'alâ ru'ûsi-l-khalâ'iqi yawma-l-qiyâma hattâ yukhayyirahu mina-l-hûri mâ shâ'.",
+          "fr": "Celui qui contient sa rage alors qu'il était capable de l'exécuter, Allah l'appellera au-dessus des têtes des créatures le Jour de la Résurrection, jusqu'à ce qu'Il lui fasse choisir parmi les Houris celle qu'il veut.",
+          "source": "Abû Dâwûd 4777, Tirmidhî 2021 — hasan",
+          "quand": "Promesse spectaculaire pour celui qui contient sa colère. La récompense est proportionnelle à la difficulté : être capable de frapper et ne pas frapper."
+        },
+        {
+          "id": "interdiction_juger",
+          "ar": "لَا يَقْضِي الْقَاضِي بَيْنَ اثْنَيْنِ وَهُوَ غَضْبَانُ",
+          "translit": "Lâ yaqdî-l-qâdî bayna-thnayni wa huwa ghadbân",
+          "fr": "Le juge ne doit pas trancher entre deux parties alors qu'il est en colère.",
+          "source": "Bukhârî 7158, Muslim 1717",
+          "quand": "Hadith juridique mais d'application universelle : aucune décision sous colère. Pas de message, pas d'appel, pas de décision familiale. L'esprit en colère ne voit pas juste."
+        },
+        {
+          "id": "veritable_hilm",
+          "ar": "إِنَّ فِيكَ خَصْلَتَيْنِ يُحِبُّهُمَا اللَّهُ : الْحِلْمُ وَالأَنَاةُ",
+          "translit": "Inna fîka khaslatayni yuhibbuhuma-llâh : al-hilmu wa-l-anâa",
+          "fr": "Il y a en toi deux qualités qu'Allah aime : la longanimité et la mesure.",
+          "source": "Muslim 17, d'après Ibn 'Abbâs",
+          "quand": "Le Prophète ﷺ à Achajj 'Abd al-Qays. Deux vertus pour la colère : hilm (douceur dans la force) et anâa (lenteur dans la réaction). Allah les aime explicitement."
+        }
+      ]
+    },
+
+    {
+      "id": "duas",
+      "titre_ar": "الأدعية",
+      "titre_translit": "Al-Ad'iya",
+      "titre_fr": "Du'âs à mémoriser",
+      "description": "Invocations prophétiques contre la colère et pour la maîtrise de soi.",
+      "entrees": [
+        {
+          "id": "isti_adha_courte",
+          "ar": "أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ",
+          "translit": "A'ûdhu bi-llâhi mina-sh-shaytâni-r-rajîm",
+          "fr": "Je cherche refuge auprès d'Allah contre le diable lapidé.",
+          "source": "Bukhârî 3282, Muslim 2610 (et An-Nahl 16:98)",
+          "quand": "Au premier signe de colère qui monte. La parole prescrite par le Prophète ﷺ lui-même comme antidote immédiat."
+        },
+        {
+          "id": "dua_khuluq",
+          "ar": "اللَّهُمَّ كَمَا حَسَّنْتَ خَلْقِي فَحَسِّنْ خُلُقِي",
+          "translit": "Allâhumma kamâ hassanta khalqî fa-hassin khuluqî",
+          "fr": "Ô Allah, comme Tu as embelli ma création, embellis aussi mon caractère.",
+          "source": "Ahmad 24437, Ibn Hibbân — sahîh",
+          "quand": "Du'â du Prophète ﷺ devant le miroir. À dire en se regardant le matin, comme une demande quotidienne de transformation intérieure."
+        },
+        {
+          "id": "dua_qalb",
+          "ar": "يَا مُقَلِّبَ الْقُلُوبِ ، ثَبِّتْ قَلْبِي عَلَى دِينِكَ",
+          "translit": "Yâ muqalliba-l-qulûb, thabbit qalbî 'alâ dînik",
+          "fr": "Ô Toi qui retournes les cœurs, affermis mon cœur sur Ta religion.",
+          "source": "Tirmidhî 2140 — hasan",
+          "quand": "Quand le cœur s'agite (la colère est un mouvement du cœur). À répéter régulièrement, en particulier dans les conflits relationnels."
+        },
+        {
+          "id": "dua_hidayah",
+          "ar": "اللَّهُمَّ اهْدِنِي وَسَدِّدْنِي",
+          "translit": "Allâhumma-hdinî wa saddidnî",
+          "fr": "Ô Allah, guide-moi et rectifie-moi.",
+          "source": "Muslim 2725, d'après 'Alî",
+          "quand": "Court, à répéter quand on sent l'impulsion de réagir mal. La rectification (tasdîd) est exactement ce que la colère détruit."
+        },
+        {
+          "id": "dua_ridha",
+          "ar": "اللَّهُمَّ أَسْأَلُكَ الرِّضَا بَعْدَ الْقَضَاءِ",
+          "translit": "Allâhumma as'aluka-r-ridâ ba'da-l-qadâ'",
+          "fr": "Ô Allah, je Te demande l'agrément après le décret.",
+          "source": "Nasâ'î 1305, Ahmad 18325 — sahîh",
+          "quand": "Quand tu es en colère contre ce qui s'est passé (ta'akhkhur). Le ridâ (agrément) est l'antidote à la révolte intérieure contre le décret."
+        }
+      ]
+    },
+
+    {
+      "id": "lexique",
+      "titre_ar": "المُفْرَدَات",
+      "titre_translit": "Al-Mufradât",
+      "titre_fr": "Le vocabulaire de la colère",
+      "description": "Les mots arabes qui distinguent les différents visages de la colère et de sa maîtrise.",
+      "entrees": [
+        {
+          "id": "ghadab",
+          "ar": "غَضَب",
+          "translit": "Ghadab",
+          "definition": "La colère — terme général. Mouvement du cœur en réaction à une provocation, montant comme une flamme."
+        },
+        {
+          "id": "ghayz",
+          "ar": "غَيْظ",
+          "translit": "Ghayz",
+          "definition": "La rage intérieure non encore exprimée. État qui précède l'éclat. C'est elle qu'on doit kazm — contenir (Coran 3:134)."
+        },
+        {
+          "id": "kazm",
+          "ar": "كَظْم",
+          "translit": "Kazm",
+          "definition": "L'acte de contenir, de réprimer activement (kazm al-ghayz). Pas la suppression — la maîtrise consciente. Vertu coranique."
+        },
+        {
+          "id": "hilm",
+          "ar": "حِلْم",
+          "translit": "Hilm",
+          "definition": "La longanimité, la douceur dans la force. Caractère stable de celui qui ne s'emporte pas facilement, par maturité — pas par faiblesse."
+        },
+        {
+          "id": "anaa",
+          "ar": "أَنَاة",
+          "translit": "Anâa",
+          "definition": "La lenteur réfléchie dans la réaction. Le délai entre stimulus et réponse. Allah aime cette vertu (hadith Muslim 17)."
+        },
+        {
+          "id": "sabr",
+          "ar": "صَبْر",
+          "translit": "Sabr",
+          "definition": "L'endurance, la patience active. Inclut la maîtrise de soi dans la colère (sabr 'an al-ghadab) — l'une des trois formes de sabr selon Ibn al-Qayyim."
+        },
+        {
+          "id": "afw",
+          "ar": "عَفْو",
+          "translit": "'Afw",
+          "definition": "Le pardon — choisir de ne pas exercer un droit légitime de réparation. Forme supérieure à kazm : on contient ET on pardonne."
+        },
+        {
+          "id": "ihsan",
+          "ar": "إِحْسَان",
+          "translit": "Ihsân",
+          "definition": "L'excellence morale — répondre au mal par le bien (Coran 41:34). Forme suprême : kazm + 'afw + bonté active envers l'offenseur."
+        },
+        {
+          "id": "intiqam",
+          "ar": "اِنْتِقَام",
+          "translit": "Intiqâm",
+          "definition": "La vengeance — exercice du droit de représailles. Légitime mais déconseillée pour soi-même (le Prophète ﷺ ne se vengeait jamais pour sa personne)."
+        },
+        {
+          "id": "haqd",
+          "ar": "حِقْد",
+          "translit": "Hiqd",
+          "definition": "La rancune tenace, la colère devenue habitude. Considérée comme maladie du cœur (marad al-qalb) par Ghazâlî."
+        },
+        {
+          "id": "hasad",
+          "ar": "حَسَد",
+          "translit": "Hasad",
+          "definition": "La jalousie destructrice — vouloir que l'autre perde ce qu'il a. Souvent racine cachée de colères répétitives."
+        },
+        {
+          "id": "shahwa",
+          "ar": "شَهْوَة",
+          "translit": "Shahwa",
+          "definition": "Le désir / la passion — l'une des deux forces du nafs (avec ghadab). Tout le travail spirituel équilibre ces deux puissances."
+        },
+        {
+          "id": "nafs_lawwama",
+          "ar": "نَفْس لَوَّامَة",
+          "translit": "Nafs lawwâma",
+          "definition": "L'âme qui se blâme — état où l'on regrette ses emportements et se reprend (Coran 75:2). Étape intermédiaire vers la nafs mutma'inna."
+        },
+        {
+          "id": "nafs_mutmainna",
+          "ar": "نَفْس مُطْمَئِنَّة",
+          "translit": "Nafs mutma'inna",
+          "definition": "L'âme apaisée (Coran 89:27). État où la colère ne soulève plus le cœur — non par anesthésie, mais par paix profonde."
+        },
+        {
+          "id": "muroua",
+          "ar": "مُرُوءَة",
+          "translit": "Muru'a",
+          "definition": "La dignité chevaleresque, la noblesse de caractère. Inclut le refus de s'abaisser dans l'emportement — préserver son honneur en gardant la maîtrise."
+        }
+      ]
+    },
+
+    {
+      "id": "savants",
+      "titre_ar": "العُلَمَاء",
+      "titre_translit": "Al-'Ulamâ'",
+      "titre_fr": "Pour aller plus loin",
+      "description": "Les savants qui ont écrit sur la colère et son traitement spirituel.",
+      "entrees": [
+        {
+          "id": "ghazali",
+          "nom": "Abû Hâmid al-Ghazâlî",
+          "dates": "1058-1111",
+          "oeuvre": "Ihyâ' 'Ulûm ad-Dîn, livre 'Le traitement de la colère, de la rancune et de l'envie' (Kitâb dhamm al-ghadab wa-l-hiqd wa-l-hasad)",
+          "apport": "Référence absolue sur la colère en islam. Ghazâlî distingue ghadab comme force naturelle nécessaire (sans elle, pas de courage ni de jihad), et son excès comme maladie. Il prescrit 4 traitements : (1) connaître les hadiths de la colère, (2) craindre la colère d'Allah, (3) penser à la honte des conséquences, (4) considérer la laideur de l'homme en colère."
+        },
+        {
+          "id": "ibn_qayyim",
+          "nom": "Ibn al-Qayyim al-Jawziyya",
+          "dates": "1292-1350",
+          "oeuvre": "Madârij as-Sâlikîn et Al-Fawâ'id",
+          "apport": "Disciple d'Ibn Taymiyya. A développé la doctrine des trois sabr : sabr sur les actes d'obéissance, sabr contre les péchés, et sabr contre les décrets douloureux. Il situe la maîtrise de la colère dans le 2e et 3e type. Pour lui, le tasdîd (rectification) du caractère est aussi important que les actes rituels."
+        },
+        {
+          "id": "muhasibi",
+          "nom": "Al-Hârith al-Muhâsibî",
+          "dates": "781-857",
+          "oeuvre": "Ar-Ri'âya li-huqûq Allâh (Le respect des droits d'Allah)",
+          "apport": "Maître du tasawwuf classique de Bagdad. Son ouvrage majeur est l'un des premiers à proposer une méthode systématique de muhâsaba (examen de l'âme), incluant l'observation patiente des montées de colère. Il enseigne à reconnaître les déclencheurs (asbâb al-ghadab) avant qu'ils ne deviennent action."
+        },
+        {
+          "id": "ibn_hazm",
+          "nom": "Ibn Hazm al-Andalusî",
+          "dates": "994-1064",
+          "oeuvre": "Al-Akhlâq wa-s-Siyar (Caractères et conduites)",
+          "apport": "Théologien et juriste de Cordoue. Son traité de morale aborde la colère du point de vue de l'akhlâq (caractère social), distinguant la colère utile (contre l'injustice) et la colère ego-centrée (sur soi-même). Influence majeure sur la culture éthique d'al-Andalus."
+        }
+      ]
+    }
+  ],
+
+  "metadata": {
+    "entrees_total": 39,
+    "versets": 10,
+    "hadiths": 9,
+    "duas": 5,
+    "lexique": 15,
+    "savants": 4,
+    "note": "Toutes les références doivent être validées avec les éditions critiques (Sunnah.com pour les hadiths, Tafsîr Ibn Kathîr et al-Sa'dî pour les versets, éditions Dâr al-Ma'rifa pour Ghazâlî, etc.) avant intégration production.",
+    "style": "Cohérent avec coffret-anxiete.json : 5 sections (versets, hadiths, du'âs, lexique, savants), même structure d'entrée, ton sobre, calligraphies en doré #C8A84A.",
+    "audit_theologique_requis": "Validation imam francophone avant production publique."
+  }
+}
