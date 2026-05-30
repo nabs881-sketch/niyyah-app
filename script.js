@@ -5532,6 +5532,32 @@ _outilAnxieteRenderers.double_slider = function(o, c) {
   return html;
 };
 
+// 3.14 — champ_avec_amorce_obligatoire
+_outilAnxieteRenderers.champ_avec_amorce_obligatoire = function(o, c) {
+  var champ = o.champ || {};
+  var sk = champ.stockage || 'cure_anxiete_amorce';
+  var saved = safeGetItem(sk) || '';
+  var amId = '_am_' + o.id;
+  var validated = safeGetItem(sk + '_done') === '1';
+  var html = '';
+  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
+  // Amorce + field
+  html += '<div style="border:1px solid ' + c + '22;border-radius:14px;padding:16px;margin-bottom:16px;">';
+  html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.8);line-height:1.8;">'
+    + escapeHtml(o.amorce_obligatoire || '') + ' '
+    + '<input type="text" id="' + amId + '_input" value="' + escapeHtml(saved) + '" placeholder="' + escapeHtml(champ.placeholder || '...') + '" oninput="safeSetItem(\'' + sk + '\',this.value)" style="background:none;border:none;border-bottom:1px solid ' + c + '44;color:#E5E0DC;font-family:var(--serif);font-size:15px;font-style:normal;padding:2px 4px;width:100%;max-width:280px;outline:none;">'
+    + '</div>';
+  html += '</div>';
+  if (!validated) {
+    html += '<button onclick="safeSetItem(\'' + sk + '_done\',\'1\');_cureAnxieteWizardRender()" style="display:block;width:100%;max-width:260px;margin:0 auto 12px;padding:12px;border-radius:10px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">J\u2019ai \u00e9crit</button>';
+  }
+  if (validated && o.instruction_finale) {
+    html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.75);text-align:center;line-height:1.6;margin-bottom:12px;font-style:italic;">' + escapeHtml(o.instruction_finale) + '</div>';
+  }
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
+  return html;
+};
+
 // 3.13 — tri_radio_apprentissage
 _outilAnxieteRenderers.tri_radio_apprentissage = function(o, c) {
   var exemples = o.exemples || [];
