@@ -5532,6 +5532,41 @@ _outilAnxieteRenderers.double_slider = function(o, c) {
   return html;
 };
 
+// 3.11 — choix_unique_avec_engagement
+_outilAnxieteRenderers.choix_unique_avec_engagement = function(o, c) {
+  var opts = o.options || [];
+  var sk = o.stockage || 'cure_anxiete_engage';
+  var saved = {}; try { saved = JSON.parse(safeGetItem(sk) || '{}'); } catch(e) {}
+  var selectedId = saved.choix || '';
+  var customVal = saved.custom || '';
+  var engId = '_eng_' + o.id;
+  var html = '';
+  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
+  html += '<div style="display:flex;flex-direction:column;gap:8px;max-width:340px;margin:0 auto 16px;">';
+  opts.forEach(function(opt) {
+    var sel = selectedId === opt.id;
+    html += '<button onclick="_engSelect(\'' + engId + '\',\'' + sk + '\',\'' + opt.id + '\',' + (opt.champ_libre ? 'true' : 'false') + ')" style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:10px;border:1px solid ' + (sel ? c : 'rgba(200,168,75,0.15)') + ';background:' + (sel ? c + '12' : 'rgba(200,168,75,0.03)') + ';cursor:pointer;text-align:left;">'
+      + '<div style="width:16px;height:16px;border-radius:50%;border:2px solid ' + c + ';flex-shrink:0;background:' + (sel ? c : 'transparent') + ';"></div>'
+      + '<span style="font-family:var(--serif);font-size:14px;color:' + (sel ? '#C8A84A' : 'rgba(240,234,214,0.8)') + ';">' + escapeHtml(opt.label) + '</span>'
+      + '</button>';
+    if (opt.champ_libre) {
+      html += '<div id="' + engId + '_custom" style="display:' + (sel ? 'block' : 'none') + ';margin-left:28px;">'
+        + '<input type="text" value="' + escapeHtml(customVal) + '" placeholder="' + escapeHtml(opt.placeholder || '...') + '" oninput="var _s={};try{_s=JSON.parse(safeGetItem(\'' + sk + '\')||\'{}\')}catch(e){}_s.custom=this.value;safeSetItem(\'' + sk + '\',JSON.stringify(_s))" style="width:100%;box-sizing:border-box;padding:10px 12px;border-radius:8px;border:1px solid ' + c + '33;background:rgba(200,168,75,0.04);color:#E5E0DC;font-family:var(--serif);font-size:14px;outline:none;">'
+        + '</div>';
+    }
+  });
+  html += '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;">' + escapeHtml(o.note_spi) + '</div>';
+  return html;
+};
+function _engSelect(engId, sk, optId, hasCustom) {
+  var saved = {}; try { saved = JSON.parse(safeGetItem(sk) || '{}'); } catch(e) {}
+  saved.choix = optId;
+  safeSetItem(sk, JSON.stringify(saved));
+  _cureAnxieteWizardRender();
+}
+window._engSelect = _engSelect;
+
 // 3.10 — drag_and_drop_2_colonnes
 _outilAnxieteRenderers.drag_and_drop_2_colonnes = function(o, c) {
   var cols = o.colonnes || [];
