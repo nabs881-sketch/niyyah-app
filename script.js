@@ -5812,7 +5812,7 @@ function _dscUpdate(dscId) {
   var data = _getCureData();
   if (!data) return;
   var o = null;
-  Object.keys(data.jours).forEach(function(jk) { data.jours[jk].outils.forEach(function(t) { if (('_dsc_' + t.id) === dscId) o = t; }); });
+  Object.keys(data.jours).forEach(function(jk) { (data.jours[jk].bloc_3_outils_psy||data.jours[jk].outils||[]).forEach(function(t) { if (('_dsc_' + t.id) === dscId) o = t; }); });
   if (o) diagEl.innerHTML = _dscDiagText(o, dscId);
 }
 window._dscUpdate = _dscUpdate;
@@ -6003,7 +6003,7 @@ function _triAnswer(triId, sk, qIdx, answer, correct) {
   if (fbEl) {
     var data = _getCureData();
     var o = null;
-    Object.keys(data.jours).forEach(function(jk) { data.jours[jk].outils.forEach(function(t) { if (t.id === triId.replace('_tri_', '')) o = t; }); });
+    Object.keys(data.jours).forEach(function(jk) { (data.jours[jk].bloc_3_outils_psy||data.jours[jk].outils||[]).forEach(function(t) { if (t.id === triId.replace('_tri_', '')) o = t; }); });
     var fbText = '';
     if (isCorrect) {
       fbText = answer === 'fait' ? (o && o.feedback_correct_fait || 'Correct.') : (o && o.feedback_correct_interpretation || 'Correct.');
@@ -6385,7 +6385,7 @@ function _dnd3Classify(dndId, sk, pIdx, catId, nb) {
   if (!data) return;
   var o = null;
   Object.keys(data.jours).forEach(function(jk) {
-    data.jours[jk].outils.forEach(function(t) { if (t.id === dndId.replace('_dnd3_', '')) o = t; });
+    (data.jours[jk].bloc_3_outils_psy||data.jours[jk].outils||[]).forEach(function(t) { if (t.id === dndId.replace('_dnd3_', '')) o = t; });
   });
   if (!o) return;
   _cureWizardState.step = _cureWizardState.step; // keep current
@@ -6436,7 +6436,7 @@ function _seqFieldUpdate(seqId, sk, etapeIdx, fieldIdx, value) {
   if (!data) return;
   var o = null;
   Object.keys(data.jours).forEach(function(jk) {
-    data.jours[jk].outils.forEach(function(t) { if (t.id === seqId.replace('_seq_', '')) o = t; });
+    (data.jours[jk].bloc_3_outils_psy||data.jours[jk].outils||[]).forEach(function(t) { if (t.id === seqId.replace('_seq_', '')) o = t; });
   });
   if (!o) return;
   var el = document.getElementById(seqId);
@@ -6569,7 +6569,8 @@ function _cbDynUpdate(outilId, optId, checked, sk, msgId) {
   if (!data) return;
   var o = null;
   Object.keys(data.jours).forEach(function(jk) {
-    data.jours[jk].outils.forEach(function(t) { if (t.id === outilId) o = t; });
+    var outils = data.jours[jk].bloc_3_outils_psy || data.jours[jk].outils || [];
+    outils.forEach(function(t) { if (t.id === outilId) o = t; });
   });
   if (!o) return;
   var el = document.getElementById(msgId);
