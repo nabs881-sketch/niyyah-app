@@ -1,0 +1,1064 @@
+{
+  "id": "cure-arrogance-cycle1",
+  "cycle": 1,
+  "version": "1.0",
+  "date_creation": "2026-05-30",
+  "porte": "arrogance",
+  "principes_editoriaux": {
+    "ton": "Bobin / McCarthy / Ghazâlî — sobriété contemplative",
+    "anti_gamification": "Pas de score, pas de streak imposé, pas de pression",
+    "duree_par_jour": "10 à 13 minutes (5 blocs)",
+    "approche": "Méthode ghazâlienne (Ihyâ' XXIX, Kitâb dhamm al-kibr wa-l-'ujb) enrichie : verset central + sage classique + outils CBT/ACT/CFT + dhikr quantifié + pratique corporelle. Ratio cible : 60-65% islamique / 35-40% psy structurant.",
+    "structure_jour": "5 blocs : Ouverture spirituelle → Sagesse traditionnelle → Outils psy → Dhikr quantifié → Pratique corporelle.",
+    "specificite": "Cure traitant l'orgueil (kibr) et l'auto-admiration ('ujb). Suit la structure de Ghazâlî : identifier les 7 causes, la racine ('ujb), connaître sa bassesse, accepter la vérité (batar al-haqq), cesser le mépris (ghamt an-nâs), connaître la grandeur d'Allah, et la servitude comme remède. Genre-neutre. Anti-honte, centrée sur le tawâdu'."
+  },
+  "jours": {
+    "j1": {
+      "numero": 1,
+      "station_ar": "التَّشْخِيص",
+      "station_translitteration": "At-Tashkhîs",
+      "station_fr": "Le Diagnostic",
+      "titre_jour": "De quoi suis-je fier ?",
+      "image_fond": "j1.webp",
+      "duree_estimee_min": 11,
+      "duree_estimee_max": 13,
+      "bloc_1_ouverture_spirituelle": {
+        "type": "verset_central",
+        "titre_bloc": "Le verset du jour",
+        "verset": {
+          "reference": "Luqmân 31:18",
+          "ar": "وَلَا تُصَعِّرْ خَدَّكَ لِلنَّاسِ وَلَا تَمْشِ فِي الْأَرْضِ مَرَحًا ۖ إِنَّ اللَّهَ لَا يُحِبُّ كُلَّ مُخْتَالٍ فَخُورٍ",
+          "translit": "Wa lâ tusa'ir khaddaka li-n-nâsi wa lâ tamshi fi-l-ardi maraha. Inna-llâha lâ yuhibbu kulla mukhtâlin fakhûr.",
+          "fr": "Ne détourne pas ton visage des gens par mépris, et ne marche pas sur la terre avec insolence : Allah n'aime pas l'arrogant plein de gloriole."
+        },
+        "contexte_revelation": "Verset de la sourate Luqmân : les conseils d'un père sage à son fils. Après le tawhîd et la prière, il met en garde contre l'orgueil — signe que la purification du cœur est au cœur de l'éducation.",
+        "sens_pour_aujourdhui": "Remarque : Allah commence par le visage — la joue qu'on détourne. Avant que le cœur n'avoue son orgueil, le corps le trahit déjà : un menton qui se lève, un regard qui glisse sur l'autre sans le voir. Aujourd'hui, on ne juge personne. On vient juste se regarder, sans complaisance.",
+        "sources_tafsir": [
+          "Tafsîr Ibn Kathîr, sur Luqmân 31:18",
+          "Tafsîr al-Sa'dî"
+        ]
+      },
+      "bloc_2_sagesse": {
+        "type": "parole_de_sage",
+        "titre_bloc": "Parole de Ghazâlî sur l'orgueil caché",
+        "parole": {
+          "texte": "Sache que l'orgueil est de tous les voiles le plus épais entre le serviteur et son Seigneur. Le plus dangereux est celui que l'homme ne voit pas en lui-même : il se croit humble alors qu'il est plein de lui. Le premier remède est de tenir devant son âme un miroir sans pitié, et de chercher d'abord de quoi, précisément, il se croit grand.",
+          "auteur": "Abû Hâmid al-Ghazâlî",
+          "dates_auteur": "1058-1111",
+          "oeuvre": "Ihyâ' 'Ulûm ad-Dîn, Livre XXIX — Kitâb dhamm al-kibr wa-l-'ujb",
+          "siecle": "XIe-XIIe siècle",
+          "note": "Ghazâlî consacre tout le Livre XXIX à l'orgueil (kibr) et l'auto-admiration ('ujb). Il enseigne que l'orgueil se cache dans sept demeures, et qu'on ne soigne bien que ce qu'on a d'abord nommé."
+        }
+      },
+      "introduction_avant_outils": "Tu as lu le verset. Tu as entendu Ghazâlî.\n\nMaintenant — le miroir. Sans honte. Avec lucidité.",
+      "bloc_3_outils_psy": [
+        {
+          "id": "depistage_sept_fiertes",
+          "ordre": 1,
+          "type": "checkboxes_multiple",
+          "titre": "Dépistage des 7 fiertés",
+          "introduction": "Al-Ghazâlî enseigne que l'orgueil se cache dans sept demeures. Personne ne les habite toutes — mais presque chacun en défend une sans le savoir. Lis sans te juger. Coche ce qui est vrai aujourd'hui, pas ce que tu voudrais être.",
+          "consigne": "Coche tout ce qui te concerne. Plusieurs réponses possibles.",
+          "options": [
+            {
+              "id": "savoir",
+              "label_fr": "Le savoir — je me sens au-dessus de ceux qui en savent moins ; je coupe la parole pour montrer que je sais"
+            },
+            {
+              "id": "adoration",
+              "label_fr": "L'adoration — je me compare dans la pratique : « je prie mieux, je jeûne plus que lui »"
+            },
+            {
+              "id": "origine",
+              "label_fr": "L'origine — je tire ma valeur de ma famille, mon pays, mon nom"
+            },
+            {
+              "id": "beaute",
+              "label_fr": "La beauté — mon apparence me place au-dessus ; je méprise en silence ceux que je trouve moins"
+            },
+            {
+              "id": "richesse",
+              "label_fr": "La richesse — mon regard sur quelqu'un change selon ce qu'il possède"
+            },
+            {
+              "id": "force",
+              "label_fr": "La force / les capacités — je toise les plus faibles ; mes compétences me grandissent à mes yeux"
+            },
+            {
+              "id": "statut",
+              "label_fr": "Le statut / les soutiens — mes relations, mon influence, mes abonnés me rendent grand"
+            }
+          ],
+          "stockage": "cure_arrogance_j1_fiertes",
+          "note_psy": "Self-monitoring + repérage du schéma de grandiosité (Schema Therapy, Jeffrey Young). On ne traite bien que ce qu'on a nommé.",
+          "note_spi": "Les sept asbâb al-kibr d'al-Ghazâlî (Ihyâ' XXIX). Muhâsaba initiale — l'examen lucide sans condamnation."
+        },
+        {
+          "id": "alerte_orgueil_religieux",
+          "ordre": 2,
+          "type": "radio_unique",
+          "titre": "La plus dangereuse",
+          "introduction": "La fierté de l'adoration (« je prie mieux que lui ») est la plus dangereuse de toutes, parce qu'elle se déguise en piété. C'est l'orgueil qui prie.",
+          "consigne": "Parmi tes fiertés cochées, laquelle te serre le plus la poitrine ? C'est ta forteresse — cette semaine, c'est elle qu'on visite.",
+          "options": [
+            {
+              "id": "savoir",
+              "label_fr": "Le savoir"
+            },
+            {
+              "id": "adoration",
+              "label_fr": "L'adoration"
+            },
+            {
+              "id": "origine",
+              "label_fr": "L'origine"
+            },
+            {
+              "id": "beaute",
+              "label_fr": "La beauté"
+            },
+            {
+              "id": "richesse",
+              "label_fr": "La richesse"
+            },
+            {
+              "id": "force",
+              "label_fr": "La force / les capacités"
+            },
+            {
+              "id": "statut",
+              "label_fr": "Le statut / les soutiens"
+            }
+          ],
+          "stockage": "cure_arrogance_j1_forteresse",
+          "note_psy": "Identification du déclencheur dominant (case formulation, CBT/Schema). Concentrer l'effort sur le foyer principal.",
+          "note_spi": "Ghazâlî : commencer par la cause qui domine en soi avant les autres."
+        }
+      ],
+      "bloc_4_dhikr_quantifie": {
+        "type": "prescription_dhikr",
+        "titre_bloc": "Le dhikr du jour",
+        "introduction": "L'orgueil que tu n'as pas vu, Lui le voit. On demande pardon pour le connu et l'inconnu.",
+        "dhikr": {
+          "ar": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ أَنْ أُشْرِكَ بِكَ وَأَنَا أَعْلَمُ، وَأَسْتَغْفِرُكَ لِمَا لَا أَعْلَمُ",
+          "translit": "Allâhumma innî a'ûdhu bika an ushrika bika wa anâ a'lam, wa astaghfiruka li-mâ lâ a'lam",
+          "fr": "Ô Allah, je cherche refuge en Toi contre le fait de T'associer quoi que ce soit sciemment, et je Te demande pardon pour ce que je ne sais pas."
+        },
+        "quantite": 3,
+        "moment_recommande": "Maintenant, puis après Fajr demain.",
+        "duree_estimee_sec": 120,
+        "justification": {
+          "texte": "Le Prophète ﷺ a enseigné cette parole comme protection contre le shirk caché, « plus discret que le pas d'une fourmi ». L'orgueil en est une porte.",
+          "source": "Ahmad — hasan (à confirmer à l'imam)"
+        },
+        "comment_pratiquer": "Lentement, en pesant chaque mot. Puis enchaîne, sans compter : Astaghfirullâh… autant de fois que le souffle le porte.",
+        "stockage": "cure_arrogance_j1_dhikr_done"
+      },
+      "bloc_5_pratique_corporelle": {
+        "type": "geste_corporel",
+        "titre_bloc": "Le front sur la terre",
+        "introduction": "Le verset parlait du visage qu'on lève. Aujourd'hui, tu le poses.",
+        "instructions": [
+          "Choisis un moment, seul.",
+          "Mets-toi en sujûd, et reste-y un souffle de plus que d'habitude.",
+          "La partie la plus haute de toi — ton front, là où loge ta fierté — contre la plus basse : la terre, dont tu es fait.",
+          "Dis intérieurement : « Subhâna Rabbiya-l-A'lâ » (Gloire à mon Seigneur, le Très-Haut).",
+          "Si tu le peux : aujourd'hui, assieds-toi plus bas que ton réflexe — par terre pour un repas, au sol pour lire."
+        ],
+        "phrase_a_repeter": {
+          "ar": "سُبْحَانَ رَبِّيَ الأَعْلَى",
+          "translit": "Subhâna Rabbiya-l-A'lâ",
+          "fr": "Gloire à mon Seigneur, le Très-Haut"
+        },
+        "duree_min": 8,
+        "justification": {
+          "texte": "Le tasbîh de la prosternation : c'est en mettant le front au sol que le serviteur déclare la hauteur de son Seigneur — et sa propre bassesse.",
+          "source": "Sunna de la prosternation (Muslim 772)"
+        },
+        "note": "Ghazâlî voit dans la prosternation le remède corporel de l'orgueil : le corps apprend la modestie avant le cœur.",
+        "stockage": "cure_arrogance_j1_corps_done"
+      },
+      "phrase_ancre": "Je ne soigne que ce que je nomme.",
+      "cloture": {
+        "texte": "Tu as lu le verset.\nTu as entendu Ghazâlî.\nTu as tenu le miroir des sept fiertés.\nTu connais ta forteresse.\nTu as demandé pardon pour l'orgueil que tu ne vois pas.\nTu as posé ton front sur la terre.\n\nDemain — la racine : le 'ujb.",
+        "bouton": "J'ai vu. À demain.",
+        "stockage": "cure_arrogance = { current_day: 1, completed_j1: true }"
+      },
+      "murmure_sortie_sanctuaire": "Voir son orgueil, c'est déjà n'être plus tout à fait son esclave.",
+      "metadata_jour": {
+        "versets_cites": [
+          "Luqmân 31:18 (central)"
+        ],
+        "hadiths_cites": [
+          "Ahmad (refuge contre le shirk caché)",
+          "Muslim 772 (tasbîh sujûd)"
+        ],
+        "savants_cites": [
+          "Al-Ghazâlî"
+        ],
+        "dhikr_quantifie": "Refuge contre le shirk caché × 3 + Astaghfirullâh",
+        "pratique_corporelle": "Sujûd prolongé + s'asseoir bas",
+        "outils_psy": 2
+      }
+    },
+    "j2": {
+      "numero": 2,
+      "station_ar": "العُجْب",
+      "station_translitteration": "Al-'Ujb",
+      "station_fr": "La Racine",
+      "titre_jour": "La graine, avant le fruit",
+      "image_fond": "j2.webp",
+      "duree_estimee_min": 11,
+      "duree_estimee_max": 12,
+      "bloc_1_ouverture_spirituelle": {
+        "type": "verset_central",
+        "titre_bloc": "Le verset du jour",
+        "verset": {
+          "reference": "An-Najm 53:32",
+          "ar": "فَلَا تُزَكُّوا أَنفُسَكُمْ ۖ هُوَ أَعْلَمُ بِمَنِ اتَّقَىٰ",
+          "translit": "Fa-lâ tuzakkû anfusakum. Huwa a'lamu bi-mani-ttaqâ.",
+          "fr": "Ne vous déclarez donc pas purs : c'est Lui qui connaît le mieux celui qui Le craint."
+        },
+        "contexte_revelation": "Sourate an-Najm. Allah ferme la porte à l'auto-louange juste après avoir évoqué ceux qui évitent les grands péchés : même le pieux ne doit pas se décerner un certificat de pureté.",
+        "sens_pour_aujourdhui": "Hier on a cherché de quoi on est fier. Aujourd'hui on descend à la racine. Ghazâlî l'appelle le 'ujb : non pas mépriser les autres, mais s'admirer soi-même. Le kibr a besoin de quelqu'un à regarder de haut ; le 'ujb, lui, fleurit seul, dans le noir. C'est la graine. Tout le reste en sort.",
+        "sources_tafsir": [
+          "Tafsîr Ibn Kathîr, sur An-Najm 53:32",
+          "Tafsîr al-Sa'dî"
+        ]
+      },
+      "bloc_2_sagesse": {
+        "type": "parole_de_sage",
+        "titre_bloc": "Parole de Matraf ibn 'Abdillâh",
+        "parole": {
+          "texte": "Que je dorme toute la nuit et me réveille plein de regret m'est plus cher que de la passer debout en prière et me réveiller plein d'admiration de moi-même.",
+          "auteur": "Matraf ibn 'Abdillâh ash-Shikhkhîr",
+          "dates_auteur": "m. ~95 H",
+          "oeuvre": "Rapporté chez Ibn al-Mubârak (Az-Zuhd) et Abû Nu'aym (Hilyat al-awliyâ')",
+          "siecle": "Ier siècle de l'hégire (tâbi'î)",
+          "note": "Il préfère le péché suivi du regret à l'adoration suivie du 'ujb — parce que le regret rapproche d'Allah, et l'auto-admiration éloigne, en faisant croire qu'on est déjà arrivé. Formulation à confirmer à l'imam."
+        }
+      },
+      "introduction_avant_outils": "Le Coran décrit ceux « dont l'effort se perd dans cette vie alors qu'ils croient bien faire » (Kahf 18:104). Le 'ujb, c'est exactement ça : se croire en règle.\n\nDeux questions — à écrire, pas à penser.",
+      "bloc_3_outils_psy": [
+        {
+          "id": "question_difficile",
+          "ordre": 1,
+          "type": "champ_texte_long",
+          "titre": "La question difficile",
+          "consigne": "Pense à une qualité dont tu es fier (savoir, réussite, pratique, beauté). Si on te la retirait demain — d'un coup — qu'aurais-tu peur de ressentir ? Qui serais-tu sans elle ?",
+          "amorce": "Si on me retirait cela, j'aurais peur de",
+          "champ": {
+            "placeholder": "...",
+            "max_caracteres": 600,
+            "stockage": "cure_arrogance_j2_peur"
+          },
+          "note_psy": "Compassion-Focused Therapy (Paul Gilbert) : la grandiosité défend souvent contre une honte ou une peur de n'être rien. Cadre anti-honte — pas « tu es brisé », mais « tu n'as pas besoin d'être supérieur pour valoir ».",
+          "note_spi": "Ta valeur devant Allah n'a jamais été dans la qualité, mais dans le fait qu'Il t'a créé et te regarde.",
+          "introduction": "Reste avec ce que ça remue. Souvent, sous la fierté, il y a une peur."
+        },
+        {
+          "id": "le_retour",
+          "ordre": 2,
+          "type": "champ_texte_long",
+          "titre": "Le retour",
+          "consigne": "Écris d'abord : « J'ai fait [tel bien]. » Puis, juste en dessous : « Ce bien était une ni'ma — Allah me l'a permis, et Il pouvait me l'enlever. »",
+          "amorce": "J'ai fait",
+          "champ": {
+            "placeholder": "...",
+            "max_caracteres": 600,
+            "stockage": "cure_arrogance_j2_retour"
+          },
+          "note_psy": "Défusion (ACT, Steven Hayes) : séparer l'acte du soi. « J'ai fait » n'est pas « je suis ». Tu n'es pas le bien que tu fais ; tu es celui à qui Il a permis de le faire.",
+          "note_spi": "Attribuer le bien à Allah et non à soi : le remède même du 'ujb chez al-Ghazâlî."
+        }
+      ],
+      "bloc_4_dhikr_quantifie": {
+        "type": "prescription_dhikr",
+        "titre_bloc": "Le dhikr du jour",
+        "introduction": "Le Coran donne la formule exacte pour celui qui contemple ce qu'il possède. À l'homme fier de son jardin, on reproche de ne pas avoir dit :",
+        "dhikr": {
+          "ar": "مَا شَاءَ اللَّهُ لَا قُوَّةَ إِلَّا بِاللَّهِ",
+          "translit": "Mâ shâ'a-llâh, lâ quwwata illâ bi-llâh",
+          "fr": "Ce qu'Allah a voulu ! Il n'est de force qu'en Allah."
+        },
+        "quantite": 33,
+        "moment_recommande": "Aujourd'hui, sur chaque chose qui te gonfle un peu la poitrine — un compliment, une réussite, un talent.",
+        "duree_estimee_sec": 180,
+        "justification": {
+          "texte": "C'est la parole que le Coran prescrit au croyant entrant dans son jardin, pour qu'il n'attribue pas sa réussite à lui-même.",
+          "source": "D'après le Coran, Al-Kahf 18:39"
+        },
+        "comment_pratiquer": "Pose ces mots sur le bien comme on rend un cadeau à celui qui l'a donné. Sans précipitation.",
+        "stockage": "cure_arrogance_j2_dhikr_done"
+      },
+      "bloc_5_pratique_corporelle": {
+        "type": "geste_corporel",
+        "titre_bloc": "La main sur la poitrine",
+        "introduction": "Un geste, toute la journée, pour marquer l'instant où le cadeau repart vers son Donateur.",
+        "instructions": [
+          "Chaque fois que tu sens monter la petite chaleur de l'auto-admiration —",
+          "pose la main sur ta poitrine,",
+          "et dis tout bas : « Mâ shâ'a-llâh, lâ quwwata illâ bi-llâh. »",
+          "La main qui se pose, c'est le corps qui dit : ceci n'est pas de moi."
+        ],
+        "phrase_a_repeter": {
+          "ar": "مَا شَاءَ اللَّهُ لَا قُوَّةَ إِلَّا بِاللَّهِ",
+          "translit": "Mâ shâ'a-llâh, lâ quwwata illâ bi-llâh",
+          "fr": "Ce qu'Allah a voulu ! Il n'est de force qu'en Allah"
+        },
+        "duree_min": 5,
+        "justification": {
+          "texte": "Ancrer un mot par un geste corporel renforce l'habitude (activation comportementale) — et chaque répétition rend le bien à sa source.",
+          "source": "Geste de soutien à la parole coranique (Al-Kahf 18:39)"
+        },
+        "note": "Le 'ujb se nourrit dans le silence intérieur ; un geste visible, même petit, l'interrompt.",
+        "stockage": "cure_arrogance_j2_corps_done"
+      },
+      "phrase_ancre": "Ce qui est bon en moi ne vient pas de moi.",
+      "cloture": {
+        "texte": "Tu as vu la racine : t'admirer toi-même.\nTu as nommé la peur sous la fierté.\nTu as rendu le bien à son Donateur.\n\nDemain — d'où tu viens.",
+        "bouton": "J'ai compris. À demain.",
+        "stockage": "cure_arrogance = { current_day: 2, completed_j2: true }"
+      },
+      "murmure_sortie_sanctuaire": "L'admiration de soi est la seule prière qui éloigne.",
+      "metadata_jour": {
+        "versets_cites": [
+          "An-Najm 53:32 (central)",
+          "Al-Kahf 18:39",
+          "Al-Kahf 18:104"
+        ],
+        "hadiths_cites": [],
+        "savants_cites": [
+          "Matraf ibn 'Abdillâh",
+          "Al-Ghazâlî"
+        ],
+        "dhikr_quantifie": "Mâ shâ'a-llâh lâ quwwata illâ bi-llâh × 33",
+        "pratique_corporelle": "Main sur la poitrine + formule",
+        "outils_psy": 2
+      }
+    },
+    "j3": {
+      "numero": 3,
+      "station_ar": "الأَصْل",
+      "station_translitteration": "Al-Asl",
+      "station_fr": "L'Origine",
+      "titre_jour": "D'une goutte à un souffle",
+      "image_fond": "j3.webp",
+      "duree_estimee_min": 11,
+      "duree_estimee_max": 13,
+      "bloc_1_ouverture_spirituelle": {
+        "type": "verset_central",
+        "titre_bloc": "Le verset du jour",
+        "verset": {
+          "reference": "Al-Mursalât 77:20",
+          "ar": "أَلَمْ نَخْلُقكُّم مِّن مَّاءٍ مَّهِينٍ",
+          "translit": "Alam nakhluqkum min mâ'in mahîn",
+          "fr": "Ne vous avons-Nous pas créés d'une eau vile ?"
+        },
+        "contexte_revelation": "Sourate al-Mursalât, à la tonalité eschatologique. Allah rappelle à l'homme orgueilleux le point de départ qu'il préfère oublier : une goutte sans valeur.",
+        "sens_pour_aujourdhui": "Voici le remède le plus ancien contre l'orgueil : se rappeler d'où l'on vient. Pas une métaphore — le fait nu. Avant les titres, les talents, les abonnés : une goutte. Rien dont on puisse tirer gloire. Ghazâlî dit que celui qui connaît vraiment son origine ne peut plus se gonfler.",
+        "sources_tafsir": [
+          "Tafsîr Ibn Kathîr, sur Al-Mursalât 77:20",
+          "Tafsîr al-Sa'dî"
+        ]
+      },
+      "bloc_2_sagesse": {
+        "type": "parole_de_sage",
+        "titre_bloc": "Parole d'al-Hasan al-Basrî",
+        "parole": {
+          "texte": "Fils d'Adam, tu n'es que des jours : chaque jour qui passe emporte une part de toi.",
+          "auteur": "Al-Hasan al-Basrî",
+          "dates_auteur": "642-728",
+          "oeuvre": "Rapporté dans les recueils de zuhd (formulation à confirmer)",
+          "siecle": "Ier-IIe siècle de l'hégire",
+          "note": "Le grand prédicateur de Basra ramène l'homme à sa vérité de passage. Tu n'es pas un monument, tu es un passage. À soumettre à l'imam pour la formulation."
+        }
+      },
+      "introduction_avant_outils": "Ghazâlî propose de se regarder en trois temps. Prends-les lentement, les yeux fermés si tu peux.",
+      "bloc_3_outils_psy": [
+        {
+          "id": "troisieme_regard",
+          "ordre": 1,
+          "type": "champ_texte_long",
+          "titre": "Le troisième regard",
+          "consigne": "Imagine le jour où d'autres laveront ton corps. Ce jour-là, combien pèseront tes titres, ton savoir affiché, le nombre de gens qui te suivaient ? Et surtout : qu'aurais-tu voulu emporter à la place ?",
+          "amorce": "Ce jour-là, j'aurais voulu emporter",
+          "champ": {
+            "placeholder": "...",
+            "max_caracteres": 600,
+            "stockage": "cure_arrogance_j3_emporter"
+          },
+          "note_psy": "Saillance de la mortalité (Terror Management Theory) : la conscience de la finitude, vécue avec sens et non comme menace, réduit la quête de statut et réaligne sur les valeurs.",
+          "note_spi": "Le Coran répond : « les œuvres durables et bonnes valent mieux » (Kahf 18:46). Ce qui reste n'est pas ton rang, mais ce que tu as envoyé devant toi.",
+          "introduction": "Regard 1 — derrière : tu étais une goutte, puis un caillot, sans nom, sans force.\nRegard 2 — maintenant : ce corps t'est prêté ; une seule nuit suffit à tout reprendre.\nRegard 3 — devant : écris ci-dessous."
+        }
+      ],
+      "bloc_4_dhikr_quantifie": {
+        "type": "prescription_dhikr",
+        "titre_bloc": "Le dhikr du jour",
+        "introduction": "Tout ce dont tu es fier Lui appartient, et tout Lui revient.",
+        "dhikr": {
+          "ar": "إِنَّا لِلَّهِ وَإِنَّا إِلَيْهِ رَاجِعُونَ",
+          "translit": "Innâ li-llâhi wa innâ ilayhi râji'ûn",
+          "fr": "Nous appartenons à Allah, et c'est à Lui que nous retournons."
+        },
+        "quantite": 33,
+        "moment_recommande": "Posément, en pensant que chaque chose dont tu es fier retourne à Lui.",
+        "duree_estimee_sec": 180,
+        "justification": {
+          "texte": "Parole que le croyant prononce devant ce qui le dépasse et lui échappe : un rappel d'appartenance et de retour.",
+          "source": "Al-Baqara 2:156"
+        },
+        "comment_pratiquer": "Lentement. Laisse le mot « retournons » défaire un peu de ta prétention à posséder.",
+        "stockage": "cure_arrogance_j3_dhikr_done"
+      },
+      "bloc_5_pratique_corporelle": {
+        "type": "geste_corporel",
+        "titre_bloc": "Le pouls emprunté",
+        "introduction": "Une minute pour sentir la mesure exacte de l'homme.",
+        "instructions": [
+          "Pose deux doigts sur ton poignet, et trouve ton pouls.",
+          "Ce battement — tu ne l'as pas lancé, et tu ne peux pas garantir le prochain.",
+          "Toute ta supériorité repose sur une pulsation que tu ne possèdes pas.",
+          "Reste là une minute. Sens aussi ton souffle, que tu ne commandes pas.",
+          "D'une goutte vile à un souffle emprunté : voilà la mesure de l'homme."
+        ],
+        "phrase_a_repeter": {
+          "ar": "إِنَّا لِلَّهِ وَإِنَّا إِلَيْهِ رَاجِعُونَ",
+          "translit": "Innâ li-llâhi wa innâ ilayhi râji'ûn",
+          "fr": "Nous appartenons à Allah, et c'est à Lui que nous retournons"
+        },
+        "duree_min": 5,
+        "justification": {
+          "texte": "Ancrer la conscience de la finitude dans une sensation corporelle simple (le pouls) la rend réelle, sans dramatisation.",
+          "source": "Méditation du tafakkur sur la création de l'homme (cf. Al-Mu'minûn 23:12-14)"
+        },
+        "note": "Ton volontairement apaisé : la mort comme égalisatrice qui libère du jeu épuisant de la supériorité — jamais morbide.",
+        "stockage": "cure_arrogance_j3_corps_done"
+      },
+      "phrase_ancre": "Une goutte, hier. Un souffle emprunté, aujourd'hui.",
+      "cloture": {
+        "texte": "Tu t'es regardé derrière, maintenant, devant.\nTu as senti ton pouls, que tu ne possèdes pas.\nTu sais ce que tu voudrais emporter.\n\nDemain — accepter la vérité.",
+        "bouton": "Je me souviens. À demain.",
+        "stockage": "cure_arrogance = { current_day: 3, completed_j3: true }"
+      },
+      "murmure_sortie_sanctuaire": "Qui connaît son origine ne se gonfle plus.",
+      "metadata_jour": {
+        "versets_cites": [
+          "Al-Mursalât 77:20 (central)",
+          "Al-Kahf 18:46",
+          "Al-Baqara 2:156"
+        ],
+        "hadiths_cites": [],
+        "savants_cites": [
+          "Al-Hasan al-Basrî",
+          "Al-Ghazâlî"
+        ],
+        "dhikr_quantifie": "Innâ li-llâhi wa innâ ilayhi râji'ûn × 33",
+        "pratique_corporelle": "Sentir son pouls et son souffle 1 min",
+        "outils_psy": 1
+      }
+    },
+    "j4": {
+      "numero": 4,
+      "station_ar": "قَبُولُ الحَقّ",
+      "station_translitteration": "Qabûl al-Haqq",
+      "station_fr": "Accepter la vérité",
+      "titre_jour": "Les trois mots les plus durs",
+      "image_fond": "j4.webp",
+      "duree_estimee_min": 11,
+      "duree_estimee_max": 12,
+      "bloc_1_ouverture_spirituelle": {
+        "type": "verset_central",
+        "titre_bloc": "Le verset du jour",
+        "verset": {
+          "reference": "Al-Baqara 2:206",
+          "ar": "وَإِذَا قِيلَ لَهُ اتَّقِ اللَّهَ أَخَذَتْهُ الْعِزَّةُ بِالْإِثْمِ ۚ فَحَسْبُهُ جَهَنَّمُ",
+          "translit": "Wa idhâ qîla lahu-ttaqi-llâha akhadhat-hu-l-'izzatu bi-l-ithm. Fa-hasbuhu jahannam.",
+          "fr": "Et quand on lui dit : « Crains Allah », l'orgueil le pousse encore au péché. L'Enfer lui suffit."
+        },
+        "contexte_revelation": "Sourate al-Baqara : portrait de l'homme qui refuse la correction. Recevoir un rappel devrait l'arrêter ; son orgueil le fait s'enfoncer.",
+        "sens_pour_aujourdhui": "Le Prophète ﷺ a défini l'orgueil en deux mots : batar al-haqq, rejeter la vérité (Muslim 91). Pas l'ignorer : la refuser, alors même qu'on la voit — parce que la reconnaître voudrait dire « j'avais tort ». Et pour l'orgueilleux, ces deux mots font plus mal qu'une blessure.",
+        "sources_tafsir": [
+          "Tafsîr Ibn Kathîr, sur Al-Baqara 2:206",
+          "Tafsîr al-Sa'dî"
+        ]
+      },
+      "bloc_2_sagesse": {
+        "type": "parole_de_sage",
+        "titre_bloc": "Le calife qui s'est trompé",
+        "parole": {
+          "texte": "On rapporte qu'ʿUmar ibn al-Khattâb, alors qu'il était calife, fut repris en public par une femme sur une question. Il s'arrêta et dit : « Une femme a eu raison, et ʿUmar s'est trompé. »",
+          "auteur": "Au sujet d'ʿUmar ibn al-Khattâb",
+          "dates_auteur": "m. 644",
+          "oeuvre": "Récit célèbre (lié à l'épisode de la dot) — chaîne débattue, à confirmer",
+          "siecle": "Ier siècle de l'hégire",
+          "note": "Le deuxième homme de l'islam après le Prophète ﷺ, devant tous, donnant raison à une inconnue : la force réelle n'est pas d'avoir toujours raison, mais de ne pas avoir besoin d'avoir raison. Formulation à soumettre à l'imam ; alternative prête si rejet."
+        }
+      },
+      "introduction_avant_outils": "Quatre temps. Vis-les, ne les survole pas.",
+      "bloc_3_outils_psy": [
+        {
+          "id": "la_correction",
+          "ordre": 1,
+          "type": "champ_texte_long",
+          "titre": "L'expérience de la correction",
+          "consigne": "Rappelle un moment récent où quelqu'un t'a contredit ou dit que tu avais tort. Qu'est-ce qui s'est passé dans ton corps à cet instant ? Une chaleur ? La poitrine serrée ? L'envie de gagner ? Nomme-le précisément.",
+          "amorce": "Quand on m'a contredit, dans mon corps j'ai senti",
+          "champ": {
+            "placeholder": "...",
+            "max_caracteres": 600,
+            "stockage": "cure_arrogance_j4_chaleur"
+          },
+          "note_psy": "Dissonance cognitive & backfire effect (TCC) : avouer une erreur menace l'image de soi, d'où la résistance physique. Nommer la réaction la désamorce.",
+          "note_spi": "Cette chaleur n'est pas la vérité qui se défend, c'est ton image. Avoir tort n'est pas perdre — c'est la seule porte par laquelle on apprend."
+        },
+        {
+          "id": "trois_mots",
+          "ordre": 2,
+          "type": "radio_unique",
+          "titre": "Les trois mots",
+          "introduction": "Cette semaine, quand la chaleur reviendra, au lieu de défendre, essaie l'une de ces phrases. Dis-la à voix haute maintenant, juste pour sentir sa forme dans ta bouche.",
+          "consigne": "Laquelle vas-tu t'entraîner à dire ?",
+          "options": [
+            {
+              "id": "tu_as_raison",
+              "label_fr": "« Tu as raison. »"
+            },
+            {
+              "id": "pas_pense",
+              "label_fr": "« Je n'avais pas pensé à ça. »"
+            },
+            {
+              "id": "je_ne_sais_pas",
+              "label_fr": "« Je ne sais pas. »"
+            }
+          ],
+          "stockage": "cure_arrogance_j4_phrase",
+          "note_psy": "Humilité intellectuelle : la capacité à dire « je ne sais pas » corrèle avec l'apprentissage et de meilleures relations. Choisir une phrase = intention d'implémentation.",
+          "note_spi": "Accepter le haqq de quiconque le porte : antidote direct au batar al-haqq (Muslim 91)."
+        }
+      ],
+      "bloc_4_dhikr_quantifie": {
+        "type": "prescription_dhikr",
+        "titre_bloc": "Le dhikr du jour",
+        "introduction": "Demande à Celui qui tient les cœurs de garder le tien ouvert à la vérité.",
+        "dhikr": {
+          "ar": "رَبَّنَا لَا تُزِغْ قُلُوبَنَا بَعْدَ إِذْ هَدَيْتَنَا وَهَبْ لَنَا مِن لَّدُنكَ رَحْمَةً",
+          "translit": "Rabbanâ lâ tuzigh qulûbanâ ba'da idh hadaytanâ wa hab lanâ min ladunka rahma",
+          "fr": "Notre Seigneur, ne laisse pas dévier nos cœurs après que Tu nous as guidés, et accorde-nous de Ta part une miséricorde."
+        },
+        "quantite": 7,
+        "moment_recommande": "Après chaque prière aujourd'hui.",
+        "duree_estimee_sec": 120,
+        "justification": {
+          "texte": "Du'â coranique de ceux qui craignent que l'orgueil ne les détourne de la vérité reçue.",
+          "source": "Âl 'Imrân 3:8"
+        },
+        "comment_pratiquer": "En la disant, pense à la dernière fois où tu as refusé une vérité parce qu'elle venait de quelqu'un que tu n'estimais pas.",
+        "stockage": "cure_arrogance_j4_dhikr_done"
+      },
+      "bloc_5_pratique_corporelle": {
+        "type": "geste_corporel",
+        "titre_bloc": "Les mains ouvertes",
+        "introduction": "Aujourd'hui, quand quelqu'un te contredit, fais une seule chose avant de répondre.",
+        "instructions": [
+          "Si tes poings se ferment, si tes bras se croisent — c'est la défense.",
+          "Déplie-les. Ouvre les paumes. Prends un souffle.",
+          "Puis seulement, tu parles. Le corps ouvert n'attaque pas : il reçoit.",
+          "Si tu oses : demande à une personne de confiance « en quoi penses-tu que je me trompe ? » et reçois sans te défendre — « merci, tu me donnes à réfléchir »."
+        ],
+        "phrase_a_repeter": {
+          "ar": "رَبِّ زِدْنِي عِلْمًا",
+          "translit": "Rabbi zidnî 'ilmâ",
+          "fr": "Mon Seigneur, augmente-moi en savoir"
+        },
+        "duree_min": 3,
+        "justification": {
+          "texte": "La posture corporelle d'ouverture (mains, bras) réduit la réactivité défensive et facilite l'accueil de l'information nouvelle.",
+          "source": "Du'â coranique (Tâ-Hâ 20:114) — qui cherche à apprendre ne se ferme pas à la correction"
+        },
+        "note": "Ouvrir les mains avant de parler : apprendre au corps à accueillir la vérité au lieu de lui fermer la porte.",
+        "stockage": "cure_arrogance_j4_corps_done"
+      },
+      "phrase_ancre": "Avoir tort n'est pas perdre. C'est la porte par où l'on apprend.",
+      "cloture": {
+        "texte": "Tu as nommé la chaleur de la contradiction.\nTu as choisi tes trois mots.\nTu as appris à ouvrir les mains.\n\nDemain — cesser de mépriser les gens.",
+        "bouton": "J'accepte. À demain.",
+        "stockage": "cure_arrogance = { current_day: 4, completed_j4: true }"
+      },
+      "murmure_sortie_sanctuaire": "Celui qui peut dire « j'avais tort » est plus libre que celui qui doit toujours avoir raison.",
+      "metadata_jour": {
+        "versets_cites": [
+          "Al-Baqara 2:206 (central)",
+          "Âl 'Imrân 3:8",
+          "Tâ-Hâ 20:114"
+        ],
+        "hadiths_cites": [
+          "Muslim 91 (définition du kibr)"
+        ],
+        "savants_cites": [
+          "ʿUmar ibn al-Khattâb (récit)"
+        ],
+        "dhikr_quantifie": "Rabbanâ lâ tuzigh qulûbanâ × 7",
+        "pratique_corporelle": "Ouvrir les mains avant de répondre",
+        "outils_psy": 2
+      }
+    },
+    "j5": {
+      "numero": 5,
+      "station_ar": "حُسْنُ الظَّنّ",
+      "station_translitteration": "Husn adh-Dhann",
+      "station_fr": "Penser du bien",
+      "titre_jour": "Peut-être sont-ils meilleurs",
+      "image_fond": "j5.webp",
+      "duree_estimee_min": 11,
+      "duree_estimee_max": 13,
+      "bloc_1_ouverture_spirituelle": {
+        "type": "verset_central",
+        "titre_bloc": "Le verset du jour",
+        "verset": {
+          "reference": "Al-Hujurât 49:11",
+          "ar": "يَا أَيُّهَا الَّذِينَ آمَنُوا لَا يَسْخَرْ قَوْمٌ مِّن قَوْمٍ عَسَىٰ أَن يَكُونُوا خَيْرًا مِّنْهُمْ",
+          "translit": "Yâ ayyuha-lladhîna âmanû lâ yaskhar qawmun min qawmin 'asâ an yakûnû khayran minhum",
+          "fr": "Ô vous qui croyez ! Qu'un groupe ne se moque pas d'un autre : peut-être ces gens-là sont-ils meilleurs qu'eux."
+        },
+        "contexte_revelation": "Sourate al-Hujurât, la sourate de l'éthique communautaire. Allah interdit la moquerie, et donne la raison : tu ignores le rang réel de l'autre devant Lui.",
+        "sens_pour_aujourdhui": "Le mot à entendre, c'est « peut-être ». Tu ne sais pas. Tu vois une surface — vêtements, accent, métier, maladresse — et ton cœur prononce un verdict. Mais le classement réel, celui d'Allah, t'est totalement caché. Aujourd'hui, on désarme ce verdict. (C'est ici qu'on traite le regard-jugement et la comparaison.)",
+        "sources_tafsir": [
+          "Tafsîr Ibn Kathîr, sur Al-Hujurât 49:11",
+          "Tafsîr al-Sa'dî"
+        ]
+      },
+      "bloc_2_sagesse": {
+        "type": "parole_de_sage",
+        "titre_bloc": "Parole du Prophète ﷺ sur le mépris",
+        "parole": {
+          "texte": "Il suffit à un homme, comme mal, de mépriser son frère musulman.",
+          "auteur": "Le Prophète Muhammad ﷺ",
+          "dates_auteur": "",
+          "oeuvre": "Sahîh Muslim 2564",
+          "siecle": "Ier siècle de l'hégire",
+          "note": "« Il suffit » : pas besoin d'en faire plus. Le mépris seul, ce regard qui rabaisse en silence, suffit déjà à te charger. Dans le même hadith : « Allah ne regarde pas vos apparences ni vos biens, mais Il regarde vos cœurs et vos actes. »"
+        }
+      },
+      "introduction_avant_outils": "Pense à une personne précise que tu regardes de haut. Un collègue, un proche, un « type » de gens, quelqu'un croisé en ligne. Sois honnête, vois son visage.\n\nLe miroir d'abord : tu la juges sur l'apparence, le statut, la façon de parler — exactement ce qu'Allah ne pèse pas (Muslim 2564).",
+      "bloc_3_outils_psy": [
+        {
+          "id": "liste_a",
+          "ordre": 1,
+          "type": "champ_texte_long",
+          "titre": "Liste A — peut-être meilleure",
+          "consigne": "Écris 3 façons dont cette personne pourrait être meilleure que toi devant Allah : une sincérité cachée, une prière que personne ne voit, une patience que tu n'as pas, une bonté dont tu as été témoin.",
+          "amorce": "Elle pourrait être meilleure que moi par",
+          "champ": {
+            "placeholder": "...",
+            "max_caracteres": 600,
+            "stockage": "cure_arrogance_j5_listeA"
+          },
+          "note_psy": "Prise de perspective (perspective-taking) : envisager activement la valeur d'autrui réduit le mépris et la déshumanisation.",
+          "note_spi": "Le Coran a dit « peut-être meilleurs » (49:11) — prends ce « peut-être » au sérieux."
+        },
+        {
+          "id": "liste_b",
+          "ordre": 2,
+          "type": "champ_texte_long",
+          "titre": "Liste B — les blessures cachées",
+          "consigne": "Écris 3 luttes ou blessures qu'elle pourrait porter et que tu ne vois pas : une solitude, un parent malade, une peur, un passé lourd.",
+          "amorce": "Elle porte peut-être",
+          "champ": {
+            "placeholder": "...",
+            "max_caracteres": 600,
+            "stockage": "cure_arrogance_j5_listeB"
+          },
+          "note_psy": "Humanité commune (Kristin Neff) + comparaison sociale (Festinger) : imaginer les combats invisibles d'autrui dissout le mépris né de la comparaison.",
+          "note_spi": "Husn adh-dhann (penser du bien) n'est pas naïveté : c'est de l'exactitude sur sa propre ignorance."
+        }
+      ],
+      "bloc_4_dhikr_quantifie": {
+        "type": "prescription_dhikr",
+        "titre_bloc": "Le dhikr du jour",
+        "introduction": "Demande à Allah de retirer la rancœur et le mépris de ton cœur envers les croyants.",
+        "dhikr": {
+          "ar": "رَبَّنَا اغْفِرْ لَنَا وَلِإِخْوَانِنَا الَّذِينَ سَبَقُونَا بِالْإِيمَانِ وَلَا تَجْعَلْ فِي قُلُوبِنَا غِلًّا لِّلَّذِينَ آمَنُوا",
+          "translit": "Rabbana-ghfir lanâ wa li-ikhwânina-lladhîna sabaqûnâ bi-l-îmân wa lâ taj'al fî qulûbinâ ghillan li-lladhîna âmanû",
+          "fr": "Notre Seigneur, pardonne-nous ainsi qu'à nos frères qui nous ont précédés dans la foi, et ne mets dans nos cœurs aucune rancœur envers ceux qui ont cru."
+        },
+        "quantite": 7,
+        "moment_recommande": "Après chaque prière, en pensant à la personne que tu méprisais ce matin.",
+        "duree_estimee_sec": 150,
+        "justification": {
+          "texte": "Du'â coranique demandant explicitement la purification du cœur de tout ghill (rancœur, mépris) envers les croyants.",
+          "source": "Al-Hashr 59:10"
+        },
+        "comment_pratiquer": "Nomme intérieurement la personne de tes deux listes en disant ce du'â.",
+        "stockage": "cure_arrogance_j5_dhikr_done"
+      },
+      "bloc_5_pratique_corporelle": {
+        "type": "geste_corporel",
+        "titre_bloc": "Servir le premier",
+        "introduction": "Aujourd'hui, ton corps va contredire ton classement. Laisse-le faire ; le cœur suivra.",
+        "instructions": [
+          "Choisis une personne que ton ego range « en dessous » de toi — et sers-la.",
+          "Vraiment, avec tes mains, sans en faire une scène : porte pour celui qui porte d'habitude, sers le thé à qui tu attendrais qu'il te serve.",
+          "Et salue le premier la personne que tu ignores d'ordinaire."
+        ],
+        "phrase_a_repeter": {
+          "ar": "اللَّهُمَّ اجْعَلْنِي شَكُورًا",
+          "translit": "Allâhumma-j'alnî shakûrâ",
+          "fr": "Ô Allah, fais de moi quelqu'un de reconnaissant"
+        },
+        "duree_min": 10,
+        "justification": {
+          "texte": "Agir à l'inverse du mépris (acte de service) crée une dissonance qui rééduque l'attitude : on finit par penser comme on agit.",
+          "source": "Esprit du hadith « رُبَّ أَشْعَثَ أَغْبَرَ… لَوْ أَقْسَمَ عَلَى اللَّهِ لَأَبَرَّهُ » (Muslim 2622) — l'humble que la société repousse peut être honoré chez Allah"
+        },
+        "note": "Le Prophète ﷺ servait sa famille, mangeait avec les serviteurs : servir « plus bas » que soi est une sunna directe.",
+        "stockage": "cure_arrogance_j5_corps_done"
+      },
+      "phrase_ancre": "Je juge sur la seule chose qu'Allah ne pèse pas.",
+      "cloture": {
+        "texte": "Tu as écrit pourquoi l'autre pourrait te valoir.\nTu as imaginé ses blessures cachées.\nTu as servi, salué le premier.\n\nDemain — la grandeur d'Allah.",
+        "bouton": "Je pense mieux. À demain.",
+        "stockage": "cure_arrogance = { current_day: 5, completed_j5: true }"
+      },
+      "murmure_sortie_sanctuaire": "Le mépris est une comparaison transformée en sentence, rendue sur des apparences.",
+      "metadata_jour": {
+        "versets_cites": [
+          "Al-Hujurât 49:11 (central)",
+          "Al-Hashr 59:10"
+        ],
+        "hadiths_cites": [
+          "Muslim 2564 (mépriser son frère / Allah regarde les cœurs)",
+          "Muslim 2622 (l'humble repoussé)"
+        ],
+        "savants_cites": [],
+        "dhikr_quantifie": "Rabbana-ghfir lanâ… lâ taj'al fî qulûbinâ ghillâ × 7",
+        "pratique_corporelle": "Servir et saluer le premier",
+        "outils_psy": 2
+      }
+    },
+    "j6": {
+      "numero": 6,
+      "station_ar": "العَظَمَة",
+      "station_translitteration": "Al-'Azama",
+      "station_fr": "La Grandeur",
+      "titre_jour": "La terre dans Sa poigne",
+      "image_fond": "j6.webp",
+      "duree_estimee_min": 11,
+      "duree_estimee_max": 13,
+      "bloc_1_ouverture_spirituelle": {
+        "type": "verset_central",
+        "titre_bloc": "Le verset du jour",
+        "verset": {
+          "reference": "Az-Zumar 39:67",
+          "ar": "وَمَا قَدَرُوا اللَّهَ حَقَّ قَدْرِهِ وَالْأَرْضُ جَمِيعًا قَبْضَتُهُ يَوْمَ الْقِيَامَةِ وَالسَّمَاوَاتُ مَطْوِيَّاتٌ بِيَمِينِهِ",
+          "translit": "Wa mâ qadaru-llâha haqqa qadrihi wa-l-ardu jamî'an qabdatuhu yawma-l-qiyâmati wa-s-samâwâtu matwiyyâtun bi-yamînih",
+          "fr": "Ils n'ont pas estimé Allah à Sa juste mesure, alors que toute la terre tiendra dans Sa poigne au Jour de la Résurrection, et que les cieux seront ployés dans Sa droite."
+        },
+        "contexte_revelation": "Sourate az-Zumar. Allah se décrit dans Sa grandeur absolue, justement en réponse à ceux qui Lui associent et se croient grands.",
+        "sens_pour_aujourdhui": "Jusqu'ici on a dégonflé l'ego par en bas — l'origine, la mort, les autres. Aujourd'hui on le dégonfle par en haut. Devant cette grandeur-là, l'orgueil ne se combat même plus : il fond.",
+        "sources_tafsir": [
+          "Tafsîr Ibn Kathîr, sur Az-Zumar 39:67",
+          "Tafsîr al-Sa'dî"
+        ]
+      },
+      "bloc_2_sagesse": {
+        "type": "parole_de_sage",
+        "titre_bloc": "Hadîth qudsî sur le manteau d'Allah",
+        "parole": {
+          "texte": "Allah dit : « L'orgueil est Mon manteau et la grandeur Mon vêtement ; quiconque M'en dispute l'un ou l'autre, Je le jette dans le Feu. »",
+          "auteur": "Hadîth qudsî (parole d'Allah rapportée par le Prophète ﷺ)",
+          "dates_auteur": "",
+          "oeuvre": "Sahîh Muslim 2620 ; Abû Dâwûd 4090",
+          "siecle": "Ier siècle de l'hégire",
+          "note": "L'arrogance, c'est enfiler un vêtement qui n'appartient qu'à Allah. Un homme orgueilleux est un enfant drapé dans la robe d'un géant — et qui ne le voit pas. C'est exactement le péché d'Iblîs : « je suis meilleur que lui »."
+        }
+      },
+      "introduction_avant_outils": "Ferme les yeux. Laisse l'image du verset descendre lentement.\n\nToute la terre — chaque montagne, chaque océan, les huit milliards d'humains, tous les empires — tenant dans une seule poigne. Et les cieux ployés comme un parchemin.",
+      "bloc_3_outils_psy": [
+        {
+          "id": "place_sur_echelle",
+          "ordre": 1,
+          "type": "champ_texte_long",
+          "titre": "Sur cette échelle",
+          "consigne": "Situe sur cette échelle la chose dont tu étais fier au J1 (ta forteresse). Ne cherche pas à la rendre petite. Regarde simplement : que devient-elle ?",
+          "amorce": "Sur cette échelle, ma fierté",
+          "champ": {
+            "placeholder": "...",
+            "max_caracteres": 500,
+            "stockage": "cure_arrogance_j6_echelle"
+          },
+          "note_psy": "Recherche sur l'awe — effet « small self » (Keltner, Piff) : l'expérience du vaste réduit l'ego et l'entitlement, augmente l'humilité et le lien.",
+          "note_spi": "Le tafakkur va plus loin que l'awe séculier : ce vaste a un Visage qui te connaît, compte tes souffles, et se tourne vers toi dès que tu te tournes vers Lui. Tu es petit — et tu es aimé. C'est le remède à la fois contre l'orgueil et contre le désespoir."
+        }
+      ],
+      "bloc_4_dhikr_quantifie": {
+        "type": "prescription_dhikr",
+        "titre_bloc": "Le dhikr du jour",
+        "introduction": "Les mots que ton corps dit déjà quand il s'incline dans la prière.",
+        "dhikr": {
+          "ar": "سُبْحَانَ رَبِّيَ الْعَظِيمِ",
+          "translit": "Subhâna Rabbiya-l-'Adhîm",
+          "fr": "Gloire à mon Seigneur, le Magnifique."
+        },
+        "quantite": 33,
+        "moment_recommande": "Maintenant, puis dans chaque rukû' de tes prières aujourd'hui.",
+        "duree_estimee_sec": 150,
+        "justification": {
+          "texte": "C'est le tasbîh prescrit dans l'inclinaison (rukû') : le corps qui se courbe proclame la grandeur de Celui devant qui il se courbe.",
+          "source": "Sunna du rukû' (Abû Dâwûd 869, Tirmidhî 262)"
+        },
+        "comment_pratiquer": "Ajoute, posément : « Allâhu akbar » — non comme un slogan, mais comme une mesure : Il est plus grand. Plus grand que ce dont je suis fier.",
+        "stockage": "cure_arrogance_j6_dhikr_done"
+      },
+      "bloc_5_pratique_corporelle": {
+        "type": "geste_corporel",
+        "titre_bloc": "Sous le ciel",
+        "introduction": "Sors, ou va à une fenêtre ouverte, et regarde le ciel.",
+        "instructions": [
+          "La nuit, les étoiles ; le jour, l'étendue nue. Reste-y quelques minutes, sans téléphone.",
+          "Laisse la taille du ciel appuyer sur toi.",
+          "Puis incline-toi une fois, en rukû', lentement.",
+          "Le petit qui se ploie devant Celui qui ploie les cieux. C'est un soulagement, pas une humiliation."
+        ],
+        "phrase_a_repeter": {
+          "ar": "سُبْحَانَ رَبِّيَ الْعَظِيمِ",
+          "translit": "Subhâna Rabbiya-l-'Adhîm",
+          "fr": "Gloire à mon Seigneur, le Magnifique"
+        },
+        "duree_min": 8,
+        "justification": {
+          "texte": "L'induction d'awe (vastes étendues naturelles) produit l'effet « small self » : diminution mesurée de l'ego et de l'entitlement.",
+          "source": "Tafakkur sur la création comme voie vers la connaissance d'Allah (cf. Âl 'Imrân 3:190-191)"
+        },
+        "note": "Le tafakkur islamique évite le « froid » de l'immensité sans Dieu : le vaste mène à Celui qui le tient.",
+        "stockage": "cure_arrogance_j6_corps_done"
+      },
+      "phrase_ancre": "Allâhu akbar : Il est plus grand que mon image.",
+      "cloture": {
+        "texte": "Tu as vu la terre dans Sa poigne.\nTu as situé ta fierté sur cette échelle.\nTu t'es incliné sous le ciel.\n\nDemain — le dernier jour : le serviteur.",
+        "bouton": "Il est plus grand. À demain.",
+        "stockage": "cure_arrogance = { current_day: 6, completed_j6: true }"
+      },
+      "murmure_sortie_sanctuaire": "Devant Sa grandeur, l'orgueil ne se combat pas : il fond.",
+      "metadata_jour": {
+        "versets_cites": [
+          "Az-Zumar 39:67 (central)",
+          "Âl 'Imrân 3:190-191"
+        ],
+        "hadiths_cites": [
+          "Muslim 2620 (hadîth qudsî, le manteau)",
+          "Abû Dâwûd 869 (tasbîh rukû')"
+        ],
+        "savants_cites": [],
+        "dhikr_quantifie": "Subhâna Rabbiya-l-'Adhîm × 33 + Allâhu akbar",
+        "pratique_corporelle": "Regarder le ciel + rukû'",
+        "outils_psy": 1
+      }
+    },
+    "j7": {
+      "numero": 7,
+      "station_ar": "التَّوَاضُع",
+      "station_translitteration": "At-Tawâdu'",
+      "station_fr": "Le Serviteur",
+      "titre_jour": "Le sommet, c'est servir",
+      "image_fond": "j7.webp",
+      "duree_estimee_min": 12,
+      "duree_estimee_max": 13,
+      "bloc_1_ouverture_spirituelle": {
+        "type": "verset_central",
+        "titre_bloc": "Le verset du jour",
+        "verset": {
+          "reference": "Al-Qasas 28:83",
+          "ar": "تِلْكَ الدَّارُ الْآخِرَةُ نَجْعَلُهَا لِلَّذِينَ لَا يُرِيدُونَ عُلُوًّا فِي الْأَرْضِ وَلَا فَسَادًا ۚ وَالْعَاقِبَةُ لِلْمُتَّقِينَ",
+          "translit": "Tilka-d-dâru-l-âkhiratu naj'aluhâ li-lladhîna lâ yurîdûna 'uluwwan fi-l-ardi wa lâ fasâdâ. Wa-l-'âqibatu li-l-muttaqîn.",
+          "fr": "Cette Demeure dernière, Nous la réservons à ceux qui ne recherchent ni à s'élever sur terre, ni à y semer le désordre. Et la fin belle est pour les pieux."
+        },
+        "contexte_revelation": "Sourate al-Qasas, juste après l'histoire de Qârûn, écrasé par son orgueil et sa richesse. Le verset donne la clé inverse : le Paradis pour ceux qui ne cherchent pas à s'élever.",
+        "sens_pour_aujourdhui": "Voilà le prix exact de l'arrogance et la récompense exacte de l'humilité. Le Paradis n'est pas pour les plus brillants ni les plus suivis — il est pour ceux qui ne cherchent pas à s'élever. Toute la semaine, on a ôté un vêtement qui n'était pas le nôtre. Aujourd'hui, on choisit celui qu'on enfile à la place.",
+        "sources_tafsir": [
+          "Tafsîr Ibn Kathîr, sur Al-Qasas 28:83",
+          "Tafsîr al-Sa'dî"
+        ]
+      },
+      "bloc_2_sagesse": {
+        "type": "parole_de_sage",
+        "titre_bloc": "Parole du Prophète ﷺ sur l'élévation par l'humilité",
+        "parole": {
+          "texte": "Nul ne s'humilie pour Allah sans qu'Allah ne l'élève.",
+          "auteur": "Le Prophète Muhammad ﷺ",
+          "dates_auteur": "",
+          "oeuvre": "Sahîh Muslim 2588",
+          "siecle": "Ier siècle de l'hégire",
+          "note": "L'humilité n'est pas une descente — c'est la seule véritable montée. Lui, le plus grand des hommes, raccommodait ses sandales et s'asseyait avec les pauvres. À son instant le plus élevé — le Voyage nocturne — Allah l'a appelé « Son serviteur » (al-Isrâ' 17:1). Le sommet de l'honneur, c'est la servitude."
+        }
+      },
+      "introduction_avant_outils": "L'intégration. Tu n'as pas besoin d'être supérieur pour valoir quelque chose. Tu as la valeur de celui que le Roi a accepté à Son service.",
+      "bloc_3_outils_psy": [
+        {
+          "id": "nouvelle_identite",
+          "ordre": 1,
+          "type": "champ_texte_long",
+          "titre": "La nouvelle identité",
+          "consigne": "Écris-le, à la première personne, comme une décision : ce que tu choisis d'être à la place de « celui qui est au-dessus ».",
+          "amorce": "Ma valeur n'est pas d'être au-dessus. Elle est",
+          "champ": {
+            "placeholder": "...",
+            "max_caracteres": 400,
+            "stockage": "cure_arrogance_j7_identite"
+          },
+          "note_psy": "Identité et valeurs (ACT) : ancrer une identité de servitude choisie remplace la quête de supériorité par une source de valeur stable et non comparative.",
+          "note_spi": "À son plus haut, le Prophète ﷺ est nommé 'abd (serviteur). Le sommet de l'honneur, c'est servir."
+        },
+        {
+          "id": "engagement",
+          "ordre": 2,
+          "type": "champ_texte_long",
+          "titre": "L'engagement",
+          "consigne": "Réécris ta forteresse du J1, et choisis UNE seule habitude humble, tenable, à garder après la cure (saluer le premier ; demander « où je me trompe ? » ; servir ; dire mâ shâ'a-llâh sur chaque réussite). Et ce soir, avant de dormir : fais une bonne action que personne ne saura jamais.",
+          "amorce": "Ma forteresse était… Mon habitude à garder est…",
+          "champ": {
+            "placeholder": "...",
+            "max_caracteres": 500,
+            "stockage": "cure_arrogance_j7_engagement"
+          },
+          "note_psy": "Activation comportementale + intention d'implémentation : une seule habitude tenable se maintient mieux qu'une longue liste. Le bien anonyme rompt le besoin de public qui nourrit l'ego.",
+          "note_spi": "Cacher une bonne action protège l'ikhlâs (sincérité) et affame le 'ujb."
+        }
+      ],
+      "bloc_4_dhikr_quantifie": {
+        "type": "prescription_dhikr",
+        "titre_bloc": "Le dhikr du jour",
+        "introduction": "Les mots où le serviteur se nomme devant son Seigneur — l'ouverture du Sayyid al-istighfâr.",
+        "dhikr": {
+          "ar": "اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَٰهَ إِلَّا أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ",
+          "translit": "Allâhumma anta Rabbî, lâ ilâha illâ anta, khalaqtanî wa anâ 'abduk",
+          "fr": "Ô Allah, Tu es mon Seigneur, nulle divinité sauf Toi. Tu m'as créé et je suis Ton serviteur."
+        },
+        "quantite": 1,
+        "moment_recommande": "Matin et soir, à garder à vie (le Sayyid al-istighfâr en entier).",
+        "duree_estimee_sec": 90,
+        "justification": {
+          "texte": "Le Prophète ﷺ a nommé cette invocation « le maître des demandes de pardon » (Sayyid al-istighfâr) : qui la dit le jour avec certitude et meurt le jour entre au Paradis.",
+          "source": "Sahîh al-Bukhârî 6306"
+        },
+        "comment_pratiquer": "Apprends la formule complète si tu ne la connais pas. Le cœur du jour est dans « wa anâ 'abduk » — et je suis Ton serviteur.",
+        "stockage": "cure_arrogance_j7_dhikr_done"
+      },
+      "bloc_5_pratique_corporelle": {
+        "type": "geste_corporel",
+        "titre_bloc": "La dernière prosternation",
+        "introduction": "Termine en sujûd, une dernière fois.",
+        "instructions": [
+          "Dans cette position — la plus basse, le front contre la terre dont tu es fait —",
+          "dis-Lui en silence ton unique engagement de la semaine. Pas une liste : une promesse de serviteur, courte et vraie.",
+          "Puis relève-toi, et va accomplir ton bien secret avant la nuit.",
+          "La porte de l'Arrogance se referme non sur un homme diminué, mais remis à sa juste place : debout devant les hommes, prosterné devant Allah."
+        ],
+        "phrase_a_repeter": {
+          "ar": "وَأَنَا عَبْدُكَ",
+          "translit": "Wa anâ 'abduk",
+          "fr": "Et je suis Ton serviteur"
+        },
+        "duree_min": 8,
+        "justification": {
+          "texte": "Sceller un engagement dans une posture forte (sujûd) augmente l'adhésion comportementale (engagement incarné).",
+          "source": "Esprit du Sayyid al-istighfâr (Bukhârî 6306) et de la servitude comme plus haut maqâm"
+        },
+        "note": "Finir prosterné : le corps confirme l'identité travaillée toute la semaine — celle du 'abd, non du mukhtâl.",
+        "stockage": "cure_arrogance_j7_corps_done"
+      },
+      "phrase_ancre": "Le sommet de l'honneur, c'est d'être Son serviteur.",
+      "cloture": {
+        "texte": "Tu as choisi ton identité : serviteur, non supérieur.\nTu as gardé une habitude humble.\nTu as fait un bien que nul ne saura.\nTu t'es prosterné une dernière fois.\n\nLa porte de l'Arrogance reste ouverte derrière toi.",
+        "bouton": "Terminer la Cure",
+        "stockage": "cure_arrogance = { current_day: 7, completed_j7: true, completed: true }"
+      },
+      "murmure_sortie_sanctuaire": "Debout devant les hommes, prosterné devant Allah.",
+      "metadata_jour": {
+        "versets_cites": [
+          "Al-Qasas 28:83 (central)",
+          "Al-Isrâ' 17:1"
+        ],
+        "hadiths_cites": [
+          "Muslim 2588 (l'humilité élève)",
+          "Bukhârî 6306 (Sayyid al-istighfâr)"
+        ],
+        "savants_cites": [],
+        "dhikr_quantifie": "Sayyid al-istighfâr × 1 (matin/soir, à vie)",
+        "pratique_corporelle": "Sujûd final + bien secret",
+        "outils_psy": 2
+      }
+    }
+  },
+  "metadata": {
+    "version_actuelle": "1.0 — modèle Cure Regard v1.0 (5 blocs par jour)",
+    "outils_psy_total": 12,
+    "duree_estimee_jour_min": 10,
+    "duree_estimee_jour_max": 13,
+    "blocs_par_jour": 5,
+    "verbes_centraux": [
+      "Identifier",
+      "Démasquer",
+      "Se souvenir",
+      "Accepter",
+      "Penser du bien",
+      "Contempler",
+      "Servir"
+    ],
+    "specificite_porte": "Cure Arrogance (kibr / 'ujb). Suit fidèlement al-Ghazâlî (Ihyâ' XXIX). Traite les deux jambes du hadith de Muslim 91 (batar al-haqq + ghamt an-nâs), la racine 'ujb, et le double remède 'ilmî (origine + grandeur d'Allah) et 'amalî (humilité active).",
+    "sources_islamiques": {
+      "versets_centraux_par_jour": [
+        "J1 — Luqmân 31:18 (ne marche pas avec insolence)",
+        "J2 — An-Najm 53:32 (ne vous déclarez pas purs)",
+        "J3 — Al-Mursalât 77:20 (créés d'une eau vile)",
+        "J4 — Al-Baqara 2:206 (l'orgueil pousse au péché)",
+        "J5 — Al-Hujurât 49:11 (peut-être meilleurs)",
+        "J6 — Az-Zumar 39:67 (la terre dans Sa poigne)",
+        "J7 — Al-Qasas 28:83 (ni élévation ni désordre)"
+      ],
+      "sages_par_jour": [
+        "J1 — Al-Ghazâlî (Ihyâ' XXIX)",
+        "J2 — Matraf ibn 'Abdillâh (tâbi'î)",
+        "J3 — Al-Hasan al-Basrî",
+        "J4 — ʿUmar ibn al-Khattâb (récit)",
+        "J5 — Hadith prophétique (Muslim 2564)",
+        "J6 — Hadîth qudsî (Muslim 2620)",
+        "J7 — Hadith prophétique (Muslim 2588)"
+      ],
+      "dhikrs_quantifies": [
+        "J1 — Refuge contre le shirk caché × 3 + istighfâr",
+        "J2 — Mâ shâ'a-llâh lâ quwwata illâ bi-llâh × 33",
+        "J3 — Innâ li-llâhi wa innâ ilayhi râji'ûn × 33",
+        "J4 — Rabbanâ lâ tuzigh qulûbanâ × 7",
+        "J5 — Rabbana-ghfir lanâ… lâ taj'al ghillâ × 7",
+        "J6 — Subhâna Rabbiya-l-'Adhîm × 33 + Allâhu akbar",
+        "J7 — Sayyid al-istighfâr × 1 (matin/soir, à vie)"
+      ],
+      "pratiques_corporelles": [
+        "J1 — Sujûd prolongé + s'asseoir bas",
+        "J2 — Main sur la poitrine + mâ shâ'a-llâh",
+        "J3 — Sentir son pouls et son souffle 1 min",
+        "J4 — Ouvrir les mains avant de répondre à une contradiction",
+        "J5 — Servir et saluer le premier quelqu'un de « plus bas »",
+        "J6 — Regarder le ciel + une inclinaison (rukû')",
+        "J7 — Sujûd final + une bonne action secrète"
+      ]
+    },
+    "sources_psy": [
+      "Schema Therapy (Jeffrey Young) — repérage du schéma de grandiosité, J1",
+      "Compassion-Focused Therapy (Paul Gilbert) — la grandiosité défend contre la honte, J2",
+      "ACT (Steven Hayes) — défusion du concept de soi, action engagée, valeurs",
+      "Terror Management Theory — saillance de la mortalité, J3",
+      "CBT (Aaron Beck) — dissonance cognitive, restructuration, J4",
+      "Humilité intellectuelle (Leary, Krumrei-Mancuso) — savoir dire « je ne sais pas », J4",
+      "Comparaison sociale (Festinger) + prise de perspective + humanité commune (Neff), J5",
+      "Recherche sur l'awe — effet « small self » (Keltner, Piff), J6",
+      "Activation comportementale + intention d'implémentation, J7"
+    ],
+    "audit_theologique_requis": "Validation par imam francophone OBLIGATOIRE avant production. Vérifier en priorité les ATHARS (J2 Matraf, J3 al-Hasan al-Basrî, J4 ʿUmar « une femme a eu raison »), le grade de la du'a J1 (refuge contre le shirk caché), et toutes les gradations de hadiths. Sources arabes à confirmer.",
+    "depistage_specifique": "J1 inclut un dépistage doux des 7 fiertés (asbâb al-kibr) ; alerte explicite sur l'orgueil religieux (de la science et de l'adoration) comme le plus dangereux selon al-Ghazâlî.",
+    "images_a_generer": "7 .webp dans assets/cure-arrogance/ — famille visuelle terre/argile/élévation inversée : du sommet vide vers la terre humble, J1→J7. Cohérence avec la couleur de porte #6A1B7A."
+  }
+}

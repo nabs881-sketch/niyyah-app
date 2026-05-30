@@ -5480,7 +5480,8 @@ window.openCureAnxiete = openCureAnxiete;
 
 var _curePorteConfig = {
   anxiete: { color: '#3F51B5', dataKey: 'CURE_ANXIETE_CYCLE1', storageKey: 'cure_anxiete', imgDir: 'assets/cure-anxiete' },
-  regard:  { color: '#6B5B9A', dataKey: 'CURE_REGARD_CYCLE1',  storageKey: 'cure_regard',  imgDir: 'assets/cure-regard' }
+  regard:    { color: '#6B5B9A', dataKey: 'CURE_REGARD_CYCLE1',    storageKey: 'cure_regard',    imgDir: 'assets/cure-regard' },
+  arrogance: { color: '#6A1B7A', dataKey: 'CURE_ARROGANCE_CYCLE1', storageKey: 'cure_arrogance', imgDir: 'assets/cure-arrogance' }
 };
 function _getCureData() {
   var porte = (_cureWizardState && _cureWizardState.porte) || 'anxiete';
@@ -15276,6 +15277,8 @@ window.CURE_REGARD_CYCLE1 = null;
 fetch('cure-regard-cycle1.json').then(function(r){return r.ok?r.json():null}).then(function(d){if(d){window.CURE_REGARD_CYCLE1=d;console.log('Cure Regard Cycle 1 loaded')}}).catch(function(){});
 window.COFFRET_REGARD = null;
 fetch('coffret-regard.json').then(function(r){return r.ok?r.json():null}).then(function(d){if(d){window.COFFRET_REGARD=d;console.log('Coffret Regard loaded')}}).catch(function(){});
+window.CURE_ARROGANCE_CYCLE1 = null;
+fetch('cure-arrogance-cycle1.json').then(function(r){return r.ok?r.json():null}).then(function(d){if(d){window.CURE_ARROGANCE_CYCLE1=d;console.log('Cure Arrogance Cycle 1 loaded')}}).catch(function(){});
 
 // Boot after V1's own DOMContentLoaded fires
 if (document.readyState === 'loading') {
