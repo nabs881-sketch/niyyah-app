@@ -1,0 +1,423 @@
+{
+  "id": "coffret-arrogance",
+  "version": "1.0",
+  "date_creation": "2026-05-30",
+  "titre_ar": "خَزَائِنُ التَّوَاضُع",
+  "titre_translit": "Khazâ'in at-Tawâdu'",
+  "titre_fr": "Les coffres de l'humilité",
+  "sous_titre": "Pour aller plus loin avec le Coran, la Sunna et la tradition sur l'orgueil et l'humilité.",
+  "introduction": "Ce coffret rassemble les références fondamentales de l'islam sur l'orgueil (kibr), l'auto-admiration ('ujb) et l'humilité (tawâdu'). Il complète la cure 7 jours.\n\nTu peux le consulter à tout moment. Pas pour le mémoriser d'un coup. Pour qu'il soit là quand tu en auras besoin.",
+  "sections": [
+    {
+      "id": "versets",
+      "titre_ar": "الآيات",
+      "titre_translit": "Al-Âyât",
+      "titre_fr": "Versets du Coran",
+      "description": "Les versets qui fondent la condamnation de l'orgueil et l'éloge de l'humilité.",
+      "entrees": [
+        {
+          "id": "luqman_18",
+          "ar": "وَلَا تُصَعِّرْ خَدَّكَ لِلنَّاسِ وَلَا تَمْشِ فِي الْأَرْضِ مَرَحًا ۖ إِنَّ اللَّهَ لَا يُحِبُّ كُلَّ مُخْتَالٍ فَخُورٍ",
+          "translit": "Wa lâ tusa'ir khaddaka li-n-nâsi wa lâ tamshi fi-l-ardi maraha. Inna-llâha lâ yuhibbu kulla mukhtâlin fakhûr",
+          "fr": "Ne détourne pas ton visage des gens par mépris, et ne marche pas sur la terre avec insolence : Allah n'aime pas l'arrogant plein de gloriole.",
+          "source": "Luqmân 31:18",
+          "quand": "Le verset cardinal de la porte. L'orgueil se voit d'abord dans le corps — la joue détournée, la démarche."
+        },
+        {
+          "id": "isra_37",
+          "ar": "وَلَا تَمْشِ فِي الْأَرْضِ مَرَحًا ۖ إِنَّكَ لَن تَخْرِقَ الْأَرْضَ وَلَن تَبْلُغَ الْجِبَالَ طُولًا",
+          "translit": "Wa lâ tamshi fi-l-ardi maraha. Innaka lan takhriqa-l-arda wa lan tablugha-l-jibâla tûlâ",
+          "fr": "Ne marche pas sur la terre avec insolence : tu ne perceras jamais la terre et tu n'atteindras jamais la hauteur des montagnes.",
+          "source": "Al-Isrâ' 17:37",
+          "quand": "Quand tu te sens grand : tu ne fends pas la terre sous tes pas, tu n'égales pas les montagnes. Mesure-toi."
+        },
+        {
+          "id": "araf_12",
+          "ar": "قَالَ أَنَا خَيْرٌ مِّنْهُ خَلَقْتَنِي مِن نَّارٍ وَخَلَقْتَهُ مِن طِينٍ",
+          "translit": "Qâla anâ khayrun minhu khalaqtanî min nârin wa khalaqtahu min tîn",
+          "fr": "Il dit : « Je suis meilleur que lui : Tu m'as créé de feu et Tu l'as créé d'argile. »",
+          "source": "Al-A'râf 7:12",
+          "quand": "La première phrase orgueilleuse de l'histoire — celle d'Iblîs. « Je suis meilleur » est la racine de toute chute."
+        },
+        {
+          "id": "najm_32",
+          "ar": "فَلَا تُزَكُّوا أَنفُسَكُمْ ۖ هُوَ أَعْلَمُ بِمَنِ اتَّقَىٰ",
+          "translit": "Fa-lâ tuzakkû anfusakum. Huwa a'lamu bi-mani-ttaqâ",
+          "fr": "Ne vous déclarez donc pas purs : c'est Lui qui connaît le mieux celui qui Le craint.",
+          "source": "An-Najm 53:32",
+          "quand": "Contre le 'ujb : ne te décerne pas de certificat de pureté. Le classement réel n'appartient qu'à Lui."
+        },
+        {
+          "id": "furqan_63",
+          "ar": "وَعِبَادُ الرَّحْمَٰنِ الَّذِينَ يَمْشُونَ عَلَى الْأَرْضِ هَوْنًا وَإِذَا خَاطَبَهُمُ الْجَاهِلُونَ قَالُوا سَلَامًا",
+          "translit": "Wa 'ibâdu-r-Rahmâni-lladhîna yamshûna 'ala-l-ardi hawnan wa idhâ khâtabahumu-l-jâhilûna qâlû salâmâ",
+          "fr": "Les serviteurs du Tout-Miséricordieux sont ceux qui marchent humblement sur la terre, et qui, lorsque les ignorants les interpellent, répondent : « Paix ».",
+          "source": "Al-Furqân 25:63",
+          "quand": "Le portrait de l'humble : il marche doucement et ne répond pas à la provocation. C'est l'identité à viser."
+        },
+        {
+          "id": "qasas_83",
+          "ar": "تِلْكَ الدَّارُ الْآخِرَةُ نَجْعَلُهَا لِلَّذِينَ لَا يُرِيدُونَ عُلُوًّا فِي الْأَرْضِ وَلَا فَسَادًا ۚ وَالْعَاقِبَةُ لِلْمُتَّقِينَ",
+          "translit": "Tilka-d-dâru-l-âkhiratu naj'aluhâ li-lladhîna lâ yurîdûna 'uluwwan fi-l-ardi wa lâ fasâdâ. Wa-l-'âqibatu li-l-muttaqîn",
+          "fr": "Cette Demeure dernière, Nous la réservons à ceux qui ne recherchent ni à s'élever sur terre, ni à y semer le désordre. Et la fin belle est pour les pieux.",
+          "source": "Al-Qasas 28:83",
+          "quand": "Le prix de l'humilité : le Paradis est promis à qui ne cherche pas à s'élever. Vient juste après l'histoire de Qârûn."
+        },
+        {
+          "id": "nahl_23",
+          "ar": "لَا جَرَمَ أَنَّ اللَّهَ يَعْلَمُ مَا يُسِرُّونَ وَمَا يُعْلِنُونَ ۚ إِنَّهُ لَا يُحِبُّ الْمُسْتَكْبِرِينَ",
+          "translit": "Lâ jarama anna-llâha ya'lamu mâ yusirrûna wa mâ yu'linûn. Innahu lâ yuhibbu-l-mustakbirîn",
+          "fr": "Nul doute qu'Allah sait ce qu'ils cachent et ce qu'ils divulguent. Il n'aime pas les orgueilleux.",
+          "source": "An-Nahl 16:23",
+          "quand": "Allah dit clairement qu'Il n'aime pas les orgueilleux. À méditer quand on cherche à impressionner."
+        },
+        {
+          "id": "ghafir_35",
+          "ar": "الَّذِينَ يُجَادِلُونَ فِي آيَاتِ اللَّهِ بِغَيْرِ سُلْطَانٍ أَتَاهُمْ ۖ كَبُرَ مَقْتًا عِندَ اللَّهِ ۚ كَذَٰلِكَ يَطْبَعُ اللَّهُ عَلَىٰ كُلِّ قَلْبِ مُتَكَبِّرٍ جَبَّارٍ",
+          "translit": "...kabura maqtan 'inda-llâh. Kadhâlika yatba'u-llâhu 'alâ kulli qalbi mutakabbirin jabbâr",
+          "fr": "...Cela est une grande détestation auprès d'Allah. Ainsi Allah scelle le cœur de tout orgueilleux tyrannique.",
+          "source": "Ghâfir 40:35",
+          "quand": "L'orgueil finit par sceller le cœur : à force de refuser la vérité, on n'arrive plus à la recevoir."
+        },
+        {
+          "id": "araf_146",
+          "ar": "سَأَصْرِفُ عَنْ آيَاتِيَ الَّذِينَ يَتَكَبَّرُونَ فِي الْأَرْضِ بِغَيْرِ الْحَقِّ",
+          "translit": "Sa-asrifu 'an âyâtiya-lladhîna yatakabbarûna fi-l-ardi bi-ghayri-l-haqq",
+          "fr": "Je détournerai de Mes signes ceux qui s'enflent d'orgueil sur terre sans droit.",
+          "source": "Al-A'râf 7:146",
+          "quand": "L'orgueil aveugle : il prive de la compréhension des signes d'Allah. La vérité fuit le cœur hautain."
+        },
+        {
+          "id": "luqman_19",
+          "ar": "وَاقْصِدْ فِي مَشْيِكَ وَاغْضُضْ مِن صَوْتِكَ ۚ إِنَّ أَنكَرَ الْأَصْوَاتِ لَصَوْتُ الْحَمِيرِ",
+          "translit": "Wa-qsid fî mashyika wa-ghdud min sawtik. Inna ankara-l-aswâti la-sawtu-l-hamîr",
+          "fr": "Sois modéré dans ta démarche, et baisse de ta voix : la plus détestable des voix est bien celle de l'âne.",
+          "source": "Luqmân 31:19",
+          "quand": "Suite directe du verset cardinal : l'humilité jusque dans la démarche et le ton de voix. La discrétion contre l'ostentation."
+        },
+        {
+          "id": "hujurat_13",
+          "ar": "يَا أَيُّهَا النَّاسُ إِنَّا خَلَقْنَاكُم مِّن ذَكَرٍ وَأُنثَىٰ ... إِنَّ أَكْرَمَكُمْ عِندَ اللَّهِ أَتْقَاكُمْ",
+          "translit": "Yâ ayyuha-n-nâsu innâ khalaqnâkum min dhakarin wa unthâ ... inna akramakum 'inda-llâhi atqâkum",
+          "fr": "Ô hommes ! Nous vous avons créés d'un mâle et d'une femelle... Le plus noble d'entre vous, auprès d'Allah, est le plus pieux.",
+          "source": "Al-Hujurât 49:13",
+          "quand": "Démolit l'orgueil de lignée, de race, de statut : la seule hiérarchie qui compte est celle de la taqwâ, et elle est cachée."
+        },
+        {
+          "id": "hujurat_11",
+          "ar": "لَا يَسْخَرْ قَوْمٌ مِّن قَوْمٍ عَسَىٰ أَن يَكُونُوا خَيْرًا مِّنْهُمْ",
+          "translit": "Lâ yaskhar qawmun min qawmin 'asâ an yakûnû khayran minhum",
+          "fr": "Qu'un groupe ne se moque pas d'un autre : peut-être ces gens-là sont-ils meilleurs qu'eux.",
+          "source": "Al-Hujurât 49:11",
+          "quand": "Contre le mépris (ghamt an-nâs) : tu ignores le rang réel de l'autre devant Allah. Prends le « peut-être » au sérieux."
+        }
+      ]
+    },
+    {
+      "id": "hadiths",
+      "titre_ar": "الأحاديث",
+      "titre_translit": "Al-Ahâdîth",
+      "titre_fr": "Paroles du Prophète ﷺ",
+      "description": "La définition prophétique du kibr et les enseignements sur le tawâdu'.",
+      "entrees": [
+        {
+          "id": "definition_kibr",
+          "ar": "الْكِبْرُ بَطَرُ الْحَقِّ وَغَمْطُ النَّاسِ ... لَا يَدْخُلُ الْجَنَّةَ مَن كَانَ فِي قَلْبِهِ مِثْقَالُ ذَرَّةٍ مِنْ كِبْرٍ",
+          "translit": "Al-kibru batru-l-haqqi wa ghamtu-n-nâs ... lâ yadkhulu-l-jannata man kâna fî qalbihi mithqâlu dharratin min kibr",
+          "fr": "L'orgueil, c'est rejeter la vérité et mépriser les gens. (...) N'entrera pas au Paradis celui qui a dans le cœur le poids d'un atome d'orgueil.",
+          "source": "Sahîh Muslim 91",
+          "quand": "LA définition prophétique du kibr, en deux jambes, et sa gravité. Le socle de toute la porte."
+        },
+        {
+          "id": "manteau_qudsi",
+          "ar": "الْكِبْرِيَاءُ رِدَائِي وَالْعَظَمَةُ إِزَارِي، فَمَنْ نَازَعَنِي وَاحِدًا مِنْهُمَا أَلْقَيْتُهُ فِي النَّارِ",
+          "translit": "Al-kibriyâ'u ridâ'î wa-l-'azamatu izârî, fa-man nâza'anî wâhidan minhumâ alqaytuhu fi-n-nâr",
+          "fr": "(Hadîth qudsî) L'orgueil est Mon manteau et la grandeur Mon vêtement ; quiconque M'en dispute l'un ou l'autre, Je le jette dans le Feu.",
+          "source": "Sahîh Muslim 2620 ; Abû Dâwûd 4090",
+          "quand": "L'arrogance, c'est enfiler un vêtement qui n'appartient qu'à Allah. À se rappeler quand on veut « être quelqu'un »."
+        },
+        {
+          "id": "tawadu_rafa",
+          "ar": "مَا نَقَصَتْ صَدَقَةٌ مِنْ مَالٍ، وَمَا تَوَاضَعَ أَحَدٌ لِلَّهِ إِلَّا رَفَعَهُ اللَّهُ",
+          "translit": "Mâ naqasat sadaqatun min mâl, wa mâ tawâda'a ahadun li-llâhi illâ rafa'ahu-llâh",
+          "fr": "Aucune aumône ne diminue un bien, et nul ne s'humilie pour Allah sans qu'Allah ne l'élève.",
+          "source": "Sahîh Muslim 2588",
+          "quand": "L'humilité n'est pas une descente : c'est la seule vraie montée. La promesse d'Allah à l'humble."
+        },
+        {
+          "id": "regard_coeurs",
+          "ar": "إِنَّ اللَّهَ لَا يَنْظُرُ إِلَى صُوَرِكُمْ وَأَمْوَالِكُمْ، وَلَكِنْ يَنْظُرُ إِلَى قُلُوبِكُمْ وَأَعْمَالِكُمْ",
+          "translit": "Inna-llâha lâ yanzuru ilâ suwarikum wa amwâlikum, wa lâkin yanzuru ilâ qulûbikum wa a'mâlikum",
+          "fr": "Allah ne regarde pas vos apparences ni vos biens, mais Il regarde vos cœurs et vos actes.",
+          "source": "Sahîh Muslim 2564",
+          "quand": "Quand tu méprises quelqu'un, tu le juges sur ce qu'Allah ne pèse pas. La vraie balance t'est cachée."
+        },
+        {
+          "id": "tawadu_wahy",
+          "ar": "وَإِنَّ اللَّهَ أَوْحَى إِلَيَّ أَنْ تَوَاضَعُوا حَتَّى لَا يَفْخَرَ أَحَدٌ عَلَى أَحَدٍ وَلَا يَبْغِيَ أَحَدٌ عَلَى أَحَدٍ",
+          "translit": "Wa inna-llâha awhâ ilayya an tawâda'û hattâ lâ yafkhara ahadun 'alâ ahadin wa lâ yabghiya ahadun 'alâ ahad",
+          "fr": "Allah m'a révélé que vous soyez humbles, au point que nul ne se glorifie sur un autre, et que nul n'opprime un autre.",
+          "source": "Sahîh Muslim 2865",
+          "quand": "L'humilité est un ordre révélé, pas une option de caractère. Son but : qu'aucun ne se hausse au-dessus d'un autre."
+        },
+        {
+          "id": "khasf_ujb",
+          "ar": "بَيْنَمَا رَجُلٌ يَمْشِي فِي حُلَّةٍ تُعْجِبُهُ نَفْسُهُ ... إِذْ خَسَفَ اللَّهُ بِهِ الْأَرْضَ فَهُوَ يَتَجَلْجَلُ فِيهَا إِلَى يَوْمِ الْقِيَامَةِ",
+          "translit": "Baynamâ rajulun yamshî fî hullatin tu'jibuhu nafsuh ... idh khasafa-llâhu bihi-l-arda fa-huwa yatajaljalu fîhâ ilâ yawmi-l-qiyâma",
+          "fr": "Un homme marchait, vêtu d'un habit qui l'emplissait d'admiration de lui-même... Allah le fit engloutir par la terre, et il s'y enfoncera jusqu'au Jour de la Résurrection.",
+          "source": "Bukhârî 5789 ; Muslim 2088",
+          "quand": "L'image du 'ujb : s'admirer soi-même (« tu'jibuhu nafsuh »). Châtiment terrible pour un péché silencieux du cœur."
+        },
+        {
+          "id": "ahl_nar",
+          "ar": "أَلَا أُخْبِرُكُمْ بِأَهْلِ النَّارِ؟ كُلُّ عُتُلٍّ جَوَّاظٍ مُسْتَكْبِرٍ",
+          "translit": "Alâ ukhbirukum bi-ahli-n-nâr? Kullu 'utullin jawwâzin mustakbir",
+          "fr": "Vous informerai-je des gens du Feu ? Tout être grossier, avare et orgueilleux.",
+          "source": "Bukhârî 4918 ; Muslim 2853",
+          "quand": "Le Prophète ﷺ range l'orgueilleux parmi les gens du Feu. À l'inverse, les gens du Paradis sont les faibles et humbles."
+        },
+        {
+          "id": "isbal_khuyala",
+          "ar": "لَا يَنْظُرُ اللَّهُ يَوْمَ الْقِيَامَةِ إِلَى مَن جَرَّ ثَوْبَهُ خُيَلَاءَ",
+          "translit": "Lâ yanzuru-llâhu yawma-l-qiyâmati ilâ man jarra thawbahu khuyalâ'",
+          "fr": "Allah ne regardera pas, au Jour de la Résurrection, celui qui traîne son vêtement par vanité.",
+          "source": "Bukhârî 5788 ; Muslim 2087",
+          "quand": "Même un détail vestimentaire, s'il est fait par khuyalâ' (vanité), prive du regard d'Allah. L'orgueil se loge partout."
+        },
+        {
+          "id": "mihnat_ahlihi",
+          "ar": "كَانَ يَكُونُ فِي مِهْنَةِ أَهْلِهِ، فَإِذَا حَضَرَتِ الصَّلَاةُ خَرَجَ إِلَى الصَّلَاةِ",
+          "translit": "Kâna yakûnu fî mihnati ahlihi, fa-idhâ hadarati-s-salâtu kharaja ilâ-s-salâh",
+          "fr": "(À propos du Prophète ﷺ) Il était au service de sa famille, et quand venait la prière, il sortait prier.",
+          "source": "Sahîh al-Bukhârî 676",
+          "quand": "Le plus grand des hommes faisait les tâches de la maison. L'humilité du modèle : le statut n'exempte d'aucun service."
+        },
+        {
+          "id": "rifq_tafakkur",
+          "ar": "مَنْ تَرَكَ اللِّبَاسَ تَوَاضُعًا لِلَّهِ وَهُوَ يَقْدِرُ عَلَيْهِ، دَعَاهُ اللَّهُ يَوْمَ الْقِيَامَةِ عَلَى رُؤُوسِ الْخَلَائِقِ",
+          "translit": "Man taraka-l-libâsa tawâdu'an li-llâhi wa huwa yaqdiru 'alayh, da'âhu-llâhu yawma-l-qiyâmati 'alâ ru'ûsi-l-khalâ'iq",
+          "fr": "Quiconque renonce à un beau vêtement par humilité pour Allah, alors qu'il en a les moyens, Allah l'appellera au Jour de la Résurrection devant toutes les créatures (pour l'honorer).",
+          "source": "Tirmidhî 2481 — hasan (à confirmer)",
+          "quand": "L'humilité volontaire, choisie alors qu'on pourrait faire autrement, est honorée publiquement par Allah. ⚠️ grade à vérifier."
+        }
+      ]
+    },
+    {
+      "id": "duas",
+      "titre_ar": "الأدعية",
+      "titre_translit": "Al-Ad'iya",
+      "titre_fr": "Du'âs à mémoriser",
+      "description": "Les invocations contre l'orgueil et pour le bon caractère.",
+      "entrees": [
+        {
+          "id": "shirk_cache",
+          "ar": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ أَنْ أُشْرِكَ بِكَ وَأَنَا أَعْلَمُ، وَأَسْتَغْفِرُكَ لِمَا لَا أَعْلَمُ",
+          "translit": "Allâhumma innî a'ûdhu bika an ushrika bika wa anâ a'lam, wa astaghfiruka li-mâ lâ a'lam",
+          "fr": "Ô Allah, je cherche refuge en Toi contre le fait de T'associer quoi que ce soit sciemment, et je Te demande pardon pour ce que je ne sais pas.",
+          "source": "Ahmad — hasan (à confirmer)",
+          "quand": "Contre l'orgueil caché qu'on ne voit pas en soi. À dire le matin. ⚠️ grade à vérifier à l'imam."
+        },
+        {
+          "id": "ma_sha_allah",
+          "ar": "مَا شَاءَ اللَّهُ لَا قُوَّةَ إِلَّا بِاللَّهِ",
+          "translit": "Mâ shâ'a-llâh, lâ quwwata illâ bi-llâh",
+          "fr": "Ce qu'Allah a voulu ! Il n'est de force qu'en Allah.",
+          "source": "D'après Al-Kahf 18:39",
+          "quand": "Sur chaque réussite, chaque talent, chaque compliment : rendre le cadeau à son Donateur. L'antidote du 'ujb."
+        },
+        {
+          "id": "husn_khuluq",
+          "ar": "اللَّهُمَّ اهْدِنِي لِأَحْسَنِ الْأَخْلَاقِ لَا يَهْدِي لِأَحْسَنِهَا إِلَّا أَنْتَ، وَاصْرِفْ عَنِّي سَيِّئَهَا لَا يَصْرِفُ عَنِّي سَيِّئَهَا إِلَّا أَنْتَ",
+          "translit": "Allâhumma-hdinî li-ahsani-l-akhlâqi lâ yahdî li-ahsanihâ illâ ant, wa-srif 'annî sayyi'ahâ lâ yasrifu 'annî sayyi'ahâ illâ ant",
+          "fr": "Ô Allah, guide-moi vers le meilleur caractère, nul n'y guide sauf Toi ; et détourne de moi son mauvais, nul ne l'en détourne sauf Toi.",
+          "source": "Sahîh Muslim 771",
+          "quand": "Du'â d'ouverture de prière transmis par 'Alî. Demander le bon caractère — dont le tawâdu' — et l'éloignement du mauvais — dont le kibr."
+        },
+        {
+          "id": "la_tuzigh",
+          "ar": "رَبَّنَا لَا تُزِغْ قُلُوبَنَا بَعْدَ إِذْ هَدَيْتَنَا وَهَبْ لَنَا مِن لَّدُنكَ رَحْمَةً ۚ إِنَّكَ أَنتَ الْوَهَّابُ",
+          "translit": "Rabbanâ lâ tuzigh qulûbanâ ba'da idh hadaytanâ wa hab lanâ min ladunka rahma. Innaka anta-l-Wahhâb",
+          "fr": "Notre Seigneur, ne laisse pas dévier nos cœurs après que Tu nous as guidés, et accorde-nous de Ta part une miséricorde. Tu es certes le Grand Donateur.",
+          "source": "Âl 'Imrân 3:8",
+          "quand": "Quand on craint que l'orgueil ne fasse rejeter une vérité reçue. Garder le cœur ouvert au haqq."
+        },
+        {
+          "id": "la_ghill",
+          "ar": "رَبَّنَا اغْفِرْ لَنَا وَلِإِخْوَانِنَا الَّذِينَ سَبَقُونَا بِالْإِيمَانِ وَلَا تَجْعَلْ فِي قُلُوبِنَا غِلًّا لِّلَّذِينَ آمَنُوا",
+          "translit": "Rabbana-ghfir lanâ wa li-ikhwânina-lladhîna sabaqûnâ bi-l-îmân wa lâ taj'al fî qulûbinâ ghillan li-lladhîna âmanû",
+          "fr": "Notre Seigneur, pardonne-nous ainsi qu'à nos frères qui nous ont précédés dans la foi, et ne mets dans nos cœurs aucune rancœur envers ceux qui ont cru.",
+          "source": "Al-Hashr 59:10",
+          "quand": "Contre le mépris et la rancœur (ghill) envers les autres croyants. À dire en pensant à qui tu juges de haut."
+        },
+        {
+          "id": "sayyid_istighfar",
+          "ar": "اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَٰهَ إِلَّا أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ",
+          "translit": "Allâhumma anta Rabbî lâ ilâha illâ ant, khalaqtanî wa anâ 'abduk, wa anâ 'alâ 'ahdika wa wa'dika ma-stata't",
+          "fr": "Ô Allah, Tu es mon Seigneur, nulle divinité sauf Toi. Tu m'as créé et je suis Ton serviteur, et je tiens Ton engagement et Ta promesse autant que je le peux.",
+          "source": "Sahîh al-Bukhârî 6306",
+          "quand": "Le Sayyid al-istighfâr (le maître des demandes de pardon). Le cœur du remède : « wa anâ 'abduk » — et je suis Ton serviteur."
+        }
+      ]
+    },
+    {
+      "id": "lexique",
+      "titre_ar": "المُفْرَدَات",
+      "titre_translit": "Al-Mufradât",
+      "titre_fr": "Le vocabulaire de l'orgueil et de l'humilité",
+      "description": "Les mots-clés arabes pour comprendre finement la maladie et son remède.",
+      "entrees": [
+        {
+          "id": "kibr",
+          "ar": "كِبْر",
+          "translit": "Kibr",
+          "definition": "L'orgueil. Défini par le Prophète ﷺ comme « rejeter la vérité et mépriser les gens » (Muslim 91). Maladie du cœur la plus grave."
+        },
+        {
+          "id": "ujb",
+          "ar": "عُجْب",
+          "translit": "'Ujb",
+          "definition": "L'auto-admiration : se plaire à soi-même et à ses œuvres, en oubliant que tout est une ni'ma d'Allah. C'est la racine du kibr — elle n'a besoin de personne."
+        },
+        {
+          "id": "tawadu",
+          "ar": "تَوَاضُع",
+          "translit": "Tawâdu'",
+          "definition": "L'humilité : se faire bas pour Allah, reconnaître sa vraie mesure sans se rabaisser indûment. Le remède, et « la vertu par excellence » (Ghazâlî)."
+        },
+        {
+          "id": "istikbar",
+          "ar": "اسْتِكْبَار",
+          "translit": "Istikbâr",
+          "definition": "L'enflure orgueilleuse : refuser de se soumettre par dédain. Le péché précis d'Iblîs (« il refusa et s'enfla d'orgueil », 2:34)."
+        },
+        {
+          "id": "mukhtal",
+          "ar": "مُخْتَال",
+          "translit": "Mukhtâl",
+          "definition": "Celui qui se pavane, plein de lui-même, imbu de son image. Terme du verset cardinal (Luqmân 31:18)."
+        },
+        {
+          "id": "fakhur",
+          "ar": "فَخُور",
+          "translit": "Fakhûr",
+          "definition": "Le vantard : celui qui étale ses mérites devant les autres pour se grandir. Souvent associé à mukhtâl dans le Coran."
+        },
+        {
+          "id": "khuyala",
+          "ar": "خُيَلَاء",
+          "translit": "Khuyalâ'",
+          "definition": "La vanité, l'ostentation : marcher, se vêtir ou agir pour être vu et admiré. Même un vêtement traîné par khuyalâ' est blâmé (Bukhârî 5788)."
+        },
+        {
+          "id": "batar_haqq",
+          "ar": "بَطَرُ الحَقّ",
+          "translit": "Batar al-haqq",
+          "definition": "Rejeter ou dédaigner la vérité, même en la voyant — parce que l'accepter signifierait « j'avais tort ». Première jambe du kibr."
+        },
+        {
+          "id": "ghamt_nas",
+          "ar": "غَمْطُ النَّاس",
+          "translit": "Ghamt an-nâs",
+          "definition": "Mépriser, rabaisser, regarder les gens de haut. Seconde jambe du kibr. « Il suffit comme mal de mépriser son frère » (Muslim 2564)."
+        },
+        {
+          "id": "kibriya",
+          "ar": "الكِبْرِيَاء",
+          "translit": "Al-Kibriyâ'",
+          "definition": "La Grandeur, la Majesté absolue : un attribut qui n'appartient qu'à Allah. La revendiquer pour soi, c'est Lui disputer Son manteau (Muslim 2620)."
+        },
+        {
+          "id": "mutakabbir",
+          "ar": "المُتَكَبِّر",
+          "translit": "Al-Mutakabbir",
+          "definition": "Le Superbe, l'un des Noms d'Allah : Celui à qui seul revient la grandeur. Pour l'homme, le même mot devient un défaut."
+        },
+        {
+          "id": "husn_dhann",
+          "ar": "حُسْنُ الظَّنّ",
+          "translit": "Husn adh-dhann",
+          "definition": "Penser du bien — des gens et d'Allah. Antidote au mépris : c'est de l'exactitude sur sa propre ignorance, pas de la naïveté."
+        },
+        {
+          "id": "muhasaba",
+          "ar": "مُحَاسَبَة",
+          "translit": "Muhâsaba",
+          "definition": "Se demander des comptes à soi-même, faire l'inventaire lucide de son cœur. La première étape contre l'orgueil caché."
+        },
+        {
+          "id": "ubudiyya",
+          "ar": "عُبُودِيَّة",
+          "translit": "'Ubûdiyya",
+          "definition": "La servitude à Allah : le plus haut maqâm de l'homme. Au sommet de l'honneur, le Prophète ﷺ est nommé 'abd (serviteur)."
+        },
+        {
+          "id": "ghill",
+          "ar": "غِلّ",
+          "translit": "Ghill",
+          "definition": "La rancœur, le ressentiment logé dans le cœur envers autrui. On demande à Allah de l'en retirer (al-Hashr 59:10)."
+        },
+        {
+          "id": "ikhlas",
+          "ar": "إِخْلَاص",
+          "translit": "Ikhlâs",
+          "definition": "La sincérité : agir pour Allah seul, sans public. Cacher une bonne action protège l'ikhlâs et affame le 'ujb."
+        }
+      ]
+    },
+    {
+      "id": "savants",
+      "titre_ar": "الْعُلَمَاء",
+      "titre_translit": "Al-'Ulamâ'",
+      "titre_fr": "Pour aller plus loin",
+      "description": "Les œuvres classiques de référence sur le kibr, le 'ujb et le tawâdu'.",
+      "entrees": [
+        {
+          "id": "ghazali",
+          "nom": "Abû Hâmid al-Ghazâlî",
+          "dates": "1058-1111",
+          "oeuvre": "Ihyâ' 'Ulûm ad-Dîn — Livre XXIX : Kitâb dhamm al-kibr wa-l-'ujb (Le blâme de l'orgueil et de l'auto-admiration)",
+          "apport": "La référence absolue sur l'orgueil. Ghazâlî structure tout : la définition, les sept causes (savoir, adoration, lignée, beauté, richesse, force, partisans), la racine ('ujb), et le double remède — 'ilmî (connaître sa bassesse et la grandeur d'Allah) et 'amalî (l'humilité agie). Toute la porte suit son plan."
+        },
+        {
+          "id": "ibn_qayyim",
+          "nom": "Ibn Qayyim al-Jawziyya",
+          "dates": "1292-1350",
+          "oeuvre": "Madârij as-Sâlikîn ; Ar-Rûh ; Al-Fawâ'id",
+          "apport": "Traite le tawâdu' comme une station (maqâm) du cheminement vers Allah, et analyse finement le kibr et le 'ujb comme obstacles. Insiste sur le lien entre connaître Allah et s'effacer : plus on Le connaît, plus l'ego se dissout."
+        },
+        {
+          "id": "muhasibi",
+          "nom": "Al-Hârith al-Muhâsibî",
+          "dates": "781-857",
+          "oeuvre": "Ar-Ri'âya li-huqûq Allâh",
+          "apport": "Le maître de la muhâsaba (l'examen de l'âme). Son œuvre dissèque les maladies cachées du cœur — riyâ' (ostentation), 'ujb, kibr — et apprend à les traquer en soi avant qu'elles ne corrompent l'acte."
+        },
+        {
+          "id": "ibn_rajab",
+          "nom": "Ibn Rajab al-Hanbalî",
+          "dates": "1335-1393",
+          "oeuvre": "Jâmi' al-'Ulûm wa-l-Hikam",
+          "apport": "Commentaire des hadiths-piliers de l'islam. Il explique en profondeur les textes sur le caractère, l'humilité et le danger de l'orgueil, en reliant la lettre du hadith à la pratique du cœur."
+        },
+        {
+          "id": "ibn_ataillah",
+          "nom": "Ibn 'Atâ'illâh al-Iskandarî",
+          "dates": "1259-1310",
+          "oeuvre": "Al-Hikam al-'Atâ'iyya",
+          "apport": "Aphorismes spirituels d'une grande finesse sur les ruses de l'âme. Plusieurs hikam visent directement le 'ujb et l'attribution du bien à soi : « Enterre ton existence dans la terre de l'oubli, car ce qui pousse sans avoir été enterré ne donne pas de fruit parfait. »"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "entrees_total": 49,
+    "versets": 12,
+    "hadiths": 10,
+    "duas": 6,
+    "lexique": 16,
+    "savants": 5,
+    "note": "Toutes les références doivent être validées avec les éditions critiques (Sunnah.com, Tafsîr Ibn Kathîr et al-Sa'dî, éditions critiques pour Ghazâlî/Ibn al-Qayyim) avant intégration production. Points sensibles : grade du hadith Tirmidhî 2481 et de la du'â 'refuge contre le shirk caché' (Ahmad).",
+    "style": "Cohérent avec coffret-regard.json : 5 sections (versets, hadiths, du'âs, lexique, savants), même structure d'entrée, ton sobre.",
+    "audit_theologique_requis": "Validation imam francophone avant production publique."
+  }
+}

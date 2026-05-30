@@ -4046,6 +4046,7 @@ function renderBabAnNafs() {
     + '<button onclick="openCoffretColere()" style="flex:1;min-width:90px;padding:10px 6px;border-radius:12px;border:1px solid rgba(200,168,75,0.2);background:none;color:rgba(200,168,75,0.6);font-size:12px;font-family:var(--serif);cursor:pointer;font-style:italic;">Longanimit\u00e9</button>'
     + '<button onclick="openCoffretAnxiete()" style="flex:1;min-width:90px;padding:10px 6px;border-radius:12px;border:1px solid rgba(200,168,75,0.2);background:none;color:rgba(200,168,75,0.6);font-size:12px;font-family:var(--serif);cursor:pointer;font-style:italic;">Apaisement</button>'
     + '<button onclick="openCoffretRegard()" style="flex:1;min-width:90px;padding:10px 6px;border-radius:12px;border:1px solid rgba(200,168,75,0.2);background:none;color:rgba(200,168,75,0.6);font-size:12px;font-family:var(--serif);cursor:pointer;font-style:italic;">Regard juste</button>'
+    + '<button onclick="openCoffretArrogance()" style="flex:1;min-width:90px;padding:10px 6px;border-radius:12px;border:1px solid rgba(200,168,75,0.2);background:none;color:rgba(200,168,75,0.6);font-size:12px;font-family:var(--serif);cursor:pointer;font-style:italic;">Humilit\u00e9</button>'
     + '</div>';
   html += '</div>';
   el.innerHTML = html;
@@ -7087,6 +7088,8 @@ function openCoffretColere(section) { _openCoffret('colere', 'coffret-colere.jso
 window.openCoffretColere = openCoffretColere;
 function openCoffretRegard(section) { _openCoffret('regard', 'coffret-regard.json', section); }
 window.openCoffretRegard = openCoffretRegard;
+function openCoffretArrogance(section) { _openCoffret('arrogance', 'coffret-arrogance.json', section); }
+window.openCoffretArrogance = openCoffretArrogance;
 
 // ── Backward-compatible wrappers ──
 function openCureColereJour1() { openCureJour('colere', 1); }
@@ -15327,6 +15330,8 @@ window.COFFRET_REGARD = null;
 fetch('coffret-regard.json').then(function(r){return r.ok?r.json():null}).then(function(d){if(d){window.COFFRET_REGARD=d;console.log('Coffret Regard loaded')}}).catch(function(){});
 window.CURE_ARROGANCE_CYCLE1 = null;
 fetch('cure-arrogance-cycle1.json').then(function(r){return r.ok?r.json():null}).then(function(d){if(d){window.CURE_ARROGANCE_CYCLE1=d;console.log('Cure Arrogance Cycle 1 loaded')}}).catch(function(){});
+window.COFFRET_ARROGANCE = null;
+fetch('coffret-arrogance.json').then(function(r){return r.ok?r.json():null}).then(function(d){if(d){window.COFFRET_ARROGANCE=d;console.log('Coffret Arrogance loaded')}}).catch(function(){});
 
 // Boot after V1's own DOMContentLoaded fires
 if (document.readyState === 'loading') {
