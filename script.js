@@ -5532,6 +5532,47 @@ _outilAnxieteRenderers.double_slider = function(o, c) {
   return html;
 };
 
+// 3.15 — ecran_sombre_avec_dhikr
+_outilAnxieteRenderers.ecran_sombre_avec_dhikr = function(o, c) {
+  var dhikr = o.dhikr || {};
+  var sk = o.stockage || 'cure_anxiete_dhikr';
+  var dhkId = '_dhk_' + o.id;
+  var html = '';
+  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.6);line-height:1.6;text-align:center;margin-bottom:12px;">' + escapeHtml(o.introduction) + '</div>';
+  if (o.consigne) html += '<div style="font-family:var(--serif);font-size:13px;color:rgba(240,234,214,0.5);line-height:1.5;text-align:center;margin-bottom:20px;white-space:pre-line;">' + escapeHtml(o.consigne) + '</div>';
+  // Dark meditation screen
+  html += '<div id="' + dhkId + '" style="background:#000;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:260px;margin-bottom:16px;position:relative;overflow:hidden;">';
+  // Pulsing calligraphy
+  html += '<div id="' + dhkId + '_cal" style="font-family:\'Scheherazade New\',serif;font-size:42px;color:#C8A84A;direction:rtl;opacity:0.8;animation:_dhkPulse 10s ease-in-out infinite;">' + escapeHtml(dhikr.ar || '') + '</div>';
+  html += '<div style="font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(200,168,75,0.4);margin-top:8px;">' + escapeHtml(dhikr.translit || '') + '</div>';
+  html += '<div style="font-family:var(--serif);font-size:12px;color:rgba(200,168,75,0.3);margin-top:4px;">' + escapeHtml(dhikr.sens || '') + '</div>';
+  html += '</div>';
+  // Terminate button
+  html += '<button id="' + dhkId + '_stop" onclick="_dhkStop(\'' + dhkId + '\',\'' + sk + '\')" style="display:block;margin:0 auto;padding:10px 28px;border-radius:10px;border:1px solid rgba(200,168,75,0.2);background:none;color:rgba(200,168,75,0.4);font-family:var(--serif);font-size:13px;cursor:pointer;">Terminer</button>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.35);text-align:center;line-height:1.5;margin-top:16px;">' + escapeHtml(o.note_spi) + '</div>';
+  // Inject keyframe + start timer
+  setTimeout(function() {
+    if (!document.getElementById('_dhkPulseStyle')) {
+      var style = document.createElement('style');
+      style.id = '_dhkPulseStyle';
+      style.textContent = '@keyframes _dhkPulse{0%,100%{opacity:0.4;transform:scale(1)}25%{opacity:0.9;transform:scale(1.08)}50%{opacity:0.5;transform:scale(1)}75%{opacity:0.85;transform:scale(1.06)}}';
+      document.head.appendChild(style);
+    }
+    window['_dhkStart_' + dhkId] = Date.now();
+  }, 200);
+  return html;
+};
+function _dhkStop(dhkId, sk) {
+  var startTs = window['_dhkStart_' + dhkId];
+  var elapsed = startTs ? Math.round((Date.now() - startTs) / 1000) : 0;
+  safeSetItem(sk, String(elapsed));
+  var btn = document.getElementById(dhkId + '_stop');
+  if (btn) { btn.textContent = 'Termin\u00e9 \u2014 ' + elapsed + 's'; btn.disabled = true; btn.style.opacity = '0.3'; }
+  var cal = document.getElementById(dhkId + '_cal');
+  if (cal) { cal.style.animation = 'none'; cal.style.opacity = '0.3'; }
+}
+window._dhkStop = _dhkStop;
+
 // 3.14 — champ_avec_amorce_obligatoire
 _outilAnxieteRenderers.champ_avec_amorce_obligatoire = function(o, c) {
   var champ = o.champ || {};
