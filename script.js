@@ -4004,17 +4004,6 @@ function renderBabAnNafs() {
   var nb = document.getElementById('nav-bar-v2');
   _hideAideBtn();
   if (_babImmersion) { _babImmersion = false; } else if (nb) { nb.classList.remove('hidden-immersion'); }
-  // Vérifier engagements Muḥâsaba à rappeler
-  try {
-    var engs = JSON.parse(safeGetItem('muhasaba_engagements') || '[]');
-    var now = Date.now();
-    for (var _ei = 0; _ei < engs.length; _ei++) {
-      if (!engs[_ei].traite && engs[_ei].dateRappel <= now) {
-        openMuhasabaRappel(_ei);
-        return;
-      }
-    }
-  } catch(e) {}
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
   var html = '<div style="padding:calc(var(--safe-top)+16px) 16px 120px;">'
@@ -5562,7 +5551,6 @@ function _cureJ7Finale() {
       + '<div class="itfaa-subtle" style="font-size:13px;margin-bottom:24px;">Au d\u00e9but\u00a0: ' + _cure7.efficacite_j1 + '/10. Aujourd\u2019hui\u00a0: ' + _cure7.efficacite_j7 + '/10.</div>'
       + '<div style="display:flex;flex-direction:column;gap:12px;max-width:320px;width:100%;">'
       + '<button onclick="localStorage.removeItem(\'cure_colere\');openCureColere()" style="width:100%;padding:14px;border-radius:12px;border:1px solid ' + c + '55;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">Reprendre la Cure</button>'
-      + '<button onclick="openMuhasabaIntro()" style="width:100%;padding:14px;border-radius:12px;border:1px solid ' + c + '55;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">Ouvrir Mu\u1e25\u00e2saba</button>'
       + '<button onclick="_cureJ7FinaleSucces()" style="width:100%;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>'
       + '</div>'
       + '<div style="font-size:14px;font-style:italic;color:rgba(200,168,75,0.45);line-height:1.6;max-width:400px;margin:24px auto 0;">Sept jours sont une initiation. Le travail sur le nafs est une lutte de toute une vie. Reviens quand tu en as besoin. Demain, ou dans un an. All\u00e2h ne mesure pas la dur\u00e9e \u2014 Il mesure la sinc\u00e9rit\u00e9.</div>'
