@@ -5532,6 +5532,73 @@ _outilAnxieteRenderers.double_slider = function(o, c) {
   return html;
 };
 
+// 3.16 — champ_qui_disparait
+_outilAnxieteRenderers.champ_qui_disparait = function(o, c) {
+  var sk = o.etape_apres_ecriture && o.etape_apres_ecriture.stockage || 'cure_anxiete_disparait';
+  var act = o.action_validation || {};
+  var etape = o.etape_apres_ecriture || {};
+  var savedTheme = safeGetItem(sk) || '';
+  var dispId = '_disp_' + o.id;
+  var done = safeGetItem(sk + '_done') === '1';
+  var html = '';
+  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;white-space:pre-line;">' + escapeHtml(o.introduction) + '</div>';
+  if (done) {
+    // Already done — show calligraphy
+    html += '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:140px;text-align:center;margin-bottom:12px;">'
+      + '<div style="font-family:\'Scheherazade New\',serif;font-size:32px;color:#C8A84A;direction:rtl;margin-bottom:8px;">' + escapeHtml(act.calligraphie_finale_ar || '') + '</div>'
+      + '<div style="font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(200,168,75,0.55);">' + escapeHtml(act.calligraphie_finale_translit || '') + '</div>'
+      + '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);margin-top:4px;">' + escapeHtml(act.calligraphie_finale_sens || '') + '</div>'
+      + '</div>';
+    if (savedTheme) html += '<div style="font-size:12px;color:rgba(200,168,75,0.4);text-align:center;font-style:italic;">Th\u00e8me d\u00e9pos\u00e9\u00a0: ' + escapeHtml(savedTheme) + '</div>';
+  } else if (savedTheme) {
+    // Theme chosen, ready to deposit
+    html += '<div id="' + dispId + '_form">';
+    html += '<div style="border:1px solid ' + c + '22;border-radius:14px;padding:16px;margin-bottom:16px;">';
+    html += '<span style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.7);">' + escapeHtml(o.amorce || '') + ' </span>';
+    html += '<input type="text" id="' + dispId + '_input" placeholder="' + escapeHtml((o.champ && o.champ.placeholder) || '...') + '" style="background:none;border:none;border-bottom:1px solid ' + c + '44;color:#E5E0DC;font-family:var(--serif);font-size:15px;padding:2px 4px;width:100%;max-width:260px;outline:none;">';
+    html += '</div>';
+    html += '<div style="font-size:12px;color:rgba(200,168,75,0.5);text-align:center;margin-bottom:12px;">Th\u00e8me\u00a0: ' + escapeHtml(savedTheme) + '</div>';
+    html += '<button onclick="_dispDeposer(\'' + dispId + '\',\'' + sk + '\')" style="display:block;width:100%;max-width:280px;margin:0 auto;padding:14px;border-radius:10px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:15px;cursor:pointer;">'
+      + '<span style="font-family:\'Scheherazade New\',serif;font-size:16px;margin-right:8px;">' + escapeHtml(act.bouton_ar || '') + '</span>'
+      + escapeHtml(act.bouton_fr || 'Je remets')
+      + '</button>';
+    html += '</div>';
+    html += '<div id="' + dispId + '_cal" style="display:none;text-align:center;">'
+      + '<div style="font-family:\'Scheherazade New\',serif;font-size:32px;color:#C8A84A;direction:rtl;margin-bottom:8px;">' + escapeHtml(act.calligraphie_finale_ar || '') + '</div>'
+      + '<div style="font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(200,168,75,0.55);">' + escapeHtml(act.calligraphie_finale_translit || '') + '</div>'
+      + '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);margin-top:4px;">' + escapeHtml(act.calligraphie_finale_sens || '') + '</div>'
+      + '</div>';
+  } else {
+    // Step 1: write + choose theme
+    html += '<div style="border:1px solid ' + c + '22;border-radius:14px;padding:16px;margin-bottom:16px;">';
+    html += '<span style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.7);">' + escapeHtml(o.amorce || '') + ' </span>';
+    html += '<input type="text" id="' + dispId + '_input" placeholder="' + escapeHtml((o.champ && o.champ.placeholder) || '...') + '" style="background:none;border:none;border-bottom:1px solid ' + c + '44;color:#E5E0DC;font-family:var(--serif);font-size:15px;padding:2px 4px;width:100%;max-width:260px;outline:none;">';
+    html += '</div>';
+    if (etape.instruction) html += '<div style="font-family:var(--serif);font-size:13px;color:rgba(240,234,214,0.6);text-align:center;margin-bottom:10px;">' + escapeHtml(etape.instruction) + '</div>';
+    var themes = etape.options_thematiques || [];
+    html += '<div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:16px;">';
+    themes.forEach(function(th) {
+      html += '<button onclick="safeSetItem(\'' + sk + '\',\'' + escapeHtml(th) + '\');_cureAnxieteWizardRender()" style="padding:8px 14px;border-radius:8px;border:1px solid ' + c + '33;background:rgba(200,168,75,0.04);color:rgba(240,234,214,0.7);font-family:var(--serif);font-size:13px;cursor:pointer;">' + escapeHtml(th) + '</button>';
+    });
+    html += '</div>';
+  }
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-top:12px;">' + escapeHtml(o.note_spi) + '</div>';
+  return html;
+};
+function _dispDeposer(dispId, sk) {
+  var form = document.getElementById(dispId + '_form');
+  var cal = document.getElementById(dispId + '_cal');
+  if (!form) return;
+  form.style.transition = 'opacity 3s ease';
+  form.style.opacity = '0';
+  setTimeout(function() {
+    form.style.display = 'none';
+    if (cal) { cal.style.display = 'block'; cal.style.opacity = '0'; cal.style.transition = 'opacity 1.5s ease'; setTimeout(function() { cal.style.opacity = '1'; }, 50); }
+    safeSetItem(sk + '_done', '1');
+  }, 3000);
+}
+window._dispDeposer = _dispDeposer;
+
 // 3.15 — ecran_sombre_avec_dhikr
 _outilAnxieteRenderers.ecran_sombre_avec_dhikr = function(o, c) {
   var dhikr = o.dhikr || {};
