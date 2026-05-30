@@ -7846,15 +7846,17 @@ function openVueRecitsCoran() {
   fetch('./data/recits-coran.json')
     .then(function(r) { return r.json(); })
     .then(function(data) {
+      data = (data && data.items) ? data.items : (Array.isArray(data) ? data : []);
       _recitsCoranData = data;
       _recitsCoranLoading = false;
-      if (data && data.length > 0) {
+      if (data.length > 0) {
         _renderRecitsCoran(data);
       } else {
         showToast('Bient\u00f4t disponible');
       }
     })
     .catch(function() {
+      _recitsCoranData = [];
       _recitsCoranLoading = false;
       showToast('Bient\u00f4t disponible');
     });
