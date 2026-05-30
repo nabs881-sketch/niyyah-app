@@ -6626,10 +6626,10 @@ function _cureAnxieteWizardRender(el) {
     html = backBtn
       + '<div style="padding:calc(var(--safe-top,0px)+60px) 24px 120px;">'
       + progress
-      + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;text-align:center;margin-bottom:8px;">' + escapeHtml(o.titre || '') + '</div>'
+      + (o.titre ? '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;text-align:center;margin-bottom:8px;">' + escapeHtml(o.titre) + '</div>' : '')
       + (o.consigne ? '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:20px;">' + escapeHtml(o.consigne) + '</div>' : '')
       + outilHtml
-      + nextBtn
+      + (o.type === 'ecran_final_sans_action' ? '' : nextBtn)
       + '</div>';
   } else if (step.type === '_ancre_anxiete') {
     var ancre = step.data;
