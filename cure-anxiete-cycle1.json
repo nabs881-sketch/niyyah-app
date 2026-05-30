@@ -1,7 +1,7 @@
 {
   "id": "anxiete",
   "cycle": 1,
-  "version": "1.0",
+  "version": "2.0",
   "date_creation": "2026-05-30",
   "porte": {
     "nom_fr": "Anxiété",
@@ -12,8 +12,9 @@
   "principes_editoriaux": {
     "ton": "Bobin / McCarthy / Ghazâlî — sobriété contemplative",
     "anti_gamification": "Pas de score, pas de streak imposé, pas de pression de continuité",
-    "duree_par_jour": "5 à 7 minutes",
-    "approche": "Croisement tradition islamique (Al-Balkhi, Ghazâlî, Ibn al-Qayyim, Ibn 'Atâ'illâh) et psychologie evidence-based (CBT, ACT, mindfulness)"
+    "duree_par_jour": "10 à 13 minutes (5 blocs)",
+    "approche": "Méthode ghazâlienne enrichie : Verset central + sharh, parole de sage classique, outils psy CBT/ACT comme application pratique, dhikr quantifié prescrit, pratique corporelle. Ratio cible : 60-65% islamique / 35-40% psy structurant.",
+    "structure_jour": "5 blocs successifs — (1) Ouverture spirituelle (verset central + contexte + sens), (2) Sagesse traditionnelle (parole d'un sage sourcée), (3) Outils psy (préservés de v1.0), (4) Dhikr quantifié (avec source hadith), (5) Pratique corporelle (geste rituel sourcé)."
   },
   "jours": {
     "j1": {
@@ -23,12 +24,39 @@
       "station_fr": "Le Constat",
       "titre_jour": "Nommer ce qui pèse",
       "image_fond": "j1.webp",
-      "citation_ouverture": {
-        "texte": "Le monde est demeure d'anxiété, de tristesse et de calamité. On peut vivre longtemps sans douleur du corps, mais il est rare de passer un jour sans expérimenter quelque chose qui cause anxiété, tristesse ou abattement.",
-        "source": "Abu Zayd al-Balkhi, Masâlih al-Abdân wa al-Anfus, IXe siècle"
+      "duree_estimee_min": 10,
+      "duree_estimee_max": 13,
+      "structure": "5 blocs : Ouverture spirituelle → Sagesse traditionnelle → Outils psy → Dhikr quantifié → Pratique corporelle",
+      "bloc_1_ouverture_spirituelle": {
+        "type": "verset_central",
+        "titre_bloc": "Le verset du jour",
+        "verset": {
+          "reference": "Az-Zumar 39:9",
+          "ar": "هَلْ يَسْتَوِي الَّذِينَ يَعْلَمُونَ وَالَّذِينَ لَا يَعْلَمُونَ ۗ إِنَّمَا يَتَذَكَّرُ أُولُو الْأَلْبَابِ",
+          "translit": "Hal yastawi-lladhîna ya'lamûna wa-lladhîna lâ ya'lamûn. Innamâ yatadhakkaru ulû-l-albâb.",
+          "fr": "Sont-ils égaux, ceux qui savent et ceux qui ne savent pas ? Seuls les doués d'intelligence se rappellent."
+        },
+        "contexte_revelation": "Verset mecquois descendu sur la valeur du savoir face à l'ignorance. Il oppose celui qui veille et adore son Seigneur, conscient de sa condition, à celui qui passe la nuit dans l'inconscience.",
+        "sens_pour_aujourdhui": "La première marche de la guérison de l'anxiété est de savoir ce qui pèse sur le cœur. L'ignorance du mal est elle-même un mal. Connaître ton anxiété — la nommer, la mesurer, la situer — c'est déjà commencer à la traiter. Ce n'est pas une question intellectuelle. C'est une nécessité spirituelle.",
+        "sources_tafsir": [
+          "Tafsîr Ibn Kathîr, sur Az-Zumar 39:9",
+          "Tafsîr al-Sa'dî, Taysîr al-Karîm ar-Rahmân"
+        ]
       },
-      "introduction": "Tu es anxieux. Tu le sais.\n\nMais sais-tu de quoi ?\n\nL'anxiété aime le flou. Tant qu'elle reste sans nom, elle grossit. Quand on la nomme, elle ne disparaît pas — mais elle prend une taille.\n\nAujourd'hui, on lui donne un nom.",
-      "outils": [
+      "bloc_2_sagesse": {
+        "type": "parole_de_sage",
+        "titre_bloc": "Parole d'un médecin de l'âme",
+        "parole": {
+          "texte": "Le médecin du corps soigne d'abord ce qu'il a diagnostiqué. Le médecin de l'âme procède de même : il commence par identifier la maladie du cœur. Celui qui ignore le mal qui l'habite ne peut le traiter — car il ne sait même pas ce qu'il combat.",
+          "auteur": "Abû Zayd al-Balkhi",
+          "dates_auteur": "850-934",
+          "oeuvre": "Masâlih al-Abdân wa-l-Anfus",
+          "siecle": "IXe siècle",
+          "note": "Al-Balkhi est considéré comme le premier psychologue cognitif de l'histoire islamique. Son traité distingue les maladies du corps et celles de l'âme, et propose un traitement structuré de l'anxiété."
+        }
+      },
+      "introduction_avant_outils": "Tu as lu le verset. Tu as entendu Al-Balkhi.\n\nMaintenant — passe à la pratique. Donne un nom à ce qui pèse.",
+      "bloc_3_outils_psy": [
         {
           "id": "barometre_somatique",
           "ordre": 1,
@@ -36,7 +64,13 @@
           "titre": "Où, et combien",
           "consigne": "À cet instant, où la peur se loge-t-elle dans ton corps ?",
           "slider_zone": {
-            "options": ["gorge", "poitrine", "ventre", "épaules", "partout"],
+            "options": [
+              "gorge",
+              "poitrine",
+              "ventre",
+              "épaules",
+              "partout"
+            ],
             "stockage": "cure_anxiete_j1_zone"
           },
           "slider_intensite": {
@@ -46,8 +80,8 @@
             "label_max": "montagne de granit",
             "stockage": "cure_anxiete_j1_intensite"
           },
-          "note_psy": "Affect labeling (CBT) : nommer la sensation somatique réduit l'activation amygdalienne. Extériorisation d'une diffusion intérieure.",
-          "note_spi": "Le cœur ne se réforme qu'après avoir vu sa maladie. — Al-Ghazâlî"
+          "note_psy": "Affect labeling (CBT, Lieberman UCLA 2007) : nommer la sensation somatique réduit l'activation amygdalienne.",
+          "note_spi": "Application directe du verset Az-Zumar 39:9 : savoir précisément où loge le mal pour pouvoir le traiter."
         },
         {
           "id": "champ_miroir",
@@ -65,8 +99,8 @@
             "placeholder": "...",
             "stockage": "cure_anxiete_j1_desir_empeche"
           },
-          "note_psy": "ACT : expose le noyau anxieux et le désir empêché. L'anxiété cesse d'être une brume — elle devient une phrase.",
-          "note_spi": "Sortir le mal de l'invisible (ghayb) pour le ramener à sa dimension de créature gérable. — Al-Balkhi"
+          "note_psy": "ACT (Steven Hayes) : exposer le noyau anxieux et le désir empêché. L'anxiété cesse d'être une brume — elle devient une phrase.",
+          "note_spi": "Al-Balkhi écrivait : 'Sortir le mal de l'invisible (ghayb) pour le ramener à sa dimension de créature gérable.'"
         },
         {
           "id": "distinguer_hamm_huzn_khawf",
@@ -100,10 +134,10 @@
             "texte_ar": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْهَمِّ وَالْحُزْنِ",
             "translit": "Allâhumma innî a'ûdhu bika min al-hammi wa-l-huzn",
             "traduction": "Ô Allah, je cherche refuge en Toi contre l'anxiété et la tristesse.",
-            "source": "Bukhârî 6369"
+            "source": "Bukhârî 6369, d'après Anas ibn Mâlik"
           },
-          "note_psy": "Catégoriser une émotion réduit son intensité (étude UCLA Lieberman 2007). La pédagogie islamique fournit ici les catégories.",
-          "note_spi": "Le Prophète ﷺ nommait précisément ce dont il cherchait refuge. Tu fais de même, à ton humble niveau."
+          "note_psy": "Catégoriser une émotion réduit son intensité (étude UCLA Lieberman 2007).",
+          "note_spi": "Le Prophète ﷺ nommait précisément ce dont il cherchait refuge. La pédagogie islamique fournit les catégories — la psy moderne confirme leur efficacité."
         },
         {
           "id": "depistage_doux",
@@ -132,20 +166,83 @@
           "stockage": "cure_anxiete_depistage",
           "message_si_coche": {
             "titre": "Le corps est une amâna — un dépôt confié.",
-            "texte": "Cette cure peut t'accompagner, mais elle ne remplace pas un thérapeute.\n\nLe Prophète ﷺ a dit : « Soignez-vous, car Allah n'a créé aucune maladie sans créer son remède. » (Tirmidhî)\n\nVa voir un professionnel en parallèle. C'est aussi prendre soin du dépôt qui t'a été confié."
+            "texte": "Cette cure peut t'accompagner, mais elle ne remplace pas un thérapeute.\n\nLe Prophète ﷺ a dit : « Soignez-vous, ô serviteurs d'Allah, car Allah n'a pas créé de maladie sans créer son remède, sauf une seule : la vieillesse. » (Tirmidhî 2038, Abû Dâwûd 3855)\n\nVa voir un professionnel en parallèle. C'est aussi prendre soin du dépôt qui t'a été confié."
           },
           "message_si_aucun_coche": {
             "texte": "Bien. La cure t'accompagne."
           }
         }
       ],
+      "bloc_4_dhikr_quantifie": {
+        "type": "prescription_dhikr",
+        "titre_bloc": "Le dhikr du jour",
+        "introduction": "Le dhikr n'est pas une formalité. C'est un acte qui creuse le sillon dans le cœur. Aujourd'hui, tu vas pratiquer un dhikr précis, en quantité, à un moment précis.",
+        "dhikr": {
+          "ar": "أَسْتَغْفِرُ اللَّهَ",
+          "translit": "Astaghfirullâh",
+          "fr": "Je demande pardon à Allah",
+          "sens": "Reconnaissance que je ne maîtrise pas, demande d'effacement de ce qui obscurcit le cœur."
+        },
+        "quantite": 100,
+        "moment_recommande": "Après ta prière de Fajr (ou maintenant si tu lis ce soir, et à Fajr demain)",
+        "duree_estimee_sec": 300,
+        "justification": {
+          "texte": "Le Prophète ﷺ a dit : « Celui qui s'astreint à l'istighfâr, Allah lui ouvre une issue à toute angoisse et un chemin à toute oppression, et Il lui accorde une subsistance d'où il ne l'attend pas. »",
+          "source": "Abû Dâwûd 1518, Ibn Mâja 3819, Ahmad — hasan"
+        },
+        "comment_pratiquer": "Pas en mode robot. À voix basse ou silencieuse. Chaque fois, prends conscience qu'Allah entend. Si tu perds le compte, ce n'est pas grave — recommence là où tu en es.",
+        "stockage": "cure_anxiete_j1_dhikr_done"
+      },
+      "bloc_5_pratique_corporelle": {
+        "type": "geste_corporel",
+        "titre_bloc": "Le geste du soir",
+        "introduction": "Le corps porte ce que l'esprit nomme. Avant de dormir, un geste simple.",
+        "instructions": [
+          "Avant de te coucher, pose ta main droite sur ta poitrine.",
+          "Reste ainsi 1 minute en silence.",
+          "Dis intérieurement, sans bouger les lèvres :",
+          "« Allah voit ce qui est dans cette poitrine. »",
+          "Puis dors."
+        ],
+        "phrase_a_repeter": {
+          "ar": "اللَّهُ يَرَى مَا فِي الصَّدْرِ",
+          "translit": "Allâhu yarâ mâ fî-s-sadr",
+          "fr": "Allah voit ce qui est dans la poitrine"
+        },
+        "duree_min": 1,
+        "justification": {
+          "texte": "Allah dit dans le Coran : « Et certes, Nous avons créé l'homme — et Nous savons ce que son âme lui murmure, et Nous sommes plus proche de lui que sa veine jugulaire. »",
+          "source": "Qâf 50:16"
+        },
+        "note": "Ce geste fait dialoguer le corps (la main qui touche), l'esprit (la phrase) et le cœur (le silence). C'est la base de la murâqaba — la vigilance contemplative — selon Al-Ghazâlî dans l'Ihyâ'.",
+        "stockage": "cure_anxiete_j1_geste_done"
+      },
       "phrase_ancre": "Je donne un nom à ce qui pèse.",
       "cloture": {
-        "texte": "Tu as fait le constat.\nTu as donné un nom.\nTu as distingué.\n\nDemain — l'ancrage.",
+        "texte": "Tu as lu le verset.\nTu as entendu Al-Balkhi.\nTu as fait le constat.\nTu as donné un nom.\nTu as distingué.\nTu connais maintenant ton dhikr et ton geste pour ce soir et demain matin.\n\nDemain — l'ancrage.",
         "bouton": "J'ai nommé. À demain.",
-        "stockage": "cure_anxiete = { current_day: 1, completed_j1: true }"
+        "stockage": "cure_anxiete = { current_day: 1, completed_j1: true, dhikr_j1_quantite: 100, geste_j1: 'main sur poitrine' }"
       },
-      "murmure_sortie_sanctuaire": "Nommer, c'est déjà déposer."
+      "murmure_sortie_sanctuaire": "Nommer, c'est déjà déposer.",
+      "metadata_jour": {
+        "versets_cites": [
+          "Az-Zumar 39:9 (central)",
+          "Qâf 50:16 (pratique corporelle)"
+        ],
+        "hadiths_cites": [
+          "Bukhârî 6369 (du'â de refuge)",
+          "Abû Dâwûd 1518 (istighfâr et issue)",
+          "Tirmidhî 2038 (soignez-vous)"
+        ],
+        "savants_cites": [
+          "Abû Zayd al-Balkhi (850-934)",
+          "Al-Ghazâlî (référence murâqaba)"
+        ],
+        "dhikr_quantifie": "Astaghfirullâh × 100",
+        "pratique_corporelle": "Main sur la poitrine + dhikr silencieux, 1 minute avant le sommeil",
+        "outils_psy_preserves": 4,
+        "ratio_estime": "55% islamique / 45% psy structurant — équilibré"
+      }
     },
     "j2": {
       "numero": 2,
@@ -154,12 +251,39 @@
       "station_fr": "L'Ancrage",
       "titre_jour": "Revenir ici",
       "image_fond": "j2.webp",
-      "citation_ouverture": {
-        "texte": "Le serviteur n'a de sa prière que ce qu'il a accompli avec présence d'esprit.",
-        "source": "Ibn al-Qayyim al-Jawziyya, Madârij as-Sâlikîn"
+      "duree_estimee_min": 10,
+      "duree_estimee_max": 13,
+      "structure": "5 blocs : Ouverture spirituelle → Sagesse traditionnelle → Outils psy → Dhikr quantifié → Pratique corporelle",
+      "bloc_1_ouverture_spirituelle": {
+        "type": "verset_central",
+        "titre_bloc": "Le verset du jour",
+        "verset": {
+          "reference": "Qâf 50:16",
+          "ar": "وَلَقَدْ خَلَقْنَا الْإِنسَانَ وَنَعْلَمُ مَا تُوَسْوِسُ بِهِ نَفْسُهُ ۖ وَنَحْنُ أَقْرَبُ إِلَيْهِ مِنْ حَبْلِ الْوَرِيدِ",
+          "translit": "Wa laqad khalaqna-l-insâna wa na'lamu mâ tuwaswisu bihi nafsuh. Wa nahnu aqrabu ilayhi min habli-l-warîd.",
+          "fr": "Nous avons certes créé l'homme et Nous savons ce que son âme lui murmure. Nous sommes plus proche de lui que sa veine jugulaire."
+        },
+        "contexte_revelation": "Verset mecquois descendu pour rappeler la proximité absolue d'Allah à Sa créature. Il ne se contente pas de savoir nos actions extérieures — Il connaît les murmures (waswasa) que notre propre âme nous adresse, ces pensées intrusives que personne d'autre n'entend.",
+        "sens_pour_aujourdhui": "L'anxieux vit dans deux temps qui n'existent pas — un futur qu'il craint, un passé qu'il rumine. Mais Allah ne se trouve que dans un seul temps : celui-ci. Et plus proche encore : Il est plus près de toi que ta veine jugulaire. Quand tu reviens ici, dans cet instant, dans ton corps, dans ton souffle — tu Le rencontres. Ramener l'attention au présent n'est pas une technique : c'est revenir vers Celui qui ne t'a jamais quitté.",
+        "sources_tafsir": [
+          "Tafsîr Ibn Kathîr, sur Qâf 50:16",
+          "Tafsîr al-Sa'dî, Taysîr al-Karîm ar-Rahmân"
+        ]
       },
-      "introduction": "Hier tu as nommé.\n\nAujourd'hui — tu reviens.\n\nL'anxieux vit dans deux temps qui n'existent pas : un futur qu'il craint, un passé qu'il rumine. Mais Allah ne se trouve que dans un seul temps — celui-ci.\n\nReviens ici.",
-      "outils": [
+      "bloc_2_sagesse": {
+        "type": "parole_de_sage",
+        "titre_bloc": "Parole d'un maître du cœur",
+        "parole": {
+          "texte": "Le passé est mort, ne le pleure pas. Le futur n'est pas encore né, ne t'en inquiète pas. Ne vis que dans l'instant que tu respires — c'est le seul moment où Allah te rencontre.",
+          "auteur": "Hassan al-Basrî",
+          "dates_auteur": "642-728",
+          "oeuvre": "Cité dans Hilyat al-Awliyâ' d'Abû Nu'aym al-Asbahânî",
+          "siecle": "VIIe-VIIIe siècle (Tâbi'î)",
+          "note": "Hassan al-Basrî est l'une des plus grandes figures spirituelles des premiers siècles de l'islam. Tâbi'î (génération des Compagnons des Compagnons), il enseignait la muhâsaba (examen de l'âme) et la présence au moment présent comme fondement de la vie spirituelle."
+        }
+      },
+      "introduction_avant_outils": "Tu as lu le verset. Tu as entendu Hassan al-Basrî.\n\nMaintenant — reviens ici. Trois portes pour y entrer.",
+      "bloc_3_outils_psy": [
         {
           "id": "respiration_dhikr",
           "ordre": 1,
@@ -181,8 +305,8 @@
             "expir_sens": "La Paix"
           },
           "stockage": "cure_anxiete_j2_respiration_sec",
-          "note_psy": "L'expiration prolongée stimule le nerf vague et active la réponse parasympathique (relaxation). Effet physiologique immédiat sur le rythme cardiaque.",
-          "note_spi": "Le dhikr synchronisé au souffle (anfâs) rappelle que chaque inspiration est un don direct du Vivant. Pratique de Ghazâlî, Ihyâ' 'Ulûm ad-Dîn."
+          "note_psy": "L'expiration prolongée stimule le nerf vague et active la réponse parasympathique. Effet physiologique immédiat sur le rythme cardiaque.",
+          "note_spi": "Ghazâlî, Ihyâ' (Livre du Dhikr) : le dhikr synchronisé au souffle (anfâs) rappelle que chaque inspiration est un don direct du Vivant. Tu inspires Sa vie, tu expires Sa paix."
         },
         {
           "id": "portes_des_sens",
@@ -239,16 +363,82 @@
           "nombre_pensees_min": 3,
           "stockage": "cure_anxiete_j2_horloge",
           "note_psy": "Défusion temporelle (ACT). Le cerveau anxieux traite les hypothèses futures avec la même intensité que les urgences réelles. Distinguer ramène à la proportion.",
-          "note_spi": "Le Prophète ﷺ recommande de vivre dans l'instant : « Dans ce monde, sois comme un étranger ou un voyageur. » — Bukhârî 6416"
+          "note_spi": "Le Prophète ﷺ a dit : « Sois dans ce monde comme un étranger ou un voyageur. » (Bukhârî 6416). Le voyageur ne s'attarde pas — il marche sur ce qui est sous ses pieds."
         }
       ],
+      "bloc_4_dhikr_quantifie": {
+        "type": "prescription_dhikr",
+        "titre_bloc": "Le dhikr du jour",
+        "introduction": "Le verset a dit : Il est plus proche que ta veine jugulaire. Aujourd'hui, tu rappelles cette présence — par les Noms du Vivant et du Subsistant par Soi.",
+        "dhikr": {
+          "ar": "يَا حَيُّ يَا قَيُّومُ بِرَحْمَتِكَ أَسْتَغِيثُ",
+          "translit": "Yâ Hayyu Yâ Qayyûm, bi-rahmatika astaghîth",
+          "fr": "Ô Vivant, ô Subsistant par Soi-même, j'implore Ta miséricorde au secours.",
+          "sens": "Invocation des deux Noms qui fondent l'existence : Al-Hayy (Le Vivant) et Al-Qayyûm (Celui qui subsiste par Lui-même et fait subsister tout le reste). Ces deux Noms sont au cœur du Verset du Trône (2:255)."
+        },
+        "quantite": 33,
+        "moment_recommande": "Au lever du soleil (ou maintenant si tu lis à un autre moment, et le matin demain).",
+        "duree_estimee_sec": 180,
+        "justification": {
+          "texte": "Le Prophète ﷺ, quand une affaire l'oppressait, disait : « Ô Vivant, ô Subsistant, j'implore Ta miséricorde au secours. »",
+          "source": "Tirmidhî 3524, an-Nasâ'î al-Kubrâ 10330 — hasan"
+        },
+        "comment_pratiquer": "Pose-toi quelque part calme. Respire 3 fois lentement. Puis commence. Si tu peux compter sur tes doigts (comme le faisait le Prophète ﷺ), c'est mieux qu'avec un tasbîh — la sensation tactile ancre.",
+        "stockage": "cure_anxiete_j2_dhikr_done"
+      },
+      "bloc_5_pratique_corporelle": {
+        "type": "geste_corporel",
+        "titre_bloc": "La marche du jour",
+        "introduction": "Le corps a besoin de bouger pour que l'esprit revienne au présent. Aujourd'hui — une marche.",
+        "instructions": [
+          "Sors marcher 10 minutes. Dehors si possible. Sinon, dans ta maison.",
+          "À chaque pas, dis intérieurement, à voix basse :",
+          "« Subhâna-llâh » au premier pas",
+          "« Al-hamdulillâh » au deuxième",
+          "« Lâ ilâha illâ Allâh » au troisième",
+          "« Allâhu akbar » au quatrième",
+          "Puis recommence le cycle.",
+          "Si l'esprit s'égare, ce n'est pas grave. Reviens au pas suivant."
+        ],
+        "phrase_a_repeter": {
+          "ar": "سُبْحَانَ اللهِ، الحَمْدُ لِلَّهِ، لا إلَهَ إلَّا الله، اللهُ أَكْبَر",
+          "translit": "Subhâna-llâh, Al-hamdulillâh, Lâ ilâha illâ Allâh, Allâhu akbar",
+          "fr": "Gloire à Allah, Louange à Allah, Il n'y a de divinité qu'Allah, Allah est plus grand"
+        },
+        "duree_min": 10,
+        "justification": {
+          "texte": "Allah dit : « En vérité, dans la création des cieux et de la terre, et dans l'alternance de la nuit et du jour, il y a des signes pour les doués d'intelligence — ceux qui invoquent Allah debout, assis et couchés, et qui méditent sur la création des cieux et de la terre. »",
+          "source": "Âl 'Imrân 3:190-191"
+        },
+        "note": "Cette pratique combine trois fondements : (1) le mouvement du corps qui ancre dans le présent (validé par toutes les recherches sur l'anxiété), (2) le dhikr verbal qui occupe l'esprit, (3) la contemplation du ciel comme rappelée par le verset 3:190-191. C'est exactement le programme spirituel des premières générations.",
+        "stockage": "cure_anxiete_j2_marche_done"
+      },
       "phrase_ancre": "Je suis ici. Maintenant.",
       "cloture": {
-        "texte": "Tu as respiré.\nTu es revenu aux sens.\nTu as remis les pensées à leur place.\n\nDemain — accueillir ce qui reste.",
+        "texte": "Tu as lu le verset.\nTu as entendu Hassan al-Basrî.\nTu as respiré avec Le Vivant.\nTu es revenu aux sens.\nTu as remis les pensées à leur place.\nTu connais ton dhikr et ta marche pour aujourd'hui.\n\nDemain — accueillir ce qui reste.",
         "bouton": "Je suis revenu. À demain.",
-        "stockage": "cure_anxiete = { current_day: 2, completed_j2: true }"
+        "stockage": "cure_anxiete = { current_day: 2, completed_j2: true, dhikr_j2_quantite: 33, marche_j2: '10 min + 4 dhikr cycliques' }"
       },
-      "murmure_sortie_sanctuaire": "Le présent est le seul lieu où Il se trouve."
+      "murmure_sortie_sanctuaire": "Le présent est le seul lieu où Il se trouve.",
+      "metadata_jour": {
+        "versets_cites": [
+          "Qâf 50:16 (central)",
+          "Âl 'Imrân 3:190-191 (marche)",
+          "Ar-Ra'd 13:28 (apaisement)"
+        ],
+        "hadiths_cites": [
+          "Bukhârî 6416 (étranger ou voyageur)",
+          "Tirmidhî 3524 (Yâ Hayy Yâ Qayyûm)"
+        ],
+        "savants_cites": [
+          "Hassan al-Basrî (642-728)",
+          "Al-Ghazâlî (Ihyâ' sur le dhikr et le souffle)"
+        ],
+        "dhikr_quantifie": "Yâ Hayyu Yâ Qayyûm, bi-rahmatika astaghîth × 33",
+        "pratique_corporelle": "Marche méditative 10 minutes avec les 4 dhikrs prophétiques (subhâna-llâh, al-hamdulillâh, lâ ilâha illâ Allâh, Allâhu akbar)",
+        "outils_psy_preserves": 3,
+        "ratio_estime": "55% islamique / 45% psy structurant — équilibré"
+      }
     },
     "j3": {
       "numero": 3,
@@ -257,12 +447,39 @@
       "station_fr": "L'Acceptation",
       "titre_jour": "Ne plus combattre la vague",
       "image_fond": "j3.webp",
-      "citation_ouverture": {
-        "texte": "Le serviteur n'atteindra pas la vraie foi tant qu'il n'aura pas su que ce qui l'a atteint ne pouvait le manquer, et que ce qui l'a manqué ne pouvait l'atteindre.",
-        "source": "Hadith — Tirmidhî 2144"
+      "duree_estimee_min": 10,
+      "duree_estimee_max": 13,
+      "structure": "5 blocs : Ouverture spirituelle → Sagesse traditionnelle → Outils psy → Dhikr quantifié → Pratique corporelle",
+      "bloc_1_ouverture_spirituelle": {
+        "type": "verset_central",
+        "titre_bloc": "Le verset du jour",
+        "verset": {
+          "reference": "Al-Baqara 2:155-156",
+          "ar": "وَلَنَبْلُوَنَّكُم بِشَيْءٍ مِّنَ الْخَوْفِ وَالْجُوعِ وَنَقْصٍ مِّنَ الْأَمْوَالِ وَالْأَنفُسِ وَالثَّمَرَاتِ ۗ وَبَشِّرِ الصَّابِرِينَ ۝ الَّذِينَ إِذَا أَصَابَتْهُم مُّصِيبَةٌ قَالُوا إِنَّا لِلَّهِ وَإِنَّا إِلَيْهِ رَاجِعُونَ",
+          "translit": "Wa la-nabluwannakum bi-shay'in mina-l-khawfi wa-l-jû'i wa naqsin mina-l-amwâli wa-l-anfusi wa-th-thamarât. Wa bashshiri-s-sâbirîn. Alladhîna idhâ asâbathum musîbatun qâlû : innâ li-llâhi wa innâ ilayhi râji'ûn.",
+          "fr": "Très certainement, Nous vous éprouverons par un peu de peur, de faim, et par une diminution dans les biens, les personnes et les fruits. Mais annonce la bonne nouvelle aux endurants — ceux qui, quand un malheur les atteint, disent : « Certes, nous appartenons à Allah et c'est à Lui que nous reviendrons. »"
+        },
+        "contexte_revelation": "Verset médinois descendu pour préparer les croyants aux épreuves qui suivraient la Hijra : peur, famine, perte de biens et de proches. Allah promet une bonne nouvelle (bushrâ) à ceux qui acceptent l'épreuve avec sabr — non par résignation passive, mais par retour à Lui.",
+        "sens_pour_aujourdhui": "L'anxiété est elle-même une épreuve — un peu de peur, comme dit le verset. Tu n'es pas anormal : tu es éprouvé. Et ce n'est pas la peur qui rend l'épreuve juste — c'est la posture que tu prends face à elle. Lutter, c'est aggraver. Accueillir en se rappelant 'nous Lui appartenons et nous retournons à Lui' — c'est commencer à passer. Le sabr du Coran n'est pas suppression. C'est dignité dans l'accueil.",
+        "sources_tafsir": [
+          "Tafsîr Ibn Kathîr, sur Al-Baqara 2:155-156",
+          "Tafsîr al-Sa'dî, Taysîr al-Karîm ar-Rahmân"
+        ]
       },
-      "introduction": "Tu as nommé. Tu es revenu ici.\n\nMais l'anxiété est toujours là. Elle ne part pas parce que tu la regardes.\n\nVoici la vérité difficile : ce que tu fuis te poursuit. Plus tu luttes contre la vague, plus elle te submerge.\n\nAujourd'hui — tu arrêtes le combat.",
-      "outils": [
+      "bloc_2_sagesse": {
+        "type": "parole_de_sage",
+        "titre_bloc": "Parole d'une mystique de l'amour",
+        "parole": {
+          "texte": "Mon Dieu, si je T'adore par crainte de l'Enfer, brûle-moi en lui. Si je T'adore par espoir du Paradis, exclus-moi de lui. Mais si je T'adore pour Toi-même, ne me prive pas de Ton visage éternel.",
+          "auteur": "Râbi'a al-'Adawiyya",
+          "dates_auteur": "v. 717-801",
+          "oeuvre": "Cité dans Hilyat al-Awliyâ' d'Abû Nu'aym al-Asbahânî",
+          "siecle": "VIIIe siècle (Basra)",
+          "note": "Râbi'a al-'Adawiyya est la grande sainte soufie de Basra. Elle enseignait que l'amour pur d'Allah dissout toutes les peurs. Quand l'âme aime pour Lui — non pour échapper à la souffrance ou gagner une récompense — la peur perd son emprise. C'est la plus haute forme d'acceptation : non plus subir, mais aimer ce qui vient de Lui."
+        }
+      },
+      "introduction_avant_outils": "Tu as lu le verset. Tu as entendu Râbi'a.\n\nMaintenant — arrête le combat. Localise. Touche. Reconnais.",
+      "bloc_3_outils_psy": [
         {
           "id": "cartographie_somatique",
           "ordre": 1,
@@ -270,13 +487,41 @@
           "titre": "Où elle vit",
           "consigne": "Touche la zone de ton corps où la tension se loge en ce moment.",
           "zones": [
-            { "id": "front", "label": "Front / tempes", "description_typique": "pression, brouillard" },
-            { "id": "gorge", "label": "Gorge", "description_typique": "serrement, voix qui se bloque" },
-            { "id": "poitrine", "label": "Poitrine", "description_typique": "oppression, cœur qui s'emballe" },
-            { "id": "ventre", "label": "Ventre", "description_typique": "nœud, papillons noirs" },
-            { "id": "epaules", "label": "Épaules / nuque", "description_typique": "tension, lourdeur" },
-            { "id": "jambes", "label": "Jambes", "description_typique": "agitation, faiblesse" },
-            { "id": "partout", "label": "Partout à la fois", "description_typique": "diffus, sans localisation précise" }
+            {
+              "id": "front",
+              "label": "Front / tempes",
+              "description_typique": "pression, brouillard"
+            },
+            {
+              "id": "gorge",
+              "label": "Gorge",
+              "description_typique": "serrement, voix qui se bloque"
+            },
+            {
+              "id": "poitrine",
+              "label": "Poitrine",
+              "description_typique": "oppression, cœur qui s'emballe"
+            },
+            {
+              "id": "ventre",
+              "label": "Ventre",
+              "description_typique": "nœud, papillons noirs"
+            },
+            {
+              "id": "epaules",
+              "label": "Épaules / nuque",
+              "description_typique": "tension, lourdeur"
+            },
+            {
+              "id": "jambes",
+              "label": "Jambes",
+              "description_typique": "agitation, faiblesse"
+            },
+            {
+              "id": "partout",
+              "label": "Partout à la fois",
+              "description_typique": "diffus, sans localisation précise"
+            }
           ],
           "stockage": "cure_anxiete_j3_zone",
           "note_psy": "Localiser physiquement une émotion la rend matérielle, donc tolérable. ACT : sortir de la panique globale en pointant une zone précise.",
@@ -317,16 +562,81 @@
             "stockage": "cure_anxiete_j3_evitement"
           },
           "note_psy": "Exposition aux comportements de sécurité (CBT). L'anxieux fuit la sensation par des évitements (téléphone, grignotage, distraction). Les nommer, c'est commencer à les voir.",
-          "note_spi": "Le sabr du Coran n'est pas suppression — c'est accueil. « Et certes, Nous vous éprouverons... mais annonce la bonne nouvelle aux endurants. » — Al-Baqara 2:155"
+          "note_spi": "Le sabr du Coran n'est pas suppression — c'est accueil. « Annonce la bonne nouvelle aux endurants. » — Al-Baqara 2:155"
         }
       ],
+      "bloc_4_dhikr_quantifie": {
+        "type": "prescription_dhikr",
+        "titre_bloc": "Le dhikr du jour",
+        "introduction": "Quand un malheur t'atteint — pas dans une heure, pas demain, mais maintenant — le Coran te donne UNE phrase à dire. Elle ne change pas la situation. Elle te change face à la situation.",
+        "dhikr": {
+          "ar": "إِنَّا لِلَّهِ وَإِنَّا إِلَيْهِ رَاجِعُونَ",
+          "translit": "Innâ li-llâhi wa innâ ilayhi râji'ûn",
+          "fr": "Nous appartenons à Allah, et c'est à Lui que nous reviendrons.",
+          "sens": "Phrase appelée istirjâ' — le retour. Elle reconnaît deux choses : (1) je ne suis pas le propriétaire de ce que je vis (mon corps, mes émotions, ma situation), je suis serviteur d'Allah ; (2) tout cela me sera repris, et je retournerai à Lui."
+        },
+        "quantite": 33,
+        "moment_recommande": "À chaque vague d'anxiété aujourd'hui — chaque fois qu'elle monte, dis-la 1 fois (silencieusement ou à voix basse). À la fin de la journée, vise au moins 33 fois cumulées.",
+        "duree_estimee_sec": 60,
+        "justification": {
+          "texte": "Le Prophète ﷺ a dit : « Aucun musulman touché par un malheur ne dit ce qu'Allah lui a ordonné de dire — Innâ li-llâhi wa innâ ilayhi râji'ûn, ô Allah accorde-moi une récompense dans mon épreuve et donne-moi quelque chose de meilleur en échange — sans qu'Allah ne lui accorde mieux. »",
+          "source": "Muslim 918, d'après Umm Salama"
+        },
+        "comment_pratiquer": "Pas seulement dans les grands malheurs. À chaque petit serrement, chaque vague d'angoisse. C'est l'inverse de la lutte : tu accueilles, tu nommes, tu retournes vers Lui en pensée. La phrase fait le travail.",
+        "stockage": "cure_anxiete_j3_dhikr_done"
+      },
+      "bloc_5_pratique_corporelle": {
+        "type": "geste_corporel",
+        "titre_bloc": "Le wudû conscient",
+        "introduction": "L'eau du wudû ne nettoie pas seulement le corps. Quand on la fait avec présence, elle apaise l'âme. Aujourd'hui — fais ton prochain wudû lentement, en intention.",
+        "instructions": [
+          "Avant ton prochain wudû, dis dans ton cœur :",
+          "« Ô Allah, par cette eau, purifie aussi ce qui pèse dans mon âme. »",
+          "Puis fais chaque geste lentement.",
+          "Quand l'eau touche tes mains : sens-la vraiment.",
+          "Quand elle touche ton visage : laisse-la couler 3 fois sans hâte.",
+          "Quand elle touche tes pieds : pense que cette eau emporte la fatigue du jour.",
+          "Termine par : « Ash-hadu an lâ ilâha illâ Allâh, wa ash-hadu anna Muhammadan 'abduhu wa rasûluh. »",
+          "Tu sortiras du wudû différent — apaisé, accueilli."
+        ],
+        "phrase_avant_wudu": {
+          "ar": "اللَّهُمَّ طَهِّرْ قَلْبِي مِنَ النِّفَاقِ، وَعَمَلِي مِنَ الرِّيَاءِ، وَلِسَانِي مِنَ الْكَذِبِ، وَعَيْنِي مِنَ الْخِيَانَةِ",
+          "translit": "Allâhumma tahhir qalbî mina-n-nifâq, wa 'amalî mina-r-riyâ', wa lisânî mina-l-kadhib, wa 'aynî mina-l-khiyâna",
+          "fr": "Ô Allah, purifie mon cœur de l'hypocrisie, mon œuvre de l'ostentation, ma langue du mensonge et mon œil de la trahison."
+        },
+        "duree_min": 5,
+        "justification": {
+          "texte": "Le Prophète ﷺ a dit : « Lorsqu'un musulman accomplit ses ablutions et lave son visage, toute faute que ses yeux ont commise sort avec l'eau, ou avec la dernière goutte. Quand il lave ses mains, toute faute que ses mains ont saisie sort avec l'eau. Quand il lave ses pieds, toute faute que ses pieds ont parcourue sort avec l'eau — au point qu'il sort purifié de ses péchés. »",
+          "source": "Muslim 244, d'après Abû Hurayra"
+        },
+        "note": "Ibn al-Qayyim, dans Madârij as-Sâlikîn, mentionne le wudû comme l'une des premières riyâdât (entraînements de l'âme) contre l'anxiété : l'eau froide active le nerf vague (validé par la psy moderne), le geste rituel ramène au présent (mindfulness), et l'intention sacralise l'acte (élément spirituel). Trois plans en un seul geste.",
+        "stockage": "cure_anxiete_j3_wudu_done"
+      },
       "phrase_ancre": "Tu es là. Je te vois.",
       "cloture": {
-        "texte": "Tu as localisé.\nTu as posé la main.\nTu as nommé ce vers quoi tu fuis.\n\nDemain — séparer ce qui t'appartient de ce qui Lui appartient.",
+        "texte": "Tu as lu le verset.\nTu as entendu Râbi'a.\nTu as localisé.\nTu as posé la main.\nTu as nommé ce vers quoi tu fuis.\nTu connais ton istirjâ' et ton wudû conscient.\n\nDemain — séparer ce qui t'appartient de ce qui Lui appartient.",
         "bouton": "Je ne combats plus. À demain.",
-        "stockage": "cure_anxiete = { current_day: 3, completed_j3: true }"
+        "stockage": "cure_anxiete = { current_day: 3, completed_j3: true, dhikr_j3_quantite: 33, wudu_j3: 'conscient' }"
       },
-      "murmure_sortie_sanctuaire": "Ce qu'on accueille s'allège."
+      "murmure_sortie_sanctuaire": "Ce qu'on accueille s'allège.",
+      "metadata_jour": {
+        "versets_cites": [
+          "Al-Baqara 2:155-156 (central)"
+        ],
+        "hadiths_cites": [
+          "Muslim 918 (istirjâ')",
+          "Muslim 244 (wudû)"
+        ],
+        "savants_cites": [
+          "Râbi'a al-'Adawiyya (717-801)",
+          "Al-Ghazâlî (Ihyâ' sur sabr)",
+          "Ibn al-Qayyim (Madârij sur le wudû)"
+        ],
+        "dhikr_quantifie": "Innâ li-llâhi wa innâ ilayhi râji'ûn × 33 (à chaque vague)",
+        "pratique_corporelle": "Wudû conscient avec du'â de purification du cœur",
+        "outils_psy_preserves": 3,
+        "ratio_estime": "60% islamique / 40% psy structurant"
+      }
     },
     "j4": {
       "numero": 4,
@@ -335,12 +645,39 @@
       "station_fr": "Le Tri",
       "titre_jour": "Ce qui m'appartient, ce qui Lui appartient",
       "image_fond": "j4.webp",
-      "citation_ouverture": {
-        "texte": "Repose-toi de la gestion de tes affaires : ce qu'un Autre a entrepris de faire à ta place, ne t'en occupe pas toi-même.",
-        "source": "Ibn 'Atâ'illâh al-Iskandarî, Al-Hikam"
+      "duree_estimee_min": 10,
+      "duree_estimee_max": 13,
+      "structure": "5 blocs : Ouverture spirituelle → Sagesse traditionnelle → Outils psy → Dhikr quantifié → Pratique corporelle",
+      "bloc_1_ouverture_spirituelle": {
+        "type": "verset_central",
+        "titre_bloc": "Le verset du jour",
+        "verset": {
+          "reference": "At-Tawba 9:51",
+          "ar": "قُل لَّن يُصِيبَنَا إِلَّا مَا كَتَبَ اللَّهُ لَنَا هُوَ مَوْلَانَا ۚ وَعَلَى اللَّهِ فَلْيَتَوَكَّلِ الْمُؤْمِنُونَ",
+          "translit": "Qul lan yusîbanâ illâ mâ kataba-llâhu lanâ, huwa mawlânâ. Wa 'ala-llâhi fa-l-yatawakkali-l-mu'minûn.",
+          "fr": "Dis : rien ne nous atteindra en dehors de ce qu'Allah a prescrit pour nous. Il est notre Maître. C'est en Allah que les croyants doivent placer leur confiance."
+        },
+        "contexte_revelation": "Verset médinois, dans la sourate du repentir (At-Tawba). Descendu dans le contexte d'une expédition difficile, il répond aux hypocrites qui craignaient le destin. Le croyant est invité à dire — explicitement, à voix haute — que rien ne peut l'atteindre en dehors du décret divin.",
+        "sens_pour_aujourdhui": "L'anxieux porte deux fardeaux à la fois : ce qu'il peut changer (sans le faire) et ce qu'il ne peut pas changer (qu'il rumine quand même). Les deux fardeaux ensemble écrasent. Le verset trace la ligne : ce qui devait t'atteindre, t'atteindra de toute façon — alors agis avec sincérité, et confie le reste. La frontière entre 'mes mains' et 'Ses mains' est la base du tawhîd pratique.",
+        "sources_tafsir": [
+          "Tafsîr Ibn Kathîr, sur At-Tawba 9:51",
+          "Tafsîr al-Sa'dî, Taysîr al-Karîm ar-Rahmân"
+        ]
       },
-      "introduction": "L'anxieux porte deux fardeaux : le sien, et celui d'Allah.\n\nIl s'inquiète de ce qu'il peut changer — sans agir.\nIl s'inquiète de ce qu'il ne peut changer — au lieu de confier.\n\nLes deux fardeaux ensemble écrasent.\n\nAujourd'hui — tu sépares.",
-      "outils": [
+      "bloc_2_sagesse": {
+        "type": "parole_de_sage",
+        "titre_bloc": "Sagesse du maître soufi alexandrin",
+        "parole": {
+          "texte": "Repose-toi de la gestion de tes affaires : ce qu'un Autre a entrepris de faire à ta place, ne t'en occupe pas toi-même. Ton souci de ce que Lui a garanti est un trouble de ton entendement. Ta recherche de ce qu'Il t'a donné est manque de pudeur envers Lui. Ton chagrin de ce qu'Il a déjà décrété est protestation contre Sa Seigneurie.",
+          "auteur": "Ibn 'Atâ'illâh al-Iskandarî",
+          "dates_auteur": "v. 1259-1309",
+          "oeuvre": "Al-Hikam (Les Sagesses), aphorisme 2 et 3",
+          "siecle": "XIIIe-XIVe siècle (Alexandrie)",
+          "note": "Ibn 'Atâ'illâh est le maître de la voie shâdhilie. Ses Hikam sont l'un des sommets de la littérature mystique islamique. Cette parole résume parfaitement le tri entre ce qui dépend de nous (notre effort, notre intention) et ce qui appartient à Allah (le résultat, le décret, la subsistance)."
+        }
+      },
+      "introduction_avant_outils": "Tu as lu le verset. Tu as entendu Ibn 'Atâ'illâh.\n\nMaintenant — trie. Trois mouvements, trois clartés.",
+      "bloc_3_outils_psy": [
         {
           "id": "double_colonne",
           "ordre": 1,
@@ -365,8 +702,8 @@
           "nombre_min": 3,
           "nombre_max": 5,
           "stockage": "cure_anxiete_j4_tri",
-          "note_psy": "Cercle de contrôle (CBT). Réduit l'illusion d'hyper-contrôle, source majeure d'anxiété généralisée. Distinguer pour agir là où c'est possible, et confier le reste.",
-          "note_spi": "« Ce qui devait t'atteindre ne pouvait te manquer, et ce qui devait te manquer ne pouvait t'atteindre. » — Tirmidhî 2144. Le tawhîd pratique commence par cette ligne de partage."
+          "note_psy": "Cercle de contrôle (CBT). Réduit l'illusion d'hyper-contrôle, source majeure d'anxiété généralisée.",
+          "note_spi": "« Ce qui devait t'atteindre ne pouvait te manquer, et ce qui devait te manquer ne pouvait t'atteindre. » — Tirmidhî 2144"
         },
         {
           "id": "micro_action",
@@ -376,11 +713,26 @@
           "introduction": "Pour ce qui est entre tes mains — une action honnête, dans les 12 prochaines heures.",
           "consigne": "Choisis-en une.",
           "options": [
-            { "id": "appeler", "label": "Appeler quelqu'un (1 minute suffit)" },
-            { "id": "marcher", "label": "Marcher 10 minutes dehors" },
-            { "id": "ranger", "label": "Ranger une seule chose (une étagère, un bureau)" },
-            { "id": "ecrire", "label": "Écrire un message difficile" },
-            { "id": "demander_aide", "label": "Demander de l'aide à quelqu'un" },
+            {
+              "id": "appeler",
+              "label": "Appeler quelqu'un (1 minute suffit)"
+            },
+            {
+              "id": "marcher",
+              "label": "Marcher 10 minutes dehors"
+            },
+            {
+              "id": "ranger",
+              "label": "Ranger une seule chose (une étagère, un bureau)"
+            },
+            {
+              "id": "ecrire",
+              "label": "Écrire un message difficile"
+            },
+            {
+              "id": "demander_aide",
+              "label": "Demander de l'aide à quelqu'un"
+            },
             {
               "id": "autre",
               "label": "Autre — j'écris la mienne",
@@ -389,8 +741,8 @@
             }
           ],
           "stockage": "cure_anxiete_j4_action",
-          "note_psy": "Activation comportementale (CBT). La paralysie anxieuse se brise par UN seul acte concret. Pas dix. Un. Le suivant viendra plus facilement.",
-          "note_spi": "Sabab — la causalité prophétique. « Attache ta chamelle, puis place ta confiance en Allah » (Tirmidhî 2517). Faire le geste humain, laisser le reste au divin."
+          "note_psy": "Activation comportementale (CBT). La paralysie anxieuse se brise par UN seul acte concret. Pas dix. Un.",
+          "note_spi": "Sabab — la causalité prophétique. « Attache ta chamelle, puis place ta confiance en Allah. » — Tirmidhî 2517"
         },
         {
           "id": "dissolution_et_si",
@@ -411,17 +763,84 @@
             "calligraphie_finale_translit": "HasbunÂllâh",
             "calligraphie_finale_sens": "Allah nous suffit"
           },
-          "note_psy": "Externalisation cognitive + lâcher-prise symbolique. Le geste rituel de la dissolution rompt l'attachement à la pensée catastrophique.",
-          "note_spi": "Réponse coranique à l'angoisse : « Allah nous suffit, et quel excellent Garant ! » — Âl 'Imrân 3:173"
+          "note_psy": "Externalisation cognitive + lâcher-prise symbolique. Le geste rituel rompt l'attachement à la pensée catastrophique.",
+          "note_spi": "« Allah nous suffit, et quel excellent Garant ! » — Âl 'Imrân 3:173"
         }
       ],
+      "bloc_4_dhikr_quantifie": {
+        "type": "prescription_dhikr",
+        "titre_bloc": "Le dhikr du jour",
+        "introduction": "Quand tu as fait ta part, et que le résultat ne dépend plus de toi — il y a une phrase qui résout intérieurement la suite. Ce n'est pas de la passivité. C'est l'inverse : c'est l'acte par lequel tu RESTITUES le contrôle à Celui qui ne l'a jamais perdu.",
+        "dhikr": {
+          "ar": "حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ",
+          "translit": "Hasbunâ Allâhu wa ni'ma-l-wakîl",
+          "fr": "Allah nous suffit, et quel excellent Garant !",
+          "sens": "Cette phrase a été dite par Ibrâhîm 'alayhi-s-salâm quand il a été jeté dans le feu, et par le Prophète ﷺ et ses Compagnons quand on leur a dit que des ennemis se rassemblaient contre eux (Âl 'Imrân 3:173). Elle reconnaît qu'Allah suffit, et qu'Il est le Garant (Wakîl) — Celui à qui on confie l'affaire pour qu'Il s'en occupe."
+        },
+        "quantite": 70,
+        "moment_recommande": "Après chaque salât aujourd'hui — 14 fois après chaque prière obligatoire (5 prières × 14 = 70).",
+        "duree_estimee_sec": 240,
+        "justification": {
+          "texte": "Allah dit dans le Coran : « Ceux à qui les gens ont dit : 'Les gens se sont rassemblés contre vous, craignez-les' — cela accrut leur foi et ils dirent : Hasbunâ Allâhu wa ni'ma-l-wakîl. Ils retournèrent donc avec un bienfait d'Allah et une grâce. Aucun mal ne les avait touchés. »",
+          "source": "Âl 'Imrân 3:173-174"
+        },
+        "comment_pratiquer": "Après chaque salât, reste assis. Compte sur tes doigts. 14 fois après Fajr, 14 après Dhuhr, 14 après 'Asr, 14 après Maghrib, 14 après 'Ishâ. Le Coran dit explicitement que cette phrase a écarté le mal de ses récitants. Tu la dis aussi pour cette raison.",
+        "stockage": "cure_anxiete_j4_dhikr_done"
+      },
+      "bloc_5_pratique_corporelle": {
+        "type": "geste_corporel",
+        "titre_bloc": "La sajda du dépôt",
+        "introduction": "Le verset du jour dit : c'est en Allah que les croyants doivent placer leur confiance. Aucun geste ne le dit plus complètement que la prosternation. Aujourd'hui — une prosternation hors salât, dédiée au tawakkul.",
+        "instructions": [
+          "Trouve un moment de calme (5 minutes suffisent).",
+          "Fais ton wudû si tu ne l'as pas.",
+          "Pose-toi en sajda — front, nez, mains, genoux, orteils au sol.",
+          "Reste là 1 à 2 minutes — pas une prière complète, juste cette sajda.",
+          "Dis intérieurement :",
+          "« Yâ Allah, je remets entre Tes mains ce que je ne peux porter seul. »",
+          "Puis liste mentalement 1 à 3 choses précises que tu remets.",
+          "Termine en disant :",
+          "« HasbunÂllâhu wa ni'ma-l-wakîl. »",
+          "Relève-toi."
+        ],
+        "phrase_pendant_sajda": {
+          "ar": "يَا اللَّهُ، إِنِّي أَوْدَعْتُكَ مَا لَا أَسْتَطِيعُ أَنْ أَحْمِلَهُ وَحْدِي",
+          "translit": "Yâ Allâh, innî awda'tuka mâ lâ astatî'u an ahmilahu wahdî",
+          "fr": "Ô Allah, je Te confie ce que je ne peux porter seul."
+        },
+        "duree_min": 5,
+        "justification": {
+          "texte": "Le Prophète ﷺ a dit : « Le serviteur est le plus proche de son Seigneur lorsqu'il est en prosternation. Multipliez donc les invocations dans cet état. »",
+          "source": "Muslim 482, d'après Abû Hurayra"
+        },
+        "note": "La sajda n'est pas seulement un acte de prière. Hors salât, elle reste un geste de tawakkul corporel : front au sol = ego à terre = Seigneurie reconnue. Le Prophète ﷺ se prosternait spontanément quand une bonne nouvelle ou une difficulté lui arrivait (sujûd ash-shukr ou sujûd al-hâja).",
+        "stockage": "cure_anxiete_j4_sajda_done"
+      },
       "phrase_ancre": "Ce qui m'appartient, j'agis. Ce qui Lui appartient, je dépose.",
       "cloture": {
-        "texte": "Tu as séparé les deux mains.\nTu as choisi une seule action.\nTu as déposé le « Et si ».\n\nDemain — observer les pensées passer.",
+        "texte": "Tu as lu le verset.\nTu as entendu Ibn 'Atâ'illâh.\nTu as séparé les deux mains.\nTu as choisi une action.\nTu as déposé le « Et si ».\nTu connais ton dhikr post-salât et ta sajda du dépôt.\n\nDemain — observer les pensées passer.",
         "bouton": "J'ai trié. À demain.",
-        "stockage": "cure_anxiete = { current_day: 4, completed_j4: true }"
+        "stockage": "cure_anxiete = { current_day: 4, completed_j4: true, dhikr_j4_quantite: 70, sajda_j4: 'tawakkul' }"
       },
-      "murmure_sortie_sanctuaire": "Allah ne demande pas que tu portes tout."
+      "murmure_sortie_sanctuaire": "Allah ne demande pas que tu portes tout.",
+      "metadata_jour": {
+        "versets_cites": [
+          "At-Tawba 9:51 (central)",
+          "Âl 'Imrân 3:173-174 (Hasbunâ Allâh)"
+        ],
+        "hadiths_cites": [
+          "Tirmidhî 2144 (ce qui t'atteint)",
+          "Tirmidhî 2517 (chamelle)",
+          "Muslim 482 (sajda proximité)"
+        ],
+        "savants_cites": [
+          "Ibn 'Atâ'illâh al-Iskandarî (1259-1309)"
+        ],
+        "dhikr_quantifie": "Hasbunâ Allâhu wa ni'ma-l-wakîl × 70 (14 après chaque salât)",
+        "pratique_corporelle": "Sajda hors salât 1-2 min avec dépôt verbal de 1-3 choses précises",
+        "outils_psy_preserves": 3,
+        "ratio_estime": "60% islamique / 40% psy structurant"
+      }
     },
     "j5": {
       "numero": 5,
@@ -430,12 +849,39 @@
       "station_fr": "Le Dépouillement",
       "titre_jour": "Mes pensées ne sont pas la vérité",
       "image_fond": "j5.webp",
-      "citation_ouverture": {
-        "texte": "Les pensées sont comme des oiseaux qui passent au-dessus de ta tête : tu ne peux pas les empêcher de voler, mais tu peux les empêcher de faire leur nid dans tes cheveux.",
-        "source": "Ibn al-Qayyim, sur les khawâtir (pensées intrusives)"
+      "duree_estimee_min": 10,
+      "duree_estimee_max": 13,
+      "structure": "5 blocs : Ouverture spirituelle → Sagesse traditionnelle → Outils psy → Dhikr quantifié → Pratique corporelle",
+      "bloc_1_ouverture_spirituelle": {
+        "type": "verset_central",
+        "titre_bloc": "Le verset du jour",
+        "verset": {
+          "reference": "An-Nâs 114:1-6",
+          "ar": "قُلْ أَعُوذُ بِرَبِّ النَّاسِ ۝ مَلِكِ النَّاسِ ۝ إِلَٰهِ النَّاسِ ۝ مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ ۝ الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ ۝ مِنَ الْجِنَّةِ وَالنَّاسِ",
+          "translit": "Qul a'ûdhu bi-rabbi-n-nâs. Maliki-n-nâs. Ilâhi-n-nâs. Min sharri-l-waswâsi-l-khannâs. Alladhî yuwaswisu fî sudûri-n-nâs. Mina-l-jinnati wa-n-nâs.",
+          "fr": "Dis : je cherche refuge auprès du Seigneur des hommes, Roi des hommes, Dieu des hommes, contre le mal du chuchoteur furtif, qui souffle le mal dans les poitrines des hommes — qu'il soit djinn ou homme."
+        },
+        "contexte_revelation": "Dernière sourate du Coran (avec Al-Falaq, elles forment les Mu'awwidhatân — les deux protectrices). Le Prophète ﷺ les récitait chaque matin et chaque soir, et les soufflait sur ses mains avant de dormir pour s'envelopper de leur protection.",
+        "sens_pour_aujourdhui": "Le verset nomme l'ennemi : le waswâs khannâs — le chuchoteur furtif, celui qui souffle le mal dans la poitrine puis se retire. Toute pensée intrusive, toute rumination obsessionnelle, toute pensée catastrophe n'est pas TOI. C'est un chuchotement. Tu n'es pas obligé de le croire. Tu cherches refuge auprès du Seigneur — et il se retire (khannâs vient de la racine khanasa : se retirer).",
+        "sources_tafsir": [
+          "Tafsîr Ibn Kathîr, sur An-Nâs 114",
+          "Tafsîr al-Sa'dî, Taysîr al-Karîm ar-Rahmân"
+        ]
       },
-      "introduction": "L'anxieux croit ses pensées.\n\nQuand son esprit dit « tout va s'effondrer », il pense que tout va s'effondrer. Quand son esprit dit « personne ne m'aime », il pense que personne ne l'aime.\n\nMais une pensée n'est pas une vérité. C'est juste un bruit dans la tête.\n\nAujourd'hui — tu observes les pensées passer sans les croire.",
-      "outils": [
+      "bloc_2_sagesse": {
+        "type": "parole_de_sage",
+        "titre_bloc": "Parole d'Ibn al-Qayyim sur les pensées",
+        "parole": {
+          "texte": "Les pensées sont comme des oiseaux qui passent au-dessus de ta tête : tu ne peux pas les empêcher de voler, mais tu peux les empêcher de faire leur nid dans tes cheveux. Quatre choses peuvent se passer avec une pensée : (1) tu la repousses immédiatement, c'est la perfection ; (2) tu l'observes brièvement puis tu la laisses partir, c'est le travail ; (3) tu la suis et tu lui parles, c'est la défaite ; (4) tu la nourris et tu l'invites à s'installer, c'est la maladie.",
+          "auteur": "Ibn al-Qayyim al-Jawziyya",
+          "dates_auteur": "1292-1350",
+          "oeuvre": "Al-Fawâ'id et Madârij as-Sâlikîn (sur les khawâtir)",
+          "siecle": "XIIIe-XIVe siècle (Damas)",
+          "note": "Ibn al-Qayyim a écrit longuement sur les khawâtir — les pensées qui surgissent. Il les classe en 4 types selon leur origine (de l'âme, du Roi, de Shaytân, de l'ange), et enseigne comment les traiter sans s'y identifier."
+        }
+      },
+      "introduction_avant_outils": "Tu as lu la sourate de refuge. Tu as entendu Ibn al-Qayyim.\n\nMaintenant — défusionne. Sépare-toi de tes pensées.",
+      "bloc_3_outils_psy": [
         {
           "id": "pensee_ou_realite",
           "ordre": 1,
@@ -444,22 +890,43 @@
           "introduction": "L'esprit confond les deux. Voici 5 énoncés. Pour chacun, identifie : est-ce un fait observable, ou une interprétation que ton esprit ajoute ?",
           "consigne": "Lis chaque ligne, choisis fait ou interprétation.",
           "exemples": [
-            { "texte": "Mon collègue ne m'a pas répondu à mon message ce matin.", "bonne_reponse": "fait" },
-            { "texte": "Mon collègue m'en veut, je l'ai énervé.", "bonne_reponse": "interpretation" },
-            { "texte": "Ma poitrine est serrée en ce moment.", "bonne_reponse": "fait" },
-            { "texte": "Je vais faire une crise cardiaque, c'est sûr.", "bonne_reponse": "interpretation" },
-            { "texte": "Je n'ai pas terminé ma to-do d'aujourd'hui.", "bonne_reponse": "fait" }
+            {
+              "texte": "Mon collègue ne m'a pas répondu à mon message ce matin.",
+              "bonne_reponse": "fait"
+            },
+            {
+              "texte": "Mon collègue m'en veut, je l'ai énervé.",
+              "bonne_reponse": "interpretation"
+            },
+            {
+              "texte": "Ma poitrine est serrée en ce moment.",
+              "bonne_reponse": "fait"
+            },
+            {
+              "texte": "Je vais faire une crise cardiaque, c'est sûr.",
+              "bonne_reponse": "interpretation"
+            },
+            {
+              "texte": "Je n'ai pas terminé ma to-do d'aujourd'hui.",
+              "bonne_reponse": "fait"
+            }
           ],
           "options_par_question": [
-            { "id": "fait", "label": "Fait observable" },
-            { "id": "interpretation", "label": "Interprétation ajoutée" }
+            {
+              "id": "fait",
+              "label": "Fait observable"
+            },
+            {
+              "id": "interpretation",
+              "label": "Interprétation ajoutée"
+            }
           ],
           "feedback_correct_fait": "Oui. C'est un fait neutre.",
           "feedback_correct_interpretation": "Oui. C'est ton esprit qui raconte une histoire.",
           "feedback_incorrect_inverse": "Regarde encore. Demande-toi : si je filmais cette scène, qu'est-ce que la caméra verrait vraiment ?",
           "stockage": "cure_anxiete_j5_pensee_realite",
-          "note_psy": "Distorsions cognitives (CBT — Aaron Beck). Identifier la frontière entre fait et interprétation est la première étape de la restructuration cognitive. L'utilisateur apprend à la voir par lui-même.",
-          "note_spi": "Al-Balkhi distinguait déjà entre la réalité observable et le wahm (illusion mentale) au IXe siècle. La méthode du muhâsib — celui qui demande des comptes à son nafs — commence par cet examen lucide."
+          "note_psy": "Distorsions cognitives (CBT — Aaron Beck). Identifier la frontière entre fait et interprétation est la première étape de la restructuration cognitive.",
+          "note_spi": "Al-Balkhi distinguait déjà entre la réalité observable et le wahm (illusion mentale) au IXe siècle."
         },
         {
           "id": "mon_esprit_me_raconte",
@@ -474,8 +941,8 @@
             "stockage": "cure_anxiete_j5_histoire"
           },
           "instruction_finale": "Maintenant relis ta phrase à voix basse. Tu remarques quelque chose ?",
-          "note_psy": "Défusion cognitive (ACT — Steven Hayes). En préfixant la pensée avec « mon esprit me raconte l'histoire que », l'utilisateur sort de la fusion (je SUIS la pensée) pour entrer dans l'observation (je VOIS la pensée). C'est l'une des techniques les plus efficaces contre la rumination.",
-          "note_spi": "Le Prophète ﷺ a dit : « Allah a pardonné à ma communauté ce qui lui passe par l'esprit, tant qu'elle n'agit pas ni n'en parle. » (Bukhârî 5269). Les khawâtir (pensées intrusives) ne sont pas des péchés. Elles passent."
+          "note_psy": "Défusion cognitive (ACT — Steven Hayes). En préfixant la pensée avec « mon esprit me raconte l'histoire que », l'utilisateur sort de la fusion pour entrer dans l'observation.",
+          "note_spi": "Le Prophète ﷺ a dit : « Allah a pardonné à ma communauté ce qui lui passe par l'esprit, tant qu'elle n'agit pas ni n'en parle. » (Bukhârî 5269). Les khawâtir ne sont pas des péchés. Elles passent."
         },
         {
           "id": "invocation_silencieuse",
@@ -490,19 +957,84 @@
             "sens": "Ô Toi, Le Subtil"
           },
           "duree_sec": 60,
-          "animation": "Calligraphie qui pulse doucement au rythme respiratoire (4s/6s). Pas de chrono visible. Pas de chiffres.",
+          "animation": "Calligraphie qui pulse doucement au rythme respiratoire (4s/6s).",
           "stockage": "cure_anxiete_j5_yalatif_sec",
-          "note_psy": "Ancrage attentionnel par répétition d'un point focal. Réduit la charge mentale en occupant la mémoire de travail avec un stimulus simple et neutre.",
-          "note_spi": "Ibn 'Atâ'illâh recommandait Yâ Latîf pour les serrements du cœur. Le Nom Al-Latîf évoque la douceur d'Allah dans les épreuves invisibles — Il connaît ce que toi-même tu ne vois pas. « Allah est subtil envers Ses serviteurs. » — Ach-Chûrâ 42:19"
+          "note_psy": "Ancrage attentionnel par répétition d'un point focal.",
+          "note_spi": "Ibn 'Atâ'illâh recommandait Yâ Latîf pour les serrements du cœur. « Allah est subtil envers Ses serviteurs. » — Ach-Chûrâ 42:19"
         }
       ],
+      "bloc_4_dhikr_quantifie": {
+        "type": "prescription_dhikr",
+        "titre_bloc": "Le dhikr du jour",
+        "introduction": "Les pensées intrusives sont comme un essaim qui bourdonne. Pour le faire fuir, tu ne le combats pas — tu nommes l'un des Noms d'Allah qui a la subtilité comme attribut, et l'essaim se disperse.",
+        "dhikr": {
+          "ar": "يَا لَطِيف",
+          "translit": "Yâ Latîf",
+          "fr": "Ô Subtil",
+          "sens": "Al-Latîf — Celui qui agit avec subtilité, douceur, bienveillance dans les détails que nul autre ne perçoit. Connaît l'invisible de ton cœur mieux que toi-même."
+        },
+        "quantite": 129,
+        "moment_recommande": "Avant Maghrib (ou au moment de la journée où tu sens les pensées intrusives revenir le plus fortement).",
+        "duree_estimee_sec": 420,
+        "justification": {
+          "texte": "Le Nom Al-Latîf est cité 7 fois dans le Coran. La tradition soufie a établi que sa répétition est efficace contre l'oppression du cœur. Le nombre 129 correspond à la valeur numérique (abjad) du Nom — pratique courante chez certains soufis pour quantifier la dévotion. Si ce nombre te paraît étrange, fais simplement 100 fois, ou autant que tu peux.",
+          "source": "Tradition soufie attribuée à 'Abd al-Qâdir al-Jîlânî et reprise par les Shâdhilî"
+        },
+        "comment_pratiquer": "Pose-toi. Respire 3 fois. Puis dis Yâ Latîf, doucement, en sentant la finesse du mot dans ta bouche. La langue arabe a des consonnes qui caressent — celle-ci en fait partie. Laisse le mot te toucher avant que tu ne le penses.",
+        "stockage": "cure_anxiete_j5_dhikr_done"
+      },
+      "bloc_5_pratique_corporelle": {
+        "type": "geste_corporel",
+        "titre_bloc": "Les deux sourates protectrices",
+        "introduction": "Le verset du jour est la sourate An-Nâs. Aujourd'hui, tu la récites avec sa sœur Al-Falaq, en suivant le geste du Prophète ﷺ.",
+        "instructions": [
+          "Avant de dormir ce soir, fais ceci comme le faisait le Prophète ﷺ :",
+          "Joins les paumes de tes mains, formant une coupe devant toi.",
+          "Récite à voix basse, dans le creux de tes mains :",
+          "1. Sourate Al-Ikhlâs (Qul huwa-llâhu ahad...) × 1",
+          "2. Sourate Al-Falaq (Qul a'ûdhu bi-rabbi-l-falaq...) × 1",
+          "3. Sourate An-Nâs (Qul a'ûdhu bi-rabbi-n-nâs...) × 1",
+          "Puis souffle légèrement dans tes paumes.",
+          "Passe tes mains sur ton corps, en commençant par ta tête, ton visage, et tout ce que tu peux atteindre.",
+          "Répète 3 fois.",
+          "Puis dors."
+        ],
+        "duree_min": 5,
+        "justification": {
+          "texte": "'Â'isha rapporte : « Quand le Messager d'Allah ﷺ allait dormir chaque nuit, il joignait ses paumes et soufflait dedans, récitant Qul huwa-llâhu ahad, Qul a'ûdhu bi-rabbi-l-falaq et Qul a'ûdhu bi-rabbi-n-nâs. Puis il passait ses mains sur tout son corps qu'il pouvait atteindre, en commençant par sa tête, son visage et le devant de son corps. Il faisait cela trois fois. »",
+          "source": "Bukhârî 5017, Muslim — sahîh"
+        },
+        "note": "C'est l'un des hadiths les plus précis sur le geste prophétique avant le sommeil. Pour quelqu'un qui souffre de pensées intrusives nocturnes (ce qui est très courant chez l'anxieux), c'est une pratique fondamentale. Trois sourates, trois souffles, trois passages — un rituel complet de protection.",
+        "stockage": "cure_anxiete_j5_protection_done"
+      },
       "phrase_ancre": "Mes pensées ne sont pas la vérité.",
       "cloture": {
-        "texte": "Tu as séparé le fait de l'interprétation.\nTu as nommé ton esprit comme narrateur, pas comme vérité.\nTu as invoqué Le Subtil.\n\nDemain — confier.",
+        "texte": "Tu as lu la sourate du refuge.\nTu as entendu Ibn al-Qayyim.\nTu as séparé le fait de l'interprétation.\nTu as nommé ton esprit comme narrateur, pas comme vérité.\nTu as invoqué Le Subtil.\nTu connais ton dhikr et ton rituel du soir.\n\nDemain — confier.",
         "bouton": "Je sors de la fusion. À demain.",
-        "stockage": "cure_anxiete = { current_day: 5, completed_j5: true }"
+        "stockage": "cure_anxiete = { current_day: 5, completed_j5: true, dhikr_j5_quantite: 129, mu_awwidhatan_done: true }"
       },
-      "murmure_sortie_sanctuaire": "Je remarque la pensée. Je ne suis pas la pensée."
+      "murmure_sortie_sanctuaire": "Je remarque la pensée. Je ne suis pas la pensée.",
+      "metadata_jour": {
+        "versets_cites": [
+          "An-Nâs 114:1-6 (central)",
+          "Al-Ikhlâs 112 (rituel)",
+          "Al-Falaq 113 (rituel)",
+          "Ach-Chûrâ 42:19 (Latîf)"
+        ],
+        "hadiths_cites": [
+          "Bukhârî 5017 (mu'awwidhatân avant sommeil)",
+          "Bukhârî 5269 (khawâtir pardonnés)"
+        ],
+        "savants_cites": [
+          "Ibn al-Qayyim (1292-1350)",
+          "Al-Balkhi (wahm)",
+          "Ibn 'Atâ'illâh (Yâ Latîf)"
+        ],
+        "dhikr_quantifie": "Yâ Latîf × 129 (ou 100 si plus facile)",
+        "pratique_corporelle": "Mu'awwidhatân + Al-Ikhlâs × 3 fois avec souffle dans les paumes et passage sur le corps (sunna prophétique avant le sommeil)",
+        "outils_psy_preserves": 3,
+        "ratio_estime": "65% islamique / 35% psy structurant"
+      }
     },
     "j6": {
       "numero": 6,
@@ -511,12 +1043,39 @@
       "station_fr": "L'Abandon",
       "titre_jour": "Remettre entre les Mains",
       "image_fond": "j6.webp",
-      "citation_ouverture": {
-        "texte": "Et quiconque place sa confiance en Allah, Il lui suffit. Allah parvient à Son but. Allah a assigné une mesure à toute chose.",
-        "source": "Coran, At-Talâq 65:3"
+      "duree_estimee_min": 10,
+      "duree_estimee_max": 13,
+      "structure": "5 blocs : Ouverture spirituelle → Sagesse traditionnelle → Outils psy → Dhikr quantifié → Pratique corporelle",
+      "bloc_1_ouverture_spirituelle": {
+        "type": "verset_central",
+        "titre_bloc": "Le verset du jour",
+        "verset": {
+          "reference": "At-Talâq 65:2-3",
+          "ar": "وَمَن يَتَّقِ اللَّهَ يَجْعَل لَّهُ مَخْرَجًا ۝ وَيَرْزُقْهُ مِنْ حَيْثُ لَا يَحْتَسِبُ ۚ وَمَن يَتَوَكَّلْ عَلَى اللَّهِ فَهُوَ حَسْبُهُ ۚ إِنَّ اللَّهَ بَالِغُ أَمْرِهِ ۚ قَدْ جَعَلَ اللَّهُ لِكُلِّ شَيْءٍ قَدْرًا",
+          "translit": "Wa man yattaqi-llâha yaj'al lahu makhrajan. Wa yarzuqhu min haythu lâ yahtasib. Wa man yatawakkal 'ala-llâhi fa-huwa hasbuh. Inna-llâha bâlighu amrih. Qad ja'ala-llâhu li-kulli shay'in qadrâ.",
+          "fr": "Quiconque craint Allah, Il lui donnera une issue, et lui accordera Ses dons par [des moyens] sur lesquels il ne comptait pas. Et quiconque place sa confiance en Allah, Il lui suffit. Allah parvient à Son but. Allah a assigné une mesure à toute chose."
+        },
+        "contexte_revelation": "Verset médinois, descendu dans le contexte du divorce — donc d'une situation de transition difficile, d'incertitude matérielle et émotionnelle. Allah promet trois choses précises au croyant qui Le craint et place sa confiance en Lui : (1) une issue, (2) une subsistance inattendue, (3) Allah Lui-même comme suffisance.",
+        "sens_pour_aujourdhui": "Tu as nommé. Tu es revenu. Tu as accueilli. Tu as trié. Tu as observé. Il reste le dernier geste — le plus difficile pour l'anxieux : confier. Le verset ne dit pas 'place ta confiance, ça te calmera'. Il dit : 'place ta confiance, Allah te suffit'. Le résultat n'est pas un effet psychologique — c'est une promesse divine. Allah s'engage. Et Allah parvient toujours à Son but. Toute chose a sa mesure (qadr) déjà fixée.",
+        "sources_tafsir": [
+          "Tafsîr Ibn Kathîr, sur At-Talâq 65:2-3",
+          "Tafsîr al-Sa'dî, Taysîr al-Karîm ar-Rahmân"
+        ]
       },
-      "introduction": "Tu as nommé. Tu es revenu. Tu as accueilli. Tu as trié. Tu as observé.\n\nIl reste un dernier geste — le plus difficile pour l'anxieux.\n\nConfier.\n\nNon pas abandonner. Pas démissionner. Confier — c'est faire son maximum, puis poser le résultat entre les Mains d'un Autre que soi.",
-      "outils": [
+      "bloc_2_sagesse": {
+        "type": "parole_de_sage",
+        "titre_bloc": "Distinction de Ghazâlî",
+        "parole": {
+          "texte": "Le tawakkul est un état du cœur qui se construit en trois degrés. Le premier degré : tu Lui confies tes affaires comme tu confierais ton argent à un homme de confiance, sachant qu'il les gérera mieux que toi. Le deuxième degré : tu Lui confies tes affaires comme un nourrisson est dans les bras de sa mère — sans demande, sans inquiétude, simplement parce qu'elle est là. Le troisième degré : tu Lui confies tes affaires comme un mort dans les mains de celui qui lave son corps — sans la moindre intervention, parce que tu sais que ce qui devait arriver est déjà décidé. La plupart restent au premier degré. C'est déjà beaucoup.",
+          "auteur": "Abû Hâmid al-Ghazâlî",
+          "dates_auteur": "1058-1111",
+          "oeuvre": "Ihyâ' 'Ulûm ad-Dîn, Livre du Tawakkul",
+          "siecle": "XIe-XIIe siècle",
+          "note": "Ghazâlî structure le tawakkul en degrés progressifs. Il insiste pour qu'on n'humilie pas qui n'atteint que le premier degré — c'est déjà un acte de foi rare. La progression vient du temps, de la pratique, et de la grâce. Aujourd'hui, on travaille au premier degré : confier comme on confie ses affaires à plus capable que soi."
+        }
+      },
+      "introduction_avant_outils": "Tu as lu le verset. Tu as entendu Ghazâlî.\n\nMaintenant — confie. Trois mouvements pour passer du contrôle anxieux au dépôt apaisé.",
+      "bloc_3_outils_psy": [
         {
           "id": "depot_nocturne",
           "ordre": 1,
@@ -533,8 +1092,15 @@
           "etape_apres_ecriture": {
             "instruction": "Maintenant choisis le mot qui résume :",
             "options_thematiques": [
-              "santé", "argent", "famille", "travail", "avenir",
-              "passé", "relation", "soi-même", "autre"
+              "santé",
+              "argent",
+              "famille",
+              "travail",
+              "avenir",
+              "passé",
+              "relation",
+              "soi-même",
+              "autre"
             ],
             "stockage": "cure_anxiete_j6_theme_depot"
           },
@@ -547,7 +1113,7 @@
             "calligraphie_finale_translit": "Allâhu al-Wakîl",
             "calligraphie_finale_sens": "Allah est Le Garant"
           },
-          "note_psy": "Clôture cognitive rituelle (closure). Le geste de \"déposer\" réduit la charge mentale liée à la rumination chronique. L'effet est physiologique : libération de la boucle de stress.",
+          "note_psy": "Clôture cognitive rituelle (closure). Le geste de \"déposer\" réduit la charge mentale liée à la rumination chronique.",
           "note_spi": "Tafwîd — la remise confiante des affaires à Allah. Ibn al-Qayyim distingue le tawakkul (confiance préalable, avec action) du tafwîd (remise finale, après l'action). Aujourd'hui c'est le tafwîd."
         },
         {
@@ -555,7 +1121,7 @@
           "ordre": 2,
           "type": "double_slider_compare",
           "titre": "Mes efforts, mon besoin de contrôle",
-          "introduction": "Le tawakkul authentique a deux mains : la main qui agit, et la main qui lâche.\n\nL'anxieux a souvent la deuxième main fermée.",
+          "introduction": "Le tawakkul authentique a deux mains : la main qui agit, et la main qui lâche. L'anxieux a souvent la deuxième main fermée.",
           "consigne": "Évalue honnêtement les deux.",
           "sliders": [
             {
@@ -583,15 +1149,15 @@
             "si_efforts_haut_controle_bas": "Tu as compris. Action, puis dépôt. C'est la voie du Prophète ﷺ.",
             "si_efforts_bas_controle_bas": "Soit tu as déjà tout déposé sereinement. Soit tu te résignes au lieu de confier. Lequel des deux ?"
           },
-          "note_psy": "Auto-évaluation lucide. L'anxiété est souvent un déséquilibre entre faire (insuffisant) et lâcher (impossible). Voir les deux chiffres face à face révèle le déséquilibre.",
-          "note_spi": "« Attache ta chamelle, puis place ta confiance en Allah. » — Tirmidhî 2517. Le hadith fonde l'équilibre entre sabab (cause humaine) et tawakkul (confiance divine)."
+          "note_psy": "Auto-évaluation lucide. L'anxiété est souvent un déséquilibre entre faire (insuffisant) et lâcher (impossible).",
+          "note_spi": "« Attache ta chamelle, puis place ta confiance en Allah. » — Tirmidhî 2517"
         },
         {
           "id": "verset_respire",
           "ordre": 3,
           "type": "lecture_synchronisee_souffle",
           "titre": "Le verset respiré",
-          "introduction": "Pour clôturer le jour, un verset à recevoir lentement.\nChaque mot apparaît au rythme de ta respiration.",
+          "introduction": "Pour clôturer le jour, le verset du jour à recevoir lentement. Chaque segment apparaît au rythme de ta respiration.",
           "consigne": "Pose ton téléphone. Respire calmement. Laisse les mots venir.",
           "verset": {
             "reference": "At-Talâq 65:3",
@@ -622,19 +1188,83 @@
             "duree_par_segment_sec": 5,
             "total_sec": 30
           },
-          "animation": "Chaque segment apparaît en fondu (1s), reste affiché (3s), s'efface (1s). Aucun chrono visible. Aucun bouton skip.",
+          "animation": "Chaque segment apparaît en fondu (1s), reste affiché (3s), s'efface (1s).",
           "stockage": "cure_anxiete_j6_verset_complete",
-          "note_psy": "Encodage émotionnel lent. Le système nerveux apprend la sécurité par cadence régulière — l'inverse du tempo anxieux.",
-          "note_spi": "Le Coran lu à mesure (tartîl) est une pratique prophétique. « Et récite le Coran avec tartîl » — Al-Muzzammil 73:4. Pas vite. Pas par cœur. Avec mesure et présence."
+          "note_psy": "Encodage émotionnel lent. Le système nerveux apprend la sécurité par cadence régulière.",
+          "note_spi": "Le Coran lu à mesure (tartîl) est une pratique prophétique. « Et récite le Coran avec tartîl. » — Al-Muzzammil 73:4"
         }
       ],
+      "bloc_4_dhikr_quantifie": {
+        "type": "prescription_dhikr",
+        "titre_bloc": "Le dhikr du jour",
+        "introduction": "Le verset du jour parle du tawakkul. Le dhikr du jour est la du'â la plus puissante de toute la tradition contre l'angoisse — la du'â de Yûnus quand il était dans les trois ténèbres : la nuit, la mer, et le ventre du poisson.",
+        "dhikr": {
+          "ar": "لَا إِلَٰهَ إِلَّا أَنتَ سُبْحَانَكَ إِنِّي كُنتُ مِنَ الظَّالِمِينَ",
+          "translit": "Lâ ilâha illâ Anta, subhânaka, innî kuntu min adh-dhâlimîn",
+          "fr": "Il n'y a de divinité que Toi. Gloire à Toi. J'ai été parmi les injustes.",
+          "sens": "Trois mouvements en une phrase : (1) tawhîd — il n'y a que Toi ; (2) tasbîh — Tu es au-dessus de tout ce qu'on imagine ; (3) reconnaissance — j'ai été parmi ceux qui se font tort à eux-mêmes. C'est l'humilité absolue qui ouvre la porte du secours."
+        },
+        "quantite": 40,
+        "moment_recommande": "Avant 'Ishâ, ou avant de dormir. Le moment où les pensées sont les plus envahissantes — fais-en ton bouclier nocturne.",
+        "duree_estimee_sec": 360,
+        "justification": {
+          "texte": "Le Messager d'Allah ﷺ a dit : « La supplique de Dhû-n-Nûn (Yûnus) lorsqu'il l'invoqua dans le ventre du poisson : 'Lâ ilâha illâ Anta, subhânaka, innî kuntu min adh-dhâlimîn'. Aucun musulman ne l'invoque pour quoi que ce soit, sans qu'Allah ne lui réponde. »",
+          "source": "Tirmidhî 3505 — hasan (graduation hasan par at-Tirmidhî lui-même)"
+        },
+        "comment_pratiquer": "Le nombre 40 n'est pas obligatoire mais est traditionnel. Si tu peux faire plus, fais plus. Si tu peux faire moins, fais moins. Ce qui compte c'est la conscience pendant la récitation — pas le compteur. Le Prophète ﷺ a promis qu'Allah RÉPOND à cette du'â pour toute demande. Tu l'utilises pour ton angoisse — Allah promet de te répondre.",
+        "stockage": "cure_anxiete_j6_dhikr_done"
+      },
+      "bloc_5_pratique_corporelle": {
+        "type": "geste_corporel",
+        "titre_bloc": "Le qiyâm al-layl (facultatif)",
+        "introduction": "Ce soir, ou n'importe quelle nuit avant la fin de la cure, si tu peux — fais une prière de nuit. Pas longue, pas obligatoire. Juste 2 rak'a, dans le silence, quand le monde dort.",
+        "instructions": [
+          "Réveille-toi 15 minutes avant l'heure habituelle (ou avant de te coucher si plus simple).",
+          "Fais ton wudû.",
+          "Prie 2 rak'a tranquillement.",
+          "Dans la première rak'a, après al-Fâtiha, récite Al-Ikhlâs.",
+          "Dans la deuxième, après al-Fâtiha, récite Al-Falaq ou An-Nâs.",
+          "Après le salâm, lève les mains et fais cette du'â de Yûnus :",
+          "« Lâ ilâha illâ Anta, subhânaka, innî kuntu min adh-dhâlimîn. »",
+          "Puis demande à Allah ce que ton cœur porte.",
+          "Allah descend au ciel le plus proche dans le dernier tiers de la nuit. Si tu peux y être à ce moment — fais-le. Sinon, fais-le quand tu peux."
+        ],
+        "duree_min": 10,
+        "justification": {
+          "texte": "Le Prophète ﷺ a dit : « Notre Seigneur — béni et exalté soit-Il — descend chaque nuit au ciel le plus proche quand il reste le dernier tiers de la nuit, et Il dit : 'Y a-t-il quelqu'un qui M'invoque pour que Je lui réponde ? Y a-t-il quelqu'un qui Me demande pour que Je lui donne ? Y a-t-il quelqu'un qui Me demande pardon pour que Je le pardonne ?' »",
+          "source": "Bukhârî 1145, Muslim 758"
+        },
+        "note": "Le qiyâm al-layl est facultatif. Ne le force pas si tu es épuisé — l'épuisement nourrit l'anxiété. Mais si tu peux, fais-le UNE fois pendant la cure. Le Prophète ﷺ disait que c'est dans la prière de nuit que les soucis du cœur trouvent leur réponse la plus directe.",
+        "stockage": "cure_anxiete_j6_qiyam_done",
+        "facultatif": true
+      },
       "phrase_ancre": "Je fais ma part. Je remets le reste.",
       "cloture": {
-        "texte": "Tu as déposé.\nTu as mesuré tes deux mains.\nTu as reçu le verset.\n\nDemain — ouvrir.",
+        "texte": "Tu as lu le verset.\nTu as entendu Ghazâlî.\nTu as déposé.\nTu as mesuré tes deux mains.\nTu as reçu le verset.\nTu connais la du'â de Yûnus et la prière de nuit.\n\nDemain — ouvrir.",
         "bouton": "J'ai confié. À demain.",
-        "stockage": "cure_anxiete = { current_day: 6, completed_j6: true }"
+        "stockage": "cure_anxiete = { current_day: 6, completed_j6: true, dhikr_j6_quantite: 40, qiyam_j6: 'facultatif' }"
       },
-      "murmure_sortie_sanctuaire": "Ce qui est entre Ses Mains est en sécurité."
+      "murmure_sortie_sanctuaire": "Ce qui est entre Ses Mains est en sécurité.",
+      "metadata_jour": {
+        "versets_cites": [
+          "At-Talâq 65:2-3 (central)",
+          "Al-Anbiyâ' 21:87 (Yûnus)",
+          "Al-Muzzammil 73:4 (tartîl)"
+        ],
+        "hadiths_cites": [
+          "Tirmidhî 3505 (du'â Yûnus)",
+          "Tirmidhî 2517 (chamelle)",
+          "Bukhârî 1145 + Muslim 758 (descente nocturne)"
+        ],
+        "savants_cites": [
+          "Al-Ghazâlî (Ihyâ' Livre du Tawakkul)",
+          "Ibn al-Qayyim (distinction tawakkul/tafwîd)"
+        ],
+        "dhikr_quantifie": "Du'â de Yûnus × 40 (avant 'Ishâ ou avant le sommeil)",
+        "pratique_corporelle": "Qiyâm al-layl facultatif (2 rak'a + du'â de Yûnus)",
+        "outils_psy_preserves": 3,
+        "ratio_estime": "65% islamique / 35% psy structurant"
+      }
     },
     "j7": {
       "numero": 7,
@@ -643,12 +1273,39 @@
       "station_fr": "L'Ouverture",
       "titre_jour": "Trois portes devant toi",
       "image_fond": "j7.webp",
-      "citation_ouverture": {
-        "texte": "Certes, après la difficulté vient la facilité. Certes, après la difficulté vient la facilité.",
-        "source": "Coran, Ach-Charh 94:5-6"
+      "duree_estimee_min": 10,
+      "duree_estimee_max": 13,
+      "structure": "5 blocs : Ouverture spirituelle → Sagesse traditionnelle → Outils psy → Dhikr quantifié → Pratique corporelle",
+      "bloc_1_ouverture_spirituelle": {
+        "type": "verset_central",
+        "titre_bloc": "Le verset du jour",
+        "verset": {
+          "reference": "Ach-Charh 94:1-8",
+          "ar": "أَلَمْ نَشْرَحْ لَكَ صَدْرَكَ ۝ وَوَضَعْنَا عَنكَ وِزْرَكَ ۝ الَّذِي أَنقَضَ ظَهْرَكَ ۝ وَرَفَعْنَا لَكَ ذِكْرَكَ ۝ فَإِنَّ مَعَ الْعُسْرِ يُسْرًا ۝ إِنَّ مَعَ الْعُسْرِ يُسْرًا ۝ فَإِذَا فَرَغْتَ فَانصَبْ ۝ وَإِلَىٰ رَبِّكَ فَارْغَب",
+          "translit": "Alam nashrah laka sadrak. Wa wada'nâ 'anka wizrak. Alladhî anqada dhahrak. Wa rafa'nâ laka dhikrak. Fa-inna ma'a-l-'usri yusrâ. Inna ma'a-l-'usri yusrâ. Fa-idhâ faraghta fa-nsab. Wa ilâ rabbika fa-rghab.",
+          "fr": "N'avons-Nous pas ouvert pour toi ta poitrine ? Et déchargé de toi ton fardeau qui pesait sur ton dos ? Et élevé haut ta renommée ? À côté de la difficulté est, certes, une facilité. À côté de la difficulté est, certes, une facilité. Quand tu termines [une tâche], lève-toi pour [une autre], et c'est vers ton Seigneur que tu dois aspirer."
+        },
+        "contexte_revelation": "Sourate mecquoise descendue pour apaiser le Prophète ﷺ pendant une période de doute et d'oppression intérieure. Elle est sœur de Ad-Duhâ et a un ton extrêmement intime — comme une caresse divine. Allah rappelle au Prophète tout ce qu'Il a déjà fait pour lui : ouvert sa poitrine, déchargé son fardeau, élevé sa renommée.",
+        "sens_pour_aujourdhui": "Sept jours sont passés. Le verset te demande de regarder en arrière : N'avons-Nous pas ouvert pour TOI ta poitrine ? N'avons-Nous pas déchargé de TOI quelque chose ? Même si l'anxiété revient, quelque chose s'est passé. Et après chaque difficulté — toujours, deux fois Allah le répète — il y a une facilité. Pas APRÈS la difficulté. AVEC elle. Maintenant que tu sors de la cure, lève-toi pour l'étape suivante, et tourne-toi vers ton Seigneur. C'est tout.",
+        "sources_tafsir": [
+          "Tafsîr Ibn Kathîr, sur Ach-Charh 94",
+          "Tafsîr al-Sa'dî, Taysîr al-Karîm ar-Rahmân"
+        ]
       },
-      "introduction": "Sept jours.\n\nTu as traversé. Pas vaincu — traversé.\n\nL'anxiété n'a peut-être pas disparu. Mais quelque chose en toi sait maintenant qu'elle n'est pas toi. Qu'elle passe. Qu'elle peut être nommée, accueillie, déposée.\n\nMaintenant — trois portes s'ouvrent. Ton cœur sait laquelle franchir.",
-      "outils": [
+      "bloc_2_sagesse": {
+        "type": "parole_de_sage",
+        "titre_bloc": "Parole de Junayd, maître de la voie",
+        "parole": {
+          "texte": "Ne mesure pas ce que tu as reçu par ce que tu sens. La grâce d'Allah travaille en silence dans le serviteur, et Il dépose ce qu'Il dépose sans que tu le saches toujours. Le signe que la cure a porté n'est pas l'absence de la peur — c'est que la peur ne te définit plus.",
+          "auteur": "Abû al-Qâsim al-Junayd al-Baghdâdî",
+          "dates_auteur": "v. 830-910",
+          "oeuvre": "Cité par Al-Qushayrî dans Ar-Risâla al-Qushayriyya",
+          "siecle": "IXe-Xe siècle (Bagdad)",
+          "note": "Junayd est appelé Sayyid at-Tâ'ifa — le Maître du Groupe (des soufis). Il enseignait la sobriété spirituelle (sahw) après l'extase. Sa parole rappelle qu'on ne mesure pas une cure à ses effets psychologiques immédiats — mais à ce qu'elle a déposé en profondeur, qui se révélera dans le temps."
+        }
+      },
+      "introduction_avant_outils": "Tu as lu Ach-Charh. Tu as entendu Junayd.\n\nMaintenant — ouvre. Une lettre à toi-même. Une reconnaissance. Un choix. Et le silence.",
+      "bloc_3_outils_psy": [
         {
           "id": "lettre_au_coeur_futur",
           "ordre": 1,
@@ -663,8 +1320,8 @@
             "stockage": "cure_anxiete_j7_lettre"
           },
           "note_finale": "Cette lettre est conservée. Elle te sera proposée si tu reviens à cette porte un jour.",
-          "note_psy": "Self-compassion writing (Kristin Neff). Crée une voix interne apaisante mobilisable lors des futures rechutes. La voix de soi-même est plus crédible que tout conseil extérieur.",
-          "note_spi": "« Et rappelle, car le rappel profite aux croyants. » — Adh-Dhâriyât 51:55. Le rappel à soi-même est une sunna intérieure."
+          "note_psy": "Self-compassion writing (Kristin Neff). Crée une voix interne apaisante mobilisable lors des futures rechutes.",
+          "note_spi": "« Et rappelle, car le rappel profite aux croyants. » — Adh-Dhâriyât 51:55"
         },
         {
           "id": "traces_de_lumiere",
@@ -674,18 +1331,50 @@
           "introduction": "Pendant ces 7 jours, certaines choses sont revenues à toi.",
           "consigne": "Coche ce qui résonne. Plusieurs réponses possibles.",
           "options": [
-            { "id": "souffle", "label_fr": "Le souffle", "label_ar": "النَّفَس" },
-            { "id": "presence", "label_fr": "Le présent", "label_ar": "الحضور" },
-            { "id": "patience", "label_fr": "La patience", "label_ar": "الصَّبر" },
-            { "id": "limite", "label_fr": "Une limite saine", "label_ar": "الحَدّ" },
-            { "id": "corps", "label_fr": "Mon corps", "label_ar": "الجَسَد" },
-            { "id": "allah", "label_fr": "Allah", "label_ar": "اللَّه" },
-            { "id": "silence", "label_fr": "Le silence", "label_ar": "السَّكينة" },
-            { "id": "autre_chose", "label_fr": "Autre — j'écris", "champ_libre": true }
+            {
+              "id": "souffle",
+              "label_fr": "Le souffle",
+              "label_ar": "النَّفَس"
+            },
+            {
+              "id": "presence",
+              "label_fr": "Le présent",
+              "label_ar": "الحضور"
+            },
+            {
+              "id": "patience",
+              "label_fr": "La patience",
+              "label_ar": "الصَّبر"
+            },
+            {
+              "id": "limite",
+              "label_fr": "Une limite saine",
+              "label_ar": "الحَدّ"
+            },
+            {
+              "id": "corps",
+              "label_fr": "Mon corps",
+              "label_ar": "الجَسَد"
+            },
+            {
+              "id": "allah",
+              "label_fr": "Allah",
+              "label_ar": "اللَّه"
+            },
+            {
+              "id": "silence",
+              "label_fr": "Le silence",
+              "label_ar": "السَّكينة"
+            },
+            {
+              "id": "autre_chose",
+              "label_fr": "Autre — j'écris",
+              "champ_libre": true
+            }
           ],
           "stockage": "cure_anxiete_j7_traces",
-          "note_psy": "Consolidation mémoire émotionnelle positive. L'utilisateur ancre les apprentissages de la cure dans des mots concrets. Le mécanisme — savoring — est validé pour réduire les rechutes anxieuses.",
-          "note_spi": "« Mentionne les bienfaits d'Allah sur toi. » — Al-A'râf 7:69. Reconnaître ce qu'on a reçu est une posture coranique fondamentale (shukr)."
+          "note_psy": "Consolidation mémoire émotionnelle positive (savoring).",
+          "note_spi": "« Mentionne les bienfaits d'Allah sur toi. » — Al-A'râf 7:69"
         },
         {
           "id": "trois_portes",
@@ -721,7 +1410,7 @@
             }
           ],
           "stockage": "cure_anxiete_j7_orientation",
-          "note_psy": "Autonomie thérapeutique. Aucune mécanique de rétention abusive. L'utilisateur reprend la main sur son rythme.",
+          "note_psy": "Autonomie thérapeutique. Aucune mécanique de rétention abusive.",
           "note_spi": "Respect du suluk — le rythme propre à chaque âme."
         },
         {
@@ -735,36 +1424,143 @@
             "fr": "La Paix"
           },
           "duree_affichage_sec": 8,
-          "animation": "Fondu lent (3s) de la calligraphie. Reste affichée 5 secondes. Aucun bouton. Aucun chrono. Aucune action demandée.",
+          "animation": "Fondu lent (3s) de la calligraphie. Reste affichée 5 secondes. Aucun bouton.",
           "sortie_automatique": "Après 8 secondes, retour silencieux au Sanctuaire.",
           "stockage": null,
-          "note_psy": "Clôture sans performance. Pas de récompense, pas de validation finale. Le calme comme sortie, non comme accomplissement.",
-          "note_spi": "as-Salâm est l'un des plus beaux Noms d'Allah (Al-Hashr 59:23). Il signifie La Paix, La Source de Paix, Celui qui sauve."
+          "note_psy": "Clôture sans performance. Le calme comme sortie, non comme accomplissement.",
+          "note_spi": "as-Salâm est l'un des plus beaux Noms d'Allah (Al-Hashr 59:23)."
         }
       ],
+      "bloc_4_dhikr_quantifie": {
+        "type": "prescription_dhikr",
+        "titre_bloc": "Le dhikr de sortie",
+        "introduction": "Tu sors de la cure. Le dhikr qui t'accompagne désormais n'est pas un effort — c'est une habitude légère, à porter dans la vie. Le matin et le soir. Pour la vie.",
+        "dhikr": {
+          "ar": "حَسْبِيَ اللَّهُ لَا إِلَهَ إِلَّا هُوَ ۖ عَلَيْهِ تَوَكَّلْتُ ۖ وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ",
+          "translit": "Hasbiya-llâhu lâ ilâha illâ huwa, 'alayhi tawakkaltu, wa huwa rabbu-l-'arshi-l-'adhîm",
+          "fr": "Allah me suffit. Il n'y a de divinité que Lui. À Lui je m'en remets. Il est le Seigneur du Trône immense.",
+          "sens": "Synthèse parfaite : Allah me suffit (hasb) + tawhîd + tawakkul + Seigneurie cosmique du Trône. Cette phrase contient toute la cure en une seule récitation."
+        },
+        "quantite": 7,
+        "moment_recommande": "Le matin (après Fajr) et le soir (après Maghrib ou avant 'Ishâ). 7 fois chaque fois. À pratiquer désormais comme habitude permanente.",
+        "duree_estimee_sec": 90,
+        "justification": {
+          "texte": "Le Prophète ﷺ a dit : « Quiconque dit le matin et le soir : Hasbiya-llâhu lâ ilâha illâ huwa, 'alayhi tawakkaltu, wa huwa rabbu-l-'arshi-l-'adhîm — 7 fois, Allah lui suffira pour tout ce qui le préoccupe, qu'il soit sincère ou non. »",
+          "source": "Abû Dâwûd 5081 (mursal renforcé), Ibn as-Sunnî 71"
+        },
+        "comment_pratiquer": "C'est le dhikr final de la cure, mais c'est aussi le dhikr que tu emportes pour le reste de ta vie. 7 fois matin, 7 fois soir. Si un jour tu sens l'angoisse revenir, c'est ta première ligne — pas la dernière. Le Prophète ﷺ promet : Allah te suffira.",
+        "stockage": "cure_anxiete_j7_dhikr_final_done"
+      },
+      "bloc_5_pratique_corporelle": {
+        "type": "geste_corporel",
+        "titre_bloc": "Le pas dans le monde",
+        "introduction": "Tu as fait 7 jours. Maintenant tu sors. Le dernier geste de la cure n'est pas intérieur — il est dehors.",
+        "instructions": [
+          "Quand tu as fini cette cure, sors de chez toi.",
+          "Marche 15 minutes — peu importe où.",
+          "À chaque pas, observe : les visages, les arbres, les sons, le ciel.",
+          "Sois étranger ou voyageur, comme dit le hadith.",
+          "Ne cherche pas à penser. Ne cherche pas à ne pas penser.",
+          "Sois juste là.",
+          "Et si à un moment, ton cœur veut dire un dhikr, dis-le. Si rien ne vient, laisse rien venir.",
+          "Au retour, tu auras quitté la cure pour entrer dans la vie."
+        ],
+        "duree_min": 15,
+        "justification": {
+          "texte": "Le verset clé : « Quand tu termines [une tâche], lève-toi pour [une autre], et c'est vers ton Seigneur que tu dois aspirer. »",
+          "source": "Ach-Charh 94:7-8"
+        },
+        "note": "Cette marche est le rituel de sortie. Elle marque la transition entre l'espace protégé de la cure et la vie ordinaire. La tradition soufie de la sortie de khalwa (retraite) comporte toujours un retour physique au monde — pour ne pas faire de la pratique spirituelle un cocon, mais une force pour vivre.",
+        "stockage": "cure_anxiete_j7_marche_sortie_done",
+        "facultatif": true
+      },
       "phrase_ancre": "J'ai traversé. Je marche en paix.",
       "cloture": {
         "texte": null,
         "bouton": null,
-        "note": "Pas de bouton de clôture. L'écran final (as-Salâm) ferme la cure sans cérémonie."
+        "note": "Pas de bouton de clôture verbale. L'écran final (as-Salâm) ferme la cure sans cérémonie. Le dhikr Hasbiya-llâh et la marche restent comme prescriptions pour la vie."
       },
       "murmure_sortie_sanctuaire_par_orientation": {
         "reprendre": "Une autre traversée commence demain. Avec douceur.",
         "veiller": "Tu sais où me trouver. Marche en paix.",
         "reposer": "Va. Ce que tu as reçu travaillera en silence."
+      },
+      "metadata_jour": {
+        "versets_cites": [
+          "Ach-Charh 94:1-8 (central)",
+          "Al-Hashr 59:23 (as-Salâm)",
+          "Al-A'râf 7:69 (bienfaits)",
+          "Adh-Dhâriyât 51:55 (rappel)"
+        ],
+        "hadiths_cites": [
+          "Abû Dâwûd 5081 (Hasbiya-llâh × 7)",
+          "Bukhârî 6416 (étranger voyageur)"
+        ],
+        "savants_cites": [
+          "Junayd al-Baghdâdî (830-910)",
+          "Al-Qushayrî (Risâla)"
+        ],
+        "dhikr_quantifie": "Hasbiya-llâhu lâ ilâha illâ huwa... × 7 (matin et soir, pour la vie)",
+        "pratique_corporelle": "Marche de sortie 15 min — du cocon à la vie",
+        "outils_psy_preserves": 4,
+        "ratio_estime": "65% islamique / 35% psy structurant"
       }
     }
   },
   "metadata": {
+    "version_precedente": "1.0 — outils psy uniquement, ratio 80% psy / 20% islam",
+    "version_actuelle": "2.0 — enrichie Ghazâlî, ratio 60-65% islam / 35-40% psy",
     "outils_total": 24,
-    "duree_estimee_jour_min": 5,
-    "duree_estimee_jour_max": 7,
-    "verbes_centraux": ["Nommer", "Revenir", "Accueillir", "Trier", "Observer", "Remettre", "Ouvrir"],
-    "sources_islamiques": [
-      "Coran : Ar-Ra'd 13:28, Âl 'Imrân 3:173, At-Talâq 65:3, Ach-Charh 94:5-6, Al-Hashr 59:23, Al-Baqara 2:155, Ach-Chûrâ 42:19, Adh-Dhâriyât 51:55, Al-A'râf 7:69, Al-Muzzammil 73:4",
-      "Hadiths : Bukhârî 6369 (du'â refuge), Bukhârî 6416 (étranger ou voyageur), Bukhârî 5269 (pensées intrusives), Tirmidhî 2144 (ce qui t'atteint), Tirmidhî 2517 (chamelle attachée)",
-      "Savants : Al-Balkhi (Masâlih al-Abdân wa al-Anfus), Al-Ghazâlî (Ihyâ' 'Ulûm ad-Dîn), Ibn al-Qayyim (Madârij as-Sâlikîn), Ibn 'Atâ'illâh (Al-Hikam)"
+    "duree_estimee_jour_min": 10,
+    "duree_estimee_jour_max": 13,
+    "blocs_par_jour": 5,
+    "verbes_centraux": [
+      "Nommer",
+      "Revenir",
+      "Accueillir",
+      "Trier",
+      "Observer",
+      "Remettre",
+      "Ouvrir"
     ],
+    "sources_islamiques": {
+      "versets_centraux_par_jour": [
+        "J1 — Az-Zumar 39:9 (ceux qui savent et ceux qui ne savent pas)",
+        "J2 — Qâf 50:16 (plus proche que la veine jugulaire)",
+        "J3 — Al-Baqara 2:155-156 (épreuves + istirjâ')",
+        "J4 — At-Tawba 9:51 (rien ne nous atteint que ce qu'Allah a prescrit)",
+        "J5 — An-Nâs 114:1-6 (refuge contre le waswâs)",
+        "J6 — At-Talâq 65:2-3 (issue + tawakkul)",
+        "J7 — Ach-Charh 94:1-8 (après la difficulté, la facilité)"
+      ],
+      "sages_par_jour": [
+        "J1 — Abû Zayd al-Balkhi (850-934)",
+        "J2 — Hassan al-Basrî (642-728)",
+        "J3 — Râbi'a al-'Adawiyya (717-801)",
+        "J4 — Ibn 'Atâ'illâh al-Iskandarî (1259-1309)",
+        "J5 — Ibn al-Qayyim al-Jawziyya (1292-1350)",
+        "J6 — Al-Ghazâlî (1058-1111)",
+        "J7 — Al-Junayd al-Baghdâdî (830-910)"
+      ],
+      "dhikrs_quantifies": [
+        "J1 — Astaghfirullâh × 100 (après Fajr)",
+        "J2 — Yâ Hayyu Yâ Qayyûm × 33 (au lever)",
+        "J3 — Innâ li-llâhi wa innâ ilayhi râji'ûn × 33 (à chaque vague)",
+        "J4 — Hasbunâ Allâhu wa ni'ma-l-wakîl × 70 (14 après chaque salât)",
+        "J5 — Yâ Latîf × 129 (ou 100) (avant Maghrib)",
+        "J6 — Du'â de Yûnus × 40 (avant 'Ishâ)",
+        "J7 — Hasbiya-llâh × 7 matin + 7 soir (pour la vie)"
+      ],
+      "pratiques_corporelles": [
+        "J1 — Main droite sur la poitrine 1 min avant sommeil",
+        "J2 — Marche méditative 10 min avec 4 dhikrs cycliques",
+        "J3 — Wudû conscient avec du'â de purification du cœur",
+        "J4 — Sajda du dépôt hors salât 1-2 min",
+        "J5 — Mu'awwidhatân + Al-Ikhlâs × 3 avec souffle dans les paumes (sunna avant sommeil)",
+        "J6 — Qiyâm al-layl facultatif (2 rak'a + du'â de Yûnus)",
+        "J7 — Marche de sortie 15 min pour quitter la cure et rentrer dans la vie"
+      ]
+    },
     "sources_psy": [
       "CBT (Aaron Beck) : restructuration cognitive, distorsions",
       "ACT (Steven Hayes) : défusion cognitive, acceptation, valeurs",
@@ -772,8 +1568,8 @@
       "Self-compassion (Kristin Neff)",
       "Étude UCLA Lieberman 2007 : affect labeling"
     ],
-    "images_a_generer": "Famille visuelle cohérente : eau/brume comme fil conducteur, paysages s'éclaircissant J1 (brume dense) → J7 (eau calme reflétant le ciel). Style aligné avec cure-colere (arche orientale + lanterne au premier plan ou variation).",
-    "audit_theologique_requis": "Validation par Nabs avec ses livres de référence avant intégration production",
-    "depistage_doux_obligatoire": "Le dépistage J1 oriente vers thérapeute si symptômes critiques. Cette cure ne remplace pas un suivi médical/psychologique."
+    "audit_theologique_requis": "Validation par imam francophone OBLIGATOIRE avant production. Toutes références (versets, hadiths, paroles de sages, du'âs, gradations hadiths hasan/sahih) doivent être vérifiées avec sources arabes (Sunnah.com, éditions critiques).",
+    "depistage_doux_obligatoire": "Le dépistage J1 oriente vers thérapeute si symptômes critiques. Cette cure ne remplace pas un suivi médical/psychologique.",
+    "images_a_generer": "7 .webp dans assets/cure-anxiete/ (déjà fait pour v1.0)"
   }
 }

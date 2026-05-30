@@ -5473,13 +5473,21 @@ function _cureAnxieteGenericDay(el, dayNum) {
   if (!j) { el.innerHTML = '<div style="padding:60px 24px;text-align:center;color:rgba(255,255,255,0.4);">Contenu en cours de chargement\u2026</div>'; return; }
   var isLast = (dayNum === 7);
 
-  // Build steps array
+  // Build steps array (v2: 5 blocs)
   var steps = [];
-  // Step 0: ouverture (citation + introduction + image)
+  // Step 0: ouverture (image + station + titre)
   steps.push({ type: '_ouverture_anxiete', data: j, dayNum: dayNum });
-  // Outils
-  var outils = j.outils || [];
+  // Bloc 1: ouverture spirituelle (verset)
+  if (j.bloc_1_ouverture_spirituelle) steps.push({ type: '_bloc_verset', data: j.bloc_1_ouverture_spirituelle });
+  // Bloc 2: sagesse (parole de sage)
+  if (j.bloc_2_sagesse) steps.push({ type: '_bloc_sagesse', data: j.bloc_2_sagesse });
+  // Bloc 3: outils psy (identique à v1)
+  var outils = j.bloc_3_outils_psy || j.outils || [];
   outils.forEach(function(o, oi) { steps.push({ type: '_outil_anxiete', data: o, idx: oi, total: outils.length }); });
+  // Bloc 4: dhikr quantifié
+  if (j.bloc_4_dhikr_quantifie) steps.push({ type: '_bloc_dhikr', data: j.bloc_4_dhikr_quantifie });
+  // Bloc 5: pratique corporelle
+  if (j.bloc_5_pratique_corporelle) steps.push({ type: '_bloc_corporel', data: j.bloc_5_pratique_corporelle });
   // Phrase-ancre
   if (j.phrase_ancre) { steps.push({ type: '_ancre_anxiete', data: j.phrase_ancre }); }
   // Clôture
@@ -6617,7 +6625,7 @@ function _cureAnxieteWizardRender(el) {
       + '<div style="font-family:var(--serif);font-size:11px;letter-spacing:2px;color:rgba(200,168,75,0.5);text-align:center;margin-bottom:20px;">' + escapeHtml((j.station_fr || '').toUpperCase()) + '</div>'
       + '<div style="font-family:var(--serif);font-size:20px;font-weight:600;color:#C8A84A;text-align:center;margin-bottom:24px;">Jour ' + dayNum + ' \u2014 ' + escapeHtml(j.titre_jour || '') + '</div>'
       + (cit.texte ? '<div style="border-left:2px solid ' + c + '44;padding-left:14px;margin-bottom:20px;"><div style="font-family:var(--serif);font-size:14px;font-style:italic;color:rgba(240,234,214,0.75);line-height:1.7;">' + escapeHtml(cit.texte) + '</div><div style="font-size:12px;color:rgba(200,168,75,0.5);margin-top:6px;">\u2014 ' + escapeHtml(cit.source || '') + '</div></div>' : '')
-      + '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.85);line-height:1.8;white-space:pre-line;">' + escapeHtml(j.introduction || '') + '</div>'
+      + '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.85);line-height:1.8;white-space:pre-line;">' + escapeHtml(j.introduction_avant_outils || j.introduction || '') + '</div>'
       + nextBtn
       + '</div></div>';
   } else if (step.type === '_outil_anxiete') {
@@ -6631,6 +6639,84 @@ function _cureAnxieteWizardRender(el) {
       + outilHtml
       + (o.type === 'ecran_final_sans_action' ? '' : nextBtn)
       + '</div>';
+  } else if (step.type === '_bloc_verset') {
+    var bv = step.data;
+    var v = bv.verset || {};
+    html = backBtn
+      + '<div style="padding:calc(var(--safe-top,0px)+60px) 24px 120px;">'
+      + progress
+      + '<div style="font-family:var(--serif);font-size:11px;letter-spacing:2px;color:rgba(200,168,75,0.5);text-align:center;margin-bottom:16px;">' + escapeHtml((bv.titre_bloc || '').toUpperCase()) + '</div>'
+      + '<div style="border:1px solid ' + c + '22;border-radius:14px;padding:20px;margin-bottom:16px;text-align:center;">'
+      + (v.ar ? '<div style="font-family:\'Scheherazade New\',serif;font-size:22px;color:#C8A84A;direction:rtl;line-height:1.6;margin-bottom:10px;">' + escapeHtml(v.ar) + '</div>' : '')
+      + (v.translit ? '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:6px;">' + escapeHtml(v.translit) + '</div>' : '')
+      + (v.fr ? '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.85);line-height:1.6;margin-bottom:8px;">' + escapeHtml(v.fr) + '</div>' : '')
+      + (v.reference ? '<div style="font-size:11px;color:rgba(200,168,75,0.4);">\u2014 ' + escapeHtml(v.reference) + '</div>' : '')
+      + '</div>'
+      + (bv.contexte_revelation ? '<div style="font-family:var(--serif);font-size:13px;color:rgba(240,234,214,0.6);line-height:1.6;margin-bottom:12px;">' + escapeHtml(bv.contexte_revelation) + '</div>' : '')
+      + (bv.sens_pour_aujourdhui ? '<div style="font-family:var(--serif);font-size:14px;font-style:italic;color:rgba(200,168,75,0.65);line-height:1.6;margin-bottom:12px;">' + escapeHtml(bv.sens_pour_aujourdhui) + '</div>' : '')
+      + nextBtn
+      + '</div>';
+  } else if (step.type === '_bloc_sagesse') {
+    var bs = step.data;
+    var p = bs.parole || {};
+    html = backBtn
+      + '<div style="padding:calc(var(--safe-top,0px)+60px) 24px 120px;">'
+      + progress
+      + '<div style="font-family:var(--serif);font-size:11px;letter-spacing:2px;color:rgba(200,168,75,0.5);text-align:center;margin-bottom:16px;">' + escapeHtml((bs.titre_bloc || '').toUpperCase()) + '</div>'
+      + '<div style="border-left:2px solid ' + c + '44;padding-left:16px;margin-bottom:16px;">'
+      + '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(240,234,214,0.8);line-height:1.7;">' + escapeHtml(p.texte || '') + '</div>'
+      + '</div>'
+      + '<div style="text-align:right;margin-bottom:16px;">'
+      + '<div style="font-family:var(--serif);font-size:14px;color:#C8A84A;">' + escapeHtml(p.auteur || '') + '</div>'
+      + (p.dates_auteur ? '<div style="font-size:11px;color:rgba(200,168,75,0.4);">' + escapeHtml(p.dates_auteur) + '</div>' : '')
+      + (p.oeuvre ? '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.5);">' + escapeHtml(p.oeuvre) + '</div>' : '')
+      + '</div>'
+      + (p.note_editoriale ? '<div style="font-family:var(--serif);font-size:13px;color:rgba(240,234,214,0.55);line-height:1.5;">' + escapeHtml(p.note_editoriale) + '</div>' : '')
+      + nextBtn
+      + '</div>';
+  } else if (step.type === '_bloc_dhikr') {
+    var bd = step.data;
+    var dh = bd.dhikr || {};
+    html = backBtn
+      + '<div style="padding:calc(var(--safe-top,0px)+60px) 24px 120px;">'
+      + progress
+      + '<div style="font-family:var(--serif);font-size:11px;letter-spacing:2px;color:rgba(200,168,75,0.5);text-align:center;margin-bottom:16px;">' + escapeHtml((bd.titre_bloc || '').toUpperCase()) + '</div>'
+      + (bd.introduction ? '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(bd.introduction) + '</div>' : '')
+      + '<div style="border:1px solid ' + c + '22;border-radius:14px;padding:20px;margin-bottom:16px;text-align:center;">'
+      + (dh.ar ? '<div style="font-family:\'Scheherazade New\',serif;font-size:28px;color:#C8A84A;direction:rtl;margin-bottom:8px;">' + escapeHtml(dh.ar) + '</div>' : '')
+      + (dh.translit ? '<div style="font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(200,168,75,0.55);margin-bottom:4px;">' + escapeHtml(dh.translit) + '</div>' : '')
+      + (dh.fr ? '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.8);margin-bottom:8px;">' + escapeHtml(dh.fr) + '</div>' : '')
+      + (dh.sens ? '<div style="font-family:var(--serif);font-size:12px;color:rgba(200,168,75,0.45);font-style:italic;margin-bottom:8px;">' + escapeHtml(dh.sens) + '</div>' : '')
+      + '<div style="font-family:var(--serif);font-size:20px;color:#C8A84A;font-weight:600;">\u00d7 ' + (bd.quantite || '') + '</div>'
+      + '</div>'
+      + (bd.moment_recommande ? '<div style="font-family:var(--serif);font-size:13px;color:rgba(240,234,214,0.6);text-align:center;margin-bottom:8px;">' + escapeHtml(bd.moment_recommande) + '</div>' : '')
+      + (bd.comment_pratiquer ? '<div style="font-family:var(--serif);font-size:13px;color:rgba(240,234,214,0.55);line-height:1.6;margin-bottom:12px;">' + escapeHtml(bd.comment_pratiquer) + '</div>' : '')
+      + (bd.justification && bd.justification.hadith ? '<div style="font-size:12px;color:rgba(200,168,75,0.4);font-style:italic;text-align:center;">\u2014 ' + escapeHtml(bd.justification.hadith) + '</div>' : '')
+      + nextBtn
+      + '</div>';
+  } else if (step.type === '_bloc_corporel') {
+    var bc = step.data;
+    var ph = bc.phrase_a_repeter || {};
+    html = backBtn
+      + '<div style="padding:calc(var(--safe-top,0px)+60px) 24px 120px;">'
+      + progress
+      + '<div style="font-family:var(--serif);font-size:11px;letter-spacing:2px;color:rgba(200,168,75,0.5);text-align:center;margin-bottom:16px;">' + escapeHtml((bc.titre_bloc || '').toUpperCase()) + '</div>'
+      + (bc.introduction ? '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(bc.introduction) + '</div>' : '')
+      + '<div style="border:1px solid ' + c + '22;border-radius:14px;padding:16px;margin-bottom:16px;">';
+    var instr = bc.instructions || [];
+    instr.forEach(function(line) {
+      html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.8);line-height:1.7;margin-bottom:6px;padding-left:12px;border-left:2px solid ' + c + '33;">' + escapeHtml(line) + '</div>';
+    });
+    html += '</div>';
+    if (ph.ar) {
+      html += '<div style="text-align:center;margin-bottom:12px;">'
+        + '<div style="font-family:\'Scheherazade New\',serif;font-size:22px;color:#C8A84A;direction:rtl;margin-bottom:4px;">' + escapeHtml(ph.ar) + '</div>'
+        + (ph.translit ? '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:4px;">' + escapeHtml(ph.translit) + '</div>' : '')
+        + (ph.fr ? '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);">' + escapeHtml(ph.fr) + '</div>' : '')
+        + '</div>';
+    }
+    if (bc.duree_min) html += '<div style="font-size:12px;color:rgba(200,168,75,0.4);text-align:center;margin-bottom:8px;">' + bc.duree_min + ' min</div>';
+    html += nextBtn + '</div>';
   } else if (step.type === '_ancre_anxiete') {
     var ancre = step.data;
     html = backBtn
