@@ -1,0 +1,1047 @@
+{
+  "id": "cure-medisance-cycle1",
+  "cycle": 1,
+  "version": "1.0",
+  "date_creation": "2026-05-30",
+  "porte": "medisance",
+  "principes_editoriaux": {
+    "ton": "Bobin / McCarthy / Ghazâlî — sobriété contemplative",
+    "anti_gamification": "Pas de score, pas de streak imposé, pas de pression",
+    "duree_par_jour": "10 à 13 minutes (5 blocs)",
+    "approche": "Méthode ghazâlienne (Ihyâ' XXIV, Kitâb âfât al-lisân) enrichie : verset central + sage classique + outils CBT/réparation + dhikr quantifié + pratique corporelle. Ratio cible : 60-65% islamique / 35-40% psy structurant.",
+    "structure_jour": "5 blocs : Ouverture spirituelle → Sagesse traditionnelle → Outils psy → Dhikr quantifié → Pratique corporelle.",
+    "specificite": "Cure traitant la médisance (ghîba) et le colportage (namîma). Suit la méthode de Ghazâlî : définir les fléaux → comprendre les ressorts → mesurer la gravité → tenir la langue → défendre l'absent → réparer → remplacer par la bonne parole. Genre-neutre. Anti-honte, garde-fou contre le waswâs (cas permis de parler d'autrui)."
+  },
+  "jours": {
+    "j1": {
+      "numero": 1,
+      "station_ar": "الإِحْصَاء",
+      "station_translitteration": "Al-Ihsâ'",
+      "station_fr": "L'Inventaire",
+      "titre_jour": "Ce que dit ma langue",
+      "image_fond": "j1.webp",
+      "duree_estimee_min": 11,
+      "duree_estimee_max": 13,
+      "bloc_1_ouverture_spirituelle": {
+        "type": "verset_central",
+        "titre_bloc": "Le verset du jour",
+        "verset": {
+          "reference": "Qâf 50:18",
+          "ar": "مَا يَلْفِظُ مِن قَوْلٍ إِلَّا لَدَيْهِ رَقِيبٌ عَتِيدٌ",
+          "translit": "Mâ yalfizu min qawlin illâ ladayhi raqîbun 'atîd",
+          "fr": "Il ne prononce aucune parole sans avoir auprès de lui un observateur prêt [à l'inscrire]."
+        },
+        "contexte_revelation": "Sourate Qâf, sur la résurrection et le jugement. Allah rappelle que deux anges consignent chaque parole — pas seulement les actes.",
+        "sens_pour_aujourdhui": "Ta langue n'est jamais seule. Chaque mot — même le petit commentaire glissé sur quelqu'un — tombe dans un registre. Ce n'est pas une menace, c'est une dignité : tes paroles comptent assez pour être gardées. Aujourd'hui, on fait l'inventaire de ce qui sort, du plus léger au plus lourd, sans honte.",
+        "sources_tafsir": [
+          "Tafsîr Ibn Kathîr, sur Qâf 50:18",
+          "Tafsîr al-Sa'dî"
+        ]
+      },
+      "bloc_2_sagesse": {
+        "type": "parole_de_sage",
+        "titre_bloc": "Parole de Ghazâlî sur la langue",
+        "parole": {
+          "texte": "La langue est un membre minuscule, mais son obéissance comme sa rébellion sont immenses. Aucun organe ne mène l'homme à sa perte aussi vite — car ce qui jette les gens dans le Feu sur leur visage, c'est surtout la récolte de leurs langues.",
+          "auteur": "Abû Hâmid al-Ghazâlî",
+          "dates_auteur": "1058-1111",
+          "oeuvre": "Ihyâ' 'Ulûm ad-Dîn, Livre XXIV — Kitâb âfât al-lisân",
+          "siecle": "XIe-XIIe siècle",
+          "note": "Ghazâlî consacre tout le Livre XXIV aux vingt fléaux de la langue, du plus discret (parler de ce qui ne nous regarde pas) au plus grave (médisance, colportage). L'idée « la récolte des langues » reprend un hadith (Tirmidhî 2616, hasan sahîh) — à confirmer."
+        }
+      },
+      "introduction_avant_outils": "Tu as lu le verset. Tu as entendu Ghazâlî.\n\nMaintenant — l'inventaire. Du plus léger au plus lourd. Sans honte.",
+      "bloc_3_outils_psy": [
+        {
+          "id": "depistage_fleaux_langue",
+          "ordre": 1,
+          "type": "checkboxes_multiple",
+          "titre": "Dépistage des fléaux de la langue",
+          "introduction": "Ghazâlî les classe du moins grave au plus grave. Lis sans te juger. Coche ce qui t'est arrivé ces 24h — pas ce que tu voudrais.",
+          "consigne": "Coche tout ce qui te concerne. Plusieurs réponses possibles.",
+          "options": [
+            {
+              "id": "hors_sujet",
+              "label_fr": "Parler de ce qui ne me regarde pas"
+            },
+            {
+              "id": "bavardage",
+              "label_fr": "Bavarder pour bavarder, parler pour remplir le vide"
+            },
+            {
+              "id": "paraitre",
+              "label_fr": "Embellir mes paroles, me mettre en valeur en parlant"
+            },
+            {
+              "id": "moquerie",
+              "label_fr": "La moquerie, l'ironie qui rabaisse l'autre"
+            },
+            {
+              "id": "exagerer",
+              "label_fr": "Exagérer, « enjoliver » une histoire (le mensonge léger)"
+            },
+            {
+              "id": "namima",
+              "label_fr": "Rapporter ce qui sépare les gens (le colportage — namîma)"
+            },
+            {
+              "id": "ghiba",
+              "label_fr": "Parler d'un absent par ce qu'il détesterait (la médisance — ghîba)"
+            }
+          ],
+          "stockage": "cure_medisance_j1_fleaux",
+          "note_psy": "Self-monitoring de la parole (CBT) — on observe avant de corriger.",
+          "note_spi": "Les vingt âfât al-lisân d'al-Ghazâlî (Ihyâ' XXIV), classés du moins grave au plus grave."
+        },
+        {
+          "id": "forteresse_langue",
+          "ordre": 2,
+          "type": "radio_unique",
+          "titre": "Le plus toi",
+          "introduction": "On ne soigne bien qu'un foyer à la fois.",
+          "consigne": "Lequel de ces fléaux est le plus toi ? C'est ta forteresse — cette semaine, c'est lui qu'on visite.",
+          "options": [
+            {
+              "id": "hors_sujet",
+              "label_fr": "Ce qui ne me regarde pas"
+            },
+            {
+              "id": "bavardage",
+              "label_fr": "Le bavardage"
+            },
+            {
+              "id": "paraitre",
+              "label_fr": "Paraître en parlant"
+            },
+            {
+              "id": "moquerie",
+              "label_fr": "La moquerie"
+            },
+            {
+              "id": "exagerer",
+              "label_fr": "L'exagération"
+            },
+            {
+              "id": "namima",
+              "label_fr": "Le colportage"
+            },
+            {
+              "id": "ghiba",
+              "label_fr": "La médisance"
+            }
+          ],
+          "stockage": "cure_medisance_j1_forteresse",
+          "note_psy": "Case formulation (CBT) — concentrer l'effort sur le foyer dominant.",
+          "note_spi": "Méthode de Ghazâlî : traiter d'abord le fléau qui domine en soi."
+        }
+      ],
+      "bloc_4_dhikr_quantifie": {
+        "type": "prescription_dhikr",
+        "titre_bloc": "Le dhikr du jour",
+        "introduction": "Le Prophète ﷺ a donné une parole qui efface ce que la langue laisse échapper dans une assise : la kaffârat al-majlis.",
+        "dhikr": {
+          "ar": "سُبْحَانَكَ اللَّهُمَّ وَبِحَمْدِكَ، أَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا أَنْتَ، أَسْتَغْفِرُكَ وَأَتُوبُ إِلَيْكَ",
+          "translit": "Subhânaka-llâhumma wa bi-hamdik, ashhadu an lâ ilâha illâ ant, astaghfiruka wa atûbu ilayk",
+          "fr": "Gloire et louange à Toi, ô Allah. J'atteste qu'il n'y a de divinité que Toi. Je Te demande pardon et je me repens à Toi."
+        },
+        "quantite": 1,
+        "moment_recommande": "À la fin de chaque conversation ou assise aujourd'hui.",
+        "duree_estimee_sec": 60,
+        "justification": {
+          "texte": "Le Prophète ﷺ l'a enseignée comme expiation de ce qui se dit dans une assise (futilités, médisance échappée).",
+          "source": "Tirmidhî 3433 — sahîh (à confirmer)"
+        },
+        "comment_pratiquer": "À la fin d'une discussion, posément. C'est le « nettoyage » de l'assise.",
+        "stockage": "cure_medisance_j1_dhikr_done"
+      },
+      "bloc_5_pratique_corporelle": {
+        "type": "geste_corporel",
+        "titre_bloc": "Une heure de silence choisi",
+        "introduction": "Aujourd'hui, prends une heure où tu ne dis que le nécessaire — et le bon. Pas un silence triste : un silence qui écoute.",
+        "instructions": [
+          "Choisis une heure de ta journée.",
+          "Ne dis que le nécessaire et le bon.",
+          "Observe : combien de fois l'envie monte de commenter quelqu'un, de raconter, d'ajouter un détail sur un absent ?",
+          "Ne te corrige pas encore — compte, simplement.",
+          "Chaque fois que la langue veut bondir, remplace-la en toi : « Subhâna-llâhi wa bi-hamdih »."
+        ],
+        "phrase_a_repeter": {
+          "ar": "سُبْحَانَ اللَّهِ وَبِحَمْدِهِ",
+          "translit": "Subhâna-llâhi wa bi-hamdih",
+          "fr": "Gloire et louange à Allah"
+        },
+        "duree_min": 60,
+        "justification": {
+          "texte": "L'auto-observation sans correction (self-monitoring) révèle la fréquence réelle du comportement — première étape du changement.",
+          "source": "Dhikr authentique (Bukhârî 6405) ; le samt (silence) recommandé par Ghazâlî"
+        },
+        "note": "Tu découvriras à quel point la langue veut parler des autres — et c'est déjà la moitié du chemin.",
+        "stockage": "cure_medisance_j1_corps_done"
+      },
+      "phrase_ancre": "Chaque mot tombe dans un registre.",
+      "cloture": {
+        "texte": "Tu as lu le verset.\nTu as entendu Ghazâlî.\nTu as fait l'inventaire des fléaux.\nTu connais ta forteresse.\nTu as appris la kaffârat al-majlis.\nTu as goûté une heure de silence.\n\nDemain — pourquoi je médis.",
+        "bouton": "J'ai recensé. À demain.",
+        "stockage": "cure_medisance = { current_day: 1, completed_j1: true }"
+      },
+      "murmure_sortie_sanctuaire": "Connaître ce que dit sa langue, c'est déjà la tenir un peu.",
+      "metadata_jour": {
+        "versets_cites": [
+          "Qâf 50:18 (central)"
+        ],
+        "hadiths_cites": [
+          "Tirmidhî 3433 (kaffârat al-majlis)",
+          "Bukhârî 6405 (tasbîh)",
+          "Tirmidhî 2616 (récolte des langues)"
+        ],
+        "savants_cites": [
+          "Al-Ghazâlî"
+        ],
+        "dhikr_quantifie": "Kaffârat al-majlis × 1 par assise",
+        "pratique_corporelle": "Une heure de silence choisi",
+        "outils_psy": 2
+      }
+    },
+    "j2": {
+      "numero": 2,
+      "station_ar": "البَوَاعِث",
+      "station_translitteration": "Al-Bawâ'ith",
+      "station_fr": "Le Ressort",
+      "titre_jour": "Pourquoi je médis",
+      "image_fond": "j2.webp",
+      "duree_estimee_min": 11,
+      "duree_estimee_max": 12,
+      "bloc_1_ouverture_spirituelle": {
+        "type": "verset_central",
+        "titre_bloc": "Le verset du jour",
+        "verset": {
+          "reference": "al-Hujurât 49:12",
+          "ar": "يَا أَيُّهَا الَّذِينَ آمَنُوا اجْتَنِبُوا كَثِيرًا مِّنَ الظَّنِّ إِنَّ بَعْضَ الظَّنِّ إِثْمٌ ۖ وَلَا تَجَسَّسُوا وَلَا يَغْتَب بَّعْضُكُم بَعْضًا",
+          "translit": "Yâ ayyuha-lladhîna âmanu-jtanibû kathîran mina-z-zann, inna ba'da-z-zanni ithm. Wa lâ tajassasû wa lâ yaghtab ba'dukum ba'dâ",
+          "fr": "Ô vous qui croyez ! Évitez de trop conjecturer : une partie des conjectures est péché. N'espionnez pas, et ne médisez pas les uns des autres."
+        },
+        "contexte_revelation": "Sourate al-Hujurât, l'éthique de la communauté. Allah enchaîne une mécanique : soupçon → espionnage → médisance.",
+        "sens_pour_aujourdhui": "Regarde la chaîne : d'abord le soupçon, puis l'espionnage (chercher à confirmer), puis la médisance (déverser). La langue n'est que le dernier maillon. Aujourd'hui, on remonte jusqu'au motif caché qui pousse le mot.",
+        "sources_tafsir": [
+          "Tafsîr Ibn Kathîr, sur al-Hujurât 49:12",
+          "Tafsîr al-Sa'dî"
+        ]
+      },
+      "bloc_2_sagesse": {
+        "type": "parole_de_sage",
+        "titre_bloc": "Parole de Ghazâlî sur les ressorts de la médisance",
+        "parole": {
+          "texte": "La langue ne médit jamais sans un ressort caché : apaiser une colère, accompagner ses compagnons pour leur plaire, l'envie de celui qu'on jalouse, le rire et la moquerie, ou se hausser en abaissant l'autre. Nomme le ressort, et tu tiens le fil.",
+          "auteur": "Abû Hâmid al-Ghazâlî",
+          "dates_auteur": "1058-1111",
+          "oeuvre": "Ihyâ' 'Ulûm ad-Dîn, Livre XXIV — bawâ'ith al-ghîba",
+          "siecle": "XIe-XIIe siècle",
+          "note": "Ghazâlî détaille les ressorts (bawâ'ith) de la médisance. On ne tranche pas une mauvaise herbe en coupant la feuille, mais en trouvant la racine."
+        }
+      },
+      "introduction_avant_outils": "Tu as vu la chaîne du verset. Derrière chaque médisance, il y a un motif. On va le débusquer.",
+      "bloc_3_outils_psy": [
+        {
+          "id": "mon_ressort",
+          "ordre": 1,
+          "type": "radio_unique",
+          "titre": "Mon ressort",
+          "introduction": "Repense à ta dernière médisance, même petite.",
+          "consigne": "Quel ressort l'a poussée ? Choisis le plus honnête, pas le plus flatteur.",
+          "options": [
+            {
+              "id": "colere",
+              "label_fr": "La colère — « il m'a blessé, alors j'en parle en mal »"
+            },
+            {
+              "id": "integrer",
+              "label_fr": "M'intégrer — « tout le monde en parlait, j'ai suivi »"
+            },
+            {
+              "id": "envie",
+              "label_fr": "L'envie — « je rabaisse celui qu'on admire »"
+            },
+            {
+              "id": "rire",
+              "label_fr": "Faire rire — « je le tourne en ridicule pour amuser »"
+            },
+            {
+              "id": "rehausser",
+              "label_fr": "Me rehausser — « en l'abaissant, je me sens plus haut »"
+            },
+            {
+              "id": "vide",
+              "label_fr": "Combler le vide — « je parle des gens parce que je m'ennuie »"
+            }
+          ],
+          "stockage": "cure_medisance_j2_ressort",
+          "note_psy": "Analyse fonctionnelle (CBT) — tout comportement sert une fonction ; psychologie sociale du ragot : médire soude le groupe contre une cible.",
+          "note_spi": "Les bawâ'ith (ressorts) de la ghîba chez al-Ghazâlî (Ihyâ' XXIV)."
+        },
+        {
+          "id": "besoin_sous_motif",
+          "ordre": 2,
+          "type": "champ_texte_long",
+          "titre": "Le besoin caché",
+          "consigne": "Sous ce motif, quel vrai besoin se cachait ? (Être entendu ? Appartenir ? Me sentir compté ?) Et comment le nourrir sans abîmer personne ?",
+          "amorce": "Sous mon motif, le vrai besoin était",
+          "champ": {
+            "placeholder": "...",
+            "max_caracteres": 500,
+            "stockage": "cure_medisance_j2_besoin"
+          },
+          "note_psy": "Nommer la fonction permet de combler le besoin autrement (analyse fonctionnelle).",
+          "note_spi": "Trouver la racine pour tarir la mauvaise herbe — la méthode de Ghazâlî."
+        }
+      ],
+      "bloc_4_dhikr_quantifie": {
+        "type": "prescription_dhikr",
+        "titre_bloc": "Le dhikr du jour",
+        "introduction": "La médisance vient des maladies du cœur — colère, envie, vanité. On demande refuge contre elles à la racine.",
+        "dhikr": {
+          "ar": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ مُنْكَرَاتِ الْأَخْلَاقِ وَالْأَعْمَالِ وَالْأَهْوَاءِ",
+          "translit": "Allâhumma innî a'ûdhu bika min munkarâti-l-akhlâqi wa-l-a'mâli wa-l-ahwâ'",
+          "fr": "Ô Allah, je cherche refuge en Toi contre les caractères, les actes et les passions blâmables."
+        },
+        "quantite": 3,
+        "moment_recommande": "Après tes prières aujourd'hui.",
+        "duree_estimee_sec": 120,
+        "justification": {
+          "texte": "Du'â prophétique de refuge contre les défauts de caractère qui nourrissent la médisance.",
+          "source": "Tirmidhî 3591 — hasan (à confirmer)"
+        },
+        "comment_pratiquer": "En la disant, pense au ressort que tu as identifié plus haut.",
+        "stockage": "cure_medisance_j2_dhikr_done"
+      },
+      "bloc_5_pratique_corporelle": {
+        "type": "geste_corporel",
+        "titre_bloc": "Nommer le ressort, en direct",
+        "introduction": "Aujourd'hui, chaque fois que tu es sur le point de parler d'un absent, pause d'un souffle et nomme en toi le ressort.",
+        "instructions": [
+          "Avant de parler de quelqu'un, un souffle.",
+          "Nomme le ressort : « colère », « envie », « pour rire », « pour appartenir ».",
+          "Nommer une impulsion lui retire son automatisme.",
+          "Si le ressort est la colère, ajoute le remède prophétique : « A'ûdhu bi-llâhi mina-sh-shaytâni-r-rajîm »."
+        ],
+        "phrase_a_repeter": {
+          "ar": "أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ",
+          "translit": "A'ûdhu bi-llâhi mina-sh-shaytâni-r-rajîm",
+          "fr": "Je cherche refuge auprès d'Allah contre le diable banni"
+        },
+        "duree_min": 5,
+        "justification": {
+          "texte": "Étiqueter une émotion/impulsion (affect labeling) réduit sa force et restaure le choix.",
+          "source": "Remède prophétique contre la colère (Bukhârî 3282 ; cf. Bukhârî 6048)"
+        },
+        "note": "Le ressort nommé ne te conduit plus à ton insu.",
+        "stockage": "cure_medisance_j2_corps_done"
+      },
+      "phrase_ancre": "La langue ne médit jamais sans raison cachée.",
+      "cloture": {
+        "texte": "Tu as vu la chaîne : soupçon, espionnage, médisance.\nTu as nommé ton ressort.\nTu as cherché le besoin dessous.\n\nDemain — la gravité.",
+        "bouton": "J'ai compris. À demain.",
+        "stockage": "cure_medisance = { current_day: 2, completed_j2: true }"
+      },
+      "murmure_sortie_sanctuaire": "Trouve la racine, et la feuille tombe d'elle-même.",
+      "metadata_jour": {
+        "versets_cites": [
+          "al-Hujurât 49:12 (central)"
+        ],
+        "hadiths_cites": [
+          "Tirmidhî 3591 (refuge contre les défauts)",
+          "Bukhârî 3282 (refuge contre le diable)"
+        ],
+        "savants_cites": [
+          "Al-Ghazâlî"
+        ],
+        "dhikr_quantifie": "Refuge contre les munkarât al-akhlâq × 3",
+        "pratique_corporelle": "Nommer le ressort + a'ûdhu bi-llâh",
+        "outils_psy": 2
+      }
+    },
+    "j3": {
+      "numero": 3,
+      "station_ar": "الحُرْمَة",
+      "station_translitteration": "Al-Hurma",
+      "station_fr": "La Gravité",
+      "titre_jour": "Manger la chair de son frère",
+      "image_fond": "j3.webp",
+      "duree_estimee_min": 11,
+      "duree_estimee_max": 13,
+      "bloc_1_ouverture_spirituelle": {
+        "type": "verset_central",
+        "titre_bloc": "Le verset du jour",
+        "verset": {
+          "reference": "al-Hujurât 49:12",
+          "ar": "وَلَا يَغْتَب بَّعْضُكُم بَعْضًا ۚ أَيُحِبُّ أَحَدُكُمْ أَن يَأْكُلَ لَحْمَ أَخِيهِ مَيْتًا فَكَرِهْتُمُوهُ ۚ وَاتَّقُوا اللَّهَ ۚ إِنَّ اللَّهَ تَوَّابٌ رَّحِيمٌ",
+          "translit": "Wa lâ yaghtab ba'dukum ba'dâ. A-yuhibbu ahadukum an ya'kula lahma akhîhi maytan fa-karihtumûh. Wa-ttaqu-llâh, inna-llâha tawwâbun rahîm",
+          "fr": "Ne médisez pas les uns des autres. L'un de vous aimerait-il manger la chair de son frère mort ? Vous en éprouveriez du dégoût. Et craignez Allah : Allah est Grand Accueillant au repentir, Très Miséricordieux."
+        },
+        "contexte_revelation": "Seconde moitié du verset 49:12. Allah rend l'invisible visible par une image volontairement révulsante.",
+        "sens_pour_aujourdhui": "Médire d'un absent — qui ne peut pas se défendre, comme un mort — c'est manger sa chair. Le dégoût que tu ressens est exactement celui que l'acte mérite. Mais regarde la fin : le verset ne se clôt pas sur la menace, mais sur Tawwâb Rahîm — la porte du retour grande ouverte. Aujourd'hui te réveille, puis t'indique la porte.",
+        "sources_tafsir": [
+          "Tafsîr Ibn Kathîr, sur al-Hujurât 49:12",
+          "Tafsîr al-Sa'dî"
+        ]
+      },
+      "bloc_2_sagesse": {
+        "type": "parole_de_sage",
+        "titre_bloc": "Le plateau de dattes d'al-Hasan al-Basrî",
+        "parole": {
+          "texte": "On rapporte qu'on dit à al-Hasan al-Basrî : « Un tel a médit de toi. » Il lui envoya un plateau de dattes avec ce mot : « On m'a appris que tu m'avais offert tes bonnes actions — j'ai voulu t'en remercier. »",
+          "auteur": "Al-Hasan al-Basrî",
+          "dates_auteur": "642-728",
+          "oeuvre": "Récit d'adab classique",
+          "siecle": "Ier-IIe siècle de l'hégire",
+          "note": "Celui qui médit de toi te donne ses hasanât : il croit attaquer, en réalité il se vide. Récit célèbre, parfois attribué à Ibn al-Mubârak — formulation à confirmer."
+        }
+      },
+      "introduction_avant_outils": "Le verset t'a donné l'image. Voici ce qu'elle veut dire, concrètement, le Jour où l'on règle les comptes.",
+      "bloc_3_outils_psy": [
+        {
+          "id": "compte_invisible",
+          "ordre": 1,
+          "type": "champ_texte_long",
+          "titre": "Le compte que je ne vois pas",
+          "consigne": "Repense aux dernières fois où ta langue a pris quelqu'un d'absent. À qui, sans le savoir, as-tu peut-être déjà offert tes bonnes actions ?",
+          "amorce": "Sans le savoir, j'ai peut-être donné mes bonnes actions à",
+          "champ": {
+            "placeholder": "...",
+            "max_caracteres": 600,
+            "stockage": "cure_medisance_j3_compte"
+          },
+          "note_psy": "Saillance des conséquences (rendre concret le coût) + prise de perspective (imaginer la personne entendant tes mots).",
+          "note_spi": "Le hadith du banqueroutier (al-muflis, Muslim 2581) : la ghîba transfère tes hasanât à ta victime.",
+          "introduction": "Le Prophète ﷺ a décrit le banqueroutier : il viendra avec prières, jeûne, aumône — mais aura insulté l'un, médit de l'autre ; on donnera de ses bonnes actions à chacun, et quand elles s'épuiseront, on chargera sur lui leurs péchés (Muslim 2581).\n\nRappel : ce n'est pas un verdict. Nommer est le premier pas du retour — Il est Tawwâb."
+        }
+      ],
+      "bloc_4_dhikr_quantifie": {
+        "type": "prescription_dhikr",
+        "titre_bloc": "Le dhikr du jour",
+        "introduction": "Un istighfâr ample, pour une dette ample. Le verset lui-même s'est clos sur le repentir.",
+        "dhikr": {
+          "ar": "أَسْتَغْفِرُ اللَّهَ الَّذِي لَا إِلَٰهَ إِلَّا هُوَ الْحَيَّ الْقَيُّومَ وَأَتُوبُ إِلَيْهِ",
+          "translit": "Astaghfiru-llâha-lladhî lâ ilâha illâ huwa-l-Hayya-l-Qayyûma wa atûbu ilayh",
+          "fr": "Je demande pardon à Allah, nulle divinité sauf Lui, le Vivant, Celui qui subsiste par Lui-même, et je me repens à Lui."
+        },
+        "quantite": 100,
+        "moment_recommande": "Aujourd'hui, avec la conscience du retour.",
+        "duree_estimee_sec": 300,
+        "justification": {
+          "texte": "Le Prophète ﷺ a dit que quiconque dit cet istighfâr est pardonné, même s'il a fui le combat — un istighfâr d'une grande portée.",
+          "source": "Abû Dâwûd 1517 ; Tirmidhî 3577 — hasan (à confirmer)"
+        },
+        "comment_pratiquer": "Pas en mode robot. Avec le regret, et la confiance qu'Il accueille.",
+        "stockage": "cure_medisance_j3_dhikr_done"
+      },
+      "bloc_5_pratique_corporelle": {
+        "type": "geste_corporel",
+        "titre_bloc": "La main devant la bouche",
+        "introduction": "Quand l'envie de parler d'un absent monte, lève doucement la main vers tes lèvres.",
+        "instructions": [
+          "L'envie monte → la main vers les lèvres, un souffle.",
+          "Dis en toi : « Astaghfirullâh ».",
+          "Laisse l'image du verset passer une seconde.",
+          "Ta bouche est une porte : par elle ne doit sortir que le pur."
+        ],
+        "phrase_a_repeter": {
+          "ar": "أَسْتَغْفِرُ اللَّهَ",
+          "translit": "Astaghfirullâh",
+          "fr": "Je demande pardon à Allah"
+        },
+        "duree_min": 5,
+        "justification": {
+          "texte": "Un geste d'interruption (la main) couplé à un rappel (l'image) crée une rupture de pattern efficace contre l'impulsion.",
+          "source": "Soutien corporel à la conscience de la gravité (al-Hujurât 49:12)"
+        },
+        "note": "La main posée, c'est la porte tenue — la chair de ton frère n'y passera pas.",
+        "stockage": "cure_medisance_j3_corps_done"
+      },
+      "phrase_ancre": "Médire d'un absent, c'est manger sa chair.",
+      "cloture": {
+        "texte": "Tu as vu l'image, et la fin miséricordieuse du verset.\nTu as entendu le banqueroutier.\nTu sais à qui tu offrais tes bonnes actions.\n\nDemain — le remède : tenir sa langue.",
+        "bouton": "J'ai mesuré. À demain.",
+        "stockage": "cure_medisance = { current_day: 3, completed_j3: true }"
+      },
+      "murmure_sortie_sanctuaire": "Le médisant croit attaquer ; en vérité, il se vide.",
+      "metadata_jour": {
+        "versets_cites": [
+          "al-Hujurât 49:12 (central)"
+        ],
+        "hadiths_cites": [
+          "Muslim 2581 (al-muflis)",
+          "Abû Dâwûd 1517 (grand istighfâr)"
+        ],
+        "savants_cites": [
+          "Al-Hasan al-Basrî"
+        ],
+        "dhikr_quantifie": "Grand istighfâr × 100",
+        "pratique_corporelle": "La main devant la bouche",
+        "outils_psy": 1
+      }
+    },
+    "j4": {
+      "numero": 4,
+      "station_ar": "حِفْظُ اللِّسَان",
+      "station_translitteration": "Hifz al-lisân",
+      "station_fr": "La Garde",
+      "titre_jour": "Tenir sa langue",
+      "image_fond": "j4.webp",
+      "duree_estimee_min": 11,
+      "duree_estimee_max": 12,
+      "bloc_1_ouverture_spirituelle": {
+        "type": "verset_central",
+        "titre_bloc": "Le verset du jour",
+        "verset": {
+          "reference": "al-Isrâ' 17:53",
+          "ar": "وَقُل لِّعِبَادِي يَقُولُوا الَّتِي هِيَ أَحْسَنُ ۚ إِنَّ الشَّيْطَانَ يَنزَغُ بَيْنَهُمْ",
+          "translit": "Wa qul li-'ibâdî yaqûlu-llatî hiya ahsan. Inna-sh-shaytâna yanzaghu baynahum",
+          "fr": "Dis à Mes serviteurs de dire ce qui est meilleur : le diable sème la discorde entre eux."
+        },
+        "contexte_revelation": "Sourate al-Isrâ'. Allah ne dit pas seulement d'éviter le mal, mais de dire « ce qui est meilleur ».",
+        "sens_pour_aujourdhui": "Allah révèle l'enjeu : par les paroles négligentes, le diable glisse la discorde entre les gens. Chaque mot sur un absent est une porte qu'on lui ouvre, ou qu'on lui ferme.",
+        "sources_tafsir": [
+          "Tafsîr Ibn Kathîr, sur al-Isrâ' 17:53",
+          "Tafsîr al-Sa'dî"
+        ]
+      },
+      "bloc_2_sagesse": {
+        "type": "parole_de_sage",
+        "titre_bloc": "Parole du Prophète ﷺ sur le silence",
+        "parole": {
+          "texte": "Quiconque croit en Allah et au Jour dernier, qu'il dise du bien ou qu'il se taise.",
+          "auteur": "Le Prophète Muhammad ﷺ",
+          "dates_auteur": "",
+          "oeuvre": "Bukhârî 6018 ; Muslim 47",
+          "siecle": "Ier siècle de l'hégire",
+          "note": "Entre dire du bien et se taire, il n'y a pas de troisième porte permise. Le silence devient une branche de la foi. Quand tu ne sais pas si c'est bien, tu sais déjà quoi faire."
+        }
+      },
+      "introduction_avant_outils": "Tu as vu le mal, son ressort, sa gravité. Voici le remède — simple à dire, dur à tenir.",
+      "bloc_3_outils_psy": [
+        {
+          "id": "triple_filtre",
+          "ordre": 1,
+          "type": "checkboxes_multiple",
+          "titre": "Le triple filtre",
+          "introduction": "Avant de parler d'un absent, le mot doit passer les TROIS portes. Une seule fermée → silence.",
+          "consigne": "Repense à ce que tu allais dire sur quelqu'un. Coche les portes qu'il passe vraiment :",
+          "options": [
+            {
+              "id": "vrai",
+              "label_fr": "1. C'est vrai (sinon ce n'est plus ghîba mais calomnie — buhtân, plus grave)"
+            },
+            {
+              "id": "utile",
+              "label_fr": "2. C'est utile ou nécessaire (un vrai besoin)"
+            },
+            {
+              "id": "devant_lui",
+              "label_fr": "3. Je le dirais devant lui (le test du visage)"
+            }
+          ],
+          "stockage": "cure_medisance_j4_filtre",
+          "message_si_coche": {
+            "titre": "S'il ne passe pas les trois → Khayran aw samtâ.",
+            "texte": "Du bien, ou le silence. Garde-fou : parler d'autrui n'est PAS toujours interdit. Les savants (Nawawî) recensent des cas légitimes — mettre en garde, réclamer justice, demander conseil, dénoncer un mal public. Leur point commun : un besoin réel (la 2e porte). Hors besoin, on se tait."
+          },
+          "message_si_aucun_coche": {
+            "texte": "Alors tu sais déjà : silence."
+          },
+          "note_psy": "Contrôle de l'impulsion — insérer un filtre/délai entre l'impulsion et la parole (response delay) ; habit reversal.",
+          "note_spi": "« Qu'il dise du bien ou se taise » (Bukhârî 6018) + les cas permis de parler d'autrui (an-Nawawî), inclus pour éviter le waswâs."
+        }
+      ],
+      "bloc_4_dhikr_quantifie": {
+        "type": "prescription_dhikr",
+        "titre_bloc": "Le dhikr du jour",
+        "introduction": "Pour remplir la langue de meilleur — la du'â que le Prophète ﷺ enseigna à Muʿâdh, à dire après chaque prière.",
+        "dhikr": {
+          "ar": "اللَّهُمَّ أَعِنِّي عَلَى ذِكْرِكَ وَشُكْرِكَ وَحُسْنِ عِبَادَتِكَ",
+          "translit": "Allâhumma a'innî 'alâ dhikrika wa shukrika wa husni 'ibâdatik",
+          "fr": "Ô Allah, aide-moi à T'évoquer, à Te remercier, et à T'adorer de la plus belle manière."
+        },
+        "quantite": 1,
+        "moment_recommande": "Après chaque prière (le Prophète ﷺ l'a recommandé à Muʿâdh).",
+        "duree_estimee_sec": 60,
+        "justification": {
+          "texte": "Le Prophète ﷺ tenait la main de Muʿâdh et lui dit de ne jamais délaisser cette du'â après chaque prière.",
+          "source": "Abû Dâwûd 1522 — sahîh"
+        },
+        "comment_pratiquer": "Occuper la langue par le meilleur, pour qu'elle ait moins de place pour le pire.",
+        "stockage": "cure_medisance_j4_dhikr_done"
+      },
+      "bloc_5_pratique_corporelle": {
+        "type": "geste_corporel",
+        "titre_bloc": "Le souffle-filtre",
+        "introduction": "Avant de parler de quelqu'un d'absent, un souffle complet par le nez — et pendant ce souffle, fais passer le mot par les trois portes.",
+        "instructions": [
+          "L'envie de parler d'un absent → un souffle complet par le nez.",
+          "Pendant le souffle : c'est vrai ? utile ? le dirais-je devant lui ?",
+          "Le souffle est le temps que tu t'offres pour choisir.",
+          "Si le mot ne passe pas : Khayran aw samtâ."
+        ],
+        "phrase_a_repeter": {
+          "ar": "خَيْرًا أَوْ صَمْتًا",
+          "translit": "Khayran aw samtâ",
+          "fr": "Du bien, ou le silence"
+        },
+        "duree_min": 3,
+        "justification": {
+          "texte": "Insérer un délai physiologique (un souffle) entre stimulus et réponse rétablit le contrôle volontaire.",
+          "source": "Mise en pratique de « qu'il dise du bien ou se taise » (Bukhârî 6018)"
+        },
+        "note": "La plupart des médisances jaillissent faute de cette seconde. Prends-la.",
+        "stockage": "cure_medisance_j4_corps_done"
+      },
+      "phrase_ancre": "Du bien, ou le silence — pas de troisième porte.",
+      "cloture": {
+        "texte": "Tu as appris le triple filtre.\nTu connais les cas où parler est légitime.\nTu sais prendre le souffle avant le mot.\n\nDemain — défendre l'absent.",
+        "bouton": "Je tiens. À demain.",
+        "stockage": "cure_medisance = { current_day: 4, completed_j4: true }"
+      },
+      "murmure_sortie_sanctuaire": "Quand tu ne sais pas si c'est bien, tu sais déjà quoi faire.",
+      "metadata_jour": {
+        "versets_cites": [
+          "al-Isrâ' 17:53 (central)"
+        ],
+        "hadiths_cites": [
+          "Bukhârî 6018 / Muslim 47 (dire du bien ou se taire)",
+          "Abû Dâwûd 1522 (du'â de Muʿâdh)"
+        ],
+        "savants_cites": [
+          "an-Nawawî (cas permis)"
+        ],
+        "dhikr_quantifie": "Du'â de Muʿâdh × 1 après chaque prière",
+        "pratique_corporelle": "Le souffle-filtre",
+        "outils_psy": 1
+      }
+    },
+    "j5": {
+      "numero": 5,
+      "station_ar": "نُصْرَةُ الغَائِب",
+      "station_translitteration": "Nusrat al-ghâ'ib",
+      "station_fr": "Le Témoin",
+      "titre_jour": "Défendre l'absent",
+      "image_fond": "j5.webp",
+      "duree_estimee_min": 11,
+      "duree_estimee_max": 13,
+      "bloc_1_ouverture_spirituelle": {
+        "type": "verset_central",
+        "titre_bloc": "Le verset du jour",
+        "verset": {
+          "reference": "an-Nûr 24:16",
+          "ar": "وَلَوْلَا إِذْ سَمِعْتُمُوهُ قُلْتُم مَّا يَكُونُ لَنَا أَن نَّتَكَلَّمَ بِهَٰذَا سُبْحَانَكَ هَٰذَا بُهْتَانٌ عَظِيمٌ",
+          "translit": "Wa lawlâ idh sami'tumûhu qultum mâ yakûnu lanâ an natakallama bi-hâdhâ subhânaka hâdhâ buhtânun 'azîm",
+          "fr": "Et pourquoi, lorsque vous l'avez entendu, n'avez-vous pas dit : « Il ne nous appartient pas d'en parler. Gloire à Toi ! C'est une énorme calomnie » ?"
+        },
+        "contexte_revelation": "Verset de la calomnie contre 'Â'icha (al-ifk). Allah reproche à ceux qui ont écouté et répété la rumeur, et leur donne la phrase qu'ils auraient dû dire.",
+        "sens_pour_aujourdhui": "Quand la médisance arrive à toi, tu n'es jamais neutre : ton silence approbateur, ton petit rire, ton « ah bon ? » nourrissent le médisant. La médisance a deux bouches : celle qui parle et celle qui écoute en souriant. Aujourd'hui, on ferme la seconde.",
+        "sources_tafsir": [
+          "Tafsîr Ibn Kathîr, sur an-Nûr 24:11-20",
+          "Tafsîr al-Sa'dî"
+        ]
+      },
+      "bloc_2_sagesse": {
+        "type": "parole_de_sage",
+        "titre_bloc": "Parole du Prophète ﷺ sur la défense de l'absent",
+        "parole": {
+          "texte": "Quiconque défend l'honneur de son frère [absent], Allah écartera le Feu de son visage au Jour de la Résurrection.",
+          "auteur": "Le Prophète Muhammad ﷺ",
+          "dates_auteur": "",
+          "oeuvre": "Tirmidhî 1931 — hasan",
+          "siecle": "Ier siècle de l'hégire",
+          "note": "L'auditeur n'est pas neutre : il est récompensé s'il défend, complice s'il jouit ou suit. Une seule phrase de défense protège ton propre visage du Feu. Grade hasan — à confirmer."
+        }
+      },
+      "introduction_avant_outils": "Hier tu as appris à tenir ta propre langue. Aujourd'hui — l'autre moitié : celle qui écoute.",
+      "bloc_3_outils_psy": [
+        {
+          "id": "phrase_prete",
+          "ordre": 1,
+          "type": "champ_texte_long",
+          "titre": "La phrase prête",
+          "consigne": "Repense à un moment récent où la médisance est arrivée à toi, et où tu as ri, ajouté, ou laissé faire. Rejoue la scène. Qu'aurais-tu pu dire ? Écris TA phrase, celle que tu oseras dire la prochaine fois.",
+          "amorce": "La prochaine fois, je dirai",
+          "champ": {
+            "placeholder": "...",
+            "max_caracteres": 500,
+            "stockage": "cure_medisance_j5_phrase"
+          },
+          "note_psy": "Affirmation de soi : préparer une phrase à l'avance (rehearsal) lève le blocage du témoin ; effet bystander : agir brise la dynamique de groupe.",
+          "note_spi": "L'auditeur est complice de la ghîba ; défendre l'honneur de l'absent (Tirmidhî 1931).",
+          "introduction": "Quelques phrases prêtes : « Je le connais autrement. » / « On ne sait pas ce qu'il traverse, changeons de sujet. » / « Je préfère ne pas en parler en son absence. » / Le modèle coranique : « Ce n'est pas à nous d'en parler. »"
+        }
+      ],
+      "bloc_4_dhikr_quantifie": {
+        "type": "prescription_dhikr",
+        "titre_bloc": "Le dhikr du jour",
+        "introduction": "La réponse même qu'Allah a enseignée, à dire — à voix haute ou en toi — quand une calomnie t'atteint.",
+        "dhikr": {
+          "ar": "سُبْحَانَكَ هَٰذَا بُهْتَانٌ عَظِيمٌ",
+          "translit": "Subhânaka hâdhâ buhtânun 'azîm",
+          "fr": "Gloire à Toi ! C'est une énorme calomnie."
+        },
+        "quantite": 1,
+        "moment_recommande": "Chaque fois qu'une médisance ou une calomnie arrive à toi.",
+        "duree_estimee_sec": 30,
+        "justification": {
+          "texte": "Allah a enseigné cette réponse exacte à ceux qui entendent une calomnie (épisode de l'ifk).",
+          "source": "an-Nûr 24:16"
+        },
+        "comment_pratiquer": "Dis-la, puis détourne la conversation avec ta phrase prête.",
+        "stockage": "cure_medisance_j5_dhikr_done"
+      },
+      "bloc_5_pratique_corporelle": {
+        "type": "geste_corporel",
+        "titre_bloc": "Le hochement retenu",
+        "introduction": "La médisance vit des petits signaux de celui qui écoute : le hochement, le sourire, le « raconte ! ». Ce sont des oui silencieux.",
+        "instructions": [
+          "Quand ça commence, retiens le hochement.",
+          "Garde un visage neutre — ni complice, ni curieux.",
+          "Ton corps cesse de nourrir le feu.",
+          "Puis offre ta phrase prête."
+        ],
+        "phrase_a_repeter": {
+          "ar": "سُبْحَانَكَ هَٰذَا بُهْتَانٌ عَظِيمٌ",
+          "translit": "Subhânaka hâdhâ buhtânun 'azîm",
+          "fr": "Gloire à Toi ! C'est une énorme calomnie"
+        },
+        "duree_min": 5,
+        "justification": {
+          "texte": "Retirer les renforçateurs sociaux (hochements, rires) éteint un comportement de groupe (extinction comportementale).",
+          "source": "Application de an-Nûr 24:16 et de la défense de l'absent (Tirmidhî 1931)"
+        },
+        "note": "Souvent, un seul témoin qui ne suit pas suffit à éteindre toute la conversation.",
+        "stockage": "cure_medisance_j5_corps_done"
+      },
+      "phrase_ancre": "Celui qui écoute en souriant tient l'autre bouche de la médisance.",
+      "cloture": {
+        "texte": "Tu as vu que l'auditeur n'est jamais neutre.\nTu as préparé ta phrase de défense.\nTu sais retenir le hochement.\n\nDemain — la namîma et la réparation.",
+        "bouton": "Je défends. À demain.",
+        "stockage": "cure_medisance = { current_day: 5, completed_j5: true }"
+      },
+      "murmure_sortie_sanctuaire": "Défendre un absent protège ton propre visage.",
+      "metadata_jour": {
+        "versets_cites": [
+          "an-Nûr 24:16 (central)"
+        ],
+        "hadiths_cites": [
+          "Tirmidhî 1931 (défendre l'honneur du frère)"
+        ],
+        "savants_cites": [],
+        "dhikr_quantifie": "« Subhânaka hâdhâ buhtânun 'azîm » à chaque calomnie entendue",
+        "pratique_corporelle": "Le hochement retenu",
+        "outils_psy": 1
+      }
+    },
+    "j6": {
+      "numero": 6,
+      "station_ar": "الإِصْلَاح",
+      "station_translitteration": "Al-Islâh",
+      "station_fr": "La Réparation",
+      "titre_jour": "La namîma et la réparation",
+      "image_fond": "j6.webp",
+      "duree_estimee_min": 12,
+      "duree_estimee_max": 13,
+      "bloc_1_ouverture_spirituelle": {
+        "type": "verset_central",
+        "titre_bloc": "Le verset du jour",
+        "verset": {
+          "reference": "al-Qalam 68:10-11",
+          "ar": "وَلَا تُطِعْ كُلَّ حَلَّافٍ مَّهِينٍ ۝ هَمَّازٍ مَّشَّاءٍ بِنَمِيمٍ",
+          "translit": "Wa lâ tuti' kulla hallâfin mahîn. Hammâzin mashshâ'in bi-namîm",
+          "fr": "N'obéis pas au grand jureur méprisable, diffamateur, qui s'en va colportant la calomnie."
+        },
+        "contexte_revelation": "Sourate al-Qalam, décrivant les traits du blâmable. Le hammâz (diffamateur) et le mashshâ' bi-namîm (colporteur) figurent parmi les pires.",
+        "sens_pour_aujourdhui": "La namîma, c'est porter les mots d'un côté à l'autre — « tu sais ce qu'il a dit sur toi ? » — pour semer la rupture. La ghîba salit ; la namîma brise des liens. Plus grave encore. Mais aujourd'hui n'est pas qu'un constat : c'est le jour du retour.",
+        "sources_tafsir": [
+          "Tafsîr Ibn Kathîr, sur al-Qalam 68:10-11",
+          "Tafsîr al-Sa'dî"
+        ]
+      },
+      "bloc_2_sagesse": {
+        "type": "parole_de_sage",
+        "titre_bloc": "Parole du Prophète ﷺ sur le colportage",
+        "parole": {
+          "texte": "N'entrera pas au Paradis un colporteur (nammâm).",
+          "auteur": "Le Prophète Muhammad ﷺ",
+          "dates_auteur": "",
+          "oeuvre": "Bukhârî 6056 ; Muslim 105",
+          "siecle": "Ier siècle de l'hégire",
+          "note": "Parole terrible — mais souviens-toi de la fin du verset de la Hujurât : Tawwâb Rahîm. Aucune dette de la langue n'est sans porte de sortie. La porte s'appelle la réparation."
+        }
+      },
+      "introduction_avant_outils": "On passe du constat à la réparation. Ici les savants divergent : lis les deux avis.",
+      "bloc_3_outils_psy": [
+        {
+          "id": "plan_reparation",
+          "ordre": 1,
+          "type": "champ_texte_long",
+          "titre": "Le plan de réparation",
+          "consigne": "Choisis une personne dont tu as médit ou colporté les paroles. Écris ton plan : tawba sincère TOUJOURS d'abord ; puis, selon le cas — demander pardon (Avis 1) OU du'â + éloge sans informer (Avis 2).",
+          "amorce": "Pour cette personne, mon plan est",
+          "champ": {
+            "placeholder": "...",
+            "max_caracteres": 600,
+            "stockage": "cure_medisance_j6_plan"
+          },
+          "note_psy": "Action réparatrice : transformer la culpabilité en réparation concrète apaise la rumination (là où la honte seule tourne en boucle).",
+          "note_spi": "La tawba/kaffâra de la ghîba — deux avis (Nawawî/Ghazâlî : demander pardon si ça l'a atteint ; Ibn Taymiyya : sinon, du'â + éloge sans informer). À valider à l'imam.",
+          "introduction": "Toujours d'abord : tawba sincère (regret + décision d'arrêter).\n\nAvis 1 (Nawawî, Ghazâlî…) : si ta médisance LUI EST PARVENUE, demande-lui pardon.\nAvis 2 (Ibn Taymiyya…) : si elle NE LUI EST PAS parvenue, ne l'informe pas (cela créerait une blessure nouvelle) — fais du'â pour lui, et dis du bien de lui là où tu en avais médit.\n\nPrincipe si tu hésites : ce qui répare vraiment le lien sans créer un mal plus grand."
+        }
+      ],
+      "bloc_4_dhikr_quantifie": {
+        "type": "prescription_dhikr",
+        "titre_bloc": "Le dhikr du jour",
+        "introduction": "L'antidote exact : tu parlais de ton frère dans son dos pour lui nuire — aujourd'hui tu parles à Allah dans son dos pour lui. Le Prophète ﷺ a dit que la du'â pour le frère absent est exaucée (Muslim 2733).",
+        "dhikr": {
+          "ar": "اللَّهُمَّ اغْفِرْ لَهُ وَارْحَمْهُ وَعَافِهِ",
+          "translit": "Allâhumma-ghfir lahu wa-rhamhu wa 'âfih",
+          "fr": "Ô Allah, pardonne-lui, fais-lui miséricorde, et accorde-lui le bien-être."
+        },
+        "quantite": 3,
+        "moment_recommande": "Pour la personne de ton plan, en la nommant.",
+        "duree_estimee_sec": 90,
+        "justification": {
+          "texte": "« La du'â du musulman pour son frère en son absence est exaucée. »",
+          "source": "Sahîh Muslim 2733"
+        },
+        "comment_pratiquer": "Nomme intérieurement la personne. La langue qui nuisait dans le dos devient la langue qui implore dans le dos.",
+        "stockage": "cure_medisance_j6_dhikr_done"
+      },
+      "bloc_5_pratique_corporelle": {
+        "type": "geste_corporel",
+        "titre_bloc": "Réparer en actes",
+        "introduction": "Ne reste pas dans le plan — fais un seul pas réel aujourd'hui.",
+        "instructions": [
+          "Dis quelque chose de bon et de vrai sur cette personne, là où tu en avais médit.",
+          "Ou fais la du'â pour elle, à voix basse, en la nommant.",
+          "Ou, si c'est le bon chemin, tends-lui la main.",
+          "La langue qui a blessé devient la langue qui répare."
+        ],
+        "phrase_a_repeter": {
+          "ar": "اللَّهُمَّ اغْفِرْ لَهُ وَعَافِهِ",
+          "translit": "Allâhumma-ghfir lahu wa 'âfih",
+          "fr": "Ô Allah, pardonne-lui et accorde-lui le bien-être"
+        },
+        "duree_min": 8,
+        "justification": {
+          "texte": "L'action réparatrice (restorative) clôt la boucle de culpabilité de façon adaptative, contrairement à la rumination.",
+          "source": "Esprit de la tawba/kaffâra de la ghîba (avis des savants)"
+        },
+        "note": "C'est le même organe — on lui apprend juste l'autre direction.",
+        "stockage": "cure_medisance_j6_corps_done"
+      },
+      "phrase_ancre": "Parler à Allah dans son dos, pour lui.",
+      "cloture": {
+        "texte": "Tu as vu la namîma et sa gravité.\nTu connais les deux avis sur la réparation.\nTu as fait du'â pour celui dont tu avais médit.\nTu as posé un acte de réparation.\n\nDemain — le dernier jour : la langue vivante.",
+        "bouton": "Je répare. À demain.",
+        "stockage": "cure_medisance = { current_day: 6, completed_j6: true }"
+      },
+      "murmure_sortie_sanctuaire": "Aucune dette de la langue n'est sans porte de sortie.",
+      "metadata_jour": {
+        "versets_cites": [
+          "al-Qalam 68:10-11 (central)"
+        ],
+        "hadiths_cites": [
+          "Bukhârî 6056 / Muslim 105 (nammâm)",
+          "Muslim 2733 (du'â pour l'absent)"
+        ],
+        "savants_cites": [
+          "an-Nawawî / al-Ghazâlî (avis 1)",
+          "Ibn Taymiyya (avis 2)"
+        ],
+        "dhikr_quantifie": "Du'â pour la personne × 3",
+        "pratique_corporelle": "Réparer en actes",
+        "outils_psy": 1
+      }
+    },
+    "j7": {
+      "numero": 7,
+      "station_ar": "الكَلِمَة الطَّيِّبَة",
+      "station_translitteration": "Al-Kalima at-Tayyiba",
+      "station_fr": "La Langue vivante",
+      "titre_jour": "La langue vivante",
+      "image_fond": "j7.webp",
+      "duree_estimee_min": 12,
+      "duree_estimee_max": 13,
+      "bloc_1_ouverture_spirituelle": {
+        "type": "verset_central",
+        "titre_bloc": "Le verset du jour",
+        "verset": {
+          "reference": "Ibrâhîm 14:24",
+          "ar": "أَلَمْ تَرَ كَيْفَ ضَرَبَ اللَّهُ مَثَلًا كَلِمَةً طَيِّبَةً كَشَجَرَةٍ طَيِّبَةٍ أَصْلُهَا ثَابِتٌ وَفَرْعُهَا فِي السَّمَاءِ",
+          "translit": "Alam tara kayfa daraba-llâhu mathalan kalimatan tayyibatan ka-shajaratin tayyibatin asluhâ thâbitun wa far'uhâ fi-s-samâ'",
+          "fr": "N'as-tu pas vu comment Allah propose en parabole une bonne parole, semblable à un bel arbre : sa racine est ferme, et ses branches s'élèvent dans le ciel ?"
+        },
+        "contexte_revelation": "Sourate Ibrâhîm. La bonne parole est un bel arbre enraciné et fécond ; la mauvaise (v.26) un arbre déraciné, sans stabilité.",
+        "sens_pour_aujourdhui": "Toute la semaine, tu as appris à retenir. Mais une langue qui se tait sans rien planter reste un terrain nu où l'herbe folle repousse. Le dernier jour n'est pas le silence : c'est l'arbre. La bonne parole nourrit longtemps après avoir été dite.",
+        "sources_tafsir": [
+          "Tafsîr Ibn Kathîr, sur Ibrâhîm 14:24-26",
+          "Tafsîr al-Sa'dî"
+        ]
+      },
+      "bloc_2_sagesse": {
+        "type": "parole_de_sage",
+        "titre_bloc": "Parole du Prophète ﷺ sur la bonne parole",
+        "parole": {
+          "texte": "La bonne parole est une aumône.",
+          "auteur": "Le Prophète Muhammad ﷺ",
+          "dates_auteur": "",
+          "oeuvre": "Bukhârî 2989 ; Muslim 1009",
+          "siecle": "Ier siècle de l'hégire",
+          "note": "La même langue qui pouvait manger la chair d'un frère peut, à chaque phrase, faire l'aumône. Tu n'as pas reçu une langue pour la museler, mais pour qu'elle donne."
+        }
+      },
+      "introduction_avant_outils": "On ne soigne un vide qu'en l'occupant (Ghazâlî). Voici ce que tu vas planter.",
+      "bloc_3_outils_psy": [
+        {
+          "id": "ce_que_je_plante",
+          "ordre": 1,
+          "type": "champ_texte_long",
+          "titre": "Ce que je plante",
+          "consigne": "1) Réécris ta forteresse du J1 + la pratique qui l'a fait reculer. 2) Choisis UNE parole-fruit à planter chaque jour (un dhikr, une du'â pour qui tu critiquais, un éloge sincère en face, la kaffârat al-majlis). 3) Écris, à la première personne, ce que tu veux que ta langue plante désormais.",
+          "amorce": "Ma forteresse était… Désormais, ma langue plantera",
+          "champ": {
+            "placeholder": "...",
+            "max_caracteres": 600,
+            "stockage": "cure_medisance_j7_engagement"
+          },
+          "note_psy": "Substitution d'habitude (fin du habit reversal — remplacer, pas seulement supprimer) + parole positive (psy positive) : l'éloge sincère et la gratitude exprimée renforcent les liens et le bien-être.",
+          "note_spi": "« Occuper la langue par le bien » (Ghazâlî) ; « la bonne parole est une aumône » (Bukhârî 2989)."
+        }
+      ],
+      "bloc_4_dhikr_quantifie": {
+        "type": "prescription_dhikr",
+        "titre_bloc": "Le dhikr du jour",
+        "introduction": "Pour remplir la langue libérée par les mots les plus légers à dire et les plus lourds dans la balance.",
+        "dhikr": {
+          "ar": "سُبْحَانَ اللَّهِ وَبِحَمْدِهِ، سُبْحَانَ اللَّهِ الْعَظِيمِ",
+          "translit": "Subhâna-llâhi wa bi-hamdih, subhâna-llâhi-l-'Azîm",
+          "fr": "Gloire et louange à Allah ; gloire à Allah l'Immense."
+        },
+        "quantite": 100,
+        "moment_recommande": "Au long de la journée, et à garder à vie.",
+        "duree_estimee_sec": 300,
+        "justification": {
+          "texte": "« Deux mots légers sur la langue, lourds dans la balance, aimés du Tout-Miséricordieux. »",
+          "source": "Bukhârî 6406 ; Muslim 2694"
+        },
+        "comment_pratiquer": "Chaque fois que la langue est vide, remplis-la de ces deux mots plutôt que d'un mot sur autrui.",
+        "stockage": "cure_medisance_j7_dhikr_done"
+      },
+      "bloc_5_pratique_corporelle": {
+        "type": "geste_corporel",
+        "titre_bloc": "La première parole-fruit",
+        "introduction": "Avant la fin de ce jour, plante un bon mot, à voix haute.",
+        "instructions": [
+          "Un éloge sincère et vrai dit EN FACE à quelqu'un — surtout à qui tu étais tenté de rabaisser.",
+          "Ou une du'â nommée pour une personne.",
+          "Ou un mot qui répare.",
+          "Puis scelle la porte en disant, lentement, les deux mots les plus lourds de la balance."
+        ],
+        "phrase_a_repeter": {
+          "ar": "سُبْحَانَ اللَّهِ وَبِحَمْدِهِ، سُبْحَانَ اللَّهِ الْعَظِيمِ",
+          "translit": "Subhâna-llâhi wa bi-hamdih, subhâna-llâhi-l-'Azîm",
+          "fr": "Gloire et louange à Allah ; gloire à Allah l'Immense"
+        },
+        "duree_min": 8,
+        "justification": {
+          "texte": "Poser concrètement le comportement de remplacement (parole positive) ancre la nouvelle habitude au-delà de l'évitement.",
+          "source": "« La bonne parole est une aumône » (Bukhârî 2989) ; les deux mots de la balance (Bukhârî 6406)"
+        },
+        "note": "La langue qui pouvait blesser vient de donner son premier fruit.",
+        "stockage": "cure_medisance_j7_corps_done"
+      },
+      "phrase_ancre": "Je n'ai pas reçu une langue pour la museler, mais pour qu'elle donne.",
+      "cloture": {
+        "texte": "Tu as choisi ta parole de remplacement.\nTu as planté ton premier bon mot.\nTu as scellé la porte par les deux mots de la balance.\n\nLa porte de la Médisance reste ouverte derrière toi — et ta langue, enfin, est vivante.",
+        "bouton": "Terminer la Cure",
+        "stockage": "cure_medisance = { current_day: 7, completed_j7: true, completed: true }"
+      },
+      "murmure_sortie_sanctuaire": "Non un homme muet, mais une langue enfin vivante.",
+      "metadata_jour": {
+        "versets_cites": [
+          "Ibrâhîm 14:24 (central)"
+        ],
+        "hadiths_cites": [
+          "Bukhârî 2989 / Muslim 1009 (bonne parole = aumône)",
+          "Bukhârî 6406 / Muslim 2694 (deux mots de la balance)"
+        ],
+        "savants_cites": [
+          "Al-Ghazâlî"
+        ],
+        "dhikr_quantifie": "Subhâna-llâhi wa bi-hamdih… × 100",
+        "pratique_corporelle": "La première parole-fruit",
+        "outils_psy": 1
+      }
+    }
+  },
+  "metadata": {
+    "version_actuelle": "1.0 — modèle Cure Regard/Arrogance v1.0 (5 blocs par jour)",
+    "outils_psy_total": 9,
+    "duree_estimee_jour_min": 10,
+    "duree_estimee_jour_max": 13,
+    "blocs_par_jour": 5,
+    "verbes_centraux": [
+      "Recenser",
+      "Démasquer",
+      "Mesurer",
+      "Retenir",
+      "Défendre",
+      "Réparer",
+      "Planter"
+    ],
+    "specificite_porte": "Cure Médisance (ghîba / namîma). Suit al-Ghazâlî (Ihyâ' XXIV). Définition prophétique (Muslim 2589), verset choc al-Hujurât 49:12, et la réparation avec ses deux avis de fiqh.",
+    "sources_islamiques": {
+      "versets_centraux_par_jour": [
+        "J1 — Qâf 50:18 (chaque parole consignée)",
+        "J2 — al-Hujurât 49:12 (soupçon/espionnage/ghîba)",
+        "J3 — al-Hujurât 49:12 (manger la chair du frère)",
+        "J4 — al-Isrâ' 17:53 (dire ce qui est meilleur)",
+        "J5 — an-Nûr 24:16 (réponse à la calomnie)",
+        "J6 — al-Qalam 68:10-11 (le colporteur)",
+        "J7 — Ibrâhîm 14:24 (la bonne parole, un arbre)"
+      ],
+      "sages_par_jour": [
+        "J1 — al-Ghazâlî (Ihyâ' XXIV)",
+        "J2 — al-Ghazâlî (bawâ'ith al-ghîba)",
+        "J3 — al-Hasan al-Basrî (récit)",
+        "J4 — Hadith (Bukhârî 6018)",
+        "J5 — Hadith (Tirmidhî 1931)",
+        "J6 — Hadith (Bukhârî 6056)",
+        "J7 — Hadith (Bukhârî 2989)"
+      ],
+      "dhikrs_quantifies": [
+        "J1 — Kaffârat al-majlis × 1 par assise",
+        "J2 — Refuge contre les munkarât al-akhlâq × 3",
+        "J3 — Grand istighfâr × 100",
+        "J4 — Du'â de Muʿâdh × 1 après chaque prière",
+        "J5 — « Subhânaka hâdhâ buhtânun 'azîm » à chaque calomnie",
+        "J6 — Du'â pour la personne × 3",
+        "J7 — Subhâna-llâhi wa bi-hamdih… × 100"
+      ],
+      "pratiques_corporelles": [
+        "J1 — Une heure de silence choisi",
+        "J2 — Nommer le ressort + a'ûdhu bi-llâh",
+        "J3 — La main devant la bouche",
+        "J4 — Le souffle-filtre",
+        "J5 — Le hochement retenu",
+        "J6 — Réparer en actes",
+        "J7 — La première parole-fruit"
+      ]
+    },
+    "sources_psy": [
+      "CBT (Aaron Beck) — self-monitoring, analyse fonctionnelle, restructuration",
+      "Affect labeling — nommer l'impulsion réduit sa force (J2)",
+      "Response delay / contrôle de l'impulsion + habit reversal (J4)",
+      "Assertiveness + effet bystander (J5)",
+      "Action réparatrice / restorative (J6)",
+      "Substitution d'habitude + psychologie positive de la parole (J7)"
+    ],
+    "audit_theologique_requis": "Validation par imam francophone OBLIGATOIRE avant production. Vérifier en priorité : athar al-Hasan al-Basrî (J3, récit des dattes), grades hadiths hasan (Tirmidhî 3433 kaffârat al-majlis, Tirmidhî 3591, Abû Dâwûd 1517/Tirmidhî 3577, Tirmidhî 1931), et surtout le CADRAGE FIQH de la réparation de la ghîba (J6, deux avis). Sources arabes à confirmer.",
+    "depistage_specifique": "J1 inclut un dépistage des fléaux de la langue (du futile à la ghîba). J4 inclut un garde-fou explicite contre le waswâs (les cas où parler d'autrui est légitime, selon an-Nawawî).",
+    "images_a_generer": "7 .webp dans assets/cure-medisance/ — famille visuelle langue/parole/arbre : du terrain nu (silence) vers l'arbre de la bonne parole, J1→J7. Cohérence avec la couleur de porte (à confirmer dans la grille)."
+  }
+}

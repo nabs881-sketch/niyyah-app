@@ -5493,7 +5493,8 @@ var _curePorteConfig = {
   anxiete: { color: '#3F51B5', dataKey: 'CURE_ANXIETE_CYCLE1', storageKey: 'cure_anxiete', imgDir: 'assets/cure-anxiete' },
   regard:    { color: '#6B5B9A', dataKey: 'CURE_REGARD_CYCLE1',    storageKey: 'cure_regard',    imgDir: 'assets/cure-regard' },
   arrogance: { color: '#6A1B7A', dataKey: 'CURE_ARROGANCE_CYCLE1', storageKey: 'cure_arrogance', imgDir: 'assets/cure-arrogance' },
-  paresse:   { color: '#6E6E6E', dataKey: 'CURE_PARESSE_CYCLE1',   storageKey: 'cure_paresse',   imgDir: 'assets/cure-paresse' }
+  paresse:   { color: '#6E6E6E', dataKey: 'CURE_PARESSE_CYCLE1',   storageKey: 'cure_paresse',   imgDir: 'assets/cure-paresse' },
+  medisance: { color: '#8D6E63', dataKey: 'CURE_MEDISANCE_CYCLE1', storageKey: 'cure_medisance', imgDir: 'assets/cure-medisance' }
 };
 function _getCureData() {
   var porte = (_cureWizardState && _cureWizardState.porte) || 'anxiete';
@@ -15394,6 +15395,8 @@ window.CURE_PARESSE_CYCLE1 = null;
 fetch('cure-paresse-cycle1.json').then(function(r){return r.ok?r.json():null}).then(function(d){if(d){window.CURE_PARESSE_CYCLE1=d;console.log('Cure Paresse Cycle 1 loaded')}}).catch(function(){});
 window.COFFRET_PARESSE = null;
 fetch('coffret-paresse.json').then(function(r){return r.ok?r.json():null}).then(function(d){if(d){window.COFFRET_PARESSE=d;console.log('Coffret Paresse loaded')}}).catch(function(){});
+window.CURE_MEDISANCE_CYCLE1 = null;
+fetch('cure-medisance-cycle1.json').then(function(r){return r.ok?r.json():null}).then(function(d){if(d){window.CURE_MEDISANCE_CYCLE1=d;console.log('Cure Médisance Cycle 1 loaded')}}).catch(function(){});
 
 // Boot after V1's own DOMContentLoaded fires
 if (document.readyState === 'loading') {
