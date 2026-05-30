@@ -5532,6 +5532,58 @@ _outilAnxieteRenderers.double_slider = function(o, c) {
   return html;
 };
 
+// 3.17 — double_slider_compare
+_outilAnxieteRenderers.double_slider_compare = function(o, c) {
+  var sliders = o.sliders || [];
+  var lecture = o.lecture_du_resultat || {};
+  var dscId = '_dsc_' + o.id;
+  var html = '';
+  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;white-space:pre-line;">' + escapeHtml(o.introduction) + '</div>';
+  sliders.forEach(function(sl, idx) {
+    var sk = sl.stockage || 'cure_anxiete_sl' + idx;
+    var saved = safeGetItem(sk) || '5';
+    html += '<div style="margin-bottom:20px;">';
+    html += '<div style="font-family:var(--serif);font-size:13px;color:rgba(240,234,214,0.75);margin-bottom:8px;line-height:1.4;">' + escapeHtml(sl.label) + '</div>';
+    html += '<div style="display:flex;align-items:center;gap:8px;max-width:340px;margin:0 auto;">';
+    html += '<div style="font-size:10px;color:rgba(200,168,75,0.4);font-style:italic;min-width:50px;text-align:right;">' + escapeHtml(sl.label_min) + '</div>';
+    html += '<input type="range" id="' + dscId + '_s' + idx + '" min="' + (sl.min || 0) + '" max="' + (sl.max || 10) + '" value="' + saved + '" oninput="safeSetItem(\'' + sk + '\',this.value);this.nextElementSibling.textContent=this.value;_dscUpdate(\'' + dscId + '\')" style="flex:1;accent-color:' + c + ';">';
+    html += '<div style="font-size:18px;color:#C8A84A;font-family:var(--serif);font-weight:600;min-width:24px;text-align:center;">' + saved + '</div>';
+    html += '<div style="font-size:10px;color:rgba(200,168,75,0.4);font-style:italic;min-width:50px;">' + escapeHtml(sl.label_max) + '</div>';
+    html += '</div></div>';
+  });
+  // Diagnostic reading
+  html += '<div id="' + dscId + '_diag" style="border:1px solid ' + c + '22;border-radius:12px;padding:14px;margin-bottom:12px;text-align:center;min-height:40px;">';
+  html += _dscDiagText(o, dscId);
+  html += '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
+  // Wire live update after render
+  setTimeout(function() { _dscUpdate(dscId); }, 200);
+  return html;
+};
+function _dscDiagText(o, dscId) {
+  var sliders = o.sliders || [];
+  var lecture = o.lecture_du_resultat || {};
+  var v0 = parseInt(safeGetItem(sliders[0] && sliders[0].stockage || '') || '5', 10);
+  var v1 = parseInt(safeGetItem(sliders[1] && sliders[1].stockage || '') || '5', 10);
+  var mid = 5;
+  var txt = '';
+  if (v0 <= mid && v1 > mid) txt = lecture.si_efforts_bas_controle_haut || '';
+  else if (v0 > mid && v1 > mid) txt = lecture.si_efforts_haut_controle_haut || '';
+  else if (v0 > mid && v1 <= mid) txt = lecture.si_efforts_haut_controle_bas || '';
+  else txt = lecture.si_efforts_bas_controle_bas || '';
+  return '<div style="font-family:var(--serif);font-size:13px;color:rgba(240,234,214,0.75);line-height:1.6;font-style:italic;">' + escapeHtml(txt) + '</div>';
+}
+function _dscUpdate(dscId) {
+  var diagEl = document.getElementById(dscId + '_diag');
+  if (!diagEl) return;
+  var data = window.CURE_ANXIETE_CYCLE1;
+  if (!data) return;
+  var o = null;
+  Object.keys(data.jours).forEach(function(jk) { data.jours[jk].outils.forEach(function(t) { if (('_dsc_' + t.id) === dscId) o = t; }); });
+  if (o) diagEl.innerHTML = _dscDiagText(o, dscId);
+}
+window._dscUpdate = _dscUpdate;
+
 // 3.16 — champ_qui_disparait
 _outilAnxieteRenderers.champ_qui_disparait = function(o, c) {
   var sk = o.etape_apres_ecriture && o.etape_apres_ecriture.stockage || 'cure_anxiete_disparait';
