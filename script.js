@@ -4051,6 +4051,7 @@ function renderBabAnNafs() {
     + '<button onclick="openCoffretRegard()" style="flex:1;min-width:90px;padding:10px 6px;border-radius:12px;border:1px solid rgba(200,168,75,0.2);background:none;color:rgba(200,168,75,0.6);font-size:12px;font-family:var(--serif);cursor:pointer;font-style:italic;">Regard juste</button>'
     + '<button onclick="openCoffretArrogance()" style="flex:1;min-width:90px;padding:10px 6px;border-radius:12px;border:1px solid rgba(200,168,75,0.2);background:none;color:rgba(200,168,75,0.6);font-size:12px;font-family:var(--serif);cursor:pointer;font-style:italic;">Humilit\u00e9</button>'
     + '<button onclick="openCoffretMedisance()" style="flex:1;min-width:90px;padding:10px 6px;border-radius:12px;border:1px solid rgba(200,168,75,0.2);background:none;color:rgba(200,168,75,0.6);font-size:12px;font-family:var(--serif);cursor:pointer;font-style:italic;">Belle parole</button>'
+    + '<button onclick="openCoffretParesse()" style="flex:1;min-width:90px;padding:10px 6px;border-radius:12px;border:1px solid rgba(200,168,75,0.2);background:none;color:rgba(200,168,75,0.6);font-size:12px;font-family:var(--serif);cursor:pointer;font-style:italic;">\u00c9lan</button>'
     + '</div>';
   html += '</div>';
   el.innerHTML = html;
@@ -7142,6 +7143,8 @@ function openCoffretArrogance(section) { _openCoffret('arrogance', 'coffret-arro
 window.openCoffretArrogance = openCoffretArrogance;
 function openCoffretMedisance(section) { _openCoffret('medisance', 'coffret-medisance.json', section); }
 window.openCoffretMedisance = openCoffretMedisance;
+function openCoffretParesse(section) { _openCoffret('paresse', 'coffret-paresse.json', section); }
+window.openCoffretParesse = openCoffretParesse;
 
 // ── Backward-compatible wrappers ──
 function openCureColereJour1() { openCureJour('colere', 1); }
@@ -15388,6 +15391,8 @@ window.COFFRET_MEDISANCE = null;
 fetch('coffret-medisance.json').then(function(r){return r.ok?r.json():null}).then(function(d){if(d){window.COFFRET_MEDISANCE=d;console.log('Coffret Médisance loaded')}}).catch(function(){});
 window.CURE_PARESSE_CYCLE1 = null;
 fetch('cure-paresse-cycle1.json').then(function(r){return r.ok?r.json():null}).then(function(d){if(d){window.CURE_PARESSE_CYCLE1=d;console.log('Cure Paresse Cycle 1 loaded')}}).catch(function(){});
+window.COFFRET_PARESSE = null;
+fetch('coffret-paresse.json').then(function(r){return r.ok?r.json():null}).then(function(d){if(d){window.COFFRET_PARESSE=d;console.log('Coffret Paresse loaded')}}).catch(function(){});
 
 // Boot after V1's own DOMContentLoaded fires
 if (document.readyState === 'loading') {

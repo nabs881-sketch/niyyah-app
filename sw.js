@@ -1,4 +1,4 @@
-const VERSION = 'niyyah-v1684';
+const VERSION = 'niyyah-v1685';
 const CORE = [
   './index.html',
   './script.min.js',
@@ -21,6 +21,7 @@ const CORE = [
   './coffret-arrogance.json',
   './coffret-medisance.json',
   './cure-paresse-cycle1.json',
+  './coffret-paresse.json',
   './savais_tu.json',
   './fiqh_jour.json',
   './hadiths_jour.json',

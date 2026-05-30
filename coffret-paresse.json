@@ -1,0 +1,423 @@
+{
+  "id": "coffret-paresse",
+  "version": "1.0",
+  "date_creation": "2026-05-30",
+  "titre_ar": "خَزَائِنُ الهِمَّة",
+  "titre_translit": "Khazâ'in al-himma",
+  "titre_fr": "Les coffres de l'élan",
+  "sous_titre": "Pour aller plus loin avec le Coran, la Sunna et la tradition sur la paresse, le temps et la haute aspiration.",
+  "introduction": "Ce coffret rassemble les références fondamentales de l'islam sur la paresse (kasal), la valeur du temps, la constance et la haute aspiration (himma). Il complète la cure 7 jours.\n\nRappel : la paresse, c'est délaisser en ayant la capacité. Une lourdeur qui dépasse la volonté (épuisement, dépression) n'est pas une faute — elle mérite soin et, au besoin, l'aide d'un professionnel.\n\nTu peux consulter ce coffret à tout moment. Pas pour le mémoriser d'un coup. Pour qu'il soit là quand tu en auras besoin.",
+  "sections": [
+    {
+      "id": "versets",
+      "titre_ar": "الآيات",
+      "titre_translit": "Al-Âyât",
+      "titre_fr": "Versets du Coran",
+      "description": "Les versets sur l'effort, le temps, la facilité voulue et la haute aspiration.",
+      "entrees": [
+        {
+          "id": "asr",
+          "ar": "وَالْعَصْرِ ۝ إِنَّ الْإِنسَانَ لَفِي خُسْرٍ ۝ إِلَّا الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ",
+          "translit": "Wa-l-'asr. Inna-l-insâna la-fî khusr. Illâ-lladhîna âmanû wa 'amilu-s-sâlihât",
+          "fr": "Par le Temps ! L'homme est certes en perdition — sauf ceux qui croient et accomplissent les bonnes œuvres…",
+          "source": "al-'Asr 103:1-3",
+          "quand": "Le temps file pour tous ; seul l'agissant échappe à la perte. À méditer quand on remet à demain."
+        },
+        {
+          "id": "ankabut_69",
+          "ar": "وَالَّذِينَ جَاهَدُوا فِينَا لَنَهْدِيَنَّهُمْ سُبُلَنَا",
+          "translit": "Wa-lladhîna jâhadû fînâ la-nahdiyannahum subulanâ",
+          "fr": "Et ceux qui luttent pour Notre cause, Nous les guiderons certes sur Nos sentiers.",
+          "source": "al-'Ankabût 29:69",
+          "quand": "La guidance et l'élan viennent APRÈS le premier effort, pas avant. Pose le pas, le chemin s'ouvre."
+        },
+        {
+          "id": "sharh_5_6",
+          "ar": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا ۝ إِنَّ مَعَ الْعُسْرِ يُسْرًا",
+          "translit": "Fa-inna ma'a-l-'usri yusrâ. Inna ma'a-l-'usri yusrâ",
+          "fr": "À côté de la difficulté est, certes, une facilité. À côté de la difficulté est, certes, une facilité.",
+          "source": "ash-Sharh 94:5-6",
+          "quand": "L'aise est cachée DANS le difficile, dès le premier pas — pas de l'autre côté. Contre l'évitement."
+        },
+        {
+          "id": "baqara_286",
+          "ar": "لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا",
+          "translit": "Lâ yukallifu-llâhu nafsan illâ wus'ahâ",
+          "fr": "Allah n'impose à aucune âme une charge supérieure à sa capacité.",
+          "source": "al-Baqara 2:286",
+          "quand": "Contre le futûr et l'épuisement : vise petit et tenable. Allah ne t'a chargé que de ce que tu peux."
+        },
+        {
+          "id": "isra_19",
+          "ar": "وَمَنْ أَرَادَ الْآخِرَةَ وَسَعَىٰ لَهَا سَعْيَهَا وَهُوَ مُؤْمِنٌ فَأُولَٰئِكَ كَانَ سَعْيُهُم مَّشْكُورًا",
+          "translit": "Wa man arâda-l-âkhirata wa sa'â lahâ sa'yahâ wa huwa mu'minun fa-ulâ'ika kâna sa'yuhum mashkûrâ",
+          "fr": "Quiconque désire l'au-delà et fournit l'effort qui lui convient, en croyant — leur effort sera reconnu.",
+          "source": "al-Isrâ' 17:19",
+          "quand": "La haute aspiration : viser le durable. L'effort relié à l'âkhira est « remercié » par Allah."
+        },
+        {
+          "id": "najm_39",
+          "ar": "وَأَن لَّيْسَ لِلْإِنسَانِ إِلَّا مَا سَعَىٰ",
+          "translit": "Wa an laysa li-l-insâni illâ mâ sa'â",
+          "fr": "Et qu'en vérité l'homme n'obtient que [le fruit] de ses efforts.",
+          "source": "an-Najm 53:39",
+          "quand": "Rien ne t'est donné sans effort. Le repos seul ne récolte rien — mais le petit effort, oui."
+        },
+        {
+          "id": "rad_11",
+          "ar": "إِنَّ اللَّهَ لَا يُغَيِّرُ مَا بِقَوْمٍ حَتَّىٰ يُغَيِّرُوا مَا بِأَنفُسِهِمْ",
+          "translit": "Inna-llâha lâ yughayyiru mâ bi-qawmin hattâ yughayyirû mâ bi-anfusihim",
+          "fr": "Allah ne change rien à l'état d'un peuple tant qu'ils ne changent pas ce qui est en eux-mêmes.",
+          "source": "ar-Ra'd 13:11",
+          "quand": "Le changement extérieur commence par un mouvement intérieur — une intention, un geste. Le levier qu'on te confie."
+        },
+        {
+          "id": "jumua_10",
+          "ar": "فَإِذَا قُضِيَتِ الصَّلَاةُ فَانتَشِرُوا فِي الْأَرْضِ وَابْتَغُوا مِن فَضْلِ اللَّهِ",
+          "translit": "Fa-idhâ qudiyati-s-salâtu fa-ntashirû fi-l-ardi wa-btaghû min fadli-llâh",
+          "fr": "Une fois la prière accomplie, dispersez-vous sur la terre et recherchez la grâce d'Allah.",
+          "source": "al-Jumu'a 62:10",
+          "quand": "L'islam n'est pas l'oisiveté : après l'adoration, l'action et le travail. Bouge, cherche la grâce."
+        },
+        {
+          "id": "mulk_15",
+          "ar": "هُوَ الَّذِي جَعَلَ لَكُمُ الْأَرْضَ ذَلُولًا فَامْشُوا فِي مَنَاكِبِهَا وَكُلُوا مِن رِّزْقِهِ",
+          "translit": "Huwa-lladhî ja'ala lakumu-l-arda dhalûlan fa-mshû fî manâkibihâ wa kulû min rizqih",
+          "fr": "C'est Lui qui vous a soumis la terre : parcourez donc ses étendues et mangez de Sa subsistance.",
+          "source": "al-Mulk 67:15",
+          "quand": "« Marchez, parcourez » : la subsistance et le bien se cherchent en mouvement, pas couché."
+        },
+        {
+          "id": "sharh_7_8",
+          "ar": "فَإِذَا فَرَغْتَ فَانصَبْ ۝ وَإِلَىٰ رَبِّكَ فَارْغَب",
+          "translit": "Fa-idhâ faraghta fa-nsab. Wa ilâ rabbika fa-rghab",
+          "fr": "Quand tu es libre, applique-toi à l'effort, et c'est vers ton Seigneur que doit aller ton désir.",
+          "source": "ash-Sharh 94:7-8",
+          "quand": "À peine une tâche finie, lance-toi dans une autre. L'effort orienté vers Allah ne connaît pas le vide."
+        },
+        {
+          "id": "tawba_105",
+          "ar": "وَقُلِ اعْمَلُوا فَسَيَرَى اللَّهُ عَمَلَكُمْ وَرَسُولُهُ وَالْمُؤْمِنُونَ",
+          "translit": "Wa quli-'malû fa-sa-yara-llâhu 'amalakum wa rasûluhu wa-l-mu'minûn",
+          "fr": "Et dis : « Œuvrez ! Allah verra votre œuvre, ainsi que Son Messager et les croyants. »",
+          "source": "at-Tawba 9:105",
+          "quand": "L'ordre est simple : « œuvrez ». Ton acte, même petit, ne passe pas inaperçu — il est vu."
+        },
+        {
+          "id": "hud_112",
+          "ar": "فَاسْتَقِمْ كَمَا أُمِرْتَ",
+          "translit": "Fa-staqim kamâ umirt",
+          "fr": "Reste donc droit [constant] comme il t'a été ordonné.",
+          "source": "Hûd 11:112",
+          "quand": "L'istiqâma : non l'exploit d'un jour, mais la ligne tenue. Le Prophète ﷺ disait que ce verset l'avait vieilli."
+        }
+      ]
+    },
+    {
+      "id": "hadiths",
+      "titre_ar": "الأحاديث",
+      "titre_translit": "Al-Ahâdîth",
+      "titre_fr": "Paroles du Prophète ﷺ",
+      "description": "Le refuge contre le kasal, l'éloge de la constance et la valeur du temps.",
+      "entrees": [
+        {
+          "id": "muminu_qawi",
+          "ar": "الْمُؤْمِنُ الْقَوِيُّ خَيْرٌ وَأَحَبُّ إِلَى اللَّهِ مِنَ الْمُؤْمِنِ الضَّعِيفِ ... احْرِصْ عَلَى مَا يَنْفَعُكَ، وَاسْتَعِنْ بِاللَّهِ وَلَا تَعْجِزْ",
+          "translit": "Al-mu'minu-l-qawiyyu khayrun wa ahabbu ila-llâhi mina-l-mu'mini-d-da'îf ... ihris 'alâ mâ yanfa'uk, wa-sta'in bi-llâhi wa lâ ta'jiz",
+          "fr": "Le croyant fort est meilleur et plus aimé d'Allah que le croyant faible — et en chacun il y a du bien. Recherche avec ardeur ce qui t'est utile, demande l'aide d'Allah, et ne faiblis pas.",
+          "source": "Sahîh Muslim 2664",
+          "quand": "La formule du remède : viser l'utile + demander l'aide d'Allah + ne pas abandonner. Effort et tawakkul ensemble."
+        },
+        {
+          "id": "adwam",
+          "ar": "أَحَبُّ الْأَعْمَالِ إِلَى اللَّهِ أَدْوَمُهَا وَإِنْ قَلَّ",
+          "translit": "Ahabbu-l-a'mâli ila-llâhi adwamuhâ wa in qall",
+          "fr": "Les actes les plus aimés d'Allah sont les plus constants, même s'ils sont peu.",
+          "source": "Bukhârî 6464 ; Muslim 783",
+          "quand": "Contre le futûr : petit et tenu vaut mieux que grand et abandonné. La constance avant l'intensité."
+        },
+        {
+          "id": "din_yusr",
+          "ar": "إِنَّ الدِّينَ يُسْرٌ، وَلَنْ يُشَادَّ الدِّينَ أَحَدٌ إِلَّا غَلَبَهُ",
+          "translit": "Inna-d-dîna yusr, wa lan yushâdda-d-dîna ahadun illâ ghalabah",
+          "fr": "La religion est aise ; nul ne la surcharge sans qu'elle ne le vainque.",
+          "source": "Sahîh al-Bukhârî 39",
+          "quand": "Contre l'élan qui brûle trop fort et s'éteint : la modération est ce qui dure."
+        },
+        {
+          "id": "uqad",
+          "ar": "يَعْقِدُ الشَّيْطَانُ عَلَى قَافِيَةِ رَأْسِ أَحَدِكُمْ ... فَإِنِ اسْتَيْقَظَ فَذَكَرَ اللَّهَ انْحَلَّتْ عُقْدَةٌ",
+          "translit": "Ya'qidu-sh-shaytânu 'alâ qâfiyati ra'si ahadikum ... fa-ini-staiqaza fa-dhakara-llâha-nhallat 'uqda",
+          "fr": "Le shaytân noue trois nœuds sur la nuque pendant le sommeil… s'il se réveille et évoque Allah, un nœud se défait ; s'il fait ses ablutions, un autre ; s'il prie, un autre — et il se lève alerte.",
+          "source": "Bukhârî 1142 ; Muslim 776",
+          "quand": "La lourdeur du matin est un nœud, pas une fatalité. Trois gestes la dénouent : dhikr, wudû, prière."
+        },
+        {
+          "id": "bukur",
+          "ar": "اللَّهُمَّ بَارِكْ لِأُمَّتِي فِي بُكُورِهَا",
+          "translit": "Allâhumma bârik li-ummatî fî bukûrihâ",
+          "fr": "Ô Allah, bénis ma communauté dans son petit-matin.",
+          "source": "Abû Dâwûd 2606 ; Tirmidhî 1212 — hasan",
+          "quand": "La barakah est dans le matin tôt. Le Prophète ﷺ envoyait ses expéditions au début du jour."
+        },
+        {
+          "id": "khattaun",
+          "ar": "كُلُّ بَنِي آدَمَ خَطَّاءٌ، وَخَيْرُ الْخَطَّائِينَ التَّوَّابُونَ",
+          "translit": "Kullu banî âdama khattâ', wa khayru-l-khattâ'îna-t-tawwâbûn",
+          "fr": "Tout fils d'Adam est faillible, et les meilleurs des faillibles sont ceux qui reviennent.",
+          "source": "Tirmidhî 2499 — hasan",
+          "quand": "Contre le perfectionnisme qui fait abandonner : chuter est humain ; revenir est l'excellence."
+        },
+        {
+          "id": "nimatan",
+          "ar": "نِعْمَتَانِ مَغْبُونٌ فِيهِمَا كَثِيرٌ مِنَ النَّاسِ: الصِّحَّةُ وَالْفَرَاغُ",
+          "translit": "Ni'matâni maghbûnun fîhimâ kathîrun mina-n-nâs: as-sihhatu wa-l-farâgh",
+          "fr": "Deux bienfaits dont beaucoup de gens sont dupes : la santé et le temps libre.",
+          "source": "Sahîh al-Bukhârî 6412",
+          "quand": "La paresse gaspille précisément ce qu'on regrettera le plus : un corps capable et du temps disponible."
+        },
+        {
+          "id": "la_tazul",
+          "ar": "لَا تَزُولُ قَدَمَا عَبْدٍ يَوْمَ الْقِيَامَةِ حَتَّى يُسْأَلَ عَنْ عُمُرِهِ فِيمَ أَفْنَاهُ، وَعَنْ شَبَابِهِ فِيمَ أَبْلَاهُ",
+          "translit": "Lâ tazûlu qadamâ 'abdin yawma-l-qiyâmati hattâ yus'ala 'an 'umurihi fîma afnâh, wa 'an shabâbihi fîma ablâh",
+          "fr": "Les pieds du serviteur ne bougeront pas, au Jour de la Résurrection, avant qu'il ne soit interrogé sur sa vie — à quoi il l'a usée — et sur sa jeunesse — à quoi il l'a employée.",
+          "source": "Tirmidhî 2417 — hasan sahîh",
+          "quand": "Le temps est un dépôt sur lequel on rendra compte. Motivant sans être écrasant : il appelle à agir, pas à désespérer."
+        },
+        {
+          "id": "gharib",
+          "ar": "كُنْ فِي الدُّنْيَا كَأَنَّكَ غَرِيبٌ أَوْ عَابِرُ سَبِيلٍ",
+          "translit": "Kun fi-d-dunyâ ka'annaka gharîbun aw 'âbiru sabîl",
+          "fr": "Sois en ce monde comme un étranger ou un voyageur de passage.",
+          "source": "Sahîh al-Bukhârî 6416",
+          "quand": "Le voyageur ne traîne pas : il sait que le temps presse. Ibn 'Umar ajoutait : prends de ta santé pour ta maladie."
+        },
+        {
+          "id": "ma_tutiqun",
+          "ar": "عَلَيْكُمْ مِنَ الْأَعْمَالِ مَا تُطِيقُونَ، فَإِنَّ اللَّهَ لَا يَمَلُّ حَتَّى تَمَلُّوا",
+          "translit": "'Alaykum mina-l-a'mâli mâ tutîqûn, fa-inna-llâha lâ yamallu hattâ tamallû",
+          "fr": "Prenez des œuvres ce que vous pouvez soutenir, car Allah ne se lasse pas jusqu'à ce que vous vous lassiez.",
+          "source": "Sahîh al-Bukhârî 1151",
+          "quand": "La clé de la durée : ne charge que ce que tu peux tenir. Mieux vaut un filet d'eau continu qu'une crue qui s'assèche."
+        }
+      ]
+    },
+    {
+      "id": "duas",
+      "titre_ar": "الأدعية",
+      "titre_translit": "Al-Ad'iya",
+      "titre_fr": "Du'âs à mémoriser",
+      "description": "Les invocations contre la paresse, pour la facilité, la fermeté et la haute demande.",
+      "entrees": [
+        {
+          "id": "ajz_kasal",
+          "ar": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْهَمِّ وَالْحَزَنِ، وَالْعَجْزِ وَالْكَسَلِ، وَالْبُخْلِ وَالْجُبْنِ، وَضَلَعِ الدَّيْنِ وَغَلَبَةِ الرِّجَالِ",
+          "translit": "Allâhumma innî a'ûdhu bika mina-l-hammi wa-l-hazan, wa-l-'ajzi wa-l-kasal, wa-l-bukhli wa-l-jubn, wa dala'i-d-dayni wa ghalabati-r-rijâl",
+          "fr": "Ô Allah, je cherche refuge en Toi contre l'inquiétude et la tristesse, l'incapacité et la paresse, l'avarice et la lâcheté, le poids de la dette et la domination des hommes.",
+          "source": "Sahîh al-Bukhârî 6369",
+          "quand": "La du'â pivot de la porte. Le Prophète ﷺ la disait chaque matin et soir. À mémoriser et faire vivre."
+        },
+        {
+          "id": "reveil",
+          "ar": "الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ",
+          "translit": "Al-hamdu li-llâhi-lladhî ahyânâ ba'da mâ amâtanâ wa ilayhi-n-nushûr",
+          "fr": "Louange à Allah qui nous a rendu la vie après nous avoir fait mourir, et c'est vers Lui que se fera la résurrection.",
+          "source": "Sahîh al-Bukhârî 6312",
+          "quand": "Le dhikr du réveil : le premier nœud du matin se défait par lui, avant l'écran."
+        },
+        {
+          "id": "la_sahla",
+          "ar": "اللَّهُمَّ لَا سَهْلَ إِلَّا مَا جَعَلْتَهُ سَهْلًا، وَأَنْتَ تَجْعَلُ الْحَزْنَ إِذَا شِئْتَ سَهْلًا",
+          "translit": "Allâhumma lâ sahla illâ mâ ja'altahu sahlâ, wa anta taj'alu-l-hazna idhâ shi'ta sahlâ",
+          "fr": "Ô Allah, rien n'est facile sauf ce que Tu rends facile, et Tu rends, si Tu veux, le difficile facile.",
+          "source": "Ibn Hibbân 974 — sahîh/hasan",
+          "quand": "Avant une tâche qui pèse : on demande à Celui qui rend facile. ⚠️ grade à confirmer."
+        },
+        {
+          "id": "muqallib",
+          "ar": "يَا مُقَلِّبَ الْقُلُوبِ ثَبِّتْ قَلْبِي عَلَىٰ دِينِكَ",
+          "translit": "Yâ Muqalliba-l-qulûb thabbit qalbî 'alâ dînik",
+          "fr": "Ô Toi qui retournes les cœurs, affermis mon cœur sur Ta religion.",
+          "source": "Tirmidhî 2140 — hasan sahîh",
+          "quand": "Pour la constance (istiqâma) : on demande à Allah de tenir le cœur quand l'élan retombe."
+        },
+        {
+          "id": "rahmataka",
+          "ar": "اللَّهُمَّ رَحْمَتَكَ أَرْجُو فَلَا تَكِلْنِي إِلَىٰ نَفْسِي طَرْفَةَ عَيْنٍ، وَأَصْلِحْ لِي شَأْنِي كُلَّهُ",
+          "translit": "Allâhumma rahmataka arjû fa-lâ takilnî ilâ nafsî tarfata 'ayn, wa aslih lî sha'nî kullah",
+          "fr": "Ô Allah, c'est Ta miséricorde que j'espère : ne m'abandonne pas à moi-même le temps d'un clin d'œil, et arrange pour moi toute mon affaire.",
+          "source": "Abû Dâwûd 5090 — hasan",
+          "quand": "Le contraire de la volonté solitaire : ne pas être laissé à son propre nafs. ⚠️ grade à confirmer."
+        },
+        {
+          "id": "huda_tuqa",
+          "ar": "اللَّهُمَّ إِنِّي أَسْأَلُكَ الْهُدَىٰ وَالتُّقَىٰ وَالْعَفَافَ وَالْغِنَىٰ",
+          "translit": "Allâhumma innî as'aluka-l-hudâ wa-t-tuqâ wa-l-'afâfa wa-l-ghinâ",
+          "fr": "Ô Allah, je Te demande la guidée, la piété, la chasteté et la richesse [du cœur].",
+          "source": "Sahîh Muslim 2721",
+          "quand": "La du'â des hautes demandes (himma) : viser le haut au lieu de ramper au ras des envies."
+        }
+      ]
+    },
+    {
+      "id": "lexique",
+      "titre_ar": "المُفْرَدَات",
+      "titre_translit": "Al-Mufradât",
+      "titre_fr": "Le vocabulaire de l'élan",
+      "description": "Les mots-clés arabes pour comprendre la paresse, ses remèdes et la haute aspiration.",
+      "entrees": [
+        {
+          "id": "kasal",
+          "ar": "كَسَل",
+          "translit": "Kasal",
+          "definition": "La paresse : délaisser une chose alors qu'on a la capacité de la faire. Une maladie du nafs qui se soigne — distincte de l'incapacité réelle."
+        },
+        {
+          "id": "ajz",
+          "ar": "عَجْز",
+          "translit": "'Ajz",
+          "definition": "L'incapacité : ne pas faire faute de pouvoir (maladie, épuisement). Excusée — « on n'est tenu qu'à ce qu'on peut » (Ibn Hajar)."
+        },
+        {
+          "id": "futur",
+          "ar": "فُتُور",
+          "translit": "Futûr",
+          "definition": "Le relâchement après un élan : le feu qui brûle fort puis s'éteint. Le piège classique de celui qui veut tout, d'un coup."
+        },
+        {
+          "id": "himma",
+          "ar": "هِمَّة",
+          "translit": "Himma",
+          "definition": "La haute aspiration : l'élan de l'âme vers ce qui dure. Ce qui élève l'homme, plus que la force du corps (Ibn al-Qayyim)."
+        },
+        {
+          "id": "azm",
+          "ar": "عَزْم",
+          "translit": "'Azm",
+          "definition": "La résolution ferme : la monture qui porte à l'acte. Sans elle, le savoir et le désir restent à terre."
+        },
+        {
+          "id": "istiqama",
+          "ar": "اسْتِقَامَة",
+          "translit": "Istiqâma",
+          "definition": "La droiture constante : tenir la ligne dans le temps, non l'exploit d'un jour. Le verset qui « vieillit » par son exigence (Hûd 11:112)."
+        },
+        {
+          "id": "mudawama",
+          "ar": "مُدَاوَمَة",
+          "translit": "Mudâwama",
+          "definition": "La régularité, la persévérance dans l'acte : « le plus aimé d'Allah est le plus constant, fût-il peu »."
+        },
+        {
+          "id": "taswif",
+          "ar": "تَسْوِيف",
+          "translit": "Taswîf",
+          "definition": "La procrastination : le « sawfa » — je le ferai plus tard. Ibn al-Qayyim la voit comme le poison qui change le petit évitement en paralysie."
+        },
+        {
+          "id": "baraka",
+          "ar": "بَرَكَة",
+          "translit": "Baraka",
+          "definition": "La bénédiction : un accroissement caché qu'Allah place dans une chose — notamment dans le petit-matin et l'acte constant."
+        },
+        {
+          "id": "bukur",
+          "ar": "بُكُور",
+          "translit": "Bukûr",
+          "definition": "Le petit-matin : moment béni de l'action. « Ô Allah, bénis ma communauté dans son bukûr » (du'â prophétique)."
+        },
+        {
+          "id": "mujahada",
+          "ar": "مُجَاهَدَة",
+          "translit": "Mujâhada",
+          "definition": "L'effort sur soi : lutter contre les penchants paresseux du nafs. « Ceux qui luttent en Nous, Nous les guidons » (29:69)."
+        },
+        {
+          "id": "tawakkul",
+          "ar": "تَوَكُّل",
+          "translit": "Tawakkul",
+          "definition": "La confiance en Allah APRÈS avoir pris les moyens — jamais à la place de l'effort. « Demande l'aide d'Allah et ne faiblis pas »."
+        },
+        {
+          "id": "yusr",
+          "ar": "يُسْر",
+          "translit": "Yusr",
+          "definition": "La facilité : ce qu'Allah veut pour toi (2:185). La religion est aise ; la dureté envers soi n'est pas une vertu."
+        },
+        {
+          "id": "nashat",
+          "ar": "نَشَاط",
+          "translit": "Nashât",
+          "definition": "L'entrain, l'énergie vive pour le bien — l'opposé du kasal. État de celui qui se lève « l'âme heureuse » (tayyib an-nafs)."
+        },
+        {
+          "id": "waqt",
+          "ar": "وَقْت",
+          "translit": "Waqt",
+          "definition": "Le temps : le capital de la vie, qui s'écoule qu'on agisse ou non. « Par le Temps, l'homme est en perdition… » (al-'Asr)."
+        },
+        {
+          "id": "taswif_sihha",
+          "ar": "الصِّحَّة وَالفَرَاغ",
+          "translit": "As-Sihha wa-l-farâgh",
+          "definition": "Santé et temps libre : les deux bienfaits dont « beaucoup de gens sont dupes » (Bukhârî 6412) — ce que la paresse gaspille."
+        }
+      ]
+    },
+    {
+      "id": "savants",
+      "titre_ar": "الْعُلَمَاء",
+      "titre_translit": "Al-'Ulamâ'",
+      "titre_fr": "Pour aller plus loin",
+      "description": "Les œuvres classiques de référence sur le kasal, le temps et la himma.",
+      "entrees": [
+        {
+          "id": "ibn_qayyim",
+          "nom": "Ibn Qayyim al-Jawziyya",
+          "dates": "1292-1350",
+          "oeuvre": "al-Wâbil al-Sayyib ; Madârij as-Sâlikîn ; al-Fawâ'id",
+          "apport": "Le fil rouge de la porte. Ibn al-Qayyim analyse le kasal comme une maladie du nafs qui se propage de petits évitements vers la paralysie, oppose la himma 'aliya (haute aspiration) à l'âme rampante, et prescrit des remèdes concrets — dont le dhikr de Fâtima dont la constance « donne au corps une force »."
+        },
+        {
+          "id": "ibn_hajar",
+          "nom": "Ibn Hajar al-'Asqalânî",
+          "dates": "1372-1449",
+          "oeuvre": "Fath al-Bârî bi-sharh Sahîh al-Bukhârî",
+          "apport": "Source de la distinction décisive : kasal (délaisser en ayant la capacité) vs 'ajz (ne pas pouvoir). C'est l'ancrage qui sépare la paresse — sur laquelle on agit — de l'incapacité réelle, excusée et miséricordiée. Garde-fou contre la culpabilisation de qui souffre."
+        },
+        {
+          "id": "ghazali",
+          "nom": "Abû Hâmid al-Ghazâlî",
+          "dates": "1058-1111",
+          "oeuvre": "Ihyâ' 'Ulûm ad-Dîn (Rub' al-muhlikât ; riyâdat an-nafs)",
+          "apport": "Pour la méthode de transformation du caractère : on ne vainc pas un penchant d'un coup, mais en habituant l'âme par de petits actes répétés (riyâda). Fondement classique du « petit, mais constant »."
+        },
+        {
+          "id": "ibn_al_jawzi",
+          "nom": "Ibn al-Jawzî",
+          "dates": "1116-1201",
+          "oeuvre": "Sayd al-Khâtir ; Talbîs Iblîs",
+          "apport": "Maître de la lutte contre l'oisiveté et le gaspillage du temps. Sayd al-Khâtir fouette la procrastination et exhorte à saisir l'instant et la haute ambition — une voix puissante pour relever le regard."
+        },
+        {
+          "id": "hasan_basri",
+          "nom": "Al-Hasan al-Basrî",
+          "dates": "642-728",
+          "oeuvre": "Paroles transmises dans les recueils de zuhd",
+          "apport": "Le grand prédicateur de Basra, célèbre pour ses paroles sur le temps : « Fils d'Adam, tu n'es que des jours ; chaque jour qui passe emporte une part de toi. » L'urgence douce qui réveille sans écraser."
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "entrees_total": 49,
+    "versets": 12,
+    "hadiths": 10,
+    "duas": 6,
+    "lexique": 16,
+    "savants": 5,
+    "note": "Toutes les références doivent être validées avec les éditions critiques avant production. Points sensibles : grades hasan (Abû Dâwûd 2606, Tirmidhî 2499, 2417, 2140, Abû Dâwûd 5090, Ibn Hibbân 974) et l'attribution de la distinction kasal/'ajz à Ibn Hajar (Fath al-Bârî). Garde-fou bien-être : la cure et le coffret distinguent le kasal d'une possible dépression et orientent vers un professionnel.",
+    "style": "Cohérent avec coffret-regard/arrogance/medisance.json : 5 sections (versets, hadiths, du'âs, lexique, savants), même structure d'entrée, ton sobre et doux.",
+    "audit_theologique_requis": "Validation imam francophone avant production publique."
+  }
+}
