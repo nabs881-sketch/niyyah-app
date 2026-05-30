@@ -1,0 +1,1040 @@
+{
+  "id": "cure-paresse-cycle1",
+  "cycle": 1,
+  "version": "1.0",
+  "date_creation": "2026-05-30",
+  "porte": "paresse",
+  "principes_editoriaux": {
+    "ton": "Bobin / McCarthy / Ghazâlî — sobriété contemplative, douceur",
+    "anti_gamification": "Pas de score, pas de streak imposé, pas de pression, aucun objectif chiffré",
+    "duree_par_jour": "10 à 13 minutes (5 blocs)",
+    "approche": "Méthode classique (Ibn al-Qayyim en fil rouge, Ibn Hajar pour la distinction kasal/'ajz) enrichie : verset + sage + outils activation comportementale / auto-compassion + dhikr quantifié + pratique corporelle. Ratio cible : 60-65% islamique / 35-40% psy.",
+    "structure_jour": "5 blocs : Ouverture spirituelle → Sagesse traditionnelle → Outils psy → Dhikr quantifié → Pratique corporelle.",
+    "specificite": "Cure traitant la paresse spirituelle (kasal) : nommer → comprendre le dessous → saisir le matin → le premier pas (action avant motivation) → constance > intensité → haute aspiration → douceur qui dure. GARDE-FOU INTÉGRÉ (J1) : distinction kasal/dépression, orientation vers un professionnel sans culpabilisation. Aucun objectif chiffré, ton tout en douceur."
+  },
+  "jours": {
+    "j1": {
+      "numero": 1,
+      "station_ar": "الإِقْرَار",
+      "station_translitteration": "Al-Iqrâr",
+      "station_fr": "Le Constat",
+      "titre_jour": "Nommer la lourdeur",
+      "image_fond": "j1.webp",
+      "duree_estimee_min": 11,
+      "duree_estimee_max": 13,
+      "bloc_1_ouverture_spirituelle": {
+        "type": "verset_central",
+        "titre_bloc": "Le verset du jour",
+        "verset": {
+          "reference": "ar-Ra'd 13:11",
+          "ar": "إِنَّ اللَّهَ لَا يُغَيِّرُ مَا بِقَوْمٍ حَتَّىٰ يُغَيِّرُوا مَا بِأَنفُسِهِمْ",
+          "translit": "Inna-llâha lâ yughayyiru mâ bi-qawmin hattâ yughayyirû mâ bi-anfusihim",
+          "fr": "Allah ne change rien à l'état d'un peuple tant qu'ils ne changent pas ce qui est en eux-mêmes."
+        },
+        "contexte_revelation": "Sourate ar-Ra'd. Allah pose un principe : le changement extérieur commence par un changement intérieur.",
+        "sens_pour_aujourdhui": "Ce n'est pas un reproche, c'est un levier qu'on te confie : il y a en toi une petite part qui bouge — une intention, un geste minuscule. Mais avant de bouger quoi que ce soit, il faut nommer honnêtement ce qu'on porte, et savoir de quel poids il s'agit.",
+        "sources_tafsir": [
+          "Tafsîr Ibn Kathîr, sur ar-Ra'd 13:11",
+          "Tafsîr al-Sa'dî"
+        ]
+      },
+      "bloc_2_sagesse": {
+        "type": "parole_de_sage",
+        "titre_bloc": "Parole d'Ibn Hajar sur la paresse et l'incapacité",
+        "parole": {
+          "texte": "La paresse (kasal), c'est délaisser une chose alors qu'on a la capacité de la faire. L'incapacité ('ajz), c'est ne pas la faire faute de pouvoir. Et l'homme n'est tenu responsable que de ce qu'il peut réellement faire — si quelqu'un est vraiment incapable, Allah est Miséricordieux.",
+          "auteur": "Ibn Hajar al-'Asqalânî",
+          "dates_auteur": "1372-1449",
+          "oeuvre": "Fath al-Bârî bi-sharh Sahîh al-Bukhârî",
+          "siecle": "XIVe-XVe siècle",
+          "note": "Cette distinction est le cœur de la cure : elle sépare une lourdeur sur laquelle on peut agir d'une vraie incapacité (maladie, épuisement) qui n'est pas une faute, et qui mérite douceur et soin, pas reproche."
+        }
+      },
+      "introduction_avant_outils": "Tu as lu le verset, tu as entendu Ibn Hajar. Avant de soulever quoi que ce soit, il faut savoir ce qu'on porte — et de quel poids. Avec douceur, sans te juger.",
+      "bloc_3_outils_psy": [
+        {
+          "id": "ou_mord",
+          "ordre": 1,
+          "type": "checkboxes_multiple",
+          "titre": "Où la lourdeur mord",
+          "introduction": "Repère, sans te juger, où la paresse te touche le plus.",
+          "consigne": "Coche tout ce qui te concerne.",
+          "options": [
+            {
+              "id": "priere",
+              "label_fr": "La prière, les adorations"
+            },
+            {
+              "id": "travail",
+              "label_fr": "Le travail ou les études"
+            },
+            {
+              "id": "corps",
+              "label_fr": "Mon corps (sport, sommeil, hygiène)"
+            },
+            {
+              "id": "maison",
+              "label_fr": "La maison (tâches, rangement)"
+            },
+            {
+              "id": "relations",
+              "label_fr": "Mes relations (répondre, visiter, prendre des nouvelles)"
+            },
+            {
+              "id": "projets",
+              "label_fr": "Mes projets, ce qui compte vraiment pour moi"
+            }
+          ],
+          "stockage": "cure_paresse_j1_domaines",
+          "note_psy": "Self-monitoring — localiser le foyer avant d'agir.",
+          "note_spi": "Ibn al-Qayyim : le kasal touche d'abord un domaine puis se propage ; repérer le foyer."
+        },
+        {
+          "id": "garde_fou",
+          "ordre": 2,
+          "type": "checkboxes_avec_message_dynamique",
+          "titre": "Honnêteté avec soi",
+          "introduction": "En toute honnêteté avec toi-même — coche ce qui s'applique vraiment :",
+          "options": [
+            {
+              "id": "duree",
+              "label": "Cette lourdeur dure depuis des semaines, presque tous les jours"
+            },
+            {
+              "id": "anhedonie",
+              "label": "J'ai perdu le goût même pour ce que j'aimais"
+            },
+            {
+              "id": "vide",
+              "label": "Je me sens vide, ou sans espoir — plus que simplement fatigué"
+            },
+            {
+              "id": "forces",
+              "label": "Même les petits gestes semblent au-dessus de mes forces réelles"
+            }
+          ],
+          "stockage": "cure_paresse_garde_fou",
+          "message_si_coche": {
+            "titre": "Ce que tu décris n'est pas de la paresse.",
+            "texte": "C'est une souffrance réelle — et une souffrance, ça se soigne. Ce n'est ni un manque de volonté ni une faute : Ibn Hajar te l'a rappelé, on n'est tenu qu'à ce qu'on peut, et Allah est Miséricordieux pour le reste. En parler à un médecin ou un professionnel est une force, pas un échec. Cette cure peut t'accompagner en douceur — mais elle ne remplace pas ce soutien."
+          },
+          "message_si_aucun_coche": {
+            "texte": "Bien. Alors il s'agit surtout de l'élan — et l'élan, ça se rallume doucement, à partir d'un seul petit geste. Continuons."
+          }
+        }
+      ],
+      "bloc_4_dhikr_quantifie": {
+        "type": "prescription_dhikr",
+        "titre_bloc": "Le dhikr du jour",
+        "introduction": "La parole que le Prophète ﷺ disait chaque matin — lui-même cherchait refuge contre le kasal.",
+        "dhikr": {
+          "ar": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْعَجْزِ وَالْكَسَلِ",
+          "translit": "Allâhumma innî a'ûdhu bika mina-l-'ajzi wa-l-kasal",
+          "fr": "Ô Allah, je cherche refuge en Toi contre l'incapacité et la paresse."
+        },
+        "quantite": 1,
+        "moment_recommande": "Le matin, au réveil (et après Fajr).",
+        "duree_estimee_sec": 60,
+        "justification": {
+          "texte": "Le Prophète ﷺ récitait cette du'â le matin dans ses adhkâr quotidiens.",
+          "source": "Bukhârî 6369"
+        },
+        "comment_pratiquer": "En la disant, imagine doucement le poids qui se soulève. Pas mécanique.",
+        "stockage": "cure_paresse_j1_dhikr_done"
+      },
+      "bloc_5_pratique_corporelle": {
+        "type": "geste_corporel",
+        "titre_bloc": "Un seul geste, maintenant",
+        "introduction": "La lourdeur te dit : « plus tard, et tout d'un coup. » Réponds-lui : « maintenant, et une seule petite chose. »",
+        "instructions": [
+          "Tout de suite, en disant Bismillâh, fais un geste minuscule :",
+          "ouvre la fenêtre à la lumière, ou bois un verre d'eau,",
+          "ou lève-toi et étire-toi, ou fais tes ablutions.",
+          "Pas un effort — juste une preuve. Le mouvement est possible."
+        ],
+        "phrase_a_repeter": {
+          "ar": "بِسْمِ اللَّهِ",
+          "translit": "Bismillâh",
+          "fr": "Au nom d'Allah"
+        },
+        "duree_min": 3,
+        "justification": {
+          "texte": "Une micro-action immédiate brise l'inertie et fournit une preuve concrète que l'action est accessible (activation comportementale).",
+          "source": "Commencer toute chose par le nom d'Allah (sunna)"
+        },
+        "note": "Tu viens de montrer à ton nafs ce qu'il refusait de croire.",
+        "stockage": "cure_paresse_j1_corps_done"
+      },
+      "phrase_ancre": "Je ne suis tenu qu'à ce que je peux — et un petit geste, je le peux.",
+      "cloture": {
+        "texte": "Tu as nommé ta lourdeur.\nTu sais où elle mord.\nTu as distingué la paresse de l'épuisement.\nTu connais la du'â du matin.\nTu as posé un seul geste.\n\nDemain — d'où vient cette lourdeur.",
+        "bouton": "J'ai nommé. À demain.",
+        "stockage": "cure_paresse = { current_day: 1, completed_j1: true }"
+      },
+      "murmure_sortie_sanctuaire": "Nommer le poids, c'est déjà ne plus être écrasé par lui.",
+      "metadata_jour": {
+        "versets_cites": [
+          "ar-Ra'd 13:11 (central)"
+        ],
+        "hadiths_cites": [
+          "Bukhârî 6369 (refuge contre 'ajz/kasal)"
+        ],
+        "savants_cites": [
+          "Ibn Hajar al-'Asqalânî"
+        ],
+        "dhikr_quantifie": "A'ûdhu bika mina-l-'ajzi wa-l-kasal × 1 (matin)",
+        "pratique_corporelle": "Un seul geste minuscule maintenant",
+        "outils_psy": 2
+      }
+    },
+    "j2": {
+      "numero": 2,
+      "station_ar": "الجَذْر",
+      "station_translitteration": "Al-Jadhr",
+      "station_fr": "Le Dessous",
+      "titre_jour": "D'où vient ma lourdeur",
+      "image_fond": "j2.webp",
+      "duree_estimee_min": 11,
+      "duree_estimee_max": 12,
+      "bloc_1_ouverture_spirituelle": {
+        "type": "verset_central",
+        "titre_bloc": "Le verset du jour",
+        "verset": {
+          "reference": "ash-Sharh 94:5-6",
+          "ar": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا ۝ إِنَّ مَعَ الْعُسْرِ يُسْرًا",
+          "translit": "Fa-inna ma'a-l-'usri yusrâ. Inna ma'a-l-'usri yusrâ",
+          "fr": "À côté de la difficulté est, certes, une facilité. À côté de la difficulté est, certes, une facilité."
+        },
+        "contexte_revelation": "Sourate ash-Sharh, consolation au Prophète ﷺ dans une période dure. La répétition souligne la certitude.",
+        "sens_pour_aujourdhui": "La facilité est avec la difficulté — dedans, pas après. La lourdeur naît souvent d'un mensonge : « c'est trop dur, j'éviterai ». Mais l'aise est cachée dans le premier pas du difficile, pas de l'autre côté d'une montagne. Aujourd'hui, on cherche ce qui se cache sous l'évitement.",
+        "sources_tafsir": [
+          "Tafsîr Ibn Kathîr, sur ash-Sharh 94:5-6",
+          "Tafsîr al-Sa'dî"
+        ]
+      },
+      "bloc_2_sagesse": {
+        "type": "parole_de_sage",
+        "titre_bloc": "Parole d'Ibn al-Qayyim sur le kasal et la tristesse",
+        "parole": {
+          "texte": "Le kasal est une maladie du nafs qui se propage : celui qui repousse Fajr finit par repousser le reste, celui qui diffère la petite tâche diffère bientôt la grande. Rien n'est plus aimé du shaytân que la tristesse du croyant — car la tristesse affaiblit le cœur et la résolution.",
+          "auteur": "Ibn Qayyim al-Jawziyya",
+          "dates_auteur": "1292-1350",
+          "oeuvre": "al-Wâbil al-Sayyib ; Madârij as-Sâlikîn",
+          "siecle": "XIVe siècle",
+          "note": "La paresse n'est presque jamais « une grande faute » : c'est une chaîne de petits évitements, souvent nourrie par une émotion lourde qu'on ne nomme pas."
+        }
+      },
+      "introduction_avant_outils": "La paresse a presque toujours un dessous. On ne traîne pas par hasard — on évite quelque chose. Souvent, une émotion. On va la nommer, doucement.",
+      "bloc_3_outils_psy": [
+        {
+          "id": "sous_ma_lourdeur",
+          "ordre": 1,
+          "type": "radio_unique",
+          "titre": "Sous ma lourdeur, il y a souvent…",
+          "introduction": "Repense à ce que tu évites.",
+          "consigne": "Choisis le plus vrai.",
+          "options": [
+            {
+              "id": "peur",
+              "label_fr": "La peur d'échouer — « j'évite parce que j'ai peur de mal faire »"
+            },
+            {
+              "id": "perfectionnisme",
+              "label_fr": "Le perfectionnisme — « si je ne fais pas parfait, je ne fais pas »"
+            },
+            {
+              "id": "depasse",
+              "label_fr": "La tâche me dépasse — « c'est trop gros, par où commencer ? »"
+            },
+            {
+              "id": "futur",
+              "label_fr": "Le futûr — « j'ai brûlé fort un moment, puis tout s'est éteint »"
+            },
+            {
+              "id": "sens",
+              "label_fr": "Le manque de sens — « à quoi bon ? je ne vois plus pourquoi »"
+            },
+            {
+              "id": "fuite",
+              "label_fr": "Fuir un inconfort — « ça m'angoisse, alors je vais ailleurs »"
+            }
+          ],
+          "stockage": "cure_paresse_j2_dessous",
+          "note_psy": "La procrastination est une régulation d'émotion : on fuit l'inconfort de la tâche (peur, ennui, doute), pas par défaut de caractère.",
+          "note_spi": "Ibn al-Qayyim : le kasal naît de petits évitements ; la tristesse affaiblit la résolution."
+        },
+        {
+          "id": "chose_evitee",
+          "ordre": 2,
+          "type": "champ_texte_long",
+          "titre": "La première chose que j'évite",
+          "consigne": "Nomme une chose précise que tu repousses, et l'émotion qui monte quand tu penses à la faire.",
+          "amorce": "La chose que j'évite, et ce que je ressens en y pensant",
+          "champ": {
+            "placeholder": "...",
+            "max_caracteres": 500,
+            "stockage": "cure_paresse_j2_evitee"
+          },
+          "note_psy": "Identifier l'évitement-clé + l'émotion sous-jacente (analyse fonctionnelle) — le point de levier.",
+          "note_spi": "Celui qui diffère la petite chose diffère la grande (Ibn al-Qayyim) — d'où l'importance du premier maillon."
+        }
+      ],
+      "bloc_4_dhikr_quantifie": {
+        "type": "prescription_dhikr",
+        "titre_bloc": "Le dhikr du jour",
+        "introduction": "Contre la tristesse qui draine la résolution — la suite de la du'â du Prophète ﷺ.",
+        "dhikr": {
+          "ar": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْهَمِّ وَالْحَزَنِ",
+          "translit": "Allâhumma innî a'ûdhu bika mina-l-hammi wa-l-hazan",
+          "fr": "Ô Allah, je cherche refuge en Toi contre l'inquiétude et la tristesse."
+        },
+        "quantite": 1,
+        "moment_recommande": "Matin et soir.",
+        "duree_estimee_sec": 60,
+        "justification": {
+          "texte": "Ibn al-Qayyim : la tristesse affaiblit le cœur et la résolution ; le Prophète ﷺ en cherchait refuge.",
+          "source": "Bukhârî 6369"
+        },
+        "comment_pratiquer": "Pose les mots sur ce qui pèse, sans t'y enfoncer.",
+        "stockage": "cure_paresse_j2_dhikr_done"
+      },
+      "bloc_5_pratique_corporelle": {
+        "type": "geste_corporel",
+        "titre_bloc": "Le moment de la fuite",
+        "introduction": "Chaque fois que tu te surprends à dériver loin de ce que tu voulais faire, fige-toi un souffle.",
+        "instructions": [
+          "Tu dérives vers le téléphone, le frigo, le sommeil → fige-toi.",
+          "Nomme en toi l'émotion que tu fuis : « peur », « ennui », « doute », « ça me dépasse ».",
+          "Tu n'as pas à la régler — juste à la voir.",
+          "Et contre le « c'est trop pour moi », dis : « Lâ hawla wa lâ quwwata illâ bi-llâh »."
+        ],
+        "phrase_a_repeter": {
+          "ar": "لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ",
+          "translit": "Lâ hawla wa lâ quwwata illâ bi-llâh",
+          "fr": "Il n'est de force ni de puissance que par Allah"
+        },
+        "duree_min": 3,
+        "justification": {
+          "texte": "Étiqueter l'émotion fuie (affect labeling) réduit sa force ; un point d'appui (tawakkul) répond au « c'est trop ».",
+          "source": "« Lâ hawla wa lâ quwwata illâ bi-llâh », un trésor du Paradis (Bukhârî 6384)"
+        },
+        "note": "L'évitement perd son automatisme dès qu'on le voit.",
+        "stockage": "cure_paresse_j2_corps_done"
+      },
+      "phrase_ancre": "Je ne traîne pas par hasard — j'évite quelque chose.",
+      "cloture": {
+        "texte": "Tu as vu que la lourdeur a un dessous.\nTu as nommé le ressort et l'émotion fuie.\nTu sais la chose précise que tu évites.\n\nDemain — le trésor du temps.",
+        "bouton": "J'ai compris. À demain.",
+        "stockage": "cure_paresse = { current_day: 2, completed_j2: true }"
+      },
+      "murmure_sortie_sanctuaire": "L'aise est dans le premier pas du difficile, pas de l'autre côté.",
+      "metadata_jour": {
+        "versets_cites": [
+          "ash-Sharh 94:5-6 (central)"
+        ],
+        "hadiths_cites": [
+          "Bukhârî 6369 (refuge hamm/hazan)",
+          "Bukhârî 6384 (lâ hawla)"
+        ],
+        "savants_cites": [
+          "Ibn al-Qayyim"
+        ],
+        "dhikr_quantifie": "A'ûdhu bika mina-l-hammi wa-l-hazan × 1",
+        "pratique_corporelle": "Nommer l'émotion fuie + lâ hawla",
+        "outils_psy": 2
+      }
+    },
+    "j3": {
+      "numero": 3,
+      "station_ar": "البُكُور",
+      "station_translitteration": "Al-Bukûr",
+      "station_fr": "Le Petit-matin",
+      "titre_jour": "Le trésor du temps",
+      "image_fond": "j3.webp",
+      "duree_estimee_min": 11,
+      "duree_estimee_max": 13,
+      "bloc_1_ouverture_spirituelle": {
+        "type": "verset_central",
+        "titre_bloc": "Le verset du jour",
+        "verset": {
+          "reference": "al-'Asr 103:1-3",
+          "ar": "وَالْعَصْرِ ۝ إِنَّ الْإِنسَانَ لَفِي خُسْرٍ ۝ إِلَّا الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ",
+          "translit": "Wa-l-'asr. Inna-l-insâna la-fî khusr. Illâ-lladhîna âmanû wa 'amilu-s-sâlihât",
+          "fr": "Par le Temps ! L'homme est certes en perdition — sauf ceux qui croient et accomplissent les bonnes œuvres…"
+        },
+        "contexte_revelation": "Sourate al-'Asr, courte et capitale. Allah jure par le temps lui-même. al-Shâfi'î disait que si les gens méditaient cette seule sourate, elle leur suffirait.",
+        "sens_pour_aujourdhui": "Le temps est la matière dont ta vie est faite, et il s'écoule que tu agisses ou non. La paresse, c'est le laisser filer. Mais le verset ne se clôt pas sur la perte : l'exception, c'est l'action. Le temps perdu du paresseux devient le temps gagné de celui qui pose un acte, fût-il petit.",
+        "sources_tafsir": [
+          "Tafsîr Ibn Kathîr, sur al-'Asr",
+          "Tafsîr al-Sa'dî"
+        ]
+      },
+      "bloc_2_sagesse": {
+        "type": "parole_de_sage",
+        "titre_bloc": "Parole du Prophète ﷺ sur les trois nœuds",
+        "parole": {
+          "texte": "Le shaytân noue trois nœuds sur la nuque de l'un de vous pendant son sommeil, soufflant sur chacun : « la nuit est longue, dors encore. » S'il se réveille et évoque Allah, un nœud se défait ; s'il fait ses ablutions, un nœud se défait ; s'il prie, un nœud se défait — et il se lève alerte, l'âme heureuse. Sinon, il se lève l'âme mauvaise et paresseux.",
+          "auteur": "Le Prophète Muhammad ﷺ",
+          "dates_auteur": "",
+          "oeuvre": "Bukhârî 1142 ; Muslim 776",
+          "siecle": "Ier siècle de l'hégire",
+          "note": "La lourdeur du matin n'est pas toi : c'est un nœud. Et un nœud, ça se dénoue — par trois gestes simples."
+        }
+      },
+      "introduction_avant_outils": "Le temps est ce dont ta vie est faite — et le matin décide souvent du reste du jour. Voici comment dénouer le tien.",
+      "bloc_3_outils_psy": [
+        {
+          "id": "denouer_matin",
+          "ordre": 1,
+          "type": "checkboxes_multiple",
+          "titre": "Dénouer demain matin",
+          "introduction": "Les trois nœuds se défont par trois gestes.",
+          "consigne": "Coche ce que tu décides de tenir.",
+          "options": [
+            {
+              "id": "dhikr",
+              "label_fr": "Au réveil, évoquer Allah avant tout — 1er nœud"
+            },
+            {
+              "id": "wudu",
+              "label_fr": "Faire mes ablutions (wudû) — 2e nœud"
+            },
+            {
+              "id": "priere",
+              "label_fr": "Prier (Fajr) — 3e nœud"
+            },
+            {
+              "id": "tel",
+              "label_fr": "Ne pas toucher le téléphone avant ces trois"
+            }
+          ],
+          "stockage": "cure_paresse_j3_matin",
+          "note_psy": "Routine matinale d'activation — un enchaînement ancré au réveil réduit l'inertie ; le matin amorce le reste du jour.",
+          "note_spi": "Les 3 nœuds du shaytân (Bukhârî 1142) ; la barakah du petit-matin."
+        },
+        {
+          "id": "intention_matin",
+          "ordre": 2,
+          "type": "champ_texte_long",
+          "titre": "Le temps du matin servira à…",
+          "consigne": "À partir de demain, écris une intention minuscule et précise pour ton matin — pas un programme.",
+          "amorce": "Demain matin, mon temps servira à",
+          "champ": {
+            "placeholder": "...",
+            "max_caracteres": 400,
+            "stockage": "cure_paresse_j3_intention"
+          },
+          "note_psy": "Saillance du temps / des valeurs : relier le réveil à une intention concrète augmente le passage à l'acte.",
+          "note_spi": "« Par le Temps, l'homme est en perdition sauf ceux qui agissent » (al-'Asr)."
+        }
+      ],
+      "bloc_4_dhikr_quantifie": {
+        "type": "prescription_dhikr",
+        "titre_bloc": "Le dhikr du jour",
+        "introduction": "Le premier nœud se défait par le dhikr du réveil.",
+        "dhikr": {
+          "ar": "الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ",
+          "translit": "Al-hamdu li-llâhi-lladhî ahyânâ ba'da mâ amâtanâ wa ilayhi-n-nushûr",
+          "fr": "Louange à Allah qui nous a rendu la vie après nous avoir fait mourir, et c'est vers Lui que se fera la résurrection."
+        },
+        "quantite": 1,
+        "moment_recommande": "Au réveil, avant tout autre chose.",
+        "duree_estimee_sec": 30,
+        "justification": {
+          "texte": "Du'â que le Prophète ﷺ disait en se réveillant.",
+          "source": "Bukhârî 6312"
+        },
+        "comment_pratiquer": "Le premier souffle du jour orienté vers Allah, avant l'écran.",
+        "stockage": "cure_paresse_j3_dhikr_done"
+      },
+      "bloc_5_pratique_corporelle": {
+        "type": "geste_corporel",
+        "titre_bloc": "Le matin avant le téléphone",
+        "introduction": "Demain, au réveil, les trois nœuds d'abord — avant l'écran, avant les messages.",
+        "instructions": [
+          "Dhikr du réveil, puis eau sur le visage et les membres (wudû), puis la prière.",
+          "Trois gestes, quelques minutes.",
+          "Tu te lèveras l'âme légère au lieu d'être déjà en retard sur toi-même.",
+          "En ouvrant les yeux, dis : « Asbahnâ wa asbaha-l-mulku li-llâh »."
+        ],
+        "phrase_a_repeter": {
+          "ar": "أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ",
+          "translit": "Asbahnâ wa asbaha-l-mulku li-llâh",
+          "fr": "Nous voici au matin, et le royaume appartient à Allah"
+        },
+        "duree_min": 8,
+        "justification": {
+          "texte": "Empêcher l'écran d'amorcer la journée et le remplacer par une routine fixe réduit l'inertie matinale (contrôle du stimulus).",
+          "source": "Ouverture des adhkâr du matin (Muslim 2723)"
+        },
+        "note": "Le matin tayyib an-nafs amorce un jour tayyib.",
+        "stockage": "cure_paresse_j3_corps_done"
+      },
+      "phrase_ancre": "La lourdeur du matin n'est pas moi : c'est un nœud qui se dénoue.",
+      "cloture": {
+        "texte": "Tu as juré avec Allah par le temps.\nTu connais les trois nœuds et comment les défaire.\nTu as posé ton intention du matin.\n\nDemain — le premier pas.",
+        "bouton": "Je dénoue. À demain.",
+        "stockage": "cure_paresse = { current_day: 3, completed_j3: true }"
+      },
+      "murmure_sortie_sanctuaire": "Gagne ton matin, tu gagnes ton jour.",
+      "metadata_jour": {
+        "versets_cites": [
+          "al-'Asr 103:1-3 (central)"
+        ],
+        "hadiths_cites": [
+          "Bukhârî 1142 / Muslim 776 (les 3 nœuds)",
+          "Bukhârî 6312 (du'â du réveil)"
+        ],
+        "savants_cites": [],
+        "dhikr_quantifie": "Du'â du réveil × 1",
+        "pratique_corporelle": "Les 3 nœuds avant le téléphone",
+        "outils_psy": 2
+      }
+    },
+    "j4": {
+      "numero": 4,
+      "station_ar": "الشُّرُوع",
+      "station_translitteration": "Ash-Shurû'",
+      "station_fr": "Le Premier pas",
+      "titre_jour": "Agir avant l'envie",
+      "image_fond": "j4.webp",
+      "duree_estimee_min": 11,
+      "duree_estimee_max": 12,
+      "bloc_1_ouverture_spirituelle": {
+        "type": "verset_central",
+        "titre_bloc": "Le verset du jour",
+        "verset": {
+          "reference": "al-'Ankabût 29:69",
+          "ar": "وَالَّذِينَ جَاهَدُوا فِينَا لَنَهْدِيَنَّهُمْ سُبُلَنَا",
+          "translit": "Wa-lladhîna jâhadû fînâ la-nahdiyannahum subulanâ",
+          "fr": "Et ceux qui luttent pour Notre cause, Nous les guiderons certes sur Nos sentiers."
+        },
+        "contexte_revelation": "Fin de la sourate al-'Ankabût. La promesse : l'effort appelle la guidance.",
+        "sens_pour_aujourdhui": "Regarde l'ordre des mots : d'abord ils luttent, ensuite Allah guide. La clarté, l'élan, le chemin viennent après le premier effort, jamais avant. Tu attends de « te sentir prêt » ? Tu attendras toujours. Pose le premier pas — et le sentier s'ouvre sous tes pieds.",
+        "sources_tafsir": [
+          "Tafsîr Ibn Kathîr, sur al-'Ankabût 29:69",
+          "Tafsîr al-Sa'dî"
+        ]
+      },
+      "bloc_2_sagesse": {
+        "type": "parole_de_sage",
+        "titre_bloc": "Parole du Prophète ﷺ sur l'effort et l'aide d'Allah",
+        "parole": {
+          "texte": "Recherche avec ardeur ce qui t'est utile, demande l'aide d'Allah, et ne faiblis pas. Et si quelque chose t'atteint, ne dis pas « si seulement j'avais fait… », mais dis « Allah l'a décrété, et ce qu'Il veut, Il le fait ».",
+          "auteur": "Le Prophète Muhammad ﷺ",
+          "dates_auteur": "",
+          "oeuvre": "Sahîh Muslim 2664",
+          "siecle": "Ier siècle de l'hégire",
+          "note": "Trois temps dans l'ordre : viser l'utile, demander l'aide d'Allah, ne pas abandonner. L'effort et l'appui sur Allah marchent ensemble. La fin du hadith coupe court à la rumination du « si seulement »."
+        }
+      },
+      "introduction_avant_outils": "Voici le cœur du remède, et il renverse ce que tu crois : tu n'attends pas l'envie pour agir — tu agis, et l'envie suit.",
+      "bloc_3_outils_psy": [
+        {
+          "id": "pas_2min",
+          "ordre": 1,
+          "type": "champ_texte_long",
+          "titre": "Le pas de 2 minutes",
+          "consigne": "Reprends la chose que tu évites (J2). Découpe-la en un premier pas si petit qu'il en est presque ridicule — 2 minutes maximum. Pas « ranger la chambre » → « poser un vêtement dans le panier ». Pas « réviser » → « ouvrir le cahier, lire un titre ». Écris ton pas.",
+          "amorce": "Mon premier pas de 2 minutes, c'est",
+          "champ": {
+            "placeholder": "...",
+            "max_caracteres": 400,
+            "stockage": "cure_paresse_j4_pas"
+          },
+          "note_psy": "Activation comportementale : l'action précède et engendre la motivation. Règle des 2 minutes / tiny habits (Fogg, Clear) — réduire jusqu'à ce que démarrer ne coûte presque rien.",
+          "note_spi": "« …et ne faiblis pas, demande l'aide d'Allah » (Muslim 2664) ; la guidance suit le premier pas (al-'Ankabût 29:69).",
+          "introduction": "Tu ne fais pas ce pas pour finir. Tu le fais pour démarrer. L'élan naît du mouvement, jamais de l'attente."
+        }
+      ],
+      "bloc_4_dhikr_quantifie": {
+        "type": "prescription_dhikr",
+        "titre_bloc": "Le dhikr du jour",
+        "introduction": "Quand la tâche paraît trop dure, demande à Celui qui rend facile.",
+        "dhikr": {
+          "ar": "اللَّهُمَّ لَا سَهْلَ إِلَّا مَا جَعَلْتَهُ سَهْلًا، وَأَنْتَ تَجْعَلُ الْحَزْنَ إِذَا شِئْتَ سَهْلًا",
+          "translit": "Allâhumma lâ sahla illâ mâ ja'altahu sahlâ, wa anta taj'alu-l-hazna idhâ shi'ta sahlâ",
+          "fr": "Ô Allah, rien n'est facile sauf ce que Tu rends facile, et Tu rends, si Tu veux, le difficile facile."
+        },
+        "quantite": 1,
+        "moment_recommande": "Avant de te mettre à une tâche qui te pèse.",
+        "duree_estimee_sec": 30,
+        "justification": {
+          "texte": "Du'â prophétique demandant à Allah de faciliter ce qui est difficile.",
+          "source": "Ibn Hibbân 974 — sahîh/hasan (à confirmer)"
+        },
+        "comment_pratiquer": "Dis-la juste avant le pas de 2 minutes, puis lance-toi.",
+        "stockage": "cure_paresse_j4_dhikr_done"
+      },
+      "bloc_5_pratique_corporelle": {
+        "type": "geste_corporel",
+        "titre_bloc": "Le pas, maintenant",
+        "introduction": "Ne referme pas l'application sur une bonne intention. Lève-toi et fais le pas de 2 minutes que tu viens d'écrire — là, tout de suite.",
+        "instructions": [
+          "Ne réfléchis pas, ne négocie pas : bouge.",
+          "Dis « Bismillâh, tawakkaltu 'ala-llâh » et fais le geste.",
+          "Puis reviens.",
+          "Tu auras prouvé à ton nafs que c'était possible, et petit."
+        ],
+        "phrase_a_repeter": {
+          "ar": "بِسْمِ اللَّهِ، تَوَكَّلْتُ عَلَى اللَّهِ",
+          "translit": "Bismillâh, tawakkaltu 'ala-llâh",
+          "fr": "Au nom d'Allah, je m'en remets à Allah"
+        },
+        "duree_min": 2,
+        "justification": {
+          "texte": "Exécuter immédiatement le micro-comportement (et non le planifier) est le mécanisme central de l'activation comportementale.",
+          "source": "Du'â du commencement et de la confiance en Allah (Abû Dâwûd 5095)"
+        },
+        "note": "L'envie ne précède pas l'acte — elle le suit.",
+        "stockage": "cure_paresse_j4_corps_done"
+      },
+      "phrase_ancre": "Je n'attends pas l'envie : j'agis, et l'envie suit.",
+      "cloture": {
+        "texte": "Tu sais que la guidance suit l'effort.\nTu as découpé ta tâche en un pas de 2 minutes.\nTu l'as fait, maintenant.\n\nDemain — peu, mais constant.",
+        "bouton": "J'ai démarré. À demain.",
+        "stockage": "cure_paresse = { current_day: 4, completed_j4: true }"
+      },
+      "murmure_sortie_sanctuaire": "Le sentier s'ouvre sous les pas de celui qui avance.",
+      "metadata_jour": {
+        "versets_cites": [
+          "al-'Ankabût 29:69 (central)"
+        ],
+        "hadiths_cites": [
+          "Muslim 2664 (ne faiblis pas)",
+          "Ibn Hibbân 974 (lâ sahla illâ…)"
+        ],
+        "savants_cites": [],
+        "dhikr_quantifie": "Allâhumma lâ sahla illâ mâ ja'altahu sahlâ × 1",
+        "pratique_corporelle": "Faire le pas de 2 min maintenant",
+        "outils_psy": 1
+      }
+    },
+    "j5": {
+      "numero": 5,
+      "station_ar": "المُدَاوَمَة",
+      "station_translitteration": "Al-Mudâwama",
+      "station_fr": "La Constance",
+      "titre_jour": "Peu, mais constant",
+      "image_fond": "j5.webp",
+      "duree_estimee_min": 11,
+      "duree_estimee_max": 13,
+      "bloc_1_ouverture_spirituelle": {
+        "type": "verset_central",
+        "titre_bloc": "Le verset du jour",
+        "verset": {
+          "reference": "al-Baqara 2:286",
+          "ar": "لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا",
+          "translit": "Lâ yukallifu-llâhu nafsan illâ wus'ahâ",
+          "fr": "Allah n'impose à aucune âme une charge supérieure à sa capacité."
+        },
+        "contexte_revelation": "Dernier verset de al-Baqara. Allah pose un principe de miséricorde : la charge est taillée à ta mesure.",
+        "sens_pour_aujourdhui": "Allah ne t'a chargé que de ce que tu peux porter. La paresse vient souvent d'une marche trop haute : on se fixe l'immense, on s'effondre, on culpabilise, on abandonne — c'est le futûr. Le verset te libère de l'immense : vise petit et tenable. Mieux vaut une flamme qui dure qu'un feu qui s'éteint.",
+        "sources_tafsir": [
+          "Tafsîr Ibn Kathîr, sur al-Baqara 2:286",
+          "Tafsîr al-Sa'dî"
+        ]
+      },
+      "bloc_2_sagesse": {
+        "type": "parole_de_sage",
+        "titre_bloc": "Parole du Prophète ﷺ sur la constance",
+        "parole": {
+          "texte": "Les actes les plus aimés d'Allah sont les plus constants, même s'ils sont peu. Et : la religion est aise ; nul ne la surcharge sans qu'elle ne le vainque.",
+          "auteur": "Le Prophète Muhammad ﷺ",
+          "dates_auteur": "",
+          "oeuvre": "Bukhârî 6464 / Muslim 783 ; Bukhârî 39",
+          "siecle": "Ier siècle de l'hégire",
+          "note": "Deux phrases qui démolissent le mythe de l'intensité. Ce n'est pas celui qui brûle fort une nuit qu'Allah aime le plus — c'est celui qui allume une petite lumière chaque jour."
+        }
+      },
+      "introduction_avant_outils": "Le piège du paresseux n'est pas seulement de ne rien faire — c'est de tout vouloir d'un coup, s'épuiser, puis tout lâcher. Le remède est l'inverse : petit, et chaque jour.",
+      "bloc_3_outils_psy": [
+        {
+          "id": "pratique_minuscule",
+          "ordre": 1,
+          "type": "champ_texte_long",
+          "titre": "La pratique minuscule",
+          "consigne": "Choisis UNE seule pratique à tenir chaque jour — si petite que tu ne peux pas échouer (2 pages, 5 min de marche, 2 rak'a de plus, une page de Qur'an, ranger une chose). Écris-la.",
+          "amorce": "Ma pratique minuscule quotidienne, c'est",
+          "champ": {
+            "placeholder": "...",
+            "max_caracteres": 400,
+            "stockage": "cure_paresse_j5_pratique"
+          },
+          "note_psy": "Formation d'habitude par la constance + principe anti tout-ou-rien (relapse prevention) : un écart n'est pas une rechute ; reprendre est la compétence clé.",
+          "note_spi": "« L'acte le plus aimé est le plus constant, fût-il peu » (Bukhârî 6464) ; « la religion est aise » (Bukhârî 39).",
+          "introduction": "Grave ce principe — le plus important de la cure : Manquer un jour ≠ échouer. Abandonner = échouer. Si tu sautes, tu reprends le lendemain, sans drame, sans te flageller."
+        }
+      ],
+      "bloc_4_dhikr_quantifie": {
+        "type": "prescription_dhikr",
+        "titre_bloc": "Le dhikr du jour",
+        "introduction": "Pour tenir la ligne dans la durée — la du'â de l'istiqâma.",
+        "dhikr": {
+          "ar": "يَا مُقَلِّبَ الْقُلُوبِ ثَبِّتْ قَلْبِي عَلَىٰ دِينِكَ",
+          "translit": "Yâ Muqalliba-l-qulûb thabbit qalbî 'alâ dînik",
+          "fr": "Ô Toi qui retournes les cœurs, affermis mon cœur sur Ta religion."
+        },
+        "quantite": 3,
+        "moment_recommande": "Chaque jour, et chaque fois que tu sens l'élan retomber.",
+        "duree_estimee_sec": 60,
+        "justification": {
+          "texte": "Invocation fréquente du Prophète ﷺ pour la fermeté du cœur.",
+          "source": "Tirmidhî 2140 — hasan sahîh (à confirmer)"
+        },
+        "comment_pratiquer": "La constance n'est pas qu'une affaire de volonté : on demande à Allah de tenir le cœur.",
+        "stockage": "cure_paresse_j5_dhikr_done"
+      },
+      "bloc_5_pratique_corporelle": {
+        "type": "geste_corporel",
+        "titre_bloc": "Accroche-la à un rendez-vous",
+        "introduction": "Une habitude minuscule tient mieux quand elle est attachée à un moment déjà fixe de ta journée.",
+        "instructions": [
+          "Choisis un déclencheur fixe : après la prière du 'Asr, après le café, juste avant de dormir.",
+          "Fais ta pratique minuscule une fois, accrochée à lui.",
+          "Le corps réapprend la régularité par le déclencheur, pas par la volonté.",
+          "Demain, même heure, même geste."
+        ],
+        "phrase_a_repeter": {
+          "ar": "يَا مُقَلِّبَ الْقُلُوبِ ثَبِّتْ قَلْبِي عَلَىٰ دِينِكَ",
+          "translit": "Yâ Muqalliba-l-qulûb thabbit qalbî 'alâ dînik",
+          "fr": "Ô Toi qui retournes les cœurs, affermis mon cœur sur Ta religion"
+        },
+        "duree_min": 5,
+        "justification": {
+          "texte": "Le habit stacking (accrocher à un déclencheur existant) est l'un des leviers les plus robustes de formation d'habitude.",
+          "source": "Du'â de fermeté (Tirmidhî 2140)"
+        },
+        "note": "Petit et tenu vaut mieux que grand et abandonné.",
+        "stockage": "cure_paresse_j5_corps_done"
+      },
+      "phrase_ancre": "Manquer un jour n'est pas échouer. Abandonner, oui.",
+      "cloture": {
+        "texte": "Tu as choisi ta pratique minuscule.\nTu connais le principe anti tout-ou-rien.\nTu l'as accrochée à un rendez-vous.\n\nDemain — relever le regard.",
+        "bouton": "Je tiens. À demain.",
+        "stockage": "cure_paresse = { current_day: 5, completed_j5: true }"
+      },
+      "murmure_sortie_sanctuaire": "Une petite lumière chaque jour éclaire plus qu'un feu d'un soir.",
+      "metadata_jour": {
+        "versets_cites": [
+          "al-Baqara 2:286 (central)"
+        ],
+        "hadiths_cites": [
+          "Bukhârî 6464 / Muslim 783 (le plus constant)",
+          "Bukhârî 39 (la religion est aise)",
+          "Tirmidhî 2140 (fermeté)"
+        ],
+        "savants_cites": [],
+        "dhikr_quantifie": "Yâ Muqalliba-l-qulûb… × 3",
+        "pratique_corporelle": "Habit stacking sur un déclencheur fixe",
+        "outils_psy": 1
+      }
+    },
+    "j6": {
+      "numero": 6,
+      "station_ar": "الهِمَّة",
+      "station_translitteration": "Al-Himma",
+      "station_fr": "La Haute aspiration",
+      "titre_jour": "Relever le regard",
+      "image_fond": "j6.webp",
+      "duree_estimee_min": 11,
+      "duree_estimee_max": 13,
+      "bloc_1_ouverture_spirituelle": {
+        "type": "verset_central",
+        "titre_bloc": "Le verset du jour",
+        "verset": {
+          "reference": "al-Isrâ' 17:19",
+          "ar": "وَمَنْ أَرَادَ الْآخِرَةَ وَسَعَىٰ لَهَا سَعْيَهَا وَهُوَ مُؤْمِنٌ فَأُولَٰئِكَ كَانَ سَعْيُهُم مَّشْكُورًا",
+          "translit": "Wa man arâda-l-âkhirata wa sa'â lahâ sa'yahâ wa huwa mu'minun fa-ulâ'ika kâna sa'yuhum mashkûrâ",
+          "fr": "Quiconque désire l'au-delà et fournit l'effort qui lui convient, tout en étant croyant — voilà ceux dont l'effort sera reconnu."
+        },
+        "contexte_revelation": "Sourate al-Isrâ'. Allah contraste celui qui ne vise que l'immédiat et celui qui vise le durable, et promet que l'effort orienté vers l'âkhira est « remercié » (mashkûr).",
+        "sens_pour_aujourdhui": "La paresse rétrécit l'horizon au confort de l'instant. Relever le regard, c'est se rappeler ce qui dure : ce pour quoi ça vaut la peine de se lever. L'effort relié à un grand « pourquoi » n'est plus subi : il est voulu — et reconnu par Allah.",
+        "sources_tafsir": [
+          "Tafsîr Ibn Kathîr, sur al-Isrâ' 17:19",
+          "Tafsîr al-Sa'dî"
+        ]
+      },
+      "bloc_2_sagesse": {
+        "type": "parole_de_sage",
+        "titre_bloc": "Parole d'Ibn al-Qayyim sur la himma",
+        "parole": {
+          "texte": "Ce qui élève un homme, ce n'est pas la force du corps mais la hauteur de l'aspiration (himma) : l'âme paresseuse rampe au ras de ses envies ; l'âme de haute aspiration vise ce qui dure et ne se contente pas du peu. La résolution ('azm) est la monture : sans elle, le savoir et le désir restent à terre.",
+          "auteur": "Ibn Qayyim al-Jawziyya",
+          "dates_auteur": "1292-1350",
+          "oeuvre": "Madârij as-Sâlikîn ; al-Fawâ'id",
+          "siecle": "XIVe siècle",
+          "note": "Tu n'as pas un problème de force. Tu as un regard baissé. Relève-le."
+        }
+      },
+      "introduction_avant_outils": "On a appris le petit pas et la constance. Mais un petit pas sans direction s'essouffle. Aujourd'hui, on relève les yeux : pour quoi, au juste, ça vaut la peine de se lever ?",
+      "bloc_3_outils_psy": [
+        {
+          "id": "raison_plus_grande",
+          "ordre": 1,
+          "type": "champ_texte_long",
+          "titre": "La raison plus grande que mon humeur",
+          "consigne": "Écris-la — pas une raison polie, la vraie, celle qui te dépasse : ce que tu veux être devant Allah, ceux que tu portes (parents, enfants, oumma), l'âkhira que tu vises, l'œuvre que tu veux laisser.",
+          "amorce": "Ça vaut la peine de me lever parce que",
+          "champ": {
+            "placeholder": "...",
+            "max_caracteres": 500,
+            "stockage": "cure_paresse_j6_raison"
+          },
+          "note_psy": "Motivation par les valeurs et le sens (ACT) : relier l'action à un « pourquoi » qui dépasse l'humeur transforme l'évitement en approche ; le sens soutient l'effort là où la volonté lâche.",
+          "note_spi": "La himma 'aliya / le 'azm (Ibn al-Qayyim) ; « qui désire l'âkhira et s'y efforce, son effort est reconnu » (al-Isrâ' 17:19).",
+          "introduction": "Quand l'envie manquera — et elle manquera — ce n'est pas ton humeur du matin que tu reliras, c'est cette raison-là."
+        }
+      ],
+      "bloc_4_dhikr_quantifie": {
+        "type": "prescription_dhikr",
+        "titre_bloc": "Le dhikr du jour",
+        "introduction": "Ibn al-Qayyim prescrit, contre la fatigue et le kasal, le dhikr que le Prophète ﷺ enseigna à Fâtima — au coucher, et dont la constance donne au corps une force.",
+        "dhikr": {
+          "ar": "سُبْحَانَ اللَّهِ (×33) ، الْحَمْدُ لِلَّهِ (×33) ، اللَّهُ أَكْبَرُ (×34)",
+          "translit": "Subhâna-llâh (×33), al-hamdu li-llâh (×33), Allâhu akbar (×34)",
+          "fr": "Gloire à Allah ×33 · Louange à Allah ×33 · Allah est le plus Grand ×34."
+        },
+        "quantite": 100,
+        "moment_recommande": "Au coucher, chaque soir.",
+        "duree_estimee_sec": 240,
+        "justification": {
+          "texte": "Le Prophète ﷺ l'enseigna à Fâtima quand elle se plaignit de la fatigue ; Ibn al-Qayyim note que sa constance donne au corps une force (al-Wâbil al-Sayyib).",
+          "source": "Bukhârî 5361 ; Muslim 2727"
+        },
+        "comment_pratiquer": "Subhân Allah 33, puis Alhamdulillah 33, puis Allâhu akbar 34. Avant de dormir.",
+        "stockage": "cure_paresse_j6_dhikr_done"
+      },
+      "bloc_5_pratique_corporelle": {
+        "type": "geste_corporel",
+        "titre_bloc": "La raison sous les yeux",
+        "introduction": "Le matin paresseux oublie le pourquoi. Rends-le impossible à oublier.",
+        "instructions": [
+          "Écris ta raison plus grande sur un mot près du lit, sur le miroir, ou en fond d'écran.",
+          "La première chose que tes yeux rencontrent donne la direction du jour.",
+          "Et ce soir, le tasbîh de Fâtima (33/33/34) avant de dormir.",
+          "En te couchant, demande les hautes choses."
+        ],
+        "phrase_a_repeter": {
+          "ar": "اللَّهُمَّ إِنِّي أَسْأَلُكَ الْهُدَىٰ وَالتُّقَىٰ وَالْعَفَافَ وَالْغِنَىٰ",
+          "translit": "Allâhumma innî as'aluka-l-hudâ wa-t-tuqâ wa-l-'afâfa wa-l-ghinâ",
+          "fr": "Ô Allah, je Te demande la guidée, la piété, la chasteté et la richesse [du cœur]"
+        },
+        "duree_min": 8,
+        "justification": {
+          "texte": "Un rappel visuel du « pourquoi » (cue environnemental) maintient l'orientation vers les valeurs malgré la fluctuation de l'humeur.",
+          "source": "Du'â des hautes demandes (Muslim 2721)"
+        },
+        "note": "Relié au sens, l'effort cesse d'être subi.",
+        "stockage": "cure_paresse_j6_corps_done"
+      },
+      "phrase_ancre": "Je n'ai pas un problème de force, mais un regard baissé.",
+      "cloture": {
+        "texte": "Tu as écrit la raison plus grande que ton humeur.\nTu l'as mise sous tes yeux.\nTu connais le tasbîh qui donne force.\n\nDemain — le dernier jour : la douceur qui dure.",
+        "bouton": "Je relève le regard. À demain.",
+        "stockage": "cure_paresse = { current_day: 6, completed_j6: true }"
+      },
+      "murmure_sortie_sanctuaire": "L'homme s'élève à la hauteur de ce qu'il vise.",
+      "metadata_jour": {
+        "versets_cites": [
+          "al-Isrâ' 17:19 (central)"
+        ],
+        "hadiths_cites": [
+          "Bukhârî 5361 / Muslim 2727 (tasbîh de Fâtima)",
+          "Muslim 2721 (al-hudâ wa-t-tuqâ)"
+        ],
+        "savants_cites": [
+          "Ibn al-Qayyim"
+        ],
+        "dhikr_quantifie": "Tasbîh de Fâtima 33/33/34",
+        "pratique_corporelle": "Rappel visible du « pourquoi » + tasbîh",
+        "outils_psy": 1
+      }
+    },
+    "j7": {
+      "numero": 7,
+      "station_ar": "الرِّفْق",
+      "station_translitteration": "Ar-Rifq",
+      "station_fr": "La Douceur",
+      "titre_jour": "La douceur qui dure",
+      "image_fond": "j7.webp",
+      "duree_estimee_min": 12,
+      "duree_estimee_max": 13,
+      "bloc_1_ouverture_spirituelle": {
+        "type": "verset_central",
+        "titre_bloc": "Le verset du jour",
+        "verset": {
+          "reference": "al-Baqara 2:185",
+          "ar": "يُرِيدُ اللَّهُ بِكُمُ الْيُسْرَ وَلَا يُرِيدُ بِكُمُ الْعُسْرَ",
+          "translit": "Yurîdu-llâhu bikumu-l-yusra wa lâ yurîdu bikumu-l-'usr",
+          "fr": "Allah veut pour vous la facilité, Il ne veut pas pour vous la difficulté."
+        },
+        "contexte_revelation": "Verset du jeûne de Ramadan (les concessions pour le malade, le voyageur). Allah formule le principe au cœur de Sa législation : la facilité voulue, non la peine.",
+        "sens_pour_aujourdhui": "Allah Lui-même veut ta facilité. Si Lui ne te surcharge pas, de quel droit te flagelles-tu ? La paresse se nourrit autant de la dureté envers soi que de la mollesse : on chute, on se traite de « nul », la honte écrase — et l'écrasé ne se relève pas. La douceur n'est pas une excuse : c'est le carburant qui dure.",
+        "sources_tafsir": [
+          "Tafsîr Ibn Kathîr, sur al-Baqara 2:185",
+          "Tafsîr al-Sa'dî"
+        ]
+      },
+      "bloc_2_sagesse": {
+        "type": "parole_de_sage",
+        "titre_bloc": "Parole du Prophète ﷺ sur le retour",
+        "parole": {
+          "texte": "Tout fils d'Adam est faillible, et les meilleurs des faillibles sont ceux qui reviennent.",
+          "auteur": "Le Prophète Muhammad ﷺ",
+          "dates_auteur": "",
+          "oeuvre": "Tirmidhî 2499 — hasan",
+          "siecle": "Ier siècle de l'hégire",
+          "note": "Voilà qui démolit le perfectionnisme — l'autre nom de la paresse. Tu vas chuter ; c'est la condition humaine, pas ton échec. La grandeur n'est pas de ne jamais tomber : c'est de toujours revenir."
+        }
+      },
+      "introduction_avant_outils": "Tu sais le petit pas, la constance, le pourquoi. Reste la chose qui décide si tout cela tient : comment tu te traites le jour où tu chutes.",
+      "bloc_3_outils_psy": [
+        {
+          "id": "mot_doux",
+          "ordre": 1,
+          "type": "champ_texte_long",
+          "titre": "Le mot doux pour le jour de la chute",
+          "consigne": "1) Réécris ta lourdeur du J1 + le premier pas (J4) qui a marché + ta pratique minuscule (J5). 2) Écris-toi, à la première personne, ce que tu te diras le jour où tu sauteras — au lieu de « je suis nul, j'abandonne ». 3) Écris ta nouvelle identité : « Je ne suis pas quelqu'un de paresseux. Je suis quelqu'un qui reprend. »",
+          "amorce": "Le jour où je chuterai, je me dirai",
+          "champ": {
+            "placeholder": "...",
+            "max_caracteres": 600,
+            "stockage": "cure_paresse_j7_engagement"
+          },
+          "note_psy": "Auto-compassion (Kristin Neff) : se parler avec bienveillance après un écart prédit la reprise, là où l'auto-critique aggrave la spirale honte→inaction. Identité de « celui qui reprend » (ACT).",
+          "note_spi": "« Tout fils d'Adam est faillible, et les meilleurs sont ceux qui reviennent » (Tirmidhî 2499) ; « Allah veut pour vous la facilité » (al-Baqara 2:185)."
+        }
+      ],
+      "bloc_4_dhikr_quantifie": {
+        "type": "prescription_dhikr",
+        "titre_bloc": "Le dhikr du jour",
+        "introduction": "L'aveu que la volonté seule ne suffit pas — on s'appuie sur Sa miséricorde, pas sur son nafs.",
+        "dhikr": {
+          "ar": "اللَّهُمَّ رَحْمَتَكَ أَرْجُو فَلَا تَكِلْنِي إِلَىٰ نَفْسِي طَرْفَةَ عَيْنٍ، وَأَصْلِحْ لِي شَأْنِي كُلَّهُ",
+          "translit": "Allâhumma rahmataka arjû fa-lâ takilnî ilâ nafsî tarfata 'ayn, wa aslih lî sha'nî kullah",
+          "fr": "Ô Allah, c'est Ta miséricorde que j'espère : ne m'abandonne pas à moi-même le temps d'un clin d'œil, et arrange pour moi toute mon affaire."
+        },
+        "quantite": 1,
+        "moment_recommande": "Matin et soir.",
+        "duree_estimee_sec": 60,
+        "justification": {
+          "texte": "Du'â prophétique de celui qui sait que sa force ne suffit pas et s'en remet à la miséricorde d'Allah.",
+          "source": "Abû Dâwûd 5090 — hasan (à confirmer)"
+        },
+        "comment_pratiquer": "Le contraire de la volonté solitaire : on demande à ne pas être laissé à son propre nafs.",
+        "stockage": "cure_paresse_j7_dhikr_done"
+      },
+      "bloc_5_pratique_corporelle": {
+        "type": "geste_corporel",
+        "titre_bloc": "La reprise, maintenant",
+        "introduction": "Si tu as sauté un jour cette semaine, fais ta pratique minuscule tout de suite — pas demain.",
+        "instructions": [
+          "Pour prouver à ton nafs qu'il n'y a aucun délai d'attente avant de revenir.",
+          "La porte du retour n'a pas d'horaire.",
+          "Dis « Bismillâh, tawakkaltu 'ala-llâh » et fais le geste.",
+          "La porte de la Paresse se referme — non sur une machine parfaite, mais sur quelqu'un qui sait recommencer."
+        ],
+        "phrase_a_repeter": {
+          "ar": "بِسْمِ اللَّهِ، تَوَكَّلْتُ عَلَى اللَّهِ",
+          "translit": "Bismillâh, tawakkaltu 'ala-llâh",
+          "fr": "Au nom d'Allah, je m'en remets à Allah"
+        },
+        "duree_min": 3,
+        "justification": {
+          "texte": "Reprendre immédiatement après un écart (au lieu d'attendre « demain » ou « lundi ») est le comportement clé de la prévention de rechute.",
+          "source": "Du'â du commencement et de la confiance (Abû Dâwûd 5095)"
+        },
+        "note": "La compétence n'est pas de ne jamais tomber, mais de reprendre vite et doucement.",
+        "stockage": "cure_paresse_j7_corps_done"
+      },
+      "phrase_ancre": "Je ne suis pas quelqu'un de paresseux. Je suis quelqu'un qui reprend.",
+      "cloture": {
+        "texte": "Tu as écrit ton mot doux pour le jour de la chute.\nTu as choisi ton identité : celui qui reprend.\nTu as repris, maintenant.\n\nLa porte de la Paresse reste ouverte derrière toi — et tu sais, désormais, recommencer en douceur.",
+        "bouton": "Terminer la Cure",
+        "stockage": "cure_paresse = { current_day: 7, completed_j7: true, completed: true }"
+      },
+      "murmure_sortie_sanctuaire": "On se relève plus vite avec de la miséricorde qu'avec des coups.",
+      "metadata_jour": {
+        "versets_cites": [
+          "al-Baqara 2:185 (central)"
+        ],
+        "hadiths_cites": [
+          "Tirmidhî 2499 (les meilleurs reviennent)",
+          "Abû Dâwûd 5090 (rahmataka arjû)"
+        ],
+        "savants_cites": [],
+        "dhikr_quantifie": "Allâhumma rahmataka arjû… × 1",
+        "pratique_corporelle": "La reprise immédiate",
+        "outils_psy": 1
+      }
+    }
+  },
+  "metadata": {
+    "version_actuelle": "1.0 — modèle Cure Regard/Arrogance/Médisance v1.0 (5 blocs par jour)",
+    "outils_psy_total": 10,
+    "duree_estimee_jour_min": 10,
+    "duree_estimee_jour_max": 13,
+    "blocs_par_jour": 5,
+    "verbes_centraux": [
+      "Nommer",
+      "Comprendre",
+      "Saisir le matin",
+      "Démarrer",
+      "Persévérer",
+      "Viser haut",
+      "S'adoucir"
+    ],
+    "specificite_porte": "Cure Paresse (kasal). Fil rouge Ibn al-Qayyim (al-Wâbil al-Sayyib, Madârij). Distinction kasal/'ajz (Ibn Hajar) comme ancrage du garde-fou bien-être. Du'â refuge du Prophète ﷺ (Bukhârî 6369) comme pivot.",
+    "sources_islamiques": {
+      "versets_centraux_par_jour": [
+        "J1 — ar-Ra'd 13:11 (changer ce qui est en soi)",
+        "J2 — ash-Sharh 94:5-6 (avec la difficulté, une facilité)",
+        "J3 — al-'Asr 103:1-3 (par le Temps)",
+        "J4 — al-'Ankabût 29:69 (ceux qui luttent, Nous guidons)",
+        "J5 — al-Baqara 2:286 (pas de charge au-delà de la capacité)",
+        "J6 — al-Isrâ' 17:19 (qui désire l'âkhira et s'efforce)",
+        "J7 — al-Baqara 2:185 (Allah veut pour vous la facilité)"
+      ],
+      "sages_par_jour": [
+        "J1 — Ibn Hajar (distinction kasal/'ajz)",
+        "J2 — Ibn al-Qayyim (le kasal se propage)",
+        "J3 — Hadith (Bukhârî 1142, 3 nœuds)",
+        "J4 — Hadith (Muslim 2664)",
+        "J5 — Hadith (Bukhârî 6464 + 39)",
+        "J6 — Ibn al-Qayyim (himma)",
+        "J7 — Hadith (Tirmidhî 2499)"
+      ],
+      "dhikrs_quantifies": [
+        "J1 — A'ûdhu bika mina-l-'ajzi wa-l-kasal (matin)",
+        "J2 — A'ûdhu bika mina-l-hammi wa-l-hazan",
+        "J3 — Du'â du réveil",
+        "J4 — Allâhumma lâ sahla illâ mâ ja'altahu sahlâ",
+        "J5 — Yâ Muqalliba-l-qulûb × 3",
+        "J6 — Tasbîh de Fâtima 33/33/34",
+        "J7 — Allâhumma rahmataka arjû…"
+      ],
+      "pratiques_corporelles": [
+        "J1 — Un seul geste minuscule maintenant",
+        "J2 — Nommer l'émotion fuie",
+        "J3 — Les 3 nœuds avant le téléphone",
+        "J4 — Faire le pas de 2 min maintenant",
+        "J5 — Habit stacking sur un déclencheur",
+        "J6 — Rappel visible du « pourquoi » + tasbîh",
+        "J7 — La reprise immédiate"
+      ]
+    },
+    "sources_psy": [
+      "Activation comportementale — l'action précède la motivation (J4)",
+      "Procrastination = régulation d'émotion (Pychyl, Steel) (J2)",
+      "Tiny habits / règle des 2 minutes (BJ Fogg, James Clear) (J4-J5)",
+      "Habit stacking + anti tout-ou-rien (J5)",
+      "Routine matinale / contrôle du stimulus (J3)",
+      "Motivation par les valeurs et le sens (ACT) (J6)",
+      "Auto-compassion (Kristin Neff) — antidote à la spirale honte→inaction (J7)"
+    ],
+    "audit_theologique_requis": "Validation par imam francophone OBLIGATOIRE avant production. Vérifier en priorité les GRADES hasan : Tirmidhî 2140, Tirmidhî 2499, Abû Dâwûd 5090, et la du'â Ibn Hibbân 974 (lâ sahla illâ…). Confirmer la distinction d'Ibn Hajar (Fath al-Bârî) et les attributions à Ibn al-Qayyim. Sources arabes à confirmer.",
+    "depistage_specifique": "GARDE-FOU BIEN-ÊTRE INTÉGRÉ (J1, outil 'garde_fou', type checkboxes_avec_message_dynamique) : distingue le kasal d'une possible dépression (lourdeur persistante, anhédonie, désespoir) et oriente vers un professionnel, sans culpabilisation. La cure ne remplace pas un suivi clinique. Aucun objectif chiffré ni pression de performance nulle part.",
+    "images_a_generer": "7 .webp dans assets/cure-paresse/ — famille visuelle aube/lumière qui se lève : de la lourdeur sombre (J1) vers le petit-matin clair et la marche douce (J7). Cohérence avec la couleur de porte (à confirmer dans la grille)."
+  }
+}
