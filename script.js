@@ -1255,7 +1255,10 @@ function loadSavaisTu(cb) {
 var duaasData = null;
 function loadDuaas(cb) {
   if (duaasData) { if (cb) cb(duaasData); return; }
-  fetch('./duaas.json').then(function(r) { return r.json(); }).then(function(data) { duaasData = data; if (cb) cb(data); }).catch(function() { if (cb) cb(null); });
+  fetch('./duaas.json').then(function(r){return r.json();}).then(function(data){
+    duaasData = (data && data.items) ? data.items : (Array.isArray(data) ? data : []);
+    if (cb) cb(duaasData);
+  }).catch(function(){ if (cb) cb([]); });
 }
 function getDuaaJourNum() { var p = parseInt(safeGetItem('niyyah_duaa_progress') || '1', 10); return ((p - 1) % 253) + 1; }
 function getDuaaJourPreview() { var n = getDuaaJourNum(); return { jour: n, total: 253 }; }
