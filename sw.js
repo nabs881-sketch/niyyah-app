@@ -1,4 +1,4 @@
-const VERSION = 'niyyah-v1670';
+const VERSION = 'niyyah-v1671';
 const CORE = [
   './index.html',
   './script.min.js',
@@ -62,6 +62,13 @@ const CORE = [
   './assets/cure-anxiete/j5.webp',
   './assets/cure-anxiete/j6.webp',
   './assets/cure-anxiete/j7.webp',
+  './assets/cure-regard/j1.webp',
+  './assets/cure-regard/j2.webp',
+  './assets/cure-regard/j3.webp',
+  './assets/cure-regard/j4.webp',
+  './assets/cure-regard/j5.webp',
+  './assets/cure-regard/j6.webp',
+  './assets/cure-regard/j7.webp',
   './data/greeting_murmures.json',
 ];
 const FONTS_CACHE = 'niyyah-fonts-v1';
