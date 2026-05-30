@@ -5532,6 +5532,83 @@ _outilAnxieteRenderers.double_slider = function(o, c) {
   return html;
 };
 
+// 3.10 — drag_and_drop_2_colonnes
+_outilAnxieteRenderers.drag_and_drop_2_colonnes = function(o, c) {
+  var cols = o.colonnes || [];
+  var nbMin = o.nombre_min || 3;
+  var nbMax = o.nombre_max || 5;
+  var sk = o.stockage || 'cure_anxiete_dnd2';
+  var saved = {}; try { saved = JSON.parse(safeGetItem(sk) || '{}'); } catch(e) {}
+  var soucis = saved.soucis || [];
+  var classement = saved.classement || {};
+  var dndId = '_dnd2_' + o.id;
+  var html = '';
+  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
+  // Dynamic input fields
+  var nbFields = Math.max(nbMin, soucis.filter(function(s) { return s && s.trim(); }).length + 1);
+  if (nbFields > nbMax) nbFields = nbMax;
+  html += '<div style="margin-bottom:20px;">';
+  for (var i = 0; i < nbFields; i++) {
+    var v = soucis[i] || '';
+    html += '<input type="text" id="' + dndId + '_s' + i + '" value="' + escapeHtml(v) + '" placeholder="Souci ' + (i + 1) + '..." oninput="_dnd2SaveSoucis(\'' + dndId + '\',\'' + sk + '\',' + nbMax + ')" style="display:block;width:100%;box-sizing:border-box;margin-bottom:8px;padding:10px 12px;border-radius:8px;border:1px solid ' + c + '33;background:rgba(200,168,75,0.04);color:#E5E0DC;font-family:var(--serif);font-size:14px;outline:none;">';
+  }
+  html += '</div>';
+  // Two columns
+  html += '<div style="display:flex;gap:10px;margin-bottom:12px;">';
+  cols.forEach(function(col) {
+    html += '<div style="flex:1;min-height:110px;border:1px solid ' + c + '22;border-radius:12px;padding:10px 8px;text-align:center;background:rgba(200,168,75,0.02);">'
+      + '<div style="font-family:\'Scheherazade New\',serif;font-size:18px;color:#C8A84A;direction:rtl;margin-bottom:2px;">' + escapeHtml(col.label_ar || '') + '</div>'
+      + '<div style="font-family:var(--serif);font-size:13px;font-weight:600;color:#C8A84A;margin-bottom:4px;">' + escapeHtml(col.label_fr) + '</div>'
+      + '<div style="font-size:10px;color:rgba(200,168,75,0.4);font-style:italic;margin-bottom:8px;line-height:1.3;">' + escapeHtml(col.description) + '</div>'
+      + '<div id="' + dndId + '_col_' + col.id + '" style="min-height:24px;">';
+    for (var si = 0; si < nbMax; si++) {
+      if (classement['s' + si] === col.id && soucis[si] && soucis[si].trim()) {
+        html += '<div style="font-size:12px;color:rgba(240,234,214,0.7);padding:4px 6px;margin-bottom:4px;border-radius:6px;background:' + c + '15;font-style:italic;">' + escapeHtml(soucis[si]) + '</div>';
+      }
+    }
+    html += '</div></div>';
+  });
+  html += '</div>';
+  // Tap-to-classify unclassified
+  var anyUnclassified = false;
+  for (var si2 = 0; si2 < nbMax; si2++) {
+    if (soucis[si2] && soucis[si2].trim() && !classement['s' + si2]) {
+      anyUnclassified = true;
+      html += '<div style="border:1px solid ' + c + '22;border-radius:10px;padding:10px;margin-bottom:8px;">'
+        + '<div style="font-family:var(--serif);font-size:13px;color:rgba(240,234,214,0.8);margin-bottom:8px;font-style:italic;">\u00ab ' + escapeHtml(soucis[si2]) + ' \u00bb</div>'
+        + '<div style="display:flex;gap:8px;">';
+      cols.forEach(function(col) {
+        html += '<button onclick="_dnd2Classify(\'' + dndId + '\',\'' + sk + '\',' + si2 + ',\'' + col.id + '\',' + nbMax + ')" style="flex:1;padding:10px 4px;border-radius:8px;border:1px solid ' + c + '33;background:none;color:rgba(200,168,75,0.7);font-family:var(--serif);font-size:12px;cursor:pointer;">' + escapeHtml(col.label_fr) + '</button>';
+      });
+      html += '</div></div>';
+    }
+  }
+  if (!anyUnclassified && soucis.some(function(s) { return s && s.trim(); })) {
+    html += '<div style="font-family:var(--serif);font-size:13px;color:rgba(200,168,75,0.5);text-align:center;font-style:italic;margin-bottom:8px;">\u2713 Tout est r\u00e9parti.</div>';
+  }
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
+  return html;
+};
+function _dnd2SaveSoucis(dndId, sk, nbMax) {
+  var saved = {}; try { saved = JSON.parse(safeGetItem(sk) || '{}'); } catch(e) {}
+  var soucis = [];
+  for (var i = 0; i < nbMax; i++) {
+    var el = document.getElementById(dndId + '_s' + i);
+    if (el) soucis.push(el.value); else soucis.push('');
+  }
+  saved.soucis = soucis;
+  safeSetItem(sk, JSON.stringify(saved));
+}
+window._dnd2SaveSoucis = _dnd2SaveSoucis;
+function _dnd2Classify(dndId, sk, sIdx, colId, nbMax) {
+  var saved = {}; try { saved = JSON.parse(safeGetItem(sk) || '{}'); } catch(e) {}
+  if (!saved.classement) saved.classement = {};
+  saved.classement['s' + sIdx] = colId;
+  safeSetItem(sk, JSON.stringify(saved));
+  _cureAnxieteWizardRender();
+}
+window._dnd2Classify = _dnd2Classify;
+
 // 3.9 — pression_tactile_maintenue
 _outilAnxieteRenderers.pression_tactile_maintenue = function(o, c) {
   var duree = o.duree_sec || 30;
