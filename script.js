@@ -5532,6 +5532,40 @@ _outilAnxieteRenderers.double_slider = function(o, c) {
   return html;
 };
 
+// 3.21 — choix_unique_sortie
+_outilAnxieteRenderers.choix_unique_sortie = function(o, c) {
+  var opts = o.options || [];
+  var sk = o.stockage || 'cure_anxiete_sortie';
+  var saved = safeGetItem(sk) || '';
+  var html = '';
+  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
+  html += '<div style="display:flex;flex-direction:column;gap:12px;max-width:340px;margin:0 auto 16px;">';
+  opts.forEach(function(opt) {
+    var sel = saved === opt.id;
+    html += '<button onclick="_sortieSelect(\'' + sk + '\',\'' + opt.id + '\')" style="display:block;text-align:left;padding:16px;border-radius:14px;border:1px solid ' + (sel ? c : 'rgba(200,168,75,0.15)') + ';background:' + (sel ? c + '12' : 'rgba(200,168,75,0.03)') + ';cursor:pointer;transition:all 0.2s;">'
+      + '<div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">'
+      + '<div style="font-family:\'Scheherazade New\',serif;font-size:18px;color:#C8A84A;direction:rtl;">' + escapeHtml(opt.label_ar || '') + '</div>'
+      + '<div style="font-family:var(--serif);font-size:15px;font-weight:600;color:' + (sel ? '#C8A84A' : 'rgba(240,234,214,0.9)') + ';">' + escapeHtml(opt.label_fr) + '</div>'
+      + '<div style="font-family:var(--serif);font-size:12px;color:rgba(200,168,75,0.5);font-style:italic;">' + escapeHtml(opt.subtitle || '') + '</div>'
+      + '</div>'
+      + '<div style="font-family:var(--serif);font-size:13px;color:rgba(240,234,214,0.6);line-height:1.5;">' + escapeHtml(opt.description) + '</div>'
+      + '</button>';
+  });
+  html += '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;">' + escapeHtml(o.note_spi) + '</div>';
+  return html;
+};
+function _sortieSelect(sk, optId) {
+  safeSetItem(sk, optId);
+  // Apply consequence: if "reprendre", reset cure for restart tomorrow
+  if (optId === 'reprendre') {
+    var cure = {}; try { cure = JSON.parse(safeGetItem('cure_anxiete') || '{}'); } catch(e) {}
+    cure.restart_pending = true;
+  }
+  _cureAnxieteWizardRender();
+}
+window._sortieSelect = _sortieSelect;
+
 // 3.20 — checkboxes_multiple
 _outilAnxieteRenderers.checkboxes_multiple = function(o, c) {
   var opts = o.options || [];
@@ -6606,13 +6640,21 @@ function _cureAnxieteSave(num) {
     var cure = JSON.parse(safeGetItem('cure_anxiete') || '{}');
     if (num === 1) { cure.started = cure.started || new Date().toISOString(); }
     if (num === 7) {
-      cure.active = false;
-      cure.completed = true;
-      cure.completed_date = new Date().toISOString();
-      var count = parseInt(safeGetItem('cures_anxiete_count') || '0', 10);
-      safeSetItem('cures_anxiete_count', String(count + 1));
+      var orientation = safeGetItem('cure_anxiete_j7_orientation') || 'veiller';
+      cure.orientation = orientation;
+      if (orientation === 'reprendre') {
+        cure.current_day = 1;
+        cure.completed = false;
+        cure.active = true;
+      } else {
+        cure.active = false;
+        cure.completed = true;
+        cure.completed_date = new Date().toISOString();
+        var count = parseInt(safeGetItem('cures_anxiete_count') || '0', 10);
+        safeSetItem('cures_anxiete_count', String(count + 1));
+      }
     }
-    cure.current_day = nextDay;
+    if (num < 7) cure.current_day = nextDay;
     cure['jour' + num + '_date'] = new Date().toISOString();
     safeSetItem('cure_anxiete', JSON.stringify(cure));
   } catch(e) {}
