@@ -5532,6 +5532,89 @@ _outilAnxieteRenderers.double_slider = function(o, c) {
   return html;
 };
 
+// 3.9 — pression_tactile_maintenue
+_outilAnxieteRenderers.pression_tactile_maintenue = function(o, c) {
+  var duree = o.duree_sec || 30;
+  var phrase = o.phrase_a_repeter || {};
+  var sk = o.stockage || 'cure_anxiete_pression';
+  var pressId = '_press_' + o.id;
+  var html = '';
+  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
+  // Phrase to repeat
+  if (phrase.ar) html += '<div style="font-family:\'Scheherazade New\',serif;font-size:22px;color:#C8A84A;direction:rtl;text-align:center;margin-bottom:4px;">' + escapeHtml(phrase.ar) + '</div>';
+  if (phrase.translit) html += '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.55);text-align:center;margin-bottom:6px;">' + escapeHtml(phrase.translit) + '</div>';
+  if (phrase.fr) html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.75);text-align:center;margin-bottom:20px;line-height:1.5;">' + escapeHtml(phrase.fr) + '</div>';
+  // Touch zone with progress ring
+  html += '<div style="display:flex;flex-direction:column;align-items:center;margin-bottom:16px;">';
+  html += '<div id="' + pressId + '_zone" style="position:relative;width:160px;height:160px;display:flex;align-items:center;justify-content:center;cursor:pointer;-webkit-user-select:none;user-select:none;">';
+  // SVG progress ring
+  var circumference = 2 * Math.PI * 70;
+  html += '<svg width="160" height="160" viewBox="0 0 160 160" style="position:absolute;inset:0;transform:rotate(-90deg);">'
+    + '<circle cx="80" cy="80" r="70" fill="none" stroke="' + c + '22" stroke-width="4"/>'
+    + '<circle id="' + pressId + '_ring" cx="80" cy="80" r="70" fill="none" stroke="' + c + '" stroke-width="4" stroke-dasharray="' + circumference + '" stroke-dashoffset="' + circumference + '" stroke-linecap="round" style="transition:stroke-dashoffset 0.25s linear;"/>'
+    + '</svg>';
+  // Center text
+  html += '<div style="text-align:center;z-index:1;">'
+    + '<div id="' + pressId + '_icon" style="font-size:36px;color:' + c + ';opacity:0.6;margin-bottom:4px;">\u270B</div>'
+    + '<div id="' + pressId + '_time" style="font-family:var(--serif);font-size:14px;color:rgba(200,168,75,0.5);">0/' + duree + 's</div>'
+    + '</div>';
+  html += '</div>';
+  html += '<div id="' + pressId + '_hint" style="font-size:12px;color:rgba(200,168,75,0.4);font-style:italic;margin-top:8px;">Maintiens le contact</div>';
+  html += '</div>';
+  if (o.instruction_finale) html += '<div id="' + pressId + '_final" style="display:none;font-family:var(--serif);font-size:13px;color:rgba(240,234,214,0.65);text-align:center;line-height:1.6;margin-bottom:12px;font-style:italic;">' + escapeHtml(o.instruction_finale) + '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
+  // Wire up touch/mouse events after render
+  setTimeout(function() { _pressInit(pressId, duree, circumference, sk); }, 200);
+  return html;
+};
+function _pressInit(id, duree, circumference, sk) {
+  var zone = document.getElementById(id + '_zone');
+  if (!zone) return;
+  var ring = document.getElementById(id + '_ring');
+  var timeEl = document.getElementById(id + '_time');
+  var hintEl = document.getElementById(id + '_hint');
+  var finalEl = document.getElementById(id + '_final');
+  var elapsed = 0;
+  var pressing = false;
+  var interval = null;
+  var done = false;
+  function tick() {
+    if (!pressing || done) return;
+    elapsed += 0.25;
+    if (elapsed >= duree) { elapsed = duree; done = true; }
+    if (ring) ring.style.strokeDashoffset = String(circumference * (1 - elapsed / duree));
+    if (timeEl) timeEl.textContent = Math.floor(elapsed) + '/' + duree + 's';
+    if (done) {
+      if (interval) clearInterval(interval);
+      safeSetItem(sk, String(Math.round(elapsed)));
+      if (hintEl) hintEl.textContent = '\u2713 Termin\u00e9';
+      if (finalEl) finalEl.style.display = 'block';
+      zone.style.opacity = '0.5';
+    }
+  }
+  function start(e) {
+    e.preventDefault();
+    if (done) return;
+    pressing = true;
+    if (hintEl) hintEl.textContent = 'Maintiens...';
+    interval = setInterval(tick, 250);
+  }
+  function stop() {
+    pressing = false;
+    if (interval) { clearInterval(interval); interval = null; }
+    if (!done) {
+      safeSetItem(sk, String(Math.round(elapsed)));
+      if (hintEl) hintEl.textContent = 'Rel\u00e2ch\u00e9 \u2014 reprends quand tu veux';
+    }
+  }
+  zone.addEventListener('touchstart', start, { passive: false });
+  zone.addEventListener('mousedown', start);
+  zone.addEventListener('touchend', stop);
+  zone.addEventListener('touchcancel', stop);
+  zone.addEventListener('mouseup', stop);
+  zone.addEventListener('mouseleave', stop);
+}
+
 // 3.8 — silhouette_interactive
 _outilAnxieteRenderers.silhouette_interactive = function(o, c) {
   var zones = o.zones || [];
