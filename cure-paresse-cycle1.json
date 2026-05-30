@@ -1,7 +1,7 @@
 {
   "id": "cure-paresse-cycle1",
   "cycle": 1,
-  "version": "1.0",
+  "version": "1.1",
   "date_creation": "2026-05-30",
   "porte": "paresse",
   "principes_editoriaux": {
@@ -116,7 +116,7 @@
           "stockage": "cure_paresse_garde_fou",
           "message_si_coche": {
             "titre": "Ce que tu décris n'est pas de la paresse.",
-            "texte": "C'est une souffrance réelle — et une souffrance, ça se soigne. Ce n'est ni un manque de volonté ni une faute : Ibn Hajar te l'a rappelé, on n'est tenu qu'à ce qu'on peut, et Allah est Miséricordieux pour le reste. En parler à un médecin ou un professionnel est une force, pas un échec. Cette cure peut t'accompagner en douceur — mais elle ne remplace pas ce soutien."
+            "texte": "C'est une souffrance réelle — et une souffrance, ça se soigne. Ce n'est ni un manque de volonté ni une faute : Ibn Hajar te l'a rappelé, on n'est tenu qu'à ce qu'on peut, et Allah est Miséricordieux pour le reste. En parler à un médecin ou un professionnel est une force, pas un échec. Cette cure peut t'accompagner en douceur — mais elle ne remplace pas ce soutien. Et si tout te semble sans issue, ou si tu penses ne plus vouloir être là : ne reste pas seul. Parle dès maintenant à quelqu'un de confiance, ou à une ligne d'écoute."
           },
           "message_si_aucun_coche": {
             "texte": "Bien. Alors il s'agit surtout de l'élan — et l'élan, ça se rallume doucement, à partir d'un seul petit geste. Continuons."
@@ -525,7 +525,7 @@
           "dates_auteur": "",
           "oeuvre": "Sahîh Muslim 2664",
           "siecle": "Ier siècle de l'hégire",
-          "note": "Trois temps dans l'ordre : viser l'utile, demander l'aide d'Allah, ne pas abandonner. L'effort et l'appui sur Allah marchent ensemble. La fin du hadith coupe court à la rumination du « si seulement »."
+          "note": "Trois temps dans l'ordre : viser l'utile, demander l'aide d'Allah, ne pas abandonner. L'effort et l'appui sur Allah marchent ensemble. La fin du hadith coupe court à la rumination du « si seulement ». Et si même le plus petit pas reste hors d'atteinte malgré tout, ce n'est pas de la paresse mais un signal : sois doux avec toi, et au besoin vois un professionnel."
         }
       },
       "introduction_avant_outils": "Voici le cœur du remède, et il renverse ce que tu crois : tu n'attends pas l'envie pour agir — tu agis, et l'envie suit.",
@@ -764,7 +764,7 @@
           "dates_auteur": "1292-1350",
           "oeuvre": "Madârij as-Sâlikîn ; al-Fawâ'id",
           "siecle": "XIVe siècle",
-          "note": "Tu n'as pas un problème de force. Tu as un regard baissé. Relève-le."
+          "note": "S'il s'agit bien de kasal — non d'un épuisement réel — alors ton obstacle n'est pas la force, mais le regard : relève-le. Mais si la lourdeur dépasse ta volonté et ne lâche pas, ce n'est pas de la paresse : parles-en à un médecin, sans honte."
         }
       },
       "introduction_avant_outils": "On a appris le petit pas et la constance. Mais un petit pas sans direction s'essouffle. Aujourd'hui, on relève les yeux : pour quoi, au juste, ça vaut la peine de se lever ?",
@@ -828,7 +828,7 @@
         "note": "Relié au sens, l'effort cesse d'être subi.",
         "stockage": "cure_paresse_j6_corps_done"
       },
-      "phrase_ancre": "Je n'ai pas un problème de force, mais un regard baissé.",
+      "phrase_ancre": "Je vise plus haut que mon humeur du jour.",
       "cloture": {
         "texte": "Tu as écrit la raison plus grande que ton humeur.\nTu l'as mise sous tes yeux.\nTu connais le tasbîh qui donne force.\n\nDemain — le dernier jour : la douceur qui dure.",
         "bouton": "Je relève le regard. À demain.",
@@ -971,7 +971,7 @@
     }
   },
   "metadata": {
-    "version_actuelle": "1.0 — modèle Cure Regard/Arrogance/Médisance v1.0 (5 blocs par jour)",
+    "version_actuelle": "1.1 — passe bien-être (garde-fou récurrent, phrase J6 conditionnée, ligne de crise, attributions resserrées)",
     "outils_psy_total": 10,
     "duree_estimee_jour_min": 10,
     "duree_estimee_jour_max": 13,
@@ -1033,7 +1033,7 @@
       "Motivation par les valeurs et le sens (ACT) (J6)",
       "Auto-compassion (Kristin Neff) — antidote à la spirale honte→inaction (J7)"
     ],
-    "audit_theologique_requis": "Validation par imam francophone OBLIGATOIRE avant production. Vérifier en priorité les GRADES hasan : Tirmidhî 2140, Tirmidhî 2499, Abû Dâwûd 5090, et la du'â Ibn Hibbân 974 (lâ sahla illâ…). Confirmer la distinction d'Ibn Hajar (Fath al-Bârî) et les attributions à Ibn al-Qayyim. Sources arabes à confirmer.",
+    "audit_theologique_requis": "Validation par imam francophone OBLIGATOIRE avant production. ATTENTION PARTICULIÈRE : les paroles attribuées à Ibn al-Qayyim (J2, J6) et à Ibn Hajar (J1) sont des SYNTHÈSES fidèles à leur enseignement, PAS des citations verbatim vérifiées — confirmer le texte arabe exact ou marquer « dans l'esprit de ». Le « tasbîh de Fâtima donne une force au corps » (J6) est rapporté d'Ibn al-Qayyim (al-Wâbil al-Sayyib) — à confirmer. GRADES hasan à vérifier : Tirmidhî 2140, 2499, 2417, Abû Dâwûd 2606, 5090, Ibn Hibbân 974. BIEN-ÊTRE : garde-fou récurrent (J1 message_si_coche avec ligne d'orientation de crise + rappels doux J4/J6) ; phrase J6 conditionnée au kasal pour ne pas blesser une personne en dépression. La cure ne remplace pas un suivi clinique. Cette porte étant la moins ancrée sur un traité unique, sa validation est la plus critique des six.",
     "depistage_specifique": "GARDE-FOU BIEN-ÊTRE INTÉGRÉ (J1, outil 'garde_fou', type checkboxes_avec_message_dynamique) : distingue le kasal d'une possible dépression (lourdeur persistante, anhédonie, désespoir) et oriente vers un professionnel, sans culpabilisation. La cure ne remplace pas un suivi clinique. Aucun objectif chiffré ni pression de performance nulle part.",
     "images_a_generer": "7 .webp dans assets/cure-paresse/ — famille visuelle aube/lumière qui se lève : de la lourdeur sombre (J1) vers le petit-matin clair et la marche douce (J7). Cohérence avec la couleur de porte (à confirmer dans la grille)."
   }
