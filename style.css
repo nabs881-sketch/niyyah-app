@@ -6088,7 +6088,7 @@ body::before {
 }
 .greeting-eyebrow {
   font-family: 'Cormorant Garamond', serif;
-  font-size:12px; letter-spacing: 0.35em; color: rgba(212,175,55,0.45);
+  font-size:14px; letter-spacing: 0.35em; color: rgba(212,175,55,0.45);
   text-transform: uppercase; margin-bottom: 6px;
 }
 .greeting-text {
@@ -6208,7 +6208,7 @@ body::before {
 
 .orb-cta-v2 {
   font-family: 'Cormorant Garamond', serif;
-  font-size:12px; letter-spacing: 0.18em;
+  font-size:14px; letter-spacing: 0.18em;
   text-transform: uppercase; color: rgba(212,175,55,0.45);
   transition: color 0.3s;
   position: relative; z-index: 1;
@@ -8982,7 +8982,7 @@ body.onboarding-active #nav-bar-v2 {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   color: rgba(200,168,74,0.5);
-  font-size: 14px;
+  font-size: 15px;
   padding: 18px 0 6px;
   letter-spacing: 0.05em;
 }
@@ -9037,7 +9037,7 @@ body.onboarding-active #nav-bar-v2 {
   align-items: center;
   gap: 12px;
   font-family: 'Nunito', sans-serif;
-  font-size: 11px;
+  font-size: 14px;
   color: rgba(240,234,214,0.5);
   letter-spacing: 0.05em;
 }
