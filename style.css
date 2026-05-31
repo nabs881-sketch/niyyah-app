@@ -6102,12 +6102,7 @@ body::before {
 @keyframes _salamFadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
 
 .mandala-bg {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  width: 140%; height: 140%;
-  pointer-events: none;
-  z-index: 0;
+  display: none;
 }
 .orb-wrap-v2 {
   position: relative;
@@ -6197,19 +6192,19 @@ body::before {
 
 .orb-symbol-v2 {
   font-family: 'Scheherazade New', var(--font-v2-ar);
-  font-size: 64px; font-weight: 700; color: #D98E55; line-height: 1;
-  text-shadow: 0 2px 6px rgba(0,0,0,.6), 0 0 8px rgba(216,142,85,.3);
+  font-size: 64px; font-weight: 700; color: #F2D27A; line-height: 1;
+  text-shadow: 0 2px 6px rgba(0,0,0,.6), 0 0 8px rgba(246,221,154,.3);
   margin-bottom: 12px;
   transition: color 0.4s; user-select: none;
   animation: orbSymbolPulse 5s ease-in-out infinite;
   position: relative; z-index: 1;
 }
 @keyframes orbSymbolPulse {
-  0%, 100% { text-shadow: 0 2px 6px rgba(0,0,0,.6), 0 0 8px rgba(216,142,85,.2); }
-  50% { text-shadow: 0 2px 6px rgba(0,0,0,.6), 0 0 22px rgba(216,142,85,.6), 0 0 44px rgba(216,142,85,.25); }
+  0%, 100% { text-shadow: 0 2px 6px rgba(0,0,0,.6), 0 0 8px rgba(246,221,154,.2); }
+  50% { text-shadow: 0 2px 6px rgba(0,0,0,.6), 0 0 22px rgba(246,221,154,.6), 0 0 44px rgba(246,221,154,.25); }
 }
 .orb-core-v2:hover .orb-symbol-v2,
-.orb-core-v2.intention-set-v2 .orb-symbol-v2 { color: #E8A56A; }
+.orb-core-v2.intention-set-v2 .orb-symbol-v2 { color: #FFF0C0; }
 
 .orb-cta-v2 {
   font-family: 'Cormorant Garamond', serif;
