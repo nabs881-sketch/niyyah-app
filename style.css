@@ -6143,23 +6143,7 @@ body::before {
   border: 1px solid transparent; pointer-events: none;
   z-index: 1;
 }
-.orb-ring-v2:nth-child(1) {
-  width: 207px; height: 207px;
-  border-color: rgba(240,206,120,0.4);
-  animation: orbWaveRing 4.6s ease-out infinite;
-}
-.orb-ring-v2:nth-child(2) {
-  width: 207px; height: 207px;
-  border-color: rgba(240,206,120,0.4);
-  animation: orbWaveRing 4.6s ease-out 2.3s infinite;
-}
-.orb-ring-v2:nth-child(3) {
-  display: none;
-}
-@keyframes orbWaveRing {
-  0% { transform: scale(.55); opacity: .7; }
-  100% { transform: scale(1.5); opacity: 0; }
-}
+.orb-ring-v2 { display: none; }
 
 .orb-core-v2 {
   position: relative;
