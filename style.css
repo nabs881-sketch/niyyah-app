@@ -6143,59 +6143,52 @@ body::before {
 
 .orb-core-v2 {
   position: relative;
-  width: 207px; height: 207px; border-radius: 0;
+  width: 180px; height: 180px; border-radius: 50%;
   background: radial-gradient(
-    circle at 38% 35%,
-    rgba(228,218,140,0.16) 0%,
-    rgba(212,175,55,0.09) 30%,
-    rgba(135,169,107,0.05) 60%,
+    circle at 50% 45%,
+    rgba(20,18,14,0.85) 0%,
     rgba(10,10,10,0.98) 100%
   );
-  border: none;
-  box-shadow: none;
+  border: 1px solid rgba(200,168,75,0.25);
+  box-shadow:
+    0 0 50px rgba(200,168,75,0.12),
+    inset 0 0 30px rgba(200,168,75,0.05);
   display: flex; flex-direction: column;
   align-items: center; justify-content: center; gap: 4px;
   transition: all 0.5s var(--ease-silk-v2);
   animation: orbBreathV2 5s var(--ease-breath-v2) infinite;
   z-index: 1;
 }
-.orb-core-v2::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 0;
-  background: url('assets/cards/ornement-niyyah.webp') center/contain no-repeat;
-  pointer-events: none;
-  z-index: 0;
-}
 .orb-core-v2:hover, .orb-core-v2:active {
-  transform: scale(1.02);
+  transform: scale(1.03);
+  box-shadow:
+    0 0 70px rgba(200,168,75,0.2),
+    inset 0 0 40px rgba(200,168,75,0.08);
+  border-color: rgba(200,168,75,0.4);
 }
 .orb-core-v2.intention-set-v2 {
   background: radial-gradient(
-    circle at 38% 35%,
-    rgba(228,218,140,0.24) 0%,
-    rgba(212,175,55,0.15) 30%,
-    rgba(135,169,107,0.08) 60%,
-    rgba(10,10,10,0.95) 100%
+    circle at 50% 45%,
+    rgba(228,218,140,0.12) 0%,
+    rgba(10,10,10,0.96) 100%
   );
-  border-color: rgba(212,175,55,0.45);
+  border-color: rgba(200,168,75,0.45);
   animation: orbBreathActiveV2 4s var(--ease-breath-v2) infinite;
 }
 @keyframes orbBreathV2 {
-  0%, 100% { transform: scale(1); }
-  50%       { transform: scale(1.02); }
+  0%, 100% { transform: scale(1); box-shadow: 0 0 50px rgba(200,168,75,0.12), inset 0 0 30px rgba(200,168,75,0.05); }
+  50%       { transform: scale(1.02); box-shadow: 0 0 70px rgba(200,168,75,0.2), inset 0 0 40px rgba(200,168,75,0.08); }
 }
 @keyframes orbBreathActiveV2 {
-  0%, 100% { transform: scale(1); }
-  50%       { transform: scale(1.03); }
+  0%, 100% { transform: scale(1); box-shadow: 0 0 70px rgba(200,168,75,0.25), inset 0 0 40px rgba(200,168,75,0.1); }
+  50%       { transform: scale(1.03); box-shadow: 0 0 100px rgba(200,168,75,0.35), inset 0 0 50px rgba(200,168,75,0.14); }
 }
 
 .orb-symbol-v2 {
   font-family: 'Scheherazade New', var(--font-v2-ar);
   font-size: 64px; font-weight: 700; color: var(--or-vif); line-height: 1;
   text-shadow: 0 2px 6px rgba(0,0,0,.6), 0 0 8px rgba(236,199,90,.3);
-  margin-bottom: 12px;
+  margin-bottom: 0;
   transition: color 0.4s; user-select: none;
   animation: orbSymbolPulse 5s ease-in-out infinite;
   position: relative; z-index: 1;
@@ -6209,10 +6202,15 @@ body::before {
 
 .orb-cta-v2 {
   font-family: 'Cormorant Garamond', serif;
-  font-size:14px; letter-spacing: 0.18em;
-  text-transform: uppercase; color: rgba(212,175,55,0.45);
+  font-size:13px; letter-spacing: 0.18em;
+  text-transform: uppercase; color: rgba(200,168,75,0.5);
   transition: color 0.3s;
-  position: relative; z-index: 1;
+  position: absolute;
+  bottom: -32px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  z-index: 1;
 }
 .orb-core-v2:hover .orb-cta-v2 { color: rgba(212,175,55,0.75); }
 
@@ -6965,7 +6963,7 @@ body.alhaya-active .niyyah-menu-backdrop { display: none !important; }
 * { transition: color 0.5s ease, border-color 0.5s ease, background-color 0.5s ease, box-shadow 0.5s ease; }
 
 /* Éléments qui utilisent --main-color */
-.orb-core-v2 { border: none !important; box-shadow: none !important; }
+.orb-core-v2 { border-color: var(--main-color) !important; }
 .level-fill-v2 { background: linear-gradient(to right, var(--main-color), var(--main-color)) !important; }
 .btn-bismillah { background: linear-gradient(135deg, var(--main-color), color-mix(in srgb, var(--main-color) 70%, white)) !important; }
 .level-name-v2, .level-xp-v2 { color: var(--main-color) !important; opacity: 0.9; }
