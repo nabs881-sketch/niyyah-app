@@ -6093,8 +6093,8 @@ body::before {
 }
 .greeting-text {
   font-family: var(--font-v2-latin);
-  font-size: 25px; font-weight: 300; font-style: italic;
-  color: var(--pearl-v2); line-height: 1.35;
+  font-size: 22px; font-weight: 300; font-style: italic;
+  color: var(--pearl-v2); line-height: 1.45;
   opacity: 0;
   margin-bottom: 32px;
 }
@@ -8982,9 +8982,10 @@ body.onboarding-active #nav-bar-v2 {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   color: rgba(200,168,74,0.5);
-  font-size: 16px;
+  font-size: 15px;
   padding: 18px 0 6px;
   letter-spacing: 0.05em;
+  line-height: 1.45;
 }
 .fil-jour-card {
   background: linear-gradient(135deg, #2d2520 0%, #1f1812 50%, #15100a 100%);
@@ -9018,18 +9019,20 @@ body.onboarding-active #nav-bar-v2 {
 }
 .fil-jour-card .titre {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 600;
   letter-spacing: 0.25em;
   color: rgba(220,180,90,0.95);
   margin-bottom: 5px;
+  line-height: 1.45;
 }
 .fil-jour-card .soustitre {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  font-size: 12px;
+  font-size: 15px;
   color: rgba(240,234,214,0.6);
   margin-bottom: 10px;
+  line-height: 1.45;
 }
 .fil-jour-card .compteur {
   display: flex;
@@ -9037,9 +9040,10 @@ body.onboarding-active #nav-bar-v2 {
   align-items: center;
   gap: 12px;
   font-family: 'Nunito', sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   color: rgba(240,234,214,0.5);
   letter-spacing: 0.05em;
+  line-height: 1.45;
 }
 .fil-jour-card .compteur .pulse {
   width: 8px;

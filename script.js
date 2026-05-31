@@ -13593,7 +13593,7 @@ function updateSanctuaireMoment() {
     var tahajjudDone = hasLevel4 && !!state['tahajjud'];
     var qSub = hasLevel4 ? (tahajjudDone ? 'Le rendez-vous de la nuit' : 'Le rendez-vous de la nuit') : 'Dors avec le Witr';
     el.innerHTML = '<div style="text-align:center;padding:8px;">'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:700;color:#C8A84A;">' + _iconSpan + (hasLevel4 ? t('block_qiyam') : 'La nuit est pour le repos') + '</div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;font-weight:700;color:#C8A84A;line-height:1.45;">' + _iconSpan + (hasLevel4 ? t('block_qiyam') : 'La nuit est pour le repos') + '</div>'
       + '<div style="font-family:\'Inter\',var(--sans);font-size:12px;color:rgba(255,255,255,0.6);margin-top:4px;">' + qSub + '</div>'
       + (hasLevel4 && !tahajjudDone ? '<button onclick="event.stopPropagation();state[\'tahajjud\']=true;saveState();showToast(\'Qiyam al-Layl tiss\u00e9 \u2713\');updateSanctuaireMoment();" ontouchend="event.stopPropagation();event.preventDefault();state[\'tahajjud\']=true;saveState();showToast(\'Qiyam al-Layl tiss\u00e9 \u2713\');updateSanctuaireMoment();" style="display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin-top:10px;padding:14px 28px;background:linear-gradient(180deg,#C8A84A,#B5934A);border:none;border-radius:12px;color:#2C2E32;font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;cursor:pointer;box-shadow:inset 0 1px 3px rgba(0,0,0,0.15);" ontouchstart="this.style.opacity=\'0.85\'" ontouchmove="this.style.opacity=\'1\'" ontouchcancel="this.style.opacity=\'1\'">Prier <span style="font-size:18px;font-style:normal;color:#2C2E32;">\u203A</span></button>' : '')
       + '</div>';
@@ -13634,7 +13634,7 @@ function updateSanctuaireMoment() {
   }
   if (blockRemaining === 0) {
     el.innerHTML = '<div style="text-align:center;padding:8px;">'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:700;color:#C8A84A;">' + _iconSpan + t('bloc_done') + '</div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;font-weight:700;color:#C8A84A;line-height:1.45;">' + _iconSpan + t('bloc_done') + '</div>'
       + _nextInfo
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.6);margin-top:4px;">Tu as honor\u00e9 ce moment.</div>'
       + jourLine
@@ -13642,7 +13642,7 @@ function updateSanctuaireMoment() {
     el.innerHTML += getFilJourCardHTML();
   } else {
     el.innerHTML = '<div style="text-align:center;padding:8px;">'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:700;color:#C8A84A;">' + _iconSpan + block.label + '</div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;font-weight:700;color:#C8A84A;line-height:1.45;">' + _iconSpan + block.label + '</div>'
       + _nextInfo
       + jourLine
       + '<button class="btn-bismillah-moment" onclick="event.stopPropagation();var _m=getCurrentPrayerBlock();if(_m&&_m.id)openVueRituel(_m.id);else selectLevel(currentLevel);" ontouchend="if(!_isTapNotScroll(event))return;event.stopPropagation();event.preventDefault();var _m=getCurrentPrayerBlock();if(_m&&_m.id)openVueRituel(_m.id);else selectLevel(currentLevel);">' + t('btn_continue') + '</button>'
