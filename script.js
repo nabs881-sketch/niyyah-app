@@ -13644,7 +13644,6 @@ function updateSanctuaireMoment() {
     el.innerHTML = '<div style="text-align:center;padding:8px;">'
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:700;color:#C8A84A;">' + _iconSpan + block.label + '</div>'
       + _nextInfo
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.5);margin-top:4px;">' + (blockDone === 0 ? 'Ce moment t\u2019attend.' : 'Quelques gestes \u00e0 poser pour ce moment.') + '</div>'
       + jourLine
       + '<button class="btn-bismillah-moment" onclick="event.stopPropagation();var _m=getCurrentPrayerBlock();if(_m&&_m.id)openVueRituel(_m.id);else selectLevel(currentLevel);" ontouchend="if(!_isTapNotScroll(event))return;event.stopPropagation();event.preventDefault();var _m=getCurrentPrayerBlock();if(_m&&_m.id)openVueRituel(_m.id);else selectLevel(currentLevel);">' + t('btn_continue') + '</button>'
       + '</div>';
