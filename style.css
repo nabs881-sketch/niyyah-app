@@ -6956,17 +6956,17 @@ body.alhaya-active .niyyah-menu-backdrop { display: none !important; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(180deg,#F8E8B6 0%,#CCAC52 100%);
+  background: linear-gradient(180deg,#FFF6DD 0%,#F0CE78 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  filter: drop-shadow(0 1px 2px rgba(0,0,0,.9));
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,.95));
 }
 .card-title-overlay::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 55%, transparent 100%);
+  background: linear-gradient(to top, rgba(0,0,0,.92) 0%, rgba(0,0,0,.55) 38%, transparent 72%);
   z-index: -1;
   pointer-events: none;
 }
@@ -6975,7 +6975,7 @@ body.alhaya-active .niyyah-menu-backdrop { display: none !important; }
   display: block;
   width: 46px;
   height: 1px;
-  background: rgba(200,168,74,.8);
+  background: rgba(220,188,90,.85);
   margin-bottom: 7px;
 }
 .quick-btn-v2 .quick-icon-v2,
