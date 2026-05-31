@@ -6164,7 +6164,7 @@ body::before {
 .orb-core-v2 {
   position: relative;
   width: 207px; height: 207px; border-radius: 50%;
-  background: url('assets/cards/ornement-niyyah.webp') center/contain no-repeat, radial-gradient(
+  background: radial-gradient(
     circle at 38% 35%,
     rgba(228,218,140,0.16) 0%,
     rgba(212,175,55,0.09) 30%,
@@ -6181,6 +6181,15 @@ body::before {
   transition: all 0.5s var(--ease-silk-v2);
   animation: orbBreathV2 5s var(--ease-breath-v2) infinite;
   z-index: 1;
+}
+.orb-core-v2::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: url('assets/cards/ornement-niyyah.webp') center/contain no-repeat;
+  pointer-events: none;
+  z-index: 0;
 }
 .orb-core-v2:hover, .orb-core-v2:active {
   box-shadow:
@@ -6217,6 +6226,7 @@ body::before {
   margin-bottom: 12px;
   transition: color 0.4s; user-select: none;
   animation: orbSymbolPulse 5s ease-in-out infinite;
+  position: relative; z-index: 1;
 }
 @keyframes orbSymbolPulse {
   0%, 100% { text-shadow: 0 2px 6px rgba(0,0,0,.6), 0 0 8px rgba(240,206,120,.2); }
@@ -6230,6 +6240,7 @@ body::before {
   font-size:12px; letter-spacing: 0.18em;
   text-transform: uppercase; color: rgba(212,175,55,0.45);
   transition: color 0.3s;
+  position: relative; z-index: 1;
 }
 .orb-core-v2:hover .orb-cta-v2 { color: rgba(212,175,55,0.75); }
 
