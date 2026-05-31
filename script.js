@@ -4933,7 +4933,6 @@ function _cureColereGenericDay(el, dayNum) {
 
 
 
-window._cureWizardSaveTravail = _cureWizardSaveTravail;
 
 
 
