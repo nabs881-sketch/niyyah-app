@@ -6107,7 +6107,7 @@ body::before {
 }
 .orb-wrap-v2 {
   position: relative;
-  width: 207px; height: 207px;
+  width: 228px; height: 228px;
   display: flex; align-items: center; justify-content: center;
   cursor: pointer; margin: 0 auto 40px;
   animation: fadeSlideV2 0.8s var(--ease-silk-v2) 0.3s both;
@@ -6139,7 +6139,7 @@ body::before {
 
 .orb-core-v2 {
   position: relative;
-  width: 207px; height: 207px; border-radius: 50%;
+  width: 228px; height: 228px; border-radius: 50%; aspect-ratio: 1; transform-origin: center;
   overflow: hidden;
   background: radial-gradient(
     circle at 37% 31%,
@@ -6240,12 +6240,12 @@ body::before {
   animation: orbBreathActiveV2 4s var(--ease-breath-v2) infinite;
 }
 @keyframes orbBreathV2 {
-  0%, 100% { box-shadow: inset -20px -24px 55px rgba(0,0,0,.88), inset 16px 18px 46px rgba(255,210,130,.14), 0 0 70px rgba(200,150,70,.22); }
-  50%       { box-shadow: inset -20px -24px 55px rgba(0,0,0,.82), inset 16px 18px 46px rgba(255,210,130,.2), 0 0 90px rgba(200,150,70,.3); }
+  0%, 100% { transform: scale(1); box-shadow: inset -20px -24px 55px rgba(0,0,0,.88), inset 16px 18px 46px rgba(255,210,130,.14), 0 0 70px rgba(200,150,70,.22); }
+  50%       { transform: scale(1.045); box-shadow: inset -20px -24px 55px rgba(0,0,0,.82), inset 16px 18px 46px rgba(255,210,130,.22), 0 0 90px rgba(200,150,70,.32); }
 }
 @keyframes orbBreathActiveV2 {
-  0%, 100% { box-shadow: inset -20px -24px 55px rgba(0,0,0,.82), inset 16px 18px 46px rgba(255,210,130,.2), 0 0 90px rgba(200,150,70,.3); }
-  50%       { box-shadow: inset -20px -24px 55px rgba(0,0,0,.75), inset 16px 18px 46px rgba(255,210,130,.28), 0 0 110px rgba(200,150,70,.38); }
+  0%, 100% { transform: scale(1); box-shadow: inset -20px -24px 55px rgba(0,0,0,.82), inset 16px 18px 46px rgba(255,210,130,.2), 0 0 85px rgba(200,150,70,.3); }
+  50%       { transform: scale(1.045); box-shadow: inset -20px -24px 55px rgba(0,0,0,.75), inset 16px 18px 46px rgba(255,210,130,.28), 0 0 105px rgba(200,150,70,.38); }
 }
 
 .orb-symbol-v2 {
