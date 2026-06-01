@@ -13524,17 +13524,24 @@ function updateFajrChallenge() {
   var today = new Date();
   var todayFajr = !!state['fajr'];
   var fajrMois = 0, fajrAnnee = 0, fajrTotal = 0;
+  var thisMonth = today.getFullYear() + '-' + String(today.getMonth() + 1).padStart(2, '0');
+  var thisYear = String(today.getFullYear());
+  // Count Fajr-specific days from daily snapshots
   if (hist.days) {
     var keys = Object.keys(hist.days);
-    var thisMonth = today.getFullYear() + '-' + String(today.getMonth() + 1).padStart(2, '0');
-    var thisYear = String(today.getFullYear());
     for (var _k = 0; _k < keys.length; _k++) {
-      fajrTotal++;
-      if (keys[_k].indexOf(thisYear) === 0) fajrAnnee++;
-      if (keys[_k].indexOf(thisMonth) === 0) fajrMois++;
+      var _snap = null;
+      try { _snap = JSON.parse(localStorage.getItem('niyyah_snapshot_' + keys[_k]) || 'null'); } catch(e) {}
+      var _fajrDone = _snap && _snap.prieres && _snap.prieres.fajr;
+      if (!_fajrDone && !_snap) _fajrDone = true; // fallback: old days without snapshot count as done
+      if (_fajrDone) {
+        fajrTotal++;
+        if (keys[_k].indexOf(thisYear) === 0) fajrAnnee++;
+        if (keys[_k].indexOf(thisMonth) === 0) fajrMois++;
+      }
     }
   }
-  if (todayFajr && hist.days && !hist.days[todayKey()]) { fajrMois++; fajrAnnee++; fajrTotal++; }
+  if (todayFajr) { fajrMois++; fajrAnnee++; fajrTotal++; }
   card.style.display = 'block';
   card.innerHTML = '<div style="background:linear-gradient(180deg,#15100a,#0e0a06);border:none;border-radius:14px;padding:14px 18px;min-height:90px;box-sizing:border-box;display:flex;align-items:center;box-shadow:inset 0 0 0 1px rgba(200,168,74,.22),0 6px 16px rgba(0,0,0,.4);">'
     + '<div style="display:flex;align-items:center;gap:12px;width:100%;">'
