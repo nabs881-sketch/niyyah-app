@@ -3320,7 +3320,13 @@ function renderProgression() {
 
   var _fondItems = LEVELS.find(function(l){return l.id===1;}).sections.flatMap(function(s){return s.items;}).filter(_itemMatchesProfile).filter(function(i){return !i.optional;});
   var _fondList = _fondItems.map(function(i){return i.label || i.id;}).join(' \u00b7 ');
-  const streakSection = '<div style="text-align:center;padding:36px 20px 28px;position:relative;">'
+  var _isDay1 = totalDisplay === 0;
+  const streakSection = _isDay1
+    ? '<div style="text-align:center;padding:36px 20px 28px;">'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:rgba(200,168,75,0.6);line-height:1.6;max-width:320px;margin:0 auto;">Ton d\u00e9compte commence d\u00e8s ta premi\u00e8re journ\u00e9e de fondations tenues.</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.35);margin-top:16px;line-height:1.5;">Entre toi et Lui. Rien ne se perd \u2014 chaque retour compte.</div>'
+    + '</div>'
+    : '<div style="text-align:center;padding:36px 20px 28px;position:relative;">'
     + '<div onclick="var e=document.getElementById(\'_fondExplain\');if(e)e.style.display=e.style.display===\'none\'?\'block\':\'none\';" style="cursor:pointer;font-size:80px;font-weight:900;line-height:1;background:linear-gradient(135deg,#c8a84b,#e8cc6a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-3px;">' + totalDisplay + '</div>'
     + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;color:var(--t3);margin-top:8px;letter-spacing:1px;">jours de fondations tenues</div>'
     + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.5);margin-top:14px;">\u00b7 ' + streakDisplay + ' jours de suite \u00b7</div>'
@@ -10012,7 +10018,7 @@ const V2_I18N = {
     bilan_7j_title: 'Bilan des 7 derniers soirs',
     bilan_distrait: 'Distrait', bilan_effort: 'Efforts', bilan_sincere: 'Sinc\u00e8re',
     progression_label: 'MON CHEMIN',
-    today_pct: 'Aujourd\u2019hui : {n}% accompli', today_first: 'Premier jour. Bismillah.',
+    today_pct: 'Aujourd\u2019hui : {n}% accompli', today_first: 'Ton mois se dessinera ici. Bismillah.',
     journal_niyyah_title: 'Ton journal commence ici',
     journal_niyyah_text: 'Chaque niyyah pos\u00e9e devient une trace de ta marche vers Allah.',
     journal_regarde_title: 'Tes Regards commencent ici',
@@ -13551,16 +13557,20 @@ function updateFajrChallenge() {
   }
   if (todayFajrOntime) { fajrMois++; fajrAnnee++; fajrTotal++; }
   card.style.display = 'block';
+  var _fajrIsEmpty = fajrTotal === 0;
   card.innerHTML = '<div style="background:linear-gradient(180deg,#15100a,#0e0a06);border:none;border-radius:14px;padding:14px 18px;min-height:90px;box-sizing:border-box;display:flex;align-items:center;box-shadow:inset 0 0 0 1px rgba(200,168,74,.22),0 6px 16px rgba(0,0,0,.4);">'
     + '<div style="display:flex;align-items:center;gap:12px;width:100%;">'
     + '<div><img src="./imagessoleil.webp" alt="Soleil" style="width:60px;height:auto;display:block;flex-shrink:0;mix-blend-mode:screen;"></div>'
     + '<div style="flex:1;text-align:left;">'
     + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:600;color:#C8A84A;">' + t('fajr_title') + '</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;color:#B0A080;margin-top:4px;line-height:1.5;">'
-    + fajrMois + ' ' + t('fajr_day') + ' ' + t('fajr_sur')
-    + ' \u00b7 ' + fajrAnnee + ' ' + t('fajr_annee')
-    + ' \u00b7 ' + fajrTotal + ' ' + t('fajr_total')
-    + '</div>'
+    + (_fajrIsEmpty
+      ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.5);margin-top:4px;line-height:1.5;">Tes aubes pri\u00e9es \u00e0 l\u2019heure s\u2019accumuleront ici.</div>'
+      : '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;color:#B0A080;margin-top:4px;line-height:1.5;">'
+        + fajrMois + ' ' + t('fajr_day') + ' ' + t('fajr_sur')
+        + ' \u00b7 ' + fajrAnnee + ' ' + t('fajr_annee')
+        + ' \u00b7 ' + fajrTotal + ' ' + t('fajr_total')
+        + '</div>'
+    )
     + '</div></div></div>';
   var _fajrHadith, _fajrRef;
   if (fajrMois >= 100) { _fajrHadith = 'Vraiment, la r\u00e9citation de l\u2019aube est t\u00e9moign\u00e9e.'; _fajrRef = 'Al-Isr\u00e2\u2019 17:78'; }
