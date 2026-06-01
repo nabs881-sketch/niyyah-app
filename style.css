@@ -2864,10 +2864,12 @@ to {
   transform:scale(.97);
 }
 .btn-carte-annuelle {
-  display:inline-flex;
+  display:flex;
   align-items:center;
+  justify-content:center;
   gap:9px;
   margin:12px auto 0;
+  width:fit-content;
   font-family:'Cormorant Garamond',serif;
   font-size:16px;
   font-weight:600;
