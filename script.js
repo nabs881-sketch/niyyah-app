@@ -7223,10 +7223,21 @@ function showWeeklyBilan() {
     var _conseilEl = document.getElementById('_wkConseil');
     if (_conseilEl) _conseilEl.innerHTML = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.4);">Niyyah \u00e9crit ta lettre cette semaine\u2026</div>';
     var _archive = null; try { _archive = JSON.parse(localStorage.getItem('niyyah_week_archive') || 'null'); } catch(e) {}
+    // Bontés des 7 derniers jours
+    var _bontesHist = []; try { _bontesHist = JSON.parse(safeGetItem('niyyah_finjournee_history') || '[]'); } catch(e) {}
+    var _bontesSemaine = {};
+    for (var _bhi = 0; _bhi < 7; _bhi++) { var _bhd = getDateMinus(TODAY, _bhi); _bontesSemaine[_bhd] = null; }
+    for (var _bhj = 0; _bhj < _bontesHist.length; _bhj++) { if (_bontesSemaine.hasOwnProperty(_bontesHist[_bhj].date)) _bontesSemaine[_bontesHist[_bhj].date] = _bontesHist[_bhj].bontes || []; }
+    // États du soir des 7 derniers jours
+    var _etatsSemaine = {};
+    for (var _esi = 0; _esi < 7; _esi++) { var _esd = getDateMinus(TODAY, _esi); _etatsSemaine[_esd] = _bilanData[_esd] || null; }
+    // Défi courant
+    var _defiPayload = null;
+    try { var _dpR = getDefiCourant(); if (_dpR.defi) _defiPayload = { nom: _dpR.defi.titre, jours: _dpR.state.current.jours || [], complete: !!_dpR.state.current.complete }; } catch(e) {}
     fetch('https://niyyah-api.nabs881.workers.dev/api/bilan-premium', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ prenom: prenom || '', profil: _profil, stats: { gestes: stats.totalGestes, fajr: stats.fajrDays, journees: stats.doneDays, bilans: _bilanCount }, stats_passee: _archive, dominante: dominante, zone_manquante: _manque })
+      body: JSON.stringify({ prenom: prenom || '', profil: _profil, stats: { gestes: stats.totalGestes, fajr: stats.fajrDays, journees: stats.doneDays, bilans: _bilanCount }, stats_passee: _archive, dominante: dominante, zone_manquante: _manque, bontes_semaine: _bontesSemaine, etats_semaine: _etatsSemaine, intentions_semaine: getIntentionHistory7(), defi_semaine: _defiPayload })
     }).then(function(r) { return r.json(); }).then(function(data) {
       if (data && data.message) {
         safeSetItem(_weekKey, data.message);
