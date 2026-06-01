@@ -94,6 +94,11 @@ export default {
       return handleVerify(request, env);
     }
 
+    // ── Route Bilan Premium (lettre hebdo IA) ──
+    if (path === '/api/bilan-premium' && request.method === 'POST') {
+      return handleBilanPremium(request, env);
+    }
+
     return jsonResponse({ error: 'Route introuvable' }, 404);
   },
 };
@@ -717,5 +722,112 @@ ${texte.substring(0, 2000)}`;
     console.error('handleVerify error:', err);
     if (err.name === 'AbortError') return jsonResponseV2({ error: 'Timeout' }, 504);
     return jsonResponseV2({ error: 'Verify indisponible' }, 502);
+  }
+}
+
+// ═══════════════════════════════════════════════════
+// BILAN PREMIUM — Lettre hebdomadaire IA
+// ═══════════════════════════════════════════════════
+
+function buildBilanSystemPrompt(prenom) {
+  const nom = prenom && prenom.trim() ? prenom.trim() : 'toi';
+  return `Tu es la voix de Niyyah. Tu écris à ${nom} une courte lettre : le récit de sa semaine spirituelle écoulée.
+
+Ton ton : un témoin bienveillant et lucide, jamais sermonneur. Chaleureux, sobre, contemplatif. Tu tutoies. Le français d'un cœur, pas d'un prêcheur.
+
+Tu disposes de la matière réelle de sa semaine : ses états du soir, les bontés qu'il a notées de ses mots, son défi, sa régularité, ses intentions. Tisse-la en un récit qui lui ressemble : nomme ce qu'il a traversé, montre-lui l'arc de son cœur sur la semaine, relève le bien qu'il a semé (en t'appuyant sur ses propres bontés), accueille ce qui a manqué sans jamais le juger. La continuité est une miséricorde, pas un score — chaque retour compte.
+
+RÈGLES STRICTES :
+- Écris UNIQUEMENT en français. Aucun mot arabe, aucune translittération.
+- Ne cite AUCUN hadith, AUCUN verset, aucune référence (sourate, numéro). Ne fabrique jamais de citation. Tu peux évoquer des réalités spirituelles, jamais les attribuer à un texte.
+- Aucune fatwa, aucun jugement religieux.
+- Sobre : pas de clichés, pas d'emphase, pas d'emojis.
+- 3 à 4 courts paragraphes, séparés par une ligne vide.
+- Si la semaine fut presque vide, reste doux et accueillant : invite, ne reproche pas.
+- Termine sur une ouverture douce vers la semaine qui vient.`;
+}
+
+function buildBilanUserMessage(body) {
+  const { profil, dominante, zone_manquante, stats, stats_passee, bontes_semaine, etats_semaine, intentions_semaine, defi_semaine } = body;
+  const lines = [];
+
+  lines.push(`Profil : ${profil || 'non précisé'}`);
+  lines.push(`Dominante de la semaine : ${dominante || 'équilibre'}`);
+  if (zone_manquante) lines.push(`Zone qui a manqué : ${zone_manquante}`);
+
+  // Stats
+  if (stats) {
+    lines.push('');
+    lines.push('RÉGULARITÉ :');
+    lines.push(`- ${stats.gestes || 0} gestes posés`);
+    lines.push(`- ${stats.journees || 0} journées actives sur 7`);
+    lines.push(`- ${stats.fajr || 0} Fajr tenus`);
+    lines.push(`- ${stats.bilans || 0} bilans du soir posés`);
+  }
+  if (stats_passee) {
+    lines.push('');
+    lines.push('SEMAINE PRÉCÉDENTE (comparaison) :');
+    lines.push(`- ${stats_passee.gestes || 0} gestes, ${stats_passee.journees || 0} journées, ${stats_passee.fajr || 0} Fajr, ${stats_passee.bilans || 0} bilans`);
+  }
+
+  // Jour par jour
+  const days = etats_semaine ? Object.keys(etats_semaine).sort() : [];
+  if (days.length > 0) {
+    lines.push('');
+    lines.push('SEMAINE JOUR PAR JOUR :');
+    for (const d of days) {
+      const parts = [`${d} :`];
+      // État du soir
+      const etat = etats_semaine?.[d];
+      parts.push(etat ? `état du soir = ${etat}` : 'pas de bilan ce soir-là');
+      // Intention
+      const intention = intentions_semaine?.[d];
+      if (intention && intention.type) parts.push(`intention = ${intention.label || intention.type}`);
+      else if (intention === null) parts.push('intention passée');
+      // Bontés
+      const bontes = bontes_semaine?.[d];
+      if (bontes && Array.isArray(bontes) && bontes.length > 0) {
+        parts.push(`bontés notées : « ${bontes.join(' » « ')} »`);
+      }
+      lines.push('  ' + parts.join(' · '));
+    }
+  }
+
+  // Défi
+  if (defi_semaine) {
+    lines.push('');
+    lines.push('DÉFI DE LA SEMAINE :');
+    lines.push(`- ${defi_semaine.nom || 'inconnu'}`);
+    lines.push(`- Jours tenus : ${defi_semaine.jours ? defi_semaine.jours.length : 0}`);
+    lines.push(`- ${defi_semaine.complete ? 'Réussi' : 'En cours'}`);
+  }
+
+  return lines.join('\n');
+}
+
+async function handleBilanPremium(request, env) {
+  try {
+    const body = await request.json();
+    const systemPrompt = buildBilanSystemPrompt(body.prenom);
+    const userMessage = buildBilanUserMessage(body);
+
+    const response = await callAnthropic(env, {
+      model: MODEL_SONNET,
+      max_tokens: 700,
+      temperature: 0.85,
+      system: systemPrompt,
+      messages: [{ role: 'user', content: userMessage }]
+    });
+
+    const text = response.content?.[0]?.text?.trim();
+    if (!text) {
+      return jsonResponseV2({ error: 'Réponse vide' }, 502);
+    }
+
+    return jsonResponseV2({ message: text, source: 'ia' });
+  } catch (err) {
+    console.error('handleBilanPremium error:', err);
+    if (err.name === 'AbortError') return jsonResponseV2({ error: 'Timeout' }, 504);
+    return jsonResponseV2({ error: 'Bilan premium indisponible' }, 502);
   }
 }
