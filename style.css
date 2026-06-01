@@ -6260,12 +6260,13 @@ body::before {
 .orb-core-v2.intention-set-v2 .orb-symbol-v2 { color: rgba(212,175,55,0.88); }
 
 .orb-cta-v2 {
+  --orb-season: 246,218,138;
   display: inline-flex;
   align-items: center;
   gap: 14px;
   font-family: 'Cormorant Garamond', serif;
   font-size: 19px; font-style: italic; font-weight: 600; letter-spacing: .04em;
-  color: #F6DA8A;
+  color: rgb(var(--orb-season));
   background: none;
   border: none;
   padding: 0;
@@ -6278,8 +6279,8 @@ body::before {
   animation: ctaLueur 4s ease-in-out infinite;
 }
 @keyframes ctaLueur {
-  0%, 100% { text-shadow: 0 0 6px rgba(236,199,90,.25); }
-  50%      { text-shadow: 0 0 16px rgba(236,199,90,.6); }
+  0%, 100% { text-shadow: 0 0 6px rgba(var(--orb-season),.25); }
+  50%      { text-shadow: 0 0 16px rgba(var(--orb-season),.6); }
 }
 .orb-cta-v2::before, .orb-cta-v2::after {
   content: '';
@@ -6287,8 +6288,8 @@ body::before {
   width: 34px; height: 1px;
   flex-shrink: 0;
 }
-.orb-cta-v2::before { background: linear-gradient(90deg, transparent, rgba(224,184,84,.8)); }
-.orb-cta-v2::after  { background: linear-gradient(90deg, rgba(224,184,84,.8), transparent); }
+.orb-cta-v2::before { background: linear-gradient(90deg, transparent, rgba(var(--orb-season),.8)); }
+.orb-cta-v2::after  { background: linear-gradient(90deg, rgba(var(--orb-season),.8), transparent); }
 .orb-cta-v2:active { transform: scale(.97); }
 
 /* ─── INTENTION CHIP ─── */

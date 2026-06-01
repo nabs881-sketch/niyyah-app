@@ -13844,6 +13844,7 @@ function applyAtmosphere() {
   var bgStr = 'rgb(' + atm.bg + ')';
   var goldStr = 'rgb(' + atm.gold + ')';
   var goldAlpha = 'rgba(' + atm.gold + ',0.3)';
+  window._orbSeasonRgb = atm.gold;
   var root = document.documentElement.style;
   root.setProperty('--bg-primary', bgStr);
   root.setProperty('--gold-main', goldStr);
@@ -13879,7 +13880,7 @@ function applyAtmosphereDOM(bgStr, goldStr, goldAlpha) {
   if (levelName) levelName.style.color = goldStr;
   // Orb CTA
   var orbCta = document.getElementById('orb-cta-v2');
-  if (orbCta) orbCta.style.color = goldStr;
+  if (orbCta) { orbCta.style.color = goldStr; orbCta.style.setProperty('--orb-season', _orbSeasonRgb || '246,218,138'); }
   // Chip
   var chip = document.getElementById('v2-intention-chip');
   if (chip) chip.style.borderColor = goldAlpha;
