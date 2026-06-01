@@ -4121,7 +4121,7 @@ function renderBabAnNafs() {
     if (p.id === 'medisance') {
       try { var _cm = JSON.parse(safeGetItem('cure_medisance') || '{}'); if (_cm.completed) _cureMarker = '<div style="position:absolute;top:6px;right:6px;font-size:14px;color:#C8A84A;text-shadow:0 0 6px rgba(200,168,75,0.5);" title="Cure M\u00e9disance accomplie.">\u2726</div>'; } catch(e) {}
     }
-    html += '<button onclick="openBabPorte(\'' + p.id + '\')" style="position:relative;aspect-ratio:1/1;border-radius:12px;border:1px solid var(--gold,#C8A84A);background:url(assets/cards/porte-' + p.id + '.webp) center/cover no-repeat,#111;cursor:pointer;padding:0;">' + _cureMarker + '<div style="position:absolute;left:0;right:0;bottom:7%;text-align:center;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:1.5rem;color:var(--or-vif,#ECC75A);letter-spacing:.5px;pointer-events:none;text-shadow:0 2px 10px rgba(0,0,0,.85),0 0 4px rgba(0,0,0,.6);">' + nomFr + '</div></button>';
+    html += '<button onclick="openBabPorte(\'' + p.id + '\')" style="position:relative;aspect-ratio:1/1;border-radius:12px;border:1px solid var(--gold,#C8A84A);background:url(assets/cards/porte-' + p.id + '.webp) center/cover no-repeat,#111;cursor:pointer;padding:0;">' + _cureMarker + '<div style="position:absolute;left:0;right:0;bottom:7%;text-align:center;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:clamp(26px,8.5vw,46px);color:var(--or-vif,#ECC75A);letter-spacing:.5px;pointer-events:none;text-shadow:0 2px 12px rgba(0,0,0,.92),0 0 6px rgba(0,0,0,.75);">' + nomFr + '</div></button>';
   });
   html += '</div>';
   html += _regardStreakInline();
