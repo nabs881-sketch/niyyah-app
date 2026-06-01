@@ -6275,6 +6275,11 @@ body::before {
   text-align: center;
   width: 100%;
   justify-content: center;
+  animation: ctaLueur 4s ease-in-out infinite;
+}
+@keyframes ctaLueur {
+  0%, 100% { text-shadow: 0 0 6px rgba(236,199,90,.25); }
+  50%      { text-shadow: 0 0 16px rgba(236,199,90,.6); }
 }
 .orb-cta-v2::before, .orb-cta-v2::after {
   content: '';
