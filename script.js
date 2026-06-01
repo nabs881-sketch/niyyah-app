@@ -812,6 +812,56 @@ function _showDefiToastDaily() {
   requestAnimationFrame(function() { toast.classList.add('show'); });
   setTimeout(function() { toast.classList.remove('show'); setTimeout(function() { toast.remove(); }, 400); }, 5000);
 }
+function _showDefiLundiInvite() {
+  var lundi = getLundiDate();
+  // Guard: already shown or dismissed this week
+  if (safeGetItem('niyyah_defi_invite_shown') === lundi) return;
+  // Guard: défi already manually chosen this week (chosenAt exists and matches this week)
+  var s = getDefiState();
+  if (s.current && s.current.semaine === lundi && s.current.chosenAt) return;
+  // Guard: only show on a new week (Mon-Sun window)
+  var banner = document.createElement('div');
+  banner.id = 'defi-lundi-invite';
+  banner.style.cssText = 'position:fixed;left:50%;transform:translateX(-50%) translateY(20px);bottom:90px;z-index:900;'
+    + 'background:rgba(30,28,26,0.96);border:1px solid rgba(200,168,75,0.25);border-radius:16px;'
+    + 'padding:16px 22px;display:flex;align-items:center;gap:14px;cursor:pointer;'
+    + 'opacity:0;transition:opacity .5s ease,transform .5s ease;max-width:340px;'
+    + 'box-shadow:0 4px 24px rgba(0,0,0,0.4);';
+  banner.innerHTML = '<div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;'
+    + 'background:rgba(200,168,75,0.12);display:flex;align-items:center;justify-content:center;'
+    + 'font-size:18px;">✦</div>'
+    + '<div style="flex:1;min-width:0;">'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-weight:600;color:#C8A84A;margin-bottom:2px;">Nouvelle semaine</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:#B0A080;">Choisis ton défi de la semaine</div>'
+    + '</div>'
+    + '<div id="defi-lundi-close" style="flex-shrink:0;width:28px;height:28px;border-radius:50%;'
+    + 'display:flex;align-items:center;justify-content:center;color:#B0A080;font-size:16px;'
+    + 'cursor:pointer;opacity:0.6;" aria-label="Fermer">✕</div>';
+  document.body.appendChild(banner);
+  // Animate in
+  requestAnimationFrame(function() {
+    banner.style.opacity = '1';
+    banner.style.transform = 'translateX(-50%) translateY(0)';
+  });
+  function dismiss() {
+    safeSetItem('niyyah_defi_invite_shown', lundi);
+    banner.style.opacity = '0';
+    banner.style.transform = 'translateX(-50%) translateY(20px)';
+    setTimeout(function() { banner.remove(); }, 500);
+  }
+  // Tap on banner → open selector
+  banner.onclick = function(e) {
+    if (e.target.id === 'defi-lundi-close' || e.target.closest('#defi-lundi-close')) {
+      dismiss();
+      return;
+    }
+    dismiss();
+    setTimeout(function() { openDefiSelector(); }, 300);
+  };
+  // Auto-dismiss after 12s
+  setTimeout(function() { if (document.getElementById('defi-lundi-invite')) dismiss(); }, 12000);
+}
+window._showDefiLundiInvite = _showDefiLundiInvite;
 function renderDefiChoices(choices, onSelect) {
   var container = document.getElementById('defi-choices-lundi');
   if (!container) return;
@@ -11418,6 +11468,7 @@ function v2GoSanctuaire() {
     if (btn) btn.classList.add('active-nav');
     if (typeof updateMedaillonState === 'function') updateMedaillonState();
     setTimeout(_showDefiToastDaily, 2500);
+    setTimeout(_showDefiLundiInvite, 3200);
   }
   // Skip intro cascade on return visits
   var sanctEl2 = document.getElementById('view-sanctuaire');
