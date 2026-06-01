@@ -3317,11 +3317,17 @@ function renderProgression() {
     + (function(){var _today=todayKey();var _bilans={};try{_bilans=JSON.parse(localStorage.getItem('niyyah_bilans')||'{}');}catch(e){}return _bilans[_today]?'<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:var(--t3);opacity:0.6;">Bilan d\u2019aujourd\u2019hui pos\u00e9.</div>':'<button onclick="openBilanSoir()" style="background:transparent;border:1px solid rgba(200,168,75,0.25);border-radius:12px;padding:8px 18px;color:var(--gold);font-family:var(--serif);font-size:14px;cursor:pointer;">Poser le bilan de ce soir</button>';})()
     + '</div>';
 
+  var _fondItems = LEVELS.find(function(l){return l.id===1;}).sections.flatMap(function(s){return s.items;}).filter(_itemMatchesProfile).filter(function(i){return !i.optional;});
+  var _fondList = _fondItems.map(function(i){return i.label || i.id;}).join(' \u00b7 ');
   const streakSection = '<div style="text-align:center;padding:36px 20px 28px;position:relative;">'
-    + '<div style="font-size:80px;font-weight:900;line-height:1;background:linear-gradient(135deg,#c8a84b,#e8cc6a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-3px;">' + totalDisplay + '</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;color:var(--t3);margin-top:8px;letter-spacing:1px;">jours de pr\u00e9sence</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.5);margin-top:14px;">' + streakDisplay + ' jours de suite</div>'
+    + '<div onclick="var e=document.getElementById(\'_fondExplain\');if(e)e.style.display=e.style.display===\'none\'?\'block\':\'none\';" style="cursor:pointer;font-size:80px;font-weight:900;line-height:1;background:linear-gradient(135deg,#c8a84b,#e8cc6a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-3px;">' + totalDisplay + '</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;color:var(--t3);margin-top:8px;letter-spacing:1px;">jours de fondations tenues</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.5);margin-top:14px;">\u00b7 ' + streakDisplay + ' jours de suite \u00b7</div>'
     + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.35);margin-top:16px;line-height:1.5;">Entre toi et Lui. Rien ne se perd \u2014 chaque retour compte.</div>'
+    + '<div id="_fondExplain" style="display:none;margin-top:16px;padding:14px;border:1px solid rgba(200,168,75,0.15);border-radius:12px;background:rgba(200,168,75,0.04);text-align:center;">'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;color:rgba(200,168,75,0.7);margin-bottom:8px;">Un jour compt\u00e9 = tes fondations tenues\u00a0:</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.5);line-height:1.6;">' + escapeHtml(_fondList) + '</div>'
+    + '</div>'
     + '</div>';
   var _scoreP = totalAllP > 0 ? Math.round(totalDoneP / totalAllP * 100) : 0;
   var _paroleP = _getParoleScore(_scoreP);
