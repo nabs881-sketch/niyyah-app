@@ -2333,6 +2333,19 @@ function initNiyyahParticles() {
   draw();
   window._niyyahParticleAnim = animId;
 }
+function _saveIntentionHistory(type, label) {
+  var hist = {}; try { hist = JSON.parse(safeGetItem('niyyah_intention_history') || '{}'); } catch(e) {}
+  hist[todayKey()] = type ? { type: type, label: label } : null;
+  var keys = Object.keys(hist).sort();
+  if (keys.length > 365) { var excess = keys.length - 365; for (var _i = 0; _i < excess; _i++) delete hist[keys[_i]]; }
+  safeSetItem('niyyah_intention_history', JSON.stringify(hist));
+}
+function getIntentionHistory7() {
+  var hist = {}; try { hist = JSON.parse(safeGetItem('niyyah_intention_history') || '{}'); } catch(e) {}
+  var result = {};
+  for (var i = 0; i < 7; i++) { var d = getDateMinus(TODAY, i); result[d] = hist[d] || null; }
+  return result;
+}
 function chooseNiyyah(type) {
   const labels = {
     rapprochement: "Me rapprocher d'Allah 🌙",
@@ -2356,6 +2369,7 @@ function chooseNiyyah(type) {
   safeSetItem('niyyah_intention_date', TODAY);
   safeSetItem('niyyah_intention_type', type);
   safeSetItem('niyyah_intention_label', labels[type] || type);
+  _saveIntentionHistory(type, labels[type] || type);
   _nAn('intention_set');
   if (window._niyyahAudio) { window._niyyahAudio.pause(); window._niyyahAudio = null; }
   const screen = document.getElementById('niyyahScreen');
@@ -2372,6 +2386,7 @@ function chooseNiyyah(type) {
 function skipNiyyah() {
   if (window._niyyahFailsafe) { clearTimeout(window._niyyahFailsafe); window._niyyahFailsafe = null; }
   safeSetItem('niyyah_intention_date', TODAY);
+  _saveIntentionHistory(null, null);
   if (window._niyyahAudio) { window._niyyahAudio.pause(); window._niyyahAudio = null; }
   const screen = document.getElementById('niyyahScreen');
   screen.classList.add('niyyah-dissolve');
