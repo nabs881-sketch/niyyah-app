@@ -3272,13 +3272,15 @@ function renderProgression() {
   const totalDoneP = allItemsP.filter(item => { try { return isItemDone(item, state); } catch(e) { return item.type==='counter'?(state[item.id]||0)>=item.target:!!state[item.id]; } }).reduce((sum,i)=>{ try{return sum+getWeight(i.id);}catch(e){return sum+1;} },0);
   const totalAllP  = allItemsP.reduce((sum,i)=>{ try{return sum+getWeight(i.id);}catch(e){return sum+1;} },0);
   let lvlGridP='';
+  var _cheminImgs = {1:'chemin-fondations',2:'chemin-approfondissement',3:'chemin-connaissance',4:'chemin-rayonnement'};
   LEVELS.forEach((lvl)=>{
     const pct=Math.round(getLevelProgress(lvl.id));
     const r=20, circ=2*Math.PI*r, dash=(pct/100)*circ;
     const ring='<svg width="48" height="48" viewBox="0 0 48 48" style="transform:rotate(-90deg);"><circle cx="24" cy="24" r="20" fill="none" stroke="rgba(200,168,75,0.15)" stroke-width="2"/><circle cx="24" cy="24" r="20" fill="none" stroke="#C8A84A" stroke-width="2" stroke-linecap="round" stroke-dasharray="'+circ.toFixed(1)+'" stroke-dashoffset="'+(circ-dash).toFixed(1)+'"/></svg>';
-    lvlGridP+='<div onclick="selectLevel('+lvl.id+')" style="background:rgba(200,168,75,0.03);border:1px solid rgba(200,168,75,0.12);border-radius:12px;height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;cursor:pointer;">'
-      +'<div style="width:48px;height:48px;position:relative;">'+ring+'<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:\'Cormorant Garamond\',serif;font-size:14px;color:#C8A84A;">'+pct+'%</div></div>'
-      +'<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:600;color:#C8A84A;">'+t('level_'+lvl.id)+'</div>'
+    var _bgImg = _cheminImgs[lvl.id] ? 'assets/cards/' + _cheminImgs[lvl.id] + '.webp' : '';
+    lvlGridP+='<div onclick="selectLevel('+lvl.id+')" style="background:linear-gradient(180deg,rgba(8,5,3,.35),rgba(8,5,3,.8))' + (_bgImg ? ',url(' + _bgImg + ') center/cover' : '') + ';border-radius:12px;height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;cursor:pointer;box-shadow:inset 0 0 0 1px rgba(200,168,74,.28),0 6px 18px rgba(0,0,0,.45);position:relative;overflow:hidden;">'
+      +'<div style="width:48px;height:48px;position:relative;z-index:1;">'+ring+'<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:\'Cormorant Garamond\',serif;font-size:14px;color:#C8A84A;text-shadow:0 1px 4px rgba(0,0,0,.8);">'+pct+'%</div></div>'
+      +'<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:600;color:#C8A84A;position:relative;z-index:1;text-shadow:0 1px 4px rgba(0,0,0,.8);">'+t('level_'+lvl.id)+'</div>'
       +'</div>';
   });
   // === GRAPHIQUE 7 JOURS BILANS ===
