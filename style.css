@@ -6260,27 +6260,31 @@ body::before {
 .orb-core-v2.intention-set-v2 .orb-symbol-v2 { color: rgba(212,175,55,0.88); }
 
 .orb-cta-v2 {
-  display: block;
-  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 14px; font-style: italic; letter-spacing: 0.04em;
-  color: #ECC75A;
-  background: transparent;
-  border: 1px solid rgba(236,199,90,0.35);
-  border-radius: 100px;
-  padding: 8px 22px;
+  font-size: 19px; font-style: italic; font-weight: 600; letter-spacing: .04em;
+  color: #F0D58A;
+  background: none;
+  border: none;
+  padding: 0;
   margin: 16px auto 30px;
-  width: fit-content;
   cursor: pointer;
-  box-shadow: 0 0 12px rgba(200,150,70,.2);
-  animation: ctaPillGlow 3s ease-in-out infinite;
-  transition: transform 0.15s ease, color 0.3s;
+  transition: transform 0.15s ease;
+  text-align: center;
+  width: 100%;
+  justify-content: center;
 }
+.orb-cta-v2::before, .orb-cta-v2::after {
+  content: '';
+  display: block;
+  width: 34px; height: 1px;
+  flex-shrink: 0;
+}
+.orb-cta-v2::before { background: linear-gradient(90deg, transparent, rgba(224,184,84,.8)); }
+.orb-cta-v2::after  { background: linear-gradient(90deg, rgba(224,184,84,.8), transparent); }
 .orb-cta-v2:active { transform: scale(.97); }
-@keyframes ctaPillGlow {
-  0%, 100% { box-shadow: 0 0 10px rgba(200,150,70,.15); border-color: rgba(236,199,90,.3); }
-  50%       { box-shadow: 0 0 20px rgba(220,160,70,.35); border-color: rgba(236,199,90,.55); }
-}
 
 /* ─── INTENTION CHIP ─── */
 .intention-chip-v2 {
