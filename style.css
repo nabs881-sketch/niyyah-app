@@ -8210,8 +8210,8 @@ button[style*="gold-v2"] {
   width: 100%;
   margin-top: 8px;
   padding: 14px 28px;
-  background: linear-gradient(180deg, var(--or-vif) 0%, var(--or-moyen) 100%);
-  border: 1px solid rgba(236,199,90,0.6);
+  background: linear-gradient(180deg, #E9C96E 0%, #C8A84A 48%, #9E7B2E 100%);
+  border: none;
   border-radius: 10px;
   color: #0a0805;
   font-family: 'Cormorant Garamond', serif;
@@ -8219,7 +8219,7 @@ button[style*="gold-v2"] {
   font-weight: 600;
   letter-spacing: 0.05em;
   cursor: pointer;
-  box-shadow: inset 0 1px 0 rgba(255,230,180,0.4), 0 4px 12px rgba(0,0,0,0.3), 0 0 24px rgba(200,149,106,0.25);
+  box-shadow: 0 6px 16px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,246,214,.6), inset 0 -3px 5px rgba(110,75,20,.45), 0 0 0 1px rgba(150,116,46,.5);
   transition: all 0.5s cubic-bezier(0.19,1,0.22,1);
 }
 .btn-bismillah-moment:hover {
