@@ -1531,6 +1531,9 @@ to {
 #view-progression {
   background: radial-gradient(120% 90% at 50% 0%, #160f08, #0a0604 60%, #080503);
 }
+#view-bab-an-nafs {
+  background: radial-gradient(120% 90% at 50% 0%, #160f08, #0a0604 60%, #080503);
+}
 .prog-wrap {
   padding:16px 16px 140px
 }
