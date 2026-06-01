@@ -8820,14 +8820,22 @@ function getCurrentWeekKey() {
 }
 function checkWeeklyBilan() {
   const today = new Date(TODAY);
-  const isMonday = today.getDay() === 1;
+  if (today.getDay() !== 0) return false; // dimanche uniquement
   const lastShown = localStorage.getItem('niyyah_bilan_week');
   const thisWeek = getCurrentWeekKey();
-  if (isMonday && lastShown !== thisWeek && (history.totalDays || 0) >= 1) {
-    setTimeout(showWeeklyBilan, 1500);
-    return true;
+  if (lastShown === thisWeek) return false;
+  if ((history.totalDays || 0) < 1) return false;
+  // Seuil horaire : Maghrib + 1h, fallback 20h
+  var seuil = 20 * 60; // 20h en minutes
+  if (typeof _prayerTimes !== 'undefined' && _prayerTimes && _prayerTimes['Maghrib']) {
+    var _mp = _prayerTimes['Maghrib'].replace(/ *\(.*\)/, '').split(':');
+    var _mMin = parseInt(_mp[0], 10) * 60 + parseInt(_mp[1], 10);
+    if (!isNaN(_mMin)) seuil = _mMin + 60;
   }
-  return false;
+  var nowMin = new Date().getHours() * 60 + new Date().getMinutes();
+  if (nowMin < seuil) return false;
+  setTimeout(showWeeklyBilan, 1500);
+  return true;
 }
 const FREEMIUM_CODES = [];
 const _freemiumUnlocked = safeGetItem('niyyah_pro') === '1';
