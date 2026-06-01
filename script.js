@@ -3276,7 +3276,7 @@ function renderProgression() {
     const pct=Math.round(getLevelProgress(lvl.id));
     const r=20, circ=2*Math.PI*r, dash=(pct/100)*circ;
     const ring='<svg width="48" height="48" viewBox="0 0 48 48" style="transform:rotate(-90deg);"><circle cx="24" cy="24" r="20" fill="none" stroke="rgba(200,168,75,0.15)" stroke-width="2"/><circle cx="24" cy="24" r="20" fill="none" stroke="#C8A84A" stroke-width="2" stroke-linecap="round" stroke-dasharray="'+circ.toFixed(1)+'" stroke-dashoffset="'+(circ-dash).toFixed(1)+'"/></svg>';
-    lvlGridP+='<div onclick="selectLevel('+lvl.id+')" style="background:rgba(200,168,75,0.03);border:1px solid rgba(200,168,75,0.12);border-radius:12px;height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;cursor:pointer;">'
+    lvlGridP+='<div onclick="selectLevel('+lvl.id+')" class="chemin-card">'
       +'<div style="width:48px;height:48px;position:relative;">'+ring+'<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:\'Cormorant Garamond\',serif;font-size:14px;color:#C8A84A;">'+pct+'%</div></div>'
       +'<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:600;color:#C8A84A;">'+t('level_'+lvl.id)+'</div>'
       +'</div>';
