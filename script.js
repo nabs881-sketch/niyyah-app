@@ -1758,6 +1758,7 @@ function _saveDailySnapshot(dk) {
   var s = safeParseJSON('spiritual_v2', {});
   var gestes = 0, lectures = 0, bienfaisance = 0;
   var prieres = { fajr: 0, dhuhr: 0, asr: 0, maghrib: 0, isha: 0 };
+  var ontime = { fajr: 0, dhuhr: 0, asr: 0, maghrib: 0, isha: 0 };
   var bienfIds = ['sadaqa','salam','silaturahm','kind_act','ziyara','pardon','maruf'];
   var lectIds = ['hadith1','duaa_jour','sira','quran_read','recits_coran','fiqh_jour','savais_tu','ghidaa_jour','tibb_jour'];
   var allItems = LEVELS.flatMap(function(l) { return l.sections.flatMap(function(sec) { return sec.items; }); });
@@ -1765,11 +1766,11 @@ function _saveDailySnapshot(dk) {
     var done = it.type === 'counter' ? (s[it.id] || 0) >= (it.target || 1) : !!s[it.id];
     if (!done) return;
     gestes++;
-    if (prieres.hasOwnProperty(it.id)) prieres[it.id] = 1;
+    if (prieres.hasOwnProperty(it.id)) { prieres[it.id] = 1; if (s[it.id + '_ontime']) ontime[it.id] = 1; }
     if (bienfIds.indexOf(it.id) !== -1) bienfaisance++;
     if (lectIds.indexOf(it.id) !== -1) lectures++;
   });
-  safeSetItem('niyyah_snapshot_' + dk, JSON.stringify({ gestes: gestes, prieres: prieres, lectures: lectures, bienfaisance: bienfaisance }));
+  safeSetItem('niyyah_snapshot_' + dk, JSON.stringify({ gestes: gestes, prieres: prieres, ontime: ontime, lectures: lectures, bienfaisance: bienfaisance }));
 }
 function _checkStarUnlock(streak) {
   var vagues = [{seuil:60,vague:5},{seuil:30,vague:4},{seuil:14,vague:3},{seuil:7,vague:2},{seuil:3,vague:1}];
@@ -13528,26 +13529,27 @@ function updateFajrChallenge() {
   var hist = {};
   try { hist = JSON.parse(localStorage.getItem('spiritual_history') || '{}'); } catch(e) {}
   var today = new Date();
-  var todayFajr = !!state['fajr'];
+  var todayFajrOntime = !!state['fajr_ontime'];
   var fajrMois = 0, fajrAnnee = 0, fajrTotal = 0;
   var thisMonth = today.getFullYear() + '-' + String(today.getMonth() + 1).padStart(2, '0');
   var thisYear = String(today.getFullYear());
-  // Count Fajr-specific days from daily snapshots
+  // Count Fajr on-time days from daily snapshots
   if (hist.days) {
     var keys = Object.keys(hist.days);
     for (var _k = 0; _k < keys.length; _k++) {
       var _snap = null;
       try { _snap = JSON.parse(localStorage.getItem('niyyah_snapshot_' + keys[_k]) || 'null'); } catch(e) {}
-      var _fajrDone = _snap && _snap.prieres && _snap.prieres.fajr;
-      if (!_fajrDone && !_snap) _fajrDone = true; // fallback: old days without snapshot count as done
-      if (_fajrDone) {
+      var _fajrOntime = _snap && _snap.ontime && _snap.ontime.fajr;
+      // fallback: old snapshots without ontime → check prieres.fajr instead
+      if (!_fajrOntime && _snap && !_snap.ontime && _snap.prieres && _snap.prieres.fajr) _fajrOntime = true;
+      if (_fajrOntime) {
         fajrTotal++;
         if (keys[_k].indexOf(thisYear) === 0) fajrAnnee++;
         if (keys[_k].indexOf(thisMonth) === 0) fajrMois++;
       }
     }
   }
-  if (todayFajr) { fajrMois++; fajrAnnee++; fajrTotal++; }
+  if (todayFajrOntime) { fajrMois++; fajrAnnee++; fajrTotal++; }
   card.style.display = 'block';
   card.innerHTML = '<div style="background:linear-gradient(180deg,#15100a,#0e0a06);border:none;border-radius:14px;padding:14px 18px;min-height:90px;box-sizing:border-box;display:flex;align-items:center;box-shadow:inset 0 0 0 1px rgba(200,168,74,.22),0 6px 16px rgba(0,0,0,.4);">'
     + '<div style="display:flex;align-items:center;gap:12px;width:100%;">'
