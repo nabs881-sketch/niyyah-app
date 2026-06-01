@@ -3280,7 +3280,7 @@ function renderProgression() {
     var _bgImg = _cheminImgs[lvl.id] ? 'assets/cards/' + _cheminImgs[lvl.id] + '.webp' : '';
     lvlGridP+='<div onclick="selectLevel('+lvl.id+')" style="border-radius:12px;height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;cursor:pointer;box-shadow:inset 0 0 0 1px rgba(200,168,74,.28),0 6px 18px rgba(0,0,0,.45);position:relative;overflow:hidden;' + (_bgImg ? 'background-image:linear-gradient(180deg,rgba(8,5,3,.25),rgba(8,5,3,.88)),url(' + _bgImg + ');background-size:cover,cover;background-position:center,center;' : 'background:linear-gradient(180deg,rgba(8,5,3,.25),rgba(8,5,3,.88));') + '">'
       +'<div style="width:74px;height:74px;position:relative;z-index:1;">'+ring+'<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:\'Cormorant Garamond\',serif;font-size:19px;font-weight:600;color:#C8A84A;text-shadow:0 1px 4px rgba(0,0,0,.8);">'+pct+'%</div></div>'
-      +'<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:600;color:#C8A84A;position:relative;z-index:1;text-shadow:0 1px 4px rgba(0,0,0,.8);">'+t('level_'+lvl.id)+'</div>'
+      +'<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;font-weight:600;color:#C8A84A;position:relative;z-index:1;text-shadow:0 1px 4px rgba(0,0,0,.8);">'+t('level_'+lvl.id)+'</div>'
       +'</div>';
   });
   // === GRAPHIQUE 7 JOURS BILANS ===
