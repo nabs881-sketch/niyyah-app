@@ -11377,7 +11377,7 @@ function setupTopUI(screen) {
 }
 function v2GoSanctuaire() {
   setupTopUI('sanctuaire');
-  document.body.classList.remove('pratique-active');
+  document.body.classList.remove('pratique-active', 'in-progression-view');
   // Fade out current view
   var activeView = document.querySelector('.view.active');
   function _showSanctuaire() {
@@ -11457,8 +11457,9 @@ function v2GoSanctuaire() {
 
 function v2GoTo(viewName) {
   setupTopUI(viewName);
-  document.body.classList.remove('pratique-active');
+  document.body.classList.remove('pratique-active', 'in-progression-view');
   if (viewName === 'checklist') document.body.classList.add('pratique-active');
+  if (viewName === 'progression') document.body.classList.add('in-progression-view');
   // Fermer les overlays
   if (typeof closeDefiSelector === 'function') closeDefiSelector();
   var _defOv = document.getElementById('defiSelectorOverlay');
