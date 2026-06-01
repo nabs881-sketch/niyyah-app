@@ -6261,12 +6261,23 @@ body::before {
 
 .orb-cta-v2 {
   font-family: 'Cormorant Garamond', serif;
-  font-size:12px; letter-spacing: 0.18em;
-  text-transform: uppercase; color: rgba(212,175,55,0.45);
-  transition: color 0.3s;
-  position: relative; z-index: 1;
+  font-size: 14px; font-style: italic; letter-spacing: 0.04em;
+  color: #ECC75A;
+  background: transparent;
+  border: 1px solid rgba(236,199,90,0.35);
+  border-radius: 100px;
+  padding: 8px 22px;
+  margin-top: 18px;
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(200,150,70,.2);
+  animation: ctaPillGlow 3s ease-in-out infinite;
+  transition: transform 0.15s ease, color 0.3s;
 }
-.orb-core-v2:hover .orb-cta-v2 { color: rgba(212,175,55,0.75); }
+.orb-cta-v2:active { transform: scale(.97); }
+@keyframes ctaPillGlow {
+  0%, 100% { box-shadow: 0 0 10px rgba(200,150,70,.15); border-color: rgba(236,199,90,.3); }
+  50%       { box-shadow: 0 0 20px rgba(220,160,70,.35); border-color: rgba(236,199,90,.55); }
+}
 
 /* ─── INTENTION CHIP ─── */
 .intention-chip-v2 {

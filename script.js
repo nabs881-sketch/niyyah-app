@@ -13778,45 +13778,13 @@ function v2UpdateOrbState() {
   const cta = document.getElementById('orb-cta-v2');
 
   const T = V2_I18N[V2_LANG] || V2_I18N.fr;
+  if (chip) chip.style.display = 'none';
   if (s.intention) {
     if (orb) orb.classList.add('intention-set-v2');
-    if (chip) chip.style.display = 'block';
-    if (chipText) {
-      var fullText = s.intention;
-      var truncLen = 80;
-      var isTruncated = fullText.length > truncLen;
-      chipText.textContent = isTruncated ? fullText.substring(0, truncLen) + '...' : fullText;
-      chipText.style.direction = T.dir;
-      chipText.style.fontFamily = V2_LANG === 'ar' ? "'Amiri', serif" : "'Cormorant Garamond', serif";
-      chipText.style.cursor = isTruncated ? 'pointer' : 'default';
-      // Tap to expand/collapse
-      chipText.onclick = null;
-      if (isTruncated) {
-        chipText.dataset.fullText = fullText;
-        chipText.dataset.expanded = '0';
-        chipText.onclick = function() {
-          var expanded = chipText.dataset.expanded === '1';
-          if (expanded) {
-            chipText.textContent = fullText.substring(0, truncLen) + '...';
-            chipText.dataset.expanded = '0';
-          } else {
-            chipText.textContent = fullText;
-            chipText.dataset.expanded = '1';
-          }
-        };
-      }
-    }
-    // Orbe silencieuse — pas de label CTA quand intention posée
-    if (cta) { cta.textContent = ''; cta.style.display = 'none'; }
-    // Retirer label "Intention du jour" au-dessus du chip
-    var _chipMeta = chip ? chip.querySelector('.chip-meta-v2') : null;
-    if (_chipMeta) _chipMeta.style.display = 'none';
+    if (cta) { cta.textContent = 'Revoir mon intention'; cta.style.display = ''; }
   } else {
     if (orb) orb.classList.remove('intention-set-v2');
-    if (chip) chip.style.display = 'none';
-    if (cta) { cta.textContent = T.orb_start; cta.style.display = ''; cta.style.direction = T.dir; }
-    var _chipMeta2 = chip ? chip.querySelector('.chip-meta-v2') : null;
-    if (_chipMeta2) _chipMeta2.style.display = '';
+    if (cta) { cta.textContent = 'D\u00e9finir mon intention'; cta.style.display = ''; }
   }
 }
 
