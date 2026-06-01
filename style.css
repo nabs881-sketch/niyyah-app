@@ -6260,6 +6260,8 @@ body::before {
 .orb-core-v2.intention-set-v2 .orb-symbol-v2 { color: rgba(212,175,55,0.88); }
 
 .orb-cta-v2 {
+  display: block;
+  text-align: center;
   font-family: 'Cormorant Garamond', serif;
   font-size: 14px; font-style: italic; letter-spacing: 0.04em;
   color: #ECC75A;
@@ -6267,7 +6269,8 @@ body::before {
   border: 1px solid rgba(236,199,90,0.35);
   border-radius: 100px;
   padding: 8px 22px;
-  margin-top: 18px;
+  margin: 16px auto 0;
+  width: fit-content;
   cursor: pointer;
   box-shadow: 0 0 12px rgba(200,150,70,.2);
   animation: ctaPillGlow 3s ease-in-out infinite;
