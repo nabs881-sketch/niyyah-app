@@ -2170,7 +2170,6 @@ function renderResume() {
     levelsHtml +
     '<div class="resume-actions">' +
       '<button class="btn-new-day" onclick="switchView(\'checklist\')">' + t('btn_start_day') + '</button>' +
-      '<button style="width:100%;padding:14px;border-radius:12px;border:none;background:#C8A84A;color:#2C2E32;font-size:15px;font-weight:600;cursor:pointer;font-family:var(--sans);margin-bottom:0;" onclick="openBilanSoir()">🌙 Bilan du soir</button>' +
       '<button class="btn-back-check" onclick="switchView(\'checklist\')">' + t('btn_back_checklist') + '</button>' +
     '</div>';
 }
@@ -3310,12 +3309,12 @@ function renderProgression() {
   }
   const hasBilans = Object.keys(bilansData).length > 0;
   var _bilanTodayDone = !!bilansData[todayKey()];
-  const bilanHTML = hasBilans ? '<div style="margin:0 16px 24px;"><div style="font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;">'+t('bilan_7j_title')+'</div><div style="display:flex;gap:6px;justify-content:space-between;padding:14px 16px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:16px;">' + bilanCells + '</div><div style="display:flex;gap:14px;margin-top:8px;"><div style="display:flex;align-items:center;gap:4px;"><span style="font-size:14px;color:#B5A685;">\u25CB</span><span style="font-size:14px;color:var(--t3);">'+t('bilan_distrait')+'</span></div><div style="display:flex;align-items:center;gap:4px;"><span style="font-size:14px;color:#B5A685;">\u25D0</span><span style="font-size:14px;color:var(--t3);">'+t('bilan_effort')+'</span></div><div style="display:flex;align-items:center;gap:4px;"><span style="font-size:14px;color:#C8A84A;">\u25CF</span><span style="font-size:14px;color:var(--t3);">'+t('bilan_sincere')+'</span></div></div>' + (_bilanTodayDone ? '<div style="text-align:center;margin-top:10px;font-family:var(--serif);font-size:15px;font-style:italic;color:var(--t3);opacity:0.6;">Bilan d\u2019aujourd\u2019hui pos\u00e9.</div>' : '<div style="text-align:center;margin-top:10px;"><button onclick="openBilanSoir()" style="background:transparent;border:1px solid rgba(200,168,75,0.25);border-radius:12px;padding:8px 18px;color:var(--gold);font-family:var(--serif);font-size:14px;cursor:pointer;">Poser le bilan de ce soir</button></div>') + '</div>'
+  const bilanHTML = hasBilans ? '<div style="margin:0 16px 24px;"><div style="font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;">'+t('bilan_7j_title')+'</div><div style="display:flex;gap:6px;justify-content:space-between;padding:14px 16px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:16px;">' + bilanCells + '</div><div style="display:flex;gap:14px;margin-top:8px;"><div style="display:flex;align-items:center;gap:4px;"><span style="font-size:14px;color:#B5A685;">\u25CB</span><span style="font-size:14px;color:var(--t3);">'+t('bilan_distrait')+'</span></div><div style="display:flex;align-items:center;gap:4px;"><span style="font-size:14px;color:#B5A685;">\u25D0</span><span style="font-size:14px;color:var(--t3);">'+t('bilan_effort')+'</span></div><div style="display:flex;align-items:center;gap:4px;"><span style="font-size:14px;color:#C8A84A;">\u25CF</span><span style="font-size:14px;color:var(--t3);">'+t('bilan_sincere')+'</span></div></div>' + (_bilanTodayDone ? '<div style="text-align:center;margin-top:10px;font-family:var(--serif);font-size:15px;font-style:italic;color:var(--t3);opacity:0.6;">Bilan d\u2019aujourd\u2019hui pos\u00e9.</div>' : '') + '</div>'
     : '<div style="margin:0 16px 24px;text-align:center;padding:24px 16px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:16px;">'
     + '<svg viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="rgba(200,168,75,0.4)" stroke-width="1.5" stroke-linecap="round" style="margin-bottom:10px;"><path d="M24 6a12 12 0 1 0 0 16A9 9 0 0 1 24 6z"/></svg>'
     + '<div style="font-family:var(--serif);font-size:18px;font-style:italic;color:var(--t3);margin-bottom:4px;">Tes 7 derniers soirs appara\u00eetront ici.</div>'
     + '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,182,140,.92);margin-bottom:12px;">Chaque soir, Niyyah te propose un bilan : Distraction \u00b7 Effort \u00b7 Sinc\u00e9rit\u00e9.</div>'
-    + (function(){var _today=todayKey();var _bilans={};try{_bilans=JSON.parse(localStorage.getItem('niyyah_bilans')||'{}');}catch(e){}return _bilans[_today]?'<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:var(--t3);opacity:0.6;">Bilan d\u2019aujourd\u2019hui pos\u00e9.</div>':'<button onclick="openBilanSoir()" style="background:transparent;border:1px solid rgba(200,168,75,0.25);border-radius:12px;padding:8px 18px;color:var(--gold);font-family:var(--serif);font-size:14px;cursor:pointer;">Poser le bilan de ce soir</button>';})()
+    + (function(){var _today=todayKey();var _bilans={};try{_bilans=JSON.parse(localStorage.getItem('niyyah_bilans')||'{}');}catch(e){}return _bilans[_today]?'<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:var(--t3);opacity:0.6;">Bilan d\u2019aujourd\u2019hui pos\u00e9.</div>':'';})()
     + '</div>';
 
   var _fondItems = LEVELS.find(function(l){return l.id===1;}).sections.flatMap(function(s){return s.items;}).filter(_itemMatchesProfile).filter(function(i){return !i.optional;});
@@ -13470,16 +13469,46 @@ function showFinJourneeActe3() {
     el.style.opacity = '1';
   }, 100);
   setTimeout(function() { el.style.opacity = '0'; }, 13100);
-  // Phase 2: bismillah
+  // Phase 1b: bilan 1-tap (between pardon and bismillah)
+  setTimeout(function() { _showFinJourneeBilan(overlay); }, 14100);
+}
+function _showFinJourneeBilan(overlay) {
+  var today = todayKey();
+  var bilans = {}; try { bilans = JSON.parse(localStorage.getItem('niyyah_bilans') || '{}'); } catch(e) {}
+  if (bilans[today]) { _finJourneeBismillahAndClose(overlay); return; }
+  overlay.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;animation:_fdjFadeIn 1s ease forwards;">'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:12px;">Bilan du soir</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-weight:600;color:#E5E0DC;margin-bottom:6px;">Comment \u00e9tait ton c\u0153ur aujourd\u2019hui\u00a0?</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:28px;">Allah regarde la sinc\u00e9rit\u00e9, pas le score.</div>'
+    + '<div style="display:flex;flex-direction:column;gap:12px;max-width:320px;width:100%;">'
+    + '<button onclick="_finJourneeBilanChoix(\'distraction\')" style="background:rgba(20,18,15,0.85);border:1px solid rgba(200,168,75,0.15);border-radius:14px;padding:14px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;width:100%;text-align:left;"><div style="width:40px;height:40px;border-radius:50%;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.2);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;color:#B5A685;">\u25CB</div><div><div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-weight:600;color:#B5A685;">Distraction</div><div style="font-size:12px;color:rgba(181,166,133,0.6);font-style:italic;">\u063A\u064E\u0641\u0652\u0644\u064E\u0629 \u2014 le c\u0153ur absent</div></div></button>'
+    + '<button onclick="_finJourneeBilanChoix(\'effort\')" style="background:rgba(20,18,15,0.85);border:1px solid rgba(200,168,75,0.25);border-radius:14px;padding:14px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;width:100%;text-align:left;"><div style="width:40px;height:40px;border-radius:50%;background:rgba(200,168,75,0.08);border:1px solid rgba(200,168,75,0.25);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;color:rgba(200,168,74,0.7);">\u25D0</div><div><div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-weight:600;color:rgba(200,168,74,0.7);">Effort</div><div style="font-size:12px;color:rgba(181,166,133,0.6);font-style:italic;">\u0645\u064F\u062C\u064E\u0627\u0647\u064E\u062F\u064E\u0629 \u2014 le combat int\u00e9rieur</div></div></button>'
+    + '<button onclick="_finJourneeBilanChoix(\'sincerite\')" style="background:rgba(20,18,15,0.85);border:1px solid rgba(200,168,75,0.35);border-radius:14px;padding:14px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;width:100%;text-align:left;"><div style="width:40px;height:40px;border-radius:50%;background:rgba(200,168,75,0.1);border:1px solid rgba(200,168,75,0.35);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;color:#C8A84A;">\u25CF</div><div><div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-weight:600;color:#C8A84A;">Sinc\u00e9rit\u00e9</div><div style="font-size:12px;color:#B5A685;font-style:italic;">\u0625\u0650\u062E\u0652\u0644\u064E\u0627\u0635 \u2014 l\u2019\u00e9tat recherch\u00e9</div></div></button>'
+    + '</div>'
+    + '<div onclick="_finJourneeBismillahAndClose(document.getElementById(\'finjournee-overlay\'))" style="font-family:\'Cormorant Garamond\',serif;font-size:13px;color:rgba(200,168,75,0.4);cursor:pointer;margin-top:20px;">Plus tard</div>'
+    + '</div>';
+}
+function _finJourneeBilanChoix(choix) {
+  var today = todayKey();
+  var bilans = {}; try { bilans = JSON.parse(localStorage.getItem('niyyah_bilans') || '{}'); } catch(e) {}
+  bilans[today] = choix;
+  safeSetItem('niyyah_bilans', JSON.stringify(bilans));
+  if (choix === 'distraction') safeSetItem('niyyah_tawba_force', '1');
+  if (choix === 'sincerite' && typeof showToast === 'function') showToast(t('bilan_sincere'));
+  _finJourneeBismillahAndClose(document.getElementById('finjournee-overlay'));
+}
+window._finJourneeBilanChoix = _finJourneeBilanChoix;
+function _finJourneeBismillahAndClose(overlay) {
+  if (!overlay) return;
+  overlay.innerHTML = '<div class="finjournee-acte2"><div class="finjournee-acte2-text" id="finjournee-final" style="opacity:0;transition:opacity 1s ease;"></div></div>';
+  var el = document.getElementById('finjournee-final');
   setTimeout(function() {
     el.style.fontSize = '36px';
     el.style.fontFamily = "'Amiri', serif";
-    el.style.fontStyle = 'normal';
-    el.innerHTML = 'بِسْمِ اللَّهِ';
+    el.innerHTML = '\u0628\u0650\u0633\u0652\u0645\u0650 \u0627\u0644\u0644\u0651\u064E\u0647\u0650';
     el.style.opacity = '1';
-  }, 14100);
-  setTimeout(function() { el.style.opacity = '0'; }, 17100);
-  // Phase 3: mark completed + close
+  }, 300);
+  setTimeout(function() { el.style.opacity = '0'; }, 3300);
   setTimeout(function() {
     var today = todayKey();
     var hist = [];
@@ -13491,7 +13520,7 @@ function showFinJourneeActe3() {
     closeFinJournee();
     updateFinJourneeCard();
     _maybeShowNotifCard(hist);
-  }, 18100);
+  }, 4300);
 }
 function _maybeShowNotifCard(hist) {
   if (safeGetItem('niyyah_notif_asked') === '1') return;
