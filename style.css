@@ -6269,7 +6269,7 @@ body::before {
   border: 1px solid rgba(236,199,90,0.35);
   border-radius: 100px;
   padding: 8px 22px;
-  margin: 16px auto 0;
+  margin: 16px auto 30px;
   width: fit-content;
   cursor: pointer;
   box-shadow: 0 0 12px rgba(200,150,70,.2);
