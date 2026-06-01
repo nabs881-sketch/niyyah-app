@@ -6315,7 +6315,7 @@ body::before {
   background: none;
   border: none;
   padding: 0;
-  margin: 24px auto 24px;
+  margin: 10px auto 24px;
   cursor: pointer;
   transition: transform 0.15s ease;
   text-align: center;
