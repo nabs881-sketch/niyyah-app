@@ -5258,7 +5258,7 @@ _outilAnxieteRenderers.checkboxes_multiple = function(o, c) {
     html += '</div></label>';
     if (opt.champ_libre) {
       html += '<div style="margin-left:36px;' + (chk ? '' : 'display:none;') + '">'
-        + '<input type="text" value="' + escapeHtml(customVal) + '" placeholder="..." oninput="var _s={};try{_s=JSON.parse(safeGetItem(\'' + sk + '\')||\'{}\')}catch(e){}_s.custom=this.value;safeSetItem(\'' + sk + '\',JSON.stringify(_s))" style="width:100%;box-sizing:border-box;padding:8px 12px;border-radius:8px;border:1px solid ' + c + '33;background:rgba(200,168,75,0.04);color:#E5E0DC;font-family:var(--serif);font-size:16px;outline:none;">'
+        + '<input type="text" value="' + escapeHtml(customVal) + '" placeholder="..." oninput="var _s={};try{_s=JSON.parse(safeGetItem(\'' + sk + '\')||\'{}\')}catch(e){}_s.custom=this.value;safeSetItem(\'' + sk + '\',JSON.stringify(_s))" style="width:100%;box-sizing:border-box;padding:8px 12px;border-radius:8px;border:1.5px solid rgba(232,208,140,0.55);background:rgba(0,0,0,0.35);color:#E5E0DC;font-family:var(--serif);font-size:16px;outline:none;">'
         + '</div>';
     }
   });
@@ -5285,7 +5285,7 @@ _outilAnxieteRenderers.champ_texte_long = function(o, c) {
   var html = '';
   if (o.introduction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;white-space:pre-line;">' + escapeHtml(o.introduction) + '</div>';
   if (o.amorce) html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(232,208,140,0.95);margin-bottom:8px;">' + escapeHtml(o.amorce) + '</div>';
-  html += '<textarea maxlength="' + maxCar + '" placeholder="' + escapeHtml(champ.placeholder || '...') + '" oninput="safeSetItem(\'' + sk + '\',this.value);var c=this.parentNode.querySelector(\'._ctLong\');if(c)c.textContent=this.value.length+\'/' + maxCar + '\'" style="display:block;width:100%;box-sizing:border-box;min-height:120px;padding:14px;border-radius:12px;border:1px solid ' + c + '33;background:rgba(200,168,75,0.04);color:#E5E0DC;font-family:var(--serif);font-size:15px;line-height:1.6;outline:none;resize:vertical;">' + escapeHtml(saved) + '</textarea>';
+  html += '<textarea maxlength="' + maxCar + '" placeholder="' + escapeHtml(champ.placeholder || '...') + '" oninput="safeSetItem(\'' + sk + '\',this.value);var c=this.parentNode.querySelector(\'._ctLong\');if(c)c.textContent=this.value.length+\'/' + maxCar + '\'" style="display:block;width:100%;box-sizing:border-box;min-height:120px;padding:14px;border-radius:12px;border:1.5px solid rgba(232,208,140,0.55);background:rgba(0,0,0,0.35);color:#E5E0DC;font-family:var(--serif);font-size:15px;line-height:1.6;outline:none;resize:vertical;">' + escapeHtml(saved) + '</textarea>';
   html += '<div class="_ctLong" style="font-size:14px;color:rgba(200,168,75,0.3);text-align:right;margin-top:4px;">' + saved.length + '/' + maxCar + '</div>';
   if (o.note_finale) html += '<div style="font-family:var(--serif);font-size:17px;color:rgba(245,237,214,0.95);text-align:center;font-style:italic;margin-top:12px;line-height:1.55;">' + escapeHtml(o.note_finale) + '</div>';
   if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(232,208,140,0.95);text-align:center;line-height:1.55;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
@@ -5458,7 +5458,7 @@ _outilAnxieteRenderers.champ_qui_disparait = function(o, c) {
     var themes = etape.options_thematiques || [];
     html += '<div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:16px;">';
     themes.forEach(function(th) {
-      html += '<button onclick="safeSetItem(\'' + sk + '\',\'' + escapeHtml(th) + '\');_cureAnxieteWizardRender()" style="padding:8px 14px;border-radius:8px;border:1px solid ' + c + '33;background:rgba(200,168,75,0.04);color:rgba(240,234,214,0.7);font-family:var(--serif);font-size:15px;cursor:pointer;">' + escapeHtml(th) + '</button>';
+      html += '<button onclick="safeSetItem(\'' + sk + '\',\'' + escapeHtml(th) + '\');_cureAnxieteWizardRender()" style="padding:8px 14px;border-radius:8px;border:1.5px solid rgba(232,208,140,0.55);background:rgba(0,0,0,0.35);color:rgba(240,234,214,0.7);font-family:var(--serif);font-size:15px;cursor:pointer;">' + escapeHtml(th) + '</button>';
     });
     html += '</div>';
   }
@@ -5677,7 +5677,7 @@ _outilAnxieteRenderers.choix_unique_avec_engagement = function(o, c) {
       + '</button>';
     if (opt.champ_libre) {
       html += '<div id="' + engId + '_custom" style="display:' + (sel ? 'block' : 'none') + ';margin-left:28px;">'
-        + '<input type="text" value="' + escapeHtml(customVal) + '" placeholder="' + escapeHtml(opt.placeholder || '...') + '" oninput="var _s={};try{_s=JSON.parse(safeGetItem(\'' + sk + '\')||\'{}\')}catch(e){}_s.custom=this.value;safeSetItem(\'' + sk + '\',JSON.stringify(_s))" style="width:100%;box-sizing:border-box;padding:10px 12px;border-radius:8px;border:1px solid ' + c + '33;background:rgba(200,168,75,0.04);color:#E5E0DC;font-family:var(--serif);font-size:16px;outline:none;">'
+        + '<input type="text" value="' + escapeHtml(customVal) + '" placeholder="' + escapeHtml(opt.placeholder || '...') + '" oninput="var _s={};try{_s=JSON.parse(safeGetItem(\'' + sk + '\')||\'{}\')}catch(e){}_s.custom=this.value;safeSetItem(\'' + sk + '\',JSON.stringify(_s))" style="width:100%;box-sizing:border-box;padding:10px 12px;border-radius:8px;border:1.5px solid rgba(232,208,140,0.55);background:rgba(0,0,0,0.35);color:#E5E0DC;font-family:var(--serif);font-size:16px;outline:none;">'
         + '</div>';
     }
   });
@@ -5711,7 +5711,7 @@ _outilAnxieteRenderers.drag_and_drop_2_colonnes = function(o, c) {
   html += '<div style="margin-bottom:20px;">';
   for (var i = 0; i < nbFields; i++) {
     var v = soucis[i] || '';
-    html += '<input type="text" id="' + dndId + '_s' + i + '" value="' + escapeHtml(v) + '" placeholder="Souci ' + (i + 1) + '..." oninput="_dnd2SaveSoucis(\'' + dndId + '\',\'' + sk + '\',' + nbMax + ')" style="display:block;width:100%;box-sizing:border-box;margin-bottom:8px;padding:10px 12px;border-radius:8px;border:1px solid ' + c + '33;background:rgba(200,168,75,0.04);color:#E5E0DC;font-family:var(--serif);font-size:16px;outline:none;">';
+    html += '<input type="text" id="' + dndId + '_s' + i + '" value="' + escapeHtml(v) + '" placeholder="Souci ' + (i + 1) + '..." oninput="_dnd2SaveSoucis(\'' + dndId + '\',\'' + sk + '\',' + nbMax + ')" style="display:block;width:100%;box-sizing:border-box;margin-bottom:8px;padding:10px 12px;border-radius:8px;border:1.5px solid rgba(232,208,140,0.55);background:rgba(0,0,0,0.35);color:#E5E0DC;font-family:var(--serif);font-size:16px;outline:none;">';
   }
   html += '</div>';
   // Two columns
@@ -5920,7 +5920,7 @@ _outilAnxieteRenderers.drag_and_drop_3_categories = function(o, c) {
   html += '<div style="margin-bottom:20px;">';
   for (var i = 0; i < nb; i++) {
     var v = pensees[i] || '';
-    html += '<input type="text" id="' + dndId + '_p' + i + '" value="' + escapeHtml(v) + '" placeholder="Pens\u00e9e ' + (i + 1) + '..." oninput="_dnd3SavePensees(\'' + dndId + '\',\'' + sk + '\',' + nb + ')" style="display:block;width:100%;box-sizing:border-box;margin-bottom:8px;padding:10px 12px;border-radius:8px;border:1px solid ' + c + '33;background:rgba(200,168,75,0.04);color:#E5E0DC;font-family:var(--serif);font-size:16px;outline:none;">';
+    html += '<input type="text" id="' + dndId + '_p' + i + '" value="' + escapeHtml(v) + '" placeholder="Pens\u00e9e ' + (i + 1) + '..." oninput="_dnd3SavePensees(\'' + dndId + '\',\'' + sk + '\',' + nb + ')" style="display:block;width:100%;box-sizing:border-box;margin-bottom:8px;padding:10px 12px;border-radius:8px;border:1.5px solid rgba(232,208,140,0.55);background:rgba(0,0,0,0.35);color:#E5E0DC;font-family:var(--serif);font-size:16px;outline:none;">';
   }
   html += '</div>';
   // Category bins
