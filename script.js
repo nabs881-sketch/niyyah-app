@@ -4782,7 +4782,7 @@ function _cureTransition(jourFait) {
     var _trJ = _trData.jours['j' + jourFait];
     hierTitre = (_trJ && _trJ.titre_jour) || '';
   }
-  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;background:radial-gradient(120% 80% at 50% 42%,#1c130a,#0b0704 60%,#070402);">'
+  el.innerHTML = '<div style="padding:36px 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;min-height:100vh;text-align:center;background:radial-gradient(120% 80% at 50% 42%,#1c130a,#0b0704 60%,#070402);">'
     + (hierTitre ? '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.7;max-width:400px;margin:0 auto 24px;">Hier\u00a0: ' + escapeHtml(hierTitre) + '.</div>' : '')
     + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.7;max-width:400px;margin:0 auto 24px;">Aujourd\u2019hui, attends.</div>'
     + '<div class="itfaa-subtle" style="font-family:var(--serif);font-size:16px;max-width:400px;margin:0 auto 40px;">La porte rouvre demain.</div>'
