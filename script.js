@@ -5173,7 +5173,7 @@ _outilAnxieteRenderers.double_slider = function(o, c) {
   html += '</div></div>';
   // Notes (psy + spi)
   if (o.note_spi) {
-    html += '<div style="border-top:1px solid rgba(200,168,75,0.1);margin-top:16px;padding-top:12px;font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;">' + escapeHtml(o.note_spi) + '</div>';
+    html += '<div style="border-top:1px solid rgba(200,168,75,0.1);margin-top:16px;padding-top:12px;font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.55;">' + escapeHtml(o.note_spi) + '</div>';
   }
   return html;
 };
@@ -5224,7 +5224,7 @@ _outilAnxieteRenderers.choix_unique_sortie = function(o, c) {
       + '</button>';
   });
   html += '</div>';
-  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;">' + escapeHtml(o.note_spi) + '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.55;">' + escapeHtml(o.note_spi) + '</div>';
   return html;
 };
 function _sortieSelect(sk, optId) {
@@ -5263,7 +5263,7 @@ _outilAnxieteRenderers.checkboxes_multiple = function(o, c) {
     }
   });
   html += '</div>';
-  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;">' + escapeHtml(o.note_spi) + '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.55;">' + escapeHtml(o.note_spi) + '</div>';
   return html;
 };
 function _cbmToggle(sk, optId, isChecked) {
@@ -5284,11 +5284,11 @@ _outilAnxieteRenderers.champ_texte_long = function(o, c) {
   var maxCar = champ.max_caracteres || 500;
   var html = '';
   if (o.introduction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;white-space:pre-line;">' + escapeHtml(o.introduction) + '</div>';
-  if (o.amorce) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.7);margin-bottom:8px;">' + escapeHtml(o.amorce) + '</div>';
+  if (o.amorce) html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(200,168,75,0.7);margin-bottom:8px;">' + escapeHtml(o.amorce) + '</div>';
   html += '<textarea maxlength="' + maxCar + '" placeholder="' + escapeHtml(champ.placeholder || '...') + '" oninput="safeSetItem(\'' + sk + '\',this.value);var c=this.parentNode.querySelector(\'._ctLong\');if(c)c.textContent=this.value.length+\'/' + maxCar + '\'" style="display:block;width:100%;box-sizing:border-box;min-height:120px;padding:14px;border-radius:12px;border:1px solid ' + c + '33;background:rgba(200,168,75,0.04);color:#E5E0DC;font-family:var(--serif);font-size:15px;line-height:1.6;outline:none;resize:vertical;">' + escapeHtml(saved) + '</textarea>';
-  html += '<div class="_ctLong" style="font-size:15px;color:rgba(200,168,75,0.3);text-align:right;margin-top:4px;">' + saved.length + '/' + maxCar + '</div>';
-  if (o.note_finale) html += '<div style="font-family:var(--serif);font-size:15px;color:rgba(200,168,75,0.45);text-align:center;font-style:italic;margin-top:12px;line-height:1.5;">' + escapeHtml(o.note_finale) + '</div>';
-  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.35);text-align:center;line-height:1.5;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
+  html += '<div class="_ctLong" style="font-size:14px;color:rgba(200,168,75,0.3);text-align:right;margin-top:4px;">' + saved.length + '/' + maxCar + '</div>';
+  if (o.note_finale) html += '<div style="font-family:var(--serif);font-size:17px;color:rgba(200,168,75,0.45);text-align:center;font-style:italic;margin-top:12px;line-height:1.55;">' + escapeHtml(o.note_finale) + '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(200,168,75,0.35);text-align:center;line-height:1.55;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
   return html;
 };
 
@@ -5326,7 +5326,7 @@ _outilAnxieteRenderers.lecture_synchronisee_souffle = function(o, c) {
     html += '<button onclick="safeSetItem(\'' + sk + '\',\'1\')" style="padding:10px 28px;border-radius:10px;border:1px solid rgba(200,168,75,0.2);background:none;color:rgba(200,168,75,0.6);font-family:var(--serif);font-size:15px;cursor:pointer;">Termin\u00e9</button>';
   }
   html += '</div>';
-  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.35);text-align:center;line-height:1.5;margin-top:12px;">' + escapeHtml(o.note_spi) + '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(200,168,75,0.35);text-align:center;line-height:1.55;margin-top:12px;">' + escapeHtml(o.note_spi) + '</div>';
   if (!done) setTimeout(function() { _lsPlay(lsId, arSegs, trSegs, frSegs, sk); }, 500);
   return html;
 };
@@ -5383,7 +5383,7 @@ _outilAnxieteRenderers.double_slider_compare = function(o, c) {
   html += '<div id="' + dscId + '_diag" style="border:1px solid ' + c + '22;border-radius:12px;padding:14px;margin-bottom:12px;text-align:center;min-height:40px;">';
   html += _dscDiagText(o, dscId);
   html += '</div>';
-  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.55;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
   // Wire live update after render
   setTimeout(function() { _dscUpdate(dscId); }, 200);
   return html;
@@ -5434,7 +5434,7 @@ _outilAnxieteRenderers.champ_qui_disparait = function(o, c) {
     // Theme chosen, ready to deposit
     html += '<div id="' + dispId + '_form">';
     html += '<div style="border:1px solid ' + c + '22;border-radius:14px;padding:16px;margin-bottom:16px;">';
-    html += '<span style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.7);">' + escapeHtml(o.amorce || '') + ' </span>';
+    html += '<span style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(200,168,75,0.7);">' + escapeHtml(o.amorce || '') + ' </span>';
     html += '<input type="text" id="' + dispId + '_input" placeholder="' + escapeHtml((o.champ && o.champ.placeholder) || '...') + '" style="background:none;border:none;border-bottom:1px solid ' + c + '44;color:#E5E0DC;font-family:var(--serif);font-size:15px;padding:2px 4px;width:100%;max-width:260px;outline:none;">';
     html += '</div>';
     html += '<div style="font-size:15px;color:rgba(200,168,75,0.5);text-align:center;margin-bottom:12px;">Th\u00e8me\u00a0: ' + escapeHtml(savedTheme) + '</div>';
@@ -5451,7 +5451,7 @@ _outilAnxieteRenderers.champ_qui_disparait = function(o, c) {
   } else {
     // Step 1: write + choose theme
     html += '<div style="border:1px solid ' + c + '22;border-radius:14px;padding:16px;margin-bottom:16px;">';
-    html += '<span style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.7);">' + escapeHtml(o.amorce || '') + ' </span>';
+    html += '<span style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(200,168,75,0.7);">' + escapeHtml(o.amorce || '') + ' </span>';
     html += '<input type="text" id="' + dispId + '_input" placeholder="' + escapeHtml((o.champ && o.champ.placeholder) || '...') + '" style="background:none;border:none;border-bottom:1px solid ' + c + '44;color:#E5E0DC;font-family:var(--serif);font-size:15px;padding:2px 4px;width:100%;max-width:260px;outline:none;">';
     html += '</div>';
     if (etape.instruction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.6);text-align:center;margin-bottom:10px;">' + escapeHtml(etape.instruction) + '</div>';
@@ -5462,7 +5462,7 @@ _outilAnxieteRenderers.champ_qui_disparait = function(o, c) {
     });
     html += '</div>';
   }
-  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-top:12px;">' + escapeHtml(o.note_spi) + '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.55;margin-top:12px;">' + escapeHtml(o.note_spi) + '</div>';
   return html;
 };
 function _dispDeposer(dispId, sk) {
@@ -5496,7 +5496,7 @@ _outilAnxieteRenderers.ecran_sombre_avec_dhikr = function(o, c) {
   html += '</div>';
   // Terminate button
   html += '<button id="' + dhkId + '_stop" onclick="_dhkStop(\'' + dhkId + '\',\'' + sk + '\')" style="display:block;margin:0 auto;padding:10px 28px;border-radius:10px;border:1px solid rgba(200,168,75,0.2);background:none;color:rgba(200,168,75,0.4);font-family:var(--serif);font-size:15px;cursor:pointer;">Terminer</button>';
-  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.35);text-align:center;line-height:1.5;margin-top:16px;">' + escapeHtml(o.note_spi) + '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(200,168,75,0.35);text-align:center;line-height:1.55;margin-top:16px;">' + escapeHtml(o.note_spi) + '</div>';
   // Inject keyframe + start timer
   setTimeout(function() {
     if (!document.getElementById('_dhkPulseStyle')) {
@@ -5542,7 +5542,7 @@ _outilAnxieteRenderers.champ_avec_amorce_obligatoire = function(o, c) {
   if (validated && o.instruction_finale) {
     html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.75);text-align:center;line-height:1.6;margin-bottom:12px;font-style:italic;">' + escapeHtml(o.instruction_finale) + '</div>';
   }
-  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.55;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
   return html;
 };
 
@@ -5586,7 +5586,7 @@ _outilAnxieteRenderers.tri_radio_apprentissage = function(o, c) {
     // Feedback zone
     html += '<div id="' + triId + '_fb" style="min-height:40px;"></div>';
   }
-  if (o.note_spi && allDone) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
+  if (o.note_spi && allDone) html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.55;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
   return html;
 };
 function _triAnswer(triId, sk, qIdx, answer, correct) {
@@ -5629,7 +5629,7 @@ _outilAnxieteRenderers.texte_qui_s_efface = function(o, c) {
   } else {
     html += '<div id="' + effId + '">';
     html += '<div style="display:flex;align-items:baseline;gap:6px;margin-bottom:12px;">';
-    if (o.amorce) html += '<span style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.7);flex-shrink:0;">' + escapeHtml(o.amorce) + '</span>';
+    if (o.amorce) html += '<span style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(200,168,75,0.7);flex-shrink:0;">' + escapeHtml(o.amorce) + '</span>';
     html += '<input type="text" id="' + effId + '_input" placeholder="' + escapeHtml((o.champ && o.champ.placeholder) || '...') + '" style="flex:1;background:none;border:none;border-bottom:1px solid ' + c + '44;color:#E5E0DC;font-family:var(--serif);font-size:15px;padding:4px 2px;outline:none;">';
     html += '</div>';
     html += '<button onclick="_effDeposer(\'' + effId + '\',\'' + sk + '\')" style="display:block;width:100%;padding:12px;border-radius:10px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:16px;cursor:pointer;">' + escapeHtml(act.bouton || 'D\u00e9poser') + '</button>';
@@ -5641,7 +5641,7 @@ _outilAnxieteRenderers.texte_qui_s_efface = function(o, c) {
       + '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);margin-top:4px;">' + escapeHtml(act.calligraphie_finale_sens || '') + '</div>'
       + '</div>';
   }
-  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-top:16px;">' + escapeHtml(o.note_spi) + '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.55;margin-top:16px;">' + escapeHtml(o.note_spi) + '</div>';
   return html;
 };
 function _effDeposer(effId, sk) {
@@ -5682,7 +5682,7 @@ _outilAnxieteRenderers.choix_unique_avec_engagement = function(o, c) {
     }
   });
   html += '</div>';
-  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;">' + escapeHtml(o.note_spi) + '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.55;">' + escapeHtml(o.note_spi) + '</div>';
   return html;
 };
 function _engSelect(engId, sk, optId, hasCustom) {
@@ -5747,7 +5747,7 @@ _outilAnxieteRenderers.drag_and_drop_2_colonnes = function(o, c) {
   if (!anyUnclassified && soucis.some(function(s) { return s && s.trim(); })) {
     html += '<div style="font-family:var(--serif);font-size:15px;color:rgba(200,168,75,0.5);text-align:center;font-style:italic;margin-bottom:8px;">\u2713 Tout est r\u00e9parti.</div>';
   }
-  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.55;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
   return html;
 };
 function _dnd2SaveSoucis(dndId, sk, nbMax) {
@@ -5800,7 +5800,7 @@ _outilAnxieteRenderers.pression_tactile_maintenue = function(o, c) {
   html += '<div id="' + pressId + '_hint" style="font-size:15px;color:rgba(200,168,75,0.4);font-style:italic;margin-top:8px;">Maintiens le contact</div>';
   html += '</div>';
   if (o.instruction_finale) html += '<div id="' + pressId + '_final" style="display:none;font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.65);text-align:center;line-height:1.6;margin-bottom:12px;font-style:italic;">' + escapeHtml(o.instruction_finale) + '</div>';
-  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.55;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
   // Wire up touch/mouse events after render
   setTimeout(function() { _pressInit(pressId, duree, circumference, sk); }, 200);
   return html;
@@ -5896,7 +5896,7 @@ _outilAnxieteRenderers.silhouette_interactive = function(o, c) {
       + '</button>';
   });
   html += '</div></div>';
-  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.55;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
   return html;
 };
 function _silSelect(silId, sk, zoneId) {
@@ -5956,7 +5956,7 @@ _outilAnxieteRenderers.drag_and_drop_3_categories = function(o, c) {
   if (!anyUnclassified && pensees.some(function(p) { return p && p.trim(); })) {
     html += '<div style="font-family:var(--serif);font-size:15px;color:rgba(200,168,75,0.5);text-align:center;font-style:italic;margin-bottom:8px;">\u2713 Toutes class\u00e9es.</div>';
   }
-  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.55;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
   return html;
 };
 function _dnd3SavePensees(dndId, sk, nb) {
@@ -6018,7 +6018,7 @@ _outilAnxieteRenderers.checkboxes_sequentielles = function(o, c) {
     html += '</div>';
   });
   html += '</div>';
-  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.55;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
   return html;
 };
 function _seqFieldUpdate(seqId, sk, etapeIdx, fieldIdx, value) {
@@ -6077,7 +6077,7 @@ _outilAnxieteRenderers.respiration_interactive = function(o, c) {
   html += '</div>';
   // Terminate button
   html += '<button id="' + breathId + '_stop" onclick="_breathStop(\'' + breathId + '\',\'' + sk + '\')" style="display:block;margin:0 auto;padding:10px 28px;border-radius:10px;border:1px solid ' + c + '33;background:none;color:rgba(200,168,75,0.6);font-family:var(--serif);font-size:15px;cursor:pointer;">Terminer</button>';
-  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-top:16px;">' + escapeHtml(o.note_spi) + '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.55;margin-top:16px;">' + escapeHtml(o.note_spi) + '</div>';
   // Start animation after render
   setTimeout(function() { _breathStart(breathId, inspSec, expSec, duree, n, sk); }, 300);
   return html;
@@ -6211,7 +6211,7 @@ _outilAnxieteRenderers.radio_unique = function(o, c) {
       + '<div style="font-size:15px;color:rgba(200,168,75,0.4);">\u2014 ' + escapeHtml(rs.source || '') + '</div>'
       + '</div>';
   }
-  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;">' + escapeHtml(o.note_spi) + '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.55;">' + escapeHtml(o.note_spi) + '</div>';
   return html;
 };
 
@@ -6230,7 +6230,7 @@ _outilAnxieteRenderers.double_champ_lie = function(o, c) {
   html += '<input type="text" value="' + escapeHtml(v2) + '" placeholder="' + escapeHtml(c2.placeholder || '...') + '" oninput="safeSetItem(\'' + sk2 + '\',this.value)" style="display:block;width:100%;box-sizing:border-box;background:none;border:none;border-bottom:1px solid ' + c + '44;color:#E5E0DC;font-family:var(--serif);font-size:17px;padding:6px 4px;outline:none;"></div>';
   html += '</div>';
   if (o.note_spi) {
-    html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.5;margin-bottom:8px;">' + escapeHtml(o.note_spi) + '</div>';
+    html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(200,168,75,0.4);text-align:center;line-height:1.55;margin-bottom:8px;">' + escapeHtml(o.note_spi) + '</div>';
   }
   return html;
 };
