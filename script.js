@@ -7752,6 +7752,7 @@ let _tafakkurRemaining = 3 * 60;
 let _tafakkurInterval = null;
 let _tafakkurRunning = false;
 let _tafakkurAudio = null;
+let _tafakkurEnded = false; // true dès que la fin/le récit a été montré pour la session courante
 
 const MEDIT_PHRASES = [
   'Pose ton cœur. Respire. Réfléchis à la création d\'Allah.',
@@ -8291,6 +8292,7 @@ function openTafakkurArchive() {
 }
 window.openTafakkurArchive = openTafakkurArchive;
 function openTafakkur() {
+  _tafakkurEnded = false;
   var _tScreen = document.getElementById('tafakkurScreen');
   if (_tafakkurDoneToday()) {
     _tScreen.classList.add('show');
@@ -8373,14 +8375,16 @@ function setTafakkurAudio(mode, btn) {
 
 function closeTafakkur(forceClose) {
   console.log('[Tafakkur] closeTafakkur called | running=' + _tafakkurRunning + ' | remaining=' + _tafakkurRemaining + ' | forceClose=' + !!forceClose);
-  // Option A : toute halte COMMENCÉE (timer lancé, même en pause) se clôt par le récit,
-  // sans seuil de durée. On ne retient jamais : pas de "reste encore".
-  var _elapsed = _tafakkurDuration - _tafakkurRemaining;
-  if (!forceClose && _tafakkurDuration > 0 && _elapsed > 0 && !_tafakkurDoneToday()) {
+  // Récit = cadeau de clôture : affiché à TOUTE fermeture (chrono lancé ou non), jamais retenu.
+  // Le verrou quotidien n'est posé QUE si une halte a réellement commencé (chrono lancé, _elapsed > 0).
+  // _tafakkurEnded empêche la ré-entrée (cas phrase sans récit) ; _tafakkurDoneToday() évite
+  // d'afficher un récit sur l'écran "reviens demain".
+  if (!forceClose && !_tafakkurDoneToday() && !_tafakkurEnded) {
+    var _elapsed = _tafakkurDuration - _tafakkurRemaining;
     if (_tafakkurInterval) { clearInterval(_tafakkurInterval); _tafakkurInterval = null; }
     _tafakkurRunning = false;
     _computeTafakkurEligible();
-    _markTafakkurDone(_tafakkurCurrentPhrase);
+    if (_elapsed > 0) { _markTafakkurDone(_tafakkurCurrentPhrase); }
     _showTafakkurEnd();
     return;
   }
@@ -8483,16 +8487,12 @@ function _showTafakkurEnd() {
   var timerEl = document.getElementById('tafakkurTimerDisplay');
   if (timerEl) timerEl.textContent = '';
   if (!el) return;
+  _tafakkurEnded = true;
   var eligibleRaw = safeGetItem('niyyah_tafakkur_recit_eligible');
   var eligible = eligibleRaw === 'true';
   console.log('[Tafakkur] _showTafakkurEnd | eligible raw="' + eligibleRaw + '" → ' + eligible);
   console.log('[Tafakkur] _showTafakkurEnd | phrase="' + (_tafakkurCurrentPhrase || 'EMPTY').substring(0, 60) + '"');
   console.log('[Tafakkur] _showTafakkurEnd | Q_MAP=' + (window.TAFAKKUR_Q_MAP ? Object.keys(window.TAFAKKUR_Q_MAP).length : 'NULL') + ' | RECITS=' + (window.TAFAKKUR_RECITS ? window.TAFAKKUR_RECITS.length : 'NULL'));
-  if (!eligible) {
-    console.log('[Tafakkur] NOT eligible → closeTafakkur(true)');
-    closeTafakkur(true);
-    return;
-  }
   el.style.opacity = '0';
   setTimeout(function() {
     el.innerHTML = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:#C8A84A;line-height:1.7;max-width:320px;margin:0 auto;">' + _tafakkurCurrentPhrase + '</div>';
