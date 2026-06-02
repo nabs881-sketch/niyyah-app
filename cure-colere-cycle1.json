@@ -73,7 +73,7 @@
           "type": "checkboxes_multiple",
           "titre": "Où elle se déclenche",
           "introduction": "Coche, sans te juger, là où ta colère s'allume le plus.",
-          "consigne": "Coche tout ce qui te concerne.",
+          "consigne": "",
           "options": [
             {
               "id": "famille",
@@ -106,7 +106,7 @@
           ],
           "stockage": "cure_colere_j1_declencheurs",
           "note_psy": "Auto-observation des déclencheurs (self-monitoring) — première étape de la régulation.",
-          "note_spi": "Connaître son nafs est le début de le dompter (esprit de la muhâsaba)."
+          "note_spi": "Connaître son nafs est le premier pas pour le dompter (esprit de la muhâsaba)."
         },
         {
           "id": "style_colere",
@@ -264,7 +264,7 @@
           "type": "checkboxes_multiple",
           "titre": "Les racines, chez moi",
           "introduction": "Coche celles qui attisent le plus ta colère.",
-          "consigne": "Coche tout ce qui te concerne.",
+          "consigne": "",
           "options": [
             {
               "id": "orgueil",
