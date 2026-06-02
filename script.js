@@ -4776,12 +4776,11 @@ function _cureTransition(jourFait) {
   if (!el) return;
   var hierTitre = '';
   var _prt = (_cureWizardState && _cureWizardState.porte) || 'colere';
-  if (_prt === 'anxiete') {
-    var _cja = window.CURE_ANXIETE_CYCLE1 && window.CURE_ANXIETE_CYCLE1.jours && window.CURE_ANXIETE_CYCLE1.jours['j' + jourFait];
-    hierTitre = (_cja && _cja.titre_jour) || '';
-  } else {
-    var _cj = window.CURE_COLERE_CYCLE1 && window.CURE_COLERE_CYCLE1.jours && window.CURE_COLERE_CYCLE1.jours[jourFait - 1];
-    hierTitre = (_cj && _cj.titre) || '';
+  var _cfg = _curePorteConfig[_prt] || _curePorteConfig.anxiete;
+  var _trData = window[_cfg.dataKey];
+  if (_trData && _trData.jours) {
+    var _trJ = _trData.jours['j' + jourFait];
+    hierTitre = (_trJ && _trJ.titre_jour) || '';
   }
   el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
     + (hierTitre ? '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.7;max-width:400px;margin:0 auto 24px;">Hier\u00a0: ' + escapeHtml(hierTitre) + '.</div>' : '')
@@ -5103,6 +5102,7 @@ function _getCureImgDir() {
 }
 
 function _cureAnxieteGenericDay(el, dayNum) {
+  var _curPorte = (_cureWizardState && _cureWizardState.porte) || 'anxiete';
   var c = _getCureColor();
   var data = _getCureData();
   var j = data && data.jours && data.jours['j' + dayNum];
@@ -5129,7 +5129,7 @@ function _cureAnxieteGenericDay(el, dayNum) {
   // Clôture
   steps.push({ type: '_finale_anxiete', data: j, dayNum: dayNum });
 
-  _cureWizardState = { dayNum: dayNum, step: 0, steps: steps, saved: {}, isLast: isLast, filRouge: '', c: c, porte: 'anxiete' };
+  _cureWizardState = { dayNum: dayNum, step: 0, steps: steps, saved: {}, isLast: isLast, filRouge: '', c: c, porte: _curPorte };
   _cureAnxieteWizardRender(el);
 }
 
@@ -6445,13 +6445,13 @@ function _showMurmureRetour() {
 }
 window._showMurmureRetour = _showMurmureRetour;
 
-_cureJourRenderers.anxiete_1 = function(el) { _cureAnxieteGenericDay(el, 1); };
-_cureJourRenderers.anxiete_2 = function(el) { _cureAnxieteGenericDay(el, 2); };
-_cureJourRenderers.anxiete_3 = function(el) { _cureAnxieteGenericDay(el, 3); };
-_cureJourRenderers.anxiete_4 = function(el) { _cureAnxieteGenericDay(el, 4); };
-_cureJourRenderers.anxiete_5 = function(el) { _cureAnxieteGenericDay(el, 5); };
-_cureJourRenderers.anxiete_6 = function(el) { _cureAnxieteGenericDay(el, 6); };
-_cureJourRenderers.anxiete_7 = function(el) { _cureAnxieteGenericDay(el, 7); };
+_cureJourRenderers.anxiete_1 = function(el) { _cureWizardState.porte = 'anxiete'; _cureAnxieteGenericDay(el, 1); };
+_cureJourRenderers.anxiete_2 = function(el) { _cureWizardState.porte = 'anxiete'; _cureAnxieteGenericDay(el, 2); };
+_cureJourRenderers.anxiete_3 = function(el) { _cureWizardState.porte = 'anxiete'; _cureAnxieteGenericDay(el, 3); };
+_cureJourRenderers.anxiete_4 = function(el) { _cureWizardState.porte = 'anxiete'; _cureAnxieteGenericDay(el, 4); };
+_cureJourRenderers.anxiete_5 = function(el) { _cureWizardState.porte = 'anxiete'; _cureAnxieteGenericDay(el, 5); };
+_cureJourRenderers.anxiete_6 = function(el) { _cureWizardState.porte = 'anxiete'; _cureAnxieteGenericDay(el, 6); };
+_cureJourRenderers.anxiete_7 = function(el) { _cureWizardState.porte = 'anxiete'; _cureAnxieteGenericDay(el, 7); };
 
 // ── CURE REGARD ───────────────────────────────────────────────────────────────
 function openCureRegard() {
