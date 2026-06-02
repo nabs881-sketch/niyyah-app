@@ -4782,7 +4782,7 @@ function _cureTransition(jourFait) {
     var _trJ = _trData.jours['j' + jourFait];
     hierTitre = (_trJ && _trJ.titre_jour) || '';
   }
-  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
+  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;background:radial-gradient(120% 80% at 50% 42%,#1c130a,#0b0704 60%,#070402);">'
     + (hierTitre ? '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.7;max-width:400px;margin:0 auto 24px;">Hier\u00a0: ' + escapeHtml(hierTitre) + '.</div>' : '')
     + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.7;max-width:400px;margin:0 auto 24px;">Aujourd\u2019hui, attends.</div>'
     + '<div class="itfaa-subtle" style="font-family:var(--serif);font-size:16px;max-width:400px;margin:0 auto 40px;">La porte rouvre demain.</div>'
@@ -6435,10 +6435,10 @@ function _cureAnxieteSave(num) {
   var nextTitle = (nextJ && nextJ.titre_jour) || '';
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
-  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
-    + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:12px;">Jour ' + num + ' enregistr\u00e9.</div>'
+  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;background:radial-gradient(120% 80% at 50% 42%,#1c130a,#0b0704 60%,#070402);">'
+    + '<div style="font-family:var(--serif);font-size:20px;color:#C8A84A;margin-bottom:12px;">Jour ' + num + ' enregistr\u00e9.</div>'
     + (nextTitle ? '<div class="itfaa-body" style="font-size:16px;line-height:1.7;max-width:400px;margin:0 auto 32px;">D\u00e8s demain, Jour ' + (num + 1) + '\u00a0: ' + escapeHtml(nextTitle) + '.</div>' : '')
-    + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs();_showMurmureRetour()" style="padding:14px 28px;border-radius:12px;border:1px solid ' + c + '44;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">Retour</button>'
+    + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs();_showMurmureRetour()" style="padding:14px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:none;color:#C8A84A;font-family:var(--serif);font-size:14px;cursor:pointer;">Retour</button>'
     + '</div>';
 }
 window._cureAnxieteSave = _cureAnxieteSave;
