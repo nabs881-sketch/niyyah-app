@@ -4782,11 +4782,20 @@ function _cureTransition(jourFait) {
     var _trJ = _trData.jours['j' + jourFait];
     hierTitre = (_trJ && _trJ.titre_jour) || '';
   }
-  el.innerHTML = '<div style="padding:36px 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;min-height:100vh;text-align:center;background:radial-gradient(120% 80% at 50% 42%,#1c130a,#0b0704 60%,#070402);">'
-    + (hierTitre ? '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.7;max-width:400px;margin:0 auto 24px;">Hier\u00a0: ' + escapeHtml(hierTitre) + '.</div>' : '')
-    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.7;max-width:400px;margin:0 auto 24px;">Aujourd\u2019hui, attends.</div>'
-    + '<div class="itfaa-subtle" style="font-family:var(--serif);font-size:16px;max-width:400px;margin:0 auto 40px;">La porte rouvre demain.</div>'
-    + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="padding:14px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:none;color:#C8A84A;font-family:var(--serif);font-size:14px;cursor:pointer;">Retour</button>'
+  el.innerHTML =
+    '<div style="min-height:100vh;background:radial-gradient(120% 80% at 50% 42%,#1c130a,#0b0704 60%,#070402);">'
+      + '<div data-cure-content style="padding:calc(var(--safe-top,0px)+22px) 20px 120px;max-width:400px;margin:0 auto;box-sizing:border-box;text-align:center;">'
+        + '<div class="section-line" style="margin:18px 20% 26px;"></div>'
+        + (hierTitre
+          ? '<div class="section-name" style="margin-bottom:14px;">Hier</div>'
+            + '<div style="font-family:var(--serif);font-size:22px;font-weight:600;color:#C8A84A;line-height:1.35;margin-bottom:36px;">'
+              + escapeHtml(hierTitre)
+            + '</div>'
+          : '')
+        + '<div style="font-family:var(--serif);font-size:19px;color:rgba(240,234,214,0.88);line-height:1.5;margin-bottom:10px;">Aujourd\'hui, attends.</div>'
+        + '<div class="itfaa-subtle" style="font-family:var(--serif);font-size:16px;margin-bottom:36px;">La porte rouvre demain.</div>'
+        + '<button onclick="renderBabAnNafs()" style="font-family:var(--serif);font-size:14px;letter-spacing:1px;color:#C8A84A;background:transparent;border:1px solid rgba(200,168,75,0.5);border-radius:10px;padding:12px 34px;cursor:pointer;">Retour</button>'
+      + '</div>'
     + '</div>';
   _injectCureProgress(jourFait + 1);
 }
