@@ -163,9 +163,11 @@
         "introduction": "La régulation commence par remarquer l'activation dans le corps.",
         "instructions": [
           "La prochaine fois que la colère monte, avant tout\u00a0:",
-          "repère OÙ elle se loge — mâchoire serrée, poitrine brûlante, poings fermés ?",
-          "Nomme-le en silence.",
-          "Reconnaître la trace physique t'achète une demi-seconde — et là, il y a un choix."
+          "Souffle une fois, lentement, par la bouche \u2014 l'expiration un peu plus longue que l'inspiration.",
+          "Puis amène ton attention à l'intérieur, comme une lampe qui balaie ton corps\u00a0: le visage et la mâchoire, la gorge, la poitrine, le ventre, les mains.",
+          "Ne cherche rien à changer \u2014 repère seulement où ça chauffe, où ça se serre, où ça s'accélère.",
+          "Quand tu l'as trouvé, nomme-le en silence\u00a0: \u00ab\u00a0la colère est là, dans ma poitrine.\u00a0\u00bb",
+          "Reconnaître cette trace physique t'achète une demi-seconde \u2014 et là, il y a un choix."
         ],
         "phrase_a_repeter": {
           "ar": "لَا تَغْضَبْ",
@@ -177,7 +179,7 @@
           "texte": "L'interoception (repérer l'activation corporelle de l'émotion) est le premier pas de l'autorégulation.",
           "source": "« Lâ taghdab » — conseil répété du Prophète ﷺ (Bukhârî 6116)"
         },
-        "note": "Dans cette demi-seconde de conscience se trouve toute ta liberté.",
+        "note": "Si regarder à l'intérieur t'agite davantage, garde les yeux ouverts\u00a0: pose tes pieds bien à plat, sens le sol, et nomme trois choses autour de toi.",
         "stockage": "cure_colere_j1_corps_done"
       },
       "phrase_ancre": "Ma colère n'est pas mon ennemie — mais elle ne sera pas mon maître.",
