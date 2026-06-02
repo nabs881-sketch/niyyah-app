@@ -6248,7 +6248,10 @@ function _cureAnxieteWizardRender(el) {
   var imgPath = _getCureImgDir() + '/j' + dayNum + '.webp';
   var bgWrap = '<div style="position:fixed;inset:0;z-index:-1;"><img src="' + imgPath + '" style="width:100%;height:100%;object-fit:cover;" alt=""><div style="position:absolute;inset:0;background:rgba(0,0,0,0.7);"></div></div>';
   var backBtn = '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="position:fixed;top:calc(var(--safe-top,0px) + 12px);left:16px;z-index:9990;background:rgba(10,10,10,0.7);border:1px solid rgba(200,168,74,0.3);border-radius:50%;color:#C8A84A;cursor:pointer;padding:0;width:40px;height:40px;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#C8A84A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>';
-  var progress = '<div style="text-align:center;margin-bottom:24px;font-size:15px;letter-spacing:0.2em;color:rgba(200,168,75,0.4);">' + (s.step + 1) + '/' + totalSteps + '</div>'
+  var _pct = Math.max(0, Math.min(100, Math.round(((s.step + 1) / totalSteps) * 100)));
+  var progress = '<div style="width:170px;height:3px;border-radius:3px;margin:0 auto 24px;background:rgba(200,168,74,.15);overflow:hidden;">'
+    + '<div style="height:100%;width:' + _pct + '%;background:linear-gradient(90deg,#C8A84A,#F0D58A);border-radius:3px;transition:width .3s ease;"></div>'
+    + '</div>'
     + (s.porte === 'regard' ? _regardStreakInline(true) : '');
   var _cureBtnGrad={colere:'radial-gradient(120% 160% at 50% 120%,#A8402F,#6E2922 70%)',anxiete:'radial-gradient(120% 160% at 50% 120%,#3D5A66,#233D49 70%)',regard:'radial-gradient(120% 160% at 50% 120%,#2E5A4A,#1C3A30 70%)',arrogance:'radial-gradient(120% 160% at 50% 120%,#4A3563,#2C1F3E 70%)',paresse:'radial-gradient(120% 160% at 50% 120%,#3A4456,#232B39 70%)',medisance:'radial-gradient(120% 160% at 50% 120%,#8A5A2E,#5A3818 70%)'};
   var _btnBg = _cureBtnGrad[s.porte] || 'radial-gradient(120% 160% at 50% 120%,#7A5A2E,#4A3318 70%)';
