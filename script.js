@@ -4788,6 +4788,7 @@ function _cureTransition(jourFait) {
     + '<div class="itfaa-subtle" style="font-family:var(--serif);font-size:16px;max-width:400px;margin:0 auto 40px;">La porte rouvre demain.</div>'
     + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="padding:14px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:none;color:#C8A84A;font-family:var(--serif);font-size:14px;cursor:pointer;">Retour</button>'
     + '</div>';
+  _injectCureProgress(jourFait + 1);
 }
 
 // ── GENERIC CURE FUNCTIONS ──
