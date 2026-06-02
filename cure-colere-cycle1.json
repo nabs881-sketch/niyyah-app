@@ -43,9 +43,9 @@
         "titre_bloc": "Parole d'al-Ghazâlî sur la faculté de colère",
         "parole": {
           "texte": "L'âme a trois forces : la raison ('aql), le désir (shahwa) et la colère (ghadab). La colère n'est pas à arracher : elle a un usage vrai — défendre ce qui est sacré, repousser l'injuste. Une âme sans aucune colère est diminuée ; une âme gouvernée par elle est malade. La vertu (hilm) est au milieu : une colère qui obéit à la raison et à la foi, au bon moment, au bon endroit, dans la juste mesure.",
-          "auteur": "Abû Hâmid al-Ghazâlî",
+          "auteur": "D'après Abû Hâmid al-Ghazâlî",
           "dates_auteur": "1058-1111",
-          "oeuvre": "Ihyâ' 'Ulûm ad-Dîn (Livre du blâme de la colère)",
+          "oeuvre": "Ihyâ' 'Ulûm ad-Dîn (rendu libre)",
           "siecle": "XIe-XIIe siècle",
           "note": "Recadrer la colère comme une faculté à canaliser, non un ennemi à éradiquer, désamorce la honte qui l'aggrave."
         }
@@ -234,9 +234,9 @@
         "titre_bloc": "Parole d'al-Ghazâlî sur les racines de la colère",
         "parole": {
           "texte": "La colère jaillit rarement seule : elle est nourrie par des vices cachés — l'orgueil, l'auto-admiration ('ujb), l'amour d'avoir raison, la compétition, la soif d'être honoré et obéi. Soigne la racine, et la branche s'assèche : humilie l'ego, et la plupart de ce qui t'enrageait perd son carburant. On ne se bat pas pour la vérité aussi souvent qu'on le croit — on se bat pour le « moi ».",
-          "auteur": "Abû Hâmid al-Ghazâlî",
+          "auteur": "D'après Abû Hâmid al-Ghazâlî",
           "dates_auteur": "1058-1111",
-          "oeuvre": "Ihyâ' 'Ulûm ad-Dîn (Livre du blâme de la colère)",
+          "oeuvre": "Ihyâ' 'Ulûm ad-Dîn (rendu libre)",
           "siecle": "XIe-XIIe siècle",
           "note": "La prévention selon al-Ghazâlî : déraciner les vices qui alimentent la colère plutôt que de seulement combattre ses flammes."
         }
@@ -406,9 +406,9 @@
         "titre_bloc": "Parole d'al-Ghazâlî sur les remèdes du moment",
         "parole": {
           "texte": "Une fois le feu pris, la réflexion ne suffit pas toujours — le corps doit agir. al-Ghazâlî prescrit des remèdes concrets : le ta'awwudh (refuge contre le shaytan, dont vient l'impulsion) ; l'eau des ablutions (la colère est de la nature du feu, et le feu se calme par l'eau) ; le changement de posture (debout → assis, assis → allongé) ; et le silence. La colère est une flamme — le travail du croyant est de l'éteindre avant qu'elle ne le consume.",
-          "auteur": "Abû Hâmid al-Ghazâlî",
+          "auteur": "D'après Abû Hâmid al-Ghazâlî",
           "dates_auteur": "1058-1111",
-          "oeuvre": "Ihyâ' 'Ulûm ad-Dîn (Livre du blâme de la colère)",
+          "oeuvre": "Ihyâ' 'Ulûm ad-Dîn (rendu libre)",
           "siecle": "XIe-XIIe siècle",
           "note": "Les remèdes par l'action d'al-Ghazâlî : refuge, eau, posture, silence — des interventions corporelles avant le mental."
         }
@@ -460,7 +460,7 @@
             "max_caracteres": 400,
             "stockage": "cure_colere_j3_silence"
           },
-          "note_psy": "Délai de réponse : le pic de colère retombe en ~90 secondes s'il n'est pas nourri par la parole.",
+          "note_psy": "Délai de réponse : souvent, la vague physiologique retombe en une à quelques minutes si on ne la nourrit pas de mots.",
           "note_spi": "« Si l'un de vous se met en colère, qu'il se taise » (Ahmad)."
         },
         {
@@ -576,9 +576,9 @@
         "titre_bloc": "Parole d'al-Ghazâlî sur les six miroirs",
         "parole": {
           "texte": "Une fois le corps calmé, al-Ghazâlî prescrit de regarder — de tendre six miroirs à ta colère : la récompense qui attend celui qui se retient ; que le pouvoir d'Allah sur toi dépasse ton pouvoir sur celui qui t'a lésé ; que la vengeance ne fait qu'aggraver l'inimitié et offrir à l'adversaire le plaisir de te voir perdre le contrôle ; que le visage en colère est enlaidi comme celui d'une bête, quand le doux ressemble aux prophètes ; que le vrai motif est souvent l'ego, pas la justice ; et que ce qui t'a atteint t'a atteint par la permission d'Allah.",
-          "auteur": "Abû Hâmid al-Ghazâlî",
+          "auteur": "D'après Abû Hâmid al-Ghazâlî",
           "dates_auteur": "1058-1111",
-          "oeuvre": "Ihyâ' 'Ulûm ad-Dîn (Livre du blâme de la colère)",
+          "oeuvre": "Ihyâ' 'Ulûm ad-Dîn (rendu libre)",
           "siecle": "XIe-XIIe siècle",
           "note": "Les remèdes par la connaissance d'al-Ghazâlî = recadrage cognitif : changer la lecture de la provocation."
         }
@@ -746,7 +746,7 @@
         "type": "parole_de_sage",
         "titre_bloc": "Parole du Prophète ﷺ sur la vraie force",
         "parole": {
-          "texte": "« Le fort n'est pas le bon lutteur — le fort est celui qui se maîtrise dans la colère. » Et il a donné un poids immense à la gorgée ravalée : aucune gorgée n'est plus aimée d'Allah qu'une gorgée de colère qu'un serviteur ravale pour Sa face. Ce que tu avales en silence, alors que tu pourrais frapper, n'est pas perdu — c'est ce qui pèse le plus lourd dans la balance.",
+          "texte": "« Le fort n'est pas le bon lutteur — le fort est celui qui se maîtrise dans la colère. » Et il a donné un poids immense à la gorgée ravalée : aucune gorgée n'est plus aimée d'Allah qu'une gorgée de colère qu'un serviteur ravale pour Sa face. Ce que tu avales en silence, alors que tu pourrais frapper, n'est pas perdu — c'est ce qui pèse le plus lourd dans la balance. Se retenir n'est pas tout encaisser : demain, tu verras comment répondre par le meilleur.",
           "auteur": "Le Prophète Muhammad ﷺ",
           "dates_auteur": "",
           "oeuvre": "Bukhârî 6114 ; Ibn Mâjah 4189",
@@ -902,9 +902,9 @@
         "titre_bloc": "Parole d'al-Ghazâlî sur la miséricorde et la dureté",
         "parole": {
           "texte": "Le croyant doit tenir ensemble la colère (ghadab) et la miséricorde (rahma) — sans jamais perdre de vue la priorité de la miséricorde sur la colère. Le sommet de la cure n'est pas seulement de ravaler, mais de rendre le bien à qui t'a fait du mal. C'est l'exemple même du Prophète ﷺ, dont Allah dit : « Si tu avais été rude, au cœur dur, ils se seraient enfuis de ton entourage » (Âl 'Imrân 3:159). La douceur rassemble ; la dureté disperse.",
-          "auteur": "Abû Hâmid al-Ghazâlî",
+          "auteur": "D'après Abû Hâmid al-Ghazâlî",
           "dates_auteur": "1058-1111",
-          "oeuvre": "Ihyâ' 'Ulûm ad-Dîn (Livre du blâme de la colère)",
+          "oeuvre": "Ihyâ' 'Ulûm ad-Dîn (rendu libre)",
           "siecle": "XIe-XIIe siècle",
           "note": "La priorité de la rahma sur le ghadab : le but est de dépasser la retenue vers l'ihsân actif."
         }
@@ -1059,9 +1059,9 @@
         "titre_bloc": "Parole d'al-Ghazâlî sur le hilm acquis",
         "parole": {
           "texte": "La mansuétude (hilm) n'est pas toujours innée — elle s'acquiert par l'entraînement (riyâda) : en se forçant à agir avec douceur, encore et encore, jusqu'à ce que l'âme prenne le pli et que ça devienne une seconde nature. Comme il est rapporté : « la science s'acquiert par l'étude, et le hilm en s'exerçant à la mansuétude » (al-hilmu bi-t-tahallum). Tu n'attends pas de te sentir calme : tu agis doux jusqu'à devenir doux.",
-          "auteur": "Abû Hâmid al-Ghazâlî",
+          "auteur": "D'après Abû Hâmid al-Ghazâlî",
           "dates_auteur": "1058-1111",
-          "oeuvre": "Ihyâ' 'Ulûm ad-Dîn (Livre du blâme de la colère)",
+          "oeuvre": "Ihyâ' 'Ulûm ad-Dîn (rendu libre)",
           "siecle": "XIe-XIIe siècle",
           "note": "Le caractère se transforme par la pratique répétée (riyâda / tahallum), non par la seule volonté ponctuelle."
         }
