@@ -4836,13 +4836,15 @@ function _injectCureProgress(current) {
     var done = d < current, active = d === current, future = d > current;
     var _prt = (_cureWizardState && _cureWizardState.porte) || 'colere';
     var _prtColor = (_curePorteConfig[_prt] && _curePorteConfig[_prt].color) || (_prt === 'colere' ? '#a3372a' : '#3F51B5');
-    var bg = done ? '#C8A84A' : active ? _prtColor : 'transparent';
-    var bdr = done ? '#C8A84A' : active ? _prtColor : 'rgba(255,255,255,0.2)';
-    var col = done || active ? '#fff' : 'rgba(255,255,255,0.3)';
+    var _activeBg = _cureBtnGrad[_prt] || _prtColor;
+    var bg = done ? '#C8A84A' : active ? _activeBg : 'transparent';
+    var bdr = done ? '#C8A84A' : active ? 'rgba(246,218,138,.35)' : 'rgba(255,255,255,0.2)';
+    var col = done ? '#fff' : active ? '#F6E6C8' : 'rgba(255,255,255,0.3)';
+    var _dotShadow = active ? 'box-shadow:0 0 10px rgba(0,0,0,.25);' : '';
     var cursor = done ? 'cursor:pointer;' : '';
     var onclick = done ? ' onclick="openCureJour(\'' + _prt + '\',' + d + ')"' : '';
     bar.innerHTML += '<div style="text-align:center;' + cursor + 'background:rgba(0,0,0,0.5);border-radius:12px;padding:6px 4px 4px;"' + onclick + '>'
-      + '<div style="width:28px;height:28px;border-radius:50%;border:2px solid ' + bdr + ';background:' + bg + ';display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:11px;color:' + col + ';">' + d + '</div>'
+      + '<div style="width:28px;height:28px;border-radius:50%;border:' + (active ? '1' : '2') + 'px solid ' + bdr + ';background:' + bg + ';display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:11px;color:' + col + ';' + _dotShadow + '">' + d + '</div>'
       + '<div style="font-size:9px;color:#F5EDE0;font-weight:500;margin-top:2px;text-shadow:0 1px 3px rgba(0,0,0,0.8);">J' + d + '</div></div>';
   }
   var contentZone = el.querySelector('[data-cure-content]') || el;
@@ -6233,6 +6235,7 @@ _outilAnxieteRenderers.double_champ_lie = function(o, c) {
   return html;
 };
 
+var _cureBtnGrad={colere:'radial-gradient(120% 160% at 50% 120%,#A8402F,#6E2922 70%)',anxiete:'radial-gradient(120% 160% at 50% 120%,#3D5A66,#233D49 70%)',regard:'radial-gradient(120% 160% at 50% 120%,#2E5A4A,#1C3A30 70%)',arrogance:'radial-gradient(120% 160% at 50% 120%,#4A3563,#2C1F3E 70%)',paresse:'radial-gradient(120% 160% at 50% 120%,#3A4456,#232B39 70%)',medisance:'radial-gradient(120% 160% at 50% 120%,#8A5A2E,#5A3818 70%)'};
 function _cureAnxieteWizardRender(el) {
   if (!el) el = document.getElementById('babAnNafsContent');
   if (!el) return;
@@ -6253,7 +6256,6 @@ function _cureAnxieteWizardRender(el) {
     + '<div style="height:100%;width:' + _pct + '%;background:linear-gradient(90deg,#C8A84A,#F0D58A);border-radius:3px;transition:width .3s ease;"></div>'
     + '</div>'
     + (s.porte === 'regard' ? _regardStreakInline(true) : '');
-  var _cureBtnGrad={colere:'radial-gradient(120% 160% at 50% 120%,#A8402F,#6E2922 70%)',anxiete:'radial-gradient(120% 160% at 50% 120%,#3D5A66,#233D49 70%)',regard:'radial-gradient(120% 160% at 50% 120%,#2E5A4A,#1C3A30 70%)',arrogance:'radial-gradient(120% 160% at 50% 120%,#4A3563,#2C1F3E 70%)',paresse:'radial-gradient(120% 160% at 50% 120%,#3A4456,#232B39 70%)',medisance:'radial-gradient(120% 160% at 50% 120%,#8A5A2E,#5A3818 70%)'};
   var _btnBg = _cureBtnGrad[s.porte] || 'radial-gradient(120% 160% at 50% 120%,#7A5A2E,#4A3318 70%)';
   var nextBtn = '<button onclick="_cureWizardState.step++;_cureAnxieteWizardRender()" style="display:block;width:100%;max-width:340px;margin:24px auto 0;padding:14px;border-radius:12px;border:none;background:' + _btnBg + ';color:#F6E6C8;font-size:17px;font-weight:600;font-family:var(--serif);cursor:pointer;box-shadow:inset 0 1px 0 rgba(255,220,180,.16);">Continuer</button>';
 
