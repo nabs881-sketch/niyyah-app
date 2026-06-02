@@ -8472,7 +8472,7 @@ function _showTafakkurRecitOverlay(recit) {
   var srcLabel = recit.recit.source_nom ? '\u2014 ' + recit.recit.source_nom : '';
   ov.innerHTML = '<div style="max-width:360px;width:100%;max-height:80vh;overflow-y:auto;text-align:center;padding:32px 24px;">'
     + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:16px;">' + (recit.theme || '') + '</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;color:#E5E0DC;line-height:1.8;margin-bottom:24px;text-align:left;">'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;color:#E5E0DC;line-height:1.8;margin-bottom:24px;text-align:left;">'
       + (recit.recit.texte || '').split('\n').filter(function(p){ return p.trim(); }).map(function(p){ return '<p style="margin:0 0 14px;">' + p.replace(/«([^»]+)»/g, '<em>«$1»</em>') + '</p>'; }).join('')
     + '</div>'
     + (srcLabel ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);margin-bottom:24px;">' + srcLabel + '</div>' : '')
