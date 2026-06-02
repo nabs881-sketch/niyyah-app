@@ -6984,9 +6984,15 @@ body::before {
   max-width:440px !important;
   margin-left:auto !important;
   margin-right:auto !important;
-  padding-left:22px !important;
-  padding-right:22px !important;
+  padding-left:24px !important;
+  padding-right:24px !important;
+  padding-top:calc(var(--safe-top,0px) + 72px) !important;
   box-sizing:border-box !important;
+}
+[data-cure-content] * {
+  max-width:100%;
+  box-sizing:border-box;
+  overflow-wrap:break-word;
 }
 body.in-nafs-view .nav-bar-v2,
 body.in-nafs-view .topbar-v2,
