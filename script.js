@@ -5247,13 +5247,14 @@ _outilAnxieteRenderers.checkboxes_multiple = function(o, c) {
   var customVal = saved.custom || '';
   var html = '';
   if (o.introduction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
-  html += '<div style="display:flex;flex-direction:column;gap:8px;16px;">';
+  html += '<div style="display:flex;flex-direction:column;gap:0;">';
   opts.forEach(function(opt) {
     var chk = checked.indexOf(opt.id) !== -1;
-    html += '<label style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:10px;border:1px solid ' + (chk ? c : 'rgba(200,168,75,0.12)') + ';background:' + (chk ? c + '10' : 'rgba(200,168,75,0.03)') + ';cursor:pointer;transition:all 0.2s;">'
-      + '<input type="checkbox" ' + (chk ? 'checked' : '') + ' onchange="_cbmToggle(\'' + sk + '\',\'' + opt.id + '\',this.checked)" style="accent-color:' + c + ';flex-shrink:0;">'
+    html += '<label style="display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:13px;margin-bottom:9px;border:1px solid ' + (chk ? 'rgba(232,208,140,.6)' : 'rgba(200,168,74,.13)') + ';background:' + (chk ? 'linear-gradient(180deg,rgba(200,168,74,.16),rgba(200,168,74,.07))' : 'transparent') + ';' + (chk ? 'box-shadow:0 0 16px rgba(200,168,74,.14);' : '') + 'cursor:pointer;transition:all 0.2s;">'
+      + '<input type="checkbox" ' + (chk ? 'checked' : '') + ' onchange="_cbmToggle(\'' + sk + '\',\'' + opt.id + '\',this.checked)" style="position:absolute;opacity:0;pointer-events:none;">'
+      + '<span style="flex-shrink:0;width:23px;height:23px;border-radius:7px;border:1.5px solid ' + (chk ? '#E8CF8A' : 'rgba(200,168,74,.45)') + ';background:' + (chk ? 'linear-gradient(180deg,#F0D58A,#C8A84A)' : 'transparent') + ';display:flex;align-items:center;justify-content:center;' + (chk ? 'box-shadow:0 0 8px rgba(232,208,140,.4);' : '') + 'font-size:14px;font-weight:700;color:#2a1c08;">' + (chk ? '\u2713' : '') + '</span>'
       + '<div style="flex:1;">'
-      + '<span style="font-family:var(--serif);font-size:16px;color:' + (chk ? '#C8A84A' : 'rgba(240,234,214,0.8)') + ';">' + escapeHtml(opt.label_fr) + '</span>';
+      + '<span style="font-family:var(--serif);font-size:17px;color:' + (chk ? '#F4E6BE' : 'rgba(240,234,214,0.8)') + ';">' + escapeHtml(opt.label_fr) + '</span>';
     if (opt.label_ar) html += ' <span style="font-family:\'Scheherazade New\',serif;font-size:24px;color:rgba(200,168,75,0.5);direction:rtl;margin-left:6px;">' + escapeHtml(opt.label_ar) + '</span>';
     html += '</div></label>';
     if (opt.champ_libre) {
