@@ -6269,7 +6269,7 @@ function _cureAnxieteWizardRender(el) {
       + '<div style="font-family:\'Scheherazade New\',serif;font-size:30px;color:#C8A84A;direction:rtl;text-align:center;margin-bottom:9px;line-height:1.25;">' + escapeHtml(j.station_ar || '') + '</div>'
       + '<div style="font-family:var(--serif);font-size:16px;letter-spacing:2px;color:rgba(231,211,151,0.80);text-align:center;margin-bottom:20px;">' + escapeHtml((j.station_fr || '').toUpperCase()) + '</div>'
       + '<div style="font-family:var(--serif);font-size:22px;font-weight:600;color:#C8A84A;text-align:center;margin-bottom:24px;">Jour ' + dayNum + ' \u2014 ' + escapeHtml(j.titre_jour || '') + '</div>'
-      + (cit.texte ? '<div style="border-left:2px solid ' + c + '44;padding-left:14px;margin-bottom:20px;max-width:360px;margin-left:auto;margin-right:auto;"><div style="font-family:var(--serif);font-size:18px;font-style:italic;color:rgba(240,234,214,0.75);line-height:1.7;">' + escapeHtml(cit.texte) + '</div><div style="font-size:16px;color:rgba(231,211,151,0.80);margin-top:6px;">\u2014 ' + escapeHtml(cit.source || '') + '</div></div>' : '')
+      + (cit.texte ? '<div style="border-left:2px solid ' + c + '44;padding-left:14px;margin-bottom:20px;max-width:360px;margin-left:auto;margin-right:auto;"><div style="font-family:var(--serif);font-size:18px;color:rgba(240,234,214,0.75);line-height:1.7;">' + escapeHtml(cit.texte) + '</div><div style="font-size:16px;color:rgba(231,211,151,0.80);margin-top:6px;">\u2014 ' + escapeHtml(cit.source || '') + '</div></div>' : '')
       + '<div style="font-family:var(--serif);font-size:18px;color:rgba(240,234,214,0.85);line-height:1.8;white-space:pre-line;text-align:center;max-width:360px;margin:0 auto;">' + escapeHtml(j.introduction_avant_outils || j.introduction || '') + '</div>'
       + nextBtn
       + '</div></div>';
@@ -6298,7 +6298,7 @@ function _cureAnxieteWizardRender(el) {
       + (v.reference ? '<div style="font-size:16px;color:rgba(231,211,151,0.72);">\u2014 ' + escapeHtml(v.reference) + '</div>' : '')
       + '</div>'
       + (bv.contexte_revelation ? '<div style="font-family:var(--serif);font-size:18px;color:rgba(240,234,214,0.82);line-height:1.6;margin-bottom:12px;">' + escapeHtml(bv.contexte_revelation) + '</div>' : '')
-      + (bv.sens_pour_aujourdhui ? '<div style="font-family:var(--serif);font-size:18px;font-style:italic;color:rgba(231,211,151,0.92);line-height:1.6;margin-bottom:12px;">' + escapeHtml(bv.sens_pour_aujourdhui) + '</div>' : '')
+      + (bv.sens_pour_aujourdhui ? '<div style="font-family:var(--serif);font-size:18px;color:rgba(231,211,151,0.92);line-height:1.6;margin-bottom:12px;">' + escapeHtml(bv.sens_pour_aujourdhui) + '</div>' : '')
       + nextBtn
       + '</div>';
   } else if (step.type === '_bloc_sagesse') {
@@ -6309,7 +6309,7 @@ function _cureAnxieteWizardRender(el) {
       + progress
       + '<div style="font-family:var(--serif);font-size:16px;letter-spacing:2px;color:rgba(231,211,151,0.80);text-align:center;margin-bottom:16px;">' + escapeHtml((bs.titre_bloc || '').toUpperCase()) + '</div>'
       + '<div style="border-left:2px solid ' + c + '44;padding-left:16px;margin-bottom:16px;">'
-      + '<div style="font-family:var(--serif);font-size:19px;font-style:italic;color:rgba(240,234,214,0.8);line-height:1.7;">' + escapeHtml(p.texte || '') + '</div>'
+      + '<div style="font-family:var(--serif);font-size:19px;color:rgba(240,234,214,0.8);line-height:1.7;">' + escapeHtml(p.texte || '') + '</div>'
       + '</div>'
       + '<div style="text-align:right;margin-bottom:16px;">'
       + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;">' + escapeHtml(p.auteur || '') + '</div>'
@@ -6331,7 +6331,7 @@ function _cureAnxieteWizardRender(el) {
       + (dh.ar ? '<div style="font-family:\'Scheherazade New\',serif;font-size:30px;color:#C8A84A;direction:rtl;margin-bottom:8px;">' + escapeHtml(dh.ar) + '</div>' : '')
       + (dh.translit ? '<div style="font-family:var(--serif);font-size:16px;font-style:italic;color:rgba(231,211,151,0.84);margin-bottom:4px;">' + escapeHtml(dh.translit) + '</div>' : '')
       + (dh.fr ? '<div style="font-family:var(--serif);font-size:18px;color:rgba(240,234,214,0.8);margin-bottom:8px;">' + escapeHtml(dh.fr) + '</div>' : '')
-      + (dh.sens ? '<div style="font-family:var(--serif);font-size:18px;color:rgba(231,211,151,0.76);font-style:italic;margin-bottom:8px;">' + escapeHtml(dh.sens) + '</div>' : '')
+      + (dh.sens ? '<div style="font-family:var(--serif);font-size:18px;color:rgba(231,211,151,0.76);margin-bottom:8px;">' + escapeHtml(dh.sens) + '</div>' : '')
       + '<div style="font-family:var(--serif);font-size:24px;color:#C8A84A;font-weight:600;">\u00d7 ' + (bd.quantite || '') + '</div>'
       + '</div>'
       + (bd.moment_recommande ? '<div style="font-family:var(--serif);font-size:18px;color:rgba(240,234,214,0.82);text-align:center;margin-bottom:8px;">' + escapeHtml(bd.moment_recommande) + '</div>' : '')
