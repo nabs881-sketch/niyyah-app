@@ -6312,7 +6312,7 @@ function _cureAnxieteWizardRender(el) {
       + '<div style="border-left:2px solid ' + c + '44;padding-left:16px;margin-bottom:16px;">'
       + '<div style="font-family:var(--serif);font-size:19px;color:rgba(240,234,214,0.8);line-height:1.7;">' + escapeHtml(p.texte || '') + '</div>'
       + '</div>'
-      + '<div style="text-align:right;margin-bottom:16px;">'
+      + '<div style="text-align:center;margin-bottom:16px;">'
       + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;">' + escapeHtml(p.auteur || '') + '</div>'
       + (p.dates_auteur ? '<div style="font-size:16px;color:rgba(231,211,151,0.72);">' + escapeHtml(p.dates_auteur) + '</div>' : '')
       + (p.oeuvre ? '<div style="font-family:var(--serif);font-size:18px;font-style:italic;color:rgba(231,211,151,0.80);">' + escapeHtml(p.oeuvre) + '</div>' : '')
