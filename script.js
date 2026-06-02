@@ -8373,19 +8373,16 @@ function setTafakkurAudio(mode, btn) {
 
 function closeTafakkur(forceClose) {
   console.log('[Tafakkur] closeTafakkur called | running=' + _tafakkurRunning + ' | remaining=' + _tafakkurRemaining + ' | forceClose=' + !!forceClose);
-  // Si timer en cours et pas force → compute eligibilite et montrer fin si eligible
-  if (!forceClose && _tafakkurRunning && _tafakkurDuration > 0) {
-    clearInterval(_tafakkurInterval); _tafakkurInterval = null;
+  // Option A : toute halte COMMENCÉE (timer lancé, même en pause) se clôt par le récit,
+  // sans seuil de durée. On ne retient jamais : pas de "reste encore".
+  var _elapsed = _tafakkurDuration - _tafakkurRemaining;
+  if (!forceClose && _tafakkurDuration > 0 && _elapsed > 0 && !_tafakkurDoneToday()) {
+    if (_tafakkurInterval) { clearInterval(_tafakkurInterval); _tafakkurInterval = null; }
     _tafakkurRunning = false;
     _computeTafakkurEligible();
-    var eligible = safeGetItem('niyyah_tafakkur_recit_eligible') === 'true';
-    if (eligible) {
-      console.log('[Tafakkur] eligible=true apres fermeture anticipee → _showTafakkurEnd');
-      _markTafakkurDone(_tafakkurCurrentPhrase);
-      _showTafakkurEnd();
-      return;
-    }
-    console.log('[Tafakkur] eligible=false → fermeture normale');
+    _markTafakkurDone(_tafakkurCurrentPhrase);
+    _showTafakkurEnd();
+    return;
   }
   var existing = document.getElementById('tafakkur-recit-overlay');
   if (existing) existing.remove();
@@ -8410,23 +8407,11 @@ function setTafakkurDuration(min, btn) {
 }
 
 function _computeTafakkurEligible() {
-  var firstEver = safeGetItem('niyyah_tafakkur_first_ever');
   var elapsed = _tafakkurDuration - _tafakkurRemaining;
-  var seuil = Math.floor(_tafakkurDuration * 0.5);
-  var eligible = elapsed >= seuil;
-  console.log('[Tafakkur] _computeTafakkurEligible | first_ever=' + firstEver + ' | elapsed=' + elapsed + 's / duration=' + _tafakkurDuration + 's | seuil50%=' + seuil + 's');
-  if (!firstEver && eligible) {
-    console.log('[Tafakkur] >>> 1ere seance EVER + seuil atteint → eligible=true, WRITE first_ever');
+  var eligible = elapsed > 0; // Option A : aucun seuil — toute halte commencée donne le récit
+  if (eligible && !safeGetItem('niyyah_tafakkur_first_ever')) {
     safeSetItem('niyyah_tafakkur_first_ever', '1');
-    safeSetItem('niyyah_tafakkur_recit_eligible', 'true');
-    return;
   }
-  if (!firstEver && !eligible) {
-    console.log('[Tafakkur] >>> 1ere seance EVER mais seuil NON atteint → eligible=false, PAS de first_ever');
-    safeSetItem('niyyah_tafakkur_recit_eligible', 'false');
-    return;
-  }
-  console.log('[Tafakkur] seance suivante → eligible=' + eligible);
   safeSetItem('niyyah_tafakkur_recit_eligible', eligible ? 'true' : 'false');
 }
 function toggleTafakkurTimer() {
