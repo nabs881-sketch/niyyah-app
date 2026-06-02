@@ -5167,7 +5167,7 @@ _outilAnxieteRenderers.double_slider = function(o, c) {
   html += '<div style="font-family:var(--serif);font-size:15px;color:rgba(200,168,75,0.6);margin-bottom:10px;text-align:center;">Intensit\u00e9</div>';
   html += '<div style="display:flex;align-items:center;gap:10px;max-width:340px;margin:0 auto;">';
   html += '<div style="font-size:15px;color:rgba(200,168,75,0.4);font-style:italic;min-width:60px;text-align:right;">' + escapeHtml(si.label_min || '0') + '</div>';
-  html += '<input type="range" min="' + (si.min || 0) + '" max="' + (si.max || 10) + '" value="' + (savedI || '5') + '" oninput="safeSetItem(\'' + skI + '\',this.value);this.nextElementSibling.textContent=this.value" style="flex:1;accent-color:' + c + ';">';
+  html += '<input type="range" min="' + (si.min || 0) + '" max="' + (si.max || 10) + '" value="' + (savedI || '5') + '" oninput="safeSetItem(\'' + skI + '\',this.value);this.nextElementSibling.textContent=this.value" style="flex:1;accent-color:#C8A84A;">';
   html += '<div style="font-size:18px;color:#C8A84A;font-family:var(--serif);font-weight:600;min-width:24px;text-align:center;">' + (savedI || '5') + '</div>';
   html += '<div style="font-size:15px;color:rgba(200,168,75,0.4);font-style:italic;min-width:60px;">' + escapeHtml(si.label_max || '10') + '</div>';
   html += '</div></div>';
@@ -5375,7 +5375,7 @@ _outilAnxieteRenderers.double_slider_compare = function(o, c) {
     html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.75);margin-bottom:8px;line-height:1.4;">' + escapeHtml(sl.label) + '</div>';
     html += '<div style="display:flex;align-items:center;gap:8px;">';
     html += '<div style="font-size:15px;color:rgba(200,168,75,0.4);font-style:italic;min-width:50px;text-align:right;">' + escapeHtml(sl.label_min) + '</div>';
-    html += '<input type="range" id="' + dscId + '_s' + idx + '" min="' + (sl.min || 0) + '" max="' + (sl.max || 10) + '" value="' + saved + '" oninput="safeSetItem(\'' + sk + '\',this.value);this.nextElementSibling.textContent=this.value;_dscUpdate(\'' + dscId + '\')" style="flex:1;accent-color:' + c + ';">';
+    html += '<input type="range" id="' + dscId + '_s' + idx + '" min="' + (sl.min || 0) + '" max="' + (sl.max || 10) + '" value="' + saved + '" oninput="safeSetItem(\'' + sk + '\',this.value);this.nextElementSibling.textContent=this.value;_dscUpdate(\'' + dscId + '\')" style="flex:1;accent-color:#C8A84A;">';
     html += '<div style="font-size:18px;color:#C8A84A;font-family:var(--serif);font-weight:600;min-width:24px;text-align:center;">' + saved + '</div>';
     html += '<div style="font-size:15px;color:rgba(200,168,75,0.4);font-style:italic;min-width:50px;">' + escapeHtml(sl.label_max) + '</div>';
     html += '</div></div>';
