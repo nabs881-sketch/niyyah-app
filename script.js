@@ -6394,6 +6394,15 @@ function _cureAnxieteWizardRender(el) {
 function _cureAnxieteSave(num) {
   var porte = (_cureWizardState && _cureWizardState.porte) || 'anxiete';
   var sk = (_curePorteConfig[porte] && _curePorteConfig[porte].storageKey) || 'cure_anxiete';
+  // Relecture d'un jour déjà fait : ne jamais écraser la progression
+  var _cureRev = {}; try { _cureRev = JSON.parse(safeGetItem(sk) || '{}'); } catch(e) {}
+  var _estRelecture = (_cureRev.completed === true) || (num < (_cureRev.current_day || 1));
+  if (_estRelecture) {
+    _babImmersion = false; _hideAideBtn();
+    var _nb = document.getElementById('nav-bar-v2'); if (_nb) _nb.classList.remove('hidden-immersion');
+    renderBabAnNafs();
+    return;
+  }
   var nextDay = num < 7 ? num + 1 : 'complete';
   try {
     var cure = JSON.parse(safeGetItem(sk) || '{}');
