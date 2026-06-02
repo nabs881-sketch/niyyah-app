@@ -6364,7 +6364,7 @@ function _cureAnxieteWizardRender(el) {
     if (bc.duree_min) html += '<div style="font-size:18px;color:rgba(231,211,151,0.72);text-align:center;margin-bottom:8px;">' + bc.duree_min + ' min</div>';
     html += nextBtn + '</div>';
   } else if (step.type === '_ancre_anxiete') {
-    var ancre = step.data;
+    var ancre = (typeof step.data === 'string') ? { fr: step.data } : (step.data || {});
     html = backBtn + bgWrap
       + '<div data-cure-content style="padding:calc(var(--safe-top,0px)+60px) 20px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:70vh;text-align:center;position:relative;z-index:1;max-width:400px;margin:0 auto;box-sizing:border-box;">'
       + progress
