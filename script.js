@@ -4906,7 +4906,7 @@ function _cureJourSave(porte, num) {
   var c = '#B33A3A';
   el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
     + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:12px;">Jour ' + num + ' enregistr\u00e9.</div>'
-    + '<div class="itfaa-body" style="font-size:16px;line-height:1.7;max-width:400px;margin:0 auto 32px;">Demain, Jour ' + (num + 1) + '\u00a0: ' + escapeHtml(nextTitle) + '.</div>'
+    + '<div class="itfaa-body" style="font-size:16px;line-height:1.7;max-width:400px;margin:0 auto 32px;">D\u00e8s demain, Jour ' + (num + 1) + '\u00a0: ' + escapeHtml(nextTitle) + '.</div>'
     + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="padding:14px 28px;border-radius:12px;border:1px solid ' + c + '44;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">Retour</button>'
     + '</div>';
 }
@@ -5126,9 +5126,7 @@ function _cureAnxieteGenericDay(el, dayNum) {
   if (j.bloc_4_dhikr_quantifie) steps.push({ type: '_bloc_dhikr', data: j.bloc_4_dhikr_quantifie });
   // Bloc 5: pratique corporelle
   if (j.bloc_5_pratique_corporelle) steps.push({ type: '_bloc_corporel', data: j.bloc_5_pratique_corporelle });
-  // Phrase-ancre
-  if (j.phrase_ancre) { steps.push({ type: '_ancre_anxiete', data: j.phrase_ancre }); }
-  // Clôture
+  // Clôture (phrase-ancre intégrée dans la finale)
   steps.push({ type: '_finale_anxiete', data: j, dayNum: dayNum });
 
   _cureWizardState = { dayNum: dayNum, step: 0, steps: steps, saved: {}, isLast: isLast, filRouge: '', c: c, porte: _curPorte };
@@ -6381,6 +6379,7 @@ function _cureAnxieteWizardRender(el) {
     html = backBtn + bgWrap
       + '<div data-cure-content style="padding:calc(var(--safe-top,0px)+60px) 20px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:70vh;text-align:center;position:relative;z-index:1;max-width:400px;margin:0 auto;box-sizing:border-box;">'
       + progress
+      + (j.phrase_ancre ? '<div style="font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:23px;line-height:1.45;color:#E7D397;text-align:center;margin-bottom:24px;max-width:340px;">' + escapeHtml(j.phrase_ancre) + '</div>' : '')
       + (clot.ar ? '<div style="font-family:\'Scheherazade New\',serif;font-size:26px;color:#C8A84A;direction:rtl;margin-bottom:12px;">' + escapeHtml(clot.ar) + '</div>' : '')
       + '<div style="font-family:var(--serif);font-size:19px;color:rgba(240,234,214,0.85);line-height:1.7;max-width:360px;margin-bottom:24px;">' + escapeHtml(clot.fr || 'Tu as travers\u00e9 ce jour.') + '</div>'
       + '<button onclick="' + saveFn + '" style="display:block;width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:' + _btnBg + ';color:#F6E6C8;font-size:19px;font-weight:600;font-family:var(--serif);cursor:pointer;box-shadow:inset 0 1px 0 rgba(255,220,180,.16);">' + (s.isLast ? 'Terminer la Cure' : 'Jour ' + dayNum + ' accompli') + '</button>'
@@ -6438,7 +6437,7 @@ function _cureAnxieteSave(num) {
   if (!el) return;
   el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
     + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:12px;">Jour ' + num + ' enregistr\u00e9.</div>'
-    + (nextTitle ? '<div class="itfaa-body" style="font-size:16px;line-height:1.7;max-width:400px;margin:0 auto 32px;">Demain, Jour ' + (num + 1) + '\u00a0: ' + escapeHtml(nextTitle) + '.</div>' : '')
+    + (nextTitle ? '<div class="itfaa-body" style="font-size:16px;line-height:1.7;max-width:400px;margin:0 auto 32px;">D\u00e8s demain, Jour ' + (num + 1) + '\u00a0: ' + escapeHtml(nextTitle) + '.</div>' : '')
     + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs();_showMurmureRetour()" style="padding:14px 28px;border-radius:12px;border:1px solid ' + c + '44;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">Retour</button>'
     + '</div>';
 }
