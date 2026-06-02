@@ -13809,6 +13809,7 @@ function updateSanctuaireMoment() {
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;font-weight:700;color:#C8A84A;line-height:1.45;">' + _iconSpan + block.label + '</div>'
       + _nextInfo
       + jourLine
+      + ((!_nextInfo && !jourLine) ? '<div style="height:28px;"></div>' : '')
       + '<button class="btn-bismillah-moment" onclick="event.stopPropagation();var _m=getCurrentPrayerBlock();if(_m&&_m.id)openVueRituel(_m.id);else selectLevel(currentLevel);" ontouchend="if(!_isTapNotScroll(event))return;event.stopPropagation();event.preventDefault();var _m=getCurrentPrayerBlock();if(_m&&_m.id)openVueRituel(_m.id);else selectLevel(currentLevel);">' + t('btn_continue') + '</button>'
       + '</div>';
     el.innerHTML += getFilJourCardHTML();
