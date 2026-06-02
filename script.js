@@ -6333,7 +6333,7 @@ function _cureAnxieteWizardRender(el) {
       + (dh.translit ? '<div style="font-family:var(--serif);font-size:16px;font-style:italic;color:rgba(231,211,151,0.84);margin-bottom:4px;">' + escapeHtml(dh.translit) + '</div>' : '')
       + (dh.fr ? '<div style="font-family:var(--serif);font-size:18px;color:rgba(240,234,214,0.8);margin-bottom:8px;">' + escapeHtml(dh.fr) + '</div>' : '')
       + (dh.sens ? '<div style="font-family:var(--serif);font-size:18px;color:rgba(231,211,151,0.76);margin-bottom:8px;">' + escapeHtml(dh.sens) + '</div>' : '')
-      + '<div style="font-family:var(--serif);font-size:24px;color:#C8A84A;font-weight:600;">\u00d7 ' + (bd.quantite || '') + '</div>'
+      + (bd.quantite ? '<div style="font-family:var(--serif);font-size:24px;color:#C8A84A;font-weight:600;">\u00d7 ' + bd.quantite + '</div>' : '')
       + '</div>'
       + (bd.moment_recommande ? '<div style="font-family:var(--serif);font-size:18px;color:rgba(240,234,214,0.82);text-align:center;margin-bottom:8px;">' + escapeHtml(bd.moment_recommande) + '</div>' : '')
       + (bd.comment_pratiquer ? '<div style="font-family:var(--serif);font-size:18px;color:rgba(240,234,214,0.80);line-height:1.6;margin-bottom:12px;">' + escapeHtml(bd.comment_pratiquer) + '</div>' : '')
