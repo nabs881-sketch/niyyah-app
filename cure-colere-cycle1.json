@@ -113,7 +113,7 @@
           "ordre": 3,
           "type": "radio_unique",
           "titre": "Mon style de colère",
-          "introduction": "Quand elle monte, le plus souvent je…",
+          "introduction": "Quand elle monte, le plus souvent…",
           "consigne": "Choisis le plus vrai.",
           "options": [
             {
