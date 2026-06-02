@@ -6376,14 +6376,17 @@ function _cureAnxieteWizardRender(el) {
     var clot = j.cloture || {};
     var murmure = j.murmure_sortie_sanctuaire || {};
     var saveFn = '_cureAnxieteSave(' + dayNum + ')';
+    var _rvSk = (_curePorteConfig[s.porte] && _curePorteConfig[s.porte].storageKey) || 'cure_anxiete';
+    var _rv = {}; try { _rv = JSON.parse(safeGetItem(_rvSk) || '{}'); } catch(e) {}
+    var _relecture = (_rv.completed === true) || (dayNum < (_rv.current_day || 1));
     html = backBtn + bgWrap
       + '<div data-cure-content style="padding:calc(var(--safe-top,0px)+60px) 20px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:70vh;text-align:center;position:relative;z-index:1;max-width:400px;margin:0 auto;box-sizing:border-box;">'
       + progress
       + (j.phrase_ancre ? '<div style="font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:23px;line-height:1.45;color:#E7D397;text-align:center;margin-bottom:24px;max-width:340px;">' + escapeHtml(j.phrase_ancre) + '</div>' : '')
       + (clot.ar ? '<div style="font-family:\'Scheherazade New\',serif;font-size:26px;color:#C8A84A;direction:rtl;margin-bottom:12px;">' + escapeHtml(clot.ar) + '</div>' : '')
       + '<div style="font-family:var(--serif);font-size:19px;color:rgba(240,234,214,0.85);line-height:1.7;max-width:360px;margin-bottom:24px;">' + escapeHtml(clot.fr || 'Tu as travers\u00e9 ce jour.') + '</div>'
-      + '<button onclick="' + saveFn + '" style="display:block;width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:' + _btnBg + ';color:#F6E6C8;font-size:19px;font-weight:600;font-family:var(--serif);cursor:pointer;box-shadow:inset 0 1px 0 rgba(255,220,180,.16);">' + (s.isLast ? 'Terminer la Cure' : 'Jour ' + dayNum + ' accompli') + '</button>'
-      + (s.isLast ? (function() { var _cfn = {anxiete:'openCoffretAnxiete()',regard:'openCoffretRegard()'}; var _clbl = {anxiete:'Coffret de l\u2019apaisement',regard:'Coffret du regard juste'}; var _p = s.porte || 'anxiete'; return '<button onclick="' + (_cfn[_p]||_cfn.anxiete) + '" style="display:block;width:100%;max-width:340px;margin:12px auto 0;padding:12px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:none;color:#C8A84A;font-size:16px;font-family:var(--serif);cursor:pointer;font-style:italic;">' + (_clbl[_p]||_clbl.anxiete) + '</button>'; })() : '')
+      + '<button onclick="' + saveFn + '" style="display:block;width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:' + _btnBg + ';color:#F6E6C8;font-size:19px;font-weight:600;font-family:var(--serif);cursor:pointer;box-shadow:inset 0 1px 0 rgba(255,220,180,.16);">' + (_relecture ? 'Fin de la relecture' : (s.isLast ? 'Terminer la Cure' : 'Jour ' + dayNum + ' accompli')) + '</button>'
+      + (s.isLast && !_relecture ? (function() { var _cfn = {anxiete:'openCoffretAnxiete()',regard:'openCoffretRegard()'}; var _clbl = {anxiete:'Coffret de l\u2019apaisement',regard:'Coffret du regard juste'}; var _p = s.porte || 'anxiete'; return '<button onclick="' + (_cfn[_p]||_cfn.anxiete) + '" style="display:block;width:100%;max-width:340px;margin:12px auto 0;padding:12px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:none;color:#C8A84A;font-size:16px;font-family:var(--serif);cursor:pointer;font-style:italic;">' + (_clbl[_p]||_clbl.anxiete) + '</button>'; })() : '')
       + '</div>';
   }
 
