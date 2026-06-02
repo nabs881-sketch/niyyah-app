@@ -4098,6 +4098,8 @@ function renderBabAnNafs() {
     html += '<div style="font-size:12px;font-style:italic;color:#FFA000;background:rgba(255,160,0,0.15);padding:8px;border-radius:6px;text-align:center;margin-bottom:16px;">Mode beta \u2014 contenu en validation th\u00e9ologique</div>';
   }
   html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">';
+  var _porteTitleGrad={colere:'linear-gradient(180deg,#FBE6A8,#E9B95B 55%,#B9842E)',anxiete:'linear-gradient(180deg,#FCEFC2,#ECC75A 50%,#C19A3A)',regard:'linear-gradient(180deg,#FFF6DD,#F1D277 50%,#C9A23E)',arrogance:'linear-gradient(180deg,#FDF1E8,#EBC974 50%,#C49A3C)',paresse:'linear-gradient(180deg,#FFFBEC,#F3DA8A 50%,#CBA64A)',medisance:'linear-gradient(180deg,#FBE3A0,#E6B356 55%,#B07E2A)'};
+  var _porteHalo={colere:'rgba(235,120,60,.32)',anxiete:'rgba(220,175,120,.30)',regard:'rgba(110,195,160,.30)',arrogance:'rgba(172,130,215,.30)',paresse:'rgba(150,172,205,.28)',medisance:'rgba(238,140,70,.32)'};
   BAB_AN_NAFS.portes.forEach(function(p) {
     var nomFr = (typeof p.nom === 'object') ? p.nom.fr : p.nom;
     var ar = (typeof p.nom === 'object') ? (p.nom.ar || '') : '';
@@ -4120,7 +4122,9 @@ function renderBabAnNafs() {
     if (p.id === 'medisance') {
       try { var _cm = JSON.parse(safeGetItem('cure_medisance') || '{}'); if (_cm.completed) _cureMarker = '<div style="position:absolute;top:6px;right:6px;font-size:14px;color:#C8A84A;text-shadow:0 0 6px rgba(200,168,75,0.5);" title="Cure M\u00e9disance accomplie.">\u2726</div>'; } catch(e) {}
     }
-    html += '<button onclick="openBabPorte(\'' + p.id + '\')" style="position:relative;aspect-ratio:1/1;border-radius:12px;border:1px solid var(--gold,#C8A84A);background:url(assets/cards/porte-' + p.id + '.webp) center/cover no-repeat,#111;cursor:pointer;padding:0;">' + _cureMarker + '<div style="position:absolute;left:0;right:0;bottom:7%;text-align:center;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:clamp(26px,8.5vw,46px);color:var(--or-vif,#ECC75A);letter-spacing:.5px;pointer-events:none;text-shadow:0 2px 12px rgba(0,0,0,.92),0 0 6px rgba(0,0,0,.75);">' + nomFr + '</div></button>';
+    var _g=(_porteTitleGrad[p.id]||'linear-gradient(180deg,#FCEFC2,#ECC75A 50%,#C19A3A)');
+    var _h=(_porteHalo[p.id]||'rgba(200,168,74,.28)');
+    html += '<button onclick="openBabPorte(\'' + p.id + '\')" style="position:relative;aspect-ratio:1/1;border-radius:12px;border:1px solid var(--gold,#C8A84A);background:url(assets/cards/porte-' + p.id + '.webp) center/cover no-repeat,#111;cursor:pointer;padding:0;overflow:hidden;">' + _cureMarker + '<div style="position:absolute;left:0;right:0;bottom:8%;text-align:center;pointer-events:none;"><span style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:118%;height:155%;filter:blur(8px);background:radial-gradient(ellipse at center,rgba(0,0,0,.5) 0%,' + _h + ' 45%,transparent 72%);"></span><span style="position:absolute;left:0;right:0;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-weight:600;font-size:clamp(26px,8.5vw,46px);letter-spacing:.5px;line-height:1;color:transparent;text-shadow:0 2px 7px rgba(0,0,0,.92),0 0 14px rgba(0,0,0,.65);">' + nomFr + '</span><span style="position:relative;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-weight:600;font-size:clamp(26px,8.5vw,46px);letter-spacing:.5px;line-height:1;color:transparent;background:' + _g + ';-webkit-background-clip:text;background-clip:text;">' + nomFr + '</span></div></button>';
   });
   html += '</div>';
   html += _regardStreakInline();
