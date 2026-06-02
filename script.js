@@ -4127,7 +4127,6 @@ function renderBabAnNafs() {
     html += '<button onclick="openBabPorte(\'' + p.id + '\')" style="position:relative;aspect-ratio:1/1;border-radius:12px;border:1px solid var(--gold,#C8A84A);background:url(assets/cards/porte-' + p.id + '.webp) center/cover no-repeat,#111;cursor:pointer;padding:0;overflow:hidden;">' + _cureMarker + '<div style="position:absolute;left:0;right:0;bottom:8%;text-align:center;pointer-events:none;"><span style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:118%;height:155%;filter:blur(8px);background:radial-gradient(ellipse at center,rgba(0,0,0,.5) 0%,' + _h + ' 45%,transparent 72%);"></span><span style="position:absolute;left:0;right:0;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-weight:600;font-size:clamp(26px,8.5vw,46px);letter-spacing:.5px;line-height:1;color:transparent;text-shadow:0 2px 7px rgba(0,0,0,.92),0 0 14px rgba(0,0,0,.65);">' + nomFr + '</span><span style="position:relative;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-weight:600;font-size:clamp(26px,8.5vw,46px);letter-spacing:.5px;line-height:1;color:transparent;background:' + _g + ';-webkit-background-clip:text;background-clip:text;">' + nomFr + '</span></div></button>';
   });
   html += '</div>';
-  html += _regardStreakInline();
   html += '</div>';
   el.innerHTML = html;
 }
