@@ -5298,14 +5298,14 @@ _outilAnxieteRenderers.checkboxes_ordonnees = function(o, c) {
   var anySel = order.length > 0;
   var html = '';
   if (o.introduction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:left;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
-  html += '<div style="display:flex;flex-direction:column;gap:0;">';
+  html += '<div data-plan-sk="' + sk + '" style="display:flex;flex-direction:column;gap:0;">';
   display.forEach(function(id){
     var op = byId[id];
     var pos = order.indexOf(id);
     var isSel = pos >= 0;
-    html += '<div onclick="_planToggle(\'' + sk + '\',\'' + op.id + '\')" style="display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:13px;margin-bottom:9px;border:1px solid ' + (isSel ? 'rgba(232,208,140,.6)' : 'rgba(200,168,74,.13)') + ';background:' + (isSel ? 'rgba(200,168,74,.10)' : 'transparent') + ';cursor:pointer;transition:all 0.2s;' + ((!isSel && anySel) ? 'opacity:.5;' : '') + '">'
-      + '<span style="flex-shrink:0;width:26px;height:26px;border-radius:8px;border:1.5px solid ' + (isSel ? '#E8CF8A' : 'rgba(200,168,74,.45)') + ';background:' + (isSel ? '#E8CF8A' : 'transparent') + ';display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;color:#2a1c08;">' + (isSel ? (pos + 1) : '') + '</span>'
-      + '<span style="font-family:var(--serif);font-size:17px;color:' + (isSel ? '#F4E6BE' : 'rgba(240,234,214,0.8)') + ';">' + escapeHtml(op.label_fr) + '</span>'
+    html += '<div data-rid="' + op.id + '" onclick="_planToggle(\'' + sk + '\',\'' + op.id + '\')" style="display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:13px;margin-bottom:9px;border:1px solid ' + (isSel ? 'rgba(232,208,140,.6)' : 'rgba(200,168,74,.13)') + ';background:' + (isSel ? 'rgba(200,168,74,.10)' : 'transparent') + ';cursor:pointer;transition:transform .34s cubic-bezier(.2,.7,.2,1),border-color .2s,background .2s,opacity .2s;' + ((!isSel && anySel) ? 'opacity:.5;' : '') + '">'
+      + '<span class="pbox" style="flex-shrink:0;width:26px;height:26px;border-radius:8px;border:1.5px solid ' + (isSel ? '#E8CF8A' : 'rgba(200,168,74,.45)') + ';background:' + (isSel ? '#E8CF8A' : 'transparent') + ';display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;color:#2a1c08;">' + (isSel ? (pos + 1) : '') + '</span>'
+      + '<span class="plabel" style="font-family:var(--serif);font-size:17px;color:' + (isSel ? '#F4E6BE' : 'rgba(240,234,214,0.8)') + ';">' + escapeHtml(op.label_fr) + '</span>'
       + '</div>';
   });
   html += '</div>';
@@ -5318,7 +5318,41 @@ function _planToggle(sk, optId) {
   var i = saved.order.indexOf(optId);
   if (i >= 0) saved.order.splice(i, 1); else saved.order.push(optId);
   safeSetItem(sk, JSON.stringify(saved));
-  _cureAnxieteWizardRender();
+  _planAnimate(sk, saved.order);
+}
+function _planAnimate(sk, order) {
+  var box = document.querySelector('[data-plan-sk="' + sk + '"]');
+  if (!box) { _cureAnxieteWizardRender(); return; }
+  var rows = Array.prototype.slice.call(box.querySelectorAll('[data-rid]'));
+  var byId = {}; rows.forEach(function(r){ byId[r.getAttribute('data-rid')] = r; });
+  var sel = order.filter(function(id){ return byId[id]; });
+  var rest = rows.map(function(r){ return r.getAttribute('data-rid'); }).filter(function(id){ return sel.indexOf(id) < 0; });
+  var desired = sel.concat(rest);
+  var first = {}; desired.forEach(function(id){ first[id] = byId[id].getBoundingClientRect().top; });
+  desired.forEach(function(id){ box.appendChild(byId[id]); });
+  var anySel = sel.length > 0;
+  desired.forEach(function(id){
+    var r = byId[id];
+    var last = r.getBoundingClientRect().top;
+    var d = first[id] - last;
+    if (d && !window._reducedMotion) {
+      r.style.transition = 'none';
+      r.style.transform = 'translateY(' + d + 'px)';
+      r.getBoundingClientRect();
+      r.style.transition = 'transform .34s cubic-bezier(.2,.7,.2,1),border-color .2s,background .2s,opacity .2s';
+      r.style.transform = '';
+    }
+    var pos = sel.indexOf(id), isSel = pos >= 0, pbox = r.querySelector('.pbox'), plabel = r.querySelector('.plabel');
+    if (isSel) {
+      r.style.borderColor = 'rgba(232,208,140,.6)'; r.style.background = 'rgba(200,168,74,.10)'; r.style.opacity = '1';
+      pbox.textContent = (pos + 1); pbox.style.background = '#E8CF8A'; pbox.style.borderColor = '#E8CF8A';
+      plabel.style.color = '#F4E6BE';
+    } else {
+      r.style.borderColor = 'rgba(200,168,74,.13)'; r.style.background = 'transparent'; r.style.opacity = anySel ? '.5' : '1';
+      pbox.textContent = ''; pbox.style.background = 'transparent'; pbox.style.borderColor = 'rgba(200,168,74,.45)';
+      plabel.style.color = 'rgba(240,234,214,0.8)';
+    }
+  });
 }
 window._planToggle = _planToggle;
 
