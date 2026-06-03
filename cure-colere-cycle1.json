@@ -666,7 +666,7 @@
           "consigne": "La colère a une pensée-moteur (« il l'a fait exprès », « c'est inadmissible »). Écris celle qui t'enflamme le plus, ET son démenti calme.",
           "amorce": "La pensée : … → Le démenti : …",
           "champ": {
-            "placeholder": "...",
+            "placeholder": "Ex. : « Il l'a fait exprès » → « Je n'en suis pas sûr ; et même si oui, m'emporter n'arrange rien. »",
             "max_caracteres": 500,
             "stockage": "cure_colere_j4_dementi"
           },
