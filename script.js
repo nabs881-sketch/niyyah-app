@@ -5304,7 +5304,7 @@ _outilAnxieteRenderers.checkboxes_ordonnees = function(o, c) {
     var pos = order.indexOf(id);
     var isSel = pos >= 0;
     html += '<div data-rid="' + op.id + '" onclick="_planToggle(\'' + sk + '\',\'' + op.id + '\')" style="display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:13px;margin-bottom:9px;border:1px solid ' + (isSel ? 'rgba(232,208,140,.6)' : 'rgba(200,168,74,.13)') + ';background:' + (isSel ? 'rgba(200,168,74,.10)' : 'transparent') + ';cursor:pointer;transition:transform .34s cubic-bezier(.2,.7,.2,1),border-color .2s,background .2s,opacity .2s;' + ((!isSel && anySel) ? 'opacity:.5;' : '') + '">'
-      + '<span class="pbox" style="flex-shrink:0;width:26px;height:26px;border-radius:8px;border:1.5px solid ' + (isSel ? '#E8CF8A' : 'rgba(200,168,74,.45)') + ';background:' + (isSel ? '#E8CF8A' : 'transparent') + ';display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;color:#2a1c08;">' + (isSel ? (pos + 1) : '') + '</span>'
+      + '<span class="pbox" style="flex-shrink:0;width:26px;height:26px;border-radius:8px;border:1.5px solid ' + (isSel ? '#E8CF8A' : 'rgba(200,168,74,.45)') + ';background:' + (isSel ? '#E8CF8A' : 'transparent') + ';display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:500;color:#2a1c08;">' + (isSel ? (pos + 1) : '') + '</span>'
       + '<span class="plabel" style="font-family:var(--serif);font-size:17px;color:' + (isSel ? '#F4E6BE' : 'rgba(240,234,214,0.8)') + ';">' + escapeHtml(op.label_fr) + '</span>'
       + '</div>';
   });
