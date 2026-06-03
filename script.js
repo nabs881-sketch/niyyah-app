@@ -4769,6 +4769,7 @@ function _getCureJourData(jour) {
   } catch(e) { return null; }
 }
 
+function _cureDevUnlock() { return safeGetItem('cure_dev_unlock') === '1'; }
 function _cureTransition(jourFait) {
   _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
   document.body.classList.add('in-bab-an-nafs');
@@ -4776,6 +4777,7 @@ function _cureTransition(jourFait) {
   if (!el) return;
   var hierTitre = '';
   var _prt = (_cureWizardState && _cureWizardState.porte) || 'colere';
+  if (_cureDevUnlock()) { openCureJour(_prt, jourFait + 1); return; }
   var _cfg = _curePorteConfig[_prt] || _curePorteConfig.anxiete;
   var _trData = window[_cfg.dataKey];
   if (_trData && _trData.jours) {
@@ -4851,8 +4853,8 @@ function _injectCureProgress(current) {
     var bdr = done ? '#C8A84A' : active ? 'rgba(246,218,138,.35)' : 'rgba(255,255,255,0.2)';
     var col = done ? '#fff' : active ? '#F6E6C8' : 'rgba(255,255,255,0.3)';
     var _dotShadow = active ? 'box-shadow:0 0 10px rgba(0,0,0,.25);' : '';
-    var cursor = done ? 'cursor:pointer;' : '';
-    var onclick = done ? ' onclick="openCureJour(\'' + _prt + '\',' + d + ')"' : '';
+    var cursor = (done || _cureDevUnlock()) ? 'cursor:pointer;' : '';
+    var onclick = (done || _cureDevUnlock()) ? ' onclick="openCureJour(\'' + _prt + '\',' + d + ')"' : '';
     bar.innerHTML += '<div style="text-align:center;' + cursor + 'background:rgba(0,0,0,0.5);border-radius:12px;padding:6px 4px 4px;"' + onclick + '>'
       + '<div style="width:28px;height:28px;border-radius:50%;border:' + (active ? '1' : '2') + 'px solid ' + bdr + ';background:' + bg + ';display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:11px;color:' + col + ';' + _dotShadow + '">' + d + '</div>'
       + '<div style="font-size:9px;color:#F5EDE0;font-weight:500;margin-top:2px;text-shadow:0 1px 3px rgba(0,0,0,0.8);">J' + d + '</div></div>';
@@ -11894,6 +11896,16 @@ function v2OpenSettings() {
               <div style="font-size:12px;color:rgba(255,255,255,0.35);margin-top:2px;">D\u00e9coche pour r\u00e9p\u00e9ter \u00e0 ton rythme.</div>
             </div>
             <div data-tog style="width:36px;height:20px;border-radius:10px;background:${safeGetItem('refuge_breath_guided')!=='0'?'#C8A84A':'#444'};transition:background 0.2s;"></div>
+          </div>
+        </div>
+        <div style="padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.04);">
+          <div style="display:flex;justify-content:space-between;align-items:center;cursor:pointer;"
+            onclick="var v=safeGetItem('cure_dev_unlock')==='1'?'0':'1';safeSetItem('cure_dev_unlock',v);var d=this.querySelector('[data-cureunlock]');if(d)d.style.background=v==='1'?'#C8A84A':'#444';">
+            <div>
+              <div style="font-size:14px;color:rgba(240,234,214,0.7);">Débloquer tous les jours (dev)</div>
+              <div style="font-size:12px;color:rgba(255,255,255,0.35);margin-top:2px;">Ouvre toutes les portes/jours pour l'amélioration. À retirer avant prod.</div>
+            </div>
+            <div data-cureunlock style="width:36px;height:20px;border-radius:10px;background:${safeGetItem('cure_dev_unlock')==='1'?'#C8A84A':'#444'};transition:background 0.2s;flex-shrink:0;"></div>
           </div>
         </div>
         <div style="padding:14px 16px;cursor:pointer;"
