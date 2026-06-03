@@ -471,7 +471,8 @@
             "stockage": "cure_colere_j3_silence"
           },
           "note_psy": "Délai de réponse : souvent, la vague physiologique retombe en une à quelques minutes si on ne la nourrit pas de mots.",
-          "note_spi": "« Le fort, c'est celui qui se maîtrise dans la colère » (Bukhârî 6114 ; Muslim 2609)."
+          "note_spi": "« Le fort, c'est celui qui se maîtrise dans la colère »",
+          "note_spi_source": "Bukhârî 6114 ; Muslim 2609"
         },
         {
           "id": "signal_alerte",
