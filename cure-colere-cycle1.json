@@ -430,8 +430,8 @@
           "ordre": 1,
           "type": "checkboxes_multiple",
           "titre": "Ton plan du moment",
-          "introduction": "Mets les remèdes dans TON ordre, pour les avoir prêts quand le feu prend.",
-          "consigne": "Coche ceux que tu adoptes (et numérote-les mentalement : 1, 2, 3…).",
+          "introduction": "",
+          "consigne": "Mets les remèdes dans TON ordre, pour les avoir prêts quand le feu prend. Coche ceux que tu adoptes et numérote-les mentalement (1, 2, 3…).",
           "options": [
             {
               "id": "taawwudh",
@@ -456,7 +456,7 @@
           ],
           "stockage": "cure_colere_j3_plan",
           "note_psy": "Protocole de time-out planifié à l'avance — l'intervention anti-colère la plus probante.",
-          "note_spi": "La séquence exacte de la Sunna : refuge, silence, posture, eau."
+          "note_spi": "Des remèdes tirés de la Sunna : refuge, silence, posture, eau."
         },
         {
           "id": "silence_dabord",
