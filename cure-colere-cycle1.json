@@ -428,10 +428,10 @@
         {
           "id": "plan_moment",
           "ordre": 1,
-          "type": "checkboxes_multiple",
+          "type": "checkboxes_ordonnees",
           "titre": "Ton plan du moment",
           "introduction": "",
-          "consigne": "Mets les remèdes dans TON ordre, pour les avoir prêts quand le feu prend. Coche ceux que tu adoptes et numérote-les mentalement (1, 2, 3…).",
+          "consigne": "Mets les remèdes dans TON ordre, pour les avoir prêts quand le feu prend. Tape-les dans le sens où tu veux les faire.",
           "options": [
             {
               "id": "taawwudh",

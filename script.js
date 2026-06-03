@@ -5287,6 +5287,41 @@ function _cbmToggle(sk, optId, isChecked) {
 }
 window._cbmToggle = _cbmToggle;
 
+_outilAnxieteRenderers.checkboxes_ordonnees = function(o, c) {
+  var opts = o.options || [];
+  var sk = o.stockage || 'cure_plan_ord';
+  var saved = {}; try { saved = JSON.parse(safeGetItem(sk) || '{}'); } catch(e) {}
+  var order = Array.isArray(saved.order) ? saved.order.filter(function(id){ return opts.some(function(op){return op.id===id;}); }) : [];
+  var byId = {}; opts.forEach(function(op){ byId[op.id] = op; });
+  var unselected = opts.filter(function(op){ return order.indexOf(op.id) < 0; }).map(function(op){ return op.id; });
+  var display = order.concat(unselected);
+  var anySel = order.length > 0;
+  var html = '';
+  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:left;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
+  html += '<div style="display:flex;flex-direction:column;gap:0;">';
+  display.forEach(function(id){
+    var op = byId[id];
+    var pos = order.indexOf(id);
+    var isSel = pos >= 0;
+    html += '<div onclick="_planToggle(\'' + sk + '\',\'' + op.id + '\')" style="display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:13px;margin-bottom:9px;border:1px solid ' + (isSel ? 'rgba(232,208,140,.6)' : 'rgba(200,168,74,.13)') + ';background:' + (isSel ? 'rgba(200,168,74,.10)' : 'transparent') + ';cursor:pointer;transition:all 0.2s;' + ((!isSel && anySel) ? 'opacity:.5;' : '') + '">'
+      + '<span style="flex-shrink:0;width:26px;height:26px;border-radius:8px;border:1.5px solid ' + (isSel ? '#E8CF8A' : 'rgba(200,168,74,.45)') + ';background:' + (isSel ? '#E8CF8A' : 'transparent') + ';display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;color:#2a1c08;">' + (isSel ? (pos + 1) : '') + '</span>'
+      + '<span style="font-family:var(--serif);font-size:17px;color:' + (isSel ? '#F4E6BE' : 'rgba(240,234,214,0.8)') + ';">' + escapeHtml(op.label_fr) + '</span>'
+      + '</div>';
+  });
+  html += '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(232,208,140,0.95);text-align:left;line-height:1.55;">' + escapeHtml(o.note_spi) + '</div>';
+  return html;
+};
+function _planToggle(sk, optId) {
+  var saved = {}; try { saved = JSON.parse(safeGetItem(sk) || '{}'); } catch(e) {}
+  if (!Array.isArray(saved.order)) saved.order = [];
+  var i = saved.order.indexOf(optId);
+  if (i >= 0) saved.order.splice(i, 1); else saved.order.push(optId);
+  safeSetItem(sk, JSON.stringify(saved));
+  _cureAnxieteWizardRender();
+}
+window._planToggle = _planToggle;
+
 // 3.19 — champ_texte_long
 _outilAnxieteRenderers.champ_texte_long = function(o, c) {
   var champ = o.champ || {};
