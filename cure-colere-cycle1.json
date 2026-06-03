@@ -626,8 +626,8 @@
           "ordre": 2,
           "type": "checkboxes_multiple",
           "titre": "Mon miroir",
-          "introduction": "Coche LA réflexion à te rappeler dans le feu.",
-          "consigne": "Coche celle(s) qui te parle(nt).",
+          "introduction": "Et retiens celle à te rappeler dans le feu.",
+          "consigne": "Coche celles qui te parlent.",
           "options": [
             {
               "id": "recompense",
