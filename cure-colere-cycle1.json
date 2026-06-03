@@ -462,7 +462,7 @@
           "id": "silence_dabord",
           "ordre": 2,
           "type": "champ_texte_long",
-          "titre": "Le silence d'abord",
+          "titre": "Avant les mots",
           "consigne": "Garder le silence est ta première maîtrise. Fixe ta règle : combien de temps tu te tais quand la colère monte, et pourquoi.",
           "amorce": "Quand la colère monte, je ne dis rien pendant",
           "champ": {
