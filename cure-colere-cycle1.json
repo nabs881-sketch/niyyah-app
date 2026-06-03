@@ -463,7 +463,7 @@
           "ordre": 2,
           "type": "champ_texte_long",
           "titre": "Le silence d'abord",
-          "consigne": "Se taire est ta première maîtrise. Écris ta règle, à t'y engager : quand la colère monte, combien de temps tu ne dis rien — et pourquoi.",
+          "consigne": "Se taire est ta première maîtrise. Fixe ta règle : combien de temps tu te tais quand la colère monte, et pourquoi.",
           "amorce": "Quand la colère monte, je ne dis rien pendant",
           "champ": {
             "placeholder": "90 secondes — parce que les mots de la colère ne se reprennent pas.",
