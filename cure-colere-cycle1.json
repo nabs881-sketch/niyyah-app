@@ -626,8 +626,8 @@
           "ordre": 2,
           "type": "checkboxes_multiple",
           "titre": "Mon miroir",
-          "introduction": "Et retiens celle à te rappeler dans le feu.",
-          "consigne": "Coche celles qui te parlent.",
+          "introduction": "",
+          "consigne": "Coche celles qui te parlent. Et retiens celle à te rappeler quand la colère monte.",
           "options": [
             {
               "id": "recompense",
