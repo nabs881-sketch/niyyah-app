@@ -408,6 +408,14 @@
         "titre_bloc": "Parole d'al-Ghazâlî sur les remèdes du moment",
         "parole": {
           "texte": "Une fois le feu pris, la réflexion ne suffit pas toujours — le corps doit agir. al-Ghazâlî prescrit des remèdes concrets : le ta'awwudh (refuge contre le shaytan, dont vient l'impulsion) ; l'eau des ablutions (la colère est de la nature du feu, et le feu se calme par l'eau) ; le changement de posture (debout → assis, assis → allongé) ; et le silence. La colère est une flamme — le travail du croyant est de l'éteindre avant qu'elle ne le consume.",
+          "texte_intro": "Une fois le feu pris, la réflexion ne suffit pas toujours — le corps doit agir. al-Ghazâlî prescrit des remèdes concrets :",
+          "remedes": [
+            { "label": "Le ta'awwudh", "gloss": "refuge contre le shaytan, dont vient l'impulsion." },
+            { "label": "L'eau des ablutions", "gloss": "la colère est de nature de feu, et le feu se calme par l'eau." },
+            { "label": "Le changement de posture", "gloss": "debout → assis, assis → allongé." },
+            { "label": "Le silence", "gloss": "" }
+          ],
+          "texte_fin": "La colère est une flamme — le travail du croyant est de l'éteindre avant qu'elle ne le consume.",
           "auteur": "D'après Abû Hâmid al-Ghazâlî",
           "dates_auteur": "1058-1111",
           "oeuvre": "Ihyâ' 'Ulûm ad-Dîn (rendu libre)",

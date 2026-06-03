@@ -6320,7 +6320,11 @@ function _cureAnxieteWizardRender(el) {
       + progress
       + '<div style="font-family:var(--serif);font-size:16px;letter-spacing:2px;color:rgba(231,211,151,0.80);text-align:center;margin-bottom:16px;">' + escapeHtml((bs.titre_bloc || '').toUpperCase()) + '</div>'
       + '<div style="border-left:2px solid ' + c + '44;padding-left:16px;margin-bottom:16px;">'
-      + '<div style="font-family:var(--serif);font-size:19px;color:rgba(240,234,214,0.8);line-height:1.7;">' + escapeHtml(p.texte || '') + '</div>'
+      + (Array.isArray(p.remedes) && p.remedes.length
+          ? (p.texte_intro ? '<div style="font-family:var(--serif);font-size:19px;color:rgba(240,234,214,0.8);line-height:1.7;margin-bottom:12px;">' + escapeHtml(p.texte_intro) + '</div>' : '')
+            + '<div style="margin-bottom:12px;">' + p.remedes.map(function(r){ return '<div style="display:flex;gap:9px;margin-bottom:9px;font-family:var(--serif);font-size:18px;color:rgba(240,234,214,0.8);line-height:1.5;"><span style="color:#C8A84A;flex:none;">\u2022</span><span><span style="color:rgba(231,211,151,0.95);">' + escapeHtml(r.label || '') + '</span>' + (r.gloss ? ' \u2014 ' + escapeHtml(r.gloss) : '') + '</span></div>'; }).join('') + '</div>'
+            + (p.texte_fin ? '<div style="font-family:var(--serif);font-size:19px;color:rgba(240,234,214,0.8);line-height:1.7;">' + escapeHtml(p.texte_fin) + '</div>' : '')
+          : '<div style="font-family:var(--serif);font-size:19px;color:rgba(240,234,214,0.8);line-height:1.7;">' + escapeHtml(p.texte || '') + '</div>')
       + '</div>'
       + '<div style="text-align:center;margin-bottom:16px;">'
       + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;">' + escapeHtml(p.auteur || '') + '</div>'
