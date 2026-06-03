@@ -6435,7 +6435,8 @@ function _cureAnxieteWizardRender(el) {
       + '<div style="border:1px solid ' + c + '22;border-radius:14px;padding:16px;margin-bottom:16px;">';
     var instr = bc.instructions || [];
     instr.forEach(function(line) {
-      html += '<div style="font-family:var(--serif);font-size:18px;color:rgba(240,234,214,0.8);line-height:1.7;margin-bottom:6px;padding-left:12px;border-left:2px solid ' + c + '33;">' + escapeHtml(line) + '</div>';
+      var _ln = escapeHtml(line).replace(/\*\*(.+?)\*\*/g, '<span style="color:rgba(231,211,151,0.95);">$1</span>');
+      html += '<div style="font-family:var(--serif);font-size:18px;color:rgba(240,234,214,0.8);line-height:1.7;margin-bottom:6px;padding-left:12px;border-left:2px solid ' + c + '33;">' + _ln + '</div>';
     });
     html += '</div>';
     if (ph.ar) {
