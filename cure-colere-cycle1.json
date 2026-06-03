@@ -706,12 +706,13 @@
         "phrase_a_repeter": {
           "ar": "اللَّهُمَّ كَمَا حَسَّنْتَ خَلْقِي فَحَسِّنْ خُلُقِي",
           "translit": "Allâhumma kamâ hassanta khalqî fa-hassin khuluqî",
-          "fr": "Ô Allah, comme Tu as embelli ma création, embellis mon caractère"
+          "fr": "Ô Allah, comme Tu as embelli ma création, embellis mon caractère",
+          "source": "Du'â du miroir (Ahmad, sahih)"
         },
         "duree_min": 3,
         "justification": {
           "texte": "Auto-confrontation : observer son propre visage de colère réduit l'intensité émotionnelle.",
-          "source": "Du'â du miroir (Ahmad — grade à confirmer)"
+          "source": "Du'â du miroir (Ahmad, sahih — authentifié par al-Albani)"
         },
         "note": "Le visage de la colère n'est pas le tien — c'est un masque qui passe.",
         "stockage": "cure_colere_j4_corps_done"

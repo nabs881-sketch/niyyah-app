@@ -6444,6 +6444,7 @@ function _cureAnxieteWizardRender(el) {
         + '<div style="font-family:\'Scheherazade New\',serif;font-size:26px;color:#C8A84A;direction:rtl;margin-bottom:4px;">' + escapeHtml(ph.ar) + '</div>'
         + (ph.translit ? '<div style="font-family:var(--serif);font-size:18px;font-style:italic;color:rgba(231,211,151,0.80);margin-bottom:4px;">' + escapeHtml(ph.translit) + '</div>' : '')
         + (ph.fr ? '<div style="font-family:var(--serif);font-size:18px;color:rgba(240,234,214,0.7);">' + escapeHtml(ph.fr) + '</div>' : '')
+        + (ph.source ? '<div style="font-family:var(--serif);font-size:14px;font-style:italic;color:rgba(231,211,151,0.55);margin-top:6px;">\u2014 ' + escapeHtml(ph.source) + '</div>' : '')
         + '</div>';
     }
     if (bc.duree_min) html += '<div style="font-size:18px;color:rgba(231,211,151,0.72);text-align:center;margin-bottom:8px;">' + bc.duree_min + ' min</div>';
