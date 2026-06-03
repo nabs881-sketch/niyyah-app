@@ -614,7 +614,7 @@
           "consigne": "Reprends une offense récente. Pèse honnêtement la vengeance (et ses suites) contre le pardon (la paix + « sa récompense incombe à Allah »).",
           "amorce": "La vengeance me rapporterait… et ensuite… / Le pardon me rapporterait…",
           "champ": {
-            "placeholder": "...",
+            "placeholder": "Ex. : la vengeance — un soulagement court, puis le conflit dure. Le pardon — dur sur le coup, mais la paix, et la récompense d'Allah.",
             "max_caracteres": 600,
             "stockage": "cure_colere_j4_issues"
           },
