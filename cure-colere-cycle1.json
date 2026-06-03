@@ -512,7 +512,7 @@
       "bloc_5_pratique_corporelle": {
         "type": "geste_corporel",
         "titre_bloc": "Le feu et l'eau",
-        "introduction": "Quand la colère te tient, le corps agit avant la tête.",
+        "introduction": "Quand la colère te tient, le corps répond — trois gestes, dans l'ordre.",
         "instructions": [
           "1. Change de **posture** : debout → assieds-toi ; si ça brûle encore → allonge-toi.",
           "2. Si ça ne passe pas, va faire **wudû** : l'eau fraîche sur le visage, les bras, les pieds.",
@@ -534,8 +534,8 @@
       },
       "phrase_ancre": "Quand le feu prend, mon corps agit avant ma langue.",
       "cloture": {
-        "texte": "Tu as ton plan du moment.\nLe silence, la posture, l'eau — le kit du Prophète ﷺ.\nTu connais ton signal d'alerte.\n\nDemain — voir autrement.",
-        "bouton": "J'ai mon kit. À demain.",
+        "texte": "Tu as ton plan du moment.\nLe silence, la posture, l'eau — les gestes du Prophète ﷺ.\nTu connais ton signal d'alerte.\n\nDemain — voir autrement.",
+        "bouton": "J'ai mon plan. À demain.",
         "stockage": "cure_colere = { current_day: 3, completed_j3: true }"
       },
       "murmure_sortie_sanctuaire": "Le feu se calme par l'eau, et le cœur par le refuge en Allah.",
