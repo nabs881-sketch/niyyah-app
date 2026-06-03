@@ -6303,7 +6303,7 @@ function _cureAnxieteWizardRender(el) {
       + progress
       + '<div style="font-family:var(--serif);font-size:16px;letter-spacing:2px;color:rgba(231,211,151,0.80);text-align:center;margin-bottom:16px;">' + escapeHtml((bv.titre_bloc || '').toUpperCase()) + '</div>'
       + '<div style="border:1px solid ' + c + '22;border-radius:14px;padding:20px;margin-bottom:16px;text-align:center;">'
-      + (v.ar ? '<div style="font-family:\'Scheherazade New\',serif;font-size:26px;color:#C8A84A;direction:rtl;line-height:1.6;margin-bottom:10px;">' + escapeHtml(v.ar) + '</div>' : '')
+      + (v.ar ? '<div style="font-family:\'Scheherazade New\',serif;font-size:22px;color:#C8A84A;direction:rtl;line-height:1.6;margin-bottom:10px;">' + escapeHtml(v.ar) + '</div>' : '')
       + (v.translit ? '<div style="font-family:var(--serif);font-size:18px;font-style:italic;color:rgba(231,211,151,0.80);margin-bottom:6px;">' + escapeHtml(v.translit) + '</div>' : '')
       + (v.fr ? '<div style="font-family:var(--serif);font-size:19px;color:rgba(240,234,214,0.85);line-height:1.6;margin-bottom:8px;">' + escapeHtml(v.fr) + '</div>' : '')
       + (v.reference ? '<div style="font-size:16px;color:rgba(231,211,151,0.72);">\u2014 ' + escapeHtml(v.reference) + '</div>' : '')
