@@ -587,6 +587,16 @@
         "titre_bloc": "Parole d'al-Ghazâlî sur les six miroirs",
         "parole": {
           "texte": "Une fois le corps calmé, al-Ghazâlî prescrit de regarder — de tendre six miroirs à ta colère : la récompense qui attend celui qui se retient ; que le pouvoir d'Allah sur toi dépasse ton pouvoir sur celui qui t'a lésé ; que la vengeance ne fait qu'aggraver l'inimitié et offrir à l'adversaire le plaisir de te voir perdre le contrôle ; que le visage en colère est enlaidi comme celui d'une bête, quand le doux ressemble aux prophètes ; que le vrai motif est souvent l'ego, pas la justice ; et que ce qui t'a atteint t'a atteint par la permission d'Allah.",
+          "texte_intro": "Une fois le corps calmé, al-Ghazâlî prescrit de regarder — de tendre six miroirs à ta colère :",
+          "remedes": [
+            { "label": "La récompense", "gloss": "celui qui se retient sera récompensé par Allah." },
+            { "label": "Le pouvoir d'Allah", "gloss": "Son pouvoir sur toi dépasse ton pouvoir sur celui qui t'a lésé." },
+            { "label": "L'inimitié", "gloss": "la vengeance ne fait que l'aggraver, et offre à l'autre le plaisir de te voir perdre le contrôle." },
+            { "label": "Le visage", "gloss": "la colère l'enlaidit comme celui d'une bête ; la douceur, elle, rapproche des prophètes." },
+            { "label": "Le vrai motif", "gloss": "souvent l'ego, rarement la justice." },
+            { "label": "Le décret", "gloss": "ce qui t'a atteint t'a atteint par la permission d'Allah." }
+          ],
+          "texte_fin": "Regarde par ces six angles, et la colère perd sa prise.",
           "auteur": "D'après Abû Hâmid al-Ghazâlî",
           "dates_auteur": "1058-1111",
           "oeuvre": "Ihyâ' 'Ulûm ad-Dîn (rendu libre)",
