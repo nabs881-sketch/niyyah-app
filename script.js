@@ -6472,8 +6472,8 @@ function _cureAnxieteWizardRender(el) {
       + progress
       + (j.phrase_ancre ? '<div style="font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:23px;line-height:1.45;color:#E7D397;text-align:center;margin-bottom:24px;max-width:340px;">' + escapeHtml(j.phrase_ancre) + '</div>' : '')
       + (clot.ar ? '<div style="font-family:\'Scheherazade New\',serif;font-size:26px;color:#C8A84A;direction:rtl;margin-bottom:12px;">' + escapeHtml(clot.ar) + '</div>' : '')
-      + '<div style="font-family:var(--serif);font-size:19px;color:rgba(240,234,214,0.85);line-height:1.7;max-width:360px;margin-bottom:24px;">' + escapeHtml(clot.fr || 'Tu as travers\u00e9 ce jour.') + '</div>'
-      + '<button onclick="' + saveFn + '" style="display:block;width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:' + _btnBg + ';color:#F6E6C8;font-size:19px;font-weight:600;font-family:var(--serif);cursor:pointer;box-shadow:inset 0 1px 0 rgba(255,220,180,.16);">' + (_relecture ? 'Fin de la relecture' : (s.isLast ? 'Terminer la Cure' : 'Jour ' + dayNum + ' accompli')) + '</button>'
+      + '<div style="font-family:var(--serif);font-size:19px;color:rgba(240,234,214,0.85);line-height:1.7;max-width:360px;margin-bottom:24px;white-space:pre-line;">' + escapeHtml(clot.texte || clot.fr || 'Tu as travers\u00e9 ce jour.') + '</div>'
+      + '<button onclick="' + saveFn + '" style="display:block;width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:' + _btnBg + ';color:#F6E6C8;font-size:19px;font-weight:600;font-family:var(--serif);cursor:pointer;box-shadow:inset 0 1px 0 rgba(255,220,180,.16);">' + (_relecture ? 'Fin de la relecture' : (s.isLast ? 'Terminer la Cure' : (clot.bouton || ('Jour ' + dayNum + ' accompli')))) + '</button>'
       + (s.isLast && !_relecture ? (function() { var _cfn = {anxiete:'openCoffretAnxiete()',regard:'openCoffretRegard()'}; var _clbl = {anxiete:'Coffret de l\u2019apaisement',regard:'Coffret du regard juste'}; var _p = s.porte || 'anxiete'; return '<button onclick="' + (_cfn[_p]||_cfn.anxiete) + '" style="display:block;width:100%;max-width:340px;margin:12px auto 0;padding:12px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:none;color:#C8A84A;font-size:16px;font-family:var(--serif);cursor:pointer;font-style:italic;">' + (_clbl[_p]||_clbl.anxiete) + '</button>'; })() : '')
       + '</div>';
   }
@@ -6521,9 +6521,8 @@ function _cureAnxieteSave(num) {
   var data = _getCureData();
   var j = data && data.jours && data.jours['j' + num];
   var murmure = j && j.murmure_sortie_sanctuaire;
-  if (murmure && murmure.fr) {
-    safeSetItem('niyyah_murmure_retour', murmure.fr);
-  }
+  var _mtxt = (typeof murmure === 'string') ? murmure : (murmure && murmure.fr);
+  if (_mtxt) { safeSetItem('niyyah_murmure_retour', _mtxt); }
   if (num === 7) {
     var _openFn = { colere: openCureColere, anxiete: openCureAnxiete, regard: openCureRegard, arrogance: openCureArrogance, paresse: openCureParesse, medisance: openCureMedisance };
     (_openFn[porte] || openCureAnxiete)();
