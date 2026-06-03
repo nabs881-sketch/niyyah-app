@@ -482,7 +482,7 @@
           "consigne": "Au J1 tu as trouvé OÙ la colère vit dans ton corps. Écris ton tout premier signe — celui qui veut dire « agis maintenant, avant les mots ».",
           "amorce": "Mon premier signal, c'est",
           "champ": {
-            "placeholder": "...",
+            "placeholder": "ma mâchoire qui se serre, une chaleur qui monte…",
             "max_caracteres": 400,
             "stockage": "cure_colere_j3_signal"
           },
