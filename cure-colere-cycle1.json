@@ -302,7 +302,7 @@
           "ordre": 3,
           "type": "champ_texte_long",
           "titre": "La question d'avant",
-          "consigne": "Installe-la pour la prochaine fois : avant de réagir, je me demanderai cette question.",
+          "consigne": "La prochaine fois que la colère monte, une question peut te faire marquer une pause avant de réagir. Écris celle que tu te poseras (ou garde l'exemple).",
           "amorce": "Avant de réagir, je me demanderai",
           "champ": {
             "placeholder": "Est-ce la justice qui parle, ou ma fierté ?",
