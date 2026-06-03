@@ -6339,7 +6339,7 @@ function _cureAnxieteWizardRender(el) {
       + '<div style="font-family:var(--serif);font-size:16px;letter-spacing:2px;color:rgba(231,211,151,0.80);text-align:center;margin-bottom:16px;">' + escapeHtml((bd.titre_bloc || '').toUpperCase()) + '</div>'
       + (bd.introduction ? '<div style="font-family:var(--serif);font-size:18px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:16px;">' + escapeHtml(bd.introduction) + '</div>' : '')
       + '<div style="border:1px solid ' + c + '22;border-radius:14px;padding:20px;margin-bottom:16px;text-align:center;">'
-      + (dh.ar ? '<div style="font-family:\'Scheherazade New\',serif;font-size:22px;color:#C8A84A;direction:rtl;margin-bottom:8px;">' + escapeHtml(dh.ar) + '</div>' : '')
+      + (dh.ar ? '<div style="font-family:\'Scheherazade New\',serif;font-size:20px;color:#C8A84A;direction:rtl;margin-bottom:8px;">' + escapeHtml(dh.ar) + '</div>' : '')
       + (dh.translit ? '<div style="font-family:var(--serif);font-size:16px;font-style:italic;color:rgba(231,211,151,0.84);margin-bottom:4px;">' + escapeHtml(dh.translit) + '</div>' : '')
       + (dh.fr ? '<div style="font-family:var(--serif);font-size:18px;color:rgba(240,234,214,0.8);margin-bottom:8px;">' + escapeHtml(dh.fr) + '</div>' : '')
       + (dh.sens ? '<div style="font-family:var(--serif);font-size:18px;color:rgba(231,211,151,0.76);margin-bottom:8px;">' + escapeHtml(dh.sens) + '</div>' : '')
