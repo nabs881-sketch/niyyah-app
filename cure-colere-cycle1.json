@@ -463,7 +463,7 @@
           "ordre": 2,
           "type": "champ_texte_long",
           "titre": "Le silence d'abord",
-          "consigne": "« Le fort, c'est celui qui se maîtrise dans la colère » (Bukhârî/Muslim). Se taire est ta première maîtrise. Écris ta règle, à t'y engager : quand la colère monte, combien de temps tu ne dis rien — et pourquoi.",
+          "consigne": "Se taire est ta première maîtrise. Écris ta règle, à t'y engager : quand la colère monte, combien de temps tu ne dis rien — et pourquoi.",
           "amorce": "Quand la colère monte, je ne dis rien pendant",
           "champ": {
             "placeholder": "90 secondes — parce que les mots de la colère ne se reprennent pas.",
@@ -471,7 +471,7 @@
             "stockage": "cure_colere_j3_silence"
           },
           "note_psy": "Délai de réponse : souvent, la vague physiologique retombe en une à quelques minutes si on ne la nourrit pas de mots.",
-          "note_spi": "« Le fort, c'est celui qui se maîtrise dans la colère » (Bukhârî 6114 ; Muslim 2609). Se taire est la première maîtrise."
+          "note_spi": "« Le fort, c'est celui qui se maîtrise dans la colère » (Bukhârî 6114 ; Muslim 2609)."
         },
         {
           "id": "signal_alerte",
