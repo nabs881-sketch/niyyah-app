@@ -681,14 +681,15 @@
         "dhikr": {
           "ar": "اللَّهُمَّ آتِ نَفْسِي تَقْوَاهَا، وَزَكِّهَا أَنْتَ خَيْرُ مَنْ زَكَّاهَا، أَنْتَ وَلِيُّهَا وَمَوْلَاهَا",
           "translit": "Allâhumma âti nafsî taqwâhâ, wa zakkihâ anta khayru man zakkâhâ, anta waliyyuhâ wa mawlâhâ",
-          "fr": "Ô Allah, accorde à mon âme sa piété, purifie-la — Tu es le meilleur à la purifier — Tu es son Protecteur et son Maître."
+          "fr": "Ô Allah, accorde à mon âme sa piété, purifie-la — nul ne la purifie mieux que Toi — Tu es son Protecteur et son Maître."
         },
         "quantite": 1,
         "moment_recommande": "Matin et soir.",
         "duree_estimee_sec": 40,
         "justification": {
           "texte": "Du'â du Prophète ﷺ pour la purification de l'âme.",
-          "source": "Muslim 2722"
+          "source": "Muslim 2722",
+          "hadith": "Du'â du Prophète ﷺ (Sahih Muslim 2722)"
         },
         "comment_pratiquer": "Relie le recadrage à une demande de purification du nafs.",
         "stockage": "cure_colere_j4_dhikr_done"
