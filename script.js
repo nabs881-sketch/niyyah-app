@@ -8259,10 +8259,21 @@ function _tafakkurDoneToday() {
 }
 function _markTafakkurDone(phrase) {
   var key = 'niyyah_tafakkur_lu_' + todayKey();
-  var data = { date: todayKey(), phrase: phrase, theme: 'tafakkur' };
+  var tempsPasse = Math.max(0, _tafakkurDuration - _tafakkurRemaining);
+  var data = { date: todayKey(), phrase: phrase, theme: 'tafakkur', temps_passe: tempsPasse };
   safeSetItem(key, JSON.stringify(data));
-  console.log('[Tafakkur] _markTafakkurDone WRITTEN key=' + key);
+  console.log('[Tafakkur] _markTafakkurDone WRITTEN key=' + key + ' | temps_passe=' + tempsPasse + 's');
 }
+function _openTafakkurArchiveRecit(date) {
+  var hist = _getTafakkurHistory();
+  var h = null;
+  for (var i = 0; i < hist.length; i++) { if (hist[i].date === date) { h = hist[i]; break; } }
+  if (!h || !h.phrase) return;
+  var recit = _findTafakkurRecit(h.phrase);
+  if (!recit) { recit = { theme: 'tafakkur', recit: { texte: h.phrase, source_nom: '' } }; }
+  _showTafakkurRecitOverlay(recit, true);
+}
+window._openTafakkurArchiveRecit = _openTafakkurArchiveRecit;
 function openTafakkurArchive() {
   var hist = _getTafakkurHistory();
   var existing = document.getElementById('tafakkur-archive-overlay');
@@ -8279,8 +8290,17 @@ function openTafakkurArchive() {
     html += '<div style="text-align:center;padding:40px;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.5);">Aucune halte encore.</div>';
   } else {
     hist.forEach(function(h) {
-      html += '<div style="padding:14px 16px;background:rgba(200,168,75,0.04);border:1px solid rgba(200,168,75,0.12);border-radius:14px;margin-bottom:8px;">';
-      html += '<div style="font-size:11px;color:rgba(200,168,75,0.5);margin-bottom:6px;">' + h.date + '</div>';
+      var dureeStr = '';
+      if (typeof h.temps_passe === 'number' && h.temps_passe > 0) {
+        var _m = Math.floor(h.temps_passe / 60);
+        var _s = h.temps_passe % 60;
+        dureeStr = _m > 0 ? (_m + ' min' + (_s > 0 ? ' ' + _s + ' s' : '')) : (_s + ' s');
+      }
+      html += '<div onclick="_openTafakkurArchiveRecit(\'' + h.date + '\')" style="padding:14px 16px;background:rgba(200,168,75,0.04);border:1px solid rgba(200,168,75,0.12);border-radius:14px;margin-bottom:8px;cursor:pointer;">';
+      html += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">';
+      html += '<span style="font-size:11px;color:rgba(200,168,75,0.5);">' + h.date + '</span>';
+      html += (dureeStr ? '<span style="font-size:11px;color:rgba(200,168,75,0.55);">' + dureeStr + '</span>' : '');
+      html += '</div>';
       html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#E5E0DC;line-height:1.6;">' + (h.phrase || '').substring(0, 150) + (h.phrase && h.phrase.length > 150 ? '\u2026' : '') + '</div>';
       html += '</div>';
     });
@@ -8459,7 +8479,7 @@ function _findTafakkurRecit(phrase) {
   console.log('[Tafakkur] recit pour', qId, ':', recit ? 'FOUND (theme=' + recit.theme + ')' : 'NOT FOUND');
   return recit;
 }
-function _showTafakkurRecitOverlay(recit) {
+function _showTafakkurRecitOverlay(recit, fromArchive) {
   console.log('[Tafakkur] _showTafakkurRecitOverlay CALLED');
   console.log('[Tafakkur] question_id=' + recit.question_id + ' | theme=' + recit.theme);
   console.log('[Tafakkur] texte=' + (recit.recit.texte || '').substring(0, 80) + '...');
@@ -8469,6 +8489,9 @@ function _showTafakkurRecitOverlay(recit) {
   var ov = document.createElement('div');
   ov.id = 'tafakkur-recit-overlay';
   ov.style.cssText = 'position:fixed;inset:0;z-index:9998;background:rgba(10,8,5,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;transition:opacity 500ms ease;';
+  var _closeRecit = fromArchive
+    ? "var o=document.getElementById('tafakkur-recit-overlay');if(o)o.remove();"
+    : "var o=document.getElementById('tafakkur-recit-overlay');if(o)o.remove();closeTafakkur(true);";
   var srcLabel = recit.recit.source_nom ? '\u2014 ' + recit.recit.source_nom : '';
   ov.innerHTML = '<div style="max-width:360px;width:100%;max-height:80vh;overflow-y:auto;text-align:center;padding:32px 24px;">'
     + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:16px;">' + (recit.theme || '') + '</div>'
@@ -8476,7 +8499,7 @@ function _showTafakkurRecitOverlay(recit) {
       + (recit.recit.texte || '').split('\n').filter(function(p){ return p.trim(); }).map(function(p){ return '<p style="margin:0 0 14px;">' + p.replace(/«([^»]+)»/g, '<em>«$1»</em>') + '</p>'; }).join('')
     + '</div>'
     + (srcLabel ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);margin-bottom:24px;">' + srcLabel + '</div>' : '')
-    + '<button onclick="var o=document.getElementById(\'tafakkur-recit-overlay\');if(o)o.remove();closeTafakkur(true);" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:20px;cursor:pointer;">\u2715</button>'
+    + '<button onclick="' + _closeRecit + '" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:20px;cursor:pointer;">\u2715</button>'
     + '</div>';
   document.body.appendChild(ov);
   console.log('[Tafakkur] overlay appended to body, z-index=9998, triggering fade-in');
