@@ -6346,7 +6346,7 @@ function _cureAnxieteWizardRender(el) {
       + '<div style="font-family:var(--serif);font-size:19px;color:#C8A84A;font-weight:600;">' + (bd.quantite && bd.quantite > 1 ? bd.quantite + ' fois' : 'Dis-le une fois, en pleine pr\u00e9sence.') + '</div>'
       + '</div>'
       + (bd.moment_recommande ? '<div style="font-family:var(--serif);font-size:18px;color:rgba(240,234,214,0.82);text-align:center;margin-bottom:8px;">' + escapeHtml(bd.moment_recommande) + '</div>' : '')
-      + (bd.comment_pratiquer ? '<div style="font-family:var(--serif);font-size:18px;color:rgba(240,234,214,0.80);line-height:1.6;margin-bottom:12px;">' + escapeHtml(bd.comment_pratiquer) + '</div>' : '')
+      + (bd.comment_pratiquer ? '<div style="font-family:var(--serif);font-size:18px;color:rgba(240,234,214,0.80);line-height:1.6;text-align:center;margin-bottom:12px;">' + escapeHtml(bd.comment_pratiquer) + '</div>' : '')
       + (bd.justification && bd.justification.hadith ? '<div style="font-size:18px;color:rgba(231,211,151,0.72);font-style:italic;text-align:center;">\u2014 ' + escapeHtml(bd.justification.hadith) + '</div>' : '')
       + nextBtn
       + '</div>';
