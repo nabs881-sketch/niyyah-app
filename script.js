@@ -5368,7 +5368,7 @@ _outilAnxieteRenderers.champ_texte_long = function(o, c) {
   html += '<textarea maxlength="' + maxCar + '" placeholder="' + escapeHtml(champ.placeholder || '...') + '" oninput="safeSetItem(\'' + sk + '\',this.value);var c=this.parentNode.querySelector(\'._ctLong\');if(c)c.textContent=this.value.length+\'/' + maxCar + '\'" style="display:block;width:100%;box-sizing:border-box;min-height:120px;padding:14px;border-radius:12px;border:1.5px solid rgba(232,208,140,0.55);background:rgba(0,0,0,0.35);color:#E5E0DC;font-family:var(--serif);font-size:15px;line-height:1.6;outline:none;resize:vertical;">' + escapeHtml(saved) + '</textarea>';
   html += '<div class="_ctLong" style="font-size:14px;color:rgba(200,168,75,0.3);text-align:right;margin-top:4px;">' + saved.length + '/' + maxCar + '</div>';
   if (o.note_finale) html += '<div style="font-family:var(--serif);font-size:17px;color:rgba(245,237,214,0.95);text-align:left;font-style:italic;margin-top:12px;line-height:1.55;">' + escapeHtml(o.note_finale) + '</div>';
-  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(232,208,140,0.95);text-align:left;line-height:1.55;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:18px;font-style:italic;color:rgba(232,208,140,0.95);text-align:left;line-height:1.55;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
   return html;
 };
 
