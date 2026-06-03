@@ -466,7 +466,7 @@
           "consigne": "Garder le silence est ta première maîtrise. Fixe ta règle : combien de temps tu te tais quand la colère monte, et pourquoi.",
           "amorce": "Quand la colère monte, je ne dis rien pendant",
           "champ": {
-            "placeholder": "90 secondes — parce que les mots de la colère ne se reprennent pas.",
+            "placeholder": "90 secondes — parce que ce que je dis sous la colère, je le regrette après.",
             "max_caracteres": 400,
             "stockage": "cure_colere_j3_silence"
           },
