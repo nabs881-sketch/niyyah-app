@@ -6857,25 +6857,25 @@ function _coffretHtml(key, d, activeId) {
   html += '<div style="display:flex;gap:0;border-bottom:1px solid rgba(200,168,75,0.15);padding:0 12px;overflow-x:auto;flex-shrink:0;">';
   d.sections.forEach(function(s) {
     var active = s.id === activeId;
-    html += '<button onclick="document.getElementById(\'' + ovId + '\').innerHTML=_coffretHtml(\'' + key + '\',window.' + globalKey + ',\'' + s.id + '\')" style="flex-shrink:0;padding:10px 14px;border:none;background:none;font-family:var(--serif);font-size:12px;color:' + (active ? '#C8A84A' : 'rgba(240,234,214,0.4)') + ';cursor:pointer;border-bottom:2px solid ' + (active ? '#C8A84A' : 'transparent') + ';letter-spacing:0.5px;">' + escapeHtml(s.titre_fr) + '</button>';
+    html += '<button onclick="document.getElementById(\'' + ovId + '\').innerHTML=_coffretHtml(\'' + key + '\',window.' + globalKey + ',\'' + s.id + '\')" style="flex-shrink:0;padding:10px 14px;border:none;background:none;font-family:var(--serif);font-size:13px;color:' + (active ? '#C8A84A' : 'rgba(240,234,214,0.4)') + ';cursor:pointer;border-bottom:2px solid ' + (active ? '#C8A84A' : 'transparent') + ';letter-spacing:0.5px;">' + escapeHtml(s.titre_fr) + '</button>';
   });
   html += '</div>';
   var sec = d.sections.find(function(s) { return s.id === activeId; });
   if (!sec) return html;
   html += '<div style="flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:16px 20px 100px;">';
-  if (sec.description) html += '<div style="font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:16px;line-height:1.5;">' + escapeHtml(sec.description) + '</div>';
+  if (sec.description) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:16px;line-height:1.5;">' + escapeHtml(sec.description) + '</div>';
   sec.entrees.forEach(function(e) {
     html += '<div style="border:1px solid rgba(200,168,75,0.12);border-radius:12px;padding:16px;margin-bottom:12px;background:rgba(200,168,75,0.03);">';
     if (e.image) html += '<img src="' + escapeHtml(e.image) + '" alt="' + escapeHtml(e.alt || '') + '" onclick="openImageOverlay(this.src)" style="width:100%;border-radius:10px;display:block;cursor:zoom-in;" loading="lazy">';
-    if (e.ar) html += '<div style="font-family:\'Scheherazade New\',serif;font-size:20px;color:#C8A84A;direction:rtl;text-align:right;line-height:1.6;margin-bottom:8px;">' + escapeHtml(e.ar) + '</div>';
-    if (e.translit) html += '<div style="font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(200,168,75,0.55);margin-bottom:6px;">' + escapeHtml(e.translit) + '</div>';
-    if (e.fr) html += '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.85);line-height:1.6;margin-bottom:6px;">' + escapeHtml(e.fr) + '</div>';
-    if (e.definition) html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.75);line-height:1.6;margin-bottom:6px;">' + escapeHtml(e.definition) + '</div>';
-    if (e.source) html += '<div style="font-size:11px;color:rgba(200,168,75,0.4);">\u2014 ' + escapeHtml(e.source) + '</div>';
-    if (e.quand) html += '<div style="font-size:12px;color:rgba(240,234,214,0.5);font-style:italic;line-height:1.5;margin-top:6px;border-top:1px solid rgba(200,168,75,0.08);padding-top:6px;">' + escapeHtml(e.quand) + '</div>';
-    if (e.nom) html += '<div style="font-family:var(--serif);font-size:16px;color:#C8A84A;margin-bottom:4px;">' + escapeHtml(e.nom) + (e.dates ? ' <span style="font-size:12px;color:rgba(200,168,75,0.5);">(' + escapeHtml(e.dates) + ')</span>' : '') + '</div>';
-    if (e.oeuvre) html += '<div style="font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(240,234,214,0.7);margin-bottom:4px;">' + escapeHtml(e.oeuvre) + '</div>';
-    if (e.apport) html += '<div style="font-family:var(--serif);font-size:14px;color:rgba(240,234,214,0.75);line-height:1.6;">' + escapeHtml(e.apport) + '</div>';
+    if (e.ar) html += '<div style="font-family:\'Scheherazade New\',serif;font-size:23px;color:#C8A84A;direction:rtl;text-align:right;line-height:1.6;margin-bottom:8px;">' + escapeHtml(e.ar) + '</div>';
+    if (e.translit) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.55);margin-bottom:6px;">' + escapeHtml(e.translit) + '</div>';
+    if (e.fr) html += '<div style="font-family:var(--serif);font-size:18px;color:rgba(240,234,214,0.85);line-height:1.6;margin-bottom:6px;">' + escapeHtml(e.fr) + '</div>';
+    if (e.definition) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.75);line-height:1.6;margin-bottom:6px;">' + escapeHtml(e.definition) + '</div>';
+    if (e.source) html += '<div style="font-size:13px;color:rgba(200,168,75,0.4);">\u2014 ' + escapeHtml(e.source) + '</div>';
+    if (e.quand) html += '<div style="font-size:14px;color:rgba(240,234,214,0.5);font-style:italic;line-height:1.5;margin-top:6px;border-top:1px solid rgba(200,168,75,0.08);padding-top:6px;">' + escapeHtml(e.quand) + '</div>';
+    if (e.nom) html += '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:4px;">' + escapeHtml(e.nom) + (e.dates ? ' <span style="font-size:12px;color:rgba(200,168,75,0.5);">(' + escapeHtml(e.dates) + ')</span>' : '') + '</div>';
+    if (e.oeuvre) html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(240,234,214,0.7);margin-bottom:4px;">' + escapeHtml(e.oeuvre) + '</div>';
+    if (e.apport) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.75);line-height:1.6;">' + escapeHtml(e.apport) + '</div>';
     html += '</div>';
   });
   html += '</div>';
