@@ -800,7 +800,7 @@
           "ordre": 2,
           "type": "radio_unique",
           "titre": "La gorgée, pour Qui",
-          "introduction": "Le hadith dit « pour la face d'Allah ». Choisis l'intention qui transforme la retenue.",
+          "introduction": "Pourquoi te retiens-tu, au fond ? Sois honnête.",
           "consigne": "Choisis ta reformulation.",
           "options": [
             { "id": "paix", "label_fr": "« Pour avoir la paix »" },
