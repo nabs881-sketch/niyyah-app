@@ -187,8 +187,8 @@
         "moment_recommande": "Après ta prière de Fajr (ou maintenant si tu lis ce soir, et à Fajr demain)",
         "duree_estimee_sec": 300,
         "justification": {
-          "texte": "Le Prophète ﷺ a dit : « Celui qui s'astreint à l'istighfâr, Allah lui ouvre une issue à toute angoisse et un chemin à toute oppression, et Il lui accorde une subsistance d'où il ne l'attend pas. »",
-          "source": "Abû Dâwûd 1518, Ibn Mâja 3819, Ahmad — hasan"
+          "texte": "Il est rapporté que le Prophète ﷺ a dit : « Celui qui s’astreint à l’istighfâr, Allah lui ouvre une issue à toute angoisse et un chemin à toute oppression, et Il lui accorde une subsistance d’où il ne l’attend pas. » (chaîne faible, sens corroboré par d’autres textes)",
+          "source": "Abû Dâwûd 1518, Ibn Mâja 3819, Ahmad — da’îf al-isnâd (sens corroboré)"
         },
         "comment_pratiquer": "Pas en mode robot. À voix basse ou silencieuse. Chaque fois, prends conscience qu'Allah entend. Si tu perds le compte, ce n'est pas grave — recommence là où tu en es.",
         "stockage": "cure_anxiete_j1_dhikr_done"
@@ -982,7 +982,7 @@
         "duree_estimee_sec": 420,
         "justification": {
           "texte": "Le Nom Al-Latîf est cité 7 fois dans le Coran. La tradition soufie a établi que sa répétition est efficace contre l'oppression du cœur. Le nombre 129 correspond à la valeur numérique (abjad) du Nom — pratique courante chez certains soufis pour quantifier la dévotion. Si ce nombre te paraît étrange, fais simplement 100 fois, ou autant que tu peux.",
-          "source": "Tradition soufie attribuée à 'Abd al-Qâdir al-Jîlânî et reprise par les Shâdhilî"
+          "source": "Invocation par le Nom Al-Latîf (cf. Coran 7:180 : « invoquez-Le par Ses beaux noms »). Le décompte précis est une pratique soufie, non prophétique."
         },
         "comment_pratiquer": "Pose-toi. Respire 3 fois. Puis dis Yâ Latîf, doucement, en sentant la finesse du mot dans ta bouche. La langue arabe a des consonnes qui caressent — celle-ci en fait partie. Laisse le mot te toucher avant que tu ne le penses.",
         "stockage": "cure_anxiete_j5_dhikr_done"
@@ -1451,8 +1451,8 @@
         "moment_recommande": "Le matin (après Fajr) et le soir (après Maghrib ou avant 'Ishâ). 7 fois chaque fois. À pratiquer désormais comme habitude permanente.",
         "duree_estimee_sec": 90,
         "justification": {
-          "texte": "Le Prophète ﷺ a dit : « Quiconque dit le matin et le soir : Hasbiya-llâhu lâ ilâha illâ huwa, 'alayhi tawakkaltu, wa huwa rabbu-l-'arshi-l-'adhîm — 7 fois, Allah lui suffira pour tout ce qui le préoccupe, qu'il soit sincère ou non. »",
-          "source": "Abû Dâwûd 5081 (mursal renforcé), Ibn as-Sunnî 71"
+          "texte": "Il est rapporté que celui qui dit, matin et soir : « Hasbiya-llâhu lâ ilâha illâ huwa, ’alayhi tawakkaltu, wa huwa rabbu-l-’arshi-l-’adhîm » 7 fois, Allah lui suffira pour ce qui le préoccupe. (grade contesté ; la mention « sincère ou non » est jugée munkar et écartée)",
+          "source": "Abû Dâwûd 5081, Ibn as-Sunnî 71 — grade contesté (faible selon al-Albânî)"
         },
         "comment_pratiquer": "C'est le dhikr final de la cure, mais c'est aussi le dhikr que tu emportes pour le reste de ta vie. 7 fois matin, 7 fois soir. Si un jour tu sens l'angoisse revenir, c'est ta première ligne — pas la dernière. Le Prophète ﷺ promet : Allah te suffira.",
         "stockage": "cure_anxiete_j7_dhikr_final_done"
