@@ -820,7 +820,7 @@
           "consigne": "Repense à une fois où tu t'es retenu (ou aurais dû). Qu'est-ce que la retenue t'a épargné, ou t'aurait épargné ?",
           "amorce": "La retenue m'a épargné / m'aurait épargné",
           "champ": {
-            "placeholder": "...",
+            "placeholder": "Ex. : une dispute qui aurait duré des jours, des mots que je n'aurais pas pu reprendre.",
             "max_caracteres": 500,
             "stockage": "cure_colere_j5_epargne"
           },
