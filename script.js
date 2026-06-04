@@ -5145,6 +5145,23 @@ function _cureAnxieteGenericDay(el, dayNum) {
   _cureAnxieteWizardRender(el);
 }
 
+function _dhkTap(k, t) {
+  var n = (parseInt(safeGetItem(k) || '0', 10) || 0) + 1;
+  if (n > t) n = t;
+  safeSetItem(k, n);
+  var el = document.getElementById('dhkNum'); if (el) el.textContent = n;
+  if (navigator.vibrate) { try { navigator.vibrate(8); } catch (e) {} }
+  if (n >= t) {
+    var c = document.getElementById('dhkCircle'); if (c) c.style.borderColor = '#C8A84A';
+    var d = document.getElementById('dhkDone'); if (d) d.style.display = 'block';
+  }
+}
+function _dhkReset(k) {
+  safeSetItem(k, 0);
+  var el = document.getElementById('dhkNum'); if (el) el.textContent = '0';
+  var c = document.getElementById('dhkCircle'); if (c) c.style.borderColor = 'rgba(200,168,75,0.33)';
+  var d = document.getElementById('dhkDone'); if (d) d.style.display = 'none';
+}
 function _renderOutilAnxiete(o, c) {
   var renderer = _outilAnxieteRenderers[o.type];
   if (renderer) return renderer(o, c);
@@ -6407,6 +6424,23 @@ function _cureAnxieteWizardRender(el) {
   } else if (step.type === '_bloc_dhikr') {
     var bd = step.data;
     var dh = bd.dhikr || {};
+    var _dhkTgt = (bd.quantite && bd.quantite > 1) ? bd.quantite : 0;
+    var _dhkKey = 'dhikr_cnt_' + String((dh.translit || dh.ar || 'x')).replace(/[^A-Za-z0-9]/g, '').slice(0, 20) + '_' + _dhkTgt;
+    var _dhkCur = parseInt(safeGetItem(_dhkKey) || '0', 10) || 0;
+    if (_dhkCur > _dhkTgt) _dhkCur = _dhkTgt;
+    var _dhkHtml;
+    if (_dhkTgt > 0) {
+      _dhkHtml = '<div style="margin:6px auto 0;">'
+        + '<div id="dhkCircle" onclick="_dhkTap(\'' + _dhkKey + '\',' + _dhkTgt + ')" style="cursor:pointer;user-select:none;-webkit-user-select:none;width:140px;height:140px;margin:0 auto;border-radius:50%;border:2px solid ' + (_dhkCur >= _dhkTgt ? '#C8A84A' : 'rgba(200,168,75,0.33)') + ';background:radial-gradient(circle,rgba(200,168,75,0.10),transparent 70%);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:border-color .2s;">'
+        + '<div style="font-family:var(--serif);font-weight:600;color:#C8A84A;line-height:1;"><span id="dhkNum" style="font-size:40px;">' + _dhkCur + '</span><span style="font-size:20px;opacity:0.55;"> / ' + _dhkTgt + '</span></div>'
+        + '<div style="font-size:13px;color:rgba(231,211,151,0.5);letter-spacing:1px;margin-top:4px;">toucher</div>'
+        + '</div>'
+        + '<div id="dhkDone" style="display:' + (_dhkCur >= _dhkTgt ? 'block' : 'none') + ';font-family:var(--serif);font-size:18px;color:#C8A84A;text-align:center;margin-top:10px;">\u0645\u0627 \u0634\u0627\u0621 \u0627\u0644\u0644\u0647 \u2014 atteint</div>'
+        + '<div onclick="_dhkReset(\'' + _dhkKey + '\')" style="cursor:pointer;font-size:13px;color:rgba(231,211,151,0.45);text-align:center;margin-top:6px;">r\u00e9initialiser</div>'
+        + '</div>';
+    } else {
+      _dhkHtml = '<div style="font-family:var(--serif);font-size:19px;color:#C8A84A;font-weight:600;">Dis-le une fois, en pleine pr\u00e9sence.</div>';
+    }
     html = backBtn + bgWrap
       + '<div data-cure-content style="padding:calc(var(--safe-top,0px)+60px) 20px 120px;position:relative;z-index:1;max-width:400px;margin:0 auto;box-sizing:border-box;">'
       + progress
@@ -6417,7 +6451,7 @@ function _cureAnxieteWizardRender(el) {
       + (dh.translit ? '<div style="font-family:var(--serif);font-size:16px;font-style:italic;color:rgba(231,211,151,0.84);margin-bottom:4px;">' + escapeHtml(dh.translit) + '</div>' : '')
       + (dh.fr ? '<div style="font-family:var(--serif);font-size:22px;color:rgba(240,234,214,0.9);margin-bottom:8px;">' + escapeHtml(dh.fr) + '</div>' : '')
       + (dh.sens ? '<div style="font-family:var(--serif);font-size:18px;color:rgba(231,211,151,0.76);margin-bottom:8px;">' + escapeHtml(dh.sens) + '</div>' : '')
-      + '<div style="font-family:var(--serif);font-size:19px;color:#C8A84A;font-weight:600;">' + (bd.quantite && bd.quantite > 1 ? bd.quantite + ' fois' : 'Dis-le une fois, en pleine pr\u00e9sence.') + '</div>'
+      + _dhkHtml
       + '</div>'
       + (bd.moment_recommande ? '<div style="font-family:var(--serif);font-size:18px;color:rgba(240,234,214,0.82);text-align:center;margin-bottom:8px;">' + escapeHtml(bd.moment_recommande) + '</div>' : '')
       + (bd.comment_pratiquer ? '<div style="font-family:var(--serif);font-size:18px;color:rgba(240,234,214,0.80);line-height:1.6;text-align:center;margin-bottom:12px;">' + escapeHtml(bd.comment_pratiquer) + '</div>' : '')
