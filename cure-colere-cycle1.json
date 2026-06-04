@@ -989,7 +989,7 @@
           "consigne": "Pense à quelqu'un avec qui il y a de la tension. Quel petit geste concret « meilleur » pourrais-tu poser vers cette personne ? (un salâm, un service, un mot, ne pas relever)",
           "amorce": "Un geste meilleur que je peux faire",
           "champ": {
-            "placeholder": "...",
+            "placeholder": "Ex. : demain, je lui dis salâm le premier — sans attendre qu'il fasse le pas.",
             "max_caracteres": 500,
             "stockage": "cure_colere_j6_geste"
           },
