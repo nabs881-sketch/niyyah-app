@@ -6448,7 +6448,7 @@ function _cureAnxieteWizardRender(el) {
         + '</div>';
     }
     if (bc.duree_min) html += '<div style="font-size:18px;color:rgba(231,211,151,0.72);text-align:center;margin-bottom:8px;">' + bc.duree_min + ' min</div>';
-    if (bc.respi) html += '<button onclick="openBreathOverlay(&#39;' + bc.respi + '&#39;)" style="display:block;width:100%;max-width:340px;margin:4px auto 8px;padding:12px;border-radius:12px;border:1px solid rgba(200,168,75,0.40);background:rgba(200,168,75,0.14);color:#E7D397;font-family:var(--serif);font-size:17px;cursor:pointer;">Respirer \u2014 guid\u00e9</button>';
+    if (bc.respi) html += '<button onclick="openBreathOverlay(&#39;' + bc.respi + '&#39;)" style="display:block;width:100%;max-width:340px;margin:4px auto 8px;padding:12px;border-radius:12px;border:1px solid rgba(200,168,75,0.40);background:rgba(200,168,75,0.14);color:#E7D397;font-family:var(--serif);font-size:17px;cursor:pointer;">Respiration guid\u00e9e</button>';
     html += nextBtn + '</div>';
   } else if (step.type === '_ancre_anxiete') {
     var ancre = (typeof step.data === 'string') ? { fr: step.data } : (step.data || {});
