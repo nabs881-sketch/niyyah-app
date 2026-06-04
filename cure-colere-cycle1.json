@@ -1163,7 +1163,7 @@
           "consigne": "« Le hilm s'acquiert en s'exerçant à la mansuétude. » Choisis UNE situation récurrente où tu t'exerceras, à dessein, à répondre avec douceur — jusqu'à ce que ça devienne toi.",
           "amorce": "Je m'exercerai au hilm quand",
           "champ": {
-            "placeholder": "...",
+            "placeholder": "Ex. : quand on me coupe la parole — je m'exerce à répondre calmement, sans m'emporter.",
             "max_caracteres": 400,
             "stockage": "cure_colere_j7_exercice"
           },
