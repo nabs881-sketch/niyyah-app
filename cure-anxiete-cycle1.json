@@ -176,7 +176,7 @@
       "bloc_4_dhikr_quantifie": {
         "type": "prescription_dhikr",
         "titre_bloc": "Le dhikr du jour",
-        "introduction": "Le dhikr n'est pas une formalité. C'est un acte qui creuse le sillon dans le cœur. Aujourd'hui, tu vas pratiquer un dhikr précis, en quantité, à un moment précis.",
+        "introduction": "Le dhikr n'est pas une formalité. C'est un acte qui creuse le sillon dans le cœur. Aujourd'hui, tu vas pratiquer un dhikr précis, en quantité, à un moment donné.",
         "dhikr": {
           "ar": "أَسْتَغْفِرُ اللَّهَ",
           "translit": "Astaghfirullâh",
