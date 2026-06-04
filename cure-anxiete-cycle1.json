@@ -1482,9 +1482,9 @@
       },
       "phrase_ancre": "J'ai traversé. Je marche en paix.",
       "cloture": {
-        "texte": null,
+        "texte": "Tu as le dhikr qui suffit à tout : Hasbiya-llâh.\nTu sais que poser un pas dehors apaise plus que ressasser.\nTu sais revenir au présent quand le « et si » veut t’emporter.\n\nLa porte de l’Anxiété reste ouverte derrière toi — et tu sais, désormais, marcher en paix.",
         "bouton": null,
-        "note": "Pas de bouton de clôture verbale. L'écran final (as-Salâm) ferme la cure sans cérémonie. Le dhikr Hasbiya-llâh et la marche restent comme prescriptions pour la vie."
+        "note": "Clôture verbale de fin de porte (récap), affichée après l’écran du Nom d’Allah. Le Nom reste le temps contemplatif ; le récap est le temps qui ancre."
       },
       "murmure_sortie_sanctuaire_par_orientation": {
         "reprendre": "Une autre traversée commence demain. Avec douceur.",

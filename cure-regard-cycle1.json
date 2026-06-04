@@ -1440,9 +1440,9 @@
       },
       "phrase_ancre": "Je marche droit. Allah marche avec moi.",
       "cloture": {
-        "texte": null,
+        "texte": "Tu as ta du’â d’après la prière : aide-moi à mieux Te servir.\nTu sais détourner les yeux — et revenir quand le regard glisse, sans t’enfoncer dans la honte.\nTu sais qu’Allah, as-Sittîr, voile tes fautes : tu te relèves sans désespérer.\n\nLa porte du Regard reste ouverte derrière toi — et tu sais, désormais, marcher droit.",
         "bouton": null,
-        "note": "Pas de bouton de clôture verbale. L'écran final (as-Sittîr) ferme la cure sans cérémonie."
+        "note": "Clôture verbale de fin de porte (récap), affichée après l’écran du Nom d’Allah. Le Nom reste le temps contemplatif ; le récap est le temps qui ancre."
       },
       "murmure_sortie_sanctuaire_par_orientation": {
         "reprendre": "Une autre traversée commence demain. Avec patience.",
