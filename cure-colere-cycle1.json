@@ -328,7 +328,8 @@
         "duree_estimee_sec": 40,
         "justification": {
           "texte": "Du'â d'ouverture de la prière du Prophète ﷺ, demandant le meilleur caractère.",
-          "source": "Muslim 771"
+          "source": "Muslim 771",
+          "hadith": "Du'â du Prophète ﷺ (Sahih Muslim 771)"
         },
         "comment_pratiquer": "Vise explicitement le retrait du trait qui nourrit ta colère.",
         "stockage": "cure_colere_j2_dhikr_done"
