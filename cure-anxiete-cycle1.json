@@ -91,12 +91,12 @@
           "consigne": "Complète, sans réfléchir trop longtemps.",
           "amorce_avant": "Si je n'avais plus peur de",
           "champ_1": {
-            "placeholder": "...",
+            "placeholder": "Ex. : me tromper, être jugé, perdre le contrôle…",
             "stockage": "cure_anxiete_j1_peur"
           },
           "amorce_milieu": "je pourrais enfin",
           "champ_2": {
-            "placeholder": "...",
+            "placeholder": "Ex. : oser, me reposer, avancer sans tout vérifier…",
             "stockage": "cure_anxiete_j1_desir_empeche"
           },
           "note_psy": "ACT (Steven Hayes) : exposer le noyau anxieux et le désir empêché. L'anxiété cesse d'être une brume — elle devient une phrase.",
