@@ -6558,7 +6558,6 @@ function _cureAnxieteSave(num) {
   var j = data && data.jours && data.jours['j' + num];
   var murmure = j && j.murmure_sortie_sanctuaire;
   var _mtxt = (typeof murmure === 'string') ? murmure : (murmure && murmure.fr);
-  if (_mtxt) { safeSetItem('niyyah_murmure_retour', _mtxt); }
   if (num === 7) {
     var _openFn = { colere: openCureColere, anxiete: openCureAnxiete, regard: openCureRegard, arrogance: openCureArrogance, paresse: openCureParesse, medisance: openCureMedisance };
     (_openFn[porte] || openCureAnxiete)();
@@ -6570,10 +6569,51 @@ function _cureAnxieteSave(num) {
   var nextTitle = (nextJ && nextJ.titre_jour) || '';
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
-  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;background:radial-gradient(120% 80% at 50% 42%,#1c130a,#0b0704 60%,#070402);">'
-    + '<div style="font-family:var(--serif);font-size:20px;color:#C8A84A;margin-bottom:12px;">Jour ' + num + ' enregistr\u00e9.</div>'
-    + (nextTitle ? '<div class="itfaa-body" style="font-size:16px;line-height:1.7;max-width:400px;margin:0 auto 32px;">D\u00e8s demain, Jour ' + (num + 1) + '\u00a0: ' + escapeHtml(nextTitle) + '.</div>' : '')
-    + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs();_showMurmureRetour()" style="padding:14px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:none;color:#C8A84A;font-family:var(--serif);font-size:14px;cursor:pointer;">Retour</button>'
+  var _lxTotal = 7, _lxNodes = '';
+  for (var _i = 1; _i <= _lxTotal; _i++) {
+    _lxNodes += '<span class="lx-node' + (_i <= num ? ' lx-done' : '') + (_i === num ? ' lx-cur' : '') + '"></span>';
+  }
+  var _lxMurmure = _mtxt ? '<div class="lx-murmure lx-rise" style="--d:.55s">\u201C' + escapeHtml(_mtxt) + '\u201D</div>' : '';
+  var _lxNext = nextTitle ? '<div class="lx-next lx-rise" style="--d:.85s">D\u00e8s demain &nbsp;\u00b7&nbsp; Jour ' + (num + 1) + ' \u2014 ' + escapeHtml(nextTitle) + '</div>' : '';
+  el.innerHTML =
+    '<style>'
+    + '@keyframes lxRise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}'
+    + '@keyframes lxGlow{0%,100%{opacity:.45;transform:translate(-50%,-50%) scale(1)}50%{opacity:.8;transform:translate(-50%,-50%) scale(1.12)}}'
+    + '@keyframes lxOrb{0%,100%{box-shadow:0 0 38px 6px rgba(200,168,75,.35),inset 0 0 18px rgba(244,230,190,.55)}50%{box-shadow:0 0 60px 14px rgba(200,168,75,.5),inset 0 0 26px rgba(244,230,190,.75)}}'
+    + '@keyframes lxSpin{to{transform:rotate(360deg)}}'
+    + '.lx-wrap{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:calc(var(--safe-top,0px)+72px) 24px 120px;overflow:hidden;background:radial-gradient(130% 90% at 50% 38%,#1d1409,#0b0704 58%,#050302);}'
+    + '.lx-glow{position:absolute;top:38%;left:50%;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(200,168,75,.18),rgba(200,168,75,.05) 45%,transparent 70%);animation:lxGlow 7s ease-in-out infinite;pointer-events:none;}'
+    + '.lx-orn{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:28px;}'
+    + '.lx-orn .l{width:54px;height:1px;background:linear-gradient(90deg,transparent,rgba(200,168,75,.55));}'
+    + '.lx-orn .r{width:54px;height:1px;background:linear-gradient(90deg,rgba(200,168,75,.55),transparent);}'
+    + '.lx-orn .d{color:#C8A84A;font-size:11px;opacity:.85;}'
+    + '.lx-orb-wrap{position:relative;width:104px;height:104px;margin:0 auto 34px;}'
+    + '.lx-orb{position:absolute;inset:14px;border-radius:50%;background:radial-gradient(circle at 38% 34%,#FBF3D8,#E7D397 38%,#C8A84A 72%,#9c7e2f);animation:lxOrb 5.5s ease-in-out infinite;}'
+    + '.lx-ring{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(200,168,75,.30);border-top-color:rgba(244,230,190,.85);animation:lxSpin 9s linear infinite;}'
+    + '.lx-eyebrow{font-family:var(--serif);font-size:12px;letter-spacing:5px;text-transform:uppercase;color:rgba(231,211,151,.62);margin-bottom:14px;}'
+    + '.lx-title{font-family:var(--serif);font-size:40px;line-height:1.1;font-weight:600;background:linear-gradient(180deg,#F4E6BE,#C8A84A);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:18px;}'
+    + '.lx-murmure{font-family:var(--serif);font-style:italic;font-size:19px;line-height:1.7;color:rgba(231,211,151,.82);max-width:360px;margin:0 auto 30px;}'
+    + '.lx-path{position:relative;display:flex;align-items:center;justify-content:center;gap:14px;margin:0 auto 30px;}'
+    + '.lx-path:before{content:"";position:absolute;left:6%;right:6%;top:50%;height:1px;background:linear-gradient(90deg,transparent,rgba(200,168,75,.25),transparent);}'
+    + '.lx-node{position:relative;width:7px;height:7px;border-radius:50%;border:1px solid rgba(200,168,75,.30);background:transparent;}'
+    + '.lx-node.lx-done{background:#C8A84A;border-color:#C8A84A;}'
+    + '.lx-node.lx-cur{width:12px;height:12px;background:radial-gradient(circle,#F4E6BE,#C8A84A);border-color:#F4E6BE;box-shadow:0 0 14px 3px rgba(200,168,75,.6);}'
+    + '.lx-next{font-family:var(--serif);font-size:15px;letter-spacing:.5px;color:rgba(231,211,151,.6);max-width:380px;margin:0 auto 38px;}'
+    + '.lx-btn{font-family:var(--serif);font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#F4E6BE;padding:15px 40px;border-radius:14px;border:1px solid transparent;background:linear-gradient(#100a04,#100a04) padding-box,linear-gradient(135deg,rgba(244,230,190,.7),rgba(200,168,75,.35),rgba(244,230,190,.6)) border-box;box-shadow:0 0 24px rgba(200,168,75,.18),inset 0 1px 0 rgba(244,230,190,.12);cursor:pointer;transition:transform .25s;}'
+    + '.lx-btn:active{transform:scale(.97);}'
+    + '.lx-rise{opacity:0;animation:lxRise .9s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--d,0s);}'
+    + '@media (prefers-reduced-motion:reduce){.lx-rise,.lx-orb,.lx-ring,.lx-glow{animation:none!important}.lx-rise{opacity:1!important}}'
+    + '</style>'
+    + '<div class="lx-wrap">'
+    + '<div class="lx-glow"></div>'
+    + '<div class="lx-orn lx-rise" style="--d:.05s"><span class="l"></span><span class="d">\u2756</span><span class="r"></span></div>'
+    + '<div class="lx-orb-wrap lx-rise" style="--d:.15s"><div class="lx-ring"></div><div class="lx-orb"></div></div>'
+    + '<div class="lx-eyebrow lx-rise" style="--d:.3s">\u00c9tape accomplie</div>'
+    + '<div class="lx-title lx-rise" style="--d:.4s">Jour ' + num + ' enregistr\u00e9</div>'
+    + _lxMurmure
+    + '<div class="lx-path lx-rise" style="--d:.7s">' + _lxNodes + '</div>'
+    + _lxNext
+    + '<button class="lx-btn lx-rise" style="--d:1s" onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs();">Retour</button>'
     + '</div>';
 }
 window._cureAnxieteSave = _cureAnxieteSave;
