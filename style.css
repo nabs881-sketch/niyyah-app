@@ -9295,3 +9295,23 @@ body.onboarding-active #nav-bar-v2 {
               0 0 42px rgba(210,176,86,.5),
               0 14px 32px rgba(0,0,0,.6);
 }
+/* ── Orbe niyyah : anneau doré premium ── */
+.orb-wrap-v2 .orb-ring-v2:last-child {
+  display: block;
+  width: 244px;
+  height: 244px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(212,175,55,.28);
+  border-top-color: rgba(255,240,200,.85);
+  animation: orbRingSpinV2 12s linear infinite;
+  z-index: 1;
+}
+@keyframes orbRingSpinV2 {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .orb-wrap-v2 .orb-ring-v2:last-child { animation: none; }
+}
