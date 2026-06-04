@@ -874,7 +874,8 @@
       },
       "phrase_ancre": "Le fort n'est pas celui qui frappe — c'est celui qui se retient.",
       "cloture": {
-        "texte": "Tu sais tenir la vague.\nTu ravales pour Allah.\nTu as la preuve que ta force est là.\n\nDemain — répondre par le meilleur.",
+        "texte": "Tu sais tenir la vague.\nTu ravales pour Allah.\nTu as la preuve que ta force est là.",
+        "teaser": "Demain — répondre par le meilleur.",
         "bouton": "Je tiens. À demain.",
         "stockage": "cure_colere = { current_day: 5, completed_j5: true }"
       },
