@@ -961,7 +961,7 @@
           "fr": "Repousse [le mal] par ce qui est meilleur ; et voilà que celui avec qui tu avais une inimitié devient comme un ami chaleureux."
         },
         "contexte_revelation": "Sourate révélée à La Mecque. Face à l’hostilité, Allah enseigne au Prophète ﷺ à repousser le mal par ce qui est meilleur.",
-        "sens_pour_aujourdhui": "Le Coran dépasse la simple retenue : il propose une transformation. Pas seulement « ne riposte pas » — mais « réponds par mieux ». Et le résultat est de l'alchimie : l'ennemi devient un proche. Le verset suivant prévient : « nul n'y parvient sauf les endurants » — c'est la station la plus haute.",
+        "sens_pour_aujourdhui": "Le Coran dépasse la simple retenue : il propose une transformation. Pas seulement « ne riposte pas » — mais « réponds par mieux ». Et le fruit, dit le verset, tient presque de l'alchimie : l'ennemi devient comme un proche (ka-anna). Le verset suivant prévient aussitôt : « nul n'y parvient sauf les endurants » — c'est la station la plus haute.",
         "sources_tafsir": [
           "Tafsîr Ibn Kathîr, sur Fussilat 41:34-35",
           "Tafsîr al-Sa'dî"
@@ -976,10 +976,10 @@
           "dates_auteur": "1058-1111",
           "oeuvre": "Ihyâ' 'Ulûm ad-Dîn (rendu libre)",
           "siecle": "XIe-XIIe siècle",
-          "note": "La priorité de la rahma sur le ghadab : le but est de dépasser la retenue vers l'ihsân actif."
+          "note_editoriale": "La priorité de la rahma sur le ghadab : le but est de dépasser la retenue vers l'ihsân actif."
         }
       },
-      "introduction_avant_outils": "Jusqu'ici : ne pas riposter (la retenue). Aujourd'hui, un cran au-dessus — et c'est de l'alchimie : répondre au mal par un bien. Le Coran en montre le fruit : souvent, l'ennemi devient un proche.",
+      "introduction_avant_outils": "Jusqu'ici : ne pas riposter, c'était la retenue. Aujourd'hui, un cran au-dessus : non plus seulement encaisser, mais rendre un bien. C'est la station la plus exigeante — et la plus libératrice.",
       "bloc_3_outils_psy": [
         {
           "id": "geste_meilleur",
@@ -1016,8 +1016,8 @@
           "ordre": 3,
           "type": "radio_unique",
           "titre": "Le pardon, pour moi",
-          "introduction": "Le pardon n'efface pas le tort — il te libère du poison de la rancune (hiqd). Pour cette offense, que choisis-tu ?",
-          "consigne": "Choisis, pour ton propre cœur.",
+          "introduction": "",
+          "consigne": "Le pardon n'efface pas le tort — il te libère du poison de la rancune (hiqd). Pour cette offense, choisis, pour ton propre cœur.",
           "options": [
             {
               "id": "relache",
@@ -1091,7 +1091,7 @@
         ],
         "hadiths_cites": [
           "Muslim 54 (salâm)",
-          "Tirmidhî 1956 (le sourire — grade à confirmer)"
+          "Tirmidhî 1956 (le sourire — sahîh selon al-Albânî)"
         ],
         "savants_cites": [
           "al-Ghazâlî"
