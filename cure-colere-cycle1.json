@@ -1054,9 +1054,13 @@
         "titre_bloc": "Le geste qui désarme",
         "introduction": "Le corps qui fait le bien adoucit le cœur — le tien et celui de l'autre.",
         "instructions": [
-          "Aujourd'hui ou demain, envers la personne avec qui c'est tendu, pose un petit bien concret :",
-          "un salâm donné le premier, un sourire vrai, un service, laisser passer.",
-          "Commence par : As-salâmu 'alaykum."
+          "Aujourd'hui ou demain, envers la personne avec qui c'est tendu, pose **un seul** petit bien concret — celui qui te coûte le moins :",
+          "**Un salâm donné le premier**, un sourire vrai, ou un service rendu sans qu'on te le demande.",
+          "**Une du'â pour elle, en secret** — sans qu'elle le sache. C'était la voie du Prophète ﷺ envers ceux qui le blessaient.",
+          "**Lui offrir un petit quelque chose** — un fruit, un café, un mot. « Offrez-vous des cadeaux, vous vous aimerez. »",
+          "**Demander de ses nouvelles**, sincèrement — ou reconnaître ta part : « sur ce point, j'ai eu tort ».",
+          "**Parler d'elle en bien** quand on la critique devant toi — ou lui céder une chose : la place, le choix, le dernier mot.",
+          "Le plus simple, pour commencer : **As-salâmu 'alaykum**."
         ],
         "phrase_a_repeter": {
           "ar": "السَّلَامُ عَلَيْكُمْ",
@@ -1066,7 +1070,7 @@
         "duree_min": 3,
         "justification": {
           "texte": "Acte prosocial (salâm, sourire) : il désamorce l'hostilité des deux côtés et amorce la réparation.",
-          "source": "« Répandez le salâm entre vous, vous vous aimerez » (Muslim 54) ; le sourire est une aumône (Tirmidhî 1956)"
+          "source": "« Répandez le salâm entre vous, vous vous aimerez » (Muslim 54) ; le sourire est une aumône (Tirmidhî 1956) ; « offrez-vous des cadeaux, vous vous aimerez » (al-Adab al-Mufrad 594, hasan)"
         },
         "note": "Un salâm sincère peut défaire ce que des mois de froid ont noué.",
         "stockage": "cure_colere_j6_corps_done"
