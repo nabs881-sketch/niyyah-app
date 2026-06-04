@@ -803,10 +803,10 @@
           "introduction": "",
           "consigne": "Pourquoi te retiens-tu, au fond ? Choisis celle qui est vraiment la tienne.",
           "options": [
-            { "id": "paix", "label_fr": "« Pour avoir la paix »" },
-            { "id": "image", "label_fr": "« Pour ne pas perdre la face »" },
-            { "id": "maitrise", "label_fr": "« Pour rester maître de moi »" },
-            { "id": "pour_allah", "label_fr": "« Pour Allah, pour Sa face »" }
+            { "id": "paix", "label_fr": "Pour avoir la paix" },
+            { "id": "image", "label_fr": "Pour ne pas perdre la face" },
+            { "id": "maitrise", "label_fr": "Pour rester maître de moi" },
+            { "id": "pour_allah", "label_fr": "Pour Allah, pour Sa face" }
           ],
           "stockage": "cure_colere_j5_intention",
           "note_psy": "Recadrage par les valeurs (ACT) : la retenue choisie pour un sens, non subie comme une défaite.",
