@@ -842,7 +842,8 @@
         "duree_estimee_sec": 30,
         "justification": {
           "texte": "Invocation coranique des croyants demandant l'endurance face à l'épreuve.",
-          "source": "al-Baqara 2:250"
+          "source": "al-Baqara 2:250",
+          "hadith": "Coran, al-Baqara 2:250"
         },
         "comment_pratiquer": "Dis-la à l'instant où l'envie de riposte monte — la patience est un don, pas une simple volonté.",
         "stockage": "cure_colere_j5_dhikr_done"
