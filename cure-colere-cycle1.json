@@ -959,7 +959,7 @@
           "translit": "Idfa' billatî hiya ahsanu fa-idha-lladhî baynaka wa baynahu 'adâwatun ka-annahu waliyyun hamîm",
           "fr": "Repousse [le mal] par ce qui est meilleur ; et voilà que celui avec qui tu avais une inimitié devient comme un ami chaleureux."
         },
-        "contexte_revelation": "Sourate Fussilat, sur la réponse au mal par le bien.",
+        "contexte_revelation": "Sourate révélée à La Mecque. Face à l’hostilité, Allah enseigne au Prophète ﷺ à repousser le mal par ce qui est meilleur.",
         "sens_pour_aujourdhui": "Le Coran dépasse la simple retenue : il propose une transformation. Pas seulement « ne riposte pas » — mais « réponds par mieux ». Et le résultat est de l'alchimie : l'ennemi devient un proche. Le verset suivant prévient : « nul n'y parvient sauf les endurants » — c'est la station la plus haute.",
         "sources_tafsir": [
           "Tafsîr Ibn Kathîr, sur Fussilat 41:34-35",
@@ -970,7 +970,7 @@
         "type": "parole_de_sage",
         "titre_bloc": "Parole d'al-Ghazâlî sur la miséricorde et la dureté",
         "parole": {
-          "texte": "Le croyant doit tenir ensemble la colère (ghadab) et la miséricorde (rahma) — sans jamais perdre de vue la priorité de la miséricorde sur la colère. Le sommet de la cure n'est pas seulement de ravaler, mais de rendre le bien à qui t'a fait du mal. C'est l'exemple même du Prophète ﷺ, dont Allah dit : « Si tu avais été rude, au cœur dur, ils se seraient enfuis de ton entourage » (Âl 'Imrân 3:159). La douceur rassemble ; la dureté disperse.",
+          "texte": "Le croyant doit tenir ensemble la colère (ghadab) et la miséricorde (rahma) — sans jamais perdre de vue la priorité de la miséricorde sur la colère. Le plus haut degré n'est pas seulement de ravaler la colère, mais de rendre le bien à qui t'a fait du mal. C'est l'exemple même du Prophète ﷺ, dont Allah dit : « Si tu avais été rude, au cœur dur, ils se seraient enfuis de ton entourage » (Âl 'Imrân 3:159). La douceur rassemble ; la dureté disperse.",
           "auteur": "D'après Abû Hâmid al-Ghazâlî",
           "dates_auteur": "1058-1111",
           "oeuvre": "Ihyâ' 'Ulûm ad-Dîn (rendu libre)",
@@ -978,7 +978,7 @@
           "note": "La priorité de la rahma sur le ghadab : le but est de dépasser la retenue vers l'ihsân actif."
         }
       },
-      "introduction_avant_outils": "Jusqu'ici : ne pas riposter (la retenue). Aujourd'hui, un cran au-dessus — et c'est de l'alchimie : répondre au mal par un bien. Le Coran promet le résultat : l'ennemi devient un proche.",
+      "introduction_avant_outils": "Jusqu'ici : ne pas riposter (la retenue). Aujourd'hui, un cran au-dessus — et c'est de l'alchimie : répondre au mal par un bien. Le Coran en montre le fruit : souvent, l'ennemi devient un proche.",
       "bloc_3_outils_psy": [
         {
           "id": "geste_meilleur",
@@ -1046,7 +1046,8 @@
         "duree_estimee_sec": 40,
         "justification": {
           "texte": "Invocation coranique demandant un cœur exempt de rancune (ghill).",
-          "source": "al-Hashr 59:10"
+          "source": "al-Hashr 59:10",
+          "hadith": "Coran, al-Hashr 59:10"
         },
         "comment_pratiquer": "Demande à Allah de retirer la rancune de ton cœur — c'est elle qui rallume la colère.",
         "stockage": "cure_colere_j6_dhikr_done"
