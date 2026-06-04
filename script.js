@@ -5165,7 +5165,7 @@ _outilAnxieteRenderers.double_slider = function(o, c) {
   var html = '';
   // Zone selector
   html += '<div style="margin-bottom:24px;">';
-  html += '<div style="font-family:var(--serif);font-size:15px;color:rgba(200,168,75,0.6);margin-bottom:10px;text-align:center;">O\u00f9 la sens-tu\u00a0?</div>';
+  html += '<div style="font-family:var(--serif);font-size:18px;color:rgba(200,168,75,0.8);margin-bottom:10px;text-align:center;">O\u00f9 la sens-tu\u00a0?</div>';
   html += '<div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;">';
   options.forEach(function(opt) {
     var sel = savedZ === opt;
@@ -5174,12 +5174,12 @@ _outilAnxieteRenderers.double_slider = function(o, c) {
   html += '</div></div>';
   // Intensity slider
   html += '<div style="margin-bottom:16px;">';
-  html += '<div style="font-family:var(--serif);font-size:15px;color:rgba(200,168,75,0.6);margin-bottom:10px;text-align:center;">Intensit\u00e9</div>';
+  html += '<div style="font-family:var(--serif);font-size:18px;color:rgba(200,168,75,0.8);margin-bottom:10px;text-align:center;">Intensit\u00e9</div>';
   html += '<div style="display:flex;align-items:center;gap:10px;max-width:340px;margin:0 auto;">';
-  html += '<div style="font-size:15px;color:rgba(200,168,75,0.4);font-style:italic;min-width:60px;text-align:right;">' + escapeHtml(si.label_min || '0') + '</div>';
+  html += '<div style="font-size:16px;color:rgba(200,168,75,0.65);font-style:italic;min-width:60px;text-align:right;">' + escapeHtml(si.label_min || '0') + '</div>';
   html += '<input type="range" min="' + (si.min || 0) + '" max="' + (si.max || 10) + '" value="' + (savedI || '5') + '" oninput="safeSetItem(\'' + skI + '\',this.value);this.nextElementSibling.textContent=this.value" style="flex:1;accent-color:#C8A84A;">';
   html += '<div style="font-size:18px;color:#C8A84A;font-family:var(--serif);font-weight:600;min-width:24px;text-align:center;">' + (savedI || '5') + '</div>';
-  html += '<div style="font-size:15px;color:rgba(200,168,75,0.4);font-style:italic;min-width:60px;">' + escapeHtml(si.label_max || '10') + '</div>';
+  html += '<div style="font-size:16px;color:rgba(200,168,75,0.65);font-style:italic;min-width:60px;">' + escapeHtml(si.label_max || '10') + '</div>';
   html += '</div></div>';
   // Notes (psy + spi)
   if (o.note_spi) {
