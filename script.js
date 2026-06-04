@@ -4990,16 +4990,7 @@ function openCureColere() {
   if (day === 'complete') {
     _babImmersion = true; _showAideBtn(); var nb2 = document.getElementById('nav-bar-v2'); if (nb2) nb2.classList.add('hidden-immersion');
     document.body.classList.add('in-bab-an-nafs');
-    var el2 = document.getElementById('babAnNafsContent');
-    if (!el2) return;
-    var c = '#B33A3A';
-    el2.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
-      + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:#C8A84A;direction:rtl;margin-bottom:12px;">\u0631\u0650\u064a\u064e\u0627\u0636\u064e\u0629 \u0646\u064e\u0641\u0652\u0633\u0650\u064a\u0651\u064e\u0629</div>'
-      + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;line-height:1.7;max-width:400px;margin:0 auto 32px;">Tu as travers\u00e9 la Cure. La porte reste ouverte derri\u00e8re toi.</div>'
-      + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="padding:14px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:none;color:#C8A84A;font-family:var(--serif);font-size:14px;cursor:pointer;">Retour</button>'
-      + '<button onclick="openCoffretColere()" style="display:block;margin:16px auto 0;background:none;border:none;font-size:12px;color:rgba(255,255,255,0.3);font-family:var(--serif);cursor:pointer;font-style:italic;">La biblioth\u00e8que</button>'
-      + '<button onclick="localStorage.removeItem(\'' + sk + '\');openCureColere()" style="display:block;margin:16px auto 0;background:none;border:none;font-size:12px;color:rgba(255,255,255,0.3);font-family:var(--serif);cursor:pointer;font-style:italic;">Recommencer un nouveau cycle</button>'
-      + '</div>';
+    _cureCompletePremium('colere');
     return;
   }
   openCureJour('colere', typeof day === 'number' ? day : 1);
@@ -5070,16 +5061,7 @@ function openCureAnxiete() {
   if (day === 'complete') {
     _babImmersion = true; _showAideBtn(); var nb2 = document.getElementById('nav-bar-v2'); if (nb2) nb2.classList.add('hidden-immersion');
     document.body.classList.add('in-bab-an-nafs');
-    var el2 = document.getElementById('babAnNafsContent');
-    if (!el2) return;
-    var c = _getCureColor();
-    el2.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
-      + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:#C8A84A;direction:rtl;margin-bottom:12px;">\u0627\u0644\u0633\u0651\u064E\u0644\u0627\u0645</div>'
-      + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;line-height:1.7;max-width:400px;margin:0 auto 32px;">Tu as travers\u00e9 la Cure. La porte reste ouverte derri\u00e8re toi.</div>'
-      + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="padding:14px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:none;color:#C8A84A;font-family:var(--serif);font-size:14px;cursor:pointer;">Retour</button>'
-      + '<button onclick="openCoffretAnxiete()" style="display:block;margin:16px auto 0;background:none;border:none;font-size:12px;color:rgba(255,255,255,0.3);font-family:var(--serif);cursor:pointer;font-style:italic;">La biblioth\u00e8que</button>'
-      + '<button onclick="localStorage.removeItem(\'cure_anxiete\');openCureAnxiete()" style="display:block;margin:16px auto 0;background:none;border:none;font-size:12px;color:rgba(255,255,255,0.3);font-family:var(--serif);cursor:pointer;font-style:italic;">Recommencer un nouveau cycle</button>'
-      + '</div>';
+    _cureCompletePremium('anxiete');
     return;
   }
   openCureJour('anxiete', typeof day === 'number' ? day : 1);
@@ -6511,6 +6493,59 @@ function _cureAnxieteWizardRender(el) {
   el.scrollTop = 0;
 }
 
+function _cureCompletePremium(porte) {
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var _cap = porte.charAt(0).toUpperCase() + porte.slice(1);
+  var _coffretFn = 'openCoffret' + _cap;
+  var _reopenFn = 'openCure' + _cap;
+  var _sk = 'cure_' + porte;
+  var _nodes = '';
+  for (var _i = 0; _i < 7; _i++) _nodes += '<span class="lxf-node"></span>';
+  el.innerHTML =
+    '<style>'
+    + '@keyframes lxfRise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}'
+    + '@keyframes lxfBloom{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:scale(1)}}'
+    + '@keyframes lxfGlow{0%,100%{opacity:.5;transform:translate(-50%,-50%) scale(1)}50%{opacity:.9;transform:translate(-50%,-50%) scale(1.15)}}'
+    + '@keyframes lxfOrb{0%,100%{box-shadow:0 0 50px 10px rgba(200,168,75,.45),inset 0 0 24px rgba(244,230,190,.7)}50%{box-shadow:0 0 80px 20px rgba(200,168,75,.6),inset 0 0 32px rgba(244,230,190,.9)}}'
+    + '@keyframes lxfSpin{to{transform:rotate(360deg)}}'
+    + '@keyframes lxfHalo{0%,100%{opacity:.3;transform:scale(1)}50%{opacity:.6;transform:scale(1.25)}}'
+    + '.lxf-wrap{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:calc(var(--safe-top,0px)+72px) 24px 120px;overflow:hidden;background:radial-gradient(130% 90% at 50% 36%,#221608,#0b0704 58%,#050302);}'
+    + '.lxf-glow{position:absolute;top:34%;left:50%;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,rgba(200,168,75,.22),rgba(200,168,75,.06) 45%,transparent 70%);animation:lxfGlow 7s ease-in-out infinite;pointer-events:none;}'
+    + '.lxf-orb-wrap{position:relative;width:132px;height:132px;margin:0 auto 30px;animation:lxfBloom 1.1s cubic-bezier(.2,.8,.2,1) both;}'
+    + '.lxf-halo{position:absolute;inset:-22px;border-radius:50%;background:radial-gradient(circle,rgba(244,230,190,.25),transparent 65%);animation:lxfHalo 5s ease-in-out infinite;}'
+    + '.lxf-orb{position:absolute;inset:16px;border-radius:50%;background:radial-gradient(circle at 38% 34%,#FFFDF4,#F4E6BE 32%,#C8A84A 70%,#9c7e2f);animation:lxfOrb 5.5s ease-in-out infinite;}'
+    + '.lxf-ring{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(200,168,75,.30);border-top-color:rgba(244,230,190,.9);animation:lxfSpin 10s linear infinite;}'
+    + '.lxf-calli{font-family:\'Scheherazade New\',serif;font-size:32px;color:#E7D397;direction:rtl;line-height:1.6;margin-bottom:16px;text-shadow:0 0 18px rgba(200,168,75,.35);}'
+    + '.lxf-title{font-family:var(--serif);font-size:30px;font-weight:600;background:linear-gradient(180deg,#F4E6BE,#C8A84A);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:12px;}'
+    + '.lxf-sub{font-family:var(--serif);font-style:italic;font-size:18px;color:rgba(231,211,151,.78);max-width:340px;margin:0 auto 26px;}'
+    + '.lxf-path{position:relative;display:flex;align-items:center;justify-content:center;gap:13px;margin:0 auto 34px;}'
+    + '.lxf-path:before{content:"";position:absolute;left:4%;right:4%;top:50%;height:1px;background:linear-gradient(90deg,transparent,rgba(200,168,75,.5),transparent);}'
+    + '.lxf-node{position:relative;width:8px;height:8px;border-radius:50%;background:#C8A84A;box-shadow:0 0 8px 1px rgba(200,168,75,.5);}'
+    + '.lxf-btn{font-family:var(--serif);font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#F4E6BE;padding:15px 44px;border-radius:14px;border:1px solid transparent;background:linear-gradient(#100a04,#100a04) padding-box,linear-gradient(135deg,rgba(244,230,190,.75),rgba(200,168,75,.4),rgba(244,230,190,.65)) border-box;box-shadow:0 0 28px rgba(200,168,75,.22),inset 0 1px 0 rgba(244,230,190,.14);cursor:pointer;transition:transform .25s;margin-bottom:22px;}'
+    + '.lxf-btn:active{transform:scale(.97);}'
+    + '.lxf-links{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;}'
+    + '.lxf-link{background:none;border:none;font-family:var(--serif);font-style:italic;font-size:13px;color:rgba(231,211,151,.5);cursor:pointer;transition:color .2s;}'
+    + '.lxf-link:active{color:#C8A84A;}'
+    + '.lxf-dot{color:rgba(200,168,75,.4);font-size:13px;}'
+    + '.lxf-rise{opacity:0;animation:lxfRise .9s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--d,0s);}'
+    + '@media (prefers-reduced-motion:reduce){.lxf-rise,.lxf-orb,.lxf-ring,.lxf-glow,.lxf-halo,.lxf-orb-wrap{animation:none!important}.lxf-rise,.lxf-orb-wrap{opacity:1!important}}'
+    + '</style>'
+    + '<div class="lxf-wrap">'
+    + '<div class="lxf-glow"></div>'
+    + '<div class="lxf-orb-wrap lxf-rise" style="--d:.1s"><div class="lxf-halo"></div><div class="lxf-ring"></div><div class="lxf-orb"></div></div>'
+    + '<div class="lxf-calli lxf-rise" style="--d:.3s">\u0631\u0650\u064a\u064e\u0627\u0636\u064e\u0629 \u0646\u064e\u0641\u0652\u0633\u0650\u064a\u0651\u064e\u0629</div>'
+    + '<div class="lxf-title lxf-rise" style="--d:.45s">Tu as travers\u00e9 la Cure</div>'
+    + '<div class="lxf-sub lxf-rise" style="--d:.6s">La porte reste ouverte derri\u00e8re toi.</div>'
+    + '<div class="lxf-path lxf-rise" style="--d:.75s">' + _nodes + '</div>'
+    + '<button class="lxf-btn lxf-rise" style="--d:.9s" onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()">Retour</button>'
+    + '<div class="lxf-links lxf-rise" style="--d:1.05s">'
+    + '<button class="lxf-link" onclick="' + _coffretFn + '()">La biblioth\u00e8que</button>'
+    + '<span class="lxf-dot">\u00b7</span>'
+    + '<button class="lxf-link" onclick="localStorage.removeItem(\'' + _sk + '\');' + _reopenFn + '()">Recommencer un nouveau cycle</button>'
+    + '</div>'
+    + '</div>';
+}
 function _cureConfirmPremium(num, nextTitle, murmure) {
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
@@ -6647,17 +6682,7 @@ function openCureRegard() {
   if (day === 'complete') {
     _babImmersion = true; _showAideBtn(); var nb2 = document.getElementById('nav-bar-v2'); if (nb2) nb2.classList.add('hidden-immersion');
     document.body.classList.add('in-bab-an-nafs');
-    var el2 = document.getElementById('babAnNafsContent');
-    if (!el2) return;
-    var c = '#6B5B9A';
-    el2.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
-      + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:#C8A84A;direction:rtl;margin-bottom:12px;">\u0627\u0644\u0646\u0651\u064E\u0638\u064E\u0631</div>'
-      + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;line-height:1.7;max-width:400px;margin:0 auto 32px;">Tu as travers\u00e9 la Cure. La porte reste ouverte derri\u00e8re toi.</div>'
-      + _regardStreakHtml()
-      + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="padding:14px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:none;color:#C8A84A;font-family:var(--serif);font-size:14px;cursor:pointer;margin-top:20px;">Retour</button>'
-      + '<button onclick="openCoffretRegard()" style="display:block;margin:16px auto 0;background:none;border:none;font-size:12px;color:rgba(255,255,255,0.3);font-family:var(--serif);cursor:pointer;font-style:italic;">La biblioth\u00e8que</button>'
-      + '<button onclick="localStorage.removeItem(\'' + sk + '\');openCureRegard()" style="display:block;margin:16px auto 0;background:none;border:none;font-size:12px;color:rgba(255,255,255,0.3);font-family:var(--serif);cursor:pointer;font-style:italic;">Recommencer un nouveau cycle</button>'
-      + '</div>';
+    _cureCompletePremium('regard');
     return;
   }
   openCureJour('regard', typeof day === 'number' ? day : 1);
@@ -6781,16 +6806,7 @@ function openCureArrogance() {
   if (day === 'complete') {
     _babImmersion = true; _showAideBtn(); var nb2 = document.getElementById('nav-bar-v2'); if (nb2) nb2.classList.add('hidden-immersion');
     document.body.classList.add('in-bab-an-nafs');
-    var el2 = document.getElementById('babAnNafsContent');
-    if (!el2) return;
-    var c = '#6A1B7A';
-    el2.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
-      + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:#C8A84A;direction:rtl;margin-bottom:12px;">\u0627\u0644\u0643\u0650\u0628\u0652\u0631</div>'
-      + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;line-height:1.7;max-width:400px;margin:0 auto 32px;">Tu as travers\u00e9 la Cure. La porte reste ouverte derri\u00e8re toi.</div>'
-      + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="padding:14px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:none;color:#C8A84A;font-family:var(--serif);font-size:14px;cursor:pointer;">Retour</button>'
-      + '<button onclick="openCoffretArrogance()" style="display:block;margin:16px auto 0;background:none;border:none;font-size:12px;color:rgba(255,255,255,0.3);font-family:var(--serif);cursor:pointer;font-style:italic;">La biblioth\u00e8que</button>'
-      + '<button onclick="localStorage.removeItem(\'' + sk + '\');openCureArrogance()" style="display:block;margin:16px auto 0;background:none;border:none;font-size:12px;color:rgba(255,255,255,0.3);font-family:var(--serif);cursor:pointer;font-style:italic;">Recommencer un nouveau cycle</button>'
-      + '</div>';
+    _cureCompletePremium('arrogance');
     return;
   }
   openCureJour('arrogance', typeof day === 'number' ? day : 1);
@@ -6826,16 +6842,7 @@ function openCureParesse() {
   if (day === 'complete') {
     _babImmersion = true; _showAideBtn(); var nb2 = document.getElementById('nav-bar-v2'); if (nb2) nb2.classList.add('hidden-immersion');
     document.body.classList.add('in-bab-an-nafs');
-    var el2 = document.getElementById('babAnNafsContent');
-    if (!el2) return;
-    var c = '#6E6E6E';
-    el2.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
-      + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:#C8A84A;direction:rtl;margin-bottom:12px;">\u0627\u0644\u0643\u064E\u0633\u064E\u0644</div>'
-      + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;line-height:1.7;max-width:400px;margin:0 auto 32px;">Tu as travers\u00e9 la Cure. La porte reste ouverte derri\u00e8re toi.</div>'
-      + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="padding:14px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:none;color:#C8A84A;font-family:var(--serif);font-size:14px;cursor:pointer;">Retour</button>'
-      + '<button onclick="openCoffretParesse()" style="display:block;margin:16px auto 0;background:none;border:none;font-size:12px;color:rgba(255,255,255,0.3);font-family:var(--serif);cursor:pointer;font-style:italic;">La biblioth\u00e8que</button>'
-      + '<button onclick="localStorage.removeItem(\'' + sk + '\');openCureParesse()" style="display:block;margin:16px auto 0;background:none;border:none;font-size:12px;color:rgba(255,255,255,0.3);font-family:var(--serif);cursor:pointer;font-style:italic;">Recommencer un nouveau cycle</button>'
-      + '</div>';
+    _cureCompletePremium('paresse');
     return;
   }
   openCureJour('paresse', typeof day === 'number' ? day : 1);
@@ -6871,16 +6878,7 @@ function openCureMedisance() {
   if (day === 'complete') {
     _babImmersion = true; _showAideBtn(); var nb2 = document.getElementById('nav-bar-v2'); if (nb2) nb2.classList.add('hidden-immersion');
     document.body.classList.add('in-bab-an-nafs');
-    var el2 = document.getElementById('babAnNafsContent');
-    if (!el2) return;
-    var c = '#8D6E63';
-    el2.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
-      + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:#C8A84A;direction:rtl;margin-bottom:12px;">\u0627\u0644\u063A\u064A\u0628\u0629</div>'
-      + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;line-height:1.7;max-width:400px;margin:0 auto 32px;">Tu as travers\u00e9 la Cure. La porte reste ouverte derri\u00e8re toi.</div>'
-      + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="padding:14px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:none;color:#C8A84A;font-family:var(--serif);font-size:14px;cursor:pointer;">Retour</button>'
-      + '<button onclick="openCoffretMedisance()" style="display:block;margin:16px auto 0;background:none;border:none;font-size:12px;color:rgba(255,255,255,0.3);font-family:var(--serif);cursor:pointer;font-style:italic;">La biblioth\u00e8que</button>'
-      + '<button onclick="localStorage.removeItem(\'' + sk + '\');openCureMedisance()" style="display:block;margin:16px auto 0;background:none;border:none;font-size:12px;color:rgba(255,255,255,0.3);font-family:var(--serif);cursor:pointer;font-style:italic;">Recommencer un nouveau cycle</button>'
-      + '</div>';
+    _cureCompletePremium('medisance');
     return;
   }
   openCureJour('medisance', typeof day === 'number' ? day : 1);
