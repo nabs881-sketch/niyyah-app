@@ -4097,7 +4097,18 @@ function renderBabAnNafs() {
   if (BAB_AN_NAFS.portes.some(function(p) { return p.validated === false; })) {
     html += '<div style="font-size:12px;font-style:italic;color:#FFA000;background:rgba(255,160,0,0.15);padding:8px;border-radius:6px;text-align:center;margin-bottom:16px;">Mode beta \u2014 contenu en validation th\u00e9ologique</div>';
   }
-  html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">';
+  var _porteGlow = {colere:'220,90,50',anxiete:'80,120,210',regard:'90,180,140',arrogance:'160,110,205',paresse:'150,172,205',medisance:'238,140,70'};
+  html += '<style>'
+    + '.bab-card{position:relative;aspect-ratio:1/1;border-radius:16px;overflow:hidden;cursor:pointer;padding:0;border:1px solid rgba(var(--g),.45);box-shadow:inset 0 0 0 1px rgba(200,168,75,.22),0 0 26px rgba(var(--g),.32),0 8px 26px rgba(0,0,0,.6);background-color:#111;transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s;opacity:0;animation:babCardIn .8s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--d);}'
+    + '.bab-card:hover,.bab-card:active{transform:translateY(-5px) scale(1.012);box-shadow:inset 0 0 0 1px rgba(200,168,75,.4),0 0 44px rgba(var(--g),.55),0 14px 34px rgba(0,0,0,.7);}'
+    + '.bab-scrim{position:absolute;left:0;right:0;bottom:0;height:48%;background:linear-gradient(180deg,transparent,rgba(0,0,0,.66) 78%);pointer-events:none;}'
+    + '.bab-name{position:absolute;left:0;right:0;bottom:9%;text-align:center;pointer-events:none;}'
+    + '.bab-name span{font-family:\'Cormorant Garamond\',serif;font-style:italic;font-weight:600;font-size:clamp(26px,8.5vw,46px);letter-spacing:.5px;line-height:1;}'
+    + '.bab-seal{position:absolute;top:9px;right:9px;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#F4E6BE;font-size:14px;border:1px solid rgba(244,230,190,.45);background:radial-gradient(circle,rgba(244,230,190,.18),transparent 70%);box-shadow:0 0 14px 2px rgba(236,199,90,.45);}'
+    + '@keyframes babCardIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}'
+    + '@media (prefers-reduced-motion:reduce){.bab-card{animation:none;opacity:1;}}'
+    + '</style>';
+  html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">';
   var _porteTitleGrad={colere:'linear-gradient(180deg,#FBE6A8,#E9B95B 55%,#B9842E)',anxiete:'linear-gradient(180deg,#FCEFC2,#ECC75A 50%,#C19A3A)',regard:'linear-gradient(180deg,#FFF6DD,#F1D277 50%,#C9A23E)',arrogance:'linear-gradient(180deg,#FDF1E8,#EBC974 50%,#C49A3C)',paresse:'linear-gradient(180deg,#FFFBEC,#F3DA8A 50%,#CBA64A)',medisance:'linear-gradient(180deg,#FBE3A0,#E6B356 55%,#B07E2A)'};
   var _porteHalo={colere:'rgba(235,120,60,.32)',anxiete:'rgba(220,175,120,.30)',regard:'rgba(110,195,160,.30)',arrogance:'rgba(172,130,215,.30)',paresse:'rgba(150,172,205,.28)',medisance:'rgba(238,140,70,.32)'};
   BAB_AN_NAFS.portes.forEach(function(p, _i2) {
