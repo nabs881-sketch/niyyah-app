@@ -1148,7 +1148,7 @@
           "consigne": "Reprends la semaine : ton schéma (J1), ta racine (J2), le remède du moment (J3), le miroir (J4). Quel est l'outil à garder à vie ?",
           "amorce": "L'outil que je garde, c'est",
           "champ": {
-            "placeholder": "...",
+            "placeholder": "Ex. : les 90 secondes — laisser passer la vague avant de répondre.",
             "max_caracteres": 400,
             "stockage": "cure_colere_j7_outil"
           },
