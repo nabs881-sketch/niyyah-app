@@ -6287,9 +6287,9 @@ _outilAnxieteRenderers.radio_unique = function(o, c) {
     var rs = o.rappel_supplique;
     html += '<div style="border:1px solid ' + c + '15;border-radius:12px;padding:14px;margin-bottom:12px;text-align:center;">'
       + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:#C8A84A;direction:rtl;line-height:1.6;margin-bottom:6px;">' + escapeHtml(rs.texte_ar || '') + '</div>'
-      + '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.55);margin-bottom:4px;">' + escapeHtml(rs.translit || '') + '</div>'
-      + '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);margin-bottom:4px;">' + escapeHtml(rs.traduction || '') + '</div>'
-      + '<div style="font-size:15px;color:rgba(200,168,75,0.4);">\u2014 ' + escapeHtml(rs.source || '') + '</div>'
+      + '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(200,168,75,0.7);margin-bottom:4px;">' + escapeHtml(rs.translit || '') + '</div>'
+      + '<div style="font-family:var(--serif);font-size:19px;color:rgba(240,234,214,0.85);margin-bottom:4px;">' + escapeHtml(rs.traduction || '') + '</div>'
+      + '<div style="font-size:16px;color:rgba(200,168,75,0.6);">\u2014 ' + escapeHtml(rs.source || '') + '</div>'
       + '</div>';
   }
   if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(232,208,140,0.95);text-align:left;line-height:1.55;">' + escapeHtml(o.note_spi) + '</div>';
