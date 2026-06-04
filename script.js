@@ -4923,21 +4923,22 @@ function _cureJ7Finale() {
   // Branche échec : effJ7 <= effJ1
   var _cure7 = {}; try { _cure7 = JSON.parse(safeGetItem('cure_colere') || '{}'); } catch(e) {}
   if (_cure7.efficacite_j1 && _cure7.efficacite_j7 && _cure7.efficacite_j7 <= _cure7.efficacite_j1) {
-    el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
-      + '<div style="font-family:var(--serif);font-size:20px;color:' + c + ';margin-bottom:12px;">Et si le feu reste</div>'
-      + '<div class="itfaa-body" style="font-family:var(--serif);font-size:16px;line-height:1.8;max-width:400px;margin:0 auto 20px;">Tu as march\u00e9 7\u00a0jours et le feu reste. Cela ne veut pas dire que tu as \u00e9chou\u00e9.<br>La patience est elle-m\u00eame \u02bfib\u00e2da.</div>'
-      + '<div style="margin-bottom:24px;padding:16px;border-radius:14px;border:1px solid ' + c + '22;background:' + c + '08;max-width:400px;">'
-      + '<div style="font-family:\'Scheherazade New\',serif;font-size:22px;color:' + c + ';direction:rtl;line-height:1.8;margin-bottom:6px;">\u0648\u064e\u0645\u064e\u0646\u0652 \u064a\u064e\u0635\u0652\u0628\u0650\u0631\u0652 \u064a\u064f\u0635\u064e\u0628\u0651\u0650\u0631\u0652\u0647\u064f \u0627\u0644\u0644\u0651\u064e\u0647\u064f</div>'
-      + '<div class="itfaa-body" style="font-size:14px;font-style:italic;margin-bottom:4px;">Wa man ya\u1e63bir yu\u1e63abbirhu Ll\u00e2h</div>'
-      + '<div class="itfaa-body" style="font-size:15px;margin-bottom:4px;">Celui qui fait preuve de patience, Allah lui donnera la patience.</div>'
-      + '<div class="itfaa-subtle" style="font-size:11px;">\u2014 Bukh\u00e2r\u00ee 1469 \u2014 Ab\u00fb Sa\u2019\u00eed al-Khudr\u00ee</div>'
+    el.innerHTML = _lxfStyle()
+      + '<div class="lxf-wrap">'
+      + '<div class="lxf-glow"></div>'
+      + '<div class="lxf-orb-wrap lxf-rise" style="--d:.1s"><div class="lxf-halo"></div><div class="lxf-ring"></div><div class="lxf-orb"></div></div>'
+      + '<div class="lxf-title lxf-rise" style="--d:.3s">Et si le feu reste</div>'
+      + '<div class="lxf-sub lxf-rise" style="--d:.45s">Tu as march\u00e9 7 jours et le feu reste. Cela ne veut pas dire que tu as \u00e9chou\u00e9. La patience est elle-m\u00eame \u02bfib\u00e2da.</div>'
+      + '<div class="lxf-card lxf-rise" style="--d:.6s">'
+      + '<div class="lxf-card-ar">\u0648\u064e\u0645\u064e\u0646\u0652 \u064a\u064e\u0635\u0652\u0628\u0650\u0631\u0652 \u064a\u064f\u0635\u064e\u0628\u0651\u0650\u0631\u0652\u0647\u064f \u0627\u0644\u0644\u0651\u064e\u0647\u064f</div>'
+      + '<div class="lxf-card-tr">Wa man ya\u1e63bir yu\u1e63abbirhu Ll\u00e2h</div>'
+      + '<div class="lxf-card-fr">Celui qui fait preuve de patience, Allah lui donnera la patience.</div>'
+      + '<div class="lxf-card-src">\u2014 Bukh\u00e2r\u00ee 1469 \u2014 Ab\u00fb Sa\u2019\u00eed al-Khudr\u00ee</div>'
       + '</div>'
-      + '<div class="itfaa-subtle" style="font-size:13px;margin-bottom:24px;">Au d\u00e9but\u00a0: ' + _cure7.efficacite_j1 + '/10. Aujourd\u2019hui\u00a0: ' + _cure7.efficacite_j7 + '/10.</div>'
-      + '<div style="display:flex;flex-direction:column;gap:12px;max-width:320px;width:100%;">'
-      + '<button onclick="localStorage.removeItem(\'cure_colere\');openCureColere()" style="width:100%;padding:14px;border-radius:12px;border:1px solid ' + c + '55;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;">Reprendre la Cure</button>'
-      + '<button onclick="_cureJ7FinaleSucces()" style="width:100%;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Continuer</button>'
-      + '</div>'
-      + '<div style="font-size:14px;font-style:italic;color:rgba(200,168,75,0.45);line-height:1.6;max-width:400px;margin:24px auto 0;">Sept jours sont une initiation. Le travail sur le nafs est une lutte de toute une vie. Reviens quand tu en as besoin. Demain, ou dans un an. All\u00e2h ne mesure pas la dur\u00e9e \u2014 Il mesure la sinc\u00e9rit\u00e9.</div>'
+      + '<div class="lxf-stat lxf-rise" style="--d:.72s">Au d\u00e9but : ' + _cure7.efficacite_j1 + '/10 \u00b7 Aujourd\u2019hui : ' + _cure7.efficacite_j7 + '/10</div>'
+      + '<div class="lxf-note lxf-rise" style="--d:.85s">Sept jours sont une initiation. Le travail sur le nafs est une lutte de toute une vie. Reviens quand tu en as besoin. Demain, ou dans un an. All\u00e2h ne mesure pas la dur\u00e9e \u2014 Il mesure la sinc\u00e9rit\u00e9.</div>'
+      + '<button class="lxf-btn2 lxf-rise" style="--d:.95s" onclick="localStorage.removeItem(\'cure_colere\');openCureColere()">Reprendre la Cure</button>'
+      + '<button class="lxf-btn lxf-rise" style="--d:1.05s" onclick="_cureJ7FinaleSucces()">Continuer</button>'
       + '</div>';
     return;
   }
@@ -4956,13 +4957,21 @@ function _cureJ7FinaleSucces() {
   if (!el) return;
   var c = '#B33A3A';
   var _cure7 = {}; try { _cure7 = JSON.parse(safeGetItem('cure_colere') || '{}'); } catch(e) {}
-  el.innerHTML = '<div style="padding:calc(var(--safe-top)+60px) 16px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;">'
-    + '<div style="font-family:\'Scheherazade New\',serif;font-size:28px;color:' + c + ';direction:rtl;margin-bottom:12px;">\u0628\u064e\u0627\u0631\u064e\u0643\u064e \u0627\u0644\u0644\u0651\u064e\u0647\u064f \u0641\u0650\u064a\u0643\u064e</div>'
-    + '<div class="itfaa-body" style="font-family:var(--serif);font-size:18px;line-height:1.8;max-width:400px;margin:0 auto 20px;">Tu as march\u00e9 7\u00a0jours. Allah voit.<br>Reviens quand le c\u0153ur le demandera.</div>'
-    + (_cure7.efficacite_j1 && _cure7.efficacite_j7 ? '<div class="itfaa-subtle" style="font-size:14px;margin-bottom:24px;">Au d\u00e9but\u00a0: ' + _cure7.efficacite_j1 + '/10. Aujourd\u2019hui\u00a0: ' + _cure7.efficacite_j7 + '/10.</div>' : '')
-    + '<div style="font-size:14px;font-style:italic;color:rgba(200,168,75,0.45);line-height:1.6;max-width:400px;margin:0 auto 24px;">Sept jours sont une initiation. Le travail sur le nafs est une lutte de toute une vie. Reviens quand tu en as besoin. Demain, ou dans un an. All\u00e2h ne mesure pas la dur\u00e9e \u2014 Il mesure la sinc\u00e9rit\u00e9.</div>'
-    + '<button onclick="openCoffretColere()" style="display:block;width:100%;max-width:320px;margin:12px auto 0;padding:12px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:none;color:#C8A84A;font-size:13px;font-family:var(--serif);cursor:pointer;font-style:italic;">Coffret de la longanimit\u00e9</button>'
-    + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()" style="width:100%;max-width:320px;margin:12px auto 0;padding:16px;border-radius:12px;border:none;background:' + c + ';color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">Retour \u00e0 Ma Niyyah</button>'
+  var _stat = (_cure7.efficacite_j1 && _cure7.efficacite_j7)
+    ? '<div class="lxf-stat lxf-rise" style="--d:.72s">Au d\u00e9but : ' + _cure7.efficacite_j1 + '/10 \u00b7 Aujourd\u2019hui : ' + _cure7.efficacite_j7 + '/10</div>' : '';
+  var _nodes = ''; for (var _i = 0; _i < 7; _i++) _nodes += '<span class="lxf-node"></span>';
+  el.innerHTML = _lxfStyle()
+    + '<div class="lxf-wrap">'
+    + '<div class="lxf-glow"></div>'
+    + '<div class="lxf-orb-wrap lxf-rise" style="--d:.1s"><div class="lxf-halo"></div><div class="lxf-ring"></div><div class="lxf-orb"></div></div>'
+    + '<div class="lxf-calli lxf-rise" style="--d:.3s">\u0628\u064e\u0627\u0631\u064e\u0643\u064e \u0627\u0644\u0644\u0651\u064e\u0647\u064f \u0641\u0650\u064a\u0643\u064e</div>'
+    + '<div class="lxf-title lxf-rise" style="--d:.45s">Tu as march\u00e9 7 jours</div>'
+    + '<div class="lxf-sub lxf-rise" style="--d:.6s">Allah voit. Reviens quand le c\u0153ur le demandera.</div>'
+    + _stat
+    + '<div class="lxf-path lxf-rise" style="--d:.8s">' + _nodes + '</div>'
+    + '<div class="lxf-note lxf-rise" style="--d:.9s">Sept jours sont une initiation. Le travail sur le nafs est une lutte de toute une vie. Reviens quand tu en as besoin. Demain, ou dans un an. All\u00e2h ne mesure pas la dur\u00e9e \u2014 Il mesure la sinc\u00e9rit\u00e9.</div>'
+    + '<button class="lxf-btn lxf-rise" style="--d:1s" onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()">Retour \u00e0 Ma Niyyah</button>'
+    + '<div class="lxf-links lxf-rise" style="--d:1.1s"><button class="lxf-link" onclick="openCoffretColere()">Coffret de la longanimit\u00e9</button></div>'
     + '</div>';
 }
 
@@ -6493,17 +6502,8 @@ function _cureAnxieteWizardRender(el) {
   el.scrollTop = 0;
 }
 
-function _cureCompletePremium(porte) {
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  var _cap = porte.charAt(0).toUpperCase() + porte.slice(1);
-  var _coffretFn = 'openCoffret' + _cap;
-  var _reopenFn = 'openCure' + _cap;
-  var _sk = 'cure_' + porte;
-  var _nodes = '';
-  for (var _i = 0; _i < 7; _i++) _nodes += '<span class="lxf-node"></span>';
-  el.innerHTML =
-    '<style>'
+function _lxfStyle() {
+  return '<style>'
     + '@keyframes lxfRise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}'
     + '@keyframes lxfBloom{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:scale(1)}}'
     + '@keyframes lxfGlow{0%,100%{opacity:.5;transform:translate(-50%,-50%) scale(1)}50%{opacity:.9;transform:translate(-50%,-50%) scale(1.15)}}'
@@ -6516,21 +6516,43 @@ function _cureCompletePremium(porte) {
     + '.lxf-halo{position:absolute;inset:-22px;border-radius:50%;background:radial-gradient(circle,rgba(244,230,190,.25),transparent 65%);animation:lxfHalo 5s ease-in-out infinite;}'
     + '.lxf-orb{position:absolute;inset:16px;border-radius:50%;background:radial-gradient(circle at 38% 34%,#FFFDF4,#F4E6BE 32%,#C8A84A 70%,#9c7e2f);animation:lxfOrb 5.5s ease-in-out infinite;}'
     + '.lxf-ring{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(200,168,75,.30);border-top-color:rgba(244,230,190,.9);animation:lxfSpin 10s linear infinite;}'
-    + '.lxf-calli{font-family:\'Scheherazade New\',serif;font-size:32px;color:#E7D397;direction:rtl;line-height:1.6;margin-bottom:16px;text-shadow:0 0 18px rgba(200,168,75,.35);}'
+    + ".lxf-calli{font-family:'Scheherazade New',serif;font-size:32px;color:#E7D397;direction:rtl;line-height:1.6;margin-bottom:16px;text-shadow:0 0 18px rgba(200,168,75,.35);}"
     + '.lxf-title{font-family:var(--serif);font-size:30px;font-weight:600;background:linear-gradient(180deg,#F4E6BE,#C8A84A);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:12px;}'
-    + '.lxf-sub{font-family:var(--serif);font-style:italic;font-size:18px;color:rgba(231,211,151,.78);max-width:340px;margin:0 auto 26px;}'
-    + '.lxf-path{position:relative;display:flex;align-items:center;justify-content:center;gap:13px;margin:0 auto 34px;}'
+    + '.lxf-sub{font-family:var(--serif);font-style:italic;font-size:18px;color:rgba(231,211,151,.78);max-width:360px;margin:0 auto 24px;line-height:1.6;}'
+    + '.lxf-path{position:relative;display:flex;align-items:center;justify-content:center;gap:13px;margin:0 auto 30px;}'
     + '.lxf-path:before{content:"";position:absolute;left:4%;right:4%;top:50%;height:1px;background:linear-gradient(90deg,transparent,rgba(200,168,75,.5),transparent);}'
     + '.lxf-node{position:relative;width:8px;height:8px;border-radius:50%;background:#C8A84A;box-shadow:0 0 8px 1px rgba(200,168,75,.5);}'
-    + '.lxf-btn{font-family:var(--serif);font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#F4E6BE;padding:15px 44px;border-radius:14px;border:1px solid transparent;background:linear-gradient(#100a04,#100a04) padding-box,linear-gradient(135deg,rgba(244,230,190,.75),rgba(200,168,75,.4),rgba(244,230,190,.65)) border-box;box-shadow:0 0 28px rgba(200,168,75,.22),inset 0 1px 0 rgba(244,230,190,.14);cursor:pointer;transition:transform .25s;margin-bottom:22px;}'
+    + '.lxf-stat{font-family:var(--serif);font-size:14px;color:rgba(231,211,151,.55);margin-bottom:22px;}'
+    + '.lxf-note{font-family:var(--serif);font-style:italic;font-size:14px;color:rgba(200,168,75,.45);line-height:1.6;max-width:380px;margin:0 auto 26px;}'
+    + '.lxf-card{border:1px solid rgba(200,168,75,.22);background:rgba(200,168,75,.05);border-radius:16px;padding:18px 20px;max-width:380px;margin:0 auto 22px;}'
+    + ".lxf-card-ar{font-family:'Scheherazade New',serif;font-size:24px;color:#E7D397;direction:rtl;line-height:1.8;margin-bottom:8px;}"
+    + '.lxf-card-tr{font-family:var(--serif);font-style:italic;font-size:15px;color:rgba(231,211,151,.6);margin-bottom:4px;}'
+    + '.lxf-card-fr{font-family:var(--serif);font-size:16px;color:rgba(240,234,214,.82);margin-bottom:6px;line-height:1.5;}'
+    + '.lxf-card-src{font-family:var(--serif);font-size:12px;color:rgba(200,168,75,.45);}'
+    + '.lxf-btn{font-family:var(--serif);font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#F4E6BE;padding:15px 44px;border-radius:14px;border:1px solid transparent;background:linear-gradient(#100a04,#100a04) padding-box,linear-gradient(135deg,rgba(244,230,190,.75),rgba(200,168,75,.4),rgba(244,230,190,.65)) border-box;box-shadow:0 0 28px rgba(200,168,75,.22),inset 0 1px 0 rgba(244,230,190,.14);cursor:pointer;transition:transform .25s;margin:0 auto 18px;}'
     + '.lxf-btn:active{transform:scale(.97);}'
+    + '.lxf-btn2{font-family:var(--serif);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(231,211,151,.7);padding:13px 34px;border-radius:13px;border:1px solid rgba(200,168,75,.3);background:none;cursor:pointer;transition:transform .2s;margin:0 auto 12px;}'
+    + '.lxf-btn2:active{transform:scale(.97);}'
     + '.lxf-links{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;}'
     + '.lxf-link{background:none;border:none;font-family:var(--serif);font-style:italic;font-size:13px;color:rgba(231,211,151,.5);cursor:pointer;transition:color .2s;}'
     + '.lxf-link:active{color:#C8A84A;}'
     + '.lxf-dot{color:rgba(200,168,75,.4);font-size:13px;}'
     + '.lxf-rise{opacity:0;animation:lxfRise .9s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--d,0s);}'
     + '@media (prefers-reduced-motion:reduce){.lxf-rise,.lxf-orb,.lxf-ring,.lxf-glow,.lxf-halo,.lxf-orb-wrap{animation:none!important}.lxf-rise,.lxf-orb-wrap{opacity:1!important}}'
-    + '</style>'
+    + '</style>';
+}
+
+function _cureCompletePremium(porte) {
+  var el = document.getElementById('babAnNafsContent');
+  if (!el) return;
+  var _cap = porte.charAt(0).toUpperCase() + porte.slice(1);
+  var _coffretFn = 'openCoffret' + _cap;
+  var _reopenFn = 'openCure' + _cap;
+  var _sk = 'cure_' + porte;
+  var _nodes = '';
+  for (var _i = 0; _i < 7; _i++) _nodes += '<span class="lxf-node"></span>';
+  el.innerHTML =
+    _lxfStyle()
     + '<div class="lxf-wrap">'
     + '<div class="lxf-glow"></div>'
     + '<div class="lxf-orb-wrap lxf-rise" style="--d:.1s"><div class="lxf-halo"></div><div class="lxf-ring"></div><div class="lxf-orb"></div></div>'
