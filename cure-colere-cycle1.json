@@ -1065,7 +1065,8 @@
         "phrase_a_repeter": {
           "ar": "السَّلَامُ عَلَيْكُمْ",
           "translit": "As-salâmu 'alaykum",
-          "fr": "Que la paix soit sur vous"
+          "fr": "Que la paix soit sur vous",
+          "source": "Muslim 54"
         },
         "duree_min": 3,
         "justification": {
@@ -1219,7 +1220,8 @@
         "phrase_a_repeter": {
           "ar": "لَا تَغْضَبْ",
           "translit": "Lâ taghdab",
-          "fr": "Ne te mets pas en colère"
+          "fr": "Ne te mets pas en colère",
+          "source": "Bukhârî 6116"
         },
         "duree_min": 3,
         "justification": {
