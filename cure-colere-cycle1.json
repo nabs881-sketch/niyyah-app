@@ -800,8 +800,8 @@
           "ordre": 2,
           "type": "radio_unique",
           "titre": "La gorgée, pour Qui",
-          "introduction": "Pourquoi te retiens-tu, au fond ? Sois honnête.",
-          "consigne": "Choisis ta reformulation.",
+          "introduction": "",
+          "consigne": "Pourquoi te retiens-tu, au fond ? Choisis celle qui est vraiment la tienne.",
           "options": [
             { "id": "paix", "label_fr": "« Pour avoir la paix »" },
             { "id": "image", "label_fr": "« Pour ne pas perdre la face »" },
