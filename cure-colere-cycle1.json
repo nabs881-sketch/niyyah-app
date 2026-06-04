@@ -1019,14 +1019,10 @@
           "introduction": "",
           "consigne": "Le pardon n'efface pas le tort — il te libère du poison de la rancune (hiqd). Pour cette offense, choisis, pour ton propre cœur.",
           "options": [
-            {
-              "id": "relache",
-              "label_fr": "Je choisis de relâcher la rancune — pour mon cœur"
-            },
-            {
-              "id": "pas_encore",
-              "label_fr": "Pas encore — mais j'y travaille"
-            }
+            { "id": "relache", "label_fr": "Je relâche la rancune — pour mon cœur" },
+            { "id": "partiel", "label_fr": "J'en laisse partir une partie — le reste viendra" },
+            { "id": "pas_encore", "label_fr": "Pas encore — mais je le veux, et j'y travaille" },
+            { "id": "remets", "label_fr": "Je n'y arrive pas aujourd'hui — je m'en remets à Allah" }
           ],
           "stockage": "cure_colere_j6_pardon",
           "note_psy": "Le pardon comme auto-libération : il réduit la rumination hostile et le poids porté.",
