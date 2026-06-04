@@ -1004,7 +1004,7 @@
           "consigne": "Répondre par le meilleur ≠ tout encaisser en silence. C'est dire le vrai, calmement. Reformule une chose à dire à quelqu'un : de la version agressive à la version assertive.",
           "amorce": "Agressif : « tu fais toujours… » → Assertif : « quand…, je ressens…, j'aimerais… »",
           "champ": {
-            "placeholder": "...",
+            "placeholder": "Ex. : « Quand tu me coupes, je me sens ignoré ; j'aimerais pouvoir finir. »",
             "max_caracteres": 500,
             "stockage": "cure_colere_j6_assertif"
           },
