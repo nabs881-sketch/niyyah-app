@@ -803,14 +803,10 @@
           "introduction": "Le hadith dit « pour la face d'Allah ». Choisis l'intention qui transforme la retenue.",
           "consigne": "Choisis ta reformulation.",
           "options": [
-            {
-              "id": "faiblesse",
-              "label_fr": "« Je me retiens parce que je suis faible »"
-            },
-            {
-              "id": "pour_allah",
-              "label_fr": "« Je ravale cette gorgée pour Allah »"
-            }
+            { "id": "paix", "label_fr": "« Pour avoir la paix »" },
+            { "id": "image", "label_fr": "« Pour ne pas perdre la face »" },
+            { "id": "maitrise", "label_fr": "« Pour rester maître de moi »" },
+            { "id": "pour_allah", "label_fr": "« Pour Allah, pour Sa face »" }
           ],
           "stockage": "cure_colere_j5_intention",
           "note_psy": "Recadrage par les valeurs (ACT) : la retenue choisie pour un sens, non subie comme une défaite.",
