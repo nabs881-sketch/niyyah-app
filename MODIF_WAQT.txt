@@ -1,0 +1,23 @@
+MODIFICATION LOGIQUE WAQT
+==========================
+
+Modifier isWaqtAvailable() dans script.js.
+
+NOUVELLE LOGIQUE :
+
+1. Récupérer l'heure actuelle + heures des 5 prières du jour (Fajr, Dhuhr, Asr, Maghrib, Isha)
+
+2. Identifier la DERNIÈRE prière dont l'heure est passée (= le waqt actuel)
+
+3. Si cette prière n'est pas dans niyyah_waqt_lu_YYYY-MM-DD → retourner cette prière (médaillon cuivre)
+
+4. Si déjà lue OU aucune prière encore passée aujourd'hui → retourner null (pierre)
+
+RÈGLE : un seul waqt à la fois. Si waqt précédent pas lu et nouvelle heure arrive → précédent perdu, nouveau prend sa place.
+
+RETIRER la condition "spiritual_v2[p] === true" (cocher la prière n'est plus requis).
+
+GARDER niyyah_waqt_lu_YYYY-MM-DD pour tracer ce qui a été lu.
+
+Bump SW + commit avec message :
+"feat: Waqt accessible dès l'heure de prière sans cocher, 1 waqt à la fois"

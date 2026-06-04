@@ -1,0 +1,87 @@
+# Sanctuaire — Triggers & Overlays (20 declenchables)
+
+Garde-fou global : `window._spontaneousUIShown` — une seule modale spontanee par session.
+La cascade dans `triggerSpontaneousUI()` s'arrete au premier `return true`.
+
+## A. CASCADE triggerSpontaneousUI() (ordre strict)
+
+| # | Overlay | Condition exacte | Frequence | Flag localStorage |
+|---|---------|-----------------|-----------|-------------------|
+| 1 | **Tawba** (showTawba) | `niyyah_tawba_shown !== TODAY` ET (absence >= 2j via `niyyah_last_open` OU 2 jours manques dans history avec streak >= 1 OU `niyyah_tawba_force === '1'`) | 1x/jour max | `niyyah_tawba_shown` = TODAY |
+| 2 | **Muhasaba invite** (_checkMuhasabaInvite) | `colere_muhasaba_invite` existe ET age entre 15min et 72h ET (`colere_muhasaba_snooze` absent ou > 24h) | Tant que conditions remplies, 1x/session | `colere_muhasaba_snooze` = timestamp si "Plus tard" |
+| 3 | **Level completion** (showLevelPopup) | `getLevelProgress(levelId) >= 100` ET `state['_lvl_shown_' + levelId]` pas encore true. Boucle 1..N niveaux. | 1 seule fois par niveau | `state._lvl_shown_X` = true |
+| 4 | **Ramadan Boost** (showRamadanBoostModal) | `ramadan_modal_shown` absent ET `ramadanState.active === true` | 1 seule fois par Ramadan | `ramadan_modal_shown` = '1' |
+| 5 | **Eid** (showEidModal) | `ramadan_boost === 'accepted'` ET `ramadanState.active === false` | 1x apres fin Ramadan | Supprime `ramadan_boost` + `ramadan_modal_shown` |
+| 6 | **Bilan hebdo** (showWeeklyBilan) | Lundi ET `niyyah_bilan_week !== getCurrentWeekKey()` ET `history.totalDays >= 1` | 1x/semaine (lundi) | `niyyah_bilan_week` = weekKey |
+| 7 | **Regarde alert** (showRegardeAlertModal) | `niyyah_regarde_last_alert !== todayKey()` ET heure entre 9h-21h ET `Math.random() < 0.3` (30% de chance) | 1x/jour max, probabiliste | `niyyah_regarde_last_alert` = todayKey() |
+| 8 | **Hijri banner** (checkHijriBanner) | Mois hijri sacre (Ramadan, Dhul-Hijjah, Muharram, Rajab, Sha'ban) ET jour specifique ET flag annuel pas encore pose. Dernier de la cascade — ne bloque PAS les suivants (pas de return). | 1x/an par evenement | `hijri_banner_[event]_[year]` + `hijri_banner_dismissed_[today]` |
+
+### Detail Hijri banner — sous-conditions :
+- Ramadan jour 1 + Mode non actif → proposition activation
+- Shawwal jour 1-3 + Mode actif → proposition desactivation Eid
+- Ramadan jour 21 → annonce 10 derniers jours (1x/an)
+- Ramadan jours 21,23,25,27,29 → nuit impaire Qadr (1x/nuit/an)
+- Dhul-Hijjah jour 1 → annonce 10 jours (1x/an)
+- Dhul-Hijjah jour 8 → veille Arafat (1x/an)
+- Dhul-Hijjah jour 9 → jour Arafat (1x/an)
+- Dhul-Hijjah jour 10 → Eid al-Adha (1x/an)
+- Dhul-Hijjah jours 11-13 → Tashreeq (1x/an)
+- Muharram jour 1 → nouvel an hijri (1x/an)
+- Muharram jour 9 → veille Achoura (1x/an)
+- Muharram jour 10 → Achoura (1x/an)
+- Rajab jour 1 → debut Rajab (1x/an)
+- Sha'ban jour 1 → debut Sha'ban (1x/an)
+
+## B. TIMERS setTimeout dans _showSanctuaire()
+
+| # | Overlay | Delai | Condition exacte |
+|---|---------|-------|-----------------|
+| 9 | **Star unlock** (showStarUnlockModal) | 800ms | `niyyah_star_unlock_pending` existe → le supprime. Actuellement no-op (fonction vide). |
+| 10 | **Defi lundi** (openDefiLundiModal) | 1500ms | Lundi ET `niyyah_defi_lundi_shown !== weekKey` ET defi courant existe | `niyyah_defi_lundi_shown` = weekKey |
+| 11 | **Defi toast daily** (_showDefiToastDaily) | 2500ms | `niyyah_defi_toast_today !== todayKey()` ET defi courant actif et non complete | `niyyah_defi_toast_today` = todayKey() |
+
+## C. v2Init() — apres v2GoSanctuaire()
+
+| # | Overlay | Condition exacte |
+|---|---------|-----------------|
+| 12 | **Evolution Revenant→Regulier** (showEvolutionModal) | `niyyah_motivation === 'reconnecter'` ET `niyyah_silent_streak >= 40` ET pas vendredi ET 8h-21h ET `niyyah_evolution_proposed_today !== todayKey()` ET proposed_count < 3 ET refused_date absent ou > 90j ET pas Ramadan | `niyyah_evolution_proposed_today`, `_proposed_count`, `_refused_date` |
+| 13 | **Evolution Regulier→Complet** (showEvolutionModalRoutine) | `niyyah_motivation === 'routine'` ET `niyyah_silent_streak >= 90` ET pas vendredi ET 8h-21h ET `niyyah_evolution_routine_proposed_today !== todayKey()` ET proposed_count < 3 ET refused_date absent ou > 90j ET pas Ramadan | idem avec prefixe `_routine_` |
+
+## D. v2GoSanctuaire() — bannieres inline
+
+| # | Overlay | Condition exacte |
+|---|---------|-----------------|
+| 14 | **Silence overlay** (#silence-overlay) | `isSilenceDay()` = true (jour semaine courant === `niyyah_silence_day` dans localStorage). Bloque tout le reste du Sanctuaire (return apres affichage). | Permanent tant que silence_day match |
+| 15 | **Cure colere banner** (#_cureBanner) | `cure_colere` existe en localStorage ET `current_day` entre 1-7 ET `completed` false | Tant que cure en cours |
+| 16 | **Muhasaba invite banner** (#_muhasabaInviteBanner) | `colere_muhasaba_invite` existe ET age >= 15min et < 72h ET snooze absent ou > 24h | Idem #2 mais version banniere fixe dans Sanctuaire |
+
+## E. updateSanctuaireMoment() — cartes contextuelles
+
+| # | Overlay | Condition exacte |
+|---|---------|-----------------|
+| 17 | **Bismillah CTA** (.btn-bismillah-moment) | Bloc priere courant a des items restants (blockRemaining > 0) → bouton ouvre openVueRituel() | Toujours si items restants |
+| 18 | **Fil du jour card** | Toujours present (getFilJourCardHTML) → ouvre openVueAuFilDuJour() au tap | Toujours |
+| 19 | **Vendredi Regard card** | `isFriday() === true` ET bloc priere a des items restants (blockRemaining > 0... ou done) | Vendredi uniquement |
+
+## F. Interaction utilisateur directe
+
+| # | Overlay | Declencheur |
+|---|---------|------------|
+| 20 | **Intention overlay** | Tap sur l'orbe (#orb-core-v2 / #orb-zone-v2) → openIntentionOverlay() | A la demande |
+
+---
+
+## RESUME ORDRE D'EXECUTION AU BOOT
+
+1. `v2Init()` → `v2GoSanctuaire()`
+2. `_showSanctuaire()` → setTimeout: starUnlock(800ms), defiLundi(1500ms), defiToast(2500ms)
+3. Si silence → overlay silence, STOP
+4. `v2RefreshStats()` + `renderDefiCard()` + bannieres (cure, muhasaba)
+5. `updateSanctuaireMoment()` → cartes contextuelles + vendredi
+6. `v2UpdateOrbState()` → etat orbe
+7. `triggerSpontaneousUI()` → cascade: tawba → muhasaba → level → ramadan → eid → bilan → regarde → hijri
+8. `checkEvolutionRevenant()` → modale evolution 40j
+9. `checkEvolutionRoutine()` → modale evolution 90j
+
+Note : les timers (etape 2) sont lances AVANT la cascade (etape 7), mais avec des delais superieurs.
+Les evolutions (etapes 8-9) s'executent apres la cascade, independamment de `_spontaneousUIShown`.

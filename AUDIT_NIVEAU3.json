@@ -1,0 +1,1297 @@
+{
+  "summary": {
+    "VRAI_POSITIF": 0,
+    "FAUX_POSITIF": 42,
+    "AMBIGU": 0,
+    "NO_REF_FOUND": 27
+  },
+  "elapsed_seconds": 32,
+  "timestamp": "2026-05-23T09:50:56.201Z",
+  "total": 69,
+  "results": [
+    {
+      "section": "hadiths",
+      "entry_id": 14,
+      "sonnet_notes": "Les numéros de hadith cités ne correspondent pas aux collections standards. Les références Bukhari 6878 et Muslim 1676 sont inexactes ou mal attribuées.",
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 6878",
+          "Muslim 1676"
+        ]
+      },
+      "checks": [
+        {
+          "type": "hadith",
+          "ref": "Bukhari 6878",
+          "exists": true,
+          "api_text": "Narrated `Abdullah:Allah's Messenger (ﷺ) said, \"The blood of a Muslim who confesses that none has the right to be worshipped but Allah and that I am H"
+        },
+        {
+          "type": "hadith",
+          "ref": "Muslim 1676",
+          "exists": true,
+          "api_text": "Ibn 'Umar reported that Hafsa, the Mother of the Believers, informed him that when the Mu'adhdhin became silent after calling (people) to the dawn pra"
+        }
+      ],
+      "verdict": "FAUX_POSITIF"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 15,
+      "sonnet_notes": "Numérotation de hadith inexacte et attribution partielle incorrecte. Le hadith est authentique mais les références données sont problématiques.",
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 6018",
+          "Muslim 47"
+        ]
+      },
+      "checks": [
+        {
+          "type": "hadith",
+          "ref": "Bukhari 6018",
+          "exists": true,
+          "api_text": "Narrated Abu Huraira:Allah's Messenger (ﷺ) said, \"Anybody who believes in Allah and the Last Day should not harm his neighbor, and anybody who believe"
+        },
+        {
+          "type": "hadith",
+          "ref": "Muslim 47",
+          "exists": true,
+          "api_text": ""
+        }
+      ],
+      "verdict": "FAUX_POSITIF"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 21,
+      "sonnet_notes": "La référence 'Muslim 38 · Hadith 21' est inexacte. Le verset cité (Fussilat 41:30) n'est pas un hadith mais un verset coranique. Attribution fausse.",
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Muslim 38"
+        ]
+      },
+      "checks": [
+        {
+          "type": "hadith",
+          "ref": "Muslim 38",
+          "exists": true,
+          "api_text": ""
+        }
+      ],
+      "verdict": "FAUX_POSITIF"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 22,
+      "sonnet_notes": "La référence 'Muslim 15 · Hadith 22 An-Nawawi' est mal formée. Muslim n'utilise pas cette numérotation. An-Nawawi a commenté Muslim mais n'est pas une source primaire de hadith.",
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Muslim 15"
+        ]
+      },
+      "checks": [
+        {
+          "type": "hadith",
+          "ref": "Muslim 15",
+          "exists": true,
+          "api_text": "Muhammad bin Abd Allah bin Numayr and Zuhayr bin Harb narrated to me, they said Abd Allah bin Yazīd narrated to us, he said Sa’īd bin Abī Ayyūb narrat"
+        }
+      ],
+      "verdict": "FAUX_POSITIF"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 23,
+      "sonnet_notes": "La source citée 'Muslim 223' est inexacte. Ce hadith célèbre se trouve dans Sahih Muslim mais sous une numérotation différente, et l'attribution à 'Hadith 23 An-Nawawi' est confuse.",
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Muslim 223"
+        ]
+      },
+      "checks": [
+        {
+          "type": "hadith",
+          "ref": "Muslim 223",
+          "exists": true,
+          "api_text": "It is narrated on the authority of Jarir b. 'Abdullah that the Messenger of Allah (may peace and blessings be upon him) asked him on the occasion of t"
+        }
+      ],
+      "verdict": "FAUX_POSITIF"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 27,
+      "sonnet_notes": "Attribution incorrecte. Ce hadith ne se trouve pas dans Muslim 2553. La source correcte est Musnad Ahmad et d'autres collections, pas Muslim.",
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Muslim 2553"
+        ]
+      },
+      "checks": [
+        {
+          "type": "hadith",
+          "ref": "Muslim 2553",
+          "exists": true,
+          "api_text": "This hadith has been transmitted on the authority of Qatada too"
+        }
+      ],
+      "verdict": "FAUX_POSITIF"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 34,
+      "sonnet_notes": "Attribution et référence incorrectes. Ce hadith célèbre est dans Muslim mais pas sous la référence 'Muslim 49 · Hadith 34'. La structure de citation est non-standard.",
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Muslim 49"
+        ]
+      },
+      "checks": [
+        {
+          "type": "hadith",
+          "ref": "Muslim 49",
+          "exists": true,
+          "api_text": ""
+        }
+      ],
+      "verdict": "FAUX_POSITIF"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 38,
+      "sonnet_notes": "Attribution fausse et confusion de sources. Le hadith qudsi cité appartient à Bukhari 6502, mais le texte présenté mélange deux hadiths distincts sans clarté.",
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 6502"
+        ]
+      },
+      "checks": [
+        {
+          "type": "hadith",
+          "ref": "Bukhari 6502",
+          "exists": true,
+          "api_text": "Narrated Abu Huraira:Allah's Messenger (ﷺ) said, \"Allah said, 'I will declare war against him who shows hostility to a pious worshipper of Mine. And t"
+        }
+      ],
+      "verdict": "FAUX_POSITIF"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 43,
+      "sonnet_notes": "Attribution incorrecte. Ce hadith ne figure pas dans Muslim 26. La numérotation 'Muslim 26' est inexacte ou mal référencée.",
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Muslim 26"
+        ]
+      },
+      "checks": [
+        {
+          "type": "hadith",
+          "ref": "Muslim 26",
+          "exists": true,
+          "api_text": ""
+        }
+      ],
+      "verdict": "FAUX_POSITIF"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 50,
+      "sonnet_notes": "Le texte cité n'est pas coranique mais un hadith. L'attribution est inversée : c'est un hadith de Bukhari, pas une ayah du Coran.",
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 5027"
+        ]
+      },
+      "checks": [
+        {
+          "type": "hadith",
+          "ref": "Bukhari 5027",
+          "exists": true,
+          "api_text": "Narrated `Uthman:The Prophet (ﷺ) said, \"The best among you (Muslims) are those who learn the Qur'an and teach it"
+        }
+      ],
+      "verdict": "FAUX_POSITIF"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 51,
+      "sonnet_notes": "Attribution fausse. Ce hadith n'est pas coranique mais attribué au Prophète. Tirmidhi 2910 existe mais n'est pas classé 'sahih' par Tirmidhi lui-même.",
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Tirmidhi 2910"
+        ]
+      },
+      "checks": [
+        {
+          "type": "hadith",
+          "ref": "Tirmidhi 2910",
+          "exists": true,
+          "api_text": "Narrated Muhammad bin Ka'b Al-Qurazi:\"I heard 'Abdullah bin Mas'ud saying: 'The Messenger of Allah (ﷺ) said: \"[Whoever recites a letter] from Allah's "
+        }
+      ],
+      "verdict": "FAUX_POSITIF"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 65,
+      "sonnet_notes": "Les numéros de références sont incorrects. Le hadith authentique se trouve dans Sahih Bukhari 38 (Kitab al-Iman) mais le numéro Muslim 760 ne correspond pas à ce hadith dans Sahih Muslim.",
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 38",
+          "Muslim 760"
+        ]
+      },
+      "checks": [
+        {
+          "type": "hadith",
+          "ref": "Bukhari 38",
+          "exists": true,
+          "api_text": "Narrated Abu Huraira: Allah's Messenger (ﷺ) said, \"Whoever observes fasts during the month of Ramadan out of sincere faith, and hoping to attain Allah"
+        },
+        {
+          "type": "hadith",
+          "ref": "Muslim 760",
+          "exists": true,
+          "api_text": "A'isha, the wife of the Apostle (ﷺ), said:Umm Habiba b. Jahsh who was the spouse of Abd al- Rahman b. Auf made a complaint to the Messenger of Allah ("
+        }
+      ],
+      "verdict": "FAUX_POSITIF"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 77,
+      "sonnet_notes": "Les références Bukhari 33 et Muslim 59 sont inexactes. Ce hadith célèbre figure dans Bukhari (Kitab al-Iman, chapitre sur les signes du munafiq) et Muslim, mais pas aux numéros de livre/chapitre cités.",
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 33",
+          "Muslim 59"
+        ]
+      },
+      "checks": [
+        {
+          "type": "hadith",
+          "ref": "Bukhari 33",
+          "exists": true,
+          "api_text": "Narrated Abu Huraira: The Prophet (ﷺ) said, \"The signs of a hypocrite are three: 1. Whenever he speaks, he tells a lie. 2. Whenever he promises, he al"
+        },
+        {
+          "type": "hadith",
+          "ref": "Muslim 59",
+          "exists": true,
+          "api_text": ""
+        }
+      ],
+      "verdict": "FAUX_POSITIF"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 78,
+      "sonnet_notes": "Les références Bukhari 6094 et Muslim 2607 ne correspondent pas à ce hadith. Le hadith cité est authentique mais provient d'autres sources.",
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 6094",
+          "Muslim 2607"
+        ]
+      },
+      "checks": [
+        {
+          "type": "hadith",
+          "ref": "Bukhari 6094",
+          "exists": true,
+          "api_text": "Narrated `Abdullah:The Prophet (ﷺ) said, \"Truthfulness leads to righteousness, and righteousness leads to Paradise. And a man keeps on telling the tru"
+        },
+        {
+          "type": "hadith",
+          "ref": "Muslim 2607",
+          "exists": true,
+          "api_text": "A hadlth like this has been transmitted on the authority of Ibn Shibab who said that they (the Compnions of the Holy Prophet) followed the latest of h"
+        }
+      ],
+      "verdict": "FAUX_POSITIF"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 87,
+      "sonnet_notes": "La traduction du hadith est inexacte. Le texte arabe signifie 'Soyez bons envers les femmes' ou 'Recommandez-vous d'être bons envers les femmes', non 'Recommandez-vous mutuellement le bien envers les femmes'.",
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 3331",
+          "Muslim 1468"
+        ]
+      },
+      "checks": [
+        {
+          "type": "hadith",
+          "ref": "Bukhari 3331",
+          "exists": true,
+          "api_text": "Narrated Abu Huraira:Allah's Apostle said, \"Treat women nicely, for a woman is created from a rib, and the most curved portion of the rib is its upper"
+        },
+        {
+          "type": "hadith",
+          "ref": "Muslim 1468",
+          "exists": true,
+          "api_text": "Abu Dharr reported:The Messenger of Allah (ﷺ) struck my thigh and said: How would you act if you survive among the people who would delay prayers beyo"
+        }
+      ],
+      "verdict": "FAUX_POSITIF"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 104,
+      "sonnet_notes": "Les références de hadith sont incorrectes. Ce hadith célèbre ne correspond pas aux numérotations Bukhari 10 ou Muslim 41 dans les compilations standards.",
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 10",
+          "Muslim 41"
+        ]
+      },
+      "checks": [
+        {
+          "type": "hadith",
+          "ref": "Bukhari 10",
+          "exists": true,
+          "api_text": "Narrated 'Abdullah bin 'Amr: The Prophet (ﷺ) said, \"A Muslim is the one who avoids harming Muslims with his tongue and hands. And a Muhajir (emigrant)"
+        },
+        {
+          "type": "hadith",
+          "ref": "Muslim 41",
+          "exists": true,
+          "api_text": ""
+        }
+      ],
+      "verdict": "FAUX_POSITIF"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 106,
+      "sonnet_notes": "Les numérotations de hadith citées sont inexactes. Le hadith sur la pudeur existe dans Bukhari et Muslim, mais pas aux références indiquées.",
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 6117",
+          "Muslim 37"
+        ]
+      },
+      "checks": [
+        {
+          "type": "hadith",
+          "ref": "Bukhari 6117",
+          "exists": true,
+          "api_text": "Narrated Abu As-Sawar Al-Adawi:`Imran bin Husain said: The Prophet (ﷺ) said, \"Haya' (pious shyness from committing religeous indiscretions) does not b"
+        },
+        {
+          "type": "hadith",
+          "ref": "Muslim 37",
+          "exists": true,
+          "api_text": ""
+        }
+      ],
+      "verdict": "FAUX_POSITIF"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 109,
+      "sonnet_notes": "Attribution incorrecte et fusion de deux hadiths distincts. Le hadith sur 'Afshû al-salâm' (répandre le salam) n'est pas numéroté Muslim 54.",
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Muslim 54"
+        ]
+      },
+      "checks": [
+        {
+          "type": "hadith",
+          "ref": "Muslim 54",
+          "exists": true,
+          "api_text": ""
+        }
+      ],
+      "verdict": "FAUX_POSITIF"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 111,
+      "sonnet_notes": "Les numérotations de hadith citées (Bukhari 6018, Muslim 47) ne correspondent pas aux références standards. Le hadith existe mais avec des numéros différents.",
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 6018",
+          "Muslim 47"
+        ]
+      },
+      "checks": [
+        {
+          "type": "hadith",
+          "ref": "Bukhari 6018",
+          "exists": true,
+          "api_text": "Narrated Abu Huraira:Allah's Messenger (ﷺ) said, \"Anybody who believes in Allah and the Last Day should not harm his neighbor, and anybody who believe"
+        },
+        {
+          "type": "hadith",
+          "ref": "Muslim 47",
+          "exists": true,
+          "api_text": ""
+        }
+      ],
+      "verdict": "FAUX_POSITIF"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 121,
+      "sonnet_notes": "Le hadith cité existe mais la référence 'Muslim 671' est inexacte. Ce hadith se trouve dans Sahih Muslim mais sous une numérotation différente (1371 dans l'édition standard).",
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Muslim 671"
+        ]
+      },
+      "checks": [
+        {
+          "type": "hadith",
+          "ref": "Muslim 671",
+          "exists": true,
+          "api_text": "Hammam narrated the hadith from A'isha like the (above-mentioned) traditions"
+        }
+      ],
+      "verdict": "FAUX_POSITIF"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 129,
+      "sonnet_notes": "Les numéros de références Bukhari et Muslim sont inexacts. Le hadith authentique sur les 100 parts de miséricorde se trouve dans Sahih Muslim 2753 (non 2752) et Sahih Bukhari 3295 (non 6000).",
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 6000",
+          "Muslim 2752"
+        ]
+      },
+      "checks": [
+        {
+          "type": "hadith",
+          "ref": "Bukhari 6000",
+          "exists": true,
+          "api_text": "Narrated Abu Huraira:I heard Allah's Messenger (ﷺ) saying, Allah divided Mercy into one hundred parts. He kept ninety nine parts with Him and sent dow"
+        },
+        {
+          "type": "hadith",
+          "ref": "Muslim 2752",
+          "exists": true,
+          "api_text": "Imran b. Husain (Allah be pleased with them) reported that Allah's Apostle (ﷺ) said to a person:Did you observe any fast in the middle of this month ("
+        }
+      ],
+      "verdict": "FAUX_POSITIF"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 130,
+      "sonnet_notes": "Le hadith cité existe mais le numéro de référence est incorrect. Le hadith des actions par leurs fins (الأعمال بالنيات) est célèbre mais numéroté différemment dans Bukhari.",
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 6607"
+        ]
+      },
+      "checks": [
+        {
+          "type": "hadith",
+          "ref": "Bukhari 6607",
+          "exists": true,
+          "api_text": "Narrated Sahl bin Sa`d:There was a man who fought most bravely of all the Muslims on behalf of the Muslims in a battle (Ghazwa) in the company of the "
+        }
+      ],
+      "verdict": "FAUX_POSITIF"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 142,
+      "sonnet_notes": "Le hadith cité existe mais avec une attribution partielle incorrecte. Abu Dawud 1536 ne contient pas ce hadith complet. Tirmidhi 1905 est la source principale correcte.",
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Tirmidhi 1905",
+          "Abu Dawud 1536"
+        ]
+      },
+      "checks": [
+        {
+          "type": "hadith",
+          "ref": "Tirmidhi 1905",
+          "exists": true,
+          "api_text": "Abu Harairah narrated that the Messenger of Allah said:\"Three supplications are accepted , there is no doubt in them (about them being accepted): The "
+        },
+        {
+          "type": "hadith",
+          "ref": "Abu Dawud 1536",
+          "exists": true,
+          "api_text": "Narrated AbuHurayrah: The Prophet (ﷺ) said: Three supplications are answered, there being no doubt about them; that of a father, that of a traveller a"
+        }
+      ],
+      "verdict": "FAUX_POSITIF"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 149,
+      "sonnet_notes": "Le hadith cité existe dans Bukhari mais le numéro de référence est inexact. La formulation et l'attribution posent problème.",
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 2387"
+        ]
+      },
+      "checks": [
+        {
+          "type": "hadith",
+          "ref": "Bukhari 2387",
+          "exists": true,
+          "api_text": "Narrated Abu Huraira:The Prophet (ﷺ) said, \"Whoever takes the money of the people with the intention of repaying it, Allah will repay it on his behalf"
+        }
+      ],
+      "verdict": "FAUX_POSITIF"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 153,
+      "sonnet_notes": "Le hadith est authentique mais la traduction et l'interprétation sont inexactes. 'Kabid ratba' (foie humide) désigne tout être vivant, pas spécifiquement 'humain'. L'arabe ne précise pas 'humain'.",
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 2363",
+          "Muslim 2244"
+        ]
+      },
+      "checks": [
+        {
+          "type": "hadith",
+          "ref": "Bukhari 2363",
+          "exists": true,
+          "api_text": "Narrated Abu Huraira:Allah's Messenger (ﷺ) said, \"While a man was walking he felt thirsty and went down a well and drank water from it. On coming out "
+        },
+        {
+          "type": "hadith",
+          "ref": "Muslim 2244",
+          "exists": true,
+          "api_text": "Abu'l-Hayyaj al-Asadi told that 'Ali (b. Abu Talib) said to him:Should I not send you on the same mission as Allah's Messenger (ﷺ) sent me? Do not lea"
+        }
+      ],
+      "verdict": "FAUX_POSITIF"
+    },
+    {
+      "section": "duaas",
+      "entry_id": 4,
+      "sonnet_notes": "Les références citées (Abu Dawud 30, Tirmidhi 7) sont inexactes. Le hadith sur 'Ghufrānaka' en sortant des toilettes se trouve dans Abu Dawud 4:23 (Kitab al-Tahara) et Tirmidhi 2:45, pas aux numéros cités.",
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Tirmidhi 7",
+          "Abu Dawud 30"
+        ]
+      },
+      "checks": [
+        {
+          "type": "hadith",
+          "ref": "Tirmidhi 7",
+          "exists": true,
+          "api_text": "Aishah, [may Allah be pleased with her] said:\"When the Prophet would exit the toilet he would say: 'Ghufranak"
+        },
+        {
+          "type": "hadith",
+          "ref": "Abu Dawud 30",
+          "exists": true,
+          "api_text": "Narrated Aisha, Ummul Mu'minin: When the Prophet (ﷺ) came out of the privy, he used to say: \"Grant me Thy forgiveness"
+        }
+      ],
+      "verdict": "FAUX_POSITIF"
+    },
+    {
+      "section": "duaas",
+      "entry_id": 21,
+      "sonnet_notes": "Attribution incorrecte du premier duaa à Ibn Abbas. Sources citées (Abu Dawud 3106, Tirmidhi 2083) correspondent au deuxième duaa (Allāhumma rabba an-nāsi...), pas au premier.",
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Tirmidhi 2083",
+          "Abu Dawud 3106"
+        ]
+      },
+      "checks": [
+        {
+          "type": "hadith",
+          "ref": "Tirmidhi 2083",
+          "exists": true,
+          "api_text": "Ibn 'Abbas narrated that the Prophet (S.A.W) said:\"There is no Muslim worshiper who visits one who is ill - other than at the time of death - and he s"
+        },
+        {
+          "type": "hadith",
+          "ref": "Abu Dawud 3106",
+          "exists": true,
+          "api_text": "Narrated Abdullah ibn Abbas: The Prophet (ﷺ) said: If anyone visits a sick whose time (of death) has not come, and says with him seven times: I ask Al"
+        }
+      ],
+      "verdict": "FAUX_POSITIF"
+    },
+    {
+      "section": "duaas",
+      "entry_id": 29,
+      "sonnet_notes": "Les références Bukhari 3303 et Muslim 2729 ne correspondent pas à ce hadith. Les numérotations sont incorrectes ou inexactes.",
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 3303",
+          "Muslim 2729"
+        ]
+      },
+      "checks": [
+        {
+          "type": "hadith",
+          "ref": "Bukhari 3303",
+          "exists": true,
+          "api_text": "Narrated Abu Huraira:The Prophet (ﷺ) said, \"When you hear the crowing of roosters, ask for Allah's Blessings for (their crowing indicates that) they h"
+        },
+        {
+          "type": "hadith",
+          "ref": "Muslim 2729",
+          "exists": true,
+          "api_text": "Abdullah b. 'Amr b. al-'As reported that the Messenger of Allah (ﷺ) was informed that he could stand up for (prayer) throughout the night and observe "
+        }
+      ],
+      "verdict": "FAUX_POSITIF"
+    },
+    {
+      "section": "duaas",
+      "entry_id": 58,
+      "sonnet_notes": "Attribution historique incorrecte du tashahhud à l'Isrâ' et Mi'râj. Le récit du dialogue avec Allah pendant l'Isrâ' n'est pas une source authentique pour l'origine du tashahhud.",
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 6230",
+          "Muslim 402"
+        ]
+      },
+      "checks": [
+        {
+          "type": "hadith",
+          "ref": "Bukhari 6230",
+          "exists": true,
+          "api_text": "Narrated `Abdullah:When we prayed with the Prophet (ﷺ) we used to say: As-Salam be on Allah from His worshipers, As- Salam be on Gabriel, As-Salam be "
+        },
+        {
+          "type": "hadith",
+          "ref": "Muslim 402",
+          "exists": true,
+          "api_text": "Abu Dharr reported:I asked the Messenger of Allah (ﷺ) the (implication of the) words of Allah, the Exalted: The sun glides to its appointed resting pl"
+        }
+      ],
+      "verdict": "FAUX_POSITIF"
+    },
+    {
+      "section": "duaas",
+      "entry_id": 104,
+      "sonnet_notes": "Attribution incorrecte du hadith. La source Muslim 963 ne correspond pas à ce du'a complet. Le hadith est attribué à Awf ibn Malik mais la chaîne de transmission et la référence exacte sont problématiques.",
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Muslim 963"
+        ]
+      },
+      "checks": [
+        {
+          "type": "hadith",
+          "ref": "Muslim 963",
+          "exists": true,
+          "api_text": "Abu Huraira reported:The Messenger of Allah (ﷺ) said: Does the man who lifts his head ahead of the Imam (from prostration) not fear that Allah may cha"
+        }
+      ],
+      "verdict": "FAUX_POSITIF"
+    },
+    {
+      "section": "duaas",
+      "entry_id": 165,
+      "sonnet_notes": "La source Bukhari 1154 ne correspond pas à ce hadith. Le hadith cité est attribué à 'Ubâda ibn as-Sâmit mais la référence Bukhari 1154 traite d'un sujet différent (ablutions).",
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 1154"
+        ]
+      },
+      "checks": [
+        {
+          "type": "hadith",
+          "ref": "Bukhari 1154",
+          "exists": true,
+          "api_text": "Narrated 'Ubada bin As-Samit:The Prophet (ﷺ) said, \"Whoever gets up at night and says: -- 'La ilaha il-lallah Wahdahu la Sharika lahu Lahu-lmulk, waLa"
+        }
+      ],
+      "verdict": "FAUX_POSITIF"
+    },
+    {
+      "section": "duaas",
+      "entry_id": 243,
+      "sonnet_notes": "Les références Bukhari 935 et Muslim 852 ne correspondent pas au hadith cité. Le hadith sur l'heure du vendredi se trouve dans Sahih Muslim 852 (correct) mais Bukhari 935 traite d'un sujet différent.",
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 935",
+          "Muslim 852"
+        ]
+      },
+      "checks": [
+        {
+          "type": "hadith",
+          "ref": "Bukhari 935",
+          "exists": true,
+          "api_text": "Narrated Abu Huraira:Allah's Messenger (ﷺ) talked about Friday and said, \"There is an hour (opportune time) on Friday and if a Muslim gets it while pr"
+        },
+        {
+          "type": "hadith",
+          "ref": "Muslim 852",
+          "exists": true,
+          "api_text": ""
+        }
+      ],
+      "verdict": "FAUX_POSITIF"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 42,
+      "sonnet_notes": "Les références citées ne correspondent pas au contenu. Abu Dawood 75 et Tirmidhi 92 traitent de sujets différents, pas de la pureté des chats.",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF_FOUND"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 94,
+      "sonnet_notes": "Le verset n'est pas répété deux fois dans le même paragraphe. Coran 94:5-6 contient deux versets distincts, pas une répétition du même verset.",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF_FOUND"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 111,
+      "sonnet_notes": "Attribution fausse à Bukhari 3364 + affirmation non vérifiable sur 4000 ans + mélange de sources incompatibles",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF_FOUND"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 143,
+      "sonnet_notes": "Les références Bukhari 2442 et Muslim 2580 ne correspondent pas à ce hadith. Le hadith cité existe mais avec des numérotations différentes selon les éditions.",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF_FOUND"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 232,
+      "sonnet_notes": "Attribution correcte du hadith, mais affirmation scientifique fausse. Le coccyx se décompose normalement comme les autres os. Aucune preuve scientifique ne soutient cette prétention.",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF_FOUND"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 254,
+      "sonnet_notes": "Les références citées ne traitent pas ce sujet. L'Hatim (croissant) est bien une partie non construite de la Kaaba originelle, mais les hadiths cités ne le documentent pas.",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF_FOUND"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 276,
+      "sonnet_notes": "Les références Bukhari 527 et Muslim 85 ne correspondent pas à ce hadith. Les numérotations citées renvoient à d'autres hadiths. L'attribution est incorrecte.",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF_FOUND"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 292,
+      "sonnet_notes": "Les références citées (Tirmidhi 2617 / Ibn Majah 802) ne correspondent pas à ce hadith. Le texte cité ne figure pas à ces numéros de chapitre.",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF_FOUND"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 294,
+      "sonnet_notes": "Le hadith existe mais le chiffre est incorrect. Les sources classiques citent 'une part sur quarante-six' UNIQUEMENT dans certaines versions, tandis que d'autres versions authentiques donnent 'une part sur quarante-trois'.",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF_FOUND"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 299,
+      "sonnet_notes": "Les numéros de hadith cités ne correspondent pas au contenu décrit. Les références Bukhari 7017 et Muslim 2263 traitent d'autres sujets, pas des rêves à la fin des temps.",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF_FOUND"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 306,
+      "sonnet_notes": "Attribution incorrecte et contenu inexact. Le hadith cité ne correspond pas à Sahih Bukhari 7042. La formulation finale sur 'nouer deux grains d'orge' est erronée.",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF_FOUND"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 308,
+      "sonnet_notes": "Affirmation factuellement inexacte : le miel n'est PAS le seul aliment cité comme remède dans le Coran.",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF_FOUND"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 315,
+      "sonnet_notes": "Les hadiths cités ne correspondent pas au contenu décrit. Les références données ne traitent pas du lait comme 'unique boisson sans substitut'.",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF_FOUND"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 327,
+      "sonnet_notes": "Citation coranique inexacte et attribution scientifique vague. Coran 2:173 ne dit pas « C'est un péché » mais énumère les aliments interdits.",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF_FOUND"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 332,
+      "sonnet_notes": "Attribution hadith incorrecte. Le hadith de la graine noire existe mais pas sous la référence Bukhari 5688. Sahih Bukhari 5688 traite d'un sujet différent.",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF_FOUND"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 335,
+      "sonnet_notes": "Attribution hadith inexacte + mélange inapproprié de sources religieuses et scientifiques sans lien établi",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF_FOUND"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 339,
+      "sonnet_notes": "Attribution fausse à Sahih Bukhari 211. Le hadith sur le rinçage après le lait existe mais pas à cette référence précise. La comparaison avec les études modernes est spéculative.",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF_FOUND"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 342,
+      "sonnet_notes": "Les références citées ne correspondent pas au hadith mentionné. Le hadith sur le rire excessif existe mais avec des numéros de collection différents.",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF_FOUND"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 345,
+      "sonnet_notes": "Attribution fausse. La compilation du Coran en un seul codex standardisé s'est faite sous Uthman (3e calife), pas Abu Bakr. Abu Bakr a collecté les matériaux.",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF_FOUND"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 373,
+      "sonnet_notes": "La référence Bukhari 7405 n'existe pas. Le hadith cité est authentique mais provient de Muslim, pas de Bukhari. Attribution de source incorrecte.",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF_FOUND"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 403,
+      "sonnet_notes": "La sourate 94 (Al-Inshirah) contient bien le verset sur la facilité avec la difficulté, mais l'attribution précise est inexacte.",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF_FOUND"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 407,
+      "sonnet_notes": "Hadith Bukhari 3563 existe mais ne soutient pas cette affirmation générale. Le hadith parle d'une situation spécifique, pas d'une règle absolue.",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF_FOUND"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 424,
+      "sonnet_notes": "La référence Bukhari 5678 n'existe pas. Sahih Bukhari contient environ 7275 hadiths numérotés. Le hadith cité existe mais avec une numérotation différente.",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF_FOUND"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 428,
+      "sonnet_notes": "Le hadith cité (Bukhari 6133) existe mais son contenu ne correspond pas à la citation donnée. La source est incorrectement attribuée ou le texte est déformé.",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF_FOUND"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 430,
+      "sonnet_notes": "Le hadith cité (Muslim 2625) ne correspond pas à ce texte. Muslim 2625 traite de la viande et du bouillon, mais pas de cette formulation spécifique sur 'ajouter de l'eau et penser au voisin'.",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF_FOUND"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 439,
+      "sonnet_notes": "La référence Bukhari 2480 n'existe pas ou est incorrecte. Le hadith sur la défense des biens existe mais avec une numérotation différente et des variantes de formulation.",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF_FOUND"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 450,
+      "sonnet_notes": "La sourate 95 (At-Tin) ne contient que 8 versets. Le verset 95:4 existe mais son contenu ne correspond pas à la citation donnée.",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF_FOUND"
+    },
+    {
+      "section": "fiqh",
+      "entry_id": 30,
+      "sonnet_notes": "Attribution hadith incorrecte. Le hadith sur Asma et le sang menstruel existe mais les numérotations citées ne correspondent pas aux sources classiques.",
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 227",
+          "Muslim 291"
+        ]
+      },
+      "checks": [
+        {
+          "type": "hadith",
+          "ref": "Bukhari 227",
+          "exists": true,
+          "api_text": "Narrated Asma':A woman came to the Prophet (ﷺ) and said, \"If anyone of us gets menses in her clothes then what should she do?\" He replied, \"She should"
+        },
+        {
+          "type": "hadith",
+          "ref": "Muslim 291",
+          "exists": true,
+          "api_text": "It is reported on the authority of Hammam b, al-Harith that a man used to carry tales to the governor. We were sitting in the mosque. the people said:"
+        }
+      ],
+      "verdict": "FAUX_POSITIF"
+    },
+    {
+      "section": "fiqh",
+      "entry_id": 31,
+      "sonnet_notes": "Attribution hadith incorrecte. Abu Dawud 376 traite de l'ablution, pas de l'urine infantile. La distinction garçon/fille n'existe pas dans les sources classiques.",
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Tirmidhi 610",
+          "Abu Dawud 376"
+        ]
+      },
+      "checks": [
+        {
+          "type": "hadith",
+          "ref": "Tirmidhi 610",
+          "exists": true,
+          "api_text": "Ali bin Abi Talib (may Allah be pleased with him) narrated that :the Messenger of Allah said, about urine of a male child that suckles: \"The urine of "
+        },
+        {
+          "type": "hadith",
+          "ref": "Abu Dawud 376",
+          "exists": true,
+          "api_text": "Narrated AbusSamh: I used to serve the Prophet (ﷺ). Whenever he intended to wash himself, he would say: Turn your back towards me, So I would turn my "
+        }
+      ],
+      "verdict": "FAUX_POSITIF"
+    },
+    {
+      "section": "fiqh",
+      "entry_id": 83,
+      "sonnet_notes": "Les références Bukhari 645 et Muslim 650 ne correspondent pas au hadith cité. Le hadith du '27 fois' existe mais avec des numéros différents.",
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 645",
+          "Muslim 650"
+        ]
+      },
+      "checks": [
+        {
+          "type": "hadith",
+          "ref": "Bukhari 645",
+          "exists": true,
+          "api_text": "Narrated `Abdullah bin `Umar:Allah's Messenger (ﷺ) said, \"The prayer in congregation is twenty seven times superior to the prayer offered by a person "
+        },
+        {
+          "type": "hadith",
+          "ref": "Muslim 650",
+          "exists": true,
+          "api_text": "Abu Huraira reported:The Messenger of Allah (ﷺ) said: When a dog drinks out of a vessel belonging to any one of you, he must wash it seven times"
+        }
+      ],
+      "verdict": "FAUX_POSITIF"
+    },
+    {
+      "section": "fiqh",
+      "entry_id": 91,
+      "sonnet_notes": "Le hadith cité (Muslim 728) ne correspond pas au contenu décrit. La source et l'attribution sont inexactes.",
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Muslim 728"
+        ]
+      },
+      "checks": [
+        {
+          "type": "hadith",
+          "ref": "Muslim 728",
+          "exists": true,
+          "api_text": "Abu Salamab. 'Abd al-Rahman reported:I along with the foster brother of 'A'isha went to her and he asked about the bath of the Apostle (ﷺ) because of "
+        }
+      ],
+      "verdict": "FAUX_POSITIF"
+    },
+    {
+      "section": "fiqh",
+      "entry_id": 102,
+      "sonnet_notes": "Le hadith Muslim 1154 ne contient pas cette formulation. Le hadith authentique concerne Aïcha rapportant que le Prophète arrivait chez elle et demandait s'il y avait à manger, mais ne parle pas explicitement de jeûne surérogatoire avec intention après l'aube.",
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Muslim 1154"
+        ]
+      },
+      "checks": [
+        {
+          "type": "hadith",
+          "ref": "Muslim 1154",
+          "exists": true,
+          "api_text": "Umar b. Abu Salama reported:I saw the Messenger of Allah (ﷺ) saying prayer in the house of Umm Salama in a single garment with its extremities crossin"
+        }
+      ],
+      "verdict": "FAUX_POSITIF"
+    },
+    {
+      "section": "fiqh",
+      "entry_id": 163,
+      "sonnet_notes": "Les références Bukhari 6234 et Muslim 54 sont inexactes. Le hadith sur les salutations (marcheur/assis, jeune/âgé, petit/grand groupe) existe mais avec des numéros différents. La citation sur le Paradis et l'amour est authentique mais mal attribuée aux références données.",
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 6234",
+          "Muslim 54"
+        ]
+      },
+      "checks": [
+        {
+          "type": "hadith",
+          "ref": "Bukhari 6234",
+          "exists": true,
+          "api_text": "Narrated Abu Huraira: Allah's Messenger (ﷺ) said, \"The younger person should greet the older one, and the walking person should greet the sitting one,"
+        },
+        {
+          "type": "hadith",
+          "ref": "Muslim 54",
+          "exists": true,
+          "api_text": ""
+        }
+      ],
+      "verdict": "FAUX_POSITIF"
+    },
+    {
+      "section": "fiqh",
+      "entry_id": 164,
+      "sonnet_notes": "Les références citées sont inexactes. Bukhari 12 n'existe pas (Sahih Bukhari est organisé par chapitres/kitab, pas par numérotation simple). Ahmad 3848 ne correspond pas aux hadiths standards sur le salam.",
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 12"
+        ]
+      },
+      "checks": [
+        {
+          "type": "hadith",
+          "ref": "Bukhari 12",
+          "exists": true,
+          "api_text": "Narrated 'Abdullah bin 'Amr: A man asked the Prophet (ﷺ) , \"What sort of deeds or (what qualities of) Islam are good?\" The Prophet (ﷺ) replied, 'To fe"
+        }
+      ],
+      "verdict": "FAUX_POSITIF"
+    },
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_new_057",
+      "sonnet_notes": "Attribution coranique incorrecte. Coran 33:4 ne contient pas cette citation. Le verset parle des épouses du Prophète, pas du cœur unique.",
+      "refs_found": {
+        "quran": [
+          "33:4"
+        ],
+        "hadith": []
+      },
+      "checks": [
+        {
+          "type": "quran",
+          "ref": "33:4",
+          "exists": true,
+          "api_text": "Allah n'a pas placé à l'homme deux cœurs dans sa poitrine. Il n'a point assimilé à vos mères vos épouses [à qui vous dites en les répudiant]: «Tu es ["
+        }
+      ],
+      "verdict": "FAUX_POSITIF"
+    },
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_new_174",
+      "sonnet_notes": "Citation de Margulis non vérifiable et attribuée de manière douteuse. Coran 3:6 est correct mais la connexion avec Margulis est problématique.",
+      "refs_found": {
+        "quran": [
+          "3:6"
+        ],
+        "hadith": []
+      },
+      "checks": [
+        {
+          "type": "quran",
+          "ref": "3:6",
+          "exists": true,
+          "api_text": "C'est Lui qui vous donne forme dans les matrices comme Il veut. Point de divinité à part Lui, le Puissant, le Sage."
+        }
+      ],
+      "verdict": "FAUX_POSITIF"
+    },
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_old_161",
+      "sonnet_notes": "Attribution fausse à Ibn Atâ-Allâh et citation Hawking non vérifiée. Leibniz et Heidegger corrects.",
+      "refs_found": {
+        "quran": [
+          "39:62"
+        ],
+        "hadith": []
+      },
+      "checks": [
+        {
+          "type": "quran",
+          "ref": "39:62",
+          "exists": true,
+          "api_text": "Allah est le Créateur de toute chose, et de toute chose Il est Garant."
+        }
+      ],
+      "verdict": "FAUX_POSITIF"
+    }
+  ]
+}

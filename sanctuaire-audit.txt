@@ -1,0 +1,158 @@
+SANCTUAIRE AUDIT — script.js
+================================
+
+1. FONCTION DE RENDU PRINCIPALE
+================================
+
+v2GoSanctuaire() — ligne 11305
+-------------------------------
+- Role : point d'entree unique du Sanctuaire (vue home)
+- Appelee depuis : v2Init(), v2GoTo() retour, swipe right, Escape, nav-bar click
+- Flow :
+  1. setupTopUI('sanctuaire')
+  2. Fade-out vue active (150ms transition)
+  3. _showSanctuaire() interne :
+     - Cache toutes les .view, active #view-sanctuaire
+     - Active topbar-v2 + nav-bar-v2
+     - Ajoute body.v2-mode
+     - Cache backBtn
+     - Desactive niyyahScreen / notifPermScreen
+     - Met a jour nav highlight (v2nav-sanctuaire)
+     - Appelle updateMedaillonState()
+     - setTimeout showStarUnlockModal (800ms)
+     - setTimeout openDefiLundiModal (1500ms)
+     - setTimeout _showDefiToastDaily (2500ms)
+  4. Ajoute .no-intro sur sanctEl (skip cascade au retour)
+  5. Mode Silence : si isSilenceDay(), cree/affiche #silence-overlay et return
+  6. v2RefreshStats()
+  7. renderDefiCard()
+  8. Encart Cure colere (si cure_colere en cours)
+  9. Invitation douce Muhasaba (si colere_muhasaba_invite)
+
+
+2. FONCTIONS APPELEES DIRECTEMENT
+==================================
+
+Depuis v2GoSanctuaire() :
+  - setupTopUI('sanctuaire')                    — ligne ~11280
+  - updateMedaillonState()                       — ligne 12392
+  - showStarUnlockModal()                        — ligne 1801
+  - openDefiLundiModal()                         — ligne 799
+  - _showDefiToastDaily()                        — ligne 850
+  - v2RefreshStats()                             — ligne 12785
+  - renderDefiCard()                             — ligne 879
+  - isSilenceDay()                               — (chercher)
+  - _getPrenom()                                 — ligne 12149
+  - openCureColere()                             — (inline onclick)
+  - openMuhasabaIntro()                          — (inline onclick)
+
+Depuis v2RefreshStats() :
+  - updateSanctuaireNextPrayer()                 — (chercher)
+  - applyTawbaGlow()                             — (chercher)
+  - v2ApplyI18n()                                — (chercher)
+  - _getPrenom()                                 — ligne 12149
+  - Decouverte encart J1-J7 (inline IIFE)
+  - Greeting/murmure logic (salam 1x/jour puis murmure rotatif)
+
+Depuis updateSanctuaireMoment() — ligne 13143 :
+  - getCurrentPrayerBlock()
+  - getEffectiveMotiv()
+  - isItemDone() / isDone() local
+  - getFilJourCardHTML()                         — ligne 15302
+  - getVendrediRegardCardHTML()                  — ligne 13250
+  - isFriday()
+  - updateMedaillonState()
+
+Depuis v2UpdateOrbState() — ligne 13367 :
+  - v2GetState()
+  - Lit V2_I18N / V2_LANG
+
+Depuis renderLevelStripCondensed() — ligne 12130 :
+  - getLevelProgress()
+  - isItemDone()
+
+Depuis v2Init() — ligne 13532 :
+  - checkMidnightReset()
+  - _cleanupOldDateKeys()
+  - applyAtmosphere()                            — ligne 13439
+  - v2GoSanctuaire()
+  - v2ApplyI18n()
+  - v2UpdateOrbState()
+  - triggerSpontaneousUI()                       — ligne 13498
+  - checkEvolutionRevenant()                     — ligne 13590
+  - checkEvolutionRoutine()                      — ligne 13642
+  - Splash fade-out
+
+
+3. EVENT LISTENERS ATTACHES DEPUIS CETTE VUE
+=============================================
+
+Globaux (actifs quand Sanctuaire visible) :
+  - keydown Escape → v2GoSanctuaire()             — ligne 13417
+  - touchstart/touchend swipe right → v2GoSanctuaire() — ligne 13422-13433
+
+Inline onclick dans v2GoSanctuaire() :
+  - Bouton "Reprendre la Cure" (#_cureBanner) → openCureColere()
+  - Bouton "Muhasaba" (#_muhasabaInviteBanner) → openMuhasabaIntro() + v2GoTo('bab-an-nafs')
+  - Bouton "Plus tard" (#_muhasabaInviteBanner) → snooze 24h
+
+Inline onclick dans updateSanctuaireMoment() :
+  - Bouton "Bismillah" (.btn-bismillah-moment) → openVueRituel(blockId)  — ligne 13242
+  - Bouton "Prier" (qiyam) → state['tahajjud']=true, saveState()        — ligne 13191
+  - Fil du jour card → openVueAuFilDuJour()                              — ligne 15302
+  - Vendredi regard card → openVendrediRegard()                          — ligne 13251
+
+Inline onclick dans v2RefreshStats() :
+  - Aucun bouton direct (encarts informatifs uniquement)
+
+Inline onclick dans HTML statique (#view-sanctuaire) :
+  - Orbe → openIntentionOverlay() (via onclick sur #orb-zone-v2 ou similaire)
+  - Nav items → v2GoTo('wird'), v2GoTo('checklist'), etc.
+
+
+4. MODALES / OVERLAYS OUVERTS DEPUIS LE SANCTUAIRE
+====================================================
+
+Ouverture spontanee (triggerSpontaneousUI, ligne 13498) :
+  1. checkTawba()                                — ligne 8354 → overlay tawba
+  2. _checkMuhasabaInvite()                      — ligne 3997 → banniere muhasaba
+  3. checkLevelCompletion(1..N)                   — ligne 1806 → modale level-up
+  4. showRamadanBoostModal()                      — Ramadan actif
+  5. showEidModal()                               — Ramadan termine
+  6. checkWeeklyBilan()                           — ligne 8569 → showWeeklyBilan() (ligne 7057)
+  7. checkRegardeAlert()                          — ligne 13509 → showRegardeAlertModal() (ligne 13493)
+  8. checkHijriBanner()                           — ligne 13697 → banniere mois sacre
+
+Ouverture sur timer (setTimeout dans _showSanctuaire) :
+  9. showStarUnlockModal()                        — ligne 1801 (800ms)
+  10. openDefiLundiModal()                        — ligne 799 (1500ms)
+  11. _showDefiToastDaily()                       — ligne 850 (2500ms)
+
+Ouverture depuis v2Init() :
+  12. showEvolutionModal()                        — ligne 13613 (Revenant → Regulier)
+  13. showEvolutionModalRoutine()                 — ligne 13665 (Regulier → Complet)
+
+Ouverture depuis interaction utilisateur :
+  14. openVueRituel(blockId)                      — ligne 15208 (btn bismillah)
+  15. openVueAuFilDuJour()                        — ligne 15351 (fil du jour card)
+  16. openVendrediRegard()                        — ligne 13256 (vendredi card)
+  17. openCureColere()                            — (banniere cure)
+  18. openMuhasabaIntro()                         — (banniere muhasaba)
+  19. openIntentionOverlay()                      — (tap sur orbe)
+
+Overlay Silence (inline, ligne 13347-13361) :
+  20. #silence-overlay                            — cree directement dans v2GoSanctuaire()
+
+
+RESUME
+=======
+Le Sanctuaire est compose de :
+  - v2GoSanctuaire() : orchestrateur principal (transitions, UI setup, banners)
+  - updateSanctuaireMoment() : bandeau contextuel priere/moment (le coeur dynamique)
+  - v2RefreshStats() : stats, greeting/murmure, encarts decouverte, tawba glow
+  - v2UpdateOrbState() : etat de l'orbe (intention posee ou non)
+  - renderLevelStripCondensed() : barre de progression niveau
+  - triggerSpontaneousUI() : cascade de modales spontanees (tawba, level-up, bilan, etc.)
+  - applyAtmosphere() : theme visuel base sur le mois hijri
+
+20 overlays/modales possibles depuis le Sanctuaire.

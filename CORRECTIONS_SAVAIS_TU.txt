@@ -1,0 +1,19 @@
+CORRECTIONS POUR savais_tu.json
+=================================
+
+SAVAIS_TU INDEX 111 (Zamzam)
+-----------------------------
+
+NOUVEAU TEXTE :
+À La Mecque, il y a une eau qui coule depuis le temps d'Abraham. Zamzam. C'est l'eau qui a jailli quand Hajar a cherché à boire pour son bébé Ismaïl. Des millénaires plus tard, deux millions de pèlerins en boivent chaque année. Et la source ne s'épuise pas.
+
+(Garder la source citée : Sahih Bukhari 3364)
+
+
+SAVAIS_TU INDEX 143 (Difficulté du frère)
+------------------------------------------
+
+NOUVEAU TEXTE :
+Le Prophète ﷺ a dit : « Quiconque soulage son frère d'une difficulté de ce monde, Allah le soulagera d'une difficulté du Jour de la Résurrection. » Tu aides quelqu'un aujourd'hui à porter un sac, à payer un loyer, à comprendre un papier – c'est une dette qui s'efface pour toi plus tard. Pas dans cette vie. Dans la suivante.
+
+(Garder les sources : Sahih Bukhari 2442 / Sahih Muslim 2580)

@@ -1,0 +1,2739 @@
+{
+  "summary": {
+    "OK": 69,
+    "DOUTE": 162,
+    "ERREUR": 6,
+    "SKIP": 11,
+    "API_ERROR": 1,
+    "UNKNOWN": 0
+  },
+  "elapsed_seconds": 1084,
+  "timestamp": "2026-05-22T22:17:58.127Z",
+  "total": 249,
+  "results": [
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_new_153",
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Le verset 5:118 est correctement cité mais attribué à Jésus, pas au Prophète Muhammad. L'anecdote avec Bilâl est plausible mais l'attribution à Ibn Hibbân n"
+      ]
+    },
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_new_064",
+      "verdict": "OK",
+      "notes": "Faits historiques et références vérifiés. Citation coranique exacte. Chiffre Banque mondiale plausible et actuel.",
+      "details": [
+        "Coran 70:24-25 : citation exacte - « Et dans leurs biens, il y a un droit reconnu, pour le mendiant et le démuni »",
+        "Seuil d'extrême pauvreté Banque mondiale : 2,15 USD/jour est le seuil officiel depuis 2022 (mise à jour de 1,90 USD)",
+        "Chiffre 700 millions : approximation raisonnable selon rapports BM récents (2022-2023)",
+        "Mot 'haqq' (حق) : traduction correcte comme 'droit' dans ce contexte",
+        "Aucun anachronisme, aucune invention manifeste détectée"
+      ]
+    },
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_old_139",
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"ERREUR\",\n  \"notes\": \"L'effet Verbruggen-Kirsch (2017) n'existe pas. Aucune étude néerlandaise portant ce nom n'est vérifiable. Le hadith sur Aïsha est également non authentifié"
+      ]
+    },
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_old_167",
+      "verdict": "API_ERROR",
+      "notes": "Verify indisponible",
+      "details": []
+    },
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_old_174",
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Erreur d'attribution majeure sur Coran 52:28 + doutes sur les références scientifiques et hadith\",\n  \"details\": [\n    \"ERREUR CORAN: 52:28 ne parle pas d'Al"
+      ]
+    },
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_new_155",
+      "verdict": "OK",
+      "notes": "Les faits vérifiables sont exacts. Le verset 2:286 existe et contient bien le message cité. La sourate al-Baqara est effectivement la plus longue du Coran et ce verset la clôt.",
+      "details": [
+        "Verset 2:286 existe et sa traduction est fidèle : 'Allâh n'impose à aucune âme une charge supérieure à sa capacité'",
+        "Sourate al-Baqara (chapitre 2) est confirmée comme la plus longue du Coran",
+        "Le verset 2:286 est bien le dernier verset de la sourate al-Baqara",
+        "Aucune attribution de hadith ou de parole attribuée à une personne spécifique",
+        "Le texte est un commentaire/réflexion théologique, pas une affirmation factuelle historique"
+      ]
+    },
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_new_028",
+      "verdict": "OK",
+      "notes": "Les faits historiques et l'attribution coranique sont exacts. Abu Bakr a effectivement cessé d'aider Mistah après l'incident de la calomnie (ifk), et Coran 24:22 révèle précisément cette situation.",
+      "details": [
+        "Mistah ibn Uthatha a participé à la calomnie contre Aïcha - CONFIRMÉ par les sources classiques",
+        "Abu Bakr avait juré de ne plus l'aider financièrement - CONFIRMÉ (sira Ibn Hisham, Tafsir classiques)",
+        "Coran 24:22 révélé en réponse - EXACT: le verset concerne directement Abu Bakr et Mistah",
+        "Texte coranique cité: 'Que ceux d'entre vous qui ont des grâces...' - EXACT (traduction fidèle du sens)",
+        "Réaction d'Abu Bakr: reprise des dons - CONFIRMÉE par les sources"
+      ]
+    },
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_old_152",
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Récit de Mâlik ibn Dînâr plausible mais source primaire non vérifiable directement. Attribution à Ibn al-Jawzî correcte. Référence coranique exacte. Données"
+      ]
+    },
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_old_011",
+      "verdict": "DOUTE",
+      "notes": "Faits historiques partiellement exacts, mais récit anecdotique non attesté dans les sources classiques. Attribution douteuse.",
+      "details": [
+        "Hârûn ar-Rashîd est bien mort en 809 à Tûs (Khurasan) — EXACT",
+        "Le verset 69:28-29 existe et parle de la perte du pouvoir et de la richesse — EXACT",
+        "Échanges avec Charlemagne documentés historiquement — EXACT",
+        "L'anecdote spécifique (creuser la tombe, réciter le verset au bord) — NON ATTESTÉE dans les sources classiques (Tabari, Ibn al-Athir, etc.)",
+        "Aucune source primaire ne rapporte ce récit précis avec ces détails dramatiques",
+        "Ressemble à une construction narrative édifiante plutôt qu'à un témoignage historique documenté"
+      ]
+    },
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_old_007",
+      "verdict": "DOUTE",
+      "notes": "Faits physiologiques généralement exacts, mais chiffre de 7 millions/an non vérifiable et formulation imprecise sur la fermeture des valves.",
+      "details": [
+        "Foramen ovale et canal artériel : existence et fonction correctes ✓",
+        "Fermeture à la naissance : correcte (changement de pression) ✓",
+        "Chronologie (minutes vs jours) : approximativement correcte ✓",
+        "Cardiopathie congénitale si non-fermeture : correct ✓",
+        "Chiffre '7 millions de fois par an' : non vérifiable (estimations varient selon sources)",
+        "Formulation 'l'une en quelques minutes, l'autre dans les jours' : imprécise (foramen ovale peut prendre semaines/mois)",
+        "Verset 3:6 cité correctement ✓",
+        "Contexte scientifique : pas d'erreur majeure, mais vulgarisation simplifiée"
+      ]
+    },
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_new_076",
+      "verdict": "OK",
+      "notes": "La citation coranique est exacte. Le texte est une réflexion théologique/morale, pas une affirmation historique. Aucune source historique fausse détectée.",
+      "details": [
+        "Coran 57:11 cité correctement : 'Qui est celui qui prêtera à Allah un beau prêt ? Il le lui multipliera, et il aura une généreuse récompense.' (traduction conforme aux sens classiques)",
+        "Aucune attribution historique spécifique à vérifier (pas de hadith nommé, pas de récit de sira daté)",
+        "Le texte est une méditation morale, pas une affirmation factuelle",
+        "Mention générique de 'sira' sans détail spécifique à vérifier"
+      ]
+    },
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_new_082",
+      "verdict": "DOUTE",
+      "notes": "La citation coranique est exacte, mais l'interprétation théologique dépasse la vérification factuelle. La référence 'sira' est vague et non spécifiée.",
+      "details": [
+        "Coran 24:22 : citation correcte et fidèle au texte français standard",
+        "Le verset parle effectivement de pardon et de la relation entre le pardon humain et divin",
+        "Référence 'sira' non précisée : aucune anecdote ou hadith spécifique n'est cité pour soutenir l'équation 'pardon divin = pardon humain'",
+        "L'interprétation 'Si ta main est fermée, Sa main reste fermée' est une glose théologique, non une donnée factuelle vérifiable",
+        "Aucune source hadith (Bukhari, Muslim, etc.) n'est citée pour valider cette équivalence"
+      ]
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 0,
+      "verdict": "SKIP",
+      "notes": "texte trop court",
+      "details": []
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 6,
+      "verdict": "SKIP",
+      "notes": "texte trop court",
+      "details": []
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 8,
+      "verdict": "SKIP",
+      "notes": "texte trop court",
+      "details": []
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 9,
+      "verdict": "SKIP",
+      "notes": "texte trop court",
+      "details": []
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 10,
+      "verdict": "SKIP",
+      "notes": "texte trop court",
+      "details": []
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 12,
+      "verdict": "SKIP",
+      "notes": "texte trop court",
+      "details": []
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 13,
+      "verdict": "SKIP",
+      "notes": "texte trop court",
+      "details": []
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 15,
+      "verdict": "SKIP",
+      "notes": "texte trop court",
+      "details": []
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 19,
+      "verdict": "SKIP",
+      "notes": "texte trop court",
+      "details": []
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 20,
+      "verdict": "SKIP",
+      "notes": "texte trop court",
+      "details": []
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 29,
+      "verdict": "SKIP",
+      "notes": "texte trop court",
+      "details": []
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 140,
+      "verdict": "OK",
+      "notes": "Hadith authentique bien connu. Les numérotations Bukhari 660 et Muslim 1031 correspondent aux éditions standard. Texte conforme aux versions classiques.",
+      "details": [
+        "Hadith des 'Sept catégories' (As-Saba'a) : authentique et très célèbre",
+        "Attribué correctement à Bukhari et Muslim dans leurs Sahih respectifs",
+        "Traduction française fidèle au contenu arabe du hadith",
+        "Numérotations cohérentes avec les éditions de référence",
+        "Aucun anachronisme ni invention détectable"
+      ]
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 24,
+      "verdict": "OK",
+      "notes": "Hadith Qudsi authentique de Muslim. Attribution correcte à An-Nawawi. Texte arabe et traduction français correspondent aux sources classiques.",
+      "details": [
+        "Muslim 2577 : référence exacte du Sahih Muslim",
+        "Hadith Qudsi reconnu : parole divine rapportée par le Prophète",
+        "An-Nawawi : compilateur classique des 40 hadiths (Arba'un)",
+        "Texte arabe يَا عِبَادِي إِنِّي حَرَّمْتُ الظُّلْمَ : conforme aux sources",
+        "Traduction française : fidèle au sens du hadith authentique"
+      ]
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 106,
+      "verdict": "ERREUR",
+      "notes": "Les références de hadith sont incorrectes. Le hadith sur la pudeur existe mais avec des numéros de collection différents.",
+      "details": [
+        "Bukhari 6117 n'est pas la référence correcte pour ce hadith célèbre",
+        "Muslim 37 n'est pas la référence correcte pour ce hadith",
+        "Le hadith authentique 'La pudeur n'apporte que du bien' (الحياء لا يأتي إلا بخير) se trouve dans Bukhari 3483 et Muslim 37 (mais avec une numérotation différente selon les éditions)",
+        "Les numéros de collection varient selon les éditions, mais Bukhari 6117 traite d'autres sujets",
+        "Attribution correcte : ce hadith est rapporté par Imran ibn Husayn (عمران بن حصين) et est authentique, mais les références données sont inexactes"
+      ]
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 109,
+      "verdict": "ERREUR",
+      "notes": "Attribution incorrecte et confusion de sources. Le hadith sur 'Afshû al-salâm' est authentique mais pas numéroté 'Muslim 54'. La structure citée mélange plusieurs hadiths distincts.",
+      "details": [
+        "Le hadith 'Afshû al-salâm baynakum' (Répandez le salam entre vous) existe dans Muslim, mais pas sous la référence 'Muslim 54'",
+        "La première partie 'Vous n'entrerez pas au Paradis avant de croire...' est un hadith distinct, souvent attribué à Muslim 93 ou ailleurs",
+        "Ces deux énoncés sont présentés comme un seul hadith, ce qui est factuellement inexact",
+        "La notation 'Muslim 54 sahih' est imprécise : Muslim utilise un système de numérotation différent selon les éditions"
+      ]
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 172,
+      "verdict": "OK",
+      "notes": "Hadith authentique correctement attribué à Muslim. Le texte arabe et la traduction française correspondent aux sources classiques.",
+      "details": [
+        "Hadith rapporté par Muslim (Sahih Muslim, livre du mariage/nikah, hadith 1469 selon certaines numérotations)",
+        "Chaîne de transmission fiable : d'après Abdullah ibn Umar",
+        "Texte arabe exact : الدنيا متاع وخير متاع الدنيا المرأة الصالحة",
+        "Traduction française fidèle au sens du hadith",
+        "Classé comme sahih (authentique) dans Sahih Muslim"
+      ]
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 177,
+      "verdict": "OK",
+      "notes": "Hadith authentique correctement attribué aux deux sources. Texte arabe et traduction française conformes aux versions canoniques.",
+      "details": [
+        "Hadith rapporté par Nuʿmān ibn Bashīr, présent dans Sahih al-Bukhārī (6011) et Sahih Muslim (2586)",
+        "Texte arabe exact : مَثَلُ الْمُؤْمِنِينَ فِي تَوَادِّهِمْ وَتَرَاحُمِهِمْ وَتَعَاطُفِهِمْ كَمَثَلِ الْجَسَدِ",
+        "Traduction française fidèle au sens : métaphore du corps et de ses membres",
+        "Classification 'sahih' correcte pour les deux sources",
+        "Pas d'anachronisme ni d'invention détectable"
+      ]
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 127,
+      "verdict": "OK",
+      "notes": "Hadith authentique correctement attribué à Muslim. Le texte arabe et la traduction française correspondent au contenu connu de ce hadith célèbre sur husn al-dhann (bonne opinion envers Allah).",
+      "details": [
+        "Attribution à Muslim 2877 : CORRECTE (hadith authentique dans Sahih Muslim)",
+        "Texte arabe : EXACT - correspond à la formulation classique du hadith",
+        "Traduction française : FIDÈLE au sens du texte arabe",
+        "Contexte : hadith rapporté par Jābir ibn 'Abd Allah, concernant l'importance de mourir avec une bonne opinion envers Allah",
+        "Classification 'sahih' : APPROPRIÉE selon les critères de Muslim"
+      ]
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 145,
+      "verdict": "DOUTE",
+      "notes": "Hadith authentique mais classification 'sahih' pour Tirmidhi 1210 nécessite vérification. Tirmidhi classe généralement ses hadiths comme 'hasan' ou 'sahih', mais cette nuance doit être confirmée.",
+      "details": [
+        "Le hadith existe bien dans Tirmidhi (Sunan al-Tirmidhi, chapitre du commerce)",
+        "L'arabe cité est correct et correspond au hadith connu",
+        "La traduction française est fidèle au sens du hadith",
+        "Tirmidhi 1210 est la bonne référence pour ce hadith",
+        "POINT À VÉRIFIER: Tirmidhi lui-même classe ce hadith comme 'hasan' (bon), pas systématiquement 'sahih'. La mention 'sahih' pourrait être une classification ultérieure d'autres savants (Al-Albani l'a classé sahih), mais ce n'est pas la classification originale de Tirmidhi"
+      ]
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 69,
+      "verdict": "OK",
+      "notes": "Hadith authentique bien attesté. Les références Bukhari et Muslim sont correctes. Le texte arabe et la traduction correspondent aux versions canoniques.",
+      "details": [
+        "Hadith rapporté par Abu Hurairah, présent dans Sahih Bukhari (livre du Hajj) et Sahih Muslim",
+        "La formule 'العمرة إلى العمرة كفارة لما بينهما' est exacte",
+        "Les deux parties du hadith (Umrah et Hajj accepté) sont authentiques et liées",
+        "Classement 'sahih' correct pour les deux collections"
+      ]
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 155,
+      "verdict": "OK",
+      "notes": "Hadith authentique bien attesté. Les références Bukhari et Muslim sont correctes. La traduction française est fidèle au sens du hadith arabe classique.",
+      "details": [
+        "Hadith authentique (sahih) présent dans les deux recueils majeurs cités",
+        "Référence Bukhari 3318 correcte (Kitab al-Adab/Livre des bonnes manières)",
+        "Référence Muslim 2242 correcte (Kitab al-Birr/Livre de la piété)",
+        "Texte arabe exact : دَخَلَتِ امْرَأَةٌ النَّارَ فِي هِرَّةٍ (une femme entra en Enfer à cause d'une chatte)",
+        "Contexte historique : hadith rapporté par Aisha (mère des croyants)",
+        "Traduction française fidèle au sens : enfermement sans nourriture ni accès aux insectes"
+      ]
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 116,
+      "verdict": "OK",
+      "notes": "Hadith authentique correctement attribué à Bukhari. Le texte arabe et la traduction correspondent au contenu connu du hadith sur l'étiquette du sommeil.",
+      "details": [
+        "Attribution Bukhari 6320 : CORRECTE - ce hadith figure bien dans Sahih Bukhari",
+        "Texte arabe إِذَا أَوَى أَحَدُكُمْ إِلَى فِرَاشِهِ : EXACT - correspond au début du hadith",
+        "Contenu : EXACT - le hadith traite effectivement de secouer le lit et dormir sur le côté droit",
+        "Chaîne de transmission : FIABLE - hadith rapporté par Abu Hurayra, reconnu comme sahih",
+        "Pas d'anachronisme ni d'invention détectable"
+      ]
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 79,
+      "verdict": "OK",
+      "notes": "Hadith authentique correctement attribué à Bukhari. Le texte arabe et la traduction correspondent au hadith célèbre sur les droits du voisin.",
+      "details": [
+        "Attribution Bukhari 6016 : CORRECTE - Ce hadith figure bien dans Sahih Bukhari",
+        "Texte arabe وَاللَّهِ لَا يُؤْمِنُ : EXACT - Formulation standard du hadith",
+        "Contenu : EXACT - Hadith authentique sur les droits du voisin (جار)",
+        "Chaîne de transmission : Rapporté par Abu Hurayra, authentique selon les critères de Bukhari",
+        "Pas d'anachronisme ni d'invention détectée"
+      ]
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 14,
+      "verdict": "OK",
+      "notes": "Hadith authentique correctement attribué. Les trois cas mentionnés correspondent aux sources classiques. Numérotation An-Nawawi vérifiée.",
+      "details": [
+        "Hadith présent dans Sahih Bukhari (6878) et Sahih Muslim (1676) - attributions correctes",
+        "Texte arabe exact : 'لا يحل دم امرئ مسلم إلا بإحدى ثلاث' (variantes mineures acceptées)",
+        "Les trois cas énumérés correspondent aux sources : qisas (talion), zina (adultère du marié), apostasie",
+        "Classement An-Nawawi #14 dans les 40 hadiths - correct",
+        "Qualificatif 'sahih' approprié - hadith unanimement reconnu comme authentique"
+      ]
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 78,
+      "verdict": "ERREUR",
+      "notes": "Les références Bukhari 6094 et Muslim 2607 ne correspondent pas à ce hadith. Le hadith cité est authentique mais mal attribué aux numéros de chapitre/hadith indiqués.",
+      "details": [
+        "Le hadith 'Tenez-vous à la vérité...' est authentique et rapporté par Bukhari et Muslim, mais les numéros de référence (6094 et 2607) sont inexacts ou correspondent à d'autres hadiths",
+        "La traduction du texte arabe est acceptable mais incomplète : le hadith complet inclut 'et la vérité mène à la piété, et la piété mène au Paradis'",
+        "Les numéros de hadith varient selon les éditions des Sahih ; une vérification dans l'édition utilisée est nécessaire",
+        "L'attribution 'sahih' est correcte (hadith authentique), mais les références précises doivent être vérifiées"
+      ]
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 98,
+      "verdict": "DOUTE",
+      "notes": "Hadith authentique mais classification 'sahih' inexacte pour Abu Dawud 4811. Tirmidhi 1954 est hasan, pas sahih.",
+      "details": [
+        "Le hadith existe bien avec cette formulation dans Abu Dawud et Tirmidhi",
+        "Abu Dawud 4811 : chaîne de transmission faible (isnad da'if), pas sahih",
+        "Tirmidhi 1954 : classé hasan par Tirmidhi lui-même, non sahih",
+        "L'attribution aux deux sources est correcte",
+        "La traduction française est fidèle au texte arabe"
+      ]
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 136,
+      "verdict": "DOUTE",
+      "notes": "La phrase est authentique mais l'attribution numérique nécessite vérification. Les numérotations Bukhari/Muslim varient selon les éditions. Le sens général est correct.",
+      "details": [
+        "La formule 'الجنة تحت ظلال السيوف' (Le Paradis est sous l'ombre des sabres) est un hadith authentique attribué au Prophète ﷺ",
+        "Cité dans Sahih Bukhari et Sahih Muslim, mais les numéros de référence (2818, 1742) dépendent de l'édition utilisée - à vérifier dans l'édition spécifique",
+        "Le contexte historique : hadith prononcé avant/pendant les batailles, encourageant les combattants",
+        "Pas d'anachronisme détecté - formule cohérente avec le contexte des premiers combats islamiques",
+        "La traduction et l'interprétation (récompense des combattants) sont conformes aux sources classiques"
+      ]
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 43,
+      "verdict": "DOUTE",
+      "notes": "Attribution à Muslim 26 est imprécise. Le hadith existe dans Sahih Muslim mais la numérotation 'Muslim 26' est non-standard. Vérification de la chaîne de transmission nécessaire.",
+      "details": [
+        "Le hadith sur 'من مات وهو يعلم أنه لا إله إلا الله' existe effectivement dans Sahih Muslim",
+        "La numérotation 'Muslim 26' est inhabituelle - Sahih Muslim utilise des numéros de hadith différents selon les éditions",
+        "Le texte arabe et la traduction française correspondent au contenu connu du hadith",
+        "L'attribution au Prophète (صلى الله عليه وسلم) est correcte selon les sources classiques",
+        "Manque de précision : devrait indiquer le numéro exact du hadith ou le livre/chapitre (ex: Kitab al-Iman)"
+      ]
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 91,
+      "verdict": "DOUTE",
+      "notes": "Hadith authentique mais numéros de référence non vérifiables avec certitude. Le texte et sens correspondent aux collections, mais les numérotations exactes varient selon les éditions.",
+      "details": [
+        "Hadith authentique attesté dans Bukhari et Muslim - contenu correct",
+        "Texte arabe exact et traduction fidèle vérifiés",
+        "Numéros de référence (6446 Bukhari, 1051 Muslim) : éditions différentes donnent des numéros différents - impossible de confirmer ces numéros précis sans édition spécifiée",
+        "Classement 'sahih' correct pour ce hadith",
+        "Aucun anachronisme ni invention détectée"
+      ]
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 59,
+      "verdict": "DOUTE",
+      "notes": "La première partie du hadith est correctement attribuée à Tirmidhi 3479 avec la chaîne hasan. La deuxième partie (sur le cœur distrait) nécessite vérification de source.",
+      "details": [
+        "Première partie 'ادْعُوا اللَّهَ وَأَنْتُمْ مُوقِنُونَ بِالْإِجَابَةِ' : correctement attribuée à Tirmidhi 3479, classé hasan",
+        "Deuxième partie 'Allah n'exauce pas l'invocation d'un cœur distrait' : cette formulation n'apparaît pas dans Tirmidhi 3479 avec la même source",
+        "Possible fusion de deux hadiths différents ou ajout d'une interprétation non sourcée",
+        "Vérification recommandée : consulter le texte complet de Tirmidhi 3479 pour confirmer si les deux parties proviennent du même hadith"
+      ]
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 82,
+      "verdict": "OK",
+      "notes": "Hadith authentique bien attesté. Les références Bukhari et Muslim sont correctes. Le texte arabe et la traduction française correspondent aux versions canoniques.",
+      "details": [
+        "Hadith rapporté par Abu Huraira, présent dans Sahih Bukhari (livre 78, hadith 1) et Sahih Muslim (livre 32, hadith 2548)",
+        "La formule répétée 'ummuqa thumma ummuqa thumma ummuqa thumma abuqa' est exacte",
+        "Contexte correct : question sur les droits parentaux et la priorité du respect maternel",
+        "Classification 'sahih' appropriée - hadith mutuellement rapporté par Bukhari et Muslim"
+      ]
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 87,
+      "verdict": "OK",
+      "notes": "Hadith authentique correctement attribué. La phrase arabe et sa traduction correspondent aux sources citées. C'est un hadith célèbre du Prophète.",
+      "details": [
+        "Hadith présent dans Sahih Bukhari (livre du mariage/nikah, hadith 3331)",
+        "Hadith présent dans Sahih Muslim (livre des droits des femmes, hadith 1468)",
+        "Traduction française fidèle au sens du texte arabe",
+        "Classification 'sahih' (authentique) correcte pour ces deux sources majeures",
+        "Aucun anachronisme ni invention détectée"
+      ]
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 113,
+      "verdict": "OK",
+      "notes": "Hadith authentique correctement attribué à Muslim. Le contenu correspond aux collections de hadiths sur la gratitude et ses mérites spirituels.",
+      "details": [
+        "Attribution à Muslim 2734 : vérifiée comme correcte",
+        "Chaîne de transmission : sahih (authentique) selon les critères de Muslim",
+        "Contenu : conforme aux hadiths établis sur la gratitude (shukr) envers Allah",
+        "Pas d'anachronisme ni d'invention manifeste"
+      ]
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 9,
+      "verdict": "DOUTE",
+      "notes": "Attribution et numérotation de hadith problématiques. Le texte cité est authentique mais les références données semblent inexactes ou mal formatées.",
+      "details": [
+        "Bukhari 7288 : numéro de hadith très élevé et inhabituel pour cette formulation célèbre",
+        "Muslim 1337 : à vérifier, le hadith existe dans Muslim mais la numérotation varie selon les éditions",
+        "Le texte arabe et sa traduction sont corrects et correspondent à un hadith authentique",
+        "Attribution à 'An-Nawawi' : An-Nawawi a compilé des hadiths (Riyad as-Salihin) mais n'est pas l'auteur original",
+        "La formulation 'Hadith 9 An-Nawawi' est ambiguë : pourrait signifier le 9e hadith de Riyad as-Salihin, à clarifier"
+      ]
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 97,
+      "verdict": "ERREUR",
+      "notes": "Le hadith cité existe dans Muslim, mais le numérotation et l'attribution sont inexactes. Le texte arabe et la traduction ne correspondent pas exactement aux versions authentifiées.",
+      "details": [
+        "Muslim 2568 ne correspond pas à ce hadith dans les éditions standard de Sahih Muslim",
+        "Le hadith sur la visite des malades (عيادة المريض) existe dans Muslim, mais sous une numérotation différente (généralement 2568 dans certaines éditions concerne d'autres sujets)",
+        "Le texte arabe cité ('khurfat al-janna' = verger du Paradis) est authentique mais l'attribution au numéro 2568 est douteuse",
+        "Vérification nécessaire: ce hadith apparaît dans Muslim mais probablement sous un numéro différent selon l'édition"
+      ]
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 160,
+      "verdict": "OK",
+      "notes": "Hadith authentique correctement attribué à Muslim. Le texte arabe et la traduction correspondent au contenu du hadith rapporté par Abu Huraira.",
+      "details": [
+        "Attribution correcte : Muslim 2564 (Sahih Muslim, Livre du destin/Qadar)",
+        "Texte arabe exact : إِنَّ اللَّهَ لَا يَنْظُرُ إِلَى صُوَرِكُمْ وَأَمْوَالِكُمْ",
+        "Traduction fidèle au sens du hadith",
+        "Chaîne de transmission authentique (Abu Huraira → Muslim)",
+        "Pas d'anachronisme ni d'invention"
+      ]
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 56,
+      "verdict": "OK",
+      "notes": "Hadith authentique correctement attribué à Bukhari. Le texte arabe et la traduction française correspondent au hadith connu sur le dhikr (invocation).",
+      "details": [
+        "Attribution à Bukhari 6407 : CORRECTE - ce hadith figure dans Sahih Bukhari",
+        "Qualificatif 'sahih' : APPROPRIÉ - hadith authentique selon les critères de Bukhari",
+        "Texte arabe : EXACT - correspond à la version classique du hadith",
+        "Traduction française : FIDÈLE - rend correctement le sens du hadith original",
+        "Thème : COHÉRENT - le hadith traite bien du dhikr (rappel de Dieu) et de son importance"
+      ]
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 40,
+      "verdict": "DOUTE",
+      "notes": "Attribution partiellement correcte mais numérotation suspecte. Le hadith existe dans Bukhari mais la référence 'Hadith 40 An-Nawawi' est non-standard.",
+      "details": [
+        "Le hadith 'كُنْ فِي الدُّنْيَا كَأَنَّكَ غَرِيبٌ' est authentique et attribué à Ibn Omar dans Sahih Bukhari",
+        "La référence 'Bukhari 6416' est plausible (Bukhari contient ~7500 hadiths) mais 'Hadith 40 An-Nawawi' est une numérotation non-standard - An-Nawawi a compilé 42 hadiths (Arba'in), pas une numérotation Bukhari",
+        "La deuxième partie 'Prends de ta santé pour ta maladie...' est un hadith distinct (attribué à Ibn Abbas), pas une continuation du premier",
+        "Mélange de deux hadiths différents présenté comme un seul"
+      ]
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 29,
+      "verdict": "DOUTE",
+      "notes": "Référence Bukhari 1396 inexacte. Le hadith existe mais sa numérotation diffère selon les éditions. An-Nawawi n'est pas une source primaire de Bukhari.",
+      "details": [
+        "Bukhari 1396 : numérotation variable selon éditions (Fath al-Bari, éditions modernes). Vérification impossible sans préciser l'édition",
+        "An-Nawawi (m. 676H) : compilateur de Sahih Muslim, pas de Bukhari. Peut être cité pour ses commentaires (Sharh), pas comme source primaire",
+        "Le contenu du hadith (adorer Allah sans associé, prière, zakat, liens familiaux) est authentique et bien connu",
+        "Absence de chaîne de transmission (isnad) : citation incomplète pour un hadith"
+      ]
+    },
+    {
+      "section": "duaas",
+      "entry_id": 40,
+      "verdict": "DOUTE",
+      "notes": "Attribution partiellement inexacte. Le hadith est authentique mais attribué à Abu Hurayra dans plusieurs sources, cependant les numéros de références posent question.",
+      "details": [
+        "Abu Dawud 5068 et Tirmidhi 3391 : ces numéros doivent être vérifiés. Le du'a existe dans les deux recueils mais les numéros exacts varient selon les éditions",
+        "L'attribution à Abu Hurayra est correcte pour ce du'a dans les sources classiques",
+        "Le texte arabe du du'a est exact et correspond aux versions authentiques",
+        "La variante du matin (asbahnā, amsaynā, an-nushūr) est correctement mentionnée",
+        "Classement 'Sahih' : approprié, ce du'a figure dans les recueils authentiques"
+      ]
+    },
+    {
+      "section": "duaas",
+      "entry_id": 161,
+      "verdict": "OK",
+      "notes": "Verset coranique exact, attribution correcte, contexte des 'ibâd ar-Rahmân vérifié. Traduction et exégèse plausibles selon les sources classiques.",
+      "details": [
+        "Coran 25:74 - verset exact, texte arabe correct",
+        "Attribution correcte : dernière du'a de la liste des serviteurs du Tout-Miséricordieux (25:63-74)",
+        "Contexte historique exact : énumération des traits des 'ibâd ar-Rahmân vérifiée",
+        "Traduction française acceptable et fidèle au sens",
+        "Exégèse du terme 'qurrata a'yun' conforme aux tafsirs classiques",
+        "Pas de source hadith revendiquée - seulement le verset coranique"
+      ]
+    },
+    {
+      "section": "duaas",
+      "entry_id": 179,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Attribution à Ibn Mas'ûd non vérifiée. Les références Muslim 2721 et Tirmidhi 3489 ne correspondent pas à ce du'a spécifique dans les sources classiques con"
+      ]
+    },
+    {
+      "section": "duaas",
+      "entry_id": 90,
+      "verdict": "OK",
+      "notes": "Le hadith est correctement attribué à Barâ' ibn 'Âzib. Le texte arabe et la traduction correspondent aux versions authentiques. Les références Bukhari et Muslim sont exactes pour ce du'a du coucher.",
+      "details": [
+        "Hadith authentique rapporté par Barâ' ibn 'Âzib dans Sahih Bukhari (n°247) et Sahih Muslim (n°2710)",
+        "Texte arabe conforme aux versions canoniques",
+        "Traduction française fidèle au sens",
+        "Contexte correct : du'a à réciter avant le sommeil, en dernier",
+        "Attribution exacte : 'le Prophète ﷺ a dit' et 'Barâ' ibn 'Âzib rapporte' sont correctes",
+        "Pas d'anachronisme ni d'invention détectable"
+      ]
+    },
+    {
+      "section": "duaas",
+      "entry_id": 110,
+      "verdict": "DOUTE",
+      "notes": "Attribution à Tirmidhi 3451 vérifiée, mais la chaîne de transmission et le statut 'Hasan' nécessitent confirmation. Le texte du hadith semble correct mais incomplet dans la source citée.",
+      "details": [
+        "Tirmidhi 3451 : hadith existe et concerne effectivement le du'a du croissant de Ramadan, attribué à Talha ibn 'Ubaydullah",
+        "L'attribution à Talha ibn 'Ubaydullah est correcte selon les sources classiques",
+        "Le texte arabe du du'a correspond aux versions connues dans les recueils de hadith",
+        "Statut 'Hasan' : Tirmidhi lui-même a classé ce hadith comme 'Hasan Sahih'. La mention 'selon certaines voies' est prudente mais vague",
+        "Darimi : ce hadith figure également dans le Sunan ad-Darimi, confirmant la transmission multiple",
+        "Aucun anachronisme détecté dans les faits historiques cités"
+      ]
+    },
+    {
+      "section": "duaas",
+      "entry_id": 207,
+      "verdict": "DOUTE",
+      "notes": "Attribution hadith plausible mais source spécifique (Muslim 386) non vérifiable avec certitude. Le contenu correspond aux traditions connues sur la réponse à l'adhân.",
+      "details": [
+        "Muslim 386 : référence à vérifier - le hadith sur 'radītu billāhi...' en réponse à l'adhân existe dans Muslim, mais le numéro exact varie selon les éditions",
+        "Sa'd ibn Abi Waqqâs : attribution plausible, ce compagnon est connu pour transmettre des hadiths",
+        "Contenu du duaa : formule correcte et attestée dans les sources classiques",
+        "Contexte (adhân entendu ailleurs) : application légitime du hadith, bien que le hadith original ne spécifie pas ce contexte particulier",
+        "Référence 'jour 145' : impossible à vérifier sans accès à la structure complète du document"
+      ]
+    },
+    {
+      "section": "duaas",
+      "entry_id": 94,
+      "verdict": "OK",
+      "notes": "Les versets coraniques 20:25-28 sont correctement cités et attribués à Moussa. Les faits historiques (mission auprès de Pharaon, bégaiement de Moussa) sont conformes aux sources classiques.",
+      "details": [
+        "Sourate Tâ-Hâ 20:25-28 : versets correctement identifiés et cités",
+        "Attribution à Moussa : exacte (Coran 20:25-28 rapporte effectivement sa demande)",
+        "Contexte historique : correct (Moussa envoyé à Pharaon, mentionné en 20:24)",
+        "Mention du bégaiement de Moussa : conforme à 20:27 ('wahlul 'uqdatan min lisānī')",
+        "Traduction française : fidèle au sens des versets",
+        "Source citée 'Sahih (versets coraniques)' : formulation inhabituelle mais acceptable (les versets coraniques sont authentiques par définition)"
+      ]
+    },
+    {
+      "section": "duaas",
+      "entry_id": 204,
+      "verdict": "OK",
+      "notes": "Le hadith et le du'a sont correctement attribués. Muslim 591 contient effectivement ce du'a dans le contexte du tashahhud (attestation de foi). L'attribution et le texte arabe sont exacts.",
+      "details": [
+        "Du'a correctement cité : Muslim 591 (Sahih Muslim, Livre du Tashahhud)",
+        "Texte arabe exact et translittération correcte",
+        "Traduction française fidèle au sens",
+        "Contexte d'utilisation (après parole regrettée) est une application valide du du'a",
+        "Référence au jour 61 mentionnée est cohérente (même du'a en contexte d'après-prière)",
+        "Aucun anachronisme ni invention détectée"
+      ]
+    },
+    {
+      "section": "duaas",
+      "entry_id": 9,
+      "verdict": "DOUTE",
+      "notes": "Attribution et numérotation de hadith à vérifier. Le contenu du hadith semble authentique mais les références précises (Muslim 234, Tirmidhi 55) nécessitent confirmation.",
+      "details": [
+        "Le hadith sur les 8 portes du Paradis après les ablutions est connu, mais la numérotation 'Muslim 234' et 'Tirmidhi 55' est inhabituelle et non standard",
+        "L'attribution à Omar ibn al-Khattâb comme rapporteur est plausible mais non vérifiée dans cette entrée",
+        "Le texte arabe du dua est correct et correspond à la shahada classique",
+        "La mention 'Sahih' sans précision (Sahih Muslim? Sahih Tirmidhi?) est vague",
+        "Le hadith existe dans les collections authentiques mais les numéros de référence doivent être vérifiés dans les éditions standard"
+      ]
+    },
+    {
+      "section": "duaas",
+      "entry_id": 245,
+      "verdict": "DOUTE",
+      "notes": "Le hadith sur Jibrîl et l'héritage est authentique mais les références Bukhari 6014-6015 ne correspondent pas précisément à ce contenu. Les droits du voisin sont bien documentés mais l'attribution exacte nécessite vérification.",
+      "details": [
+        "Hadith Jibrîl recommandant le voisin : authentique (Muslim 2624) mais pas Bukhari 6014-6015",
+        "Les 40 maisons : hadith authentique mais source précise non vérifiée ici",
+        "Bukhari 6014-6015 : ces numéros existent mais traitent du voisinage de manière générale, pas ce hadith spécifique",
+        "Les droits énumérés (malades, enterrements, prêts, cuisine, bruit, vue/soleil) : bien attestés dans les sources classiques",
+        "La du'a elle-même : formulation libre, non citée comme hadith direct du Prophète"
+      ]
+    },
+    {
+      "section": "duaas",
+      "entry_id": 21,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Attribution correcte des hadiths, mais le texte mélange deux du'as distincts sans clarification. La première du'a (As'alu Allāha...) n'est pas clairement so"
+      ]
+    },
+    {
+      "section": "duaas",
+      "entry_id": 132,
+      "verdict": "DOUTE",
+      "notes": "Attribution hadith plausible mais détails narratifs non vérifiables. Référence Muslim 2202 existe mais contenu exact du hadith nécessite vérification directe.",
+      "details": [
+        "Muslim 2202 est une référence valide (Sahih Muslim, Livre des invocations)",
+        "Le du'a cité correspond aux formules connues de guérison prophétique",
+        "Othmân ibn Abi al-'Âs est un compagnon authentique, gouverneur de Tâ'if",
+        "Les détails narratifs (guérison instantanée, transmission à la famille) ne sont pas vérifiables dans les sources classiques citées",
+        "L'interprétation symbolique du chiffre 7 est plausible mais relève du tafsir, non de la vérification factuelle",
+        "La structure du hadith (main sur le mal, répétition 7 fois) est conforme aux pratiques prophétiques documentées"
+      ]
+    },
+    {
+      "section": "duaas",
+      "entry_id": 194,
+      "verdict": "DOUTE",
+      "notes": "Le hadith de la plantation est authentique mais l'attribution des références présente une incohérence. La source principale est Muslim, pas Bukhari 2320.",
+      "details": [
+        "Le hadith 'si l'Heure se déclenche...' est rapporté par Anas et se trouve dans Sahih Muslim (2320), pas Bukhari 2320",
+        "Ahmad 12902 : vérification impossible sans accès direct, mais la chaîne de transmission via Anas est classiquement acceptée",
+        "La du'a citée (Allāhumma bārik...) n'est pas directement attribuée au Prophète dans les sources classiques - elle est une du'a appropriée mais son attribution prophétique directe est douteuse",
+        "Le concept de 'sadaqa jāriya' lié à la plantation est correct et bien documenté",
+        "Aucun anachronisme détecté dans le contenu historique"
+      ]
+    },
+    {
+      "section": "duaas",
+      "entry_id": 203,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Attribution partiellement vérifiable mais avec réserves. Le hadith existe dans les sources citées, mais l'attribution à 'Amr ibn Shu'ayb et le contexte péda"
+      ]
+    },
+    {
+      "section": "duaas",
+      "entry_id": 183,
+      "verdict": "DOUTE",
+      "notes": "Attribution partiellement inexacte. Le hadith sur la sortie de maison existe (Abu Dawud 5095), mais l'attribution à Tirmidhi 3426 comme source parallèle 'Sahih' nécessite vérification. La formule et le contexte sont authentiques, mais la certification 'Sahih' pour Tirmidhi 3426 est douteuse.",
+      "details": [
+        "Abu Dawud 5095 : hadith authentique sur 'Bismillahi tawakkaltu...' et la protection contre le diable",
+        "Tirmidhi 3426 : vérification requise - ce numéro ne correspond pas clairement à ce hadith dans les éditions standard",
+        "La formule arabe est correcte et bien attestée",
+        "Le contexte 'jour 7' mentionné n'est pas vérifiable sans accès au document complet",
+        "L'interprétation théologique est plausible mais dépasse la vérification factuelle"
+      ]
+    },
+    {
+      "section": "duaas",
+      "entry_id": 114,
+      "verdict": "DOUTE",
+      "notes": "Attribution hadith plausible mais détails à vérifier. Le contenu du hadith semble correct, mais la source Tirmidhi 3585 nécessite confirmation précise.",
+      "details": [
+        "Hadith Tirmidhi 3585 : la chaîne de transmission et le texte exact doivent être vérifiés dans l'édition originale",
+        "La formule 'lā ilāha illa Allāhu wahdahu...' est bien attestée comme du'a du jour de 'Arafat dans les sources classiques",
+        "L'attribution au Prophète ﷺ concernant 'le Hajj c'est 'Arafat' est correcte (hadith connu)",
+        "Les détails sur le pardon du jour de 'Arafat correspondent aux hadiths classiques",
+        "ATTENTION : Le texte contient des interprétations théologiques ('Allah descend dans Sa lumière', 'se vante') qui vont au-delà de la vérification factuelle - ces formulations doivent être cohérentes avec la doctrine islamique classique"
+      ]
+    },
+    {
+      "section": "duaas",
+      "entry_id": 121,
+      "verdict": "OK",
+      "notes": "Le verset coranique 19:18 est correctement cité et attribué. Le contexte historique de Maryam est exact. L'interprétation théologique est plausible selon les sources classiques.",
+      "details": [
+        "Coran 19:18 : citation exacte du verset et de son contexte (Maryam se retire, Jibrîl apparaît sous forme humaine)",
+        "Attribution correcte : la phrase est bien prononcée par Maryam dans ce verset",
+        "Contexte historique vérifié : Maryam dans un lieu écarté à l'est, peur devant l'apparition",
+        "Réponse de Jibrîl (19:19) : 'Je suis seulement un messager de ton Seigneur' - citation conforme",
+        "Aucun hadith cité : seule source coranique mentionnée, ce qui est approprié pour ce du'a",
+        "Pas d'anachronisme détecté"
+      ]
+    },
+    {
+      "section": "duaas",
+      "entry_id": 105,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Attribution à Muslim 974 plausible mais détails du hadith non vérifiables. Récit d'Aïcha sur Baqî' cohérent avec sources classiques. Cependant, la référence"
+      ]
+    },
+    {
+      "section": "duaas",
+      "entry_id": 126,
+      "verdict": "ERREUR",
+      "notes": "Attribution et texte du hadith incorrects. La source citée (Abu Dawud 5067, Tirmidhi 3392) ne correspond pas à ce du'a. Le texte semble tronqué et contient des éléments non vérifiables.",
+      "details": [
+        "Abu Dawud 5067 traite d'un sujet différent (non ce du'a de protection)",
+        "Tirmidhi 3392 ne correspond pas à cette invocation",
+        "Le du'a cité ressemble partiellement au du'a d'Abu Bakr (hadith authentique) mais avec des variantes non documentées",
+        "La phrase finale 'aw ajurrahu ilā muslim' (ou que je l'attire sur un musulman) n'apparaît pas dans les versions classiques du hadith",
+        "Le texte est tronqué ('Il ne te pousse pas toujours...' s'arrête abruptement)",
+        "Les sources marquées 'Sahih' sans précision (Sahih Muslim? Sahih Bukhari?) manquent de clarté"
+      ]
+    },
+    {
+      "section": "duaas",
+      "entry_id": 108,
+      "verdict": "OK",
+      "notes": "Le hadith est correctement attribué à Abu Hurayra et correspond aux sources classiques. Le contenu théologique et les références sont exactes.",
+      "details": [
+        "Hadith authentique : rapporté par Bukhari (1145) et Muslim (758) via Abu Hurayra",
+        "Contenu exact : 'Allah descend au ciel le plus proche au dernier tiers de la nuit' et pose les trois questions citées",
+        "Calcul du tiers dernier : méthode correcte (minuit à Fajr, diviser par trois)",
+        "Pratique du Prophète ﷺ : confirmée dans les sources (Tahajjud régulier)",
+        "Pas de formule fixe : correct, c'est une invocation libre",
+        "Aucun anachronisme ni invention détectée"
+      ]
+    },
+    {
+      "section": "duaas",
+      "entry_id": 231,
+      "verdict": "DOUTE",
+      "notes": "Le texte du duaa semble authentique mais l'attribution à Coran 38:86 est inexacte. La source réelle du duaa n'est pas clairement établie dans les références citées.",
+      "details": [
+        "Coran 38:86 parle de la mission du Prophète ﷺ (Qul mā as'alukum 'alayhi min ajr...) - ne contient pas ce duaa",
+        "Le duaa lui-même n'est pas directement coranique mais semble être une formulation classique de transmission",
+        "L'attribution aux 'hadiths sur la transmission' est vague - aucun hadith spécifique cité (Bukhari, Muslim, etc.)",
+        "La phrase 'Le Prophète ﷺ a dit : je ne suis pas mutakallifan' n'est pas sourcée précisément",
+        "L'analyse linguistique et théologique est solide, mais les sources historiques manquent de précision"
+      ]
+    },
+    {
+      "section": "duaas",
+      "entry_id": 148,
+      "verdict": "OK",
+      "notes": "Le verset coranique 59:10 est correctement cité et attribué. Le texte arabe correspond au Coran. L'interprétation contextuelle est plausible selon les sources classiques.",
+      "details": [
+        "Coran 59:10 : verset authentique, citation textuelle exacte",
+        "Les trois catégories mentionnées (Muhâjirûn, Ansâr, générations suivantes) correspondent à l'interprétation classique de la sourate Al-Hashr",
+        "L'expression 'wa alladhīna jā'û min ba'dihim' (ceux qui sont venus après eux) est bien présente en 59:10",
+        "La traduction française est fidèle au sens du verset",
+        "Aucune attribution de hadith fausse : seule la source coranique est citée",
+        "Pas d'anachronisme détecté"
+      ]
+    },
+    {
+      "section": "duaas",
+      "entry_id": 225,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"La du'a citée n'est pas directement coranique. Coran 18:24 parle de se souvenir d'Allah après oubli, mais ne contient pas cette formule exacte. Attribution "
+      ]
+    },
+    {
+      "section": "duaas",
+      "entry_id": 243,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"ERREUR\",\n  \"notes\": \"Les sources citées (Bukhari 935, Muslim 852) ne correspondent pas au texte du du'a présenté. Le hadith authentique sur l'heure du vendredi ne contient pas "
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 1,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Plusieurs détails factuellement inexacts ou non vérifiables selon les sources classiques.\",\n  \"details\": [\n    \"Âge relatif : Abu Bakr était environ 2-3 ans"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 2,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Les faits historiques majeurs sont exacts selon les sources classiques. Les noms des esclaves rachetés, le contexte de persécution mecquoise, et le rôle d'Abu "
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 3,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Récit historiquement exact selon les sources classiques. Attribution correcte des hadiths. Note appropriée sur le statut non-coranique de l'araignée/colombes.\""
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 4,
+      "verdict": "OK",
+      "notes": "Les faits historiques majeurs sont exacts. La date du 12 Rabi al-Awwal 11H, l'âge du Prophète (63 ans), le lieu (chambre d'Aïcha), la réaction d'Omar, le discours d'Abu Bakr et la citation coranique (3:144) sont tous conformes aux sources classiques.",
+      "details": [
+        "Date et lieu de mort : confirmés par Bukhari et sources classiques",
+        "Âge du Prophète : 63 ans est l'âge reconnu",
+        "Réaction d'Omar : attestée dans Bukhari 3667",
+        "Discours d'Abu Bakr : rapporté dans Bukhari 3667, 6830",
+        "Verset Coran 3:144 : correctement cité et contextualisé",
+        "Réaction d'Omar au verset : rapportée dans les sources (Bukhari)",
+        "Détails narratifs (embrassement du front, etc.) : plausibles selon Sîra Ibn Hisham"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 5,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Plusieurs éléments factuels à vérifier : la date exacte de mort, l'âge, le récit du poison, et surtout l'attribution de la citation sur Omar.\",\n  \"details\":"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 6,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Les faits historiques majeurs sont exacts selon les sources classiques. La conversion d'Omar (année 6 de la prophétie), ses caractéristiques physiques, son rôl"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 7,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Plusieurs éléments factuellement exacts, mais des imprécisions chronologiques et une anecdote non vérifiable dans les sources classiques.\",\n  \"details\": [\n "
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 8,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Majorité des faits vérifiables, mais deux points nécessitent clarification : le nombre exact des muwafaqat et l'attribution précise du hadith sur le fils d'"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 10,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Les faits historiques majeurs sont exacts : date, lieu, assassin, circonstances. Les sources citées sont appropriées. L'auteur signale correctement que les par"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 11,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Les faits historiques majeurs sont exacts selon les sources classiques. Les détails sur Khadija (richesse, commerce, veuvage, âge, réputation) correspondent au"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 12,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Majorité des faits vérifiables, mais une attribution problématique et un détail chronologique à clarifier.\",\n  \"details\": [\n    \"✓ Khadija bint Khuwaylid : "
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 13,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Majorité des faits vérifiables, mais une affirmation centrale non sourcée et une ambiguïté chronologique sur Ali.\",\n  \"details\": [\n    \"✓ Khadija première c"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 14,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Plusieurs points factuels nécessitent vérification : le nombre de filles vivantes à la mort de Khadija, la date exacte, et l'attribution des hadiths cités.\""
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 15,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Le hadith des quatre femmes est authentique, mais les références Bukhari citées (3411, 3815) ne correspondent pas exactement à ce hadith dans les numérotati"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 16,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Plusieurs points factuellement exacts, mais la naissance dans la Ka'ba reste une tradition minoritaire/contestée. Chronologie d'Ali et timing de la prophéti"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 17,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Les faits historiques majeurs sont exacts. Les batailles, l'âge approximatif à Badr, le sabre Dhu al-Fiqar, et les hadith cités correspondent aux sources class"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 18,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Plusieurs points factuellement vérifiables, mais des détails non confirmés par les sources citées et une affirmation généalogique excessive.\",\n  \"details\": "
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 20,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"ERREUR\",\n  \"notes\": \"Incohérence majeure sur la date : le texte mentionne à la fois « 17 Ramadan » et « 19 Ramadan » (titre). Erreur factuelle sur le jour : Ali a été frappé un"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 21,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Éléments factuels généralement exacts, mais certains détails manquent de sources précises et le texte contient des reconstructions littéraires non sourcées."
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 22,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Les faits historiques majeurs sont exacts : date (5-6 H), âge d'Aïcha (~15-16 ans), contexte de Banu al-Mustaliq, détails du howdah, perte du collier, Safwan i"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 23,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Plusieurs points factuellement exacts, mais une erreur d'âge et des imprécisions sur les sources citées.\",\n  \"details\": [\n    \"✓ Les 9 épouses listées sont "
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 26,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Plusieurs éléments nécessitent vérification : la date de naissance (576 EC), l'âge à la conversion (33 ans), et la cohérence chronologique globale. Les sour"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 27,
+      "verdict": "OK",
+      "notes": "Récit historiquement attesté dans les sources classiques. Les détails correspondent aux hadiths cités. Aucune erreur factuelle majeure détectée.",
+      "details": [
+        "Puits de Ruma : attesté dans Tirmidhi 3703 et sources classiques (Ibn Sa'd, Tabari)",
+        "Attribution au Prophète ﷺ : conforme aux sources (promesse du paradis documentée)",
+        "Contexte Médine post-Hégire : historiquement exact",
+        "Propriétaire juif et vente progressive : détail traditionnel plausible et cohérent",
+        "Stratégie d'Uthman (gratuité les jours pairs) : logique économique correcte",
+        "Ruine du juif et vente complète : conclusion narrative classique des sources",
+        "État actuel du puits : affirmation traditionnelle non vérifiable mais conforme aux chroniques",
+        "Armée d'al-Usra : référence à Tirmidhi 3700 correcte (expédition de Tabouk)"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 29,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Plusieurs points nécessitent vérification : la date de naissance de Fatima (5 ans avant la prophétie est une estimation), l'âge de Khadija à l'accouchement,"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 30,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Attribution correcte du hadith principal (Bukhari 3729), mais la formulation exacte et le contexte méritent vérification. Le détail sur 'Banu al-Mughira' et"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 31,
+      "verdict": "OK",
+      "notes": "Récit factuellement exact selon les sources classiques. Les attributions sont correctes, les références vérifiables. Les nuances sur les divergences d'interprétation sont appropriées.",
+      "details": [
+        "Bukhari 6285 : chuchotements confirmés, attribution à Aïcha correcte",
+        "Conflit héritage/Fadak : bien documenté dans Bukhari 4240-4241 et Muslim 1759",
+        "Hadith 'nous ne sommes pas hérités' : authentique, correctement cité",
+        "Délai 'six mois' : correspond aux sources (Fatima décédée ~6 mois après le Prophète)",
+        "Paroles de Fatima sur les malheurs : rapportées dans les sources classiques",
+        "Note sur divergences sunnites/chiites : appropriée et honnête",
+        "Tabaqat Ibn Sa'd mentionné pour le brancard d'Asma : source valide"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 33,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Plusieurs points nécessitent clarification : la date exacte de Badr (sources divergent sur le jour de Ramadan), les chiffres des armées (313 vs autres tradi"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 34,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Les faits historiques majeurs sont exacts : date d'Uhud (3H), mort de Hamza par Wahshi, motivations de Hind et Jubayr, spécialité de Wahshi au javelot. Les dét"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 35,
+      "verdict": "OK",
+      "notes": "Les faits historiques majeurs sont exacts selon les sources classiques. Les variantes de transmission sont correctement signalées. La description physique et contextuelle correspond aux récits traditionnels.",
+      "details": [
+        "Bilal ibn Rabah : esclave d'Umayya ibn Khalaf ✓ (confirmé Sîra Ibn Hisham, Tabari)",
+        "Origines éthiopiennes, parents esclaves (Rabah et Hamama) ✓ (tradition classique)",
+        "Maître Umayya ibn Khalaf : adversaire violent de l'Islam ✓ (historiquement exact)",
+        "Conversion par audition de versets : plausible selon les récits traditionnels ✓",
+        "Torture à la pierre sur la poitrine : rapportée dans Sîra Ibn Hisham ✓",
+        "Heures chaudes du jour : détail cohérent avec les récits de persécution ✓",
+        "Note sur variantes de transmission : appropriée et honnête ✓"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 36,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Les faits historiques majeurs sont exacts. Les sources citées correspondent aux récits classiques de l'institution de l'adhan. Les détails du rêve d'Abdullah i"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 38,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Les faits historiques majeurs sont exacts : Khalid ibn al-Walid (Banu Makhzum), son père al-Walid ibn al-Mughira, pertes à Badr, rôle à Uhud, position des arch"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 39,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Majorité des faits vérifiables, mais plusieurs points nécessitent clarification ou présentent des imprécisions historiographiques.\",\n  \"details\": [\n    \"Con"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 41,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Plusieurs problèmes d'attribution et de sources. La Sîra Ibn Hisham n'est pas un récit autobiographique de Salman mais une biographie du Prophète. L'attribu"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 42,
+      "verdict": "DOUTE",
+      "notes": "Récit plausible mais détails non vérifiables. Attribution à Sîra Ibn Hisham correcte pour le contexte général. Hakim 6543 existe mais contenu exact non confirmable. Anachronisme possible sur Quba.",
+      "details": [
+        "Sîra Ibn Hisham : récit de Salman bien attesté, structure narrative conforme",
+        "Hakim Mustadrak 6543 : référence existe mais contenu exact du hadith non vérifiable sans accès direct",
+        "Quba : localisation correcte (sud de Médine, première halte du Prophète)",
+        "Détail du refus de manger les dattes : non attesté dans les sources classiques consultables",
+        "Référence au 'moine d'Ammourya' : personnage des récits de Salman, mais prophéties précises non vérifiables",
+        "Muslim 2344 : existe (description du sceau), mais citation du texte incomplète ici"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 43,
+      "verdict": "OK",
+      "notes": "Les faits historiques majeurs sont exacts : bataille du Khandaq (an 5 H), coalition de ~10 000 hommes, conseil de guerre, proposition de Salman du fossé, acceptation du Prophète. Les sources citées sont appropriées.",
+      "details": [
+        "Bataille du Khandaq : an 5 H confirmé (Bukhari, Tabari)",
+        "Proposition du fossé attribuée à Salman : conforme aux sources classiques (Bukhari 4101-4104)",
+        "Technique persan du fossé : plausible historiquement et attestée dans les sources",
+        "Acceptation prophétique : rapportée dans les sources citées",
+        "Détails géographiques (palmeraies, collines basalte) : cohérents avec la topographie de Médine",
+        "Participation du Prophète aux travaux : attestée dans les sources classiques",
+        "Terme 'khandaq' : étymologie persa correcte"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 44,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Les faits historiques majeurs sont exacts : généalogie de Mus'ab, appartenance aux Banu Abd ad-Dar, rôle de sa mère Khunas, description de son élégance, Dar al"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 45,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Les faits historiques majeurs sont exacts : première bay'at al-Aqaba (12 hommes, Khazraj/Aws), mission de Mus'ab à Médine, contexte chronologique correct. Les "
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 46,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Les faits historiques majeurs sont exacts : Mus'ab à Badr, capture d'Abu Aziz, bataille d'Uhud an 3 H, rôle de porte-étendard. Les sources citées sont appropri"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 47,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Plusieurs points plausibles mais certains détails non vérifiables ou potentiellement inexacts dans les sources classiques.\",\n  \"details\": [\n    \"Le surnom '"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 48,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Références Bukhari généralement exactes, mais le texte est incomplet (s'arrête en pleine phrase). Attribution du hadith sur 'pour le ventre' vérifiable, mai"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 49,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Plusieurs éléments factuels nécessitent vérification. La relation généalogique avec le Prophète est correcte, mais l'ordre de conversion et certains détails"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 51,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Plusieurs points nécessitent clarification : l'âge exact de Mu'adh à l'Hégire, l'attribution précise du hadith sur 'le plus savant en halal et haram', et la"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 52,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Les faits historiques majeurs sont exacts : épidémie d'Amwas en 18H/639, Mu'adh en Syrie, mort lors de la peste, consultation à Sargh. Les sources citées corre"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 53,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Plusieurs points nécessitent vérification : le nombre exact de délégués à Aqaba II, l'attribution précise des hadiths cités, et la complétude du texte inter"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 54,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Les faits historiques majeurs sont exacts : Ubayy ibn Ka'b comme scribe et récitateur, compilation sous Abu Bakr après Yamama, bataille en 11H, mort de qurra. "
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 55,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Plusieurs détails plausibles mais certains éléments non vérifiables ou potentiellement inexacts dans les sources classiques.\",\n  \"details\": [\n    \"TRIBU COR"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 56,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Plusieurs points nécessitent vérification : l'ordre exact des premiers convertis, le nombre précis d'expéditions commandées par Zayd, et les détails de Mu't"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 57,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Les faits historiques majeurs sont vérifiés : tribu Banu Ghifar, localisation, pauvreté/brigandage, nom réel Jundub ibn Junada, recherche monothéiste antérieur"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 58,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Les faits historiques majeurs sont vérifiables et correctement attribués. Les sources citées correspondent aux récits classiques. La note de disclaimer sur la "
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 59,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Les faits historiques majeurs sont vérifiables et conformes aux sources classiques. Les détails biographiques et le rôle à Uhud correspondent aux récits tradit"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 60,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Faits historiques vérifiés : Talha parmi les Dix Promis au Paradis, membre du shura d'Omar, rôle politique sous Uthman, assassinat d'Uthman en 35H, bataille du"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 61,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Plusieurs points factuellement vérifiables présentent des incohérences ou des imprécisions par rapport aux sources classiques.\",\n  \"details\": [\n    \"LIEN DE"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 62,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Plusieurs éléments factuellement exacts, mais la prédiction du Prophète sur Zubayr combattant Ali pose problème : elle est rapportée avec des variantes cont"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 63,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Plusieurs points nécessitent vérification : la filiation maternelle avec Âmina (mère du Prophète) via Banu Zuhra n'est pas établie dans les sources classiqu"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 64,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Sources citées existent mais attributions partielles non vérifiables. Récit des larmes attribué à Bukhari 2049 sans confirmation directe. Chiffres de fortun"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 65,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Plusieurs points factuellement inexacts ou non vérifiables : date de naissance, âge au mariage, identité de la mère, détails sur Khunays.\",\n  \"details\": [\n "
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 66,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Les faits historiques majeurs sont exacts selon les sources classiques. L'épisode de Mariya, le serment du Prophète, la révélation de Tahrim sont bien attestés"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 68,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Plusieurs éléments factuellement vérifiables, mais des imprécisions chronologiques et une attribution de mariage non confirmée par les sources classiques ma"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 69,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Plusieurs inexactitudes factuelles détectées : parenté d'Asma/Aïcha, chronologie de naissance, et détails du hadith sur le mariage.\",\n  \"details\": [\n    \"ER"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 70,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Plusieurs éléments factuellement exacts, mais des imprécisions chronologiques et une affirmation non vérifiable sur l'âge d'Abdullah.\",\n  \"details\": [\n    \""
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 71,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Plusieurs inexactitudes factuelles détectées : date de naissance implausible, confusion sur les premiers convertis, attribution d'Abu Hudhayfa incorrecte.\","
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 72,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Majorité des faits vérifiables, mais plusieurs imprécisions chronologiques et une attribution hadithique à clarifier.\",\n  \"details\": [\n    \"✓ Ammar ibn Yasi"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 73,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Les faits historiques majeurs sont exacts selon les sources classiques. La conversion rapide de Sa'd, son rôle de chef des Banu Abd al-Ashhal, et le récit de s"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 74,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Récit globalement cohérent avec les sources classiques, mais plusieurs points nécessitent clarification ou présentent des imprécisions factuelles.\",\n  \"deta"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 75,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Les faits historiques, attributions et références coraniques/hadithiques sont exactes. Les détails biographiques correspondent aux sources classiques. Les vari"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 78,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Le récit de Suhayb et son émigration est bien attesté dans les sources classiques. Les détails (fortune, interception par les Quraysh, choix entre richesse et "
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 79,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Plusieurs éléments factuellement inexacts ou non vérifiables selon les sources classiques. La tribu, la date de naissance, et certains détails du combat à B"
+      ]
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 80,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Attribution du hadith plausible mais formulation exacte non vérifiée. Récit de Najran contient anachronisme probable. Détails biographiques généralement fia"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 1,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Plusieurs éléments narratifs sont des traditions rapportées mais non vérifiables dans les sources citées. L'hadith Tirmidhi 3368 sur l'éternuement existe ma"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 2,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Le texte mélange contenu coranique vérifiable avec interprétations littéraires et amplifications non sourcées. Certaines affirmations dépassent ce que les s"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 3,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Récit conforme aux sources coraniques citées. Les versets 2:35-38, 7:19-27 et 20:115-123 contiennent effectivement ces éléments. Aucune attribution fausse déte"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 4,
+      "verdict": "OK",
+      "notes": "Récit conforme aux sources citées. Attributions correctes, références coraniques exactes, détails traditionnels vérifiables dans les tafsirs classiques.",
+      "details": [
+        "Coran 5:27-32 : récit de Qabil et Habil correctement résumé",
+        "Paroles de Habil (5:28) : citation fidèle au texte coranique",
+        "Détail du feu du ciel : présent dans Tabari et Ibn Kathir sur 5:27",
+        "Caractérisation (aîné cultivateur, cadet berger) : conforme à la tradition",
+        "Offrande médiocre vs offrande pure : détail traditionnel attesté",
+        "Hadith du Prophète ﷺ cité en fin : référence à Bukhari 3335 plausible (sur le premier meurtre)"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 5,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Citations coraniques exactes et attributions générales plausibles, mais plusieurs affirmations non vérifiables dans les sources classiques citées.\",\n  \"deta"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 6,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Les faits historiques et références coraniques sont exactes. L'histoire des cinq idoles et la durée de la prédication de Nuh correspondent aux sources classiqu"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 7,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Texte largement conforme aux sources coraniques. Cependant, la localisation géographique de Nuh (« désert ») n'est pas explicitement confirmée par les sourc"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 8,
+      "verdict": "OK",
+      "notes": "Récit coranique fidèle. Attributions exactes. Noms du fils (Kan'an/Yam) conformes aux tafsirs. Versets cités correspondent au contenu. Aucune invention manifeste détectée.",
+      "details": [
+        "Coran 11:42-48 : dialogue père-fils, refus de monter, noyade - EXACT",
+        "Coran 11:45-46 : supplication de Nuh et réponse divine - EXACT",
+        "Noms du fils (Kan'an/Yam) : attestés dans Ibn Kathir et Tabari - EXACT",
+        "Coran 23:27-29 : construction arche et déluge - EXACT",
+        "Référence Tirmidhi sur mort de Nuh : non vérifiable ici (hors du texte)",
+        "Aucun anachronisme détecté",
+        "Style narratif enrichi mais contenu factuel conforme aux sources"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 9,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Mélange de faits coraniques vérifiés et d'éléments narratifs non sourcés. La généalogie 'Âd/Sem et certains détails sur Iram ne sont pas explicitement dans "
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 10,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Récit narratif fidèle aux sources coraniques citées. Les détails descriptifs sont des développements littéraires légitimes non contredits par les textes source"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 11,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Les faits historiques, attributions coraniques et références sont exactes. Le texte est narratif/littéraire mais factuellement fondé sur les sources citées.\",\n"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 12,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Récit narratif enrichi avec détails littéraires non sourcés. Attributions coraniques correctes, mais nombreux éléments (noms, dialogues, détails) proviennen"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 13,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Majorité des faits vérifiables, mais une attribution coranique problématique et une confusion sur le nom du père.\",\n  \"details\": [\n    \"ERREUR: Le père d'Ib"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 14,
+      "verdict": "OK",
+      "notes": "Récit conforme aux sources coraniques citées. Les dialogues et événements correspondent aux versets mentionnés. Style narratif enrichi mais factuellement exact.",
+      "details": [
+        "Coran 21:51-70 et 26:69-104 confirment le dialogue père-fils avec les formulations citées",
+        "Coran 37:83-98 confirme l'épisode de la hache et la destruction des idoles",
+        "Le nom 'Azar' pour le père est conforme à Coran 9:114 (bien que débattu, c'est l'attribution classique)",
+        "La fête et l'absence du peuple sont mentionnées en 21:62-63",
+        "La hache posée contre l'épaule de la grande idole correspond à 21:63",
+        "Les dialogues (« Ne mangez-vous pas... ») sont des citations coraniques directes",
+        "Aucun anachronisme détecté, aucune source inventée"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 15,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Récit largement conforme aux sources, mais plusieurs éléments relèvent de la tradition narrative plutôt que des textes sources cités. La catapulte est une i"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 16,
+      "verdict": "OK",
+      "notes": "Récit historiquement exact selon les sources classiques. Attributions correctes aux hadiths Bukhari. Coran 14:37 correspond au contexte. Aucun anachronisme détecté.",
+      "details": [
+        "Coran 14:37 cite effectivement Ibrahim laissant Hagar et Ismail à La Mecque",
+        "Bukhari 3364-3365 contiennent le récit détaillé d'Ibn Abbas sur cet événement",
+        "Localisation géographique (Canaan → vallée de La Mecque) historiquement plausible",
+        "Détails narratifs (outre d'eau, dattes, dialogue) conformes aux hadiths authentiques",
+        "Phrase d'Hagar 'Alors Il ne nous abandonnera pas' présente dans les sources"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 17,
+      "verdict": "DOUTE",
+      "notes": "L'âge d'Ismail (13 ans) n'est pas établi dans les sources classiques. Les références coraniques sont exactes, mais l'attribution de cet âge spécifique manque de fondement textuel.",
+      "details": [
+        "Coran 37:99-113 : récit du sacrifice confirmé, pas de mention d'âge spécifique",
+        "Âge d'Ismail : la tradition rapporte des âges variés (7, 10, 13 ans selon les sources) - pas de consensus",
+        "Rêves répétés trois fois : plausible mais détail narratif non explicitement dans le Coran",
+        "Tentations d'Iblis trois fois : tradition bien établie, liée au rituel du Hajj (lapidation à Mina)",
+        "Références Bukhari 3364-3365, 4537 : ces numéros correspondent à des hadiths sur le sacrifice, vérification partielle possible",
+        "Tafsir Ibn Kathir : source appropriée pour ce récit"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 18,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Texte largement conforme aux sources coraniques. Cependant, une affirmation historique non vérifiable et une citation incomplète soulèvent des questions.\",\n"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 19,
+      "verdict": "OK",
+      "notes": "Récit conforme aux sources coraniques citées. Les détails narratifs (trois anges, refus de nourriture, annonce à Ibrahim, mission vers Lut, femme de Lut, foule) correspondent aux versets mentionnés.",
+      "details": [
+        "Coran 11:77-83, 15:51-77, 26:160-175 confirment la visite des anges à Ibrahim puis à Lut",
+        "L'annonce de la naissance d'Ishaq à Sara malgré son âge avancé est coranique (11:71-72)",
+        "Le refus des anges de manger est mentionné (11:70)",
+        "La femme de Lut parmi les exclus du salut est explicite (Coran 66:10)",
+        "La dénonciation par la femme de Lut aux notables est cohérente avec les récits classiques",
+        "Le texte s'arrête en suspens (incomplet) mais aucune inexactitude détectée jusqu'à ce point"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 20,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Plusieurs éléments narratifs manquent de sources précises. Les détails dramatiques (Ibrahim pleurant, description psychologique de Sara) ne sont pas directe"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 21,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Récit conforme aux sources classiques. Âge d'Ismail variable selon traditions (10-15 ans) correctement noté. Versets coraniques 37:99-113 et 2:127-129 correspo"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 22,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Majorité des éléments vérifiables sont exacts, mais l'âge de Sara présente une incohérence interne et textuelle.\",\n  \"details\": [\n    \"CORRECT: Coran 11:69-"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 23,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Mélange de sources coraniques vérifiées et d'éléments narratifs non attestés dans les sources islamiques classiques. Attribution à Rebecca d'une 'révélation"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 24,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Récit globalement conforme aux sources islamiques classiques, mais contient des éléments narratifs détaillés non attestés dans le Coran ou les hadiths authe"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 25,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Les faits coraniques sont exacts. La narration respecte les versets cités. L'analyse de la tunique intacte correspond à l'interprétation classique (Ibn Kathir)"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 26,
+      "verdict": "OK",
+      "notes": "Texte factuellement exact. Les citations coraniques correspondent aux versets 12:4-14. Les détails historiques et narratifs sont conformes aux sources classiques.",
+      "details": [
+        "Coran 12:4 : le rêve des onze étoiles, soleil et lune est correctement cité",
+        "Coran 12:5 : la réponse de Yaqub et l'avertissement sont fidèles au texte coranique",
+        "Coran 12:6 : la promesse divine (enseignement, bienfait) est correctement attribuée",
+        "Âge approximatif (douze ans) : plausible selon les sources classiques, non contredit",
+        "Rachel comme mère : exact (Coran 12:8)",
+        "Dix frères aînés : exact (onze frères au total moins Yusuf = dix aînés)",
+        "Contexte narratif : conforme à Tafsir Ibn Kathir et sources classiques",
+        "Aucune invention manifeste ni anachronisme détecté"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 27,
+      "verdict": "DOUTE",
+      "notes": "Récit littéraire fidèle au Coran 12:15-21, mais certains détails narratifs (moqueries, coups, pleurs sur commande) ne sont pas explicitement dans le verset coranique cité.",
+      "details": [
+        "Coran 12:15-21 confirme: le puits, la tunique ensanglantée, l'agneau, l'absence de déchirure",
+        "Coran 12:15 mentionne effectivement la promesse divine à Yusuf au puits (verset exact)",
+        "Les détails de violence (moqueries, coups, pleurs) sont des amplifications narratives non présentes dans le verset cité",
+        "L'âge de 12 ans n'est pas mentionné dans Coran 12:15-21 (sources classiques varient: 7-17 ans)",
+        "La référence à Ibn Kathir est citée mais le texte ne cite pas directement ses paroles",
+        "Le détail 'pleurer sur commande' semble être une interprétation, pas une citation explicite"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 28,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Majorité du contenu coranique exact, mais attribution du nom 'Zoulaïkha' non coranique nécessite clarification. Détail des 'sept portes' provient de la trad"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 29,
+      "verdict": "OK",
+      "notes": "Les faits historiques et les références coraniques sont exactes. Les durées mentionnées (7, 9, 12 ans) correspondent aux traditions classiques. Les citations coraniques sont fidèles.",
+      "details": [
+        "Coran 12:36-42 : les deux rêves, l'échanson et le boulanger, l'accusation d'empoisonnement sont correctement rapportés",
+        "Citation Coran 12:37 : 'Avant qu'on ne vous apporte le repas...' est fidèle au texte coranique",
+        "Citation Coran 12:39-40 : le discours sur le tawhid et les divinités est conforme au Coran",
+        "Les trois durées de prison (7, 9, 12 ans) sont mentionnées dans les tafsirs classiques, notamment Ibn Kathir",
+        "L'absence de plainte et l'enseignement en prison sont cohérents avec le récit coranique",
+        "Aucun anachronisme détecté ; aucune invention manifeste"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 30,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Récit conforme aux sources citées. Les détails du rêve, les réactions des conseillers, le rôle de l'échanson et l'interprétation de Yusuf correspondent exactem"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 31,
+      "verdict": "OK",
+      "notes": "Les faits historiques, attributions coraniques et références sont exactes. Le texte suit fidèlement Coran 12:58-92 et la narration classique.",
+      "details": [
+        "Coran 12:58-92 : récit vérifié (reconnaissance, questions sur les frères, mention des onze)",
+        "Contexte historique : les sept années d'abondance et la famine correspondent à la narration coranique",
+        "Yaqub gardant Benjamin : conforme à Coran 12:65-66",
+        "Rêve des onze étoiles : référence correcte à Coran 12:4",
+        "Yusuf reconnaissant ses frères sans être reconnu : Coran 12:58 exact",
+        "Détails narratifs (lin fin, accent, palais) : cohérents avec le contexte égyptien classique, non contredits par les sources"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 32,
+      "verdict": "OK",
+      "notes": "Les éléments factuels correspondent aux versets coraniques cités. La narration respecte le récit de Sourate Yusuf 12:92-111. Les dialogues sont des paraphrases fidèles des versets.",
+      "details": [
+        "Verset 12:92 : la parole du pardon 'Lā tithrib ʿalaykum al-yawm' (pas de blâme contre vous aujourd'hui) est correctement citée et contextualisée",
+        "Verset 12:93 : la chemise et son rôle pour rendre la vue à Yaqub sont conformes au texte coranique",
+        "Verset 12:94-96 : la scène de Yaqub sentant l'odeur de Yusuf et recouvrant la vue est fidèle au récit",
+        "La durée de séparation (20-30 ans mentionnés) est cohérente avec le récit coranique",
+        "Aucune invention manifeste détectée ; la narration est une glose littéraire du texte coranique"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 33,
+      "verdict": "OK",
+      "notes": "Les faits historiques, attributions coraniques et références sont exactes. La description des péchés de Madyan correspond aux versets cités. Aucune anachronisme détecté.",
+      "details": [
+        "Shu'ayb envoyé au peuple de Madyan : confirmé Coran 7:85, 11:84, 26:176",
+        "Péché spécifique : tricher sur les balances/mesures - exactement Coran 7:85 'wa lā takhsarū al-mīzān' (ne diminuez pas la mesure)",
+        "Localisation nord-ouest Arabie sur route commerciale Yémen-Syrie : plausible historiquement",
+        "Shu'ayb originaire de Madyan : confirmé par les versets (il dit 'Ô mon peuple')",
+        "Tafsir Ibn Kathir cité comme source : approprié pour ce type de narration détaillée",
+        "Aucune invention manifeste : le texte reste dans le cadre des récits coraniques classiques"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 34,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Les citations coraniques correspondent aux passages indiqués. Les faits historiques (peuple de Madyan, Shu'ayb prophète, châtiment combiné) sont conformes aux "
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 35,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Récit conforme aux sources coraniques et traditionnelles. Généalogie, localisation géographique, détails de fortune et caractère moral vérifiés. Attributions c"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 36,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Récit littéraire cohérent avec les sources coraniques et la tradition, mais plusieurs éléments narratifs détaillés ne sont pas vérifiables dans les sources "
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 37,
+      "verdict": "DOUTE",
+      "notes": "Versets coraniques exacts. Récit du roi successeur non attesté dans les sources classiques majeures avec cette précision. Attribution à Ibn Kathir nécessite vérification.",
+      "details": [
+        "Coran 21:85-86 et 38:48 : citations exactes, Dhul-Kifl mentionné deux fois comme indiqué",
+        "Étymologie de 'Dhul-Kifl' (celui qui possède la part/responsabilité) : correcte",
+        "Récit du roi pieux et des trois conditions : ce récit circule dans certaines exégèses, mais son attribution précise à Ibn Kathir et Tabari demande vérification - les sources classiques donnent plusieurs versions divergentes",
+        "Le texte reconnaît lui-même l'absence de récit coranique détaillé : exact",
+        "Identification débattue : confirmé - les exégètes débattent si Dhul-Kifl est Élie, Élisée, ou une figure distincte"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 38,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Récit narratif cohérent avec les sources coraniques, mais plusieurs éléments sont des reconstructions littéraires non attestées dans les sources citées.\",\n "
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 39,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Tous les faits historiques et références coraniques sont exacts. L'interprétation théologique est classique et bien documentée dans les tafsirs traditionnels.\""
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 40,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Contexte historique plausible mais détails non vérifiables. Nom 'Yokébed' et chronologie précise non confirmés par sources islamiques classiques.\",\n  \"detai"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 41,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Les faits historiques et références coraniques sont exactes. Le récit correspond aux sources citées (Coran 28:14-21 et interprétations classiques). Aucune erre"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 42,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Le texte est largement conforme aux sources coraniques (28:22-28), mais contient des éléments narratifs non sourcés et une affirmation historique discutable"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 43,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Récit narratif enrichi avec détails non-coraniques. Attributions correctes mais contexte romanticé. Un anachronisme probable sur la chronologie.\",\n  \"detail"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 44,
+      "verdict": "OK",
+      "notes": "Les citations coraniques correspondent exactement aux versets indiqués. La narration respecte l'ordre et le contenu des sourates 20 et 26. Les dialogues sont des citations directes du Coran.",
+      "details": [
+        "Coran 20:18-19 : citation exacte du dialogue initial entre Musa et Pharaon",
+        "Coran 26:23-29 : les répliques de Musa et Pharaon correspondent mot pour mot",
+        "Contexte historique plausible : Musa enfant au palais de Pharaon (Coran 28:4-6)",
+        "Harun rejoint Musa en route : confirmé par Coran 20:30-32 et 28:34",
+        "Aucun anachronisme détecté dans la narration",
+        "Les descriptions narratives (vêtements, stature, hésitation des gardes) sont des développements littéraires plausibles non contredits par les sources"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 45,
+      "verdict": "DOUTE",
+      "notes": "Récit cohérent avec les sources coraniques citées. Cependant, le nombre et l'ordre des plaies varient selon les sourates; le texte affirme 'sept plaies' sans nuancer cette variation coranique.",
+      "details": [
+        "Coran 7:130-137 et 10:75-93 mentionnent les plaies mais sans énumération exhaustive ni ordre uniforme",
+        "Le texte liste: sang, grenouilles, poux, sauterelles, déluge, sécheresse/fruits - ordre et nombre ne correspondent pas exactement à une sourate unique",
+        "Affirmation 'sept plaies' non explicitement coranique - les sourates énumèrent différemment selon les passages",
+        "Détail 'Hébreux avaient de l'eau pure' : plausible théologiquement mais pas explicitement dans les versets cités",
+        "Référence à Tafsir Ibn Kathir non vérifiable sans consultation directe - pas d'erreur manifeste détectée"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 46,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Les faits historiques et références coraniques sont exactes. La narration suit fidèlement les récits qoraniques des sourates 7 et 20 citées.\",\n  \"details\": [\n "
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 47,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Majorité des faits vérifiables, mais une attribution hadith problématique et une confusion de sources.\",\n  \"details\": [\n    \"✓ Coran 5:21-26 : refus d'entre"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 48,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Plusieurs éléments factuellement inexacts ou non vérifiables selon les sources classiques islamiques.\",\n  \"details\": [\n    \"ERREUR: 'Harun est le frère aîné"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 49,
+      "verdict": "OK",
+      "notes": "Texte factuellement exact. Les références coraniques correspondent. Le statut débattu de Khidr est correctement présenté. L'étymologie et les détails narratifs sont conformes aux sources classiques.",
+      "details": [
+        "Coran 18:65 cite bien 'serviteur d'entre Nos serviteurs' - vérification exacte",
+        "L'étymologie 'Khidr' (celui qui rend vert) est attestée dans les tafsirs classiques",
+        "L'anecdote de Musa oubliant que la science vient d'Allah est dans Bukhari et Muslim",
+        "Le signe du poisson (Coran 18:61) est correctement décrit",
+        "L'incertitude sur la localisation géographique (Méditerranée/Mer Rouge/symbolique) reflète le consensus des savants",
+        "Le statut prophétique débattu est correctement présenté comme point de divergence légitime",
+        "Les sources citées (Bukhari 122, 4725, Muslim 2380) sont plausibles pour ce récit"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 50,
+      "verdict": "OK",
+      "notes": "Récit conforme à Coran 18:71-82. Attributions et faits historiques exacts. Sources citées appropriées pour ce passage coranique.",
+      "details": [
+        "Coran 18:71-82 : récit de Khidr et Musa vérifié - trois actes (bateau percé, enfant tué, mur redressé) correctement rapportés",
+        "Reconnaissance de Khidr par les marins : conforme au texte coranique (18:71)",
+        "Trois avertissements de Khidr à Musa : exactement comme dans le Coran (18:72, 18:78, 18:78)",
+        "Refus d'hospitalité du village : conforme à 18:77",
+        "Bukhari 4725 et Muslim 2380 : références plausibles pour commentaires prophétiques sur la patience de Musa (vérification directe impossible sans accès aux collections complètes, mais attributions standard)",
+        "Tafsir Ibn Kathir et Qurtubi : sources classiques appropriées pour ce passage"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 51,
+      "verdict": "OK",
+      "notes": "Récit factuellement exact. Les éléments coraniques (Coran 2:246-251) correspondent au texte. Les détails de 1 Samuel sont correctement signalés comme tradition antérieure non contredite par le Coran.",
+      "details": [
+        "Coran 2:246-251 : mention de Talut, Jalut, Dawud, la rivière, la victoire - tous présents et conformes",
+        "Samuel/Shamuyil : attribution correcte comme dernier juge",
+        "Talut/Saül : identification correcte avec note appropriée",
+        "Test de la rivière : conforme à Coran 2:249",
+        "Détails de 1 Samuel (Jessé, Bethléem, huit fils, onction) : correctement signalés comme tradition antérieure",
+        "Anachronisme évité : 'trois siècles après Musa' est approximatif mais acceptable dans un récit narratif",
+        "Aucune invention manifeste détectée"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 52,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Les faits historiques, attributions coraniques et hadiths sont exactement vérifiables. Aucune erreur factuelle détectée. La narration respecte les sources cité"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 53,
+      "verdict": "OK",
+      "notes": "Récit coranique vérifié. Attributions correctes aux tafsirs classiques. Note appropriée sur les récits extra-coraniques rejetés (Bethsabée). Texte tronqué à la fin.",
+      "details": [
+        "Coran 38:21-26 : récit du procès dans le mihrab correctement rapporté",
+        "Deux hommes escaladant le mur et la sentence sur les brebis : conforme au texte coranique",
+        "Interprétation angélique (test de jugement équitable) : position classique des tafsirs",
+        "Note sur rejet des récits Bethsabée par majorité savants : appropriée et bien documentée",
+        "Mention de tradition antérieure (herbe/larmes) : correctement signalée comme non-coranique",
+        "Texte incomplet : dernière phrase coupée (« et que la parabole des brebis lui aurait été un ra... »)"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 54,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Récit cohérent avec les sources coraniques citées, mais l'âge de 11 ans et certains détails narratifs ne sont pas vérifiables dans les sources classiques.\","
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 55,
+      "verdict": "OK",
+      "notes": "Tous les faits historiques et références coraniques sont exacts. Le texte cite correctement Coran 27:17-37 et 27:18-19. La note sur Balqis est appropriée.",
+      "details": [
+        "Coran 27:18-19 : la fourmi avertissant ses congénères est correctement citée et paraphrasée",
+        "Coran 27:19 : la dua de Sulayman est exactement celle du verset (avec légères variations de traduction acceptables)",
+        "Coran 27:20 : la revue des oiseaux et l'absence de la huppe sont correctement référencées",
+        "Contexte historique : Sulayman à Jérusalem, son armée de djinns/oiseaux/hommes, le vent - tous conformes aux sources coraniques",
+        "Note sur Balqis : appropriée, car le Coran ne nomme pas la reine de Saba",
+        "Aucun anachronisme détecté",
+        "Aucune attribution fausse de hadith ou verset"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 56,
+      "verdict": "OK",
+      "notes": "Texte factuellement exact. Récit coranique bien présenté. Note appropriée sur l'identification d'Asaf ibn Barakhya comme tradition postérieure, non comme fait établi.",
+      "details": [
+        "Coran 27:38-44 : récit du trône correctement résumé et cité",
+        "Ifrit promettant d'apporter le trône avant le lever : conforme à 27:39",
+        "Celui ayant 'science du Livre' : 27:40, identification non tranchée par le Coran, note appropriée",
+        "Délai 'avant un clignement d'œil' : traduction acceptable de 27:40 (طَرْفَة العين)",
+        "Réponse de Sulayman sur l'épreuve et la gratitude : 27:40, contenu exact",
+        "Ordre de déguiser le trône : 27:41, conforme au texte coranique",
+        "Distinction claire entre texte coranique et tradition (Asaf ibn Barakhya) : méthodologiquement correct"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 57,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Majorité des éléments vérifiables sont exacts, mais plusieurs points nécessitent clarification ou contiennent des imprécisions.\",\n  \"details\": [\n    \"Coran "
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 58,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Vérification factuelle positive. Les références coraniques correspondent au contenu. Les faits historiques (royaume divisé, Achab, Jézabel, Baal) sont exacts. "
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 59,
+      "verdict": "OK",
+      "notes": "Les références coraniques sont exactes. La distinction entre tradition biblique et silence coranique est correctement présentée. Aucune attribution fausse détectée.",
+      "details": [
+        "Coran 6:86 : mentionne bien Al-Yasa parmi les prophètes préférés (verset exact)",
+        "Coran 38:48 : cite correctement Ismail, Al-Yasa et Dhul-Kifl ensemble",
+        "Récit biblique (2 Rois 2-13) : Élisée disciple d'Élie, le manteau, succession - correspond aux sources bibliques",
+        "Présentation honnête : texte distingue clairement 'tradition antérieure à l'Islam' vs 'le Coran ne raconte pas cela'",
+        "Aucun hadith attribué à tort - seules sources coraniques et bibliques citées",
+        "Pas d'anachronisme : le texte reconnaît explicitement que le Coran ne confirme pas ces détails"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 60,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Texte factuellement exact. Les sources citées correspondent au contenu. Le statut débattu d'Uzayr est correctement présenté. L'identification à Esdras est hist"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 61,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Récit bien structuré et conforme aux sources classiques, mais l'histoire de la langue de brebis n'est pas attestée dans les sources canoniques majeures (Cor"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 62,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Les références coraniques sont exactes. Luqman n'est pas un prophète selon le consensus classique. L'analyse du terme 'ya bunayya' et sa répétition est correct"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 63,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Texte factuellement exact. Les références coraniques (18:83-89) sont correctes. L'identification de Dhul-Qarnayn est présentée avec prudence épistémologique ap"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 64,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Les références coraniques sont exactes. Les attributions aux tafsirs classiques sont plausibles. Aucun anachronisme détecté. Le texte respecte le contenu des v"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 65,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Plusieurs points factuellement inexacts ou non corroborés par les sources coraniques citées.\",\n  \"details\": [\n    \"ERREUR: Le Coran ne mentionne JAMAIS que "
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 66,
+      "verdict": "OK",
+      "notes": "Texte conforme aux sources coraniques citées. Récit de l'annonce à Zakariyya vérifié. Note appropriée sur le martyre (non coranique). Comparaisons avec Ibrahim et Maryam exactes.",
+      "details": [
+        "Coran 19:2-11 : annonce de Yahya, stérilité de la femme, grand âge confirmés",
+        "Coran 3:38-41 : mihrab, prière, signe de mutité (3 jours, gestes) vérifiés",
+        "Coran 21:89-90 : contexte de supplication confirmé",
+        "Comparaison Ibrahim (Coran 2:260) : exacte",
+        "Comparaison Maryam (Coran 19:20) : exacte",
+        "Tasbih possible pendant mutité : conforme à l'exégèse classique",
+        "Note sur martyre : appropriée (tradition exégétique, non coranique)"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 67,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Vérification factuelle positive. Les références coraniques sont exactes, les attributions sont correctes, et la distinction entre sources coraniques et traditi"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 68,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Texte factuellement exact. Attributions correctes aux sources citées. Distinction appropriée entre données coraniques, traditions antérieures à l'Islam, et réc"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 69,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Les faits historiques, attributions coraniques et hadiths sont exactement vérifiés. La note sur Hanna comme tradition pré-islamique est appropriée.\",\n  \"detail"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 70,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Les références coraniques sont exactes. Les faits historiques et attributions correspondent aux sources classiques. La description du récit est fidèle au texte"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 71,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Tous les éléments factuels sont vérifiables et correctement attribués. Les citations coraniques correspondent aux versets indiqués. Les détails historiques et "
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 72,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Toutes les références coraniques sont exactes et correctement citées. Les faits historiques et théologiques sont conformes à la doctrine islamique classique. L"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 73,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Plusieurs éléments non-coraniques présentés comme factuels ; citations coraniques exactes mais contexte historique externe non confirmé par le Coran.\",\n  \"d"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 74,
+      "verdict": "OK",
+      "notes": "Les références coraniques sont exactes. Les citations correspondent aux versets indiqués. La distinction entre faits coraniques et tradition exégétique est correctement signalée.",
+      "details": [
+        "Coran 5:112-115 : la demande des apôtres et la réponse d'Isa sont correctement citées",
+        "Coran 5:116-118 : dialogue au Jour de la Résurrection correctement référencé",
+        "La sourate Al-Maïda tire bien son nom de cet épisode (verset 112)",
+        "Les détails narratifs (oiseaux d'argile, guérisons, résurrections) sont conformes aux versets coraniques",
+        "L'auteur signale correctement que les détails du déroulement proviennent de la tradition exégétique",
+        "Les citations coraniques paraphrasées correspondent au contenu des versets mentionnés",
+        "Aucune attribution fausse, aucun anachronisme détecté"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 75,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Vérification factuelle complète. Références coraniques exactes, attributions correctes, distinction appropriée entre sources islamiques et évangéliques.\",\n  \"d"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 76,
+      "verdict": "OK",
+      "notes": "Texte factuellement exact. Citations coraniques correctes, attributions vérifiées, contexte historique approprié. Note comparative bien encadrée comme non-doctrinale.",
+      "details": [
+        "Coran 61:6 : citation exacte, Isa annonce Ahmad - vérifiée",
+        "Étymologie Ahmad/Muhammad (racine h-m-d) : correcte",
+        "Références à Coran 5:75, 4:171, 43:61 : appropriées au contexte",
+        "Hadiths Bukhari/Muslim sur retour d'Isa : mentionnés sans détail faux",
+        "Discussion paraclet/périclyte : correctement présentée comme débat comparatif, non comme doctrine",
+        "Aucun anachronisme détecté",
+        "Aucune source inventée"
+      ]
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 77,
+      "verdict": "OK",
+      "notes": "Texte introductif sans prétention factuelle. Les éléments biographiques mentionnés (naissance à La Mecque, orphelin, Khadija, Hira, Hégire, Médine, batailles, Adieu, mort dans les bras d'Aïcha) sont historiquement exacts. Coran 33:56 est correctement cité.",
+      "details": [
+        "Éléments biographiques standards : tous conformes aux sources classiques",
+        "Coran 33:56 : verset correct sur la prière sur le Prophète ﷺ",
+        "Contexte : texte de présentation/renvoi, non un récit détaillé",
+        "Aucune attribution fausse ni anachronisme détecté"
+      ]
+    },
+    {
+      "section": "recits_coran",
+      "entry_id": 1,
+      "verdict": "DOUTE",
+      "notes": "Récit coranique exact mais sources secondaires non vérifiées. Attribution à Ibn Kathîr plausible mais incomplète. Texte s'arrête abruptement.",
+      "details": [
+        "Coran 2:258 : récit de Nimrod et Ibrahim confirmé, dialogue exact",
+        "Nimrod appelé 'al-Namrud' dans les sources islamiques classiques",
+        "Généalogie (fils de Kush) : présente dans certains tafsirs mais débattue historiquement",
+        "Référence à Ibn Kathîr : plausible (tafsir classique) mais citation incomplète, fin du texte tronquée",
+        "Absence de sources précises pour les détails narratifs (palais, prisonniers, mise en scène)",
+        "Style littéraire : embellissement narratif acceptable pour un récit pédagogique, pas une source primaire"
+      ]
+    },
+    {
+      "section": "recits_coran",
+      "entry_id": 2,
+      "verdict": "OK",
+      "notes": "Récit basé sur Sourate Al-Kahf (18:32-44). Faits historiques et attributions conformes aux sources coraniques classiques. Aucune anachronisme détecté.",
+      "details": [
+        "Sourate Al-Kahf 18:32-44 : récit des deux hommes et leurs jardins - conforme",
+        "Dialogue du riche : 'J'ai plus de biens que toi...' correspond à 18:34",
+        "Réponse du pauvre : 'ce qu'Allah a voulu...' correspond à 18:39",
+        "Châtiment par le feu : 18:42 'Et ses fruits furent anéantis' - interprétation plausible",
+        "Pas de sources externes citées mais contenu coranique vérifié"
+      ]
+    },
+    {
+      "section": "recits_coran",
+      "entry_id": 3,
+      "verdict": "OK",
+      "notes": "Récit coranique des Gens de la Caverne (Sourate 18, Al-Kahf). Les faits historiques et coraniques sont exactement conformes aux sources classiques.",
+      "details": [
+        "Nombre de jeunes : le Coran dit explicitement que seul Allah connaît le nombre exact (18:22)",
+        "Citation coranique : 'Notre Seigneur, accorde-nous de Ta part une miséricorde...' correspond à 18:10",
+        "Durée du sommeil : 309 ans mentionnés en 18:25 (300 + 9)",
+        "Description du soleil : conforme à 18:17 (se penche à droite au lever, à gauche au coucher)",
+        "Le chien à l'entrée : mentionné en 18:18 et 18:22",
+        "Contexte monothéiste vs polythéiste : cohérent avec le récit coranique",
+        "Pas de sources externes citées : texte reste dans le cadre du Coran seul"
+      ]
+    },
+    {
+      "section": "recits_coran",
+      "entry_id": 4,
+      "verdict": "OK",
+      "notes": "Récit coranique de Moussa et Al-Khidr (Sourate 18, versets 60-82) fidèlement rapporté. Tous les éléments majeurs correspondent aux sources classiques.",
+      "details": [
+        "Moussa interrogé sur sa science (18:60) - exact",
+        "Révélation divine sur Al-Khidr au confluent des deux mers - exact",
+        "Le poisson glissant dans la mer comme signe (18:61) - exact",
+        "Al-Khidr vêtu d'un manteau vert - détail non coranique mais présent dans tafsirs classiques",
+        "Promesse de patience de Moussa (18:69) - exact",
+        "Perforation du bateau (18:71) - exact",
+        "Meurtre de l'enfant (18:74) - exact",
+        "Refus d'hospitalité du village (18:77) - exact",
+        "Les trois actions et explications ultérieures correspondent à Sourate 18:80-82"
+      ]
+    },
+    {
+      "section": "recits_coran",
+      "entry_id": 5,
+      "verdict": "OK",
+      "notes": "Récit coranique vérifié. Attributions correctes aux versets 28:76-81. Dialogue et faits historiques conformes aux sources classiques.",
+      "details": [
+        "Qarun (Coré) : personnage coranique, Sourate 28:76-81 ✓",
+        "Relation à Moussa : confirmée (28:76) ✓",
+        "Trésors et clefs : détail coranique exact (28:76) ✓",
+        "Dialogue des frères : versets 28:77 reproduits fidèlement ✓",
+        "Phrase 'On me l'a donné à cause d'une science' : 28:78 ✓",
+        "Engloutissement par la terre : 28:81 ✓",
+        "Aucune source spécifiée mais contenu strictement coranique"
+      ]
+    },
+    {
+      "section": "recits_coran",
+      "entry_id": 6,
+      "verdict": "OK",
+      "notes": "Récit coranique de Saba vérifié. Éléments historiques et coraniques conformes aux sources classiques. Style narratif, pas de prétention historique détaillée.",
+      "details": [
+        "Saba mentionnée en Coran 34:15-19 : deux jardins, barrage, déluge des digues - conforme",
+        "Thème de l'ingratitude et châtiment divin - conforme à la sourate",
+        "Détails sur les cultures (datte, raisin, grenade) - plausibles pour Saba historique",
+        "Mention du déluge du barrage (sayl al-arim) - terme coranique exact",
+        "Aucune source spécifiée mais contenu aligné avec tafsir classique",
+        "Style littéraire/narratif, pas présentation comme fait historique détaillé"
+      ]
+    },
+    {
+      "section": "recits_coran",
+      "entry_id": 7,
+      "verdict": "OK",
+      "notes": "Récit coranique exact. Correspond à Sourate Al-Qalam (68:17-33). Attributions correctes, faits historiques conformes au texte coranique.",
+      "details": [
+        "Sourate Al-Qalam 68:17-33 : récit des gens du jardin (Ashab al-Janna)",
+        "Citation exacte du verset 28 : 'Ne vous avais-je pas dit : si seulement vous glorifiez Allah'",
+        "Détails conformes : père pieux, fils avares, oubli du 'in sha'a Allah', destruction nocturne du jardin",
+        "Morale coranique préservée : châtiment de l'avarice et de l'oubli de la volonté divine",
+        "Aucune source secondaire citée mais récit directement du Coran, vérifiable"
+      ]
+    },
+    {
+      "section": "recits_coran",
+      "entry_id": 8,
+      "verdict": "ERREUR",
+      "notes": "Attribution coranique fausse : le verset sur les enfants d'Israël (5:32) ne concerne PAS le récit de Habil-Qabil. C'est une interpolation anachronique.",
+      "details": [
+        "Le récit de Habil-Qabil est en Sourate 5:27-31, concernant les fils d'Adam",
+        "Le verset 5:32 ('celui qui tue une âme...') est une LOI DONNÉE AUX ENFANTS D'ISRAËL, pas une conclusion du récit de Habil-Qabil",
+        "Confusion entre deux passages coraniques distincts : le récit (5:27-31) et la loi mosaïque (5:32)",
+        "Les paroles de Habil (5:28) sont correctes",
+        "Le corbeau (5:31) est correctement mentionné",
+        "Le regret de Qabil est correct (5:31)"
+      ]
+    },
+    {
+      "section": "recits_coran",
+      "entry_id": 9,
+      "verdict": "OK",
+      "notes": "Récit conforme aux sources coraniques classiques. Attributions correctes, faits historiques plausibles selon la tradition islamique. Aucune source inventée détectée.",
+      "details": [
+        "Loth neveu d'Ibrahim : confirmé (Coran 11:71)",
+        "Sodome/plaine fertile : conforme (Coran 26:160-161)",
+        "Péché spécifique du peuple : exact (Coran 7:80-81)",
+        "Trois anges visiteurs : conforme (Coran 11:77-78)",
+        "Proposition des filles : présent (Coran 11:78)",
+        "Départ nocturne : exact (Coran 11:81)",
+        "Femme restée en arrière : confirmé (Coran 27:57)",
+        "Retournement de la cité : conforme (Coran 29:34)",
+        "Citations coraniques intégrées fidèlement au sens"
+      ]
+    },
+    {
+      "section": "recits_coran",
+      "entry_id": 10,
+      "verdict": "OK",
+      "notes": "Récit coranique classique sur Saleh et les Thamud. Les éléments principaux correspondent aux sources coraniques standards. Absence de sources spécifiques citées, mais le contenu est conforme à la narration traditionnelle.",
+      "details": [
+        "Saleh envoyé aux Thamud : confirmé (Coran 7:73-79, 11:61-68, 26:141-158, 27:45-53, 91:11-15)",
+        "Chamelle comme signe : confirmé dans les sources coraniques",
+        "Neuf hommes qui tuent la chamelle : mentionné en 27:48",
+        "Délai de trois jours avant châtiment : conforme à 11:65 et 7:111",
+        "Changement de couleur du visage : détail narratif traditionnel, cohérent avec les tafsirs classiques",
+        "Le Cri (As-Saykha) : confirmé comme mode de destruction des Thamud (7:78, 11:67, 26:155)"
+      ]
+    },
+    {
+      "section": "recits_coran",
+      "entry_id": 11,
+      "verdict": "OK",
+      "notes": "Récit conforme aux sources coraniques classiques. Détails historiques et narratifs alignés avec la sourate Hud et les récits traditionnels des Ad.",
+      "details": [
+        "Sourate Hud (11:50-60) : attribution correcte du prophète Hud au peuple Ad",
+        "Iram aux piliers mentionnée en Sourate Al-Fajr (89:7) - description exacte",
+        "Dialogue et reproches des Ad conformes au Coran (Hud 11:53-55)",
+        "Sécheresse de trois ans : mentionnée dans les récits classiques (Tafsir Ibn Kathir)",
+        "Délégation à La Mecque : détail traditionnel plausible, cohérent avec la chronologie pré-islamique",
+        "Vent destructeur sept nuits et huit jours : Sourate Hud (11:58) confirme la durée",
+        "Aucune source primaire citée mais contenu aligné avec corpus coranique et hadithique établi"
+      ]
+    },
+    {
+      "section": "recits_coran",
+      "entry_id": 12,
+      "verdict": "OK",
+      "notes": "Récit conforme aux sources classiques. Détails coraniques et hadiths vérifiés. Aucune attribution fausse détectée. Narration littéraire acceptable.",
+      "details": [
+        "Histoire d'Ayyoub (Job) présente dans le Coran (Sourate 21:83-84, 38:41-44)",
+        "Épreuves énumérées (famille, biens, santé) conformes aux récits classiques",
+        "Invocation 'Le mal m'a touché' correspond à Coran 21:83",
+        "Ordre 'Frappe la terre de ton pied' et source d'eau: Coran 38:42",
+        "Durée '18 ans' mentionnée dans certains tafsirs (non coranique mais traditionnel)",
+        "Verset final 'Nous l'avons trouvé patient' = Coran 21:84",
+        "Aucune source spécifiée mais contenu aligné avec sources classiques"
+      ]
+    },
+    {
+      "section": "recits_coran",
+      "entry_id": 13,
+      "verdict": "OK",
+      "notes": "Récit coranique conforme aux sources classiques. Tous les éléments majeurs correspondent à Sourate Yunus (10:98) et aux récits traditionnels du Coran.",
+      "details": [
+        "Ninive comme destination de Yunus : confirmé (Coran 10:98)",
+        "Fuite sans permission divine : conforme au récit coranique (37:140)",
+        "Tempête et tirage au sort : détails traditionnels attestés dans tafsirs classiques",
+        "Trois ténèbres : référence à 68:23 (trois ténèbres mentionnées)",
+        "Invocation 'La ilaha illa Anta...' : conforme à 21:87",
+        "Poisson qui vomit Yunus : Coran 37:145",
+        "Plant de courge (Yaqtin) : Coran 37:146",
+        "Aucune source spécifiée mais contenu aligné avec sources coraniques standards"
+      ]
+    },
+    {
+      "section": "recits_coran",
+      "entry_id": 14,
+      "verdict": "OK",
+      "notes": "Récit coranique fidèle à la sourate 27 (An-Naml). Tous les éléments majeurs correspondent aux versets coraniques. Aucune source secondaire citée, donc vérification limitée aux faits coraniques.",
+      "details": [
+        "Sourate 27:16 - Sulayman reçoit la langue des oiseaux, soumission des djinns, vent",
+        "Sourate 27:20-21 - Passage en revue, absence de la huppe, menace",
+        "Sourate 27:22-28 - Récit de la huppe sur Saba et sa reine",
+        "Sourate 27:29-37 - Lettre, réponse de Bilqis, cadeau, refus de Sulayman",
+        "Sourate 27:38-44 - Demande du trône (texte tronqué mais cohérent jusqu'au point d'arrêt)",
+        "Nom 'Bilqis' : tradition musulmane classique, non coranique mais accepté dans les tafsirs"
+      ]
+    },
+    {
+      "section": "recits_coran",
+      "entry_id": 15,
+      "verdict": "OK",
+      "notes": "Le récit correspond fidèlement aux versets coraniques cités. Les faits historiques, attributions et références sont exactes. C'est une paraphrase narrative du texte coranique.",
+      "details": [
+        "Sourate An-Naml 27:18-19 : contenu vérifié et conforme",
+        "Armée composée d'hommes, djinns et oiseaux : mentionnée en 27:17",
+        "Vallée des fourmis : contexte exact du verset 27:18",
+        "Parole de la fourmi : citation fidèle du verset 27:18",
+        "Don de comprendre la langue des créatures : mentionné en 27:16",
+        "Prière de Sulayman : verset 27:19 cité correctement",
+        "Ordre de contourner la vallée : implicite dans le contexte coranique"
+      ]
+    },
+    {
+      "section": "recits_coran",
+      "entry_id": 16,
+      "verdict": "OK",
+      "notes": "Récit coranique fidèle. Tous les éléments majeurs correspondent à Sourate Al-Baqarah 2:246-251. Aucune source inventée détectée. Style narratif enrichi mais factuellement exact.",
+      "details": [
+        "Talut choisi par Allah malgré l'opposition des nobles : conforme à 2:247",
+        "Épreuve de la rivière (test de patience) : conforme à 2:249",
+        "Jalut géant dépassant les hommes d'une coudée : conforme à 2:249",
+        "Petit nombre de croyants face à grande armée : conforme à 2:249",
+        "Dawud jeune, peu armé, fronde et pierres : conforme à 2:250",
+        "Aucune source hadith citée (non spécifiée) - vérification impossible mais récit coranique seul suffit",
+        "Pas d'anachronisme détecté"
+      ]
+    },
+    {
+      "section": "recits_coran",
+      "entry_id": 17,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Récit historiquement attesté et coranique. Détails conformes aux sources classiques islamiques. Abraha, l'église, l'éléphant, Abd al-Muttalib sont des faits ét"
+      ]
+    },
+    {
+      "section": "recits_coran",
+      "entry_id": 18,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Récit coranique vérifié (Sourate 85:4-10), mais attribution hadith non sourcée et détails narratifs non vérifiables.\",\n  \"details\": [\n    \"Sourate 85 (Al-Fi"
+      ]
+    },
+    {
+      "section": "recits_coran",
+      "entry_id": 19,
+      "verdict": "OK",
+      "notes": "Le récit correspond fidèlement à Coran 5:112-115. Les dialogues sont des paraphrases exactes des versets coraniques. Aucune invention historique détectée.",
+      "details": [
+        "Coran 5:112-115 rapporte effectivement cette demande des disciples à Issa (Jésus)",
+        "Les paroles citées correspondent aux versets : demande de la table (5:112), réponse d'Issa (5:113-114), avertissement divin (5:115)",
+        "Aucune source hadith citée - le texte reste dans le cadre coranique",
+        "La narration est une paraphrase littéraire du Coran, pas une invention",
+        "Pas d'anachronisme ni d'attribution fausse détectée",
+        "La réflexion finale ('Un signe est un poids...') est une interprétation personnelle, clairement séparée du récit"
+      ]
+    },
+    {
+      "section": "recits_coran",
+      "entry_id": 20,
+      "verdict": "OK",
+      "notes": "Récit coranique authentique (Sourate Al-Baqarah 2:259). Les détails correspondent aux sources classiques du tafsir. Aucune attribution fausse ni anachronisme détecté.",
+      "details": [
+        "Récit identifié: Sourate Al-Baqarah 2:259 (l'homme et la cité ruinée)",
+        "Personnage: Uzayr (Esdras) selon la majorité des exégètes classiques",
+        "Durée: 100 ans confirmée dans le verset coranique",
+        "Éléments vérifiés: l'âne, la nourriture intacte, l'eau fraîche, la reconstruction de la cité",
+        "Pas de source secondaire citée mais récit directement coranique",
+        "Narration fidèle au contenu du verset sans ajouts apocryphes manifestes"
+      ]
+    },
+    {
+      "section": "sira",
+      "entry_id": 46,
+      "verdict": "DOUTE",
+      "notes": "Récit narratif plausible mais détails spécifiques non vérifiables. Sources classiques confirment grotte Thawr et itinéraire sud, mais anecdotes du scorpion et larmes manquent de sources explicites.",
+      "details": [
+        "Grotte Thawr : confirmée dans les sources classiques (Ibn Ishaq, al-Tabari)",
+        "Itinéraire sud vers Yémen : plausible selon sources, détour tactique attesté",
+        "Distance 9 km : approximation raisonnable, non précisée dans sources",
+        "Anecdote scorpion/larmes : récit narratif sans source citée, absent des chaînes de transmission majeures",
+        "Dialogue Abû Bakr entrant en premier : thème attesté mais formulation exacte non vérifiable",
+        "Guérison par salive : motif coranique (Coran 5:110) mais application spécifique ici non documentée",
+        "Pas de sources citées : impossible de vérifier les attributions précises"
+      ]
+    },
+    {
+      "section": "sira",
+      "entry_id": 356,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Attribution coranique inexacte. La citation provient de Yūsuf 12:92 mais le contexte et la formulation ne correspondent pas exactement au récit de la conquê"
+      ]
+    },
+    {
+      "section": "sira",
+      "entry_id": 279,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Les faits historiques majeurs sont exacts : Hudaybiya an 6 H, Suhayl ibn Amr comme négociateur, les détails du traité (Bismika Allāhumma, suppression de 'Messa"
+      ]
+    },
+    {
+      "section": "sira",
+      "entry_id": 344,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Verset coranique exact. Hadith d'Abū Dharr plausible mais source Tirmidhī non vérifiée précisément. Attestations Ibn ʿUmar et Jarīr partiellement vérifiable"
+      ]
+    },
+    {
+      "section": "sira",
+      "entry_id": 69,
+      "verdict": "DOUTE",
+      "notes": "Date et détails de la pluie plausibles selon les sources classiques, mais absence de sources précises rend vérification difficile. Citation coranique exacte.",
+      "details": [
+        "Date du 17 Ramaḍān an 2 H : confirmée par les sources classiques (Ibn Hisham, Tabari)",
+        "Jour du vendredi : à vérifier (sources classiques ne précisent pas toujours le jour de la semaine)",
+        "Récit de la pluie différenciée : présent dans les sources (Mubarakpuri cité), mais détails poétisés",
+        "Coran 8:11 cité correctement : correspond au contenu décrit",
+        "Prophète veillant en prière : récit classique attesté",
+        "Absence de sources précises pour chaque affirmation rend vérification complète impossible",
+        "Attribution à Mubarakpuri partielle seulement (note finale)"
+      ]
+    },
+    {
+      "section": "sira",
+      "entry_id": 71,
+      "verdict": "DOUTE",
+      "notes": "Récits plausibles mais sources non spécifiées. Verset 8:9 correct. Attribution à Mubarakpuri vague. Détails des anges correspondent à la tradition, mais vérification impossible sans sources primaires citées.",
+      "details": [
+        "Sourate 8:9 correctement cité et correspond au contenu (mille anges)",
+        "Récits attribués à Abū Dāwūd al-Māzinī sans source précise (Sunan Abī Dāwūd ?)",
+        "Anecdote d'al-ʿAbbās et de l'Anṣarī : motif traditionnel mais source non vérifiable ici",
+        "Mubarakpuri cité en fin mais son rôle exact flou (commentateur, compilateur ?)",
+        "Pas de chaîne de transmission (isnād) fournie pour les récits",
+        "Contenu théologique cohérent avec la tradition sunnite sur Badr"
+      ]
+    },
+    {
+      "section": "sira",
+      "entry_id": 56,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"OK\",\n  \"notes\": \"Les faits historiques majeurs sont exacts selon les sources classiques de la Sira. La durée de 16 mois, le changement de qibla, la mosquée Banû Salama (Masjid "
+      ]
+    },
+    {
+      "section": "sira",
+      "entry_id": 261,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Récit globalement authentique mais avec imprécisions sur les détails et une affirmation non vérifiée sur les '13 gouvernances'.\",\n  \"details\": [\n    \"Sourat"
+      ]
+    },
+    {
+      "section": "sira",
+      "entry_id": 334,
+      "verdict": "DOUTE",
+      "notes": "Réponse IA non parseable",
+      "details": [
+        "```json\n{\n  \"verdict\": \"DOUTE\",\n  \"notes\": \"Plusieurs éléments factuellement exacts, mais des imprécisions généalogiques et une attribution hadithique problématique.\",\n  \"details\": [\n    \"GÉNÉALOGIE I"
+      ]
+    }
+  ]
+}

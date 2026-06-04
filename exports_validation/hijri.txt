@@ -1,0 +1,14 @@
+Ramadan actif: ✦ Nous sommes en Ramadan. Activer le Mode Ramadan ?
+Eid Shawwal: ✦ Eid Mubarak. Désactiver le Mode Ramadan ?
+10 derniers jours Ramadan: ✦ Les 10 derniers jours ont commencé. C’est le moment de l’intensification.
+Laylat al-Qadr: ✦ Cette nuit pourrait être Laylat al-Qadr. Cherche-la dans les nuits impaires des 10 dernières.
+Dhul-Hijjah debut: ✦ Les 10 premiers jours de Dhul-Hijjah ont commencé. Les actions les plus aimées d’Allâh dans l’année.
+Veille Arafat: ✦ Demain c’est Arafat. Jeûner expie 2 années (Muslim).
+Arafat: ✦ Aujourd’hui c’est Arafat. Multiplie dou’as et dhikr.
+Eid al-Adha: ✦ Aïd al-Adha Mubarak. Qu’Allâh accepte ton sacrifice et tes œuvres.
+Tashreeq: ✦ Jours de Tashreeq. Multiplie le takbir (Allâhu Akbar).
+Nouvel an hijri: ✦ Bonne année hijri. Le mois d’Allâh a commencé — jeûne recommandé.
+Veille Achoura: ✦ Demain c’est Achoura. Le Prophète ﷺ recommandait de jeûner le 9 et le 10.
+Achoura: ✦ Aujourd’hui c’est Achoura. Jeûner expie les péchés de l’année passée (Muslim).
+Rajab: ✦ Le mois sacré de Rajab a commencé. Allâhumma bârik lanâ fî Rajab wa Shaʿbân wa balliγnâ Ramadân.
+Shaban: ✦ Sha’ban a commencé. Le Prophète ﷺ jeûnait beaucoup ce mois — préparation à Ramadan.

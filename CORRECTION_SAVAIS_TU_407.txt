@@ -1,0 +1,11 @@
+CORRECTION POUR savais_tu.json
+================================
+
+SAVAIS_TU INDEX 407 (Prophète n'a jamais refusé)
+-------------------------------------------------
+
+NOUVEAU TEXTE :
+Le Prophète ﷺ n'a jamais refusé une demande de don ou de charité. Anas ibn Mâlik rapporte : « Jamais on n'a demandé quelque chose au Prophète ﷺ en faisant valoir l'islam sans qu'il ne le lui donne. » Un jour, un homme lui demanda un troupeau entier qui remplissait la vallée. Il lui dit de le prendre. L'homme retourna à son peuple et leur dit : « Convertissez-vous, car Muhammad donne avec une telle générosité qu'il ne craint pas la pauvreté. »
+
+NOUVELLE SOURCE (à remplacer) :
+Sahih Muslim 2312

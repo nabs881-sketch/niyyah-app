@@ -1,0 +1,69 @@
+onboard_start: Commencer
+onboard_next: Suivant
+onboard_skip: Passer
+onboard_later: Plus tard
+onboard_go: C'est parti — Bismillah 🌿
+onboard_title1: Ta pratique spirituelle,<br>chaque jour
+onboard_sub1: Niyyah t'accompagne dans ton chemin vers Allah — à ton rythme, sans jugement.
+onboard_title2: Le Scanner de Niyyah
+onboard_sub2: Pose ton regard sur un objet du quotidien — le Scanner te proposera une intention spirituelle pour le sacraliser.
+onboard_title3: 4 niveaux de pratique
+onboard_sub3: Progresse à ton rythme — chaque niveau se débloque quand tu es prêt.
+onboard_title4: Tes horaires de prière
+onboard_sub4: Entre ta ville pour afficher les horaires de Fajr, Dhuhr, Asr, Maghrib et Isha chaque jour.
+onboard_city_placeholder: Ex: Paris, Orléans, Casablanca...
+onboard_tagline: نِيَّة · Pose ton intention
+onboard_scanner_example: Ton verre d'eau, ton stylo, ton miroir...<br>Chaque objet peut porter une niyyah.
+onboard_lvl1_desc: Les 5 prières · Dhikr · Récitation
+onboard_lvl2_desc: Mosquée · Istighfar · Tasbih
+onboard_lvl3_desc: Hadiths · Coran · Arabe
+onboard_lvl4_desc: Sadaqa · Salam · Douaas
+onboard_city_manual: Ou entre ta ville manuellement :
+ob_splash_sub: Pose ton intention
+ob_avant_acte: Sacraliser la direction
+ob_apres_acte: Recevoir Sa Parole
+ob_deux_gestes: Deux gestes pour ton quotidien
+ob_sacralise: L’intention sacralise. Le Coran t’éclaire.
+ob_niyyah_title: Pose une intention
+ob_niyyah_desc: Pointe ton téléphone vers ce que tu t’apprêtes à faire. Niyyah te propose 3 intentions spirituelles — choisis celle qui résonne, ou écris la tienne.
+ob_niyyah_example: Je bois avec gratitude envers Allah.
+ob_regarde_title: Pose un regard
+ob_regarde_desc: Pointe ton téléphone vers ce que tu vois. Niyyah cherche dans le Coran le verset qui éclaire ce moment précis — et te le murmure.
+ob_regarde_example: Détourne ton regard. — AN-NÛR 24:30
+ob_motivation_title: Niyyah accompagne
+ob_motivation_sub: Trois manières de marcher. Touche la tienne.
+ob_motiv_routine: Le Régulier
+ob_motiv_routine_sub: Celui qui veut installer une pratique solide.
+ob_motiv_reconnecter: Le Revenant
+ob_motiv_reconnecter_sub: Celui qui revient après une absence.
+ob_motiv_sacraliser: Le Présent
+ob_motiv_sacraliser_sub: Celui qui veut sacraliser chaque geste.
+ob_motivation_outro: Tu y trouveras ta porte.
+ob_chemin_title: Niyyah suit tes pas
+ob_chemin_sub: Voici ce qui t’accompagne chaque jour.
+ob_chemin_serie: Série
+ob_chemin_serie_d: Jours consécutifs
+ob_chemin_nafs: Nafs
+ob_chemin_nafs_d: 52 traits de l’âme
+ob_chemin_carte: Carte
+ob_chemin_carte_d: Calendrier annuel
+ob_chemin_defi: Défi
+ob_chemin_defi_d: 1 par semaine
+ob_chemin_bilan: Bilan du soir
+ob_chemin_bilan_d: Muhasaba quotidienne
+ob_chemin_tawba: Tawba
+ob_chemin_tawba_d: Reviens sans jugement
+ob_chemin_prenom: Comment veux-tu qu’on t’appelle ?
+ob_chemin_prenom_ph: Ton prénom...
+ob_chemin_quote: Pas de classement. Juste toi et ta constance.
+ob_notif_title: Reste connecté
+ob_notif_sub: Niyyah peut t’inviter à recommencer chaque jour.
+ob_notif_murmures: Murmures du jour
+ob_notif_murmures_d: Une parole douce quand tu en as besoin
+ob_notif_rituels: Rituels
+ob_notif_rituels_d: Wird du matin et du soir
+ob_notif_encourage: Encouragements
+ob_notif_encourage_d: Une main tendue si tu t’éloignes
+ob_notif_activate: Activer
+ob_notif_later: Plus tard
+ob_notif_settings: Modifier dans Réglages

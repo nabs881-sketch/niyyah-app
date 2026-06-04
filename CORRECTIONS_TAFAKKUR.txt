@@ -1,0 +1,23 @@
+CORRECTIONS POUR tafakkur_recits.json
+=========================================
+
+TAFAKKUR_NEW_174
+-----------------
+
+recit.texte:
+Les neuroscientifiques ont étudié l'unicité du visage humain. Les biométristes de Cornell ont mesuré, en 2017, que la combinaison des proportions faciales (distance entre les yeux, courbure du nez, asymétrie millimétrique) produit pour chaque humain une signature mathématique unique. Sur les 117 milliards d'humains ayant existé depuis Adam — estimation des paléodémographes — aucun visage n'a été strictement identique à un autre. Pas même les jumeaux monozygotes : leurs visages divergent dès l'utérus, par micro-asymétries de pression et d'orientation. Allâh dit : « C'est Lui qui façonne pour vous dans les matrices comme Il veut. Point de divinité que Lui — le Tout-Puissant, le Sage. » (3:6). Le verbe yusawwirukum — Il vous façonne — est employé au présent, comme une action en cours, qui n'a jamais cessé. Et l'un de Ses Noms est Al-Musawwir — Le Façonneur. Tu critiques Son ouvrage. Tu trouves ce nez trop large, ces yeux trop petits, cette mâchoire trop ronde. Mais ce visage est une signature unique parmi 117 milliards. Personne ne l'a porté avant toi. Personne ne le portera après. Tu es la seule édition de toi-même que l'univers connaîtra. Le miroir n'est pas l'endroit où tu te juges. C'est l'endroit où tu te reconnais — comme un cadeau que tu n'avais pas commandé.
+
+recit.source_nom: Biométrie faciale (Cornell 2017) / Coran 3:6
+recit.source_type: scientifique
+recit.calibre: 3
+
+
+TAFAKKUR_OLD_161
+-----------------
+
+recit.texte:
+Le philosophe allemand Leibniz formula cette question au XVIIIe siècle dans les termes exacts : « Pourquoi y a-t-il quelque chose plutôt que rien ? » Il l'appela la question fondamentale de la métaphysique. Heidegger, deux siècles plus tard, la reprit en disant : « C'est la question qui se tient avant toutes les autres. » Aucune science ne peut y répondre. La physique décrit comment l'univers fonctionne. Elle n'explique pas pourquoi il existe. Stephen Hawking lui-même, dans ses dernières conférences, reconnaissait que la question du commencement absolu — pourquoi cet univers existe — restait hors de portée des équations. Allâh dit dans le Coran : « Allâh est le Créateur de toute chose, et de toute chose Il est Garant. » (39:62). Le mot arabe — wakîl — signifie : Celui qui prend en charge. La création n'est pas un acte ponctuel du passé. C'est un maintien continu : si Allâh cessait une seconde de soutenir l'existence, tout retournerait au néant. C'est ce que les théologiens musulmans appellent al-îjâd al-mustamirr — la création continue. Tu existes. Cette phrase est plus extraordinaire qu'elle ne paraît. Tu pouvais ne pas exister — c'était même statistiquement infiniment plus probable. Le simple fait de respirer en ce moment est une réponse muette à la question de Leibniz. Le rien aurait été plus simple. Pourtant il y a tout. Et toi dedans, en train de lire ces mots.
+
+recit.source_nom: Leibniz / Heidegger / Coran 39:62
+recit.source_type: savant
+recit.calibre: 2

@@ -1,0 +1,40 @@
+=== COLERE ===
+Nom arabe: بَاب الْغَضَب
+Nom francais: Porte de la Colère
+Mode: itfaa
+
+--- itfaa ---
+etape1_corps_general: Le fort n'est pas celui qui terrasse les hommes. Le fort est celui qui se maîtrise dans la colère.
+etape2_assise: Si l'un de vous se met en colère alors qu'il est debout, qu'il s'assoie. Si la colère le quitte, tant mieux. Sinon, qu'il s'allonge.
+etape2_silence: Si tu te mets en colère, tais-toi.
+etape2_wudu: L'eau apaise. Va faire les ablutions. Le contact de l'eau sur le visage est un retour au calme.
+etape7_refuge: Je cherche refuge auprès d'Allah contre Satan le lapidé.
+
+--- muhasaba ---
+etape6_pardon: Une aumône ne diminue pas un bien, et Allah n'augmente nul serviteur en pardonnant sans qu'Il ne l'élève en honneur.
+etape6_duaa_parole_juste: Ô Allah, je Te demande la parole juste dans le contentement et dans la colère.
+etape7_intention: Les actions ne valent que par les intentions.
+
+--- jours ---
+
+=== ANXIETE ===
+Nom arabe: بَاب الْقَلَق
+Nom francais: Porte de l'Anxiété
+Mode: itmiinan
+
+--- itmiinan ---
+etape1_verset_apaisement: N'est-ce pas par le rappel d'Allah que les cœurs s'apaisent ?
+etape2_hasbunallah: Allah nous suffit, et quel excellent Garant.
+etape7_refuge: Ô Allah, je cherche refuge auprès de Toi contre l'angoisse et la tristesse, et contre l'incapacité et la paresse.
+
+--- muhasaba ---
+etape6_tawakkul: Quiconque place sa confiance en Allah, Il lui suffit.
+etape6_attache_chamelle: Attache-la (la chamelle), puis place ta confiance en Allah.
+etape6_dhikr_vivant_mort: L'exemple de celui qui invoque son Seigneur et celui qui ne l'invoque pas est comme l'exemple du vivant et du mort.
+
+=== CONCEPTS ===
+itfaa: {"ar":"إِطْفَاء","translit":"Iṭfâ'","fr":"Extinction","description":"Mode court de régulation pendant la crise de colère."}
+itmiinan: {"ar":"الِاطْمِئْنَان","translit":"Iṭmi'nân","fr":"Apaisement","description":"Mode court de régulation pendant la crise d'anxiété. Référence : Coran 13:28."}
+muhasaba: {"ar":"مُحَاسَبَة","translit":"Muḥâsaba","fr":"Examen de conscience","description":"Mode long d'examen à froid, en dehors de toute crise. Attribué à ʿUmar ibn al-Khaṭṭâb (qu'Allâh l'agrée) : « Faites 
+niyyah: {"ar":"النِّيَّة","translit":"Niyyah","fr":"Intention","description":"Concept fondateur. Hadith : Innamâ al-aʿmâlu bi-n-niyyât (Bukhârî 1, Muslim 1907)."}
+tawakkul: {"ar":"التَّوَكُّل","translit":"Tawakkul","fr":"Remise confiante à Allah","description":"Confier à Allah ce qui te dépasse, après avoir fait ce qui est en toi. Référence : Coran 65:3."}

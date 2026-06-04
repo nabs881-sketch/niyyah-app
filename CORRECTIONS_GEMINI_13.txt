@@ -1,0 +1,183 @@
+CORRECTIONS GEMINI — 13 VRAIES ERREURS
+=========================================
+
+===============================
+1. TAFAKKUR_RECITS INDEX 010
+===============================
+Fichier : data/waqt/tafakkur_recits.json
+Problème : Témoignage d'Abdullah ibn Umar sur son père inventé/confusion historique
+
+NOUVEAU recit.texte :
+On a demandé aux Tabi'în — la génération qui a connu les Compagnons — ce qu'ils retenaient de Umar ibn al-Khattâb. Ils ont dit qu'il vivait simplement, mangeait peu, dormait à même le sol. Qu'il pleurait dans ses prières de nuit au point que ses joues portaient des sillons. Qu'il portait des vêtements rapiécés alors qu'il gouvernait un empire qui s'étendait de Jérusalem à la Perse. Le calife Umar disait : « Si une chèvre meurt de faim au bord du Tigre, j'en serai tenu responsable au Jour du Jugement. » Tu te plains de ne pas pouvoir prier deux rakaat la nuit. Lui dirigeait l'armée la plus puissante de son temps et passait ses nuits prosterné. La grandeur ne sépare pas de l'adoration. Elle s'y enracine.
+
+recit.source_nom : Tabarî / Ibn Sa'd, Tabaqât al-Kubrâ
+recit.source_type : historique
+recit.calibre : 2
+
+
+===============================
+2. TAFAKKUR_RECITS INDEX 014
+===============================
+Fichier : data/waqt/tafakkur_recits.json
+Problème : Légende de la lance/linceul calquée sur Alexandre le Grand
+
+NOUVEAU recit.texte :
+Saladin — Salâh ad-Dîn al-Ayyûbî — est mort en 1193 à Damas, après avoir reconquis Jérusalem et fait trembler les croisades. Le sultan le plus puissant de son siècle. Quand on a inventorié son coffre privé, on n'y a trouvé qu'un seul dinar d'or et quarante dirhams d'argent. Pas assez pour payer ses propres funérailles. Il avait tout donné. Aux pauvres. Aux soldats. Aux orphelins. Aux endettés. Aux mosquées. Aux savants. Le conquérant de Jérusalem est mort sans rien. Comme il était venu. Tu accumules. Tu thésaurises. Tu protèges. Saladin te répond à travers les siècles : ce qui restera de toi, c'est ce que tu auras donné. Le reste partira sans toi.
+
+recit.source_nom : Bahâ' ad-Dîn ibn Shaddâd, Sîrat Salâh ad-Dîn
+recit.source_type : historique
+recit.calibre : 2
+
+
+===============================
+3. TAFAKKUR_RECITS INDEX 037
+===============================
+Fichier : data/waqt/tafakkur_recits.json
+Problème : Anecdote moderne inventée sur Imam Mâlik et sa femme
+
+NOUVEAU recit.texte :
+Imam Mâlik enseignait à Médine pendant cinquante ans dans la même demeure. Il refusait de monter en chaire sans être en état de pureté rituelle, parfumé, vêtu de ses plus beaux habits, par respect pour le hadith du Prophète ﷺ. Quand on lui posait une question dont il n'avait pas la réponse certaine, il disait simplement : « Je ne sais pas. » Ses élèves comptaient parfois jusqu'à quarante « Je ne sais pas » en une seule séance. Le maître absolu du fiqh de son époque. Tu prétends savoir sur des sujets que tu maîtrises à peine. Mâlik, lui, gardait le silence sur ce qu'il ne savait pas. C'est dans ce silence que résidait son autorité. L'ignorance avouée est une science. La science prétendue est une ignorance.
+
+recit.source_nom : Qâdî 'Iyâd, Tartîb al-Madârik
+recit.source_type : historique
+recit.calibre : 2
+
+
+===============================
+4. SAVAIS_TU INDEX 13
+===============================
+Fichier : savais_tu.json
+Problème : Al-Razi (né 865) ne pouvait pas exister en 705. C'est Al-Walîd Ier qui a fondé le premier bimaristan à Damas en 705.
+
+NOUVEAU TEXTE :
+En 705, le calife omeyyade Al-Walîd ibn Abd al-Malik fonde à Damas le premier bimaristan — hôpital public — de l'histoire. On y soigne gratuitement musulmans, chrétiens, juifs, riches et pauvres. Lépreux, aveugles et malades mentaux y reçoivent une chambre. Treize siècles avant la Sécurité sociale française. L'aumône organisée par un État.
+
+NOUVELLE SOURCE : Al-Tabarî, Tarîkh al-Rusul wa al-Mulûk
+
+
+===============================
+5. SAVAIS_TU INDEX 16
+===============================
+Fichier : savais_tu.json
+Problème : Étymologie "caméra" de qamara fausse. Vient du latin camera (voûte).
+
+NOUVEAU TEXTE :
+Au XIᵉ siècle, à Bassorah, Ibn al-Haytham — Alhazen pour les Latins — invente la chambre noire. Une pièce obscure percée d'un petit trou, où l'image du monde extérieur se projette à l'envers sur le mur opposé. Il l'appelle al-bayt al-muthlim — la maison obscure. Sept siècles avant la photographie. Mille ans avant le cinéma. La science de la lumière a un nom arabe : 'ilm al-manâzir.
+
+NOUVELLE SOURCE : Ibn al-Haytham, Kitâb al-Manâzir
+
+
+===============================
+6. SAVAIS_TU INDEX 147
+===============================
+Fichier : savais_tu.json
+Problème : Le pionnier traduit en Occident sur les marées est Abu Ma'shar al-Balkhi, pas Al-Biruni.
+
+NOUVEAU TEXTE :
+Au IXᵉ siècle, Abu Ma'shar al-Balkhi écrit le Kitâb al-Madkhal al-Kabîr et y décrit le lien entre les phases de la Lune et les marées montantes et descendantes. Son traité, traduit en latin sous le nom Albumasar, servira de base à l'Europe pendant des siècles, jusqu'à Newton. Le premier savant à avoir mathématisé le pouls lunaire sur les océans s'appelait Abu Ma'shar. Allâh dit : « Et le soleil, et la lune... chacun navigue dans une orbite. » (36:40).
+
+NOUVELLE SOURCE : Abu Ma'shar al-Balkhi, Kitâb al-Madkhal al-Kabîr / Coran 36:40
+
+
+===============================
+7. SAVAIS_TU INDEX 337 (LE PLUS GRAVE)
+===============================
+Fichier : savais_tu.json
+Problème : « L'estomac est la maison des maladies » est un APOCRYPHE rejeté par les muhaddithîn. Pas un hadith du Prophète ﷺ.
+
+NOUVEAU TEXTE :
+Le Prophète ﷺ a dit : « Le fils d'Adam n'a pas rempli de récipient pire que son estomac. Il suffit au fils d'Adam quelques bouchées pour redresser son dos. S'il faut nécessairement plus, qu'un tiers soit pour la nourriture, un tiers pour la boisson, un tiers pour l'air. » (Tirmidhî, hasan). Quatorze siècles avant les recherches sur le jeûne intermittent et la restriction calorique. La pleine assiette n'est pas une bénédiction. La modération l'est.
+
+NOUVELLE SOURCE : Tirmidhî 2380 (hasan)
+
+
+===============================
+8. SIRA RDV 31
+===============================
+Fichier : data/sira/sira.min.json (RDV 31)
+Problème : Waraka ibn Nawfal n'est pas un Sahabi. Il est mort chrétien-hanîf juste après avoir rassuré le Prophète ﷺ sur la nature de Gabriel.
+
+NOUVEAU TEXTE :
+À Médine de la Mecque, Waraka ibn Nawfal est un sage chrétien hanîf — un monothéiste pré-islamique qui rejette les idoles. Quand le Prophète ﷺ reçoit la Révélation et raconte sa vision à Khadîja, elle l'emmène consulter son cousin Waraka. Le vieil homme aveugle écoute, puis dit : « C'est le Nâmûs qui est venu à Moïse. Que ne suis-je jeune ! Que ne suis-je vivant quand ton peuple te bannira ! » Le Prophète ﷺ s'étonne : « Vont-ils me bannir ? » Waraka répond : « Personne n'a jamais apporté ce que tu apportes sans être combattu. » Il meurt peu après, avant la prédication publique. Le Prophète ﷺ dira de lui : « Je l'ai vu au Paradis, vêtu de soie. » Le premier témoin du Messager ﷺ n'était pas un musulman au sens canonique — c'était un homme qui avait préservé la foi d'Abraham au milieu de l'idolâtrie. Allâh récompense la vérité où qu'elle se trouve.
+
+NOUVELLE SOURCE : Sahih al-Bukhârî 3 / Tirmidhî 2287 (hasan)
+
+
+===============================
+9. SIRA RDV 360
+===============================
+Fichier : data/sira/sira.min.json (RDV 360)
+Problème : Récit théâtral de l'Ange de la Mort déguisé chez Fâtima est apocryphe (chaîne contient menteurs).
+
+NOUVEAU TEXTE :
+Les derniers jours, le Prophète ﷺ est alité chez Aïcha. La fièvre brûle. Fâtima vient le voir. Il lui chuchote quelque chose à l'oreille — elle pleure. Il lui chuchote autre chose — elle sourit. Plus tard, elle racontera : la première fois, il lui a annoncé qu'il allait mourir. La seconde, qu'elle serait la première de sa famille à le rejoindre. Sept jours après sa mort, Fâtima rejoindra son père. Aïcha rapporte que dans son dernier souffle, le Prophète ﷺ regarda le plafond et murmura : « Ô Allah, pardonne-moi, fais-moi miséricorde et rejoins-moi au Compagnon Suprême. » Trois fois. Puis sa main tomba. Pas de mise en scène. Pas de combat. Une parole d'amour, et il est parti. La mort des bien-aimés d'Allâh ressemble à un endormissement.
+
+NOUVELLE SOURCE : Sahih al-Bukhârî 4438, 6509 / Sahih Muslim 2450
+
+
+===============================
+10. COMPAGNONS JOUR 16
+===============================
+Fichier : data/compagnons/compagnons.json (Jour 16)
+Problème : Détails folkloriques des "bagues mystérieuses" entre Abu Bakr et Umar sont inventions modernes.
+
+NOUVEAU TEXTE :
+À l'expédition de Tabûk, le Prophète ﷺ demande aux Compagnons de contribuer financièrement. Umar pense : « Aujourd'hui, je dépasserai Abu Bakr. » Il apporte la moitié de ses biens. Le Prophète ﷺ demande : « Qu'as-tu laissé pour ta famille ? » Umar répond : « La moitié de ce que j'ai. » Puis arrive Abu Bakr, portant tout ce qu'il possède. Le Prophète ﷺ demande : « Qu'as-tu laissé pour ta famille ? » Abu Bakr répond : « Je leur ai laissé Allâh et Son Messager. » Umar comprit ce jour-là qu'il ne dépasserait jamais Abu Bakr dans la course aux biens éternels. Toute compétition spirituelle a un plafond. Celui d'Abu Bakr touche le Trône.
+
+NOUVELLE SOURCE : Tirmidhî 3675 (hasan sahih) / Abu Dâwûd 1678
+
+
+===============================
+11. COMPAGNONS JOUR 90 (GRAVE — DIFFAMATION BADRIYY)
+===============================
+Fichier : data/compagnons/compagnons.json (Jour 90)
+Problème : Récit de "Tha'labah et la Zakat" déclaré BATIL (nul) par Ibn Hazm. Tha'labah est un combattant de Badr — le Prophète ﷺ a dit : « Allah a regardé les gens de Badr et a dit : Faites ce que vous voulez, Je vous ai pardonné. » Le transmetteur Ali ibn Yazid al-Alhany est matrûk (rejeté).
+
+NOUVEAU TEXTE (remplacement du sujet) :
+Abu Hurayra arrive à Médine au moment de Khaybar — sept années après l'Hégire. Il est pauvre, sans famille, dort sur le pas de la mosquée du Prophète ﷺ avec les Ahl as-Suffa. Il ne mange parfois qu'une datte par jour. Mais il a faim d'une autre nourriture : entendre le Prophète ﷺ. Il le suit partout. Il mémorise tout. Quand les autres Compagnons vont au marché, lui reste à la mosquée. Il dira plus tard : « Aucun Compagnon n'a rapporté plus de hadiths que moi, sauf Abdullah ibn Amr — parce qu'il écrivait et que je ne savais pas écrire. » Trois ans avec le Messager ﷺ. Plus de 5000 hadiths transmis. La pauvreté de la table peut se changer en richesse de la mémoire. Le Prophète ﷺ a fait du'a pour qu'Abu Hurayra n'oublie jamais ce qu'il avait entendu. Et il n'a jamais oublié.
+
+NOUVELLE SOURCE : Sahih al-Bukhârî 119 / Sahih Muslim 2492
+
+
+===============================
+12. PROPHETES JOUR 12
+===============================
+Fichier : data/prophetes/prophetes.json (Jour 12)
+Problème : Noé présenté comme "premier prophète" — erreur doctrinale. Adam est premier prophète (Nabî). Noé est premier Messager (Rasûl).
+
+CORRECTION DANS LE TEXTE :
+Remplacer toute mention "Noé est le premier prophète de l'humanité" par :
+"Noé est le premier Messager (Rasûl) envoyé à une humanité qui avait sombré dans le polythéisme. Adam et Idrîs étaient des prophètes (Nabî) avant lui. La distinction est essentielle : tout Rasûl est un Nabî, mais tout Nabî n'est pas un Rasûl. Le Messager apporte une législation et avertit un peuple ; le Prophète enseigne et confirme la révélation précédente."
+
+NOUVELLE SOURCE : Bukhârî 4712 (hadith de l'Intercession) / Musnad Ahmad
+
+
+===============================
+13. PROPHETES JOUR 35
+===============================
+Fichier : data/prophetes/prophetes.json (Jour 35)
+Problème : Le récit du "couteau qui ne coupe pas" est une invention des conteurs populaires. Le Coran ne mentionne aucun dysfonctionnement de la lame.
+
+NOUVEAU TEXTE :
+Ibrâhîm voit en songe qu'il sacrifie son fils. Trois nuits de suite. Pour un prophète, le songe est révélation. Il en parle à Ismâ'îl. L'enfant — adolescent — répond : « Ô mon père, fais ce qui t'es ordonné. Tu me trouveras patient, si Allâh le veut. » (37:102). Ils partent ensemble vers Minâ. Au moment où Ibrâhîm pose son fils sur le front, prêt à accomplir le geste, Allâh l'interrompt par la Révélation : « Ô Ibrâhîm ! Tu as confirmé la vision. C'est ainsi que Nous récompensons les bienfaisants. » (37:104-105). Et un grand bélier descend du ciel pour le sacrifice. L'épreuve n'a jamais été dans le couteau. Elle a été dans le cœur d'Ibrâhîm — sa soumission absolue — et dans le cœur d'Ismâ'îl — sa confiance absolue. Le sacrifice ultime, Allâh ne l'a pas demandé. Il a demandé l'intention d'aller jusqu'au bout. C'est l'origine de l'Aïd al-Adha. Tu sacrifies un animal chaque année pour te rappeler ce moment où un père et un fils ont dit ensemble : « Notre vie t'appartient. »
+
+NOUVELLE SOURCE : Coran 37:99-107
+
+
+===============================
+INSTRUCTIONS POUR CLAUDE CODE
+===============================
+
+Appliquer les 13 remplacements dans les fichiers correspondants :
+- data/waqt/tafakkur_recits.json (3 entrées : 010, 014, 037)
+- savais_tu.json (4 entrées : 13, 16, 147, 337)
+- data/sira/sira.min.json (2 RDV : 31, 360)
+- data/compagnons/compagnons.json (2 jours : 16, 90)
+- data/prophetes/prophetes.json (2 jours : 12, 35)
+
+Pour chaque entrée :
+1. Remplacer le texte principal
+2. Mettre à jour la source si indiquée
+
+Bump SW version + commit avec message :
+"fix: 13 erreurs Gemini — citations apocryphes, anachronismes, attributions corrigées"

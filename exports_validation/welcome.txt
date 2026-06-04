@@ -1,0 +1,3 @@
+welcome_routine: Une fois suffit pour commencer. Encore une fois suffit pour durer.
+welcome_reconnecter: Bienvenue chez toi. Allâh te voit.
+welcome_sacraliser: Le moindre verre d'eau, si tu le bois pour Lui, est compté.

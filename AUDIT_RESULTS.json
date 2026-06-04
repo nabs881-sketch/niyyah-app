@@ -1,0 +1,3897 @@
+{
+  "summary": {
+    "OK": 37,
+    "ERREUR": 0,
+    "NO_REF": 248,
+    "HADITH_ONLY": 44
+  },
+  "timestamp": "2026-05-22T21:19:28.696Z",
+  "total": 329,
+  "results": [
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_new_089",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_new_184",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_new_171",
+      "refs_found": {
+        "quran": [
+          "21:30"
+        ],
+        "hadith": []
+      },
+      "checks": [
+        {
+          "type": "quran",
+          "ref": "21:30",
+          "api_ok": true,
+          "api_text": "Ceux qui ont mécru, n'ont-ils pas vu que les cieux et la terre formaient une masse compacte? Ensuite Nous les avons sépa",
+          "api_surah": "Al-Anbiyaa",
+          "error": ""
+        }
+      ],
+      "verdict": "OK"
+    },
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_new_109",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_new_032",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_old_131",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_new_118",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_old_050",
+      "refs_found": {
+        "quran": [
+          "19:23"
+        ],
+        "hadith": []
+      },
+      "checks": [
+        {
+          "type": "quran",
+          "ref": "19:23",
+          "api_ok": true,
+          "api_text": "Puis les douleurs de l'enfantement l'amenèrent au tronc du palmier, et elle dit: «Malheur à moi! Que je fusse morte avan",
+          "api_surah": "Maryam",
+          "error": ""
+        }
+      ],
+      "verdict": "OK"
+    },
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_new_049",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_old_111",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_new_176",
+      "refs_found": {
+        "quran": [
+          "24:24",
+          "36:65"
+        ],
+        "hadith": []
+      },
+      "checks": [
+        {
+          "type": "quran",
+          "ref": "24:24",
+          "api_ok": true,
+          "api_text": "Le jour où leurs langues, leurs mains et leurs pieds témoigneront contre eux de ce qu'ils faisaient.",
+          "api_surah": "An-Noor",
+          "error": ""
+        },
+        {
+          "type": "quran",
+          "ref": "36:65",
+          "api_ok": true,
+          "api_text": "Ce jour-là, Nous scellerons leurs bouches, tandis que leurs mains Nous parleront et que leurs jambes témoigneront de ce ",
+          "api_surah": "Yaseen",
+          "error": ""
+        }
+      ],
+      "verdict": "OK"
+    },
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_old_092",
+      "refs_found": {
+        "quran": [
+          "12:92"
+        ],
+        "hadith": []
+      },
+      "checks": [
+        {
+          "type": "quran",
+          "ref": "12:92",
+          "api_ok": true,
+          "api_text": "- Il dit: «Pas de récrimination contre vous aujourd'hui! Qu'Allah vous pardonne. C'est Lui Le plus Miséricordieux des mi",
+          "api_surah": "Yusuf",
+          "error": ""
+        }
+      ],
+      "verdict": "OK"
+    },
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_old_062",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_new_028",
+      "refs_found": {
+        "quran": [
+          "24:22"
+        ],
+        "hadith": []
+      },
+      "checks": [
+        {
+          "type": "quran",
+          "ref": "24:22",
+          "api_ok": true,
+          "api_text": "Et que les détenteurs de richesse et d'aisance parmi vous, ne jurent pas de ne plus faire des dons aux proches, aux pauv",
+          "api_surah": "An-Noor",
+          "error": ""
+        }
+      ],
+      "verdict": "OK"
+    },
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_old_117",
+      "refs_found": {
+        "quran": [
+          "6:60"
+        ],
+        "hadith": []
+      },
+      "checks": [
+        {
+          "type": "quran",
+          "ref": "6:60",
+          "api_ok": true,
+          "api_text": "Et, la nuit, c'est Lui qui prend vos âmes, et Il sait ce que vous avez acquis pendant le jour. Puis Il vous ressuscite l",
+          "api_surah": "Al-An'aam",
+          "error": ""
+        }
+      ],
+      "verdict": "OK"
+    },
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_new_185",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_old_127",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_new_017",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_new_172",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_old_081",
+      "refs_found": {
+        "quran": [
+          "31:13"
+        ],
+        "hadith": []
+      },
+      "checks": [
+        {
+          "type": "quran",
+          "ref": "31:13",
+          "api_ok": true,
+          "api_text": "Et lorsque Luqmân dit à son fils tout en l'exhortant: «O mon fils, ne donne pas d'associé à Allah, car l'association à [",
+          "api_surah": "Luqman",
+          "error": ""
+        }
+      ],
+      "verdict": "OK"
+    },
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_old_036",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_old_065",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_new_011",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_new_140",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_new_127",
+      "refs_found": {
+        "quran": [
+          "40:19"
+        ],
+        "hadith": []
+      },
+      "checks": [
+        {
+          "type": "quran",
+          "ref": "40:19",
+          "api_ok": true,
+          "api_text": "Il (Allah) connaît la trahison des yeux, tout comme ce que les poitrines cachent.",
+          "api_surah": "Ghafir",
+          "error": ""
+        }
+      ],
+      "verdict": "OK"
+    },
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_new_016",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_old_088",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_old_083",
+      "refs_found": {
+        "quran": [
+          "24:22"
+        ],
+        "hadith": []
+      },
+      "checks": [
+        {
+          "type": "quran",
+          "ref": "24:22",
+          "api_ok": true,
+          "api_text": "Et que les détenteurs de richesse et d'aisance parmi vous, ne jurent pas de ne plus faire des dons aux proches, aux pauv",
+          "api_surah": "An-Noor",
+          "error": ""
+        }
+      ],
+      "verdict": "OK"
+    },
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_new_133",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "tafakkur_recits",
+      "entry_id": "tafakkur_old_144",
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 0,
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 220",
+          "Muslim 285"
+        ]
+      },
+      "checks": [],
+      "verdict": "HADITH_ONLY"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 1,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 2,
+      "refs_found": {
+        "quran": [
+          "9:28"
+        ],
+        "hadith": []
+      },
+      "checks": [
+        {
+          "type": "quran",
+          "ref": "9:28",
+          "api_ok": true,
+          "api_text": "O vous qui croyez! Les associateurs ne sont qu'impureté: qu'ils ne s'approchent plus de la Mosquée sacrée, après cette a",
+          "api_surah": "At-Tawba",
+          "error": ""
+        }
+      ],
+      "verdict": "OK"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 3,
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 126",
+          "Muslim 1333"
+        ]
+      },
+      "checks": [],
+      "verdict": "HADITH_ONLY"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 4,
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 6018"
+        ]
+      },
+      "checks": [],
+      "verdict": "HADITH_ONLY"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 5,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 6,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 7,
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Muslim 2699"
+        ]
+      },
+      "checks": [],
+      "verdict": "HADITH_ONLY"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 8,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 9,
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Tirmidhi 3872"
+        ]
+      },
+      "checks": [],
+      "verdict": "HADITH_ONLY"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 10,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 11,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 12,
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Tirmidhi 2380"
+        ]
+      },
+      "checks": [],
+      "verdict": "HADITH_ONLY"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 13,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 14,
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 4275"
+        ]
+      },
+      "checks": [],
+      "verdict": "HADITH_ONLY"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 15,
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 7042"
+        ]
+      },
+      "checks": [],
+      "verdict": "HADITH_ONLY"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 16,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 17,
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 5678"
+        ]
+      },
+      "checks": [],
+      "verdict": "HADITH_ONLY"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 18,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 19,
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Tirmidhi 696"
+        ]
+      },
+      "checks": [],
+      "verdict": "HADITH_ONLY"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 20,
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 4986"
+        ]
+      },
+      "checks": [],
+      "verdict": "HADITH_ONLY"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 21,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 22,
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 5728",
+          "Muslim 2218"
+        ]
+      },
+      "checks": [],
+      "verdict": "HADITH_ONLY"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 23,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 24,
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 5649"
+        ]
+      },
+      "checks": [],
+      "verdict": "HADITH_ONLY"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 25,
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 69"
+        ]
+      },
+      "checks": [],
+      "verdict": "HADITH_ONLY"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 26,
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 2736",
+          "Muslim 2677"
+        ]
+      },
+      "checks": [],
+      "verdict": "HADITH_ONLY"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 27,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 28,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "savais_tu",
+      "entry_id": 29,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 0,
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 5534",
+          "Muslim 2628"
+        ]
+      },
+      "checks": [],
+      "verdict": "HADITH_ONLY"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 1,
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 5641",
+          "Muslim 2573"
+        ]
+      },
+      "checks": [],
+      "verdict": "HADITH_ONLY"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 2,
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 2320",
+          "Muslim 1553"
+        ]
+      },
+      "checks": [],
+      "verdict": "HADITH_ONLY"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 3,
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 893",
+          "Muslim 1829"
+        ]
+      },
+      "checks": [],
+      "verdict": "HADITH_ONLY"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 4,
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 6018",
+          "Muslim 47"
+        ]
+      },
+      "checks": [],
+      "verdict": "HADITH_ONLY"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 5,
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 1899",
+          "Muslim 1079"
+        ]
+      },
+      "checks": [],
+      "verdict": "HADITH_ONLY"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 6,
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Muslim 2664"
+        ]
+      },
+      "checks": [],
+      "verdict": "HADITH_ONLY"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 7,
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Muslim 2564"
+        ]
+      },
+      "checks": [],
+      "verdict": "HADITH_ONLY"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 8,
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 645",
+          "Muslim 650"
+        ]
+      },
+      "checks": [],
+      "verdict": "HADITH_ONLY"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 9,
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Tirmidhi 3895"
+        ]
+      },
+      "checks": [],
+      "verdict": "HADITH_ONLY"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 10,
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 52",
+          "Muslim 1599"
+        ]
+      },
+      "checks": [],
+      "verdict": "HADITH_ONLY"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 11,
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 5984",
+          "Muslim 2556"
+        ]
+      },
+      "checks": [],
+      "verdict": "HADITH_ONLY"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 12,
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Tirmidhi 2518"
+        ]
+      },
+      "checks": [],
+      "verdict": "HADITH_ONLY"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 13,
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Tirmidhi 1956"
+        ]
+      },
+      "checks": [],
+      "verdict": "HADITH_ONLY"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 14,
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 6320"
+        ]
+      },
+      "checks": [],
+      "verdict": "HADITH_ONLY"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 15,
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Tirmidhi 2380"
+        ]
+      },
+      "checks": [],
+      "verdict": "HADITH_ONLY"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 16,
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Muslim 26"
+        ]
+      },
+      "checks": [],
+      "verdict": "HADITH_ONLY"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 17,
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 7064",
+          "Muslim 157"
+        ]
+      },
+      "checks": [],
+      "verdict": "HADITH_ONLY"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 18,
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Muslim 91"
+        ]
+      },
+      "checks": [],
+      "verdict": "HADITH_ONLY"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 19,
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Muslim 1467"
+        ]
+      },
+      "checks": [],
+      "verdict": "HADITH_ONLY"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 20,
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 1904",
+          "Muslim 1151"
+        ]
+      },
+      "checks": [],
+      "verdict": "HADITH_ONLY"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 21,
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Tirmidhi 2910"
+        ]
+      },
+      "checks": [],
+      "verdict": "HADITH_ONLY"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 22,
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Muslim 1650"
+        ]
+      },
+      "checks": [],
+      "verdict": "HADITH_ONLY"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 23,
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 24",
+          "Muslim 36"
+        ]
+      },
+      "checks": [],
+      "verdict": "HADITH_ONLY"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 24,
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 6490",
+          "Muslim 2963"
+        ]
+      },
+      "checks": [],
+      "verdict": "HADITH_ONLY"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 25,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 26,
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Tirmidhi 2516"
+        ]
+      },
+      "checks": [],
+      "verdict": "HADITH_ONLY"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 27,
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 5376",
+          "Muslim 2022"
+        ]
+      },
+      "checks": [],
+      "verdict": "HADITH_ONLY"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 28,
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 6018",
+          "Muslim 47"
+        ]
+      },
+      "checks": [],
+      "verdict": "HADITH_ONLY"
+    },
+    {
+      "section": "hadiths",
+      "entry_id": 29,
+      "refs_found": {
+        "quran": [],
+        "hadith": [
+          "Bukhari 2387"
+        ]
+      },
+      "checks": [],
+      "verdict": "HADITH_ONLY"
+    },
+    {
+      "section": "duaas",
+      "entry_id": 180,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "duaas",
+      "entry_id": 187,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "duaas",
+      "entry_id": 86,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "duaas",
+      "entry_id": 52,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "duaas",
+      "entry_id": 122,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "duaas",
+      "entry_id": 142,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "duaas",
+      "entry_id": 147,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "duaas",
+      "entry_id": 205,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "duaas",
+      "entry_id": 178,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "duaas",
+      "entry_id": 134,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "duaas",
+      "entry_id": 245,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "duaas",
+      "entry_id": 101,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "duaas",
+      "entry_id": 41,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "duaas",
+      "entry_id": 73,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "duaas",
+      "entry_id": 51,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "duaas",
+      "entry_id": 185,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "duaas",
+      "entry_id": 45,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "duaas",
+      "entry_id": 82,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "duaas",
+      "entry_id": 221,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "duaas",
+      "entry_id": 250,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "duaas",
+      "entry_id": 96,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "duaas",
+      "entry_id": 117,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "duaas",
+      "entry_id": 157,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "duaas",
+      "entry_id": 33,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "duaas",
+      "entry_id": 138,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "duaas",
+      "entry_id": 200,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "duaas",
+      "entry_id": 107,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "duaas",
+      "entry_id": 72,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "duaas",
+      "entry_id": 179,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "duaas",
+      "entry_id": 166,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 1,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 2,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 3,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 4,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 5,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 6,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 7,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 8,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 9,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 10,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 11,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 12,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 13,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 14,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 15,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 16,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 17,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 18,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 19,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 20,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 21,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 22,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 23,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 24,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 25,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 26,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 27,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 28,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 29,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 30,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 31,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 32,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 33,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 34,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 35,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 36,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 37,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 38,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 39,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 40,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 41,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 42,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 43,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 44,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 45,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 46,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 47,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 48,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 49,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 50,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 51,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 52,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 53,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 54,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 55,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 56,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 57,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 58,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 59,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 60,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 61,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 62,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 63,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 64,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 65,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 66,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 67,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 68,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 69,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 70,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 71,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 72,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 73,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 74,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 75,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 76,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 77,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 78,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 79,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 80,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 81,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "compagnons",
+      "entry_id": 82,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 1,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 2,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 3,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 4,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 5,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 6,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 7,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 8,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 9,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 10,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 11,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 12,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 13,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 14,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 15,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 16,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 17,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 18,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 19,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 20,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 21,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 22,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 23,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 24,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 25,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 26,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 27,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 28,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 29,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 30,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 31,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 32,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 33,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 34,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 35,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 36,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 37,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 38,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 39,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 40,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 41,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 42,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 43,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 44,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 45,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 46,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 47,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 48,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 49,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 50,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 51,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 52,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 53,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 54,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 55,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 56,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 57,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 58,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 59,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 60,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 61,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 62,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 63,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 64,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 65,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 66,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 67,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 68,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 69,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 70,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 71,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 72,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 73,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 74,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 75,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 76,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "prophetes",
+      "entry_id": 77,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "recits_coran",
+      "entry_id": 1,
+      "refs_found": {
+        "quran": [
+          "2:258"
+        ],
+        "hadith": []
+      },
+      "checks": [
+        {
+          "type": "quran",
+          "ref": "2:258",
+          "api_ok": true,
+          "api_text": "N'as-tu pas su (l'histoire de) celui qui, parce qu'Allah l'avait fait roi, argumenta contre Abraham au sujet de son Seig",
+          "api_surah": "Al-Baqara",
+          "error": ""
+        }
+      ],
+      "verdict": "OK"
+    },
+    {
+      "section": "recits_coran",
+      "entry_id": 2,
+      "refs_found": {
+        "quran": [
+          "18:32"
+        ],
+        "hadith": []
+      },
+      "checks": [
+        {
+          "type": "quran",
+          "ref": "18:32",
+          "api_ok": true,
+          "api_text": "Donne-leur l'exemple de deux hommes: à l'un d'eux Nous avons assigné deux jardins de vignes que Nous avons entourés de p",
+          "api_surah": "Al-Kahf",
+          "error": ""
+        }
+      ],
+      "verdict": "OK"
+    },
+    {
+      "section": "recits_coran",
+      "entry_id": 3,
+      "refs_found": {
+        "quran": [
+          "18:9"
+        ],
+        "hadith": []
+      },
+      "checks": [
+        {
+          "type": "quran",
+          "ref": "18:9",
+          "api_ok": true,
+          "api_text": "Penses-tu que les gens de la Caverne et d'ar-Raquîm ont constitué une chose extraordinaire d'entre Nos prodiges?",
+          "api_surah": "Al-Kahf",
+          "error": ""
+        }
+      ],
+      "verdict": "OK"
+    },
+    {
+      "section": "recits_coran",
+      "entry_id": 4,
+      "refs_found": {
+        "quran": [
+          "18:60"
+        ],
+        "hadith": []
+      },
+      "checks": [
+        {
+          "type": "quran",
+          "ref": "18:60",
+          "api_ok": true,
+          "api_text": "(Rappelle-toi) quand Moïse dit à son valet: «Je n'arrêterai pas avant d'avoir atteint le confluent des deux mers, dussé-",
+          "api_surah": "Al-Kahf",
+          "error": ""
+        }
+      ],
+      "verdict": "OK"
+    },
+    {
+      "section": "recits_coran",
+      "entry_id": 5,
+      "refs_found": {
+        "quran": [
+          "28:76"
+        ],
+        "hadith": []
+      },
+      "checks": [
+        {
+          "type": "quran",
+          "ref": "28:76",
+          "api_ok": true,
+          "api_text": "En vérité, Coré [Karoûn] était du peuple de Moïse mais il était empli de violence envers eux. Nous lui avions donné des ",
+          "api_surah": "Al-Qasas",
+          "error": ""
+        }
+      ],
+      "verdict": "OK"
+    },
+    {
+      "section": "recits_coran",
+      "entry_id": 6,
+      "refs_found": {
+        "quran": [
+          "34:15"
+        ],
+        "hadith": []
+      },
+      "checks": [
+        {
+          "type": "quran",
+          "ref": "34:15",
+          "api_ok": true,
+          "api_text": "Il y avait assurément, pour la tribu de Saba' un Signe dans leurs habitat: deux jardins, l'un à droite et l'autre à gauc",
+          "api_surah": "Saba",
+          "error": ""
+        }
+      ],
+      "verdict": "OK"
+    },
+    {
+      "section": "recits_coran",
+      "entry_id": 7,
+      "refs_found": {
+        "quran": [
+          "68:17"
+        ],
+        "hadith": []
+      },
+      "checks": [
+        {
+          "type": "quran",
+          "ref": "68:17",
+          "api_ok": true,
+          "api_text": "Nous les avons éprouvés comme Nous avons éprouvé les propriétaires du verger qui avaient juré d'en faire la récolte au m",
+          "api_surah": "Al-Qalam",
+          "error": ""
+        }
+      ],
+      "verdict": "OK"
+    },
+    {
+      "section": "recits_coran",
+      "entry_id": 8,
+      "refs_found": {
+        "quran": [
+          "5:27"
+        ],
+        "hadith": []
+      },
+      "checks": [
+        {
+          "type": "quran",
+          "ref": "5:27",
+          "api_ok": true,
+          "api_text": "Et raconte-leur en toute vérité l'histoire des deux fils d'Adam. Les deux offrirent des sacrifices; celui de l'un fut ac",
+          "api_surah": "Al-Maaida",
+          "error": ""
+        }
+      ],
+      "verdict": "OK"
+    },
+    {
+      "section": "recits_coran",
+      "entry_id": 9,
+      "refs_found": {
+        "quran": [
+          "11:77",
+          "15:61",
+          "26:160"
+        ],
+        "hadith": []
+      },
+      "checks": [
+        {
+          "type": "quran",
+          "ref": "11:77",
+          "api_ok": true,
+          "api_text": "Et quand Nos émissaires (Anges) vinrent à Lot, il fut chagriné pour eux, et en éprouva une grande gêne. Et il dit: «Voic",
+          "api_surah": "Hud",
+          "error": ""
+        },
+        {
+          "type": "quran",
+          "ref": "15:61",
+          "api_ok": true,
+          "api_text": "Puis lorsque les envoyés vinrent auprès de la famille de Lot",
+          "api_surah": "Al-Hijr",
+          "error": ""
+        },
+        {
+          "type": "quran",
+          "ref": "26:160",
+          "api_ok": true,
+          "api_text": "Le peuple de Lot traita de menteurs les Messagers,",
+          "api_surah": "Ash-Shu'araa",
+          "error": ""
+        }
+      ],
+      "verdict": "OK"
+    },
+    {
+      "section": "recits_coran",
+      "entry_id": 10,
+      "refs_found": {
+        "quran": [
+          "26:141",
+          "11:61",
+          "7:73"
+        ],
+        "hadith": []
+      },
+      "checks": [
+        {
+          "type": "quran",
+          "ref": "26:141",
+          "api_ok": true,
+          "api_text": "Les Thamûd traitèrent de menteurs les Messagers.",
+          "api_surah": "Ash-Shu'araa",
+          "error": ""
+        },
+        {
+          "type": "quran",
+          "ref": "11:61",
+          "api_ok": true,
+          "api_text": "Et (Nous avons envoyé) aux Thamûd, leur frère Sâlih qui dit: «O mon peuple, adorez Allah. Vous n'avez point de divinité ",
+          "api_surah": "Hud",
+          "error": ""
+        },
+        {
+          "type": "quran",
+          "ref": "7:73",
+          "api_ok": true,
+          "api_text": "Et aux Thamûd, leur frère Sâlih: «O mon peuple, dit-il, adorez Allah. Pour vous, pas d'autre divinité que Lui. Certes, u",
+          "api_surah": "Al-A'raaf",
+          "error": ""
+        }
+      ],
+      "verdict": "OK"
+    },
+    {
+      "section": "recits_coran",
+      "entry_id": 11,
+      "refs_found": {
+        "quran": [
+          "11:50",
+          "46:21",
+          "89:6"
+        ],
+        "hadith": []
+      },
+      "checks": [
+        {
+          "type": "quran",
+          "ref": "11:50",
+          "api_ok": true,
+          "api_text": "Et (Nous avons envoyé) aux 'Aad, leur frère Hûd, qui leur dit: «O mon peuple, adorez Allah. Vous n'avez point de divinit",
+          "api_surah": "Hud",
+          "error": ""
+        },
+        {
+          "type": "quran",
+          "ref": "46:21",
+          "api_ok": true,
+          "api_text": "Et rappelle-toi le frère des 'Aad (Hûd) quand il avertit son peuple à Al-Ahqâf - alors qu'avant et après lui, des averti",
+          "api_surah": "Al-Ahqaf",
+          "error": ""
+        },
+        {
+          "type": "quran",
+          "ref": "89:6",
+          "api_ok": true,
+          "api_text": "N'as-tu pas vu comment ton Seigneur a agi avec les 'Aad",
+          "api_surah": "Al-Fajr",
+          "error": ""
+        }
+      ],
+      "verdict": "OK"
+    },
+    {
+      "section": "recits_coran",
+      "entry_id": 12,
+      "refs_found": {
+        "quran": [
+          "38:41",
+          "21:83"
+        ],
+        "hadith": []
+      },
+      "checks": [
+        {
+          "type": "quran",
+          "ref": "38:41",
+          "api_ok": true,
+          "api_text": "Et rappelle-toi Job, Notre serviteur, lorsqu'il appela son Seigneur: «Le Diable m'a infligé détresse et souffrance».",
+          "api_surah": "Saad",
+          "error": ""
+        },
+        {
+          "type": "quran",
+          "ref": "21:83",
+          "api_ok": true,
+          "api_text": "Et Job, quand il implora son Seigneur: «Le mal m'a touché. Mais Toi, tu es le plus miséricordieux des miséricordieux»!",
+          "api_surah": "Al-Anbiyaa",
+          "error": ""
+        }
+      ],
+      "verdict": "OK"
+    },
+    {
+      "section": "recits_coran",
+      "entry_id": 13,
+      "refs_found": {
+        "quran": [
+          "37:139",
+          "21:87"
+        ],
+        "hadith": []
+      },
+      "checks": [
+        {
+          "type": "quran",
+          "ref": "37:139",
+          "api_ok": true,
+          "api_text": "Jonas était certes, du nombre des Messagers.",
+          "api_surah": "As-Saaffaat",
+          "error": ""
+        },
+        {
+          "type": "quran",
+          "ref": "21:87",
+          "api_ok": true,
+          "api_text": "Et Dû'n-Nûn (Jonas) quand il partit, irrité. Il pensa que Nous N'allions pas l'éprouver. Puis il fit, dans les ténèbres,",
+          "api_surah": "Al-Anbiyaa",
+          "error": ""
+        }
+      ],
+      "verdict": "OK"
+    },
+    {
+      "section": "recits_coran",
+      "entry_id": 14,
+      "refs_found": {
+        "quran": [
+          "27:15"
+        ],
+        "hadith": []
+      },
+      "checks": [
+        {
+          "type": "quran",
+          "ref": "27:15",
+          "api_ok": true,
+          "api_text": "Nous avons effectivement donné à David et à Salomon une science; et ils dirent: «Louange à Allah qui nous a favorisés à ",
+          "api_surah": "An-Naml",
+          "error": ""
+        }
+      ],
+      "verdict": "OK"
+    },
+    {
+      "section": "recits_coran",
+      "entry_id": 15,
+      "refs_found": {
+        "quran": [
+          "27:18"
+        ],
+        "hadith": []
+      },
+      "checks": [
+        {
+          "type": "quran",
+          "ref": "27:18",
+          "api_ok": true,
+          "api_text": "Quand ils arrivèrent à la Vallée des Fourmis, une fourmi dit: «O fourmis, entrez dans vos demeures, [de peur] que Salomo",
+          "api_surah": "An-Naml",
+          "error": ""
+        }
+      ],
+      "verdict": "OK"
+    },
+    {
+      "section": "recits_coran",
+      "entry_id": 16,
+      "refs_found": {
+        "quran": [
+          "2:246"
+        ],
+        "hadith": []
+      },
+      "checks": [
+        {
+          "type": "quran",
+          "ref": "2:246",
+          "api_ok": true,
+          "api_text": "N'as-tu pas su l'histoire des notables, parmi les enfants d'Israël, lorsqu'après Moïse ils dirent à un prophète à eux: «",
+          "api_surah": "Al-Baqara",
+          "error": ""
+        }
+      ],
+      "verdict": "OK"
+    },
+    {
+      "section": "recits_coran",
+      "entry_id": 17,
+      "refs_found": {
+        "quran": [
+          "105:1"
+        ],
+        "hadith": []
+      },
+      "checks": [
+        {
+          "type": "quran",
+          "ref": "105:1",
+          "api_ok": true,
+          "api_text": "N'as-tu pas vu comment ton Seigneur a agi envers les gens de l'Eléphant?",
+          "api_surah": "Al-Fil",
+          "error": ""
+        }
+      ],
+      "verdict": "OK"
+    },
+    {
+      "section": "recits_coran",
+      "entry_id": 18,
+      "refs_found": {
+        "quran": [
+          "85:4"
+        ],
+        "hadith": []
+      },
+      "checks": [
+        {
+          "type": "quran",
+          "ref": "85:4",
+          "api_ok": true,
+          "api_text": "Périssent les gens de l'Uhdûd,",
+          "api_surah": "Al-Burooj",
+          "error": ""
+        }
+      ],
+      "verdict": "OK"
+    },
+    {
+      "section": "recits_coran",
+      "entry_id": 19,
+      "refs_found": {
+        "quran": [
+          "5:112"
+        ],
+        "hadith": []
+      },
+      "checks": [
+        {
+          "type": "quran",
+          "ref": "5:112",
+          "api_ok": true,
+          "api_text": "Rappelle-toi le moment) où les Apôtres dirent: «O Jésus, fils de Marie, se peut-il que ton Seigneur fasse descendre sur ",
+          "api_surah": "Al-Maaida",
+          "error": ""
+        }
+      ],
+      "verdict": "OK"
+    },
+    {
+      "section": "recits_coran",
+      "entry_id": 20,
+      "refs_found": {
+        "quran": [
+          "2:259"
+        ],
+        "hadith": []
+      },
+      "checks": [
+        {
+          "type": "quran",
+          "ref": "2:259",
+          "api_ok": true,
+          "api_text": "Ou comme celui qui passait par un village désert et dévasté: «Comment Allah va-t-Il redonner la vie à celui-ci après sa ",
+          "api_surah": "Al-Baqara",
+          "error": ""
+        }
+      ],
+      "verdict": "OK"
+    },
+    {
+      "section": "sira",
+      "entry_id": 208,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "sira",
+      "entry_id": 13,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "sira",
+      "entry_id": 110,
+      "refs_found": {
+        "quran": [
+          "3:172"
+        ],
+        "hadith": []
+      },
+      "checks": [
+        {
+          "type": "quran",
+          "ref": "3:172",
+          "api_ok": true,
+          "api_text": "Ceux qui, quoiqu'atteints de blessure, répondirent à l'appel d'Allah et du Messager, il y aura une énorme récompense pou",
+          "api_surah": "Aal-i-Imraan",
+          "error": ""
+        }
+      ],
+      "verdict": "OK"
+    },
+    {
+      "section": "sira",
+      "entry_id": 186,
+      "refs_found": {
+        "quran": [
+          "17:81"
+        ],
+        "hadith": []
+      },
+      "checks": [
+        {
+          "type": "quran",
+          "ref": "17:81",
+          "api_ok": true,
+          "api_text": "Et dis: «La Vérité (l'Islam) est venue et l'Erreur a disparu. Car l'Erreur est destinée à disparaître».",
+          "api_surah": "Al-Israa",
+          "error": ""
+        }
+      ],
+      "verdict": "OK"
+    },
+    {
+      "section": "sira",
+      "entry_id": 312,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "sira",
+      "entry_id": 49,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "sira",
+      "entry_id": 177,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "sira",
+      "entry_id": 365,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "sira",
+      "entry_id": 349,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "sira",
+      "entry_id": 12,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "sira",
+      "entry_id": 71,
+      "refs_found": {
+        "quran": [
+          "8:9"
+        ],
+        "hadith": []
+      },
+      "checks": [
+        {
+          "type": "quran",
+          "ref": "8:9",
+          "api_ok": true,
+          "api_text": "(Et rappelez-vous) le moment où vous imploriez le secours de votre Seigneur et qu'Il vous exauça aussitôt: «Je vais vous",
+          "api_surah": "Al-Anfaal",
+          "error": ""
+        }
+      ],
+      "verdict": "OK"
+    },
+    {
+      "section": "sira",
+      "entry_id": 293,
+      "refs_found": {
+        "quran": [
+          "16:126"
+        ],
+        "hadith": []
+      },
+      "checks": [
+        {
+          "type": "quran",
+          "ref": "16:126",
+          "api_ok": true,
+          "api_text": "Et si vous punissez, infligez [à l'agresseur] une punition égale au tort qu'il vous a fait. Et si vous endurez... cela e",
+          "api_surah": "An-Nahl",
+          "error": ""
+        }
+      ],
+      "verdict": "OK"
+    },
+    {
+      "section": "sira",
+      "entry_id": 212,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "sira",
+      "entry_id": 43,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "sira",
+      "entry_id": 95,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "sira",
+      "entry_id": 259,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "sira",
+      "entry_id": 48,
+      "refs_found": {
+        "quran": [
+          "9:108"
+        ],
+        "hadith": []
+      },
+      "checks": [
+        {
+          "type": "quran",
+          "ref": "9:108",
+          "api_ok": true,
+          "api_text": "Ne te tiens jamais dans (cette mosquée). Car une Mosquée fondée dès le premier jour, sur la piété, est plus digne que tu",
+          "api_surah": "At-Tawba",
+          "error": ""
+        }
+      ],
+      "verdict": "OK"
+    },
+    {
+      "section": "sira",
+      "entry_id": 243,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "sira",
+      "entry_id": 134,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "sira",
+      "entry_id": 291,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "sira",
+      "entry_id": 109,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "sira",
+      "entry_id": 261,
+      "refs_found": {
+        "quran": [
+          "80:1"
+        ],
+        "hadith": []
+      },
+      "checks": [
+        {
+          "type": "quran",
+          "ref": "80:1",
+          "api_ok": true,
+          "api_text": "Il s'est renfrogné et il s'est détourné",
+          "api_surah": "Abasa",
+          "error": ""
+        }
+      ],
+      "verdict": "OK"
+    },
+    {
+      "section": "sira",
+      "entry_id": 255,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "sira",
+      "entry_id": 127,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "sira",
+      "entry_id": 275,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "sira",
+      "entry_id": 325,
+      "refs_found": {
+        "quran": [
+          "28:56"
+        ],
+        "hadith": []
+      },
+      "checks": [
+        {
+          "type": "quran",
+          "ref": "28:56",
+          "api_ok": true,
+          "api_text": "Tu [Muhammad] ne diriges pas celui que tu aimes: mais c'est Allah qui guide qui Il veut. Il connaît mieux cependant les ",
+          "api_surah": "Al-Qasas",
+          "error": ""
+        }
+      ],
+      "verdict": "OK"
+    },
+    {
+      "section": "sira",
+      "entry_id": 33,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "sira",
+      "entry_id": 236,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "sira",
+      "entry_id": 320,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    },
+    {
+      "section": "sira",
+      "entry_id": 15,
+      "refs_found": {
+        "quran": [],
+        "hadith": []
+      },
+      "checks": [],
+      "verdict": "NO_REF"
+    }
+  ]
+}
