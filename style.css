@@ -9274,4 +9274,11 @@ body.onboarding-active #nav-bar-v2 {
   font-size: 10px;
   color: rgba(200,168,75,0.7);
   font-family: 'Cormorant Garamond', serif;
-}
+}.niyyah-breath-overlay{position:fixed;inset:0;z-index:9999;background:rgba(10,8,6,0.93);display:flex;align-items:center;justify-content:center;animation:niyyahBreathFade .6s ease;}
+@keyframes niyyahBreathFade{from{opacity:0}to{opacity:1}}
+.niyyah-breath-inner{display:flex;flex-direction:column;align-items:center;gap:26px;padding:24px;text-align:center;}
+.niyyah-breath-label{font-family:var(--serif);font-size:22px;color:rgba(240,234,214,0.92);min-height:30px;}
+.niyyah-breath-wrap{width:230px;height:230px;display:flex;align-items:center;justify-content:center;}
+.niyyah-breath-circle{width:120px;height:120px;border-radius:50%;background:radial-gradient(circle at 50% 40%,rgba(231,211,151,0.55),rgba(200,168,75,0.28) 60%,rgba(200,168,75,0.10));box-shadow:0 0 40px rgba(200,168,75,0.35);transform:scale(1);transition-property:transform;transition-timing-function:ease-in-out;transition-duration:1s;}
+.niyyah-breath-count{font-family:var(--serif);font-size:15px;color:rgba(231,211,151,0.72);}
+.niyyah-breath-btn{font-family:var(--serif);font-size:17px;color:#F6E6C8;background:rgba(200,168,75,0.18);border:1px solid rgba(200,168,75,0.45);border-radius:12px;padding:12px 30px;cursor:pointer;}

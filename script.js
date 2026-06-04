@@ -6448,6 +6448,7 @@ function _cureAnxieteWizardRender(el) {
         + '</div>';
     }
     if (bc.duree_min) html += '<div style="font-size:18px;color:rgba(231,211,151,0.72);text-align:center;margin-bottom:8px;">' + bc.duree_min + ' min</div>';
+    if (bc.respi) html += '<button onclick="openBreathOverlay(&#39;' + bc.respi + '&#39;)" style="display:block;width:100%;max-width:340px;margin:4px auto 8px;padding:12px;border-radius:12px;border:1px solid rgba(200,168,75,0.40);background:rgba(200,168,75,0.14);color:#E7D397;font-family:var(--serif);font-size:17px;cursor:pointer;">Respirer \u2014 guid\u00e9</button>';
     html += nextBtn + '</div>';
   } else if (step.type === '_ancre_anxiete') {
     var ancre = (typeof step.data === 'string') ? { fr: step.data } : (step.data || {});
@@ -6879,6 +6880,82 @@ function _coffretHtml(key, d, activeId) {
   return html;
 }
 window._coffretHtml = _coffretHtml;
+
+/* ===== Overlay respiration guidée (réutilisable) ===== */
+var NIYYAH_BREATH_PRESETS = {
+  apaiser: {
+    cycles: 6,
+    phases: [
+      { label: 'Inspire par le nez', sec: 2.5, scale: 1.4 },
+      { label: 'Encore un peu', sec: 1.0, scale: 1.6 },
+      { label: 'Expire lentement', sec: 6.0, scale: 1.0 }
+    ],
+    fin: 'La vague est passée.'
+  },
+  dormir: {
+    cycles: 4,
+    phases: [
+      { label: 'Inspire (nez)', sec: 4, scale: 1.6 },
+      { label: 'Retiens', sec: 7, scale: 1.6 },
+      { label: 'Expire (bouche)', sec: 8, scale: 1.0 }
+    ],
+    fin: 'Laisse-toi aller.'
+  }
+};
+var _niyyahBreathTimers = [];
+function closeBreathOverlay() {
+  _niyyahBreathTimers.forEach(function (t) { clearTimeout(t); });
+  _niyyahBreathTimers = [];
+  var ov = document.getElementById('niyyah-breath-overlay');
+  if (ov && ov.parentNode) ov.parentNode.removeChild(ov);
+}
+function openBreathOverlay(presetKey) {
+  var p = NIYYAH_BREATH_PRESETS[presetKey] || NIYYAH_BREATH_PRESETS.apaiser;
+  closeBreathOverlay();
+  var ov = document.createElement('div');
+  ov.id = 'niyyah-breath-overlay';
+  ov.className = 'niyyah-breath-overlay';
+  ov.innerHTML =
+    '<div class="niyyah-breath-inner">'
+    + '<div id="niyyah-breath-label" class="niyyah-breath-label">Pr\u00eat ?</div>'
+    + '<div class="niyyah-breath-wrap"><div id="niyyah-breath-circle" class="niyyah-breath-circle"></div></div>'
+    + '<div id="niyyah-breath-count" class="niyyah-breath-count"></div>'
+    + '<button id="niyyah-breath-end" class="niyyah-breath-btn">Terminer</button>'
+    + '</div>';
+  document.body.appendChild(ov);
+  document.getElementById('niyyah-breath-end').onclick = closeBreathOverlay;
+  var circle = document.getElementById('niyyah-breath-circle');
+  var label = document.getElementById('niyyah-breath-label');
+  var count = document.getElementById('niyyah-breath-count');
+  var cyc = 0;
+  function runCycle() {
+    if (cyc >= p.cycles) {
+      label.textContent = p.fin || 'Termin\u00e9.';
+      count.textContent = '';
+      circle.style.transitionDuration = '2s';
+      circle.style.transform = 'scale(1)';
+      var b = document.getElementById('niyyah-breath-end');
+      if (b) b.textContent = 'Fermer';
+      return;
+    }
+    cyc++;
+    count.textContent = 'Cycle ' + cyc + ' / ' + p.cycles;
+    var i = 0;
+    function runPhase() {
+      if (i >= p.phases.length) { runCycle(); return; }
+      var ph = p.phases[i];
+      label.textContent = ph.label;
+      circle.style.transitionDuration = ph.sec + 's';
+      circle.style.transform = 'scale(' + ph.scale + ')';
+      i++;
+      _niyyahBreathTimers.push(setTimeout(runPhase, ph.sec * 1000));
+    }
+    runPhase();
+  }
+  _niyyahBreathTimers.push(setTimeout(runCycle, 800));
+}
+window.openBreathOverlay = openBreathOverlay;
+window.closeBreathOverlay = closeBreathOverlay;
 
 function openCoffretAnxiete(section) { _openCoffret('anxiete', 'coffret-anxiete.json', section); }
 window.openCoffretAnxiete = openCoffretAnxiete;
