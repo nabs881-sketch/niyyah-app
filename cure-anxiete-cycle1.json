@@ -219,9 +219,10 @@
       },
       "phrase_ancre": "Je donne un nom à ce qui pèse.",
       "cloture": {
-        "texte": "Tu as lu le verset.\nTu as entendu Al-Balkhi.\nTu as fait le constat.\nTu as donné un nom.\nTu as distingué.\nTu connais maintenant ton dhikr et ton geste pour ce soir et demain matin.\n\nDemain — l'ancrage.",
+        "texte": "Tu as lu le verset.\nTu as entendu Al-Balkhi.\nTu as fait le constat.\nTu as donné un nom.\nTu as distingué.\nTu connais maintenant ton dhikr et ton geste pour ce soir et demain matin.",
         "bouton": "J'ai nommé. À demain.",
-        "stockage": "cure_anxiete = { current_day: 1, completed_j1: true, dhikr_j1_quantite: 100, geste_j1: 'main sur poitrine' }"
+        "stockage": "cure_anxiete = { current_day: 1, completed_j1: true, dhikr_j1_quantite: 100, geste_j1: 'main sur poitrine' }",
+        "teaser": "Demain — l'ancrage."
       },
       "murmure_sortie_sanctuaire": "Nommer, c'est déjà déposer.",
       "metadata_jour": {
@@ -415,9 +416,10 @@
       },
       "phrase_ancre": "Je suis ici. Maintenant.",
       "cloture": {
-        "texte": "Tu as lu le verset.\nTu as entendu Hassan al-Basrî.\nTu as respiré avec Le Vivant.\nTu es revenu aux sens.\nTu as remis les pensées à leur place.\nTu connais ton dhikr et ta marche pour aujourd'hui.\n\nDemain — accueillir ce qui reste.",
+        "texte": "Tu as lu le verset.\nTu as entendu Hassan al-Basrî.\nTu as respiré avec Le Vivant.\nTu es revenu aux sens.\nTu as remis les pensées à leur place.\nTu connais ton dhikr et ta marche pour aujourd'hui.",
         "bouton": "Je suis revenu. À demain.",
-        "stockage": "cure_anxiete = { current_day: 2, completed_j2: true, dhikr_j2_quantite: 33, marche_j2: '10 min + 4 dhikr cycliques' }"
+        "stockage": "cure_anxiete = { current_day: 2, completed_j2: true, dhikr_j2_quantite: 33, marche_j2: '10 min + 4 dhikr cycliques' }",
+        "teaser": "Demain — accueillir ce qui reste."
       },
       "murmure_sortie_sanctuaire": "Le présent est le seul lieu où Il se trouve.",
       "metadata_jour": {
@@ -614,9 +616,10 @@
       },
       "phrase_ancre": "Tu es là. Je te vois.",
       "cloture": {
-        "texte": "Tu as lu le verset.\nTu as entendu Râbi'a.\nTu as localisé.\nTu as posé la main.\nTu as nommé ce vers quoi tu fuis.\nTu connais ton istirjâ' et ton wudû conscient.\n\nDemain — séparer ce qui t'appartient de ce qui Lui appartient.",
+        "texte": "Tu as lu le verset.\nTu as entendu Râbi'a.\nTu as localisé.\nTu as posé la main.\nTu as nommé ce vers quoi tu fuis.\nTu connais ton istirjâ' et ton wudû conscient.",
         "bouton": "Je ne combats plus. À demain.",
-        "stockage": "cure_anxiete = { current_day: 3, completed_j3: true, dhikr_j3_quantite: 33, wudu_j3: 'conscient' }"
+        "stockage": "cure_anxiete = { current_day: 3, completed_j3: true, dhikr_j3_quantite: 33, wudu_j3: 'conscient' }",
+        "teaser": "Demain — séparer ce qui t'appartient de ce qui Lui appartient."
       },
       "murmure_sortie_sanctuaire": "Ce qu'on accueille s'allège.",
       "metadata_jour": {
@@ -818,9 +821,10 @@
       },
       "phrase_ancre": "Ce qui m'appartient, j'agis. Ce qui Lui appartient, je dépose.",
       "cloture": {
-        "texte": "Tu as lu le verset.\nTu as entendu Ibn 'Atâ'illâh.\nTu as séparé les deux mains.\nTu as choisi une action.\nTu as déposé le « Et si ».\nTu connais ton dhikr post-salât et ta sajda du dépôt.\n\nDemain — observer les pensées passer.",
+        "texte": "Tu as lu le verset.\nTu as entendu Ibn 'Atâ'illâh.\nTu as séparé les deux mains.\nTu as choisi une action.\nTu as déposé le « Et si ».\nTu connais ton dhikr post-salât et ta sajda du dépôt.",
         "bouton": "J'ai trié. À demain.",
-        "stockage": "cure_anxiete = { current_day: 4, completed_j4: true, dhikr_j4_quantite: 70, sajda_j4: 'tawakkul' }"
+        "stockage": "cure_anxiete = { current_day: 4, completed_j4: true, dhikr_j4_quantite: 70, sajda_j4: 'tawakkul' }",
+        "teaser": "Demain — observer les pensées passer."
       },
       "murmure_sortie_sanctuaire": "Allah ne demande pas que tu portes tout.",
       "metadata_jour": {
@@ -1009,9 +1013,10 @@
       },
       "phrase_ancre": "Mes pensées ne sont pas la vérité.",
       "cloture": {
-        "texte": "Tu as lu la sourate du refuge.\nTu as entendu Ibn al-Qayyim.\nTu as séparé le fait de l'interprétation.\nTu as nommé ton esprit comme narrateur, pas comme vérité.\nTu as invoqué Le Subtil.\nTu connais ton dhikr et ton rituel du soir.\n\nDemain — confier.",
+        "texte": "Tu as lu la sourate du refuge.\nTu as entendu Ibn al-Qayyim.\nTu as séparé le fait de l'interprétation.\nTu as nommé ton esprit comme narrateur, pas comme vérité.\nTu as invoqué Le Subtil.\nTu connais ton dhikr et ton rituel du soir.",
         "bouton": "Je sors de la fusion. À demain.",
-        "stockage": "cure_anxiete = { current_day: 5, completed_j5: true, dhikr_j5_quantite: 129, mu_awwidhatan_done: true }"
+        "stockage": "cure_anxiete = { current_day: 5, completed_j5: true, dhikr_j5_quantite: 129, mu_awwidhatan_done: true }",
+        "teaser": "Demain — confier."
       },
       "murmure_sortie_sanctuaire": "Je remarque la pensée. Je ne suis pas la pensée.",
       "metadata_jour": {
@@ -1240,9 +1245,10 @@
       },
       "phrase_ancre": "Je fais ma part. Je remets le reste.",
       "cloture": {
-        "texte": "Tu as lu le verset.\nTu as entendu Ghazâlî.\nTu as déposé.\nTu as mesuré tes deux mains.\nTu as reçu le verset.\nTu connais la du'â de Yûnus et la prière de nuit.\n\nDemain — ouvrir.",
+        "texte": "Tu as lu le verset.\nTu as entendu Ghazâlî.\nTu as déposé.\nTu as mesuré tes deux mains.\nTu as reçu le verset.\nTu connais la du'â de Yûnus et la prière de nuit.",
         "bouton": "J'ai confié. À demain.",
-        "stockage": "cure_anxiete = { current_day: 6, completed_j6: true, dhikr_j6_quantite: 40, qiyam_j6: 'facultatif' }"
+        "stockage": "cure_anxiete = { current_day: 6, completed_j6: true, dhikr_j6_quantite: 40, qiyam_j6: 'facultatif' }",
+        "teaser": "Demain — ouvrir."
       },
       "murmure_sortie_sanctuaire": "Ce qui est entre Ses Mains est en sécurité.",
       "metadata_jour": {

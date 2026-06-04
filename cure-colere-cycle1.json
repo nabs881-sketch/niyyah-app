@@ -162,12 +162,12 @@
         "titre_bloc": "Là où elle vit",
         "introduction": "La régulation commence par remarquer l'activation dans le corps.",
         "instructions": [
-          "La prochaine fois que la colère monte, avant tout\u00a0:",
-          "Souffle une fois, lentement, par la bouche \u2014 l'expiration un peu plus longue que l'inspiration.",
-          "Puis amène ton attention à l'intérieur, comme une lampe qui balaie ton corps\u00a0: le visage et la mâchoire, la gorge, la poitrine, le ventre, les mains.",
-          "Ne cherche rien à changer \u2014 repère seulement où ça chauffe, où ça se serre, où ça s'accélère.",
-          "Quand tu l'as trouvé, nomme-le en silence\u00a0: \u00ab\u00a0la colère est là, dans ma poitrine.\u00a0\u00bb",
-          "Reconnaître cette trace physique t'achète une demi-seconde \u2014 et là, il y a un choix."
+          "La prochaine fois que la colère monte, avant tout :",
+          "Souffle une fois, lentement, par la bouche — l'expiration un peu plus longue que l'inspiration.",
+          "Puis amène ton attention à l'intérieur, comme une lampe qui balaie ton corps : le visage et la mâchoire, la gorge, la poitrine, le ventre, les mains.",
+          "Ne cherche rien à changer — repère seulement où ça chauffe, où ça se serre, où ça s'accélère.",
+          "Quand tu l'as trouvé, nomme-le en silence : « la colère est là, dans ma poitrine. »",
+          "Reconnaître cette trace physique t'achète une demi-seconde — et là, il y a un choix."
         ],
         "phrase_a_repeter": {
           "ar": "لَا تَغْضَبْ",
@@ -179,14 +179,15 @@
           "texte": "L'interoception (repérer l'activation corporelle de l'émotion) est le premier pas de l'autorégulation.",
           "source": "« Lâ taghdab » — conseil répété du Prophète ﷺ (Bukhârî 6116)"
         },
-        "note": "Si regarder à l'intérieur t'agite davantage, garde les yeux ouverts\u00a0: pose tes pieds bien à plat, sens le sol, et nomme trois choses autour de toi.",
+        "note": "Si regarder à l'intérieur t'agite davantage, garde les yeux ouverts : pose tes pieds bien à plat, sens le sol, et nomme trois choses autour de toi.",
         "stockage": "cure_colere_j1_corps_done"
       },
       "phrase_ancre": "Ma colère n'est pas mon ennemie — mais elle ne sera pas mon maître.",
       "cloture": {
-        "texte": "Tu as regardé ta colère en face.\nTu sais où elle se déclenche, et ton style.\nTu connais le mot du refuge.\n\nDemain — ce qui nourrit le feu.",
+        "texte": "Tu as regardé ta colère en face.\nTu sais où elle se déclenche, et ton style.\nTu connais le mot du refuge.",
         "bouton": "J'ai compris. À demain.",
-        "stockage": "cure_colere = { current_day: 1, completed_j1: true }"
+        "stockage": "cure_colere = { current_day: 1, completed_j1: true }",
+        "teaser": "Demain — ce qui nourrit le feu."
       },
       "murmure_sortie_sanctuaire": "Comprendre sa colère, c'est déjà cesser d'en être l'esclave.",
       "metadata_jour": {
@@ -356,9 +357,10 @@
       },
       "phrase_ancre": "Souvent, ce n'est pas la justice qui parle en moi — c'est ma fierté.",
       "cloture": {
-        "texte": "Tu as creusé sous la colère.\nTu as nommé l'ego, et tes racines.\nTu as ta question d'avant.\n\nDemain — l'instant où le feu prend.",
+        "texte": "Tu as creusé sous la colère.\nTu as nommé l'ego, et tes racines.\nTu as ta question d'avant.",
         "bouton": "J'ai vu la racine. À demain.",
-        "stockage": "cure_colere = { current_day: 2, completed_j2: true }"
+        "stockage": "cure_colere = { current_day: 2, completed_j2: true }",
+        "teaser": "Demain — l'instant où le feu prend."
       },
       "murmure_sortie_sanctuaire": "Soigne la racine, et la flamme perd son bois.",
       "metadata_jour": {
@@ -410,10 +412,22 @@
           "texte": "Une fois le feu pris, la réflexion ne suffit pas toujours — le corps doit agir. al-Ghazâlî prescrit des remèdes concrets : le ta'awwudh (refuge contre le shaytan, dont vient l'impulsion) ; l'eau des ablutions (la colère est de la nature du feu, et le feu se calme par l'eau) ; le changement de posture (debout → assis, assis → allongé) ; et le silence. La colère est une flamme — le travail du croyant est de l'éteindre avant qu'elle ne le consume.",
           "texte_intro": "Quand le feu a déjà pris, al-Ghazâlî prescrit des remèdes concrets :",
           "remedes": [
-            { "label": "Le ta'awwudh", "gloss": "refuge contre le shaytan, dont vient l'impulsion." },
-            { "label": "L'eau des ablutions", "gloss": "la colère est de nature de feu, et le feu se calme par l'eau." },
-            { "label": "Le changement de posture", "gloss": "s'abaisser ôte à la colère ses moyens d'agir." },
-            { "label": "Le silence", "gloss": "ne pas nourrir le feu par les mots." }
+            {
+              "label": "Le ta'awwudh",
+              "gloss": "refuge contre le shaytan, dont vient l'impulsion."
+            },
+            {
+              "label": "L'eau des ablutions",
+              "gloss": "la colère est de nature de feu, et le feu se calme par l'eau."
+            },
+            {
+              "label": "Le changement de posture",
+              "gloss": "s'abaisser ôte à la colère ses moyens d'agir."
+            },
+            {
+              "label": "Le silence",
+              "gloss": "ne pas nourrir le feu par les mots."
+            }
           ],
           "texte_fin": "La colère est une flamme — le travail du croyant est de l'éteindre avant qu'elle ne le consume.",
           "auteur": "D'après Abû Hâmid al-Ghazâlî",
@@ -534,9 +548,10 @@
       },
       "phrase_ancre": "Quand le feu prend, mon corps agit avant ma langue.",
       "cloture": {
-        "texte": "Tu as ton plan du moment.\nLe silence, la posture, l'eau — les gestes du Prophète ﷺ.\nTu connais ton signal d'alerte.\n\nDemain — voir autrement.",
+        "texte": "Tu as ton plan du moment.\nLe silence, la posture, l'eau — les gestes du Prophète ﷺ.\nTu connais ton signal d'alerte.",
         "bouton": "J'ai mon plan. À demain.",
-        "stockage": "cure_colere = { current_day: 3, completed_j3: true }"
+        "stockage": "cure_colere = { current_day: 3, completed_j3: true }",
+        "teaser": "Demain — voir autrement."
       },
       "murmure_sortie_sanctuaire": "Le feu se calme par l'eau, et le cœur par le refuge en Allah.",
       "metadata_jour": {
@@ -589,12 +604,30 @@
           "texte": "Une fois le corps calmé, al-Ghazâlî prescrit de regarder — de tendre six miroirs à ta colère : la récompense qui attend celui qui se retient ; que le pouvoir d'Allah sur toi dépasse ton pouvoir sur celui qui t'a lésé ; que la vengeance ne fait qu'aggraver l'inimitié et offrir à l'adversaire le plaisir de te voir perdre le contrôle ; que le visage en colère est enlaidi comme celui d'une bête, quand le doux ressemble aux prophètes ; que le vrai motif est souvent l'ego, pas la justice ; et que ce qui t'a atteint t'a atteint par la permission d'Allah.",
           "texte_intro": "Une fois le corps calmé, al-Ghazâlî prescrit de regarder — de tendre six miroirs à ta colère :",
           "remedes": [
-            { "label": "La récompense", "gloss": "celui qui se retient sera récompensé par Allah." },
-            { "label": "Le pouvoir d'Allah", "gloss": "Son pouvoir sur toi dépasse ton pouvoir sur celui qui t'a lésé." },
-            { "label": "L'inimitié", "gloss": "la vengeance ne fait que l'aggraver, et offre à l'autre le plaisir de te voir perdre le contrôle." },
-            { "label": "Le visage", "gloss": "la colère l'enlaidit comme celui d'une bête ; la douceur, elle, rapproche des prophètes." },
-            { "label": "Le vrai motif", "gloss": "souvent l'ego, rarement la justice." },
-            { "label": "Le décret", "gloss": "ce qui t'a atteint t'a atteint par la permission d'Allah." }
+            {
+              "label": "La récompense",
+              "gloss": "celui qui se retient sera récompensé par Allah."
+            },
+            {
+              "label": "Le pouvoir d'Allah",
+              "gloss": "Son pouvoir sur toi dépasse ton pouvoir sur celui qui t'a lésé."
+            },
+            {
+              "label": "L'inimitié",
+              "gloss": "la vengeance ne fait que l'aggraver, et offre à l'autre le plaisir de te voir perdre le contrôle."
+            },
+            {
+              "label": "Le visage",
+              "gloss": "la colère l'enlaidit comme celui d'une bête ; la douceur, elle, rapproche des prophètes."
+            },
+            {
+              "label": "Le vrai motif",
+              "gloss": "souvent l'ego, rarement la justice."
+            },
+            {
+              "label": "Le décret",
+              "gloss": "ce qui t'a atteint t'a atteint par la permission d'Allah."
+            }
           ],
           "texte_fin": "Regarde par ces six angles, et la colère perd sa prise.",
           "auteur": "D'après Abû Hâmid al-Ghazâlî",
@@ -719,9 +752,10 @@
       },
       "phrase_ancre": "Riposter est petit ; pardonner, sa récompense est auprès d'Allah.",
       "cloture": {
-        "texte": "Tu as pesé les deux issues.\nTu as choisi tes miroirs.\nTu as démenti la pensée qui enflamme.\n\nDemain — la force de se retenir.",
+        "texte": "Tu as pesé les deux issues.\nTu as choisi tes miroirs.\nTu as démenti la pensée qui enflamme.",
         "bouton": "Je vois autrement. À demain.",
-        "stockage": "cure_colere = { current_day: 4, completed_j4: true }"
+        "stockage": "cure_colere = { current_day: 4, completed_j4: true }",
+        "teaser": "Demain — la force de se retenir."
       },
       "murmure_sortie_sanctuaire": "La colère grossit l'offense ; le miroir la ramène à sa taille.",
       "metadata_jour": {
@@ -803,10 +837,22 @@
           "introduction": "",
           "consigne": "Pourquoi te retiens-tu, au fond ? Choisis celle qui est vraiment la tienne.",
           "options": [
-            { "id": "paix", "label_fr": "Pour avoir la paix" },
-            { "id": "image", "label_fr": "Pour ne pas perdre la face" },
-            { "id": "maitrise", "label_fr": "Pour rester maître de moi" },
-            { "id": "pour_allah", "label_fr": "Pour Allah, pour Sa face" }
+            {
+              "id": "paix",
+              "label_fr": "Pour avoir la paix"
+            },
+            {
+              "id": "image",
+              "label_fr": "Pour ne pas perdre la face"
+            },
+            {
+              "id": "maitrise",
+              "label_fr": "Pour rester maître de moi"
+            },
+            {
+              "id": "pour_allah",
+              "label_fr": "Pour Allah, pour Sa face"
+            }
           ],
           "stockage": "cure_colere_j5_intention",
           "note_psy": "Recadrage par les valeurs (ACT) : la retenue choisie pour un sens, non subie comme une défaite.",
@@ -1029,9 +1075,10 @@
       },
       "phrase_ancre": "Repousser le mal par le bien — et l'ennemi devient un proche.",
       "cloture": {
-        "texte": "Tu as choisi ton geste meilleur.\nTu sais dire le vrai sans attaquer.\nTu as regardé la rancune en face.\n\nDemain — le dernier jour : devenir doux.",
+        "texte": "Tu as choisi ton geste meilleur.\nTu sais dire le vrai sans attaquer.\nTu as regardé la rancune en face.",
         "bouton": "Je réponds par le meilleur. À demain.",
-        "stockage": "cure_colere = { current_day: 6, completed_j6: true }"
+        "stockage": "cure_colere = { current_day: 6, completed_j6: true }",
+        "teaser": "Demain — le dernier jour : devenir doux."
       },
       "murmure_sortie_sanctuaire": "La douceur rassemble ce que la dureté disperse.",
       "metadata_jour": {

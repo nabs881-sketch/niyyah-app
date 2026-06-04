@@ -238,9 +238,10 @@
       },
       "phrase_ancre": "Mes yeux sont un dépôt confié.",
       "cloture": {
-        "texte": "Tu as lu le verset.\nTu as entendu Ghazâlî.\nTu as fait l'inventaire.\nTu as distingué les trois regards.\nTu connais tes déclencheurs.\nTu as nommé ce qui est dépendance.\nTu connais ton istighfâr et ton silence des yeux.\n\nDemain — la tawba.",
+        "texte": "Tu as lu le verset.\nTu as entendu Ghazâlî.\nTu as fait l'inventaire.\nTu as distingué les trois regards.\nTu connais tes déclencheurs.\nTu as nommé ce qui est dépendance.\nTu connais ton istighfâr et ton silence des yeux.",
         "bouton": "J'ai vu. À demain.",
-        "stockage": "cure_regard = { current_day: 1, completed_j1: true }"
+        "stockage": "cure_regard = { current_day: 1, completed_j1: true }",
+        "teaser": "Demain — la tawba."
       },
       "murmure_sortie_sanctuaire": "Voir clair, c'est déjà voir mieux.",
       "metadata_jour": {
@@ -432,9 +433,10 @@
       },
       "phrase_ancre": "Je ne désespère pas. Je reviens.",
       "cloture": {
-        "texte": "Tu as lu le verset.\nTu as entendu Ibn al-Qayyim.\nTu as franchi les quatre piliers.\nTu t'es pardonné.\nTu t'es engagé sur 24h.\nTu as fait ton istighfâr et ta salât at-Tawba.\n\nDemain — le voile intérieur.",
+        "texte": "Tu as lu le verset.\nTu as entendu Ibn al-Qayyim.\nTu as franchi les quatre piliers.\nTu t'es pardonné.\nTu t'es engagé sur 24h.\nTu as fait ton istighfâr et ta salât at-Tawba.",
         "bouton": "Je suis revenu. À demain.",
-        "stockage": "cure_regard = { current_day: 2, completed_j2: true }"
+        "stockage": "cure_regard = { current_day: 2, completed_j2: true }",
+        "teaser": "Demain — le voile intérieur."
       },
       "murmure_sortie_sanctuaire": "Allah te préfère revenu que jamais parti.",
       "metadata_jour": {
@@ -639,9 +641,10 @@
       },
       "phrase_ancre": "Le voile commence dans le cœur.",
       "cloture": {
-        "texte": "Tu as lu le verset cardinal.\nTu as entendu Ibn 'Atâ'illâh.\nTu as trié émotions et excuses.\nTu connais tes moments à risque.\nTu as vu ce que ton cœur cherche.\nTu connais ton dhikr et ton wudû intérieur.\n\nDemain — la mécanique du regard juste.",
+        "texte": "Tu as lu le verset cardinal.\nTu as entendu Ibn 'Atâ'illâh.\nTu as trié émotions et excuses.\nTu connais tes moments à risque.\nTu as vu ce que ton cœur cherche.\nTu connais ton dhikr et ton wudû intérieur.",
         "bouton": "Le voile est en place. À demain.",
-        "stockage": "cure_regard = { current_day: 3, completed_j3: true }"
+        "stockage": "cure_regard = { current_day: 3, completed_j3: true }",
+        "teaser": "Demain — la mécanique du regard juste."
       },
       "murmure_sortie_sanctuaire": "Mon cœur d'abord. Mes yeux suivront.",
       "metadata_jour": {
@@ -855,9 +858,10 @@
       },
       "phrase_ancre": "Un seul mouvement de paupière. Une seconde. Un trésor.",
       "cloture": {
-        "texte": "Tu as lu le verset.\nTu as entendu Ibn al-Qayyim.\nTu as appris la mécanique.\nTu as posé tes boucliers.\nTu as tenu ton compteur.\nTu connais ta phrase de refuge.\nTu as testé 1 heure sans téléphone.\n\nDemain — la fortification.",
+        "texte": "Tu as lu le verset.\nTu as entendu Ibn al-Qayyim.\nTu as appris la mécanique.\nTu as posé tes boucliers.\nTu as tenu ton compteur.\nTu connais ta phrase de refuge.\nTu as testé 1 heure sans téléphone.",
         "bouton": "Je sais baisser. À demain.",
-        "stockage": "cure_regard = { current_day: 4, completed_j4: true }"
+        "stockage": "cure_regard = { current_day: 4, completed_j4: true }",
+        "teaser": "Demain — la fortification."
       },
       "murmure_sortie_sanctuaire": "Baisser le regard, c'est élever l'âme.",
       "metadata_jour": {
@@ -1045,9 +1049,10 @@
       },
       "phrase_ancre": "Je ne combats pas le vide. Je le remplis.",
       "cloture": {
-        "texte": "Tu as lu le verset.\nTu as entendu Ibn al-Qayyim.\nTu as choisi 3 substituts.\nTu as ton plan de chute.\nTu sais qui tu es vraiment.\nTu connais le dhikr de protection.\nTu as déchargé l'énergie.\n\nDemain — la vigilance.",
+        "texte": "Tu as lu le verset.\nTu as entendu Ibn al-Qayyim.\nTu as choisi 3 substituts.\nTu as ton plan de chute.\nTu sais qui tu es vraiment.\nTu connais le dhikr de protection.\nTu as déchargé l'énergie.",
         "bouton": "Je remplis. À demain.",
-        "stockage": "cure_regard = { current_day: 5, completed_j5: true }"
+        "stockage": "cure_regard = { current_day: 5, completed_j5: true }",
+        "teaser": "Demain — la vigilance."
       },
       "murmure_sortie_sanctuaire": "Une âme remplie d'Allah ne cherche pas ailleurs.",
       "metadata_jour": {
@@ -1208,9 +1213,10 @@
       },
       "phrase_ancre": "Je ne suis jamais seul.",
       "cloture": {
-        "texte": "Tu as lu le verset.\nTu as entendu al-Muhâsibî.\nTu as fait les trois 'Allah voit'.\nTu as ton journal de fin de jour.\nTu as ton rituel de Bismillâh.\nTu as fait ton dhikr et ta pratique du jour.\n\nDemain — tenir dans le temps.",
+        "texte": "Tu as lu le verset.\nTu as entendu al-Muhâsibî.\nTu as fait les trois 'Allah voit'.\nTu as ton journal de fin de jour.\nTu as ton rituel de Bismillâh.\nTu as fait ton dhikr et ta pratique du jour.",
         "bouton": "Allah voit. À demain.",
-        "stockage": "cure_regard = { current_day: 6, completed_j6: true }"
+        "stockage": "cure_regard = { current_day: 6, completed_j6: true }",
+        "teaser": "Demain — tenir dans le temps."
       },
       "murmure_sortie_sanctuaire": "Vivre devant Lui change tout.",
       "metadata_jour": {
