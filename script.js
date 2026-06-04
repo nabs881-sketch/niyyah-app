@@ -6866,6 +6866,7 @@ function _coffretHtml(key, d, activeId) {
   if (sec.description) html += '<div style="font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:16px;line-height:1.5;">' + escapeHtml(sec.description) + '</div>';
   sec.entrees.forEach(function(e) {
     html += '<div style="border:1px solid rgba(200,168,75,0.12);border-radius:12px;padding:16px;margin-bottom:12px;background:rgba(200,168,75,0.03);">';
+    if (e.image) html += '<img src="' + escapeHtml(e.image) + '" alt="' + escapeHtml(e.alt || '') + '" onclick="openImageOverlay(this.src)" style="width:100%;border-radius:10px;display:block;cursor:zoom-in;" loading="lazy">';
     if (e.ar) html += '<div style="font-family:\'Scheherazade New\',serif;font-size:20px;color:#C8A84A;direction:rtl;text-align:right;line-height:1.6;margin-bottom:8px;">' + escapeHtml(e.ar) + '</div>';
     if (e.translit) html += '<div style="font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(200,168,75,0.55);margin-bottom:6px;">' + escapeHtml(e.translit) + '</div>';
     if (e.fr) html += '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.85);line-height:1.6;margin-bottom:6px;">' + escapeHtml(e.fr) + '</div>';
@@ -6881,6 +6882,28 @@ function _coffretHtml(key, d, activeId) {
   return html;
 }
 window._coffretHtml = _coffretHtml;
+function openImageOverlay(src){
+  var ov=document.createElement('div');
+  ov.id='img-overlay';
+  ov.style.cssText='position:fixed;inset:0;z-index:10001;background:rgba(8,10,18,0.96);backdrop-filter:blur(6px);overflow:auto;-webkit-overflow-scrolling:touch;display:flex;align-items:flex-start;justify-content:center;padding:calc(var(--safe-top,0px)+56px) 12px 40px;box-sizing:border-box;';
+  var img=document.createElement('img');
+  img.src=src;
+  img.style.cssText='max-width:100%;height:auto;border-radius:10px;cursor:zoom-in;';
+  img.dataset.z='0';
+  img.onclick=function(e){
+    e.stopPropagation();
+    if(img.dataset.z==='0'){img.style.maxWidth='none';img.style.width='200%';img.dataset.z='1';img.style.cursor='zoom-out';}
+    else{img.style.maxWidth='100%';img.style.width='';img.dataset.z='0';img.style.cursor='zoom-in';}
+  };
+  ov.onclick=function(){ov.remove();};
+  var close=document.createElement('button');
+  close.textContent='\u2715';
+  close.style.cssText='position:fixed;top:calc(var(--safe-top,0px)+12px);right:16px;z-index:10002;background:rgba(10,10,10,0.7);border:1px solid rgba(200,168,74,0.3);border-radius:50%;color:#C8A84A;width:40px;height:40px;font-size:18px;cursor:pointer;';
+  close.onclick=function(e){e.stopPropagation();ov.remove();};
+  ov.appendChild(img); ov.appendChild(close);
+  document.body.appendChild(ov);
+}
+window.openImageOverlay=openImageOverlay;
 
 /* ===== Overlay respiration guidée (réutilisable) ===== */
 var NIYYAH_BREATH_PRESETS = {
