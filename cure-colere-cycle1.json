@@ -1002,9 +1002,9 @@
           "type": "champ_texte_long",
           "titre": "Assertif, pas agressif",
           "consigne": "Répondre par le meilleur ≠ tout encaisser en silence. C'est dire le vrai, calmement. Reformule une chose à dire à quelqu'un : de la version agressive à la version assertive.",
-          "amorce": "Agressif : « tu fais toujours… » → Assertif : « quand…, je ressens…, j'aimerais… »",
+          "amorce": "Agressif : « Tu me coupes tout le temps ! » → Assertif : « Quand tu me coupes, je me sens ignoré ; j'aimerais finir ma phrase. »",
           "champ": {
-            "placeholder": "Ex. : « Quand tu me coupes, je me sens ignoré ; j'aimerais pouvoir finir. »",
+            "placeholder": "À toi : pars d'une phrase agressive et reformule-la en « quand…, je ressens…, j'aimerais… »",
             "max_caracteres": 500,
             "stockage": "cure_colere_j6_assertif"
           },
