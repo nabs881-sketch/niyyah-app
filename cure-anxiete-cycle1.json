@@ -343,7 +343,7 @@
           "type": "drag_and_drop_3_categories",
           "titre": "L'horloge des pensées",
           "introduction": "L'esprit anxieux confond les temps. Une hypothèse devient urgence. Un passé devient présent.",
-          "consigne": "Note 3 pensées qui tournent en boucle. Glisse chacune dans sa case réelle.",
+          "consigne": "Note 3 pensées qui tournent en boucle. Range chacune dans sa case réelle.",
           "categories": [
             {
               "id": "maintenant",
