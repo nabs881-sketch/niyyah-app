@@ -5575,7 +5575,6 @@ _outilAnxieteRenderers.ecran_sombre_avec_dhikr = function(o, c) {
   var dhkId = '_dhk_' + o.id;
   var html = '';
   if (o.introduction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.6);line-height:1.6;text-align:left;margin-bottom:12px;">' + escapeHtml(o.introduction) + '</div>';
-  if (o.consigne) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.5);line-height:1.5;text-align:center;margin-bottom:20px;white-space:pre-line;">' + escapeHtml(o.consigne) + '</div>';
   // Dark meditation screen
   html += '<div id="' + dhkId + '" style="background:#000;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:260px;margin-bottom:16px;position:relative;overflow:hidden;">';
   // Pulsing calligraphy
