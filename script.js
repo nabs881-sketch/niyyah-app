@@ -5957,9 +5957,11 @@ _outilAnxieteRenderers.silhouette_interactive = function(o, c) {
   html += '<div style="flex-shrink:0;position:relative;width:120px;">';
   html += '<img src="' + img + '" alt="" style="width:120px;height:auto;display:block;border-radius:10px;">';
   zones.forEach(function(z) {
+    if (z.id === 'partout') return;
     var top = (zonePct[z.id] != null ? zonePct[z.id] : 50);
     var sel = saved === z.id;
-    html += '<div onclick="_silSelect(\'' + silId + '\',\'' + sk + '\',\'' + z.id + '\')" title="' + escapeHtml(z.label) + '" style="position:absolute;left:50%;transform:translate(-50%,-50%);top:' + top + '%;width:64px;height:30px;border-radius:15px;cursor:pointer;background:' + (sel ? c + '66' : 'rgba(255,255,255,0.06)') + ';border:1px solid ' + (sel ? '#ffffff' : 'rgba(255,255,255,0.25)') + ';box-shadow:' + (sel ? '0 0 14px ' + c : 'none') + ';transition:all 0.2s;"></div>';
+    var d = sel ? 18 : 14;
+    html += '<div onclick="_silSelect(\'' + silId + '\',\'' + sk + '\',\'' + z.id + '\')" title="' + escapeHtml(z.label) + '" style="position:absolute;left:50%;transform:translate(-50%,-50%);top:' + top + '%;width:' + d + 'px;height:' + d + 'px;border-radius:50%;cursor:pointer;background:' + (sel ? c : 'rgba(255,255,255,0.55)') + ';border:1px solid ' + (sel ? '#ffffff' : 'rgba(255,255,255,0.75)') + ';box-shadow:' + (sel ? '0 0 12px ' + c : '0 0 3px rgba(0,0,0,0.5)') + ';transition:all 0.2s;"></div>';
   });
   html += '</div>';
   html += '<div style="flex:1;display:flex;flex-direction:column;gap:6px;">';
