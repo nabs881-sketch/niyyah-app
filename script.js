@@ -5948,23 +5948,18 @@ _outilAnxieteRenderers.silhouette_interactive = function(o, c) {
   var sk = o.stockage || 'cure_anxiete_silhouette';
   var saved = safeGetItem(sk) || '';
   var silId = '_sil_' + o.id;
-  var zonePos = { front: 28, gorge: 52, poitrine: 80, ventre: 115, epaules: 62, jambes: 195, partout: 140 };
+  // positions en % de la hauteur de l'image (s'adapte à n'importe quelle image)
+  var zonePct = { front: 8, gorge: 17, epaules: 21, poitrine: 31, ventre: 46, jambes: 76, partout: 50 };
+  var img = o.image || 'images/silhouette-colere.png';
   var html = '';
   html += '<div style="background:rgba(8,5,3,0.58);border:1px solid rgba(200,168,75,0.18);border-radius:14px;padding:16px;box-shadow:0 8px 26px rgba(0,0,0,0.4);">';
-  html += '<div style="display:flex;gap:16px;align-items:flex-start;">';
-  html += '<div style="flex-shrink:0;position:relative;width:110px;height:280px;">';
-  html += '<svg viewBox="0 0 120 280" width="110" height="280" fill="none" stroke="' + c + '88" stroke-width="1.5" stroke-linecap="round">'
-    + '<ellipse cx="60" cy="28" rx="18" ry="22"/>'
-    + '<line x1="60" y1="50" x2="60" y2="58"/>'
-    + '<path d="M60 58 Q60 62 30 68"/><path d="M60 58 Q60 62 90 68"/>'
-    + '<path d="M30 68 L30 140 Q30 155 45 160 L60 165"/><path d="M90 68 L90 140 Q90 155 75 160 L60 165"/>'
-    + '<path d="M30 68 L18 120"/><path d="M90 68 L102 120"/>'
-    + '<path d="M60 165 L42 250"/><path d="M60 165 L78 250"/>'
-    + '</svg>';
+  html += '<div style="display:flex;gap:14px;align-items:flex-start;">';
+  html += '<div style="flex-shrink:0;position:relative;width:120px;">';
+  html += '<img src="' + img + '" alt="" style="width:120px;height:auto;display:block;border-radius:10px;">';
   zones.forEach(function(z) {
-    var y = zonePos[z.id] || 140;
+    var top = (zonePct[z.id] != null ? zonePct[z.id] : 50);
     var sel = saved === z.id;
-    html += '<div onclick="_silSelect(\'' + silId + '\',\'' + sk + '\',\'' + z.id + '\')" style="position:absolute;left:50%;transform:translateX(-50%);top:' + y + 'px;width:50px;height:30px;border-radius:15px;cursor:pointer;background:' + (sel ? c + '44' : c + '12') + ';border:1px solid ' + (sel ? c : c + '33') + ';transition:all 0.2s;"></div>';
+    html += '<div onclick="_silSelect(\'' + silId + '\',\'' + sk + '\',\'' + z.id + '\')" title="' + escapeHtml(z.label) + '" style="position:absolute;left:50%;transform:translate(-50%,-50%);top:' + top + '%;width:64px;height:30px;border-radius:15px;cursor:pointer;background:' + (sel ? c + '66' : 'rgba(255,255,255,0.06)') + ';border:1px solid ' + (sel ? '#ffffff' : 'rgba(255,255,255,0.25)') + ';box-shadow:' + (sel ? '0 0 14px ' + c : 'none') + ';transition:all 0.2s;"></div>';
   });
   html += '</div>';
   html += '<div style="flex:1;display:flex;flex-direction:column;gap:6px;">';
