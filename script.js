@@ -6407,7 +6407,7 @@ function _cureAnxieteWizardRender(el) {
       + '<div data-cure-content style="padding:calc(var(--safe-top,0px)+60px) 20px 120px;position:relative;z-index:1;max-width:400px;margin:0 auto;box-sizing:border-box;">'
       + progress
       + (o.titre ? '<div style="font-family:var(--serif);font-size:24px;color:#C8A84A;text-align:center;margin-bottom:8px;">' + escapeHtml(o.titre) + '</div>' : '')
-      + (o.consigne ? '<div style="font-family:var(--serif);font-size:19px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:left;margin-bottom:20px;">' + escapeHtml(o.consigne) + '</div>' : '')
+      + (o.consigne ? '<div style="font-family:var(--serif);font-size:19px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:center;margin-bottom:20px;">' + escapeHtml(o.consigne) + '</div>' : '')
       + outilHtml
       + (_hideNext ? '' : nextBtn)
       + '</div>';
