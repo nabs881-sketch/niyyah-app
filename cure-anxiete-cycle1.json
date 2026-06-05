@@ -796,23 +796,21 @@
       "bloc_5_pratique_corporelle": {
         "type": "geste_corporel",
         "titre_bloc": "La sajda du dépôt",
-        "introduction": "Le verset du jour dit : c'est en Allah que les croyants doivent placer leur confiance. Aucun geste ne le dit plus complètement que la prosternation. Aujourd'hui — une prosternation hors salât, dédiée au tawakkul.",
+        "introduction": "Le verset du jour dit : c'est en Allah que les croyants doivent placer leur confiance. Aucun geste ne le dit plus complètement que la prosternation — et le serviteur n'est jamais aussi proche de son Seigneur que dans le sujûd. Aujourd'hui, dans une courte prière, tu y déposes ce que tu portes.",
         "instructions": [
           "Trouve un moment de calme (5 minutes suffisent).",
           "Fais ton wudû si tu ne l'as pas.",
-          "Pose-toi en sajda — front, nez, mains, genoux, orteils au sol.",
-          "Reste là 1 à 2 minutes — pas une prière complète, juste cette sajda.",
-          "Dis intérieurement :",
+          "Prie **2 rak'a** surérogatoires (une nâfila, ou une salât al-hâja).",
+          "Dans la **prosternation** — « le serviteur est le plus proche de son Seigneur lorsqu'il est prosterné ; multipliez-y l'invocation » (rapporté par Muslim) — reste un instant et dis intérieurement :",
           "« Yâ Allah, je remets entre Tes mains ce que je ne peux porter seul. »",
-          "Puis liste mentalement 1 à 3 choses précises que tu remets.",
-          "Termine en disant :",
-          "« HasbunÂllâhu wa ni'ma-l-wakîl. »",
-          "Relève-toi."
+          "Puis liste mentalement **1 à 3 choses précises** que tu remets.",
+          "Termine ta prière par le salâm, puis dis :"
         ],
         "phrase_pendant_sajda": {
           "ar": "يَا اللَّهُ، إِنِّي أَوْدَعْتُكَ مَا لَا أَسْتَطِيعُ أَنْ أَحْمِلَهُ وَحْدِي",
           "translit": "Yâ Allâh, innî awda'tuka mâ lâ astatî'u an ahmilahu wahdî",
-          "fr": "Ô Allah, je Te confie ce que je ne peux porter seul."
+          "fr": "Ô Allah, je Te confie ce que je ne peux porter seul.",
+          "source": "Coran, Âl 'Imrân 3:173"
         },
         "duree_min": 5,
         "justification": {
