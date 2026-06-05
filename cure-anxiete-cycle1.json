@@ -1073,12 +1073,12 @@
       },
       "bloc_2_sagesse": {
         "type": "parole_de_sage",
-        "titre_bloc": "Distinction de Ghazâlî",
+        "titre_bloc": "Sagesse d'al-Ghazâlî",
         "parole": {
           "texte": "Le tawakkul est un état du cœur qui se construit en trois degrés. Le premier degré : tu Lui confies tes affaires comme tu confierais ton argent à un homme de confiance, sachant qu'il les gérera mieux que toi. Le deuxième degré : tu Lui confies tes affaires comme un nourrisson est dans les bras de sa mère — sans demande, sans inquiétude, simplement parce qu'elle est là. Le troisième degré : tu Lui confies tes affaires comme un mort dans les mains de celui qui lave son corps — sans la moindre intervention, parce que tu sais que ce qui devait arriver est déjà décidé. La plupart restent au premier degré. C'est déjà beaucoup.",
           "auteur": "Abû Hâmid al-Ghazâlî",
-          "dates_auteur": "1058-1111",
-          "oeuvre": "Ihyâ' 'Ulûm ad-Dîn, Livre du Tawakkul",
+          "dates_auteur": "Juriste shâfi'î et théologien, « Hujjat al-Islâm » · 1058-1111",
+          "oeuvre": "Ihyâ' 'Ulûm ad-Dîn, Livre du Tawakkul (rendu libre)",
           "siecle": "XIe-XIIe siècle",
           "note": "Ghazâlî structure le tawakkul en degrés progressifs. Il insiste pour qu'on n'humilie pas qui n'atteint que le premier degré — c'est déjà un acte de foi rare. La progression vient du temps, de la pratique, et de la grâce. Aujourd'hui, on travaille au premier degré : confier comme on confie ses affaires à plus capable que soi."
         }
