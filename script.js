@@ -3337,17 +3337,22 @@ function renderProgression() {
   const allItemsP = LEVELS.flatMap(l => l.sections.flatMap(s => s.items)).filter(_itemMatchesProfile);
   const totalDoneP = allItemsP.filter(item => { try { return isItemDone(item, state); } catch(e) { return item.type==='counter'?(state[item.id]||0)>=item.target:!!state[item.id]; } }).reduce((sum,i)=>{ try{return sum+getWeight(i.id);}catch(e){return sum+1;} },0);
   const totalAllP  = allItemsP.reduce((sum,i)=>{ try{return sum+getWeight(i.id);}catch(e){return sum+1;} },0);
-  let lvlGridP='';
+  let lvlGridP = '<style>'
+    + '.chemin-card{position:relative;height:128px;border-radius:16px;overflow:hidden;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;box-shadow:inset 0 0 0 1px rgba(200,168,75,.30),0 0 22px rgba(200,168,75,.18),0 8px 22px rgba(0,0,0,.5);transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s;opacity:0;animation:cheminCardIn .8s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--d);}'
+    + '.chemin-card:hover,.chemin-card:active{transform:translateY(-5px) scale(1.012);box-shadow:inset 0 0 0 1px rgba(200,168,75,.5),0 0 40px rgba(200,168,75,.4),0 14px 30px rgba(0,0,0,.6);}'
+    + '@keyframes cheminCardIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}'
+    + '@media (prefers-reduced-motion:reduce){.chemin-card{animation:none;opacity:1;}}'
+    + '</style>';
   var _cheminImgs = {1:'chemin-fondations',2:'chemin-approfondissement',3:'chemin-connaissance',4:'chemin-rayonnement'};
   LEVELS.forEach((lvl)=>{
     const pct=Math.round(getLevelProgress(lvl.id));
     const r=32, circ=2*Math.PI*r, dash=(pct/100)*circ;
     const ring='<svg width="74" height="74" viewBox="0 0 74 74" style="transform:rotate(-90deg);"><circle cx="37" cy="37" r="32" fill="none" stroke="rgba(200,168,75,0.15)" stroke-width="3"/><circle cx="37" cy="37" r="32" fill="none" stroke="#C8A84A" stroke-width="3" stroke-linecap="round" stroke-dasharray="'+circ.toFixed(1)+'" stroke-dashoffset="'+(circ-dash).toFixed(1)+'"/></svg>';
     var _bgImg = _cheminImgs[lvl.id] ? 'assets/cards/' + _cheminImgs[lvl.id] + '.webp' : '';
-    lvlGridP+='<div onclick="selectLevel('+lvl.id+')" style="border-radius:12px;height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;cursor:pointer;box-shadow:inset 0 0 0 1px rgba(200,168,74,.28),0 6px 18px rgba(0,0,0,.45);position:relative;overflow:hidden;' + (_bgImg ? 'background-image:linear-gradient(180deg,rgba(8,5,3,.25),rgba(8,5,3,.88)),url(' + _bgImg + ');background-size:cover,cover;background-position:center,center;' : 'background:linear-gradient(180deg,rgba(8,5,3,.25),rgba(8,5,3,.88));') + '">'
-      +'<div style="width:74px;height:74px;position:relative;z-index:1;">'+ring+'<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:\'Cormorant Garamond\',serif;font-size:19px;font-weight:600;color:#C8A84A;text-shadow:0 1px 4px rgba(0,0,0,.8);">'+pct+'%</div></div>'
-      +'<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;font-weight:600;color:#C8A84A;position:relative;z-index:1;text-shadow:0 1px 4px rgba(0,0,0,.8);">'+t('level_'+lvl.id)+'</div>'
-      +'</div>';
+    lvlGridP += '<div onclick="selectLevel(' + lvl.id + ')" class="chemin-card" style="--d:' + (lvl.id * 0.08) + 's;' + (_bgImg ? 'background-image:linear-gradient(180deg,rgba(8,5,3,.25),rgba(8,5,3,.88)),url(' + _bgImg + ');background-size:cover,cover;background-position:center,center;' : 'background:linear-gradient(180deg,rgba(8,5,3,.25),rgba(8,5,3,.88));') + '">'
+      + '<div style="width:74px;height:74px;position:relative;z-index:1;">' + ring + '<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:\'Cormorant Garamond\',serif;font-size:19px;font-weight:600;color:#C8A84A;text-shadow:0 1px 4px rgba(0,0,0,.8);">' + pct + '%</div></div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;font-weight:600;color:#C8A84A;position:relative;z-index:1;text-shadow:0 1px 4px rgba(0,0,0,.8);">' + t('level_' + lvl.id) + '</div>'
+      + '</div>';
   });
   // === GRAPHIQUE 7 JOURS BILANS ===
   var bilansData = {}; try { bilansData = JSON.parse(localStorage.getItem('niyyah_bilans') || '{}'); } catch(e) {}
