@@ -897,43 +897,43 @@
           "consigne": "Lis chaque ligne, choisis fait ou interprétation.",
           "exemples": [
             {
-              "texte": "Mon collègue ne m'a pas répondu à mon message ce matin.",
+              "texte": "Mon ami n'a pas répondu à mon message depuis hier.",
               "bonne_reponse": "fait"
             },
             {
-              "texte": "Mon collègue m'en veut, je l'ai énervé.",
+              "texte": "Il m'ignore, je l'ai forcément agacé.",
               "bonne_reponse": "interpretation"
             },
             {
-              "texte": "Ma poitrine est serrée en ce moment.",
+              "texte": "Mon cœur bat fort en ce moment.",
               "bonne_reponse": "fait"
             },
             {
-              "texte": "Je vais faire une crise cardiaque, c'est sûr.",
+              "texte": "Je vais sûrement échouer, comme d'habitude.",
               "bonne_reponse": "interpretation"
             },
             {
-              "texte": "Je n'ai pas terminé ma to-do d'aujourd'hui.",
+              "texte": "Je n'ai pas fini ce que j'avais prévu aujourd'hui.",
               "bonne_reponse": "fait"
             },
             {
-              "texte": "Mon patron a froncé les sourcils pendant que je parlais.",
+              "texte": "Mon enfant a baissé les yeux quand je lui ai parlé.",
               "bonne_reponse": "fait"
             },
             {
-              "texte": "Personne ne m'a adressé la parole pendant la pause.",
-              "bonne_reponse": "fait"
-            },
-            {
-              "texte": "Je suis en retard sur mon planning, donc je suis paresseux.",
+              "texte": "Tout le monde à la mosquée a vu que je priais mal.",
               "bonne_reponse": "interpretation"
             },
             {
-              "texte": "J'ai vérifié trois fois que la porte était bien fermée.",
+              "texte": "Il me reste 200 € sur mon compte avant la fin du mois.",
               "bonne_reponse": "fait"
             },
             {
-              "texte": "Cette douleur dans ma poitrine veut dire que quelque chose de grave se prépare.",
+              "texte": "Si ma demande est refusée, ma vie est fichue.",
+              "bonne_reponse": "interpretation"
+            },
+            {
+              "texte": "Cette gêne dans mon ventre signifie que je couve une maladie grave.",
               "bonne_reponse": "interpretation"
             }
           ],
