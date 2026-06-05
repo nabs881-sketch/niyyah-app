@@ -994,19 +994,19 @@
         "titre_bloc": "Le dhikr du jour",
         "introduction": "Les pensées intrusives sont comme un essaim qui bourdonne. Pour le faire fuir, tu ne le combats pas — tu nommes l'un des Noms d'Allah qui a la subtilité comme attribut, et l'essaim se disperse.",
         "dhikr": {
-          "ar": "يَا لَطِيف",
-          "translit": "Yâ Latîf",
-          "fr": "Ô Subtil",
+          "ar": "يَا لَطِيفُ الْطُفْ بِي",
+          "translit": "Yâ Latîfu, ul-tuf bî",
+          "fr": "Ô Toi le Bienveillant, sois doux avec moi",
           "sens": "Al-Latîf — Celui qui agit avec subtilité, douceur, bienveillance dans les détails que nul autre ne perçoit. Connaît l'invisible de ton cœur mieux que toi-même."
         },
-        "quantite": 129,
+        "quantite": 100,
         "moment_recommande": "Avant Maghrib (ou au moment de la journée où tu sens les pensées intrusives revenir le plus fortement).",
         "duree_estimee_sec": 420,
         "justification": {
-          "texte": "Le Nom Al-Latîf est cité 7 fois dans le Coran. La tradition soufie a établi que sa répétition est efficace contre l'oppression du cœur. Le nombre 129 correspond à la valeur numérique (abjad) du Nom — pratique courante chez certains soufis pour quantifier la dévotion. Si ce nombre te paraît étrange, fais simplement 100 fois, ou autant que tu peux.",
-          "source": "Invocation par le Nom Al-Latîf (cf. Coran 7:180 : « invoquez-Le par Ses beaux noms »). Le décompte précis est une pratique soufie, non prophétique."
+          "texte": "Le Nom Al-Latîf est cité 7 fois dans le Coran. L'invoquer avec une demande — « Yâ Latîf, altuf bî » (sois doux avec moi) — relève de 7:180 (« invoquez-Le par Ses beaux noms »). Il n'y a pas de nombre prophétique fixé : répète autant que tu veux ; 100 n'est qu'un repère de pratique.",
+          "source": "Invocation par le Nom Al-Latîf avec demande (cf. Coran 7:180). Le décompte n'est qu'un repère, non un nombre prophétique."
         },
-        "comment_pratiquer": "Pose-toi. Respire 3 fois. Puis dis Yâ Latîf, doucement, en sentant la finesse du mot dans ta bouche. La langue arabe a des consonnes qui caressent — celle-ci en fait partie. Laisse le mot te toucher avant que tu ne le penses.",
+        "comment_pratiquer": "Pose-toi. Respire 3 fois. Puis dis « Yâ Latîfu, ul-tuf bî », doucement, en sentant la finesse du mot dans ta bouche. La langue arabe a des consonnes qui caressent — laisse le mot te toucher avant que tu ne le penses.",
         "stockage": "cure_anxiete_j5_dhikr_done"
       },
       "bloc_5_pratique_corporelle": {
