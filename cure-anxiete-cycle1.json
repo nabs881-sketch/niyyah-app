@@ -893,7 +893,7 @@
           "ordre": 1,
           "type": "tri_radio_apprentissage",
           "titre": "Pensée ou réalité ?",
-          "introduction": "L'esprit confond les deux. Voici 5 énoncés. Pour chacun, identifie : est-ce un fait observable, ou une interprétation que ton esprit ajoute ?",
+          "introduction": "L'esprit confond les deux. Pour chaque énoncé, identifie : est-ce un fait observable, ou une interprétation que ton esprit ajoute ? Les derniers sont plus subtils.",
           "consigne": "Lis chaque ligne, choisis fait ou interprétation.",
           "exemples": [
             {
@@ -915,6 +915,26 @@
             {
               "texte": "Je n'ai pas terminé ma to-do d'aujourd'hui.",
               "bonne_reponse": "fait"
+            },
+            {
+              "texte": "Mon patron a froncé les sourcils pendant que je parlais.",
+              "bonne_reponse": "fait"
+            },
+            {
+              "texte": "Personne ne m'a adressé la parole pendant la pause.",
+              "bonne_reponse": "fait"
+            },
+            {
+              "texte": "Je suis en retard sur mon planning, donc je suis paresseux.",
+              "bonne_reponse": "interpretation"
+            },
+            {
+              "texte": "J'ai vérifié trois fois que la porte était bien fermée.",
+              "bonne_reponse": "fait"
+            },
+            {
+              "texte": "Cette douleur dans ma poitrine veut dire que quelque chose de grave se prépare.",
+              "bonne_reponse": "interpretation"
             }
           ],
           "options_par_question": [
