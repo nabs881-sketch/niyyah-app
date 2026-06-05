@@ -5396,14 +5396,14 @@ _outilAnxieteRenderers.lecture_synchronisee_souffle = function(o, c) {
   html += '<div id="' + lsId + '" style="background:#000;border-radius:16px;min-height:220px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:16px;padding:24px 16px;text-align:center;">';
   if (done) {
     // Show full verse
-    html += '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:#C8A84A;direction:rtl;line-height:1.6;margin-bottom:10px;">' + escapeHtml(arSegs.join(' ')) + '</div>';
+    html += '<div style="font-family:\'Scheherazade New\',serif;font-size:30px;color:#C8A84A;direction:rtl;line-height:1.6;margin-bottom:10px;">' + escapeHtml(arSegs.join(' ')) + '</div>';
     html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.55);margin-bottom:6px;">' + escapeHtml(trSegs.join(' ')) + '</div>';
     html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);">' + escapeHtml(frSegs.join(' ')) + '</div>';
     html += '<div style="font-size:15px;color:rgba(200,168,75,0.4);margin-top:8px;">\u2014 ' + escapeHtml(verset.reference || '') + '</div>';
   } else {
-    html += '<div id="' + lsId + '_ar" style="font-family:\'Scheherazade New\',serif;font-size:28px;color:#C8A84A;direction:rtl;min-height:40px;opacity:0;transition:opacity 1s ease;"></div>';
-    html += '<div id="' + lsId + '_tr" style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.5);min-height:20px;margin-top:6px;opacity:0;transition:opacity 1s ease;"></div>';
-    html += '<div id="' + lsId + '_fr" style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.75);min-height:20px;margin-top:4px;opacity:0;transition:opacity 1s ease;"></div>';
+    html += '<div id="' + lsId + '_ar" style="font-family:\'Scheherazade New\',serif;font-size:40px;color:#C8A84A;direction:rtl;min-height:40px;opacity:0;transition:opacity 1s ease;"></div>';
+    html += '<div id="' + lsId + '_tr" style="font-family:var(--serif);font-size:18px;font-style:italic;color:rgba(200,168,75,0.6);min-height:20px;margin-top:6px;opacity:0;transition:opacity 1s ease;"></div>';
+    html += '<div id="' + lsId + '_fr" style="font-family:var(--serif);font-size:20px;color:rgba(240,234,214,0.85);min-height:20px;margin-top:4px;opacity:0;transition:opacity 1s ease;"></div>';
   }
   html += '</div>';
   // Button appears only after reading
@@ -5429,7 +5429,7 @@ function _lsPlay(id, arSegs, trSegs, frSegs, sk) {
   function showSeg() {
     if (idx >= total) {
       // Show full verse + button
-      arEl.textContent = arSegs.join(' '); arEl.style.opacity = '1'; arEl.style.fontSize = '24px';
+      arEl.textContent = arSegs.join(' '); arEl.style.opacity = '1'; arEl.style.fontSize = '30px';
       trEl.textContent = trSegs.join(' '); trEl.style.opacity = '1';
       frEl.textContent = frSegs.join(' '); frEl.style.opacity = '1';
       if (btnEl) { btnEl.style.display = 'block'; }
