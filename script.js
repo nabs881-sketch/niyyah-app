@@ -5617,21 +5617,23 @@ _outilAnxieteRenderers.champ_avec_amorce_obligatoire = function(o, c) {
   var amId = '_am_' + o.id;
   var validated = safeGetItem(sk + '_done') === '1';
   var html = '';
-  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:left;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
-  // Amorce + field
-  html += '<div style="border:1px solid ' + c + '22;border-radius:14px;padding:16px;margin-bottom:16px;">';
-  html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.8);line-height:1.8;">'
+  html += '<style>#' + amId + '_input::placeholder{color:rgba(231,211,151,0.45);}</style>';
+  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.85);line-height:1.6;text-align:left;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
+  html += '<div style="background:rgba(8,5,3,0.58);border:1px solid rgba(200,168,75,0.18);border-radius:14px;padding:16px;box-shadow:0 8px 26px rgba(0,0,0,0.4);">';
+  html += '<div style="border:1px solid ' + c + '33;border-radius:12px;padding:16px;margin-bottom:14px;background:rgba(0,0,0,0.28);">';
+  html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(231,211,151,0.92);line-height:1.9;">'
     + escapeHtml(o.amorce_obligatoire || '') + ' '
-    + '<input type="text" id="' + amId + '_input" value="' + escapeHtml(saved) + '" placeholder="' + escapeHtml(champ.placeholder || '...') + '" oninput="safeSetItem(\'' + sk + '\',this.value)" style="background:none;border:none;border-bottom:1px solid ' + c + '44;color:#E5E0DC;font-family:var(--serif);font-size:15px;font-style:normal;padding:2px 4px;width:100%;max-width:280px;outline:none;">'
+    + '<input type="text" id="' + amId + '_input" value="' + escapeHtml(saved) + '" placeholder="' + escapeHtml(champ.placeholder || '...') + '" oninput="safeSetItem(\'' + sk + '\',this.value)" style="background:rgba(0,0,0,0.25);border:none;border-bottom:2px solid ' + c + 'aa;color:#F0EAD6;font-family:var(--serif);font-size:16px;font-style:normal;padding:4px 6px;width:100%;max-width:300px;outline:none;border-radius:4px 4px 0 0;">'
     + '</div>';
   html += '</div>';
   if (!validated) {
-    html += '<button onclick="safeSetItem(\'' + sk + '_done\',\'1\');_cureAnxieteWizardRender()" style="display:block;width:100%;12px;padding:12px;border-radius:10px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:16px;cursor:pointer;">J\u2019ai \u00e9crit</button>';
+    html += '<button onclick="safeSetItem(\'' + sk + '_done\',\'1\');_cureAnxieteWizardRender()" style="display:block;width:100%;margin-top:4px;padding:13px;border-radius:10px;border:1px solid ' + c + '66;background:' + c + '1f;color:#E7D397;font-family:var(--serif);font-size:16px;font-weight:600;cursor:pointer;">J\'ai \u00e9crit</button>';
   }
   if (validated && o.instruction_finale) {
-    html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.75);text-align:center;line-height:1.6;margin-bottom:12px;font-style:italic;">' + escapeHtml(o.instruction_finale) + '</div>';
+    html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.8);text-align:center;line-height:1.6;margin-top:6px;font-style:italic;">' + escapeHtml(o.instruction_finale) + '</div>';
   }
-  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(232,208,140,0.95);text-align:left;line-height:1.55;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
+  html += '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(232,208,140,0.95);text-align:left;line-height:1.55;margin-top:14px;">' + escapeHtml(o.note_spi) + '</div>';
   return html;
 };
 
