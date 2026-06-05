@@ -1454,10 +1454,10 @@
         "moment_recommande": "Le matin (après Fajr) et le soir (après Maghrib ou avant 'Ishâ). 7 fois chaque fois. À pratiquer désormais comme habitude permanente.",
         "duree_estimee_sec": 90,
         "justification": {
-          "texte": "Il est rapporté que celui qui dit, matin et soir : « Hasbiya-llâhu lâ ilâha illâ huwa, ’alayhi tawakkaltu, wa huwa rabbu-l-’arshi-l-’adhîm » 7 fois, Allah lui suffira pour ce qui le préoccupe. (grade contesté ; la mention « sincère ou non » est jugée munkar et écartée)",
-          "source": "Abû Dâwûd 5081, Ibn as-Sunnî 71 — grade contesté (faible selon al-Albânî)"
+          "texte": "Le texte est le Coran (At-Tawba 9:129). Il est rapporté d’Abû ad-Dardâ’ que celui qui dit, matin et soir, « Hasbiya-llâhu lâ ilâha illâ huwa, ‘alayhi tawakkaltu, wa huwa rabbu-l-’arshi-l-’adhîm » 7 fois, Allah lui suffira pour ce qui le préoccupe.",
+          "source": "Abû Dâwûd 5081 — d’Abû ad-Dardâ’ (mawqûf prenant le statut de marfû’), chaîne solide, hasan (al-Albânî). L’ajout « sincère ou non » est munkar et écarté."
         },
-        "comment_pratiquer": "C'est le dhikr final de la cure, mais c'est aussi le dhikr que tu emportes pour le reste de ta vie. 7 fois matin, 7 fois soir. Si un jour tu sens l'angoisse revenir, c'est ta première ligne — pas la dernière. Le Prophète ﷺ promet : Allah te suffira.",
+        "comment_pratiquer": "C'est le dhikr final de la cure, mais aussi celui que tu emportes pour le reste de ta vie. 7 fois matin, 7 fois soir. Si un jour tu sens l'angoisse revenir, c'est ta première ligne — pas la dernière. Et la promesse est dans le verset lui-même : Allah te suffit (hasbiya-llâh).",
         "stockage": "cure_anxiete_j7_dhikr_final_done"
       },
       "bloc_5_pratique_corporelle": {
