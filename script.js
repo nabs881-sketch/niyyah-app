@@ -6098,8 +6098,8 @@ _outilAnxieteRenderers.checkboxes_sequentielles = function(o, c) {
     var active = idx === currentStep;
     var future = idx > currentStep;
     var vals = saved['etape_' + idx] || [];
-    html += '<div style="margin-bottom:16px;opacity:' + (future ? '0.3' : '1') + ';transition:opacity 0.3s;">';
-    html += '<div style="font-family:var(--serif);font-size:17px;font-weight:600;color:' + (done ? '#C8A84A' : active ? '#E5E0DC' : 'rgba(240,234,214,0.4)') + ';margin-bottom:8px;">' + (done ? '\u2713 ' : '') + escapeHtml(et.label) + '</div>';
+    html += '<div style="margin-bottom:16px;opacity:' + (future ? '0.55' : '1') + ';transition:opacity 0.3s;">';
+    html += '<div style="font-family:var(--serif);font-size:17px;font-weight:600;color:' + (done ? '#C8A84A' : active ? '#E5E0DC' : 'rgba(240,234,214,0.65)') + ';margin-bottom:8px;">' + (done ? '\u2713 ' : '') + escapeHtml(et.label) + '</div>';
     for (var fi = 0; fi < et.champs_libres; fi++) {
       var v = vals[fi] || '';
       var _ph = (Array.isArray(et.placeholders) && et.placeholders[fi]) ? et.placeholders[fi] : (et.placeholder || '...');
