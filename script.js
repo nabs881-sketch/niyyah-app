@@ -6083,57 +6083,31 @@ _outilAnxieteRenderers.checkboxes_sequentielles = function(o, c) {
   var sk = o.stockage || 'cure_anxiete_seq';
   var saved = {}; try { saved = JSON.parse(safeGetItem(sk) || '{}'); } catch(e) {}
   var seqId = '_seq_' + o.id;
-  var currentStep = 0;
-  for (var ei = 0; ei < etapes.length; ei++) {
-    var vals = saved['etape_' + ei] || [];
-    if (vals.length < etapes[ei].champs_libres || vals.some(function(v) { return !v.trim(); })) break;
-    currentStep = ei + 1;
-  }
-  if (currentStep >= etapes.length) currentStep = etapes.length - 1;
   var html = '';
-  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:left;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
-  html += '<div id="' + seqId + '">';
+  html += '<style>#' + seqId + ' input::placeholder{color:rgba(231,211,151,0.5);} #' + seqId + ' input:focus{border-color:' + c + '88;background:rgba(0,0,0,0.45);}</style>';
+  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.85);line-height:1.6;text-align:left;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
+  html += '<div id="' + seqId + '" style="background:rgba(8,5,3,0.58);border:1px solid rgba(200,168,75,0.18);border-radius:14px;padding:18px 16px;box-shadow:0 8px 26px rgba(0,0,0,0.4);">';
   etapes.forEach(function(et, idx) {
-    var done = idx < currentStep;
-    var active = idx === currentStep;
-    var future = idx > currentStep;
     var vals = saved['etape_' + idx] || [];
-    html += '<div style="margin-bottom:16px;opacity:' + (future ? '0.55' : '1') + ';transition:opacity 0.3s;">';
-    html += '<div style="font-family:var(--serif);font-size:17px;font-weight:600;color:' + (done ? '#C8A84A' : active ? '#E5E0DC' : 'rgba(240,234,214,0.65)') + ';margin-bottom:8px;">' + (done ? '\u2713 ' : '') + escapeHtml(et.label) + '</div>';
+    var filled = vals.length >= et.champs_libres && vals.every(function(v){ return v && v.trim(); });
+    html += '<div style="margin-bottom:16px;">';
+    html += '<div style="font-family:var(--serif);font-size:17px;font-weight:600;color:' + (filled ? '#C8A84A' : '#E5E0DC') + ';margin-bottom:8px;">' + (filled ? '\u2713 ' : '') + escapeHtml(et.label) + '</div>';
     for (var fi = 0; fi < et.champs_libres; fi++) {
       var v = vals[fi] || '';
       var _ph = (Array.isArray(et.placeholders) && et.placeholders[fi]) ? et.placeholders[fi] : (et.placeholder || '...');
-      html += '<input type="text" value="' + escapeHtml(v) + '" placeholder="' + escapeHtml(_ph) + '" ' + (future ? 'disabled' : '') + ' oninput="_seqFieldUpdate(\'' + seqId + '\',\'' + sk + '\',' + idx + ',' + fi + ',this.value)" style="display:block;width:100%;box-sizing:border-box;margin-bottom:6px;padding:10px 12px;border-radius:8px;border:1px solid ' + (future ? 'rgba(200,168,75,0.1)' : c + '33') + ';background:' + (future ? 'transparent' : 'rgba(200,168,75,0.04)') + ';color:#E5E0DC;font-family:var(--serif);font-size:16px;outline:none;">';
+      html += '<input type="text" value="' + escapeHtml(v) + '" placeholder="' + escapeHtml(_ph) + '" oninput="_seqFieldUpdate(\'' + sk + '\',' + idx + ',' + fi + ',this.value)" style="display:block;width:100%;box-sizing:border-box;margin-bottom:8px;padding:11px 13px;border-radius:9px;border:1px solid ' + c + '44;background:rgba(0,0,0,0.32);color:#F0EAD6;font-family:var(--serif);font-size:16px;outline:none;">';
     }
     html += '</div>';
   });
   html += '</div>';
-  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(232,208,140,0.95);text-align:left;line-height:1.55;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(232,208,140,0.95);text-align:left;line-height:1.55;margin-top:14px;">' + escapeHtml(o.note_spi) + '</div>';
   return html;
 };
-function _seqFieldUpdate(seqId, sk, etapeIdx, fieldIdx, value) {
+function _seqFieldUpdate(sk, etapeIdx, fieldIdx, value) {
   var saved = {}; try { saved = JSON.parse(safeGetItem(sk) || '{}'); } catch(e) {}
   if (!saved['etape_' + etapeIdx]) saved['etape_' + etapeIdx] = [];
   saved['etape_' + etapeIdx][fieldIdx] = value;
   safeSetItem(sk, JSON.stringify(saved));
-  // Re-render to unlock next step
-  var data = _getCureData();
-  if (!data) return;
-  var o = null;
-  Object.keys(data.jours).forEach(function(jk) {
-    (data.jours[jk].bloc_3_outils_psy||data.jours[jk].outils||[]).forEach(function(t) { if (t.id === seqId.replace('_seq_', '')) o = t; });
-  });
-  if (!o) return;
-  var el = document.getElementById(seqId);
-  if (!el) return;
-  var parent = el.parentNode;
-  var c = _getCureColor();
-  var newHtml = _outilAnxieteRenderers.checkboxes_sequentielles(o, c);
-  // Extract inner content only (between the seq div tags)
-  var temp = document.createElement('div');
-  temp.innerHTML = newHtml;
-  var newSeq = temp.querySelector('#' + seqId);
-  if (newSeq) el.innerHTML = newSeq.innerHTML;
 }
 window._seqFieldUpdate = _seqFieldUpdate;
 
