@@ -9315,3 +9315,14 @@ body.onboarding-active #nav-bar-v2 {
 @media (prefers-reduced-motion: reduce) {
   .orb-wrap-v2 .orb-ring-v2:last-child { animation: none; }
 }
+/* ── Médaillon dormant : lueur dorée discrète ── */
+.medaillon-alwaqt.medaillon-pierre .med-pierre {
+  animation: medPierreBreath 7s ease-in-out infinite;
+}
+@keyframes medPierreBreath {
+  0%, 100% { filter: drop-shadow(0 0 12px rgba(212,175,55,.22)); }
+  50%      { filter: drop-shadow(0 0 24px rgba(212,175,55,.38)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .medaillon-alwaqt.medaillon-pierre .med-pierre { animation: none; }
+}
