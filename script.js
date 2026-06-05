@@ -5582,8 +5582,6 @@ _outilAnxieteRenderers.ecran_sombre_avec_dhikr = function(o, c) {
   html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);margin-top:8px;">' + escapeHtml(dhikr.translit || '') + '</div>';
   html += '<div style="font-family:var(--serif);font-size:15px;color:rgba(200,168,75,0.3);margin-top:4px;">' + escapeHtml(dhikr.sens || '') + '</div>';
   html += '</div>';
-  // Terminate button
-  html += '<button id="' + dhkId + '_stop" onclick="_dhkStop(\'' + dhkId + '\',\'' + sk + '\')" style="display:block;margin:0 auto;padding:10px 28px;border-radius:10px;border:1px solid rgba(200,168,75,0.2);background:none;color:rgba(200,168,75,0.4);font-family:var(--serif);font-size:15px;cursor:pointer;">Terminer</button>';
   if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(232,208,140,0.95);text-align:left;line-height:1.55;margin-top:16px;">' + escapeHtml(o.note_spi) + '</div>';
   // Inject keyframe + start timer
   setTimeout(function() {
