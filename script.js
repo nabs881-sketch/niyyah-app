@@ -5948,44 +5948,36 @@ _outilAnxieteRenderers.silhouette_interactive = function(o, c) {
   var sk = o.stockage || 'cure_anxiete_silhouette';
   var saved = safeGetItem(sk) || '';
   var silId = '_sil_' + o.id;
-  // Zone positions on the SVG silhouette (y coords for a 300px tall figure)
   var zonePos = { front: 28, gorge: 52, poitrine: 80, ventre: 115, epaules: 62, jambes: 195, partout: 140 };
   var html = '';
-  html += '<div style="display:flex;gap:20px;max-width:360px;margin:0 auto 16px;align-items:flex-start;">';
-  // SVG silhouette
-  html += '<div style="flex-shrink:0;position:relative;width:120px;height:280px;">';
-  html += '<svg viewBox="0 0 120 280" width="120" height="280" fill="none" stroke="' + c + '55" stroke-width="1.5" stroke-linecap="round">'
-    // Head
+  html += '<div style="background:rgba(8,5,3,0.58);border:1px solid rgba(200,168,75,0.18);border-radius:14px;padding:16px;box-shadow:0 8px 26px rgba(0,0,0,0.4);">';
+  html += '<div style="display:flex;gap:16px;align-items:flex-start;">';
+  html += '<div style="flex-shrink:0;position:relative;width:110px;height:280px;">';
+  html += '<svg viewBox="0 0 120 280" width="110" height="280" fill="none" stroke="' + c + '88" stroke-width="1.5" stroke-linecap="round">'
     + '<ellipse cx="60" cy="28" rx="18" ry="22"/>'
-    // Neck
     + '<line x1="60" y1="50" x2="60" y2="58"/>'
-    // Shoulders
     + '<path d="M60 58 Q60 62 30 68"/><path d="M60 58 Q60 62 90 68"/>'
-    // Torso
     + '<path d="M30 68 L30 140 Q30 155 45 160 L60 165"/><path d="M90 68 L90 140 Q90 155 75 160 L60 165"/>'
-    // Arms
     + '<path d="M30 68 L18 120"/><path d="M90 68 L102 120"/>'
-    // Legs
     + '<path d="M60 165 L42 250"/><path d="M60 165 L78 250"/>'
     + '</svg>';
-  // Zone hotspots
   zones.forEach(function(z) {
     var y = zonePos[z.id] || 140;
     var sel = saved === z.id;
-    html += '<div onclick="_silSelect(\'' + silId + '\',\'' + sk + '\',\'' + z.id + '\')" style="position:absolute;left:50%;transform:translateX(-50%);top:' + y + 'px;width:50px;height:30px;border-radius:15px;cursor:pointer;background:' + (sel ? c + '33' : 'transparent') + ';border:1px solid ' + (sel ? c : 'transparent') + ';transition:all 0.2s;"></div>';
+    html += '<div onclick="_silSelect(\'' + silId + '\',\'' + sk + '\',\'' + z.id + '\')" style="position:absolute;left:50%;transform:translateX(-50%);top:' + y + 'px;width:50px;height:30px;border-radius:15px;cursor:pointer;background:' + (sel ? c + '44' : c + '12') + ';border:1px solid ' + (sel ? c : c + '33') + ';transition:all 0.2s;"></div>';
   });
   html += '</div>';
-  // Zone list
   html += '<div style="flex:1;display:flex;flex-direction:column;gap:6px;">';
   zones.forEach(function(z) {
     var sel = saved === z.id;
-    html += '<button onclick="_silSelect(\'' + silId + '\',\'' + sk + '\',\'' + z.id + '\')" style="display:block;width:100%;text-align:left;padding:8px 10px;border-radius:8px;border:1px solid ' + (sel ? c : 'rgba(200,168,75,0.12)') + ';background:' + (sel ? c + '15' : 'rgba(200,168,75,0.03)') + ';cursor:pointer;transition:all 0.2s;">'
-      + '<div style="font-family:var(--serif);font-size:15px;color:' + (sel ? '#C8A84A' : 'rgba(240,234,214,0.8)') + ';font-weight:' + (sel ? '600' : '400') + ';">' + escapeHtml(z.label) + '</div>'
-      + '<div style="font-size:15px;color:rgba(200,168,75,0.4);font-style:italic;">' + escapeHtml(z.description_typique) + '</div>'
+    html += '<button onclick="_silSelect(\'' + silId + '\',\'' + sk + '\',\'' + z.id + '\')" style="display:block;width:100%;text-align:left;padding:9px 11px;border-radius:9px;border:1px solid ' + (sel ? c : c + '33') + ';background:' + (sel ? c + '2a' : 'rgba(0,0,0,0.28)') + ';cursor:pointer;transition:all 0.2s;">'
+      + '<div style="font-family:var(--serif);font-size:15px;color:' + (sel ? '#F4E6BE' : '#E5E0DC') + ';font-weight:' + (sel ? '600' : '500') + ';">' + escapeHtml(z.label) + '</div>'
+      + '<div style="font-size:14px;color:rgba(231,211,151,0.62);font-style:italic;margin-top:2px;">' + escapeHtml(z.description_typique) + '</div>'
       + '</button>';
   });
   html += '</div></div>';
-  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(232,208,140,0.95);text-align:left;line-height:1.55;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
+  html += '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(232,208,140,0.95);text-align:left;line-height:1.55;margin-top:14px;">' + escapeHtml(o.note_spi) + '</div>';
   return html;
 };
 function _silSelect(silId, sk, zoneId) {
