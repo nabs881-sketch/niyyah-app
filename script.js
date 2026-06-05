@@ -6102,7 +6102,8 @@ _outilAnxieteRenderers.checkboxes_sequentielles = function(o, c) {
     html += '<div style="font-family:var(--serif);font-size:17px;font-weight:600;color:' + (done ? '#C8A84A' : active ? '#E5E0DC' : 'rgba(240,234,214,0.4)') + ';margin-bottom:8px;">' + (done ? '\u2713 ' : '') + escapeHtml(et.label) + '</div>';
     for (var fi = 0; fi < et.champs_libres; fi++) {
       var v = vals[fi] || '';
-      html += '<input type="text" value="' + escapeHtml(v) + '" placeholder="' + escapeHtml(et.placeholder || '...') + '" ' + (future ? 'disabled' : '') + ' oninput="_seqFieldUpdate(\'' + seqId + '\',\'' + sk + '\',' + idx + ',' + fi + ',this.value)" style="display:block;width:100%;box-sizing:border-box;margin-bottom:6px;padding:10px 12px;border-radius:8px;border:1px solid ' + (future ? 'rgba(200,168,75,0.1)' : c + '33') + ';background:' + (future ? 'transparent' : 'rgba(200,168,75,0.04)') + ';color:#E5E0DC;font-family:var(--serif);font-size:16px;outline:none;">';
+      var _ph = (Array.isArray(et.placeholders) && et.placeholders[fi]) ? et.placeholders[fi] : (et.placeholder || '...');
+      html += '<input type="text" value="' + escapeHtml(v) + '" placeholder="' + escapeHtml(_ph) + '" ' + (future ? 'disabled' : '') + ' oninput="_seqFieldUpdate(\'' + seqId + '\',\'' + sk + '\',' + idx + ',' + fi + ',this.value)" style="display:block;width:100%;box-sizing:border-box;margin-bottom:6px;padding:10px 12px;border-radius:8px;border:1px solid ' + (future ? 'rgba(200,168,75,0.1)' : c + '33') + ';background:' + (future ? 'transparent' : 'rgba(200,168,75,0.04)') + ';color:#E5E0DC;font-family:var(--serif);font-size:16px;outline:none;">';
     }
     html += '</div>';
   });

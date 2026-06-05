@@ -320,12 +320,12 @@
             {
               "label": "3 choses que je vois",
               "champs_libres": 3,
-              "placeholder": "ex : la lumière de la fenêtre"
+              "placeholders": ["ex : la lumière de la fenêtre", "ex : un objet près de moi", "ex : la couleur d'un mur"]
             },
             {
               "label": "2 sons que j'entends",
               "champs_libres": 2,
-              "placeholder": "ex : le bruit d'un moteur"
+              "placeholders": ["ex : le bruit d'un moteur", "ex : ma propre respiration"]
             },
             {
               "label": "1 sensation physique",
