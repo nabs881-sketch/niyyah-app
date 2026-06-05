@@ -1303,14 +1303,14 @@
       },
       "bloc_2_sagesse": {
         "type": "parole_de_sage",
-        "titre_bloc": "Parole de Junayd, maître de la voie",
+        "titre_bloc": "La voix de Niyyah",
         "parole": {
           "texte": "Ne mesure pas ce que tu as reçu par ce que tu sens. La grâce d'Allah travaille en silence dans le serviteur, et Il dépose ce qu'Il dépose sans que tu le saches toujours. Le signe que la cure a porté n'est pas l'absence de la peur — c'est que la peur ne te définit plus.",
-          "auteur": "Abû al-Qâsim al-Junayd al-Baghdâdî",
-          "dates_auteur": "v. 830-910",
-          "oeuvre": "Cité par Al-Qushayrî dans Ar-Risâla al-Qushayriyya",
-          "siecle": "IXe-Xe siècle (Bagdad)",
-          "note": "Junayd est appelé Sayyid at-Tâ'ifa — le Maître du Groupe (des soufis). Il enseignait la sobriété spirituelle (sahw) après l'extase. Sa parole rappelle qu'on ne mesure pas une cure à ses effets psychologiques immédiats — mais à ce qu'elle a déposé en profondeur, qui se révélera dans le temps."
+          "auteur": "Niyyah",
+          "dates_auteur": "",
+          "oeuvre": "",
+          "siecle": "",
+          "note": "Parole de clôture de Niyyah, non attribuée à un savant. Ce qui compte n'est pas que la peur disparaisse, mais qu'elle cesse de te définir."
         }
       },
       "introduction_avant_outils": "Dernier jour. Trois portes devant toi.\n\nOuvre : une lettre à toi-même, une reconnaissance, un choix. Et le silence.",
