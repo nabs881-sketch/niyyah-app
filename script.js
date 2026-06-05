@@ -5642,40 +5642,36 @@ _outilAnxieteRenderers.tri_radio_apprentissage = function(o, c) {
   var sk = o.stockage || 'cure_anxiete_tri';
   var saved = {}; try { saved = JSON.parse(safeGetItem(sk) || '{}'); } catch(e) {}
   var triId = '_tri_' + o.id;
-  // Determine current question index
   var currentQ = 0;
   for (var qi = 0; qi < exemples.length; qi++) {
-    if (saved['q' + qi] && saved['q' + qi].answered) currentQ = qi + 1;
-    else break;
+    if (saved['q' + qi] && saved['q' + qi].answered) currentQ = qi + 1; else break;
   }
   var allDone = currentQ >= exemples.length;
   var html = '';
-  if (o.introduction && currentQ === 0) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:left;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
+  if (o.introduction && currentQ === 0) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.85);line-height:1.6;text-align:left;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
+  html += '<div style="background:rgba(8,5,3,0.58);border:1px solid rgba(200,168,75,0.18);border-radius:14px;padding:18px 16px;box-shadow:0 8px 26px rgba(0,0,0,0.4);">';
   if (allDone) {
     var correct = 0;
     for (var ci = 0; ci < exemples.length; ci++) { if (saved['q' + ci] && saved['q' + ci].correct) correct++; }
-    html += '<div style="text-align:center;padding:20px 0;">'
-      + '<div style="font-family:var(--serif);font-size:16px;color:#C8A84A;margin-bottom:8px;">' + correct + '/' + exemples.length + ' justes</div>'
-      + '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.6);font-style:italic;">Tu apprends \u00e0 d\u00e9m\u00ealer ce que tu vois de ce que ton esprit raconte.</div>'
+    html += '<div style="text-align:center;padding:14px 0;">'
+      + '<div style="font-family:var(--serif);font-size:20px;color:#C8A84A;margin-bottom:8px;">' + correct + ' / ' + exemples.length + ' justes</div>'
+      + '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.75);font-style:italic;">Tu apprends \u00e0 d\u00e9m\u00ealer ce que tu vois de ce que ton esprit raconte.</div>'
       + '</div>';
   } else {
     var ex = exemples[currentQ];
-    // Counter
-    html += '<div style="font-size:15px;color:rgba(200,168,75,0.4);text-align:center;margin-bottom:12px;">' + (currentQ + 1) + '/' + exemples.length + '</div>';
-    // Statement
-    html += '<div style="border:1px solid ' + c + '22;border-radius:12px;padding:16px;margin-bottom:16px;text-align:center;">'
-      + '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.9);line-height:1.5;font-style:italic;">\u00ab ' + escapeHtml(ex.texte) + ' \u00bb</div>'
+    html += '<div style="font-size:14px;letter-spacing:1px;color:rgba(231,211,151,0.6);text-align:center;margin-bottom:12px;">' + (currentQ + 1) + ' / ' + exemples.length + '</div>';
+    html += '<div style="border:1px solid ' + c + '44;border-radius:12px;padding:18px 16px;margin-bottom:16px;text-align:center;background:rgba(0,0,0,0.3);">'
+      + '<div style="font-family:var(--serif);font-size:18px;color:#F0EAD6;line-height:1.55;font-style:italic;">\u00ab ' + escapeHtml(ex.texte) + ' \u00bb</div>'
       + '</div>';
-    // Options
-    html += '<div style="display:flex;gap:10px;16px;">';
+    html += '<div style="display:flex;gap:10px;margin-bottom:8px;">';
     opts.forEach(function(opt) {
-      html += '<button onclick="_triAnswer(\'' + triId + '\',\'' + sk + '\',' + currentQ + ',\'' + opt.id + '\',\'' + ex.bonne_reponse + '\')" style="flex:1;padding:14px 8px;border-radius:10px;border:1px solid ' + c + '33;background:rgba(200,168,75,0.03);color:rgba(240,234,214,0.8);font-family:var(--serif);font-size:16px;cursor:pointer;">' + escapeHtml(opt.label) + '</button>';
+      html += '<button id="' + triId + '_opt_' + opt.id + '" onclick="_triAnswer(\'' + triId + '\',\'' + sk + '\',' + currentQ + ',\'' + opt.id + '\',\'' + ex.bonne_reponse + '\')" style="flex:1;padding:14px 8px;border-radius:10px;border:1px solid ' + c + '55;background:rgba(0,0,0,0.25);color:#E7D397;font-family:var(--serif);font-size:16px;font-weight:600;cursor:pointer;transition:all 0.2s;">' + escapeHtml(opt.label) + '</button>';
     });
     html += '</div>';
-    // Feedback zone
-    html += '<div id="' + triId + '_fb" style="min-height:40px;"></div>';
+    html += '<div id="' + triId + '_fb" style="min-height:36px;"></div>';
   }
-  if (o.note_spi && allDone) html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(232,208,140,0.95);text-align:left;line-height:1.55;margin-top:8px;">' + escapeHtml(o.note_spi) + '</div>';
+  html += '</div>';
+  if (o.note_spi && allDone) html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(232,208,140,0.95);text-align:left;line-height:1.55;margin-top:14px;">' + escapeHtml(o.note_spi) + '</div>';
   return html;
 };
 function _triAnswer(triId, sk, qIdx, answer, correct) {
@@ -5683,20 +5679,27 @@ function _triAnswer(triId, sk, qIdx, answer, correct) {
   var isCorrect = answer === correct;
   saved['q' + qIdx] = { answer: answer, correct: isCorrect, answered: true };
   safeSetItem(sk, JSON.stringify(saved));
+  var chosen = document.getElementById(triId + '_opt_' + answer);
+  if (chosen) {
+    chosen.style.background = isCorrect ? 'rgba(76,175,80,0.30)' : 'rgba(255,160,0,0.28)';
+    chosen.style.borderColor = isCorrect ? '#4CAF50' : '#FFA000';
+    chosen.style.color = '#FFFFFF';
+  }
+  if (!isCorrect) {
+    var right = document.getElementById(triId + '_opt_' + correct);
+    if (right) { right.style.borderColor = '#4CAF50'; right.style.color = '#9BD49E'; }
+  }
   var fbEl = document.getElementById(triId + '_fb');
   if (fbEl) {
     var data = _getCureData();
     var o = null;
-    Object.keys(data.jours).forEach(function(jk) { (data.jours[jk].bloc_3_outils_psy||data.jours[jk].outils||[]).forEach(function(t) { if (t.id === triId.replace('_tri_', '')) o = t; }); });
+    Object.keys(data.jours).forEach(function(jk) { (data.jours[jk].bloc_3_outils_psy || data.jours[jk].outils || []).forEach(function(t) { if (t.id === triId.replace('_tri_', '')) o = t; }); });
     var fbText = '';
-    if (isCorrect) {
-      fbText = answer === 'fait' ? (o && o.feedback_correct_fait || 'Correct.') : (o && o.feedback_correct_interpretation || 'Correct.');
-    } else {
-      fbText = (o && o.feedback_incorrect_inverse) || 'Regarde encore.';
-    }
-    fbEl.innerHTML = '<div style="font-family:var(--serif);font-size:16px;color:' + (isCorrect ? '#C8A84A' : '#FFA000') + ';text-align:center;line-height:1.5;padding:8px;">' + escapeHtml(fbText) + '</div>';
-    setTimeout(function() { _cureAnxieteWizardRender(); }, isCorrect ? 1500 : 2500);
+    if (isCorrect) { fbText = answer === 'fait' ? (o && o.feedback_correct_fait || 'Correct.') : (o && o.feedback_correct_interpretation || 'Correct.'); }
+    else { fbText = (o && o.feedback_incorrect_inverse) || 'Regarde encore.'; }
+    fbEl.innerHTML = '<div style="font-family:var(--serif);font-size:16px;color:' + (isCorrect ? '#9BD49E' : '#FFC04D') + ';text-align:center;line-height:1.5;padding:10px 4px 4px;">' + escapeHtml(fbText) + '</div>';
   }
+  setTimeout(function() { _cureAnxieteWizardRender(); }, isCorrect ? 1500 : 2600);
 }
 window._triAnswer = _triAnswer;
 
