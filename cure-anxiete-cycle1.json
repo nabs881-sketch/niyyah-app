@@ -875,14 +875,15 @@
       },
       "bloc_2_sagesse": {
         "type": "parole_de_sage",
-        "titre_bloc": "Parole d'Ibn al-Qayyim sur les pensées",
+        "titre_bloc": "SAGESSE D'IBN AL-QAYYIM SUR LES PENSÉES",
         "parole": {
-          "texte": "Les pensées sont comme des oiseaux qui passent au-dessus de ta tête : tu ne peux pas les empêcher de voler, mais tu peux les empêcher de faire leur nid dans tes cheveux. Quatre choses peuvent se passer avec une pensée : (1) tu la repousses immédiatement, c'est la perfection ; (2) tu l'observes brièvement puis tu la laisses partir, c'est le travail ; (3) tu la suis et tu lui parles, c'est la défaite ; (4) tu la nourris et tu l'invites à s'installer, c'est la maladie.",
+          "texte": "Repousse la pensée dès qu'elle passe (al-khâtir). Si tu ne le fais pas, elle devient une rumination ; si tu n'écartes pas la rumination, elle devient un désir ; si tu ne le combats pas, il devient une résolution ferme ; puis un acte ; puis une habitude dont il est difficile de se défaire. La couper au premier instant est bien plus facile que de l'arracher une fois enracinée.",
           "auteur": "Ibn al-Qayyim al-Jawziyya",
-          "dates_auteur": "1292-1350",
-          "oeuvre": "Al-Fawâ'id et Madârij as-Sâlikîn (sur les khawâtir)",
+          "dates_auteur": "Juriste et savant hanbalî, élève d'Ibn Taymiyya · 1292-1350",
+          "oeuvre": "Al-Fawâ'id (rendu libre)",
           "siecle": "XIIIe-XIVe siècle (Damas)",
-          "note": "Ibn al-Qayyim a écrit longuement sur les khawâtir — les pensées qui surgissent. Il les classe en 4 types selon leur origine (de l'âme, du Roi, de Shaytân, de l'ange), et enseigne comment les traiter sans s'y identifier."
+          "note": "Ibn al-Qayyim a écrit longuement sur les khawâtir — les pensées qui surgissent. Il les classe en 4 types selon leur origine (de l'âme, du Roi, de Shaytân, de l'ange), et enseigne comment les traiter sans s'y identifier.",
+          "note_editoriale": "Une image bien connue le dit autrement : les pensées sont comme des oiseaux qui passent au-dessus de ta tête — tu ne peux pas les empêcher de voler, mais tu peux les empêcher d'y faire leur nid."
         }
       },
       "introduction_avant_outils": "Aujourd’hui, on défusionne.\n\nApprendre à se séparer de ses pensées — elles ne sont pas la vérité.",
