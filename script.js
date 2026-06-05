@@ -5455,17 +5455,17 @@ _outilAnxieteRenderers.double_slider_compare = function(o, c) {
   var lecture = o.lecture_du_resultat || {};
   var dscId = '_dsc_' + o.id;
   var html = '';
-  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:left;margin-bottom:16px;white-space:pre-line;">' + escapeHtml(o.introduction) + '</div>';
+  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:17px;color:rgba(240,234,214,0.82);line-height:1.6;text-align:left;margin-bottom:16px;white-space:pre-line;">' + escapeHtml(o.introduction) + '</div>';
   sliders.forEach(function(sl, idx) {
     var sk = sl.stockage || 'cure_anxiete_sl' + idx;
     var saved = safeGetItem(sk) || '5';
     html += '<div style="margin-bottom:20px;">';
-    html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.75);margin-bottom:8px;line-height:1.4;">' + escapeHtml(sl.label) + '</div>';
+    html += '<div style="font-family:var(--serif);font-size:17px;color:rgba(240,234,214,0.9);margin-bottom:10px;line-height:1.4;">' + escapeHtml(sl.label) + '</div>';
     html += '<div style="display:flex;align-items:center;gap:8px;">';
-    html += '<div style="font-size:15px;color:rgba(200,168,75,0.4);font-style:italic;min-width:50px;text-align:right;">' + escapeHtml(sl.label_min) + '</div>';
+    html += '<div style="font-size:16px;color:rgba(200,168,75,0.7);font-style:italic;min-width:50px;text-align:right;">' + escapeHtml(sl.label_min) + '</div>';
     html += '<input type="range" id="' + dscId + '_s' + idx + '" min="' + (sl.min || 0) + '" max="' + (sl.max || 10) + '" value="' + saved + '" oninput="safeSetItem(\'' + sk + '\',this.value);this.nextElementSibling.textContent=this.value;_dscUpdate(\'' + dscId + '\')" style="flex:1;accent-color:#C8A84A;">';
-    html += '<div style="font-size:18px;color:#C8A84A;font-family:var(--serif);font-weight:600;min-width:24px;text-align:center;">' + saved + '</div>';
-    html += '<div style="font-size:15px;color:rgba(200,168,75,0.4);font-style:italic;min-width:50px;">' + escapeHtml(sl.label_max) + '</div>';
+    html += '<div style="font-size:20px;color:#C8A84A;font-family:var(--serif);font-weight:600;min-width:28px;text-align:center;">' + saved + '</div>';
+    html += '<div style="font-size:16px;color:rgba(200,168,75,0.7);font-style:italic;min-width:50px;">' + escapeHtml(sl.label_max) + '</div>';
     html += '</div></div>';
   });
   // Diagnostic reading
@@ -5488,7 +5488,7 @@ function _dscDiagText(o, dscId) {
   else if (v0 > mid && v1 > mid) txt = lecture.si_efforts_haut_controle_haut || '';
   else if (v0 > mid && v1 <= mid) txt = lecture.si_efforts_haut_controle_bas || '';
   else txt = lecture.si_efforts_bas_controle_bas || '';
-  return '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.75);line-height:1.6;font-style:italic;">' + escapeHtml(txt) + '</div>';
+  return '<div style="font-family:var(--serif);font-size:17px;color:rgba(240,234,214,0.88);line-height:1.6;font-style:italic;">' + escapeHtml(txt) + '</div>';
 }
 function _dscUpdate(dscId) {
   var diagEl = document.getElementById(dscId + '_diag');
