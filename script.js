@@ -5639,67 +5639,92 @@ _outilAnxieteRenderers.champ_avec_amorce_obligatoire = function(o, c) {
 _outilAnxieteRenderers.tri_radio_apprentissage = function(o, c) {
   var exemples = o.exemples || [];
   var opts = o.options_par_question || [];
+  var n = exemples.length;
   var sk = o.stockage || 'cure_anxiete_tri';
   var saved = {}; try { saved = JSON.parse(safeGetItem(sk) || '{}'); } catch(e) {}
   var triId = '_tri_' + o.id;
   var currentQ = 0;
-  for (var qi = 0; qi < exemples.length; qi++) {
-    if (saved['q' + qi] && saved['q' + qi].answered) currentQ = qi + 1; else break;
-  }
-  var allDone = currentQ >= exemples.length;
+  for (var qi = 0; qi < n; qi++) { if (saved['q' + qi] && saved['q' + qi].answered) currentQ = qi + 1; else break; }
+  var allDone = currentQ >= n;
+  var viewQ = (saved.viewQ != null ? parseInt(saved.viewQ, 10) : currentQ);
+  if (isNaN(viewQ) || viewQ < 0) viewQ = 0;
+  if (viewQ > currentQ) viewQ = currentQ;
+  var fbFor = function(ans) {
+    if (ans.correct) return ans.answer === 'fait' ? (o.feedback_correct_fait || 'Correct.') : (o.feedback_correct_interpretation || 'Correct.');
+    return o.feedback_incorrect_inverse || 'Regarde encore.';
+  };
+  var firstAnswered = saved['q0'] && saved['q0'].answered;
   var html = '';
-  if (o.introduction && currentQ === 0) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.85);line-height:1.6;text-align:left;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
-  html += '<div style="background:rgba(8,5,3,0.58);border:1px solid rgba(200,168,75,0.18);border-radius:14px;padding:18px 16px;box-shadow:0 8px 26px rgba(0,0,0,0.4);">';
-  if (allDone) {
+  if (o.introduction && !firstAnswered) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.85);line-height:1.6;text-align:left;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
+  html += '<div style="background:rgba(8,5,3,0.58);border:1px solid rgba(200,168,75,0.18);border-radius:14px;padding:16px;box-shadow:0 8px 26px rgba(0,0,0,0.4);">';
+  var summaryView = allDone && viewQ >= n;
+  html += '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">';
+  html += (viewQ > 0)
+    ? '<button onclick="_triNav(\'' + sk + '\',-1,' + n + ')" style="width:34px;height:34px;border-radius:50%;border:1px solid ' + c + '55;background:rgba(0,0,0,0.25);color:#E7D397;font-size:18px;cursor:pointer;">\u2039</button>'
+    : '<span style="width:34px;"></span>';
+  html += '<div style="font-size:14px;letter-spacing:1px;color:rgba(231,211,151,0.65);">' + (summaryView ? 'Bilan' : ((viewQ + 1) + ' / ' + n)) + '</div>';
+  html += (viewQ < currentQ)
+    ? '<button onclick="_triNav(\'' + sk + '\',1,' + n + ')" style="width:34px;height:34px;border-radius:50%;border:1px solid ' + c + '55;background:rgba(0,0,0,0.25);color:#E7D397;font-size:18px;cursor:pointer;">\u203a</button>'
+    : '<span style="width:34px;"></span>';
+  html += '</div>';
+  if (summaryView) {
     var correct = 0;
-    for (var ci = 0; ci < exemples.length; ci++) { if (saved['q' + ci] && saved['q' + ci].correct) correct++; }
-    html += '<div style="text-align:center;padding:14px 0;">'
-      + '<div style="font-family:var(--serif);font-size:20px;color:#C8A84A;margin-bottom:8px;">' + correct + ' / ' + exemples.length + ' justes</div>'
+    for (var ci = 0; ci < n; ci++) { if (saved['q' + ci] && saved['q' + ci].correct) correct++; }
+    html += '<div style="text-align:center;padding:10px 0;">'
+      + '<div style="font-family:var(--serif);font-size:20px;color:#C8A84A;margin-bottom:8px;">' + correct + ' / ' + n + ' justes</div>'
       + '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.75);font-style:italic;">Tu apprends \u00e0 d\u00e9m\u00ealer ce que tu vois de ce que ton esprit raconte.</div>'
       + '</div>';
   } else {
-    var ex = exemples[currentQ];
-    html += '<div style="font-size:14px;letter-spacing:1px;color:rgba(231,211,151,0.6);text-align:center;margin-bottom:12px;">' + (currentQ + 1) + ' / ' + exemples.length + '</div>';
+    var ex = exemples[viewQ];
+    var ans = saved['q' + viewQ];
+    var answered = ans && ans.answered;
     html += '<div style="border:1px solid ' + c + '44;border-radius:12px;padding:18px 16px;margin-bottom:16px;text-align:center;background:rgba(0,0,0,0.3);">'
       + '<div style="font-family:var(--serif);font-size:18px;color:#F0EAD6;line-height:1.55;font-style:italic;">\u00ab ' + escapeHtml(ex.texte) + ' \u00bb</div>'
       + '</div>';
     html += '<div style="display:flex;gap:10px;margin-bottom:8px;">';
     opts.forEach(function(opt) {
-      html += '<button id="' + triId + '_opt_' + opt.id + '" onclick="_triAnswer(\'' + triId + '\',\'' + sk + '\',' + currentQ + ',\'' + opt.id + '\',\'' + ex.bonne_reponse + '\')" style="flex:1;padding:14px 8px;border-radius:10px;border:1px solid ' + c + '55;background:rgba(0,0,0,0.25);color:#E7D397;font-family:var(--serif);font-size:16px;font-weight:600;cursor:pointer;transition:all 0.2s;">' + escapeHtml(opt.label) + '</button>';
+      var bg = 'rgba(0,0,0,0.25)', bd = c + '55', col = '#E7D397', click = '';
+      if (answered) {
+        if (opt.id === ans.answer) {
+          bg = ans.correct ? 'rgba(76,175,80,0.30)' : 'rgba(255,160,0,0.28)';
+          bd = ans.correct ? '#4CAF50' : '#FFA000'; col = '#FFFFFF';
+        } else if (!ans.correct && opt.id === ex.bonne_reponse) {
+          bd = '#4CAF50'; col = '#9BD49E';
+        } else { col = 'rgba(231,211,151,0.45)'; }
+      } else {
+        click = 'onclick="_triAnswer(\'' + triId + '\',\'' + sk + '\',' + viewQ + ',\'' + opt.id + '\',\'' + ex.bonne_reponse + '\')"';
+      }
+      html += '<button ' + click + ' style="flex:1;padding:14px 8px;border-radius:10px;border:1px solid ' + bd + ';background:' + bg + ';color:' + col + ';font-family:var(--serif);font-size:16px;font-weight:600;cursor:' + (answered ? 'default' : 'pointer') + ';transition:all 0.2s;">' + escapeHtml(opt.label) + '</button>';
     });
     html += '</div>';
-    html += '<div id="' + triId + '_fb" style="min-height:36px;"></div>';
+    if (answered) {
+      html += '<div style="font-family:var(--serif);font-size:16px;color:' + (ans.correct ? '#9BD49E' : '#FFC04D') + ';text-align:center;line-height:1.5;padding:10px 4px 4px;">' + escapeHtml(fbFor(ans)) + '</div>';
+      if (viewQ < currentQ) html += '<div style="font-size:13px;color:rgba(231,211,151,0.5);text-align:center;margin-top:4px;">\u203a pour continuer</div>';
+    }
   }
   html += '</div>';
   if (o.note_spi && allDone) html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(232,208,140,0.95);text-align:left;line-height:1.55;margin-top:14px;">' + escapeHtml(o.note_spi) + '</div>';
   return html;
 };
+function _triNav(sk, delta, n) {
+  var saved = {}; try { saved = JSON.parse(safeGetItem(sk) || '{}'); } catch(e) {}
+  var cur = 0; for (var qi = 0; qi < n; qi++) { if (saved['q' + qi] && saved['q' + qi].answered) cur = qi + 1; else break; }
+  var vq = (saved.viewQ != null ? parseInt(saved.viewQ, 10) : cur);
+  if (isNaN(vq)) vq = cur;
+  vq += delta;
+  if (vq < 0) vq = 0;
+  if (vq > cur) vq = cur;
+  saved.viewQ = vq;
+  safeSetItem(sk, JSON.stringify(saved));
+  _cureAnxieteWizardRender();
+}
+window._triNav = _triNav;
 function _triAnswer(triId, sk, qIdx, answer, correct) {
   var saved = {}; try { saved = JSON.parse(safeGetItem(sk) || '{}'); } catch(e) {}
-  var isCorrect = answer === correct;
-  saved['q' + qIdx] = { answer: answer, correct: isCorrect, answered: true };
+  saved['q' + qIdx] = { answer: answer, correct: (answer === correct), answered: true };
+  saved.viewQ = qIdx;
   safeSetItem(sk, JSON.stringify(saved));
-  var chosen = document.getElementById(triId + '_opt_' + answer);
-  if (chosen) {
-    chosen.style.background = isCorrect ? 'rgba(76,175,80,0.30)' : 'rgba(255,160,0,0.28)';
-    chosen.style.borderColor = isCorrect ? '#4CAF50' : '#FFA000';
-    chosen.style.color = '#FFFFFF';
-  }
-  if (!isCorrect) {
-    var right = document.getElementById(triId + '_opt_' + correct);
-    if (right) { right.style.borderColor = '#4CAF50'; right.style.color = '#9BD49E'; }
-  }
-  var fbEl = document.getElementById(triId + '_fb');
-  if (fbEl) {
-    var data = _getCureData();
-    var o = null;
-    Object.keys(data.jours).forEach(function(jk) { (data.jours[jk].bloc_3_outils_psy || data.jours[jk].outils || []).forEach(function(t) { if (t.id === triId.replace('_tri_', '')) o = t; }); });
-    var fbText = '';
-    if (isCorrect) { fbText = answer === 'fait' ? (o && o.feedback_correct_fait || 'Correct.') : (o && o.feedback_correct_interpretation || 'Correct.'); }
-    else { fbText = (o && o.feedback_incorrect_inverse) || 'Regarde encore.'; }
-    fbEl.innerHTML = '<div style="font-family:var(--serif);font-size:16px;color:' + (isCorrect ? '#9BD49E' : '#FFC04D') + ';text-align:center;line-height:1.5;padding:10px 4px 4px;">' + escapeHtml(fbText) + '</div>';
-  }
-  setTimeout(function() { _cureAnxieteWizardRender(); }, isCorrect ? 1500 : 2600);
+  _cureAnxieteWizardRender();
 }
 window._triAnswer = _triAnswer;
 
