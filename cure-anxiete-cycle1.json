@@ -1391,7 +1391,7 @@
           "type": "choix_unique_sortie",
           "titre": "Choisis ta posture",
           "introduction": "La cure se termine. Ton cœur sait de quoi il a besoin pour la suite. Aucune réponse n'est meilleure qu'une autre.",
-          "consigne": "Choisis sans culpabilité.",
+          "consigne": "Sans culpabilité.",
           "options": [
             {
               "id": "reprendre",
