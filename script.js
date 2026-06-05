@@ -5392,7 +5392,6 @@ _outilAnxieteRenderers.lecture_synchronisee_souffle = function(o, c) {
   var done = safeGetItem(sk) === '1';
   var html = '';
   if (o.introduction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.6);line-height:1.6;text-align:left;margin-bottom:12px;white-space:pre-line;">' + escapeHtml(o.introduction) + '</div>';
-  if (o.consigne) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.45);text-align:center;margin-bottom:20px;">' + escapeHtml(o.consigne) + '</div>';
   // Reading zone
   html += '<div id="' + lsId + '" style="background:#000;border-radius:16px;min-height:220px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:16px;padding:24px 16px;text-align:center;">';
   if (done) {
