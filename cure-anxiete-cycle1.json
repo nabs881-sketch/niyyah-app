@@ -783,11 +783,12 @@
           "sens": "Cette phrase a été dite par Ibrâhîm 'alayhi-s-salâm quand il a été jeté dans le feu, et par le Prophète ﷺ et ses Compagnons quand on leur a dit que des ennemis se rassemblaient contre eux (Âl 'Imrân 3:173). Elle reconnaît qu'Allah suffit, et qu'Il est le Garant (Wakîl) — Celui à qui on confie l'affaire pour qu'Il s'en occupe."
         },
         "quantite": 70,
-        "moment_recommande": "Après chaque salât aujourd'hui — 14 fois après chaque prière obligatoire (5 prières × 14 = 70).",
+        "moment_recommande": "Après chaque salât aujourd'hui — 14 fois après chaque prière obligatoire (5 prières × 14 = 70). (Le chiffre 14 est un rythme de pratique pour ancrer la phrase, non un nombre rapporté du Prophète ﷺ.)",
         "duree_estimee_sec": 240,
         "justification": {
           "texte": "Allah dit dans le Coran : « Ceux à qui les gens ont dit : 'Les gens se sont rassemblés contre vous, craignez-les' — cela accrut leur foi et ils dirent : Hasbunâ Allâhu wa ni'ma-l-wakîl. Ils retournèrent donc avec un bienfait d'Allah et une grâce. Aucun mal ne les avait touchés. »",
-          "source": "Âl 'Imrân 3:173-174"
+          "source": "Âl 'Imrân 3:173-174",
+          "hadith": "Rapporté par al-Bukhârî d'après Ibn 'Abbâs — dit par Ibrâhîm dans le feu et par les croyants (Âl 'Imrân 3:173)."
         },
         "comment_pratiquer": "Après chaque salât, reste assis. Compte sur tes doigts. 14 fois après Fajr, 14 après Dhuhr, 14 après 'Asr, 14 après Maghrib, 14 après 'Ishâ. Le Coran dit explicitement que cette phrase a écarté le mal de ses récitants. Tu la dis aussi pour cette raison.",
         "stockage": "cure_anxiete_j4_dhikr_done"
