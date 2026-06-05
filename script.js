@@ -5503,58 +5503,68 @@ window._dscUpdate = _dscUpdate;
 
 // 3.16 — champ_qui_disparait
 _outilAnxieteRenderers.champ_qui_disparait = function(o, c) {
-  var sk = o.etape_apres_ecriture && o.etape_apres_ecriture.stockage || 'cure_anxiete_disparait';
+  var sk = (o.etape_apres_ecriture && o.etape_apres_ecriture.stockage) || 'cure_anxiete_disparait';
   var act = o.action_validation || {};
   var etape = o.etape_apres_ecriture || {};
   var savedTheme = safeGetItem(sk) || '';
   var dispId = '_disp_' + o.id;
   var done = safeGetItem(sk + '_done') === '1';
+  var panel = 'background:rgba(8,5,3,0.58);border:1px solid rgba(200,168,75,0.18);border-radius:14px;padding:16px;box-shadow:0 8px 26px rgba(0,0,0,0.4);';
+  var calBlock = function() {
+    return '<div style="font-family:\'Scheherazade New\',serif;font-size:34px;color:#C8A84A;direction:rtl;margin-bottom:8px;">' + escapeHtml(act.calligraphie_finale_ar || '') + '</div>'
+      + '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.65);">' + escapeHtml(act.calligraphie_finale_translit || '') + '</div>'
+      + '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.8);margin-top:4px;">' + escapeHtml(act.calligraphie_finale_sens || '') + '</div>';
+  };
   var html = '';
-  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:left;margin-bottom:16px;white-space:pre-line;">' + escapeHtml(o.introduction) + '</div>';
+  html += '<style>#' + dispId + '_input::placeholder{color:rgba(240,234,214,0.4);}</style>';
+  if (o.introduction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.75);line-height:1.6;text-align:left;margin-bottom:16px;white-space:pre-line;">' + escapeHtml(o.introduction) + '</div>';
   if (done) {
-    // Already done — show calligraphy
-    html += '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:140px;text-align:center;margin-bottom:12px;">'
-      + '<div style="font-family:\'Scheherazade New\',serif;font-size:32px;color:#C8A84A;direction:rtl;margin-bottom:8px;">' + escapeHtml(act.calligraphie_finale_ar || '') + '</div>'
-      + '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.55);">' + escapeHtml(act.calligraphie_finale_translit || '') + '</div>'
-      + '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);margin-top:4px;">' + escapeHtml(act.calligraphie_finale_sens || '') + '</div>'
-      + '</div>';
-    if (savedTheme) html += '<div style="font-size:15px;color:rgba(200,168,75,0.4);text-align:center;font-style:italic;">Th\u00e8me d\u00e9pos\u00e9\u00a0: ' + escapeHtml(savedTheme) + '</div>';
-  } else if (savedTheme) {
-    // Theme chosen, ready to deposit
+    html += '<div style="' + panel + 'display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:140px;text-align:center;margin-bottom:12px;">' + calBlock() + '</div>';
+    if (savedTheme) html += '<div style="font-size:15px;color:rgba(200,168,75,0.5);text-align:center;font-style:italic;">Th\u00e8me d\u00e9pos\u00e9\u00a0: ' + escapeHtml(savedTheme) + '</div>';
+  } else {
     html += '<div id="' + dispId + '_form">';
-    html += '<div style="border:1px solid ' + c + '22;border-radius:14px;padding:16px;margin-bottom:16px;">';
-    html += '<span style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(232,208,140,0.95);">' + escapeHtml(o.amorce || '') + ' </span>';
-    html += '<input type="text" id="' + dispId + '_input" placeholder="' + escapeHtml((o.champ && o.champ.placeholder) || '...') + '" style="background:none;border:none;border-bottom:1px solid ' + c + '44;color:#E5E0DC;font-family:var(--serif);font-size:15px;padding:2px 4px;width:100%;max-width:260px;outline:none;">';
+    html += '<div style="' + panel + 'margin-bottom:16px;">';
+    html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(232,208,140,0.95);margin-bottom:10px;">' + escapeHtml(o.amorce || '') + '</div>';
+    html += '<input type="text" id="' + dispId + '_input" placeholder="' + escapeHtml((o.champ && o.champ.placeholder) || '...') + '" style="background:rgba(0,0,0,0.32);border:1px solid rgba(200,168,75,0.28);border-radius:8px;color:#F0EAD6;font-family:var(--serif);font-size:16px;padding:12px;width:100%;box-sizing:border-box;outline:none;">';
+    if (etape.instruction) html += '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.7);text-align:center;margin:16px 0 10px;">' + escapeHtml(etape.instruction) + '</div>';
+    var themes = etape.options_thematiques || [];
+    html += '<div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;">';
+    themes.forEach(function(th, i) {
+      html += '<button id="' + dispId + '_chip_' + i + '" data-theme="' + escapeHtml(th) + '" onclick="_dispSelectTheme(\'' + dispId + '\',this,\'' + c + '\')" style="padding:9px 15px;border-radius:9px;border:1.5px solid ' + c + '55;background:rgba(0,0,0,0.32);color:#F0EAD6;font-family:var(--serif);font-size:15px;cursor:pointer;transition:all 0.15s;">' + escapeHtml(th) + '</button>';
+    });
     html += '</div>';
-    html += '<div style="font-size:15px;color:rgba(200,168,75,0.5);text-align:center;margin-bottom:12px;">Th\u00e8me\u00a0: ' + escapeHtml(savedTheme) + '</div>';
-    html += '<button onclick="_dispDeposer(\'' + dispId + '\',\'' + sk + '\')" style="display:block;width:100%;padding:14px;border-radius:10px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:15px;cursor:pointer;">'
+    html += '</div>';
+    html += '<button id="' + dispId + '_btn" onclick="_dispDeposer(\'' + dispId + '\',\'' + sk + '\')" disabled style="display:block;width:100%;padding:14px;border-radius:10px;border:1px solid ' + c + '44;background:' + c + '0d;color:' + c + ';font-family:var(--serif);font-size:15px;cursor:pointer;opacity:0.4;transition:opacity 0.2s;">'
       + '<span style="font-family:\'Scheherazade New\',serif;font-size:24px;margin-right:8px;">' + escapeHtml(act.bouton_ar || '') + '</span>'
       + escapeHtml(act.bouton_fr || 'Je remets')
       + '</button>';
     html += '</div>';
-    html += '<div id="' + dispId + '_cal" style="display:none;text-align:center;">'
-      + '<div style="font-family:\'Scheherazade New\',serif;font-size:32px;color:#C8A84A;direction:rtl;margin-bottom:8px;">' + escapeHtml(act.calligraphie_finale_ar || '') + '</div>'
-      + '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.55);">' + escapeHtml(act.calligraphie_finale_translit || '') + '</div>'
-      + '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);margin-top:4px;">' + escapeHtml(act.calligraphie_finale_sens || '') + '</div>'
-      + '</div>';
-  } else {
-    // Step 1: write + choose theme
-    html += '<div style="border:1px solid ' + c + '22;border-radius:14px;padding:16px;margin-bottom:16px;">';
-    html += '<span style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(232,208,140,0.95);">' + escapeHtml(o.amorce || '') + ' </span>';
-    html += '<input type="text" id="' + dispId + '_input" placeholder="' + escapeHtml((o.champ && o.champ.placeholder) || '...') + '" style="background:none;border:none;border-bottom:1px solid ' + c + '44;color:#E5E0DC;font-family:var(--serif);font-size:15px;padding:2px 4px;width:100%;max-width:260px;outline:none;">';
-    html += '</div>';
-    if (etape.instruction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.6);text-align:center;margin-bottom:10px;">' + escapeHtml(etape.instruction) + '</div>';
-    var themes = etape.options_thematiques || [];
-    html += '<div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:16px;">';
-    themes.forEach(function(th) {
-      html += '<button onclick="safeSetItem(\'' + sk + '\',\'' + escapeHtml(th) + '\');_cureAnxieteWizardRender()" style="padding:8px 14px;border-radius:8px;border:1.5px solid rgba(232,208,140,0.55);background:rgba(0,0,0,0.35);color:rgba(240,234,214,0.7);font-family:var(--serif);font-size:15px;cursor:pointer;">' + escapeHtml(th) + '</button>';
-    });
-    html += '</div>';
+    html += '<div id="' + dispId + '_cal" style="display:none;text-align:center;' + panel + '">' + calBlock() + '</div>';
   }
-  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(232,208,140,0.95);text-align:left;line-height:1.55;margin-top:12px;">' + escapeHtml(o.note_spi) + '</div>';
+  if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(232,208,140,0.95);text-align:left;line-height:1.55;margin-top:16px;">' + escapeHtml(o.note_spi) + '</div>';
   return html;
 };
+function _dispSelectTheme(dispId, btnEl, c) {
+  window['_dispTheme_' + dispId] = btnEl.getAttribute('data-theme');
+  var chips = btnEl.parentNode.querySelectorAll('button');
+  for (var i = 0; i < chips.length; i++) {
+    chips[i].style.background = 'rgba(0,0,0,0.32)';
+    chips[i].style.color = '#F0EAD6';
+    chips[i].style.borderColor = c + '55';
+    chips[i].style.fontWeight = 'normal';
+  }
+  btnEl.style.background = c;
+  btnEl.style.color = '#fff';
+  btnEl.style.borderColor = c;
+  btnEl.style.fontWeight = '600';
+  var btn = document.getElementById(dispId + '_btn');
+  if (btn) { btn.disabled = false; btn.style.opacity = '1'; }
+}
+window._dispSelectTheme = _dispSelectTheme;
 function _dispDeposer(dispId, sk) {
+  var theme = window['_dispTheme_' + dispId];
+  if (!theme) return;
+  safeSetItem(sk, theme);
   var form = document.getElementById(dispId + '_form');
   var cal = document.getElementById(dispId + '_cal');
   if (!form) return;
