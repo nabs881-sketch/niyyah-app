@@ -45,11 +45,11 @@
       },
       "bloc_2_sagesse": {
         "type": "parole_de_sage",
-        "titre_bloc": "Parole d'un médecin de l'âme",
+        "titre_bloc": "SAGESSE D'AL-BALKHÎ",
         "parole": {
           "texte": "Le médecin du corps soigne d'abord ce qu'il a diagnostiqué. Le médecin de l'âme procède de même : il commence par identifier la maladie du cœur. Celui qui ignore le mal qui l'habite ne peut le traiter — car il ne sait même pas ce qu'il combat.",
           "auteur": "Abû Zayd al-Balkhi",
-          "dates_auteur": "850-934",
+          "dates_auteur": "Savant et pionnier de la médecine de l'âme · Balkh, 849-934",
           "oeuvre": "Masâlih al-Abdân wa-l-Anfus (rendu libre)",
           "siecle": "IXe siècle",
           "note": "Al-Balkhi est considéré comme le premier psychologue cognitif de l'histoire islamique. Son traité distingue les maladies du corps et celles de l'âme, et propose un traitement structuré de l'anxiété."
@@ -273,11 +273,11 @@
       },
       "bloc_2_sagesse": {
         "type": "parole_de_sage",
-        "titre_bloc": "Parole d'un maître du cœur",
+        "titre_bloc": "SAGESSE DE HASSAN AL-BASRÎ",
         "parole": {
           "texte": "Le passé est mort, ne le pleure pas. Le futur n'est pas encore né, ne t'en inquiète pas. Ne vis que dans l'instant que tu respires.",
           "auteur": "Hassan al-Basrî",
-          "dates_auteur": "642-728",
+          "dates_auteur": "Imam et ascète des premières générations (Tâbi'î) · Basra, 642-728",
           "oeuvre": "Cité dans Hilyat al-Awliyâ' d'Abû Nu'aym al-Asbahânî (rendu libre)",
           "siecle": "VIIe-VIIIe siècle (Tâbi'î)",
           "note": "Hassan al-Basrî est l'une des plus grandes figures spirituelles des premiers siècles de l'islam. Tâbi'î (génération des Compagnons des Compagnons), il enseignait la muhâsaba (examen de l'âme) et la présence au moment présent comme fondement de la vie spirituelle."
@@ -471,11 +471,11 @@
       },
       "bloc_2_sagesse": {
         "type": "parole_de_sage",
-        "titre_bloc": "Parole d'une mystique de l'amour",
+        "titre_bloc": "PAROLE DE RÂBI'A AL-'ADAWIYYA",
         "parole": {
           "texte": "Mon Dieu, si je T'adore par crainte de l'Enfer, brûle-moi en lui. Si je T'adore par espoir du Paradis, exclus-moi de lui. Mais si je T'adore pour Toi-même, ne me prive pas de Ton visage éternel.",
           "auteur": "Râbi'a al-'Adawiyya",
-          "dates_auteur": "v. 717-801",
+          "dates_auteur": "Grande dévote et ascète de Basra · v. 717-801",
           "oeuvre": "Parole traditionnellement attribuée à Râbi'a, transmise par la tradition soufie (notamment 'Attâr, Tadhkirat al-Awliyâ').",
           "siecle": "VIIIe siècle (Basra)",
           "note": "Râbi'a al-'Adawiyya est la grande sainte soufie de Basra. Elle enseignait que l'amour pur d'Allah dissout toutes les peurs. Quand l'âme aime pour Lui — non pour échapper à la souffrance ou gagner une récompense — la peur perd son emprise. C'est la plus haute forme d'acceptation : non plus subir, mais aimer ce qui vient de Lui.",
@@ -671,11 +671,11 @@
       },
       "bloc_2_sagesse": {
         "type": "parole_de_sage",
-        "titre_bloc": "Sagesse du maître soufi alexandrin",
+        "titre_bloc": "SAGESSE D'IBN 'ATÂ'ILLÂH",
         "parole": {
           "texte": "Repose-toi de la gestion de tes affaires : ce qu'un Autre a entrepris de faire à ta place, ne t'en occupe pas toi-même. Ton souci de ce que Lui a garanti est un trouble de ton entendement. Ta recherche de ce qu'Il t'a donné est manque de pudeur envers Lui. Ton chagrin de ce qu'Il a déjà décrété est protestation contre Sa Seigneurie.",
           "auteur": "Ibn 'Atâ'illâh al-Iskandarî",
-          "dates_auteur": "v. 1259-1309",
+          "dates_auteur": "Juriste mâlikî et savant d'Alexandrie · v. 1259-1309",
           "oeuvre": "Al-Hikam (Les Sagesses) — maximes sur le tadbîr (l'abandon de la gestion de soi)",
           "siecle": "XIIIe-XIVe siècle (Alexandrie)",
           "note": "Ibn 'Atâ'illâh est le maître de la voie shâdhilie. Ses Hikam sont l'un des sommets de la littérature mystique islamique. Cette parole résume parfaitement le tri entre ce qui dépend de nous (notre effort, notre intention) et ce qui appartient à Allah (le résultat, le décret, la subsistance)."
