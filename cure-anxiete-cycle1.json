@@ -974,19 +974,19 @@
           "id": "invocation_silencieuse",
           "ordre": 3,
           "type": "ecran_sombre_avec_dhikr",
-          "titre": "Yâ Latîf",
-          "introduction": "Le Nom Al-Latîf — Le Subtil, Le Bienveillant — est invoqué par les sages contre l'angoisse depuis des siècles.",
+          "titre": "Ta'awwudh",
+          "introduction": "Quand le chuchotement revient, le Coran te donne le geste exact : ne discute pas avec lui — cherche refuge. « Si une incitation du shaytân t'atteint, cherche refuge en Allah : Il entend et sait tout. » (Coran 41:36)",
           "consigne": "Pose ton téléphone à plat. Garde les yeux ouverts sur l'écran.\nÀ chaque expir, dis intérieurement :",
           "dhikr": {
-            "ar": "يَا لَطِيفُ الْطُفْ بِي",
-            "translit": "Yâ Latîfu, ul-tuf bî",
-            "sens": "Ô Toi le Bienveillant, sois doux avec moi"
+            "ar": "أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ",
+            "translit": "A'ûdhu billâhi min ash-shaytân ir-rajîm",
+            "sens": "Je cherche refuge auprès d'Allah contre le shaytân banni"
           },
           "duree_sec": 60,
           "animation": "Calligraphie qui pulse doucement au rythme respiratoire (4s/6s).",
           "stockage": "cure_anxiete_j5_yalatif_sec",
           "note_psy": "Ancrage attentionnel par répétition d'un point focal.",
-          "note_spi": "Ibn 'Atâ'illâh recommandait Yâ Latîf pour les serrements du cœur. « Allah est subtil envers Ses serviteurs. » — Ach-Chûrâ 42:19"
+          "note_spi": "C'est la réponse prophétique au waswâs : non pas lutter contre la pensée, mais se réfugier — et le khannâs se retire."
         }
       ],
       "bloc_4_dhikr_quantifie": {
