@@ -5794,7 +5794,7 @@ _outilAnxieteRenderers.choix_unique_avec_engagement = function(o, c) {
   var engId = '_eng_' + o.id;
   var html = '';
   if (o.introduction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);line-height:1.6;text-align:left;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
-  html += '<div style="display:flex;flex-direction:column;gap:8px;16px;">';
+  html += '<div style="display:flex;flex-direction:column;gap:8px;">';
   opts.forEach(function(opt) {
     var sel = selectedId === opt.id;
     html += '<button onclick="_engSelect(\'' + engId + '\',\'' + sk + '\',\'' + opt.id + '\',' + (opt.champ_libre ? 'true' : 'false') + ')" style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:10px;border:1px solid ' + (sel ? c : 'rgba(200,168,75,0.15)') + ';background:' + (sel ? c + '12' : 'rgba(200,168,75,0.03)') + ';cursor:pointer;text-align:left;">'
@@ -6251,7 +6251,7 @@ _outilAnxieteRenderers.checkboxes_avec_message_dynamique = function(o, c) {
   var msgId = '_cbMsg_' + o.id;
   var html = '';
   if (o.introduction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);line-height:1.6;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
-  html += '<div style="display:flex;flex-direction:column;gap:8px;16px;">';
+  html += '<div style="display:flex;flex-direction:column;gap:8px;">';
   opts.forEach(function(opt) {
     var chk = saved.indexOf(opt.id) !== -1;
     html += '<label style="display:flex;align-items:flex-start;gap:12px;padding:12px 14px;border-radius:10px;border:1px solid rgba(200,168,75,0.12);background:rgba(200,168,75,0.03);cursor:pointer;">'
