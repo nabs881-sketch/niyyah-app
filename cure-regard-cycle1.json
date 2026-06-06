@@ -1264,14 +1264,14 @@
       },
       "bloc_2_sagesse": {
         "type": "parole_de_sage",
-        "titre_bloc": "Parole de Junayd al-Baghdâdî",
+        "titre_bloc": "La voix de Niyyah",
         "parole": {
-          "texte": "L'istiqâma est plus grande que mille miracles. Beaucoup peuvent avoir une vision, un état spirituel élevé, un moment de pureté — peu peuvent tenir droit après. Ce qui distingue le serviteur n'est pas l'intensité de son commencement, c'est la régularité de sa marche. L'arbre dont les racines sont profondes ne tombe pas au premier vent ; mais il faut des années de pluie patiente pour faire ces racines.",
-          "auteur": "Abû al-Qâsim al-Junayd al-Baghdâdî",
-          "dates_auteur": "v. 830-910",
-          "oeuvre": "Cité dans Ar-Risâla al-Qushayriyya d'al-Qushayrî",
-          "siecle": "IXe-Xe siècle (Bagdad)",
-          "note": "Junayd est appelé Sayyid at-Tâ'ifa — le Maître du Groupe (des soufis sunnites). Il enseignait la sobriété spirituelle. Sa parole sur l'istiqâma est l'une des plus citées de la tradition. Elle relativise les expériences spirituelles intenses au profit de la fidélité quotidienne."
+          "texte": "Un adage soufi dit : l'istiqâma — la constance — vaut mieux que mille prodiges. Beaucoup connaissent un élan, un moment de pureté ; peu savent tenir droit après. Ce qui distingue le serviteur n'est pas l'intensité du commencement, c'est la régularité de la marche. L'arbre aux racines profondes ne tombe pas au premier vent — mais il faut des années de pluie patiente pour faire ces racines.",
+          "auteur": "Niyyah",
+          "dates_auteur": "",
+          "oeuvre": "",
+          "siecle": "",
+          "note": "Parole de clôture de Niyyah. « L'istiqâma vaut mieux que mille karâmât » est un adage soufi largement transmis (sans auteur unique établi). La constance discrète vaut mieux que les états spectaculaires."
         }
       },
       "introduction_avant_outils": "Tu as lu le verset. Tu as entendu Junayd.\n\nMaintenant — termine. Une lettre. Une reconnaissance. Un choix. Le silence.",
