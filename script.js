@@ -4182,7 +4182,7 @@ function _showNiyyahIntro(cfg){
   var prev = document.getElementById('niyyahIntroOverlay'); if(prev) prev.remove();
   var ov = document.createElement('div');
   ov.id = 'niyyahIntroOverlay';
-  ov.style.cssText = 'position:fixed;inset:0;z-index:3000;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:calc(var(--safe-top,0px)+34px) 26px calc(var(--safe-bot,0px)+34px);background:rgba(4,3,2,0.74);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);overflow-y:auto;animation:sanctFadeIn 0.5s ease forwards;';
+  ov.style.cssText = 'position:fixed;inset:0;z-index:50000;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:calc(var(--safe-top,0px)+34px) 26px calc(var(--safe-bot,0px)+34px);background:rgba(4,3,2,0.74);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);overflow-y:auto;animation:sanctFadeIn 0.5s ease forwards;';
   ov.innerHTML =
       '<div style="font-family:var(--serif);font-style:italic;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:rgba(200,168,74,0.55);margin-bottom:22px;">' + escapeHtml(cfg.eyebrow || 'Niyyah t\u2019accompagne') + '</div>'
     + '<div style="transform:scale(0.74);transform-origin:center;margin:-34px auto -22px;"><div class="orb-wrap-v2"><div class="orb-core-v2"><div class="orb-conic"></div><span class="orb-dust"></span><span class="orb-dust"></span><span class="orb-dust"></span><span class="orb-dust"></span><span class="orb-dust"></span><span class="orb-dust"></span><span class="orb-symbol-v2">\u0646\u0650\u064A\u0651\u0629</span></div></div></div>'
