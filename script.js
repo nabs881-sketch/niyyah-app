@@ -11693,10 +11693,11 @@ function renderNafsTrait() {
   var alreadyDone = _nafsAlreadyToday(trait.id);
   var weekCount = _nafsCountThisWeek(trait.id);
 
+  container.style.position = 'relative';
   container.innerHTML =
+    '<button class="niyyah-mini-orb" onclick="_niyyahReview(\'nafs\')" aria-label="Revoir la pr\u00e9sentation de Niyyah" style="position:absolute;top:8px;left:8px;"><span>\u0646\u0650\u064A\u0651\u0629</span></button>' +
     '<div style="text-align:center;">' +
       '<div class="nafs-week-badge">Semaine ' + w + ' — Trait ' + trait.id + '/52</div>' +
-      '<div style="text-align:center;margin-top:10px;"><button class="niyyah-mini-orb" onclick="_niyyahReview(\'nafs\')" aria-label="Revoir la pr\u00e9sentation de Niyyah" style="display:inline-flex;"><span>\u0646\u0650\u064A\u0651\u0629</span></button></div>' +
     '</div>' +
     '<div class="nafs-season-label" style="text-align:center;">' + seasonLabel + '</div>' +
     '<div class="nafs-name-block">' +
@@ -17228,7 +17229,7 @@ function openVueAuFilDuJour() {
   if (!v) return;
   if (v.classList.contains('hidden') && safeGetItem('niyyah_intro_aufildujour') !== '1') return _niyyahIntro('aufildujour', openVueAuFilDuJour);
   v.querySelector('.rituel-titre').textContent = 'AU FIL DU JOUR';
-  (function(){ var h = v.querySelector('.rituel-header'); if(!h) return; var q = document.getElementById('afdjReviewQ'); if(!q){ q = document.createElement('button'); q.id = 'afdjReviewQ'; q.className = 'niyyah-mini-orb'; q.setAttribute('aria-label','Revoir la pr\u00e9sentation de Niyyah'); q.innerHTML = '<span>\u0646\u0650\u064A\u0651\u0629</span>'; q.style.position = 'absolute'; q.style.top = '14px'; q.style.right = '18px'; q.onclick = function(){ _niyyahReview('aufildujour'); }; if(getComputedStyle(h).position === 'static') h.style.position = 'relative'; h.appendChild(q); } q.style.display = 'flex'; })();
+  (function(){ var h = v.querySelector('.rituel-header'); if(!h) return; var q = document.getElementById('afdjReviewQ'); if(!q){ q = document.createElement('button'); q.id = 'afdjReviewQ'; q.className = 'niyyah-mini-orb'; q.setAttribute('aria-label','Revoir la pr\u00e9sentation de Niyyah'); q.innerHTML = '<span>\u0646\u0650\u064A\u0651\u0629</span>'; q.style.position = 'absolute'; q.style.top = '14px'; q.style.left = '18px'; q.onclick = function(){ _niyyahReview('aufildujour'); }; if(getComputedStyle(h).position === 'static') h.style.position = 'relative'; h.appendChild(q); } q.style.display = 'flex'; })();
   v.querySelector('.rituel-prochaine').textContent = '';
   v.querySelector('.rituel-poetique').textContent = 'Ce qui demeure entre tes pri\u00e8res.';
   var _motiv = getEffectiveMotiv();
