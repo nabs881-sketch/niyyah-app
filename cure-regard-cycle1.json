@@ -65,7 +65,7 @@
           "consigne": "En 24h, qu'ont vu tes yeux qui mérite d'être nommé ? Sois honnête. Ce que tu écris reste avec toi.",
           "amorce": "Mes yeux ont vu",
           "champ": {
-            "placeholder": "...",
+            "placeholder": "Écris ici, sans te juger…",
             "max_caracteres": 600,
             "stockage": "cure_regard_j1_inventaire"
           },
