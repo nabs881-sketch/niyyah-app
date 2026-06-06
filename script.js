@@ -6251,12 +6251,13 @@ _outilAnxieteRenderers.checkboxes_avec_message_dynamique = function(o, c) {
   var msgId = '_cbMsg_' + o.id;
   var html = '';
   if (o.introduction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.7);line-height:1.6;margin-bottom:16px;">' + escapeHtml(o.introduction) + '</div>';
-  html += '<div style="display:flex;flex-direction:column;gap:8px;">';
+  html += '<div style="display:flex;flex-direction:column;gap:0;">';
   opts.forEach(function(opt) {
     var chk = saved.indexOf(opt.id) !== -1;
-    html += '<label style="display:flex;align-items:flex-start;gap:12px;padding:12px 14px;border-radius:10px;border:1px solid rgba(200,168,75,0.12);background:rgba(200,168,75,0.03);cursor:pointer;">'
-      + '<input type="checkbox" ' + (chk ? 'checked' : '') + ' onchange="_cbDynUpdate(\'' + escapeHtml(o.id) + '\',\'' + opt.id + '\',this.checked,\'' + sk + '\',\'' + msgId + '\')" style="accent-color:' + c + ';margin-top:3px;flex-shrink:0;">'
-      + '<span style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.8);line-height:1.5;">' + escapeHtml(opt.label) + '</span>'
+    html += '<label style="display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:13px;margin-bottom:9px;border:1px solid ' + (chk ? 'rgba(232,208,140,.6)' : 'rgba(200,168,74,.13)') + ';background:' + (chk ? 'linear-gradient(180deg,rgba(200,168,74,.16),rgba(200,168,74,.07))' : 'transparent') + ';' + (chk ? 'box-shadow:0 0 16px rgba(200,168,74,.14);' : '') + 'cursor:pointer;transition:all 0.2s;">'
+      + '<input type="checkbox" ' + (chk ? 'checked' : '') + ' onchange="_cbDynUpdate(\'' + escapeHtml(o.id) + '\',\'' + opt.id + '\',this.checked,\'' + sk + '\',\'' + msgId + '\')" style="position:absolute;opacity:0;pointer-events:none;">'
+      + '<span style="flex-shrink:0;width:23px;height:23px;border-radius:7px;border:1.5px solid ' + (chk ? '#E8CF8A' : 'rgba(200,168,74,.45)') + ';background:' + (chk ? 'linear-gradient(180deg,#F0D58A,#C8A84A)' : 'transparent') + ';display:flex;align-items:center;justify-content:center;' + (chk ? 'box-shadow:0 0 8px rgba(232,208,140,.4);' : '') + 'font-size:14px;font-weight:700;color:#2a1c08;">' + (chk ? '\u2713' : '') + '</span>'
+      + '<span style="flex:1;font-family:var(--serif);font-size:17px;color:' + (chk ? '#F4E6BE' : 'rgba(240,234,214,0.8)') + ';line-height:1.5;">' + escapeHtml(opt.label) + '</span>'
       + '</label>';
   });
   html += '</div>';
@@ -6278,27 +6279,7 @@ function _cbDynUpdate(outilId, optId, checked, sk, msgId) {
   if (checked && saved.indexOf(optId) === -1) saved.push(optId);
   if (!checked) saved = saved.filter(function(x) { return x !== optId; });
   safeSetItem(sk, JSON.stringify(saved));
-  // Re-render message
-  var data = _getCureData();
-  if (!data) return;
-  var o = null;
-  Object.keys(data.jours).forEach(function(jk) {
-    var outils = data.jours[jk].bloc_3_outils_psy || data.jours[jk].outils || [];
-    outils.forEach(function(t) { if (t.id === outilId) o = t; });
-  });
-  if (!o) return;
-  var el = document.getElementById(msgId);
-  if (!el) return;
-  var hasChecked = saved.length > 0;
-  var msg = hasChecked ? o.message_si_coche : o.message_si_aucun_coche;
-  var h = '';
-  if (msg) {
-    h += '<div style="border:1px solid ' + (hasChecked ? '#FFA00033' : '#3F51B515') + ';border-radius:12px;padding:14px;margin-bottom:12px;background:' + (hasChecked ? 'rgba(255,160,0,0.06)' : 'transparent') + ';transition:all 0.3s;">';
-    if (msg.titre) h += '<div style="font-family:var(--serif);font-size:17px;font-weight:600;color:' + (hasChecked ? '#FFA000' : '#C8A84A') + ';margin-bottom:8px;">' + escapeHtml(msg.titre) + '</div>';
-    if (msg.texte) h += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.75);line-height:1.7;white-space:pre-line;">' + escapeHtml(msg.texte) + '</div>';
-    h += '</div>';
-  }
-  el.innerHTML = h;
+  _cureAnxieteWizardRender();
 }
 window._cbDynUpdate = _cbDynUpdate;
 
