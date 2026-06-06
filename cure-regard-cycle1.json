@@ -63,9 +63,8 @@
           "type": "champ_texte_long",
           "titre": "L'inventaire des 24 heures",
           "consigne": "Repense à tes dernières 24 heures : sur quoi tes yeux se sont-ils arrêtés ? Note tout ce qui te vient, sans trier ni juger — on distinguera juste après ce qui pèse de ce qui est neutre. Ce que tu écris reste sur ton appareil.",
-          "amorce": "Mes yeux ont vu",
           "champ": {
-            "placeholder": "Écris ici, sans te juger…",
+            "placeholder": "Mes yeux ont vu…",
             "max_caracteres": 600,
             "stockage": "cure_regard_j1_inventaire"
           },
