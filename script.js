@@ -5936,16 +5936,20 @@ _outilAnxieteRenderers.drag_and_drop_2_colonnes = function(o, c) {
   var classement = saved.classement || {};
   var rows = Math.min(nbMax, Math.max(nbMin, soucis.length, saved.rowCount || 0));
   var dndId = '_dnd2_' + o.id;
+  var enh = !!o.aide_pratique;
+  var noun = o.item_noun || 'Souci';
   var html = '';
   html += '<style>#' + dndId + '_wrap input::placeholder{color:rgba(231,211,151,0.5);} #' + dndId + '_wrap input:focus{border-color:' + c + '88;}</style>';
   if (o.introduction) html += '<div style="font-family:var(--serif);font-size:16px;color:rgba(240,234,214,0.85);line-height:1.6;text-align:left;margin-bottom:14px;">' + escapeHtml(o.introduction) + '</div>';
+  if (enh) html += '<div style="display:flex;align-items:center;gap:8px;font-family:var(--serif);font-size:13px;color:rgba(231,211,151,0.85);background:rgba(200,168,75,0.08);border:1px solid rgba(200,168,75,0.18);border-radius:9px;padding:9px 11px;margin-bottom:14px;">' + escapeHtml(o.aide_pratique) + '</div>';
   html += '<div id="' + dndId + '_wrap" style="background:rgba(8,5,3,0.58);border:1px solid rgba(200,168,75,0.18);border-radius:14px;padding:16px;box-shadow:0 8px 26px rgba(0,0,0,0.4);">';
   html += '<div style="display:flex;gap:10px;margin-bottom:16px;">';
   cols.forEach(function(col) {
+    var desc = (enh ? 'ex : ' : '') + (col.description || '');
     html += '<div style="flex:1;min-height:120px;border:1px solid ' + c + '33;border-radius:12px;padding:10px 8px;text-align:center;background:rgba(0,0,0,0.28);">'
       + '<div style="font-family:\'Scheherazade New\',serif;font-size:24px;color:#C8A84A;direction:rtl;margin-bottom:2px;">' + escapeHtml(col.label_ar || '') + '</div>'
       + '<div style="font-family:var(--serif);font-size:16px;font-weight:600;color:#C8A84A;margin-bottom:4px;">' + escapeHtml(col.label_fr) + '</div>'
-      + '<div style="font-size:13px;color:rgba(231,211,151,0.6);font-style:italic;margin-bottom:8px;line-height:1.3;">' + escapeHtml(col.description) + '</div>'
+      + '<div style="font-size:13px;color:rgba(231,211,151,0.6);font-style:italic;margin-bottom:8px;line-height:1.3;">' + escapeHtml(desc) + '</div>'
       + '<div style="min-height:20px;">';
     for (var si = 0; si < rows; si++) {
       if (classement['s' + si] === col.id && soucis[si] && soucis[si].trim()) {
@@ -5960,18 +5964,20 @@ _outilAnxieteRenderers.drag_and_drop_2_colonnes = function(o, c) {
     var sel = classement['s' + i];
     html += '<div style="margin-bottom:12px;">';
     html += '<div style="display:flex;gap:6px;align-items:stretch;margin-bottom:6px;">';
-    html += '<input type="text" id="' + dndId + '_s' + i + '" value="' + escapeHtml(v) + '" placeholder="Souci ' + (i + 1) + '\u2026" oninput="_dnd2SaveSoucis(\'' + dndId + '\',\'' + sk + '\')" style="flex:1;box-sizing:border-box;padding:11px 13px;border-radius:9px;border:1px solid ' + c + '44;background:rgba(0,0,0,0.32);color:#F0EAD6;font-family:var(--serif);font-size:16px;outline:none;">';
+    html += '<input type="text" id="' + dndId + '_s' + i + '" value="' + escapeHtml(v) + '" placeholder="' + escapeHtml(noun + ' ' + (i + 1)) + '\u2026" oninput="_dnd2SaveSoucis(\'' + dndId + '\',\'' + sk + '\')" style="flex:1;box-sizing:border-box;padding:11px 13px;border-radius:9px;border:1px solid ' + c + '44;background:rgba(0,0,0,0.32);color:#F0EAD6;font-family:var(--serif);font-size:16px;outline:none;">';
     html += '<button onclick="_dnd2RemoveRow(\'' + dndId + '\',\'' + sk + '\',' + i + ')" title="Effacer" style="flex:0 0 auto;width:40px;border-radius:9px;border:1px solid ' + c + '33;background:rgba(0,0,0,0.2);color:rgba(231,211,151,0.55);font-size:15px;cursor:pointer;">\u2715</button>';
     html += '</div>';
-    html += '<div style="display:flex;gap:6px;">';
+    var btns = '';
     cols.forEach(function(col) {
       var on = sel === col.id;
-      html += '<button onclick="_dnd2Classify(\'' + dndId + '\',\'' + sk + '\',' + i + ',\'' + col.id + '\')" style="flex:1;padding:9px 4px;border-radius:8px;border:1px solid ' + (on ? c : c + '40') + ';background:' + (on ? c + '33' : 'rgba(0,0,0,0.2)') + ';color:' + (on ? '#F4E6BE' : 'rgba(231,211,151,0.7)') + ';font-family:var(--serif);font-size:13px;font-weight:600;cursor:pointer;">' + escapeHtml(col.label_fr) + '</button>';
+      btns += '<button onclick="_dnd2Classify(\'' + dndId + '\',\'' + sk + '\',' + i + ',\'' + col.id + '\')" style="flex:1;padding:9px 4px;border-radius:8px;border:1px solid ' + (on ? c : c + '40') + ';background:' + (on ? c + '33' : 'rgba(0,0,0,0.2)') + ';color:' + (on ? '#F4E6BE' : 'rgba(231,211,151,0.7)') + ';font-family:var(--serif);font-size:13px;font-weight:600;cursor:pointer;">' + escapeHtml(col.label_fr) + '</button>';
     });
-    html += '</div></div>';
+    if (enh) html += '<div style="display:flex;gap:8px;align-items:center;"><span style="font-family:var(--serif);font-size:12px;color:rgba(231,211,151,0.6);white-space:nowrap;">range :</span>' + btns + '</div>';
+    else html += '<div style="display:flex;gap:6px;">' + btns + '</div>';
+    html += '</div>';
   }
   if (rows < nbMax) {
-    html += '<button onclick="_dnd2AddRow(\'' + dndId + '\',\'' + sk + '\',' + nbMax + ')" style="display:block;width:100%;padding:10px;border-radius:9px;border:1px dashed ' + c + '55;background:none;color:rgba(231,211,151,0.7);font-family:var(--serif);font-size:14px;cursor:pointer;margin-top:2px;">+ Ajouter un souci</button>';
+    html += '<button onclick="_dnd2AddRow(\'' + dndId + '\',\'' + sk + '\',' + nbMax + ')" style="display:block;width:100%;padding:10px;border-radius:9px;border:1px dashed ' + c + '55;background:none;color:rgba(231,211,151,0.7);font-family:var(--serif);font-size:14px;cursor:pointer;margin-top:2px;">+ ' + escapeHtml(o.ajout_label || 'Ajouter un souci') + '</button>';
   }
   html += '</div>';
   if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(232,208,140,0.95);text-align:left;line-height:1.55;margin-top:14px;">' + escapeHtml(o.note_spi) + '</div>';
