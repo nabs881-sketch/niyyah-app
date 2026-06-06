@@ -616,29 +616,17 @@
       "bloc_5_pratique_corporelle": {
         "type": "geste_corporel",
         "titre_bloc": "Le wudû des yeux",
-        "introduction": "Le wudû normal lave les péchés des membres. Aujourd'hui, tu fais un wudû particulier — avec une intention dirigée vers les yeux.",
+        "introduction": "Le wudû n'est pas seulement un nettoyage du corps.",
         "instructions": [
-          "Fais ton prochain wudû avec une intention différente.",
-          "Quand tu arrives au lavage du visage (3 fois) :",
-          "Ferme doucement les yeux.",
-          "Avec les paumes mouillées, passe doucement sur les paupières.",
-          "Dis intérieurement à chaque passage :",
-          "« Allâhumma tahhir 'aynî mimmâ nadhartu ilayhi bi-mâ lâ yurdîk »",
-          "(Ô Allah, purifie mes yeux de ce que j'ai regardé qui ne T'agrée pas)",
-          "Continue le reste du wudû normalement.",
-          "Ce wudû te marquera différemment."
+          "Au moment de laver le visage, rappelle-toi que la miséricorde d'Allah efface aussi les fautes du regard.",
+          "Demande-Lui alors de purifier tes yeux et de les guider vers ce qui Lui plaît."
         ],
-        "phrase_a_repeter": {
-          "ar": "اللَّهُمَّ طَهِّرْ عَيْنِي مِمَّا نَظَرْتُ إِلَيْهِ بِمَا لَا يُرْضِيكَ",
-          "translit": "Allâhumma tahhir 'aynî mimmâ nadhartu ilayhi bi-mâ lâ yurdîk",
-          "fr": "Ô Allah, purifie mes yeux de ce que j'ai regardé qui ne T'agrée pas"
-        },
         "duree_min": 5,
         "justification": {
           "texte": "Le Prophète ﷺ a dit : « Quand le serviteur lave son visage, toute faute que ses yeux ont commise sort avec l'eau, ou avec la dernière goutte. »",
           "source": "Muslim 244, d'après Abû Hurayra"
         },
-        "note": "Ce hadith est explicite : l'eau du wudû emporte les péchés du regard. Avec une intention dirigée, l'acte devient pleinement conscient. C'est exactement ce que Ghazâlî appelait al-wudû' al-bâtin — le wudû intérieur, qui accompagne le wudû extérieur.",
+        "note": "Le hadith (Muslim 244) est explicite : l'eau du wudû emporte les fautes du regard. Faire l'ablution en pleine conscience joint la purification intérieure à l'extérieure — une dimension qu'al-Ghazâlî développe dans l'Ihyâ' (Asrâr al-Tahâra).",
         "stockage": "cure_regard_j3_wudu_done"
       },
       "phrase_ancre": "Le voile commence dans le cœur.",
