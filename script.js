@@ -6425,7 +6425,7 @@ function _cureAnxieteWizardRender(el) {
       + (v.fr ? '<div style="font-family:var(--serif);font-size:19px;color:rgba(240,234,214,0.85);line-height:1.6;margin-bottom:8px;">' + escapeHtml(v.fr) + '</div>' : '')
       + (v.reference ? '<div style="font-size:16px;color:rgba(231,211,151,0.72);">\u2014 ' + escapeHtml(v.reference) + '</div>' : '')
       + '</div>'
-      + (bv.contexte_revelation ? '<div style="font-family:var(--serif);font-size:15px;color:rgba(240,234,214,0.62);line-height:1.6;margin-bottom:22px;text-align:center;">' + escapeHtml(bv.contexte_revelation) + '</div>' : '')
+      + (bv.contexte_revelation ? '<div style="font-family:var(--serif);font-size:17px;color:rgba(240,234,214,0.80);line-height:1.7;margin-bottom:22px;text-align:center;">' + escapeHtml(bv.contexte_revelation) + '</div>' : '')
       + (bv.sens_pour_aujourdhui ? '<div style="font-family:var(--serif);font-size:13px;letter-spacing:2px;text-transform:uppercase;color:rgba(231,211,151,0.70);margin-bottom:8px;text-align:center;">Pour toi</div>' + '<div style="font-family:var(--serif);font-size:19px;color:rgba(240,234,214,0.92);line-height:1.7;margin-bottom:12px;text-align:center;">' + escapeHtml(bv.sens_pour_aujourdhui) + '</div>' : '')
       + nextBtn
       + '</div>';
