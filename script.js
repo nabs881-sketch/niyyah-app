@@ -6748,11 +6748,12 @@ function _regardStreakInline(displayOnly) {
     if (lastCheck !== yesterday) { current = 0; }
   }
   if (displayOnly) {
+    if (current === 0) return '';
     return '<div style="text-align:center;margin:8px auto;"><span style="font-family:var(--serif);font-size:13px;color:rgba(200,168,75,0.6);">' + current + ' jour' + (current > 1 ? 's' : '') + ' en silence</span></div>';
   }
   var doneToday = lastCheck === today;
   return '<div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;margin:8px auto;max-width:320px;">'
-    + '<span style="font-family:var(--serif);font-size:13px;color:rgba(200,168,75,0.6);">' + current + ' jour' + (current > 1 ? 's' : '') + ' en silence</span>'
+    + '<span style="font-family:var(--serif);font-size:13px;color:rgba(200,168,75,0.6);">' + (current === 0 ? 'Commence aujourd\u2019hui' : (current + ' jour' + (current > 1 ? 's' : '') + ' en silence')) + '</span>'
     + (doneToday ? '' : '<button onclick="_regardStreakTap()" style="background:none;border:1px solid rgba(200,168,75,0.25);border-radius:8px;padding:4px 10px;color:rgba(200,168,75,0.5);font-family:var(--serif);font-size:12px;cursor:pointer;">J\u2019ai tenu aujourd\u2019hui</button>')
     + (current > 0 ? '<button onclick="_regardStreakFall()" style="background:none;border:none;padding:4px 8px;color:rgba(200,168,75,0.25);font-family:var(--serif);font-size:11px;cursor:pointer;">J\u2019ai chut\u00e9</button>' : '')
     + '</div>';
