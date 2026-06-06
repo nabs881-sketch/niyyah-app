@@ -4163,6 +4163,10 @@ var _porteIntro = {
   medisance: { nom_fr:'La M\u00e9disance', nom_ar:'\u0627\u0644\u063A\u064A\u0628\u0629', texte:"Ici, tu apprends \u00e0 garder ta langue \u2014 non par silence forc\u00e9, mais par respect de l\u2019autre. Sept jours, \u00e0 ton rythme, pour voir ce qui te pousse \u00e0 m\u00e9dire et planter mieux \u00e0 la place. Sans culpabilit\u00e9. Juste un chemin \u2014 et moi \u00e0 tes c\u00f4t\u00e9s." }
 };
 window._niyyahIntros = {
+  pratique: { nom_fr:'Ta pratique', nom_ar:'\u0627\u0644\u0639\u0645\u0644', eyebrow:'Niyyah t\u2019accompagne', meta:'ta journ\u00e9e enti\u00e8re \u00b7 d\u2019un seul regard', enterLabel:'Voir',
+    texte:'Ici, je rassemble tout ce qui compte aujourd\u2019hui : tes pri\u00e8res, tes actes, tes invocations \u2014 la journ\u00e9e enti\u00e8re, d\u2019un seul regard. Si tu as oubli\u00e9 de cocher quelque chose ailleurs, c\u2019est ici que tu le retrouves. Rien ne se perd.' },
+  vuedujour: { nom_fr:'Apr\u00e8s ta pri\u00e8re', nom_ar:'\u0627\u0644\u0635\u0644\u0627\u0629', eyebrow:'Niyyah t\u2019accompagne', meta:'juste apr\u00e8s ta pri\u00e8re', enterLabel:'Voir',
+    texte:'Quand tu sors de la pri\u00e8re, le c\u0153ur est encore tout proche. Je te propose ici les gestes de ce moment pr\u00e9cis : un dhikr, une du\u2019\u00e2, un acte simple. Prends-en un, ou aucun \u2014 l\u2019essentiel est d\u2019y \u00eatre.' },
   tafakkur: { nom_fr:'Tafakkur', nom_ar:'\u0627\u0644\u062A\u0641\u0643\u0631', eyebrow:'Niyyah t\u2019accompagne', meta:'une halte \u00b7 un verset t\u2019attend', enterLabel:'Commencer',
     texte:'Ici, tu prends quelques minutes pour m\u00e9diter en silence. \u00c0 la fin de ta halte, un verset t\u2019est offert \u2014 avec une r\u00e9ponse possible, \u00e0 recevoir puis \u00e0 m\u00e9diter \u00e0 ton tour. Reste : ce moment est \u00e0 toi.' },
   aufildujour: { nom_fr:'Au fil du jour', nom_ar:'', eyebrow:'Niyyah t\u2019accompagne', meta:'chaque jour \u00b7 prends ce qui t\u2019appelle', enterLabel:'D\u00e9couvrir',
@@ -11978,6 +11982,7 @@ function v2GoSanctuaire() {
 }
 
 function v2GoTo(viewName) {
+  if (viewName === 'checklist' && safeGetItem('niyyah_intro_pratique') !== '1') { return _niyyahIntro('pratique', function(){ v2GoTo('checklist'); }); }
   setupTopUI(viewName);
   document.body.classList.remove('pratique-active', 'in-progression-view');
   if (viewName === 'checklist') document.body.classList.add('pratique-active');
@@ -17101,6 +17106,7 @@ function openVueRituel(prayer) {
   var _rrl = document.getElementById('rituelReviewLink'); if(_rrl){ _rrl.style.display = 'none'; _rrl.onclick = null; }
   const v = document.getElementById('vue-rituel');
   if (!v) return;
+  if (v.classList.contains('hidden') && safeGetItem('niyyah_intro_vuedujour') !== '1') return _niyyahIntro('vuedujour', function(){ openVueRituel(prayer); });
   v.querySelector('.rituel-titre').textContent = 'APRÈS ' + prayer.toUpperCase();
   const next = { fajr:'Dhuhr', dhuhr:'Asr', asr:'Maghrib', maghrib:'Isha', isha:'Fajr' };
   v.querySelector('.rituel-prochaine').textContent = next[prayer] ? next[prayer].toUpperCase() + ' BIENTÔT' : '';
