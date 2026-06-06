@@ -484,14 +484,14 @@
       },
       "bloc_2_sagesse": {
         "type": "parole_de_sage",
-        "titre_bloc": "Sagesse d'Ibn 'Atâ'illâh",
+        "titre_bloc": "Dans l'esprit d'Ibn 'Atâ'illâh",
         "parole": {
           "texte": "Le regard suit le cœur, et le cœur suit ce qu'il aime. Veux-tu maîtriser ton regard ? Maîtrise d'abord ton cœur. Veux-tu maîtriser ton cœur ? Maîtrise d'abord ce que tu aimes. L'œil ne fait que confirmer ce que le cœur a déjà choisi. Lutter contre les yeux sans soigner le cœur, c'est essuyer l'eau qui sort sans fermer le robinet.",
           "auteur": "Ibn 'Atâ'illâh al-Iskandarî",
           "dates_auteur": "v. 1259-1309",
-          "oeuvre": "Tradition shâdhilie, esprit des Hikam",
+          "oeuvre": "Réflexion fidèle à sa doctrine du cœur (non verbatim)",
           "siecle": "XIIIe-XIVe siècle (Alexandrie)",
-          "note": "Ibn 'Atâ'illâh est le grand maître de la voie shâdhilie. Sa doctrine sur le cœur : tout part du qalb, et tous les organes externes ne sont que des manifestations de l'état intérieur. Voilà pourquoi la cure traite d'abord le cœur — pas les yeux."
+          "note_editoriale": "Ce n'est pas un aphorisme verbatim des Hikam mais une réflexion fidèle à la doctrine d'Ibn 'Atâ'illâh : tout part du cœur (qalb), et les organes ne font que manifester son état. Ce principe est ancré dans le hadith : « Il y a dans le corps un morceau de chair : s'il est sain, tout le corps l'est ; s'il est corrompu, tout le corps l'est. C'est le cœur. » (Bukhârî 52, Muslim 1599)"
         }
       },
       "introduction_avant_outils": "Tu as lu les versets. Tu as entendu Ibn 'Atâ'illâh.\n\nMaintenant — descends dans le cœur. Comprends pourquoi tes yeux cherchent.",
