@@ -10243,7 +10243,7 @@ function onScroll() {
     _scrollTicking = true;
   }
 }
-let currentTheme = safeGetItem('niyyah_theme') || 'dark';
+let currentTheme = 'dark';
 function applyTheme(theme) {
   if (theme === 'light') {
     document.documentElement.setAttribute('data-theme', 'light');
