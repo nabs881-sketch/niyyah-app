@@ -4212,6 +4212,15 @@ function _niyyahReview(key){
 function _niyyahReviewWaqt(){ if(typeof _waqtModalPriere !== 'undefined' && _waqtModalPriere) _niyyahReview('waqt_' + _waqtModalPriere); }
 window._niyyahReview = _niyyahReview;
 window._niyyahReviewWaqt = _niyyahReviewWaqt;
+function _setRituelEmblem(ar, reviewKey){
+  var e = document.getElementById('rituel-emblem'); if(e) e.textContent = ar;
+  var r = document.getElementById('rituelReviewLink');
+  if(r){
+    if(reviewKey){ r.style.display = 'inline-flex'; r.onclick = function(){ _niyyahReview(reviewKey); }; }
+    else { r.style.display = 'none'; r.onclick = null; }
+  }
+}
+window._setRituelEmblem = _setRituelEmblem;
 function _showPorteOverlay(id, enterFn) {
   var P = _porteIntro[id];
   if (!P || typeof enterFn !== 'function') { if (typeof enterFn === 'function') enterFn(); return; }
@@ -17081,7 +17090,7 @@ function getRitualItems(prayer) {
 window.getRitualItems = getRitualItems;
 
 function openVueRituel(prayer) {
-  var _afdjQ = document.getElementById('afdjReviewQ'); if(_afdjQ) _afdjQ.style.display = 'none';
+  var _rrl = document.getElementById('rituelReviewLink'); if(_rrl){ _rrl.style.display = 'none'; _rrl.onclick = null; }
   const v = document.getElementById('vue-rituel');
   if (!v) return;
   v.querySelector('.rituel-titre').textContent = 'APRÈS ' + prayer.toUpperCase();
@@ -17170,7 +17179,7 @@ function openVueRituel(prayer) {
     html += _sortDone(normalItems).map(_renderOne).join('');
   }
   main.innerHTML = html;
-  document.getElementById('rituel-emblem').textContent = '\u0635\u0644\u0627\u0629';
+  _setRituelEmblem('\u0635\u0644\u0627\u0629', null);
   v.classList.remove('hidden');
 }
 window.openVueRituel = openVueRituel;
@@ -17229,7 +17238,6 @@ function openVueAuFilDuJour() {
   if (!v) return;
   if (v.classList.contains('hidden') && safeGetItem('niyyah_intro_aufildujour') !== '1') return _niyyahIntro('aufildujour', openVueAuFilDuJour);
   v.querySelector('.rituel-titre').textContent = 'AU FIL DU JOUR';
-  (function(){ var h = v.querySelector('.rituel-header'); if(!h) return; var q = document.getElementById('afdjReviewQ'); if(!q){ q = document.createElement('button'); q.id = 'afdjReviewQ'; q.className = 'niyyah-mini-orb'; q.setAttribute('aria-label','Revoir la pr\u00e9sentation de Niyyah'); q.innerHTML = '<span>\u0646\u0650\u064A\u0651\u0629</span>'; q.style.position = 'absolute'; q.style.top = '14px'; q.style.left = '18px'; q.onclick = function(){ _niyyahReview('aufildujour'); }; if(getComputedStyle(h).position === 'static') h.style.position = 'relative'; h.appendChild(q); } q.style.display = 'flex'; })();
   v.querySelector('.rituel-prochaine').textContent = '';
   v.querySelector('.rituel-poetique').textContent = 'Ce qui demeure entre tes pri\u00e8res.';
   var _motiv = getEffectiveMotiv();
@@ -17322,7 +17330,7 @@ function openVueAuFilDuJour() {
   if (_uncategorized.length) _html += _uncategorized.map(_renderFilItem).join('');
   main.innerHTML = _html;
   v.classList.remove('hidden');
-  document.getElementById('rituel-emblem').textContent = '\u064A\u064E\u0648\u0652\u0645';
+  _setRituelEmblem('\u064A\u064E\u0648\u0652\u0645', 'aufildujour');
 }
 window.openVueAuFilDuJour = openVueAuFilDuJour;
 function toggleFilAccordion(cat) {
@@ -17438,7 +17446,7 @@ function openVueGhidaaJour() {
   var _footer = v.querySelector('.rituel-footer button');
   if (_footer) _footer.setAttribute('onclick', "validerLecture('ghidaa_jour')");
   v.classList.remove('hidden');
-  document.getElementById('rituel-emblem').textContent = '\u063A\u0650\u0630\u064E\u0627\u0621';
+  _setRituelEmblem('\u063A\u0650\u0630\u064E\u0627\u0621', null);
   loadGhidaa(function() {
     var g = getGhidaaJour();
     if (!g) { main.innerHTML = '<div style="text-align:center;padding:40px;color:#C8A84A;">Erreur de chargement</div>'; return; }
@@ -17471,7 +17479,7 @@ function openVueTibbJour() {
   var _footer = v.querySelector('.rituel-footer button');
   if (_footer) _footer.setAttribute('onclick', "validerLecture('tibb_jour')");
   v.classList.remove('hidden');
-  document.getElementById('rituel-emblem').textContent = '\u0637\u0650\u0628\u0651';
+  _setRituelEmblem('\u0637\u0650\u0628\u0651', null);
   loadTibb(function() {
     /* ── Overlay disclaimer 1ère ouverture ── */
     if (safeGetItem('niyyah_tibb_disclaimer_seen') !== 'true' && TIBB_DISCLAIMER) {
@@ -17874,7 +17882,7 @@ function openVueFiqhJour() {
   var _footer = v.querySelector('.rituel-footer button');
   if (_footer) _footer.setAttribute('onclick', "validerLecture('fiqh_jour')");
   v.classList.remove('hidden');
-  document.getElementById('rituel-emblem').textContent = '\u0641\u0650\u0642\u0652\u0647';
+  _setRituelEmblem('\u0641\u0650\u0642\u0652\u0647', null);
   loadFiqh(function() {
     var rule = getFiqhJourRule();
     if (!rule.regle) { main.innerHTML = '<div style="text-align:center;padding:40px;color:#C8A84A;">Erreur de chargement</div>'; return; }
@@ -17903,7 +17911,7 @@ function openVueHadithJour() {
   var _footer = v.querySelector('.rituel-footer button');
   if (_footer) _footer.setAttribute('onclick', "validerLecture('hadith1')");
   v.classList.remove('hidden');
-  document.getElementById('rituel-emblem').textContent = '\u062D\u064E\u062F\u0650\u064A\u062B';
+  _setRituelEmblem('\u062D\u064E\u062F\u0650\u064A\u062B', null);
   loadHadiths(function() {
     var h = getHadithJourRule();
     if (!h.texte_fr) { main.innerHTML = '<div style="text-align:center;padding:40px;color:#C8A84A;">Erreur de chargement</div>'; return; }
@@ -17930,7 +17938,7 @@ function openVueDuaaJour() {
   var jourNum = getDuaaJourNum();
   main.innerHTML = '<div style="text-align:center;padding:40px 16px;color:rgba(255,255,255,0.4);font-size:14px;">Chargement\u2026</div>';
   v.classList.remove('hidden');
-  document.getElementById('rituel-emblem').textContent = '\u062F\u064F\u0639\u064E\u0627\u0621';
+  _setRituelEmblem('\u062F\u064F\u0639\u064E\u0627\u0621', null);
   loadDuaas(function(data) {
     if (!data) { main.innerHTML = '<div style="text-align:center;padding:40px;color:#C8A84A;">Erreur de chargement</div>'; return; }
     var duaa = data.find(function(d) { return d.jour === jourNum; }) || data[0];
@@ -18142,7 +18150,7 @@ function openVueVersetJour() {
   var _footer = v.querySelector('.rituel-footer button');
   if (_footer) _footer.setAttribute('onclick', "validerLecture('quran_read')");
   v.classList.remove('hidden');
-  document.getElementById('rituel-emblem').textContent = '\u0642\u064F\u0631\u0652\u0622\u0646';
+  _setRituelEmblem('\u0642\u064F\u0631\u0652\u0622\u0646', null);
   _renderVersetProgress(main);
 }
 function _renderVersetProgress(main) {

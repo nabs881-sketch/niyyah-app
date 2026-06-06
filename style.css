@@ -8655,16 +8655,36 @@ body.onboarding-active #nav-bar-v2 {
   border-bottom: 1px solid rgba(200,168,74,0.15);
 }
 .rituel-emblem {
-  display: inline-block;
-  width: 60px;
-  height: 60px;
-  border: 1px solid rgba(200,168,74,0.4);
-  border-radius: 50%;
-  line-height: 60px;
-  color: #C8A84A;
-  font-size: 22px;
+  position: relative;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 78px; height: 78px; border-radius: 50%;
+  border: 1px solid rgba(200,168,74,0.45);
+  color: #F6DA8A;
+  font-family: 'Scheherazade New', serif;
+  font-size: 30px; line-height: 1;
   margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(200,168,74,0.4);
+  z-index: 0;
 }
+.rituel-emblem::before {
+  content: ''; position: absolute; inset: 0; border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,168,74,0.28) 0%, transparent 68%);
+  animation: rituelEmblemBreath 3.6s ease-in-out infinite;
+  z-index: -1;
+}
+@keyframes rituelEmblemBreath {
+  0%, 100% { transform: scale(1);    opacity: 0.5; }
+  50%      { transform: scale(1.18); opacity: 0.85; }
+}
+#rituelReviewLink {
+  display: none;
+  align-items: center; gap: 6px;
+  margin: 16px auto 0;
+  background: none; border: none; cursor: pointer;
+  font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 13px;
+  color: rgba(200,168,74,0.5);
+}
+#rituelReviewLink svg { width: 12px; height: 12px; }
 .rituel-titre {
   font-size: 12px;
   letter-spacing: 0.4em;
