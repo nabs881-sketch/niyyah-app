@@ -829,13 +829,13 @@
       "bloc_5_pratique_corporelle": {
         "type": "geste_corporel",
         "titre_bloc": "Une heure sans téléphone",
-        "introduction": "Aujourd'hui — une seule heure. Pas plus. Pas en mode silencieux : physiquement dans une autre pièce. C'est l'exercice clinique standard pour briser une compulsion comportementale.",
+        "introduction": "Aujourd'hui — une seule heure. Pas plus. Pas en mode silencieux : physiquement dans une autre pièce. C'est une technique reconnue — le contrôle du stimulus — pour desserrer une habitude compulsive.",
         "instructions": [
           "Choisis 1 heure dans ta journée où tu peux te permettre d'être déconnecté.",
           "Pose physiquement ton téléphone dans une autre pièce — pas sur la table, pas dans ta poche.",
           "Si tu peux le donner à quelqu'un, fais-le.",
           "Pendant cette heure : tu peux lire, marcher, prier, parler à quelqu'un, dormir, manger en pleine conscience.",
-          "Si tu ressens de l'anxiété, c'est normal — c'est le sevrage dopaminergique court. Ça passe.",
+          "Si tu ressens de l'anxiété, c'est normal — c'est ton cerveau habitué aux notifications qui réclame. Ça passe.",
           "Au bout de 60 minutes, tu peux reprendre le téléphone — mais observe : ressens-tu une paix ? Un manque ? Note ce que tu ressens."
         ],
         "duree_min": 60,
