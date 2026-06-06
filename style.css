@@ -9361,3 +9361,31 @@ body.onboarding-active #nav-bar-v2 {
   font-family: 'Scheherazade New', serif; font-size: 13px; color: #2a1e08; line-height: 1;
   pointer-events: none;
 }
+/* ===== PREMIUM PAGE RITUEL / FIL DU JOUR ===== */
+.rituel-titre { font-family: 'Cormorant Garamond', serif; font-weight: 600; }
+.rituel-prochaine { font-family: 'Cormorant Garamond', serif; font-style: italic; }
+.fil-acc-icon {
+  font-size: 0; color: rgba(200,168,74,0.8);
+  width: 24px; height: 24px;
+  display: inline-flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.fil-acc-icon svg { width: 21px; height: 21px; }
+.fil-acc-header {
+  border-bottom: 1px solid rgba(200,168,74,0.12);
+  padding: 12px 8px;
+}
+.rituel-item, .fil-acc .rituel-item {
+  background: linear-gradient(160deg, rgba(54,57,62,0.55), rgba(34,36,40,0.55));
+  border: 1px solid rgba(200,168,74,0.10);
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.22);
+  transition: border-color 0.25s, transform 0.15s;
+}
+.rituel-item:active, .fil-acc .rituel-item:active { transform: scale(0.992); }
+.rituel-item:hover, .fil-acc .rituel-item:hover { border-color: rgba(200,168,74,0.26); }
+.rituel-footer button {
+  background: linear-gradient(165deg, #cdb15c 0%, #bd9c45 55%, #a8862f 100%);
+  box-shadow: 0 10px 26px rgba(168,134,47,0.28), inset 0 1px 0 rgba(255,255,255,0.35);
+  letter-spacing: 0.22em;
+}

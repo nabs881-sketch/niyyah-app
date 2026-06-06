@@ -17271,10 +17271,10 @@ function openVueAuFilDuJour() {
   const main = v.querySelector('.rituel-content');
   const state = safeParseJSON('spiritual_v2', {});
   var _catOrder = [
-    { key: 'rituels', title: 'RITUELS DU JOUR', icon: '\uD83D\uDD4B', defaultOpen: true },
-    { key: 'science', title: 'SCIENCE ET LECTURE', icon: '\uD83D\uDCD6', defaultOpen: false },
-    { key: 'bienfaisance', title: 'BIENFAISANCE ET LIENS', icon: '\uD83D\uDC9B', defaultOpen: false },
-    { key: 'duaa', title: "DOU'A ET TAFAKKUR", icon: '\uD83E\uDD32', defaultOpen: false }
+    { key: 'rituels', title: 'RITUELS DU JOUR', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V11a7 7 0 0 1 14 0v10"/><path d="M3 21h18"/><path d="M12 4V2"/></svg>', defaultOpen: true },
+    { key: 'science', title: 'SCIENCE ET LECTURE', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.5C10.5 5 7.5 4.5 4 5v13c3.5-.5 6.5 0 8 1.5 1.5-1.5 4.5-2 8-1.5V5c-3.5-.5-6.5 0-8 1.5z"/><path d="M12 6.5v13"/></svg>', defaultOpen: false },
+    { key: 'bienfaisance', title: 'BIENFAISANCE ET LIENS', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg>', defaultOpen: false },
+    { key: 'duaa', title: "DOU'A ET TAFAKKUR", icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12V6.5a1.5 1.5 0 0 1 3 0V11"/><path d="M13 11V6.5a1.5 1.5 0 0 1 3 0V12"/><path d="M5.5 12.5C5 15 6 18 9 19.5c1 .5 4 .5 5 0 3-1.5 4-4.5 3.5-7"/></svg>', defaultOpen: false }
   ];
   var _renderFilItem = function(it) {
     const done = state[it.id] ? 'done' : '';
