@@ -4156,6 +4156,54 @@ var _porteIntro = {
   paresse:   { nom_fr:'La Paresse',   nom_ar:'\u0627\u0644\u0643\u064E\u0633\u064E\u0644', texte:"Ici, tu apprends \u00e0 d\u00e9nouer ta lourdeur \u2014 non par la force, mais par le petit pas. Sept jours, \u00e0 ton rythme, pour agir sans attendre l\u2019envie et tenir avec douceur. Sans te juger. Juste un chemin \u2014 et moi \u00e0 tes c\u00f4t\u00e9s." },
   medisance: { nom_fr:'La M\u00e9disance', nom_ar:'\u0627\u0644\u063A\u064A\u0628\u0629', texte:"Ici, tu apprends \u00e0 garder ta langue \u2014 non par silence forc\u00e9, mais par respect de l\u2019autre. Sept jours, \u00e0 ton rythme, pour voir ce qui te pousse \u00e0 m\u00e9dire et planter mieux \u00e0 la place. Sans culpabilit\u00e9. Juste un chemin \u2014 et moi \u00e0 tes c\u00f4t\u00e9s." }
 };
+window._niyyahIntros = {
+  tafakkur: { nom_fr:'Tafakkur', nom_ar:'\u0627\u0644\u062A\u0641\u0643\u0631', eyebrow:'Niyyah t\u2019accompagne', meta:'une halte \u00b7 un verset t\u2019attend', enterLabel:'Commencer',
+    texte:'Ici, tu prends quelques minutes pour m\u00e9diter en silence. \u00c0 la fin de ta halte, un verset t\u2019est offert \u2014 avec une r\u00e9ponse possible, \u00e0 recevoir puis \u00e0 m\u00e9diter \u00e0 ton tour. Reste : ce moment est \u00e0 toi.' },
+  aufildujour: { nom_fr:'Au fil du jour', nom_ar:'', eyebrow:'Niyyah t\u2019accompagne', meta:'chaque jour \u00b7 prends ce qui t\u2019appelle', enterLabel:'D\u00e9couvrir',
+    texte:'Chaque jour, je d\u00e9pose ici de quoi nourrir ton c\u0153ur : un verset, un hadith, une du\u2019\u00e2, un savoir. Pas pour tout faire \u2014 juste pour qu\u2019une porte vers Lui reste toujours ouverte quand tu passes. Prends ce qui t\u2019appelle aujourd\u2019hui.' },
+  alhaya: { nom_fr:'Al-Hay\u00e2\u2019', nom_ar:'\u0627\u0644\u062D\u064A\u0627\u0621', eyebrow:'Niyyah t\u2019accompagne', meta:'quelques instants \u00b7 pour raviver la hay\u00e2\u2019', enterLabel:'Entrer',
+    texte:'Ici, tu cultives la hay\u00e2\u2019 \u2014 cette pudeur du c\u0153ur qui sait qu\u2019Allah voit. Non la honte qui \u00e9crase, mais la d\u00e9licatesse qui \u00e9l\u00e8ve : agir, m\u00eame seul, comme sous un regard aimant.' },
+  nafs: { nom_fr:'Ton \u00e2me, semaine apr\u00e8s semaine', nom_ar:'\u0627\u0644\u0646\u0641\u0633', eyebrow:'Niyyah t\u2019accompagne', meta:'un trait par semaine \u00b7 52 semaines', enterLabel:'Entrer',
+    texte:'Chaque semaine, je te pr\u00e9sente un trait de ton \u00e2me : un nom, un signal, une action. Cinquante-deux semaines pour apprendre \u00e0 te conna\u00eetre, doucement. Reconna\u00eetre un trait, c\u2019est d\u00e9j\u00e0 commencer \u00e0 le ma\u00eetriser. Observe \u2014 sans te juger.' },
+  waqt_fajr: { nom_fr:'Fajr', nom_ar:'\u0627\u0644\u0641\u062C\u0631', eyebrow:'Al-Waqt \u00b7 un moment \u00e0 offrir', meta:'une minute \u00b7 \u00e0 offrir', enterLabel:'Lire',
+    texte:'\u00c0 l\u2019aube, une lecture pour r\u00e9veiller doucement ton c\u0153ur et orienter ta journ\u00e9e : une intention, un geste de la sunnah, une graine de bien \u00e0 semer avant que le monde ne t\u2019emporte.' },
+  waqt_dhuhr: { nom_fr:'Dhuhr', nom_ar:'\u0627\u0644\u0638\u0647\u0631', eyebrow:'Al-Waqt \u00b7 un moment \u00e0 offrir', meta:'une minute \u00b7 \u00e0 offrir', enterLabel:'Lire',
+    texte:'Au milieu du jour, une histoire \u00e0 m\u00e9diter : un r\u00e9cit de sagesse \u2014 un Compagnon, un sage, une parabole \u2014 pour apprendre sur le comportement ce qu\u2019un rappel abstrait ne dit pas. Une minute pour cueillir une le\u00e7on.' },
+  waqt_asr: { nom_fr:'Asr', nom_ar:'\u0627\u0644\u0639\u0635\u0631', eyebrow:'Al-Waqt \u00b7 un moment \u00e0 offrir', meta:'une minute \u00b7 \u00e0 offrir', enterLabel:'Lire',
+    texte:'L\u2019apr\u00e8s-midi, une lecture qui te montre un signe d\u2019Allah dans Sa cr\u00e9ation \u2014 une cellule, un atome, un astre. Une minute pour t\u2019\u00e9merveiller, et laisser la preuve toucher ton c\u0153ur.' },
+  waqt_maghrib: { nom_fr:'Maghrib', nom_ar:'\u0627\u0644\u0645\u063A\u0631\u0628', eyebrow:'Al-Waqt \u00b7 un moment \u00e0 offrir', meta:'une minute \u00b7 \u00e0 offrir', enterLabel:'Lire',
+    texte:'Au cr\u00e9puscule, une lecture pour ralentir : contempler le jour qui s\u2019ach\u00e8ve \u2014 gratitude, liens, pr\u00e9sence \u2014 et parfois lever les yeux vers l\u2019au-del\u00e0, l\u00e0 o\u00f9 tout cela m\u00e8ne.' },
+  waqt_isha: { nom_fr:'Isha', nom_ar:'\u0627\u0644\u0639\u0634\u0627\u0621', eyebrow:'Al-Waqt \u00b7 un moment \u00e0 offrir', meta:'une minute \u00b7 \u00e0 offrir', enterLabel:'Lire',
+    texte:'La nuit venue, une lecture pour d\u00e9poser le jour : un bilan, une remise \u00e0 Allah, ou une pratique du coucher. Une minute pour t\u2019endormir le c\u0153ur en paix.' }
+};
+function _showNiyyahIntro(cfg){
+  if(!cfg || typeof cfg.enterFn!=='function'){ if(cfg && typeof cfg.enterFn==='function') cfg.enterFn(); return; }
+  var col = cfg.color || '#C8A84A';
+  var prev = document.getElementById('niyyahIntroOverlay'); if(prev) prev.remove();
+  var ov = document.createElement('div');
+  ov.id = 'niyyahIntroOverlay';
+  ov.style.cssText = 'position:fixed;inset:0;z-index:3000;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:calc(var(--safe-top,0px)+34px) 26px calc(var(--safe-bot,0px)+34px);background:rgba(4,3,2,0.74);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);overflow-y:auto;animation:sanctFadeIn 0.5s ease forwards;';
+  ov.innerHTML =
+      '<div style="font-family:var(--serif);font-style:italic;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:rgba(200,168,74,0.55);margin-bottom:22px;">' + escapeHtml(cfg.eyebrow || 'Niyyah t\u2019accompagne') + '</div>'
+    + '<div style="transform:scale(0.74);transform-origin:center;margin:-34px auto -22px;"><div class="orb-wrap-v2"><div class="orb-core-v2"><div class="orb-conic"></div><span class="orb-dust"></span><span class="orb-dust"></span><span class="orb-dust"></span><span class="orb-dust"></span><span class="orb-dust"></span><span class="orb-dust"></span><span class="orb-symbol-v2">\u0646\u0650\u064A\u0651\u0629</span></div></div></div>'
+    + '<div style="font-family:\'Cormorant Garamond\',var(--serif);font-style:italic;font-weight:600;font-size:34px;line-height:1;background:linear-gradient(180deg,#F6DA8A,#C8A84A);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:4px;">' + escapeHtml(cfg.nom_fr || '') + '</div>'
+    + (cfg.nom_ar ? '<div style="font-family:\'Scheherazade New\',serif;font-size:26px;color:rgba(200,168,74,0.6);direction:rtl;margin-bottom:20px;">' + cfg.nom_ar + '</div>' : '<div style="height:6px;"></div>')
+    + '<div style="width:90px;height:1px;margin:0 auto 20px;background:linear-gradient(90deg,transparent,#C8A84A,transparent);"></div>'
+    + '<div style="font-family:var(--serif);font-size:19px;line-height:1.65;color:rgba(240,234,214,0.92);max-width:330px;margin:0 auto 22px;">' + escapeHtml(cfg.texte || '') + '</div>'
+    + (cfg.meta ? '<div style="font-family:var(--serif);font-size:13px;letter-spacing:1.5px;color:rgba(200,168,74,0.5);margin-bottom:30px;">' + escapeHtml(cfg.meta) + '</div>' : '<div style="height:10px;"></div>')
+    + '<button id="_niEnter" style="width:100%;max-width:300px;padding:16px;border-radius:14px;border:none;background:' + col + ';color:#F6E6C8;font-family:var(--serif);font-size:19px;font-weight:600;letter-spacing:1px;cursor:pointer;box-shadow:inset 0 1px 0 rgba(255,255,255,0.18),0 8px 28px ' + col + '59;">' + escapeHtml(cfg.enterLabel || 'Entrer') + '</button>'
+    + '<button id="_niLater" style="margin-top:16px;background:none;border:none;cursor:pointer;font-family:var(--serif);font-style:italic;font-size:15px;color:rgba(240,234,214,0.4);">Plus tard</button>';
+  document.body.appendChild(ov);
+  document.getElementById('_niEnter').onclick = function(){ if(cfg.flag) safeSetItem(cfg.flag, '1'); ov.remove(); cfg.enterFn(); };
+  document.getElementById('_niLater').onclick = function(){ ov.remove(); if(typeof cfg.laterFn === 'function') cfg.laterFn(); };
+}
+function _niyyahIntro(key, enterFn){
+  var C = (window._niyyahIntros || {})[key];
+  if(!C){ enterFn(); return; }
+  _showNiyyahIntro({ flag:'niyyah_intro_' + key, eyebrow:C.eyebrow, nom_fr:C.nom_fr, nom_ar:C.nom_ar, texte:C.texte, meta:C.meta, color:C.color || '#C8A84A', enterLabel:C.enterLabel || 'Entrer', enterFn:enterFn });
+}
+window._showNiyyahIntro = _showNiyyahIntro;
+window._niyyahIntro = _niyyahIntro;
 function _showPorteOverlay(id, enterFn) {
   var P = _porteIntro[id];
   if (!P || typeof enterFn !== 'function') { if (typeof enterFn === 'function') enterFn(); return; }
@@ -8618,6 +8666,7 @@ function openTafakkurArchive() {
 }
 window.openTafakkurArchive = openTafakkurArchive;
 function openTafakkur() {
+  if (safeGetItem('niyyah_intro_tafakkur') !== '1') return _niyyahIntro('tafakkur', openTafakkur);
   _tafakkurEnded = false;
   var _tScreen = document.getElementById('tafakkurScreen');
   if (_tafakkurDoneToday()) {
@@ -11783,6 +11832,7 @@ function _showWaswasaScreen() {
 }
 
 function v2GoNafs() {
+  if (safeGetItem('niyyah_intro_nafs') !== '1') return _niyyahIntro('nafs', v2GoNafs);
   // Migration ancien flag
   if (safeGetItem('nafs_waswasa_seen') && !safeGetItem('nafs_avertissement_seen')) safeSetItem('nafs_avertissement_seen', '1');
   // Avertissement à la 1ère ouverture
@@ -12921,6 +12971,7 @@ function updateSanctuaireNextPrayer() {
 function showAlHayaBtn() { var bab = document.getElementById('view-bab-an-nafs'); if (bab && bab.classList.contains('active')) return; var b = document.getElementById('alhaya-btn'); if (b) b.style.display = 'block'; var tb = document.getElementById('topbar-alhaya-btn'); if (tb) tb.style.opacity = '0.8'; }
 function hideAlHayaBtn() { var b = document.getElementById('alhaya-btn'); if (b) b.style.display = 'none'; var tb = document.getElementById('topbar-alhaya-btn'); if (tb) tb.style.opacity = '0.5'; }
 function openAlHaya() {
+  if (safeGetItem('niyyah_intro_alhaya') !== '1') return _niyyahIntro('alhaya', openAlHaya);
   var ov = document.getElementById('alhaya-overlay');
   if (ov) { ov.style.display = 'flex'; ov.style.opacity = '1'; }
   document.body.classList.add('alhaya-active');
@@ -13057,6 +13108,8 @@ function openWaqtModal() {
     showToast('Prochain Waqt apr\u00e8s la prochaine pri\u00e8re');
     return;
   }
+  var _wk = 'waqt_' + priere;
+  if (safeGetItem('niyyah_intro_' + _wk) !== '1') return _niyyahIntro(_wk, openWaqtModal);
   _waqtModalPriere = priere;
   var pool = (window.WAQT_BY_PRIERE && window.WAQT_BY_PRIERE[priere] && window.WAQT_BY_PRIERE[priere].length > 0) ? window.WAQT_BY_PRIERE[priere] : null;
   var txt = '';
@@ -17163,6 +17216,7 @@ window.renderWirdAuFilDuJour = renderWirdAuFilDuJour;
 function openVueAuFilDuJour() {
   const v = document.getElementById('vue-rituel');
   if (!v) return;
+  if (v.classList.contains('hidden') && safeGetItem('niyyah_intro_aufildujour') !== '1') return _niyyahIntro('aufildujour', openVueAuFilDuJour);
   v.querySelector('.rituel-titre').textContent = 'AU FIL DU JOUR';
   v.querySelector('.rituel-prochaine').textContent = '';
   v.querySelector('.rituel-poetique').textContent = 'Ce qui demeure entre tes pri\u00e8res.';
