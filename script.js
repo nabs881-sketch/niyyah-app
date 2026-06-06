@@ -4148,17 +4148,46 @@ function _babSetIdx(id, idx) {
   try { var raw = JSON.parse(safeGetItem('niyyah_bab_idx') || '{}'); raw[id] = idx; safeSetItem('niyyah_bab_idx', JSON.stringify(raw)); } catch(e) {}
 }
 
+var _porteIntro = {
+  colere:    { nom_fr:'La Col\u00e8re',    nom_ar:'\u0627\u0644\u063A\u0636\u0628', texte:"Ici, tu apprends \u00e0 apprivoiser ta col\u00e8re \u2014 non \u00e0 l\u2019\u00e9touffer, mais \u00e0 la comprendre. Sept jours, \u00e0 ton rythme, pour voir ce qu\u2019elle prot\u00e8ge en toi et r\u00e9pondre au lieu de r\u00e9agir. Sans culpabilit\u00e9. Juste un chemin \u2014 et moi \u00e0 tes c\u00f4t\u00e9s." },
+  anxiete:   { nom_fr:"L\u2019Anxi\u00e9t\u00e9",    nom_ar:'\u0627\u0644\u0642\u0644\u0642', texte:"Ici, tu apprends \u00e0 apaiser ce qui p\u00e8se \u2014 non \u00e0 le fuir, mais \u00e0 le d\u00e9poser. Sept jours, \u00e0 ton rythme, pour mettre des mots sur l\u2019angoisse et retrouver la confiance. Sans te juger. Juste un chemin \u2014 et moi \u00e0 tes c\u00f4t\u00e9s." },
+  regard:    { nom_fr:'Le Regard',    nom_ar:'\u0627\u0644\u0646\u064E\u0651\u0638\u064E\u0631', texte:"Ici, tu apprends \u00e0 lib\u00e9rer ton regard \u2014 non par interdit, mais par dignit\u00e9. Sept jours, \u00e0 ton rythme, pour comprendre ce que tes yeux cherchent et reprendre la main. Sans jugement, sans honte. Juste un chemin \u2014 et moi \u00e0 tes c\u00f4t\u00e9s." },
+  arrogance: { nom_fr:"L\u2019Arrogance",  nom_ar:'\u0627\u0644\u0643\u0650\u0628\u0652\u0631', texte:"Ici, tu apprends \u00e0 all\u00e9ger ton orgueil \u2014 non \u00e0 te rabaisser, mais \u00e0 voir juste. Sept jours, \u00e0 ton rythme, pour distinguer ta vraie valeur de l\u2019image que tu d\u00e9fends. Sans honte. Juste un chemin \u2014 et moi \u00e0 tes c\u00f4t\u00e9s." },
+  paresse:   { nom_fr:'La Paresse',   nom_ar:'\u0627\u0644\u0643\u064E\u0633\u064E\u0644', texte:"Ici, tu apprends \u00e0 d\u00e9nouer ta lourdeur \u2014 non par la force, mais par le petit pas. Sept jours, \u00e0 ton rythme, pour agir sans attendre l\u2019envie et tenir avec douceur. Sans te juger. Juste un chemin \u2014 et moi \u00e0 tes c\u00f4t\u00e9s." },
+  medisance: { nom_fr:'La M\u00e9disance', nom_ar:'\u0627\u0644\u063A\u064A\u0628\u0629', texte:"Ici, tu apprends \u00e0 garder ta langue \u2014 non par silence forc\u00e9, mais par respect de l\u2019autre. Sept jours, \u00e0 ton rythme, pour voir ce qui te pousse \u00e0 m\u00e9dire et planter mieux \u00e0 la place. Sans culpabilit\u00e9. Juste un chemin \u2014 et moi \u00e0 tes c\u00f4t\u00e9s." }
+};
+function _showPorteOverlay(id, enterFn) {
+  var P = _porteIntro[id];
+  if (!P || typeof enterFn !== 'function') { if (typeof enterFn === 'function') enterFn(); return; }
+  var col = (_curePorteConfig[id] || {}).color || '#C8A84A';
+  var prev = document.getElementById('porteOverlay'); if (prev) prev.remove();
+  var ov = document.createElement('div');
+  ov.id = 'porteOverlay';
+  ov.style.cssText = 'position:fixed;inset:0;z-index:3000;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:calc(var(--safe-top,0px)+34px) 26px calc(var(--safe-bot,0px)+34px);background:rgba(4,3,2,0.74);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);overflow-y:auto;animation:sanctFadeIn 0.5s ease forwards;';
+  ov.innerHTML =
+      '<div style="font-family:var(--serif);font-style:italic;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:rgba(200,168,74,0.55);margin-bottom:22px;">Niyyah t\u2019ouvre cette porte</div>'
+    + '<div style="transform:scale(0.74);transform-origin:center;margin:-34px auto -22px;"><div class="orb-wrap-v2"><div class="orb-core-v2"><div class="orb-conic"></div><span class="orb-dust"></span><span class="orb-dust"></span><span class="orb-dust"></span><span class="orb-dust"></span><span class="orb-dust"></span><span class="orb-dust"></span><span class="orb-symbol-v2">\u0646\u0650\u064A\u0651\u0629</span></div></div></div>'
+    + '<div style="font-family:\'Cormorant Garamond\',var(--serif);font-style:italic;font-weight:600;font-size:34px;line-height:1;background:linear-gradient(180deg,#F6DA8A,#C8A84A);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:4px;">' + escapeHtml(P.nom_fr) + '</div>'
+    + '<div style="font-family:\'Scheherazade New\',serif;font-size:26px;color:rgba(200,168,74,0.6);direction:rtl;margin-bottom:20px;">' + P.nom_ar + '</div>'
+    + '<div style="width:90px;height:1px;margin:0 auto 20px;background:linear-gradient(90deg,transparent,#C8A84A,transparent);"></div>'
+    + '<div style="font-family:var(--serif);font-size:19px;line-height:1.65;color:rgba(240,234,214,0.92);max-width:330px;margin:0 auto 22px;">' + escapeHtml(P.texte) + '</div>'
+    + '<div style="font-family:var(--serif);font-size:13px;letter-spacing:1.5px;color:rgba(200,168,74,0.5);margin-bottom:30px;">7 jours \u00b7 ~10 min/jour \u00b7 reste sur ton appareil</div>'
+    + '<button id="_poEnter" style="width:100%;max-width:300px;padding:16px;border-radius:14px;border:none;background:' + col + ';color:#F6E6C8;font-family:var(--serif);font-size:19px;font-weight:600;letter-spacing:1px;cursor:pointer;box-shadow:inset 0 1px 0 rgba(255,255,255,0.18),0 8px 28px ' + col + '59;">Entrer dans la porte</button>'
+    + '<button id="_poLater" style="margin-top:16px;background:none;border:none;cursor:pointer;font-family:var(--serif);font-style:italic;font-size:15px;color:rgba(240,234,214,0.4);">Plus tard</button>';
+  document.body.appendChild(ov);
+  document.getElementById('_poEnter').onclick = function() { safeSetItem('niyyah_porte_intro_' + id, '1'); ov.remove(); enterFn(); };
+  document.getElementById('_poLater').onclick = function() { ov.remove(); renderBabAnNafs(); };
+}
 function openBabPorte(id, step) {
   document.body.classList.add('in-bab-an-nafs');
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
-  // Colère → directement Cure 7 jours
-  if (id === 'colere') { openCureColere(); return; }
-  if (id === 'anxiete') { openCureAnxiete(); return; }
-  if (id === 'regard') { openCureRegard(); return; }
-  if (id === 'arrogance') { openCureArrogance(); return; }
-  if (id === 'paresse') { openCureParesse(); return; }
-  if (id === 'medisance') { openCureMedisance(); return; }
+  var _cureFns = { colere: openCureColere, anxiete: openCureAnxiete, regard: openCureRegard, arrogance: openCureArrogance, paresse: openCureParesse, medisance: openCureMedisance };
+  if (_cureFns[id]) {
+    if (safeGetItem('niyyah_porte_intro_' + id) === '1') { _cureFns[id](); }
+    else { _showPorteOverlay(id, _cureFns[id]); }
+    return;
+  }
   var porte = BAB_AN_NAFS.portes.find(function(p) { return p.id === id; });
   if (!porte) { console.warn('Bab an-Nafs: porte manquante:', id); return; }
   // Porte vide ou non validée sans contenu → écran "en préparation"
