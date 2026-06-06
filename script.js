@@ -3213,7 +3213,24 @@ function getGraineStageName(count) {
   if (count >= 1) return 'Pousse';
   return 'Bismillah';
 }
-function renderProgression() {
+function renderProgression(skipIntro) {
+  if (!skipIntro && safeGetItem('niyyah_intro_chemin') !== '1') {
+    var _pv = document.getElementById('view-progression');
+    if (_pv && _pv.offsetParent !== null) {
+      var _C = (window._niyyahIntros || {}).chemin;
+      if (_C && typeof _showNiyyahIntro === 'function') {
+        _showNiyyahIntro({
+          flag: 'niyyah_intro_chemin',
+          eyebrow: _C.eyebrow, nom_fr: _C.nom_fr, nom_ar: _C.nom_ar,
+          texte: _C.texte, meta: _C.meta, color: '#C8A84A',
+          enterLabel: _C.enterLabel || 'Entrer',
+          enterFn: function(){ renderProgression(true); },
+          laterFn: function(){ renderProgression(true); }
+        });
+        return;
+      }
+    }
+  }
   var el = document.getElementById('progContent');
   if (isSilenceDay()) {
     var _sp = _getPrenom();
@@ -4165,6 +4182,8 @@ window._niyyahIntros = {
     texte:'Ici, tu cultives la hay\u00e2\u2019 \u2014 cette pudeur du c\u0153ur qui sait qu\u2019Allah voit. Non la honte qui \u00e9crase, mais la d\u00e9licatesse qui \u00e9l\u00e8ve : agir, m\u00eame seul, comme sous un regard aimant.' },
   nafs: { nom_fr:'Ton \u00e2me, semaine apr\u00e8s semaine', nom_ar:'\u0627\u0644\u0646\u0641\u0633', eyebrow:'Niyyah t\u2019accompagne', meta:'un trait par semaine \u00b7 52 semaines', enterLabel:'Entrer',
     texte:'Chaque semaine, je te pr\u00e9sente un trait de ton \u00e2me : un nom, un signal, une action. Cinquante-deux semaines pour apprendre \u00e0 te conna\u00eetre, doucement. Reconna\u00eetre un trait, c\u2019est d\u00e9j\u00e0 commencer \u00e0 le ma\u00eetriser. Observe \u2014 sans te juger.' },
+  chemin: { nom_fr:'Ton chemin', nom_ar:'\u0637\u064E\u0631\u0650\u064A\u0642', eyebrow:'Niyyah t\u2019accompagne', meta:'ta progression \u00b7 jour apr\u00e8s jour', enterLabel:'Entrer',
+    texte:'Ici, je te montre ton chemin : tes jours de constance, les paliers que tu franchis, ce qui pousse doucement en toi. Pas pour te noter \u2014 pour que tu voies le trajet. Allah regarde la r\u00e9gularit\u00e9, pas la performance. Avance \u00e0 ton rythme.' },
   waqt_fajr: { nom_fr:'Fajr', nom_ar:'\u0627\u0644\u0641\u062C\u0631', eyebrow:'Al-Waqt \u00b7 un moment \u00e0 offrir', meta:'une minute \u00b7 \u00e0 offrir', enterLabel:'Lire',
     texte:'\u00c0 l\u2019aube, une lecture pour r\u00e9veiller doucement ton c\u0153ur et orienter ta journ\u00e9e : une intention, un geste de la sunnah, une graine de bien \u00e0 semer avant que le monde ne t\u2019emporte.' },
   waqt_dhuhr: { nom_fr:'Dhuhr', nom_ar:'\u0627\u0644\u0638\u0647\u0631', eyebrow:'Al-Waqt \u00b7 un moment \u00e0 offrir', meta:'une minute \u00b7 \u00e0 offrir', enterLabel:'Lire',
