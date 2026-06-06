@@ -62,7 +62,7 @@
           "ordre": 1,
           "type": "champ_texte_long",
           "titre": "L'inventaire des 24 heures",
-          "consigne": "En 24h, qu'ont vu tes yeux qui mérite d'être nommé ? Sois honnête. Ce que tu écris reste avec toi.",
+          "consigne": "Repense à tes dernières 24 heures : sur quoi tes yeux se sont-ils arrêtés ? Note tout ce qui te vient, sans trier ni juger — on distinguera juste après ce qui pèse de ce qui est neutre. Ce que tu écris reste sur ton appareil.",
           "amorce": "Mes yeux ont vu",
           "champ": {
             "placeholder": "Écris ici, sans te juger…",
