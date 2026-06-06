@@ -45,14 +45,14 @@
       },
       "bloc_2_sagesse": {
         "type": "parole_de_sage",
-        "titre_bloc": "Parole de Ghazâlî sur les dangers du regard",
+        "titre_bloc": "Sagesse d'al-Ghazâlî",
         "parole": {
-          "texte": "Sache que l'œil est l'une des armes les plus tranchantes du diable. Il pénètre dans le cœur par un seul regard ce qui ne pénétrerait pas par mille mots. Le regard est une flèche empoisonnée parmi les flèches d'Iblîs. Celui qui baisse le regard pour Allah, Allah remplit son cœur d'une douceur qu'il sentira jusqu'au jour où il Le rencontrera.",
+          "texte": "L'œil est l'une des portes par lesquelles le désir entre dans le cœur. Un seul regard peut y déposer ce que mille paroles n'y mettraient pas — car le cœur s'attache à ce que l'œil lui rapporte. C'est pourquoi garder le regard n'est pas un interdit isolé : c'est une discipline de l'âme (riyâdat an-nafs). On protège le cœur en veillant sur ses portes.",
           "auteur": "Abû Hâmid al-Ghazâlî",
           "dates_auteur": "1058-1111",
-          "oeuvre": "Ihyâ' 'Ulûm ad-Dîn, Kitâb âfât al-lisân wa-l-jawârih",
+          "oeuvre": "Ihyâ' 'Ulûm ad-Dîn (rendu libre)",
           "siecle": "XIe-XIIe siècle",
-          "note": "Ghazâlî consacre un chapitre entier aux dangers du regard. Il insiste sur le caractère pénétrant du regard — pourquoi un seul regard peut être plus dévastateur que mille mots. Il propose une méthode systématique : reconnaître, contenir, substituer."
+          "note_editoriale": "La formule très répandue « le regard est une flèche empoisonnée d'Iblîs ; qui le baisse pour Allah en goûte la douceur de la foi » est une parole rapportée au statut FAIBLE (Tabarânî, al-Hâkim — chaîne da'îf). À recevoir comme exhortation, non comme hadith établi. al-Ghazâlî, comme d'autres, la cite."
         }
       },
       "introduction_avant_outils": "Tu as lu le verset. Tu as entendu Ghazâlî.\n\nMaintenant — fais l'inventaire. Sans honte. Avec lucidité.",
