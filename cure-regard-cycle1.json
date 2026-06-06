@@ -501,7 +501,7 @@
           "type": "drag_and_drop_2_colonnes",
           "titre": "Émotion réelle ou excuse mentale ?",
           "introduction": "Quand tu vas regarder ce que tu ne devrais pas — qu'est-ce qui passe vraiment dans ta tête ?",
-          "consigne": "Note 3-5 phrases qui te traversent juste avant. Glisse-les dans la bonne colonne.",
+          "consigne": "Écris 3 à 5 pensées qui te passent par la tête juste avant de regarder. Pour chacune, touche en dessous le bouton de la bonne catégorie : émotion réelle, ou excuse mentale.",
           "colonnes": [
             {
               "id": "emotion",
