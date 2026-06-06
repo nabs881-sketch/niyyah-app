@@ -2599,24 +2599,13 @@ function renderLevel(levelId) {
     + '<div style="font-size:12px;color:var(--t3);margin-top:2px;">' + _bandeauSub + '</div>'
     + '</div>'
     + '</div>';
-  var _toggleLabel = window._showAllBlocks ? t('toggle_moment') : t('toggle_all');
-  html += '<div style="text-align:center;margin:-12px 0 16px;"><button onclick="window._showAllBlocks=!window._showAllBlocks;renderLevel(' + levelId + ')" style="background:transparent;border:none;color:#C8A84A;font-size:12px;font-weight:600;cursor:pointer;opacity:0.7;letter-spacing:0.3px;">' + _toggleLabel + '</button></div>';
+  // [jour complet] Pratique affiche toujours toute la journée — pas de toggle moment
   const _currentBlock = _block.id;
   level.sections.forEach(section => {
     const _filteredItems = section.items.filter(function(item) {
-      if (window._showAllBlocks) {
-        if (item.block === 'ressources') return false;
-        if (item.id === 'sunnah_jejune') { var d = new Date().getDay(); return d === 1 || d === 4; }
-        return true;
-      }
-      if (!item.block) return true;
       if (item.block === 'ressources') return false;
-      if (Array.isArray(item.block) ? item.block.includes(_currentBlock) : item.block === _currentBlock) return true;
-      if (item.block === 'jour') {
-        if (item.id === 'sunnah_jejune') { var d = new Date().getDay(); return d === 1 || d === 4; }
-        return true;
-      }
-      return false;
+      if (item.id === 'sunnah_jejune') { var d = new Date().getDay(); return d === 1 || d === 4; }
+      return true;
     });
     if (_filteredItems.length === 0) return;
     var _sectionTitleMap = {'Les 5 Prières':'section_prayers','Wird quotidien':'section_wird','Sunnah de base':'section_sunnah','Approfondissement de la prière':'section_deep_prayer','Dhikr du cœur':'section_dhikr','Douâas intimes':'section_duas','Étude islamique':'section_study','Immersion coranique':'section_quran','Pratiques avancées':'section_advanced',"Sommet de l'adoration":'section_summit','Rayonnement vers les autres':'section_radiance',"Conscience de l'Oumma":'section_ummah'};
