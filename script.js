@@ -4192,10 +4192,10 @@ function _showNiyyahIntro(cfg){
     + '<div style="font-family:var(--serif);font-size:19px;line-height:1.65;color:rgba(240,234,214,0.92);max-width:330px;margin:0 auto 22px;">' + escapeHtml(cfg.texte || '') + '</div>'
     + (cfg.meta ? '<div style="font-family:var(--serif);font-size:13px;letter-spacing:1.5px;color:rgba(200,168,74,0.5);margin-bottom:30px;">' + escapeHtml(cfg.meta) + '</div>' : '<div style="height:10px;"></div>')
     + '<button id="_niEnter" style="width:100%;max-width:300px;padding:16px;border-radius:14px;border:none;background:' + col + ';color:#F6E6C8;font-family:var(--serif);font-size:19px;font-weight:600;letter-spacing:1px;cursor:pointer;box-shadow:inset 0 1px 0 rgba(255,255,255,0.18),0 8px 28px ' + col + '59;">' + escapeHtml(cfg.enterLabel || 'Entrer') + '</button>'
-    + '<button id="_niLater" style="margin-top:16px;background:none;border:none;cursor:pointer;font-family:var(--serif);font-style:italic;font-size:15px;color:rgba(240,234,214,0.4);">Plus tard</button>';
+    + (cfg.single ? '' : '<button id="_niLater" style="margin-top:16px;background:none;border:none;cursor:pointer;font-family:var(--serif);font-style:italic;font-size:15px;color:rgba(240,234,214,0.4);">Plus tard</button>');
   document.body.appendChild(ov);
   document.getElementById('_niEnter').onclick = function(){ if(cfg.flag) safeSetItem(cfg.flag, '1'); ov.remove(); cfg.enterFn(); };
-  document.getElementById('_niLater').onclick = function(){ ov.remove(); if(typeof cfg.laterFn === 'function') cfg.laterFn(); };
+  var _niLaterBtn = document.getElementById('_niLater'); if(_niLaterBtn) _niLaterBtn.onclick = function(){ ov.remove(); if(typeof cfg.laterFn === 'function') cfg.laterFn(); };
 }
 function _niyyahIntro(key, enterFn){
   var C = (window._niyyahIntros || {})[key];
@@ -4204,6 +4204,14 @@ function _niyyahIntro(key, enterFn){
 }
 window._showNiyyahIntro = _showNiyyahIntro;
 window._niyyahIntro = _niyyahIntro;
+function _niyyahReview(key){
+  var C = (window._niyyahIntros || {})[key];
+  if(!C) return;
+  _showNiyyahIntro({ flag:'niyyah_intro_' + key, eyebrow:C.eyebrow, nom_fr:C.nom_fr, nom_ar:C.nom_ar, texte:C.texte, meta:C.meta, color:C.color || '#C8A84A', enterLabel:'Fermer', single:true, enterFn:function(){} });
+}
+function _niyyahReviewWaqt(){ if(typeof _waqtModalPriere !== 'undefined' && _waqtModalPriere) _niyyahReview('waqt_' + _waqtModalPriere); }
+window._niyyahReview = _niyyahReview;
+window._niyyahReviewWaqt = _niyyahReviewWaqt;
 function _showPorteOverlay(id, enterFn) {
   var P = _porteIntro[id];
   if (!P || typeof enterFn !== 'function') { if (typeof enterFn === 'function') enterFn(); return; }
@@ -11688,6 +11696,7 @@ function renderNafsTrait() {
   container.innerHTML =
     '<div style="text-align:center;">' +
       '<div class="nafs-week-badge">Semaine ' + w + ' — Trait ' + trait.id + '/52</div>' +
+      '<button onclick="_niyyahReview(\'nafs\')" aria-label="Revoir la pr\u00e9sentation" style="margin-top:8px;width:28px;height:28px;border-radius:50%;border:1px solid rgba(200,168,74,0.3);background:transparent;color:rgba(200,168,74,0.7);font-family:var(--serif);font-size:15px;cursor:pointer;">?</button>' +
     '</div>' +
     '<div class="nafs-season-label" style="text-align:center;">' + seasonLabel + '</div>' +
     '<div class="nafs-name-block">' +
@@ -17071,6 +17080,7 @@ function getRitualItems(prayer) {
 window.getRitualItems = getRitualItems;
 
 function openVueRituel(prayer) {
+  var _afdjQ = document.getElementById('afdjReviewQ'); if(_afdjQ) _afdjQ.style.display = 'none';
   const v = document.getElementById('vue-rituel');
   if (!v) return;
   v.querySelector('.rituel-titre').textContent = 'APRÈS ' + prayer.toUpperCase();
@@ -17218,6 +17228,7 @@ function openVueAuFilDuJour() {
   if (!v) return;
   if (v.classList.contains('hidden') && safeGetItem('niyyah_intro_aufildujour') !== '1') return _niyyahIntro('aufildujour', openVueAuFilDuJour);
   v.querySelector('.rituel-titre').textContent = 'AU FIL DU JOUR';
+  (function(){ var h = v.querySelector('.rituel-header'); if(!h) return; var q = document.getElementById('afdjReviewQ'); if(!q){ q = document.createElement('button'); q.id = 'afdjReviewQ'; q.textContent = '?'; q.setAttribute('aria-label','Revoir la pr\u00e9sentation'); q.style.cssText = 'position:absolute;top:14px;right:16px;width:30px;height:30px;border-radius:50%;border:1px solid rgba(200,168,74,0.35);background:rgba(4,3,2,0.35);color:rgba(200,168,74,0.8);font-family:var(--serif);font-size:16px;cursor:pointer;z-index:5;'; q.onclick = function(){ _niyyahReview('aufildujour'); }; if(getComputedStyle(h).position === 'static') h.style.position = 'relative'; h.appendChild(q); } q.style.display = 'flex'; })();
   v.querySelector('.rituel-prochaine').textContent = '';
   v.querySelector('.rituel-poetique').textContent = 'Ce qui demeure entre tes pri\u00e8res.';
   var _motiv = getEffectiveMotiv();
