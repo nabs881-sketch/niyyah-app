@@ -17193,7 +17193,7 @@ function openVueRituel(prayer) {
     html += _sortDone(normalItems).map(_renderOne).join('');
   }
   main.innerHTML = html;
-  _setRituelEmblem('\u0635\u0644\u0627\u0629', null);
+  _setRituelEmblem('\u0635\u0644\u0627\u0629', 'vuedujour');
   v.classList.remove('hidden');
 }
 window.openVueRituel = openVueRituel;
