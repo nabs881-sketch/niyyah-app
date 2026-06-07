@@ -1,0 +1,545 @@
+{
+  "_meta": {
+    "feature": "Regarde — du'âs par catégorie",
+    "version": "1.0-pending-validation",
+    "regle": "mathur = transmise, vérifiée (réf+grade), affichée avec ar+translit+source. maison = composée, FR seul, libellée 'une invocation', JAMAIS présentée comme Sunna.",
+    "selection": "Regarde tire AU HASARD une entrée dans la catégorie détectée. Remplace la génération IA /api/regarde.",
+    "verif": "Chaque mathur vérifiée sur sources primaires (sunnah.com / Coran).",
+    "categories": 23
+  },
+  "NOURRITURE": [
+    {
+      "type": "mathur",
+      "fr": "Louange à Allah qui m'a nourri de ceci et me l'a accordé, sans force ni puissance de ma part.",
+      "ar": "الْحَمْدُ لِلَّهِ الَّذِي أَطْعَمَنِي هَذَا وَرَزَقَنِيهِ مِنْ غَيْرِ حَوْلٍ مِنِّي وَلَا قُوَّةٍ",
+      "translit": "Al-ḥamdu li-llâhi-lladhî aṭ'amanî hâdhâ wa razaqanîhi min ghayri ḥawlin minnî wa lâ quwwa",
+      "source": "Tirmidhî 3458 (hasan) ; Abû Dâwûd 4023 ; Ibn Mâja 3285"
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, ce que je porte à ma bouche vient de Ta main seule — garde-moi reconnaissant avant même d'être rassasié."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, nourris mon cœur comme Tu nourris mon corps, et ne me laisse pas oublier celui qui a faim ce soir."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, fais de cette nourriture une force pour T'obéir, non un poids qui m'endort."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, Toi que rien ne nourrit et qui nourris tout, mets la baraka dans le peu comme dans l'abondance."
+    }
+  ],
+  "VEHICULE": [
+    {
+      "type": "mathur",
+      "fr": "Allah est le plus grand (×3). Gloire à Celui qui a mis ceci à notre service, alors que nous n'en étions pas capables ; et c'est vers notre Seigneur que nous retournons. Ô Allah, nous Te demandons en ce voyage la piété et la crainte, et des œuvres qui T'agréent.",
+      "ar": "اللَّهُ أَكْبَرُ، اللَّهُ أَكْبَرُ، اللَّهُ أَكْبَرُ، سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَذَا وَمَا كُنَّا لَهُ مُقْرِنِينَ وَإِنَّا إِلَى رَبِّنَا لَمُنْقَلِبُونَ، اللَّهُمَّ إِنَّا نَسْأَلُكَ فِي سَفَرِنَا هَذَا الْبِرَّ وَالتَّقْوَى وَمِنَ الْعَمَلِ مَا تَرْضَى",
+      "translit": "Allâhu akbar (×3), subḥâna-lladhî sakhkhara lanâ hâdhâ wa mâ kunnâ lahû muqrinîn, wa innâ ilâ rabbinâ la-munqalibûn. Allâhumma innâ nas'aluka fî safarinâ hâdhâ-l-birra wa-t-taqwâ wa mina-l-'amali mâ tardâ",
+      "source": "Sahîh Muslim 1342 (Qur'ân 43:13-14)"
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, Tu m'as soumis cette monture que je n'aurais su maîtriser — fais que chaque trajet me rapproche de Toi, et pas seulement d'une destination."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, sois mon Compagnon sur cette route, et veille sur ceux que je laisse derrière moi."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, allège la fatigue, abrège la distance, et ramène-moi sain vers ce qui compte."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, que la vitesse ne me fasse pas oublier vers Qui, vraiment, je retourne."
+    }
+  ],
+  "HABITAT": [
+    {
+      "type": "mathur",
+      "fr": "Au nom d'Allah, je place ma confiance en Allah ; il n'est de force ni de puissance que par Allah.",
+      "ar": "بِسْمِ اللهِ، تَوَكَّلْتُ عَلَى اللهِ، وَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللهِ",
+      "translit": "Bismillâh, tawakkaltu 'ala-llâh, wa lâ ḥawla wa lâ quwwata illâ billâh",
+      "source": "Abû Dâwûd 5095 (sahîh, al-Albânî) ; Tirmidhî 3426 — en sortant de chez soi"
+    },
+    {
+      "type": "mathur",
+      "fr": "Au nom d'Allah (en entrant chez soi).",
+      "ar": "بِسْمِ اللهِ",
+      "translit": "Bismillâh",
+      "source": "Sahîh Muslim 2018 — mentionner Allah en entrant éloigne le shaytân"
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, fais de ce toit un lieu où Ton nom est rappelé, et non un abri qui me fait oublier l'au-delà."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, mets la paix entre ces murs, et protège ceux qui y dorment cette nuit."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, que j'entre en Ton nom et que je sorte en Ta confiance."
+    }
+  ],
+  "EAU": [
+    {
+      "type": "mathur",
+      "fr": "Ô Allah, fais-en une pluie bienfaisante.",
+      "ar": "اللَّهُمَّ صَيِّبًا نَافِعًا",
+      "translit": "Allâhumma ṣayyiban nâfi'an",
+      "source": "Sahîh al-Bukhârî 1032 — à dire quand la pluie tombe"
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, Toi qui as fait toute chose vivante de l'eau, ravive mon cœur comme cette eau ravive la terre."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, fais couler Ta miséricorde là où je me croyais aride."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, que je ne tienne jamais l'eau pour acquise — chaque gorgée est un don que Tu pouvais retenir."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, purifie ce qu'il y a en moi comme cette eau purifie ce qu'elle touche."
+    }
+  ],
+  "CIEL": [
+    {
+      "type": "mathur",
+      "fr": "Ô Allah, fais lever ce croissant sur nous avec la bénédiction et la foi, la sécurité et l'islam. Mon Seigneur et le tien est Allah.",
+      "ar": "اللَّهُمَّ أَهِلَّهُ عَلَيْنَا بِالْيُمْنِ وَالْإِيمَانِ وَالسَّلَامَةِ وَالْإِسْلَامِ، رَبِّي وَرَبُّكَ اللَّهُ",
+      "translit": "Allâhumma ahillahu 'alaynâ bi-l-yumni wa-l-îmân, wa-s-salâmati wa-l-islâm, Rabbî wa rabbuka Allâh",
+      "source": "Tirmidhî 3451 (hasan) — à la vue du croissant"
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, sous ce ciel que Tu tiens sans pilier, rappelle-moi combien je suis petit et combien Tu es proche."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, élève mon regard au-dessus de mes soucis d'aujourd'hui."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, fais que cette immensité me parle de Toi, et non de mon vide."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, comme Tu fais alterner la nuit et le jour, alterne en moi l'épreuve et l'apaisement avec Ta sagesse."
+    }
+  ],
+  "MORT": [
+    {
+      "type": "mathur",
+      "fr": "Que la paix soit sur vous, habitants de ces demeures, croyants et musulmans. Nous vous rejoindrons, si Allah le veut. Nous demandons à Allah le salut pour nous et pour vous.",
+      "ar": "السَّلَامُ عَلَيْكُمْ أَهْلَ الدِّيَارِ مِنَ الْمُؤْمِنِينَ وَالْمُسْلِمِينَ، وَإِنَّا إِنْ شَاءَ اللَّهُ بِكُمْ لَاحِقُونَ، نَسْأَلُ اللَّهَ لَنَا وَلَكُمُ الْعَافِيَةَ",
+      "translit": "As-salâmu 'alaykum ahla-d-diyâr mina-l-mu'minîna wa-l-muslimîn, wa innâ in shâ'a-llâhu bikum lâḥiqûn, nas'alu-llâha lanâ wa lakumu-l-'âfiya",
+      "source": "Sahîh Muslim 975 — à l'entrée d'un cimetière"
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, fais de ce rappel de la mort une lumière pour mes jours, non une peur qui me fige."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, pardonne à ceux qui sont partis avant moi, et prépare-moi à les rejoindre en paix."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, que le souvenir de ma fin rende mes actes plus sincères et mon cœur plus doux."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, ne me reprends pas dans la négligence, mais dans un état que Tu agrées."
+    }
+  ],
+  "VISAGE": [
+    {
+      "type": "mathur",
+      "fr": "Ô Allah, comme Tu as embelli ma création, embellis mon caractère.",
+      "ar": "اللَّهُمَّ أَنْتَ حَسَّنْتَ خَلْقِي فَحَسِّنْ خُلُقِي",
+      "translit": "Allâhumma anta ḥassanta khalqî fa-ḥassin khuluqî",
+      "source": "Ahmad ; Ibn Hibbân (texte sahîh, al-Albânî) — du'â du beau caractère (l'attribution « au miroir » est faible)"
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, ce visage vieillira et s'effacera — fais que ce qui demeure de moi soit beau devant Toi."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, ne me laisse pas juger les visages, mais voir en chacun Ta création."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, que mon regard sur moi-même soit lucide : ni orgueil, ni mépris."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, que la lumière de la foi éclaire mon visage plus que tout reflet."
+    }
+  ],
+  "ANIMAL": [
+    {
+      "type": "maison",
+      "fr": "Ô Allah, Toi qui nourris cette créature sans qu'elle amasse, apprends-moi à me fier à Toi comme elle."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, chaque bête est une communauté comme la mienne — ouvre mon cœur à Ta sagesse dans la plus petite vie."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, fais de ma force une douceur envers ce qui est plus faible que moi."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, que cette créature qui T'obéit sans le savoir me rappelle de T'obéir en le sachant."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, Toi qui as créé tant de vies, ne me laisse pas oublier que je Te dois la mienne."
+    }
+  ],
+  "NATURE": [
+    {
+      "type": "maison",
+      "fr": "Ô Allah, fais pousser le bien en moi comme Tu fais verdir la terre après la pluie."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, dans ce paysage que nul n'a peint, je reconnais Ta main — affermis ma certitude."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, que la beauté de ce que Tu crées m'attache à Toi, non à ce qui passe."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, comme cette nature suit Ton ordre sans résister, rends mon cœur docile."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, ce que je vois n'est qu'un signe — fais-moi voir au-delà, jusqu'à Toi."
+    }
+  ],
+  "MONTAGNE": [
+    {
+      "type": "maison",
+      "fr": "Ô Allah, Toi qui as ancré ces montagnes, ancre en moi une foi que rien n'ébranle."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, devant cette masse immobile, rappelle-moi que seule Ta parole demeure."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, élève mon âme aussi haut que ce sommet, et garde-la humble devant Toi."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, ces montagnes Te glorifient — que ma langue ne soit pas plus muette que la pierre."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, allège le poids que je porte, Toi qui portes ces montagnes sans effort."
+    }
+  ],
+  "LUMIERE_OMBRE": [
+    {
+      "type": "maison",
+      "fr": "Ô Allah, Toi qui as fait la lumière et l'ombre, guide-moi de mes ténèbres vers Ta clarté."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, mets une lumière dans mon cœur comme Tu en mets une dans ce monde."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, que l'ombre me rappelle que rien ne T'est caché."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, dissipe l'obscurité de mes fautes comme l'aube dissipe la nuit."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, fais de chaque jour une lampe, et ne me laisse pas marcher à l'aveugle."
+    }
+  ],
+  "OBJET_PERSONNEL": [
+    {
+      "type": "maison",
+      "fr": "Ô Allah, que cet objet me serve sans me posséder, et ne devienne pas une idole de mon cœur."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, ce que je tiens vient de Toi et retournera à Toi — détache-moi de ce qui passe."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, place la baraka dans ce que j'ai, et la gratitude dans mon cœur."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, que mes biens soient un moyen vers Toi, non un mur entre Toi et moi."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, rends-moi léger face à ce monde, prêt à le quitter sans regret."
+    }
+  ],
+  "ROUTE": [
+    {
+      "type": "maison",
+      "fr": "Ô Allah, sur ce chemin, garde mes pas droits et mon intention pure."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, Toi qui sais où mène chaque route, mène-moi vers ce qui T'agrée."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, que je n'oublie pas, en avançant, que le vrai voyage est vers Toi."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, protège-moi de m'égarer, dehors comme dedans."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, fais de chaque trajet un pas de plus vers Ton agrément."
+    }
+  ],
+  "TEXTE": [
+    {
+      "type": "maison",
+      "fr": "Ô Allah, fais que ce que je lis me rapproche de Toi, non de ma vanité."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, ouvre mon cœur à la compréhension, Toi qui as enseigné par la plume."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, que les mots que je reçois soient une lumière, non une distraction."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, grave Ton rappel dans mon cœur plus profond que l'encre sur la page."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, apprends-moi ce qui m'est utile, et rends utile ce que Tu m'as appris."
+    }
+  ],
+  "TISSU": [
+    {
+      "type": "maison",
+      "fr": "Ô Allah, Toi qui m'as vêtu pour couvrir ma nudité, revêts mon âme de ce qui T'agrée."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, que ce vêtement me rappelle la pudeur, au-dehors comme dans le secret."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, comme ce tissu protège mon corps, protège mon cœur de ce qui le souille."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, ne me laisse tirer orgueil ni de ma parure ni de mon apparence."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, le meilleur habit est celui de la taqwâ — revêts-m'en."
+    }
+  ],
+  "INDETERMINE": [
+    {
+      "type": "maison",
+      "fr": "Ô Allah, sur toute chose où mon regard se pose, fais qu'il me ramène à Toi."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, ouvre mes yeux sur Tes signes là où je ne vois d'abord que l'ordinaire."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, que ce simple instant devienne un rappel, et ce rappel une prière."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, Toi qui es derrière toute chose, sois ce que je cherche en toute chose."
+    }
+  ],
+  "MIROIR": [
+    {
+      "type": "maison",
+      "fr": "Ô Allah, ce que je vois là n'est qu'une surface — montre-moi ce que Tu vois en moi."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, avant que Tu me demandes des comptes, fais que je me les demande à moi-même."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, que mon reflet me rappelle non ma beauté, mais ce que j'ai avancé pour demain."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, redresse en secret ce que les autres ne voient pas de moi."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, fais que celui que je suis seul devant Toi vaille mieux que celui que je montre."
+    }
+  ],
+  "PLANTE": [
+    {
+      "type": "maison",
+      "fr": "Ô Allah, fais de moi un arbre aux racines fermes et aux fruits utiles, agréé par Toi."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, comme Tu fais sortir le vivant de la graine morte, ravive ce qui s'est éteint en moi."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, que ma foi grandisse lentement et sûrement, comme cette plante vers la lumière."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, Toi qui fais verdir la terre, ne laisse pas mon cœur se dessécher."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, qu'une bonne parole de moi soit comme un bon arbre : racine ferme, branches vers le ciel."
+    }
+  ],
+  "ECRAN": [
+    {
+      "type": "maison",
+      "fr": "Ô Allah, que cet écran ne devienne pas le voile entre Toi et moi."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, protège mon temps de ce qui le dévore sans rien me laisser."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, que mes yeux ne s'habituent pas à l'inutile au point d'oublier l'essentiel."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, rends-moi maître de cet outil, et non son esclave."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, à chaque fois que je m'y perds, ramène-moi doucement à Toi."
+    }
+  ],
+  "ENFANT_FAMILLE": [
+    {
+      "type": "mathur",
+      "fr": "Notre Seigneur, accorde-nous, en nos épouses et nos descendants, la joie des yeux, et fais de nous un modèle pour les pieux.",
+      "ar": "رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا",
+      "translit": "Rabbanâ hab lanâ min azwâjinâ wa dhurriyyâtinâ qurrata a'yunin wa-j'alnâ li-l-muttaqîna imâmâ",
+      "source": "Coran, al-Furqân 25:74"
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, fais de ceux que j'aime une fraîcheur pour mes yeux, et non une épreuve qui m'éloigne de Toi."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, garde les miens là où je ne peux veiller, Toi qui ne dors jamais."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, que je sois pour ma famille une miséricorde, comme Tu es miséricordieux envers moi."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, réunis-nous dans Ton obéissance ici, et dans Ton Paradis demain."
+    }
+  ],
+  "MAIN_TRAVAIL": [
+    {
+      "type": "mathur",
+      "fr": "Ô Allah, suffis-moi par ce que Tu permets, loin de ce que Tu interdis, et enrichis-moi de Ta grâce, sans nul autre que Toi.",
+      "ar": "اللَّهُمَّ اكْفِنِي بِحَلَالِكَ عَنْ حَرَامِكَ، وَأَغْنِنِي بِفَضْلِكَ عَمَّنْ سِوَاكَ",
+      "translit": "Allâhumma-kfinî bi-ḥalâlika 'an ḥarâmika, wa aghninî bi-faḍlika 'amman siwâk",
+      "source": "Tirmidhî 3563 (hasan, al-Albânî)"
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, bénis le travail de mes mains et garde-le pur de tout interdit."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, que je gagne mon pain sans Te désobéir, et que je n'en tire pas orgueil."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, fais de mon effort une adoration, et de ma fatigue un allègement de mes fautes."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, ce que ces mains ont avancé, fais qu'il me précède en bien le Jour où je Te rencontrerai."
+    }
+  ],
+  "VILLE": [
+    {
+      "type": "mathur",
+      "fr": "Nul dieu sauf Allah, Seul, sans associé ; à Lui la royauté et la louange, et Il est puissant sur toute chose.",
+      "ar": "لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ",
+      "translit": "Lâ ilâha illa-llâhu waḥdahû lâ sharîka lah, lahu-l-mulku wa lahu-l-ḥamd, wa huwa 'alâ kulli shay'in qadîr",
+      "source": "Sahîh al-Bukhârî 6403 — tahlîl (dhikr authentique)"
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, au milieu de cette foule, ne me laisse pas me sentir seul : Tu es plus proche que tous."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, que le bruit de la ville ne couvre pas en moi Ton rappel."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, parmi tant de visages pressés, garde mon cœur tourné vers Toi."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, dans l'agitation du monde, accorde à mon cœur Ta tranquillité."
+    }
+  ],
+  "TEMPS": [
+    {
+      "type": "maison",
+      "fr": "Ô Allah, ce temps qui passe est un capital — ne me laisse pas le dépenser en vain."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, chaque heure m'éloigne de ma naissance et me rapproche de Toi — prépare-moi."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, fais que je remplisse mes instants de ce qui restera, non de ce qui s'oublie."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, Toi que nul temps ne lie, ancre mon cœur dans ce qui ne finit pas."
+    },
+    {
+      "type": "maison",
+      "fr": "Ô Allah, bénis le peu de temps qu'il me reste, et pardonne celui que j'ai gâché."
+    }
+  ]
+}
