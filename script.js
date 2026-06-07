@@ -6611,6 +6611,8 @@ function _cureAnxieteWizardRender(el) {
         + (ph.fr ? '<div style="font-family:var(--serif);font-size:18px;color:rgba(240,234,214,0.7);">' + escapeHtml(ph.fr) + '</div>' : '')
         + (ph.source ? '<div style="font-family:var(--serif);font-size:14px;font-style:italic;color:rgba(231,211,151,0.55);margin-top:6px;">\u2014 ' + escapeHtml(ph.source) + '</div>' : '')
         + '</div>';
+    } else if (ph.fr) {
+      html += '<div style="text-align:center;margin-bottom:12px;"><div style="font-family:var(--serif);font-size:20px;color:rgba(240,234,214,0.85);line-height:1.6;">' + escapeHtml(ph.fr) + '</div>' + (ph.source ? '<div style="font-family:var(--serif);font-size:14px;font-style:italic;color:rgba(231,211,151,0.55);margin-top:6px;">\u2014 ' + escapeHtml(ph.source) + '</div>' : '') + '</div>';
     }
     if (bc.duree_min) html += '<div style="font-size:18px;color:rgba(231,211,151,0.72);text-align:center;margin-bottom:8px;">' + bc.duree_min + ' min</div>';
     if (bc.respi) html += '<button onclick="openBreathOverlay(&#39;' + bc.respi + '&#39;)" style="display:block;width:100%;max-width:340px;margin:4px auto 8px;padding:12px;border-radius:12px;border:1px solid rgba(200,168,75,0.40);background:rgba(200,168,75,0.14);color:#E7D397;font-family:var(--serif);font-size:17px;cursor:pointer;">Respiration guid\u00e9e</button>';

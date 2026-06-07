@@ -205,8 +205,8 @@
           "Puis dors."
         ],
         "phrase_a_repeter": {
-          "ar": "اللَّهُ يَرَى مَا فِي الصَّدْرِ",
-          "translit": "Allâhu yarâ mâ fî-s-sadr",
+          "ar": "",
+          "translit": "",
           "fr": "Allah voit ce qui est dans la poitrine"
         },
         "duree_min": 1,
@@ -541,8 +541,8 @@
           "duree_sec": 30,
           "phrase_a_repeter": {
             "fr": "Allah voit cet instant. Je n'ai pas besoin de Lui cacher ce que je ressens.",
-            "ar": "اللَّهُ يَرَى",
-            "translit": "Allâhu yarâ"
+            "ar": "",
+            "translit": ""
           },
           "instruction_finale": "Ne cherche pas à changer la sensation. Sois juste avec elle, comme on tient la main d'un enfant qui pleure.",
           "stockage": "cure_anxiete_j3_main_sec",
