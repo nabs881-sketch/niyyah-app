@@ -654,7 +654,7 @@
           "dates_auteur": "",
           "oeuvre": "Tirmidhî 1931 — hasan",
           "siecle": "Ier siècle de l'hégire",
-          "note": "L'auditeur n'est pas neutre : il est récompensé s'il défend, complice s'il jouit ou suit. Une seule phrase de défense protège ton propre visage du Feu. Grade hasan — à confirmer."
+          "note": "L'auditeur n'est pas neutre : il est récompensé s'il défend, complice s'il jouit ou suit. Une seule phrase de défense protège ton propre visage du Feu. Hasan (Tirmidhî), authentifié sahîh par al-Albânî."
         }
       },
       "introduction_avant_outils": "Hier tu as appris à tenir ta propre langue. Aujourd'hui — l'autre moitié : celle qui écoute.",
@@ -667,7 +667,7 @@
           "consigne": "Repense à un moment récent où la médisance est arrivée à toi, et où tu as ri, ajouté, ou laissé faire. Rejoue la scène. Qu'aurais-tu pu dire ? Écris TA phrase, celle que tu oseras dire la prochaine fois.",
           "amorce": "La prochaine fois, je dirai",
           "champ": {
-            "placeholder": "...",
+            "placeholder": "…je n'en pense pas de mal ; parlons d'autre chose.",
             "max_caracteres": 500,
             "stockage": "cure_medisance_j5_phrase"
           },
@@ -708,7 +708,8 @@
         "phrase_a_repeter": {
           "ar": "سُبْحَانَكَ هَٰذَا بُهْتَانٌ عَظِيمٌ",
           "translit": "Subhânaka hâdhâ buhtânun 'azîm",
-          "fr": "Gloire à Toi ! C'est une énorme calomnie"
+          "fr": "Gloire à Toi ! C'est une énorme calomnie",
+          "source": "an-Nûr 24:16"
         },
         "duree_min": 5,
         "justification": {
