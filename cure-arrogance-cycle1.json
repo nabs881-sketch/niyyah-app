@@ -491,9 +491,9 @@
           "texte": "On rapporte qu'ʿUmar ibn al-Khattâb, alors qu'il était calife, fut repris en public par une femme sur une question. Il s'arrêta et dit : « Une femme a eu raison, et ʿUmar s'est trompé. »",
           "auteur": "Au sujet d'ʿUmar ibn al-Khattâb",
           "dates_auteur": "m. 644",
-          "oeuvre": "Récit célèbre (lié à l'épisode de la dot) — chaîne débattue, à confirmer",
+          "oeuvre": "Récit d'adab largement transmis (épisode du plafonnement de la dot) — chaînes faibles, cité pour l'édification",
           "siecle": "Ier siècle de l'hégire",
-          "note": "Le deuxième homme de l'islam après le Prophète ﷺ, devant tous, donnant raison à une inconnue : la force réelle n'est pas d'avoir toujours raison, mais de ne pas avoir besoin d'avoir raison. Formulation à soumettre à l'imam ; alternative prête si rejet."
+          "note": "Le deuxième homme de l'islam après le Prophète ﷺ, devant tous, donnant raison à une inconnue : la force réelle n'est pas d'avoir toujours raison, mais de ne pas avoir besoin d'avoir raison."
         }
       },
       "introduction_avant_outils": "Quatre temps. Vis-les, ne les survole pas.",
@@ -506,7 +506,7 @@
           "consigne": "Rappelle un moment récent où quelqu'un t'a contredit ou dit que tu avais tort. Qu'est-ce qui s'est passé dans ton corps à cet instant ? Une chaleur ? La poitrine serrée ? L'envie de gagner ? Nomme-le précisément.",
           "amorce": "Quand on m'a contredit, dans mon corps j'ai senti",
           "champ": {
-            "placeholder": "...",
+            "placeholder": "…une chaleur, la poitrine serrée, l'envie d'avoir le dernier mot.",
             "max_caracteres": 600,
             "stockage": "cure_arrogance_j4_chaleur"
           },
