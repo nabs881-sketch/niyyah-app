@@ -287,7 +287,7 @@
           "consigne": "Sous ce motif, quel vrai besoin se cachait ? (Être entendu ? Appartenir ? Me sentir compté ?) Et comment le nourrir sans abîmer personne ?",
           "amorce": "Sous mon motif, le vrai besoin était",
           "champ": {
-            "placeholder": "...",
+            "placeholder": "…être entendu, et compter pour quelqu'un.",
             "max_caracteres": 500,
             "stockage": "cure_medisance_j2_besoin"
           },
@@ -309,7 +309,7 @@
         "duree_estimee_sec": 120,
         "justification": {
           "texte": "Du'â prophétique de refuge contre les défauts de caractère qui nourrissent la médisance.",
-          "source": "Tirmidhî 3591 — hasan (à confirmer)"
+          "source": "Tirmidhî 3591 — hasan (Tirmidhî, al-Albânî)"
         },
         "comment_pratiquer": "En la disant, pense au ressort que tu as identifié plus haut.",
         "stockage": "cure_medisance_j2_dhikr_done"
@@ -327,7 +327,8 @@
         "phrase_a_repeter": {
           "ar": "أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ",
           "translit": "A'ûdhu bi-llâhi mina-sh-shaytâni-r-rajîm",
-          "fr": "Je cherche refuge auprès d'Allah contre le diable banni"
+          "fr": "Je cherche refuge auprès d'Allah contre le diable banni",
+          "source": "Remède prophétique contre la colère (Bukhârî 3282)"
         },
         "duree_min": 5,
         "justification": {
