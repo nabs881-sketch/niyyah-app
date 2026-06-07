@@ -4473,15 +4473,7 @@ var _colereMode = 'shadid';
 // _itfaaFaitClick supprimé (code mort Itfâ')
 // _mutawassitPause supprimé (code mort)
 // _mutawassitDhikr supprimé (code mort)
-function _hasbIncr() {
-  window._hasbN = (window._hasbN || 0) + 1;
-  var ce = document.getElementById('_hasbCount');
-  if (ce) ce.textContent = window._hasbN + ' / 7';
-  if (window._hasbN >= 7) {
-    var b = document.getElementById('_hasbBtn');
-    if (b) { b.textContent = 'C\u2019est fait'; b.onclick = function() { _mutawassitEau(); }; b.style.background = '#a3372a'; b.style.color = '#fff'; b.style.fontWeight = '600'; b.style.border = 'none'; }
-  }
-}
+// _hasbIncr supprimé (code mort)
 // _mutawassitEau supprimé (code mort)
 
 // openItfaaEmotionSous supprimé (code mort Itfâ')
@@ -16622,7 +16614,7 @@ window._yasirSudSave          = _yasirSudSave;
 // window._itfaaFaitClick        = _itfaaFaitClick; // supprimé (code mort)
 // window._mutawassitPause supprimé (code mort)
 // window._mutawassitDhikr supprimé (code mort)
-window._hasbIncr              = _hasbIncr;
+// window._hasbIncr supprimé (code mort)
 // window._mutawassitEau supprimé (code mort)
 // window._itfaaSalat            = _itfaaSalat; // supprimé (code mort)
 // window.openItfaaEmotionSous   = openItfaaEmotionSous; // supprimé (code mort)
