@@ -4882,7 +4882,7 @@ function _getCureJourData(jour) {
   } catch(e) { return null; }
 }
 
-function _cureDevUnlock() { return safeGetItem('cure_dev_unlock') === '1'; }
+function _cureDevUnlock() { return (typeof NIYYAH_DEBUG !== 'undefined' && NIYYAH_DEBUG) && safeGetItem('cure_dev_unlock') === '1'; }
 function _cureTransition(jourFait) {
   _babImmersion = true; _showAideBtn(); var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.add('hidden-immersion');
   document.body.classList.add('in-bab-an-nafs');
@@ -12143,8 +12143,6 @@ const Capacitor = {
 function openNiyyahMenu() {
   if (document.querySelector('.niyyah-menu-backdrop')) return;
   var langLabel = V2_LANG === 'en' ? 'English' : 'Fran\u00e7ais';
-  var silVal = localStorage.getItem('niyyah_silence_day') || 'none';
-  var silLabel = silVal === 'none' ? t('silence_off') || 'D\u00e9sactiv\u00e9' : t('silence_on') || 'Actif';
   var backdrop = document.createElement('div');
   backdrop.className = 'niyyah-menu-backdrop';
   backdrop.onclick = function(e) { if (e.target === backdrop) closeNiyyahMenu(); };
@@ -12180,17 +12178,6 @@ function _niyyahSafeReset() {
       location.reload();
     }
   }, 800);
-}
-function toggleSilenceDay() {
-  var current = localStorage.getItem('niyyah_silence_day') || 'none';
-  if (current === 'none') {
-    var today = new Date().getDay();
-    safeSetItem('niyyah_silence_day', String(today));
-    showToast(t('silence_enabled') || 'Mode Silence activ\u00e9 pour aujourd\u2019hui');
-  } else {
-    safeSetItem('niyyah_silence_day', 'none');
-    showToast(t('silence_disabled') || 'Mode Silence d\u00e9sactiv\u00e9');
-  }
 }
 
 function _settingsCheminInfo() {
@@ -12300,7 +12287,7 @@ function v2OpenSettings() {
             <div data-tog style="width:36px;height:20px;border-radius:10px;background:${safeGetItem('refuge_breath_guided')!=='0'?'#C8A84A':'#444'};transition:background 0.2s;"></div>
           </div>
         </div>
-        <div style="padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.04);">
+        ${(typeof NIYYAH_DEBUG !== 'undefined' && NIYYAH_DEBUG) ? `<div style="padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.04);">
           <div style="display:flex;justify-content:space-between;align-items:center;cursor:pointer;"
             onclick="var v=safeGetItem('cure_dev_unlock')==='1'?'0':'1';safeSetItem('cure_dev_unlock',v);var d=this.querySelector('[data-cureunlock]');if(d)d.style.background=v==='1'?'#C8A84A':'#444';">
             <div>
@@ -12309,7 +12296,7 @@ function v2OpenSettings() {
             </div>
             <div data-cureunlock style="width:36px;height:20px;border-radius:10px;background:${safeGetItem('cure_dev_unlock')==='1'?'#C8A84A':'#444'};transition:background 0.2s;flex-shrink:0;"></div>
           </div>
-        </div>
+        </div>` : ''}
         <div style="padding:14px 16px;cursor:pointer;"
           onclick="if(typeof confirmReset==='function'){confirmReset();document.getElementById('v2-settings-sheet').remove();}">
           <div style="display:flex;justify-content:space-between;align-items:center;">
@@ -12347,10 +12334,6 @@ function v2OpenSettings() {
         }
       </div>
 
-      <div style="padding:14px 16px;cursor:pointer;margin-top:8px;background:rgba(255,60,60,0.04);border:1px solid rgba(255,60,60,0.15);border-radius:12px;"
-        onclick="if(confirm('${t('settings_delete_confirm1').replace(/'/g,"\\'")}')){if(confirm('${t('settings_delete_confirm2').replace(/'/g,"\\'")}')){localStorage.clear();location.reload();}}">
-        <div style="font-size:13px;color:rgba(255,80,80,0.6);text-align:center;">${t('settings_delete_all')}</div>
-      </div>
 
       <div style="margin-top:14px;background:#1a1a1a;border:1px solid rgba(255,255,255,0.05);border-radius:12px;padding:16px;">
         <div style="font-size:12px;letter-spacing:0.28em;color:rgba(212,175,55,0.65);text-transform:uppercase;font-family:'Cormorant Garamond',serif;margin-bottom:10px;text-align:center;">${T.settings_mentions}</div>
