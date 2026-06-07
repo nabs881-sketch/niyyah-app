@@ -786,12 +786,12 @@
           "consigne": "Choisis une personne dont tu as médit ou colporté les paroles. Écris ton plan : tawba sincère TOUJOURS d'abord ; puis, selon le cas — demander pardon (Avis 1) OU du'â + éloge sans informer (Avis 2).",
           "amorce": "Pour cette personne, mon plan est",
           "champ": {
-            "placeholder": "...",
+            "placeholder": "…tawba d'abord ; puis du'â pour elle et un éloge là où j'avais médit.",
             "max_caracteres": 600,
             "stockage": "cure_medisance_j6_plan"
           },
           "note_psy": "Action réparatrice : transformer la culpabilité en réparation concrète apaise la rumination (là où la honte seule tourne en boucle).",
-          "note_spi": "La tawba/kaffâra de la ghîba — deux avis (Nawawî/Ghazâlî : demander pardon si ça l'a atteint ; Ibn Taymiyya : sinon, du'â + éloge sans informer). À valider à l'imam.",
+          "note_spi": "La tawba/kaffâra de la ghîba — deux avis (Nawawî/Ghazâlî : demander pardon si ça l'a atteint ; Ibn Taymiyya : sinon, du'â + éloge sans informer).",
           "introduction": "Toujours d'abord : tawba sincère (regret + décision d'arrêter).\n\nAvis 1 (Nawawî, Ghazâlî…) : si ta médisance LUI EST PARVENUE, demande-lui pardon.\nAvis 2 (Ibn Taymiyya…) : si elle NE LUI EST PAS parvenue, ne l'informe pas (cela créerait une blessure nouvelle) — fais du'â pour lui, et dis du bien de lui là où tu en avais médit.\n\nPrincipe si tu hésites : ce qui répare vraiment le lien sans créer un mal plus grand."
         }
       ],
@@ -827,7 +827,8 @@
         "phrase_a_repeter": {
           "ar": "اللَّهُمَّ اغْفِرْ لَهُ وَعَافِهِ",
           "translit": "Allâhumma-ghfir lahu wa 'âfih",
-          "fr": "Ô Allah, pardonne-lui et accorde-lui le bien-être"
+          "fr": "Ô Allah, pardonne-lui et accorde-lui le bien-être",
+          "source": "Du'â pour le frère absent (cf. Muslim 2733)"
         },
         "duree_min": 8,
         "justification": {
