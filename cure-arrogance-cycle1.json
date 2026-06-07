@@ -652,7 +652,7 @@
           "consigne": "Écris 3 façons dont cette personne pourrait être meilleure que toi devant Allah : une sincérité cachée, une prière que personne ne voit, une patience que tu n'as pas, une bonté dont tu as été témoin.",
           "amorce": "Elle pourrait être meilleure que moi par",
           "champ": {
-            "placeholder": "...",
+            "placeholder": "…une sincérité que personne ne voit.",
             "max_caracteres": 600,
             "stockage": "cure_arrogance_j5_listeA"
           },
@@ -667,7 +667,7 @@
           "consigne": "Écris 3 luttes ou blessures qu'elle pourrait porter et que tu ne vois pas : une solitude, un parent malade, une peur, un passé lourd.",
           "amorce": "Elle porte peut-être",
           "champ": {
-            "placeholder": "...",
+            "placeholder": "…un poids que tu ne soupçonnes pas.",
             "max_caracteres": 600,
             "stockage": "cure_arrogance_j5_listeB"
           },
@@ -704,9 +704,10 @@
           "Et salue le premier la personne que tu ignores d'ordinaire."
         ],
         "phrase_a_repeter": {
-          "ar": "اللَّهُمَّ اجْعَلْنِي شَكُورًا",
-          "translit": "Allâhumma-j'alnî shakûrâ",
-          "fr": "Ô Allah, fais de moi quelqu'un de reconnaissant"
+          "ar": "اللَّهُمَّ اجْعَلْنِي فِي عَيْنِي صَغِيرًا",
+          "translit": "Allâhumma-j'alnî fî 'aynî saghîran",
+          "fr": "Ô Allah, fais que je sois petit à mes propres yeux",
+          "source": "Du'â prophétique (al-Bazzâr, d'après Buraydah) — chaîne faible"
         },
         "duree_min": 10,
         "justification": {
