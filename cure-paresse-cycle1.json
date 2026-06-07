@@ -781,7 +781,7 @@
           "consigne": "Écris-la — pas une raison polie, la vraie, celle qui te dépasse : ce que tu veux être devant Allah, ceux que tu portes (parents, enfants, oumma), l'âkhira que tu vises, l'œuvre que tu veux laisser.",
           "amorce": "Ça vaut la peine de me lever parce que",
           "champ": {
-            "placeholder": "...",
+            "placeholder": "…ceux que je porte comptent sur moi, et l'âkhira ne se rattrape pas.",
             "max_caracteres": 500,
             "stockage": "cure_paresse_j6_raison"
           },
@@ -822,7 +822,8 @@
         "phrase_a_repeter": {
           "ar": "اللَّهُمَّ إِنِّي أَسْأَلُكَ الْهُدَىٰ وَالتُّقَىٰ وَالْعَفَافَ وَالْغِنَىٰ",
           "translit": "Allâhumma innî as'aluka-l-hudâ wa-t-tuqâ wa-l-'afâfa wa-l-ghinâ",
-          "fr": "Ô Allah, je Te demande la guidée, la piété, la chasteté et la richesse [du cœur]"
+          "fr": "Ô Allah, je Te demande la guidée, la piété, la chasteté et la richesse [du cœur]",
+          "source": "Du'â des hautes demandes (Muslim 2721)"
         },
         "duree_min": 8,
         "justification": {
