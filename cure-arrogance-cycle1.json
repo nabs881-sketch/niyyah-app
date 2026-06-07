@@ -786,7 +786,7 @@
           "consigne": "Situe sur cette échelle la chose dont tu étais fier au J1 (ta forteresse). Ne cherche pas à la rendre petite. Regarde simplement : que devient-elle ?",
           "amorce": "Sur cette échelle, ma fierté",
           "champ": {
-            "placeholder": "...",
+            "placeholder": "…rétrécit, sans que j'aie eu à la combattre.",
             "max_caracteres": 500,
             "stockage": "cure_arrogance_j6_echelle"
           },
@@ -826,7 +826,8 @@
         "phrase_a_repeter": {
           "ar": "سُبْحَانَ رَبِّيَ الْعَظِيمِ",
           "translit": "Subhâna Rabbiya-l-'Adhîm",
-          "fr": "Gloire à mon Seigneur, le Magnifique"
+          "fr": "Gloire à mon Seigneur, le Magnifique",
+          "source": "Tasbîh du rukû' (Abû Dâwûd 869, Tirmidhî 262)"
         },
         "duree_min": 8,
         "justification": {
