@@ -116,7 +116,7 @@
           "stockage": "cure_paresse_garde_fou",
           "message_si_coche": {
             "titre": "Ce que tu décris n'est pas de la paresse.",
-            "texte": "C'est une souffrance réelle — et une souffrance, ça se soigne. Ce n'est ni un manque de volonté ni une faute : Ibn Hajar te l'a rappelé, on n'est tenu qu'à ce qu'on peut, et Allah est Miséricordieux pour le reste. En parler à un médecin ou un professionnel est une force, pas un échec. Cette cure peut t'accompagner en douceur — mais elle ne remplace pas ce soutien. Et si tout te semble sans issue, ou si tu penses ne plus vouloir être là : ne reste pas seul. Parle dès maintenant à quelqu'un de confiance, ou à une ligne d'écoute."
+            "texte": "C'est une souffrance réelle — et une souffrance, ça se soigne. Ce n'est ni un manque de volonté ni une faute : Ibn Hajar te l'a rappelé, on n'est tenu qu'à ce qu'on peut, et Allah est Miséricordieux pour le reste. En parler à un médecin ou un professionnel est une force, pas un échec. Cette cure peut t'accompagner en douceur — mais elle ne remplace pas ce soutien. Et si tout te semble sans issue, ou si tu penses ne plus vouloir être là : ne reste pas seul. Parle dès maintenant à quelqu'un de confiance, ou à une ligne d'écoute (en France, le 3114 — gratuit, 24h/24)."
           },
           "message_si_aucun_coche": {
             "texte": "Bien. Alors il s'agit surtout de l'élan — et l'élan, ça se rallume doucement, à partir d'un seul petit geste. Continuons."
@@ -126,7 +126,7 @@
       "bloc_4_dhikr_quantifie": {
         "type": "prescription_dhikr",
         "titre_bloc": "Le dhikr du jour",
-        "introduction": "La parole que le Prophète ﷺ disait chaque matin — lui-même cherchait refuge contre le kasal.",
+        "introduction": "La parole que le Prophète ﷺ disait souvent — lui-même cherchait refuge contre le kasal.",
         "dhikr": {
           "ar": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْعَجْزِ وَالْكَسَلِ",
           "translit": "Allâhumma innî a'ûdhu bika mina-l-'ajzi wa-l-kasal",
