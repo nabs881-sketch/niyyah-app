@@ -660,7 +660,7 @@
           "consigne": "Choisis UNE seule pratique à tenir chaque jour — si petite que tu ne peux pas échouer (2 pages, 5 min de marche, 2 rak'a de plus, une page de Qur'an, ranger une chose). Écris-la.",
           "amorce": "Ma pratique minuscule quotidienne, c'est",
           "champ": {
-            "placeholder": "...",
+            "placeholder": "…une page de Coran, chaque jour après le 'Asr.",
             "max_caracteres": 400,
             "stockage": "cure_paresse_j5_pratique"
           },
@@ -683,7 +683,7 @@
         "duree_estimee_sec": 60,
         "justification": {
           "texte": "Invocation fréquente du Prophète ﷺ pour la fermeté du cœur.",
-          "source": "Tirmidhî 2140 — hasan sahîh (à confirmer)"
+          "source": "Tirmidhî 2140 — hasan (Tirmidhî), authentifié (al-Albânî)"
         },
         "comment_pratiquer": "La constance n'est pas qu'une affaire de volonté : on demande à Allah de tenir le cœur.",
         "stockage": "cure_paresse_j5_dhikr_done"
@@ -701,7 +701,8 @@
         "phrase_a_repeter": {
           "ar": "يَا مُقَلِّبَ الْقُلُوبِ ثَبِّتْ قَلْبِي عَلَىٰ دِينِكَ",
           "translit": "Yâ Muqalliba-l-qulûb thabbit qalbî 'alâ dînik",
-          "fr": "Ô Toi qui retournes les cœurs, affermis mon cœur sur Ta religion"
+          "fr": "Ô Toi qui retournes les cœurs, affermis mon cœur sur Ta religion",
+          "source": "Du'â de fermeté (Tirmidhî 2140, hasan)"
         },
         "duree_min": 5,
         "justification": {
