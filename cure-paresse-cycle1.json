@@ -903,7 +903,7 @@
           "consigne": "1) Réécris ta lourdeur du J1 + le premier pas (J4) qui a marché + ta pratique minuscule (J5). 2) Écris-toi, à la première personne, ce que tu te diras le jour où tu sauteras — au lieu de « je suis nul, j'abandonne ». 3) Écris ta nouvelle identité : « Je ne suis pas quelqu'un de paresseux. Je suis quelqu'un qui reprend. »",
           "amorce": "Le jour où je chuterai, je me dirai",
           "champ": {
-            "placeholder": "...",
+            "placeholder": "…ce n'est pas un échec, c'est un jour ; je reprends demain, sans drame.",
             "max_caracteres": 600,
             "stockage": "cure_paresse_j7_engagement"
           },
@@ -916,16 +916,16 @@
         "titre_bloc": "Le dhikr du jour",
         "introduction": "L'aveu que la volonté seule ne suffit pas — on s'appuie sur Sa miséricorde, pas sur son nafs.",
         "dhikr": {
-          "ar": "اللَّهُمَّ رَحْمَتَكَ أَرْجُو فَلَا تَكِلْنِي إِلَىٰ نَفْسِي طَرْفَةَ عَيْنٍ، وَأَصْلِحْ لِي شَأْنِي كُلَّهُ",
-          "translit": "Allâhumma rahmataka arjû fa-lâ takilnî ilâ nafsî tarfata 'ayn, wa aslih lî sha'nî kullah",
-          "fr": "Ô Allah, c'est Ta miséricorde que j'espère : ne m'abandonne pas à moi-même le temps d'un clin d'œil, et arrange pour moi toute mon affaire."
+          "ar": "اللَّهُمَّ رَحْمَتَكَ أَرْجُو فَلَا تَكِلْنِي إِلَىٰ نَفْسِي طَرْفَةَ عَيْنٍ، وَأَصْلِحْ لِي شَأْنِي كُلَّهُ، لَا إِلَٰهَ إِلَّا أَنْتَ",
+          "translit": "Allâhumma rahmataka arjû fa-lâ takilnî ilâ nafsî tarfata 'ayn, wa aslih lî sha'nî kullah, lâ ilâha illâ ant",
+          "fr": "Ô Allah, c'est Ta miséricorde que j'espère : ne m'abandonne pas à moi-même le temps d'un clin d'œil, et arrange pour moi toute mon affaire. Nulle divinité sauf Toi."
         },
         "quantite": 1,
         "moment_recommande": "Matin et soir.",
         "duree_estimee_sec": 60,
         "justification": {
           "texte": "Du'â prophétique de celui qui sait que sa force ne suffit pas et s'en remet à la miséricorde d'Allah.",
-          "source": "Abû Dâwûd 5090 — hasan (à confirmer)"
+          "source": "Abû Dâwûd 5090 — hasan (al-Albânî)"
         },
         "comment_pratiquer": "Le contraire de la volonté solitaire : on demande à ne pas être laissé à son propre nafs.",
         "stockage": "cure_paresse_j7_dhikr_done"
@@ -943,7 +943,8 @@
         "phrase_a_repeter": {
           "ar": "بِسْمِ اللَّهِ، تَوَكَّلْتُ عَلَى اللَّهِ",
           "translit": "Bismillâh, tawakkaltu 'ala-llâh",
-          "fr": "Au nom d'Allah, je m'en remets à Allah"
+          "fr": "Au nom d'Allah, je m'en remets à Allah",
+          "source": "Du'â de la confiance en Allah (Abû Dâwûd 5095)"
         },
         "duree_min": 3,
         "justification": {
