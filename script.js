@@ -5694,9 +5694,13 @@ _outilAnxieteRenderers.ecran_sombre_avec_dhikr = function(o, c) {
   // Dark meditation screen
   html += '<div id="' + dhkId + '" style="background:#000;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:260px;margin-bottom:16px;position:relative;overflow:hidden;">';
   // Pulsing calligraphy
-  html += '<div id="' + dhkId + '_cal" style="font-family:\'Scheherazade New\',serif;font-size:30px;line-height:1.8;color:#C8A84A;direction:rtl;opacity:0.85;text-align:center;max-width:300px;padding:0 16px;animation:_dhkPulse 10s ease-in-out infinite;">' + escapeHtml(dhikr.ar || '') + '</div>';
-  html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);margin-top:8px;">' + escapeHtml(dhikr.translit || '') + '</div>';
-  html += '<div style="font-family:var(--serif);font-size:15px;color:rgba(200,168,75,0.3);margin-top:4px;">' + escapeHtml(dhikr.sens || '') + '</div>';
+  if (dhikr.ar) {
+    html += '<div id="' + dhkId + '_cal" style="font-family:\'Scheherazade New\',serif;font-size:30px;line-height:1.8;color:#C8A84A;direction:rtl;opacity:0.85;text-align:center;max-width:300px;padding:0 16px;animation:_dhkPulse 10s ease-in-out infinite;">' + escapeHtml(dhikr.ar) + '</div>';
+    html += '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,168,75,0.4);margin-top:8px;">' + escapeHtml(dhikr.translit || '') + '</div>';
+    html += '<div style="font-family:var(--serif);font-size:15px;color:rgba(200,168,75,0.3);margin-top:4px;">' + escapeHtml(dhikr.sens || '') + '</div>';
+  } else {
+    html += '<div id="' + dhkId + '_cal" style="font-family:var(--serif);font-size:24px;line-height:1.8;color:#C8A84A;opacity:0.85;text-align:center;max-width:300px;padding:0 16px;animation:_dhkPulse 10s ease-in-out infinite;">' + escapeHtml(dhikr.sens || '') + '</div>';
+  }
   html += '</div>';
   if (o.note_spi) html += '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(232,208,140,0.95);text-align:left;line-height:1.55;margin-top:16px;">' + escapeHtml(o.note_spi) + '</div>';
   // Inject keyframe + start timer

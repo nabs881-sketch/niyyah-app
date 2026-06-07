@@ -1112,12 +1112,12 @@
           "introduction": "Trois formules à dire, chacune 20 secondes, dans un écran sombre. Pas pour la peur — pour la présence.",
           "consigne": "Pose ton téléphone à plat. Garde les yeux ouverts sur l'écran. À chaque formule, sens ce qu'elle dit.",
           "dhikr": {
-            "ar": "اللَّهُ يَرَانِي ۝ اللَّهُ نَاظِرٌ إِلَيَّ ۝ اللَّهُ شَاهِدٌ عَلَيَّ",
-            "translit": "Allâhu yarânî. Allâhu nâdhirun ilayy. Allâhu shâhidun 'alayy.",
+            "ar": "",
+            "translit": "",
             "sens": "Allah me voit. Allah me regarde. Allah est témoin de moi."
           },
           "duree_sec": 60,
-          "animation": "Trois calligraphies successives, 20 secondes chacune, en fondu. Aucun chrono visible.",
+          "animation": "Trois phrases françaises successives, en fondu. Aucun chrono visible.",
           "stockage": "cure_regard_j6_trois_allah_done",
           "note_psy": "Attentional anchoring + mindfulness (MBSR — Kabat-Zinn). Ancrer l'attention sur une présence stable produit un état de conscience modifié documenté : ralentissement cardiaque, ondes cérébrales alpha augmentées, diminution du DMN (Default Mode Network — réseau de la rumination).",
           "note_spi": "Niveau de l'Ihsân selon le hadith de Gabriel : 'Tu adores Allah comme si tu Le voyais ; et si tu ne Le vois pas, Lui te voit.' (Bukhârî 50, Muslim 8). La murâqaba est la voie pratique vers l'Ihsân."
