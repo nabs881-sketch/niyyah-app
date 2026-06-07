@@ -1160,8 +1160,8 @@
         "titre_bloc": "Le dhikr du jour",
         "introduction": "Aujourd'hui, le dhikr n'est pas une demande. C'est une affirmation. Trois affirmations qui structurent toute la murâqaba.",
         "dhikr": {
-          "ar": "اللَّهُ يَرَانِي، اللَّهُ نَاظِرٌ إِلَيَّ، اللَّهُ شَاهِدٌ عَلَيَّ",
-          "translit": "Allâhu yarânî, Allâhu nâdhirun ilayy, Allâhu shâhidun 'alayy",
+          "ar": "",
+          "translit": "",
           "fr": "Allah me voit, Allah me regarde, Allah est témoin de moi."
         },
         "quantite": 33,
@@ -1171,7 +1171,7 @@
           "texte": "Cette triple formule n'est pas un hadith littéral mais elle a été enseignée par les Salaf et reprise par tous les maîtres de la murâqaba (al-Muhâsibî, al-Ghazâlî, Ibn al-Qayyim). Elle synthétise l'esprit du verset Ghâfir 40:19 et du hadith de l'Ihsân.",
           "source": "Tradition spirituelle islamique classique — al-Muhâsibî, Ghazâlî, Ibn al-Qayyim"
         },
-        "comment_pratiquer": "Dis chaque phrase distinctement, en pause entre les trois. Le rythme respiratoire est : 'Allâhu yarânî' (inspiration), pause, 'Allâhu nâdhirun ilayy' (expiration), pause, 'Allâhu shâhidun 'alayy' (souffle profond). Trois respirations pour trois affirmations.",
+        "comment_pratiquer": "Dis chaque phrase distinctement, en pause entre les trois. Le rythme respiratoire est : 'Allah me voit' (inspiration), pause, 'Allah me regarde' (expiration), pause, 'Allah est témoin de moi' (souffle profond). Trois respirations pour trois affirmations.",
         "stockage": "cure_regard_j6_dhikr_done"
       },
       "bloc_5_pratique_corporelle": {
