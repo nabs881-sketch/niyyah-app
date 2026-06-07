@@ -906,7 +906,7 @@
           "consigne": "Écris-le, à la première personne, comme une décision : ce que tu choisis d'être à la place de « celui qui est au-dessus ».",
           "amorce": "Ma valeur n'est pas d'être au-dessus. Elle est",
           "champ": {
-            "placeholder": "...",
+            "placeholder": "…dans ce que je sers, pas dans ce que je domine.",
             "max_caracteres": 400,
             "stockage": "cure_arrogance_j7_identite"
           },
@@ -921,7 +921,7 @@
           "consigne": "Réécris ta forteresse du J1, et choisis UNE seule habitude humble, tenable, à garder après la cure (saluer le premier ; demander « où je me trompe ? » ; servir ; dire mâ shâ'a-llâh sur chaque réussite). Et ce soir, avant de dormir : fais une bonne action que personne ne saura jamais.",
           "amorce": "Ma forteresse était… Mon habitude à garder est…",
           "champ": {
-            "placeholder": "...",
+            "placeholder": "…saluer le premier, chaque jour.",
             "max_caracteres": 500,
             "stockage": "cure_arrogance_j7_engagement"
           },
@@ -961,7 +961,8 @@
         "phrase_a_repeter": {
           "ar": "وَأَنَا عَبْدُكَ",
           "translit": "Wa anâ 'abduk",
-          "fr": "Et je suis Ton serviteur"
+          "fr": "Et je suis Ton serviteur",
+          "source": "Extrait du Sayyid al-istighfâr (Bukhârî 6306)"
         },
         "duree_min": 8,
         "justification": {
