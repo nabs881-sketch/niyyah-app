@@ -581,12 +581,13 @@
           "L'envie de parler d'un absent → un souffle complet par le nez.",
           "Pendant le souffle : c'est vrai ? utile ? le dirais-je devant lui ?",
           "Le souffle est le temps que tu t'offres pour choisir.",
-          "Si le mot ne passe pas : Khayran aw samtâ."
+          "Si le mot ne passe pas : du bien, ou le silence."
         ],
         "phrase_a_repeter": {
-          "ar": "خَيْرًا أَوْ صَمْتًا",
-          "translit": "Khayran aw samtâ",
-          "fr": "Du bien, ou le silence"
+          "ar": "فَلْيَقُلْ خَيْرًا أَوْ لِيَصْمُتْ",
+          "translit": "Fal-yaqul khayran aw li-yasmut",
+          "fr": "Qu'il dise du bien, ou qu'il se taise",
+          "source": "Bukhârî 6018 ; Muslim 47"
         },
         "duree_min": 3,
         "justification": {
