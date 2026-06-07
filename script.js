@@ -4366,31 +4366,7 @@ function openBabPorte(id, step) {
 
 // _renderThermometre supprimé (code mort)
 
-// ── LE SOUFFLE (composant réutilisable) ──
-function afficheLeSouffle(parentEl, couleur) {
-  var c = couleur || '#B33A3A';
-  var sMode = safeGetItem('souffle_mode') || 'silence';
-  var sTextes = {silence:{i:'Inspire',e:'Expire'},subhanallah:{i:'Sub\u1e25\u00e2na',e:'All\u00e2h'},istighfar:{i:'Astaghfiru',e:'All\u00e2h'},lahawla:{i:'L\u00e2 \u1e25awla',e:'ill\u00e2 bill\u00e2h'}};
-  var sT = sTextes[sMode] || sTextes.silence;
-  var wrap = document.createElement('div');
-  wrap.style.cssText = 'display:flex;align-items:center;justify-content:center;margin:0 auto 20px;';
-  var circle = document.createElement('div');
-  circle.style.cssText = 'width:140px;height:140px;border-radius:50%;background:radial-gradient(ellipse at center,' + c + '22 0%,transparent 70%);border:2px solid ' + c + '44;display:flex;align-items:center;justify-content:center;animation:_breathe 10s ease-in-out 3;';
-  var txt = document.createElement('div');
-  txt.style.cssText = 'font-family:var(--serif);font-size:18px;color:' + c + ';text-align:center;';
-  circle.appendChild(txt);
-  wrap.appendChild(circle);
-  parentEl.appendChild(wrap);
-  var step = 0;
-  function upd() {
-    if (!txt.parentNode) return;
-    txt.textContent = (step % 2 === 0) ? sT.i : sT.e;
-    step++;
-    if (step < 6) setTimeout(upd, 5000);
-    else { txt.style.opacity = '0.4'; }
-  }
-  upd();
-}
+// afficheLeSouffle supprimé (code mort)
 
 function _showAideBtn() { /* no-op — aide humaine retirée */ }
 function _hideAideBtn() { /* no-op */ }
@@ -4489,105 +4465,14 @@ var _colereMode = 'shadid';
 
 // openPorteMutawassit supprimé (code mort Itfâ')
 
-function _mutawassitExit() {
-  // Afficher message AVANT babCompletPorte (qui appelle renderBabAnNafs)
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  var c = '#B33A3A';
-  el.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;">'
-    + '<div id="_mutEx1" style="font-family:var(--serif);font-size:18px;color:#E5E0DC;line-height:1.8;opacity:0;transition:opacity 0.8s ease;">La vague redescend.</div>'
-    + '<div id="_mutEx2" style="font-family:var(--serif);font-size:16px;color:rgba(200,168,75,0.7);margin-top:12px;opacity:0;transition:opacity 0.8s ease;">Allah voit.</div>'
-    + '<div id="_mutSud" style="margin-top:28px;opacity:0;transition:opacity 0.8s ease;max-width:340px;width:100%;">'
-    + '<div style="font-family:var(--serif);font-size:16px;color:#C8A84A;margin-bottom:8px;">\u00c0 quel point c\u2019est intense maintenant\u00a0?</div>'
-    + '<div id="_mutSudVal" style="font-family:var(--serif);font-size:32px;color:#C8A84A;margin-bottom:12px;">5</div>'
-    + '<input type="range" min="0" max="10" step="1" value="5" oninput="document.getElementById(\'_mutSudVal\').textContent=this.value" style="width:100%;max-width:300px;accent-color:#C8A84A;margin-bottom:16px;" />'
-    + '<button onclick="_mutSudSave()" style="width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">Valider</button>'
-    + '</div>'
-    + '<div id="_mutExMore" style="display:none;margin-top:24px;max-width:320px;width:100%;">'
-    + '<div style="font-size:13px;font-style:italic;color:rgba(200,168,75,0.45);margin-bottom:14px;">Tu veux creuser un peu plus\u00a0?</div>'
-    + '<button onclick="openItfaaRefuge()" style="width:100%;padding:14px;border-radius:12px;border:1px solid ' + c + '33;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;margin-bottom:10px;">Faire un Refuge \u00d77</button>'
-    + '<button onclick="openMuhasabaIntro()" style="width:100%;padding:14px;border-radius:12px;border:1px solid ' + c + '33;background:none;color:' + c + ';font-family:var(--serif);font-size:14px;cursor:pointer;margin-bottom:10px;">Faire ma Mu\u1e25\u00e2saba</button>'
-    + '<button onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');v2GoSanctuaire()" style="width:100%;padding:14px;border-radius:12px;border:1px solid rgba(200,168,75,0.2);background:none;color:rgba(200,168,75,0.5);font-family:var(--serif);font-size:14px;cursor:pointer;">Sortir maintenant</button>'
-    + '</div></div>';
-  requestAnimationFrame(function() { var e = document.getElementById('_mutEx1'); if (e) e.style.opacity = '1'; });
-  setTimeout(function() { var e = document.getElementById('_mutEx2'); if (e) e.style.opacity = '1'; }, 500);
-  setTimeout(function() { var e = document.getElementById('_mutSud'); if (e) e.style.opacity = '1'; }, 1500);
-  // Incrémenter compteurs manuellement (sans renderBabAnNafs)
-  try {
-    var data = JSON.parse(safeGetItem('niyyah_bab_an_nafs') || '{}');
-    if (!data.colere) data.colere = { count: 0 };
-    data.colere.count = (data.colere.count || 0) + 1;
-    data.colere.lastDate = todayKey();
-    safeSetItem('niyyah_bab_an_nafs', JSON.stringify(data));
-    var completions = JSON.parse(safeGetItem('colere_completions') || '[]');
-    completions.push(Date.now());
-    completions = completions.filter(function(t) { return t > Date.now() - 30 * 86400000; });
-    safeSetItem('colere_completions', JSON.stringify(completions));
-  } catch(e) {}
-}
-function _mutSudSave() {
-  var v = parseInt((document.querySelector('#_mutSud input[type=range]') || {}).value || '5', 10);
-  var avant = 5; try { var a = JSON.parse(safeGetItem('itfaa_sud_avant') || '{}'); avant = a.valeur || 5; } catch(e) {}
-  var delta = avant - v;
-  safeSetItem('mutawassit_sud_apres', JSON.stringify({valeur:v, ts:Date.now(), delta:delta}));
-  var sud = document.getElementById('_mutSud'); if (sud) sud.style.display = 'none';
-  var msg = '';
-  if (delta >= 3) msg = 'Le calme revient. All\u00e2h voit.';
-  else if (v >= 5) msg = 'Si \u00e7a reste, tu peux creuser plus.';
-  if (msg) {
-    var m = document.createElement('div');
-    m.style.cssText = 'font-family:var(--serif);font-size:16px;font-style:italic;color:#C8A84A;text-align:center;max-width:360px;margin:20px auto;line-height:1.6;';
-    m.textContent = msg;
-    var more = document.getElementById('_mutExMore');
-    if (more) more.parentNode.insertBefore(m, more);
-    setTimeout(function() { m.remove(); if (more) more.style.display = ''; }, 5000);
-  } else {
-    var more = document.getElementById('_mutExMore'); if (more) more.style.display = '';
-  }
-}
+// _mutawassitExit supprimé (code mort)
+// _mutSudSave supprimé (code mort)
 
 // _itfaaChoixChemin supprimé (code mort Itfâ')
 
 // _itfaaFaitClick supprimé (code mort Itfâ')
-function _mutawassitPause() {
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) { _mutawassitEau(); return; }
-  var c = '#B33A3A';
-  el.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;">'
-    + '<div style="font-family:var(--serif);font-size:16px;color:#E5E0DC;margin-bottom:8px;">Reste l\u00e0 30\u00a0secondes.</div>'
-    + '<div style="font-size:14px;font-style:italic;color:rgba(255,255,255,0.4);margin-bottom:24px;">Laisse ton corps comprendre que \u00e7a change.</div>'
-    + '<div id="_mutPauseCircle" style="width:100px;height:100px;border-radius:50%;border:2px solid ' + c + '44;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;animation:_zonePulse 3s ease-in-out infinite;">'
-    + '<div id="_mutPauseCount" style="font-family:var(--serif);font-size:28px;color:' + c + ';">30</div>'
-    + '</div>'
-    + '<button id="_mutPauseBtn" style="display:none;width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;" onclick="_mutawassitDhikr()">Continuer</button>'
-    + '</div>';
-  var _sec = 30;
-  var _iv = setInterval(function() {
-    _sec--;
-    var ce = document.getElementById('_mutPauseCount');
-    if (ce) ce.textContent = _sec;
-    if (_sec <= 0) {
-      clearInterval(_iv);
-      var b = document.getElementById('_mutPauseBtn'); if (b) b.style.display = 'block';
-      if (ce) ce.textContent = '\u2713';
-    }
-  }, 1000);
-}
-function _mutawassitDhikr() {
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) { _mutawassitEau(); return; }
-  var c = '#B33A3A';
-  el.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;">'
-    + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:20px;">\u1e24asbiya-Ll\u00e2hu \u2014 \u00d77</div>'
-    + '<div style="font-family:\'Scheherazade New\',serif;font-size:28px;color:#C8A84A;direction:rtl;line-height:1.8;max-width:480px;margin:0 auto 12px;">\u062d\u064e\u0633\u0652\u0628\u0650\u064a\u064e \u0627\u0644\u0644\u0651\u064e\u0647\u064f \u0644\u064e\u0627 \u0625\u0650\u0644\u064e\u0670\u0647\u064e \u0625\u0650\u0644\u0651\u064e\u0627 \u0647\u064f\u0648\u064e \u0639\u064e\u0644\u064e\u064a\u0652\u0647\u0650 \u062a\u064e\u0648\u064e\u0643\u0651\u064e\u0644\u0652\u062a\u064f \u0648\u064e\u0647\u064f\u0648\u064e \u0631\u064e\u0628\u0651\u064f \u0627\u0644\u0652\u0639\u064e\u0631\u0652\u0634\u0650 \u0627\u0644\u0652\u0639\u064e\u0638\u0650\u064a\u0645\u0650</div>'
-    + '<div style="font-size:16px;font-style:italic;color:rgba(200,168,75,0.6);line-height:1.6;max-width:420px;margin:0 auto 10px;">\u1e24asbiya-Ll\u00e2hu l\u00e2 il\u00e2ha ill\u00e2 huwa, \u2019alayhi tawakkaltu wa huwa rabbu-l-\u2019arshi-l-\u2019a\u1e93\u012bm</div>'
-    + '<div class="itfaa-body" style="font-size:14px;line-height:1.6;max-width:400px;margin:0 auto 12px;">All\u00e2h me suffit, il n\u2019est de divinit\u00e9 que Lui. \u00c0 Lui je m\u2019en remets, et Il est le Seigneur du Tr\u00f4ne immense.</div>'
-    + '<div style="font-size:12px;font-style:italic;color:rgba(200,168,75,0.45);line-height:1.5;max-width:400px;margin:0 auto 20px;">Coran 9:129. Le Proph\u00e8te \uFDFA a dit\u00a0: \u00ab\u00a0Celui qui le dit sept fois, All\u00e2h lui suffira.\u00a0\u00bb \u2014 Ab\u00fb D\u00e2w\u00fbd 5081, sahih.</div>'
-    + '<div id="_hasbCount" style="font-family:var(--serif);font-size:20px;color:#C8A84A;margin-bottom:12px;">0 / 7</div>'
-    + '<button id="_hasbBtn" onclick="_hasbIncr()" style="width:100%;max-width:340px;padding:14px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:none;color:rgba(200,168,75,0.7);font-size:14px;font-family:var(--serif);cursor:pointer;">+1</button>'
-    + '</div>';
-  window._hasbN = 0;
-}
+// _mutawassitPause supprimé (code mort)
+// _mutawassitDhikr supprimé (code mort)
 function _hasbIncr() {
   window._hasbN = (window._hasbN || 0) + 1;
   var ce = document.getElementById('_hasbCount');
@@ -4597,37 +4482,10 @@ function _hasbIncr() {
     if (b) { b.textContent = 'C\u2019est fait'; b.onclick = function() { _mutawassitEau(); }; b.style.background = '#a3372a'; b.style.color = '#fff'; b.style.fontWeight = '600'; b.style.border = 'none'; }
   }
 }
-function _mutawassitEau() {
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) { _mutawassitExit(); return; }
-  var c = '#B33A3A';
-  el.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;">'
-    + '<div style="font-family:var(--serif);font-size:18px;color:#C8A84A;margin-bottom:16px;">Maintenant, prends un verre d\u2019eau.</div>'
-    + '<div class="itfaa-body" style="font-size:14px;line-height:1.6;max-width:360px;margin:0 auto 16px;">Bois lentement, en 3\u00a0gorg\u00e9es. Dis Bismillah avant. Dis Al-hamdulill\u00e2h apr\u00e8s.</div>'
-    + '<div style="font-size:12px;font-style:italic;color:rgba(200,168,75,0.45);margin-bottom:28px;">Sunna proph\u00e9tique \u2014 Tirmidh\u00ee 1885</div>'
-    + '<button id="_eauBtn" disabled style="width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;opacity:0.3;">20</button>'
-    + '</div>';
-  var _es = 20;
-  var _ei = setInterval(function() {
-    _es--;
-    var b = document.getElementById('_eauBtn');
-    if (!b) { clearInterval(_ei); return; }
-    if (_es > 0) { b.textContent = _es; }
-    else { clearInterval(_ei); b.textContent = 'J\u2019ai bu'; b.disabled = false; b.style.opacity = '1'; b.onclick = function() { _mutawassitExit(); }; }
-  }, 1000);
-}
+// _mutawassitEau supprimé (code mort)
 
 // openItfaaEmotionSous supprimé (code mort Itfâ')
-
-function _logEmotionSous(emotion) {
-  try {
-    var log = safeParseJSON('colere_emotion_sous_log', []);
-    log.push({date:Date.now(),emotion:emotion});
-    if (log.length > 200) log = log.slice(-200);
-    safeSetItem('colere_emotion_sous_log', JSON.stringify(log));
-  } catch(e) {}
-  openItfaaRefuge();
-}
+// _logEmotionSous supprimé (code mort)
 
 // openPorteShadid supprimé (code mort Itfâ')
 
@@ -4674,122 +4532,10 @@ function _logSomatic(sensation) {
 // document.addEventListener('visibilitychange', function() { if (!document.hidden) _checkSalatReturn(); }); // supprimé
 
 // openItfaaRefuge supprimé (code mort)
-function _refugeRun(target) {
-  var n = 0, circle = document.getElementById('_refugeCircle'), arEl = document.getElementById('_refugeAr'),
-      countEl = document.getElementById('_refugeCount'), phaseEl = document.getElementById('_refugePhase'),
-      endEl = document.getElementById('_refugeEnd'), cycleEl = document.getElementById('_refugeCycle');
-  if (!circle || !arEl) return;
-  window._refugeStop = false;
-  window._lastRefugeTarget = target;
-  if (endEl) endEl.style.display = 'none';
-  if (cycleEl) cycleEl.style.display = '';
-  var guided = safeGetItem('refuge_breath_guided') !== '0';
-  var _cycleLen = guided ? 19 : 6;
-  var _totalSec = target * _cycleLen;
-  var _startTs = Date.now();
-  var _timerEl = document.getElementById('_refugeTimer');
-  function _fmtTime(s) { var m = Math.floor(s/60); var r = s % 60; return m > 0 ? m + ' min ' + (r < 10 ? '0' : '') + r + ' s' : r + ' s'; }
-  if (_timerEl) _timerEl.textContent = _fmtTime(_totalSec) + ' environ';
-  var _timerIv = setInterval(function() {
-    if (window._refugeStop) { clearInterval(_timerIv); return; }
-    var elapsed = Math.floor((Date.now() - _startTs) / 1000);
-    var rem = Math.max(0, _totalSec - elapsed);
-    if (_timerEl) _timerEl.textContent = _fmtTime(rem) + ' restantes';
-    if (rem <= 0) clearInterval(_timerIv);
-  }, 1000);
-  function done() { clearInterval(_timerIv);
-    if (cycleEl) cycleEl.style.display = 'none';
-    var eb = document.getElementById('_refugeExtBtn');
-    if (eb) eb.textContent = 'Continuer \u00d7' + (target <= 3 ? '7' : '33');
-    var sudEl = document.getElementById('_refugeSudApres');
-    if (sudEl) { sudEl.style.display = ''; } else { if (endEl) endEl.style.display = ''; }
-  }
-  function tick() {
-    if (window._refugeStop) return;
-    n++;
-    if (countEl) countEl.textContent = n + ' / ' + target;
-    arEl.style.opacity = '1';
-    if (guided) {
-      circle.style.transform = 'scale(1.25)';
-      if (phaseEl) phaseEl.textContent = 'Inspire';
-      setTimeout(function() {
-        if (window._refugeStop) return;
-        circle.style.transform = 'scale(1.25)';
-        if (phaseEl) phaseEl.innerHTML = 'Retiens<div style="font-size:11px;opacity:0.6;margin-top:2px;" id="_retCount">7</div>';
-        var _rc = 6; var _ri = setInterval(function() { if (window._refugeStop) { clearInterval(_ri); return; } var e = document.getElementById('_retCount'); if (e) e.textContent = _rc; _rc--; if (_rc < 0) clearInterval(_ri); }, 1000);
-        setTimeout(function() { clearInterval(_ri);
-          if (window._refugeStop) return;
-          circle.style.transform = 'scale(1)'; if (phaseEl) phaseEl.textContent = 'Expire';
-          arEl.style.opacity = '0.3';
-          setTimeout(function() {
-            if (window._refugeStop) return;
-            if (n < target) tick(); else done();
-          }, 8000);
-        }, 7000);
-      }, 4000);
-    } else {
-      circle.style.transform = 'scale(1.15)';
-      if (phaseEl) phaseEl.textContent = 'A\u2019\u00fbdhu bill\u00e2h';
-      setTimeout(function() {
-        if (window._refugeStop) return;
-        circle.style.transform = 'scale(1)'; arEl.style.opacity = '0.3';
-        setTimeout(function() {
-          if (window._refugeStop) return;
-          if (n < target) tick(); else done();
-        }, 2000);
-      }, 4000);
-    }
-  }
-  tick();
-}
-function _refugeExtend(t) {
-  window._refugeStop = true;
-  var endEl = document.getElementById('_refugeEnd');
-  var cycleEl = document.getElementById('_refugeCycle');
-  var circle = document.getElementById('_refugeCircle');
-  var arEl = document.getElementById('_refugeAr');
-  var countEl = document.getElementById('_refugeCount');
-  var phaseEl = document.getElementById('_refugePhase');
-  if (endEl) endEl.style.display = 'none';
-  if (cycleEl) cycleEl.style.display = '';
-  if (circle) circle.style.transform = 'scale(1)';
-  if (arEl) arEl.style.opacity = '0';
-  if (countEl) countEl.textContent = '1 / ' + t;
-  if (phaseEl) phaseEl.textContent = '';
-  setTimeout(function() { _refugeRun(t); }, 200);
-}
-function _refugeSujud() {
-  var el = document.getElementById('babAnNafsContent');
-  if (!el) return;
-  el.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;background:#000;">'
-    + '<div style="font-family:var(--serif);font-size:18px;color:#E5E0DC;line-height:1.8;max-width:380px;margin-bottom:20px;">Va chercher un endroit propre. Pose ton front au sol. Reste 1\u00a0minute.</div>'
-    + '<div style="font-size:14px;font-style:italic;color:rgba(200,168,75,0.6);line-height:1.6;max-width:380px;margin-bottom:6px;">Le Proph\u00e8te \uFDFA a dit\u00a0: \u00ab\u00a0Le moment o\u00f9 le serviteur est le plus proche de son Seigneur, c\u2019est en suj\u00fbd.\u00a0\u00bb</div>'
-    + '<div style="font-size:12px;color:rgba(200,168,75,0.4);margin-bottom:32px;">\u2014 Bukh\u00e2r\u00ee 1083</div>'
-    + '<button onclick="openItfaaRefuge()" style="width:100%;max-width:340px;padding:14px;border-radius:12px;border:none;background:#a3372a;color:#fff;font-size:14px;font-weight:600;font-family:var(--serif);cursor:pointer;">C\u2019est fait</button>'
-    + '</div>';
-}
-
-// _refugeSkip supprimé (code mort Itfâ')
-function _refugeSudSave() {
-  var v = parseInt((document.querySelector('#_refugeSudApres input[type=range]') || {}).value || '5', 10);
-  var avant = 5; try { var a = JSON.parse(safeGetItem('itfaa_sud_avant') || '{}'); avant = a.valeur || 5; } catch(e) {}
-  var delta = avant - v;
-  safeSetItem('itfaa_sud_apres', JSON.stringify({valeur:v, ts:Date.now(), zone:window._colereZone||'', delta:delta}));
-  var sud = document.getElementById('_refugeSudApres'); if (sud) sud.style.display = 'none';
-  var msg = '';
-  if (delta >= 3) msg = 'Le feu retombe. All\u00e2h voit ton effort.';
-  else if (v >= 6) msg = 'Le feu reste. C\u2019est ok. Tu peux continuer \u00d733 ou aller plus loin.';
-  if (msg) {
-    var m = document.createElement('div');
-    m.style.cssText = 'font-family:var(--serif);font-size:16px;font-style:italic;color:#C8A84A;text-align:center;max-width:400px;margin:0 auto 20px;line-height:1.6;';
-    m.textContent = msg;
-    var end = document.getElementById('_refugeEnd');
-    if (end) end.parentNode.insertBefore(m, end);
-    setTimeout(function() { m.remove(); if (end) end.style.display = ''; }, 5000);
-  } else {
-    var end = document.getElementById('_refugeEnd'); if (end) end.style.display = '';
-  }
-}
+// _refugeRun supprimé (code mort)
+// _refugeExtend supprimé (code mort)
+// _refugeSujud supprimé (code mort)
+// _refugeSudSave supprimé (code mort)
 
 
 
@@ -12267,26 +12013,6 @@ function v2OpenSettings() {
             </select>
           </div>
         </div>
-        <div style="padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.04);">
-          <div style="display:flex;justify-content:space-between;align-items:center;">
-            <div style="font-size:14px;color:rgba(240,234,214,0.7);">🌬️ Dhikr du souffle</div>
-            <select onchange="safeSetItem('souffle_mode',this.value)" style="background:#222;color:#D4AF37;border:1px solid rgba(212,175,55,0.3);border-radius:8px;padding:6px 10px;font-size:12px;font-family:var(--sans);outline:none;">
-              <option value="silence" ${(safeGetItem('souffle_mode')||'silence')==='silence'?'selected':''}>Silence</option>
-              <option value="subhanallah" ${safeGetItem('souffle_mode')==='subhanallah'?'selected':''}>Subḥân Allâh</option>
-              <option value="istighfar" ${safeGetItem('souffle_mode')==='istighfar'?'selected':''}>Astaghfiru-llâh</option>
-              <option value="lahawla" ${safeGetItem('souffle_mode')==='lahawla'?'selected':''}>Lâ ḥawla wa lâ quwwata illâ billâh</option>
-            </select>
-          </div>
-        </div>
-        <div style="padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.04);">
-          <div style="display:flex;justify-content:space-between;align-items:center;cursor:pointer;" onclick="var v=safeGetItem('refuge_breath_guided')!=='0'?'0':'1';safeSetItem('refuge_breath_guided',v);var d=this.querySelector('[data-tog]');if(d)d.style.background=v==='1'?'#C8A84A':'#444';">
-            <div>
-              <div style="font-size:14px;color:rgba(240,234,214,0.7);">Refuge\u00a0: respiration guid\u00e9e (4-7-8)</div>
-              <div style="font-size:12px;color:rgba(255,255,255,0.35);margin-top:2px;">D\u00e9coche pour r\u00e9p\u00e9ter \u00e0 ton rythme.</div>
-            </div>
-            <div data-tog style="width:36px;height:20px;border-radius:10px;background:${safeGetItem('refuge_breath_guided')!=='0'?'#C8A84A':'#444'};transition:background 0.2s;"></div>
-          </div>
-        </div>
         ${(typeof NIYYAH_DEBUG !== 'undefined' && NIYYAH_DEBUG) ? `<div style="padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.04);">
           <div style="display:flex;justify-content:space-between;align-items:center;cursor:pointer;"
             onclick="var v=safeGetItem('cure_dev_unlock')==='1'?'0':'1';safeSetItem('cure_dev_unlock',v);var d=this.querySelector('[data-cureunlock]');if(d)d.style.background=v==='1'?'#C8A84A':'#444';">
@@ -16844,7 +16570,7 @@ window.openColereChoix        = openColereChoix;
 // window._renderThermometre     = _renderThermometre; // supprimé
 window._showExitModal          = _showExitModal;
 // window._logColereZone         = _logColereZone; // supprimé
-window.afficheLeSouffle       = afficheLeSouffle;
+// window.afficheLeSouffle supprimé (code mort)
 window._showAideBtn           = _showAideBtn;
 window._hideAideBtn           = _hideAideBtn;
 window.openColereSeuilTherapeute = openColereSeuilTherapeute;
@@ -16889,29 +16615,29 @@ window._yasirSudMesure        = _yasirSudMesure;
 window._yasirSudSave          = _yasirSudSave;
 // window._yasirExit             = _yasirExit; // supprimé
 // window.openColereMutawassit supprimé (code mort)
-window._mutawassitExit        = _mutawassitExit;
-window._mutSudSave            = _mutSudSave;
+// window._mutawassitExit supprimé (code mort)
+// window._mutSudSave supprimé (code mort)
 // window._itfaaUrgence          = _itfaaUrgence; // supprimé
 // window._itfaaChoixChemin      = _itfaaChoixChemin; // supprimé (code mort)
 // window._itfaaFaitClick        = _itfaaFaitClick; // supprimé (code mort)
-window._mutawassitPause       = _mutawassitPause;
-window._mutawassitDhikr       = _mutawassitDhikr;
+// window._mutawassitPause supprimé (code mort)
+// window._mutawassitDhikr supprimé (code mort)
 window._hasbIncr              = _hasbIncr;
-window._mutawassitEau         = _mutawassitEau;
+// window._mutawassitEau supprimé (code mort)
 // window._itfaaSalat            = _itfaaSalat; // supprimé (code mort)
 // window.openItfaaEmotionSous   = openItfaaEmotionSous; // supprimé (code mort)
-window._logEmotionSous        = _logEmotionSous;
+// window._logEmotionSous supprimé (code mort)
 // window.openColereShadid supprimé (code mort)
 // window.openItfaaSomatic       = openItfaaSomatic; // supprimé
 window._logSomatic            = _logSomatic;
 // window.openItfaaStep1         = openItfaaStep1; // supprimé (code mort)
 // window.openItfaaAction        = openItfaaAction; // supprimé
 // window.openItfaaRefuge        = openItfaaRefuge; // supprimé
-window._refugeRun             = _refugeRun;
-window._refugeExtend          = _refugeExtend;
-window._refugeSujud           = _refugeSujud;
+// window._refugeRun supprimé (code mort)
+// window._refugeExtend supprimé (code mort)
+// window._refugeSujud supprimé (code mort)
 // window._refugeSkip            = _refugeSkip; // supprimé (code mort)
-window._refugeSudSave         = _refugeSudSave;
+// window._refugeSudSave supprimé (code mort)
 // window._mcIntro               = _mcIntro; // supprimé
 // window._muhasabaClassiqueQ1   = _muhasabaClassiqueQ1; // supprimé
 // window._muhasabaClassiqueQ2   = _muhasabaClassiqueQ2; // supprimé
