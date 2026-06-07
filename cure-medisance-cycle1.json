@@ -909,7 +909,7 @@
           "consigne": "1) Réécris ta forteresse du J1 + la pratique qui l'a fait reculer. 2) Choisis UNE parole-fruit à planter chaque jour (un dhikr, une du'â pour qui tu critiquais, un éloge sincère en face, la kaffârat al-majlis). 3) Écris, à la première personne, ce que tu veux que ta langue plante désormais.",
           "amorce": "Ma forteresse était… Désormais, ma langue plantera",
           "champ": {
-            "placeholder": "...",
+            "placeholder": "…un éloge sincère par jour, et une du'â pour qui je critiquais.",
             "max_caracteres": 600,
             "stockage": "cure_medisance_j7_engagement"
           },
@@ -949,7 +949,8 @@
         "phrase_a_repeter": {
           "ar": "سُبْحَانَ اللَّهِ وَبِحَمْدِهِ، سُبْحَانَ اللَّهِ الْعَظِيمِ",
           "translit": "Subhâna-llâhi wa bi-hamdih, subhâna-llâhi-l-'Azîm",
-          "fr": "Gloire et louange à Allah ; gloire à Allah l'Immense"
+          "fr": "Gloire et louange à Allah ; gloire à Allah l'Immense",
+          "source": "Bukhârî 6406 ; Muslim 2694"
         },
         "duree_min": 8,
         "justification": {
