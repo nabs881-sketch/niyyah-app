@@ -9782,7 +9782,7 @@ const ONBOARD_SLIDES = [
       + '<button class="onboard-btn" onclick="onboardNext()" style="margin-top:16px;">'+t('onboard_next')+'</button>'
       + '</div>';
   },
-  // Slide 4 — Ton chemin
+  // Slide 3 — Ton chemin (4 dimensions + prénom)
   () => '<div class="onboard-anim">'
     + '<div style="font-family:var(--serif);font-style:italic;font-size:17px;color:#E5E0DC;text-align:center;margin-bottom:6px;line-height:1.5;">La pratique, la contemplation, l’âme, la fidélité.</div>'
     + '<div style="text-align:center;color:rgba(200,168,75,0.4);font-size:11px;letter-spacing:3px;margin-bottom:24px;">— ✦ —</div>'
@@ -9894,12 +9894,6 @@ function onboardRender() {
       var dot = document.getElementById('dot' + i);
       if (dot) dot.className = 'onboard-dot' + (i === slideIdx ? ' active' : '');
     });
-    if (slideIdx === 4) {
-      setTimeout(function() {
-        var el = document.getElementById('onboardCityInput');
-        if (el) el.focus();
-      }, 400);
-    }
   });
 }
 function onboardNext() {
@@ -9910,40 +9904,8 @@ function onboardNext() {
     onboardFinish();
   }
 }
-function onboardSaveCity() {
-  const el = document.getElementById('onboardCityInput');
-  if (el && el.value.trim()) {
-    _prayerCity = el.value.trim();
-    safeSetItem('niyyah_city', _prayerCity);
-    _showCityInput = false;
-  }
-  onboardFinish();
-}
-function onboardRequestGeoloc() {
-  var btn = document.getElementById('onboardGeoBtn');
-  if (btn) { btn.textContent = t('geo_loading'); btn.disabled = true; }
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(
-      function(pos) {
-        var coords = { lat: pos.coords.latitude, lng: pos.coords.longitude };
-        safeSetItem('niyyah_coords', JSON.stringify(coords));
-        if (btn) { btn.textContent = t('geo_found'); btn.style.background = 'var(--green)'; }
-        setTimeout(onboardFinish, 800);
-      },
-      function(err) {
-        // Refusé → afficher input ville
-        if (btn) { btn.textContent = t('geo_locate'); btn.disabled = false; }
-        var fallback = document.getElementById('onboardCityFallback');
-        if (fallback) fallback.style.display = 'block';
-      },
-      { enableHighAccuracy: false, timeout: 15000, maximumAge: 300000 }
-    );
-  } else {
-    var fallback = document.getElementById('onboardCityFallback');
-    if (fallback) fallback.style.display = 'block';
-    if (btn) { btn.style.display = 'none'; }
-  }
-}
+// onboardSaveCity supprimé (code mort — étape ville retirée)
+// onboardRequestGeoloc supprimé (code mort — étape ville retirée)
 function onboardFinish() {
   document.body.classList.remove('onboarding-active');
   safeSetItem('niyyah_onboard', '1');
