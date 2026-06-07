@@ -149,7 +149,7 @@
         "duree_estimee_sec": 60,
         "justification": {
           "texte": "Le Prophète ﷺ l'a enseignée comme expiation de ce qui se dit dans une assise (futilités, médisance échappée).",
-          "source": "Tirmidhî 3433 — sahîh (à confirmer)"
+          "source": "Tirmidhî 3433 — sahîh (al-Albânî)"
         },
         "comment_pratiquer": "À la fin d'une discussion, posément. C'est le « nettoyage » de l'assise.",
         "stockage": "cure_medisance_j1_dhikr_done"
@@ -168,7 +168,8 @@
         "phrase_a_repeter": {
           "ar": "سُبْحَانَ اللَّهِ وَبِحَمْدِهِ",
           "translit": "Subhâna-llâhi wa bi-hamdih",
-          "fr": "Gloire et louange à Allah"
+          "fr": "Gloire et louange à Allah",
+          "source": "Dhikr authentique (Bukhârî 6405)"
         },
         "duree_min": 60,
         "justification": {
