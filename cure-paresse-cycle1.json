@@ -421,7 +421,7 @@
           "consigne": "À partir de demain, écris une intention minuscule et précise pour ton matin — pas un programme.",
           "amorce": "Demain matin, mon temps servira à",
           "champ": {
-            "placeholder": "...",
+            "placeholder": "…dix minutes de Coran, pas tout le mushaf.",
             "max_caracteres": 400,
             "stockage": "cure_paresse_j3_intention"
           },
@@ -461,7 +461,8 @@
         "phrase_a_repeter": {
           "ar": "أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ",
           "translit": "Asbahnâ wa asbaha-l-mulku li-llâh",
-          "fr": "Nous voici au matin, et le royaume appartient à Allah"
+          "fr": "Nous voici au matin, et le royaume appartient à Allah",
+          "source": "Ouverture des adhkâr du matin (Muslim 2723)"
         },
         "duree_min": 8,
         "justification": {
