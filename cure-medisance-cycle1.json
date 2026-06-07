@@ -408,7 +408,7 @@
           "consigne": "Repense aux dernières fois où ta langue a pris quelqu'un d'absent. À qui, sans le savoir, as-tu peut-être déjà offert tes bonnes actions ?",
           "amorce": "Sans le savoir, j'ai peut-être donné mes bonnes actions à",
           "champ": {
-            "placeholder": "...",
+            "placeholder": "…celui dont j'ai ri, celle que j'ai jugée en son absence.",
             "max_caracteres": 600,
             "stockage": "cure_medisance_j3_compte"
           },
@@ -431,7 +431,7 @@
         "duree_estimee_sec": 300,
         "justification": {
           "texte": "Le Prophète ﷺ a dit que quiconque dit cet istighfâr est pardonné, même s'il a fui le combat — un istighfâr d'une grande portée.",
-          "source": "Abû Dâwûd 1517 ; Tirmidhî 3577 — hasan (à confirmer)"
+          "source": "Abû Dâwûd 1517 (sahîh, al-Albânî) ; Tirmidhî 3577 (hasan)"
         },
         "comment_pratiquer": "Pas en mode robot. Avec le regret, et la confiance qu'Il accueille.",
         "stockage": "cure_medisance_j3_dhikr_done"
