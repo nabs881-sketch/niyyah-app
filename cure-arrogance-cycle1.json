@@ -369,9 +369,9 @@
           "texte": "Fils d'Adam, tu n'es que des jours : chaque jour qui passe emporte une part de toi.",
           "auteur": "Al-Hasan al-Basrî",
           "dates_auteur": "642-728",
-          "oeuvre": "Rapporté dans les recueils de zuhd (formulation à confirmer)",
+          "oeuvre": "Rapporté par Ahmad (Az-Zuhd) et Abû Nu'aym (Hilyat al-awliyâ')",
           "siecle": "Ier-IIe siècle de l'hégire",
-          "note": "Le grand prédicateur de Basra ramène l'homme à sa vérité de passage. Tu n'es pas un monument, tu es un passage. À soumettre à l'imam pour la formulation."
+          "note": "Le grand prédicateur de Basra ramène l'homme à sa vérité de passage. Tu n'es pas un monument, tu es un passage."
         }
       },
       "introduction_avant_outils": "Ghazâlî propose de se regarder en trois temps. Prends-les lentement, les yeux fermés si tu peux.",
@@ -384,7 +384,7 @@
           "consigne": "Imagine le jour où d'autres laveront ton corps. Ce jour-là, combien pèseront tes titres, ton savoir affiché, le nombre de gens qui te suivaient ? Et surtout : qu'aurais-tu voulu emporter à la place ?",
           "amorce": "Ce jour-là, j'aurais voulu emporter",
           "champ": {
-            "placeholder": "...",
+            "placeholder": "…une bonté que personne n'a vue, un pardon, du temps donné — pas un titre.",
             "max_caracteres": 600,
             "stockage": "cure_arrogance_j3_emporter"
           },
