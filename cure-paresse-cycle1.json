@@ -271,7 +271,7 @@
           "consigne": "Nomme une chose précise que tu repousses, et l'émotion qui monte quand tu penses à la faire.",
           "amorce": "La chose que j'évite, et ce que je ressens en y pensant",
           "champ": {
-            "placeholder": "...",
+            "placeholder": "…ex. ce mail à écrire ; ça me serre la poitrine.",
             "max_caracteres": 500,
             "stockage": "cure_paresse_j2_evitee"
           },
@@ -311,7 +311,8 @@
         "phrase_a_repeter": {
           "ar": "لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ",
           "translit": "Lâ hawla wa lâ quwwata illâ bi-llâh",
-          "fr": "Il n'est de force ni de puissance que par Allah"
+          "fr": "Il n'est de force ni de puissance que par Allah",
+          "source": "Trésor du Paradis (Bukhârî 6384)"
         },
         "duree_min": 3,
         "justification": {
