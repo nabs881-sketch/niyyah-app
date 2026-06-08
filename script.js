@@ -10030,6 +10030,10 @@ function onboardFinish() {
     screen.style.opacity = '0';
     setTimeout(() => screen.classList.add('hidden'), 350);
   }
+  if (!isPremium() && safeGetItem('niyyah_plus_intro') !== '1') {
+    safeSetItem('niyyah_plus_intro', '1');
+    setTimeout(function(){ openFreemium(); }, 900);
+  }
   // Charger horaires — géoloc silencieuse si pas encore faite
   var _onboardCoords = localStorage.getItem('niyyah_coords');
   if (_onboardCoords) {
