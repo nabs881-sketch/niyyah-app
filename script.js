@@ -11936,6 +11936,14 @@ function v2OpenSettings() {
         <div style="font-size:13px; color:#E5E0DC; opacity:0.7; line-height:1.5;">${t('settings_replay_sub')}</div>
       </div>
 
+      <!-- TEMP-REGARDE début -->
+      <div style="background:#1a1a1a;border:1px solid rgba(255,255,255,0.05);border-radius:12px;overflow:hidden;margin-bottom:14px;">
+        <div style="padding:14px 16px;cursor:pointer;" onclick="document.getElementById('v2-settings-sheet').remove();regardeOpen();">
+          <div style="font-size:14px;color:rgba(240,234,214,0.7);">\uD83D\uDD0D Lancer Regarde (test)</div>
+        </div>
+      </div>
+      <!-- TEMP-REGARDE fin -->
+
       <!-- AUTRES RÉGLAGES -->
       <div style="background:#1a1a1a;border:1px solid rgba(255,255,255,0.05);border-radius:12px;overflow:hidden;margin-bottom:14px;">
         <div style="padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.04);cursor:pointer;"
