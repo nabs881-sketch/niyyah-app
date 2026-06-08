@@ -16340,6 +16340,7 @@ function scannerShowResult(data) {
       nuancesEl.appendChild(customWrap);
     }
     _scannerResult.suggestions = _suggestions;
+    var _sv = document.getElementById('scanner-video'); if (_sv) { try { _sv.pause(); } catch(e) {} }
     result.classList.add('active');
     if (navigator.vibrate) navigator.vibrate([25, 50, 40]);
     return;
@@ -16383,6 +16384,7 @@ function scannerShowResult(data) {
     nuancesEl.appendChild(div);
   });
 
+  var _sv = document.getElementById('scanner-video'); if (_sv) { try { _sv.pause(); } catch(e) {} }
   result.classList.add('active');
   if (navigator.vibrate) navigator.vibrate([25, 50, 40]);
 }
@@ -16489,6 +16491,7 @@ function shareSavaisTu(event) {
 }
 /* ── Rescanner ── */
 function scannerRetry() {
+  var _sv = document.getElementById('scanner-video'); if (_sv) { try { _sv.play(); } catch(e) {} }
   document.getElementById('scanner-result').classList.remove('active');
   document.getElementById('scanner-capture-btn').classList.remove('hidden');
   const thinkingRetry = document.getElementById('scanner-thinking');
