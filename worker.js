@@ -375,7 +375,14 @@ FORMAT DE SORTIE (JSON strict) :
 {"category": "SOI|AUTRE|OBJET|MONDE|ENFANT|SACRE|INDETERMINE", "suggestions": ["Je ...", "Je ...", "Je ..."]}`;
 }
 
-const REGARDE_CLASSIFIER_PROMPT = `Tu es un classificateur d'images pour une application spirituelle musulmane. Classe l'image dans UNE des 17 catégories : CIEL, EAU, ANIMAL, NATURE, NOURRITURE, HABITAT, VISAGE, INDETERMINE, LUMIERE_OMBRE, MONTAGNE, MORT, OBJET_PERSONNEL, ROUTE, TEXTE, TISSU, VEHICULE, INAPPROPRIE.
+const REGARDE_CLASSIFIER_PROMPT = `Tu es un classificateur d'images pour une application spirituelle musulmane. Classe l'image dans UNE des 24 catégories : CIEL, EAU, ANIMAL, NATURE, NOURRITURE, HABITAT, VISAGE, INDETERMINE, LUMIERE_OMBRE, MONTAGNE, MORT, OBJET_PERSONNEL, ROUTE, TEXTE, TISSU, VEHICULE, MIROIR, PLANTE, ECRAN, ENFANT_FAMILLE, MAIN_TRAVAIL, VILLE, TEMPS, INAPPROPRIE.
+MIROIR = reflet de soi, selfie dans un miroir, surface réfléchissante (≠ VISAGE = visage direct).
+PLANTE = plante/arbre/fleur/feuillage en gros plan (≠ NATURE = paysage large).
+ECRAN = téléphone, ordinateur, télévision, écran allumé.
+ENFANT_FAMILLE = enfant, scène de famille, proches.
+MAIN_TRAVAIL = main(s), outil, geste ou poste de travail.
+VILLE = rue urbaine, foule, immeubles, marché (≠ ROUTE, ≠ HABITAT intérieur).
+TEMPS = horloge, montre, calendrier.
 INAPPROPRIE = contenu strictement contraire à la pudeur islamique :
 - Alcool (étiquette clairement identifiable)
 - Occultisme (pentagramme, tarot, zodiaque)
@@ -585,7 +592,7 @@ async function handleRegarde(request, env) {
       const classifText = classifResp.content?.[0]?.text || '';
       const classifJson = extractJSON(classifText);
       if (classifJson && classifJson.category) {
-        const validCats = ['CIEL', 'EAU', 'ANIMAL', 'NATURE', 'NOURRITURE', 'HABITAT', 'VISAGE', 'INDETERMINE', 'LUMIERE_OMBRE', 'MONTAGNE', 'MORT', 'OBJET_PERSONNEL', 'ROUTE', 'TEXTE', 'TISSU', 'VEHICULE', 'INAPPROPRIE'];
+        const validCats = ['CIEL', 'EAU', 'ANIMAL', 'NATURE', 'NOURRITURE', 'HABITAT', 'VISAGE', 'INDETERMINE', 'LUMIERE_OMBRE', 'MONTAGNE', 'MORT', 'OBJET_PERSONNEL', 'ROUTE', 'TEXTE', 'TISSU', 'VEHICULE', 'MIROIR', 'PLANTE', 'ECRAN', 'ENFANT_FAMILLE', 'MAIN_TRAVAIL', 'VILLE', 'TEMPS', 'INAPPROPRIE'];
         if (validCats.includes(classifJson.category)) {
           category = classifJson.category;
           confidence = typeof classifJson.confidence === 'number' ? classifJson.confidence : 0.8;
