@@ -9884,9 +9884,9 @@ function cavRenderSeuil(el, stage, enterFn){
   var snd = cavSoundEnabled();
   function paint(){
     stage.innerHTML =
-      '<div style="font-family:\'Cormorant Garamond\',serif;font-style:italic;font-weight:300;font-size:22px;color:rgba(232,213,160,0.7);letter-spacing:0.04em">Touchez pour entrer</div>'
-      + '<div style="margin-top:18px;font-size:20px;color:rgba(200,168,75,0.55)">\u2726</div>'
-      + '<div style="margin-top:32px"><span id="cavMute" style="display:inline-flex;align-items:center;gap:7px;font-family:var(--sans);font-size:13px;color:rgba(200,168,75,0.6);border:0.5px solid rgba(200,168,75,0.3);border-radius:20px;padding:7px 16px;cursor:pointer">'
+      '<div style="margin-bottom:24px"><span class="onboard-logo-halo" style="display:inline-block;border-radius:50%"><img src="./imageslogo.webp" alt="Niyyah" style="width:128px;height:auto;display:block;border-radius:50%"></span></div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-style:italic;font-weight:300;font-size:22px;color:rgba(232,213,160,0.72);letter-spacing:0.04em">Touchez pour entrer</div>'
+      + '<div style="margin-top:30px"><span id="cavMute" style="display:inline-flex;align-items:center;gap:7px;font-family:var(--sans);font-size:13px;color:rgba(200,168,75,0.6);border:0.5px solid rgba(200,168,75,0.3);border-radius:20px;padding:7px 16px;cursor:pointer">'
       + (snd?'\u266A Son activ\u00e9':'\u2715 Son coup\u00e9') + '</span></div>';
     stage.style.opacity='1';
     var mute=document.getElementById('cavMute');
