@@ -10284,7 +10284,7 @@ const V2_I18N = {
     // Premium
     premium_unlocked: '✅ Accès complet débloqué — Barakallahu feek !',
     // Camera
-    camera_denied: 'Acc\u00e8s cam\u00e9ra refus\u00e9 \u2014 autorise l\u2019acc\u00e8s dans les r\u00e9glages', btn_retry: 'R\u00e9essayer', btn_close: 'Fermer', audio_offline: 'Audio non disponible hors-ligne', regarde_limit: 'Limite Regarde atteinte (5/jour) \u2014 reviens demain', regarde_hint: 'Pointe vers ce que tu regardes', regarde_tab_verset: 'Verset', regarde_tab_duaa: 'Du\u2019\u00e2', regarde_tab_murmure: 'Murmure', regarde_label_inv: 'INVOCATION', regarde_label_quran: 'CORAN', regarde_unavailable: 'Indisponible',
+    camera_denied: 'Acc\u00e8s cam\u00e9ra refus\u00e9 \u2014 autorise l\u2019acc\u00e8s dans les r\u00e9glages', btn_retry: 'R\u00e9essayer', btn_close: 'Fermer', audio_offline: 'Audio non disponible hors-ligne', regarde_limit: 'Limite Regarde atteinte (5/jour) \u2014 reviens demain', regarde_hint: 'Pointe vers ce que tu regardes', regarde_tab_verset: 'Verset', regarde_tab_duaa: 'Du\u2019\u00e2', regarde_tab_murmure: 'Murmure', regarde_label_inv: 'INVOCATION', regarde_label_quran: 'CORAN', regarde_unavailable: 'Indisponible', regarde_open_now: 'Regarder maintenant',
     // Compass
     compass_denied: 'Autorise la boussole dans les réglages',
     disclaimer: 'Cette application n\'émet pas d\'avis religieux. Pour toute question de fiqh, consultez un savant qualifié.',
@@ -10524,7 +10524,7 @@ const V2_I18N = {
     share_downloaded: 'Image downloaded — share it 🌿', share_copied: 'Link copied!',
     share_card: 'NIYYAH CARD ✦', share_intention: 'Share this intention', share_btn: 'SHARE ✦', share_close: 'CLOSE',
     premium_unlocked: '✅ Full access unlocked — Barakallahu feek!',
-    camera_denied: 'Camera access denied \u2014 allow in settings', btn_retry: 'Retry', btn_close: 'Close', audio_offline: 'Audio not available offline', regarde_limit: 'Regarde limit reached (5/day) \u2014 come back tomorrow', regarde_hint: 'Point at what you are looking at', regarde_tab_verset: 'Verse', regarde_tab_duaa: 'Du\u2019a', regarde_tab_murmure: 'Whisper', regarde_label_inv: 'INVOCATION', regarde_label_quran: 'QURAN', regarde_unavailable: 'Unavailable',
+    camera_denied: 'Camera access denied \u2014 allow in settings', btn_retry: 'Retry', btn_close: 'Close', audio_offline: 'Audio not available offline', regarde_limit: 'Regarde limit reached (5/day) \u2014 come back tomorrow', regarde_hint: 'Point at what you are looking at', regarde_tab_verset: 'Verse', regarde_tab_duaa: 'Du\u2019a', regarde_tab_murmure: 'Whisper', regarde_label_inv: 'INVOCATION', regarde_label_quran: 'QURAN', regarde_unavailable: 'Unavailable', regarde_open_now: 'Look now',
     compass_denied: 'Allow compass in settings',
     disclaimer: 'This app does not issue religious rulings. For any fiqh question, consult a qualified scholar.',
     settings_mentions: 'Legal Notice',
@@ -11936,13 +11936,6 @@ function v2OpenSettings() {
         <div style="font-size:13px; color:#E5E0DC; opacity:0.7; line-height:1.5;">${t('settings_replay_sub')}</div>
       </div>
 
-      <!-- TEMP-REGARDE début -->
-      <div style="background:#1a1a1a;border:1px solid rgba(255,255,255,0.05);border-radius:12px;overflow:hidden;margin-bottom:14px;">
-        <div style="padding:14px 16px;cursor:pointer;" onclick="document.getElementById('v2-settings-sheet').remove();regardeOpen();">
-          <div style="font-size:14px;color:rgba(240,234,214,0.7);">\uD83D\uDD0D Lancer Regarde (test)</div>
-        </div>
-      </div>
-      <!-- TEMP-REGARDE fin -->
 
       <!-- AUTRES RÉGLAGES -->
       <div style="background:#1a1a1a;border:1px solid rgba(255,255,255,0.05);border-radius:12px;overflow:hidden;margin-bottom:14px;">
@@ -15731,7 +15724,13 @@ function regardeCapture() {
   canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
   var dataUrl = canvas.toDataURL('image/jpeg', 0.8);
   window._regardeImageData = dataUrl;
-  var base64 = dataUrl.replace(/^data:image\/jpeg;base64,/, '');
+  // Image réduite pour le classificateur (512px, 0.7) — économie tokens
+  var _cc = document.createElement('canvas');
+  var _cs = Math.min(1, 512 / Math.max(canvas.width, canvas.height));
+  _cc.width = Math.round(canvas.width * _cs);
+  _cc.height = Math.round(canvas.height * _cs);
+  _cc.getContext('2d').drawImage(canvas, 0, 0, _cc.width, _cc.height);
+  var base64 = _cc.toDataURL('image/jpeg', 0.7).replace(/^data:image\/jpeg;base64,/, '');
 
   // Stop caméra
   if (_regardeStream) { _regardeStream.getTracks().forEach(function(t) { t.stop(); }); _regardeStream = null; }
@@ -15930,10 +15929,11 @@ function openRegardeJournal() {
   var list = document.getElementById('regarde-journal-list');
   if (!overlay || !list) return;
   var entries = getRegardeHistory();
+  var _regardOpenBtn = '<button onclick="regardeOpen()" style="display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:14px;border-radius:12px;border:1px solid rgba(212,175,55,0.25);background:rgba(200,168,75,0.05);cursor:pointer;margin-bottom:14px;font-family:var(--serif);font-size:15px;color:#D4AF37;">\uD83D\uDC41 ' + (t('regarde_open_now') || 'Regarder maintenant') + '</button>';
   if (entries.length === 0) {
-    list.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">\u0646\u064E\u0638\u064E\u0631</div><div class="empty-state-title">'+t('journal_regarde_title')+'</div><div class="empty-state-text">'+t('journal_regarde_text')+'</div><div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.45);margin-top:12px;line-height:1.5;">Les Regards viennent \u00e0 toi quand Allah veut.<br>Reviens lire ceux qui te sont d\u00e9j\u00e0 donn\u00e9s.</div></div>';
+    list.innerHTML = _regardOpenBtn + '<div class="empty-state-premium"><div class="empty-state-glyph">\u0646\u064E\u0638\u064E\u0631</div><div class="empty-state-title">'+t('journal_regarde_title')+'</div><div class="empty-state-text">'+t('journal_regarde_text')+'</div><div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.45);margin-top:12px;line-height:1.5;">Les Regards viennent \u00e0 toi quand Allah veut.<br>Reviens lire ceux qui te sont d\u00e9j\u00e0 donn\u00e9s.</div></div>';
   } else {
-    var html = '';
+    var html = _regardOpenBtn;
     entries.forEach(function(e) {
       var d = new Date(e.date);
       var dateStr = d.toLocaleDateString(_dateLocale(), { day:'numeric', month:'short' }) + ' · ' + d.toLocaleTimeString(_dateLocale(), { hour:'2-digit', minute:'2-digit' });
