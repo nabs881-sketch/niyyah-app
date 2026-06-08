@@ -9937,7 +9937,7 @@ function renderCaverne() {
     glow.style.height = g.h + 'px';
     glow.style.top = g.y + '%';
     glow.style.opacity = g.o;
-    glow.style.background = 'radial-gradient(ellipse,rgba(' + g.c + ',0.55) 0%,rgba(' + g.c + ',0.13) 42%,transparent 72%)';
+    glow.style.background = 'radial-gradient(ellipse,rgba(255,244,210,0.26) 0%,rgba(' + g.c + ',0.5) 26%,rgba(' + g.c + ',0.12) 54%,transparent 78%)';
   }
   function twinkle(elx) {
     elx.style.textShadow = '0 0 22px rgba(232,210,150,0.9)';
