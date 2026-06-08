@@ -8440,6 +8440,9 @@ button[style*="gold-v2"] {
 #caverne-stage .cav-s{font-weight:500;font-size:30px;color:#C8A84A;font-variant:small-caps;letter-spacing:0.12em;}
 #caverne-stage .cav-t{color:#C8A84A;text-shadow:0 0 14px rgba(200,168,75,0.45);transition:text-shadow .5s ease;}
 #caverne-stage .word{opacity:0;transition:opacity .55s ease;}
+#onb-dust{position:fixed;inset:0;z-index:0;pointer-events:none;background-image:radial-gradient(circle,rgba(200,168,75,0.06) 1px,transparent 1px);background-size:42px 42px;animation:dustFloat 22s linear infinite;opacity:0.5;}
+#onb-glow{position:fixed;top:44%;left:50%;transform:translate(-50%,-50%);z-index:0;pointer-events:none;width:340px;height:260px;opacity:0.20;background:radial-gradient(ellipse,rgba(200,168,75,0.40) 0%,rgba(200,168,75,0.10) 45%,transparent 72%);animation:cavernePulse 5s ease-in-out infinite;}
+#onboardScreen .onboard-dots,#onboardScreen #onboardContent{position:relative;z-index:2;}
 ._zoneFlash { position:fixed;top:0;left:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:3em;color:#B33A3A;background:rgba(0,0,0,0.6);z-index:99999;animation:_zoneFade 1.3s ease forwards;pointer-events:none; }
 @keyframes _zoneFade { 0%{opacity:0} 15%{opacity:1} 77%{opacity:1} 100%{opacity:0} }
 .itfaa-body { color:#E5E0DC; }
