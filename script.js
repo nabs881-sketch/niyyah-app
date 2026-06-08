@@ -9048,6 +9048,10 @@ function closeFreemium(e) {
   document.getElementById('freemiumOverlay').classList.remove('show');
   document.body.style.overflow = '';
 }
+function freemiumShowCode(){ var r=document.getElementById('freemium-code-row'); if(r) r.style.display='flex'; var i=document.getElementById('freemium-code-input'); if(i) i.focus(); }
+function freemiumBuy(){ freemiumShowCode(); showToast('Disponible au lancement \u2014 pendant la beta, entre ton code.'); }
+function freemiumActivate(){ var i=document.getElementById('freemium-code-input'); if(i && unlockPremium(i.value)){ alert('Niyyah+ activ\u00e9.'); location.reload(); } else { alert('Code invalide'); } }
+window.freemiumShowCode=freemiumShowCode; window.freemiumBuy=freemiumBuy; window.freemiumActivate=freemiumActivate;
 /* ══ STATUT PREMIUM ══ */
 function isPremium() {
   return localStorage.getItem('niyyah_premium') === 'true' || localStorage.getItem('niyyah_pro') === '1';
@@ -10130,11 +10134,11 @@ const V2_I18N = {
     journal_search: 'Rechercher...', modal_close: 'Fermer', btn_later: 'Plus tard',
     tawba_ameen: 'Ameen', defi_change: 'Changer de défi', notif_accept: 'Oui, je veux ces rappels',
     level_word: 'Niveau', level_accomplished: 'Niveau accompli', level_next: 'Niveau suivant \u2192', level_stay: 'Rester sur ce niveau',
-    freemium_title: 'Niyyah+', freemium_sub: 'Scanner illimit\u00e9 + fonctionnalit\u00e9s exclusives.',
-    freemium_buy: 'Obtenir Niyyah+ \u2014 4,99\u20ac', freemium_code_placeholder: 'CODE D\'ACC\u00c8S', freemium_free: 'Continuer en gratuit',
-    freemium_f1: 'Scanner de Niyyah illimit\u00e9 (vs 1/semaine)', freemium_f2: 'Fonctionnalit\u00e9s exclusives futures',
-    freemium_f3: 'Soutenir le d\u00e9veloppement de Niyyah', freemium_f4: '',
-    freemium_f5: '', freemium_f6: '',
+    freemium_title: 'Niyyah+', freemium_sub: 'Va plus loin. Et ne perds jamais ton cheminement.',
+    freemium_buy: 'D\u00e9bloquer Niyyah+ \u00e0 vie', freemium_code_placeholder: 'CODE D\'ACC\u00c8S', freemium_free: 'Plus tard',
+    freemium_f1: 'Une intention sacr\u00e9e, chaque jour', freemium_f2: 'Le verset juste, plus souvent',
+    freemium_f3: 'Une lettre, rien que pour toi', freemium_f4: 'Ne perds jamais ton cheminement',
+    freemium_f5: 'Fais vivre Niyyah', freemium_f6: '',
     bilan_title: 'Bilan du soir', bilan_question: 'Comment était ton cœur aujourd\'hui ?', bilan_subtitle: 'Allah regarde la sincérité, pas le score.',
     bilan_distraction: 'Distraction', bilan_effort: 'Effort', bilan_sincerite: 'Sincérité',
     bilan_distraction_sub: 'غفلة — le cœur absent', bilan_effort_sub: 'مجاهدة — le combat intérieur', bilan_sincerite_sub: 'إخلاص — l\'état recherché',
@@ -11863,6 +11867,7 @@ function openNiyyahMenu() {
   backdrop.onclick = function(e) { if (e.target === backdrop) closeNiyyahMenu(); };
   backdrop.innerHTML = '<div class="niyyah-menu-panel">'
     + '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;"><div style="font-family:var(--serif);font-size:20px;color:#C8A84A;">Niyyah</div><button onclick="closeNiyyahMenu()" aria-label="Fermer le menu" style="background:none;border:none;color:var(--t3);font-size:22px;cursor:pointer;min-width:44px;min-height:44px;">\u2715</button></div>'
+    + '<div onclick="closeNiyyahMenu();openFreemium();" style="display:flex;align-items:center;gap:10px;padding:14px 16px;margin-bottom:14px;border-radius:14px;border:1px solid rgba(200,168,75,0.35);background:linear-gradient(180deg,rgba(200,168,74,0.12),rgba(138,106,31,0.05));cursor:pointer;"><span style="font-family:\'Cormorant Garamond\',var(--serif);font-weight:600;font-size:16px;color:#EBD79A;">Niyyah+ \u2726</span></div>'
     /* Langue masquée pour beta FR — réactiver quand EN/AR prêts
     + '<div class="niyyah-menu-section">Langue</div>'
     + '<div class="niyyah-menu-item" onclick="v2SetLanguage(\'fr\');closeNiyyahMenu()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>' + (V2_LANG === 'fr' ? '<strong>Fran\u00e7ais</strong>' : 'Fran\u00e7ais') + '</div>'
@@ -15742,7 +15747,7 @@ function regardeCapture() {
     var _today = todayKey();
     _rq = _rq.filter(function(d){ return d === _today; });
     var _rLimit = (typeof isPremium === 'function' && isPremium()) ? 3 : 1;
-    if (_rq.length >= _rLimit) { showToast(t('regarde_limit')); return; }
+    if (_rq.length >= _rLimit) { openFreemium(); return; }
     _rq.push(_today);
     safeSetItem('niyyah_regarde_quota', JSON.stringify(_rq));
   }
@@ -16499,7 +16504,7 @@ async function scannerCapture() {
   var _windowMs = _prem ? 86400000 : 7 * 86400000;
   var _cutoff = new Date(Date.now() - _windowMs).toISOString();
   _sq = _sq.filter(function(ts){ return ts > _cutoff; });
-  if (!NIYYAH_DEBUG && _sq.length >= 3) { showToast(t('scanner_limit')); return; }
+  if (!NIYYAH_DEBUG && _sq.length >= 3) { openFreemium(); return; }
   _sq.push(new Date().toISOString());
   safeSetItem('niyyah_scanner_quota', JSON.stringify(_sq));
 
