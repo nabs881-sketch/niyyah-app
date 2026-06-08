@@ -10284,7 +10284,7 @@ const V2_I18N = {
     // Premium
     premium_unlocked: '✅ Accès complet débloqué — Barakallahu feek !',
     // Camera
-    camera_denied: 'Acc\u00e8s cam\u00e9ra refus\u00e9 \u2014 autorise l\u2019acc\u00e8s dans les r\u00e9glages', btn_retry: 'R\u00e9essayer', btn_close: 'Fermer', audio_offline: 'Audio non disponible hors-ligne', regarde_limit: 'Limite Regarde atteinte (5/jour) \u2014 reviens demain', regarde_hint: 'Pointe vers ce que tu regardes', regarde_tab_verset: 'Verset', regarde_tab_duaa: 'Du\u2019\u00e2', regarde_tab_murmure: 'Murmure', regarde_label_inv: 'INVOCATION', regarde_label_quran: 'CORAN', regarde_unavailable: 'Indisponible', regarde_open_now: 'Regarder maintenant',
+    camera_denied: 'Acc\u00e8s cam\u00e9ra refus\u00e9 \u2014 autorise l\u2019acc\u00e8s dans les r\u00e9glages', btn_retry: 'R\u00e9essayer', btn_close: 'Fermer', audio_offline: 'Audio non disponible hors-ligne', regarde_limit: 'Limite Regarde atteinte (5/jour) \u2014 reviens demain', regarde_hint: 'Pointe vers ce que tu regardes', regarde_tab_verset: 'Verset', regarde_tab_duaa: 'Du\u2019\u00e2', regarde_tab_murmure: 'Murmure', regarde_label_inv: 'INVOCATION', regarde_label_quran: 'CORAN', regarde_unavailable: 'Indisponible', regarde_open_now: 'Regarder maintenant', regarde_breathe: 'Respire',
     // Compass
     compass_denied: 'Autorise la boussole dans les réglages',
     disclaimer: 'Cette application n\'émet pas d\'avis religieux. Pour toute question de fiqh, consultez un savant qualifié.',
@@ -10524,7 +10524,7 @@ const V2_I18N = {
     share_downloaded: 'Image downloaded — share it 🌿', share_copied: 'Link copied!',
     share_card: 'NIYYAH CARD ✦', share_intention: 'Share this intention', share_btn: 'SHARE ✦', share_close: 'CLOSE',
     premium_unlocked: '✅ Full access unlocked — Barakallahu feek!',
-    camera_denied: 'Camera access denied \u2014 allow in settings', btn_retry: 'Retry', btn_close: 'Close', audio_offline: 'Audio not available offline', regarde_limit: 'Regarde limit reached (5/day) \u2014 come back tomorrow', regarde_hint: 'Point at what you are looking at', regarde_tab_verset: 'Verse', regarde_tab_duaa: 'Du\u2019a', regarde_tab_murmure: 'Whisper', regarde_label_inv: 'INVOCATION', regarde_label_quran: 'QURAN', regarde_unavailable: 'Unavailable', regarde_open_now: 'Look now',
+    camera_denied: 'Camera access denied \u2014 allow in settings', btn_retry: 'Retry', btn_close: 'Close', audio_offline: 'Audio not available offline', regarde_limit: 'Regarde limit reached (5/day) \u2014 come back tomorrow', regarde_hint: 'Point at what you are looking at', regarde_tab_verset: 'Verse', regarde_tab_duaa: 'Du\u2019a', regarde_tab_murmure: 'Whisper', regarde_label_inv: 'INVOCATION', regarde_label_quran: 'QURAN', regarde_unavailable: 'Unavailable', regarde_open_now: 'Look now', regarde_breathe: 'Breathe',
     compass_denied: 'Allow compass in settings',
     disclaimer: 'This app does not issue religious rulings. For any fiqh question, consult a qualified scholar.',
     settings_mentions: 'Legal Notice',
@@ -15669,6 +15669,19 @@ function _showShareModal(canvas) {
 }
 window._regardePremiumShare = _regardePremiumShare;
 
+function _regardeBreath(content, cb){
+  content.style.transition='opacity 0.4s ease'; content.style.opacity='0';
+  setTimeout(function(){
+    content.innerHTML='<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:20px;">'
+      +'<div style="width:46px;height:46px;border-radius:50%;background:radial-gradient(circle,#D4AF37,#B8940A);animation:regardePulse 2.4s ease-in-out infinite;"></div>'
+      +'<div style="font-family:var(--serif);font-size:14px;font-style:italic;color:rgba(200,168,75,0.5);">'+t('regarde_breathe')+'</div></div>';
+    content.style.opacity='1';
+    setTimeout(function(){
+      content.style.opacity='0';
+      setTimeout(function(){ if(cb) cb(); content.style.opacity='1'; }, 350);
+    }, 1800);
+  }, 350);
+}
 function _regardeShowVerset(content, v, slow, returning) {
   var _esc = function(s) { return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); };
   var _sabab = v.sabab ? '<div style="margin-top:12px;font-size:13px;color:rgba(250,247,238,0.5);line-height:1.5;"><span style="color:#C8A84A;font-weight:600;">Sabab :</span> ' + _esc(v.sabab) + '</div>' : '';
@@ -15767,7 +15780,7 @@ function regardeCapture() {
     function _fallbackWithVersets() {
       var _fv = window.REGARD_VERSETS && window.REGARD_VERSETS['INDETERMINE'] && window.REGARD_VERSETS['INDETERMINE'].versets && window.REGARD_VERSETS['INDETERMINE'].versets[0];
       if (_fv) {
-        _regardeShowVerset(content, _fv, true);
+        _regardeBreath(content, function(){ _regardeShowVerset(content, _fv, true); });
         _currentRegardeCat = 'INDETERMINE';
         _regardeStarred = false;
         var _jLabel = _fv.murmure || _fv.texte.substring(0, 80);
@@ -15814,6 +15827,7 @@ function regardeCapture() {
     var _seenVersets = getRegardeHistory()
       .filter(function(e) { return new Date(e.date).getTime() > _thirtyDaysAgo && e.category && typeof e.verset_index === 'number'; })
       .map(function(e) { return { category: e.category, verset_index: e.verset_index }; });
+    if (!navigator.onLine) { fallback(); return; }
     fetch('https://niyyah-api.nabs881.workers.dev/api/regarde', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -15841,7 +15855,7 @@ function regardeCapture() {
         if (!_v) { fallback(); return; }
         if (_done) return; _done = true;
         clearTimeout(_toR);
-        _regardeShowVerset(content, _v, true, !!data.returning_verset);
+        _regardeBreath(content, function(){ _regardeShowVerset(content, _v, true, !!data.returning_verset); });
         _currentRegardeCat = data.category;
         _regardeStarred = false;
         if (data.category === 'INAPPROPRIE') return;
