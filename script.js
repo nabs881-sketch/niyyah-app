@@ -9870,41 +9870,77 @@ function renderCaverne() {
   el.style.display = 'flex';
   var stage = document.getElementById('caverne-stage');
   var glow = document.getElementById('caverne-glow');
-  var btn = document.getElementById('caverne-continue');
-  if (glow) glow.style.display = 'block';
-  function showPhrase(html, duration, cb) {
-    stage.style.transition = 'opacity 300ms ease';
+  var bloom = document.getElementById('caverne-bloom');
+  if (!stage || !glow) return;
+  stage.style.transition = 'opacity 0.45s ease';
+  if (bloom) bloom.style.opacity = '0';
+  glow.style.display = 'block';
+  var beats = [
+    {dur:5200,html:'<div class="cav-n">\u00c0 cinquante m\u00e8tres d\u2019ici,<br>une caverne.</div><div style="height:18px"></div><div class="cav-n"><span class="word">Or.</span> <span class="word">Perles.</span> <span class="word">Diamants.</span></div><div style="height:26px"></div><div class="cav-n" style="font-size:20px;color:rgba(232,213,160,0.85)">Sur la porte, trois mots :</div><div style="height:12px"></div><div class="cav-a">\u00ab Tout est \u00e0 toi. \u00bb</div>'},
+    {dur:4400,html:'<div class="cav-n">Qui passerait son chemin ?</div><div style="height:30px"></div><div class="cav-m">Personne.</div><div style="height:36px"></div><div class="cav-q">On y reviendrait chaque matin.<br>Chaque soir. Toute une vie.</div>'},
+    {dur:5800,html:'<div class="cav-n">Or une autre caverne existe.</div><div style="height:16px"></div><div class="cav-n"><span class="word">Juste l\u00e0.</span> <span class="word">Devant toi.</span> <span class="word">Chaque jour.</span></div><div style="height:26px"></div><div class="cav-n" style="font-weight:500;color:#D9B45A">Invisible \u2014 et mille fois plus riche.</div><div style="height:22px"></div><div class="cav-a">Une caverne de hassan\u00e2t.</div>'},
+    {dur:5400,html:'<div class="cav-n cav-t shimline">Un Bismillah sinc\u00e8re.</div><div style="height:16px"></div><div class="cav-n cav-t shimline">Un pardon offert.</div><div style="height:16px"></div><div class="cav-n cav-t shimline">Un silence patient. Un sourire.</div><div style="height:30px"></div><div class="cav-a" style="color:#E8D5A0">Des tr\u00e9sors qui ne rouillent jamais.</div>'},
+    {dur:4400,html:'<div class="cav-n">Et devant celle-l\u00e0 ?</div><div style="height:26px"></div><div class="cav-n">Presque tous passent.</div><div style="height:16px"></div><div class="cav-a">Rares sont ceux qui s\u2019arr\u00eatent.</div>'},
+    {dur:5000,html:'<div class="cav-n">L\u2019or, tu le laisseras derri\u00e8re toi.</div><div style="height:30px"></div><div class="cav-c">Cela, tu l\u2019emporteras.</div>'},
+    {dur:3900,html:'<div class="cav-q" style="font-size:19px">La porte est ouverte.<br>Personne ne la garde.</div><div style="height:32px"></div><div class="cav-s">All\u00e2h est Celui qui donne.</div>'},
+    {dur:5400,html:'<div class="cav-c" style="font-size:28px">Sois de ceux qui s\u2019arr\u00eatent.</div><div style="height:30px"></div><div class="cav-m">Entre.</div><div style="height:34px"></div><div class="cav-q">Niyyah marche \u00e0 tes c\u00f4t\u00e9s.</div>'}
+  ];
+  var glows = [
+    {w:220,h:150,o:0.20,c:'200,168,75',y:50},
+    {w:245,h:165,o:0.26,c:'200,168,75',y:50},
+    {w:385,h:285,o:0.50,c:'217,169,74',y:46},
+    {w:405,h:300,o:0.55,c:'217,169,74',y:48},
+    {w:375,h:280,o:0.50,c:'217,169,74',y:48},
+    {w:435,h:320,o:0.62,c:'224,176,80',y:48},
+    {w:475,h:350,o:0.70,c:'232,200,120',y:48},
+    {w:530,h:400,o:0.80,c:'232,200,120',y:48}
+  ];
+  function setGlow(g) {
+    glow.style.width = g.w + 'px';
+    glow.style.height = g.h + 'px';
+    glow.style.top = g.y + '%';
+    glow.style.opacity = g.o;
+    glow.style.background = 'radial-gradient(ellipse,rgba(' + g.c + ',0.55) 0%,rgba(' + g.c + ',0.13) 42%,transparent 72%)';
+  }
+  function twinkle(elx) {
+    elx.style.textShadow = '0 0 22px rgba(232,210,150,0.9)';
+    setTimeout(function() { elx.style.textShadow = '0 0 14px rgba(200,168,75,0.45)'; }, 520);
+  }
+  glow.style.transition = 'none';
+  setGlow(glows[0]);
+  requestAnimationFrame(function() {
+    glow.style.transition = 'width 1.8s ease,height 1.8s ease,opacity 1.8s ease,top 1.8s ease,background 1.8s ease';
+  });
+  function showBeat(i) {
+    if (i >= beats.length) { doBloom(); return; }
     stage.style.opacity = '0';
     setTimeout(function() {
-      stage.innerHTML = html;
-      requestAnimationFrame(function() {
-        requestAnimationFrame(function() {
-          stage.style.opacity = '1';
-          setTimeout(cb, duration);
-        });
-      });
-    }, 350);
+      stage.innerHTML = beats[i].html;
+      setGlow(glows[i]);
+      requestAnimationFrame(function() { requestAnimationFrame(function() {
+        stage.style.opacity = '1';
+        var words = stage.querySelectorAll('.word');
+        words.forEach(function(w, k) { setTimeout(function() { w.style.opacity = '1'; }, 260 + k * 400); });
+        var sh = stage.querySelectorAll('.shimline');
+        sh.forEach(function(elx, k) { setTimeout(function() { twinkle(elx); }, 500 + k * 520); });
+        setTimeout(function() { showBeat(i + 1); }, beats[i].dur);
+      }); });
+    }, 360);
   }
-  setTimeout(function() { if (glow) glow.style.opacity = '1'; }, 3000);
-  showPhrase('\u00c0 cinquante m\u00e8tres d\u2019ici, une caverne.<br>Or. Perles. Diamants.<br><br>Sur la porte, trois mots : <span style="font-style:italic;color:#C8A84A;">\u00ab Tout est \u00e0 toi. \u00bb</span>', 4500, function() {
-    showPhrase('Qui passerait son chemin ?<br><span style="font-style:italic;color:#C8A84A;font-size:28px;">Personne.</span><br><br>On y reviendrait chaque matin. Chaque soir. Toute une vie.', 4200, function() {
-      showPhrase('Or une autre caverne existe.<br>Juste l\u00e0. Devant toi. Chaque jour.<br><br><span style="font-weight:500;color:#C8A84A;">Invisible \u2014 et mille fois plus riche.</span><br><br>Une caverne de <span style="font-style:italic;color:#E8D5A0;">hassanât.</span>', 5200, function() {
-        showPhrase('<span style="color:#C8A84A;">Un Bismillah sinc\u00e8re.<br><br>Un pardon offert.<br><br>Un silence patient. Un sourire.</span><br><br><span style="font-style:italic;color:#E8D5A0;">Des tr\u00e9sors qui ne rouillent jamais.</span>', 4800, function() {
-          showPhrase('Et devant celle-l\u00e0 ?<br><br>Presque tous passent.<br><span style="font-style:italic;color:#C8A84A;">Rares sont ceux qui s\u2019arr\u00eatent.</span>', 4200, function() {
-            showPhrase('L\u2019or, tu le laisseras derri\u00e8re toi.<br><br><span style="font-weight:500;color:#C8A84A;font-size:22px;">Cela, tu l\u2019emporteras.</span>', 4800, function() {
-              showPhrase('<div style="font-style:italic;color:#E8D5A0;">La porte est ouverte.<br>Personne ne la garde.</div><div style="margin-top:20px;font-size:30px;font-weight:500;font-variant:small-caps;letter-spacing:0.08em;color:#C8A84A;text-align:center;">All\u00e2h est Celui qui donne.</div>', 3500, function() {
-                showPhrase('<div style="text-align:center;font-style:italic;color:#C8A84A;"><div style="margin:0 0 16px 0;font-size:22px;">Sois de ceux qui s\u2019arr\u00eatent.</div><div style="margin:0 0 16px 0;">Entre.</div><div style="margin:0;opacity:0.8;">Niyyah marche \u00e0 tes c\u00f4t\u00e9s.</div></div>', 5500, function() {
-                  el.style.transition = 'opacity 1500ms ease';
-                  el.style.opacity = '0';
-                  setTimeout(function() { onboardNext(); }, 1600);
-                });
-              });
-            });
-          });
-        });
-      });
-    });
-  });
+  function doBloom() {
+    stage.style.opacity = '0';
+    if (bloom) bloom.style.opacity = '1';
+    glow.style.transition = 'width 1.6s ease,height 1.6s ease,opacity 1.6s ease,background 1.6s ease';
+    glow.style.width = '1200px';
+    glow.style.height = '1200px';
+    glow.style.opacity = '1';
+    setTimeout(function() {
+      el.style.transition = 'opacity 1200ms ease';
+      el.style.opacity = '0';
+      setTimeout(function() { onboardNext(); }, 1300);
+    }, 1600);
+  }
+  showBeat(0);
 }
 
 function onboardRender() {
