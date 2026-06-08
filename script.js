@@ -9811,7 +9811,7 @@ const ONBOARD_SLIDES = [
       + '<div class="ob-geste-card ob-geste-regarde">'
       + '<div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;"><img src="images/regarde-hand.webp" alt="" style="width:100px;height:auto;flex-shrink:0;"><div><div class="ob-geste-ar" style="color:#A0A4AC;font-size:22px;margin-bottom:2px;">\u0646\u064E\u0638\u064E\u0631</div><div style="font-size:14px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#A0A4AC;">Pose un regard</div></div></div>'
       + '<div style="font-size:13px;color:rgba(160,164,172,0.7);line-height:1.5;">Pointe vers ce que tu vois.<br>Niyyah cherche le verset qui \u00e9claire.</div>'
-      + '<div style="font-size:11px;font-style:italic;color:rgba(160,164,172,0.55);margin-top:6px;">\u00c0 retrouver dans Journal \u00b7 Regards.</div>'
+      + '<div style="font-size:11px;font-style:italic;color:rgba(160,164,172,0.55);margin-top:6px;">Tes Regards se gardent dans le Journal.</div>'
       + '<div class="ob-geste-txt" id="obTypeRegarde" style="color:rgba(160,164,172,0.8);font-size:13px;font-style:italic;margin-top:4px;">&nbsp;</div>'
       + '</div>'
       + '</div>'
