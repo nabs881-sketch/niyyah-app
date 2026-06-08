@@ -9886,16 +9886,18 @@ function renderCaverne() {
     }, 350);
   }
   setTimeout(function() { if (glow) glow.style.opacity = '1'; }, 3000);
-  showPhrase('\u00c0 cinquante m\u00e8tres d\u2019ici, une caverne. D\u00e9bordante d\u2019or, de perles et de diamants. Sur son entr\u00e9e, une pancarte\u00a0: <span style="font-style:italic;color:#C8A84A;">\u00ab\u00a0Tout cela est \u00e0 toi. Prends ce que tu veux.\u00a0\u00bb</span>', 5500, function() {
-    showPhrase('Qui passerait devant sans entrer\u00a0?<br><span style="font-style:italic;color:#C8A84A;font-size:28px;">Personne.</span>', 2500, function() {
-      showPhrase('Et pourtant \u2014 chaque matin, une autre caverne s\u2019ouvre devant toi. Aux tr\u00e9sors <span style="font-weight:500;color:#C8A84A;">plus pr\u00e9cieux encore</span>.', 5000, function() {
-        showPhrase('<span style="color:#C8A84A;">Un Bismillah sinc\u00e8re.<br><br>Un pardon accord\u00e9.<br><br>Un silence patient.<br><br>Un sourire offert.</span><br><br><span style="font-style:italic;color:#E8D5A0;">Chaque geste \u2014 un tr\u00e9sor.</span>', 4500, function() {
-          showPhrase('L\u2019or, tu le laisseras derri\u00e8re toi. Ces gestes-l\u00e0, tu les <span style="font-weight:500;color:#C8A84A;">emporteras</span>.', 6000, function() {
-            showPhrase('<div style="font-style:italic;color:#E8D5A0;">La porte est grande ouverte.<br>Personne ne la garde.</div><div style="margin-top:20px;font-size:32px;font-weight:500;font-variant:small-caps;letter-spacing:0.08em;color:#C8A84A;text-align:center;">All\u00e2h est Celui qui donne.</div>', 3500, function() {
-              showPhrase('<div style="text-align:center;font-style:italic;color:#C8A84A;"><div style="margin:0 0 16px 0;">Entre.</div><div style="margin:0 0 16px 0;opacity:0.85;">Niyyah marche \u00e0 tes c\u00f4t\u00e9s.</div><div style="margin:0;opacity:0.7;">Pour que tu t\u2019arr\u00eates \u2014 et que tu cueilles.</div></div>', 5500, function() {
-                el.style.transition = 'opacity 1500ms ease';
-                el.style.opacity = '0';
-                setTimeout(function() { onboardNext(); }, 1600);
+  showPhrase('\u00c0 cinquante m\u00e8tres d\u2019ici, une caverne.<br>Or. Perles. Diamants.<br><br>Sur la porte, trois mots : <span style="font-style:italic;color:#C8A84A;">\u00ab Tout est \u00e0 toi. \u00bb</span>', 4500, function() {
+    showPhrase('Qui passerait son chemin ?<br><span style="font-style:italic;color:#C8A84A;font-size:28px;">Personne.</span><br><br>On y reviendrait chaque matin. Chaque soir. Toute une vie.', 4200, function() {
+      showPhrase('Or une autre caverne existe.<br>Juste l\u00e0. Devant toi. Chaque jour.<br><br><span style="font-weight:500;color:#C8A84A;">Invisible \u2014 et mille fois plus riche.</span><br><br>Une caverne de <span style="font-style:italic;color:#E8D5A0;">hassanât.</span>', 5200, function() {
+        showPhrase('<span style="color:#C8A84A;">Un Bismillah sinc\u00e8re.<br><br>Un pardon offert.<br><br>Un silence patient. Un sourire.</span><br><br><span style="font-style:italic;color:#E8D5A0;">Des tr\u00e9sors qui ne rouillent jamais.</span>', 4800, function() {
+          showPhrase('Et devant celle-l\u00e0 ?<br><br>Presque tous passent.<br><span style="font-style:italic;color:#C8A84A;">Rares sont ceux qui s\u2019arr\u00eatent.</span>', 4200, function() {
+            showPhrase('L\u2019or, tu le laisseras derri\u00e8re toi.<br><br><span style="font-weight:500;color:#C8A84A;font-size:22px;">Cela, tu l\u2019emporteras.</span>', 4800, function() {
+              showPhrase('<div style="font-style:italic;color:#E8D5A0;">La porte est ouverte.<br>Personne ne la garde.</div><div style="margin-top:20px;font-size:30px;font-weight:500;font-variant:small-caps;letter-spacing:0.08em;color:#C8A84A;text-align:center;">All\u00e2h est Celui qui donne.</div>', 3500, function() {
+                showPhrase('<div style="text-align:center;font-style:italic;color:#C8A84A;"><div style="margin:0 0 16px 0;font-size:22px;">Sois de ceux qui s\u2019arr\u00eatent.</div><div style="margin:0 0 16px 0;">Entre.</div><div style="margin:0;opacity:0.8;">Niyyah marche \u00e0 tes c\u00f4t\u00e9s.</div></div>', 5500, function() {
+                  el.style.transition = 'opacity 1500ms ease';
+                  el.style.opacity = '0';
+                  setTimeout(function() { onboardNext(); }, 1600);
+                });
               });
             });
           });
