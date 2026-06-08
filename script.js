@@ -10284,7 +10284,7 @@ const V2_I18N = {
     // Premium
     premium_unlocked: '✅ Accès complet débloqué — Barakallahu feek !',
     // Camera
-    camera_denied: 'Acc\u00e8s cam\u00e9ra refus\u00e9 \u2014 autorise l\u2019acc\u00e8s dans les r\u00e9glages', btn_retry: 'R\u00e9essayer', btn_close: 'Fermer', audio_offline: 'Audio non disponible hors-ligne', regarde_limit: 'Limite Regarde atteinte (5/jour) \u2014 reviens demain', regarde_hint: 'Pointe vers ce que tu regardes',
+    camera_denied: 'Acc\u00e8s cam\u00e9ra refus\u00e9 \u2014 autorise l\u2019acc\u00e8s dans les r\u00e9glages', btn_retry: 'R\u00e9essayer', btn_close: 'Fermer', audio_offline: 'Audio non disponible hors-ligne', regarde_limit: 'Limite Regarde atteinte (5/jour) \u2014 reviens demain', regarde_hint: 'Pointe vers ce que tu regardes', regarde_tab_verset: 'Verset', regarde_tab_duaa: 'Du\u2019\u00e2', regarde_tab_murmure: 'Murmure', regarde_label_inv: 'INVOCATION', regarde_label_quran: 'CORAN', regarde_unavailable: 'Indisponible',
     // Compass
     compass_denied: 'Autorise la boussole dans les réglages',
     disclaimer: 'Cette application n\'émet pas d\'avis religieux. Pour toute question de fiqh, consultez un savant qualifié.',
@@ -10524,7 +10524,7 @@ const V2_I18N = {
     share_downloaded: 'Image downloaded — share it 🌿', share_copied: 'Link copied!',
     share_card: 'NIYYAH CARD ✦', share_intention: 'Share this intention', share_btn: 'SHARE ✦', share_close: 'CLOSE',
     premium_unlocked: '✅ Full access unlocked — Barakallahu feek!',
-    camera_denied: 'Camera access denied \u2014 allow in settings', btn_retry: 'Retry', btn_close: 'Close', audio_offline: 'Audio not available offline', regarde_limit: 'Regarde limit reached (5/day) \u2014 come back tomorrow', regarde_hint: 'Point at what you are looking at',
+    camera_denied: 'Camera access denied \u2014 allow in settings', btn_retry: 'Retry', btn_close: 'Close', audio_offline: 'Audio not available offline', regarde_limit: 'Regarde limit reached (5/day) \u2014 come back tomorrow', regarde_hint: 'Point at what you are looking at', regarde_tab_verset: 'Verse', regarde_tab_duaa: 'Du\u2019a', regarde_tab_murmure: 'Whisper', regarde_label_inv: 'INVOCATION', regarde_label_quran: 'QURAN', regarde_unavailable: 'Unavailable',
     compass_denied: 'Allow compass in settings',
     disclaimer: 'This app does not issue religious rulings. For any fiqh question, consult a qualified scholar.',
     settings_mentions: 'Legal Notice',
@@ -13961,58 +13961,109 @@ function openVendrediRegard() {
 }
 window.openVendrediRegard = openVendrediRegard;
 
-function genRegardCanvas(entryId) {
+function genRegardCanvas(entryId, kind) {
+  kind = kind || 'verset';
   var entries = getRegardeHistory();
   var e = entries.find(function(x) { return x.id === entryId; });
   if (!e) return;
-  var texte = e.question || '';
-  var ref = e.category || '';
-  // Try to get verset data from REGARD_VERSETS
+  // Resolve verset
+  var V = null;
   if (window.REGARD_VERSETS && window.REGARD_VERSETS[e.category] && typeof e.verset_index === 'number') {
-    var v = window.REGARD_VERSETS[e.category].versets[e.verset_index];
-    if (v) { texte = v.texte; ref = v.reference; }
+    V = window.REGARD_VERSETS[e.category].versets[e.verset_index] || null;
   }
+  var murmure = V ? (V.murmure || '') : '';
+  // Resolve du'â (déterministe)
+  var pool = (window.REGARD_DUAAS && (window.REGARD_DUAAS[e.category] || window.REGARD_DUAAS['INDETERMINE'])) || [];
+  var seed = parseInt(e.id, 10) || 0;
+  var dd = pool.length ? pool[seed % pool.length] : null;
+  // Choose content by kind
+  var mainText, sub, label;
+  if (kind === 'murmure') { mainText = murmure; sub = ''; label = ''; }
+  else if (kind === 'duaa') { mainText = dd ? dd.fr : ''; sub = (dd && dd.type === 'mathur' && dd.source) ? dd.source : ''; label = t('regarde_label_inv') || 'INVOCATION'; }
+  else { mainText = V ? V.texte : (e.question || ''); sub = V ? V.reference : (e.category || ''); label = t('regarde_label_quran') || 'CORAN'; }
+  if (!mainText) { showToast(t('regarde_unavailable') || 'Indisponible'); return; }
+  // Draw canvas
   var c = document.createElement('canvas');
   c.width = 1080; c.height = 1080;
   var ctx = c.getContext('2d');
-  ctx.fillStyle = '#0A0908';
-  ctx.fillRect(0, 0, 1080, 1080);
-  // Verset (auto-size)
-  ctx.fillStyle = '#FAF7EE';
-  ctx.textAlign = 'center';
-  ctx.textBaseline = 'middle';
-  var _maxW = 860, _maxH = 700, _sizes = [42,38,34,30,26,24];
-  var lines, lineH, fontSize;
-  for (var _si = 0; _si < _sizes.length; _si++) {
-    fontSize = _sizes[_si];
-    lineH = Math.round(fontSize * 1.4);
-    ctx.font = 'italic ' + fontSize + 'px "Cormorant Garamond", serif';
-    lines = []; var _ln = '';
-    texte.split(' ').forEach(function(w) {
-      var test = _ln ? _ln + ' ' + w : w;
-      if (ctx.measureText(test).width > _maxW) { lines.push(_ln); _ln = w; } else { _ln = test; }
-    });
-    if (_ln) lines.push(_ln);
-    if (lines.length * lineH <= _maxH) break;
+  var _drawCard = function() {
+    ctx.fillStyle = '#0A0908';
+    ctx.fillRect(0, 0, 1080, 1080);
+    // Label (top)
+    if (label) {
+      ctx.fillStyle = '#C8A84A';
+      ctx.font = 'bold 18px "Cormorant Garamond", serif';
+      ctx.textAlign = 'center'; ctx.textBaseline = 'top';
+      ctx.fillText(label, 540, 120);
+    }
+    // Main text (auto-size, centered)
+    ctx.fillStyle = '#FAF7EE';
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    var _maxW = 860, _maxH = 650, _sizes = [42,38,34,30,26,24];
+    var lines, lineH, fontSize;
+    for (var _si = 0; _si < _sizes.length; _si++) {
+      fontSize = _sizes[_si];
+      lineH = Math.round(fontSize * 1.4);
+      ctx.font = 'italic ' + fontSize + 'px "Cormorant Garamond", serif';
+      lines = []; var _ln = '';
+      mainText.split(' ').forEach(function(w) {
+        var test = _ln ? _ln + ' ' + w : w;
+        if (ctx.measureText(test).width > _maxW) { lines.push(_ln); _ln = w; } else { _ln = test; }
+      });
+      if (_ln) lines.push(_ln);
+      if (lines.length * lineH <= _maxH) break;
+    }
+    var startY = 540 - (lines.length * lineH) / 2;
+    lines.forEach(function(l, i) { ctx.fillText(l, 540, startY + i * lineH); });
+    // Sub (reference / source)
+    if (sub) {
+      ctx.fillStyle = '#C8A84A';
+      ctx.font = 'bold 22px "Cormorant Garamond", serif';
+      ctx.fillText(sub, 540, startY + lines.length * lineH + 40);
+    }
+    // Salawat
+    ctx.fillStyle = 'rgba(200,168,75,0.35)';
+    ctx.font = '28px "Scheherazade New", serif';
+    ctx.fillText('\uFDFA', 540, 1020);
+    // Overlay
+    _showRegardShareOverlay(c, entryId, kind);
+  };
+  // Background: photo or solid
+  if (e.photo) {
+    var img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.onload = function() {
+      var s = Math.max(1080 / img.width, 1080 / img.height);
+      var w = img.width * s, h = img.height * s;
+      ctx.drawImage(img, (1080 - w) / 2, (1080 - h) / 2, w, h);
+      ctx.fillStyle = 'rgba(10,9,8,0.72)';
+      ctx.fillRect(0, 0, 1080, 1080);
+      _drawCard();
+    };
+    img.onerror = function() { _drawCard(); };
+    img.src = e.photo;
+  } else {
+    _drawCard();
   }
-  var startY = 540 - (lines.length * lineH) / 2;
-  lines.forEach(function(l, i) { ctx.fillText(l, 540, startY + i * lineH); });
-  // Reference
-  ctx.fillStyle = '#C8A84A';
-  ctx.font = 'bold 24px "Cormorant Garamond", serif';
-  ctx.fillText(ref, 540, startY + lines.length * lineH + 40);
-  // Salawat
-  ctx.fillStyle = 'rgba(200,168,75,0.35)';
-  ctx.font = '28px "Scheherazade New", serif';
-  ctx.fillText('\uFDFA', 540, 1020);
-  // Show share overlay
+}
+function _showRegardShareOverlay(c, entryId, activeKind) {
   c.toBlob(function(blob) {
     if (!blob) return;
     var url = URL.createObjectURL(blob);
+    var prev = document.querySelector('.regard-share-ov'); if (prev) prev.remove();
     var shareOv = document.createElement('div');
-    shareOv.className = 'wird-complete-overlay';
+    shareOv.className = 'wird-complete-overlay regard-share-ov';
     shareOv.style.zIndex = '10010';
+    var pills = ['verset','duaa','murmure'];
+    var pillLabels = [t('regarde_tab_verset')||'Verset', t('regarde_tab_duaa')||"Du'\u00e2", t('regarde_tab_murmure')||'Murmure'];
+    var pillsHtml = '<div style="display:flex;gap:8px;justify-content:center;margin-bottom:14px;">';
+    pills.forEach(function(k, i) {
+      var active = k === activeKind;
+      pillsHtml += '<button onclick="genRegardCanvas(\'' + entryId + '\',\'' + k + '\')" style="padding:6px 14px;border-radius:20px;border:1px solid ' + (active ? '#C8A84A' : 'rgba(200,168,75,0.3)') + ';background:' + (active ? 'rgba(200,168,75,0.18)' : 'transparent') + ';color:' + (active ? '#C8A84A' : 'rgba(200,168,75,0.6)') + ';font-family:var(--serif);font-size:13px;cursor:pointer;">' + pillLabels[i] + '</button>';
+    });
+    pillsHtml += '</div>';
     shareOv.innerHTML = '<div class="vendredi-regard-overlay" style="max-width:360px;">'
+      + pillsHtml
       + '<img src="'+url+'" style="width:100%;border-radius:12px;margin-bottom:16px;">'
       + '<div style="display:flex;gap:10px;">'
       + '<button onclick="regardShareImage()" class="wird-complete-btn" style="flex:1;">Partager</button>'
@@ -15927,6 +15978,7 @@ function openRegardeDetail(id) {
     + '<button onclick="regardeDetailStar(\'' + id + '\')" id="regarde-detail-star" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:' + (entry.bookmark ? 'rgba(212,175,55,0.15)' : 'transparent') + ';cursor:pointer;font-size:24px;color:#D4AF37;display:flex;align-items:center;justify-content:center;">' + starIcon + '</button>'
     + '<button onclick="regardeDetailNote(\'' + id + '\')" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;font-size:24px;color:#D4AF37;display:flex;align-items:center;justify-content:center;">✎</button>'
     + '<button onclick="regardeDetailDelete(\'' + id + '\')" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,80,80,0.3);background:transparent;cursor:pointer;font-size:20px;color:rgba(255,80,80,0.6);display:flex;align-items:center;justify-content:center;">🗑</button>'
+    + '<button onclick="genRegardCanvas(\'' + id + '\')" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;font-size:20px;color:#D4AF37;display:flex;align-items:center;justify-content:center;">↗</button>'
     + '</div>'
     + (noteText ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(255,255,255,0.5);text-align:center;padding:12px;background:rgba(200,168,75,0.04);border-radius:10px;">' + escapeHtml(noteText) + '</div>' : '');
   overlay.style.display = 'block';
