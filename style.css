@@ -9389,3 +9389,10 @@ body.onboarding-active #nav-bar-v2 {
   box-shadow: 0 10px 26px rgba(168,134,47,0.28), inset 0 1px 0 rgba(255,255,255,0.35);
   letter-spacing: 0.22em;
 }
+.regarde-open-btn{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;padding:16px 18px;margin-bottom:16px;border-radius:16px;border:1px solid rgba(212,175,55,0.45);background:linear-gradient(180deg,rgba(200,168,74,0.16) 0%,rgba(138,106,31,0.07) 100%);box-shadow:0 6px 22px rgba(0,0,0,0.45),inset 0 1px 0 rgba(255,238,200,0.20);cursor:pointer;position:relative;overflow:hidden;-webkit-tap-highlight-color:transparent;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;}
+.regarde-open-btn:hover{border-color:rgba(212,175,55,0.7);box-shadow:0 8px 28px rgba(0,0,0,0.55),inset 0 1px 0 rgba(255,238,200,0.30);}
+.regarde-open-btn:active{transform:scale(0.98);}
+.regarde-open-label{font-family:'Cormorant Garamond',serif;font-size:17px;letter-spacing:2.5px;text-transform:uppercase;color:#EBD79A;text-shadow:0 1px 6px rgba(212,175,55,0.25);}
+.regarde-open-eye{filter:drop-shadow(0 0 4px rgba(212,175,55,0.45));flex-shrink:0;}
+.regarde-open-btn::before{content:"";position:absolute;top:0;bottom:0;left:-60%;width:45%;background:linear-gradient(100deg,transparent,rgba(255,240,200,0.16),transparent);transform:skewX(-18deg);animation:regardeShine 7s ease-in-out infinite;pointer-events:none;}
+@keyframes regardeShine{0%,82%{left:-60%}92%,100%{left:130%}}
