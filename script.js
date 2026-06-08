@@ -15380,6 +15380,8 @@ async function regardeOpen() {
   }
   _nAn('scanner_tab_visited');
   showAlHayaBtn();
+  var _rs = document.getElementById('regarde-screen');
+  if (_rs) { _rs.style.backgroundImage = ''; _rs.classList.remove('regarde-has-photo'); }
   var screen = document.getElementById('regarde-screen');
   var content = document.getElementById('regarde-content');
   if (!screen || !content) return;
@@ -15807,6 +15809,8 @@ function regardeCapture() {
 
   // Stop caméra
   if (_regardeStream) { _regardeStream.getTracks().forEach(function(t) { t.stop(); }); _regardeStream = null; }
+  var _rs = document.getElementById('regarde-screen');
+  if (_rs && window._regardeImageData) { _rs.style.backgroundImage = 'url(' + window._regardeImageData + ')'; _rs.classList.add('regarde-has-photo'); }
 
   // Fondu au noir + loader doré
   content.style.transition = 'opacity 0.4s ease';
@@ -16122,6 +16126,8 @@ function regardeDetailDelete(id) {
 
 function regardeClose() {
   window._regardeSurprise = false;
+  var _rs = document.getElementById('regarde-screen');
+  if (_rs) { _rs.style.backgroundImage = ''; _rs.classList.remove('regarde-has-photo'); }
   hideAlHayaBtn();
   closeRegardeJournal();
   closeRegardeDetail();

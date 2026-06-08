@@ -9338,3 +9338,9 @@ body.onboarding-active #nav-bar-v2 {
 .ql-when{font-family:'Cormorant Garamond',var(--serif);font-style:italic;font-size:14px;color:rgba(200,168,75,0.8);border-top:1px solid rgba(200,168,75,0.15);padding-top:14px;margin-bottom:18px;}
 .ql-premium{width:100%;padding:14px;border:none;border-radius:24px;background:linear-gradient(90deg,#E8CE8A,#D4AF37,#C8A84A);color:#2C2410;font-family:'Cormorant Garamond',var(--serif);font-weight:700;font-size:15px;letter-spacing:0.5px;cursor:pointer;margin-bottom:8px;}
 .ql-close{width:100%;padding:10px;border:none;background:none;color:rgba(255,255,255,0.45);font-family:var(--serif);font-style:italic;font-size:13px;cursor:pointer;}
+#regarde-screen.regarde-has-photo { background-size: cover; background-position: center; }
+#regarde-screen.regarde-has-photo #regarde-content {
+  background: linear-gradient(180deg, rgba(8,6,3,0.78) 0%, rgba(6,4,2,0.90) 50%, rgba(3,2,1,0.95) 100%);
+  -webkit-backdrop-filter: blur(16px) saturate(1.05) brightness(0.85);
+  backdrop-filter: blur(16px) saturate(1.05) brightness(0.85);
+}
