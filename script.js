@@ -16244,10 +16244,21 @@ function openScannerHub(){
      +'<span class="shc-orb shc-orb-silver">\u0646\u064E\u0638\u064E\u0631</span>'
      +'<span class="shc-txt"><span class="shc-title">Pose un regard</span><span class="shc-desc">Re\u00e7ois le verset qui \u00e9claire l\u2019instant.</span></span>'
      +'<span class="shc-chev">\u203A</span>'
-   +'</button>';
+   +'</button>'
+   +'<button class="scanner-hub-back" onclick="closeScannerHub()">Retour</button>';
   document.body.appendChild(ov);
+  try{ history.pushState({_scannerHub:1}, ''); }catch(e){}
+  window.addEventListener('popstate', _scannerHubOnPop);
 }
-function closeScannerHub(){ var o=document.getElementById('scanner-hub-overlay'); if(o) o.remove(); }
+function _scannerHubOnPop(){
+  var o=document.getElementById('scanner-hub-overlay'); if(o) o.remove();
+  window.removeEventListener('popstate', _scannerHubOnPop);
+}
+function closeScannerHub(){
+  var o=document.getElementById('scanner-hub-overlay'); if(o) o.remove();
+  window.removeEventListener('popstate', _scannerHubOnPop);
+  try{ if(history.state && history.state._scannerHub) history.back(); }catch(e){}
+}
 window.openScannerHub=openScannerHub; window.closeScannerHub=closeScannerHub;
 async function scannerOpen() {
   if (safeGetItem('niyyah_intro_niyyah') !== '1') {
