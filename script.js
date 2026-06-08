@@ -11513,6 +11513,20 @@ function _v2ShowTarget(targetId, opts) {
 }
 
 function v2GoJournal() {
+  if (safeGetItem('niyyah_intro_journal') !== '1') {
+    _showNiyyahIntro({
+      flag: 'niyyah_intro_journal',
+      eyebrow: 'Niyyah t\u2019accompagne',
+      nom_fr: 'Journal',
+      nom_ar: '\u0633\u0650\u062C\u0650\u0644\u0651',
+      texte: 'Ici se gardent tes deux gestes : les intentions que tu as pos\u00e9es et les Regards qui t\u2019ont marqu\u00e9. Reviens les relire, ajoute une note, ou partage un Regard \u00e0 un proche.',
+      meta: 'reste sur ton appareil',
+      enterLabel: 'Entrer',
+      single: true,
+      enterFn: function(){ v2GoJournal(); }
+    });
+    return;
+  }
   setupTopUI('journal');
   document.body.classList.add('in-journal-view');
   _nAn('journal_visited');
