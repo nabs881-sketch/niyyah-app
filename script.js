@@ -11566,6 +11566,19 @@ function journalSwitchTab(tab) {
       });
       content.innerHTML = html;
     }
+    if (safeGetItem('niyyah_intro_regards') !== '1') {
+      _showNiyyahIntro({
+        flag: 'niyyah_intro_regards',
+        eyebrow: 'Niyyah t\u2019accompagne',
+        nom_fr: 'Regard',
+        nom_ar: '\u0646\u064E\u0638\u064E\u0631',
+        texte: 'Quand quelque chose attire ton regard \u2014 un visage, une plante, une rue \u2014 ouvre Regard. Niyyah cherche dans le Coran le verset qui \u00e9claire cet instant, et te le murmure. Touche \u00ab\u00a0Regarder maintenant\u00a0\u00bb quand tu veux\u2009; parfois, il viendra aussi \u00e0 toi.',
+        meta: '5 par jour \u00b7 reste sur ton appareil',
+        enterLabel: 'Compris',
+        single: true,
+        enterFn: function(){}
+      });
+    }
   }
 }
 function _showWaswasaScreen() {
