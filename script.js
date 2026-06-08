@@ -11548,11 +11548,12 @@ function journalSwitchTab(tab) {
   } else {
     if (tabN) { tabN.style.background = 'transparent'; tabN.style.border = '1px solid rgba(200,168,75,0.15)'; tabN.style.color = 'rgba(200,168,75,0.5)'; tabN.style.boxShadow = 'none'; }
     if (tabR) { tabR.style.background = 'linear-gradient(180deg,rgba(212,181,98,0.18) 0%,rgba(166,117,68,0.12) 100%)'; tabR.style.border = '1px solid rgba(230,200,130,0.5)'; tabR.style.color = 'rgba(230,200,130,1)'; tabR.style.boxShadow = '0 2px 8px rgba(0,0,0,0.3),inset 0 1px 0 rgba(255,230,180,0.1)'; }
+    var _regardOpenBtn = '<button onclick="regardeOpen()" style="display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:14px;border-radius:12px;border:1px solid rgba(212,175,55,0.25);background:rgba(200,168,75,0.05);cursor:pointer;margin-bottom:14px;font-family:var(--serif);font-size:15px;color:#D4AF37;">\uD83D\uDC41 ' + (t('regarde_open_now') || 'Regarder maintenant') + '</button>';
     var entries = getRegardeHistory();
     if (entries.length === 0) {
-      content.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">\u0646\u064E\u0638\u064E\u0631</div><div class="empty-state-title">'+t('journal_regarde_title')+'</div><div class="empty-state-text">'+t('journal_regarde_text')+'</div><div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.45);margin-top:12px;line-height:1.5;">Les Regards viennent \u00e0 toi quand Allah veut.<br>Reviens lire ceux qui te sont d\u00e9j\u00e0 donn\u00e9s.</div></div>';
+      content.innerHTML = _regardOpenBtn + '<div class="empty-state-premium"><div class="empty-state-glyph">\u0646\u064E\u0638\u064E\u0631</div><div class="empty-state-title">'+t('journal_regarde_title')+'</div><div class="empty-state-text">'+t('journal_regarde_text')+'</div><div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.45);margin-top:12px;line-height:1.5;">Les Regards viennent \u00e0 toi quand Allah veut.<br>Reviens lire ceux qui te sont d\u00e9j\u00e0 donn\u00e9s.</div></div>';
     } else {
-      var html = '';
+      var html = _regardOpenBtn;
       entries.forEach(function(e) {
         var d = new Date(e.date);
         var dateStr = d.toLocaleDateString(_dateLocale(), { day:'numeric', month:'short' }) + ' · ' + d.toLocaleTimeString(_dateLocale(), { hour:'2-digit', minute:'2-digit' });
