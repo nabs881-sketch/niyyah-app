@@ -9835,6 +9835,72 @@ function obSelectMotiv(el, value) {
   var btn = document.getElementById('obMotivBtn');
   if (btn) { btn.style.opacity = '1'; btn.style.pointerEvents = 'auto'; }
 }
+var _cavCtx=null,_cavMaster=null,_cavOscs=[],_cavLfo=null;
+window._cavSound=false;
+function cavSoundEnabled(){ return safeGetItem('niyyah_sound')!=='off'; }
+function cavAudioStart(){
+  try{
+    _cavCtx=new (window.AudioContext||window.webkitAudioContext)();
+    var t=_cavCtx.currentTime;
+    _cavMaster=_cavCtx.createGain(); _cavMaster.gain.value=0.0001; _cavMaster.connect(_cavCtx.destination);
+    var lp=_cavCtx.createBiquadFilter(); lp.type='lowpass'; lp.frequency.value=820; lp.Q.value=0.6; lp.connect(_cavMaster);
+    var fr=[110,164.81,220], ty=['sine','triangle','sine'], ga=[0.5,0.2,0.16];
+    _cavOscs=fr.map(function(f,i){ var o=_cavCtx.createOscillator(); o.type=ty[i]; o.frequency.value=f; var g=_cavCtx.createGain(); g.gain.value=ga[i]; o.connect(g); g.connect(lp); o.start(); return o; });
+    _cavLfo=_cavCtx.createOscillator(); _cavLfo.frequency.value=0.12; var lg=_cavCtx.createGain(); lg.gain.value=0.035; _cavLfo.connect(lg); lg.connect(_cavMaster.gain); _cavLfo.start();
+    _cavMaster.gain.setValueAtTime(0.0001,t);
+    _cavMaster.gain.linearRampToValueAtTime(0.14,t+3.5);
+    window._cavSound=true;
+  }catch(e){ window._cavSound=false; }
+}
+function cavChime(base,vol,dur){
+  if(!_cavCtx||!_cavMaster) return;
+  var t=_cavCtx.currentTime;
+  [1,2.01,2.99].forEach(function(m,idx){
+    var o=_cavCtx.createOscillator(); o.type='sine'; o.frequency.value=base*m;
+    var g=_cavCtx.createGain();
+    g.gain.setValueAtTime(0.0001,t);
+    g.gain.linearRampToValueAtTime(vol/(idx+1.2),t+0.02);
+    g.gain.exponentialRampToValueAtTime(0.0006,t+(idx===0?dur:dur*0.6));
+    o.connect(g); g.connect(_cavMaster); o.start(t); o.stop(t+dur+0.3);
+  });
+}
+function cavBloomSound(){
+  if(!_cavCtx||!_cavMaster) return;
+  var t=_cavCtx.currentTime;
+  var sw=_cavCtx.createOscillator(); sw.type='sine';
+  sw.frequency.setValueAtTime(220,t); sw.frequency.exponentialRampToValueAtTime(440,t+2);
+  var swg=_cavCtx.createGain(); swg.gain.setValueAtTime(0.0001,t); swg.gain.linearRampToValueAtTime(0.13,t+1.3); swg.gain.exponentialRampToValueAtTime(0.0006,t+3.2);
+  sw.connect(swg); swg.connect(_cavMaster); sw.start(t); sw.stop(t+3.4);
+  _cavMaster.gain.cancelScheduledValues(t);
+  _cavMaster.gain.setValueAtTime(_cavMaster.gain.value,t);
+  _cavMaster.gain.linearRampToValueAtTime(0.0001,t+2.6);
+  setTimeout(cavAudioStop,3600);
+}
+function cavAudioStop(){
+  try{ _cavOscs.forEach(function(o){o.stop();}); if(_cavLfo)_cavLfo.stop(); if(_cavCtx)_cavCtx.close(); }catch(e){}
+  _cavCtx=null;_cavMaster=null;_cavOscs=[];_cavLfo=null;window._cavSound=false;
+}
+function cavRenderSeuil(el, stage, enterFn){
+  var snd = cavSoundEnabled();
+  function paint(){
+    stage.innerHTML =
+      '<div style="font-family:\'Cormorant Garamond\',serif;font-style:italic;font-weight:300;font-size:22px;color:rgba(232,213,160,0.7);letter-spacing:0.04em">Touchez pour entrer</div>'
+      + '<div style="margin-top:18px;font-size:20px;color:rgba(200,168,75,0.55)">\u2726</div>'
+      + '<div style="margin-top:32px"><span id="cavMute" style="display:inline-flex;align-items:center;gap:7px;font-family:var(--sans);font-size:13px;color:rgba(200,168,75,0.6);border:0.5px solid rgba(200,168,75,0.3);border-radius:20px;padding:7px 16px;cursor:pointer">'
+      + (snd?'\u266A Son activ\u00e9':'\u2715 Son coup\u00e9') + '</span></div>';
+    stage.style.opacity='1';
+    var mute=document.getElementById('cavMute');
+    if(mute) mute.onclick=function(ev){ ev.stopPropagation(); snd=!snd; safeSetItem('niyyah_sound', snd?'on':'off'); paint(); };
+  }
+  paint();
+  function enter(){
+    el.removeEventListener('click', enter);
+    if(snd) cavAudioStart();
+    stage.style.opacity='0';
+    setTimeout(enterFn, 360);
+  }
+  el.addEventListener('click', enter);
+}
 function renderCaverne() {
   var el = document.getElementById('onboard-caverne');
   if (!el) return;
@@ -9887,6 +9953,8 @@ function renderCaverne() {
     stage.style.opacity = '0';
     setTimeout(function() {
       stage.innerHTML = beats[i].html;
+      if (window._cavSound && i === 2) cavChime(880, 0.20, 3.2);
+      if (window._cavSound && i === 3) cavChime(1174.66, 0.13, 2.6);
       setGlow(glows[i]);
       requestAnimationFrame(function() { requestAnimationFrame(function() {
         stage.style.opacity = '1';
@@ -9905,13 +9973,14 @@ function renderCaverne() {
     glow.style.width = '1200px';
     glow.style.height = '1200px';
     glow.style.opacity = '1';
+    if (window._cavSound) cavBloomSound();
     setTimeout(function() {
       el.style.transition = 'opacity 1200ms ease';
       el.style.opacity = '0';
       setTimeout(function() { onboardNext(); }, 1300);
     }, 1600);
   }
-  showBeat(0);
+  cavRenderSeuil(el, stage, function(){ showBeat(0); });
 }
 
 function onboardRender() {
