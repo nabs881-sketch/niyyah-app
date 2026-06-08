@@ -11565,7 +11565,7 @@ function journalSwitchTab(tab) {
     if (tabR) { tabR.style.background = 'linear-gradient(180deg,rgba(212,181,98,0.18) 0%,rgba(166,117,68,0.12) 100%)'; tabR.style.border = '1px solid rgba(230,200,130,0.5)'; tabR.style.color = 'rgba(230,200,130,1)'; tabR.style.boxShadow = '0 2px 8px rgba(0,0,0,0.3),inset 0 1px 0 rgba(255,230,180,0.1)'; }
     var entries = getRegardeHistory();
     if (entries.length === 0) {
-      content.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">\u0646\u064E\u0638\u064E\u0631</div><div class="empty-state-title">'+t('journal_regarde_title')+'</div><div class="empty-state-text">'+t('journal_regarde_text')+'</div><div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.45);margin-top:12px;line-height:1.5;">Les Regards viennent \u00e0 toi quand Allah veut.<br>Reviens lire ceux qui te sont d\u00e9j\u00e0 donn\u00e9s.</div></div>';
+      content.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">\u0646\u064E\u0638\u064E\u0631</div><div class="empty-state-title">'+t('journal_regarde_title')+'</div><div class="empty-state-text">'+t('journal_regarde_text')+'</div><div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.45);margin-top:12px;line-height:1.5;">Les Regards viennent \u00e0 toi quand Allah veut.<br>Pose ton premier regard depuis Scanner.</div></div>';
     } else {
       var html = '';
       entries.forEach(function(e) {
@@ -15972,7 +15972,7 @@ function openRegardeJournal() {
   if (!overlay || !list) return;
   var entries = getRegardeHistory();
   if (entries.length === 0) {
-    list.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">\u0646\u064E\u0638\u064E\u0631</div><div class="empty-state-title">'+t('journal_regarde_title')+'</div><div class="empty-state-text">'+t('journal_regarde_text')+'</div><div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.45);margin-top:12px;line-height:1.5;">Les Regards viennent \u00e0 toi quand Allah veut.<br>Reviens lire ceux qui te sont d\u00e9j\u00e0 donn\u00e9s.</div></div>';
+    list.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">\u0646\u064E\u0638\u064E\u0631</div><div class="empty-state-title">'+t('journal_regarde_title')+'</div><div class="empty-state-text">'+t('journal_regarde_text')+'</div><div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.45);margin-top:12px;line-height:1.5;">Les Regards viennent \u00e0 toi quand Allah veut.<br>Pose ton premier regard depuis Scanner.</div></div>';
   } else {
     var html = '';
     entries.forEach(function(e) {
@@ -15987,7 +15987,7 @@ function openRegardeJournal() {
         + '<div style="font-size:12px;color:rgba(255,255,255,0.55);margin-top:4px;">' + dateStr + '</div>'
         + '</div>' + star + '</div>';
     });
-    html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.35);text-align:center;margin-top:20px;line-height:1.5;">Les Regards viennent \u00e0 toi quand Allah veut.<br>Reviens lire ceux qui te sont d\u00e9j\u00e0 donn\u00e9s.</div>';
+    html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.35);text-align:center;margin-top:20px;line-height:1.5;">Les Regards viennent \u00e0 toi quand Allah veut.<br>Pose ton premier regard depuis Scanner.</div>';
     list.innerHTML = html;
   }
   overlay.style.display = 'block';
