@@ -6119,8 +6119,8 @@ body::before {
   overflow: hidden;
   background: radial-gradient(
     circle at 40% 36%,
-    rgba(214,228,255,.40) 0%,
-    rgba(96,132,206,.26) 24%,
+    rgba(140,178,250,.30) 0%,
+    rgba(66,100,180,.26) 24%,
     rgba(30,46,96,.72) 54%,
     #05060f 100%
   );
@@ -6141,7 +6141,7 @@ body::before {
   top: 12%; left: 18%;
   width: 38%; height: 28%;
   border-radius: 50%;
-  background: radial-gradient(ellipse, rgba(210,228,255,.20) 0%, transparent 70%);
+  background: radial-gradient(ellipse, rgba(170,200,255,.12) 0%, transparent 70%);
   filter: blur(8px);
   pointer-events: none;
   z-index: 0;
@@ -6227,7 +6227,7 @@ body::before {
 .orb-symbol-v2 {
   font-family: 'Scheherazade New', var(--font-v2-ar);
   font-size: 56px; color: rgba(240,208,140,0.80); line-height: 1;
-  text-shadow: 0 0 22px rgba(255,220,150,0.5);
+  text-shadow: 0 0 9px rgba(255,226,175,0.42);
   margin-bottom: 12px;
   transition: color 0.4s; user-select: none;
   position: relative; z-index: 1;
