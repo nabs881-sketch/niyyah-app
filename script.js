@@ -11549,12 +11549,11 @@ function journalSwitchTab(tab) {
   } else {
     if (tabN) { tabN.style.background = 'transparent'; tabN.style.border = '1px solid rgba(200,168,75,0.15)'; tabN.style.color = 'rgba(200,168,75,0.5)'; tabN.style.boxShadow = 'none'; }
     if (tabR) { tabR.style.background = 'linear-gradient(180deg,rgba(212,181,98,0.18) 0%,rgba(166,117,68,0.12) 100%)'; tabR.style.border = '1px solid rgba(230,200,130,0.5)'; tabR.style.color = 'rgba(230,200,130,1)'; tabR.style.boxShadow = '0 2px 8px rgba(0,0,0,0.3),inset 0 1px 0 rgba(255,230,180,0.1)'; }
-    var _regardOpenBtn = _regardeOpenBtnHTML();
     var entries = getRegardeHistory();
     if (entries.length === 0) {
-      content.innerHTML = _regardOpenBtn + '<div class="empty-state-premium"><div class="empty-state-glyph">\u0646\u064E\u0638\u064E\u0631</div><div class="empty-state-title">'+t('journal_regarde_title')+'</div><div class="empty-state-text">'+t('journal_regarde_text')+'</div><div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.45);margin-top:12px;line-height:1.5;">Les Regards viennent \u00e0 toi quand Allah veut.<br>Reviens lire ceux qui te sont d\u00e9j\u00e0 donn\u00e9s.</div></div>';
+      content.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">\u0646\u064E\u0638\u064E\u0631</div><div class="empty-state-title">'+t('journal_regarde_title')+'</div><div class="empty-state-text">'+t('journal_regarde_text')+'</div><div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.45);margin-top:12px;line-height:1.5;">Les Regards viennent \u00e0 toi quand Allah veut.<br>Reviens lire ceux qui te sont d\u00e9j\u00e0 donn\u00e9s.</div></div>';
     } else {
-      var html = _regardOpenBtn;
+      var html = '';
       entries.forEach(function(e) {
         var d = new Date(e.date);
         var dateStr = d.toLocaleDateString(_dateLocale(), { day:'numeric', month:'short' }) + ' · ' + d.toLocaleTimeString(_dateLocale(), { hour:'2-digit', minute:'2-digit' });
@@ -11565,19 +11564,6 @@ function journalSwitchTab(tab) {
           + '<div style="font-size:12px;color:rgba(255,255,255,0.55);margin-top:4px;">' + dateStr + '</div></div>' + star + '</div>';
       });
       content.innerHTML = html;
-    }
-    if (safeGetItem('niyyah_intro_regards') !== '1') {
-      _showNiyyahIntro({
-        flag: 'niyyah_intro_regards',
-        eyebrow: 'Niyyah t\u2019accompagne',
-        nom_fr: 'Regard',
-        nom_ar: '\u0646\u064E\u0638\u064E\u0631',
-        texte: 'Quand quelque chose attire ton regard \u2014 un visage, une plante, une rue \u2014 ouvre Regard. Niyyah cherche dans le Coran le verset qui \u00e9claire cet instant, et te le murmure. Touche \u00ab\u00a0Regarder maintenant\u00a0\u00bb quand tu veux\u2009; parfois, il viendra aussi \u00e0 toi.',
-        meta: '5 par jour \u00b7 reste sur ton appareil',
-        enterLabel: 'Compris',
-        single: true,
-        enterFn: function(){}
-      });
     }
   }
 }
@@ -15335,6 +15321,12 @@ function _askCameraPermission(context) {
 }
 
 async function regardeOpen() {
+  if (safeGetItem('niyyah_intro_regards') !== '1') {
+    _showNiyyahIntro({ flag:'niyyah_intro_regards', eyebrow:'Niyyah t\u2019accompagne', nom_fr:'Regard', nom_ar:'\u0646\u064E\u0638\u064E\u0631',
+      texte:'Quand quelque chose attire ton regard \u2014 un visage, une plante, une rue \u2014 pose un regard. Niyyah cherche dans le Coran le verset qui \u00e9claire cet instant, et te le murmure.',
+      meta:'5 par jour \u00b7 reste sur ton appareil', enterLabel:'Commencer', single:true, enterFn:function(){ regardeOpen(); } });
+    return;
+  }
   _nAn('scanner_tab_visited');
   showAlHayaBtn();
   var screen = document.getElementById('regarde-screen');
@@ -15965,11 +15957,10 @@ function openRegardeJournal() {
   var list = document.getElementById('regarde-journal-list');
   if (!overlay || !list) return;
   var entries = getRegardeHistory();
-  var _regardOpenBtn = '<button onclick="regardeOpen()" style="display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:14px;border-radius:12px;border:1px solid rgba(212,175,55,0.25);background:rgba(200,168,75,0.05);cursor:pointer;margin-bottom:14px;font-family:var(--serif);font-size:15px;color:#D4AF37;">\uD83D\uDC41 ' + (t('regarde_open_now') || 'Regarder maintenant') + '</button>';
   if (entries.length === 0) {
-    list.innerHTML = _regardOpenBtn + '<div class="empty-state-premium"><div class="empty-state-glyph">\u0646\u064E\u0638\u064E\u0631</div><div class="empty-state-title">'+t('journal_regarde_title')+'</div><div class="empty-state-text">'+t('journal_regarde_text')+'</div><div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.45);margin-top:12px;line-height:1.5;">Les Regards viennent \u00e0 toi quand Allah veut.<br>Reviens lire ceux qui te sont d\u00e9j\u00e0 donn\u00e9s.</div></div>';
+    list.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">\u0646\u064E\u0638\u064E\u0631</div><div class="empty-state-title">'+t('journal_regarde_title')+'</div><div class="empty-state-text">'+t('journal_regarde_text')+'</div><div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.45);margin-top:12px;line-height:1.5;">Les Regards viennent \u00e0 toi quand Allah veut.<br>Reviens lire ceux qui te sont d\u00e9j\u00e0 donn\u00e9s.</div></div>';
   } else {
-    var html = _regardOpenBtn;
+    var html = '';
     entries.forEach(function(e) {
       var d = new Date(e.date);
       var dateStr = d.toLocaleDateString(_dateLocale(), { day:'numeric', month:'short' }) + ' · ' + d.toLocaleTimeString(_dateLocale(), { hour:'2-digit', minute:'2-digit' });
@@ -16092,7 +16083,35 @@ function regardeCancelThinking() {
   regardeOpen();
 }
 
+function openScannerHub(){
+  var prev=document.getElementById('scanner-hub-overlay'); if(prev) prev.remove();
+  var ov=document.createElement('div'); ov.id='scanner-hub-overlay'; ov.className='scanner-hub';
+  ov.innerHTML =
+    '<button class="scanner-hub-close" onclick="closeScannerHub()" aria-label="Fermer">\u2715</button>'
+   +'<div class="scanner-hub-eyebrow">SCANNER</div>'
+   +'<div class="scanner-hub-title">Deux gestes</div>'
+   +'<div class="scanner-hub-sub">Choisis ton geste</div>'
+   +'<button class="scanner-hub-card" onclick="closeScannerHub();scannerOpen();">'
+     +'<span class="shc-orb shc-orb-gold">\u0646\u0650\u064A\u0651\u064E\u0629</span>'
+     +'<span class="shc-txt"><span class="shc-title">Pose une intention</span><span class="shc-desc">Sacralise ce que tu t\u2019appr\u00eates \u00e0 faire.</span></span>'
+     +'<span class="shc-chev">\u203A</span>'
+   +'</button>'
+   +'<button class="scanner-hub-card" onclick="closeScannerHub();regardeOpen();">'
+     +'<span class="shc-orb shc-orb-silver">\u0646\u064E\u0638\u064E\u0631</span>'
+     +'<span class="shc-txt"><span class="shc-title">Pose un regard</span><span class="shc-desc">Re\u00e7ois le verset qui \u00e9claire l\u2019instant.</span></span>'
+     +'<span class="shc-chev">\u203A</span>'
+   +'</button>';
+  document.body.appendChild(ov);
+}
+function closeScannerHub(){ var o=document.getElementById('scanner-hub-overlay'); if(o) o.remove(); }
+window.openScannerHub=openScannerHub; window.closeScannerHub=closeScannerHub;
 async function scannerOpen() {
+  if (safeGetItem('niyyah_intro_niyyah') !== '1') {
+    _showNiyyahIntro({ flag:'niyyah_intro_niyyah', eyebrow:'Niyyah t\u2019accompagne', nom_fr:'Niyyah', nom_ar:'\u0646\u0650\u064A\u0651\u064E\u0629',
+      texte:'Avant un geste du quotidien \u2014 boire, marcher, travailler \u2014 pose une intention. Niyyah t\u2019en propose une pour le sacraliser, ou \u00e9cris la tienne.',
+      meta:'reste sur ton appareil', enterLabel:'Commencer', single:true, enterFn:function(){ scannerOpen(); } });
+    return;
+  }
   _nAn('scanner_uses');
   showAlHayaBtn();
   const overlay = document.getElementById('scanner-overlay');
