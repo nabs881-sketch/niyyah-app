@@ -10002,6 +10002,10 @@ function onboardRender() {
   requestAnimationFrame(function() {
     var content = document.getElementById('onboardContent');
     if (content && ONBOARD_SLIDES[slideIdx]) content.innerHTML = ONBOARD_SLIDES[slideIdx]();
+    if (slideIdx === 3 && !isPremium() && safeGetItem('niyyah_plus_intro') !== '1') {
+      safeSetItem('niyyah_plus_intro', '1');
+      setTimeout(function(){ openFreemium(); }, 350);
+    }
     if (content) content.querySelectorAll('.ob-rise').forEach(function(el,k){ el.style.animationDelay=(k*0.07)+'s'; });
     var _obScreen = document.getElementById('onboardScreen');
     if (_obScreen) _obScreen.scrollTop = 0;
@@ -10029,10 +10033,6 @@ function onboardFinish() {
   if (screen) {
     screen.style.opacity = '0';
     setTimeout(() => screen.classList.add('hidden'), 350);
-  }
-  if (!isPremium() && safeGetItem('niyyah_plus_intro') !== '1') {
-    safeSetItem('niyyah_plus_intro', '1');
-    setTimeout(function(){ openFreemium(); }, 900);
   }
   // Charger horaires — géoloc silencieuse si pas encore faite
   var _onboardCoords = localStorage.getItem('niyyah_coords');
