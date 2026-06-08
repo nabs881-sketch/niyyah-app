@@ -12256,6 +12256,10 @@ function replayOnboarding() {
   if (typeof closeAnyOpenSheet === 'function') closeAnyOpenSheet();
   var sheet = document.getElementById('v2-settings-sheet');
   if (sheet) sheet.style.display = 'none';
+  var cav = document.getElementById('onboard-caverne');
+  if (cav) { cav.style.transition = 'none'; cav.style.opacity = '1'; }
+  var obs = document.getElementById('onboardScreen');
+  if (obs) { obs.classList.remove('hidden'); obs.style.opacity = '1'; }
   _onboardStep = 0;
   document.body.classList.add('onboarding-active');
   onboardRender();
