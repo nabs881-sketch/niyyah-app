@@ -16285,6 +16285,7 @@ function niyyahDetailDelete(id) {
 
 /* ── Fermer le Scanner ── */
 function scannerClose() {
+  window._scannerImageData = null;
   hideAlHayaBtn();
   const overlay = document.getElementById('scanner-overlay');
   if (overlay) overlay.classList.remove('active');
@@ -16417,11 +16418,12 @@ function _scannerAdopt(intentionText) {
   v2ShowToast(t('toast_niyyah'));
   if (navigator.vibrate) navigator.vibrate([20, 40, 80]);
   // Sauvegarde journal
-  var _scanImg = document.getElementById('scanner-canvas');
-  if (_scanImg) {
-    compressPhoto(_scanImg.toDataURL('image/jpeg', 0.85)).then(function(photo) {
+  if (window._scannerImageData) {
+    compressPhoto(window._scannerImageData).then(function(photo) {
       addNiyyahEntry({ intention: intentionText, category: (_scannerResult && _scannerResult.category) || 'INDETERMINE', photo: photo });
     });
+  } else {
+    addNiyyahEntry({ intention: intentionText, category: (_scannerResult && _scannerResult.category) || 'INDETERMINE', photo: null });
   }
   setTimeout(function() {
     scannerClose();
@@ -16584,6 +16586,7 @@ async function scannerCapture() {
   var ctx = canvas.getContext('2d');
   ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
   var imageData = canvas.toDataURL('image/jpeg', 0.8);
+  window._scannerImageData = imageData;
   // Image réduite pour l'IA (512px, 0.7) — économie tokens
   var _cc = document.createElement('canvas');
   var _cs = Math.min(1, 512 / Math.max(canvas.width, canvas.height));
