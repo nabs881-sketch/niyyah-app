@@ -15422,6 +15422,7 @@ async function regardeOpen() {
   }
 
   screen.classList.add('active');
+  if (typeof closeScannerHub === 'function') closeScannerHub();
   document.body.style.overflow = 'hidden';
 }
 
@@ -16151,12 +16152,12 @@ function openScannerHub(){
    +'<div class="scanner-hub-eyebrow">SCANNER</div>'
    +'<div class="scanner-hub-title">Deux gestes</div>'
    +'<div class="scanner-hub-sub">Choisis ton geste</div>'
-   +'<button class="scanner-hub-card" onclick="closeScannerHub();scannerOpen();">'
+   +'<button class="scanner-hub-card" onclick="scannerOpen();">'
      +'<span class="shc-orb shc-orb-gold">\u0646\u0650\u064A\u0651\u064E\u0629</span>'
      +'<span class="shc-txt"><span class="shc-title">Pose une intention</span><span class="shc-desc">Sacralise ce que tu t\u2019appr\u00eates \u00e0 faire.</span></span>'
      +'<span class="shc-chev">\u203A</span>'
    +'</button>'
-   +'<button class="scanner-hub-card" onclick="closeScannerHub();regardeOpen();">'
+   +'<button class="scanner-hub-card" onclick="regardeOpen();">'
      +'<span class="shc-orb shc-orb-silver">\u0646\u064E\u0638\u064E\u0631</span>'
      +'<span class="shc-txt"><span class="shc-title">Pose un regard</span><span class="shc-desc">Re\u00e7ois le verset qui \u00e9claire l\u2019instant.</span></span>'
      +'<span class="shc-chev">\u203A</span>'
@@ -16183,6 +16184,7 @@ async function scannerOpen() {
 
   // 1. Afficher DOM immédiatement avec placeholder
   overlay.classList.add('active');
+  if (typeof closeScannerHub === 'function') closeScannerHub();
   document.body.style.overflow = 'hidden';
   document.getElementById('scanner-result').classList.remove('active');
   document.getElementById('scanner-capture-btn').classList.add('hidden');
