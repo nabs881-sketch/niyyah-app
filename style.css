@@ -9339,3 +9339,11 @@ body.onboarding-active #nav-bar-v2 {
 .shc-title{font-family:'Cormorant Garamond',var(--serif);font-size:16px;letter-spacing:1.5px;text-transform:uppercase;color:#EBD79A;}
 .shc-desc{font-family:var(--serif);font-style:italic;font-size:13px;color:rgba(200,168,75,0.7);}
 .shc-chev{flex-shrink:0;color:rgba(200,168,75,0.55);font-size:22px;font-family:var(--serif);}
+.quota-limit{position:fixed;inset:0;z-index:9500;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(8,7,5,0.82);backdrop-filter:blur(4px);animation:sanctFadeIn .35s ease forwards;}
+.ql-sheet{width:100%;max-width:340px;background:radial-gradient(ellipse at top,#15110A,#0B0907);border:1px solid rgba(200,168,75,0.25);border-radius:22px;padding:28px 24px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.6);}
+.ql-orb{font-size:30px;margin-bottom:10px;}
+.ql-title{font-family:'Cormorant Garamond',var(--serif);font-style:italic;font-size:24px;color:#EBD79A;margin-bottom:8px;}
+.ql-sub{font-family:var(--serif);font-size:14px;color:#B5A685;line-height:1.5;margin-bottom:18px;}
+.ql-when{font-family:'Cormorant Garamond',var(--serif);font-style:italic;font-size:14px;color:rgba(200,168,75,0.8);border-top:1px solid rgba(200,168,75,0.15);padding-top:14px;margin-bottom:18px;}
+.ql-premium{width:100%;padding:14px;border:none;border-radius:24px;background:linear-gradient(90deg,#E8CE8A,#D4AF37,#C8A84A);color:#2C2410;font-family:'Cormorant Garamond',var(--serif);font-weight:700;font-size:15px;letter-spacing:0.5px;cursor:pointer;margin-bottom:8px;}
+.ql-close{width:100%;padding:10px;border:none;background:none;color:rgba(255,255,255,0.45);font-family:var(--serif);font-style:italic;font-size:13px;cursor:pointer;}

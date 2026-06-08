@@ -9052,6 +9052,37 @@ function freemiumShowCode(){ var r=document.getElementById('freemium-code-row');
 function freemiumBuy(){ freemiumShowCode(); showToast('Disponible au lancement \u2014 pendant la beta, entre ton code.'); }
 function freemiumActivate(){ var i=document.getElementById('freemium-code-input'); if(i && unlockPremium(i.value)){ alert('Niyyah+ activ\u00e9.'); location.reload(); } else { alert('Code invalide'); } }
 window.freemiumShowCode=freemiumShowCode; window.freemiumBuy=freemiumBuy; window.freemiumActivate=freemiumActivate;
+function showQuotaLimit(kind){
+  var title, sub, hint;
+  if (kind === 'regard') {
+    title = 'Ton Regard du jour';
+    sub = 'Tu as re\u00e7u ton Regard d\u2019aujourd\u2019hui.<br>Reviens demain in cha Allah \uD83C\uDF19';
+    hint = 'Avec Niyyah+ : 3 Regards par jour.';
+  } else {
+    var q = []; try { q = JSON.parse(localStorage.getItem('niyyah_scanner_quota') || '[]'); } catch(e) {}
+    var weekAgo = new Date(Date.now() - 7*86400000).toISOString();
+    q = q.filter(function(t){ return t > weekAgo; }).sort();
+    var oldest = q.length ? new Date(q[0]).getTime() : Date.now();
+    var days = Math.max(1, Math.ceil((oldest + 7*86400000 - Date.now()) / 86400000));
+    title = 'Tes scans de la semaine';
+    sub = 'Tu as utilis\u00e9 tes 3 scans d\u2019intention.<br>Prochain dans ' + days + ' jour' + (days>1?'s':'') + '.';
+    hint = 'Avec Niyyah+ : 3 scans par jour.';
+  }
+  var prev = document.getElementById('quota-limit-overlay'); if (prev) prev.remove();
+  var ov = document.createElement('div'); ov.id = 'quota-limit-overlay'; ov.className = 'quota-limit';
+  ov.innerHTML =
+    '<div class="ql-sheet">'
+    + '<div class="ql-orb">\uD83C\uDF19</div>'
+    + '<div class="ql-title">' + title + '</div>'
+    + '<div class="ql-sub">' + sub + '</div>'
+    + '<div class="ql-when">' + hint + '</div>'
+    + '<button class="ql-premium" onclick="closeQuotaLimit();openFreemium();">D\u00e9bloquer Niyyah+ \u2726</button>'
+    + '<button class="ql-close" onclick="closeQuotaLimit()">Fermer</button>'
+    + '</div>';
+  document.body.appendChild(ov);
+}
+function closeQuotaLimit(){ var o = document.getElementById('quota-limit-overlay'); if (o) o.remove(); }
+window.showQuotaLimit = showQuotaLimit; window.closeQuotaLimit = closeQuotaLimit;
 /* ══ STATUT PREMIUM ══ */
 function isPremium() {
   return localStorage.getItem('niyyah_premium') === 'true' || localStorage.getItem('niyyah_pro') === '1';
@@ -15747,7 +15778,7 @@ function regardeCapture() {
     var _today = todayKey();
     _rq = _rq.filter(function(d){ return d === _today; });
     var _rLimit = (typeof isPremium === 'function' && isPremium()) ? 3 : 1;
-    if (_rq.length >= _rLimit) { openFreemium(); return; }
+    if (_rq.length >= _rLimit) { showQuotaLimit('regard'); return; }
     _rq.push(_today);
     safeSetItem('niyyah_regarde_quota', JSON.stringify(_rq));
   }
@@ -16504,7 +16535,7 @@ async function scannerCapture() {
   var _windowMs = _prem ? 86400000 : 7 * 86400000;
   var _cutoff = new Date(Date.now() - _windowMs).toISOString();
   _sq = _sq.filter(function(ts){ return ts > _cutoff; });
-  if (!NIYYAH_DEBUG && _sq.length >= 3) { openFreemium(); return; }
+  if (!NIYYAH_DEBUG && _sq.length >= 3) { showQuotaLimit('scan'); return; }
   _sq.push(new Date().toISOString());
   safeSetItem('niyyah_scanner_quota', JSON.stringify(_sq));
 
