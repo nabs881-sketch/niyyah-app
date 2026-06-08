@@ -10285,7 +10285,7 @@ const V2_I18N = {
     // Premium
     premium_unlocked: '✅ Accès complet débloqué — Barakallahu feek !',
     // Camera
-    camera_denied: 'Acc\u00e8s cam\u00e9ra refus\u00e9 \u2014 autorise l\u2019acc\u00e8s dans les r\u00e9glages', btn_retry: 'R\u00e9essayer', btn_close: 'Fermer', audio_offline: 'Audio non disponible hors-ligne', regarde_limit: 'Limite Regarde atteinte (5/jour) \u2014 reviens demain', regarde_hint: 'Pointe vers ce que tu regardes', regarde_tab_verset: 'Verset', regarde_tab_duaa: 'Du\u2019\u00e2', regarde_tab_murmure: 'Murmure', regarde_label_inv: 'INVOCATION', regarde_label_quran: 'CORAN', regarde_unavailable: 'Indisponible', regarde_open_now: 'Regarder maintenant', regarde_breathe: 'Respire',
+    camera_denied: 'Acc\u00e8s cam\u00e9ra refus\u00e9 \u2014 autorise l\u2019acc\u00e8s dans les r\u00e9glages', btn_retry: 'R\u00e9essayer', btn_close: 'Fermer', audio_offline: 'Audio non disponible hors-ligne', regarde_limit: 'Limite Regarde atteinte \u2014 reviens demain', scanner_limit: 'Limite de scans atteinte \u2014 reviens bient\u00f4t inch\u2019Allah \uD83C\uDF19', regarde_hint: 'Pointe vers ce que tu regardes', regarde_tab_verset: 'Verset', regarde_tab_duaa: 'Du\u2019\u00e2', regarde_tab_murmure: 'Murmure', regarde_label_inv: 'INVOCATION', regarde_label_quran: 'CORAN', regarde_unavailable: 'Indisponible', regarde_open_now: 'Regarder maintenant', regarde_breathe: 'Respire',
     // Compass
     compass_denied: 'Autorise la boussole dans les réglages',
     disclaimer: 'Cette application n\'émet pas d\'avis religieux. Pour toute question de fiqh, consultez un savant qualifié.',
@@ -10525,7 +10525,7 @@ const V2_I18N = {
     share_downloaded: 'Image downloaded — share it 🌿', share_copied: 'Link copied!',
     share_card: 'NIYYAH CARD ✦', share_intention: 'Share this intention', share_btn: 'SHARE ✦', share_close: 'CLOSE',
     premium_unlocked: '✅ Full access unlocked — Barakallahu feek!',
-    camera_denied: 'Camera access denied \u2014 allow in settings', btn_retry: 'Retry', btn_close: 'Close', audio_offline: 'Audio not available offline', regarde_limit: 'Regarde limit reached (5/day) \u2014 come back tomorrow', regarde_hint: 'Point at what you are looking at', regarde_tab_verset: 'Verse', regarde_tab_duaa: 'Du\u2019a', regarde_tab_murmure: 'Whisper', regarde_label_inv: 'INVOCATION', regarde_label_quran: 'QURAN', regarde_unavailable: 'Unavailable', regarde_open_now: 'Look now', regarde_breathe: 'Breathe',
+    camera_denied: 'Camera access denied \u2014 allow in settings', btn_retry: 'Retry', btn_close: 'Close', audio_offline: 'Audio not available offline', regarde_limit: 'Regarde limit reached \u2014 come back tomorrow', scanner_limit: 'Scan limit reached \u2014 come back soon insha\u2019Allah \uD83C\uDF19', regarde_hint: 'Point at what you are looking at', regarde_tab_verset: 'Verse', regarde_tab_duaa: 'Du\u2019a', regarde_tab_murmure: 'Whisper', regarde_label_inv: 'INVOCATION', regarde_label_quran: 'QURAN', regarde_unavailable: 'Unavailable', regarde_open_now: 'Look now', regarde_breathe: 'Breathe',
     compass_denied: 'Allow compass in settings',
     disclaimer: 'This app does not issue religious rulings. For any fiqh question, consult a qualified scholar.',
     settings_mentions: 'Legal Notice',
@@ -14218,6 +14218,7 @@ function applyAtmosphereDOM(bgStr, goldStr, goldAlpha) {
   if (chip) chip.style.borderColor = goldAlpha;
 }
 function showRegardeAlertModal() {
+  window._regardeSurprise = true;
   const overlay = document.getElementById('regarde-alert-overlay');
   if (overlay) overlay.style.display = 'flex';
 }
@@ -15735,15 +15736,17 @@ function _regardeShowVerset(content, v, slow, returning) {
 }
 
 function regardeCapture() {
-  // Quota Regarde : 5/jour
-  try {
-    var _rqRaw = safeParseJSON('niyyah_regarde_quota', []);
-    var _rqToday = todayKey();
-    _rqRaw = _rqRaw.filter(function(d) { return d === _rqToday; });
-    if (_rqRaw.length >= 5) { showToast(t('regarde_limit')); return; }
-    _rqRaw.push(_rqToday);
-    safeSetItem('niyyah_regarde_quota', JSON.stringify(_rqRaw));
-  } catch(e) {}
+  // Quota Regarde : 1/jour gratuit, 3/jour premium — surprise exemptée
+  if (!window._regardeSurprise) {
+    var _rq = safeParseJSON('niyyah_regarde_quota', []);
+    var _today = todayKey();
+    _rq = _rq.filter(function(d){ return d === _today; });
+    var _rLimit = (typeof isPremium === 'function' && isPremium()) ? 3 : 1;
+    if (_rq.length >= _rLimit) { showToast(t('regarde_limit')); return; }
+    _rq.push(_today);
+    safeSetItem('niyyah_regarde_quota', JSON.stringify(_rq));
+  }
+  window._regardeSurprise = false;
 
   var video = document.getElementById('regarde-video');
   var content = document.getElementById('regarde-content');
@@ -15852,7 +15855,7 @@ function regardeCapture() {
     fetch('https://niyyah-api.nabs881.workers.dev/api/regarde', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ image: base64, seen_versets: _seenVersets, premium: isPremium() }),
+      body: JSON.stringify({ image: base64, seen_versets: _seenVersets, premium: false }),
       signal: _acR.signal
     })
     .then(function(res) {
@@ -16082,6 +16085,7 @@ function regardeDetailDelete(id) {
 }
 
 function regardeClose() {
+  window._regardeSurprise = false;
   hideAlHayaBtn();
   closeRegardeJournal();
   closeRegardeDetail();
@@ -16475,36 +16479,29 @@ function scannerCancelThinking() {
 function _updateScannerQuotaHint() {
   var el = document.getElementById('scanner-quota-hint');
   if (!el) return;
+  var _prem = (typeof isPremium === 'function' && isPremium());
   var quota = [];
   try { quota = JSON.parse(localStorage.getItem('niyyah_scanner_quota') || '[]'); } catch(e) {}
-  var weekAgo = new Date(Date.now() - 7 * 86400000).toISOString();
-  quota = quota.filter(function(ts) { return ts > weekAgo; });
-  var limit = (typeof isPremium === 'function' && isPremium()) ? 3 : 1;
-  var remaining = limit - quota.length;
+  var _windowMs = _prem ? 86400000 : 7 * 86400000;
+  var _cutoff = new Date(Date.now() - _windowMs).toISOString();
+  quota = quota.filter(function(ts) { return ts > _cutoff; });
+  var remaining = 3 - quota.length;
   if (remaining >= 2) { el.textContent = ''; return; }
-  if (remaining === 1) { el.textContent = 'Un dernier scan possible cette semaine'; return; }
-  // remaining <= 0
-  var oldest = quota.length ? new Date(quota[0]).getTime() : Date.now();
-  var resetMs = oldest + 7 * 86400000 - Date.now();
-  var resetDays = Math.max(1, Math.ceil(resetMs / 86400000));
-  if (limit === 1) { el.textContent = 'Prochain scan dans ' + resetDays + ' jour' + (resetDays > 1 ? 's' : ''); }
-  else { el.textContent = 'Tous tes scans utilis\u00e9s. Reviens dans ' + resetDays + ' jour' + (resetDays > 1 ? 's' : ''); }
+  if (remaining === 1) { el.textContent = _prem ? 'Un dernier scan aujourd\u2019hui' : 'Un dernier scan cette semaine'; return; }
+  el.textContent = _prem ? 'Reviens demain inch\u2019Allah' : 'Reviens bient\u00f4t inch\u2019Allah';
 }
 
 /* ── Capturer et Analyser ── */
 async function scannerCapture() {
-  // Quota scanner : 1/semaine gratuit, 3/semaine premium
-  var _scanQuota = [];
-  try { _scanQuota = JSON.parse(localStorage.getItem('niyyah_scanner_quota') || '[]'); } catch(e) { _scanQuota = []; }
-  var _weekAgo = new Date(Date.now() - 7 * 86400000).toISOString();
-  _scanQuota = _scanQuota.filter(function(ts) { return ts > _weekAgo; });
-  var _scanLimit = (typeof isPremium === 'function' && isPremium()) ? 3 : 1;
-  if (!NIYYAH_DEBUG && _scanQuota.length >= _scanLimit) {
-    showToast(t('scanner_limit_week'));
-    return;
-  }
-  _scanQuota.push(new Date().toISOString());
-  safeSetItem('niyyah_scanner_quota', JSON.stringify(_scanQuota));
+  // Quota scanner : gratuit 3/semaine, premium 3/jour
+  var _prem = (typeof isPremium === 'function' && isPremium());
+  var _sq = []; try { _sq = JSON.parse(localStorage.getItem('niyyah_scanner_quota') || '[]'); } catch(e) { _sq = []; }
+  var _windowMs = _prem ? 86400000 : 7 * 86400000;
+  var _cutoff = new Date(Date.now() - _windowMs).toISOString();
+  _sq = _sq.filter(function(ts){ return ts > _cutoff; });
+  if (!NIYYAH_DEBUG && _sq.length >= 3) { showToast(t('scanner_limit')); return; }
+  _sq.push(new Date().toISOString());
+  safeSetItem('niyyah_scanner_quota', JSON.stringify(_sq));
 
   const video   = document.getElementById('scanner-video');
   const canvas  = document.getElementById('scanner-canvas');
@@ -16542,10 +16539,17 @@ async function scannerCapture() {
   var ctx = canvas.getContext('2d');
   ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
   var imageData = canvas.toDataURL('image/jpeg', 0.8);
+  // Image réduite pour l'IA (512px, 0.7) — économie tokens
+  var _cc = document.createElement('canvas');
+  var _cs = Math.min(1, 512 / Math.max(canvas.width, canvas.height));
+  _cc.width = Math.round(canvas.width * _cs);
+  _cc.height = Math.round(canvas.height * _cs);
+  _cc.getContext('2d').drawImage(canvas, 0, 0, _cc.width, _cc.height);
+  var _scanB64 = _cc.toDataURL('image/jpeg', 0.7);
 
   // Traitement < 3 secondes
   try {
-    var result = await scannerAnalyzeImage(imageData);
+    var result = await scannerAnalyzeImage(_scanB64);
     (window.scannerShowResult || scannerShowResult)(result);
   } catch(err) {
     if (err && (err.name === 'AbortError' || err.code === 20)) return;
