@@ -15074,6 +15074,11 @@ window.CURE_REGARD_CYCLE1 = null;
 fetch('cure-regard-cycle1.json').then(function(r){return r.ok?r.json():null}).then(function(d){if(d){window.CURE_REGARD_CYCLE1=d;console.log('Cure Regard Cycle 1 loaded')}}).catch(function(){});
 window.COFFRET_REGARD = null;
 fetch('coffret-regard.json').then(function(r){return r.ok?r.json():null}).then(function(d){if(d){window.COFFRET_REGARD=d;console.log('Coffret Regard loaded')}}).catch(function(){});
+fetch('./data/duaas-regard.json').then(function(r){ return r.ok ? r.json() : null; }).then(function(d){
+  if (!d) return;
+  var n = {}; Object.keys(d).forEach(function(k){ if (k !== '_meta') n[k.toUpperCase()] = d[k]; });
+  window.REGARD_DUAAS = n;
+}).catch(function(){});
 window.CURE_ARROGANCE_CYCLE1 = null;
 fetch('cure-arrogance-cycle1.json').then(function(r){return r.ok?r.json():null}).then(function(d){if(d){window.CURE_ARROGANCE_CYCLE1=d;console.log('Cure Arrogance Cycle 1 loaded')}}).catch(function(){});
 window.COFFRET_ARROGANCE = null;
@@ -15385,7 +15390,7 @@ function _renderRegardePremium(content, data, dataUrl) {
         + (audioUrl ? '<button class="btn-regard-premium" id="regarde-premium-audio" onclick="_regardePremiumPlayAudio(this)" data-src="' + audioUrl + '" aria-label="\u00c9couter">' + _svgPlayIcon + '</button>' : '')
         + (audioUrl ? '<button class="btn-regard-premium" id="regarde-premium-loop" onclick="_regardePremiumLoop(this)" data-src="' + audioUrl + '" aria-label="R\u00e9citer 7 fois">' + _svg7xIcon + '</button>' : '')
         + '<button class="btn-regard-premium" id="regarde-btn-memo" onclick="_regardeMemorise(this)" data-ref="' + ref + '" aria-label="M\u00e9moriser">' + _svgMemoIcon + '</button>'
-        + '<button class="btn-regard-premium" id="regarde-btn-duaa" onclick="_regardeDuaa(\'' + ref + '\')" aria-label="Du\u02BFa\u02BE li\u00e9e">' + _svgDuaaIcon + '</button>'
+        + '<button class="btn-regard-premium" id="regarde-btn-duaa" onclick="_regardeDuaa()" aria-label="Du\u02BFa\u02BE li\u00e9e">' + _svgDuaaIcon + '</button>'
         + '<button class="btn-regard-premium" id="regarde-btn-share" onclick="_regardePremiumShare()" aria-label="Partager">' + _svgShareIcon + '</button>'
         + '</div>'
         + '</div>';
@@ -15479,37 +15484,33 @@ function _regardeMemorise(btn) {
   alert('Verset ajout\u00e9');
 }
 window._regardeMemorise = _regardeMemorise;
-function _regardeDuaa(ref) {
-  var existing = document.getElementById('regarde-duaa-modal');
-  if (existing) existing.remove();
+function _regardeDuaa() {
+  var cat = (typeof _currentRegardeCat === 'string' && _currentRegardeCat) ? _currentRegardeCat : 'INDETERMINE';
+  if (cat === 'PREMIUM') cat = 'INDETERMINE';
+  var pool = (window.REGARD_DUAAS && (window.REGARD_DUAAS[cat] || window.REGARD_DUAAS['INDETERMINE'])) || [];
+  var existing = document.getElementById('regarde-duaa-modal'); if (existing) existing.remove();
+  if (!pool.length) return;
+  var d = pool[Math.floor(Math.random() * pool.length)];
+  var esc = function(s){ return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); };
+  var body;
+  if (d.type === 'mathur') {
+    body = '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:24px;color:#FAF7EE;direction:rtl;line-height:1.9;margin-bottom:14px;">' + esc(d.ar) + '</div>'
+         + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.6);line-height:1.6;margin-bottom:14px;">' + esc(d.translit) + '</div>'
+         + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;font-style:italic;color:#FAF7EE;line-height:1.7;margin-bottom:14px;">' + esc(d.fr) + '</div>'
+         + '<div style="font-size:11px;letter-spacing:1px;color:rgba(200,168,75,0.45);">' + esc(d.source) + '</div>';
+  } else {
+    body = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.45);margin-bottom:12px;">une invocation</div>'
+         + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:#FAF7EE;line-height:1.7;">' + esc(d.fr) + '</div>';
+  }
   var modal = document.createElement('div');
   modal.id = 'regarde-duaa-modal';
   modal.style.cssText = 'position:fixed;inset:0;z-index:10000;background:rgba(10,8,5,0.92);display:flex;align-items:center;justify-content:center;padding:24px;';
-  modal.innerHTML = '<div style="max-width:340px;width:100%;text-align:center;"><div style="width:24px;height:24px;border-radius:50%;background:#D4AF37;animation:regardePulse 1.2s ease-in-out infinite;margin:0 auto 16px;"></div><div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.6);">Recherche d\u2019une du\u02BFa\u02BE\u2026</div></div>';
+  modal.innerHTML = '<div style="max-width:360px;width:100%;text-align:center;">'
+    + '<div style="font-family:Amiri,serif;font-size:22px;color:#C8A84A;margin-bottom:16px;">\uD83E\uDD32</div>'
+    + body
+    + '<button onclick="document.getElementById(\'regarde-duaa-modal\').remove();" style="margin-top:24px;padding:10px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:transparent;color:#B5A685;font-family:\'Cormorant Garamond\',serif;font-size:13px;cursor:pointer;">Fermer</button>'
+    + '</div>';
   document.body.appendChild(modal);
-  fetch('https://niyyah-api.nabs881.workers.dev/api/regarde', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ reference: ref, request: 'duaa', premium: true })
-  })
-  .then(function(r) { return r.json(); })
-  .then(function(data) {
-    var duaaText = data.duaa || data.meditation || '';
-    if (!duaaText) throw new Error('no duaa');
-    var inner = '<div style="max-width:340px;width:100%;text-align:center;">'
-      + '<div style="font-family:Amiri,serif;font-size:22px;color:#C8A84A;margin-bottom:16px;">\uD83E\uDD32</div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:12px;">Du\u02BFa\u02BE li\u00e9e \u00e0 ' + ref + '</div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;font-style:italic;color:#FAF7EE;line-height:1.7;">' + duaaText + '</div>'
-      + '<button onclick="document.getElementById(\'regarde-duaa-modal\').remove();" style="margin-top:24px;padding:10px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:transparent;color:#B5A685;font-family:\'Cormorant Garamond\',serif;font-size:13px;cursor:pointer;">Fermer</button>'
-      + '</div>';
-    modal.innerHTML = inner;
-  })
-  .catch(function() {
-    modal.innerHTML = '<div style="max-width:340px;width:100%;text-align:center;">'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.6);margin-bottom:16px;">Du\u02BFa\u02BE bient\u00f4t disponible.</div>'
-      + '<button onclick="document.getElementById(\'regarde-duaa-modal\').remove();" style="padding:10px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:transparent;color:#B5A685;font-family:\'Cormorant Garamond\',serif;font-size:13px;cursor:pointer;">Fermer</button>'
-      + '</div>';
-  });
 }
 window._regardeDuaa = _regardeDuaa;
 function _regardePremiumShare() {
@@ -15638,6 +15639,7 @@ function _regardeShowVerset(content, v, slow, returning) {
     + '<button id="regarde-btn-star" onclick="regardeToggleStar()" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">☆</button>'
     + '<button onclick="regardeRefresh()" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">↻</button>'
     + '<button onclick="regardeToggleNote()" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">✎</button>'
+    + '<button onclick="_regardeDuaa()" aria-label="Du\u02BFa\u02BE" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#D4AF37;">' + _svgDuaaIcon + '</button>'
     + '</div>'
     + '<div id="regarde-note-wrap" style="display:none;width:100%;max-width:80%;margin-top:20px;opacity:0;transition:opacity 0.3s ease;">'
     + '<textarea id="regarde-note-input" placeholder="' + t('regarde_note_placeholder') + '" oninput="regardeSaveNote()" style="width:100%;min-height:60px;background:rgba(200,168,75,0.04);border:1px solid rgba(212,175,55,0.25);border-radius:12px;padding:12px;color:#D4AF37;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;resize:none;outline:none;box-sizing:border-box;"></textarea>'
