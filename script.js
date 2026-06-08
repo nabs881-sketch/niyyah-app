@@ -11533,7 +11533,7 @@ function journalSwitchTab(tab) {
     if (tabR) { tabR.style.background = 'transparent'; tabR.style.border = '1px solid rgba(200,168,75,0.15)'; tabR.style.color = 'rgba(200,168,75,0.5)'; tabR.style.boxShadow = 'none'; }
     var entries = getNiyyahHistory();
     if (entries.length === 0) {
-      content.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">نِيَّة</div><div class="empty-state-title">'+t('journal_niyyah_title')+'</div><div class="empty-state-text">'+t('journal_niyyah_text')+'</div><button class="empty-state-cta" onclick="var o=document.getElementById(\'orb-core-v2\');if(o)o.click();">Poser ma premi\u00e8re intention</button></div>';
+      content.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">نِيَّة</div><div class="empty-state-title">'+t('journal_niyyah_title')+'</div><div class="empty-state-text">'+t('journal_niyyah_text')+'</div><div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.45);margin-top:12px;line-height:1.5;">Pose une intention depuis Scanner.<br>Reviens lire celles que tu as d\u00e9j\u00e0 pos\u00e9es.</div></div>';
     } else {
       var html = '';
       entries.forEach(function(e) {
@@ -16175,7 +16175,7 @@ function renderNiyyahJournalList(entries) {
   var list = document.getElementById('niyyah-journal-list');
   if (!list) return;
   if (entries.length === 0) {
-    list.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">نِيَّة</div><div class="empty-state-title">'+t('journal_niyyah_title')+'</div><div class="empty-state-text">'+t('journal_niyyah_text')+'</div><button class="empty-state-cta" onclick="var o=document.getElementById(\'orb-core-v2\');if(o)o.click();">Poser ma premi\u00e8re intention</button></div>';
+    list.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">نِيَّة</div><div class="empty-state-title">'+t('journal_niyyah_title')+'</div><div class="empty-state-text">'+t('journal_niyyah_text')+'</div><div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.45);margin-top:12px;line-height:1.5;">Pose une intention depuis Scanner.<br>Reviens lire celles que tu as d\u00e9j\u00e0 pos\u00e9es.</div></div>';
     return;
   }
   var html = '';
