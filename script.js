@@ -9779,77 +9779,48 @@ const ONBOARD_SLIDES = [
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:rgba(200,168,75,0.7);letter-spacing:1px;opacity:0;animation:obFadeIn 1s ease 1.4s forwards;">'+t('ob_splash_sub')+'</div>'
       + '<button class="onboard-btn" onclick="onboardNext()" style="margin-top:20px;opacity:0;animation:obFadeIn 0.6s ease 2.5s forwards;">'+t('onboard_start')+'</button>'
       + '</div>',
-  // Slide 1 — Motivation "'+t('ob_motivation_title')+'"
+  // Slide 1 — Motivation
   () => '<div class="onboard-anim">'
-    + '<div class="onboard-title">Choisis ton chemin.</div>'
-    + '<div class="ob-motiv-cards">'
-    + '<div class="ob-motiv-card" onclick="obSelectMotiv(this,\'reconnecter\')" style="border:1px solid rgba(200,168,75,0.25); border-radius:14px; padding:14px 16px; background:radial-gradient(ellipse at top, rgba(200,168,75,0.06) 0%, transparent 70%); margin-bottom:12px; cursor:pointer; display:flex; align-items:center; gap:14px;"><div style="font-size:24px; color:#C8A84A; font-family:Amiri,Scheherazade,serif; direction:rtl; min-width:60px; text-align:center;">\u062A\u064E\u0648\u0652\u0628\u064E\u0629</div>'
-    + '<div style="flex:1;"><div class="ob-motiv-title" style="font-family:var(--serif); color:#C8A84A; font-size:13px; letter-spacing:2px; text-transform:uppercase; margin-bottom:2px;">'+t('ob_motiv_reconnecter')+'</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif; font-size:13px; font-style:italic; color:#B5A685; line-height:1.4;">Tu reprends.</div></div><div style="color:#C8A84A;font-size:18px;flex-shrink:0;">\u203A</div></div>'
-    + '<div class="ob-motiv-card" onclick="obSelectMotiv(this,\'routine\')" style="border:1px solid rgba(200,168,75,0.25); border-radius:14px; padding:14px 16px; background:radial-gradient(ellipse at top, rgba(200,168,75,0.06) 0%, transparent 70%); margin-bottom:12px; cursor:pointer; display:flex; align-items:center; gap:14px;"><div style="font-size:24px; color:#C8A84A; font-family:Amiri,Scheherazade,serif; direction:rtl; min-width:60px; text-align:center;">\u0645\u064F\u062F\u064E\u0627\u0648\u064E\u0645\u064E\u0629</div>'
-    + '<div style="flex:1;"><div class="ob-motiv-title" style="font-family:var(--serif); color:#C8A84A; font-size:13px; letter-spacing:2px; text-transform:uppercase; margin-bottom:2px;">'+t('ob_motiv_routine')+'</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif; font-size:13px; font-style:italic; color:#B5A685; line-height:1.4;">Tu pratiques avec r\u00e9gularit\u00e9.</div></div><div style="color:#C8A84A;font-size:18px;flex-shrink:0;">\u203A</div></div>'
-    + '<div class="ob-motiv-card" onclick="obSelectMotiv(this,\'sacraliser\')" style="border:1px solid rgba(200,168,75,0.25); border-radius:14px; padding:14px 16px; background:radial-gradient(ellipse at top, rgba(200,168,75,0.06) 0%, transparent 70%); margin-bottom:20px; cursor:pointer; display:flex; align-items:center; gap:14px;"><div style="font-size:24px; color:#C8A84A; font-family:Amiri,Scheherazade,serif; direction:rtl; min-width:60px; text-align:center;">\u0646\u0650\u064A\u0651\u064E\u0629</div>'
-    + '<div style="flex:1;"><div class="ob-motiv-title" style="font-family:var(--serif); color:#C8A84A; font-size:13px; letter-spacing:2px; text-transform:uppercase; margin-bottom:2px;">'+t('ob_motiv_sacraliser')+'</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif; font-size:13px; font-style:italic; color:#B5A685; line-height:1.4;">Tu sacralises chaque geste.</div></div><div style="color:#C8A84A;font-size:18px;flex-shrink:0;">\u203A</div></div>'
-    + '</div>'
-    + '<div style="font-size:12px; font-style:italic; color:rgba(200,168,75,0.55); text-align:center; margin:20px auto 24px; max-width:300px;">Tu pourras changer \u00e0 tout moment.</div>'
-    + '<button class="onboard-btn" id="obMotivBtn" onclick="onboardNext()" style="opacity:0.3; pointer-events:none; padding:16px 48px; border-radius:30px; border:1px solid rgba(200,168,75,0.5); background:linear-gradient(180deg, #E8D070 0%, #D4B85A 50%, #B89540 100%); color:#1a1a1a; font-size:15px; font-weight:600; font-family:var(--serif); letter-spacing:1px; box-shadow:0 0 40px rgba(200,168,75,0.4), 0 4px 12px rgba(0,0,0,0.3);">'+t('onboard_next')+'</button>'
+    + '<div class="ob-stitle ob-rise">Choisis ton chemin.</div>'
+    + '<div style="height:28px"></div>'
+    + '<div class="ob-motiv-card ob-mrow ob-rise" onclick="obSelectMotiv(this,\'reconnecter\')"><div class="ob-sar" style="font-size:25px;min-width:54px;text-align:center">\u062A\u064E\u0648\u0652\u0628\u064E\u0629</div><div style="flex:1;text-align:left"><div class="ob-slabel">'+t('ob_motiv_reconnecter')+'</div><div class="ob-ssub" style="margin-top:3px">Tu reprends le fil.</div></div><div style="color:#C8A84A;font-size:17px">\u203A</div></div>'
+    + '<div class="ob-motiv-card ob-mrow ob-rise" onclick="obSelectMotiv(this,\'routine\')"><div class="ob-sar" style="font-size:25px;min-width:54px;text-align:center">\u0645\u064F\u062F\u064E\u0627\u0648\u064E\u0645\u064E\u0629</div><div style="flex:1;text-align:left"><div class="ob-slabel">'+t('ob_motiv_routine')+'</div><div class="ob-ssub" style="margin-top:3px">Tu avances avec r\u00e9gularit\u00e9.</div></div><div style="color:#C8A84A;font-size:17px">\u203A</div></div>'
+    + '<div class="ob-motiv-card ob-mrow ob-rise" onclick="obSelectMotiv(this,\'sacraliser\')"><div class="ob-sar" style="font-size:25px;min-width:54px;text-align:center">\u0646\u0650\u064A\u0651\u064E\u0629</div><div style="flex:1;text-align:left"><div class="ob-slabel">'+t('ob_motiv_sacraliser')+'</div><div class="ob-ssub" style="margin-top:3px">Tu sacralises chaque geste.</div></div><div style="color:#C8A84A;font-size:17px">\u203A</div></div>'
+    + '<div style="height:22px"></div>'
+    + '<div class="ob-ssub ob-rise" style="text-align:center;max-width:300px">Tu pourras changer \u00e0 tout moment.</div>'
+    + '<button class="onboard-btn ob-rise" id="obMotivBtn" onclick="onboardNext()" style="opacity:0.3;pointer-events:none;margin-top:24px;">'+t('onboard_next')+'</button>'
     + '</div>',
-  // Slide 2 — Deux gestes : Niyyah + Regarde
+  // Slide 2 — Deux gestes
   () => {
-    setTimeout(function() { if (document.getElementById('obTypeNiyyah')) obTypeWriter('obTypeNiyyah', t('ob_niyyah_example'), 0); }, 600);
-    setTimeout(function() { if (document.getElementById('obTypeRegarde')) obTypeWriter('obTypeRegarde', t('ob_regarde_example'), 0); }, 1200);
+    setTimeout(function() { if (document.getElementById('obTypeNiyyah')) obTypeWriter('obTypeNiyyah', t('ob_niyyah_example'), 0); }, 700);
+    setTimeout(function() { if (document.getElementById('obTypeRegarde')) obTypeWriter('obTypeRegarde', t('ob_regarde_example'), 0); }, 1400);
     return '<div class="onboard-anim">'
-      + '<div class="onboard-title" style="margin-bottom:8px;">Deux gestes</div>'
-      + '<div class="ob-deux-gestes">'
-      + '<div class="ob-geste-card ob-geste-niyyah">'
-      + '<div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;"><img src="images/niyyah-glass.webp" alt="" style="width:100px;height:auto;flex-shrink:0;"><div><div class="ob-geste-ar" style="color:#C8A84A;font-size:22px;margin-bottom:2px;">\u0646\u0650\u064A\u0651\u064E\u0629</div><div style="font-size:14px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#C8A84A;">Pose une intention</div></div></div>'
-      + '<div style="font-size:13px;color:rgba(200,168,75,0.7);line-height:1.5;">Pointe ton t\u00e9l\u00e9phone vers ce que tu fais.<br>Niyyah te propose une intention.</div>'
-      + '<div class="ob-geste-txt" id="obTypeNiyyah" style="color:rgba(200,168,75,0.8);font-size:13px;font-style:italic;margin-top:4px;">&nbsp;</div>'
-      + '</div>'
-      + '<div class="ob-geste-card ob-geste-regarde">'
-      + '<div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;"><img src="images/regarde-hand.webp" alt="" style="width:100px;height:auto;flex-shrink:0;"><div><div class="ob-geste-ar" style="color:#A0A4AC;font-size:22px;margin-bottom:2px;">\u0646\u064E\u0638\u064E\u0631</div><div style="font-size:14px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#A0A4AC;">Pose un regard</div></div></div>'
-      + '<div style="font-size:13px;color:rgba(160,164,172,0.7);line-height:1.5;">Pointe vers ce que tu vois.<br>Niyyah cherche le verset qui \u00e9claire.</div>'
-      + '<div style="font-size:11px;font-style:italic;color:rgba(160,164,172,0.55);margin-top:6px;">Tes Regards se gardent dans le Journal.</div>'
-      + '<div class="ob-geste-txt" id="obTypeRegarde" style="color:rgba(160,164,172,0.8);font-size:13px;font-style:italic;margin-top:4px;">&nbsp;</div>'
-      + '</div>'
-      + '</div>'
-      + '<button class="onboard-btn" onclick="onboardNext()" style="margin-top:16px;">'+t('onboard_next')+'</button>'
+      + '<div class="ob-stitle ob-rise">Deux gestes.</div>'
+      + '<div style="height:24px"></div>'
+      + '<div class="ob-grow ob-rise"><div style="display:flex;align-items:baseline;gap:12px"><div class="ob-sar" style="font-size:30px">\u0646\u0650\u064A\u0651\u064E\u0629</div><div class="ob-slabel">Pose une intention</div></div>'
+      + '<div class="ob-ssub" style="font-style:normal;color:rgba(232,213,160,0.75);margin-top:8px">Pointe vers ce que tu fais.<br>Niyyah te propose une intention.</div>'
+      + '<div class="ob-stype" id="obTypeNiyyah" style="margin-top:6px;color:#C8A84A;opacity:0.85">&nbsp;</div></div>'
+      + '<div class="ob-grow ob-rise" style="border-bottom:none"><div style="display:flex;align-items:baseline;gap:12px"><div class="ob-sar" style="font-size:30px;color:#A8AAB0">\u0646\u064E\u0638\u064E\u0631</div><div class="ob-slabel" style="color:#A8AAB0">Pose un regard</div></div>'
+      + '<div class="ob-ssub" style="font-style:normal;color:rgba(200,202,208,0.7);margin-top:8px">Pointe vers ce que tu vois.<br>Niyyah cherche le verset qui \u00e9claire.</div>'
+      + '<div class="ob-ssub" style="color:rgba(168,170,176,0.7);margin-top:6px">Tes Regards se gardent dans le Journal.</div>'
+      + '<div class="ob-stype" id="obTypeRegarde" style="margin-top:4px;color:#A8AAB0;opacity:0.85">&nbsp;</div></div>'
+      + '<button class="onboard-btn ob-rise" onclick="onboardNext()" style="margin-top:24px;">'+t('onboard_next')+'</button>'
       + '</div>';
   },
-  // Slide 3 — Ton chemin (4 dimensions + prénom)
+  // Slide 3 — Ton chemin (4 dimensions condens\u00e9es + pr\u00e9nom)
   () => '<div class="onboard-anim">'
-    + '<div style="font-family:var(--serif);font-style:italic;font-size:17px;color:#E5E0DC;text-align:center;margin-bottom:6px;line-height:1.5;">La pratique, la contemplation, l’âme, la fidélité.</div>'
-    + '<div style="text-align:center;color:rgba(200,168,75,0.4);font-size:11px;letter-spacing:3px;margin-bottom:24px;">— ✦ —</div>'
-    + '<div style="border:1px solid rgba(200,168,75,0.25);border-radius:14px;padding:16px;width:100%;max-width:340px;min-height:80px;box-sizing:border-box;margin:0 auto 16px;background:radial-gradient(ellipse at top, rgba(200,168,75,0.06) 0%, transparent 70%);display:flex;flex-direction:column;align-items:center;justify-content:center;">' 
-    + '<div style="text-align:center;font-size:22px;color:#C8A84A;font-family:Amiri,Scheherazade,serif;direction:rtl;margin-bottom:4px;">عِبَادَة</div>'
-    + '<div style="text-align:center;font-family:var(--serif);font-size:14px;color:#C8A84A;letter-spacing:2px;margin-bottom:6px;">LA PRATIQUE</div>'
-    + '<div style="font-size:13px;color:rgba(229,224,220,0.7);font-style:italic;text-align:center;">Là où l’or s’amasse.</div>'
+    + '<div class="ob-sintro ob-rise">La pratique, la contemplation,<br>l\u2019\u00e2me, la fid\u00e9lit\u00e9.</div>'
+    + '<div class="ob-rise" style="color:rgba(200,168,75,0.4);font-size:13px;letter-spacing:3px;margin:16px 0">\u2014 \u2726 \u2014</div>'
+    + '<div class="ob-drow ob-rise"><div class="ob-sar" style="font-size:23px;min-width:62px;text-align:center">\u0639\u0650\u0628\u064E\u0627\u062F\u064E\u0629</div><div style="flex:1;text-align:left"><div class="ob-slabel" style="letter-spacing:0.1em">La pratique</div><div class="ob-ssub" style="margin-top:2px">L\u00e0 o\u00f9 l\u2019or s\u2019amasse.</div></div></div>'
+    + '<div class="ob-drow ob-rise"><div class="ob-sar" style="font-size:23px;min-width:62px;text-align:center">\u062A\u064E\u0641\u064E\u0643\u0651\u064F\u0631</div><div style="flex:1;text-align:left"><div class="ob-slabel" style="letter-spacing:0.1em">La contemplation</div><div class="ob-ssub" style="margin-top:2px">La pause de l\u2019\u00e2me.</div></div></div>'
+    + '<div class="ob-drow ob-rise"><div class="ob-sar" style="font-size:23px;min-width:62px;text-align:center">\u062A\u064E\u0632\u0652\u0643\u0650\u064A\u064E\u0629</div><div style="flex:1;text-align:left"><div class="ob-slabel" style="letter-spacing:0.1em">L\u2019\u00e2me</div><div class="ob-ssub" style="margin-top:2px">Traverser, porte par porte.</div></div></div>'
+    + '<div class="ob-drow ob-rise" style="border-bottom:none"><div class="ob-sar" style="font-size:23px;min-width:62px;text-align:center">\u0627\u0650\u0633\u0652\u062A\u0650\u0642\u064E\u0627\u0645\u064E\u0629</div><div style="flex:1;text-align:left"><div class="ob-slabel" style="letter-spacing:0.1em">La fid\u00e9lit\u00e9</div><div class="ob-ssub" style="margin-top:2px">Une vie qui se trace.</div></div></div>'
+    + '<div class="ob-ssub ob-rise" style="margin:18px 0 14px;max-width:300px;text-align:center">Et chaque jour, le Sanctuaire t\u2019accueille.</div>'
+    + '<label class="ob-rise" style="font-family:var(--serif);font-size:13px;color:var(--t3);display:block;margin-bottom:6px">'+t('ob_chemin_prenom')+'</label>'
+    + '<input type="text" maxlength="30" class="ob-sinput ob-rise" placeholder="Ton pr\u00e9nom..." oninput="safeSetItem(\'niyyah_prenom\',this.value.trim())">'
+    + '<button class="onboard-btn ob-rise" onclick="onboardNext()" style="margin-top:20px">Entrer</button>'
     + '</div>'
-    + '<div style="text-align:center;color:rgba(200,168,75,0.35);font-size:14px;margin-bottom:16px;">✦</div>'
-    + '<div style="border:1px solid rgba(200,168,75,0.25);border-radius:14px;padding:16px;width:100%;max-width:340px;min-height:80px;box-sizing:border-box;margin:0 auto 16px;background:radial-gradient(ellipse at top, rgba(200,168,75,0.06) 0%, transparent 70%);display:flex;flex-direction:column;align-items:center;justify-content:center;">' 
-    + '<div style="text-align:center;font-size:22px;color:#C8A84A;font-family:Amiri,Scheherazade,serif;direction:rtl;margin-bottom:4px;">تَفَكُّر</div>'
-    + '<div style="text-align:center;font-family:var(--serif);font-size:14px;color:#C8A84A;letter-spacing:2px;margin-bottom:6px;">LA CONTEMPLATION</div>'
-    + '<div style="font-size:13px;color:rgba(229,224,220,0.7);font-style:italic;text-align:center;">Pause de l’âme.</div>'
-    + '</div>'
-    + '<div style="text-align:center;color:rgba(200,168,75,0.35);font-size:14px;margin-bottom:16px;">✦</div>'
-    + '<div style="border:1px solid rgba(200,168,75,0.25);border-radius:14px;padding:16px;width:100%;max-width:340px;min-height:80px;box-sizing:border-box;margin:0 auto 16px;background:radial-gradient(ellipse at top, rgba(200,168,75,0.06) 0%, transparent 70%);display:flex;flex-direction:column;align-items:center;justify-content:center;">' 
-    + '<div style="text-align:center;font-size:22px;color:#C8A84A;font-family:Amiri,Scheherazade,serif;direction:rtl;margin-bottom:4px;">تَزْكِيَة النَّفْس</div>'
-    + '<div style="text-align:center;font-family:var(--serif);font-size:14px;color:#C8A84A;letter-spacing:2px;margin-bottom:6px;">L’ÂME</div>'
-    + '<div style="font-size:13px;color:rgba(229,224,220,0.7);font-style:italic;text-align:center;">Traverser, porte par porte.</div>'
-    + '</div>'
-    + '<div style="text-align:center;color:rgba(200,168,75,0.35);font-size:14px;margin-bottom:16px;">✦</div>'
-    + '<div style="border:1px solid rgba(200,168,75,0.25);border-radius:14px;padding:16px;width:100%;max-width:340px;min-height:80px;box-sizing:border-box;margin:0 auto 20px;background:radial-gradient(ellipse at top, rgba(200,168,75,0.06) 0%, transparent 70%);display:flex;flex-direction:column;align-items:center;justify-content:center;">' 
-    + '<div style="text-align:center;font-size:22px;color:#C8A84A;font-family:Amiri,Scheherazade,serif;direction:rtl;margin-bottom:4px;">اِسْتِقامَة</div>'
-    + '<div style="text-align:center;font-family:var(--serif);font-size:14px;color:#C8A84A;letter-spacing:2px;margin-bottom:6px;">LA FIDÉLITÉ</div>'
-    + '<div style="font-size:13px;color:rgba(229,224,220,0.7);font-style:italic;text-align:center;">Une vie qui se trace.</div>'
-    + '</div>'
-    + '<div style="font-size:12px;font-style:italic;color:rgba(200,168,75,0.5);text-align:center;max-width:300px;margin:0 auto 24px;line-height:1.6;">Et chaque jour, le Sanctuaire t’accueille.</div>'
-    + '<div style="margin-bottom:20px;text-align:center;"><label style="font-family:var(--serif);font-size:13px;color:var(--t3);display:block;margin-bottom:6px;">'+t("ob_chemin_prenom")+' </label>'
-    + '<input type="text" maxlength="30" placeholder="Ton pr\u00e9nom..." style="width:100%;max-width:260px;box-sizing:border-box;padding:10px 14px;background:rgba(200,168,75,0.04);border:1px solid rgba(200,168,75,0.2);border-radius:12px;color:var(--t1);font-size:14px;font-family:var(--sans);outline:none;text-align:center;" oninput="safeSetItem(\'niyyah_prenom\',this.value.trim())"></div>'
-    + '<button class="onboard-btn" onclick="onboardNext()">'+t('onboard_next')+'</button>'
-    + '</div>'
+// old slides removed
 ];
 function obTypeWriter(elId, text, i) {
   var el = document.getElementById(elId);
@@ -9962,6 +9933,7 @@ function onboardRender() {
   requestAnimationFrame(function() {
     var content = document.getElementById('onboardContent');
     if (content && ONBOARD_SLIDES[slideIdx]) content.innerHTML = ONBOARD_SLIDES[slideIdx]();
+    if (content) content.querySelectorAll('.ob-rise').forEach(function(el,k){ el.style.animationDelay=(k*0.07)+'s'; });
     var _obScreen = document.getElementById('onboardScreen');
     if (_obScreen) _obScreen.scrollTop = 0;
     [0,1,2,3].forEach(function(i) {
