@@ -4811,6 +4811,22 @@ function _cureJ7FinaleSucces() {
   var _cure7 = {}; try { _cure7 = JSON.parse(safeGetItem('cure_colere') || '{}'); } catch(e) {}
   var _stat = (_cure7.efficacite_j1 && _cure7.efficacite_j7)
     ? '<div class="lxf-stat lxf-rise" style="--d:.72s">Au d\u00e9but : ' + _cure7.efficacite_j1 + '/10 \u00b7 Aujourd\u2019hui : ' + _cure7.efficacite_j7 + '/10</div>' : '';
+  // Miroir avant/après : ses propres mots
+  var _motsSeuil = (_cure7.niyyah || '').trim();
+  var _motsAuj   = ((_cure7.bilan_jour_7 && _cure7.bilan_jour_7.change) || '').trim();
+  var _miroir = '';
+  if (_motsSeuil) {
+    _miroir = '<div class="lxf-card lxf-rise" style="--d:.66s;text-align:center;">'
+      + '<div class="lxf-card-fr" style="opacity:.78;margin-bottom:10px;">Les mots que tu as pos\u00e9s au seuil, il y a sept jours\u00a0:</div>'
+      + '<div style="font-family:var(--serif);font-style:italic;font-size:18px;line-height:1.7;color:#F6E6C8;">\u00ab\u00a0' + escapeHtml(_motsSeuil) + '\u00a0\u00bb</div>';
+    if (_motsAuj) {
+      _miroir += '<div style="width:60px;height:1px;background:linear-gradient(90deg,transparent,#C8A84A,transparent);margin:16px auto;"></div>'
+        + '<div class="lxf-card-fr" style="opacity:.78;margin-bottom:10px;">Et aujourd\u2019hui, tu \u00e9cris\u00a0:</div>'
+        + '<div style="font-family:var(--serif);font-style:italic;font-size:18px;line-height:1.7;color:#F6E6C8;">\u00ab\u00a0' + escapeHtml(_motsAuj) + '\u00a0\u00bb</div>';
+    }
+    _miroir += '<div class="lxf-card-fr" style="opacity:.7;margin-top:14px;">Regarde le chemin.</div>'
+      + '</div>';
+  }
   var _nodes = ''; for (var _i = 0; _i < 7; _i++) _nodes += '<span class="lxf-node"></span>';
   el.innerHTML = _lxfStyle('#B33A3A')
     + '<div class="lxf-wrap">'
@@ -4819,7 +4835,7 @@ function _cureJ7FinaleSucces() {
     + '<div class="lxf-calli lxf-rise" style="--d:.3s">\u0628\u064e\u0627\u0631\u064e\u0643\u064e \u0627\u0644\u0644\u0651\u064e\u0647\u064f \u0641\u0650\u064a\u0643\u064e</div>'
     + '<div class="lxf-title lxf-rise" style="--d:.45s">Tu as march\u00e9 7 jours</div>'
     + '<div class="lxf-sub lxf-rise" style="--d:.6s">Allah voit. Reviens quand le c\u0153ur le demandera.</div>'
-    + _stat
+    + _stat + _miroir
     + '<div class="lxf-path lxf-rise" style="--d:.8s">' + _nodes + '</div>'
     + '<div class="lxf-note lxf-rise" style="--d:.9s">Sept jours sont une initiation. Le travail sur le nafs est une lutte de toute une vie. Reviens quand tu en as besoin. Demain, ou dans un an. All\u00e2h ne mesure pas la dur\u00e9e \u2014 Il mesure la sinc\u00e9rit\u00e9.</div>'
     + '<button class="lxf-btn lxf-rise" style="--d:1s" onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()">Retour \u00e0 Ma Niyyah</button>'
