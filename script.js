@@ -4196,7 +4196,9 @@ window._niyyahIntros = {
   waqt_maghrib: { nom_fr:'Maghrib', nom_ar:'\u0627\u0644\u0645\u063A\u0631\u0628', eyebrow:'Al-Waqt \u00b7 un moment \u00e0 offrir', meta:'une minute \u00b7 \u00e0 offrir', enterLabel:'Lire',
     texte:'Au cr\u00e9puscule, une lecture pour ralentir : contempler le jour qui s\u2019ach\u00e8ve \u2014 gratitude, liens, pr\u00e9sence \u2014 et parfois lever les yeux vers l\u2019au-del\u00e0, l\u00e0 o\u00f9 tout cela m\u00e8ne.' },
   waqt_isha: { nom_fr:'Isha', nom_ar:'\u0627\u0644\u0639\u0634\u0627\u0621', eyebrow:'Al-Waqt \u00b7 un moment \u00e0 offrir', meta:'une minute \u00b7 \u00e0 offrir', enterLabel:'Lire',
-    texte:'La nuit venue, une lecture pour d\u00e9poser le jour : un bilan, une remise \u00e0 Allah, ou une pratique du coucher. Une minute pour t\u2019endormir le c\u0153ur en paix.' }
+    texte:'La nuit venue, une lecture pour d\u00e9poser le jour : un bilan, une remise \u00e0 Allah, ou une pratique du coucher. Une minute pour t\u2019endormir le c\u0153ur en paix.' },
+  muhasaba: { nom_fr:'La muh\u00e2saba', nom_ar:'\u0627\u0644\u0645\u064F\u062D\u064E\u0627\u0633\u064E\u0628\u064E\u0629', eyebrow:'D\u2019o\u00f9 vient la muh\u00e2saba', meta:'une halte \u00b7 chaque soir', enterLabel:'Commencer',
+    texte:'Se demander des comptes \u00e0 soi-m\u00eame n\u2019est pas une mode : le Coran t\u2019y invite (al-Hashr 59:18), \u2019Umar le conseillait \u2014 \u00ab\u00a0fais tes comptes avant qu\u2019on te les demande\u00a0\u00bb \u2014 et les savants du c\u0153ur en ont fait une halte du soir. Ce n\u2019est pas pour t\u2019accuser, mais pour revenir : rendre gr\u00e2ce pour le bien, regarder ses manques sans se juger, demander pardon. Ce que tu corriges ce soir, tu ne le regretteras pas demain.' }
 };
 function _showNiyyahIntro(cfg){
   if(!cfg || typeof cfg.enterFn!=='function'){ if(cfg && typeof cfg.enterFn==='function') cfg.enterFn(); return; }
@@ -13867,16 +13869,18 @@ function updateFinJourneeCard() {
   card.innerHTML = '<img class="finjournee-img" loading="lazy" src="assets/cards/card-findejour.webp" alt="Fin de journée" onclick="openFinJournee()">';
 }
 function openFinJournee() {
-  showAlHayaBtn();
-  var overlay = document.getElementById('finjournee-overlay');
-  if (!overlay) return;
-  overlay.style.display = 'block';
-  var b1 = document.getElementById('finjournee-b1');
-  var b2 = document.getElementById('finjournee-b2');
-  var b3 = document.getElementById('finjournee-b3');
-  if (b1) b1.value = '';
-  if (b2) b2.value = '';
-  if (b3) b3.value = '';
+  _niyyahIntro('muhasaba', function() {
+    showAlHayaBtn();
+    var overlay = document.getElementById('finjournee-overlay');
+    if (!overlay) return;
+    overlay.style.display = 'block';
+    var b1 = document.getElementById('finjournee-b1');
+    var b2 = document.getElementById('finjournee-b2');
+    var b3 = document.getElementById('finjournee-b3');
+    if (b1) b1.value = '';
+    if (b2) b2.value = '';
+    if (b3) b3.value = '';
+  });
 }
 function closeFinJournee() {
   hideAlHayaBtn();
