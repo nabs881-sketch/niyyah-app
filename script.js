@@ -12647,6 +12647,78 @@ function applyTawbaGlow() {
   }
 }
 
+// ── Tawba : moment du retour ──────────────────────────────────────────────
+var TAWBA_RETURN_DAYS = 3; // seuil d'absence (jours) — ajustable
+
+function _checkTawbaReturn() {
+  try {
+    // ne pas interrompre une immersion ou un onboarding en cours
+    if (document.body.classList.contains('in-bab-an-nafs')) return;
+    if (safeGetItem('niyyah_onboard') !== '1') return;
+    var KEY = 'niyyah_last_session';
+    var prev = localStorage.getItem(KEY);
+    var now = Date.now();
+    safeSetItem(KEY, String(now));        // on enregistre toujours cette session
+    if (!prev) return;                    // première session connue : rien
+    var daysAway = Math.floor((now - parseInt(prev, 10)) / 86400000);
+    if (isNaN(daysAway) || daysAway < TAWBA_RETURN_DAYS) return;
+    if (localStorage.getItem('niyyah_return_shown') === todayKey()) return; // 1x/jour
+    safeSetItem('niyyah_return_shown', todayKey());
+    _showTawbaReturn(daysAway);
+  } catch (e) {}
+}
+
+function _showTawbaReturn(days) {
+  if (document.getElementById('tawbaReturnOverlay')) return;
+  var sub = 'Tu reviens apr\u00e8s ' + days + ' jours. Ici, revenir n\u2019est pas une faute \u2014 '
+    + 'c\u2019est le plus beau des gestes. Le seuil n\u2019a jamais \u00e9t\u00e9 ferm\u00e9.';
+  var ov = document.createElement('div');
+  ov.id = 'tawbaReturnOverlay';
+  ov.innerHTML =
+      '<style>'
+    + '#tawbaReturnOverlay{position:fixed;inset:0;z-index:99999;display:flex;flex-direction:column;'
+    + 'align-items:center;justify-content:center;padding:32px 28px;text-align:center;'
+    + 'background:radial-gradient(circle at 50% 38%,#1a140b 0%,#0e0a06 72%);opacity:0;transition:opacity .9s ease;}'
+    + '#tawbaReturnOverlay.show{opacity:1;}'
+    + '#tawbaReturnOverlay .trGlow{position:absolute;top:34%;left:50%;width:340px;height:340px;'
+    + 'transform:translate(-50%,-50%);border-radius:50%;pointer-events:none;'
+    + 'background:radial-gradient(circle,rgba(200,168,74,.32),transparent 70%);filter:blur(8px);'
+    + 'animation:trPulse 4s ease-in-out infinite;}'
+    + '@keyframes trPulse{0%,100%{opacity:.45;transform:translate(-50%,-50%) scale(.96);}'
+    + '50%{opacity:.9;transform:translate(-50%,-50%) scale(1.05);}}'
+    + '#tawbaReturnOverlay .trTitle{font-family:\'Cormorant Garamond\',serif;font-size:30px;'
+    + 'color:#F6E6C8;margin:26px 0 14px;letter-spacing:.5px;}'
+    + '#tawbaReturnOverlay .trSub{font-family:\'Cormorant Garamond\',serif;font-size:17px;'
+    + 'font-style:italic;line-height:1.7;color:rgba(240,230,200,.82);max-width:330px;}'
+    + '#tawbaReturnOverlay .trBtn{margin-top:32px;padding:14px 40px;border-radius:14px;border:none;'
+    + 'background:linear-gradient(135deg,#C8A84A,#E8CC6A);color:#1a120a;font-family:\'Cormorant Garamond\',serif;'
+    + 'font-size:17px;font-weight:700;letter-spacing:.5px;cursor:pointer;box-shadow:0 6px 18px rgba(200,168,74,.3);}'
+    + '@media (prefers-reduced-motion:reduce){#tawbaReturnOverlay .trGlow{animation:none;}}'
+    + '</style>'
+    + '<div class="trGlow"></div>'
+    + '<div style="position:relative;transform:scale(.9);"><div class="orb-wrap-v2"><div class="orb-core-v2">'
+    + '<div class="orb-conic"></div><span class="orb-symbol-v2">\u0646\u0650\u064A\u0651\u0629</span></div></div></div>'
+    + '<div class="trTitle">Le seuil t\u2019attendait</div>'
+    + '<div class="trSub">' + sub + '</div>'
+    + '<button class="trBtn" onclick="_closeTawbaReturn()">Bismillah, j\u2019entre</button>';
+  document.body.appendChild(ov);
+  requestAnimationFrame(function () { ov.classList.add('show'); });
+  if (navigator.vibrate) { try { navigator.vibrate([20, 40, 80]); } catch (e) {} }
+}
+
+function _closeTawbaReturn() {
+  var ov = document.getElementById('tawbaReturnOverlay');
+  if (!ov) return;
+  ov.style.opacity = '0';
+  try {
+    safeSetItem('niyyah_tawba_glow', Date.now().toString());
+    if (typeof applyTawbaGlow === 'function') applyTawbaGlow(); // rallume l'orbe réel
+  } catch (e) {}
+  setTimeout(function () { if (ov.parentNode) ov.parentNode.removeChild(ov); }, 700);
+}
+
+window.addEventListener('load', function () { setTimeout(_checkTawbaReturn, 1400); });
+
 function renderLevelStripCondensed() {
   var el = document.getElementById('level-strip-condensed');
   if (!el) return;
