@@ -14207,23 +14207,30 @@ function genRegardCanvas(entryId, kind) {
   c.width = 1080; c.height = 1080;
   var ctx = c.getContext('2d');
   var _drawCard = function() {
-    ctx.fillStyle = '#0A0908';
-    ctx.fillRect(0, 0, 1080, 1080);
-    // Label (top)
+    // cadre or intérieur
+    ctx.strokeStyle = 'rgba(200,168,74,0.35)';
+    ctx.lineWidth = 2;
+    if (ctx.roundRect) { ctx.beginPath(); ctx.roundRect(40, 40, 1000, 1000, 28); ctx.stroke(); }
+    else { ctx.strokeRect(40, 40, 1000, 1000); }
+
+    // label haut (majuscules tracées)
     if (label) {
       ctx.fillStyle = '#C8A84A';
-      ctx.font = 'bold 18px "Cormorant Garamond", serif';
+      ctx.font = 'bold 20px "Cormorant Garamond", serif';
       ctx.textAlign = 'center'; ctx.textBaseline = 'top';
-      ctx.fillText(label, 540, 120);
+      if ('letterSpacing' in ctx) ctx.letterSpacing = '5px';
+      ctx.fillText((label || '').toUpperCase(), 540, 140);
+      if ('letterSpacing' in ctx) ctx.letterSpacing = '0px';
     }
-    // Main text (auto-size, centered)
+
+    // texte principal (auto-size)
     ctx.fillStyle = '#FAF7EE';
     ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-    var _maxW = 860, _maxH = 650, _sizes = [42,38,34,30,26,24];
+    var _maxW = 840, _maxH = 620, _sizes = [46, 42, 38, 34, 30, 26];
     var lines, lineH, fontSize;
     for (var _si = 0; _si < _sizes.length; _si++) {
       fontSize = _sizes[_si];
-      lineH = Math.round(fontSize * 1.4);
+      lineH = Math.round(fontSize * 1.42);
       ctx.font = 'italic ' + fontSize + 'px "Cormorant Garamond", serif';
       lines = []; var _ln = '';
       mainText.split(' ').forEach(function(w) {
@@ -14235,20 +14242,35 @@ function genRegardCanvas(entryId, kind) {
     }
     var startY = 540 - (lines.length * lineH) / 2;
     lines.forEach(function(l, i) { ctx.fillText(l, 540, startY + i * lineH); });
-    // Sub (reference / source)
+    var _afterY = startY + lines.length * lineH;
+
+    // filet d'or + référence
     if (sub) {
+      var _fy = _afterY + 34;
+      var _gf = ctx.createLinearGradient(490, 0, 590, 0);
+      _gf.addColorStop(0, 'rgba(200,168,74,0)');
+      _gf.addColorStop(0.5, 'rgba(200,168,74,0.9)');
+      _gf.addColorStop(1, 'rgba(200,168,74,0)');
+      ctx.strokeStyle = _gf; ctx.lineWidth = 1.5;
+      ctx.beginPath(); ctx.moveTo(490, _fy); ctx.lineTo(590, _fy); ctx.stroke();
       ctx.fillStyle = '#C8A84A';
-      ctx.font = 'bold 22px "Cormorant Garamond", serif';
-      ctx.fillText(sub, 540, startY + lines.length * lineH + 40);
+      ctx.font = '24px "Cormorant Garamond", serif';
+      ctx.textBaseline = 'top';
+      if ('letterSpacing' in ctx) ctx.letterSpacing = '1px';
+      ctx.fillText(sub, 540, _fy + 20);
+      if ('letterSpacing' in ctx) ctx.letterSpacing = '0px';
     }
-    // Salawat
-    ctx.fillStyle = 'rgba(200,168,75,0.35)';
-    ctx.font = '28px "Scheherazade New", serif';
-    ctx.fillText('\uFDFA', 540, 1020);
-    // Overlay
+
+    // signature Niyyah (bas)
+    ctx.fillStyle = 'rgba(200,168,74,0.55)';
+    ctx.font = '22px "Cormorant Garamond", serif';
+    ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
+    if ('letterSpacing' in ctx) ctx.letterSpacing = '6px';
+    ctx.fillText('\u2726 NIYYAH', 540, 1000);
+    if ('letterSpacing' in ctx) ctx.letterSpacing = '0px';
+
     _showRegardShareOverlay(c, entryId, kind);
   };
-  // Background: photo or solid
   if (e.photo) {
     var img = new Image();
     img.crossOrigin = 'anonymous';
@@ -14256,13 +14278,31 @@ function genRegardCanvas(entryId, kind) {
       var s = Math.max(1080 / img.width, 1080 / img.height);
       var w = img.width * s, h = img.height * s;
       ctx.drawImage(img, (1080 - w) / 2, (1080 - h) / 2, w, h);
-      ctx.fillStyle = 'rgba(10,9,8,0.72)';
-      ctx.fillRect(0, 0, 1080, 1080);
+      // scrim vertical : sombre haut+bas, photo visible au centre
+      var g = ctx.createLinearGradient(0, 0, 0, 1080);
+      g.addColorStop(0,    'rgba(10,9,8,0.88)');
+      g.addColorStop(0.28, 'rgba(10,9,8,0.42)');
+      g.addColorStop(0.62, 'rgba(10,9,8,0.46)');
+      g.addColorStop(1,    'rgba(10,9,8,0.92)');
+      ctx.fillStyle = g; ctx.fillRect(0, 0, 1080, 1080);
+      // teinte chaude + vignette
+      ctx.fillStyle = 'rgba(40,28,12,0.12)'; ctx.fillRect(0, 0, 1080, 1080);
+      var v = ctx.createRadialGradient(540, 540, 300, 540, 540, 760);
+      v.addColorStop(0, 'rgba(0,0,0,0)'); v.addColorStop(1, 'rgba(0,0,0,0.38)');
+      ctx.fillStyle = v; ctx.fillRect(0, 0, 1080, 1080);
       _drawCard();
     };
-    img.onerror = function() { _drawCard(); };
+    img.onerror = function() {
+      ctx.fillStyle = '#0A0908'; ctx.fillRect(0, 0, 1080, 1080);
+      _drawCard();
+    };
     img.src = e.photo;
   } else {
+    // fond uni : noir chaud + halo doux central
+    ctx.fillStyle = '#0A0908'; ctx.fillRect(0, 0, 1080, 1080);
+    var rg = ctx.createRadialGradient(540, 470, 80, 540, 470, 640);
+    rg.addColorStop(0, 'rgba(200,168,74,0.07)'); rg.addColorStop(1, 'rgba(200,168,74,0)');
+    ctx.fillStyle = rg; ctx.fillRect(0, 0, 1080, 1080);
     _drawCard();
   }
 }
