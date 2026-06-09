@@ -13922,7 +13922,7 @@ function _showFinJourneeBismillah() {
   if (!overlay) return;
   overlay.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;animation:_fdjFadeIn 1.5s ease forwards;">'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:42px;color:#C8A84A;margin-bottom:24px;">\u0628\u0650\u0633\u0652\u0645\u0650 \u0627\u0644\u0644\u0651\u064e\u0647\u0650</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.7);line-height:1.8;max-width:320px;">Ce que tu vas regarder, c\u2019est entre Allah et toi.<br>Pas pour t\u2019accuser. Pour revenir.</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:rgba(200,168,75,0.7);line-height:1.8;max-width:320px;">Ce que tu vas regarder, c\u2019est entre Allah et toi.<br>Pas pour t\u2019accuser. Pour revenir.</div>'
     + '</div>';
   overlay.style.display = 'block';
   setTimeout(function() { showFinJourneeActe2(); }, 4500);

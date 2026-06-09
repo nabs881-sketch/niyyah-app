@@ -6360,7 +6360,7 @@ body::before {
 }
 .finjournee-subtitle {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 14px;
+  font-size: 16px;
   font-style: italic;
   color: rgba(255,255,255,0.35);
   margin-bottom: 36px;
@@ -6374,7 +6374,7 @@ body::before {
   border-radius: 12px;
   color: #E8DCC0;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 16px; font-style: italic;
+  font-size: 18px; font-style: italic;
   outline: none;
   transition: border-color 0.2s;
 }
