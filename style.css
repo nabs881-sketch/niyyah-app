@@ -355,8 +355,8 @@ pointer-events:none;
   text-align:right
 }
 .friday-banner {
-  background:linear-gradient(135deg,rgba(255,214,10,0.08),rgba(255,214,10,0.03));
-  border:1px solid rgba(255,214,10,0.25);
+  background:linear-gradient(135deg,rgba(232,207,138,0.08),rgba(232,207,138,0.03));
+  border:1px solid rgba(232,207,138,0.25);
   border-radius:var(--r-xl);
   margin-bottom:8px;
   overflow:hidden;
@@ -401,8 +401,8 @@ pointer-events:none;
   display:flex;
   align-items:center;
   gap:12px;
-  background:rgba(255,214,10,0.04);
-  border:1px solid rgba(255,214,10,0.12);
+  background:rgba(232,207,138,0.04);
+  border:1px solid rgba(232,207,138,0.12);
   border-radius:var(--r);
   padding:10px 12px;
   cursor:pointer;
@@ -410,7 +410,7 @@ pointer-events:none;
   transition:background 0.15s
 }
 .friday-item:active {
-  background:rgba(255,214,10,0.10)
+  background:rgba(232,207,138,0.10)
 }
 .friday-item.checked {
   opacity:0.5
@@ -420,7 +420,7 @@ pointer-events:none;
   height:26px;
   border-radius:50%;
   flex-shrink:0;
-  border:2px solid rgba(255,214,10,0.4);
+  border:2px solid rgba(232,207,138,0.4);
   display:flex;
   align-items:center;
   justify-content:center;
@@ -946,7 +946,7 @@ to {
   pointer-events:all
 }
 .item.friday-item .check-circle {
-  border-color:rgba(255,214,10,0.4)
+  border-color:rgba(232,207,138,0.4)
 }
 .item.friday-item.checked .check-circle {
   background:var(--gold);
@@ -1153,8 +1153,8 @@ to {
   gap:14px;
   padding:13px 16px;
   text-decoration:none;
-  background:rgba(255,214,10,0.06);
-  border:1px solid rgba(255,214,10,0.12);
+  background:rgba(232,207,138,0.06);
+  border:1px solid rgba(232,207,138,0.12);
   border-radius:var(--r);
   margin-bottom:6px;
   transition:opacity 0.15s
@@ -1166,7 +1166,7 @@ to {
   width:34px;
   height:34px;
   border-radius:9px;
-  background:rgba(255,214,10,0.15);
+  background:rgba(232,207,138,0.15);
   display:flex;
   align-items:center;
   justify-content:center;
@@ -1619,7 +1619,7 @@ to {
 .streak-flame {
   font-size:52px;
   line-height:1;
-  filter:drop-shadow(0 0 16px rgba(255,149,0,0.5))
+  filter:drop-shadow(0 0 16px rgba(200,168,74,0.5))
 }
 .medal-trio {
   display:flex;
@@ -1645,7 +1645,7 @@ to {
 }
 .medal-cell.e-gold {
   background:var(--gold-soft);
-  border-color:rgba(255,214,10,0.2);
+  border-color:rgba(232,207,138,0.2);
   box-shadow:0 0 12px var(--gold-glow)
 }
 .medal-icon {
@@ -1750,7 +1750,7 @@ to {
 }
 .day-cell.d-gold {
   background:var(--gold-soft);
-  border-color:rgba(255,214,10,0.2)
+  border-color:rgba(232,207,138,0.2)
 }
 .day-cell.d-today {
   border-color:var(--green);
@@ -1908,7 +1908,7 @@ to {
   padding:16px 16px 140px
 }
 .resume-hero {
-  background:linear-gradient(135deg,rgba(48,209,88,0.1),rgba(255,214,10,0.05));
+  background:linear-gradient(135deg,rgba(48,209,88,0.1),rgba(232,207,138,0.05));
   border:1px solid rgba(48,209,88,0.2);
   border-radius:var(--r-xl);
   padding:28px 24px;
@@ -2260,8 +2260,8 @@ to {
   letter-spacing:0.3px
 }
 .laylatul-night.active {
-  border-color:rgba(255,214,10,0.4);
-  background:rgba(255,214,10,0.08)
+  border-color:rgba(232,207,138,0.4);
+  background:rgba(232,207,138,0.08)
 }
 .laylatul-night.active .night-num {
   color:var(--gold)
@@ -2672,7 +2672,7 @@ to {
 }
 .weekly-card {
   background:linear-gradient(145deg,#363840 0%,#2C2E34 100%);
-  border:1px solid rgba(255,214,10,0.2);
+  border:1px solid rgba(232,207,138,0.2);
   border-radius:24px;
   padding:28px 24px 24px;
   width:100%;
@@ -2721,8 +2721,8 @@ to {
   flex-direction:column;
   align-items:center;
   justify-content:center;
-  background:rgba(255,214,10,0.06);
-  box-shadow:0 0 24px rgba(255,214,10,0.15);
+  background:rgba(232,207,138,0.06);
+  box-shadow:0 0 24px rgba(232,207,138,0.15);
   margin-bottom:12px
 }
 .weekly-score-num {
@@ -2812,8 +2812,8 @@ to {
   letter-spacing:0.2px
 }
 .weekly-hadith-wrap {
-  background:rgba(255,214,10,0.04);
-  border:1px solid rgba(255,214,10,0.15);
+  background:rgba(232,207,138,0.04);
+  border:1px solid rgba(232,207,138,0.15);
   border-radius:12px;
   padding:14px 16px;
   margin-bottom:20px
@@ -3926,25 +3926,25 @@ to {
 .defi-section-title{font-family:var(--calli);font-size:12px;font-style:italic;color:rgba(200,168,75,0.65);letter-spacing:2.5px;text-transform:uppercase;text-align:center;margin-bottom:8px;}
 .defi-card{position:relative;border-radius:16px;padding:13px 14px;margin-bottom:7px;overflow:hidden;transition:transform 0.2s cubic-bezier(0.34,1.56,0.64,1);}
 .defi-card:active{transform:scale(0.97);}
-.defi-card.defi-fajr{background:linear-gradient(135deg,rgba(255,214,10,0.08),rgba(255,140,0,0.05));border:1px solid rgba(255,214,10,0.2);}
+.defi-card.defi-fajr{background:linear-gradient(135deg,rgba(232,207,138,0.08),rgba(255,140,0,0.05));border:1px solid rgba(232,207,138,0.2);}
 .defi-card.defi-wird{background:linear-gradient(135deg,rgba(200,168,74,0.08),rgba(0,180,80,0.04));border:1px solid rgba(200,168,74,0.2);}
 .defi-card.defi-nuit{background:linear-gradient(135deg,rgba(100,120,255,0.08),rgba(60,80,200,0.04));border:1px solid rgba(100,120,255,0.18);}
 .defi-card.defi-done{border-color:rgba(200,168,75,0.6);background:linear-gradient(135deg,rgba(200,168,75,0.10),rgba(200,168,75,0.04));}
 .defi-card::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;}
-.defi-card.defi-fajr::before{background:linear-gradient(90deg,transparent,rgba(255,214,10,0.5),transparent);}
+.defi-card.defi-fajr::before{background:linear-gradient(90deg,transparent,rgba(232,207,138,0.5),transparent);}
 .defi-card.defi-wird::before{background:linear-gradient(90deg,transparent,rgba(200,168,74,0.5),transparent);}
 .defi-card.defi-nuit::before{background:linear-gradient(90deg,transparent,rgba(100,120,255,0.5),transparent);}
 .defi-card.defi-done::before{background:linear-gradient(90deg,transparent,rgba(200,168,75,0.7),transparent);}
 .defi-top{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
 .defi-icon{font-size:22px;width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.defi-fajr .defi-icon{background:rgba(255,214,10,0.12);}
+.defi-fajr .defi-icon{background:rgba(232,207,138,0.12);}
 .defi-wird .defi-icon{background:rgba(200,168,74,0.12);}
 .defi-nuit .defi-icon{background:rgba(100,120,255,0.12);}
 .defi-done .defi-icon{background:rgba(200,168,75,0.15);}
 .defi-info{flex:1;}
 .defi-name{font-family:var(--serif);font-size:15px;color:var(--t1);margin-bottom:1px;}
 .defi-target{font-size:12px;letter-spacing:0.3px;}
-.defi-fajr .defi-target{color:rgba(255,214,10,0.7);}
+.defi-fajr .defi-target{color:rgba(232,207,138,0.7);}
 .defi-wird .defi-target{color:rgba(200,168,74,0.7);}
 .defi-nuit .defi-target{color:rgba(100,120,255,0.7);}
 .defi-done .defi-target{color:rgba(200,168,75,0.8);}
@@ -3952,8 +3952,8 @@ to {
 .defi-progress-row{display:flex;align-items:center;gap:8px;}
 .defi-dots{display:flex;gap:4px;flex:1;}
 .defi-dot{flex:1;height:4px;border-radius:2px;transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1);}
-.defi-fajr .defi-dot.done{background:linear-gradient(90deg,#ffd60a,#C8A84A);box-shadow:0 0 6px rgba(255,214,10,0.5);}
-.defi-fajr .defi-dot:not(.done){background:rgba(255,214,10,0.12);}
+.defi-fajr .defi-dot.done{background:linear-gradient(90deg,#ffd60a,#C8A84A);box-shadow:0 0 6px rgba(232,207,138,0.5);}
+.defi-fajr .defi-dot:not(.done){background:rgba(232,207,138,0.12);}
 .defi-wird .defi-dot.done{background:linear-gradient(90deg,#34d962,#26b850);box-shadow:0 0 6px rgba(200,168,74,0.5);}
 .defi-wird .defi-dot:not(.done){background:rgba(200,168,74,0.12);}
 .defi-nuit .defi-dot.done{background:linear-gradient(90deg,#6478ff,#3c50c8);box-shadow:0 0 6px rgba(100,120,255,0.5);}

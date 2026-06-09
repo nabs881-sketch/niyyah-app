@@ -654,8 +654,8 @@ function openDefiSelector() {
 
   const diffLabel = { facile: 'Facile', moyen: 'Moyen', intensif: 'Intensif' };
   const diffColor = { facile: '#E0C870', moyen: '#C8A84A', intensif: '#A88030' };
-  const diffBg    = { facile: 'rgba(200,168,74,0.08)', moyen: 'rgba(255,214,10,0.08)', intensif: 'rgba(255,107,107,0.08)' };
-  const diffBorder= { facile: 'rgba(200,168,74,0.2)', moyen: 'rgba(255,214,10,0.2)', intensif: 'rgba(255,107,107,0.2)' };
+  const diffBg    = { facile: 'rgba(200,168,74,0.08)', moyen: 'rgba(232,207,138,0.08)', intensif: 'rgba(200,168,74,0.08)' };
+  const diffBorder= { facile: 'rgba(200,168,74,0.2)', moyen: 'rgba(232,207,138,0.2)', intensif: 'rgba(200,168,74,0.2)' };
 
   let html = '';
 
@@ -717,8 +717,8 @@ function openDefiSelector() {
 
 function switchDefiTab(diff) {
   const diffColor = { facile: '#E0C870', moyen: '#C8A84A', intensif: '#A88030' };
-  const diffBg    = { facile: 'rgba(200,168,74,0.08)', moyen: 'rgba(255,214,10,0.08)', intensif: 'rgba(255,107,107,0.08)' };
-  const diffBorder= { facile: 'rgba(200,168,74,0.2)', moyen: 'rgba(255,214,10,0.2)', intensif: 'rgba(255,107,107,0.2)' };
+  const diffBg    = { facile: 'rgba(200,168,74,0.08)', moyen: 'rgba(232,207,138,0.08)', intensif: 'rgba(200,168,74,0.08)' };
+  const diffBorder= { facile: 'rgba(200,168,74,0.2)', moyen: 'rgba(232,207,138,0.2)', intensif: 'rgba(200,168,74,0.2)' };
   for (const d of ['facile','moyen','intensif']) {
     const btn = document.getElementById('defiTab_' + d);
     const list = document.getElementById('defiList_' + d);
@@ -1253,7 +1253,7 @@ function renderRamadan() {
   });
   html += '</div>';
   html += '<div class="horaires-link" onclick="openHoraires()">';
-  html += '<div class="horaires-icon">🕌</div>';
+  html += '<div class="horaires-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="#C8A84A"><path d="M14 3a9 9 0 1 0 7 14.5A7 7 0 0 1 14 3z"/></svg></div>';
   html += '<div class="horaires-body"><div class="horaires-label">Voir les horaires — ' + selectedCity + '</div><div class="horaires-sub">Source officielle · <a href="https://www.mosqueedeparis.net" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;" onclick="event.stopPropagation()">Mosquée de Paris</a> / IslamicCalendar.fr</div></div>';
   html += '<div class="horaires-arrow">›</div>';
   html += '</div></div>';
@@ -2478,18 +2478,18 @@ function getPrayerTimelineColor() {
     const p = str.replace(/ *\(.*\)/, '').split(':');
     return parseInt(p[0], 10) * 60 + parseInt(p[1], 10);
   }
-  if (!_prayerTimes) return '#1a1f3e';
+  if (!_prayerTimes) return '#3a2e18';
   const fajr    = toMin(_prayerTimes['Fajr']);
   const dhuhr   = toMin(_prayerTimes['Dhuhr']);
   const asr     = toMin(_prayerTimes['Asr']);
   const maghrib = toMin(_prayerTimes['Maghrib']);
   const isha    = toMin(_prayerTimes['Isha']);
-  if (fajr == null || dhuhr == null || asr == null || maghrib == null || isha == null) return '#1a1f3e';
-  if (nowMin < fajr || nowMin >= isha) return '#1a1f3e';
-  if (nowMin < dhuhr)   return '#2a4a7f';
+  if (fajr == null || dhuhr == null || asr == null || maghrib == null || isha == null) return '#3a2e18';
+  if (nowMin < fajr || nowMin >= isha) return '#3a2e18';
+  if (nowMin < dhuhr)   return '#8a6a30';
   if (nowMin < asr)     return '#C8A84A';
-  if (nowMin < maghrib) return '#c4722a';
-  return '#7a2a2a';
+  if (nowMin < maghrib) return '#a88030';
+  return '#6e4a26';
 }
 function getCurrentPrayerBlock() {
   var _t = typeof t === 'function' ? t : function(k) { return k || ''; };
@@ -2563,7 +2563,7 @@ function renderLevel(levelId) {
     fridayBanner = '<div class="friday-banner"><div class="friday-header"><div style="font-size:18px;color:#C8A84A;">\u2726</div><div class="friday-txt"><div class="friday-title">' + t('friday_title') + '</div><div class="friday-sub">' + t('friday_sub') + '</div></div></div><div class="friday-items">' + fitems + '</div></div>';
   }
   const graceBanner = (level.id === 1 && isGraceActive()) ?
-    '<div style="background:linear-gradient(135deg,rgba(255,149,0,0.12),rgba(255,214,10,0.06));border:1px solid rgba(255,149,0,0.25);border-radius:var(--r-lg);padding:12px 16px;margin-bottom:8px;display:flex;align-items:center;gap:12px;">' +
+    '<div style="background:linear-gradient(135deg,rgba(200,168,74,0.12),rgba(232,207,138,0.06));border:1px solid rgba(200,168,74,0.25);border-radius:var(--r-lg);padding:12px 16px;margin-bottom:8px;display:flex;align-items:center;gap:12px;">' +
     '<div style="font-size:22px">⏳</div>' +
     '<div><div style="font-size:13px;font-weight:600;color:#ff9500;">' + t('grace_title') + '</div>' +
     '<div style="font-size:12px;color:var(--t3);margin-top:2px;">' + t('grace_sub') + '</div></div></div>' : '';
@@ -3193,10 +3193,10 @@ function renderYearCalendar() {
   el.innerHTML = html;
 }
 function getGraineSVG(count) {
-  if (count >= 20) return '<svg width="160" height="160" viewBox="0 0 140 140" style="display:block;min-width:160px;min-height:160px;animation:grainFloat 3s ease-in-out infinite;"><line x1="40" y1="120" x2="100" y2="120" stroke="#8B6914" stroke-width="2"/><rect x="65" y="50" width="10" height="70" rx="3" fill="#8B6914"/><ellipse cx="70" cy="45" rx="35" ry="28" fill="#4CAF50" opacity="0.85"/><ellipse cx="70" cy="38" rx="28" ry="22" fill="#66BB6A" opacity="0.7"/><circle cx="52" cy="40" r="5" fill="#C8A84A"/><circle cx="88" cy="40" r="5" fill="#C8A84A"/><circle cx="60" cy="30" r="4" fill="#C8A84A"/><circle cx="80" cy="30" r="4" fill="#C8A84A"/><circle cx="70" cy="50" r="5" fill="#C8A84A"/><circle cx="70" cy="25" r="4" fill="#C8A84A"/></svg>';
-  if (count >= 10) return '<svg width="160" height="160" viewBox="0 0 140 140" style="display:block;min-width:160px;min-height:160px;animation:grainFloat 3s ease-in-out infinite;"><line x1="40" y1="120" x2="100" y2="120" stroke="#8B6914" stroke-width="2"/><rect x="66" y="55" width="8" height="65" rx="3" fill="#8B6914"/><ellipse cx="70" cy="50" rx="32" ry="25" fill="#4CAF50" opacity="0.85"/><ellipse cx="70" cy="44" rx="24" ry="18" fill="#66BB6A" opacity="0.7"/></svg>';
-  if (count >= 5) return '<svg width="160" height="160" viewBox="0 0 140 140" style="display:block;min-width:160px;min-height:160px;animation:grainFloat 3s ease-in-out infinite;"><line x1="40" y1="120" x2="100" y2="120" stroke="#8B6914" stroke-width="2"/><rect x="68" y="60" width="4" height="60" rx="2" fill="#4CAF50"/><ellipse cx="58" cy="72" rx="12" ry="6" fill="#4CAF50" transform="rotate(-30 58 72)"/><ellipse cx="82" cy="82" rx="12" ry="6" fill="#4CAF50" transform="rotate(30 82 82)"/><ellipse cx="56" cy="92" rx="10" ry="5" fill="#66BB6A" transform="rotate(-25 56 92)"/><ellipse cx="84" cy="102" rx="10" ry="5" fill="#66BB6A" transform="rotate(25 84 102)"/></svg>';
-  if (count >= 1) return '<svg width="160" height="160" viewBox="0 0 140 140" style="display:block;min-width:160px;min-height:160px;animation:grainFloat 3s ease-in-out infinite;"><line x1="40" y1="120" x2="100" y2="120" stroke="#8B6914" stroke-width="2"/><rect x="68" y="80" width="4" height="40" rx="2" fill="#4CAF50"/><ellipse cx="60" cy="88" rx="10" ry="5" fill="#4CAF50" transform="rotate(-30 60 88)"/><ellipse cx="80" cy="98" rx="10" ry="5" fill="#4CAF50" transform="rotate(30 80 98)"/></svg>';
+  if (count >= 20) return '<svg width="160" height="160" viewBox="0 0 140 140" style="display:block;min-width:160px;min-height:160px;animation:grainFloat 3s ease-in-out infinite;"><line x1="40" y1="120" x2="100" y2="120" stroke="#8B6914" stroke-width="2"/><rect x="65" y="50" width="10" height="70" rx="3" fill="#8B6914"/><ellipse cx="70" cy="45" rx="35" ry="28" fill="#C8A84A" opacity="0.85"/><ellipse cx="70" cy="38" rx="28" ry="22" fill="#E0C870" opacity="0.7"/><circle cx="52" cy="40" r="5" fill="#C8A84A"/><circle cx="88" cy="40" r="5" fill="#C8A84A"/><circle cx="60" cy="30" r="4" fill="#C8A84A"/><circle cx="80" cy="30" r="4" fill="#C8A84A"/><circle cx="70" cy="50" r="5" fill="#C8A84A"/><circle cx="70" cy="25" r="4" fill="#C8A84A"/></svg>';
+  if (count >= 10) return '<svg width="160" height="160" viewBox="0 0 140 140" style="display:block;min-width:160px;min-height:160px;animation:grainFloat 3s ease-in-out infinite;"><line x1="40" y1="120" x2="100" y2="120" stroke="#8B6914" stroke-width="2"/><rect x="66" y="55" width="8" height="65" rx="3" fill="#8B6914"/><ellipse cx="70" cy="50" rx="32" ry="25" fill="#C8A84A" opacity="0.85"/><ellipse cx="70" cy="44" rx="24" ry="18" fill="#E0C870" opacity="0.7"/></svg>';
+  if (count >= 5) return '<svg width="160" height="160" viewBox="0 0 140 140" style="display:block;min-width:160px;min-height:160px;animation:grainFloat 3s ease-in-out infinite;"><line x1="40" y1="120" x2="100" y2="120" stroke="#8B6914" stroke-width="2"/><rect x="68" y="60" width="4" height="60" rx="2" fill="#C8A84A"/><ellipse cx="58" cy="72" rx="12" ry="6" fill="#C8A84A" transform="rotate(-30 58 72)"/><ellipse cx="82" cy="82" rx="12" ry="6" fill="#C8A84A" transform="rotate(30 82 82)"/><ellipse cx="56" cy="92" rx="10" ry="5" fill="#E0C870" transform="rotate(-25 56 92)"/><ellipse cx="84" cy="102" rx="10" ry="5" fill="#E0C870" transform="rotate(25 84 102)"/></svg>';
+  if (count >= 1) return '<svg width="160" height="160" viewBox="0 0 140 140" style="display:block;min-width:160px;min-height:160px;animation:grainFloat 3s ease-in-out infinite;"><line x1="40" y1="120" x2="100" y2="120" stroke="#8B6914" stroke-width="2"/><rect x="68" y="80" width="4" height="40" rx="2" fill="#C8A84A"/><ellipse cx="60" cy="88" rx="10" ry="5" fill="#C8A84A" transform="rotate(-30 60 88)"/><ellipse cx="80" cy="98" rx="10" ry="5" fill="#C8A84A" transform="rotate(30 80 98)"/></svg>';
   return '<svg width="160" height="160" viewBox="0 0 140 140" style="display:block;min-width:160px;min-height:160px;animation:grainFloat 3s ease-in-out infinite;filter:drop-shadow(0 0 8px rgba(200,168,75,0.6));"><line x1="40" y1="103" x2="100" y2="103" stroke="#8B6914" stroke-width="2"/><ellipse cx="70" cy="95" rx="12" ry="8" fill="#C8A84A"/></svg>';
 }
 function getGraineStageName(count) {
@@ -5573,9 +5573,9 @@ _outilAnxieteRenderers.tri_radio_apprentissage = function(o, c) {
       if (answered) {
         if (opt.id === ans.answer) {
           bg = ans.correct ? 'rgba(76,175,80,0.30)' : 'rgba(255,160,0,0.28)';
-          bd = ans.correct ? '#4CAF50' : '#FFA000'; col = '#FFFFFF';
+          bd = ans.correct ? '#C8A84A' : '#FFA000'; col = '#FFFFFF';
         } else if (!ans.correct && opt.id === ex.bonne_reponse) {
-          bd = '#4CAF50'; col = '#9BD49E';
+          bd = '#C8A84A'; col = '#9BD49E';
         } else { col = 'rgba(231,211,151,0.45)'; }
       } else {
         click = 'onclick="_triAnswer(\'' + triId + '\',\'' + sk + '\',' + viewQ + ',\'' + opt.id + '\',\'' + ex.bonne_reponse + '\')"';
