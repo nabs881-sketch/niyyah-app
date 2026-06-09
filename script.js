@@ -9448,8 +9448,8 @@ function sendNotification(title, body, icon, moment) {
 
     var notifOptions = {
       body: body,
-      icon: './icon-192.png',
-      badge: './icon-192.png',
+      icon: './icon-notif.png',
+      badge: './badge.png',
       tag: 'niyyah-murmure-' + (moment || 'general'),
       vibrate: [40, 20, 40],
       requireInteraction: false,
@@ -9462,10 +9462,10 @@ function sendNotification(title, body, icon, moment) {
       navigator.serviceWorker.ready.then(function(reg) {
         reg.showNotification(title, notifOptions);
       }).catch(function() {
-        new Notification(title, { body: body, icon: './icon-192.png' });
+        new Notification(title, { body: body, icon: './icon-notif.png' });
       });
     } else {
-      new Notification(title, { body: body, icon: './icon-192.png' });
+      new Notification(title, { body: body, icon: './icon-notif.png' });
     }
   } catch(e) {
     showToast(icon + ' ' + body.substring(0, 60));
