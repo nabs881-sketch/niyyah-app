@@ -3090,6 +3090,7 @@ function toggleItem(id, event) {
   }
   saveState();
   if (typeof updateMedaillonState === 'function') updateMedaillonState();
+  if (typeof _updateOrbCoherence === 'function') _updateOrbCoherence();
   const el = document.getElementById('rituel-item-' + id) || document.getElementById('item-' + id);
   if (el) {
     if (event) spawnRipple(el, event);
@@ -14105,6 +14106,17 @@ function updateFajrChallenge() {
     + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;color:rgba(200,168,75,0.45);margin-top:6px;text-align:right;">\u2014 ' + _fajrRef + '</div>'
     + '</div>';
 }
+function _updateOrbCoherence() {
+  try {
+    var coh = (typeof _orbCoherenceTier === 'function') ? _orbCoherenceTier() : '';
+    var st = (typeof history !== 'undefined' && history && history.streak) ? history.streak : 0;
+    var streakTier = st >= 40 ? 's3' : st >= 21 ? 's2' : st >= 7 ? 's1' : '';
+    document.querySelectorAll('.orb-wrap-v2').forEach(function (o) {
+      if (coh) o.setAttribute('data-coherence', coh); else o.removeAttribute('data-coherence');
+      if (streakTier) o.setAttribute('data-streak', streakTier); else o.removeAttribute('data-streak');
+    });
+  } catch (e) {}
+}
 function _orbCoherenceTier() {
   try {
     var s = safeParseJSON('spiritual_v2', {});
@@ -14151,7 +14163,7 @@ function updateSanctuaireMoment() {
   var block = getCurrentPrayerBlock();
   var blockId = block.id;
   try { document.querySelectorAll('.orb-wrap-v2').forEach(function(o){ o.setAttribute('data-moment', blockId); }); } catch(e) {}
-  try { var _coh = _orbCoherenceTier(); document.querySelectorAll('.orb-wrap-v2').forEach(function(o){ if (_coh) o.setAttribute('data-coherence', _coh); else o.removeAttribute('data-coherence'); }); } catch(e) {}
+  if (typeof _updateOrbCoherence === 'function') _updateOrbCoherence();
   var _svgNuit = '<svg width="14" height="14" viewBox="0 0 14 14" style="vertical-align:middle;"><path d="M11 7a4.5 4.5 0 1 1-4.5-4.5A3.5 3.5 0 0 0 11 7z" fill="none" stroke="#C8A84A" stroke-width="1.2"/></svg>';
   var _blockIcons = { nuit:_svgNuit, fajr:'\u2726', dhuhr:'\u2726', asr:'\u2726', maghrib:'\u2726', isha:_svgNuit };
   var _momentsImg = ['fajr','dhuhr','asr','maghrib','isha'];

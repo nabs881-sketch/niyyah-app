@@ -9408,3 +9408,9 @@ body.onboarding-active #nav-bar-v2 {
 .orb-wrap-v2[data-coherence="low"]::before  { filter:brightness(0.82) saturate(0.95); }
 /* braise qui couve : atténuée mais jamais éteinte, souffle plus lent */
 .orb-wrap-v2[data-coherence="ember"]::before { filter:brightness(0.55) saturate(0.80); animation-duration:9s; }
+/* réchauffe en direct : la cohérence du halo se transitionne en douceur */
+.orb-wrap-v2::before { transition: filter 1.4s ease; }
+/* mémoire de série : surcroît de lumière très léger (canal séparé : wrapper) */
+.orb-wrap-v2[data-streak="s1"] { filter: drop-shadow(0 0 16px rgba(232,200,120,0.26)); }
+.orb-wrap-v2[data-streak="s2"] { filter: drop-shadow(0 0 24px rgba(232,200,120,0.36)); }
+.orb-wrap-v2[data-streak="s3"] { filter: drop-shadow(0 0 32px rgba(240,210,140,0.46)); }
