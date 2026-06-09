@@ -14105,6 +14105,29 @@ function updateFajrChallenge() {
     + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;color:rgba(200,168,75,0.45);margin-top:6px;text-align:right;">\u2014 ' + _fajrRef + '</div>'
     + '</div>';
 }
+function _orbCoherenceTier() {
+  try {
+    var s = safeParseJSON('spiritual_v2', {});
+    var done = 0, tot = 0;
+    LEVELS.forEach(function (l) {
+      (l.sections || []).forEach(function (sec) {
+        (sec.items || []).forEach(function (it) {
+          if (it && it.prayer) {
+            tot++;
+            var d = it.type === 'counter' ? (s[it.id] || 0) >= (it.target || 1) : !!s[it.id];
+            if (d) done++;
+          }
+        });
+      });
+    });
+    if (tot === 0) return '';
+    var r = done / tot;
+    if (r <= 0) return 'ember';
+    if (r < 0.5) return 'low';
+    if (r < 1)  return 'warm';
+    return 'full';
+  } catch (e) { return ''; }
+}
 function updateSanctuaireMoment() {
   var el = document.getElementById('sanctuaire-moment');
   if (!el) return;
@@ -14128,6 +14151,7 @@ function updateSanctuaireMoment() {
   var block = getCurrentPrayerBlock();
   var blockId = block.id;
   try { document.querySelectorAll('.orb-wrap-v2').forEach(function(o){ o.setAttribute('data-moment', blockId); }); } catch(e) {}
+  try { var _coh = _orbCoherenceTier(); document.querySelectorAll('.orb-wrap-v2').forEach(function(o){ if (_coh) o.setAttribute('data-coherence', _coh); else o.removeAttribute('data-coherence'); }); } catch(e) {}
   var _svgNuit = '<svg width="14" height="14" viewBox="0 0 14 14" style="vertical-align:middle;"><path d="M11 7a4.5 4.5 0 1 1-4.5-4.5A3.5 3.5 0 0 0 11 7z" fill="none" stroke="#C8A84A" stroke-width="1.2"/></svg>';
   var _blockIcons = { nuit:_svgNuit, fajr:'\u2726', dhuhr:'\u2726', asr:'\u2726', maghrib:'\u2726', isha:_svgNuit };
   var _momentsImg = ['fajr','dhuhr','asr','maghrib','isha'];

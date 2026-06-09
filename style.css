@@ -9402,3 +9402,9 @@ body.onboarding-active #nav-bar-v2 {
 .orb-wrap-v2[data-moment="nuit"]::before{
   background:radial-gradient(circle, rgba(150,112,72,0.20) 0%, rgba(150,112,72,0.09) 22%, rgba(150,112,72,0.03) 45%, transparent 74%);
 }
+/* Orbe vivant — cohérence du jour (superposée au moment) */
+.orb-wrap-v2[data-coherence="full"]::before { filter:brightness(1.20) saturate(1.12); }
+.orb-wrap-v2[data-coherence="warm"]::before { filter:brightness(1.06); }
+.orb-wrap-v2[data-coherence="low"]::before  { filter:brightness(0.82) saturate(0.95); }
+/* braise qui couve : atténuée mais jamais éteinte, souffle plus lent */
+.orb-wrap-v2[data-coherence="ember"]::before { filter:brightness(0.55) saturate(0.80); animation-duration:9s; }
