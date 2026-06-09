@@ -3769,7 +3769,10 @@ function renderPrayerTimesCard() {
     const isPassed = tMin <= nowMin && i !== nextIdx;
     const isNext   = i === nextIdx;
     const cls = 'prayer-time-item' + (isNext ? ' next' : isPassed ? ' passed' : '');
-    grid += '<div class="' + cls + '">' +
+    var _arc = { Fajr:'#A8C0DA', Dhuhr:'#E0C870', Asr:'#D4AA5C', Maghrib:'#E89E46', Isha:'#454572' };
+    var _arcColor = _arc[t.name] || '#C8A84A';
+    grid += '<div class="' + cls + '" style="position:relative;overflow:hidden;">' +
+      '<div style="position:absolute;top:0;left:0;right:0;height:2px;background:' + _arcColor + ';opacity:0.6;"></div>' +
       '<div class="prayer-time-name">' + t.name + '</div>' +
       '<div class="prayer-time-hour">' + t.time.substring(0,5) + '</div>' +
     '</div>';
