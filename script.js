@@ -13038,6 +13038,13 @@ function updateMedaillonState() {
   }
 }
 var _WAQT_AR_NAMES = {fajr:'\u0627\u0644\u0641\u064E\u062C\u0652\u0631',dhuhr:'\u0627\u0644\u0638\u0651\u064F\u0647\u0652\u0631',asr:'\u0627\u0644\u0639\u064E\u0635\u0652\u0631',maghrib:'\u0627\u0644\u0645\u064E\u063A\u0652\u0631\u0650\u0628',isha:'\u0627\u0644\u0639\u0650\u0634\u0627\u0621'};
+var _WAQT_LUMIERE = {
+  fajr:    'La premi\u00e8re lumi\u00e8re se l\u00e8ve. Un jour neuf t\u2019est offert.',
+  dhuhr:   'Le soleil est au plus haut. Une halte au c\u0153ur du jour.',
+  asr:     'La lumi\u00e8re commence \u00e0 s\u2019incliner. L\u2019apr\u00e8s-midi s\u2019adoucit.',
+  maghrib: 'La lumi\u00e8re d\u00e9cline. Le jour s\u2019ach\u00e8ve \u2014 pose ta gratitude.',
+  isha:    'La nuit s\u2019installe. Le calme recouvre toute chose.'
+};
 function _waqtHashPriere(p) { var h = 0; for (var i = 0; i < p.length; i++) h = (h * 31 + p.charCodeAt(i)) & 0x7fffffff; return h; }
 var _waqtModalPriere = null;
 function openWaqtModal() {
@@ -13069,6 +13076,10 @@ function openWaqtModal() {
   var modal = document.getElementById('waqt-modal');
   if (!modal) return;
   var arName = _WAQT_AR_NAMES[priere] || '';
+  var _lum = _WAQT_LUMIERE[priere] || '';
+  var ambianceHtml = _lum
+    ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(200,168,74,0.7);line-height:1.6;max-width:300px;margin:0 auto 18px;">' + _lum + '</div>'
+    : '';
   var actionEl = document.getElementById('waqt-action-text');
   // Banner image par prière
   var banner = document.getElementById('waqt-banner');
@@ -13078,13 +13089,16 @@ function openWaqtModal() {
   var story = (pool && pool[idx] && pool[idx]._story) ? pool[idx]._story : null;
   if (story && story.morale) {
     var html = '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:28px;color:#C8A84A;direction:rtl;margin-bottom:16px;">' + arName + '</div>';
+    html += ambianceHtml;
     if (story.titre) html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:700;color:#C8A84A;letter-spacing:1px;margin-bottom:12px;">' + story.titre.toUpperCase() + '</div>';
     html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#e9ddc7;line-height:1.75;max-width:340px;margin-bottom:16px;">' + (story.texte || '') + '</div>';
     html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-weight:700;color:#e9ddc7;line-height:1.6;margin-bottom:12px;">' + story.morale + '</div>';
     if (story.source) html += '<div style="font-family:\'Inter\',sans-serif;font-size:11px;color:rgba(200,168,75,0.4);line-height:1.4;">' + story.source + '</div>';
     actionEl.innerHTML = html;
   } else {
-    actionEl.innerHTML = '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:28px;color:#C8A84A;direction:rtl;margin-bottom:20px;">' + arName + '</div>' + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:#e9ddc7;line-height:1.75;max-width:340px;">' + txt + '</div>';
+    actionEl.innerHTML = '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:28px;color:#C8A84A;direction:rtl;margin-bottom:20px;">' + arName + '</div>'
+      + ambianceHtml
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:#e9ddc7;line-height:1.75;max-width:340px;">' + txt + '</div>';
   }
   modal.style.display = 'flex';
   document.body.classList.add('in-waqt-modal');
