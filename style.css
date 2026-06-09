@@ -6097,7 +6097,7 @@ body::before {
   height: 320px;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(238,186,94,0.26) 0%, rgba(210,150,60,0.08) 50%, transparent 80%);
+  background: radial-gradient(circle, hsla(39,91%,58%,0.33) 0%, transparent 72%);
   pointer-events: none;
   z-index: 0;
   animation: orbHaloBreath 8s ease-in-out infinite;
@@ -6117,12 +6117,12 @@ body::before {
   position: relative;
   width: 228px; height: 228px; border-radius: 50%; aspect-ratio: 1; transform-origin: center;
   overflow: hidden;
-  background: radial-gradient(circle at 43% 40%, #241f24 0%, #17141a 42%, #0c0b10 76%, #08080b 100%);
-  border: 2px solid rgba(250,210,124,0.72);
+  background: radial-gradient(circle at 43% 40%, #1c1820 0%, #131019 50%, #0a090e 100%);
+  border: 2px solid hsla(39,91%,66%,0.89);
   box-shadow:
-    inset -18px -22px 50px rgba(0,0,0,.92),
-    inset 14px 16px 38px rgba(196,200,214,.07),
-    0 0 56px rgba(232,178,84,.22);
+    inset -18px -22px 48px rgba(0,0,0,.85),
+    inset 13px 16px 38px rgba(196,200,214,.06),
+    0 0 64px hsla(39,91%,52%,0.32);
   display: flex; flex-direction: column;
   align-items: center; justify-content: center; gap: 4px;
   transition: all 0.5s var(--ease-silk-v2);
@@ -6132,11 +6132,9 @@ body::before {
 .orb-core-v2::before {
   content: '';
   position: absolute;
-  top: 12%; left: 18%;
-  width: 38%; height: 28%;
+  inset: 0;
   border-radius: 50%;
-  background: radial-gradient(ellipse, rgba(222,228,240,.10) 0%, transparent 70%);
-  filter: blur(8px);
+  background: transparent;
   pointer-events: none;
   z-index: 1;
 }
@@ -6145,10 +6143,16 @@ body::before {
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background: radial-gradient(circle at 50% 51%, rgba(255,230,172,.62) 0%, rgba(255,204,118,.32) 24%, rgba(238,170,80,.13) 44%, transparent 62%);
+  background: radial-gradient(circle at 50% 49%,
+    hsla(39,91%,92%,0.79) 0%,
+    hsla(39,91%,72%,0.51) 24%,
+    hsla(39,91%,58%,0.33) 48%,
+    hsla(39,91%,50%,0.24) 70%,
+    hsla(39,91%,56%,0.58) 90%,
+    transparent 100%);
   pointer-events: none;
   z-index: 0;
-  animation: orbMist 12s ease-in-out infinite alternate;
+  animation: none;
 }
 @keyframes orbMist {
   0% { transform: translate(0, 0) scale(1) rotate(0deg); opacity: .6; }
@@ -6159,10 +6163,10 @@ body::before {
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background: radial-gradient(circle, transparent 57%, rgba(248,204,112,.30) 73%, transparent 88%);
+  background: radial-gradient(circle, transparent 84%, hsla(39,91%,64%,0.45) 94%, transparent 100%);
   pointer-events: none;
   z-index: 1;
-  animation: orbConicSpin 40s linear infinite;
+  animation: none;
 }
 @keyframes orbConicSpin {
   from { transform: rotate(0deg); }
@@ -6172,8 +6176,8 @@ body::before {
   position: absolute;
   width: 3px; height: 3px;
   border-radius: 50%;
-  background: rgba(255,226,158,.95);
-  box-shadow: 0 0 6px rgba(255,206,120,.8);
+  background: hsla(39,91%,72%,0.95);
+  box-shadow: 0 0 6px hsla(39,91%,62%,0.8);
   pointer-events: none;
   z-index: 2;
   opacity: 0;
@@ -6192,20 +6196,20 @@ body::before {
 }
 .orb-core-v2:hover, .orb-core-v2:active {
   box-shadow:
-    inset -18px -22px 50px rgba(0,0,0,.88),
-    inset 14px 16px 38px rgba(196,200,214,.10),
-    0 0 80px rgba(232,178,84,.32);
-  border-color: rgba(252,216,134,0.9);
+    inset -18px -22px 48px rgba(0,0,0,.8),
+    inset 13px 16px 38px rgba(196,200,214,.09),
+    0 0 86px hsla(39,91%,54%,0.42);
+  border-color: hsla(39,91%,68%,0.96);
   transform: scale(1.02);
 }
 .orb-core-v2.intention-set-v2 {
-  background: radial-gradient(circle at 43% 40%, #241f24 0%, #17141a 42%, #0c0b10 76%, #08080b 100%);
-  border-color: rgba(252,216,134,0.92);
+  background: radial-gradient(circle at 43% 40%, #1c1820 0%, #131019 50%, #0a090e 100%);
+  border-color: hsla(39,91%,70%,0.97);
   animation: orbBreathActiveV2 5s var(--ease-breath-v2) infinite;
 }
 @keyframes orbBreathV2 {
-  0%, 100% { transform: scale(1); box-shadow: inset -18px -22px 50px rgba(0,0,0,.92), inset 14px 16px 38px rgba(196,200,214,.07), 0 0 56px rgba(232,178,84,.22); }
-  50%      { transform: scale(1.03); box-shadow: inset -18px -22px 50px rgba(0,0,0,.88), inset 14px 16px 38px rgba(196,200,214,.10), 0 0 74px rgba(232,178,84,.32); }
+  0%, 100% { transform: scale(1); box-shadow: inset -18px -22px 48px rgba(0,0,0,.85), inset 13px 16px 38px rgba(196,200,214,.06), 0 0 64px hsla(39,91%,52%,0.32); }
+  50%      { transform: scale(1.03); box-shadow: inset -18px -22px 48px rgba(0,0,0,.8), inset 13px 16px 38px rgba(196,200,214,.09), 0 0 86px hsla(39,91%,52%,0.42); }
 }
 @keyframes orbBreathActiveV2 {
   0%, 100% { transform: scale(1); box-shadow: inset -20px -24px 55px rgba(0,0,0,.82), inset 16px 18px 46px rgba(255,210,130,.2), 0 0 85px rgba(200,150,70,.3); }
@@ -6214,14 +6218,14 @@ body::before {
 
 .orb-symbol-v2 {
   font-family: 'Scheherazade New', var(--font-v2-ar);
-  font-size: 56px; color: rgba(255,232,172,0.98); line-height: 1;
-  text-shadow: 0 0 11px rgba(255,224,158,0.5), 0 1px 2px rgba(82,50,16,0.55);
+  font-size: 56px; color: hsla(39,91%,86%,0.98); line-height: 1;
+  text-shadow: 0 0 11px hsla(39,91%,72%,0.47), 0 1px 2px rgba(60,38,10,0.55);
   margin-bottom: 12px;
   transition: color 0.4s; user-select: none;
   position: relative; z-index: 3;
 }
 .orb-core-v2:hover .orb-symbol-v2,
-.orb-core-v2.intention-set-v2 .orb-symbol-v2 { color: rgba(255,240,190,1); }
+.orb-core-v2.intention-set-v2 .orb-symbol-v2 { color: hsla(39,91%,92%,1); }
 
 .orb-cta-v2 {
   --orb-season: 246,218,138;
