@@ -5003,6 +5003,17 @@ function _cureAnxieteGenericDay(el, dayNum) {
   if (j.bloc_2_sagesse) steps.push({ type: '_bloc_sagesse', data: j.bloc_2_sagesse });
   // Bloc 3: outils psy (identique à v1)
   var outils = j.bloc_3_outils_psy || j.outils || [];
+  if (dayNum === 1) {
+    var _vertus = { colere:'la longanimité', anxiete:'l\u2019apaisement', regard:'un regard plus juste', arrogance:'l\u2019humilité', paresse:'l\u2019élan vers le bien', medisance:'la maîtrise de ta langue' };
+    var _v = _vertus[_curPorte] || 'cette vertu';
+    var _skPacte = ((_curePorteConfig[_curPorte] || {}).storageKey || ('cure_' + _curPorte)) + '_j1_pacte';
+    outils = [{
+      type: 'champ_texte_long',
+      amorce: 'Avant de commencer — pose ton intention.',
+      introduction: 'Sept jours pour faire grandir ' + _v + '.\nEn une phrase : qu\u2019est-ce que tu veux cultiver ?',
+      champ: { stockage: _skPacte, placeholder: 'Mon intention\u2026', max_caracteres: 200 }
+    }].concat(outils);
+  }
   outils.forEach(function(o, oi) { steps.push({ type: '_outil_anxiete', data: o, idx: oi, total: outils.length }); });
   // Bloc 4: dhikr quantifié
   if (j.bloc_4_dhikr_quantifie) steps.push({ type: '_bloc_dhikr', data: j.bloc_4_dhikr_quantifie });
