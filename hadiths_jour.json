@@ -878,7 +878,7 @@
     "theme": "Salam",
     "texte_ar": "السَّلَامُ قَبْلَ الْكَلَامِ",
     "texte_fr": "Le salam précède la parole.",
-    "source": "Tirmidhi 2699 / Authentifié par Al-Albani",
+    "source": "Tabarânî (al-Awsat) · Authentifié hasan par Al-Albânî (Silsila Sahîha)",
     "degre": "hasan"
   },
   {
@@ -1054,8 +1054,8 @@
     "theme": "Mort",
     "texte_ar": "كَفَى بِالْمَوْتِ وَاعِظًا",
     "texte_fr": "La mort suffit comme prédicateur.",
-    "source": "Cité comme parole sage / attribué au Prophète ﷺ par Tabarani — authentifié hasan par Al-Albani",
-    "degre": "hasan"
+    "source": "Parole de 'Ammâr ibn Yâsir (athar) — Ahmad (az-Zuhd), Ibn Abî ad-Dunyâ · Statut : athar, non hadith prophétique",
+    "degre": "athar"
   },
   {
     "jour": 133,
@@ -1175,7 +1175,7 @@
     "theme": "Excellence",
     "texte_ar": "إِنَّ اللَّهَ يُحِبُّ إِذَا عَمِلَ أَحَدُكُمْ عَمَلًا أَنْ يُتْقِنَهُ",
     "texte_fr": "Allah aime, quand l'un de vous accomplit un travail, qu'il le fasse avec excellence.",
-    "source": "Tabarani / Authentifié par Al-Albani",
+    "source": "Bayhaqî (Shu'ab al-Îmân 4929), Abû Ya'lâ · Authentifié hasan par Al-Albânî (Silsila Sahîha 1113)",
     "degre": "hasan"
   },
   {
@@ -1207,8 +1207,8 @@
     "theme": "Promesse",
     "texte_ar": "الْعِدَةُ دَيْنٌ",
     "texte_fr": "La promesse est une dette.",
-    "source": "Parole sage attribuée — Tabarani, Sahih al-Jami' 4177, hasan selon Al-Albani",
-    "degre": "hasan"
+    "source": "Maxime — attribution prophétique non confirmée (ne pas présenter comme hadith authentique)",
+    "degre": "maxime"
   },
   {
     "jour": 152,
@@ -1263,8 +1263,8 @@
     "theme": "Sobriété",
     "texte_ar": "لَا تُسْرِفْ فِي الْوُضُوءِ وَلَوْ كُنْتَ عَلَى نَهَرٍ جَارٍ",
     "texte_fr": "Le Prophète ﷺ passa près de Sa'd qui faisait ses ablutions. Il dit : Quel gaspillage est-ce là, Sa'd ? — Y a-t-il gaspillage dans les ablutions ? — Oui, même si tu es au bord d'une rivière qui coule.",
-    "source": "Ibn Majah 425, Ahmad 7065 · hasan",
-    "degre": "hasan"
+    "source": "Ibn Majah 425, Ahmad 7065 · da'îf (gradation contestée)",
+    "degre": "da'îf"
   },
   {
     "jour": 159,
