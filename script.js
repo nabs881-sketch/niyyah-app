@@ -13950,31 +13950,33 @@ function showFinJourneeActe2() {
     }
   } catch(e) {}
   var idx = _intentionRappel ? -1 : 0;
+  var _btnHtml = '<div id="fdjContinueWrap" style="text-align:center;margin-top:34px;opacity:0;transition:opacity 1.2s ease;"><button onclick="_fdjNext()" style="font-family:\'Cormorant Garamond\',serif;font-size:17px;font-style:italic;letter-spacing:1px;color:#E8CF8A;background:none;border:1px solid rgba(200,168,75,0.4);border-radius:30px;padding:11px 32px;cursor:pointer;box-shadow:0 0 18px rgba(200,168,75,0.12);">Continuer\u00a0\u203a</button></div>';
+  function _showContinueBtn() {
+    setTimeout(function() { var w = document.getElementById('fdjContinueWrap'); if (w) w.style.opacity = '1'; }, 1300);
+  }
+  window._fdjNext = function() { el.style.opacity = '0'; var w = document.getElementById('fdjContinueWrap'); if (w) w.style.opacity = '0'; setTimeout(showNext, 900); };
   function showNext() {
     if (idx === -1) {
       el.style.opacity = '0';
       setTimeout(function() {
         el.innerHTML = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;color:rgba(255,255,255,0.7);margin-bottom:12px;">Ce matin tu as pos\u00e9 :</div>'
           + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-style:italic;color:#C8A84A;line-height:1.5;margin-bottom:16px;">' + escapeHtml(_intentionRappel) + '</div>'
-          + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;color:rgba(255,255,255,0.7);">As-tu v\u00e9cu en coh\u00e9rence avec elle ?</div>';
+          + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;color:rgba(255,255,255,0.7);">As-tu v\u00e9cu en coh\u00e9rence avec elle ?</div>'
+          + _btnHtml;
         el.style.opacity = '1';
         idx = 0;
-        setTimeout(function() { el.style.opacity = '0'; setTimeout(showNext, 1000); }, 8000);
+        _showContinueBtn();
       }, 100);
       return;
     }
     if (idx >= questions.length) { showFinJourneeActe3(); return; }
     el.style.opacity = '0';
     setTimeout(function() {
-      el.textContent = questions[idx];
+      el.innerHTML = '<div>' + escapeHtml(questions[idx]) + '</div>' + _btnHtml;
       el.style.opacity = '1';
-      var hold = durations[idx];
       idx++;
-      setTimeout(function() {
-        el.style.opacity = '0';
-        setTimeout(showNext, 1000);
-      }, hold - 1000);
-    }, idx === 0 ? 100 : 1000);
+      _showContinueBtn();
+    }, idx === 0 ? 100 : 100);
   }
   showNext();
 }
