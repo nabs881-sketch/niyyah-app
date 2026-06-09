@@ -4829,6 +4829,10 @@ function _cureJ7FinaleSucces() {
   var _cure7 = {}; try { _cure7 = JSON.parse(safeGetItem(_sk) || '{}'); } catch(e) {}
   var _stat = (_cure7.efficacite_j1 && _cure7.efficacite_j7)
     ? '<div class="lxf-stat lxf-rise" style="--d:.72s">Au d\u00e9but : ' + _cure7.efficacite_j1 + '/10 \u00b7 Aujourd\u2019hui : ' + _cure7.efficacite_j7 + '/10</div>' : '';
+  var _pacteJ1 = (typeof _sk === 'string' ? (safeGetItem(_sk + '_j1_pacte') || '') : '');
+  var _miroirPacte = _pacteJ1.trim()
+    ? '<div class="lxf-card lxf-rise" style="--d:.66s"><div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:8px;">Au premier jour, tu as \u00e9crit</div><div style="font-family:\'Cormorant Garamond\',serif;font-size:19px;font-style:italic;color:#E8D5A0;line-height:1.5;">\u00ab\u00a0' + escapeHtml(_pacteJ1) + '\u00a0\u00bb</div></div>'
+    : '';
   // Miroir avant/après : ses propres mots
   var _motsSeuil = (_cure7.niyyah || '').trim();
   var _motsAuj   = ((_cure7.bilan_jour_7 && _cure7.bilan_jour_7.change) || '').trim();
@@ -4853,7 +4857,7 @@ function _cureJ7FinaleSucces() {
     + '<div class="lxf-calli lxf-rise" style="--d:.3s">\u0628\u064e\u0627\u0631\u064e\u0643\u064e \u0627\u0644\u0644\u0651\u064e\u0647\u064f \u0641\u0650\u064a\u0643\u064e</div>'
     + '<div class="lxf-title lxf-rise" style="--d:.45s">Tu as march\u00e9 7 jours</div>'
     + '<div class="lxf-sub lxf-rise" style="--d:.6s">Allah voit. Reviens quand le c\u0153ur le demandera.</div>'
-    + _stat + _miroir
+    + _stat + _miroirPacte + _miroir
     + '<div class="lxf-path lxf-rise" style="--d:.8s">' + _nodes + '</div>'
     + '<div class="lxf-note lxf-rise" style="--d:.9s">Sept jours sont une initiation. Le travail sur le nafs est une lutte de toute une vie. Reviens quand tu en as besoin. Demain, ou dans un an. All\u00e2h ne mesure pas la dur\u00e9e \u2014 Il mesure la sinc\u00e9rit\u00e9.</div>'
     + '<button class="lxf-btn lxf-rise" style="--d:1s" onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()">Retour \u00e0 Ma Niyyah</button>'
