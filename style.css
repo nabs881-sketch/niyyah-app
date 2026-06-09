@@ -8197,7 +8197,7 @@ button[style*="gold-v2"] {
   width: 100%;
   margin-top: 8px;
   padding: 14px 28px;
-  background: linear-gradient(180deg, #E9C96E 0%, #C8A84A 48%, #9E7B2E 100%);
+  background: radial-gradient(circle at 38% 30%, #F2D27E 0%, #D2A02C 44%, #8A6420 100%);
   border: none;
   border-radius: 10px;
   color: #0a0805;
