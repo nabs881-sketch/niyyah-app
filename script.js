@@ -2937,23 +2937,25 @@ function playCheckSound() {
   } catch(e) {}
 }
 function playCounterSound() {
+  if (typeof cavSoundEnabled === 'function' && !cavSoundEnabled()) return;
   const ctx = getAudioCtx();
   if (!ctx) return;
   try {
     const osc = ctx.createOscillator();
     const gain = ctx.createGain();
-    osc.connect(gain);
-    gain.connect(ctx.destination);
-    osc.type = 'sine';
-    osc.frequency.setValueAtTime(440, ctx.currentTime);
-    osc.frequency.exponentialRampToValueAtTime(560, ctx.currentTime + 0.06);
-    gain.gain.setValueAtTime(0.09, ctx.currentTime);
-    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.14);
-    osc.start(ctx.currentTime);
-    osc.stop(ctx.currentTime + 0.14);
-  } catch(e) {}
+    osc.connect(gain); gain.connect(ctx.destination);
+    osc.type = 'triangle';
+    const t = ctx.currentTime;
+    osc.frequency.setValueAtTime(210, t);
+    osc.frequency.exponentialRampToValueAtTime(150, t + 0.09);
+    gain.gain.setValueAtTime(0.0001, t);
+    gain.gain.exponentialRampToValueAtTime(0.06, t + 0.012); // attaque douce
+    gain.gain.exponentialRampToValueAtTime(0.0001, t + 0.12); // décroissance courte
+    osc.start(t); osc.stop(t + 0.13);
+  } catch (e) {}
 }
 function playCompleteSound() {
+  if (typeof cavSoundEnabled === 'function' && !cavSoundEnabled()) return;
   const ctx = getAudioCtx();
   if (!ctx) return;
   try {
