@@ -7340,6 +7340,55 @@ function _getWeeklyConseil(dominante, catCounts, bilanCount, profil) {
   else key = dominante + '_' + manque;
   return _CONSEILS_CHEMIN[key] || _CONSEILS_CHEMIN.fallback;
 }
+function _frJour(dk) {
+  try { var d = new Date(dk + 'T00:00:00'); if (isNaN(d.getTime())) return '';
+    return ['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'][d.getDay()]; }
+  catch (e) { return ''; }
+}
+function _cap(s) { return s ? s.charAt(0).toUpperCase() + s.slice(1) : s; }
+
+function _bilanMemoryLine(bilanData) {
+  try {
+    bilanData = bilanData || {};
+    var seq = [];                         // du plus ancien au plus récent
+    for (var i = 6; i >= 0; i--) {
+      var dk = getDateMinus(TODAY, i);
+      seq.push({ jour: _frJour(dk), choix: bilanData[dk] || null });
+    }
+    var marked = seq.filter(function (s) { return s.choix; });
+    if (marked.length < 2) return '';
+    var isFalter  = function (c) { return c === 'distraction'; };
+    var isSincere = function (c) { return /sinc/.test(c || ''); };
+
+    // 1) vaciller puis revenir
+    for (var a = 0; a < seq.length; a++) {
+      if (seq[a].choix && isFalter(seq[a].choix) && seq[a].jour) {
+        for (var b = a + 1; b < seq.length; b++) {
+          if (seq[b].choix && isSincere(seq[b].choix) && seq[b].jour) {
+            return _cap(seq[a].jour) + ' tu as vacill\u00e9. ' + _cap(seq[b].jour)
+              + ', tu es revenu. C\u2019est \u00e7a, la sinc\u00e9rit\u00e9.';
+          }
+        }
+      }
+    }
+    // 2) presque chaque soir sincère
+    var sinc = marked.filter(function (s) { return isSincere(s.choix); }).length;
+    var falt = marked.filter(function (s) { return isFalter(s.choix); }).length;
+    if (sinc >= 4 && falt === 0)
+      return 'Presque chaque soir cette semaine, tu t\u2019es regard\u00e9 en v\u00e9rit\u00e9. Continue.';
+
+    // 3) retour après une absence (trou entre deux soirs notés)
+    var first = seq.findIndex(function (s) { return s.choix; });
+    var last = -1; for (var k = seq.length - 1; k >= 0; k--) { if (seq[k].choix) { last = k; break; } }
+    var gap = false; for (var g = first; g <= last; g++) { if (!seq[g].choix) { gap = true; break; } }
+    if (gap)
+      return 'Tu avais laiss\u00e9 filer quelques soirs \u2014 puis tu es revenu poser ton regard. C\u2019est d\u00e9j\u00e0 un retour.';
+
+    // 4) présence régulière
+    return 'Tu t\u2019es arr\u00eat\u00e9 plusieurs soirs cette semaine pour te regarder en face. Rien que \u00e7a, c\u2019est un chemin.';
+  } catch (e) { return ''; }
+}
+
 function showWeeklyBilan() {
   var stats = _getWeeklyStats();
   var dominante = _getWeeklyDominante();
@@ -7373,9 +7422,10 @@ function showWeeklyBilan() {
   var _voiceMsg = _voicePool[Math.floor(Math.random() * _voicePool.length)] || '';
   _voiceMsg = _voiceMsg.replace(/\{\{fajr\}\}/g, _numToLetters(stats.fajrDays)).replace(/\{\{gestes\}\}/g, _numToLetters(stats.totalGestes)).replace(/\{\{journees\}\}/g, _numToLetters(stats.doneDays)).replace(/\{\{bilans\}\}/g, _numToLetters(_bilanCount));
   if (_voiceMsg && prenom) _voiceMsg = prenom + ', ' + _voiceMsg.charAt(0).toLowerCase() + _voiceMsg.slice(1);
+  var _memoireLine = _bilanMemoryLine(_bilanData);
   var card = document.getElementById('weeklyCard');
   card.innerHTML = '<div style="text-align:center;font-size:12px;letter-spacing:0.25em;text-transform:uppercase;color:rgba(200,168,75,0.5);padding:16px 0 12px;font-family:\'Cormorant Garamond\',serif;">' + t('weekly_muhasaba') + '</div>'
-    + '<div style="text-align:center;padding:8px 16px 16px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:#B5A685;line-height:1.6;max-width:300px;margin:0 auto;">' + _voiceMsg + '</div><div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;font-style:italic;color:#E5E0DC;line-height:1.6;max-width:300px;margin:12px auto 0;">' + question + '</div><div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:#B5A685;text-align:right;margin-top:10px;max-width:300px;margin-left:auto;margin-right:auto;">\u2014 Niyyah</div></div>'
+    + '<div style="text-align:center;padding:8px 16px 16px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:#B5A685;line-height:1.6;max-width:300px;margin:0 auto;">' + _voiceMsg + '</div>' + (_memoireLine ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;font-style:italic;color:rgba(200,168,74,0.92);line-height:1.65;max-width:300px;margin:14px auto 0;">' + _memoireLine + '</div>' : '') + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;font-style:italic;color:#E5E0DC;line-height:1.6;max-width:300px;margin:12px auto 0;">' + question + '</div><div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:#B5A685;text-align:right;margin-top:10px;max-width:300px;margin-left:auto;margin-right:auto;">\u2014 Niyyah</div></div>'
     + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:28px;">\u00ab\u00a0' + verset.text + '\u00a0\u00bb \u2014 ' + verset.ref + '</div>'
     + '<div style="padding:0 0 20px;">'
     + '<div style="text-align:center;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.4);margin-bottom:12px;">Ce que la semaine a vu de toi</div>'
