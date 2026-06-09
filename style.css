@@ -9420,3 +9420,20 @@ body.onboarding-active #nav-bar-v2 {
 .orb-wrap-v2[data-moment="maghrib"] .orb-dust{ background:rgba(232,158,70,.9); box-shadow:0 0 6px rgba(232,158,70,.7); }
 .orb-wrap-v2[data-moment="isha"] .orb-dust{ background:rgba(184,134,74,.9); box-shadow:0 0 6px rgba(184,134,74,.7); }
 .orb-wrap-v2[data-moment="nuit"] .orb-dust{ background:rgba(150,112,72,.9); box-shadow:0 0 6px rgba(150,112,72,.7); }
+.tasbih-close, .tafakkur-close, .dhikr-close, .finjournee-close,
+.scanner-hub-close, .tibb-apropos-close, .u-overlay-close {
+  width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  border: 1px solid rgba(200,168,74,0.45);
+  background: rgba(20,16,9,0.35);
+  box-shadow: 0 0 14px rgba(200,168,74,0.25);
+  color: #F0D880;
+  font-size: 18px; line-height: 1; padding: 0;
+}
+.tasbih-close:hover, .tafakkur-close:hover, .dhikr-close:hover,
+.finjournee-close:hover, .scanner-hub-close:hover,
+.tibb-apropos-close:hover, .u-overlay-close:hover {
+  border-color: rgba(200,168,74,0.7);
+  box-shadow: 0 0 18px rgba(200,168,74,0.4);
+}
