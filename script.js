@@ -3688,6 +3688,7 @@ let _prayerCountry = safeGetItem('niyyah_country') || 'France';
 let _prayerLoading = false;
 let _prayerError   = false;
 let _showCityInput = !_prayerCity && !safeGetItem('niyyah_coords');
+let _forceCityInput = false;
 // Cache horaires — valide seulement si même jour + même timezone
 var _currentTZ = ''; try { _currentTZ = Intl.DateTimeFormat().resolvedOptions().timeZone; } catch(e) {}
 var _cachedTZ = safeGetItem('niyyah_prayer_tz') || '';
@@ -3702,7 +3703,7 @@ const PRAYER_LABELS = ['Fajr','Dhuhr','Asr','Maghrib','Isha'];
 function renderPrayerTimesCard() {
   // Re-check dynamiquement — coords peuvent arriver après le boot
   var _hasCoords = !!localStorage.getItem('niyyah_coords');
-  if (_prayerTimes || _hasCoords || _prayerLoading) _showCityInput = false;
+  if (!_forceCityInput && (_prayerTimes || _hasCoords || _prayerLoading)) _showCityInput = false;
   if (_showCityInput) {
     return '<div class="prayer-times-card">' +
       '<div class="prayer-times-header"><div class="prayer-times-title">' + t('prayer_title') + '</div></div>' +
@@ -3823,6 +3824,7 @@ function saveCityAndLoad() {
   _prayerCity = input.value.trim();
   safeSetItem('niyyah_city', _prayerCity);
   _showCityInput = false;
+  _forceCityInput = false;
   // Geocode city → coords → load
   fetch('https://api.aladhan.com/v1/qibla/' + encodeURIComponent(_prayerCity))
     .then(function(r) { return r.json(); })
@@ -3831,6 +3833,7 @@ function saveCityAndLoad() {
   _loadPrayerByCity();
 }
 function showCityInput() {
+  _forceCityInput = true;
   _showCityInput = true;
   renderLevel(currentLevel);
   setTimeout(function() { var el = document.getElementById('cityInput'); if (el) el.focus(); }, 100);
