@@ -4772,18 +4772,22 @@ function _cureJourSave(porte, num) {
 }
 
 function _cureJ7Finale() {
+  var _porte = (_cureWizardState && _cureWizardState.porte) || 'colere';
+  var _cfg = (typeof _curePorteConfig !== 'undefined' && _curePorteConfig[_porte]) || { color:'#B33A3A', storageKey:'cure_colere' };
+  var _sk = _cfg.storageKey;
+  var _cap = _porte.charAt(0).toUpperCase() + _porte.slice(1);
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
-  var c = '#B33A3A';
+  var c = _cfg.color;
   // Branche échec : effJ7 <= effJ1
-  var _cure7 = {}; try { _cure7 = JSON.parse(safeGetItem('cure_colere') || '{}'); } catch(e) {}
+  var _cure7 = {}; try { _cure7 = JSON.parse(safeGetItem(_sk) || '{}'); } catch(e) {}
   if (_cure7.efficacite_j1 && _cure7.efficacite_j7 && _cure7.efficacite_j7 <= _cure7.efficacite_j1) {
-    el.innerHTML = _lxfStyle('#B33A3A')
+    el.innerHTML = _lxfStyle(c)
       + '<div class="lxf-wrap">'
       + '<div class="lxf-glow"></div>'
       + '<div class="lxf-orb-wrap lxf-rise" style="--d:.1s"><div class="lxf-halo"></div><div class="lxf-ring"></div><div class="lxf-orb"></div></div>'
-      + '<div class="lxf-title lxf-rise" style="--d:.3s">Et si le feu reste</div>'
-      + '<div class="lxf-sub lxf-rise" style="--d:.45s">Tu as march\u00e9 7 jours et le feu reste. Cela ne veut pas dire que tu as \u00e9chou\u00e9. La patience est elle-m\u00eame \u02bfib\u00e2da.</div>'
+      + '<div class="lxf-title lxf-rise" style="--d:.3s">Et si la lutte continue</div>'
+      + '<div class="lxf-sub lxf-rise" style="--d:.45s">Tu as march\u00e9 7 jours et la lutte continue. Cela ne veut pas dire que tu as \u00e9chou\u00e9. La patience est elle-m\u00eame \u02bfib\u00e2da.</div>'
       + '<div class="lxf-card lxf-rise" style="--d:.6s">'
       + '<div class="lxf-card-ar">\u0648\u064e\u0645\u064e\u0646\u0652 \u064a\u064e\u0635\u0652\u0628\u0650\u0631\u0652 \u064a\u064f\u0635\u064e\u0628\u0651\u0650\u0631\u0652\u0647\u064f \u0627\u0644\u0644\u0651\u064e\u0647\u064f</div>'
       + '<div class="lxf-card-tr">Wa man ya\u1e63bir yu\u1e63abbirhu Ll\u00e2h</div>'
@@ -4792,7 +4796,7 @@ function _cureJ7Finale() {
       + '</div>'
       + '<div class="lxf-stat lxf-rise" style="--d:.72s">Au d\u00e9but : ' + _cure7.efficacite_j1 + '/10 \u00b7 Aujourd\u2019hui : ' + _cure7.efficacite_j7 + '/10</div>'
       + '<div class="lxf-note lxf-rise" style="--d:.85s">Sept jours sont une initiation. Le travail sur le nafs est une lutte de toute une vie. Reviens quand tu en as besoin. Demain, ou dans un an. All\u00e2h ne mesure pas la dur\u00e9e \u2014 Il mesure la sinc\u00e9rit\u00e9.</div>'
-      + '<button class="lxf-btn2 lxf-rise" style="--d:.95s" onclick="localStorage.removeItem(\'cure_colere\');openCureColere()">Reprendre la Cure</button>'
+      + '<button class="lxf-btn2 lxf-rise" style="--d:.95s" onclick="localStorage.removeItem(\'' + _sk + '\');openCure' + _cap + '()">Reprendre la Cure</button>'
       + '<button class="lxf-btn lxf-rise" style="--d:1.05s" onclick="_cureJ7FinaleSucces()">Continuer</button>'
       + '</div>';
     return;
@@ -4801,17 +4805,22 @@ function _cureJ7Finale() {
 }
 
 function _cureJ7FinaleSucces() {
+  var _porte = (_cureWizardState && _cureWizardState.porte) || 'colere';
+  var _cfg = (typeof _curePorteConfig !== 'undefined' && _curePorteConfig[_porte]) || { color:'#B33A3A', storageKey:'cure_colere' };
+  var _sk = _cfg.storageKey;
+  var _cap = _porte.charAt(0).toUpperCase() + _porte.slice(1);
+  var _coffretLabels = { colere:'Coffret de la longanimit\u00e9', anxiete:'Coffret de l\u2019apaisement', regard:'Coffret du regard juste', arrogance:'Coffret de l\u2019humilit\u00e9', paresse:'Coffret de l\u2019\u00e9lan', medisance:'Coffret de la langue' };
   // Si l'utilisateur a choisi "Reprendre" au J7 → relancer immédiatement
-  var orientation = safeGetItem('cure_colere_j7_orientation') || '';
+  var orientation = safeGetItem(_sk + '_j7_orientation') || '';
   if (orientation === 'reprendre') {
-    localStorage.removeItem('cure_colere');
-    openCureColere();
+    localStorage.removeItem(_sk);
+    var _rf = window['openCure' + _cap]; if (typeof _rf === 'function') _rf(); else openCureColere();
     return;
   }
   var el = document.getElementById('babAnNafsContent');
   if (!el) return;
-  var c = '#B33A3A';
-  var _cure7 = {}; try { _cure7 = JSON.parse(safeGetItem('cure_colere') || '{}'); } catch(e) {}
+  var c = _cfg.color;
+  var _cure7 = {}; try { _cure7 = JSON.parse(safeGetItem(_sk) || '{}'); } catch(e) {}
   var _stat = (_cure7.efficacite_j1 && _cure7.efficacite_j7)
     ? '<div class="lxf-stat lxf-rise" style="--d:.72s">Au d\u00e9but : ' + _cure7.efficacite_j1 + '/10 \u00b7 Aujourd\u2019hui : ' + _cure7.efficacite_j7 + '/10</div>' : '';
   // Miroir avant/après : ses propres mots
@@ -4831,7 +4840,7 @@ function _cureJ7FinaleSucces() {
       + '</div>';
   }
   var _nodes = ''; for (var _i = 0; _i < 7; _i++) _nodes += '<span class="lxf-node"></span>';
-  el.innerHTML = _lxfStyle('#B33A3A')
+  el.innerHTML = _lxfStyle(c)
     + '<div class="lxf-wrap">'
     + '<div class="lxf-glow"></div>'
     + '<div class="lxf-orb-wrap lxf-rise" style="--d:.1s"><div class="lxf-halo"></div><div class="lxf-ring"></div><div class="lxf-orb"></div></div>'
@@ -4842,7 +4851,7 @@ function _cureJ7FinaleSucces() {
     + '<div class="lxf-path lxf-rise" style="--d:.8s">' + _nodes + '</div>'
     + '<div class="lxf-note lxf-rise" style="--d:.9s">Sept jours sont une initiation. Le travail sur le nafs est une lutte de toute une vie. Reviens quand tu en as besoin. Demain, ou dans un an. All\u00e2h ne mesure pas la dur\u00e9e \u2014 Il mesure la sinc\u00e9rit\u00e9.</div>'
     + '<button class="lxf-btn lxf-rise" style="--d:1s" onclick="_babImmersion=false;_hideAideBtn();var _nb=document.getElementById(\'nav-bar-v2\');if(_nb)_nb.classList.remove(\'hidden-immersion\');renderBabAnNafs()">Retour \u00e0 Ma Niyyah</button>'
-    + '<div class="lxf-links lxf-rise" style="--d:1.1s"><button class="lxf-link" onclick="openCoffretColere()">Coffret de la longanimit\u00e9</button></div>'
+    + '<div class="lxf-links lxf-rise" style="--d:1.1s"><button class="lxf-link" onclick="openCoffret' + _cap + '()">' + (_coffretLabels[_porte] || 'Coffret') + '</button></div>'
     + '</div>';
 }
 
