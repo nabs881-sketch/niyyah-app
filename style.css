@@ -5046,7 +5046,7 @@ to {
 
 /* Prayer times */
 .prayer-times-title { color: #C4A870; }
-.prayer-time-name { color: #8090A8; font-size:12px; letter-spacing: 0.3px; }
+.prayer-time-name { color: #9C8C6A; font-size:12px; letter-spacing: 0.3px; }
 .prayer-time-hour { color: #E8DCC8; }
 .prayer-time-item.next .prayer-time-name { color: #C4A870; }
 .prayer-time-item.next .prayer-time-hour { color: #D8BC88; font-weight: 700; }
@@ -5174,7 +5174,7 @@ to {
 
 /* ── PRAYER TIMES CELLS ── */
 .prayer-time-item {
-  background: rgba(50,58,76,0.65);
+  background: rgba(48,40,24,0.55);
   border-radius: 10px;
 }
 .prayer-time-item.next {
@@ -5187,7 +5187,7 @@ to {
   opacity: 0.55;
 }
 .prayer-time-item.next .prayer-time-name { color: #E0C870; }
-.prayer-time-hour { color: #C8D0E0; font-size: 16px; font-weight: 600; }
+.prayer-time-hour { color: #E8DCC8; font-size: 16px; font-weight: 600; }
 .prayer-time-item.next .prayer-time-hour { color: #F0D880; font-weight: 700; }
 .prayer-times-title { color: #C8A84A; letter-spacing: 2px; font-size:12px; }
 .prayer-times-card {
