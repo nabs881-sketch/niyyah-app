@@ -1203,7 +1203,8 @@ function renderRamadan() {
   const pct = Math.round((day - 1) / 30 * 100);
   const f4 = document.getElementById('globalFill4');
   if (f4) f4.style.width = pct + '%';
-  let html = '<div class="ramadan-banner">';
+  let html = '<button class="ramadan-back-btn" onclick="v2GoSanctuaire()" aria-label="Retour">‹</button>';
+  html += '<div class="ramadan-banner">';
   html += '<span class="ramadan-moon">🌙</span>';
   html += '<div class="ramadan-title">رَمَضَان كَرِيم</div>';
   html += '<div class="ramadan-arabic">شَهْرُ رَمَضَانَ</div>';
