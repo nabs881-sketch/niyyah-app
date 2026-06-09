@@ -17,7 +17,7 @@
 --gold-grad:linear-gradient(135deg,#E0C870 0%,#C8A84A 50%,#A88030 100%);
 --amber:#A87838;--amber-soft:rgba(168,120,56,0.12);
 --bronze:#C8A84A;--silver:#A0A4AC;
---moon:#f5a623;--moon-soft:rgba(245,166,35,0.1);--moon-glow:rgba(245,166,35,0.25);
+--moon:#C8A84A;--moon-soft:rgba(200,168,74,0.1);--moon-glow:rgba(200,168,74,0.25);
 --safe-top:env(safe-area-inset-top,0px);--safe-bot:env(safe-area-inset-bottom,0px);
 --r:12px;--r-lg:18px;--r-xl:24px;
 --serif:'Cormorant Garamond',Georgia,serif;
@@ -133,7 +133,7 @@ pointer-events:none;
   width:46px;
   height:46px;
   border-radius:50%;
-  border:1px solid rgba(245,166,35,0.25);
+  border:1px solid rgba(200,168,74,0.25);
   background:var(--card);
   display:flex;
   align-items:center;
@@ -151,7 +151,7 @@ pointer-events:none;
 .btn-ramadan-icon.ramadan-on {
   opacity:1;
   border-color:var(--moon);
-  background:rgba(245,166,35,0.12)
+  background:rgba(200,168,74,0.12)
 }
 .btn-theme {
   width:46px;
@@ -277,7 +277,7 @@ pointer-events:none;
   width:140px;
   height:140px;
   border-radius:50%;
-  background:radial-gradient(circle,rgba(52,217,98,0.12) 0%,transparent 70%);
+  background:radial-gradient(circle,rgba(200,168,74,0.12) 0%,transparent 70%);
   pointer-events:none;
   animation:heroGlow 4s ease-in-out infinite
 }
@@ -733,7 +733,7 @@ to {
   height:6px;
   border-radius:50%;
   background:var(--green);
-  box-shadow:0 0 4px rgba(52,217,98,0.5)
+  box-shadow:0 0 4px rgba(200,168,74,0.5)
 }
 @keyframes haloPulse {
   0%,100% {
@@ -1061,7 +1061,7 @@ to {
   justify-content:center;
   transition:transform 0.1s,opacity 0.1s;
   flex-shrink:0;
-  box-shadow:0 2px 14px rgba(52,217,98,0.35)
+  box-shadow:0 2px 14px rgba(200,168,74,0.35)
 }
 .btn-cnt:active {
   transform:scale(0.88);
@@ -1071,7 +1071,7 @@ to {
   width:28px;
   height:28px;
   border-radius:8px;
-  border:1px solid rgba(52,217,98,0.25);
+  border:1px solid rgba(200,168,74,0.25);
   background:var(--green-soft);
   color:var(--green);
   font-size:15px;
@@ -1264,7 +1264,7 @@ to {
 .btn-bismillah:active {
   opacity:0.85;
   transform:scale(0.98);
-  box-shadow:0 2px 10px rgba(52,217,98,0.2)
+  box-shadow:0 2px 10px rgba(200,168,74,0.2)
 }
 .nav-bar {
   position:fixed;
@@ -1373,7 +1373,7 @@ to {
   font-weight:600;
   cursor:pointer;
   font-family:var(--serif);
-  box-shadow:0 4px 20px rgba(52,217,98,0.35)
+  box-shadow:0 4px 20px rgba(200,168,74,0.35)
 }
 .level-popup {
   position:fixed;
@@ -1504,7 +1504,7 @@ to {
   font-weight:600;
   cursor:pointer;
   font-family:var(--sans);
-  box-shadow:0 4px 20px rgba(52,217,98,0.35);
+  box-shadow:0 4px 20px rgba(200,168,74,0.35);
   transition:all 0.15s;
   margin-bottom:10px
 }
@@ -2011,7 +2011,7 @@ to {
   font-weight:600;
   cursor:pointer;
   font-family:var(--serif);
-  box-shadow:0 4px 20px rgba(52,217,98,0.35);
+  box-shadow:0 4px 20px rgba(200,168,74,0.35);
   transition:all 0.15s;
   letter-spacing:0.2px
 }
@@ -2036,9 +2036,9 @@ to {
   background:var(--card2)
 }
 :root {
-  --moon:#f5a623;
-  --moon-soft:rgba(245,166,35,0.1);
-  --moon-glow:rgba(245,166,35,0.25)
+  --moon:#C8A84A;
+  --moon-soft:rgba(200,168,74,0.1);
+  --moon-glow:rgba(200,168,74,0.25)
 }
 .nav-ramadan-dot {
   width:6px;
@@ -2313,8 +2313,8 @@ to {
   width:100%;
   padding:13px;
   border-radius:12px;
-  border:1px solid rgba(245,166,35,0.3);
-  background:rgba(245,166,35,0.07);
+  border:1px solid rgba(200,168,74,0.3);
+  background:rgba(200,168,74,0.07);
   color:var(--moon);
   font-size:14px;
   font-weight:600;
@@ -2327,7 +2327,7 @@ to {
   gap:8px
 }
 .btn-ramadan-activate:active {
-  background:rgba(245,166,35,0.15)
+  background:rgba(200,168,74,0.15)
 }
 .fast-calendar {
   display:flex;
@@ -2844,7 +2844,7 @@ to {
   font-weight:700;
   cursor:pointer;
   font-family:var(--serif);
-  box-shadow:0 4px 16px rgba(52,217,98,0.3)
+  box-shadow:0 4px 16px rgba(200,168,74,0.3)
 }
 .weekly-btn:active {
   opacity:0.85;
@@ -3415,7 +3415,7 @@ to {
   font-size:72px;
   line-height:1;
   margin-bottom:28px;
-  filter:drop-shadow(0 0 24px rgba(52,217,98,0.3));
+  filter:drop-shadow(0 0 24px rgba(200,168,74,0.3));
   animation:onboardFloat 3s ease-in-out infinite
 }
 @keyframes onboardFloat {
@@ -3927,35 +3927,35 @@ to {
 .defi-card{position:relative;border-radius:16px;padding:13px 14px;margin-bottom:7px;overflow:hidden;transition:transform 0.2s cubic-bezier(0.34,1.56,0.64,1);}
 .defi-card:active{transform:scale(0.97);}
 .defi-card.defi-fajr{background:linear-gradient(135deg,rgba(255,214,10,0.08),rgba(255,140,0,0.05));border:1px solid rgba(255,214,10,0.2);}
-.defi-card.defi-wird{background:linear-gradient(135deg,rgba(52,217,98,0.08),rgba(0,180,80,0.04));border:1px solid rgba(52,217,98,0.2);}
+.defi-card.defi-wird{background:linear-gradient(135deg,rgba(200,168,74,0.08),rgba(0,180,80,0.04));border:1px solid rgba(200,168,74,0.2);}
 .defi-card.defi-nuit{background:linear-gradient(135deg,rgba(100,120,255,0.08),rgba(60,80,200,0.04));border:1px solid rgba(100,120,255,0.18);}
 .defi-card.defi-done{border-color:rgba(200,168,75,0.6);background:linear-gradient(135deg,rgba(200,168,75,0.10),rgba(200,168,75,0.04));}
 .defi-card::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;}
 .defi-card.defi-fajr::before{background:linear-gradient(90deg,transparent,rgba(255,214,10,0.5),transparent);}
-.defi-card.defi-wird::before{background:linear-gradient(90deg,transparent,rgba(52,217,98,0.5),transparent);}
+.defi-card.defi-wird::before{background:linear-gradient(90deg,transparent,rgba(200,168,74,0.5),transparent);}
 .defi-card.defi-nuit::before{background:linear-gradient(90deg,transparent,rgba(100,120,255,0.5),transparent);}
 .defi-card.defi-done::before{background:linear-gradient(90deg,transparent,rgba(200,168,75,0.7),transparent);}
 .defi-top{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
 .defi-icon{font-size:22px;width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .defi-fajr .defi-icon{background:rgba(255,214,10,0.12);}
-.defi-wird .defi-icon{background:rgba(52,217,98,0.12);}
+.defi-wird .defi-icon{background:rgba(200,168,74,0.12);}
 .defi-nuit .defi-icon{background:rgba(100,120,255,0.12);}
 .defi-done .defi-icon{background:rgba(200,168,75,0.15);}
 .defi-info{flex:1;}
 .defi-name{font-family:var(--serif);font-size:15px;color:var(--t1);margin-bottom:1px;}
 .defi-target{font-size:12px;letter-spacing:0.3px;}
 .defi-fajr .defi-target{color:rgba(255,214,10,0.7);}
-.defi-wird .defi-target{color:rgba(52,217,98,0.7);}
+.defi-wird .defi-target{color:rgba(200,168,74,0.7);}
 .defi-nuit .defi-target{color:rgba(100,120,255,0.7);}
 .defi-done .defi-target{color:rgba(200,168,75,0.8);}
 .defi-badge-earned{font-size:12px;font-weight:700;padding:3px 8px;border-radius:20px;background:rgba(200,168,75,0.15);border:1px solid rgba(200,168,75,0.3);color:#c8a84b;}
 .defi-progress-row{display:flex;align-items:center;gap:8px;}
 .defi-dots{display:flex;gap:4px;flex:1;}
 .defi-dot{flex:1;height:4px;border-radius:2px;transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1);}
-.defi-fajr .defi-dot.done{background:linear-gradient(90deg,#ffd60a,#f5a623);box-shadow:0 0 6px rgba(255,214,10,0.5);}
+.defi-fajr .defi-dot.done{background:linear-gradient(90deg,#ffd60a,#C8A84A);box-shadow:0 0 6px rgba(255,214,10,0.5);}
 .defi-fajr .defi-dot:not(.done){background:rgba(255,214,10,0.12);}
-.defi-wird .defi-dot.done{background:linear-gradient(90deg,#34d962,#26b850);box-shadow:0 0 6px rgba(52,217,98,0.5);}
-.defi-wird .defi-dot:not(.done){background:rgba(52,217,98,0.12);}
+.defi-wird .defi-dot.done{background:linear-gradient(90deg,#34d962,#26b850);box-shadow:0 0 6px rgba(200,168,74,0.5);}
+.defi-wird .defi-dot:not(.done){background:rgba(200,168,74,0.12);}
 .defi-nuit .defi-dot.done{background:linear-gradient(90deg,#6478ff,#3c50c8);box-shadow:0 0 6px rgba(100,120,255,0.5);}
 .defi-nuit .defi-dot:not(.done){background:rgba(100,120,255,0.12);}
 .defi-done .defi-dot{background:linear-gradient(90deg,#c8a84b,#e8cc6a);box-shadow:0 0 6px rgba(200,168,75,0.4);}

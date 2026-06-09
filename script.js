@@ -653,9 +653,9 @@ function openDefiSelector() {
   if (!ov || !body) return;
 
   const diffLabel = { facile: 'Facile', moyen: 'Moyen', intensif: 'Intensif' };
-  const diffColor = { facile: '#34d962', moyen: '#ffd60a', intensif: '#ff6b6b' };
-  const diffBg    = { facile: 'rgba(52,217,98,0.08)', moyen: 'rgba(255,214,10,0.08)', intensif: 'rgba(255,107,107,0.08)' };
-  const diffBorder= { facile: 'rgba(52,217,98,0.2)', moyen: 'rgba(255,214,10,0.2)', intensif: 'rgba(255,107,107,0.2)' };
+  const diffColor = { facile: '#E0C870', moyen: '#C8A84A', intensif: '#A88030' };
+  const diffBg    = { facile: 'rgba(200,168,74,0.08)', moyen: 'rgba(255,214,10,0.08)', intensif: 'rgba(255,107,107,0.08)' };
+  const diffBorder= { facile: 'rgba(200,168,74,0.2)', moyen: 'rgba(255,214,10,0.2)', intensif: 'rgba(255,107,107,0.2)' };
 
   let html = '';
 
@@ -716,9 +716,9 @@ function openDefiSelector() {
 }
 
 function switchDefiTab(diff) {
-  const diffColor = { facile: '#34d962', moyen: '#ffd60a', intensif: '#ff6b6b' };
-  const diffBg    = { facile: 'rgba(52,217,98,0.08)', moyen: 'rgba(255,214,10,0.08)', intensif: 'rgba(255,107,107,0.08)' };
-  const diffBorder= { facile: 'rgba(52,217,98,0.2)', moyen: 'rgba(255,214,10,0.2)', intensif: 'rgba(255,107,107,0.2)' };
+  const diffColor = { facile: '#E0C870', moyen: '#C8A84A', intensif: '#A88030' };
+  const diffBg    = { facile: 'rgba(200,168,74,0.08)', moyen: 'rgba(255,214,10,0.08)', intensif: 'rgba(255,107,107,0.08)' };
+  const diffBorder= { facile: 'rgba(200,168,74,0.2)', moyen: 'rgba(255,214,10,0.2)', intensif: 'rgba(255,107,107,0.2)' };
   for (const d of ['facile','moyen','intensif']) {
     const btn = document.getElementById('defiTab_' + d);
     const list = document.getElementById('defiList_' + d);
@@ -1238,7 +1238,7 @@ function renderRamadan() {
     const arabicHtml = item.arabic ? '<div class="item-arabic">' + item.arabic + '</div>' : '';
     const subHtml = item.sub ? '<div class="item-sub">' + tI(item,'sub') + '</div>' : '';
     html += '<div class="item' + fastCls + (done ? ' checked' : '') + '" onclick="' + onclick + '" id="ritem-' + item.id + '">';
-    html += '<div class="check-circle' + (item.special ? '" style="' + (done ? 'background:var(--moon);border-color:var(--moon);box-shadow:0 0 0 4px var(--moon-soft)' : 'border-color:rgba(245,166,35,0.6)') : '') + '">';
+    html += '<div class="check-circle' + (item.special ? '" style="' + (done ? 'background:var(--moon);border-color:var(--moon);box-shadow:0 0 0 4px var(--moon-soft)' : 'border-color:rgba(200,168,74,0.6)') : '') + '">';
     html += '<svg class="check-svg" style="' + (done ? 'opacity:1;transform:scale(1)' : '') + '" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
     html += '</div>';
     html += '<div class="item-body"><div class="item-label">' + tI(item,'label') + '</div>' + subHtml + arabicHtml + '</div>';
@@ -1249,7 +1249,7 @@ function renderRamadan() {
   html += '<div style="display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;margin-bottom:8px;padding-bottom:2px;">';
   HORAIRES_CITIES.forEach(c => {
     const active = c.name === selectedCity;
-    html += '<div onclick="selectCity(\'' + c.name + '\')" style="flex-shrink:0;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:500;cursor:pointer;transition:all 0.2s;border:1px solid ' + (active ? 'var(--moon)' : 'var(--sep)') + ';background:' + (active ? 'rgba(245,166,35,0.1)' : 'var(--card)') + ';color:' + (active ? 'var(--moon)' : 'var(--t2)') + ';">' + c.name + '</div>';
+    html += '<div onclick="selectCity(\'' + c.name + '\')" style="flex-shrink:0;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:500;cursor:pointer;transition:all 0.2s;border:1px solid ' + (active ? 'var(--moon)' : 'var(--sep)') + ';background:' + (active ? 'rgba(200,168,74,0.1)' : 'var(--card)') + ';color:' + (active ? 'var(--moon)' : 'var(--t2)') + ';">' + c.name + '</div>';
   });
   html += '</div>';
   html += '<div class="horaires-link" onclick="openHoraires()">';
@@ -2135,7 +2135,7 @@ function renderAccueil() {
       let bg = 'rgba(255,255,255,0.06)';
       if (medal2 === 'gold') bg = 'linear-gradient(135deg,#c8a84b,#e8cc6a)';
       else if (done) bg = 'var(--green)';
-      dot.style.cssText = 'width:16px;height:8px;border-radius:3px;background:' + bg + ';flex:1;' + (isToday ? 'box-shadow:0 0 6px rgba(52,217,98,0.5);' : '');
+      dot.style.cssText = 'width:16px;height:8px;border-radius:3px;background:' + bg + ';flex:1;' + (isToday ? 'box-shadow:0 0 6px rgba(200,168,74,0.5);' : '');
       hm.appendChild(dot);
     }
   }
@@ -2871,9 +2871,9 @@ function renderCounter(item, delay) {
   const audioBtn = item.audio ? '<button class="btn-audio" aria-label="Écouter" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();playAudio(' + (Array.isArray(item.audio) ? JSON.stringify(item.audio).replace(/"/g,"'") : '\'' + item.audio + '\'') + ',this,event)" title="' + t('btn_listen_recitation') + '">🔊</button>' : '';
   if (_isDhikr) {
     var _dhikrLabel = done ? (count + ' / ' + item.target + ' \u2713') : (count + ' / ' + item.target);
-    return '<div class="item' + (done ? ' checked' : '') + '" style="animation-delay:' + delay + 'ms" id="item-' + item.id + '"><div class="check-circle" id="cb-' + item.id + '" style="' + (done ? 'background:var(--green-grad);border-color:var(--green);box-shadow:0 0 0 4px var(--green-soft),0 0 16px rgba(52,217,98,0.25)' : '') + '"><svg class="check-svg" style="' + (done ? 'opacity:1;transform:scale(1)' : '') + '" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-body"><div class="item-label">' + tI(item,'label') + '</div><div class="item-sub">' + tI(item,'sub') + '</div><div style="font-size:14px;color:rgba(200,168,74,0.6);margin-top:2px;" id="cnt-num-' + item.id + '">' + _dhikrLabel + '</div>' + arabicHtml + '</div>' + audioBtn + '</div>';
+    return '<div class="item' + (done ? ' checked' : '') + '" style="animation-delay:' + delay + 'ms" id="item-' + item.id + '"><div class="check-circle" id="cb-' + item.id + '" style="' + (done ? 'background:var(--green-grad);border-color:var(--green);box-shadow:0 0 0 4px var(--green-soft),0 0 16px rgba(200,168,74,0.25)' : '') + '"><svg class="check-svg" style="' + (done ? 'opacity:1;transform:scale(1)' : '') + '" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-body"><div class="item-label">' + tI(item,'label') + '</div><div class="item-sub">' + tI(item,'sub') + '</div><div style="font-size:14px;color:rgba(200,168,74,0.6);margin-top:2px;" id="cnt-num-' + item.id + '">' + _dhikrLabel + '</div>' + arabicHtml + '</div>' + audioBtn + '</div>';
   }
-  return '<div class="item counter-item' + (done ? ' checked' : '') + '" style="animation-delay:' + delay + 'ms" id="item-' + item.id + '"><div class="counter-top"><div class="check-circle" id="cb-' + item.id + '" style="' + (done ? 'background:var(--green-grad);border-color:var(--green);box-shadow:0 0 0 4px var(--green-soft),0 0 16px rgba(52,217,98,0.25)' : '') + '"><svg class="check-svg" style="' + (done ? 'opacity:1;transform:scale(1)' : '') + '" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-body"><div class="item-label">' + tI(item,'label') + '</div><div class="item-sub">' + tI(item,'sub') + '</div>' + arabicHtml + '</div>' + audioBtn + fullscreenBtn + '</div><div class="counter-body"><button class="btn-cnt-reset" aria-label="Réinitialiser" onclick="resetCounter(\'' + item.id + '\')">↺</button><div class="counter-display"><div class="counter-num" id="cnt-num-' + item.id + '">' + count + '</div><div class="counter-total">/ ' + item.target + '</div><div class="counter-bar-track"><div class="counter-bar-fill" id="cnt-bar-' + item.id + '" style="width:' + Math.min(count/item.target*100,100) + '%"></div></div></div><button class="btn-cnt" aria-label="Incrémenter" onclick="incrementCounter(\'' + item.id + '\',' + item.target + ')">+</button></div></div>';
+  return '<div class="item counter-item' + (done ? ' checked' : '') + '" style="animation-delay:' + delay + 'ms" id="item-' + item.id + '"><div class="counter-top"><div class="check-circle" id="cb-' + item.id + '" style="' + (done ? 'background:var(--green-grad);border-color:var(--green);box-shadow:0 0 0 4px var(--green-soft),0 0 16px rgba(200,168,74,0.25)' : '') + '"><svg class="check-svg" style="' + (done ? 'opacity:1;transform:scale(1)' : '') + '" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-body"><div class="item-label">' + tI(item,'label') + '</div><div class="item-sub">' + tI(item,'sub') + '</div>' + arabicHtml + '</div>' + audioBtn + fullscreenBtn + '</div><div class="counter-body"><button class="btn-cnt-reset" aria-label="Réinitialiser" onclick="resetCounter(\'' + item.id + '\')">↺</button><div class="counter-display"><div class="counter-num" id="cnt-num-' + item.id + '">' + count + '</div><div class="counter-total">/ ' + item.target + '</div><div class="counter-bar-track"><div class="counter-bar-fill" id="cnt-bar-' + item.id + '" style="width:' + Math.min(count/item.target*100,100) + '%"></div></div></div><button class="btn-cnt" aria-label="Incrémenter" onclick="incrementCounter(\'' + item.id + '\',' + item.target + ')">+</button></div></div>';
 }
 function initCounterEl(item) {}
 function incrementCounter(id, target) {
@@ -2892,7 +2892,7 @@ function incrementCounter(id, target) {
     itemEl && itemEl.classList.add('checked');
     if (cbEl) {
       cbEl.style.background = 'var(--green-grad)'; cbEl.style.borderColor = 'var(--green)';
-      cbEl.style.boxShadow = '0 0 0 4px var(--green-soft), 0 0 16px rgba(52,217,98,0.25)';
+      cbEl.style.boxShadow = '0 0 0 4px var(--green-soft), 0 0 16px rgba(200,168,74,0.25)';
       const svg = cbEl.querySelector('.check-svg');
       if (svg) { svg.style.opacity = '1'; svg.style.transform = 'scale(1)'; }
     }
@@ -8667,7 +8667,7 @@ function toggleTafakkurTimer() {
       if (_tafakkurRemaining <= 0) {
         clearInterval(_tafakkurInterval);
         _tafakkurRunning = false;
-        document.getElementById('tafakkurDotEl').style.background = '#34d962';
+        document.getElementById('tafakkurDotEl').style.background = '#C8A84A';
         if (navigator.vibrate) navigator.vibrate([100, 50, 100, 50, 200]);
         _computeTafakkurEligible();
         _markTafakkurDone(_tafakkurCurrentPhrase);
@@ -12154,7 +12154,7 @@ function v2OpenSettings() {
           onclick="if(typeof toggleRamadanMode==='function'){toggleRamadanMode();document.getElementById('v2-settings-sheet').remove();}">
           <div style="display:flex;justify-content:space-between;align-items:center;">
             <div style="font-size:14px;color:rgba(240,234,214,0.7);">${T.settings_ramadan}</div>
-            <div style="font-size:12px;color:rgba(245,166,35,0.6);">${ramadanActive ? '✓' : ''}</div>
+            <div style="font-size:12px;color:rgba(200,168,74,0.6);">${ramadanActive ? '✓' : ''}</div>
           </div>
         </div>
         <div style="padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.04);">
