@@ -6097,7 +6097,7 @@ body::before {
   height: 320px;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: radial-gradient(circle, hsla(39,91%,58%,0.33) 0%, transparent 72%);
+  background: radial-gradient(circle, hsla(41,74%,39%,0.5) 0%, transparent 70%);
   pointer-events: none;
   z-index: 0;
   animation: orbHaloBreath 8s ease-in-out infinite;
@@ -6117,12 +6117,17 @@ body::before {
   position: relative;
   width: 228px; height: 228px; border-radius: 50%; aspect-ratio: 1; transform-origin: center;
   overflow: hidden;
-  background: radial-gradient(circle at 43% 40%, #1c1820 0%, #131019 50%, #0a090e 100%);
-  border: 2px solid hsla(39,91%,66%,0.89);
+  background: radial-gradient(circle at 34% 28%,
+    hsl(49,92%,92%) 0%,
+    hsl(43,88%,55%) 12%,
+    hsl(41,86%,35%) 32%,
+    hsl(39,82%,23%) 58%,
+    hsl(37,78%,11%) 100%);
+  border: 2px solid hsla(45,80%,59%,0.92);
   box-shadow:
-    inset -18px -22px 48px rgba(0,0,0,.85),
-    inset 13px 16px 38px rgba(196,200,214,.06),
-    0 0 64px hsla(39,91%,52%,0.32);
+    inset -26px -31px 64px rgba(30,16,2,0.73),
+    inset 14px 17px 36px rgba(255,228,160,0.42),
+    0 0 72px hsla(41,72%,37%,0.46);
   display: flex; flex-direction: column;
   align-items: center; justify-content: center; gap: 4px;
   transition: all 0.5s var(--ease-silk-v2);
@@ -6143,13 +6148,7 @@ body::before {
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background: radial-gradient(circle at 50% 49%,
-    hsla(39,91%,92%,0.79) 0%,
-    hsla(39,91%,72%,0.51) 24%,
-    hsla(39,91%,58%,0.33) 48%,
-    hsla(39,91%,50%,0.24) 70%,
-    hsla(39,91%,56%,0.58) 90%,
-    transparent 100%);
+  background: transparent;
   pointer-events: none;
   z-index: 0;
   animation: none;
@@ -6163,7 +6162,7 @@ body::before {
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background: radial-gradient(circle, transparent 84%, hsla(39,91%,64%,0.45) 94%, transparent 100%);
+  background: transparent;
   pointer-events: none;
   z-index: 1;
   animation: none;
@@ -6176,8 +6175,8 @@ body::before {
   position: absolute;
   width: 3px; height: 3px;
   border-radius: 50%;
-  background: hsla(39,91%,72%,0.95);
-  box-shadow: 0 0 6px hsla(39,91%,62%,0.8);
+  background: hsla(45,85%,72%,0.95);
+  box-shadow: 0 0 6px hsla(43,80%,60%,0.85);
   pointer-events: none;
   z-index: 2;
   opacity: 0;
@@ -6196,20 +6195,25 @@ body::before {
 }
 .orb-core-v2:hover, .orb-core-v2:active {
   box-shadow:
-    inset -18px -22px 48px rgba(0,0,0,.8),
-    inset 13px 16px 38px rgba(196,200,214,.09),
-    0 0 86px hsla(39,91%,54%,0.42);
-  border-color: hsla(39,91%,68%,0.96);
+    inset -26px -31px 64px rgba(30,16,2,0.68),
+    inset 14px 17px 36px rgba(255,228,160,0.5),
+    0 0 96px hsla(41,72%,42%,0.56);
+  border-color: hsla(45,82%,64%,0.96);
   transform: scale(1.02);
 }
 .orb-core-v2.intention-set-v2 {
-  background: radial-gradient(circle at 43% 40%, #1c1820 0%, #131019 50%, #0a090e 100%);
-  border-color: hsla(39,91%,70%,0.97);
+  background: radial-gradient(circle at 34% 28%,
+    hsl(49,92%,92%) 0%,
+    hsl(43,88%,55%) 12%,
+    hsl(41,86%,35%) 32%,
+    hsl(39,82%,23%) 58%,
+    hsl(37,78%,11%) 100%);
+  border-color: hsla(45,84%,66%,0.97);
   animation: orbBreathActiveV2 5s var(--ease-breath-v2) infinite;
 }
 @keyframes orbBreathV2 {
-  0%, 100% { transform: scale(1); box-shadow: inset -18px -22px 48px rgba(0,0,0,.85), inset 13px 16px 38px rgba(196,200,214,.06), 0 0 64px hsla(39,91%,52%,0.32); }
-  50%      { transform: scale(1.03); box-shadow: inset -18px -22px 48px rgba(0,0,0,.8), inset 13px 16px 38px rgba(196,200,214,.09), 0 0 86px hsla(39,91%,52%,0.42); }
+  0%, 100% { transform: scale(1); box-shadow: inset -26px -31px 64px rgba(30,16,2,0.73), inset 14px 17px 36px rgba(255,228,160,0.42), 0 0 72px hsla(41,72%,37%,0.46); }
+  50%      { transform: scale(1.03); box-shadow: inset -26px -31px 64px rgba(30,16,2,0.68), inset 14px 17px 36px rgba(255,228,160,0.5), 0 0 92px hsla(41,72%,40%,0.56); }
 }
 @keyframes orbBreathActiveV2 {
   0%, 100% { transform: scale(1); box-shadow: inset -20px -24px 55px rgba(0,0,0,.82), inset 16px 18px 46px rgba(255,210,130,.2), 0 0 85px rgba(200,150,70,.3); }
@@ -6218,14 +6222,14 @@ body::before {
 
 .orb-symbol-v2 {
   font-family: 'Scheherazade New', var(--font-v2-ar);
-  font-size: 56px; color: hsla(39,91%,86%,0.98); line-height: 1;
-  text-shadow: 0 0 11px hsla(39,91%,72%,0.47), 0 1px 2px rgba(60,38,10,0.55);
+  font-size: 56px; color: hsl(41,55%,12%); line-height: 1;
+  text-shadow: 0 1px 0 hsla(41,80%,76%,0.48), 0 -1px 1px rgba(24,14,2,0.5);
   margin-bottom: 12px;
   transition: color 0.4s; user-select: none;
   position: relative; z-index: 3;
 }
 .orb-core-v2:hover .orb-symbol-v2,
-.orb-core-v2.intention-set-v2 .orb-symbol-v2 { color: hsla(39,91%,92%,1); }
+.orb-core-v2.intention-set-v2 .orb-symbol-v2 { color: hsl(41,55%,9%); }
 
 .orb-cta-v2 {
   --orb-season: 246,218,138;
