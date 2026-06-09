@@ -3718,8 +3718,8 @@ function renderPrayerTimesCard() {
   }
   if (_prayerError) {
     return '<div class="prayer-times-card">' +
-      '<div class="prayer-times-header"><div class="prayer-times-title">🕌 Horaires</div>' +
-        '<div class="prayer-times-city" onclick="showCityInput()">\u270f\ufe0f ' + escapeHtml(_prayerCity||'Choisir une ville') + '</div>' +
+      '<div class="prayer-times-header"><div class="prayer-times-title"><svg width="16" height="16" viewBox="0 0 24 24" fill="#C8A84A" style="vertical-align:-2px;margin-right:6px;"><path d="M14 3a9 9 0 1 0 7 14.5A7 7 0 0 1 14 3z"/></svg>Horaires</div>' +
+        '<div class="prayer-times-city" onclick="showCityInput()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C8A84A" stroke-width="2" style="vertical-align:-2px;margin-right:5px;"><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>' + escapeHtml(_prayerCity||'Choisir la ville') + '</div>' +
       '</div>' +
       '<div style="font-size:12px;color:var(--t3);text-align:center;padding:8px;">Erreur \u2014 v\u00e9rifie ta connexion ou la ville</div>' +
       '<div style="text-align:center;padding:0 0 8px;"><button onclick="_retryPrayerLoad()" style="padding:8px 16px;border-radius:10px;border:1px solid rgba(200,168,74,0.3);background:transparent;color:#C8A84A;font-size:15px;cursor:pointer;">R\u00e9essayer</button></div>' +
@@ -3731,7 +3731,7 @@ function renderPrayerTimesCard() {
   }
   if (!_prayerTimes) return '<div class="prayer-times-card">' +
     '<div class="prayer-times-header"><div class="prayer-times-title">' + t('prayer_title') + '</div>' +
-    '<div class="prayer-times-city" onclick="showCityInput()">\u270f\ufe0f ' + escapeHtml(_prayerCity||'Choisir une ville') + '</div></div>' +
+    '<div class="prayer-times-city" onclick="showCityInput()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C8A84A" stroke-width="2" style="vertical-align:-2px;margin-right:5px;"><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>' + escapeHtml(_prayerCity||'Choisir la ville') + '</div></div>' +
     '<div style="font-size:12px;color:var(--t3);margin-bottom:10px;">Les horaires n\'ont pas pu être chargés.</div>' +
     '<button class="city-input-btn" style="width:100%;padding:10px;" onclick="loadPrayerTimes()">\u21BB Charger les horaires</button>' +
     '</div>';
@@ -3784,8 +3784,8 @@ function renderPrayerTimesCard() {
   }
   return '<div class="prayer-times-card">' +
     '<div class="prayer-times-header">' +
-      '<div class="prayer-times-title">🕌 Horaires — aujourd\'hui</div>' +
-      '<div class="prayer-times-city" onclick="showCityInput()">\u270f\ufe0f ' + escapeHtml(_prayerCity || '\ud83d\udccd') + '</div>' +
+      '<div class="prayer-times-title"><svg width="16" height="16" viewBox="0 0 24 24" fill="#C8A84A" style="vertical-align:-2px;margin-right:6px;"><path d="M14 3a9 9 0 1 0 7 14.5A7 7 0 0 1 14 3z"/></svg>Horaires — aujourd\'hui</div>' +
+      '<div class="prayer-times-city" onclick="showCityInput()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C8A84A" stroke-width="2" style="vertical-align:-2px;margin-right:5px;"><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>' + escapeHtml(_prayerCity || 'Choisir la ville') + '</div>' +
     '</div>' +
     countdown + grid + lastthird +
   '</div>';

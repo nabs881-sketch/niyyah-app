@@ -2583,7 +2583,7 @@ to {
   text-align:center;
   padding:8px 4px;
   border-radius:10px;
-  background:rgba(255,255,255,0.04);
+  background:rgba(200,168,74,0.05);
   border:1px solid transparent;
   transition:all 0.2s
 }
