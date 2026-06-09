@@ -1218,10 +1218,10 @@ function renderRamadan() {
   html += '<div class="fast-stat"><div class="fast-stat-num">' + (30 - totalFasts) + '</div><div class="fast-stat-label">Restants</div></div>';
   html += '<div class="fast-stat"><div class="fast-stat-num">' + Math.round(totalFasts / 30 * 100) + '%</div><div class="fast-stat-label">Progression</div></div>';
   html += '</div>';
-  html += '<div style="background:var(--card);border-radius:var(--r-xl);overflow:hidden;margin-bottom:8px;">';
-  html += '<div style="padding:14px 16px;border-bottom:1px solid var(--sep);">';
-  html += '<div style="font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:2px;">Aujourd\'hui</div>';
-  html += '<div style="font-family:var(--serif);font-size:18px;color:var(--t1);">Jeûne du jour</div>';
+  html += '<div style="background:linear-gradient(180deg,#15100a,#0e0a06);border-radius:var(--r-xl);overflow:hidden;margin-bottom:8px;box-shadow:inset 0 0 0 1px rgba(200,168,74,.2),0 6px 16px rgba(0,0,0,.45);">';
+  html += '<div style="padding:14px 16px;border-bottom:1px solid rgba(200,168,74,.18);">';
+  html += '<div style="font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,74,.55);margin-bottom:2px;">Aujourd\'hui</div>';
+  html += '<div style="font-family:\'Cormorant Garamond\',var(--serif);font-size:18px;color:#C8A84A;">Jeûne du jour</div>';
   html += '</div>';
   const fastItems = [
     { id: 'fast', label: "J'ai jeûné aujourd'hui", arabic: 'صُمْتُ الْيَوْمَ', isFast: true, special: true },
