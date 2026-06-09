@@ -5183,7 +5183,7 @@ to {
   box-shadow: 0 2px 10px rgba(200,168,74,0.22);
 }
 .prayer-time-item.passed {
-  background: rgba(36,38,44,0.60);
+  background: rgba(48,40,24,0.55);
   opacity: 0.55;
 }
 .prayer-time-item.next .prayer-time-name { color: #E0C870; }
