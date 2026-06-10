@@ -741,12 +741,12 @@
           "ar": "اللَّهُمَّ كَمَا حَسَّنْتَ خَلْقِي فَحَسِّنْ خُلُقِي",
           "translit": "Allâhumma kamâ hassanta khalqî fa-hassin khuluqî",
           "fr": "Ô Allah, comme Tu as embelli ma création, embellis mon caractère",
-          "source": "Du'â du miroir (Ahmad, sahih)"
+          "source": "Du'â authentique « اللَّهُمَّ كما حسَّنتَ خَلقي فحسِّن خُلُقي » (Ahmad ; sahîh, al-Albânî, Sahîh al-Jâmi' 1307). NB : son rattachement au regard dans le miroir n'est pas authentiquement établi (ḍaʿîf, al-Kalim al-Tayyib 233) — l'exercice du miroir est un cadre pédagogique, pas une sunna rapportée."
         },
         "duree_min": 3,
         "justification": {
           "texte": "Auto-confrontation : observer son propre visage de colère réduit l'intensité émotionnelle.",
-          "source": "Du'â du miroir (Ahmad, sahih — authentifié par al-Albani)"
+          "source": "Du'â authentique « اللَّهُمَّ كما حسَّنتَ خَلقي فحسِّن خُلُقي » (Ahmad ; sahîh, al-Albânî, Sahîh al-Jâmi' 1307). NB : son rattachement au regard dans le miroir n'est pas authentiquement établi (ḍaʿîf, al-Kalim al-Tayyib 233) — l'exercice du miroir est un cadre pédagogique, pas une sunna rapportée."
         },
         "note": "Le visage de la colère n'est pas le tien — c'est un masque qui passe.",
         "stockage": "cure_colere_j4_corps_done"
@@ -765,7 +765,7 @@
         ],
         "hadiths_cites": [
           "Muslim 2722 (taqwâ an-nafs)",
-          "Ahmad (du'â du miroir)"
+          "Ahmad (du'â « حسنت خلقي » sahîh ; cadre miroir = pédagogique, non sunna)"
         ],
         "savants_cites": [
           "al-Ghazâlî"
