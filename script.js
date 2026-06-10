@@ -81,6 +81,7 @@ function safeSetItem(key, value) {
 }
 var _starVagueCache = null;
 function safeGetItem(key) { try { if (key === 'niyyah_star_vague' && _starVagueCache !== null) return _starVagueCache; var v = localStorage.getItem(key); if (key === 'niyyah_star_vague') _starVagueCache = v; return v; } catch(e) { return null; } }
+function safeRemoveItem(key) { try { localStorage.removeItem(key); return true; } catch(e) { return false; } }
 function safeParseJSON(key, def) { try { return JSON.parse(localStorage.getItem(key) || (Array.isArray(def) ? '[]' : '{}')) || def; } catch(e) { console.warn('[Niyyah] parse error:', key); return def; } }
 function fetchWithRetry(url, options, maxRetries) {
   if (maxRetries === undefined) maxRetries = 2;
@@ -132,29 +133,30 @@ function compressPhoto(dataURL) {
 }
 
 function cleanOldPhotosIfFull(force) {
+  // TODO iOS: itération/clear localStorage -> à migrer vers Capacitor Preferences (async)
   try {
     var total = 0;
-    for (var i = 0; i < localStorage.length; i++) { total += (localStorage.getItem(localStorage.key(i)) || '').length; }
+    for (var i = 0; i < localStorage.length; i++) { total += (safeGetItem(localStorage.key(i)) || '').length; }
     if (!force && total < 4 * 1024 * 1024) return;
     // 1. Purge verset_cache au-delà de 50
     var _vcKeys = [];
     for (var k = 0; k < localStorage.length; k++) { var _kn = localStorage.key(k); if (_kn && _kn.indexOf('verset_cache_') === 0) _vcKeys.push(_kn); }
-    if (_vcKeys.length > 50) { _vcKeys.sort(); var _toRemove = _vcKeys.slice(0, _vcKeys.length - 50); _toRemove.forEach(function(rk) { localStorage.removeItem(rk); }); }
+    if (_vcKeys.length > 50) { _vcKeys.sort(); var _toRemove = _vcKeys.slice(0, _vcKeys.length - 50); _toRemove.forEach(function(rk) { safeRemoveItem(rk); }); }
     // 2. Purge photos 20 par 20, plus anciennes d'abord, max 5 passes
     var _purged = 0;
     for (var _pass = 0; _pass < 5; _pass++) {
       total = 0;
-      for (var ii = 0; ii < localStorage.length; ii++) { total += (localStorage.getItem(localStorage.key(ii)) || '').length; }
+      for (var ii = 0; ii < localStorage.length; ii++) { total += (safeGetItem(localStorage.key(ii)) || '').length; }
       if (total < 4 * 1024 * 1024) break;
       var _batchDone = false;
       ['niyyah_regarde_history', 'niyyah_niyyah_history'].forEach(function(key) {
         if (_batchDone) return;
-        var arr; try { arr = JSON.parse(localStorage.getItem(key) || '[]'); } catch(e) { arr = []; }
+        var arr; try { arr = JSON.parse(safeGetItem(key) || '[]'); } catch(e) { arr = []; }
         var count = 0;
         for (var j = 0; j < arr.length && count < 20; j++) {
           if (arr[j].photo) { arr[j].photo = null; count++; _purged++; }
         }
-        if (count > 0) { localStorage.setItem(key, JSON.stringify(arr)); _batchDone = true; }
+        if (count > 0) { safeSetItem(key, JSON.stringify(arr)); _batchDone = true; }
       });
       if (!_batchDone) break;
     }
@@ -165,7 +167,7 @@ function cleanOldPhotosIfFull(force) {
 var _journalCache = { niyyah_niyyah_history: null, niyyah_regarde_history: null };
 function _journalGet(key) {
   if (_journalCache[key] !== undefined && _journalCache[key] !== null) return _journalCache[key];
-  try { var arr = JSON.parse(localStorage.getItem(key) || '[]'); _journalCache[key] = arr; return arr; } catch(e) { return []; }
+  try { var arr = JSON.parse(safeGetItem(key) || '[]'); _journalCache[key] = arr; return arr; } catch(e) { return []; }
 }
 
 function _journalSave(key, arr) {
@@ -188,7 +190,7 @@ function addRegardeEntry(entry) {
     bookmark: !!entry.bookmark,
     note: entry.note || ''
   };
-  if (item.photo && localStorage.getItem('niyyah_photo_disclaimer_seen') !== '1') {
+  if (item.photo && safeGetItem('niyyah_photo_disclaimer_seen') !== '1') {
     safeSetItem('niyyah_photo_disclaimer_seen', '1');
     if (typeof showToast === 'function') setTimeout(function() { showToast(t('photo_disclaimer'), 5000); }, 500);
   }
@@ -235,7 +237,7 @@ function deleteEntry(type, id) {
 }
 
 function migrateOldJournal() {
-  if (localStorage.getItem('niyyah_migration_v2_done') === '1') return;
+  if (safeGetItem('niyyah_migration_v2_done') === '1') return;
   try {
     var old = safeParseJSON('niyyah_scanner_history', []);
     if (old.length > 0) {
@@ -470,8 +472,8 @@ function getLundiDate() {
 function getTodayStr() { return todayKey(); }
 
 function _isRevenantProtected() {
-  if (localStorage.getItem('niyyah_revenant_adaptatif_unlocked') === '1') return false;
-  if (localStorage.getItem('niyyah_motivation') !== 'reconnecter') return false;
+  if (safeGetItem('niyyah_revenant_adaptatif_unlocked') === '1') return false;
+  if (safeGetItem('niyyah_motivation') !== 'reconnecter') return false;
   var inst = parseInt(safeGetItem('niyyah_install_date') || '0', 10);
   if (!inst) return true;
   var weeks = (Date.now() - inst) / (7 * 86400000);
@@ -501,7 +503,7 @@ function _defiMatchesPath(defi) {
 }
 function _initNiveauActuel(s) {
   if (s.niveauActuel) return;
-  var motiv = localStorage.getItem('niyyah_motivation');
+  var motiv = safeGetItem('niyyah_motivation');
   s.niveauActuel = motiv === 'routine' ? 2 : 1;
   s.derniersResultats = [];
   s.dernierChangementNiveau = Date.now();
@@ -550,7 +552,7 @@ function initDefiSemaine() {
   const lundi = getLundiDate();
   // Premier lancement — assigner défi id:1 par défaut
   if (!s.current && s.historique.length === 0) {
-    var motiv = localStorage.getItem('niyyah_motivation');
+    var motiv = safeGetItem('niyyah_motivation');
     var niveauCible = _isRevenantProtected() ? 1 : (motiv === 'routine' ? 2 : (motiv === 'reconnecter' || motiv === 'sacraliser' ? 1 : null));
     var premierDefi;
     if (niveauCible) {
@@ -1025,8 +1027,8 @@ function toggleRamadanMode() {
     if (safeGetItem('ramadan_boost') === 'accepted') {
       showEidModal();
     } else {
-      try { localStorage.removeItem('ramadan_boost'); } catch(e) {}
-      try { localStorage.removeItem('ramadan_modal_shown'); } catch(e) {}
+      try { safeRemoveItem('ramadan_boost'); } catch(e) {}
+      try { safeRemoveItem('ramadan_modal_shown'); } catch(e) {}
     }
   } else {
     ramadanState.active = true;
@@ -1068,7 +1070,7 @@ function showEidModal() {
     + '<div class="wird-complete-arabic">\u0639\u0650\u064A\u062F\u064C \u0645\u064F\u0628\u064E\u0627\u0631\u064E\u0643</div>'
     + '<div class="wird-complete-label" style="margin-bottom:16px;">Eid Mubarak</div>'
     + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;color:rgba(240,234,214,0.8);line-height:1.6;margin-bottom:24px;">Le mois est termin\u00e9. Tu retrouves ton rythme habituel.<br>Qu\u2019All\u00e2h accepte tes \u0153uvres de ce Ramadan.</div>'
-    + '<button class="wird-complete-btn" onclick="localStorage.removeItem(\'ramadan_boost\');localStorage.removeItem(\'ramadan_modal_shown\');this.closest(\'.wird-complete-overlay\').remove();">Continuer</button>'
+    + '<button class="wird-complete-btn" onclick="safeRemoveItem(\'ramadan_boost\');safeRemoveItem(\'ramadan_modal_shown\');this.closest(\'.wird-complete-overlay\').remove();">Continuer</button>'
     + '</div>';
   document.body.appendChild(ov);
   return true;
@@ -1146,7 +1148,7 @@ function toggleLaylatul(night) {
 }
 function toggleFridayItem(id) {
   const key = 'niyyah_friday_' + TODAY;
-  var fridayState = {}; try { fridayState = JSON.parse(localStorage.getItem(key) || '{}'); } catch(e) {}
+  var fridayState = {}; try { fridayState = JSON.parse(safeGetItem(key) || '{}'); } catch(e) {}
   fridayState[id] = !fridayState[id];
   safeSetItem(key, JSON.stringify(fridayState));
   if (fridayState[id]) {
@@ -1698,9 +1700,9 @@ function getLevelItems(levelId) {
 }
 function updateGlobalProgress() {
   // Bandeau intention dans la checklist
-  const intentionLabel = localStorage.getItem('niyyah_intention_label');
-  const intentionDate = localStorage.getItem('niyyah_intention_date');
-  const intentionType = localStorage.getItem('niyyah_intention_type');
+  const intentionLabel = safeGetItem('niyyah_intention_label');
+  const intentionDate = safeGetItem('niyyah_intention_date');
+  const intentionType = safeGetItem('niyyah_intention_type');
   const bar = document.getElementById('checklistIntentionBar');
   if (bar) {
     if (intentionLabel && intentionDate === TODAY) {
@@ -1769,7 +1771,7 @@ function _validateDay() {
     });
   });
   // Seuil par profil
-  var motiv = localStorage.getItem('niyyah_motivation');
+  var motiv = safeGetItem('niyyah_motivation');
   var seuil;
   if (motiv === 'reconnecter' && _isRevenantProtected()) seuil = 6;
   else if (motiv === 'reconnecter') seuil = 9;
@@ -2159,13 +2161,13 @@ function renderAccueil() {
   // Défis
 
   // Intention
-  const intentionLabel = localStorage.getItem('niyyah_intention_label');
-  const intentionDate = localStorage.getItem('niyyah_intention_date');
+  const intentionLabel = safeGetItem('niyyah_intention_label');
+  const intentionDate = safeGetItem('niyyah_intention_date');
   const intentionEl = document.getElementById('accueilIntention');
   if (intentionEl && intentionLabel && intentionDate === TODAY) {
     intentionEl.style.display = 'flex';
     const icons = { rapprochement: '🌙', engagement: '⚖️', reconstruction: '🤲', gratitude: '✦' };
-    const type = localStorage.getItem('niyyah_intention_type') || 'rapprochement';
+    const type = safeGetItem('niyyah_intention_type') || 'rapprochement';
     const iconEl = document.getElementById('accueilIntentionIcon'); if (iconEl) iconEl.textContent = icons[type] || '🌙';
     const txtEl = document.getElementById('accueilIntentionText'); if (txtEl) txtEl.textContent = intentionLabel.replace(/[🌙⚖️🤲✦]/g, '').trim();
   } else if (intentionEl) {
@@ -2241,7 +2243,7 @@ function init() {
   } else {
     document.getElementById('onboardScreen').classList.add('hidden');
     loadPrayerTimes();
-    const lastNiyyah = localStorage.getItem('niyyah_intention_date');
+    const lastNiyyah = safeGetItem('niyyah_intention_date');
     if (lastNiyyah !== TODAY) {
       setTimeout(showNiyyahScreen, 100);
     } else {
@@ -2362,7 +2364,7 @@ function chooseNiyyah(type) {
     reconstruction: "Me reconstruire",
     gratitude: "Être reconnaissant"
   };
-  var s2 = {}; try { s2 = JSON.parse(localStorage.getItem('niyyah_v2_bridge') || '{}'); } catch(e) {}
+  var s2 = {}; try { s2 = JSON.parse(safeGetItem('niyyah_v2_bridge') || '{}'); } catch(e) {}
   s2.intention = cleanLabels[type] || type;
   s2.intentionDate = new Date().toDateString();
   safeSetItem('niyyah_v2_bridge', JSON.stringify(s2));
@@ -2419,7 +2421,7 @@ function renderTabs() {
     return '<div class="' + cls + '" onclick="selectLevel(' + l.id + ')">' + t('level_' + l.id) + (done ? ' ✓' : '') + '</div>';
   }).join('');
   var _cheminEl = document.getElementById('chemin-indicator');
-  var _motivRaw = localStorage.getItem('niyyah_motivation');
+  var _motivRaw = safeGetItem('niyyah_motivation');
   var _cheminName = _motivRaw === 'reconnecter' ? t('ob_motiv_reconnecter') : _motivRaw === 'routine' ? t('ob_motiv_routine') : _motivRaw === 'sacraliser' ? t('ob_motiv_sacraliser') : '';
   if (_cheminEl && _cheminName) {
     _cheminEl.querySelector('.chemin-name').textContent = _cheminName;
@@ -2535,7 +2537,7 @@ function renderLevel(levelId) {
       { id: 'fri_salawat', label: 'Salawat sur le Prophète ﷺ', arabic: 'اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ كَمَا صَلَّيْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ إِنَّكَ حَمِيدٌ مَجِيدٌ', hadith: '"Le meilleur de vos jours est le vendredi — multipliez la Salawat" — Abu Dawud', phonetic: 'Allahumma salli \'ala Muhammad wa \'ala ali Muhammad kama sallayta \'ala Ibrahim wa \'ala ali Ibrahim innaka hamidun majid', translation: 'Ô Allah, prie sur Muhammad et la famille de Muhammad comme Tu as prié sur Ibrahim et la famille d\'Ibrahim. Tu es certes digne de louanges et de glorification.' },
       { id: 'fri_doua',    label: 'Douaa de l\'heure bénie', arabic: 'رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ', hadith: '"Il y a une heure le vendredi où Allah exauce toute demande" — Bukhari & Muslim', phonetic: 'Rabbanā ātinā fid-dunyā hasanatan wa fil-ākhirati hasanatan wa qinā \'adhāban-nār', translation: 'Notre Seigneur, accorde-nous en ce monde le bien et dans l\'au-delà le bien, et préserve-nous du châtiment du Feu.' },
     ];
-    var fridayState = {}; try { fridayState = JSON.parse(localStorage.getItem('niyyah_friday_' + TODAY) || '{}'); } catch(e) {}
+    var fridayState = {}; try { fridayState = JSON.parse(safeGetItem('niyyah_friday_' + TODAY) || '{}'); } catch(e) {}
     let fitems = '';
     FRIDAY_ITEMS.forEach(fi => {
       const done = !!fridayState[fi.id];
@@ -3366,7 +3368,7 @@ function renderProgression(skipIntro) {
       + '</div>';
   });
   // === GRAPHIQUE 7 JOURS BILANS ===
-  var bilansData = {}; try { bilansData = JSON.parse(localStorage.getItem('niyyah_bilans') || '{}'); } catch(e) {}
+  var bilansData = {}; try { bilansData = JSON.parse(safeGetItem('niyyah_bilans') || '{}'); } catch(e) {}
   const bilanColors = { distraction: '#B5A685', effort: '#C8A84A', sincerite: '#C8A84A' };
   const bilanEmojis = { distraction: '\u25CB', effort: '\u25D0', sincerite: '\u25CF' };
   const bilanLabels = { distraction: t('bilan_distrait'), effort: t('bilan_effort'), sincerite: t('bilan_sincere') };
@@ -3395,7 +3397,7 @@ function renderProgression(skipIntro) {
     + '<svg viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="rgba(200,168,75,0.4)" stroke-width="1.5" stroke-linecap="round" style="margin-bottom:10px;"><path d="M24 6a12 12 0 1 0 0 16A9 9 0 0 1 24 6z"/></svg>'
     + '<div style="font-family:var(--serif);font-size:18px;font-style:italic;color:var(--t3);margin-bottom:4px;">Tes 7 derniers soirs appara\u00eetront ici.</div>'
     + '<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(200,182,140,.92);margin-bottom:12px;">Chaque soir, Niyyah te propose un bilan : Distraction \u00b7 Effort \u00b7 Sinc\u00e9rit\u00e9.</div>'
-    + (function(){var _today=todayKey();var _bilans={};try{_bilans=JSON.parse(localStorage.getItem('niyyah_bilans')||'{}');}catch(e){}return _bilans[_today]?'<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:var(--t3);opacity:0.6;">Bilan d\u2019aujourd\u2019hui pos\u00e9.</div>':'';})()
+    + (function(){var _today=todayKey();var _bilans={};try{_bilans=JSON.parse(safeGetItem('niyyah_bilans')||'{}');}catch(e){}return _bilans[_today]?'<div style="font-family:var(--serif);font-size:15px;font-style:italic;color:var(--t3);opacity:0.6;">Bilan d\u2019aujourd\u2019hui pos\u00e9.</div>':'';})()
     + '</div>';
 
   var _fondItems = LEVELS.find(function(l){return l.id===1;}).sections.flatMap(function(s){return s.items;}).filter(_itemMatchesProfile).filter(function(i){return !i.optional;});
@@ -3424,7 +3426,7 @@ function renderProgression(skipIntro) {
   el.innerHTML = `
     <div style="padding:0 0 40px;"><!-- 1. TITRE SPIRITUEL --><div id="v2-spiritual-title" style="text-align:center;margin:0 16px 12px;min-height:110px;"></div><!-- 2. PROGRESSION -->${heroSectionP}<!-- 3. DÉFI SEMAINE --><button id="accueilDefiCard" class="defi-card-sanctuaire" onclick="if(typeof openDefiSelector==='function')openDefiSelector()" style="display:none;margin:0 16px 12px;padding:14px 18px;background:linear-gradient(180deg,#15100a,#0e0a06);border:none;border-radius:14px;cursor:pointer;position:relative;z-index:10;text-align:left;min-height:90px;box-sizing:border-box;font-family:inherit;color:inherit;width:calc(100% - 32px);box-shadow:inset 0 0 0 1px rgba(200,168,74,.22),0 6px 16px rgba(0,0,0,.4);"><div style="display:flex;align-items:center;gap:12px;width:100%;"><div id="defiCardIcon"><img src="./imagescroissant.webp" alt="Croissant" style="width:60px;height:auto;display:block;flex-shrink:0;"></div><div style="flex:1;text-align:left;"><div id="defiCardTitre" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:#C8A84A;">Défi de la semaine</div><div id="defiCardScore" style="font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:#B0A080;margin-top:2px;"></div></div></div><div id="defiCardDots" style="display:none;"></div><div id="defiCardBar" style="position:absolute;bottom:0;left:0;right:0;height:3px;background:rgba(200,168,75,0.12);border-radius:0 0 14px 14px;overflow:hidden;"><div id="defiCardBarFill" style="height:100%;width:0%;background:#C8A84A;transition:width 0.6s ease;"></div></div></button><!-- 4. CHALLENGE FAJR --><div id="fajr-challenge-card" style="display:none;margin:0 16px 12px;"></div><!-- 5. SÉRIE EN COURS -->${streakSection}<!-- HADITH CONTEXTUEL --><div style="margin:0 16px 24px;padding:20px;background:linear-gradient(180deg,#15100a,#0e0a06);border:none;border-radius:14px;position:relative;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(200,168,74,.22),0 6px 16px rgba(0,0,0,.4);"><div style="position:absolute;top:-10px;right:12px;font-size:48px;opacity:0.07;font-family:serif;">"</div><div style="font-size:14px;line-height:1.7;color:var(--t1);font-style:italic;margin-bottom:10px;">${hadith.text}</div><div style="font-size:14px;color:#c8a84b;font-weight:600;letter-spacing:0.5px;">— ${hadith.ref}</div></div><!-- 6. HEATMAP 30 JOURS --><div style="margin:0 16px 24px;"><div style="font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;text-align:center;">${t('prog_heatmap')}</div><div style="display:grid;grid-template-columns:repeat(10,1fr);gap:4px;">
           ${heatmapHTML}
-        </div><div style="font-family:'Cormorant Garamond',serif;font-size:16px;color:rgba(200,182,140,.85);text-align:center;margin-top:10px;font-style:italic;">${(history.totalDays||0)===0?t('today_first'):t('today_pct').replace('{n}',Math.round(getLevelProgress(1)))}</div><button onclick="var c=document.getElementById('yearCalWrap');var _calIco='<svg width=\\'16\\' height=\\'16\\' viewBox=\\'0 0 16 16\\' fill=\\'none\\' stroke=\\'%23C8A84A\\' stroke-width=\\'1.3\\' stroke-linecap=\\'round\\' stroke-linejoin=\\'round\\'><rect x=\\'2\\' y=\\'3\\' width=\\'12\\' height=\\'11\\' rx=\\'2\\'/><path d=\\'M2 6h12M5 1.5v3M11 1.5v3\\'/></svg> ';if(c.style.display==='none'){c.style.display='block';calYear=new Date().getFullYear();renderYearCalendar();this.innerHTML=_calIco+t('cal_hide');}else{c.style.display='none';this.innerHTML=_calIco+t('cal_annual');}" class="btn-carte-annuelle" aria-label="${t('cal_annual')}"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#C8A84A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="12" height="11" rx="2"/><path d="M2 6h12M5 1.5v3M11 1.5v3"/></svg> ${t('cal_annual')}</button><div id="yearCalWrap" style="display:none;margin-top:16px;background:var(--card);border:1px solid rgba(200,168,75,0.15);border-radius:12px;padding:16px;"><div id="yearCalContent"></div></div></div><!-- BILAN 7 JOURS -->${bilanHTML}<div style="text-align:center;margin:0 16px 24px;"><button onclick="showWeeklyBilan()" class="btn-voir-semaine">Voir ma semaine</button></div><!-- 7. GRAINE DE LUMIÈRE --><div style="margin:0 16px 24px;background:linear-gradient(135deg,rgba(200,168,75,0.08),rgba(200,168,75,0.03));border:1px solid rgba(200,168,75,0.25);border-radius:20px;padding:28px;text-align:center;user-select:none;-webkit-user-select:none;"><div style="font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:3px;color:#C8A84A;text-transform:uppercase;margin-bottom:16px;">${t('graine_title')}</div><div style="position:relative;width:160px;height:160px;min-width:160px;min-height:160px;margin:0 auto 16px;"><div style="position:absolute;inset:-20px;border-radius:50%;background:radial-gradient(circle,rgba(200,168,75,0.1) 0%,rgba(200,168,75,0.04) 50%,transparent 70%);"></div><div style="position:relative;">${getGraineSVG((function(){try{return JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length)}</div></div><div style="font-family:'Inter',var(--sans);font-size:16px;color:rgba(255,255,255,0.6);margin-bottom:6px;">${(function(){try{var _gl=JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];return _gl.length===0?t('graine_zero'):_gl.length+' '+t('graine_defis');}catch(e){return t('graine_zero');}})()}</div><div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:#C8A84A;margin-bottom:12px;">${getGraineStageName((function(){try{return JSON.parse(localStorage.getItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length)}</div><div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:#C8A84A;opacity:0.7;line-height:1.6;">${t('graine_quote')}</div></div>
+        </div><div style="font-family:'Cormorant Garamond',serif;font-size:16px;color:rgba(200,182,140,.85);text-align:center;margin-top:10px;font-style:italic;">${(history.totalDays||0)===0?t('today_first'):t('today_pct').replace('{n}',Math.round(getLevelProgress(1)))}</div><button onclick="var c=document.getElementById('yearCalWrap');var _calIco='<svg width=\\'16\\' height=\\'16\\' viewBox=\\'0 0 16 16\\' fill=\\'none\\' stroke=\\'%23C8A84A\\' stroke-width=\\'1.3\\' stroke-linecap=\\'round\\' stroke-linejoin=\\'round\\'><rect x=\\'2\\' y=\\'3\\' width=\\'12\\' height=\\'11\\' rx=\\'2\\'/><path d=\\'M2 6h12M5 1.5v3M11 1.5v3\\'/></svg> ';if(c.style.display==='none'){c.style.display='block';calYear=new Date().getFullYear();renderYearCalendar();this.innerHTML=_calIco+t('cal_hide');}else{c.style.display='none';this.innerHTML=_calIco+t('cal_annual');}" class="btn-carte-annuelle" aria-label="${t('cal_annual')}"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#C8A84A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="12" height="11" rx="2"/><path d="M2 6h12M5 1.5v3M11 1.5v3"/></svg> ${t('cal_annual')}</button><div id="yearCalWrap" style="display:none;margin-top:16px;background:var(--card);border:1px solid rgba(200,168,75,0.15);border-radius:12px;padding:16px;"><div id="yearCalContent"></div></div></div><!-- BILAN 7 JOURS -->${bilanHTML}<div style="text-align:center;margin:0 16px 24px;"><button onclick="showWeeklyBilan()" class="btn-voir-semaine">Voir ma semaine</button></div><!-- 7. GRAINE DE LUMIÈRE --><div style="margin:0 16px 24px;background:linear-gradient(135deg,rgba(200,168,75,0.08),rgba(200,168,75,0.03));border:1px solid rgba(200,168,75,0.25);border-radius:20px;padding:28px;text-align:center;user-select:none;-webkit-user-select:none;"><div style="font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:3px;color:#C8A84A;text-transform:uppercase;margin-bottom:16px;">${t('graine_title')}</div><div style="position:relative;width:160px;height:160px;min-width:160px;min-height:160px;margin:0 auto 16px;"><div style="position:absolute;inset:-20px;border-radius:50%;background:radial-gradient(circle,rgba(200,168,75,0.1) 0%,rgba(200,168,75,0.04) 50%,transparent 70%);"></div><div style="position:relative;">${getGraineSVG((function(){try{return JSON.parse(safeGetItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length)}</div></div><div style="font-family:'Inter',var(--sans);font-size:16px;color:rgba(255,255,255,0.6);margin-bottom:6px;">${(function(){try{var _gl=JSON.parse(safeGetItem('niyyah_defi_v2')||'{}').historique||[];return _gl.length===0?t('graine_zero'):_gl.length+' '+t('graine_defis');}catch(e){return t('graine_zero');}})()}</div><div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:#C8A84A;margin-bottom:12px;">${getGraineStageName((function(){try{return JSON.parse(safeGetItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length)}</div><div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:#C8A84A;opacity:0.7;line-height:1.6;">${t('graine_quote')}</div></div>
 
       </div>
   `;
@@ -3703,7 +3705,7 @@ const PRAYER_NAMES = ['Fajr','Dhuhr','Asr','Maghrib','Isha'];
 const PRAYER_LABELS = ['Fajr','Dhuhr','Asr','Maghrib','Isha'];
 function renderPrayerTimesCard() {
   // Re-check dynamiquement — coords peuvent arriver après le boot
-  var _hasCoords = !!localStorage.getItem('niyyah_coords');
+  var _hasCoords = !!safeGetItem('niyyah_coords');
   if (!_forceCityInput && (_prayerTimes || _hasCoords || _prayerLoading)) _showCityInput = false;
   if (_showCityInput) {
     return '<div class="prayer-times-card">' +
@@ -3896,7 +3898,7 @@ function _loadPrayerByCity() {
     })
     .catch(function() {
       clearTimeout(_to2);
-      var _fallback = localStorage.getItem('niyyah_prayer_cache');
+      var _fallback = safeGetItem('niyyah_prayer_cache');
       if (_fallback) { try { _prayerTimes = JSON.parse(_fallback); } catch(e) {} }
       _prayerLoading = false;
       _prayerError = !_prayerTimes;
@@ -3905,8 +3907,8 @@ function _loadPrayerByCity() {
 }
 function loadPrayerTimes() {
   // Check 24h cache first
-  var _cached = localStorage.getItem('niyyah_prayer_cache');
-  var _cachedDate = localStorage.getItem('niyyah_prayer_date_v2');
+  var _cached = safeGetItem('niyyah_prayer_cache');
+  var _cachedDate = safeGetItem('niyyah_prayer_date_v2');
   if (_cachedDate === TODAY && _cached) {
     try {
       _prayerTimes = JSON.parse(_cached);
@@ -3919,7 +3921,7 @@ function loadPrayerTimes() {
     } catch(e) {}
   }
   // Try geolocation first
-  var savedCoords = localStorage.getItem('niyyah_coords');
+  var savedCoords = safeGetItem('niyyah_coords');
   if (savedCoords) {
     try {
       var c = JSON.parse(savedCoords);
@@ -4805,7 +4807,7 @@ function _cureJ7Finale() {
       + '</div>'
       + '<div class="lxf-stat lxf-rise" style="--d:.72s">Au d\u00e9but : ' + _cure7.efficacite_j1 + '/10 \u00b7 Aujourd\u2019hui : ' + _cure7.efficacite_j7 + '/10</div>'
       + '<div class="lxf-note lxf-rise" style="--d:.85s">Sept jours sont une initiation. Le travail sur le nafs est une lutte de toute une vie. Reviens quand tu en as besoin. Demain, ou dans un an. All\u00e2h ne mesure pas la dur\u00e9e \u2014 Il mesure la sinc\u00e9rit\u00e9.</div>'
-      + '<button class="lxf-btn2 lxf-rise" style="--d:.95s" onclick="localStorage.removeItem(\'' + _sk + '\');openCure' + _cap + '()">Reprendre la Cure</button>'
+      + '<button class="lxf-btn2 lxf-rise" style="--d:.95s" onclick="safeRemoveItem(\'' + _sk + '\');openCure' + _cap + '()">Reprendre la Cure</button>'
       + '<button class="lxf-btn lxf-rise" style="--d:1.05s" onclick="_cureJ7FinaleSucces()">Continuer</button>'
       + '</div>';
     return;
@@ -4822,7 +4824,7 @@ function _cureJ7FinaleSucces() {
   // Si l'utilisateur a choisi "Reprendre" au J7 → relancer immédiatement
   var orientation = safeGetItem(_sk + '_j7_orientation') || '';
   if (orientation === 'reprendre') {
-    localStorage.removeItem(_sk);
+    safeRemoveItem(_sk);
     var _rf = window['openCure' + _cap]; if (typeof _rf === 'function') _rf(); else openCureColere();
     return;
   }
@@ -6516,7 +6518,7 @@ function _cureCompletePremium(porte) {
     + '<div class="lxf-links lxf-rise" style="--d:1.05s">'
     + '<button class="lxf-link" onclick="' + _coffretFn + '()">La biblioth\u00e8que</button>'
     + '<span class="lxf-dot">\u00b7</span>'
-    + '<button class="lxf-link" onclick="localStorage.removeItem(\'' + _sk + '\');' + _reopenFn + '()">Recommencer un nouveau cycle</button>'
+    + '<button class="lxf-link" onclick="safeRemoveItem(\'' + _sk + '\');' + _reopenFn + '()">Recommencer un nouveau cycle</button>'
     + '</div>'
     + '</div>';
 }
@@ -6595,7 +6597,7 @@ window._cureAnxieteSave = _cureAnxieteSave;
 function _showMurmureRetour() {
   var msg = safeGetItem('niyyah_murmure_retour');
   if (msg) {
-    localStorage.removeItem('niyyah_murmure_retour');
+    safeRemoveItem('niyyah_murmure_retour');
     setTimeout(function() { showToast(msg); }, 800);
   }
 }
@@ -7243,7 +7245,7 @@ var _CONSEILS_CHEMIN = {
   fallback: 'Cette semaine fut travers\u00e9e. Chaque pas compte, m\u00eame invisible.\n\nNiyyah ne mesure pas la performance. Elle marche \u00e0 ton rythme.\n\nCette semaine \u2014 choisis ce qui te parle le plus. Un seul geste, pos\u00e9 avec pr\u00e9sence. Le reste suivra.'
 };
 function _getWeeklyDominante() {
-  var bilanData = {}; try { bilanData = JSON.parse(localStorage.getItem('niyyah_bilans') || '{}'); } catch(e) {}
+  var bilanData = {}; try { bilanData = JSON.parse(safeGetItem('niyyah_bilans') || '{}'); } catch(e) {}
   var _hist = history;
   try { var _hRaw = safeGetItem('spiritual_history'); if (_hRaw) _hist = JSON.parse(_hRaw) || _hist; } catch(e) {}
   var bilanCount = 0, doneDays = 0, fajrCount = 0, bienfCount = 0, lectCount = 0;
@@ -7251,7 +7253,7 @@ function _getWeeklyDominante() {
     var d = getDateMinus(TODAY, i);
     if ((_hist.days && _hist.days[d]) || safeGetItem('niyyah_day_validated_' + d) === '1') doneDays++;
     if (bilanData[d]) bilanCount++;
-    var raw = localStorage.getItem('niyyah_snapshot_' + d);
+    var raw = safeGetItem('niyyah_snapshot_' + d);
     if (raw) {
       var snap = null;
       try { snap = JSON.parse(raw); } catch(e) {}
@@ -7279,7 +7281,7 @@ function _getWeeklyStats() {
     var d = getDateMinus(TODAY, i);
     if (_hist.days && _hist.days[d]) doneDays++;
     if (safeGetItem('niyyah_day_validated_' + d) === '1' && !(_hist.days && _hist.days[d])) doneDays++;
-    var raw = localStorage.getItem('niyyah_snapshot_' + d);
+    var raw = safeGetItem('niyyah_snapshot_' + d);
     if (raw) {
       hasSnapshots = true;
       var snap = null;
@@ -7314,7 +7316,7 @@ function _getWeeklyStats() {
 }
 function _getWeeklyComparison(stats, bilanCount) {
   var archive = null;
-  try { archive = JSON.parse(localStorage.getItem('niyyah_week_archive') || 'null'); } catch(e) {}
+  try { archive = JSON.parse(safeGetItem('niyyah_week_archive') || 'null'); } catch(e) {}
   if (!archive) return 'Premi\u00e8re semaine enregistr\u00e9e.';
   var deltas = [
     { d: stats.fajrDays - (archive.fajr || 0), pos: 'L\u2019aube s\u2019est rapproch\u00e9e.', neg: 'L\u2019aube s\u2019est \u00e9loign\u00e9e doucement.' },
@@ -7350,7 +7352,7 @@ function _cleanupPremiumMsgs() {
         if (parts.length === 2) {
           var yr = parseInt(parts[0], 10), wk = parseInt(parts[1], 10);
           var refDate = new Date(yr, 0, 1 + (wk - 1) * 7);
-          if (now - refDate.getTime() > 8 * 7 * 86400000) localStorage.removeItem(k);
+          if (now - refDate.getTime() > 8 * 7 * 86400000) safeRemoveItem(k);
         }
       }
     }
@@ -7434,7 +7436,7 @@ function showWeeklyBilan() {
   var verset = _WEEKLY_VERSETS[dominante] || _WEEKLY_VERSETS.equilibre;
   var weekNum = Math.floor(Date.now() / (7 * 86400000));
   var parole = _WEEKLY_PAROLES[weekNum % _WEEKLY_PAROLES.length];
-  var _bilanData = {}; try { _bilanData = JSON.parse(localStorage.getItem('niyyah_bilans') || '{}'); } catch(e) {}
+  var _bilanData = {}; try { _bilanData = JSON.parse(safeGetItem('niyyah_bilans') || '{}'); } catch(e) {}
   var _bilanCount = 0; for (var _bi = 0; _bi < 7; _bi++) { if (_bilanData[getDateMinus(TODAY, _bi)]) _bilanCount++; }
   var comparison = _getWeeklyComparison(stats, _bilanCount);
   var _profil = safeGetItem('niyyah_motivation') || 'routine';
@@ -7488,7 +7490,7 @@ function showWeeklyBilan() {
   if (_isPrem && !safeGetItem(_weekKey)) {
     var _conseilEl = document.getElementById('_wkConseil');
     if (_conseilEl) _conseilEl.innerHTML = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.4);">Niyyah \u00e9crit ta lettre cette semaine\u2026</div>';
-    var _archive = null; try { _archive = JSON.parse(localStorage.getItem('niyyah_week_archive') || 'null'); } catch(e) {}
+    var _archive = null; try { _archive = JSON.parse(safeGetItem('niyyah_week_archive') || 'null'); } catch(e) {}
     // Bontés des 7 derniers jours
     var _bontesHist = []; try { _bontesHist = JSON.parse(safeGetItem('niyyah_finjournee_history') || '[]'); } catch(e) {}
     var _bontesSemaine = {};
@@ -8485,7 +8487,7 @@ function _getTafakkurHistory() {
   for (var i = 0; i < localStorage.length; i++) {
     var k = localStorage.key(i);
     if (k && k.indexOf('niyyah_tafakkur_lu_') === 0) {
-      try { var v = JSON.parse(localStorage.getItem(k)); if (v && v.date) arr.push(v); } catch(e) {}
+      try { var v = JSON.parse(safeGetItem(k)); if (v && v.date) arr.push(v); } catch(e) {}
     }
   }
   arr.sort(function(a, b) { return b.date > a.date ? 1 : -1; });
@@ -8609,7 +8611,7 @@ function setBilanSoir(choix) {
 
   // Sauvegarder dans localStorage
   const today = todayKey();
-  var bilans = {}; try { bilans = JSON.parse(localStorage.getItem('niyyah_bilans') || '{}'); } catch(e) {}
+  var bilans = {}; try { bilans = JSON.parse(safeGetItem('niyyah_bilans') || '{}'); } catch(e) {}
   bilans[today] = choix;
   safeSetItem('niyyah_bilans', JSON.stringify(bilans));
 
@@ -8916,7 +8918,7 @@ const TAWBA_MESSAGES = [
 ];
 
 function checkTawba() {
-  const lastDate = localStorage.getItem('niyyah_tawba_shown');
+  const lastDate = safeGetItem('niyyah_tawba_shown');
   if (lastDate === TODAY) return false;
   if (!history || !history.totalDays || history.totalDays < 1) return false;
 
@@ -8924,7 +8926,7 @@ function checkTawba() {
    * Calcul : differenceInDays = (Date.now() - lastInteraction) / 86400000
    * Si differenceInDays >= 2 → déclencher séquence Tawba
    */
-  var _lastInteraction = localStorage.getItem('niyyah_last_open');
+  var _lastInteraction = safeGetItem('niyyah_last_open');
   if (_lastInteraction) {
     var differenceInDays = Math.floor((Date.now() - parseInt(_lastInteraction)) / 86400000);
     if (differenceInDays >= 2) {
@@ -8935,9 +8937,9 @@ function checkTawba() {
 
 
   // Tawba forcée par bilan soir "distrait"
-  const tawbaForce = localStorage.getItem('niyyah_tawba_force');
+  const tawbaForce = safeGetItem('niyyah_tawba_force');
   if (tawbaForce === '1') {
-    localStorage.removeItem('niyyah_tawba_force');
+    safeRemoveItem('niyyah_tawba_force');
     setTimeout(() => showTawba(), 1200);
     return true;
   }
@@ -8963,9 +8965,9 @@ function showTawba() {
 
   // Calculer jours d'absence depuis localStorage (indépendant de la var globale)
   var _histRaw = {};
-  try { _histRaw = JSON.parse(localStorage.getItem('spiritual_history') || '{}'); } catch(e) {}
+  try { _histRaw = JSON.parse(safeGetItem('spiritual_history') || '{}'); } catch(e) {}
   // Utiliser niyyah_last_open pour détecter l'absence réelle
-  var _lastOpen = localStorage.getItem('niyyah_last_open_prev') || localStorage.getItem('niyyah_last_open');
+  var _lastOpen = safeGetItem('niyyah_last_open_prev') || safeGetItem('niyyah_last_open');
   var daysSince = 0;
   if (_lastOpen) {
     daysSince = Math.floor((Date.now() - parseInt(_lastOpen)) / 86400000);
@@ -9084,7 +9086,7 @@ function closeTawba() {
     card.style.opacity    = '1';
     card.style.transform  = 'scale(0.85)';
     // Appliquer l'infusion si une intention existe
-    var _iType = localStorage.getItem('niyyah_intention_type');
+    var _iType = safeGetItem('niyyah_intention_type');
     if (_iType && typeof applyInfusion === 'function') applyInfusion(_iType);
     // Rafraîchir le sanctuaire avec la nouvelle lumière
     if (typeof v2RefreshStats === 'function') v2RefreshStats();
@@ -9110,7 +9112,7 @@ function closeWeeklyBilan() {
   document.body.style.overflow = '';
   safeSetItem('niyyah_bilan_week', getCurrentWeekKey());
   var stats = _getWeeklyStats();
-  var _bData = {}; try { _bData = JSON.parse(localStorage.getItem('niyyah_bilans') || '{}'); } catch(e) {}
+  var _bData = {}; try { _bData = JSON.parse(safeGetItem('niyyah_bilans') || '{}'); } catch(e) {}
   var _bCount = 0; for (var _bk = 0; _bk < 7; _bk++) { if (_bData[getDateMinus(TODAY, _bk)]) _bCount++; }
   safeSetItem('niyyah_week_archive', JSON.stringify({ gestes: stats.totalGestes, journees: stats.doneDays, fajr: stats.fajrDays, bilans: _bCount }));
 }
@@ -9124,7 +9126,7 @@ function getCurrentWeekKey() {
 function checkWeeklyBilan() {
   const today = new Date(TODAY);
   if (today.getDay() !== 0) return false; // dimanche uniquement
-  const lastShown = localStorage.getItem('niyyah_bilan_week');
+  const lastShown = safeGetItem('niyyah_bilan_week');
   const thisWeek = getCurrentWeekKey();
   if (lastShown === thisWeek) return false;
   if ((history.totalDays || 0) < 1) return false;
@@ -9162,7 +9164,7 @@ function showQuotaLimit(kind){
     sub = 'Tu as re\u00e7u ton Regard d\u2019aujourd\u2019hui.<br>Reviens demain in cha Allah \uD83C\uDF19';
     hint = 'Avec Niyyah+ : 3 Regards par jour.';
   } else {
-    var q = []; try { q = JSON.parse(localStorage.getItem('niyyah_scanner_quota') || '[]'); } catch(e) {}
+    var q = []; try { q = JSON.parse(safeGetItem('niyyah_scanner_quota') || '[]'); } catch(e) {}
     var weekAgo = new Date(Date.now() - 7*86400000).toISOString();
     q = q.filter(function(t){ return t > weekAgo; }).sort();
     var oldest = q.length ? new Date(q[0]).getTime() : Date.now();
@@ -9188,7 +9190,7 @@ function closeQuotaLimit(){ var o = document.getElementById('quota-limit-overlay
 window.showQuotaLimit = showQuotaLimit; window.closeQuotaLimit = closeQuotaLimit;
 /* ══ STATUT PREMIUM ══ */
 function isPremium() {
-  return localStorage.getItem('niyyah_premium') === 'true' || localStorage.getItem('niyyah_pro') === '1';
+  return safeGetItem('niyyah_premium') === 'true' || safeGetItem('niyyah_pro') === '1';
 }
 function unlockPremium(code) {
   if (code && code.toUpperCase() === 'BISMILLAH') {
@@ -9204,7 +9206,7 @@ window.isPremium = isPremium;
 window.unlockPremium = unlockPremium;
 window.setPremium = setPremium;
 function isSilentMode() {
-  return localStorage.getItem('niyyah_silent_mode') === 'true';
+  return safeGetItem('niyyah_silent_mode') === 'true';
 }
 function setSilentMode(bool) {
   safeSetItem('niyyah_silent_mode', bool ? 'true' : 'false');
@@ -9395,7 +9397,7 @@ function getMurmureAdaptatif(moment) {
   }
 
   // Si absent depuis 2+ jours → murmure de retour doux (anti-culpabilisation)
-  var lastOpen = localStorage.getItem("niyyah_last_open");
+  var lastOpen = safeGetItem("niyyah_last_open");
   if (lastOpen) {
     var daysSince = Math.floor((Date.now() - parseInt(lastOpen)) / 86400000);
     if (daysSince >= 2) {
@@ -9427,7 +9429,7 @@ function getMurmureAdaptatif(moment) {
 })();
 
 function getMurmure(moment) {
-  var intention = (localStorage.getItem('niyyah_intention_type') || '').toLowerCase();
+  var intention = (safeGetItem('niyyah_intention_type') || '').toLowerCase();
 
   // Mots-clés de détection pour chaque thème
   var MAP = [
@@ -9588,7 +9590,7 @@ function initNotifications() {
 
           // Anti-désactivation : si l'utilisateur ignore les notifs depuis 5j+
           // → réduire à 1 seule notification/jour pour ne pas surcharger
-          var lastOpen = localStorage.getItem("niyyah_last_open_prev");
+          var lastOpen = safeGetItem("niyyah_last_open_prev");
           var daysSince = lastOpen ? Math.floor((Date.now() - parseInt(lastOpen)) / 86400000) : 0;
           safeSetItem("niyyah_last_open_prev", Date.now().toString());
 
@@ -10138,7 +10140,7 @@ function onboardFinish() {
     setTimeout(() => screen.classList.add('hidden'), 350);
   }
   // Charger horaires — géoloc silencieuse si pas encore faite
-  var _onboardCoords = localStorage.getItem('niyyah_coords');
+  var _onboardCoords = safeGetItem('niyyah_coords');
   if (_onboardCoords) {
     try { var _c = JSON.parse(_onboardCoords); _loadPrayerByCoords(_c.lat, _c.lng); } catch(e) {}
   } else if (_prayerCity) {
@@ -10985,14 +10987,14 @@ function v2DetectLang() {
       return urlLang;
     }
   } catch(e) {}
-  var saved; try { saved = (JSON.parse(localStorage.getItem('niyyah_v2_bridge') || '{}')).lang; } catch(e) {}
+  var saved; try { saved = (JSON.parse(safeGetItem('niyyah_v2_bridge') || '{}')).lang; } catch(e) {}
   if (saved && saved !== 'ar' && V2_I18N[saved]) return saved;
   // Détection auto au premier lancement
   var bl = (navigator.language || 'en').toLowerCase();
   var detected = 'en';
   if (bl.startsWith('fr')) detected = 'fr';
   // Sauvegarder pour ne pas re-détecter
-  try { var s = JSON.parse(localStorage.getItem('niyyah_v2_bridge') || '{}'); s.lang = detected; safeSetItem('niyyah_v2_bridge', JSON.stringify(s)); } catch(e) {}
+  try { var s = JSON.parse(safeGetItem('niyyah_v2_bridge') || '{}'); s.lang = detected; safeSetItem('niyyah_v2_bridge', JSON.stringify(s)); } catch(e) {}
   return detected;
 }
 
@@ -11272,7 +11274,7 @@ const V2_KEY = 'niyyah_v2_bridge';
 
 function v2GetState() {
   try {
-    const raw = localStorage.getItem(V2_KEY);
+    const raw = safeGetItem(V2_KEY);
     if (raw) return JSON.parse(raw);
   } catch(e) {}
   return { intention: null, intentionDate: null, lastOpenDate: null };
@@ -11536,7 +11538,7 @@ var NAFS_SEASON_LABELS = {
 };
 
 function _nafsGetObservations() {
-  try { return JSON.parse(localStorage.getItem('nafs_observations') || '[]'); } catch(e) { return []; }
+  try { return JSON.parse(safeGetItem('nafs_observations') || '[]'); } catch(e) { return []; }
 }
 
 function _nafsLocalDate(d) { return d.getFullYear() + '-' + _pad2(d.getMonth() + 1) + '-' + _pad2(d.getDate()); }
@@ -12118,7 +12120,7 @@ function _niyyahSafeReset() {
 }
 
 function _settingsCheminInfo() {
-  var motiv = localStorage.getItem('niyyah_motivation');
+  var motiv = safeGetItem('niyyah_motivation');
   var labels = { reconnecter: 'Le Revenant', routine: 'Le R\u00e9gulier', sacraliser: 'Le Complet' };
   var label = labels[motiv] || motiv || '\u2014';
   var installTs = parseInt(safeGetItem('niyyah_install_date') || '0', 10);
@@ -12151,7 +12153,7 @@ function v2OpenSettings() {
   sheet.id = 'v2-settings-sheet';
   sheet.style.cssText = 'position:fixed;inset:0;background:rgba(10,10,10,0.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:3000;display:flex;align-items:flex-end;justify-content:center;' + (window._reducedMotion ? '' : 'animation:backdropV2 0.3s ease forwards;');
   const ramadanActive = typeof ramadanState !== 'undefined' && ramadanState.active;
-  const debugSection = NIYYAH_DEBUG ? '<div style="margin-top:14px;background:#1a1a1a;border:1px solid rgba(255,255,255,0.05);border-radius:12px;padding:16px;"><div style="font-size:12px;letter-spacing:0.28em;color:rgba(255,255,255,0.55);text-transform:uppercase;font-family:Cormorant Garamond,serif;margin-bottom:10px;text-align:center;">🔧 DEBUG</div><button onclick="safeSetItem(\'niyyah_regarde_available_today\',\'true\');showToast(\'Regarde active\');document.getElementById(\'v2-settings-sheet\').remove();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);font-size:12px;cursor:pointer;margin-bottom:8px;">[DEBUG] Activer Regarde</button><button onclick="document.getElementById(\'v2-settings-sheet\').remove();regardeOpen();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);font-size:15px;cursor:pointer;">[DEBUG] Lancer Regarde maintenant</button><button onclick="document.getElementById(\'v2-settings-sheet\').remove();openFinJournee();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);font-size:12px;cursor:pointer;margin-top:8px;">[DEBUG] Forcer Fin de Journée</button><button onclick="localStorage.removeItem(\'niyyah_tafakkur_first_ever\');localStorage.removeItem(\'niyyah_tafakkur_recit_eligible\');localStorage.removeItem(\'niyyah_tafakkur_lu_\'+todayKey());showToast(\'Tafakkur reset\');document.getElementById(\'v2-settings-sheet\').remove();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);font-size:12px;cursor:pointer;margin-top:8px;">[DEBUG] Reset Tafakkur (1ere seance)</button></div>' : '';
+  const debugSection = NIYYAH_DEBUG ? '<div style="margin-top:14px;background:#1a1a1a;border:1px solid rgba(255,255,255,0.05);border-radius:12px;padding:16px;"><div style="font-size:12px;letter-spacing:0.28em;color:rgba(255,255,255,0.55);text-transform:uppercase;font-family:Cormorant Garamond,serif;margin-bottom:10px;text-align:center;">🔧 DEBUG</div><button onclick="safeSetItem(\'niyyah_regarde_available_today\',\'true\');showToast(\'Regarde active\');document.getElementById(\'v2-settings-sheet\').remove();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);font-size:12px;cursor:pointer;margin-bottom:8px;">[DEBUG] Activer Regarde</button><button onclick="document.getElementById(\'v2-settings-sheet\').remove();regardeOpen();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);font-size:15px;cursor:pointer;">[DEBUG] Lancer Regarde maintenant</button><button onclick="document.getElementById(\'v2-settings-sheet\').remove();openFinJournee();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);font-size:12px;cursor:pointer;margin-top:8px;">[DEBUG] Forcer Fin de Journée</button><button onclick="safeRemoveItem(\'niyyah_tafakkur_first_ever\');safeRemoveItem(\'niyyah_tafakkur_recit_eligible\');safeRemoveItem(\'niyyah_tafakkur_lu_\'+todayKey());showToast(\'Tafakkur reset\');document.getElementById(\'v2-settings-sheet\').remove();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);font-size:12px;cursor:pointer;margin-top:8px;">[DEBUG] Reset Tafakkur (1ere seance)</button></div>' : '';
   sheet.innerHTML = `
     <div style="width:100%;max-width:480px;max-height:calc(100vh - env(safe-area-inset-top,0px));overflow-y:auto;background:#111;border-radius:22px 22px 0 0;padding:calc(env(safe-area-inset-top,0px) + 26px) 22px calc(32px + env(safe-area-inset-bottom));border-top:1px solid rgba(212,175,55,0.14);animation:sheetV2 0.4s cubic-bezier(0.23,1,0.32,1) forwards;direction:${T.dir};">
       <div style="width:38px;height:3px;background:rgba(255,255,255,0.1);border-radius:2px;margin:0 auto 22px;"></div>
@@ -12177,7 +12179,7 @@ function v2OpenSettings() {
       <!-- AUTRES RÉGLAGES -->
       <div style="background:#1a1a1a;border:1px solid rgba(255,255,255,0.05);border-radius:12px;overflow:hidden;margin-bottom:14px;">
         <div style="padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.04);cursor:pointer;"
-          onclick="document.getElementById('v2-settings-sheet').remove();localStorage.removeItem('niyyah_coords');showCityInput();">
+          onclick="document.getElementById('v2-settings-sheet').remove();safeRemoveItem('niyyah_coords');showCityInput();">
           <div style="display:flex;justify-content:space-between;align-items:center;">
             <div style="font-size:14px;color:rgba(240,234,214,0.7);">✦ ${t('settings_city')}</div>
             <div style="font-size:12px;color:rgba(240,234,214,0.55);">${escapeHtml(_prayerCity || '\u2014')}</div>
@@ -12194,14 +12196,14 @@ function v2OpenSettings() {
           <div style="display:flex;justify-content:space-between;align-items:center;">
             <div style="font-size:14px;color:rgba(240,234,214,0.7);">🤫 ${t('silence_settings')}</div>
             <select onchange="safeSetItem('niyyah_silence_day',this.value)" style="background:#222;color:#D4AF37;border:1px solid rgba(212,175,55,0.3);border-radius:8px;padding:6px 10px;font-size:12px;font-family:var(--sans);outline:none;">
-              <option value="none" ${(localStorage.getItem('niyyah_silence_day')||'none')==='none'?'selected':''}>Aucun</option>
-              <option value="1" ${localStorage.getItem('niyyah_silence_day')==='1'?'selected':''}>Lundi</option>
-              <option value="2" ${localStorage.getItem('niyyah_silence_day')==='2'?'selected':''}>Mardi</option>
-              <option value="3" ${localStorage.getItem('niyyah_silence_day')==='3'?'selected':''}>Mercredi</option>
-              <option value="4" ${localStorage.getItem('niyyah_silence_day')==='4'?'selected':''}>Jeudi</option>
-              <option value="5" ${localStorage.getItem('niyyah_silence_day')==='5'?'selected':''}>Vendredi</option>
-              <option value="6" ${localStorage.getItem('niyyah_silence_day')==='6'?'selected':''}>Samedi</option>
-              <option value="0" ${localStorage.getItem('niyyah_silence_day')==='0'?'selected':''}>Dimanche</option>
+              <option value="none" ${(safeGetItem('niyyah_silence_day')||'none')==='none'?'selected':''}>Aucun</option>
+              <option value="1" ${safeGetItem('niyyah_silence_day')==='1'?'selected':''}>Lundi</option>
+              <option value="2" ${safeGetItem('niyyah_silence_day')==='2'?'selected':''}>Mardi</option>
+              <option value="3" ${safeGetItem('niyyah_silence_day')==='3'?'selected':''}>Mercredi</option>
+              <option value="4" ${safeGetItem('niyyah_silence_day')==='4'?'selected':''}>Jeudi</option>
+              <option value="5" ${safeGetItem('niyyah_silence_day')==='5'?'selected':''}>Vendredi</option>
+              <option value="6" ${safeGetItem('niyyah_silence_day')==='6'?'selected':''}>Samedi</option>
+              <option value="0" ${safeGetItem('niyyah_silence_day')==='0'?'selected':''}>Dimanche</option>
             </select>
           </div>
         </div>
@@ -12272,7 +12274,7 @@ function v2OpenSettings() {
   setTimeout(function() {
     var el = document.getElementById('settings-orientation-current');
     if (!el) return;
-    var motiv = localStorage.getItem('niyyah_motivation');
+    var motiv = safeGetItem('niyyah_motivation');
     var label = motiv === 'routine' ? t('ob_motiv_routine')
               : motiv === 'reconnecter' ? t('ob_motiv_reconnecter')
               : motiv === 'sacraliser' ? t('ob_motiv_sacraliser')
@@ -12287,7 +12289,7 @@ function openOrientationPicker() {
   if (!sheet) return;
   sheet.style.display = 'flex';
   if (window._reducedMotion) { sheet.style.opacity = '1'; } else { setTimeout(function() { sheet.style.opacity = '1'; }, 10); }
-  var motiv = localStorage.getItem('niyyah_motivation');
+  var motiv = safeGetItem('niyyah_motivation');
   document.querySelectorAll('.orient-card').forEach(function(c) {
     c.classList.toggle('selected', c.dataset.value === motiv);
   });
@@ -12299,7 +12301,7 @@ var _orientDescriptions = {
 };
 function _orientCardHtml(value, calli, title) {
   var desc = _orientDescriptions[value] || '';
-  var motiv = localStorage.getItem('niyyah_motivation');
+  var motiv = safeGetItem('niyyah_motivation');
   var selected = motiv === value;
   var borderColor = selected ? 'rgba(200,168,75,0.5)' : 'rgba(200,168,75,0.25)';
   var bg = selected ? 'rgba(200,168,75,0.1)' : 'radial-gradient(ellipse at top, rgba(200,168,75,0.06) 0%, transparent 70%)';
@@ -12321,7 +12323,7 @@ function renderOrientationCards() {
   container.insertAdjacentHTML('beforeend', '<div style="font-size:12px; font-style:italic; color:rgba(181,166,133,0.5); text-align:center; margin-top:8px; line-height:1.5;">Avec ta constance, Niyyah te proposera d\u2019aller plus loin.</div>');
 }
 function selectOrientation(value) {
-  var current = localStorage.getItem('niyyah_motivation');
+  var current = safeGetItem('niyyah_motivation');
   if (current && current !== value) {
     _showOrientConfirm(value);
     return;
@@ -12343,10 +12345,10 @@ function _showOrientConfirm(value) {
   document.getElementById('orient-confirm-no').onclick = function() { ov.remove(); };
 }
 function _applyOrientation(value) {
-  var prev = localStorage.getItem('niyyah_motivation');
+  var prev = safeGetItem('niyyah_motivation');
   safeSetItem('niyyah_motivation', value);
-  localStorage.removeItem('niyyah_welcome_shown');
-  localStorage.removeItem('niyyah_defi_v2');
+  safeRemoveItem('niyyah_welcome_shown');
+  safeRemoveItem('niyyah_defi_v2');
   closeOrientationPicker();
   if (typeof renderTabs === 'function') renderTabs();
   if (typeof renderLevel === 'function' && typeof currentLevel !== 'undefined') renderLevel(currentLevel);
@@ -12433,9 +12435,9 @@ function _v2ShowNiyyahReadModal() {
   changeLink.addEventListener('mouseleave', function() { changeLink.style.color = 'rgba(200,168,75,0.5)'; });
   changeLink.addEventListener('click', function() {
     // Clear current intention
-    localStorage.removeItem('niyyah_intention_date');
-    localStorage.removeItem('niyyah_intention_type');
-    localStorage.removeItem('niyyah_intention_label');
+    safeRemoveItem('niyyah_intention_date');
+    safeRemoveItem('niyyah_intention_type');
+    safeRemoveItem('niyyah_intention_label');
     var s = v2GetState();
     s.intention = null;
     s.intentionDate = null;
@@ -12537,9 +12539,9 @@ function _v2OpenNiyyahPickModal() {
 
     // 5ème intention cachée — إخلاص (streak >= 30, premium only)
   var _ikhlasStreak = 0;
-  try { _ikhlasStreak = JSON.parse(localStorage.getItem('spiritual_history') || '{}').streak || 0; } catch(e) {}
+  try { _ikhlasStreak = JSON.parse(safeGetItem('spiritual_history') || '{}').streak || 0; } catch(e) {}
   if (_ikhlasStreak >= 30 && typeof isPremium === 'function' && isPremium()) {
-    var ikhlasUnlocked = localStorage.getItem('niyyah_ikhlas_unlocked');
+    var ikhlasUnlocked = safeGetItem('niyyah_ikhlas_unlocked');
     var ikhlasBtn = document.createElement('button');
     ikhlasBtn.className = 'intention-opt-v2 intention-ikhlas';
     var ikhlasTexts = { fr: 'إخلاص — La sincérité pure', en: 'إخلاص — Pure sincerity', ar: 'الإِخْلَاصُ — صِدْقُ الْقَلْبِ' };
@@ -12693,10 +12695,10 @@ function v2ConfirmIntention() {
 
 /* ══ POINT 3 — Éveil visuel après Tawba ══ */
 function applyTawbaGlow() {
-  var glowTs = localStorage.getItem('niyyah_tawba_glow');
+  var glowTs = safeGetItem('niyyah_tawba_glow');
   if (!glowTs) return;
   var hoursSince = (Date.now() - parseInt(glowTs)) / 3600000;
-  if (hoursSince > 24) { localStorage.removeItem('niyyah_tawba_glow'); return; }
+  if (hoursSince > 24) { safeRemoveItem('niyyah_tawba_glow'); return; }
 
   // Orbe plus lumineux et plus chaud (couleur Vert Sauge = Renaissance)
   var orb = document.getElementById('orb-core-v2');
@@ -12742,13 +12744,13 @@ function _checkTawbaReturn() {
     if (document.body.classList.contains('in-bab-an-nafs')) return;
     if (safeGetItem('niyyah_onboard') !== '1') return;
     var KEY = 'niyyah_last_session';
-    var prev = localStorage.getItem(KEY);
+    var prev = safeGetItem(KEY);
     var now = Date.now();
     safeSetItem(KEY, String(now));        // on enregistre toujours cette session
     if (!prev) return;                    // première session connue : rien
     var daysAway = Math.floor((now - parseInt(prev, 10)) / 86400000);
     if (isNaN(daysAway) || daysAway < TAWBA_RETURN_DAYS) return;
-    if (localStorage.getItem('niyyah_return_shown') === todayKey()) return; // 1x/jour
+    if (safeGetItem('niyyah_return_shown') === todayKey()) return; // 1x/jour
     safeSetItem('niyyah_return_shown', todayKey());
     _showTawbaReturn(daysAway);
   } catch (e) {}
@@ -12825,7 +12827,7 @@ function renderLevelStripCondensed() {
     + '<div class="lvl-strip-track"><div class="lvl-strip-fill" style="width:' + pct + '%;"></div></div>';
 }
 function _getPrenom() {
-  var p = localStorage.getItem('niyyah_prenom');
+  var p = safeGetItem('niyyah_prenom');
   return (p && p.trim()) ? p.trim() : '';
 }
 function niyyahExportData() {
@@ -12839,7 +12841,7 @@ function niyyahExportData() {
     var skip = false;
     for (var p = 0; p < EXCLUDE_PREFIXES.length; p++) { if (key.indexOf(EXCLUDE_PREFIXES[p]) === 0) { skip = true; break; } }
     if (skip) continue;
-    data[key] = localStorage.getItem(key);
+    data[key] = safeGetItem(key);
   }
   var blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
   var a = document.createElement('a');
@@ -13004,9 +13006,9 @@ function openAlHaya() {
   safeSetItem('niyyah_alhaya_active', '1');
   try {
     var now = Date.now().toString();
-    var count = parseInt(localStorage.getItem('niyyah_alhaya_activations') || '0', 10);
+    var count = parseInt(safeGetItem('niyyah_alhaya_activations') || '0', 10);
     safeSetItem('niyyah_alhaya_activations', (count + 1).toString());
-    if (!localStorage.getItem('niyyah_alhaya_first_use')) safeSetItem('niyyah_alhaya_first_use', now);
+    if (!safeGetItem('niyyah_alhaya_first_use')) safeSetItem('niyyah_alhaya_first_use', now);
     safeSetItem('niyyah_alhaya_last_use', now);
   } catch(e) {}
 }
@@ -13014,25 +13016,25 @@ function closeAlHaya() {
   var ov = document.getElementById('alhaya-overlay');
   if (ov) { ov.style.opacity = '0'; setTimeout(function() { ov.style.display = 'none'; }, 200); }
   document.body.classList.remove('alhaya-active');
-  localStorage.removeItem('niyyah_alhaya_active');
+  safeRemoveItem('niyyah_alhaya_active');
 }
 window.getAlhayaStats = function() {
   try {
     return {
-      activations: parseInt(localStorage.getItem('niyyah_alhaya_activations') || '0', 10),
-      firstUse: parseInt(localStorage.getItem('niyyah_alhaya_first_use') || '0', 10) || null,
-      lastUse: parseInt(localStorage.getItem('niyyah_alhaya_last_use') || '0', 10) || null
+      activations: parseInt(safeGetItem('niyyah_alhaya_activations') || '0', 10),
+      firstUse: parseInt(safeGetItem('niyyah_alhaya_first_use') || '0', 10) || null,
+      lastUse: parseInt(safeGetItem('niyyah_alhaya_last_use') || '0', 10) || null
     };
   } catch(e) { return {activations:0,firstUse:null,lastUse:null}; }
 };
 // Restore Al-Haya on load if was active
-if (localStorage.getItem('niyyah_alhaya_active') === '1') {
+if (safeGetItem('niyyah_alhaya_active') === '1') {
   setTimeout(function() { var ov = document.getElementById('alhaya-overlay'); if (ov) { ov.style.display = 'flex'; ov.style.opacity = '1'; } document.body.classList.add('alhaya-active'); }, 100);
 }
 // ── Analytics ──
 function _nAn(evt) {
   try {
-    var raw = localStorage.getItem('niyyah_analytics_v1');
+    var raw = safeGetItem('niyyah_analytics_v1');
     var a = raw ? JSON.parse(raw) : {};
     a[evt] = (a[evt] || 0) + 1;
     var now = Date.now();
@@ -13042,7 +13044,7 @@ function _nAn(evt) {
   } catch(e) {}
 }
 window.getNiyyahStats = function() {
-  try { return JSON.parse(localStorage.getItem('niyyah_analytics_v1') || '{}'); } catch(e) { return {}; }
+  try { return JSON.parse(safeGetItem('niyyah_analytics_v1') || '{}'); } catch(e) { return {}; }
 };
 _nAn('sessions');
 function _pickStableWaqt(moment) {
@@ -13677,7 +13679,7 @@ function _dateLocale() {
   return lang === 'en' ? 'en-US' : lang === 'ar' ? 'ar' : 'fr-FR';
 }
 function isSilenceDay() {
-  var d = localStorage.getItem('niyyah_silence_day');
+  var d = safeGetItem('niyyah_silence_day');
   if (!d || d === 'none') return false;
   return parseInt(d, 10) === new Date().getDay();
 }
@@ -13685,7 +13687,7 @@ function updateSpiritualTitle() {
   var el = document.getElementById('v2-spiritual-title');
   if (!el) return;
   var hist = {};
-  try { hist = JSON.parse(localStorage.getItem('spiritual_history') || '{}'); } catch(e) {}
+  try { hist = JSON.parse(safeGetItem('spiritual_history') || '{}'); } catch(e) {}
   var streak = hist.streak || 0;
   var totalDays = hist.totalDays || 0;
   var todayDone = getLevelProgress(1) >= 100;
@@ -13747,7 +13749,7 @@ function v2RefreshStats() {
   // Greeting — salutation 1×/jour puis murmure dans #v2-greeting-text
   const grEl = document.getElementById('v2-greeting-text');
   if (grEl) {
-    var _lastSalam = localStorage.getItem('niyyah_greet_date');
+    var _lastSalam = safeGetItem('niyyah_greet_date');
     var _murmureText;
     if (safeGetItem('niyyah_murmur_date') === TODAY) {
       _murmureText = safeGetItem('niyyah_murmur_text') || t('greeting_day_' + new Date().getDay());
@@ -13758,8 +13760,8 @@ function v2RefreshStats() {
       if (_dbgW !== null) { _wn = parseInt(_dbgW, 10) || 0; console.log('[murmure debug] forced week=' + _wn); }
       _murmureText = _grPool[_wn % _grPool.length];
       console.log('[murmure] day=' + new Date().getDay() + ' week=' + _wn + ' pool=' + _grPool.length + ' idx=' + (_wn % _grPool.length) + ' → "' + _murmureText + '"');
-      if (!localStorage.getItem('niyyah_welcome_shown')) {
-        var _motiv = localStorage.getItem('niyyah_motivation');
+      if (!safeGetItem('niyyah_welcome_shown')) {
+        var _motiv = safeGetItem('niyyah_motivation');
         if (_motiv === 'routine' || _motiv === 'reconnecter' || _motiv === 'sacraliser') {
           _murmureText = t('welcome_' + _motiv);
           safeSetItem('niyyah_welcome_shown', '1');
@@ -13767,7 +13769,7 @@ function v2RefreshStats() {
       }
       var _inst = parseInt(safeGetItem('niyyah_install_date') || '0', 10);
       var _daysSinceInstall = _inst ? Math.floor((Date.now() - _inst) / 86400000) : 0;
-      if (_daysSinceInstall >= 30 && !localStorage.getItem('niyyah_j30_shown')) {
+      if (_daysSinceInstall >= 30 && !safeGetItem('niyyah_j30_shown')) {
         _murmureText = t('evolution_invite_30');
         safeSetItem('niyyah_j30_shown', '1');
       }
@@ -13834,9 +13836,9 @@ function v2RefreshStats() {
   if (_s.intention) applyInfusion(_s.intention);
 
   // Cleanup deprecated Night Companion localStorage
-  localStorage.removeItem('niyyah_compagnon_date');
-  localStorage.removeItem('niyyah_sagesse_nuit');
-  localStorage.removeItem('niyyah_morning_wisdom_shown_date');
+  safeRemoveItem('niyyah_compagnon_date');
+  safeRemoveItem('niyyah_sagesse_nuit');
+  safeRemoveItem('niyyah_morning_wisdom_shown_date');
   updateFinJourneeCard();
   updateFajrChallenge();
   updateSanctuaireMoment();
@@ -13864,7 +13866,7 @@ function updateFinJourneeCard() {
   }
   if (!show) { card.style.display = 'none'; return; }
   var _todayStr = dateToKey(now);
-  var done = localStorage.getItem('niyyah_finjournee_date') === _todayStr;
+  var done = safeGetItem('niyyah_finjournee_date') === _todayStr;
   if (done) { card.style.display = 'none'; return; }
   card.style.display = 'block';
   card.innerHTML = '<img class="finjournee-img" loading="lazy" src="assets/cards/card-findejour.webp" alt="Fin de journée" onclick="openFinJournee()">';
@@ -13904,7 +13906,7 @@ function saveFinJourneeBontes() {
   var today = todayKey();
   var entry = { id: 'finjournee_' + today, date: today, time: new Date().toISOString(), bontes: bontes, skipped_bontes: false, completed: false };
   var hist = [];
-  try { hist = JSON.parse(localStorage.getItem('niyyah_finjournee_history') || '[]'); } catch(e) {}
+  try { hist = JSON.parse(safeGetItem('niyyah_finjournee_history') || '[]'); } catch(e) {}
   hist.push(entry);
   if (hist.length > 365) hist = hist.slice(-365);
   safeSetItem('niyyah_finjournee_history', JSON.stringify(hist));
@@ -13915,7 +13917,7 @@ function skipFinJourneeBontes() {
   var today = todayKey();
   var entry = { id: 'finjournee_' + today, date: today, time: new Date().toISOString(), bontes: [], skipped_bontes: true, completed: false };
   var hist = [];
-  try { hist = JSON.parse(localStorage.getItem('niyyah_finjournee_history') || '[]'); } catch(e) {}
+  try { hist = JSON.parse(safeGetItem('niyyah_finjournee_history') || '[]'); } catch(e) {}
   hist.push(entry);
   if (hist.length > 365) hist = hist.slice(-365);
   safeSetItem('niyyah_finjournee_history', JSON.stringify(hist));
@@ -14007,7 +14009,7 @@ function showFinJourneeActe3() {
 }
 function _showFinJourneeBilan(overlay) {
   var today = todayKey();
-  var bilans = {}; try { bilans = JSON.parse(localStorage.getItem('niyyah_bilans') || '{}'); } catch(e) {}
+  var bilans = {}; try { bilans = JSON.parse(safeGetItem('niyyah_bilans') || '{}'); } catch(e) {}
   if (bilans[today]) { _finJourneeBismillahAndClose(overlay); return; }
   overlay.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;animation:_fdjFadeIn 1s ease forwards;">'
     + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:12px;">Bilan du soir</div>'
@@ -14023,7 +14025,7 @@ function _showFinJourneeBilan(overlay) {
 }
 function _finJourneeBilanChoix(choix) {
   var today = todayKey();
-  var bilans = {}; try { bilans = JSON.parse(localStorage.getItem('niyyah_bilans') || '{}'); } catch(e) {}
+  var bilans = {}; try { bilans = JSON.parse(safeGetItem('niyyah_bilans') || '{}'); } catch(e) {}
   bilans[today] = choix;
   safeSetItem('niyyah_bilans', JSON.stringify(bilans));
   if (choix === 'distraction') safeSetItem('niyyah_tawba_force', '1');
@@ -14045,7 +14047,7 @@ function _finJourneeBismillahAndClose(overlay) {
   setTimeout(function() {
     var today = todayKey();
     var hist = [];
-    try { hist = JSON.parse(localStorage.getItem('niyyah_finjournee_history') || '[]'); } catch(e) {}
+    try { hist = JSON.parse(safeGetItem('niyyah_finjournee_history') || '[]'); } catch(e) {}
     for (var i = hist.length - 1; i >= 0; i--) {
       if (hist[i].date === today) { hist[i].completed = true; break; }
     }
@@ -14095,7 +14097,7 @@ function updateFajrChallenge() {
   var card = document.getElementById('fajr-challenge-card');
   if (!card) return;
   var hist = {};
-  try { hist = JSON.parse(localStorage.getItem('spiritual_history') || '{}'); } catch(e) {}
+  try { hist = JSON.parse(safeGetItem('spiritual_history') || '{}'); } catch(e) {}
   var today = new Date();
   var todayFajrOntime = !!state['fajr_ontime'];
   var fajrMois = 0, fajrAnnee = 0, fajrTotal = 0;
@@ -14106,7 +14108,7 @@ function updateFajrChallenge() {
     var keys = Object.keys(hist.days);
     for (var _k = 0; _k < keys.length; _k++) {
       var _snap = null;
-      try { _snap = JSON.parse(localStorage.getItem('niyyah_snapshot_' + keys[_k]) || 'null'); } catch(e) {}
+      try { _snap = JSON.parse(safeGetItem('niyyah_snapshot_' + keys[_k]) || 'null'); } catch(e) {}
       var _fajrOntime = _snap && _snap.ontime && _snap.ontime.fajr;
       // fallback: old snapshots without ontime → check prieres.fajr instead
       if (!_fajrOntime && _snap && !_snap.ontime && _snap.prieres && _snap.prieres.fajr) _fajrOntime = true;
@@ -14626,7 +14628,7 @@ function triggerSpontaneousUI() {
   checkHijriBanner();
 }
 function checkRegardeAlert() {
-  var last = localStorage.getItem('niyyah_regarde_last_alert');
+  var last = safeGetItem('niyyah_regarde_last_alert');
   if (last === todayKey()) return false;
   var h = new Date().getHours();
   if (h < 9 || h >= 21) return false;
@@ -14645,7 +14647,7 @@ function _cleanupOldDateKeys() {
       var m = k.match(/(\d{4})-(\d{2})-(\d{2})$/);
       if (m && new Date(m[0]).getTime() < cutoff) toRemove.push(k);
     }
-    toRemove.forEach(function(k) { localStorage.removeItem(k); });
+    toRemove.forEach(function(k) { safeRemoveItem(k); });
   } catch(e) {}
 }
 /* ─────────────────────────────────────────────
@@ -14763,7 +14765,7 @@ function showEvolutionModal() {
     if (!safeGetItem('niyyah_evolution_path')) safeSetItem('niyyah_evolution_path', 'reconnecter');
     safeSetItem('niyyah_evolution_date', String(Date.now()));
     safeSetItem('niyyah_motivation', 'routine');
-    localStorage.removeItem('niyyah_welcome_shown');
+    safeRemoveItem('niyyah_welcome_shown');
     ov.remove();
     if (typeof renderLevel === 'function' && typeof currentLevel !== 'undefined') renderLevel(currentLevel);
     showToast('Niyyah marche d\u00e9sormais \u00e0 tes c\u00f4t\u00e9s en R\u00e9gulier. Sans bruit. Sans h\u00e2te.');
@@ -14818,7 +14820,7 @@ function showEvolutionModalRoutine() {
     if (!safeGetItem('niyyah_evolution_path')) safeSetItem('niyyah_evolution_path', 'routine');
     safeSetItem('niyyah_evolution_date', String(Date.now()));
     safeSetItem('niyyah_motivation', 'sacraliser');
-    localStorage.removeItem('niyyah_welcome_shown');
+    safeRemoveItem('niyyah_welcome_shown');
     ov.remove();
     if (typeof renderLevel === 'function' && typeof currentLevel !== 'undefined') renderLevel(currentLevel);
     if (typeof updateSanctuaireMoment === 'function') updateSanctuaireMoment();
@@ -15261,7 +15263,7 @@ function _aidBootInner() {
       console.log('[Aid] greg guard:', evt.key, 'day1=' + gregDay1Str, 'elapsed=' + elapsed, 'max=' + maxDays);
       if (elapsed >= maxDays) {
         console.log('[Aid] event expired (greg guard) — cutting off');
-        try { localStorage.removeItem(gKey); } catch(e) {}
+        try { safeRemoveItem(gKey); } catch(e) {}
         evt = null;
       }
     }
@@ -15799,7 +15801,7 @@ function _regardeShowQuestion(content, question) {
 
 function _updateRegardStreak() {
   var raw = {};
-  try { raw = JSON.parse(localStorage.getItem('niyyah_regards_streak') || '{}'); } catch(e) {}
+  try { raw = JSON.parse(safeGetItem('niyyah_regards_streak') || '{}'); } catch(e) {}
   var today = todayKey();
   if (raw.lastDate === today) return;
   var yesterday = getDateMinus(today, 1);
@@ -15813,7 +15815,7 @@ function _updateRegardStreak() {
 }
 function getRegardStreak() {
   try {
-    var raw = JSON.parse(localStorage.getItem('niyyah_regards_streak') || '{}');
+    var raw = JSON.parse(safeGetItem('niyyah_regards_streak') || '{}');
     if (raw.lastDate === todayKey() || raw.lastDate === getDateMinus(todayKey(), 1)) return raw.count || 0;
     return 0;
   } catch(e) { return 0; }
@@ -15939,7 +15941,7 @@ function _regardeMemorise(btn) {
   var ref = btn.getAttribute('data-ref');
   if (!ref) return;
   var arr = [];
-  try { arr = JSON.parse(localStorage.getItem('niyyah_versets_memorises') || '[]'); } catch(e) {}
+  try { arr = JSON.parse(safeGetItem('niyyah_versets_memorises') || '[]'); } catch(e) {}
   if (arr.some(function(v) { return v.ref === ref; })) {
     btn.classList.add('is-active');
     btn.innerHTML = _svgMemoActif;
@@ -16897,7 +16899,7 @@ function _updateScannerQuotaHint() {
   if (!el) return;
   var _prem = (typeof isPremium === 'function' && isPremium());
   var quota = [];
-  try { quota = JSON.parse(localStorage.getItem('niyyah_scanner_quota') || '[]'); } catch(e) {}
+  try { quota = JSON.parse(safeGetItem('niyyah_scanner_quota') || '[]'); } catch(e) {}
   var _windowMs = _prem ? 86400000 : 7 * 86400000;
   var _cutoff = new Date(Date.now() - _windowMs).toISOString();
   quota = quota.filter(function(ts) { return ts > _cutoff; });
@@ -16911,7 +16913,7 @@ function _updateScannerQuotaHint() {
 async function scannerCapture() {
   // Quota scanner : gratuit 3/semaine, premium 3/jour
   var _prem = (typeof isPremium === 'function' && isPremium());
-  var _sq = []; try { _sq = JSON.parse(localStorage.getItem('niyyah_scanner_quota') || '[]'); } catch(e) { _sq = []; }
+  var _sq = []; try { _sq = JSON.parse(safeGetItem('niyyah_scanner_quota') || '[]'); } catch(e) { _sq = []; }
   var _windowMs = _prem ? 86400000 : 7 * 86400000;
   var _cutoff = new Date(Date.now() - _windowMs).toISOString();
   _sq = _sq.filter(function(ts){ return ts > _cutoff; });
@@ -17353,7 +17355,7 @@ function openVueRituel(prayer) {
     if (it.id === 'tasbih' || it.id === 'istighfar') {
       var _sk = it.id === 'tasbih' ? 'tasbih_' + todayKey() + '_' + prayer : 'istighfar_' + todayKey();
       var _dc = 0;
-      try { var _dr = JSON.parse(localStorage.getItem(_sk) || '{}'); if (_dr.date === todayKey()) _dc = _dr.count || 0; } catch(e) {}
+      try { var _dr = JSON.parse(safeGetItem(_sk) || '{}'); if (_dr.date === todayKey()) _dc = _dr.count || 0; } catch(e) {}
       _dhikrCount = '<div style="font-size:12px;font-style:italic;color:#C8A84A;margin-top:2px;">' + (_dc >= 100 ? '100 \u2713' : _dc + ' / 100') + '</div>';
     }
     const sub = it.sub ? '<div class="sub">' + it.sub + '</div>' : '';
@@ -18485,7 +18487,7 @@ const SIRA = {
   },
   markTissue(num) {
     var arr = [];
-    try { arr = JSON.parse(localStorage.getItem('sira_tissues') || '[]'); } catch(e) {}
+    try { arr = JSON.parse(safeGetItem('sira_tissues') || '[]'); } catch(e) {}
     if (arr.indexOf(num) === -1) arr.push(num);
     safeSetItem('sira_tissues', JSON.stringify(arr));
     if (!state['sira']) {
@@ -18494,11 +18496,11 @@ const SIRA = {
     }
   },
   getTissuesCount() {
-    try { return JSON.parse(localStorage.getItem('sira_tissues') || '[]').length; } catch(e) { return 0; }
+    try { return JSON.parse(safeGetItem('sira_tissues') || '[]').length; } catch(e) { return 0; }
   },
   isRdvOfDayRead() {
     var num = this.getCurrentRdvNum();
-    try { return JSON.parse(localStorage.getItem('sira_tissues') || '[]').indexOf(num) !== -1; } catch(e) { return false; }
+    try { return JSON.parse(safeGetItem('sira_tissues') || '[]').indexOf(num) !== -1; } catch(e) { return false; }
   },
   _ensureOverlay() {
     var ov = document.getElementById('sira-overlay');
@@ -18549,7 +18551,7 @@ const SIRA = {
   renderList() {
     var max = this.getCurrentRdvNum();
     var tissues = [];
-    try { tissues = JSON.parse(localStorage.getItem('sira_tissues') || '[]'); } catch(e) {}
+    try { tissues = JSON.parse(safeGetItem('sira_tissues') || '[]'); } catch(e) {}
     var h = '';
     h += '<div onclick="SIRA.openDetail()" style="position:absolute;top:16px;left:16px;font-size:28px;font-weight:300;color:#C8A84A;cursor:pointer;">\u2039</div>';
     h += '<div style="text-align:center;font-family:Cormorant Garamond,serif;font-size:24px;font-style:italic;color:#FAF7EE;margin:20px 0 8px;">Tous les rendez-vous tiss\u00e9s</div>';
