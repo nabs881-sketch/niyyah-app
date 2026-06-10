@@ -33,7 +33,7 @@
       "id": "voeux_adha_05",
       "style": "Formel et respectueux",
       "message": "Salam aleykoum cher(e) {prenom},\n\nÀ l'occasion de l'Aïd al-Adha, je te souhaite ainsi qu'à ta famille la plus belle des fêtes. Que Allâh agrée vos efforts et vos sacrifices.\n\nAïd Moubarak.",
-      "message_generique": "Salam aleykoum cher(e) À l'occasion de l'Aïd al-Adha, je te souhaite ainsi qu'à ta famille la plus belle des fêtes. Que Allâh agrée vos efforts et vos sacrifices.\n\nAïd Moubarak."
+      "message_generique": "Salam aleykoum.\n\nÀ l'occasion de l'Aïd al-Adha, je te souhaite ainsi qu'à ta famille la plus belle des fêtes. Que Allâh agrée vos efforts et vos sacrifices.\n\nAïd Moubarak."
     },
     {
       "id": "voeux_adha_06",
@@ -89,13 +89,13 @@
       "id": "voeux_fitr_04",
       "style": "Familial",
       "message": "Cher(e) {prenom},\n\nAïd Moubarak à toi et toute ta famille. Que Allâh préserve vos liens et accepte vos efforts de ce Ramadan béni.\n\nTaqabbala-llâhu minnâ wa minkum.",
-      "message_generique": "Aïd Moubarak à toi et aux tiens et toute ta famille. Que Allâh préserve vos liens et accepte vos efforts de ce Ramadan béni.\n\nTaqabbala-llâhu minnâ wa minkum."
+      "message_generique": "Aïd Moubarak à toi et à toute ta famille. Que Allâh préserve vos liens et accepte vos efforts de ce Ramadan béni.\n\nTaqabbala-llâhu minnâ wa minkum."
     },
     {
       "id": "voeux_fitr_05",
       "style": "Formel",
       "message": "Salam aleykoum cher(e) {prenom},\n\nÀ l'occasion de l'Aïd al-Fitr, je te souhaite à toi et aux tiens une fête remplie de joie, de paix et de barakah.\n\nAïd Moubarak.",
-      "message_generique": "Salam aleykoum cher(e) À l'occasion de l'Aïd al-Fitr, je te souhaite à toi et aux tiens une fête remplie de joie, de paix et de barakah.\n\nAïd Moubarak."
+      "message_generique": "Salam aleykoum.\n\nÀ l'occasion de l'Aïd al-Fitr, je te souhaite à toi et aux tiens une fête remplie de joie, de paix et de barakah.\n\nAïd Moubarak."
     },
     {
       "id": "voeux_fitr_06",
