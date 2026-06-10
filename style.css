@@ -4643,20 +4643,21 @@ to {
   top: calc(16px + var(--safe-top, 0px));
   left: 50%;
   transform: translateX(-50%) translateY(-20px);
-  background: rgba(44,46,52,0.98);
-  color: #E8DCC0;
+  background: linear-gradient(180deg, rgba(36,32,28,0.98) 0%, rgba(26,23,21,0.98) 100%);
+  color: #EBDBB0;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 14px;
+  font-size: 15px;
   font-style: italic;
   font-weight: 500;
-  padding: 10px 20px;
-  border: 1px solid rgba(200,168,75,0.25);
-  border-radius: 20px;
+  letter-spacing: 0.3px;
+  padding: 12px 26px;
+  border: 1px solid rgba(200,168,75,0.32);
+  border-radius: 24px;
   z-index: 9999;
   opacity: 0;
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.22,1,0.36,1);
   pointer-events: none;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 34px rgba(0,0,0,0.5), 0 0 22px rgba(200,168,75,0.12), inset 0 1px 0 rgba(255,228,175,0.10);
 }
 .defi-toast-daily.show {
   opacity: 1;
