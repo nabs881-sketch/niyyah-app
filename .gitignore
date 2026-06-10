@@ -4,3 +4,10 @@
 !.dev.vars.example
 .env*
 !.env.example
+
+# poids mort
+node_modules/
+_archive/
+backup/
+AUDIT_*.json
+SAMPLING_*.json
