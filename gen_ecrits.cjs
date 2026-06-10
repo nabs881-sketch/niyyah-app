@@ -314,27 +314,35 @@ async function main() {
 
   // 20. Aïd module
   const aid = tryLoad('data/events/aid_module_complet.json');
-  if (aid) {
+  if (aid && aid.events) {
     const s = [title('Module Aïd')];
-    const walk = (obj, depth) => {
-      if (!obj || typeof obj !== 'object') return;
-      if (Array.isArray(obj)) {
-        obj.forEach((item, i) => {
-          if (typeof item === 'string') s.push(p(`• ${item}`));
-          else if (typeof item === 'object') {
-            const t = item.titre_fr || item.titre || item.nom_fr || item.fr || `#${i+1}`;
-            s.push(depth === 0 ? h2(t) : h3(t));
-            ['texte_fr','texte','fr','description','source','message'].forEach(f => { if (item[f]) s.push(p(item[f])); });
-            Object.keys(item).forEach(k => { if (Array.isArray(item[k])) walk(item[k], depth+1); });
-          }
+    const FIELDS = ['texte_ar','transliteration','traduction','translation','texte_fr','texte','fr','en','sens','contexte','description','message','reponse','detail'];
+    const label = (o, i) => o.titre_fr || o.titre || o.nom_fr || o.reference || o.occasion || o.question || o.id || ('#' + (i + 1));
+    const fields = (o) => {
+      FIELDS.forEach(f => { if (typeof o[f] === 'string' && o[f].trim()) s.push(p(o[f])); });
+      if (typeof o.source === 'string') s.push(pItalic('Source : ' + o.source));
+      if (typeof o.grade === 'string') s.push(pItalic('Grade : ' + o.grade));
+    };
+    const walk = (node, depth) => {
+      if (Array.isArray(node)) {
+        node.forEach((it, i) => {
+          if (it == null) return;
+          if (typeof it !== 'object') { s.push(p('• ' + it)); return; }
+          s.push(h3(label(it, i)));
+          fields(it);
+          Object.keys(it).forEach(k => { if (it[k] && typeof it[k] === 'object') walk(it[k], depth + 1); });
         });
-      } else {
-        Object.keys(obj).forEach(k => {
-          if (Array.isArray(obj[k])) { s.push(h2(k)); walk(obj[k], depth+1); }
+      } else if (node && typeof node === 'object') {
+        fields(node);
+        Object.keys(node).forEach(k => {
+          if (node[k] && typeof node[k] === 'object') { s.push(pBold(k)); walk(node[k], depth + 1); }
         });
       }
     };
-    walk(aid, 0);
+    Object.keys(aid.events).forEach(ek => {
+      s.push(h2(aid.events[ek].name_fr || ek));
+      walk(aid.events[ek], 1);
+    });
     await saveDoc('aid_module.docx', s);
   }
 
