@@ -48,6 +48,7 @@ if (typeof Sentry !== 'undefined') {
 }
 window.testSentry = function() { throw new Error('Niyyah Sentry test — this is intentional'); };
 const NIYYAH_DEBUG = false;
+if (!NIYYAH_DEBUG) { console.log = function(){}; console.debug = function(){}; }
 function niyyahIcon(type, size) {
   var s = size || 20;
   var h = '<svg viewBox="0 0 24 24" width="'+s+'" height="'+s+'" fill="none" stroke="#C8A84A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">';
