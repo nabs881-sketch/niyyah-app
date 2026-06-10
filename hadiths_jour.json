@@ -238,7 +238,7 @@
     "theme": "Limites",
     "texte_ar": "إِنَّ اللَّهَ تَعَالَى فَرَضَ فَرَائِضَ",
     "texte_fr": "Allah a imposé des obligations, ne les négligez pas. Il a fixé des limites, ne les transgressez pas. Il a interdit des choses, n'en approchez pas.",
-    "source": "Daraqutni · Hadith 30 An-Nawawi",
+    "source": "An-Nawawî 40 (n°30), Ad-Dâraqutnî — hasan selon An-Nawawî (gradation discutée : chaîne jugée faible par plusieurs critiques).",
     "degre": "hasan"
   },
   {
@@ -374,7 +374,7 @@
     "theme": "Auto-examen",
     "texte_ar": "الْكَيِّسُ مَنْ دَانَ نَفْسَهُ وَعَمِلَ لِمَا بَعْدَ الْمَوْتِ",
     "texte_fr": "L’homme avisé est celui qui se juge lui-même et œuvre pour ce qui suit la mort. L’incapable est celui qui suit ses passions et compte sur Allah sans agir.",
-    "source": "Tirmidhi 2459 — hasan",
+    "source": "Tirmidhî 2459 — hasan selon Tirmidhî (gradation discutée : chaîne via Abû Bakr ibn Abî Maryam contestée). Via Shaddâd ibn Aws.",
     "degre": "hasan"
   },
   {
@@ -742,8 +742,8 @@
     "theme": "Humilité",
     "texte_ar": "اللَّهُمَّ أَحْيِنِي مِسْكِينًا",
     "texte_fr": "Ô Allah, fais-moi vivre humble, fais-moi mourir humble, et ressuscite-moi dans le groupe des humbles.",
-    "source": "Tirmidhi 2352, Ibn Majah 4126",
-    "degre": "hasan"
+    "source": "Tirmidhî 2352, Ibn Mâja 4126 — da'îf (contesté). Le sens « humble devant Allah » reste valable.",
+    "degre": "da'îf"
   },
   {
     "jour": 94,
@@ -878,7 +878,7 @@
     "theme": "Salam",
     "texte_ar": "السَّلَامُ قَبْلَ الْكَلَامِ",
     "texte_fr": "Le salam précède la parole.",
-    "source": "Tabarânî (al-Awsat) · Authentifié hasan par Al-Albânî (Silsila Sahîha)",
+    "source": "At-Tabarânî (al-Awsat) — hasan (Al-Albânî, Silsila Sahîha). [Réf « Tirmidhî 2699 » erronée, corrigée.]",
     "degre": "hasan"
   },
   {
@@ -1054,7 +1054,7 @@
     "theme": "Mort",
     "texte_ar": "كَفَى بِالْمَوْتِ وَاعِظًا",
     "texte_fr": "La mort suffit comme prédicateur.",
-    "source": "Parole de 'Ammâr ibn Yâsir (athar) — Ahmad (az-Zuhd), Ibn Abî ad-Dunyâ · Statut : athar, non hadith prophétique",
+    "source": "Parole de Compagnon (athar) — rapportée de 'Ammâr ibn Yâsir et d'Ibn Mas'ûd, sahîh en mawqûf (Ahmad, az-Zuhd ; Ibn Abî ad-Dunyâ, al-Yaqîn). La version attribuée au Prophète ﷺ est faible.",
     "degre": "athar"
   },
   {
@@ -1175,7 +1175,7 @@
     "theme": "Excellence",
     "texte_ar": "إِنَّ اللَّهَ يُحِبُّ إِذَا عَمِلَ أَحَدُكُمْ عَمَلًا أَنْ يُتْقِنَهُ",
     "texte_fr": "Allah aime, quand l'un de vous accomplit un travail, qu'il le fasse avec excellence.",
-    "source": "Bayhaqî (Shu'ab al-Îmân 4929), Abû Ya'lâ · Authentifié hasan par Al-Albânî (Silsila Sahîha 1113)",
+    "source": "Al-Bayhaqî (Shu'ab al-Îmân 4929), Abû Ya'lâ — hasan (Al-Albânî, Silsila Sahîha 1113).",
     "degre": "hasan"
   },
   {
@@ -1207,7 +1207,7 @@
     "theme": "Promesse",
     "texte_ar": "الْعِدَةُ دَيْنٌ",
     "texte_fr": "La promesse est une dette.",
-    "source": "Maxime — attribution prophétique non confirmée (ne pas présenter comme hadith authentique)",
+    "source": "Adage répandu — l'attribution au Prophète ﷺ n'est pas authentiquement établie.",
     "degre": "maxime"
   },
   {
@@ -1263,7 +1263,7 @@
     "theme": "Sobriété",
     "texte_ar": "لَا تُسْرِفْ فِي الْوُضُوءِ وَلَوْ كُنْتَ عَلَى نَهَرٍ جَارٍ",
     "texte_fr": "Le Prophète ﷺ passa près de Sa'd qui faisait ses ablutions. Il dit : Quel gaspillage est-ce là, Sa'd ? — Y a-t-il gaspillage dans les ablutions ? — Oui, même si tu es au bord d'une rivière qui coule.",
-    "source": "Ibn Majah 425, Ahmad 7065 · da'îf (gradation contestée)",
+    "source": "Ibn Mâja 425, Ahmad — da'îf (gradation contestée).",
     "degre": "da'îf"
   },
   {
@@ -1391,8 +1391,8 @@
     "theme": "Éducation",
     "texte_ar": "مَا نَحَلَ وَالِدٌ وَلَدًا مِنْ نَحْلٍ أَفْضَلَ مِنْ أَدَبٍ حَسَنٍ",
     "texte_fr": "Aucun père n'a donné à son enfant un cadeau meilleur que la bonne éducation.",
-    "source": "Tirmidhi 1952",
-    "degre": "hasan"
+    "source": "Tirmidhî 1952 — da'îf (Tirmidhî, adh-Dhahabî, al-Albânî). Sens vertueux mais hadith non solide.",
+    "degre": "da'îf"
   },
   {
     "jour": 175,
