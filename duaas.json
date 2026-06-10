@@ -1,7 +1,7 @@
 {
   "module": "DUAAS",
   "version": "2.0",
-  "items_count": 248,
+  "items_count": 245,
   "introduction": {
     "fr": "Ce recueil de du'âs distingue plusieurs catégories : les invocations textuelles transmises du Prophète ﷺ (la majorité), les versets coraniques utilisés comme du'âs, les paroles authentifiées des Compagnons et savants pieux (athar), et certaines du'âs composées librement à partir de l'esprit du Coran et de la sunna — celles-ci sont clairement signalées comme telles (type: inspired). Toutes sont licites à réciter ; seules les premières (prophetic_authentic) sont sunna au sens strict."
   },
@@ -3673,7 +3673,7 @@
       "occasion": "Après une session d'étude, après avoir lu, après avoir écouté un enseignement.",
       "recit": "Abu Hurayra rapporte du Prophète ﷺ. Phrase d'une structure remarquable. Trois mouvements qui forment un cycle complet. Premier — infa'nī bimā 'allamtanī. Fais-moi profiter de ce que Tu m'as enseigné. Tu reconnais que la science déjà acquise peut ne pas profiter. Combien de savants ne profitent pas de leur science ? Ils savent mais ne pratiquent pas. Ils enseignent mais ne deviennent pas meilleurs. La science qui n'est pas vécue est un poids, pas un bien. Le Prophète ﷺ a souvent cherché refuge contre la science qui ne profite pas. Ici, l'inverse — demande que la science profite. Que ce que je sais transforme. Deuxième — 'allimnī mā yanfa'unī. Enseigne-moi ce qui me profitera. Demande inversée. Tu ne demandes pas seulement à profiter de ce que tu sais. Tu demandes aussi à apprendre ce qui te servira. Beaucoup étudient ce qui ne sert pas — par curiosité, par mode, par obligation académique. La connaissance accumulée pèse sans nourrir. Tu demandes que ce qu'Allah te fasse rencontrer comme savoir soit celui qui te servira vraiment. Troisième — zidnī 'ilmā. Augmente-moi en science. La demande qu'on a vue au jour 100. La science n'a pas de limite. Tu ne te contentes jamais. Tu demandes toujours plus. Trois mouvements qui forment un cycle complet. Profite de ce que tu as. Apprends ce qui te profitera. Continue d'augmenter. C'est la dynamique parfaite de l'apprenant. Pas de stagnation. Pas de gaspillage. Pas d'arrêt. Cette du'a, dite à la fin de chaque session d'apprentissage, scelle ce qu'on a appris et ouvre la suite. Elle est particulièrement précieuse pour les étudiants — chaque chapitre lu peut se terminer par elle. Avec le temps, la pratique transforme la relation à la connaissance.",
       "source": "Ibn Majah 251, Tirmidhi",
-      "authenticite": "Sahih",
+      "authenticite": "Hasan",
       "benefice": "Disposer du cycle parfait de l'apprenant — profiter, apprendre, augmenter. Sceller chaque session d'étude.",
       "jour_original": 233,
       "type": "prophetic_authentic"
@@ -3823,24 +3823,6 @@
       "type": "prophetic_authentic"
     },
     {
-      "jour": 215,
-      "id": "duaa_215",
-      "titre": "Pour l'attention dans la prière",
-      "categorie": "Prière",
-      "moment": "Pendant la prière",
-      "duree": "court",
-      "arabe": "اللَّهُمَّ أَعِنِّي عَلَى ذِكْرِكَ وَشُكْرِكَ وَحُسْنِ عِبَادَتِكَ",
-      "phonetique": "Allāhumma a'innī 'alā dhikrika wa shukrika wa husni 'ibādatik",
-      "traduction": "Ô Allah, aide-moi à T'évoquer, à Te remercier, et à bien T'adorer.",
-      "occasion": "Après chaque prière, avant le salut final. Le Prophète ﷺ l'a explicitement enseignée à Mu'âdh.",
-      "recit": "Mu'âdh ibn Jabal rapporte que le Prophète ﷺ lui a pris la main un jour et a dit : ô Mu'âdh, par Allah, je t'aime. Mu'âdh, ne manque jamais à la fin de chaque prière de dire cette du'a. Quelle déclaration. Le Prophète ﷺ donne une du'a précieuse précédée par une déclaration d'amour personnelle. Mu'âdh, je t'aime — donc je te donne cette du'a. Trois demandes en parallèle. A'innī 'alā dhikrik — aide-moi à T'évoquer. Pas seulement que je dise Ton nom — que Tu m'aides à le faire. Parce que sans Son aide, on oublie. La constance du dhikr n'est pas une discipline humaine — c'est un don. Tu peux essayer de te discipliner à dire subhan Allah tout le temps — tu oublieras. Mais si Allah t'aide, tu deviens dhâkir — quelqu'un qui mentionne. Wa shukrika — et à Te remercier. Pareil. La gratitude n'est pas une compétence — c'est une grâce. Sans Son aide, on oublie même de remercier pour les choses évidentes. Wa husni 'ibādatik — et à bien T'adorer. Husn — la qualité, l'excellence. Pas seulement T'adorer — bien T'adorer. La différence entre adoration et bonne adoration est immense. Tu peux prier toute ta vie sans bien prier. Tu peux jeûner sans bien jeûner. Tu peux donner sans bien donner. Le husn est la qualité qui transforme. Et cette qualité aussi est demandée à Lui. Trois aides demandées qui couvrent toute la vie spirituelle. Évocation, gratitude, bonne adoration. Tu ne peux rien faire de cela par toi-même. Mais avec Son aide, tout est possible.",
-      "source": "Abu Dawud 1522, Ahmad 22119",
-      "authenticite": "Sahih",
-      "benefice": "Disposer de la du'a aimée du Prophète ﷺ qu'il a enseignée à Mu'âdh par amour personnel. Demander l'aide pour les trois bases de la vie spirituelle.",
-      "jour_original": 254,
-      "type": "prophetic_authentic"
-    },
-    {
       "jour": 216,
       "id": "duaa_216",
       "titre": "Quand on est traversé par un soupçon mauvais",
@@ -3931,24 +3913,6 @@
       "type": "prophetic_authentic"
     },
     {
-      "jour": 222,
-      "id": "duaa_222",
-      "titre": "Aide à se souvenir d'Allâh",
-      "categorie": "Émotions",
-      "moment": "Dans le sentiment d'invisibilité",
-      "duree": "moyen",
-      "arabe": "اللّهُمَّ أَعِنِّي عَلَى ذِكْرِكَ وَشُكْرِكَ وَحُسْنِ عِبَادَتِك",
-      "phonetique": "Allāhumma a‘innī ‘alā dhikrika wa shukrika wa husni ‘ibādatik",
-      "traduction": "Ô Allah, aide-moi à T'évoquer, à Te remercier, et à T'adorer de la meilleure manière.",
-      "occasion": "Quand on se sent oublié, ignoré, négligé par les humains.",
-      "recit": "Phrase libre qui s'enracine dans un verset coranique — fa'dhkurūnī adhkurkum. Évoquez-Moi, Je vous évoquerai. Allah dit qu'Il rendra le souvenir à ceux qui se souviennent. Le hadith qudsî va plus loin — celui qui M'évoque dans une assemblée, Je l'évoque dans une assemblée meilleure. Celui qui s'approche de Moi d'un empan, Je m'approche de lui d'une coudée. Allah répond toujours au-delà. La douleur d'être oublié est l'une des plus subtiles. Tu n'es pas attaqué. Tu n'es pas blessé directement. Tu es juste invisible. Les gens passent. Les invitations ne viennent pas. Les messages s'espacent. Tu te sens devenu transparent. Cette douleur est moderne mais elle vient d'une condition ancienne. Cette du'a est l'antidote. Tu reconnais d'abord la condition — les gens t'oublient. Tu ne le nies pas. Tu acceptes le fait. Et tu te tournes vers Quelqu'un qui n'oublie jamais. Yā man lā tansā man dhakarak — Toi qui n'oublies pas celui qui T'évoque. Allah n'oublie pas. Le mot nasiya — oublier — n'est jamais utilisé pour Allah dans son sens humain. Allah ne perd pas la mémoire. Il sait. Il se souvient. Tous les humains que les autres humains ont oubliés, Lui les connaît par leur nom. Tu peux être seul au monde — Lui te connaît. Et tu Lui demandes — évoque-moi quand les gens m'oublient. Demande tendre. Tu sais que Sa pensée sur toi compense largement l'oubli des autres. Si Lui pense à toi, peu importe si les humains t'oublient. Cette inversion remet l'oubli humain à sa juste place — pas dramatique. La pensée divine compte plus.",
-      "source": "Abu Dawud 1522 — Sahîh selon Albâni. Le Prophète ﷺ tenait la main de Mu'âdh ibn Jabal et lui disait : 'Par Allâh, je t'aime, Mu'âdh. Ne manque jamais de dire après chaque prière cette du'â.'",
-      "authenticite": "Sahih",
-      "benefice": "Sortir de la douleur de l'oubli par la pensée que Lui n'oublie pas. Inverser la dramatisation de l'invisibilité sociale.",
-      "jour_original": 276,
-      "type": "prophetic_authentic"
-    },
-    {
       "jour": 224,
       "id": "duaa_224",
       "titre": "Pour la sincérité dans les actes",
@@ -3965,24 +3929,6 @@
       "benefice": "Disposer d'une phrase courte qui vise la qualité essentielle de tout acte. Demander la pureté de l'intention.",
       "jour_original": 285,
       "type": "inspired"
-    },
-    {
-      "jour": 225,
-      "id": "duaa_225",
-      "titre": "Quand on sent son cœur s'éloigner du dhikr",
-      "categorie": "Foi",
-      "moment": "Quand on prend conscience qu'on L'a oublié",
-      "duree": "moyen",
-      "arabe": "اللّهُمَّ أَعِنِّي عَلَى ذِكْرِكَ وَشُكْرِكَ وَحُسْنِ عِبَادَتِك",
-      "phonetique": "Allāhumma a‘innī ‘alā dhikrika wa shukrika wa husni ‘ibādatik",
-      "traduction": "Ô Allah, aide-moi à T'évoquer, à Te remercier, et à T'adorer de la meilleure manière.",
-      "occasion": "Quand on réalise qu'on a passé des heures sans penser à Allah. Pour ceux qui s'absorbent dans la vie active.",
-      "recit": "Phrase libre qui s'enracine dans plusieurs versets coraniques. Allah dit : et évoque ton Seigneur quand tu oublies. Verset précieux. Allah reconnaît que les humains oublient. Il ne le reproche pas. Il indique la solution — quand tu prends conscience de l'oubli, tu reviens. Tu te souviens. Tu Le mentionnes. L'oubli est humain. Le retour est musulman. Beaucoup de croyants modernes vivent par alternance — moments de présence et longues plages d'oubli. Tu pries — tu es présent. Tu sors de la prière — tu plonges dans tes affaires. Quatre heures plus tard, tu prends conscience que tu n'as pas pensé à Allah une seule fois. Cette prise de conscience est précieuse. Beaucoup ne la font même pas. Ils passent des journées entières sans Le mentionner et n'en sont même pas troublés. Cette du'a est pour ceux qui sont troublés. Tu prends conscience. Tu en es peiné. Tu demandes que cet oubli ne se reproduise pas — ou que s'il se reproduit, Allah te ramène par un rappel intérieur. Première demande — dhakkirnī bika kullamā nasītuk. Rappelle-moi à Toi chaque fois que je T'oublie. Phrase d'une beauté singulière. Tu demandes le rappel. Que ce soit un coup au cœur qui te fasse pause. Un événement qui te ramène. Une parole entendue qui te traverse. Une chute qui te réveille. Tous ces rappels viennent d'Allah quand Il veut qu'on revienne à Lui. Tu en demandes l'envoi régulier. Deuxième — waj'alnī mina adh-dhākirīn. Fais de moi de ceux qui T'évoquent. Pas seulement quelqu'un qui revient — quelqu'un qui ne s'éloigne pas. Cette catégorie — les dhâkirîn — est mentionnée plusieurs fois dans le Coran avec une promesse de bonheur. Tu veux y être inscrit.",
-      "source": "Abu Dawud 1522 — Sahîh selon Albâni. La même du'â que celle enseignée à Mu'âdh — à réciter quand on sent que le cœur s'endort.",
-      "authenticite": "Sahih (versets coraniques)",
-      "benefice": "Demander le rappel quand on oublie. Aspirer à la catégorie des dhâkirîn — ceux qui Le mentionnent constamment.",
-      "jour_original": 287,
-      "type": "prophetic_authentic"
     },
     {
       "jour": 226,
