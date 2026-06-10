@@ -83,14 +83,14 @@
           "occasion": "Le jour d'Arafat (veille)",
           "texte_ar": "لاَ إِلَهَ إِلاَّ اللهُ وَحْدَهُ لاَ شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ",
           "texte_fr": "Il n'y a de divinité qu'Allâh, seul, sans associé. À Lui la souveraineté, à Lui la louange, et Il est puissant sur toute chose.",
-          "source": "Hadith Tirmidhî : 'La meilleure du'â est celle du jour d'Arafat, et la meilleure chose que j'ai dite, moi et les prophètes avant moi, est...'"
+          "source": "Tirmidhî 3585 — hasan selon al-Albânî (Sahîh al-Jâmi' 3274) ; Tirmidhî a noté une faiblesse dans la chaîne, corroborée par d'autres voies."
         },
         {
           "id": "aid_adha_dua_005",
           "occasion": "Rencontre Aïd avec les autres",
           "texte_ar": "تَقَبَّلَ اللهُ مِنَّا وَمِنْكُمْ",
           "texte_fr": "Que Allâh accepte de nous et de vous.",
-          "source": "Formule rapportée par Ibn Hibbân, dite entre Compagnons le jour de l'Aïd"
+          "source": "Pratique des Compagnons rapportée par Jubayr ibn Nufayr (al-Mahâmiliyât) — chaîne hasan selon Ibn Hajar (Fath al-Bârî 2/446). Ce n'est pas une parole prophétique mais un usage des Sahaba le jour de l'Aïd."
         },
         {
           "id": "aid_adha_dua_006",
@@ -272,7 +272,7 @@
           "texte_ar": "اللهُ أَكْبَرُ كَبِيرًا، وَالْحَمْدُ لِلَّهِ كَثِيرًا، وَسُبْحَانَ اللهِ بُكْرَةً وَأَصِيلاً، لاَ إِلَهَ إِلاَّ اللهُ وَحْدَهُ، صَدَقَ وَعْدَهُ، وَنَصَرَ عَبْدَهُ، وَأَعَزَّ جُنْدَهُ، وَهَزَمَ الأَحْزَابَ وَحْدَهُ، لاَ إِلَهَ إِلاَّ اللهُ، وَاللهُ أَكْبَرُ",
           "transliteration": "Allâhu Akbar kabîrâ, wa-l-hamdu li-Llâhi kathîrâ, wa subhâna-Llâhi bukratan wa asîlâ. Lâ ilâha illâ-Llâh wahdah, sadaqa wa'dah, wa nasara 'abdah, wa a'azza jundah, wa hazama-l-ahzâba wahdah. Lâ ilâha illâ-Llâh, wa-Llâhu Akbar.",
           "traduction": "Allâh est le plus Grand, grandement, et la louange à Allâh, abondamment, et gloire à Allâh, matin et soir. Il n'y a de divinité qu'Allâh, seul. Il a tenu Sa promesse, secouru Son serviteur, fortifié Son armée, et défait les coalitions à Lui seul. Il n'y a de divinité qu'Allâh, et Allâh est le plus Grand.",
-          "source": "Formule rapportée par le Prophète ﷺ le jour de la conquête de La Mecque"
+          "source": "Formule élargie des takbîrât, compilée par les savants (école shâfi'ite, al-Umm). Ses composantes sont authentiques — le « sadaqa wa'dahu wa nasara 'abdahu wa hazama-l-ahzâb » est ce que le Prophète ﷺ a dit sur as-Safâ (rapporté par Muslim). Aucune formulation précise des takbîrât d'Aïd n'est fixée dans la Sunna."
         }
       ],
       "meditations": [
@@ -462,8 +462,8 @@
         {
           "id": "aid_fitr_dua_003",
           "occasion": "Pour Allâh accepte le Ramadan",
-          "texte_ar": "اللَّهُمَّ تَقَبَّلْ مِنَّا، إِنَّكَ أَنْتَ السَّمِيعُ الْعَلِيمُ",
-          "texte_fr": "Ô Allâh, accepte de nous. Tu es l'Audient, l'Omniscient.",
+          "texte_ar": "رَبَّنَا تَقَبَّلْ مِنَّا إِنَّكَ أَنْتَ السَّمِيعُ الْعَلِيمُ",
+          "texte_fr": "Notre Seigneur, accepte de nous. Tu es l'Audient, l'Omniscient.",
           "source": "Coran 2:127"
         },
         {
@@ -471,7 +471,7 @@
           "occasion": "Rencontre Aïd",
           "texte_ar": "تَقَبَّلَ اللهُ مِنَّا وَمِنْكُمْ",
           "texte_fr": "Que Allâh accepte de nous et de vous.",
-          "source": "Formule des Sahaba (Ibn Hibbân)"
+          "source": "Pratique des Compagnons rapportée par Jubayr ibn Nufayr (al-Mahâmiliyât) — chaîne hasan selon Ibn Hajar (Fath al-Bârî 2/446). Ce n'est pas une parole prophétique mais un usage des Sahaba le jour de l'Aïd."
         },
         {
           "id": "aid_fitr_dua_005",
@@ -650,7 +650,7 @@
         },
         {
           "id": "arafat_med_003",
-          "texte": "Le Prophète ﷺ a dit : 'La meilleure du'â est celle du jour d'Arafat.' (Tirmidhî 3585, hasan selon Tirmidhî, chaîne contestée par certains). Aujourd'hui, multiplie tes du'âs. Allâh ouvre une porte qu'Il ferme demain."
+          "texte": "Le Prophète ﷺ a dit : 'La meilleure du'â est celle du jour d'Arafat.' (Tirmidhî 3585, hasan selon al-Albânî ; Tirmidhî a noté une faiblesse de chaîne, corroborée par d'autres voies). Aujourd'hui, multiplie tes du'âs. Allâh ouvre une porte qu'Il ferme demain."
         },
         {
           "id": "arafat_med_004",
@@ -679,7 +679,7 @@
           "occasion": "La meilleure du'â selon le Prophète ﷺ",
           "texte_ar": "لاَ إِلَهَ إِلاَّ اللهُ وَحْدَهُ لاَ شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ",
           "texte_fr": "Il n'y a de divinité qu'Allâh, seul, sans associé. À Lui la souveraineté, à Lui la louange, et Il est puissant sur toute chose.",
-          "source": "Hadith Tirmidhî : 'La meilleure du'â est celle d'Arafat (Tirmidhî 3585), et la meilleure chose que j'ai dite, moi et les prophètes avant moi, est : Lâ ilâha illâ-Llâh wahdah lâ sharîka lah...'"
+          "source": "Tirmidhî 3585 — hasan selon al-Albânî (Sahîh al-Jâmi' 3274) ; Tirmidhî a noté une faiblesse dans la chaîne, corroborée par d'autres voies."
         }
       ],
       "verset_cle": {
