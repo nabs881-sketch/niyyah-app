@@ -180,16 +180,40 @@ async function main() {
   const bab = tryLoad('bab-nafs-content.json');
   if (bab) {
     const s = [title('Bab an-Nafs — Contenu')];
-    const portes = bab.portes || bab;
-    (Array.isArray(portes) ? portes : [portes]).forEach(porte => {
-      s.push(h2(porte.nom_fr || porte.id || ''));
-      if (porte.description_fr) s.push(p(porte.description_fr));
-      (porte.rappels || []).forEach((r, i) => {
-        s.push(h3(`Rappel ${i+1}`));
-        if (r.titre_fr) s.push(pBold(r.titre_fr));
-        if (r.texte_fr) s.push(p(r.texte_fr));
-        if (r.source) s.push(pItalic(`Source : ${r.source}`));
-      });
+    if (bab.notice) s.push(pItalic(bab.notice));
+    const SKIP = ['version','validated','lastUpdate','notice'];
+    const FIELDS = ['nameAr','ar','translit','fr','description','citation','texte_fr','texte','type','narrator','context','note','hadithRef','versetRef','hadithContemplation','transitionApres'];
+    const label = (o, k, i) => o.nameFr || o.titre_fr || o.nom_fr || o.name_fr || k || ('#' + (i + 1));
+    const emit = (o) => {
+      FIELDS.forEach(f => { if (typeof o[f] === 'string' && o[f].trim()) s.push(p(o[f])); });
+      if (typeof o.source === 'string') s.push(pItalic('Source : ' + o.source));
+      if (typeof o.grade === 'string') s.push(pItalic('Grade : ' + o.grade));
+    };
+    const walk = (node, depth, key) => {
+      if (Array.isArray(node)) {
+        node.forEach((it, i) => {
+          if (it && typeof it === 'object') {
+            s.push(depth <= 1 ? h3(label(it, key, i)) : pBold(label(it, key, i)));
+            emit(it);
+            Object.keys(it).forEach(k => { if (it[k] && typeof it[k] === 'object') walk(it[k], depth + 1, k); });
+          } else if (it != null) s.push(p('• ' + it));
+        });
+      } else if (node && typeof node === 'object') {
+        emit(node);
+        Object.keys(node).forEach(k => {
+          const v = node[k];
+          if (v && typeof v === 'object') { s.push(depth <= 1 ? h3(label(v, k, 0)) : pBold(label(v, k, 0))); walk(v, depth + 1, k); }
+        });
+      }
+    };
+    if (bab.concepts) { s.push(h2('Concepts')); walk(bab.concepts, 1, 'concepts'); }
+    Object.keys(bab).forEach(k => {
+      if (SKIP.includes(k) || k === 'concepts') return;
+      const v = bab[k];
+      if (v && typeof v === 'object' && !Array.isArray(v) && (v.nameFr || v.nom_fr || v.name_fr)) {
+        s.push(h2(v.nameFr || v.nom_fr || v.name_fr || k));
+        walk(v, 1, k);
+      }
     });
     await saveDoc('bab_an_nafs.docx', s);
   }
