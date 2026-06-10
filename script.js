@@ -9152,7 +9152,7 @@ function closeFreemium(e) {
 }
 function freemiumShowCode(){ var r=document.getElementById('freemium-code-row'); if(r) r.style.display='flex'; var i=document.getElementById('freemium-code-input'); if(i) i.focus(); }
 function freemiumBuy(){ freemiumShowCode(); showToast('Disponible au lancement \u2014 pendant la beta, entre ton code.'); }
-function freemiumActivate(){ var i=document.getElementById('freemium-code-input'); if(i && unlockPremium(i.value)){ alert('Niyyah+ activ\u00e9.'); location.reload(); } else { alert('Code invalide'); } }
+function freemiumActivate(){ var i=document.getElementById('freemium-code-input'); if(i && unlockPremium(i.value)){ v2ShowToast('Niyyah+ activ\u00e9 \u2726'); setTimeout(function(){ location.reload(); }, 1200); } else { v2ShowToast('Code invalide'); } }
 window.freemiumShowCode=freemiumShowCode; window.freemiumBuy=freemiumBuy; window.freemiumActivate=freemiumActivate;
 function showQuotaLimit(kind){
   var title, sub, hint;
@@ -12247,7 +12247,7 @@ function v2OpenSettings() {
       <div style="margin-top:14px;background:#1a1a1a;border:1px solid rgba(200,168,75,0.15);border-radius:12px;padding:16px;text-align:center;">
         ${isPremium()
           ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#C8A84A;margin-bottom:10px;">\u2726 Premium actif</div><button onclick="setPremium(false);location.reload();" style="padding:6px 16px;border-radius:8px;border:1px solid rgba(255,255,255,0.1);background:none;color:rgba(255,255,255,0.35);font-size:15px;cursor:pointer;">D\u00e9sactiver</button>'
-          : '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;color:#C8A84A;margin-bottom:12px;">\u2726 Niyyah Premium</div><div style="display:flex;gap:8px;justify-content:center;"><input id="premium-code-input" type="text" placeholder="Entrer votre code" style="flex:1;max-width:200px;padding:10px 14px;border-radius:10px;border:1px solid rgba(200,168,75,0.3);background:rgba(200,168,75,0.04);color:#E5E0DC;font-family:\'Cormorant Garamond\',serif;font-size:14px;outline:none;"><button onclick="var c=document.getElementById(\'premium-code-input\');if(unlockPremium(c.value)){alert(\'Premium activ\\u00e9.\');location.reload();}else{alert(\'Code invalide\');}" style="padding:10px 18px;border-radius:10px;border:none;background:#C8A84A;color:#2C2E32;font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:600;cursor:pointer;">Activer</button></div>'
+          : '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;color:#C8A84A;margin-bottom:12px;">\u2726 Niyyah Premium</div><div style="display:flex;gap:8px;justify-content:center;"><input id="premium-code-input" type="text" placeholder="Entrer votre code" style="flex:1;max-width:200px;padding:10px 14px;border-radius:10px;border:1px solid rgba(200,168,75,0.3);background:rgba(200,168,75,0.04);color:#E5E0DC;font-family:\'Cormorant Garamond\',serif;font-size:14px;outline:none;"><button onclick="var c=document.getElementById(\'premium-code-input\');if(unlockPremium(c.value)){v2ShowToast(\'Premium activ\\u00e9 \\u2726\');setTimeout(function(){location.reload();},1200);}else{v2ShowToast(\'Code invalide\');}" style="padding:10px 18px;border-radius:10px;border:none;background:#C8A84A;color:#2C2E32;font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:600;cursor:pointer;">Activer</button></div>'
         }
       </div>
 
@@ -13898,7 +13898,7 @@ function saveFinJourneeBontes() {
   var b2 = (document.getElementById('finjournee-b2') || {}).value || '';
   var b3 = (document.getElementById('finjournee-b3') || {}).value || '';
   var bontes = [b1, b2, b3].filter(function(s) { return s.trim().length > 0; });
-  if (bontes.length === 0) { alert('Écris au moins une bonté, ou tape Passer.'); return; }
+  if (bontes.length === 0) { v2ShowToast('Écris au moins une bonté, ou tape Passer.'); return; }
   _nAn('muhasaba_done');
   var today = todayKey();
   var entry = { id: 'finjournee_' + today, date: today, time: new Date().toISOString(), bontes: bontes, skipped_bontes: false, completed: false };
@@ -15942,14 +15942,14 @@ function _regardeMemorise(btn) {
   if (arr.some(function(v) { return v.ref === ref; })) {
     btn.classList.add('is-active');
     btn.innerHTML = _svgMemoActif;
-    alert('D\u00e9j\u00e0 m\u00e9moris\u00e9');
+    v2ShowToast('D\u00e9j\u00e0 m\u00e9moris\u00e9');
     return;
   }
   arr.push({ ref: ref, date_ajout: new Date().toISOString() });
   safeSetItem('niyyah_versets_memorises', JSON.stringify(arr));
   btn.classList.add('is-active');
   btn.innerHTML = _svgMemoActif;
-  alert('Verset ajout\u00e9');
+  v2ShowToast('Verset ajout\u00e9 \u2713');
 }
 window._regardeMemorise = _regardeMemorise;
 function _regardeDuaa() {
