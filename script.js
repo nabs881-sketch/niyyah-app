@@ -1311,8 +1311,8 @@ function loadDuaas(cb) {
     if (cb) cb(duaasData);
   }).catch(function(){ if (cb) cb([]); });
 }
-function getDuaaJourNum() { var p = parseInt(safeGetItem('niyyah_duaa_progress') || '1', 10); return ((p - 1) % 253) + 1; }
-function getDuaaJourPreview() { var n = getDuaaJourNum(); return { jour: n, total: 253 }; }
+function getDuaaJourNum() { var p = parseInt(safeGetItem('niyyah_duaa_progress') || '1', 10); return ((p - 1) % 245) + 1; }
+function getDuaaJourPreview() { var n = getDuaaJourNum(); return { jour: n, total: 245 }; }
 var GHIDAA_DATA = null;
 function loadGhidaa(cb) {
   if (GHIDAA_DATA) { if (cb) cb(GHIDAA_DATA); return; }
@@ -1470,7 +1470,7 @@ const LEVELS = [
     sections: [
       { icon: '📚', title: 'Étude islamique', items: [
         { id: 'hadith1', minVague: 3, label: '1er Hadith du jour', get sub() { var h = getHadithJourRule(); var t = (h.texte_fr || '').substring(0,50); return t ? t + '\u2026' : 'Une tradition du Proph\u00e8te \uFDFA'; }, arabic: '\u062D\u064E\u062F\u0650\u064A\u062B\u064C', paths: ['reconnecter','routine','sacraliser'], block: 'jour', category: 'science' },
-        { id: 'duaa_jour', minVague: 3, label: 'Du\u2019a du jour', get sub() { var d = getDuaaJourPreview(); return 'Jour ' + d.jour + '/253'; }, arabic: '\u062F\u064F\u0639\u064E\u0627\u0621', paths: ['reconnecter','routine','sacraliser'], block: 'jour', category: 'science' },
+        { id: 'duaa_jour', minVague: 3, label: 'Du\u2019a du jour', get sub() { var d = getDuaaJourPreview(); return 'Jour ' + d.jour + '/245'; }, arabic: '\u062F\u064F\u0639\u064E\u0627\u0621', paths: ['reconnecter','routine','sacraliser'], block: 'jour', category: 'science' },
         { id: 'sira', minVague: 3, label: 'S\u00eera du Proph\u00e8te \uFDFA', sub: 'Un rendez-vous chaque jour', arabic: '\u0627\u0644\u0633\u0651\u0650\u064A\u0631\u064E\u0629\u064F \u0627\u0644\u0646\u0651\u064E\u0628\u064E\u0648\u0650\u064A\u0651\u064E\u0629\u064F', paths: ['reconnecter','routine','sacraliser'], block: 'jour', category: 'science' },
         { id: 'quran_read', minVague: 3, label: 'Lecture du Coran', get sub() { return 'Verset ' + _getVersetProgress() + ' / 6236'; }, arabic: '\u0642\u0650\u0631\u064E\u0627\u0621\u064E\u0629\u064F \u0627\u0644\u0652\u0642\u064F\u0631\u0652\u0622\u0646\u0650', paths: ['routine','sacraliser'], block: 'jour', category: 'science' },
         { id: 'lisan', minVague: 3, label: 'Comprendre le Coran', sub: '1 mot par jour \u00b7 300 jours pour entendre', arabic: '\u0641\u064E\u0647\u0652\u0645\u064F \u0627\u0644\u0652\u0642\u064F\u0631\u0622\u0646', paths: ['reconnecter','routine','sacraliser'], block: 'jour', category: 'science' },
@@ -18187,7 +18187,7 @@ function openVueDuaaJour() {
     if (!data) { main.innerHTML = '<div style="text-align:center;padding:40px;color:#C8A84A;">Erreur de chargement</div>'; return; }
     var duaa = data.find(function(d) { return d.jour === jourNum; }) || data[0];
     main.innerHTML = '<div style="padding:20px 16px;text-align:center;">'
-      + '<div class="fiqh-categorie">' + (duaa.categorie || '').toUpperCase() + ' \u00b7 JOUR ' + jourNum + '/253</div>'
+      + '<div class="fiqh-categorie">' + (duaa.categorie || '').toUpperCase() + ' \u00b7 JOUR ' + jourNum + '/245</div>'
       + (duaa.arabe ? (duaa.arabe.charAt(0) === '(' ? '<div style="background:rgba(200,168,74,0.08);border-left:3px solid #C8A84A;padding:16px;margin-bottom:16px;text-align:left;direction:ltr;"><div style="font-size:12px;font-weight:700;color:#C8A84A;margin-bottom:8px;">\uD83D\uDCFF Pratique</div><div style="font-size:15px;line-height:1.7;color:rgba(240,234,214,0.9);font-style:italic;">' + duaa.arabe + '</div></div>' : '<div style="font-family:\'Amiri\',serif;font-size:22px;line-height:2;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:16px;">' + duaa.arabe + '</div>') : '')
       + (duaa.phonetique ? '<div style="font-size:13px;color:rgba(255,255,255,0.5);font-style:italic;margin-bottom:16px;">' + duaa.phonetique + '</div>' : '')
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;line-height:1.7;color:rgba(240,234,214,0.95);font-style:italic;margin-bottom:20px;">' + (duaa.traduction || '') + '</div>'
@@ -18203,7 +18203,7 @@ function openVueDuaaJour() {
 window.openVueDuaaJour = openVueDuaaJour;
 function validerDuaaJour() {
   var cur = parseInt(safeGetItem('niyyah_duaa_progress') || '1', 10);
-  if (cur >= 253) {
+  if (cur >= 245) {
     _showDuaaCycleModal();
     validerLecture('duaa_jour');
     return;
@@ -18218,7 +18218,7 @@ function _showDuaaCycleModal() {
   ov.innerHTML = '<div style="text-align:center;max-width:340px;">'
     + '<div style="font-size:48px;margin-bottom:20px;">\uD83C\uDF19</div>'
     + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:28px;font-weight:700;color:#C8A84A;line-height:1.4;margin-bottom:16px;">Tu as accompli un cycle complet</div>'
-    + '<div style="font-size:15px;color:rgba(240,234,214,0.8);line-height:1.6;margin-bottom:24px;">253 du\u2019as proph\u00e9tiques travers\u00e9es. Alhamdulill\u0101h.</div>'
+    + '<div style="font-size:15px;color:rgba(240,234,214,0.8);line-height:1.6;margin-bottom:24px;">245 du\u2019as proph\u00e9tiques travers\u00e9es. Alhamdulill\u0101h.</div>'
     + '<div style="font-family:\'Amiri\',serif;font-size:22px;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:8px;">\u0627\u0644\u0644\u0651\u064E\u0647\u064F\u0645\u0651\u064E \u062A\u064E\u0642\u064E\u0628\u0651\u064E\u0644\u0652 \u0645\u0650\u0646\u0651\u064E\u0627</div>'
     + '<div style="font-size:13px;color:rgba(255,255,255,0.5);font-style:italic;margin-bottom:6px;">All\u0101humma taqabbal minn\u0101</div>'
     + '<div style="font-size:14px;color:rgba(240,234,214,0.7);margin-bottom:32px;">\u00d4 Allah, accepte de nous.</div>'
