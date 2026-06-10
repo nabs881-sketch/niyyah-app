@@ -2557,10 +2557,10 @@
       "occasion": "Pour le repentir d'un péché grave. À répéter, accompagnée d'un changement de comportement.",
       "recit": "Zayd ibn Habîb rapporte du Prophète ﷺ : celui qui dit astaghfiru Allaha al-'azīma alladhī lā ilāha illā huwa al-Hayya al-Qayyūma wa atūbu ilayh — il lui est pardonné, même s'il a fui devant l'ennemi. Phrase qui fait référence à un péché majeur — fuir devant l'ennemi au combat est l'un des sept péchés capitaux dans l'islam. Et pourtant cette formule, dite sincèrement, suffit à laver cela. Pourquoi cette puissance ? Parce que la formule combine deux choses essentielles — l'istighfâr (demande de pardon) et la tawba (retour). L'istighfâr est passif — je demande qu'on me pardonne. La tawba est active — je reviens à Toi, je change. Le mot tawba vient de la racine TWB qui veut dire revenir. Tu fais demi-tour. Tu quittes le chemin qui t'éloignait. Tu rebrousse. C'est un mouvement, pas une parole. Et cette mouvement, Allah l'aime tellement qu'Il dit dans un hadith qudsî : Je suis plus content du retour de Mon serviteur qu'un homme qui aurait perdu son chameau au milieu du désert avec toute sa provision dessus, qui se serait résigné à mourir, qui se serait couché à l'ombre d'un arbre, et qui en se réveillant trouverait son chameau debout devant lui avec la provision intacte. La joie indescriptible de cet homme — c'est moins que celle d'Allah quand un serviteur Lui revient. Cette image, le Prophète ﷺ l'a donnée pour faire comprendre. Tu reviens — et Lui se réjouit comme jamais. Donc reviens souvent.",
       "source": "Abû Dâwûd 1517, Tirmidhî 3577 — ḍaʿîf (al-Albânî). L'istighfâr reste licite ; c'est la récompense rapportée (pardon même après avoir fui le combat) qui n'est pas authentiquement établie.",
-      "authenticite": "Da'if",
+      "authenticite": "Istighfâr licite (récompense rapportée non établie)",
       "benefice": "Combiner l'istighfâr et la tawba en une formule. Profiter de la joie d'Allah devant chaque retour.",
       "jour_original": 144,
-      "type": "prophetic_authentic"
+      "type": "prophetic_weak"
     },
     {
       "jour": 144,
@@ -2704,24 +2704,6 @@
       "authenticite": "Hasan",
       "benefice": "Apprendre à louer Allah dans le déplaisant. Lutter contre la pente naturelle à protester. Reconnaître son ignorance du sens des événements.",
       "jour_original": 153,
-      "type": "prophetic_authentic"
-    },
-    {
-      "jour": 152,
-      "id": "duaa_152",
-      "titre": "Quand on accepte un défi ou prend une responsabilité",
-      "categorie": "Décision",
-      "moment": "En acceptant une mission",
-      "duree": "moyen",
-      "arabe": "حَسْبِيَ اللَّهُ لَا إِلَهَ إِلَّا هُوَ، عَلَيْهِ تَوَكَّلْتُ، وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ",
-      "phonetique": "Hasbiya Allāhu lā ilāha illā huwa, 'alayhi tawakkaltu, wa huwa rabbu al-'arshi al-'azīm",
-      "traduction": "Allah me suffit, il n'y a de divinité que Lui. En Lui je place ma confiance, et Il est le Seigneur du Trône Immense.",
-      "occasion": "Le matin et le soir. Le verset (9:129) est coranique et recommandé ; la version « 7 fois » et sa récompense (Abû Dâwûd 5081) ne sont pas authentiquement établies.",
-      "recit": "Sourate At-Tawba, verset 129. Phrase qui clôt la sourate At-Tawba — c'est-à-dire le verset final de l'avant-dernière sourate du Coran dans l'ordre de révélation. Abu ad-Dardâ' rapporte que le Prophète ﷺ a dit : celui qui dit le matin et le soir, sept fois, hasbiya Allahu lā ilāha illā huwa, 'alayhi tawakkaltu, wa huwa rabbu al-'arshi al-'azīm — Allah lui suffira pour tout ce qui le préoccupe, de cette vie et de l'autre. Sept fois. Comme dans plusieurs autres formules prophétiques essentielles. Le chiffre sept scelle. Et la promesse — kafāhu Allahu mā ahammahu min amri ad-dunyā wa al-ākhira — Allah lui suffira pour tout ce qui le préoccupe. Promesse vertigineuse. Tu prends une responsabilité — Allah s'occupe du reste. Tu acceptes un défi — Allah règle ce qui dépasse. Tu portes un projet — Allah charge avec toi. Trois éléments dans la phrase. Hasbiya Allah — Allah me suffit. Tu déclares ta suffisance en Lui. Tu n'as pas besoin d'autres. Pas de patron qui te couvre. Pas de relations qui te protègent. Pas d'argent qui rassure. Lui suffit. 'Alayhi tawakkaltu — en Lui je place ma confiance. Tu déposes ton dossier. Tu lâches le contrôle. Tu fais confiance. Wa huwa rabbu al-'arshi al-'azīm — et Il est le Seigneur du Trône Immense. Tu nommes Sa grandeur. Pas un dieu local, un dieu utilitaire. Le Maître du Trône Immense — le centre du cosmos. Cette phrase, répétée sept fois matin et soir, restaure la juste hiérarchie. Toi, tout petit. Lui, Maître du Trône. Tes problèmes — proportionnés à toi. Sa puissance — proportionnée à Lui. La disproportion fait que rien ne peut t'inquiéter durablement.",
-      "source": "Coran 9:129 (texte coranique) ; la version « 7 fois » et sa récompense = ḍaʿîf (Abû Dâwûd 5081, al-Albânî). La phrase reste recommandée car coranique.",
-      "authenticite": "Da'if",
-      "benefice": "Disposer de la phrase qui clôt la sourate At-Tawba. Régler sept fois par jour la juste hiérarchie entre soi et Lui.",
-      "jour_original": 154,
       "type": "prophetic_authentic"
     },
     {
@@ -3190,7 +3172,7 @@
       "authenticite": "Da'if",
       "benefice": "Disposer d'une pratique respiratoire et spirituelle simultanée contre l'anxiété. Confier son dossier à Celui qui peut le porter.",
       "jour_original": 186,
-      "type": "prophetic_authentic"
+      "type": "prophetic_weak"
     },
     {
       "jour": 179,
