@@ -6829,13 +6829,15 @@ body::before {
   position: fixed;
   top: calc(var(--safe-top) + 74px); left: 50%;
   transform: translateX(-50%) translateY(-16px);
-  background: #111; border: 1px solid rgba(212,175,55,0.28);
-  border-radius: 100px; padding: 11px 22px;
+  background: linear-gradient(180deg, rgba(28,25,22,0.98) 0%, rgba(18,16,15,0.98) 100%);
+  border: 1px solid rgba(212,175,55,0.34);
+  border-radius: 100px; padding: 12px 26px;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 13px; font-style: italic; color: var(--gold-pale-v2);
+  font-size: 14px; font-style: italic; letter-spacing: 0.3px; color: var(--gold-pale-v2);
   white-space: nowrap; opacity: 0; pointer-events: none;
   transition: all 0.38s var(--ease-silk-v2);
-  z-index: 3000; box-shadow: 0 6px 30px rgba(0,0,0,0.5);
+  z-index: 3000;
+  box-shadow: 0 10px 34px rgba(0,0,0,0.55), 0 0 22px rgba(212,175,55,0.12), inset 0 1px 0 rgba(255,228,175,0.10);
 }
 #toast-v2.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
