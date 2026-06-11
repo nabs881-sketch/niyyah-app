@@ -1085,7 +1085,10 @@ async function getCurrentHijri() {
   var cached = safeGetItem(cacheKey);
   if (cached) { try { return JSON.parse(cached); } catch(e) {} }
   try {
-    var res = await fetch('https://api.aladhan.com/v1/gToH?date=' + dd + '-' + mm + '-' + yyyy);
+    var _ctrl = new AbortController();
+    var _to = setTimeout(function(){ _ctrl.abort(); }, 3500);
+    var res = await fetch('https://api.aladhan.com/v1/gToH?date=' + dd + '-' + mm + '-' + yyyy, { signal: _ctrl.signal });
+    clearTimeout(_to);
     if (!res.ok) return null;
     var data = await res.json();
     var h = data && data.data && data.data.hijri;
@@ -15273,6 +15276,7 @@ function _aidRevealSanctuaire() {
 }
 function _aidBoot() {
   console.log('[Aid] _aidBoot called, onboard:', _onboardDone, 'data:', !!window._AID_DATA);
+  setTimeout(function(){ try { _aidRevealSanctuaire(); } catch(e){} }, 3000);
   if (!_onboardDone) { _aidRevealSanctuaire(); return; }
   _aidInjectStyles();
   if (!window._AID_DATA) {
