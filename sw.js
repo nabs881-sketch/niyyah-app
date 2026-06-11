@@ -1,4 +1,4 @@
-const VERSION = 'niyyah-v2245';
+const VERSION = 'niyyah-v2246';
 const CORE = [
   './index.html',
   './script.min.js',
