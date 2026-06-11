@@ -11882,7 +11882,8 @@ function setupTopUI(screen) {
   switch (screen) {
     case 'sanctuaire': if (tbEl) tbEl.classList.add('active'); break;
     case 'journal': case 'nafs': showAlHayaBtn(); break;
-    case 'wird': case 'checklist': case 'progression': if (tbEl) { tbEl.classList.add('active'); tbEl.classList.add('secondary'); } if (backBtn) backBtn.classList.add('visible'); break;
+    case 'wird': if (tbEl) { tbEl.classList.add('active'); tbEl.classList.add('secondary'); } break;
+    case 'checklist': case 'progression': if (tbEl) { tbEl.classList.add('active'); tbEl.classList.add('secondary'); } if (backBtn) backBtn.classList.add('visible'); break;
     case 'bab-an-nafs': document.body.classList.add('in-bab-an-nafs'); break;
   }
 }
@@ -11982,7 +11983,7 @@ function v2GoTo(viewName) {
     var tbEl2 = document.getElementById('topbar-v2');
     if (tbEl2) { tbEl2.classList.add('active'); tbEl2.setAttribute('data-mode', 'back'); }
     var backBtn = document.getElementById('v2-back-btn');
-    if (backBtn) backBtn.classList.add('visible');
+    if (backBtn && viewName !== 'wird') backBtn.classList.add('visible');
   }
   // Nav
   document.querySelectorAll('.nav-v2-item').forEach(function(n) { n.classList.remove('active-nav'); });
