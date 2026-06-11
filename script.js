@@ -9370,6 +9370,12 @@ const MURMURES_EN = {
     soir: [{body:"The night is a gift. Begin it in peace.",icon:"✦"},{body:"Your evening Wird awaits. 5 minutes.",icon:"✦"},{body:"Al-Hamdulillah for this day, whatever it held.",icon:"✦"}]
   }
 };
+const REGARD_MURMURES = [
+  { body: "Un instant — où se posent tes yeux ?", icon: "✦" },
+  { body: "Baisse le regard. Ton cœur s'allège.", icon: "✦" },
+  { body: "Le premier regard passe. Ne le suis pas du second.", icon: "✦" },
+  { body: "Ce que l'œil ne suit pas, le cœur ne convoite pas.", icon: "✦" }
+];
 function _getMurmureDict() { return V2_LANG === 'en' ? MURMURES_EN : MURMURES; }
 
 /* ══ MURMURE ADAPTATIF — s'ajuste selon l'avancement ══ */
@@ -9526,6 +9532,16 @@ function scheduleAllNotifications() {
       }, _mms));
     }
   }
+
+  // Regard — 21:00, rappel de baisser le regard
+  var _regT = new Date(); _regT.setHours(21, 0, 0, 0);
+  var _regMs = _regT.getTime() - nowMs;
+  if (_regMs > 0 && _regMs < 86400000) {
+    _notifTimers.push(setTimeout(function() {
+      var m = REGARD_MURMURES[Math.floor(Math.random() * REGARD_MURMURES.length)];
+      sendNotification('Niyyah ' + m.icon, m.body, m.icon, 'regard');
+    }, _regMs));
+  }
 }
 
 function sendNotification(title, body, icon, moment) {
@@ -9542,6 +9558,11 @@ function sendNotification(title, body, icon, moment) {
       actions = [
         { action: 'done',  title: "Bismillah ✓" },
         { action: 'open',  title: "Ouvrir l'app" }
+      ];
+    } else if (moment === 'regard') {
+      actions = [
+        { action: 'scan_regard', title: "Scanner mon regard" },
+        { action: 'open',        title: "Plus tard" }
       ];
     } else {
       actions = [
@@ -17063,6 +17084,22 @@ window.scannerRetry           = scannerRetry;
 window.scannerCancelThinking  = scannerCancelThinking;
 window.scannerAdoptCustom     = scannerAdoptCustom;
 window.regardeOpen            = regardeOpen;
+function handleNotifAction(action) {
+  try {
+    if (action === 'scan_regard') { if (typeof regardeOpen === 'function') regardeOpen(); return; }
+    // autres actions (done / dua / wird / open) : à compléter au besoin
+  } catch(e) {}
+}
+window.handleNotifAction = handleNotifAction;
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.addEventListener('message', function(ev) {
+    if (ev.data && ev.data.type === 'NOTIFICATION_ACTION') handleNotifAction(ev.data.action);
+  });
+}
+try {
+  var _na = new URLSearchParams(location.search).get('notif_action');
+  if (_na) setTimeout(function(){ handleNotifAction(_na); }, 800);
+} catch(e) {}
 window.regardeCapture         = regardeCapture;
 window.regardeClose           = regardeClose;
 window.regardeCancelThinking  = regardeCancelThinking;

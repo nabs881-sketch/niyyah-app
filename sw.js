@@ -1,4 +1,4 @@
-const VERSION = 'niyyah-v2203';
+const VERSION = 'niyyah-v2204';
 const CORE = [
   './index.html',
   './script.min.js',
@@ -160,7 +160,7 @@ self.addEventListener('notificationclick', e => {
           return client.focus();
         }
       }
-      if (clients.openWindow) return clients.openWindow('./index.html');
+      if (clients.openWindow) return clients.openWindow('./index.html?notif_action=' + (e.action || 'open'));
     })
   );
 });
