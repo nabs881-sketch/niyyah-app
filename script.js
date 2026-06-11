@@ -17502,33 +17502,32 @@ function openVueRituel(prayer) {
 }
 window.openVueRituel = openVueRituel;
 
+function getFilJourItems() {
+  if (!Array.isArray(LEVELS)) return [];
+  var _motiv = getEffectiveMotiv();
+  var _day = new Date().getDay();
+  var _ok = function(it) {
+    if (_motiv && it.paths && !it.paths.includes(_motiv)) return false;
+    if (it.id === 'sunnah_jejune' && _day !== 1 && _day !== 4) return false;
+    return true;
+  };
+  var items = [];
+  [2,3].forEach(function(i) {
+    var lvl = LEVELS[i]; if (!lvl || !lvl.sections) return;
+    lvl.sections.forEach(function(s) { (s.items || []).forEach(function(it) { if (_ok(it)) items.push(it); }); });
+  });
+  [0,1].forEach(function(i) {
+    var lvl = LEVELS[i]; if (!lvl || !lvl.sections) return;
+    lvl.sections.forEach(function(s) { (s.items || []).forEach(function(it) { if (it.filDuJour && _ok(it)) items.push(it); }); });
+  });
+  return items;
+}
+window.getFilJourItems = getFilJourItems;
+
 function getFilJourCardHTML() {
   const state = safeParseJSON('spiritual_v2', {});
-  var _motivF = getEffectiveMotiv();
-  var _passPath = function(it) { return !_motivF || !it.paths || it.paths.includes(_motivF); };
-  let done = 0, total = 0;
-  if (Array.isArray(LEVELS)) {
-    [2,3].forEach(i => {
-      const lvl = LEVELS[i];
-      if (!lvl || !lvl.sections) return;
-      lvl.sections.forEach(s => {
-        (s.items || []).forEach(it => {
-          if (!_passPath(it)) return;
-          total++; if (state[it.id]) done++;
-        });
-      });
-    });
-    [0,1].forEach(i => {
-      var lvl = LEVELS[i];
-      if (!lvl || !lvl.sections) return;
-      lvl.sections.forEach(s => {
-        (s.items || []).forEach(it => {
-          if (!it.filDuJour || !_passPath(it)) return;
-          total++; if (state[it.id]) done++;
-        });
-      });
-    });
-  }
+  let done = 0;
+  getFilJourItems().forEach(function(it) { if (state[it.id]) done++; });
   return '<div class="fil-jour-connector">\u2014 entre tes pri\u00e8res \u2014</div>'
     + '<div class="fil-jour-card" onclick="openVueAuFilDuJour()">'
     + '<div class="titre">AU FIL DU JOUR</div>'
@@ -17558,34 +17557,7 @@ function openVueAuFilDuJour() {
   v.querySelector('.rituel-titre').textContent = 'AU FIL DU JOUR';
   v.querySelector('.rituel-prochaine').textContent = '';
   v.querySelector('.rituel-poetique').textContent = 'Ce qui demeure entre tes pri\u00e8res.';
-  var _motiv = getEffectiveMotiv();
-  const items = [];
-  if (Array.isArray(LEVELS)) {
-    var _dayOfWeek = new Date().getDay();
-    [2,3].forEach(i => {
-      const lvl = LEVELS[i];
-      if (!lvl || !lvl.sections) return;
-      lvl.sections.forEach(s => {
-        (s.items || []).forEach(it => {
-          if (_motiv && it.paths && !it.paths.includes(_motiv)) return;
-          if (it.id === 'sunnah_jejune' && _dayOfWeek !== 1 && _dayOfWeek !== 4) return;
-          items.push(it);
-        });
-      });
-    });
-  }
-  [0,1].forEach(i => {
-    var lvl = LEVELS[i];
-    if (!lvl || !lvl.sections) return;
-    lvl.sections.forEach(s => {
-      (s.items || []).forEach(it => {
-        if (!it.filDuJour) return;
-        if (_motiv && it.paths && !it.paths.includes(_motiv)) return;
-        if (it.id === 'sunnah_jejune' && _dayOfWeek !== 1 && _dayOfWeek !== 4) return;
-        items.push(it);
-      });
-    });
-  });
+  const items = getFilJourItems();
   const main = v.querySelector('.rituel-content');
   const state = safeParseJSON('spiritual_v2', {});
   var _catOrder = [
