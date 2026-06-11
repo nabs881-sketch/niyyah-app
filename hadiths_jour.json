@@ -372,10 +372,10 @@
   {
     "jour": 47,
     "theme": "Auto-examen",
-    "texte_ar": "الْكَيِّسُ مَنْ دَانَ نَفْسَهُ وَعَمِلَ لِمَا بَعْدَ الْمَوْتِ",
-    "texte_fr": "L’homme avisé est celui qui se juge lui-même et œuvre pour ce qui suit la mort. L’incapable est celui qui suit ses passions et compte sur Allah sans agir.",
-    "source": "Tirmidhî 2459 — ḍaʿîf (al-Albânî ; chaîne via Abû Bakr ibn Abî Maryam). Sens vertueux, hadith non solide.",
-    "degre": "da'îf"
+    "texte_ar": "لَا تَزُولُ قَدَمَا عَبْدٍ يَوْمَ الْقِيَامَةِ حَتَّى يُسْأَلَ عَنْ عُمْرِهِ فِيمَا أَفْنَاهُ، وَعَنْ عِلْمِهِ فِيمَا فَعَلَ، وَعَنْ مَالِهِ مِنْ أَيْنَ اكْتَسَبَهُ وَفِيمَا أَنْفَقَهُ، وَعَنْ جِسْمِهِ فِيمَا أَبْلَاهُ",
+    "texte_fr": "Les pieds du serviteur ne bougeront pas, au Jour de la Résurrection, avant qu’il ne soit interrogé : sur sa vie — à quoi il l’a employée ; sur son savoir — ce qu’il en a fait ; sur ses biens — d’où il les a acquis et où il les a dépensés ; et sur son corps — à quoi il l’a usé.",
+    "source": "Tirmidhî 2417 · hasan sahih",
+    "degre": "sahih"
   },
   {
     "jour": 48,
@@ -740,10 +740,10 @@
   {
     "jour": 93,
     "theme": "Humilité",
-    "texte_ar": "اللَّهُمَّ أَحْيِنِي مِسْكِينًا",
-    "texte_fr": "Ô Allah, fais-moi vivre humble, fais-moi mourir humble, et ressuscite-moi dans le groupe des humbles.",
-    "source": "Tirmidhî 2352, Ibn Mâja 4126 — da'îf (contesté). Le sens « humble devant Allah » reste valable.",
-    "degre": "da'îf"
+    "texte_ar": "مَا نَقَصَتْ صَدَقَةٌ مِنْ مَالٍ، وَمَا زَادَ اللَّهُ عَبْدًا بِعَفْوٍ إِلَّا عِزًّا، وَمَا تَوَاضَعَ أَحَدٌ لِلَّهِ إِلَّا رَفَعَهُ اللَّهُ",
+    "texte_fr": "La charité ne diminue en rien la richesse ; Allah n’augmente le serviteur qui pardonne qu’en honneur ; et nul ne s’abaisse par humilité pour Allah sans qu’Allah ne l’élève.",
+    "source": "Muslim 2588",
+    "degre": "sahih"
   },
   {
     "jour": 94,
@@ -1205,10 +1205,10 @@
   {
     "jour": 151,
     "theme": "Promesse",
-    "texte_ar": "الْعِدَةُ دَيْنٌ",
-    "texte_fr": "La promesse est une dette.",
-    "source": "Adage répandu — l'attribution au Prophète ﷺ n'est pas authentiquement établie.",
-    "degre": "maxime"
+    "texte_ar": "آيَةُ الْمُنَافِقِ ثَلَاثٌ: إِذَا حَدَّثَ كَذَبَ، وَإِذَا وَعَدَ أَخْلَفَ، وَإِذَا اؤْتُمِنَ خَانَ",
+    "texte_fr": "Les signes de l’hypocrite sont trois : quand il parle, il ment ; quand il promet, il manque à sa promesse ; et quand on lui confie une chose, il trahit.",
+    "source": "Bukhari 33, Muslim 59 · muttafaq ’alayh",
+    "degre": "sahih"
   },
   {
     "jour": 152,
@@ -1261,10 +1261,10 @@
   {
     "jour": 158,
     "theme": "Sobriété",
-    "texte_ar": "لَا تُسْرِفْ فِي الْوُضُوءِ وَلَوْ كُنْتَ عَلَى نَهَرٍ جَارٍ",
-    "texte_fr": "Le Prophète ﷺ passa près de Sa'd qui faisait ses ablutions. Il dit : Quel gaspillage est-ce là, Sa'd ? — Y a-t-il gaspillage dans les ablutions ? — Oui, même si tu es au bord d'une rivière qui coule.",
-    "source": "Ibn Mâja 425, Ahmad — da'îf (gradation contestée).",
-    "degre": "da'îf"
+    "texte_ar": "مَا مَلَأَ آدَمِيٌّ وِعَاءً شَرًّا مِنْ بَطْنٍ، بِحَسْبِ ابْنِ آدَمَ أُكُلَاتٌ يُقِمْنَ صُلْبَهُ، فَإِنْ كَانَ لَا مَحَالَةَ فَثُلُثٌ لِطَعَامِهِ وَثُلُثٌ لِشَرَابِهِ وَثُلُثٌ لِنَفَسِهِ",
+    "texte_fr": "Le fils d’Adam ne remplit pas de récipient pire que son ventre. Quelques bouchées lui suffisent pour tenir droit. Et s’il le faut absolument : un tiers pour sa nourriture, un tiers pour sa boisson, un tiers pour son souffle.",
+    "source": "Tirmidhî 2380 · hasan sahih (al-Albânî) · An-Nawawî 40 n°47",
+    "degre": "sahih"
   },
   {
     "jour": 159,
@@ -1388,18 +1388,18 @@
   },
   {
     "jour": 174,
-    "theme": "Éducation",
-    "texte_ar": "مَا نَحَلَ وَالِدٌ وَلَدًا مِنْ نَحْلٍ أَفْضَلَ مِنْ أَدَبٍ حَسَنٍ",
-    "texte_fr": "Aucun père n'a donné à son enfant un cadeau meilleur que la bonne éducation.",
-    "source": "Tirmidhî 1952 — da'îf (Tirmidhî, adh-Dhahabî, al-Albânî). Sens vertueux mais hadith non solide.",
-    "degre": "da'îf"
+    "theme": "Responsabilité",
+    "texte_ar": "كُلُّكُمْ رَاعٍ وَكُلُّكُمْ مَسْؤُولٌ عَنْ رَعِيَّتِهِ، وَالرَّجُلُ رَاعٍ فِي أَهْلِهِ وَمَسْؤُولٌ عَنْ رَعِيَّتِهِ، وَالْمَرْأَةُ رَاعِيَةٌ فِي بَيْتِ زَوْجِهَا وَمَسْؤُولَةٌ عَنْ رَعِيَّتِهَا",
+    "texte_fr": "Chacun de vous est un berger, et chacun est responsable de son troupeau : l’homme est responsable des siens, la femme est responsable de la maison de son époux. Chacun de vous est responsable de ceux dont il a la charge.",
+    "source": "Bukhari 893, Muslim 1829 · muttafaq ’alayh",
+    "degre": "sahih"
   },
   {
     "jour": 175,
     "theme": "Tendresse aux faibles",
-    "texte_ar": "لَيْسَ مِنَّا مَنْ لَمْ يَرْحَمْ صَغِيرَنَا وَيَعْرِفْ شَرَفَ كَبِيرِنَا",
-    "texte_fr": "N'est pas des nôtres celui qui n'a pas miséricorde pour nos petits et ne reconnaît pas le rang de nos grands.",
-    "source": "Tirmidhi 1919, Ahmad 7033 — sahih",
+    "texte_ar": "الرَّاحِمُونَ يَرْحَمُهُمُ الرَّحْمَنُ، ارْحَمُوا مَنْ فِي الْأَرْضِ يَرْحَمْكُمْ مَنْ فِي السَّمَاءِ",
+    "texte_fr": "Les miséricordieux, le Tout-Miséricordieux leur fait miséricorde. Soyez miséricordieux envers ceux qui sont sur terre, Celui qui est au-dessus des cieux vous fera miséricorde.",
+    "source": "Tirmidhî 1924, Abû Dâwûd 4941 · hasan sahih",
     "degre": "sahih"
   },
   {
