@@ -9538,6 +9538,8 @@ function scheduleAllNotifications() {
   var _regMs = _regT.getTime() - nowMs;
   if (_regMs > 0 && _regMs < 86400000) {
     _notifTimers.push(setTimeout(function() {
+      if (safeGetItem('niyyah_regarde_last_alert') === todayKey()) return; // déjà alerté aujourd'hui
+      safeSetItem('niyyah_regarde_last_alert', todayKey());
       var m = REGARD_MURMURES[Math.floor(Math.random() * REGARD_MURMURES.length)];
       sendNotification('Niyyah ' + m.icon, m.body, m.icon, 'regard');
     }, _regMs));
@@ -9690,6 +9692,7 @@ function schedulePrayerReminders() {
   scheduleFajrNotification();
 }
 function scheduleFajrNotification() {
+  return; // notif Fajr-15 retiree (reduction du cluster du matin)
   if (isSilenceDay()) return;
   if (!_prayerTimes || !_prayerTimes['Fajr']) return;
   if (Notification.permission === 'default') { try { Notification.requestPermission().catch(function() {}); } catch(e) {} }
