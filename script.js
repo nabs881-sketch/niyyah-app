@@ -18700,6 +18700,15 @@ const SIRA = {
       if (rdv.meditation) h += '<div style="background:rgba(250,247,238,0.04);border-radius:12px;padding:20px 24px;margin:32px 8px;font-style:italic;text-align:center;color:#D4C9A0;font-size:17px;line-height:1.6;">' + escape(T(rdv.meditation)) + '</div>';
       if (rdv.source) h += '<div style="text-align:center;font-style:italic;color:#888;font-size:13px;margin:16px 0 32px;">\u2014 ' + escape(T(rdv.source)) + '</div>';
     }
+    if (rdv.fiabilite) {
+      var _fb = {
+        authentique: ['\u2726', 'Authentique', '#C8A84A'],
+        sira:        ['\u2756', 'S\u00eera', 'rgba(200,168,74,0.75)'],
+        tradition:   ['\u25CC', 'Tradition signal\u00e9e', 'rgba(200,168,74,0.55)'],
+        contexte:    ['\u00B7', 'Contexte', '#888']
+      }[rdv.fiabilite];
+      if (_fb) h += '<div style="text-align:center;font-size:11px;letter-spacing:2px;color:' + _fb[2] + ';margin:-18px 0 30px;opacity:0.85;">' + _fb[0] + ' ' + _fb[1] + '</div>';
+    }
     var maxNum = this.getCurrentRdvNum();
     var _bs = 'padding:10px 22px;border:1px solid rgba(200,168,74,0.4);border-radius:24px;background:rgba(200,168,74,0.05);color:#C8A84A;font-family:Cormorant Garamond,serif;font-style:italic;font-size:15px;cursor:pointer;transition:all 300ms ease;';
     h += '<div style="display:flex;justify-content:space-between;align-items:center;padding-top:32px;">';
