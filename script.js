@@ -13190,7 +13190,7 @@ function openWaqtModal() {
   var arName = _WAQT_AR_NAMES[priere] || '';
   var _lum = _WAQT_LUMIERE[priere] || '';
   var ambianceHtml = _lum
-    ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(200,168,74,0.7);line-height:1.6;max-width:300px;margin:0 auto 18px;">' + _lum + '</div>'
+    ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:rgba(200,168,74,0.7);line-height:1.6;max-width:300px;margin:0 auto 18px;">' + _lum + '</div>'
     : '';
   var actionEl = document.getElementById('waqt-action-text');
   // Banner image par prière
@@ -13203,14 +13203,14 @@ function openWaqtModal() {
     var html = '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:28px;color:#C8A84A;direction:rtl;margin-bottom:16px;">' + arName + '</div>';
     html += ambianceHtml;
     if (story.titre) html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:700;color:#C8A84A;letter-spacing:1px;margin-bottom:12px;">' + story.titre.toUpperCase() + '</div>';
-    html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#e9ddc7;line-height:1.75;max-width:340px;margin-bottom:16px;">' + (story.texte || '') + '</div>';
-    html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-weight:700;color:#e9ddc7;line-height:1.6;margin-bottom:12px;">' + story.morale + '</div>';
+    html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;font-style:italic;color:#e9ddc7;line-height:1.8;max-width:340px;margin-bottom:16px;">' + (story.texte || '') + '</div>';
+    html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;font-weight:700;color:#e9ddc7;line-height:1.6;margin-bottom:12px;">' + story.morale + '</div>';
     if (story.source) html += '<div style="font-family:\'Inter\',sans-serif;font-size:12px;color:rgba(200,168,75,0.4);line-height:1.4;">' + story.source + '</div>';
     actionEl.innerHTML = html;
   } else {
     actionEl.innerHTML = '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:28px;color:#C8A84A;direction:rtl;margin-bottom:20px;">' + arName + '</div>'
       + ambianceHtml
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:#e9ddc7;line-height:1.75;max-width:340px;">' + txt + '</div>';
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;font-style:italic;color:#e9ddc7;line-height:1.8;max-width:340px;">' + txt + '</div>';
   }
   modal.style.display = 'flex';
   document.body.classList.add('in-waqt-modal');
