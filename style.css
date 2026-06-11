@@ -3034,6 +3034,13 @@ to {
   -webkit-line-clamp:2;
   overflow:hidden
 }
+.wird-dup-note {
+  font-size:11px;
+  font-style:italic;
+  color:rgba(200,168,74,0.72);
+  margin-top:4px;
+  line-height:1.4;
+}
 .wird-item.checked .wird-arabic {
   opacity:0.3
 }

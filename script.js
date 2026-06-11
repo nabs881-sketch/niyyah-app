@@ -4094,6 +4094,11 @@ function renderWird() {
   let html = '<button class="wird-back-btn" onclick="wirdGoBack()" aria-label="Retour">\u2039</button>';
   if (!_currentWirdSession) { html += '<div class="section-header"><div class="section-arabic">\u0623\u064E\u0648\u0652\u0631\u0627\u062F</div><div class="section-name">' + t('wird_daily') + '</div><div class="section-line"></div></div>'; }
   var _sessions = _currentWirdSession ? [_currentWirdSession] : ['matin', 'soir'];
+  var _wirdDup = { w_ayat_kursi:'ayat_kursi', w_ayat_kursi_s:'ayat_kursi', w_ikhlass_m:'muawwidhat', w_falaq_m:'muawwidhat', w_nas_m:'muawwidhat', w_ikhlass_s:'muawwidhat', w_falaq_s:'muawwidhat', w_nas_s:'muawwidhat', w_istighfar_m:'istighfar' };
+  var _spState = (typeof safeParseJSON === 'function') ? safeParseJSON('spiritual_v2', {}) : {};
+  var _wirdDupChanged = false;
+  _sessions.forEach(function(_ses){ (WIRD_DATA[_ses].items||[]).forEach(function(_it){ var _k=_wirdDup[_it.id]; if(_k && _spState[_k] && !wirdState[_it.id]){ wirdState[_it.id]=true; _wirdDupChanged=true; } }); });
+  if (_wirdDupChanged && typeof saveWirdState === 'function') saveWirdState();
   _sessions.forEach(session => {
     const s = WIRD_DATA[session];
     const done = s.items.filter(i => wirdState[i.id]).length;
@@ -4102,6 +4107,7 @@ function renderWird() {
     html += `<div class="wird-session"><div class="section-header" style="padding:16px 4px 8px;"><div class="section-arabic" style="font-size:18px;">${_wirdArabicSession[session]}</div><div class="section-name">${_wTitle} · ${done}/${s.items.length}</div><div class="section-line"></div></div><div class="wird-session-bar"><div class="wird-session-bar-fill" style="width:${pct}%"></div></div>`;
     s.items.forEach(item => {
       const checked = !!wirdState[item.id];
+      const dupNote = (_wirdDup[item.id] && _spState[_wirdDup[item.id]]) ? '<div class="wird-dup-note">\u2713 D\u00e9j\u00e0 fait apr\u00e8s ta pri\u00e8re \u00b7 une seule fois suffit</div>' : '';
       const audioData = item.audio ? JSON.stringify(item.audio) : null;
       const audioBtn = item.audio ? `<button class="btn-wird-audio" aria-label="Écouter" ontouchstart="event.stopPropagation()" onclick="playAudioFromBtn(this,event)" data-audio="${audioData ? audioData.replace(/"/g,'&quot;') : ''}" title="${t('btn_listen')}">🔊</button>` : '';
       const phonEsc = (item.phonetic||'').replace(/"/g,'&quot;');
@@ -4109,7 +4115,7 @@ function renderWird() {
       const srcEsc  = (item.source||'').replace(/"/g,'&quot;');
       const labelEsc = tI(item,'label').replace(/"/g,'&quot;');
       const infoBtn = `<button class="btn-wird-info" aria-label="Détails" onclick="event.stopPropagation();openInfoSheet('','','','',event)" data-label="${labelEsc}" data-arabic="${arabEsc}" data-phonetic="${phonEsc}" data-translation="${srcEsc}"><i>i</i></button>`;
-      html += `<div class="wird-item${checked?' checked':''}" onclick="toggleWirdItem('${item.id}',event)"><div class="wird-check"><svg class="wird-check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="wird-body"><div class="wird-label">${tI(item,"label")}</div><div class="wird-sub">${tI(item,"sub")}</div><div class="wird-arabic">${item.arabic}</div></div><div class="wird-actions">${audioBtn}${infoBtn}</div></div>`;
+      html += `<div class="wird-item${checked?' checked':''}" onclick="toggleWirdItem('${item.id}',event)"><div class="wird-check"><svg class="wird-check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="wird-body"><div class="wird-label">${tI(item,"label")}</div><div class="wird-sub">${tI(item,"sub")}</div><div class="wird-arabic">${item.arabic}</div>${dupNote}</div><div class="wird-actions">${audioBtn}${infoBtn}</div></div>`;
     });
     html += `<button class="wird-reset-btn" aria-label="${t('settings_reset')}" onclick="resetWirdSession('${session}')">${t('settings_reset')}</button></div>`;
   });
