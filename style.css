@@ -4435,7 +4435,7 @@ to {
 
 /* Wird */
 .wird-label { color: #E8DCC8; }
-.wird-sub { color: #8A7E6E; font-size: 15px; }
+.wird-sub { color: #8A7E6E; font-size: 16px; }
 .wird-arabic { color: #C4A870; font-size: 18px; }
 .friday-item-label { font-size: 16px; }
 .friday-item-arabic { font-size: 20px; line-height: 1.6; }
@@ -5819,7 +5819,7 @@ to {
 
 /* ── TEXTES SOMBRE : renforcer t3 sur les éléments critiques ── */
 .streak-label    { color: #9A8E7A; }
-.wird-sub        { color: #9A8E7A; }
+.wird-sub        { color: #C0B49A; }
 .weekly-day-label{ color: #9A8E7A; font-size:12px; }
 .weekly-stat-label{ color: #9A8E7A; font-size:12px; }
 .prayer-times-city{ color: #9A8E7A; font-size: 12px; }
