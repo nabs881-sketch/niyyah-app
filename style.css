@@ -3128,7 +3128,7 @@ to {
 .freemium-price{text-align:center;margin:18px 0 16px;border-top:1px solid rgba(200,168,75,0.15);padding-top:18px;}
 .fp-amount{display:block;font-family:'Cormorant Garamond',var(--serif);font-weight:700;font-size:38px;line-height:1;background:linear-gradient(180deg,#F6DA8A,#C8A84A);-webkit-background-clip:text;background-clip:text;color:transparent;}
 .fp-sub{display:block;font-family:var(--serif);font-style:italic;font-size:13px;color:#B5A685;margin-top:4px;}
-.fp-trust{display:block;font-family:var(--serif);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(200,168,75,0.45);margin-top:6px;}
+.fp-trust{display:block;font-family:var(--serif);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(200,168,75,0.45);margin-top:6px;}
 .freemium-btn-buy{width:100%;padding:16px;border:none;border-radius:26px;background:linear-gradient(90deg,#E8CE8A,#D4AF37,#C8A84A);color:#2C2410;font-family:'Cormorant Garamond',var(--serif);font-weight:700;font-size:16px;letter-spacing:0.5px;cursor:pointer;box-shadow:0 6px 20px rgba(200,168,75,0.25);}
 .freemium-btn-buy:active{opacity:0.85;transform:scale(0.98);}
 .freemium-code{display:flex;gap:8px;margin-top:12px;}
@@ -4907,7 +4907,7 @@ to {
 
 .wird-smart-rattrapage {
   font-family: 'Nunito', sans-serif;
-  font-size: 10px;
+  font-size: 12px;
   font-style: italic;
   color: rgba(200,168,75,0.45);
   margin-top: 2px;
@@ -6944,7 +6944,7 @@ body.pratique-active .topbar-v2 { display: none !important; }
 .niyyah-menu-item { display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06);color:var(--t1);font-family:var(--sans);font-size:14px;cursor:pointer;transition:color 0.2s; }
 .niyyah-menu-item:hover { color:#C8A84A; }
 .niyyah-menu-item svg { flex-shrink:0;opacity:0.6; }
-.niyyah-menu-section { font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(200,168,75,0.5);margin:20px 0 8px;font-family:var(--serif); }
+.niyyah-menu-section { font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(200,168,75,0.5);margin:20px 0 8px;font-family:var(--serif); }
 body.alhaya-active .topbar-v2,
 body.alhaya-active .nav-v2,
 body.alhaya-active .nav-bar,
@@ -7378,7 +7378,7 @@ body.alhaya-active .niyyah-menu-backdrop { display: none !important; }
 }
 .scanner-nuance-label {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+  font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase;
   color: rgba(232,206,138,0.85); margin-bottom: 4px;
 }
 .scanner-nuance-text {
@@ -8619,7 +8619,7 @@ body.onboarding-active #nav-bar-v2 {
   font-family: 'Nunito', sans-serif;
 }
 .rituel-prochaine {
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.2em;
   color: rgba(240,234,214,0.45);
   margin-bottom: 22px;
@@ -8756,14 +8756,14 @@ body.onboarding-active #nav-bar-v2 {
   margin: 60px auto 18px;
 }
 .savais-titre {
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.3em;
   color: rgba(200,168,74,0.85);
   margin-bottom: 32px;
   font-family: 'Nunito', sans-serif;
 }
 .savais-categorie, .fiqh-categorie {
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 2px;
   color: rgba(200,168,74,0.7);
   border: 1px solid rgba(200,168,74,0.25);
@@ -8780,7 +8780,7 @@ body.onboarding-active #nav-bar-v2 {
   margin-bottom: 22px;
 }
 .savais-source {
-  font-size: 11px;
+  font-size: 12px;
   color: rgba(200,168,74,0.6);
   letter-spacing: 0.1em;
   margin-bottom: 28px;
@@ -8871,7 +8871,7 @@ body.onboarding-active #nav-bar-v2 {
   margin-bottom: 4px;
 }
 .rituel-vendredi-sep .fr {
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.4em;
   color: rgba(70,180,130,0.85);
   font-family: 'Nunito', sans-serif;
@@ -8898,7 +8898,7 @@ body.onboarding-active #nav-bar-v2 {
   background: #1a1c1f;
   position: relative;
   z-index: 2;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.35em;
   color: rgba(200,168,75,0.7);
   font-family: 'Nunito', sans-serif;
@@ -8924,7 +8924,7 @@ body.onboarding-active #nav-bar-v2 {
   background: #1a1c1f;
   position: relative;
   z-index: 2;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.35em;
   color: rgba(200,168,75,0.55);
   font-family: 'Nunito', sans-serif;
@@ -9206,7 +9206,7 @@ body.onboarding-active #nav-bar-v2 {
   justify-content: center;
   gap: 6px;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 11px;
+  font-size: 12px;
   color: rgba(200,168,75,0.4);
   margin-top: 12px;
   letter-spacing: 0.05em;
@@ -9217,7 +9217,7 @@ body.onboarding-active #nav-bar-v2 {
 .btn-regard-premium .compteur-7x {
   position: absolute;
   bottom: -18px;
-  font-size: 10px;
+  font-size: 12px;
   color: rgba(200,168,75,0.7);
   font-family: 'Cormorant Garamond', serif;
 }.niyyah-breath-overlay{position:fixed;inset:0;z-index:9999;background:rgba(10,8,6,0.93);display:flex;align-items:center;justify-content:center;animation:niyyahBreathFade .6s ease;}
@@ -9324,7 +9324,7 @@ body.onboarding-active #nav-bar-v2 {
 @keyframes regardeShine{0%,82%{left:-60%}92%,100%{left:130%}}
 .scanner-hub{position:fixed;inset:0;z-index:9000;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:calc(var(--safe-top,0px)+80px) 24px calc(var(--safe-bot,0px)+40px);background:radial-gradient(ellipse at top,#15110A 0%,#0B0907 62%);overflow-y:auto;animation:sanctFadeIn .5s ease forwards;}
 .scanner-hub-close{position:absolute;top:calc(var(--safe-top,0px)+16px);right:18px;background:none;border:none;color:rgba(200,168,75,0.6);font-size:22px;cursor:pointer;min-height:44px;min-width:44px;}
-.scanner-hub-eyebrow{font-family:var(--serif);font-size:11px;letter-spacing:4px;color:rgba(200,168,75,0.5);margin-bottom:10px;}
+.scanner-hub-eyebrow{font-family:var(--serif);font-size:12px;letter-spacing:4px;color:rgba(200,168,75,0.5);margin-bottom:10px;}
 .scanner-hub-title{font-family:'Cormorant Garamond',var(--serif);font-style:italic;font-weight:600;font-size:32px;line-height:1;background:linear-gradient(180deg,#F6DA8A,#C8A84A);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:4px;}
 .scanner-hub-sub{font-family:var(--serif);font-style:italic;font-size:14px;color:#B5A685;margin-bottom:30px;}
 .scanner-hub-card{display:flex;align-items:center;gap:16px;width:100%;max-width:360px;padding:18px 16px;margin-bottom:16px;border-radius:18px;border:1px solid rgba(212,175,55,0.45);background:linear-gradient(180deg,rgba(200,168,74,0.14),rgba(138,106,31,0.05));box-shadow:0 6px 22px rgba(0,0,0,0.45),inset 0 1px 0 rgba(255,238,200,0.18);cursor:pointer;text-align:left;-webkit-tap-highlight-color:transparent;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;position:relative;overflow:hidden;}

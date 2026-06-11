@@ -2711,7 +2711,7 @@ function renderLevel(levelId) {
           var _lisanChecked = checked ? ' checked' : '';
           var _lisanOpacity = checked ? 'opacity:0.35;' : '';
           html += '<div class="item' + fridayCls + _lisanChecked + _tlCurrent + '" onclick="' + customClick + '" style="' + _lisanOpacity + 'background:linear-gradient(135deg,rgba(200,168,75,0.10),rgba(200,168,75,0.04));border:1px solid rgba(200,168,75,0.25);border-radius:14px;padding:16px 14px;margin-top:6px;margin-bottom:6px;position:relative;transition:box-shadow 0.2s,border-color 0.2s;animation-delay:' + delay + 'ms;--i:' + idx + '" id="item-' + item.id + '" onmouseenter="this.style.boxShadow=\'0 0 16px rgba(200,168,75,0.15)\';this.style.borderColor=\'rgba(200,168,75,0.45)\'" onmouseleave="this.style.boxShadow=\'none\';this.style.borderColor=\'rgba(200,168,75,0.25)\'">'
-            + '<div style="position:absolute;top:8px;left:10px;font-size:10px;color:rgba(200,168,75,0.4);">\u2727</div>'
+            + '<div style="position:absolute;top:8px;left:10px;font-size:12px;color:rgba(200,168,75,0.4);">\u2727</div>'
             + _pathBadge
             + '<div class="check-circle"' + _checkClick + '><svg class="check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>'
             + '<div class="item-body">'
@@ -2777,20 +2777,20 @@ function renderPrayerItem(item, delay, extraClass, forceChecked) {
   const _sw = 'width:32px;height:18px;border-radius:9px;display:flex;align-items:center;padding:2px;transition:background 0.2s;flex-shrink:0;';
   const _kn = 'width:14px;height:14px;border-radius:50%;transition:margin 0.2s;';
   const toggle = '<div style="display:flex;align-items:center;gap:4px;flex-shrink:0;" onclick="togglePrayerOnTime(\'' + item.id + '\');event.stopPropagation()">'
-    + '<div style="font-size:11px;color:' + (onTime ? 'var(--green)' : 'var(--t3)') + ';">\u23F0</div>'
+    + '<div style="font-size:12px;color:' + (onTime ? 'var(--green)' : 'var(--t3)') + ';">\u23F0</div>'
     + '<div style="' + _sw + 'background:' + (onTime ? 'var(--green)' : 'rgba(255,255,255,0.1)') + ';border:1px solid ' + (onTime ? 'var(--green)' : 'rgba(255,255,255,0.15)') + ';">'
     + '<div style="' + _kn + 'background:' + (onTime ? '#fff' : 'rgba(255,255,255,0.4)') + ';margin-left:' + (onTime ? '14px' : '0') + ';"></div>'
     + '</div></div>';
   const atMosquee = !!state[item.id + '_mosquee'];
   const _hideMosq = (item.id === 'dhuhr' && isFriday());
   const toggleMosquee = _hideMosq ? '' : '<div style="display:flex;align-items:center;gap:4px;flex-shrink:0;" onclick="togglePrayerMosquee(\'' + item.id + '\');event.stopPropagation()">'
-    + '<div style="font-size:11px;color:' + (atMosquee ? '#C8A84A' : 'var(--t3)') + ';">\u{1F54C}</div>'
+    + '<div style="font-size:12px;color:' + (atMosquee ? '#C8A84A' : 'var(--t3)') + ';">\u{1F54C}</div>'
     + '<div style="' + _sw + 'background:' + (atMosquee ? '#C8A84A' : 'rgba(255,255,255,0.1)') + ';border:1px solid ' + (atMosquee ? '#C8A84A' : 'rgba(255,255,255,0.15)') + ';">'
     + '<div style="' + _kn + 'background:' + (atMosquee ? '#fff' : 'rgba(255,255,255,0.4)') + ';margin-left:' + (atMosquee ? '14px' : '0') + ';"></div>'
     + '</div></div>';
   const atJumua = !!state['dhuhr_jumua'];
   const toggleJumua = (item.id === 'dhuhr' && isFriday()) ? '<div style="display:flex;align-items:center;gap:4px;flex-shrink:0;" onclick="togglePrayerJumua();event.stopPropagation()">'
-    + '<div style="font-size:11px;color:' + (atJumua ? '#46B482' : 'var(--t3)') + ';">\u262A\uFE0F</div>'
+    + '<div style="font-size:12px;color:' + (atJumua ? '#46B482' : 'var(--t3)') + ';">\u262A\uFE0F</div>'
     + '<div style="' + _sw + 'background:' + (atJumua ? '#46B482' : 'rgba(255,255,255,0.1)') + ';border:1px solid ' + (atJumua ? '#46B482' : 'rgba(255,255,255,0.15)') + ';">'
     + '<div style="' + _kn + 'background:' + (atJumua ? '#fff' : 'rgba(255,255,255,0.4)') + ';margin-left:' + (atJumua ? '14px' : '0') + ';"></div>'
     + '</div></div>' : '';
@@ -4334,7 +4334,7 @@ function openBabPorte(id, step) {
     html += '<button onclick="' + backFn + '" style="position:relative;z-index:9998;display:flex;align-items:center;background:rgba(10,10,10,0.85);border:1px solid rgba(212,175,55,0.4);border-radius:50%;color:rgba(212,175,55,0.85);cursor:pointer;margin-bottom:20px;padding:0;width:44px;height:44px;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.5);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>';
   }
   if (porte.validated === false && _babCurrentStep === 1) {
-    html += '<div style="font-size:11px;font-style:italic;color:#FFA000;background:rgba(255,160,0,0.1);padding:6px 12px;border-radius:6px;text-align:center;margin-bottom:12px;">Mode beta \u2014 contenu en validation</div>';
+    html += '<div style="font-size:12px;font-style:italic;color:#FFA000;background:rgba(255,160,0,0.1);padding:6px 12px;border-radius:6px;text-align:center;margin-bottom:12px;">Mode beta \u2014 contenu en validation</div>';
   }
   // ── Carte premium ──
   html += '<div style="background:radial-gradient(ellipse at 50% 30%,' + porte.couleur + '12,#0a0a0a 70%),url(\'' + _noiseSvg + '\');border:1px solid rgba(212,175,108,0.15);border-radius:16px;padding:32px 20px 28px;text-align:center;">';
@@ -4350,7 +4350,7 @@ function openBabPorte(id, step) {
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:' + (isCloture ? '22' : '28') + 'px;color:' + porte.couleur + ';direction:rtl;opacity:' + (isCloture ? '0.5' : '0.7') + ';">' + ar + '</div>'
     + '</div>';
   // Label étape
-  html += '<div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + porte.couleur + ';opacity:0.6;margin-bottom:20px;text-align:center;">' + escapeHtml(etape) + '</div>';
+  html += '<div style="font-size:12px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:' + porte.couleur + ';opacity:0.6;margin-bottom:20px;text-align:center;">' + escapeHtml(etape) + '</div>';
   // Contenu
   if (isCloture) {
     html += '<div style="font-family:var(--serif);font-size:22px;color:' + porte.couleur + ';line-height:1.6;text-align:center;max-width:520px;margin:20px auto 36px;">' + escapeHtml(contenu) + '</div>'
@@ -4590,7 +4590,7 @@ function _shareEngagementHtml(voie) {
   var txt = '';
   if (voie === 'classique') txt = safeGetItem('muhasaba_amorce_repar') || '';
   else if (window._muhasabaReponses) txt = window._muhasabaReponses.actionTexte || '';
-  if (!txt.trim()) return '<div style="font-size:11px;color:rgba(255,255,255,0.2);margin-bottom:20px;">Pour partager ton engagement, \u00e9cris-le d\u2019abord dans l\u2019\u00e9tape pr\u00e9c\u00e9dente.</div>';
+  if (!txt.trim()) return '<div style="font-size:12px;color:rgba(255,255,255,0.2);margin-bottom:20px;">Pour partager ton engagement, \u00e9cris-le d\u2019abord dans l\u2019\u00e9tape pr\u00e9c\u00e9dente.</div>';
   var body = encodeURIComponent('Salam, je me suis engag\u00e9 devant All\u00e2h : ' + txt);
   return '<a href="sms:?body=' + body + '" style="display:block;width:100%;max-width:340px;margin:0 auto 20px;padding:12px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:none;color:rgba(200,168,75,0.6);font-family:var(--serif);font-size:13px;text-decoration:none;text-align:center;">Partager mon engagement avec un proche</a>';
 }
@@ -4609,7 +4609,7 @@ function _somaticPatternHtml() {
     return '<div style="border:1px solid rgba(200,168,75,0.25);border-radius:14px;padding:14px;max-width:400px;margin:0 auto 24px;background:rgba(200,168,74,0.06);text-align:center;">'
       + '<div style="font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:8px;">Sur 7 derniers jours, tu as nomm\u00e9 ' + escapeHtml(lbls[top] || top) + ' ' + counts[top] + ' fois sur ' + recent.length + '.</div>'
       + '<div style="font-family:var(--serif);font-size:14px;font-style:italic;color:#E5E0DC;line-height:1.6;">' + (msgs[top] || '') + '</div>'
-      + '<div style="font-size:11px;font-style:italic;color:rgba(255,255,255,0.3);line-height:1.5;margin-top:10px;">Cette observation est une suggestion spirituelle, pas un diagnostic m\u00e9dical. Si tes col\u00e8res sont fr\u00e9quentes ou intenses, parle \u00e0 un m\u00e9decin.</div></div>';
+      + '<div style="font-size:12px;font-style:italic;color:rgba(255,255,255,0.3);line-height:1.5;margin-top:10px;">Cette observation est une suggestion spirituelle, pas un diagnostic m\u00e9dical. Si tes col\u00e8res sont fr\u00e9quentes ou intenses, parle \u00e0 un m\u00e9decin.</div></div>';
   } catch(e) { return ''; }
 }
 
@@ -4722,8 +4722,8 @@ function _injectCureProgress(current) {
     var cursor = (done || _cureDevUnlock()) ? 'cursor:pointer;' : '';
     var onclick = (done || _cureDevUnlock()) ? ' onclick="openCureJour(\'' + _prt + '\',' + d + ')"' : '';
     bar.innerHTML += '<div style="text-align:center;' + cursor + 'background:rgba(0,0,0,0.5);border-radius:12px;padding:6px 4px 4px;"' + onclick + '>'
-      + '<div style="width:28px;height:28px;border-radius:50%;border:' + (active ? '1' : '2') + 'px solid ' + bdr + ';background:' + bg + ';display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:11px;color:' + col + ';' + _dotShadow + '">' + d + '</div>'
-      + '<div style="font-size:9px;color:#F5EDE0;font-weight:500;margin-top:2px;text-shadow:0 1px 3px rgba(0,0,0,0.8);">J' + d + '</div></div>';
+      + '<div style="width:28px;height:28px;border-radius:50%;border:' + (active ? '1' : '2') + 'px solid ' + bdr + ';background:' + bg + ';display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:12px;color:' + col + ';' + _dotShadow + '">' + d + '</div>'
+      + '<div style="font-size:12px;color:#F5EDE0;font-weight:500;margin-top:2px;text-shadow:0 1px 3px rgba(0,0,0,0.8);">J' + d + '</div></div>';
   }
   var contentZone = el.querySelector('[data-cure-content]') || el;
   var firstInZone = contentZone.firstChild;
@@ -6651,7 +6651,7 @@ function _regardStreakInline(displayOnly) {
   return '<div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;margin:8px auto;max-width:320px;">'
     + '<span style="font-family:var(--serif);font-size:13px;color:rgba(200,168,75,0.6);">' + (current === 0 ? 'Commence aujourd\u2019hui' : (current + ' jour' + (current > 1 ? 's' : '') + ' en silence')) + '</span>'
     + (doneToday ? '' : '<button onclick="_regardStreakTap()" style="background:none;border:1px solid rgba(200,168,75,0.25);border-radius:8px;padding:4px 10px;color:rgba(200,168,75,0.5);font-family:var(--serif);font-size:12px;cursor:pointer;">J\u2019ai tenu aujourd\u2019hui</button>')
-    + (current > 0 ? '<button onclick="_regardStreakFall()" style="background:none;border:none;padding:4px 8px;color:rgba(200,168,75,0.25);font-family:var(--serif);font-size:11px;cursor:pointer;">J\u2019ai chut\u00e9</button>' : '')
+    + (current > 0 ? '<button onclick="_regardStreakFall()" style="background:none;border:none;padding:4px 8px;color:rgba(200,168,75,0.25);font-family:var(--serif);font-size:12px;cursor:pointer;">J\u2019ai chut\u00e9</button>' : '')
     + '</div>';
 }
 
@@ -6866,7 +6866,7 @@ function _coffretHtml(key, d, activeId) {
   var html = closeBtn;
   html += '<div style="padding:calc(var(--safe-top,0px)+16px) 20px 0;text-align:center;">';
   html += '<div style="font-family:\'Scheherazade New\',serif;font-size:22px;color:#C8A84A;direction:rtl;margin-bottom:4px;">' + escapeHtml(d.titre_ar) + '</div>';
-  html += '<div style="font-family:var(--serif);font-size:11px;letter-spacing:2px;color:rgba(200,168,75,0.5);margin-bottom:16px;">' + escapeHtml(d.titre_fr.toUpperCase()) + '</div>';
+  html += '<div style="font-family:var(--serif);font-size:12px;letter-spacing:2px;color:rgba(200,168,75,0.5);margin-bottom:16px;">' + escapeHtml(d.titre_fr.toUpperCase()) + '</div>';
   html += '</div>';
   html += '<div style="display:flex;gap:0;border-bottom:1px solid rgba(200,168,75,0.15);padding:0 12px;overflow-x:auto;flex-shrink:0;">';
   d.sections.forEach(function(s) {
@@ -7466,17 +7466,17 @@ function showWeeklyBilan() {
     + '<div style="text-align:center;padding:8px 16px 16px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:#B5A685;line-height:1.6;max-width:300px;margin:0 auto;">' + _voiceMsg + '</div>' + (_memoireLine ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;font-style:italic;color:rgba(200,168,74,0.92);line-height:1.65;max-width:300px;margin:14px auto 0;">' + _memoireLine + '</div>' : '') + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;font-style:italic;color:#E5E0DC;line-height:1.6;max-width:300px;margin:12px auto 0;">' + question + '</div><div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:#B5A685;text-align:right;margin-top:10px;max-width:300px;margin-left:auto;margin-right:auto;">\u2014 Niyyah</div></div>'
     + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:28px;">\u00ab\u00a0' + verset.text + '\u00a0\u00bb \u2014 ' + verset.ref + '</div>'
     + '<div style="padding:0 0 20px;">'
-    + '<div style="text-align:center;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.4);margin-bottom:12px;">Ce que la semaine a vu de toi</div>'
+    + '<div style="text-align:center;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.4);margin-bottom:12px;">Ce que la semaine a vu de toi</div>'
     + '<div style="display:flex;justify-content:center;gap:24px;margin-bottom:28px;">'
-    + '<div style="text-align:center;"><div id="_wkNum0" style="font-family:\'Cormorant Garamond\',serif;font-size:28px;font-weight:600;color:#C8A84A;">0</div><div style="font-family:Amiri,serif;font-size:14px;color:rgba(200,168,75,0.5);direction:rtl;">\u0623\u0639\u0652\u0645\u064E\u0627\u0644</div><div style="font-size:11px;color:var(--t3);letter-spacing:1px;">gestes</div></div>'
+    + '<div style="text-align:center;"><div id="_wkNum0" style="font-family:\'Cormorant Garamond\',serif;font-size:28px;font-weight:600;color:#C8A84A;">0</div><div style="font-family:Amiri,serif;font-size:14px;color:rgba(200,168,75,0.5);direction:rtl;">\u0623\u0639\u0652\u0645\u064E\u0627\u0644</div><div style="font-size:12px;color:var(--t3);letter-spacing:1px;">gestes</div></div>'
     + '<div style="width:1px;background:rgba(200,168,75,0.15);"></div>'
-    + '<div style="text-align:center;"><div id="_wkNum1" style="font-family:\'Cormorant Garamond\',serif;font-size:28px;font-weight:600;color:#C8A84A;">0</div><div style="font-family:Amiri,serif;font-size:14px;color:rgba(200,168,75,0.5);direction:rtl;">\u0623\u064E\u064A\u0651\u064E\u0627\u0645</div><div style="font-size:11px;color:var(--t3);letter-spacing:1px;">journ\u00e9es</div></div>'
+    + '<div style="text-align:center;"><div id="_wkNum1" style="font-family:\'Cormorant Garamond\',serif;font-size:28px;font-weight:600;color:#C8A84A;">0</div><div style="font-family:Amiri,serif;font-size:14px;color:rgba(200,168,75,0.5);direction:rtl;">\u0623\u064E\u064A\u0651\u064E\u0627\u0645</div><div style="font-size:12px;color:var(--t3);letter-spacing:1px;">journ\u00e9es</div></div>'
     + '<div style="width:1px;background:rgba(200,168,75,0.15);"></div>'
-    + '<div style="text-align:center;"><div id="_wkNum2" style="font-family:\'Cormorant Garamond\',serif;font-size:28px;font-weight:600;color:#C8A84A;">0</div><div style="font-family:Amiri,serif;font-size:14px;color:rgba(200,168,75,0.5);direction:rtl;">\u0641\u064E\u062C\u0652\u0631</div><div style="font-size:11px;color:var(--t3);letter-spacing:1px;">Fajr</div></div>'
+    + '<div style="text-align:center;"><div id="_wkNum2" style="font-family:\'Cormorant Garamond\',serif;font-size:28px;font-weight:600;color:#C8A84A;">0</div><div style="font-family:Amiri,serif;font-size:14px;color:rgba(200,168,75,0.5);direction:rtl;">\u0641\u064E\u062C\u0652\u0631</div><div style="font-size:12px;color:var(--t3);letter-spacing:1px;">Fajr</div></div>'
     + '</div>'
-    + '<div style="text-align:center;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.4);margin-bottom:8px;">Ce qui a respir\u00e9</div>'
+    + '<div style="text-align:center;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.4);margin-bottom:8px;">Ce qui a respir\u00e9</div>'
     + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#B5A685;margin-bottom:24px;">' + comparison + '</div>'
-    + '<div style="text-align:center;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.4);margin-bottom:12px;">Le chemin qui s\u2019ouvre</div>'
+    + '<div style="text-align:center;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.4);margin-bottom:12px;">Le chemin qui s\u2019ouvre</div>'
     + _premiumBadge
     + '<div id="_wkConseil" style="text-align:center;max-width:320px;margin:0 auto 24px;">' + conseil.split('\n\n').map(function(p) { return '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#B5A685;line-height:1.7;margin-bottom:12px;">' + p + '</div>'; }).join('') + '</div>'
     + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.6);line-height:1.6;margin-bottom:8px;max-width:280px;margin-left:auto;margin-right:auto;">' + parole + '</div>'
@@ -7846,7 +7846,7 @@ function _recitsShowArchive() {
     html += '<div onclick="_openRecitDetail(' + r.num + ')" style="padding:14px 16px;background:rgba(200,168,75,0.04);border:1px solid rgba(200,168,75,0.12);border-radius:14px;margin-bottom:8px;cursor:pointer;display:flex;align-items:center;gap:14px;" ontouchstart="this.style.opacity=\'0.7\'" ontouchend="this.style.opacity=\'1\'">';
     html += '<div style="width:32px;height:32px;border-radius:8px;background:rgba(200,168,75,0.1);display:flex;align-items:center;justify-content:center;font-family:\'Cormorant Garamond\',serif;font-size:13px;color:#C8A84A;flex-shrink:0;">' + r.num + '</div>';
     html += '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;color:#E5E0DC;">' + T(r.titre) + '</div>';
-    html += '<div style="font-size:11px;color:#B5A685;margin-top:2px;">' + (r.theme || '') + '</div></div>';
+    html += '<div style="font-size:12px;color:#B5A685;margin-top:2px;">' + (r.theme || '') + '</div></div>';
     html += (read ? '<span style="font-size:14px;color:#C8A84A;">\u2713</span>' : '<div style="color:rgba(200,168,75,0.4);font-size:16px;flex-shrink:0;">\u203A</div>');
     html += '</div>';
   });
@@ -8540,8 +8540,8 @@ function openTafakkurArchive() {
       }
       html += '<div onclick="_openTafakkurArchiveRecit(\'' + h.date + '\')" style="padding:14px 16px;background:rgba(200,168,75,0.04);border:1px solid rgba(200,168,75,0.12);border-radius:14px;margin-bottom:8px;cursor:pointer;">';
       html += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">';
-      html += '<span style="font-size:11px;color:rgba(200,168,75,0.5);">' + h.date + '</span>';
-      html += (dureeStr ? '<span style="font-size:11px;color:rgba(200,168,75,0.55);">' + dureeStr + '</span>' : '');
+      html += '<span style="font-size:12px;color:rgba(200,168,75,0.5);">' + h.date + '</span>';
+      html += (dureeStr ? '<span style="font-size:12px;color:rgba(200,168,75,0.55);">' + dureeStr + '</span>' : '');
       html += '</div>';
       html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#E5E0DC;line-height:1.6;">' + (h.phrase || '').substring(0, 150) + (h.phrase && h.phrase.length > 150 ? '\u2026' : '') + '</div>';
       html += '</div>';
@@ -9866,7 +9866,7 @@ function renderQiblaCard() {
     + (isAligned ? '✦ ALIGNÉ AVEC LA MECQUE ✦' : isLive ? 'Tourne vers l\'aiguille verte' : 'Direction ' + dir + ' · ' + Math.round(visualAngle) + '°')
     + '</div>'
     + '<button class="qibla-btn" aria-label="Réessayer" onclick="loadQibla()">↻ Recalibrer</button>'
-    + '<div style="font-size:11px;font-style:italic;color:var(--t3);opacity:0.7;text-align:center;margin-top:10px;">' + t('qibla_disclaimer') + '</div>'
+    + '<div style="font-size:12px;font-style:italic;color:var(--t3);opacity:0.7;text-align:center;margin-top:10px;">' + t('qibla_disclaimer') + '</div>'
     + '</div>';
 }
 
@@ -12164,14 +12164,14 @@ function v2OpenSettings() {
 
 
       <div style="background:#1a1a1a; border-radius:14px; padding:16px; margin-bottom:${_cheminInfo ? '8' : '16'}px; cursor:pointer;" onclick="openOrientationPicker()">
-        <div style="font-size:11px; letter-spacing:2px; color:#C8A84A; opacity:0.7; text-transform:uppercase; margin-bottom:8px;">${t('settings_orientation_title')}</div>
+        <div style="font-size:12px; letter-spacing:2px; color:#C8A84A; opacity:0.7; text-transform:uppercase; margin-bottom:8px;">${t('settings_orientation_title')}</div>
         <div id="settings-orientation-current" style="font-family:var(--serif); font-size:16px; color:#E5E0DC; margin-bottom:4px;"></div>
-        <div style="font-size:11px; color:rgba(200,168,75,0.5); font-style:italic;">${t('settings_orientation_change')} →</div>
+        <div style="font-size:12px; color:rgba(200,168,75,0.5); font-style:italic;">${t('settings_orientation_change')} →</div>
       </div>
       ${_cheminInfo ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:#B5A685;text-align:center;margin-bottom:16px;line-height:1.5;">' + _cheminInfo + '</div>' : ''}
 
       <div style="background:#1a1a1a; border-radius:14px; padding:16px; margin-bottom:16px; cursor:pointer;" onclick="replayOnboarding()">
-        <div style="font-size:11px; letter-spacing:2px; color:#C8A84A; opacity:0.7; text-transform:uppercase; margin-bottom:8px;">${t('settings_replay_title')}</div>
+        <div style="font-size:12px; letter-spacing:2px; color:#C8A84A; opacity:0.7; text-transform:uppercase; margin-bottom:8px;">${t('settings_replay_title')}</div>
         <div style="font-size:13px; color:#E5E0DC; opacity:0.7; line-height:1.5;">${t('settings_replay_sub')}</div>
       </div>
 
@@ -12505,7 +12505,7 @@ function _v2OpenNiyyahPickModal() {
     if (opt.id) btn.dataset.niyyahId = opt.id;
     if (opt._seasonLabel) {
       var badge = document.createElement('div');
-      badge.style.cssText = 'font-size:11px;color:#C8A84A;margin-bottom:4px;font-style:italic;opacity:0.8;';
+      badge.style.cssText = 'font-size:12px;color:#C8A84A;margin-bottom:4px;font-style:italic;opacity:0.8;';
       badge.textContent = _seasonLabels[opt._seasonLabel] || '';
       btn.appendChild(badge);
     }
@@ -13181,7 +13181,7 @@ function openWaqtModal() {
     if (story.titre) html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:700;color:#C8A84A;letter-spacing:1px;margin-bottom:12px;">' + story.titre.toUpperCase() + '</div>';
     html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#e9ddc7;line-height:1.75;max-width:340px;margin-bottom:16px;">' + (story.texte || '') + '</div>';
     html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-weight:700;color:#e9ddc7;line-height:1.6;margin-bottom:12px;">' + story.morale + '</div>';
-    if (story.source) html += '<div style="font-family:\'Inter\',sans-serif;font-size:11px;color:rgba(200,168,75,0.4);line-height:1.4;">' + story.source + '</div>';
+    if (story.source) html += '<div style="font-family:\'Inter\',sans-serif;font-size:12px;color:rgba(200,168,75,0.4);line-height:1.4;">' + story.source + '</div>';
     actionEl.innerHTML = html;
   } else {
     actionEl.innerHTML = '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:28px;color:#C8A84A;direction:rtl;margin-bottom:20px;">' + arName + '</div>'
@@ -13732,7 +13732,7 @@ function v2RefreshStats() {
     _de.id = 'decouverte-encart';
     _de.style.cssText = 'max-width:340px;margin:12px auto;padding:12px;border:1px solid rgba(200,168,75,0.25);border-radius:14px;background:rgba(10,10,10,0.5);text-align:center;';
     _de.innerHTML = '<div style="font-size:14px;color:#E5E0DC;line-height:1.6;margin-bottom:4px;">' + (_decTextes[_dayN] || '') + '</div>'
-      + '<div style="font-size:11px;color:rgba(200,168,75,0.4);">Jour ' + _dayN + ' sur 7</div>';
+      + '<div style="font-size:12px;color:rgba(200,168,75,0.4);">Jour ' + _dayN + ' sur 7</div>';
     var _sanctInner = document.querySelector('#view-sanctuaire > div');
     if (_sanctInner) _sanctInner.insertBefore(_de, _sanctInner.firstChild);
   })();
@@ -14291,7 +14291,7 @@ function updateSanctuaireMoment() {
 function getVendrediRegardCardHTML() {
   return '<div class="vendredi-regard-card" onclick="openVendrediRegard()">'
     + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#FAF7EE;line-height:1.5;">\u00ab Vendredi de paix. Choisis un Regard pour quelqu\u2019un que tu aimes. \u00bb</div>'
-    + '<div style="font-size:11px;letter-spacing:2px;color:rgba(200,168,75,0.55);margin-top:8px;text-transform:uppercase;">REGARD DU VENDREDI</div>'
+    + '<div style="font-size:12px;letter-spacing:2px;color:rgba(200,168,75,0.55);margin-top:8px;text-transform:uppercase;">REGARD DU VENDREDI</div>'
     + '</div>';
 }
 function openVendrediRegard() {
@@ -14960,7 +14960,7 @@ function _aidShowOverlay(evt) {
     '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:44px;color:#C8A84A;margin-bottom:14px;">' + (ov.title_ar || '') + '</div>' +
     '<div style="font-family:\'Cormorant Garamond\',serif;font-size:26px;color:#E5DCC8;font-weight:300;margin-bottom:22px;">' + (ov.title_fr || '') + '</div>' +
     '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;color:rgba(200,168,74,0.7);line-height:1.7;max-width:300px;margin-bottom:32px;">' + _aidT(ov.subtitle) + '</div>' +
-    '<div style="font-family:Inter,sans-serif;font-size:11px;color:rgba(255,255,255,0.2);letter-spacing:2px;text-transform:uppercase;">' + (_aidT(ov.instruction) || 'Tap pour entrer') + '</div>';
+    '<div style="font-family:Inter,sans-serif;font-size:12px;color:rgba(255,255,255,0.2);letter-spacing:2px;text-transform:uppercase;">' + (_aidT(ov.instruction) || 'Tap pour entrer') + '</div>';
   el.onclick = function() { _aidDismissOverlay(el); };
   document.body.appendChild(el);
   requestAnimationFrame(function() { el.style.opacity = '1'; });
@@ -15135,7 +15135,7 @@ function _aidShowPrayerPill() {
   });
   var pill = document.createElement('div');
   pill.id = 'aid-prayer-pill';
-  pill.style.cssText = 'position:fixed;bottom:16px;right:12px;z-index:9990;background:rgba(26,22,16,0.92);border:1px solid rgba(200,168,74,0.2);border-radius:14px;padding:10px 14px;font-family:Inter,sans-serif;font-size:11px;line-height:1.6;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);cursor:pointer;transition:transform 0.3s,opacity 0.3s;';
+  pill.style.cssText = 'position:fixed;bottom:16px;right:12px;z-index:9990;background:rgba(26,22,16,0.92);border:1px solid rgba(200,168,74,0.2);border-radius:14px;padding:10px 14px;font-family:Inter,sans-serif;font-size:12px;line-height:1.6;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);cursor:pointer;transition:transform 0.3s,opacity 0.3s;';
   pill.innerHTML = rows;
   pill._expanded = true;
   pill.onclick = function() {
@@ -15199,13 +15199,13 @@ function _aidInjectStyles() {
     '.aid-story-text{font-family:"Cormorant Garamond",serif;font-size:15px;color:rgba(240,234,214,.85);line-height:1.8}' +
     '.aid-story-morale{font-family:"Cormorant Garamond",serif;font-size:15px;font-weight:700;color:rgba(240,234,214,.95);line-height:1.6;margin-top:14px;padding-top:10px;border-top:1px solid rgba(200,168,74,.12)}' +
     '.aid-dua{margin-bottom:24px;padding-bottom:18px;border-bottom:1px solid rgba(200,168,74,.08)}' +
-    '.aid-dua-occasion{font-family:Inter,sans-serif;font-size:11px;color:rgba(200,168,74,.6);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}' +
+    '.aid-dua-occasion{font-family:Inter,sans-serif;font-size:12px;color:rgba(200,168,74,.6);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}' +
     '.aid-dua-ar{font-family:"Scheherazade New",Amiri,serif;font-size:22px;color:#C8A84A;direction:rtl;text-align:right;line-height:1.8;margin-bottom:8px}' +
     '.aid-dua-fr{font-family:"Cormorant Garamond",serif;font-size:15px;font-style:italic;color:rgba(240,234,214,.8);line-height:1.6;margin-bottom:6px}' +
-    '.aid-source{font-family:Inter,sans-serif;font-size:10px;color:rgba(200,168,74,.35)}' +
+    '.aid-source{font-family:Inter,sans-serif;font-size:12px;color:rgba(200,168,74,.35)}' +
     '.aid-med{font-family:"Cormorant Garamond",serif;font-size:16px;color:rgba(240,234,214,.85);line-height:1.8;margin-bottom:24px;padding-bottom:18px;border-bottom:1px solid rgba(200,168,74,.08)}' +
     '.aid-verset{margin-bottom:24px;padding-bottom:18px;border-bottom:1px solid rgba(200,168,74,.08)}' +
-    '.aid-verset-ref{font-family:Inter,sans-serif;font-size:11px;color:rgba(200,168,74,.6);letter-spacing:.5px;margin-bottom:8px}' +
+    '.aid-verset-ref{font-family:Inter,sans-serif;font-size:12px;color:rgba(200,168,74,.6);letter-spacing:.5px;margin-bottom:8px}' +
     '.aid-verset-text{font-family:"Cormorant Garamond",serif;font-size:16px;font-style:italic;color:rgba(240,234,214,.9);line-height:1.8;margin-bottom:8px}' +
     '.aid-verset-comment{font-family:"Cormorant Garamond",serif;font-size:14px;color:rgba(200,168,74,.5);line-height:1.6}' +
     '.aid-takbir{margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid rgba(200,168,74,.08)}' +
@@ -15373,12 +15373,12 @@ function _aidOpenVoeux() {
     + '</div>'
     // Champ destinataire
     + '<div style="margin-bottom:14px;">'
-    + '<label style="font-family:Inter,sans-serif;font-size:11px;color:rgba(200,168,74,0.5);letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:6px;">\u00c0 qui ?</label>'
+    + '<label style="font-family:Inter,sans-serif;font-size:12px;color:rgba(200,168,74,0.5);letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:6px;">\u00c0 qui ?</label>'
     + '<input id="aid-voeux-prenom" type="text" maxlength="30" placeholder="Laisse vide pour message g\u00e9n\u00e9ral" style="width:100%;box-sizing:border-box;padding:10px 14px;background:rgba(200,168,74,0.04);border:1px solid rgba(200,168,74,0.2);border-radius:12px;color:#E5DCC8;font-size:14px;font-family:Inter,sans-serif;outline:none;" oninput="_aidVoeuxPreview()">'
     + '</div>'
     // Choix template
     + '<div style="margin-bottom:14px;">'
-    + '<label style="font-family:Inter,sans-serif;font-size:11px;color:rgba(200,168,74,0.5);letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:6px;">Style</label>'
+    + '<label style="font-family:Inter,sans-serif;font-size:12px;color:rgba(200,168,74,0.5);letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:6px;">Style</label>'
     + '<select id="aid-voeux-style" onchange="_aidVoeuxPreview()" style="width:100%;box-sizing:border-box;padding:10px 14px;background:#1a1610;border:1px solid rgba(200,168,74,0.2);border-radius:12px;color:#E5DCC8;font-size:14px;font-family:Inter,sans-serif;outline:none;">' + opts + '</select>'
     + '</div>'
     // Preview
@@ -15414,7 +15414,7 @@ function _aidVoeuxPreview() {
   var d = _aidVoeuxGetMsg();
   var html = '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:24px;color:#E8D9A8;margin-bottom:8px;">\u0639\u064a\u062f \u0645\u0628\u0627\u0631\u0643</div>';
   html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;color:#E8D9A8;line-height:1.7;white-space:pre-line;max-width:90%;">' + d.msg + '</div>';
-  if (d.sig) html += '<div style="font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:11px;color:rgba(232,217,168,0.6);margin-top:10px;">\u2014 ' + d.sig + '</div>';
+  if (d.sig) html += '<div style="font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:12px;color:rgba(232,217,168,0.6);margin-top:10px;">\u2014 ' + d.sig + '</div>';
   el.innerHTML = html;
 }
 
@@ -15844,7 +15844,7 @@ function _renderRegardePremium(content, data, dataUrl) {
       var audioUrl = (res.data[2] && res.data[2].audio) ? res.data[2].audio : '';
       var sourateName = ar.surah ? ar.surah.englishName : '';
       var refLabel = sourateName + ' (' + ref + ')';
-      var _lieuHtml = data.lieu_revelation ? ' <span style="font-size:11px;color:rgba(200,168,75,0.45);">(' + data.lieu_revelation + ')</span>' : '';
+      var _lieuHtml = data.lieu_revelation ? ' <span style="font-size:12px;color:rgba(200,168,75,0.45);">(' + data.lieu_revelation + ')</span>' : '';
       var _phoneHtml = data.phonetique ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.5);line-height:1.6;max-width:340px;margin-bottom:8px;">' + data.phonetique + '</div>' : '';
       var _sep = '<div style="width:40px;height:1px;background:rgba(200,168,75,0.3);margin:20px auto;"></div>';
       var _hasAudio = !!audioUrl;
@@ -15968,9 +15968,9 @@ function _regardeDuaa() {
     body = '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:24px;color:#FAF7EE;direction:rtl;line-height:1.9;margin-bottom:14px;">' + esc(d.ar) + '</div>'
          + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.6);line-height:1.6;margin-bottom:14px;">' + esc(d.translit) + '</div>'
          + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;font-style:italic;color:#FAF7EE;line-height:1.7;margin-bottom:14px;">' + esc(d.fr) + '</div>'
-         + '<div style="font-size:11px;letter-spacing:1px;color:rgba(200,168,75,0.45);">' + esc(d.source) + '</div>';
+         + '<div style="font-size:12px;letter-spacing:1px;color:rgba(200,168,75,0.45);">' + esc(d.source) + '</div>';
   } else {
-    body = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.45);margin-bottom:12px;">une invocation</div>'
+    body = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.45);margin-bottom:12px;">une invocation</div>'
          + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:#FAF7EE;line-height:1.7;">' + esc(d.fr) + '</div>';
   }
   var modal = document.createElement('div');
@@ -16411,7 +16411,7 @@ function openRegardeDetail(id) {
   if (!overlay || !content) return;
   var d = new Date(entry.date);
   var dateStr = d.toLocaleDateString(_dateLocale(), { weekday:'long', day:'numeric', month:'long' }) + ' · ' + d.toLocaleTimeString(_dateLocale(), { hour:'2-digit', minute:'2-digit' });
-  var photoHtml = entry.photo ? '<img src="' + entry.photo + '" style="width:100%;border-radius:12px;margin-bottom:20px;">' : (entry.hasOwnProperty('photo') ? '<div style="width:100%;height:80px;border-radius:12px;background:rgba(200,168,75,0.05);border:1px dashed rgba(200,168,75,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:20px;"><span style="font-size:11px;color:var(--t3);font-style:italic;">Photo archiv\u00e9e</span></div>' : '');
+  var photoHtml = entry.photo ? '<img src="' + entry.photo + '" style="width:100%;border-radius:12px;margin-bottom:20px;">' : (entry.hasOwnProperty('photo') ? '<div style="width:100%;height:80px;border-radius:12px;background:rgba(200,168,75,0.05);border:1px dashed rgba(200,168,75,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:20px;"><span style="font-size:12px;color:var(--t3);font-style:italic;">Photo archiv\u00e9e</span></div>' : '');
   var starIcon = entry.bookmark ? '★' : '☆';
   var noteText = entry.note || '';
   content.innerHTML = photoHtml
@@ -16634,7 +16634,7 @@ function openNiyyahDetail(id) {
   if (!overlay || !content) return;
   var d = new Date(entry.date);
   var dateStr = d.toLocaleDateString(_dateLocale(), { weekday:'long', day:'numeric', month:'long' }) + ' · ' + d.toLocaleTimeString(_dateLocale(), { hour:'2-digit', minute:'2-digit' });
-  var photoHtml = entry.photo ? '<img src="' + entry.photo + '" style="width:100%;border-radius:12px;margin-bottom:20px;">' : (entry.hasOwnProperty('photo') ? '<div style="width:100%;height:80px;border-radius:12px;background:rgba(200,168,75,0.05);border:1px dashed rgba(200,168,75,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:20px;"><span style="font-size:11px;color:var(--t3);font-style:italic;">Photo archiv\u00e9e</span></div>' : '');
+  var photoHtml = entry.photo ? '<img src="' + entry.photo + '" style="width:100%;border-radius:12px;margin-bottom:20px;">' : (entry.hasOwnProperty('photo') ? '<div style="width:100%;height:80px;border-radius:12px;background:rgba(200,168,75,0.05);border:1px dashed rgba(200,168,75,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:20px;"><span style="font-size:12px;color:var(--t3);font-style:italic;">Photo archiv\u00e9e</span></div>' : '');
   content.innerHTML = photoHtml
     + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-style:italic;color:#D4AF37;line-height:1.6;text-align:center;margin-bottom:12px;">' + escapeHtml(entry.intention || '') + '</div>'
     + '<div style="font-size:12px;color:rgba(255,255,255,0.55);text-align:center;margin-bottom:24px;">' + dateStr + '</div>'
@@ -17386,15 +17386,15 @@ function openVueRituel(prayer) {
     + '</div>'
     + '<div style="display:flex;gap:10px;align-items:center;opacity:' + (_prayerChecked ? '1' : '0.4') + ';transition:opacity 0.2s;">'
     + '<div style="display:flex;align-items:center;gap:4px;cursor:pointer;" onclick="togglePrayerOnTime(\'' + prayer + '\');openVueRituel(\'' + prayer + '\');">'
-    + '<div style="font-size:11px;color:' + (_onTime ? 'var(--green)' : 'rgba(255,255,255,0.35)') + ';">\u23F0</div>'
+    + '<div style="font-size:12px;color:' + (_onTime ? 'var(--green)' : 'rgba(255,255,255,0.35)') + ';">\u23F0</div>'
     + '<div style="' + _sw + 'background:' + (_onTime ? 'var(--green)' : 'rgba(255,255,255,0.1)') + ';border:1px solid ' + (_onTime ? 'var(--green)' : 'rgba(255,255,255,0.15)') + ';">'
     + '<div style="' + _kn + 'background:' + (_onTime ? '#fff' : 'rgba(255,255,255,0.4)') + ';margin-left:' + (_onTime ? '14px' : '0') + ';"></div></div></div>'
     + (_isJum ? '' : '<div style="display:flex;align-items:center;gap:4px;cursor:pointer;" onclick="togglePrayerMosquee(\'' + prayer + '\');openVueRituel(\'' + prayer + '\');">'
-    + '<div style="font-size:11px;color:' + (_atMosq ? '#C8A84A' : 'rgba(255,255,255,0.35)') + ';">\u{1F54C}</div>'
+    + '<div style="font-size:12px;color:' + (_atMosq ? '#C8A84A' : 'rgba(255,255,255,0.35)') + ';">\u{1F54C}</div>'
     + '<div style="' + _sw + 'background:' + (_atMosq ? '#C8A84A' : 'rgba(255,255,255,0.1)') + ';border:1px solid ' + (_atMosq ? '#C8A84A' : 'rgba(255,255,255,0.15)') + ';">'
     + '<div style="' + _kn + 'background:' + (_atMosq ? '#fff' : 'rgba(255,255,255,0.4)') + ';margin-left:' + (_atMosq ? '14px' : '0') + ';"></div></div></div>')
     + (_isJum ? '<div style="display:flex;align-items:center;gap:4px;cursor:pointer;" onclick="togglePrayerJumua();openVueRituel(\'' + prayer + '\');">'
-    + '<div style="font-size:11px;color:' + (_atJum ? '#46B482' : 'rgba(255,255,255,0.35)') + ';">\u262A\uFE0F</div>'
+    + '<div style="font-size:12px;color:' + (_atJum ? '#46B482' : 'rgba(255,255,255,0.35)') + ';">\u262A\uFE0F</div>'
     + '<div style="' + _sw + 'background:' + (_atJum ? '#46B482' : 'rgba(255,255,255,0.1)') + ';border:1px solid ' + (_atJum ? '#46B482' : 'rgba(255,255,255,0.15)') + ';">'
     + '<div style="' + _kn + 'background:' + (_atJum ? '#fff' : 'rgba(255,255,255,0.4)') + ';margin-left:' + (_atJum ? '14px' : '0') + ';"></div></div></div>' : '')
     + '</div></div>';
@@ -17701,7 +17701,7 @@ function openVueGhidaaJour() {
       + '<div class="fiqh-categorie">' + (g.categorie || '').toUpperCase() + '</div>'
       + '<div style="font-family:\'Amiri\',serif;font-size:28px;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:8px;">' + (g.nom_ar || '') + '</div>'
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-weight:700;color:#C8A84A;margin-bottom:4px;">' + (g.nom_fr || '') + '</div>'
-      + '<div style="font-size:11px;color:rgba(200,168,74,0.5);margin-bottom:20px;letter-spacing:1px;">' + (g.statut || '') + '</div>'
+      + '<div style="font-size:12px;color:rgba(200,168,74,0.5);margin-bottom:20px;letter-spacing:1px;">' + (g.statut || '') + '</div>'
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;line-height:1.7;color:rgba(240,234,214,0.95);margin-bottom:20px;">' + (g.bienfaits || '') + '</div>'
       + (g.source_coran_hadith ? '<div style="font-size:12px;line-height:1.6;color:rgba(200,168,74,0.6);font-style:italic;margin-bottom:16px;">' + g.source_coran_hadith + '</div>' : '')
       + (g.comment_le_consommer ? '<div style="font-size:13px;line-height:1.6;color:rgba(255,255,255,0.6);background:rgba(200,168,74,0.05);border-radius:12px;padding:14px;text-align:left;">\uD83C\uDF7D\uFE0F ' + g.comment_le_consommer + '</div>' : '')
@@ -17879,7 +17879,7 @@ function openVueLisan(viewDay) {
   html += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">';
   html += '<button onclick="openVueLisan(' + (currentDay - 1) + ')" style="background:none;border:none;font-size:20px;cursor:pointer;padding:4px 10px;color:' + (canPrev ? '#C8A84A' : 'rgba(200,168,75,0.15)') + ';' + (canPrev ? '' : 'pointer-events:none;') + '">\u2039</button>';
   html += '<div style="text-align:center;">';
-  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:11px;letter-spacing:2px;color:rgba(200,168,75,0.5);">COMPRENDRE LE CORAN</div>';
+  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:2px;color:rgba(200,168,75,0.5);">COMPRENDRE LE CORAN</div>';
   html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;color:rgba(200,168,75,0.4);margin-top:2px;">Jour ' + currentDay + ' sur ' + total + ' \u2014 Palier ' + _lisanPalier + '</div>';
   html += '</div>';
   html += '<button onclick="openVueLisan(' + (currentDay + 1) + ')" style="background:none;border:none;font-size:20px;cursor:pointer;padding:4px 10px;color:' + (canNext ? '#C8A84A' : 'rgba(200,168,75,0.15)') + ';' + (canNext ? '' : 'pointer-events:none;') + '">\u203a</button>';
@@ -17887,7 +17887,7 @@ function openVueLisan(viewDay) {
 
   // Today indicator
   if (isToday) {
-    html += '<div style="text-align:center;margin-bottom:16px;"><span style="display:inline-block;background:#C8A84A;color:#0A0908;font-family:\'Inter\',sans-serif;font-size:9px;font-weight:700;letter-spacing:1.5px;padding:3px 10px;border-radius:10px;">AUJOURD\u2019HUI</span></div>';
+    html += '<div style="text-align:center;margin-bottom:16px;"><span style="display:inline-block;background:#C8A84A;color:#0A0908;font-family:\'Inter\',sans-serif;font-size:12px;font-weight:700;letter-spacing:1.5px;padding:3px 10px;border-radius:10px;">AUJOURD\u2019HUI</span></div>';
   } else {
     html += '<div style="text-align:center;margin-bottom:16px;"><span style="font-family:\'Cormorant Garamond\',serif;font-size:12px;font-style:italic;color:rgba(200,168,75,0.3);">R\u00e9vision</span></div>';
   }
@@ -17909,7 +17909,7 @@ function openVueLisan(viewDay) {
   // Racine
   if (mot.racine && mot.racine.lettres !== '\u2014') {
     html += '<div style="border:1px solid rgba(200,168,75,0.15);border-radius:10px;padding:12px 16px;margin-bottom:20px;background:rgba(200,168,75,0.04);">';
-    html += '<div style="font-family:\'Inter\',sans-serif;font-size:11px;color:rgba(200,168,75,0.5);letter-spacing:1px;margin-bottom:4px;">RACINE</div>';
+    html += '<div style="font-family:\'Inter\',sans-serif;font-size:12px;color:rgba(200,168,75,0.5);letter-spacing:1px;margin-bottom:4px;">RACINE</div>';
     html += '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:22px;color:#C8A84A;direction:rtl;display:inline;">' + mot.racine.lettres + '</div>';
     html += '<span style="font-family:\'Cormorant Garamond\',serif;font-size:14px;color:rgba(240,234,214,0.5);margin-left:12px;">(' + mot.racine.translitteration + ') \u2014 ' + mot.racine.sens_fondamental + '</span>';
     html += '</div>';
@@ -17919,7 +17919,7 @@ function openVueLisan(viewDay) {
   if (mot.exemple_verset) {
     var v = mot.exemple_verset;
     html += '<div style="border:1px solid rgba(200,168,75,0.12);border-radius:10px;padding:16px;margin-bottom:20px;background:rgba(200,168,75,0.03);">';
-    html += '<div style="font-family:\'Inter\',sans-serif;font-size:11px;color:rgba(200,168,75,0.5);letter-spacing:1px;margin-bottom:10px;">CORAN ' + (v.reference || '') + '</div>';
+    html += '<div style="font-family:\'Inter\',sans-serif;font-size:12px;color:rgba(200,168,75,0.5);letter-spacing:1px;margin-bottom:10px;">CORAN ' + (v.reference || '') + '</div>';
     html += '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:24px;color:rgba(240,234,214,0.9);direction:rtl;line-height:1.8;margin-bottom:8px;">' + (v.arabe || '') + '</div>';
     html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;color:rgba(240,234,214,0.5);font-style:italic;margin-bottom:6px;">' + (v.translitteration || '') + '</div>';
     html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;color:rgba(240,234,214,0.8);line-height:1.6;">' + (v.traduction_fr || '') + '</div>';
@@ -17932,7 +17932,7 @@ function openVueLisan(viewDay) {
   // Famille de mots
   if (mot.famille_mots && mot.famille_mots.length > 0) {
     html += '<div style="margin-bottom:20px;">';
-    html += '<div style="font-family:\'Inter\',sans-serif;font-size:11px;color:rgba(200,168,75,0.5);letter-spacing:1px;margin-bottom:8px;">FAMILLE DU MOT</div>';
+    html += '<div style="font-family:\'Inter\',sans-serif;font-size:12px;color:rgba(200,168,75,0.5);letter-spacing:1px;margin-bottom:8px;">FAMILLE DU MOT</div>';
     mot.famille_mots.forEach(function(fm) {
       html += '<div style="display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid rgba(200,168,75,0.08);">';
       html += '<span style="font-family:\'Scheherazade New\',Amiri,serif;font-size:20px;color:#C8A84A;direction:rtl;min-width:60px;text-align:right;">' + fm.arabe + '</span>';
@@ -17952,7 +17952,7 @@ function openVueLisan(viewDay) {
 
   // Fréquence
   html += '<div style="text-align:center;margin-bottom:24px;">';
-  html += '<div style="font-family:\'Inter\',sans-serif;font-size:11px;color:rgba(200,168,75,0.4);">Appara\u00eet ' + (mot.frequence_coran || '?') + ' fois dans le Coran</div>';
+  html += '<div style="font-family:\'Inter\',sans-serif;font-size:12px;color:rgba(200,168,75,0.4);">Appara\u00eet ' + (mot.frequence_coran || '?') + ' fois dans le Coran</div>';
   html += '</div>';
 
   // Bouton validation — uniquement pour le mot du jour
@@ -17986,7 +17986,7 @@ function openLisanGlossaire() {
   // Header
   html += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">';
   html += '<div>';
-  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:11px;letter-spacing:2px;color:rgba(200,168,75,0.5);">MES MOTS</div>';
+  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:2px;color:rgba(200,168,75,0.5);">MES MOTS</div>';
   html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;color:rgba(200,168,75,0.35);margin-top:2px;">' + todayDay + ' mots d\u00e9bloqu\u00e9s sur ' + window.LISAN_DATA.length + '</div>';
   html += '</div>';
   html += '<button onclick="document.getElementById(\'lisan-glossaire\').remove();" style="background:none;border:none;color:rgba(255,255,255,0.4);font-size:22px;cursor:pointer;padding:4px 8px;">\u00d7</button>';
@@ -18005,7 +18005,7 @@ function openLisanGlossaire() {
     var isToday = dayNum === todayDay;
     html += '<div class="lisan-gl-row" data-search="' + (m.mot_arabe + ' ' + m.translitteration + ' ' + (m.traductions_fr || []).join(' ')).replace(/"/g, '&quot;').toLowerCase() + '" onclick="document.getElementById(\'lisan-glossaire\').remove();openVueLisan(' + dayNum + ')" style="display:flex;align-items:center;gap:12px;padding:12px 10px;border-bottom:1px solid rgba(200,168,75,0.06);cursor:pointer;transition:background 0.15s;" onmouseenter="this.style.background=\'rgba(200,168,75,0.06)\'" onmouseleave="this.style.background=\'transparent\'">';
     // Jour
-    html += '<div style="min-width:28px;text-align:center;font-family:\'Inter\',sans-serif;font-size:10px;color:rgba(200,168,75,0.3);">' + dayNum + '</div>';
+    html += '<div style="min-width:28px;text-align:center;font-family:\'Inter\',sans-serif;font-size:12px;color:rgba(200,168,75,0.3);">' + dayNum + '</div>';
     // Arabe
     html += '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:22px;color:#C8A84A;direction:rtl;min-width:55px;text-align:right;">' + m.mot_arabe + '</div>';
     // Translit + traduction
@@ -18068,7 +18068,7 @@ function openLisanMethode() {
 
   var html = '';
   // Titre
-  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:11px;letter-spacing:2.5px;color:rgba(200,168,75,0.5);margin-bottom:6px;">M\u00c9THODE</div>';
+  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:2.5px;color:rgba(200,168,75,0.5);margin-bottom:6px;">M\u00c9THODE</div>';
   html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-weight:700;color:#C8A84A;margin-bottom:4px;">' + m.titre + '</div>';
   html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(240,234,214,0.6);margin-bottom:20px;">' + m.sous_titre + '</div>';
 
@@ -18103,7 +18103,7 @@ function openLisanMethode() {
 
   // Note bas
   html += '<div style="border-top:1px solid rgba(200,168,75,0.08);padding-top:12px;margin-bottom:20px;">';
-  html += '<div style="font-family:\'Inter\',sans-serif;font-size:10px;color:rgba(200,168,75,0.3);line-height:1.5;">' + m.note_bas + '</div>';
+  html += '<div style="font-family:\'Inter\',sans-serif;font-size:12px;color:rgba(200,168,75,0.3);line-height:1.5;">' + m.note_bas + '</div>';
   html += '</div>';
 
   // Fermer
@@ -18138,8 +18138,8 @@ function openVueFiqhJour() {
       + (rule.sous_theme ? '<div style="font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:16px;">' + rule.sous_theme + '</div>' : '')
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;line-height:1.7;color:rgba(240,234,214,0.95);margin-bottom:20px;">' + (rule.regle || '') + '</div>'
       + (rule.explication ? '<div style="font-size:14px;line-height:1.6;color:rgba(255,255,255,0.6);margin-bottom:20px;font-style:italic;">' + rule.explication + '</div>' : '')
-      + (rule.source ? '<div style="font-size:11px;color:rgba(200,168,74,0.6);letter-spacing:0.1em;">\u2014 ' + rule.source + ' \u2014</div>' : '')
-      + (rule.ecole ? '<div style="font-size:10px;color:rgba(200,168,74,0.4);margin-top:8px;letter-spacing:1px;">' + rule.ecole.toUpperCase() + '</div>' : '')
+      + (rule.source ? '<div style="font-size:12px;color:rgba(200,168,74,0.6);letter-spacing:0.1em;">\u2014 ' + rule.source + ' \u2014</div>' : '')
+      + (rule.ecole ? '<div style="font-size:12px;color:rgba(200,168,74,0.4);margin-top:8px;letter-spacing:1px;">' + rule.ecole.toUpperCase() + '</div>' : '')
       + '</div>';
   });
 }
@@ -18166,8 +18166,8 @@ function openVueHadithJour() {
       + (h.theme ? '<div class="fiqh-categorie">' + h.theme.toUpperCase() + '</div>' : '')
       + (h.texte_ar ? '<div style="font-family:\'Amiri\',serif;font-size:24px;line-height:2;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:20px;">' + h.texte_ar + '</div>' : '')
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;line-height:1.7;color:rgba(240,234,214,0.95);font-style:italic;margin-bottom:20px;">' + (h.texte_fr || '') + '</div>'
-      + (h.source ? '<div style="font-size:11px;color:rgba(200,168,74,0.6);letter-spacing:0.1em;">\u2014 ' + h.source + ' \u2014</div>' : '')
-      + (h.degre ? '<div style="font-size:10px;color:rgba(200,168,74,0.4);margin-top:8px;letter-spacing:1px;">' + h.degre.toUpperCase() + '</div>' : '')
+      + (h.source ? '<div style="font-size:12px;color:rgba(200,168,74,0.6);letter-spacing:0.1em;">\u2014 ' + h.source + ' \u2014</div>' : '')
+      + (h.degre ? '<div style="font-size:12px;color:rgba(200,168,74,0.4);margin-top:8px;letter-spacing:1px;">' + h.degre.toUpperCase() + '</div>' : '')
       + '</div>';
   });
 }
@@ -18196,8 +18196,8 @@ function openVueDuaaJour() {
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;line-height:1.7;color:rgba(240,234,214,0.95);font-style:italic;margin-bottom:20px;">' + (duaa.traduction || '') + '</div>'
       + (duaa.occasion ? '<div style="font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:16px;">\uD83D\uDD52 ' + duaa.occasion + '</div>' : '')
       + (duaa.recit ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;line-height:1.8;color:rgba(240,234,214,0.8);text-align:justify;margin-bottom:20px;">' + duaa.recit.replace(/\n/g,'<br>') + '</div>' : '')
-      + (duaa.source ? '<div style="font-size:11px;color:rgba(200,168,74,0.6);letter-spacing:0.1em;">\u2014 ' + duaa.source + ' \u2014</div>' : '')
-      + (duaa.authenticite ? '<div style="font-size:10px;color:rgba(200,168,74,0.4);margin-top:6px;letter-spacing:1px;">' + duaa.authenticite.toUpperCase() + '</div>' : '')
+      + (duaa.source ? '<div style="font-size:12px;color:rgba(200,168,74,0.6);letter-spacing:0.1em;">\u2014 ' + duaa.source + ' \u2014</div>' : '')
+      + (duaa.authenticite ? '<div style="font-size:12px;color:rgba(200,168,74,0.4);margin-top:6px;letter-spacing:1px;">' + duaa.authenticite.toUpperCase() + '</div>' : '')
       + '</div>';
     var _footer = v.querySelector('.rituel-footer button');
     if (_footer) _footer.setAttribute('onclick', 'validerDuaaJour()');
@@ -18245,14 +18245,14 @@ function _compagnonsRenderDetail(c, jour) {
   var html = '<div style="padding:calc(var(--safe-top,0px) + 16px) 20px 12px;text-align:center;">';
   html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-weight:700;color:#E5E0DC;margin-bottom:4px;">' + (c.compagnon || '') + '</div>';
   html += (c.compagnon_ar ? '<div style="font-family:\'Amiri\',serif;font-size:18px;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:4px;">' + c.compagnon_ar + '</div>' : '');
-  html += (_epLabel ? '<div style="font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:1px;margin-bottom:4px;">' + _epLabel + '</div>' : '');
+  html += (_epLabel ? '<div style="font-size:12px;color:rgba(255,255,255,0.4);letter-spacing:1px;margin-bottom:4px;">' + _epLabel + '</div>' : '');
   html += '<div onclick="_compagnonsShowArchive();" style="display:inline-block;cursor:pointer;font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.6);border-bottom:1px solid rgba(200,168,75,0.25);padding-bottom:2px;">\u00c9pisode ' + (c.jour || jour) + ' sur ' + COMPAGNONS.length + ' \u2014 voir les pr\u00e9c\u00e9dents</div>';
   html += '</div>';
   html += '<div style="flex:1;overflow-y:auto;padding:0 24px calc(20px + var(--safe-bot,0px));-webkit-overflow-scrolling:touch;">';
   html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;line-height:1.8;color:rgba(240,234,214,0.9);margin-bottom:20px;">' + (c.recit || '').replace(/\n/g, '<br>') + '</div>';
   if (c.parole) html += '<div style="border-left:2px solid rgba(200,168,74,0.4);padding:8px 16px;margin-bottom:16px;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;line-height:1.6;color:rgba(200,168,74,0.85);">' + c.parole + '</div>';
   if (c.station) html += '<div style="border:1px solid rgba(200,168,74,0.25);border-radius:10px;padding:12px 16px;margin-bottom:20px;font-style:italic;font-size:14px;line-height:1.6;color:rgba(200,168,74,0.8);">' + c.station + '</div>';
-  if (c.source) html += '<div style="text-align:center;font-size:11px;color:rgba(255,255,255,0.35);letter-spacing:0.1em;margin-bottom:16px;">\u2014 ' + c.source + ' \u2014</div>';
+  if (c.source) html += '<div style="text-align:center;font-size:12px;color:rgba(255,255,255,0.35);letter-spacing:0.1em;margin-bottom:16px;">\u2014 ' + c.source + ' \u2014</div>';
   html += '<button onclick="validerLecture(\'vie_compagnons\');document.getElementById(\'compagnons-overlay\').remove();" style="display:block;width:calc(100% - 48px);max-width:320px;margin:24px auto 32px;padding:16px;border:none;border-radius:12px;background:#C8A84A;color:#2C2E32;font-family:\'Cormorant Garamond\',serif;font-size:16px;font-weight:600;cursor:pointer;">J\u2019ai termin\u00e9 ma lecture</button>';
   html += '</div>';
   html += '<button onclick="document.getElementById(\'compagnons-overlay\').remove();" style="position:absolute;top:calc(var(--safe-top,0px) + 12px);right:16px;background:none;border:none;color:#B5A685;font-size:24px;cursor:pointer;z-index:1;">\u2715</button>';
@@ -18325,7 +18325,7 @@ function _prophetesRenderDetail(p, jour) {
   html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;line-height:1.8;color:rgba(240,234,214,0.9);margin-bottom:20px;">' + (p.recit || '').replace(/\n/g, '<br>') + '</div>';
   if (p.parole) html += '<div style="border-left:2px solid rgba(200,168,74,0.4);padding:8px 16px;margin-bottom:16px;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;line-height:1.6;color:rgba(200,168,74,0.85);">' + p.parole + '</div>';
   if (p.station) html += '<div style="border:1px solid rgba(200,168,74,0.25);border-radius:10px;padding:12px 16px;margin-bottom:20px;font-style:italic;font-size:14px;line-height:1.6;color:rgba(200,168,74,0.8);">' + p.station + '</div>';
-  if (p.sources) html += '<div style="text-align:center;font-size:11px;color:rgba(200,168,74,0.6);letter-spacing:0.1em;margin-bottom:16px;">\u2014 ' + p.sources + ' \u2014</div>';
+  if (p.sources) html += '<div style="text-align:center;font-size:12px;color:rgba(200,168,74,0.6);letter-spacing:0.1em;margin-bottom:16px;">\u2014 ' + p.sources + ' \u2014</div>';
   if (p.renvoi_module === 'sira') html += '<div style="text-align:center;margin-bottom:16px;"><button onclick="document.getElementById(\'prophetes-overlay\').remove();if(typeof SIRA!==\'undefined\')SIRA.openDetail();" style="padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,74,0.4);background:transparent;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:600;cursor:pointer;">Ouvrir la S\u00eera</button></div>';
   html += '<button onclick="validerLecture(\'vie_prophetes\');document.getElementById(\'prophetes-overlay\').remove();" style="display:block;width:calc(100% - 48px);max-width:320px;margin:24px auto 32px;padding:16px;border:none;border-radius:12px;background:#C8A84A;color:#2C2E32;font-family:\'Cormorant Garamond\',serif;font-size:16px;font-weight:600;cursor:pointer;">J\u2019ai termin\u00e9 ma lecture</button>';
   html += '</div>';
@@ -18408,7 +18408,7 @@ function _renderVersetProgress(main) {
       + '<div class="fiqh-categorie">' + (vj.ref || '').toUpperCase() + '</div>'
       + '<div style="font-family:\'Amiri\',serif;font-size:24px;line-height:2;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:24px;">' + vj.arabe + '</div>'
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;line-height:1.7;color:rgba(240,234,214,0.95);font-style:italic;margin-bottom:20px;">' + vj.traduction + '</div>'
-      + (vj.sourate_fr ? '<div style="font-size:11px;color:rgba(200,168,74,0.6);letter-spacing:0.1em;margin-bottom:20px;">\u2014 ' + vj.sourate_fr + ' \u2014</div>' : '')
+      + (vj.sourate_fr ? '<div style="font-size:12px;color:rgba(200,168,74,0.6);letter-spacing:0.1em;margin-bottom:20px;">\u2014 ' + vj.sourate_fr + ' \u2014</div>' : '')
       + '<div style="display:flex;align-items:center;justify-content:center;gap:16px;">'
       + '<button onclick="_versetNav(-1)" style="padding:8px 16px;border-radius:10px;border:1px solid rgba(200,168,74,' + (n > 1 ? '0.4' : '0.1') + ');background:transparent;color:' + (n > 1 ? '#C8A84A' : 'rgba(200,168,74,0.2)') + ';font-size:13px;cursor:pointer;">\u25C0 Pr\u00e9c.</button>'
       + '<span style="font-size:12px;color:rgba(200,168,74,0.5);letter-spacing:1px;">' + n + ' / 6236</span>'
@@ -18561,7 +18561,7 @@ const SIRA = {
       var titre = (rdv && rdv.titre && rdv.titre.fr) ? rdv.titre.fr : '';
       var read = tissues.indexOf(i) !== -1;
       h += '<div onclick="SIRA.openNav(' + i + ')" style="display:flex;justify-content:space-between;align-items:center;padding:22px 24px;border-bottom:1px solid rgba(200,168,74,0.12);cursor:pointer;" onmouseover="this.style.background=\'rgba(200,168,74,0.04)\'" onmouseout="this.style.background=\'none\'">'
-        + '<div><div style="font-size:11px;letter-spacing:3px;font-weight:700;color:#C8A84A;margin-bottom:4px;">RENDEZ-VOUS ' + i + '</div>'
+        + '<div><div style="font-size:12px;letter-spacing:3px;font-weight:700;color:#C8A84A;margin-bottom:4px;">RENDEZ-VOUS ' + i + '</div>'
         + '<div style="font-family:Cormorant Garamond,serif;font-style:italic;font-size:19px;color:#FAF7EE;">' + titre + '</div></div>'
         + (read ? '<span style="font-size:14px;color:#C8A84A;">\u2713</span>' : '')
         + '</div>';
@@ -18606,7 +18606,7 @@ const SIRA = {
       h += '<div style="text-align:center;font-style:italic;color:#888;font-size:13px;margin-bottom:32px;">' + tissues + ' rendez-vous tiss\u00e9s</div>';
     }
     h += '<div class="sira-ornament"></div>';
-    h += '<div style="text-align:center;font-size:11px;letter-spacing:4px;font-weight:700;color:#C8A84A;margin-bottom:14px;">AUJOURD\u2019HUI</div>';
+    h += '<div style="text-align:center;font-size:12px;letter-spacing:4px;font-weight:700;color:#C8A84A;margin-bottom:14px;">AUJOURD\u2019HUI</div>';
     h += '<div style="text-align:center;font-family:Cormorant Garamond,serif;font-size:24px;font-style:italic;color:#FAF7EE;margin-bottom:8px;">Rendez-vous ' + num + ' \u2014 ' + titre + '</div>';
     var _partie = (rdv && rdv.partie && this.data && this.data.meta && this.data.meta.parties && this.data.meta.parties[rdv.partie]) ? this.data.meta.parties[rdv.partie] : null;
     var _partieTitre = (_partie && _partie.titre && _partie.titre.fr) ? _partie.titre.fr : '';
@@ -18671,7 +18671,7 @@ const SIRA = {
     h += '</div>';
     h += '<div id="sira-tissue-badge" class="sira-tissue-mark"><div class="sira-tissue-circle">\u2713</div><div class="sira-tissue-label">Rendez-vous tiss\u00e9</div></div>';
     h += '<div style="text-align:center;font-size:48px;color:#C8A84A;margin:28px 0 12px;">\uFDFA</div>';
-    h += '<div style="text-align:center;font-size:11px;letter-spacing:3px;font-weight:700;color:#C8A84A;margin:32px 0 8px;">FIL ROUGE</div>';
+    h += '<div style="text-align:center;font-size:12px;letter-spacing:3px;font-weight:700;color:#C8A84A;margin:32px 0 8px;">FIL ROUGE</div>';
     if (rdv.fil_rouge) h += '<div style="text-align:center;font-style:italic;color:#999;font-size:14px;line-height:1.5;margin-bottom:24px;">' + escape(T(rdv.fil_rouge)) + '</div>';
     h += '<div style="text-align:center;margin:32px 0;"><button onclick="validerLectureSira()" style="padding:14px 28px;border:none;border-radius:24px;background:#C8A84A;color:#2C2E32;font-family:Cormorant Garamond,serif;font-size:15px;font-weight:700;cursor:pointer;">J\u2019ai termin\u00e9 ma lecture</button></div>';
     this.markTissue(num);
