@@ -4083,7 +4083,7 @@ function renderWird() {
   if (!content) return;
   var _wirdArabicSession = {matin:'أَوْرَاد الصَّبَاح',soir:'أَوْرَاد الْمَسَاء'};
   let html = '<button class="wird-back-btn" onclick="wirdGoBack()" aria-label="Retour">\u2039</button>';
-  html += '<div class="section-header"><div class="section-arabic">\u0623\u064E\u0648\u0652\u0631\u0627\u062F</div><div class="section-name">' + t('wird_daily') + '</div><div class="section-line"></div></div>';
+  if (!_currentWirdSession) { html += '<div class="section-header"><div class="section-arabic">\u0623\u064E\u0648\u0652\u0631\u0627\u062F</div><div class="section-name">' + t('wird_daily') + '</div><div class="section-line"></div></div>'; }
   var _sessions = _currentWirdSession ? [_currentWirdSession] : ['matin', 'soir'];
   _sessions.forEach(session => {
     const s = WIRD_DATA[session];
