@@ -16168,12 +16168,6 @@ function _regardeShowVerset(content, v, slow, returning) {
     + '<div style="margin-top:16px;font-size:13px;letter-spacing:2px;font-weight:700;text-transform:uppercase;color:#C8A84A;opacity:0;animation:regardeFadeIn 1s ease '+d[2]+'s forwards;">' + _esc(v.reference) + '</div>'
     + '<div style="width:60px;height:1px;background:#C8A84A;margin:24px auto;opacity:0;animation:regardeFadeIn 0.5s ease '+d[3]+'s forwards;"></div>'
     + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#C8A84A;line-height:1.6;max-width:80%;opacity:0;animation:regardeFadeIn 1s ease '+d[4]+'s forwards;">' + _esc(v.murmure) + '</div>'
-    + '<div style="margin-top:24px;opacity:0;animation:regardeFadeIn 1s ease '+d[4]+'s forwards;"><button onclick="var b=document.getElementById(\'regarde-ctx\');if(b){b.style.display=b.style.display===\'none\'?\'block\':\'none\';}" style="background:none;border:none;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;cursor:pointer;text-decoration:underline;text-underline-offset:3px;">Contexte</button></div>'
-    + '<div id="regarde-ctx" style="display:none;margin-top:16px;max-width:85%;text-align:center;opacity:0.8;">'
-    + '<div style="font-size:13px;color:rgba(250,247,238,0.6);line-height:1.5;"><span style="color:#C8A84A;font-weight:600;">Epoque :</span> ' + _esc(v.epoque) + '</div>'
-    + '<div style="margin-top:8px;font-size:13px;color:rgba(250,247,238,0.5);line-height:1.5;">' + _esc(v.contexte) + '</div>'
-    + _sabab
-    + '</div>'
     + '<div style="display:flex;gap:20px;margin-top:32px;opacity:0;animation:regardeFadeIn 1s ease '+d[5]+'s forwards;">'
     + '<button id="regarde-btn-star" onclick="regardeToggleStar()" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">☆</button>'
     + '<button onclick="regardeRefresh()" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">↻</button>'
