@@ -3075,16 +3075,25 @@ to {
   -webkit-tap-highlight-color:transparent
 }
 .wird-reset-btn {
-  margin:8px 16px 0;
-  padding:8px;
+  margin:14px 16px 0;
+  padding:11px;
   width:calc(100% - 32px);
-  border-radius:10px;
-  border:1px solid var(--sep2);
-  background:transparent;
-  color:var(--t3);
-  font-size:12px;
+  border-radius:12px;
+  border:1px solid rgba(200,168,74,0.28);
+  background:linear-gradient(180deg, rgba(200,168,74,0.06), rgba(200,168,74,0.02));
+  color:#C8A84A;
+  font-size:11px;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
   cursor:pointer;
-  font-family:var(--sans)
+  font-family:var(--sans);
+  transition:border-color .25s ease, background .25s ease, box-shadow .25s ease;
+}
+.wird-reset-btn:hover,
+.wird-reset-btn:active {
+  border-color:rgba(200,168,74,0.55);
+  background:linear-gradient(180deg, rgba(200,168,74,0.13), rgba(200,168,74,0.04));
+  box-shadow:0 0 18px rgba(200,168,74,0.18);
 }
 .freemium-overlay {
   position:fixed;

@@ -4102,7 +4102,7 @@ function renderWird() {
       const infoBtn = `<button class="btn-wird-info" aria-label="Détails" onclick="event.stopPropagation();openInfoSheet('','','','',event)" data-label="${labelEsc}" data-arabic="${arabEsc}" data-phonetic="${phonEsc}" data-translation="${srcEsc}"><i>i</i></button>`;
       html += `<div class="wird-item${checked?' checked':''}" onclick="toggleWirdItem('${item.id}',event)"><div class="wird-check"><svg class="wird-check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="wird-body"><div class="wird-label">${tI(item,"label")}</div><div class="wird-sub">${tI(item,"sub")}</div><div class="wird-arabic">${item.arabic}</div></div><div class="wird-actions">${audioBtn}${infoBtn}</div></div>`;
     });
-    html += `<button class="wird-reset-btn" aria-label="${t('settings_reset')}" onclick="resetWirdSession('${session}')">\u21ba ${t('settings_reset')}</button></div>`;
+    html += `<button class="wird-reset-btn" aria-label="${t('settings_reset')}" onclick="resetWirdSession('${session}')">${t('settings_reset')}</button></div>`;
   });
   content.innerHTML = html;
 }
