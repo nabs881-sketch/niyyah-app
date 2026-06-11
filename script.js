@@ -13195,6 +13195,7 @@ function openWaqtModal() {
   }
   var _wk = 'waqt_' + priere;
   if (safeGetItem('niyyah_intro_' + _wk) !== '1') return _niyyahIntro(_wk, openWaqtModal);
+  if (!window.WAQT_BY_PRIERE) { loadWaqtData(function(){ openWaqtModal(); }); return; }
   _waqtModalPriere = priere;
   var pool = (window.WAQT_BY_PRIERE && window.WAQT_BY_PRIERE[priere] && window.WAQT_BY_PRIERE[priere].length > 0) ? window.WAQT_BY_PRIERE[priere] : null;
   var txt = '';
@@ -13570,7 +13571,8 @@ function getGreetingPhrases(dayIndex) {
 window.getGreetingPhrases = getGreetingPhrases;
 
 window.WAQT_BY_PRIERE = null;
-(function _loadWaqtByPriere() {
+function loadWaqtData(cb) {
+  if (window.WAQT_BY_PRIERE) { if (cb) cb(); return; }
   var files = {fajr:'data/waqt/waqt_fajr.json',dhuhr:'data/waqt/waqt_dhuhr.json',asr:'data/waqt/waqt_asr.json',maghrib:'data/waqt/waqt_maghrib.json',isha:'data/waqt/waqt_isha.json'};
   var keys = Object.keys(files);
   Promise.all(keys.map(function(k) { return fetch(files[k]).then(function(r) { return r.ok ? r.json() : []; }).catch(function() { return []; }); }))
@@ -13598,8 +13600,9 @@ window.WAQT_BY_PRIERE = null;
         }
       });
       window.WAQT_BY_PRIERE = obj;
+      if (cb) cb();
     });
-})();
+}
 
 /* ─────────────────────────────────────────────
    MODULE AÏD — Chargement données événements
