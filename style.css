@@ -8608,13 +8608,16 @@ body.onboarding-active #nav-bar-v2 {
 .rituel-emblem {
   position: relative;
   display: inline-flex; align-items: center; justify-content: center;
-  width: 78px; height: 78px; border-radius: 50%;
-  border: 1px solid rgba(200,168,74,0.45);
-  color: #F6DA8A;
+  width: 64px; height: 64px; border-radius: 50%;
+  border: none;
+  background: transparent url('assets/orb_tafakkur.webp') center/contain no-repeat;
+  color: hsl(38,55%,15%);
   font-family: 'Scheherazade New', serif;
-  font-size: 30px; line-height: 1;
+  font-size: 22px; line-height: 1;
   margin-bottom: 20px;
-  text-shadow: 0 0 10px rgba(200,168,74,0.4);
+  text-shadow: 0 1px 0 hsla(44,85%,80%,0.5), 0 -1px 1px rgba(30,18,4,0.4);
+  filter: drop-shadow(0 0 16px rgba(212,175,55,0.45)) drop-shadow(0 0 32px rgba(184,134,11,0.25));
+  animation: orbBreathV2 7s var(--ease-breath-v2) infinite;
   z-index: 0;
 }
 .rituel-emblem::before {
@@ -9702,3 +9705,5 @@ body.onboarding-active #nav-bar-v2 {
 .nafs-reference-text{ font-size:17px; line-height:1.7; }
 .nafs-reference-source{ font-size:13px; }
 .nafs-action-text{ font-size:17.5px; }
+
+.rituel-emblem::before{ display:none; }
