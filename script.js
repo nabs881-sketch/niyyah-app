@@ -14470,9 +14470,10 @@ function genRegardCanvas(entryId, kind) {
     _showRegardShareOverlay(c, entryId, kind);
   };
   if (e.photo) {
-    var img = new Image();
+    var _ic = window._regardImgCache;
+    var img = (_ic && _ic.src === e.photo && _ic.img && _ic.img.complete) ? _ic.img : new Image();
     img.crossOrigin = 'anonymous';
-    img.onload = function() {
+    var _paintPhoto = function() {
       var s = Math.max(1080 / img.width, 1080 / img.height);
       var w = img.width * s, h = img.height * s;
       ctx.drawImage(img, (1080 - w) / 2, (1080 - h) / 2, w, h);
@@ -14490,11 +14491,12 @@ function genRegardCanvas(entryId, kind) {
       ctx.fillStyle = v; ctx.fillRect(0, 0, 1080, 1080);
       _drawCard();
     };
-    img.onerror = function() {
-      ctx.fillStyle = '#0A0908'; ctx.fillRect(0, 0, 1080, 1080);
-      _drawCard();
-    };
-    img.src = e.photo;
+    if (img.complete && img.naturalWidth) { _paintPhoto(); }
+    else {
+      img.onload = function() { window._regardImgCache = { src: e.photo, img: img }; _paintPhoto(); };
+      img.onerror = function() { ctx.fillStyle = '#0A0908'; ctx.fillRect(0, 0, 1080, 1080); _drawCard(); };
+      img.src = e.photo;
+    }
   } else {
     // fond uni : noir chaud + halo doux central
     ctx.fillStyle = '#0A0908'; ctx.fillRect(0, 0, 1080, 1080);
