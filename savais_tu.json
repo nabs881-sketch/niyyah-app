@@ -630,7 +630,7 @@
     "categorie": "Civilisation"
   },
   {
-    "texte": "Dans l'art islamique, il y a une règle non écrite : aucune œuvre ne doit être parfaite. L'artiste laisse toujours un détail volontairement imparfait – un motif qui se brise, une couleur qui détonne. Pourquoi ? Parce que la perfection n'appartient qu'à Allah. Personne d'autre n'a le droit.",
+    "texte": "On entend souvent que l'art islamique laisserait toujours un défaut volontaire, « car seule la perfection appartient à Allah ». C'est en réalité une légende moderne — on la raconte aussi des tapis persans ou des quilts amish. Les grands artisans musulmans, eux, visaient l'excellence (itqân). Ce qui est vrai, c'est que cet art a sublimé le motif géométrique et la calligraphie là où d'autres cherchaient l'image.",
     "source": "Met Museum / Islamic Art principles",
     "categorie": "Civilisation"
   },
@@ -747,7 +747,7 @@
     "fr": "Au IXᵉ siècle, Abu Ma’shar al-Balkhî écrit le Kitâb al-Madkhal al-Kabîr et y décrit le lien entre les phases de la Lune et les marées montantes et descendantes. Son traité, traduit en latin sous le nom Albumasar, servira de base à l’Europe pendant des siècles, jusqu’à Newton. Le premier savant à avoir mathématisé le pouls lunaire sur les océans s’appelait Abu Ma’shar. Allah dit : « Et le soleil, et la lune... chacun navigue dans une orbite. » (36:40)."
   },
   {
-    "texte": "Avant Darwin, un savant musulman du 13ᵉ siècle a écrit que les espèces vivantes évoluent. Al-Jahiz, dans son « Livre des Animaux », décrit la lutte pour la survie, la sélection naturelle, l'adaptation. Six siècles avant Darwin. Personne n'en parle aujourd'hui en France. Personne.",
+    "texte": "Avant Darwin, un savant musulman du 9ᵉ siècle a écrit sur la lutte pour la survie et l'adaptation des espèces. Al-Jâhiz, dans son « Livre des Animaux » (Kitâb al-Hayawân), décrit comment les animaux rivalisent pour la nourriture et survivent en s'adaptant à leur milieu. Mille ans avant L'Origine des espèces. Une intuition fulgurante — pas une théorie achevée, mais une intuition que personne ne raconte aujourd'hui.",
     "source": "Britannica 'Al-Jahiz' / 1001 Inventions",
     "categorie": "Histoire"
   },
@@ -1244,11 +1244,6 @@
     "categorie": "Hadith"
   },
   {
-    "texte": "Le Prophète ﷺ n'a pas pu prononcer le nom de sa première femme Khadija sans pleurer pendant des années après sa mort. Alors qu'il était au sommet de sa gloire, il rappelait sans cesse : « C'est elle qui m'a cru quand tout le monde me niait. » La fidélité d'un homme se mesure à la mémoire de ceux qui l'ont soutenu dans l'ombre.",
-    "source": "Sahih Muslim 2435 / Sahih Bukhari 3818",
-    "categorie": "Sîra"
-  },
-  {
     "texte": "À sa mort, le calife Omar ibn Abdul Aziz n'avait plus un seul centime en poche. Il dirigeait l'empire le plus puissant de son époque, mais il avait tout redistribué aux pauvres. Sa femme a dû vendre sa propre bague pour payer ses funérailles.",
     "source": "Tabaqat Ibn Sa'd / Tabari",
     "categorie": "Sîra"
@@ -1259,24 +1254,9 @@
     "categorie": "Sîra"
   },
   {
-    "texte": "Le lien entre la Lune et les marées n'est pas une découverte de Newton. Six siècles avant la célèbre pomme, le savant Al-Biruni observait déjà les eaux de la mer Caspienne et démontrait que l'astre nocturne commandait le mouvement des océans.",
-    "source": "Cambridge History of Arabic Science / Britannica",
-    "categorie": "Sciences"
-  },
-  {
     "texte": "Imagine un bloc de marbre de quarante mètres de haut utilisé comme instrument de précision. À Samarcande, le prince astronome Ulugh Beg a calculé la durée de l'année à dix-sept secondes près de la valeur moderne. Le tout, uniquement avec ses yeux et la géométrie.",
     "source": "Britannica / UNESCO",
     "categorie": "Sciences"
-  },
-  {
-    "texte": "Au 13ᵉ siècle, un médecin de Damas a décrit comment le sang circule du cœur vers les poumons pour se recharger en air. Sa découverte a été totalement oubliée jusqu'à ce que son manuscrit soit retrouvé à Berlin en 1924. Ibn al-Nafis avait compris le secret de la vie trois cents ans avant les Européens.",
-    "source": "Lancet / Britannica",
-    "categorie": "Sciences"
-  },
-  {
-    "texte": "La Kaaba que tu vois aujourd'hui est en réalité incomplète. Lors d'une reconstruction, les constructeurs ont manqué de pierres et ont laissé une partie du bâtiment à l'extérieur : le croissant de marbre blanc. Si tu pries à l'intérieur de ce petit muret, tu pries techniquement à l'intérieur même de la Maison d'Allah.",
-    "source": "Sahih Bukhari 126 / Sahih Muslim 1333",
-    "categorie": "Sîra"
   },
   {
     "texte": "La Mecque est sans doute la seule ville au monde où la foi seule sert de visa. Aucun non-musulman n'y entre, non par hostilité, mais pour préserver la sacralité totale du sanctuaire. C'est une ville-temple où chaque rue appartient à l'Invisible.",
@@ -1284,40 +1264,9 @@
     "categorie": "Coran"
   },
   {
-    "texte": "Il existe une source d'eau qui jaillit en plein désert depuis quatre mille ans sans jamais s'arrêter. L'eau de Zamzam, née du talon d'un bébé assoiffé, abreuve aujourd'hui des millions de pèlerins chaque année. Les géologues confirment que la source est inépuisable.",
-    "source": "Sahih Bukhari 3364 / Études géologiques",
-    "categorie": "Sîra"
-  },
-  {
-    "texte": "Une jeune fille pakistanaise reçoit une balle dans la tête à quinze ans simplement parce qu'elle veut aller à l'école. Malala survit et devient, trois ans plus tard, la plus jeune Prix Nobel de l'histoire. Sa force : un stylo et un livre pour changer le monde.",
-    "source": "Comité Nobel 2014 / Malala Fund",
-    "categorie": "Histoire"
-  },
-  {
-    "texte": "Un homme arrive aux États-Unis sans parler un mot d'anglais et rachète une usine de yaourts en faillite. Il embauche des centaines de réfugiés et fonde Chobani, le yaourt préféré des Américains. Hamdi Ulukaya a promis de donner la majeure partie de sa fortune aux nécessiteux.",
-    "source": "Forbes / Chobani corporate",
-    "categorie": "Histoire"
-  },
-  {
-    "texte": "En 2014, pour la première fois, une femme reçoit la médaille Fields, le « Nobel des mathématiques ». Maryam Mirzakhani, génie iranienne, a révolutionné la compréhension des formes complexes. À sa mort, le gouvernement de son pays a brisé les codes en publiant sa photo sans voile pour lui rendre hommage.",
-    "source": "International Mathematical Union / The Guardian",
-    "categorie": "Sciences"
-  },
-  {
-    "texte": "Dans l'art islamique, la perfection est une insulte à Dieu. Les artisans laissent toujours volontairement une erreur dans leurs tapis ou leurs mosaïques. Un motif qui se brise ou une couleur qui détonne pour rappeler que seul le Créateur est sans défaut.",
-    "source": "Met Museum / Principes de l'art islamique",
-    "categorie": "Civilisation"
-  },
-  {
     "texte": "Si tu observes les murs de l'Alhambra, tu y verras les dix-sept types de pavages géométriques possibles dans l'univers. Les mathématiciens modernes ont mis des siècles à prouver ce que les décorateurs musulmans utilisaient déjà pour embellir leurs palais.",
     "source": "Britannica / Crystallographic groups research",
     "categorie": "Histoire"
-  },
-  {
-    "texte": "L'écriture arabe se lit de droite à gauche à cause des tailleurs de pierre. Tenir le marteau dans la main droite et le burin dans la gauche imposait de graver dans ce sens pour ne pas masquer son travail. Tout un alphabet est né d'un geste d'artisan.",
-    "source": "Joseph Naveh, Early History of the Alphabet (1982)",
-    "categorie": "Civilisation",
-    "fr": "L’arabe, l’hébreu, le syriaque, l’araméen — toutes les langues sémitiques s’écrivent de droite à gauche. C’est l’héritage commun des alphabets phéniciens et nabatéens, qui ont rayoné depuis le Levant il y a plus de 3000 ans. Quand on prie en arabe, on lit le Coran de droite à gauche. Quand on calligraphie le nom d’Allah, la main commence à droite. Tu ne lis pas seulement le Coran. Tu reprends un geste vieux de trois millénaires."
   },
   {
     "texte": "Au Maroc, dans certaines villes, un homme passait jadis à pied chaque nuit pendant Ramadan pour réveiller les habitants avant l'aube. On l'appelait le « nfar ». Tambour à la main, il connaissait par cœur le prénom de chaque enfant. Aujourd'hui encore, dans les médinas de Fès et de Marrakech, on entend son écho.",
@@ -1555,11 +1504,6 @@
     "texte": "L'olive est tellement importante en islam qu'Allah lui consacre un serment dans le Coran. « Par la figue et l'olive ! » L'arbre d'olivier est mentionné sept fois. L'huile d'olive vierge – pressée à froid – est aujourd'hui célébrée par la médecine. Avant la diététique moderne, le Coran l'avait déjà classée comme sacrée.",
     "source": "Coran 95:1-2 / Tafsir Ibn Kathir",
     "categorie": "Coran"
-  },
-  {
-    "texte": "Le Prophète ﷺ ne rompait jamais son jeûne sans datte. Si pas de datte, alors avec de l'eau. C'est devenu un rituel mondial. Aujourd'hui des milliards de musulmans rompent le jeûne avec une datte. Et la science a montré que ce fruit contient exactement les sucres rapides et les minéraux que le corps réclame après seize heures sans manger.",
-    "source": "Sunan al-Tirmidhi 696 / Journal of Nutrition",
-    "categorie": "Sîra"
   },
   {
     "texte": "La grenade est citée trois fois dans le Coran. Une fois comme un fruit du Paradis. Aujourd'hui la science a découvert qu'elle contient quatre fois plus d'antioxydants que le thé vert. Treize siècles avant les compléments alimentaires, ce fruit était déjà promis aux croyants.",
@@ -1817,11 +1761,6 @@
     "categorie": "Hadith"
   },
   {
-    "texte": "Quand Fatima az-Zahra entrait, le Prophète ﷺ se levait, lui prenait la main, l'embrassait et la faisait asseoir à sa place.",
-    "source": "Abu Dawud 5217",
-    "categorie": "Sîra"
-  },
-  {
     "texte": "Le Prophète ﷺ n'a jamais mangé sur une table surélevée (khiwan).",
     "source": "Bukhari 5386",
     "categorie": "Sîra"
@@ -1840,11 +1779,6 @@
     "texte": "Le Prophète ﷺ a dit : \"Celui qui construit une mosquée pour Allah, Allah lui construit une maison au Paradis.\"",
     "source": "Bukhari 450",
     "categorie": "Hadith"
-  },
-  {
-    "texte": "Le Prophète ﷺ a dit : « Allah a quatre-vingt-dix-neuf noms. Quiconque les énumère entrera au Paradis. » Ar-Rahman, Ar-Rahim, Al-Malik, Al-Quddus… Quatre-vingt-dix-neuf clés pour comprendre qui est Allah.",
-    "source": "Sahih Bukhari 2736 / Sahih Muslim 2677",
-    "categorie": "Civilisation"
   },
   {
     "texte": "Le Prophète ﷺ a interdit de dormir sur le ventre.",
@@ -2113,11 +2047,6 @@
     "categorie": "Hadith"
   },
   {
-    "texte": "La pharmacie a émergé comme science distincte dans le monde musulman vers le 9e siècle, avec les premiers apothicaires (saydalani) à Bagdad.",
-    "source": "Histoire des sciences",
-    "categorie": "Histoire"
-  },
-  {
     "texte": "Le Prophète ﷺ a dit : \"Le croyant ne pique pas deux fois du même trou.\"",
     "source": "Bukhari 6133",
     "categorie": "Hadith"
@@ -2146,11 +2075,6 @@
     "texte": "Le Prophète ﷺ a dit qu'une sourate de 30 versets intercèdera pour celui qui la récite jusqu'à ce qu'il soit pardonné : c'est sourate Al-Mulk.",
     "source": "Tirmidhi 2891 (hasan)",
     "categorie": "Hadith"
-  },
-  {
-    "texte": "La pharmacie indépendante de la médecine a été créée à Bagdad au 9e siècle, une première mondiale, avec les premières pharmacies publiques sous le califat abbasside.",
-    "source": "Histoire des sciences",
-    "categorie": "Histoire"
   },
   {
     "texte": "Le Prophète ﷺ a dit : \"La meilleure richesse est la richesse de l'âme (al-ghina ghina an-nafs).\"",
