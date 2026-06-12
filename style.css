@@ -9729,3 +9729,19 @@ body.onboarding-active #nav-bar-v2 {
 .rituel-item .sub{ font-size:15px; color:rgba(240,234,214,0.62); }
 .fil-acc-title{ font-size:14px; }
 .fil-acc-count{ font-size:14px; }
+
+/* Vendredi Pratique — émeraude + filet or (comme Vue du Jour) */
+.friday-banner{
+  background:linear-gradient(160deg,#0e3324,#081a12);
+  border:1px solid rgba(90,200,150,0.28);
+  box-shadow:0 0 22px rgba(70,180,130,0.10),inset 0 1px 0 rgba(212,175,55,0.12);
+}
+.friday-item{
+  background:linear-gradient(160deg,#123d2c,#0a2016);
+  border:1px solid rgba(90,200,150,0.3);
+  border-left:2px solid #C9A24A;
+  box-shadow:0 0 18px rgba(70,180,130,0.12),inset 0 1px 0 rgba(212,175,55,0.14);
+}
+.friday-check{ border-color:rgba(201,162,74,0.7); }
+.friday-item-hadith{ color:#7FD9AF; }
+.friday-item.checked{ opacity:0.6; }
