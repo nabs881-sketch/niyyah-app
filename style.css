@@ -9660,3 +9660,17 @@ body.onboarding-active #nav-bar-v2 {
   flex-direction:column;
 }
 #niyyahModal-v2 .btn-confirm-v2{ margin-top:auto; }
+
+/* ===== Modal intention — titre/sous-titre + zone "ta propre intention" ===== */
+.modal-title-v2{ font-size:16px; letter-spacing:0.2em; }
+.modal-sub-v2{ font-size:16px; color:rgba(240,234,214,0.62); }
+
+.intention-custom-zone{
+  background:rgba(0,0,0,0.28);
+  border:1px solid rgba(255,255,255,0.05);
+  border-radius:16px;
+  padding:16px 14px 18px;
+  margin:8px 0 22px;
+}
+.intention-custom-zone .modal-divider-v2{ margin-bottom:13px; }
+.intention-custom-zone .intention-input-v2{ margin-bottom:0; }
