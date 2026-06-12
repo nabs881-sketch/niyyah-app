@@ -16565,7 +16565,7 @@ function openScannerHub(){
      +'<span class="shc-txt"><span class="shc-title">Pose une intention</span><span class="shc-desc">Sacralise ce que tu t\u2019appr\u00eates \u00e0 faire.</span></span>'
      +'<span class="shc-chev">\u203A</span>'
    +'</button>'
-   +'<button class="scanner-hub-card" onclick="regardeOpen();">'
+   +'<button class="scanner-hub-card shc-card-regard" onclick="regardeOpen();">'
      +'<span class="shc-orb shc-orb-silver">\u0646\u064E\u0638\u064E\u0631</span>'
      +'<span class="shc-txt"><span class="shc-title">Pose un regard</span><span class="shc-desc">Re\u00e7ois le verset qui \u00e9claire l\u2019instant.</span></span>'
      +'<span class="shc-chev">\u203A</span>'

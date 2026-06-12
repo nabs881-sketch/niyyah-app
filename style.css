@@ -9509,3 +9509,25 @@ body.onboarding-active #nav-bar-v2 {
 #view-journal.jr-regard #journal-content [style*="D4AF37"]{ color:#BFD6F2!important; }
 #view-journal.jr-regard #journal-content .empty-state-glyph{ color:rgba(165,200,240,0.4)!important; }
 #view-journal.jr-regard #journal-content .empty-state-title{ color:#AFC9EC!important; }
+
+/* ===== Scanner — carte Regard en bleu Majorelle ===== */
+.scanner-hub-card.shc-card-regard{
+  border-color:rgba(110,160,215,0.48)!important;
+  background:linear-gradient(180deg,rgba(80,130,200,0.13),rgba(40,80,140,0.04))!important;
+  box-shadow:0 6px 22px rgba(0,0,0,0.45),inset 0 1px 0 rgba(190,215,245,0.16)!important;
+}
+.scanner-hub-card.shc-card-regard::before{
+  background:linear-gradient(105deg,transparent,rgba(200,225,255,0.20),transparent)!important;
+}
+.scanner-hub-card.shc-card-regard:hover{
+  border-color:rgba(130,175,225,0.72)!important;
+  box-shadow:0 8px 28px rgba(0,0,0,0.55),inset 0 1px 0 rgba(190,215,245,0.26)!important;
+}
+.scanner-hub-card.shc-card-regard .shc-orb{
+  color:#AFC9EC!important;
+  border:1px solid rgba(120,165,215,0.45)!important;
+  background:radial-gradient(circle,rgba(90,140,210,0.24),transparent 70%)!important;
+}
+.scanner-hub-card.shc-card-regard .shc-title{ color:#C2DBF5!important; }
+.scanner-hub-card.shc-card-regard .shc-desc{ color:rgba(175,201,236,0.72)!important; }
+.scanner-hub-card.shc-card-regard .shc-chev{ color:rgba(140,180,225,0.6)!important; }
