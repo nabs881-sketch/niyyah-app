@@ -3408,8 +3408,8 @@ function renderProgression(skipIntro) {
   var _isDay1 = totalDisplay === 0;
   const streakSection = _isDay1
     ? '<div style="text-align:center;padding:36px 20px 28px;">'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:rgba(200,168,75,0.6);line-height:1.6;max-width:320px;margin:0 auto;">Ton d\u00e9compte commence d\u00e8s ta premi\u00e8re journ\u00e9e de fondations tenues.</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.35);margin-top:16px;line-height:1.5;">Entre toi et Lui. Rien ne se perd \u2014 chaque retour compte.</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:21px;font-style:italic;color:rgba(200,168,75,0.68);line-height:1.55;max-width:320px;margin:0 auto;">Ton d\u00e9compte commence d\u00e8s ta premi\u00e8re journ\u00e9e de fondations tenues.</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.45);margin-top:16px;line-height:1.5;">Entre toi et Lui. Rien ne se perd \u2014 chaque retour compte.</div>'
     + '</div>'
     : '<div style="text-align:center;padding:36px 20px 28px;position:relative;">'
     + '<div onclick="var e=document.getElementById(\'_fondExplain\');if(e)e.style.display=e.style.display===\'none\'?\'block\':\'none\';" style="cursor:pointer;font-size:80px;font-weight:900;line-height:1;background:linear-gradient(135deg,#c8a84b,#e8cc6a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-3px;">' + totalDisplay + '</div>'
