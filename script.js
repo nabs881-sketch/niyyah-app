@@ -1326,7 +1326,7 @@ function loadGhidaa(cb) {
 }
 function getGhidaaJour() {
   if (!GHIDAA_DATA || !GHIDAA_DATA.length) return null;
-  var dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(),0,0).getTime()) / 86400000);
+  var dayOfYear = Math.floor(Date.now() / 86400000);
   return GHIDAA_DATA[dayOfYear % GHIDAA_DATA.length];
 }
 var TIBB_DATA = null;
@@ -1341,7 +1341,7 @@ function loadTibb(cb) {
 }
 function getTibbJour() {
   if (!TIBB_DATA || !TIBB_DATA.length) return null;
-  var dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(),0,0).getTime()) / 86400000);
+  var dayOfYear = Math.floor(Date.now() / 86400000);
   return TIBB_DATA[dayOfYear % TIBB_DATA.length];
 }
 var MASHHURAT_DATA = null;
@@ -1356,7 +1356,7 @@ function loadFiqh(cb) {
 }
 function getFiqhJourRule() {
   if (!FIQH_JOUR || !FIQH_JOUR.length) return { categorie: '', sous_theme: '', regle: '', explication: '', source: '', ecole: '' };
-  var dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(),0,0).getTime()) / 86400000);
+  var dayOfYear = Math.floor(Date.now() / 86400000);
   return FIQH_JOUR[dayOfYear % FIQH_JOUR.length];
 }
 var HADITHS_JOUR = null;
@@ -1399,7 +1399,7 @@ function getPropheteJour() {
 })();
 function getHadithJourRule() {
   if (!HADITHS_JOUR || !HADITHS_JOUR.length) return { theme: '', texte_ar: '', texte_fr: '', source: '', degre: '' };
-  var dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(),0,0).getTime()) / 86400000);
+  var dayOfYear = Math.floor(Date.now() / 86400000);
   return HADITHS_JOUR[dayOfYear % HADITHS_JOUR.length];
 }
 function _getVersetProgress() { return parseInt(safeGetItem('niyyah_verset_progress') || '1', 10); }
@@ -1421,7 +1421,7 @@ function _fetchVerset(n, cb) {
 }
 function getSavaisTuFact() {
   if (!SAVAIS_TU || !SAVAIS_TU.length) return { texte: '', source: '', categorie: '' };
-  var dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(),0,0).getTime()) / 86400000);
+  var dayOfYear = Math.floor(Date.now() / 86400000);
   var item = SAVAIS_TU[dayOfYear % SAVAIS_TU.length];
   if (typeof item === 'string') return { texte: item, source: '', categorie: '' };
   return item;
@@ -8808,7 +8808,7 @@ function updateTafakkurDisplay() {
 function rotateTafakkurPhrase() {
   var pool = _getTafakkurPool();
   // Déterministe : même question toute la journée (dayOfYear % pool.length)
-  var dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(), 0, 0).getTime()) / 86400000);
+  var dayOfYear = Math.floor(Date.now() / 86400000);
   var idx = pool.length > 0 ? (dayOfYear % pool.length) : 0;
   var phrase = pool[idx] || '';
   _tafakkurCurrentPhrase = phrase;
@@ -13200,7 +13200,7 @@ function openWaqtModal() {
   var pool = (window.WAQT_BY_PRIERE && window.WAQT_BY_PRIERE[priere] && window.WAQT_BY_PRIERE[priere].length > 0) ? window.WAQT_BY_PRIERE[priere] : null;
   var txt = '';
   if (pool) {
-    var dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(),0,0).getTime()) / 86400000);
+    var dayOfYear = Math.floor(Date.now() / 86400000);
     var idx = (dayOfYear + _waqtHashPriere(priere)) % pool.length;
     var item = pool[idx];
     var lang = (typeof V2_LANG !== 'undefined') ? V2_LANG : 'fr';
