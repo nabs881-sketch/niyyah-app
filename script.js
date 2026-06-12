@@ -17441,7 +17441,10 @@ function openVueRituel(prayer) {
       : (it.id === 'istighfar') ? '<button style="background:none;border:none;cursor:pointer;flex-shrink:0;padding:4px;" onclick="event.stopPropagation();openIstighfarModal();">' + _dhikrSvg + '</button>' : '';
     return '<div class="' + cls + done + '" id="rituel-item-' + it.id + '" onclick="' + _click + '"><div class="check"></div><div style="flex:1"><div class="label">' + (it.label||it.id) + '</div>' + _dhikrCount + sub + ar + '</div>' + audio + _dhikrBtn + '</div>';
   };
-  let html = '';
+  var _vrTotal = normalItems.length;
+  var _vrDone = normalItems.filter(function(it){ return !!state[it.id]; }).length;
+  var _vrPct = _vrTotal ? Math.round(_vrDone/_vrTotal*100) : 0;
+  let html = '<div class="fil-progress"><div class="fil-progress-row"><span class="fil-progress-label">Le moment s\'habite</span><span class="fil-progress-count">' + _vrDone + ' / ' + _vrTotal + '</span></div><div class="fil-progress-track"><div class="fil-progress-fill" style="width:' + _vrPct + '%;"></div></div></div>';
   // Bandeau prière avec toggles
   const _onTime = !!state[prayer + '_ontime'];
   const _atMosq = !!state[prayer + '_mosquee'];
