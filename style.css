@@ -9690,3 +9690,6 @@ body.onboarding-active #nav-bar-v2 {
 .fil-progress-count{ font-family:'Nunito',sans-serif; font-size:12px; letter-spacing:1px; color:rgba(200,168,74,0.75); }
 .fil-progress-track{ height:4px; border-radius:4px; background:rgba(200,168,74,0.12); overflow:hidden; }
 .fil-progress-fill{ height:100%; background:linear-gradient(90deg,#B8923E,#E8C66C); }
+
+/* intentions : texte droit (plus lisible) */
+.intention-opt-v2{ font-style:normal; }

@@ -12570,7 +12570,7 @@ function _v2OpenNiyyahPickModal() {
     btn.appendChild(textSpan);
     btn.style.direction = (V2_I18N[V2_LANG] || V2_I18N.fr).dir;
     btn.style.fontFamily = V2_LANG === 'ar' ? "'Amiri', serif" : "'Cormorant Garamond', serif";
-    btn.style.fontSize = V2_LANG === 'ar' ? '17px' : '16px';
+    btn.style.fontSize = V2_LANG === 'ar' ? '17px' : '18px';
     // Simple click to select (replaces hold 3s)
     btn.addEventListener('click', function() {
       opts.querySelectorAll('.intention-opt-v2').forEach(function(b) { b.classList.remove('sel-v2'); });
