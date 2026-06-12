@@ -9745,3 +9745,7 @@ body.onboarding-active #nav-bar-v2 {
 .friday-check{ border-color:rgba(201,162,74,0.7); }
 .friday-item-hadith{ color:#7FD9AF; }
 .friday-item.checked{ opacity:0.6; }
+
+@keyframes ahBreath{0%,100%{opacity:.55;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.1)}}
+@keyframes ahWord{0%,100%{text-shadow:0 0 18px rgba(212,175,55,.45),0 0 40px rgba(184,134,11,.25);transform:scale(1)}50%{text-shadow:0 0 26px rgba(212,175,55,.6),0 0 60px rgba(184,134,11,.35);transform:scale(1.04)}}
+@keyframes ahPulse{0%,100%{opacity:.32}50%{opacity:.6}}
