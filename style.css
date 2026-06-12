@@ -9599,3 +9599,17 @@ body.onboarding-active #nav-bar-v2 {
 
 /* carte Regard du vendredi : texte en blanc-bleuté Majorelle */
 .vendredi-regard-card [style*="FAF7EE"]{ color:#D6E2F2!important; }
+
+/* ===== Niyyah+ — typographie premium (plus grand, plus lisible) ===== */
+.freemium-sub{ font-size:16px; line-height:1.5; color:#DCC68E; margin:10px 14px 22px; }
+.freemium-features{ gap:4px; }
+.freemium-feature{ padding:16px 2px; gap:16px; }
+.ff-ic{ width:40px; height:40px; }
+.ff-tx{ gap:4px; }
+.ff-tx b{ font-size:17px; line-height:1.25; }
+.ff-tx i{ font-size:14px; line-height:1.5; color:rgba(220,198,142,0.82); }
+.fp-amount{ font-size:50px; }
+.fp-sub{ font-size:14px; margin-top:6px; }
+.fp-trust{ font-size:12px; letter-spacing:2.5px; color:rgba(200,168,75,0.55); margin-top:8px; }
+.freemium-codelink{ font-size:14px; color:rgba(214,194,138,0.75); margin-top:18px; }
+.freemium-close{ font-size:14px; color:rgba(255,255,255,0.5); margin-top:12px; }
