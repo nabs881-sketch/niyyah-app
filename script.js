@@ -16557,8 +16557,7 @@ function openScannerHub(){
   var prev=document.getElementById('scanner-hub-overlay'); if(prev) prev.remove();
   var ov=document.createElement('div'); ov.id='scanner-hub-overlay'; ov.className='scanner-hub';
   ov.innerHTML =
-    '<button class="scanner-hub-close" onclick="closeScannerHub()" aria-label="Fermer">\u2715</button>'
-   +'<div class="scanner-hub-eyebrow">SCANNER</div>'
+    '<div class="scanner-hub-eyebrow">SCANNER</div>'
    +'<div class="scanner-hub-title">Deux gestes</div>'
    +'<div class="scanner-hub-sub">Choisis ton geste</div>'
    +'<button class="scanner-hub-card" onclick="scannerOpen();">'
