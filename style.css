@@ -9596,3 +9596,6 @@ body.onboarding-active #nav-bar-v2 {
 .vendredi-regard-overlay [style*="D4AF37"]{ color:#BFD6F2!important; }
 .vendredi-regard-overlay [style*="200,168,75"]{ color:rgba(160,190,230,0.6)!important; }
 .vendredi-regard-overlay [style*="200,168,75,0.15"]{ border-color:rgba(110,160,215,0.2)!important; }
+
+/* carte Regard du vendredi : texte en blanc-bleuté Majorelle */
+.vendredi-regard-card [style*="FAF7EE"]{ color:#D6E2F2!important; }
