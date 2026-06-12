@@ -9725,4 +9725,7 @@ body.onboarding-active #nav-bar-v2 {
 .rituel-item.vendredi .arabic{ color:#6FD3A6; }
 
 /* sous-titre des items (vue du jour / fil du jour) — plus lisible */
+.rituel-item .label{ font-size:17px; }
 .rituel-item .sub{ font-size:15px; color:rgba(240,234,214,0.62); }
+.fil-acc-title{ font-size:14px; }
+.fil-acc-count{ font-size:14px; }
