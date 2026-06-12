@@ -9577,3 +9577,22 @@ body.onboarding-active #nav-bar-v2 {
 /* orbe de capture : bordure + fond + disque intérieur */
 #regarde-capture-btn{ border-color:#7FB0E0!important; background:rgba(90,140,210,0.15)!important; }
 #regarde-capture-btn > div{ background:linear-gradient(135deg,#9FC2E8,#3E6EA5)!important; }
+
+/* ===== REGARD Majorelle — Regard du vendredi (Au fil du jour) ===== */
+/* carte : fond + halo qui respire (animation bleue dédiée, sans toucher cardHaloBreath) */
+.vendredi-regard-card{
+  background:linear-gradient(135deg,rgba(90,140,210,0.07),rgba(90,140,210,0.02))!important;
+  animation:vendrediBlueBreath 3.4s ease-in-out infinite!important;
+}
+@keyframes vendrediBlueBreath{
+  0%,100%{ box-shadow:inset 0 0 0 1px rgba(120,165,215,0.4),0 0 16px rgba(80,130,200,0.22); }
+  50%{ box-shadow:inset 0 0 0 1px rgba(140,180,225,0.55),0 0 22px rgba(90,140,210,0.34); }
+}
+.vendredi-regard-card [style*="200,168,75"]{ color:rgba(160,190,230,0.7)!important; }
+
+/* modal الجُمُعَة (calligraphie, labels, favoris, croix, chevron) */
+.vendredi-regard-overlay{ border-color:rgba(110,160,215,0.3)!important; }
+.vendredi-regard-overlay [style*="C8A84A"]{ color:#AFC9EC!important; }
+.vendredi-regard-overlay [style*="D4AF37"]{ color:#BFD6F2!important; }
+.vendredi-regard-overlay [style*="200,168,75"]{ color:rgba(160,190,230,0.6)!important; }
+.vendredi-regard-overlay [style*="200,168,75,0.15"]{ border-color:rgba(110,160,215,0.2)!important; }
