@@ -12151,6 +12151,7 @@ function openNiyyahMenu() {
     + '<div class="niyyah-menu-item" style="font-size:12px;color:var(--t3);cursor:default;border:none;">Niyyah v' + (typeof APP_VERSION !== 'undefined' ? APP_VERSION : '2.0') + ' \u2014 Donn\u00e9es 100% locales \u00b7 Al-Haya</div>'
     + '<div class="niyyah-menu-section" style="margin-top:24px;color:rgba(255,80,80,0.5);">Zone sensible</div>'
     + '<div class="niyyah-menu-item" style="color:rgba(255,80,80,0.7);" onclick="closeNiyyahMenu();_niyyahSafeReset()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,80,80,0.7)" stroke-width="2" stroke-linecap="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>Reset de l\u2019\u00c2me</div>'
+    + '<div style="color:rgba(255,80,80,0.4);font-size:12px;line-height:1.45;padding:2px 16px 4px 40px;">Efface toutes tes donn\u00e9es (progression, journal, intentions) et repart de z\u00e9ro. Un backup est t\u00e9l\u00e9charg\u00e9 avant.</div>'
     + '</div>';
   document.body.appendChild(backdrop);
   requestAnimationFrame(function() { backdrop.classList.add('open'); });
