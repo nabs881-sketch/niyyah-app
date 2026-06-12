@@ -12465,18 +12465,21 @@ function _v2ShowNiyyahReadModal() {
   ov.style.cssText = 'position:fixed;inset:0;z-index:99990;background:rgba(0,0,0,0.85);display:flex;align-items:center;justify-content:center;padding:24px;animation:fadeSlideV2 0.4s ease forwards;';
 
   var card = document.createElement('div');
-  card.style.cssText = 'background:#1a1a1a;border:1px solid rgba(200,168,75,0.25);border-radius:16px;padding:32px 24px;max-width:380px;width:100%;text-align:center;';
+  card.style.cssText = 'position:relative;overflow:hidden;background:radial-gradient(130% 90% at 50% -10%,#20180e,#16110a 55%,#0d0a06);border:1px solid rgba(212,175,55,0.18);border-radius:18px;padding:34px 30px 28px;max-width:340px;width:100%;text-align:center;box-shadow:0 24px 60px -20px rgba(0,0,0,0.8),inset 0 1px 0 rgba(232,207,138,0.14);';
 
   var title = document.createElement('div');
-  title.style.cssText = 'font-family:"Cormorant Garamond",serif;font-size:12px;letter-spacing:2px;color:rgba(200,168,75,0.6);margin-bottom:20px;';
-  title.textContent = 'VOTRE NIYYAH DU JOUR';
+  title.style.cssText = 'display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:22px;';
+  title.innerHTML =
+    '<span style="height:1px;width:34px;background:linear-gradient(90deg,transparent,rgba(212,175,55,0.55));"></span>' +
+    '<span style="font-family:\'Cormorant Garamond\',serif;font-size:11px;letter-spacing:3.4px;font-weight:500;white-space:nowrap;background:linear-gradient(180deg,#F1DDA0,#C9A24A);-webkit-background-clip:text;background-clip:text;color:transparent;">VOTRE NIYYAH DU JOUR</span>' +
+    '<span style="height:1px;width:34px;background:linear-gradient(90deg,rgba(212,175,55,0.55),transparent);"></span>';
 
   var text = document.createElement('div');
-  text.style.cssText = 'font-family:"Cormorant Garamond",serif;font-size:17px;font-style:italic;color:rgba(240,234,214,0.9);line-height:1.7;margin-bottom:28px;';
+  text.style.cssText = 'font-family:"Cormorant Garamond",serif;font-size:19px;font-style:italic;color:#F4ECDC;line-height:1.62;margin-bottom:30px;';
   text.textContent = fullText;
 
   var closeBtn = document.createElement('button');
-  closeBtn.style.cssText = 'display:block;width:100%;padding:14px 0;border:none;border-radius:12px;background:linear-gradient(135deg,#C8A84A,#A68B30);color:#0A0908;font-family:"Cormorant Garamond",serif;font-size:16px;font-weight:700;cursor:pointer;margin-bottom:16px;';
+  closeBtn.style.cssText = 'display:block;width:100%;padding:15px 0;border:1px solid rgba(120,86,20,0.35);border-radius:13px;background:linear-gradient(180deg,#F3DFA2,#DCBD63 46%,#C29A3E);color:#3a2c0c;font-family:"Cormorant Garamond",serif;font-size:15px;font-weight:600;letter-spacing:1px;cursor:pointer;margin-bottom:16px;box-shadow:0 8px 22px -8px rgba(194,154,62,0.55),inset 0 1px 0 rgba(255,248,224,0.7);';
   closeBtn.textContent = 'Fermer';
   closeBtn.addEventListener('click', function() {
     hideAlHayaBtn();
@@ -12504,6 +12507,12 @@ function _v2ShowNiyyahReadModal() {
     _v2OpenNiyyahPickModal();
   });
 
+  var dustTR = document.createElement('div');
+  dustTR.style.cssText = 'position:absolute;top:-40px;right:-40px;width:140px;height:140px;pointer-events:none;background:radial-gradient(circle,rgba(212,175,55,0.10),transparent 70%);';
+  var dustBL = document.createElement('div');
+  dustBL.style.cssText = 'position:absolute;bottom:-30px;left:-30px;width:110px;height:110px;pointer-events:none;background:radial-gradient(circle,rgba(212,175,55,0.06),transparent 70%);';
+  card.appendChild(dustTR);
+  card.appendChild(dustBL);
   card.appendChild(title);
   card.appendChild(text);
   card.appendChild(closeBtn);
