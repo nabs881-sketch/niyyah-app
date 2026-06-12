@@ -2,6 +2,8 @@
 set -e
 echo "▸ Vérification intégrité du contenu..."
 node scripts/validate.mjs
+echo "▸ Tests du scoring..."
+node --test scripts/scoring.test.mjs
 echo "▸ Minifying script.js → script.min.js"
 npx terser script.js -o script.min.js --compress --mangle
 
