@@ -9465,3 +9465,52 @@ body.onboarding-active #nav-bar-v2 {
   border-color: rgba(200,168,74,0.7);
   box-shadow: 0 0 18px rgba(200,168,74,0.4);
 }
+
+/* ===== OCRE MARRAKECH PLEIN — page Journal ===== */
+.journal-screen{
+  background:linear-gradient(180deg,#CA7C4F 0%,#B5613A 52%,#9C4C2A 100%)!important;
+}
+.journal-arabic-title{
+  color:#F8ECDC!important;
+  text-shadow:0 1px 10px rgba(60,25,8,0.4)!important;
+}
+/* titre JOURNAL + icônes dorées → crème */
+#view-journal [style*="C8A84A"]{ color:rgba(248,236,220,0.92)!important; }
+#view-journal svg[stroke="#C8A84A"]{ stroke:#F7E9D8!important; }
+/* bouton retour */
+#journal-back-btn{
+  border-color:rgba(247,233,216,0.45)!important;
+  background:rgba(74,30,12,0.25)!important;
+}
+#journal-back-btn svg{ stroke:#F7E9D8!important; }
+/* onglets : inactif translucide ; actif (gradient or) → tomette crème */
+#view-journal #journal-tabs [role="tab"]{
+  background:rgba(74,30,12,0.18)!important;
+  border-color:rgba(248,236,220,0.25)!important;
+  color:rgba(248,236,220,0.72)!important;
+}
+#view-journal #journal-tabs [style*="212,181,98"]{
+  background:#F3E4CF!important;
+  border-color:rgba(248,236,220,0.7)!important;
+  color:#7A3E1C!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.4)!important;
+}
+/* cartes générées : fond/bordure or → crème, ombre douce */
+#journal-content > div[style*="200,168,75"]{
+  background:rgba(249,240,227,0.95)!important;
+  border-color:rgba(110,55,25,0.16)!important;
+  box-shadow:0 2px 10px rgba(70,30,10,0.18)!important;
+}
+/* texte intention (or) → brun ; date (blanc) → brun clair */
+#journal-content [style*="D4AF37"]{ color:#6E3B1E!important; }
+#journal-content [style*="255,255,255,0.55"]{ color:rgba(90,45,20,0.6)!important; }
+/* vignette + icône placeholder */
+#journal-content [style*="200,168,75,0.08"]{ background:rgba(180,97,58,0.16)!important; }
+#journal-content svg[stroke*="200,168,75"]{ stroke:rgba(150,74,42,0.55)!important; }
+/* étoile favori : reste ocre (et non brun) */
+#journal-content [style*="top:8px;right:8px"]{ color:#B5613A!important; }
+/* état vide */
+#journal-content .empty-state-glyph{ color:rgba(248,236,220,0.35)!important; }
+#journal-content .empty-state-title{ color:#F8ECDC!important; }
+#journal-content .empty-state-text,
+#journal-content [style*="200,168,75,0.45"]{ color:rgba(248,236,220,0.82)!important; }
