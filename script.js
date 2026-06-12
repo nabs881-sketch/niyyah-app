@@ -14346,7 +14346,7 @@ function updateSanctuaireMoment() {
 
 function getVendrediRegardCardHTML() {
   return '<div class="vendredi-regard-card" onclick="openVendrediRegard()">'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#FAF7EE;line-height:1.5;">\u00ab Vendredi de paix. Choisis un Regard pour quelqu\u2019un que tu aimes. \u00bb</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#FAF7EE;line-height:1.6;">Le vendredi a une lumi\u00e8re \u00e0 part.<br>Choisis un Regard, et offre-le \u00e0 un c\u0153ur qui t\u2019est cher.</div>'
     + '<div style="font-size:12px;letter-spacing:2px;color:rgba(200,168,75,0.55);margin-top:8px;text-transform:uppercase;">REGARD DU VENDREDI</div>'
     + '</div>';
 }
