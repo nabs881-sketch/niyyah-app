@@ -1847,7 +1847,7 @@
       },
       {
         "id": "DHUHR-VOISINS-004",
-        "titre": "Le hadith du voisin proche et lointain",
+        "titre": "Le verset du voisin proche et lointain",
         "type_narratif": "HISTOIRE_PROPHETIQUE",
         "source": "Récit basé sur le verset 4:36 (sourate an-Nisâ') et plusieurs hadiths complémentaires sur les degrés du voisinage. Authentique.",
         "verif_imam": true,
@@ -2789,7 +2789,7 @@
       },
       {
         "id": "DHUHR-INCONNUS-008",
-        "titre": "Le hadith du voyageur",
+        "titre": "Le verset du voyageur",
         "type_narratif": "HISTOIRE_PROPHETIQUE",
         "source": "Récit basé sur le verset 4:36 (sourate an-Nisâ') qui mentionne « le compagnon de votre côté, le voyageur, et ceux que vos mains droites possèdent ». Et plusieurs hadiths sur le droit du voyageur. Authentique.",
         "verif_imam": true,
@@ -3430,7 +3430,7 @@
       },
       {
         "id": "DHUHR-INTENTION-006",
-        "titre": "Le hadith de la goutte d'eau",
+        "titre": "Le principe de la goutte d'eau",
         "type_narratif": "HISTOIRE_PROPHETIQUE",
         "source": "Récit basé sur les hadiths concernant les actes minuscules accomplis avec intention pure, qui pèsent plus que les grands actes accomplis sans intention. Plusieurs hadiths sahih illustrent ce principe (notamment Bukhari sur le buveur d'eau au chien, ou la vente d'une datte pour le bien). Principe authentique fondamental.",
         "verif_imam": true,
@@ -3466,7 +3466,7 @@
       },
       {
         "id": "DHUHR-INTENTION-010",
-        "titre": "Le hadith des sept signaux",
+        "titre": "Les sept signaux du bon musulman",
         "type_narratif": "HISTOIRE_PROPHETIQUE",
         "source": "Composition basée sur plusieurs hadiths concernant les actes du milieu de vie et les signes du bon musulman. Synthèse pédagogique d'enseignements multiples authentiques. Le principe énoncé est conforme à de nombreux hadiths sahih.",
         "verif_imam": true,
@@ -3648,7 +3648,7 @@
       },
       {
         "id": "DHUHR-SECRETS-015",
-        "titre": "Le hadith du serment retenu",
+        "titre": "Le principe du serment retenu",
         "type_narratif": "HISTOIRE_PROPHETIQUE",
         "source": "Récit basé sur les hadiths concernant les serments et engagements pris par les Compagnons devant le Prophète ﷺ. Plusieurs hadiths sahih sur la tenue de parole quand un engagement a été pris (Bukhari, Muslim). Authentique.",
         "verif_imam": true,
