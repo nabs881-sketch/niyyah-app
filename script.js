@@ -17427,7 +17427,7 @@ function openVueRituel(prayer) {
       var _sk = it.id === 'tasbih' ? 'tasbih_' + todayKey() + '_' + prayer : 'istighfar_' + todayKey();
       var _dc = 0;
       try { var _dr = JSON.parse(safeGetItem(_sk) || '{}'); if (_dr.date === todayKey()) _dc = _dr.count || 0; } catch(e) {}
-      _dhikrCount = '<div style="font-size:12px;font-style:italic;color:#C8A84A;margin-top:2px;">' + (_dc >= 100 ? '100 \u2713' : _dc + ' / 100') + '</div>';
+      _dhikrCount = '<div style="font-size:14px;font-style:italic;color:#C8A84A;margin-top:2px;">' + (_dc >= 100 ? '100 \u2713' : _dc + ' / 100') + '</div>';
     }
     const sub = it.sub ? '<div class="sub">' + it.sub + '</div>' : '';
     const audio = it.audio ? '<button class="btn-audio" data-audio-id="' + it.id + '" onclick="event.stopPropagation();playAudioById(this)">\u{1F50A}</button>' : '';
