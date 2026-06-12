@@ -11815,6 +11815,8 @@ function journalSwitchTab(tab) {
   var tabN = document.getElementById('journal-tab-niyyah');
   var tabR = document.getElementById('journal-tab-regards');
   if (!content) return;
+  var _vj = document.getElementById('view-journal');
+  if (_vj) { _vj.classList.toggle('jr-niyyah', tab === 'niyyah'); _vj.classList.toggle('jr-regard', tab !== 'niyyah'); }
   if (tab === 'niyyah') {
     if (tabN) { tabN.style.background = 'linear-gradient(180deg,rgba(212,181,98,0.18) 0%,rgba(166,117,68,0.12) 100%)'; tabN.style.border = '1px solid rgba(230,200,130,0.5)'; tabN.style.color = 'rgba(230,200,130,1)'; tabN.style.boxShadow = '0 2px 8px rgba(0,0,0,0.3),inset 0 1px 0 rgba(255,230,180,0.1)'; }
     if (tabR) { tabR.style.background = 'transparent'; tabR.style.border = '1px solid rgba(200,168,75,0.15)'; tabR.style.color = 'rgba(200,168,75,0.5)'; tabR.style.boxShadow = 'none'; }

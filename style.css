@@ -9466,47 +9466,43 @@ body.onboarding-active #nav-bar-v2 {
   box-shadow: 0 0 18px rgba(200,168,74,0.4);
 }
 
-/* ===== OCRE MARRAKECH — page Journal (accents sur fond sombre) ===== */
-.journal-screen{
-  background:radial-gradient(ellipse at center top,#160b06 0%,#050302 100%)!important;
+/* ===== JOURNAL — deux fonds premium (NIYYAH ambré / REGARD Majorelle) ===== */
+.journal-screen{ transition:background 0.6s ease; }
+
+/* NIYYAH — ambre / or */
+#view-journal.jr-niyyah .journal-screen{
+  background:radial-gradient(ellipse 130% 75% at 50% -8%,rgba(199,150,80,0.20) 0%,rgba(120,70,30,0.05) 38%,transparent 62%),radial-gradient(ellipse at center,#0c0805 0%,#000 100%)!important;
 }
-.journal-arabic-title{
-  color:rgba(199,107,58,0.92)!important;
-  text-shadow:0 0 22px rgba(199,107,58,0.32)!important;
+#view-journal.jr-niyyah .journal-screen::after{
+  content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:radial-gradient(circle,rgba(232,184,120,0.5) 0.5px,transparent 1px);
+  background-size:13px 13px;opacity:0.30;
 }
-#view-journal [style*="C8A84A"]{ color:#C76B3A!important; }
-#view-journal svg[stroke="#C8A84A"]{ stroke:#C76B3A!important; }
-#view-journal [style*="D4AF37"]{ color:#D98B57!important; }
-#journal-back-btn{ border-color:rgba(199,107,58,0.38)!important; }
-#journal-back-btn svg{ stroke:#C76B3A!important; }
-/* onglets : inactif (bord/texte) + actif (gradient or → ocre) */
-#view-journal #journal-tabs [role="tab"]{
-  border-color:rgba(199,107,58,0.22)!important;
-  color:rgba(216,139,87,0.6)!important;
+#view-journal.jr-niyyah .journal-arabic-title{ color:#E8C580!important; text-shadow:0 0 18px rgba(200,150,80,0.4)!important; }
+#view-journal.jr-niyyah [style*="C8A84A"]{ color:rgba(232,197,128,0.92)!important; }
+#view-journal.jr-niyyah #journal-back-btn svg{ stroke:#E8C580!important; }
+#view-journal.jr-niyyah #journal-content > div[style*="200,168,75"]{ background:rgba(212,160,90,0.08)!important; border-color:rgba(212,160,90,0.2)!important; }
+#view-journal.jr-niyyah #journal-content [style*="D4AF37"]{ color:#E8BE84!important; }
+#view-journal.jr-niyyah #journal-content .empty-state-glyph{ color:rgba(232,184,120,0.4)!important; }
+#view-journal.jr-niyyah #journal-content .empty-state-title{ color:#E8C580!important; }
+
+/* REGARD — bleu Majorelle */
+#view-journal.jr-regard .journal-screen{
+  background:radial-gradient(ellipse 130% 75% at 50% -8%,rgba(70,120,190,0.22) 0%,rgba(40,70,120,0.06) 38%,transparent 62%),radial-gradient(ellipse at center,#05080d 0%,#000 100%)!important;
 }
-#view-journal #journal-tabs [style*="212,181,98"]{
-  background:linear-gradient(180deg,rgba(199,107,58,0.22) 0%,rgba(150,74,42,0.14) 100%)!important;
-  border-color:rgba(224,151,94,0.5)!important;
-  color:#F0C49A!important;
-  box-shadow:0 2px 8px rgba(0,0,0,0.35),inset 0 1px 0 rgba(255,210,170,0.12)!important;
+#view-journal.jr-regard .journal-screen::after{
+  content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:radial-gradient(circle,rgba(165,200,240,0.55) 0.5px,transparent 1px);
+  background-size:13px 13px;opacity:0.30;
 }
-/* recherche (overlays) */
-#niyyah-journal-search,#regarde-journal-search{
-  color:#E0975E!important;
-  border-color:rgba(199,107,58,0.22)!important;
-  background:rgba(199,107,58,0.05)!important;
+#view-journal.jr-regard .journal-arabic-title{ color:#AFC9EC!important; text-shadow:0 0 18px rgba(90,140,210,0.45)!important; }
+#view-journal.jr-regard [style*="C8A84A"]{ color:rgba(175,201,236,0.92)!important; }
+#view-journal.jr-regard #journal-back-btn svg{ stroke:#AFC9EC!important; }
+#view-journal.jr-regard #journal-tab-regards{
+  background:linear-gradient(180deg,rgba(80,130,200,0.28),rgba(40,80,140,0.15))!important;
+  border-color:rgba(130,175,225,0.55)!important; color:#C2DBF5!important;
 }
-/* cartes générées : fond/bordure or → ocre, texte → ocre clair */
-#journal-content > div[style*="200,168,75"]{
-  background:rgba(199,107,58,0.07)!important;
-  border-color:rgba(199,107,58,0.22)!important;
-}
-#journal-content [style*="200,168,75,0.08"]{ background:rgba(199,107,58,0.09)!important; }
-#journal-content svg[stroke*="200,168,75"]{ stroke:rgba(199,107,58,0.35)!important; }
-/* étoile favori */
-#journal-content [style*="top:8px;right:8px"]{ color:#D98B57!important; }
-/* état vide : glyphe + titre + sous-texte en ocre */
-#journal-content .empty-state-glyph{ color:rgba(199,107,58,0.4)!important; }
-#journal-content .empty-state-title{ color:#D98B57!important; }
-#journal-content .empty-state-text,
-#journal-content [style*="200,168,75,0.45"]{ color:rgba(216,139,87,0.72)!important; }
+#view-journal.jr-regard #journal-content > div[style*="200,168,75"]{ background:rgba(90,140,210,0.09)!important; border-color:rgba(110,160,215,0.22)!important; }
+#view-journal.jr-regard #journal-content [style*="D4AF37"]{ color:#BFD6F2!important; }
+#view-journal.jr-regard #journal-content .empty-state-glyph{ color:rgba(165,200,240,0.4)!important; }
+#view-journal.jr-regard #journal-content .empty-state-title{ color:#AFC9EC!important; }
