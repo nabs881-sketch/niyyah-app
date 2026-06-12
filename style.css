@@ -9570,3 +9570,10 @@ body.onboarding-active #nav-bar-v2 {
 #regarde-detail-overlay [style*="C8A84A"]{ color:#AFC9EC!important; }
 #regarde-detail-overlay [style*="212,175,55"]{ border-color:rgba(110,160,215,0.3)!important; }
 #regarde-detail-content [style*="200,168,75,0.05"]{ background:rgba(90,140,210,0.06)!important; border-color:rgba(110,160,215,0.2)!important; }
+
+/* ===== REGARD Majorelle — complément écran scan ===== */
+/* titre « POINTE VERS CE QUE TU REGARDES » (rgba 212,175,55) */
+#regarde-content [style*="212,175,55"]{ color:#AFC9EC!important; }
+/* orbe de capture : bordure + fond + disque intérieur */
+#regarde-capture-btn{ border-color:#7FB0E0!important; background:rgba(90,140,210,0.15)!important; }
+#regarde-capture-btn > div{ background:linear-gradient(135deg,#9FC2E8,#3E6EA5)!important; }
