@@ -14534,13 +14534,13 @@ function _showRegardShareOverlay(c, entryId, activeKind) {
     document.body.appendChild(shareOv);
     window._regardCanvasBlob = blob;
     window._regardCanvasUrl = url;
-  }, 'image/png');
+  }, 'image/jpeg', 0.92);
 }
 window.genRegardCanvas = genRegardCanvas;
 
 function regardShareImage() {
   if (!window._regardCanvasBlob || !navigator.share) { showToast('Partage non disponible'); return; }
-  var file = new File([window._regardCanvasBlob], 'regard-niyyah.png', { type: 'image/png' });
+  var file = new File([window._regardCanvasBlob], 'regard-niyyah.jpg', { type: 'image/jpeg' });
   navigator.share({ files: [file] }).catch(function() {});
 }
 window.regardShareImage = regardShareImage;
@@ -14549,7 +14549,7 @@ function regardDownloadImage() {
   if (!window._regardCanvasUrl) return;
   var a = document.createElement('a');
   a.href = window._regardCanvasUrl;
-  a.download = 'regard-niyyah.png';
+  a.download = 'regard-niyyah.jpg';
   a.click();
 }
 window.regardDownloadImage = regardDownloadImage;
@@ -16139,7 +16139,7 @@ function _showShareModal(canvas) {
     modal.innerHTML = '<div style="max-width:360px;width:100%;text-align:center;">'
       + '<img src="' + url + '" style="width:100%;border-radius:12px;margin-bottom:16px;">'
       + '<div style="display:flex;gap:10px;justify-content:center;">'
-      + '<button onclick="var a=document.createElement(\'a\');a.href=\'' + url + '\';a.download=\'regard-niyyah.png\';a.click();" style="flex:1;padding:12px;border-radius:12px;border:none;background:#C8A84A;color:#2C2E32;font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:600;cursor:pointer;">T\u00e9l\u00e9charger</button>'
+      + '<button onclick="var a=document.createElement(\'a\');a.href=\'' + url + '\';a.download=\'regard-niyyah.jpg\';a.click();" style="flex:1;padding:12px;border-radius:12px;border:none;background:#C8A84A;color:#2C2E32;font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:600;cursor:pointer;">T\u00e9l\u00e9charger</button>'
       + '<button onclick="document.getElementById(\'regarde-share-modal\').remove();" style="flex:1;padding:12px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:transparent;color:#B5A685;font-family:\'Cormorant Garamond\',serif;font-size:14px;cursor:pointer;">Fermer</button>'
       + '</div></div>';
     document.body.appendChild(modal);
