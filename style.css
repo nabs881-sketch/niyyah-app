@@ -9617,36 +9617,34 @@ body.onboarding-active #nav-bar-v2 {
 /* ===== Cartes d'intention (Ancrer votre Niyyah) — zellige ivoire ===== */
 .intention-opt-v2{
   --zellige:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='44'%20height='44'%3E%3Cg%20fill='none'%20stroke='%239A7434'%20stroke-width='0.9'%20opacity='0.5'%3E%3Cpath%20d='M37%2C22%2022%2C37%207%2C22%2022%2C7Z%20M32.6%2C32.6%2011.4%2C32.6%2011.4%2C11.4%2032.6%2C11.4Z'/%3E%3Cpath%20d='M15%2C0%200%2C15%20-15%2C0%200%2C-15Z%20M10.6%2C10.6%20-10.6%2C10.6%20-10.6%2C-10.6%2010.6%2C-10.6Z'/%3E%3Cpath%20d='M59%2C0%2044%2C15%2029%2C0%2044%2C-15Z%20M54.6%2C10.6%2033.4%2C10.6%2033.4%2C-10.6%2054.6%2C-10.6Z'/%3E%3Cpath%20d='M15%2C44%200%2C59%20-15%2C44%200%2C29Z%20M10.6%2C54.6%20-10.6%2C54.6%20-10.6%2C33.4%2010.6%2C33.4Z'/%3E%3Cpath%20d='M59%2C44%2044%2C59%2029%2C44%2044%2C29Z%20M54.6%2C54.6%2033.4%2C54.6%2033.4%2C33.4%2054.6%2C33.4Z'/%3E%3C/g%3E%3C/svg%3E");
-  background-color:#F1E7D0;
-  background-image:var(--zellige);
-  background-repeat:repeat;
-  border-color:rgba(150,116,52,0.55);
-  color:#2C2113;
+  background:linear-gradient(160deg,#9c5a24,#5e3413);
+  box-shadow:inset 0 1px 0 rgba(255,220,150,0.14);
+  border-color:rgba(212,175,55,0.5);
+  color:#F6ECD6;
 }
 .intention-opt-v2:hover,
 .intention-opt-v2.sel-v2{
-  background-color:#ECDFC0;
-  background-image:var(--zellige);
-  border-color:rgba(176,134,56,0.95);
-  box-shadow:inset 0 0 0 1px rgba(176,134,56,0.45);
-  color:#241A0E;
+  background:linear-gradient(160deg,#b06a2b,#6a3c18);
+  border-color:rgba(232,200,120,0.9);
+  box-shadow:inset 0 1px 0 rgba(255,220,150,0.20),0 0 14px rgba(200,140,60,0.20);
+  color:#FCF4E2;
 }
 
 /* ===== Carte jour béni (vendredi / saison) ===== */
 .intention-opt-v2.intention-season{
-  background-color:#F3E6C6;
-  border-color:rgba(176,134,56,0.75);
-  box-shadow:0 0 22px rgba(200,150,70,0.16);
+  background:linear-gradient(160deg,#b5641d,#6f3210);
+  border-color:rgba(232,200,120,0.7);
+  box-shadow:0 0 22px rgba(200,150,70,0.22),inset 0 1px 0 rgba(255,220,150,0.18);
 }
 .intention-opt-v2.intention-season:hover,
 .intention-opt-v2.intention-season.sel-v2{
-  background-color:#EFDBB0;
-  border-color:rgba(176,134,56,1);
-  box-shadow:0 0 22px rgba(200,150,70,0.22),inset 0 0 0 1px rgba(176,134,56,0.5);
-  color:#241A0E;
+  background:linear-gradient(160deg,#c6712a,#7d3a14);
+  border-color:rgba(244,214,134,0.9);
+  box-shadow:0 0 26px rgba(200,150,70,0.30),inset 0 1px 0 rgba(255,220,150,0.22);
+  color:#FCF4E2;
 }
 .intention-opt-v2.intention-season > div{
-  color:#7A4E12!important;
+  color:#F0C36A!important;
   font-style:normal!important;
   text-transform:uppercase!important;
   letter-spacing:1.5px!important;
