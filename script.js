@@ -9219,7 +9219,7 @@ function isPremium() {
   return safeGetItem('niyyah_premium') === 'true' || safeGetItem('niyyah_pro') === '1';
 }
 function unlockPremium(code) {
-  if (code && code.toUpperCase() === 'BISMILLAH') {
+  if (code && code.trim().toUpperCase() === 'BISMILLAH') {
     safeSetItem('niyyah_premium', 'true');
     return true;
   }
