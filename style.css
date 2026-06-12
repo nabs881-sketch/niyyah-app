@@ -9616,25 +9616,27 @@ body.onboarding-active #nav-bar-v2 {
 
 /* ===== Cartes d'intention (Ancrer votre Niyyah) — identité ambre ===== */
 .intention-opt-v2{
-  background:linear-gradient(180deg,#191309,#120d07);
-  border-color:rgba(200,168,75,0.18);
+  background:linear-gradient(180deg,#2b1f12,#221810);
+  border-color:rgba(200,168,75,0.30);
+  color:#F3ECD8;
 }
 .intention-opt-v2:hover,
 .intention-opt-v2.sel-v2{
-  border-color:rgba(212,175,55,0.5);
-  background:rgba(212,175,55,0.12);
+  border-color:rgba(228,196,118,0.65);
+  background:linear-gradient(180deg,#3a2c18,#2c2113);
+  color:#FBF3DC;
 }
 
 /* ===== Carte d'intention jour béni (vendredi / saison) — accentuée ===== */
 .intention-opt-v2.intention-season{
-  border-color:rgba(212,175,55,0.45);
-  background:linear-gradient(180deg,rgba(200,150,70,0.10),rgba(120,80,30,0.035));
-  box-shadow:0 0 18px rgba(200,150,70,0.12);
+  border-color:rgba(228,196,118,0.55);
+  background:linear-gradient(180deg,#3c2b14,#2c1f10);
+  box-shadow:0 0 20px rgba(200,150,70,0.18);
 }
 .intention-opt-v2.intention-season:hover,
 .intention-opt-v2.intention-season.sel-v2{
-  border-color:rgba(224,200,120,0.7);
-  background:linear-gradient(180deg,rgba(200,150,70,0.16),rgba(120,80,30,0.05));
+  border-color:rgba(244,214,134,0.8);
+  background:linear-gradient(180deg,#4a3518,#382711);
 }
 .intention-opt-v2.intention-season > div{
   color:#D8A24E!important;
