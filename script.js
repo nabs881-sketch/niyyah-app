@@ -10321,7 +10321,7 @@ const V2_I18N = {
     modal_title:    'Ancrer votre Niyyah',
     modal_sub:      'Quelle est l\'intention de cette journée ?',
     modal_divider:  'ou votre propre intention',
-    modal_confirm:  '✦ Ancrer cette Intention',
+    modal_confirm:  'Ancrer cette Intention',
     modal_cancel:   'Retour',
     modal_placeholder: 'Écrivez votre intention personnelle...',
     // Chip
@@ -10591,7 +10591,7 @@ const V2_I18N = {
     modal_title:    'Anchor your Niyyah',
     modal_sub:      'What is the intention for this day?',
     modal_divider:  'or your own intention',
-    modal_confirm:  '✦ Anchor this Intention',
+    modal_confirm:  'Anchor this Intention',
     modal_cancel:   'Back',
     modal_placeholder: 'Write your personal intention...',
     chip_meta: 'Today\'s intention',
@@ -10824,7 +10824,7 @@ const V2_I18N = {
     modal_title:    'تَثْبِيتُ النِّيَّةِ',
     modal_sub:      'مَا هِيَ نِيَّةُ هَذَا الْيَوْمِ؟',
     modal_divider:  'أَوْ نِيَّتُكَ الْخَاصَّةُ',
-    modal_confirm:  '✦ تَثْبِيتُ هَذِهِ النِّيَّةِ',
+    modal_confirm:  'تَثْبِيتُ هَذِهِ النِّيَّةِ',
     modal_cancel:   'رُجُوعٌ',
     modal_placeholder: 'اكْتُبْ نِيَّتَكَ الْخَاصَّةَ...',
     chip_meta: 'نِيَّةُ الْيَوْمِ',
@@ -12644,7 +12644,7 @@ function _v2OpenNiyyahPickModal() {
     anchorBtn.id = 'v2-anchor-btn';
     anchorBtn.disabled = true;
     anchorBtn.style.cssText = 'display:block;width:100%;margin-top:18px;padding:16px 0;border:none;border-radius:12px;background:linear-gradient(135deg,#C8A84A,#A68B30);color:#0A0908;font-family:"Cormorant Garamond",serif;font-size:17px;font-weight:700;letter-spacing:0.5px;cursor:pointer;opacity:0.4;transition:opacity 0.3s ease;';
-    anchorBtn.textContent = T.modal_confirm || '\u2726 Ancrer cette Intention';
+    anchorBtn.textContent = T.modal_confirm || 'Ancrer cette Intention';
     anchorBtn.addEventListener('click', function() {
       if (anchorBtn.disabled) return;
       if (navigator.vibrate) navigator.vibrate([50, 30, 50, 30, 500]);
