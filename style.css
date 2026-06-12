@@ -8688,19 +8688,17 @@ body.onboarding-active #nav-bar-v2 {
 }
 .fil-acc .rituel-item.done,
 #vue-rituel .rituel-item.done {
-  opacity: 0.3;
+  opacity: 0.6;
 }
 .fil-acc .rituel-item.done .label,
 #vue-rituel .rituel-item.done .label {
-  text-decoration: line-through;
-  text-decoration-color: rgba(200,168,75,0.35);
+  text-decoration: none;
 }
 .fil-acc .rituel-item.done .sub,
 .fil-acc .rituel-item.done .arabic,
 #vue-rituel .rituel-item.done .sub,
 #vue-rituel .rituel-item.done .arabic {
-  text-decoration: line-through;
-  text-decoration-color: rgba(200,168,75,0.2);
+  text-decoration: none;
 }
 .rituel-item .label {
   font-size: 16px;
@@ -9678,3 +9676,17 @@ body.onboarding-active #nav-bar-v2 {
 /* ===== NAFS — citation allégée + nom plus présent ===== */
 .nafs-reference-box{ background:none; border-radius:0; padding:2px 0 2px 14px; border-left-color:rgba(200,168,75,0.5); }
 .nafs-name-fr{ font-size:22px; color:#F4ECD8; }
+
+/* ===== Vue du jour — check accompli + progression ===== */
+.rituel-item .check{ position:relative; }
+.rituel-item.done .check::after{
+  content:''; position:absolute; left:8px; top:4px;
+  width:5px; height:10px; border:solid #2A1E08; border-width:0 2px 2px 0;
+  transform:rotate(45deg);
+}
+.fil-progress{ margin-bottom:24px; }
+.fil-progress-row{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px; }
+.fil-progress-label{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:14px; color:rgba(240,234,214,0.6); }
+.fil-progress-count{ font-family:'Nunito',sans-serif; font-size:12px; letter-spacing:1px; color:rgba(200,168,74,0.75); }
+.fil-progress-track{ height:4px; border-radius:4px; background:rgba(200,168,74,0.12); overflow:hidden; }
+.fil-progress-fill{ height:100%; background:linear-gradient(90deg,#B8923E,#E8C66C); }

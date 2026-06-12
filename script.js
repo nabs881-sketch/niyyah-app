@@ -17597,7 +17597,10 @@ function openVueAuFilDuJour() {
     var _labelHtml = _lisanInfo ? '<div style="display:flex;align-items:center;gap:8px;"><div class="label">' + (it.label||it.id) + '</div>' + _lisanInfo + '</div>' : '<div class="label">' + (it.label||it.id) + '</div>';
     return '<div class="rituel-item ' + done + '"' + _filKnBg + ' id="rituel-item-' + it.id + '" onclick="' + _click + '"><div class="check"' + _checkClick + '></div><div style="flex:1">' + _labelHtml + sub + ar + '</div>' + _readBtn + _coranBtn + audio + '</div>';
   };
-  var _html = '';
+  var _filDone = items.filter(function(it){ return !!state[it.id]; }).length;
+  var _filTotal = items.length;
+  var _filPct = _filTotal ? Math.round(_filDone/_filTotal*100) : 0;
+  var _html = '<div class="fil-progress"><div class="fil-progress-row"><span class="fil-progress-label">Le jour s\'habite</span><span class="fil-progress-count">' + _filDone + ' geste' + (_filDone>1?'s':'') + ' pos\u00e9' + (_filDone>1?'s':'') + '</span></div><div class="fil-progress-track"><div class="fil-progress-fill" style="width:' + _filPct + '%;"></div></div></div>';
   _catOrder.forEach(function(cat) {
     var group = items.filter(function(it) { return it.category === cat.key; });
     if (!group.length) return;
