@@ -9624,3 +9624,23 @@ body.onboarding-active #nav-bar-v2 {
   border-color:rgba(212,175,55,0.5);
   background:rgba(212,175,55,0.12);
 }
+
+/* ===== Carte d'intention jour béni (vendredi / saison) — accentuée ===== */
+.intention-opt-v2.intention-season{
+  border-color:rgba(212,175,55,0.45);
+  background:linear-gradient(180deg,rgba(200,150,70,0.10),rgba(120,80,30,0.035));
+  box-shadow:0 0 18px rgba(200,150,70,0.12);
+}
+.intention-opt-v2.intention-season:hover,
+.intention-opt-v2.intention-season.sel-v2{
+  border-color:rgba(224,200,120,0.7);
+  background:linear-gradient(180deg,rgba(200,150,70,0.16),rgba(120,80,30,0.05));
+}
+.intention-opt-v2.intention-season > div{
+  color:#D8A24E!important;
+  font-style:normal!important;
+  text-transform:uppercase!important;
+  letter-spacing:1.5px!important;
+  font-size:11px!important;
+  opacity:1!important;
+}

@@ -12557,6 +12557,7 @@ function _v2OpenNiyyahPickModal() {
     btn.dataset.niyyahText = niyyahText;
     if (opt.id) btn.dataset.niyyahId = opt.id;
     if (opt._seasonLabel) {
+      btn.classList.add('intention-season');
       var badge = document.createElement('div');
       badge.style.cssText = 'font-size:12px;color:#C8A84A;margin-bottom:4px;font-style:italic;opacity:0.8;';
       badge.textContent = _seasonLabels[opt._seasonLabel] || '';
