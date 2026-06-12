@@ -9723,3 +9723,6 @@ body.onboarding-active #nav-bar-v2 {
 }
 .rituel-item.vendredi .check{ border-color:rgba(201,162,74,0.7); }
 .rituel-item.vendredi .arabic{ color:#6FD3A6; }
+
+/* sous-titre des items (vue du jour / fil du jour) — plus lisible */
+.rituel-item .sub{ font-size:14px; color:rgba(240,234,214,0.62); line-height:1.45; }
