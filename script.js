@@ -13221,7 +13221,7 @@ function openWaqtModal() {
   var arName = _WAQT_AR_NAMES[priere] || '';
   var _lum = _WAQT_LUMIERE[priere] || '';
   var ambianceHtml = _lum
-    ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:rgba(200,168,74,0.7);line-height:1.6;max-width:300px;margin:0 auto 18px;">' + _lum + '</div>'
+    ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:19px;font-style:italic;color:rgba(208,178,90,0.9);line-height:1.55;max-width:340px;margin:0 auto 18px;">' + _lum + '</div>'
     : '';
   var actionEl = document.getElementById('waqt-action-text');
   // Banner image par prière
