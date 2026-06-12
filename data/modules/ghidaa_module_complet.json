@@ -8,7 +8,6 @@
   "concept": "Connaissance pratique sur les aliments selon le Coran et la Sunna. Bienfaits, sources, comment les consommer. À intégrer dans le bloc CONNAISSANCE de Niyyah (à côté de Hadith/Du'â/Fiqh jour).",
   "integration_recommandee": "Bloc 'Aliment du jour' dans la section Connaissance — affichage 1 item/jour pendant 80 jours, puis cycle.",
   "structure_item": "id, nom_aliment (FR + AR), categorie, statut, bienfaits, source_coran_hadith, comment_le_consommer",
-  
   "items": [
     {
       "id": "ghidaa_001",
@@ -27,7 +26,7 @@
       "categorie": "ALIMENT_SUNNAH",
       "statut": "Recommandé (remède)",
       "bienfaits": "Antibactérien, cicatrisant, énergisant, fortifie l'immunité. Allâh le qualifie de 'remède' (shifâ').",
-      "source_coran_hadith": "Coran 16:69 (An-Nahl) : 'De leurs entrailles sort une boisson de couleur variée qui sert de remède aux hommes.' Hadith Ibn Mâja : 'Contentez-vous des deux remèdes : le miel et le Coran.'",
+      "source_coran_hadith": "Coran 16:69 (An-Nahl) : 'De leurs entrailles sort une boisson de couleur variée qui sert de remède aux hommes.' Hadith Bukhârî 5680 : 'La guérison est dans trois choses : une gorgée de miel, la hijama, ou la cautérisation par le feu.' (à confirmer par l'imam)",
       "comment_le_consommer": "Une cuillère le matin à jeun. Le Prophète ﷺ aimait commencer sa journée avec du miel et de l'eau (Bukhari)."
     },
     {
@@ -37,7 +36,7 @@
       "categorie": "ALIMENT_SUNNAH",
       "statut": "Recommandé fortement",
       "bienfaits": "Riche en acides gras mono-insaturés (bons pour le cœur). Antioxydants. Protège des maladies cardiovasculaires.",
-      "source_coran_hadith": "Coran 24:35 (An-Nûr) : 'Allâh est la lumière des cieux et de la terre... son huile semble éclairer même si le feu ne la touchait pas.' Hadith Tirmidhî : 'Mangez de l'olive et oignez-vous-en, car elle provient d'un arbre béni.'",
+      "source_coran_hadith": "Coran 24:35 (An-Nûr) : 'Allâh est la lumière des cieux et de la terre... son huile semble éclairer même si le feu ne la touchait pas.' Hadith Tirmidhî 1851 : 'Mangez de l'olive et oignez-vous-en, car elle provient d'un arbre béni.' (gradé hasan li-ghayrihi par certains, da'îf par d'autres — à confirmer par l'imam)",
       "comment_le_consommer": "À cru sur les salades, le pain. Le Prophète ﷺ s'en oignait aussi sur le corps et les cheveux."
     },
     {
@@ -46,7 +45,7 @@
       "nom_ar": "الحبة السوداء",
       "categorie": "ALIMENT_SUNNAH",
       "statut": "Recommandé fortement (remède)",
-      "bienfaits": "Immunostimulant prouvé scientifiquement. Anti-inflammatoire. Régule la glycémie. Bénéfique pour le système respiratoire.",
+      "bienfaits": "Immunostimulant (suggéré par des études). Anti-inflammatoire. Peut aider à réguler la glycémie. Bénéfique pour le système respiratoire.",
       "source_coran_hadith": "Hadith Bukhari 5687 : 'Dans la graine de nigelle, il y a un remède pour toute maladie sauf la mort.' (Habbatu-s-sawdâ').",
       "comment_le_consommer": "1 cuillère à café d'huile de nigelle le matin à jeun. Ou graines moulues mélangées au miel. Pendant 3-4 semaines."
     },
@@ -127,7 +126,7 @@
       "categorie": "FRUIT_BENI",
       "statut": "Recommandé (mentionné dans le Coran)",
       "bienfaits": "Riches en fibres, calcium, antioxydants. Excellentes pour la digestion. Énergie naturelle.",
-      "source_coran_hadith": "Coran 95:1 (At-Tîn) : 'Par le figuier et l'olivier.' Hadith Abû Dâwûd : 'Si je devais dire qu'un fruit est descendu du Paradis, je dirais celui-ci [la figue], car les fruits du Paradis n'ont pas de noyau.'",
+      "source_coran_hadith": "Coran 95:1 (At-Tîn) : 'Par le figuier et l'olivier.' (Le hadith populaire « la figue est un fruit du Paradis » est de chaîne faible — da'îf — et absent des recueils sahîh ; la valeur de la figue repose sur le verset. À confirmer par l'imam.)",
       "comment_le_consommer": "Fraîches en saison, sinon séchées. Excellentes au petit-déjeuner avec lait/yaourt."
     },
     {
@@ -146,8 +145,8 @@
       "nom_ar": "الرمان",
       "categorie": "FRUIT_PARADIS",
       "statut": "Recommandé (fruit du Paradis)",
-      "bienfaits": "Anti-inflammatoire. Améliore la circulation sanguine. Riche en antioxydants. Protège contre Alzheimer.",
-      "source_coran_hadith": "Coran 55:68 (Ar-Rahmân) : 'Ils contiennent des fruits, des palmiers, et des grenadiers.' Mentionné parmi les fruits du Paradis. Hadith : 'Il n'y a pas une grenade qui n'a pas été fécondée par une goutte de l'eau du Paradis.'",
+      "bienfaits": "Anti-inflammatoire. Améliore la circulation sanguine. Riche en antioxydants. Des études explorent un possible effet neuroprotecteur.",
+      "source_coran_hadith": "Coran 55:68 (Ar-Rahmân) : 'Ils contiennent des fruits, des palmiers, et des grenadiers.' Mentionné parmi les fruits du Paradis. (Le hadith « chaque grenade contient une graine du Paradis » est FABRIQUÉ — mawdû' (cf. Ibn al-Jawzî, IslamQA) — il a été retiré. La grenade reste authentiquement citée au Coran. À confirmer par l'imam.)",
       "comment_le_consommer": "Manger les grains entiers (pas seulement le jus). Particulièrement après les repas pour aider la digestion."
     },
     {
@@ -811,7 +810,6 @@
       "comment_le_consommer": "Ne pas manger devant un écran. Être présent. Goûter chaque bouchée. Remercier Allâh."
     }
   ],
-  
   "metadata": {
     "principe_editorial": "100% sourcé Coran + hadiths authentiques (Bukhari, Muslim, Tirmidhî, Abû Dâwûd, Ibn Mâja). Aucune invention. Vérification systématique via web_search.",
     "categories": {
@@ -832,5 +830,13 @@
     },
     "suite_recommandee": "Module TIBB AN-NABAWÎ (Remèdes prophétiques) — 60 items",
     "integration": "À placer dans bloc CONNAISSANCE de Niyyah, format 'Aliment du jour'."
+  },
+  "avertissement_important": "Ce module est INFORMATIF. Les bienfaits cités sont issus d'usages traditionnels et d'études, parfois suggérés plutôt que prouvés. Il ne remplace pas un avis médical. Les statuts fiqh (halal/harâm/divergences) sont à confirmer auprès d'un imam de votre école.",
+  "disclaimer": {
+    "overlay_premiere_ouverture": {
+      "titre": "À propos",
+      "texte": "Ce module présente les aliments de la sunna et leurs bienfaits. Les vertus santé peuvent être suggérées plutôt que prouvées ; ce n'est pas un avis médical. En cas de maladie, consultez un médecin. Les statuts juridiques (halal/harâm/divergences d'écoles) relèvent de votre imam. La guérison appartient à Allâh ; les aliments sont des causes (asbâb).",
+      "bouton": "J'ai compris"
+    }
   }
 }
