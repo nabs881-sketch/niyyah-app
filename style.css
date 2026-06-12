@@ -9707,3 +9707,19 @@ body.onboarding-active #nav-bar-v2 {
 .nafs-action-text{ font-size:17.5px; }
 
 .rituel-emblem::before{ display:none; }
+
+/* ===== Vendredi luxe — émeraude + filet or ===== */
+.rituel-vendredi-sep .ar{
+  font-family:'Scheherazade New','Amiri',serif;
+  font-size:22px;
+  text-shadow:0 0 14px rgba(70,180,130,0.45);
+  margin-bottom:3px;
+}
+.rituel-item.vendredi{
+  background:linear-gradient(160deg,#123d2c,#0a2016);
+  border:1px solid rgba(90,200,150,0.3);
+  border-left:2px solid #C9A24A;
+  box-shadow:0 0 18px rgba(70,180,130,0.12),inset 0 1px 0 rgba(212,175,55,0.14);
+}
+.rituel-item.vendredi .check{ border-color:rgba(201,162,74,0.7); }
+.rituel-item.vendredi .arabic{ color:#6FD3A6; }
