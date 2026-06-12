@@ -11706,9 +11706,10 @@ function renderNafsTrait() {
 
   container.style.position = 'relative';
   container.innerHTML =
-    '<button class="niyyah-mini-orb" onclick="_niyyahReview(\'nafs\')" aria-label="Revoir la pr\u00e9sentation de Niyyah" style="position:absolute;top:8px;left:8px;"><span>\u0646\u0650\u064A\u0651\u0629</span></button>' +
-    '<div style="text-align:center;">' +
+    '<button class="niyyah-mini-orb" onclick="_niyyahReview(\'nafs\')" aria-label="Revoir la pr\u00e9sentation de Niyyah" style="position:absolute;top:-20px;left:50%;margin-left:-17px;"><span>\u0646\u0650\u064A\u0651\u0629</span></button>' +
+    '<div style="text-align:center;margin-top:16px;">' +
       '<div class="nafs-week-badge">Semaine ' + w + ' — Trait ' + trait.id + '/52</div>' +
+      '<div style="width:180px;height:3px;border-radius:3px;background:rgba(200,168,75,0.15);margin:9px auto 0;overflow:hidden;"><div style="width:' + Math.round(trait.id/52*100) + '%;height:100%;background:linear-gradient(90deg,#B8923E,#F0D27E);"></div></div>' +
     '</div>' +
     '<div class="nafs-season-label" style="text-align:center;">' + seasonLabel + '</div>' +
     '<div class="nafs-name-block">' +
