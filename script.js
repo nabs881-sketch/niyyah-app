@@ -18189,6 +18189,7 @@ function openVueFiqhJour() {
   v.classList.remove('hidden');
   _setRituelEmblem('\u0641\u0650\u0642\u0652\u0647', null);
   loadFiqh(function() {
+    if (safeGetItem('niyyah_fiqh_disclaimer_seen') !== 'true') { _showFiqhDisclaimer(); }
     var rule = getFiqhJourRule();
     if (!rule.regle) { main.innerHTML = '<div style="text-align:center;padding:40px;color:#C8A84A;">Erreur de chargement</div>'; return; }
     main.innerHTML = '<div style="padding:20px 16px;text-align:center;">'
@@ -18198,10 +18199,28 @@ function openVueFiqhJour() {
       + (rule.explication ? '<div style="font-size:14px;line-height:1.6;color:rgba(255,255,255,0.6);margin-bottom:20px;font-style:italic;">' + rule.explication + '</div>' : '')
       + (rule.source ? '<div style="font-size:12px;color:rgba(200,168,74,0.6);letter-spacing:0.1em;">\u2014 ' + rule.source + ' \u2014</div>' : '')
       + (rule.ecole ? '<div style="font-size:12px;color:rgba(200,168,74,0.4);margin-top:8px;letter-spacing:1px;">' + rule.ecole.toUpperCase() + '</div>' : '')
+      + ((rule.ecole && !/consensus|majorit/i.test(rule.ecole)) ? '<div style="font-size:11px;line-height:1.5;color:rgba(255,255,255,0.45);font-style:italic;margin-top:10px;">Position propre \u00e0 cette \u00e9cole ; d\'autres \u00e9coles peuvent diverger.</div>' : '')
       + '</div>';
   });
 }
 window.openVueFiqhJour = openVueFiqhJour;
+function _showFiqhDisclaimer() {
+  var ov = document.createElement('div');
+  ov.className = 'tibb-disclaimer-overlay';
+  ov.innerHTML = '<div class="tibb-disclaimer-card">'
+    + '<div class="tibb-disclaimer-icon">\u2696\uFE0F</div>'
+    + '<div class="tibb-disclaimer-titre">Orientation, pas fatwa</div>'
+    + '<div class="tibb-disclaimer-texte">Ces r\u00e8gles sont une orientation compil\u00e9e des sources classiques et des quatre \u00e9coles sunnites. Ce n\'est pas un avis religieux (fatwa). Pour ton cas pr\u00e9cis et les divergences entre \u00e9coles, r\u00e9f\u00e8re-toi \u00e0 ton imam ou \u00e0 un savant de ton \u00e9cole.</div>'
+    + '<button class="tibb-disclaimer-btn" id="fiqh-disclaimer-accept">J\u2019ai compris</button>'
+    + '</div>';
+  document.body.appendChild(ov);
+  document.getElementById('fiqh-disclaimer-accept').onclick = function() {
+    safeSetItem('niyyah_fiqh_disclaimer_seen', 'true');
+    ov.classList.add('tibb-disclaimer-closing');
+    setTimeout(function() { ov.remove(); }, 300);
+  };
+}
+window._showFiqhDisclaimer = _showFiqhDisclaimer;
 
 function openVueHadithJour() {
   _saveScroll();
