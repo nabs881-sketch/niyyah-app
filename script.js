@@ -15815,6 +15815,9 @@ async function regardeOpen() {
   var screen = document.getElementById('regarde-screen');
   var content = document.getElementById('regarde-content');
   if (!screen || !content) return;
+  screen.classList.add('active');
+  document.body.style.overflow = 'hidden';
+  content.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:rgba(200,168,75,0.6);font-family:\'Cormorant Garamond\',serif;font-style:italic;">\u2026</div>';
   closeRegardeJournal();
   closeRegardeDetail();
   if (typeof closeNiyyahJournal === 'function') closeNiyyahJournal();
@@ -15834,7 +15837,14 @@ async function regardeOpen() {
 
   // Pré-écran permission caméra
   var _camOk = await _askCameraPermission('regarde');
-  if (!_camOk) return;
+  if (!_camOk) {
+    content.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:14px;padding:0 10%;text-align:center;">'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#C8A84A;">' + t('camera_denied') + '</div>'
+      + '<div style="font-size:12px;color:rgba(255,255,255,0.55);line-height:1.6;">Si tu as ouvert Niyyah depuis Instagram, WhatsApp ou Messenger, ouvre-le plut\u00f4t dans Safari ou Chrome \u2014 la cam\u00e9ra y est bloqu\u00e9e.</div>'
+      + '<button onclick="regardeClose()" style="margin-top:8px;padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:13px;cursor:pointer;">' + t('btn_close') + '</button>'
+      + '</div>';
+    return;
+  }
 
   // Init caméra
   try {
