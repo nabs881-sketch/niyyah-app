@@ -99,12 +99,55 @@ export default {
       return handleBilanPremium(request, env);
     }
 
+    // ── Route Métaux (cours or/argent EUR/g, cache 24h) ──
+    if (path === '/api/metals' && request.method === 'GET') {
+      return handleMetals(env);
+    }
+
     return jsonResponse({ error: 'Route introuvable' }, 404);
   },
 };
 
 // ═══════════════════════════════════════════════════
 // SCANNER DE NIYYAH
+async function handleMetals(env) {
+  // Cache 24h via KV
+  try {
+    if (env.RATE_LIMIT_KV) {
+      const cached = await env.RATE_LIMIT_KV.get('metals:eur');
+      if (cached) return jsonResponse(JSON.parse(cached));
+    }
+  } catch (e) {}
+  try {
+    const [xauRes, xagRes, fxRes] = await Promise.all([
+      fetch('https://api.gold-api.com/price/XAU'),
+      fetch('https://api.gold-api.com/price/XAG'),
+      fetch('https://api.frankfurter.app/latest?from=USD&to=EUR'),
+    ]);
+    const xau = await xauRes.json();
+    const xag = await xagRes.json();
+    const fx = await fxRes.json();
+    const usdEur = fx && fx.rates && fx.rates.EUR ? fx.rates.EUR : null;
+    const OZ = 31.1034768; // grammes par once troy
+    if (!xau.price || !xag.price || !usdEur) {
+      return jsonResponse({ error: 'unavailable' }, 502);
+    }
+    const data = {
+      gold_eur_g: +((xau.price / OZ) * usdEur).toFixed(2),
+      silver_eur_g: +((xag.price / OZ) * usdEur).toFixed(2),
+      updated: new Date().toISOString(),
+    };
+    try {
+      if (env.RATE_LIMIT_KV) {
+        await env.RATE_LIMIT_KV.put('metals:eur', JSON.stringify(data), { expirationTtl: 86400 });
+      }
+    } catch (e) {}
+    return jsonResponse(data);
+  } catch (e) {
+    return jsonResponse({ error: 'fetch_failed' }, 502);
+  }
+}
+
 // ═══════════════════════════════════════════════════
 async function handleScanner(request, env) {
   try {

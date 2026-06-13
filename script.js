@@ -9933,12 +9933,29 @@ function openZakat() {
     + '</div>';
   document.body.appendChild(ov);
   computeZakat();
+  _zakatFetchPrices();
 }
 
 window.renderZakatCard = renderZakatCard;
 window.openZakat = openZakat;
 window.closeZakat = closeZakat;
 window.computeZakat = computeZakat;
+
+async function _zakatFetchPrices() {
+  try {
+    var r = await fetch('https://niyyah-api.nabs881.workers.dev/api/metals');
+    if (!r.ok) return;
+    var d = await r.json();
+    if (d && d.gold_eur_g && d.silver_eur_g) {
+      var o = document.getElementById('z-prix-or');
+      var a = document.getElementById('z-prix-ar');
+      if (o) o.value = String(d.gold_eur_g);
+      if (a) a.value = String(d.silver_eur_g);
+      computeZakat();
+    }
+  } catch (e) {}
+}
+window._zakatFetchPrices = _zakatFetchPrices;
 
 function renderQiblaCard() {
   const chevron = '<svg width="16" height="16" viewBox="0 0 14 14" style="transition:transform 0.2s;transform:' + (_qiblaOpen ? 'rotate(180deg)' : 'rotate(0deg)') + ';color:var(--gold);flex-shrink:0;"><polyline points="3,5 7,9 11,5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>';
