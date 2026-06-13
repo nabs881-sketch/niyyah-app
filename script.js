@@ -12214,6 +12214,7 @@ function v2OpenSettings() {
     <div style="width:100%;max-width:480px;max-height:calc(100vh - env(safe-area-inset-top,0px));overflow-y:auto;background:#111;border-radius:22px 22px 0 0;padding:calc(env(safe-area-inset-top,0px) + 26px) 22px calc(32px + env(safe-area-inset-bottom));border-top:1px solid rgba(212,175,55,0.14);animation:sheetV2 0.4s cubic-bezier(0.23,1,0.32,1) forwards;direction:${T.dir};">
       <div style="width:38px;height:3px;background:rgba(255,255,255,0.1);border-radius:2px;margin:0 auto 22px;"></div>
       <div style="font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:#D4AF37;text-align:center;margin-bottom:22px;">${T.settings_title}</div>
+      ${isPremium() ? '<div style="background:linear-gradient(135deg,rgba(232,206,138,0.15),rgba(201,162,74,0.05));border:1px solid rgba(232,206,138,0.35);border-radius:14px;padding:13px 16px;margin-bottom:18px;display:flex;align-items:center;justify-content:center;gap:9px;box-shadow:0 0 24px rgba(232,206,138,0.08);"><span style="color:#E8CE8A;font-size:15px;">\u2726</span><span style="font-family:\'Cormorant Garamond\',serif;font-size:15px;letter-spacing:1.5px;color:#E8CE8A;">Niyyah+ actif</span><span style="color:#E8CE8A;font-size:15px;">\u2726</span></div>' : ''}
 
       ${''}
       ${/* LANGUE masquée pour beta FR — réactiver quand EN/AR prêts */ ''}
