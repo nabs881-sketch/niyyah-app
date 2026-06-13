@@ -433,16 +433,6 @@
     <span class="nav-v2-label" id="nav-label-scanner">Scanner</span>
   </button>
 
-  <!-- JOURNAL — Livre -->
-  <button class="nav-v2-item" id="v2nav-journal" aria-label="Journal" onclick="v2GoJournal()">
-    <span class="nav-v2-icon"><svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M4 3h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4"/>
-      <path d="M4 3v16"/>
-      <path d="M8 7h6"/><path d="M8 11h4"/>
-    </svg></span>
-    <span class="nav-v2-label">Journal</span>
-  </button>
-
   <!-- NAFS — Feuille -->
   <button class="nav-v2-item" id="v2nav-nafs" aria-label="Nafs" onclick="v2GoNafs()">
     <span class="nav-v2-icon"><svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
@@ -455,6 +445,12 @@
       <path d="M15 13c-1-1-3-1-4 0"/>
     </svg></span>
     <span class="nav-v2-label" id="nav-label-nafs">Nafs</span>
+  </button>
+
+  <!-- REPÈRES — Étoile -->
+  <button class="nav-v2-item" id="v2nav-repere" aria-label="Repères" onclick="v2GoRepere()">
+    <span class="nav-v2-icon"><svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"><path d="M11 3 L13 9 L19 11 L13 13 L11 19 L9 13 L3 11 L9 9 Z"/></svg></span>
+    <span class="nav-v2-label">Repères</span>
   </button>
 
 </nav>
@@ -492,6 +488,7 @@
 <div id="toast-v2" aria-live="polite" aria-atomic="true"></div>
 
 <!-- V2: stub -->
+<div class="view" id="view-repere" style="display:none;"></div>
 <div class="view" id="view-accueil" style="display:none;"></div>
 </div><!-- VIEW : WIRD -->
 <div class="view" id="view-wird">

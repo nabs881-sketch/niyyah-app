@@ -2576,7 +2576,6 @@ function renderLevel(levelId) {
     '<div style="font-size:12px;color:var(--t3);margin-top:2px;">' + t('grace_sub') + '</div></div></div>' : '';
   const prayerCard = level.id === 1 ? renderPrayerTimesCard() : '';
   const qiblaCard  = level.id === 1 ? renderQiblaCard() : '';
-  const zakatCard  = level.id === 1 ? renderZakatCard() : '';
   const allLvlItems = LEVELS.filter(l => state._unlocked.includes(l.id)).flatMap(l => getLevelItems(l.id)).filter(_itemMatchesProfile);
   const scoreJour = Math.round(getWeightedScore(allLvlItems, state));
   const scoreColor = scoreJour >= 76 ? '#c8a84b' : scoreJour >= 51 ? 'var(--t1)' : 'var(--t3)';
@@ -2585,7 +2584,7 @@ function renderLevel(levelId) {
   var _lvlDone = _lvlItems.filter(function(i) { return isItemDone(i, state); }).length;
   let html = '<div class="level-hero"><div class="hero-title">' + t('level_' + level.id) + '</div><div class="hero-bar-row"><div class="hero-bar-track"><div class="hero-bar-fill" style="width:' + pct + '%"></div></div><div class="hero-pct">' + Math.round(pct) + '%</div></div>'
     + '<div style="text-align:right;margin-top:6px;padding:0 4px;"><div style="font-size:12px;color:' + scoreColor + ';opacity:0.7;" onclick="openScoreInfo()">' + scoreJour + '% du jour</div></div>'
-    + '</div>' + graceBanner + fridayBanner + prayerCard + qiblaCard + zakatCard;
+    + '</div>' + graceBanner + fridayBanner + prayerCard + qiblaCard;
   var _block = getCurrentPrayerBlock();
   if (!_prayerTimes && (_block.id === 'nuit' || _block.id === 'qiyam')) {
     if (!window._prayerBlockRetryCount) window._prayerBlockRetryCount = 0;
@@ -12027,6 +12026,36 @@ function setupTopUI(screen) {
     case 'bab-an-nafs': document.body.classList.add('in-bab-an-nafs'); break;
   }
 }
+function v2GoRepere() {
+  setupTopUI('repere');
+  if (typeof _nAn === 'function') _nAn('repere_visited');
+  var tbEl = document.getElementById('topbar-v2');
+  if (tbEl) tbEl.classList.remove('active');
+  document.querySelectorAll('.nav-v2-item').forEach(function(n) { n.classList.remove('active-nav'); });
+  var btn = document.getElementById('v2nav-repere');
+  if (btn) btn.classList.add('active-nav');
+  _v2TransitionTo('view-repere', { onShow: function() {
+    var v = document.getElementById('view-repere');
+    if (v) v.innerHTML = renderRepereHub();
+  }});
+}
+function renderRepereHub() {
+  return '<div style="padding:calc(env(safe-area-inset-top,0px) + 30px) 18px 40px;max-width:480px;margin:0 auto;">'
+    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:#C8A84A;margin-bottom:6px;">Rep\u00e8res</div>'
+    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:14px;color:rgba(200,168,74,0.55);margin-bottom:26px;">Les outils qui orientent ton adoration</div>'
+    + renderZakatCard()
+    + _repereJeuneCard()
+    + '</div>';
+}
+function _repereJeuneCard() {
+  return '<div onclick="switchView(\'ramadan\')" style="position:relative;background:linear-gradient(165deg,#1a130b,#0d0a06);border:1px solid rgba(200,168,74,0.22);border-radius:16px;padding:15px 16px;margin-bottom:8px;display:flex;align-items:center;gap:14px;cursor:pointer;box-shadow:inset 0 1px 0 rgba(232,206,138,0.08),0 4px 16px rgba(0,0,0,0.35);">'
+    + '<div style="flex-shrink:0;width:42px;height:42px;border-radius:50%;border:1px solid rgba(232,206,138,0.3);background:radial-gradient(circle at 50% 35%,rgba(232,206,138,0.16),rgba(232,206,138,0.02) 70%);display:flex;align-items:center;justify-content:center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8CE8A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M17 4a8 8 0 1 0 3 13.5A6.5 6.5 0 0 1 17 4z"/></svg></div>'
+    + '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;letter-spacing:0.02em;color:#E8CE8A;line-height:1.2;">Je\u00fbne</div>'
+    + '<div style="font-size:12px;color:rgba(200,168,74,0.55);margin-top:3px;font-style:italic;font-family:\'Cormorant Garamond\',serif;">Ramadan & je\u00fbnes sur\u00e9rogatoires</div></div></div>';
+}
+window.v2GoRepere = v2GoRepere;
+window.renderRepereHub = renderRepereHub;
+
 function v2GoSanctuaire() {
   setupTopUI('sanctuaire');
   document.body.classList.remove('pratique-active', 'in-progression-view');
@@ -16714,6 +16743,7 @@ function openScannerHub(){
      +'<span class="shc-txt"><span class="shc-title">Pose un regard</span><span class="shc-desc">Re\u00e7ois le verset qui \u00e9claire l\u2019instant.</span></span>'
      +'<span class="shc-chev">\u203A</span>'
    +'</button>'
+   +'<button onclick="closeScannerHub();v2GoJournal();" style="display:block;margin:18px auto 0;background:none;border:none;color:rgba(200,168,74,0.6);font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:15px;cursor:pointer;">Ton journal \u2192</button>'
    +'<button class="scanner-hub-back" onclick="closeScannerHub()">Retour</button>';
   document.body.appendChild(ov);
   try{ history.pushState({_scannerHub:1}, ''); }catch(e){}
