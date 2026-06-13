@@ -9240,30 +9240,6 @@ function setSilentMode(bool) {
 window.isSilentMode = isSilentMode;
 window.setSilentMode = setSilentMode;
 
-function openGumroad() {
-  window.open('https://optimizerprocess.gumroad.com/l/rlivu', '_blank');
-}
-function validateFreemiumCode() {
-  const input = document.getElementById('freemiumCodeInput');
-  if (!input) return;
-  const code = input.value.trim().toUpperCase();
-  if (FREEMIUM_CODES.includes(code)) {
-    safeSetItem('niyyah_pro', '1');
-    state._unlocked = [1, 2, 3, 4];
-    saveState();
-    document.getElementById('freemiumOverlay').classList.remove('show');
-    document.body.style.overflow = '';
-    renderTabs();
-    renderLevel(currentLevel);
-    showToast(t('premium_unlocked'));
-    if (navigator.vibrate) navigator.vibrate([30, 50, 100]);
-  } else {
-    input.style.borderColor = '#ff3b30';
-    input.placeholder = t('freemium_code_invalid');
-    input.value = '';
-    setTimeout(() => { input.style.borderColor = ''; input.placeholder = 'CODE D\'ACCÈS'; }, 2000);
-  }
-}
 let _prayerTimers = [];
 let _prayerReminderTimers = _prayerTimers; 
 const PRAYER_EMOJIS = { Fajr: '🌙', Dhuhr: '☀️', Asr: '🌤️', Maghrib: '🌅', Isha: '🌙' };
