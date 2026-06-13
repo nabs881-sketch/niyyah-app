@@ -15840,7 +15840,7 @@ async function regardeOpen() {
   if (!_camOk) {
     content.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:14px;padding:0 10%;text-align:center;">'
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#C8A84A;">' + t('camera_denied') + '</div>'
-      + '<div style="font-size:12px;color:rgba(255,255,255,0.55);line-height:1.6;">Si tu as ouvert Niyyah depuis Instagram, WhatsApp ou Messenger, ouvre-le plut\u00f4t dans Safari ou Chrome \u2014 la cam\u00e9ra y est bloqu\u00e9e.</div>'
+      + '<div style="font-size:12px;color:rgba(255,255,255,0.55);line-height:1.6;">Va dans les r\u00e9glages de ton t\u00e9l\u00e9phone et autorise la cam\u00e9ra pour Niyyah.</div>'
       + '<button onclick="regardeClose()" style="margin-top:8px;padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:13px;cursor:pointer;">' + t('btn_close') + '</button>'
       + '</div>';
     return;
