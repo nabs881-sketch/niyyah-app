@@ -9860,7 +9860,6 @@ function renderZakatCard() {
     + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;letter-spacing:0.02em;color:#E8CE8A;line-height:1.2;">Calculer ma Zak\u00e2t</div>'
     + '<div style="font-size:12px;color:rgba(200,168,74,0.55);margin-top:3px;font-style:italic;font-family:\'Cormorant Garamond\',serif;">Zak\u00e2t al-m\u00e2l \u00b7 2,5 % du patrimoine</div>'
     + '</div>'
-    + '<div style="flex-shrink:0;color:rgba(232,206,138,0.5);font-size:18px;">\u2192</div>'
     + '</div>';
 }
 
