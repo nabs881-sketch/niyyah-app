@@ -9821,7 +9821,7 @@ function _attachCompass() {
       _updateNeedle((360 - e.alpha) % 360);
       return;
     }
-    if (e.alpha !== null) {
+    if (!_hasAbsolute && e.alpha !== null) {
       _updateNeedle((360 - e.alpha) % 360);
     }
     if (_eventCount === 30 && !_hasAbsolute) {
@@ -9876,7 +9876,7 @@ function loadQibla() {
 }
 function renderQiblaCard() {
   const chevron = '<svg width="16" height="16" viewBox="0 0 14 14" style="transition:transform 0.2s;transform:' + (_qiblaOpen ? 'rotate(180deg)' : 'rotate(0deg)') + ';color:var(--gold);flex-shrink:0;"><polyline points="3,5 7,9 11,5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>';
-  const headerHtml = '<div class="qibla-card"><div role="button" tabindex="0" aria-expanded="' + (_qiblaOpen ? 'true' : 'false') + '" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;margin-bottom:' + (_qiblaOpen ? '12' : '0') + 'px;" onclick="_qiblaOpen=!_qiblaOpen;if(!_qiblaOpen)stopCompass();renderLevel(currentLevel)"><div class="qibla-title" style="margin-bottom:0;">' + t('qibla_title') + '</div>' + chevron + '</div>';
+  const headerHtml = '<div class="qibla-card"><div role="button" tabindex="0" aria-expanded="' + (_qiblaOpen ? 'true' : 'false') + '" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;margin-bottom:' + (_qiblaOpen ? '12' : '0') + 'px;" onclick="_qiblaOpen=!_qiblaOpen;if(_qiblaOpen){startCompass();}else{stopCompass();}renderLevel(currentLevel)"><div class="qibla-title" style="margin-bottom:0;">' + t('qibla_title') + '</div>' + chevron + '</div>';
   if (!_qiblaOpen) return headerHtml + '</div>';
   if (_qiblaLoading) return headerHtml + '<div style="font-size:13px;color:var(--t3);padding:16px 0;text-align:center;">✦ Localisation...</div></div>';
   if (_qiblaError) return headerHtml + '<div style="font-size:13px;color:var(--t3);padding:8px 0;">' + _qiblaError + '</div><button class="qibla-btn" aria-label="Réessayer" onclick="loadQibla()">Réessayer</button></div>';
@@ -9917,6 +9917,7 @@ function renderQiblaCard() {
     + '</div>'
     + '<button class="qibla-btn" aria-label="Réessayer" onclick="loadQibla()">↻ Recalibrer</button>'
     + '<div style="font-size:12px;font-style:italic;color:var(--t3);opacity:0.7;text-align:center;margin-top:10px;">' + t('qibla_disclaimer') + '</div>'
+    + '<div style="font-size:11px;color:var(--t3);opacity:0.6;text-align:center;margin-top:6px;">Boussole impr\u00e9cise ou lente ? Bouge ton t\u00e9l\u00e9phone en forme de 8 (\u221E) quelques secondes pour la calibrer.</div>'
     + '</div>';
 }
 
