@@ -12197,12 +12197,174 @@ window.openZakatFitr = openZakatFitr;
 window.closeZakatFitr = closeZakatFitr;
 window.computeZakatFitr = computeZakatFitr;
 
+function renderFidyaCard() {
+  return '<div onclick="openFidya()" style="position:relative;background:linear-gradient(165deg,#1a130b,#0d0a06);border:1px solid rgba(200,168,74,0.22);border-radius:16px;padding:15px 16px;margin-bottom:8px;display:flex;align-items:center;gap:14px;cursor:pointer;box-shadow:inset 0 1px 0 rgba(232,206,138,0.08),0 4px 16px rgba(0,0,0,0.35);">'
+    + '<div style="flex-shrink:0;width:42px;height:42px;border-radius:50%;border:1px solid rgba(232,206,138,0.3);background:radial-gradient(circle at 50% 35%,rgba(232,206,138,0.16),rgba(232,206,138,0.02) 70%);display:flex;align-items:center;justify-content:center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8CE8A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13a8 8 0 0 0 16 0"/><circle cx="12" cy="6.5" r="2.2"/></svg></div>'
+    + '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;letter-spacing:0.02em;color:#E8CE8A;line-height:1.2;">Fidya / Kaff\u00e2ra</div>'
+    + '<div style="font-size:12px;color:rgba(200,168,74,0.55);margin-top:3px;font-style:italic;font-family:\'Cormorant Garamond\',serif;">Je\u00fbnes manqu\u00e9s ou rompus</div></div></div>';
+}
+function closeFidya() { var ov = document.getElementById('fidya-overlay'); if (ov) ov.remove(); }
+function computeFidya() {
+  var cost = _zNum('fk-cost');
+  var fmt = function(x){ return x.toLocaleString('fr-FR', {maximumFractionDigits:2}); };
+  var fd = Math.max(0, Math.round(_zNum('fk-fidya-days')));
+  var fr = document.getElementById('fk-fidya-result');
+  if (fr) {
+    fr.innerHTML = fd <= 0 ? '' :
+      '<div style="text-align:center;padding:18px;border-radius:14px;border:1px solid rgba(232,206,138,0.3);background:radial-gradient(120% 150% at 50% 0%,rgba(232,206,138,0.12),rgba(232,206,138,0.02) 72%);margin-top:12px;">'
+      + '<div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(232,206,138,0.7);margin-bottom:6px;">\u00c0 donner</div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-weight:600;font-size:32px;line-height:1;background:linear-gradient(180deg,#F8EAC2,#D4AF37);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">' + fmt(fd * cost) + ' \u20AC</div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:13px;color:rgba(200,168,74,0.7);margin-top:8px;">Nourrir 1 pauvre par jour \u00b7 ' + fd + ' jour' + (fd > 1 ? 's' : '') + '</div></div>';
+  }
+  var kd = Math.max(0, Math.round(_zNum('fk-kaffara-days')));
+  var kr = document.getElementById('fk-kaffara-result');
+  if (kr) {
+    kr.innerHTML = kd <= 0 ? '' :
+      '<div style="padding:18px;border-radius:14px;border:1px solid rgba(232,206,138,0.3);background:radial-gradient(120% 150% at 50% 0%,rgba(232,206,138,0.1),rgba(232,206,138,0.02) 72%);margin-top:12px;text-align:center;">'
+      + '<div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(232,206,138,0.7);margin-bottom:8px;">Par jour rompu</div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;color:#E8CE8A;">60 je\u00fbnes cons\u00e9cutifs</div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:13px;color:rgba(200,168,74,0.55);margin:4px 0;">ou</div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;color:#E8CE8A;">nourrir 60 pauvres \u00b7 ' + fmt(60 * cost) + ' \u20AC</div>'
+      + (kd > 1 ? '<div style="font-size:12px;color:rgba(200,168,74,0.6);font-style:italic;margin-top:10px;">Pour ' + kd + ' jours : jusqu\u2019\u00e0 ' + (kd * 60) + ' je\u00fbnes, ou ' + fmt(kd * 60 * cost) + ' \u20AC.</div>' : '')
+      + '<div style="font-size:11px;color:rgba(200,168,74,0.45);font-style:italic;margin-top:10px;line-height:1.6;">Ordre : affranchir un esclave (caduc) \u2192 je\u00fbner \u2192 sinon nourrir. Selon certains savants, une seule kaff\u00e2ra suffit pour plusieurs jours d\u2019un m\u00eame Ramadan \u2014 r\u00e9f\u00e8re-toi \u00e0 un savant.</div></div>';
+  }
+}
+function openFidya() {
+  closeFidya();
+  var ov = document.createElement('div');
+  ov.id = 'fidya-overlay';
+  ov.style.cssText = 'position:fixed;inset:0;z-index:3200;overflow-y:auto;-webkit-overflow-scrolling:touch;background:radial-gradient(120% 80% at 50% -10%,#1c140b 0%,#0b0805 55%,#070504 100%);';
+  var fld = function(id, label, ph, unit, val) {
+    return '<div style="margin-bottom:14px;"><label style="display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(200,168,74,0.55);margin-bottom:7px;">' + label + '</label>'
+      + '<div style="position:relative;"><input id="' + id + '" type="text" inputmode="decimal" placeholder="' + ph + '"' + (val !== undefined ? ' value="' + val + '"' : '') + ' oninput="computeFidya()" style="width:100%;box-sizing:border-box;padding:14px 16px;border-radius:13px;border:1px solid rgba(200,168,74,0.18);background:linear-gradient(180deg,#16110a,#100c07);color:#F0EADB;font-size:16px;font-family:\'Cormorant Garamond\',serif;outline:none;">'
+      + (unit ? '<span style="position:absolute;right:16px;top:50%;transform:translateY(-50%);font-family:\'Cormorant Garamond\',serif;font-size:15px;color:rgba(200,168,74,0.45);pointer-events:none;">' + unit + '</span>' : '')
+      + '</div></div>';
+  };
+  var eyebrow = function(t) { return '<div style="display:flex;align-items:center;gap:12px;margin:26px 0 14px;"><div style="flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(200,168,74,0.28),transparent);"></div><span style="font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(200,168,74,0.6);white-space:nowrap;">' + t + '</span><div style="flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(200,168,74,0.28),transparent);"></div></div>'; };
+  ov.innerHTML = '<div style="max-width:440px;margin:0 auto;padding:calc(env(safe-area-inset-top,0px) + 40px) 24px calc(48px + env(safe-area-inset-bottom));">'
+    + '<button onclick="closeFidya()" aria-label="Fermer" style="position:fixed;top:calc(env(safe-area-inset-top,0px) + 20px);right:20px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(200,168,74,0.28);background:rgba(20,15,8,0.6);color:#C8A84A;font-size:17px;cursor:pointer;z-index:5;">\u2715</button>'
+    + '<div style="text-align:center;font-family:\'Scheherazade New\',serif;font-size:34px;color:#E8CE8A;text-shadow:0 0 26px rgba(232,206,138,0.28);line-height:1.3;">\u0641\u0650\u062F\u0652\u064A\u064E\u0629 \u00b7 \u0643\u064E\u0641\u0651\u064E\u0627\u0631\u064E\u0629</div>'
+    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:24px;color:#EADCB6;margin-top:8px;">Fidya & Kaff\u00e2ra</div>'
+    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:13px;color:#9c8c64;margin-top:6px;line-height:1.5;">R\u00e9parer les je\u00fbnes manqu\u00e9s ou rompus</div>'
+    + '<div style="margin-top:24px;padding:14px 16px;border-radius:14px;border:1px solid rgba(200,168,74,0.18);background:rgba(200,168,74,0.04);font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:13px;color:rgba(200,168,74,0.7);line-height:1.6;text-align:center;">Si tu <b>peux</b> rattraper (maladie pass\u00e9e, voyage, menstrues) : tu <b>je\u00fbnes</b> les jours, sans argent (qad\u00e2\u2019).</div>'
+    + fld('fk-cost', 'Co\u00fbt d\u2019un repas / pauvre nourri', '5', '\u20AC', '5')
+    + eyebrow('Fidya \u00b7 non rattrapable')
+    + '<div style="font-size:12px;color:rgba(200,168,74,0.55);font-style:italic;font-family:\'Cormorant Garamond\',serif;margin-bottom:12px;text-align:center;">Maladie chronique, grand \u00e2ge \u2014 nourrir 1 pauvre par jour manqu\u00e9.</div>'
+    + fld('fk-fidya-days', 'Jours non rattrapables', '0', '', '')
+    + '<div id="fk-fidya-result"></div>'
+    + eyebrow('Kaff\u00e2ra \u00b7 rupture volontaire')
+    + '<div style="font-size:12px;color:rgba(200,168,74,0.55);font-style:italic;font-family:\'Cormorant Garamond\',serif;margin-bottom:12px;text-align:center;">Je\u00fbne rompu d\u00e9lib\u00e9r\u00e9ment (rapport conjugal ; selon certains, manger volontairement).</div>'
+    + fld('fk-kaffara-days', 'Jours rompus volontairement', '0', '', '')
+    + '<div id="fk-kaffara-result"></div>'
+    + '<div style="font-size:11px;color:rgba(200,168,74,0.42);line-height:1.7;margin-top:26px;font-style:italic;font-family:\'Cormorant Garamond\',serif;">Calcul indicatif. Cas particuliers (femme enceinte ou allaitante : rattrapage et/ou fidya selon les avis ; d\u00e9lai d\u00e9pass\u00e9 jusqu\u2019au Ramadan suivant) \u2192 r\u00e9f\u00e8re-toi \u00e0 un savant. Le co\u00fbt d\u2019un repas (valeur d\u2019un mudd de l\u2019aliment de base) varie : v\u00e9rifie le montant de ta r\u00e9gion.</div>'
+    + '</div>';
+  document.body.appendChild(ov);
+  computeFidya();
+}
+window.renderFidyaCard = renderFidyaCard;
+window.openFidya = openFidya;
+window.closeFidya = closeFidya;
+window.computeFidya = computeFidya;
+
+var _CONV_MONTHS = ['Muharram', 'Safar', 'Rab\u00ee\u2019 al-Awwal', 'Rab\u00ee\u2019 ath-Th\u00e2n\u00ee', 'Jum\u00e2da al-\u00dbl\u00e2', 'Jum\u00e2da ath-Th\u00e2niya', 'Rajab', 'Sha\u2019b\u00e2n', 'Ramadan', 'Shaww\u00e2l', 'Dh\u00fb al-Qa\u2019da', 'Dh\u00fb al-Hijja'];
+function _convHijri(date) {
+  var y = 0, m = 0, d = 0;
+  try {
+    new Intl.DateTimeFormat('en-u-ca-islamic', { year: 'numeric', month: 'numeric', day: 'numeric' }).formatToParts(date).forEach(function(p) {
+      if (p.type === 'year') y = parseInt(p.value, 10);
+      if (p.type === 'month') m = parseInt(p.value, 10);
+      if (p.type === 'day') d = parseInt(p.value, 10);
+    });
+  } catch (e) {}
+  return { y: y, m: m, d: d };
+}
+function _hijriToGreg(hy, hm, hd) {
+  var today = new Date(); today.setHours(12, 0, 0, 0);
+  var th = _convHijri(today);
+  var target = hy * 354.367 + (hm - 1) * 29.53 + hd;
+  var now = th.y * 354.367 + (th.m - 1) * 29.53 + th.d;
+  var d = new Date(today.getTime() + Math.round(target - now) * 86400000);
+  for (var i = -25; i <= 25; i++) {
+    var cand = new Date(d.getTime() + i * 86400000);
+    var h = _convHijri(cand);
+    if (h.y === hy && h.m === hm && h.d === hd) return cand;
+  }
+  return null;
+}
+function _convBox(text, muted) {
+  return '<div style="text-align:center;padding:18px;border-radius:14px;border:1px solid rgba(232,206,138,' + (muted ? '0.2' : '0.32') + ');background:radial-gradient(120% 150% at 50% 0%,rgba(232,206,138,' + (muted ? '0.04' : '0.13') + '),rgba(232,206,138,0.02) 72%);margin-top:12px;font-family:\'Cormorant Garamond\',serif;font-size:' + (muted ? '15px' : '21px') + ';color:' + (muted ? 'rgba(200,168,74,0.65)' : '#E8CE8A') + ';' + (muted ? 'font-style:italic;' : '') + 'text-transform:capitalize;line-height:1.3;">' + text + '</div>';
+}
+function computeConvertG2H() {
+  var inp = document.getElementById('conv-greg'), res = document.getElementById('conv-g2h-result');
+  if (!inp || !res) return;
+  if (!inp.value) { res.innerHTML = ''; return; }
+  var h = _convHijri(new Date(inp.value + 'T12:00:00'));
+  res.innerHTML = _convBox(h.d + ' ' + (_CONV_MONTHS[h.m - 1] || '') + ' ' + h.y + ' H');
+}
+function computeConvertH2G() {
+  var dEl = document.getElementById('conv-h-day'), mEl = document.getElementById('conv-h-month'), yEl = document.getElementById('conv-h-year');
+  var res = document.getElementById('conv-h2g-result');
+  if (!res) return;
+  var hd = parseInt(dEl && dEl.value, 10), hm = parseInt(mEl && mEl.value, 10), hy = parseInt(yEl && yEl.value, 10);
+  if (!hd || !hm || !hy) { res.innerHTML = ''; return; }
+  var g = _hijriToGreg(hy, hm, hd);
+  if (!g) { res.innerHTML = _convBox('Cette date Hijri n\u2019existe pas', true); return; }
+  res.innerHTML = _convBox(g.toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }));
+}
+function renderConvertCard() {
+  return '<div onclick="openConvert()" style="position:relative;background:linear-gradient(165deg,#1a130b,#0d0a06);border:1px solid rgba(200,168,74,0.22);border-radius:16px;padding:15px 16px;margin-bottom:8px;display:flex;align-items:center;gap:14px;cursor:pointer;box-shadow:inset 0 1px 0 rgba(232,206,138,0.08),0 4px 16px rgba(0,0,0,0.35);">'
+    + '<div style="flex-shrink:0;width:42px;height:42px;border-radius:50%;border:1px solid rgba(232,206,138,0.3);background:radial-gradient(circle at 50% 35%,rgba(232,206,138,0.16),rgba(232,206,138,0.02) 70%);display:flex;align-items:center;justify-content:center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8CE8A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 10h16M8 3v4M16 3v4"/></svg></div>'
+    + '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;letter-spacing:0.02em;color:#E8CE8A;line-height:1.2;">Convertisseur</div>'
+    + '<div style="font-size:12px;color:rgba(200,168,74,0.55);margin-top:3px;font-style:italic;font-family:\'Cormorant Garamond\',serif;">Dates Hijri \u2194 Gr\u00e9gorien</div></div></div>';
+}
+function closeConvert() { var ov = document.getElementById('convert-overlay'); if (ov) ov.remove(); }
+function openConvert() {
+  closeConvert();
+  var today = new Date(); var th = _convHijri(today);
+  var iso = today.getFullYear() + '-' + String(today.getMonth() + 1).padStart(2, '0') + '-' + String(today.getDate()).padStart(2, '0');
+  var monthOpts = '';
+  for (var i = 0; i < 12; i++) monthOpts += '<option value="' + (i + 1) + '"' + (i + 1 === th.m ? ' selected' : '') + '>' + _CONV_MONTHS[i] + '</option>';
+  var inStyle = 'width:100%;box-sizing:border-box;padding:13px 14px;border-radius:13px;border:1px solid rgba(200,168,74,0.18);background:linear-gradient(180deg,#16110a,#100c07);color:#F0EADB;font-size:16px;font-family:\'Cormorant Garamond\',serif;outline:none;';
+  var lab = function(t) { return '<label style="display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(200,168,74,0.55);margin-bottom:7px;">' + t + '</label>'; };
+  var eyebrow = function(t) { return '<div style="display:flex;align-items:center;gap:12px;margin:26px 0 14px;"><div style="flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(200,168,74,0.28),transparent);"></div><span style="font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(200,168,74,0.6);white-space:nowrap;">' + t + '</span><div style="flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(200,168,74,0.28),transparent);"></div></div>'; };
+  var ov = document.createElement('div');
+  ov.id = 'convert-overlay';
+  ov.style.cssText = 'position:fixed;inset:0;z-index:3200;overflow-y:auto;-webkit-overflow-scrolling:touch;background:radial-gradient(120% 80% at 50% -10%,#1c140b 0%,#0b0805 55%,#070504 100%);';
+  ov.innerHTML = '<div style="max-width:440px;margin:0 auto;padding:calc(env(safe-area-inset-top,0px) + 40px) 24px calc(48px + env(safe-area-inset-bottom));">'
+    + '<button onclick="closeConvert()" aria-label="Fermer" style="position:fixed;top:calc(env(safe-area-inset-top,0px) + 20px);right:20px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(200,168,74,0.28);background:rgba(20,15,8,0.6);color:#C8A84A;font-size:17px;cursor:pointer;z-index:5;">\u2715</button>'
+    + '<div style="text-align:center;font-family:\'Scheherazade New\',serif;font-size:40px;color:#E8CE8A;text-shadow:0 0 26px rgba(232,206,138,0.28);line-height:1.2;">\u062A\u064E\u0642\u0652\u0648\u0650\u064A\u0645</div>'
+    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:24px;color:#EADCB6;margin-top:8px;">Convertisseur de dates</div>'
+    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:13px;color:#9c8c64;margin-top:6px;">Hijri \u2194 Gr\u00e9gorien</div>'
+    + eyebrow('Gr\u00e9gorien \u2192 Hijri')
+    + '<div>' + lab('Date') + '<input id="conv-greg" type="date" value="' + iso + '" onchange="computeConvertG2H()" oninput="computeConvertG2H()" style="' + inStyle + '"></div>'
+    + '<div id="conv-g2h-result"></div>'
+    + eyebrow('Hijri \u2192 Gr\u00e9gorien')
+    + '<div style="display:flex;gap:10px;">'
+    + '<div style="width:74px;">' + lab('Jour') + '<input id="conv-h-day" type="number" min="1" max="30" value="' + th.d + '" oninput="computeConvertH2G()" style="' + inStyle + '"></div>'
+    + '<div style="flex:1;">' + lab('Mois') + '<select id="conv-h-month" onchange="computeConvertH2G()" style="' + inStyle + '">' + monthOpts + '</select></div>'
+    + '<div style="width:84px;">' + lab('Ann\u00e9e') + '<input id="conv-h-year" type="number" value="' + th.y + '" oninput="computeConvertH2G()" style="' + inStyle + '"></div>'
+    + '</div>'
+    + '<div id="conv-h2g-result"></div>'
+    + '<div style="font-size:11px;color:rgba(200,168,74,0.42);line-height:1.7;margin-top:26px;font-style:italic;font-family:\'Cormorant Garamond\',serif;">Conversion calendaire : la date r\u00e9elle peut varier d\u2019un jour selon l\u2019observation de la lune.</div>'
+    + '</div>';
+  document.body.appendChild(ov);
+  computeConvertG2H();
+  computeConvertH2G();
+}
+window.renderConvertCard = renderConvertCard;
+window.openConvert = openConvert;
+window.closeConvert = closeConvert;
+window.computeConvertG2H = computeConvertG2H;
+window.computeConvertH2G = computeConvertH2G;
+
 function renderRepereHub() {
   return '<div style="padding:calc(env(safe-area-inset-top,0px) + 30px) 18px 40px;max-width:480px;margin:0 auto;">'
     + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:#C8A84A;margin-bottom:6px;">Rep\u00e8res</div>'
     + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:14px;color:rgba(200,168,74,0.55);margin-bottom:26px;">Les outils qui orientent ton adoration</div>'
     + renderZakatCard()
     + renderZakatFitrCard()
+    + renderFidyaCard()
+    + renderConvertCard()
     + _repereJeuneCard()
     + '</div>';
 }
