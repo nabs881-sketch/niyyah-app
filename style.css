@@ -7879,6 +7879,160 @@ button[style*="gold-v2"] {
   color: #B0A080;
 }
 
+/* ═══════════════════════════════════════════════════
+   ONGLET PRIÈRE — design luxe cohérent
+   ═══════════════════════════════════════════════════ */
+#view-priere .nafs-screen {
+  background: radial-gradient(125% 70% at 50% -8%, #1c140b 0%, #0c0805 56%, #080604 100%);
+}
+#view-priere .nafs-arabic-title {
+  font-size: 52px;
+  color: rgba(232,206,138,0.42);
+  text-shadow: 0 0 36px rgba(232,206,138,0.18);
+}
+#view-priere .nafs-title {
+  font-size: 12px;
+  letter-spacing: 0.28em;
+  color: rgba(200,168,74,0.65);
+}
+#view-priere .nafs-subtitle { color: rgba(200,168,74,0.42); }
+
+/* — Cartes horaires — */
+#view-priere .prayer-times-card {
+  background: linear-gradient(165deg, #1a130b, #0d0a06);
+  border: 1px solid rgba(200,168,74,0.22);
+  box-shadow: inset 0 1px 0 rgba(232,206,138,0.08), 0 4px 24px rgba(0,0,0,0.5);
+}
+#view-priere .prayer-times-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.24em;
+  color: rgba(200,168,74,0.58);
+}
+#view-priere .prayer-times-city {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: rgba(200,168,74,0.48);
+}
+#view-priere .prayer-times-city:active { color: rgba(200,168,74,0.9); }
+#view-priere .prayer-time-item {
+  background: rgba(200,168,74,0.04);
+  border: 1px solid rgba(200,168,74,0.1);
+  border-radius: 12px;
+  padding: 10px 4px;
+}
+#view-priere .prayer-time-item.next {
+  background: radial-gradient(120% 150% at 50% 0%, rgba(232,206,138,0.14), rgba(232,206,138,0.02) 72%);
+  border-color: rgba(232,206,138,0.36);
+  box-shadow: 0 2px 12px rgba(200,168,74,0.14);
+}
+#view-priere .prayer-time-item.passed { opacity: 0.32; background: transparent; }
+#view-priere .prayer-time-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(200,168,74,0.5);
+  margin-bottom: 5px;
+}
+#view-priere .prayer-time-item.next .prayer-time-name { color: #E8CE8A; }
+#view-priere .prayer-time-hour {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  font-weight: 300;
+  color: rgba(240,234,214,0.88);
+  letter-spacing: 0.02em;
+}
+#view-priere .prayer-time-item.next .prayer-time-hour { color: #F4ECD6; font-weight: 400; }
+#view-priere .prayer-times-loading {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 16px;
+  color: rgba(200,168,74,0.5);
+  padding: 28px 0;
+  text-align: center;
+}
+#view-priere .city-input {
+  background: linear-gradient(180deg, #16110a, #100c07);
+  border: 1px solid rgba(200,168,74,0.18);
+  border-radius: 13px;
+  color: #F0EADB;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  padding: 13px 16px;
+}
+#view-priere .city-input:focus { border-color: rgba(200,168,74,0.55); outline: none; }
+#view-priere .city-input-btn {
+  background: transparent;
+  border: 1px solid rgba(200,168,74,0.32);
+  border-radius: 13px;
+  color: #E8CE8A;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  padding: 12px 18px;
+}
+#view-priere .city-input-btn:active { background: rgba(200,168,74,0.1); }
+
+/* — Qibla — */
+#view-priere .qibla-card {
+  background: linear-gradient(165deg, #1a130b, #0d0a06) !important;
+  border: 1px solid rgba(200,168,74,0.22) !important;
+  box-shadow: inset 0 1px 0 rgba(232,206,138,0.08), 0 4px 24px rgba(0,0,0,0.5) !important;
+}
+#view-priere .qibla-card::before { display: none; }
+#view-priere .qibla-card::after { display: none; }
+#view-priere .qibla-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  color: rgba(200,168,74,0.58);
+  text-shadow: none;
+}
+#view-priere .qibla-angle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 34px;
+  font-weight: 300;
+  color: rgba(200,168,74,0.75);
+  letter-spacing: 0.04em;
+  text-shadow: none;
+}
+#view-priere .qibla-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: rgba(200,168,74,0.58);
+  letter-spacing: 0.02em;
+}
+#view-priere .qibla-aligned {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: #E8CE8A;
+  text-shadow: 0 0 14px rgba(232,206,138,0.35);
+}
+#view-priere .qibla-btn {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: none;
+  border: 1px solid rgba(200,168,74,0.28);
+  background: transparent;
+  color: rgba(200,168,74,0.6);
+  border-radius: 30px;
+  padding: 10px 26px;
+  min-height: 40px;
+}
+#view-priere .qibla-btn:active { background: rgba(200,168,74,0.08); }
+
 /* Trait card */
 .nafs-trait-card {
   background: linear-gradient(145deg, rgba(200,168,75,0.06), rgba(15,15,15,0.9));

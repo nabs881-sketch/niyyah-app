@@ -3721,7 +3721,7 @@ function renderPrayerTimesCard() {
     '</div>';
   }
   if (_prayerLoading) {
-    return '<div class="prayer-times-card"><div class="prayer-times-loading">Chargement des horaires... 🕌</div></div>';
+    return '<div class="prayer-times-card"><div class="prayer-times-loading">Chargement des horaires…</div></div>';
   }
   if (_prayerError) {
     return '<div class="prayer-times-card">' +
@@ -3765,9 +3765,9 @@ function renderPrayerTimesCard() {
   else if (_diffMin < 60) _countdownText = _diffMin + ' min';
   else _countdownText = Math.floor(_diffMin / 60) + 'h ' + String(_diffMin % 60).padStart(2,'0') + ' min';
   var countdown = '<div id="prayerCountdown" aria-live="polite" aria-atomic="true" style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;margin-bottom:8px;background:linear-gradient(135deg,rgba(200,168,75,0.12),rgba(200,168,75,0.04));border:1px solid rgba(200,168,75,0.25);border-radius:12px;">'
-    + '<div><div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:2px;">PROCHAINE</div>'
-    + '<div style="font-size:15px;font-weight:700;color:#C8A84A;">' + _nextName + ' <span style="font-weight:400;font-size:13px;color:#B0A080;">dans ' + _countdownText + '</span></div></div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-weight:700;color:#C8A84A;">' + _nextTime + '</div>'
+    + '<div><div style="font-family:\'Cormorant Garamond\',serif;font-size:11px;font-style:italic;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:2px;">Prochaine</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;font-weight:300;color:#C8A84A;">' + _nextName + ' <span style="font-size:14px;font-weight:300;color:#B0A080;">dans ' + _countdownText + '</span></div></div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-weight:300;color:#C8A84A;">' + _nextTime + '</div>'
     + '</div>';
   if (nextIdx === -1) nextIdx = -1;
   let grid = '<div class="prayer-times-grid">';
@@ -3787,9 +3787,9 @@ function renderPrayerTimesCard() {
   grid += '</div>';
   var lastthird = '';
   if (_prayerTimes.Lastthird) {
-    lastthird = '<div style="display:flex;align-items:center;justify-content:space-between;padding:8px 12px;margin-top:6px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.12);border-radius:10px;">'
-      + '<div style="font-size:12px;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-style:italic;">🌙 Qiyâm al-layl · Dernier tiers</div>'
-      + '<div style="font-size:13px;font-weight:600;color:#C8A84A;">' + _prayerTimes.Lastthird.substring(0,5) + '</div>'
+    lastthird = '<div style="display:flex;align-items:center;justify-content:space-between;padding:8px 12px;margin-top:6px;border-top:1px solid rgba(200,168,75,0.15);">'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.7);">Qiyâm al-layl · Dernier tiers</div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-weight:300;color:#C8A84A;">' + _prayerTimes.Lastthird.substring(0,5) + '</div>'
       + '</div>';
   }
   return '<div class="prayer-times-card">' +
@@ -3819,9 +3819,9 @@ function startPrayerCountdown() {
     if (diff < 2) txt = t('countdown_now');
     else if (diff < 60) txt = diff + ' min';
     else txt = Math.floor(diff / 60) + 'h ' + String(diff % 60).padStart(2,'0') + ' min';
-    el.innerHTML = '<div><div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:2px;">PROCHAINE</div>'
-      + '<div style="font-size:15px;font-weight:700;color:#C8A84A;">' + name + ' <span style="font-weight:400;font-size:13px;color:#B0A080;">dans ' + txt + '</span></div></div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-weight:700;color:#C8A84A;">' + time + '</div>';
+    el.innerHTML = '<div><div style="font-family:\'Cormorant Garamond\',serif;font-size:11px;font-style:italic;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:2px;">Prochaine</div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;font-weight:300;color:#C8A84A;">' + name + ' <span style="font-size:14px;font-weight:300;color:#B0A080;">dans ' + txt + '</span></div></div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-weight:300;color:#C8A84A;">' + time + '</div>';
   }, 60000);
 }
 function saveCityAndLoad() {
@@ -9994,7 +9994,7 @@ function renderQiblaCard() {
   const chevron = '<svg width="16" height="16" viewBox="0 0 14 14" style="transition:transform 0.2s;transform:' + (_qiblaOpen ? 'rotate(180deg)' : 'rotate(0deg)') + ';color:var(--gold);flex-shrink:0;"><polyline points="3,5 7,9 11,5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>';
   const headerHtml = '<div class="qibla-card"><div role="button" tabindex="0" aria-expanded="' + (_qiblaOpen ? 'true' : 'false') + '" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;margin-bottom:' + (_qiblaOpen ? '12' : '0') + 'px;" onclick="_qiblaOpen=!_qiblaOpen;if(_qiblaOpen){startCompass();}else{stopCompass();}renderLevel(currentLevel)"><div class="qibla-title" style="margin-bottom:0;">' + t('qibla_title') + '</div>' + chevron + '</div>';
   if (!_qiblaOpen) return headerHtml + '</div>';
-  if (_qiblaLoading) return headerHtml + '<div style="font-size:13px;color:var(--t3);padding:16px 0;text-align:center;">✦ Localisation...</div></div>';
+  if (_qiblaLoading) return headerHtml + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(200,168,74,0.6);padding:16px 0;text-align:center;">Localisation…</div></div>';
   if (_qiblaError) return headerHtml + '<div style="font-size:13px;color:var(--t3);padding:8px 0;">' + _qiblaError + '</div><button class="qibla-btn" aria-label="Réessayer" onclick="loadQibla()">Réessayer</button></div>';
   if (_qiblaAngle === null) return headerHtml + '<div style="font-size:13px;color:var(--t2);margin-bottom:14px;text-align:center;">' + t('qibla_find_text') + '</div><button class="qibla-btn" aria-label="Réessayer" onclick="loadQibla()">' + t('qibla_find_btn') + '</button></div>';
   const angle = Math.round(_qiblaAngle);
@@ -10032,8 +10032,8 @@ function renderQiblaCard() {
     + (isAligned ? '✦ ALIGNÉ AVEC LA MECQUE ✦' : isLive ? 'Tourne vers l\'aiguille verte' : 'Direction ' + dir + ' · ' + Math.round(visualAngle) + '°')
     + '</div>'
     + '<button class="qibla-btn" aria-label="Réessayer" onclick="loadQibla()">↻ Recalibrer</button>'
-    + '<div style="font-size:12px;font-style:italic;color:var(--t3);opacity:0.7;text-align:center;margin-top:10px;">' + t('qibla_disclaimer') + '</div>'
-    + '<div style="font-size:11px;color:var(--t3);opacity:0.6;text-align:center;margin-top:6px;">Boussole impr\u00e9cise ou lente ? Bouge ton t\u00e9l\u00e9phone en forme de 8 (\u221E) quelques secondes pour la calibrer.</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,74,0.5);text-align:center;margin-top:10px;">' + t('qibla_disclaimer') + '</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;font-style:italic;color:rgba(200,168,74,0.4);text-align:center;margin-top:6px;">Boussole impr\u00e9cise ? Bouge ton t\u00e9l\u00e9phone en forme de 8 (\u221E) quelques secondes.</div>'
     + '</div>';
 }
 
