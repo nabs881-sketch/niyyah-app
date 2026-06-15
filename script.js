@@ -12017,7 +12017,7 @@ function renderRappelsCard() {
   var chevron = '<svg width="16" height="16" viewBox="0 0 14 14" style="transition:transform 0.2s;transform:' + (_rappelsOpen ? 'rotate(180deg)' : 'rotate(0deg)') + ';flex-shrink:0;" fill="none"><polyline points="3,5 7,9 11,5" stroke="rgba(200,168,74,0.5)" stroke-width="2" stroke-linecap="round"/></svg>';
   var card = '<div style="background:#111118;border:0.5px solid rgba(200,168,74,0.25);border-radius:18px;padding:14px;margin-bottom:10px;">';
   card += '<div role="button" tabindex="0" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;' + (_rappelsOpen ? 'margin-bottom:14px;' : '') + '" onclick="_rappelsOpen=!_rappelsOpen;renderLevel(currentLevel);">'
-    + '<span style="font-family:\'Cormorant Garamond\',serif;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#C8A84A;">Rappels</span>'
+    + '<span style="font-family:\'Cormorant Garamond\',serif;font-size:14px;letter-spacing:2.5px;text-transform:uppercase;color:#C8A84A;">Rappels</span>'
     + chevron + '</div>';
   if (_rappelsOpen) {
     PRAYER_NAMES.forEach(function(name, i) {
@@ -12060,7 +12060,7 @@ function _compteurReset() {
 function renderCompteurCard() {
   var val = parseInt(safeGetItem('niyyah_compteur_val') || '0', 10);
   return '<div style="background:#111118;border:0.5px solid rgba(200,168,74,0.25);border-radius:18px;padding:14px;margin-bottom:10px;">'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#C8A84A;margin-bottom:4px;">Compteur</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;letter-spacing:2.5px;text-transform:uppercase;color:#C8A84A;margin-bottom:4px;">Compteur</div>'
     + '<div onclick="_compteurTap()" style="width:100%;padding:32px 0;text-align:center;cursor:pointer;user-select:none;-webkit-user-select:none;">'
     + '<div id="compteur-val" style="font-family:\'Cormorant Garamond\',serif;font-size:72px;font-weight:300;color:#C8A84A;line-height:1;">' + val + '</div>'
     + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:11px;font-style:italic;color:rgba(232,217,188,0.3);margin-top:8px;">Appuie pour compter</div>'
@@ -12077,7 +12077,7 @@ function renderRawatibCard() {
   var chevron = '<svg width="16" height="16" viewBox="0 0 14 14" style="transition:transform 0.2s;transform:' + (_rawatibOpen ? 'rotate(180deg)' : 'rotate(0deg)') + ';flex-shrink:0;" fill="none"><polyline points="3,5 7,9 11,5" stroke="rgba(200,168,74,0.5)" stroke-width="2" stroke-linecap="round"/></svg>';
   var card = '<div style="background:#111118;border:0.5px solid rgba(200,168,74,0.25);border-radius:18px;padding:14px;margin-bottom:10px;">';
   card += '<div role="button" tabindex="0" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;' + (_rawatibOpen ? 'margin-bottom:14px;' : '') + '" onclick="_rawatibOpen=!_rawatibOpen;renderLevel(currentLevel);">'
-    + '<span style="font-family:\'Cormorant Garamond\',serif;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#C8A84A;">Sunna Rawatib</span>'
+    + '<span style="font-family:\'Cormorant Garamond\',serif;font-size:14px;letter-spacing:2.5px;text-transform:uppercase;color:#C8A84A;">Sunna Rawatib</span>'
     + chevron + '</div>';
   if (_rawatibOpen) {
     var _data = [
@@ -12110,7 +12110,7 @@ function renderRawatibCard() {
 
 function _qadaEntryPriere() {
   return '<div onclick="openQada()" style="background:#111118;border:0.5px solid rgba(200,168,74,0.2);border-radius:18px;padding:15px 18px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;">'
-    + '<span style="font-family:\'Cormorant Garamond\',serif;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(200,168,74,0.55);">Pri\u00e8res \u00e0 rattraper</span>'
+    + '<span style="font-family:\'Cormorant Garamond\',serif;font-size:14px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(200,168,74,0.55);">Pri\u00e8res \u00e0 rattraper</span>'
     + '<span style="color:rgba(200,168,74,0.4);font-size:16px;">\u203a</span>'
     + '</div>';
 }
