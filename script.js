@@ -12121,7 +12121,6 @@ function renderPriere() {
   var html = '';
   if (typeof renderPrayerTimesCard === 'function') html += renderPrayerTimesCard();
   if (typeof _prierMieuxHomeEntry === 'function') html += _prierMieuxHomeEntry();
-  if (typeof _qadaEntryPriere === 'function') html += _qadaEntryPriere();
   if (typeof renderQiblaCard === 'function') html += renderQiblaCard();
   if (typeof renderRawatibCard === 'function') html += renderRawatibCard();
   if (typeof renderRappelsCard === 'function') html += renderRappelsCard();
