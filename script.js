@@ -12693,14 +12693,14 @@ function renderQadaBody() {
   var rows = '';
   _QADA_PRAYERS.forEach(function(p) {
     var n = s[p[0]] || 0;
-    rows += '<div style="display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid rgba(200,168,74,0.1);">'
-      + '<div style="flex:1;font-family:\'Cormorant Garamond\',serif;font-size:19px;color:#E8CE8A;">' + p[1] + '</div>'
-      + '<input type="text" inputmode="numeric" value="' + n + '" onchange="_qadaSet(\'' + p[0] + '\',this.value)" style="width:62px;text-align:center;padding:9px 6px;border-radius:11px;border:1px solid rgba(200,168,74,0.18);background:linear-gradient(180deg,#16110a,#100c07);color:#F0EADB;font-size:16px;font-family:\'Cormorant Garamond\',serif;outline:none;">'
-      + '<button onclick="_qadaDec(\'' + p[0] + '\')" aria-label="Rattrap\u00e9e" style="padding:9px 13px;border-radius:11px;border:1px solid rgba(200,168,74,0.3);background:transparent;color:#E8CE8A;font-family:\'Cormorant Garamond\',serif;font-size:14px;cursor:pointer;white-space:nowrap;">\u2212\u00a01</button>'
+    rows += '<div style="display:flex;align-items:center;gap:12px;padding:16px 0;border-bottom:0.5px solid rgba(200,168,74,0.1);">'
+      + '<div style="flex:1;font-family:\'Cormorant Garamond\',serif;font-size:20px;font-weight:600;color:#e8dfc8;">' + p[1] + '</div>'
+      + '<input type="text" inputmode="numeric" value="' + n + '" onchange="_qadaSet(\'' + p[0] + '\',this.value)" style="width:60px;height:44px;text-align:center;border-radius:10px;border:0.5px solid rgba(200,168,74,0.3);background:rgba(200,168,74,0.08);color:#C8A84A;font-size:20px;font-family:\'Cormorant Garamond\',serif;outline:none;">'
+      + '<button onclick="_qadaDec(\'' + p[0] + '\')" aria-label="Rattrap\u00e9e" style="width:52px;height:44px;border-radius:10px;border:0.5px solid rgba(200,168,74,0.2);background:rgba(200,168,74,0.06);color:rgba(200,168,74,0.7);font-size:18px;cursor:pointer;">\u2212\u00a01</button>'
       + '</div>';
   });
   var body = document.getElementById('qada-body');
-  if (body) body.innerHTML = '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:15px;color:rgba(200,168,74,0.7);margin-bottom:14px;">' + (total > 0 ? ('Reste ' + total + ' pri\u00e8re' + (total > 1 ? 's' : '') + ' \u00e0 rattraper') : 'Aucune pri\u00e8re en attente.') + '</div>' + rows;
+  if (body) body.innerHTML = '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:16px;color:#C8A84A;margin-bottom:20px;">' + (total > 0 ? ('Reste ' + total + ' pri\u00e8re' + (total > 1 ? 's' : '') + ' \u00e0 rattraper') : 'Aucune pri\u00e8re en attente.') + '</div>' + rows;
 }
 function closeQada() { var o = document.getElementById('qada-overlay'); if (o) o.remove(); }
 function renderQadaCard() {
@@ -12714,14 +12714,14 @@ function openQada() {
   closeQada();
   var ov = document.createElement('div');
   ov.id = 'qada-overlay';
-  ov.style.cssText = 'position:fixed;inset:0;z-index:3200;overflow-y:auto;-webkit-overflow-scrolling:touch;background:radial-gradient(120% 80% at 50% -10%,#1c140b 0%,#0b0805 55%,#070504 100%);';
+  ov.style.cssText = 'position:fixed;inset:0;z-index:3200;overflow-y:auto;-webkit-overflow-scrolling:touch;background:#0a0a0f;';
   ov.innerHTML = '<div style="max-width:440px;margin:0 auto;padding:calc(env(safe-area-inset-top,0px) + 40px) 24px calc(48px + env(safe-area-inset-bottom));">'
     + '<button onclick="closeQada()" aria-label="Fermer" style="position:fixed;top:calc(env(safe-area-inset-top,0px) + 20px);right:20px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(200,168,74,0.28);background:rgba(20,15,8,0.6);color:#C8A84A;font-size:17px;cursor:pointer;z-index:5;">\u2715</button>'
-    + '<div style="text-align:center;font-family:\'Scheherazade New\',serif;font-size:42px;color:#E8CE8A;text-shadow:0 0 28px rgba(232,206,138,0.28);line-height:1.1;">\u0642\u064E\u0636\u064E\u0627\u0621</div>'
-    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:25px;color:#EADCB6;margin-top:8px;">Pri\u00e8res \u00e0 rattraper</div>'
-    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:14px;color:#9c8c64;margin-top:6px;">Compte tes pri\u00e8res manqu\u00e9es, coche au fur et \u00e0 mesure</div>'
+    + '<div style="text-align:center;font-family:\'Scheherazade New\',serif;font-size:48px;color:#C8A84A;line-height:1.1;">\u0642\u064E\u0636\u064E\u0627\u0621</div>'
+    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:28px;color:#e8dfc8;margin-top:8px;">Pri\u00e8res \u00e0 rattraper</div>'
+    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:15px;color:rgba(232,217,188,0.4);margin-top:6px;">Compte tes pri\u00e8res manqu\u00e9es, coche au fur et \u00e0 mesure</div>'
     + '<div id="qada-body" style="margin-top:26px;"></div>'
-    + '<div style="font-size:11px;color:rgba(200,168,74,0.42);line-height:1.7;margin-top:24px;font-style:italic;font-family:\'Cormorant Garamond\',serif;">Saisis le nombre de pri\u00e8res manqu\u00e9es par type, puis appuie sur \u00ab \u2212 1 \u00bb chaque fois que tu en rattrapes une. Selon l\u2019avis majoritaire, les pri\u00e8res manqu\u00e9es se rattrapent (qad\u00e2\u2019) ; en cas de doute sur ta situation, r\u00e9f\u00e8re-toi \u00e0 un savant.</div>'
+    + '<div style="font-size:12px;color:rgba(232,217,188,0.25);line-height:1.7;margin-top:24px;font-style:italic;font-family:\'Cormorant Garamond\',serif;">Saisis le nombre de pri\u00e8res manqu\u00e9es par type, puis appuie sur \u00ab \u2212 1 \u00bb chaque fois que tu en rattrapes une. Selon l\u2019avis majoritaire, les pri\u00e8res manqu\u00e9es se rattrapent (qad\u00e2\u2019) ; en cas de doute sur ta situation, r\u00e9f\u00e8re-toi \u00e0 un savant.</div>'
     + '</div>';
   document.body.appendChild(ov);
   renderQadaBody();
