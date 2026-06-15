@@ -12711,8 +12711,6 @@ function v2GoSanctuaire() {
     var btn = document.getElementById('v2nav-sanctuaire');
     if (btn) btn.classList.add('active-nav');
     if (typeof updateMedaillonState === 'function') updateMedaillonState();
-    var _rslot = document.getElementById('repere-sanctuaire-slot');
-    if (_rslot && typeof _repereHomeEntry === 'function') _rslot.innerHTML = _repereHomeEntry();
     setTimeout(_showDefiToastDaily, 2500);
     setTimeout(_showDefiLundiInvite, 3200);
   }
