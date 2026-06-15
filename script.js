@@ -9659,9 +9659,11 @@ function schedulePrayerReminders() {
   if (!_prayerTimes) return;
   const now = new Date();
   const nowMs = now.getTime();
+  var _remPrefs = JSON.parse(safeGetItem('niyyah_prayer_reminders') || '{}');
   PRAYER_NAMES.forEach(name => {
     const timeStr = _prayerTimes[name];
     if (!timeStr) return;
+    if (_remPrefs[name] === false) return;
     const parts = timeStr.split(':');
     const prayerTime = new Date();
     prayerTime.setHours(parseInt(parts[0]), parseInt(parts[1]), 0, 0);
@@ -9717,6 +9719,7 @@ let _qiblaLoading = false;
 let _qiblaError = null;
 let _qiblaOpen = false;
 let _rawatibOpen = false;
+let _rappelsOpen = false;
 let _deviceHeading = null;
 let _compassActive = false;
 let _compassListener = null;
@@ -11999,6 +12002,44 @@ function v2GoPriere() {
 }
 window.v2GoPriere = v2GoPriere;
 
+function _togglePrayerReminder(name) {
+  var prefs = JSON.parse(safeGetItem('niyyah_prayer_reminders') || '{}');
+  var current = prefs[name] !== false; // défaut true
+  prefs[name] = !current;
+  safeSetItem('niyyah_prayer_reminders', JSON.stringify(prefs));
+  schedulePrayerReminders();
+  renderLevel(currentLevel);
+}
+window._togglePrayerReminder = _togglePrayerReminder;
+
+function renderRappelsCard() {
+  var prefs = JSON.parse(safeGetItem('niyyah_prayer_reminders') || '{}');
+  var chevron = '<svg width="16" height="16" viewBox="0 0 14 14" style="transition:transform 0.2s;transform:' + (_rappelsOpen ? 'rotate(180deg)' : 'rotate(0deg)') + ';flex-shrink:0;" fill="none"><polyline points="3,5 7,9 11,5" stroke="rgba(200,168,74,0.5)" stroke-width="2" stroke-linecap="round"/></svg>';
+  var card = '<div style="background:rgba(255,255,255,0.04);border:0.5px solid rgba(200,168,74,0.25);border-radius:14px;padding:14px;margin-bottom:12px;">';
+  card += '<div role="button" tabindex="0" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;' + (_rappelsOpen ? 'margin-bottom:14px;' : '') + '" onclick="_rappelsOpen=!_rappelsOpen;renderLevel(currentLevel);">'
+    + '<span style="font-family:\'Cormorant Garamond\',serif;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#C8A84A;">Rappels</span>'
+    + chevron + '</div>';
+  if (_rappelsOpen) {
+    PRAYER_NAMES.forEach(function(name, i) {
+      var on = prefs[name] !== false;
+      var isLast = i === PRAYER_NAMES.length - 1;
+      var sep = isLast ? '' : 'border-bottom:0.5px solid rgba(200,168,74,0.08);';
+      var trackBg = on ? '#C8A84A' : 'rgba(232,217,188,0.1)';
+      var knobColor = on ? '#0d0b08' : 'rgba(232,217,188,0.3)';
+      var knobX = on ? '20px' : '2px';
+      card += '<div style="display:flex;justify-content:space-between;align-items:center;padding:9px 0;' + sep + '">'
+        + '<span style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:600;color:#e8d9bc;">' + name + '</span>'
+        + '<div onclick="_togglePrayerReminder(\'' + name + '\')" role="switch" aria-checked="' + on + '" tabindex="0" style="width:40px;height:22px;border-radius:11px;background:' + trackBg + ';position:relative;cursor:pointer;transition:background 0.2s;flex-shrink:0;">'
+        + '<div style="position:absolute;top:3px;left:' + knobX + ';width:16px;height:16px;border-radius:50%;background:' + knobColor + ';transition:left 0.2s;"></div>'
+        + '</div>'
+        + '</div>';
+    });
+    card += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:10px;font-style:italic;color:rgba(232,217,188,0.3);text-align:center;margin-top:10px;">Rappel in-app \u2014 son, vibration et toast \u00e0 l\u2019heure de la pri\u00e8re</div>';
+  }
+  card += '</div>';
+  return card;
+}
+
 function renderRawatibCard() {
   var chevron = '<svg width="16" height="16" viewBox="0 0 14 14" style="transition:transform 0.2s;transform:' + (_rawatibOpen ? 'rotate(180deg)' : 'rotate(0deg)') + ';flex-shrink:0;" fill="none"><polyline points="3,5 7,9 11,5" stroke="rgba(200,168,74,0.5)" stroke-width="2" stroke-linecap="round"/></svg>';
   var card = '<div style="background:rgba(255,255,255,0.04);border:0.5px solid rgba(200,168,74,0.25);border-radius:14px;padding:14px;margin-bottom:12px;">';
@@ -12041,6 +12082,7 @@ function renderPriere() {
   if (typeof renderPrayerTimesCard === 'function') html += renderPrayerTimesCard();
   if (typeof renderQiblaCard === 'function') html += renderQiblaCard();
   if (typeof renderRawatibCard === 'function') html += renderRawatibCard();
+  if (typeof renderRappelsCard === 'function') html += renderRappelsCard();
   if (typeof _prierMieuxHomeEntry === 'function') html += _prierMieuxHomeEntry();
   c.innerHTML = html;
 }
