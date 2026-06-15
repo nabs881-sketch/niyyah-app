@@ -12088,21 +12088,21 @@ function renderRawatibCard() {
       { name: 'Isha',    avant: null,        apres: '2 rak\'a' }
     ];
     var _badge = function(v) {
-      if (!v) return '<span style="color:rgba(232,217,188,0.2);font-family:\'Cormorant Garamond\',serif;font-size:15px;">\u2014</span>';
-      return '<span style="background:rgba(200,168,74,0.1);color:#C8A84A;border-radius:6px;padding:2px 6px;font-family:\'Cormorant Garamond\',serif;font-size:15px;">' + v + '</span>';
+      if (!v) return '<span style="color:rgba(232,217,188,0.15);font-family:\'Cormorant Garamond\',serif;font-size:18px;">\u2014</span>';
+      return '<span style="background:rgba(200,168,74,0.1);border:0.5px solid rgba(200,168,74,0.35);border-radius:8px;padding:4px 12px;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:15px;">' + v + '</span>';
     };
     card += '<div style="display:grid;grid-template-columns:1fr 80px 80px;gap:6px;align-items:center;">';
-    card += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(200,168,74,0.5);">Pri\u00e8re</div>'
-          + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(200,168,74,0.5);text-align:center;">Avant</div>'
-          + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(200,168,74,0.5);text-align:center;">Apr\u00e8s</div>';
+    card += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,74,0.5);">Pri\u00e8re</div>'
+          + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,74,0.5);text-align:center;">Avant</div>'
+          + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,74,0.5);text-align:center;">Apr\u00e8s</div>';
     _data.forEach(function(row, i) {
-      var sep = i < _data.length - 1 ? 'border-bottom:0.5px solid rgba(200,168,74,0.08);padding-bottom:7px;margin-bottom:1px;' : '';
-      card += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:600;color:#e8dfc8;' + sep + '">' + row.name + '</div>'
+      var sep = i < _data.length - 1 ? 'border-bottom:0.5px solid rgba(200,168,74,0.08);padding:14px 0;' : 'padding:14px 0;';
+      card += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;font-weight:600;color:#e8dfc8;' + sep + '">' + row.name + '</div>'
             + '<div style="text-align:center;' + sep + '">' + _badge(row.avant) + '</div>'
             + '<div style="text-align:center;' + sep + '">' + _badge(row.apres) + '</div>';
     });
     card += '</div>';
-    card += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(232,217,188,0.3);text-align:center;margin-top:12px;">Source\u00a0: Bukh\u00e2r\u00ee &amp; Muslim \u2014 12 rak\u2019a/jour au total</div>';
+    card += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(232,217,188,0.25);text-align:center;margin-top:16px;padding-top:12px;border-top:0.5px solid rgba(200,168,74,0.08);">Source\u00a0: Bukh\u00e2r\u00ee &amp; Muslim \u2014 12 rak\u2019a/jour au total</div>';
   }
   card += '</div>';
   return card;
