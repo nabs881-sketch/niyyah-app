@@ -2529,6 +2529,7 @@ function renderLevel(levelId) {
   const level   = LEVELS.find(l => l.id === levelId);
   const content = document.getElementById('content');
   const pct     = getLevelProgress(levelId);
+  if (typeof renderPriere === 'function') renderPriere();
   if (!state._unlocked.includes(levelId)) {
     state._unlocked.push(levelId);
     saveState();
@@ -2574,8 +2575,6 @@ function renderLevel(levelId) {
     '<div style="font-size:22px">⏳</div>' +
     '<div><div style="font-size:13px;font-weight:600;color:#ff9500;">' + t('grace_title') + '</div>' +
     '<div style="font-size:12px;color:var(--t3);margin-top:2px;">' + t('grace_sub') + '</div></div></div>' : '';
-  const prayerCard = level.id === 1 ? renderPrayerTimesCard() : '';
-  const qiblaCard  = level.id === 1 ? renderQiblaCard() : '';
   const allLvlItems = LEVELS.filter(l => state._unlocked.includes(l.id)).flatMap(l => getLevelItems(l.id)).filter(_itemMatchesProfile);
   const scoreJour = Math.round(getWeightedScore(allLvlItems, state));
   const scoreColor = scoreJour >= 76 ? '#c8a84b' : scoreJour >= 51 ? 'var(--t1)' : 'var(--t3)';
@@ -2584,7 +2583,7 @@ function renderLevel(levelId) {
   var _lvlDone = _lvlItems.filter(function(i) { return isItemDone(i, state); }).length;
   let html = '<div class="level-hero"><div class="hero-title">' + t('level_' + level.id) + '</div><div class="hero-bar-row"><div class="hero-bar-track"><div class="hero-bar-fill" style="width:' + pct + '%"></div></div><div class="hero-pct">' + Math.round(pct) + '%</div></div>'
     + '<div style="text-align:right;margin-top:6px;padding:0 4px;"><div style="font-size:12px;color:' + scoreColor + ';opacity:0.7;" onclick="openScoreInfo()">' + scoreJour + '% du jour</div></div>'
-    + '</div>' + graceBanner + fridayBanner + prayerCard + qiblaCard;
+    + '</div>' + graceBanner + fridayBanner;
   var _block = getCurrentPrayerBlock();
   if (!_prayerTimes && (_block.id === 'nuit' || _block.id === 'qiyam')) {
     if (!window._prayerBlockRetryCount) window._prayerBlockRetryCount = 0;
@@ -12000,7 +11999,11 @@ window.v2GoPriere = v2GoPriere;
 function renderPriere() {
   var c = document.getElementById('priere-content');
   if (!c) return;
-  c.innerHTML = (typeof _prierMieuxHomeEntry === 'function' ? _prierMieuxHomeEntry() : '');
+  var html = '';
+  if (typeof renderPrayerTimesCard === 'function') html += renderPrayerTimesCard();
+  if (typeof renderQiblaCard === 'function') html += renderQiblaCard();
+  if (typeof _prierMieuxHomeEntry === 'function') html += _prierMieuxHomeEntry();
+  c.innerHTML = html;
 }
 window.renderPriere = renderPriere;
 
