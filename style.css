@@ -7883,12 +7883,12 @@ button[style*="gold-v2"] {
    ONGLET PRIÈRE — design luxe SPEC-PRIERE-LUXURY
    ═══════════════════════════════════════════════════ */
 #view-priere .nafs-screen {
-  background: #0d0b08;
+  background: #0a0a0f;
 }
 /* Header */
 #view-priere .nafs-arabic-title {
   font-family: 'Scheherazade New', serif;
-  font-size: 32px;
+  font-size: 46px;
   color: #C8A84A;
   text-shadow: none;
 }
@@ -7909,11 +7909,11 @@ button[style*="gold-v2"] {
 
 /* — Cards commun — */
 #view-priere .prayer-times-card {
-  background: rgba(255,255,255,0.04);
+  background: #111118;
   border: 0.5px solid rgba(200,168,74,0.25);
-  border-radius: 14px;
+  border-radius: 18px;
   padding: 16px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   box-shadow: none;
 }
 #view-priere .prayer-times-title {
@@ -7960,7 +7960,7 @@ button[style*="gold-v2"] {
   font-family: 'Cormorant Garamond', serif;
   font-size: 15px;
   font-weight: 600;
-  color: #e8d9bc;
+  color: #e8dfc8;
   letter-spacing: 0;
 }
 #view-priere .prayer-time-item.next .prayer-time-hour { color: #0d0b08; font-weight: 600; }
@@ -7997,11 +7997,11 @@ button[style*="gold-v2"] {
 
 /* — Qibla — */
 #view-priere .qibla-card {
-  background: rgba(255,255,255,0.04) !important;
+  background: #111118 !important;
   border: 0.5px solid rgba(200,168,74,0.25) !important;
-  border-radius: 14px;
+  border-radius: 18px;
   padding: 16px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   box-shadow: none !important;
 }
 #view-priere .qibla-card::before { display: none; }
