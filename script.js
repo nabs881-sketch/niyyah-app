@@ -2577,7 +2577,6 @@ function renderLevel(levelId) {
   const prayerCard = level.id === 1 ? renderPrayerTimesCard() : '';
   const qiblaCard  = level.id === 1 ? renderQiblaCard() : '';
   const prierMieuxEntry = level.id === 1 ? _prierMieuxHomeEntry() : '';
-  const repereEntry = level.id === 1 ? _repereHomeEntry() : '';
   const allLvlItems = LEVELS.filter(l => state._unlocked.includes(l.id)).flatMap(l => getLevelItems(l.id)).filter(_itemMatchesProfile);
   const scoreJour = Math.round(getWeightedScore(allLvlItems, state));
   const scoreColor = scoreJour >= 76 ? '#c8a84b' : scoreJour >= 51 ? 'var(--t1)' : 'var(--t3)';
@@ -2586,7 +2585,7 @@ function renderLevel(levelId) {
   var _lvlDone = _lvlItems.filter(function(i) { return isItemDone(i, state); }).length;
   let html = '<div class="level-hero"><div class="hero-title">' + t('level_' + level.id) + '</div><div class="hero-bar-row"><div class="hero-bar-track"><div class="hero-bar-fill" style="width:' + pct + '%"></div></div><div class="hero-pct">' + Math.round(pct) + '%</div></div>'
     + '<div style="text-align:right;margin-top:6px;padding:0 4px;"><div style="font-size:12px;color:' + scoreColor + ';opacity:0.7;" onclick="openScoreInfo()">' + scoreJour + '% du jour</div></div>'
-    + '</div>' + graceBanner + fridayBanner + prayerCard + prierMieuxEntry + qiblaCard + repereEntry;
+    + '</div>' + graceBanner + fridayBanner + prayerCard + prierMieuxEntry + qiblaCard;
   var _block = getCurrentPrayerBlock();
   if (!_prayerTimes && (_block.id === 'nuit' || _block.id === 'qiyam')) {
     if (!window._prayerBlockRetryCount) window._prayerBlockRetryCount = 0;
@@ -12691,6 +12690,8 @@ function v2GoSanctuaire() {
     var btn = document.getElementById('v2nav-sanctuaire');
     if (btn) btn.classList.add('active-nav');
     if (typeof updateMedaillonState === 'function') updateMedaillonState();
+    var _rslot = document.getElementById('repere-sanctuaire-slot');
+    if (_rslot && typeof _repereHomeEntry === 'function') _rslot.innerHTML = _repereHomeEntry();
     setTimeout(_showDefiToastDaily, 2500);
     setTimeout(_showDefiLundiInvite, 3200);
   }
