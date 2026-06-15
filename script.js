@@ -12113,11 +12113,11 @@ function renderPriere() {
   if (!c) return;
   var html = '';
   if (typeof renderPrayerTimesCard === 'function') html += renderPrayerTimesCard();
+  if (typeof _prierMieuxHomeEntry === 'function') html += _prierMieuxHomeEntry();
   if (typeof renderQiblaCard === 'function') html += renderQiblaCard();
   if (typeof renderRawatibCard === 'function') html += renderRawatibCard();
   if (typeof renderRappelsCard === 'function') html += renderRappelsCard();
   if (typeof renderCompteurCard === 'function') html += renderCompteurCard();
-  if (typeof _prierMieuxHomeEntry === 'function') html += _prierMieuxHomeEntry();
   c.innerHTML = html;
 }
 window.renderPriere = renderPriere;
