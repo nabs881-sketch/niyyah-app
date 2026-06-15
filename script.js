@@ -11988,6 +11988,7 @@ function _showWaswasaScreen() {
 
 function v2GoPriere() {
   setupTopUI('priere');
+  document.body.classList.add('in-priere-view');
   document.body.classList.remove('pratique-active', 'in-progression-view', 'in-nafs-view');
   document.querySelectorAll('.nav-v2-item').forEach(function(n) { n.classList.remove('active-nav'); });
   var btn = document.getElementById('v2nav-priere');
@@ -12032,6 +12033,7 @@ function setupTopUI(screen) {
   document.body.classList.remove('in-bab-an-nafs');
   document.body.classList.remove('in-nafs-view');
   document.body.classList.remove('in-journal-view');
+  document.body.classList.remove('in-priere-view');
   _hideAideBtn();
   var nb = document.getElementById('nav-bar-v2'); if (nb) nb.classList.remove('hidden-immersion');
   var backBtn = document.getElementById('v2-back-btn');

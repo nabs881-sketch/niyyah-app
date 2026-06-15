@@ -6934,6 +6934,10 @@ body.in-nafs-view .nav-bar-v2,
 body.in-nafs-view .topbar-v2,
 body.in-nafs-view #alhaya-btn { display: none !important; }
 body.in-nafs-view #nafs-back-btn { display: flex !important; }
+body.in-priere-view .nav-bar-v2,
+body.in-priere-view .topbar-v2,
+body.in-priere-view #alhaya-btn { display: none !important; }
+body.in-priere-view #priere-back-btn { display: flex !important; }
 body.in-waqt-modal .nav-bar-v2,
 body.in-waqt-modal .topbar-v2,
 body.in-waqt-modal #alhaya-btn { display: none !important; }
