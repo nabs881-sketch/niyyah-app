@@ -12716,6 +12716,21 @@ var _PM_PROFILES = [
     sym: 'Je me sens trop loin, trop indigne pour prier.',
     reflect: 'Tu crois devoir \u00eatre \u00ab propre \u00bb pour m\u00e9riter de venir. Et ta honte te tient loin de la seule porte qui pourrait te laver.',
     boost: 'Tu crois devoir \u00eatre pur pour venir. C\u2019est l\u2019inverse : on ne se lave pas avant d\u2019entrer dans l\u2019eau. Il ne t\u2019a jamais demand\u00e9 d\u2019\u00eatre parfait pour te pr\u00e9senter \u2014 Il t\u2019a demand\u00e9 de te pr\u00e9senter pour \u00eatre lav\u00e9. Ta honte te souffle \u00ab pas toi, pas ce soir \u00bb ; sa mis\u00e9ricorde, elle, a laiss\u00e9 la porte ouverte expr\u00e8s pour les soirs comme celui-ci. Celui qui revient en boitant Lui est plus cher que celui qui se croit en r\u00e8gle et s\u2019\u00e9loigne. Ne fuis pas Celui qui t\u2019attend pour te pardonner. Pose-toi. Tu n\u2019es pas de trop \u2014 tu es exactement celui qu\u2019Il appelle.'
+  },
+  {
+    sym: 'Je prie, mais j\u2019ai l\u2019impression que mes pri\u00e8res ne montent pas \u2014 mon c\u0153ur est trop lourd.',
+    reflect: 'Ibn al-Qayyim l\u2019a \u00e9crit\u00a0: les p\u00e9ch\u00e9s accumulent une rouille sur le c\u0153ur. Non pour te condamner \u2014 mais parce que la lumi\u00e8re peine \u00e0 traverser un verre opaque.',
+    boost: 'Ce poids que tu ressens, c\u2019est ton c\u0153ur qui sait encore faire la diff\u00e9rence entre la lumi\u00e8re et l\u2019ombre \u2014 et c\u2019est d\u00e9j\u00e0 une gr\u00e2ce. Ibn al-Qayyim dit que la pri\u00e8re elle-m\u00eame est le polish qui enl\u00e8ve cette rouille, non la r\u00e9compense d\u2019un c\u0153ur d\u00e9j\u00e0 propre. Tu ne pries pas parce que tu es pr\u00eat \u2014 tu pries pour le devenir. Chaque sajda est une main tendue vers le haut, pas une d\u00e9claration de m\u00e9rite. Viens alourdi. C\u2019est pour \u00e7a qu\u2019Il a ouvert la porte.'
+  },
+  {
+    sym: 'Ma t\u00eate est pleine de mes probl\u00e8mes, mes projets, mon argent \u2014 la pri\u00e8re semble loin de tout \u00e7a.',
+    reflect: 'Al-Ghaz\u00e2l\u00ee le diagnostique avec pr\u00e9cision\u00a0: quand le c\u0153ur est plein du monde, la pri\u00e8re ne trouve plus de place. Ce n\u2019est pas un \u00e9chec de volont\u00e9 \u2014 c\u2019est un c\u0153ur qui a \u00e9t\u00e9 nourri d\u2019autre chose.',
+    boost: 'Le monde a rempli ton c\u0153ur parce qu\u2019il se pr\u00e9sente \u00e0 chaque instant \u2014 les notifications, les dettes, les ambitions. Allah, Lui, attend qu\u2019on vienne Le chercher. Al-Ghaz\u00e2l\u00ee dit\u00a0: \u00ab\u00a0La valeur de ta pri\u00e8re aupr\u00e8s d\u2019Allah est \u00e9gale \u00e0 sa valeur dans ton c\u0153ur.\u00a0\u00bb Alors ne cherche pas \u00e0 vider ta t\u00eate de force \u2014 retourne-toi simplement vers Celui qui poss\u00e8de tout ce qui t\u2019inqui\u00e8te. Ce que tu portes comme fardeau, Il en est le propri\u00e9taire. Murmure-Lui tes soucis avant le takb\u00eer. Puis dis\u00a0: All\u00e2hu Akbar \u2014 Allah est plus grand. Plus grand que tout \u00e7a.'
+  },
+  {
+    sym: 'Je vis comme si j\u2019avais tout le temps \u2014 la pri\u00e8re peut attendre, je la rattraperai.',
+    reflect: 'Ibn al-Qayyim identifie l\u2019oubli de la mort comme la racine de la nonchalance en pri\u00e8re. Pas par morbidit\u00e9 \u2014 mais parce que se souvenir de sa finitude remet chaque pri\u00e8re \u00e0 sa vraie place\u00a0: peut-\u00eatre la derni\u00e8re.',
+    boost: 'Quelque part dans sa vie, chaque homme a pri\u00e9 une derni\u00e8re fois sans le savoir. Ibn al-Qayyim dit\u00a0: rappelle-toi la mort avant de prier, et tu prieras comme celui qui n\u2019a plus de demain \u00e0 perdre. Ce n\u2019est pas une menace \u2014 c\u2019est une lib\u00e9ration. Le travail peut attendre. Le message peut attendre. Mais cette pri\u00e8re, cette minute, ce souffle \u2014 ils ne se repr\u00e9senteront pas. L\u00e8ve-toi non par peur, mais parce que tu sais\u00a0: ce rendez-vous-l\u00e0 est le seul qui compte vraiment.'
   }
 ];
 function closePrierMieux() { var o = document.getElementById('prier-mieux-overlay'); if (o) o.remove(); }
