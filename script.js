@@ -3764,10 +3764,10 @@ function renderPrayerTimesCard() {
   if (_diffMin < 2) _countdownText = t('countdown_now');
   else if (_diffMin < 60) _countdownText = _diffMin + ' min';
   else _countdownText = Math.floor(_diffMin / 60) + 'h ' + String(_diffMin % 60).padStart(2,'0') + ' min';
-  var countdown = '<div id="prayerCountdown" aria-live="polite" aria-atomic="true" style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;margin-bottom:8px;background:linear-gradient(135deg,rgba(200,168,75,0.12),rgba(200,168,75,0.04));border:1px solid rgba(200,168,75,0.25);border-radius:12px;">'
-    + '<div><div style="font-family:\'Cormorant Garamond\',serif;font-size:11px;font-style:italic;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:2px;">Prochaine</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;font-weight:300;color:#C8A84A;">' + _nextName + ' <span style="font-size:14px;font-weight:300;color:#B0A080;">dans ' + _countdownText + '</span></div></div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-weight:300;color:#C8A84A;">' + _nextTime + '</div>'
+  var countdown = '<div id="prayerCountdown" aria-live="polite" aria-atomic="true" style="display:flex;align-items:center;justify-content:space-between;padding:12px 14px;margin-bottom:14px;background:rgba(200,168,74,0.08);border:0.5px solid rgba(200,168,74,0.4);border-radius:10px;">'
+    + '<div><div style="font-family:\'Cormorant Garamond\',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,74,0.6);margin-bottom:2px;">Prochaine</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-weight:600;color:#e8d9bc;">' + _nextName + ' <span style="font-family:\'Cormorant Garamond\',serif;font-size:11px;font-style:italic;color:rgba(232,217,188,0.5);">dans ' + _countdownText + '</span></div></div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:28px;font-weight:300;color:#C8A84A;letter-spacing:1px;">' + _nextTime + '</div>'
     + '</div>';
   if (nextIdx === -1) nextIdx = -1;
   let grid = '<div class="prayer-times-grid">';
@@ -3787,14 +3787,15 @@ function renderPrayerTimesCard() {
   grid += '</div>';
   var lastthird = '';
   if (_prayerTimes.Lastthird) {
-    lastthird = '<div style="display:flex;align-items:center;justify-content:space-between;padding:8px 12px;margin-top:6px;border-top:1px solid rgba(200,168,75,0.15);">'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.7);">Qiyâm al-layl · Dernier tiers</div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-weight:300;color:#C8A84A;">' + _prayerTimes.Lastthird.substring(0,5) + '</div>'
+    lastthird = '<div style="height:0.5px;background:rgba(200,168,74,0.15);margin:4px 0 8px;"></div>'
+      + '<div style="display:flex;align-items:center;justify-content:space-between;padding-top:4px;">'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:11px;font-style:italic;color:rgba(232,217,188,0.4);">Qiy\u00e2m al-layl \u2014 Dernier tiers</div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;color:rgba(200,168,74,0.7);">' + _prayerTimes.Lastthird.substring(0,5) + '</div>'
       + '</div>';
   }
   return '<div class="prayer-times-card">' +
     '<div class="prayer-times-header">' +
-      '<div class="prayer-times-title"><svg width="16" height="16" viewBox="0 0 24 24" fill="#C8A84A" style="vertical-align:-2px;margin-right:6px;"><path d="M14 3a9 9 0 1 0 7 14.5A7 7 0 0 1 14 3z"/></svg>Horaires — aujourd\'hui</div>' +
+      '<div class="prayer-times-title">Horaires — Aujourd\'hui</div>' +
       '<div class="prayer-times-city" onclick="showCityInput()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C8A84A" stroke-width="2" style="vertical-align:-2px;margin-right:5px;"><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>' + escapeHtml(_prayerCity || 'Choisir la ville') + '</div>' +
     '</div>' +
     countdown + grid + lastthird +
@@ -3819,9 +3820,9 @@ function startPrayerCountdown() {
     if (diff < 2) txt = t('countdown_now');
     else if (diff < 60) txt = diff + ' min';
     else txt = Math.floor(diff / 60) + 'h ' + String(diff % 60).padStart(2,'0') + ' min';
-    el.innerHTML = '<div><div style="font-family:\'Cormorant Garamond\',serif;font-size:11px;font-style:italic;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:2px;">Prochaine</div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;font-weight:300;color:#C8A84A;">' + name + ' <span style="font-size:14px;font-weight:300;color:#B0A080;">dans ' + txt + '</span></div></div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-weight:300;color:#C8A84A;">' + time + '</div>';
+    el.innerHTML = '<div><div style="font-family:\'Cormorant Garamond\',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,74,0.6);margin-bottom:2px;">Prochaine</div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-weight:600;color:#e8d9bc;">' + name + ' <span style="font-family:\'Cormorant Garamond\',serif;font-size:11px;font-style:italic;color:rgba(232,217,188,0.5);">dans ' + txt + '</span></div></div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:28px;font-weight:300;color:#C8A84A;letter-spacing:1px;">' + time + '</div>';
   }, 60000);
 }
 function saveCityAndLoad() {
@@ -12655,11 +12656,11 @@ function openPrierMieux() {
   renderPM();
 }
 function _prierMieuxHomeEntry() {
-  return '<div onclick="openPrierMieux()" style="position:relative;background:linear-gradient(165deg,#1f1609,#0d0a06);border:1px solid rgba(232,206,138,0.28);border-radius:16px;padding:15px 16px;margin-bottom:14px;display:flex;align-items:center;gap:14px;cursor:pointer;box-shadow:inset 0 1px 0 rgba(232,206,138,0.1),0 4px 16px rgba(0,0,0,0.35);">'
-    + '<div style="flex-shrink:0;width:42px;height:42px;border-radius:50%;border:1px solid rgba(232,206,138,0.35);background:radial-gradient(circle at 50% 35%,rgba(232,206,138,0.2),rgba(232,206,138,0.02) 70%);display:flex;align-items:center;justify-content:center;"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#E8CE8A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c1.8 3.6 5 4.8 5 8.5a5 5 0 0 1-10 0c0-1.8.9-3 2-4 .2 1.2 1 2 2 2.2-.5-2.8-1-4.5 1-8.7z"/></svg></div>'
-    + '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;letter-spacing:0.02em;color:#E8CE8A;line-height:1.2;">Prier mieux</div>'
-    + '<div style="font-size:12px;color:rgba(200,168,74,0.6);margin-top:3px;font-style:italic;font-family:\'Cormorant Garamond\',serif;">Quand la pri\u00e8re p\u00e8se, ranime la flamme</div></div>'
-    + '<div style="color:rgba(200,168,74,0.3);font-size:18px;">\u203a</div></div>';
+  return '<div onclick="openPrierMieux()" style="background:rgba(200,168,74,0.06);border:0.5px solid rgba(200,168,74,0.2);border-radius:14px;padding:14px 16px;margin-bottom:12px;display:flex;align-items:center;gap:12px;cursor:pointer;">'
+    + '<div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;border:0.5px solid rgba(200,168,74,0.4);display:flex;align-items:center;justify-content:center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8A84A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c1.8 3.6 5 4.8 5 8.5a5 5 0 0 1-10 0c0-1.8.9-3 2-4 .2 1.2 1 2 2 2.2-.5-2.8-1-4.5 1-8.7z"/></svg></div>'
+    + '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-weight:400;color:#e8d9bc;line-height:1.2;">Prier mieux</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:11px;font-style:italic;color:rgba(232,217,188,0.4);margin-top:2px;">Quand la pri\u00e8re p\u00e8se, ranime la flamme</div></div>'
+    + '<div style="color:rgba(200,168,74,0.5);font-size:14px;margin-left:auto;">\u203a</div></div>';
 }
 window.openPrierMieux = openPrierMieux;
 window.closePrierMieux = closePrierMieux;
