@@ -12501,6 +12501,146 @@ window.closeConvert = closeConvert;
 window.computeConvertG2H = computeConvertG2H;
 window.computeConvertH2G = computeConvertH2G;
 
+// ── WUDU ─────────────────────────────────────────────────────────────────────
+function closeWudu() { var o = document.getElementById('wudu-overlay'); if (o) o.remove(); }
+function renderWuduCard() {
+  return '<div onclick="openWudu()" style="position:relative;background:linear-gradient(165deg,#1a130b,#0d0a06);border:1px solid rgba(200,168,74,0.22);border-radius:16px;padding:15px 16px;margin-bottom:8px;display:flex;align-items:center;gap:14px;cursor:pointer;box-shadow:inset 0 1px 0 rgba(232,206,138,0.08),0 4px 16px rgba(0,0,0,0.35);">'
+    + '<div style="flex-shrink:0;width:42px;height:42px;border-radius:50%;border:1px solid rgba(232,206,138,0.3);background:radial-gradient(circle at 50% 35%,rgba(232,206,138,0.16),rgba(232,206,138,0.02) 70%);display:flex;align-items:center;justify-content:center;"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#E8CE8A" stroke-width="1.3" stroke-linecap="round"><path d="M12 2.5C10 5 5 10.5 5 14.5a7 7 0 0 0 14 0C19 10.5 14 5 12 2.5z"/></svg></div>'
+    + '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;letter-spacing:0.02em;color:#E8CE8A;line-height:1.2;">Wudu</div>'
+    + '<div style="font-size:12px;color:rgba(200,168,74,0.55);margin-top:3px;font-style:italic;font-family:\'Cormorant Garamond\',serif;">Les ablutions</div></div>'
+    + '<div style="color:rgba(200,168,74,0.3);font-size:18px;">\u203a</div></div>';
+}
+function openWudu() {
+  closeWudu();
+  var ov = document.createElement('div');
+  ov.id = 'wudu-overlay';
+  ov.style.cssText = 'position:fixed;inset:0;z-index:3200;overflow-y:auto;-webkit-overflow-scrolling:touch;background:radial-gradient(ellipse at top,#1a1208 0%,#0d0a06 100%);';
+  var lbl = function(t) { return '<div style="font-family:\'Cormorant Garamond\',serif;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#C8A84A;margin:18px 0 10px;">' + t + '</div>'; };
+  var itm = function(t, note) { return '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;color:#e8d9bc;padding:10px 0;border-bottom:0.5px solid rgba(200,168,74,0.1);">' + t + (note ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:11px;font-style:italic;color:rgba(200,168,74,0.4);margin-top:4px;">' + note + '</div>' : '') + '</div>'; };
+  var stp = function(n, t) { return '<div style="display:flex;gap:10px;padding:10px 0;border-bottom:0.5px solid rgba(200,168,74,0.1);align-items:flex-start;"><span style="font-family:\'Cormorant Garamond\',serif;font-size:13px;color:rgba(200,168,74,0.5);flex-shrink:0;width:20px;">' + n + '.</span><span style="font-family:\'Cormorant Garamond\',serif;font-size:14px;color:#e8d9bc;">' + t + '</span></div>'; };
+  ov.innerHTML = '<div style="max-width:440px;margin:0 auto;padding:calc(env(safe-area-inset-top,0px) + 40px) 24px calc(48px + env(safe-area-inset-bottom));">'
+    + '<button onclick="closeWudu()" aria-label="Fermer" style="position:fixed;top:calc(env(safe-area-inset-top,0px) + 20px);right:20px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(200,168,74,0.28);background:rgba(20,15,8,0.6);color:#C8A84A;font-size:17px;cursor:pointer;z-index:5;">\u00d7</button>'
+    + '<div style="text-align:center;font-family:\'Scheherazade New\',serif;font-size:42px;color:#C8A84A;line-height:1.3;">\u0627\u0644\u0648\u064f\u0636\u064f\u0648\u0621</div>'
+    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:25px;color:#e8d9bc;margin-top:8px;">Wudu \u2014 Les ablutions</div>'
+    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:14px;color:rgba(200,168,74,0.6);margin-top:6px;">Conditions et ce qui l\u2019annule</div>'
+    + lbl('Ce qui l\u2019annule')
+    + itm('Passage aux toilettes (petite ou grande)')
+    + itm('Sommeil profond (allong\u00e9 ou assis sans appui)')
+    + itm('Perte de conscience / \u00e9vanouissement')
+    + itm('Rapport intime')
+    + itm('Saignement abondant', 'Avis divergent selon les madhabs')
+    + lbl('\u00c9tapes')
+    + stp(1, 'Intention (niyyah) \u2014 dans le c\u0153ur')
+    + stp(2, 'Bismillah')
+    + stp(3, 'Se laver les mains 3\u00d7')
+    + stp(4, 'Se rincer la bouche et le nez 3\u00d7')
+    + stp(5, 'Se laver le visage 3\u00d7')
+    + stp(6, 'Se laver les bras jusqu\u2019aux coudes 3\u00d7 (droit puis gauche)')
+    + stp(7, 'Passer les mains humides sur la t\u00eate')
+    + stp(8, 'Se laver les pieds jusqu\u2019aux chevilles 3\u00d7 (droit puis gauche)')
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:11px;font-style:italic;color:rgba(232,217,188,0.3);text-align:center;margin-top:24px;">Coran 5:6 \u2014 Bukhari 135, Muslim 226</div>'
+    + '</div>';
+  document.body.appendChild(ov);
+}
+window.openWudu = openWudu;
+window.closeWudu = closeWudu;
+window.renderWuduCard = renderWuduCard;
+
+// ── TAYAMMUM ──────────────────────────────────────────────────────────────────
+function closeTayammum() { var o = document.getElementById('tayammum-overlay'); if (o) o.remove(); }
+function renderTayammumCard() {
+  return '<div onclick="openTayammum()" style="position:relative;background:linear-gradient(165deg,#1a130b,#0d0a06);border:1px solid rgba(200,168,74,0.22);border-radius:16px;padding:15px 16px;margin-bottom:8px;display:flex;align-items:center;gap:14px;cursor:pointer;box-shadow:inset 0 1px 0 rgba(232,206,138,0.08),0 4px 16px rgba(0,0,0,0.35);">'
+    + '<div style="flex-shrink:0;width:42px;height:42px;border-radius:50%;border:1px solid rgba(232,206,138,0.3);background:radial-gradient(circle at 50% 35%,rgba(232,206,138,0.16),rgba(232,206,138,0.02) 70%);display:flex;align-items:center;justify-content:center;"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#E8CE8A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20"/><path d="M6 20v-6l6-10 6 10v6"/></svg></div>'
+    + '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;letter-spacing:0.02em;color:#E8CE8A;line-height:1.2;">Tayammum</div>'
+    + '<div style="font-size:12px;color:rgba(200,168,74,0.55);margin-top:3px;font-style:italic;font-family:\'Cormorant Garamond\',serif;">Purification s\u00e8che</div></div>'
+    + '<div style="color:rgba(200,168,74,0.3);font-size:18px;">\u203a</div></div>';
+}
+function openTayammum() {
+  closeTayammum();
+  var ov = document.createElement('div');
+  ov.id = 'tayammum-overlay';
+  ov.style.cssText = 'position:fixed;inset:0;z-index:3200;overflow-y:auto;-webkit-overflow-scrolling:touch;background:radial-gradient(ellipse at top,#1a1208 0%,#0d0a06 100%);';
+  var lbl = function(t) { return '<div style="font-family:\'Cormorant Garamond\',serif;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#C8A84A;margin:18px 0 10px;">' + t + '</div>'; };
+  var itm = function(t) { return '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;color:#e8d9bc;padding:10px 0;border-bottom:0.5px solid rgba(200,168,74,0.1);">' + t + '</div>'; };
+  var stp = function(n, t) { return '<div style="display:flex;gap:10px;padding:10px 0;border-bottom:0.5px solid rgba(200,168,74,0.1);align-items:flex-start;"><span style="font-family:\'Cormorant Garamond\',serif;font-size:13px;color:rgba(200,168,74,0.5);flex-shrink:0;width:20px;">' + n + '.</span><span style="font-family:\'Cormorant Garamond\',serif;font-size:14px;color:#e8d9bc;">' + t + '</span></div>'; };
+  ov.innerHTML = '<div style="max-width:440px;margin:0 auto;padding:calc(env(safe-area-inset-top,0px) + 40px) 24px calc(48px + env(safe-area-inset-bottom));">'
+    + '<button onclick="closeTayammum()" aria-label="Fermer" style="position:fixed;top:calc(env(safe-area-inset-top,0px) + 20px);right:20px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(200,168,74,0.28);background:rgba(20,15,8,0.6);color:#C8A84A;font-size:17px;cursor:pointer;z-index:5;">\u00d7</button>'
+    + '<div style="text-align:center;font-family:\'Scheherazade New\',serif;font-size:42px;color:#C8A84A;line-height:1.3;">\u0627\u0644\u062a\u064e\u064a\u064e\u0645\u064f\u0651\u0645</div>'
+    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:25px;color:#e8d9bc;margin-top:8px;">Tayammum \u2014 Purification s\u00e8che</div>'
+    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:14px;color:rgba(200,168,74,0.6);margin-top:6px;">Quand l\u2019eau est absente</div>'
+    + lbl('Conditions')
+    + itm('Absence d\u2019eau apr\u00e8s recherche')
+    + itm('Maladie o\u00f9 l\u2019eau est nuisible')
+    + itm('Eau dangereuse ou inaccessible')
+    + itm('Temps de pri\u00e8re imminent sans possibilit\u00e9 de trouver de l\u2019eau')
+    + lbl('\u00c9tapes')
+    + stp(1, 'Intention (niyyah)')
+    + stp(2, 'Frapper la terre propre (ou pierre, sable) avec les deux paumes')
+    + stp(3, 'Essuyer le visage avec les paumes')
+    + stp(4, 'Frapper \u00e0 nouveau')
+    + stp(5, 'Essuyer le dos de la main droite avec la paume gauche, puis inversement')
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:11px;font-style:italic;color:rgba(200,168,74,0.5);text-align:center;margin-top:18px;">Le tayammum est annul\u00e9 par les m\u00eames choses que le wudu, et d\u00e8s que l\u2019eau devient accessible.</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:11px;font-style:italic;color:rgba(232,217,188,0.3);text-align:center;margin-top:12px;">Coran 4:43 \u2014 Bukhari 338, Muslim 368</div>'
+    + '</div>';
+  document.body.appendChild(ov);
+}
+window.openTayammum = openTayammum;
+window.closeTayammum = closeTayammum;
+window.renderTayammumCard = renderTayammumCard;
+
+// ── QASR / JAM' ───────────────────────────────────────────────────────────────
+function closeQasr() { var o = document.getElementById('qasr-overlay'); if (o) o.remove(); }
+function renderQasrCard() {
+  return '<div onclick="openQasr()" style="position:relative;background:linear-gradient(165deg,#1a130b,#0d0a06);border:1px solid rgba(200,168,74,0.22);border-radius:16px;padding:15px 16px;margin-bottom:8px;display:flex;align-items:center;gap:14px;cursor:pointer;box-shadow:inset 0 1px 0 rgba(232,206,138,0.08),0 4px 16px rgba(0,0,0,0.35);">'
+    + '<div style="flex-shrink:0;width:42px;height:42px;border-radius:50%;border:1px solid rgba(232,206,138,0.3);background:radial-gradient(circle at 50% 35%,rgba(232,206,138,0.16),rgba(232,206,138,0.02) 70%);display:flex;align-items:center;justify-content:center;"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#E8CE8A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>'
+    + '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;letter-spacing:0.02em;color:#E8CE8A;line-height:1.2;">Pri\u00e8re du voyageur</div>'
+    + '<div style="font-size:12px;color:rgba(200,168,74,0.55);margin-top:3px;font-style:italic;font-family:\'Cormorant Garamond\',serif;">Raccourcir et regrouper</div></div>'
+    + '<div style="color:rgba(200,168,74,0.3);font-size:18px;">\u203a</div></div>';
+}
+function openQasr() {
+  closeQasr();
+  var ov = document.createElement('div');
+  ov.id = 'qasr-overlay';
+  ov.style.cssText = 'position:fixed;inset:0;z-index:3200;overflow-y:auto;-webkit-overflow-scrolling:touch;background:radial-gradient(ellipse at top,#1a1208 0%,#0d0a06 100%);';
+  var lbl = function(t) { return '<div style="font-family:\'Cormorant Garamond\',serif;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#C8A84A;margin:18px 0 10px;">' + t + '</div>'; };
+  var trow = function(name, norm, voy) {
+    var changed = norm !== voy;
+    return '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 0;border-bottom:0.5px solid rgba(200,168,74,0.08);align-items:center;">'
+      + '<span style="font-family:\'Cormorant Garamond\',serif;font-size:14px;color:#e8d9bc;">' + name + '</span>'
+      + '<span style="font-family:\'Cormorant Garamond\',serif;font-size:13px;color:rgba(232,217,188,0.45);text-align:center;">' + norm + '</span>'
+      + '<span style="font-family:\'Cormorant Garamond\',serif;font-size:13px;text-align:center;color:' + (changed ? '#C8A84A' : 'rgba(232,217,188,0.45)') + ';font-weight:' + (changed ? '600' : '400') + ';">' + voy + '</span>'
+      + '</div>';
+  };
+  ov.innerHTML = '<div style="max-width:440px;margin:0 auto;padding:calc(env(safe-area-inset-top,0px) + 40px) 24px calc(48px + env(safe-area-inset-bottom));">'
+    + '<button onclick="closeQasr()" aria-label="Fermer" style="position:fixed;top:calc(env(safe-area-inset-top,0px) + 20px);right:20px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(200,168,74,0.28);background:rgba(20,15,8,0.6);color:#C8A84A;font-size:17px;cursor:pointer;z-index:5;">\u00d7</button>'
+    + '<div style="text-align:center;font-family:\'Scheherazade New\',serif;font-size:42px;color:#C8A84A;line-height:1.3;">\u0635\u064e\u0644\u064e\u0627\u0629\u064f \u0627\u0644\u0633\u064e\u0641\u064e\u0631</div>'
+    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:25px;color:#e8d9bc;margin-top:8px;">Pri\u00e8re du voyageur</div>'
+    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:14px;color:rgba(200,168,74,0.6);margin-top:6px;">Raccourcir et regrouper</div>'
+    + lbl('Qasr \u2014 Raccourcir')
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;font-style:italic;color:rgba(200,168,74,0.55);margin-bottom:12px;">Condition\u00a0: distance \u2265\u00a080\u00a0km (avis majoritaire)</div>'
+    + '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:6px 0;border-bottom:0.5px solid rgba(200,168,74,0.18);margin-bottom:2px;">'
+    + '<span style="font-family:\'Cormorant Garamond\',serif;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(200,168,74,0.5);">Pri\u00e8re</span>'
+    + '<span style="font-family:\'Cormorant Garamond\',serif;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(200,168,74,0.5);text-align:center;">Normale</span>'
+    + '<span style="font-family:\'Cormorant Garamond\',serif;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(200,168,74,0.5);text-align:center;">En voyage</span>'
+    + '</div>'
+    + trow('Fajr',    '2 rak\u2019a', '2 rak\u2019a')
+    + trow('Dhuhr',   '4 rak\u2019a', '2 rak\u2019a')
+    + trow('Asr',     '4 rak\u2019a', '2 rak\u2019a')
+    + trow('Maghrib', '3 rak\u2019a', '3 rak\u2019a')
+    + trow('Isha',    '4 rak\u2019a', '2 rak\u2019a')
+    + lbl("Jam\u2019 \u2014 Regrouper")
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;color:#e8d9bc;padding:10px 0;border-bottom:0.5px solid rgba(200,168,74,0.1);">Dhuhr + Asr ensemble</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;color:#e8d9bc;padding:10px 0;border-bottom:0.5px solid rgba(200,168,74,0.1);">Maghrib + Isha ensemble</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(232,217,188,0.45);padding:10px 0;">Taqdim (avancer \u00e0 l\u2019heure de la 1\u00e8re) ou Ta\u02bfkhir (retarder \u00e0 l\u2019heure de la 2\u00e8me)</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:11px;font-style:italic;color:rgba(200,168,74,0.5);text-align:center;margin-top:14px;">Le qasr et le jam\u2019 sont permis d\u00e8s le d\u00e9part, m\u00eame en ville de destination.</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:11px;font-style:italic;color:rgba(232,217,188,0.3);text-align:center;margin-top:12px;">Bukhari 1090, Muslim 686</div>'
+    + '</div>';
+  document.body.appendChild(ov);
+}
+window.openQasr = openQasr;
+window.closeQasr = closeQasr;
+window.renderQasrCard = renderQasrCard;
+
 function closeRepere() { var o = document.getElementById('repere-overlay'); if (o) o.remove(); }
 function openRepere() {
   closeRepere();
@@ -12515,6 +12655,10 @@ function openRepere() {
     + '<div style="display:flex;align-items:center;justify-content:center;gap:10px;margin:18px 0 2px;"><div style="width:52px;height:1px;background:linear-gradient(90deg,transparent,rgba(200,168,74,0.42));"></div><div style="width:6px;height:6px;border:1px solid rgba(200,168,74,0.55);transform:rotate(45deg);"></div><div style="width:52px;height:1px;background:linear-gradient(90deg,rgba(200,168,74,0.42),transparent);"></div></div>'
     + eb('S\u2019orienter')
     + renderIstikharaCard()
+    + eb('Pri\u00e8re & Purification')
+    + renderWuduCard()
+    + renderTayammumCard()
+    + renderQasrCard()
     + eb('Aum\u00f4nes')
     + renderZakatCard()
     + renderZakatFitrCard()
