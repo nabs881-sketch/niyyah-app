@@ -12938,8 +12938,8 @@ function openPrierMieux() {
 function _prierMieuxHomeEntry() {
   return '<div onclick="openPrierMieux()" style="background:rgba(200,168,74,0.06);border:0.5px solid rgba(200,168,74,0.2);border-radius:18px;padding:14px 16px;margin-bottom:10px;display:flex;align-items:center;gap:12px;cursor:pointer;">'
     + '<div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;border:0.5px solid rgba(200,168,74,0.4);display:flex;align-items:center;justify-content:center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8A84A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c1.8 3.6 5 4.8 5 8.5a5 5 0 0 1-10 0c0-1.8.9-3 2-4 .2 1.2 1 2 2 2.2-.5-2.8-1-4.5 1-8.7z"/></svg></div>'
-    + '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-weight:400;color:#e8d9bc;line-height:1.2;">Prier mieux</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:11px;font-style:italic;color:rgba(232,217,188,0.4);margin-top:2px;">Quand la pri\u00e8re p\u00e8se, ranime la flamme</div></div>'
+    + '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:400;color:#e8d9bc;line-height:1.2;">Prier mieux</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(232,217,188,0.4);margin-top:2px;">Quand la pri\u00e8re p\u00e8se, ranime la flamme</div></div>'
     + '<div style="color:rgba(200,168,74,0.5);font-size:14px;margin-left:auto;">\u203a</div></div>';
 }
 window.openPrierMieux = openPrierMieux;
