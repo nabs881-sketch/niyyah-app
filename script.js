@@ -12040,6 +12040,39 @@ function renderRappelsCard() {
   return card;
 }
 
+function _compteurTap() {
+  var val = parseInt(safeGetItem('niyyah_compteur_val') || '0', 10) + 1;
+  safeSetItem('niyyah_compteur_val', String(val));
+  var el = document.getElementById('compteur-val');
+  if (el) el.textContent = val;
+  if (navigator.vibrate) navigator.vibrate(30);
+}
+function _compteurReset() {
+  safeSetItem('niyyah_compteur_val', '0');
+  var el = document.getElementById('compteur-val');
+  if (el) el.textContent = '0';
+  var btn = document.getElementById('compteur-reset-btn');
+  if (btn) {
+    btn.style.color = 'rgba(200,168,74,0.6)';
+    setTimeout(function() { btn.style.color = 'rgba(232,217,188,0.3)'; }, 300);
+  }
+}
+function renderCompteurCard() {
+  var val = parseInt(safeGetItem('niyyah_compteur_val') || '0', 10);
+  return '<div style="background:rgba(255,255,255,0.04);border:0.5px solid rgba(200,168,74,0.25);border-radius:14px;padding:14px;margin-bottom:12px;">'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#C8A84A;margin-bottom:4px;">Compteur</div>'
+    + '<div onclick="_compteurTap()" style="width:100%;padding:32px 0;text-align:center;cursor:pointer;user-select:none;-webkit-user-select:none;">'
+    + '<div id="compteur-val" style="font-family:\'Cormorant Garamond\',serif;font-size:72px;font-weight:300;color:#C8A84A;line-height:1;">' + val + '</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:11px;font-style:italic;color:rgba(232,217,188,0.3);margin-top:8px;">Appuie pour compter</div>'
+    + '</div>'
+    + '<div style="border-top:0.5px solid rgba(200,168,74,0.1);margin-top:12px;padding-top:12px;">'
+    + '<button id="compteur-reset-btn" onclick="_compteurReset()" style="display:block;margin:0 auto;font-family:\'Cormorant Garamond\',serif;font-size:11px;letter-spacing:2px;color:rgba(232,217,188,0.3);background:none;border:none;cursor:pointer;text-transform:uppercase;">Remettre \u00e0 z\u00e9ro</button>'
+    + '</div>'
+    + '</div>';
+}
+window._compteurTap = _compteurTap;
+window._compteurReset = _compteurReset;
+
 function renderRawatibCard() {
   var chevron = '<svg width="16" height="16" viewBox="0 0 14 14" style="transition:transform 0.2s;transform:' + (_rawatibOpen ? 'rotate(180deg)' : 'rotate(0deg)') + ';flex-shrink:0;" fill="none"><polyline points="3,5 7,9 11,5" stroke="rgba(200,168,74,0.5)" stroke-width="2" stroke-linecap="round"/></svg>';
   var card = '<div style="background:rgba(255,255,255,0.04);border:0.5px solid rgba(200,168,74,0.25);border-radius:14px;padding:14px;margin-bottom:12px;">';
@@ -12083,6 +12116,7 @@ function renderPriere() {
   if (typeof renderQiblaCard === 'function') html += renderQiblaCard();
   if (typeof renderRawatibCard === 'function') html += renderRawatibCard();
   if (typeof renderRappelsCard === 'function') html += renderRappelsCard();
+  if (typeof renderCompteurCard === 'function') html += renderCompteurCard();
   if (typeof _prierMieuxHomeEntry === 'function') html += _prierMieuxHomeEntry();
   c.innerHTML = html;
 }
