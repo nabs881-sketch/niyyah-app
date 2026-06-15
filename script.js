@@ -9716,6 +9716,7 @@ let _qiblaAngle = null;
 let _qiblaLoading = false;
 let _qiblaError = null;
 let _qiblaOpen = false;
+let _rawatibOpen = false;
 let _deviceHeading = null;
 let _compassActive = false;
 let _compassListener = null;
@@ -11998,12 +11999,48 @@ function v2GoPriere() {
 }
 window.v2GoPriere = v2GoPriere;
 
+function renderRawatibCard() {
+  var chevron = '<svg width="16" height="16" viewBox="0 0 14 14" style="transition:transform 0.2s;transform:' + (_rawatibOpen ? 'rotate(180deg)' : 'rotate(0deg)') + ';flex-shrink:0;" fill="none"><polyline points="3,5 7,9 11,5" stroke="rgba(200,168,74,0.5)" stroke-width="2" stroke-linecap="round"/></svg>';
+  var card = '<div style="background:rgba(255,255,255,0.04);border:0.5px solid rgba(200,168,74,0.25);border-radius:14px;padding:14px;margin-bottom:12px;">';
+  card += '<div role="button" tabindex="0" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;' + (_rawatibOpen ? 'margin-bottom:14px;' : '') + '" onclick="_rawatibOpen=!_rawatibOpen;renderLevel(currentLevel);">'
+    + '<span style="font-family:\'Cormorant Garamond\',serif;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#C8A84A;">Sunna Rawatib</span>'
+    + chevron + '</div>';
+  if (_rawatibOpen) {
+    var _data = [
+      { name: 'Fajr',    avant: '2 rak\'a', apres: null },
+      { name: 'Dhuhr',   avant: '4 rak\'a', apres: '2 rak\'a' },
+      { name: 'Asr',     avant: null,        apres: null },
+      { name: 'Maghrib', avant: null,        apres: '2 rak\'a' },
+      { name: 'Isha',    avant: null,        apres: '2 rak\'a' }
+    ];
+    var _badge = function(v) {
+      if (!v) return '<span style="color:rgba(232,217,188,0.2);font-family:\'Cormorant Garamond\',serif;font-size:13px;">\u2014</span>';
+      return '<span style="background:rgba(200,168,74,0.1);color:#C8A84A;border-radius:6px;padding:2px 6px;font-family:\'Cormorant Garamond\',serif;font-size:12px;">' + v + '</span>';
+    };
+    card += '<div style="display:grid;grid-template-columns:1fr 80px 80px;gap:6px;align-items:center;">';
+    card += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(200,168,74,0.5);">Pri\u00e8re</div>'
+          + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(200,168,74,0.5);text-align:center;">Avant</div>'
+          + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(200,168,74,0.5);text-align:center;">Apr\u00e8s</div>';
+    _data.forEach(function(row, i) {
+      var sep = i < _data.length - 1 ? 'border-bottom:0.5px solid rgba(200,168,74,0.08);padding-bottom:7px;margin-bottom:1px;' : '';
+      card += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:600;color:#e8d9bc;' + sep + '">' + row.name + '</div>'
+            + '<div style="text-align:center;' + sep + '">' + _badge(row.avant) + '</div>'
+            + '<div style="text-align:center;' + sep + '">' + _badge(row.apres) + '</div>';
+    });
+    card += '</div>';
+    card += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:10px;font-style:italic;color:rgba(232,217,188,0.3);text-align:center;margin-top:12px;">Source\u00a0: Bukh\u00e2r\u00ee &amp; Muslim \u2014 12 rak\u2019a/jour au total</div>';
+  }
+  card += '</div>';
+  return card;
+}
+
 function renderPriere() {
   var c = document.getElementById('priere-content');
   if (!c) return;
   var html = '';
   if (typeof renderPrayerTimesCard === 'function') html += renderPrayerTimesCard();
   if (typeof renderQiblaCard === 'function') html += renderQiblaCard();
+  if (typeof renderRawatibCard === 'function') html += renderRawatibCard();
   if (typeof _prierMieuxHomeEntry === 'function') html += _prierMieuxHomeEntry();
   c.innerHTML = html;
 }
