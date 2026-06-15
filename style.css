@@ -7888,13 +7888,13 @@ button[style*="gold-v2"] {
 /* Header */
 #view-priere .nafs-arabic-title {
   font-family: 'Scheherazade New', serif;
-  font-size: 52px;
+  font-size: 54px;
   color: #C8A84A;
   text-shadow: none;
 }
 #view-priere .nafs-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 15px;
+  font-size: 17px;
   letter-spacing: 3px;
   color: #C8A84A;
   margin-top: 6px;
@@ -7902,7 +7902,7 @@ button[style*="gold-v2"] {
 #view-priere .nafs-subtitle {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  font-size: 14px;
+  font-size: 16px;
   color: rgba(232,217,188,0.45);
   margin-top: 4px;
 }
@@ -7918,7 +7918,7 @@ button[style*="gold-v2"] {
 }
 #view-priere .prayer-times-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
   letter-spacing: 2.5px;
   color: #C8A84A;
@@ -7927,7 +7927,7 @@ button[style*="gold-v2"] {
 #view-priere .prayer-times-city {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  font-size: 15px;
+  font-size: 17px;
   color: rgba(200,168,74,0.48);
 }
 #view-priere .prayer-times-city:active { color: rgba(200,168,74,0.9); }
@@ -7948,7 +7948,7 @@ button[style*="gold-v2"] {
 #view-priere .prayer-time-item.passed { opacity: 0.3; background: transparent; }
 #view-priere .prayer-time-name {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 400;
   letter-spacing: 1.5px;
   text-transform: uppercase;
@@ -7958,7 +7958,7 @@ button[style*="gold-v2"] {
 #view-priere .prayer-time-item.next .prayer-time-name { color: rgba(13,11,8,0.65); }
 #view-priere .prayer-time-hour {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 17px;
+  font-size: 19px;
   font-weight: 600;
   color: #e8dfc8;
   letter-spacing: 0;
@@ -7967,7 +7967,7 @@ button[style*="gold-v2"] {
 #view-priere .prayer-times-loading {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  font-size: 14px;
+  font-size: 16px;
   color: rgba(200,168,74,0.5);
   padding: 28px 0;
   text-align: center;
@@ -7978,7 +7978,7 @@ button[style*="gold-v2"] {
   border-radius: 13px;
   color: #F0EADB;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 16px;
+  font-size: 18px;
   padding: 13px 16px;
 }
 #view-priere .city-input:focus { border-color: rgba(200,168,74,0.55); outline: none; }
@@ -7988,7 +7988,7 @@ button[style*="gold-v2"] {
   border-radius: 13px;
   color: #E8CE8A;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 17px;
+  font-size: 19px;
   font-weight: 400;
   letter-spacing: 0.04em;
   padding: 12px 18px;
@@ -8009,7 +8009,7 @@ button[style*="gold-v2"] {
 #view-priere .qibla-title {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 2.5px;
   text-transform: uppercase;
   color: #C8A84A;
@@ -8017,7 +8017,7 @@ button[style*="gold-v2"] {
 }
 #view-priere .qibla-angle {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 34px;
+  font-size: 36px;
   font-weight: 300;
   color: rgba(200,168,74,0.75);
   letter-spacing: 0.04em;
@@ -8026,14 +8026,14 @@ button[style*="gold-v2"] {
 #view-priere .qibla-sub {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  font-size: 17px;
+  font-size: 19px;
   color: rgba(200,168,74,0.58);
   letter-spacing: 0.02em;
 }
 #view-priere .qibla-aligned {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.1em;
   color: #E8CE8A;
@@ -8041,7 +8041,7 @@ button[style*="gold-v2"] {
 }
 #view-priere .qibla-btn {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.06em;
   text-transform: none;
