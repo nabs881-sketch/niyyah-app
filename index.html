@@ -397,6 +397,17 @@
 <!-- ════════════════════════════════════════════════
      NAFS — Tazkiyat an-nafs
      ════════════════════════════════════════════════ -->
+ <div class="view" id="view-priere" style="display:none;">
+   <div class="nafs-screen">
+     <div class="nafs-header">
+       <div class="nafs-arabic-title">الصَّلَاة</div>
+       <div class="nafs-title">PRIÈRE</div>
+       <div class="nafs-subtitle">Ton repère pour mieux prier</div>
+     </div>
+     <div id="priere-content"></div>
+   </div>
+ </div>
+
 <div class="view" id="view-nafs" style="display:none;">
   <div class="nafs-screen">
     <button id="nafs-back-btn" onclick="v2GoSanctuaire()" aria-label="Retour" style="display:none;position:fixed;top:calc(var(--safe-top,0px) + 12px);left:16px;z-index:9990;background:rgba(10,10,10,0.7);border:1px solid rgba(200,168,74,0.3);border-radius:50%;color:#C8A84A;cursor:pointer;padding:0;width:40px;height:40px;align-items:center;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#C8A84A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
@@ -420,6 +431,15 @@
   <circle cx="11" cy="11" r="1.5" stroke-width="1.8"/>
 </svg></span>
     <span class="nav-v2-label" id="nav-label-sanctuaire">Ma Niyyah</span>
+  </button>
+
+  <!-- PRIÈRE — Mihrab -->
+  <button class="nav-v2-item" id="v2nav-priere" aria-label="Prière" onclick="v2GoPriere()">
+    <span class="nav-v2-icon"><svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 19 V11 a5 5 0 0 1 10 0 V19"/>
+      <path d="M4.5 19 H17.5"/>
+    </svg></span>
+    <span class="nav-v2-label" id="nav-label-priere">Prière</span>
   </button>
 
   <!-- SCANNER — Œil -->
