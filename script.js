@@ -3766,8 +3766,8 @@ function renderPrayerTimesCard() {
   else _countdownText = Math.floor(_diffMin / 60) + 'h ' + String(_diffMin % 60).padStart(2,'0') + ' min';
   var countdown = '<div id="prayerCountdown" aria-live="polite" aria-atomic="true" style="display:flex;align-items:center;justify-content:space-between;padding:12px 14px;margin-bottom:14px;background:rgba(200,168,74,0.08);border:0.5px solid rgba(200,168,74,0.4);border-radius:10px;">'
     + '<div><div style="font-family:\'Cormorant Garamond\',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,74,0.6);margin-bottom:2px;">Prochaine</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-weight:600;color:#e8dfc8;">' + _nextName + ' <span style="font-family:\'Cormorant Garamond\',serif;font-size:11px;font-style:italic;color:rgba(232,217,188,0.5);">dans ' + _countdownText + '</span></div></div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:28px;font-weight:300;color:#C8A84A;letter-spacing:1px;">' + _nextTime + '</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:28px;font-weight:600;color:#e8dfc8;">' + _nextName + ' <span style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(232,217,188,0.5);">dans ' + _countdownText + '</span></div></div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:34px;font-weight:300;color:#C8A84A;letter-spacing:1px;">' + _nextTime + '</div>'
     + '</div>';
   if (nextIdx === -1) nextIdx = -1;
   let grid = '<div class="prayer-times-grid">';
@@ -3821,8 +3821,8 @@ function startPrayerCountdown() {
     else if (diff < 60) txt = diff + ' min';
     else txt = Math.floor(diff / 60) + 'h ' + String(diff % 60).padStart(2,'0') + ' min';
     el.innerHTML = '<div><div style="font-family:\'Cormorant Garamond\',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,74,0.6);margin-bottom:2px;">Prochaine</div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-weight:600;color:#e8dfc8;">' + name + ' <span style="font-family:\'Cormorant Garamond\',serif;font-size:11px;font-style:italic;color:rgba(232,217,188,0.5);">dans ' + txt + '</span></div></div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:28px;font-weight:300;color:#C8A84A;letter-spacing:1px;">' + time + '</div>';
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:28px;font-weight:600;color:#e8dfc8;">' + name + ' <span style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(232,217,188,0.5);">dans ' + txt + '</span></div></div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:34px;font-weight:300;color:#C8A84A;letter-spacing:1px;">' + time + '</div>';
   }, 60000);
 }
 function saveCityAndLoad() {
