@@ -19306,7 +19306,7 @@ function openVueHadithJour() {
     main.innerHTML = '<div style="padding:20px 16px;text-align:center;">'
       + (h.theme ? '<div class="fiqh-categorie">' + h.theme.toUpperCase() + '</div>' : '')
       + (h.texte_ar ? '<div style="font-family:\'Amiri\',serif;font-size:24px;line-height:2;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:20px;">' + h.texte_ar + '</div>' : '')
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;line-height:1.7;color:rgba(240,234,214,0.95);font-style:italic;margin-bottom:20px;">' + (h.texte_fr || '') + '</div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;line-height:1.7;color:rgba(240,234,214,0.95);font-style:italic;margin-bottom:20px;">' + (h.texte_fr || '') + '</div>'
       + (h.source ? '<div style="font-size:12px;color:rgba(200,168,74,0.6);letter-spacing:0.1em;">\u2014 ' + h.source + ' \u2014</div>' : '')
       + (h.degre ? '<div style="font-size:12px;color:rgba(200,168,74,0.4);margin-top:8px;letter-spacing:1px;">' + h.degre.toUpperCase() + '</div>' : '')
       + '</div>';
