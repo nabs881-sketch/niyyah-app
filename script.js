@@ -12108,13 +12108,6 @@ function renderRawatibCard() {
   return card;
 }
 
-function _qadaEntryPriere() {
-  return '<div onclick="openQada()" style="background:#111118;border:0.5px solid rgba(200,168,74,0.2);border-radius:18px;padding:15px 18px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;">'
-    + '<span style="font-family:\'Cormorant Garamond\',serif;font-size:14px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(200,168,74,0.55);">Pri\u00e8res \u00e0 rattraper</span>'
-    + '<span style="color:rgba(200,168,74,0.4);font-size:16px;">\u203a</span>'
-    + '</div>';
-}
-
 function renderPriere() {
   var c = document.getElementById('priere-content');
   if (!c) return;
