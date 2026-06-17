@@ -9796,10 +9796,10 @@ body.onboarding-active #nav-bar-v2 {
 .ff-tx b{ font-size:18px; line-height:1.2; }
 .ff-tx i{ font-size:15px; line-height:1.55; color:rgba(220,198,142,0.85); }
 .fp-amount{ font-size:50px; }
-.fp-sub{ font-size:15px; margin-top:6px; }
-.fp-trust{ font-size:13px; letter-spacing:2.5px; color:rgba(200,168,75,0.55); margin-top:8px; }
-.freemium-codelink{ font-size:16px; color:rgba(214,194,138,0.75); margin-top:18px; }
-.freemium-close{ font-size:15px; color:rgba(255,255,255,0.5); margin-top:12px; }
+.fp-sub{ font-size:17px; margin-top:6px; }
+.fp-trust{ font-size:14px; letter-spacing:2.5px; color:rgba(200,168,75,0.55); margin-top:8px; }
+.freemium-codelink{ font-size:17px; color:rgba(214,194,138,0.75); margin-top:18px; }
+.freemium-close{ font-size:16px; color:rgba(255,255,255,0.5); margin-top:12px; }
 
 /* ===== Cartes d'intention (Ancrer votre Niyyah) — zellige ivoire ===== */
 .intention-opt-v2{
