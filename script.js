@@ -1445,7 +1445,7 @@ const LEVELS = [
       ]},
       { icon: '🌙', title: 'Sunnah de base', items: [
         { id: 'ayat_kursi', label: 'Ayat al-Kursi après prière', sub: 'Après chaque salah — une fois', arabic: 'آيَةُ الْكُرْسِيّ', priority: 'sunnah', paths: ['reconnecter','routine','sacraliser'], block: 'jour', audio: 'https://everyayah.com/data/Alafasy_128kbps/002255.mp3', hadith: '\"Celui qui la récite après chaque prière, rien ne l\'empêche d\'entrer au Paradis sauf la mort\" — Nasa\'i (Sahih)', source: "Nasa'i (Sahih)" },
-        { id: 'allahumma_salam', label: 'Allahumma anta-s-salam', sub: 'Après chaque salah — paix et clôture', arabic: 'اللَّهُمَّ أَنْتَ السَّلَامُ', priority: 'sunnah', paths: ['reconnecter','routine','sacraliser'], block: ['fajr','dhuhr','asr','maghrib','isha'], hadith: '\"Allahumma anta-s-salam wa minka-s-salam, tabarakta ya dhal-jalali wal-ikram\" — Muslim', source: 'Muslim', translation: 'Ô Allah, Tu es la Paix, et de Toi vient la paix. Tu es béni, Ô Détenteur de la majesté et de la générosité.' },
+        { id: 'allahumma_salam', label: 'Allahumma anta-s-salam', sub: 'Après chaque salah — paix et clôture', arabic: 'اللَّهُمَّ أَنْتَ السَّلَامُ', priority: 'sunnah', paths: ['reconnecter','routine','sacraliser'], block: ['fajr','dhuhr','asr','maghrib','isha'], hadith: '', phonetic: 'Allahumma anta-s-salam wa minka-s-salam, tabarakta ya dhal-jalali wal-ikram', translation: 'Ô Allah, Tu es la Paix, et de Toi vient la paix. Tu es béni, Ô Détenteur de la majesté et de la générosité.', source: 'Muslim 591' },
         { id: 'muawwidhat', label: 'Mu\'awwidhat', sub: 'Ikhlas + Falaq + Nas · ×3 après Fajr et Maghrib · ×1 après les autres', arabic: 'الْمُعَوِّذَات', priority: 'sunnah', paths: ['reconnecter','routine','sacraliser'], block: ['fajr','dhuhr','asr','maghrib','isha'], hadith: '\"Le Prophète ﷺ les récitait après chaque prière\" — Tirmidhi, Nasa\'i', source: 'Tirmidhi, Nasa\'i' },
         { id: 'basmala', label: 'Bismillah avant chaque action', sub: 'Manger, sortir, commencer — Bismillah', arabic: 'بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ', paths: ['reconnecter','routine','sacraliser'], block: [], filDuJour: true, category: 'rituels', hadith: '\"Tout acte important qui ne commence pas par Bismillah est coupé de sa bénédiction\" — Abu Dawud (Hassan)', source: 'Abu Dawud (Hassan)' },
         { id: 'witr', label: 'Prière Witr', sub: 'Minimum 1 rakaa — avant de dormir · Sunnah mu\'akkada pour tous', arabic: 'صَلَاةُ الْوِتْرِ', priority: 'sunnah', paths: ['reconnecter','routine','sacraliser'], block: 'isha', hadith: '\"Allah est impair et Il aime l\'impair — priez le Witr\" — Bukhari 998', source: 'Bukhari 998' },
@@ -2658,6 +2658,13 @@ function renderLevel(levelId) {
           infoBtn = '<button class="btn-info" aria-label="Détails" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openInfoSheet(\'\',\'\',\'\',\'\',event)" data-label="' + labelEsc2 + '" data-arabic="' + arabicEsc2 + '" data-phonetic="' + itemTranslationEsc + '" data-translation="' + hadithEsc + '" data-source="' + sourceEsc + '" title="' + t('btn_why') + '"><i style="pointer-events:none">i</i></button>';
         } else if (item.id === 'lisan') {
           infoBtn = '<button class="btn-info" aria-label="M\u00e9thode" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openLisanMethode()" title="M\u00e9thode"><i style="pointer-events:none">i</i></button>';
+        } else if (item.phonetic || item.translation) {
+          const labelEsc2 = tI(item,'label').replace(/"/g,'&quot;');
+          const arabicEsc2 = (item.arabic||'').replace(/"/g,'&quot;');
+          const phoneticEsc2 = (item.phonetic||'').replace(/"/g,'&quot;');
+          const translationEsc2 = (item.translation||'').replace(/"/g,'&quot;');
+          const sourceEsc2 = (item.source||'').replace(/"/g,'&quot;');
+          infoBtn = '<button class="btn-info" aria-label="Détails" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openInfoSheet(\'\',\'\',\'\',\'\',event)" data-label="' + labelEsc2 + '" data-arabic="' + arabicEsc2 + '" data-phonetic="' + phoneticEsc2 + '" data-translation="' + translationEsc2 + '" data-source="' + sourceEsc2 + '" title="' + t('btn_see_phonetic') + '"><i style="pointer-events:none">i</i></button>';
         } else if (item.id !== 'arabic' && item.sub && tI(item,'sub').includes('\u00b7') && item.arabic) {
           const parts = tI(item,'sub').split('·');
           const phonetic = parts[0].trim();
