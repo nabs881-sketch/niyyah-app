@@ -19020,12 +19020,12 @@ function openVueLisan(viewDay) {
   // Mot arabe (grand)
   html += '<div style="text-align:center;margin-bottom:8px;">';
   html += '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:52px;color:#C8A84A;direction:rtl;line-height:1.3;">' + (mot.mot_arabe || '') + '</div>';
-  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;color:rgba(240,234,214,0.6);font-style:italic;margin-top:4px;">\u00ab ' + (mot.translitteration || '') + ' \u00bb</div>';
+  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;color:rgba(240,234,214,0.6);font-style:italic;margin-top:4px;">\u00ab ' + (mot.translitteration || '') + ' \u00bb</div>';
   html += '</div>';
 
   // Traductions
   html += '<div style="text-align:center;margin-bottom:24px;">';
-  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;color:#C8A84A;font-style:italic;">' + (mot.traductions_fr || []).join(' \u00b7 ') + '</div>';
+  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;color:#C8A84A;font-style:italic;">' + (mot.traductions_fr || []).join(' \u00b7 ') + '</div>';
   html += '</div>';
 
   // Racine
@@ -19044,7 +19044,7 @@ function openVueLisan(viewDay) {
     html += '<div style="font-family:\'Inter\',sans-serif;font-size:12px;color:rgba(200,168,75,0.5);letter-spacing:1px;margin-bottom:10px;">CORAN ' + (v.reference || '') + '</div>';
     html += '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:24px;color:rgba(240,234,214,0.9);direction:rtl;line-height:1.8;margin-bottom:8px;">' + (v.arabe || '') + '</div>';
     html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;color:rgba(240,234,214,0.5);font-style:italic;margin-bottom:6px;">' + (v.translitteration || '') + '</div>';
-    html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;color:rgba(240,234,214,0.8);line-height:1.6;">' + (v.traduction_fr || '') + '</div>';
+    html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;color:rgba(240,234,214,0.8);line-height:1.6;">' + (v.traduction_fr || '') + '</div>';
     if (v.audio_url) {
       html += '<button onclick="var a=new Audio(\'' + v.audio_url + '\');a.play().catch(function(){});" style="margin-top:10px;background:none;border:1px solid rgba(200,168,75,0.25);border-radius:8px;padding:6px 16px;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:13px;cursor:pointer;">\ud83d\udd0a \u00c9couter le verset</button>';
     }
