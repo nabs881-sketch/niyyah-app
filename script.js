@@ -7128,6 +7128,16 @@ function babCompletPorte(id) {
     }
   }
   renderBabAnNafs();
+  setTimeout(function() {
+    var el = document.getElementById('babAnNafsContent');
+    if (el) {
+      var btn = document.createElement('div');
+      btn.onclick = shareNiyyah;
+      btn.style.cssText = 'margin-top:16px;padding:11px;border-radius:10px;border:1px solid rgba(200,168,75,0.2);text-align:center;cursor:pointer;font-family:\'Cormorant Garamond\',serif;font-size:14px;color:rgba(200,168,75,0.7);';
+      btn.textContent = 'Partager Niyyah ✦';
+      el.appendChild(btn);
+    }
+  }, 50);
 }
 
 function openPorteSeuilTherapeute(porte) {
@@ -7527,6 +7537,7 @@ function showWeeklyBilan() {
     + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.6);line-height:1.6;margin-bottom:8px;max-width:280px;margin-left:auto;margin-right:auto;">' + parole + '</div>'
     + '<div style="text-align:center;font-family:Amiri,serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.3);margin-bottom:24px;">Astaghfirull\u00e2h, astaghfirull\u00e2h, astaghfirull\u00e2h.</div>'
     + '</div>'
+    + '<div onclick="shareNiyyah()" style="margin:12px 0;padding:11px;border-radius:10px;border:1px solid rgba(200,168,75,0.2);text-align:center;cursor:pointer;font-family:\'Cormorant Garamond\',serif;font-size:14px;color:rgba(200,168,75,0.7);letter-spacing:0.05em;">Partager Niyyah \u2726</div>'
     + '<button class="weekly-btn" onclick="closeWeeklyBilan()" style="width:100%;padding:15px;border-radius:12px;border:none;background:#C8A84A;color:#2C2E32;font-size:15px;font-weight:700;cursor:pointer;font-family:\'Cormorant Garamond\',serif;letter-spacing:0.05em;">'
     + '\u0628\u0650\u0633\u0652\u0645\u0650 \u0627\u0644\u0644\u0651\u064E\u0647\u0650 \u2014 Nouvelle semaine</button>';
   document.getElementById('weeklyOverlay').classList.add('show');
@@ -9212,6 +9223,16 @@ function freemiumShowCode(){ var r=document.getElementById('freemium-code-row');
 function freemiumBuy(){ freemiumShowCode(); showToast('Disponible au lancement \u2014 pendant la beta, entre ton code.'); }
 function freemiumActivate(){ var i=document.getElementById('freemium-code-input'); if(i && unlockPremium(i.value)){ v2ShowToast('Niyyah+ activ\u00e9 \u2726'); setTimeout(function(){ location.reload(); }, 1200); } else { v2ShowToast('Code invalide'); } }
 window.freemiumShowCode=freemiumShowCode; window.freemiumBuy=freemiumBuy; window.freemiumActivate=freemiumActivate;
+function shareNiyyah() {
+  var url = 'https://nabs881-sketch.github.io/niyyah-app/';
+  var text = 'Je progresse spirituellement avec Niyyah — une app islamique francophone unique. Essaie gratuitement :';
+  if (navigator.share) {
+    navigator.share({ title: 'Niyyah', text: text, url: url });
+  } else {
+    navigator.clipboard.writeText(text + ' ' + url).then(function(){ v2ShowToast('Lien copié ✦'); });
+  }
+}
+window.shareNiyyah = shareNiyyah;
 function showQuotaLimit(kind){
   var title, sub, hint;
   if (kind === 'regard') {
@@ -13421,6 +13442,10 @@ function v2OpenSettings() {
         }
       </div>
 
+
+      <div onclick="shareNiyyah()" style="margin-top:12px;padding:13px 16px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:rgba(200,168,75,0.05);text-align:center;cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:15px;color:#C8A84A;letter-spacing:0.05em;">
+        Partager Niyyah ✦
+      </div>
 
       <div style="margin-top:14px;background:#1a1a1a;border:1px solid rgba(255,255,255,0.05);border-radius:12px;padding:16px;">
         <div style="font-size:12px;letter-spacing:0.28em;color:rgba(212,175,55,0.65);text-transform:uppercase;font-family:'Cormorant Garamond',serif;margin-bottom:10px;text-align:center;">${T.settings_mentions}</div>
