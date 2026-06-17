@@ -7480,6 +7480,7 @@ function showWeeklyBilan() {
   if (!_isPrem) {
     if (!canUseBilan()) {
       // Afficher paywall au lieu du bilan IA → pool statique uniquement
+      openFreemium('bilan');
       _isPrem = false;
     } else {
       _incTrialCount('niyyah_trial_bilan');
@@ -9189,7 +9190,16 @@ function checkWeeklyBilan() {
 }
 const FREEMIUM_CODES = [];
 const _freemiumUnlocked = safeGetItem('niyyah_pro') === '1';
-function openFreemium() {
+function openFreemium(context) {
+  var accroches = {
+    'regard':      'Tu viens de voir ce que Niyyah sait faire.',
+    'scan':        'Chaque objet peut porter une niyyah.',
+    'bilan':       'Ta semaine mérite une vraie lecture.',
+    'connaissance':'Trente jours. Tu es là. Continue.',
+    'default':     'Tu as commencé quelque chose. Ne t\u2019arrête pas là.'
+  };
+  var el = document.getElementById('i18n-freemium-sub');
+  if (el) el.textContent = accroches[context] || accroches['default'];
   document.getElementById('freemiumOverlay').classList.add('show');
   document.body.style.overflow = 'hidden';
 }
@@ -9226,7 +9236,7 @@ function showQuotaLimit(kind){
     + '<div class="ql-title">' + title + '</div>'
     + '<div class="ql-sub">' + sub + '</div>'
     + '<div class="ql-when">' + hint + '</div>'
-    + '<button class="ql-premium" onclick="closeQuotaLimit();openFreemium();">D\u00e9bloquer Niyyah+ \u2726</button>'
+    + '<button class="ql-premium" onclick="closeQuotaLimit();openFreemium(\'' + kind + '\');">D\u00e9bloquer Niyyah+ \u2726</button>'
     + '<button class="ql-close" onclick="closeQuotaLimit()">Fermer</button>'
     + '</div>';
   document.body.appendChild(ov);
@@ -9275,9 +9285,7 @@ function canUseBilan() {
   return isPremium() || _getTrialCount('niyyah_trial_bilan') < 1;
 }
 function _showPaywallConnaissance() {
-  var daysLeft = Math.max(0, 30 - Math.floor(_daysSinceInstall()));
-  var ov = document.getElementById('freemiumOverlay');
-  if (ov) ov.classList.add('show');
+  openFreemium('connaissance');
 }
 window.isKnowledgeUnlocked = isKnowledgeUnlocked;
 window.canUseRegarde = canUseRegarde;
@@ -10332,7 +10340,7 @@ function onboardRender() {
     if (content && ONBOARD_SLIDES[slideIdx]) content.innerHTML = ONBOARD_SLIDES[slideIdx]();
     if (slideIdx === 3 && !isPremium() && safeGetItem('niyyah_plus_intro') !== '1') {
       safeSetItem('niyyah_plus_intro', '1');
-      setTimeout(function(){ openFreemium(); }, 350);
+      setTimeout(function(){ openFreemium('default'); }, 350);
     }
     if (content) content.querySelectorAll('.ob-rise').forEach(function(el,k){ el.style.animationDelay=(k*0.07)+'s'; });
     var _obScreen = document.getElementById('onboardScreen');
@@ -13243,7 +13251,7 @@ function openNiyyahMenu() {
   backdrop.onclick = function(e) { if (e.target === backdrop) closeNiyyahMenu(); };
   backdrop.innerHTML = '<div class="niyyah-menu-panel">'
     + '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;"><div style="font-family:var(--serif);font-size:20px;color:#C8A84A;">Niyyah</div><button onclick="closeNiyyahMenu()" aria-label="Fermer le menu" style="background:none;border:none;color:var(--t3);font-size:22px;cursor:pointer;min-width:44px;min-height:44px;">\u2715</button></div>'
-    + '<div onclick="closeNiyyahMenu();openFreemium();" style="display:flex;align-items:center;gap:10px;padding:14px 16px;margin-bottom:14px;border-radius:14px;border:1px solid rgba(200,168,75,0.35);background:linear-gradient(180deg,rgba(200,168,74,0.12),rgba(138,106,31,0.05));cursor:pointer;"><span style="font-family:\'Cormorant Garamond\',var(--serif);font-weight:600;font-size:16px;color:#EBD79A;">Niyyah Premium</span></div>'
+    + '<div onclick="closeNiyyahMenu();openFreemium(\'default\');" style="display:flex;align-items:center;gap:10px;padding:14px 16px;margin-bottom:14px;border-radius:14px;border:1px solid rgba(200,168,75,0.35);background:linear-gradient(180deg,rgba(200,168,74,0.12),rgba(138,106,31,0.05));cursor:pointer;"><span style="font-family:\'Cormorant Garamond\',var(--serif);font-weight:600;font-size:16px;color:#EBD79A;">Niyyah Premium</span></div>'
     /* Langue masquée pour beta FR — réactiver quand EN/AR prêts
     + '<div class="niyyah-menu-section">Langue</div>'
     + '<div class="niyyah-menu-item" onclick="v2SetLanguage(\'fr\');closeNiyyahMenu()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>' + (V2_LANG === 'fr' ? '<strong>Fran\u00e7ais</strong>' : 'Fran\u00e7ais') + '</div>'
