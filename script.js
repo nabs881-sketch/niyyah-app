@@ -3443,7 +3443,7 @@ function openInfoSheet(label, arabic, phonetic, translation, event) {
   document.getElementById('infoPhonetic').textContent = phonetic || '';
   document.getElementById('infoTranslation').textContent = translation || '';
   var srcEl = document.getElementById('infoSource');
-  if (srcEl) { srcEl.textContent = source; srcEl.style.display = source ? '' : 'none'; }
+  if (srcEl) { srcEl.textContent = source ? '\u2014 ' + source : ''; }
   document.getElementById('infoSheet').style.display = 'flex';
   document.body.style.overflow = 'hidden';
 }
