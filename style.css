@@ -703,38 +703,6 @@ to {
   line-height:1.5;
   white-space:normal
 }
-.item-label.priority-fard {
-  position:relative;
-  padding-left:16px
-}
-.item-label.priority-fard::before {
-  content:'';
-  position:absolute;
-  left:0;
-  top:50%;
-  transform:translateY(-50%);
-  width:8px;
-  height:8px;
-  border-radius:50%;
-  background:linear-gradient(135deg,#c8a84b,#e8cc6a);
-  box-shadow:0 0 5px rgba(200,168,75,0.5)
-}
-.item-label.priority-sunnah {
-  position:relative;
-  padding-left:14px
-}
-.item-label.priority-sunnah::before {
-  content:'';
-  position:absolute;
-  left:0;
-  top:50%;
-  transform:translateY(-50%);
-  width:6px;
-  height:6px;
-  border-radius:50%;
-  background:var(--green);
-  box-shadow:0 0 4px rgba(200,168,74,0.5)
-}
 @keyframes haloPulse {
   0%,100% {
   transform:scale(1);
