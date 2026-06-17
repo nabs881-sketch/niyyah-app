@@ -18869,8 +18869,8 @@ function openVueTibbJour() {
     main.innerHTML = '<div style="padding:20px 16px;text-align:center;">'
       + '<div style="font-family:\'Amiri\',serif;font-size:28px;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:8px;">' + (t.remede_ar || '') + '</div>'
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-weight:700;color:#C8A84A;margin-bottom:4px;">' + (t.remede_fr || '') + '</div>'
-      + '<div style="font-size:12px;color:rgba(200,168,74,0.5);margin-bottom:20px;letter-spacing:0.5px;">' + (t.pour_quoi || '') + '</div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;line-height:1.7;color:rgba(240,234,214,0.95);margin-bottom:20px;text-align:left;">' + (t.methode || '') + '</div>'
+      + '<div style="font-size:15px;color:rgba(200,168,74,0.5);margin-bottom:20px;letter-spacing:0.5px;">' + (t.pour_quoi || '') + '</div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;line-height:1.7;color:rgba(240,234,214,0.95);margin-bottom:20px;text-align:left;">' + (t.methode || '') + '</div>'
       + (t.source_hadith ? '<div style="font-size:12px;line-height:1.6;color:rgba(200,168,74,0.6);font-style:italic;margin-bottom:16px;">' + t.source_hadith + '</div>' : '')
       + (t.note_medicale ? '<div style="font-size:12px;line-height:1.5;color:rgba(255,255,255,0.5);background:rgba(200,100,100,0.08);border:1px solid rgba(200,100,100,0.15);border-radius:12px;padding:14px;text-align:left;">\u26A0\uFE0F ' + t.note_medicale + '</div>' : '')
       + '</div>';
