@@ -2056,6 +2056,14 @@ function switchView(name) {
 const accueilBg = ''; // fond géré par CSS
 
 function renderAccueil() {
+  // Avertissement J20 : il reste 10 jours de contenu Connaissance
+  var _dsi = _daysSinceInstall();
+  if (!isPremium() && _dsi >= 20 && _dsi < 30 && !safeGetItem('niyyah_j20_shown')) {
+    safeSetItem('niyyah_j20_shown', '1');
+    setTimeout(function() {
+      showToast('✦ Il te reste ' + Math.ceil(30 - _dsi) + ' jours d\'accès complet — découvre Niyyah+');
+    }, 3000);
+  }
   // Forcer la vue en flex pour remplir tout l'écran sans vide
   const view = document.getElementById('view-accueil');
   const inner = view ? view.querySelector('div') : null;
@@ -7468,6 +7476,15 @@ function showWeeklyBilan() {
   var comparison = _getWeeklyComparison(stats, _bilanCount);
   var _profil = safeGetItem('niyyah_motivation') || 'routine';
   var _isPrem = typeof isPremium === 'function' && isPremium();
+  // Trial bilan : 1 à vie
+  if (!_isPrem) {
+    if (!canUseBilan()) {
+      // Afficher paywall au lieu du bilan IA → pool statique uniquement
+      _isPrem = false;
+    } else {
+      _incTrialCount('niyyah_trial_bilan');
+    }
+  }
   _cleanupPremiumMsgs();
   var _manque = _getZoneManquante(stats.catCounts, _bilanCount);
   var _conseilStatique = _getWeeklyConseil(dominante, stats.catCounts, _bilanCount, _profil);
@@ -7734,6 +7751,7 @@ window.openPodcastPicker = openPodcastPicker;
 var _recitsCoranData = null;
 var _recitsCoranLoading = false;
 function openVueRecitsCoran() {
+  if (!isKnowledgeUnlocked()) { _showPaywallConnaissance(); return; }
   if (_recitsCoranData && _recitsCoranData.length > 0) {
     _renderRecitsCoran(_recitsCoranData);
     return;
@@ -9232,6 +9250,39 @@ function setPremium(bool) {
 window.isPremium = isPremium;
 window.unlockPremium = unlockPremium;
 window.setPremium = setPremium;
+/* ══ FREEMIUM V2 — utilitaires ══ */
+function _daysSinceInstall() {
+  var inst = parseInt(safeGetItem('niyyah_install_date') || '0', 10);
+  if (!inst) return 0;
+  return (Date.now() - inst) / 86400000;
+}
+function isKnowledgeUnlocked() {
+  return isPremium() || _daysSinceInstall() < 30;
+}
+function _getTrialCount(key) {
+  return parseInt(safeGetItem(key) || '0', 10);
+}
+function _incTrialCount(key) {
+  safeSetItem(key, String(_getTrialCount(key) + 1));
+}
+function canUseRegarde() {
+  return isPremium() || _getTrialCount('niyyah_trial_regard') < 3;
+}
+function canUseScanner() {
+  return isPremium() || _getTrialCount('niyyah_trial_scanner') < 3;
+}
+function canUseBilan() {
+  return isPremium() || _getTrialCount('niyyah_trial_bilan') < 1;
+}
+function _showPaywallConnaissance() {
+  var daysLeft = Math.max(0, 30 - Math.floor(_daysSinceInstall()));
+  var ov = document.getElementById('freemiumOverlay');
+  if (ov) ov.classList.add('show');
+}
+window.isKnowledgeUnlocked = isKnowledgeUnlocked;
+window.canUseRegarde = canUseRegarde;
+window.canUseScanner = canUseScanner;
+window.canUseBilan = canUseBilan;
 function isSilentMode() {
   return safeGetItem('niyyah_silent_mode') === 'true';
 }
@@ -17266,10 +17317,16 @@ function regardeCapture() {
     var _rq = safeParseJSON('niyyah_regarde_quota', []);
     var _today = todayKey();
     _rq = _rq.filter(function(d){ return d === _today; });
-    var _rLimit = (typeof isPremium === 'function' && isPremium()) ? 3 : 1;
-    if (_rq.length >= _rLimit) { showQuotaLimit('regard'); return; }
-    _rq.push(_today);
-    safeSetItem('niyyah_regarde_quota', JSON.stringify(_rq));
+    // Trial : 3 scans à vie. Premium : 2/jour.
+    if (!isPremium()) {
+      if (!canUseRegarde()) { showQuotaLimit('regard'); return; }
+      _incTrialCount('niyyah_trial_regard');
+    } else {
+      var _rLimit = 2;
+      if (_rq.length >= _rLimit) { showQuotaLimit('regard'); return; }
+      _rq.push(_today);
+      safeSetItem('niyyah_regarde_quota', JSON.stringify(_rq));
+    }
   }
   window._regardeSurprise = false;
 
@@ -18039,15 +18096,20 @@ function _updateScannerQuotaHint() {
 
 /* ── Capturer et Analyser ── */
 async function scannerCapture() {
-  // Quota scanner : gratuit 3/semaine, premium 3/jour
+  // Quota scanner : trial 3 à vie, premium 2/jour
   var _prem = (typeof isPremium === 'function' && isPremium());
-  var _sq = []; try { _sq = JSON.parse(safeGetItem('niyyah_scanner_quota') || '[]'); } catch(e) { _sq = []; }
-  var _windowMs = _prem ? 86400000 : 7 * 86400000;
-  var _cutoff = new Date(Date.now() - _windowMs).toISOString();
-  _sq = _sq.filter(function(ts){ return ts > _cutoff; });
-  if (!NIYYAH_DEBUG && _sq.length >= 3) { showQuotaLimit('scan'); return; }
-  _sq.push(new Date().toISOString());
-  safeSetItem('niyyah_scanner_quota', JSON.stringify(_sq));
+  if (!_prem) {
+    if (!canUseScanner()) { showQuotaLimit('scan'); return; }
+    _incTrialCount('niyyah_trial_scanner');
+  } else {
+    // Premium : 2/jour
+    var _sq = []; try { _sq = JSON.parse(safeGetItem('niyyah_scanner_quota') || '[]'); } catch(e) { _sq = []; }
+    var _cutoff = new Date(Date.now() - 86400000).toISOString();
+    _sq = _sq.filter(function(ts){ return ts > _cutoff; });
+    if (!NIYYAH_DEBUG && _sq.length >= 2) { showQuotaLimit('scan'); return; }
+    _sq.push(new Date().toISOString());
+    safeSetItem('niyyah_scanner_quota', JSON.stringify(_sq));
+  }
 
   const video   = document.getElementById('scanner-video');
   const canvas  = document.getElementById('scanner-canvas');
@@ -18755,6 +18817,7 @@ function closeVueSavaisTu() {
 window.closeVueSavaisTu = closeVueSavaisTu;
 
 function openVueSavaisTu() {
+  if (!isKnowledgeUnlocked()) { _showPaywallConnaissance(); return; }
   _saveScroll();
   a11yOnOverlayOpen();
   const v = document.getElementById('vue-savais-tu');
@@ -18803,6 +18866,7 @@ function _mergeMashhurat(cb) {
    GHID\u00c2\u2019 — Aliment du jour
    ───────────────────────────────────────────── */
 function openVueGhidaaJour() {
+  if (!isKnowledgeUnlocked()) { _showPaywallConnaissance(); return; }
   _saveScroll();
   a11yOnOverlayOpen();
   var v = document.getElementById('vue-rituel');
@@ -18836,6 +18900,7 @@ window.openVueGhidaaJour = openVueGhidaaJour;
    TIBB — Rem\u00e8de du jour
    ───────────────────────────────────────────── */
 function openVueTibbJour() {
+  if (!isKnowledgeUnlocked()) { _showPaywallConnaissance(); return; }
   _saveScroll();
   a11yOnOverlayOpen();
   var v = document.getElementById('vue-rituel');
@@ -18971,6 +19036,7 @@ function _getLisanMot() {
 }
 
 function openVueLisan(viewDay) {
+  if (!isKnowledgeUnlocked()) { _showPaywallConnaissance(); return; }
   if (!window.LISAN_DATA || window.LISAN_DATA.length === 0) { showToast('Chargement en cours...'); return; }
   var todayDay = _getLisanDay();
   var currentDay = typeof viewDay === 'number' ? viewDay : todayDay;
@@ -19239,6 +19305,7 @@ function openLisanMethode() {
 window.openLisanMethode = openLisanMethode;
 
 function openVueFiqhJour() {
+  if (!isKnowledgeUnlocked()) { _showPaywallConnaissance(); return; }
   _saveScroll();
   a11yOnOverlayOpen();
   var v = document.getElementById('vue-rituel');
@@ -19442,6 +19509,7 @@ function _compagnonsOpenByJour(jour) {
 }
 window._compagnonsOpenByJour = _compagnonsOpenByJour;
 function openVueCompagnon() {
+  if (!isKnowledgeUnlocked()) { _showPaywallConnaissance(); return; }
   loadCompagnons(function() {
     if (!COMPAGNONS || !COMPAGNONS.length) { showToast('Erreur de chargement'); return; }
     var c = getCompagnonJour();
@@ -19517,6 +19585,7 @@ function _prophetesOpenByJour(jour) {
 }
 window._prophetesOpenByJour = _prophetesOpenByJour;
 function openVuePropheteJour() {
+  if (!isKnowledgeUnlocked()) { _showPaywallConnaissance(); return; }
   loadProphetes(function() {
     if (!PROPHETES || !PROPHETES.length) { showToast('Erreur de chargement'); return; }
     var p = getPropheteJour();
@@ -19807,6 +19876,7 @@ const SIRA = {
   },
   _closeBtn: '<button onclick="document.getElementById(\'sira-overlay\').remove();_restoreScroll();a11yOnOverlayClose();" style="position:fixed;top:16px;right:16px;z-index:10000;background:none;border:none;color:#C8A84A;font-size:32px;width:32px;height:32px;cursor:pointer;line-height:1;">\u2715</button>',
   async openDetail() {
+    if (!isKnowledgeUnlocked()) { _showPaywallConnaissance(); return; }
     _saveScroll();
   a11yOnOverlayOpen();
     await this.load();
