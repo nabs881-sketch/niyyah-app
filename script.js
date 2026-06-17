@@ -2604,16 +2604,6 @@ function renderLevel(levelId) {
     }
     _block = { id: 'reveil', label: t('block_reveil') };
   }
-  var _bandeauSub = t('bandeau_sub');
-  if (_block.id === 'nuit') _bandeauSub = t('bandeau_nuit');
-  else if (_block.id === 'qiyam') _bandeauSub = state._unlocked && state._unlocked.includes(4) ? t('bandeau_qiyam') : t('bandeau_nuit');
-  html += '<div style="display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,rgba(200,168,75,0.15),rgba(200,168,75,0.05));border:1px solid rgba(200,168,75,0.35);border-radius:12px;padding:14px 18px;margin:0 0 20px;">'
-    + '<div style="width:3px;height:36px;background:linear-gradient(180deg,#C8A84A,#E0C870);border-radius:2px;flex-shrink:0;"></div>'
-    + '<div>'
-    + '<div style="font-size:15px;font-weight:700;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;letter-spacing:0.5px;">' + _block.label + '</div>'
-    + '<div style="font-size:12px;color:var(--t3);margin-top:2px;">' + _bandeauSub + '</div>'
-    + '</div>'
-    + '</div>';
   // [jour complet] Pratique affiche toujours toute la journée — pas de toggle moment
   const _currentBlock = _block.id;
   level.sections.forEach(section => {
