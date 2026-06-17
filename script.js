@@ -18277,6 +18277,7 @@ async function scannerAnalyzeImage(imageData) {
     if (_f3 !== _f1 && _f3 !== _f2) _fSuggs.push(_f3);
     return { category: 'INDETERMINE', suggestions: _fSuggs, niyyahDirect: _fSuggs[0] };
   }
+}
 
 
 
