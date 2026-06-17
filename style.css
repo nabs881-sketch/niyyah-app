@@ -842,6 +842,9 @@ to {
   pointer-events:none;
   width:calc(100% - 48px);
   max-width:340px;
+  max-height:70vh;
+  overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
   background:#0a0a0f;
   border:1px solid rgba(200,168,75,0.3);
   border-radius:20px;
