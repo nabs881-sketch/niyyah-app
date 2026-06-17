@@ -10717,7 +10717,7 @@ const V2_I18N = {
     import_confirm: 'Restaurer {n} cl\u00e9s ? Les donn\u00e9es actuelles seront remplac\u00e9es.',
     wird_matin: 'WIRD DU MATIN', wird_soir: 'WIRD DU SOIR', wird_daily: 'WIRD QUOTIDIEN',
     wird_what: 'C\u2019est quoi le wird ?', wird_desc: 'Le wird est un ensemble d\u2019invocations quotidiennes tir\u00e9es du Coran et de la Sunnah, r\u00e9cit\u00e9es chaque matin apr\u00e8s Fajr et chaque soir apr\u00e8s Asr. Il prot\u00e8ge, purifie le c\u0153ur et rapproche d\u2019Allah.',
-    prayer_fajr_sub: 'Pri\u00e8re de l\u2019aube', prayer_dhuhr_sub: 'Pri\u00e8re du milieu du jour', prayer_asr_sub: 'Pri\u00e8re de l\u2019apr\u00e8s-midi', prayer_maghrib_sub: 'Pri\u00e8re du coucher du soleil', prayer_isha_sub: 'Pri\u00e8re de la nuit',
+    prayer_fajr_sub: 'L\u2019aube', prayer_dhuhr_sub: 'Le midi', prayer_asr_sub: 'L\u2019heure dor\u00e9e', prayer_maghrib_sub: 'Le couchant', prayer_isha_sub: 'Le voile de la nuit',
     bilan_7j_title: 'Bilan des 7 derniers soirs',
     bilan_distrait: 'Distrait', bilan_effort: 'Efforts', bilan_sincere: 'Sinc\u00e8re',
     progression_label: 'MON CHEMIN',
