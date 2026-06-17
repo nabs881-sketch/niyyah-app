@@ -3444,13 +3444,11 @@ function openInfoSheet(label, arabic, phonetic, translation, event) {
   document.getElementById('infoTranslation').textContent = translation || '';
   var srcEl = document.getElementById('infoSource');
   if (srcEl) { srcEl.textContent = source; srcEl.style.display = source ? '' : 'none'; }
-  document.getElementById('infoSheet').classList.add('show');
-  document.getElementById('infoOverlay').classList.add('show');
+  document.getElementById('infoSheet').style.display = 'flex';
   document.body.style.overflow = 'hidden';
 }
 function closeInfoSheet() {
-  document.getElementById('infoSheet').classList.remove('show');
-  document.getElementById('infoOverlay').classList.remove('show');
+  document.getElementById('infoSheet').style.display = 'none';
   document.body.style.overflow = '';
 }
 
