@@ -2643,8 +2643,7 @@ function renderLevel(levelId) {
         html += renderCounter(item, delay);
       } else if (item.prayer) {
         const _pChecked = !!state[item.id];
-        const _pTlCurrent = (!_pChecked && !_firstUncheckedFound) ? (_firstUncheckedFound = true, ' timeline-current') : '';
-        html += renderPrayerItem(item, delay, _pTlCurrent, _pChecked);
+        html += renderPrayerItem(item, delay, '', _pChecked);
       } else if (item.coranPicker) {
         const checked = !!state[item.id];
         html += '<div class="item' + (checked ? ' checked' : '') + '" onclick="toggleItem(\'' + item.id + '\',event)" style="animation-delay:' + delay + 'ms;--i:' + idx + '" id="item-' + item.id + '">'
@@ -2679,7 +2678,6 @@ function renderLevel(levelId) {
           infoBtn = '<button class="btn-info" aria-label="Détails" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openInfoSheet(\'\',\'\',\'\',\'\',event)" data-label="' + labelEsc2 + '" data-arabic="' + arabicEsc2 + '" data-phonetic="' + phoneticEsc + '" data-translation="' + translationEsc + '" title="' + t('btn_see_phonetic') + '"><i>i</i></button>';
         }
         const optionalBadge = '';
-        const _tlCurrent = (!checked && !_firstUncheckedFound) ? (_firstUncheckedFound = true, ' timeline-current') : '';
         const _tlOpacity = checked ? 'opacity:0.3;' : '';
         var _tl = tI(item,'label'), _ts = tI(item,'sub');
         var _isKnowledge = ['savais_tu','fiqh_jour','hadith1','duaa_jour','vie_compagnons','vie_prophetes','quran_read','sira','podcast','recits_coran','lisan','ghidaa_jour','tibb_jour'].indexOf(item.id) !== -1;
@@ -2720,7 +2718,7 @@ function renderLevel(levelId) {
           // Premium luxe render for "Comprendre le Coran"
           var _lisanChecked = checked ? ' checked' : '';
           var _lisanOpacity = checked ? 'opacity:0.35;' : '';
-          html += '<div class="item' + fridayCls + _lisanChecked + _tlCurrent + '" onclick="' + customClick + '" style="' + _lisanOpacity + 'background:linear-gradient(135deg,rgba(200,168,75,0.10),rgba(200,168,75,0.04));border:1px solid rgba(200,168,75,0.25);border-radius:14px;padding:16px 14px;margin-top:6px;margin-bottom:6px;position:relative;transition:box-shadow 0.2s,border-color 0.2s;animation-delay:' + delay + 'ms;--i:' + idx + '" id="item-' + item.id + '" onmouseenter="this.style.boxShadow=\'0 0 16px rgba(200,168,75,0.15)\';this.style.borderColor=\'rgba(200,168,75,0.45)\'" onmouseleave="this.style.boxShadow=\'none\';this.style.borderColor=\'rgba(200,168,75,0.25)\'">'
+          html += '<div class="item' + fridayCls + _lisanChecked + '" onclick="' + customClick + '" style="' + _lisanOpacity + 'background:linear-gradient(135deg,rgba(200,168,75,0.10),rgba(200,168,75,0.04));border:1px solid rgba(200,168,75,0.25);border-radius:14px;padding:16px 14px;margin-top:6px;margin-bottom:6px;position:relative;transition:box-shadow 0.2s,border-color 0.2s;animation-delay:' + delay + 'ms;--i:' + idx + '" id="item-' + item.id + '" onmouseenter="this.style.boxShadow=\'0 0 16px rgba(200,168,75,0.15)\';this.style.borderColor=\'rgba(200,168,75,0.45)\'" onmouseleave="this.style.boxShadow=\'none\';this.style.borderColor=\'rgba(200,168,75,0.25)\'">'
             + '<div style="position:absolute;top:8px;left:10px;font-size:12px;color:rgba(200,168,75,0.4);">\u2727</div>'
             + _pathBadge
             + '<div class="check-circle"' + _checkClick + '><svg class="check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>'
@@ -2732,7 +2730,7 @@ function renderLevel(levelId) {
             + shareBtn
             + '</div>';
         } else {
-        html += '<div class="item' + fridayCls + (checked ? ' checked' : '') + _tlCurrent + '" onclick="' + customClick + '" style="' + _knowledgeBg + _tlOpacity + 'animation-delay:' + delay + 'ms;--i:' + idx + '" id="item-' + item.id + '">' + _pathBadge + '<div class="check-circle"' + _checkClick + '><svg class="check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-body"><div class="item-label">' + _tl + optionalBadge + '</div>' + (_ts ? '<div class="item-sub">' + (_ts.includes('\u00b7') ? _ts.split('\u00b7')[0].trim() : _ts) + '</div>' : '') + arabicHtml + '</div>' + shareBtn + audioBtn + infoBtn + '</div>';
+        html += '<div class="item' + fridayCls + (checked ? ' checked' : '') + '" onclick="' + customClick + '" style="' + _knowledgeBg + _tlOpacity + 'animation-delay:' + delay + 'ms;--i:' + idx + '" id="item-' + item.id + '">' + _pathBadge + '<div class="check-circle"' + _checkClick + '><svg class="check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-body"><div class="item-label">' + _tl + optionalBadge + '</div>' + (_ts ? '<div class="item-sub">' + (_ts.includes('\u00b7') ? _ts.split('\u00b7')[0].trim() : _ts) + '</div>' : '') + arabicHtml + '</div>' + shareBtn + audioBtn + infoBtn + '</div>';
         }
       }
     });
@@ -2770,10 +2768,6 @@ function renderLevel(levelId) {
       const itemId = el.id.replace('item-', '');
       if (state[itemId]) {
         el.style.opacity = '0.3';
-        el.classList.remove('timeline-current');
-        el.style.background = '';
-        el.style.borderLeft = '';
-        el.style.paddingLeft = '';
       }
     });
   }, 60);
@@ -3129,22 +3123,6 @@ function toggleItem(id, event) {
   const currentItem = document.getElementById('item-' + id);
   if (_isMainItem && currentItem && state[id]) {
     currentItem.style.opacity = '0.3';
-    currentItem.classList.remove('timeline-current');
-    currentItem.style.background = '';
-    currentItem.style.borderLeft = '';
-    currentItem.style.paddingLeft = '';
-    const allItems = Array.from(document.querySelectorAll('.item'));
-    const curIdx = allItems.indexOf(currentItem);
-    for (let i = curIdx + 1; i < allItems.length; i++) {
-      const itemId = allItems[i].id.replace('item-', '');
-      if (!state[itemId]) {
-        allItems[i].classList.add('timeline-current');
-        allItems[i].style.background = 'rgba(200,168,74,0.08)';
-        allItems[i].style.borderLeft = '3px solid #C8A84A';
-        allItems[i].style.paddingLeft = '13px';
-        break;
-      }
-    }
   }
   checkLevelCompletion(currentLevel);
   updateGlobalProgress();
