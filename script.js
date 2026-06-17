@@ -7804,9 +7804,9 @@ function _openRecitDetail(num) {
       var txt = T(p.content);
       if (!txt) return;
       if (p.type === 'italic') {
-        html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;font-style:italic;color:rgba(200,168,75,0.85);line-height:1.85;margin-bottom:22px;text-align:center;">' + txt + '</div>';
+        html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-style:italic;color:rgba(200,168,75,0.85);line-height:1.85;margin-bottom:22px;text-align:center;">' + txt + '</div>';
       } else {
-        html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:19px;color:rgba(229,224,220,0.85);line-height:1.9;margin-bottom:22px;">' + txt + '</div>';
+        html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;color:rgba(229,224,220,0.85);line-height:1.9;margin-bottom:22px;">' + txt + '</div>';
       }
     });
   }
@@ -7814,7 +7814,7 @@ function _openRecitDetail(num) {
     var med = T(recit.meditation);
     if (med) {
       html += '<div style="margin:24px 0;padding:16px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.15);border-radius:12px;text-align:center;">';
-      html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;font-style:italic;color:#C8A84A;line-height:1.8;">' + med + '</div>';
+      html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;font-style:italic;color:#C8A84A;line-height:1.8;">' + med + '</div>';
       html += '</div>';
     }
   }
@@ -7904,9 +7904,9 @@ function _openRecitReadOnly(num) {
       var txt = T(p.content);
       if (!txt) return;
       if (p.type === 'italic') {
-        html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;font-style:italic;color:rgba(200,168,75,0.85);line-height:1.85;margin-bottom:22px;text-align:center;">' + txt + '</div>';
+        html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-style:italic;color:rgba(200,168,75,0.85);line-height:1.85;margin-bottom:22px;text-align:center;">' + txt + '</div>';
       } else {
-        html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:19px;color:rgba(229,224,220,0.85);line-height:1.9;margin-bottom:22px;">' + txt + '</div>';
+        html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;color:rgba(229,224,220,0.85);line-height:1.9;margin-bottom:22px;">' + txt + '</div>';
       }
     });
   }
@@ -7914,7 +7914,7 @@ function _openRecitReadOnly(num) {
     var med = T(recit.meditation);
     if (med) {
       html += '<div style="margin:24px 0;padding:16px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.15);border-radius:12px;text-align:center;">';
-      html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;font-style:italic;color:#C8A84A;line-height:1.8;">' + med + '</div>';
+      html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;font-style:italic;color:#C8A84A;line-height:1.8;">' + med + '</div>';
       html += '</div>';
     }
   }
@@ -19259,8 +19259,8 @@ function openVueFiqhJour() {
     main.innerHTML = '<div style="padding:20px 16px;text-align:center;">'
       + (rule.categorie ? '<div class="fiqh-categorie">' + rule.categorie.toUpperCase() + '</div>' : '')
       + (rule.sous_theme ? '<div style="font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:16px;">' + rule.sous_theme + '</div>' : '')
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;line-height:1.7;color:rgba(240,234,214,0.95);margin-bottom:20px;">' + (rule.regle || '') + '</div>'
-      + (rule.explication ? '<div style="font-size:14px;line-height:1.6;color:rgba(255,255,255,0.6);margin-bottom:20px;font-style:italic;">' + rule.explication + '</div>' : '')
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;line-height:1.7;color:rgba(240,234,214,0.95);margin-bottom:20px;">' + (rule.regle || '') + '</div>'
+      + (rule.explication ? '<div style="font-size:17px;line-height:1.6;color:rgba(255,255,255,0.6);margin-bottom:20px;font-style:italic;">' + rule.explication + '</div>' : '')
       + (rule.source ? '<div style="font-size:12px;color:rgba(200,168,74,0.6);letter-spacing:0.1em;">\u2014 ' + rule.source + ' \u2014</div>' : '')
       + (rule.ecole ? '<div style="font-size:12px;color:rgba(200,168,74,0.4);margin-top:8px;letter-spacing:1px;">' + rule.ecole.toUpperCase() + '</div>' : '')
       + ((rule.ecole && !/consensus|majorit/i.test(rule.ecole)) ? '<div style="font-size:11px;line-height:1.5;color:rgba(255,255,255,0.45);font-style:italic;margin-top:10px;">Position propre \u00e0 cette \u00e9cole ; d\'autres \u00e9coles peuvent diverger.</div>' : '')
@@ -19550,7 +19550,7 @@ function _renderVersetProgress(main) {
       + '<div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(200,168,74,0.45);margin-bottom:14px;">Verset \u00e0 m\u00e9diter</div>'
       + '<div class="fiqh-categorie">' + (vj.ref || '').toUpperCase() + '</div>'
       + '<div style="font-family:\'Amiri\',serif;font-size:24px;line-height:2;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:24px;">' + vj.arabe + '</div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;line-height:1.7;color:rgba(240,234,214,0.95);font-style:italic;margin-bottom:20px;">' + vj.traduction + '</div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;line-height:1.7;color:rgba(240,234,214,0.95);font-style:italic;margin-bottom:20px;">' + vj.traduction + '</div>'
       + (vj.sourate_fr ? '<div style="font-size:12px;color:rgba(200,168,74,0.6);letter-spacing:0.1em;margin-bottom:20px;">\u2014 ' + vj.sourate_fr + ' \u2014</div>' : '')
       + '<div style="display:flex;align-items:center;justify-content:center;gap:16px;">'
       + '<button onclick="_versetNav(-1)" style="padding:8px 16px;border-radius:10px;border:1px solid rgba(200,168,74,' + (n > 1 ? '0.4' : '0.1') + ');background:transparent;color:' + (n > 1 ? '#C8A84A' : 'rgba(200,168,74,0.2)') + ';font-size:13px;cursor:pointer;">\u25C0 Pr\u00e9c.</button>'
