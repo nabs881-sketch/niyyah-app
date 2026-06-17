@@ -818,6 +818,10 @@ to {
   font-size:15px;
   font-weight:600;
   font-style:italic;
+  pointer-events:none;
+}
+.btn-info svg {
+  pointer-events:none;
 }
 .btn-info::before {
   content:'';
