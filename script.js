@@ -10606,7 +10606,7 @@ const V2_I18N = {
     nafs_observed_today: '✓ Observé aujourd\'hui', nafs_observe_btn: 'Je l\'ai ressenti aujourd\'hui',
     journal_niyyah_empty: 'Tes premières intentions apparaîtront ici ✦', journal_regarde_empty: 'Tes premiers Regards apparaîtront ici ✦',
     ikhlas_earned: 'Tu as mérité cette intention ✦', tawba_door: '✦ La porte est toujours ouverte', tawba_resume: 'Reprendre le chemin',
-    note_saved: 'Enregistré ✦', scanner_analyzing: 'Analyse en cours…', journal_voice_soon: 'Journal de l\'Âme — Prochainement ✦',
+    note_saved: 'Enregistré ✦', scanner_analyzing: 'Analyse en cours…',
     scanner_adopt: 'Adopter cette suggestion', scanner_retry_label: 'Rescanner',
     journal_niyyah_title: '✦ Mes Niyyah', journal_regards_title: '✦ Mes Regards',
     link_see_regards: 'Voir mes Regards →', link_see_niyyah: 'Voir mes Niyyah →',
@@ -10862,7 +10862,7 @@ const V2_I18N = {
     nafs_observed_today: '✓ Observed today', nafs_observe_btn: 'I felt it today',
     journal_niyyah_empty: 'Your first intentions will appear here ✦', journal_regarde_empty: 'Your first Regards will appear here ✦',
     ikhlas_earned: 'You have earned this intention ✦', tawba_door: '✦ The door is always open', tawba_resume: 'Resume the path',
-    note_saved: 'Saved ✦', scanner_analyzing: 'Analyzing…', journal_voice_soon: 'Soul Journal — Coming soon ✦',
+    note_saved: 'Saved ✦', scanner_analyzing: 'Analyzing…',
     scanner_adopt: 'Adopt this suggestion', scanner_retry_label: 'Rescan',
     journal_niyyah_title: '✦ My Niyyah', journal_regards_title: '✦ My Regards',
     link_see_regards: 'See my Regards →', link_see_niyyah: 'See my Niyyah →',
@@ -11095,7 +11095,7 @@ const V2_I18N = {
     nafs_observed_today: '', nafs_observe_btn: '',
     journal_niyyah_empty: '', journal_regarde_empty: '',
     ikhlas_earned: '', tawba_door: '', tawba_resume: '',
-    note_saved: '', scanner_analyzing: '', journal_voice_soon: '',
+    note_saved: '', scanner_analyzing: '',
     scanner_adopt: '', scanner_retry_label: '',
     journal_niyyah_title: '', journal_regards_title: '',
     link_see_regards: '', link_see_niyyah: '',
@@ -18282,11 +18282,6 @@ async function scannerAnalyzeImage(imageData) {
 
 
 
-// HOOK: Journal Vocal
-function v2JournalRecord() {
-  v2ShowToast(t('journal_voice_soon'));
-}
-}
 
 
 
