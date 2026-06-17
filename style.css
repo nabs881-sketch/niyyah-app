@@ -698,7 +698,7 @@ to {
 }
 .item-sub {
   font-size:14px;
-  color:var(--t3);
+  color:rgba(255,255,255,0.55);
   margin-top:3px;
   line-height:1.5;
   white-space:normal
@@ -4303,7 +4303,7 @@ to {
 
 .item-label { color: #E8DCC8; }
 .item.checked .item-label { color: rgba(184,168,136,0.35); }
-.item-sub { color: #9A8E7A; font-size: 13px; }
+.item-sub { color: rgba(255,255,255,0.55); font-size: 13px; }
 .item-arabic { color: #C4A870; }
 
 /* Nav bar */
