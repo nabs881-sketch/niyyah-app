@@ -2664,7 +2664,7 @@ function renderLevel(levelId) {
           const arabicEsc2 = (item.arabic||'').replace(/"/g,'&quot;');
           const hadithEsc = item.hadith.replace(/"/g,'&quot;');
           const sourceEsc = (item.source||'').replace(/"/g,'&quot;');
-          infoBtn = '<button class="btn-info" aria-label="Détails" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openInfoSheet(\'\',\'\',\'\',\'\',event)" data-label="' + labelEsc2 + '" data-arabic="' + arabicEsc2 + '" data-phonetic="" data-translation="' + hadithEsc + '" title="' + t('btn_why') + '"><i>i</i></button>';
+          infoBtn = '<button class="btn-info" aria-label="Détails" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openInfoSheet(\'\',\'\',\'\',\'\',event)" data-label="' + labelEsc2 + '" data-arabic="' + arabicEsc2 + '" data-phonetic="" data-translation="' + hadithEsc + '" data-source="' + sourceEsc + '" title="' + t('btn_why') + '"><i>i</i></button>';
         } else if (item.id === 'lisan') {
           infoBtn = '<button class="btn-info" aria-label="M\u00e9thode" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openLisanMethode()" title="M\u00e9thode"><i>i</i></button>';
         } else if (item.id !== 'arabic' && item.sub && tI(item,'sub').includes('\u00b7') && item.arabic) {
@@ -3426,6 +3426,7 @@ function renderProgression(skipIntro) {
 }
 function openInfoSheet(label, arabic, phonetic, translation, event) {
   if (event) event.stopPropagation();
+  var source = '';
   // Support data-* attributes (évite les problèmes d'échappement inline)
   if (event && event.currentTarget && event.currentTarget.dataset) {
     const d = event.currentTarget.dataset;
@@ -3433,11 +3434,14 @@ function openInfoSheet(label, arabic, phonetic, translation, event) {
     arabic = d.arabic || arabic;
     phonetic = d.phonetic || phonetic;
     translation = d.translation || translation;
+    source = d.source || '';
   }
   document.getElementById('infoLabel').textContent = label || '';
   document.getElementById('infoArabic').textContent = arabic || '';
   document.getElementById('infoPhonetic').textContent = phonetic || '';
   document.getElementById('infoTranslation').textContent = translation || '';
+  var srcEl = document.getElementById('infoSource');
+  if (srcEl) { srcEl.textContent = source; srcEl.style.display = source ? '' : 'none'; }
   document.getElementById('infoSheet').classList.add('show');
   document.getElementById('infoOverlay').classList.add('show');
   document.body.style.overflow = 'hidden';
