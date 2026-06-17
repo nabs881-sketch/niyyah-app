@@ -9266,10 +9266,10 @@ function _incTrialCount(key) {
   safeSetItem(key, String(_getTrialCount(key) + 1));
 }
 function canUseRegarde() {
-  return isPremium() || _getTrialCount('niyyah_trial_regard') < 3;
+  return isPremium() || _getTrialCount('niyyah_trial_regard') < 2;
 }
 function canUseScanner() {
-  return isPremium() || _getTrialCount('niyyah_trial_scanner') < 3;
+  return isPremium() || _getTrialCount('niyyah_trial_scanner') < 2;
 }
 function canUseBilan() {
   return isPremium() || _getTrialCount('niyyah_trial_bilan') < 1;
