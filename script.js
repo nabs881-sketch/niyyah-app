@@ -2569,7 +2569,7 @@ function renderLevel(levelId) {
         var _aEsc = fi.arabic.replace(/"/g,'&quot;');
         var _pEsc = (fi.phonetic||'').replace(/"/g,'&quot;');
         var _tEsc = (fi.translation||'').replace(/"/g,'&quot;');
-        fitems += '<button class="btn-info" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openInfoSheet(\'\',\'\',\'\',\'\',event);event.stopPropagation();" data-label="' + _lEsc + '" data-arabic="' + _aEsc + '" data-phonetic="' + _pEsc + '" data-translation="' + _tEsc + '" title="' + t('btn_details') + '" style="flex-shrink:0;"><i>i</i></button>';
+        fitems += '<button class="btn-info" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openInfoSheet(\'\',\'\',\'\',\'\',event);event.stopPropagation();" data-label="' + _lEsc + '" data-arabic="' + _aEsc + '" data-phonetic="' + _pEsc + '" data-translation="' + _tEsc + '" title="' + t('btn_details') + '" style="flex-shrink:0;"><i style="pointer-events:none">i</i></button>';
       }
       fitems += '</div>';
       fitems += '<div class="friday-item-hadith">' + fi.hadith + '</div>';
@@ -2657,16 +2657,16 @@ function renderLevel(levelId) {
         const fridayCls = item.isFriday ? ' friday-item' : '';
         const arabicHtml = item.arabic ? '<div class="item-arabic">' + item.arabic + '</div>' : '';
         const audioSrc = Array.isArray(item.audio) ? JSON.stringify(item.audio).replace(/"/g,"'") : item.audio;
-        const audioBtn = item.audio ? '<button class="btn-audio" aria-label="Écouter" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();playAudio(' + (Array.isArray(item.audio) ? JSON.stringify(item.audio).replace(/"/g,"'") : '\'' + item.audio + '\'') + ',this,event)" title="' + t('btn_listen_recitation') + '"><svg width="12" height="12" viewBox="0 0 24 24" fill="#C8A84A"><polygon points="5 3 19 12 5 21 5 3"/></svg></button>' : '';
+        const audioBtn = item.audio ? '<button class="btn-audio" aria-label="Écouter" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();playAudio(' + (Array.isArray(item.audio) ? JSON.stringify(item.audio).replace(/"/g,"'") : '\'' + item.audio + '\'') + ',this,event)" title="' + t('btn_listen_recitation') + '"><svg width="12" height="12" viewBox="0 0 24 24" fill="#C8A84A" style="pointer-events:none"><polygon points="5 3 19 12 5 21 5 3"/></svg></button>' : '';
         let infoBtn = '';
         if (item.hadith) {
           const labelEsc2 = tI(item,'label').replace(/"/g,'&quot;');
           const arabicEsc2 = (item.arabic||'').replace(/"/g,'&quot;');
           const hadithEsc = item.hadith.replace(/"/g,'&quot;');
           const sourceEsc = (item.source||'').replace(/"/g,'&quot;');
-          infoBtn = '<button class="btn-info" aria-label="Détails" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openInfoSheet(\'\',\'\',\'\',\'\',event)" data-label="' + labelEsc2 + '" data-arabic="' + arabicEsc2 + '" data-phonetic="" data-translation="' + hadithEsc + '" data-source="' + sourceEsc + '" title="' + t('btn_why') + '"><i>i</i></button>';
+          infoBtn = '<button class="btn-info" aria-label="Détails" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openInfoSheet(\'\',\'\',\'\',\'\',event)" data-label="' + labelEsc2 + '" data-arabic="' + arabicEsc2 + '" data-phonetic="" data-translation="' + hadithEsc + '" data-source="' + sourceEsc + '" title="' + t('btn_why') + '"><i style="pointer-events:none">i</i></button>';
         } else if (item.id === 'lisan') {
-          infoBtn = '<button class="btn-info" aria-label="M\u00e9thode" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openLisanMethode()" title="M\u00e9thode"><i>i</i></button>';
+          infoBtn = '<button class="btn-info" aria-label="M\u00e9thode" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openLisanMethode()" title="M\u00e9thode"><i style="pointer-events:none">i</i></button>';
         } else if (item.id !== 'arabic' && item.sub && tI(item,'sub').includes('\u00b7') && item.arabic) {
           const parts = tI(item,'sub').split('·');
           const phonetic = parts[0].trim();
@@ -2675,7 +2675,7 @@ function renderLevel(levelId) {
           const arabicEsc2 = (item.arabic||'').replace(/"/g,'&quot;');
           const phoneticEsc = phonetic.replace(/"/g,'&quot;');
           const translationEsc = translation.replace(/"/g,'&quot;');
-          infoBtn = '<button class="btn-info" aria-label="Détails" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openInfoSheet(\'\',\'\',\'\',\'\',event)" data-label="' + labelEsc2 + '" data-arabic="' + arabicEsc2 + '" data-phonetic="' + phoneticEsc + '" data-translation="' + translationEsc + '" title="' + t('btn_see_phonetic') + '"><i>i</i></button>';
+          infoBtn = '<button class="btn-info" aria-label="Détails" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openInfoSheet(\'\',\'\',\'\',\'\',event)" data-label="' + labelEsc2 + '" data-arabic="' + arabicEsc2 + '" data-phonetic="' + phoneticEsc + '" data-translation="' + translationEsc + '" title="' + t('btn_see_phonetic') + '"><i style="pointer-events:none">i</i></button>';
         }
         const optionalBadge = '';
         const _tlOpacity = checked ? 'opacity:0.3;' : '';
@@ -2874,7 +2874,7 @@ function renderCounter(item, delay) {
   const labelEsc  = tI(item,'label').replace(/'/g, "\\'");
   var _isDhikr = (item.id === 'tasbih' || item.id === 'istighfar');
   const fullscreenBtn = _isDhikr ? '' : '<button class="btn-tasbih-fs" aria-label="Plein écran" onclick="openTasbih(\'' + item.id + '\',' + item.target + ',\'' + labelEsc + '\',\'' + arabicEsc + '\')" title="' + t('btn_fullscreen') + '">⛶</button>';
-  const audioBtn = item.audio ? '<button class="btn-audio" aria-label="Écouter" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();playAudio(' + (Array.isArray(item.audio) ? JSON.stringify(item.audio).replace(/"/g,"'") : '\'' + item.audio + '\'') + ',this,event)" title="' + t('btn_listen_recitation') + '"><svg width="12" height="12" viewBox="0 0 24 24" fill="#C8A84A"><polygon points="5 3 19 12 5 21 5 3"/></svg></button>' : '';
+  const audioBtn = item.audio ? '<button class="btn-audio" aria-label="Écouter" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();playAudio(' + (Array.isArray(item.audio) ? JSON.stringify(item.audio).replace(/"/g,"'") : '\'' + item.audio + '\'') + ',this,event)" title="' + t('btn_listen_recitation') + '"><svg width="12" height="12" viewBox="0 0 24 24" fill="#C8A84A" style="pointer-events:none"><polygon points="5 3 19 12 5 21 5 3"/></svg></button>' : '';
   if (_isDhikr) {
     var _dhikrLabel = done ? (count + ' / ' + item.target + ' \u2713') : (count + ' / ' + item.target);
     return '<div class="item' + (done ? ' checked' : '') + '" style="animation-delay:' + delay + 'ms" id="item-' + item.id + '"><div class="check-circle" id="cb-' + item.id + '" style="' + (done ? 'background:var(--green-grad);border-color:var(--green);box-shadow:0 0 0 4px var(--green-soft),0 0 16px rgba(200,168,74,0.25)' : '') + '"><svg class="check-svg" style="' + (done ? 'opacity:1;transform:scale(1)' : '') + '" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-body"><div class="item-label">' + tI(item,'label') + '</div><div class="item-sub">' + tI(item,'sub') + '</div><div style="font-size:14px;color:rgba(200,168,74,0.6);margin-top:2px;" id="cnt-num-' + item.id + '">' + _dhikrLabel + '</div>' + arabicHtml + '</div>' + audioBtn + '</div>';
@@ -4108,7 +4108,7 @@ function renderWird() {
       const arabEsc = (item.arabic||'').replace(/"/g,'&quot;');
       const srcEsc  = (item.source||'').replace(/"/g,'&quot;');
       const labelEsc = tI(item,'label').replace(/"/g,'&quot;');
-      const infoBtn = `<button class="btn-wird-info" aria-label="Détails" onclick="event.stopPropagation();openInfoSheet('','','','',event)" data-label="${labelEsc}" data-arabic="${arabEsc}" data-phonetic="${phonEsc}" data-translation="${srcEsc}"><i>i</i></button>`;
+      const infoBtn = `<button class="btn-wird-info" aria-label="Détails" onclick="event.stopPropagation();openInfoSheet('','','','',event)" data-label="${labelEsc}" data-arabic="${arabEsc}" data-phonetic="${phonEsc}" data-translation="${srcEsc}"><i style="pointer-events:none">i</i></button>`;
       html += `<div class="wird-item${checked?' checked':''}" onclick="toggleWirdItem('${item.id}',event)"><div class="wird-check"><svg class="wird-check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="wird-body"><div class="wird-label">${tI(item,"label")}</div><div class="wird-sub">${tI(item,"sub")}</div><div class="wird-arabic">${item.arabic}</div>${dupNote}</div><div class="wird-actions">${audioBtn}${infoBtn}</div></div>`;
     });
     html += `<button class="wird-reset-btn" aria-label="${t('settings_reset')}" onclick="resetWirdSession('${session}')">${t('settings_reset')}</button></div>`;
