@@ -3428,8 +3428,10 @@ function openInfoSheet(label, arabic, phonetic, translation, event) {
   if (event) event.stopPropagation();
   var source = '';
   // Support data-* attributes (évite les problèmes d'échappement inline)
-  if (event && event.currentTarget && event.currentTarget.dataset) {
-    const d = event.currentTarget.dataset;
+  if (event && (event.currentTarget || event.target)) {
+    const d = (event.currentTarget && event.currentTarget.dataset)
+      || (event.target && event.target.closest('[data-label]') && event.target.closest('[data-label]').dataset)
+      || {};
     label = d.label || label;
     arabic = d.arabic || arabic;
     phonetic = d.phonetic || phonetic;
