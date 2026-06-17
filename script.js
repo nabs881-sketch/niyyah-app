@@ -18824,9 +18824,9 @@ function openVueGhidaaJour() {
       + '<div style="font-family:\'Amiri\',serif;font-size:28px;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:8px;">' + (g.nom_ar || '') + '</div>'
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-weight:700;color:#C8A84A;margin-bottom:4px;">' + (g.nom_fr || '') + '</div>'
       + '<div style="font-size:12px;color:rgba(200,168,74,0.5);margin-bottom:20px;letter-spacing:1px;">' + (g.statut || '') + '</div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;line-height:1.7;color:rgba(240,234,214,0.95);margin-bottom:20px;">' + (g.bienfaits || '') + '</div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;line-height:1.7;color:rgba(240,234,214,0.95);margin-bottom:20px;">' + (g.bienfaits || '') + '</div>'
       + (g.source_coran_hadith ? '<div style="font-size:12px;line-height:1.6;color:rgba(200,168,74,0.6);font-style:italic;margin-bottom:16px;">' + g.source_coran_hadith + '</div>' : '')
-      + (g.comment_le_consommer ? '<div style="font-size:13px;line-height:1.6;color:rgba(255,255,255,0.6);background:rgba(200,168,74,0.05);border-radius:12px;padding:14px;text-align:left;">\uD83C\uDF7D\uFE0F ' + g.comment_le_consommer + '</div>' : '')
+      + (g.comment_le_consommer ? '<div style="font-size:16px;line-height:1.6;color:rgba(255,255,255,0.6);background:rgba(200,168,74,0.05);border-radius:12px;padding:14px;text-align:left;">\uD83C\uDF7D\uFE0F ' + g.comment_le_consommer + '</div>' : '')
       + '</div>';
   });
 }
