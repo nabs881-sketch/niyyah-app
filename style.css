@@ -1048,13 +1048,11 @@ to {
   opacity:0.85
 }
 .btn-audio {
-  width:28px;
-  height:28px;
-  border-radius:8px;
-  border:1px solid rgba(200,168,74,0.25);
-  background:var(--green-soft);
-  color:var(--green);
-  font-size:15px;
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  border:1.5px solid rgba(200,168,75,0.5);
+  background:rgba(200,168,75,0.08);
   cursor:pointer;
   display:flex;
   align-items:center;
