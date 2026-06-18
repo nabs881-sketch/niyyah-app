@@ -2652,7 +2652,7 @@ function renderLevel(levelId) {
           + '<button class="btn-audio" onclick="openCoranPicker(event)" title="' + t('btn_choose_surah') + '" style="font-size:13px;padding:0 10px;width:auto;white-space:nowrap;">📖 Écouter</button>'
           + '</div>';
       } else {
-        const checked = !!state[item.id];
+        const checked = state[item.id] === true;
         const fridayCls = item.isFriday ? ' friday-item' : '';
         const arabicHtml = item.arabic ? '<div class="item-arabic">' + item.arabic + '</div>' : '';
         const audioSrc = Array.isArray(item.audio) ? JSON.stringify(item.audio).replace(/"/g,"'") : item.audio;
