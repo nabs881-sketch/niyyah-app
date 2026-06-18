@@ -2886,9 +2886,9 @@ function renderCounter(item, delay) {
   const arabicEsc = (item.arabic || '').replace(/'/g, "\\'");
   const labelEsc  = tI(item,'label').replace(/'/g, "\\'");
   var _isDhikr = (item.id === 'tasbih' || item.id === 'istighfar');
-  var _phoneticEscFs = (item.phonetic||'').replace(/'/g,"\\'");
-  var _transEscFs = (item.translation||'').replace(/'/g,"\\'");
-  var _srcEscFs   = (item.source||'').replace(/'/g,"\\'");
+  var _phoneticEscFs = (item.phonetic||'').replace(/\\/g,'\\\\').replace(/'/g,"\\'");
+  var _transEscFs = (item.translation||'').replace(/\\/g,'\\\\').replace(/'/g,"\\'");
+  var _srcEscFs   = (item.source||'').replace(/\\/g,'\\\\').replace(/'/g,"\\'");
   const fullscreenBtn = _isDhikr ? '' : '<button class="btn-tasbih-fs" aria-label="Plein écran" onclick="openTasbih(\'' + item.id + '\',' + item.target + ',\'' + labelEsc + '\',\'' + arabicEsc + '\',\'' + _phoneticEscFs + '\',\'' + _transEscFs + '\',\'' + _srcEscFs + '\')" title="' + t('btn_fullscreen') + '"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C8A84A" stroke-width="1.8" stroke-linecap="round" style="pointer-events:none"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></button>';
   const audioBtn = item.audio ? '<button class="btn-audio" aria-label="Écouter" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();playAudio(' + (Array.isArray(item.audio) ? JSON.stringify(item.audio).replace(/"/g,"'") : '\'' + item.audio + '\'') + ',this,event)" title="' + t('btn_listen_recitation') + '"><svg width="12" height="12" viewBox="0 0 24 24" fill="#C8A84A" style="pointer-events:none"><polygon points="5 3 19 12 5 21 5 3"/></svg></button>' : '';
   if (_isDhikr) {
