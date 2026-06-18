@@ -2620,7 +2620,7 @@ function renderLevel(levelId) {
     html += '<div class="section"><div class="section-header">' + (_sectionArabic ? '<div class="section-arabic">' + _sectionArabic + '</div>' : '') + '<div class="section-name">' + _sectionTitle + '</div><div class="section-line"></div></div>'
       + (section.desc ? '<div class="section-info-block"><div class="section-info-icon" style="color:#C8A84A;font-size:18px;"></div><div><div class="section-info-title">' + t('wird_what') + '</div><div class="section-info-text">' + section.desc + '</div></div></div>' : '');
     const _tlColor = getPrayerTimelineColor();
-    html += '<div class="items-group" style="border-left:2px solid ' + _tlColor + ';padding-left:12px;margin-left:4px;">';
+    html += '<div class="items-group">';
     let _firstUncheckedFound = false;
     var _motivBib = getEffectiveMotiv();
     var _currentVague = parseInt(safeGetItem('niyyah_star_vague') || '0', 10);
