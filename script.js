@@ -2760,7 +2760,7 @@ function renderLevel(levelId) {
       + '</button></div>';
   } else {
     html += '<div style="padding:16px 0 24px;text-align:center;">'
-      + '<div class="btn-next-level-v2" style="opacity:0.5;cursor:default;">'
+      + '<div class="btn-next-level-v2" style="opacity:0.75;cursor:pointer;" onclick="v2GoSanctuaire()">'
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:700;">\u2713 Ma journ\u00e9e compl\u00e8te</div>'
       + '<div style="font-size:12px;font-style:italic;opacity:0.7;margin-top:4px;">Alhamdulill\u0101h</div>'
       + '</div></div>';
