@@ -2644,7 +2644,7 @@ function renderLevel(levelId) {
         const _pChecked = !!state[item.id];
         html += renderPrayerItem(item, delay, '', _pChecked);
       } else if (item.coranPicker) {
-        const checked = !!state[item.id];
+        const checked = state[item.id] === true;
         html += '<div class="item' + (checked ? ' checked' : '') + '" onclick="toggleItem(\'' + item.id + '\',event)" style="animation-delay:' + delay + 'ms;--i:' + idx + '" id="item-' + item.id + '">'
           + '<div class="check-circle"><svg class="check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>'
           + '<div class="item-body"><div class="item-label">' + tI(item,'label') + '</div><div class="item-sub">' + tI(item,'sub') + '</div>'
