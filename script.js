@@ -2776,26 +2776,30 @@ function renderPrayerItem(item, delay, extraClass, forceChecked) {
   const onTime    = !!state[item.id + '_ontime'];
   const fridayCls = item.isFriday ? ' friday-item' : '';
   const arabicHtml = item.arabic ? '<div class="item-arabic">' + item.arabic + '</div>' : '';
-  const _sw = 'width:32px;height:18px;border-radius:9px;display:flex;align-items:center;padding:2px;transition:background 0.2s;flex-shrink:0;';
+  const _sw = 'width:36px;height:20px;border-radius:10px;display:flex;align-items:center;padding:2px;transition:background 0.2s;flex-shrink:0;';
   const _kn = 'width:14px;height:14px;border-radius:50%;transition:margin 0.2s;';
-  const toggle = '<div style="display:flex;align-items:center;gap:4px;flex-shrink:0;" onclick="togglePrayerOnTime(\'' + item.id + '\');event.stopPropagation()">'
-    + '<div style="font-size:12px;color:' + (onTime ? 'var(--green)' : 'var(--t3)') + ';">\u23F0</div>'
+  const _lbl = 'font-family:\'Cormorant Garamond\',serif;font-size:11px;color:rgba(200,168,75,0.45);';
+  const toggle = '<div style="display:flex;flex-direction:column;align-items:center;gap:4px;flex-shrink:0;" onclick="togglePrayerOnTime(\'' + item.id + '\');event.stopPropagation()">'
     + '<div style="' + _sw + 'background:' + (onTime ? 'var(--green)' : 'rgba(255,255,255,0.1)') + ';border:1px solid ' + (onTime ? 'var(--green)' : 'rgba(255,255,255,0.15)') + ';">'
-    + '<div style="' + _kn + 'background:' + (onTime ? '#fff' : 'rgba(255,255,255,0.4)') + ';margin-left:' + (onTime ? '14px' : '0') + ';"></div>'
-    + '</div></div>';
+    + '<div style="' + _kn + 'background:' + (onTime ? '#fff' : 'rgba(255,255,255,0.4)') + ';margin-left:' + (onTime ? '18px' : '0') + ';"></div>'
+    + '</div>'
+    + '<div style="' + _lbl + '">\u00c0 l\u2019heure</div>'
+    + '</div>';
   const atMosquee = !!state[item.id + '_mosquee'];
   const _hideMosq = (item.id === 'dhuhr' && isFriday());
-  const toggleMosquee = _hideMosq ? '' : '<div style="display:flex;align-items:center;gap:4px;flex-shrink:0;" onclick="togglePrayerMosquee(\'' + item.id + '\');event.stopPropagation()">'
-    + '<div style="font-size:12px;color:' + (atMosquee ? '#C8A84A' : 'var(--t3)') + ';">\u{1F54C}</div>'
+  const toggleMosquee = _hideMosq ? '' : '<div style="display:flex;flex-direction:column;align-items:center;gap:4px;flex-shrink:0;" onclick="togglePrayerMosquee(\'' + item.id + '\');event.stopPropagation()">'
     + '<div style="' + _sw + 'background:' + (atMosquee ? '#C8A84A' : 'rgba(255,255,255,0.1)') + ';border:1px solid ' + (atMosquee ? '#C8A84A' : 'rgba(255,255,255,0.15)') + ';">'
-    + '<div style="' + _kn + 'background:' + (atMosquee ? '#fff' : 'rgba(255,255,255,0.4)') + ';margin-left:' + (atMosquee ? '14px' : '0') + ';"></div>'
-    + '</div></div>';
+    + '<div style="' + _kn + 'background:' + (atMosquee ? '#fff' : 'rgba(255,255,255,0.4)') + ';margin-left:' + (atMosquee ? '18px' : '0') + ';"></div>'
+    + '</div>'
+    + '<div style="' + _lbl + '">Mosqu\u00e9e</div>'
+    + '</div>';
   const atJumua = !!state['dhuhr_jumua'];
-  const toggleJumua = (item.id === 'dhuhr' && isFriday()) ? '<div style="display:flex;align-items:center;gap:4px;flex-shrink:0;" onclick="togglePrayerJumua();event.stopPropagation()">'
-    + '<div style="font-size:12px;color:' + (atJumua ? '#46B482' : 'var(--t3)') + ';">\u262A\uFE0F</div>'
+  const toggleJumua = (item.id === 'dhuhr' && isFriday()) ? '<div style="display:flex;flex-direction:column;align-items:center;gap:4px;flex-shrink:0;" onclick="togglePrayerJumua();event.stopPropagation()">'
     + '<div style="' + _sw + 'background:' + (atJumua ? '#46B482' : 'rgba(255,255,255,0.1)') + ';border:1px solid ' + (atJumua ? '#46B482' : 'rgba(255,255,255,0.15)') + ';">'
-    + '<div style="' + _kn + 'background:' + (atJumua ? '#fff' : 'rgba(255,255,255,0.4)') + ';margin-left:' + (atJumua ? '14px' : '0') + ';"></div>'
-    + '</div></div>' : '';
+    + '<div style="' + _kn + 'background:' + (atJumua ? '#fff' : 'rgba(255,255,255,0.4)') + ';margin-left:' + (atJumua ? '18px' : '0') + ';"></div>'
+    + '</div>'
+    + '<div style="' + _lbl + '">Jumu\u02bfa</div>'
+    + '</div>' : '';
   const _tlOpacity = checked ? 'opacity:0.3;' : '';
   return '<div class="item' + fridayCls + (checked ? ' checked' : '') + (extraClass || '') + '" onclick="toggleItem(\'' + item.id + '\',event)" style="' + _tlOpacity + 'animation-delay:' + delay + 'ms;--i:' + delay + '" id="item-' + item.id + '">'
     + '<div class="check-circle"><svg class="check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>'
