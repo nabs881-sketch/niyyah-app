@@ -2856,7 +2856,7 @@ function renderWirdSmartCard(item, delay, origin, currentBlock) {
   const frLabel = isMatin ? t('wird_matin') : t('wird_soir');
   var _rattrapage = (currentBlock && item.canonBlock && currentBlock !== item.canonBlock) ? '<div class="wird-smart-rattrapage">(rattrapage)</div>' : '';
   var _blockStr = currentBlock ? "'" + currentBlock + "'" : 'null';
-  return '<div class="wird-smart-card' + (allDone ? ' done' : '') + '" id="item-' + item.id + '" style="animation-delay:' + delay + 'ms" onclick="window._wirdOrigin=(document.querySelector('.v2-tab.active')||{}).id||'v2nav-priere';_wirdReturnTo=' + _blockStr + ';_currentWirdSession=\'' + item.session + '\';var r=document.getElementById(\'vue-rituel\');if(r)r.classList.add(\'hidden\');v2GoTo(\'wird\');setTimeout(function(){if(typeof renderWird===\'function\')renderWird();},60)">'
+  return '<div class="wird-smart-card' + (allDone ? ' done' : '') + '" id="item-' + item.id + '" style="animation-delay:' + delay + 'ms" onclick="window._wirdOrigin=(document.querySelector(\'.v2-tab.active\')||{}).id||\'v2nav-priere\';_wirdReturnTo=' + _blockStr + ';_currentWirdSession=\'' + item.session + '\';var r=document.getElementById(\'vue-rituel\');if(r)r.classList.add(\'hidden\');v2GoTo(\'wird\');setTimeout(function(){if(typeof renderWird===\'function\')renderWird();},60)">'
     + '<div class="wird-smart-body">'
     + '<div class="wird-smart-arabic">' + arabicLabel + '</div>'
     + '<div class="wird-smart-label">' + frLabel + '</div>'
