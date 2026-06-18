@@ -2338,8 +2338,8 @@ to {
 }
 .tasbih-reset {
   position:absolute;
-  bottom:calc(var(--safe-bot)+44px);
-  left:20px;
+  bottom:calc(var(--safe-bot)+16px);
+  left:16px;
   width:34px;
   height:34px;
   border-radius:50%;
