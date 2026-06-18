@@ -2881,6 +2881,7 @@ function renderWirdSmartCard(item, delay, origin, currentBlock) {
 
 function openTasbihFromEl(el) {
   var id = el.dataset.tid;
+  if (id === 'tasbih') { openTasbihModal(); return; }
   var target = parseInt(el.dataset.ttarget, 10);
   var label = el.dataset.tlabel || '';
   var arabic = el.dataset.tarabic || '';
