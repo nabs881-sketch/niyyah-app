@@ -964,16 +964,32 @@ function renderDefiOverlay() {
   const today = getTodayStr();
   const dejaCoche = state.current.jours.includes(today);
   const btn = document.getElementById('defiOvBtn');
-  if (state.current.complete || dejaCoche) {
-    btn.textContent = dejaCoche ? t('defi_checked_today') : t('defi_done');
-    btn.style.background = 'rgba(200,168,75,0.15)';
-    btn.style.color = '#c8a84b';
-    btn.style.cursor = 'default';
+  if (defi.type === 'auto') {
+    btn.style.display = 'none';
+    var autoMsg = document.getElementById('defiOvAutoMsg');
+    if (!autoMsg) {
+      autoMsg = document.createElement('div');
+      autoMsg.id = 'defiOvAutoMsg';
+      autoMsg.style.cssText = 'font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(200,168,74,0.6);text-align:center;padding:12px 16px;';
+      autoMsg.textContent = 'Se coche automatiquement quand tu accomplis l\'action dans l\'app.';
+      btn.parentNode.insertBefore(autoMsg, btn);
+    }
+    autoMsg.style.display = '';
   } else {
-    btn.textContent = t('defi_check_today');
-    btn.style.background = 'linear-gradient(135deg,#c8a84b,#e8cc6a)';
-    btn.style.color = '#000';
-    btn.style.cursor = 'pointer';
+    btn.style.display = '';
+    var autoMsg2 = document.getElementById('defiOvAutoMsg');
+    if (autoMsg2) autoMsg2.style.display = 'none';
+    if (state.current.complete || dejaCoche) {
+      btn.textContent = dejaCoche ? t('defi_checked_today') : t('defi_done');
+      btn.style.background = 'rgba(200,168,75,0.15)';
+      btn.style.color = '#c8a84b';
+      btn.style.cursor = 'default';
+    } else {
+      btn.textContent = t('defi_check_today');
+      btn.style.background = 'linear-gradient(135deg,#c8a84b,#e8cc6a)';
+      btn.style.color = '#000';
+      btn.style.cursor = 'pointer';
+    }
   }
   // Masquer "Changer de défi" si verrouillé (>24h)
   var changerBtn = document.getElementById('changerDefiBtn');
