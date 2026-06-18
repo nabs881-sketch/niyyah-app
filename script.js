@@ -1509,7 +1509,7 @@ const LEVELS = [
         { id: 'maruf', minVague: 5, label: "Inviter au bien (Amr bil ma'ruf)", sub: "Ibn Taymiyya : identité même de l'Oumma — Al-'Imran 110", arabic: 'الْأَمْرُ بِالْمَعْرُوفِ', paths: ['routine','sacraliser'], block: 'jour', category: 'bienfaisance', hadith: '\"La meilleure aumône est de transmettre un savoir\" — Ibn Majah 239', source: 'Ibn Majah 239' },
         { id: 'kind_act', minVague: 5, label: 'Acte de bonté', sub: "Aider quelqu'un concrètement", paths: ['reconnecter','routine','sacraliser'], block: 'jour', category: 'bienfaisance', hadith: 'Aider concrètement — porter, écouter, soulager. Chaque acte de bonté est une sadaqa. Allah regarde nos actes, pas leur taille. "Chaque acte de bonté est une aumône."', source: 'Bukhari 6021' },
         { id: 'ziyara', minVague: 5, label: 'Visiter un malade ou un frère', sub: 'Ziyarat al-marid — sunnah oubliée · Muslim 2162', arabic: 'زِيَارَةُ الْمَرِيضِ', paths: ['routine','sacraliser'], block: 'jour', category: 'bienfaisance', hadith: '\"Le musulman a six droits sur son frère, parmi eux : lui rendre visite s\'il est malade\" — Muslim 2162', source: 'Muslim 2162' },
-        { id: 'pardon', minVague: 5, label: 'Pardonner quelqu\'un', sub: "Al-'afwa — pardonne et Allah te pardonnera · An-Nur 22", arabic: 'الْعَفْوُ', paths: ['reconnecter','routine','sacraliser'], block: 'jour', category: 'bienfaisance', hadith: '\"Qu\'ils pardonnent et passent l\'éponge — n\'aimez-vous pas qu\'Allah vous pardonne ?\" — An-Nur 22', source: 'Coran An-Nur 24:22' },
+        { id: 'pardon', minVague: 5, label: 'Pardonner quelqu\'un', sub: "Al-'afwa — pardonne et Allah te pardonnera · An-Nur 22", arabic: 'الْعَفْوُ', paths: ['reconnecter','routine','sacraliser'], block: 'jour', category: 'bienfaisance', hadith: '\"Qu\'ils pardonnent et passent outre — n\'aimez-vous pas qu\'Allah vous pardonne ?\" — An-Nur 22', source: 'Coran An-Nur 24:22' },
       ]},
       { icon: '🌍', title: "Conscience de l'Oumma", items: [
         { id: 'doua_oumma', minVague: 5, label: "Douâa pour l'Oumma", sub: "Allahumma aslih hali l-muslimin · Seigneur, améliore la situation des musulmans partout dans le monde", arabic: 'اللَّهُمَّ أَصْلِحْ أَحْوَالَ الْمُسْلِمِينَ', paths: ['routine','sacraliser'], block: 'maghrib', category: 'duaa', audio: null, source: 'Douaa général — Sunnah', phonetic: 'Allahumma aslih ahwal al-muslimin wa farrij kurbatahum' },
@@ -11752,7 +11752,7 @@ var NAFS_TRAITS = [
     signal:'Tu te compares constamment aux autres.', action:'Regarde ceux qui ont moins que toi — pas ceux qui ont plus.' },
   { id:35, season:'vertus', name_fr:'Indulgence', name_ar:'الْعَفْوُ', name_translit:'\'afw',
     definition:'Pardonner celui qui t\'a fait du tort alors que tu pourrais te venger.',
-    reference:{ text:'Qu\'ils pardonnent et passent l\'éponge. N\'aimez-vous pas qu\'Allah vous pardonne ?', source:'Coran 24:22' },
+    reference:{ text:'Qu\'ils pardonnent et passent outre. N\'aimez-vous pas qu\'Allah vous pardonne ?', source:'Coran 24:22' },
     signal:'Tu gardes une liste mentale des torts qu\'on t\'a faits.', action:'Pardonne une personne dans ton cœur — et fais une douaa pour elle.' },
   { id:36, season:'vertus', name_fr:'Compassion', name_ar:'الرَّحْمَةُ', name_translit:'raḥmah',
     definition:'Douceur et tendresse envers les créatures d\'Allah.',
