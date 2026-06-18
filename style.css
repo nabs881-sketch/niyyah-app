@@ -1786,7 +1786,7 @@ to {
   opacity:0.8;
   font-weight:400;
   line-height:1.7;
-  max-width:100%;
+  max-width:calc(100% - 90px);
   overflow:hidden;
   text-overflow:ellipsis;
   white-space:nowrap;
