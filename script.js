@@ -16974,6 +16974,10 @@ function _askCameraPermission(context) {
 }
 
 async function regardeOpen() {
+  if (!navigator.onLine) {
+    v2ShowToast('✦ Connexion requise — reviens lorsque tu es connecté');
+    return;
+  }
   if (safeGetItem('niyyah_intro_regards') !== '1') {
     _showNiyyahIntro({ flag:'niyyah_intro_regards', eyebrow:'Niyyah t\u2019accompagne', nom_fr:'Regard', nom_ar:'\u0646\u064E\u0638\u064E\u0631',
       texte:'Quand quelque chose attire ton regard \u2014 un visage, une plante, une rue \u2014 pose un regard. Niyyah cherche dans le Coran le verset qui \u00e9claire cet instant, et te le murmure.',
@@ -17790,6 +17794,10 @@ function closeScannerHub(){
 }
 window.openScannerHub=openScannerHub; window.closeScannerHub=closeScannerHub;
 async function scannerOpen() {
+  if (!navigator.onLine) {
+    v2ShowToast('✦ Connexion requise — reviens lorsque tu es connecté');
+    return;
+  }
   if (safeGetItem('niyyah_intro_niyyah') !== '1') {
     _showNiyyahIntro({ flag:'niyyah_intro_niyyah', eyebrow:'Niyyah t\u2019accompagne', nom_fr:'Niyyah', nom_ar:'\u0646\u0650\u064A\u0651\u064E\u0629',
       texte:'Avant un geste du quotidien \u2014 boire, marcher, travailler \u2014 pose une intention. Niyyah t\u2019en propose une pour le sacraliser, ou \u00e9cris la tienne.',
