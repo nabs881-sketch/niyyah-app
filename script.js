@@ -2840,7 +2840,9 @@ function wirdGoBack() {
   if (_wirdReturnTo) {
     openVueRituel(_wirdReturnTo);
   }
-  v2GoTo('checklist');
+  var _origin = window._wirdOrigin || 'v2nav-priere';
+  var _originEl = document.getElementById(_origin);
+  if (_originEl) { _originEl.click(); } else { v2GoTo('checklist'); }
 }
 window.wirdGoBack = wirdGoBack;
 function renderWirdSmartCard(item, delay, origin, currentBlock) {
@@ -2854,7 +2856,7 @@ function renderWirdSmartCard(item, delay, origin, currentBlock) {
   const frLabel = isMatin ? t('wird_matin') : t('wird_soir');
   var _rattrapage = (currentBlock && item.canonBlock && currentBlock !== item.canonBlock) ? '<div class="wird-smart-rattrapage">(rattrapage)</div>' : '';
   var _blockStr = currentBlock ? "'" + currentBlock + "'" : 'null';
-  return '<div class="wird-smart-card' + (allDone ? ' done' : '') + '" id="item-' + item.id + '" style="animation-delay:' + delay + 'ms" onclick="_wirdReturnTo=' + _blockStr + ';_currentWirdSession=\'' + item.session + '\';var r=document.getElementById(\'vue-rituel\');if(r)r.classList.add(\'hidden\');v2GoTo(\'wird\');setTimeout(function(){if(typeof renderWird===\'function\')renderWird();},60)">'
+  return '<div class="wird-smart-card' + (allDone ? ' done' : '') + '" id="item-' + item.id + '" style="animation-delay:' + delay + 'ms" onclick="window._wirdOrigin=(document.querySelector('.v2-tab.active')||{}).id||'v2nav-priere';_wirdReturnTo=' + _blockStr + ';_currentWirdSession=\'' + item.session + '\';var r=document.getElementById(\'vue-rituel\');if(r)r.classList.add(\'hidden\');v2GoTo(\'wird\');setTimeout(function(){if(typeof renderWird===\'function\')renderWird();},60)">'
     + '<div class="wird-smart-body">'
     + '<div class="wird-smart-arabic">' + arabicLabel + '</div>'
     + '<div class="wird-smart-label">' + frLabel + '</div>'
@@ -18732,7 +18734,7 @@ function renderWirdAuFilDuJour(item) {
   var isMatin = item.session === 'matin';
   var label = isMatin ? 'Wird du Matin' : 'Wird du Soir';
   var arabic = isMatin ? '\u0648\u0650\u0631\u0652\u062F\u064F \u0627\u0644\u0635\u0651\u064E\u0628\u0627\u062D' : '\u0648\u0650\u0631\u0652\u062F\u064F \u0627\u0644\u0645\u064E\u0633\u0627\u0621';
-  return '<div class="wird-fil-card" onclick="var r=document.getElementById(\'vue-rituel\');if(r)r.classList.add(\'hidden\');v2GoTo(\'wird\');">'
+  return '<div class="wird-fil-card" onclick="window._wirdOrigin=(document.querySelector(\'.v2-tab.active\')||{}).id||\'v2nav-priere\';var r=document.getElementById(\'vue-rituel\');if(r)r.classList.add(\'hidden\');v2GoTo(\'wird\');">'
     + '<div class="wird-fil-body">'
     + '<div class="wird-fil-arabic">' + arabic + '</div>'
     + '<div class="wird-fil-label">' + label + '</div>'
