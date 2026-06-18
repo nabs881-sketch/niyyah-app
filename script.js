@@ -960,21 +960,7 @@ function renderDefiOverlay() {
   const msgs = [t('defi_enc_0'), t('defi_enc_1'), t('defi_enc_2'), t('defi_enc_3'), t('defi_enc_4'), t('defi_enc_5')];
   const idx = Math.min(Math.floor(fait / defi.cible * 5), 5);
   document.getElementById('defiOvEncouragement').textContent = msgs[idx];
-  // Bouton
-  const today = getTodayStr();
-  const dejaCoche = state.current.jours.includes(today);
-  const btn = document.getElementById('defiOvBtn');
-  if (state.current.complete || dejaCoche) {
-    btn.textContent = dejaCoche ? t('defi_checked_today') : t('defi_done');
-    btn.style.background = 'rgba(200,168,75,0.15)';
-    btn.style.color = '#c8a84b';
-    btn.style.cursor = 'default';
-  } else {
-    btn.textContent = t('defi_check_today');
-    btn.style.background = 'linear-gradient(135deg,#c8a84b,#e8cc6a)';
-    btn.style.color = '#000';
-    btn.style.cursor = 'pointer';
-  }
+  // Bouton supprimé (redondant avec la coche item)
   // Masquer "Changer de défi" si verrouillé (>24h)
   var changerBtn = document.getElementById('changerDefiBtn');
   if (changerBtn) {
