@@ -2875,7 +2875,9 @@ function renderCounter(item, delay) {
   const arabicEsc = (item.arabic || '').replace(/'/g, "\\'");
   const labelEsc  = tI(item,'label').replace(/'/g, "\\'");
   var _isDhikr = (item.id === 'tasbih' || item.id === 'istighfar');
-  const fullscreenBtn = _isDhikr ? '' : '<button class="btn-tasbih-fs" aria-label="Plein écran" onclick="openTasbih(\'' + item.id + '\',' + item.target + ',\'' + labelEsc + '\',\'' + arabicEsc + '\')" title="' + t('btn_fullscreen') + '">⛶</button>';
+  var _transEscFs = (item.translation||'').replace(/'/g,"\\'");
+  var _srcEscFs   = (item.source||'').replace(/'/g,"\\'");
+  const fullscreenBtn = _isDhikr ? '' : '<button class="btn-tasbih-fs" aria-label="Plein écran" onclick="openTasbih(\'' + item.id + '\',' + item.target + ',\'' + labelEsc + '\',\'' + arabicEsc + '\',\'' + _transEscFs + '\',\'' + _srcEscFs + '\')" title="' + t('btn_fullscreen') + '">⛶</button>';
   const audioBtn = item.audio ? '<button class="btn-audio" aria-label="Écouter" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();playAudio(' + (Array.isArray(item.audio) ? JSON.stringify(item.audio).replace(/"/g,"'") : '\'' + item.audio + '\'') + ',this,event)" title="' + t('btn_listen_recitation') + '"><svg width="12" height="12" viewBox="0 0 24 24" fill="#C8A84A" style="pointer-events:none"><polygon points="5 3 19 12 5 21 5 3"/></svg></button>' : '';
   if (_isDhikr) {
     var _dhikrLabel = done ? (count + ' / ' + item.target + ' \u2713') : (count + ' / ' + item.target);
@@ -3612,12 +3614,16 @@ function openSoundCloudPlayer(trackUrl, btn) {
 }
 let _tasbihId = null;
 let _tasbihTarget = 99;
-function openTasbih(id, target, label, arabic) {
+function openTasbih(id, target, label, arabic, translation, source) {
   _tasbihId = id;
   _tasbihTarget = target;
   const count = state[id] || 0;
   document.getElementById('tasbihLabel').textContent = label;
   document.getElementById('tasbihArabic').textContent = arabic || '';
+  var trEl = document.getElementById('tasbihTranslation');
+  var srEl = document.getElementById('tasbihSource');
+  if (trEl) { trEl.textContent = translation || ''; trEl.style.display = translation ? '' : 'none'; }
+  if (srEl) { srEl.textContent = source ? '— ' + source : ''; srEl.style.display = source ? '' : 'none'; }
   document.getElementById('tasbihTotalLabel').textContent = '/ ' + target;
   document.getElementById('tasbihBigNum').textContent = count;
   document.getElementById('tasbihBarFill').style.width = Math.min(count / target * 100, 100) + '%';
@@ -4123,8 +4129,10 @@ function renderWird() {
         const _lEsc = tI(item,'label').replace(/'/g,"\\'");
         const _aEsc = (item.arabic||'').replace(/'/g,"\\'");
         const _progress = `<div style="font-size:13px;color:rgba(200,168,74,0.6);margin-top:2px;" id="cnt-num-${item.id}">${_cnt} / ${item.target}</div>`;
-        const _fsBtn = `<button class="btn-tasbih-fs" aria-label="Plein écran" onclick="event.stopPropagation();openTasbih('${item.id}',${item.target},'${_lEsc}','${_aEsc}')" title="Ouvrir compteur">⛶</button>`;
-        html += `<div class="wird-item${_done?' checked':''}" id="item-${item.id}" onclick="event.stopPropagation();openTasbih('${item.id}',${item.target},'${_lEsc}','${_aEsc}')"><div class="wird-check"><svg class="wird-check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="wird-body"><div class="wird-label">${tI(item,"label")}</div><div class="wird-sub">${tI(item,"sub")}</div><div class="wird-arabic">${item.arabic}</div>${_progress}</div><div class="wird-actions">${_fsBtn}</div></div>`;
+        const _trEsc = (item.translation||'').replace(/'/g,"\\'");
+        const _srEsc = (item.source||'').replace(/'/g,"\\'");
+        const _fsBtn = `<button class="btn-tasbih-fs" aria-label="Plein écran" onclick="event.stopPropagation();openTasbih('${item.id}',${item.target},'${_lEsc}','${_aEsc}','${_trEsc}','${_srEsc}')" title="Ouvrir compteur">⛶</button>`;
+        html += `<div class="wird-item${_done?' checked':''}" id="item-${item.id}" onclick="event.stopPropagation();openTasbih('${item.id}',${item.target},'${_lEsc}','${_aEsc}','${_trEsc}','${_srEsc}')"><div class="wird-check"><svg class="wird-check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="wird-body"><div class="wird-label">${tI(item,"label")}</div><div class="wird-sub">${tI(item,"sub")}</div><div class="wird-arabic">${item.arabic}</div>${_progress}</div><div class="wird-actions">${_fsBtn}</div></div>`;
       } else {
         html += `<div class="wird-item${checked?' checked':''}" onclick="toggleWirdItem('${item.id}',event)"><div class="wird-check"><svg class="wird-check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="wird-body"><div class="wird-label">${tI(item,"label")}</div><div class="wird-sub">${tI(item,"sub")}</div><div class="wird-arabic">${item.arabic}</div>${dupNote}</div><div class="wird-actions">${audioBtn}${infoBtn}</div></div>`;
       }
