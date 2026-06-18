@@ -2730,11 +2730,11 @@ function renderLevel(levelId) {
             + _pathBadge
             + '<div class="check-circle"' + _checkClick + '><svg class="check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>'
             + '<div class="item-body">'
-            + '<div style="display:flex;align-items:center;gap:8px;"><div class="item-label" style="font-size:15.5px;color:rgba(240,234,214,0.95);font-weight:600;">' + _tl + '</div><button style="background:none;border:none;cursor:pointer;padding:2px 4px;margin:0;flex-shrink:0;" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openLisanMethode()" title="Méthode"><span style="font-size:14px;color:#C8A84A;opacity:0.6;">ⓘ</span></button></div>'
+            + '<div class="item-label" style="font-size:15.5px;color:rgba(240,234,214,0.95);font-weight:600;">' + _tl + '</div>'
             + (_ts ? '<div class="item-sub" style="color:rgba(200,168,75,0.55);font-size:12.5px;">' + _ts + '</div>' : '')
             + '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:22px;color:#C9A961;direction:rtl;text-align:right;margin-top:10px;">' + (item.arabic || '') + '</div>'
             + '</div>'
-            + shareBtn
+            + shareBtn + infoBtn
             + '</div>';
         } else {
         html += '<div class="item' + fridayCls + (checked ? ' checked' : '') + '" onclick="' + customClick + '" style="' + _knowledgeBg + _tlOpacity + 'animation-delay:' + delay + 'ms;--i:' + idx + '" id="item-' + item.id + '">' + _pathBadge + '<div class="check-circle"' + _checkClick + '><svg class="check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-body"><div class="item-label">' + _tl + optionalBadge + '</div>' + (_ts ? '<div class="item-sub">' + (_ts.includes('\u00b7') ? _ts.split('\u00b7')[0].trim() : _ts) + '</div>' : '') + arabicHtml + '</div>' + shareBtn + audioBtn + infoBtn + '</div>';
