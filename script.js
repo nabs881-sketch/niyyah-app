@@ -2436,7 +2436,16 @@ function renderTabs() {
   var _motivRaw = safeGetItem('niyyah_motivation');
   var _cheminName = _motivRaw === 'reconnecter' ? t('ob_motiv_reconnecter') : _motivRaw === 'routine' ? t('ob_motiv_routine') : _motivRaw === 'sacraliser' ? t('ob_motiv_sacraliser') : '';
   if (_cheminEl && _cheminName) {
-    _cheminEl.querySelector('.chemin-name').textContent = _cheminName;
+    _cheminEl.innerHTML = '<div style="margin:8px 16px 0;padding:12px 16px;border-radius:12px;border:0.5px solid rgba(200,168,75,0.15);background:rgba(200,168,75,0.04);display:flex;align-items:center;justify-content:space-between;">'
+      + '<div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(200,168,75,0.35);margin-bottom:3px;">Ton chemin</div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#C8A84A;" id="chemin-name">' + _cheminName + '</div>'
+      + '</div>'
+      + '<div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;">'
+      + '<span style="font-family:\'Cormorant Garamond\',serif;font-size:11px;font-style:italic;color:rgba(200,168,75,0.35);">✦ Dans ton chemin</span>'
+      + '<button onclick="openOrientationPicker()" style="font-family:\'Cormorant Garamond\',serif;font-size:12px;color:rgba(200,168,75,0.5);background:none;border:0.5px solid rgba(200,168,75,0.2);border-radius:6px;padding:3px 10px;cursor:pointer;letter-spacing:0.5px;">Changer</button>'
+      + '</div>'
+      + '</div>';
     _cheminEl.style.display = '';
   } else if (_cheminEl && !_cheminName) {
     _cheminEl.style.display = 'none';
