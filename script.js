@@ -2649,7 +2649,7 @@ function renderLevel(levelId) {
           + '<div class="check-circle"><svg class="check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>'
           + '<div class="item-body"><div class="item-label">' + tI(item,'label') + '</div><div class="item-sub">' + tI(item,'sub') + '</div>'
           + '<div class="item-arabic">' + item.arabic + '</div></div>'
-          + '<button class="btn-audio" onclick="openCoranPicker(event)" title="' + t('btn_choose_surah') + '" style="font-size:13px;padding:0 10px;width:auto;white-space:nowrap;">📖 Écouter</button>'
+          + '<button class="btn-audio" onclick="openCoranPicker(event)" title="' + t('btn_choose_surah') + '"><svg width="12" height="12" viewBox="0 0 24 24" fill="#C8A84A" style="pointer-events:none"><polygon points="5 3 19 12 5 21 5 3"/></svg></button>'
           + '</div>';
       } else {
         const checked = state[item.id] === true;
