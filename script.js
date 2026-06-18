@@ -2885,7 +2885,7 @@ function renderCounter(item, delay) {
   const arabicHtml = item.arabic ? '<div class="item-arabic" style="' + (done ? 'opacity:0.25' : '') + '">' + item.arabic + '</div>' : '';
   const arabicEsc = (item.arabic || '').replace(/'/g, "\\'");
   const labelEsc  = tI(item,'label').replace(/'/g, "\\'");
-  var _isDhikr = (item.id === 'tasbih' || item.id === 'istighfar');
+  var _isDhikr = false;
   var _phoneticEscFs = (item.phonetic||'').replace(/'/g,"\\'");
   var _transEscFs = (item.translation||'').replace(/'/g,"\\'");
   var _srcEscFs   = (item.source||'').replace(/'/g,"\\'");
