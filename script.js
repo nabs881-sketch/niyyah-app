@@ -2778,7 +2778,7 @@ function renderPrayerItem(item, delay, extraClass, forceChecked) {
   const arabicHtml = item.arabic ? '<div class="item-arabic">' + item.arabic + '</div>' : '';
   const _sw = 'width:36px;height:20px;border-radius:10px;display:flex;align-items:center;padding:2px;transition:background 0.2s;flex-shrink:0;';
   const _kn = 'width:14px;height:14px;border-radius:50%;transition:margin 0.2s;';
-  const _lbl = 'font-family:\'Cormorant Garamond\',serif;font-size:11px;color:rgba(200,168,75,0.45);';
+  const _lbl = 'font-family:\'Cormorant Garamond\',serif;font-size:13px;color:rgba(200,168,75,0.65);margin-top:4px;letter-spacing:0.3px;';
   const toggle = '<div style="display:flex;flex-direction:column;align-items:center;gap:4px;flex-shrink:0;" onclick="togglePrayerOnTime(\'' + item.id + '\');event.stopPropagation()">'
     + '<div style="' + _sw + 'background:' + (onTime ? 'var(--green)' : 'rgba(255,255,255,0.1)') + ';border:1px solid ' + (onTime ? 'var(--green)' : 'rgba(255,255,255,0.15)') + ';">'
     + '<div style="' + _kn + 'background:' + (onTime ? '#fff' : 'rgba(255,255,255,0.4)') + ';margin-left:' + (onTime ? '18px' : '0') + ';"></div>'
