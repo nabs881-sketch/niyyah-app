@@ -800,6 +800,7 @@ function defiTopBannerClick() {
   }
 }
 function _showDefiToastDaily() {
+  if (window._spontaneousUIShown) return;
   var dk = todayKey();
   if (safeGetItem('niyyah_defi_toast_today') === dk) return;
   var courant = getDefiCourant();
@@ -816,6 +817,7 @@ function _showDefiToastDaily() {
   setTimeout(function() { toast.classList.remove('show'); setTimeout(function() { toast.remove(); }, 400); }, 5000);
 }
 function _showDefiLundiInvite() {
+  if (window._spontaneousUIShown) return;
   var lundi = getLundiDate();
   // Guard: already shown or dismissed this week
   if (safeGetItem('niyyah_defi_invite_shown') === lundi) return;
