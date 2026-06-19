@@ -10670,7 +10670,7 @@ const V2_I18N = {
     journal_niyyah_title: '✦ Mes Niyyah', journal_regards_title: '✦ Mes Regards',
     link_see_regards: 'Voir mes Regards →', link_see_niyyah: 'Voir mes Niyyah →',
     journal_search: 'Rechercher...', modal_close: 'Fermer', btn_later: 'Plus tard',
-    tawba_ameen: 'Ameen', defi_change: 'Changer de défi', notif_accept: 'Oui, je veux ces rappels',
+    tawba_ameen: 'Ameen', defi_change: 'Choisir un autre défi', notif_accept: 'Oui, je veux ces rappels',
     level_word: 'Niveau', level_accomplished: 'Niveau accompli', level_next: 'Niveau suivant \u2192', level_stay: 'Rester sur ce niveau',
     freemium_title: 'Niyyah+', freemium_sub: 'Tu as commenc\u00e9 quelque chose. Ne t\u2019arr\u00eate pas l\u00e0.',
     freemium_buy: 'Continuer avec Niyyah+', freemium_code_placeholder: 'CODE D\'ACC\u00c8S', freemium_free: 'Plus tard',
