@@ -938,7 +938,7 @@ function renderDefiOverlay() {
   const refEl = document.getElementById('defiOvRef');
   if (defi.ref) {
     refEl.style.display = 'block';
-    refEl.innerHTML = '"' + defi.ref + '"' + (defi.hadith ? '<br><span style="font-size:12px;color:rgba(200,168,75,0.5);margin-top:4px;display:block;">— ' + defi.hadith + '</span>' : '');
+    refEl.innerHTML = '"' + defi.ref + '"' + (defi.hadith ? '<br><span style="font-size:15px;color:rgba(200,168,74,0.7);margin-top:4px;display:block;">— ' + defi.hadith + '</span>' : '');
   }
   // Jours semaine
   const joursEl = document.getElementById('defiOvJours');
