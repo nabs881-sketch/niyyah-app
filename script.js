@@ -1009,6 +1009,7 @@ function openDefiOverlay() {
   ov.style.opacity = '1'; ov.style.pointerEvents = 'all';
   setTimeout(() => { sh.style.transform = 'translateY(0)'; }, 10);
 }
+window.openDefiOverlay = openDefiOverlay;
 
 function closeDefiOverlay() {
   const ov = document.getElementById('defiOverlay');
