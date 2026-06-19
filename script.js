@@ -18892,6 +18892,7 @@ function openVueAuFilDuJour() {
         + '<span class="fil-acc-count">' + _done2 + '/' + _total2 + '</span>'
         + '<span class="fil-acc-chevron">\u203A</span>'
         + '</div>'
+        + '<div class="fil-acc-body" style="display:none;"></div>'
         + '</div>';
     }
   }
