@@ -952,7 +952,7 @@ function renderDefiOverlay() {
     const auj = ds === getTodayStr();
     const div = document.createElement('div');
     div.style.cssText = 'flex:1;text-align:center;';
-    div.innerHTML = '<div style="width:100%;aspect-ratio:1;border-radius:8px;background:' + (coche ? '#c8a84b' : auj ? 'rgba(200,168,75,0.12)' : 'rgba(255,255,255,0.04)') + ';border:' + (auj && !coche ? '1px solid rgba(200,168,75,0.4)' : '0.5px solid rgba(255,255,255,0.06)') + ';display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:' + (coche ? '#000' : auj ? '#c8a84b' : 'rgba(255,255,255,0.2)') + ';margin-bottom:3px;">' + jourNoms[i] + '</div><div style="font-size:12px;color:' + (coche ? '#c8a84b' : 'rgba(255,255,255,0.15)') + ';">' + (coche ? '✓' : '—') + '</div>';
+    div.innerHTML = '<div style="width:100%;aspect-ratio:1;border-radius:10px;background:' + (coche ? '#c8a84b' : auj ? 'rgba(200,168,75,0.12)' : 'rgba(255,255,255,0.04)') + ';border:' + (auj && !coche ? '1px solid rgba(200,168,75,0.4)' : '0.5px solid rgba(255,255,255,0.06)') + ';display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;color:' + (coche ? '#000' : auj ? '#c8a84b' : 'rgba(255,255,255,0.2)') + ';margin-bottom:3px;">' + jourNoms[i] + '</div><div style="font-size:12px;color:' + (coche ? '#c8a84b' : 'rgba(255,255,255,0.15)') + ';">' + (coche ? '✓' : '—') + '</div>';
     joursEl.appendChild(div);
   }
   // Encouragement
@@ -970,7 +970,7 @@ function renderDefiOverlay() {
     if (!autoMsg) {
       autoMsg = document.createElement('div');
       autoMsg.id = 'defiOvAutoMsg';
-      autoMsg.style.cssText = 'font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(200,168,74,0.6);text-align:center;padding:12px 16px;';
+      autoMsg.style.cssText = 'font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:rgba(200,168,74,0.6);text-align:center;padding:12px 16px;';
       autoMsg.textContent = 'Se coche automatiquement quand tu accomplis l\'action dans l\'app.';
       btn.parentNode.insertBefore(autoMsg, btn);
     }
