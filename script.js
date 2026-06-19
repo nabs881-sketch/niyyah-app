@@ -18884,13 +18884,24 @@ function openVueAuFilDuJour() {
         : (_coche2
           ? '<div style="font-size:12px;font-style:italic;color:rgba(200,168,74,0.6);text-align:center;margin-top:10px;">✓ Coché aujourd\'hui</div>'
           : '<button onclick="cocherDefiAujourdhui();openVueAuFilDuJour();" style="width:100%;margin-top:10px;padding:10px;border-radius:10px;border:1px solid rgba(200,168,74,0.3);background:rgba(200,168,74,0.06);color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:14px;cursor:pointer;">Cocher aujourd\'hui ✦</button>');
-      _html += '<div style="margin-top:14px;padding:14px 16px;background:rgba(200,168,74,0.06);border:1px solid rgba(200,168,74,0.18);border-radius:14px;">'
-        + '<div style="font-size:10px;letter-spacing:2px;color:rgba(200,168,74,0.5);text-transform:uppercase;margin-bottom:8px;">✦ Défi de la semaine</div>'
-        + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-weight:600;color:#C8A84A;margin-bottom:10px;">' + _d2.titre + '</div>'
+      var _defiBody = '<div style="padding:12px 4px 4px;">'
+        + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-weight:600;color:#C8A84A;margin-bottom:12px;line-height:1.35;">' + _d2.titre + '</div>'
         + '<div style="display:flex;gap:4px;margin-bottom:6px;">' + _dots2 + '</div>'
-        + '<div style="font-size:12px;font-style:italic;color:rgba(200,168,74,0.5);">' + _done2 + ' / ' + _total2 + ' jours accomplis</div>'
+        + '<div style="font-size:12px;font-style:italic;color:rgba(200,168,74,0.5);margin-bottom:4px;">' + _done2 + ' / ' + _total2 + ' jours accomplis</div>'
         + _btn2
         + '</div>';
+      var _isDefiOpen = (safeGetItem('filjour_open_section') === 'defi');
+      var _svgDefi = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>';
+      _html += '<div class="fil-acc" data-cat="defi">'
+        + '<div class="fil-acc-header' + (_isDefiOpen ? ' open' : '') + '" onclick="toggleFilAccordion(\'defi\')">'
+        + '<span class="fil-acc-icon">' + _svgDefi + '</span>'
+        + '<span class="fil-acc-title">D\u00c9FI DE LA SEMAINE</span>'
+        + '<span class="fil-acc-count">' + _done2 + '/' + _total2 + '</span>'
+        + '<span class="fil-acc-chevron">\u25BE</span>'
+        + '</div>'
+        + '<div class="fil-acc-body" style="' + (_isDefiOpen ? '' : 'display:none;') + '">'
+        + _defiBody
+        + '</div></div>';
     }
   }
   main.innerHTML = _html;
