@@ -18885,9 +18885,9 @@ function openVueAuFilDuJour() {
           ? '<div style="font-size:12px;font-style:italic;color:rgba(200,168,74,0.6);text-align:center;margin-top:10px;">✓ Coché aujourd\'hui</div>'
           : '<button onclick="cocherDefiAujourdhui();openVueAuFilDuJour();" style="width:100%;margin-top:10px;padding:10px;border-radius:10px;border:1px solid rgba(200,168,74,0.3);background:rgba(200,168,74,0.06);color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:14px;cursor:pointer;">Cocher aujourd\'hui ✦</button>');
       var _defiBody = '<div style="padding:12px 4px 4px;">'
-        + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-weight:600;color:#C8A84A;margin-bottom:12px;line-height:1.35;">' + _d2.titre + '</div>'
+        + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:600;color:#C8A84A;margin-bottom:12px;line-height:1.35;">' + _d2.titre + '</div>'
         + '<div style="display:flex;gap:4px;margin-bottom:6px;">' + _dots2 + '</div>'
-        + '<div style="font-size:12px;font-style:italic;color:rgba(200,168,74,0.5);">' + _done2 + ' / ' + _total2 + ' jours accomplis</div>'
+        + '<div style="font-size:16px;font-style:italic;color:rgba(200,168,74,0.5);">' + _done2 + ' / ' + _total2 + ' jours accomplis</div>'
         + '<div style="font-size:19px;font-style:italic;color:rgba(200,168,74,0.55);margin-top:8px;line-height:1.5;">' + _d2.ref + (_d2.hadith ? ' — ' + _d2.hadith : '') + '</div>'
         + (function(){ var _msg2 = _done2 === 0 ? 'Commence aujourd\'hui — chaque jour compte ✦' : _done2 < Math.ceil(_total2/2) ? 'Bien lancé — continue sur cette lancée' : _done2 < _total2 ? 'Tu y es presque — encore un effort' : 'Accompli — barakAllahu fik ✦'; return '<div style="font-size:17px;font-style:italic;color:rgba(200,168,74,0.7);margin-top:6px;">' + _msg2 + '</div>'; })()
         + _btn2
