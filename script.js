@@ -18901,6 +18901,7 @@ function openVueAuFilDuJour() {
 }
 window.openVueAuFilDuJour = openVueAuFilDuJour;
 function toggleFilAccordion(cat) {
+  if (cat === 'defi') { openDefiOverlay(); return; }
   var all = document.querySelectorAll('.fil-acc');
   var clickedOpen = false;
   all.forEach(function(acc) {
