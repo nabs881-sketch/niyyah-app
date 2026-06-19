@@ -835,7 +835,7 @@ function _showDefiLundiInvite() {
     + 'font-size:18px;">✦</div>'
     + '<div style="flex:1;min-width:0;">'
     + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-weight:600;color:#C8A84A;margin-bottom:2px;">Nouvelle semaine</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:#B0A080;">Choisis ton défi de la semaine</div>'
+    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:#B0A080;">Un nouvel engagement t\'attend</div>'
     + '</div>'
     + '<div id="defi-lundi-close" style="flex-shrink:0;width:28px;height:28px;border-radius:50%;'
     + 'display:flex;align-items:center;justify-content:center;color:#B0A080;font-size:16px;'
@@ -18869,6 +18869,7 @@ function openVueAuFilDuJour() {
   var _uncategorized = items.filter(function(it) { return !it.category; });
   if (_uncategorized.length) _html += _uncategorized.map(_renderFilItem).join('');
   var _defiS2 = getDefiState();
+  var _svgDefi2 = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>';
   if (_defiS2 && _defiS2.current && _defiS2.current.id) {
     var _d2 = DEFIS_DB.find(function(d){ return d.id === _defiS2.current.id; });
     if (_d2) {
@@ -18885,10 +18886,9 @@ function openVueAuFilDuJour() {
         : (_coche2
           ? '<div style="font-size:12px;font-style:italic;color:rgba(200,168,74,0.6);text-align:center;margin-top:10px;">✓ Coché aujourd\'hui</div>'
           : '<button onclick="cocherDefiAujourdhui();openVueAuFilDuJour();" style="width:100%;margin-top:10px;padding:10px;border-radius:10px;border:1px solid rgba(200,168,74,0.3);background:rgba(200,168,74,0.06);color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:14px;cursor:pointer;">Cocher aujourd\'hui ✦</button>');
-      var _svgDefi = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>';
       _html += '<div class="fil-acc" data-cat="defi">'
         + '<div class="fil-acc-header" onclick="openDefiOverlay();">'
-        + '<span class="fil-acc-icon">' + _svgDefi + '</span>'
+        + '<span class="fil-acc-icon">' + _svgDefi2 + '</span>'
         + '<span class="fil-acc-title">D\u00c9FI DE LA SEMAINE</span>'
         + '<span class="fil-acc-count">' + _done2 + '/' + _total2 + '</span>'
         + '<span class="fil-acc-chevron">\u203A</span>'
@@ -18896,6 +18896,18 @@ function openVueAuFilDuJour() {
         + '<div class="fil-acc-body" style="display:none;"></div>'
         + '</div>';
     }
+  } else {
+    _html += '<div class="fil-acc" data-cat="defi">'
+      + '<div class="fil-acc-header" onclick="openDefiSelector();">'
+      + '<span class="fil-acc-icon">' + _svgDefi2 + '</span>'
+      + '<span class="fil-acc-title">D\u00c9FI DE LA SEMAINE</span>'
+      + '<span class="fil-acc-count"></span>'
+      + '<span class="fil-acc-chevron">\u203A</span>'
+      + '</div>'
+      + '<div class="fil-acc-body" style="display:none;">'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:rgba(200,168,74,0.7);text-align:center;padding:16px 0;" onclick="openDefiSelector()">Un engagement t\'attend cette semaine — choisir ✦</div>'
+      + '</div>'
+      + '</div>';
   }
   main.innerHTML = _html;
   v.classList.remove('hidden');
