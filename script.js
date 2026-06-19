@@ -15909,6 +15909,7 @@ function triggerSpontaneousUI() {
   checkHijriBanner();
 }
 function checkRegardeAlert() {
+  if (safeGetItem('niyyah_onboard_done') !== '1') return false;
   var last = safeGetItem('niyyah_regarde_last_alert');
   if (last === todayKey()) return false;
   var h = new Date().getHours();
