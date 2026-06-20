@@ -12997,6 +12997,8 @@ window.renderCalGrid = renderCalGrid;
 window.renderCalendrierCard = renderCalendrierCard;
 
 var _pmStep = 'intro', _pmIdx = -1;
+var _pmRetourIdx = 0;
+function _pmRetour(i) { _pmRetourIdx = i; _pmStep = 'retour-msg'; renderPM(); }
 var _PM_PROFILES = [
   {
     sym: 'Je suis vid\u00e9, j\u2019ai juste envie de m\u2019\u00e9crouler.',
@@ -13009,7 +13011,12 @@ var _PM_PROFILES = [
       'Tu n\'es pas en train de manquer de foi. Tu es en train de vivre dans un corps humain, dans un monde \u00e9puisant. Allah sait ce que tu portes \u2014 Il l\'a cr\u00e9\u00e9. Viens tel que tu es. Il n\'y a pas d\'autre condition.',
       'Allah dit : "Apr\u00e8s la difficult\u00e9 vient la facilit\u00e9." \u2014 Al-Inshirah 94:5. Ce verset est r\u00e9p\u00e9t\u00e9 deux fois de suite. Comme si Allah savait que tu n\'entendrais pas la premi\u00e8re fois tellement tu es \u00e9puis\u00e9. La pri\u00e8re de ce soir n\'est pas un sommet \u00e0 gravir. C\'est une descente \u2014 vers Lui.',
       'Le Proph\u00e8te \ufdfa se levait pour la pri\u00e8re de nuit au point que ses pieds enflaient. A\u00efsha \ufdfa lui demandait pourquoi. Il r\u00e9pondait : "Ne devrais-je pas \u00eatre un serviteur reconnaissant ?" Tu n\'as pas \u00e0 atteindre ce niveau ce soir. Tu as juste \u00e0 te lever. C\'est d\u00e9j\u00e0 \u00eatre reconnaissant.'
-    ]
+    ],
+    technique: 'Assieds-toi si tu n\'as pas la force de te tenir debout. Pose juste le front une fois en suj\u00fbd. Ibn al-Qayyim dit que cette pri\u00e8re ne co\u00fbte rien au corps \u2014 elle redonne \u00e0 l\'\u00e2me.',
+    dua: 'All\u00e2humma a\u02bfinn\u00ee \u02bfal\u00e2 dhikrika wa shukrika wa husni \u02bfib\u00e2datika',
+    duaFr: 'Seigneur, aide-moi \u00e0 Te mentionner, \u00e0 Te remercier, \u00e0 T\'adorer dignement.',
+    duaSource: 'Abu Dawud 1522',
+    arabic_dua: '\u0627\u0644\u0644\u0651\u064e\u0647\u064f\u0645\u0651\u064e \u0623\u064e\u0639\u0650\u0646\u0651\u0650\u064a \u0639\u064e\u0644\u064e\u0649 \u0630\u0650\u0643\u0652\u0631\u0650\u0643\u064e \u0648\u064e\u0634\u064f\u0643\u0652\u0631\u0650\u0643\u064e \u0648\u064e\u062d\u064f\u0633\u0652\u0646\u0650 \u0639\u0650\u0628\u064e\u0627\u062f\u064e\u062a\u0650\u0643\u064e'
   },
   {
     sym: 'Je suis d\u00e9bord\u00e9, je veux que \u00e7a aille vite.',
@@ -13022,7 +13029,12 @@ var _PM_PROFILES = [
       'Tu as le temps. Pas beaucoup \u2014 mais assez. Le Proph\u00e8te \ufdfa priait pendant des heures la nuit, et g\u00e9rait une communaut\u00e9 le jour. Il ne courait pas pendant la salah. Il s\'arr\u00eatait. C\'est \u00e7a le secret : la pri\u00e8re est l\'acte qui ralentit le reste.',
       'Umar ibn al-Khatt\u00e2b \ufdfa g\u00e9rait un empire qui s\'\u00e9tendait de la Perse \u00e0 l\'\u00c9gypte. Il ne ratait pas une pri\u00e8re. Non par obligation \u2014 par conviction que c\'est la pri\u00e8re qui rendait possible tout le reste. Ta journ\u00e9e charg\u00e9e n\'est pas une excuse pour pr\u00e9cipiter. C\'est une raison de plus de t\'arr\u00eater vraiment.',
       'Allah dit : "Cherchez secours dans la patience et la pri\u00e8re." \u2014 Al-Baqara 2:45. Pas apr\u00e8s avoir tout r\u00e9gl\u00e9. Pas quand tu auras du temps. Maintenant \u2014 pr\u00e9cis\u00e9ment parce que tu es d\u00e9bord\u00e9. La pri\u00e8re n\'est pas la r\u00e9compense du calme. Elle en est la source.'
-    ]
+    ],
+    technique: 'Avant le takb\u00eer, pose ton t\u00e9l\u00e9phone face vers le bas. Reste debout trois secondes sans bouger. Dis int\u00e9rieurement : "Je vais parler \u00e0 Allah." Cette seconde de transition suffit \u00e0 changer l\'\u00e9tat int\u00e9rieur.',
+    dua: 'All\u00e2humma inn\u00ee a\u02bfu\u00fcdhu bika min al-hammi wal-hazani',
+    duaFr: 'Seigneur, je cherche refuge en Toi contre l\'anxi\u00e9t\u00e9 et la tristesse.',
+    duaSource: 'Bukhari 6363',
+    arabic_dua: '\u0627\u0644\u0644\u0651\u064e\u0647\u064f\u0645\u0651\u064e \u0625\u0650\u0646\u0651\u0650\u064a \u0623\u064e\u0639\u0648\u0630\u064f \u0628\u0650\u0643\u064e \u0645\u0650\u0646\u064e \u0627\u0644\u0652\u0647\u064e\u0645\u0651\u0650 \u0648\u064e\u0627\u0644\u0652\u062d\u064e\u0632\u064e\u0646\u0650'
   },
   {
     sym: 'Ma t\u00eate part partout, je n\u2019arrive pas \u00e0 \u00eatre l\u00e0.',
@@ -13035,7 +13047,12 @@ var _PM_PROFILES = [
       'Le Proph\u00e8te \ufdfa a enseign\u00e9 : quand tu te l\u00e8ves pour prier, prie comme si c\'\u00e9tait ta derni\u00e8re pri\u00e8re. Pas par peur \u2014 par pr\u00e9sence. Imagine que tu ne reverras plus ce monde apr\u00e8s ce suj\u00fbd. Qu\'est-ce que tu dirais \u00e0 Allah maintenant, avec le temps qu\'il te reste ?',
       'Le Proph\u00e8te \ufdfa enseignait de regarder le lieu de prosternation pendant la pri\u00e8re. Un point fixe. Pas pour contraindre l\'esprit, mais pour lui donner un ancrage. Essaie ce soir : fixe l\'endroit o\u00f9 ton front va se poser. Laisse ce point devenir ton horizon.',
       'Allah dit : "\u00c9tablis la pri\u00e8re pour Mon souvenir." \u2014 T\u00e2h\u00e2 20:14. Pas pour ta concentration. Pas pour ton ressenti. Pour Son souvenir. La pri\u00e8re reste une pri\u00e8re m\u00eame quand l\'esprit vagabonde \u2014 tant que tu reviens. Revenir, c\'est d\u00e9j\u00e0 Se souvenir de Lui.'
-    ]
+    ],
+    technique: 'Fixe le lieu de suj\u00fbd d\u00e8s le d\u00e9but. \u00c0 la Fatiha, dis chaque verset comme si tu attendais une r\u00e9ponse \u2014 parce qu\'Allah r\u00e9pond r\u00e9ellement \u00e0 chacun d\'eux.',
+    dua: 'Rabbi adhkhiln\u00ee mudkhala sidqin wa akhrijn\u00ee mukhraja sidqin',
+    duaFr: 'Seigneur, fais-moi entrer d\'une entr\u00e9e sinc\u00e8re et sortir d\'une sortie sinc\u00e8re.',
+    duaSource: 'Coran 17:80',
+    arabic_dua: '\u0631\u064e\u0628\u0650\u0651 \u0623\u064e\u062f\u0652\u062e\u0650\u0644\u0652\u0646\u0650\u064a \u0645\u064f\u062f\u0652\u062e\u064e\u0644\u064e \u0635\u0650\u062f\u0652\u0642\u064d \u0648\u064e\u0623\u064e\u062e\u0652\u0631\u0650\u062c\u0652\u0646\u0650\u064a \u0645\u064f\u062e\u0652\u0631\u064e\u062c\u064e \u0635\u0650\u062f\u0652\u0642\u064d'
   },
   {
     sym: 'Je fais les gestes, mais je ne ressens plus rien.',
@@ -13048,7 +13065,12 @@ var _PM_PROFILES = [
       'Tu pries sans ressentir. C\'est d\u00e9j\u00e0 une forme de foi extraordinaire \u2014 croire sans preuve int\u00e9rieure, agir sans r\u00e9compense imm\u00e9diate. Allah voit cet effort. "Ceux qui ont cru et accompli les \u0153uvres bonnes \u2014 Nous ne laissons pas se perdre la r\u00e9compense de ceux qui font le bien." \u2014 Al-Kahf 18:30.',
       'Le Proph\u00e8te \ufdfa a dit : "Priez comme si vous voyiez Allah \u2014 et si vous ne Le voyez pas, sachez qu\'Il vous voit." La deuxi\u00e8me partie est pour toi ce soir. Tu ne Le vois pas, tu ne Le ressens pas \u2014 mais Il te voit, Lui. Cette asym\u00e9trie suffit. Fais les gestes sous Son regard.',
       'Il y a une pri\u00e8re que les anges aiment plus que toutes les autres \u2014 celle du serviteur qui prie sans go\u00fbt, sans larmes, sans \u00e9lan, mais qui se l\u00e8ve quand m\u00eame. Parce qu\'elle co\u00fbte tout sans rien promettre en retour. C\'est la pri\u00e8re de la foi nue. C\'est peut-\u00eatre la tienne ce soir.'
-    ]
+    ],
+    technique: 'Avant de te lever, dis trois fois Astaghfirullah lentement. Puis choisis un seul mot de la pri\u00e8re \u2014 un seul \u2014 et concentre-toi dessus uniquement. Al-Ghaz\u00e2l\u00ee dit qu\'une seconde de pr\u00e9sence r\u00e9elle vaut une heure de r\u00e9citation absente.',
+    dua: 'All\u00e2humma inn\u00ee as\'aluka khashyataka fis-sirri wal-\u02bfal\u00e2niyya',
+    duaFr: 'Seigneur, je Te demande de Te craindre en secret et en public.',
+    duaSource: 'Nasa\u02bfi 1305',
+    arabic_dua: '\u0627\u0644\u0644\u0651\u064e\u0647\u064f\u0645\u0651\u064e \u0625\u0650\u0646\u0651\u0650\u064a \u0623\u064e\u0633\u0652\u0623\u064e\u0644\u064f\u0643\u064e \u062e\u064e\u0634\u0652\u064a\u064e\u062a\u064e\u0643\u064e \u0641\u0650\u064a \u0627\u0644\u0633\u0651\u0650\u0631\u0651\u0650 \u0648\u064e\u0627\u0644\u0652\u0639\u064e\u0644\u064e\u0627\u0646\u0650\u064a\u064e\u0629\u0650'
   },
   {
     sym: 'Je me sens trop loin, trop indigne pour prier.',
@@ -13061,7 +13083,12 @@ var _PM_PROFILES = [
       'Ibn Ata\'illah \u00e9crit : "Ton p\u00e9ch\u00e9, s\'il te conduit \u00e0 l\'humilit\u00e9 et \u00e0 l\'indigence, vaut mieux que ton ob\u00e9issance si elle t\'entra\u00eene \u00e0 l\'orgueil." Ce sentiment d\'indignit\u00e9 \u2014 garde-le. Mais laisse-le te pousser vers le suj\u00fbd, pas loin de lui.',
       'Adam \ufdfa a p\u00e9ch\u00e9. Nouh \ufdfa a vu son fils se noyer. Moussa \ufdfa a tu\u00e9 un homme. Y\u00fbnus \ufdfa a abandonn\u00e9 son peuple. Tous ont cri\u00e9 vers Allah depuis le fond de leur indignit\u00e9. Allah les a tous re\u00e7us. Il t\'attend toi aussi \u2014 pas propre, pas pr\u00eat. Juste l\u00e0.',
       'Allah dit dans un hadith qudsi : "\u00d4 fils d\'Adam, tant que tu M\'invoqueras et esp\u00e9reras en Moi, Je te pardonnerai quoi qu\'il en soit." Pas de condition de puret\u00e9. Pas de seuil de dignit\u00e9. Juste l\'invocation et l\'espoir. Tu les as encore. C\'est assez.'
-    ]
+    ],
+    technique: 'Avant de te lever, dis : "Astaghfirullah wa at\u00fbbu ilayh". Tu n\'arrives pas souill\u00e9 \u2014 tu arrives en repentance. Ibn Ata\'illah dit que le p\u00e9ch\u00e9 qui m\u00e8ne au repentir vaut parfois mieux que l\'ob\u00e9issance qui m\u00e8ne \u00e0 l\'orgueil.',
+    dua: 'Rabbi inn\u00ee dhalamtu nafs\u00ee dhulman kath\u00eeran wa l\u00e2 yaghfiru dh-dhun\u00fbba ill\u00e2 anta faghfir l\u00ee',
+    duaFr: 'Seigneur, j\'ai beaucoup opprim\u00e9 mon \u00e2me \u2014 nul ne pardonne les p\u00e9ch\u00e9s sinon Toi, pardonne-moi.',
+    duaSource: 'Bukhari 834',
+    arabic_dua: '\u0631\u064e\u0628\u0650\u0651 \u0625\u0650\u0646\u0651\u0650\u064a \u0638\u064e\u0644\u064e\u0645\u0652\u062a\u064f \u0646\u064e\u0641\u0652\u0633\u0650\u064a \u0638\u064f\u0644\u0652\u0645\u064b\u0627 \u0643\u064e\u062b\u0650\u064a\u0631\u064b\u0627 \u0648\u064e\u0644\u064e\u0627 \u064a\u064e\u063a\u0652\u0641\u0650\u0631\u064f \u0627\u0644\u0630\u0651\u064f\u0646\u0648\u0628\u064e \u0625\u0650\u0644\u0651\u064e\u0627 \u0623\u064e\u0646\u0652\u062a\u064e \u0641\u064e\u0627\u063a\u0652\u0641\u0650\u0631\u0652 \u0644\u0650\u064a'
   },
   {
     sym: 'Je prie, mais j\u2019ai l\u2019impression que mes pri\u00e8res ne montent pas \u2014 mon c\u0153ur est trop lourd.',
@@ -13074,7 +13101,12 @@ var _PM_PROFILES = [
       'Un c\u0153ur lourd qui prie vaut infiniment plus qu\'un c\u0153ur l\u00e9ger qui ne prie pas. Tu es l\u00e0. Tu te l\u00e8ves malgr\u00e9 le poids. C\'est pr\u00e9cis\u00e9ment ce qu\'Allah demande \u2014 pas la l\u00e9g\u00e8ret\u00e9, mais la pr\u00e9sence. "Appelez-Moi, Je vous r\u00e9pondrai." \u2014 Gh\u00e2fir 40:60.',
       'Ibn al-Qayyim \u00e9crit que les larmes de la pri\u00e8re \u00e9teignent les feux de l\'au-del\u00e0. Mais m\u00eame sans larmes \u2014 la pesanteur que tu ressens, c\'est ton c\u0153ur qui reconna\u00eet la distance. Et reconna\u00eetre la distance, c\'est d\u00e9j\u00e0 faire un pas vers Lui.',
       'Y\u00fbnus \ufdfa priait au fond de trois t\u00e9n\u00e8bres \u2014 le ventre de la baleine, la profondeur de la mer, la nuit. Sa pri\u00e8re montait quand m\u00eame : "L\u00e2 il\u00e2ha ill\u00e2 anta subh\u00e2naka inn\u00ee kuntu mina dh-dh\u00e2lim\u00een." La profondeur n\'est pas un obstacle \u00e0 l\'exaucement. Elle en est parfois la condition.'
-    ]
+    ],
+    technique: 'Au suj\u00fbd, reste plus longtemps que d\'habitude. Tu n\'as pas besoin de formules. Dis ce qui p\u00e8se \u2014 dans ta langue si besoin. C\'est l\u00e0, le front \u00e0 terre, que tu es le plus proche de Lui.',
+    dua: 'Rabbi inn\u00ee lim\u00e2 anzalta ilayya min khayrin faq\u00eer',
+    duaFr: 'Seigneur, je suis dans le besoin de tout bien que Tu fais descendre.',
+    duaSource: 'Coran 28:24',
+    arabic_dua: '\u0631\u064e\u0628\u0650\u0651 \u0625\u0650\u0646\u0651\u0650\u064a \u0644\u0650\u0645\u064e\u0627 \u0623\u064e\u0646\u0632\u064e\u0644\u0652\u062a\u064e \u0625\u0650\u0644\u064e\u064a\u0651\u064e \u0645\u0650\u0646\u0652 \u062e\u064e\u064a\u0652\u0631\u064d \u0641\u064e\u0642\u0650\u064a\u0631\u064c'
   },
   {
     sym: 'Ma t\u00eate est pleine de mes probl\u00e8mes, mes projets, mon argent \u2014 la pri\u00e8re semble loin de tout \u00e7a.',
@@ -13087,7 +13119,12 @@ var _PM_PROFILES = [
       'Ibn al-Qayyim \u00e9crit que le c\u0153ur distrait par le dunya ressemble \u00e0 un homme qui contemple une carte au lieu de marcher. La pri\u00e8re est le mouvement. Tout le reste \u2014 les plans, les calculs, les inqui\u00e9tudes \u2014 c\'est la carte. L\u00e8ve-toi. Marche.',
       'Sulaym\u00e2n \ufdfa poss\u00e9dait un royaume que nul apr\u00e8s lui n\'aura \u2014 les vents, les djinns, les arm\u00e9es. Et il priait. Il savait que tout ce qu\'il poss\u00e9dait \u00e9tait un d\u00e9p\u00f4t, pas une propri\u00e9t\u00e9. Tes biens, tes projets, ton argent \u2014 ce sont des d\u00e9p\u00f4ts. La pri\u00e8re te le rappelle avant que tu l\'oublies.',
       'Allah dit : "La vie de ce monde n\'est que jeu et divertissement." \u2014 Muhammad 47:36. Ce n\'est pas un m\u00e9pris du monde \u2014 c\'est une invitation \u00e0 ne pas le laisser remplir tout l\'espace. La pri\u00e8re est la fronti\u00e8re. Elle dit : jusqu\'ici, le monde. \u00c0 partir d\'ici, l\'essentiel.'
-    ]
+    ],
+    technique: 'Avant le takb\u00eer, murmure tout ce qui t\'encombre \u2014 dettes, projets, peurs. Puis dis : Allahu Akbar \u2014 Allah est plus grand que tout \u00e7a. Al-Ghaz\u00e2l\u00ee dit que la pri\u00e8re commence vraiment \u00e0 ce moment-l\u00e0.',
+    dua: 'All\u00e2humma anta rabb\u00ee l\u00e2 il\u00e2ha ill\u00e2 anta \u02bfalayka tawakkaltu wa anta rabb ul-\u02bfarshi l-\u02bfadh\u00eem',
+    duaFr: 'Seigneur, Tu es mon Ma\u00eetre, pas de dieu sauf Toi, en Toi je me confie, Tu es le Seigneur du Tr\u00f4ne immense.',
+    duaSource: 'Muslim 2726',
+    arabic_dua: '\u0627\u0644\u0644\u0651\u064e\u0647\u064f\u0645\u0651\u064e \u0623\u064e\u0646\u0652\u062a\u064e \u0631\u064e\u0628\u0650\u0651\u064a \u0644\u064e\u0627 \u0625\u0650\u0644\u064e\u0647\u064e \u0625\u0650\u0644\u0651\u064e\u0627 \u0623\u064e\u0646\u0652\u062a\u064e \u0639\u064e\u0644\u064e\u064a\u0652\u0643\u064e \u062a\u064e\u0648\u064e\u0643\u0651\u064e\u0644\u0652\u062a\u064f \u0648\u064e\u0623\u064e\u0646\u0652\u062a\u064e \u0631\u064e\u0628\u0651\u064f \u0627\u0644\u0652\u0639\u064e\u0631\u0652\u0634\u0650 \u0627\u0644\u0652\u0639\u064e\u0638\u0650\u064a\u0645\u0650'
   },
   {
     sym: 'Je vis comme si j\u2019avais tout le temps \u2014 la pri\u00e8re peut attendre, je la rattraperai.',
@@ -13100,7 +13137,12 @@ var _PM_PROFILES = [
       'Imagine la sc\u00e8ne du Jugement. On te montre une pri\u00e8re manqu\u00e9e. "Pourquoi ?" Tu cherches une r\u00e9ponse. Il n\'y en a pas de bonne. La seule bonne r\u00e9ponse se donne maintenant, avant que la question soit pos\u00e9e. L\u00e8ve-toi.',
       'Ibn Mas\u02bfud \ufdfa raconte qu\'il demandait au Proph\u00e8te \ufdfa quel acte Allah aime le plus. Il r\u00e9pondit : "La pri\u00e8re \u00e0 son heure." Pas la plus longue. Pas la plus belle. Celle accomplie dans sa fen\u00eatre de temps. Cette fen\u00eatre est ouverte maintenant. Elle ne le sera pas toujours.',
       'Chaque pri\u00e8re manqu\u00e9e est une dette envers ton \u00e2me qui m\u00e9rite d\'\u00eatre nourrie. On rembourse les dettes financi\u00e8res par crainte des cons\u00e9quences. Les dettes spirituelles, on les rembourse maintenant \u2014 pendant qu\'on en est encore capable.'
-    ]
+    ],
+    technique: 'L\u00e8ve-toi maintenant \u2014 le corps d\'abord, l\'intention suit. Avant le takb\u00eer, dis-toi : "Cette pri\u00e8re-l\u00e0 pourrait \u00eatre ma derni\u00e8re." Pas par peur \u2014 par pr\u00e9sence. Ibn al-Qayyim dit que celui qui prie ainsi ne se pr\u00e9cipite plus jamais.',
+    dua: 'All\u00e2humma l\u00e2 taj\'al ad-duny\u00e2 akbara hammin\u00e2 wa l\u00e2 mablagha \u02bfilmin\u00e2',
+    duaFr: 'Seigneur, ne fais pas que le monde soit notre plus grande pr\u00e9occupation ni la limite de notre savoir.',
+    duaSource: 'Tirmidhi 3502',
+    arabic_dua: '\u0627\u0644\u0644\u0651\u064e\u0647\u064f\u0645\u0651\u064e \u0644\u064e\u0627 \u062a\u064e\u062c\u0652\u0639\u064e\u0644\u0650 \u0627\u0644\u062f\u0651\u064f\u0646\u0652\u064a\u064e\u0627 \u0623\u064e\u0643\u0652\u0628\u064e\u0631\u064e \u0647\u064e\u0645\u0651\u0650\u0646\u064e\u0627 \u0648\u064e\u0644\u064e\u0627 \u0645\u064e\u0628\u0652\u0644\u064e\u063a\u064e \u0639\u0650\u0644\u0652\u0645\u0650\u0646\u064e\u0627'
   }
 ];
 function closePrierMieux() { var o = document.getElementById('prier-mieux-overlay'); if (o) o.remove(); }
@@ -13137,8 +13179,37 @@ function renderPM() {
     html = '<div style="padding-top:6vh;text-align:center;">'
       + '<div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:24px;"><div style="width:46px;height:1px;background:linear-gradient(90deg,transparent,rgba(200,168,74,0.45));"></div><div style="width:6px;height:6px;border:1px solid rgba(200,168,74,0.55);transform:rotate(45deg);"></div><div style="width:46px;height:1px;background:linear-gradient(90deg,rgba(200,168,74,0.45),transparent);"></div></div>'
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;line-height:1.72;color:#F4ECD6;max-width:380px;margin:0 auto;">' + _boost + '</div>'
-      + '<button onclick="closePrierMieux()" style="margin-top:36px;padding:15px 44px;border-radius:30px;border:1px solid #E8CE8A;background:linear-gradient(180deg,#F8EAC2,#D4AF37);color:#1a130b;font-family:\'Cormorant Garamond\',serif;font-size:17px;letter-spacing:.03em;cursor:pointer;">Je vais prier</button>'
+      + '<div style="margin:28px auto 0;max-width:380px;padding:16px;background:rgba(200,168,74,0.06);border:1px solid rgba(200,168,74,0.18);border-radius:14px;text-align:left;">'
+      + '<div style="font-size:10px;letter-spacing:2px;color:rgba(200,168,74,0.5);text-transform:uppercase;margin-bottom:8px;">\u2726 Avant de te lever</div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;color:rgba(240,234,214,0.85);line-height:1.6;">' + pb.technique + '</div>'
+      + '</div>'
+      + '<div style="margin:16px auto 0;max-width:380px;padding:16px;background:rgba(200,168,74,0.06);border:1px solid rgba(200,168,74,0.18);border-radius:14px;text-align:center;">'
+      + '<div style="font-size:10px;letter-spacing:2px;color:rgba(200,168,74,0.5);text-transform:uppercase;margin-bottom:10px;">\u2726 Du\'â</div>'
+      + '<div style="font-family:\'Scheherazade New\',serif;font-size:22px;color:#C8A84A;direction:rtl;margin-bottom:10px;line-height:1.6;">' + pb.arabic_dua + '</div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(240,234,214,0.7);line-height:1.6;margin-bottom:6px;">' + pb.duaFr + '</div>'
+      + '<div style="font-size:11px;color:rgba(200,168,74,0.45);">\u2014 ' + pb.duaSource + '</div>'
+      + '</div>'
+      + '<button onclick="_pmGo(\'retour\')" style="margin-top:32px;padding:15px 44px;border-radius:30px;border:1px solid #E8CE8A;background:linear-gradient(180deg,#F8EAC2,#D4AF37);color:#1a130b;font-family:\'Cormorant Garamond\',serif;font-size:17px;letter-spacing:.03em;cursor:pointer;">Je vais prier</button>'
       + '<div onclick="_pmGo(\'symptom\')" style="margin-top:18px;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:14px;color:rgba(200,168,74,0.5);cursor:pointer;">\u2039 Recommencer</div>'
+      + '</div>';
+  } else if (_pmStep === 'retour') {
+    html = '<div style="padding-top:10vh;text-align:center;">'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:24px;color:#F4ECD6;margin-bottom:32px;">Comment s\'est pass\u00e9e ta pri\u00e8re ?</div>'
+      + '<div style="display:flex;flex-direction:column;gap:12px;max-width:320px;margin:0 auto;">'
+      + '<button onclick="_pmRetour(0)" style="padding:16px;border-radius:14px;border:1px solid rgba(200,168,74,0.3);background:rgba(200,168,74,0.06);color:#F4ECD6;font-family:\'Cormorant Garamond\',serif;font-size:17px;cursor:pointer;">Elle m\'a apais\u00e9</button>'
+      + '<button onclick="_pmRetour(1)" style="padding:16px;border-radius:14px;border:1px solid rgba(200,168,74,0.3);background:rgba(200,168,74,0.06);color:#F4ECD6;font-family:\'Cormorant Garamond\',serif;font-size:17px;cursor:pointer;">Ni bien ni mal</button>'
+      + '<button onclick="_pmRetour(2)" style="padding:16px;border-radius:14px;border:1px solid rgba(200,168,74,0.3);background:rgba(200,168,74,0.06);color:#F4ECD6;font-family:\'Cormorant Garamond\',serif;font-size:17px;cursor:pointer;">Toujours difficile</button>'
+      + '</div>'
+      + '</div>';
+  } else if (_pmStep === 'retour-msg') {
+    var _msgs = [
+      'Alhamdulillah. C\'est \u00e7a, la pri\u00e8re \u2014 elle ne change pas toujours les circonstances. Elle change celui qui prie. Garde ce moment avec toi.',
+      'C\'est d\u00e9j\u00e0 une pri\u00e8re accomplie. Allah ne juge pas la qualit\u00e9 du ressenti \u2014 Il juge la pr\u00e9sence et l\'intention. Tu \u00e9tais l\u00e0. C\'est l\'essentiel.',
+      'La difficult\u00e9 n\'annule pas la r\u00e9compense \u2014 elle la multiplie. Reviens demain. Chaque pri\u00e8re difficile accomplie est une preuve de foi que les pri\u00e8res faciles ne peuvent pas donner.'
+    ];
+    html = '<div style="padding-top:10vh;text-align:center;">'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;line-height:1.72;color:#F4ECD6;max-width:360px;margin:0 auto 36px;">' + _msgs[_pmRetourIdx] + '</div>'
+      + '<button onclick="closePrierMieux()" style="padding:15px 44px;border-radius:30px;border:1px solid rgba(200,168,74,0.4);background:transparent;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:16px;cursor:pointer;">Fermer</button>'
       + '</div>';
   }
   b.innerHTML = html;
@@ -13166,6 +13237,7 @@ window.closePrierMieux = closePrierMieux;
 window._pmGo = _pmGo;
 window._pmPick = _pmPick;
 window._pmConfirm = _pmConfirm;
+window._pmRetour = _pmRetour;
 
 function renderRepereHub() {
   return '<div style="padding:calc(env(safe-area-inset-top,0px) + 30px) 18px 40px;max-width:480px;margin:0 auto;">'
