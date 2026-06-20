@@ -9295,10 +9295,23 @@ window.freemiumShowCode=freemiumShowCode; window.freemiumBuy=freemiumBuy; window
 function shareNiyyah() {
   var url = 'https://nabs881-sketch.github.io/niyyah-app/';
   var text = 'Je progresse spirituellement avec Niyyah — une app islamique francophone unique. Essaie gratuitement :';
+  function _clipboardFallback() {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text + ' ' + url).then(function(){ v2ShowToast('Lien copié ✦'); }).catch(function(){ v2ShowToast('Lien copié ✦'); });
+    } else {
+      v2ShowToast('Lien copié ✦');
+    }
+  }
   if (navigator.share) {
-    navigator.share({ title: 'Niyyah', text: text, url: url });
+    try {
+      navigator.share({ title: 'Niyyah', text: text, url: url }).catch(function(err){
+        if (err && err.name !== 'AbortError') _clipboardFallback();
+      });
+    } catch(e) {
+      _clipboardFallback();
+    }
   } else {
-    navigator.clipboard.writeText(text + ' ' + url).then(function(){ v2ShowToast('Lien copié ✦'); });
+    _clipboardFallback();
   }
 }
 window.shareNiyyah = shareNiyyah;
