@@ -12998,6 +12998,68 @@ window.renderCalendrierCard = renderCalendrierCard;
 
 var _pmStep = 'intro', _pmIdx = -1;
 var _pmRetourIdx = 0;
+var _PM_CONSEILS = [
+  {
+    titre: 'La pr\u00e9paration du c\u0153ur',
+    texte: 'Avant de te lever pour prier, vide ton c\u0153ur de ce qui l\'encombre. Confie tes soucis \u00e0 Allah avant le takb\u00eer, puis dis Allahu Akbar comme une d\u00e9claration : "tout cela est moins grand que Toi." La pri\u00e8re commence dans le c\u0153ur, pas dans les pieds.',
+    auteur: 'Al-Ghaz\u00e2l\u00ee',
+    source: 'Ihy\u00e2\u02bc \u02bfUl\u00fbm al-D\u00een'
+  },
+  {
+    titre: 'L\'\u00e9tat avant la pri\u00e8re',
+    texte: 'H\u00e2tim al-\u02bfAssam fut interrog\u00e9 sur son \u00e9tat avant la pri\u00e8re. Il r\u00e9pondit : "Quand je me l\u00e8ve, j\'imagine la Ka\'ba devant moi, le Sir\u00e2t sous mes pieds, le Paradis \u00e0 ma droite, l\'Enfer \u00e0 ma gauche, et l\'Ange de la mort derri\u00e8re moi. Puis je prie comme si c\'\u00e9tait ma derni\u00e8re pri\u00e8re."',
+    auteur: 'H\u00e2tim al-\u02bfAssam',
+    source: 'IIIe si\u00e8cle de l\'H\u00e9gire'
+  },
+  {
+    titre: 'Les ablutions',
+    texte: 'Les ablutions ne purifient pas seulement le corps \u2014 elles signalent au c\u0153ur qu\'un changement d\'\u00e9tat est en cours. Fais tes ablutions lentement, conscient que tes p\u00e9ch\u00e9s s\'en vont avec chaque goutte d\'eau. Tu arrives \u00e0 la pri\u00e8re d\u00e9j\u00e0 en chemin.',
+    auteur: 'Ibn al-Qayyim',
+    source: 'Asr\u00e2r al-Sal\u00e2t'
+  },
+  {
+    titre: 'R\u00e9citer lentement',
+    texte: 'R\u00e9cite la Fatiha verset par verset, en attendant la r\u00e9ponse d\'Allah \u00e0 chacun. Car Allah r\u00e9pond : "Mon serviteur M\'a lou\u00e9" \u2014 "Mon serviteur s\'en remet \u00e0 Moi" \u2014 "Mon serviteur M\'a demand\u00e9." Ce n\'est pas une r\u00e9citation. C\'est un dialogue.',
+    auteur: 'Al-Ghaz\u00e2l\u00ee',
+    source: 'Ihy\u00e2\u02bc \u02bfUl\u00fbm al-D\u00een'
+  },
+  {
+    titre: 'Fixer le lieu de suj\u00fbd',
+    texte: 'Le Proph\u00e8te \ufdfa regardait le lieu de sa prosternation pendant la pri\u00e8re. Ce regard fixe ancre l\'esprit dans le pr\u00e9sent. Quand les pens\u00e9es viennent, reviens \u00e0 ce point \u2014 sans te juger. L\'esprit s\'\u00e9gare. Le regard, lui, reste.',
+    auteur: 'Ibn al-Qayyim',
+    source: 'Asr\u00e2r al-Sal\u00e2t'
+  },
+  {
+    titre: 'Comprendre ce qu\'on dit',
+    texte: 'Choisis une formule \u2014 Subh\u00e2na Rabbiyal \u02bfAdh\u00eem \u2014 et traduis-la dans ton c\u0153ur avant de continuer. Laisse le sens peser. Al-Ghaz\u00e2l\u00ee et Ibn al-Qayyim s\'accordent : une seconde de sens r\u00e9el vaut mille secondes de r\u00e9citation absente.',
+    auteur: 'Al-Ghaz\u00e2l\u00ee & Ibn al-Qayyim',
+    source: 'Ihy\u00e2\u02bc & Asr\u00e2r al-Sal\u00e2t'
+  },
+  {
+    titre: 'Le ruk\u00fb\u02bc et le suj\u00fbd',
+    texte: 'Le ruk\u00fb\u02bc est l\'inclination de tout l\'\u00eatre devant la Majest\u00e9 divine \u2014 pas seulement le dos. Et le suj\u00fbd est le moment o\u00f9 l\'esclave est le plus proche de son Seigneur. Dans le suj\u00fbd, prolonge. Dis ce que tu ne saurais pas dire autrement. C\'est l\u00e0 que les portes s\'ouvrent.',
+    auteur: 'Ibn al-Qayyim',
+    source: 'Asr\u00e2r al-Sal\u00e2t'
+  },
+  {
+    titre: 'Le dhikr apr\u00e8s la pri\u00e8re',
+    texte: 'Le Proph\u00e8te \ufdfa ne se levait pas imm\u00e9diatement apr\u00e8s le sal\u00e2m. Il restait. Ces moments prolongent l\'\u00e9tat de la pri\u00e8re dans le monde. Sans eux, la pri\u00e8re se referme comme une porte que tu viens juste d\'ouvrir.',
+    auteur: 'Ibn al-Qayyim',
+    source: 'Asr\u00e2r al-Sal\u00e2t'
+  },
+  {
+    titre: 'Ne pas se pr\u00e9cipiter vers l\'\u00e9cran',
+    texte: 'Ce qui suit la pri\u00e8re colore l\'\u00e9tat int\u00e9rieur. Si tu passes imm\u00e9diatement \u00e0 une distraction, la pri\u00e8re s\'efface. Si tu restes quelques instants dans le silence ou le dhikr, elle reste. La transition est un acte spirituel \u00e0 part enti\u00e8re.',
+    auteur: 'Al-Ghaz\u00e2l\u00ee',
+    source: 'Ihy\u00e2\u02bc \u02bfUl\u00fbm al-D\u00een'
+  },
+  {
+    titre: 'La r\u00e9gularit\u00e9',
+    texte: 'La pri\u00e8re r\u00e9guli\u00e8re \u2014 m\u00eame imparfaite \u2014 vaut infiniment plus que la pri\u00e8re rare mais intense. Le c\u0153ur se forme par la r\u00e9p\u00e9tition, pas par l\'\u00e9clat. Cinq pri\u00e8res imparfaites chaque jour creusent un sillon dans l\'\u00e2me que dix pri\u00e8res exceptionnelles ne feront jamais.',
+    auteur: 'Ibn al-Qayyim',
+    source: 'Asr\u00e2r al-Sal\u00e2t'
+  }
+];
 function _pmRetour(i) { _pmRetourIdx = i; _pmStep = 'retour-msg'; renderPM(); }
 var _PM_PROFILES = [
   {
@@ -13158,6 +13220,7 @@ function renderPM() {
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-weight:300;font-size:30px;letter-spacing:.05em;color:#EADCB6;margin-top:10px;">Prier mieux</div>'
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:16px;line-height:1.6;color:rgba(200,168,74,0.7);margin:22px auto 0;max-width:330px;">Ta pri\u00e8re te p\u00e8se, file trop vite, ou sonne creux ? Ce n\u2019est pas un manque de foi \u2014 c\u2019est un c\u0153ur fatigu\u00e9. Pose-toi une minute, on va trouver ensemble ce qui bloque.</div>'
       + '<button onclick="_pmGo(\'symptom\')" style="margin-top:34px;padding:14px 40px;border-radius:30px;border:1px solid rgba(232,206,138,0.5);background:linear-gradient(180deg,rgba(232,206,138,0.16),rgba(232,206,138,0.04));color:#E8CE8A;font-family:\'Cormorant Garamond\',serif;font-size:17px;letter-spacing:.04em;cursor:pointer;">Commencer</button>'
+      + '<div onclick="_pmGo(\'conseil\')" style="margin-top:16px;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:15px;color:rgba(200,168,74,0.55);cursor:pointer;">Conseils des ul\u00e9mas \u2726</div>'
       + '</div>';
   } else if (_pmStep === 'symptom') {
     html = '<div style="padding-top:5vh;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:21px;line-height:1.5;color:#EADCB6;text-align:center;margin-bottom:26px;">L\u00e0, maintenant, quand tu te l\u00e8ves pour prier\u2026 qu\u2019est-ce qui p\u00e8se le plus ?</div>';
@@ -13210,6 +13273,16 @@ function renderPM() {
     html = '<div style="padding-top:10vh;text-align:center;">'
       + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;line-height:1.72;color:#F4ECD6;max-width:360px;margin:0 auto 36px;">' + _msgs[_pmRetourIdx] + '</div>'
       + '<button onclick="closePrierMieux()" style="padding:15px 44px;border-radius:30px;border:1px solid rgba(200,168,74,0.4);background:transparent;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:16px;cursor:pointer;">Fermer</button>'
+      + '</div>';
+  } else if (_pmStep === 'conseil') {
+    var _ci = new Date().getDate() % _PM_CONSEILS.length;
+    var _c = _PM_CONSEILS[_ci];
+    html = '<div style="padding-top:8vh;text-align:center;">'
+      + '<div style="font-size:10px;letter-spacing:3px;color:rgba(200,168,74,0.5);text-transform:uppercase;margin-bottom:20px;">\u2726 Conseil du jour</div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;color:#E8CE8A;margin-bottom:24px;">' + _c.titre + '</div>'
+      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;line-height:1.75;color:#F4ECD6;max-width:360px;margin:0 auto 24px;padding:0 16px;">' + _c.texte + '</div>'
+      + '<div style="font-size:13px;color:rgba(200,168,74,0.55);">\u2014 ' + _c.auteur + ' \u00b7 <span style="font-style:italic;">' + _c.source + '</span></div>'
+      + '<div onclick="_pmGo(\'intro\')" style="margin-top:32px;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:15px;color:rgba(200,168,74,0.5);cursor:pointer;">\u2039 Retour</div>'
       + '</div>';
   }
   b.innerHTML = html;
