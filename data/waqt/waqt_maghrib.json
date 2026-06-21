@@ -695,12 +695,6 @@
   },
   {
     "source": "tafakkur",
-    "id_origine": 223,
-    "fr": "Toute renommée humaine s'éteint en trois générations. Une seule traverse les siècles.\n\nAl-Mājid — L'Illustre",
-    "categorie": "CONTEMPLATIF"
-  },
-  {
-    "source": "tafakkur",
     "id_origine": 224,
     "fr": "Tout est multiple, divisible, dupliquable — sauf Lui.\n\nAl-Wāhid — L'Unique",
     "categorie": "CONTEMPLATIF"
@@ -757,12 +751,6 @@
     "source": "tafakkur",
     "id_origine": 234,
     "fr": "Rien ne Le révèle complètement. Toujours plus profond que ce que tu vois.\n\nAl-Bātin — Le Caché",
-    "categorie": "CONTEMPLATIF"
-  },
-  {
-    "source": "tafakkur",
-    "id_origine": 235,
-    "fr": "Toutes les choses ont un maître. Tous les maîtres ont un Maître.\n\nAl-Wālī — Le Maître absolu",
     "categorie": "CONTEMPLATIF"
   },
   {
@@ -1002,7 +990,7 @@
   {
     "source": "waqt_soir",
     "plage_origine": "soir",
-    "fr": "Les serviteurs du Paradis offrent une boisson 'à la saveur du gingembre, mêlée de Kâfûr'. Allâh n'a pas oublié les goûts. Tes papilles te suivront là-bas. — Coran 76:5 + 76:17",
+    "fr": "Les serviteurs du Paradis offrent deux boissons : l'une au Kâfûr (76:5), l'autre au gingembre (76:17). Allâh n'a pas oublié les goûts. Tes papilles te suivront là-bas.",
     "en": "",
     "ar": "",
     "categorie": "CONTEMPLATIF"
