@@ -2,14 +2,6 @@
   {
     "source": "waqt_nuit",
     "plage_origine": "nuit",
-    "fr": "Pose ton téléphone face cachée — la nuit appartient à Allah.",
-    "en": "Place your phone face down — the night belongs to Allah.",
-    "ar": "ضَعْ هاتِفَكَ مَقْلُوبًا — اللَّيْلُ لِلَّه.",
-    "categorie": "SUNNAH"
-  },
-  {
-    "source": "waqt_nuit",
-    "plage_origine": "nuit",
     "fr": "Écoute ta respiration 5 cycles — chaque souffle est un dépôt qu’Allah reprendra.",
     "en": "Listen to 5 breaths — each one is a trust Allah will reclaim.",
     "ar": "اسْمَعْ ٥ أَنْفاس — كُلُّ نَفَسٍ أَمانَةٌ سَيَسْتَرِدُّها.",
@@ -1762,22 +1754,6 @@
   {
     "source": "waqt_nuit",
     "plage_origine": "nuit",
-    "fr": "Récite Ayat al-Kursî avant de dormir. Le Prophète ﷺ a dit qu'un ange te protège alors jusqu'au matin.",
-    "en": "",
-    "ar": "",
-    "categorie": "SUNNAH"
-  },
-  {
-    "source": "waqt_nuit",
-    "plage_origine": "nuit",
-    "fr": "Lis les trois dernières sourates (al-Ikhlâs, al-Falaq, an-Nâs), souffle dans tes mains, passe-les sur ton corps trois fois. Protection nocturne.",
-    "en": "",
-    "ar": "",
-    "categorie": "SUNNAH"
-  },
-  {
-    "source": "waqt_nuit",
-    "plage_origine": "nuit",
     "fr": "Bois un verre d'eau avant de dormir. Le corps déshydraté dort mal. Sois bon avec ton corps — il porte ton âme.",
     "en": "",
     "ar": "",
@@ -2058,7 +2034,7 @@
   {
     "source": "waqt_nuit",
     "plage_origine": "nuit",
-    "fr": "Allâhumma innî a'ûdhu bika min al-hammi wa-l-hazan, wa-l-'ajzi wa-l-kasal, wa-l-bukhli wa-l-jubn. Du'â du Prophète ﷺ contre les 8 maux.",
+    "fr": "Allâhumma innî a'ûdhu bika min al-hammi wa-l-hazan, wa-l-'ajzi wa-l-kasal, wa-l-bukhli wa-l-jubn. Du'â du Prophète ﷺ contre les 6 maux.",
     "en": "",
     "ar": "",
     "categorie": "SUNNAH"
