@@ -2,12 +2,16 @@
 const fs = require('fs');
 const { execSync } = require('child_process');
 
+const isWin = process.platform === 'win32';
+const terserBin  = isWin ? 'node_modules\\.bin\\terser.cmd'   : 'node_modules/.bin/terser';
+const cleancssBI = isWin ? 'node_modules\\.bin\\cleancss.cmd' : 'node_modules/.bin/cleancss';
+
 try {
   console.log('> Minification script.js -> script.min.js');
-  execSync('node --max-old-space-size=512 node_modules/terser/bin/terser script.js -o script.min.js --compress --mangle', { stdio: 'inherit' });
+  execSync(`"${terserBin}" script.js -o script.min.js --compress --mangle`, { stdio: 'inherit' });
 
   console.log('> Minification style.css -> style.min.css');
-  execSync('npx clean-css-cli -o style.min.css style.css', { stdio: 'inherit' });
+  execSync(`"${cleancssBI}" -o style.min.css style.css`, { stdio: 'inherit' });
 
   // Bump de la version du service worker (niyyah-vN -> niyyah-v(N+1))
   let sw = fs.readFileSync('sw.js', 'utf8');
