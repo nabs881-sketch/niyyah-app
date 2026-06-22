@@ -24,7 +24,12 @@ try {
   }
 
   console.log('> Minification style.css -> style.min.css');
-  execSync(`"${cleancssBI}" -o style.min.css style.css`, { stdio: 'inherit' });
+  try {
+    execSync(`"${cleancssBI}" -o style.min.css style.css`, { stdio: 'inherit' });
+  } catch (e) {
+    console.log('  ! cleancss OOM, copie directe style.css -> style.min.css');
+    fs.copyFileSync('style.css', 'style.min.css');
+  }
 
   // Bump de la version du service worker (niyyah-vN -> niyyah-v(N+1))
   let sw = fs.readFileSync('sw.js', 'utf8');
