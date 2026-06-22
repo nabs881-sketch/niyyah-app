@@ -8,7 +8,7 @@ const cleancssBI = isWin ? 'node_modules\\.bin\\cleancss.cmd' : 'node_modules/.b
 
 try {
   console.log('> Minification script.js -> script.min.js');
-  execSync(`"${terserBin}" script.js -o script.min.js --compress --mangle`, { stdio: 'inherit' });
+  execSync(`"${terserBin}" script.js -o script.min.js --compress passes=1 --mangle`, { stdio: 'inherit' });
 
   console.log('> Minification style.css -> style.min.css');
   execSync(`"${cleancssBI}" -o style.min.css style.css`, { stdio: 'inherit' });
