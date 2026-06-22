@@ -9,12 +9,18 @@ const cleancssBI = isWin ? 'node_modules\\.bin\\cleancss.cmd' : 'node_modules/.b
 try {
   console.log('> Minification script.js -> script.min.js');
   // Minification JS — terser avec compression minimale
-  // (fallback: copie directe si OOM)
+  // (fallback léger si OOM : suppression commentaires + espaces superflus)
   try {
     execSync(`"${terserBin}" script.js -o script.min.js --compress passes=1 --mangle`, { stdio: 'inherit' });
   } catch (e) {
-    console.log('  ! terser OOM, copie directe script.js -> script.min.js');
-    fs.copyFileSync('script.js', 'script.min.js');
+    console.log('  ! terser OOM, fallback strip-comments');
+    let src = fs.readFileSync('script.js', 'utf8');
+    // Supprime commentaires /* */ et // (hors strings)
+    src = src.replace(/\/\*[\s\S]*?\*\//g, '');
+    src = src.replace(/^\s*\/\/.*$/gm, '');
+    // Compresse lignes vides multiples
+    src = src.replace(/\n{3,}/g, '\n\n').trim();
+    fs.writeFileSync('script.min.js', src, 'utf8');
   }
 
   console.log('> Minification style.css -> style.min.css');
