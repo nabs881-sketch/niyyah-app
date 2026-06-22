@@ -8,7 +8,14 @@ const cleancssBI = isWin ? 'node_modules\\.bin\\cleancss.cmd' : 'node_modules/.b
 
 try {
   console.log('> Minification script.js -> script.min.js');
-  execSync(`"${terserBin}" script.js -o script.min.js --compress passes=1 --mangle`, { stdio: 'inherit' });
+  // Minification JS — terser avec compression minimale
+  // (fallback: copie directe si OOM)
+  try {
+    execSync(`"${terserBin}" script.js -o script.min.js --compress passes=1 --mangle`, { stdio: 'inherit' });
+  } catch (e) {
+    console.log('  ! terser OOM, copie directe script.js -> script.min.js');
+    fs.copyFileSync('script.js', 'script.min.js');
+  }
 
   console.log('> Minification style.css -> style.min.css');
   execSync(`"${cleancssBI}" -o style.min.css style.css`, { stdio: 'inherit' });
