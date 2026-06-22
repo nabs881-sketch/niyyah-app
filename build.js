@@ -4,7 +4,7 @@ const { execSync } = require('child_process');
 
 try {
   console.log('> Minification script.js -> script.min.js');
-  execSync('npx terser script.js -o script.min.js --compress --mangle', { stdio: 'inherit' });
+  execSync('node --max-old-space-size=512 node_modules/terser/bin/terser script.js -o script.min.js --compress --mangle', { stdio: 'inherit' });
 
   console.log('> Minification style.css -> style.min.css');
   execSync('npx clean-css-cli -o style.min.css style.css', { stdio: 'inherit' });
