@@ -19521,7 +19521,7 @@ function openVueLisan(viewDay) {
     html += '<div style="border:1px solid rgba(200,168,75,0.15);border-radius:10px;padding:12px 16px;margin-bottom:20px;background:rgba(200,168,75,0.04);">';
     html += '<div style="font-family:\'Inter\',sans-serif;font-size:12px;color:rgba(200,168,75,0.5);letter-spacing:1px;margin-bottom:4px;">RACINE</div>';
     html += '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:22px;color:#C8A84A;direction:rtl;display:inline;">' + mot.racine.lettres + '</div>';
-    html += '<span style="font-family:\'Georgia\',serif;font-size:14px;color:rgba(240,234,214,0.5);margin-left:12px;">(' + mot.racine.translitteration + ') \u2014 ' + mot.racine.sens_fondamental + '</span>';
+    html += '<span style="font-family:\'Georgia\',serif;font-size:17px;color:rgba(240,234,214,0.5);margin-left:12px;">(' + mot.racine.translitteration + ') \u2014 ' + mot.racine.sens_fondamental + '</span>';
     html += '</div>';
   }
 
@@ -19546,8 +19546,8 @@ function openVueLisan(viewDay) {
     mot.famille_mots.forEach(function(fm) {
       html += '<div style="display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid rgba(200,168,75,0.08);">';
       html += '<span style="font-family:\'Scheherazade New\',Amiri,serif;font-size:20px;color:#C8A84A;direction:rtl;min-width:60px;text-align:right;">' + fm.arabe + '</span>';
-      html += '<span style="font-family:\'Georgia\',serif;font-size:13px;color:rgba(240,234,214,0.5);font-style:italic;min-width:70px;">' + fm.translit + '</span>';
-      html += '<span style="font-family:\'Georgia\',serif;font-size:14px;color:rgba(240,234,214,0.7);">' + fm.sens + '</span>';
+      html += '<span style="font-family:\'Georgia\',serif;font-size:17px;color:rgba(240,234,214,0.5);font-style:italic;min-width:70px;">' + fm.translit + '</span>';
+      html += '<span style="font-family:\'Georgia\',serif;font-size:17px;color:rgba(240,234,214,0.7);">' + fm.sens + '</span>';
       html += '</div>';
     });
     html += '</div>';
@@ -19556,7 +19556,7 @@ function openVueLisan(viewDay) {
   // Notes pédagogiques
   if (mot.notes_pedagogiques) {
     html += '<div style="border-top:1px solid rgba(200,168,75,0.1);padding-top:16px;margin-bottom:20px;">';
-    html += '<div style="font-family:\'Georgia\',serif;font-size:14px;font-style:italic;color:rgba(240,234,214,0.6);line-height:1.7;">' + mot.notes_pedagogiques + '</div>';
+    html += '<div style="font-family:\'Georgia\',serif;font-size:17px;font-style:italic;color:rgba(240,234,214,0.6);line-height:1.7;">' + mot.notes_pedagogiques + '</div>';
     html += '</div>';
   }
 
