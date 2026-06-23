@@ -643,9 +643,9 @@ function openDefiSelector() {
       if (!ov2 || !body2) return;
       body2.innerHTML = '<div style="text-align:center;padding:30px 16px;">'
         + '<div style="margin-bottom:14px;">' + (defiActif ? niyyahIcon(defiActif.icon, 28) : niyyahIcon('intention', 28)) + '</div>'
-        + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:600;color:#C8A84A;margin-bottom:8px;">' + (defiActif ? tD(defiActif) : 'Défi en cours') + '</div>'
-        + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#B0A080;line-height:1.6;margin-bottom:20px;">Ton défi est ta niyyah de la semaine.<br>Tiens-le jusqu\'à dimanche, in sha Allah ✦</div>'
-        + '<button onclick="closeDefiSelector()" style="padding:12px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:1px;cursor:pointer;" aria-label="Fermer">'+t('modal_close')+'</button>'
+        + '<div style="font-family:\'Georgia\',serif;font-size:18px;font-weight:600;color:#C8A84A;margin-bottom:8px;">' + (defiActif ? tD(defiActif) : 'Défi en cours') + '</div>'
+        + '<div style="font-family:\'Georgia\',serif;font-size:14px;font-style:italic;color:#B0A080;line-height:1.6;margin-bottom:20px;">Ton défi est ta niyyah de la semaine.<br>Tiens-le jusqu\'à dimanche, in sha Allah ✦</div>'
+        + '<button onclick="closeDefiSelector()" style="padding:12px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-family:\'Georgia\',serif;font-size:12px;letter-spacing:1px;cursor:pointer;" aria-label="Fermer">'+t('modal_close')+'</button>'
         + '</div>';
       ov2.style.opacity = '1'; ov2.style.pointerEvents = 'all';
       setTimeout(function() { document.getElementById('defiSelectorSheet').style.transform = 'translateY(0)'; }, 10);
@@ -838,8 +838,8 @@ function _showDefiLundiInvite() {
     + 'background:rgba(200,168,75,0.12);display:flex;align-items:center;justify-content:center;'
     + 'font-size:18px;">✦</div>'
     + '<div style="flex:1;min-width:0;">'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-weight:600;color:#C8A84A;margin-bottom:2px;">Nouvelle semaine</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:#B0A080;">Un nouvel engagement t\'attend</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:15px;font-weight:600;color:#C8A84A;margin-bottom:2px;">Nouvelle semaine</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:13px;font-style:italic;color:#B0A080;">Un nouvel engagement t\'attend</div>'
     + '</div>'
     + '<div id="defi-lundi-close" style="flex-shrink:0;width:28px;height:28px;border-radius:50%;'
     + 'display:flex;align-items:center;justify-content:center;color:#B0A080;font-size:16px;'
@@ -974,7 +974,7 @@ function renderDefiOverlay() {
     if (!autoMsg) {
       autoMsg = document.createElement('div');
       autoMsg.id = 'defiOvAutoMsg';
-      autoMsg.style.cssText = 'font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:rgba(200,168,74,0.6);text-align:center;padding:12px 16px;';
+      autoMsg.style.cssText = 'font-family:\'Georgia\',serif;font-size:16px;font-style:italic;color:rgba(200,168,74,0.6);text-align:center;padding:12px 16px;';
       autoMsg.textContent = 'Se coche automatiquement quand tu accomplis l\'action dans l\'app.';
       btn.parentNode.insertBefore(autoMsg, btn);
     }
@@ -1074,7 +1074,7 @@ function showRamadanBoostModal() {
     + '<div class="wird-complete-star">\u2726</div>'
     + '<div class="wird-complete-arabic">\u0631\u064E\u0645\u064E\u0636\u064E\u0627\u0646\u064F \u0645\u064F\u0628\u064E\u0627\u0631\u064E\u0643</div>'
     + '<div class="wird-complete-label" style="margin-bottom:16px;">Ramadan Mubarak</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;color:rgba(240,234,214,0.8);line-height:1.6;margin-bottom:24px;">Le mois est venu. Veux-tu acc\u00e9der \u00e0 des actes suppl\u00e9mentaires durant ces 30\u00a0jours b\u00e9nis\u00a0?<br>Tu reprendras ton rythme habituel apr\u00e8s l\u2019A\u00efd.</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:14px;color:rgba(240,234,214,0.8);line-height:1.6;margin-bottom:24px;">Le mois est venu. Veux-tu acc\u00e9der \u00e0 des actes suppl\u00e9mentaires durant ces 30\u00a0jours b\u00e9nis\u00a0?<br>Tu reprendras ton rythme habituel apr\u00e8s l\u2019A\u00efd.</div>'
     + '<div style="display:flex;gap:10px;">'
     + '<button class="wird-complete-btn" style="flex:1;background:rgba(200,168,75,0.12);" onclick="safeSetItem(\'ramadan_boost\',\'accepted\');this.closest(\'.wird-complete-overlay\').remove();">Oui, intensifier</button>'
     + '<button class="wird-complete-btn" style="flex:1;" onclick="safeSetItem(\'ramadan_boost\',\'declined\');this.closest(\'.wird-complete-overlay\').remove();">Garder mon rythme</button>'
@@ -1090,7 +1090,7 @@ function showEidModal() {
     + '<div class="wird-complete-star">\u2726</div>'
     + '<div class="wird-complete-arabic">\u0639\u0650\u064A\u062F\u064C \u0645\u064F\u0628\u064E\u0627\u0631\u064E\u0643</div>'
     + '<div class="wird-complete-label" style="margin-bottom:16px;">Eid Mubarak</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;color:rgba(240,234,214,0.8);line-height:1.6;margin-bottom:24px;">Le mois est termin\u00e9. Tu retrouves ton rythme habituel.<br>Qu\u2019All\u00e2h accepte tes \u0153uvres de ce Ramadan.</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:14px;color:rgba(240,234,214,0.8);line-height:1.6;margin-bottom:24px;">Le mois est termin\u00e9. Tu retrouves ton rythme habituel.<br>Qu\u2019All\u00e2h accepte tes \u0153uvres de ce Ramadan.</div>'
     + '<button class="wird-complete-btn" onclick="safeRemoveItem(\'ramadan_boost\');safeRemoveItem(\'ramadan_modal_shown\');this.closest(\'.wird-complete-overlay\').remove();">Continuer</button>'
     + '</div>';
   document.body.appendChild(ov);
@@ -1248,7 +1248,7 @@ function renderRamadan() {
   html += '<div style="background:linear-gradient(180deg,#15100a,#0e0a06);border-radius:var(--r-xl);overflow:hidden;margin-bottom:8px;box-shadow:inset 0 0 0 1px rgba(200,168,74,.2),0 6px 16px rgba(0,0,0,.45);">';
   html += '<div style="padding:14px 16px;border-bottom:1px solid rgba(200,168,74,.18);">';
   html += '<div style="font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,74,.55);margin-bottom:2px;">Aujourd\'hui</div>';
-  html += '<div style="font-family:\'Cormorant Garamond\',var(--serif);font-size:18px;color:#C8A84A;">Jeûne du jour</div>';
+  html += '<div style="font-family:\'Georgia\',var(--serif);font-size:18px;color:#C8A84A;">Jeûne du jour</div>';
   html += '</div>';
   const fastItems = [
     { id: 'fast', label: "J'ai jeûné aujourd'hui", arabic: 'صُمْتُ الْيَوْمَ', isFast: true, special: true },
@@ -1272,7 +1272,7 @@ function renderRamadan() {
     html += '</div>';
   });
   html += '</div>';
-  html += '<div onclick="openVueVersetJour()" style="position:relative;background:linear-gradient(165deg,#1a130b,#0d0a06);border:1px solid rgba(232,206,138,0.28);border-radius:16px;padding:15px 16px;margin-bottom:14px;cursor:pointer;display:flex;align-items:center;gap:14px;box-shadow:inset 0 1px 0 rgba(232,206,138,0.08),0 4px 16px rgba(0,0,0,0.35);"><div style="flex-shrink:0;width:42px;height:42px;border-radius:50%;border:1px solid rgba(232,206,138,0.3);background:radial-gradient(circle at 50% 35%,rgba(232,206,138,0.16),rgba(232,206,138,0.02) 70%);display:flex;align-items:center;justify-content:center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8CE8A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h6v16H6a2 2 0 0 0-2 2z"/><path d="M20 5a2 2 0 0 0-2-2h-6v16h6a2 2 0 0 1 2 2z"/></svg></div><div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;color:#E8CE8A;">Ma Khatma du Ramadan</div><div style="font-size:12px;color:rgba(200,168,74,0.6);margin-top:2px;font-style:italic;font-family:\'Cormorant Garamond\',serif;">Juz\u2019 ' + _getKhatmaJuz() + ' / 30' + (_getKhatmaEnd() ? '' : ' \u00b7 fixe ton objectif') + '</div></div><div style="flex-shrink:0;color:rgba(232,206,138,0.5);font-size:18px;">\u2192</div></div>';
+  html += '<div onclick="openVueVersetJour()" style="position:relative;background:linear-gradient(165deg,#1a130b,#0d0a06);border:1px solid rgba(232,206,138,0.28);border-radius:16px;padding:15px 16px;margin-bottom:14px;cursor:pointer;display:flex;align-items:center;gap:14px;box-shadow:inset 0 1px 0 rgba(232,206,138,0.08),0 4px 16px rgba(0,0,0,0.35);"><div style="flex-shrink:0;width:42px;height:42px;border-radius:50%;border:1px solid rgba(232,206,138,0.3);background:radial-gradient(circle at 50% 35%,rgba(232,206,138,0.16),rgba(232,206,138,0.02) 70%);display:flex;align-items:center;justify-content:center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8CE8A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h6v16H6a2 2 0 0 0-2 2z"/><path d="M20 5a2 2 0 0 0-2-2h-6v16h6a2 2 0 0 1 2 2z"/></svg></div><div style="flex:1;min-width:0;"><div style="font-family:\'Georgia\',serif;font-size:17px;color:#E8CE8A;">Ma Khatma du Ramadan</div><div style="font-size:12px;color:rgba(200,168,74,0.6);margin-top:2px;font-style:italic;font-family:\'Georgia\',serif;">Juz\u2019 ' + _getKhatmaJuz() + ' / 30' + (_getKhatmaEnd() ? '' : ' \u00b7 fixe ton objectif') + '</div></div><div style="flex-shrink:0;color:rgba(232,206,138,0.5);font-size:18px;">\u2192</div></div>';
   html += '<div style="margin-bottom:4px;padding:0 2px;"><div style="font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--t3);margin-bottom:8px;">Horaires Imsak / Iftar</div>';
   html += '<div style="display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;margin-bottom:8px;padding-bottom:2px;">';
   HORAIRES_CITIES.forEach(c => {
@@ -1948,20 +1948,20 @@ function showLevelPopup(levelId, nextId, hasNext) {
       </div>
 
       <!-- Eyebrow -->
-      <div style="text-align:center;font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:0.25em;text-transform:uppercase;color:${msg.color};opacity:0.8;margin-bottom:8px;">${msg.eyebrow}</div>
+      <div style="text-align:center;font-family:'Georgia',serif;font-size:12px;letter-spacing:0.25em;text-transform:uppercase;color:${msg.color};opacity:0.8;margin-bottom:8px;">${msg.eyebrow}</div>
 
       <!-- Titre -->
-      <div style="text-align:center;font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:#F0EAD6;letter-spacing:-0.5px;margin-bottom:16px;">${msg.title}</div>
+      <div style="text-align:center;font-family:'Georgia',serif;font-size:32px;font-weight:300;color:#F0EAD6;letter-spacing:-0.5px;margin-bottom:16px;">${msg.title}</div>
 
       <!-- Verset arabe -->
       <div style="text-align:center;font-family:'Amiri',serif;font-size:18px;color:${msg.color};direction:rtl;margin-bottom:6px;line-height:1.8;opacity:0.9;">${msg.arabic}</div>
-      <div style="text-align:center;font-family:'Cormorant Garamond',serif;font-size:12px;font-style:italic;color:rgba(240,234,214,0.5);margin-bottom:20px;">${msg.hadith}</div>
+      <div style="text-align:center;font-family:'Georgia',serif;font-size:12px;font-style:italic;color:rgba(240,234,214,0.5);margin-bottom:20px;">${msg.hadith}</div>
 
       <!-- Séparateur doré -->
       <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,0.25),transparent);margin-bottom:16px;"></div>
 
       <!-- Message -->
-      <div style="font-family:'Cormorant Garamond',serif;font-size:15px;line-height:1.75;color:rgba(240,234,214,0.82);text-align:center;margin-bottom:24px;">${msg.sub}</div>
+      <div style="font-family:'Georgia',serif;font-size:15px;line-height:1.75;color:rgba(240,234,214,0.82);text-align:center;margin-bottom:24px;">${msg.sub}</div>
 
       <!-- Boutons -->
       ${hasNext ? `
@@ -2459,12 +2459,12 @@ function renderTabs() {
   if (_cheminEl && _cheminName) {
     _cheminEl.innerHTML = '<div style="margin:8px 16px 0;padding:12px 16px;border-radius:12px;border:0.5px solid rgba(200,168,75,0.15);background:rgba(200,168,75,0.04);display:flex;align-items:center;justify-content:space-between;">'
       + '<div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(200,168,75,0.35);margin-bottom:3px;">Ton chemin</div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#C8A84A;" id="chemin-name">' + _cheminName + '</div>'
+      + '<div style="font-family:\'Georgia\',serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(200,168,75,0.35);margin-bottom:3px;">Ton chemin</div>'
+      + '<div style="font-family:\'Georgia\',serif;font-size:16px;font-style:italic;color:#C8A84A;" id="chemin-name">' + _cheminName + '</div>'
       + '</div>'
       + '<div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;">'
-      + '<span style="font-family:\'Cormorant Garamond\',serif;font-size:11px;font-style:italic;color:rgba(200,168,75,0.35);">✦ Dans ton chemin</span>'
-      + '<button onclick="openOrientationPicker()" style="font-family:\'Cormorant Garamond\',serif;font-size:12px;color:rgba(200,168,75,0.5);background:none;border:0.5px solid rgba(200,168,75,0.2);border-radius:6px;padding:3px 10px;cursor:pointer;letter-spacing:0.5px;">Changer</button>'
+      + '<span style="font-family:\'Georgia\',serif;font-size:11px;font-style:italic;color:rgba(200,168,75,0.35);">✦ Dans ton chemin</span>'
+      + '<button onclick="openOrientationPicker()" style="font-family:\'Georgia\',serif;font-size:12px;color:rgba(200,168,75,0.5);background:none;border:0.5px solid rgba(200,168,75,0.2);border-radius:6px;padding:3px 10px;cursor:pointer;letter-spacing:0.5px;">Changer</button>'
       + '</div>'
       + '</div>';
     _cheminEl.style.display = '';
@@ -2776,13 +2776,13 @@ function renderLevel(levelId) {
   if (nextLvl) {
     html += '<div style="padding:16px 0 24px;text-align:center;">'
       + '<button class="btn-next-level-v2" onclick="selectLevel(' + nextId + ')">'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:700;">Passer \u00e0 ' + t('level_' + nextId) + '<span style="font-size:22px;font-weight:300;margin-left:8px;vertical-align:middle;">\u203A</span></div>'
+      + '<div style="font-family:\'Georgia\',serif;font-size:18px;font-weight:700;">Passer \u00e0 ' + t('level_' + nextId) + '<span style="font-size:22px;font-weight:300;margin-left:8px;vertical-align:middle;">\u203A</span></div>'
       + '<div style="font-size:12px;font-style:italic;opacity:0.7;margin-top:4px;">' + _lvlDone + ' sur ' + _lvlItems.length + ' items accomplis</div>'
       + '</button></div>';
   } else {
     html += '<div style="padding:16px 0 24px;text-align:center;">'
       + '<div class="btn-next-level-v2" style="opacity:0.75;cursor:pointer;" onclick="v2GoSanctuaire()">'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:700;">\u2713 Ma journ\u00e9e compl\u00e8te</div>'
+      + '<div style="font-family:\'Georgia\',serif;font-size:18px;font-weight:700;">\u2713 Ma journ\u00e9e compl\u00e8te</div>'
       + '<div style="font-size:12px;font-style:italic;opacity:0.7;margin-top:4px;">Alhamdulill\u0101h</div>'
       + '</div></div>';
   }
@@ -2808,7 +2808,7 @@ function renderPrayerItem(item, delay, extraClass, forceChecked) {
   const arabicHtml = item.arabic ? '<div class="item-arabic">' + item.arabic + '</div>' : '';
   const _sw = 'width:36px;height:20px;border-radius:10px;display:flex;align-items:center;padding:2px;transition:background 0.2s;flex-shrink:0;';
   const _kn = 'width:14px;height:14px;border-radius:50%;transition:margin 0.2s;';
-  const _lbl = 'font-family:\'Cormorant Garamond\',serif;font-size:13px;color:rgba(200,168,75,0.65);margin-top:4px;letter-spacing:0.3px;';
+  const _lbl = 'font-family:\'Georgia\',serif;font-size:13px;color:rgba(200,168,75,0.65);margin-top:4px;letter-spacing:0.3px;';
   const toggle = '<div style="display:flex;flex-direction:column;align-items:center;gap:4px;flex-shrink:0;" onclick="togglePrayerOnTime(\'' + item.id + '\');event.stopPropagation()">'
     + '<div style="' + _sw + 'background:' + (onTime ? 'var(--green)' : 'rgba(255,255,255,0.1)') + ';border:1px solid ' + (onTime ? 'var(--green)' : 'rgba(255,255,255,0.15)') + ';">'
     + '<div style="' + _kn + 'background:' + (onTime ? '#fff' : 'rgba(255,255,255,0.4)') + ';margin-left:' + (onTime ? '18px' : '0') + ';"></div>'
@@ -3406,8 +3406,8 @@ function renderProgression(skipIntro) {
     const ring='<svg width="74" height="74" viewBox="0 0 74 74" style="transform:rotate(-90deg);"><circle cx="37" cy="37" r="32" fill="none" stroke="rgba(200,168,75,0.15)" stroke-width="3"/><circle cx="37" cy="37" r="32" fill="none" stroke="#C8A84A" stroke-width="3" stroke-linecap="round" stroke-dasharray="'+circ.toFixed(1)+'" stroke-dashoffset="'+(circ-dash).toFixed(1)+'"/></svg>';
     var _bgImg = _cheminImgs[lvl.id] ? 'assets/cards/' + _cheminImgs[lvl.id] + '.webp' : '';
     lvlGridP += '<div onclick="selectLevel(' + lvl.id + ')" class="chemin-card" style="--d:' + (lvl.id * 0.08) + 's;' + (_bgImg ? 'background-image:linear-gradient(180deg,rgba(8,5,3,.25),rgba(8,5,3,.88)),url(' + _bgImg + ');background-size:cover,cover;background-position:center,center;' : 'background:linear-gradient(180deg,rgba(8,5,3,.25),rgba(8,5,3,.88));') + '">'
-      + '<div style="width:74px;height:74px;position:relative;z-index:1;">' + ring + '<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:\'Cormorant Garamond\',serif;font-size:19px;font-weight:600;color:#C8A84A;text-shadow:0 1px 4px rgba(0,0,0,.8);">' + pct + '%</div></div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;font-weight:600;color:#C8A84A;position:relative;z-index:1;text-shadow:0 1px 4px rgba(0,0,0,.8);">' + t('level_' + lvl.id) + '</div>'
+      + '<div style="width:74px;height:74px;position:relative;z-index:1;">' + ring + '<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:\'Georgia\',serif;font-size:19px;font-weight:600;color:#C8A84A;text-shadow:0 1px 4px rgba(0,0,0,.8);">' + pct + '%</div></div>'
+      + '<div style="font-family:\'Georgia\',serif;font-size:20px;font-weight:600;color:#C8A84A;position:relative;z-index:1;text-shadow:0 1px 4px rgba(0,0,0,.8);">' + t('level_' + lvl.id) + '</div>'
       + '</div>';
   });
   // === GRAPHIQUE 7 JOURS BILANS ===
@@ -3448,28 +3448,28 @@ function renderProgression(skipIntro) {
   var _isDay1 = totalDisplay === 0;
   const streakSection = _isDay1
     ? '<div style="text-align:center;padding:36px 20px 28px;">'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:21px;font-style:italic;color:rgba(200,168,75,0.68);line-height:1.55;max-width:320px;margin:0 auto;">Ton d\u00e9compte commence d\u00e8s ta premi\u00e8re journ\u00e9e de fondations tenues.</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.45);margin-top:16px;line-height:1.5;">Entre toi et Lui. Rien ne se perd \u2014 chaque retour compte.</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:21px;font-style:italic;color:rgba(200,168,75,0.68);line-height:1.55;max-width:320px;margin:0 auto;">Ton d\u00e9compte commence d\u00e8s ta premi\u00e8re journ\u00e9e de fondations tenues.</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.45);margin-top:16px;line-height:1.5;">Entre toi et Lui. Rien ne se perd \u2014 chaque retour compte.</div>'
     + '</div>'
     : '<div style="text-align:center;padding:36px 20px 28px;position:relative;">'
     + '<div onclick="var e=document.getElementById(\'_fondExplain\');if(e)e.style.display=e.style.display===\'none\'?\'block\':\'none\';" style="cursor:pointer;font-size:80px;font-weight:900;line-height:1;background:linear-gradient(135deg,#c8a84b,#e8cc6a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-3px;">' + totalDisplay + '</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;color:var(--t3);margin-top:8px;letter-spacing:1px;">jours de fondations tenues</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.5);margin-top:14px;">\u00b7 ' + streakDisplay + ' jours de suite \u00b7</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.35);margin-top:16px;line-height:1.5;">Entre toi et Lui. Rien ne se perd \u2014 chaque retour compte.</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:17px;color:var(--t3);margin-top:8px;letter-spacing:1px;">jours de fondations tenues</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.5);margin-top:14px;">\u00b7 ' + streakDisplay + ' jours de suite \u00b7</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.35);margin-top:16px;line-height:1.5;">Entre toi et Lui. Rien ne se perd \u2014 chaque retour compte.</div>'
     + '<div id="_fondExplain" style="display:none;margin-top:16px;padding:14px;border:1px solid rgba(200,168,75,0.15);border-radius:12px;background:rgba(200,168,75,0.04);text-align:center;">'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;color:rgba(200,168,75,0.7);margin-bottom:8px;">Un jour compt\u00e9 = tes fondations tenues\u00a0:</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.5);line-height:1.6;">' + escapeHtml(_fondList) + '</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:15px;color:rgba(200,168,75,0.7);margin-bottom:8px;">Un jour compt\u00e9 = tes fondations tenues\u00a0:</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.5);line-height:1.6;">' + escapeHtml(_fondList) + '</div>'
     + '</div>'
     + '</div>';
   var _scoreP = totalAllP > 0 ? Math.round(totalDoneP / totalAllP * 100) : 0;
   var _paroleP = _getParoleScore(_scoreP);
   var _scoreColorP = _scoreP >= 76 ? '#c8a84b' : _scoreP >= 51 ? 'var(--t1)' : 'var(--t3)';
-  const heroSectionP = '<div style="margin:0 16px 24px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;letter-spacing:2.5px;color:rgba(255,255,255,0.55);text-transform:uppercase;margin-bottom:20px;text-align:center;">'+t('progression_label')+'</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">'+lvlGridP+'</div><div style="display:flex;align-items:center;justify-content:space-between;margin-top:14px;padding:8px 12px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:'+_scoreColorP+';">'+_paroleP+'</div><div style="font-size:14px;font-weight:600;color:'+_scoreColorP+';">'+_scoreP+'%</div></div></div>';
+  const heroSectionP = '<div style="margin:0 16px 24px;"><div style="font-family:\'Georgia\',serif;font-size:14px;letter-spacing:2.5px;color:rgba(255,255,255,0.55);text-transform:uppercase;margin-bottom:20px;text-align:center;">'+t('progression_label')+'</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">'+lvlGridP+'</div><div style="display:flex;align-items:center;justify-content:space-between;margin-top:14px;padding:8px 12px;"><div style="font-family:\'Georgia\',serif;font-size:14px;font-style:italic;color:'+_scoreColorP+';">'+_paroleP+'</div><div style="font-size:14px;font-weight:600;color:'+_scoreColorP+';">'+_scoreP+'%</div></div></div>';
 
   el.innerHTML = `
     <div style="padding:0 0 40px;"><!-- 1. TITRE SPIRITUEL --><div id="v2-spiritual-title" style="text-align:center;margin:0 16px 12px;min-height:110px;"></div><!-- 2. PROGRESSION -->${heroSectionP}<!-- 4. CHALLENGE FAJR --><div id="fajr-challenge-card" style="display:none;margin:0 16px 12px;"></div><!-- 5. SÉRIE EN COURS -->${streakSection}<!-- HADITH CONTEXTUEL --><div style="margin:0 16px 24px;padding:20px;background:linear-gradient(180deg,#15100a,#0e0a06);border:none;border-radius:14px;position:relative;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(200,168,74,.22),0 6px 16px rgba(0,0,0,.4);"><div style="position:absolute;top:-10px;right:12px;font-size:48px;opacity:0.07;font-family:serif;">"</div><div style="font-size:14px;line-height:1.7;color:var(--t1);font-style:italic;margin-bottom:10px;">${hadith.text}</div><div style="font-size:14px;color:#c8a84b;font-weight:600;letter-spacing:0.5px;">— ${hadith.ref}</div></div><!-- 6. HEATMAP 30 JOURS --><div style="margin:0 16px 24px;"><div style="font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;text-align:center;">${t('prog_heatmap')}</div><div style="display:grid;grid-template-columns:repeat(10,1fr);gap:4px;">
           ${heatmapHTML}
-        </div><div style="font-family:'Cormorant Garamond',serif;font-size:16px;color:rgba(200,182,140,.85);text-align:center;margin-top:10px;font-style:italic;">${(history.totalDays||0)===0?t('today_first'):t('today_pct').replace('{n}',Math.round(getLevelProgress(1)))}</div><button onclick="var c=document.getElementById('yearCalWrap');var _calIco='<svg width=\\'16\\' height=\\'16\\' viewBox=\\'0 0 16 16\\' fill=\\'none\\' stroke=\\'%23C8A84A\\' stroke-width=\\'1.3\\' stroke-linecap=\\'round\\' stroke-linejoin=\\'round\\'><rect x=\\'2\\' y=\\'3\\' width=\\'12\\' height=\\'11\\' rx=\\'2\\'/><path d=\\'M2 6h12M5 1.5v3M11 1.5v3\\'/></svg> ';if(c.style.display==='none'){c.style.display='block';calYear=new Date().getFullYear();renderYearCalendar();this.innerHTML=_calIco+t('cal_hide');}else{c.style.display='none';this.innerHTML=_calIco+t('cal_annual');}" class="btn-carte-annuelle" aria-label="${t('cal_annual')}"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#C8A84A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="12" height="11" rx="2"/><path d="M2 6h12M5 1.5v3M11 1.5v3"/></svg> ${t('cal_annual')}</button><div id="yearCalWrap" style="display:none;margin-top:16px;background:var(--card);border:1px solid rgba(200,168,75,0.15);border-radius:12px;padding:16px;"><div id="yearCalContent"></div></div></div><!-- BILAN 7 JOURS -->${bilanHTML}<div style="text-align:center;margin:0 16px 24px;"><button onclick="showWeeklyBilan()" class="btn-voir-semaine">Voir ma semaine</button></div><!-- 7. GRAINE DE LUMIÈRE --><div style="margin:0 16px 24px;background:linear-gradient(135deg,rgba(200,168,75,0.08),rgba(200,168,75,0.03));border:1px solid rgba(200,168,75,0.25);border-radius:20px;padding:28px;text-align:center;user-select:none;-webkit-user-select:none;"><div style="font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:3px;color:#C8A84A;text-transform:uppercase;margin-bottom:16px;">${t('graine_title')}</div><div style="position:relative;width:160px;height:160px;min-width:160px;min-height:160px;margin:0 auto 16px;"><div style="position:absolute;inset:-20px;border-radius:50%;background:radial-gradient(circle,rgba(200,168,75,0.1) 0%,rgba(200,168,75,0.04) 50%,transparent 70%);"></div><div style="position:relative;">${getGraineSVG((function(){try{return JSON.parse(safeGetItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length)}</div></div><div style="font-family:'Inter',var(--sans);font-size:16px;color:rgba(255,255,255,0.6);margin-bottom:6px;">${(function(){try{var _gl=JSON.parse(safeGetItem('niyyah_defi_v2')||'{}').historique||[];return _gl.length===0?t('graine_zero'):_gl.length+' '+t('graine_defis');}catch(e){return t('graine_zero');}})()}</div><div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:#C8A84A;margin-bottom:12px;">${getGraineStageName((function(){try{return JSON.parse(safeGetItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length)}</div><div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:#C8A84A;opacity:0.7;line-height:1.6;">${t('graine_quote')}</div></div>
+        </div><div style="font-family:'Georgia',serif;font-size:16px;color:rgba(200,182,140,.85);text-align:center;margin-top:10px;font-style:italic;">${(history.totalDays||0)===0?t('today_first'):t('today_pct').replace('{n}',Math.round(getLevelProgress(1)))}</div><button onclick="var c=document.getElementById('yearCalWrap');var _calIco='<svg width=\\'16\\' height=\\'16\\' viewBox=\\'0 0 16 16\\' fill=\\'none\\' stroke=\\'%23C8A84A\\' stroke-width=\\'1.3\\' stroke-linecap=\\'round\\' stroke-linejoin=\\'round\\'><rect x=\\'2\\' y=\\'3\\' width=\\'12\\' height=\\'11\\' rx=\\'2\\'/><path d=\\'M2 6h12M5 1.5v3M11 1.5v3\\'/></svg> ';if(c.style.display==='none'){c.style.display='block';calYear=new Date().getFullYear();renderYearCalendar();this.innerHTML=_calIco+t('cal_hide');}else{c.style.display='none';this.innerHTML=_calIco+t('cal_annual');}" class="btn-carte-annuelle" aria-label="${t('cal_annual')}"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#C8A84A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="12" height="11" rx="2"/><path d="M2 6h12M5 1.5v3M11 1.5v3"/></svg> ${t('cal_annual')}</button><div id="yearCalWrap" style="display:none;margin-top:16px;background:var(--card);border:1px solid rgba(200,168,75,0.15);border-radius:12px;padding:16px;"><div id="yearCalContent"></div></div></div><!-- BILAN 7 JOURS -->${bilanHTML}<div style="text-align:center;margin:0 16px 24px;"><button onclick="showWeeklyBilan()" class="btn-voir-semaine">Voir ma semaine</button></div><!-- 7. GRAINE DE LUMIÈRE --><div style="margin:0 16px 24px;background:linear-gradient(135deg,rgba(200,168,75,0.08),rgba(200,168,75,0.03));border:1px solid rgba(200,168,75,0.25);border-radius:20px;padding:28px;text-align:center;user-select:none;-webkit-user-select:none;"><div style="font-family:'Georgia',serif;font-size:13px;letter-spacing:3px;color:#C8A84A;text-transform:uppercase;margin-bottom:16px;">${t('graine_title')}</div><div style="position:relative;width:160px;height:160px;min-width:160px;min-height:160px;margin:0 auto 16px;"><div style="position:absolute;inset:-20px;border-radius:50%;background:radial-gradient(circle,rgba(200,168,75,0.1) 0%,rgba(200,168,75,0.04) 50%,transparent 70%);"></div><div style="position:relative;">${getGraineSVG((function(){try{return JSON.parse(safeGetItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length)}</div></div><div style="font-family:'Inter',var(--sans);font-size:16px;color:rgba(255,255,255,0.6);margin-bottom:6px;">${(function(){try{var _gl=JSON.parse(safeGetItem('niyyah_defi_v2')||'{}').historique||[];return _gl.length===0?t('graine_zero'):_gl.length+' '+t('graine_defis');}catch(e){return t('graine_zero');}})()}</div><div style="font-family:'Georgia',serif;font-size:22px;font-style:italic;color:#C8A84A;margin-bottom:12px;">${getGraineStageName((function(){try{return JSON.parse(safeGetItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length)}</div><div style="font-family:'Georgia',serif;font-size:17px;font-style:italic;color:#C8A84A;opacity:0.7;line-height:1.6;">${t('graine_quote')}</div></div>
 
       </div>
   `;
@@ -3822,9 +3822,9 @@ function renderPrayerTimesCard() {
   else if (_diffMin < 60) _countdownText = _diffMin + ' min';
   else _countdownText = Math.floor(_diffMin / 60) + 'h ' + String(_diffMin % 60).padStart(2,'0') + ' min';
   var countdown = '<div id="prayerCountdown" aria-live="polite" aria-atomic="true" style="display:flex;align-items:center;justify-content:space-between;padding:12px 14px;margin-bottom:14px;background:rgba(200,168,74,0.08);border:0.5px solid rgba(200,168,74,0.4);border-radius:10px;">'
-    + '<div><div style="font-family:\'Cormorant Garamond\',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,74,0.6);margin-bottom:2px;">Prochaine</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:28px;font-weight:600;color:#e8dfc8;">' + _nextName + ' <span style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(232,217,188,0.5);">dans ' + _countdownText + '</span></div></div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:34px;font-weight:300;color:#C8A84A;letter-spacing:1px;">' + _nextTime + '</div>'
+    + '<div><div style="font-family:\'Georgia\',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,74,0.6);margin-bottom:2px;">Prochaine</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:28px;font-weight:600;color:#e8dfc8;">' + _nextName + ' <span style="font-family:\'Georgia\',serif;font-size:14px;font-style:italic;color:rgba(232,217,188,0.5);">dans ' + _countdownText + '</span></div></div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:34px;font-weight:300;color:#C8A84A;letter-spacing:1px;">' + _nextTime + '</div>'
     + '</div>';
   if (nextIdx === -1) nextIdx = -1;
   let grid = '<div class="prayer-times-grid">';
@@ -3846,8 +3846,8 @@ function renderPrayerTimesCard() {
   if (_prayerTimes.Lastthird) {
     lastthird = '<div style="height:0.5px;background:rgba(200,168,74,0.15);margin:4px 0 8px;"></div>'
       + '<div style="display:flex;align-items:center;justify-content:space-between;padding-top:4px;">'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:11px;font-style:italic;color:rgba(232,217,188,0.4);">Qiy\u00e2m al-layl \u2014 Dernier tiers</div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;color:rgba(200,168,74,0.7);">' + _prayerTimes.Lastthird.substring(0,5) + '</div>'
+      + '<div style="font-family:\'Georgia\',serif;font-size:11px;font-style:italic;color:rgba(232,217,188,0.4);">Qiy\u00e2m al-layl \u2014 Dernier tiers</div>'
+      + '<div style="font-family:\'Georgia\',serif;font-size:15px;color:rgba(200,168,74,0.7);">' + _prayerTimes.Lastthird.substring(0,5) + '</div>'
       + '</div>';
   }
   return '<div class="prayer-times-card">' +
@@ -3877,9 +3877,9 @@ function startPrayerCountdown() {
     if (diff < 2) txt = t('countdown_now');
     else if (diff < 60) txt = diff + ' min';
     else txt = Math.floor(diff / 60) + 'h ' + String(diff % 60).padStart(2,'0') + ' min';
-    el.innerHTML = '<div><div style="font-family:\'Cormorant Garamond\',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,74,0.6);margin-bottom:2px;">Prochaine</div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:28px;font-weight:600;color:#e8dfc8;">' + name + ' <span style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(232,217,188,0.5);">dans ' + txt + '</span></div></div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:34px;font-weight:300;color:#C8A84A;letter-spacing:1px;">' + time + '</div>';
+    el.innerHTML = '<div><div style="font-family:\'Georgia\',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,74,0.6);margin-bottom:2px;">Prochaine</div>'
+      + '<div style="font-family:\'Georgia\',serif;font-size:28px;font-weight:600;color:#e8dfc8;">' + name + ' <span style="font-family:\'Georgia\',serif;font-size:14px;font-style:italic;color:rgba(232,217,188,0.5);">dans ' + txt + '</span></div></div>'
+      + '<div style="font-family:\'Georgia\',serif;font-size:34px;font-weight:300;color:#C8A84A;letter-spacing:1px;">' + time + '</div>';
   }, 60000);
 }
 function saveCityAndLoad() {
@@ -4089,7 +4089,7 @@ function openScoreInfo() {
   overlay.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;background:rgba(0,0,0,0.7);display:flex;align-items:center;justify-content:center;padding:24px;';
   overlay.onclick = function(e) { if (e.target === overlay) overlay.remove(); };
   overlay.innerHTML = '<div style="background:#2C2E32;border:1px solid rgba(200,168,74,0.2);border-radius:16px;padding:24px;max-width:320px;width:100%;text-align:center;">'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:700;color:#C8A84A;margin-bottom:12px;">Score du jour</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:18px;font-weight:700;color:#C8A84A;margin-bottom:12px;">Score du jour</div>'
     + '<div style="font-size:13px;color:rgba(255,255,255,0.7);line-height:1.7;text-align:left;margin-bottom:16px;">'
     + 'Le score est pond\u00e9r\u00e9 par importance spirituelle :<br><br>'
     + '<span style="color:#C8A84A;">\u2022</span> Pri\u00e8res fard (5 salawat) \u2014 <b>\u00d73</b><br>'
@@ -4176,7 +4176,7 @@ function renderWird() {
       const srcEsc  = (item.source||'').replace(/"/g,'&quot;');
       const transEsc = (item.translation||'').replace(/"/g,'&quot;');
       const labelEsc = tI(item,'label').replace(/"/g,'&quot;');
-      const infoBtn = `<button class="btn-wird-info" aria-label="Détails" onclick="event.stopPropagation();openInfoSheet('','','','',event)" data-label="${labelEsc}" data-arabic="${arabEsc}" data-phonetic="${phonEsc}" data-translation="${transEsc}" data-source="${srcEsc}" style="width:32px;height:32px;border-radius:50%;border:1.5px solid #C8A84A;background:rgba(200,168,75,0.1);display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:15px;color:#C8A84A;font-weight:600;font-style:italic;"><i style="pointer-events:none">i</i></button>`;
+      const infoBtn = `<button class="btn-wird-info" aria-label="Détails" onclick="event.stopPropagation();openInfoSheet('','','','',event)" data-label="${labelEsc}" data-arabic="${arabEsc}" data-phonetic="${phonEsc}" data-translation="${transEsc}" data-source="${srcEsc}" style="width:32px;height:32px;border-radius:50%;border:1.5px solid #C8A84A;background:rgba(200,168,75,0.1);display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;font-family:'Georgia',serif;font-size:15px;color:#C8A84A;font-weight:600;font-style:italic;"><i style="pointer-events:none">i</i></button>`;
       if (item.target) {
         const _cnt = state[item.id] || 0;
         const _done = _cnt >= item.target;
@@ -4215,7 +4215,7 @@ function renderBabAnNafs() {
   if (!el) return;
   var html = '<div style="padding:calc(var(--safe-top)+16px) 16px 120px;">'
     + '<button onclick="v2GoSanctuaire()" aria-label="Retour" style="position:fixed;top:calc(var(--safe-top,0px) + 12px);left:16px;z-index:9990;background:rgba(10,10,10,0.7);border:1px solid rgba(200,168,74,0.3);border-radius:50%;color:#C8A84A;cursor:pointer;padding:0;width:40px;height:40px;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#C8A84A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>'
-    + '<div style="text-align:center;margin:10px 0 26px;"><div style="position:relative;display:inline-block;padding:6px 0;"><span style="position:absolute;left:50%;top:55%;transform:translate(-50%,-50%);width:230px;height:90px;background:radial-gradient(ellipse at center,rgba(236,199,90,.16),transparent 70%);filter:blur(8px);pointer-events:none;"></span><div style="position:relative;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-weight:600;font-size:clamp(34px,10vw,46px);line-height:1;background:linear-gradient(180deg,#F6DA8A,#C8A84A);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 0 22px rgba(236,199,90,.18);">Mes portes</div></div><div style="height:1px;width:120px;margin:13px auto 12px;background:linear-gradient(90deg,transparent,#C8A84A,transparent);"></div><div style="font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:clamp(13px,3.6vw,15px);letter-spacing:3px;color:#B8A47A;">les portes de ton \u00e2me</div></div>';
+    + '<div style="text-align:center;margin:10px 0 26px;"><div style="position:relative;display:inline-block;padding:6px 0;"><span style="position:absolute;left:50%;top:55%;transform:translate(-50%,-50%);width:230px;height:90px;background:radial-gradient(ellipse at center,rgba(236,199,90,.16),transparent 70%);filter:blur(8px);pointer-events:none;"></span><div style="position:relative;font-family:\'Georgia\',serif;font-style:italic;font-weight:600;font-size:clamp(34px,10vw,46px);line-height:1;background:linear-gradient(180deg,#F6DA8A,#C8A84A);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 0 22px rgba(236,199,90,.18);">Mes portes</div></div><div style="height:1px;width:120px;margin:13px auto 12px;background:linear-gradient(90deg,transparent,#C8A84A,transparent);"></div><div style="font-family:\'Georgia\',serif;font-style:italic;font-size:clamp(13px,3.6vw,15px);letter-spacing:3px;color:#B8A47A;">les portes de ton \u00e2me</div></div>';
   if (BAB_AN_NAFS.portes.some(function(p) { return p.validated === false; })) {
     html += '<div style="font-size:12px;font-style:italic;color:#FFA000;background:rgba(255,160,0,0.15);padding:8px;border-radius:6px;text-align:center;margin-bottom:16px;">Mode beta \u2014 contenu en validation th\u00e9ologique</div>';
   }
@@ -4225,7 +4225,7 @@ function renderBabAnNafs() {
     + '.bab-card:hover,.bab-card:active{transform:translateY(-5px) scale(1.012);box-shadow:inset 0 0 0 1px rgba(200,168,75,.4),0 0 44px rgba(var(--g),.55),0 14px 34px rgba(0,0,0,.7);}'
     + '.bab-scrim{position:absolute;left:0;right:0;bottom:0;height:48%;background:linear-gradient(180deg,transparent,rgba(0,0,0,.66) 78%);pointer-events:none;}'
     + '.bab-name{position:absolute;left:0;right:0;bottom:9%;text-align:center;pointer-events:none;}'
-    + '.bab-name span{font-family:\'Cormorant Garamond\',serif;font-style:italic;font-weight:600;font-size:clamp(26px,8.5vw,46px);letter-spacing:.5px;line-height:1;}'
+    + '.bab-name span{font-family:\'Georgia\',serif;font-style:italic;font-weight:600;font-size:clamp(26px,8.5vw,46px);letter-spacing:.5px;line-height:1;}'
     + '.bab-seal{position:absolute;top:9px;right:9px;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#F4E6BE;font-size:14px;border:1px solid rgba(244,230,190,.45);background:radial-gradient(circle,rgba(244,230,190,.18),transparent 70%);box-shadow:0 0 14px 2px rgba(236,199,90,.45);}'
     + '@keyframes babCardIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}'
     + '@media (prefers-reduced-motion:reduce){.bab-card{animation:none;opacity:1;}}'
@@ -4311,7 +4311,7 @@ function _showNiyyahIntro(cfg){
   ov.innerHTML =
       '<div style="font-family:var(--serif);font-style:italic;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:rgba(200,168,74,0.55);margin-bottom:22px;">' + escapeHtml(cfg.eyebrow || 'Niyyah t\u2019accompagne') + '</div>'
     + '<div style="transform:scale(0.74);transform-origin:center;margin:-34px auto -22px;"><div class="orb-wrap-v2"><div class="orb-core-v2"><div class="orb-conic"></div><span class="orb-dust"></span><span class="orb-dust"></span><span class="orb-dust"></span><span class="orb-dust"></span><span class="orb-dust"></span><span class="orb-dust"></span><span class="orb-symbol-v2">\u0646\u0650\u064A\u0651\u0629</span></div></div></div>'
-    + '<div style="font-family:\'Cormorant Garamond\',var(--serif);font-style:italic;font-weight:600;font-size:34px;line-height:1;background:linear-gradient(180deg,#F6DA8A,#C8A84A);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:4px;">' + escapeHtml(cfg.nom_fr || '') + '</div>'
+    + '<div style="font-family:\'Georgia\',var(--serif);font-style:italic;font-weight:600;font-size:34px;line-height:1;background:linear-gradient(180deg,#F6DA8A,#C8A84A);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:4px;">' + escapeHtml(cfg.nom_fr || '') + '</div>'
     + (cfg.nom_ar ? '<div style="font-family:\'Scheherazade New\',serif;font-size:26px;color:rgba(200,168,74,0.6);direction:rtl;margin-bottom:20px;">' + cfg.nom_ar + '</div>' : '<div style="height:6px;"></div>')
     + '<div style="width:90px;height:1px;margin:0 auto 20px;background:linear-gradient(90deg,transparent,#C8A84A,transparent);"></div>'
     + '<div style="font-family:var(--serif);font-size:19px;line-height:1.65;color:rgba(240,234,214,0.92);max-width:330px;margin:0 auto 22px;">' + escapeHtml(cfg.texte || '') + '</div>'
@@ -4357,7 +4357,7 @@ function _showPorteOverlay(id, enterFn) {
   ov.innerHTML =
       '<div style="font-family:var(--serif);font-style:italic;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:rgba(200,168,74,0.55);margin-bottom:22px;">Niyyah t\u2019ouvre cette porte</div>'
     + '<div style="transform:scale(0.74);transform-origin:center;margin:-34px auto -22px;"><div class="orb-wrap-v2"><div class="orb-core-v2"><div class="orb-conic"></div><span class="orb-dust"></span><span class="orb-dust"></span><span class="orb-dust"></span><span class="orb-dust"></span><span class="orb-dust"></span><span class="orb-dust"></span><span class="orb-symbol-v2">\u0646\u0650\u064A\u0651\u0629</span></div></div></div>'
-    + '<div style="font-family:\'Cormorant Garamond\',var(--serif);font-style:italic;font-weight:600;font-size:34px;line-height:1;background:linear-gradient(180deg,#F6DA8A,#C8A84A);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:4px;">' + escapeHtml(P.nom_fr) + '</div>'
+    + '<div style="font-family:\'Georgia\',var(--serif);font-style:italic;font-weight:600;font-size:34px;line-height:1;background:linear-gradient(180deg,#F6DA8A,#C8A84A);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:4px;">' + escapeHtml(P.nom_fr) + '</div>'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:26px;color:rgba(200,168,74,0.6);direction:rtl;margin-bottom:20px;">' + P.nom_ar + '</div>'
     + '<div style="width:90px;height:1px;margin:0 auto 20px;background:linear-gradient(90deg,transparent,#C8A84A,transparent);"></div>'
     + '<div style="font-family:var(--serif);font-size:19px;line-height:1.65;color:rgba(240,234,214,0.92);max-width:330px;margin:0 auto 22px;">' + escapeHtml(P.texte) + '</div>'
@@ -4934,7 +4934,7 @@ function _cureJ7FinaleSucces() {
     ? '<div class="lxf-stat lxf-rise" style="--d:.72s">Au d\u00e9but : ' + _cure7.efficacite_j1 + '/10 \u00b7 Aujourd\u2019hui : ' + _cure7.efficacite_j7 + '/10</div>' : '';
   var _pacteJ1 = (typeof _sk === 'string' ? (safeGetItem(_sk + '_j1_pacte') || '') : '');
   var _miroirPacte = _pacteJ1.trim()
-    ? '<div class="lxf-card lxf-rise" style="--d:.66s"><div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:8px;">Au premier jour, tu as \u00e9crit</div><div style="font-family:\'Cormorant Garamond\',serif;font-size:19px;font-style:italic;color:#E8D5A0;line-height:1.5;">\u00ab\u00a0' + escapeHtml(_pacteJ1) + '\u00a0\u00bb</div></div>'
+    ? '<div class="lxf-card lxf-rise" style="--d:.66s"><div style="font-family:\'Georgia\',serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:8px;">Au premier jour, tu as \u00e9crit</div><div style="font-family:\'Georgia\',serif;font-size:19px;font-style:italic;color:#E8D5A0;line-height:1.5;">\u00ab\u00a0' + escapeHtml(_pacteJ1) + '\u00a0\u00bb</div></div>'
     : '';
   // Miroir avant/après : ses propres mots
   var _motsSeuil = (_cure7.niyyah || '').trim();
@@ -6529,7 +6529,7 @@ function _cureAnxieteWizardRender(el) {
     html = backBtn + bgWrap
       + '<div data-cure-content style="padding:calc(var(--safe-top,0px)+60px) 20px 120px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:70vh;text-align:center;position:relative;z-index:1;max-width:400px;margin:0 auto;box-sizing:border-box;">'
       + progress
-      + (j.phrase_ancre ? '<div style="font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:23px;line-height:1.45;color:#E7D397;text-align:center;margin-bottom:24px;max-width:340px;">' + escapeHtml(j.phrase_ancre) + '</div>' : '')
+      + (j.phrase_ancre ? '<div style="font-family:\'Georgia\',serif;font-style:italic;font-size:23px;line-height:1.45;color:#E7D397;text-align:center;margin-bottom:24px;max-width:340px;">' + escapeHtml(j.phrase_ancre) + '</div>' : '')
       + (clot.ar ? '<div style="font-family:\'Scheherazade New\',serif;font-size:26px;color:#C8A84A;direction:rtl;margin-bottom:12px;">' + escapeHtml(clot.ar) + '</div>' : '')
       + '<div style="font-family:var(--serif);font-size:19px;color:rgba(240,234,214,0.85);line-height:1.7;max-width:360px;margin-bottom:24px;white-space:pre-line;">' + escapeHtml(clot.texte || clot.fr || 'Tu as travers\u00e9 ce jour.') + '</div>'
       + (clot.teaser ? '<div style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(231,211,151,0.72);line-height:1.5;max-width:330px;margin-bottom:24px;">' + escapeHtml(clot.teaser) + '</div>' : '')
@@ -7199,10 +7199,10 @@ function babCompletPorte(id) {
       wrap.style.cssText = 'margin-top:16px;';
       var btn = document.createElement('div');
       btn.onclick = shareNiyyah;
-      btn.style.cssText = 'padding:11px;border-radius:10px;border:1px solid rgba(200,168,75,0.2);text-align:center;cursor:pointer;font-family:\'Cormorant Garamond\',serif;font-size:14px;color:rgba(200,168,75,0.7);';
+      btn.style.cssText = 'padding:11px;border-radius:10px;border:1px solid rgba(200,168,75,0.2);text-align:center;cursor:pointer;font-family:\'Georgia\',serif;font-size:14px;color:rgba(200,168,75,0.7);';
       btn.textContent = 'Partager Niyyah ✦';
       var hadith = document.createElement('div');
-      hadith.style.cssText = 'text-align:center;margin-top:7px;font-family:\'Cormorant Garamond\',serif;font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);';
+      hadith.style.cssText = 'text-align:center;margin-top:7px;font-family:\'Georgia\',serif;font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);';
       hadith.textContent = '\u00ab\u00a0Celui qui guide vers le bien obtient la m\u00eame r\u00e9compense que celui qui le fait.\u00a0\u00bb \u2014 Muslim 2674';
       wrap.appendChild(btn);
       wrap.appendChild(hadith);
@@ -7579,7 +7579,7 @@ function showWeeklyBilan() {
     var _cached = safeGetItem(_weekKey);
     if (_cached) {
       conseil = _cached;
-      _premiumBadge = '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:12px;font-style:italic;color:#B5A685;margin-bottom:12px;">\u2726 Une lettre de Niyyah, \u00e9crite cette semaine pour toi.</div>';
+      _premiumBadge = '<div style="text-align:center;font-family:\'Georgia\',serif;font-size:12px;font-style:italic;color:#B5A685;margin-bottom:12px;">\u2726 Une lettre de Niyyah, \u00e9crite cette semaine pour toi.</div>';
     }
   }
   var _voicePool = (_NIYYAH_VOICE[dominante] && _NIYYAH_VOICE[dominante][safeGetItem('niyyah_motivation') || 'routine']) || _NIYYAH_VOICE.equilibre.routine;
@@ -7588,35 +7588,35 @@ function showWeeklyBilan() {
   if (_voiceMsg && prenom) _voiceMsg = prenom + ', ' + _voiceMsg.charAt(0).toLowerCase() + _voiceMsg.slice(1);
   var _memoireLine = _bilanMemoryLine(_bilanData);
   var card = document.getElementById('weeklyCard');
-  card.innerHTML = '<div style="text-align:center;font-size:12px;letter-spacing:0.25em;text-transform:uppercase;color:rgba(200,168,75,0.5);padding:16px 0 12px;font-family:\'Cormorant Garamond\',serif;">' + t('weekly_muhasaba') + '</div>'
-    + '<div style="text-align:center;padding:8px 16px 16px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:#B5A685;line-height:1.6;max-width:300px;margin:0 auto;">' + _voiceMsg + '</div>' + (_memoireLine ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;font-style:italic;color:rgba(200,168,74,0.92);line-height:1.65;max-width:300px;margin:14px auto 0;">' + _memoireLine + '</div>' : '') + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;font-style:italic;color:#E5E0DC;line-height:1.6;max-width:300px;margin:12px auto 0;">' + question + '</div><div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:#B5A685;text-align:right;margin-top:10px;max-width:300px;margin-left:auto;margin-right:auto;">\u2014 Niyyah</div></div>'
-    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:28px;">\u00ab\u00a0' + verset.text + '\u00a0\u00bb \u2014 ' + verset.ref + '</div>'
+  card.innerHTML = '<div style="text-align:center;font-size:12px;letter-spacing:0.25em;text-transform:uppercase;color:rgba(200,168,75,0.5);padding:16px 0 12px;font-family:\'Georgia\',serif;">' + t('weekly_muhasaba') + '</div>'
+    + '<div style="text-align:center;padding:8px 16px 16px;"><div style="font-family:\'Georgia\',serif;font-size:18px;font-style:italic;color:#B5A685;line-height:1.6;max-width:300px;margin:0 auto;">' + _voiceMsg + '</div>' + (_memoireLine ? '<div style="font-family:\'Georgia\',serif;font-size:17px;font-style:italic;color:rgba(200,168,74,0.92);line-height:1.65;max-width:300px;margin:14px auto 0;">' + _memoireLine + '</div>' : '') + '<div style="font-family:\'Georgia\',serif;font-size:17px;font-style:italic;color:#E5E0DC;line-height:1.6;max-width:300px;margin:12px auto 0;">' + question + '</div><div style="font-family:\'Georgia\',serif;font-size:13px;font-style:italic;color:#B5A685;text-align:right;margin-top:10px;max-width:300px;margin-left:auto;margin-right:auto;">\u2014 Niyyah</div></div>'
+    + '<div style="text-align:center;font-family:\'Georgia\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:28px;">\u00ab\u00a0' + verset.text + '\u00a0\u00bb \u2014 ' + verset.ref + '</div>'
     + '<div style="padding:0 0 20px;">'
     + '<div style="text-align:center;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.4);margin-bottom:12px;">Ce que la semaine a vu de toi</div>'
     + '<div style="display:flex;justify-content:center;gap:24px;margin-bottom:28px;">'
-    + '<div style="text-align:center;"><div id="_wkNum0" style="font-family:\'Cormorant Garamond\',serif;font-size:28px;font-weight:600;color:#C8A84A;">0</div><div style="font-family:Amiri,serif;font-size:14px;color:rgba(200,168,75,0.5);direction:rtl;">\u0623\u0639\u0652\u0645\u064E\u0627\u0644</div><div style="font-size:12px;color:var(--t3);letter-spacing:1px;">gestes</div></div>'
+    + '<div style="text-align:center;"><div id="_wkNum0" style="font-family:\'Georgia\',serif;font-size:28px;font-weight:600;color:#C8A84A;">0</div><div style="font-family:Amiri,serif;font-size:14px;color:rgba(200,168,75,0.5);direction:rtl;">\u0623\u0639\u0652\u0645\u064E\u0627\u0644</div><div style="font-size:12px;color:var(--t3);letter-spacing:1px;">gestes</div></div>'
     + '<div style="width:1px;background:rgba(200,168,75,0.15);"></div>'
-    + '<div style="text-align:center;"><div id="_wkNum1" style="font-family:\'Cormorant Garamond\',serif;font-size:28px;font-weight:600;color:#C8A84A;">0</div><div style="font-family:Amiri,serif;font-size:14px;color:rgba(200,168,75,0.5);direction:rtl;">\u0623\u064E\u064A\u0651\u064E\u0627\u0645</div><div style="font-size:12px;color:var(--t3);letter-spacing:1px;">journ\u00e9es</div></div>'
+    + '<div style="text-align:center;"><div id="_wkNum1" style="font-family:\'Georgia\',serif;font-size:28px;font-weight:600;color:#C8A84A;">0</div><div style="font-family:Amiri,serif;font-size:14px;color:rgba(200,168,75,0.5);direction:rtl;">\u0623\u064E\u064A\u0651\u064E\u0627\u0645</div><div style="font-size:12px;color:var(--t3);letter-spacing:1px;">journ\u00e9es</div></div>'
     + '<div style="width:1px;background:rgba(200,168,75,0.15);"></div>'
-    + '<div style="text-align:center;"><div id="_wkNum2" style="font-family:\'Cormorant Garamond\',serif;font-size:28px;font-weight:600;color:#C8A84A;">0</div><div style="font-family:Amiri,serif;font-size:14px;color:rgba(200,168,75,0.5);direction:rtl;">\u0641\u064E\u062C\u0652\u0631</div><div style="font-size:12px;color:var(--t3);letter-spacing:1px;">Fajr</div></div>'
+    + '<div style="text-align:center;"><div id="_wkNum2" style="font-family:\'Georgia\',serif;font-size:28px;font-weight:600;color:#C8A84A;">0</div><div style="font-family:Amiri,serif;font-size:14px;color:rgba(200,168,75,0.5);direction:rtl;">\u0641\u064E\u062C\u0652\u0631</div><div style="font-size:12px;color:var(--t3);letter-spacing:1px;">Fajr</div></div>'
     + '</div>'
     + '<div style="text-align:center;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.4);margin-bottom:8px;">Ce qui a respir\u00e9</div>'
-    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#B5A685;margin-bottom:24px;">' + comparison + '</div>'
+    + '<div style="text-align:center;font-family:\'Georgia\',serif;font-size:14px;font-style:italic;color:#B5A685;margin-bottom:24px;">' + comparison + '</div>'
     + '<div style="text-align:center;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.4);margin-bottom:12px;">Le chemin qui s\u2019ouvre</div>'
     + _premiumBadge
-    + '<div id="_wkConseil" style="text-align:center;max-width:320px;margin:0 auto 24px;">' + conseil.split('\n\n').map(function(p) { return '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#B5A685;line-height:1.7;margin-bottom:12px;">' + p + '</div>'; }).join('') + '</div>'
-    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.6);line-height:1.6;margin-bottom:8px;max-width:280px;margin-left:auto;margin-right:auto;">' + parole + '</div>'
+    + '<div id="_wkConseil" style="text-align:center;max-width:320px;margin:0 auto 24px;">' + conseil.split('\n\n').map(function(p) { return '<div style="font-family:\'Georgia\',serif;font-size:16px;font-style:italic;color:#B5A685;line-height:1.7;margin-bottom:12px;">' + p + '</div>'; }).join('') + '</div>'
+    + '<div style="text-align:center;font-family:\'Georgia\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.6);line-height:1.6;margin-bottom:8px;max-width:280px;margin-left:auto;margin-right:auto;">' + parole + '</div>'
     + '<div style="text-align:center;font-family:Amiri,serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.3);margin-bottom:24px;">Astaghfirull\u00e2h, astaghfirull\u00e2h, astaghfirull\u00e2h.</div>'
     + '</div>'
-    + '<div style="margin:12px 0;"><div onclick="shareNiyyah()" style="padding:11px;border-radius:10px;border:1px solid rgba(200,168,75,0.2);text-align:center;cursor:pointer;font-family:\'Cormorant Garamond\',serif;font-size:14px;color:rgba(200,168,75,0.7);letter-spacing:0.05em;">Partager Niyyah \u2726</div><div style="text-align:center;margin-top:7px;font-family:\'Cormorant Garamond\',serif;font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);">\u00ab\u00a0Celui qui guide vers le bien obtient la m\u00eame r\u00e9compense que celui qui le fait.\u00a0\u00bb \u2014 Muslim 2674</div></div>'
-    + '<button class="weekly-btn" onclick="closeWeeklyBilan()" style="width:100%;padding:15px;border-radius:12px;border:none;background:#C8A84A;color:#2C2E32;font-size:15px;font-weight:700;cursor:pointer;font-family:\'Cormorant Garamond\',serif;letter-spacing:0.05em;">'
+    + '<div style="margin:12px 0;"><div onclick="shareNiyyah()" style="padding:11px;border-radius:10px;border:1px solid rgba(200,168,75,0.2);text-align:center;cursor:pointer;font-family:\'Georgia\',serif;font-size:14px;color:rgba(200,168,75,0.7);letter-spacing:0.05em;">Partager Niyyah \u2726</div><div style="text-align:center;margin-top:7px;font-family:\'Georgia\',serif;font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);">\u00ab\u00a0Celui qui guide vers le bien obtient la m\u00eame r\u00e9compense que celui qui le fait.\u00a0\u00bb \u2014 Muslim 2674</div></div>'
+    + '<button class="weekly-btn" onclick="closeWeeklyBilan()" style="width:100%;padding:15px;border-radius:12px;border:none;background:#C8A84A;color:#2C2E32;font-size:15px;font-weight:700;cursor:pointer;font-family:\'Georgia\',serif;letter-spacing:0.05em;">'
     + '\u0628\u0650\u0633\u0652\u0645\u0650 \u0627\u0644\u0644\u0651\u064E\u0647\u0650 \u2014 Nouvelle semaine</button>';
   document.getElementById('weeklyOverlay').classList.add('show');
   document.body.style.overflow = 'hidden';
   _animateWeeklyNums([stats.totalGestes, stats.doneDays, stats.fajrDays]);
   if (_isPrem && !safeGetItem(_weekKey)) {
     var _conseilEl = document.getElementById('_wkConseil');
-    if (_conseilEl) _conseilEl.innerHTML = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.4);">Niyyah \u00e9crit ta lettre cette semaine\u2026</div>';
+    if (_conseilEl) _conseilEl.innerHTML = '<div style="font-family:\'Georgia\',serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.4);">Niyyah \u00e9crit ta lettre cette semaine\u2026</div>';
     var _archive = null; try { _archive = JSON.parse(safeGetItem('niyyah_week_archive') || 'null'); } catch(e) {}
     // Bontés des 7 derniers jours
     var _bontesHist = []; try { _bontesHist = JSON.parse(safeGetItem('niyyah_finjournee_history') || '[]'); } catch(e) {}
@@ -7638,8 +7638,8 @@ function showWeeklyBilan() {
         safeSetItem(_weekKey, data.message);
         var el = document.getElementById('_wkConseil');
         if (el) {
-          el.previousElementSibling && el.previousElementSibling.className === '' || el.insertAdjacentHTML('beforebegin', '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:12px;font-style:italic;color:#B5A685;margin-bottom:12px;">\u2726 Une lettre de Niyyah, \u00e9crite cette semaine pour toi.</div>');
-          el.innerHTML = data.message.split('\n\n').map(function(p) { return '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#B5A685;line-height:1.7;margin-bottom:12px;">' + p + '</div>'; }).join('');
+          el.previousElementSibling && el.previousElementSibling.className === '' || el.insertAdjacentHTML('beforebegin', '<div style="text-align:center;font-family:\'Georgia\',serif;font-size:12px;font-style:italic;color:#B5A685;margin-bottom:12px;">\u2726 Une lettre de Niyyah, \u00e9crite cette semaine pour toi.</div>');
+          el.innerHTML = data.message.split('\n\n').map(function(p) { return '<div style="font-family:\'Georgia\',serif;font-size:16px;font-style:italic;color:#B5A685;line-height:1.7;margin-bottom:12px;">' + p + '</div>'; }).join('');
         }
       }
     }).catch(function() {});
@@ -7813,17 +7813,17 @@ function openPodcastPicker() {
   var html = '<div style="width:100%;max-width:400px;">';
   html += '<div style="text-align:center;margin-bottom:24px;">';
   html += '<div style="margin-bottom:12px;">' + niyyahIcon('lecture', 28) + '</div>';
-  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;color:#C8A84A;letter-spacing:2px;text-transform:uppercase;">Podcast islamique</div>';
+  html += '<div style="font-family:\'Georgia\',serif;font-size:18px;color:#C8A84A;letter-spacing:2px;text-transform:uppercase;">Podcast islamique</div>';
   html += '</div>';
   _podcastSources.forEach(function(src) {
     html += '<a href="' + src.url + '" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:14px;padding:16px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.15);border-radius:14px;margin-bottom:10px;text-decoration:none;cursor:pointer;" ontouchstart="this.style.opacity=\'0.7\'" ontouchend="this.style.opacity=\'1\'">';
     html += '<div style="flex-shrink:0;">' + niyyahIcon('lecture', 20) + '</div>';
-    html += '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;color:#E5E0DC;">' + src.label + '</div><div style="font-size:12px;color:#B5A685;margin-top:2px;">' + src.sub + '</div></div>';
+    html += '<div style="flex:1;min-width:0;"><div style="font-family:\'Georgia\',serif;font-size:15px;color:#E5E0DC;">' + src.label + '</div><div style="font-size:12px;color:#B5A685;margin-top:2px;">' + src.sub + '</div></div>';
     html += '<div style="color:#C8A84A;font-size:18px;flex-shrink:0;">\u203A</div>';
     html += '</a>';
   });
-  html += '<div style="text-align:center;margin-top:20px;font-family:\'Cormorant Garamond\',serif;font-size:12px;font-style:italic;color:rgba(181,166,133,0.5);">S\u00e9lection externe \u2014 cha\u00eenes non affili\u00e9es \u00e0 Niyyah.</div>';
-  html += '<button onclick="document.getElementById(\'podcast-picker-overlay\').remove();" style="display:block;margin:20px auto 0;padding:12px 32px;border:1px solid rgba(200,168,75,0.2);border-radius:12px;background:transparent;color:#B5A685;font-family:\'Cormorant Garamond\',serif;font-size:13px;cursor:pointer;">Fermer</button>';
+  html += '<div style="text-align:center;margin-top:20px;font-family:\'Georgia\',serif;font-size:12px;font-style:italic;color:rgba(181,166,133,0.5);">S\u00e9lection externe \u2014 cha\u00eenes non affili\u00e9es \u00e0 Niyyah.</div>';
+  html += '<button onclick="document.getElementById(\'podcast-picker-overlay\').remove();" style="display:block;margin:20px auto 0;padding:12px 32px;border:1px solid rgba(200,168,75,0.2);border-radius:12px;background:transparent;color:#B5A685;font-family:\'Georgia\',serif;font-size:13px;cursor:pointer;">Fermer</button>';
   html += '</div>';
   ov.innerHTML = html;
   ov.onclick = function(e) { if (e.target === ov) ov.remove(); };
@@ -7895,9 +7895,9 @@ function _openRecitDetail(num) {
   var progress = _getRecitsProgress();
   var total = _recitsCoranData.length;
   var html = '<div style="padding:calc(var(--safe-top,0px) + 16px) 20px 12px;text-align:center;">';
-  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:24px;font-style:italic;color:#E5E0DC;margin-bottom:4px;">' + T(recit.titre) + '</div>';
+  html += '<div style="font-family:\'Georgia\',serif;font-size:24px;font-style:italic;color:#E5E0DC;margin-bottom:4px;">' + T(recit.titre) + '</div>';
   html += '<div style="font-size:12px;color:#B5A685;margin-bottom:8px;">' + (recit.theme || '') + '</div>';
-  html += '<div onclick="_recitsShowArchive();" style="display:inline-block;cursor:pointer;font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.6);border-bottom:1px solid rgba(200,168,75,0.25);padding-bottom:2px;">R\u00e9cit ' + recit.num + ' sur ' + total + ' \u2014 voir les pr\u00e9c\u00e9dents</div>';
+  html += '<div onclick="_recitsShowArchive();" style="display:inline-block;cursor:pointer;font-family:\'Georgia\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.6);border-bottom:1px solid rgba(200,168,75,0.25);padding-bottom:2px;">R\u00e9cit ' + recit.num + ' sur ' + total + ' \u2014 voir les pr\u00e9c\u00e9dents</div>';
   html += '</div>';
   html += '<div style="flex:1;overflow-y:auto;padding:0 24px calc(20px + var(--safe-bot,0px));-webkit-overflow-scrolling:touch;">';
   if (recit.paragraphes) {
@@ -7905,9 +7905,9 @@ function _openRecitDetail(num) {
       var txt = T(p.content);
       if (!txt) return;
       if (p.type === 'italic') {
-        html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-style:italic;color:rgba(200,168,75,0.85);line-height:1.85;margin-bottom:22px;text-align:center;">' + txt + '</div>';
+        html += '<div style="font-family:\'Georgia\',serif;font-size:22px;font-style:italic;color:rgba(200,168,75,0.85);line-height:1.85;margin-bottom:22px;text-align:center;">' + txt + '</div>';
       } else {
-        html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;color:rgba(229,224,220,0.85);line-height:1.9;margin-bottom:22px;">' + txt + '</div>';
+        html += '<div style="font-family:\'Georgia\',serif;font-size:22px;color:rgba(229,224,220,0.85);line-height:1.9;margin-bottom:22px;">' + txt + '</div>';
       }
     });
   }
@@ -7915,7 +7915,7 @@ function _openRecitDetail(num) {
     var med = T(recit.meditation);
     if (med) {
       html += '<div style="margin:24px 0;padding:16px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.15);border-radius:12px;text-align:center;">';
-      html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;font-style:italic;color:#C8A84A;line-height:1.8;">' + med + '</div>';
+      html += '<div style="font-family:\'Georgia\',serif;font-size:20px;font-style:italic;color:#C8A84A;line-height:1.8;">' + med + '</div>';
       html += '</div>';
     }
   }
@@ -7923,7 +7923,7 @@ function _openRecitDetail(num) {
     var src = T(recit.source);
     if (src) html += '<div style="text-align:center;font-size:12px;color:rgba(200,168,75,0.4);margin-bottom:16px;">' + src + '</div>';
   }
-  html += '<button onclick="validerLectureRecit(' + num + ');" style="display:block;width:calc(100% - 48px);max-width:320px;margin:24px auto 32px;padding:16px;border:none;border-radius:12px;background:#C8A84A;color:#2C2E32;font-family:\'Cormorant Garamond\',serif;font-size:16px;font-weight:600;cursor:pointer;">J\u2019ai termin\u00e9 ma lecture</button>';
+  html += '<button onclick="validerLectureRecit(' + num + ');" style="display:block;width:calc(100% - 48px);max-width:320px;margin:24px auto 32px;padding:16px;border:none;border-radius:12px;background:#C8A84A;color:#2C2E32;font-family:\'Georgia\',serif;font-size:16px;font-weight:600;cursor:pointer;">J\u2019ai termin\u00e9 ma lecture</button>';
   html += '</div>';
   html += '<button onclick="document.getElementById(\'recits-coran-overlay\').remove();" style="position:absolute;top:calc(var(--safe-top,0px) + 12px);right:16px;background:none;border:none;color:#B5A685;font-size:24px;cursor:pointer;z-index:1;">\u2715</button>';
   ov.innerHTML = html;
@@ -7957,7 +7957,7 @@ function _recitsShowArchive() {
   ov.style.cssText = 'position:fixed;inset:0;z-index:9500;background:#0a0a0a;display:flex;flex-direction:column;overflow:hidden;';
   var html = '<div style="padding:calc(var(--safe-top,0px) + 16px) 20px 12px;text-align:center;">';
   html += '<div style="font-family:Amiri,serif;font-size:24px;color:#C8A84A;direction:rtl;margin-bottom:4px;">\u0642\u064E\u0635\u064E\u0635\u064F \u0627\u0644\u0642\u064F\u0631\u0622\u0646</div>';
-  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.6);">Tous les r\u00e9cits</div>';
+  html += '<div style="font-family:\'Georgia\',serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.6);">Tous les r\u00e9cits</div>';
   html += '</div>';
   html += '<div style="flex:1;overflow-y:auto;padding:0 20px calc(20px + var(--safe-bot,0px));-webkit-overflow-scrolling:touch;">';
   var maxDay = _recitsMaxUnlocked(data);
@@ -7967,13 +7967,13 @@ function _recitsShowArchive() {
     var read = r.num <= progress;
     if (!unlocked) {
       html += '<div style="padding:14px 16px;background:rgba(200,168,75,0.02);border:1px solid rgba(200,168,75,0.06);border-radius:14px;margin-bottom:8px;opacity:0.35;display:flex;align-items:center;gap:14px;">';
-      html += '<div style="width:32px;height:32px;border-radius:8px;background:rgba(200,168,75,0.05);display:flex;align-items:center;justify-content:center;font-family:\'Cormorant Garamond\',serif;font-size:13px;color:#B5A685;flex-shrink:0;">' + r.num + '</div>';
-      html += '<div style="flex:1;min-width:0;font-family:\'Cormorant Garamond\',serif;font-size:14px;color:#B5A685;font-style:italic;">Bient\u00f4t\u2026</div></div>';
+      html += '<div style="width:32px;height:32px;border-radius:8px;background:rgba(200,168,75,0.05);display:flex;align-items:center;justify-content:center;font-family:\'Georgia\',serif;font-size:13px;color:#B5A685;flex-shrink:0;">' + r.num + '</div>';
+      html += '<div style="flex:1;min-width:0;font-family:\'Georgia\',serif;font-size:14px;color:#B5A685;font-style:italic;">Bient\u00f4t\u2026</div></div>';
       return;
     }
     html += '<div onclick="_openRecitDetail(' + r.num + ')" style="padding:14px 16px;background:rgba(200,168,75,0.04);border:1px solid rgba(200,168,75,0.12);border-radius:14px;margin-bottom:8px;cursor:pointer;display:flex;align-items:center;gap:14px;" ontouchstart="this.style.opacity=\'0.7\'" ontouchend="this.style.opacity=\'1\'">';
-    html += '<div style="width:32px;height:32px;border-radius:8px;background:rgba(200,168,75,0.1);display:flex;align-items:center;justify-content:center;font-family:\'Cormorant Garamond\',serif;font-size:13px;color:#C8A84A;flex-shrink:0;">' + r.num + '</div>';
-    html += '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;color:#E5E0DC;">' + T(r.titre) + '</div>';
+    html += '<div style="width:32px;height:32px;border-radius:8px;background:rgba(200,168,75,0.1);display:flex;align-items:center;justify-content:center;font-family:\'Georgia\',serif;font-size:13px;color:#C8A84A;flex-shrink:0;">' + r.num + '</div>';
+    html += '<div style="flex:1;min-width:0;"><div style="font-family:\'Georgia\',serif;font-size:14px;color:#E5E0DC;">' + T(r.titre) + '</div>';
     html += '<div style="font-size:12px;color:#B5A685;margin-top:2px;">' + (r.theme || '') + '</div></div>';
     html += (read ? '<span style="font-size:14px;color:#C8A84A;">\u2713</span>' : '<div style="color:rgba(200,168,75,0.4);font-size:16px;flex-shrink:0;">\u203A</div>');
     html += '</div>';
@@ -7995,8 +7995,8 @@ function _openRecitReadOnly(num) {
   ov.id = 'recits-coran-overlay';
   ov.style.cssText = 'position:fixed;inset:0;z-index:9500;background:#0a0a0a;display:flex;flex-direction:column;overflow:hidden;';
   var html = '<div style="padding:calc(var(--safe-top,0px) + 16px) 20px 12px;text-align:center;">';
-  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:4px;">R\u00e9cit ' + recit.num + '</div>';
-  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:24px;font-style:italic;color:#E5E0DC;margin-bottom:4px;">' + T(recit.titre) + '</div>';
+  html += '<div style="font-family:\'Georgia\',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:4px;">R\u00e9cit ' + recit.num + '</div>';
+  html += '<div style="font-family:\'Georgia\',serif;font-size:24px;font-style:italic;color:#E5E0DC;margin-bottom:4px;">' + T(recit.titre) + '</div>';
   html += '<div style="font-size:12px;color:#B5A685;">' + (recit.theme || '') + '</div>';
   html += '</div>';
   html += '<div style="flex:1;overflow-y:auto;padding:0 24px calc(20px + var(--safe-bot,0px));-webkit-overflow-scrolling:touch;">';
@@ -8005,9 +8005,9 @@ function _openRecitReadOnly(num) {
       var txt = T(p.content);
       if (!txt) return;
       if (p.type === 'italic') {
-        html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-style:italic;color:rgba(200,168,75,0.85);line-height:1.85;margin-bottom:22px;text-align:center;">' + txt + '</div>';
+        html += '<div style="font-family:\'Georgia\',serif;font-size:22px;font-style:italic;color:rgba(200,168,75,0.85);line-height:1.85;margin-bottom:22px;text-align:center;">' + txt + '</div>';
       } else {
-        html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;color:rgba(229,224,220,0.85);line-height:1.9;margin-bottom:22px;">' + txt + '</div>';
+        html += '<div style="font-family:\'Georgia\',serif;font-size:22px;color:rgba(229,224,220,0.85);line-height:1.9;margin-bottom:22px;">' + txt + '</div>';
       }
     });
   }
@@ -8015,7 +8015,7 @@ function _openRecitReadOnly(num) {
     var med = T(recit.meditation);
     if (med) {
       html += '<div style="margin:24px 0;padding:16px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.15);border-radius:12px;text-align:center;">';
-      html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;font-style:italic;color:#C8A84A;line-height:1.8;">' + med + '</div>';
+      html += '<div style="font-family:\'Georgia\',serif;font-size:20px;font-style:italic;color:#C8A84A;line-height:1.8;">' + med + '</div>';
       html += '</div>';
     }
   }
@@ -8653,11 +8653,11 @@ function openTafakkurArchive() {
   ov.style.cssText = 'position:fixed;inset:0;z-index:9500;background:#0a0a0a;display:flex;flex-direction:column;overflow:hidden;';
   var html = '<div style="padding:calc(var(--safe-top,0px) + 16px) 20px 12px;text-align:center;">';
   html += '<div style="font-family:Amiri,serif;font-size:24px;color:#C8A84A;direction:rtl;margin-bottom:4px;">\u062A\u064E\u0641\u064E\u0643\u0651\u064F\u0631</div>';
-  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.6);">Mes haltes \u2014 ' + hist.length + ' s\u00e9ance' + (hist.length > 1 ? 's' : '') + '</div>';
+  html += '<div style="font-family:\'Georgia\',serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.6);">Mes haltes \u2014 ' + hist.length + ' s\u00e9ance' + (hist.length > 1 ? 's' : '') + '</div>';
   html += '</div>';
   html += '<div style="flex:1;overflow-y:auto;padding:0 20px calc(20px + var(--safe-bot,0px));-webkit-overflow-scrolling:touch;">';
   if (hist.length === 0) {
-    html += '<div style="text-align:center;padding:40px;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.5);">Aucune halte encore.</div>';
+    html += '<div style="text-align:center;padding:40px;font-family:\'Georgia\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.5);">Aucune halte encore.</div>';
   } else {
     hist.forEach(function(h) {
       var dureeStr = '';
@@ -8671,7 +8671,7 @@ function openTafakkurArchive() {
       html += '<span style="font-size:12px;color:rgba(200,168,75,0.5);">' + h.date + '</span>';
       html += (dureeStr ? '<span style="font-size:12px;color:rgba(200,168,75,0.55);">' + dureeStr + '</span>' : '');
       html += '</div>';
-      html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#E5E0DC;line-height:1.6;">' + (h.phrase || '').substring(0, 150) + (h.phrase && h.phrase.length > 150 ? '\u2026' : '') + '</div>';
+      html += '<div style="font-family:\'Georgia\',serif;font-size:14px;font-style:italic;color:#E5E0DC;line-height:1.6;">' + (h.phrase || '').substring(0, 150) + (h.phrase && h.phrase.length > 150 ? '\u2026' : '') + '</div>';
       html += '</div>';
     });
   }
@@ -8689,8 +8689,8 @@ function openTafakkur() {
     _tScreen.classList.add('show');
     document.getElementById('tafakkurDotEl').style.animation = 'none';
     var hist = _getTafakkurHistory();
-    document.getElementById('tafakkurPhrase').innerHTML = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-style:italic;color:rgba(200,168,75,0.9);line-height:1.6;">Tu as d\u00e9j\u00e0 fait ta halte aujourd\u2019hui.<br>Reviens demain.</div>'
-      + '<div onclick="openTafakkurArchive();closeTafakkur();" style="display:inline-block;cursor:pointer;margin-top:48px;font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.7);border-bottom:1px solid rgba(200,168,75,0.25);padding-bottom:2px;">Mes haltes \u2014 ' + hist.length + ' s\u00e9ance' + (hist.length > 1 ? 's' : '') + '</div>';
+    document.getElementById('tafakkurPhrase').innerHTML = '<div style="font-family:\'Georgia\',serif;font-size:22px;font-style:italic;color:rgba(200,168,75,0.9);line-height:1.6;">Tu as d\u00e9j\u00e0 fait ta halte aujourd\u2019hui.<br>Reviens demain.</div>'
+      + '<div onclick="openTafakkurArchive();closeTafakkur();" style="display:inline-block;cursor:pointer;margin-top:48px;font-family:\'Georgia\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.7);border-bottom:1px solid rgba(200,168,75,0.25);padding-bottom:2px;">Mes haltes \u2014 ' + hist.length + ' s\u00e9ance' + (hist.length > 1 ? 's' : '') + '</div>';
     document.getElementById('tafakkurTimerDisplay').textContent = '';
     document.querySelectorAll('.tafakkur-timer-btn').forEach(function(b) { b.style.display = 'none'; });
     return;
@@ -8865,11 +8865,11 @@ function _showTafakkurRecitOverlay(recit, fromArchive) {
     : "var o=document.getElementById('tafakkur-recit-overlay');if(o)o.remove();closeTafakkur(true);";
   var srcLabel = recit.recit.source_nom ? '\u2014 ' + recit.recit.source_nom : '';
   ov.innerHTML = '<div style="max-width:360px;width:100%;max-height:80vh;overflow-y:auto;text-align:center;padding:32px 24px;">'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:16px;">' + (recit.theme || '') + '</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;color:#E5E0DC;line-height:1.8;margin-bottom:24px;text-align:left;">'
+    + '<div style="font-family:\'Georgia\',serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:16px;">' + (recit.theme || '') + '</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:20px;color:#E5E0DC;line-height:1.8;margin-bottom:24px;text-align:left;">'
       + (recit.recit.texte || '').split('\n').filter(function(p){ return p.trim(); }).map(function(p){ return '<p style="margin:0 0 14px;">' + p.replace(/«([^»]+)»/g, '<em>«$1»</em>') + '</p>'; }).join('')
     + '</div>'
-    + (srcLabel ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);margin-bottom:24px;">' + srcLabel + '</div>' : '')
+    + (srcLabel ? '<div style="font-family:\'Georgia\',serif;font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);margin-bottom:24px;">' + srcLabel + '</div>' : '')
     + '<button onclick="' + _closeRecit + '" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:20px;cursor:pointer;">\u2715</button>'
     + '</div>';
   document.body.appendChild(ov);
@@ -8889,7 +8889,7 @@ function _showTafakkurEnd() {
   console.log('[Tafakkur] _showTafakkurEnd | Q_MAP=' + (window.TAFAKKUR_Q_MAP ? Object.keys(window.TAFAKKUR_Q_MAP).length : 'NULL') + ' | RECITS=' + (window.TAFAKKUR_RECITS ? window.TAFAKKUR_RECITS.length : 'NULL'));
   el.style.opacity = '0';
   setTimeout(function() {
-    el.innerHTML = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:#C8A84A;line-height:1.7;max-width:320px;margin:0 auto;">' + _tafakkurCurrentPhrase + '</div>';
+    el.innerHTML = '<div style="font-family:\'Georgia\',serif;font-size:18px;font-style:italic;color:#C8A84A;line-height:1.7;max-width:320px;margin:0 auto;">' + _tafakkurCurrentPhrase + '</div>';
     el.style.opacity = '1';
     var recit = _findTafakkurRecit(_tafakkurCurrentPhrase);
     if (recit) {
@@ -10025,8 +10025,8 @@ function renderZakatCard() {
     + '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8CE8A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="4.6" x2="12" y2="18"/><line x1="8.5" y1="18" x2="15.5" y2="18"/><line x1="5" y1="7" x2="19" y2="7"/><circle cx="12" cy="3.9" r="1.1"/><path d="M5 7 3 11M5 7 7 11M3 11a2 2 0 0 0 4 0"/><path d="M19 7 17 11M19 7 21 11M17 11a2 2 0 0 0 4 0"/></svg>'
     + '</div>'
     + '<div style="flex:1;min-width:0;">'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;letter-spacing:0.02em;color:#E8CE8A;line-height:1.2;">Calculer ma Zak\u00e2t</div>'
-    + '<div style="font-size:14px;color:rgba(200,168,74,0.55);margin-top:3px;font-style:italic;font-family:\'Cormorant Garamond\',serif;">Zak\u00e2t al-m\u00e2l \u00b7 2,5 % du patrimoine</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:18px;letter-spacing:0.02em;color:#E8CE8A;line-height:1.2;">Calculer ma Zak\u00e2t</div>'
+    + '<div style="font-size:14px;color:rgba(200,168,74,0.55);margin-top:3px;font-style:italic;font-family:\'Georgia\',serif;">Zak\u00e2t al-m\u00e2l \u00b7 2,5 % du patrimoine</div>'
     + '</div>'
     + '</div>';
 }
@@ -10082,27 +10082,27 @@ function openZakat() {
     + '#zakat-overlay .zk-close{position:fixed;top:calc(env(safe-area-inset-top,0px) + 20px);right:20px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(200,168,74,0.28);background:rgba(20,15,8,0.6);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:#C8A84A;font-size:17px;cursor:pointer;z-index:5;transition:all .25s;}'
     + '#zakat-overlay .zk-close:hover{border-color:rgba(232,206,138,0.6);color:#E8CE8A;}'
     + '#zakat-overlay .zk-arabic{font-family:"Scheherazade New",serif;font-size:46px;line-height:1.1;color:#E8CE8A;text-align:center;text-shadow:0 0 30px rgba(232,206,138,0.28);}'
-    + '#zakat-overlay .zk-title{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:27px;letter-spacing:.06em;color:#EADCB6;text-align:center;margin-top:8px;}'
-    + '#zakat-overlay .zk-sub{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:14px;color:#9c8c64;text-align:center;margin-top:8px;line-height:1.55;}'
+    + '#zakat-overlay .zk-title{font-family:"Georgia",serif;font-weight:500;font-size:27px;letter-spacing:.06em;color:#EADCB6;text-align:center;margin-top:8px;}'
+    + '#zakat-overlay .zk-sub{font-family:"Georgia",serif;font-style:italic;font-size:14px;color:#9c8c64;text-align:center;margin-top:8px;line-height:1.55;}'
     + '#zakat-overlay .zk-rule{display:flex;align-items:center;gap:14px;margin:30px 0 14px;}'
     + '#zakat-overlay .zk-rule:before,#zakat-overlay .zk-rule:after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(200,168,74,0.3),transparent);}'
     + '#zakat-overlay .zk-rule span{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:rgba(200,168,74,0.62);white-space:nowrap;}'
     + '#zakat-overlay .zk-field{margin-bottom:14px;}'
     + '#zakat-overlay .zk-field label{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(200,168,74,0.55);margin-bottom:7px;}'
     + '#zakat-overlay .zk-inwrap{position:relative;}'
-    + '#zakat-overlay .zk-unit{position:absolute;right:16px;top:50%;transform:translateY(-50%);font-family:"Cormorant Garamond",serif;font-size:15px;color:rgba(200,168,74,0.45);pointer-events:none;}'
-    + '#zakat-overlay input{width:100%;padding:14px 16px;border-radius:13px;border:1px solid rgba(200,168,74,0.18);background:linear-gradient(180deg,#16110a,#100c07);color:#F0EADB;font-size:16px;font-family:"Cormorant Garamond",serif;outline:none;transition:border-color .25s, box-shadow .25s;}'
+    + '#zakat-overlay .zk-unit{position:absolute;right:16px;top:50%;transform:translateY(-50%);font-family:"Georgia",serif;font-size:15px;color:rgba(200,168,74,0.45);pointer-events:none;}'
+    + '#zakat-overlay input{width:100%;padding:14px 16px;border-radius:13px;border:1px solid rgba(200,168,74,0.18);background:linear-gradient(180deg,#16110a,#100c07);color:#F0EADB;font-size:16px;font-family:"Georgia",serif;outline:none;transition:border-color .25s, box-shadow .25s;}'
     + '#zakat-overlay input:focus{border-color:rgba(232,206,138,0.55);box-shadow:0 0 0 3px rgba(232,206,138,0.08), inset 0 0 18px rgba(232,206,138,0.05);}'
     + '#zakat-overlay input::placeholder{color:rgba(200,168,74,0.25);}'
-    + '#zakat-overlay .zk-note{font-size:11px;color:rgba(200,168,74,0.4);line-height:1.7;margin-top:26px;font-style:italic;font-family:"Cormorant Garamond",serif;}'
+    + '#zakat-overlay .zk-note{font-size:11px;color:rgba(200,168,74,0.4);line-height:1.7;margin-top:26px;font-style:italic;font-family:"Georgia",serif;}'
     + '#zakat-overlay .zk-result-wrap{border-top:1px solid rgba(200,168,74,0.15);margin-top:28px;padding-top:24px;}'
-    + '#zakat-overlay .zk-result-line{font-family:"Cormorant Garamond",serif;font-size:14px;color:#9c8c64;line-height:1.95;margin-bottom:18px;}'
+    + '#zakat-overlay .zk-result-line{font-family:"Georgia",serif;font-size:14px;color:#9c8c64;line-height:1.95;margin-bottom:18px;}'
     + '#zakat-overlay .zk-result-line b{color:#E5E0DC;font-weight:600;}'
     + '#zakat-overlay .zk-bloom{position:relative;text-align:center;padding:28px 20px;border-radius:18px;border:1px solid rgba(232,206,138,0.32);background:radial-gradient(120% 150% at 50% 0%, rgba(232,206,138,0.15), rgba(232,206,138,0.02) 72%);overflow:hidden;animation:zkBloom .7s ease both;}'
     + '#zakat-overlay .zk-bloom:before{content:"";position:absolute;top:-46%;left:50%;transform:translateX(-50%);width:220px;height:220px;background:radial-gradient(circle,rgba(232,206,138,0.22),transparent 65%);pointer-events:none;}'
     + '#zakat-overlay .zk-ey{position:relative;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:rgba(232,206,138,0.72);margin-bottom:12px;}'
-    + '#zakat-overlay .zk-amt{position:relative;font-family:"Cormorant Garamond",serif;font-weight:600;font-size:44px;line-height:1;background:linear-gradient(180deg,#F8EAC2,#D4AF37);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}'
-    + '#zakat-overlay .zk-serene{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:19px;color:#C8A84A;text-align:center;padding:10px 0;}'
+    + '#zakat-overlay .zk-amt{position:relative;font-family:"Georgia",serif;font-weight:600;font-size:44px;line-height:1;background:linear-gradient(180deg,#F8EAC2,#D4AF37);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}'
+    + '#zakat-overlay .zk-serene{font-family:"Georgia",serif;font-style:italic;font-size:19px;color:#C8A84A;text-align:center;padding:10px 0;}'
     + '@keyframes zkUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}'
     + '@keyframes zkBloom{from{opacity:0;transform:scale(.96);}to{opacity:1;transform:none;}}'
     + '@media (prefers-reduced-motion: reduce){#zakat-overlay .zk-wrap,#zakat-overlay .zk-bloom{animation:none;}}'
@@ -10163,7 +10163,7 @@ function renderQiblaCard() {
   const chevron = '<svg width="16" height="16" viewBox="0 0 14 14" style="transition:transform 0.2s;transform:' + (_qiblaOpen ? 'rotate(180deg)' : 'rotate(0deg)') + ';color:var(--gold);flex-shrink:0;"><polyline points="3,5 7,9 11,5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>';
   const headerHtml = '<div class="qibla-card"><div role="button" tabindex="0" aria-expanded="' + (_qiblaOpen ? 'true' : 'false') + '" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;margin-bottom:' + (_qiblaOpen ? '12' : '0') + 'px;" onclick="_qiblaOpen=!_qiblaOpen;if(_qiblaOpen){startCompass();}else{stopCompass();}renderLevel(currentLevel)"><div class="qibla-title" style="margin-bottom:0;">' + t('qibla_title') + '</div>' + chevron + '</div>';
   if (!_qiblaOpen) return headerHtml + '</div>';
-  if (_qiblaLoading) return headerHtml + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(200,168,74,0.6);padding:16px 0;text-align:center;">Localisation…</div></div>';
+  if (_qiblaLoading) return headerHtml + '<div style="font-family:\'Georgia\',serif;font-size:14px;font-style:italic;color:rgba(200,168,74,0.6);padding:16px 0;text-align:center;">Localisation…</div></div>';
   if (_qiblaError) return headerHtml + '<div style="font-size:13px;color:var(--t3);padding:8px 0;">' + _qiblaError + '</div><button class="qibla-btn" aria-label="Réessayer" onclick="loadQibla()">Réessayer</button></div>';
   if (_qiblaAngle === null) return headerHtml + '<div style="font-size:13px;color:var(--t2);margin-bottom:14px;text-align:center;">' + t('qibla_find_text') + '</div><button class="qibla-btn" aria-label="Réessayer" onclick="loadQibla()">' + t('qibla_find_btn') + '</button></div>';
   const angle = Math.round(_qiblaAngle);
@@ -10201,8 +10201,8 @@ function renderQiblaCard() {
     + (isAligned ? '✦ ALIGNÉ AVEC LA MECQUE ✦' : isLive ? 'Tourne vers l\'aiguille verte' : 'Direction ' + dir + ' · ' + Math.round(visualAngle) + '°')
     + '</div>'
     + '<button class="qibla-btn" aria-label="Réessayer" onclick="loadQibla()">↻ Recalibrer</button>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,74,0.5);text-align:center;margin-top:10px;">' + t('qibla_disclaimer') + '</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;font-style:italic;color:rgba(200,168,74,0.4);text-align:center;margin-top:6px;">Boussole impr\u00e9cise ? Bouge ton t\u00e9l\u00e9phone en forme de 8 (\u221E) quelques secondes.</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:13px;font-style:italic;color:rgba(200,168,74,0.5);text-align:center;margin-top:10px;">' + t('qibla_disclaimer') + '</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:12px;font-style:italic;color:rgba(200,168,74,0.4);text-align:center;margin-top:6px;">Boussole impr\u00e9cise ? Bouge ton t\u00e9l\u00e9phone en forme de 8 (\u221E) quelques secondes.</div>'
     + '</div>';
 }
 
@@ -10217,7 +10217,7 @@ const ONBOARD_SLIDES = [
   // Slide 0 — Splash calligraphie (clic pour avancer)
   () => '<div class="onboard-anim" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;">'
       + '<div class="onboard-logo-wrap" style="opacity:0;animation:obFadeIn 0.8s ease 0.2s forwards;margin-top:60px;"><div class="onboard-logo-halo"><img src="./imageslogo.webp" alt="Niyyah" style="width:200px;max-width:200px;height:auto;display:block;margin:0 auto;"></div><div class="onboard-particle" style="--d:0s;--x:-40px;--y:-30px;">\u2726</div><div class="onboard-particle" style="--d:0.8s;--x:45px;--y:-20px;">\u2726</div><div class="onboard-particle" style="--d:1.6s;--x:-30px;--y:35px;">\u2726</div><div class="onboard-particle" style="--d:2.4s;--x:35px;--y:40px;">\u2726</div><div class="onboard-particle" style="--d:3.2s;--x:0px;--y:-45px;">\u2726</div></div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:rgba(200,168,75,0.7);letter-spacing:1px;opacity:0;animation:obFadeIn 1s ease 1.4s forwards;">'+t('ob_splash_sub')+'</div>'
+      + '<div style="font-family:\'Georgia\',serif;font-size:18px;font-style:italic;color:rgba(200,168,75,0.7);letter-spacing:1px;opacity:0;animation:obFadeIn 1s ease 1.4s forwards;">'+t('ob_splash_sub')+'</div>'
       + '<button class="onboard-btn" onclick="onboardNext()" style="margin-top:20px;opacity:0;animation:obFadeIn 0.6s ease 2.5s forwards;">'+t('onboard_start')+'</button>'
       + '</div>',
   // Slide 1 — Motivation
@@ -10326,7 +10326,7 @@ function cavRenderSeuil(el, stage, enterFn){
   function paint(){
     stage.innerHTML =
       '<div style="margin-bottom:24px"><span class="onboard-logo-halo" style="display:inline-block;border-radius:50%"><img src="./imageslogo.webp" alt="Niyyah" style="width:128px;height:auto;display:block;border-radius:50%"></span></div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-style:italic;font-weight:300;font-size:22px;color:rgba(232,213,160,0.72);letter-spacing:0.04em">Touchez pour entrer</div>'
+      + '<div style="font-family:\'Georgia\',serif;font-style:italic;font-weight:300;font-size:22px;color:rgba(232,213,160,0.72);letter-spacing:0.04em">Touchez pour entrer</div>'
       + '<div style="margin-top:30px"><span id="cavMute" style="display:inline-flex;align-items:center;gap:7px;font-family:var(--sans);font-size:13px;color:rgba(200,168,75,0.6);border:0.5px solid rgba(200,168,75,0.3);border-radius:20px;padding:7px 16px;cursor:pointer">'
       + (snd?'\u266A Son activ\u00e9':'\u2715 Son coup\u00e9') + '</span></div>';
     stage.style.opacity='1';
@@ -10555,7 +10555,7 @@ if ('serviceWorker' in navigator && location.protocol !== 'null:' && (location.p
             var _ul = _updateLabels[(typeof V2_LANG!=='undefined'?V2_LANG:'fr')] || _updateLabels.fr;
             var banner = document.createElement('div');
             banner.style.cssText = 'position:fixed;top:calc(var(--safe-top,0px) + 8px);left:16px;right:16px;max-width:400px;margin:0 auto;background:rgba(20,18,15,0.95);border:1px solid rgba(200,168,75,0.25);border-radius:10px;padding:10px 16px;z-index:9999;display:flex;align-items:center;gap:12px;opacity:' + (window._reducedMotion ? '1' : '0') + ';' + (window._reducedMotion ? '' : 'transition:opacity 0.6s ease;');
-            banner.innerHTML = '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:#C8A84A;">' + _ul.msg + '</div></div><span id="_sw-resume" style="font-family:\'Cormorant Garamond\',serif;font-size:13px;color:#C8A84A;cursor:pointer;flex-shrink:0;white-space:nowrap;">' + _ul.btn + '</span>';
+            banner.innerHTML = '<div style="flex:1;min-width:0;"><div style="font-family:\'Georgia\',serif;font-size:13px;font-style:italic;color:#C8A84A;">' + _ul.msg + '</div></div><span id="_sw-resume" style="font-family:\'Georgia\',serif;font-size:13px;color:#C8A84A;cursor:pointer;flex-shrink:0;white-space:nowrap;">' + _ul.btn + '</span>';
             if (!window._reducedMotion) { requestAnimationFrame(function(){requestAnimationFrame(function(){banner.style.opacity='1';});}); }
             banner.querySelector('#_sw-resume').onclick = function() { newWorker.postMessage({type:'SKIP_WAITING'}); window.location.reload(); };
             document.body.appendChild(banner);
@@ -11397,7 +11397,7 @@ function v2SetLanguage(lang) {
   const langPill = document.getElementById('topbar-lang-btn');
   if (langPill) {
     langPill.textContent = lang === 'ar' ? 'عر' : lang.toUpperCase();
-    langPill.style.fontFamily = lang === 'ar' ? "'Amiri', serif" : "'Cormorant Garamond', serif";
+    langPill.style.fontFamily = lang === 'ar' ? "'Amiri', serif" : "'Georgia', serif";
     langPill.style.fontSize = lang === 'ar' ? '13px' : '10px';
   }
   v2ApplyI18n();
@@ -11435,7 +11435,7 @@ function v2ApplyI18n() {
   const grEl = document.getElementById('v2-greeting-text');
   if (grEl) {
     grEl.style.direction = T.dir;
-    grEl.style.fontFamily = isRTL ? "'Amiri', serif" : "'Cormorant Garamond', serif";
+    grEl.style.fontFamily = isRTL ? "'Amiri', serif" : "'Georgia', serif";
   }
 
   // Orb CTA
@@ -12109,7 +12109,7 @@ function journalSwitchTab(tab) {
     if (tabR) { tabR.style.background = 'transparent'; tabR.style.border = '1px solid rgba(200,168,75,0.15)'; tabR.style.color = 'rgba(200,168,75,0.5)'; tabR.style.boxShadow = 'none'; }
     var entries = getNiyyahHistory();
     if (entries.length === 0) {
-      content.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">نِيَّة</div><div class="empty-state-title">'+t('journal_niyyah_title')+'</div><div class="empty-state-text">'+t('journal_niyyah_text')+'</div><div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.45);margin-top:12px;line-height:1.5;">Pose ta premi\u00e8re intention depuis Scanner.</div></div>';
+      content.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">نِيَّة</div><div class="empty-state-title">'+t('journal_niyyah_title')+'</div><div class="empty-state-text">'+t('journal_niyyah_text')+'</div><div style="font-family:\'Georgia\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.45);margin-top:12px;line-height:1.5;">Pose ta premi\u00e8re intention depuis Scanner.</div></div>';
     } else {
       var html = '';
       entries.forEach(function(e) {
@@ -12117,7 +12117,7 @@ function journalSwitchTab(tab) {
         var dateStr = d.toLocaleDateString(_dateLocale(), { day:'numeric', month:'short' }) + ' · ' + d.toLocaleTimeString(_dateLocale(), { hour:'2-digit', minute:'2-digit' });
         var thumb = e.photo ? '<img src="' + e.photo + '" style="width:60px;height:60px;border-radius:10px;object-fit:cover;flex-shrink:0;">' : '<div style="width:60px;height:60px;border-radius:10px;background:rgba(200,168,75,0.08);flex-shrink:0;display:flex;align-items:center;justify-content:center;"><svg width="20" height="20" fill="none" stroke="rgba(200,168,75,0.3)" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>';
         html += '<div onclick="openNiyyahDetail(\'' + e.id + '\')" style="display:flex;gap:12px;align-items:center;padding:12px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.2);border-radius:12px;margin-bottom:8px;cursor:pointer;box-shadow:0 2px 12px rgba(0,0,0,0.3);transition:all 0.3s ease;">'
-          + thumb + '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#D4AF37;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">' + escapeHtml(e.intention || '') + '</div>'
+          + thumb + '<div style="flex:1;min-width:0;"><div style="font-family:\'Georgia\',serif;font-size:14px;font-style:italic;color:#D4AF37;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">' + escapeHtml(e.intention || '') + '</div>'
           + '<div style="font-size:12px;color:rgba(255,255,255,0.55);margin-top:4px;">' + dateStr + '</div></div></div>';
       });
       content.innerHTML = html;
@@ -12127,7 +12127,7 @@ function journalSwitchTab(tab) {
     if (tabR) { tabR.style.background = 'linear-gradient(180deg,rgba(212,181,98,0.18) 0%,rgba(166,117,68,0.12) 100%)'; tabR.style.border = '1px solid rgba(230,200,130,0.5)'; tabR.style.color = 'rgba(230,200,130,1)'; tabR.style.boxShadow = '0 2px 8px rgba(0,0,0,0.3),inset 0 1px 0 rgba(255,230,180,0.1)'; }
     var entries = getRegardeHistory();
     if (entries.length === 0) {
-      content.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">\u0646\u064E\u0638\u064E\u0631</div><div class="empty-state-title">'+t('journal_regarde_title')+'</div><div class="empty-state-text">'+t('journal_regarde_text')+'</div><div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.45);margin-top:12px;line-height:1.5;">Les Regards viennent \u00e0 toi quand Allah veut.<br>Pose ton premier regard depuis Scanner.</div></div>';
+      content.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">\u0646\u064E\u0638\u064E\u0631</div><div class="empty-state-title">'+t('journal_regarde_title')+'</div><div class="empty-state-text">'+t('journal_regarde_text')+'</div><div style="font-family:\'Georgia\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.45);margin-top:12px;line-height:1.5;">Les Regards viennent \u00e0 toi quand Allah veut.<br>Pose ton premier regard depuis Scanner.</div></div>';
     } else {
       var html = '';
       entries.forEach(function(e) {
@@ -12136,7 +12136,7 @@ function journalSwitchTab(tab) {
         var thumb = e.photo ? '<img src="' + e.photo + '" style="width:60px;height:60px;border-radius:10px;object-fit:cover;flex-shrink:0;">' : '<div style="width:60px;height:60px;border-radius:10px;background:rgba(200,168,75,0.08);flex-shrink:0;display:flex;align-items:center;justify-content:center;"><svg width="20" height="20" fill="none" stroke="rgba(200,168,75,0.3)" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>';
         var star = e.bookmark ? '<div style="position:absolute;top:8px;right:8px;color:#D4AF37;font-size:14px;">★</div>' : '';
         html += '<div onclick="openRegardeDetail(\'' + e.id + '\')" style="display:flex;gap:12px;align-items:center;padding:12px;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.2);border-radius:12px;margin-bottom:8px;cursor:pointer;position:relative;box-shadow:0 2px 12px rgba(0,0,0,0.3);transition:all 0.3s ease;">'
-          + thumb + '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#D4AF37;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">' + escapeHtml(e.question || '') + '</div>'
+          + thumb + '<div style="flex:1;min-width:0;"><div style="font-family:\'Georgia\',serif;font-size:14px;font-style:italic;color:#D4AF37;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">' + escapeHtml(e.question || '') + '</div>'
           + '<div style="font-size:12px;color:rgba(255,255,255,0.55);margin-top:4px;">' + dateStr + '</div></div>' + star + '</div>';
       });
       content.innerHTML = html;
@@ -12149,7 +12149,7 @@ function _showWaswasaScreen() {
   overlay.style.cssText = 'position:fixed;inset:0;z-index:99999;background:#0a0a0a;display:flex;align-items:center;justify-content:center;animation:_fdjFadeIn 1s ease forwards;';
   overlay.innerHTML = '<div style="max-width:380px;padding:32px 24px;text-align:center;">'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:32px;color:#C8A84A;direction:rtl;margin-bottom:20px;">\u0646\u064e\u0641\u0652\u0633</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.7);line-height:1.8;margin-bottom:32px;">Cette pratique est une lecture lente de l\u2019\u00e2me. Pas un diagnostic.<br><br>Si tu te reconnais dans toutes les maladies, c\u2019est ton c\u0153ur qui te trompe.<br><br>Va parler \u00e0 un humain de confiance.</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.7);line-height:1.8;margin-bottom:32px;">Cette pratique est une lecture lente de l\u2019\u00e2me. Pas un diagnostic.<br><br>Si tu te reconnais dans toutes les maladies, c\u2019est ton c\u0153ur qui te trompe.<br><br>Va parler \u00e0 un humain de confiance.</div>'
     + '<button onclick="safeSetItem(\'nafs_avertissement_seen\',\'1\');document.getElementById(\'_waswasaOverlay\').remove();" style="width:100%;max-width:280px;padding:14px;border-radius:12px;border:none;background:#C8A84A;color:#000;font-size:16px;font-weight:600;font-family:var(--serif);cursor:pointer;">J\u2019ai compris</button>'
     + '</div>';
   document.body.appendChild(overlay);
@@ -12181,7 +12181,7 @@ function renderRappelsCard() {
   var chevron = '<svg width="16" height="16" viewBox="0 0 14 14" style="transition:transform 0.2s;transform:' + (_rappelsOpen ? 'rotate(180deg)' : 'rotate(0deg)') + ';flex-shrink:0;" fill="none"><polyline points="3,5 7,9 11,5" stroke="rgba(200,168,74,0.5)" stroke-width="2" stroke-linecap="round"/></svg>';
   var card = '<div style="background:#111118;border:0.5px solid rgba(200,168,74,0.25);border-radius:18px;padding:14px;margin-bottom:10px;">';
   card += '<div role="button" tabindex="0" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;' + (_rappelsOpen ? 'margin-bottom:14px;' : '') + '" onclick="_rappelsOpen=!_rappelsOpen;renderLevel(currentLevel);">'
-    + '<span style="font-family:\'Cormorant Garamond\',serif;font-size:14px;letter-spacing:2.5px;text-transform:uppercase;color:#C8A84A;">Rappels</span>'
+    + '<span style="font-family:\'Georgia\',serif;font-size:14px;letter-spacing:2.5px;text-transform:uppercase;color:#C8A84A;">Rappels</span>'
     + chevron + '</div>';
   if (_rappelsOpen) {
     PRAYER_NAMES.forEach(function(name, i) {
@@ -12192,13 +12192,13 @@ function renderRappelsCard() {
       var knobColor = on ? '#0d0b08' : 'rgba(232,217,188,0.3)';
       var knobX = on ? '20px' : '2px';
       card += '<div style="display:flex;justify-content:space-between;align-items:center;padding:9px 0;' + sep + '">'
-        + '<span style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:600;color:#e8dfc8;">' + name + '</span>'
+        + '<span style="font-family:\'Georgia\',serif;font-size:14px;font-weight:600;color:#e8dfc8;">' + name + '</span>'
         + '<div onclick="_togglePrayerReminder(\'' + name + '\')" role="switch" aria-checked="' + on + '" tabindex="0" style="width:40px;height:22px;border-radius:11px;background:' + trackBg + ';position:relative;cursor:pointer;transition:background 0.2s;flex-shrink:0;">'
         + '<div style="position:absolute;top:3px;left:' + knobX + ';width:16px;height:16px;border-radius:50%;background:' + knobColor + ';transition:left 0.2s;"></div>'
         + '</div>'
         + '</div>';
     });
-    card += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:10px;font-style:italic;color:rgba(232,217,188,0.3);text-align:center;margin-top:10px;">Rappel in-app \u2014 son, vibration et toast \u00e0 l\u2019heure de la pri\u00e8re</div>';
+    card += '<div style="font-family:\'Georgia\',serif;font-size:10px;font-style:italic;color:rgba(232,217,188,0.3);text-align:center;margin-top:10px;">Rappel in-app \u2014 son, vibration et toast \u00e0 l\u2019heure de la pri\u00e8re</div>';
   }
   card += '</div>';
   return card;
@@ -12224,13 +12224,13 @@ function _compteurReset() {
 function renderCompteurCard() {
   var val = parseInt(safeGetItem('niyyah_compteur_val') || '0', 10);
   return '<div style="background:#111118;border:0.5px solid rgba(200,168,74,0.25);border-radius:18px;padding:14px;margin-bottom:10px;">'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;letter-spacing:2.5px;text-transform:uppercase;color:#C8A84A;margin-bottom:4px;">Compteur</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:14px;letter-spacing:2.5px;text-transform:uppercase;color:#C8A84A;margin-bottom:4px;">Compteur</div>'
     + '<div onclick="_compteurTap()" style="width:100%;padding:32px 0;text-align:center;cursor:pointer;user-select:none;-webkit-user-select:none;">'
-    + '<div id="compteur-val" style="font-family:\'Cormorant Garamond\',serif;font-size:72px;font-weight:300;color:#C8A84A;line-height:1;">' + val + '</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:11px;font-style:italic;color:rgba(232,217,188,0.3);margin-top:8px;">Appuie pour compter</div>'
+    + '<div id="compteur-val" style="font-family:\'Georgia\',serif;font-size:72px;font-weight:300;color:#C8A84A;line-height:1;">' + val + '</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:11px;font-style:italic;color:rgba(232,217,188,0.3);margin-top:8px;">Appuie pour compter</div>'
     + '</div>'
     + '<div style="border-top:0.5px solid rgba(200,168,74,0.1);margin-top:12px;padding-top:12px;">'
-    + '<button id="compteur-reset-btn" onclick="_compteurReset()" style="display:block;margin:0 auto;font-family:\'Cormorant Garamond\',serif;font-size:11px;letter-spacing:2px;color:rgba(232,217,188,0.3);background:none;border:none;cursor:pointer;text-transform:uppercase;">Remettre \u00e0 z\u00e9ro</button>'
+    + '<button id="compteur-reset-btn" onclick="_compteurReset()" style="display:block;margin:0 auto;font-family:\'Georgia\',serif;font-size:11px;letter-spacing:2px;color:rgba(232,217,188,0.3);background:none;border:none;cursor:pointer;text-transform:uppercase;">Remettre \u00e0 z\u00e9ro</button>'
     + '</div>'
     + '</div>';
 }
@@ -12241,7 +12241,7 @@ function renderRawatibCard() {
   var chevron = '<svg width="16" height="16" viewBox="0 0 14 14" style="transition:transform 0.2s;transform:' + (_rawatibOpen ? 'rotate(180deg)' : 'rotate(0deg)') + ';flex-shrink:0;" fill="none"><polyline points="3,5 7,9 11,5" stroke="rgba(200,168,74,0.5)" stroke-width="2" stroke-linecap="round"/></svg>';
   var card = '<div style="background:#111118;border:0.5px solid rgba(200,168,74,0.25);border-radius:18px;padding:14px;margin-bottom:10px;">';
   card += '<div role="button" tabindex="0" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;' + (_rawatibOpen ? 'margin-bottom:14px;' : '') + '" onclick="_rawatibOpen=!_rawatibOpen;renderLevel(currentLevel);">'
-    + '<span style="font-family:\'Cormorant Garamond\',serif;font-size:14px;letter-spacing:2.5px;text-transform:uppercase;color:#C8A84A;">Sunna Rawatib</span>'
+    + '<span style="font-family:\'Georgia\',serif;font-size:14px;letter-spacing:2.5px;text-transform:uppercase;color:#C8A84A;">Sunna Rawatib</span>'
     + chevron + '</div>';
   if (_rawatibOpen) {
     var _data = [
@@ -12252,21 +12252,21 @@ function renderRawatibCard() {
       { name: 'Isha',    avant: null,        apres: '2 rak\'a' }
     ];
     var _badge = function(v) {
-      if (!v) return '<span style="color:rgba(232,217,188,0.15);font-family:\'Cormorant Garamond\',serif;font-size:18px;">\u2014</span>';
-      return '<span style="background:rgba(200,168,74,0.1);border:0.5px solid rgba(200,168,74,0.35);border-radius:8px;padding:4px 12px;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:15px;">' + v + '</span>';
+      if (!v) return '<span style="color:rgba(232,217,188,0.15);font-family:\'Georgia\',serif;font-size:18px;">\u2014</span>';
+      return '<span style="background:rgba(200,168,74,0.1);border:0.5px solid rgba(200,168,74,0.35);border-radius:8px;padding:4px 12px;color:#C8A84A;font-family:\'Georgia\',serif;font-size:15px;">' + v + '</span>';
     };
     card += '<div style="display:grid;grid-template-columns:1fr 80px 80px;gap:6px;align-items:center;">';
-    card += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,74,0.5);">Pri\u00e8re</div>'
-          + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,74,0.5);text-align:center;">Avant</div>'
-          + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,74,0.5);text-align:center;">Apr\u00e8s</div>';
+    card += '<div style="font-family:\'Georgia\',serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,74,0.5);">Pri\u00e8re</div>'
+          + '<div style="font-family:\'Georgia\',serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,74,0.5);text-align:center;">Avant</div>'
+          + '<div style="font-family:\'Georgia\',serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,74,0.5);text-align:center;">Apr\u00e8s</div>';
     _data.forEach(function(row, i) {
       var sep = i < _data.length - 1 ? 'border-bottom:0.5px solid rgba(200,168,74,0.08);padding:14px 0;' : 'padding:14px 0;';
-      card += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;font-weight:600;color:#e8dfc8;' + sep + '">' + row.name + '</div>'
+      card += '<div style="font-family:\'Georgia\',serif;font-size:20px;font-weight:600;color:#e8dfc8;' + sep + '">' + row.name + '</div>'
             + '<div style="text-align:center;' + sep + '">' + _badge(row.avant) + '</div>'
             + '<div style="text-align:center;' + sep + '">' + _badge(row.apres) + '</div>';
     });
     card += '</div>';
-    card += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(232,217,188,0.25);text-align:center;margin-top:16px;padding-top:12px;border-top:0.5px solid rgba(200,168,74,0.08);">Source\u00a0: Bukh\u00e2r\u00ee &amp; Muslim \u2014 12 rak\u2019a/jour au total</div>';
+    card += '<div style="font-family:\'Georgia\',serif;font-size:13px;font-style:italic;color:rgba(232,217,188,0.25);text-align:center;margin-top:16px;padding-top:12px;border-top:0.5px solid rgba(200,168,74,0.08);">Source\u00a0: Bukh\u00e2r\u00ee &amp; Muslim \u2014 12 rak\u2019a/jour au total</div>';
   }
   card += '</div>';
   return card;
@@ -12388,16 +12388,16 @@ function openSunanHub() {
   else if (info.labels.length) { todayLine = info.labels.join(' \u00b7 '); todaySub = 'Jour de je\u00fbne recommand\u00e9.'; }
   else { todayLine = 'Pas un jour particuli\u00e8rement recommand\u00e9'; todaySub = 'Tu peux je\u00fbner si tu le souhaites.'; }
   var toggle = info.forbidden ? '' :
-    '<button onclick="_sunanToggleToday()" style="margin-top:16px;width:100%;box-sizing:border-box;padding:14px;border-radius:14px;cursor:pointer;font-family:\'Cormorant Garamond\',serif;font-size:16px;'
+    '<button onclick="_sunanToggleToday()" style="margin-top:16px;width:100%;box-sizing:border-box;padding:14px;border-radius:14px;cursor:pointer;font-family:\'Georgia\',serif;font-size:16px;'
     + (fasted ? 'border:1px solid #E8CE8A;background:linear-gradient(180deg,#F8EAC2,#D4AF37);color:#1a130b;' : 'border:1px solid rgba(200,168,74,0.35);background:transparent;color:#E8CE8A;')
     + '">' + (fasted ? '\u2713 J\u2019ai je\u00fbn\u00e9 aujourd\u2019hui' : 'J\u2019ai je\u00fbn\u00e9 aujourd\u2019hui') + '</button>';
   var shawwal = info.hm === 10
-    ? '<div style="margin-top:16px;padding:14px 16px;border-radius:14px;border:1px solid rgba(232,206,138,0.25);background:rgba(232,206,138,0.05);font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:14px;color:rgba(232,206,138,0.8);text-align:center;line-height:1.5;">C\u2019est Shaww\u00e2l : je\u00fbner 6 jours apr\u00e8s l\u2019A\u00efd \u00e9quivaut, avec le Ramadan, au je\u00fbne de toute l\u2019ann\u00e9e.</div>'
+    ? '<div style="margin-top:16px;padding:14px 16px;border-radius:14px;border:1px solid rgba(232,206,138,0.25);background:rgba(232,206,138,0.05);font-family:\'Georgia\',serif;font-style:italic;font-size:14px;color:rgba(232,206,138,0.8);text-align:center;line-height:1.5;">C\u2019est Shaww\u00e2l : je\u00fbner 6 jours apr\u00e8s l\u2019A\u00efd \u00e9quivaut, avec le Ramadan, au je\u00fbne de toute l\u2019ann\u00e9e.</div>'
     : '';
   var upHtml = '';
   up.forEach(function(u) {
     upHtml += '<div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:10px 0;border-bottom:1px solid rgba(200,168,74,0.1);">'
-      + '<span style="font-family:\'Cormorant Garamond\',serif;font-size:15px;text-transform:capitalize;color:' + (u.today ? '#E8CE8A' : 'rgba(240,234,214,0.85)') + ';">' + _sunanFrDay(u.date) + '</span>'
+      + '<span style="font-family:\'Georgia\',serif;font-size:15px;text-transform:capitalize;color:' + (u.today ? '#E8CE8A' : 'rgba(240,234,214,0.85)') + ';">' + _sunanFrDay(u.date) + '</span>'
       + '<span style="font-size:12px;color:rgba(200,168,74,0.6);text-align:right;">' + u.labels.join(', ') + '</span></div>';
   });
   var ov = document.createElement('div');
@@ -12406,18 +12406,18 @@ function openSunanHub() {
   ov.innerHTML = '<div style="max-width:440px;margin:0 auto;padding:calc(env(safe-area-inset-top,0px) + 40px) 24px calc(48px + env(safe-area-inset-bottom));">'
     + '<button onclick="closeSunan()" aria-label="Fermer" style="position:fixed;top:calc(env(safe-area-inset-top,0px) + 20px);right:20px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(200,168,74,0.28);background:rgba(20,15,8,0.6);color:#C8A84A;font-size:17px;cursor:pointer;z-index:5;">\u2715</button>'
     + '<div style="text-align:center;font-family:\'Scheherazade New\',serif;font-size:42px;color:#E8CE8A;text-shadow:0 0 28px rgba(232,206,138,0.28);line-height:1.1;">\u0635\u0650\u064A\u064E\u0627\u0645</div>'
-    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:25px;color:#EADCB6;margin-top:8px;">Je\u00fbnes sur\u00e9rogatoires</div>'
-    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:14px;color:#9c8c64;margin-top:6px;">Suivre les je\u00fbnes recommand\u00e9s, \u00e0 ton rythme</div>'
+    + '<div style="text-align:center;font-family:\'Georgia\',serif;font-size:25px;color:#EADCB6;margin-top:8px;">Je\u00fbnes sur\u00e9rogatoires</div>'
+    + '<div style="text-align:center;font-family:\'Georgia\',serif;font-style:italic;font-size:14px;color:#9c8c64;margin-top:6px;">Suivre les je\u00fbnes recommand\u00e9s, \u00e0 ton rythme</div>'
     + '<div style="margin-top:28px;padding:20px;border-radius:16px;border:1px solid rgba(200,168,74,0.2);background:radial-gradient(120% 140% at 50% 0%,rgba(232,206,138,0.08),rgba(232,206,138,0.01) 70%);text-align:center;">'
     + '<div style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(200,168,74,0.5);">Aujourd\u2019hui</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;color:#E8CE8A;margin-top:8px;">' + todayLine + '</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:14px;color:rgba(200,168,74,0.6);margin-top:4px;">' + todaySub + '</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:20px;color:#E8CE8A;margin-top:8px;">' + todayLine + '</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-style:italic;font-size:14px;color:rgba(200,168,74,0.6);margin-top:4px;">' + todaySub + '</div>'
     + toggle + '</div>'
     + shawwal
     + '<div style="margin-top:28px;"><div style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(200,168,74,0.5);margin-bottom:6px;">\u00c0 venir</div>' + (upHtml || '<div style="font-size:13px;color:rgba(200,168,74,0.5);font-style:italic;">\u2014</div>') + '</div>'
-    + '<div style="text-align:center;margin-top:24px;font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(200,168,74,0.6);">' + count + ' je\u00fbne' + (count > 1 ? 's' : '') + ' ce mois-ci</div>'
-    + '<div style="text-align:center;margin-top:18px;font-size:12px;color:rgba(200,168,74,0.5);font-style:italic;font-family:\'Cormorant Garamond\',serif;">Des d\u00e9fis de je\u00fbne t\u2019attendent dans tes d\u00e9fis hebdomadaires.</div>'
-    + '<div style="font-size:11px;color:rgba(200,168,74,0.4);line-height:1.7;margin-top:24px;font-style:italic;font-family:\'Cormorant Garamond\',serif;">Recommand\u00e9s : lundi & jeudi \u00b7 Ayy\u00e2m al-B\u00eed (13-14-15) \u00b7 Achoura (10 Muharram, avec le 9) \u00b7 Arafa (9 Dhul-Hijja, sauf le p\u00e8lerin) \u00b7 6 jours de Shaww\u00e2l. Le je\u00fbne est interdit les jours de l\u2019A\u00efd. Les dates peuvent varier d\u2019un jour selon l\u2019observation.</div>'
+    + '<div style="text-align:center;margin-top:24px;font-family:\'Georgia\',serif;font-size:14px;font-style:italic;color:rgba(200,168,74,0.6);">' + count + ' je\u00fbne' + (count > 1 ? 's' : '') + ' ce mois-ci</div>'
+    + '<div style="text-align:center;margin-top:18px;font-size:12px;color:rgba(200,168,74,0.5);font-style:italic;font-family:\'Georgia\',serif;">Des d\u00e9fis de je\u00fbne t\u2019attendent dans tes d\u00e9fis hebdomadaires.</div>'
+    + '<div style="font-size:11px;color:rgba(200,168,74,0.4);line-height:1.7;margin-top:24px;font-style:italic;font-family:\'Georgia\',serif;">Recommand\u00e9s : lundi & jeudi \u00b7 Ayy\u00e2m al-B\u00eed (13-14-15) \u00b7 Achoura (10 Muharram, avec le 9) \u00b7 Arafa (9 Dhul-Hijja, sauf le p\u00e8lerin) \u00b7 6 jours de Shaww\u00e2l. Le je\u00fbne est interdit les jours de l\u2019A\u00efd. Les dates peuvent varier d\u2019un jour selon l\u2019observation.</div>'
     + '</div>';
   document.body.appendChild(ov);
 }
@@ -12442,8 +12442,8 @@ function v2GoRepere() {
 function renderZakatFitrCard() {
   return '<div onclick="openZakatFitr()" style="position:relative;background:linear-gradient(165deg,#1a130b,#0d0a06);border:1px solid rgba(200,168,74,0.22);border-radius:16px;padding:15px 16px;margin-bottom:8px;display:flex;align-items:center;gap:14px;cursor:pointer;box-shadow:inset 0 1px 0 rgba(232,206,138,0.08),0 4px 16px rgba(0,0,0,0.35);">'
     + '<div style="flex-shrink:0;width:42px;height:42px;border-radius:50%;border:1px solid rgba(232,206,138,0.3);background:radial-gradient(circle at 50% 35%,rgba(232,206,138,0.16),rgba(232,206,138,0.02) 70%);display:flex;align-items:center;justify-content:center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8CE8A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V9"/><path d="M12 9c-3 0-4-2-4-4 2 0 4 1 4 4z"/><path d="M12 9c3 0 4-2 4-4-2 0-4 1-4 4z"/><path d="M12 14c-3 0-4-2-4-4 2 0 4 1 4 4z"/><path d="M12 14c3 0 4-2 4-4-2 0-4 1-4 4z"/></svg></div>'
-    + '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;letter-spacing:0.02em;color:#E8CE8A;line-height:1.2;">Zak\u00e2t al-Fitr</div>'
-    + '<div style="font-size:14px;color:rgba(200,168,74,0.55);margin-top:3px;font-style:italic;font-family:\'Cormorant Garamond\',serif;">L\u2019aum\u00f4ne de la rupture du je\u00fbne</div></div></div>';
+    + '<div style="flex:1;min-width:0;"><div style="font-family:\'Georgia\',serif;font-size:18px;letter-spacing:0.02em;color:#E8CE8A;line-height:1.2;">Zak\u00e2t al-Fitr</div>'
+    + '<div style="font-size:14px;color:rgba(200,168,74,0.55);margin-top:3px;font-style:italic;font-family:\'Georgia\',serif;">L\u2019aum\u00f4ne de la rupture du je\u00fbne</div></div></div>';
 }
 function closeZakatFitr() { var ov = document.getElementById('zakatfitr-overlay'); if (ov) ov.remove(); }
 function computeZakatFitr() {
@@ -12452,15 +12452,15 @@ function computeZakatFitr() {
   var res = document.getElementById('zf-result'); if (!res) return;
   var fmt = function(x){ return x.toLocaleString('fr-FR', {maximumFractionDigits:2}); };
   if (n <= 0) {
-    res.innerHTML = '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:16px;color:#C8A84A;border-top:1px solid rgba(200,168,74,0.15);margin-top:8px;padding-top:18px;">Indique le nombre de personnes du foyer.</div>';
+    res.innerHTML = '<div style="text-align:center;font-family:\'Georgia\',serif;font-style:italic;font-size:16px;color:#C8A84A;border-top:1px solid rgba(200,168,74,0.15);margin-top:8px;padding-top:18px;">Indique le nombre de personnes du foyer.</div>';
     return;
   }
   var argent = n * m, sa = n, kg = sa * 2.5;
   res.innerHTML = '<div style="border-top:1px solid rgba(200,168,74,0.15);margin-top:8px;padding-top:20px;">'
     + '<div style="text-align:center;padding:24px 18px;border-radius:18px;border:1px solid rgba(232,206,138,0.32);background:radial-gradient(120% 150% at 50% 0%,rgba(232,206,138,0.14),rgba(232,206,138,0.02) 72%);">'
     + '<div style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:rgba(232,206,138,0.7);margin-bottom:8px;">\u00c0 verser pour ' + n + ' personne' + (n > 1 ? 's' : '') + '</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-weight:600;font-size:40px;line-height:1;background:linear-gradient(180deg,#F8EAC2,#D4AF37);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">' + fmt(argent) + ' \u20AC</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:14px;color:rgba(200,168,74,0.7);margin-top:12px;line-height:1.5;">ou ' + fmt(sa) + ' s\u00e2\u2019 de nourriture<br>(\u2248 ' + fmt(kg) + ' kg de bl\u00e9, riz, dattes ou orge)</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-weight:600;font-size:40px;line-height:1;background:linear-gradient(180deg,#F8EAC2,#D4AF37);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">' + fmt(argent) + ' \u20AC</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-style:italic;font-size:14px;color:rgba(200,168,74,0.7);margin-top:12px;line-height:1.5;">ou ' + fmt(sa) + ' s\u00e2\u2019 de nourriture<br>(\u2248 ' + fmt(kg) + ' kg de bl\u00e9, riz, dattes ou orge)</div>'
     + '</div></div>';
 }
 function openZakatFitr() {
@@ -12470,21 +12470,21 @@ function openZakatFitr() {
   ov.style.cssText = 'position:fixed;inset:0;z-index:3200;overflow-y:auto;-webkit-overflow-scrolling:touch;background:radial-gradient(120% 80% at 50% -10%,#1c140b 0%,#0b0805 55%,#070504 100%);';
   var fld = function(id, label, ph, unit, val) {
     return '<div style="margin-bottom:16px;"><label style="display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(200,168,74,0.55);margin-bottom:7px;">' + label + '</label>'
-      + '<div style="position:relative;"><input id="' + id + '" type="text" inputmode="decimal" placeholder="' + ph + '"' + (val !== undefined ? ' value="' + val + '"' : '') + ' oninput="computeZakatFitr()" style="width:100%;box-sizing:border-box;padding:14px 16px;border-radius:13px;border:1px solid rgba(200,168,74,0.18);background:linear-gradient(180deg,#16110a,#100c07);color:#F0EADB;font-size:16px;font-family:\'Cormorant Garamond\',serif;outline:none;">'
-      + (unit ? '<span style="position:absolute;right:16px;top:50%;transform:translateY(-50%);font-family:\'Cormorant Garamond\',serif;font-size:15px;color:rgba(200,168,74,0.45);pointer-events:none;">' + unit + '</span>' : '')
+      + '<div style="position:relative;"><input id="' + id + '" type="text" inputmode="decimal" placeholder="' + ph + '"' + (val !== undefined ? ' value="' + val + '"' : '') + ' oninput="computeZakatFitr()" style="width:100%;box-sizing:border-box;padding:14px 16px;border-radius:13px;border:1px solid rgba(200,168,74,0.18);background:linear-gradient(180deg,#16110a,#100c07);color:#F0EADB;font-size:16px;font-family:\'Georgia\',serif;outline:none;">'
+      + (unit ? '<span style="position:absolute;right:16px;top:50%;transform:translateY(-50%);font-family:\'Georgia\',serif;font-size:15px;color:rgba(200,168,74,0.45);pointer-events:none;">' + unit + '</span>' : '')
       + '</div></div>';
   };
   ov.innerHTML = '<div style="max-width:440px;margin:0 auto;padding:calc(env(safe-area-inset-top,0px) + 40px) 24px calc(48px + env(safe-area-inset-bottom));">'
     + '<button onclick="closeZakatFitr()" aria-label="Fermer" style="position:fixed;top:calc(env(safe-area-inset-top,0px) + 20px);right:20px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(200,168,74,0.28);background:rgba(20,15,8,0.6);color:#C8A84A;font-size:17px;cursor:pointer;z-index:5;">\u2715</button>'
     + '<div style="text-align:center;font-family:\'Scheherazade New\',serif;font-size:38px;color:#E8CE8A;text-shadow:0 0 28px rgba(232,206,138,0.28);line-height:1.3;">\u0632\u064E\u0643\u064E\u0627\u0629 \u0627\u0644\u0641\u0650\u0637\u0631</div>'
-    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:25px;color:#EADCB6;margin-top:8px;">Zak\u00e2t al-Fitr</div>'
-    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:14px;color:#9c8c64;margin-top:6px;line-height:1.5;">L\u2019aum\u00f4ne de la rupture \u2014 un s\u00e2\u2019 par personne,<br>avant la pri\u00e8re de l\u2019A\u00efd</div>'
+    + '<div style="text-align:center;font-family:\'Georgia\',serif;font-size:25px;color:#EADCB6;margin-top:8px;">Zak\u00e2t al-Fitr</div>'
+    + '<div style="text-align:center;font-family:\'Georgia\',serif;font-style:italic;font-size:14px;color:#9c8c64;margin-top:6px;line-height:1.5;">L\u2019aum\u00f4ne de la rupture \u2014 un s\u00e2\u2019 par personne,<br>avant la pri\u00e8re de l\u2019A\u00efd</div>'
     + '<div style="margin-top:28px;">'
     + fld('zf-pers', 'Personnes du foyer', '1', '', '1')
     + fld('zf-montant', 'Montant par personne', '9', '\u20AC', '9')
     + '</div>'
     + '<div id="zf-result"></div>'
-    + '<div style="font-size:11px;color:rgba(200,168,74,0.42);line-height:1.7;margin-top:26px;font-style:italic;font-family:\'Cormorant Garamond\',serif;">'
+    + '<div style="font-size:11px;color:rgba(200,168,74,0.42);line-height:1.7;margin-top:26px;font-style:italic;font-family:\'Georgia\',serif;">'
     + 'Un s\u00e2\u2019 (\u2248 2,5 kg de l\u2019aliment de base) par personne du foyer \u2014 soi-m\u00eame et les personnes \u00e0 charge. \u00c0 verser avant la pri\u00e8re de l\u2019A\u00efd al-Fitr (on peut anticiper d\u2019un jour ou deux). '
     + 'Sur la forme : la majorit\u00e9 (M\u00e2lik, Sh\u00e2fi\u2019\u00ee, Hanbal) la donne en nourriture ; les Hanafites et de nombreux contemporains permettent la valeur en argent, par commodit\u00e9 \u2014 \u00e0 toi selon l\u2019avis que tu suis. '
     + 'Le montant par personne = la valeur d\u2019un s\u00e2\u2019 de l\u2019aliment de base : v\u00e9rifie celui fix\u00e9 par une institution de ta r\u00e9gion.'
@@ -12500,8 +12500,8 @@ window.computeZakatFitr = computeZakatFitr;
 function renderFidyaCard() {
   return '<div onclick="openFidya()" style="position:relative;background:linear-gradient(165deg,#1a130b,#0d0a06);border:1px solid rgba(200,168,74,0.22);border-radius:16px;padding:15px 16px;margin-bottom:8px;display:flex;align-items:center;gap:14px;cursor:pointer;box-shadow:inset 0 1px 0 rgba(232,206,138,0.08),0 4px 16px rgba(0,0,0,0.35);">'
     + '<div style="flex-shrink:0;width:42px;height:42px;border-radius:50%;border:1px solid rgba(232,206,138,0.3);background:radial-gradient(circle at 50% 35%,rgba(232,206,138,0.16),rgba(232,206,138,0.02) 70%);display:flex;align-items:center;justify-content:center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8CE8A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13a8 8 0 0 0 16 0"/><circle cx="12" cy="6.5" r="2.2"/></svg></div>'
-    + '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;letter-spacing:0.02em;color:#E8CE8A;line-height:1.2;">Fidya / Kaff\u00e2ra</div>'
-    + '<div style="font-size:14px;color:rgba(200,168,74,0.55);margin-top:3px;font-style:italic;font-family:\'Cormorant Garamond\',serif;">Je\u00fbnes manqu\u00e9s ou rompus</div></div></div>';
+    + '<div style="flex:1;min-width:0;"><div style="font-family:\'Georgia\',serif;font-size:18px;letter-spacing:0.02em;color:#E8CE8A;line-height:1.2;">Fidya / Kaff\u00e2ra</div>'
+    + '<div style="font-size:14px;color:rgba(200,168,74,0.55);margin-top:3px;font-style:italic;font-family:\'Georgia\',serif;">Je\u00fbnes manqu\u00e9s ou rompus</div></div></div>';
 }
 function closeFidya() { var ov = document.getElementById('fidya-overlay'); if (ov) ov.remove(); }
 function computeFidya() {
@@ -12513,8 +12513,8 @@ function computeFidya() {
     fr.innerHTML = fd <= 0 ? '' :
       '<div style="text-align:center;padding:18px;border-radius:14px;border:1px solid rgba(232,206,138,0.3);background:radial-gradient(120% 150% at 50% 0%,rgba(232,206,138,0.12),rgba(232,206,138,0.02) 72%);margin-top:12px;">'
       + '<div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(232,206,138,0.7);margin-bottom:6px;">\u00c0 donner</div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-weight:300;font-size:26px;color:#C8A84A;text-align:center;margin-top:12px;">' + fmt(fd * cost) + ' \u20AC</div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:13px;color:rgba(200,168,74,0.7);margin-top:8px;">Nourrir 1 pauvre par jour \u00b7 ' + fd + ' jour' + (fd > 1 ? 's' : '') + '</div></div>';
+      + '<div style="font-family:\'Georgia\',serif;font-weight:300;font-size:26px;color:#C8A84A;text-align:center;margin-top:12px;">' + fmt(fd * cost) + ' \u20AC</div>'
+      + '<div style="font-family:\'Georgia\',serif;font-style:italic;font-size:13px;color:rgba(200,168,74,0.7);margin-top:8px;">Nourrir 1 pauvre par jour \u00b7 ' + fd + ' jour' + (fd > 1 ? 's' : '') + '</div></div>';
   }
   var kd = Math.max(0, Math.round(_zNum('fk-kaffara-days')));
   var kr = document.getElementById('fk-kaffara-result');
@@ -12522,9 +12522,9 @@ function computeFidya() {
     kr.innerHTML = kd <= 0 ? '' :
       '<div style="padding:18px;border-radius:14px;border:1px solid rgba(232,206,138,0.3);background:radial-gradient(120% 150% at 50% 0%,rgba(232,206,138,0.1),rgba(232,206,138,0.02) 72%);margin-top:12px;text-align:center;">'
       + '<div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(232,206,138,0.7);margin-bottom:8px;">Par jour rompu</div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:26px;font-weight:300;color:#C8A84A;">60 je\u00fbnes cons\u00e9cutifs</div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:13px;color:rgba(200,168,74,0.55);margin:4px 0;">ou</div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:26px;font-weight:300;color:#C8A84A;">nourrir 60 pauvres \u00b7 ' + fmt(60 * cost) + ' \u20AC</div>'
+      + '<div style="font-family:\'Georgia\',serif;font-size:26px;font-weight:300;color:#C8A84A;">60 je\u00fbnes cons\u00e9cutifs</div>'
+      + '<div style="font-family:\'Georgia\',serif;font-style:italic;font-size:13px;color:rgba(200,168,74,0.55);margin:4px 0;">ou</div>'
+      + '<div style="font-family:\'Georgia\',serif;font-size:26px;font-weight:300;color:#C8A84A;">nourrir 60 pauvres \u00b7 ' + fmt(60 * cost) + ' \u20AC</div>'
       + (kd > 1 ? '<div style="font-size:12px;color:rgba(200,168,74,0.6);font-style:italic;margin-top:10px;">Pour ' + kd + ' jours : jusqu\u2019\u00e0 ' + (kd * 60) + ' je\u00fbnes, ou ' + fmt(kd * 60 * cost) + ' \u20AC.</div>' : '')
       + '<div style="font-size:11px;color:rgba(200,168,74,0.45);font-style:italic;margin-top:10px;line-height:1.6;">Ordre : affranchir un esclave (caduc) \u2192 je\u00fbner \u2192 sinon nourrir. Selon certains savants, une seule kaff\u00e2ra suffit pour plusieurs jours d\u2019un m\u00eame Ramadan \u2014 r\u00e9f\u00e8re-toi \u00e0 un savant.</div></div>';
   }
@@ -12535,28 +12535,28 @@ function openFidya() {
   ov.id = 'fidya-overlay';
   ov.style.cssText = 'position:fixed;inset:0;z-index:3200;overflow-y:auto;-webkit-overflow-scrolling:touch;background:#0a0a0f;';
   var fld = function(id, label, ph, unit, val) {
-    return '<div style="margin-bottom:14px;"><label style="display:block;font-family:\'Cormorant Garamond\',serif;font-size:13px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(200,168,74,0.6);margin:20px 0 10px;">' + label + '</label>'
-      + '<div style="position:relative;"><input id="' + id + '" type="text" inputmode="decimal" placeholder="' + ph + '"' + (val !== undefined ? ' value="' + val + '"' : '') + ' oninput="computeFidya()" style="width:100%;box-sizing:border-box;padding:12px 16px;border-radius:10px;border:0.5px solid rgba(200,168,74,0.3);background:rgba(200,168,74,0.08);color:#C8A84A;font-size:20px;font-family:\'Cormorant Garamond\',serif;outline:none;">'
-      + (unit ? '<span style="position:absolute;right:16px;top:50%;transform:translateY(-50%);font-family:\'Cormorant Garamond\',serif;font-size:15px;color:rgba(200,168,74,0.45);pointer-events:none;">' + unit + '</span>' : '')
+    return '<div style="margin-bottom:14px;"><label style="display:block;font-family:\'Georgia\',serif;font-size:13px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(200,168,74,0.6);margin:20px 0 10px;">' + label + '</label>'
+      + '<div style="position:relative;"><input id="' + id + '" type="text" inputmode="decimal" placeholder="' + ph + '"' + (val !== undefined ? ' value="' + val + '"' : '') + ' oninput="computeFidya()" style="width:100%;box-sizing:border-box;padding:12px 16px;border-radius:10px;border:0.5px solid rgba(200,168,74,0.3);background:rgba(200,168,74,0.08);color:#C8A84A;font-size:20px;font-family:\'Georgia\',serif;outline:none;">'
+      + (unit ? '<span style="position:absolute;right:16px;top:50%;transform:translateY(-50%);font-family:\'Georgia\',serif;font-size:15px;color:rgba(200,168,74,0.45);pointer-events:none;">' + unit + '</span>' : '')
       + '</div></div>';
   };
-  var eyebrow = function(t) { return '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;letter-spacing:1.5px;color:#C8A84A;text-align:center;padding:10px 0;border-top:0.5px solid rgba(200,168,74,0.15);border-bottom:0.5px solid rgba(200,168,74,0.15);margin:16px 0 12px;">' + t + '</div>'; };
+  var eyebrow = function(t) { return '<div style="font-family:\'Georgia\',serif;font-size:16px;letter-spacing:1.5px;color:#C8A84A;text-align:center;padding:10px 0;border-top:0.5px solid rgba(200,168,74,0.15);border-bottom:0.5px solid rgba(200,168,74,0.15);margin:16px 0 12px;">' + t + '</div>'; };
   ov.innerHTML = '<div style="max-width:440px;margin:0 auto;padding:calc(env(safe-area-inset-top,0px) + 40px) 24px calc(48px + env(safe-area-inset-bottom));">'
     + '<button onclick="closeFidya()" aria-label="Fermer" style="position:fixed;top:calc(env(safe-area-inset-top,0px) + 20px);right:20px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(200,168,74,0.28);background:rgba(20,15,8,0.6);color:#C8A84A;font-size:17px;cursor:pointer;z-index:5;">\u2715</button>'
     + '<div style="text-align:center;font-family:\'Scheherazade New\',serif;font-size:48px;color:#C8A84A;line-height:1.3;">\u0641\u0650\u062F\u0652\u064A\u064E\u0629 \u00b7 \u0643\u064E\u0641\u0651\u064E\u0627\u0631\u064E\u0629</div>'
-    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:28px;color:#e8dfc8;margin-top:8px;">Fidya & Kaff\u00e2ra</div>'
-    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:16px;color:rgba(232,217,188,0.4);margin-top:6px;line-height:1.5;">R\u00e9parer les je\u00fbnes manqu\u00e9s ou rompus</div>'
-    + '<div style="margin-top:20px;background:rgba(200,168,74,0.06);border:0.5px solid rgba(200,168,74,0.2);border-radius:12px;padding:16px 18px;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:15px;color:rgba(232,217,188,0.5);line-height:1.6;text-align:center;margin-bottom:20px;">Si tu <b>peux</b> rattraper (maladie pass\u00e9e, voyage, menstrues) : tu <b>je\u00fbnes</b> les jours, sans argent (qad\u00e2\u2019).</div>'
+    + '<div style="text-align:center;font-family:\'Georgia\',serif;font-size:28px;color:#e8dfc8;margin-top:8px;">Fidya & Kaff\u00e2ra</div>'
+    + '<div style="text-align:center;font-family:\'Georgia\',serif;font-style:italic;font-size:16px;color:rgba(232,217,188,0.4);margin-top:6px;line-height:1.5;">R\u00e9parer les je\u00fbnes manqu\u00e9s ou rompus</div>'
+    + '<div style="margin-top:20px;background:rgba(200,168,74,0.06);border:0.5px solid rgba(200,168,74,0.2);border-radius:12px;padding:16px 18px;font-family:\'Georgia\',serif;font-style:italic;font-size:15px;color:rgba(232,217,188,0.5);line-height:1.6;text-align:center;margin-bottom:20px;">Si tu <b>peux</b> rattraper (maladie pass\u00e9e, voyage, menstrues) : tu <b>je\u00fbnes</b> les jours, sans argent (qad\u00e2\u2019).</div>'
     + fld('fk-cost', 'Co\u00fbt d\u2019un repas / pauvre nourri', '5', '\u20AC', '5')
     + eyebrow('Fidya \u00b7 non rattrapable')
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:15px;color:rgba(232,217,188,0.4);text-align:center;margin-bottom:12px;">Maladie chronique, grand \u00e2ge \u2014 nourrir 1 pauvre par jour manqu\u00e9.</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-style:italic;font-size:15px;color:rgba(232,217,188,0.4);text-align:center;margin-bottom:12px;">Maladie chronique, grand \u00e2ge \u2014 nourrir 1 pauvre par jour manqu\u00e9.</div>'
     + fld('fk-fidya-days', 'Jours non rattrapables', '0', '', '')
     + '<div id="fk-fidya-result"></div>'
     + eyebrow('Kaff\u00e2ra \u00b7 rupture volontaire')
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:15px;color:rgba(232,217,188,0.4);text-align:center;margin-bottom:12px;">Je\u00fbne rompu d\u00e9lib\u00e9r\u00e9ment (rapport conjugal ; selon certains, manger volontairement).</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-style:italic;font-size:15px;color:rgba(232,217,188,0.4);text-align:center;margin-bottom:12px;">Je\u00fbne rompu d\u00e9lib\u00e9r\u00e9ment (rapport conjugal ; selon certains, manger volontairement).</div>'
     + fld('fk-kaffara-days', 'Jours rompus volontairement', '0', '', '')
     + '<div id="fk-kaffara-result"></div>'
-    + '<div style="font-size:11px;color:rgba(200,168,74,0.42);line-height:1.7;margin-top:26px;font-style:italic;font-family:\'Cormorant Garamond\',serif;">Calcul indicatif. Cas particuliers (femme enceinte ou allaitante : rattrapage et/ou fidya selon les avis ; d\u00e9lai d\u00e9pass\u00e9 jusqu\u2019au Ramadan suivant) \u2192 r\u00e9f\u00e8re-toi \u00e0 un savant. Le co\u00fbt d\u2019un repas (valeur d\u2019un mudd de l\u2019aliment de base) varie : v\u00e9rifie le montant de ta r\u00e9gion.</div>'
+    + '<div style="font-size:11px;color:rgba(200,168,74,0.42);line-height:1.7;margin-top:26px;font-style:italic;font-family:\'Georgia\',serif;">Calcul indicatif. Cas particuliers (femme enceinte ou allaitante : rattrapage et/ou fidya selon les avis ; d\u00e9lai d\u00e9pass\u00e9 jusqu\u2019au Ramadan suivant) \u2192 r\u00e9f\u00e8re-toi \u00e0 un savant. Le co\u00fbt d\u2019un repas (valeur d\u2019un mudd de l\u2019aliment de base) varie : v\u00e9rifie le montant de ta r\u00e9gion.</div>'
     + '</div>';
   document.body.appendChild(ov);
   computeFidya();
@@ -12592,7 +12592,7 @@ function _hijriToGreg(hy, hm, hd) {
   return null;
 }
 function _convBox(text, muted) {
-  return '<div style="text-align:center;padding:18px;border-radius:14px;border:1px solid rgba(232,206,138,' + (muted ? '0.2' : '0.32') + ');background:radial-gradient(120% 150% at 50% 0%,rgba(232,206,138,' + (muted ? '0.04' : '0.13') + '),rgba(232,206,138,0.02) 72%);margin-top:12px;font-family:\'Cormorant Garamond\',serif;font-size:' + (muted ? '15px' : '21px') + ';color:' + (muted ? 'rgba(200,168,74,0.65)' : '#E8CE8A') + ';' + (muted ? 'font-style:italic;' : '') + 'text-transform:capitalize;line-height:1.3;">' + text + '</div>';
+  return '<div style="text-align:center;padding:18px;border-radius:14px;border:1px solid rgba(232,206,138,' + (muted ? '0.2' : '0.32') + ');background:radial-gradient(120% 150% at 50% 0%,rgba(232,206,138,' + (muted ? '0.04' : '0.13') + '),rgba(232,206,138,0.02) 72%);margin-top:12px;font-family:\'Georgia\',serif;font-size:' + (muted ? '15px' : '21px') + ';color:' + (muted ? 'rgba(200,168,74,0.65)' : '#E8CE8A') + ';' + (muted ? 'font-style:italic;' : '') + 'text-transform:capitalize;line-height:1.3;">' + text + '</div>';
 }
 function computeConvertG2H() {
   var inp = document.getElementById('conv-greg'), res = document.getElementById('conv-g2h-result');
@@ -12614,8 +12614,8 @@ function computeConvertH2G() {
 function renderConvertCard() {
   return '<div onclick="openConvert()" style="position:relative;background:linear-gradient(165deg,#1a130b,#0d0a06);border:1px solid rgba(200,168,74,0.22);border-radius:16px;padding:15px 16px;margin-bottom:8px;display:flex;align-items:center;gap:14px;cursor:pointer;box-shadow:inset 0 1px 0 rgba(232,206,138,0.08),0 4px 16px rgba(0,0,0,0.35);">'
     + '<div style="flex-shrink:0;width:42px;height:42px;border-radius:50%;border:1px solid rgba(232,206,138,0.3);background:radial-gradient(circle at 50% 35%,rgba(232,206,138,0.16),rgba(232,206,138,0.02) 70%);display:flex;align-items:center;justify-content:center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8CE8A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 10h16M8 3v4M16 3v4"/></svg></div>'
-    + '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;letter-spacing:0.02em;color:#E8CE8A;line-height:1.2;">Convertisseur</div>'
-    + '<div style="font-size:14px;color:rgba(200,168,74,0.55);margin-top:3px;font-style:italic;font-family:\'Cormorant Garamond\',serif;">Dates Hijri \u2194 Gr\u00e9gorien</div></div></div>';
+    + '<div style="flex:1;min-width:0;"><div style="font-family:\'Georgia\',serif;font-size:18px;letter-spacing:0.02em;color:#E8CE8A;line-height:1.2;">Convertisseur</div>'
+    + '<div style="font-size:14px;color:rgba(200,168,74,0.55);margin-top:3px;font-style:italic;font-family:\'Georgia\',serif;">Dates Hijri \u2194 Gr\u00e9gorien</div></div></div>';
 }
 function closeConvert() { var ov = document.getElementById('convert-overlay'); if (ov) ov.remove(); }
 function openConvert() {
@@ -12624,7 +12624,7 @@ function openConvert() {
   var iso = today.getFullYear() + '-' + String(today.getMonth() + 1).padStart(2, '0') + '-' + String(today.getDate()).padStart(2, '0');
   var monthOpts = '';
   for (var i = 0; i < 12; i++) monthOpts += '<option value="' + (i + 1) + '"' + (i + 1 === th.m ? ' selected' : '') + '>' + _CONV_MONTHS[i] + '</option>';
-  var inStyle = 'width:100%;box-sizing:border-box;padding:13px 14px;border-radius:13px;border:1px solid rgba(200,168,74,0.18);background:linear-gradient(180deg,#16110a,#100c07);color:#F0EADB;font-size:16px;font-family:\'Cormorant Garamond\',serif;outline:none;';
+  var inStyle = 'width:100%;box-sizing:border-box;padding:13px 14px;border-radius:13px;border:1px solid rgba(200,168,74,0.18);background:linear-gradient(180deg,#16110a,#100c07);color:#F0EADB;font-size:16px;font-family:\'Georgia\',serif;outline:none;';
   var lab = function(t) { return '<label style="display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(200,168,74,0.55);margin-bottom:7px;">' + t + '</label>'; };
   var eyebrow = function(t) { return '<div style="display:flex;align-items:center;gap:12px;margin:26px 0 14px;"><div style="flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(200,168,74,0.28),transparent);"></div><span style="font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(200,168,74,0.6);white-space:nowrap;">' + t + '</span><div style="flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(200,168,74,0.28),transparent);"></div></div>'; };
   var ov = document.createElement('div');
@@ -12633,8 +12633,8 @@ function openConvert() {
   ov.innerHTML = '<div style="max-width:440px;margin:0 auto;padding:calc(env(safe-area-inset-top,0px) + 40px) 24px calc(48px + env(safe-area-inset-bottom));">'
     + '<button onclick="closeConvert()" aria-label="Fermer" style="position:fixed;top:calc(env(safe-area-inset-top,0px) + 20px);right:20px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(200,168,74,0.28);background:rgba(20,15,8,0.6);color:#C8A84A;font-size:17px;cursor:pointer;z-index:5;">\u2715</button>'
     + '<div style="text-align:center;font-family:\'Scheherazade New\',serif;font-size:40px;color:#E8CE8A;text-shadow:0 0 26px rgba(232,206,138,0.28);line-height:1.2;">\u062A\u064E\u0642\u0652\u0648\u0650\u064A\u0645</div>'
-    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:24px;color:#EADCB6;margin-top:8px;">Convertisseur de dates</div>'
-    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:13px;color:#9c8c64;margin-top:6px;">Hijri \u2194 Gr\u00e9gorien</div>'
+    + '<div style="text-align:center;font-family:\'Georgia\',serif;font-size:24px;color:#EADCB6;margin-top:8px;">Convertisseur de dates</div>'
+    + '<div style="text-align:center;font-family:\'Georgia\',serif;font-style:italic;font-size:13px;color:#9c8c64;margin-top:6px;">Hijri \u2194 Gr\u00e9gorien</div>'
     + eyebrow('Gr\u00e9gorien \u2192 Hijri')
     + '<div>' + lab('Date') + '<input id="conv-greg" type="date" value="' + iso + '" onchange="computeConvertG2H()" oninput="computeConvertG2H()" style="' + inStyle + '"></div>'
     + '<div id="conv-g2h-result"></div>'
@@ -12645,7 +12645,7 @@ function openConvert() {
     + '<div style="width:84px;">' + lab('Ann\u00e9e') + '<input id="conv-h-year" type="number" value="' + th.y + '" oninput="computeConvertH2G()" style="' + inStyle + '"></div>'
     + '</div>'
     + '<div id="conv-h2g-result"></div>'
-    + '<div style="font-size:11px;color:rgba(200,168,74,0.42);line-height:1.7;margin-top:26px;font-style:italic;font-family:\'Cormorant Garamond\',serif;">Conversion calendaire : la date r\u00e9elle peut varier d\u2019un jour selon l\u2019observation de la lune.</div>'
+    + '<div style="font-size:11px;color:rgba(200,168,74,0.42);line-height:1.7;margin-top:26px;font-style:italic;font-family:\'Georgia\',serif;">Conversion calendaire : la date r\u00e9elle peut varier d\u2019un jour selon l\u2019observation de la lune.</div>'
     + '</div>';
   document.body.appendChild(ov);
   computeConvertG2H();
@@ -12662,8 +12662,8 @@ function closeWudu() { var o = document.getElementById('wudu-overlay'); if (o) o
 function renderWuduCard() {
   return '<div onclick="openWudu()" style="position:relative;background:linear-gradient(165deg,#1a130b,#0d0a06);border:1px solid rgba(200,168,74,0.22);border-radius:16px;padding:15px 16px;margin-bottom:8px;display:flex;align-items:center;gap:14px;cursor:pointer;box-shadow:inset 0 1px 0 rgba(232,206,138,0.08),0 4px 16px rgba(0,0,0,0.35);">'
     + '<div style="flex-shrink:0;width:42px;height:42px;border-radius:50%;border:1px solid rgba(232,206,138,0.3);background:radial-gradient(circle at 50% 35%,rgba(232,206,138,0.16),rgba(232,206,138,0.02) 70%);display:flex;align-items:center;justify-content:center;"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#E8CE8A" stroke-width="1.3" stroke-linecap="round"><path d="M12 2.5C10 5 5 10.5 5 14.5a7 7 0 0 0 14 0C19 10.5 14 5 12 2.5z"/></svg></div>'
-    + '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;letter-spacing:0.02em;color:#E8CE8A;line-height:1.2;">Wudu</div>'
-    + '<div style="font-size:14px;color:rgba(200,168,74,0.55);margin-top:3px;font-style:italic;font-family:\'Cormorant Garamond\',serif;">Les ablutions</div></div>'
+    + '<div style="flex:1;min-width:0;"><div style="font-family:\'Georgia\',serif;font-size:18px;letter-spacing:0.02em;color:#E8CE8A;line-height:1.2;">Wudu</div>'
+    + '<div style="font-size:14px;color:rgba(200,168,74,0.55);margin-top:3px;font-style:italic;font-family:\'Georgia\',serif;">Les ablutions</div></div>'
     + '<div style="color:rgba(200,168,74,0.3);font-size:18px;">\u203a</div></div>';
 }
 function openWudu() {
@@ -12671,14 +12671,14 @@ function openWudu() {
   var ov = document.createElement('div');
   ov.id = 'wudu-overlay';
   ov.style.cssText = 'position:fixed;inset:0;z-index:3200;overflow-y:auto;-webkit-overflow-scrolling:touch;background:#0a0a0f;';
-  var lbl = function(t) { return '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(200,168,74,0.6);margin:20px 0 10px;">' + t + '</div>'; };
-  var itm = function(t, note) { return '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;color:#e8dfc8;padding:13px 0;border-bottom:0.5px solid rgba(200,168,74,0.08);">' + t + (note ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(200,168,74,0.4);margin-top:4px;">' + note + '</div>' : '') + '</div>'; };
-  var stp = function(n, t) { return '<div style="display:flex;gap:10px;padding:10px 0;border-bottom:0.5px solid rgba(200,168,74,0.1);align-items:flex-start;"><span style="font-family:\'Cormorant Garamond\',serif;font-size:13px;color:rgba(200,168,74,0.5);flex-shrink:0;width:20px;">' + n + '.</span><span style="font-family:\'Cormorant Garamond\',serif;font-size:17px;color:#e8dfc8;">' + t + '</span></div>'; };
+  var lbl = function(t) { return '<div style="font-family:\'Georgia\',serif;font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(200,168,74,0.6);margin:20px 0 10px;">' + t + '</div>'; };
+  var itm = function(t, note) { return '<div style="font-family:\'Georgia\',serif;font-size:17px;color:#e8dfc8;padding:13px 0;border-bottom:0.5px solid rgba(200,168,74,0.08);">' + t + (note ? '<div style="font-family:\'Georgia\',serif;font-size:14px;font-style:italic;color:rgba(200,168,74,0.4);margin-top:4px;">' + note + '</div>' : '') + '</div>'; };
+  var stp = function(n, t) { return '<div style="display:flex;gap:10px;padding:10px 0;border-bottom:0.5px solid rgba(200,168,74,0.1);align-items:flex-start;"><span style="font-family:\'Georgia\',serif;font-size:13px;color:rgba(200,168,74,0.5);flex-shrink:0;width:20px;">' + n + '.</span><span style="font-family:\'Georgia\',serif;font-size:17px;color:#e8dfc8;">' + t + '</span></div>'; };
   ov.innerHTML = '<div style="max-width:440px;margin:0 auto;padding:calc(env(safe-area-inset-top,0px) + 40px) 24px calc(48px + env(safe-area-inset-bottom));">'
     + '<button onclick="closeWudu()" aria-label="Fermer" style="position:fixed;top:calc(env(safe-area-inset-top,0px) + 20px);right:20px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(200,168,74,0.28);background:rgba(20,15,8,0.6);color:#C8A84A;font-size:17px;cursor:pointer;z-index:5;">\u00d7</button>'
     + '<div style="text-align:center;font-family:\'Scheherazade New\',serif;font-size:48px;color:#C8A84A;line-height:1.3;">\u0627\u0644\u0648\u064f\u0636\u064f\u0648\u0621</div>'
-    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:28px;color:#e8dfc8;margin-top:8px;">Wudu \u2014 Les ablutions</div>'
-    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:16px;color:rgba(232,217,188,0.4);margin-top:6px;margin-bottom:24px;">Conditions et ce qui l\u2019annule</div>'
+    + '<div style="text-align:center;font-family:\'Georgia\',serif;font-size:28px;color:#e8dfc8;margin-top:8px;">Wudu \u2014 Les ablutions</div>'
+    + '<div style="text-align:center;font-family:\'Georgia\',serif;font-style:italic;font-size:16px;color:rgba(232,217,188,0.4);margin-top:6px;margin-bottom:24px;">Conditions et ce qui l\u2019annule</div>'
     + lbl('Ce qui l\u2019annule')
     + itm('Passage aux toilettes (petite ou grande)')
     + itm('Sommeil profond (allong\u00e9 ou assis sans appui)')
@@ -12694,7 +12694,7 @@ function openWudu() {
     + stp(6, 'Se laver les bras jusqu\u2019aux coudes 3\u00d7 (droit puis gauche)')
     + stp(7, 'Passer les mains humides sur la t\u00eate')
     + stp(8, 'Se laver les pieds jusqu\u2019aux chevilles 3\u00d7 (droit puis gauche)')
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(232,217,188,0.2);text-align:center;margin-top:20px;">Coran 5:6 \u2014 Bukhari 135, Muslim 226</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:13px;font-style:italic;color:rgba(232,217,188,0.2);text-align:center;margin-top:20px;">Coran 5:6 \u2014 Bukhari 135, Muslim 226</div>'
     + '</div>';
   document.body.appendChild(ov);
 }
@@ -12707,8 +12707,8 @@ function closeTayammum() { var o = document.getElementById('tayammum-overlay'); 
 function renderTayammumCard() {
   return '<div onclick="openTayammum()" style="position:relative;background:linear-gradient(165deg,#1a130b,#0d0a06);border:1px solid rgba(200,168,74,0.22);border-radius:16px;padding:15px 16px;margin-bottom:8px;display:flex;align-items:center;gap:14px;cursor:pointer;box-shadow:inset 0 1px 0 rgba(232,206,138,0.08),0 4px 16px rgba(0,0,0,0.35);">'
     + '<div style="flex-shrink:0;width:42px;height:42px;border-radius:50%;border:1px solid rgba(232,206,138,0.3);background:radial-gradient(circle at 50% 35%,rgba(232,206,138,0.16),rgba(232,206,138,0.02) 70%);display:flex;align-items:center;justify-content:center;"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#E8CE8A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20"/><path d="M6 20v-6l6-10 6 10v6"/></svg></div>'
-    + '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;letter-spacing:0.02em;color:#E8CE8A;line-height:1.2;">Tayammum</div>'
-    + '<div style="font-size:14px;color:rgba(200,168,74,0.55);margin-top:3px;font-style:italic;font-family:\'Cormorant Garamond\',serif;">Purification s\u00e8che</div></div>'
+    + '<div style="flex:1;min-width:0;"><div style="font-family:\'Georgia\',serif;font-size:18px;letter-spacing:0.02em;color:#E8CE8A;line-height:1.2;">Tayammum</div>'
+    + '<div style="font-size:14px;color:rgba(200,168,74,0.55);margin-top:3px;font-style:italic;font-family:\'Georgia\',serif;">Purification s\u00e8che</div></div>'
     + '<div style="color:rgba(200,168,74,0.3);font-size:18px;">\u203a</div></div>';
 }
 function openTayammum() {
@@ -12716,14 +12716,14 @@ function openTayammum() {
   var ov = document.createElement('div');
   ov.id = 'tayammum-overlay';
   ov.style.cssText = 'position:fixed;inset:0;z-index:3200;overflow-y:auto;-webkit-overflow-scrolling:touch;background:#0a0a0f;';
-  var lbl = function(t) { return '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(200,168,74,0.6);margin:20px 0 10px;">' + t + '</div>'; };
-  var itm = function(t) { return '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;color:#e8dfc8;padding:13px 0;border-bottom:0.5px solid rgba(200,168,74,0.08);">' + t + '</div>'; };
-  var stp = function(n, t) { return '<div style="display:flex;gap:10px;padding:10px 0;border-bottom:0.5px solid rgba(200,168,74,0.1);align-items:flex-start;"><span style="font-family:\'Cormorant Garamond\',serif;font-size:13px;color:rgba(200,168,74,0.5);flex-shrink:0;width:20px;">' + n + '.</span><span style="font-family:\'Cormorant Garamond\',serif;font-size:17px;color:#e8dfc8;">' + t + '</span></div>'; };
+  var lbl = function(t) { return '<div style="font-family:\'Georgia\',serif;font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(200,168,74,0.6);margin:20px 0 10px;">' + t + '</div>'; };
+  var itm = function(t) { return '<div style="font-family:\'Georgia\',serif;font-size:17px;color:#e8dfc8;padding:13px 0;border-bottom:0.5px solid rgba(200,168,74,0.08);">' + t + '</div>'; };
+  var stp = function(n, t) { return '<div style="display:flex;gap:10px;padding:10px 0;border-bottom:0.5px solid rgba(200,168,74,0.1);align-items:flex-start;"><span style="font-family:\'Georgia\',serif;font-size:13px;color:rgba(200,168,74,0.5);flex-shrink:0;width:20px;">' + n + '.</span><span style="font-family:\'Georgia\',serif;font-size:17px;color:#e8dfc8;">' + t + '</span></div>'; };
   ov.innerHTML = '<div style="max-width:440px;margin:0 auto;padding:calc(env(safe-area-inset-top,0px) + 40px) 24px calc(48px + env(safe-area-inset-bottom));">'
     + '<button onclick="closeTayammum()" aria-label="Fermer" style="position:fixed;top:calc(env(safe-area-inset-top,0px) + 20px);right:20px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(200,168,74,0.28);background:rgba(20,15,8,0.6);color:#C8A84A;font-size:17px;cursor:pointer;z-index:5;">\u00d7</button>'
     + '<div style="text-align:center;font-family:\'Scheherazade New\',serif;font-size:48px;color:#C8A84A;line-height:1.3;">\u0627\u0644\u062a\u064e\u064a\u064e\u0645\u064f\u0651\u0645</div>'
-    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:28px;color:#e8dfc8;margin-top:8px;">Tayammum \u2014 Purification s\u00e8che</div>'
-    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:16px;color:rgba(232,217,188,0.4);margin-top:6px;margin-bottom:24px;">Quand l\u2019eau est absente</div>'
+    + '<div style="text-align:center;font-family:\'Georgia\',serif;font-size:28px;color:#e8dfc8;margin-top:8px;">Tayammum \u2014 Purification s\u00e8che</div>'
+    + '<div style="text-align:center;font-family:\'Georgia\',serif;font-style:italic;font-size:16px;color:rgba(232,217,188,0.4);margin-top:6px;margin-bottom:24px;">Quand l\u2019eau est absente</div>'
     + lbl('Conditions')
     + itm('Absence d\u2019eau apr\u00e8s recherche')
     + itm('Maladie o\u00f9 l\u2019eau est nuisible')
@@ -12735,8 +12735,8 @@ function openTayammum() {
     + stp(3, 'Essuyer le visage avec les paumes')
     + stp(4, 'Frapper \u00e0 nouveau')
     + stp(5, 'Essuyer le dos de la main droite avec la paume gauche, puis inversement')
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(200,168,74,0.4);text-align:center;margin-top:20px;padding:14px 16px;border:0.5px solid rgba(200,168,74,0.15);border-radius:10px;background:rgba(200,168,74,0.04);">Le tayammum est annul\u00e9 par les m\u00eames choses que le wudu, et d\u00e8s que l\u2019eau devient accessible.</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(232,217,188,0.2);text-align:center;margin-top:20px;">Coran 4:43 \u2014 Bukhari 338, Muslim 368</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:14px;font-style:italic;color:rgba(200,168,74,0.4);text-align:center;margin-top:20px;padding:14px 16px;border:0.5px solid rgba(200,168,74,0.15);border-radius:10px;background:rgba(200,168,74,0.04);">Le tayammum est annul\u00e9 par les m\u00eames choses que le wudu, et d\u00e8s que l\u2019eau devient accessible.</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:13px;font-style:italic;color:rgba(232,217,188,0.2);text-align:center;margin-top:20px;">Coran 4:43 \u2014 Bukhari 338, Muslim 368</div>'
     + '</div>';
   document.body.appendChild(ov);
 }
@@ -12749,8 +12749,8 @@ function closeQasr() { var o = document.getElementById('qasr-overlay'); if (o) o
 function renderQasrCard() {
   return '<div onclick="openQasr()" style="position:relative;background:linear-gradient(165deg,#1a130b,#0d0a06);border:1px solid rgba(200,168,74,0.22);border-radius:16px;padding:15px 16px;margin-bottom:8px;display:flex;align-items:center;gap:14px;cursor:pointer;box-shadow:inset 0 1px 0 rgba(232,206,138,0.08),0 4px 16px rgba(0,0,0,0.35);">'
     + '<div style="flex-shrink:0;width:42px;height:42px;border-radius:50%;border:1px solid rgba(232,206,138,0.3);background:radial-gradient(circle at 50% 35%,rgba(232,206,138,0.16),rgba(232,206,138,0.02) 70%);display:flex;align-items:center;justify-content:center;"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#E8CE8A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>'
-    + '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;letter-spacing:0.02em;color:#E8CE8A;line-height:1.2;">Pri\u00e8re du voyageur</div>'
-    + '<div style="font-size:14px;color:rgba(200,168,74,0.55);margin-top:3px;font-style:italic;font-family:\'Cormorant Garamond\',serif;">Raccourcir et regrouper</div></div>'
+    + '<div style="flex:1;min-width:0;"><div style="font-family:\'Georgia\',serif;font-size:18px;letter-spacing:0.02em;color:#E8CE8A;line-height:1.2;">Pri\u00e8re du voyageur</div>'
+    + '<div style="font-size:14px;color:rgba(200,168,74,0.55);margin-top:3px;font-style:italic;font-family:\'Georgia\',serif;">Raccourcir et regrouper</div></div>'
     + '<div style="color:rgba(200,168,74,0.3);font-size:18px;">\u203a</div></div>';
 }
 function openQasr() {
@@ -12758,26 +12758,26 @@ function openQasr() {
   var ov = document.createElement('div');
   ov.id = 'qasr-overlay';
   ov.style.cssText = 'position:fixed;inset:0;z-index:3200;overflow-y:auto;-webkit-overflow-scrolling:touch;background:#0a0a0f;';
-  var lbl = function(t) { return '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(200,168,74,0.6);margin:20px 0 10px;">' + t + '</div>'; };
+  var lbl = function(t) { return '<div style="font-family:\'Georgia\',serif;font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(200,168,74,0.6);margin:20px 0 10px;">' + t + '</div>'; };
   var trow = function(name, norm, voy) {
     var changed = norm !== voy;
     return '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 0;border-bottom:0.5px solid rgba(200,168,74,0.08);align-items:center;">'
-      + '<span style="font-family:\'Cormorant Garamond\',serif;font-size:20px;font-weight:600;color:#e8dfc8;">' + name + '</span>'
-      + '<span style="font-family:\'Cormorant Garamond\',serif;font-size:16px;color:rgba(232,217,188,0.4);text-align:center;">' + norm + '</span>'
-      + '<span style="font-family:\'Cormorant Garamond\',serif;font-size:16px;text-align:center;color:' + (changed ? '#C8A84A' : 'rgba(232,217,188,0.25)') + ';font-weight:' + (changed ? '600' : '400') + (changed ? '' : ';font-style:italic') + ';">' + voy + '</span>'
+      + '<span style="font-family:\'Georgia\',serif;font-size:20px;font-weight:600;color:#e8dfc8;">' + name + '</span>'
+      + '<span style="font-family:\'Georgia\',serif;font-size:16px;color:rgba(232,217,188,0.4);text-align:center;">' + norm + '</span>'
+      + '<span style="font-family:\'Georgia\',serif;font-size:16px;text-align:center;color:' + (changed ? '#C8A84A' : 'rgba(232,217,188,0.25)') + ';font-weight:' + (changed ? '600' : '400') + (changed ? '' : ';font-style:italic') + ';">' + voy + '</span>'
       + '</div>';
   };
   ov.innerHTML = '<div style="max-width:440px;margin:0 auto;padding:calc(env(safe-area-inset-top,0px) + 40px) 24px calc(48px + env(safe-area-inset-bottom));">'
     + '<button onclick="closeQasr()" aria-label="Fermer" style="position:fixed;top:calc(env(safe-area-inset-top,0px) + 20px);right:20px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(200,168,74,0.28);background:rgba(20,15,8,0.6);color:#C8A84A;font-size:17px;cursor:pointer;z-index:5;">\u00d7</button>'
     + '<div style="text-align:center;font-family:\'Scheherazade New\',serif;font-size:48px;color:#C8A84A;line-height:1.3;">\u0635\u064e\u0644\u064e\u0627\u0629\u064f \u0627\u0644\u0633\u064e\u0641\u064e\u0631</div>'
-    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:28px;color:#e8dfc8;margin-top:8px;">Pri\u00e8re du voyageur</div>'
-    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:16px;color:rgba(232,217,188,0.4);margin-top:6px;margin-bottom:24px;">Raccourcir et regrouper</div>'
+    + '<div style="text-align:center;font-family:\'Georgia\',serif;font-size:28px;color:#e8dfc8;margin-top:8px;">Pri\u00e8re du voyageur</div>'
+    + '<div style="text-align:center;font-family:\'Georgia\',serif;font-style:italic;font-size:16px;color:rgba(232,217,188,0.4);margin-top:6px;margin-bottom:24px;">Raccourcir et regrouper</div>'
     + lbl('Qasr \u2014 Raccourcir')
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;font-style:italic;color:rgba(200,168,74,0.55);margin-bottom:12px;">Condition\u00a0: distance \u2265\u00a080\u00a0km (avis majoritaire)</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:12px;font-style:italic;color:rgba(200,168,74,0.55);margin-bottom:12px;">Condition\u00a0: distance \u2265\u00a080\u00a0km (avis majoritaire)</div>'
     + '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:6px 0;border-bottom:0.5px solid rgba(200,168,74,0.18);margin-bottom:2px;">'
-    + '<span style="font-family:\'Cormorant Garamond\',serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,74,0.5);">Pri\u00e8re</span>'
-    + '<span style="font-family:\'Cormorant Garamond\',serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,74,0.5);text-align:center;">Normale</span>'
-    + '<span style="font-family:\'Cormorant Garamond\',serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,74,0.5);text-align:center;">En voyage</span>'
+    + '<span style="font-family:\'Georgia\',serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,74,0.5);">Pri\u00e8re</span>'
+    + '<span style="font-family:\'Georgia\',serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,74,0.5);text-align:center;">Normale</span>'
+    + '<span style="font-family:\'Georgia\',serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,74,0.5);text-align:center;">En voyage</span>'
     + '</div>'
     + trow('Fajr',    '2 rak\u2019a', '2 rak\u2019a')
     + trow('Dhuhr',   '4 rak\u2019a', '2 rak\u2019a')
@@ -12785,10 +12785,10 @@ function openQasr() {
     + trow('Maghrib', '3 rak\u2019a', '3 rak\u2019a')
     + trow('Isha',    '4 rak\u2019a', '2 rak\u2019a')
     + lbl("Jam\u2019 \u2014 Regrouper")
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;color:#e8dfc8;padding:13px 0;border-bottom:0.5px solid rgba(200,168,74,0.08);">Dhuhr + Asr ensemble</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;color:#e8dfc8;padding:13px 0;border-bottom:0.5px solid rgba(200,168,74,0.08);">Maghrib + Isha ensemble</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(200,168,74,0.4);text-align:center;margin-top:20px;padding:14px 16px;border:0.5px solid rgba(200,168,74,0.15);border-radius:10px;background:rgba(200,168,74,0.04);">Taqdim (avancer \u00e0 l\u2019heure de la 1\u00e8re) ou Ta\u02bfkhir (retarder \u00e0 l\u2019heure de la 2\u00e8me) \u2014 Le qasr et le jam\u2019 sont permis d\u00e8s le d\u00e9part, m\u00eame en ville de destination.</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(232,217,188,0.2);text-align:center;margin-top:20px;">Bukhari 1090, Muslim 686</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:17px;color:#e8dfc8;padding:13px 0;border-bottom:0.5px solid rgba(200,168,74,0.08);">Dhuhr + Asr ensemble</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:17px;color:#e8dfc8;padding:13px 0;border-bottom:0.5px solid rgba(200,168,74,0.08);">Maghrib + Isha ensemble</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:14px;font-style:italic;color:rgba(200,168,74,0.4);text-align:center;margin-top:20px;padding:14px 16px;border:0.5px solid rgba(200,168,74,0.15);border-radius:10px;background:rgba(200,168,74,0.04);">Taqdim (avancer \u00e0 l\u2019heure de la 1\u00e8re) ou Ta\u02bfkhir (retarder \u00e0 l\u2019heure de la 2\u00e8me) \u2014 Le qasr et le jam\u2019 sont permis d\u00e8s le d\u00e9part, m\u00eame en ville de destination.</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:13px;font-style:italic;color:rgba(232,217,188,0.2);text-align:center;margin-top:20px;">Bukhari 1090, Muslim 686</div>'
     + '</div>';
   document.body.appendChild(ov);
 }
@@ -12804,9 +12804,9 @@ function openRepere() {
   ov.id = 'repere-overlay';
   ov.style.cssText = 'position:fixed;inset:0;z-index:3000;overflow-y:auto;-webkit-overflow-scrolling:touch;background:radial-gradient(125% 60% at 50% -6%,#1d150b 0%,#0c0805 56%,#080605 100%);';
   ov.innerHTML = '<div style="max-width:480px;margin:0 auto;padding:calc(env(safe-area-inset-top,0px) + 20px) 19px calc(44px + env(safe-area-inset-bottom));">'
-    + '<button onclick="closeRepere()" aria-label="Retour" style="background:none;border:none;color:rgba(200,168,74,0.7);font-family:\'Cormorant Garamond\',serif;font-size:15px;display:inline-flex;align-items:center;gap:6px;cursor:pointer;padding:4px 0;"><span style="font-size:20px;line-height:1;">\u2039</span> Retour</button>'
-    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-weight:300;font-size:32px;letter-spacing:.07em;color:#E8CE8A;margin-top:14px;line-height:1;">Rep\u00e8res</div>'
-    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:16px;color:rgba(232,217,188,0.4);margin-top:6px;margin-bottom:24px;">Les outils qui orientent ton adoration</div>'
+    + '<button onclick="closeRepere()" aria-label="Retour" style="background:none;border:none;color:rgba(200,168,74,0.7);font-family:\'Georgia\',serif;font-size:15px;display:inline-flex;align-items:center;gap:6px;cursor:pointer;padding:4px 0;"><span style="font-size:20px;line-height:1;">\u2039</span> Retour</button>'
+    + '<div style="text-align:center;font-family:\'Georgia\',serif;font-weight:300;font-size:32px;letter-spacing:.07em;color:#E8CE8A;margin-top:14px;line-height:1;">Rep\u00e8res</div>'
+    + '<div style="text-align:center;font-family:\'Georgia\',serif;font-style:italic;font-size:16px;color:rgba(232,217,188,0.4);margin-top:6px;margin-bottom:24px;">Les outils qui orientent ton adoration</div>'
     + '<div style="display:flex;align-items:center;justify-content:center;gap:10px;margin:18px 0 2px;"><div style="width:52px;height:1px;background:linear-gradient(90deg,transparent,rgba(200,168,74,0.42));"></div><div style="width:6px;height:6px;border:1px solid rgba(200,168,74,0.55);transform:rotate(45deg);"></div><div style="width:52px;height:1px;background:linear-gradient(90deg,rgba(200,168,74,0.42),transparent);"></div></div>'
     + eb('S\u2019orienter')
     + renderIstikharaCard()
@@ -12830,8 +12830,8 @@ function openRepere() {
 function _repereHomeEntry() {
   return '<div onclick="openRepere()" style="position:relative;background:linear-gradient(165deg,#1a130b,#0d0a06);border:1px solid rgba(200,168,74,0.22);border-radius:16px;padding:15px 16px;margin-top:14px;display:flex;align-items:center;gap:14px;cursor:pointer;box-shadow:inset 0 1px 0 rgba(232,206,138,0.08),0 4px 16px rgba(0,0,0,0.35);">'
     + '<div style="flex-shrink:0;width:42px;height:42px;border-radius:50%;border:1px solid rgba(232,206,138,0.3);background:radial-gradient(circle at 50% 35%,rgba(232,206,138,0.16),rgba(232,206,138,0.02) 70%);display:flex;align-items:center;justify-content:center;"><svg width="21" height="21" viewBox="0 0 22 22" fill="none" stroke="#E8CE8A" stroke-width="1.2" stroke-linejoin="round"><path d="M11 3 L13 9 L19 11 L13 13 L11 19 L9 13 L3 11 L9 9 Z"/></svg></div>'
-    + '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;letter-spacing:0.02em;color:#E8CE8A;line-height:1.2;">Rep\u00e8res</div>'
-    + '<div style="font-size:14px;color:rgba(200,168,74,0.55);margin-top:3px;font-style:italic;font-family:\'Cormorant Garamond\',serif;">Zak\u00e2t, je\u00fbne, dates\u2026 tes outils</div></div>'
+    + '<div style="flex:1;min-width:0;"><div style="font-family:\'Georgia\',serif;font-size:18px;letter-spacing:0.02em;color:#E8CE8A;line-height:1.2;">Rep\u00e8res</div>'
+    + '<div style="font-size:14px;color:rgba(200,168,74,0.55);margin-top:3px;font-style:italic;font-family:\'Georgia\',serif;">Zak\u00e2t, je\u00fbne, dates\u2026 tes outils</div></div>'
     + '<div style="color:rgba(200,168,74,0.3);font-size:18px;">\u203a</div></div>';
 }
 window.openRepere = openRepere;
@@ -12849,20 +12849,20 @@ function renderQadaBody() {
   _QADA_PRAYERS.forEach(function(p) {
     var n = s[p[0]] || 0;
     rows += '<div style="display:flex;align-items:center;gap:12px;padding:16px 0;border-bottom:0.5px solid rgba(200,168,74,0.1);">'
-      + '<div style="flex:1;font-family:\'Cormorant Garamond\',serif;font-size:20px;font-weight:600;color:#e8dfc8;">' + p[1] + '</div>'
-      + '<input type="text" inputmode="numeric" value="' + n + '" onchange="_qadaSet(\'' + p[0] + '\',this.value)" style="width:60px;height:44px;text-align:center;border-radius:10px;border:0.5px solid rgba(200,168,74,0.3);background:rgba(200,168,74,0.08);color:#C8A84A;font-size:20px;font-family:\'Cormorant Garamond\',serif;outline:none;">'
+      + '<div style="flex:1;font-family:\'Georgia\',serif;font-size:20px;font-weight:600;color:#e8dfc8;">' + p[1] + '</div>'
+      + '<input type="text" inputmode="numeric" value="' + n + '" onchange="_qadaSet(\'' + p[0] + '\',this.value)" style="width:60px;height:44px;text-align:center;border-radius:10px;border:0.5px solid rgba(200,168,74,0.3);background:rgba(200,168,74,0.08);color:#C8A84A;font-size:20px;font-family:\'Georgia\',serif;outline:none;">'
       + '<button onclick="_qadaDec(\'' + p[0] + '\')" aria-label="Rattrap\u00e9e" style="width:52px;height:44px;border-radius:10px;border:0.5px solid rgba(200,168,74,0.2);background:rgba(200,168,74,0.06);color:rgba(200,168,74,0.7);font-size:18px;cursor:pointer;">\u2212\u00a01</button>'
       + '</div>';
   });
   var body = document.getElementById('qada-body');
-  if (body) body.innerHTML = '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:16px;color:#C8A84A;margin-bottom:20px;">' + (total > 0 ? ('Reste ' + total + ' pri\u00e8re' + (total > 1 ? 's' : '') + ' \u00e0 rattraper') : 'Aucune pri\u00e8re en attente.') + '</div>' + rows;
+  if (body) body.innerHTML = '<div style="text-align:center;font-family:\'Georgia\',serif;font-style:italic;font-size:16px;color:#C8A84A;margin-bottom:20px;">' + (total > 0 ? ('Reste ' + total + ' pri\u00e8re' + (total > 1 ? 's' : '') + ' \u00e0 rattraper') : 'Aucune pri\u00e8re en attente.') + '</div>' + rows;
 }
 function closeQada() { var o = document.getElementById('qada-overlay'); if (o) o.remove(); }
 function renderQadaCard() {
   return '<div onclick="openQada()" style="position:relative;background:linear-gradient(165deg,#1a130b,#0d0a06);border:1px solid rgba(200,168,74,0.22);border-radius:16px;padding:15px 16px;margin-bottom:8px;display:flex;align-items:center;gap:14px;cursor:pointer;box-shadow:inset 0 1px 0 rgba(232,206,138,0.08),0 4px 16px rgba(0,0,0,0.35);">'
     + '<div style="flex-shrink:0;width:42px;height:42px;border-radius:50%;border:1px solid rgba(232,206,138,0.3);background:radial-gradient(circle at 50% 35%,rgba(232,206,138,0.16),rgba(232,206,138,0.02) 70%);display:flex;align-items:center;justify-content:center;"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#E8CE8A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 2.5-6.2"/><path d="M3 3v4h4"/><path d="M12 8v4l3 2"/></svg></div>'
-    + '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;letter-spacing:0.02em;color:#E8CE8A;line-height:1.2;">Pri\u00e8res \u00e0 rattraper</div>'
-    + '<div style="font-size:14px;color:rgba(200,168,74,0.55);margin-top:3px;font-style:italic;font-family:\'Cormorant Garamond\',serif;">Suivre tes qad\u00e2\u2019 de sal\u00e2t</div></div>'
+    + '<div style="flex:1;min-width:0;"><div style="font-family:\'Georgia\',serif;font-size:18px;letter-spacing:0.02em;color:#E8CE8A;line-height:1.2;">Pri\u00e8res \u00e0 rattraper</div>'
+    + '<div style="font-size:14px;color:rgba(200,168,74,0.55);margin-top:3px;font-style:italic;font-family:\'Georgia\',serif;">Suivre tes qad\u00e2\u2019 de sal\u00e2t</div></div>'
     + '<div style="color:rgba(200,168,74,0.3);font-size:18px;">\u203a</div></div>';
 }
 function openQada() {
@@ -12873,10 +12873,10 @@ function openQada() {
   ov.innerHTML = '<div style="max-width:440px;margin:0 auto;padding:calc(env(safe-area-inset-top,0px) + 40px) 24px calc(48px + env(safe-area-inset-bottom));">'
     + '<button onclick="closeQada()" aria-label="Fermer" style="position:fixed;top:calc(env(safe-area-inset-top,0px) + 20px);right:20px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(200,168,74,0.28);background:rgba(20,15,8,0.6);color:#C8A84A;font-size:17px;cursor:pointer;z-index:5;">\u2715</button>'
     + '<div style="text-align:center;font-family:\'Scheherazade New\',serif;font-size:48px;color:#C8A84A;line-height:1.1;">\u0642\u064E\u0636\u064E\u0627\u0621</div>'
-    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:28px;color:#e8dfc8;margin-top:8px;">Pri\u00e8res \u00e0 rattraper</div>'
-    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:15px;color:rgba(232,217,188,0.4);margin-top:6px;">Compte tes pri\u00e8res manqu\u00e9es, coche au fur et \u00e0 mesure</div>'
+    + '<div style="text-align:center;font-family:\'Georgia\',serif;font-size:28px;color:#e8dfc8;margin-top:8px;">Pri\u00e8res \u00e0 rattraper</div>'
+    + '<div style="text-align:center;font-family:\'Georgia\',serif;font-style:italic;font-size:15px;color:rgba(232,217,188,0.4);margin-top:6px;">Compte tes pri\u00e8res manqu\u00e9es, coche au fur et \u00e0 mesure</div>'
     + '<div id="qada-body" style="margin-top:26px;"></div>'
-    + '<div style="font-size:12px;color:rgba(232,217,188,0.25);line-height:1.7;margin-top:24px;font-style:italic;font-family:\'Cormorant Garamond\',serif;">Saisis le nombre de pri\u00e8res manqu\u00e9es par type, puis appuie sur \u00ab \u2212 1 \u00bb chaque fois que tu en rattrapes une. Selon l\u2019avis majoritaire, les pri\u00e8res manqu\u00e9es se rattrapent (qad\u00e2\u2019) ; en cas de doute sur ta situation, r\u00e9f\u00e8re-toi \u00e0 un savant.</div>'
+    + '<div style="font-size:12px;color:rgba(232,217,188,0.25);line-height:1.7;margin-top:24px;font-style:italic;font-family:\'Georgia\',serif;">Saisis le nombre de pri\u00e8res manqu\u00e9es par type, puis appuie sur \u00ab \u2212 1 \u00bb chaque fois que tu en rattrapes une. Selon l\u2019avis majoritaire, les pri\u00e8res manqu\u00e9es se rattrapent (qad\u00e2\u2019) ; en cas de doute sur ta situation, r\u00e9f\u00e8re-toi \u00e0 un savant.</div>'
     + '</div>';
   document.body.appendChild(ov);
   renderQadaBody();
@@ -12891,14 +12891,14 @@ window.renderQadaCard = renderQadaCard;
 function renderIstikharaCard() {
   return '<div onclick="openIstikhara()" style="position:relative;background:linear-gradient(165deg,#1a130b,#0d0a06);border:1px solid rgba(200,168,74,0.22);border-radius:16px;padding:15px 16px;margin-bottom:8px;display:flex;align-items:center;gap:14px;cursor:pointer;box-shadow:inset 0 1px 0 rgba(232,206,138,0.08),0 4px 16px rgba(0,0,0,0.35);">'
     + '<div style="flex-shrink:0;width:42px;height:42px;border-radius:50%;border:1px solid rgba(232,206,138,0.3);background:radial-gradient(circle at 50% 35%,rgba(232,206,138,0.16),rgba(232,206,138,0.02) 70%);display:flex;align-items:center;justify-content:center;"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#E8CE8A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M14.8 9.2l-2 4.6-4.6 2 2-4.6z"/></svg></div>'
-    + '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;letter-spacing:0.02em;color:#E8CE8A;line-height:1.2;">Istikh\u00e2ra</div>'
-    + '<div style="font-size:14px;color:rgba(200,168,74,0.55);margin-top:3px;font-style:italic;font-family:\'Cormorant Garamond\',serif;">La pri\u00e8re de consultation</div></div>'
+    + '<div style="flex:1;min-width:0;"><div style="font-family:\'Georgia\',serif;font-size:18px;letter-spacing:0.02em;color:#E8CE8A;line-height:1.2;">Istikh\u00e2ra</div>'
+    + '<div style="font-size:14px;color:rgba(200,168,74,0.55);margin-top:3px;font-style:italic;font-family:\'Georgia\',serif;">La pri\u00e8re de consultation</div></div>'
     + '<div style="color:rgba(200,168,74,0.3);font-size:18px;">\u203a</div></div>';
 }
 function closeIstikhara() { var o = document.getElementById('istikhara-overlay'); if (o) o.remove(); }
 function openIstikhara() {
   closeIstikhara();
-  var step = function(n, t) { return '<div style="display:flex;gap:13px;margin-bottom:13px;align-items:flex-start;"><div style="flex-shrink:0;width:26px;height:26px;border-radius:50%;border:1px solid rgba(232,206,138,0.4);display:flex;align-items:center;justify-content:center;font-family:\'Cormorant Garamond\',serif;font-size:14px;color:#E8CE8A;">' + n + '</div><div style="flex:1;font-family:\'Cormorant Garamond\',serif;font-size:16px;line-height:1.5;color:rgba(240,234,214,0.85);">' + t + '</div></div>'; };
+  var step = function(n, t) { return '<div style="display:flex;gap:13px;margin-bottom:13px;align-items:flex-start;"><div style="flex-shrink:0;width:26px;height:26px;border-radius:50%;border:1px solid rgba(232,206,138,0.4);display:flex;align-items:center;justify-content:center;font-family:\'Georgia\',serif;font-size:14px;color:#E8CE8A;">' + n + '</div><div style="flex:1;font-family:\'Georgia\',serif;font-size:16px;line-height:1.5;color:rgba(240,234,214,0.85);">' + t + '</div></div>'; };
   var head = function(t) { return '<div style="display:flex;align-items:center;gap:10px;margin:26px 2px 14px;"><div style="flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(200,168,74,0.22));"></div><span style="font-size:14px;letter-spacing:.22em;text-transform:uppercase;color:rgba(200,168,74,0.55);">' + t + '</span><div style="flex:1;height:1px;background:linear-gradient(90deg,rgba(200,168,74,0.22),transparent);"></div></div>'; };
   var ov = document.createElement('div');
   ov.id = 'istikhara-overlay';
@@ -12906,9 +12906,9 @@ function openIstikhara() {
   ov.innerHTML = '<div style="max-width:460px;margin:0 auto;padding:calc(env(safe-area-inset-top,0px) + 40px) 24px calc(48px + env(safe-area-inset-bottom));">'
     + '<button onclick="closeIstikhara()" aria-label="Fermer" style="position:fixed;top:calc(env(safe-area-inset-top,0px) + 20px);right:20px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(200,168,74,0.28);background:rgba(20,15,8,0.6);color:#C8A84A;font-size:17px;cursor:pointer;z-index:5;">\u2715</button>'
     + '<div style="text-align:center;font-family:\'Scheherazade New\',serif;font-size:40px;color:#E8CE8A;text-shadow:0 0 28px rgba(232,206,138,0.28);line-height:1.2;">اسْتِخَارَة</div>'
-    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:30px;color:#EADCB6;margin-top:8px;">Sal\u00e2t al-Istikh\u00e2ra</div>'
-    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:14px;color:#9c8c64;margin-top:6px;">Demander \u00e0 Allah de t\u2019orienter dans une d\u00e9cision</div>'
-    + '<div style="margin-top:22px;font-family:\'Cormorant Garamond\',serif;font-size:16px;line-height:1.6;color:rgba(240,234,214,0.8);text-align:center;">Deux unit\u00e9s de pri\u00e8re sur\u00e9rogatoire suivies d\u2019une invocation, pour demander \u00e0 Allah de t\u2019orienter vers ce qui est bon \u2014 dans toute affaire, petite ou grande. Le Proph\u00e8te \uFDFA l\u2019enseignait comme il enseignait une sourate.</div>'
+    + '<div style="text-align:center;font-family:\'Georgia\',serif;font-size:30px;color:#EADCB6;margin-top:8px;">Sal\u00e2t al-Istikh\u00e2ra</div>'
+    + '<div style="text-align:center;font-family:\'Georgia\',serif;font-style:italic;font-size:14px;color:#9c8c64;margin-top:6px;">Demander \u00e0 Allah de t\u2019orienter dans une d\u00e9cision</div>'
+    + '<div style="margin-top:22px;font-family:\'Georgia\',serif;font-size:16px;line-height:1.6;color:rgba(240,234,214,0.8);text-align:center;">Deux unit\u00e9s de pri\u00e8re sur\u00e9rogatoire suivies d\u2019une invocation, pour demander \u00e0 Allah de t\u2019orienter vers ce qui est bon \u2014 dans toute affaire, petite ou grande. Le Proph\u00e8te \uFDFA l\u2019enseignait comme il enseignait une sourate.</div>'
     + head('Comment faire')
     + step('1', 'Forme une intention claire sur ton affaire.')
     + step('2', 'Accomplis 2 rak\u02bba sur\u00e9rogatoires (en dehors des pri\u00e8res obligatoires).')
@@ -12917,12 +12917,12 @@ function openIstikhara() {
     + head('L\u2019invocation')
     + '<div style="padding:22px 18px;border-radius:16px;border:1px solid rgba(232,206,138,0.3);background:radial-gradient(120% 150% at 50% 0%,rgba(232,206,138,0.1),rgba(232,206,138,0.02) 72%);">'
       + '<div dir="rtl" style="font-family:\'Scheherazade New\',serif;font-size:20px;line-height:2.05;text-align:center;color:#F4ECD6;">اللَّهُمَّ إِنِّي أَسْتَخِيرُكَ بِعِلْمِكَ، وَأَسْتَقْدِرُكَ بِقُدْرَتِكَ، وَأَسْأَلُكَ مِنْ فَضْلِكَ الْعَظِيمِ، فَإِنَّكَ تَقْدِرُ وَلَا أَقْدِرُ، وَتَعْلَمُ وَلَا أَعْلَمُ، وَأَنْتَ عَلَّامُ الْغُيُوبِ. اللَّهُمَّ إِنْ كُنْتَ تَعْلَمُ أَنَّ هَذَا الْأَمْرَ خَيْرٌ لِي فِي دِينِي وَمَعَاشِي وَعَاقِبَةِ أَمْرِي فَاقْدُرْهُ لِي وَيَسِّرْهُ لِي ثُمَّ بَارِكْ لِي فِيهِ، وَإِنْ كُنْتَ تَعْلَمُ أَنَّ هَذَا الْأَمْرَ شَرٌّ لِي فِي دِينِي وَمَعَاشِي وَعَاقِبَةِ أَمْرِي فَاصْرِفْهُ عَنِّي وَاصْرِفْنِي عَنْهُ، وَاقْدُرْ لِيَ الْخَيْرَ حَيْثُ كَانَ ثُمَّ أَرْضِنِي بِهِ.</div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:18px;line-height:1.65;color:rgba(200,168,74,0.75);margin-top:16px;text-align:center;">All\u00e2humma inn\u00ee astakh\u00eeruka bi-\u2019ilmika, wa astaqdiruka bi-qudratika, wa as\u2019aluka min fadlika-l-\u2019az\u00eem, fa-innaka taqdiru wa l\u00e2 aqdiru, wa ta\u2019lamu wa l\u00e2 a\u2019lamu, wa anta \u2019all\u00e2mu-l-ghuy\u00fbb. All\u00e2humma in kunta ta\u2019lamu anna h\u00e2dha-l-amra khayrun l\u00ee f\u00ee d\u00een\u00ee wa ma\u2019\u00e2sh\u00ee wa \u2019\u00e2qibati amr\u00ee fa-qdurhu l\u00ee wa yassirhu l\u00ee thumma b\u00e2rik l\u00ee f\u00eehi, wa in kunta ta\u2019lamu anna h\u00e2dha-l-amra sharrun l\u00ee f\u00ee d\u00een\u00ee wa ma\u2019\u00e2sh\u00ee wa \u2019\u00e2qibati amr\u00ee fa-srifhu \u2019ann\u00ee wa-srifn\u00ee \u2019anhu, wa-qdur liya-l-khayra haythu k\u00e2na thumma ardin\u00ee bihi.</div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;line-height:1.6;color:rgba(240,234,214,0.78);margin-top:14px;text-align:center;">\u00d4 Allah, je Te demande de choisir pour moi par Ta science et de me rendre capable par Ta puissance, et je T\u2019implore de Ton immense gr\u00e2ce ; car Tu peux et je ne peux pas, Tu sais et je ne sais pas, et Tu es le Connaisseur des choses cach\u00e9es. \u00d4 Allah, si Tu sais que cette affaire est un bien pour moi dans ma religion, ma vie et l\u2019issue de mes affaires, d\u00e9cr\u00e8te-la-moi, facilite-la-moi et b\u00e9nis-la pour moi. Et si Tu sais qu\u2019elle est un mal pour moi dans tout cela, d\u00e9tourne-la de moi et d\u00e9tourne-moi d\u2019elle, et d\u00e9cr\u00e8te-moi le bien o\u00f9 qu\u2019il soit, puis fais que j\u2019en sois satisfait.</div>'
+      + '<div style="font-family:\'Georgia\',serif;font-style:italic;font-size:18px;line-height:1.65;color:rgba(200,168,74,0.75);margin-top:16px;text-align:center;">All\u00e2humma inn\u00ee astakh\u00eeruka bi-\u2019ilmika, wa astaqdiruka bi-qudratika, wa as\u2019aluka min fadlika-l-\u2019az\u00eem, fa-innaka taqdiru wa l\u00e2 aqdiru, wa ta\u2019lamu wa l\u00e2 a\u2019lamu, wa anta \u2019all\u00e2mu-l-ghuy\u00fbb. All\u00e2humma in kunta ta\u2019lamu anna h\u00e2dha-l-amra khayrun l\u00ee f\u00ee d\u00een\u00ee wa ma\u2019\u00e2sh\u00ee wa \u2019\u00e2qibati amr\u00ee fa-qdurhu l\u00ee wa yassirhu l\u00ee thumma b\u00e2rik l\u00ee f\u00eehi, wa in kunta ta\u2019lamu anna h\u00e2dha-l-amra sharrun l\u00ee f\u00ee d\u00een\u00ee wa ma\u2019\u00e2sh\u00ee wa \u2019\u00e2qibati amr\u00ee fa-srifhu \u2019ann\u00ee wa-srifn\u00ee \u2019anhu, wa-qdur liya-l-khayra haythu k\u00e2na thumma ardin\u00ee bihi.</div>'
+      + '<div style="font-family:\'Georgia\',serif;font-size:17px;line-height:1.6;color:rgba(240,234,214,0.78);margin-top:14px;text-align:center;">\u00d4 Allah, je Te demande de choisir pour moi par Ta science et de me rendre capable par Ta puissance, et je T\u2019implore de Ton immense gr\u00e2ce ; car Tu peux et je ne peux pas, Tu sais et je ne sais pas, et Tu es le Connaisseur des choses cach\u00e9es. \u00d4 Allah, si Tu sais que cette affaire est un bien pour moi dans ma religion, ma vie et l\u2019issue de mes affaires, d\u00e9cr\u00e8te-la-moi, facilite-la-moi et b\u00e9nis-la pour moi. Et si Tu sais qu\u2019elle est un mal pour moi dans tout cela, d\u00e9tourne-la de moi et d\u00e9tourne-moi d\u2019elle, et d\u00e9cr\u00e8te-moi le bien o\u00f9 qu\u2019il soit, puis fais que j\u2019en sois satisfait.</div>'
     + '</div>'
-    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:15px;color:rgba(200,168,74,0.6);margin-top:12px;">\u00c0 \u00ab cette affaire \u00bb, nomme ton besoin pr\u00e9cis.</div>'
-    + '<div style="font-size:15px;color:rgba(200,168,74,0.42);line-height:1.7;margin-top:22px;font-style:italic;font-family:\'Cormorant Garamond\',serif;">La r\u00e9ponse n\u2019est pas forc\u00e9ment un r\u00eave : elle se manifeste souvent par la facilitation des choses et l\u2019inclination du c\u0153ur \u2014 un r\u00eave n\u2019est pas une condition. Certains savants recommandent de r\u00e9citer al-K\u00e2fir\u00fbn puis al-Ikhl\u00e2s dans les deux rak\u02bba.</div>'
-    + '<div style="font-size:14px;color:rgba(200,168,74,0.42);line-height:1.7;margin-top:10px;font-style:italic;font-family:\'Cormorant Garamond\',serif;">Source : hadith de J\u00e2bir ibn \u02bbAbdill\u00e2h, Sahih al-Bukhari 1166.</div>'
+    + '<div style="text-align:center;font-family:\'Georgia\',serif;font-style:italic;font-size:15px;color:rgba(200,168,74,0.6);margin-top:12px;">\u00c0 \u00ab cette affaire \u00bb, nomme ton besoin pr\u00e9cis.</div>'
+    + '<div style="font-size:15px;color:rgba(200,168,74,0.42);line-height:1.7;margin-top:22px;font-style:italic;font-family:\'Georgia\',serif;">La r\u00e9ponse n\u2019est pas forc\u00e9ment un r\u00eave : elle se manifeste souvent par la facilitation des choses et l\u2019inclination du c\u0153ur \u2014 un r\u00eave n\u2019est pas une condition. Certains savants recommandent de r\u00e9citer al-K\u00e2fir\u00fbn puis al-Ikhl\u00e2s dans les deux rak\u02bba.</div>'
+    + '<div style="font-size:14px;color:rgba(200,168,74,0.42);line-height:1.7;margin-top:10px;font-style:italic;font-family:\'Georgia\',serif;">Source : hadith de J\u00e2bir ibn \u02bbAbdill\u00e2h, Sahih al-Bukhari 1166.</div>'
     + '</div>';
   document.body.appendChild(ov);
 }
@@ -12944,10 +12944,10 @@ function renderCalGrid() {
   var hijLabel = (_CONV_MONTHS[h1.m - 1] || '') + (h1.m !== hL.m ? ' \u2013 ' + (_CONV_MONTHS[hL.m - 1] || '') : '') + ' ' + hL.y;
   var header = '<div style="display:flex;align-items:center;justify-content:space-between;">'
     + '<button onclick="_calNav(-1)" aria-label="Mois pr\u00e9c\u00e9dent" style="width:38px;height:38px;border-radius:50%;border:1px solid rgba(200,168,74,0.25);background:transparent;color:#E8CE8A;font-size:18px;cursor:pointer;">\u2039</button>'
-    + '<div style="text-align:center;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:21px;color:#E8CE8A;text-transform:capitalize;line-height:1.1;">' + _CAL_GREG_MONTHS[month] + ' ' + year + '</div><div style="font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:13px;color:rgba(200,168,74,0.6);margin-top:2px;">' + hijLabel + ' H</div></div>'
+    + '<div style="text-align:center;"><div style="font-family:\'Georgia\',serif;font-size:21px;color:#E8CE8A;text-transform:capitalize;line-height:1.1;">' + _CAL_GREG_MONTHS[month] + ' ' + year + '</div><div style="font-family:\'Georgia\',serif;font-style:italic;font-size:13px;color:rgba(200,168,74,0.6);margin-top:2px;">' + hijLabel + ' H</div></div>'
     + '<button onclick="_calNav(1)" aria-label="Mois suivant" style="width:38px;height:38px;border-radius:50%;border:1px solid rgba(200,168,74,0.25);background:transparent;color:#E8CE8A;font-size:18px;cursor:pointer;">\u203a</button></div>';
   var wd = '<div style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin:16px 0 6px;">';
-  _CAL_WEEKDAYS.forEach(function(w) { wd += '<div style="text-align:center;font-size:11px;color:rgba(200,168,74,0.5);font-family:\'Cormorant Garamond\',serif;">' + w + '</div>'; });
+  _CAL_WEEKDAYS.forEach(function(w) { wd += '<div style="text-align:center;font-size:11px;color:rgba(200,168,74,0.5);font-family:\'Georgia\',serif;">' + w + '</div>'; });
   wd += '</div>';
   var cells = '<div style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;">';
   for (var i = 0; i < firstDow; i++) cells += '<div></div>';
@@ -12958,13 +12958,13 @@ function renderCalGrid() {
     var reco = !info.forbidden && info.labels.length > 0;
     cells += '<div style="aspect-ratio:1;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;'
       + (isToday ? 'border:1px solid rgba(232,206,138,0.6);background:radial-gradient(circle at 50% 35%,rgba(232,206,138,0.16),rgba(232,206,138,0.02));' : 'border:1px solid rgba(200,168,74,0.08);')
-      + '"><div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;color:' + (isToday ? '#F4ECD6' : 'rgba(240,234,214,0.85)') + ';line-height:1;">' + day + '</div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:10px;color:rgba(200,168,74,0.5);margin-top:1px;">' + h.d + '</div>'
+      + '"><div style="font-family:\'Georgia\',serif;font-size:16px;color:' + (isToday ? '#F4ECD6' : 'rgba(240,234,214,0.85)') + ';line-height:1;">' + day + '</div>'
+      + '<div style="font-family:\'Georgia\',serif;font-size:10px;color:rgba(200,168,74,0.5);margin-top:1px;">' + h.d + '</div>'
       + (reco ? '<div style="width:4px;height:4px;border-radius:50%;background:#E8CE8A;margin-top:2px;"></div>' : '<div style="height:6px;"></div>')
       + '</div>';
   }
   cells += '</div>';
-  var legend = '<div style="display:flex;align-items:center;justify-content:center;gap:7px;margin-top:16px;"><div style="width:5px;height:5px;border-radius:50%;background:#E8CE8A;"></div><span style="font-size:12px;color:rgba(200,168,74,0.6);font-style:italic;font-family:\'Cormorant Garamond\',serif;">Jour de je\u00fbne recommand\u00e9</span></div>';
+  var legend = '<div style="display:flex;align-items:center;justify-content:center;gap:7px;margin-top:16px;"><div style="width:5px;height:5px;border-radius:50%;background:#E8CE8A;"></div><span style="font-size:12px;color:rgba(200,168,74,0.6);font-style:italic;font-family:\'Georgia\',serif;">Jour de je\u00fbne recommand\u00e9</span></div>';
   var b = document.getElementById('cal-body');
   if (b) b.innerHTML = header + wd + cells + legend;
 }
@@ -12972,8 +12972,8 @@ function closeCalendrier() { var o = document.getElementById('calendrier-overlay
 function renderCalendrierCard() {
   return '<div onclick="openCalendrier()" style="position:relative;background:linear-gradient(165deg,#1a130b,#0d0a06);border:1px solid rgba(200,168,74,0.22);border-radius:16px;padding:15px 16px;margin-bottom:8px;display:flex;align-items:center;gap:14px;cursor:pointer;box-shadow:inset 0 1px 0 rgba(232,206,138,0.08),0 4px 16px rgba(0,0,0,0.35);">'
     + '<div style="flex-shrink:0;width:42px;height:42px;border-radius:50%;border:1px solid rgba(232,206,138,0.3);background:radial-gradient(circle at 50% 35%,rgba(232,206,138,0.16),rgba(232,206,138,0.02) 70%);display:flex;align-items:center;justify-content:center;"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#E8CE8A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/><circle cx="8" cy="14" r="0.6"/><circle cx="12" cy="14" r="0.6"/><circle cx="16" cy="14" r="0.6"/></svg></div>'
-    + '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;letter-spacing:0.02em;color:#E8CE8A;line-height:1.2;">Calendrier</div>'
-    + '<div style="font-size:14px;color:rgba(200,168,74,0.55);margin-top:3px;font-style:italic;font-family:\'Cormorant Garamond\',serif;">Le mois Hijri en un coup d\u2019\u0153il</div></div>'
+    + '<div style="flex:1;min-width:0;"><div style="font-family:\'Georgia\',serif;font-size:18px;letter-spacing:0.02em;color:#E8CE8A;line-height:1.2;">Calendrier</div>'
+    + '<div style="font-size:14px;color:rgba(200,168,74,0.55);margin-top:3px;font-style:italic;font-family:\'Georgia\',serif;">Le mois Hijri en un coup d\u2019\u0153il</div></div>'
     + '<div style="color:rgba(200,168,74,0.3);font-size:18px;">\u203a</div></div>';
 }
 function openCalendrier() {
@@ -12984,10 +12984,10 @@ function openCalendrier() {
   ov.style.cssText = 'position:fixed;inset:0;z-index:3200;overflow-y:auto;-webkit-overflow-scrolling:touch;background:radial-gradient(120% 80% at 50% -10%,#1c140b 0%,#0b0805 55%,#070504 100%);';
   ov.innerHTML = '<div style="max-width:440px;margin:0 auto;padding:calc(env(safe-area-inset-top,0px) + 40px) 22px calc(48px + env(safe-area-inset-bottom));">'
     + '<button onclick="closeCalendrier()" aria-label="Fermer" style="position:fixed;top:calc(env(safe-area-inset-top,0px) + 20px);right:20px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(200,168,74,0.28);background:rgba(20,15,8,0.6);color:#C8A84A;font-size:17px;cursor:pointer;z-index:5;">\u2715</button>'
-    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-weight:300;font-size:30px;letter-spacing:.05em;color:#E8CE8A;line-height:1;">Calendrier</div>'
-    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:16px;color:rgba(232,217,188,0.4);margin-top:6px;margin-bottom:24px;margin-bottom:24px;">Le mois en un coup d\u2019\u0153il</div>'
+    + '<div style="text-align:center;font-family:\'Georgia\',serif;font-weight:300;font-size:30px;letter-spacing:.05em;color:#E8CE8A;line-height:1;">Calendrier</div>'
+    + '<div style="text-align:center;font-family:\'Georgia\',serif;font-style:italic;font-size:16px;color:rgba(232,217,188,0.4);margin-top:6px;margin-bottom:24px;margin-bottom:24px;">Le mois en un coup d\u2019\u0153il</div>'
     + '<div id="cal-body"></div>'
-    + '<div style="font-size:11px;color:rgba(200,168,74,0.42);line-height:1.7;margin-top:22px;font-style:italic;font-family:\'Cormorant Garamond\',serif;text-align:center;">Le petit chiffre indique la date Hijri. Les dates peuvent varier d\u2019un jour selon l\u2019observation de la lune.</div>'
+    + '<div style="font-size:11px;color:rgba(200,168,74,0.42);line-height:1.7;margin-top:22px;font-style:italic;font-family:\'Georgia\',serif;text-align:center;">Le petit chiffre indique la date Hijri. Les dates peuvent varier d\u2019un jour selon l\u2019observation de la lune.</div>'
     + '</div>';
   document.body.appendChild(ov);
   renderCalGrid();
@@ -13219,51 +13219,51 @@ function renderPM() {
   if (_pmStep === 'intro') {
     html = '<div style="padding-top:8vh;text-align:center;">'
       + '<div style="font-family:\'Scheherazade New\',serif;font-size:46px;color:#E8CE8A;text-shadow:0 0 30px rgba(232,206,138,0.3);line-height:1.1;">\u062E\u064F\u0634\u064F\u0648\u0639</div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-weight:300;font-size:30px;letter-spacing:.05em;color:#EADCB6;margin-top:10px;">Prier mieux</div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:19px;line-height:1.6;color:rgba(200,168,74,0.7);margin:22px auto 0;max-width:330px;">Ta pri\u00e8re te p\u00e8se, file trop vite, ou sonne creux ? Ce n\u2019est pas un manque de foi \u2014 c\u2019est un c\u0153ur fatigu\u00e9. Pose-toi une minute, on va trouver ensemble ce qui bloque.</div>'
-      + '<button onclick="_pmGo(\'symptom\')" style="margin-top:34px;padding:14px 40px;border-radius:30px;border:1px solid rgba(232,206,138,0.5);background:linear-gradient(180deg,rgba(232,206,138,0.16),rgba(232,206,138,0.04));color:#E8CE8A;font-family:\'Cormorant Garamond\',serif;font-size:17px;letter-spacing:.04em;cursor:pointer;">Commencer</button>'
-      + '<div onclick="_pmGo(\'conseil\')" style="margin-top:16px;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:15px;color:rgba(200,168,74,0.55);cursor:pointer;"><span style="text-decoration:underline;text-underline-offset:3px;font-size:18px;">La science du c\u0153ur</span></div>'
+      + '<div style="font-family:\'Georgia\',serif;font-weight:300;font-size:30px;letter-spacing:.05em;color:#EADCB6;margin-top:10px;">Prier mieux</div>'
+      + '<div style="font-family:\'Georgia\',serif;font-style:italic;font-size:19px;line-height:1.6;color:rgba(200,168,74,0.7);margin:22px auto 0;max-width:330px;">Ta pri\u00e8re te p\u00e8se, file trop vite, ou sonne creux ? Ce n\u2019est pas un manque de foi \u2014 c\u2019est un c\u0153ur fatigu\u00e9. Pose-toi une minute, on va trouver ensemble ce qui bloque.</div>'
+      + '<button onclick="_pmGo(\'symptom\')" style="margin-top:34px;padding:14px 40px;border-radius:30px;border:1px solid rgba(232,206,138,0.5);background:linear-gradient(180deg,rgba(232,206,138,0.16),rgba(232,206,138,0.04));color:#E8CE8A;font-family:\'Georgia\',serif;font-size:17px;letter-spacing:.04em;cursor:pointer;">Commencer</button>'
+      + '<div onclick="_pmGo(\'conseil\')" style="margin-top:16px;font-family:\'Georgia\',serif;font-style:italic;font-size:15px;color:rgba(200,168,74,0.55);cursor:pointer;"><span style="text-decoration:underline;text-underline-offset:3px;font-size:18px;">La science du c\u0153ur</span></div>'
       + '</div>';
   } else if (_pmStep === 'symptom') {
-    html = '<div style="padding-top:5vh;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:21px;line-height:1.5;color:#EADCB6;text-align:center;margin-bottom:26px;">L\u00e0, maintenant, quand tu te l\u00e8ves pour prier\u2026 qu\u2019est-ce qui p\u00e8se le plus ?</div>';
+    html = '<div style="padding-top:5vh;"><div style="font-family:\'Georgia\',serif;font-size:21px;line-height:1.5;color:#EADCB6;text-align:center;margin-bottom:26px;">L\u00e0, maintenant, quand tu te l\u00e8ves pour prier\u2026 qu\u2019est-ce qui p\u00e8se le plus ?</div>';
     _PM_PROFILES.forEach(function(p, i) {
-      html += '<button onclick="_pmPick(' + i + ')" style="display:block;width:100%;box-sizing:border-box;text-align:left;margin-bottom:11px;padding:16px 18px;border-radius:15px;border:1px solid rgba(200,168,74,0.22);background:linear-gradient(165deg,#1a130b,#0d0a06);color:#F0EADB;font-family:\'Cormorant Garamond\',serif;font-size:16px;line-height:1.4;cursor:pointer;box-shadow:inset 0 1px 0 rgba(232,206,138,0.06);">' + p.sym + '</button>';
+      html += '<button onclick="_pmPick(' + i + ')" style="display:block;width:100%;box-sizing:border-box;text-align:left;margin-bottom:11px;padding:16px 18px;border-radius:15px;border:1px solid rgba(200,168,74,0.22);background:linear-gradient(165deg,#1a130b,#0d0a06);color:#F0EADB;font-family:\'Georgia\',serif;font-size:16px;line-height:1.4;cursor:pointer;box-shadow:inset 0 1px 0 rgba(232,206,138,0.06);">' + p.sym + '</button>';
     });
     html += '</div>';
   } else if (_pmStep === 'reflect') {
     var p = _PM_PROFILES[_pmIdx];
     html = '<div style="padding-top:8vh;text-align:center;">'
       + '<div style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:rgba(200,168,74,0.5);margin-bottom:18px;">Creusons une seconde</div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:19px;line-height:1.6;color:#EADCB6;max-width:360px;margin:0 auto;">' + p.reflect + '</div>'
-      + '<button onclick="_pmConfirm()" style="margin-top:32px;padding:14px 38px;border-radius:30px;border:1px solid rgba(232,206,138,0.5);background:linear-gradient(180deg,rgba(232,206,138,0.16),rgba(232,206,138,0.04));color:#E8CE8A;font-family:\'Cormorant Garamond\',serif;font-size:17px;cursor:pointer;">Oui\u2026 c\u2019est \u00e7a</button>'
-      + '<div onclick="_pmGo(\'symptom\')" style="margin-top:18px;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:14px;color:rgba(200,168,74,0.5);cursor:pointer;">Pas vraiment, c\u2019est autre chose</div>'
+      + '<div style="font-family:\'Georgia\',serif;font-size:19px;line-height:1.6;color:#EADCB6;max-width:360px;margin:0 auto;">' + p.reflect + '</div>'
+      + '<button onclick="_pmConfirm()" style="margin-top:32px;padding:14px 38px;border-radius:30px;border:1px solid rgba(232,206,138,0.5);background:linear-gradient(180deg,rgba(232,206,138,0.16),rgba(232,206,138,0.04));color:#E8CE8A;font-family:\'Georgia\',serif;font-size:17px;cursor:pointer;">Oui\u2026 c\u2019est \u00e7a</button>'
+      + '<div onclick="_pmGo(\'symptom\')" style="margin-top:18px;font-family:\'Georgia\',serif;font-style:italic;font-size:14px;color:rgba(200,168,74,0.5);cursor:pointer;">Pas vraiment, c\u2019est autre chose</div>'
       + '</div>';
   } else if (_pmStep === 'boost') {
     var pb = _PM_PROFILES[_pmIdx];
     var _boost = Array.isArray(pb.boost) ? pb.boost[new Date().getDay() % pb.boost.length] : pb.boost;
     html = '<div style="padding-top:6vh;text-align:center;">'
       + '<div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:24px;"><div style="width:46px;height:1px;background:linear-gradient(90deg,transparent,rgba(200,168,74,0.45));"></div><div style="width:6px;height:6px;border:1px solid rgba(200,168,74,0.55);transform:rotate(45deg);"></div><div style="width:46px;height:1px;background:linear-gradient(90deg,rgba(200,168,74,0.45),transparent);"></div></div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;line-height:1.72;color:#F4ECD6;max-width:380px;margin:0 auto;">' + _boost + '</div>'
+      + '<div style="font-family:\'Georgia\',serif;font-size:20px;line-height:1.72;color:#F4ECD6;max-width:380px;margin:0 auto;">' + _boost + '</div>'
       + '<div style="margin:28px auto 0;max-width:380px;padding:16px;background:rgba(200,168,74,0.06);border:1px solid rgba(200,168,74,0.18);border-radius:14px;text-align:left;">'
       + '<div style="font-size:10px;letter-spacing:2px;color:rgba(200,168,74,0.5);text-transform:uppercase;margin-bottom:8px;">\u2726 Avant de te lever</div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;color:rgba(240,234,214,0.85);line-height:1.6;">' + pb.technique + '</div>'
+      + '<div style="font-family:\'Georgia\',serif;font-size:16px;color:rgba(240,234,214,0.85);line-height:1.6;">' + pb.technique + '</div>'
       + '</div>'
       + '<div style="margin:16px auto 0;max-width:380px;padding:16px;background:rgba(200,168,74,0.06);border:1px solid rgba(200,168,74,0.18);border-radius:14px;text-align:center;">'
       + '<div style="font-size:10px;letter-spacing:2px;color:rgba(200,168,74,0.5);text-transform:uppercase;margin-bottom:10px;">\u2726 Du\'â</div>'
       + '<div style="font-family:\'Scheherazade New\',serif;font-size:22px;color:#C8A84A;direction:rtl;margin-bottom:10px;line-height:1.6;">' + pb.arabic_dua + '</div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(240,234,214,0.7);line-height:1.6;margin-bottom:6px;">' + pb.duaFr + '</div>'
+      + '<div style="font-family:\'Georgia\',serif;font-size:15px;font-style:italic;color:rgba(240,234,214,0.7);line-height:1.6;margin-bottom:6px;">' + pb.duaFr + '</div>'
       + '<div style="font-size:11px;color:rgba(200,168,74,0.45);">\u2014 ' + pb.duaSource + '</div>'
       + '</div>'
-      + '<button onclick="_pmGo(\'retour\')" style="margin-top:32px;padding:15px 44px;border-radius:30px;border:1px solid #E8CE8A;background:linear-gradient(180deg,#F8EAC2,#D4AF37);color:#1a130b;font-family:\'Cormorant Garamond\',serif;font-size:17px;letter-spacing:.03em;cursor:pointer;">Je vais prier</button>'
-      + '<div onclick="_pmGo(\'symptom\')" style="margin-top:18px;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:14px;color:rgba(200,168,74,0.5);cursor:pointer;">\u2039 Recommencer</div>'
+      + '<button onclick="_pmGo(\'retour\')" style="margin-top:32px;padding:15px 44px;border-radius:30px;border:1px solid #E8CE8A;background:linear-gradient(180deg,#F8EAC2,#D4AF37);color:#1a130b;font-family:\'Georgia\',serif;font-size:17px;letter-spacing:.03em;cursor:pointer;">Je vais prier</button>'
+      + '<div onclick="_pmGo(\'symptom\')" style="margin-top:18px;font-family:\'Georgia\',serif;font-style:italic;font-size:14px;color:rgba(200,168,74,0.5);cursor:pointer;">\u2039 Recommencer</div>'
       + '</div>';
   } else if (_pmStep === 'retour') {
     html = '<div style="padding-top:10vh;text-align:center;">'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:24px;color:#F4ECD6;margin-bottom:32px;">Comment s\'est pass\u00e9e ta pri\u00e8re ?</div>'
+      + '<div style="font-family:\'Georgia\',serif;font-size:24px;color:#F4ECD6;margin-bottom:32px;">Comment s\'est pass\u00e9e ta pri\u00e8re ?</div>'
       + '<div style="display:flex;flex-direction:column;gap:12px;max-width:320px;margin:0 auto;">'
-      + '<button onclick="_pmRetour(0)" style="padding:16px;border-radius:14px;border:1px solid rgba(200,168,74,0.3);background:rgba(200,168,74,0.06);color:#F4ECD6;font-family:\'Cormorant Garamond\',serif;font-size:17px;cursor:pointer;">Elle m\'a apais\u00e9</button>'
-      + '<button onclick="_pmRetour(1)" style="padding:16px;border-radius:14px;border:1px solid rgba(200,168,74,0.3);background:rgba(200,168,74,0.06);color:#F4ECD6;font-family:\'Cormorant Garamond\',serif;font-size:17px;cursor:pointer;">Ni bien ni mal</button>'
-      + '<button onclick="_pmRetour(2)" style="padding:16px;border-radius:14px;border:1px solid rgba(200,168,74,0.3);background:rgba(200,168,74,0.06);color:#F4ECD6;font-family:\'Cormorant Garamond\',serif;font-size:17px;cursor:pointer;">Toujours difficile</button>'
+      + '<button onclick="_pmRetour(0)" style="padding:16px;border-radius:14px;border:1px solid rgba(200,168,74,0.3);background:rgba(200,168,74,0.06);color:#F4ECD6;font-family:\'Georgia\',serif;font-size:17px;cursor:pointer;">Elle m\'a apais\u00e9</button>'
+      + '<button onclick="_pmRetour(1)" style="padding:16px;border-radius:14px;border:1px solid rgba(200,168,74,0.3);background:rgba(200,168,74,0.06);color:#F4ECD6;font-family:\'Georgia\',serif;font-size:17px;cursor:pointer;">Ni bien ni mal</button>'
+      + '<button onclick="_pmRetour(2)" style="padding:16px;border-radius:14px;border:1px solid rgba(200,168,74,0.3);background:rgba(200,168,74,0.06);color:#F4ECD6;font-family:\'Georgia\',serif;font-size:17px;cursor:pointer;">Toujours difficile</button>'
       + '</div>'
       + '</div>';
   } else if (_pmStep === 'retour-msg') {
@@ -13273,18 +13273,18 @@ function renderPM() {
       'La difficult\u00e9 n\'annule pas la r\u00e9compense \u2014 elle la multiplie. Reviens demain. Chaque pri\u00e8re difficile accomplie est une preuve de foi que les pri\u00e8res faciles ne peuvent pas donner.'
     ];
     html = '<div style="padding-top:10vh;text-align:center;">'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;line-height:1.72;color:#F4ECD6;max-width:360px;margin:0 auto 36px;">' + _msgs[_pmRetourIdx] + '</div>'
-      + '<button onclick="closePrierMieux()" style="padding:15px 44px;border-radius:30px;border:1px solid rgba(200,168,74,0.4);background:transparent;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:16px;cursor:pointer;">Fermer</button>'
+      + '<div style="font-family:\'Georgia\',serif;font-size:20px;line-height:1.72;color:#F4ECD6;max-width:360px;margin:0 auto 36px;">' + _msgs[_pmRetourIdx] + '</div>'
+      + '<button onclick="closePrierMieux()" style="padding:15px 44px;border-radius:30px;border:1px solid rgba(200,168,74,0.4);background:transparent;color:#C8A84A;font-family:\'Georgia\',serif;font-size:16px;cursor:pointer;">Fermer</button>'
       + '</div>';
   } else if (_pmStep === 'conseil') {
     var _ci = new Date().getDate() % _PM_CONSEILS.length;
     var _c = _PM_CONSEILS[_ci];
     html = '<div style="padding-top:8vh;text-align:center;">'
       + '<div style="font-size:10px;letter-spacing:3px;color:rgba(200,168,74,0.5);text-transform:uppercase;margin-bottom:20px;">\u2726 Conseil du jour</div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;color:#E8CE8A;margin-bottom:24px;">' + _c.titre + '</div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;line-height:1.75;color:#F4ECD6;max-width:360px;margin:0 auto 24px;padding:0 16px;">' + _c.texte + '</div>'
+      + '<div style="font-family:\'Georgia\',serif;font-size:22px;color:#E8CE8A;margin-bottom:24px;">' + _c.titre + '</div>'
+      + '<div style="font-family:\'Georgia\',serif;font-size:18px;font-style:italic;line-height:1.75;color:#F4ECD6;max-width:360px;margin:0 auto 24px;padding:0 16px;">' + _c.texte + '</div>'
       + '<div style="font-size:13px;color:rgba(200,168,74,0.55);">\u2014 ' + _c.auteur + ' \u00b7 <span style="font-style:italic;">' + _c.source + '</span></div>'
-      + '<div onclick="_pmGo(\'intro\')" style="margin-top:32px;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:15px;color:rgba(200,168,74,0.5);cursor:pointer;">\u2039 Retour</div>'
+      + '<div onclick="_pmGo(\'intro\')" style="margin-top:32px;font-family:\'Georgia\',serif;font-style:italic;font-size:15px;color:rgba(200,168,74,0.5);cursor:pointer;">\u2039 Retour</div>'
       + '</div>';
   }
   b.innerHTML = html;
@@ -13303,8 +13303,8 @@ function openPrierMieux() {
 function _prierMieuxHomeEntry() {
   return '<div onclick="openPrierMieux()" style="background:rgba(200,168,74,0.06);border:0.5px solid rgba(200,168,74,0.2);border-radius:18px;padding:14px 16px;margin-bottom:10px;display:flex;align-items:center;gap:12px;cursor:pointer;">'
     + '<div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;border:0.5px solid rgba(200,168,74,0.4);display:flex;align-items:center;justify-content:center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8A84A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c1.8 3.6 5 4.8 5 8.5a5 5 0 0 1-10 0c0-1.8.9-3 2-4 .2 1.2 1 2 2 2.2-.5-2.8-1-4.5 1-8.7z"/></svg></div>'
-    + '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:400;color:#e8d9bc;line-height:1.2;">Prier mieux</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(232,217,188,0.4);margin-top:2px;">Quand la pri\u00e8re p\u00e8se, ranime la flamme</div></div>'
+    + '<div style="flex:1;min-width:0;"><div style="font-family:\'Georgia\',serif;font-size:18px;font-weight:400;color:#e8d9bc;line-height:1.2;">Prier mieux</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:14px;font-style:italic;color:rgba(232,217,188,0.4);margin-top:2px;">Quand la pri\u00e8re p\u00e8se, ranime la flamme</div></div>'
     + '<div style="color:rgba(200,168,74,0.5);font-size:14px;margin-left:auto;">\u203a</div></div>';
 }
 window.openPrierMieux = openPrierMieux;
@@ -13316,8 +13316,8 @@ window._pmRetour = _pmRetour;
 
 function renderRepereHub() {
   return '<div style="padding:calc(env(safe-area-inset-top,0px) + 30px) 18px 40px;max-width:480px;margin:0 auto;">'
-    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:#C8A84A;margin-bottom:6px;">Rep\u00e8res</div>'
-    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:14px;color:rgba(200,168,74,0.55);margin-bottom:26px;">Les outils qui orientent ton adoration</div>'
+    + '<div style="text-align:center;font-family:\'Georgia\',serif;font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:#C8A84A;margin-bottom:6px;">Rep\u00e8res</div>'
+    + '<div style="text-align:center;font-family:\'Georgia\',serif;font-style:italic;font-size:14px;color:rgba(200,168,74,0.55);margin-bottom:26px;">Les outils qui orientent ton adoration</div>'
     + renderZakatCard()
     + renderZakatFitrCard()
     + renderFidyaCard()
@@ -13328,8 +13328,8 @@ function renderRepereHub() {
 function _repereJeuneCard() {
   return '<div onclick="openJeune()" style="position:relative;background:linear-gradient(165deg,#1a130b,#0d0a06);border:1px solid rgba(200,168,74,0.22);border-radius:16px;padding:15px 16px;margin-bottom:8px;display:flex;align-items:center;gap:14px;cursor:pointer;box-shadow:inset 0 1px 0 rgba(232,206,138,0.08),0 4px 16px rgba(0,0,0,0.35);">'
     + '<div style="flex-shrink:0;width:42px;height:42px;border-radius:50%;border:1px solid rgba(232,206,138,0.3);background:radial-gradient(circle at 50% 35%,rgba(232,206,138,0.16),rgba(232,206,138,0.02) 70%);display:flex;align-items:center;justify-content:center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8CE8A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M17 4a8 8 0 1 0 3 13.5A6.5 6.5 0 0 1 17 4z"/></svg></div>'
-    + '<div style="flex:1;min-width:0;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;letter-spacing:0.02em;color:#E8CE8A;line-height:1.2;">Je\u00fbne</div>'
-    + '<div style="font-size:14px;color:rgba(200,168,74,0.55);margin-top:3px;font-style:italic;font-family:\'Cormorant Garamond\',serif;">Ramadan & je\u00fbnes sur\u00e9rogatoires</div></div></div>';
+    + '<div style="flex:1;min-width:0;"><div style="font-family:\'Georgia\',serif;font-size:18px;letter-spacing:0.02em;color:#E8CE8A;line-height:1.2;">Je\u00fbne</div>'
+    + '<div style="font-size:14px;color:rgba(200,168,74,0.55);margin-top:3px;font-style:italic;font-family:\'Georgia\',serif;">Ramadan & je\u00fbnes sur\u00e9rogatoires</div></div></div>';
 }
 window.v2GoRepere = v2GoRepere;
 window.renderRepereHub = renderRepereHub;
@@ -13566,7 +13566,7 @@ function openNiyyahMenu() {
   backdrop.onclick = function(e) { if (e.target === backdrop) closeNiyyahMenu(); };
   backdrop.innerHTML = '<div class="niyyah-menu-panel">'
     + '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;"><div style="font-family:var(--serif);font-size:20px;color:#C8A84A;">Niyyah</div><button onclick="closeNiyyahMenu()" aria-label="Fermer le menu" style="background:none;border:none;color:var(--t3);font-size:22px;cursor:pointer;min-width:44px;min-height:44px;">\u2715</button></div>'
-    + '<div onclick="closeNiyyahMenu();openFreemium(\'default\');" style="display:flex;align-items:center;gap:10px;padding:14px 16px;margin-bottom:14px;border-radius:14px;border:1px solid rgba(200,168,75,0.35);background:linear-gradient(180deg,rgba(200,168,74,0.12),rgba(138,106,31,0.05));cursor:pointer;"><span style="font-family:\'Cormorant Garamond\',var(--serif);font-weight:600;font-size:16px;color:#EBD79A;">Niyyah Premium</span></div>'
+    + '<div onclick="closeNiyyahMenu();openFreemium(\'default\');" style="display:flex;align-items:center;gap:10px;padding:14px 16px;margin-bottom:14px;border-radius:14px;border:1px solid rgba(200,168,75,0.35);background:linear-gradient(180deg,rgba(200,168,74,0.12),rgba(138,106,31,0.05));cursor:pointer;"><span style="font-family:\'Georgia\',var(--serif);font-weight:600;font-size:16px;color:#EBD79A;">Niyyah Premium</span></div>'
     /* Langue masquée pour beta FR — réactiver quand EN/AR prêts
     + '<div class="niyyah-menu-section">Langue</div>'
     + '<div class="niyyah-menu-item" onclick="v2SetLanguage(\'fr\');closeNiyyahMenu()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>' + (V2_LANG === 'fr' ? '<strong>Fran\u00e7ais</strong>' : 'Fran\u00e7ais') + '</div>'
@@ -13634,12 +13634,12 @@ function v2OpenSettings() {
   sheet.id = 'v2-settings-sheet';
   sheet.style.cssText = 'position:fixed;inset:0;background:rgba(10,10,10,0.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:3000;display:flex;align-items:flex-end;justify-content:center;' + (window._reducedMotion ? '' : 'animation:backdropV2 0.3s ease forwards;');
   const ramadanActive = typeof ramadanState !== 'undefined' && ramadanState.active;
-  const debugSection = NIYYAH_DEBUG ? '<div style="margin-top:14px;background:#1a1a1a;border:1px solid rgba(255,255,255,0.05);border-radius:12px;padding:16px;"><div style="font-size:12px;letter-spacing:0.28em;color:rgba(255,255,255,0.55);text-transform:uppercase;font-family:Cormorant Garamond,serif;margin-bottom:10px;text-align:center;">🔧 DEBUG</div><button onclick="safeSetItem(\'niyyah_regarde_available_today\',\'true\');showToast(\'Regarde active\');document.getElementById(\'v2-settings-sheet\').remove();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);font-size:12px;cursor:pointer;margin-bottom:8px;">[DEBUG] Activer Regarde</button><button onclick="document.getElementById(\'v2-settings-sheet\').remove();regardeOpen();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);font-size:15px;cursor:pointer;">[DEBUG] Lancer Regarde maintenant</button><button onclick="document.getElementById(\'v2-settings-sheet\').remove();openFinJournee();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);font-size:12px;cursor:pointer;margin-top:8px;">[DEBUG] Forcer Fin de Journée</button><button onclick="safeRemoveItem(\'niyyah_tafakkur_first_ever\');safeRemoveItem(\'niyyah_tafakkur_recit_eligible\');safeRemoveItem(\'niyyah_tafakkur_lu_\'+todayKey());showToast(\'Tafakkur reset\');document.getElementById(\'v2-settings-sheet\').remove();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);font-size:12px;cursor:pointer;margin-top:8px;">[DEBUG] Reset Tafakkur (1ere seance)</button></div>' : '';
+  const debugSection = NIYYAH_DEBUG ? '<div style="margin-top:14px;background:#1a1a1a;border:1px solid rgba(255,255,255,0.05);border-radius:12px;padding:16px;"><div style="font-size:12px;letter-spacing:0.28em;color:rgba(255,255,255,0.55);text-transform:uppercase;font-family:Georgia,serif;margin-bottom:10px;text-align:center;">🔧 DEBUG</div><button onclick="safeSetItem(\'niyyah_regarde_available_today\',\'true\');showToast(\'Regarde active\');document.getElementById(\'v2-settings-sheet\').remove();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);font-size:12px;cursor:pointer;margin-bottom:8px;">[DEBUG] Activer Regarde</button><button onclick="document.getElementById(\'v2-settings-sheet\').remove();regardeOpen();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);font-size:15px;cursor:pointer;">[DEBUG] Lancer Regarde maintenant</button><button onclick="document.getElementById(\'v2-settings-sheet\').remove();openFinJournee();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);font-size:12px;cursor:pointer;margin-top:8px;">[DEBUG] Forcer Fin de Journée</button><button onclick="safeRemoveItem(\'niyyah_tafakkur_first_ever\');safeRemoveItem(\'niyyah_tafakkur_recit_eligible\');safeRemoveItem(\'niyyah_tafakkur_lu_\'+todayKey());showToast(\'Tafakkur reset\');document.getElementById(\'v2-settings-sheet\').remove();" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);font-size:12px;cursor:pointer;margin-top:8px;">[DEBUG] Reset Tafakkur (1ere seance)</button></div>' : '';
   sheet.innerHTML = `
     <div style="width:100%;max-width:480px;max-height:calc(100vh - env(safe-area-inset-top,0px));overflow-y:auto;background:#111;border-radius:22px 22px 0 0;padding:calc(env(safe-area-inset-top,0px) + 26px) 22px calc(32px + env(safe-area-inset-bottom));border-top:1px solid rgba(212,175,55,0.14);animation:sheetV2 0.4s cubic-bezier(0.23,1,0.32,1) forwards;direction:${T.dir};">
       <div style="width:38px;height:3px;background:rgba(255,255,255,0.1);border-radius:2px;margin:0 auto 22px;"></div>
-      <div style="font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:#D4AF37;text-align:center;margin-bottom:22px;">${T.settings_title}</div>
-      ${isPremium() ? '<div style="background:linear-gradient(135deg,rgba(232,206,138,0.15),rgba(201,162,74,0.05));border:1px solid rgba(232,206,138,0.35);border-radius:14px;padding:13px 16px;margin-bottom:18px;display:flex;align-items:center;justify-content:center;gap:9px;box-shadow:0 0 24px rgba(232,206,138,0.08);"><span style="color:#E8CE8A;font-size:15px;">\u2726</span><span style="font-family:\'Cormorant Garamond\',serif;font-size:15px;letter-spacing:1.5px;color:#E8CE8A;">Niyyah+ actif</span><span style="color:#E8CE8A;font-size:15px;">\u2726</span></div>' : ''}
+      <div style="font-family:'Georgia',serif;font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:#D4AF37;text-align:center;margin-bottom:22px;">${T.settings_title}</div>
+      ${isPremium() ? '<div style="background:linear-gradient(135deg,rgba(232,206,138,0.15),rgba(201,162,74,0.05));border:1px solid rgba(232,206,138,0.35);border-radius:14px;padding:13px 16px;margin-bottom:18px;display:flex;align-items:center;justify-content:center;gap:9px;box-shadow:0 0 24px rgba(232,206,138,0.08);"><span style="color:#E8CE8A;font-size:15px;">\u2726</span><span style="font-family:\'Georgia\',serif;font-size:15px;letter-spacing:1.5px;color:#E8CE8A;">Niyyah+ actif</span><span style="color:#E8CE8A;font-size:15px;">\u2726</span></div>' : ''}
 
       ${''}
       ${/* LANGUE masquée pour beta FR — réactiver quand EN/AR prêts */ ''}
@@ -13650,7 +13650,7 @@ function v2OpenSettings() {
         <div id="settings-orientation-current" style="font-family:var(--serif); font-size:16px; color:#E5E0DC; margin-bottom:4px;"></div>
         <div style="font-size:12px; color:rgba(200,168,75,0.5); font-style:italic;">${t('settings_orientation_change')} →</div>
       </div>
-      ${_cheminInfo ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:#B5A685;text-align:center;margin-bottom:16px;line-height:1.5;">' + _cheminInfo + '</div>' : ''}
+      ${_cheminInfo ? '<div style="font-family:\'Georgia\',serif;font-size:13px;font-style:italic;color:#B5A685;text-align:center;margin-bottom:16px;line-height:1.5;">' + _cheminInfo + '</div>' : ''}
 
       <div style="background:#1a1a1a; border-radius:14px; padding:16px; margin-bottom:16px; cursor:pointer;" onclick="replayOnboarding()">
         <div style="font-size:12px; letter-spacing:2px; color:#C8A84A; opacity:0.7; text-transform:uppercase; margin-bottom:8px;">${t('settings_replay_title')}</div>
@@ -13731,32 +13731,32 @@ function v2OpenSettings() {
 
       <div style="margin-top:14px;background:#1a1a1a;border:1px solid rgba(200,168,75,0.15);border-radius:12px;padding:16px;text-align:center;">
         ${isPremium()
-          ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#C8A84A;margin-bottom:10px;">\u2726 Premium actif</div><button onclick="setPremium(false);location.reload();" style="padding:6px 16px;border-radius:8px;border:1px solid rgba(255,255,255,0.1);background:none;color:rgba(255,255,255,0.35);font-size:15px;cursor:pointer;">D\u00e9sactiver</button>'
-          : '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;color:#C8A84A;margin-bottom:12px;">\u2726 Niyyah Premium</div><div style="display:flex;gap:8px;justify-content:center;"><input id="premium-code-input" type="text" placeholder="Entrer votre code" style="flex:1;max-width:200px;padding:10px 14px;border-radius:10px;border:1px solid rgba(200,168,75,0.3);background:rgba(200,168,75,0.04);color:#E5E0DC;font-family:\'Cormorant Garamond\',serif;font-size:14px;outline:none;"><button onclick="var c=document.getElementById(\'premium-code-input\');if(unlockPremium(c.value)){v2ShowToast(\'Premium activ\\u00e9 \\u2726\');setTimeout(function(){location.reload();},1200);}else{v2ShowToast(\'Code invalide\');}" style="padding:10px 18px;border-radius:10px;border:none;background:#C8A84A;color:#2C2E32;font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:600;cursor:pointer;">Activer</button></div>'
+          ? '<div style="font-family:\'Georgia\',serif;font-size:16px;font-style:italic;color:#C8A84A;margin-bottom:10px;">\u2726 Premium actif</div><button onclick="setPremium(false);location.reload();" style="padding:6px 16px;border-radius:8px;border:1px solid rgba(255,255,255,0.1);background:none;color:rgba(255,255,255,0.35);font-size:15px;cursor:pointer;">D\u00e9sactiver</button>'
+          : '<div style="font-family:\'Georgia\',serif;font-size:16px;color:#C8A84A;margin-bottom:12px;">\u2726 Niyyah Premium</div><div style="display:flex;gap:8px;justify-content:center;"><input id="premium-code-input" type="text" placeholder="Entrer votre code" style="flex:1;max-width:200px;padding:10px 14px;border-radius:10px;border:1px solid rgba(200,168,75,0.3);background:rgba(200,168,75,0.04);color:#E5E0DC;font-family:\'Georgia\',serif;font-size:14px;outline:none;"><button onclick="var c=document.getElementById(\'premium-code-input\');if(unlockPremium(c.value)){v2ShowToast(\'Premium activ\\u00e9 \\u2726\');setTimeout(function(){location.reload();},1200);}else{v2ShowToast(\'Code invalide\');}" style="padding:10px 18px;border-radius:10px;border:none;background:#C8A84A;color:#2C2E32;font-family:\'Georgia\',serif;font-size:14px;font-weight:600;cursor:pointer;">Activer</button></div>'
         }
       </div>
 
 
       <div style="margin-top:12px;">
-        <div onclick="shareNiyyah()" style="padding:13px 16px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:rgba(200,168,75,0.05);text-align:center;cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:15px;color:#C8A84A;letter-spacing:0.05em;">
+        <div onclick="shareNiyyah()" style="padding:13px 16px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:rgba(200,168,75,0.05);text-align:center;cursor:pointer;font-family:'Georgia',serif;font-size:15px;color:#C8A84A;letter-spacing:0.05em;">
           Partager Niyyah ✦
         </div>
-        <div style="text-align:center;margin-top:8px;font-family:'Cormorant Garamond',serif;font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);">
+        <div style="text-align:center;margin-top:8px;font-family:'Georgia',serif;font-size:12px;font-style:italic;color:rgba(200,168,75,0.4);">
           « Celui qui guide vers le bien obtient la même récompense que celui qui le fait. » — Muslim 2674
         </div>
       </div>
 
       <div style="margin-top:14px;background:#1a1a1a;border:1px solid rgba(255,255,255,0.05);border-radius:12px;padding:16px;">
-        <div style="font-size:12px;letter-spacing:0.28em;color:rgba(212,175,55,0.65);text-transform:uppercase;font-family:'Cormorant Garamond',serif;margin-bottom:10px;text-align:center;">${T.settings_mentions}</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:12px;color:rgba(240,234,214,0.55);line-height:1.6;text-align:${isRTL ? 'right' : 'left'};">${T.mentions_text}</div>
+        <div style="font-size:12px;letter-spacing:0.28em;color:rgba(212,175,55,0.65);text-transform:uppercase;font-family:'Georgia',serif;margin-bottom:10px;text-align:center;">${T.settings_mentions}</div>
+        <div style="font-family:'Georgia',serif;font-size:12px;color:rgba(240,234,214,0.55);line-height:1.6;text-align:${isRTL ? 'right' : 'left'};">${T.mentions_text}</div>
       </div>
 
       ${debugSection}
 
-      <div style="text-align:center;padding:8px;font-size:12px;color:rgba(240,234,214,0.55);font-family:'Cormorant Garamond',serif;letter-spacing:0.2em;margin-bottom:12px;">NIYYAH V2.0 · بِسْمِ اللَّهِ</div>
+      <div style="text-align:center;padding:8px;font-size:12px;color:rgba(240,234,214,0.55);font-family:'Georgia',serif;letter-spacing:0.2em;margin-bottom:12px;">NIYYAH V2.0 · بِسْمِ اللَّهِ</div>
 
       <button onclick="document.getElementById('v2-settings-sheet').remove();" aria-label="Fermer les param\u00e8tres"
-        style="width:100%;padding:13px;border-radius:100px;border:1px solid rgba(255,255,255,0.07);background:none;color:rgba(240,234,214,0.55);font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;">
+        style="width:100%;padding:13px;border-radius:100px;border:1px solid rgba(255,255,255,0.07);background:none;color:rgba(240,234,214,0.55);font-family:'Georgia',serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;">
         ${T.settings_close}
       </button>
     </div>`;
@@ -13799,7 +13799,7 @@ function _orientCardHtml(value, calli, title) {
   return '<div class="orient-card" data-value="'+value+'" onclick="selectOrientation(\''+value+'\')" style="border:1px solid '+borderColor+'; border-radius:14px; padding:14px 16px; background:'+bg+'; margin-bottom:12px; cursor:pointer; display:flex; align-items:center; gap:14px;">'
     + '<div style="font-size:24px; color:#C8A84A; font-family:Amiri,Scheherazade,serif; direction:rtl; min-width:60px; text-align:center;">'+calli+'</div>'
     + '<div style="flex:1;"><div style="font-family:var(--serif); color:#C8A84A; font-size:13px; letter-spacing:2px; text-transform:uppercase; margin-bottom:2px;">'+title+'</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif; font-size:13px; font-style:italic; color:#B5A685; line-height:1.4;">'+desc+'</div></div>'
+    + '<div style="font-family:\'Georgia\',serif; font-size:13px; font-style:italic; color:#B5A685; line-height:1.4;">'+desc+'</div></div>'
     + '<div style="color:#C8A84A;font-size:18px;flex-shrink:0;">\u203A</div></div>';
 }
 function renderOrientationCards() {
@@ -13826,10 +13826,10 @@ function _showOrientConfirm(value) {
   ov.id = 'orient-confirm';
   ov.style.cssText = 'position:fixed;inset:0;z-index:10003;background:rgba(10,8,5,0.92);display:flex;align-items:center;justify-content:center;padding:24px;';
   ov.innerHTML = '<div style="max-width:320px;width:100%;text-align:center;">'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;color:#C8A84A;margin-bottom:12px;">Changer de chemin</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;color:#B5A685;line-height:1.6;margin-bottom:28px;">Niyyah s\u2019adaptera \u00e0 ton nouveau chemin. Tes d\u00e9fis en cours seront remplac\u00e9s.</div>'
-    + '<button id="orient-confirm-yes" style="width:100%;padding:14px;border:none;border-radius:12px;background:#C8A84A;color:#2C2E32;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-weight:600;cursor:pointer;margin-bottom:10px;">Confirmer</button>'
-    + '<button id="orient-confirm-no" style="width:100%;padding:12px;border:1px solid rgba(200,168,75,0.2);border-radius:12px;background:transparent;color:#B5A685;font-family:\'Cormorant Garamond\',serif;font-size:13px;cursor:pointer;">Annuler</button>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:18px;color:#C8A84A;margin-bottom:12px;">Changer de chemin</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:14px;color:#B5A685;line-height:1.6;margin-bottom:28px;">Niyyah s\u2019adaptera \u00e0 ton nouveau chemin. Tes d\u00e9fis en cours seront remplac\u00e9s.</div>'
+    + '<button id="orient-confirm-yes" style="width:100%;padding:14px;border:none;border-radius:12px;background:#C8A84A;color:#2C2E32;font-family:\'Georgia\',serif;font-size:15px;font-weight:600;cursor:pointer;margin-bottom:10px;">Confirmer</button>'
+    + '<button id="orient-confirm-no" style="width:100%;padding:12px;border:1px solid rgba(200,168,75,0.2);border-radius:12px;background:transparent;color:#B5A685;font-family:\'Georgia\',serif;font-size:13px;cursor:pointer;">Annuler</button>'
     + '</div>';
   document.body.appendChild(ov);
   document.getElementById('orient-confirm-yes').onclick = function() { ov.remove(); _applyOrientation(value); };
@@ -13907,15 +13907,15 @@ function _v2ShowNiyyahReadModal() {
   title.style.cssText = 'display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:22px;';
   title.innerHTML =
     '<span style="height:1px;width:34px;background:linear-gradient(90deg,transparent,rgba(212,175,55,0.55));"></span>' +
-    '<span style="font-family:\'Cormorant Garamond\',serif;font-size:11px;letter-spacing:3.4px;font-weight:500;white-space:nowrap;background:linear-gradient(180deg,#F1DDA0,#C9A24A);-webkit-background-clip:text;background-clip:text;color:transparent;">VOTRE NIYYAH DU JOUR</span>' +
+    '<span style="font-family:\'Georgia\',serif;font-size:11px;letter-spacing:3.4px;font-weight:500;white-space:nowrap;background:linear-gradient(180deg,#F1DDA0,#C9A24A);-webkit-background-clip:text;background-clip:text;color:transparent;">VOTRE NIYYAH DU JOUR</span>' +
     '<span style="height:1px;width:34px;background:linear-gradient(90deg,rgba(212,175,55,0.55),transparent);"></span>';
 
   var text = document.createElement('div');
-  text.style.cssText = 'font-family:"Cormorant Garamond",serif;font-size:19px;font-style:italic;color:#F4ECDC;line-height:1.62;margin-bottom:30px;';
+  text.style.cssText = 'font-family:"Georgia",serif;font-size:19px;font-style:italic;color:#F4ECDC;line-height:1.62;margin-bottom:30px;';
   text.textContent = fullText;
 
   var closeBtn = document.createElement('button');
-  closeBtn.style.cssText = 'display:block;width:100%;padding:15px 0;border:1px solid rgba(120,86,20,0.35);border-radius:13px;background:linear-gradient(180deg,#F3DFA2,#DCBD63 46%,#C29A3E);color:#3a2c0c;font-family:"Cormorant Garamond",serif;font-size:15px;font-weight:600;letter-spacing:1px;cursor:pointer;margin-bottom:16px;box-shadow:0 8px 22px -8px rgba(194,154,62,0.55),inset 0 1px 0 rgba(255,248,224,0.7);';
+  closeBtn.style.cssText = 'display:block;width:100%;padding:15px 0;border:1px solid rgba(120,86,20,0.35);border-radius:13px;background:linear-gradient(180deg,#F3DFA2,#DCBD63 46%,#C29A3E);color:#3a2c0c;font-family:"Georgia",serif;font-size:15px;font-weight:600;letter-spacing:1px;cursor:pointer;margin-bottom:16px;box-shadow:0 8px 22px -8px rgba(194,154,62,0.55),inset 0 1px 0 rgba(255,248,224,0.7);';
   closeBtn.textContent = 'Fermer';
   closeBtn.addEventListener('click', function() {
     hideAlHayaBtn();
@@ -13923,7 +13923,7 @@ function _v2ShowNiyyahReadModal() {
   });
 
   var changeLink = document.createElement('div');
-  changeLink.style.cssText = 'font-family:"Cormorant Garamond",serif;font-size:13px;color:rgba(200,168,75,0.5);cursor:pointer;transition:color 0.2s;';
+  changeLink.style.cssText = 'font-family:"Georgia",serif;font-size:13px;color:rgba(200,168,75,0.5);cursor:pointer;transition:color 0.2s;';
   changeLink.textContent = 'changer d\u2019intention \u2192';
   changeLink.addEventListener('mouseenter', function() { changeLink.style.color = '#C8A84A'; });
   changeLink.addEventListener('mouseleave', function() { changeLink.style.color = 'rgba(200,168,75,0.5)'; });
@@ -13980,7 +13980,7 @@ function _v2OpenNiyyahPickModal() {
     mInput.placeholder = T.modal_placeholder;
     mInput.style.direction = T.dir;
     mInput.style.textAlign = isRTL ? 'right' : 'left';
-    mInput.style.fontFamily = isRTL ? "'Amiri', serif" : "'Cormorant Garamond', serif";
+    mInput.style.fontFamily = isRTL ? "'Amiri', serif" : "'Georgia', serif";
   }
 
   const opts = document.getElementById('v2-intention-opts');
@@ -14014,7 +14014,7 @@ function _v2OpenNiyyahPickModal() {
     textSpan.textContent = niyyahText;
     btn.appendChild(textSpan);
     btn.style.direction = (V2_I18N[V2_LANG] || V2_I18N.fr).dir;
-    btn.style.fontFamily = V2_LANG === 'ar' ? "'Amiri', serif" : "'Cormorant Garamond', serif";
+    btn.style.fontFamily = V2_LANG === 'ar' ? "'Amiri', serif" : "'Georgia', serif";
     btn.style.fontSize = V2_LANG === 'ar' ? '17px' : '18px';
     // Simple click to select (replaces hold 3s)
     btn.addEventListener('click', function() {
@@ -14062,7 +14062,7 @@ function _v2OpenNiyyahPickModal() {
           ikhlasBtn.style.animation = 'intentionGlow 1.5s ease-in-out infinite';
           if (navigator.vibrate) navigator.vibrate(800);
           var unlockMsg = document.createElement('div');
-          unlockMsg.style.cssText = 'text-align:center;font-family:"Cormorant Garamond",serif;font-size:14px;font-style:italic;color:#C8A84A;padding:8px 0;animation:fadeSlideV2 0.8s ease forwards;';
+          unlockMsg.style.cssText = 'text-align:center;font-family:"Georgia",serif;font-size:14px;font-style:italic;color:#C8A84A;padding:8px 0;animation:fadeSlideV2 0.8s ease forwards;';
           unlockMsg.textContent = t('ikhlas_earned');
           opts.insertBefore(unlockMsg, ikhlasBtn);
           setTimeout(function() { ikhlasBtn.style.animation = ''; }, 4500);
@@ -14088,7 +14088,7 @@ function _v2OpenNiyyahPickModal() {
     var anchorBtn = document.createElement('button');
     anchorBtn.id = 'v2-anchor-btn';
     anchorBtn.disabled = true;
-    anchorBtn.style.cssText = 'display:block;width:100%;margin-top:18px;padding:16px 0;border:none;border-radius:12px;background:linear-gradient(135deg,#C8A84A,#A68B30);color:#0A0908;font-family:"Cormorant Garamond",serif;font-size:17px;font-weight:700;letter-spacing:0.5px;cursor:pointer;opacity:0.4;transition:opacity 0.3s ease;';
+    anchorBtn.style.cssText = 'display:block;width:100%;margin-top:18px;padding:16px 0;border:none;border-radius:12px;background:linear-gradient(135deg,#C8A84A,#A68B30);color:#0A0908;font-family:"Georgia",serif;font-size:17px;font-weight:700;letter-spacing:0.5px;cursor:pointer;opacity:0.4;transition:opacity 0.3s ease;';
     anchorBtn.textContent = T.modal_confirm || 'Ancrer cette Intention';
     anchorBtn.addEventListener('click', function() {
       if (anchorBtn.disabled) return;
@@ -14218,7 +14218,7 @@ function applyTawbaGlow() {
     msg.id = 'tawba-glow-msg';
     msg.style.cssText = [
       'text-align:center',
-      'font-family:"Cormorant Garamond",serif',
+      'font-family:"Georgia",serif',
       'font-size:12px',
       'font-style:italic',
       'color:rgba(135,169,107,0.65)',
@@ -14275,12 +14275,12 @@ function _showTawbaReturn(days) {
     + 'animation:trPulse 4s ease-in-out infinite;}'
     + '@keyframes trPulse{0%,100%{opacity:.45;transform:translate(-50%,-50%) scale(.96);}'
     + '50%{opacity:.9;transform:translate(-50%,-50%) scale(1.05);}}'
-    + '#tawbaReturnOverlay .trTitle{font-family:\'Cormorant Garamond\',serif;font-size:30px;'
+    + '#tawbaReturnOverlay .trTitle{font-family:\'Georgia\',serif;font-size:30px;'
     + 'color:#F6E6C8;margin:26px 0 14px;letter-spacing:.5px;}'
-    + '#tawbaReturnOverlay .trSub{font-family:\'Cormorant Garamond\',serif;font-size:17px;'
+    + '#tawbaReturnOverlay .trSub{font-family:\'Georgia\',serif;font-size:17px;'
     + 'font-style:italic;line-height:1.7;color:rgba(240,230,200,.82);max-width:330px;}'
     + '#tawbaReturnOverlay .trBtn{margin-top:32px;padding:14px 40px;border-radius:14px;border:none;'
-    + 'background:linear-gradient(135deg,#C8A84A,#E8CC6A);color:#1a120a;font-family:\'Cormorant Garamond\',serif;'
+    + 'background:linear-gradient(135deg,#C8A84A,#E8CC6A);color:#1a120a;font-family:\'Georgia\',serif;'
     + 'font-size:17px;font-weight:700;letter-spacing:.5px;cursor:pointer;box-shadow:0 6px 18px rgba(200,168,74,.3);}'
     + '@media (prefers-reduced-motion:reduce){#tawbaReturnOverlay .trGlow{animation:none;}}'
     + '</style>'
@@ -14620,7 +14620,7 @@ function updateMedaillonState() {
     var ov = document.createElement('div');
     ov.className = 'wird-complete-overlay';
     ov.innerHTML = '<div class="wird-complete-card">'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(240,234,214,0.8);line-height:1.7;margin-bottom:24px;">Le m\u00e9daillon se repose jusqu\u2019\u00e0 la prochaine plage.<br>Il reviendra en cuivre.</div>'
+      + '<div style="font-family:\'Georgia\',serif;font-size:15px;font-style:italic;color:rgba(240,234,214,0.8);line-height:1.7;margin-bottom:24px;">Le m\u00e9daillon se repose jusqu\u2019\u00e0 la prochaine plage.<br>Il reviendra en cuivre.</div>'
       + '<button class="wird-complete-btn" onclick="safeSetItem(\'niyyah_medaillon_explained\',\'1\');this.closest(\'.wird-complete-overlay\').remove();">Compris</button>'
       + '</div>';
     document.body.appendChild(ov);
@@ -14668,7 +14668,7 @@ function openWaqtModal() {
   var arName = _WAQT_AR_NAMES[priere] || '';
   var _lum = _WAQT_LUMIERE[priere] || '';
   var ambianceHtml = _lum
-    ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:19px;font-style:italic;color:rgba(208,178,90,0.9);line-height:1.55;max-width:340px;margin:0 auto 18px;">' + _lum + '</div>'
+    ? '<div style="font-family:\'Georgia\',serif;font-size:19px;font-style:italic;color:rgba(208,178,90,0.9);line-height:1.55;max-width:340px;margin:0 auto 18px;">' + _lum + '</div>'
     : '';
   var actionEl = document.getElementById('waqt-action-text');
   // Banner image par prière
@@ -14680,15 +14680,15 @@ function openWaqtModal() {
   if (story && story.morale) {
     var html = '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:28px;color:#C8A84A;direction:rtl;margin-bottom:16px;">' + arName + '</div>';
     html += ambianceHtml;
-    if (story.titre) html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:700;color:#C8A84A;letter-spacing:1px;margin-bottom:12px;">' + story.titre.toUpperCase() + '</div>';
-    html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;font-style:italic;color:#e9ddc7;line-height:1.8;max-width:340px;margin-bottom:16px;">' + (story.texte || '') + '</div>';
-    html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;font-weight:700;color:#e9ddc7;line-height:1.6;margin-bottom:12px;">' + story.morale + '</div>';
+    if (story.titre) html += '<div style="font-family:\'Georgia\',serif;font-size:14px;font-weight:700;color:#C8A84A;letter-spacing:1px;margin-bottom:12px;">' + story.titre.toUpperCase() + '</div>';
+    html += '<div style="font-family:\'Georgia\',serif;font-size:20px;font-style:italic;color:#e9ddc7;line-height:1.8;max-width:340px;margin-bottom:16px;">' + (story.texte || '') + '</div>';
+    html += '<div style="font-family:\'Georgia\',serif;font-size:17px;font-weight:700;color:#e9ddc7;line-height:1.6;margin-bottom:12px;">' + story.morale + '</div>';
     if (story.source) html += '<div style="font-family:\'Inter\',sans-serif;font-size:12px;color:rgba(200,168,75,0.4);line-height:1.4;">' + story.source + '</div>';
     actionEl.innerHTML = html;
   } else {
     actionEl.innerHTML = '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:28px;color:#C8A84A;direction:rtl;margin-bottom:20px;">' + arName + '</div>'
       + ambianceHtml
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;font-style:italic;color:#e9ddc7;line-height:1.8;max-width:340px;">' + txt + '</div>';
+      + '<div style="font-family:\'Georgia\',serif;font-size:20px;font-style:italic;color:#e9ddc7;line-height:1.8;max-width:340px;">' + txt + '</div>';
   }
   modal.style.display = 'flex';
   document.body.classList.add('in-waqt-modal');
@@ -14699,7 +14699,7 @@ function openWaqtModal() {
       var _normalHtml = actionEl.innerHTML;
       actionEl.style.transition = 'opacity 0.4s';
       actionEl.innerHTML = '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:28px;color:#C8A84A;direction:rtl;margin-bottom:20px;">' + arName + '</div>'
-        + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;color:rgba(200,168,74,0.85);line-height:1.8;max-width:320px;font-style:italic;">' + _aidWm + '</div>';
+        + '<div style="font-family:\'Georgia\',serif;font-size:16px;color:rgba(200,168,74,0.85);line-height:1.8;max-width:320px;font-style:italic;">' + _aidWm + '</div>';
       setTimeout(function() {
         if (!actionEl) return;
         actionEl.style.opacity = '0';
@@ -15210,7 +15210,7 @@ function updateSpiritualTitle() {
   el.style.marginTop = '40px';
   el.style.marginBottom = '40px';
   el.innerHTML = '<div style="font-family:\'Amiri\',serif;font-size:40px;color:#C8A84A;line-height:1.3;">' + title.ar + '</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:rgba(200,168,75,0.7);letter-spacing:0.5px;margin-top:4px;">' + t(title.k) + '</div>';
+    + '<div style="font-family:\'Georgia\',serif;font-size:18px;font-style:italic;color:rgba(200,168,75,0.7);letter-spacing:0.5px;margin-top:4px;">' + t(title.k) + '</div>';
 }
 function v2RefreshStats() {
   if (typeof updateSanctuaireNextPrayer === 'function') updateSanctuaireNextPrayer();
@@ -15433,7 +15433,7 @@ function _showFinJourneeBismillah() {
   if (!overlay) return;
   overlay.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;animation:_fdjFadeIn 1.5s ease forwards;">'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:42px;color:#C8A84A;margin-bottom:24px;">\u0628\u0650\u0633\u0652\u0645\u0650 \u0627\u0644\u0644\u0651\u064e\u0647\u0650</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:rgba(200,168,75,0.7);line-height:1.8;max-width:320px;">Ce que tu vas regarder, c\u2019est entre Allah et toi.<br>Pas pour t\u2019accuser. Pour revenir.</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:18px;font-style:italic;color:rgba(200,168,75,0.7);line-height:1.8;max-width:320px;">Ce que tu vas regarder, c\u2019est entre Allah et toi.<br>Pas pour t\u2019accuser. Pour revenir.</div>'
     + '</div>';
   overlay.style.display = 'block';
   setTimeout(function() { showFinJourneeActe2(); }, 4500);
@@ -15461,7 +15461,7 @@ function showFinJourneeActe2() {
     }
   } catch(e) {}
   var idx = _intentionRappel ? -1 : 0;
-  var _btnHtml = '<div id="fdjContinueWrap" style="text-align:center;margin-top:34px;opacity:0;transition:opacity 1.2s ease;"><button onclick="_fdjNext()" style="font-family:\'Cormorant Garamond\',serif;font-size:17px;font-style:italic;letter-spacing:1px;color:#E8CF8A;background:none;border:1px solid rgba(200,168,75,0.4);border-radius:30px;padding:11px 32px;cursor:pointer;box-shadow:0 0 18px rgba(200,168,75,0.12);">Continuer\u00a0\u203a</button></div>';
+  var _btnHtml = '<div id="fdjContinueWrap" style="text-align:center;margin-top:34px;opacity:0;transition:opacity 1.2s ease;"><button onclick="_fdjNext()" style="font-family:\'Georgia\',serif;font-size:17px;font-style:italic;letter-spacing:1px;color:#E8CF8A;background:none;border:1px solid rgba(200,168,75,0.4);border-radius:30px;padding:11px 32px;cursor:pointer;box-shadow:0 0 18px rgba(200,168,75,0.12);">Continuer\u00a0\u203a</button></div>';
   function _showContinueBtn() {
     setTimeout(function() { var w = document.getElementById('fdjContinueWrap'); if (w) w.style.opacity = '1'; }, 1300);
   }
@@ -15470,9 +15470,9 @@ function showFinJourneeActe2() {
     if (idx === -1) {
       el.style.opacity = '0';
       setTimeout(function() {
-        el.innerHTML = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;color:rgba(255,255,255,0.7);margin-bottom:12px;">Ce matin tu as pos\u00e9 :</div>'
-          + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-style:italic;color:#C8A84A;line-height:1.5;margin-bottom:16px;">' + escapeHtml(_intentionRappel) + '</div>'
-          + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;color:rgba(255,255,255,0.7);">As-tu v\u00e9cu en coh\u00e9rence avec elle ?</div>'
+        el.innerHTML = '<div style="font-family:\'Georgia\',serif;font-size:15px;color:rgba(255,255,255,0.7);margin-bottom:12px;">Ce matin tu as pos\u00e9 :</div>'
+          + '<div style="font-family:\'Georgia\',serif;font-size:22px;font-style:italic;color:#C8A84A;line-height:1.5;margin-bottom:16px;">' + escapeHtml(_intentionRappel) + '</div>'
+          + '<div style="font-family:\'Georgia\',serif;font-size:15px;color:rgba(255,255,255,0.7);">As-tu v\u00e9cu en coh\u00e9rence avec elle ?</div>'
           + _btnHtml;
         el.style.opacity = '1';
         idx = 0;
@@ -15516,15 +15516,15 @@ function _showFinJourneeBilan(overlay) {
   var bilans = {}; try { bilans = JSON.parse(safeGetItem('niyyah_bilans') || '{}'); } catch(e) {}
   if (bilans[today]) { _finJourneeBismillahAndClose(overlay); return; }
   overlay.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px;animation:_fdjFadeIn 1s ease forwards;">'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:12px;">Bilan du soir</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-weight:600;color:#E5E0DC;margin-bottom:6px;">Comment \u00e9tait ton c\u0153ur aujourd\u2019hui\u00a0?</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:28px;">Allah regarde la sinc\u00e9rit\u00e9, pas le score.</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.5);margin-bottom:12px;">Bilan du soir</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:22px;font-weight:600;color:#E5E0DC;margin-bottom:6px;">Comment \u00e9tait ton c\u0153ur aujourd\u2019hui\u00a0?</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.5);margin-bottom:28px;">Allah regarde la sinc\u00e9rit\u00e9, pas le score.</div>'
     + '<div style="display:flex;flex-direction:column;gap:12px;max-width:320px;width:100%;">'
-    + '<button onclick="_finJourneeBilanChoix(\'distraction\')" style="background:rgba(20,18,15,0.85);border:1px solid rgba(200,168,75,0.15);border-radius:14px;padding:14px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;width:100%;text-align:left;"><div style="width:40px;height:40px;border-radius:50%;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.2);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;color:#B5A685;">\u25CB</div><div><div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;font-weight:600;color:#B5A685;">Distraction</div><div style="font-size:14px;color:rgba(181,166,133,0.6);font-style:italic;">\u063A\u064E\u0641\u0652\u0644\u064E\u0629 \u2014 le c\u0153ur absent</div></div></button>'
-    + '<button onclick="_finJourneeBilanChoix(\'effort\')" style="background:rgba(20,18,15,0.85);border:1px solid rgba(200,168,75,0.25);border-radius:14px;padding:14px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;width:100%;text-align:left;"><div style="width:40px;height:40px;border-radius:50%;background:rgba(200,168,75,0.08);border:1px solid rgba(200,168,75,0.25);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;color:rgba(200,168,74,0.7);">\u25D0</div><div><div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;font-weight:600;color:rgba(200,168,74,0.7);">Effort</div><div style="font-size:14px;color:rgba(181,166,133,0.6);font-style:italic;">\u0645\u064F\u062C\u064E\u0627\u0647\u064E\u062F\u064E\u0629 \u2014 le combat int\u00e9rieur</div></div></button>'
-    + '<button onclick="_finJourneeBilanChoix(\'sincerite\')" style="background:rgba(20,18,15,0.85);border:1px solid rgba(200,168,75,0.35);border-radius:14px;padding:14px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;width:100%;text-align:left;"><div style="width:40px;height:40px;border-radius:50%;background:rgba(200,168,75,0.1);border:1px solid rgba(200,168,75,0.35);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;color:#C8A84A;">\u25CF</div><div><div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;font-weight:600;color:#C8A84A;">Sinc\u00e9rit\u00e9</div><div style="font-size:14px;color:#B5A685;font-style:italic;">\u0625\u0650\u062E\u0652\u0644\u064E\u0627\u0635 \u2014 l\u2019\u00e9tat recherch\u00e9</div></div></button>'
+    + '<button onclick="_finJourneeBilanChoix(\'distraction\')" style="background:rgba(20,18,15,0.85);border:1px solid rgba(200,168,75,0.15);border-radius:14px;padding:14px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;width:100%;text-align:left;"><div style="width:40px;height:40px;border-radius:50%;background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.2);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;color:#B5A685;">\u25CB</div><div><div style="font-family:\'Georgia\',serif;font-size:17px;font-weight:600;color:#B5A685;">Distraction</div><div style="font-size:14px;color:rgba(181,166,133,0.6);font-style:italic;">\u063A\u064E\u0641\u0652\u0644\u064E\u0629 \u2014 le c\u0153ur absent</div></div></button>'
+    + '<button onclick="_finJourneeBilanChoix(\'effort\')" style="background:rgba(20,18,15,0.85);border:1px solid rgba(200,168,75,0.25);border-radius:14px;padding:14px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;width:100%;text-align:left;"><div style="width:40px;height:40px;border-radius:50%;background:rgba(200,168,75,0.08);border:1px solid rgba(200,168,75,0.25);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;color:rgba(200,168,74,0.7);">\u25D0</div><div><div style="font-family:\'Georgia\',serif;font-size:17px;font-weight:600;color:rgba(200,168,74,0.7);">Effort</div><div style="font-size:14px;color:rgba(181,166,133,0.6);font-style:italic;">\u0645\u064F\u062C\u064E\u0627\u0647\u064E\u062F\u064E\u0629 \u2014 le combat int\u00e9rieur</div></div></button>'
+    + '<button onclick="_finJourneeBilanChoix(\'sincerite\')" style="background:rgba(20,18,15,0.85);border:1px solid rgba(200,168,75,0.35);border-radius:14px;padding:14px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;width:100%;text-align:left;"><div style="width:40px;height:40px;border-radius:50%;background:rgba(200,168,75,0.1);border:1px solid rgba(200,168,75,0.35);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;color:#C8A84A;">\u25CF</div><div><div style="font-family:\'Georgia\',serif;font-size:17px;font-weight:600;color:#C8A84A;">Sinc\u00e9rit\u00e9</div><div style="font-size:14px;color:#B5A685;font-style:italic;">\u0625\u0650\u062E\u0652\u0644\u064E\u0627\u0635 \u2014 l\u2019\u00e9tat recherch\u00e9</div></div></button>'
     + '</div>'
-    + '<div onclick="_finJourneeBismillahAndClose(document.getElementById(\'finjournee-overlay\'))" style="font-family:\'Cormorant Garamond\',serif;font-size:13px;color:rgba(200,168,75,0.4);cursor:pointer;margin-top:20px;">Plus tard</div>'
+    + '<div onclick="_finJourneeBismillahAndClose(document.getElementById(\'finjournee-overlay\'))" style="font-family:\'Georgia\',serif;font-size:13px;color:rgba(200,168,75,0.4);cursor:pointer;margin-top:20px;">Plus tard</div>'
     + '</div>';
 }
 function _finJourneeBilanChoix(choix) {
@@ -15573,10 +15573,10 @@ function _maybeShowNotifCard(hist) {
     var card = document.createElement('div');
     card.id = 'niyyah-notif-invite';
     card.style.cssText = 'max-width:340px;width:calc(100% - 32px);margin:16px auto;padding:20px;background:#141310;border:1px solid rgba(200,168,75,0.2);border-radius:14px;text-align:center;';
-    card.innerHTML = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;color:#C8A84A;margin-bottom:8px;">Niyyah peut t\u2019appeler chaque soir.</div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;color:rgba(240,234,214,0.6);line-height:1.6;margin-bottom:18px;">Un seul murmure, apr\u00e8s Maghrib. Et un autre au matin. Jamais plus.</div>'
-      + '<button id="niyyah-notif-accept" style="display:block;width:100%;padding:14px 0;border:none;border-radius:10px;background:linear-gradient(135deg,#C8A84A,#A68B30);color:#0A0908;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-weight:700;cursor:pointer;margin-bottom:10px;">Activer</button>'
-      + '<div id="niyyah-notif-later" style="font-family:\'Cormorant Garamond\',serif;font-size:12px;color:rgba(200,168,75,0.5);cursor:pointer;">Plus tard</div>';
+    card.innerHTML = '<div style="font-family:\'Georgia\',serif;font-size:18px;color:#C8A84A;margin-bottom:8px;">Niyyah peut t\u2019appeler chaque soir.</div>'
+      + '<div style="font-family:\'Georgia\',serif;font-size:13px;color:rgba(240,234,214,0.6);line-height:1.6;margin-bottom:18px;">Un seul murmure, apr\u00e8s Maghrib. Et un autre au matin. Jamais plus.</div>'
+      + '<button id="niyyah-notif-accept" style="display:block;width:100%;padding:14px 0;border:none;border-radius:10px;background:linear-gradient(135deg,#C8A84A,#A68B30);color:#0A0908;font-family:\'Georgia\',serif;font-size:15px;font-weight:700;cursor:pointer;margin-bottom:10px;">Activer</button>'
+      + '<div id="niyyah-notif-later" style="font-family:\'Georgia\',serif;font-size:12px;color:rgba(200,168,75,0.5);cursor:pointer;">Plus tard</div>';
     var sanctuaire = document.getElementById('view-sanctuaire');
     if (!sanctuaire) return;
     var wrapper = sanctuaire.querySelector('.quick-actions-v2') || sanctuaire.firstElementChild;
@@ -15630,10 +15630,10 @@ function updateFajrChallenge() {
     + '<div style="display:flex;align-items:center;gap:12px;width:100%;">'
     + '<div><img src="./imagessoleil.webp" alt="Soleil" style="width:60px;height:auto;display:block;flex-shrink:0;mix-blend-mode:screen;"></div>'
     + '<div style="flex:1;text-align:left;">'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-weight:600;color:#C8A84A;">' + t('fajr_title') + '</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:18px;font-weight:600;color:#C8A84A;">' + t('fajr_title') + '</div>'
     + (_fajrIsEmpty
-      ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.5);margin-top:4px;line-height:1.5;">Tes aubes pri\u00e9es \u00e0 l\u2019heure s\u2019accumuleront ici.</div>'
-      : '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;color:#B0A080;margin-top:4px;line-height:1.5;">'
+      ? '<div style="font-family:\'Georgia\',serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.5);margin-top:4px;line-height:1.5;">Tes aubes pri\u00e9es \u00e0 l\u2019heure s\u2019accumuleront ici.</div>'
+      : '<div style="font-family:\'Georgia\',serif;font-size:14px;color:#B0A080;margin-top:4px;line-height:1.5;">'
         + fajrMois + ' ' + t('fajr_day') + ' ' + t('fajr_sur')
         + ' \u00b7 ' + fajrAnnee + ' ' + t('fajr_annee')
         + ' \u00b7 ' + fajrTotal + ' ' + t('fajr_total')
@@ -15645,8 +15645,8 @@ function updateFajrChallenge() {
   else if (fajrAnnee >= 50) { _fajrHadith = 'All\u00e2h aime celui qui agit avec constance, m\u00eame peu.'; _fajrRef = 'Boukhari/Muslim'; }
   else { _fajrHadith = 'Les deux raka\u2019as avant Fajr sont meilleures que ce monde et ce qu\u2019il contient.'; _fajrRef = 'Muslim 725'; }
   card.innerHTML += '<div style="margin:8px 0 0;padding:12px 14px;border:1px solid rgba(200,168,75,0.15);border-radius:10px;background:rgba(200,168,75,0.03);">'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;font-style:italic;color:rgba(200,168,75,0.75);line-height:1.7;">\u00ab\u00a0' + _fajrHadith + '\u00a0\u00bb</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;color:rgba(200,168,75,0.45);margin-top:6px;text-align:right;">\u2014 ' + _fajrRef + '</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:17px;font-style:italic;color:rgba(200,168,75,0.75);line-height:1.7;">\u00ab\u00a0' + _fajrHadith + '\u00a0\u00bb</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:13px;color:rgba(200,168,75,0.45);margin-top:6px;text-align:right;">\u2014 ' + _fajrRef + '</div>'
     + '</div>';
 }
 function _updateOrbCoherence() {
@@ -15731,9 +15731,9 @@ function updateSanctuaireMoment() {
     var tahajjudDone = hasLevel4 && !!state['tahajjud'];
     var qSub = hasLevel4 ? (tahajjudDone ? 'Le rendez-vous de la nuit' : 'Le rendez-vous de la nuit') : 'Dors avec le Witr';
     el.innerHTML = '<div style="text-align:center;padding:8px;">'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;font-weight:700;color:#C8A84A;line-height:1.45;">' + _iconSpan + (hasLevel4 ? t('block_qiyam') : 'La nuit est pour le repos') + '</div>'
+      + '<div style="font-family:\'Georgia\',serif;font-size:17px;font-weight:700;color:#C8A84A;line-height:1.45;">' + _iconSpan + (hasLevel4 ? t('block_qiyam') : 'La nuit est pour le repos') + '</div>'
       + '<div style="font-family:\'Inter\',var(--sans);font-size:12px;color:rgba(255,255,255,0.6);margin-top:4px;">' + qSub + '</div>'
-      + (hasLevel4 && !tahajjudDone ? '<button onclick="event.stopPropagation();state[\'tahajjud\']=true;saveState();showToast(\'Qiyam al-Layl tiss\u00e9 \u2713\');updateSanctuaireMoment();" ontouchend="event.stopPropagation();event.preventDefault();state[\'tahajjud\']=true;saveState();showToast(\'Qiyam al-Layl tiss\u00e9 \u2713\');updateSanctuaireMoment();" style="display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin-top:10px;padding:14px 28px;background:linear-gradient(180deg,#C8A84A,#B5934A);border:none;border-radius:12px;color:#2C2E32;font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;cursor:pointer;box-shadow:inset 0 1px 3px rgba(0,0,0,0.15);" ontouchstart="this.style.opacity=\'0.85\'" ontouchmove="this.style.opacity=\'1\'" ontouchcancel="this.style.opacity=\'1\'">Prier <span style="font-size:18px;font-style:normal;color:#2C2E32;">\u203A</span></button>' : '')
+      + (hasLevel4 && !tahajjudDone ? '<button onclick="event.stopPropagation();state[\'tahajjud\']=true;saveState();showToast(\'Qiyam al-Layl tiss\u00e9 \u2713\');updateSanctuaireMoment();" ontouchend="event.stopPropagation();event.preventDefault();state[\'tahajjud\']=true;saveState();showToast(\'Qiyam al-Layl tiss\u00e9 \u2713\');updateSanctuaireMoment();" style="display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin-top:10px;padding:14px 28px;background:linear-gradient(180deg,#C8A84A,#B5934A);border:none;border-radius:12px;color:#2C2E32;font-family:\'Georgia\',serif;font-size:16px;font-style:italic;cursor:pointer;box-shadow:inset 0 1px 3px rgba(0,0,0,0.15);" ontouchstart="this.style.opacity=\'0.85\'" ontouchmove="this.style.opacity=\'1\'" ontouchcancel="this.style.opacity=\'1\'">Prier <span style="font-size:18px;font-style:normal;color:#2C2E32;">\u203A</span></button>' : '')
       + '</div>';
     return;
   }
@@ -15747,8 +15747,8 @@ function updateSanctuaireMoment() {
       var _pm = parseInt(_pp[0],10)*60+parseInt(_pp[1],10);
       if (_pm > _nowM2) {
         var _diff = _pm - _nowM2;
-        if (_diff <= 120) _nextInfo = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;font-style:italic;color:#C8A84A;opacity:0.9;margin-top:2px;">' + _pNames[_pi] + ' dans ' + _diff + ' min</div>';
-        else _nextInfo = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;font-style:italic;color:#C8A84A;opacity:0.9;margin-top:2px;">' + _pNames[_pi] + ' \u2014 ' + _prayerTimes[_pNames[_pi]].substring(0,5) + '</div>';
+        if (_diff <= 120) _nextInfo = '<div style="font-family:\'Georgia\',serif;font-size:17px;font-style:italic;color:#C8A84A;opacity:0.9;margin-top:2px;">' + _pNames[_pi] + ' dans ' + _diff + ' min</div>';
+        else _nextInfo = '<div style="font-family:\'Georgia\',serif;font-size:17px;font-style:italic;color:#C8A84A;opacity:0.9;margin-top:2px;">' + _pNames[_pi] + ' \u2014 ' + _prayerTimes[_pNames[_pi]].substring(0,5) + '</div>';
         break;
       }
     }
@@ -15772,15 +15772,15 @@ function updateSanctuaireMoment() {
   }
   if (blockRemaining === 0) {
     el.innerHTML = '<div style="text-align:center;padding:8px;">'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;font-weight:700;color:#C8A84A;line-height:1.45;">' + _iconSpan + t('bloc_done') + '</div>'
+      + '<div style="font-family:\'Georgia\',serif;font-size:17px;font-weight:700;color:#C8A84A;line-height:1.45;">' + _iconSpan + t('bloc_done') + '</div>'
       + _nextInfo
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.6);margin-top:4px;">Tu as honor\u00e9 ce moment.</div>'
+      + '<div style="font-family:\'Georgia\',serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.6);margin-top:4px;">Tu as honor\u00e9 ce moment.</div>'
       + jourLine
       + '</div>';
     el.innerHTML += getFilJourCardHTML();
   } else {
     el.innerHTML = '<div style="text-align:center;padding:8px;">'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;font-weight:700;color:#C8A84A;line-height:1.45;">' + _iconSpan + block.label + '</div>'
+      + '<div style="font-family:\'Georgia\',serif;font-size:17px;font-weight:700;color:#C8A84A;line-height:1.45;">' + _iconSpan + block.label + '</div>'
       + _nextInfo
       + jourLine
       + ((!_nextInfo && !jourLine) ? '<div style="height:28px;"></div>' : '')
@@ -15794,7 +15794,7 @@ function updateSanctuaireMoment() {
 
 function getVendrediRegardCardHTML() {
   return '<div class="vendredi-regard-card" onclick="openVendrediRegard()">'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#FAF7EE;line-height:1.6;">Le vendredi a une lumi\u00e8re \u00e0 part.<br>Choisis un Regard, et offre-le \u00e0 un c\u0153ur qui t\u2019est cher.</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:16px;font-style:italic;color:#FAF7EE;line-height:1.6;">Le vendredi a une lumi\u00e8re \u00e0 part.<br>Choisis un Regard, et offre-le \u00e0 un c\u0153ur qui t\u2019est cher.</div>'
     + '<div style="font-size:12px;letter-spacing:2px;color:rgba(200,168,75,0.55);margin-top:8px;text-transform:uppercase;">REGARD DU VENDREDI</div>'
     + '</div>';
 }
@@ -15809,7 +15809,7 @@ function openVendrediRegard() {
     + '<button onclick="this.closest(\'.wird-complete-overlay\').remove();" style="position:absolute;top:16px;right:16px;background:none;border:none;color:rgba(200,168,75,0.5);font-size:22px;cursor:pointer;">\u2715</button>'
     + '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:22px;color:#C8A84A;margin-bottom:16px;">\u0627\u0644\u062C\u064F\u0645\u064F\u0639\u064E\u0629</div>';
   if (favs.length === 0) {
-    html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(240,234,214,0.7);line-height:1.6;">Aucun Regard ne t\u2019a marqu\u00e9 cette semaine.<br>Reviens vendredi prochain.</div>';
+    html += '<div style="font-family:\'Georgia\',serif;font-size:15px;font-style:italic;color:rgba(240,234,214,0.7);line-height:1.6;">Aucun Regard ne t\u2019a marqu\u00e9 cette semaine.<br>Reviens vendredi prochain.</div>';
   } else {
     html += '<div style="font-size:12px;color:rgba(200,168,75,0.5);letter-spacing:1.5px;margin-bottom:16px;">TES REGARDS FAVORIS</div>';
     favs.forEach(function(e) {
@@ -15817,7 +15817,7 @@ function openVendrediRegard() {
       var q = (e.question || '').substring(0, 60);
       html += '<div onclick="event.stopPropagation();genRegardCanvas(\''+e.id+'\')" style="display:flex;gap:12px;align-items:center;padding:10px;border:1px solid rgba(200,168,75,0.15);border-radius:10px;margin-bottom:8px;cursor:pointer;text-align:left;">'
         + thumb
-        + '<div style="flex:1;min-width:0;font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:#D4AF37;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">'+q+'</div>'
+        + '<div style="flex:1;min-width:0;font-family:\'Georgia\',serif;font-size:13px;font-style:italic;color:#D4AF37;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">'+q+'</div>'
         + '<div style="color:rgba(200,168,75,0.4);font-size:14px;">\u203A</div></div>';
     });
   }
@@ -15862,7 +15862,7 @@ function genRegardCanvas(entryId, kind) {
     // label haut (majuscules tracées)
     if (label) {
       ctx.fillStyle = '#C8A84A';
-      ctx.font = 'bold 20px "Cormorant Garamond", serif';
+      ctx.font = 'bold 20px "Georgia", serif';
       ctx.textAlign = 'center'; ctx.textBaseline = 'top';
       if ('letterSpacing' in ctx) ctx.letterSpacing = '5px';
       ctx.fillText((label || '').toUpperCase(), 540, 140);
@@ -15877,7 +15877,7 @@ function genRegardCanvas(entryId, kind) {
     for (var _si = 0; _si < _sizes.length; _si++) {
       fontSize = _sizes[_si];
       lineH = Math.round(fontSize * 1.42);
-      ctx.font = 'italic ' + fontSize + 'px "Cormorant Garamond", serif';
+      ctx.font = 'italic ' + fontSize + 'px "Georgia", serif';
       lines = []; var _ln = '';
       mainText.split(' ').forEach(function(w) {
         var test = _ln ? _ln + ' ' + w : w;
@@ -15900,7 +15900,7 @@ function genRegardCanvas(entryId, kind) {
       ctx.strokeStyle = _gf; ctx.lineWidth = 1.5;
       ctx.beginPath(); ctx.moveTo(490, _fy); ctx.lineTo(590, _fy); ctx.stroke();
       ctx.fillStyle = '#C8A84A';
-      ctx.font = '24px "Cormorant Garamond", serif';
+      ctx.font = '24px "Georgia", serif';
       ctx.textBaseline = 'top';
       if ('letterSpacing' in ctx) ctx.letterSpacing = '1px';
       ctx.fillText(sub, 540, _fy + 20);
@@ -15909,7 +15909,7 @@ function genRegardCanvas(entryId, kind) {
 
     // signature Niyyah (bas)
     ctx.fillStyle = 'rgba(200,168,74,0.55)';
-    ctx.font = '22px "Cormorant Garamond", serif';
+    ctx.font = '22px "Georgia", serif';
     ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
     if ('letterSpacing' in ctx) ctx.letterSpacing = '6px';
     ctx.fillText('\u2726 NIYYAH', 540, 1000);
@@ -16195,7 +16195,7 @@ function v2Init() {
   const langPill0 = document.getElementById('topbar-lang-btn');
   if (langPill0) {
     langPill0.textContent = V2_LANG === 'ar' ? 'عر' : V2_LANG.toUpperCase();
-    langPill0.style.fontFamily = V2_LANG === 'ar' ? "'Amiri', serif" : "'Cormorant Garamond', serif";
+    langPill0.style.fontFamily = V2_LANG === 'ar' ? "'Amiri', serif" : "'Georgia', serif";
     langPill0.style.fontSize = V2_LANG === 'ar' ? '13px' : '10px';
   }
   // Regard library chargée au premier besoin (lazy)
@@ -16260,12 +16260,12 @@ function showEvolutionModal() {
   ov.id = 'evolution-modal';
   ov.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(10,8,5,0.92);display:flex;align-items:center;justify-content:center;padding:24px;';
   ov.innerHTML = '<div style="max-width:340px;width:100%;text-align:center;">'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.7);line-height:1.6;margin-bottom:8px;">\u00ab\u00a0Quant \u00e0 ceux qui cheminent dans Notre voie,<br>Nous les guidons sur Nos sentiers.\u00a0\u00bb</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;color:rgba(200,168,75,0.4);margin-bottom:24px;">Coran 29:69</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.7);line-height:1.6;margin-bottom:8px;">\u00ab\u00a0Quant \u00e0 ceux qui cheminent dans Notre voie,<br>Nous les guidons sur Nos sentiers.\u00a0\u00bb</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:12px;color:rgba(200,168,75,0.4);margin-bottom:24px;">Coran 29:69</div>'
     + '<div style="font-family:Amiri,serif;font-size:28px;color:#C8A84A;direction:rtl;margin-bottom:20px;">\u0645\u064F\u062F\u064E\u0627\u0648\u064E\u0645\u064E\u0629</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;color:#E5E0DC;line-height:1.7;margin-bottom:32px;">Voil\u00e0 quarante jours.<br>Tu reviens. Tu restes.<br><br><span style="font-style:italic;color:#B5A685;">Niyyah peut maintenant t\u2019accompagner autrement, si tu le souhaites.</span></div>'
-    + '<button id="evolution-accept" style="width:100%;padding:14px;border:none;border-radius:12px;background:#C8A84A;color:#2C2E32;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-weight:600;cursor:pointer;margin-bottom:10px;">Approfondir</button>'
-    + '<button id="evolution-refuse" style="width:100%;padding:12px;border:1px solid rgba(200,168,75,0.2);border-radius:12px;background:transparent;color:#B5A685;font-family:\'Cormorant Garamond\',serif;font-size:13px;cursor:pointer;">Rester dans ce chemin</button>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:16px;color:#E5E0DC;line-height:1.7;margin-bottom:32px;">Voil\u00e0 quarante jours.<br>Tu reviens. Tu restes.<br><br><span style="font-style:italic;color:#B5A685;">Niyyah peut maintenant t\u2019accompagner autrement, si tu le souhaites.</span></div>'
+    + '<button id="evolution-accept" style="width:100%;padding:14px;border:none;border-radius:12px;background:#C8A84A;color:#2C2E32;font-family:\'Georgia\',serif;font-size:15px;font-weight:600;cursor:pointer;margin-bottom:10px;">Approfondir</button>'
+    + '<button id="evolution-refuse" style="width:100%;padding:12px;border:1px solid rgba(200,168,75,0.2);border-radius:12px;background:transparent;color:#B5A685;font-family:\'Georgia\',serif;font-size:13px;cursor:pointer;">Rester dans ce chemin</button>'
     + '</div>';
   document.body.appendChild(ov);
   document.getElementById('evolution-accept').onclick = function() {
@@ -16313,13 +16313,13 @@ function showEvolutionModalRoutine() {
   ov.id = 'evolution-modal-routine';
   ov.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(10,8,5,0.92);display:flex;align-items:center;justify-content:center;padding:24px;';
   ov.innerHTML = '<div style="max-width:340px;width:100%;text-align:center;">'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.7);line-height:1.6;margin-bottom:8px;">\u00ab\u00a0Ceux qui disent : notre Seigneur est All\u00e2h, puis se tiennent droits \u2014 les anges descendent sur eux.\u00a0\u00bb</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.7);line-height:1.6;margin-bottom:8px;">\u00ab\u00a0Ceux qui disent : notre Seigneur est All\u00e2h, puis se tiennent droits \u2014 les anges descendent sur eux.\u00a0\u00bb</div>'
     + '<div style="font-family:Amiri,serif;font-size:18px;color:rgba(200,168,75,0.5);direction:rtl;line-height:1.8;margin-bottom:4px;">\u0625\u0650\u0646\u0651\u064E \u0627\u0644\u0651\u064E\u0630\u0650\u064A\u0646\u064E \u0642\u064E\u0627\u0644\u064F\u0648\u0627 \u0631\u064E\u0628\u0651\u064F\u0646\u064E\u0627 \u0627\u0644\u0644\u0651\u064E\u0647\u064F \u062B\u064F\u0645\u0651\u064E \u0627\u0633\u0652\u062A\u064E\u0642\u064E\u0627\u0645\u064F\u0648\u0627</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;color:rgba(200,168,75,0.4);margin-bottom:24px;">Coran 41:30</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:12px;color:rgba(200,168,75,0.4);margin-bottom:24px;">Coran 41:30</div>'
     + '<div style="font-family:Amiri,serif;font-size:28px;color:#C8A84A;direction:rtl;margin-bottom:20px;">\u0646\u0650\u064A\u0651\u064E\u0629</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;color:#E5E0DC;line-height:1.7;margin-bottom:32px;">Voil\u00e0 quatre-vingt-dix jours.<br>Tu tiens. Ton chemin s\u2019\u00e9largit.<br><br><span style="font-style:italic;color:#B5A685;">Niyyah peut maintenant t\u2019accompagner dans la compl\u00e9tude, si tu le souhaites.</span></div>'
-    + '<button id="evolution-routine-accept" style="width:100%;padding:14px;border:none;border-radius:12px;background:#C8A84A;color:#2C2E32;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-weight:600;cursor:pointer;margin-bottom:10px;">Embrasser tout</button>'
-    + '<button id="evolution-routine-refuse" style="width:100%;padding:12px;border:1px solid rgba(200,168,75,0.2);border-radius:12px;background:transparent;color:#B5A685;font-family:\'Cormorant Garamond\',serif;font-size:13px;cursor:pointer;">Rester ainsi</button>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:16px;color:#E5E0DC;line-height:1.7;margin-bottom:32px;">Voil\u00e0 quatre-vingt-dix jours.<br>Tu tiens. Ton chemin s\u2019\u00e9largit.<br><br><span style="font-style:italic;color:#B5A685;">Niyyah peut maintenant t\u2019accompagner dans la compl\u00e9tude, si tu le souhaites.</span></div>'
+    + '<button id="evolution-routine-accept" style="width:100%;padding:14px;border:none;border-radius:12px;background:#C8A84A;color:#2C2E32;font-family:\'Georgia\',serif;font-size:15px;font-weight:600;cursor:pointer;margin-bottom:10px;">Embrasser tout</button>'
+    + '<button id="evolution-routine-refuse" style="width:100%;padding:12px;border:1px solid rgba(200,168,75,0.2);border-radius:12px;background:transparent;color:#B5A685;font-family:\'Georgia\',serif;font-size:13px;cursor:pointer;">Rester ainsi</button>'
     + '</div>';
   document.body.appendChild(ov);
   document.getElementById('evolution-routine-accept').onclick = function() {
@@ -16465,8 +16465,8 @@ function _aidShowOverlay(evt) {
   el.style.cssText = 'position:fixed;inset:0;z-index:99999;background:radial-gradient(ellipse at center,#2a1f0a 0%,#0d0a04 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;opacity:0;transition:opacity 0.6s;cursor:pointer;padding:40px 24px;';
   el.innerHTML =
     '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:44px;color:#C8A84A;margin-bottom:14px;">' + (ov.title_ar || '') + '</div>' +
-    '<div style="font-family:\'Cormorant Garamond\',serif;font-size:26px;color:#E5DCC8;font-weight:300;margin-bottom:22px;">' + (ov.title_fr || '') + '</div>' +
-    '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;color:rgba(200,168,74,0.7);line-height:1.7;max-width:300px;margin-bottom:32px;">' + _aidT(ov.subtitle) + '</div>' +
+    '<div style="font-family:\'Georgia\',serif;font-size:26px;color:#E5DCC8;font-weight:300;margin-bottom:22px;">' + (ov.title_fr || '') + '</div>' +
+    '<div style="font-family:\'Georgia\',serif;font-size:15px;color:rgba(200,168,74,0.7);line-height:1.7;max-width:300px;margin-bottom:32px;">' + _aidT(ov.subtitle) + '</div>' +
     '<div style="font-family:Inter,sans-serif;font-size:12px;color:rgba(255,255,255,0.2);letter-spacing:2px;text-transform:uppercase;">' + (_aidT(ov.instruction) || 'Tap pour entrer') + '</div>';
   el.onclick = function() { _aidDismissOverlay(el); };
   document.body.appendChild(el);
@@ -16557,15 +16557,15 @@ function _aidTakeoverSanctuaire(evt) {
   // Header
   var hdr = '<div style="padding:20px 20px 0;text-align:center;">';
   if (ev.name_ar) hdr += '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:36px;color:#C8A84A;margin-bottom:6px;">' + ev.name_ar + '</div>';
-  hdr += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;color:#E5DCC8;font-weight:300;margin-bottom:6px;">' + (ev.name_fr || evt.key) + '</div>';
-  if (bannerText) hdr += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;color:rgba(200,168,74,0.6);margin-bottom:16px;">' + bannerText + '</div>';
+  hdr += '<div style="font-family:\'Georgia\',serif;font-size:22px;color:#E5DCC8;font-weight:300;margin-bottom:6px;">' + (ev.name_fr || evt.key) + '</div>';
+  if (bannerText) hdr += '<div style="font-family:\'Georgia\',serif;font-size:13px;color:rgba(200,168,74,0.6);margin-bottom:16px;">' + bannerText + '</div>';
   hdr += '</div>';
 
   // Tabs bar
   hdr += '<div id="aid-tabs-bar" style="display:flex;gap:6px;overflow-x:auto;padding:0 20px 12px;border-bottom:1px solid rgba(200,168,74,0.15);scrollbar-width:none;">';
   tabs.forEach(function(t, i) {
     var ac = i === 0;
-    hdr += '<button class="aid-tab-btn' + (ac ? ' aid-tab-active' : '') + '" data-tab="' + t.id + '" onclick="_aidSwitchTab(\'' + t.id + '\')" style="flex-shrink:0;white-space:nowrap;padding:8px 14px;border-radius:20px;border:1px solid ' + (ac ? 'rgba(200,168,74,0.5)' : 'rgba(200,168,74,0.15)') + ';background:' + (ac ? 'rgba(200,168,74,0.12)' : 'transparent') + ';color:' + (ac ? '#C8A84A' : 'rgba(200,168,74,0.5)') + ';font-family:\'Cormorant Garamond\',serif;font-size:13px;cursor:pointer;">' + t.label + '</button>';
+    hdr += '<button class="aid-tab-btn' + (ac ? ' aid-tab-active' : '') + '" data-tab="' + t.id + '" onclick="_aidSwitchTab(\'' + t.id + '\')" style="flex-shrink:0;white-space:nowrap;padding:8px 14px;border-radius:20px;border:1px solid ' + (ac ? 'rgba(200,168,74,0.5)' : 'rgba(200,168,74,0.15)') + ';background:' + (ac ? 'rgba(200,168,74,0.12)' : 'transparent') + ';color:' + (ac ? '#C8A84A' : 'rgba(200,168,74,0.5)') + ';font-family:\'Georgia\',serif;font-size:13px;cursor:pointer;">' + t.label + '</button>';
   });
   hdr += '</div>';
 
@@ -16579,7 +16579,7 @@ function _aidTakeoverSanctuaire(evt) {
   var voeuxBtn = '';
   if (evt.key === 'AID_AL_ADHA' || evt.key === 'AID_AL_FITR') {
     voeuxBtn = '<div style="text-align:center;padding:16px 20px 8px;">'
-      + '<button onclick="_aidOpenVoeux()" style="background:linear-gradient(135deg,rgba(200,168,74,0.15),rgba(200,168,74,0.05));border:1px solid rgba(200,168,74,0.3);border-radius:14px;padding:12px 24px;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:15px;cursor:pointer;letter-spacing:0.5px;">\u2726 Envoyer un A\u00efd Moubarak</button>'
+      + '<button onclick="_aidOpenVoeux()" style="background:linear-gradient(135deg,rgba(200,168,74,0.15),rgba(200,168,74,0.05));border:1px solid rgba(200,168,74,0.3);border-radius:14px;padding:12px 24px;color:#C8A84A;font-family:\'Georgia\',serif;font-size:15px;cursor:pointer;letter-spacing:0.5px;">\u2726 Envoyer un A\u00efd Moubarak</button>'
       + '</div>';
   }
 
@@ -16699,27 +16699,27 @@ function _aidInjectStyles() {
   s.id = 'aid-styles';
   s.textContent =
     'body.aid-immersive-mode #topbar-v2,body.aid-immersive-mode #nav-bar-v2{display:none !important}' +
-    '.aid-subtitle{font-family:"Cormorant Garamond",serif;font-size:17px;font-weight:700;color:#C8A84A;margin:24px 0 12px;letter-spacing:.5px}' +
-    '.aid-question{font-family:"Cormorant Garamond",serif;font-size:15px;color:rgba(240,234,214,.8);line-height:1.7;margin-bottom:10px;padding-left:8px}' +
+    '.aid-subtitle{font-family:"Georgia",serif;font-size:17px;font-weight:700;color:#C8A84A;margin:24px 0 12px;letter-spacing:.5px}' +
+    '.aid-question{font-family:"Georgia",serif;font-size:15px;color:rgba(240,234,214,.8);line-height:1.7;margin-bottom:10px;padding-left:8px}' +
     '.aid-story{margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid rgba(200,168,74,.1)}' +
-    '.aid-story-titre{font-family:"Cormorant Garamond",serif;font-size:17px;font-weight:700;color:#C8A84A;margin-bottom:10px}' +
-    '.aid-story-text{font-family:"Cormorant Garamond",serif;font-size:15px;color:rgba(240,234,214,.85);line-height:1.8}' +
-    '.aid-story-morale{font-family:"Cormorant Garamond",serif;font-size:15px;font-weight:700;color:rgba(240,234,214,.95);line-height:1.6;margin-top:14px;padding-top:10px;border-top:1px solid rgba(200,168,74,.12)}' +
+    '.aid-story-titre{font-family:"Georgia",serif;font-size:17px;font-weight:700;color:#C8A84A;margin-bottom:10px}' +
+    '.aid-story-text{font-family:"Georgia",serif;font-size:15px;color:rgba(240,234,214,.85);line-height:1.8}' +
+    '.aid-story-morale{font-family:"Georgia",serif;font-size:15px;font-weight:700;color:rgba(240,234,214,.95);line-height:1.6;margin-top:14px;padding-top:10px;border-top:1px solid rgba(200,168,74,.12)}' +
     '.aid-dua{margin-bottom:24px;padding-bottom:18px;border-bottom:1px solid rgba(200,168,74,.08)}' +
     '.aid-dua-occasion{font-family:Inter,sans-serif;font-size:12px;color:rgba(200,168,74,.6);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}' +
     '.aid-dua-ar{font-family:"Scheherazade New",Amiri,serif;font-size:22px;color:#C8A84A;direction:rtl;text-align:right;line-height:1.8;margin-bottom:8px}' +
-    '.aid-dua-fr{font-family:"Cormorant Garamond",serif;font-size:15px;font-style:italic;color:rgba(240,234,214,.8);line-height:1.6;margin-bottom:6px}' +
+    '.aid-dua-fr{font-family:"Georgia",serif;font-size:15px;font-style:italic;color:rgba(240,234,214,.8);line-height:1.6;margin-bottom:6px}' +
     '.aid-source{font-family:Inter,sans-serif;font-size:12px;color:rgba(200,168,74,.35)}' +
-    '.aid-med{font-family:"Cormorant Garamond",serif;font-size:16px;color:rgba(240,234,214,.85);line-height:1.8;margin-bottom:24px;padding-bottom:18px;border-bottom:1px solid rgba(200,168,74,.08)}' +
+    '.aid-med{font-family:"Georgia",serif;font-size:16px;color:rgba(240,234,214,.85);line-height:1.8;margin-bottom:24px;padding-bottom:18px;border-bottom:1px solid rgba(200,168,74,.08)}' +
     '.aid-verset{margin-bottom:24px;padding-bottom:18px;border-bottom:1px solid rgba(200,168,74,.08)}' +
     '.aid-verset-ref{font-family:Inter,sans-serif;font-size:12px;color:rgba(200,168,74,.6);letter-spacing:.5px;margin-bottom:8px}' +
-    '.aid-verset-text{font-family:"Cormorant Garamond",serif;font-size:16px;font-style:italic;color:rgba(240,234,214,.9);line-height:1.8;margin-bottom:8px}' +
-    '.aid-verset-comment{font-family:"Cormorant Garamond",serif;font-size:14px;color:rgba(200,168,74,.5);line-height:1.6}' +
+    '.aid-verset-text{font-family:"Georgia",serif;font-size:16px;font-style:italic;color:rgba(240,234,214,.9);line-height:1.8;margin-bottom:8px}' +
+    '.aid-verset-comment{font-family:"Georgia",serif;font-size:14px;color:rgba(200,168,74,.5);line-height:1.6}' +
     '.aid-takbir{margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid rgba(200,168,74,.08)}' +
-    '.aid-takbir-titre{font-family:"Cormorant Garamond",serif;font-size:14px;color:rgba(200,168,74,.6);margin-bottom:12px}' +
+    '.aid-takbir-titre{font-family:"Georgia",serif;font-size:14px;color:rgba(200,168,74,.6);margin-bottom:12px}' +
     '.aid-takbir-ar{font-family:"Scheherazade New",Amiri,serif;font-size:24px;color:#C8A84A;direction:rtl;text-align:right;line-height:1.8;margin-bottom:10px}' +
-    '.aid-takbir-trans{font-family:"Cormorant Garamond",serif;font-size:14px;font-style:italic;color:rgba(240,234,214,.6);line-height:1.6;margin-bottom:8px}' +
-    '.aid-takbir-trad{font-family:"Cormorant Garamond",serif;font-size:15px;color:rgba(240,234,214,.8);line-height:1.7}';
+    '.aid-takbir-trans{font-family:"Georgia",serif;font-size:14px;font-style:italic;color:rgba(240,234,214,.6);line-height:1.6;margin-bottom:8px}' +
+    '.aid-takbir-trad{font-family:"Georgia",serif;font-size:15px;color:rgba(240,234,214,.8);line-height:1.7}';
   document.head.appendChild(s);
 }
 
@@ -16816,8 +16816,8 @@ function _aidInjectTachriqCard(evt) {
     '<div style="position:absolute;inset:0;background:rgba(15,12,8,0.45);border-radius:14px;"></div>' +
     '<div style="position:relative;z-index:1;">' +
     '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:28px;color:#C8A84A;margin-bottom:8px;text-shadow:0 1px 6px rgba(0,0,0,0.5);">\u0639\u064A\u062F \u0645\u0628\u0627\u0631\u0643</div>' +
-    '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;color:#E5DCC8;font-weight:400;margin-bottom:8px;letter-spacing:0.3px;text-shadow:0 1px 4px rgba(0,0,0,0.4);">' + (bannerText || ('A\u00efd al-Adha \u00b7 Jour ' + evt.dayNum + '/4')) + '</div>' +
-    '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;color:#C8A84A;letter-spacing:0.4px;">Les takb\u00eer\u00e2t continuent \u00b7 Tap pour ouvrir \u2726</div>' +
+    '<div style="font-family:\'Georgia\',serif;font-size:16px;color:#E5DCC8;font-weight:400;margin-bottom:8px;letter-spacing:0.3px;text-shadow:0 1px 4px rgba(0,0,0,0.4);">' + (bannerText || ('A\u00efd al-Adha \u00b7 Jour ' + evt.dayNum + '/4')) + '</div>' +
+    '<div style="font-family:\'Georgia\',serif;font-size:12px;color:#C8A84A;letter-spacing:0.4px;">Les takb\u00eer\u00e2t continuent \u00b7 Tap pour ouvrir \u2726</div>' +
     '</div>';
   // Insert inside the centered wrapper, just above .quick-actions-v2
   var quickGrid = sanct.querySelector('.quick-actions-v2');
@@ -16837,7 +16837,7 @@ function _aidOpenFromCard(evt) {
     var btn = document.createElement('button');
     btn.className = 'aid-close-card';
     btn.setAttribute('aria-label', 'Retour');
-    btn.style.cssText = 'position:absolute;top:14px;left:16px;z-index:10;background:rgba(200,168,74,0.12);border:1px solid rgba(200,168,74,0.3);border-radius:10px;padding:6px 14px;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:13px;cursor:pointer;display:flex;align-items:center;gap:6px;';
+    btn.style.cssText = 'position:absolute;top:14px;left:16px;z-index:10;background:rgba(200,168,74,0.12);border:1px solid rgba(200,168,74,0.3);border-radius:10px;padding:6px 14px;color:#C8A84A;font-family:\'Georgia\',serif;font-size:13px;cursor:pointer;display:flex;align-items:center;gap:6px;';
     btn.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#C8A84A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>Retour';
     btn.onclick = function() { _aidRestoreSanctuaire(); };
     immersive.style.position = 'relative';
@@ -16876,7 +16876,7 @@ function _aidOpenVoeux() {
   modal.innerHTML =
     '<div style="max-width:420px;margin:0 auto;padding:20px;">'
     + '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;color:#C8A84A;">\u2726 Carte de v\u0153ux</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:20px;color:#C8A84A;">\u2726 Carte de v\u0153ux</div>'
     + '<button onclick="document.getElementById(\'aid-voeux-modal\').remove()" style="background:none;border:none;color:rgba(255,255,255,0.4);font-size:20px;cursor:pointer;padding:8px;">\u2715</button>'
     + '</div>'
     // Champ destinataire
@@ -16893,7 +16893,7 @@ function _aidOpenVoeux() {
     + '<div id="aid-voeux-preview" style="position:relative;border-radius:16px;overflow:hidden;margin-bottom:16px;aspect-ratio:9/16;background:#0a0a0a;"><img src="assets/aid_card_bg.webp" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"><div id="aid-voeux-preview-text" style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px 16px;text-align:center;"></div></div>'
     // Actions
     + '<div style="display:flex;gap:10px;">'
-    + '<button onclick="_aidVoeuxGenerate()" style="flex:1;padding:14px;border-radius:14px;border:none;background:linear-gradient(135deg,#c8a84b,#e8cc6a);color:#1a0f00;font-size:14px;font-weight:700;font-family:\'Cormorant Garamond\',serif;cursor:pointer;">G\u00e9n\u00e9rer la carte</button>'
+    + '<button onclick="_aidVoeuxGenerate()" style="flex:1;padding:14px;border-radius:14px;border:none;background:linear-gradient(135deg,#c8a84b,#e8cc6a);color:#1a0f00;font-size:14px;font-weight:700;font-family:\'Georgia\',serif;cursor:pointer;">G\u00e9n\u00e9rer la carte</button>'
     + '</div>'
     + '</div>';
 
@@ -16921,8 +16921,8 @@ function _aidVoeuxPreview() {
   if (!el) return;
   var d = _aidVoeuxGetMsg();
   var html = '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:24px;color:#E8D9A8;margin-bottom:8px;">\u0639\u064a\u062f \u0645\u0628\u0627\u0631\u0643</div>';
-  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;color:#E8D9A8;line-height:1.7;white-space:pre-line;max-width:90%;">' + d.msg + '</div>';
-  if (d.sig) html += '<div style="font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:12px;color:rgba(232,217,168,0.6);margin-top:10px;">\u2014 ' + d.sig + '</div>';
+  html += '<div style="font-family:\'Georgia\',serif;font-size:13px;color:#E8D9A8;line-height:1.7;white-space:pre-line;max-width:90%;">' + d.msg + '</div>';
+  if (d.sig) html += '<div style="font-family:\'Georgia\',serif;font-style:italic;font-size:12px;color:rgba(232,217,168,0.6);margin-top:10px;">\u2014 ' + d.sig + '</div>';
   el.innerHTML = html;
 }
 
@@ -16962,7 +16962,7 @@ function _aidVoeuxDrawText(ctx, d, W, H) {
   // Message — adaptive font size, centered in halo
   var msgLines = [];
   var fontSize = 52;
-  ctx.font = fontSize + 'px Cormorant Garamond, Georgia, serif';
+  ctx.font = fontSize + 'px Georgia, Georgia, serif';
   var maxW = W - 200;
   d.msg.split('\n').forEach(function(para) {
     if (para.trim() === '') { msgLines.push(''); return; }
@@ -16980,12 +16980,12 @@ function _aidVoeuxDrawText(ctx, d, W, H) {
   if (msgLines.length > 12) { fontSize = 40; }
   else if (msgLines.length > 8) { fontSize = 44; }
   var lineH = Math.round(fontSize * 1.45);
-  ctx.font = fontSize + 'px Cormorant Garamond, Georgia, serif';
+  ctx.font = fontSize + 'px Georgia, Georgia, serif';
 
   // Re-wrap with final font size
   if (fontSize !== 52) {
     msgLines = [];
-    ctx.font = fontSize + 'px Cormorant Garamond, Georgia, serif';
+    ctx.font = fontSize + 'px Georgia, Georgia, serif';
     d.msg.split('\n').forEach(function(para) {
       if (para.trim() === '') { msgLines.push(''); return; }
       var words = para.split(' ');
@@ -17002,13 +17002,13 @@ function _aidVoeuxDrawText(ctx, d, W, H) {
   var totalTextH = msgLines.length * lineH;
   var startY = 660;
   ctx.fillStyle = '#E8D9A8';
-  ctx.font = fontSize + 'px Cormorant Garamond, Georgia, serif';
+  ctx.font = fontSize + 'px Georgia, Georgia, serif';
   msgLines.forEach(function(l, i) { ctx.fillText(l, W/2, startY + i * lineH); });
 
   // Signature — italic, bottom of halo
   if (d.sig) {
     ctx.fillStyle = 'rgba(232,217,168,0.6)';
-    ctx.font = 'italic 36px Cormorant Garamond, Georgia, serif';
+    ctx.font = 'italic 36px Georgia, Georgia, serif';
     ctx.fillText('\u2014 ' + d.sig, W/2, startY + totalTextH + 50);
   }
 }
@@ -17225,9 +17225,9 @@ function _askCameraPermission(context) {
       ov.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(15,12,8,0.92);display:flex;align-items:center;justify-content:center;padding:24px;';
       ov.innerHTML = '<div style="text-align:center;max-width:320px;">'
         + '<div style="font-size:36px;margin-bottom:16px;">\uD83D\uDCF7</div>'
-        + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;font-weight:700;color:#C8A84A;margin-bottom:12px;">Niyyah a besoin de ta cam\u00e9ra</div>'
+        + '<div style="font-family:\'Georgia\',serif;font-size:20px;font-weight:700;color:#C8A84A;margin-bottom:12px;">Niyyah a besoin de ta cam\u00e9ra</div>'
         + '<div style="font-size:14px;color:rgba(240,234,214,0.75);line-height:1.6;margin-bottom:24px;">' + _msg + '</div>'
-        + '<button id="_camContinue" style="padding:14px 28px;border:none;border-radius:24px;background:#C8A84A;color:#2C2E32;font-family:Cormorant Garamond,serif;font-size:15px;font-weight:700;cursor:pointer;margin-right:12px;">Continuer</button>'
+        + '<button id="_camContinue" style="padding:14px 28px;border:none;border-radius:24px;background:#C8A84A;color:#2C2E32;font-family:Georgia,serif;font-size:15px;font-weight:700;cursor:pointer;margin-right:12px;">Continuer</button>'
         + '<button id="_camLater" style="padding:14px 20px;border-radius:24px;border:1px solid rgba(200,168,74,0.3);background:transparent;color:rgba(255,255,255,0.5);font-size:13px;cursor:pointer;">Plus tard</button>'
         + '</div>';
       document.body.appendChild(ov);
@@ -17257,7 +17257,7 @@ async function regardeOpen() {
   if (!screen || !content) return;
   screen.classList.add('active');
   document.body.style.overflow = 'hidden';
-  content.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:rgba(200,168,75,0.6);font-family:\'Cormorant Garamond\',serif;font-style:italic;">\u2026</div>';
+  content.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:rgba(200,168,75,0.6);font-family:\'Georgia\',serif;font-style:italic;">\u2026</div>';
   closeRegardeJournal();
   closeRegardeDetail();
   if (typeof closeNiyyahJournal === 'function') closeNiyyahJournal();
@@ -17279,7 +17279,7 @@ async function regardeOpen() {
   var _camOk = await _askCameraPermission('regarde');
   if (!_camOk) {
     content.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:14px;padding:0 10%;text-align:center;">'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#C8A84A;">' + t('camera_denied') + '</div>'
+      + '<div style="font-family:\'Georgia\',serif;font-size:16px;font-style:italic;color:#C8A84A;">' + t('camera_denied') + '</div>'
       + '<div style="font-size:12px;color:rgba(255,255,255,0.55);line-height:1.6;">Va dans les r\u00e9glages de ton t\u00e9l\u00e9phone et autorise la cam\u00e9ra pour Niyyah.</div>'
       + '<button onclick="regardeClose()" style="margin-top:8px;padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:13px;cursor:pointer;">' + t('btn_close') + '</button>'
       + '</div>';
@@ -17298,7 +17298,7 @@ async function regardeOpen() {
     video.srcObject = _regardeStream;
     await video.play();
   } catch(e) {
-    content.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:16px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#C8A84A;text-align:center;padding:40px;">' + t('camera_denied') + '</div><button onclick="regardeOpen()" style="padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:13px;cursor:pointer;">' + t('btn_retry') + '</button></div>';
+    content.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:16px;"><div style="font-family:\'Georgia\',serif;font-size:16px;font-style:italic;color:#C8A84A;text-align:center;padding:40px;">' + t('camera_denied') + '</div><button onclick="regardeOpen()" style="padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:13px;cursor:pointer;">' + t('btn_retry') + '</button></div>';
   }
 
   screen.classList.add('active');
@@ -17308,14 +17308,14 @@ async function regardeOpen() {
 
 function _regardeShowQuestion(content, question) {
   content.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;padding:0 10%;">'
-    + '<div id="regarde-question" style="font-family:\'Cormorant Garamond\',serif;font-size:26px;font-style:italic;color:#D4AF37;text-align:center;line-height:1.6;max-width:80%;opacity:0;animation:regardeFadeIn 1.5s ease forwards;">' + question + '</div>'
+    + '<div id="regarde-question" style="font-family:\'Georgia\',serif;font-size:26px;font-style:italic;color:#D4AF37;text-align:center;line-height:1.6;max-width:80%;opacity:0;animation:regardeFadeIn 1.5s ease forwards;">' + question + '</div>'
     + '<div style="display:flex;gap:20px;margin-top:32px;opacity:0;animation:regardeFadeIn 1.5s ease 0.5s forwards;">'
     + '<button id="regarde-btn-star" onclick="regardeToggleStar()" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">☆</button>'
     + '<button onclick="regardeRefresh()" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">↻</button>'
     + '<button onclick="regardeToggleNote()" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">✎</button>'
     + '</div>'
     + '<div id="regarde-note-wrap" style="display:none;width:100%;max-width:80%;margin-top:20px;opacity:0;transition:opacity 0.3s ease;">'
-    + '<textarea id="regarde-note-input" placeholder="' + t('regarde_note_placeholder') + '" oninput="regardeSaveNote()" style="width:100%;min-height:60px;background:rgba(200,168,75,0.04);border:1px solid rgba(212,175,55,0.25);border-radius:12px;padding:12px;color:#D4AF37;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;resize:none;outline:none;box-sizing:border-box;"></textarea>'
+    + '<textarea id="regarde-note-input" placeholder="' + t('regarde_note_placeholder') + '" oninput="regardeSaveNote()" style="width:100%;min-height:60px;background:rgba(200,168,75,0.04);border:1px solid rgba(212,175,55,0.25);border-radius:12px;padding:12px;color:#D4AF37;font-family:\'Georgia\',serif;font-size:15px;font-style:italic;resize:none;outline:none;box-sizing:border-box;"></textarea>'
     + '</div>'
     + '</div>';
   content.style.opacity = '1';
@@ -17346,7 +17346,7 @@ window._updateRegardStreak = _updateRegardStreak;
 window.getRegardStreak = getRegardStreak;
 var _svgPlayIcon = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 5.5L18 12L7.5 18.5V5.5Z"/></svg>';
 var _svgPauseIcon = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="9" y1="5" x2="9" y2="19"/><line x1="15" y1="5" x2="15" y2="19"/></svg>';
-var _svg7xIcon = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3.5-7.1"/><polyline points="21 3 21 8 16 8"/><text x="12" y="15" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="9" font-style="italic" stroke="none" fill="currentColor">7</text></svg>';
+var _svg7xIcon = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3.5-7.1"/><polyline points="21 3 21 8 16 8"/><text x="12" y="15" text-anchor="middle" font-family="Georgia, serif" font-size="9" font-style="italic" stroke="none" fill="currentColor">7</text></svg>';
 var _svgMemoIcon = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"/></svg>';
 var _svgMemoActif = '<svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill-opacity="0.25"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"/></svg>';
 var _svgDuaaIcon = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9c0 7 4 11 8 11s8-4 8-11"/><path d="M4 9c0-2 1-4 3-4s3 2 3 4"/><path d="M14 9c0-2 1-4 3-4s3 2 3 4"/></svg>';
@@ -17367,17 +17367,17 @@ function _renderRegardePremium(content, data, dataUrl) {
       var sourateName = ar.surah ? ar.surah.englishName : '';
       var refLabel = sourateName + ' (' + ref + ')';
       var _lieuHtml = data.lieu_revelation ? ' <span style="font-size:12px;color:rgba(200,168,75,0.45);">(' + data.lieu_revelation + ')</span>' : '';
-      var _phoneHtml = data.phonetique ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.5);line-height:1.6;max-width:340px;margin-bottom:8px;">' + data.phonetique + '</div>' : '';
+      var _phoneHtml = data.phonetique ? '<div style="font-family:\'Georgia\',serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.5);line-height:1.6;max-width:340px;margin-bottom:8px;">' + data.phonetique + '</div>' : '';
       var _sep = '<div style="width:40px;height:1px;background:rgba(200,168,75,0.3);margin:20px auto;"></div>';
       var _hasAudio = !!audioUrl;
       content.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100%;padding:40px 24px;text-align:center;">'
-        + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;letter-spacing:2px;color:rgba(200,168,75,0.6);margin-bottom:16px;">' + refLabel + _lieuHtml + '</div>'
+        + '<div style="font-family:\'Georgia\',serif;font-size:13px;letter-spacing:2px;color:rgba(200,168,75,0.6);margin-bottom:16px;">' + refLabel + _lieuHtml + '</div>'
         + '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:24px;color:#FAF7EE;direction:rtl;line-height:1.8;margin-bottom:8px;">' + (ar.text || '') + '</div>'
         + _phoneHtml
         + _sep
-        + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:rgba(229,224,220,0.85);line-height:1.8;max-width:340px;">' + (fr.text || '') + '</div>'
+        + '<div style="font-family:\'Georgia\',serif;font-size:16px;font-style:italic;color:rgba(229,224,220,0.85);line-height:1.8;max-width:340px;">' + (fr.text || '') + '</div>'
         + _sep
-        + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#C8A84A;line-height:1.6;max-width:320px;">' + (data.meditation || '') + '</div>'
+        + '<div style="font-family:\'Georgia\',serif;font-size:14px;font-style:italic;color:#C8A84A;line-height:1.6;max-width:320px;">' + (data.meditation || '') + '</div>'
         + (getRegardStreak() > 0 ? '<div class="regard-streak">' + _svgStreakIcon + '<span>' + getRegardStreak() + ' jour' + (getRegardStreak() > 1 ? 's' : '') + ' de Regards</span></div>' : '')
         + '<div class="regard-actions-row">'
         + (audioUrl ? '<button class="btn-regard-premium" id="regarde-premium-audio" onclick="_regardePremiumPlayAudio(this)" data-src="' + audioUrl + '" aria-label="\u00c9couter">' + _svgPlayIcon + '</button>' : '')
@@ -17401,8 +17401,8 @@ function _renderRegardePremium(content, data, dataUrl) {
     })
     .catch(function() {
       content.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:16px;padding:40px;">'
-        + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.6);text-align:center;">Verset introuvable (' + ref + ')</div>'
-        + (data.meditation ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#C8A84A;text-align:center;max-width:300px;">' + data.meditation + '</div>' : '')
+        + '<div style="font-family:\'Georgia\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.6);text-align:center;">Verset introuvable (' + ref + ')</div>'
+        + (data.meditation ? '<div style="font-family:\'Georgia\',serif;font-size:14px;font-style:italic;color:#C8A84A;text-align:center;max-width:300px;">' + data.meditation + '</div>' : '')
         + '<button onclick="_renderRegardePremium(document.getElementById(\'regarde-content\'),' + JSON.stringify(data).replace(/'/g, '\\\'') + ',null);" style="padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:13px;cursor:pointer;">R\u00e9essayer</button>'
         + '</div>';
     });
@@ -17488,12 +17488,12 @@ function _regardeDuaa() {
   var body;
   if (d.type === 'mathur') {
     body = '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:24px;color:#FAF7EE;direction:rtl;line-height:1.9;margin-bottom:14px;">' + esc(d.ar) + '</div>'
-         + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.6);line-height:1.6;margin-bottom:14px;">' + esc(d.translit) + '</div>'
-         + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;font-style:italic;color:#FAF7EE;line-height:1.7;margin-bottom:14px;">' + esc(d.fr) + '</div>'
+         + '<div style="font-family:\'Georgia\',serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.6);line-height:1.6;margin-bottom:14px;">' + esc(d.translit) + '</div>'
+         + '<div style="font-family:\'Georgia\',serif;font-size:17px;font-style:italic;color:#FAF7EE;line-height:1.7;margin-bottom:14px;">' + esc(d.fr) + '</div>'
          + '<div style="font-size:12px;letter-spacing:1px;color:rgba(200,168,75,0.45);">' + esc(d.source) + '</div>';
   } else {
-    body = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.45);margin-bottom:12px;">une invocation</div>'
-         + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;color:#FAF7EE;line-height:1.7;">' + esc(d.fr) + '</div>';
+    body = '<div style="font-family:\'Georgia\',serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.45);margin-bottom:12px;">une invocation</div>'
+         + '<div style="font-family:\'Georgia\',serif;font-size:18px;font-style:italic;color:#FAF7EE;line-height:1.7;">' + esc(d.fr) + '</div>';
   }
   var modal = document.createElement('div');
   modal.id = 'regarde-duaa-modal';
@@ -17501,7 +17501,7 @@ function _regardeDuaa() {
   modal.innerHTML = '<div style="max-width:360px;width:100%;text-align:center;">'
     + '<div style="font-family:Amiri,serif;font-size:22px;color:#C8A84A;margin-bottom:16px;">\uD83E\uDD32</div>'
     + body
-    + '<button onclick="document.getElementById(\'regarde-duaa-modal\').remove();" style="margin-top:24px;padding:10px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:transparent;color:#B5A685;font-family:\'Cormorant Garamond\',serif;font-size:13px;cursor:pointer;">Fermer</button>'
+    + '<button onclick="document.getElementById(\'regarde-duaa-modal\').remove();" style="margin-top:24px;padding:10px 28px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:transparent;color:#B5A685;font-family:\'Georgia\',serif;font-size:13px;cursor:pointer;">Fermer</button>'
     + '</div>';
   document.body.appendChild(modal);
 }
@@ -17525,7 +17525,7 @@ function _regardePremiumShare() {
     ctx.fillRect(0, 0, 1080, 1080);
     // Reference en haut
     ctx.fillStyle = 'rgba(200,168,75,0.5)';
-    ctx.font = '24px "Cormorant Garamond", serif';
+    ctx.font = '24px "Georgia", serif';
     ctx.textAlign = 'center';
     ctx.fillText(d.refLabel, 540, 80);
     // Verset arabe
@@ -17540,7 +17540,7 @@ function _regardePremiumShare() {
     ctx.fillRect(500, arY + 10, 80, 1);
     // Traduction
     ctx.fillStyle = '#FAF7EE';
-    ctx.font = 'italic 18px "Cormorant Garamond", serif';
+    ctx.font = 'italic 18px "Georgia", serif';
     var frLines = _wrapText(ctx, d.frText, 860);
     var frY = arY + 50;
     frLines.forEach(function(l) { ctx.fillText(l, 540, frY); frY += 30; });
@@ -17549,13 +17549,13 @@ function _regardePremiumShare() {
     ctx.fillRect(500, frY + 10, 80, 1);
     // Meditation
     ctx.fillStyle = '#C8A84A';
-    ctx.font = 'italic 14px "Cormorant Garamond", serif';
+    ctx.font = 'italic 14px "Georgia", serif';
     var medLines = _wrapText(ctx, d.meditation, 800);
     var medY = frY + 50;
     medLines.forEach(function(l) { ctx.fillText(l, 540, medY); medY += 24; });
     // Signature
     ctx.fillStyle = 'rgba(200,168,75,0.35)';
-    ctx.font = '16px "Cormorant Garamond", serif';
+    ctx.font = '16px "Georgia", serif';
     ctx.fillText('\u2726 Niyyah', 540, 1040);
     // Afficher
     _showShareModal(c);
@@ -17602,8 +17602,8 @@ function _showShareModal(canvas) {
     modal.innerHTML = '<div style="max-width:360px;width:100%;text-align:center;">'
       + '<img src="' + url + '" style="width:100%;border-radius:12px;margin-bottom:16px;">'
       + '<div style="display:flex;gap:10px;justify-content:center;">'
-      + '<button onclick="var a=document.createElement(\'a\');a.href=\'' + url + '\';a.download=\'regard-niyyah.jpg\';a.click();" style="flex:1;padding:12px;border-radius:12px;border:none;background:#C8A84A;color:#2C2E32;font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:600;cursor:pointer;">T\u00e9l\u00e9charger</button>'
-      + '<button onclick="document.getElementById(\'regarde-share-modal\').remove();" style="flex:1;padding:12px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:transparent;color:#B5A685;font-family:\'Cormorant Garamond\',serif;font-size:14px;cursor:pointer;">Fermer</button>'
+      + '<button onclick="var a=document.createElement(\'a\');a.href=\'' + url + '\';a.download=\'regard-niyyah.jpg\';a.click();" style="flex:1;padding:12px;border-radius:12px;border:none;background:#C8A84A;color:#2C2E32;font-family:\'Georgia\',serif;font-size:14px;font-weight:600;cursor:pointer;">T\u00e9l\u00e9charger</button>'
+      + '<button onclick="document.getElementById(\'regarde-share-modal\').remove();" style="flex:1;padding:12px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:transparent;color:#B5A685;font-family:\'Georgia\',serif;font-size:14px;cursor:pointer;">Fermer</button>'
       + '</div></div>';
     document.body.appendChild(modal);
   }, 'image/png');
@@ -17628,13 +17628,13 @@ function _regardeShowVerset(content, v, slow, returning) {
   var _sabab = v.sabab ? '<div style="margin-top:12px;font-size:13px;color:rgba(250,247,238,0.5);line-height:1.5;"><span style="color:#C8A84A;font-weight:600;">Sabab :</span> ' + _esc(v.sabab) + '</div>' : '';
   var d = slow ? [0, 2, 5, 5.5, 6, 7] : [0, 0.3, 0.3, 0.3, 0.6, 0.5];
   var dur = slow ? 2 : 1.5;
-  var _retHtml = returning ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.6);margin-bottom:20px;opacity:0;animation:regardeFadeIn 1s ease '+d[0]+'s forwards;">\u00ab Ce verset t\u2019a d\u00e9j\u00e0 visit\u00e9. \u00bb</div>' : '';
+  var _retHtml = returning ? '<div style="font-family:\'Georgia\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.6);margin-bottom:20px;opacity:0;animation:regardeFadeIn 1s ease '+d[0]+'s forwards;">\u00ab Ce verset t\u2019a d\u00e9j\u00e0 visit\u00e9. \u00bb</div>' : '';
   content.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100%;padding:0 8%;">'
     + _retHtml
-    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:22px;font-style:italic;color:#FAF7EE;line-height:1.7;max-width:85%;opacity:0;animation:regardeFadeIn '+dur+'s ease '+d[0]+'s forwards;">' + _esc(v.texte) + '</div>'
+    + '<div style="text-align:center;font-family:\'Georgia\',serif;font-size:22px;font-style:italic;color:#FAF7EE;line-height:1.7;max-width:85%;opacity:0;animation:regardeFadeIn '+dur+'s ease '+d[0]+'s forwards;">' + _esc(v.texte) + '</div>'
     + '<div style="margin-top:16px;font-size:13px;letter-spacing:2px;font-weight:700;text-transform:uppercase;color:#C8A84A;opacity:0;animation:regardeFadeIn 1s ease '+d[2]+'s forwards;">' + _esc(v.reference) + '</div>'
     + '<div style="width:60px;height:1px;background:#C8A84A;margin:24px auto;opacity:0;animation:regardeFadeIn 0.5s ease '+d[3]+'s forwards;"></div>'
-    + '<div style="text-align:center;font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#C8A84A;line-height:1.6;max-width:80%;opacity:0;animation:regardeFadeIn 1s ease '+d[4]+'s forwards;">' + _esc(v.murmure) + '</div>'
+    + '<div style="text-align:center;font-family:\'Georgia\',serif;font-size:16px;font-style:italic;color:#C8A84A;line-height:1.6;max-width:80%;opacity:0;animation:regardeFadeIn 1s ease '+d[4]+'s forwards;">' + _esc(v.murmure) + '</div>'
     + '<div style="display:flex;gap:20px;margin-top:32px;opacity:0;animation:regardeFadeIn 1s ease '+d[5]+'s forwards;">'
     + '<button id="regarde-btn-star" onclick="regardeToggleStar()" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">☆</button>'
     + '<button onclick="regardeRefresh()" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">↻</button>'
@@ -17642,7 +17642,7 @@ function _regardeShowVerset(content, v, slow, returning) {
     + '<button onclick="_regardeDuaa()" aria-label="Du\u02BFa\u02BE" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#D4AF37;">' + _svgDuaaIcon + '</button>'
     + '</div>'
     + '<div id="regarde-note-wrap" style="display:none;width:100%;max-width:80%;margin-top:20px;opacity:0;transition:opacity 0.3s ease;">'
-    + '<textarea id="regarde-note-input" placeholder="' + t('regarde_note_placeholder') + '" oninput="regardeSaveNote()" style="width:100%;min-height:60px;background:rgba(200,168,75,0.04);border:1px solid rgba(212,175,55,0.25);border-radius:12px;padding:12px;color:#D4AF37;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;resize:none;outline:none;box-sizing:border-box;"></textarea>'
+    + '<textarea id="regarde-note-input" placeholder="' + t('regarde_note_placeholder') + '" oninput="regardeSaveNote()" style="width:100%;min-height:60px;background:rgba(200,168,75,0.04);border:1px solid rgba(212,175,55,0.25);border-radius:12px;padding:12px;color:#D4AF37;font-family:\'Georgia\',serif;font-size:15px;font-style:italic;resize:none;outline:none;box-sizing:border-box;"></textarea>'
     + '</div>'
     + '</div>';
   content.style.opacity = '1';
@@ -17745,13 +17745,13 @@ function regardeCapture() {
       clearTimeout(_toR);
       if (_fallbackWithVersets()) return;
       if (window._regardLibLoading) {
-        content.innerHTML = '<div style="text-align:center;padding:20%;font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.6);">Charge en cours\u2026</div>';
+        content.innerHTML = '<div style="text-align:center;padding:20%;font-family:\'Georgia\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.6);">Charge en cours\u2026</div>';
         content.style.opacity = '1';
         var _retryCount = 0;
         var _retryInterval = setInterval(function() {
           _retryCount++;
           if (_fallbackWithVersets()) { clearInterval(_retryInterval); return; }
-          if (_retryCount >= 10) { clearInterval(_retryInterval); content.innerHTML = '<div style="text-align:center;padding:20%;font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.6);">R\u00e9essaie dans un instant.<br><button onclick="regardeClose();regardeOpen();" style="margin-top:16px;padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:13px;cursor:pointer;">R\u00e9essayer</button></div>'; }
+          if (_retryCount >= 10) { clearInterval(_retryInterval); content.innerHTML = '<div style="text-align:center;padding:20%;font-family:\'Georgia\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.6);">R\u00e9essaie dans un instant.<br><button onclick="regardeClose();regardeOpen();" style="margin-top:16px;padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:13px;cursor:pointer;">R\u00e9essayer</button></div>'; }
         }, 500);
         return;
       }
@@ -17759,11 +17759,11 @@ function regardeCapture() {
         var _n = {}; Object.keys(d).forEach(function(k) { _n[k.toUpperCase()] = d[k]; });
         window.REGARD_VERSETS = _n;
         if (!_fallbackWithVersets()) {
-          content.innerHTML = '<div style="text-align:center;padding:20%;font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.6);">Aucun verset disponible.<br><button onclick="regardeClose();regardeOpen();" style="margin-top:16px;padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:13px;cursor:pointer;">R\u00e9essayer</button></div>';
+          content.innerHTML = '<div style="text-align:center;padding:20%;font-family:\'Georgia\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.6);">Aucun verset disponible.<br><button onclick="regardeClose();regardeOpen();" style="margin-top:16px;padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:13px;cursor:pointer;">R\u00e9essayer</button></div>';
           content.style.opacity = '1';
         }
       }).catch(function() {
-        content.innerHTML = '<div style="text-align:center;padding:20%;font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.6);">Connexion requise pour le premier Regard.<br><button onclick="regardeClose();regardeOpen();" style="margin-top:16px;padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:13px;cursor:pointer;">R\u00e9essayer</button></div>';
+        content.innerHTML = '<div style="text-align:center;padding:20%;font-family:\'Georgia\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.6);">Connexion requise pour le premier Regard.<br><button onclick="regardeClose();regardeOpen();" style="margin-top:16px;padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:13px;cursor:pointer;">R\u00e9essayer</button></div>';
         content.style.opacity = '1';
       });
     }
@@ -17853,7 +17853,7 @@ function _showSavedIndicator(afterId) {
   var el = document.createElement('div');
   el.id = afterId + '-saved';
   el.textContent = t('note_saved');
-  el.style.cssText = 'font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:#D4AF37;text-align:center;margin-top:6px;opacity:0;transition:opacity 0.2s ease;';
+  el.style.cssText = 'font-family:\'Georgia\',serif;font-size:13px;font-style:italic;color:#D4AF37;text-align:center;margin-top:6px;opacity:0;transition:opacity 0.2s ease;';
   var target = document.getElementById(afterId);
   if (target && target.parentNode) target.parentNode.appendChild(el);
   setTimeout(function() { el.style.opacity = '1'; }, 10);
@@ -17896,7 +17896,7 @@ function openRegardeJournal() {
   if (!overlay || !list) return;
   var entries = getRegardeHistory();
   if (entries.length === 0) {
-    list.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">\u0646\u064E\u0638\u064E\u0631</div><div class="empty-state-title">'+t('journal_regarde_title')+'</div><div class="empty-state-text">'+t('journal_regarde_text')+'</div><div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.45);margin-top:12px;line-height:1.5;">Les Regards viennent \u00e0 toi quand Allah veut.<br>Pose ton premier regard depuis Scanner.</div></div>';
+    list.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">\u0646\u064E\u0638\u064E\u0631</div><div class="empty-state-title">'+t('journal_regarde_title')+'</div><div class="empty-state-text">'+t('journal_regarde_text')+'</div><div style="font-family:\'Georgia\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.45);margin-top:12px;line-height:1.5;">Les Regards viennent \u00e0 toi quand Allah veut.<br>Pose ton premier regard depuis Scanner.</div></div>';
   } else {
     var html = '';
     entries.forEach(function(e) {
@@ -17907,11 +17907,11 @@ function openRegardeJournal() {
       html += '<div onclick="openRegardeDetail(\'' + e.id + '\')" style="display:flex;gap:12px;align-items:center;padding:12px;background:rgba(200,168,75,0.03);border:1px solid rgba(200,168,75,0.1);border-radius:12px;margin-bottom:8px;cursor:pointer;position:relative;">'
         + thumb
         + '<div style="flex:1;min-width:0;">'
-        + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#D4AF37;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">' + escapeHtml(e.question || '') + '</div>'
+        + '<div style="font-family:\'Georgia\',serif;font-size:14px;font-style:italic;color:#D4AF37;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">' + escapeHtml(e.question || '') + '</div>'
         + '<div style="font-size:12px;color:rgba(255,255,255,0.55);margin-top:4px;">' + dateStr + '</div>'
         + '</div>' + star + '</div>';
     });
-    html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.35);text-align:center;margin-top:20px;line-height:1.5;">Les Regards viennent \u00e0 toi quand Allah veut.<br>Pose ton premier regard depuis Scanner.</div>';
+    html += '<div style="font-family:\'Georgia\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.35);text-align:center;margin-top:20px;line-height:1.5;">Les Regards viennent \u00e0 toi quand Allah veut.<br>Pose ton premier regard depuis Scanner.</div>';
     list.innerHTML = html;
   }
   overlay.style.display = 'block';
@@ -17937,7 +17937,7 @@ function openRegardeDetail(id) {
   var starIcon = entry.bookmark ? '★' : '☆';
   var noteText = entry.note || '';
   content.innerHTML = photoHtml
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-style:italic;color:#D4AF37;line-height:1.6;text-align:center;margin-bottom:12px;">' + escapeHtml(entry.question || '') + '</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:22px;font-style:italic;color:#D4AF37;line-height:1.6;text-align:center;margin-bottom:12px;">' + escapeHtml(entry.question || '') + '</div>'
     + '<div style="font-size:12px;color:rgba(255,255,255,0.55);text-align:center;margin-bottom:24px;">' + dateStr + '</div>'
     + '<div style="display:flex;gap:16px;justify-content:center;margin-bottom:20px;">'
     + '<button onclick="regardeDetailStar(\'' + id + '\')" id="regarde-detail-star" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:' + (entry.bookmark ? 'rgba(212,175,55,0.15)' : 'transparent') + ';cursor:pointer;font-size:24px;color:#D4AF37;display:flex;align-items:center;justify-content:center;">' + starIcon + '</button>'
@@ -17945,7 +17945,7 @@ function openRegardeDetail(id) {
     + '<button onclick="regardeDetailDelete(\'' + id + '\')" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,80,80,0.3);background:transparent;cursor:pointer;font-size:20px;color:rgba(255,80,80,0.6);display:flex;align-items:center;justify-content:center;">🗑</button>'
     + '<button onclick="genRegardCanvas(\'' + id + '\')" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;font-size:20px;color:#D4AF37;display:flex;align-items:center;justify-content:center;">↗</button>'
     + '</div>'
-    + (noteText ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(255,255,255,0.5);text-align:center;padding:12px;background:rgba(200,168,75,0.04);border-radius:10px;">' + escapeHtml(noteText) + '</div>' : '');
+    + (noteText ? '<div style="font-family:\'Georgia\',serif;font-size:14px;font-style:italic;color:rgba(255,255,255,0.5);text-align:center;padding:12px;background:rgba(200,168,75,0.04);border-radius:10px;">' + escapeHtml(noteText) + '</div>' : '');
   overlay.style.display = 'block';
 }
 
@@ -17980,7 +17980,7 @@ function regardeDetailNote(id) {
   _ta.id = 'regarde-detail-note-input';
   _ta.placeholder = t('regarde_note_placeholder');
   _ta.setAttribute('oninput', "regardeDetailNoteSave('" + id + "')");
-  _ta.style.cssText = 'width:100%;min-height:80px;background:rgba(200,168,75,0.04);border:1px solid rgba(212,175,55,0.25);border-radius:12px;padding:12px;color:#D4AF37;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-style:italic;resize:none;outline:none;box-sizing:border-box;';
+  _ta.style.cssText = 'width:100%;min-height:80px;background:rgba(200,168,75,0.04);border:1px solid rgba(212,175,55,0.25);border-radius:12px;padding:12px;color:#D4AF37;font-family:\'Georgia\',serif;font-size:15px;font-style:italic;resize:none;outline:none;box-sizing:border-box;';
   _ta.textContent = (entry && entry.note) || '';
   wrap.appendChild(_ta);
   container.appendChild(wrap);
@@ -18041,7 +18041,7 @@ function openScannerHub(){
      +'<span class="shc-txt"><span class="shc-title">Pose un regard</span><span class="shc-desc">Re\u00e7ois le verset qui \u00e9claire l\u2019instant.</span></span>'
      +'<span class="shc-chev">\u203A</span>'
    +'</button>'
-   +'<button onclick="closeScannerHub();v2GoJournal();" style="display:block;margin:18px auto 0;background:none;border:none;color:rgba(200,168,74,0.6);font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:15px;cursor:pointer;">Ton journal \u2192</button>'
+   +'<button onclick="closeScannerHub();v2GoJournal();" style="display:block;margin:18px auto 0;background:none;border:none;color:rgba(200,168,74,0.6);font-family:\'Georgia\',serif;font-style:italic;font-size:15px;cursor:pointer;">Ton journal \u2192</button>'
    +'<button class="scanner-hub-back" onclick="closeScannerHub()">Retour</button>';
   document.body.appendChild(ov);
   try{ history.pushState({_scannerHub:1}, ''); }catch(e){}
@@ -18101,7 +18101,7 @@ async function scannerOpen() {
       if (_hint) _hint.textContent = t('scanner_hint');
       _updateScannerQuotaHint();
     }).catch(function(err) {
-      overlay.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:16px;"><div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:#C8A84A;text-align:center;padding:40px;">' + t('camera_denied') + '</div><button onclick="scannerClose();scannerOpen()" style="padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:13px;cursor:pointer;">' + t('btn_retry') + '</button><button onclick="scannerClose()" style="padding:8px 20px;border:none;background:transparent;color:var(--t3);font-size:15px;cursor:pointer;">' + t('btn_close') + '</button></div>';
+      overlay.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:16px;"><div style="font-family:\'Georgia\',serif;font-size:16px;font-style:italic;color:#C8A84A;text-align:center;padding:40px;">' + t('camera_denied') + '</div><button onclick="scannerClose();scannerOpen()" style="padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:13px;cursor:pointer;">' + t('btn_retry') + '</button><button onclick="scannerClose()" style="padding:8px 20px;border:none;background:transparent;color:var(--t3);font-size:15px;cursor:pointer;">' + t('btn_close') + '</button></div>';
     });
   });
 }
@@ -18132,7 +18132,7 @@ function renderNiyyahJournalList(entries) {
   var list = document.getElementById('niyyah-journal-list');
   if (!list) return;
   if (entries.length === 0) {
-    list.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">نِيَّة</div><div class="empty-state-title">'+t('journal_niyyah_title')+'</div><div class="empty-state-text">'+t('journal_niyyah_text')+'</div><div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.45);margin-top:12px;line-height:1.5;">Pose ta premi\u00e8re intention depuis Scanner.</div></div>';
+    list.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">نِيَّة</div><div class="empty-state-title">'+t('journal_niyyah_title')+'</div><div class="empty-state-text">'+t('journal_niyyah_text')+'</div><div style="font-family:\'Georgia\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.45);margin-top:12px;line-height:1.5;">Pose ta premi\u00e8re intention depuis Scanner.</div></div>';
     return;
   }
   var html = '';
@@ -18143,7 +18143,7 @@ function renderNiyyahJournalList(entries) {
     html += '<div onclick="openNiyyahDetail(\'' + e.id + '\')" style="display:flex;gap:12px;align-items:center;padding:12px;background:rgba(200,168,75,0.03);border:1px solid rgba(200,168,75,0.1);border-radius:12px;margin-bottom:8px;cursor:pointer;">'
       + thumb
       + '<div style="flex:1;min-width:0;">'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:#D4AF37;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">' + escapeHtml(e.intention || '') + '</div>'
+      + '<div style="font-family:\'Georgia\',serif;font-size:14px;font-style:italic;color:#D4AF37;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">' + escapeHtml(e.intention || '') + '</div>'
       + '<div style="font-size:12px;color:rgba(255,255,255,0.55);margin-top:4px;">' + dateStr + '</div>'
       + '</div></div>';
   });
@@ -18162,7 +18162,7 @@ function openNiyyahDetail(id) {
   var dateStr = d.toLocaleDateString(_dateLocale(), { weekday:'long', day:'numeric', month:'long' }) + ' · ' + d.toLocaleTimeString(_dateLocale(), { hour:'2-digit', minute:'2-digit' });
   var photoHtml = entry.photo ? '<img src="' + entry.photo + '" style="width:100%;border-radius:12px;margin-bottom:20px;">' : (entry.hasOwnProperty('photo') ? '<div style="width:100%;height:80px;border-radius:12px;background:rgba(200,168,75,0.05);border:1px dashed rgba(200,168,75,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:20px;"><span style="font-size:12px;color:var(--t3);font-style:italic;">Photo archiv\u00e9e</span></div>' : '');
   content.innerHTML = photoHtml
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-style:italic;color:#D4AF37;line-height:1.6;text-align:center;margin-bottom:12px;">' + escapeHtml(entry.intention || '') + '</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:22px;font-style:italic;color:#D4AF37;line-height:1.6;text-align:center;margin-bottom:12px;">' + escapeHtml(entry.intention || '') + '</div>'
     + '<div style="font-size:12px;color:rgba(255,255,255,0.55);text-align:center;margin-bottom:24px;">' + dateStr + '</div>'
     + '<div style="text-align:center;"><button onclick="niyyahDetailDelete(\'' + id + '\')" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,80,80,0.3);background:transparent;cursor:pointer;font-size:20px;color:rgba(255,80,80,0.6);display:inline-flex;align-items:center;justify-content:center;">🗑</button></div>';
   overlay.style.display = 'block';
@@ -18352,7 +18352,7 @@ function shareSavaisTu(event) {
   // Titre
   ctx.textAlign = 'center';
   ctx.fillStyle = '#C8A84A';
-  ctx.font = '32px "Cormorant Garamond", serif';
+  ctx.font = '32px "Georgia", serif';
   ctx.fillText('LE SAVAIS-TU ?', 540, 120);
   // Ornement
   ctx.font = '28px serif';
@@ -18363,7 +18363,7 @@ function shareSavaisTu(event) {
   ctx.fillText('هَلْ تَعْلَمُ', 540, 300);
   // Fait — word wrap
   ctx.fillStyle = '#E8DCC0';
-  ctx.font = 'italic 48px "Cormorant Garamond", serif';
+  ctx.font = 'italic 48px "Georgia", serif';
   var words = fact.split(' '), lines = [], line = '';
   words.forEach(function(w) {
     var test = line + (line ? ' ' : '') + w;
@@ -18379,7 +18379,7 @@ function shareSavaisTu(event) {
   ctx.fillText('✦', 540, startY + lines.length * 64 + 50);
   // Signature
   ctx.fillStyle = 'rgba(200,168,75,0.3)';
-  ctx.font = '24px "Cormorant Garamond", serif';
+  ctx.font = '24px "Georgia", serif';
   ctx.fillText('NIYYAH DAILY  ✦', 540, 1030);
   // Partage
   canvas.toBlob(function(blob) {
@@ -18470,7 +18470,7 @@ async function scannerCapture() {
   var _thinkMsgs = ['Les mots descendent en eux-m\u00eames\u2026','Quelque chose se d\u00e9plie\u2026','Les nuances se cherchent\u2026','Encore un instant\u2026','Bient\u00f4t\u2026'];
   var _thinkIdx = 0;
   var _thinkMsgEl = document.getElementById('scanner-thinking-msg');
-  if (!_thinkMsgEl && thinkingEl) { _thinkMsgEl = document.createElement('div'); _thinkMsgEl.id = 'scanner-thinking-msg'; _thinkMsgEl.style.cssText = 'font-family:Cormorant Garamond,serif;font-size:15px;font-style:italic;color:rgba(255,255,255,0.7);text-align:center;position:absolute;bottom:100px;left:0;right:0;transition:opacity 0.4s;'; thinkingEl.appendChild(_thinkMsgEl); }
+  if (!_thinkMsgEl && thinkingEl) { _thinkMsgEl = document.createElement('div'); _thinkMsgEl.id = 'scanner-thinking-msg'; _thinkMsgEl.style.cssText = 'font-family:Georgia,serif;font-size:15px;font-style:italic;color:rgba(255,255,255,0.7);text-align:center;position:absolute;bottom:100px;left:0;right:0;transition:opacity 0.4s;'; thinkingEl.appendChild(_thinkMsgEl); }
   if (_thinkMsgEl) _thinkMsgEl.textContent = _thinkMsgs[0];
   var _thinkInterval = setInterval(function() { _thinkIdx++; if (_thinkMsgEl && _thinkIdx < _thinkMsgs.length) { _thinkMsgEl.style.opacity = '0'; setTimeout(function() { _thinkMsgEl.textContent = _thinkMsgs[_thinkIdx]; _thinkMsgEl.style.opacity = '1'; }, 300); } }, 4000);
   var _thinkBar = document.getElementById('scanner-thinking-bar');
@@ -18963,7 +18963,7 @@ function openVueRituel(prayer) {
   html += '<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 18px;margin-bottom:16px;background:rgba(200,168,74,0.06);border:1px solid rgba(200,168,74,0.18);border-radius:14px;">'
     + '<div style="display:flex;align-items:center;gap:12px;cursor:pointer;" onclick="toggleItem(\'' + prayer + '\',event);openVueRituel(\'' + prayer + '\');">'
     + '<div class="check-circle" style="width:24px;height:24px;border-radius:50%;border:2px solid ' + (_prayerChecked ? '#C8A84A' : 'rgba(200,168,74,0.4)') + ';background:' + (_prayerChecked ? 'var(--gold-grad)' : 'transparent') + ';display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.25s;"><svg width="10" height="8" viewBox="0 0 12 10" fill="none" style="opacity:' + (_prayerChecked ? '1' : '0') + ';"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>'
-    + '<div style="font-family:Cormorant Garamond,serif;font-size:17px;font-weight:600;color:#C8A84A;">' + prayer.charAt(0).toUpperCase() + prayer.slice(1) + ' accompli\u00a0?</div>'
+    + '<div style="font-family:Georgia,serif;font-size:17px;font-weight:600;color:#C8A84A;">' + prayer.charAt(0).toUpperCase() + prayer.slice(1) + ' accompli\u00a0?</div>'
     + '</div>'
     + '<div style="display:flex;gap:10px;align-items:center;opacity:' + (_prayerChecked ? '1' : '0.4') + ';transition:opacity 0.2s;">'
     + '<div style="display:flex;align-items:center;gap:4px;cursor:pointer;" onclick="togglePrayerOnTime(\'' + prayer + '\');openVueRituel(\'' + prayer + '\');">'
@@ -19083,7 +19083,7 @@ function openVueAuFilDuJour() {
     const audio = it.audio ? '<button class="btn-audio" data-audio-id="' + it.id + '" onclick="event.stopPropagation();playAudioById(this)">🔊</button>' : '';
     var _knowledgeIds = ['savais_tu','fiqh_jour','hadith1','duaa_jour','vie_compagnons','vie_prophetes','quran_read','sira','podcast','recits_coran','lisan','ghidaa_jour','tibb_jour'];
     var _isKnowledgeFil = _knowledgeIds.indexOf(it.id) !== -1;
-    var _coranBtn = it.coranPicker ? '<button class="btn-audio" onclick="event.stopPropagation();openCoranPicker(event)" style="font-size:12px;padding:4px 10px;width:auto;white-space:nowrap;font-family:\'Cormorant Garamond\',serif;color:#C8A84A;border:1px solid rgba(200,168,75,0.3);border-radius:8px;background:transparent;cursor:pointer;">\u00c9couter</button>' : '';
+    var _coranBtn = it.coranPicker ? '<button class="btn-audio" onclick="event.stopPropagation();openCoranPicker(event)" style="font-size:12px;padding:4px 10px;width:auto;white-space:nowrap;font-family:\'Georgia\',serif;color:#C8A84A;border:1px solid rgba(200,168,75,0.3);border-radius:8px;background:transparent;cursor:pointer;">\u00c9couter</button>' : '';
     var _filFlag = 'window._knowledgeFromFil=true;';
     var _click = it.id === 'sira' ? _filFlag + 'SIRA.openDetail();'
       : it.id === 'savais_tu' ? _filFlag + 'openVueSavaisTu();'
@@ -19148,7 +19148,7 @@ function openVueAuFilDuJour() {
         ? '<div style="font-size:12px;font-style:italic;color:rgba(200,168,74,0.45);text-align:center;margin-top:10px;">Se coche automatiquement dans l\'app.</div>'
         : (_coche2
           ? '<div style="font-size:12px;font-style:italic;color:rgba(200,168,74,0.6);text-align:center;margin-top:10px;">✓ Coché aujourd\'hui</div>'
-          : '<button onclick="cocherDefiAujourdhui();openVueAuFilDuJour();" style="width:100%;margin-top:10px;padding:10px;border-radius:10px;border:1px solid rgba(200,168,74,0.3);background:rgba(200,168,74,0.06);color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:14px;cursor:pointer;">Cocher aujourd\'hui ✦</button>');
+          : '<button onclick="cocherDefiAujourdhui();openVueAuFilDuJour();" style="width:100%;margin-top:10px;padding:10px;border-radius:10px;border:1px solid rgba(200,168,74,0.3);background:rgba(200,168,74,0.06);color:#C8A84A;font-family:\'Georgia\',serif;font-size:14px;cursor:pointer;">Cocher aujourd\'hui ✦</button>');
       _html += '<div class="fil-acc" data-cat="defi">'
         + '<div class="fil-acc-header" onclick="openDefiOverlay();">'
         + '<span class="fil-acc-icon">' + _svgDefi2 + '</span>'
@@ -19168,7 +19168,7 @@ function openVueAuFilDuJour() {
       + '<span class="fil-acc-chevron">\u203A</span>'
       + '</div>'
       + '<div class="fil-acc-body" style="display:none;">'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:16px;font-style:italic;color:rgba(200,168,74,0.7);text-align:center;padding:16px 0;" onclick="openDefiSelector()">Un engagement t\'attend cette semaine — choisir ✦</div>'
+      + '<div style="font-family:\'Georgia\',serif;font-size:16px;font-style:italic;color:rgba(200,168,74,0.7);text-align:center;padding:16px 0;" onclick="openDefiSelector()">Un engagement t\'attend cette semaine — choisir ✦</div>'
       + '</div>'
       + '</div>';
   }
@@ -19300,9 +19300,9 @@ function openVueGhidaaJour() {
     main.innerHTML = '<div style="padding:20px 16px;text-align:center;">'
       + '<div class="fiqh-categorie">' + (g.categorie || '').toUpperCase() + '</div>'
       + '<div style="font-family:\'Amiri\',serif;font-size:28px;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:8px;">' + (g.nom_ar || '') + '</div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-weight:700;color:#C8A84A;margin-bottom:4px;">' + (g.nom_fr || '') + '</div>'
+      + '<div style="font-family:\'Georgia\',serif;font-size:22px;font-weight:700;color:#C8A84A;margin-bottom:4px;">' + (g.nom_fr || '') + '</div>'
       + '<div style="font-size:12px;color:rgba(200,168,74,0.5);margin-bottom:20px;letter-spacing:1px;">' + (g.statut || '') + '</div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;line-height:1.7;color:rgba(240,234,214,0.95);margin-bottom:20px;">' + (g.bienfaits || '') + '</div>'
+      + '<div style="font-family:\'Georgia\',serif;font-size:20px;line-height:1.7;color:rgba(240,234,214,0.95);margin-bottom:20px;">' + (g.bienfaits || '') + '</div>'
       + (g.source_coran_hadith ? '<div style="font-size:12px;line-height:1.6;color:rgba(200,168,74,0.6);font-style:italic;margin-bottom:16px;">' + g.source_coran_hadith + '</div>' : '')
       + (g.comment_le_consommer ? '<div style="font-size:16px;line-height:1.6;color:rgba(255,255,255,0.6);background:rgba(200,168,74,0.05);border-radius:12px;padding:14px;text-align:left;">\uD83C\uDF7D\uFE0F ' + g.comment_le_consommer + '</div>' : '')
       + '</div>';
@@ -19347,9 +19347,9 @@ function openVueTibbJour() {
     }
     main.innerHTML = '<div style="padding:20px 16px;text-align:center;">'
       + '<div style="font-family:\'Amiri\',serif;font-size:28px;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:8px;">' + (t.remede_ar || '') + '</div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-weight:700;color:#C8A84A;margin-bottom:4px;">' + (t.remede_fr || '') + '</div>'
+      + '<div style="font-family:\'Georgia\',serif;font-size:22px;font-weight:700;color:#C8A84A;margin-bottom:4px;">' + (t.remede_fr || '') + '</div>'
       + '<div style="font-size:15px;color:rgba(200,168,74,0.5);margin-bottom:20px;letter-spacing:0.5px;">' + (t.pour_quoi || '') + '</div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;line-height:1.7;color:rgba(240,234,214,0.95);margin-bottom:20px;text-align:left;">' + (t.methode || '') + '</div>'
+      + '<div style="font-family:\'Georgia\',serif;font-size:20px;line-height:1.7;color:rgba(240,234,214,0.95);margin-bottom:20px;text-align:left;">' + (t.methode || '') + '</div>'
       + (t.source_hadith ? '<div style="font-size:12px;line-height:1.6;color:rgba(200,168,74,0.6);font-style:italic;margin-bottom:16px;">' + t.source_hadith + '</div>' : '')
       + (t.note_medicale ? '<div style="font-size:12px;line-height:1.5;color:rgba(255,255,255,0.5);background:rgba(200,100,100,0.08);border:1px solid rgba(200,100,100,0.15);border-radius:12px;padding:14px;text-align:left;">\u26A0\uFE0F ' + t.note_medicale + '</div>' : '')
       + '</div>';
@@ -19481,8 +19481,8 @@ function openVueLisan(viewDay) {
   html += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">';
   html += '<button onclick="openVueLisan(' + (currentDay - 1) + ')" style="background:none;border:none;font-size:20px;cursor:pointer;padding:4px 10px;color:' + (canPrev ? '#C8A84A' : 'rgba(200,168,75,0.15)') + ';' + (canPrev ? '' : 'pointer-events:none;') + '">\u2039</button>';
   html += '<div style="text-align:center;">';
-  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:2px;color:rgba(200,168,75,0.5);">COMPRENDRE LE CORAN</div>';
-  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;color:rgba(200,168,75,0.4);margin-top:2px;">Jour ' + currentDay + ' sur ' + total + ' \u2014 Palier ' + _lisanPalier + '</div>';
+  html += '<div style="font-family:\'Georgia\',serif;font-size:12px;letter-spacing:2px;color:rgba(200,168,75,0.5);">COMPRENDRE LE CORAN</div>';
+  html += '<div style="font-family:\'Georgia\',serif;font-size:12px;color:rgba(200,168,75,0.4);margin-top:2px;">Jour ' + currentDay + ' sur ' + total + ' \u2014 Palier ' + _lisanPalier + '</div>';
   html += '</div>';
   html += '<button onclick="openVueLisan(' + (currentDay + 1) + ')" style="background:none;border:none;font-size:20px;cursor:pointer;padding:4px 10px;color:' + (canNext ? '#C8A84A' : 'rgba(200,168,75,0.15)') + ';' + (canNext ? '' : 'pointer-events:none;') + '">\u203a</button>';
   html += '</div>';
@@ -19491,7 +19491,7 @@ function openVueLisan(viewDay) {
   if (isToday) {
     html += '<div style="text-align:center;margin-bottom:16px;"><span style="display:inline-block;background:#C8A84A;color:#0A0908;font-family:\'Inter\',sans-serif;font-size:12px;font-weight:700;letter-spacing:1.5px;padding:3px 10px;border-radius:10px;">AUJOURD\u2019HUI</span></div>';
   } else {
-    html += '<div style="text-align:center;margin-bottom:16px;"><span style="font-family:\'Cormorant Garamond\',serif;font-size:12px;font-style:italic;color:rgba(200,168,75,0.3);">R\u00e9vision</span></div>';
+    html += '<div style="text-align:center;margin-bottom:16px;"><span style="font-family:\'Georgia\',serif;font-size:12px;font-style:italic;color:rgba(200,168,75,0.3);">R\u00e9vision</span></div>';
   }
 
   // Close button
@@ -19500,12 +19500,12 @@ function openVueLisan(viewDay) {
   // Mot arabe (grand)
   html += '<div style="text-align:center;margin-bottom:8px;">';
   html += '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:52px;color:#C8A84A;direction:rtl;line-height:1.3;">' + (mot.mot_arabe || '') + '</div>';
-  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;color:rgba(240,234,214,0.6);font-style:italic;margin-top:4px;">\u00ab ' + (mot.translitteration || '') + ' \u00bb</div>';
+  html += '<div style="font-family:\'Georgia\',serif;font-size:22px;color:rgba(240,234,214,0.6);font-style:italic;margin-top:4px;">\u00ab ' + (mot.translitteration || '') + ' \u00bb</div>';
   html += '</div>';
 
   // Traductions
   html += '<div style="text-align:center;margin-bottom:24px;">';
-  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;color:#C8A84A;font-style:italic;">' + (mot.traductions_fr || []).join(' \u00b7 ') + '</div>';
+  html += '<div style="font-family:\'Georgia\',serif;font-size:20px;color:#C8A84A;font-style:italic;">' + (mot.traductions_fr || []).join(' \u00b7 ') + '</div>';
   html += '</div>';
 
   // Racine
@@ -19513,7 +19513,7 @@ function openVueLisan(viewDay) {
     html += '<div style="border:1px solid rgba(200,168,75,0.15);border-radius:10px;padding:12px 16px;margin-bottom:20px;background:rgba(200,168,75,0.04);">';
     html += '<div style="font-family:\'Inter\',sans-serif;font-size:12px;color:rgba(200,168,75,0.5);letter-spacing:1px;margin-bottom:4px;">RACINE</div>';
     html += '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:22px;color:#C8A84A;direction:rtl;display:inline;">' + mot.racine.lettres + '</div>';
-    html += '<span style="font-family:\'Cormorant Garamond\',serif;font-size:14px;color:rgba(240,234,214,0.5);margin-left:12px;">(' + mot.racine.translitteration + ') \u2014 ' + mot.racine.sens_fondamental + '</span>';
+    html += '<span style="font-family:\'Georgia\',serif;font-size:14px;color:rgba(240,234,214,0.5);margin-left:12px;">(' + mot.racine.translitteration + ') \u2014 ' + mot.racine.sens_fondamental + '</span>';
     html += '</div>';
   }
 
@@ -19523,10 +19523,10 @@ function openVueLisan(viewDay) {
     html += '<div style="border:1px solid rgba(200,168,75,0.12);border-radius:10px;padding:16px;margin-bottom:20px;background:rgba(200,168,75,0.03);">';
     html += '<div style="font-family:\'Inter\',sans-serif;font-size:12px;color:rgba(200,168,75,0.5);letter-spacing:1px;margin-bottom:10px;">CORAN ' + (v.reference || '') + '</div>';
     html += '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:24px;color:rgba(240,234,214,0.9);direction:rtl;line-height:1.8;margin-bottom:8px;">' + (v.arabe || '') + '</div>';
-    html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;color:rgba(240,234,214,0.5);font-style:italic;margin-bottom:6px;">' + (v.translitteration || '') + '</div>';
-    html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:18px;color:rgba(240,234,214,0.8);line-height:1.6;">' + (v.traduction_fr || '') + '</div>';
+    html += '<div style="font-family:\'Georgia\',serif;font-size:14px;color:rgba(240,234,214,0.5);font-style:italic;margin-bottom:6px;">' + (v.translitteration || '') + '</div>';
+    html += '<div style="font-family:\'Georgia\',serif;font-size:18px;color:rgba(240,234,214,0.8);line-height:1.6;">' + (v.traduction_fr || '') + '</div>';
     if (v.audio_url) {
-      html += '<button onclick="var a=new Audio(\'' + v.audio_url + '\');a.play().catch(function(){});" style="margin-top:10px;background:none;border:1px solid rgba(200,168,75,0.25);border-radius:8px;padding:6px 16px;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:13px;cursor:pointer;">\ud83d\udd0a \u00c9couter le verset</button>';
+      html += '<button onclick="var a=new Audio(\'' + v.audio_url + '\');a.play().catch(function(){});" style="margin-top:10px;background:none;border:1px solid rgba(200,168,75,0.25);border-radius:8px;padding:6px 16px;color:#C8A84A;font-family:\'Georgia\',serif;font-size:13px;cursor:pointer;">\ud83d\udd0a \u00c9couter le verset</button>';
     }
     html += '</div>';
   }
@@ -19538,8 +19538,8 @@ function openVueLisan(viewDay) {
     mot.famille_mots.forEach(function(fm) {
       html += '<div style="display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid rgba(200,168,75,0.08);">';
       html += '<span style="font-family:\'Scheherazade New\',Amiri,serif;font-size:20px;color:#C8A84A;direction:rtl;min-width:60px;text-align:right;">' + fm.arabe + '</span>';
-      html += '<span style="font-family:\'Cormorant Garamond\',serif;font-size:13px;color:rgba(240,234,214,0.5);font-style:italic;min-width:70px;">' + fm.translit + '</span>';
-      html += '<span style="font-family:\'Cormorant Garamond\',serif;font-size:14px;color:rgba(240,234,214,0.7);">' + fm.sens + '</span>';
+      html += '<span style="font-family:\'Georgia\',serif;font-size:13px;color:rgba(240,234,214,0.5);font-style:italic;min-width:70px;">' + fm.translit + '</span>';
+      html += '<span style="font-family:\'Georgia\',serif;font-size:14px;color:rgba(240,234,214,0.7);">' + fm.sens + '</span>';
       html += '</div>';
     });
     html += '</div>';
@@ -19548,7 +19548,7 @@ function openVueLisan(viewDay) {
   // Notes pédagogiques
   if (mot.notes_pedagogiques) {
     html += '<div style="border-top:1px solid rgba(200,168,75,0.1);padding-top:16px;margin-bottom:20px;">';
-    html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(240,234,214,0.6);line-height:1.7;">' + mot.notes_pedagogiques + '</div>';
+    html += '<div style="font-family:\'Georgia\',serif;font-size:14px;font-style:italic;color:rgba(240,234,214,0.6);line-height:1.7;">' + mot.notes_pedagogiques + '</div>';
     html += '</div>';
   }
 
@@ -19559,11 +19559,11 @@ function openVueLisan(viewDay) {
 
   // Bouton validation — uniquement pour le mot du jour
   if (isToday) {
-    html += '<button onclick="validerLecture(\'lisan\');document.getElementById(\'lisan-overlay\').remove();_restoreScroll();" style="display:block;width:100%;padding:16px 0;border:none;border-radius:12px;background:linear-gradient(135deg,#C8A84A,#A68B30);color:#0A0908;font-family:\'Cormorant Garamond\',serif;font-size:16px;font-weight:700;cursor:pointer;">\u2713 J\u2019ai appris ce mot</button>';
+    html += '<button onclick="validerLecture(\'lisan\');document.getElementById(\'lisan-overlay\').remove();_restoreScroll();" style="display:block;width:100%;padding:16px 0;border:none;border-radius:12px;background:linear-gradient(135deg,#C8A84A,#A68B30);color:#0A0908;font-family:\'Georgia\',serif;font-size:16px;font-weight:700;cursor:pointer;">\u2713 J\u2019ai appris ce mot</button>';
   }
 
   // Bouton glossaire
-  html += '<button onclick="openLisanGlossaire()" style="display:block;width:100%;margin-top:12px;padding:12px 0;border:1px solid rgba(200,168,75,0.2);border-radius:10px;background:transparent;color:rgba(200,168,75,0.6);font-family:\'Cormorant Garamond\',serif;font-size:14px;cursor:pointer;transition:border-color 0.2s;" onmouseenter="this.style.borderColor=\'rgba(200,168,75,0.5)\'" onmouseleave="this.style.borderColor=\'rgba(200,168,75,0.2)\'">\u229e Mes mots (' + todayDay + '/' + total + ')</button>';
+  html += '<button onclick="openLisanGlossaire()" style="display:block;width:100%;margin-top:12px;padding:12px 0;border:1px solid rgba(200,168,75,0.2);border-radius:10px;background:transparent;color:rgba(200,168,75,0.6);font-family:\'Georgia\',serif;font-size:14px;cursor:pointer;transition:border-color 0.2s;" onmouseenter="this.style.borderColor=\'rgba(200,168,75,0.5)\'" onmouseleave="this.style.borderColor=\'rgba(200,168,75,0.2)\'">\u229e Mes mots (' + todayDay + '/' + total + ')</button>';
 
   html += '</div>';
   ov.innerHTML = html;
@@ -19588,15 +19588,15 @@ function openLisanGlossaire() {
   // Header
   html += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">';
   html += '<div>';
-  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:2px;color:rgba(200,168,75,0.5);">MES MOTS</div>';
-  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;color:rgba(200,168,75,0.35);margin-top:2px;">' + todayDay + ' mots d\u00e9bloqu\u00e9s sur ' + window.LISAN_DATA.length + '</div>';
+  html += '<div style="font-family:\'Georgia\',serif;font-size:12px;letter-spacing:2px;color:rgba(200,168,75,0.5);">MES MOTS</div>';
+  html += '<div style="font-family:\'Georgia\',serif;font-size:13px;color:rgba(200,168,75,0.35);margin-top:2px;">' + todayDay + ' mots d\u00e9bloqu\u00e9s sur ' + window.LISAN_DATA.length + '</div>';
   html += '</div>';
   html += '<button onclick="document.getElementById(\'lisan-glossaire\').remove();" style="background:none;border:none;color:rgba(255,255,255,0.4);font-size:22px;cursor:pointer;padding:4px 8px;">\u00d7</button>';
   html += '</div>';
 
   // Search
   html += '<div style="margin-bottom:16px;">';
-  html += '<input id="lisan-glossaire-search" type="text" placeholder="Rechercher un mot\u2026" oninput="_filterLisanGlossaire()" style="width:100%;box-sizing:border-box;padding:10px 14px;border:1px solid rgba(200,168,75,0.15);border-radius:10px;background:rgba(200,168,75,0.04);color:rgba(240,234,214,0.9);font-family:\'Cormorant Garamond\',serif;font-size:15px;outline:none;" />';
+  html += '<input id="lisan-glossaire-search" type="text" placeholder="Rechercher un mot\u2026" oninput="_filterLisanGlossaire()" style="width:100%;box-sizing:border-box;padding:10px 14px;border:1px solid rgba(200,168,75,0.15);border-radius:10px;background:rgba(200,168,75,0.04);color:rgba(240,234,214,0.9);font-family:\'Georgia\',serif;font-size:15px;outline:none;" />';
   html += '</div>';
 
   // Word list
@@ -19612,8 +19612,8 @@ function openLisanGlossaire() {
     html += '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:22px;color:#C8A84A;direction:rtl;min-width:55px;text-align:right;">' + m.mot_arabe + '</div>';
     // Translit + traduction
     html += '<div style="flex:1;min-width:0;">';
-    html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;color:rgba(240,234,214,0.7);font-style:italic;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + m.translitteration + '</div>';
-    html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;color:rgba(200,168,75,0.4);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + (m.traductions_fr || []).join(', ') + '</div>';
+    html += '<div style="font-family:\'Georgia\',serif;font-size:14px;color:rgba(240,234,214,0.7);font-style:italic;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + m.translitteration + '</div>';
+    html += '<div style="font-family:\'Georgia\',serif;font-size:12px;color:rgba(200,168,75,0.4);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + (m.traductions_fr || []).join(', ') + '</div>';
     html += '</div>';
     // Today dot
     if (isToday) html += '<div style="width:6px;height:6px;border-radius:50%;background:#C8A84A;flex-shrink:0;"></div>';
@@ -19670,37 +19670,37 @@ function openLisanMethode() {
 
   var html = '';
   // Titre
-  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:2.5px;color:rgba(200,168,75,0.5);margin-bottom:6px;">M\u00c9THODE</div>';
-  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-weight:700;color:#C8A84A;margin-bottom:4px;">' + m.titre + '</div>';
-  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-style:italic;color:rgba(240,234,214,0.6);margin-bottom:20px;">' + m.sous_titre + '</div>';
+  html += '<div style="font-family:\'Georgia\',serif;font-size:12px;letter-spacing:2.5px;color:rgba(200,168,75,0.5);margin-bottom:6px;">M\u00c9THODE</div>';
+  html += '<div style="font-family:\'Georgia\',serif;font-size:22px;font-weight:700;color:#C8A84A;margin-bottom:4px;">' + m.titre + '</div>';
+  html += '<div style="font-family:\'Georgia\',serif;font-size:14px;font-style:italic;color:rgba(240,234,214,0.6);margin-bottom:20px;">' + m.sous_titre + '</div>';
 
   // Intro
-  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:15px;color:rgba(240,234,214,0.8);line-height:1.7;margin-bottom:24px;">' + m.intro + '</div>';
+  html += '<div style="font-family:\'Georgia\',serif;font-size:15px;color:rgba(240,234,214,0.8);line-height:1.7;margin-bottom:24px;">' + m.intro + '</div>';
 
   // 3 sections
   m.sections.forEach(function(s) {
     html += '<div style="border-left:2px solid rgba(200,168,75,0.2);padding-left:14px;margin-bottom:18px;">';
-    html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:700;color:rgba(240,234,214,0.9);margin-bottom:4px;">' + s.titre + '</div>';
-    html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;color:rgba(240,234,214,0.65);line-height:1.6;">' + s.texte + '</div>';
+    html += '<div style="font-family:\'Georgia\',serif;font-size:14px;font-weight:700;color:rgba(240,234,214,0.9);margin-bottom:4px;">' + s.titre + '</div>';
+    html += '<div style="font-family:\'Georgia\',serif;font-size:14px;color:rgba(240,234,214,0.65);line-height:1.6;">' + s.texte + '</div>';
     html += '</div>';
   });
 
   // Rythme
   html += '<div style="border-top:1px solid rgba(200,168,75,0.1);padding-top:16px;margin-bottom:14px;">';
-  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-weight:700;color:#C8A84A;margin-bottom:4px;">' + m.rythme.titre + '</div>';
-  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;color:rgba(240,234,214,0.7);line-height:1.6;">' + m.rythme.texte + '</div>';
+  html += '<div style="font-family:\'Georgia\',serif;font-size:13px;font-weight:700;color:#C8A84A;margin-bottom:4px;">' + m.rythme.titre + '</div>';
+  html += '<div style="font-family:\'Georgia\',serif;font-size:14px;color:rgba(240,234,214,0.7);line-height:1.6;">' + m.rythme.texte + '</div>';
   html += '</div>';
 
   // Promesse
   html += '<div style="margin-bottom:14px;">';
-  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-weight:700;color:#C8A84A;margin-bottom:4px;">' + m.promesse.titre + '</div>';
-  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:14px;color:rgba(240,234,214,0.7);line-height:1.6;">' + m.promesse.texte + '</div>';
+  html += '<div style="font-family:\'Georgia\',serif;font-size:13px;font-weight:700;color:#C8A84A;margin-bottom:4px;">' + m.promesse.titre + '</div>';
+  html += '<div style="font-family:\'Georgia\',serif;font-size:14px;color:rgba(240,234,214,0.7);line-height:1.6;">' + m.promesse.texte + '</div>';
   html += '</div>';
 
   // Limite
   html += '<div style="margin-bottom:14px;">';
-  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-weight:700;color:rgba(240,234,214,0.5);margin-bottom:4px;">' + m.limite.titre + '</div>';
-  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(240,234,214,0.5);line-height:1.6;">' + m.limite.texte + '</div>';
+  html += '<div style="font-family:\'Georgia\',serif;font-size:13px;font-weight:700;color:rgba(240,234,214,0.5);margin-bottom:4px;">' + m.limite.titre + '</div>';
+  html += '<div style="font-family:\'Georgia\',serif;font-size:13px;font-style:italic;color:rgba(240,234,214,0.5);line-height:1.6;">' + m.limite.texte + '</div>';
   html += '</div>';
 
   // Note bas
@@ -19709,7 +19709,7 @@ function openLisanMethode() {
   html += '</div>';
 
   // Fermer
-  html += '<button onclick="document.getElementById(\'lisan-methode-overlay\').remove();" style="display:block;width:100%;padding:14px 0;border:none;border-radius:10px;background:linear-gradient(135deg,#C8A84A,#A68B30);color:#0A0908;font-family:\'Cormorant Garamond\',serif;font-size:15px;font-weight:700;cursor:pointer;">Fermer</button>';
+  html += '<button onclick="document.getElementById(\'lisan-methode-overlay\').remove();" style="display:block;width:100%;padding:14px 0;border:none;border-radius:10px;background:linear-gradient(135deg,#C8A84A,#A68B30);color:#0A0908;font-family:\'Georgia\',serif;font-size:15px;font-weight:700;cursor:pointer;">Fermer</button>';
 
   card.innerHTML = html;
   ov.appendChild(card);
@@ -19740,7 +19740,7 @@ function openVueFiqhJour() {
     main.innerHTML = '<div style="padding:20px 16px;text-align:center;">'
       + (rule.categorie ? '<div class="fiqh-categorie">' + rule.categorie.toUpperCase() + '</div>' : '')
       + (rule.sous_theme ? '<div style="font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:16px;">' + rule.sous_theme + '</div>' : '')
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;line-height:1.7;color:rgba(240,234,214,0.95);margin-bottom:20px;">' + (rule.regle || '') + '</div>'
+      + '<div style="font-family:\'Georgia\',serif;font-size:22px;line-height:1.7;color:rgba(240,234,214,0.95);margin-bottom:20px;">' + (rule.regle || '') + '</div>'
       + (rule.explication ? '<div style="font-size:17px;line-height:1.6;color:rgba(255,255,255,0.6);margin-bottom:20px;font-style:italic;">' + rule.explication + '</div>' : '')
       + (rule.source ? '<div style="font-size:12px;color:rgba(200,168,74,0.6);letter-spacing:0.1em;">\u2014 ' + rule.source + ' \u2014</div>' : '')
       + (rule.ecole ? '<div style="font-size:12px;color:rgba(200,168,74,0.4);margin-top:8px;letter-spacing:1px;">' + rule.ecole.toUpperCase() + '</div>' : '')
@@ -19787,7 +19787,7 @@ function openVueHadithJour() {
     main.innerHTML = '<div style="padding:20px 16px;text-align:center;">'
       + (h.theme ? '<div class="fiqh-categorie">' + h.theme.toUpperCase() + '</div>' : '')
       + (h.texte_ar ? '<div style="font-family:\'Amiri\',serif;font-size:24px;line-height:2;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:20px;">' + h.texte_ar + '</div>' : '')
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;line-height:1.7;color:rgba(240,234,214,0.95);font-style:italic;margin-bottom:20px;">' + (h.texte_fr || '') + '</div>'
+      + '<div style="font-family:\'Georgia\',serif;font-size:22px;line-height:1.7;color:rgba(240,234,214,0.95);font-style:italic;margin-bottom:20px;">' + (h.texte_fr || '') + '</div>'
       + (h.source ? '<div style="font-size:12px;color:rgba(200,168,74,0.6);letter-spacing:0.1em;">\u2014 ' + h.source + ' \u2014</div>' : '')
       + (h.degre ? '<div style="font-size:12px;color:rgba(200,168,74,0.4);margin-top:8px;letter-spacing:1px;">' + h.degre.toUpperCase() + '</div>' : '')
       + '</div>';
@@ -19815,9 +19815,9 @@ function openVueDuaaJour() {
       + '<div class="fiqh-categorie">' + (duaa.categorie || '').toUpperCase() + ' \u00b7 JOUR ' + jourNum + '/245</div>'
       + (duaa.arabe ? (duaa.arabe.charAt(0) === '(' ? '<div style="background:rgba(200,168,74,0.08);border-left:3px solid #C8A84A;padding:16px;margin-bottom:16px;text-align:left;direction:ltr;"><div style="font-size:12px;font-weight:700;color:#C8A84A;margin-bottom:8px;">\uD83D\uDCFF Pratique</div><div style="font-size:15px;line-height:1.7;color:rgba(240,234,214,0.9);font-style:italic;">' + duaa.arabe + '</div></div>' : '<div style="font-family:\'Amiri\',serif;font-size:22px;line-height:2;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:16px;">' + duaa.arabe + '</div>') : '')
       + (duaa.phonetique ? '<div style="font-size:18px;color:rgba(255,255,255,0.5);font-style:italic;margin-bottom:16px;">' + duaa.phonetique + '</div>' : '')
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:26px;line-height:1.7;color:rgba(240,234,214,0.95);font-style:italic;margin-bottom:20px;">' + (duaa.traduction || '') + '</div>'
+      + '<div style="font-family:\'Georgia\',serif;font-size:26px;line-height:1.7;color:rgba(240,234,214,0.95);font-style:italic;margin-bottom:20px;">' + (duaa.traduction || '') + '</div>'
       + (duaa.occasion ? '<div style="font-size:18px;color:rgba(255,255,255,0.5);margin-bottom:16px;">\uD83D\uDD52 ' + duaa.occasion + '</div>' : '')
-      + (duaa.recit ? '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;line-height:1.8;color:rgba(240,234,214,0.8);text-align:justify;margin-bottom:20px;">' + duaa.recit.replace(/\n/g,'<br>') + '</div>' : '')
+      + (duaa.recit ? '<div style="font-family:\'Georgia\',serif;font-size:22px;line-height:1.8;color:rgba(240,234,214,0.8);text-align:justify;margin-bottom:20px;">' + duaa.recit.replace(/\n/g,'<br>') + '</div>' : '')
       + (duaa.source ? '<div style="font-size:12px;color:rgba(200,168,74,0.6);letter-spacing:0.1em;">\u2014 ' + duaa.source + ' \u2014</div>' : '')
       + (duaa.authenticite ? '<div style="font-size:12px;color:rgba(200,168,74,0.4);margin-top:6px;letter-spacing:1px;">' + duaa.authenticite.toUpperCase() + '</div>' : '')
       + '</div>';
@@ -19842,12 +19842,12 @@ function _showDuaaCycleModal() {
   ov.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;background:rgba(15,12,8,0.95);display:flex;align-items:center;justify-content:center;padding:24px;';
   ov.innerHTML = '<div style="text-align:center;max-width:340px;">'
     + '<div style="font-size:48px;margin-bottom:20px;">\uD83C\uDF19</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:28px;font-weight:700;color:#C8A84A;line-height:1.4;margin-bottom:16px;">Tu as accompli un cycle complet</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:28px;font-weight:700;color:#C8A84A;line-height:1.4;margin-bottom:16px;">Tu as accompli un cycle complet</div>'
     + '<div style="font-size:15px;color:rgba(240,234,214,0.8);line-height:1.6;margin-bottom:24px;">245 du\u2019as proph\u00e9tiques travers\u00e9es. Alhamdulill\u0101h.</div>'
     + '<div style="font-family:\'Amiri\',serif;font-size:22px;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:8px;">\u0627\u0644\u0644\u0651\u064E\u0647\u064F\u0645\u0651\u064E \u062A\u064E\u0642\u064E\u0628\u0651\u064E\u0644\u0652 \u0645\u0650\u0646\u0651\u064E\u0627</div>'
     + '<div style="font-size:13px;color:rgba(255,255,255,0.5);font-style:italic;margin-bottom:6px;">All\u0101humma taqabbal minn\u0101</div>'
     + '<div style="font-size:14px;color:rgba(240,234,214,0.7);margin-bottom:32px;">\u00d4 Allah, accepte de nous.</div>'
-    + '<button id="_duaaCycleBtn" style="padding:14px 28px;border:none;border-radius:24px;background:#C8A84A;color:#2C2E32;font-family:Cormorant Garamond,serif;font-size:15px;font-weight:700;cursor:pointer;">Commencer un nouveau cycle</button>'
+    + '<button id="_duaaCycleBtn" style="padding:14px 28px;border:none;border-radius:24px;background:#C8A84A;color:#2C2E32;font-family:Georgia,serif;font-size:15px;font-weight:700;cursor:pointer;">Commencer un nouveau cycle</button>'
     + '</div>';
   document.body.appendChild(ov);
   document.getElementById('_duaaCycleBtn').onclick = function() {
@@ -19865,17 +19865,17 @@ function _compagnonsRenderDetail(c, jour) {
   ov.style.cssText = 'position:fixed;inset:0;z-index:9500;background:#0a0a0a;display:flex;flex-direction:column;overflow:hidden;';
   var _epLabel = (c.episode_num && c.episode_total) ? '\u00c9pisode ' + c.episode_num + '/' + c.episode_total : '';
   var html = '<div style="padding:calc(var(--safe-top,0px) + 16px) 20px 12px;text-align:center;">';
-  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-weight:700;color:#E5E0DC;margin-bottom:4px;">' + (c.compagnon || '') + '</div>';
+  html += '<div style="font-family:\'Georgia\',serif;font-size:22px;font-weight:700;color:#E5E0DC;margin-bottom:4px;">' + (c.compagnon || '') + '</div>';
   html += (c.compagnon_ar ? '<div style="font-family:\'Amiri\',serif;font-size:18px;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:4px;">' + c.compagnon_ar + '</div>' : '');
   html += (_epLabel ? '<div style="font-size:12px;color:rgba(255,255,255,0.4);letter-spacing:1px;margin-bottom:4px;">' + _epLabel + '</div>' : '');
-  html += '<div onclick="_compagnonsShowArchive();" style="display:inline-block;cursor:pointer;font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.6);border-bottom:1px solid rgba(200,168,75,0.25);padding-bottom:2px;">\u00c9pisode ' + (c.jour || jour) + ' sur ' + COMPAGNONS.length + ' \u2014 voir les pr\u00e9c\u00e9dents</div>';
+  html += '<div onclick="_compagnonsShowArchive();" style="display:inline-block;cursor:pointer;font-family:\'Georgia\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.6);border-bottom:1px solid rgba(200,168,75,0.25);padding-bottom:2px;">\u00c9pisode ' + (c.jour || jour) + ' sur ' + COMPAGNONS.length + ' \u2014 voir les pr\u00e9c\u00e9dents</div>';
   html += '</div>';
   html += '<div style="flex:1;overflow-y:auto;padding:0 24px calc(20px + var(--safe-bot,0px));-webkit-overflow-scrolling:touch;">';
-  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;line-height:1.8;color:rgba(240,234,214,0.9);margin-bottom:20px;">' + (c.recit || '').replace(/\n/g, '<br>') + '</div>';
-  if (c.parole) html += '<div style="border-left:2px solid rgba(200,168,74,0.4);padding:8px 16px;margin-bottom:16px;font-family:\'Cormorant Garamond\',serif;font-size:17px;font-style:italic;line-height:1.6;color:rgba(200,168,74,0.85);">' + c.parole + '</div>';
+  html += '<div style="font-family:\'Georgia\',serif;font-size:20px;line-height:1.8;color:rgba(240,234,214,0.9);margin-bottom:20px;">' + (c.recit || '').replace(/\n/g, '<br>') + '</div>';
+  if (c.parole) html += '<div style="border-left:2px solid rgba(200,168,74,0.4);padding:8px 16px;margin-bottom:16px;font-family:\'Georgia\',serif;font-size:17px;font-style:italic;line-height:1.6;color:rgba(200,168,74,0.85);">' + c.parole + '</div>';
   if (c.station) html += '<div style="border:1px solid rgba(200,168,74,0.25);border-radius:10px;padding:12px 16px;margin-bottom:20px;font-style:italic;font-size:16px;line-height:1.6;color:rgba(200,168,74,0.8);">' + c.station + '</div>';
   if (c.source) html += '<div style="text-align:center;font-size:12px;color:rgba(255,255,255,0.35);letter-spacing:0.1em;margin-bottom:16px;">\u2014 ' + c.source + ' \u2014</div>';
-  html += '<button onclick="validerLecture(\'vie_compagnons\');document.getElementById(\'compagnons-overlay\').remove();" style="display:block;width:calc(100% - 48px);max-width:320px;margin:24px auto 32px;padding:16px;border:none;border-radius:12px;background:#C8A84A;color:#2C2E32;font-family:\'Cormorant Garamond\',serif;font-size:16px;font-weight:600;cursor:pointer;">J\u2019ai termin\u00e9 ma lecture</button>';
+  html += '<button onclick="validerLecture(\'vie_compagnons\');document.getElementById(\'compagnons-overlay\').remove();" style="display:block;width:calc(100% - 48px);max-width:320px;margin:24px auto 32px;padding:16px;border:none;border-radius:12px;background:#C8A84A;color:#2C2E32;font-family:\'Georgia\',serif;font-size:16px;font-weight:600;cursor:pointer;">J\u2019ai termin\u00e9 ma lecture</button>';
   html += '</div>';
   html += '<button onclick="document.getElementById(\'compagnons-overlay\').remove();" style="position:absolute;top:calc(var(--safe-top,0px) + 12px);right:16px;background:none;border:none;color:#B5A685;font-size:24px;cursor:pointer;z-index:1;">\u2715</button>';
   ov.innerHTML = html;
@@ -19893,7 +19893,7 @@ function _compagnonsShowArchive() {
   ov.style.cssText = 'position:fixed;inset:0;z-index:9500;background:#0a0a0a;display:flex;flex-direction:column;overflow:hidden;';
   var html = '<div style="padding:calc(var(--safe-top,0px) + 16px) 20px 12px;text-align:center;">';
   html += '<div style="font-family:Amiri,serif;font-size:24px;color:#C8A84A;direction:rtl;margin-bottom:4px;">\u0635\u064E\u062D\u064E\u0627\u0628\u064E\u0629</div>';
-  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.6);">Tous les compagnons</div>';
+  html += '<div style="font-family:\'Georgia\',serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.6);">Tous les compagnons</div>';
   html += '</div>';
   html += '<div style="flex:1;overflow-y:auto;padding:0 20px calc(20px + var(--safe-bot,0px));-webkit-overflow-scrolling:touch;">';
   COMPAGNONS.forEach(function(c) {
@@ -19901,13 +19901,13 @@ function _compagnonsShowArchive() {
     var unlocked = jour <= maxDay;
     if (!unlocked) {
       html += '<div style="padding:14px 16px;background:rgba(200,168,75,0.02);border:1px solid rgba(200,168,75,0.06);border-radius:14px;margin-bottom:8px;opacity:0.35;display:flex;align-items:center;gap:14px;">';
-      html += '<div style="width:32px;height:32px;border-radius:8px;background:rgba(200,168,75,0.05);display:flex;align-items:center;justify-content:center;font-family:\'Cormorant Garamond\',serif;font-size:13px;color:#B5A685;flex-shrink:0;">' + jour + '</div>';
-      html += '<div style="flex:1;font-family:\'Cormorant Garamond\',serif;font-size:14px;color:#B5A685;font-style:italic;">Bient\u00f4t\u2026</div></div>';
+      html += '<div style="width:32px;height:32px;border-radius:8px;background:rgba(200,168,75,0.05);display:flex;align-items:center;justify-content:center;font-family:\'Georgia\',serif;font-size:13px;color:#B5A685;flex-shrink:0;">' + jour + '</div>';
+      html += '<div style="flex:1;font-family:\'Georgia\',serif;font-size:14px;color:#B5A685;font-style:italic;">Bient\u00f4t\u2026</div></div>';
       return;
     }
     html += '<div onclick="_compagnonsOpenByJour(' + jour + ')" style="padding:14px 16px;background:rgba(200,168,75,0.04);border:1px solid rgba(200,168,75,0.12);border-radius:14px;margin-bottom:8px;cursor:pointer;display:flex;align-items:center;gap:14px;">';
-    html += '<div style="width:32px;height:32px;border-radius:8px;background:rgba(200,168,75,0.1);display:flex;align-items:center;justify-content:center;font-family:\'Cormorant Garamond\',serif;font-size:13px;color:#C8A84A;flex-shrink:0;">' + jour + '</div>';
-    html += '<div style="flex:1;min-width:0;font-family:\'Cormorant Garamond\',serif;font-size:14px;color:#E5E0DC;">' + (c.compagnon || '') + '</div>';
+    html += '<div style="width:32px;height:32px;border-radius:8px;background:rgba(200,168,75,0.1);display:flex;align-items:center;justify-content:center;font-family:\'Georgia\',serif;font-size:13px;color:#C8A84A;flex-shrink:0;">' + jour + '</div>';
+    html += '<div style="flex:1;min-width:0;font-family:\'Georgia\',serif;font-size:14px;color:#E5E0DC;">' + (c.compagnon || '') + '</div>';
     html += '<div style="color:rgba(200,168,75,0.4);font-size:16px;flex-shrink:0;">\u203A</div></div>';
   });
   html += '</div>';
@@ -19940,17 +19940,17 @@ function _prophetesRenderDetail(p, jour) {
   ov.style.cssText = 'position:fixed;inset:0;z-index:9500;background:#0a0a0a;display:flex;flex-direction:column;overflow:hidden;';
   var _epLabel = (p.episode_num && p.episode_total) ? ' \u2014 ' + p.episode_num + '/' + p.episode_total : '';
   var html = '<div style="padding:calc(var(--safe-top,0px) + 16px) 20px 12px;text-align:center;">';
-  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-weight:700;color:#E5E0DC;margin-bottom:4px;">' + (p.prophete || '') + _epLabel + '</div>';
+  html += '<div style="font-family:\'Georgia\',serif;font-size:22px;font-weight:700;color:#E5E0DC;margin-bottom:4px;">' + (p.prophete || '') + _epLabel + '</div>';
   html += (p.prophete_ar ? '<div style="font-family:\'Amiri\',serif;font-size:18px;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:4px;">' + p.prophete_ar + '</div>' : '');
-  html += '<div onclick="_prophetesShowArchive();" style="display:inline-block;cursor:pointer;font-family:\'Cormorant Garamond\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.6);border-bottom:1px solid rgba(200,168,75,0.25);padding-bottom:2px;">\u00c9pisode ' + (p.jour || jour) + ' sur 77 \u2014 voir les pr\u00e9c\u00e9dents</div>';
+  html += '<div onclick="_prophetesShowArchive();" style="display:inline-block;cursor:pointer;font-family:\'Georgia\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.6);border-bottom:1px solid rgba(200,168,75,0.25);padding-bottom:2px;">\u00c9pisode ' + (p.jour || jour) + ' sur 77 \u2014 voir les pr\u00e9c\u00e9dents</div>';
   html += '</div>';
   html += '<div style="flex:1;overflow-y:auto;padding:0 24px calc(20px + var(--safe-bot,0px));-webkit-overflow-scrolling:touch;">';
-  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;line-height:1.8;color:rgba(240,234,214,0.9);margin-bottom:20px;">' + (p.recit || '').replace(/\n/g, '<br>') + '</div>';
-  if (p.parole) html += '<div style="border-left:2px solid rgba(200,168,74,0.4);padding:8px 16px;margin-bottom:16px;font-family:\'Cormorant Garamond\',serif;font-size:18px;font-style:italic;line-height:1.6;color:rgba(200,168,74,0.85);">' + p.parole + '</div>';
+  html += '<div style="font-family:\'Georgia\',serif;font-size:20px;line-height:1.8;color:rgba(240,234,214,0.9);margin-bottom:20px;">' + (p.recit || '').replace(/\n/g, '<br>') + '</div>';
+  if (p.parole) html += '<div style="border-left:2px solid rgba(200,168,74,0.4);padding:8px 16px;margin-bottom:16px;font-family:\'Georgia\',serif;font-size:18px;font-style:italic;line-height:1.6;color:rgba(200,168,74,0.85);">' + p.parole + '</div>';
   if (p.station) html += '<div style="border:1px solid rgba(200,168,74,0.25);border-radius:10px;padding:12px 16px;margin-bottom:20px;font-style:italic;font-size:17px;line-height:1.6;color:rgba(200,168,74,0.8);">' + p.station + '</div>';
   if (p.sources) html += '<div style="text-align:center;font-size:12px;color:rgba(200,168,74,0.6);letter-spacing:0.1em;margin-bottom:16px;">\u2014 ' + p.sources + ' \u2014</div>';
-  if (p.renvoi_module === 'sira') html += '<div style="text-align:center;margin-bottom:16px;"><button onclick="document.getElementById(\'prophetes-overlay\').remove();if(typeof SIRA!==\'undefined\')SIRA.openDetail();" style="padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,74,0.4);background:transparent;color:#C8A84A;font-family:\'Cormorant Garamond\',serif;font-size:14px;font-weight:600;cursor:pointer;">Ouvrir la S\u00eera</button></div>';
-  html += '<button onclick="validerLecture(\'vie_prophetes\');document.getElementById(\'prophetes-overlay\').remove();" style="display:block;width:calc(100% - 48px);max-width:320px;margin:24px auto 32px;padding:16px;border:none;border-radius:12px;background:#C8A84A;color:#2C2E32;font-family:\'Cormorant Garamond\',serif;font-size:16px;font-weight:600;cursor:pointer;">J\u2019ai termin\u00e9 ma lecture</button>';
+  if (p.renvoi_module === 'sira') html += '<div style="text-align:center;margin-bottom:16px;"><button onclick="document.getElementById(\'prophetes-overlay\').remove();if(typeof SIRA!==\'undefined\')SIRA.openDetail();" style="padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,74,0.4);background:transparent;color:#C8A84A;font-family:\'Georgia\',serif;font-size:14px;font-weight:600;cursor:pointer;">Ouvrir la S\u00eera</button></div>';
+  html += '<button onclick="validerLecture(\'vie_prophetes\');document.getElementById(\'prophetes-overlay\').remove();" style="display:block;width:calc(100% - 48px);max-width:320px;margin:24px auto 32px;padding:16px;border:none;border-radius:12px;background:#C8A84A;color:#2C2E32;font-family:\'Georgia\',serif;font-size:16px;font-weight:600;cursor:pointer;">J\u2019ai termin\u00e9 ma lecture</button>';
   html += '</div>';
   html += '<button onclick="document.getElementById(\'prophetes-overlay\').remove();" style="position:absolute;top:calc(var(--safe-top,0px) + 12px);right:16px;background:none;border:none;color:#B5A685;font-size:24px;cursor:pointer;z-index:1;">\u2715</button>';
   ov.innerHTML = html;
@@ -19968,7 +19968,7 @@ function _prophetesShowArchive() {
   ov.style.cssText = 'position:fixed;inset:0;z-index:9500;background:#0a0a0a;display:flex;flex-direction:column;overflow:hidden;';
   var html = '<div style="padding:calc(var(--safe-top,0px) + 16px) 20px 12px;text-align:center;">';
   html += '<div style="font-family:Amiri,serif;font-size:24px;color:#C8A84A;direction:rtl;margin-bottom:4px;">\u0623\u064E\u0646\u0628\u0650\u064A\u064E\u0627\u0621</div>';
-  html += '<div style="font-family:\'Cormorant Garamond\',serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.6);">Tous les proph\u00e8tes</div>';
+  html += '<div style="font-family:\'Georgia\',serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,75,0.6);">Tous les proph\u00e8tes</div>';
   html += '</div>';
   html += '<div style="flex:1;overflow-y:auto;padding:0 20px calc(20px + var(--safe-bot,0px));-webkit-overflow-scrolling:touch;">';
   for (var j = 1; j <= 77; j++) {
@@ -19977,13 +19977,13 @@ function _prophetesShowArchive() {
     var unlocked = j <= maxDay;
     if (!unlocked) {
       html += '<div style="padding:14px 16px;background:rgba(200,168,75,0.02);border:1px solid rgba(200,168,75,0.06);border-radius:14px;margin-bottom:8px;opacity:0.35;display:flex;align-items:center;gap:14px;">';
-      html += '<div style="width:32px;height:32px;border-radius:8px;background:rgba(200,168,75,0.05);display:flex;align-items:center;justify-content:center;font-family:\'Cormorant Garamond\',serif;font-size:13px;color:#B5A685;flex-shrink:0;">' + j + '</div>';
-      html += '<div style="flex:1;font-family:\'Cormorant Garamond\',serif;font-size:14px;color:#B5A685;font-style:italic;">Bient\u00f4t\u2026</div></div>';
+      html += '<div style="width:32px;height:32px;border-radius:8px;background:rgba(200,168,75,0.05);display:flex;align-items:center;justify-content:center;font-family:\'Georgia\',serif;font-size:13px;color:#B5A685;flex-shrink:0;">' + j + '</div>';
+      html += '<div style="flex:1;font-family:\'Georgia\',serif;font-size:14px;color:#B5A685;font-style:italic;">Bient\u00f4t\u2026</div></div>';
       continue;
     }
     html += '<div onclick="_prophetesOpenByJour(' + j + ')" style="padding:14px 16px;background:rgba(200,168,75,0.04);border:1px solid rgba(200,168,75,0.12);border-radius:14px;margin-bottom:8px;cursor:pointer;display:flex;align-items:center;gap:14px;">';
-    html += '<div style="width:32px;height:32px;border-radius:8px;background:rgba(200,168,75,0.1);display:flex;align-items:center;justify-content:center;font-family:\'Cormorant Garamond\',serif;font-size:13px;color:#C8A84A;flex-shrink:0;">' + j + '</div>';
-    html += '<div style="flex:1;min-width:0;font-family:\'Cormorant Garamond\',serif;font-size:14px;color:#E5E0DC;">' + name + '</div>';
+    html += '<div style="width:32px;height:32px;border-radius:8px;background:rgba(200,168,75,0.1);display:flex;align-items:center;justify-content:center;font-family:\'Georgia\',serif;font-size:13px;color:#C8A84A;flex-shrink:0;">' + j + '</div>';
+    html += '<div style="flex:1;min-width:0;font-family:\'Georgia\',serif;font-size:14px;color:#E5E0DC;">' + name + '</div>';
     html += '<div style="color:rgba(200,168,75,0.4);font-size:16px;flex-shrink:0;">\u203A</div></div>';
   }
   html += '</div>';
@@ -20033,7 +20033,7 @@ function _renderVersetProgress(main) {
       + '<div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(200,168,74,0.45);margin-bottom:14px;">Verset \u00e0 m\u00e9diter</div>'
       + '<div class="fiqh-categorie">' + (vj.ref || '').toUpperCase() + '</div>'
       + '<div style="font-family:\'Amiri\',serif;font-size:24px;line-height:2;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:24px;">' + vj.arabe + '</div>'
-      + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;line-height:1.7;color:rgba(240,234,214,0.95);font-style:italic;margin-bottom:20px;">' + vj.traduction + '</div>'
+      + '<div style="font-family:\'Georgia\',serif;font-size:22px;line-height:1.7;color:rgba(240,234,214,0.95);font-style:italic;margin-bottom:20px;">' + vj.traduction + '</div>'
       + (vj.sourate_fr ? '<div style="font-size:12px;color:rgba(200,168,74,0.6);letter-spacing:0.1em;margin-bottom:20px;">\u2014 ' + vj.sourate_fr + ' \u2014</div>' : '')
       + '<div style="display:flex;align-items:center;justify-content:center;gap:16px;">'
       + '<button onclick="_versetNav(-1)" style="padding:8px 16px;border-radius:10px;border:1px solid rgba(200,168,74,' + (n > 1 ? '0.4' : '0.1') + ');background:transparent;color:' + (n > 1 ? '#C8A84A' : 'rgba(200,168,74,0.2)') + ';font-size:13px;cursor:pointer;">\u25C0 Pr\u00e9c.</button>'
@@ -20080,18 +20080,18 @@ function _khatmaInjectStyle() {
   s.id = 'khatma-lux-style';
   s.textContent = ''
     + '.khz-wrap{margin-bottom:24px;}'
-    + '.khz-eyebrow{font-family:"Cormorant Garamond",serif;font-size:13px;letter-spacing:.1em;color:#E8CE8A;text-align:center;}'
+    + '.khz-eyebrow{font-family:"Georgia",serif;font-size:13px;letter-spacing:.1em;color:#E8CE8A;text-align:center;}'
     + '.khz-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;max-width:300px;margin:16px auto 0;}'
-    + '.khz-tile{aspect-ratio:1;border-radius:9px;display:flex;align-items:center;justify-content:center;font-family:"Cormorant Garamond",serif;font-size:14px;cursor:pointer;transition:transform .2s,box-shadow .25s;}'
+    + '.khz-tile{aspect-ratio:1;border-radius:9px;display:flex;align-items:center;justify-content:center;font-family:"Georgia",serif;font-size:14px;cursor:pointer;transition:transform .2s,box-shadow .25s;}'
     + '.khz-tile.done{background:linear-gradient(145deg,#F8EAC2,#D4AF37 58%,#C8A84A);color:#1a130b;border:1px solid #E8CE8A;box-shadow:inset 0 1px 0 rgba(255,255,255,0.45),0 0 12px rgba(232,206,138,0.22);}'
     + '.khz-tile.next{background:rgba(232,206,138,0.07);color:#E8CE8A;border:1px solid rgba(232,206,138,0.6);animation:khzPulse 2.4s ease-in-out infinite;}'
     + '.khz-tile.todo{background:rgba(200,168,74,0.04);color:rgba(200,168,74,0.38);border:1px solid rgba(200,168,74,0.13);}'
     + '.khz-tile:active{transform:scale(.92);}'
     + '.khz-tile.flash{animation:khzFlash .7s ease;}'
     + '.khz-obj{text-align:center;margin-top:16px;}'
-    + '.khz-obj .line{font-family:"Cormorant Garamond",serif;font-size:14px;font-style:italic;color:rgba(200,168,74,0.7);}'
+    + '.khz-obj .line{font-family:"Georgia",serif;font-size:14px;font-style:italic;color:rgba(200,168,74,0.7);}'
     + '.khz-obj .mod{font-size:11px;color:rgba(200,168,74,0.4);margin-top:5px;cursor:pointer;}'
-    + '.khz-set{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:15px;color:#C8A84A;cursor:pointer;text-align:center;margin-top:16px;}'
+    + '.khz-set{font-family:"Georgia",serif;font-style:italic;font-size:15px;color:#C8A84A;cursor:pointer;text-align:center;margin-top:16px;}'
     + '.khz-div{height:1px;background:linear-gradient(90deg,transparent,rgba(200,168,74,0.2),transparent);margin-top:24px;}'
     + '@keyframes khzPulse{0%,100%{box-shadow:0 0 0 rgba(232,206,138,0);}50%{box-shadow:0 0 14px rgba(232,206,138,0.3);}}'
     + '@keyframes khzFlash{0%{box-shadow:0 0 0 rgba(232,206,138,0);transform:scale(1);}40%{box-shadow:0 0 22px rgba(232,206,138,0.65);transform:scale(1.1);}100%{box-shadow:inset 0 1px 0 rgba(255,255,255,0.45),0 0 12px rgba(232,206,138,0.22);transform:scale(1);}}'
@@ -20158,18 +20158,18 @@ function _openKhatmaSetup() {
   ov.id = '_khatma-setup';
   ov.style.cssText = 'position:fixed;inset:0;z-index:9999;background:radial-gradient(120% 80% at 50% 0%,#1c140b,#0b0805 60%);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;padding:24px;';
   var opt = function(label, days) {
-    return '<button onclick="_khatmaPickDays(' + days + ')" style="display:block;width:100%;padding:14px;margin-bottom:10px;border-radius:14px;border:1px solid rgba(200,168,74,0.28);background:linear-gradient(180deg,#16110a,#100c07);color:#E8CE8A;font-family:\'Cormorant Garamond\',serif;font-size:17px;cursor:pointer;">' + label + '</button>';
+    return '<button onclick="_khatmaPickDays(' + days + ')" style="display:block;width:100%;padding:14px;margin-bottom:10px;border-radius:14px;border:1px solid rgba(200,168,74,0.28);background:linear-gradient(180deg,#16110a,#100c07);color:#E8CE8A;font-family:\'Georgia\',serif;font-size:17px;cursor:pointer;">' + label + '</button>';
   };
   var ramadanBtn = (typeof ramadanState !== 'undefined' && ramadanState.active)
-    ? '<button onclick="_khatmaPickRamadan()" style="display:block;width:100%;padding:14px;margin-bottom:10px;border-radius:14px;border:1px solid rgba(232,206,138,0.5);background:radial-gradient(130% 160% at 50% 0%,rgba(232,206,138,0.2),rgba(232,206,138,0.03));color:#F6E7BC;font-family:\'Cormorant Garamond\',serif;font-size:17px;cursor:pointer;box-shadow:0 0 22px rgba(232,206,138,0.12);">\uD83C\uDF19 Ce Ramadan \u00b7 finir avant l\u2019A\u00efd</button>'
+    ? '<button onclick="_khatmaPickRamadan()" style="display:block;width:100%;padding:14px;margin-bottom:10px;border-radius:14px;border:1px solid rgba(232,206,138,0.5);background:radial-gradient(130% 160% at 50% 0%,rgba(232,206,138,0.2),rgba(232,206,138,0.03));color:#F6E7BC;font-family:\'Georgia\',serif;font-size:17px;cursor:pointer;box-shadow:0 0 22px rgba(232,206,138,0.12);">\uD83C\uDF19 Ce Ramadan \u00b7 finir avant l\u2019A\u00efd</button>'
     : '';
   ov.innerHTML = '<div style="max-width:330px;width:100%;text-align:center;">'
     + '<div style="font-family:\'Scheherazade New\',serif;font-size:34px;color:#E8CE8A;text-shadow:0 0 26px rgba(232,206,138,0.3);line-height:1;">\u062E\u064E\u062A\u0652\u0645\u064E\u0629</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:23px;color:#EADCB6;margin-top:8px;">Objectif de Khatma</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:14px;color:rgba(200,168,74,0.55);margin:8px 0 24px;">Finir le Coran \u00e0 ton rythme, sans pression</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:23px;color:#EADCB6;margin-top:8px;">Objectif de Khatma</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-style:italic;font-size:14px;color:rgba(200,168,74,0.55);margin:8px 0 24px;">Finir le Coran \u00e0 ton rythme, sans pression</div>'
     + ramadanBtn + opt('En 30 jours', 30) + opt('En 60 jours', 60) + opt('En 90 jours', 90)
     + '<div style="margin:16px 0 10px;display:flex;align-items:center;gap:12px;"><div style="flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(200,168,74,0.25),transparent);"></div><span style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(200,168,74,0.45);">ou une date</span><div style="flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(200,168,74,0.25),transparent);"></div></div>'
-    + '<input id="_khatma-date" type="date" onchange="_khatmaPickDate(this.value)" style="width:100%;box-sizing:border-box;padding:13px;border-radius:14px;border:1px solid rgba(200,168,74,0.28);background:#16110a;color:#E8CE8A;font-size:15px;font-family:\'Cormorant Garamond\',serif;margin-bottom:18px;">'
+    + '<input id="_khatma-date" type="date" onchange="_khatmaPickDate(this.value)" style="width:100%;box-sizing:border-box;padding:13px;border-radius:14px;border:1px solid rgba(200,168,74,0.28);background:#16110a;color:#E8CE8A;font-size:15px;font-family:\'Georgia\',serif;margin-bottom:18px;">'
     + (_getKhatmaEnd() ? '<button onclick="_clearKhatmaEnd();document.getElementById(\'_khatma-setup\').remove();_khatmaRefresh();" style="background:none;border:none;color:rgba(200,168,74,0.45);font-size:13px;cursor:pointer;display:block;margin:0 auto 10px;">Retirer l\u2019objectif</button>' : '')
     + '<button onclick="document.getElementById(\'_khatma-setup\').remove();" style="background:none;border:none;color:rgba(255,255,255,0.4);font-size:13px;cursor:pointer;">Fermer</button></div>';
   document.body.appendChild(ov);
@@ -20181,11 +20181,11 @@ function _khatmaCelebrate() {
   ov.innerHTML = '<div style="position:relative;text-align:center;max-width:340px;">'
     + '<div style="position:absolute;top:-30px;left:50%;transform:translateX(-50%);width:240px;height:240px;background:radial-gradient(circle,rgba(232,206,138,0.2),transparent 65%);pointer-events:none;"></div>'
     + '<div style="position:relative;font-family:\'Scheherazade New\',serif;font-size:40px;color:#E8CE8A;text-shadow:0 0 30px rgba(232,206,138,0.4);line-height:1;margin-bottom:10px;">\u062E\u064E\u062A\u0652\u0645\u064E\u0629</div>'
-    + '<div style="position:relative;font-family:\'Cormorant Garamond\',serif;font-size:27px;color:#F6E7BC;margin-bottom:14px;">Khatma compl\u00e9t\u00e9e</div>'
+    + '<div style="position:relative;font-family:\'Georgia\',serif;font-size:27px;color:#F6E7BC;margin-bottom:14px;">Khatma compl\u00e9t\u00e9e</div>'
     + '<div style="position:relative;font-size:15px;color:rgba(240,234,214,0.8);line-height:1.6;margin-bottom:22px;">Le Coran parcouru en entier. Alhamdulill\u0101h.</div>'
     + '<div style="position:relative;font-family:\'Amiri\',serif;font-size:22px;color:rgba(232,206,138,0.92);direction:rtl;margin-bottom:6px;">\u0627\u0644\u0644\u0651\u064E\u0647\u064F\u0645\u0651\u064E \u062A\u064E\u0642\u064E\u0628\u0651\u064E\u0644\u0652 \u0645\u0650\u0646\u0651\u064E\u0627</div>'
     + '<div style="position:relative;font-size:13px;color:rgba(255,255,255,0.5);font-style:italic;margin-bottom:30px;">All\u0101humma taqabbal minn\u0101</div>'
-    + '<button id="_khatmaJuzBtn" style="position:relative;padding:14px 30px;border:1px solid rgba(232,206,138,0.5);border-radius:26px;background:radial-gradient(130% 160% at 50% 0%,rgba(232,206,138,0.18),rgba(232,206,138,0.02));color:#F6E7BC;font-family:Cormorant Garamond,serif;font-size:16px;cursor:pointer;">Recommencer une Khatma</button></div>';
+    + '<button id="_khatmaJuzBtn" style="position:relative;padding:14px 30px;border:1px solid rgba(232,206,138,0.5);border-radius:26px;background:radial-gradient(130% 160% at 50% 0%,rgba(232,206,138,0.18),rgba(232,206,138,0.02));color:#F6E7BC;font-family:Georgia,serif;font-size:16px;cursor:pointer;">Recommencer une Khatma</button></div>';
   document.body.appendChild(ov);
   document.getElementById('_khatmaJuzBtn').onclick = function() { safeSetItem('niyyah_khatma_juz', '0'); ov.remove(); _khatmaRefresh(); };
 }
@@ -20205,11 +20205,11 @@ function _showKhatmaModal() {
   ov.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;background:rgba(15,12,8,0.95);display:flex;align-items:center;justify-content:center;padding:24px;';
   ov.innerHTML = '<div style="text-align:center;max-width:340px;">'
     + '<div style="font-size:48px;margin-bottom:20px;">\uD83D\uDCD6</div>'
-    + '<div style="font-family:\'Cormorant Garamond\',serif;font-size:28px;font-weight:700;color:#C8A84A;line-height:1.4;margin-bottom:16px;">Khatma compl\u00e9t\u00e9e</div>'
+    + '<div style="font-family:\'Georgia\',serif;font-size:28px;font-weight:700;color:#C8A84A;line-height:1.4;margin-bottom:16px;">Khatma compl\u00e9t\u00e9e</div>'
     + '<div style="font-size:15px;color:rgba(240,234,214,0.8);line-height:1.6;margin-bottom:24px;">6236 versets parcourus. Alhamdulill\u0101h.</div>'
     + '<div style="font-family:\'Amiri\',serif;font-size:22px;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:8px;">\u0627\u0644\u0644\u0651\u064E\u0647\u064F\u0645\u0651\u064E \u062A\u064E\u0642\u064E\u0628\u0651\u064E\u0644\u0652 \u0645\u0650\u0646\u0651\u064E\u0627</div>'
     + '<div style="font-size:13px;color:rgba(255,255,255,0.5);font-style:italic;margin-bottom:32px;">All\u0101humma taqabbal minn\u0101</div>'
-    + '<button id="_khatmaBtn" style="padding:14px 28px;border:none;border-radius:24px;background:#C8A84A;color:#2C2E32;font-family:Cormorant Garamond,serif;font-size:15px;font-weight:700;cursor:pointer;">Recommencer la lecture</button>'
+    + '<button id="_khatmaBtn" style="padding:14px 28px;border:none;border-radius:24px;background:#C8A84A;color:#2C2E32;font-family:Georgia,serif;font-size:15px;font-weight:700;cursor:pointer;">Recommencer la lecture</button>'
     + '</div>';
   document.body.appendChild(ov);
   document.getElementById('_khatmaBtn').onclick = function() { _setVersetProgress(1); ov.remove(); var main = document.querySelector('#vue-rituel .rituel-content'); if (main) _renderVersetProgress(main); };
@@ -20331,7 +20331,7 @@ const SIRA = {
     try { tissues = JSON.parse(safeGetItem('sira_tissues') || '[]'); } catch(e) {}
     var h = '';
     h += '<div onclick="SIRA.openDetail()" style="position:absolute;top:16px;left:16px;font-size:28px;font-weight:300;color:#C8A84A;cursor:pointer;">\u2039</div>';
-    h += '<div style="text-align:center;font-family:Cormorant Garamond,serif;font-size:24px;font-style:italic;color:#FAF7EE;margin:20px 0 8px;">Tous les rendez-vous tiss\u00e9s</div>';
+    h += '<div style="text-align:center;font-family:Georgia,serif;font-size:24px;font-style:italic;color:#FAF7EE;margin:20px 0 8px;">Tous les rendez-vous tiss\u00e9s</div>';
     h += '<div style="text-align:center;font-style:italic;color:#999;font-size:13px;margin-bottom:40px;">Tous tes rendez-vous avec lui \uFDFA</div>';
     for (var i = 1; i <= max; i++) {
       var rdv = this.getRdv(i);
@@ -20339,7 +20339,7 @@ const SIRA = {
       var read = tissues.indexOf(i) !== -1;
       h += '<div onclick="SIRA.openNav(' + i + ')" style="display:flex;justify-content:space-between;align-items:center;padding:22px 24px;border-bottom:1px solid rgba(200,168,74,0.12);cursor:pointer;" onmouseover="this.style.background=\'rgba(200,168,74,0.04)\'" onmouseout="this.style.background=\'none\'">'
         + '<div><div style="font-size:12px;letter-spacing:3px;font-weight:700;color:#C8A84A;margin-bottom:4px;">RENDEZ-VOUS ' + i + '</div>'
-        + '<div style="font-family:Cormorant Garamond,serif;font-style:italic;font-size:19px;color:#FAF7EE;">' + titre + '</div></div>'
+        + '<div style="font-family:Georgia,serif;font-style:italic;font-size:19px;color:#FAF7EE;">' + titre + '</div></div>'
         + (read ? '<span style="font-size:14px;color:#C8A84A;">\u2713</span>' : '')
         + '</div>';
     }
@@ -20373,7 +20373,7 @@ const SIRA = {
     var h = '';
     h += '<svg width="22" height="22" viewBox="0 0 22 22" style="position:absolute;top:18px;right:60px;cursor:pointer;opacity:0.85;" onclick="SIRA.openList()" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.85"><line x1="3" y1="6" x2="19" y2="6" stroke="#C8A84A" stroke-width="1.2" stroke-linecap="round"/><line x1="3" y1="11" x2="19" y2="11" stroke="#C8A84A" stroke-width="1.2" stroke-linecap="round"/><line x1="3" y1="16" x2="19" y2="16" stroke="#C8A84A" stroke-width="1.2" stroke-linecap="round"/></svg>';
     h += '<div style="text-align:center;font-size:80px;color:#C8A84A;margin:40px 0 20px;">\uFDFA</div>';
-    h += '<div style="text-align:center;font-family:Cormorant Garamond,serif;font-size:32px;font-style:italic;color:#FAF7EE;margin-bottom:0;">Avec le Messager \uFDFA</div>';
+    h += '<div style="text-align:center;font-family:Georgia,serif;font-size:32px;font-style:italic;color:#FAF7EE;margin-bottom:0;">Avec le Messager \uFDFA</div>';
     h += '<div style="text-align:center;font-family:Scheherazade New,Amiri,serif;font-size:28px;color:#C8A84A;direction:rtl;margin:12px 0 8px;">\u0627\u0644\u0633\u0651\u0650\u064A\u0631\u064E\u0629\u064F \u0627\u0644\u0646\u0651\u064E\u0628\u064E\u0648\u0650\u064A\u0651\u064E\u0629\u064F</div>';
     if (tissues === 0) {
       h += '<div style="text-align:center;font-style:italic;color:#999;font-size:14px;line-height:1.5;max-width:280px;margin:0 auto 32px;">Aujourd\u2019hui commence ta premi\u00e8re rencontre avec lui \uFDFA</div>';
@@ -20384,11 +20384,11 @@ const SIRA = {
     }
     h += '<div class="sira-ornament"></div>';
     h += '<div style="text-align:center;font-size:12px;letter-spacing:4px;font-weight:700;color:#C8A84A;margin-bottom:14px;">AUJOURD\u2019HUI</div>';
-    h += '<div style="text-align:center;font-family:Cormorant Garamond,serif;font-size:24px;font-style:italic;color:#FAF7EE;margin-bottom:8px;">Rendez-vous ' + num + ' \u2014 ' + titre + '</div>';
+    h += '<div style="text-align:center;font-family:Georgia,serif;font-size:24px;font-style:italic;color:#FAF7EE;margin-bottom:8px;">Rendez-vous ' + num + ' \u2014 ' + titre + '</div>';
     var _partie = (rdv && rdv.partie && this.data && this.data.meta && this.data.meta.parties && this.data.meta.parties[rdv.partie]) ? this.data.meta.parties[rdv.partie] : null;
     var _partieTitre = (_partie && _partie.titre && _partie.titre.fr) ? _partie.titre.fr : '';
     if (rdv && rdv.partie && _partieTitre) h += '<div style="text-align:center;font-style:italic;color:#999;font-size:12px;letter-spacing:1px;margin-bottom:36px;">Partie ' + rdv.partie + ' \u00b7 ' + _partieTitre + '</div>';
-    h += '<div style="text-align:center;"><button class="sira-breath" onclick="SIRA.openRdv()" style="background:#C8A84A;color:#2C2E32;padding:14px 28px;border:none;border-radius:24px;font-family:Cormorant Garamond,serif;font-style:italic;font-size:16px;cursor:pointer;">Entrer dans la rencontre</button></div>';
+    h += '<div style="text-align:center;"><button class="sira-breath" onclick="SIRA.openRdv()" style="background:#C8A84A;color:#2C2E32;padding:14px 28px;border:none;border-radius:24px;font-family:Georgia,serif;font-style:italic;font-size:16px;cursor:pointer;">Entrer dans la rencontre</button></div>';
     h += '<div style="margin-top:60px;padding:24px;max-width:480px;margin-left:auto;margin-right:auto;text-align:center;font-style:italic;color:#999;font-size:13px;line-height:1.7;">Un rendez-vous quotidien avec le Messager d\u2019All\u00e2h \uFDFA \u2014 trois cent soixante-cinq rencontres pour le d\u00e9couvrir, l\u2019aimer, marcher avec lui.<br><br>Ces pages sont un r\u00e9cit : la vie du Proph\u00e8te \uFDFA tiss\u00e9e \u00e0 partir des sources classiques \u2014 le Coran, les \u1e62a\u1e25\u00ee\u1e25 d\u2019al-Bukh\u00e2r\u00ee et de Muslim, et les grands livres de S\u00eera. Les dialogues et les sc\u00e8nes y sont reconstitu\u00e9s pour rendre cette vie vivante, non transcrits mot \u00e0 mot. La S\u00eera n\u2019est pas, par nature, enti\u00e8rement sahih : on n\u2019invente rien ici, et tout d\u00e9tail tir\u00e9 d\u2019une tradition plus faible ou d\u00e9battue est signal\u00e9 dans sa source. Pour ce qui touche au licite, \u00e0 l\u2019illicite et au dogme, reviens toujours au hadith authentifi\u00e9 et aux savants.<br><br>Ces r\u00e9cits ne remplacent pas l\u2019\u00e9tude rigoureuse de la S\u00eera \u2014 ils ouvrent la porte de l\u2019amour qui rend l\u2019\u00e9tude d\u00e9sirable.</div>';
     return h;
   },
@@ -20400,28 +20400,28 @@ const SIRA = {
     var h = '';
     var _siraMax = (this.data && this.data.rdv) ? this.data.rdv.length : 365;
     h += '<div id="sira-salawat-open" style="text-align:center;font-size:64px;color:#C8A84A;margin-bottom:12px;opacity:0;transform:translateY(20px);transition:opacity 800ms ease-out,transform 800ms ease-out;">\uFDFA</div>';
-    h += '<div style="text-align:center;font-family:Cormorant Garamond,serif;font-size:28px;font-style:italic;font-weight:400;color:#FAF7EE;margin:16px 0 8px;">' + escape(T(rdv.titre)) + '</div>';
+    h += '<div style="text-align:center;font-family:Georgia,serif;font-size:28px;font-style:italic;font-weight:400;color:#FAF7EE;margin:16px 0 8px;">' + escape(T(rdv.titre)) + '</div>';
     var _rp = (rdv.partie && this.data && this.data.meta && this.data.meta.parties && this.data.meta.parties[rdv.partie]) ? this.data.meta.parties[rdv.partie] : null;
     var _rpt = (_rp && _rp.titre && _rp.titre.fr) ? _rp.titre.fr : '';
     if (rdv.partie && _rpt) h += '<div style="text-align:center;font-style:italic;color:#999;font-size:12px;letter-spacing:1px;margin-bottom:8px;">Partie ' + rdv.partie + ' \u00b7 ' + _rpt + '</div>';
-    h += '<div style="text-align:center;margin-bottom:16px;"><span onclick="SIRA.openList()" style="display:inline-block;cursor:pointer;font-family:Cormorant Garamond,serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.6);border-bottom:1px solid rgba(200,168,75,0.25);padding-bottom:2px;">Jour ' + num + ' sur ' + _siraMax + ' \u2014 voir les pr\u00e9c\u00e9dents</span></div>';
+    h += '<div style="text-align:center;margin-bottom:16px;"><span onclick="SIRA.openList()" style="display:inline-block;cursor:pointer;font-family:Georgia,serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.6);border-bottom:1px solid rgba(200,168,75,0.25);padding-bottom:2px;">Jour ' + num + ' sur ' + _siraMax + ' \u2014 voir les pr\u00e9c\u00e9dents</span></div>';
     h += '<div style="text-align:center;margin-bottom:24px;">'
       + '<button id="sira-audio-btn" onclick="_siraPlayAudio(SIRA.getRdv(' + num + '),this)" style="background:none;border:1px solid rgba(200,168,75,0.35);border-radius:20px;color:#C8A84A;font-size:18px;padding:6px 14px;cursor:pointer;margin-right:8px;">🔊</button>'
       + '<button onclick="_siraStopAudio()" style="background:none;border:1px solid rgba(200,168,75,0.2);border-radius:20px;color:#888;font-size:14px;padding:6px 12px;cursor:pointer;">\u2715</button>'
       + '</div>';
     if (rdv.quiz_type) {
       // Quiz mode
-      h += '<div style="font-family:Cormorant Garamond,serif;font-size:22px;font-style:italic;color:#FAF7EE;line-height:1.7;text-align:center;margin:24px 0 32px;">' + escape(rdv.quiz_question || '') + '</div>';
+      h += '<div style="font-family:Georgia,serif;font-size:22px;font-style:italic;color:#FAF7EE;line-height:1.7;text-align:center;margin:24px 0 32px;">' + escape(rdv.quiz_question || '') + '</div>';
       if (rdv.quiz_type === 'qcm' && rdv.quiz_options) {
         rdv.quiz_options.forEach(function(opt, i) {
-          h += '<button onclick="_siraQuizReveal(this)" style="display:block;width:100%;padding:14px 20px;margin-bottom:10px;border:1px solid rgba(200,168,75,0.3);border-radius:12px;background:rgba(200,168,75,0.05);color:#E8E6DD;font-family:Cormorant Garamond,serif;font-size:16px;text-align:left;cursor:pointer;transition:border-color 0.2s;">' + escape(opt) + '</button>';
+          h += '<button onclick="_siraQuizReveal(this)" style="display:block;width:100%;padding:14px 20px;margin-bottom:10px;border:1px solid rgba(200,168,75,0.3);border-radius:12px;background:rgba(200,168,75,0.05);color:#E8E6DD;font-family:Georgia,serif;font-size:16px;text-align:left;cursor:pointer;transition:border-color 0.2s;">' + escape(opt) + '</button>';
         });
       } else {
-        h += '<div style="text-align:center;margin:16px 0;"><button onclick="_siraQuizReveal(this)" style="padding:14px 28px;border:1px solid rgba(200,168,75,0.4);border-radius:24px;background:rgba(200,168,75,0.05);color:#C8A84A;font-family:Cormorant Garamond,serif;font-style:italic;font-size:16px;cursor:pointer;">Voir la r\u00e9ponse</button></div>';
+        h += '<div style="text-align:center;margin:16px 0;"><button onclick="_siraQuizReveal(this)" style="padding:14px 28px;border:1px solid rgba(200,168,75,0.4);border-radius:24px;background:rgba(200,168,75,0.05);color:#C8A84A;font-family:Georgia,serif;font-style:italic;font-size:16px;cursor:pointer;">Voir la r\u00e9ponse</button></div>';
       }
       h += '<div id="sira-quiz-reveal" style="opacity:0;max-height:0;overflow:hidden;transition:opacity 300ms ease,max-height 300ms ease;">';
       h += '<div class="sira-ornament"></div>';
-      h += '<div style="font-family:Cormorant Garamond,serif;font-size:20px;font-weight:600;color:#C8A84A;text-align:center;margin:24px 0 12px;">' + escape(rdv.quiz_reponse_courte || '') + '</div>';
+      h += '<div style="font-family:Georgia,serif;font-size:20px;font-weight:600;color:#C8A84A;text-align:center;margin:24px 0 12px;">' + escape(rdv.quiz_reponse_courte || '') + '</div>';
       h += '<div style="font-family:Georgia,serif;font-size:17px;line-height:1.75;color:#E8E6DD;margin-bottom:24px;">' + escape(rdv.quiz_reponse_developpee || '').replace(/\n/g, '<br>') + '</div>';
       if (rdv.meditation) h += '<div style="background:rgba(250,247,238,0.04);border-radius:12px;padding:20px 24px;margin:32px 8px;font-style:italic;text-align:center;color:#D4C9A0;font-size:17px;line-height:1.6;">' + escape(T(rdv.meditation)) + '</div>';
       if (rdv.source) h += '<div style="text-align:center;font-style:italic;color:#888;font-size:13px;margin:16px 0 32px;">\u2014 ' + escape(T(rdv.source)) + '</div>';
@@ -20454,7 +20454,7 @@ const SIRA = {
       if (_fb) h += '<div style="text-align:center;font-size:11px;letter-spacing:2px;color:' + _fb[2] + ';margin:-18px 0 30px;opacity:0.85;">' + _fb[0] + ' ' + _fb[1] + '</div>';
     }
     var maxNum = this.getCurrentRdvNum();
-    var _bs = 'padding:10px 22px;border:1px solid rgba(200,168,74,0.4);border-radius:24px;background:rgba(200,168,74,0.05);color:#C8A84A;font-family:Cormorant Garamond,serif;font-style:italic;font-size:15px;cursor:pointer;transition:all 300ms ease;';
+    var _bs = 'padding:10px 22px;border:1px solid rgba(200,168,74,0.4);border-radius:24px;background:rgba(200,168,74,0.05);color:#C8A84A;font-family:Georgia,serif;font-style:italic;font-size:15px;cursor:pointer;transition:all 300ms ease;';
     h += '<div style="display:flex;justify-content:space-between;align-items:center;padding-top:32px;">';
     h += (num > 1) ? '<span style="' + _bs + '" onclick="SIRA.openNav(' + (num - 1) + ')" onmouseover="this.style.background=\'rgba(200,168,74,0.15)\';this.style.borderColor=\'#C8A84A\'" onmouseout="this.style.background=\'rgba(200,168,74,0.05)\';this.style.borderColor=\'rgba(200,168,74,0.4)\'">Pr\u00e9c\u00e9dent</span>' : '<span></span>';
     h += (num < maxNum) ? '<span style="' + _bs + '" onclick="SIRA.openNav(' + (num + 1) + ')" onmouseover="this.style.background=\'rgba(200,168,74,0.15)\';this.style.borderColor=\'#C8A84A\'" onmouseout="this.style.background=\'rgba(200,168,74,0.05)\';this.style.borderColor=\'rgba(200,168,74,0.4)\'">Suivant</span>' : '<span></span>';
@@ -20463,7 +20463,7 @@ const SIRA = {
     h += '<div style="text-align:center;font-size:48px;color:#C8A84A;margin:28px 0 12px;">\uFDFA</div>';
     h += '<div style="text-align:center;font-size:12px;letter-spacing:3px;font-weight:700;color:#C8A84A;margin:32px 0 8px;">FIL ROUGE</div>';
     if (rdv.fil_rouge) h += '<div style="text-align:center;font-style:italic;color:#999;font-size:14px;line-height:1.5;margin-bottom:24px;">' + escape(T(rdv.fil_rouge)) + '</div>';
-    h += '<div style="text-align:center;margin:32px 0;"><button onclick="validerLectureSira()" style="padding:14px 28px;border:none;border-radius:24px;background:#C8A84A;color:#2C2E32;font-family:Cormorant Garamond,serif;font-size:15px;font-weight:700;cursor:pointer;">J\u2019ai termin\u00e9 ma lecture</button></div>';
+    h += '<div style="text-align:center;margin:32px 0;"><button onclick="validerLectureSira()" style="padding:14px 28px;border:none;border-radius:24px;background:#C8A84A;color:#2C2E32;font-family:Georgia,serif;font-size:15px;font-weight:700;cursor:pointer;">J\u2019ai termin\u00e9 ma lecture</button></div>';
     this.markTissue(num);
     return h;
   }
