@@ -1,4 +1,4 @@
-const VERSION = 'niyyah-v2749';
+const VERSION = 'niyyah-v2750';
 const CORE = [
   './index.html',
   './script.min.js',
@@ -24,6 +24,12 @@ const CORE = [
   './data/waqt/waqt_asr.json',
   './data/waqt/waqt_maghrib.json',
   './data/waqt/waqt_isha.json',
+  './duaas.json',
+  './data/recits-coran.json',
+  './data/duaas-regard.json',
+  './bab-nafs-content.json',
+  './data/lisan/lisan_methode.json',
+  './data/lisan/lisan_palier1_tranche1.json',
 ];
 const FONTS_CACHE = 'niyyah-fonts-v1';
 
