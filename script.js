@@ -48,6 +48,8 @@ if (typeof Sentry !== 'undefined') {
 }
 window.testSentry = function() { throw new Error('Niyyah Sentry test — this is intentional'); };
 const NIYYAH_DEBUG = false;
+let _siraUtterance = null;
+let _siraIsPaused = false;
 if (!NIYYAH_DEBUG) { console.log = function(){}; console.debug = function(){}; }
 function niyyahIcon(type, size) {
   var s = size || 20;
@@ -18817,6 +18819,7 @@ function validerLecture(id) {
 }
 window.validerLecture = validerLecture;
 function validerLectureSira() {
+  _siraStopAudio();
   if (!state['sira']) { state['sira'] = true; saveState(); updateGlobalProgress(); }
   var ov = document.getElementById('sira-overlay');
   if (ov) ov.remove();
@@ -18824,6 +18827,40 @@ function validerLectureSira() {
   _knowledgeReturn();
 }
 window.validerLectureSira = validerLectureSira;
+
+function _siraBuildText(rdv) {
+  function T(f) { return (f && f.fr) ? f.fr : ''; }
+  var text = T(rdv.titre) + '. ';
+  if (rdv.paragraphes && Array.isArray(rdv.paragraphes)) {
+    rdv.paragraphes.forEach(function(p) { var t = p.content && p.content.fr && p.content.fr.trim(); if (t) text += t + ' '; });
+  }
+  if (rdv.meditation && T(rdv.meditation)) text += 'Méditation. ' + T(rdv.meditation) + ' ';
+  if (rdv.source && T(rdv.source)) text += 'Source. ' + T(rdv.source);
+  return text;
+}
+function _siraPlayAudio(rdv, btnEl) {
+  if (_siraIsPaused && _siraUtterance) {
+    speechSynthesis.resume(); _siraIsPaused = false; btnEl.textContent = '⏸'; return;
+  }
+  if (speechSynthesis.speaking) {
+    speechSynthesis.cancel(); _siraIsPaused = false; _siraUtterance = null; btnEl.textContent = '🔊'; return;
+  }
+  _siraUtterance = new SpeechSynthesisUtterance(_siraBuildText(rdv));
+  _siraUtterance.lang = 'fr-FR'; _siraUtterance.rate = 0.95;
+  _siraUtterance.onend = function() { btnEl.textContent = '🔊'; _siraUtterance = null; _siraIsPaused = false; };
+  _siraUtterance.onerror = function() { btnEl.textContent = '🔊'; _siraUtterance = null; };
+  speechSynthesis.speak(_siraUtterance); btnEl.textContent = '⏸';
+}
+function _siraPauseAudio(btnEl) {
+  if (speechSynthesis.speaking && !_siraIsPaused) { speechSynthesis.pause(); _siraIsPaused = true; btnEl.textContent = '▶'; }
+}
+function _siraStopAudio() {
+  speechSynthesis.cancel(); _siraUtterance = null; _siraIsPaused = false;
+  var b = document.getElementById('sira-audio-btn'); if (b) b.textContent = '🔊';
+}
+window._siraPlayAudio = _siraPlayAudio;
+window._siraPauseAudio = _siraPauseAudio;
+window._siraStopAudio = _siraStopAudio;
 
 function getEffectiveMotiv() {
   var m = safeGetItem('niyyah_motivation');
@@ -20251,7 +20288,7 @@ const SIRA = {
     }
     return ov;
   },
-  _closeBtn: '<button onclick="document.getElementById(\'sira-overlay\').remove();_restoreScroll();a11yOnOverlayClose();" style="position:fixed;top:16px;right:16px;z-index:10000;background:none;border:none;color:#C8A84A;font-size:32px;width:32px;height:32px;cursor:pointer;line-height:1;">\u2715</button>',
+  _closeBtn: '<button onclick="_siraStopAudio();document.getElementById(\'sira-overlay\').remove();_restoreScroll();a11yOnOverlayClose();" style="position:fixed;top:16px;right:16px;z-index:10000;background:none;border:none;color:#C8A84A;font-size:32px;width:32px;height:32px;cursor:pointer;line-height:1;">\u2715</button>',
   async openDetail() {
     if (!isKnowledgeUnlocked()) { _showPaywallConnaissance(); return; }
     _saveScroll();
@@ -20279,6 +20316,7 @@ const SIRA = {
         var badge = document.getElementById('sira-tissue-badge'); if (badge) { badge.style.opacity = '1'; badge.style.transform = 'translateY(0)'; }
       }, 1200);
     }
+    _siraStopAudio();
     var ct = document.getElementById('sira-content');
     if (ct) {
       ct.style.opacity = '0';
@@ -20366,7 +20404,11 @@ const SIRA = {
     var _rp = (rdv.partie && this.data && this.data.meta && this.data.meta.parties && this.data.meta.parties[rdv.partie]) ? this.data.meta.parties[rdv.partie] : null;
     var _rpt = (_rp && _rp.titre && _rp.titre.fr) ? _rp.titre.fr : '';
     if (rdv.partie && _rpt) h += '<div style="text-align:center;font-style:italic;color:#999;font-size:12px;letter-spacing:1px;margin-bottom:8px;">Partie ' + rdv.partie + ' \u00b7 ' + _rpt + '</div>';
-    h += '<div style="text-align:center;margin-bottom:32px;"><span onclick="SIRA.openList()" style="display:inline-block;cursor:pointer;font-family:Cormorant Garamond,serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.6);border-bottom:1px solid rgba(200,168,75,0.25);padding-bottom:2px;">Jour ' + num + ' sur ' + _siraMax + ' \u2014 voir les pr\u00e9c\u00e9dents</span></div>';
+    h += '<div style="text-align:center;margin-bottom:16px;"><span onclick="SIRA.openList()" style="display:inline-block;cursor:pointer;font-family:Cormorant Garamond,serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.6);border-bottom:1px solid rgba(200,168,75,0.25);padding-bottom:2px;">Jour ' + num + ' sur ' + _siraMax + ' \u2014 voir les pr\u00e9c\u00e9dents</span></div>';
+    h += '<div style="text-align:center;margin-bottom:24px;">'
+      + '<button id="sira-audio-btn" onclick="_siraPlayAudio(SIRA.getRdv(' + num + '),this)" style="background:none;border:1px solid rgba(200,168,75,0.35);border-radius:20px;color:#C8A84A;font-size:18px;padding:6px 14px;cursor:pointer;margin-right:8px;">🔊</button>'
+      + '<button onclick="_siraStopAudio()" style="background:none;border:1px solid rgba(200,168,75,0.2);border-radius:20px;color:#888;font-size:14px;padding:6px 12px;cursor:pointer;">\u2715</button>'
+      + '</div>';
     if (rdv.quiz_type) {
       // Quiz mode
       h += '<div style="font-family:Cormorant Garamond,serif;font-size:22px;font-style:italic;color:#FAF7EE;line-height:1.7;text-align:center;margin:24px 0 32px;">' + escape(rdv.quiz_question || '') + '</div>';
