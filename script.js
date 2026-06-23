@@ -20414,7 +20414,7 @@ const SIRA = {
     if (rdv.partie && _rpt) h += '<div style="text-align:center;font-style:italic;color:#999;font-size:12px;letter-spacing:1px;margin-bottom:8px;">Partie ' + rdv.partie + ' \u00b7 ' + _rpt + '</div>';
     h += '<div style="text-align:center;margin-bottom:16px;"><span onclick="SIRA.openList()" style="display:inline-block;cursor:pointer;font-family:Georgia,serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.6);border-bottom:1px solid rgba(200,168,75,0.25);padding-bottom:2px;">Jour ' + num + ' sur ' + _siraMax + ' \u2014 voir les pr\u00e9c\u00e9dents</span></div>';
     h += '<div style="text-align:center;margin-bottom:24px;">'
-      + '<button id="sira-audio-btn" onclick="_siraPlayAudio(SIRA.getRdv(' + num + '),this)" style="background:none;border:1px solid rgba(200,168,75,0.35);border-radius:20px;color:#C8A84A;font-size:18px;padding:6px 14px;cursor:pointer;margin-right:8px;">🔊</button>'
+      + '<button id="sira-audio-btn" class="btn-audio" aria-label="Écouter" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();_siraPlayAudio(SIRA.getRdv(' + num + '),this)" style="margin-right:8px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="#C8A84A" style="pointer-events:none"><polygon points="5 3 19 12 5 21 5 3"/></svg></button>'
       + '<button onclick="_siraStopAudio()" style="background:none;border:1px solid rgba(200,168,75,0.2);border-radius:20px;color:#888;font-size:14px;padding:6px 12px;cursor:pointer;">\u2715</button>'
       + '</div>';
     if (rdv.quiz_type) {
