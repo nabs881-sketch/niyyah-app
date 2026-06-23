@@ -1,4 +1,4 @@
-const VERSION = 'niyyah-v2748';
+const VERSION = 'niyyah-v2749';
 const CORE = [
   './index.html',
   './script.min.js',
@@ -9,6 +9,21 @@ const CORE = [
   './logo2.webp',
   './hadiths_jour.json',
   './fiqh_jour.json',
+  './compagnons.json',
+  './prophetes.json',
+  './savais_tu.json',
+  './data/sira.min.json',
+  './data/regard-library.json',
+  './data/greeting_murmures.json',
+  './data/niyyah_pool.json',
+  './data/waqt/tafakkur_final.json',
+  './data/waqt/tafakkur_nouvelles_questions.json',
+  './data/waqt/tafakkur_recits.json',
+  './data/waqt/waqt_fajr.json',
+  './data/waqt/waqt_dhuhr.json',
+  './data/waqt/waqt_asr.json',
+  './data/waqt/waqt_maghrib.json',
+  './data/waqt/waqt_isha.json',
 ];
 const FONTS_CACHE = 'niyyah-fonts-v1';
 
