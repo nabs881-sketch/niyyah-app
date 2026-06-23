@@ -15801,7 +15801,6 @@ function updateSanctuaireMoment() {
   }
   if (blockRemaining === 0) {
     el.innerHTML = '<div style="text-align:center;padding:8px;">'
-      + '<div style="font-family:\'Georgia\',serif;font-size:17px;font-weight:700;color:#C8A84A;line-height:1.45;">' + _iconSpan + t('bloc_done') + '</div>'
       + _nextInfo
       + '<div style="font-family:\'Georgia\',serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.6);margin-top:4px;">Tu as honor\u00e9 ce moment.</div>'
       + jourLine
