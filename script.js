@@ -19052,8 +19052,12 @@ function openVueRituel(prayer) {
     }
     return '<div class="' + cls + done + '" id="rituel-item-' + it.id + '" onclick="' + _click + '"><div class="check"></div><div style="flex:1"><div class="label">' + (it.label||it.id) + '</div>' + _dhikrCount + sub + ar + '</div>' + audio + _infoBtn + _dhikrBtn + '</div>';
   };
+  var _isItemDone = function(it) {
+    if (it.type === 'wird') { try { var sess = WIRD_DATA[it.session]; return !!(sess && sess.items.every(function(wi) { return !!wirdState[wi.id]; })); } catch(e) { return false; } }
+    return !!state[it.id];
+  };
   var _vrTotal = normalItems.length;
-  var _vrDone = normalItems.filter(function(it){ return !!state[it.id]; }).length;
+  var _vrDone = normalItems.filter(_isItemDone).length;
   var _vrPct = _vrTotal ? Math.round(_vrDone/_vrTotal*100) : 0;
   let html = '<div class="fil-progress"><div class="fil-progress-row"><span class="fil-progress-label">Le moment s\'habite</span><span class="fil-progress-count">' + _vrDone + ' / ' + _vrTotal + '</span></div><div class="fil-progress-track"><div class="fil-progress-fill" style="width:' + _vrPct + '%;"></div></div></div>';
   // Bandeau prière avec toggles
@@ -19091,10 +19095,6 @@ function openVueRituel(prayer) {
       html += fridayItems.map(it => renderItem(it, true)).join('');
     }
   }
-  var _isItemDone = function(it) {
-    if (it.type === 'wird') { try { var sess = WIRD_DATA[it.session]; return !!(sess && sess.items.every(function(wi) { return !!wirdState[wi.id]; })); } catch(e) { return false; } }
-    return !!state[it.id];
-  };
   var _renderOne = function(it) {
     return it.type === 'wird' ? renderWirdSmartCard(it, 0, undefined, prayer) : renderItem(it, false);
   };
