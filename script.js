@@ -2636,6 +2636,7 @@ function renderLevel(levelId) {
   }
   // [jour complet] Pratique affiche toujours toute la journée — pas de toggle moment
   const _currentBlock = _block.id;
+  var _lpHintRendered = !!localStorage.getItem('hint_longpress_seen');
   level.sections.forEach(section => {
     const _filteredItems = section.items.filter(function(item) {
       if (item.block === 'ressources') return false;
@@ -2660,7 +2661,9 @@ function renderLevel(levelId) {
       if (item.type === 'wird') {
         html += renderWirdSmartCard(item, delay, undefined, _currentBlock);
       } else if (item.type === 'counter') {
-        html += renderCounter(item, delay);
+        var _showHint = !_lpHintRendered;
+        if (_showHint) _lpHintRendered = true;
+        html += renderCounter(item, delay, _showHint);
       } else if (item.prayer) {
         const _pChecked = !!state[item.id];
         html += renderPrayerItem(item, delay, '', _pChecked);
@@ -2788,6 +2791,7 @@ function renderLevel(levelId) {
   }
   content.innerHTML = html;
   fadeInView(content);
+  _initLpHint();
   level.sections.forEach(s => s.items.forEach(item => { if (item.type === 'counter') initCounterEl(item); }));
   // Appliquer l'état timeline sur le DOM après injection
   setTimeout(function() {
@@ -2912,7 +2916,43 @@ function openTasbihFromEl(el) {
   openTasbih(id, target, label, arabic, phonetic, translation, source);
 }
 window.openTasbihFromEl = openTasbihFromEl;
-function renderCounter(item, delay) {
+var _lpTimer = null, _lpFired = false;
+function _startLP(id, target) {
+  _lpFired = false;
+  _lpTimer = setTimeout(function() { _lpFired = true; _longPressManual(id, target); }, 600);
+}
+function _cancelLP(e) {
+  clearTimeout(_lpTimer); _lpTimer = null;
+  if (_lpFired) { if (e) { e.preventDefault(); e.stopPropagation(); } _lpFired = false; }
+}
+function _longPressManual(id, target) {
+  if ((state[id] || 0) >= target) return;
+  state[id] = target;
+  saveState();
+  var itemEl = document.getElementById('item-' + id);
+  var cbEl = document.getElementById('cb-' + id);
+  var barEl = document.getElementById('cnt-bar-' + id);
+  if (itemEl) { itemEl.classList.add('checked'); itemEl.classList.add('celebrate'); setTimeout(function() { itemEl.classList.remove('celebrate'); }, 400); }
+  if (cbEl) { cbEl.style.background='var(--green-grad)'; cbEl.style.borderColor='var(--green)'; cbEl.style.boxShadow='0 0 0 4px var(--green-soft),0 0 16px rgba(200,168,74,0.25)'; var svg=cbEl.querySelector('.check-svg'); if(svg){svg.style.opacity='1';svg.style.transform='scale(1)';} }
+  if (barEl) barEl.style.width='100%';
+  if (navigator.vibrate) navigator.vibrate([20,40,80]);
+  showToast('Valid\u00e9 manuellement \u2713');
+  checkLevelCompletion(currentLevel);
+  updateGlobalProgress();
+  renderTabs();
+  if (typeof updateSanctuaireMoment === 'function') updateSanctuaireMoment();
+}
+function _initLpHint() {
+  if (localStorage.getItem('hint_longpress_seen')) return;
+  var tip = document.getElementById('lp-hint');
+  if (!tip) return;
+  if (tip.parentElement) tip.parentElement.style.position = 'relative';
+  setTimeout(function() { tip.style.opacity = '1'; }, 100);
+  localStorage.setItem('hint_longpress_seen', '1');
+  setTimeout(function() { tip.style.opacity='0'; setTimeout(function() { if(tip&&tip.parentElement)tip.remove(); },300); }, 2200);
+}
+window._startLP=_startLP; window._cancelLP=_cancelLP; window._longPressManual=_longPressManual; window._initLpHint=_initLpHint;
+function renderCounter(item, delay, showHint) {
   const count = state[item.id] || 0;
   const done  = count >= item.target;
   const arabicHtml = item.arabic ? '<div class="item-arabic" style="' + (done ? 'opacity:0.25' : '') + '">' + item.arabic + '</div>' : '';
@@ -2922,6 +2962,8 @@ function renderCounter(item, delay) {
   var _phoneticEscFs = (item.phonetic||'').replace(/\\/g,'\\\\').replace(/'/g,"\\'");
   var _transEscFs = (item.translation||'').replace(/\\/g,'\\\\').replace(/'/g,"\\'");
   var _srcEscFs   = (item.source||'').replace(/\\/g,'\\\\').replace(/'/g,"\\'");
+  var _lpTouch = !done ? ' ontouchstart="event.stopPropagation();_startLP(\'' + item.id + '\',' + item.target + ')" ontouchend="_cancelLP(event)" ontouchmove="_cancelLP(event)" ontouchcancel="_cancelLP(event)"' : '';
+  var _lpHintHtml = (showHint && !done) ? '<div id="lp-hint" style="position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:rgba(200,168,74,0.93);color:#2C2E32;font-family:\'Inter\',var(--sans);font-size:12px;font-weight:600;padding:5px 11px;border-radius:8px;white-space:nowrap;opacity:0;transition:opacity 0.2s;pointer-events:none;z-index:100;">Appui long si d\u00e9j\u00e0 fait</div>' : '';
   const fullscreenBtn = _isDhikr ? '' : '<button class="btn-tasbih-fs" aria-label="Plein écran" onclick="openTasbih(\'' + item.id + '\',' + item.target + ',\'' + labelEsc + '\',\'' + arabicEsc + '\',\'' + _phoneticEscFs + '\',\'' + _transEscFs + '\',\'' + _srcEscFs + '\')" title="' + t('btn_fullscreen') + '"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C8A84A" stroke-width="1.8" stroke-linecap="round" style="pointer-events:none"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></button>';
   const audioBtn = item.audio ? '<button class="btn-audio" aria-label="Écouter" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();playAudio(' + (Array.isArray(item.audio) ? JSON.stringify(item.audio).replace(/"/g,"'") : '\'' + item.audio + '\'') + ',this,event)" title="' + t('btn_listen_recitation') + '"><svg width="12" height="12" viewBox="0 0 24 24" fill="#C8A84A" style="pointer-events:none"><polygon points="5 3 19 12 5 21 5 3"/></svg></button>' : '';
   if (_isDhikr) {
@@ -2933,9 +2975,9 @@ function renderCounter(item, delay) {
       + ' data-ttranslation="' + (item.translation||'').replace(/"/g,'&quot;') + '"'
       + ' data-tsource="' + (item.source||'').replace(/"/g,'&quot;') + '"';
     var _fsBtnDhikr = '<button class="btn-tasbih-fs" aria-label="Plein écran" onclick="event.stopPropagation();openTasbihFromEl(this.closest(\'[data-tid]\'))" title="Ouvrir compteur"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C8A84A" stroke-width="1.8" stroke-linecap="round" style="pointer-events:none"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></button>';
-    return '<div class="item' + (done ? ' checked' : '') + '" style="animation-delay:' + delay + 'ms;cursor:pointer" id="item-' + item.id + '"' + _dataAttrs + ' onclick="openTasbihFromEl(this)"><div class="check-circle" id="cb-' + item.id + '" style="' + (done ? 'background:var(--green-grad);border-color:var(--green);box-shadow:0 0 0 4px var(--green-soft),0 0 16px rgba(200,168,74,0.25)' : '') + '"><svg class="check-svg" style="' + (done ? 'opacity:1;transform:scale(1)' : '') + '" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-body"><div class="item-label">' + tI(item,'label') + '</div><div class="item-sub">' + tI(item,'sub') + '</div><div style="font-size:14px;color:rgba(200,168,74,0.6);margin-top:2px;" id="cnt-num-' + item.id + '">' + _dhikrLabel + '</div>' + arabicHtml + '</div>' + audioBtn + _fsBtnDhikr + '</div>';
+    return '<div class="item' + (done ? ' checked' : '') + '" style="animation-delay:' + delay + 'ms;cursor:pointer;position:relative" id="item-' + item.id + '"' + _dataAttrs + ' onclick="openTasbihFromEl(this)"' + _lpTouch + '><div class="check-circle" id="cb-' + item.id + '" style="' + (done ? 'background:var(--green-grad);border-color:var(--green);box-shadow:0 0 0 4px var(--green-soft),0 0 16px rgba(200,168,74,0.25)' : '') + '"><svg class="check-svg" style="' + (done ? 'opacity:1;transform:scale(1)' : '') + '" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-body"><div class="item-label">' + tI(item,'label') + '</div><div class="item-sub">' + tI(item,'sub') + '</div><div style="font-size:14px;color:rgba(200,168,74,0.6);margin-top:2px;" id="cnt-num-' + item.id + '">' + _dhikrLabel + '</div>' + arabicHtml + '</div>' + audioBtn + _fsBtnDhikr + _lpHintHtml + '</div>';
   }
-  return '<div class="item counter-item' + (done ? ' checked' : '') + '" style="animation-delay:' + delay + 'ms" id="item-' + item.id + '"><div class="counter-top"><div class="check-circle" id="cb-' + item.id + '" style="' + (done ? 'background:var(--green-grad);border-color:var(--green);box-shadow:0 0 0 4px var(--green-soft),0 0 16px rgba(200,168,74,0.25)' : '') + '"><svg class="check-svg" style="' + (done ? 'opacity:1;transform:scale(1)' : '') + '" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-body"><div class="item-label">' + tI(item,'label') + '</div><div class="item-sub">' + tI(item,'sub') + '</div>' + arabicHtml + '</div>' + audioBtn + fullscreenBtn + '</div><div class="counter-body"><button class="btn-cnt-reset" aria-label="Réinitialiser" onclick="resetCounter(\'' + item.id + '\')">↺</button><div class="counter-display"><div class="counter-num" id="cnt-num-' + item.id + '">' + count + '</div><div class="counter-total">/ ' + item.target + '</div><div class="counter-bar-track"><div class="counter-bar-fill" id="cnt-bar-' + item.id + '" style="width:' + Math.min(count/item.target*100,100) + '%"></div></div></div><button class="btn-cnt" aria-label="Incrémenter" onclick="incrementCounter(\'' + item.id + '\',' + item.target + ')">+</button></div></div>';
+  return '<div class="item counter-item' + (done ? ' checked' : '') + '" style="animation-delay:' + delay + 'ms;position:relative" id="item-' + item.id + '"' + _lpTouch + '><div class="counter-top"><div class="check-circle" id="cb-' + item.id + '" style="' + (done ? 'background:var(--green-grad);border-color:var(--green);box-shadow:0 0 0 4px var(--green-soft),0 0 16px rgba(200,168,74,0.25)' : '') + '"><svg class="check-svg" style="' + (done ? 'opacity:1;transform:scale(1)' : '') + '" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-body"><div class="item-label">' + tI(item,'label') + '</div><div class="item-sub">' + tI(item,'sub') + '</div>' + arabicHtml + '</div>' + audioBtn + fullscreenBtn + '</div><div class="counter-body"><button class="btn-cnt-reset" aria-label="Réinitialiser" onclick="resetCounter(\'' + item.id + '\')">↺</button><div class="counter-display"><div class="counter-num" id="cnt-num-' + item.id + '">' + count + '</div><div class="counter-total">/ ' + item.target + '</div><div class="counter-bar-track"><div class="counter-bar-fill" id="cnt-bar-' + item.id + '" style="width:' + Math.min(count/item.target*100,100) + '%"></div></div></div><button class="btn-cnt" aria-label="Incrémenter" onclick="incrementCounter(\'' + item.id + '\',' + item.target + ')">+</button></div>' + _lpHintHtml + '</div>';
 }
 function initCounterEl(item) {}
 function incrementCounter(id, target) {
