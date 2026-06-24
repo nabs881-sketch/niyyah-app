@@ -2041,6 +2041,7 @@ function spawnConfettiTafakkur(accentColor) {
   }
 }
 function switchView(name) {
+  document.body.style.overflow = '';
   document.body.classList.remove('pratique-active');
   if (name === 'checklist') document.body.classList.add('pratique-active');
   if (name !== 'checklist') stopCompass();
@@ -2907,6 +2908,7 @@ function renderWirdSmartCard(item, delay, origin, currentBlock) {
 function openTasbihFromEl(el) {
   var id = el.dataset.tid;
   if (id === 'tasbih') { openTasbihModal(); return; }
+  if (id === 'istighfar') { openIstighfarModal(); return; }
   var target = parseInt(el.dataset.ttarget, 10);
   var label = el.dataset.tlabel || '';
   var arabic = el.dataset.tarabic || '';
@@ -20618,6 +20620,7 @@ function openDhikrCounter(config) {
 function closeDhikrCounter() {
   var ov = document.getElementById('dhikr-counter-overlay');
   if (ov) ov.style.display = 'none';
+  document.body.style.overflow = '';
   var vr = document.getElementById('vue-rituel');
   if (vr && !vr.classList.contains('hidden') && _dhikrState.prayer) {
     openVueRituel(_dhikrState.prayer);
