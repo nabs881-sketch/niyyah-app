@@ -19091,32 +19091,25 @@ function openVueRituel(prayer) {
       html += fridayItems.map(it => renderItem(it, true)).join('');
     }
   }
+  var _isItemDone = function(it) {
+    if (it.type === 'wird') { try { var sess = WIRD_DATA[it.session]; return !!(sess && sess.items.every(function(wi) { return !!wirdState[wi.id]; })); } catch(e) { return false; } }
+    return !!state[it.id];
+  };
   var _renderOne = function(it) {
     return it.type === 'wird' ? renderWirdSmartCard(it, 0, undefined, prayer) : renderItem(it, false);
   };
-  var _sortDone = function(arr) {
-    arr.sort(function(a, b) {
-      var aDone = a.type === 'wird'
-        ? (function() { try { var sess = WIRD_DATA[a.session]; return !!(sess && sess.items.every(function(wi) { return !!wirdState[wi.id]; })); } catch(e) { return false; } })()
-        : !!state[a.id];
-      var bDone = b.type === 'wird'
-        ? (function() { try { var sess = WIRD_DATA[b.session]; return !!(sess && sess.items.every(function(wi) { return !!wirdState[wi.id]; })); } catch(e) { return false; } })()
-        : !!state[b.id];
-      return (aDone ? 1 : 0) - (bDone ? 1 : 0);
-    });
-    return arr;
-  };
+  var _visibleItems = normalItems.filter(function(it) { return !_isItemDone(it); });
   if (prayer === 'fajr') {
-    var _avant = normalItems.filter(it => it.id === 'sunnah_fajr');
-    var _apres = normalItems.filter(it => it.id !== 'sunnah_fajr');
+    var _avant = _visibleItems.filter(it => it.id === 'sunnah_fajr');
+    var _apres = _visibleItems.filter(it => it.id !== 'sunnah_fajr');
     if (_avant.length) {
       html += '<div class="rituel-sep-avant"><span>AVANT LA PRIÈRE</span></div>';
       html += _avant.map(_renderOne).join('');
       html += '<div class="rituel-sep-avant"><span>APRÈS LA PRIÈRE</span></div>';
     }
-    html += _sortDone(_apres).map(_renderOne).join('');
+    html += _apres.map(_renderOne).join('');
   } else {
-    html += _sortDone(normalItems).map(_renderOne).join('');
+    html += _visibleItems.map(_renderOne).join('');
   }
   main.innerHTML = html;
   _setRituelEmblem('\u0635\u0644\u0627\u0629', 'vuedujour');
@@ -19125,32 +19118,25 @@ function openVueRituel(prayer) {
 window.openVueRituel = openVueRituel;
 
 function _rituelItemToggled(prayer, id) {
-  var el = document.getElementById('rituel-item-' + id);
-  if (!el) { openVueRituel(prayer); return; }
-  var main = el.closest('.rituel-content');
-  if (!main) { openVueRituel(prayer); return; }
   var st = safeParseJSON('spiritual_v2', {});
   var isDone = !!st[id];
-  el.classList.remove('checked');
   if (isDone) {
-    el.classList.add('done');
-    main.appendChild(el);
+    var el = document.getElementById('rituel-item-' + id);
+    if (el) el.remove();
+    var v = document.getElementById('vue-rituel');
+    if (v) {
+      var _cnt = v.querySelector('.fil-progress-count');
+      var _fill = v.querySelector('.fil-progress-fill');
+      if (_cnt) {
+        var _parts = (_cnt.textContent || '').split('/');
+        var _done = (parseInt(_parts[0], 10) || 0) + 1;
+        var _total = parseInt(_parts[1], 10) || _done;
+        _cnt.textContent = _done + ' / ' + _total;
+        if (_fill) _fill.style.width = Math.round(_done / _total * 100) + '%';
+      }
+    }
   } else {
-    el.classList.remove('done');
     openVueRituel(prayer);
-    return;
-  }
-  var v = document.getElementById('vue-rituel');
-  if (v) {
-    var _items = main.querySelectorAll('.rituel-item');
-    var _doneEls = main.querySelectorAll('.rituel-item.done');
-    var _total = _items.length;
-    var _doneCount = _doneEls.length;
-    var _pct = _total ? Math.round(_doneCount / _total * 100) : 0;
-    var _fill = v.querySelector('.fil-progress-fill');
-    var _cnt = v.querySelector('.fil-progress-count');
-    if (_fill) _fill.style.width = _pct + '%';
-    if (_cnt) _cnt.textContent = _doneCount + ' / ' + _total;
   }
 }
 window._rituelItemToggled = _rituelItemToggled;
@@ -19257,8 +19243,9 @@ function openVueAuFilDuJour() {
   _catOrder.forEach(function(cat) {
     var group = items.filter(function(it) { return it.category === cat.key; });
     if (!group.length) return;
-    group.sort(function(a, b) { return (state[a.id] ? 1 : 0) - (state[b.id] ? 1 : 0); });
     var doneCount = group.filter(function(it) { return !!state[it.id]; }).length;
+    var visibleGroup = group.filter(function(it) { return !state[it.id]; });
+    if (!visibleGroup.length) return;
     var _openCat = safeGetItem('filjour_open_section');
     var isOpen = _openCat ? _openCat === cat.key : cat.defaultOpen;
     _html += '<div class="fil-acc" data-cat="' + cat.key + '">'
@@ -19269,7 +19256,7 @@ function openVueAuFilDuJour() {
       + '<span class="fil-acc-chevron">\u25BE</span>'
       + '</div>'
       + '<div class="fil-acc-body" style="' + (isOpen ? '' : 'display:none;') + '">'
-      + group.map(_renderFilItem).join('')
+      + visibleGroup.map(_renderFilItem).join('')
       + '</div></div>';
   });
   var _uncategorized = items.filter(function(it) { return !it.category; });
