@@ -19038,7 +19038,7 @@ function openVueRituel(prayer) {
     const tog = (vendredi && it.id !== 'jumua') ? 'toggleFridayItem' : 'toggleItem';
     const _click = it.id === 'tasbih' ? 'openTasbihModal(\'' + prayer + '\');'
       : it.id === 'istighfar' ? 'openIstighfarModal();'
-      : tog + '(\'' + it.id + '\',event); openVueRituel(\'' + prayer + '\');';
+      : tog + '(\'' + it.id + '\',event); _rituelItemToggled(\'' + prayer + '\',\'' + it.id + '\');';
     var _dhikrSvg = '<svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><circle cx="11" cy="11" r="2" fill="#C8A84A" stroke="none"/><line x1="11" y1="1.5" x2="11" y2="3"/></svg>';
     var _dhikrBtn = (it.id === 'tasbih') ? '<button style="background:none;border:none;cursor:pointer;flex-shrink:0;padding:4px;" onclick="event.stopPropagation();openTasbihModal(\'' + prayer + '\');">' + _dhikrSvg + '</button>'
       : (it.id === 'istighfar') ? '<button style="background:none;border:none;cursor:pointer;flex-shrink:0;padding:4px;" onclick="event.stopPropagation();openIstighfarModal();">' + _dhikrSvg + '</button>' : '';
@@ -19123,6 +19123,37 @@ function openVueRituel(prayer) {
   v.classList.remove('hidden');
 }
 window.openVueRituel = openVueRituel;
+
+function _rituelItemToggled(prayer, id) {
+  var el = document.getElementById('rituel-item-' + id);
+  if (!el) { openVueRituel(prayer); return; }
+  var main = el.closest('.rituel-content');
+  if (!main) { openVueRituel(prayer); return; }
+  var st = safeParseJSON('spiritual_v2', {});
+  var isDone = !!st[id];
+  el.classList.remove('checked');
+  if (isDone) {
+    el.classList.add('done');
+    main.appendChild(el);
+  } else {
+    el.classList.remove('done');
+    openVueRituel(prayer);
+    return;
+  }
+  var v = document.getElementById('vue-rituel');
+  if (v) {
+    var _items = main.querySelectorAll('.rituel-item');
+    var _doneEls = main.querySelectorAll('.rituel-item.done');
+    var _total = _items.length;
+    var _doneCount = _doneEls.length;
+    var _pct = _total ? Math.round(_doneCount / _total * 100) : 0;
+    var _fill = v.querySelector('.fil-progress-fill');
+    var _cnt = v.querySelector('.fil-progress-count');
+    if (_fill) _fill.style.width = _pct + '%';
+    if (_cnt) _cnt.textContent = _doneCount + ' / ' + _total;
+  }
+}
+window._rituelItemToggled = _rituelItemToggled;
 
 function getFilJourItems() {
   if (!Array.isArray(LEVELS)) return [];
