@@ -19095,7 +19095,15 @@ function openVueRituel(prayer) {
     return it.type === 'wird' ? renderWirdSmartCard(it, 0, undefined, prayer) : renderItem(it, false);
   };
   var _sortDone = function(arr) {
-    arr.sort(function(a, b) { return (state[a.id] ? 1 : 0) - (state[b.id] ? 1 : 0); });
+    arr.sort(function(a, b) {
+      var aDone = a.type === 'wird'
+        ? (function() { try { var sess = WIRD_DATA[a.session]; return !!(sess && sess.items.every(function(wi) { return !!wirdState[wi.id]; })); } catch(e) { return false; } })()
+        : !!state[a.id];
+      var bDone = b.type === 'wird'
+        ? (function() { try { var sess = WIRD_DATA[b.session]; return !!(sess && sess.items.every(function(wi) { return !!wirdState[wi.id]; })); } catch(e) { return false; } })()
+        : !!state[b.id];
+      return (aDone ? 1 : 0) - (bDone ? 1 : 0);
+    });
     return arr;
   };
   if (prayer === 'fajr') {
