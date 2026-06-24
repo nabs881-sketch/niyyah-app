@@ -14734,7 +14734,7 @@ function openWaqtModal() {
     html += '<div style="font-family:\'Georgia\',serif;font-size:20px;font-style:italic;color:#e9ddc7;line-height:1.8;max-width:340px;margin-bottom:16px;">' + (story.texte || '') + '</div>';
     html += '<div style="font-family:\'Georgia\',serif;font-size:17px;font-weight:700;color:#e9ddc7;line-height:1.6;margin-bottom:12px;">' + story.morale + '</div>';
     if (story.source) html += '<div style="font-family:\'Inter\',sans-serif;font-size:12px;color:rgba(200,168,75,0.4);line-height:1.4;">' + story.source + '</div>';
-    var _storyTts = ((story.texte || '') + '. ' + (story.morale || '')).replace(/"/g, '&quot;');
+    var _storyTts = ((story.titre ? story.titre + '. ' : '') + (story.morale || '')).replace(/"/g, '&quot;');
     html += '<div style="text-align:center;margin-top:16px;"><button class="btn-audio" aria-label="\u00c9couter" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();_waqtPlayTTS(this)" data-tts="' + _storyTts + '"><svg width="12" height="12" viewBox="0 0 24 24" fill="#C8A84A" style="pointer-events:none"><polygon points="5 3 19 12 5 21 5 3"/></svg></button></div>';
     actionEl.innerHTML = html;
   } else {
