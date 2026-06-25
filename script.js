@@ -3708,6 +3708,43 @@ function openSoundCloudPlayer(trackUrl, btn) {
   overlay.appendChild(iframe);
   document.body.appendChild(overlay);
 }
+// ── DHIKR LONG PRESS — validation manuelle sans compteur ─────────────────
+var _dhikrLpTimer = null;
+var _dhikrLpFired = false;
+function _dhikrLpStart(id, prayer, e) {
+  _dhikrLpFired = false;
+  if (_dhikrLpTimer) clearTimeout(_dhikrLpTimer);
+  _dhikrLpTimer = setTimeout(function() {
+    _dhikrLpFired = true;
+    _dhikrLpTimer = null;
+    if (!state[id]) {
+      toggleItem(id, null);
+      if (typeof _rituelItemToggled === 'function') _rituelItemToggled(prayer, id);
+    }
+    if (navigator.vibrate) navigator.vibrate(40);
+  }, 600);
+}
+function _dhikrLpEnd(e) {
+  if (_dhikrLpTimer) { clearTimeout(_dhikrLpTimer); _dhikrLpTimer = null; }
+}
+function _dhikrLpClick(id, prayer, e) {
+  if (_dhikrLpFired) { _dhikrLpFired = false; return; }
+  if (id === 'tasbih') openTasbihModal(prayer);
+  else if (id === 'istighfar') openIstighfarModal();
+}
+function _dhikrShowHint() {
+  if (safeGetItem('hint_longpress_seen')) return;
+  safeSetItem('hint_longpress_seen', '1');
+  var el = document.getElementById('rituel-item-tasbih') || document.getElementById('rituel-item-istighfar');
+  if (!el) return;
+  var tip = document.createElement('div');
+  tip.textContent = 'Appui long si déjà fait';
+  tip.style.cssText = 'position:absolute;left:50%;transform:translateX(-50%);bottom:calc(100% + 6px);background:rgba(200,168,74,0.92);color:#000;font-size:12px;font-family:Georgia,serif;padding:5px 12px;border-radius:20px;white-space:nowrap;pointer-events:none;z-index:999;opacity:0;transition:opacity 0.2s;';
+  el.style.position = 'relative';
+  el.appendChild(tip);
+  requestAnimationFrame(function() { tip.style.opacity = '1'; });
+  setTimeout(function() { tip.style.opacity = '0'; setTimeout(function() { if (tip.parentNode) tip.parentNode.removeChild(tip); }, 200); }, 2000);
+}
 let _tasbihId = null;
 let _tasbihTarget = 99;
 function openTasbih(id, target, label, arabic, phonetic, translation, source) {
@@ -19040,9 +19077,10 @@ function openVueRituel(prayer) {
     const audio = it.audio ? '<button class="btn-audio" data-audio-id="' + it.id + '" onclick="event.stopPropagation();playAudioById(this)">\u{1F50A}</button>' : '';
     const cls = vendredi ? 'rituel-item vendredi ' : 'rituel-item ';
     const tog = (vendredi && it.id !== 'jumua') ? 'toggleFridayItem' : 'toggleItem';
-    const _click = it.id === 'tasbih' ? 'openTasbihModal(\'' + prayer + '\');'
-      : it.id === 'istighfar' ? 'openIstighfarModal();'
+    var _isDhikrItem = (it.id === 'tasbih' || it.id === 'istighfar');
+    const _click = _isDhikrItem ? '_dhikrLpClick(\'' + it.id + '\',\'' + prayer + '\',event);'
       : tog + '(\'' + it.id + '\',event); _rituelItemToggled(\'' + prayer + '\',\'' + it.id + '\');';
+    var _lpAttrs = _isDhikrItem ? ' ontouchstart="_dhikrLpStart(\'' + it.id + '\',\'' + prayer + '\',event)" ontouchend="_dhikrLpEnd(event)"' : '';
     var _dhikrSvg = '<svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><circle cx="11" cy="11" r="2" fill="#C8A84A" stroke="none"/><line x1="11" y1="1.5" x2="11" y2="3"/></svg>';
     var _dhikrBtn = (it.id === 'tasbih') ? '<button style="background:none;border:none;cursor:pointer;flex-shrink:0;padding:4px;" onclick="event.stopPropagation();openTasbihModal(\'' + prayer + '\');">' + _dhikrSvg + '</button>'
       : (it.id === 'istighfar') ? '<button style="background:none;border:none;cursor:pointer;flex-shrink:0;padding:4px;" onclick="event.stopPropagation();openIstighfarModal();">' + _dhikrSvg + '</button>' : '';
@@ -19054,7 +19092,7 @@ function openVueRituel(prayer) {
       var _lE = (it.label||'').replace(/"/g,'&quot;'), _aE = (it.arabic||'').replace(/"/g,'&quot;');
       _infoBtn = '<button class="btn-info" aria-label="Détails" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openInfoSheet(\'\',\'\',\'\',\'\',event)" data-label="' + _lE + '" data-arabic="' + _aE + '" data-phonetic="' + (it.phonetic||'').replace(/"/g,'&quot;') + '" data-translation="' + (it.translation||'').replace(/"/g,'&quot;') + '" data-source="' + (it.source||'').replace(/"/g,'&quot;') + '"><i style="pointer-events:none">i</i></button>';
     }
-    return '<div class="' + cls + done + '" id="rituel-item-' + it.id + '" onclick="' + _click + '"><div class="check"></div><div style="flex:1"><div class="label">' + (it.label||it.id) + '</div>' + _dhikrCount + sub + ar + '</div>' + audio + _infoBtn + _dhikrBtn + '</div>';
+    return '<div class="' + cls + done + '" id="rituel-item-' + it.id + '" onclick="' + _click + '"' + _lpAttrs + '><div class="check"></div><div style="flex:1"><div class="label">' + (it.label||it.id) + '</div>' + _dhikrCount + sub + ar + '</div>' + audio + _infoBtn + _dhikrBtn + '</div>';
   };
   var _isItemDone = function(it) {
     if (it.type === 'wird') { try { var sess = WIRD_DATA[it.session]; return !!(sess && sess.items.every(function(wi) { return !!wirdState[wi.id]; })); } catch(e) { return false; } }
@@ -19118,6 +19156,7 @@ function openVueRituel(prayer) {
   main.innerHTML = html;
   _setRituelEmblem('\u0635\u0644\u0627\u0629', 'vuedujour');
   v.classList.remove('hidden');
+  setTimeout(_dhikrShowHint, 400);
 }
 window.openVueRituel = openVueRituel;
 
