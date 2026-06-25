@@ -19098,7 +19098,7 @@ function openVueRituel(prayer) {
   var _renderOne = function(it) {
     return it.type === 'wird' ? renderWirdSmartCard(it, 0, undefined, prayer) : renderItem(it, false);
   };
-  var _visibleItems = normalItems.filter(function(it) { return !_isItemDone(it); });
+  var _visibleItems = normalItems.filter(function(it) { return it.type === 'wird' || !_isItemDone(it); });
   if (prayer === 'fajr') {
     var _avant = _visibleItems.filter(it => it.id === 'sunnah_fajr');
     var _apres = _visibleItems.filter(it => it.id !== 'sunnah_fajr');
@@ -19259,7 +19259,7 @@ function openVueAuFilDuJour() {
       + visibleGroup.map(_renderFilItem).join('')
       + '</div></div>';
   });
-  var _uncategorized = items.filter(function(it) { return !it.category; });
+  var _uncategorized = items.filter(function(it) { return !it.category && !state[it.id]; });
   if (_uncategorized.length) _html += _uncategorized.map(_renderFilItem).join('');
   var _defiS2 = getDefiState();
   var _svgDefi2 = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>';
