@@ -8141,6 +8141,10 @@ function playSourate(num) {
     showToast(t('audio_offline'));
   };
   _coranAudio.play().catch(function() { showToast(t('audio_offline')); });
+  // Bug C: marquer coran_ecoute comme fait
+  if (!state['coran_ecoute']) toggleItem('coran_ecoute');
+  // Bug D: fermer le picker pour débloquer l'UI
+  closeCoranPicker();
 }
 function toggleCoranPlay() {
   if (!_coranAudio.src) return;
