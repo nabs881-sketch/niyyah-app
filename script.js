@@ -19274,15 +19274,14 @@ function openVueAuFilDuJour() {
       var _done2 = _j2.length;
       var _total2 = _d2.cible || 5;
       var _coche2 = _j2.includes(todayKey());
+      if (!_coche2) {
       var _dots2 = '';
       for (var _di2 = 0; _di2 < _total2; _di2++) {
         _dots2 += '<div style="flex:1;height:5px;border-radius:3px;background:' + (_di2 < _done2 ? '#C8A84A' : 'rgba(200,168,74,0.18)') + ';"></div>';
       }
       var _btn2 = _d2.type === 'auto'
         ? '<div style="font-size:12px;font-style:italic;color:rgba(200,168,74,0.45);text-align:center;margin-top:10px;">Se coche automatiquement dans l\'app.</div>'
-        : (_coche2
-          ? '<div style="font-size:12px;font-style:italic;color:rgba(200,168,74,0.6);text-align:center;margin-top:10px;">✓ Coché aujourd\'hui</div>'
-          : '<button onclick="cocherDefiAujourdhui();openVueAuFilDuJour();" style="width:100%;margin-top:10px;padding:10px;border-radius:10px;border:1px solid rgba(200,168,74,0.3);background:rgba(200,168,74,0.06);color:#C8A84A;font-family:\'Georgia\',serif;font-size:14px;cursor:pointer;">Cocher aujourd\'hui ✦</button>');
+        : '<button onclick="cocherDefiAujourdhui();openVueAuFilDuJour();" style="width:100%;margin-top:10px;padding:10px;border-radius:10px;border:1px solid rgba(200,168,74,0.3);background:rgba(200,168,74,0.06);color:#C8A84A;font-family:\'Georgia\',serif;font-size:14px;cursor:pointer;">Cocher aujourd\'hui ✦</button>';
       _html += '<div class="fil-acc" data-cat="defi">'
         + '<div class="fil-acc-header" onclick="openDefiOverlay();">'
         + '<span class="fil-acc-icon">' + _svgDefi2 + '</span>'
@@ -19292,6 +19291,7 @@ function openVueAuFilDuJour() {
         + '</div>'
         + '<div class="fil-acc-body" style="display:none;"></div>'
         + '</div>';
+      } // end if (!_coche2)
     }
   } else {
     _html += '<div class="fil-acc" data-cat="defi">'
