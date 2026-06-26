@@ -2237,7 +2237,7 @@ function renderResume() {
   const levelIcons = ['\u2726', '\u2726', '\u2726', '\u2726'];
   let levelsHtml = '<div class="resume-levels">';
   LEVELS.forEach((lvl, i) => {
-    const pct = Math.round(getLevelProgress(lvl.id));
+    const pct = Math.min(Math.round(getLevelProgress(lvl.id)), 100);
     const isDone = pct >= 100;
     const color = isDone ? 'var(--gold)' : 'var(--green)';
     const pctCls = isDone ? 'resume-level-pct done' : 'resume-level-pct';
@@ -3445,7 +3445,7 @@ function renderProgression(skipIntro) {
     + '</style>';
   var _cheminImgs = {1:'chemin-fondations',2:'chemin-approfondissement',3:'chemin-connaissance',4:'chemin-rayonnement'};
   LEVELS.forEach((lvl)=>{
-    const pct=Math.round(getLevelProgress(lvl.id));
+    const pct=Math.min(Math.round(getLevelProgress(lvl.id)),100);
     const r=32, circ=2*Math.PI*r, dash=(pct/100)*circ;
     const ring='<svg width="74" height="74" viewBox="0 0 74 74" style="transform:rotate(-90deg);"><circle cx="37" cy="37" r="32" fill="none" stroke="rgba(200,168,75,0.15)" stroke-width="3"/><circle cx="37" cy="37" r="32" fill="none" stroke="#C8A84A" stroke-width="3" stroke-linecap="round" stroke-dasharray="'+circ.toFixed(1)+'" stroke-dashoffset="'+(circ-dash).toFixed(1)+'"/></svg>';
     var _bgImg = _cheminImgs[lvl.id] ? 'assets/cards/' + _cheminImgs[lvl.id] + '.webp' : '';
@@ -14404,7 +14404,7 @@ function renderLevelStripCondensed() {
   if (!el) return;
   var lvl = LEVELS.find(function(l) { return l.id === currentLevel; });
   if (!lvl) return;
-  var pct = Math.round(getLevelProgress(currentLevel));
+  var pct = Math.min(Math.round(getLevelProgress(currentLevel)), 100);
   var secTotal = lvl.sections.length;
   var secDoneCount = 0;
   for (var i = 0; i < secTotal; i++) {
