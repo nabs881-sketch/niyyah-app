@@ -19095,7 +19095,8 @@ function openVueRituel(prayer) {
       var _lE = (it.label||'').replace(/"/g,'&quot;'), _aE = (it.arabic||'').replace(/"/g,'&quot;');
       _infoBtn = '<button class="btn-info" aria-label="Détails" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openInfoSheet(\'\',\'\',\'\',\'\',event)" data-label="' + _lE + '" data-arabic="' + _aE + '" data-phonetic="' + (it.phonetic||'').replace(/"/g,'&quot;') + '" data-translation="' + (it.translation||'').replace(/"/g,'&quot;') + '" data-source="' + (it.source||'').replace(/"/g,'&quot;') + '"><i style="pointer-events:none">i</i></button>';
     }
-    return '<div class="' + cls + done + '" id="rituel-item-' + it.id + '" onclick="' + _click + '"' + _lpAttrs + '><div class="check"></div><div style="flex:1"><div class="label">' + (it.label||it.id) + '</div>' + _dhikrCount + sub + ar + '</div>' + audio + _infoBtn + _dhikrBtn + '</div>';
+    var _checkClick = _isDhikrItem ? ' onclick="event.stopPropagation();toggleItem(\'' + it.id + '\',event);_rituelItemToggled(\'' + prayer + '\',\'' + it.id + '\');"' : '';
+    return '<div class="' + cls + done + '" id="rituel-item-' + it.id + '" onclick="' + _click + '"' + _lpAttrs + '><div class="check"' + _checkClick + '></div><div style="flex:1"><div class="label">' + (it.label||it.id) + '</div>' + _dhikrCount + sub + ar + '</div>' + audio + _infoBtn + _dhikrBtn + '</div>';
   };
   var _isItemDone = function(it) {
     if (it.type === 'wird') { try { var sess = WIRD_DATA[it.session]; return !!(sess && sess.items.every(function(wi) { return !!wirdState[wi.id]; })); } catch(e) { return false; } }
