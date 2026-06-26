@@ -16006,22 +16006,19 @@ function updateSanctuaireMoment() {
 }
 
 function getVendrediRegardCardHTML() {
+  if (safeGetItem('niyyah_vendredi_regard_' + TODAY) === '1') return '';
   return '<div class="vendredi-regard-card" id="vendredi-regard-card" onclick="_openVendrediRegardAccompli()">'
     + '<div style="font-family:\'Georgia\',serif;font-size:16px;font-style:italic;color:#FAF7EE;line-height:1.6;">Le vendredi a une lumi\u00e8re \u00e0 part.<br>Choisis un Regard, et offre-le \u00e0 un c\u0153ur qui t\u2019est cher.</div>'
-    + '<div id="vendredi-regard-label" style="font-size:12px;letter-spacing:2px;color:rgba(200,168,75,0.55);margin-top:8px;text-transform:uppercase;">REGARD DU VENDREDI</div>'
+    + '<div style="font-size:12px;letter-spacing:2px;color:rgba(200,168,75,0.55);margin-top:8px;text-transform:uppercase;">REGARD DU VENDREDI</div>'
     + '</div>';
 }
 function _openVendrediRegardAccompli() {
-  var _lbl = document.getElementById('vendredi-regard-label');
-  if (_lbl) {
-    _lbl.textContent = 'REGARD OFFERT';
-    if (!document.getElementById('vendredi-regard-microphrse')) {
-      var _mp = document.createElement('div');
-      _mp.id = 'vendredi-regard-microphrse';
-      _mp.style.cssText = 'font-family:\'Georgia\',serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.45);margin-top:6px;';
-      _mp.textContent = 'Que cela te revienne multipli\u00e9.';
-      _lbl.parentNode.insertBefore(_mp, _lbl.nextSibling);
-    }
+  safeSetItem('niyyah_vendredi_regard_' + TODAY, '1');
+  var card = document.getElementById('vendredi-regard-card');
+  if (card) {
+    card.style.transition = 'opacity 0.35s';
+    card.style.opacity = '0';
+    setTimeout(function() { if (card.parentNode) card.remove(); }, 350);
   }
   openVendrediRegard();
 }
