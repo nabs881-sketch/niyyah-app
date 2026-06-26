@@ -19493,8 +19493,15 @@ function _filItemToggled(id) {
     if (_body) {
       var _remaining = _body.querySelectorAll('.rituel-item');
       if (_remaining.length === 0) {
-        var _acc = _body.closest('.fil-acc');
-        if (_acc) { _acc.style.opacity = '0'; setTimeout(function() { if (_acc.parentNode) _acc.remove(); }, 350); }
+        // parentElement est le .fil-acc qui contient header + body
+        var _acc = _body.parentElement && _body.parentElement.classList.contains('fil-acc')
+          ? _body.parentElement
+          : _body.closest('.fil-acc');
+        if (_acc) {
+          _acc.style.transition = 'opacity 0.35s ease';
+          _acc.style.opacity = '0';
+          setTimeout(function() { if (_acc.parentNode) _acc.remove(); }, 350);
+        }
       }
     }
   }
