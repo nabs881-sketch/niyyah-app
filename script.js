@@ -19063,8 +19063,11 @@ function openVueRituel(prayer) {
   const normalItems = items.filter(it => !fridayIds.includes(it.id));
   const main = v.querySelector('.rituel-content');
   const state = safeParseJSON('spiritual_v2', {});
+  var _getFridayDone = function(id) {
+    var _fs = {}; try { _fs = JSON.parse(safeGetItem('niyyah_friday_' + TODAY) || '{}'); } catch(e) {} return !!_fs[id];
+  };
   const renderItem = (it, vendredi) => {
-    const done = state[it.id] ? 'done' : '';
+    const done = vendredi ? (_getFridayDone(it.id) ? 'done' : '') : (state[it.id] ? 'done' : '');
     const ar = it.arabic ? '<div class="arabic">' + it.arabic + '</div>' : '';
     var _dhikrCount = '';
     if (it.id === 'tasbih' || it.id === 'istighfar') {
@@ -19131,7 +19134,10 @@ function openVueRituel(prayer) {
     + '</div></div>';
   if (isFriday()) {
     var _motivFri = getEffectiveMotiv();
-    const fridayItems = FRIDAY_ITEMS_GLOBAL.filter(function(it) { return !_motivFri || !it.paths || it.paths.includes(_motivFri); });
+    var _fridayStNow = {}; try { _fridayStNow = JSON.parse(safeGetItem('niyyah_friday_' + TODAY) || '{}'); } catch(e) {}
+    const fridayItems = FRIDAY_ITEMS_GLOBAL.filter(function(it) {
+      return (!_motivFri || !it.paths || it.paths.includes(_motivFri)) && !_fridayStNow[it.id];
+    });
     if (fridayItems.length) {
       html += '<div class="rituel-vendredi-sep"><span><div class="ar">\u0627\u0644\u062C\u064F\u0645\u064F\u0639\u064E\u0629</div><div class="fr">VENDREDI</div></span></div>';
       html += fridayItems.map(it => renderItem(it, true)).join('');
@@ -19161,8 +19167,16 @@ function openVueRituel(prayer) {
 window.openVueRituel = openVueRituel;
 
 function _rituelItemToggled(prayer, id) {
-  var st = safeParseJSON('spiritual_v2', {});
-  var isDone = !!st[id];
+  // Items vendredi stockés dans niyyah_friday_<date>, pas dans spiritual_v2
+  var _isFriItem = ['fri_kahf','fri_salawat','fri_doua'].indexOf(id) !== -1;
+  var isDone;
+  if (_isFriItem) {
+    var _fst = {}; try { _fst = JSON.parse(safeGetItem('niyyah_friday_' + TODAY) || '{}'); } catch(e) {}
+    isDone = !!_fst[id];
+  } else {
+    var st = safeParseJSON('spiritual_v2', {});
+    isDone = !!st[id];
+  }
   if (isDone) {
     var el = document.getElementById('rituel-item-' + id);
     if (el) el.remove();
