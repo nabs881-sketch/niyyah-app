@@ -19487,16 +19487,21 @@ function _filItemToggled(id) {
   var _st = safeParseJSON('spiritual_v2', {});
   if (!_st[id]) return;
   var el = document.getElementById('rituel-item-' + id);
+  console.log('[FIL] _filItemToggled', id, 'el=', el ? el.className : 'NOT FOUND');
   if (el) {
     var _body = el.closest('.fil-acc-body');
+    console.log('[FIL] _body=', _body ? _body.className : 'NULL (uncategorized)');
     el.remove();
     if (_body) {
       var _remaining = _body.querySelectorAll('.rituel-item');
+      console.log('[FIL] remaining after remove=', _remaining.length);
       if (_remaining.length === 0) {
-        // parentElement est le .fil-acc qui contient header + body
-        var _acc = _body.parentElement && _body.parentElement.classList.contains('fil-acc')
-          ? _body.parentElement
+        var _pe = _body.parentElement;
+        console.log('[FIL] parentElement=', _pe ? _pe.tagName + ' class=' + _pe.className : 'NULL');
+        var _acc = _pe && _pe.classList.contains('fil-acc')
+          ? _pe
           : _body.closest('.fil-acc');
+        console.log('[FIL] _acc=', _acc ? _acc.tagName + ' class=' + _acc.className + ' data-cat=' + _acc.dataset.cat : 'NULL — BLOC NON TROUVÉ');
         if (_acc) {
           _acc.style.transition = 'opacity 0.35s ease';
           _acc.style.opacity = '0';
