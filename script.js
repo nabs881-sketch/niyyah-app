@@ -19028,6 +19028,7 @@ window.closeVueRituel = closeVueRituel;
 function _knowledgeReturn(id) {
   if (window._knowledgeFromFil) {
     window._knowledgeFromFil = false;
+    console.log('[FIL][KN-RETURN] id=', id, '_filItemToggled=', typeof _filItemToggled);
     if (id && typeof _filItemToggled === 'function') _filItemToggled(id);
     else openVueAuFilDuJour();
     return;
@@ -19398,11 +19399,11 @@ function openVueAuFilDuJour() {
       : it.id === 'ghidaa_jour' ? _filFlag + 'openVueGhidaaJour();'
       : it.id === 'tibb_jour' ? _filFlag + 'openVueTibbJour();'
       : it.coranPicker ? '_openCoranInlineFil(event);'
-      : 'toggleItem(\'' + it.id + '\',event); _filItemToggled(\'' + it.id + '\');';
+      : 'console.log(\'[FIL][CLICK]\',\'' + it.id + '\');toggleItem(\'' + it.id + '\',event); _filItemToggled(\'' + it.id + '\');';
     var _readBtn = _isKnowledgeFil ? '<button style="background:none;border:none;cursor:pointer;flex-shrink:0;align-self:center;padding:8px 4px;margin:0;position:relative;z-index:10;isolation:isolate;" onclick="event.stopPropagation();' + _click + '"><svg width="14" height="22" viewBox="0 0 14 22" style="pointer-events:none;" aria-hidden="true"><path d="M3 4 L10 11 L3 18" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>' : '';
     var _filKnBg = _isKnowledgeFil ? ' style="background:rgba(200,168,75,0.08);border-color:rgba(200,168,75,0.2);"' : '';
-    var _checkClick = it.coranPicker ? ' onclick="event.stopPropagation();toggleItem(\'' + it.id + '\',event);_filItemToggled(\'' + it.id + '\');"'
-      : _isKnowledgeFil ? ' onclick="event.stopPropagation();toggleItem(\'' + it.id + '\',event);_filItemToggled(\'' + it.id + '\');"' : '';
+    var _checkClick = it.coranPicker ? ' onclick="event.stopPropagation();console.log(\'[FIL][CHECK-CORAN]\',\'' + it.id + '\');toggleItem(\'' + it.id + '\',event);_filItemToggled(\'' + it.id + '\');"'
+      : _isKnowledgeFil ? ' onclick="event.stopPropagation();console.log(\'[FIL][CHECK-KN]\',\'' + it.id + '\');toggleItem(\'' + it.id + '\',event);_filItemToggled(\'' + it.id + '\');"' : '';
     var _lisanInfo = it.id === 'lisan' ? '<button style="background:none;border:none;cursor:pointer;padding:2px 4px;margin:0;flex-shrink:0;" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openLisanMethode()" title="Méthode"><span style="font-size:14px;color:#C8A84A;opacity:0.6;">ⓘ</span></button>' : '';
     var _labelHtml = _lisanInfo ? '<div style="display:flex;align-items:center;gap:8px;"><div class="label">' + (it.label||it.id) + '</div>' + _lisanInfo + '</div>' : '<div class="label">' + (it.label||it.id) + '</div>';
     return '<div class="rituel-item ' + done + '"' + _filKnBg + ' id="rituel-item-' + it.id + '" onclick="' + _click + '"><div class="check"' + _checkClick + '></div><div style="flex:1">' + _labelHtml + sub + ar + '</div>' + _readBtn + _coranBtn + audio + '</div>';
