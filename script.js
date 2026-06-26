@@ -8293,10 +8293,7 @@ function _playFilSourate(num) {
   _coranAudio.play().catch(function() { showToast(t('audio_offline')); });
   if (!state['coran_ecoute']) {
     toggleItem('coran_ecoute');
-    setTimeout(function() {
-      var _fil = document.getElementById('aufildujour');
-      if (_fil && !_fil.classList.contains('hidden')) openVueAuFilDuJour();
-    }, 400);
+    setTimeout(function() { _filItemToggled('coran_ecoute'); }, 350);
   }
 }
 function _toggleFilCoran() {
@@ -19031,10 +19028,11 @@ function closeVueRituel() {
   a11yOnOverlayClose();
 }
 window.closeVueRituel = closeVueRituel;
-function _knowledgeReturn() {
+function _knowledgeReturn(id) {
   if (window._knowledgeFromFil) {
     window._knowledgeFromFil = false;
-    openVueAuFilDuJour();
+    if (id && typeof _filItemToggled === 'function') _filItemToggled(id);
+    else openVueAuFilDuJour();
     return;
   }
   _restoreScroll();
@@ -19045,7 +19043,7 @@ function validerLecture(id) {
   var v = document.getElementById('vue-rituel');
   if (v) v.classList.add('hidden');
   if (typeof renderLevel === 'function') renderLevel(currentLevel);
-  _knowledgeReturn();
+  _knowledgeReturn(id);
 }
 window.validerLecture = validerLecture;
 function validerLectureSira() {
@@ -19054,7 +19052,7 @@ function validerLectureSira() {
   var ov = document.getElementById('sira-overlay');
   if (ov) ov.remove();
   if (typeof renderLevel === 'function') renderLevel(currentLevel);
-  _knowledgeReturn();
+  _knowledgeReturn('sira');
 }
 window.validerLectureSira = validerLectureSira;
 
@@ -19403,11 +19401,11 @@ function openVueAuFilDuJour() {
       : it.id === 'ghidaa_jour' ? _filFlag + 'openVueGhidaaJour();'
       : it.id === 'tibb_jour' ? _filFlag + 'openVueTibbJour();'
       : it.coranPicker ? '_openCoranInlineFil(event);'
-      : 'toggleItem(\'' + it.id + '\',event); openVueAuFilDuJour();';
+      : 'toggleItem(\'' + it.id + '\',event); _filItemToggled(\'' + it.id + '\');';
     var _readBtn = _isKnowledgeFil ? '<button style="background:none;border:none;cursor:pointer;flex-shrink:0;align-self:center;padding:8px 4px;margin:0;position:relative;z-index:10;isolation:isolate;" onclick="event.stopPropagation();' + _click + '"><svg width="14" height="22" viewBox="0 0 14 22" style="pointer-events:none;" aria-hidden="true"><path d="M3 4 L10 11 L3 18" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>' : '';
     var _filKnBg = _isKnowledgeFil ? ' style="background:rgba(200,168,75,0.08);border-color:rgba(200,168,75,0.2);"' : '';
-    var _checkClick = it.coranPicker ? ' onclick="event.stopPropagation();toggleItem(\'' + it.id + '\',event);openVueAuFilDuJour();"'
-      : _isKnowledgeFil ? ' onclick="event.stopPropagation();toggleItem(\'' + it.id + '\',event);openVueAuFilDuJour();"' : '';
+    var _checkClick = it.coranPicker ? ' onclick="event.stopPropagation();toggleItem(\'' + it.id + '\',event);_filItemToggled(\'' + it.id + '\');"'
+      : _isKnowledgeFil ? ' onclick="event.stopPropagation();toggleItem(\'' + it.id + '\',event);_filItemToggled(\'' + it.id + '\');"' : '';
     var _lisanInfo = it.id === 'lisan' ? '<button style="background:none;border:none;cursor:pointer;padding:2px 4px;margin:0;flex-shrink:0;" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openLisanMethode()" title="Méthode"><span style="font-size:14px;color:#C8A84A;opacity:0.6;">ⓘ</span></button>' : '';
     var _labelHtml = _lisanInfo ? '<div style="display:flex;align-items:center;gap:8px;"><div class="label">' + (it.label||it.id) + '</div>' + _lisanInfo + '</div>' : '<div class="label">' + (it.label||it.id) + '</div>';
     return '<div class="rituel-item ' + done + '"' + _filKnBg + ' id="rituel-item-' + it.id + '" onclick="' + _click + '"><div class="check"' + _checkClick + '></div><div style="flex:1">' + _labelHtml + sub + ar + '</div>' + _readBtn + _coranBtn + audio + '</div>';
@@ -19487,6 +19485,43 @@ function openVueAuFilDuJour() {
   _setRituelEmblem('\u064A\u064E\u0648\u0652\u0645', 'aufildujour');
 }
 window.openVueAuFilDuJour = openVueAuFilDuJour;
+
+function _filItemToggled(id) {
+  var _st = safeParseJSON('spiritual_v2', {});
+  if (!_st[id]) return;
+  var el = document.getElementById('rituel-item-' + id);
+  if (el) {
+    var _body = el.closest('.fil-acc-body');
+    el.remove();
+    if (_body) {
+      var _remaining = _body.querySelectorAll('.rituel-item');
+      if (_remaining.length === 0) {
+        var _acc = _body.closest('.fil-acc');
+        if (_acc) { _acc.style.opacity = '0'; setTimeout(function() { if (_acc.parentNode) _acc.remove(); }, 350); }
+      }
+    }
+  }
+  // Update progress bar
+  var _allItems = getFilJourItems();
+  var _stNow = safeParseJSON('spiritual_v2', {});
+  var _done = _allItems.filter(function(it) { return !!_stNow[it.id]; }).length;
+  var _total = _allItems.length;
+  var _cnt = document.querySelector('#aufildujour .fil-progress-count');
+  var _fill = document.querySelector('#aufildujour .fil-progress-fill');
+  if (_cnt) _cnt.textContent = _done + ' geste' + (_done > 1 ? 's' : '') + ' pos\u00e9' + (_done > 1 ? 's' : '');
+  if (_fill) _fill.style.width = Math.round(_done / _total * 100) + '%';
+  if (_done === _total && !document.getElementById('fil-alldone-phrase')) {
+    var _main = document.querySelector('#aufildujour .rituel-content');
+    if (_main) {
+      var _p = document.createElement('div');
+      _p.id = 'fil-alldone-phrase';
+      _p.style.cssText = 'font-family:\'Georgia\',serif;font-size:20px;font-style:italic;color:rgba(200,168,75,0.55);text-align:center;padding:40px 24px 24px;line-height:1.75;';
+      _p.textContent = 'L\u2019homme n\u2019obtient que ce qu\u2019il s\u2019efforce d\u2019accomplir.';
+      _main.appendChild(_p);
+    }
+  }
+}
+window._filItemToggled = _filItemToggled;
 function toggleFilAccordion(cat) {
   if (cat === 'defi') { openDefiOverlay(); return; }
   var all = document.querySelectorAll('.fil-acc');
