@@ -16832,16 +16832,16 @@ function _aidInjectStyles() {
     'body.aid-immersive-mode #topbar-v2,body.aid-immersive-mode #nav-bar-v2{display:none !important}' +
     '.aid-subtitle{font-family:"Georgia",serif;font-size:17px;font-weight:700;color:#C8A84A;margin:24px 0 12px;letter-spacing:.5px}' +
     '.aid-question{font-family:"Georgia",serif;font-size:15px;color:rgba(240,234,214,.8);line-height:1.7;margin-bottom:10px;padding-left:8px}' +
-    '.aid-story{margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid rgba(200,168,74,.1)}' +
-    '.aid-story-titre{font-family:"Georgia",serif;font-size:17px;font-weight:700;color:#C8A84A;margin-bottom:10px}' +
-    '.aid-story-text{font-family:"Georgia",serif;font-size:15px;color:rgba(240,234,214,.85);line-height:1.8}' +
-    '.aid-story-morale{font-family:"Georgia",serif;font-size:15px;font-weight:700;color:rgba(240,234,214,.95);line-height:1.6;margin-top:14px;padding-top:10px;border-top:1px solid rgba(200,168,74,.12)}' +
+    '.aid-story{margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid rgba(200,168,74,.1);text-align:center}' +
+    '.aid-story-titre{font-family:"Georgia",serif;font-size:17px;font-weight:700;color:#C8A84A;margin-bottom:10px;text-align:center}' +
+    '.aid-story-text{font-family:"Georgia",serif;font-size:15px;color:rgba(240,234,214,.85);line-height:1.8;text-align:center}' +
+    '.aid-story-morale{font-family:"Georgia",serif;font-size:15px;font-weight:700;color:rgba(240,234,214,.95);line-height:1.6;margin-top:14px;padding-top:10px;border-top:1px solid rgba(200,168,74,.12);text-align:center}' +
     '.aid-dua{margin-bottom:24px;padding-bottom:18px;border-bottom:1px solid rgba(200,168,74,.08)}' +
     '.aid-dua-occasion{font-family:Inter,sans-serif;font-size:12px;color:rgba(200,168,74,.6);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}' +
     '.aid-dua-ar{font-family:"Scheherazade New",Amiri,serif;font-size:22px;color:#C8A84A;direction:rtl;text-align:right;line-height:1.8;margin-bottom:8px}' +
     '.aid-dua-fr{font-family:"Georgia",serif;font-size:15px;font-style:italic;color:rgba(240,234,214,.8);line-height:1.6;margin-bottom:6px}' +
     '.aid-source{font-family:Inter,sans-serif;font-size:12px;color:rgba(200,168,74,.35)}' +
-    '.aid-med{font-family:"Georgia",serif;font-size:16px;color:rgba(240,234,214,.85);line-height:1.8;margin-bottom:24px;padding-bottom:18px;border-bottom:1px solid rgba(200,168,74,.08)}' +
+    '.aid-med{font-family:"Georgia",serif;font-size:16px;color:rgba(240,234,214,.85);line-height:1.8;margin-bottom:24px;padding-bottom:18px;border-bottom:1px solid rgba(200,168,74,.08);text-align:center}' +
     '.aid-verset{margin-bottom:24px;padding-bottom:18px;border-bottom:1px solid rgba(200,168,74,.08)}' +
     '.aid-verset-ref{font-family:Inter,sans-serif;font-size:12px;color:rgba(200,168,74,.6);letter-spacing:.5px;margin-bottom:8px}' +
     '.aid-verset-text{font-family:"Georgia",serif;font-size:16px;font-style:italic;color:rgba(240,234,214,.9);line-height:1.8;margin-bottom:8px}' +
