@@ -1019,7 +1019,11 @@ function closeDefiOverlay() {
   const ov = document.getElementById('defiOverlay');
   const sh = document.getElementById('defiSheet');
   sh.style.transform = 'translateY(100%)';
-  setTimeout(() => { ov.style.opacity = '0'; ov.style.pointerEvents = 'none'; }, 380);
+  setTimeout(() => {
+    ov.style.opacity = '0'; ov.style.pointerEvents = 'none';
+    var _fil = document.getElementById('aufildujour');
+    if (_fil && !_fil.classList.contains('hidden')) openVueAuFilDuJour();
+  }, 380);
 }
 
 // Fermer overlay en cliquant le fond
