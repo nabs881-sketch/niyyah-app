@@ -8214,6 +8214,82 @@ function stopCoranPlayer() {
   if (_playerEl) _playerEl.style.display = 'none';
   if (_btn) _btn.textContent = '▶';
 }
+// ── LECTEUR CORAN INLINE (Fil du jour) ──
+function _openCoranInlineFil(e) {
+  if (e) e.stopPropagation();
+  var item = document.getElementById('rituel-item-coran_ecoute');
+  if (!item) { openCoranPicker(e); return; }
+  var existing = document.getElementById('fil-coran-inline');
+  if (existing) { existing.remove(); return; }
+  var panel = document.createElement('div');
+  panel.id = 'fil-coran-inline';
+  panel.onclick = function(ev) { ev.stopPropagation(); };
+  panel.style.cssText = 'margin-top:10px;border-top:1px solid rgba(200,168,75,0.15);padding-top:10px;';
+  panel.innerHTML =
+    '<div id="fil-coran-player" style="display:none;background:rgba(200,168,75,0.08);border:1px solid rgba(200,168,75,0.25);border-radius:10px;padding:10px 12px;margin-bottom:8px;">'
+    + '<div style="display:flex;align-items:center;justify-content:space-between;">'
+    + '<div id="fil-coran-player-name" style="font-size:13px;font-weight:700;color:#e8cc6a;flex:1;min-width:0;margin-right:8px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"></div>'
+    + '<div style="display:flex;gap:6px;flex-shrink:0;">'
+    + '<button id="fil-coran-play-btn" onclick="event.stopPropagation();_toggleFilCoran()" style="background:linear-gradient(135deg,#c8a84b,#e8cc6a);border:none;color:#000;font-size:14px;width:32px;height:32px;border-radius:50%;cursor:pointer;">\u23f8</button>'
+    + '<button onclick="event.stopPropagation();stopCoranPlayer();document.getElementById(\'fil-coran-player\').style.display=\'none\';" style="background:rgba(255,255,255,0.08);border:none;color:var(--t2);font-size:12px;width:32px;height:32px;border-radius:50%;cursor:pointer;">\u23f9</button>'
+    + '</div></div></div>'
+    + '<input id="fil-coran-search" type="text" placeholder="Rechercher une sourate\u2026" oninput="_filterFilCoran(this.value)" style="width:100%;box-sizing:border-box;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:8px 12px;color:#fff;font-size:13px;outline:none;margin-bottom:8px;">'
+    + '<div id="fil-coran-list" style="max-height:240px;overflow-y:auto;border-radius:10px;"></div>';
+  item.appendChild(panel);
+  _renderFilSourateList(SOURATES);
+}
+function _renderFilSourateList(list) {
+  var el = document.getElementById('fil-coran-list');
+  if (!el) return;
+  el.innerHTML = list.map(function(s) {
+    var active = _coranSourate && _coranSourate[0] === s[0];
+    return '<div onclick="event.stopPropagation();_playFilSourate(' + s[0] + ')" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;margin:2px 0;background:' + (active ? 'rgba(200,168,75,0.1)' : 'transparent') + ';border:1px solid ' + (active ? 'rgba(200,168,75,0.3)' : 'transparent') + ';cursor:pointer;">'
+      + '<div style="width:30px;height:30px;border-radius:8px;background:' + (active ? 'linear-gradient(135deg,#c8a84b,#e8cc6a)' : 'rgba(255,255,255,0.06)') + ';display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:' + (active ? '#000' : 'var(--t3)') + ';flex-shrink:0;">' + s[0] + '</div>'
+      + '<div style="flex:1;min-width:0;"><div style="font-size:13px;font-weight:600;color:' + (active ? '#e8cc6a' : 'var(--t1)') + ';white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + s[1] + ' <span style="font-size:11px;color:var(--t3);">\u00b7 ' + s[3] + '</span></div></div>'
+      + '<div style="font-size:16px;color:var(--t2);font-family:var(--arabic);flex-shrink:0;">' + s[2] + '</div>'
+      + '</div>';
+  }).join('');
+}
+function _filterFilCoran(q) {
+  _renderFilSourateList(SOURATES.filter(function(s) {
+    return s[1].toLowerCase().includes(q.toLowerCase()) || s[3].toLowerCase().includes(q.toLowerCase()) || s[2].includes(q) || String(s[0]).includes(q);
+  }));
+}
+function _playFilSourate(num) {
+  var sourate = SOURATES.find(function(s) { return s[0] === num; });
+  if (!sourate) return;
+  stopCoranPlayer();
+  _coranSourate = sourate;
+  _coranPlaying = true;
+  var _playerEl = document.getElementById('fil-coran-player');
+  var _nameEl = document.getElementById('fil-coran-player-name');
+  var _playBtn = document.getElementById('fil-coran-play-btn');
+  if (_playerEl) _playerEl.style.display = 'block';
+  if (_nameEl) _nameEl.textContent = sourate[1] + ' \u2014 ' + sourate[2];
+  if (_playBtn) _playBtn.textContent = '\u23f8';
+  _renderFilSourateList(SOURATES.filter(function(s) {
+    var _q = (document.getElementById('fil-coran-search') || {}).value || '';
+    return !_q || s[1].toLowerCase().includes(_q.toLowerCase()) || s[3].toLowerCase().includes(_q.toLowerCase()) || s[2].includes(_q) || String(s[0]).includes(_q);
+  }));
+  var url = 'https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/' + String(num).padStart(3, '0') + '.mp3';
+  _coranAudio.src = url;
+  _coranAudio.load();
+  _coranAudio.onended = function() { _coranPlaying = false; if (_playBtn) _playBtn.textContent = '\u25b6'; };
+  _coranAudio.onerror = function() { _coranPlaying = false; if (_playBtn) _playBtn.textContent = '\u25b6'; showToast(t('audio_offline')); };
+  _coranAudio.play().catch(function() { showToast(t('audio_offline')); });
+  if (!state['coran_ecoute']) { toggleItem('coran_ecoute'); }
+}
+function _toggleFilCoran() {
+  if (!_coranAudio.src) return;
+  var _playBtn = document.getElementById('fil-coran-play-btn');
+  if (_coranPlaying) {
+    _coranAudio.pause(); _coranPlaying = false;
+    if (_playBtn) _playBtn.textContent = '\u25b6';
+  } else {
+    _coranAudio.play(); _coranPlaying = true;
+    if (_playBtn) _playBtn.textContent = '\u23f8';
+  }
+}
 // ── TAFAKKUR ──
 let _tafakkurDuration = 3 * 60;
 let _tafakkurRemaining = 3 * 60;
@@ -19291,7 +19367,7 @@ function openVueAuFilDuJour() {
     const audio = it.audio ? '<button class="btn-audio" data-audio-id="' + it.id + '" onclick="event.stopPropagation();playAudioById(this)">🔊</button>' : '';
     var _knowledgeIds = ['savais_tu','fiqh_jour','hadith1','duaa_jour','vie_compagnons','vie_prophetes','quran_read','sira','podcast','recits_coran','lisan','ghidaa_jour','tibb_jour'];
     var _isKnowledgeFil = _knowledgeIds.indexOf(it.id) !== -1;
-    var _coranBtn = it.coranPicker ? '<button class="btn-audio" onclick="event.stopPropagation();openCoranPicker(event)" style="font-size:12px;padding:4px 10px;width:auto;white-space:nowrap;font-family:\'Georgia\',serif;color:#C8A84A;border:1px solid rgba(200,168,75,0.3);border-radius:8px;background:transparent;cursor:pointer;">\u00c9couter</button>' : '';
+    var _coranBtn = it.coranPicker ? '<button class="btn-audio" onclick="event.stopPropagation();_openCoranInlineFil(event)" style="font-size:12px;padding:4px 10px;width:auto;white-space:nowrap;font-family:\'Georgia\',serif;color:#C8A84A;border:1px solid rgba(200,168,75,0.3);border-radius:8px;background:transparent;cursor:pointer;">\u00c9couter</button>' : '';
     var _filFlag = 'window._knowledgeFromFil=true;';
     var _click = it.id === 'sira' ? _filFlag + 'SIRA.openDetail();'
       : it.id === 'savais_tu' ? _filFlag + 'openVueSavaisTu();'
@@ -19306,11 +19382,12 @@ function openVueAuFilDuJour() {
       : it.id === 'lisan' ? _filFlag + 'openVueLisan();'
       : it.id === 'ghidaa_jour' ? _filFlag + 'openVueGhidaaJour();'
       : it.id === 'tibb_jour' ? _filFlag + 'openVueTibbJour();'
-      : it.coranPicker ? 'openCoranPicker(event);'
+      : it.coranPicker ? '_openCoranInlineFil(event);'
       : 'toggleItem(\'' + it.id + '\',event); openVueAuFilDuJour();';
     var _readBtn = _isKnowledgeFil ? '<button style="background:none;border:none;cursor:pointer;flex-shrink:0;align-self:center;padding:8px 4px;margin:0;position:relative;z-index:10;isolation:isolate;" onclick="event.stopPropagation();' + _click + '"><svg width="14" height="22" viewBox="0 0 14 22" style="pointer-events:none;" aria-hidden="true"><path d="M3 4 L10 11 L3 18" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>' : '';
     var _filKnBg = _isKnowledgeFil ? ' style="background:rgba(200,168,75,0.08);border-color:rgba(200,168,75,0.2);"' : '';
-    var _checkClick = (_isKnowledgeFil || it.coranPicker) ? ' onclick="event.stopPropagation();toggleItem(\'' + it.id + '\',event);openVueAuFilDuJour();"' : '';
+    var _checkClick = it.coranPicker ? ' onclick="event.stopPropagation();toggleItem(\'' + it.id + '\',event);openVueAuFilDuJour();"'
+      : _isKnowledgeFil ? ' onclick="event.stopPropagation();toggleItem(\'' + it.id + '\',event);openVueAuFilDuJour();"' : '';
     var _lisanInfo = it.id === 'lisan' ? '<button style="background:none;border:none;cursor:pointer;padding:2px 4px;margin:0;flex-shrink:0;" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openLisanMethode()" title="Méthode"><span style="font-size:14px;color:#C8A84A;opacity:0.6;">ⓘ</span></button>' : '';
     var _labelHtml = _lisanInfo ? '<div style="display:flex;align-items:center;gap:8px;"><div class="label">' + (it.label||it.id) + '</div>' + _lisanInfo + '</div>' : '<div class="label">' + (it.label||it.id) + '</div>';
     return '<div class="rituel-item ' + done + '"' + _filKnBg + ' id="rituel-item-' + it.id + '" onclick="' + _click + '"><div class="check"' + _checkClick + '></div><div style="flex:1">' + _labelHtml + sub + ar + '</div>' + _readBtn + _coranBtn + audio + '</div>';
