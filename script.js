@@ -3214,6 +3214,20 @@ function toggleItem(id, event) {
       if (navigator.vibrate) navigator.vibrate([12, 8, 25]);
       playCheckSound();
       if (event) spawnPremiumBurst(event.clientX || event.touches?.[0]?.clientX || 0, event.clientY || event.touches?.[0]?.clientY || 0);
+      // Collapse parent .fil-acc accordion immediately if all its items are now checked
+      var _filBody = el.closest && el.closest('.fil-acc-body');
+      if (_filBody) {
+        var _siblings = _filBody.querySelectorAll('.rituel-item');
+        var _allSibsDone = _siblings.length > 0 && Array.from(_siblings).every(function(s) { return s.classList.contains('checked') || s.classList.contains('done'); });
+        if (_allSibsDone) {
+          var _filAcc = _filBody.closest('.fil-acc');
+          if (_filAcc) {
+            _filAcc.style.transition = 'opacity 0.35s ease';
+            _filAcc.style.opacity = '0';
+            setTimeout(function() { if (_filAcc.parentNode) _filAcc.remove(); }, 350);
+          }
+        }
+      }
       if (id === 'jumua') {
         if (!history.jumuahDays) history.jumuahDays = {};
         if (!history.jumuahDays[TODAY]) {
@@ -8277,7 +8291,13 @@ function _playFilSourate(num) {
   _coranAudio.onended = function() { _coranPlaying = false; if (_playBtn) _playBtn.textContent = '\u25b6'; };
   _coranAudio.onerror = function() { _coranPlaying = false; if (_playBtn) _playBtn.textContent = '\u25b6'; showToast(t('audio_offline')); };
   _coranAudio.play().catch(function() { showToast(t('audio_offline')); });
-  if (!state['coran_ecoute']) { toggleItem('coran_ecoute'); }
+  if (!state['coran_ecoute']) {
+    toggleItem('coran_ecoute');
+    setTimeout(function() {
+      var _fil = document.getElementById('aufildujour');
+      if (_fil && !_fil.classList.contains('hidden')) openVueAuFilDuJour();
+    }, 400);
+  }
 }
 function _toggleFilCoran() {
   if (!_coranAudio.src) return;
