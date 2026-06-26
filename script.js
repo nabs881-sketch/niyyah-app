@@ -15897,7 +15897,7 @@ function updateSanctuaireMoment() {
       + _nextInfo
       + jourLine
       + ((!_nextInfo && !jourLine) ? '<div style="height:28px;"></div>' : '')
-      + '<button class="btn-bismillah-moment" onclick="event.stopPropagation();var _m=getCurrentPrayerBlock();if(_m&&_m.id)openVueRituel(_m.id);else selectLevel(currentLevel);" ontouchend="if(!_isTapNotScroll(event))return;event.stopPropagation();event.preventDefault();var _m=getCurrentPrayerBlock();if(_m&&_m.id)openVueRituel(_m.id);else selectLevel(currentLevel);">' + t('btn_continue') + '</button>'
+      + (safeGetItem('bismillah_done_' + blockId + '_' + TODAY) ? '' : '<button id="btn-bismillah-waqt" class="btn-bismillah-moment" onclick="event.stopPropagation();safeSetItem(\'bismillah_done_' + blockId + '_' + TODAY + '\',\'1\');var _bEl=document.getElementById(\'btn-bismillah-waqt\');if(_bEl)_bEl.style.display=\'none\';var _m=getCurrentPrayerBlock();if(_m&&_m.id)openVueRituel(_m.id);else selectLevel(currentLevel);" ontouchend="if(!_isTapNotScroll(event))return;event.stopPropagation();event.preventDefault();safeSetItem(\'bismillah_done_' + blockId + '_' + TODAY + '\',\'1\');var _bEl=document.getElementById(\'btn-bismillah-waqt\');if(_bEl)_bEl.style.display=\'none\';var _m=getCurrentPrayerBlock();if(_m&&_m.id)openVueRituel(_m.id);else selectLevel(currentLevel);">' + t('btn_continue') + '</button>')
       + '</div>';
     el.innerHTML += getFilJourCardHTML();
     if (isFriday()) el.innerHTML += getVendrediRegardCardHTML();
@@ -15906,10 +15906,24 @@ function updateSanctuaireMoment() {
 }
 
 function getVendrediRegardCardHTML() {
-  return '<div class="vendredi-regard-card" onclick="openVendrediRegard()">'
+  return '<div class="vendredi-regard-card" id="vendredi-regard-card" onclick="_openVendrediRegardAccompli()">'
     + '<div style="font-family:\'Georgia\',serif;font-size:16px;font-style:italic;color:#FAF7EE;line-height:1.6;">Le vendredi a une lumi\u00e8re \u00e0 part.<br>Choisis un Regard, et offre-le \u00e0 un c\u0153ur qui t\u2019est cher.</div>'
-    + '<div style="font-size:12px;letter-spacing:2px;color:rgba(200,168,75,0.55);margin-top:8px;text-transform:uppercase;">REGARD DU VENDREDI</div>'
+    + '<div id="vendredi-regard-label" style="font-size:12px;letter-spacing:2px;color:rgba(200,168,75,0.55);margin-top:8px;text-transform:uppercase;">REGARD DU VENDREDI</div>'
     + '</div>';
+}
+function _openVendrediRegardAccompli() {
+  var _lbl = document.getElementById('vendredi-regard-label');
+  if (_lbl) {
+    _lbl.textContent = 'REGARD OFFERT';
+    if (!document.getElementById('vendredi-regard-microphrse')) {
+      var _mp = document.createElement('div');
+      _mp.id = 'vendredi-regard-microphrse';
+      _mp.style.cssText = 'font-family:\'Georgia\',serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.45);margin-top:6px;';
+      _mp.textContent = 'Que cela te revienne multipli\u00e9.';
+      _lbl.parentNode.insertBefore(_mp, _lbl.nextSibling);
+    }
+  }
+  openVendrediRegard();
 }
 function openVendrediRegard() {
   var sevenDaysAgo = Date.now() - 7 * 24 * 3600000;
@@ -19297,7 +19311,11 @@ function openVueAuFilDuJour() {
   var _filDone = items.filter(function(it){ return !!state[it.id]; }).length;
   var _filTotal = items.length;
   var _filPct = _filTotal ? Math.round(_filDone/_filTotal*100) : 0;
+  var _allFilDone = _filTotal > 0 && _filDone === _filTotal;
   var _html = '<div class="fil-progress"><div class="fil-progress-row"><span class="fil-progress-label">Le jour s\'habite</span><span class="fil-progress-count">' + _filDone + ' geste' + (_filDone>1?'s':'') + ' pos\u00e9' + (_filDone>1?'s':'') + '</span></div><div class="fil-progress-track"><div class="fil-progress-fill" style="width:' + _filPct + '%;"></div></div></div>';
+  if (_allFilDone) {
+    _html += '<div style="font-family:\'Georgia\',serif;font-size:20px;font-style:italic;color:rgba(200,168,75,0.55);text-align:center;padding:40px 24px 24px;line-height:1.75;">L\u2019homme n\u2019obtient que ce qu\u2019il s\u2019efforce d\u2019accomplir.</div>';
+  }
   _catOrder.forEach(function(cat) {
     var group = items.filter(function(it) { return it.category === cat.key; });
     if (!group.length) return;
