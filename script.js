@@ -1887,54 +1887,57 @@ function checkLevelCompletion(levelId) {
   }
   return false;
 }
-const LEVEL_MESSAGES = {
-  1: {
-    stars: "\u2726",
-    eyebrow: t('lvl_eye_1'),
-    title: "MashaAllah !",
-    arabic: "\u0625\u0650\u0646\u0651\u064E \u0627\u0644\u0644\u0651\u064E\u0647\u064E \u0645\u064E\u0639\u064E \u0627\u0644\u0635\u0651\u064E\u0627\u0628\u0650\u0631\u0650\u064A\u0646\u064E",
-    hadith: t('lvl_hadith_1'),
-    sub: t('lvl_sub_1'),
-    color: "#87A96B",
-    glow: "rgba(135,169,107,0.3)",
-    icon: "\u2726"
-  },
-  2: {
-    stars: "\u2726",
-    eyebrow: t('lvl_eye_2'),
-    title: "SubhanAllah !",
-    arabic: "\u0648\u064E\u0627\u0633\u0652\u062A\u064E\u0639\u0650\u064A\u0646\u064F\u0648\u0627 \u0628\u0650\u0627\u0644\u0635\u0651\u064E\u0628\u0652\u0631\u0650 \u0648\u064E\u0627\u0644\u0635\u0651\u064E\u0644\u0627\u0629\u0650",
-    hadith: t('lvl_hadith_2'),
-    sub: t('lvl_sub_2'),
-    color: "#D4AF37",
-    glow: "rgba(212,175,55,0.3)",
-    icon: "\u2726"
-  },
-  3: {
-    stars: "\u2726",
-    eyebrow: t('lvl_eye_3'),
-    title: "Alhamdulillah !",
-    arabic: "\u0625\u0650\u0646\u0651\u064E \u0627\u0644\u0644\u0651\u064E\u0647\u064E \u064A\u064F\u062D\u0650\u0628\u0651\u064F \u0625\u0650\u0630\u0627 \u0639\u064E\u0645\u0650\u0644\u064E \u0623\u064E\u062D\u064E\u062F\u064F\u0643\u064F\u0645\u0652 \u0639\u064E\u0645\u064E\u0644\u064B\u0627 \u0623\u064E\u0646\u0652 \u064A\u064F\u062A\u0652\u0642\u0650\u0646\u064E\u0647\u064F",
-    hadith: t('lvl_hadith_3'),
-    sub: t('lvl_sub_3'),
-    color: "#E9C46A",
-    glow: "rgba(233,196,106,0.35)",
-    icon: "\u2726"
-  },
-  4: {
-    stars: "\u2726",
-    eyebrow: t('lvl_eye_4'),
-    title: "Allahu Akbar !",
-    arabic: "\u0627\u0644\u0644\u0651\u064E\u0647\u064F \u0646\u064F\u0648\u0631\u064F \u0627\u0644\u0633\u0651\u064E\u0645\u064E\u0627\u0648\u0627\u062A\u0650 \u0648\u064E\u0627\u0644\u0623\u064E\u0631\u0652\u0636\u0650",
-    hadith: t('lvl_hadith_4'),
-    sub: t('lvl_sub_4'),
-    color: "#FFD700",
-    glow: "rgba(255,215,0,0.4)",
-    icon: "\u2726"
-  },
-};
+function getLevelMessage(levelId) {
+  var msgs = {
+    1: {
+      stars: "\u2726",
+      eyebrow: t('lvl_eye_1'),
+      title: "MashaAllah !",
+      arabic: "\u0625\u0650\u0646\u0651\u064E \u0627\u0644\u0644\u0651\u064E\u0647\u064E \u0645\u064E\u0639\u064E \u0627\u0644\u0635\u0651\u064E\u0627\u0628\u0650\u0631\u0650\u064A\u0646\u064E",
+      hadith: t('lvl_hadith_1'),
+      sub: t('lvl_sub_1'),
+      color: "#87A96B",
+      glow: "rgba(135,169,107,0.3)",
+      icon: "\u2726"
+    },
+    2: {
+      stars: "\u2726",
+      eyebrow: t('lvl_eye_2'),
+      title: "SubhanAllah !",
+      arabic: "\u0648\u064E\u0627\u0633\u0652\u062A\u064E\u0639\u0650\u064A\u0646\u064F\u0648\u0627 \u0628\u0650\u0627\u0644\u0635\u0651\u064E\u0628\u0652\u0631\u0650 \u0648\u064E\u0627\u0644\u0635\u0651\u064E\u0644\u0627\u0629\u0650",
+      hadith: t('lvl_hadith_2'),
+      sub: t('lvl_sub_2'),
+      color: "#D4AF37",
+      glow: "rgba(212,175,55,0.3)",
+      icon: "\u2726"
+    },
+    3: {
+      stars: "\u2726",
+      eyebrow: t('lvl_eye_3'),
+      title: "Alhamdulillah !",
+      arabic: "\u0625\u0650\u0646\u0651\u064E \u0627\u0644\u0644\u0651\u064E\u0647\u064E \u064A\u064F\u062D\u0650\u0628\u0651\u064F \u0625\u0650\u0630\u0627 \u0639\u064E\u0645\u0650\u0644\u064E \u0623\u064E\u062D\u064E\u062F\u064F\u0643\u064F\u0645\u0652 \u0639\u064E\u0645\u064E\u0644\u064B\u0627 \u0623\u064E\u0646\u0652 \u064A\u064F\u062A\u0652\u0642\u0650\u0646\u064E\u0647\u064F",
+      hadith: t('lvl_hadith_3'),
+      sub: t('lvl_sub_3'),
+      color: "#E9C46A",
+      glow: "rgba(233,196,106,0.35)",
+      icon: "\u2726"
+    },
+    4: {
+      stars: "\u2726",
+      eyebrow: t('lvl_eye_4'),
+      title: "Allahu Akbar !",
+      arabic: "\u0627\u0644\u0644\u0651\u064E\u0647\u064F \u0646\u064F\u0648\u0631\u064F \u0627\u0644\u0633\u0651\u064E\u0645\u064E\u0627\u0648\u0627\u062A\u0650 \u0648\u064E\u0627\u0644\u0623\u064E\u0631\u0652\u0636\u0650",
+      hadith: t('lvl_hadith_4'),
+      sub: t('lvl_sub_4'),
+      color: "#FFD700",
+      glow: "rgba(255,215,0,0.4)",
+      icon: "\u2726"
+    },
+  };
+  return msgs[levelId] || msgs[1];
+}
 function showLevelPopup(levelId, nextId, hasNext) {
-  const msg = LEVEL_MESSAGES[levelId] || LEVEL_MESSAGES[1];
+  const msg = getLevelMessage(levelId);
   const NEXT_NAMES = { 1:'Reconnexion', 2:'Discipline', 3:'Excellence', 4:'Lumière' };
 
   // Reconstruire la popup avec le nouveau design Tafakkur
