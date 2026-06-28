@@ -3614,6 +3614,61 @@
         "verif_imam": false,
         "texte": "Avant de partir pour un long voyage, un marchand demanda à sa femme ce qu'elle voulait comme cadeau.\n\n— Quelque chose d'aussi beau que moi, dit-elle.\n\nIl voyagea deux ans. Il chercha dans les marchés, les ports, les caravanes.\n\nEn rentrant, il lui tendit un petit objet enveloppé dans un tissu.\n\nElle l'ouvrit. C'était un miroir.\n\nElle se regarda. Et pour la première fois de sa vie, elle vit ce qu'il voyait chaque matin en se réveillant.\n\nElle n'avait plus les mots.\n\nIl y a des moments où l'on cherche au loin ce qui est déjà là. On traverse des océans pour trouver ce qui était dans notre maison. On cherche la reconnaissance chez les autres et on oublie que le Créateur nous a déjà regardés et dit : « Nous avons honoré les fils d'Adam. » (Coran 17:70)\n\nCe Dhuhr — si tu te sens invisible, incompris, non reconnu — tourne le miroir vers toi. Non pas par orgueil. Par rappel.\n\nTu as été créé honoré.",
         "morale": "La reconnaissance qu'on cherche dans les yeux des autres, on la trouve d'abord dans le regard qu'on pose sur soi-même devant Allah."
+      },
+      {
+        "id": "DHUHR-CARREFOUR-041",
+        "titre": "Le lotus et la boue",
+        "type_narratif": "RECIT_DIALOGUE",
+        "module_cible": "niyyah",
+        "verbe_action": "PARLE",
+        "source": "Métaphore universelle du lotus — création littéraire pour Niyyah. Référence coranique : Coran 3:27.",
+        "verif_imam": false,
+        "texte": "Un enfant regardait l'étang avec dégoût.\n\n— Maître, pourquoi plantes-tu des fleurs dans cette boue noire ?\n\nLe jardinier ne répondit pas tout de suite. Il attendit. Trois semaines plus tard, il prit l'enfant par la main et le ramena au bord de l'étang.\n\nLe lotus s'ouvrait, blanc, parfait, immaculé.\n\n— La boue, dit le jardinier, est ce qui l'a nourri.\n\nIl y a dans le Coran une image que les savants répètent : Allah fait sortir le vivant du mort, et le mort du vivant. (Coran 3:27)\n\nCe que tu traverses en ce moment — la fatigue, les dettes, la relation qui use, le travail qui pèse — n'est pas ta fin. C'est peut-être ta boue.\n\nCet après-midi, pose-toi la question : qu'est-ce que cette épreuve est en train de nourrir en moi ?",
+        "morale": "La fleur ne choisit pas sa boue. Elle choisit de monter vers la lumière malgré elle."
+      },
+      {
+        "id": "DHUHR-CARREFOUR-042",
+        "titre": "Les deux pots",
+        "type_narratif": "RECIT_DIALOGUE",
+        "module_cible": "niyyah",
+        "verbe_action": "PARLE",
+        "source": "Métaphore des deux pots — création littéraire pour Niyyah. Hadith : Abu Dawud 4918.",
+        "verif_imam": false,
+        "texte": "Dans un jardin, deux pots discutaient.\n\nLe pot en métal brillant se vantait : je retiens l'eau, mes plantes ne manquent jamais de rien.\n\nLe pot en terre cuite répondit doucement : et moi, je laisse l'eau circuler. Mes racines respirent.\n\nLa tempête vint.\n\nLe pot en métal, alourdi par l'eau accumulée, bascula. Le pot en terre cuite, poreux, laissa passer l'excès — et tint.\n\nAprès la pluie, chacun reconnut ce que l'autre avait que lui n'avait pas.\n\nLe Prophète ﷺ a dit : « Le croyant est le miroir du croyant. » (Abu Dawud 4918)\n\nNous ne sommes pas faits pour être complets seuls. L'un retient ce que l'autre ne peut pas garder. L'un laisse passer ce que l'autre étouffe.\n\nCet après-midi, pense à quelqu'un qui a ce que tu n'as pas. Non pas avec jalousie — avec gratitude. Il est le pot que tu n'es pas.",
+        "morale": "La complémentarité n'est pas une faiblesse. C'est une rahma."
+      },
+      {
+        "id": "DHUHR-CARREFOUR-043",
+        "titre": "La graine",
+        "type_narratif": "RECIT_DIALOGUE",
+        "module_cible": "niyyah",
+        "verbe_action": "PARLE",
+        "source": "Métaphore universelle de la graine — création littéraire pour Niyyah. Référence coranique : Coran 99:7.",
+        "verif_imam": false,
+        "texte": "Le père prit la graine dans sa main. Elle était minuscule, presque invisible.\n\n— Tu vois ça ? dit-il à son fils.\n\nLe garçon hocha la tête, pas convaincu.\n\nLe père creusa la terre, déposa la graine, referma la main de son fils sur la terre au-dessus.\n\n— Maintenant on attend.\n\nLe fils revint le lendemain. Rien. La semaine suivante. Rien. Il oublia presque.\n\nDeux mois plus tard, les champs ondulaient sous le vent, or sous le soleil.\n\nLe père ne dit rien cette fois.\n\nIl n'avait plus besoin.\n\nAllah dit : « Celui qui fait le bien, fût-ce du poids d'un atome, le verra. » (Coran 99:7)\n\nChaque bonne action que tu poses aujourd'hui est une graine. Tu n'en verras peut-être pas la récolte ce soir. Ni cette semaine. Mais la terre ne perd rien.",
+        "morale": "La graine ne doute pas de la terre. Elle fait confiance à l'obscurité qui la contient."
+      },
+      {
+        "id": "DHUHR-CARREFOUR-044",
+        "titre": "L'argile et le potier",
+        "type_narratif": "RECIT_DIALOGUE",
+        "module_cible": "niyyah",
+        "verbe_action": "PARLE",
+        "source": "Métaphore du potier — création littéraire pour Niyyah. Référence coranique : Coran 23:12.",
+        "verif_imam": false,
+        "texte": "Le fils entra dans l'atelier et vit son père à genoux devant un tas de terre sombre.\n\n— Père, qu'est-ce que tu vois dans cette boue ?\n\nLe potier sourit sans lever les yeux.\n\n— Ce qu'elle peut devenir.\n\nLes mains travaillèrent en silence. La terre résistait parfois, s'affaissait, se craquelait. Il recommençait. Mouillait. Pressait doucement. Recommençait encore.\n\nVers la fin de la journée, un vase se tenait sur la table. Simple, droit, lumineux.\n\n— Elle ne savait pas qu'elle pouvait devenir ça, dit le fils.\n\n— Non, dit le père. C'est pour ça qu'elle avait besoin de moi.\n\n« Nous avons créé l'homme à partir d'argile. » (Coran 23:12)\n\nTu es entre les mains de Celui qui sait ce que tu peux devenir mieux que tu ne le sais toi-même. Les pressions que tu ressens ne sont pas des punitions. Ce sont parfois des mains qui façonnent.",
+        "morale": "L'argile ne comprend pas le travail du potier. Elle lui fait confiance."
+      },
+      {
+        "id": "DHUHR-CARREFOUR-045",
+        "titre": "L'étoile dans la tempête",
+        "type_narratif": "RECIT_DIALOGUE",
+        "module_cible": "niyyah",
+        "verbe_action": "PARLE",
+        "source": "Métaphore de l'Étoile Polaire — création littéraire pour Niyyah. Référence coranique : Coran 13:28.",
+        "verif_imam": false,
+        "texte": "La tempête dura trois jours.\n\nLes marins ne voyaient plus la côte. Plus les autres bateaux. Plus le ciel.\n\nLe capitaine ne cria pas. Il attendit.\n\nLa quatrième nuit, entre deux nuages, une lumière apparut. Petite, lointaine, immobile. L'Étoile Polaire.\n\nIl corrigea le cap. Deux degrés à gauche.\n\nAu matin, ils apercevaient le port.\n\nUn des marins lui demanda : comment tu savais qu'elle serait là ?\n\nIl répondit : elle est toujours là. C'est nous qui ne la voyions plus.\n\n« C'est par le rappel d'Allah que les cœurs trouvent la paix. » (Coran 13:28)\n\nQuand tout est obscur — le travail, la famille, la santé, toi-même — ce n'est pas Allah qui s'est éloigné. C'est le bruit qui couvre Sa lumière.\n\nCet après-midi, deux rakats. Pas pour obtenir quelque chose. Pour retrouver le cap.",
+        "morale": "L'étoile ne bouge pas. C'est la tempête qui nous fait croire qu'elle a disparu."
       }
     ],
     "intention": [
