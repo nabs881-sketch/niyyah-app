@@ -15976,8 +15976,6 @@ function updateSanctuaireMoment() {
   var blockTotal = blockItems.length;
   var blockDone = blockItems.filter(_isDone).length;
   var blockRemaining = blockTotal - blockDone;
-  console.log('[BLOCK]', 'total=', blockTotal, 'done=', blockDone, 'remaining=', blockRemaining, 'ids=', blockItems.map(function(i){return i.id;}));
-  document.title = 'B:' + blockTotal + '/' + blockRemaining;
   if (blockTotal === 0) { _hideBlock(); return; }
   var jourItems = _allUnlocked.filter(function(item) { return item.block === 'jour'; });
   var jourDone = jourItems.filter(_isDone).length;
