@@ -15984,6 +15984,16 @@ function updateSanctuaireMoment() {
   var blockDone = blockItems.filter(_isDone).length;
   var blockRemaining = blockTotal - blockDone;
   if (blockTotal === 0) { _hideBlock(); return; }
+  var _bissDone = safeGetItem('bismillah_done_' + blockId + '_' + TODAY);
+  if (blockRemaining === 0 && _bissDone) {
+    var _fjItemsC = typeof getFilJourItems === 'function' ? getFilJourItems() : [];
+    var _fjStC = safeParseJSON('spiritual_v2', {});
+    var _allFjDone = _fjItemsC.length === 0 || _fjItemsC.every(function(it) { return it.type === 'counter' ? ((_fjStC[it.id]||0) >= (it.target||1)) : !!_fjStC[it.id]; });
+    el.innerHTML = _nextInfo || '';
+    wrapper.classList.add('moment-transparent');
+    if (_allFjDone) wrapper.style.display = 'none';
+    return;
+  }
   var jourItems = _allUnlocked.filter(function(item) { return item.block === 'jour'; });
   var jourDone = jourItems.filter(_isDone).length;
   var jourRemaining = jourItems.length - jourDone;
