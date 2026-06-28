@@ -3570,6 +3570,50 @@
         "verif_imam": false,
         "texte": "Un homme s'approcha d'un imam après la prière du Dhuhr. Il avait l'air sincèrement troublé.\n\n« Imam, j'ai un collègue de travail. Non-musulman. Il ne prie pas, ne jeûne pas, ne connaît pas Allah — ou en tout cas ne L'a pas reconnu. Mais cet homme... c'est le meilleur de nous tous. Il aide ses collègues sans qu'on lui demande. Il est juste, honnête, généreux. Il est là pour tout le monde. Comment est-ce possible qu'un homme pareil n'aille pas au Paradis ? »\n\nL'imam resta silencieux un moment. Puis il dit :\n\n« Dis-moi. Dans ton entreprise, imaginons qu'il y a un atelier. Et dans cet atelier, il y a un homme que tout le monde adore. Il est sympa, il rend service, il aide chacun avec le sourire, il écoute, il est là. Tous les collègues l'aiment. »\n\n« Oui, je vois. »\n\n« Mais cet homme ne fait pas le travail pour lequel il a été embauché. Il aide, il bavarde, il soutient — mais les tâches qui lui ont été assignées, il ne les accomplit pas. Ce n'est pas par mauvaise volonté, mais il ne les fait pas. »\n\nL'homme hocha la tête lentement.\n\n« Que va faire le patron à la fin du mois ? »\n\nUn silence.\n\n« Il ne peut pas le garder. Même si tout le monde l'aime. Même si personne ne veut le voir partir. Parce que le patron l'a embauché pour une mission précise — pas pour être aimé. »\n\nL'imam baissa la voix.\n\n« Nous avons été créés pour une mission précise. Reconnaître Allah et L'adorer. Ce n'est pas une règle arbitraire — c'est la raison d'être de notre présence ici. Ton collègue fait du bien, et ce bien ne sera pas perdu : Allah est juste et ne laisse rien sans récompense. Mais le Paradis, c'est la demeure de ceux qui ont accompli la mission pour laquelle ils ont été envoyés. Pas seulement d'avoir été gentils en chemin. »\n\nL'homme resta silencieux un long moment.\n\nPuis il dit : « Et si mon collègue n'a jamais vraiment entendu parler d'Allah ? »\n\nL'imam sourit doucement.\n\n« Alors le patron sait ce qu'il fait. Et il jugera avec une connaissance que ni toi ni moi ne possédons. Ce qui nous incombe à nous, c'est de lui transmettre le message — avec la même gentillesse qu'il met à aider les autres. »",
         "morale": "La bonté sans la mission n'est pas la mission accomplie. Elle est réelle, elle compte, elle sera pesée — mais elle ne remplace pas ce pour quoi nous avons été créés. Cet après-midi, si tu connais quelqu'un de bien qui ne connaît pas Allah : ce n'est pas une raison de désespérer de lui. C'est une raison de lui parler — avec le même cœur qu'il met à aider les autres."
+      },
+      {
+        "id": "DHUHR-CARREFOUR-037",
+        "titre": "Les fagots et l'âne",
+        "type_narratif": "RECIT_DIALOGUE",
+        "module_cible": "niyyah",
+        "verbe_action": "PARLE",
+        "source": "Adaptation libre d'une parabole de Mulla Nasrudin — création littéraire pour Niyyah.",
+        "verif_imam": false,
+        "texte": "On vit un jour Nasrudin revenir de la forêt, les fagots de bois sur le dos, assis sur son âne.\n\nLes gens s'arrêtèrent, interloqués.\n\n— Nasrudin, pourquoi portes-tu le bois sur ton dos au lieu de le poser sur l'âne ?\n\nIl se redressa, l'air offensé.\n\n— Vous n'avez pas de cœur ! Cette pauvre bête me supporte déjà, moi. Vous voudriez en plus que je la charge du bois ?\n\nIl y eut un silence.\n\nPuis quelqu'un dit doucement : mais Nasrudin — c'est toi qui es sur l'âne.\n\nIl n'y a pas répondu. Il a continué son chemin, les fagots sur le dos.\n\nC'est ainsi que beaucoup d'entre nous portons nos fardeaux. Nous nous épuisons à soulager l'âne. Nous refusons de voir que nous sommes déjà dessus. Que l'aide est là. Que nous pouvons poser ce que nous portons.\n\nAprès la prière du Dhuhr, pose un fardeau. Un seul. Pas tous — un. Celui que tu portes sur le dos depuis trop longtemps.",
+        "morale": "La fatigue ne vient pas toujours du chemin. Elle vient parfois de ce qu'on refuse de poser."
+      },
+      {
+        "id": "DHUHR-CARREFOUR-038",
+        "titre": "Le doigt du sage",
+        "type_narratif": "RECIT_DIALOGUE",
+        "module_cible": "niyyah",
+        "verbe_action": "PARLE",
+        "source": "Adaptation d'une sagesse soufie et tradition orientale — création littéraire pour Niyyah.",
+        "verif_imam": false,
+        "texte": "Un sage vivait seul dans la montagne. Un ami d'enfance vint le voir après vingt ans d'absence.\n\nLe sage, heureux, voulut lui offrir un cadeau. Il pointa son doigt vers une pierre et la transforma en or pur.\n\nL'ami la regarda. Pas assez grande, dit-il.\n\nLe sage pointa vers un rocher. L'or était immense, brillant, impossible à soulever.\n\nL'ami regarda le rocher d'or. Puis il regarda le doigt du sage.\n\n— Ce que je veux, dit-il, c'est le doigt.\n\nLe sage baissa la main lentement.\n\nIl comprit ce jour-là que certains hommes ne veulent pas ce qu'on leur offre. Ils veulent la source de ce qu'on leur offre. Ils ne veulent pas le pain — ils veulent la boulangerie.\n\nAllah donne à chacun selon Sa sagesse. Ce qu'Il t'a donné n'est peut-être pas ce que tu aurais choisi. Mais c'est ce qu'Il a jugé juste pour toi à cet instant.\n\nCet après-midi, regarde ce que tu as. Pas ce que tu n'as pas.",
+        "morale": "Celui qui ne voit pas la grâce dans ce qu'il reçoit ne la verra pas davantage dans ce qu'il espère."
+      },
+      {
+        "id": "DHUHR-CARREFOUR-039",
+        "titre": "Les mouches et le miel",
+        "type_narratif": "RECIT_DIALOGUE",
+        "module_cible": "niyyah",
+        "verbe_action": "PARLE",
+        "source": "Adaptation de la fable d'Ésope — création littéraire pour Niyyah. Hadith : Muslim 2742.",
+        "verif_imam": false,
+        "texte": "Des mouches découvrirent un jour un pot de miel renversé.\n\nElles se précipitèrent sans réfléchir. Le miel était doux, abondant, parfumé. Elles mangèrent sans s'arrêter, sans lever la tête, sans voir ce qui se passait autour.\n\nLeurs pattes s'enfoncèrent doucement.\n\nPuis leurs ailes.\n\nQuand elles voulurent s'envoler, elles ne pouvaient plus.\n\n— Nous périssons, s'écrièrent-elles. Pour avoir voulu tout prendre en une seule fois.\n\nLe Prophète ﷺ a dit : « Le monde est doux et verdoyant, et Allah vous y a installés pour voir comment vous vous comportez. » (Muslim 2742)\n\nLe monde est le miel. Sa douceur est réelle. Son danger aussi.\n\nCe Dhuhr, avant de retourner vers ton travail, tes écrans, tes désirs — pose-toi une question simple : est-ce que je suis encore libre de m'envoler ? Ou est-ce que mes ailes sont déjà prises ?",
+        "morale": "Ce n'est pas le miel qui noie. C'est l'oubli de soi devant lui."
+      },
+      {
+        "id": "DHUHR-CARREFOUR-040",
+        "titre": "Le miroir",
+        "type_narratif": "RECIT_DIALOGUE",
+        "module_cible": "niyyah",
+        "verbe_action": "PARLE",
+        "source": "Adaptation d'une parabole de Paulo Coelho — création littéraire pour Niyyah. Référence coranique : Coran 17:70.",
+        "verif_imam": false,
+        "texte": "Avant de partir pour un long voyage, un marchand demanda à sa femme ce qu'elle voulait comme cadeau.\n\n— Quelque chose d'aussi beau que moi, dit-elle.\n\nIl voyagea deux ans. Il chercha dans les marchés, les ports, les caravanes.\n\nEn rentrant, il lui tendit un petit objet enveloppé dans un tissu.\n\nElle l'ouvrit. C'était un miroir.\n\nElle se regarda. Et pour la première fois de sa vie, elle vit ce qu'il voyait chaque matin en se réveillant.\n\nElle n'avait plus les mots.\n\nIl y a des moments où l'on cherche au loin ce qui est déjà là. On traverse des océans pour trouver ce qui était dans notre maison. On cherche la reconnaissance chez les autres et on oublie que le Créateur nous a déjà regardés et dit : « Nous avons honoré les fils d'Adam. » (Coran 17:70)\n\nCe Dhuhr — si tu te sens invisible, incompris, non reconnu — tourne le miroir vers toi. Non pas par orgueil. Par rappel.\n\nTu as été créé honoré.",
+        "morale": "La reconnaissance qu'on cherche dans les yeux des autres, on la trouve d'abord dans le regard qu'on pose sur soi-même devant Allah."
       }
     ],
     "intention": [
