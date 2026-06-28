@@ -39,6 +39,14 @@ try {
     sw = sw.replace(/niyyah-v\d+/g, 'niyyah-v' + next);
     fs.writeFileSync('sw.js', sw);
     console.log('> Version SW -> niyyah-v' + next);
+
+    // Cache-busting automatique dans index.html
+    let html = fs.readFileSync('index.html', 'utf8');
+    const htmlUpdated = html.replace(/script\.min\.js\?(?:v|cb)=\d+/, 'script.min.js?v=' + next);
+    if (htmlUpdated !== html) {
+      fs.writeFileSync('index.html', htmlUpdated, 'utf8');
+      console.log('> index.html cache-bust -> script.min.js?v=' + next);
+    }
   } else {
     console.log('! Version SW introuvable');
   }
