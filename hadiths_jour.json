@@ -94,7 +94,7 @@
     "texte_ar": "مِنْ حُسْنِ إِسْلَامِ الْمَرْءِ تَرْكُهُ مَا لَا يَعْنِيهِ",
     "texte_fr": "Fait partie de la beauté de l'islam de l'homme le fait qu'il délaisse ce qui ne le concerne pas.",
     "source": "Tirmidhi 2317 · Hadith 12 An-Nawawi",
-    "degre": "hasan"
+    "degre": "hasan (contesté — chaîne jugée faible par plusieurs critiques hadith)"
   },
   {
     "jour": 13,
@@ -863,7 +863,7 @@
     "texte_ar": "مَنْ قَرَأَ سُورَةَ الْكَهْفِ يَوْمَ الْجُمُعَةِ",
     "texte_fr": "Celui qui lit la sourate Al-Kahf le vendredi, une lumière l'illuminera entre les deux vendredis.",
     "source": "Hâkim/Bayhaqî — sahîh selon al-Albânî (Sahîh al-Targhîb) ; gradation contestée : Ibn Bâz la juge faible, et Bayhaqî/Dhahabî/Ibn Ḥajar tiennent la version mawqûf (parole d'Abû Sa'îd) pour plus solide que la version marfû'.",
-    "degre": "sahih"
+    "degre": "hasan (contesté — sahih selon al-Albânî, faible selon Ibn Bâz ; version mawqûf d'Abu Sa'îd plus solide)"
   },
   {
     "jour": 109,
@@ -878,7 +878,7 @@
     "theme": "Salam",
     "texte_ar": "السَّلَامُ قَبْلَ الْكَلَامِ",
     "texte_fr": "Le salam précède la parole.",
-    "source": "At-Tabarânî (al-Awsat) — hasan (Al-Albânî, Silsila Sahîha). [Réf « Tirmidhî 2699 » erronée, corrigée.]",
+    "source": "At-Tabarânî (al-Awsat) — hasan (Al-Albânî, Silsila Sahîha)",
     "degre": "hasan"
   },
   {
@@ -1265,14 +1265,6 @@
     "texte_fr": "Le fils d’Adam ne remplit pas de récipient pire que son ventre. Quelques bouchées lui suffisent pour tenir droit. Et s’il le faut absolument : un tiers pour sa nourriture, un tiers pour sa boisson, un tiers pour son souffle.",
     "source": "Tirmidhî 2380 · hasan sahih (al-Albânî) · An-Nawawî 40 n°47",
     "degre": "sahih"
-  },
-  {
-    "jour": 159,
-    "theme": "Sobriété",
-    "texte_ar": "مَا مَلَأَ آدَمِيٌّ وِعَاءً شَرًّا مِنْ بَطْنٍ",
-    "texte_fr": "L'être humain ne remplit pas pire récipient que son ventre. Quelques bouchées suffisent. S'il faut plus : un tiers pour la nourriture, un tiers pour la boisson, un tiers pour la respiration.",
-    "source": "Tirmidhi 2380, Ibn Majah 3349",
-    "degre": "hasan"
   },
   {
     "jour": 160,
