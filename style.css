@@ -8230,6 +8230,12 @@ button[style*="gold-v2"] {
 .moment-level-block:has(.moment-icon-img) {
   position: relative;
 }
+.moment-transparent {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
 .moment-icon-fajr    { background-image: url('assets/moments/fajr.webp'); }
 .moment-icon-dhuhr   { background-image: url('assets/moments/dhuhr.webp'); }
 .moment-icon-asr     { background-image: url('assets/moments/asr.webp'); }
