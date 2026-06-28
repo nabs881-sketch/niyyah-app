@@ -15974,7 +15974,7 @@ function updateSanctuaireMoment() {
       }
     }
   }
-  function _isDone(item) { return item.type === 'counter' ? (state[item.id] || 0) >= item.target : !!state[item.id]; }
+  function _isDone(item) { return item.type === 'counter' ? ((state[item.id] || 0) >= item.target || state[item.id] === true) : !!state[item.id]; }
   var _motivS = getEffectiveMotiv();
   var _allUnlocked = LEVELS.filter(function(l) { return state._unlocked && state._unlocked.includes(l.id); })
     .flatMap(function(l) { return l.sections.flatMap(function(s) { return s.items; }); })
