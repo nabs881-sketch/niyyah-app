@@ -19416,11 +19416,8 @@ function openVueAuFilDuJour() {
   var _filDone = items.filter(function(it){ return !!state[it.id]; }).length;
   var _filTotal = items.length;
   var _filPct = _filTotal ? Math.round(_filDone/_filTotal*100) : 0;
-  var _allFilDone = _filTotal > 0 && _filDone === _filTotal;
+  var _nonDefiItems = items.filter(function(it){ return it.type !== 'defi' && it.id.indexOf('defi') === -1; });
   var _html = '<div class="fil-progress"><div class="fil-progress-row"><span class="fil-progress-label">Le jour s\'habite</span><span class="fil-progress-count">' + _filDone + ' geste' + (_filDone>1?'s':'') + ' pos\u00e9' + (_filDone>1?'s':'') + '</span></div><div class="fil-progress-track"><div class="fil-progress-fill" style="width:' + _filPct + '%;"></div></div></div>';
-  if (_allFilDone) {
-    _html += '<div style="font-family:\'Georgia\',serif;font-size:20px;font-style:italic;color:rgba(200,168,75,0.55);text-align:center;padding:40px 24px 24px;line-height:1.75;">L\u2019homme n\u2019obtient que ce qu\u2019il s\u2019efforce d\u2019accomplir.</div>';
-  }
   _catOrder.forEach(function(cat) {
     var group = items.filter(function(it) { return it.category === cat.key; });
     if (!group.length) return;
@@ -19525,16 +19522,6 @@ function _filItemToggled(id) {
   var _fill = document.querySelector('#aufildujour .fil-progress-fill');
   if (_cnt) _cnt.textContent = _done + ' geste' + (_done > 1 ? 's' : '') + ' pos\u00e9' + (_done > 1 ? 's' : '');
   if (_fill) _fill.style.width = Math.round(_done / _total * 100) + '%';
-  if (_done === _total && !document.getElementById('fil-alldone-phrase')) {
-    var _main = document.querySelector('#aufildujour .rituel-content');
-    if (_main) {
-      var _p = document.createElement('div');
-      _p.id = 'fil-alldone-phrase';
-      _p.style.cssText = 'font-family:\'Georgia\',serif;font-size:20px;font-style:italic;color:rgba(200,168,75,0.55);text-align:center;padding:40px 24px 24px;line-height:1.75;';
-      _p.textContent = 'L\u2019homme n\u2019obtient que ce qu\u2019il s\u2019efforce d\u2019accomplir.';
-      _main.appendChild(_p);
-    }
-  }
 }
 window._filItemToggled = _filItemToggled;
 function _forceFilCheck(id, event) {
