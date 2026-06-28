@@ -15985,6 +15985,7 @@ function updateSanctuaireMoment() {
   var blockRemaining = blockTotal - blockDone;
   if (blockTotal === 0) { _hideBlock(); return; }
   var _bissDone = safeGetItem('bismillah_done_' + blockId + '_' + TODAY);
+  console.log('[BSS]', 'blockId=', blockId, 'bissDone=', _bissDone, 'remaining=', blockRemaining);
   if (blockRemaining === 0 && _bissDone) {
     var _fjItemsC = typeof getFilJourItems === 'function' ? getFilJourItems() : [];
     var _fjStC = safeParseJSON('spiritual_v2', {});
