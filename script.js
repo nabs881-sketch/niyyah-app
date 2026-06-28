@@ -15992,6 +15992,16 @@ function updateSanctuaireMoment() {
   if (jourRemaining > 0 && jourItems.length <= 5) {
     jourLine = '<div style="font-family:\'Inter\',var(--sans);font-size:12px;color:rgba(255,255,255,0.55);margin-top:4px;">+ ' + jourRemaining + ' acte' + (jourRemaining > 1 ? 's' : '') + ' du jour</div>';
   }
+  var _fjItemsC = typeof getFilJourItems === 'function' ? getFilJourItems().filter(function(i){ return i.type !== 'defi' && i.id.indexOf('defi') < 0; }) : [];
+  var _fjStC = safeParseJSON('spiritual_v2', {});
+  var _allFjDone = _fjItemsC.length > 0 && _fjItemsC.every(function(i){ return !!_fjStC[i.id] || _fjStC[i.id] === true || (_fjStC[i.id] || 0) >= (i.target || 1); });
+  if (blockRemaining === 0 && _bissDone && _allFjDone) {
+    if (wrapper) wrapper.classList.add('moment-transparent');
+    el.innerHTML = '<div style="text-align:center;padding:8px 0;">' + (_nextInfo || '') + '</div>';
+    if (typeof updateMedaillonState === 'function') updateMedaillonState();
+    return;
+  }
+  if (wrapper) wrapper.classList.remove('moment-transparent');
   var _showButton = blockRemaining > 0;
   el.innerHTML = '<div style="text-align:center;padding:8px;">'
     + '<div style="font-family:\'Georgia\',serif;font-size:17px;font-weight:700;color:#C8A84A;line-height:1.45;">' + _iconSpan + block.label + '</div>'
