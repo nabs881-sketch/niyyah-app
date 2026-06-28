@@ -16266,16 +16266,17 @@ function v2UpdateOrbState() {
     if (orb) orb.classList.remove('intention-set-v2');
     if (cta) { cta.textContent = 'D\u00e9finir mon intention'; cta.style.display = ''; }
   }
-  // Masquer le CTA en mode nuit
+  // Masquer le CTA et désactiver la sphère en mode nuit
+  var _blockIdNow = (typeof getCurrentPrayerBlock === 'function') ? getCurrentPrayerBlock().id : '';
+  var _isNuit = _blockIdNow === 'nuit';
   if (cta) {
-    var _blockIdNow = (typeof getCurrentPrayerBlock === 'function') ? getCurrentPrayerBlock().id : '';
-    if (_blockIdNow === 'nuit') {
-      cta.style.display = 'none';
-    } else {
-      cta.style.display = '';
-      cta.style.pointerEvents = '';
-      cta.style.opacity = '';
-    }
+    cta.style.display = _isNuit ? 'none' : '';
+    if (!_isNuit) { cta.style.pointerEvents = ''; cta.style.opacity = ''; }
+  }
+  var _orbCore = document.getElementById('orb-core-v2');
+  if (_orbCore) {
+    _orbCore.style.pointerEvents = _isNuit ? 'none' : '';
+    _orbCore.style.cursor = _isNuit ? 'default' : '';
   }
 }
 
