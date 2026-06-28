@@ -19024,6 +19024,7 @@ function closeVueRituel() {
   _restoreScroll();
   a11yOnOverlayClose();
   try { if (typeof updateSanctuaireMoment === 'function') updateSanctuaireMoment(); } catch(e) {}
+  console.log('[FJ]', 'allFjDone=', typeof getFilJourItems === 'function' ? getFilJourItems().filter(function(i){return i.type!=='defi'&&i.id.indexOf('defi')<0;}).every(function(i){var s=safeParseJSON('spiritual_v2',{});return !!s[i.id]||s[i.id]===true;}) : 'N/A');
 }
 window.closeVueRituel = closeVueRituel;
 function _knowledgeReturn(id) {
