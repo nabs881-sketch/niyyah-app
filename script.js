@@ -14879,10 +14879,15 @@ function openWaqtModal() {
     html += '<div style="text-align:center;margin-top:16px;"><button class="btn-audio" aria-label="\u00c9couter" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();_waqtPlayTTS(this)" data-tts="' + _storyTts + '"><svg width="12" height="12" viewBox="0 0 24 24" fill="#C8A84A" style="pointer-events:none"><polygon points="5 3 19 12 5 21 5 3"/></svg></button></div>';
     actionEl.innerHTML = html;
   } else {
-    var _plainTts = txt.replace(/"/g, '&quot;');
+    var _hasVerset = item && item.verset;
+    var _plainTts = (_hasVerset ? (item.verset + ' ' + (item.explication || '')) : txt).replace(/"/g, '&quot;');
+    var _contentHtml = _hasVerset
+      ? '<div style="font-family:\'Georgia\',serif;font-size:20px;font-style:italic;color:#e9ddc7;line-height:1.8;max-width:340px;margin-bottom:12px;">' + escapeHtml(item.verset) + '</div>'
+        + (item.explication ? '<div style="font-family:\'Georgia\',serif;font-size:16px;color:rgba(233,221,199,0.55);line-height:1.7;max-width:340px;">' + escapeHtml(item.explication) + '</div>' : '')
+      : '<div style="font-family:\'Georgia\',serif;font-size:20px;font-style:italic;color:#e9ddc7;line-height:1.8;max-width:340px;">' + txt + '</div>';
     actionEl.innerHTML = '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:28px;color:#C8A84A;direction:rtl;margin-bottom:20px;">' + arName + '</div>'
       + ambianceHtml
-      + '<div style="font-family:\'Georgia\',serif;font-size:20px;font-style:italic;color:#e9ddc7;line-height:1.8;max-width:340px;">' + txt + '</div>'
+      + _contentHtml
       + '<div style="text-align:center;margin-top:16px;"><button class="btn-audio" aria-label="\u00c9couter" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();_waqtPlayTTS(this)" data-tts="' + _plainTts + '"><svg width="12" height="12" viewBox="0 0 24 24" fill="#C8A84A" style="pointer-events:none"><polygon points="5 3 19 12 5 21 5 3"/></svg></button></div>';
   }
   modal.style.display = 'flex';
