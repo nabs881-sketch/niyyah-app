@@ -19339,6 +19339,10 @@ window.getFilJourItems = getFilJourItems;
 
 function getFilJourCardHTML() {
   const state = safeParseJSON('spiritual_v2', {});
+  var _fjItems = getFilJourItems().filter(function(i){ return i.type !== 'defi' && i.id.indexOf('defi') < 0; });
+  var _fjSt = safeParseJSON('spiritual_v2', {});
+  var _allFjDone = _fjItems.length > 0 && _fjItems.every(function(i){ return !!_fjSt[i.id] || _fjSt[i.id] === true || (_fjSt[i.id] || 0) >= (i.target || 1); });
+  if (_allFjDone) return '';
   let done = 0;
   getFilJourItems().forEach(function(it) { if (state[it.id]) done++; });
   return '<div class="fil-jour-connector">\u2014 entre tes pri\u00e8res \u2014</div>'
