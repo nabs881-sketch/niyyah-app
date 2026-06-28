@@ -19040,6 +19040,7 @@ function closeVueRituel() {
   if (v) v.classList.add('hidden');
   _restoreScroll();
   a11yOnOverlayClose();
+  try { if (typeof updateSanctuaireMoment === 'function') updateSanctuaireMoment(); } catch(e) {}
 }
 window.closeVueRituel = closeVueRituel;
 function _knowledgeReturn(id) {
