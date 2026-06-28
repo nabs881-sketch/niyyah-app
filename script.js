@@ -15986,15 +15986,6 @@ function updateSanctuaireMoment() {
   if (blockTotal === 0) { _hideBlock(); return; }
   var _bissDone = safeGetItem('bismillah_done_' + blockId + '_' + TODAY);
   console.log('[BSS]', 'blockId=', blockId, 'bissDone=', _bissDone, 'remaining=', blockRemaining);
-  if (blockRemaining === 0 && _bissDone) {
-    var _fjItemsC = typeof getFilJourItems === 'function' ? getFilJourItems() : [];
-    var _fjStC = safeParseJSON('spiritual_v2', {});
-    var _allFjDone = _fjItemsC.length === 0 || _fjItemsC.every(function(it) { return it.type === 'counter' ? ((_fjStC[it.id]||0) >= (it.target||1)) : !!_fjStC[it.id]; });
-    el.innerHTML = _nextInfo || '';
-    wrapper.classList.add('moment-transparent');
-    if (_allFjDone) wrapper.style.display = 'none';
-    return;
-  }
   var jourItems = _allUnlocked.filter(function(item) { return item.block === 'jour'; });
   var jourDone = jourItems.filter(_isDone).length;
   var jourRemaining = jourItems.length - jourDone;
@@ -16002,24 +15993,16 @@ function updateSanctuaireMoment() {
   if (jourRemaining > 0 && jourItems.length <= 5) {
     jourLine = '<div style="font-family:\'Inter\',var(--sans);font-size:12px;color:rgba(255,255,255,0.55);margin-top:4px;">+ ' + jourRemaining + ' acte' + (jourRemaining > 1 ? 's' : '') + ' du jour</div>';
   }
-  if (blockRemaining === 0) {
-    el.innerHTML = '<div style="text-align:center;padding:8px;">'
-      + _nextInfo
-      + '<div style="font-family:\'Georgia\',serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.6);margin-top:4px;">Tu as honor\u00e9 ce moment.</div>'
-      + jourLine
-      + '</div>';
-    el.innerHTML += getFilJourCardHTML();
-  } else {
-    el.innerHTML = '<div style="text-align:center;padding:8px;">'
-      + '<div style="font-family:\'Georgia\',serif;font-size:17px;font-weight:700;color:#C8A84A;line-height:1.45;">' + _iconSpan + block.label + '</div>'
-      + _nextInfo
-      + jourLine
-      + ((!_nextInfo && !jourLine) ? '<div style="height:28px;"></div>' : '')
-      + ((blockRemaining === 0) ? '' : '<button id="btn-bismillah-waqt" class="btn-bismillah-moment" onclick="event.stopPropagation();safeSetItem(\'bismillah_done_' + blockId + '_' + TODAY + '\',\'1\');var _m=getCurrentPrayerBlock();if(_m&&_m.id)openVueRituel(_m.id);else selectLevel(currentLevel);" ontouchend="if(!_isTapNotScroll(event))return;event.stopPropagation();event.preventDefault();safeSetItem(\'bismillah_done_' + blockId + '_' + TODAY + '\',\'1\');var _m=getCurrentPrayerBlock();if(_m&&_m.id)openVueRituel(_m.id);else selectLevel(currentLevel);">' + t('btn_continue') + '</button>')
-      + '</div>';
-    el.innerHTML += getFilJourCardHTML();
-    if (isFriday()) el.innerHTML += getVendrediRegardCardHTML();
-  }
+  var _showButton = blockRemaining > 0;
+  el.innerHTML = '<div style="text-align:center;padding:8px;">'
+    + '<div style="font-family:\'Georgia\',serif;font-size:17px;font-weight:700;color:#C8A84A;line-height:1.45;">' + _iconSpan + block.label + '</div>'
+    + _nextInfo
+    + jourLine
+    + ((!_nextInfo && !jourLine) ? '<div style="height:28px;"></div>' : '')
+    + (_showButton ? '<button id="btn-bismillah-waqt" class="btn-bismillah-moment" onclick="event.stopPropagation();safeSetItem(\'bismillah_done_' + blockId + '_' + TODAY + '\',\'1\');var _m=getCurrentPrayerBlock();if(_m&&_m.id)openVueRituel(_m.id);else selectLevel(currentLevel);" ontouchend="if(!_isTapNotScroll(event))return;event.stopPropagation();event.preventDefault();safeSetItem(\'bismillah_done_' + blockId + '_' + TODAY + '\',\'1\');var _m=getCurrentPrayerBlock();if(_m&&_m.id)openVueRituel(_m.id);else selectLevel(currentLevel);">' + t('btn_continue') + '</button>' : '')
+    + '</div>';
+  el.innerHTML += getFilJourCardHTML();
+  if (isFriday()) el.innerHTML += getVendrediRegardCardHTML();
   if (typeof updateMedaillonState === 'function') updateMedaillonState();
 }
 
