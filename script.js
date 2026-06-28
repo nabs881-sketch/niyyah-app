@@ -15920,6 +15920,13 @@ function updateSanctuaireMoment() {
   var block = getCurrentPrayerBlock();
   var blockId = block.id;
   try { document.querySelectorAll('.orb-wrap-v2').forEach(function(o){ o.setAttribute('data-moment', blockId); }); } catch(e) {}
+  try {
+    var _sph = document.getElementById('orb-wrap-v2');
+    if (_sph) {
+      if (blockId === 'nuit') { _sph.classList.add('sphere-nuit'); }
+      else { _sph.classList.remove('sphere-nuit'); }
+    }
+  } catch(e) {}
   if (typeof _updateOrbCoherence === 'function') _updateOrbCoherence();
   var _svgNuit = '<svg width="14" height="14" viewBox="0 0 14 14" style="vertical-align:middle;"><path d="M11 7a4.5 4.5 0 1 1-4.5-4.5A3.5 3.5 0 0 0 11 7z" fill="none" stroke="#C8A84A" stroke-width="1.2"/></svg>';
   var _blockIcons = { nuit:_svgNuit, fajr:'\u2726', dhuhr:'\u2726', asr:'\u2726', maghrib:'\u2726', isha:_svgNuit };

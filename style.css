@@ -6100,6 +6100,22 @@ body::before {
 }
 .orb-core-v2:hover .orb-symbol-v2,
 .orb-core-v2.intention-set-v2 .orb-symbol-v2 { color: hsl(38,55%,11%); }
+.orb-wrap-v2.sphere-nuit {
+  position: relative;
+}
+.orb-wrap-v2.sphere-nuit::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 28%, rgba(201,168,76,0.25), #081428 48%, #020608);
+  z-index: 2;
+  pointer-events: none;
+  transition: opacity 2s ease;
+}
+.orb-wrap-v2.sphere-nuit .orb-symbol-v2 {
+  color: #c8d0e0;
+}
 
 .orb-cta-v2 {
   --orb-season: 246,218,138;
