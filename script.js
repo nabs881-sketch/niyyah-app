@@ -19024,13 +19024,11 @@ function closeVueRituel() {
   _restoreScroll();
   a11yOnOverlayClose();
   try { if (typeof updateSanctuaireMoment === 'function') updateSanctuaireMoment(); } catch(e) {}
-  console.log('[FJ]', 'allFjDone=', typeof getFilJourItems === 'function' ? getFilJourItems().filter(function(i){return i.type!=='defi'&&i.id.indexOf('defi')<0;}).every(function(i){var s=safeParseJSON('spiritual_v2',{});return !!s[i.id]||s[i.id]===true;}) : 'N/A');
 }
 window.closeVueRituel = closeVueRituel;
 function _knowledgeReturn(id) {
   if (window._knowledgeFromFil) {
     window._knowledgeFromFil = false;
-    console.log('[FIL][KN-RETURN] id=', id, '_filItemToggled=', typeof _filItemToggled);
     if (id && typeof _filItemToggled === 'function') _filItemToggled(id);
     else openVueAuFilDuJour();
     return;
@@ -19406,12 +19404,12 @@ function openVueAuFilDuJour() {
       : it.id === 'ghidaa_jour' ? _filFlag + 'openVueGhidaaJour();'
       : it.id === 'tibb_jour' ? _filFlag + 'openVueTibbJour();'
       : it.coranPicker ? '_openCoranInlineFil(event);'
-      : 'console.log(\'[FIL][CLICK]\',\'' + it.id + '\');toggleItem(\'' + it.id + '\',event); _filItemToggled(\'' + it.id + '\');';
+      : 'toggleItem(\'' + it.id + '\',event); _filItemToggled(\'' + it.id + '\');';
     var _readBtn = _isKnowledgeFil ? '<button style="background:none;border:none;cursor:pointer;flex-shrink:0;align-self:center;padding:8px 4px;margin:0;position:relative;z-index:10;isolation:isolate;" onclick="event.stopPropagation();' + _click + '"><svg width="14" height="22" viewBox="0 0 14 22" style="pointer-events:none;" aria-hidden="true"><path d="M3 4 L10 11 L3 18" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>' : '';
     var _filKnBg = _isKnowledgeFil ? ' style="background:rgba(200,168,75,0.08);border-color:rgba(200,168,75,0.2);"' : '';
     var _isWirdOrCounter = it.type === 'wird' || it.type === 'counter';
-    var _checkClick = it.coranPicker ? ' onclick="event.stopPropagation();console.log(\'[FIL][CHECK-CORAN]\',\'' + it.id + '\');toggleItem(\'' + it.id + '\',event);_filItemToggled(\'' + it.id + '\');"'
-      : _isKnowledgeFil ? ' onclick="event.stopPropagation();console.log(\'[FIL][CHECK-KN]\',\'' + it.id + '\');toggleItem(\'' + it.id + '\',event);_filItemToggled(\'' + it.id + '\');"'
+    var _checkClick = it.coranPicker ? ' onclick="event.stopPropagation();toggleItem(\'' + it.id + '\',event);_filItemToggled(\'' + it.id + '\');"'
+      : _isKnowledgeFil ? ' onclick="event.stopPropagation();toggleItem(\'' + it.id + '\',event);_filItemToggled(\'' + it.id + '\');"'
       : _isWirdOrCounter ? ' onclick="event.stopPropagation();_forceFilCheck(\'' + it.id + '\',event);"'
       : '';
     var _lisanInfo = it.id === 'lisan' ? '<button style="background:none;border:none;cursor:pointer;padding:2px 4px;margin:0;flex-shrink:0;" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openLisanMethode()" title="Méthode"><span style="font-size:14px;color:#C8A84A;opacity:0.6;">ⓘ</span></button>' : '';
@@ -19495,21 +19493,16 @@ function _filItemToggled(id) {
   var _st = safeParseJSON('spiritual_v2', {});
   if (!_st[id]) return;
   var el = document.getElementById('rituel-item-' + id);
-  console.log('[FIL] _filItemToggled', id, 'el=', el ? el.className : 'NOT FOUND');
   if (el) {
     var _body = el.closest('.fil-acc-body');
-    console.log('[FIL] _body=', _body ? _body.className : 'NULL (uncategorized)');
     el.remove();
     if (_body) {
       var _remaining = _body.querySelectorAll('.rituel-item');
-      console.log('[FIL] remaining after remove=', _remaining.length);
       if (_remaining.length === 0) {
         var _pe = _body.parentElement;
-        console.log('[FIL] parentElement=', _pe ? _pe.tagName + ' class=' + _pe.className : 'NULL');
         var _acc = _pe && _pe.classList.contains('fil-acc')
           ? _pe
           : _body.closest('.fil-acc');
-        console.log('[FIL] _acc=', _acc ? _acc.tagName + ' class=' + _acc.className + ' data-cat=' + _acc.dataset.cat : 'NULL — BLOC NON TROUVÉ');
         if (_acc) {
           _acc.style.transition = 'opacity 0.35s ease';
           _acc.style.opacity = '0';
