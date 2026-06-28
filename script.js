@@ -19316,6 +19316,7 @@ function _rituelItemToggled(prayer, id) {
   } else {
     openVueRituel(prayer);
   }
+  try { if (typeof updateSanctuaireMoment === 'function') updateSanctuaireMoment(); } catch(e) {}
 }
 window._rituelItemToggled = _rituelItemToggled;
 
