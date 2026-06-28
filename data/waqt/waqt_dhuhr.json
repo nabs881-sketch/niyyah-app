@@ -3669,6 +3669,17 @@
         "verif_imam": false,
         "texte": "La tempête dura trois jours.\n\nLes marins ne voyaient plus la côte. Plus les autres bateaux. Plus le ciel.\n\nLe capitaine ne cria pas. Il attendit.\n\nLa quatrième nuit, entre deux nuages, une lumière apparut. Petite, lointaine, immobile. L'Étoile Polaire.\n\nIl corrigea le cap. Deux degrés à gauche.\n\nAu matin, ils apercevaient le port.\n\nUn des marins lui demanda : comment tu savais qu'elle serait là ?\n\nIl répondit : elle est toujours là. C'est nous qui ne la voyions plus.\n\n« C'est par le rappel d'Allah que les cœurs trouvent la paix. » (Coran 13:28)\n\nQuand tout est obscur — le travail, la famille, la santé, toi-même — ce n'est pas Allah qui s'est éloigné. C'est le bruit qui couvre Sa lumière.\n\nCet après-midi, deux rakats. Pas pour obtenir quelque chose. Pour retrouver le cap.",
         "morale": "L'étoile ne bouge pas. C'est la tempête qui nous fait croire qu'elle a disparu."
+      },
+      {
+        "id": "DHUHR-CARREFOUR-046",
+        "titre": "Le pêcheur et le banquier",
+        "type_narratif": "RECIT_DIALOGUE",
+        "module_cible": "niyyah",
+        "verbe_action": "PARLE",
+        "source": "Adaptation de la parabole du pêcheur mexicain — création littéraire pour Niyyah. Références coraniques : Coran 75:36, 102:1-2.",
+        "verif_imam": false,
+        "texte": "Un banquier américain croisait sur un port mexicain un pêcheur qui remontait sa barque.\n\nDans le filet : quelques poissons. Pas beaucoup. Assez.\n\n— C'est tout ? dit le banquier.\n\n— C'est assez, dit le pêcheur.\n\nLe banquier fut troublé. Il s'assit à côté de lui.\n\n— Écoute. Si tu sortais deux fois par jour, tu aurais deux fois plus de poissons. En un an, tu pourrais t'acheter un deuxième bateau. En cinq ans, une flotte. Tu vendrais aux supermarchés, tu ouvrirais des bureaux, tu deviendrais riche.\n\nLe pêcheur réfléchit un moment.\n\n— Et après ?\n\n— Après ? Tu pourrais enfin te reposer. Te lever tard. Pêcher un peu pour le plaisir. Profiter de ta famille. Passer du temps au soleil.\n\nLe pêcheur regarda le banquier calmement.\n\n— C'est exactement ce que je fais ce matin.\n\nIl y a dans le Coran une question qui revient souvent, sous différentes formes : « Quel est le but de votre course ? » (cf. Coran 75:36, 102:1-2)\n\nNous courons. Nous accumulons. Nous remettons à plus tard ce que nous avons déjà maintenant.\n\nCe Dhuhr, pose-toi la question que le banquier n'a pas su poser : est-ce que je cours vers quelque chose — ou en m'éloignant de quelque chose que j'ai déjà ?",
+        "morale": "Parfois ce qu'on cherche à atteindre, on l'a déjà. On ne le voit plus parce qu'on court trop vite."
       }
     ],
     "intention": [
