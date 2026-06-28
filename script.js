@@ -15988,6 +15988,7 @@ function updateSanctuaireMoment() {
   var blockTotal = blockItems.length;
   var blockDone = blockItems.filter(_isDone).length;
   var blockRemaining = blockTotal - blockDone;
+  document.title = 'R:' + blockRemaining + '/' + blockTotal;
   if (blockTotal === 0) { _hideBlock(); return; }
   var _bissDone = safeGetItem('bismillah_done_' + blockId + '_' + TODAY);
   var jourItems = _allUnlocked.filter(function(item) { return item.block === 'jour'; });
