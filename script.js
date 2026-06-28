@@ -16266,6 +16266,17 @@ function v2UpdateOrbState() {
     if (orb) orb.classList.remove('intention-set-v2');
     if (cta) { cta.textContent = 'D\u00e9finir mon intention'; cta.style.display = ''; }
   }
+  // Désactiver le CTA en mode nuit
+  if (cta) {
+    var _blockIdNow = (typeof getCurrentPrayerBlock === 'function') ? getCurrentPrayerBlock().id : '';
+    if (_blockIdNow === 'nuit') {
+      cta.style.pointerEvents = 'none';
+      cta.style.opacity = '0.3';
+    } else {
+      cta.style.pointerEvents = '';
+      cta.style.opacity = '';
+    }
+  }
 }
 
 function v2DismissTawba(btn) {
