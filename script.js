@@ -19252,6 +19252,7 @@ function openVueRituel(prayer) {
   };
   var _isItemDone = function(it) {
     if (it.type === 'wird') { try { var sess = WIRD_DATA[it.session]; return !!(sess && sess.items.every(function(wi) { return !!wirdState[wi.id]; })); } catch(e) { return false; } }
+    if (it.type === 'counter' || it.target) { return state[it.id] === true || (state[it.id] || 0) >= (it.target || 1); }
     return !!state[it.id];
   };
   var _vrTotal = normalItems.length;
