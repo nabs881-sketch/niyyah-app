@@ -4269,10 +4269,10 @@ function renderWird() {
   if (_wirdDupChanged && typeof saveWirdState === 'function') saveWirdState();
   _sessions.forEach(session => {
     const s = WIRD_DATA[session];
-    const done = s.items.filter(i => wirdState[i.id]).length;
+    const done = s.items.filter(i => wirdState[i.id] || (i.target && (state[i.id] || 0) >= i.target)).length;
     const pct = Math.round(done / s.items.length * 100);
     var _wTitle = session === 'matin' ? t('wird_matin') : t('wird_soir');
-    html += `<div class="wird-session"><div class="section-header" style="padding:16px 4px 8px;"><div class="section-arabic" style="font-size:18px;">${_wirdArabicSession[session]}</div><div class="section-name">${_wTitle} · ${done}/${s.items.length}</div><div class="section-line"></div></div><div class="wird-session-bar"><div class="wird-session-bar-fill" style="width:${pct}%"></div></div>`;
+    html += `<div class="wird-session" id="wird-sess-${session}"><div class="section-header" style="padding:16px 4px 8px;"><div class="section-arabic" style="font-size:18px;">${_wirdArabicSession[session]}</div><div class="section-name" id="wird-prog-text-${session}">${_wTitle} · ${done}/${s.items.length}</div><div class="section-line"></div></div><div class="wird-session-bar"><div class="wird-session-bar-fill" id="wird-prog-bar-${session}" style="width:${pct}%"></div></div>`;
     s.items.forEach(item => {
       const checked = !!wirdState[item.id];
       const dupNote = (_wirdDup[item.id] && _spState[_wirdDup[item.id]]) ? '<div class="wird-dup-note">\u2713 D\u00e9j\u00e0 fait apr\u00e8s ta pri\u00e8re \u00b7 une seule fois suffit</div>' : '';
@@ -4286,7 +4286,8 @@ function renderWird() {
       const infoBtn = `<button class="btn-wird-info" aria-label="Détails" onclick="event.stopPropagation();openInfoSheet('','','','',event)" data-label="${labelEsc}" data-arabic="${arabEsc}" data-phonetic="${phonEsc}" data-translation="${transEsc}" data-source="${srcEsc}" style="width:32px;height:32px;border-radius:50%;border:1.5px solid #C8A84A;background:rgba(200,168,75,0.1);display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;font-family:'Georgia',serif;font-size:15px;color:#C8A84A;font-weight:600;font-style:italic;"><i style="pointer-events:none">i</i></button>`;
       if (item.target) {
         const _cnt = state[item.id] || 0;
-        const _done = _cnt >= item.target;
+        const _done = _cnt >= item.target || state[item.id] === true;
+        if (_done) return; // item accompli : ne pas rendre, il disparaît de la liste
         const _lEsc = tI(item,'label').replace(/'/g,"\\'");
         const _aEsc = (item.arabic||'').replace(/'/g,"\\'");
         const _progress = `<div style="font-size:13px;color:rgba(200,168,74,0.6);margin-top:2px;" id="cnt-num-${item.id}">${_cnt} / ${item.target}</div>`;
@@ -4294,9 +4295,9 @@ function renderWird() {
         const _trEsc = (item.translation||'').replace(/'/g,"\\'");
         const _srEsc = (item.source||'').replace(/'/g,"\\'");
         const _fsBtn = `<button class="btn-tasbih-fs" aria-label="Plein écran" onclick="event.stopPropagation();openTasbih('${item.id}',${item.target},'${_lEsc}','${_aEsc}','${_phEsc}','${_trEsc}','${_srEsc}')" title="Ouvrir compteur"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C8A84A" stroke-width="1.8" stroke-linecap="round" style="pointer-events:none"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></button>`;
-        const _accompliBtn = _done ? '' : `<button onclick="event.stopPropagation();state['${item.id}']=${item.target};saveState();renderWird();" style="font-size:12px;padding:4px 10px;border:1px solid rgba(200,168,75,0.5);border-radius:8px;background:rgba(200,168,75,0.1);color:#C8A84A;cursor:pointer;font-family:'Georgia',serif;white-space:nowrap;">Accompli ✓</button>`;
-        const _checkWirdOnclick = `event.stopImmediatePropagation();event.preventDefault();var _el=this.closest('.wird-item');if(_el){_el.classList.add('checked','celebrate');setTimeout(function(){_el.classList.remove('celebrate');},400);}state['${item.id}']=${item.target};saveState();setTimeout(function(){renderWird();},350);`;
-        html += `<div class="wird-item${_done?' checked':''}" id="item-${item.id}" onclick="event.stopPropagation();openTasbih('${item.id}',${item.target},'${_lEsc}','${_aEsc}','${_phEsc}','${_trEsc}','${_srEsc}')"><div class="wird-check" onclick="${_checkWirdOnclick}"><svg class="wird-check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="wird-body"><div class="wird-label">${tI(item,"label")}</div><div class="wird-sub">${tI(item,"sub")}</div><div class="wird-arabic">${item.arabic}</div>${_progress}</div><div class="wird-actions">${_accompliBtn}${_fsBtn}</div></div>`;
+        const _accompliBtn = `<button onclick="event.stopPropagation();var _el=this.closest('.wird-item');state['${item.id}']=${item.target};saveState();if(_el){_el.style.transition='opacity .2s';_el.style.opacity='0';setTimeout(function(){renderWird();},220);}else{renderWird();}" style="font-size:12px;padding:4px 10px;border:1px solid rgba(200,168,75,0.5);border-radius:8px;background:rgba(200,168,75,0.1);color:#C8A84A;cursor:pointer;font-family:'Georgia',serif;white-space:nowrap;">Accompli ✓</button>`;
+        const _checkWirdOnclick = `event.stopImmediatePropagation();event.preventDefault();var _el=this.closest('.wird-item');state['${item.id}']=${item.target};saveState();if(_el){_el.classList.add('checked','celebrate');setTimeout(function(){_el.style.transition='opacity .25s';_el.style.opacity='0';setTimeout(function(){renderWird();},260);},380);}`;
+        html += `<div class="wird-item" id="item-${item.id}" onclick="event.stopPropagation();openTasbih('${item.id}',${item.target},'${_lEsc}','${_aEsc}','${_phEsc}','${_trEsc}','${_srEsc}')"><div class="wird-check" onclick="${_checkWirdOnclick}"><svg class="wird-check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="wird-body"><div class="wird-label">${tI(item,"label")}</div><div class="wird-sub">${tI(item,"sub")}</div><div class="wird-arabic">${item.arabic}</div>${_progress}</div><div class="wird-actions">${_accompliBtn}${_fsBtn}</div></div>`;
       } else {
         html += `<div class="wird-item${checked?' checked':''}" onclick="toggleWirdItem('${item.id}',event)"><div class="wird-check"><svg class="wird-check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="wird-body"><div class="wird-label">${tI(item,"label")}</div><div class="wird-sub">${tI(item,"sub")}</div><div class="wird-arabic">${item.arabic}</div>${dupNote}</div><div class="wird-actions">${audioBtn}${infoBtn}</div></div>`;
       }
