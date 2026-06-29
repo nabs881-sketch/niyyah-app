@@ -2889,7 +2889,7 @@ function wirdGoBack() {
 window.wirdGoBack = wirdGoBack;
 function renderWirdSmartCard(item, delay, origin, currentBlock) {
   const session = WIRD_DATA[item.session];
-  const done  = session.items.filter(i => wirdState[i.id]).length;
+  const done  = session.items.filter(i => !!wirdState[i.id] || state[i.id] === true || (i.target ? (state[i.id] || 0) >= i.target : false)).length;
   const total = session.items.length;
   const allDone = done === total;
   const pct = Math.round(done / total * 100);
