@@ -4299,7 +4299,9 @@ function renderWird() {
         html += `<div class="wird-item${checked?' checked':''}" onclick="toggleWirdItem('${item.id}',event)"><div class="wird-check"><svg class="wird-check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="wird-body"><div class="wird-label">${tI(item,"label")}</div><div class="wird-sub">${tI(item,"sub")}</div><div class="wird-arabic">${item.arabic}</div>${dupNote}</div><div class="wird-actions">${audioBtn}${infoBtn}</div></div>`;
       }
     });
-    html += `<button class="wird-back-btn" aria-label="Retour" onclick="wirdGoBack()" style="margin:8px auto 0;display:block;">${t('wird_back')}</button></div>`;
+    html += `<button class="wird-back-btn" aria-label="Retour" onclick="wirdGoBack()" style="margin:8px auto 0;display:block;">${t('wird_back')}</button>`
+      + `<button onclick="_forceFilCheck('wird_${session}',null);wirdGoBack();" style="display:block;width:calc(100% - 32px);margin:12px auto 16px;padding:14px 20px;background:linear-gradient(180deg,#C8A84A,#B5934A);border:none;border-radius:12px;color:#2C2E32;font-family:'Georgia',serif;font-size:16px;font-style:italic;cursor:pointer;box-shadow:inset 0 1px 3px rgba(0,0,0,0.15);">Accompli ✓</button>`
+      + `</div>`;
   });
   content.innerHTML = html;
 }
