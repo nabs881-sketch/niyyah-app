@@ -2898,7 +2898,12 @@ function renderWirdSmartCard(item, delay, origin, currentBlock) {
   const frLabel = isMatin ? t('wird_matin') : t('wird_soir');
   var _rattrapage = (currentBlock && item.canonBlock && currentBlock !== item.canonBlock) ? '<div class="wird-smart-rattrapage">(rattrapage)</div>' : '';
   var _blockStr = currentBlock ? "'" + currentBlock + "'" : 'null';
+  var _idEsc = item.id.replace(/'/g, "\\'");
+  var _prayerEsc = (currentBlock || '').replace(/'/g, "\\'");
+  var _checkOnclick = 'event.stopPropagation();_forceFilCheck(\'' + _idEsc + '\',event);' + (_prayerEsc ? '_rituelItemToggled(\'' + _prayerEsc + '\',\'' + _idEsc + '\');' : '');
+  var _checkDiv = '<div class="check" onclick="' + _checkOnclick + '" style="flex-shrink:0;margin-right:12px;align-self:center;"></div>';
   return '<div class="wird-smart-card' + (allDone ? ' done' : '') + '" id="item-' + item.id + '" style="animation-delay:' + delay + 'ms" onclick="window._wirdOrigin=(document.querySelector(\'.v2-tab.active\')||{}).id||\'v2nav-priere\';_wirdReturnTo=' + _blockStr + ';_currentWirdSession=\'' + item.session + '\';var r=document.getElementById(\'vue-rituel\');if(r)r.classList.add(\'hidden\');v2GoTo(\'wird\');setTimeout(function(){if(typeof renderWird===\'function\')renderWird();},60)">'
+    + _checkDiv
     + '<div class="wird-smart-body">'
     + '<div class="wird-smart-arabic">' + arabicLabel + '</div>'
     + '<div class="wird-smart-label">' + frLabel + '</div>'
