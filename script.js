@@ -4330,6 +4330,7 @@ function renderWird() {
     html += `<button class="wird-back-btn" aria-label="Retour" onclick="wirdGoBack()" style="margin:8px auto 0;display:block;">${t('wird_back')}</button></div>`;
   });
   content.innerHTML = html;
+  console.log('[WIRD-HTML]', document.querySelector('.wird-item')?.outerHTML);
 }
 function resetWirdSession(session) {
   WIRD_DATA[session].items.forEach(i => { wirdState[i.id] = false; });
