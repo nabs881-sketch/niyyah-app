@@ -19256,7 +19256,10 @@ function openVueRituel(prayer) {
     return '<div class="' + cls + done + '" id="rituel-item-' + it.id + '" onclick="' + _click + '"' + _lpAttrs + '><div class="check"' + _checkClick + '></div><div style="flex:1"><div class="label">' + (it.label||it.id) + '</div>' + _dhikrCount + sub + ar + '</div>' + audio + _infoBtn + _dhikrBtn + '</div>';
   };
   var _isItemDone = function(it) {
-    if (it.type === 'wird') { try { var sess = WIRD_DATA[it.session]; return !!(sess && sess.items.every(function(wi) { return !!wirdState[wi.id]; })); } catch(e) { return false; } }
+    if (it.type === 'wird') {
+      if (state[it.id] === true) return true;
+      try { var sess = WIRD_DATA[it.session]; return !!(sess && sess.items.every(function(wi) { return !!wirdState[wi.id]; })); } catch(e) { return false; }
+    }
     if (it.type === 'counter' || it.target) { return state[it.id] === true || (state[it.id] || 0) >= (it.target || 1); }
     return !!state[it.id];
   };
