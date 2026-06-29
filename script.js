@@ -19337,7 +19337,7 @@ function _rituelItemToggled(prayer, id) {
     isDone = !!st[id];
   }
   if (isDone) {
-    var el = document.getElementById('rituel-item-' + id);
+    var el = document.getElementById('rituel-item-' + id) || document.getElementById('item-' + id);
     if (el) el.remove();
     var v = document.getElementById('vue-rituel');
     if (v) {
