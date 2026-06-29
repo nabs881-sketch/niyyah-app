@@ -19088,11 +19088,16 @@ function _restoreScroll() {
     if (v && _scrollMemory[v.id] !== undefined) v.scrollTop = _scrollMemory[v.id];
   });
 }
+var _rituelOriginTab = null;
 function closeVueRituel() {
   const v = document.getElementById('vue-rituel');
   if (v) v.classList.add('hidden');
   _restoreScroll();
   a11yOnOverlayClose();
+  var _tabId = _rituelOriginTab || 'v2nav-sanctuaire';
+  _rituelOriginTab = null;
+  var _tabEl = document.getElementById(_tabId);
+  if (_tabEl) _tabEl.click();
   try { if (typeof updateSanctuaireMoment === 'function') updateSanctuaireMoment(); } catch(e) {}
 }
 window.closeVueRituel = closeVueRituel;
@@ -19238,6 +19243,7 @@ function openVueRituel(prayer) {
   const v = document.getElementById('vue-rituel');
   if (!v) return;
   if (v.classList.contains('hidden') && safeGetItem('niyyah_intro_vuedujour') !== '1') return _niyyahIntro('vuedujour', function(){ openVueRituel(prayer); });
+  _rituelOriginTab = (document.querySelector('.v2-tab.active') || {}).id || 'v2nav-sanctuaire';
   v.querySelector('.rituel-titre').textContent = 'APRÈS ' + prayer.toUpperCase();
   const next = { fajr:'Dhuhr', dhuhr:'Asr', asr:'Maghrib', maghrib:'Isha', isha:'Fajr' };
   v.querySelector('.rituel-prochaine').textContent = next[prayer] ? next[prayer].toUpperCase() + ' BIENTÔT' : '';
@@ -19446,6 +19452,7 @@ function openVueAuFilDuJour() {
   const v = document.getElementById('vue-rituel');
   if (!v) return;
   if (v.classList.contains('hidden') && safeGetItem('niyyah_intro_aufildujour') !== '1') return _niyyahIntro('aufildujour', openVueAuFilDuJour);
+  _rituelOriginTab = (document.querySelector('.v2-tab.active') || {}).id || 'v2nav-sanctuaire';
   v.querySelector('.rituel-titre').textContent = 'AU FIL DU JOUR';
   v.querySelector('.rituel-prochaine').textContent = '';
   v.querySelector('.rituel-poetique').textContent = 'Ce qui demeure entre tes pri\u00e8res.';
