@@ -19614,8 +19614,8 @@ function _filItemToggled(id) {
   var _stNow = safeParseJSON('spiritual_v2', {});
   var _done = _allItems.filter(function(it) { return !!_stNow[it.id]; }).length;
   var _total = _allItems.length;
-  var _cnt = document.querySelector('#aufildujour .fil-progress-count');
-  var _fill = document.querySelector('#aufildujour .fil-progress-fill');
+  var _cnt = document.querySelector('#vue-rituel .fil-progress-count');
+  var _fill = document.querySelector('#vue-rituel .fil-progress-fill');
   if (_cnt) _cnt.textContent = _done + ' geste' + (_done > 1 ? 's' : '') + ' pos\u00e9' + (_done > 1 ? 's' : '');
   if (_fill) _fill.style.width = Math.round(_done / _total * 100) + '%';
 }
