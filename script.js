@@ -4263,17 +4263,18 @@ function _wirdCheckAllDone(session) {
   });
   if (_allDone) { setTimeout(function(){ wirdGoBack(); }, 350); }
 }
-function _wirdUpdateProg(sessId, total, title) {
+function _wirdUpdateProg(sessId) {
   var _sessId = typeof sessId === 'string' ? sessId : _currentWirdSession;
-  console.log('[PROG] sessId=', sessId, '_currentWirdSession=', _currentWirdSession, '_sessId=', _sessId);
-  var _sess = document.getElementById('wird-sess-' + _sessId);
-  if (!_sess) return;
-  var _remaining = _sess.querySelectorAll('.wird-item').length;
-  var _done = total - _remaining;
-  var _pct = Math.round(_done / total * 100);
+  var _container = document.getElementById('wird-sess-' + _sessId);
+  if (!_container) return;
+  var _remaining = _container.querySelectorAll('.wird-item').length;
+  var _total = parseInt(_container.dataset.total, 10) || _remaining;
+  var _title = _container.dataset.title || '';
+  var _done = _total - _remaining;
+  var _pct = _total > 0 ? Math.round(_done / _total * 100) : 0;
   var _txt = document.getElementById('wird-prog-text-' + _sessId);
   var _bar = document.getElementById('wird-prog-bar-' + _sessId);
-  if (_txt) _txt.textContent = title + ' \u00b7 ' + _done + '/' + total;
+  if (_txt) _txt.textContent = _title + ' \u00b7 ' + _done + '/' + _total;
   if (_bar) _bar.style.width = _pct + '%';
 }
 function _wirdRefreshCard(session) {
@@ -4310,7 +4311,7 @@ function renderWird() {
     const done = s.items.filter(i => wirdState[i.id] || (i.target && (state[i.id] || 0) >= i.target)).length;
     const pct = Math.round(done / s.items.length * 100);
     var _wTitle = session === 'matin' ? t('wird_matin') : t('wird_soir');
-    html += `<div class="wird-session" id="wird-sess-${session}"><div class="section-header" style="padding:16px 4px 8px;"><div class="section-arabic" style="font-size:18px;">${_wirdArabicSession[session]}</div><div class="section-name" id="wird-prog-text-${session}">${_wTitle} · ${done}/${s.items.length}</div><div class="section-line"></div></div><div class="wird-session-bar"><div class="wird-session-bar-fill" id="wird-prog-bar-${session}" style="width:${pct}%"></div></div>`;
+    html += `<div class="wird-session" id="wird-sess-${session}" data-total="${s.items.length}" data-title="${_wTitle}"><div class="section-header" style="padding:16px 4px 8px;"><div class="section-arabic" style="font-size:18px;">${_wirdArabicSession[session]}</div><div class="section-name" id="wird-prog-text-${session}">${_wTitle} · ${done}/${s.items.length}</div><div class="section-line"></div></div><div class="wird-session-bar"><div class="wird-session-bar-fill" id="wird-prog-bar-${session}" style="width:${pct}%"></div></div>`;
     s.items.forEach(item => {
       const checked = !!wirdState[item.id];
       const dupNote = (_wirdDup[item.id] && _spState[_wirdDup[item.id]]) ? '<div class="wird-dup-note">\u2713 D\u00e9j\u00e0 fait apr\u00e8s ta pri\u00e8re \u00b7 une seule fois suffit</div>' : '';
@@ -4333,9 +4334,9 @@ function renderWird() {
         const _trEsc = (item.translation||'').replace(/'/g,"\\'");
         const _srEsc = (item.source||'').replace(/'/g,"\\'");
         const _fsBtn = `<button class="btn-tasbih-fs" aria-label="Plein écran" onclick="event.stopPropagation();openTasbih('${item.id}',${item.target},'${_lEsc}','${_aEsc}','${_phEsc}','${_trEsc}','${_srEsc}')" title="Ouvrir compteur"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C8A84A" stroke-width="1.8" stroke-linecap="round" style="pointer-events:none"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></button>`;
-        const _accompliBtn = `<button onclick="event.stopPropagation();state['${item.id}']=${item.target};saveState();var _el=event.currentTarget.closest('.wird-item');if(_el){_el.style.transition='opacity .2s';_el.style.opacity='0';setTimeout(function(){_el.remove();_wirdUpdateProg('${session}',${s.items.length},'${_wTitle}');_wirdRefreshCard('${session}');_wirdCheckAllDone('${session}');},220);}else{_wirdRefreshCard('${session}');_wirdCheckAllDone('${session}');}" style="font-size:12px;padding:4px 10px;border:1px solid rgba(200,168,75,0.5);border-radius:8px;background:rgba(200,168,75,0.1);color:#C8A84A;cursor:pointer;font-family:'Georgia',serif;white-space:nowrap;">Accompli ✓</button>`;
+        const _accompliBtn = `<button onclick="event.stopPropagation();state['${item.id}']=${item.target};saveState();var _el=event.currentTarget.closest('.wird-item');if(_el){_el.style.transition='opacity .2s';_el.style.opacity='0';setTimeout(function(){_el.remove();_wirdUpdateProg('${session}');_wirdRefreshCard('${session}');_wirdCheckAllDone('${session}');},220);}else{_wirdRefreshCard('${session}');_wirdCheckAllDone('${session}');}" style="font-size:12px;padding:4px 10px;border:1px solid rgba(200,168,75,0.5);border-radius:8px;background:rgba(200,168,75,0.1);color:#C8A84A;cursor:pointer;font-family:'Georgia',serif;white-space:nowrap;">Accompli ✓</button>`;
         const _checkWirdOnclick = `event.stopImmediatePropagation();event.preventDefault();var _el=this.closest('.wird-item')||(event.target&&event.target.closest('.wird-item'));state['${item.id}']=${item.target};saveState();if(_el){_el.classList.add('checked','celebrate');setTimeout(function(){_el.style.transition='opacity .25s';_el.style.opacity='0';setTimeout(function(){_el.remove();_wirdRefreshCard('${session}');_wirdCheckAllDone('${session}');},260);},380);}`;
-        html += `<div class="wird-item" id="item-${item.id}" onclick="event.stopPropagation();openTasbih('${item.id}',${item.target},'${_lEsc}','${_aEsc}','${_phEsc}','${_trEsc}','${_srEsc}')"><div class="wird-check" onclick="event.stopPropagation();var _el=event.currentTarget.closest('.wird-item');if(_el){_el.style.transition='opacity 0.25s';_el.style.opacity='0';setTimeout(function(){_el.remove();_wirdUpdateProg('${session}',${s.items.length},'${_wTitle}');},260);}"><svg class="wird-check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="wird-body"><div class="wird-label">${tI(item,"label")}</div><div class="wird-sub">${tI(item,"sub")}</div><div class="wird-arabic">${item.arabic}</div>${_progress}</div><div class="wird-actions">${_accompliBtn}${_fsBtn}</div></div>`;
+        html += `<div class="wird-item" id="item-${item.id}" onclick="event.stopPropagation();openTasbih('${item.id}',${item.target},'${_lEsc}','${_aEsc}','${_phEsc}','${_trEsc}','${_srEsc}')"><div class="wird-check" onclick="event.stopPropagation();var _el=event.currentTarget.closest('.wird-item');if(_el){_el.style.transition='opacity 0.25s';_el.style.opacity='0';setTimeout(function(){_el.remove();_wirdUpdateProg('${session}');},260);}"><svg class="wird-check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="wird-body"><div class="wird-label">${tI(item,"label")}</div><div class="wird-sub">${tI(item,"sub")}</div><div class="wird-arabic">${item.arabic}</div>${_progress}</div><div class="wird-actions">${_accompliBtn}${_fsBtn}</div></div>`;
       } else {
         html += `<div class="wird-item${checked?' checked':''}" onclick="toggleWirdItem('${item.id}',event)"><div class="wird-check"><svg class="wird-check-svg" width="11" height="9" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="wird-body"><div class="wird-label">${tI(item,"label")}</div><div class="wird-sub">${tI(item,"sub")}</div><div class="wird-arabic">${item.arabic}</div>${dupNote}</div><div class="wird-actions">${audioBtn}${infoBtn}</div></div>`;
       }
