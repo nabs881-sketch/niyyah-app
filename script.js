@@ -4264,6 +4264,7 @@ function _wirdCheckAllDone(session) {
   if (_allDone) { setTimeout(function(){ wirdGoBack(); }, 350); }
 }
 function _wirdUpdateProg(sessId) {
+  alert('UPDATE ' + sessId);
   var _sessId = typeof sessId === 'string' ? sessId : _currentWirdSession;
   var _container = document.getElementById('wird-sess-' + _sessId);
   if (!_container) return;
@@ -4345,6 +4346,8 @@ function renderWird() {
   });
   content.innerHTML = html;
   console.log('[WIRD-HTML]', document.querySelector('.wird-item')?.outerHTML);
+  var _dbgSess = document.getElementById('wird-sess-matin');
+  if (_dbgSess) console.log('[WIRD-SESS]', _dbgSess.outerHTML.slice(0, _dbgSess.outerHTML.indexOf('>') + 1));
 }
 function resetWirdSession(session) {
   WIRD_DATA[session].items.forEach(i => { wirdState[i.id] = false; });
