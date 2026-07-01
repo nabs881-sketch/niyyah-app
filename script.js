@@ -4264,14 +4264,15 @@ function _wirdCheckAllDone(session) {
   if (_allDone) { setTimeout(function(){ wirdGoBack(); }, 350); }
 }
 function _wirdUpdateProg(sessId, total, title) {
-  console.log('[PROG]', document.getElementById('wird-sess-' + sessId), document.getElementById('wird-prog-text-' + sessId));
-  var _sess = document.getElementById('wird-sess-' + sessId);
+  var _sessId = typeof sessId === 'string' ? sessId : _currentWirdSession;
+  console.log('[PROG] sessId=', sessId, '_currentWirdSession=', _currentWirdSession, '_sessId=', _sessId);
+  var _sess = document.getElementById('wird-sess-' + _sessId);
   if (!_sess) return;
   var _remaining = _sess.querySelectorAll('.wird-item').length;
   var _done = total - _remaining;
   var _pct = Math.round(_done / total * 100);
-  var _txt = document.getElementById('wird-prog-text-' + sessId);
-  var _bar = document.getElementById('wird-prog-bar-' + sessId);
+  var _txt = document.getElementById('wird-prog-text-' + _sessId);
+  var _bar = document.getElementById('wird-prog-bar-' + _sessId);
   if (_txt) _txt.textContent = title + ' \u00b7 ' + _done + '/' + total;
   if (_bar) _bar.style.width = _pct + '%';
 }
