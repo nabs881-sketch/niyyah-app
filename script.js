@@ -4264,6 +4264,7 @@ function _wirdCheckAllDone(session) {
   if (_allDone) { setTimeout(function(){ wirdGoBack(); }, 350); }
 }
 function _wirdUpdateProg(sessId, total, title) {
+  console.log('[PROG]', document.getElementById('wird-sess-' + sessId), document.getElementById('wird-prog-text-' + sessId));
   var _sess = document.getElementById('wird-sess-' + sessId);
   if (!_sess) return;
   var _remaining = _sess.querySelectorAll('.wird-item').length;
