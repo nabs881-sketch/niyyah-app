@@ -9806,3 +9806,128 @@ body.onboarding-active #nav-bar-v2 {
 @keyframes ahBreath{0%,100%{opacity:.55;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.1)}}
 @keyframes ahWord{0%,100%{text-shadow:0 0 18px rgba(212,175,55,.45),0 0 40px rgba(184,134,11,.25);transform:scale(1)}50%{text-shadow:0 0 26px rgba(212,175,55,.6),0 0 60px rgba(184,134,11,.35);transform:scale(1.04)}}
 @keyframes ahPulse{0%,100%{opacity:.32}50%{opacity:.6}}
+
+/* ── Tawhid overlay ── */
+.tawhid-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 3200;
+  background: #0a0a0f;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  overflow-y: auto;
+}
+.tawhid-overlay.tawhid-visible { opacity: 1; }
+
+.tawhid-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 0.5px solid rgba(200,168,74,0.2);
+}
+.tawhid-back {
+  font-family: 'Georgia', serif;
+  font-size: 14px;
+  color: #C8A84A;
+  background: none;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+}
+.tawhid-counter {
+  font-size: 12px;
+  color: rgba(200,168,74,0.6);
+  letter-spacing: 0.08em;
+}
+
+.tawhid-header {
+  text-align: center;
+  padding: 28px 20px 16px;
+  border-bottom: 0.5px solid rgba(200,168,74,0.15);
+}
+.tawhid-arabic {
+  font-family: 'Scheherazade New', serif;
+  font-size: 36px;
+  color: #C8A84A;
+  margin-bottom: 6px;
+  direction: rtl;
+}
+.tawhid-subtitle {
+  font-family: 'Georgia', serif;
+  font-size: 13px;
+  font-style: italic;
+  color: rgba(200,168,74,0.6);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tawhid-body {
+  flex: 1;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.tawhid-pilier {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  padding: 3px 10px;
+  border-radius: 4px;
+  align-self: flex-start;
+}
+.tawhid-pu { background: rgba(83,74,183,0.15); color: #AFA9EC; }
+.tawhid-pr { background: rgba(15,110,86,0.15); color: #5DCAA5; }
+.tawhid-pa { background: rgba(133,79,11,0.15); color: #FAC775; }
+
+.tawhid-titre {
+  font-family: 'Georgia', serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: #f0e6d0;
+  line-height: 1.3;
+}
+.tawhid-corps {
+  font-size: 15px;
+  color: rgba(240,230,208,0.8);
+  line-height: 1.8;
+}
+.tawhid-phrase {
+  border-left: 2px solid #C8A84A;
+  padding-left: 16px;
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  font-size: 17px;
+  color: #C8A84A;
+  line-height: 1.5;
+  margin: 0;
+}
+.tawhid-note {
+  font-size: 11px;
+  color: rgba(200,168,74,0.4);
+  font-style: italic;
+  margin-top: 4px;
+}
+
+.tawhid-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 24px 36px;
+  border-top: 0.5px solid rgba(200,168,74,0.15);
+}
+.tawhid-nav-btn {
+  font-size: 22px;
+  color: #C8A84A;
+  background: none;
+  border: 0.5px solid rgba(200,168,74,0.3);
+  border-radius: 8px;
+  width: 52px;
+  height: 52px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.tawhid-nav-btn:disabled { color: rgba(200,168,74,0.2); border-color: rgba(200,168,74,0.1); cursor: default; }
+.tawhid-nav-btn:not(:disabled):hover { background: rgba(200,168,74,0.1); }

@@ -13038,6 +13038,68 @@ window.openQasr = openQasr;
 window.closeQasr = closeQasr;
 window.renderQasrCard = renderQasrCard;
 
+var _tawhidCapsules = [];
+var _tawhidIndex = 0;
+
+function openTawhid() {
+  if (_tawhidCapsules.length === 0) {
+    fetch('tawhid_capsules.json?v=' + (window.APP_VERSION || '1'))
+      .then(function(r){ return r.json(); })
+      .then(function(data){ _tawhidCapsules = data; _tawhidIndex = 0; _renderTawhidOverlay(); })
+      .catch(function(e){ console.error('[TAWHID]', e); });
+  } else {
+    _tawhidIndex = 0;
+    _renderTawhidOverlay();
+  }
+}
+
+function _renderTawhidOverlay() {
+  var existing = document.getElementById('tawhid-overlay');
+  if (existing) existing.remove();
+  var cap = _tawhidCapsules[_tawhidIndex];
+  var total = _tawhidCapsules.length;
+  var pilierClass = cap.pilier === 'UL\u00dbHIYYA' ? 'tawhid-pu' : (cap.pilier === 'RUB\u00dbBIYYA' ? 'tawhid-pr' : 'tawhid-pa');
+  var noteHTML = cap.note ? '<p class="tawhid-note">' + cap.note + '</p>' : '';
+  var html = '<div id="tawhid-overlay" class="tawhid-overlay">'
+    + '<div class="tawhid-topbar">'
+    + '<button class="tawhid-back" onclick="closeTawhid()">&#8592; Rep\u00e8res</button>'
+    + '<span class="tawhid-counter">' + (_tawhidIndex + 1) + '\u00a0/\u00a0' + total + '</span>'
+    + '</div>'
+    + '<div class="tawhid-header">'
+    + '<p class="tawhid-arabic">\u0644\u064e\u0627 \u0625\u0650\u0644\u064e\u0670\u0647\u064e \u0625\u0650\u0644\u064e\u0651\u0627 \u0671\u0644\u0644\u064e\u0670\u0647\u064f</p>'
+    + '<p class="tawhid-subtitle">Les fondements de la foi</p>'
+    + '</div>'
+    + '<div class="tawhid-body">'
+    + '<span class="tawhid-pilier ' + pilierClass + '">' + cap.pilier + '</span>'
+    + '<h2 class="tawhid-titre">' + cap.titre + '</h2>'
+    + '<p class="tawhid-corps">' + cap.corps + '</p>'
+    + '<blockquote class="tawhid-phrase">' + cap.phrase + '</blockquote>'
+    + noteHTML
+    + '</div>'
+    + '<div class="tawhid-nav">'
+    + '<button class="tawhid-nav-btn" onclick="_tawhidGo(-1)" ' + (_tawhidIndex === 0 ? 'disabled' : '') + '>&#8592;</button>'
+    + '<button class="tawhid-nav-btn" onclick="_tawhidGo(1)" ' + (_tawhidIndex === total - 1 ? 'disabled' : '') + '>&#8594;</button>'
+    + '</div>'
+    + '</div>';
+  document.body.insertAdjacentHTML('beforeend', html);
+  document.getElementById('tawhid-overlay').classList.add('tawhid-visible');
+}
+
+function _tawhidGo(dir) {
+  var next = _tawhidIndex + dir;
+  if (next < 0 || next >= _tawhidCapsules.length) return;
+  _tawhidIndex = next;
+  _renderTawhidOverlay();
+}
+
+function closeTawhid() {
+  var el = document.getElementById('tawhid-overlay');
+  if (el) el.remove();
+}
+window.openTawhid = openTawhid;
+window.closeTawhid = closeTawhid;
+window._tawhidGo = _tawhidGo;
+
 function closeRepere() { var o = document.getElementById('repere-overlay'); if (o) o.remove(); }
 function openRepere() {
   closeRepere();
@@ -13050,6 +13112,13 @@ function openRepere() {
     + '<div style="text-align:center;font-family:\'Georgia\',serif;font-weight:300;font-size:32px;letter-spacing:.07em;color:#E8CE8A;margin-top:14px;line-height:1;">Rep\u00e8res</div>'
     + '<div style="text-align:center;font-family:\'Georgia\',serif;font-style:italic;font-size:16px;color:rgba(232,217,188,0.4);margin-top:6px;margin-bottom:24px;">Les outils qui orientent ton adoration</div>'
     + '<div style="display:flex;align-items:center;justify-content:center;gap:10px;margin:18px 0 2px;"><div style="width:52px;height:1px;background:linear-gradient(90deg,transparent,rgba(200,168,74,0.42));"></div><div style="width:6px;height:6px;border:1px solid rgba(200,168,74,0.55);transform:rotate(45deg);"></div><div style="width:52px;height:1px;background:linear-gradient(90deg,rgba(200,168,74,0.42),transparent);"></div></div>'
+    + eb('Fondements')
+    + '<div onclick="openTawhid()" style="position:relative;background:linear-gradient(165deg,#1a130b,#0d0a06);border:1px solid rgba(200,168,74,0.22);border-radius:16px;padding:15px 16px;margin-bottom:8px;display:flex;align-items:center;gap:14px;cursor:pointer;box-shadow:inset 0 1px 0 rgba(232,206,138,0.08),0 4px 16px rgba(0,0,0,0.35);">'
+    + '<div style="flex-shrink:0;width:42px;height:42px;border-radius:50%;border:1px solid rgba(232,206,138,0.3);background:radial-gradient(circle at 50% 35%,rgba(232,206,138,0.16),rgba(232,206,138,0.02) 70%);display:flex;align-items:center;justify-content:center;font-size:22px;">\uFDFD</div>'
+    + '<div style="flex:1;min-width:0;"><div style="font-family:\'Georgia\',serif;font-size:18px;letter-spacing:0.02em;color:#E8CE8A;line-height:1.2;">L\u00e2 il\u00e2ha ill\u00e2 All\u00e2h</div>'
+    + '<div style="font-size:14px;color:rgba(200,168,74,0.55);margin-top:3px;font-style:italic;font-family:\'Georgia\',serif;">Les trois piliers du Tawhid \u2014 10 capsules</div></div>'
+    + '<div style="color:rgba(200,168,74,0.6);font-size:18px;">&#8594;</div>'
+    + '</div>'
     + eb('S\u2019orienter')
     + renderIstikharaCard()
     + eb('Pri\u00e8re & Purification')
