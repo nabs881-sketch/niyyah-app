@@ -19593,7 +19593,14 @@ function _filItemToggled(id) {
   var el = document.getElementById('rituel-item-' + id);
   if (el) {
     var _body = el.closest('.fil-acc-body');
+    var _acc = el.closest('.fil-acc');
+    var _cntEl = _acc && _acc.querySelector('.fil-acc-count');
     el.remove();
+    if (_cntEl) {
+      var _parts = _cntEl.textContent.split('/');
+      var _newDone = (parseInt(_parts[0], 10) || 0) + 1;
+      _cntEl.textContent = _newDone + '/' + (_parts[1] || '?');
+    }
     if (_body) {
       var _remaining = _body.querySelectorAll('.rituel-item');
       if (_remaining.length === 0) {
