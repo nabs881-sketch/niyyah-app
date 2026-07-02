@@ -19388,8 +19388,9 @@ function _rituelItemToggled(prayer, id) {
     var st = safeParseJSON('spiritual_v2', {});
     isDone = !!st[id];
   }
+  var el = document.getElementById('rituel-item-' + id) || document.getElementById('item-' + id);
+  console.log('[RITUEL DEBUG] prayer=', prayer, 'id=', id, 'isDone=', isDone, 'el=', el);
   if (isDone) {
-    var el = document.getElementById('rituel-item-' + id) || document.getElementById('item-' + id);
     if (el) el.remove();
     var v = document.getElementById('vue-rituel');
     if (v) {
