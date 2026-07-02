@@ -19119,7 +19119,7 @@ function _knowledgeReturn(id) {
   if (window._knowledgeFromFil) {
     window._knowledgeFromFil = false;
     if (id && typeof _filItemToggled === 'function') _filItemToggled(id);
-    else openVueAuFilDuJour();
+    if (typeof openVueAuFilDuJour === 'function') openVueAuFilDuJour();
     return;
   }
   _restoreScroll();
