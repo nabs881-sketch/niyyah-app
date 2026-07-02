@@ -9905,12 +9905,8 @@ body.onboarding-active #nav-bar-v2 {
   line-height: 1.5;
   margin: 0;
 }
-.tawhid-note {
-  font-size: 11px;
-  color: rgba(200,168,74,0.4);
-  font-style: italic;
-  margin-top: 4px;
-}
+.tawhid-ref { font-size: 12px; color: rgba(200,168,74,0.5); font-style: italic; }
+.tawhid-note { font-size: 11px; color: rgba(200,168,74,0.3); font-style: italic; }
 
 .tawhid-nav {
   display: flex;

@@ -13059,6 +13059,7 @@ function _renderTawhidOverlay() {
   var cap = _tawhidCapsules[_tawhidIndex];
   var total = _tawhidCapsules.length;
   var pilierClass = cap.pilier === 'UL\u00dbHIYYA' ? 'tawhid-pu' : (cap.pilier === 'RUB\u00dbBIYYA' ? 'tawhid-pr' : 'tawhid-pa');
+  var refHTML = cap.ref ? '<p class="tawhid-ref">' + cap.ref + '</p>' : '';
   var noteHTML = cap.note ? '<p class="tawhid-note">' + cap.note + '</p>' : '';
   var html = '<div id="tawhid-overlay" class="tawhid-overlay">'
     + '<div class="tawhid-topbar">'
@@ -13074,11 +13075,12 @@ function _renderTawhidOverlay() {
     + '<h2 class="tawhid-titre">' + cap.titre + '</h2>'
     + '<p class="tawhid-corps">' + cap.corps + '</p>'
     + '<blockquote class="tawhid-phrase">' + cap.phrase + '</blockquote>'
+    + refHTML
     + noteHTML
     + '</div>'
     + '<div class="tawhid-nav">'
-    + '<button class="tawhid-nav-btn" onclick="_tawhidGo(-1)" ' + (_tawhidIndex === 0 ? 'disabled' : '') + '>&#8592;</button>'
-    + '<button class="tawhid-nav-btn" onclick="_tawhidGo(1)" ' + (_tawhidIndex === total - 1 ? 'disabled' : '') + '>&#8594;</button>'
+    + '<button class="tawhid-nav-btn" onclick="_tawhidGo(-1)"' + (_tawhidIndex === 0 ? ' disabled' : '') + '>&#8592;</button>'
+    + '<button class="tawhid-nav-btn" onclick="_tawhidGo(1)"' + (_tawhidIndex === total - 1 ? ' disabled' : '') + '>&#8594;</button>'
     + '</div>'
     + '</div>';
   document.body.insertAdjacentHTML('beforeend', html);
@@ -13116,7 +13118,7 @@ function openRepere() {
     + '<div onclick="openTawhid()" style="position:relative;background:linear-gradient(165deg,#1a130b,#0d0a06);border:1px solid rgba(200,168,74,0.22);border-radius:16px;padding:15px 16px;margin-bottom:8px;display:flex;align-items:center;gap:14px;cursor:pointer;box-shadow:inset 0 1px 0 rgba(232,206,138,0.08),0 4px 16px rgba(0,0,0,0.35);">'
     + '<div style="flex-shrink:0;width:42px;height:42px;border-radius:50%;border:1px solid rgba(232,206,138,0.3);background:radial-gradient(circle at 50% 35%,rgba(232,206,138,0.16),rgba(232,206,138,0.02) 70%);display:flex;align-items:center;justify-content:center;font-size:22px;">\uFDFD</div>'
     + '<div style="flex:1;min-width:0;"><div style="font-family:\'Georgia\',serif;font-size:18px;letter-spacing:0.02em;color:#E8CE8A;line-height:1.2;">L\u00e2 il\u00e2ha ill\u00e2 All\u00e2h</div>'
-    + '<div style="font-size:14px;color:rgba(200,168,74,0.55);margin-top:3px;font-style:italic;font-family:\'Georgia\',serif;">Les trois piliers du Tawhid \u2014 10 capsules</div></div>'
+    + '<div style="font-size:14px;color:rgba(200,168,74,0.55);margin-top:3px;font-style:italic;font-family:\'Georgia\',serif;">Les trois piliers du Tawhid \u2014 30 capsules</div></div>'
     + '<div style="color:rgba(200,168,74,0.6);font-size:18px;">&#8594;</div>'
     + '</div>'
     + eb('S\u2019orienter')

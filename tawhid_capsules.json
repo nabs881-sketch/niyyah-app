@@ -4,8 +4,9 @@
     "num": 1,
     "pilier": "ULÛHIYYA",
     "titre": "Le seul à qui ça sert vraiment de demander",
-    "corps": "Tu demandes à ton chef, à ta famille, à tes amis. Ils peuvent dire non. Ils peuvent ne pas pouvoir. Allah, Lui, n'a aucune limite et aucune raison de refuser ce qui est bon pour toi. « Lâ ilâha illâ Allâh » — il n'y a pas d'autre porte qui s'ouvre vraiment.",
+    "corps": "Tu demandes à ton chef, à ta famille, à tes amis. Ils peuvent dire non. Ils peuvent ne pas pouvoir. Allah, Lui, n'a aucune limite et aucune raison de refuser ce qui est bon pour toi. « Lâ ilâha illâ Allâh » — il n'y a pas d'autre porte qui s'ouvre vraiment.",
     "phrase": "Demande à Allah. Même ce que tu juges trop petit pour Lui.",
+    "ref": "",
     "note": ""
   },
   {
@@ -15,6 +16,7 @@
     "titre": "Rien n'arrive par hasard",
     "corps": "Le retard de ton bus. La pluie ce matin. La rencontre imprévue. Le Tawhid dit que tout ça a une source unique. Pas de coïncidence dans un univers qui a un Seigneur. Ce qui t'arrive n'est pas aléatoire — il est géré.",
     "phrase": "Ce que tu appelles hasard, c'est un décret que tu n'as pas encore compris.",
+    "ref": "",
     "note": ""
   },
   {
@@ -22,17 +24,19 @@
     "num": 3,
     "pilier": "ASMÂ WA SIFÂT",
     "titre": "Al-Wadûd — Il t'aime sans que tu l'aies mérité",
-    "corps": "Al-Wadûd : celui dont l'amour ne dépend pas de tes performances. Tu n'as pas à être parfait pour que cet amour existe. Il précède ta naissance et survive à tes erreurs. C'est un Nom qu'Allah Se donne Lui-même dans le Coran.",
+    "corps": "Al-Wadûd : celui dont l'amour ne dépend pas de tes performances. Tu n'as pas à être parfait pour que cet amour existe. Il précède ta naissance et survive à tes erreurs. C'est un Nom qu'Allah Se donne Lui-même dans le Coran.",
     "phrase": "Il t'a aimé avant que tu saches qu'Il existait.",
-    "note": "Réf. : Sourate Hûd 11:90, Sourate al-Burûj 85:14 — à confirmer par l'imam"
+    "ref": "Sourate Hûd 11:90, Sourate al-Burûj 85:14",
+    "note": "À confirmer par l'imam"
   },
   {
     "id": "tawhid_04",
     "num": 4,
     "pilier": "ULÛHIYYA",
-    "titre": "Prier Allah et avoir peur du patron — c'est quoi la différence ?",
-    "corps": "Tu peux croire qu'Allah existe et quand même avoir plus peur de ton patron que de Lui. Le Tawhid de l'adoration dit : la crainte, l'espoir, l'amour — tout ça ne devrait peser vraiment que vers un seul. Pas qu'envers les autres ça n'existe pas — mais que ça ne rivalise pas.",
-    "phrase": "Tawhid : Allah premier dans ce qui compte vraiment.",
+    "titre": "Prier Allah et avoir peur du patron — c'est quoi la différence ?",
+    "corps": "Tu peux croire qu'Allah existe et quand même avoir plus peur de ton patron que de Lui. Le Tawhid de l'adoration dit : la crainte, l'espoir, l'amour — tout ça ne devrait peser vraiment que vers un seul. Pas qu'envers les autres ça n'existe pas — mais que ça ne rivalise pas.",
+    "phrase": "Tawhid : Allah premier dans ce qui compte vraiment.",
+    "ref": "",
     "note": ""
   },
   {
@@ -42,6 +46,7 @@
     "titre": "Ton corps tourne sans toi",
     "corps": "En ce moment, ton cœur bat. Tes poumons respirent. Tes cellules se renouvellent. Tu n'as rien demandé, tu ne gères rien. Quelqu'un maintient ça en marche. Le Tawhid commence là — dans ce que tu n'as pas fait mais qui fonctionne.",
     "phrase": "La plus grande preuve qu'Il existe, c'est que tu es en vie sans l'avoir décidé.",
+    "ref": "",
     "note": ""
   },
   {
@@ -51,6 +56,7 @@
     "titre": "As-Samî' — Il entend ce que tu n'oses pas dire à voix haute",
     "corps": "As-Samî', Celui qui entend tout. Pas besoin de formuler parfaitement ta du'a. Pas besoin de langue arabe. Pas besoin que ce soit beau. Ce qui traverse ton cœur sans même devenir des mots — Il l'entend.",
     "phrase": "Tu n'as pas besoin de mots. Il entend ce que tu ressens.",
+    "ref": "",
     "note": ""
   },
   {
@@ -58,8 +64,9 @@
     "num": 7,
     "pilier": "ULÛHIYYA",
     "titre": "Le stress, c'est souvent du shirk discret",
-    "corps": "Quand tu te bats seul contre tout — argent, avenir, santé — comme si tout dépendait de toi, tu agis comme si tu étais le seul à tenir les rênes. Le Tawhid dit : tu fais ta part, mais la décision finale appartient à Un seul. Lâcher ça, c'est ne pas associer à Allah ce qui n'appartient qu'à Lui.",
+    "corps": "Quand tu te bats seul contre tout — argent, avenir, santé — comme si tout dépendait de toi, tu agis comme si tu étais le seul à tenir les rênes. Le Tawhid dit : tu fais ta part, mais la décision finale appartient à Un seul. Lâcher ça, c'est ne pas associer à Allah ce qui n'appartient qu'à Lui.",
     "phrase": "Fais ce que tu peux. Le reste n'est pas de ta juridiction.",
+    "ref": "",
     "note": "Notion de tawakkul — cadrage à confirmer par l'imam"
   },
   {
@@ -69,6 +76,7 @@
     "titre": "Il te sustente même quand tu L'oublies",
     "corps": "Le rizq — ce qu'Il te donne pour vivre — ne s'arrête pas quand tu ne pries pas. Le soleil se lève pour tout le monde. La pluie tombe. Ce n'est pas de la générosité conditionnelle. C'est le Seigneur qui sustente Sa création indépendamment de sa reconnaissance.",
     "phrase": "Il donne sans attendre de remerciement. Mais remercier change quelque chose en toi.",
+    "ref": "",
     "note": ""
   },
   {
@@ -76,17 +84,219 @@
     "num": 9,
     "pilier": "ASMÂ WA SIFÂT",
     "titre": "Al-Ghafûr — Il efface, pas juste Il pardonne",
-    "corps": "Ghafara en arabe : couvrir, voiler, effacer. Pas juste « ok je te pardonne mais je me souviens ». Al-Ghafûr voile la faute pour que même les anges ne la voient plus. Ce n'est pas de la tolérance — c'est de l'effacement complet.",
+    "corps": "Ghafara en arabe : couvrir, voiler, effacer. Pas juste « ok je te pardonne mais je me souviens ». Al-Ghafûr voile la faute pour que même les anges ne la voient plus. Ce n'est pas de la tolérance — c'est de l'effacement complet.",
     "phrase": "Il n'efface pas à moitié. Quand Il pardonne, c'est parti.",
+    "ref": "",
     "note": "Étymologie ghafara — à valider par l'imam"
   },
   {
     "id": "tawhid_10",
     "num": 10,
     "pilier": "ULÛHIYYA",
-    "titre": "« Lâ ilâha illâ Allâh » — ce que ça veut vraiment dire",
-    "corps": "Pas juste « Allah existe ». Même Abû Jahl savait qu'Allah existait. « Lâ ilâha illâ Allâh » dit : il n'y a aucune divinité digne d'être adorée sauf Lui. La différence entre croire qu'Il existe et ne compter que sur Lui — c'est toute la distance entre l'islam de la bouche et l'islam du cœur.",
+    "titre": "« Lâ ilâha illâ Allâh » — ce que ça veut vraiment dire",
+    "corps": "Pas juste « Allah existe ». Même Abû Jahl savait qu'Allah existait. « Lâ ilâha illâ Allâh » dit : il n'y a aucune divinité digne d'être adorée sauf Lui. La différence entre croire qu'Il existe et ne compter que sur Lui — c'est toute la distance entre l'islam de la bouche et l'islam du cœur.",
     "phrase": "Savoir qu'Il existe ne suffit pas. Le Tawhid, c'est n'en vouloir qu'à Lui.",
+    "ref": "",
+    "note": ""
+  },
+  {
+    "id": "tawhid_11",
+    "num": 11,
+    "pilier": "ULÛHIYYA",
+    "titre": "L'argent que tu cherches — à qui tu le demandes vraiment ?",
+    "corps": "Tu travailles dur. C'est bien. Mais est-ce que tu crois que c'est ton patron qui te sustente, ou Allah qui te sustente via ton patron ? La différence est énorme. L'un peut te licencier. L'autre ne peut pas.",
+    "phrase": "Le rizq vient d'Allah. Ton employeur n'est qu'un canal.",
+    "ref": "Sourate Hûd 11:6",
+    "note": ""
+  },
+  {
+    "id": "tawhid_12",
+    "num": 12,
+    "pilier": "ASMÂ WA SIFÂT",
+    "titre": "Al-Qayyûm — le seul qui ne dort jamais",
+    "corps": "Al-Qayyûm : Celui qui Se suffit à Lui-même et dont tout dépend. Il ne somnole pas. Il ne se fatigue pas. Pendant que tu dors, que tu oublies, que tu te bats — Il maintient l'univers entier en existence. À chaque seconde.",
+    "phrase": "Ni somnolence ni sommeil ne Le saisissent.",
+    "ref": "Ayat al-Kursî — Sourate al-Baqara 2:255",
+    "note": ""
+  },
+  {
+    "id": "tawhid_13",
+    "num": 13,
+    "pilier": "RUBÛBIYYA",
+    "titre": "Il a créé la mort autant que la vie",
+    "corps": "La mort n'est pas un échec du système. Elle est créée, voulue, ordonnée. Le Tawhid dit que même ce qui te fait peur — la fin, la perte, le deuil — est entre Ses mains. Rien n'échappe à Sa gestion, même ce que tu voudrais fuir.",
+    "phrase": "Accepter la mort comme décret, c'est déjà du Tawhid.",
+    "ref": "Sourate al-Mulk 67:2",
+    "note": ""
+  },
+  {
+    "id": "tawhid_14",
+    "num": 14,
+    "pilier": "ULÛHIYYA",
+    "titre": "Faire bonne impression — à qui exactement ?",
+    "corps": "Soigner ton apparence pour être bien vu. Poster pour les likes. Travailler pour la réputation. Le Tawhid pose une question simple : si personne ne voyait, tu ferais quoi ? Ce qu'on fait quand personne ne regarde — c'est là que le Tawhid vit ou meurt.",
+    "phrase": "L'acte sincère est celui qu'on ferait même dans le noir total.",
+    "ref": "Sourate al-Kahf 18:110",
+    "note": ""
+  },
+  {
+    "id": "tawhid_15",
+    "num": 15,
+    "pilier": "RUBÛBIYYA",
+    "titre": "Les prophètes n'ont pas inventé la religion",
+    "corps": "Noé, Abraham, Moïse, Jésus, Muhammad ﷺ — même message, mêmes mots : adorez Allah seul. Pas une évolution de la pensée humaine. Pas une invention culturelle. Une révélation répétée parce que les hommes oublient. Le Tawhid est le message originel de l'humanité.",
+    "phrase": "Tous les prophètes ont dit la même chose. C'est nous qui avons compliqué.",
+    "ref": "Sourate al-Anbiyâ' 21:25",
+    "note": ""
+  },
+  {
+    "id": "tawhid_16",
+    "num": 16,
+    "pilier": "ASMÂ WA SIFÂT",
+    "titre": "Al-Karîm — Il donne sans que tu demandes",
+    "corps": "Al-Karîm : la générosité absolue, sans calcul, sans attente de retour. Il t'a donné des yeux avant que tu saches demander. Une langue avant que tu saches prier. Une famille avant que tu comprennes ce qu'est l'amour. La générosité qui précède le mérite — c'est Lui.",
+    "phrase": "Il a tout donné avant qu'on sache quoi demander.",
+    "ref": "Sourate al-Infitâr 82:6",
+    "note": ""
+  },
+  {
+    "id": "tawhid_17",
+    "num": 17,
+    "pilier": "ULÛHIYYA",
+    "titre": "Les amulettes, les horoscopes, les \"signes\" — pourquoi ça pose problème",
+    "corps": "Porter quelque chose pour se protéger. Lire son horoscope pour se rassurer. Chercher des « signes » dans les coïncidences. Ce n'est pas forcément de la mauvaise volonté — c'est souvent de la peur. Mais le Tawhid dit : la protection, la connaissance du futur, les signes — tout ça n'appartient qu'à Un seul.",
+    "phrase": "La sécurité qu'on cherche ailleurs, seul Allah peut la donner.",
+    "ref": "Sourate al-An'âm 6:17",
+    "note": "Cadrage fiqh amulettes — à confirmer par l'imam"
+  },
+  {
+    "id": "tawhid_18",
+    "num": 18,
+    "pilier": "RUBÛBIYYA",
+    "titre": "La nature ne \"fait\" rien toute seule",
+    "corps": "On dit « la pluie tombe », « le soleil se lève », « la nature reprend ses droits ». Comme si c'était automatique. Le Tawhid dit : derrière chaque loi naturelle, il y a un Législateur. L'eau n'obéit pas aux lois de la physique par hasard — elle obéit à Celui qui a posé ces lois.",
+    "phrase": "Ce qu'on appelle nature, c'est la sunna d'Allah dans Sa création.",
+    "ref": "Sourate Fâtir 35:41",
+    "note": ""
+  },
+  {
+    "id": "tawhid_19",
+    "num": 19,
+    "pilier": "ASMÂ WA SIFÂT",
+    "titre": "Al-'Alîm — Il sait ce que tu caches à tout le monde",
+    "corps": "Ce que tu penses dans le métro. Ce que tu ressens et que tu ne diras jamais. La honte secrète. La fierté cachée. La blessure que personne ne connaît. Al-'Alîm sait tout ça. Non pour te condamner — mais parce qu'Il est le seul à te connaître vraiment.",
+    "phrase": "Il est le seul à te connaître mieux que tu te connais toi-même.",
+    "ref": "Sourate Qâf 50:16",
+    "note": ""
+  },
+  {
+    "id": "tawhid_20",
+    "num": 20,
+    "pilier": "ULÛHIYYA",
+    "titre": "Aimer quelqu'un plus qu'Allah — ce que ça change",
+    "corps": "Aimer sa famille, ses amis, son conjoint — c'est bien, c'est voulu. Mais quand cet amour devient absolu — quand tu ferais n'importe quoi pour eux même contre Allah — c'est là que le Tawhid vacille. L'amour pour les créatures doit rester dans le cadre de l'amour pour le Créateur.",
+    "phrase": "Aimer les gens pour Allah, c'est les aimer vraiment.",
+    "ref": "Sourate al-Baqara 2:165",
+    "note": ""
+  },
+  {
+    "id": "tawhid_21",
+    "num": 21,
+    "pilier": "RUBÛBIYYA",
+    "titre": "Ibrahim a tout quitté — parce qu'il savait qui tenait les rênes",
+    "corps": "Quitter son père, son peuple, sa terre. Laisser sa femme et son nourrisson dans un désert. Lever le couteau sur son fils. Ibrahim a fait tout ça non pas parce qu'il était fou — mais parce qu'il savait avec certitude que Celui qui ordonne est aussi Celui qui protège.",
+    "phrase": "La confiance absolue ne vient qu'à celui qui connaît vraiment à qui il fait confiance.",
+    "ref": "Sourate al-Baqara 2:131",
+    "note": ""
+  },
+  {
+    "id": "tawhid_22",
+    "num": 22,
+    "pilier": "ASMÂ WA SIFÂT",
+    "titre": "Ar-Rahmân — la miséricorde avant la faute",
+    "corps": "Ar-Rahmân est mentionné avant Ar-Rahîm dans la Fatiha. La miséricorde large qui englobe tout le monde — croyants, incroyants, animaux, univers — vient avant la miséricorde spéciale pour les croyants. Il a choisi de Se présenter par Sa miséricorde en premier.",
+    "phrase": "Il a commencé par la miséricorde. Pas par le jugement.",
+    "ref": "Sourate al-Fâtiha 1:3",
+    "note": ""
+  },
+  {
+    "id": "tawhid_23",
+    "num": 23,
+    "pilier": "ULÛHIYYA",
+    "titre": "La du'a est un acte d'adoration — pas juste une liste de courses",
+    "corps": "Demander à Allah, c'est reconnaître qu'Il peut. C'est reconnaître qu'on ne peut pas seul. C'est du Tawhid en acte. C'est pour ça que le Prophète ﷺ a dit que la du'a est l'essence de l'adoration — pas parce que ça marche comme un distributeur, mais parce que l'acte de demander est déjà de l'adoration.",
+    "phrase": "Demander à Allah, c'est déjà L'adorer.",
+    "ref": "Tirmidhî — hasan",
+    "note": "À confirmer par l'imam"
+  },
+  {
+    "id": "tawhid_24",
+    "num": 24,
+    "pilier": "RUBÛBIYYA",
+    "titre": "Même les épreuves sont gérées",
+    "corps": "La maladie. Le deuil. L'échec. La trahison. Le Tawhid ne dit pas que c'est bien ce qui t'arrive. Il dit que ça n'échappe pas à Celui qui tient tout. Et que derrière chaque épreuve, il y a une sagesse que tu n'as pas encore vue — ou que tu ne verras qu'après.",
+    "phrase": "L'épreuve n'est pas un abandon. C'est un autre décret du même Seigneur.",
+    "ref": "Sourate al-Baqara 2:286",
+    "note": ""
+  },
+  {
+    "id": "tawhid_25",
+    "num": 25,
+    "pilier": "ASMÂ WA SIFÂT",
+    "titre": "Al-Hakîm — Il ne fait rien sans raison",
+    "corps": "Al-Hakîm : le Sage absolu. Pas une seule chose dans la création n'est arbitraire. Pas un atome ne bouge sans une sagesse derrière. Ce que tu vois comme injuste, incompréhensible, absurde — Al-Hakîm l'a voulu avec une précision que tu n'as pas encore les outils pour saisir.",
+    "phrase": "Ce qu'on ne comprend pas maintenant, Sa sagesse l'a déjà prévu.",
+    "ref": "Sourate al-Mulk 67:14",
+    "note": ""
+  },
+  {
+    "id": "tawhid_26",
+    "num": 26,
+    "pilier": "ULÛHIYYA",
+    "titre": "Le serment — pourquoi jurer par autre qu'Allah est grave",
+    "corps": "« Je jure sur ma mère. » « Sur la tête de mes enfants. » Formules courantes, intention innocente. Mais jurer par autre qu'Allah, c'est attribuer à la créature une grandeur qui n'appartient qu'au Créateur. Le serment est un acte d'adoration discret — il dit à voix haute par qui tu te sens lié.",
+    "phrase": "On jure par ce qu'on considère comme plus grand que soi.",
+    "ref": "Bukharî, Muslim",
+    "note": "À confirmer par l'imam"
+  },
+  {
+    "id": "tawhid_27",
+    "num": 27,
+    "pilier": "RUBÛBIYYA",
+    "titre": "L'univers entier fait du dhikr — sauf qu'on ne comprend pas",
+    "corps": "Les arbres. Les oiseaux. Les atomes. Le Coran dit que tout fait la glorification d'Allah — mais que nous ne comprenons pas leur façon. Le Tawhid de la Rubûbiyya dit : tu n'es pas le centre de la création. Tu es une voix parmi un chœur universel qui glorifie depuis toujours.",
+    "phrase": "Il n'y a rien qui ne Le glorifie — mais vous ne comprenez pas leur glorification.",
+    "ref": "Sourate al-Isrâ' 17:44",
+    "note": ""
+  },
+  {
+    "id": "tawhid_28",
+    "num": 28,
+    "pilier": "ASMÂ WA SIFÂT",
+    "titre": "At-Tawwâb — Il revient vers toi avant même que tu te retournes",
+    "corps": "At-Tawwâb ne signifie pas « Celui qui accepte le repentir ». Il signifie « Celui qui revient vers toi ». Le retour est d'abord de Sa part — Il t'ouvre la porte avant que tu aies fini de marcher vers elle. Le repentir sincère ne se heurte pas à une porte fermée.",
+    "phrase": "Il fait un pas vers toi quand tu en fais un vers Lui. Et plusieurs quand tu cours.",
+    "ref": "Hadith Qudsî — Bukharî",
+    "note": "À confirmer par l'imam"
+  },
+  {
+    "id": "tawhid_29",
+    "num": 29,
+    "pilier": "ULÛHIYYA",
+    "titre": "La peur des hommes — le shirk le plus répandu",
+    "corps": "Tu sais que c'est juste. Mais tu ne le fais pas parce que les gens vont parler. Tu sais que c'est faux. Mais tu le fais pour ne pas décevoir. La peur des hommes — khashyat an-nâs — est l'une des formes les plus courantes de l'association discrète. Elle met le regard humain à la place du regard divin.",
+    "phrase": "Celui qui craint les hommes plus qu'Allah a inversé l'ordre des priorités.",
+    "ref": "Sourate al-Ahzâb 33:39",
+    "note": ""
+  },
+  {
+    "id": "tawhid_30",
+    "num": 30,
+    "pilier": "RUBÛBIYYA",
+    "titre": "Il était là avant que tu existes — Il sera là après",
+    "corps": "Al-Awwal : le Premier, sans commencement. Al-Âkhir : le Dernier, sans fin. Toi tu as une date de naissance et tu auras une date de mort. Lui existait quand il n'y avait rien — et Il existera quand tout aura disparu. Le Tawhid commence là : reconnaître qu'Il est d'une nature radicalement différente de tout ce qu'on connaît.",
+    "phrase": "Il n'est comparable à rien de ce que tu as déjà vu ou imaginé.",
+    "ref": "Sourate al-Hadîd 57:3",
     "note": ""
   }
 ]
