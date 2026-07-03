@@ -19540,6 +19540,8 @@ function getFilJourItems() {
     var lvl = LEVELS[i]; if (!lvl || !lvl.sections) return;
     lvl.sections.forEach(function(s) { (s.items || []).forEach(function(it) { if (it.filDuJour && _ok(it)) items.push(it); }); });
   });
+  var _ti = items.findIndex(function(it){ return it.id === 'tawhid_jour'; });
+  if (_ti > 0) { var _t = items.splice(_ti, 1); items.unshift(_t[0]); }
   return items;
 }
 window.getFilJourItems = getFilJourItems;
