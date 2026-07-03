@@ -1512,6 +1512,7 @@ const LEVELS = [
         { id: 'fiqh_jour', minVague: 4, label: 'Jurisprudence \u2014 1 r\u00e8gle du jour', get sub() { var f = getFiqhJourRule(); var t = (f.regle || '').substring(0,50); return t ? t + '\u2026' : 'Une r\u00e8gle pratique'; }, arabic: '\u0641\u0650\u0642\u0652\u0647\u064C', paths: ['sacraliser'], block: 'jour', category: 'science', hadith: '"Celui à qui Allah veut du bien, Il lui donne la compréhension de la religion" — Bukhari 71', source: 'Bukhari 71' },
         { id: 'ghidaa_jour', minVague: 4, label: 'Aliment du jour', get sub() { var g = getGhidaaJour(); return g ? g.nom_fr + ' \u2014 ' + g.nom_ar : 'Nutrition proph\u00e9tique'; }, arabic: '\u063A\u0650\u0630\u064E\u0627\u0621', paths: ['sacraliser'], block: 'jour', category: 'science', filDuJour: true, hadith: 'La nutrition prophétique — ce que le Prophète ﷺ mangeait, recommandait ou évitait. Prendre soin du corps est une obligation envers Allah. "Le croyant fort est meilleur et plus aimé d\'Allah que le croyant faible."', source: 'Muslim 2664' },
         { id: 'tibb_jour', minVague: 4, label: 'Rem\u00e8de du jour', get sub() { var t = getTibbJour(); return t ? t.remede_fr + ' \u2014 ' + t.pour_quoi.substring(0,40) : 'M\u00e9decine proph\u00e9tique'; }, arabic: '\u0637\u0650\u0628\u0651', paths: ['sacraliser'], block: 'jour', category: 'science', filDuJour: true, hadith: 'La médecine prophétique — tibb nabawi. Le Prophète ﷺ a indiqué des remèdes dont la science moderne confirme progressivement les vertus. "Allah n\'a pas créé de maladie sans créer son remède."', source: 'Bukhari 5678' },
+        { id: 'tawhid_jour', minVague: 1, label: 'Fondement du jour', get sub() { return 'L\u00e2 il\u00e2ha ill\u00e2 All\u00e2h'; }, arabic: '\u0627\u0644\u062a\u064e\u0651\u0648\u062d\u0650\u064a\u062f', paths: ['reconnecter','routine','sacraliser'], block: 'jour', category: 'science', filDuJour: true },
         { id: 'savais_tu', minVague: 4, label: 'Le savais-tu ?', get sub() { var f = getSavaisTuFact(); var t = (f.texte || '').substring(0,50); return t ? t + '\u2026' : 'Une perle du savoir'; }, arabic: 'هَلْ تَعْلَمُ؟', paths: ['sacraliser'], block: 'jour', category: 'science', hadith: 'Des perles du savoir islamique — faits méconnus, anecdotes historiques, détails qui éclairent la foi. La connaissance est une lumière. "Chercher la connaissance est une obligation pour tout musulman."', source: 'Ibn Majah 224, hassan' },
       ]},
       { icon: '🎧', title: 'Immersion coranique', items: [
@@ -1843,7 +1844,7 @@ function _saveDailySnapshot(dk) {
   var prieres = { fajr: 0, dhuhr: 0, asr: 0, maghrib: 0, isha: 0 };
   var ontime = { fajr: 0, dhuhr: 0, asr: 0, maghrib: 0, isha: 0 };
   var bienfIds = ['sadaqa','salam','silaturahm','kind_act','ziyara','pardon','maruf'];
-  var lectIds = ['hadith1','duaa_jour','sira','quran_read','recits_coran','fiqh_jour','savais_tu','ghidaa_jour','tibb_jour'];
+  var lectIds = ['hadith1','duaa_jour','sira','quran_read','recits_coran','fiqh_jour','savais_tu','ghidaa_jour','tibb_jour','tawhid_jour'];
   var allItems = LEVELS.flatMap(function(l) { return l.sections.flatMap(function(sec) { return sec.items; }); });
   allItems.forEach(function(it) {
     var done = it.type === 'counter' ? (s[it.id] || 0) >= (it.target || 1) : !!s[it.id];
@@ -7569,7 +7570,7 @@ function _getWeeklyStats() {
   if (!hasSnapshots) {
     var s = safeParseJSON('spiritual_v2', {});
     var bienfIds = ['sadaqa','salam','silaturahm','kind_act','ziyara','pardon','maruf'];
-    var lectIds = ['hadith1','duaa_jour','sira','quran_read','recits_coran','fiqh_jour','savais_tu','ghidaa_jour','tibb_jour'];
+    var lectIds = ['hadith1','duaa_jour','sira','quran_read','recits_coran','fiqh_jour','savais_tu','ghidaa_jour','tibb_jour','tawhid_jour'];
     var allItems = LEVELS.flatMap(function(l) { return l.sections.flatMap(function(sec) { return sec.items; }); });
     allItems.forEach(function(it) {
       var done = it.type === 'counter' ? (s[it.id] || 0) >= (it.target || 1) : !!s[it.id];
@@ -13094,13 +13095,38 @@ function _tawhidGo(dir) {
   _renderTawhidOverlay();
 }
 
+function _openTawhidJour() {
+  window._tawhidFromFil = true;
+  var _dayIndex = Math.floor(Date.now() / 86400000) % 60;
+  if (_tawhidCapsules.length === 0) {
+    fetch('tawhid_capsules.json?v=' + (window.APP_VERSION || '1'))
+      .then(function(r){ return r.json(); })
+      .then(function(data){
+        _tawhidCapsules = data;
+        _tawhidIndex = _dayIndex;
+        _renderTawhidOverlay();
+      });
+  } else {
+    _tawhidIndex = _dayIndex;
+    _renderTawhidOverlay();
+  }
+}
+
 function closeTawhid() {
+  if (window._tawhidFromFil) {
+    window._tawhidFromFil = false;
+    var el = document.getElementById('tawhid-overlay');
+    if (el) el.remove();
+    _knowledgeReturn('tawhid_jour');
+    return;
+  }
   var el = document.getElementById('tawhid-overlay');
   if (el) el.remove();
 }
 window.openTawhid = openTawhid;
 window.closeTawhid = closeTawhid;
 window._tawhidGo = _tawhidGo;
+window._openTawhidJour = _openTawhidJour;
 
 function closeRepere() { var o = document.getElementById('repere-overlay'); if (o) o.remove(); }
 function openRepere() {
@@ -19556,7 +19582,7 @@ function openVueAuFilDuJour() {
     const ar = it.arabic ? '<div class="arabic">' + it.arabic + '</div>' : '';
     const sub = it.sub ? '<div class="sub">' + it.sub + '</div>' : '';
     const audio = it.audio ? '<button class="btn-audio" data-audio-id="' + it.id + '" onclick="event.stopPropagation();playAudioById(this)">🔊</button>' : '';
-    var _knowledgeIds = ['savais_tu','fiqh_jour','hadith1','duaa_jour','vie_compagnons','vie_prophetes','quran_read','sira','podcast','recits_coran','lisan','ghidaa_jour','tibb_jour'];
+    var _knowledgeIds = ['savais_tu','fiqh_jour','hadith1','duaa_jour','vie_compagnons','vie_prophetes','quran_read','sira','podcast','recits_coran','lisan','ghidaa_jour','tibb_jour','tawhid_jour'];
     var _isKnowledgeFil = _knowledgeIds.indexOf(it.id) !== -1;
     var _coranBtn = it.coranPicker ? '<button class="btn-audio" onclick="event.stopPropagation();_openCoranInlineFil(event)" style="font-size:12px;padding:4px 10px;width:auto;white-space:nowrap;font-family:\'Georgia\',serif;color:#C8A84A;border:1px solid rgba(200,168,75,0.3);border-radius:8px;background:transparent;cursor:pointer;">\u00c9couter</button>' : '';
     var _filFlag = 'window._knowledgeFromFil=true;';
@@ -19573,6 +19599,7 @@ function openVueAuFilDuJour() {
       : it.id === 'lisan' ? _filFlag + 'openVueLisan();'
       : it.id === 'ghidaa_jour' ? _filFlag + 'openVueGhidaaJour();'
       : it.id === 'tibb_jour' ? _filFlag + 'openVueTibbJour();'
+      : it.id === 'tawhid_jour' ? _filFlag + '_openTawhidJour();'
       : it.coranPicker ? '_openCoranInlineFil(event);'
       : 'toggleItem(\'' + it.id + '\',event); _filItemToggled(\'' + it.id + '\');';
     var _readBtn = _isKnowledgeFil ? '<button style="background:none;border:none;cursor:pointer;flex-shrink:0;align-self:center;padding:8px 4px;margin:0;position:relative;z-index:10;isolation:isolate;" onclick="event.stopPropagation();' + _click + '"><svg width="14" height="22" viewBox="0 0 14 22" style="pointer-events:none;" aria-hidden="true"><path d="M3 4 L10 11 L3 18" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>' : '';
