@@ -13129,6 +13129,12 @@ window.openTawhid = openTawhid;
 window.closeTawhid = closeTawhid;
 window._tawhidGo = _tawhidGo;
 window._openTawhidJour = _openTawhidJour;
+window._resetTawhidJour = function() {
+  var st = JSON.parse(localStorage.getItem('spiritual_v2') || '{}');
+  delete st.tawhid_jour;
+  localStorage.setItem('spiritual_v2', JSON.stringify(st));
+  console.log('[RESET] tawhid_jour supprimé');
+};
 
 function closeRepere() { var o = document.getElementById('repere-overlay'); if (o) o.remove(); }
 function openRepere() {
