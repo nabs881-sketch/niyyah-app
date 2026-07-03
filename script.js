@@ -13064,7 +13064,7 @@ function _renderTawhidOverlay() {
   var noteHTML = cap.note ? '<p class="tawhid-note">' + cap.note + '</p>' : '';
   var html = '<div id="tawhid-overlay" class="tawhid-overlay">'
     + '<div class="tawhid-topbar">'
-    + '<button class="tawhid-back" onclick="closeTawhid()">&#8592; Rep\u00e8res</button>'
+    + '<button class="tawhid-back" onclick="closeTawhid()">' + (window._tawhidFromFil ? '&#8592; Fil du Jour' : '&#8592; Rep\u00e8res') + '</button>'
     + '<span class="tawhid-counter">' + (_tawhidIndex + 1) + '\u00a0/\u00a0' + total + '</span>'
     + '</div>'
     + '<div class="tawhid-header">'
