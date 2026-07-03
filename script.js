@@ -13119,7 +13119,7 @@ function openRepere() {
     + '<div style="flex-shrink:0;width:42px;height:42px;border-radius:50%;border:1px solid rgba(232,206,138,0.3);background:radial-gradient(circle at 50% 35%,rgba(232,206,138,0.16),rgba(232,206,138,0.02) 70%);display:flex;align-items:center;justify-content:center;color:#E8CE8A;"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>'
     + '<div style="flex:1;min-width:0;"><div style="font-family:\'Georgia\',serif;font-size:18px;letter-spacing:0.02em;color:#E8CE8A;line-height:1.2;">L\u00e2 il\u00e2ha ill\u00e2 All\u00e2h</div>'
     + '<div style="font-size:14px;color:rgba(200,168,74,0.55);margin-top:3px;font-style:italic;font-family:\'Georgia\',serif;">Les trois piliers du Tawhid \u2014 60 capsules</div></div>'
-    + '<div style="color:rgba(200,168,74,0.6);font-size:18px;">&#8594;</div>'
+    + '<div style="color:rgba(200,168,74,0.6);font-size:18px;">&#8250;</div>'
     + '</div>'
     + eb('S\u2019orienter')
     + renderIstikharaCard()
