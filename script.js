@@ -2752,7 +2752,7 @@ function renderLevel(levelId) {
           : item.id === 'tibb_jour'
           ? 'openVueTibbJour();'
           : item.id === 'tawhid_jour'
-          ? 'openTawhid();'
+          ? 'window._openTawhidJour();'
           : 'toggleItem(\'' + item.id + '\',event)';
         var shareBtn = '';
         if (_isKnowledge) {
