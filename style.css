@@ -9829,13 +9829,14 @@ body.onboarding-active #nav-bar-v2 {
   border-bottom: 0.5px solid rgba(200,168,74,0.2);
 }
 .tawhid-back {
-  font-family: 'Georgia', serif;
-  font-size: 14px;
+  font-size: 24px;
   color: #C8A84A;
   background: none;
   border: none;
   cursor: pointer;
-  letter-spacing: 0.05em;
+  line-height: 1;
+  padding: 0 4px;
+  -webkit-tap-highlight-color: transparent;
 }
 .tawhid-counter {
   font-size: 12px;
