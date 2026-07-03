@@ -9811,7 +9811,7 @@ body.onboarding-active #nav-bar-v2 {
 .tawhid-overlay {
   position: fixed;
   inset: 0;
-  z-index: 3200;
+  z-index: 9200;
   background: #0a0a0f;
   display: flex;
   flex-direction: column;
