@@ -13055,6 +13055,7 @@ function openTawhid() {
 }
 
 function _renderTawhidOverlay() {
+  console.log('[TAWHID] _renderTawhidOverlay appelée, index=', _tawhidIndex);
   var existing = document.getElementById('tawhid-overlay');
   if (existing) existing.remove();
   var cap = _tawhidCapsules[_tawhidIndex];
@@ -13096,6 +13097,7 @@ function _tawhidGo(dir) {
 }
 
 function _openTawhidJour() {
+  console.log('[TAWHID] _openTawhidJour appelée, capsules=', _tawhidCapsules.length);
   window._tawhidFromFil = true;
   var _dayIndex = Math.floor(Date.now() / 86400000) % 60;
   if (_tawhidCapsules.length === 0) {
@@ -13105,7 +13107,8 @@ function _openTawhidJour() {
         _tawhidCapsules = data;
         _tawhidIndex = _dayIndex;
         _renderTawhidOverlay();
-      });
+      })
+      .catch(function(e){ console.error('[TAWHID] fetch error', e); });
   } else {
     _tawhidIndex = _dayIndex;
     _renderTawhidOverlay();
