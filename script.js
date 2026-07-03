@@ -13055,7 +13055,6 @@ function openTawhid() {
 }
 
 function _renderTawhidOverlay() {
-  console.log('[TAWHID] _renderTawhidOverlay appelée, index=', _tawhidIndex);
   var existing = document.getElementById('tawhid-overlay');
   if (existing) existing.remove();
   var cap = _tawhidCapsules[_tawhidIndex];
@@ -13097,7 +13096,7 @@ function _tawhidGo(dir) {
 }
 
 function _openTawhidJour() {
-  console.log('[TAWHID] _openTawhidJour appelée, capsules=', _tawhidCapsules.length);
+  window._knowledgeFromFil = true;
   window._tawhidFromFil = true;
   var _dayIndex = Math.floor(Date.now() / 86400000) % 60;
   if (_tawhidCapsules.length === 0) {
@@ -19602,7 +19601,7 @@ function openVueAuFilDuJour() {
       : it.id === 'lisan' ? _filFlag + 'openVueLisan();'
       : it.id === 'ghidaa_jour' ? _filFlag + 'openVueGhidaaJour();'
       : it.id === 'tibb_jour' ? _filFlag + 'openVueTibbJour();'
-      : it.id === 'tawhid_jour' ? _filFlag + '_openTawhidJour();'
+      : it.id === 'tawhid_jour' ? 'window._openTawhidJour();'
       : it.coranPicker ? '_openCoranInlineFil(event);'
       : 'toggleItem(\'' + it.id + '\',event); _filItemToggled(\'' + it.id + '\');';
     var _readBtn = _isKnowledgeFil ? '<button style="background:none;border:none;cursor:pointer;flex-shrink:0;align-self:center;padding:8px 4px;margin:0;position:relative;z-index:10;isolation:isolate;" onclick="event.stopPropagation();' + _click + '"><svg width="14" height="22" viewBox="0 0 14 22" style="pointer-events:none;" aria-hidden="true"><path d="M3 4 L10 11 L3 18" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>' : '';
@@ -19614,9 +19613,7 @@ function openVueAuFilDuJour() {
       : '';
     var _lisanInfo = it.id === 'lisan' ? '<button style="background:none;border:none;cursor:pointer;padding:2px 4px;margin:0;flex-shrink:0;" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openLisanMethode()" title="Méthode"><span style="font-size:14px;color:#C8A84A;opacity:0.6;">ⓘ</span></button>' : '';
     var _labelHtml = _lisanInfo ? '<div style="display:flex;align-items:center;gap:8px;"><div class="label">' + (it.label||it.id) + '</div>' + _lisanInfo + '</div>' : '<div class="label">' + (it.label||it.id) + '</div>';
-    var _htmlString = '<div class="rituel-item ' + done + '"' + _filKnBg + ' id="rituel-item-' + it.id + '" onclick="' + _click + '"><div class="check"' + _checkClick + '></div><div style="flex:1">' + _labelHtml + sub + ar + '</div>' + _readBtn + _coranBtn + audio + '</div>';
-    if (it.id === 'tawhid_jour') console.log('[TAWHID HTML]', _htmlString);
-    return _htmlString;
+    return '<div class="rituel-item ' + done + '"' + _filKnBg + ' id="rituel-item-' + it.id + '" onclick="' + _click + '"><div class="check"' + _checkClick + '></div><div style="flex:1">' + _labelHtml + sub + ar + '</div>' + _readBtn + _coranBtn + audio + '</div>';
   };
   var _filDone = items.filter(function(it){ return !!state[it.id]; }).length;
   var _filTotal = items.length;
