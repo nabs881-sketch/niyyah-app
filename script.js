@@ -13083,10 +13083,10 @@ function _renderTawhidOverlay() {
     + refHTML
     + noteHTML
     + '</div>'
-    + '<div class="tawhid-nav">'
+    + (window._tawhidFromFil ? '' : '<div class="tawhid-nav">'
     + '<button class="tawhid-nav-btn" onclick="_tawhidGo(-1)"' + (_tawhidIndex === 0 ? ' disabled' : '') + '>&#8592;</button>'
     + '<button class="tawhid-nav-btn" onclick="_tawhidGo(1)"' + (_tawhidIndex === total - 1 ? ' disabled' : '') + '>&#8594;</button>'
-    + '</div>'
+    + '</div>')
     + '</div>';
   document.body.insertAdjacentHTML('beforeend', html);
   document.getElementById('tawhid-overlay').classList.add('tawhid-visible');
