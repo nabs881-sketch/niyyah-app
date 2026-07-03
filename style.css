@@ -9928,3 +9928,18 @@ body.onboarding-active #nav-bar-v2 {
 }
 .tawhid-nav-btn:disabled { color: rgba(200,168,74,0.2); border-color: rgba(200,168,74,0.1); cursor: default; }
 .tawhid-nav-btn:not(:disabled):hover { background: rgba(200,168,74,0.1); }
+.tawhid-return-wrap { padding: 20px 24px 40px; border-top: 0.5px solid rgba(200,168,74,0.15); }
+.tawhid-return-btn {
+  width: 100%;
+  padding: 14px;
+  border: 0.5px solid rgba(200,168,74,0.3);
+  border-radius: 12px;
+  background: none;
+  color: #C8A84A;
+  font-family: 'Georgia', serif;
+  font-size: 15px;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  -webkit-tap-highlight-color: transparent;
+}
+.tawhid-return-btn:active { background: rgba(200,168,74,0.08); }

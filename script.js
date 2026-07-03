@@ -13087,9 +13087,19 @@ function _renderTawhidOverlay() {
     + '<button class="tawhid-nav-btn" onclick="_tawhidGo(-1)"' + (_tawhidIndex === 0 ? ' disabled' : '') + '>&#8592;</button>'
     + '<button class="tawhid-nav-btn" onclick="_tawhidGo(1)"' + (_tawhidIndex === total - 1 ? ' disabled' : '') + '>&#8594;</button>'
     + '</div>')
+    + (window._tawhidFromFil ? '<div class="tawhid-return-wrap"><button class="tawhid-return-btn" onclick="closeTawhid()">&#8592; Retour au Fil du jour</button></div>' : '')
     + '</div>';
   document.body.insertAdjacentHTML('beforeend', html);
-  document.getElementById('tawhid-overlay').classList.add('tawhid-visible');
+  var _ov = document.getElementById('tawhid-overlay');
+  _ov.classList.add('tawhid-visible');
+  if (window._tawhidFromFil) {
+    _ov.addEventListener('scroll', function _tawhidScroll() {
+      if (_ov.scrollTop + _ov.clientHeight >= _ov.scrollHeight - 60) {
+        _markTawhidDone();
+        _ov.removeEventListener('scroll', _tawhidScroll);
+      }
+    });
+  }
 }
 
 function _tawhidGo(dir) {
@@ -13119,6 +13129,10 @@ function _openTawhidJour() {
   }
 }
 
+function _markTawhidDone() {
+  var _st = safeParseJSON('spiritual_v2', {});
+  if (!_st.tawhid_jour) toggleItem('tawhid_jour', null);
+}
 function closeTawhid() {
   var el = document.getElementById('tawhid-overlay');
   if (el) el.remove();
@@ -13128,6 +13142,7 @@ function closeTawhid() {
       window._tawhidFromPratique = false;
       return;
     }
+    _markTawhidDone();
     _knowledgeReturn('tawhid_jour');
   }
 }
