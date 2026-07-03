@@ -19614,7 +19614,9 @@ function openVueAuFilDuJour() {
       : '';
     var _lisanInfo = it.id === 'lisan' ? '<button style="background:none;border:none;cursor:pointer;padding:2px 4px;margin:0;flex-shrink:0;" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openLisanMethode()" title="Méthode"><span style="font-size:14px;color:#C8A84A;opacity:0.6;">ⓘ</span></button>' : '';
     var _labelHtml = _lisanInfo ? '<div style="display:flex;align-items:center;gap:8px;"><div class="label">' + (it.label||it.id) + '</div>' + _lisanInfo + '</div>' : '<div class="label">' + (it.label||it.id) + '</div>';
-    return '<div class="rituel-item ' + done + '"' + _filKnBg + ' id="rituel-item-' + it.id + '" onclick="' + _click + '"><div class="check"' + _checkClick + '></div><div style="flex:1">' + _labelHtml + sub + ar + '</div>' + _readBtn + _coranBtn + audio + '</div>';
+    var _htmlString = '<div class="rituel-item ' + done + '"' + _filKnBg + ' id="rituel-item-' + it.id + '" onclick="' + _click + '"><div class="check"' + _checkClick + '></div><div style="flex:1">' + _labelHtml + sub + ar + '</div>' + _readBtn + _coranBtn + audio + '</div>';
+    if (it.id === 'tawhid_jour') console.log('[TAWHID HTML]', _htmlString);
+    return _htmlString;
   };
   var _filDone = items.filter(function(it){ return !!state[it.id]; }).length;
   var _filTotal = items.length;
