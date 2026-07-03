@@ -2752,7 +2752,7 @@ function renderLevel(levelId) {
           : item.id === 'tibb_jour'
           ? 'openVueTibbJour();'
           : item.id === 'tawhid_jour'
-          ? 'window._openTawhidJour();'
+          ? 'window._tawhidFromPratique=true;window._openTawhidJour();'
           : 'toggleItem(\'' + item.id + '\',event)';
         var shareBtn = '';
         if (_isKnowledge) {
@@ -13102,6 +13102,7 @@ function _tawhidGo(dir) {
 function _openTawhidJour() {
   window._knowledgeFromFil = true;
   window._tawhidFromFil = true;
+  window._tawhidFromPratique = false;
   var _dayIndex = Math.floor(Date.now() / 86400000) % 60;
   if (_tawhidCapsules.length === 0) {
     fetch('tawhid_capsules.json?v=' + (window.APP_VERSION || '1'))
@@ -13119,15 +13120,16 @@ function _openTawhidJour() {
 }
 
 function closeTawhid() {
-  if (window._tawhidFromFil) {
-    window._tawhidFromFil = false;
-    var el = document.getElementById('tawhid-overlay');
-    if (el) el.remove();
-    _knowledgeReturn('tawhid_jour');
-    return;
-  }
   var el = document.getElementById('tawhid-overlay');
   if (el) el.remove();
+  if (window._tawhidFromFil) {
+    window._tawhidFromFil = false;
+    if (window._tawhidFromPratique) {
+      window._tawhidFromPratique = false;
+      return;
+    }
+    _knowledgeReturn('tawhid_jour');
+  }
 }
 window.openTawhid = openTawhid;
 window.closeTawhid = closeTawhid;
