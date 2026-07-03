@@ -2698,6 +2698,8 @@ function renderLevel(levelId) {
           const sourceEsc = (item.source||'').replace(/"/g,'&quot;');
           const itemTranslationEsc = (item.translation||'').replace(/"/g,'&quot;');
           infoBtn = '<button class="btn-info" aria-label="Détails" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openInfoSheet(\'\',\'\',\'\',\'\',event)" data-label="' + labelEsc2 + '" data-arabic="' + arabicEsc2 + '" data-phonetic="' + itemTranslationEsc + '" data-translation="' + hadithEsc + '" data-source="' + sourceEsc + '" title="' + t('btn_why') + '"><i style="pointer-events:none">i</i></button>';
+        } else if (item.id === 'tawhid_jour') {
+          infoBtn = '<button class="btn-info" aria-label="D\u00e9tails" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openInfoSheet(\'\',\'\',\'\',\'\',event)" data-label="Fondement du jour" data-arabic="\u0627\u0644\u062a\u064e\u0651\u0648\u0652\u062d\u0650\u064a\u062f" data-phonetic="" data-translation="Le Tawh\u012bd est le c\u0153ur de l\u2019islam\u00a0: reconna\u00eetre qu\u2019Allah est Un, sans associ\u00e9, dans Sa seigneurie, Son adoration et Ses Noms. Chaque jour, une capsule t\u2019invite \u00e0 approfondir cette connaissance \u2014 la seule qui transforme vraiment tes actes en adoration." data-source="" title="Pourquoi\u00a0?"><i style="pointer-events:none">i</i></button>';
         } else if (item.id === 'lisan') {
           infoBtn = '<button class="btn-info" aria-label="M\u00e9thode" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openLisanMethode()" title="M\u00e9thode"><i style="pointer-events:none">i</i></button>';
         } else if (item.phonetic || item.translation) {
