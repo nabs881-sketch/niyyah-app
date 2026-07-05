@@ -19438,7 +19438,7 @@ function openVueRituel(prayer) {
   var _isItemDone = function(it) {
     if (it.type === 'wird') {
       if (state[it.id] === true) return true;
-      try { var sess = WIRD_DATA[it.session]; return !!(sess && sess.items.every(function(wi) { return !!wirdState[wi.id]; })); } catch(e) { return false; }
+      try { var sess = WIRD_DATA[it.session]; return !!(sess && sess.items.every(function(wi) { return !!wirdState[wi.id] || (wi.target ? (state[wi.id] === true || (state[wi.id] || 0) >= wi.target) : false); })); } catch(e) { return false; }
     }
     if (it.type === 'counter' || it.target) { return state[it.id] === true || (state[it.id] || 0) >= (it.target || 1); }
     return !!state[it.id];
@@ -19488,7 +19488,7 @@ function openVueRituel(prayer) {
   var _renderOne = function(it) {
     return it.type === 'wird' ? renderWirdSmartCard(it, 0, undefined, prayer) : renderItem(it, false);
   };
-  var _visibleItems = normalItems.filter(function(it) { return it.type === 'wird' || !_isItemDone(it); });
+  var _visibleItems = normalItems.filter(function(it) { return !_isItemDone(it); });
   if (prayer === 'fajr') {
     var _avant = _visibleItems.filter(it => it.id === 'sunnah_fajr');
     var _apres = _visibleItems.filter(it => it.id !== 'sunnah_fajr');
