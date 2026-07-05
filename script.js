@@ -2884,6 +2884,11 @@ function togglePrayerOnTime(id) {
 var _wirdReturnTo = null;
 var _currentWirdSession = null;
 function wirdGoBack() {
+  if (window._wirdFromFil) {
+    window._wirdFromFil = false;
+    openVueAuFilDuJour();
+    return;
+  }
   if (_wirdReturnTo) {
     openVueRituel(_wirdReturnTo);
   }
@@ -19581,7 +19586,7 @@ function renderWirdAuFilDuJour(item) {
   var isMatin = item.session === 'matin';
   var label = isMatin ? 'Wird du Matin' : 'Wird du Soir';
   var arabic = isMatin ? '\u0648\u0650\u0631\u0652\u062F\u064F \u0627\u0644\u0635\u0651\u064E\u0628\u0627\u062D' : '\u0648\u0650\u0631\u0652\u062F\u064F \u0627\u0644\u0645\u064E\u0633\u0627\u0621';
-  return '<div class="wird-fil-card" onclick="window._wirdOrigin=(document.querySelector(\'.v2-tab.active\')||{}).id||\'v2nav-priere\';var r=document.getElementById(\'vue-rituel\');if(r)r.classList.add(\'hidden\');v2GoTo(\'wird\');">'
+  return '<div class="wird-fil-card" onclick="window._wirdFromFil=true;window._wirdOrigin=(document.querySelector(\'.v2-tab.active\')||{}).id||\'v2nav-priere\';var r=document.getElementById(\'vue-rituel\');if(r)r.classList.add(\'hidden\');v2GoTo(\'wird\');">'
     + '<div class="wird-fil-body">'
     + '<div class="wird-fil-arabic">' + arabic + '</div>'
     + '<div class="wird-fil-label">' + label + '</div>'
