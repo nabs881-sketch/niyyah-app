@@ -4266,8 +4266,10 @@ window.showWirdCompleteOverlay = showWirdCompleteOverlay;
 function _wirdCheckAllDone(session) {
   var _s = WIRD_DATA[session];
   if (!_s) return;
+  var _dup = { w_ayat_kursi:'ayat_kursi', w_ayat_kursi_s:'ayat_kursi', w_ikhlass_m:'muawwidhat', w_falaq_m:'muawwidhat', w_nas_m:'muawwidhat', w_ikhlass_s:'muawwidhat', w_falaq_s:'muawwidhat', w_nas_s:'muawwidhat', w_istighfar_m:'istighfar' };
+  var _sp = safeParseJSON('spiritual_v2', {});
   var _allDone = _s.items.every(function(i) {
-    return !!wirdState[i.id] || state[i.id] === true || (i.target ? (state[i.id] || 0) >= i.target : false);
+    return !!wirdState[i.id] || (_dup[i.id] && !!_sp[_dup[i.id]]) || state[i.id] === true || (i.target ? (state[i.id] || 0) >= i.target : false);
   });
   if (_allDone) { setTimeout(function(){ wirdGoBack(); }, 350); }
 }
