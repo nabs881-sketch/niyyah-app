@@ -19416,7 +19416,7 @@ function openVueRituel(prayer) {
       _dhikrCount = '<div style="font-size:14px;font-style:italic;color:#C8A84A;margin-top:2px;">' + (_dc >= 100 ? '100 \u2713' : _dc + ' / 100') + '</div>';
     }
     const sub = it.sub ? '<div class="sub">' + it.sub + '</div>' : '';
-    const audio = it.audio ? '<button class="btn-audio" data-audio-id="' + it.id + '" onclick="event.stopPropagation();playAudioById(this)">\u{1F50A}</button>' : '';
+    const audio = it.audio ? '<button class="btn-wird-audio" aria-label="\u00c9couter" ontouchstart="event.stopPropagation()" onclick="playAudioFromBtn(this,event)" data-audio="' + (typeof it.audio === 'string' ? it.audio : JSON.stringify(it.audio)).replace(/"/g,'&quot;') + '" style="width:32px;height:32px;border-radius:50%;border:1.5px solid rgba(200,168,75,0.5);background:rgba(200,168,75,0.08);display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;flex-shrink:0;margin-left:4px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="#C8A84A" style="pointer-events:none"><polygon points="5 3 19 12 5 21 5 3"/></svg></button>' : '';
     const cls = vendredi ? 'rituel-item vendredi ' : 'rituel-item ';
     const tog = (vendredi && it.id !== 'jumua') ? 'toggleFridayItem' : 'toggleItem';
     var _isDhikrItem = (it.id === 'tasbih' || it.id === 'istighfar');
