@@ -4233,25 +4233,23 @@ function toggleWirdItem(id, event) {
   if (wirdState[id]) {
     if (typeof playCheckSound === 'function') playCheckSound();
     if (navigator.vibrate) navigator.vibrate([12, 8, 25]);
+    var _el = document.getElementById('item-' + id);
+    if (!_el && event) _el = event.currentTarget ? event.currentTarget.closest('.wird-item') : null;
+    if (_el) {
+      _el.style.transition = 'opacity 0.22s';
+      _el.style.opacity = '0';
+      setTimeout(function() {
+        _el.remove();
+        _wirdCheckAllDone(_currentWirdSession);
+      }, 230);
+    } else {
+      renderWird();
+      _wirdCheckAllDone(_currentWirdSession);
+    }
+  } else {
+    renderWird();
   }
-  renderWird();
-  // Sync: update Smart Card in checklist if visible
-  if (typeof renderLevel === 'function' && typeof currentLevel !== 'undefined') {
-    setTimeout(() => renderLevel(currentLevel), 60);
-  }
-  // Check if a full session just completed
-  if (wirdState[id]) {
-    ['matin','soir'].forEach(function(ses) {
-      var s = WIRD_DATA[ses];
-      if (!s || !s.items) return;
-      var allDone = s.items.every(function(i) { return !!wirdState[i.id]; });
-      if (!allDone) return;
-      var key = 'niyyah_wird_done_' + ses + '_' + todayKey();
-      if (safeGetItem(key)) return;
-      safeSetItem(key, '1');
-      showWirdCompleteOverlay();
-    });
-  }
+  if (typeof _wirdRefreshCard === 'function') setTimeout(function() { _wirdRefreshCard(_currentWirdSession); }, 300);
 }
 function showWirdCompleteOverlay() {
   var ov = document.createElement('div');
@@ -4274,7 +4272,6 @@ function _wirdCheckAllDone(session) {
   if (_allDone) { setTimeout(function(){ wirdGoBack(); }, 350); }
 }
 function _wirdUpdateProg(sessId) {
-  alert('UPDATE ' + sessId);
   var _sessId = typeof sessId === 'string' ? sessId : _currentWirdSession;
   var _container = document.getElementById('wird-sess-' + _sessId);
   if (!_container) return;
@@ -4355,9 +4352,6 @@ function renderWird() {
     html += `<button class="wird-back-btn" aria-label="Retour" onclick="wirdGoBack()" style="margin:8px auto 0;display:block;">${t('wird_back')}</button></div>`;
   });
   content.innerHTML = html;
-  console.log('[WIRD-HTML]', document.querySelector('.wird-item')?.outerHTML);
-  var _dbgSess = document.getElementById('wird-sess-matin');
-  if (_dbgSess) console.log('[WIRD-SESS]', _dbgSess.outerHTML.slice(0, _dbgSess.outerHTML.indexOf('>') + 1));
 }
 function resetWirdSession(session) {
   WIRD_DATA[session].items.forEach(i => { wirdState[i.id] = false; });
