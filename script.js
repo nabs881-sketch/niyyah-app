@@ -19623,7 +19623,7 @@ function openVueAuFilDuJour() {
     const done = state[it.id] ? 'done' : '';
     const ar = it.arabic ? '<div class="arabic">' + it.arabic + '</div>' : '';
     const sub = it.sub ? '<div class="sub">' + it.sub + '</div>' : '';
-    const audio = it.audio ? '<button class="btn-audio" data-audio-id="' + it.id + '" onclick="event.stopPropagation();playAudioById(this)">🔊</button>' : '';
+    const audio = it.audio ? '<button class="btn-wird-audio" aria-label="\u00c9couter" ontouchstart="event.stopPropagation()" onclick="playAudioFromBtn(this,event)" data-audio="' + (typeof it.audio === 'string' ? it.audio : JSON.stringify(it.audio)).replace(/"/g,'&quot;') + '" style="width:32px;height:32px;border-radius:50%;border:1.5px solid rgba(200,168,75,0.5);background:rgba(200,168,75,0.08);display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;flex-shrink:0;margin-left:4px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="#C8A84A" style="pointer-events:none"><polygon points="5 3 19 12 5 21 5 3"/></svg></button>' : '';
     var _knowledgeIds = ['savais_tu','fiqh_jour','hadith1','duaa_jour','vie_compagnons','vie_prophetes','quran_read','sira','podcast','recits_coran','lisan','ghidaa_jour','tibb_jour','tawhid_jour'];
     var _isKnowledgeFil = _knowledgeIds.indexOf(it.id) !== -1;
     var _coranBtn = it.coranPicker ? '<button class="btn-audio" onclick="event.stopPropagation();_openCoranInlineFil(event)" style="font-size:12px;padding:4px 10px;width:auto;white-space:nowrap;font-family:\'Georgia\',serif;color:#C8A84A;border:1px solid rgba(200,168,75,0.3);border-radius:8px;background:transparent;cursor:pointer;">\u00c9couter</button>' : '';
