@@ -19246,7 +19246,7 @@ function closeVueRituel() {
   _rituelOriginTab = null;
   window._rituelFromFil = false;
   try { if (typeof updateSanctuaireMoment === 'function') updateSanctuaireMoment(); } catch(e) {}
-  if (_fromFil && typeof v2GoSanctuaire === 'function') v2GoSanctuaire();
+  if (typeof v2GoSanctuaire === 'function') v2GoSanctuaire();
 }
 window.closeVueRituel = closeVueRituel;
 function _knowledgeReturn(id) {
