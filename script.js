@@ -19238,15 +19238,14 @@ function _restoreScroll() {
 }
 var _rituelOriginTab = null;
 function closeVueRituel() {
+  _rituelOriginTab = null;
+  window._rituelFromFil = false;
+  if (typeof v2GoSanctuaire === 'function') v2GoSanctuaire();
   const v = document.getElementById('vue-rituel');
   if (v) v.classList.add('hidden');
   _restoreScroll();
   a11yOnOverlayClose();
-  var _fromFil = window._rituelFromFil;
-  _rituelOriginTab = null;
-  window._rituelFromFil = false;
   try { if (typeof updateSanctuaireMoment === 'function') updateSanctuaireMoment(); } catch(e) {}
-  if (typeof v2GoSanctuaire === 'function') v2GoSanctuaire();
 }
 window.closeVueRituel = closeVueRituel;
 function _knowledgeReturn(id) {
