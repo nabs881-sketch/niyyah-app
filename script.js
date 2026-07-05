@@ -19242,8 +19242,11 @@ function closeVueRituel() {
   if (v) v.classList.add('hidden');
   _restoreScroll();
   a11yOnOverlayClose();
+  var _fromFil = window._rituelFromFil;
   _rituelOriginTab = null;
+  window._rituelFromFil = false;
   try { if (typeof updateSanctuaireMoment === 'function') updateSanctuaireMoment(); } catch(e) {}
+  if (_fromFil && typeof v2GoSanctuaire === 'function') v2GoSanctuaire();
 }
 window.closeVueRituel = closeVueRituel;
 function _knowledgeReturn(id) {
@@ -19601,6 +19604,7 @@ function openVueAuFilDuJour() {
   if (!v) return;
   if (v.classList.contains('hidden') && safeGetItem('niyyah_intro_aufildujour') !== '1') return _niyyahIntro('aufildujour', openVueAuFilDuJour);
   _rituelOriginTab = (document.querySelector('.v2-tab.active') || {}).id || 'v2nav-sanctuaire';
+  window._rituelFromFil = true;
   v.querySelector('.rituel-titre').textContent = 'AU FIL DU JOUR';
   v.querySelector('.rituel-prochaine').textContent = '';
   v.querySelector('.rituel-poetique').textContent = 'Ce qui demeure entre tes pri\u00e8res.';
