@@ -19445,7 +19445,8 @@ function openVueRituel(prayer) {
     var _checkClick = _isCounterItem
       ? ' onclick="event.stopPropagation();_forceFilCheck(\'' + it.id + '\',event);_rituelItemToggled(\'' + prayer + '\',\'' + it.id + '\');"'
       : '';
-    return '<div class="' + cls + done + '" id="rituel-item-' + it.id + '" onclick="' + _click + '"' + _lpAttrs + '><div class="check"' + _checkClick + '></div><div style="flex:1"><div class="label">' + (it.label||it.id) + '</div>' + _dhikrCount + sub + ar + '</div>' + audio + _infoBtn + _dhikrBtn + '</div>';
+    var _actionsHtml = (audio || _infoBtn) ? '<div style="display:flex;flex-direction:row;align-items:center;gap:8px;flex-shrink:0;">' + audio + _infoBtn + '</div>' : '';
+    return '<div class="' + cls + done + '" id="rituel-item-' + it.id + '" onclick="' + _click + '"' + _lpAttrs + '><div class="check"' + _checkClick + '></div><div style="flex:1"><div class="label">' + (it.label||it.id) + '</div>' + _dhikrCount + sub + ar + '</div>' + _actionsHtml + _dhikrBtn + '</div>';
   };
   var _isItemDone = function(it) {
     if (it.type === 'wird') {
