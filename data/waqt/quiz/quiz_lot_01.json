@@ -1,0 +1,222 @@
+[
+  {
+    "id": "quiz_001",
+    "question": "Quel est le seul Compagnon du Prophète ﷺ mentionné explicitement par son nom dans le Coran ?",
+    "choix": ["A. Abû Bakr as-Siddîq", "B. Zayd ibn Hâritha", "C. 'Alî ibn Abî Tâlib", "D. Bilâl ibn Rabâh"],
+    "reponse": "B",
+    "explication": "Zayd ibn Hâritha est nommé dans la sourate Al-Ahzâb (33:37) à propos du mariage du Prophète avec Zaynab bint Jahsh et de l'abolition de l'adoption filiative. C'est le seul Compagnon nommément cité dans le Coran.",
+    "theme": "coran",
+    "source": "Coran 33:37 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 1
+  },
+  {
+    "id": "quiz_002",
+    "question": "Quelle sourate contient la Basmala deux fois ?",
+    "choix": ["A. Al-Fâtiha", "B. At-Tawba", "C. An-Naml", "D. Al-Ikhlâs"],
+    "reponse": "C",
+    "explication": "An-Naml (sourate 27) contient la Basmala au début ET au verset 30, dans la lettre du prophète Sulaymân à la reine de Saba. C'est le seul endroit où la Basmala figure à l'intérieur d'un verset numéroté.",
+    "theme": "coran",
+    "source": "Coran 27:30 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 1
+  },
+  {
+    "id": "quiz_003",
+    "question": "Quel est le verset le plus long du Coran ?",
+    "choix": ["A. Âyat al-Kursî (2:255)", "B. Âyat ad-Dayn (2:282)", "C. Le premier verset d'Al-Baqara", "D. Le verset de la lumière (24:35)"],
+    "reponse": "B",
+    "explication": "Le verset de la dette (2:282) est le plus long du Coran. Sa'îd ibn al-Musayyab rapporte qu'il fut l'un des derniers révélés. Il porte sur la mise par écrit des contrats de dette, le scribe et les témoins.",
+    "theme": "coran",
+    "source": "Tafsîr Ibn Kathîr, 2:282",
+    "difficulte": "intermédiaire",
+    "jour": 1
+  },
+  {
+    "id": "quiz_004",
+    "question": "À propos de quel Compagnon la sourate 'Abasa (Il s'est renfrogné) fut-elle révélée ?",
+    "choix": ["A. Un chef qurayshite arrogant", "B. 'Abdullâh ibn Umm Maktûm, un aveugle", "C. Abû Lahab", "D. Un hypocrite de Médine"],
+    "reponse": "B",
+    "explication": "Ce Compagnon aveugle interrompit le Prophète ﷺ alors qu'il prêchait à des notables de Quraysh. La sourate (80:1-10) réprimande doucement le Prophète pour s'être détourné de lui. Ibn Umm Maktûm devint muezzin à Médine.",
+    "theme": "coran",
+    "source": "Coran 80:1-10 ; Tafsîr at-Tabarî",
+    "difficulte": "avancé",
+    "jour": 2
+  },
+  {
+    "id": "quiz_005",
+    "question": "Selon l'école shâfi'ite, toucher une femme non-mahram de peau à peau...",
+    "choix": ["A. N'annule jamais les ablutions", "B. Annule les ablutions dans tous les cas", "C. N'annule que s'il y a désir", "D. N'annule que pendant le Ramadan"],
+    "reponse": "B",
+    "explication": "Imâm ash-Shâfi'î se fonde sur An-Nisâ' (4:43). Pour les Hanafites c'est le contact intime seul qui annule. Mâlikites et Hanbalites conditionnent l'annulation au désir. Une rare divergence entre les quatre écoles.",
+    "theme": "fiqh",
+    "source": "Islamqa.info n°76115 ; al-Majmû', an-Nawawî",
+    "difficulte": "avancé",
+    "jour": 2
+  },
+  {
+    "id": "quiz_006",
+    "question": "La prière du Witr est considérée comme wâjib (obligatoire distincte du fard) selon quelle école ?",
+    "choix": ["A. Shâfi'ite", "B. Mâlikite", "C. Hanafite", "D. Hanbalite"],
+    "reponse": "C",
+    "explication": "Abû Hanîfa qualifie le Witr de wâjib en raison du ton impératif de plusieurs hadiths. Les trois autres écoles le classent en sunna mu'akkada. Chez les Hanafites, le Witr se prie en 3 rak'ats avec un seul salâm.",
+    "theme": "fiqh",
+    "source": "Al-Hidâya, al-Marghînânî ; Fiqh comparatif",
+    "difficulte": "avancé",
+    "jour": 2
+  },
+  {
+    "id": "quiz_007",
+    "question": "La Basmala est-elle un verset de la Fâtiha ? L'école qui la récite à voix haute dans les prières audibles est...",
+    "choix": ["A. Hanafite", "B. Mâlikite", "C. Shâfi'ite", "D. Hanbalite"],
+    "reponse": "C",
+    "explication": "Les Shâfi'ites comptent la Basmala comme premier verset de la Fâtiha et la récitent à voix haute dans Fajr, Maghrib et 'Ishâ'. Hanafites et Hanbalites la récitent silencieusement. Les Mâlikites souvent ne la récitent pas dans la Fâtiha.",
+    "theme": "fiqh",
+    "source": "Al-Majmû', an-Nawawî ; Fiqh comparatif",
+    "difficulte": "avancé",
+    "jour": 3
+  },
+  {
+    "id": "quiz_008",
+    "question": "Qui fut le premier martyr (shahîd) de l'Islam ?",
+    "choix": ["A. Hamza ibn 'Abd al-Muttalib", "B. Sumayya bint Khayyât", "C. Yâsir ibn 'Âmir", "D. Bilâl ibn Rabâh"],
+    "reponse": "B",
+    "explication": "Sumayya bint Khayyât, esclave âgée d'environ 60 ans, fut tuée par Abû Jahl vers 615 EC pour avoir refusé d'abjurer. Son mari Yâsir fut le premier martyr masculin. Ibn Ishâq et Ibn Sa'd le rapportent.",
+    "theme": "sira",
+    "source": "Ibn Ishâq, Sîrat Rasûl Allâh ; Ibn Sa'd, al-Tabaqât",
+    "difficulte": "intermédiaire",
+    "jour": 3
+  },
+  {
+    "id": "quiz_009",
+    "question": "Combien de musulmans prêtèrent le serment de Ridwân (Bay'at ar-Ridwân) sous l'arbre à Hudaybiyya ?",
+    "choix": ["A. 313", "B. Environ 1 400", "C. 10 000", "D. 70"],
+    "reponse": "B",
+    "explication": "Jâbir ibn 'Abdullâh rapporte dans Sahîh al-Bukhârî (n°4154) : « Nous étions alors 1 400 ». Le serment fut prêté après la rumeur de l'assassinat de 'Uthmân. Allah l'évoque en Al-Fath (48:18).",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°4154 ; Coran 48:18",
+    "difficulte": "avancé",
+    "jour": 3
+  },
+  {
+    "id": "quiz_010",
+    "question": "Qui fut le premier muezzin de l'Islam, et d'où viennent les paroles de l'Adhân ?",
+    "choix": ["A. Bilâl ; révélées directement au Prophète", "B. Bilâl ; d'un rêve de 'Abdullâh ibn Zayd, confirmé aussi par 'Umar", "C. Abû Mahdhûra ; d'un rêve d'Abû Bakr", "D. Ibn Umm Maktûm ; enseignées par Jibrîl"],
+    "reponse": "B",
+    "explication": "'Abdullâh ibn Zayd vit en rêve un homme lui enseigner les paroles de l'Adhân. Le Prophète les confirma comme vision véridique et ordonna de les enseigner à Bilâl, car il avait la voix la plus forte. 'Umar rapporta avoir eu le même rêve.",
+    "theme": "sira",
+    "source": "Sunan Abî Dâwûd n°499 ; Sunan Ibn Mâja n°706",
+    "difficulte": "avancé",
+    "jour": 4
+  },
+  {
+    "id": "quiz_011",
+    "question": "Qui fut le premier Muhâjir enterré au cimetière d'al-Baqî' à Médine ?",
+    "choix": ["A. 'Uthmân ibn 'Affân", "B. As'ad ibn Zurâra", "C. 'Uthmân ibn Maz'ûn", "D. Ibrâhîm, fils du Prophète"],
+    "reponse": "C",
+    "explication": "'Uthmân ibn Maz'ûn fut le premier des Muhâjirûn enterré à al-Baqî' (an 2-3 H). Le Prophète ﷺ plaça une pierre sur sa tombe. As'ad ibn Zurâra fut lui le premier des Ansâr — d'où le piège du choix B.",
+    "theme": "sira",
+    "source": "Ibn Sa'd, al-Tabaqât al-Kubrâ vol.3",
+    "difficulte": "avancé",
+    "jour": 4
+  },
+  {
+    "id": "quiz_012",
+    "question": "Lors de quelle bataille Khâlid ibn al-Walîd reçut-il le titre de Sayf Allâh (l'Épée d'Allah) ?",
+    "choix": ["A. Badr", "B. Uhud", "C. Mu'ta", "D. Yarmouk"],
+    "reponse": "C",
+    "explication": "Après le martyre des trois commandants (Zayd, Ja'far, Ibn Rawâha), Khâlid prit le commandement à Mu'ta. Dans Sahîh al-Bukhârî, Khâlid dit : « Neuf épées se brisèrent dans ma main ce jour-là. » Le titre lui fut donné sur le minbar.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî, Kitâb al-Maghâzî",
+    "difficulte": "avancé",
+    "jour": 4
+  },
+  {
+    "id": "quiz_013",
+    "question": "Quel était le nom personnel du Négus (Najâshî), le roi d'Abyssinie qui accueillit les musulmans ?",
+    "choix": ["A. Ashama ibn Abjar", "B. Théodore", "C. Abraha", "D. Muqawqis"],
+    "reponse": "A",
+    "explication": "Négus est un titre royal. Dans Sahîh al-Bukhârî (n°3877), Jâbir rapporte que le Prophète ﷺ dit à sa mort : « Priez sur votre frère Asḥama. » C'est pour lui que la Salât al-Ghâ'ib (prière funéraire par absence) fut accomplie.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°3877 ; Sahîh Muslim n°951",
+    "difficulte": "avancé",
+    "jour": 5
+  },
+  {
+    "id": "quiz_014",
+    "question": "Lors du premier serment d'al-'Aqaba, combien de personnes prêtèrent allégeance et qui fut envoyé à Yathrib ?",
+    "choix": ["A. 70 personnes ; 'Alî", "B. 12 hommes ; Mus'ab ibn 'Umayr", "C. 40 hommes ; Abû Bakr", "D. 12 hommes ; Bilâl"],
+    "reponse": "B",
+    "explication": "Douze hommes de Yathrib prêtèrent allégeance vers l'an 12 de la mission (621 EC). Le Prophète envoya Mus'ab ibn 'Umayr pour enseigner le Coran. Il logea chez As'ad ibn Zurâra. Ce serment n'incluait pas de clause de combat.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.1",
+    "difficulte": "avancé",
+    "jour": 5
+  },
+  {
+    "id": "quiz_015",
+    "question": "Selon la croyance d'Ahl as-Sunna, les croyants verront-ils Allah dans l'au-delà ?",
+    "choix": ["A. Non, jamais, en aucun lieu", "B. Oui, de leurs propres yeux au Paradis", "C. Seulement les prophètes", "D. Seulement par le cœur, pas par les yeux"],
+    "reponse": "B",
+    "explication": "Hadith de Jarîr ibn 'Abdullâh (Bukhârî/Muslim) : « Vous verrez votre Seigneur comme vous voyez cette lune, sans difficulté. » Sourate Al-Qiyâma (75:22-23) : « Des visages resplendissants qui regarderont vers leur Seigneur. » La vision se fait bilâ kayf (sans modalité).",
+    "theme": "aqida",
+    "source": "Sahîh al-Bukhârî n°554 ; Coran 75:22-23",
+    "difficulte": "intermédiaire",
+    "jour": 5
+  },
+  {
+    "id": "quiz_016",
+    "question": "Selon la position majoritaire d'Ahl as-Sunna, comment le Prophète ﷺ vit-il Allah durant le Mi'râj ?",
+    "choix": ["A. De ses yeux physiques, c'est établi par consensus", "B. La majorité dit qu'il Le vit par le cœur, non de ses yeux", "C. Il Le vit endormi dans un rêve", "D. Nul ne s'est jamais prononcé sur ce sujet"],
+    "reponse": "B",
+    "explication": "'Â'isha nia catégoriquement la vision oculaire : « Quiconque dit que Muhammad a vu son Seigneur a menti. » Le Prophète ﷺ dit dans Muslim : « C'était une lumière, comment Le verrais-je ? » La majorité des savants retient la vision par le cœur.",
+    "theme": "aqida",
+    "source": "Sahîh Muslim n°178 ; Sahîh al-Bukhârî n°4855",
+    "difficulte": "avancé",
+    "jour": 6
+  },
+  {
+    "id": "quiz_017",
+    "question": "Qui était, selon 'Umar ibn al-Khattâb, le meilleur récitateur du Coran parmi les Compagnons ?",
+    "choix": ["A. 'Abdullâh ibn Mas'ûd", "B. Zayd ibn Thâbit", "C. Ubayy ibn Ka'b", "D. Mu'âdh ibn Jabal"],
+    "reponse": "C",
+    "explication": "'Umar dit : « Ubayy est le meilleur d'entre nous en récitation » (Bukhârî). Le Prophète ﷺ reçut l'ordre de lui réciter la sourate Al-Bayyina, et Ubayy pleura de joie. Il fut surnommé Sayyid al-Qurrâ' (le maître des récitateurs).",
+    "theme": "coran",
+    "source": "Sahîh al-Bukhârî n°3808 ; Sahîh Muslim n°799",
+    "difficulte": "avancé",
+    "jour": 6
+  },
+  {
+    "id": "quiz_018",
+    "question": "La prière funéraire par absence (Salât al-Ghâ'ib) trouve son fondement dans la prière du Prophète ﷺ pour qui ?",
+    "choix": ["A. Pour Ja'far ibn Abî Tâlib", "B. Pour le Négus Ashama", "C. Pour Hamza ibn 'Abd al-Muttalib", "D. Pour Abû Tâlib"],
+    "reponse": "B",
+    "explication": "Le seul cas établi dans la Sunna est la prière du Prophète pour le Négus le jour de sa mort. Shâfi'ites et Hanbalites l'autorisent généralement. Hanafites et Mâlikites la considèrent comme une spécificité prophétique.",
+    "theme": "fiqh",
+    "source": "Sahîh al-Bukhârî n°3877 ; Sahîh Muslim n°951",
+    "difficulte": "avancé",
+    "jour": 7
+  },
+  {
+    "id": "quiz_019",
+    "question": "Quel statut a le « verset de la lapidation » selon la position sunnite classique ?",
+    "choix": ["A. Il figure toujours dans le Coran", "B. Sa récitation fut abrogée mais son jugement demeure", "C. Il n'a jamais existé", "D. Il est dans la sourate An-Nûr"],
+    "reponse": "B",
+    "explication": "'Umar craignait qu'on abandonne la lapidation faute de le trouver écrit. Les savants citent ce cas comme exemple d'abrogation de la récitation (tilâwa) sans abrogation du jugement (hukm). Le châtiment reste établi par la Sunna mutawâtira.",
+    "theme": "coran",
+    "source": "Sahîh al-Bukhârî n°6829 ; 'Ulûm al-Qur'ân",
+    "difficulte": "avancé",
+    "jour": 7
+  },
+  {
+    "id": "quiz_020",
+    "question": "Quel Compagnon refusa de prêter allégeance à Abû Bakr durant les premiers mois du califat ?",
+    "choix": ["A. 'Umar ibn al-Khattâb", "B. 'Alî ibn Abî Tâlib", "C. Abû Dharr al-Ghifârî", "D. Sa'd ibn 'Ubâda"],
+    "reponse": "D",
+    "explication": "Sa'd ibn 'Ubâda, chef des Khazraj, refusa de prêter allégeance à Abû Bakr et quitta Médine pour la Syrie où il mourut. 'Alî, lui, prêta allégeance selon la tradition sunnite après quelques mois selon certaines narrations.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra ; at-Tabarî, Târîkh",
+    "difficulte": "avancé",
+    "jour": 7
+  }
+]
