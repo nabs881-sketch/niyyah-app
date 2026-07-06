@@ -1513,6 +1513,7 @@ const LEVELS = [
         { id: 'ghidaa_jour', minVague: 4, label: 'Aliment du jour', get sub() { var g = getGhidaaJour(); return g ? g.nom_fr + ' \u2014 ' + g.nom_ar : 'Nutrition proph\u00e9tique'; }, arabic: '\u063A\u0650\u0630\u064E\u0627\u0621', paths: ['sacraliser'], block: 'jour', category: 'science', filDuJour: true, hadith: 'La nutrition prophétique — ce que le Prophète ﷺ mangeait, recommandait ou évitait. Prendre soin du corps est une obligation envers Allah. "Le croyant fort est meilleur et plus aimé d\'Allah que le croyant faible."', source: 'Muslim 2664' },
         { id: 'tibb_jour', minVague: 4, label: 'Rem\u00e8de du jour', get sub() { var t = getTibbJour(); return t ? t.remede_fr + ' \u2014 ' + t.pour_quoi.substring(0,40) : 'M\u00e9decine proph\u00e9tique'; }, arabic: '\u0637\u0650\u0628\u0651', paths: ['sacraliser'], block: 'jour', category: 'science', filDuJour: true, hadith: 'La médecine prophétique — tibb nabawi. Le Prophète ﷺ a indiqué des remèdes dont la science moderne confirme progressivement les vertus. "Allah n\'a pas créé de maladie sans créer son remède."', source: 'Bukhari 5678' },
         { id: 'tawhid_jour', minVague: 1, label: 'Fondement du jour', get sub() { return 'L\u00e2 il\u00e2ha ill\u00e2 All\u00e2h'; }, arabic: '\u0627\u0644\u062a\u064e\u0651\u0648\u062d\u0650\u064a\u062f', paths: ['reconnecter','routine','sacraliser'], block: 'jour', category: 'science', filDuJour: true },
+        { id: 'quiz_jour', minVague: 1, label: 'Quiz du jour', get sub() { return 'Teste tes connaissances'; }, arabic: '\u0627\u0644\u0627\u062e\u062a\u0628\u0627\u0631', paths: ['reconnecter','routine','sacraliser'], block: 'jour', category: 'science', filDuJour: true },
         { id: 'savais_tu', minVague: 4, label: 'Le savais-tu ?', get sub() { var f = getSavaisTuFact(); var t = (f.texte || '').substring(0,50); return t ? t + '\u2026' : 'Une perle du savoir'; }, arabic: 'هَلْ تَعْلَمُ؟', paths: ['sacraliser'], block: 'jour', category: 'science', hadith: 'Des perles du savoir islamique — faits méconnus, anecdotes historiques, détails qui éclairent la foi. La connaissance est une lumière. "Chercher la connaissance est une obligation pour tout musulman."', source: 'Ibn Majah 224, hassan' },
       ]},
       { icon: '🎧', title: 'Immersion coranique', items: [
@@ -1844,7 +1845,7 @@ function _saveDailySnapshot(dk) {
   var prieres = { fajr: 0, dhuhr: 0, asr: 0, maghrib: 0, isha: 0 };
   var ontime = { fajr: 0, dhuhr: 0, asr: 0, maghrib: 0, isha: 0 };
   var bienfIds = ['sadaqa','salam','silaturahm','kind_act','ziyara','pardon','maruf'];
-  var lectIds = ['hadith1','duaa_jour','sira','quran_read','recits_coran','fiqh_jour','savais_tu','ghidaa_jour','tibb_jour','tawhid_jour'];
+  var lectIds = ['hadith1','duaa_jour','sira','quran_read','recits_coran','fiqh_jour','savais_tu','ghidaa_jour','tibb_jour','tawhid_jour','quiz_jour'];
   var allItems = LEVELS.flatMap(function(l) { return l.sections.flatMap(function(sec) { return sec.items; }); });
   allItems.forEach(function(it) {
     var done = it.type === 'counter' ? (s[it.id] || 0) >= (it.target || 1) : !!s[it.id];
@@ -2722,7 +2723,7 @@ function renderLevel(levelId) {
         const optionalBadge = '';
         const _tlOpacity = checked ? 'opacity:0.3;' : '';
         var _tl = tI(item,'label'), _ts = tI(item,'sub');
-        var _isKnowledge = ['savais_tu','fiqh_jour','hadith1','duaa_jour','vie_compagnons','vie_prophetes','quran_read','sira','podcast','recits_coran','lisan','ghidaa_jour','tibb_jour','tawhid_jour'].indexOf(item.id) !== -1;
+        var _isKnowledge = ['savais_tu','fiqh_jour','hadith1','duaa_jour','vie_compagnons','vie_prophetes','quran_read','sira','podcast','recits_coran','lisan','ghidaa_jour','tibb_jour','tawhid_jour','quiz_jour'].indexOf(item.id) !== -1;
         var _checkClick = _isKnowledge ? ' onclick="event.stopPropagation();toggleItem(\'' + item.id + '\',event)"' : '';
         var _knowledgeBg = _isKnowledge ? 'background:rgba(200,168,75,0.08);' : '';
         const customClick = item.id === 'savais_tu'
@@ -2753,6 +2754,8 @@ function renderLevel(levelId) {
           ? 'openVueTibbJour();'
           : item.id === 'tawhid_jour'
           ? 'window._tawhidFromPratique=true;window._openTawhidJour();'
+          : item.id === 'quiz_jour'
+          ? 'window._quizFromPratique=true;window._openQuizJour();'
           : 'toggleItem(\'' + item.id + '\',event)';
         var shareBtn = '';
         if (_isKnowledge) {
@@ -7587,7 +7590,7 @@ function _getWeeklyStats() {
   if (!hasSnapshots) {
     var s = safeParseJSON('spiritual_v2', {});
     var bienfIds = ['sadaqa','salam','silaturahm','kind_act','ziyara','pardon','maruf'];
-    var lectIds = ['hadith1','duaa_jour','sira','quran_read','recits_coran','fiqh_jour','savais_tu','ghidaa_jour','tibb_jour','tawhid_jour'];
+    var lectIds = ['hadith1','duaa_jour','sira','quran_read','recits_coran','fiqh_jour','savais_tu','ghidaa_jour','tibb_jour','tawhid_jour','quiz_jour'];
     var allItems = LEVELS.flatMap(function(l) { return l.sections.flatMap(function(sec) { return sec.items; }); });
     allItems.forEach(function(it) {
       var done = it.type === 'counter' ? (s[it.id] || 0) >= (it.target || 1) : !!s[it.id];
@@ -8839,6 +8842,26 @@ var MEDIT_PHRASES_AR = [
   '\u0623\u064E\u0646\u0652\u062A\u064E \u0645\u0627 \u0632\u0650\u0644\u0652\u062A\u064E \u0647\u064F\u0646\u0627. \u0641\u064F\u0631\u0652\u0635\u064E\u0629\u064C \u062C\u064E\u062F\u0650\u064A\u062F\u064E\u0629. \u0645\u0627\u0630\u0627 \u062A\u064E\u0641\u0652\u0639\u064E\u0644\u064F \u0628\u0650\u0647\u0627\u061F',
   '\u0634\u064E\u0647\u0650\u064A\u0642. \u0627\u0644\u0644\u0651\u064E\u0647. \u0632\u064E\u0641\u0650\u064A\u0631. \u0627\u0644\u062D\u064E\u0645\u0652\u062F\u064F \u0644\u0650\u0644\u0651\u064E\u0647. \u0645\u064F\u062C\u064E\u062F\u0651\u064E\u062F\u064B\u0627.'
 ];
+window.QUIZ_DB = [];
+(function _loadQuizDB() {
+  var _lots = ['quiz_lot_01','quiz_lot_02','quiz_lot_03','quiz_lot_04','quiz_lot_05',
+               'quiz_lot_06','quiz_lot_07','quiz_lot_08','quiz_lot_09','quiz_lot_10'];
+  _lots.forEach(function(lot) {
+    fetch('./data/waqt/quiz/' + lot + '.json')
+      .then(function(r) { return r.ok ? r.json() : null; })
+      .then(function(d) {
+        if (d && Array.isArray(d) && d.length > 0) {
+          window.QUIZ_DB = window.QUIZ_DB.concat(d);
+          window.QUIZ_DB.sort(function(a, b) { return a.id < b.id ? -1 : a.id > b.id ? 1 : 0; });
+        }
+      }).catch(function() {});
+  });
+})();
+function getQuizDuJour() {
+  var _jour = (typeof SIRA !== 'undefined' && SIRA.getCurrentRdvNum) ? SIRA.getCurrentRdvNum() : 1;
+  return window.QUIZ_DB.filter(function(q) { return q.jour === _jour; });
+}
+window.getQuizDuJour = getQuizDuJour;
 window.TAFAKKUR_POOL = null;
 window.TAFAKKUR_RECITS = null;
 window.TAFAKKUR_Q_MAP = null;
@@ -13163,6 +13186,123 @@ window.openTawhid = openTawhid;
 window.closeTawhid = closeTawhid;
 window._tawhidGo = _tawhidGo;
 window._openTawhidJour = _openTawhidJour;
+
+// ── QUIZ DU JOUR ──
+var _quizSession = null;
+
+function _openQuizJour() {
+  window._quizFromFil = true;
+  window._quizFromPratique = !!(window._quizFromPratique);
+  var _qs = getQuizDuJour();
+  if (!_qs || _qs.length === 0) return;
+  _quizSession = { questions: _qs, index: 0 };
+  _renderQuizOverlay();
+}
+
+function _renderQuizOverlay() {
+  var existing = document.getElementById('quiz-overlay');
+  if (existing) existing.remove();
+  if (!_quizSession) return;
+  var q = _quizSession.questions[_quizSession.index];
+  var total = _quizSession.questions.length;
+  var idx = _quizSession.index;
+  var isLast = idx === total - 1;
+  var choicesHtml = q.choix.map(function(c, i) {
+    var letter = ['A','B','C','D'][i];
+    return '<button class="quiz-choice" data-letter="' + letter + '" onclick="_quizChoiceTap(this,\'' + letter + '\',\'' + q.reponse + '\')">'
+      + '<span class="quiz-choice-letter">' + letter + '</span>'
+      + '<span class="quiz-choice-text">' + c.replace(/^[A-D]\.\s*/,'') + '</span>'
+      + '</button>';
+  }).join('');
+  var html = '<div id="quiz-overlay" class="quiz-overlay">'
+    + '<div class="quiz-topbar">'
+    + '<button class="quiz-back" onclick="closeQuiz()">&#8249;</button>'
+    + '<span class="quiz-counter">Question\u00a0' + (idx + 1) + '\u00a0/\u00a0' + total + '</span>'
+    + '</div>'
+    + '<div class="quiz-body">'
+    + '<p class="quiz-theme">' + (q.theme || '') + '</p>'
+    + '<h2 class="quiz-question">' + q.question + '</h2>'
+    + '<div class="quiz-choices">' + choicesHtml + '</div>'
+    + '<div class="quiz-explication" id="quiz-explication" style="display:none;">'
+    + '<p class="quiz-explication-text" id="quiz-explication-text"></p>'
+    + '<p class="quiz-source" id="quiz-source"></p>'
+    + '</div>'
+    + '<button class="quiz-next-btn" id="quiz-next-btn" style="display:none;" onclick="_quizNext()">'
+    + (isLast ? 'Terminer' : 'Question suivante\u00a0\u2192')
+    + '</button>'
+    + '</div>'
+    + '</div>';
+  document.body.insertAdjacentHTML('beforeend', html);
+  requestAnimationFrame(function() {
+    var ov = document.getElementById('quiz-overlay');
+    if (ov) ov.classList.add('quiz-visible');
+  });
+}
+
+function _markQuizDone() {
+  var _st = safeParseJSON('spiritual_v2', {});
+  if (!_st.quiz_jour) toggleItem('quiz_jour', null);
+}
+
+function closeQuiz() {
+  var el = document.getElementById('quiz-overlay');
+  if (el) el.remove();
+  window._quizFromPratique = false;
+  window._quizFromFil = false;
+  _quizSession = null;
+  if (typeof openVueAuFilDuJour === 'function') openVueAuFilDuJour();
+}
+
+function _quizChoiceTap(btn, choix, reponse) {
+  var ov = document.getElementById('quiz-overlay');
+  if (!ov) return;
+  // Désactiver toutes les cards
+  var allCards = ov.querySelectorAll('.quiz-choice');
+  allCards.forEach(function(c) { c.style.pointerEvents = 'none'; });
+  // Colorier correct / wrong
+  allCards.forEach(function(c) {
+    if (c.dataset.letter === reponse) c.classList.add('correct');
+    else if (c === btn && choix !== reponse) c.classList.add('wrong');
+  });
+  // Afficher explication
+  var q = _quizSession.questions[_quizSession.index];
+  var expEl = document.getElementById('quiz-explication');
+  var expTxt = document.getElementById('quiz-explication-text');
+  var expSrc = document.getElementById('quiz-source');
+  if (expEl) expEl.style.display = 'flex';
+  if (expTxt) expTxt.textContent = q.explication || '';
+  if (expSrc) expSrc.textContent = q.source || '';
+  // Afficher bouton suivant
+  var nextBtn = document.getElementById('quiz-next-btn');
+  if (nextBtn) nextBtn.style.display = 'block';
+}
+
+function _quizNext() {
+  if (!_quizSession) return;
+  _quizSession.index++;
+  if (_quizSession.index < _quizSession.questions.length) {
+    _renderQuizOverlay();
+  } else {
+    // Écran de fin
+    _markQuizDone();
+    var ov = document.getElementById('quiz-overlay');
+    if (!ov) return;
+    ov.innerHTML = '<div class="quiz-topbar">'
+      + '<button class="quiz-back" onclick="closeQuiz()">&#8249;</button>'
+      + '<span class="quiz-counter"></span>'
+      + '</div>'
+      + '<div class="quiz-fin">'
+      + '<div class="quiz-fin-titre">Barak All\u0101hu f\u012bk\u00a0\u2014<br>tu as r\u00e9pondu aux ' + _quizSession.questions.length + '\u00a0questions d\u2019aujourd\u2019hui.</div>'
+      + '<div class="quiz-fin-msg">Chaque connaissance est un\u00a0lumi\u00e8re\u00a0qui guide.</div>'
+      + '<button class="quiz-retour-btn" onclick="closeQuiz()">&#8592;\u00a0Retour au Fil du jour</button>'
+      + '</div>';
+  }
+}
+
+window._openQuizJour = _openQuizJour;
+window._quizChoiceTap = _quizChoiceTap;
+window._quizNext = _quizNext;
+window.closeQuiz = closeQuiz;
 window._resetTawhidJour = function() {
   var st = JSON.parse(localStorage.getItem('spiritual_v2') || '{}');
   delete st.tawhid_jour;
@@ -19573,6 +19713,7 @@ function getFilJourItems() {
     var lvl = LEVELS[i]; if (!lvl || !lvl.sections) return;
     lvl.sections.forEach(function(s) { (s.items || []).forEach(function(it) { if (it.filDuJour && _ok(it)) items.push(it); }); });
   });
+  if (getQuizDuJour().length === 0) { items = items.filter(function(it){ return it.id !== 'quiz_jour'; }); }
   var _ti = items.findIndex(function(it){ return it.id === 'tawhid_jour'; });
   if (_ti > 0) { var _t = items.splice(_ti, 1); items.unshift(_t[0]); }
   return items;
@@ -19632,7 +19773,7 @@ function openVueAuFilDuJour() {
     const ar = it.arabic ? '<div class="arabic">' + it.arabic + '</div>' : '';
     const sub = it.sub ? '<div class="sub">' + it.sub + '</div>' : '';
     const audio = it.audio ? '<button class="btn-wird-audio" aria-label="\u00c9couter" ontouchstart="event.stopPropagation()" onclick="playAudioFromBtn(this,event)" data-audio="' + (typeof it.audio === 'string' ? it.audio : JSON.stringify(it.audio)).replace(/"/g,'&quot;') + '" style="width:32px;height:32px;border-radius:50%;border:1.5px solid rgba(200,168,75,0.5);background:rgba(200,168,75,0.08);display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;flex-shrink:0;margin-left:4px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="#C8A84A" style="pointer-events:none"><polygon points="5 3 19 12 5 21 5 3"/></svg></button>' : '';
-    var _knowledgeIds = ['savais_tu','fiqh_jour','hadith1','duaa_jour','vie_compagnons','vie_prophetes','quran_read','sira','podcast','recits_coran','lisan','ghidaa_jour','tibb_jour','tawhid_jour'];
+    var _knowledgeIds = ['savais_tu','fiqh_jour','hadith1','duaa_jour','vie_compagnons','vie_prophetes','quran_read','sira','podcast','recits_coran','lisan','ghidaa_jour','tibb_jour','tawhid_jour','quiz_jour'];
     var _isKnowledgeFil = _knowledgeIds.indexOf(it.id) !== -1;
     var _coranBtn = it.coranPicker ? '<button class="btn-audio" onclick="event.stopPropagation();_openCoranInlineFil(event)" style="font-size:12px;padding:4px 10px;width:auto;white-space:nowrap;font-family:\'Georgia\',serif;color:#C8A84A;border:1px solid rgba(200,168,75,0.3);border-radius:8px;background:transparent;cursor:pointer;">\u00c9couter</button>' : '';
     var _filFlag = 'window._knowledgeFromFil=true;';
@@ -19650,6 +19791,7 @@ function openVueAuFilDuJour() {
       : it.id === 'ghidaa_jour' ? _filFlag + 'openVueGhidaaJour();'
       : it.id === 'tibb_jour' ? _filFlag + 'openVueTibbJour();'
       : it.id === 'tawhid_jour' ? 'window._openTawhidJour();'
+      : it.id === 'quiz_jour' ? 'window._openQuizJour();'
       : it.coranPicker ? '_openCoranInlineFil(event);'
       : 'toggleItem(\'' + it.id + '\',event); _filItemToggled(\'' + it.id + '\');';
     var _readBtn = _isKnowledgeFil ? '<button style="background:none;border:none;cursor:pointer;flex-shrink:0;align-self:center;padding:8px 4px;margin:0;position:relative;z-index:10;isolation:isolate;" onclick="event.stopPropagation();' + _click + '"><svg width="14" height="22" viewBox="0 0 14 22" style="pointer-events:none;" aria-hidden="true"><path d="M3 4 L10 11 L3 18" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>' : '';
