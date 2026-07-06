@@ -3651,6 +3651,15 @@ function toggleKahfAudio(btn, event) {
 // ─────────────────────────────────────────────────────────────────────────────
 let _currentAudio = null;
 let _currentBtn   = null;
+function _restoreAudioBtn(b) {
+  if (!b) return;
+  b.classList.remove('playing');
+  if (b.classList.contains('btn-wird-audio')) {
+    b.innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="#C8A84A" style="pointer-events:none"><polygon points="5 3 19 12 5 21 5 3"/></svg>';
+  } else {
+    b.textContent = '🔊';
+  }
+}
 function playAudioFromBtn(btn, event) {
   if (event) event.stopPropagation();
   const raw = btn.getAttribute('data-audio');
@@ -3675,21 +3684,19 @@ function playAudio(urlOrArr, btn, event) {
   if (_currentAudio && _currentBtn === btn) {
     _currentAudio.pause();
     _currentAudio = null;
-    btn.textContent = '🔊';
-    btn.classList.remove('playing');
+    _restoreAudioBtn(btn);
     _currentBtn = null;
     return;
   }
   if (_currentAudio) {
     _currentAudio.pause();
-    if (_currentBtn) { _currentBtn.textContent = '🔊'; _currentBtn.classList.remove('playing'); }
+    _restoreAudioBtn(_currentBtn);
   }
   const urls = Array.isArray(urlOrArr) ? urlOrArr : [urlOrArr];
   let idx = 0;
   function playNext() {
     if (idx >= urls.length) {
-      btn.textContent = '🔊';
-      btn.classList.remove('playing');
+      _restoreAudioBtn(btn);
       _currentAudio = null;
       _currentBtn   = null;
       return;
@@ -3720,7 +3727,7 @@ function playAudio(urlOrArr, btn, event) {
 /* @deprecated — SoundCloud bloqué par CSP. Tous les items migrés vers everyayah ou audio local. */
 function openSoundCloudPlayer(trackUrl, btn) {
   const existing = document.getElementById('scPlayerOverlay');
-  if (existing) { existing.remove(); if (_currentBtn) { _currentBtn.textContent = '🔊'; _currentBtn.classList.remove('playing'); } }
+  if (existing) { existing.remove(); if (_currentBtn) { _restoreAudioBtn(_currentBtn); } }
   if (_currentBtn === btn) { _currentBtn = null; return; }
   btn.textContent = '⏹';
   btn.classList.add('playing');
