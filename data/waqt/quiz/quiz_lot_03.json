@@ -1,0 +1,222 @@
+[
+  {
+    "id": "quiz_041",
+    "question": "Quelle sourate est traditionnellement surnommée « la Fiancée du Coran » ('Arûs al-Qur'ân) ?",
+    "choix": ["A. Yâ-Sîn", "B. Ar-Rahmân", "C. Al-Wâqi'a", "D. Al-Mulk"],
+    "reponse": "B",
+    "explication": "Ar-Rahmân est surnommée 'Arûs al-Qur'ân en raison de son refrain répété 31 fois : « Lequel donc des bienfaits de votre Seigneur nierez-vous ? » Ce titre, transmis par certains savants, souligne sa beauté et sa place particulière dans la piété populaire.",
+    "theme": "coran",
+    "source": "Tafsîr al-Qurtubî, introduction à Ar-Rahmân",
+    "difficulte": "intermédiaire",
+    "jour": 15
+  },
+  {
+    "id": "quiz_042",
+    "question": "Quelle sourate s'ouvre par la combinaison unique de lettres disjointes « Kâf Hâ Yâ 'Ayn Sâd » ?",
+    "choix": ["A. Maryam", "B. Tâ-Hâ", "C. Yâ-Sîn", "D. Al-'Ankabût"],
+    "reponse": "A",
+    "explication": "La sourate Maryam (19) s'ouvre par cette combinaison de cinq lettres, la plus longue chaîne de lettres disjointes du Coran avec celle d'Ash-Shûrâ. Le sens exact des lettres disjointes (al-hurûf al-muqatta'a) reste parmi le savoir gardé par Allah seul.",
+    "theme": "coran",
+    "source": "Coran 19:1 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 15
+  },
+  {
+    "id": "quiz_043",
+    "question": "Quelle sourate le Coran qualifie-t-il lui-même de « meilleure des histoires » (ahsan al-qasas) ?",
+    "choix": ["A. Yûsuf", "B. Al-Kahf", "C. Al-Qasas", "D. Hûd"],
+    "reponse": "A",
+    "explication": "Le verset d'ouverture de la sourate Yûsuf (12:3) annonce : « Nous te racontons le meilleur récit ». Les exégètes expliquent cette qualification par la richesse narrative unique du récit, développé sur une sourate entière sans interruption par d'autres sujets.",
+    "theme": "coran",
+    "source": "Coran 12:3 ; Tafsîr at-Tabarî",
+    "difficulte": "intermédiaire",
+    "jour": 15
+  },
+  {
+    "id": "quiz_044",
+    "question": "Quelle sourate compare la fragilité des idoles vénérées en dehors d'Allah à la toile d'une araignée ?",
+    "choix": ["A. An-Naml", "B. An-Nahl", "C. Al-'Ankabût", "D. Al-Fîl"],
+    "reponse": "C",
+    "explication": "Al-'Ankabût (29:41) énonce : « Ceux qui ont pris des protecteurs en dehors d'Allah ressemblent à l'araignée qui s'est donné une maison. Or la maison la plus fragile est la maison de l'araignée. » Une image saisissante sur la vanité du polythéisme.",
+    "theme": "coran",
+    "source": "Coran 29:41 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 16
+  },
+  {
+    "id": "quiz_045",
+    "question": "Comment appelle-t-on la « Station Louée » (al-Maqâm al-Mahmûd) promise au Prophète ﷺ dans le Coran ?",
+    "choix": ["A. Sa place au Paradis le plus élevé", "B. Le rang de la grande intercession au Jour du Jugement", "C. Sa position lors du Mi'râj", "D. Son statut de dernier prophète"],
+    "reponse": "B",
+    "explication": "En Al-Isrâ' (17:79), Allah promet au Prophète ﷺ une « Station Louée ». La majorité des commentateurs l'identifient à ash-Shafâ'a al-'Uzmâ, la grande intercession, où l'humanité entière suppliera le Prophète ﷺ d'intercéder pour hâter le Jugement.",
+    "theme": "coran",
+    "source": "Coran 17:79 ; Sahîh al-Bukhârî, Kitâb at-Tawhîd",
+    "difficulte": "avancé",
+    "jour": 16
+  },
+  {
+    "id": "quiz_046",
+    "question": "Selon les écoles mâlikite et shâfi'ite, quelle distance minimale de voyage autorise le raccourcissement (qasr) de la prière ?",
+    "choix": ["A. Environ 81 km (4 burud)", "B. Environ 20 km", "C. Trois jours de marche", "D. Aucune distance minimale n'est fixée"],
+    "reponse": "A",
+    "explication": "Mâlikites et Shâfi'ites fixent la distance à 4 burud, soit environ 81 km, une mesure calquée sur les unités de voyage anciennes. Les Hanafites retiennent un critère différent, plus proche de trois jours de marche, illustrant une divergence classique en fiqh du voyage.",
+    "theme": "fiqh",
+    "source": "Al-Majmû', an-Nawawî ; Fiqh comparatif du voyage",
+    "difficulte": "avancé",
+    "jour": 16
+  },
+  {
+    "id": "quiz_047",
+    "question": "Selon l'école hanafite, la zakât est-elle due sur les bijoux en or qu'une femme porte pour son usage personnel ?",
+    "choix": ["A. Non, jamais", "B. Oui, si le nisâb est atteint", "C. Seulement si elle les porte plus d'un an sans les mettre", "D. Seulement en cas d'héritage"],
+    "reponse": "B",
+    "explication": "Contrairement aux trois autres écoles, qui exemptent généralement les bijoux d'usage personnel, l'école hanafite considère que l'or et l'argent restent soumis à la zakât dès que le nisâb est atteint, qu'ils soient portés ou non.",
+    "theme": "fiqh",
+    "source": "Al-Hidâya, al-Marghînânî ; Fiqh comparatif de la zakât",
+    "difficulte": "avancé",
+    "jour": 17
+  },
+  {
+    "id": "quiz_048",
+    "question": "Quel est le nisâb classique de l'or à partir duquel la zakât devient obligatoire ?",
+    "choix": ["A. Environ 50 grammes", "B. Environ 85 grammes", "C. Environ 200 grammes", "D. Il n'existe pas de nisâb pour l'or"],
+    "reponse": "B",
+    "explication": "Le nisâb de l'or est fixé à 20 mithqâl, soit environ 85 grammes selon l'équivalence retenue par la majorité des savants contemporains. Au-delà de ce seuil et après une année lunaire de possession, la zakât de 2,5% devient obligatoire.",
+    "theme": "fiqh",
+    "source": "Fiqh az-Zakât, Yûsuf al-Qaradâwî ; consensus classique",
+    "difficulte": "intermédiaire",
+    "jour": 17
+  },
+  {
+    "id": "quiz_049",
+    "question": "L'école hanafite autorise-t-elle de combiner deux prières (jam') en dehors du pèlerinage, pour cause de voyage ?",
+    "choix": ["A. Oui, sans restriction", "B. Non, sauf à 'Arafât et Muzdalifa durant le Hajj", "C. Oui, mais seulement à Maghrib et 'Ishâ'", "D. Non, dans aucune circonstance"],
+    "reponse": "B",
+    "explication": "Contrairement aux trois autres écoles qui permettent le jam' pour cause de voyage ou de nécessité, les Hanafites restreignent cette combinaison réelle des deux prières aux seuls lieux et moments du Hajj : 'Arafât (Dhuhr et 'Asr) et Muzdalifa (Maghrib et 'Ishâ').",
+    "theme": "fiqh",
+    "source": "Al-Hidâya, al-Marghînânî ; Fiqh comparatif du voyage",
+    "difficulte": "avancé",
+    "jour": 17
+  },
+  {
+    "id": "quiz_050",
+    "question": "Qui fut la première personne, homme ou femme, à embrasser l'Islam ?",
+    "choix": ["A. Abû Bakr as-Siddîq", "B. 'Alî ibn Abî Tâlib", "C. Khadîja bint Khuwaylid", "D. Zayd ibn Hâritha"],
+    "reponse": "C",
+    "explication": "Khadîja, épouse du Prophète ﷺ, fut la toute première à croire en son message, dès le retour de la grotte de Hirâ'. Elle le rassura et le soutint. Parmi les hommes adultes, Abû Bakr fut le premier ; parmi les jeunes, 'Alî ; parmi les affranchis, Zayd.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.1",
+    "difficulte": "intermédiaire",
+    "jour": 18
+  },
+  {
+    "id": "quiz_051",
+    "question": "Qui fut le premier jeune garçon à embrasser l'Islam, selon la tradition sunnite majoritaire ?",
+    "choix": ["A. Zayd ibn Hâritha", "B. 'Alî ibn Abî Tâlib", "C. Sa'd ibn Abî Waqqâs", "D. 'Abdullâh ibn 'Abbâs"],
+    "reponse": "B",
+    "explication": "'Alî, alors âgé d'environ 10 ans et élevé dans le foyer du Prophète ﷺ, fut le premier des jeunes à accepter l'Islam. La distinction se fait traditionnellement entre premier homme adulte (Abû Bakr), premier jeune ('Alî) et premier affranchi (Zayd).",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.1",
+    "difficulte": "intermédiaire",
+    "jour": 18
+  },
+  {
+    "id": "quiz_052",
+    "question": "En quel mois du calendrier hégirien situe-t-on traditionnellement le Voyage Nocturne et l'Ascension (Isrâ' wal-Mi'râj) ?",
+    "choix": ["A. Ramadân", "B. Rajab", "C. Muharram", "D. Dhû al-Hijja"],
+    "reponse": "B",
+    "explication": "La tradition majoritaire situe l'Isrâ' wal-Mi'râj dans la nuit du 27 Rajab, environ un an avant l'Hégire, bien que la date précise fasse l'objet de divergences historiques parmi les biographes du Prophète ﷺ.",
+    "theme": "sira",
+    "source": "Ibn Kathîr, al-Bidâya wa'n-Nihâya",
+    "difficulte": "intermédiaire",
+    "jour": 18
+  },
+  {
+    "id": "quiz_053",
+    "question": "Comment appelle-t-on le document rédigé par le Prophète ﷺ à son arrivée à Médine, organisant les relations entre musulmans, juifs et autres tribus de la cité ?",
+    "choix": ["A. Le Traité de Hudaybiyya", "B. La Sahîfat al-Madîna (Charte de Médine)", "C. Le Pacte de 'Umar", "D. La Risâlat al-Madîna"],
+    "reponse": "B",
+    "explication": "La Sahîfat al-Madîna, rédigée peu après l'arrivée du Prophète ﷺ à Yathrib, organisait la coexistence entre Muhâjirûn, Ansâr et tribus juives de la ville, définissant droits, devoirs mutuels et défense commune de Médine. Un document politique précoce et méconnu du grand public.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.1",
+    "difficulte": "avancé",
+    "jour": 19
+  },
+  {
+    "id": "quiz_054",
+    "question": "Qui rédigea de sa main le traité de Hudaybiyya au nom des musulmans ?",
+    "choix": ["A. Abû Bakr as-Siddîq", "B. 'Alî ibn Abî Tâlib", "C. Zayd ibn Thâbit", "D. 'Umar ibn al-Khattâb"],
+    "reponse": "B",
+    "explication": "'Alî fut chargé d'écrire le texte du traité. Un épisode célèbre rapporte que lorsque le Prophète ﷺ demanda d'effacer « Muhammad Messager d'Allah » à la demande de Quraysh, 'Alî refusa de l'effacer lui-même, et le Prophète ﷺ le fit de sa propre main.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°2731 ; Ibn Hishâm, as-Sîra",
+    "difficulte": "avancé",
+    "jour": 19
+  },
+  {
+    "id": "quiz_055",
+    "question": "Qui commandait le groupe de cinquante archers postés sur la colline lors de la bataille d'Uhud ?",
+    "choix": ["A. Hamza ibn 'Abd al-Muttalib", "B. 'Abdullâh ibn Jubayr", "C. Mus'ab ibn 'Umayr", "D. Sa'd ibn Abî Waqqâs"],
+    "reponse": "B",
+    "explication": "Le Prophète ﷺ plaça 'Abdullâh ibn Jubayr à la tête de cinquante archers sur la colline d'Uhud, avec l'ordre strict de ne jamais quitter leur poste, quel que soit l'issue apparente de la bataille. Leur départ prématuré pour le butin provoqua le retournement de la bataille.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°4043 ; Ibn Hishâm, as-Sîra",
+    "difficulte": "avancé",
+    "jour": 20
+  },
+  {
+    "id": "quiz_056",
+    "question": "Qui est généralement considéré comme le dernier Compagnon du Prophète ﷺ à être mort ?",
+    "choix": ["A. 'Abdullâh ibn 'Umar", "B. Anas ibn Mâlik", "C. Abû Hurayra", "D. Jâbir ibn 'Abdullâh"],
+    "reponse": "B",
+    "explication": "Anas ibn Mâlik, qui servit le Prophète ﷺ dès l'enfance à Médine, mourut à Basra vers 93 H, à un âge très avancé. Il est traditionnellement cité comme le dernier des Compagnons survivants, clôturant symboliquement la génération qui côtoya le Prophète ﷺ.",
+    "theme": "sira",
+    "source": "Adh-Dhahabî, Siyar A'lâm an-Nubalâ'",
+    "difficulte": "intermédiaire",
+    "jour": 20
+  },
+  {
+    "id": "quiz_057",
+    "question": "Selon la position atharite (Ahl as-Sunna wal-Jamâ'a), comment doit-on comprendre un attribut d'Allah comme « la Main d'Allah » mentionné dans le Coran ?",
+    "choix": ["A. Comme une simple métaphore de puissance, sans réalité", "B. En l'affirmant tel quel, sans en préciser le comment (bilâ kayf), sans le comparer à la création", "C. En le niant totalement", "D. En l'interprétant uniquement selon la raison philosophique"],
+    "reponse": "B",
+    "explication": "La méthode athârite consiste à affirmer les attributs mentionnés dans le Coran et la Sunna sans distorsion (tahrîf), sans négation (ta'tîl), sans en demander la modalité (takyîf) et sans les comparer à ceux de la création (tamthîl) — la formule bilâ kayf, « sans dire comment ».",
+    "theme": "aqida",
+    "source": "Al-Lâlakâ'î, Sharh Usûl I'tiqâd Ahl as-Sunna",
+    "difficulte": "avancé",
+    "jour": 20
+  },
+  {
+    "id": "quiz_058",
+    "question": "Selon la Sunna, à quel endroit précis le prophète 'Îsâ (Jésus) descendra-t-il à la fin des temps ?",
+    "choix": ["A. Sur le Mont des Oliviers à Jérusalem", "B. Sur le minaret blanc à l'est de Damas", "C. À la Ka'ba à la Mecque", "D. Sur le Mont Uhud"],
+    "reponse": "B",
+    "explication": "Un hadith rapporté par Muslim décrit la descente de 'Îsâ « près du minaret blanc à l'est de Damas ». Il combattra le Dajjâl, rétablira la justice et priera selon la loi de Muhammad ﷺ, confirmant qu'il reviendra en tant que membre de cette Umma et non en prophète législateur nouveau.",
+    "theme": "aqida",
+    "source": "Sahîh Muslim n°2937, Kitâb al-Fitan",
+    "difficulte": "avancé",
+    "jour": 21
+  },
+  {
+    "id": "quiz_059",
+    "question": "Comment appelle-t-on, dans le Coran, les deux anges chargés de consigner les bonnes et mauvaises actions de chaque être humain ?",
+    "choix": ["A. Munkar et Nakîr", "B. Kirâman Kâtibîn", "C. Hârût et Mârût", "D. Ridwân et Mâlik"],
+    "reponse": "B",
+    "explication": "Les Kirâman Kâtibîn (« Nobles Scribes ») sont mentionnés en Al-Infitâr (82:10-11) : « De nobles scribes veillent sur vous, qui savent ce que vous faites. » L'un consigne les bonnes actions, l'autre les mauvaises, un ange sur chaque épaule.",
+    "theme": "aqida",
+    "source": "Coran 82:10-11 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 21
+  },
+  {
+    "id": "quiz_060",
+    "question": "Combien de degrés (marâtib) comprend la croyance au Qadar selon Ahl as-Sunna ?",
+    "choix": ["A. Deux : le bien et le mal", "B. Trois : Science, Volonté, Création", "C. Quatre : Science, Écriture, Volonté, Création", "D. Un seul degré global"],
+    "reponse": "C",
+    "explication": "Ahl as-Sunna détaille la croyance au Qadar en quatre degrés : 'ilm (Allah sait tout de toute éternité), kitâba (Il l'a consigné dans al-Lawh al-Mahfûz), mashî'a (rien n'arrive sans Sa volonté) et khalq (Il est le Créateur de toute chose, actes des créatures inclus).",
+    "theme": "aqida",
+    "source": "Ibn al-Qayyim, Shifâ' al-'Alîl fî Masâ'il al-Qadâ' wal-Qadar",
+    "difficulte": "avancé",
+    "jour": 21
+  }
+]
