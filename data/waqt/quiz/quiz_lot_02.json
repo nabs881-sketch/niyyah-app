@@ -1,0 +1,222 @@
+[
+  {
+    "id": "quiz_021",
+    "question": "Quelle est la seule sourate du Coran qui ne commence pas par la Basmala ?",
+    "choix": ["A. Al-Fâtiha", "B. At-Tawba", "C. Al-Ikhlâs", "D. An-Nâs"],
+    "reponse": "B",
+    "explication": "At-Tawba (sourate 9) est la seule à ne pas s'ouvrir par la Basmala. Les commentateurs expliquent cela par son contenu — rupture des traités avec les polythéistes — jugé incompatible avec l'invocation de miséricorde qui ouvre habituellement chaque sourate.",
+    "theme": "coran",
+    "source": "Tafsîr Ibn Kathîr, introduction à At-Tawba",
+    "difficulte": "intermédiaire",
+    "jour": 8
+  },
+  {
+    "id": "quiz_022",
+    "question": "Quelle est la seule femme nommée explicitement par son nom propre dans le Coran ?",
+    "choix": ["A. Âsiya", "B. Khadîja", "C. Maryam", "D. Hâjar"],
+    "reponse": "C",
+    "explication": "Maryam (Marie, mère de 'Îsâ) est la seule femme citée nommément dans le Coran, dans plusieurs sourates dont celle qui porte son nom (19). Les autres femmes évoquées, comme la femme d'al-'Azîz ou la mère de Mûsâ, ne sont jamais nommées.",
+    "theme": "coran",
+    "source": "Coran 3:36, 19:16 ; Tafsîr at-Tabarî",
+    "difficulte": "intermédiaire",
+    "jour": 8
+  },
+  {
+    "id": "quiz_023",
+    "question": "Quel prophète est mentionné le plus grand nombre de fois par son nom dans le Coran ?",
+    "choix": ["A. Ibrâhîm", "B. Mûsâ", "C. Nûh", "D. 'Îsâ"],
+    "reponse": "B",
+    "explication": "Mûsâ (Moïse) est le prophète le plus cité nommément dans le Coran, environ 136 fois, davantage que tout autre prophète y compris Muhammad ﷺ. Son récit face à Pharaon revient dans de nombreuses sourates mecquoises et médinoises.",
+    "theme": "coran",
+    "source": "Étude lexicale du Coran ; Tafsîr classique",
+    "difficulte": "intermédiaire",
+    "jour": 8
+  },
+  {
+    "id": "quiz_024",
+    "question": "Quel est le nom de l'ange gardien de l'Enfer explicitement nommé dans le Coran ?",
+    "choix": ["A. 'Izrâ'îl", "B. Mâlik", "C. Ridwân", "D. Munkar"],
+    "reponse": "B",
+    "explication": "L'ange Mâlik est nommé dans la sourate Az-Zukhruf (43:77), où les gens du Feu l'implorent : « Ô Mâlik, que ton Seigneur en finisse avec nous ! » C'est le seul ange gardien du Feu ou du Paradis explicitement cité par son nom dans le Coran.",
+    "theme": "coran",
+    "source": "Coran 43:77 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 9
+  },
+  {
+    "id": "quiz_025",
+    "question": "Si un jeûneur mange ou boit par pur oubli durant le jour de Ramadan, que devient son jeûne selon l'unanimité des quatre écoles ?",
+    "choix": ["A. Il est rompu, rattrapage obligatoire", "B. Il reste valide, aucun rattrapage", "C. Il est rompu avec expiation", "D. Cela dépend de l'école"],
+    "reponse": "B",
+    "explication": "Cas rare de consensus unanime des quatre écoles : le hadith du Prophète ﷺ énonce que celui qui mange ou boit par oubli doit achever son jeûne, « car c'est Allah qui l'a nourri et abreuvé ». Aucune expiation ni rattrapage n'est requis.",
+    "theme": "fiqh",
+    "source": "Sahîh al-Bukhârî, Kitâb as-Sawm ; Sahîh Muslim n°1155",
+    "difficulte": "intermédiaire",
+    "jour": 9
+  },
+  {
+    "id": "quiz_026",
+    "question": "Selon la définition classique, combien de témoins oculaires directs sont exigés pour établir juridiquement un cas de zina ?",
+    "choix": ["A. Deux", "B. Trois", "C. Quatre", "D. Un homme et deux femmes"],
+    "reponse": "C",
+    "explication": "Le Coran (An-Nûr 24:4 et 24:13) exige quatre témoins oculaires directs de l'acte lui-même, une exigence si stricte qu'elle rend la condamnation quasi impossible sans aveu, et vise en réalité à protéger l'honneur plutôt qu'à faciliter la sanction.",
+    "theme": "fiqh",
+    "source": "Coran 24:4, 24:13 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 9
+  },
+  {
+    "id": "quiz_027",
+    "question": "Quel est le nom de la première mosquée construite dans l'histoire de l'Islam ?",
+    "choix": ["A. Masjid al-Harâm", "B. Masjid Quba", "C. Masjid an-Nabawî", "D. Masjid al-Aqsâ"],
+    "reponse": "B",
+    "explication": "Masjid Quba fut construite à l'arrivée du Prophète ﷺ aux abords de Médine, avant même son entrée dans la ville. La majorité des exégètes l'identifient au « masjid fondé sur la piété dès le premier jour » mentionné en At-Tawba (9:108).",
+    "theme": "sira",
+    "source": "Coran 9:108 ; Ibn Hishâm, as-Sîra an-Nabawiyya",
+    "difficulte": "intermédiaire",
+    "jour": 10
+  },
+  {
+    "id": "quiz_028",
+    "question": "Qui proposa au Prophète ﷺ la stratégie de creuser un fossé (khandaq) pour défendre Médine lors de la bataille des Coalisés ?",
+    "choix": ["A. 'Umar ibn al-Khattâb", "B. Salmân al-Fârisî", "C. Abû Bakr as-Siddîq", "D. Sa'd ibn Mu'âdh"],
+    "reponse": "B",
+    "explication": "Salmân al-Fârisî, d'origine perse, connaissait cette tactique de fortification pratiquée dans son pays natal. Le Prophète ﷺ adopta sa proposition, donnant son nom à la bataille : Ghazwat al-Khandaq (bataille du Fossé), an 5 H.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.2",
+    "difficulte": "intermédiaire",
+    "jour": 10
+  },
+  {
+    "id": "quiz_029",
+    "question": "Quelle tribu juive de Médine fut expulsée après avoir rompu son pacte peu après la bataille de Badr ?",
+    "choix": ["A. Banû Qurayza", "B. Banû an-Nadîr", "C. Banû Qaynuqâ'", "D. Banû Qaylah"],
+    "reponse": "C",
+    "explication": "Les Banû Qaynuqâ' furent les premiers à rompre le pacte de Médine, peu après Badr (an 2 H), suite à une altercation au marché. Assiégés, ils furent expulsés vers la Syrie sans effusion de sang, contrairement aux deux autres tribus juives.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.2",
+    "difficulte": "avancé",
+    "jour": 10
+  },
+  {
+    "id": "quiz_030",
+    "question": "Qui fut chargé de juger le sort de la tribu Banû Qurayza après la bataille du Fossé ?",
+    "choix": ["A. 'Umar ibn al-Khattâb", "B. Sa'd ibn Mu'âdh", "C. Abû Bakr as-Siddîq", "D. Le Prophète ﷺ lui-même"],
+    "reponse": "B",
+    "explication": "Les Banû Qurayza, ayant trahi leur pacte durant le siège, acceptèrent que Sa'd ibn Mu'âdh, chef des Aws, rende le jugement. Il appliqua la loi de la Torah pour les tribus vaincues en cas de trahison, ce que le Prophète ﷺ approuva.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°3043 ; Ibn Hishâm, as-Sîra",
+    "difficulte": "avancé",
+    "jour": 11
+  },
+  {
+    "id": "quiz_031",
+    "question": "Quel surnom fut donné à 'Uthmân ibn 'Affân en raison de son double mariage avec deux filles du Prophète ﷺ ?",
+    "choix": ["A. As-Siddîq", "B. Dhû an-Nûrayn (l'homme aux deux lumières)", "C. Sayf Allâh", "D. Al-Fârûq"],
+    "reponse": "B",
+    "explication": "'Uthmân épousa successivement Ruqayya puis, après sa mort, Umm Kulthûm, toutes deux filles du Prophète ﷺ. Ce double mariage lui valut le surnom de Dhû an-Nûrayn, l'homme aux deux lumières, unique parmi les Compagnons.",
+    "theme": "sira",
+    "source": "Ibn Sa'd, at-Tabaqât al-Kubrâ",
+    "difficulte": "intermédiaire",
+    "jour": 11
+  },
+  {
+    "id": "quiz_032",
+    "question": "Combien de personnes sont généralement citées dans le hadith de Bukhârî comme les principaux dépositaires du Coran du vivant du Prophète ﷺ ?",
+    "choix": ["A. Deux", "B. Quatre", "C. Six", "D. Dix"],
+    "reponse": "B",
+    "explication": "Anas ibn Mâlik rapporte que le Prophète ﷺ recommanda de prendre le Coran auprès de quatre Compagnons : 'Abdullâh ibn Mas'ûd, Sâlim mawlâ Abî Hudhayfa, Mu'âdh ibn Jabal et Ubayy ibn Ka'b — sans que cela exclue d'autres grands récitateurs.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî, Kitâb Fadâ'il al-Qur'ân",
+    "difficulte": "avancé",
+    "jour": 11
+  },
+  {
+    "id": "quiz_033",
+    "question": "Selon Ahl as-Sunna, le Coran en tant que Parole d'Allah (Kalâm Allâh) est-il créé ou incréé ?",
+    "choix": ["A. Créé, comme toute chose", "B. Incréé, attribut éternel d'Allah", "C. Mi-créé mi-incréé", "D. La question n'a jamais été posée"],
+    "reponse": "B",
+    "explication": "Ahl as-Sunna affirme que le Coran, en tant que Parole d'Allah, est un attribut divin incréé. Cette question devint centrale lors de la Mihna (l'Inquisition) sous les Abbassides, où la position mu'tazilite du « Coran créé » fut imposée de force.",
+    "theme": "aqida",
+    "source": "Ibn Hanbal, Usûl as-Sunna ; historiographie de la Mihna",
+    "difficulte": "avancé",
+    "jour": 12
+  },
+  {
+    "id": "quiz_034",
+    "question": "Quel calife abbasside imposa la doctrine du « Coran créé » et emprisonna l'imam Ahmad ibn Hanbal pour son refus ?",
+    "choix": ["A. Hârûn ar-Rashîd", "B. Al-Ma'mûn", "C. Al-Mutawakkil", "D. Al-Manşûr"],
+    "reponse": "B",
+    "explication": "Al-Ma'mûn, influencé par le mu'tazilisme, institua la Mihna (833 EC) pour imposer que le Coran fût créé. Ahmad ibn Hanbal refusa malgré la torture et l'emprisonnement. La persécution cessa sous al-Mutawakkil, qui restaura la doctrine sunnite.",
+    "theme": "aqida",
+    "source": "at-Tabarî, Târîkh ar-Rusul wa'l-Mulûk",
+    "difficulte": "avancé",
+    "jour": 12
+  },
+  {
+    "id": "quiz_035",
+    "question": "Dans le hadith de Jibrîl définissant les six piliers de la foi (îmân), quel élément est mentionné en dernier ?",
+    "choix": ["A. Croire aux Livres", "B. Croire au Jour Dernier", "C. Croire au Qadar, le bien et le mal", "D. Croire aux Messagers"],
+    "reponse": "C",
+    "explication": "Dans le célèbre hadith rapporté par 'Umar (Sahîh Muslim), Jibrîl interroge le Prophète ﷺ sur la foi. La liste se conclut par la croyance en la prédestination (al-qadar khayrihi wa sharrihi), souvent le pilier le plus discuté théologiquement.",
+    "theme": "aqida",
+    "source": "Sahîh Muslim n°8, hadith de Jibrîl",
+    "difficulte": "intermédiaire",
+    "jour": 12
+  },
+  {
+    "id": "quiz_036",
+    "question": "Quels sont les deux anges chargés d'interroger le défunt dans la tombe, selon la Sunna ?",
+    "choix": ["A. Hârût et Mârût", "B. Munkar et Nakîr", "C. Ridwân et Mâlik", "D. Kirâman Kâtibîn"],
+    "reponse": "B",
+    "explication": "Munkar et Nakîr sont nommés dans plusieurs hadiths (Tirmidhî notamment) comme les anges qui interrogent le défunt sur son Seigneur, sa religion et son prophète. Leurs noms n'apparaissent pas dans le Coran mais sont établis par la Sunna.",
+    "theme": "aqida",
+    "source": "Sunan at-Tirmidhî n°1071",
+    "difficulte": "intermédiaire",
+    "jour": 13
+  },
+  {
+    "id": "quiz_037",
+    "question": "Quelle sourate le Prophète ﷺ recommandait-elle de réciter le vendredi pour se protéger de la tentation du Dajjâl ?",
+    "choix": ["A. Yâ-Sîn", "B. Al-Kahf", "C. Al-Mulk", "D. Ar-Rahmân"],
+    "reponse": "B",
+    "explication": "Le Prophète ﷺ a dit : « Quiconque récite la sourate al-Kahf le jour du vendredi sera illuminé d'une lumière entre les deux vendredis. » Un autre hadith lie ses dix premiers versets à la protection contre le Dajjâl.",
+    "theme": "coran",
+    "source": "Sahîh Muslim n°809 ; al-Hâkim, al-Mustadrak",
+    "difficulte": "intermédiaire",
+    "jour": 13
+  },
+  {
+    "id": "quiz_038",
+    "question": "Selon la position hanafite, quelle est la conséquence si l'on rit aux éclats (qahqaha) pendant la prière ?",
+    "choix": ["A. Rien, la prière reste valide", "B. La prière est annulée, mais pas les ablutions", "C. La prière ET les ablutions sont annulées", "D. Seule une prosternation d'oubli suffit"],
+    "reponse": "C",
+    "explication": "Position propre à l'école hanafite : rire aux éclats (avec un son audible) pendant la prière annule à la fois la prière et les ablutions, se fondant sur un hadith particulier à ce sujet. Les trois autres écoles considèrent que seule la prière est rompue.",
+    "theme": "fiqh",
+    "source": "Al-Hidâya, al-Marghînânî ; Fiqh comparatif",
+    "difficulte": "avancé",
+    "jour": 13
+  },
+  {
+    "id": "quiz_039",
+    "question": "Quel Compagnon fut envoyé par le Prophète ﷺ comme gouverneur et juge au Yémen, avec pour consigne de juger d'abord par le Coran, puis la Sunna, puis son propre jugement (ijtihâd) ?",
+    "choix": ["A. Mu'âdh ibn Jabal", "B. 'Amr ibn al-'Âs", "C. Khâlid ibn al-Walîd", "D. Abû Mûsâ al-Ash'arî"],
+    "reponse": "A",
+    "explication": "Ce hadith, bien que discuté sur le plan de la chaîne de transmission par certains muhaddithîn, est cité comme fondement classique de la hiérarchie des sources du fiqh : Coran, Sunna, puis effort personnel de raisonnement (ijtihâd).",
+    "theme": "fiqh",
+    "source": "Sunan at-Tirmidhî n°1327 ; Usûl al-Fiqh classique",
+    "difficulte": "avancé",
+    "jour": 14
+  },
+  {
+    "id": "quiz_040",
+    "question": "Quel est le nom du puits que 'Uthmân ibn 'Affân acheta pour l'offrir gratuitement aux musulmans de Médine ?",
+    "choix": ["A. Bi'r Zamzam", "B. Bi'r Badr", "C. Bi'r Rûma", "D. Bi'r Ma'ûna"],
+    "reponse": "C",
+    "explication": "Le puits de Rûma appartenait à un homme qui vendait son eau cher aux musulmans. Le Prophète ﷺ promit le Paradis à qui l'achèterait pour la communauté. 'Uthmân l'acquit et le rendit accessible gratuitement à tous.",
+    "theme": "sira",
+    "source": "Sunan at-Tirmidhî n°3703 ; Ibn Sa'd, at-Tabaqât",
+    "difficulte": "intermédiaire",
+    "jour": 14
+  }
+]
