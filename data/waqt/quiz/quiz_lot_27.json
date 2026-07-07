@@ -1,0 +1,222 @@
+[
+  {
+    "id": "quiz_521",
+    "question": "Quelle sourate relate la construction du Temple de Jérusalem par Sulaymân, assisté par les djinns soumis à son pouvoir ?",
+    "choix": ["A. Sabâ'", "B. Al-Anbiyâ' uniquement", "C. Sâd uniquement", "D. An-Naml uniquement"],
+    "reponse": "A",
+    "explication": "Sabâ' (34:13) mentionne les djinns travaillant pour Sulaymân, construisant « ce qu'il voulait comme sanctuaires, statues, bassins grands comme des citernes, et marmites fixées au sol », une allusion aux grands travaux architecturaux réalisés grâce au pouvoir exceptionnel qui lui fut accordé.",
+    "theme": "coran",
+    "source": "Coran 34:13 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 183
+  },
+  {
+    "id": "quiz_522",
+    "question": "Selon le Coran, comment la mort de Sulaymân fut-elle découverte par les djinns qui travaillaient encore pour lui, croyant qu'il était toujours vivant ?",
+    "choix": ["A. Il resta debout, appuyé sur son bâton, et ce n'est qu'après qu'un ver de terre eut rongé ce bâton qu'il s'effondra, révélant sa mort aux djinns", "B. Un ange leur annonça directement sa mort", "C. Les djinns le surent instantanément par magie", "D. Aucun détail n'est donné dans le Coran"],
+    "reponse": "A",
+    "explication": "Sabâ' (34:14) rapporte que Sulaymân mourut debout, appuyé sur son bâton, sans que les djinns s'en aperçoivent, continuant leurs travaux pénibles. Ce n'est que lorsqu'un ver de terre rongea son bâton, le faisant chuter, que les djinns réalisèrent qu'il était mort depuis un moment — preuve, souligne le verset, qu'ils ignoraient l'inconnaissable malgré les croyances populaires les concernant.",
+    "theme": "coran",
+    "source": "Coran 34:14 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 183
+  },
+  {
+    "id": "quiz_523",
+    "question": "Quelle leçon centrale les commentateurs tirent-ils de cet épisode de la mort cachée de Sulaymân face aux djinns ?",
+    "choix": ["A. Que les djinns, contrairement à une croyance populaire répandue, ne connaissent pas l'inconnaissable (al-ghayb) par eux-mêmes", "B. Que Sulaymân n'était pas réellement un prophète", "C. Que les djinns sont toujours plus savants que les hommes", "D. Aucune leçon particulière n'en est tirée"],
+    "reponse": "A",
+    "explication": "Ce récit corrige une croyance préislamique répandue selon laquelle les djinns connaîtraient l'inconnaissable, exploitée pour légitimer certaines pratiques divinatoires. Le Coran démontre au contraire leur ignorance factuelle même d'un événement aussi proche et concret que la mort de leur propre « employeur », un argument fort contre le recours aux devins prétendant consulter les djinns.",
+    "theme": "aqida",
+    "source": "Tafsîr Ibn Kathîr, 34:14",
+    "difficulte": "avancé",
+    "jour": 183
+  },
+  {
+    "id": "quiz_524",
+    "question": "Selon la majorité des écoles, consulter un devin ou un voyant (kâhin) prétendant connaître l'avenir ou l'inconnaissable est-il permis en Islam ?",
+    "choix": ["A. Oui, sans restriction particulière", "B. Non, fermement interdit ; un hadith précise que la prière de quiconque consulte un devin et croit en ses dires n'est pas acceptée durant quarante jours", "C. Permis uniquement pour des questions financières", "D. Permis uniquement pendant le Ramadan"],
+    "reponse": "B",
+    "explication": "Le Prophète ﷺ a dit : « Quiconque se rend chez un devin et l'interroge sur quelque chose, sa prière ne sera pas acceptée pendant quarante nuits. » Une sanction spirituelle sévère visant à protéger le Tawhîd contre toute recherche de connaissance de l'inconnaissable en dehors d'Allah seul.",
+    "theme": "fiqh",
+    "source": "Sahîh Muslim n°2230",
+    "difficulte": "intermédiaire",
+    "jour": 184
+  },
+  {
+    "id": "quiz_525",
+    "question": "Selon un hadith plus sévère encore, quelle est la conséquence pour celui qui consulte un devin ET croit fermement en ce qu'il lui dit ?",
+    "choix": ["A. Il aurait mécru en ce qui a été révélé à Muhammad ﷺ, selon la formulation même du hadith", "B. Aucune conséquence supplémentaire n'est mentionnée", "C. Il doit simplement refaire ses ablutions", "D. La sanction ne concerne que les femmes"],
+    "reponse": "A",
+    "explication": "Un hadith plus sévère précise : « Quiconque se rend chez un devin ou un voyant et croit en ce qu'il dit a mécru en ce qui a été révélé à Muhammad. » Cette formulation extrêmement forte souligne que croire fermement en la connaissance prétendue de l'inconnaissable par un tiers contredit directement le principe fondamental que seul Allah connaît le ghayb.",
+    "theme": "aqida",
+    "source": "Sunan Abî Dâwûd n°3904 ; Sunan at-Tirmidhî n°135",
+    "difficulte": "avancé",
+    "jour": 184
+  },
+  {
+    "id": "quiz_526",
+    "question": "Selon la majorité des écoles, la pratique de l'astrologie (consulter les astres pour prédire des événements) est-elle distincte de l'astronomie (étude scientifique des astres) en termes de licéité ?",
+    "choix": ["A. Oui ; l'astronomie descriptive est permise et même utile, tandis que l'astrologie divinatoire est interdite comme forme de recherche de l'inconnaissable", "B. Les deux sont strictement interdites sans distinction", "C. Les deux sont strictement permises sans distinction", "D. Seule l'astrologie est autorisée, l'astronomie étant jugée inutile"],
+    "reponse": "A",
+    "explication": "Les savants distinguent nettement l'astronomie descriptive, utile pour les calculs calendaires, les horaires de prière ou l'orientation, de l'astrologie divinatoire attribuant aux astres un pouvoir causal sur le destin humain — cette dernière relevant du domaine interdit de la recherche du ghayb par des moyens autres que la révélation.",
+    "theme": "fiqh",
+    "source": "Sunan Abî Dâwûd n°3905 ; Fiqh comparatif du Tawhîd",
+    "difficulte": "avancé",
+    "jour": 184
+  },
+  {
+    "id": "quiz_527",
+    "question": "Quel Compagnon fut envoyé en ambassade auprès du Négus d'Abyssinie une seconde fois, chargé de ramener les musulmans exilés après la fondation de l'État musulman à Médine ?",
+    "choix": ["A. 'Amr ibn Umayya ad-Damrî", "B. Ja'far ibn Abî Tâlib lui-même", "C. Zayd ibn Hâritha", "D. Mus'ab ibn 'Umayr"],
+    "reponse": "A",
+    "explication": "'Amr ibn Umayya ad-Damrî fut envoyé par le Prophète ﷺ auprès du Négus pour organiser le retour des musulmans exilés en Abyssinie, ainsi que pour transmettre une demande de mariage avec Umm Habîba, fille d'Abû Sufyân déjà réfugiée là-bas, dont le mari s'était converti au christianisme sur place.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.2",
+    "difficulte": "avancé",
+    "jour": 185
+  },
+  {
+    "id": "quiz_528",
+    "question": "Comment Umm Habîba, future épouse du Prophète ﷺ, se retrouva-t-elle seule en Abyssinie après la conversion de son mari au christianisme ?",
+    "choix": ["A. Son mari, converti à l'Islam avec elle, apostasia et se convertit au christianisme sur place, la laissant seule et fidèle à sa foi initiale", "B. Elle voyageait seule dès le départ, sans époux", "C. Son mari mourut en martyr en Abyssinie", "D. Elle ne fut jamais mariée avant d'épouser le Prophète ﷺ"],
+    "reponse": "A",
+    "explication": "Umm Habîba avait émigré en Abyssinie avec son époux, tous deux musulmans. Celui-ci, sur place, se convertit au christianisme, abandonnant sa foi initiale, tandis qu'Umm Habîba resta fermement attachée à l'Islam, se retrouvant seule et éprouvée loin de sa famille avant que le Prophète ﷺ ne la demande en mariage par l'intermédiaire du Négus.",
+    "theme": "sira",
+    "source": "Ibn Sa'd, at-Tabaqât al-Kubrâ",
+    "difficulte": "avancé",
+    "jour": 185
+  },
+  {
+    "id": "quiz_529",
+    "question": "Quel rôle 'Â'isha joua-t-elle après la mort du Prophète ﷺ en matière de transmission des hadiths et du fiqh ?",
+    "choix": ["A. Elle demeura la référence principale pendant plusieurs décennies, formant de nombreux élèves parmi les Compagnons et Successeurs", "B. Elle ne transmit jamais aucun hadith", "C. Sa contribution fut jugée négligeable par les savants classiques", "D. Elle refusa systématiquement d'enseigner"],
+    "reponse": "A",
+    "explication": "'Â'isha devint l'une des plus grandes sources de hadiths et de fiqh de toute l'histoire islamique, formant de nombreux élèves parmi les Compagnons plus jeunes et les Successeurs, particulièrement reconnue pour sa connaissance approfondie des affaires domestiques du Prophète ﷺ et sa capacité à corriger certaines erreurs de compréhension chez d'autres transmetteurs.",
+    "theme": "sira",
+    "source": "Adh-Dhahabî, Siyar A'lâm an-Nubalâ'",
+    "difficulte": "intermédiaire",
+    "jour": 185
+  },
+  {
+    "id": "quiz_530",
+    "question": "Comment appelle-t-on, en 'aqîda, la croyance selon laquelle Allah seul détient la connaissance exhaustive de l'inconnaissable (al-ghayb), à l'exclusion absolue de toute créature ?",
+    "choix": ["A. L'exclusivité divine de la connaissance de l'inconnaissable", "B. Al-Karâma", "C. Al-Wahy uniquement", "D. Al-Ilhâm uniquement"],
+    "reponse": "A",
+    "explication": "An-Naml (27:65) affirme : « Dis : Nul de ceux qui sont dans les cieux et sur la terre ne connaît l'inconnaissable, à part Allah. » Cette exclusivité divine fonde le rejet catégorique de toute prétention humaine ou spirituelle à connaître l'avenir ou les réalités cachées par des moyens autres que la révélation divine elle-même.",
+    "theme": "aqida",
+    "source": "Coran 27:65 ; Al-'Aqîda at-Tahâwiyya",
+    "difficulte": "avancé",
+    "jour": 186
+  },
+  {
+    "id": "quiz_531",
+    "question": "Le Prophète ﷺ lui-même connaissait-il, selon le Coran, l'inconnaissable de sa propre initiative, en dehors de ce qu'Allah lui révélait explicitement ?",
+    "choix": ["A. Non, le Coran lui fait dire explicitement qu'il ne connaît pas l'inconnaissable sauf ce qu'Allah lui a révélé", "B. Oui, il connaissait absolument tout sans restriction", "C. Cette question n'est jamais abordée dans le Coran", "D. Il connaissait l'inconnaissable uniquement après l'Hégire"],
+    "reponse": "A",
+    "explication": "Al-A'râf (7:188) fait dire au Prophète ﷺ : « Dis : Je ne détiens pour moi-même ni profit ni dommage, sauf ce qu'Allah veut. Et si je connaissais l'inconnaissable, j'aurais amassé beaucoup de bien... » Une déclaration coranique explicite limitant sa connaissance de l'inconnaissable à ce qui lui fut spécifiquement révélé, non à une omniscience personnelle.",
+    "theme": "coran",
+    "source": "Coran 7:188 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 186
+  },
+  {
+    "id": "quiz_532",
+    "question": "Selon la majorité des écoles, un musulman peut-il consulter l'horoscope par simple curiosité, sans y croire réellement ?",
+    "choix": ["A. Même sans y croire fermement, la majorité déconseille fortement cette pratique en raison du risque d'entraînement progressif et de la simple association avec une pratique interdite", "B. C'est totalement permis tant qu'on n'y croit pas du tout", "C. Cela ne concerne que les mineurs", "D. Aucune position n'existe sur ce sujet précis"],
+    "reponse": "A",
+    "explication": "Bien que le hadith cible explicitement la croyance ferme, de nombreux savants déconseillent fortement même la simple consultation par curiosité, redoutant un glissement progressif vers l'attachement réel à ces pratiques, ainsi que le principe de prudence consistant à éviter tout ce qui se rapproche du domaine interdit.",
+    "theme": "fiqh",
+    "source": "Fiqh comparatif du Tawhîd et des pratiques divinatoires",
+    "difficulte": "avancé",
+    "jour": 186
+  },
+  {
+    "id": "quiz_533",
+    "question": "Quelle sourate décrit le châtiment du peuple de Lût, dont les cités furent retournées et frappées de pierres d'argile marquées ?",
+    "choix": ["A. Hûd", "B. Al-A'râf uniquement", "C. Ash-Shu'arâ' uniquement", "D. An-Naml uniquement"],
+    "reponse": "A",
+    "explication": "Hûd (11:82-83) décrit le châtiment final : « Nous renversâmes [la ville] de fond en comble et fîmes pleuvoir sur elle des pierres d'argile durcie, successivement, marquées auprès de ton Seigneur. » Un châtiment d'une sévérité extrême, présenté comme réponse à un rejet moral et social profond de leur communauté.",
+    "theme": "coran",
+    "source": "Coran 11:82-83 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 187
+  },
+  {
+    "id": "quiz_534",
+    "question": "Quel membre de la famille de Lût refusa de le suivre lors de l'évacuation de la cité, périssant avec les autres habitants ?",
+    "choix": ["A. Sa femme", "B. Son fils unique", "C. Son frère", "D. Sa mère"],
+    "reponse": "A",
+    "explication": "Hûd (11:81) et At-Tahrîm (66:10) précisent que la femme de Lût resta parmi les habitants châtiés malgré son statut d'épouse d'un prophète — un exemple, avec la femme de Nûh, cité par le Coran pour souligner que le lien conjugal avec un prophète ne garantit pas automatiquement le salut sans foi personnelle sincère.",
+    "theme": "coran",
+    "source": "Coran 11:81, 66:10 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 187
+  },
+  {
+    "id": "quiz_535",
+    "question": "Quelle sourate cite ensemble, comme exemples parallèles, la femme de Nûh et la femme de Lût comme épouses de prophètes n'ayant pas été sauvées malgré leur position ?",
+    "choix": ["A. At-Tahrîm", "B. Hûd uniquement", "C. Al-Qamar uniquement", "D. Ash-Shu'arâ' uniquement"],
+    "reponse": "A",
+    "explication": "At-Tahrîm (66:10) déclare : « Allah a cité en parabole, pour les mécréants, la femme de Nûh et la femme de Lût : toutes deux étaient sous l'autorité de deux de Nos serviteurs vertueux, et toutes deux les trahirent. » Ce parallèle renforce le principe que le lien matrimonial avec un homme pieux ne dispense jamais de la responsabilité personnelle de la foi.",
+    "theme": "coran",
+    "source": "Coran 66:10 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 187
+  },
+  {
+    "id": "quiz_536",
+    "question": "Quels deux Compagnons, convertis tardivement après avoir longtemps combattu les musulmans, devinrent parmi les plus brillants stratèges militaires de l'expansion islamique ?",
+    "choix": ["A. Khâlid ibn al-Walîd et 'Amr ibn al-'Âs", "B. Abû Bakr et 'Umar", "C. Bilâl et Salmân", "D. Aucun ancien opposant ne devint un chef militaire respecté"],
+    "reponse": "A",
+    "explication": "Khâlid ibn al-Walîd et 'Amr ibn al-'Âs se convertirent ensemble peu avant la conquête de la Mecque, tous deux ayant auparavant combattu activement contre les musulmans. Leur talent militaire, mis au service de l'Islam après leur conversion, joua un rôle décisif dans les conquêtes ultérieures en Syrie, Irak et Égypte.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.2",
+    "difficulte": "intermédiaire",
+    "jour": 188
+  },
+  {
+    "id": "quiz_537",
+    "question": "Quel rôle Khâlid ibn al-Walîd, alors non-musulman, joua-t-il précisément lors de la bataille d'Uhud, causant le retournement défavorable pour les musulmans ?",
+    "choix": ["A. Il exploita l'abandon de position des archers pour contourner et attaquer l'arrière-garde musulmane", "B. Il négocia une trêve secrète pendant la bataille", "C. Il refusa de combattre malgré les ordres de Quraysh", "D. Il n'était pas encore présent à cette bataille"],
+    "reponse": "A",
+    "explication": "Voyant les archers musulmans quitter prématurément leur position pour récupérer du butin, Khâlid, encore commandant de la cavalerie qurayshite à cette époque, exploita immédiatement cette brèche en contournant la colline pour attaquer l'arrière des troupes musulmanes désormais exposées, provoquant un retournement dramatique de la bataille.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.1",
+    "difficulte": "avancé",
+    "jour": 188
+  },
+  {
+    "id": "quiz_538",
+    "question": "Comment le Prophète ﷺ surnomma-t-il Khâlid ibn al-Walîd après sa conversion, en référence à ses talents militaires désormais mis au service de l'Islam ?",
+    "choix": ["A. Sayf Allâh (l'Épée d'Allah)", "B. Asad Allâh (le Lion d'Allah, surnom réservé à Hamza)", "C. Fâris al-Islâm uniquement", "D. Aucun surnom particulier ne lui fut donné"],
+    "reponse": "A",
+    "explication": "Après sa conversion et son rôle décisif à la bataille de Mu'ta, le Prophète ﷺ surnomma Khâlid « Sayf Allâh » (l'Épée d'Allah), reconnaissant officiellement la mise au service de la cause islamique de talents militaires auparavant tournés contre elle.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî, Kitâb al-Maghâzî",
+    "difficulte": "intermédiaire",
+    "jour": 189
+  },
+  {
+    "id": "quiz_539",
+    "question": "Selon un récit rapporté, comment Khâlid ibn al-Walîd, malgré sa réputation de guerrier redoutable, mourut-il finalement ?",
+    "choix": ["A. Dans son lit, de mort naturelle, non sur un champ de bataille — regret qu'il exprima lui-même avant sa mort", "B. En martyr lors d'une dernière bataille glorieuse", "C. Empoisonné par un rival", "D. En captivité chez un ennemi"],
+    "reponse": "A",
+    "explication": "Malgré des dizaines de batailles et blessures accumulées durant sa carrière militaire exceptionnelle, Khâlid mourut de mort naturelle dans son lit. Un récit rapporte qu'il exprima lui-même sa frustration de ne pas avoir obtenu le martyre tant recherché sur le champ de bataille, aucune zone de son corps n'étant, disait-il, épargnée par les cicatrices de guerre.",
+    "theme": "sira",
+    "source": "Récits classiques rapportés par Ibn Kathîr, al-Bidâya wa'n-Nihâya",
+    "difficulte": "avancé",
+    "jour": 189
+  },
+  {
+    "id": "quiz_540",
+    "question": "Quelle sourate mecquoise décrit la scène où le criminel, voyant approcher le châtiment promis, voudrait racheter son sort en offrant même sa propre famille en sacrifice ?",
+    "choix": ["A. Al-Ma'ârij", "B. Al-Hâqqa uniquement", "C. Al-Qiyâma uniquement", "D. Al-Mursalât uniquement"],
+    "reponse": "A",
+    "explication": "Al-Ma'ârij (70:11-14) décrit ce désespoir ultime : le criminel voudrait racheter son châtiment en offrant ses enfants, son épouse, son frère, sa famille entière et tous les habitants de la terre — sacrifice pourtant totalement inutile face à la réalité inévitable du Jugement, soulignant l'impossibilité de tout rachat par des liens humains, aussi précieux soient-ils.",
+    "theme": "coran",
+    "source": "Coran 70:11-18 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 189
+  }
+]
