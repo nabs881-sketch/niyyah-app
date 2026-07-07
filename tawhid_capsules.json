@@ -798,5 +798,205 @@
     "phrase": "Le shirk le plus dangereux, c'est celui qu'on ne reconnaît même pas comme tel.",
     "ref": "Sourate Yûsuf 12:106",
     "note": "Sujet à formuler avec précaution pour ne pas sonner accusateur envers le lecteur"
+  },
+  {
+    "id": "tawhid_81",
+    "num": 81,
+    "pilier": "RUBÛBIYYA",
+    "titre": "Ta respiration, tu ne l'as jamais vraiment gérée",
+    "corps": "Tu ne penses jamais à respirer — ça se fait tout seul, des milliers de fois par jour, sans effort conscient. Ce genre de contrôle que tu n'as jamais eu à demander, c'est déjà une preuve silencieuse que quelque chose te maintient en vie sans ton intervention.",
+    "phrase": "Ce que tu ne remarques même plus, c'est souvent ce qui te garde en vie.",
+    "ref": "Sourate Al-Mulk 67:23-24",
+    "note": ""
+  },
+  {
+    "id": "tawhid_82",
+    "num": 82,
+    "pilier": "ULÛHIYYA",
+    "titre": "Un acte religieux peut être vide, et ça se voit à un détail",
+    "corps": "Prier vite pour en finir, jeûner en comptant les heures qui restent — la forme est là, l'adoration réelle peut manquer. Ce n'est pas la quantité d'actes qui compte le plus, c'est ce qui se passe pendant.",
+    "phrase": "Tu peux tout faire correctement et n'y être pas vraiment.",
+    "ref": "Sourate Al-Mâ'ûn 107:4-5",
+    "note": "Sujet délicat — éviter que ça sonne comme un jugement sur la qualité de la prière des lecteurs eux-mêmes"
+  },
+  {
+    "id": "tawhid_83",
+    "num": 83,
+    "pilier": "ASMÂ WA SIFÂT",
+    "titre": "Ar-Razzâq — pas juste Celui qui donne, Celui qui pourvoit sans cesse",
+    "corps": "Un cadeau, c'est ponctuel. Ar-Razzâq, c'est différent : un flux continu, chaque jour, même quand tu ne demandes rien. La nourriture qui arrive, l'air que tu respires, la santé qui tient — un pourvoi permanent, pas un geste isolé.",
+    "phrase": "Il ne donne pas une fois. Il pourvoit sans arrêt.",
+    "ref": "Sourate Adh-Dhâriyât 51:58",
+    "note": ""
+  },
+  {
+    "id": "tawhid_84",
+    "num": 84,
+    "pilier": "RUBÛBIYYA",
+    "titre": "Tu n'as pas choisi où tu es né",
+    "corps": "Ton pays, ta langue maternelle, ta famille — rien de tout ça n'a été décidé par toi. Pourtant ça façonne une grande partie de qui tu es aujourd'hui. Ce constat simple rappelle qu'une part énorme de ta vie a été fixée avant même que tu puisses en discuter.",
+    "phrase": "Une partie de toi était déjà écrite avant que tu existes vraiment.",
+    "ref": "Sourate Al-Hujurât 49:13",
+    "note": ""
+  },
+  {
+    "id": "tawhid_85",
+    "num": 85,
+    "pilier": "ULÛHIYYA",
+    "titre": "Demander pardon avant de dormir, une habitude oubliée",
+    "corps": "La journée s'accumule — mots de travers, distractions, petits manquements. Terminer la journée par un istighfâr sincère, ce n'est pas un rituel lourd. C'est fermer la porte proprement avant de rouvrir demain.",
+    "phrase": "Ne t'endors pas avec une journée non refermée.",
+    "ref": "Sourate Âl 'Imrân 3:17",
+    "note": ""
+  },
+  {
+    "id": "tawhid_86",
+    "num": 86,
+    "pilier": "ASMÂ WA SIFÂT",
+    "titre": "Al-Muhaymin — Il surveille sans jamais relâcher l'attention",
+    "corps": "Un gardien humain finit par se fatiguer, par regarder ailleurs. Al-Muhaymin veille sur toute la création simultanément, sans une seconde de distraction ni de fatigue. Rien ne Lui échappe, jamais.",
+    "phrase": "Ce que tu crois caché, Il ne l'a jamais perdu de vue.",
+    "ref": "Sourate Al-Hashr 59:23",
+    "note": ""
+  },
+  {
+    "id": "tawhid_87",
+    "num": 87,
+    "pilier": "RUBÛBIYYA",
+    "titre": "Le hasard n'existe pas dans ta timeline",
+    "corps": "Une rencontre imprévue, un message reçu au bon moment, un événement qui change tout. Tu appelles ça de la chance. Le Tawhid dit que rien de ce qui t'arrive n'est aléatoire — même ce que tu ne comprends pas encore a une place précise.",
+    "phrase": "Ce que tu appelles hasard, c'est un décret que tu n'as pas encore compris.",
+    "ref": "Sourate Al-Hadîd 57:22",
+    "note": ""
+  },
+  {
+    "id": "tawhid_88",
+    "num": 88,
+    "pilier": "ULÛHIYYA",
+    "titre": "Adorer Allah pendant que tu travailles, c'est possible",
+    "corps": "L'adoration n'est pas réservée à la mosquée. Travailler honnêtement, ne pas tricher un client, tenir parole — tout ça, fait avec l'intention de plaire à Allah, devient une forme d'adoration à part entière.",
+    "phrase": "Ta journée de travail peut être une prière silencieuse, si l'intention y est.",
+    "ref": "Sourate Adh-Dhâriyât 51:56",
+    "note": ""
+  },
+  {
+    "id": "tawhid_89",
+    "num": 89,
+    "pilier": "ASMÂ WA SIFÂT",
+    "titre": "Al-'Adl — Sa justice ne se trompe jamais de cible",
+    "corps": "Tu vois parfois des injustices sans réponse immédiate, et le doute s'installe. Al-'Adl garantit que rien ne restera sans compte, même si le règlement des comptes n'a pas lieu dans le délai que tu voudrais.",
+    "phrase": "Ce qui semble impuni maintenant ne l'est pas pour toujours.",
+    "ref": "Sourate An-Nisâ' 4:40",
+    "note": ""
+  },
+  {
+    "id": "tawhid_90",
+    "num": 90,
+    "pilier": "RUBÛBIYYA",
+    "titre": "Ton corps t'obéit sans que tu saches comment ça marche",
+    "corps": "Tu décides de lever la main, et des milliers de processus biologiques s'enclenchent instantanément sans que tu comprennes le mécanisme. Tu utilises un corps d'une complexité folle sans jamais avoir lu le manuel.",
+    "phrase": "Tu conduis une machine dont tu ne connais même pas le fonctionnement interne.",
+    "ref": "Sourate Adh-Dhâriyât 51:21",
+    "note": ""
+  },
+  {
+    "id": "tawhid_91",
+    "num": 91,
+    "pilier": "ULÛHIYYA",
+    "titre": "Se fier à un porte-bonheur, même en rigolant",
+    "corps": "Un bracelet, un chiffre, une superstition qu'on garde 'juste au cas où', sans y croire vraiment sérieusement. Même en riant, y accorder un pouvoir de protection glisse doucement vers une forme de shirk qu'on minimise.",
+    "phrase": "'Juste au cas où' peut cacher une vraie croyance qu'on refuse de nommer.",
+    "ref": "Sourate Yûnus 10:106",
+    "note": "Sujet à formuler avec délicatesse — beaucoup de superstitions sont culturelles, pas forcément conscientes"
+  },
+  {
+    "id": "tawhid_92",
+    "num": 92,
+    "pilier": "ASMÂ WA SIFÂT",
+    "titre": "Al-Karîm — Il donne plus que ce que tu mérites",
+    "corps": "Tu calcules ce que tu mérites selon tes efforts. Al-Karîm dépasse ce calcul — Il donne largement, au-delà de ce que la stricte justice exigerait, par pure générosité.",
+    "phrase": "Ce que tu as reçu dépasse largement ce que tu as réellement mérité.",
+    "ref": "Sourate An-Naml 27:40",
+    "note": ""
+  },
+  {
+    "id": "tawhid_93",
+    "num": 93,
+    "pilier": "RUBÛBIYYA",
+    "titre": "Personne ne porte le fardeau d'un autre",
+    "corps": "Tu ne seras jamais tenu responsable des péchés d'un parent, d'un enfant, d'un proche. Chacun répond de ses propres actes, un principe qui libère d'un poids que beaucoup portent sans raison — la culpabilité pour les choix des autres.",
+    "phrase": "Tu n'as pas à porter les comptes de quelqu'un d'autre.",
+    "ref": "Sourate Al-An'âm 6:164",
+    "note": ""
+  },
+  {
+    "id": "tawhid_94",
+    "num": 94,
+    "pilier": "ULÛHIYYA",
+    "titre": "La gratitude qui change réellement quelque chose",
+    "corps": "Dire merci du bout des lèvres, machinalement, ce n'est pas la vraie gratitude islamique. La reconnaissance sincère se voit dans l'usage qu'on fait du bienfait reçu, pas seulement dans les mots prononcés.",
+    "phrase": "Remercier vraiment, c'est utiliser bien ce qu'on t'a donné, pas juste le dire.",
+    "ref": "Sourate Ibrâhîm 14:7",
+    "note": ""
+  },
+  {
+    "id": "tawhid_95",
+    "num": 95,
+    "pilier": "ASMÂ WA SIFÂT",
+    "titre": "Ash-Shâfî — la guérison qui ne dépend pas que du médecin",
+    "corps": "Tu prends le traitement, tu suis les conseils médicaux, et parfois ça marche mieux ou moins bien que prévu sans explication claire. Ash-Shâfî rappelle que le remède est un moyen ; la vraie guérison reste entre Ses mains.",
+    "phrase": "Le médecin soigne. C'est Lui qui guérit.",
+    "ref": "Sourate Ash-Shu'arâ' 26:80",
+    "note": ""
+  },
+  {
+    "id": "tawhid_96",
+    "num": 96,
+    "pilier": "RUBÛBIYYA",
+    "titre": "Tu ne sais jamais vraiment ce qui est bon pour toi",
+    "corps": "Un projet qui échoue, une porte qui se ferme, une déception — sur le moment ça paraît injuste. Des années plus tard, souvent, on comprend que ce refus a évité pire. Ce que tu détestes peut cacher un bien que tu ne vois pas encore.",
+    "phrase": "Il se peut que tu détestes une chose alors qu'elle est un bien pour toi.",
+    "ref": "Sourate Al-Baqara 2:216",
+    "note": ""
+  },
+  {
+    "id": "tawhid_97",
+    "num": 97,
+    "pilier": "ULÛHIYYA",
+    "titre": "Aimer quelqu'un pour Allah, un lien différent des autres",
+    "corps": "La plupart des liens se nouent par intérêt, ressemblance, ou simple habitude. Aimer un frère ou une sœur uniquement pour la foi qu'il porte, sans autre calcul, crée un lien d'une nature spécifique, reconnu dans la Sunna.",
+    "phrase": "Il existe un amour qui ne demande rien en retour, sauf la foi partagée.",
+    "ref": "Sourate At-Tawba 9:71",
+    "note": ""
+  },
+  {
+    "id": "tawhid_98",
+    "num": 98,
+    "pilier": "ASMÂ WA SIFÂT",
+    "titre": "Al-Muqît — Il assure ta subsistance, jusque dans les détails",
+    "corps": "Tu penses souvent à demander de grandes choses. Al-Muqît s'occupe aussi des détails minuscules — le prochain repas, une nuit de sommeil réparatrice, l'essentiel du quotidien que tu ne remarques presque plus.",
+    "phrase": "Les petites choses aussi passent par Lui, pas seulement les grandes.",
+    "ref": "Sourate An-Nisâ' 4:85",
+    "note": ""
+  },
+  {
+    "id": "tawhid_99",
+    "num": 99,
+    "pilier": "RUBÛBIYYA",
+    "titre": "L'univers entier obéit sans jamais discuter",
+    "corps": "Le soleil se lève à l'heure exacte, chaque jour, sans exception ni négociation. Les étoiles, les saisons, la gravité — tout obéit sans se rebeller, contrairement à l'homme, seule créature capable de désobéir consciemment.",
+    "phrase": "L'univers entier obéit sans poser de questions. Toi, tu as le choix. Utilise-le bien.",
+    "ref": "Sourate Yâ-Sîn 36:38",
+    "note": ""
+  },
+  {
+    "id": "tawhid_100",
+    "num": 100,
+    "pilier": "ULÛHIYYA",
+    "titre": "100 capsules plus tard — et le vrai travail commence maintenant",
+    "corps": "Cent angles différents sur le même principe : Il seul mérite d'être adoré, Il seul mérite qu'on Lui fasse confiance, Il seul connaît ce qui est cachée. Lire, c'est la première étape. Vivre ce qu'on a lu, c'est celle qui compte vraiment.",
+    "phrase": "Connaître le Tawhid et le vivre sont deux choses différentes. La seconde commence maintenant.",
+    "ref": "Sourate Adh-Dhâriyât 51:56",
+    "note": ""
   }
 ]
