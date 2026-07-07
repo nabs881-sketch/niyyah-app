@@ -8726,7 +8726,9 @@ window.QUIZ_DB = [];
 })();
 function getQuizDuJour() {
   var _jour = (typeof SIRA !== 'undefined' && SIRA.getCurrentRdvNum) ? SIRA.getCurrentRdvNum() : 1;
-  return window.QUIZ_DB.filter(function(q) { return q.jour === _jour; });
+  var _maxJour = window.QUIZ_DB.reduce(function(m, q){ return Math.max(m, q.jour); }, 1);
+  var _jourEffectif = ((_jour - 1) % _maxJour) + 1;
+  return window.QUIZ_DB.filter(function(q) { return q.jour === _jourEffectif; });
 }
 window.getQuizDuJour = getQuizDuJour;
 window.TAFAKKUR_POOL = null;
