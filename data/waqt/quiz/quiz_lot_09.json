@@ -1,0 +1,222 @@
+[
+  {
+    "id": "quiz_161",
+    "question": "Quelle sourate rapporte le miracle où Allah préserva miraculeusement le corps de Pharaon après sa noyade, comme signe pour la postérité ?",
+    "choix": ["A. Al-Qasas", "B. Yûnus", "C. Tâ-Hâ", "D. Ash-Shu'arâ'"],
+    "reponse": "B",
+    "explication": "Yûnus (10:92) déclare, s'adressant à Pharaon noyé : « Aujourd'hui, Nous sauvons ton corps afin que tu sois un signe pour ceux qui viendront après toi. » Un verset souvent cité en lien avec la découverte moderne de momies pharaoniques bien préservées.",
+    "theme": "coran",
+    "source": "Coran 10:92 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 57
+  },
+  {
+    "id": "quiz_162",
+    "question": "Quelle sourate est révélée intégralement en une seule fois, selon plusieurs récits, contrairement à la majorité des autres sourates révélées par fragments ?",
+    "choix": ["A. Al-An'âm", "B. Al-Baqara", "C. Al-Kahf", "D. An-Nisâ'"],
+    "reponse": "A",
+    "explication": "Plusieurs récits rapportent qu'Al-An'âm (6), sourate mecquoise de 165 versets, fut révélée d'un seul tenant, escortée selon certaines traditions par un grand nombre d'anges. La majorité des sourates furent au contraire révélées progressivement, par versets ou passages séparés dans le temps.",
+    "theme": "coran",
+    "source": "Tafsîr Ibn Kathîr, introduction à Al-An'âm",
+    "difficulte": "avancé",
+    "jour": 57
+  },
+  {
+    "id": "quiz_163",
+    "question": "Dans quelle sourate trouve-t-on le récit de la Reine de Saba (Bilqîs) et sa rencontre avec le prophète Sulaymân ?",
+    "choix": ["A. Sabâ'", "B. An-Naml (les Fourmis)", "C. Al-Mâ'ida", "D. Al-Anbiyâ'"],
+    "reponse": "B",
+    "explication": "An-Naml (27) relate longuement l'histoire de Sulaymân, sa correspondance avec la Reine de Saba, son trône transporté miraculeusement, et la conversion finale de Bilqîs après avoir découvert le palais de cristal reflétant l'eau sous ses pieds.",
+    "theme": "coran",
+    "source": "Coran 27:20-44 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 57
+  },
+  {
+    "id": "quiz_164",
+    "question": "Selon la majorité des écoles, un musulman non-voyageur peut-il rompre volontairement son jeûne de Ramadan pour cause de maladie légère et passagère (rhume simple) ?",
+    "choix": ["A. Oui, sans condition", "B. Non ; seule une maladie causant un préjudice réel ou aggravée par le jeûne autorise la rupture", "C. Cela dépend uniquement de l'âge", "D. Le jeûne devient automatiquement facultatif après 30 ans"],
+    "reponse": "B",
+    "explication": "Al-Baqara (2:184) autorise la rupture du jeûne en cas de maladie, mais les savants précisent qu'il doit s'agir d'une maladie causant un préjudice réel — aggravée par le jeûne, retardant la guérison, ou mettant en danger — non une gêne mineure surmontable sans risque véritable.",
+    "theme": "fiqh",
+    "source": "Coran 2:184 ; Tafsîr Ibn Kathîr, Fiqh du jeûne",
+    "difficulte": "intermédiaire",
+    "jour": 58
+  },
+  {
+    "id": "quiz_165",
+    "question": "Selon l'école mâlikite, la Zakât al-Fitr doit-elle être versée en nature (nourriture) ou la conversion en argent est-elle autorisée ?",
+    "choix": ["A. Uniquement en argent", "B. En nature uniquement, comme les Shâfi'ites et Hanbalites ; les Hanafites autorisent la conversion en valeur monétaire", "C. Les deux options sont strictement équivalentes pour toutes les écoles", "D. Elle n'est due qu'en or"],
+    "reponse": "B",
+    "explication": "Mâlikites, Shâfi'ites et Hanbalites exigent le versement en nature (dattes, blé, orge, etc.), suivant la pratique explicite du Prophète ﷺ. Les Hanafites, s'appuyant sur l'objectif de subvenir aux besoins du pauvre, autorisent l'équivalent en valeur monétaire, une divergence pratique fréquente à chaque fin de Ramadan.",
+    "theme": "fiqh",
+    "source": "Al-Majmû', an-Nawawî ; Fiqh comparatif de la zakât al-fitr",
+    "difficulte": "avancé",
+    "jour": 58
+  },
+  {
+    "id": "quiz_166",
+    "question": "Un musulman qui oublie de faire l'intention (niyya) de jeûner avant l'aube pour un jeûne obligatoire de Ramadan : que doit-il faire selon la majorité des écoles ?",
+    "choix": ["A. Rien, le jeûne du Ramadan ne nécessite aucune intention quotidienne", "B. Rattraper ce jour après le Ramadan, l'intention nocturne étant requise pour le jeûne obligatoire", "C. Jeûner deux jours en compensation", "D. Cela invalide tout le mois de Ramadan"],
+    "reponse": "B",
+    "explication": "La majorité considère que l'intention du jeûne obligatoire doit être formée avant l'aube, bien qu'elle ne nécessite pas d'être renouvelée verbalement chaque jour si elle demeure présente à l'esprit pour tout le mois. Un oubli total et conscient de l'intention pour une journée précise implique son rattrapage.",
+    "theme": "fiqh",
+    "source": "Sunan Abî Dâwûd n°2454 ; Fiqh comparatif du jeûne",
+    "difficulte": "avancé",
+    "jour": 58
+  },
+  {
+    "id": "quiz_167",
+    "question": "Quel Compagnon fut chargé par le Prophète ﷺ de recenser les musulmans de Médine, un dénombrement précis rapporté dans les hadiths ?",
+    "choix": ["A. Hudhayfa ibn al-Yamân", "B. Zayd ibn Thâbit", "C. 'Ammâr ibn Yâsir", "D. Sa'd ibn Mu'âdh"],
+    "reponse": "A",
+    "explication": "Hudhayfa ibn al-Yamân fut chargé par le Prophète ﷺ de recenser les musulmans de Médine, un chiffre qu'il révéla ensuite à 'Umar : environ 1 500 personnes. Hudhayfa fut également le seul Compagnon informé par le Prophète ﷺ des signes distinctifs des hypocrites de Médine.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°3060 ; Sahîh Muslim n°2779",
+    "difficulte": "avancé",
+    "jour": 59
+  },
+  {
+    "id": "quiz_168",
+    "question": "Quel Compagnon aveugle fut nommé califes intérimaires de Médine (ou muezzin/imam suppléant) par le Prophète ﷺ à plusieurs reprises durant ses absences ?",
+    "choix": ["A. 'Abdullâh ibn Umm Maktûm", "B. Bilâl ibn Rabâh", "C. 'Ammâr ibn Yâsir", "D. Sa'îd ibn Zayd"],
+    "reponse": "A",
+    "explication": "'Abdullâh ibn Umm Maktûm, le Compagnon aveugle mentionné en 'Abasa (80), fut désigné à plusieurs reprises par le Prophète ﷺ pour diriger la prière et gérer les affaires de Médine durant ses absences en expédition, preuve que le handicap visuel n'empêchait nullement une haute responsabilité.",
+    "theme": "sira",
+    "source": "Sunan Abî Dâwûd n°2931 ; Ibn Hishâm, as-Sîra",
+    "difficulte": "avancé",
+    "jour": 59
+  },
+  {
+    "id": "quiz_169",
+    "question": "Quel âge avait 'Alî ibn Abî Tâlib lorsqu'il accepta de dormir dans le lit du Prophète ﷺ la nuit de la Hijra, pour tromper les assassins venus l'encercler ?",
+    "choix": ["A. Environ 10 ans", "B. Environ 23 ans", "C. Plus de 40 ans", "D. Le Coran précise cet âge exactement"],
+    "reponse": "B",
+    "explication": "'Alî, alors âgé d'environ 23 ans, accepta de dormir recouvert du manteau du Prophète ﷺ pour donner le change aux assassins qurayshites postés devant la maison, permettant au Prophète ﷺ et à Abû Bakr de quitter discrètement la Mecque vers Thawr puis Médine.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.1",
+    "difficulte": "avancé",
+    "jour": 59
+  },
+  {
+    "id": "quiz_170",
+    "question": "Comment le Prophète ﷺ et Abû Bakr échappèrent-ils aux poursuivants venus fouiller la grotte de Thawr, selon la tradition ?",
+    "choix": ["A. Un mirage les trompa", "B. Une araignée tissa une toile et des pigeons nichèrent à l'entrée, laissant croire que nul n'y était entré récemment", "C. Ils se cachèrent sous du sable", "D. Ils utilisèrent un déguisement"],
+    "reponse": "B",
+    "explication": "La tradition rapporte qu'une araignée tissa sa toile à l'entrée de la grotte et qu'un couple de pigeons y fit son nid, suffisant à convaincre les poursuivants qu'aucune présence humaine récente ne s'y trouvait — un signe discret de protection divine sans miracle spectaculaire ni ostentatoire.",
+    "theme": "sira",
+    "source": "Tafsîr Ibn Kathîr, 9:40 ; récits classiques de la Sîra",
+    "difficulte": "intermédiaire",
+    "jour": 60
+  },
+  {
+    "id": "quiz_171",
+    "question": "Comment appelle-t-on, en 'aqîda, le fait qu'Allah possède la connaissance de toute chose de toute éternité, sans début ni évolution ?",
+    "choix": ["A. Al-Qudra", "B. Al-'Ilm al-Azalî (la Science éternelle)", "C. Al-Irâda", "D. Al-Hayât"],
+    "reponse": "B",
+    "explication": "Ahl as-Sunna affirme qu'Allah connaît de toute éternité (azal) tout ce qui fut, est et sera, sans que Sa science n'évolue ni ne s'acquière progressivement, contrairement à la connaissance humaine, limitée et changeante par nature.",
+    "theme": "aqida",
+    "source": "Al-'Aqîda at-Tahâwiyya ; théologie classique des Noms et Attributs",
+    "difficulte": "avancé",
+    "jour": 60
+  },
+  {
+    "id": "quiz_172",
+    "question": "Selon la Sunna, combien de temps durera approximativement le séjour du Dajjâl sur terre avant sa défaite par 'Îsâ ?",
+    "choix": ["A. Un jour", "B. Quarante jours, dont un jour comme une année, un autre comme un mois, un autre comme une semaine, le reste normaux", "C. Sept ans exactement", "D. Aucune durée n'est mentionnée"],
+    "reponse": "B",
+    "explication": "Un hadith rapporté par Muslim précise que le Dajjâl restera quarante jours, dont un jour équivaudra à une année, un autre à un mois, un autre à une semaine, les jours restants étant de durée normale — les Compagnons demandèrent alors comment prier durant ces jours étirés, et le Prophète ﷺ leur répondit d'estimer les horaires.",
+    "theme": "aqida",
+    "source": "Sahîh Muslim n°2937",
+    "difficulte": "avancé",
+    "jour": 60
+  },
+  {
+    "id": "quiz_173",
+    "question": "Combien de grands signes (al-'Alâmât al-Kubrâ) annonciateurs de la fin des temps sont généralement recensés dans la Sunna ?",
+    "choix": ["A. Trois", "B. Dix", "C. Vingt", "D. Cent"],
+    "reponse": "B",
+    "explication": "Un hadith rapporté par Muslim énumère dix grands signes précédant l'Heure : la fumée, le Dajjâl, la Bête de la terre, le lever du soleil à l'ouest, la descente de 'Îsâ, Gog et Magog, trois effondrements de terre (est, ouest, péninsule arabique) et un feu final rassemblant les gens.",
+    "theme": "aqida",
+    "source": "Sahîh Muslim n°2901",
+    "difficulte": "avancé",
+    "jour": 61
+  },
+  {
+    "id": "quiz_174",
+    "question": "Quelle sourate décrit le combat final entre les peuples de Gog et Magog (Ya'jûj wa Ma'jûj) contenus derrière une digue construite par Dhû al-Qarnayn ?",
+    "choix": ["A. Al-Kahf", "B. Al-Anbiyâ'", "C. Les deux sourates en font mention, à des degrés différents", "D. Aucune sourate n'en parle explicitement"],
+    "reponse": "C",
+    "explication": "Al-Kahf (18:93-98) relate la construction de la digue par Dhû al-Qarnayn pour contenir Gog et Magog, tandis qu'Al-Anbiyâ' (21:96) évoque leur libération future comme signe de l'approche du Jugement — les deux sourates se complètent sur ce même événement eschatologique.",
+    "theme": "coran",
+    "source": "Coran 18:93-98, 21:96 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 61
+  },
+  {
+    "id": "quiz_175",
+    "question": "Selon un hadith, quel signe physique distinctif portera le faux messie (al-Masîh ad-Dajjâl) qui permettra de le reconnaître ?",
+    "choix": ["A. Il sera borgne d'un œil", "B. Il sera très grand de taille uniquement", "C. Il aura une voix inaudible", "D. Aucun signe distinctif n'est mentionné"],
+    "reponse": "A",
+    "explication": "Plusieurs hadiths décrivent le Dajjâl comme borgne, l'un de ses yeux étant décrit comme voilé ou saillant comme un grain de raisin, avec le mot « Kâfir » (mécréant) inscrit entre ses yeux, lisible par tout croyant lettré ou non selon certaines versions du hadith.",
+    "theme": "aqida",
+    "source": "Sahîh al-Bukhârî n°7407 ; Sahîh Muslim n°2933",
+    "difficulte": "intermédiaire",
+    "jour": 61
+  },
+  {
+    "id": "quiz_176",
+    "question": "Quel Compagnon fut envoyé en mission secrète par le Prophète ﷺ pour espionner les mouvements de la coalition ennemie durant la bataille du Fossé ?",
+    "choix": ["A. Hudhayfa ibn al-Yamân", "B. Khâlid ibn al-Walîd", "C. 'Amr ibn al-'Âs", "D. Az-Zubayr ibn al-'Awwâm"],
+    "reponse": "A",
+    "explication": "Lors d'une nuit glaciale du siège de Médine, le Prophète ﷺ envoya Hudhayfa infiltrer discrètement le camp de la coalition pour en observer l'état moral et les intentions. Hudhayfa rapporta le désordre et le découragement grandissants parmi les assiégeants, précédant leur retraite.",
+    "theme": "sira",
+    "source": "Sahîh Muslim n°1788 ; Ibn Hishâm, as-Sîra",
+    "difficulte": "avancé",
+    "jour": 62
+  },
+  {
+    "id": "quiz_177",
+    "question": "Combien de temps dura environ le siège de Médine lors de la bataille du Fossé, avant la dispersion de la coalition ennemie ?",
+    "choix": ["A. Un seul jour", "B. Environ un mois", "C. Environ six mois", "D. Une année complète"],
+    "reponse": "B",
+    "explication": "Le siège dura environ un mois, entre froid intense, vent violent et dissensions internes croissantes au sein de la coalition. Une tempête providentielle, décrite dans Al-Ahzâb (33:9), contribua à disperser les tentes et le moral des assiégeants, précipitant leur retrait.",
+    "theme": "sira",
+    "source": "Coran 33:9 ; Ibn Hishâm, as-Sîra an-Nabawiyya vol.2",
+    "difficulte": "intermédiaire",
+    "jour": 62
+  },
+  {
+    "id": "quiz_178",
+    "question": "Quel verset du Coran est directement lié à l'établissement de la règle du hijâb (voile) pour les épouses du Prophète ﷺ ?",
+    "choix": ["A. Al-Ahzâb 33:53", "B. Al-Baqara 2:183", "C. An-Nisâ' 4:34", "D. Al-Mâ'ida 5:6"],
+    "reponse": "A",
+    "explication": "Al-Ahzâb (33:53) fut révélé après un incident où des invités s'attardèrent chez le Prophète ﷺ après un repas de noces, gênant sa vie privée. Le verset établit alors, entre autres prescriptions, la règle de s'adresser aux épouses du Prophète derrière un rideau (hijâb).",
+    "theme": "coran",
+    "source": "Coran 33:53 ; Sahîh al-Bukhârî n°4791",
+    "difficulte": "avancé",
+    "jour": 63
+  },
+  {
+    "id": "quiz_179",
+    "question": "Quel Compagnon suggéra au Prophète ﷺ, avant la révélation du verset du hijâb, que ses épouses portent un voile en raison de leur statut particulier ?",
+    "choix": ["A. 'Umar ibn al-Khattâb", "B. Abû Bakr as-Siddîq", "C. 'Uthmân ibn 'Affân", "D. Sa'd ibn Mu'âdh"],
+    "reponse": "A",
+    "explication": "'Umar exprima à plusieurs reprises au Prophète ﷺ son souhait que ses épouses, en tant que Mères des Croyants, se voilent davantage face aux visiteurs. Le verset du hijâb vint peu après confirmer et institutionnaliser cette recommandation, un épisode souvent cité illustrant la concordance entre l'avis de 'Umar et certaines révélations.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°402, 4790",
+    "difficulte": "avancé",
+    "jour": 63
+  },
+  {
+    "id": "quiz_180",
+    "question": "Combien d'épouses le Prophète ﷺ avait-il simultanément à sa mort ?",
+    "choix": ["A. Quatre", "B. Neuf", "C. Douze", "D. Deux"],
+    "reponse": "B",
+    "explication": "Le Prophète ﷺ laissa neuf épouses à sa mort, chacune appelée « Mère des Croyants » (Umm al-Mu'minîn), un statut honorifique unique interdisant leur remariage après son décès, conformément à Al-Ahzâb (33:6).",
+    "theme": "sira",
+    "source": "Coran 33:6 ; Ibn Sa'd, at-Tabaqât al-Kubrâ",
+    "difficulte": "intermédiaire",
+    "jour": 63
+  }
+]
