@@ -9934,15 +9934,18 @@ body.onboarding-active #nav-bar-v2 {
   padding: 14px;
   border: 0.5px solid rgba(200,168,74,0.3);
   border-radius: 12px;
-  background: none;
+  background: linear-gradient(180deg, rgba(200,168,74,0.06), rgba(200,168,74,0.02));
+  box-shadow: 0 0 12px rgba(200,168,74,0.08);
+  transition: all 0.25s ease;
   color: #C8A84A;
-  font-family: 'Georgia', serif;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
   font-size: 15px;
   cursor: pointer;
   letter-spacing: 0.04em;
   -webkit-tap-highlight-color: transparent;
 }
-.tawhid-return-btn:active { background: rgba(200,168,74,0.08); }
+.tawhid-return-btn:active { background: rgba(200,168,74,0.15); box-shadow: 0 0 18px rgba(200,168,74,0.15); }
 
 /* ── QUIZ DU JOUR ── */
 .quiz-overlay {
