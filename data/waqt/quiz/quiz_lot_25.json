@@ -1,0 +1,222 @@
+[
+  {
+    "id": "quiz_481",
+    "question": "Quelle sourate prédit, au moment de sa révélation, la victoire future des Byzantins sur les Perses après une défaite initiale — une prophétie accomplie quelques années plus tard ?",
+    "choix": ["A. Ar-Rûm", "B. Al-Fath uniquement", "C. Al-Anfâl uniquement", "D. Al-Ahzâb uniquement"],
+    "reponse": "A",
+    "explication": "Ar-Rûm (30:2-4) annonce, au moment où les Byzantins (chrétiens, proches des musulmans persécutés) venaient d'être vaincus par les Perses (polythéistes, alliés objectifs de Quraysh), que « dans quelques années » les Byzantins seraient à nouveau victorieux. Cette prophétie, moquée par les polythéistes mecquois, se réalisa effectivement dans le délai annoncé.",
+    "theme": "coran",
+    "source": "Coran 30:2-4 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 169
+  },
+  {
+    "id": "quiz_482",
+    "question": "Quelle sourate avertit sévèrement ceux qui consomment injustement les biens des orphelins, les comparant à celui qui avale du feu dans son ventre ?",
+    "choix": ["A. An-Nisâ'", "B. Al-Baqara uniquement", "C. Al-An'âm uniquement", "D. Al-Isrâ' uniquement"],
+    "reponse": "A",
+    "explication": "An-Nisâ' (4:10) déclare : « Ceux qui consomment injustement les biens des orphelins ne font qu'avaler du feu dans leur ventre ; et ils brûleront bientôt dans un brasier ardent. » Une image saisissante soulignant la gravité extrême accordée à la protection des biens des plus vulnérables.",
+    "theme": "coran",
+    "source": "Coran 4:10 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 169
+  },
+  {
+    "id": "quiz_483",
+    "question": "Quelle sourate traite du zihâr (une forme de répudiation préislamique où l'homme compare son épouse au dos de sa mère) et de son expiation obligatoire ?",
+    "choix": ["A. Al-Mujâdila", "B. At-Talâq uniquement", "C. Al-Ahzâb uniquement", "D. An-Nûr uniquement"],
+    "reponse": "A",
+    "explication": "Al-Mujâdila (58:1-4) fut révélée suite à la plainte d'une femme dont le mari avait prononcé cette formule préislamique, cherchant à la priver de statut conjugal sans divorce formel. Le Coran interdit cette pratique et impose une expiation sévère (libérer un esclave, ou jeûner deux mois, ou nourrir soixante pauvres) avant toute reprise des relations conjugales.",
+    "theme": "coran",
+    "source": "Coran 58:1-4 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 169
+  },
+  {
+    "id": "quiz_484",
+    "question": "En quoi la prière funéraire (salât al-janâza) se distingue-t-elle structurellement des autres prières islamiques ?",
+    "choix": ["A. Elle comporte quatre Takbîr successifs sans inclinaison (rukû') ni prosternation (sujûd)", "B. Elle se prie exactement comme les autres prières, sans différence", "C. Elle ne comporte aucune parole, uniquement du silence", "D. Elle nécessite dix Takbîr"],
+    "reponse": "A",
+    "explication": "La prière funéraire se compose de quatre Takbîr (Allâhu Akbar) marquant chacun une étape (ouverture et Fâtiha, salutations sur le Prophète ﷺ, invocation pour le défunt, invocation finale), suivis du salâm final — sans inclinaison ni prosternation, une structure unique dans le fiqh de la prière.",
+    "theme": "fiqh",
+    "source": "Sahîh al-Bukhârî n°1333 ; Fiqh classique des funérailles",
+    "difficulte": "intermédiaire",
+    "jour": 170
+  },
+  {
+    "id": "quiz_485",
+    "question": "Combien de formes distinctes du Hajj (Tamattu', Qirân, Ifrâd) les savants reconnaissent-ils classiquement, selon la manière de combiner ou non le Hajj et la 'Umra ?",
+    "choix": ["A. Trois formes", "B. Une seule forme unique et obligatoire", "C. Cinq formes distinctes", "D. Aucune classification n'existe"],
+    "reponse": "A",
+    "explication": "Le Tamattu' consiste à accomplir la 'Umra puis sortir de l'ihrâm avant de reprendre un nouvel ihrâm pour le Hajj ; le Qirân combine les deux intentions dans un seul ihrâm continu ; l'Ifrâd consiste à n'accomplir que le Hajj seul. Ces trois formes sont toutes valides, avec des obligations d'offrande (hady) variant selon le choix retenu.",
+    "theme": "fiqh",
+    "source": "Sahîh al-Bukhârî n°1562 ; Fiqh classique du Hajj",
+    "difficulte": "intermédiaire",
+    "jour": 170
+  },
+  {
+    "id": "quiz_486",
+    "question": "Quelle expiation le Coran impose-t-il à l'homme ayant prononcé le zihâr contre son épouse, avant toute reprise des relations conjugales ?",
+    "choix": ["A. Libérer un esclave ; à défaut, jeûner deux mois consécutifs ; à défaut, nourrir soixante pauvres", "B. Aucune expiation n'est requise", "C. Uniquement une amende financière fixe", "D. Le divorce devient automatiquement obligatoire"],
+    "reponse": "A",
+    "explication": "Al-Mujâdila (58:3-4) impose une expiation graduelle et sévère, similaire à celle du rapport conjugal rompant le jeûne de Ramadan : l'affranchissement d'un esclave (obsolète aujourd'hui), à défaut deux mois de jeûne consécutifs, à défaut nourrir soixante pauvres — reflétant la gravité de cette parole blessante envers l'épouse.",
+    "theme": "fiqh",
+    "source": "Coran 58:3-4 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 170
+  },
+  {
+    "id": "quiz_487",
+    "question": "Comment Waraqa ibn Nawfal, cousin de Khadîja et connaisseur des Écritures antérieures, réagit-il en apprenant la première révélation reçue par le Prophète ﷺ ?",
+    "choix": ["A. Il reconnut le même « Nâmûs » (l'ange Jibrîl) descendu autrefois sur Mûsâ, prédisant que le Prophète ﷺ serait chassé de sa ville par les siens", "B. Il rejeta immédiatement cette révélation comme fausse", "C. Il refusa de se prononcer sur le sujet", "D. Il exigea une preuve matérielle avant tout commentaire"],
+    "reponse": "A",
+    "explication": "Waraqa, chrétien connaissant les Écritures antérieures, reconnut immédiatement dans le récit rapporté par Khadîja la description de l'ange déjà envoyé à Mûsâ, affirmant que le Prophète ﷺ était bien le prophète attendu, tout en prédisant avec une clairvoyance troublante qu'il serait chassé et combattu par son propre peuple.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°3 ; Ibn Hishâm, as-Sîra",
+    "difficulte": "intermédiaire",
+    "jour": 171
+  },
+  {
+    "id": "quiz_488",
+    "question": "Que fit Suhayb ar-Rûmî pour pouvoir migrer librement de la Mecque vers Médine, malgré l'opposition de Quraysh cherchant à récupérer ses biens ?",
+    "choix": ["A. Il abandonna toute sa richesse aux Qurayshites en échange de la permission de partir librement", "B. Il combattit seul contre ses poursuivants", "C. Il resta finalement à la Mecque", "D. Il se convertit temporairement pour tromper Quraysh"],
+    "reponse": "A",
+    "explication": "Rattrapé par des Qurayshites voulant le priver de ses biens accumulés à la Mecque avant de le laisser partir, Suhayb accepta de leur céder toute sa richesse en échange de la liberté de rejoindre Médine. Informé de ce geste, le Prophète ﷺ déclara : « Suhayb a fait une affaire profitable, Suhayb a fait une affaire profitable ! »",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.1",
+    "difficulte": "avancé",
+    "jour": 171
+  },
+  {
+    "id": "quiz_489",
+    "question": "Après la bataille du Chameau (al-Jamal), l'un des conflits internes de la première Fitna, quelle attitude 'Alî adopta-t-il envers 'Â'isha, malgré leur opposition militaire préalable ?",
+    "choix": ["A. Il la traita avec un profond respect et organisa personnellement son retour honorable à Médine, préservant sa dignité de Mère des Croyants", "B. Il refusa tout contact ultérieur avec elle", "C. Il la fit emprisonner", "D. Aucune réconciliation n'eut jamais lieu entre eux"],
+    "reponse": "A",
+    "explication": "Malgré l'opposition militaire ayant conduit à la bataille du Chameau, 'Alî traita 'Â'isha avec un profond respect une fois le conflit terminé, veillant personnellement à son retour honorable et sécurisé à Médine, un geste souvent cité comme exemple de la noblesse persistante entre Compagnons malgré des désaccords politiques douloureux.",
+    "theme": "sira",
+    "source": "at-Tabarî, Târîkh ar-Rusul wa'l-Mulûk",
+    "difficulte": "avancé",
+    "jour": 171
+  },
+  {
+    "id": "quiz_490",
+    "question": "Selon les commentateurs, à quoi renvoie principalement l'expression « as-Sirât al-Mustaqîm » (le droit chemin) demandée dans chaque récitation d'Al-Fâtiha ?",
+    "choix": ["A. Plusieurs interprétations complémentaires : l'Islam lui-même, le Coran, ou la Sunna du Prophète ﷺ et de ses califes bien guidés", "B. Uniquement un chemin géographique physique vers la Mecque", "C. Une expression sans signification particulière", "D. Uniquement la richesse matérielle"],
+    "reponse": "A",
+    "explication": "Les commentateurs proposent plusieurs interprétations complémentaires et non contradictoires de cette expression centrale : l'Islam dans sa totalité, le Coran comme guide révélé, ou la voie suivie par le Prophète ﷺ et ses califes bien guidés — toutes convergeant vers le même chemin unique de soumission sincère à Allah.",
+    "theme": "aqida",
+    "source": "Tafsîr Ibn Kathîr, 1:6 ; 'Ulûm al-Qur'ân classiques",
+    "difficulte": "intermédiaire",
+    "jour": 172
+  },
+  {
+    "id": "quiz_491",
+    "question": "Selon certains récits rapportés dans la Sîra, quel événement inhabituel serait survenu en Perse la nuit de la naissance du Prophète ﷺ ?",
+    "choix": ["A. Le feu sacré adoré par les zoroastriens à Ctésiphon se serait éteint après être resté allumé pendant des siècles", "B. Un tremblement de terre aurait détruit le palais royal", "C. Une éclipse totale aurait duré une semaine entière", "D. Aucun événement particulier n'est rapporté hors d'Arabie"],
+    "reponse": "A",
+    "explication": "Plusieurs récits de la Sîra rapportent, parmi les signes précurseurs (irhâsât) entourant la naissance du Prophète ﷺ, l'extinction du feu sacré zoroastrien de Perse, resté allumé sans interruption depuis des générations. Ces récits, transmis par la tradition biographique, ne bénéficient pas tous du même degré de vérification historique rigoureuse que les hadiths juridiques.",
+    "theme": "sira",
+    "source": "Ibn Kathîr, al-Bidâya wa'n-Nihâya (récits des signes précurseurs)",
+    "difficulte": "avancé",
+    "jour": 172
+  },
+  {
+    "id": "quiz_492",
+    "question": "Dans la même sourate qui prédit la victoire byzantine, quels signes naturels sont cités comme preuves de la puissance et de la sagesse d'Allah, invitant à la réflexion ?",
+    "choix": ["A. L'alternance du jour et de la nuit, le sommeil, la diversité des langues et des couleurs de peau", "B. Uniquement les phénomènes météorologiques extrêmes", "C. Uniquement les cycles agricoles", "D. Aucun signe naturel n'est mentionné dans cette sourate"],
+    "reponse": "A",
+    "explication": "Ar-Rûm (30:20-25) énumère plusieurs signes accessibles à l'observation quotidienne : la création à partir de la poussière, le repos trouvé dans le sommeil, la diversité des langues et des couleurs humaines — autant d'invitations à la réflexion (tafakkur) pour ceux qui savent observer et raisonner.",
+    "theme": "coran",
+    "source": "Coran 30:20-25 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 172
+  },
+  {
+    "id": "quiz_493",
+    "question": "Selon la majorité des écoles, quand la Zakât al-Fitr doit-elle idéalement être versée pour conserver pleinement son statut d'aumône rituelle liée à l'Aïd ?",
+    "choix": ["A. Avant la prière de l'Aïd al-Fitr ; versée après, elle devient une simple sadaqa ordinaire selon un hadith explicite", "B. N'importe quand durant l'année suivante", "C. Uniquement le jour du 1er Ramadan", "D. Aucun délai n'a jamais été précisé"],
+    "reponse": "A",
+    "explication": "Ibn 'Abbâs rapporte que le Prophète ﷺ institua la Zakât al-Fitr comme purification du jeûneur et nourriture pour les pauvres, précisant que celle versée avant la prière de l'Aïd est une zakât acceptée, tandis que celle versée après devient une simple aumône ordinaire, perdant son statut rituel spécifique lié à la clôture du Ramadan.",
+    "theme": "fiqh",
+    "source": "Sunan Abî Dâwûd n°1609",
+    "difficulte": "intermédiaire",
+    "jour": 173
+  },
+  {
+    "id": "quiz_494",
+    "question": "Quelle Mère des Croyants vécut une séparation particulièrement douloureuse lors de sa Hijra, son mari et son jeune fils lui étant arrachés de force par sa propre famille avant qu'elle ne les retrouve des années plus tard ?",
+    "choix": ["A. Umm Salama", "B. Hafsa bint 'Umar", "C. Zaynab bint Jahsh", "D. Sawda bint Zam'a"],
+    "reponse": "A",
+    "explication": "Umm Salama tenta de migrer vers Médine avec son mari et son fils, mais fut séparée de force par sa propre famille qui la retint, tandis que son mari partait seul et que la famille de son mari lui reprenait son fils. Elle resta ainsi seule et éplorée près d'un an avant d'être finalement autorisée à rejoindre Médine, un épisode d'une grande douleur personnelle rapporté dans les sources classiques.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.1",
+    "difficulte": "avancé",
+    "jour": 173
+  },
+  {
+    "id": "quiz_495",
+    "question": "Selon un hadith, la véritable richesse (al-ghinâ) réside-t-elle principalement dans l'abondance matérielle des biens possédés ?",
+    "choix": ["A. Non, le Prophète ﷺ précise que la vraie richesse est la richesse de l'âme (contentement intérieur), non l'abondance des biens", "B. Oui, exclusivement dans l'abondance financière", "C. Le sujet n'est jamais abordé dans les hadiths", "D. Uniquement dans la possession de terres agricoles"],
+    "reponse": "A",
+    "explication": "Le Prophète ﷺ a dit : « La richesse n'est pas l'abondance des biens, mais la richesse est la richesse de l'âme (ghinâ an-nafs). » Une définition qui déplace le critère de prospérité de l'accumulation matérielle vers le contentement intérieur (al-qanâ'a), qualité spirituelle indépendante du niveau de fortune réel.",
+    "theme": "aqida",
+    "source": "Sahîh al-Bukhârî n°6446 ; Sahîh Muslim n°1051",
+    "difficulte": "intermédiaire",
+    "jour": 173
+  },
+  {
+    "id": "quiz_496",
+    "question": "Dans ses conseils rapportés par le Coran, quel péché Luqmân qualifie-t-il d'« immense injustice » (zulm 'azîm) en mettant en garde son fils ?",
+    "choix": ["A. Le shirk (associer des divinités à Allah)", "B. Le mensonge ordinaire uniquement", "C. La paresse dans le travail", "D. La curiosité excessive"],
+    "reponse": "A",
+    "explication": "Luqmân (31:13) rapporte ce conseil paternel : « Ô mon fils, ne donne pas d'associé à Allah, car l'association est vraiment une injustice énorme (zulm 'azîm). » Le shirk y est qualifié de la plus grave des injustices, précisément parce qu'il consiste à priver Allah seul de Son droit exclusif à l'adoration.",
+    "theme": "coran",
+    "source": "Coran 31:13 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 174
+  },
+  {
+    "id": "quiz_497",
+    "question": "Selon la majorité des écoles, peut-on combiner en une seule intention le rattrapage d'un jour manqué de Ramadan (qadâ') avec le jeûne surérogatoire des six jours de Shawwâl ?",
+    "choix": ["A. Non, la position majoritaire classique exige des intentions et des journées distinctes pour chaque type de jeûne", "B. Oui, sans aucune réserve pour toutes les écoles", "C. Cela est totalement interdit et invalide les deux jeûnes", "D. Seul le qadâ' peut exister, le jeûne de Shawwâl n'existe pas en fiqh"],
+    "reponse": "A",
+    "explication": "La position majoritaire classique considère que le rattrapage obligatoire d'un jour de Ramadan et le jeûne surérogatoire des six jours de Shawwâl nécessitent chacun une intention et une journée distinctes, bien qu'une minorité de savants contemporains discute la possibilité d'une intention combinée sous certaines conditions, une question encore débattue aujourd'hui.",
+    "theme": "fiqh",
+    "source": "Sahîh Muslim n°1164 ; débats classiques et contemporains",
+    "difficulte": "avancé",
+    "jour": 174
+  },
+  {
+    "id": "quiz_498",
+    "question": "Selon la Sunna, quelle attitude particulière le Prophète ﷺ manifestait-il envers les enfants qu'il croisait dans la rue ou lors de ses déplacements ?",
+    "choix": ["A. Il prenait soin de les saluer et de leur porter attention, malgré son rang et ses nombreuses responsabilités", "B. Il les ignorait systématiquement par manque de temps", "C. Il évitait tout contact avec eux", "D. Aucun récit ne mentionne son comportement envers les enfants"],
+    "reponse": "A",
+    "explication": "Anas ibn Mâlik, qui servit le Prophète ﷺ dès l'enfance, rapporte qu'il passait volontiers auprès des enfants et les saluait, une attention particulière rare pour un chef politique et religieux de son rang, illustrant une pédagogie de la considération et du respect accordé même aux plus jeunes membres de la communauté.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°6247 ; Sahîh Muslim n°2168",
+    "difficulte": "intermédiaire",
+    "jour": 174
+  },
+  {
+    "id": "quiz_499",
+    "question": "Selon un hadith célèbre, comment le Prophète ﷺ décrivit-il le début et la fin prévisible de l'Islam en termes d'acceptation sociale ?",
+    "choix": ["A. « L'Islam a commencé étranger, et redeviendra étranger comme il a commencé ; alors bonne nouvelle aux étrangers (al-ghurabâ') »", "B. « L'Islam restera toujours majoritaire et jamais minoritaire »", "C. Aucune prophétie de ce type n'est rapportée", "D. « L'Islam disparaîtra définitivement avant le Jugement »"],
+    "reponse": "A",
+    "explication": "Le Prophète ﷺ a dit : « L'Islam a commencé étranger (gharîb), et il redeviendra étranger comme il a commencé ; alors bonne nouvelle aux étrangers ! » Un hadith souvent médité par les pratiquants se sentant minoritaires ou incompris dans leur environnement, l'interprétant comme un encouragement à la fidélité malgré l'isolement perçu.",
+    "theme": "aqida",
+    "source": "Sahîh Muslim n°145",
+    "difficulte": "intermédiaire",
+    "jour": 175
+  },
+  {
+    "id": "quiz_500",
+    "question": "Comment le Coran se qualifie-t-il lui-même, en Al-Isrâ', par rapport à son effet sur les croyants sincères ?",
+    "choix": ["A. « Guérison et miséricorde pour les croyants » (shifâ' wa rahma lil-mu'minîn)", "B. Uniquement comme un texte historique sans portée spirituelle", "C. Un simple recueil de lois sans dimension curative", "D. Le Coran ne se décrit jamais lui-même dans son propre texte"],
+    "reponse": "A",
+    "explication": "Al-Isrâ' (17:82) déclare : « Nous faisons descendre du Coran ce qui est une guérison et une miséricorde pour les croyants. » Cette double fonction — guérison spirituelle et miséricorde — résume l'objectif profond de la révélation coranique : non un simple corpus de règles, mais un remède pour le cœur autant qu'une source de droit.",
+    "theme": "coran",
+    "source": "Coran 17:82 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 175
+  }
+]
