@@ -1,0 +1,222 @@
+[
+  {
+    "id": "quiz_141",
+    "question": "Quelle sourate rapporte le miracle du Voyage Nocturne (al-Isrâ') du Prophète ﷺ de la Mecque à Jérusalem ?",
+    "choix": ["A. An-Najm", "B. Al-Isrâ' (Banî Isrâ'îl)", "C. Al-Inshirâh", "D. Ad-Duhâ"],
+    "reponse": "B",
+    "explication": "La sourate Al-Isrâ' (17) s'ouvre par : « Gloire à Celui qui fit voyager de nuit Son serviteur de la Mosquée sacrée à la Mosquée la plus éloignée. » Elle porte aussi le nom de Banî Isrâ'îl en raison de son contenu ultérieur consacré aux enfants d'Israël.",
+    "theme": "coran",
+    "source": "Coran 17:1 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 50
+  },
+  {
+    "id": "quiz_142",
+    "question": "Quelle sourate mecquoise porte le nom d'un métal, évoquant le fer envoyé par Allah pour la force et l'utilité des hommes ?",
+    "choix": ["A. Al-Hadîd", "B. Al-Ma'ârij", "C. Al-Fajr", "D. At-Târiq"],
+    "reponse": "A",
+    "explication": "Al-Hadîd (le Fer, sourate 57) mentionne en son verset 25 : « Nous avons fait descendre le fer, dans lequel il y a une force redoutable et des utilités pour les gens. » Un verset souvent cité pour son écho aux propriétés métallurgiques modernes du fer.",
+    "theme": "coran",
+    "source": "Coran 57:25 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 50
+  },
+  {
+    "id": "quiz_143",
+    "question": "Dans la sourate Yûsuf, combien de fois le nom du prophète Yûsuf est-il répété au sein de cette unique sourate ?",
+    "choix": ["A. Environ 10 fois", "B. Environ 27 fois", "C. Une seule fois, au premier verset", "D. Plus de 100 fois"],
+    "reponse": "B",
+    "explication": "Le nom de Yûsuf revient environ 27 fois dans la sourate qui porte son nom, la seule sourate du Coran entièrement consacrée à la narration continue d'un seul récit prophétique du début à la fin, sans digression vers d'autres sujets.",
+    "theme": "coran",
+    "source": "Étude lexicale du Coran ; Tafsîr at-Tabarî",
+    "difficulte": "avancé",
+    "jour": 50
+  },
+  {
+    "id": "quiz_144",
+    "question": "Selon la majorité des écoles, une femme en état de menstrues peut-elle réciter le Coran de mémoire, sans toucher le Mushaf ?",
+    "choix": ["A. Non, en aucun cas", "B. La question fait l'objet de divergences ; Hanafites et Hanbalites l'interdisent, Mâlikites et certains Shâfi'ites l'autorisent selon les besoins (enseignement, examen)", "C. Oui, sans aucune divergence", "D. Seulement pendant Ramadan"],
+    "reponse": "B",
+    "explication": "Il n'existe pas de texte explicite et unanime tranchant cette question par analogie stricte avec le janâba. Les écoles divergent : certains l'interdisent par analogie avec l'état d'impureté majeure, d'autres l'autorisent notamment pour les enseignantes ou étudiantes du Coran, chaque avis s'appuyant sur des raisonnements juridiques distincts.",
+    "theme": "fiqh",
+    "source": "Fiqh comparatif de la purification ; al-Majmû', an-Nawawî",
+    "difficulte": "avancé",
+    "jour": 51
+  },
+  {
+    "id": "quiz_145",
+    "question": "Quel est le nombre minimal de personnes requis pour valider la prière du vendredi (Jumu'a), selon l'école hanafite ?",
+    "choix": ["A. Trois personnes en plus de l'imam", "B. Quarante personnes", "C. Douze personnes", "D. Deux personnes suffisent, imam compris"],
+    "reponse": "A",
+    "explication": "Les Hanafites exigent un minimum de trois hommes en plus de l'imam pour valider le Jumu'a. D'autres écoles retiennent des seuils différents, la position exigeant quarante personnes étant notamment défendue par certains Shâfi'ites, illustrant une divergence fiqh significative sur cette condition.",
+    "theme": "fiqh",
+    "source": "Al-Hidâya, al-Marghînânî ; Fiqh comparatif du Jumu'a",
+    "difficulte": "avancé",
+    "jour": 51
+  },
+  {
+    "id": "quiz_146",
+    "question": "Un jeûneur qui vomit involontairement (sans provocation volontaire) durant le jour de Ramadan : son jeûne est-il rompu ?",
+    "choix": ["A. Oui, systématiquement", "B. Non, le jeûne reste valide ; seul le vomissement volontairement provoqué le rompt", "C. Cela dépend du contenu vomi", "D. Uniquement rompu l'après-midi"],
+    "reponse": "B",
+    "explication": "Le Prophète ﷺ a dit : « Celui que le vomissement surprend n'a pas à rattraper son jeûne, mais celui qui se fait volontairement vomir doit le rattraper. » Une distinction nette entre l'involontaire, qui préserve le jeûne, et l'acte délibéré, qui l'annule.",
+    "theme": "fiqh",
+    "source": "Sunan Abî Dâwûd n°2380 ; Sunan at-Tirmidhî n°720",
+    "difficulte": "intermédiaire",
+    "jour": 51
+  },
+  {
+    "id": "quiz_147",
+    "question": "Quel était le nom de l'épée personnelle la plus célèbre du Prophète ﷺ, héritée de son père selon certaines sources ?",
+    "choix": ["A. Dhû al-Fiqâr", "B. Al-Battâr", "C. Al-'Awn", "D. Al-Ma'thûr"],
+    "reponse": "D",
+    "explication": "Al-Ma'thûr est le nom généralement retenu pour l'épée que le Prophète ﷺ aurait héritée de son père 'Abdullâh. Dhû al-Fiqâr, souvent associée au Prophète ﷺ dans l'imaginaire populaire, est en réalité une épée qu'il donna ensuite à 'Alî, notamment portée à la bataille d'Uhud.",
+    "theme": "sira",
+    "source": "Ibn Sa'd, at-Tabaqât al-Kubrâ",
+    "difficulte": "avancé",
+    "jour": 52
+  },
+  {
+    "id": "quiz_148",
+    "question": "Quel Compagnon fut le premier ambassadeur envoyé par le Prophète ﷺ à Médine, avant même la Hijra, pour enseigner l'Islam aux nouveaux convertis ?",
+    "choix": ["A. Mus'ab ibn 'Umayr", "B. Bilâl ibn Rabâh", "C. Zayd ibn Hâritha", "D. Sa'd ibn Mu'âdh"],
+    "reponse": "A",
+    "explication": "Après le premier pacte d'al-'Aqaba, le Prophète ﷺ envoya Mus'ab ibn 'Umayr à Médine pour enseigner le Coran et l'Islam aux nouveaux convertis. Son action pédagogique et sa droiture contribuèrent grandement à la conversion massive de la ville avant même l'arrivée du Prophète ﷺ.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.1",
+    "difficulte": "intermédiaire",
+    "jour": 52
+  },
+  {
+    "id": "quiz_149",
+    "question": "Lors de la conquête de la Mecque, combien de temps le Prophète ﷺ et son armée prirent-ils pour entrer dans la ville sans effusion de sang majeure ?",
+    "choix": ["A. Un mois de siège", "B. Une entrée quasi immédiate et largement pacifique", "C. Une année entière de négociations", "D. Un an de guerre ouverte"],
+    "reponse": "B",
+    "explication": "En l'an 8 H, l'armée musulmane, largement supérieure en nombre, entra dans la Mecque avec un minimum de résistance armée localisée. Le Prophète ﷺ ordonna la clémence générale, proclamant : « Quiconque entre chez Abû Sufyân est en sécurité », marquant un pardon large envers ses anciens persécuteurs.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.2",
+    "difficulte": "intermédiaire",
+    "jour": 52
+  },
+  {
+    "id": "quiz_150",
+    "question": "Quel surnom Quraysh donnait-elle au Prophète ﷺ avant même sa mission, en reconnaissance de son honnêteté légendaire ?",
+    "choix": ["A. As-Sâdiq seulement", "B. Al-Amîn (le Digne de confiance)", "C. Al-Karîm", "D. Al-Hâdî"],
+    "reponse": "B",
+    "explication": "Bien avant la révélation, Quraysh surnommait Muhammad ﷺ « al-Amîn » en raison de son honnêteté et de sa fiabilité dans les transactions commerciales et le règlement de conflits, une réputation qui perdura même après le début de son opposition religieuse par certains de ses détracteurs.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.1",
+    "difficulte": "intermédiaire",
+    "jour": 53
+  },
+  {
+    "id": "quiz_151",
+    "question": "Quelle était la profession principale du Prophète ﷺ avant la révélation, notamment lors de ses voyages commerciaux pour Khadîja ?",
+    "choix": ["A. Berger puis marchand caravanier", "B. Forgeron", "C. Agriculteur", "D. Scribe officiel de Quraysh"],
+    "reponse": "A",
+    "explication": "Muhammad ﷺ garda d'abord les troupeaux dans son enfance, une activité qu'il évoqua positivement en disant que tous les prophètes avaient été bergers. Adulte, il dirigea les caravanes commerciales de Khadîja vers la Syrie, une expérience qui forgea sa réputation de probité.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°2262 ; Ibn Hishâm, as-Sîra",
+    "difficulte": "intermédiaire",
+    "jour": 53
+  },
+  {
+    "id": "quiz_152",
+    "question": "Comment appelle-t-on la catégorie des anges chargés de porter le Trône d'Allah, mentionnée dans le Coran ?",
+    "choix": ["A. Hamalat al-'Arsh", "B. Al-Karûbiyyûn seulement", "C. Kirâman Kâtibîn", "D. Al-Muqarrabûn"],
+    "reponse": "A",
+    "explication": "Ghâfir (40:7) mentionne les Hamalat al-'Arsh (« porteurs du Trône ») glorifiant Allah et implorant Son pardon pour les croyants. Un hadith précise que leur nombre sera de huit au Jour du Jugement, contre quatre actuellement, sans que le Coran ne détaille davantage leur nature exacte.",
+    "theme": "aqida",
+    "source": "Coran 40:7 ; Sunan Abî Dâwûd n°4727",
+    "difficulte": "avancé",
+    "jour": 53
+  },
+  {
+    "id": "quiz_153",
+    "question": "Selon la croyance islamique, l'âme du croyant reçoit-elle son jugement immédiatement après la mort, sans attendre le Jour de la Résurrection ?",
+    "choix": ["A. Non, tout jugement est reporté exclusivement au Jour du Jugement", "B. Oui, un avant-goût du jugement (délice ou châtiment de la tombe) commence dès la mort, dans le Barzakh", "C. L'âme reste inconsciente jusqu'à la Résurrection sans aucune expérience", "D. Seuls les prophètes bénéficient d'un jugement immédiat"],
+    "reponse": "B",
+    "explication": "Ahl as-Sunna affirme un « petit jugement » débutant dès la mort dans le Barzakh — l'interrogatoire de la tombe par Munkar et Nakîr, suivi de délices ou de châtiments anticipés — distinct du Jugement final et universel qui aura lieu après la Résurrection collective.",
+    "theme": "aqida",
+    "source": "Sahîh al-Bukhârî n°1338 ; Tafsîr Ibn Kathîr, 40:46",
+    "difficulte": "avancé",
+    "jour": 54
+  },
+  {
+    "id": "quiz_154",
+    "question": "Combien de fois par jour le croyant est-il tenu de réciter la Fâtiha au minimum, en comptant les cinq prières obligatoires ?",
+    "choix": ["A. Cinq fois", "B. Dix-sept fois", "C. Vingt fois", "D. Trente-trois fois"],
+    "reponse": "B",
+    "explication": "Les cinq prières obligatoires comptent respectivement 2, 4, 4, 3 et 4 unités (rak'ât), soit 17 rak'ât au total, chacune nécessitant la récitation de la Fâtiha. Le croyant la répète ainsi au moins dix-sept fois quotidiennement, sans compter les prières surérogatoires.",
+    "theme": "fiqh",
+    "source": "Fiqh de la prière ; consensus classique",
+    "difficulte": "intermédiaire",
+    "jour": 54
+  },
+  {
+    "id": "quiz_155",
+    "question": "Le Prophète ﷺ a-t-il laissé un héritage matériel important (terres, richesses) à ses héritiers directs après sa mort ?",
+    "choix": ["A. Oui, un vaste patrimoine foncier", "B. Non ; il a déclaré que les prophètes ne laissent pas d'héritage matériel, leurs biens revenant à l'aumône", "C. Seulement à ses épouses", "D. Uniquement ses armes personnelles"],
+    "reponse": "B",
+    "explication": "Le Prophète ﷺ déclara : « Nous, les prophètes, ne laissons pas d'héritage ; ce que nous laissons est une aumône (sadaqa). » Cette parole, à l'origine d'un différend documenté entre Abû Bakr et Fâtima concernant les terres de Fadak, fonde une règle spécifique aux prophètes distincte du droit successoral commun.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°6730 ; Sahîh Muslim n°1758",
+    "difficulte": "avancé",
+    "jour": 54
+  },
+  {
+    "id": "quiz_156",
+    "question": "Quel est le nom de la bataille où les musulmans, en infériorité numérique face à une coalition de tribus bédouines après la conquête de la Mecque, connurent d'abord un revers avant la victoire ?",
+    "choix": ["A. Hunayn", "B. Tabûk", "C. Mu'ta", "D. Khaybar"],
+    "reponse": "A",
+    "explication": "À Hunayn (an 8 H), l'avant-garde musulmane, submergée par surprise, recula un instant avant que le Prophète ﷺ ne rallie ses hommes, menant à une victoire décisive. Le Coran y fait référence en At-Tawba (9:25), rappelant que la confiance excessive dans le nombre ne garantit pas la victoire.",
+    "theme": "sira",
+    "source": "Coran 9:25 ; Ibn Hishâm, as-Sîra an-Nabawiyya vol.2",
+    "difficulte": "intermédiaire",
+    "jour": 55
+  },
+  {
+    "id": "quiz_157",
+    "question": "Quelle expédition militaire, la plus lointaine entreprise par le Prophète ﷺ en personne, ne déboucha finalement sur aucun affrontement direct avec les Byzantins ?",
+    "choix": ["A. Mu'ta", "B. Tabûk", "C. Khaybar", "D. Dûmat al-Jandal"],
+    "reponse": "B",
+    "explication": "En l'an 9 H, le Prophète ﷺ mena personnellement une immense armée vers Tabûk, redoutant une offensive byzantine. Les troupes ennemies ne se présentèrent finalement pas, mais l'expédition permit de consolider plusieurs alliances aux frontières nord de l'Arabie.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.2",
+    "difficulte": "intermédiaire",
+    "jour": 55
+  },
+  {
+    "id": "quiz_158",
+    "question": "Selon la croyance islamique, quel sera le sort des enfants des mécréants morts avant l'âge de discernement ?",
+    "choix": ["A. Ils sont automatiquement en Enfer avec leurs parents", "B. La question fait l'objet de plusieurs positions savantes ; l'opinion la plus répandue les considère parmi les gens du Paradis, Allah étant le plus Juste", "C. Ils resteront éternellement dans un état neutre", "D. Ils seront réincarnés"],
+    "reponse": "B",
+    "explication": "Plusieurs hadiths et positions savantes divergent sur le sort exact des enfants morts avant maturité, mais la position la plus répandue parmi Ahl as-Sunna les considère comme faisant partie des gens du Paradis, s'appuyant sur la miséricorde et la justice absolues d'Allah, qui ne châtie personne sans responsabilité établie.",
+    "theme": "aqida",
+    "source": "Sahîh al-Bukhârî n°1385 ; discussions classiques des théologiens",
+    "difficulte": "avancé",
+    "jour": 55
+  },
+  {
+    "id": "quiz_159",
+    "question": "Comment appelle-t-on la vallée (ou lieu) où, selon plusieurs récits, Ibrâhîm faillit sacrifier son fils avant l'intervention divine ?",
+    "choix": ["A. Minâ", "B. 'Arafât", "C. Muzdalifa", "D. Le Coran ne précise pas de nom de lieu"],
+    "reponse": "D",
+    "explication": "Le Coran (As-Sâffât 37:100-107) relate l'épreuve du sacrifice sans préciser de lieu géographique exact. La tradition populaire associe souvent l'événement à Minâ, en lien avec le rituel du Hajj, mais cette localisation précise relève de la tradition post-coranique plutôt que du texte scripturaire lui-même.",
+    "theme": "coran",
+    "source": "Coran 37:100-107 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 56
+  },
+  {
+    "id": "quiz_160",
+    "question": "Le Coran précise-t-il explicitement lequel des deux fils d'Ibrâhîm (Ismâ'îl ou Ishâq) faillit être sacrifié ?",
+    "choix": ["A. Oui, il nomme clairement Ismâ'îl", "B. Le nom n'est pas explicitement mentionné dans le passage narratif lui-même, ce qui alimente un débat exégétique classique", "C. Oui, il nomme clairement Ishâq", "D. Le Coran mentionne les deux simultanément"],
+    "reponse": "B",
+    "explication": "Le récit d'As-Sâffât (37:100-107) ne nomme pas explicitement le fils concerné, ce qui a nourri un débat exégétique classique : la majorité des commentateurs, s'appuyant sur le contexte et d'autres indices coraniques, penchent pour Ismâ'îl, tandis qu'une minorité, influencée par des sources bibliques, retenait Ishâq.",
+    "theme": "coran",
+    "source": "Coran 37:100-113 ; Tafsîr at-Tabarî, débat exégétique classique",
+    "difficulte": "avancé",
+    "jour": 56
+  }
+]
