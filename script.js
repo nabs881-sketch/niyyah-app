@@ -21056,12 +21056,26 @@ const SIRA = {
   async openDetail() {
     if (!isKnowledgeUnlocked()) { _showPaywallConnaissance(); return; }
     _saveScroll();
-  a11yOnOverlayOpen();
-    await this.load();
+    a11yOnOverlayOpen();
     var ov = this._ensureOverlay();
+    var ct = document.getElementById('sira-content');
+    if (ct) {
+      ct.style.transition = 'opacity 0.2s';
+      ct.style.opacity = '0';
+    } else {
+      ov.innerHTML = this._closeBtn
+        + '<div id="sira-content" style="max-width:720px;margin:0 auto;padding:80px 20px;display:flex;align-items:center;justify-content:center;min-height:60vh;">'
+        + '<div style="width:20px;height:20px;border-radius:50%;background:#D4AF37;animation:regardePulse 1.2s ease-in-out infinite;"></div>'
+        + '</div>';
+    }
+    await this.load();
     ov.innerHTML = this._closeBtn
-      + '<div id="sira-content" style="max-width:720px;margin:0 auto;padding:80px 20px;">' + this.renderHome() + '</div>';
+      + '<div id="sira-content" style="max-width:720px;margin:0 auto;padding:80px 20px;opacity:0;transition:opacity 0.3s ease;">' + this.renderHome() + '</div>';
     ov.scrollTop = 0;
+    requestAnimationFrame(function() {
+      var _ct = document.getElementById('sira-content');
+      if (_ct) _ct.style.opacity = '1';
+    });
   },
   async openNav(num) {
     await this.load();
