@@ -1,0 +1,222 @@
+[
+  {
+    "id": "quiz_241",
+    "question": "Quelle sourate mecquoise relate l'histoire du prophète Sâlih et de la chamelle miraculeuse envoyée comme signe à son peuple, Thamûd ?",
+    "choix": ["A. Al-A'râf et Hûd, entre autres", "B. Uniquement Ash-Shu'arâ'", "C. Uniquement Al-Qamar", "D. Yûnus"],
+    "reponse": "A",
+    "explication": "Le récit de Sâlih et de la chamelle de Thamûd revient dans plusieurs sourates (Al-A'râf 7:73-79, Hûd 11:61-68, Ash-Shams 91:11-15), chacune insistant sur un aspect différent : le défi lancé, l'égorgement de la chamelle par le peuple, et le châtiment final qui s'ensuivit.",
+    "theme": "coran",
+    "source": "Coran 7:73-79, 11:61-68 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 85
+  },
+  {
+    "id": "quiz_242",
+    "question": "Quelle sourate est appelée « la sourate des Fourmis » en raison de l'épisode où une fourmi avertit ses semblables du passage de l'armée de Sulaymân ?",
+    "choix": ["A. An-Naml", "B. Al-'Ankabût", "C. An-Nahl", "D. Al-Fîl"],
+    "reponse": "A",
+    "explication": "An-Naml (27:18) relate qu'une fourmi, apercevant l'armée de Sulaymân approcher, avertit les siens de rentrer dans leurs demeures pour ne pas être écrasées sans s'en rendre compte. Sulaymân, comprenant le langage des fourmis, en sourit et remercia Allah pour ce don qui lui avait été accordé.",
+    "theme": "coran",
+    "source": "Coran 27:18-19 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 85
+  },
+  {
+    "id": "quiz_243",
+    "question": "Quelle sourate rapporte le dialogue entre Sulaymân et la huppe (al-hudhud), messagère lui apportant des nouvelles du royaume de Saba' ?",
+    "choix": ["A. An-Naml", "B. Sabâ'", "C. Al-Anbiyâ'", "D. Al-Mâ'ida"],
+    "reponse": "A",
+    "explication": "An-Naml (27:20-28) relate comment la huppe, absente un temps de l'armée de Sulaymân, revint avec des informations précises sur le royaume de Saba' et sa reine adoratrice du soleil, informations qui déclenchèrent la correspondance diplomatique entre Sulaymân et Bilqîs.",
+    "theme": "coran",
+    "source": "Coran 27:20-28 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 85
+  },
+  {
+    "id": "quiz_244",
+    "question": "Selon la majorité des écoles, le sang qui s'écoule d'une simple blessure superficielle annule-t-il les ablutions ?",
+    "choix": ["A. Oui, tout écoulement de sang annule systématiquement les ablutions pour toutes les écoles", "B. Non selon Shâfi'ites et Mâlikites ; oui selon les Hanafites si le sang s'écoule et dépasse le niveau de la plaie", "C. Seulement le sang du nez", "D. Le sang n'annule jamais les ablutions pour aucune école"],
+    "reponse": "B",
+    "explication": "Les Hanafites considèrent que tout écoulement de sang, pus ou liquide dépassant le niveau de la plaie annule les ablutions, tandis que Shâfi'ites et Mâlikites ne retiennent pas le simple écoulement sanguin comme cause d'annulation, sauf cas spécifiques, une divergence fiqh classique sur la purification.",
+    "theme": "fiqh",
+    "source": "Al-Hidâya, al-Marghînânî ; Fiqh comparatif de la purification",
+    "difficulte": "avancé",
+    "jour": 86
+  },
+  {
+    "id": "quiz_245",
+    "question": "Selon la majorité des écoles, toucher son propre sexe sans intermédiaire annule-t-il les ablutions ?",
+    "choix": ["A. Non, jamais, pour aucune école", "B. Oui, selon la majorité (Shâfi'ites, Hanbalites, une partie des Mâlikites), sur la base d'un hadith explicite ; les Hanafites ne l'annulent pas sans excitation", "C. Seulement chez les femmes", "D. Uniquement durant le jeûne"],
+    "reponse": "B",
+    "explication": "Un hadith rapporte : « Quiconque touche son sexe doit refaire ses ablutions. » Shâfi'ites et Hanbalites appliquent ce hadith de manière stricte, sans condition d'excitation. Les Hanafites, s'appuyant sur d'autres textes, ne retiennent l'annulation qu'en cas d'excitation manifeste, illustrant une divergence fiqh fréquemment posée.",
+    "theme": "fiqh",
+    "source": "Sunan Abî Dâwûd n°181 ; Fiqh comparatif de la purification",
+    "difficulte": "avancé",
+    "jour": 86
+  },
+  {
+    "id": "quiz_246",
+    "question": "Selon la majorité des savants, embrasser son épouse sans désir ni contact intime direct annule-t-il les ablutions ?",
+    "choix": ["A. Oui pour toutes les écoles sans exception", "B. La question fait l'objet de divergences ; Hanafites et Mâlikites (dans une version) ne l'annulent généralement pas sans excitation, contrairement à une application stricte shâfi'ite de An-Nisâ' 4:43", "C. Non, aucune école ne l'annule jamais", "D. Seulement si cela dure plus d'une minute"],
+    "reponse": "B",
+    "explication": "Cette question rejoint la divergence déjà notée sur le contact peau à peau (An-Nisâ' 4:43) : les Shâfi'ites appliquent une lecture stricte annulant les ablutions par simple contact, tandis que Hanafites et une partie des Mâlikites conditionnent l'annulation à la présence de désir ou d'excitation manifeste.",
+    "theme": "fiqh",
+    "source": "Coran 4:43 ; Fiqh comparatif de la purification",
+    "difficulte": "avancé",
+    "jour": 86
+  },
+  {
+    "id": "quiz_247",
+    "question": "Quel Compagnon fut chargé par le Prophète ﷺ d'éliminer discrètement l'agitateur mecquois Ka'b ibn al-Ashraf, qui incitait activement contre les musulmans après Badr ?",
+    "choix": ["A. Muhammad ibn Maslama", "B. Sa'd ibn Mu'âdh", "C. Khâlid ibn al-Walîd", "D. Abû Dujâna"],
+    "reponse": "A",
+    "explication": "Ka'b ibn al-Ashraf, poète juif incitant à la vengeance contre les musulmans après Badr par des vers provocateurs et des complots, fut éliminé par un petit groupe mené par Muhammad ibn Maslama, sur autorisation du Prophète ﷺ, dans un contexte de guerre ouverte où cet homme représentait une menace active et déclarée.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°4037",
+    "difficulte": "avancé",
+    "jour": 87
+  },
+  {
+    "id": "quiz_248",
+    "question": "Quel Compagnon reçut du Prophète ﷺ le titre honorifique d'« Amîn hâdhihi al-Umma » (le Dépositaire de confiance de cette communauté) ?",
+    "choix": ["A. Abû 'Ubayda ibn al-Jarrâh", "B. 'Umar ibn al-Khattâb", "C. Sa'd ibn Abî Waqqâs", "D. Talha ibn 'Ubaydillâh"],
+    "reponse": "A",
+    "explication": "Abû 'Ubayda ibn al-Jarrâh, l'un des dix promis au Paradis, reçut ce titre du Prophète ﷺ, qui l'envoya notamment diriger l'expédition vers Najrân en réponse à la demande des chrétiens de cette région de recevoir un homme digne de confiance pour trancher leurs différends.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°4381 ; Sahîh Muslim n°2419",
+    "difficulte": "avancé",
+    "jour": 87
+  },
+  {
+    "id": "quiz_249",
+    "question": "Selon un récit rapporté sur la jeunesse du Prophète ﷺ, comment répondit-il au défi d'un lutteur mecquois réputé invincible, avant même le début de sa mission ?",
+    "choix": ["A. Il refusa tout affrontement physique", "B. Il le vainquit à plusieurs reprises consécutives", "C. Il fut vaincu et s'en remit à Allah", "D. Aucun récit de ce type n'existe"],
+    "reponse": "B",
+    "explication": "Selon la tradition, le Prophète ﷺ, avant la révélation, affronta Rukâna, réputé pour son invincibilité en lutte, et le vainquit à plusieurs reprises consécutives, proposant à chaque fois qu'il embrasse l'Islam en cas de défaite — un épisode illustrant sa force physique reconnue même par ses futurs adversaires.",
+    "theme": "sira",
+    "source": "Musnad Ahmad ; récits classiques de la Sîra",
+    "difficulte": "avancé",
+    "jour": 87
+  },
+  {
+    "id": "quiz_250",
+    "question": "Comment appelle-t-on, en 'aqîda, la croyance selon laquelle Allah descend chaque nuit vers le ciel le plus proche durant le dernier tiers de la nuit ?",
+    "choix": ["A. An-Nuzûl (la Descente divine)", "B. Al-Isrâ' seul", "C. Al-Karâma seule", "D. Al-'Uluww seul"],
+    "reponse": "A",
+    "explication": "Un hadith authentique rapporte qu'Allah descend chaque dernier tiers de la nuit vers le ciel le plus proche, demandant : « Qui M'invoque, que Je lui réponde ? » Ahl as-Sunna affirme cette Descente telle que rapportée, sans la comparer à la descente des créatures ni en préciser le comment (bilâ kayf).",
+    "theme": "aqida",
+    "source": "Sahîh al-Bukhârî n°1145 ; Sahîh Muslim n°758",
+    "difficulte": "avancé",
+    "jour": 88
+  },
+  {
+    "id": "quiz_251",
+    "question": "Selon Ahl as-Sunna, Allah est-il « partout » au sens littéral et spatial, ou bien Sa science et Son savoir embrassent-ils tout sans que Son Être soit mélangé à la création ?",
+    "choix": ["A. Allah est littéralement mélangé et présent physiquement en toute chose", "B. Ahl as-Sunna affirme qu'Allah est au-dessus de Son Trône par Son Essence, tandis que Sa science, Son pouvoir et son contrôle embrassent absolument tout, sans confusion avec la création", "C. La question est jugée sans importance par les théologiens", "D. Allah n'a aucune relation avec la création selon Ahl as-Sunna"],
+    "reponse": "B",
+    "explication": "Ahl as-Sunna distingue la transcendance d'Allah, élevé au-dessus de Son Trône par Son Essence (al-'uluww adh-dhâtî), de l'omniscience et de l'omniprésence de Sa connaissance et de Son contrôle, qui embrassent toute chose sans qu'il y ait la moindre confusion panthéiste entre le Créateur et Sa création.",
+    "theme": "aqida",
+    "source": "Coran 20:5, 57:4 ; Al-'Aqîda al-Wâsitiyya, Ibn Taymiyya",
+    "difficulte": "avancé",
+    "jour": 88
+  },
+  {
+    "id": "quiz_252",
+    "question": "Quelle sourate mecquoise décrit le Jour du Jugement comme un moment où « chaque âme allaitante oubliera son nourrisson » tant l'effroi sera immense ?",
+    "choix": ["A. Al-Hajj", "B. Al-Qiyâma", "C. 'Abasa", "D. At-Takwîr"],
+    "reponse": "A",
+    "explication": "Al-Hajj (22:2) décrit : « Le jour où vous la verrez, chaque nourrice oubliera son nourrisson, et chaque femme enceinte avortera, et tu verras les gens ivres sans qu'ils le soient, tant le châtiment d'Allah sera terrible. » Une image saisissante de l'effroi total de ce Jour.",
+    "theme": "coran",
+    "source": "Coran 22:2 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 88
+  },
+  {
+    "id": "quiz_253",
+    "question": "Quel Compagnon accompagna le Prophète ﷺ dans la grotte de Thawr et reçut de lui, selon le Coran, une consolation directe rapportée nommément par allusion ?",
+    "choix": ["A. 'Umar ibn al-Khattâb", "B. Abû Bakr as-Siddîq", "C. 'Alî ibn Abî Tâlib", "D. 'Uthmân ibn 'Affân"],
+    "reponse": "B",
+    "explication": "At-Tawba (9:40) évoque « le second des deux, quand ils étaient dans la grotte, et qu'il disait à son compagnon : Ne t'afflige pas, Allah est avec nous. » La quasi-unanimité des exégètes identifie ce compagnon à Abû Bakr, bien que son nom ne soit pas cité explicitement dans le verset lui-même.",
+    "theme": "coran",
+    "source": "Coran 9:40 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 89
+  },
+  {
+    "id": "quiz_254",
+    "question": "Quel fut, selon plusieurs récits, le tout dernier conseil transmis par le Prophète ﷺ à sa communauté peu avant sa mort ?",
+    "choix": ["A. La recommandation de bien traiter les femmes et de préserver la prière et les esclaves/serviteurs", "B. Un ordre militaire de conquête", "C. Une réforme du calendrier", "D. Aucun conseil final n'est rapporté"],
+    "reponse": "A",
+    "explication": "Parmi ses toutes dernières paroles rapportées, le Prophète ﷺ insista sur la prière et le bon traitement de ceux placés sous sa responsabilité, répétant : « La prière ! La prière ! Et ce que vos mains droites possèdent ! » jusqu'à ce que sa langue n'articule presque plus les mots, tant sa préoccupation pour sa communauté demeurait vive jusqu'au dernier souffle.",
+    "theme": "sira",
+    "source": "Sunan Abî Dâwûd n°5156 ; Musnad Ahmad",
+    "difficulte": "avancé",
+    "jour": 89
+  },
+  {
+    "id": "quiz_255",
+    "question": "Quelle fut la dernière prière collective dirigée par le Prophète ﷺ avant sa mort, alors très affaibli par la maladie ?",
+    "choix": ["A. Il ne dirigea plus aucune prière durant sa maladie", "B. Il dirigea une dernière prière assis, s'appuyant sur deux hommes, Abû Bakr ayant déjà commencé à diriger les prières en son absence les jours précédents", "C. Il la dirigea debout sans aucune aide", "D. Seul 'Alî dirigea toutes les prières de la fin de sa vie"],
+    "reponse": "B",
+    "explication": "Très affaibli, le Prophète ﷺ demanda à Abû Bakr de diriger les prières en son absence durant les derniers jours. Il parvint néanmoins, à un moment, à rejoindre la mosquée soutenu par deux hommes, s'asseyant à côté d'Abû Bakr pour une ultime participation collective peu avant sa mort.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°687, 712 ; Sahîh Muslim n°418",
+    "difficulte": "avancé",
+    "jour": 89
+  },
+  {
+    "id": "quiz_256",
+    "question": "Quel jour de la semaine le Prophète ﷺ mourut-il, selon la tradition la plus répandue ?",
+    "choix": ["A. Vendredi", "B. Lundi", "C. Mercredi", "D. Samedi"],
+    "reponse": "B",
+    "explication": "La tradition la plus répandue situe la mort du Prophète ﷺ un lundi, 12 Rabî' al-Awwal de l'an 11 H (632 EC), jour qui correspond également, selon plusieurs récits, à celui de sa naissance, une coïncidence souvent relevée par les biographes.",
+    "theme": "sira",
+    "source": "Ibn Kathîr, al-Bidâya wa'n-Nihâya",
+    "difficulte": "intermédiaire",
+    "jour": 90
+  },
+  {
+    "id": "quiz_257",
+    "question": "Comment 'Umar ibn al-Khattâb réagit-il initialement à l'annonce de la mort du Prophète ﷺ, avant l'intervention apaisante d'Abû Bakr ?",
+    "choix": ["A. Il l'accepta immédiatement avec sérénité totale", "B. Il refusa d'y croire, menaçant quiconque affirmerait sa mort, sous le choc de la nouvelle", "C. Il quitta immédiatement Médine", "D. Il n'exprima aucune réaction visible"],
+    "reponse": "B",
+    "explication": "Sous le choc, 'Umar nia catégoriquement la mort du Prophète ﷺ, menaçant de sanctionner quiconque l'affirmerait. Abû Bakr intervint alors avec la célèbre parole : « Quiconque adorait Muhammad, sache que Muhammad est mort ; quiconque adorait Allah, sache qu'Allah est Vivant et ne meurt jamais », récitant ensuite Âl 'Imrân (3:144), ramenant 'Umar et l'assemblée à la raison.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°3667, 4452",
+    "difficulte": "intermédiaire",
+    "jour": 90
+  },
+  {
+    "id": "quiz_258",
+    "question": "Où le Prophète ﷺ fut-il finalement enterré, après une discussion entre les Compagnons sur le lieu le plus approprié ?",
+    "choix": ["A. À la Mecque, près de la Ka'ba", "B. À l'endroit même où il mourut, dans la chambre de 'Â'isha", "C. Au cimetière d'al-Baqî'", "D. À Tâ'if"],
+    "reponse": "B",
+    "explication": "Abû Bakr rapporta avoir entendu le Prophète ﷺ dire que les prophètes sont enterrés là où ils meurent. Suivant cette parole, il fut enterré dans la chambre même de 'Â'isha, adjacente à la mosquée, plutôt qu'au cimetière d'al-Baqî' initialement envisagé par certains Compagnons.",
+    "theme": "sira",
+    "source": "Sunan at-Tirmidhî n°1018 ; Ibn Hishâm, as-Sîra",
+    "difficulte": "intermédiaire",
+    "jour": 90
+  },
+  {
+    "id": "quiz_259",
+    "question": "Combien de temps s'écoula, selon les récits, entre la mort du Prophète ﷺ et son enterrement effectif ?",
+    "choix": ["A. Quelques heures seulement", "B. Environ deux à trois jours, le temps de régler la question de la succession (bay'a d'Abû Bakr) et les préparatifs funéraires", "C. Une semaine entière", "D. Il fut enterré immédiatement dans l'heure suivant sa mort"],
+    "reponse": "B",
+    "explication": "Entre la mort du Prophète ﷺ un lundi et son enterrement, environ deux jours s'écoulèrent, en partie retardés par l'urgence de régler la question de la succession politique (allégeance rendue à Abû Bakr à la Saqîfa des Banû Sâ'ida) avant même de procéder aux funérailles, jugée prioritaire par les Compagnons pour éviter toute division.",
+    "theme": "sira",
+    "source": "Ibn Kathîr, al-Bidâya wa'n-Nihâya",
+    "difficulte": "avancé",
+    "jour": 91
+  },
+  {
+    "id": "quiz_260",
+    "question": "Quel lieu porte le nom de « Saqîfat Banî Sâ'ida », où se tint la réunion décisive ayant abouti à l'allégeance rendue à Abû Bakr comme premier calife ?",
+    "choix": ["A. Une place couverte utilisée pour les rassemblements des Ansâr à Médine", "B. Une grotte près de la Mecque", "C. La mosquée du Prophète elle-même", "D. Un marché de Ta'if"],
+    "reponse": "A",
+    "explication": "La Saqîfa (place couverte) des Banû Sâ'ida, clan ansârite de Médine, accueillit une réunion urgente des principaux Compagnons ansârites et muhâjirûn immédiatement après la mort du Prophète ﷺ, aboutissant après discussion à l'allégeance unanime rendue à Abû Bakr as-Siddîq comme premier calife de l'Islam.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°3668 ; Ibn Hishâm, as-Sîra",
+    "difficulte": "avancé",
+    "jour": 91
+  }
+]
