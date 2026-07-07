@@ -1,0 +1,222 @@
+[
+  {
+    "id": "quiz_561",
+    "question": "Selon le Coran, comment le butin de guerre (ghanîma) devait-il être réparti après une victoire militaire à l'époque du Prophète ﷺ ?",
+    "choix": ["A. Un cinquième réservé à Allah, au Messager, aux proches, aux orphelins, aux pauvres et aux voyageurs ; les quatre autres cinquièmes revenant aux combattants", "B. La totalité revenait exclusivement au chef militaire", "C. Le butin était systématiquement détruit", "D. Aucune règle de répartition n'existait"],
+    "reponse": "A",
+    "explication": "Al-Anfâl (8:41) établit cette répartition : un cinquième (al-khumus) destiné à des catégories précises incluant les nécessiteux et les proches du Prophète ﷺ, les quatre cinquièmes restants étant partagés entre les combattants ayant participé à l'expédition, un système organisé évitant l'accaparement anarchique du butin.",
+    "theme": "coran",
+    "source": "Coran 8:41 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 197
+  },
+  {
+    "id": "quiz_562",
+    "question": "Quel principe coranique fondamental affirme qu'aucune contrainte ne peut être exercée en matière de religion ?",
+    "choix": ["A. Al-Baqara 2:256 : « Nulle contrainte en religion »", "B. Un principe absent du Coran, développé uniquement plus tard", "C. Il concerne uniquement les relations entre musulmans", "D. Il fut abrogé par des versets ultérieurs selon tous les commentateurs"],
+    "reponse": "A",
+    "explication": "Al-Baqara (2:256) déclare : « Nulle contrainte en religion ! Car le bon chemin s'est distingué de l'égarement. » Bien que certains commentateurs classiques aient discuté son champ d'application précis selon le contexte historique, ce verset fonde un principe largement reconnu de liberté de conscience en matière de conviction religieuse personnelle.",
+    "theme": "coran",
+    "source": "Coran 2:256 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 197
+  },
+  {
+    "id": "quiz_563",
+    "question": "Selon quel verset, le Prophète ﷺ se plaindra-t-il au Jour du Jugement que son peuple avait délaissé le Coran (hajr) ?",
+    "choix": ["A. Al-Furqân 25:30", "B. Al-Baqara 2:185", "C. Âl 'Imrân 3:7", "D. Al-Isrâ' 17:9"],
+    "reponse": "A",
+    "explication": "Al-Furqân (25:30) rapporte cette plainte prophétique : « Ô mon Seigneur, mon peuple a délaissé ce Coran. » Les commentateurs élargissent le sens de ce délaissement au-delà du simple rejet initial des Mecquois, l'appliquant aussi à quiconque néglige sa récitation, sa compréhension ou son application pratique au quotidien.",
+    "theme": "coran",
+    "source": "Coran 25:30 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 197
+  },
+  {
+    "id": "quiz_564",
+    "question": "Selon la majorité des écoles, comment les quatre cinquièmes du butin de guerre non réservés au khumus étaient-ils partagés entre les combattants ?",
+    "choix": ["A. Généralement selon une proportion favorisant le cavalier par rapport au fantassin, en raison des coûts et risques supplémentaires liés à l'entretien du cheval", "B. Toujours de façon strictement égale entre tous les participants sans distinction", "C. Uniquement selon le rang social d'origine", "D. Aucune règle n'a jamais existé sur ce partage"],
+    "reponse": "A",
+    "explication": "La pratique établie sous le Prophète ﷺ, reprise par les écoles classiques, accordait généralement une part plus importante au combattant à cheval qu'au fantassin, reconnaissant l'investissement matériel et le risque accru associés à la cavalerie, sans pour autant établir une hiérarchie sociale entre les combattants eux-mêmes.",
+    "theme": "fiqh",
+    "source": "Sahîh al-Bukhârî n°2863 ; Fiqh classique du butin",
+    "difficulte": "avancé",
+    "jour": 198
+  },
+  {
+    "id": "quiz_565",
+    "question": "Dans le cadre historique et classique du fiqh, comment appelle-t-on l'impôt versé par les sujets non-musulmans (dhimmî) en échange de la protection et de l'exemption du service militaire au sein de l'État musulman ?",
+    "choix": ["A. La jizya", "B. La zakât", "C. Le khumus", "D. La diya"],
+    "reponse": "A",
+    "explication": "At-Tawba (9:29) mentionne la jizya comme contribution versée par certains sujets non-musulmans sous protection de l'État, un mécanisme historique et classique du fiqh politique, distinct de la zakât (obligation cultuelle des musulmans) et dont les modalités concrètes d'application variaient selon les époques et les contextes historiques.",
+    "theme": "fiqh",
+    "source": "Coran 9:29 ; Fiqh classique du statut des dhimmî",
+    "difficulte": "avancé",
+    "jour": 198
+  },
+  {
+    "id": "quiz_566",
+    "question": "Selon le Coran, quelles options sont envisagées concernant le traitement des prisonniers de guerre après une bataille ?",
+    "choix": ["A. Soit la libération gracieuse, soit le rachat contre rançon, selon ce qui est jugé approprié", "B. L'exécution systématique sans exception", "C. L'esclavage perpétuel obligatoire sans autre option", "D. Aucune règle n'est mentionnée à leur sujet"],
+    "reponse": "A",
+    "explication": "Muhammad (47:4) évoque, après la fin des combats, la possibilité de « soit libérer gracieusement, soit accepter une rançon », laissant une marge de décision selon le contexte et l'intérêt de la communauté, un cadre plus nuancé que la seule alternative de la mise à mort ou de l'esclavage automatique.",
+    "theme": "fiqh",
+    "source": "Coran 47:4 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 198
+  },
+  {
+    "id": "quiz_567",
+    "question": "Quel moine chrétien, lors d'un voyage commercial du jeune Muhammad ﷺ vers la Syrie, aurait reconnu en lui des signes annonciateurs de sa future prophétie ?",
+    "choix": ["A. Bahîrâ", "B. Waraqa ibn Nawfal", "C. Salmân al-Fârisî", "D. Un moine anonyme sans nom rapporté"],
+    "reponse": "A",
+    "explication": "Selon plusieurs récits de la Sîra, le moine Bahîrâ, rencontré lors d'une caravane commerciale accompagnant son oncle Abû Tâlib, aurait reconnu chez le jeune Muhammad ﷺ des signes physiques et comportementaux correspondant, selon lui, aux descriptions du prophète attendu dans les Écritures chrétiennes, conseillant à Abû Tâlib de le protéger avec vigilance.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.1",
+    "difficulte": "intermédiaire",
+    "jour": 199
+  },
+  {
+    "id": "quiz_568",
+    "question": "Qui était Zayd ibn 'Amr ibn Nufayl, figure préislamique ayant rejeté le polythéisme mecquois avant même le début de la révélation, mais mort avant de connaître l'Islam ?",
+    "choix": ["A. Un Hanîf, monothéiste sincère cherchant la religion d'Ibrâhîm, dont le Prophète ﷺ affirma qu'il serait ressuscité seul, formant à lui seul une communauté (umma)", "B. Un cousin proche du Prophète ﷺ ayant participé à Badr", "C. Un poète mecquois hostile à l'Islam", "D. Un roi étranger converti tardivement"],
+    "reponse": "A",
+    "explication": "Zayd ibn 'Amr ibn Nufayl, oncle de 'Umar ibn al-Khattâb, rejeta ouvertement l'idolâtrie de Quraysh, cherchant sincèrement la religion originelle d'Ibrâhîm sans jamais connaître l'Islam formel, étant mort peu avant la révélation. Le Prophète ﷺ affirma qu'il serait ressuscité seul en tant que communauté à lui tout entier, reconnaissant sa quête sincère malgré l'absence de rencontre directe avec la révélation finale.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°3826",
+    "difficulte": "avancé",
+    "jour": 199
+  },
+  {
+    "id": "quiz_569",
+    "question": "Quel verset fut révélé après que des membres de la délégation de Banû Tamîm eurent appelé bruyamment le Prophète ﷺ depuis l'extérieur de ses appartements, sans respecter les convenances ?",
+    "choix": ["A. Al-Hujurât 49:4", "B. An-Nûr 24:27", "C. Al-Ahzâb 33:53", "D. Al-Mâ'ida 5:2"],
+    "reponse": "A",
+    "explication": "Al-Hujurât (49:4) réprimande cette conduite : « Ceux qui t'appellent de derrière tes appartements, la plupart d'entre eux ne raisonnent pas. » Ce verset, révélé suite au comportement peu délicat de certains membres de la délégation de Banû Tamîm, établit des règles de respect et de convenance envers le Prophète ﷺ dans sa vie privée.",
+    "theme": "coran",
+    "source": "Coran 49:4 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 199
+  },
+  {
+    "id": "quiz_570",
+    "question": "Comment le principe coranique de liberté de conscience (« Nulle contrainte en religion ») s'articule-t-il théologiquement avec l'invitation active à l'Islam (da'wa) ?",
+    "choix": ["A. La contrainte matérielle est exclue, tandis que la présentation claire, l'argumentation et l'invitation sincère restent activement encouragées comme moyens légitimes de transmission du message", "B. Toute forme d'invitation à l'Islam est interdite au nom de ce principe", "C. Le verset annule totalement l'obligation de transmettre le message religieux", "D. Ce principe ne concerne que les relations commerciales"],
+    "reponse": "A",
+    "explication": "Les savants distinguent la contrainte matérielle (rejetée) de l'invitation sincère par la parole et l'exemple (encouragée). La foi véritable, pour être authentique, doit résulter d'une adhésion libre et réfléchie du cœur, non d'une soumission forcée, ce qui n'exclut nullement l'effort actif de transmission claire et respectueuse du message islamique.",
+    "theme": "aqida",
+    "source": "Tafsîr Ibn Kathîr, 2:256 ; théologie classique de la da'wa",
+    "difficulte": "avancé",
+    "jour": 200
+  },
+  {
+    "id": "quiz_571",
+    "question": "Selon un hadith, la récompense d'une salutation islamique augmente-t-elle si l'on y ajoute des formules supplémentaires (« wa rahmatullâhi », « wa barakâtuh ») ?",
+    "choix": ["A. Oui, un récit rapporte que chaque ajout de formule augmentait explicitement la récompense annoncée par le Prophète ﷺ à celui qui saluait", "B. Non, la formule doit toujours être strictement identique sans aucune variation possible", "C. Les ajouts sont interdits car considérés comme une innovation", "D. Aucun hadith ne traite de ce sujet"],
+    "reponse": "A",
+    "explication": "Un récit rapporte qu'un homme salua le Prophète ﷺ par « as-salâmu 'alaykum », recevant dix récompenses annoncées ; un second ajouta « wa rahmatullâh », recevant vingt ; un troisième compléta par « wa barakâtuh », recevant trente — illustrant que chaque formule supplémentaire, sincèrement prononcée, enrichit la portée spirituelle de la salutation.",
+    "theme": "aqida",
+    "source": "Sunan Abî Dâwûd n°5195 ; Sunan at-Tirmidhî n°2689",
+    "difficulte": "intermédiaire",
+    "jour": 200
+  },
+  {
+    "id": "quiz_572",
+    "question": "Selon le Coran, quel renfort surnaturel vint appuyer les musulmans en infériorité numérique lors de la bataille de Badr ?",
+    "choix": ["A. Des milliers d'anges envoyés en renfort", "B. Aucun renfort surnaturel n'est mentionné", "C. Uniquement un renfort météorologique, sans mention angélique", "D. Un ange unique seulement"],
+    "reponse": "A",
+    "explication": "Al-Anfâl (8:9-12) rapporte l'imploration du Prophète ﷺ avant la bataille et la réponse divine promettant « mille anges déferlant les uns après les autres » en soutien, un renfort décrit comme renforçant le moral des croyants et instillant la terreur dans le cœur des ennemis, complément spirituel à l'effort militaire humain fourni.",
+    "theme": "coran",
+    "source": "Coran 8:9-12 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 200
+  },
+  {
+    "id": "quiz_573",
+    "question": "Quelle condition originale de libération fut proposée à certains prisonniers de guerre lettrés capturés après la bataille de Badr ?",
+    "choix": ["A. Enseigner la lecture et l'écriture à dix enfants musulmans de Médine en échange de leur liberté", "B. Payer une rançon uniquement en or", "C. Se convertir immédiatement sous peine de mort", "D. Servir comme esclaves à vie sans autre option"],
+    "reponse": "A",
+    "explication": "Certains prisonniers qurayshites lettrés, sans moyens financiers pour payer une rançon classique, se virent proposer d'enseigner la lecture et l'écriture à dix enfants musulmans de Médine en échange de leur libération — une solution pragmatique valorisant la transmission du savoir, particulièrement précieuse dans une communauté encore largement analphabète à cette époque.",
+    "theme": "fiqh",
+    "source": "Musnad Ahmad ; récits classiques sur Badr",
+    "difficulte": "avancé",
+    "jour": 201
+  },
+  {
+    "id": "quiz_574",
+    "question": "Quel épisode illustre l'altruisme (îthâr) exemplaire de deux Ansâr, préférant nourrir un invité affamé plutôt que leurs propres enfants malgré leurs maigres provisions ?",
+    "choix": ["A. Un couple ansârite éteignit la lampe pour cacher qu'ils faisaient semblant de manger, laissant toute la nourriture disponible à leur invité affamé", "B. Aucun récit de ce type n'est rapporté dans la Sîra", "C. Il s'agit d'un récit purement légendaire sans fondement historique reconnu", "D. Cet épisode concerne uniquement des Muhâjirûn, jamais des Ansâr"],
+    "reponse": "A",
+    "explication": "Un couple ansârite, n'ayant qu'une nourriture insuffisante pour tous, éteignit délibérément la lampe et fit semblant de manger avec leur invité affamé dans l'obscurité, réservant en réalité toute la nourriture disponible pour lui, préférant leur propre faim et celle de leurs enfants à celle de leur hôte — un acte d'altruisme loué directement par la révélation coranique qui suivit.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°3798 ; Sahîh Muslim n°2054",
+    "difficulte": "intermédiaire",
+    "jour": 201
+  },
+  {
+    "id": "quiz_575",
+    "question": "Quel verset coranique loue explicitement ceux qui préfèrent autrui à eux-mêmes malgré leur propre besoin pressant ?",
+    "choix": ["A. Al-Hashr 59:9", "B. Al-Baqara 2:177", "C. At-Tawba 9:60", "D. Al-Insân 76:8"],
+    "reponse": "A",
+    "explication": "Al-Hashr (59:9) déclare, à propos des Ansâr : « Ils préfèrent [les Muhâjirûn] à eux-mêmes, même s'ils sont eux-mêmes dans le besoin. » Ce verset immortalise l'altruisme spectaculaire des Ansâr envers leurs frères récemment arrivés à Médine, une générosité dépassant leurs propres nécessités matérielles.",
+    "theme": "coran",
+    "source": "Coran 59:9 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 201
+  },
+  {
+    "id": "quiz_576",
+    "question": "Comment appelle-t-on, en éthique islamique, cette vertu consistant à préférer sincèrement le bien-être d'autrui au sien propre, malgré son propre besoin ?",
+    "choix": ["A. Al-Îthâr", "B. Al-Karam simple (générosité ordinaire, sans notion de sacrifice personnel)", "C. As-Sakhâ' uniquement", "D. Al-Ihsân uniquement"],
+    "reponse": "A",
+    "explication": "Al-Îthâr désigne un degré supérieur de générosité, distinct de la simple libéralité (karam ou sakhâ') consistant à donner de son superflu : il s'agit de préférer autrui alors même que l'on est soi-même dans le besoin, vertu suprême illustrée par l'exemple des Ansâr envers les Muhâjirûn nouvellement arrivés.",
+    "theme": "aqida",
+    "source": "Coran 59:9 ; commentaires classiques sur les vertus (fadâ'il al-akhlâq)",
+    "difficulte": "avancé",
+    "jour": 202
+  },
+  {
+    "id": "quiz_577",
+    "question": "Selon la majorité des écoles, une prière accomplie sur un terrain usurpé (volé ou occupé illégitimement) est-elle valide, bien que constituant un péché ?",
+    "choix": ["A. La majorité (Shâfi'ites, Hanafites) considère la prière juridiquement valide tout en étant pécheresse en raison de l'occupation illégitime du lieu ; certains Hanbalites tendent vers l'invalidité totale", "B. Toutes les écoles considèrent la prière totalement nulle sans exception", "C. Aucune école n'a jamais discuté cette question", "D. Toutes les écoles considèrent au contraire cet acte pleinement licite sans réserve"],
+    "reponse": "A",
+    "explication": "La majorité distingue la validité juridique de la prière elle-même (les conditions rituelles étant remplies) du péché moral distinct lié à l'occupation illégitime du terrain, ces deux aspects étant jugés séparément. Une minorité de savants hanbalites tend vers une position plus stricte, considérant que l'illégitimité du lieu invalide la prière elle-même.",
+    "theme": "fiqh",
+    "source": "Fiqh comparatif des conditions de la prière",
+    "difficulte": "avancé",
+    "jour": 202
+  },
+  {
+    "id": "quiz_578",
+    "question": "Avant l'adoption de l'appel humain à la prière (adhân), quelles alternatives les Compagnons envisagèrent-ils pour signaler l'heure de la prière à Médine ?",
+    "choix": ["A. Une trompe (comme les juifs) ou une cloche (comme les chrétiens), toutes deux finalement écartées avant la vision d''Abdullâh ibn Zayd", "B. Aucune alternative ne fut jamais discutée avant l'adhân", "C. Un tambour fut immédiatement adopté sans discussion", "D. Un feu allumé fut la seule proposition envisagée"],
+    "reponse": "A",
+    "explication": "Avant l'établissement définitif de l'adhân par la voix humaine, les Compagnons envisagèrent plusieurs options pour rassembler les fidèles : une trompe à l'instar de la pratique juive, une cloche comme chez les chrétiens, ou encore un feu allumé — toutes finalement écartées au profit de la formule vocale révélée en songe à 'Abdullâh ibn Zayd et approuvée par le Prophète ﷺ.",
+    "theme": "sira",
+    "source": "Sunan Abî Dâwûd n°499 ; Ibn Hishâm, as-Sîra",
+    "difficulte": "avancé",
+    "jour": 202
+  },
+  {
+    "id": "quiz_579",
+    "question": "Selon un hadith, comment le Prophète ﷺ compare-t-il la supériorité du savant sur le simple pratiquant dépourvu de connaissance approfondie ?",
+    "choix": ["A. « Comme ma supériorité sur le moindre d'entre vous » ou, selon une autre version, comparé à la supériorité de la pleine lune sur les étoiles", "B. Aucune comparaison de ce type n'existe dans la Sunna", "C. Le savant est présenté comme inférieur au simple pratiquant assidu", "D. Les deux sont toujours présentés comme strictement équivalents"],
+    "reponse": "A",
+    "explication": "Le Prophète ﷺ a dit : « La supériorité du savant sur le simple adorateur est comme ma supériorité sur le moindre d'entre vous. » Une autre formulation compare cette supériorité à celle de la pleine lune sur les étoiles, soulignant l'importance capitale du savoir religieux authentique comme guide indispensable d'une adoration éclairée et sincère.",
+    "theme": "aqida",
+    "source": "Sunan at-Tirmidhî n°2685",
+    "difficulte": "intermédiaire",
+    "jour": 203
+  },
+  {
+    "id": "quiz_580",
+    "question": "Quel verset affirme qu'Allah élève en degrés ceux qui possèdent la foi et le savoir parmi les croyants ?",
+    "choix": ["A. Al-Mujâdila 58:11", "B. Al-Baqara 2:247", "C. Âl 'Imrân 3:18", "D. An-Nisâ' 4:95"],
+    "reponse": "A",
+    "explication": "Al-Mujâdila (58:11) déclare : « Allah élèvera en degrés ceux d'entre vous qui ont cru et ceux qui ont reçu le savoir. » Ce verset associe explicitement foi et connaissance comme deux piliers complémentaires de l'élévation spirituelle et statutaire du croyant devant Allah, ni l'une ni l'autre n'étant suffisante isolément.",
+    "theme": "coran",
+    "source": "Coran 58:11 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 203
+  }
+]
