@@ -19889,7 +19889,10 @@ function _filItemToggled(id) {
     var _body = el.closest('.fil-acc-body');
     var _acc = el.closest('.fil-acc');
     var _cntEl = _acc && _acc.querySelector('.fil-acc-count');
-    el.remove();
+    el.style.transition = 'opacity 0.35s, transform 0.35s';
+    el.style.opacity = '0';
+    el.style.transform = 'translateX(20px)';
+    setTimeout(function() { el.remove(); }, 350);
     if (_cntEl) {
       var _parts = _cntEl.textContent.split('/');
       var _newDone = (parseInt(_parts[0], 10) || 0) + 1;
