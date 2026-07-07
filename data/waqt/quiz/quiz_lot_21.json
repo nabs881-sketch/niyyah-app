@@ -1,0 +1,222 @@
+[
+  {
+    "id": "quiz_401",
+    "question": "Quelle sourate décrit longuement les rites du Hajj, notamment l'appel d'Ibrâhîm à l'humanité pour venir en pèlerinage ?",
+    "choix": ["A. Al-Hajj", "B. Al-Baqara uniquement", "C. Âl 'Imrân uniquement", "D. Al-Mâ'ida uniquement"],
+    "reponse": "A",
+    "explication": "Al-Hajj (22:27) relate l'ordre divin donné à Ibrâhîm : « Fais aux gens l'appel au pèlerinage. Ils viendront à toi, à pied et sur toute monture élancée, arrivant de tout chemin éloigné. » Cette sourate porte le nom du pèlerinage et en détaille plusieurs prescriptions rituelles.",
+    "theme": "coran",
+    "source": "Coran 22:27 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 141
+  },
+  {
+    "id": "quiz_402",
+    "question": "Quel geste rituel du Hajj commémore la recherche désespérée d'eau par Hâjar entre les collines de Safâ et Marwa ?",
+    "choix": ["A. At-Tawâf", "B. As-Sa'y", "C. Ar-Ramy", "D. Al-Wuqûf"],
+    "reponse": "B",
+    "explication": "As-Sa'y consiste à parcourir sept fois la distance entre Safâ et Marwa, en mémoire de Hâjar courant désespérément entre ces deux collines à la recherche d'eau pour son fils Ismâ'îl, avant que le puits de Zamzam ne jaillisse miraculeusement sous les pieds de l'enfant.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°3364 ; Fiqh classique du Hajj",
+    "difficulte": "intermédiaire",
+    "jour": 141
+  },
+  {
+    "id": "quiz_403",
+    "question": "Comment jaillit, selon la tradition, la source de Zamzam qui alimente encore aujourd'hui les pèlerins de la Mecque ?",
+    "choix": ["A. Elle jaillit sous les pieds du nourrisson Ismâ'îl qui les frappait contre le sol par soif", "B. Elle fut creusée manuellement par Ibrâhîm", "C. Elle apparut après une pluie exceptionnelle", "D. Aucune tradition ne précise son origine"],
+    "reponse": "A",
+    "explication": "Selon le hadith détaillé rapporté par Ibn 'Abbâs, l'ange Jibrîl gratta le sol près de l'enfant Ismâ'îl qui pleurait de soif, faisant jaillir l'eau. Hâjar, courant vers cette source, aurait dit « Zamzam » (« arrête-toi, arrête-toi ») pour contenir l'eau qui menaçait de déborder, donnant son nom au puits.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°3364",
+    "difficulte": "avancé",
+    "jour": 141
+  },
+  {
+    "id": "quiz_404",
+    "question": "Selon la majorité des écoles, la station à 'Arafât (al-wuqûf bi-'Arafât) est-elle considérée comme le pilier le plus essentiel du Hajj ?",
+    "choix": ["A. Non, elle est secondaire", "B. Oui, un hadith explicite déclare que « le Hajj, c'est 'Arafât », en faisant l'élément sans lequel le pèlerinage n'est pas valide", "C. Elle est facultative pour les pèlerins âgés", "D. Elle ne concerne que les résidents de la Mecque"],
+    "reponse": "B",
+    "explication": "Le Prophète ﷺ a dit : « Le Hajj, c'est 'Arafât. » Quiconque atteint la plaine d'Arafât à un moment quelconque entre midi le 9 Dhû al-Hijja et l'aube du lendemain a validé son Hajj, faisant de cette station le pilier absolument central du pèlerinage.",
+    "theme": "fiqh",
+    "source": "Sunan at-Tirmidhî n°889 ; Sunan Abî Dâwûd n°1949",
+    "difficulte": "intermédiaire",
+    "jour": 142
+  },
+  {
+    "id": "quiz_405",
+    "question": "Selon la majorité des écoles, que se passe-t-il si un pèlerin manque totalement la station à 'Arafât dans la fenêtre autorisée ?",
+    "choix": ["A. Son Hajj reste valide malgré tout", "B. Son Hajj de cette année est invalidé ; il devra le refaire une année ultérieure et, selon certains avis, accomplir une 'Umra à la place cette année-là", "C. Il doit simplement payer une amende symbolique", "D. Rien ne change, aucune conséquence"],
+    "reponse": "B",
+    "explication": "Manquer totalement la station à 'Arafât dans sa fenêtre horaire invalide le Hajj de cette année, conformément à l'importance capitale de ce pilier. Le pèlerin devra généralement convertir son intention en 'Umra pour cette visite et accomplir son Hajj complet une année ultérieure.",
+    "theme": "fiqh",
+    "source": "Fiqh classique du Hajj ; consensus des quatre écoles",
+    "difficulte": "avancé",
+    "jour": 142
+  },
+  {
+    "id": "quiz_406",
+    "question": "Que symbolise le geste de lapider les stèles (ramy al-jamarât) durant les jours du Hajj à Minâ ?",
+    "choix": ["A. Le rejet symbolique des tentations de Shaytân, en mémoire du refus d'Ibrâhîm de céder à ses incitations lors du sacrifice", "B. Un simple rituel sans signification particulière", "C. Un symbole de fertilité agricole", "D. Une commémoration militaire"],
+    "reponse": "A",
+    "explication": "La tradition rapporte que Shaytân tenta à trois reprises de dissuader Ibrâhîm d'accomplir le sacrifice demandé par Allah, et qu'à chaque tentative, Ibrâhîm le repoussa en lui jetant des pierres. Le ramy al-jamarât perpétue ce rejet symbolique de la tentation par les pèlerins d'aujourd'hui.",
+    "theme": "sira",
+    "source": "Tafsîr classique ; Fiqh du Hajj",
+    "difficulte": "intermédiaire",
+    "jour": 142
+  },
+  {
+    "id": "quiz_407",
+    "question": "Comment appelle-t-on, en 'aqîda, la croyance en l'existence et l'action des anges comme créatures obéissantes créées de lumière, distinctes des djinns et des hommes ?",
+    "choix": ["A. Al-Îmân bil-Malâ'ika, second pilier de la foi", "B. Al-Îmân bil-Ghayb uniquement", "C. At-Tawakkul", "D. Al-Isti'âna"],
+    "reponse": "A",
+    "explication": "La croyance aux anges (al-îmân bil-malâ'ika) constitue le second des six piliers de la foi énoncés dans le hadith de Jibrîl. Les anges, créés de lumière selon un hadith de Muslim, sont des créatures obéissantes n'ayant aucun libre arbitre de désobéissance, contrairement aux djinns et aux hommes.",
+    "theme": "aqida",
+    "source": "Sahîh Muslim n°2996 (création de lumière) ; hadith de Jibrîl",
+    "difficulte": "intermédiaire",
+    "jour": 143
+  },
+  {
+    "id": "quiz_408",
+    "question": "Selon un hadith, quelle activité collective particulière attire la présence et l'entourage des anges autour des participants ?",
+    "choix": ["A. Les cercles de rappel d'Allah et d'étude religieuse (halaqât dhikr)", "B. Uniquement les batailles", "C. Les repas de fête", "D. Aucune activité spécifique n'est mentionnée"],
+    "reponse": "A",
+    "explication": "Un hadith rapporte que lorsque des gens se réunissent dans une maison d'Allah pour réciter le Coran et l'étudier ensemble, la sérénité (sakîna) descend sur eux, la miséricorde les enveloppe, les anges les entourent, et Allah les mentionne auprès de ceux qui sont proches de Lui.",
+    "theme": "aqida",
+    "source": "Sahîh Muslim n°2699",
+    "difficulte": "intermédiaire",
+    "jour": 143
+  },
+  {
+    "id": "quiz_409",
+    "question": "Selon la majorité des écoles, un musulman peut-il invoquer directement un ange (comme Jibrîl) pour obtenir une faveur, de la même manière qu'il invoque Allah ?",
+    "choix": ["A. Oui, sans restriction particulière", "B. Non ; l'invocation (du'a) est un acte d'adoration réservé exclusivement à Allah, invoquer un ange relevant du shirk selon Ahl as-Sunna", "C. Seulement pour des besoins urgents", "D. Uniquement les savants peuvent le faire"],
+    "reponse": "B",
+    "explication": "L'invocation (du'a) constitue un acte d'adoration exclusivement réservé à Allah selon Ahl as-Sunna ; s'adresser directement à un ange, un prophète décédé ou tout autre créature pour demander une faveur relève du shirk dans l'adoration, même si l'on croit que c'est Allah qui exauce en définitive.",
+    "theme": "aqida",
+    "source": "Coran 40:60 ; théologie classique du Tawhîd al-'Ulûhiyya",
+    "difficulte": "avancé",
+    "jour": 143
+  },
+  {
+    "id": "quiz_410",
+    "question": "Quelle sourate mecquoise met en garde contre le fait de suivre aveuglément les traditions ancestrales sans réflexion personnelle, un défaut attribué aux peuples ayant rejeté leurs prophètes ?",
+    "choix": ["A. Az-Zukhruf", "B. Al-Baqara uniquement", "C. An-Nisâ' uniquement", "D. Al-Mâ'ida uniquement"],
+    "reponse": "A",
+    "explication": "Az-Zukhruf (43:22-24) décrit les peuples réfractaires justifiant leur rejet des prophètes par l'attachement aveugle aux coutumes de leurs ancêtres : « Nous avons trouvé nos ancêtres sur une religion, et nous suivons leurs traces. » Un avertissement contre le conformisme irréfléchi face à la vérité.",
+    "theme": "coran",
+    "source": "Coran 43:22-24 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 144
+  },
+  {
+    "id": "quiz_411",
+    "question": "Quel Compagnon devint calife après l'assassinat de 'Uthmân, dans un climat de troubles internes profonds (Fitna) ?",
+    "choix": ["A. 'Alî ibn Abî Tâlib", "B. Mu'âwiya ibn Abî Sufyân", "C. 'Abdullâh ibn az-Zubayr", "D. Sa'd ibn Abî Waqqâs"],
+    "reponse": "A",
+    "explication": "'Alî ibn Abî Tâlib fut désigné calife après l'assassinat de 'Uthmân, dans un contexte de troubles graves. Son califat fut marqué par les batailles internes du Chameau et de Siffîn, période de division douloureuse au sein de la jeune communauté musulmane, connue sous le nom de première Fitna.",
+    "theme": "sira",
+    "source": "at-Tabarî, Târîkh ar-Rusul wa'l-Mulûk",
+    "difficulte": "intermédiaire",
+    "jour": 144
+  },
+  {
+    "id": "quiz_412",
+    "question": "Comment se termina finalement le conflit entre 'Alî et Mu'âwiya, permettant de refermer la période de Fitna ?",
+    "choix": ["A. Par la victoire militaire décisive de l'un sur l'autre", "B. Par l'abdication volontaire d'al-Hasan (fils de 'Alî) en faveur de Mu'âwiya, geste de réconciliation loué par une prophétie antérieure du Prophète ﷺ", "C. Par une intervention étrangère", "D. Le conflit ne s'est jamais réellement terminé"],
+    "reponse": "B",
+    "explication": "Après l'assassinat de 'Alî, son fils al-Hasan, reconnu calife par une partie des musulmans, choisit d'abdiquer en faveur de Mu'âwiya pour préserver l'unité de la communauté, accomplissant une prophétie antérieure du Prophète ﷺ selon laquelle Allah réconcilierait par lui deux grands groupes de musulmans.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°2704, 3629",
+    "difficulte": "avancé",
+    "jour": 144
+  },
+  {
+    "id": "quiz_413",
+    "question": "Comment appelle-t-on l'année où al-Hasan abdiqua en faveur de Mu'âwiya, marquant la réunification de la communauté musulmane après la Fitna ?",
+    "choix": ["A. 'Âm al-Jamâ'a (l'Année de l'Unité)", "B. 'Âm al-Huzn", "C. 'Âm al-Wufûd", "D. 'Âm al-Fîl"],
+    "reponse": "A",
+    "explication": "L'an 41 H fut nommé 'Âm al-Jamâ'a en référence à la réunification politique de la communauté musulmane sous l'autorité unique de Mu'âwiya, mettant fin à la division douloureuse de la première Fitna qui avait suivi l'assassinat de 'Uthmân puis de 'Alî.",
+    "theme": "sira",
+    "source": "at-Tabarî, Târîkh ar-Rusul wa'l-Mulûk",
+    "difficulte": "avancé",
+    "jour": 145
+  },
+  {
+    "id": "quiz_414",
+    "question": "Quelle position adopte la majorité des savants sunnites concernant les divergences et conflits survenus entre les Compagnons durant la première Fitna ?",
+    "choix": ["A. Juger et condamner ouvertement les Compagnons impliqués", "B. S'abstenir de juger et rechercher pour chacun l'excuse la plus favorable, reconnaissant leur ijtihâd sincère malgré leurs divergences politiques", "C. Nier que ces événements aient eu lieu", "D. Prendre systématiquement parti pour l'un des camps"],
+    "reponse": "B",
+    "explication": "La position majoritaire d'Ahl as-Sunna consiste à s'abstenir de juger sévèrement les Compagnons impliqués dans ces conflits, reconnaissant leur statut élevé et leur ijtihâd sincère malgré leurs divergences politiques, tout en évitant de prendre parti dans des débats historiques dont la vérité complète reste connue d'Allah seul.",
+    "theme": "aqida",
+    "source": "Al-'Aqîda at-Tahâwiyya ; position classique sur les Compagnons",
+    "difficulte": "avancé",
+    "jour": 145
+  },
+  {
+    "id": "quiz_415",
+    "question": "Quelle sourate avertit contre la médisance et la calomnie en comparant celui qui la pratique à quelqu'un mangeant la chair de son frère mort ?",
+    "choix": ["A. Al-Hujurât", "B. Al-Humaza uniquement", "C. Al-Qalam uniquement", "D. Al-Mâ'ûn uniquement"],
+    "reponse": "A",
+    "explication": "Al-Hujurât (49:12) déclare : « L'un de vous aimerait-il manger la chair de son frère mort ? Vous en auriez horreur ! » Une image saisissante et volontairement répugnante pour dissuader de la médisance (ghîba), consistant à évoquer défavorablement une personne absente sur ce qu'elle n'aimerait pas entendre.",
+    "theme": "coran",
+    "source": "Coran 49:12 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 145
+  },
+  {
+    "id": "quiz_416",
+    "question": "Selon la majorité des savants, existe-t-il des exceptions licites où la médisance (ghîba) devient permise malgré son interdiction générale ?",
+    "choix": ["A. Non, elle est interdite sans aucune exception", "B. Oui, plusieurs cas précis sont reconnus : se plaindre d'une injustice subie, mettre en garde contre un danger, demander conseil, ou décrire publiquement quelqu'un ouvertement mauvais dans sa pratique publique", "C. Elle est permise dès lors que ce qui est dit est vrai", "D. Elle est permise uniquement entre proches parents"],
+    "reponse": "B",
+    "explication": "L'imam an-Nawawî recense plusieurs cas licites de ghîba : se plaindre d'une oppression subie auprès d'une autorité, avertir d'un danger, demander un avis juridique en décrivant une situation, ou évoquer publiquement les méfaits de quelqu'un affichant ouvertement sa désobéissance sans discrétion.",
+    "theme": "fiqh",
+    "source": "An-Nawawî, Riyâd as-Sâlihîn, chapitre sur la ghîba",
+    "difficulte": "avancé",
+    "jour": 146
+  },
+  {
+    "id": "quiz_417",
+    "question": "Quelle différence les savants établissent-ils entre la ghîba (médisance) et la buhtân (calomnie) ?",
+    "choix": ["A. La ghîba porte sur un défaut réel de la personne absente, la buhtân sur une accusation fausse et inventée", "B. Les deux termes sont strictement identiques sans nuance", "C. La buhtân concerne uniquement les affaires financières", "D. La ghîba n'existe que pour les hommes, la buhtân uniquement pour les femmes"],
+    "reponse": "A",
+    "explication": "Le Prophète ﷺ précisa lui-même la distinction, interrogé sur la ghîba : « C'est évoquer chez ton frère ce qu'il n'aimerait pas entendre. » Et si ce que tu dis est faux, alors c'est une buhtân (calomnie), péché encore plus grave puisqu'il ajoute le mensonge à l'atteinte à l'honneur.",
+    "theme": "fiqh",
+    "source": "Sahîh Muslim n°2589",
+    "difficulte": "intermédiaire",
+    "jour": 146
+  },
+  {
+    "id": "quiz_418",
+    "question": "Selon la Sunna, quelle attitude le croyant doit-il adopter s'il entend quelqu'un médire d'un absent en sa présence ?",
+    "choix": ["A. Y participer activement pour ne pas rompre l'ambiance sociale", "B. Défendre l'honneur de la personne absente s'il le peut, ce qui constitue un acte méritoire selon un hadith explicite", "C. Rester totalement indifférent sans réaction", "D. Aucune recommandation n'existe à ce sujet"],
+    "reponse": "B",
+    "explication": "Le Prophète ﷺ a dit : « Quiconque défend l'honneur de son frère (absent) en son absence, Allah le protégera du Feu le Jour de la Résurrection. » Un mérite spécifique attaché au fait de prendre la défense d'une personne médite en son absence, plutôt que de se taire ou d'y participer.",
+    "theme": "fiqh",
+    "source": "Sunan at-Tirmidhî n°1931",
+    "difficulte": "intermédiaire",
+    "jour": 146
+  },
+  {
+    "id": "quiz_419",
+    "question": "Quelle sourate évoque le Jour où « la terre racontera ses nouvelles » (tuhaddithu akhbârahâ), témoignant de tout ce qui s'est produit sur elle ?",
+    "choix": ["A. Az-Zalzala", "B. Al-Qâri'a uniquement", "C. Al-'Âdiyât uniquement", "D. At-Takâthur uniquement"],
+    "reponse": "A",
+    "explication": "Az-Zalzala (99:4-5) déclare : « Ce jour-là, elle racontera ses nouvelles, parce que ton Seigneur lui aura inspiré cela. » Un verset saisissant suggérant que la terre elle-même témoignera de chaque acte, bon ou mauvais, accompli sur sa surface, aussi discret ait-il pu paraître à l'époque.",
+    "theme": "coran",
+    "source": "Coran 99:1-5 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 147
+  },
+  {
+    "id": "quiz_420",
+    "question": "Cette même sourate affirme-t-elle que même les actes les plus infimes seront rétribués, en bien comme en mal ?",
+    "choix": ["A. Non, seuls les actes majeurs comptent", "B. Oui, elle précise explicitement que quiconque fait un poids d'un atome de bien ou de mal le verra", "C. Elle ne parle que des actes collectifs, jamais individuels", "D. Elle exclut les péchés mineurs de toute rétribution"],
+    "reponse": "B",
+    "explication": "Az-Zalzala (99:7-8) conclut : « Quiconque fait un poids d'un atome de bien le verra. Et quiconque fait un poids d'un atome de mal le verra. » Une affirmation d'une précision totale sur la rétribution divine, ne laissant échapper aucun acte, si minuscule soit-il, au regard de la justice d'Allah.",
+    "theme": "coran",
+    "source": "Coran 99:7-8 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 147
+  }
+]

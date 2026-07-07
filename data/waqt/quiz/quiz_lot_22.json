@@ -1,0 +1,222 @@
+[
+  {
+    "id": "quiz_421",
+    "question": "Quelle sourate relate la conversation entre le prophète Nûh et son fils qui refusa de monter dans l'arche, périssant dans le déluge malgré les supplications paternelles ?",
+    "choix": ["A. Hûd", "B. Nûh uniquement", "C. Al-A'râf uniquement", "D. Ash-Shu'arâ' uniquement"],
+    "reponse": "A",
+    "explication": "Hûd (11:42-47) relate ce dialogue poignant : Nûh appelle son fils à monter dans l'arche, celui-ci refuse préférant se réfugier sur une montagne, périssant noyé. Nûh, bouleversé, invoque Allah pour son fils, recevant la réponse qu'il ne fait pas partie de sa famille au sens de la promesse de salut, car son comportement le disqualifiait.",
+    "theme": "coran",
+    "source": "Coran 11:42-47 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 148
+  },
+  {
+    "id": "quiz_422",
+    "question": "Quelle leçon les commentateurs tirent-ils principalement de cet épisode du fils de Nûh refusant l'arche ?",
+    "choix": ["A. Que les liens de sang seuls ne suffisent pas à sauver quelqu'un sans la foi et l'obéissance personnelles", "B. Que Nûh avait commis une erreur en construisant l'arche", "C. Que le déluge n'a jamais réellement eu lieu", "D. Qu'aucune leçon particulière n'en découle"],
+    "reponse": "A",
+    "explication": "Cet épisode illustre un principe fondamental de l'Islam : le salut dépend de la foi et des actes personnels, non de la parenté avec un prophète ou une personne pieuse. Même le fils d'un prophète peut se perdre par son propre choix, rappelant qu'aucune généalogie ne dispense de la responsabilité individuelle.",
+    "theme": "aqida",
+    "source": "Tafsîr Ibn Kathîr, 11:46",
+    "difficulte": "intermédiaire",
+    "jour": 148
+  },
+  {
+    "id": "quiz_423",
+    "question": "Quelle sourate décrit la construction de l'arche de Nûh sous la supervision directe et l'inspiration d'Allah ?",
+    "choix": ["A. Hûd", "B. Al-Mu'minûn uniquement", "C. Ash-Shu'arâ' uniquement", "D. Al-Qamar uniquement"],
+    "reponse": "A",
+    "explication": "Hûd (11:37) rapporte l'ordre divin : « Construis l'arche sous Nos yeux et d'après Notre révélation. » Cette précision souligne que même les compétences techniques nécessaires à ce sauvetage massif furent guidées par l'inspiration divine, non par le seul savoir humain de Nûh.",
+    "theme": "coran",
+    "source": "Coran 11:37 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 148
+  },
+  {
+    "id": "quiz_424",
+    "question": "Selon la majorité des écoles, un musulman peut-il utiliser des produits financiers contenant de l'intérêt (ribâ) en cas de nécessité absolue, faute d'alternative islamique disponible ?",
+    "choix": ["A. Non, jamais, sous aucune condition", "B. La majorité des savants contemporains autorise un recours minimal et temporaire en cas de nécessité réelle et documentée, non de simple confort ou préférence", "C. Oui, sans restriction dès lors que c'est légal dans le pays", "D. Cela dépend uniquement du montant emprunté"],
+    "reponse": "B",
+    "explication": "S'appuyant sur le principe juridique « la nécessité rend licite ce qui est interdit », plusieurs conseils de fiqh contemporains autorisent un recours minimal et temporaire à des produits financiers avec intérêt en cas de nécessité réelle, strictement encadré et non extensible au confort.",
+    "theme": "fiqh",
+    "source": "Coran 2:173 ; fatwas contemporaines des conseils de fiqh",
+    "difficulte": "avancé",
+    "jour": 149
+  },
+  {
+    "id": "quiz_425",
+    "question": "Selon le Coran, quelle image saisissante décrit la situation de celui qui persiste dans le ribâ (intérêt usuraire) après l'avertissement divin ?",
+    "choix": ["A. Il est comparé à celui que le contact de Shaytân a bouleversé, se relevant difficilement", "B. Aucune image particulière n'est utilisée", "C. Il est comparé à un arbre stérile", "D. Il est comparé à un navire sans voile"],
+    "reponse": "A",
+    "explication": "Al-Baqara (2:275) déclare : « Ceux qui se nourrissent du ribâ ne se tiennent que comme se tient celui que Shaytân a bouleversé de son toucher. » Une image d'une sévérité rare dans le Coran, illustrant la gravité extrême de ce péché financier condamné à de multiples reprises dans le texte coranique.",
+    "theme": "coran",
+    "source": "Coran 2:275 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 149
+  },
+  {
+    "id": "quiz_426",
+    "question": "Le Coran déclare-t-il littéralement une « guerre » de la part d'Allah et de Son Messager contre ceux qui persistent dans le ribâ ?",
+    "choix": ["A. Non, cette formulation n'existe pas", "B. Oui, Al-Baqara emploie littéralement cette expression très forte, unique dans le Coran pour ce péché précis", "C. Cette expression concerne uniquement le meurtre", "D. Elle concerne uniquement l'apostasie"],
+    "reponse": "B",
+    "explication": "Al-Baqara (2:279) déclare : « Si vous ne le faites pas, alors recevez l'annonce d'une guerre de la part d'Allah et de Son Messager. » Cette formulation exceptionnellement sévère, unique dans le Coran pour un péché de cette nature, souligne la gravité extrême accordée au ribâ persistant après avertissement.",
+    "theme": "coran",
+    "source": "Coran 2:278-279 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 149
+  },
+  {
+    "id": "quiz_427",
+    "question": "Quel Compagnon fut envoyé par le calife 'Umar comme gouverneur de Kûfa avec pour consigne explicite de simplifier autant que possible la prière pour les fidèles ?",
+    "choix": ["A. 'Ammâr ibn Yâsir", "B. Sa'd ibn Abî Waqqâs", "C. Al-Mughîra ibn Shu'ba", "D. Abû Mûsâ al-Ash'arî"],
+    "reponse": "A",
+    "explication": "'Ammâr ibn Yâsir, désigné gouverneur de Kûfa par 'Umar en complément de Sa'd, reçut la consigne de veiller à ce que les prières restent accessibles et non pesantes pour la communauté, conformément à l'esprit de facilitation prôné par le Prophète ﷺ envers Mu'âdh et Abû Mûsâ.",
+    "theme": "sira",
+    "source": "at-Tabarî, Târîkh ar-Rusul wa'l-Mulûk",
+    "difficulte": "avancé",
+    "jour": 150
+  },
+  {
+    "id": "quiz_428",
+    "question": "Quel Compagnon, fils d'esclaves torturés pour leur foi (Yâsir et Sumayya), devint plus tard gouverneur et mourut en martyr lors de la bataille de Siffîn ?",
+    "choix": ["A. 'Ammâr ibn Yâsir", "B. Bilâl ibn Rabâh", "C. Salmân al-Fârisî", "D. Khabbâb ibn al-Aratt"],
+    "reponse": "A",
+    "explication": "'Ammâr ibn Yâsir, dont les parents Yâsir et Sumayya furent parmi les premiers martyrs de l'Islam, vécut jusqu'à un âge avancé, participant à Badr et devenant gouverneur de Kûfa, avant de mourir combattant lors de la bataille de Siffîn — accomplissant selon un hadith une prophétie du Prophète ﷺ annonçant qu'il serait tué par « le groupe transgresseur ».",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°447 ; historiographie de Siffîn",
+    "difficulte": "avancé",
+    "jour": 150
+  },
+  {
+    "id": "quiz_429",
+    "question": "Comment appelle-t-on, en 'aqîda, la croyance selon laquelle chaque être humain sera ressuscité avec le même corps qu'il possédait, transformé mais fondamentalement continu avec son identité terrestre ?",
+    "choix": ["A. Al-Ba'th (la Résurrection corporelle)", "B. At-Tanâsukh", "C. Al-Hulûl", "D. Al-Ittihâd"],
+    "reponse": "A",
+    "explication": "Ahl as-Sunna affirme la résurrection corporelle (al-ba'th), distincte de la métempsycose (at-tanâsukh, croyance en la réincarnation successive) rejetée par l'Islam. Le corps ressuscité conserve une continuité d'identité avec le corps terrestre tout en étant transformé pour l'éternité de l'au-delà.",
+    "theme": "aqida",
+    "source": "Coran 36:78-79 ; théologie classique de la résurrection",
+    "difficulte": "avancé",
+    "jour": 150
+  },
+  {
+    "id": "quiz_430",
+    "question": "Selon un hadith, quelle petite partie du corps humain sert de « graine » à partir de laquelle la résurrection s'opère, selon la croyance islamique ?",
+    "choix": ["A. Le coccyx (l'os du sacrum, 'ajb adh-dhanab)", "B. Le cœur uniquement", "C. Le crâne uniquement", "D. Aucune partie spécifique n'est mentionnée"],
+    "reponse": "A",
+    "explication": "Le Prophète ﷺ a dit que tout le corps de l'homme se décompose, à l'exception d'un petit os à la base de la colonne vertébrale, à partir duquel la création sera reconstituée le Jour de la Résurrection.",
+    "theme": "aqida",
+    "source": "Sahîh al-Bukhârî n°4935 ; Sahîh Muslim n°2955",
+    "difficulte": "avancé",
+    "jour": 151
+  },
+  {
+    "id": "quiz_431",
+    "question": "Selon le Coran, Allah utilise-t-Il un exemple de la nature (pluie et terre morte) pour illustrer la possibilité logique de la résurrection aux esprits sceptiques ?",
+    "choix": ["A. Non, aucun argument de ce type n'est utilisé", "B. Oui, plusieurs versets comparent la résurrection des morts à la manière dont la pluie fait revivre une terre desséchée et morte", "C. Cet argument concerne uniquement les récoltes agricoles", "D. Il s'agit d'un argument absent du Coran"],
+    "reponse": "B",
+    "explication": "Fussilat (41:39) et d'autres versets similaires établissent ce parallèle : « Tu vois la terre desséchée ; puis, quand Nous faisons descendre l'eau sur elle, elle se met à vivre. Celui qui l'a vivifiée est certes Celui qui fait revivre les morts. » Un argument rationnel accessible à l'observation quotidienne.",
+    "theme": "coran",
+    "source": "Coran 41:39 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 151
+  },
+  {
+    "id": "quiz_432",
+    "question": "Selon la majorité des écoles, une femme divorcée enceinte doit-elle observer la 'idda de quatre mois et dix jours ou celle liée à la grossesse ?",
+    "choix": ["A. Toujours quatre mois et dix jours, quelle que soit sa situation", "B. Sa 'idda dure jusqu'à l'accouchement, quelle que soit la durée écoulée depuis le divorce", "C. Elle n'a aucune 'idda à observer en cas de grossesse", "D. Trois cycles menstruels comme pour toute divorcée"],
+    "reponse": "B",
+    "explication": "At-Talâq (65:4) précise : « Et pour les femmes enceintes, leur terme est quand elles auront accouché. » La grossesse prime sur les autres calculs de 'idda, sa durée s'étendant jusqu'à l'accouchement effectif.",
+    "theme": "fiqh",
+    "source": "Coran 65:4 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 152
+  },
+  {
+    "id": "quiz_433",
+    "question": "Selon la majorité des écoles, quelle est la 'idda d'une femme divorcée non enceinte et toujours réglée ?",
+    "choix": ["A. Trois cycles menstruels complets (thalâthat qurû')", "B. Un seul mois", "C. Quatre mois et dix jours comme la veuve", "D. Aucune 'idda n'est requise en dehors de la grossesse"],
+    "reponse": "A",
+    "explication": "Al-Baqara (2:228) fixe la 'idda de la femme divorcée réglée à trois cycles menstruels, un terme dont le sens précis — période de règles ou de pureté entre les règles — fait l'objet de nuances entre écoles, mais dont la durée générale fait consensus.",
+    "theme": "fiqh",
+    "source": "Coran 2:228 ; Fiqh comparatif du divorce",
+    "difficulte": "intermédiaire",
+    "jour": 152
+  },
+  {
+    "id": "quiz_434",
+    "question": "Selon la majorité des écoles, quelle est la 'idda d'une femme divorcée ménopausée ou qui n'a jamais eu ses menstrues ?",
+    "choix": ["A. Trois mois complets", "B. Quatre mois et dix jours comme la veuve", "C. Aucune 'idda n'est requise dans ce cas", "D. Un an complet"],
+    "reponse": "A",
+    "explication": "At-Talâq (65:4) précise : « Et si vous avez des doutes à propos de la 'idda de vos femmes qui n'espèrent plus avoir de règles, leur délai est de trois mois. » Une durée fixée en mois calendaires pour compenser l'absence du repère menstruel habituel.",
+    "theme": "fiqh",
+    "source": "Coran 65:4 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 153
+  },
+  {
+    "id": "quiz_435",
+    "question": "Selon la majorité des écoles, un mari peut-il reprendre son épouse durant la 'idda après un divorce révocable (talâq raj'î), sans nouveau contrat de mariage ?",
+    "choix": ["A. Non, un nouveau contrat est toujours nécessaire", "B. Oui, tant que la 'idda n'est pas achevée, le mari peut reprendre son épouse sans nouveau mahr ni nouveau contrat", "C. Seulement avec l'accord d'un juge systématiquement", "D. Uniquement si la femme le demande explicitement"],
+    "reponse": "B",
+    "explication": "Al-Baqara (2:229) établit que le divorce révocable permet au mari de reprendre son épouse durant la 'idda sans nouveau contrat ni nouveau mahr, simplement par une reprise effective de la vie conjugale ou une déclaration claire, préservant une chance de réconciliation.",
+    "theme": "fiqh",
+    "source": "Coran 2:229 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 153
+  },
+  {
+    "id": "quiz_436",
+    "question": "Selon le Coran, combien de fois maximum un homme peut-il révoquer son divorce avant que la séparation ne devienne définitive sans possibilité de reprise directe ?",
+    "choix": ["A. Une seule fois", "B. Deux fois, le troisième talâq rendant la séparation définitive sauf remariage entre-temps avec un autre homme", "C. Un nombre illimité de fois", "D. Cinq fois"],
+    "reponse": "B",
+    "explication": "Al-Baqara (2:229) déclare : « Le divorce est permis deux fois. Ensuite, c'est soit la reprise conformément à l'usage, soit la libération avec bienfaisance. » Après un troisième talâq, la séparation devient définitive sauf si la femme se remarie entre-temps avec un autre homme puis divorce naturellement de lui.",
+    "theme": "fiqh",
+    "source": "Coran 2:229-230 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 154
+  },
+  {
+    "id": "quiz_437",
+    "question": "Selon la majorité des écoles, prononcer les trois talâq en une seule fois (talâq al-bid'a) est-il recommandé, ou une innovation blâmable ?",
+    "choix": ["A. Totalement recommandé et encouragé comme méthode principale", "B. Une innovation blâmable selon la majorité, bien que juridiquement effectif chez la plupart des écoles classiques malgré son caractère condamnable", "C. Totalement invalide et sans aucun effet juridique", "D. Obligatoire en cas de désaccord grave"],
+    "reponse": "B",
+    "explication": "La méthode prophétique recommandée consiste à espacer les talâq sur plusieurs mois pour laisser une chance à la réconciliation. Prononcer les trois en une fois est qualifié d'innovation blâmable par la majorité, tout en restant juridiquement effectif selon la position classique, bien que certains savants contemporains le considèrent comme un seul talâq révocable.",
+    "theme": "fiqh",
+    "source": "Sahîh Muslim n°1471b ; débats classiques et contemporains",
+    "difficulte": "avancé",
+    "jour": 154
+  },
+  {
+    "id": "quiz_438",
+    "question": "Quelle sourate décrit le récit du prophète Sâlih avertissant son peuple de laisser la chamelle boire librement un jour sur deux, en alternance avec eux ?",
+    "choix": ["A. Ash-Shu'arâ'", "B. Al-Baqara uniquement", "C. Âl 'Imrân uniquement", "D. An-Nisâ' uniquement"],
+    "reponse": "A",
+    "explication": "Ash-Shu'arâ' (26:155) rapporte l'avertissement de Sâlih : « Voici une chamelle, elle a un droit de boire, et vous avez aussi un droit de boire, chacun en un jour déterminé. » Ce partage équitable des ressources, rompu par l'égorgement délibéré de la chamelle, précipita le châtiment de Thamûd.",
+    "theme": "coran",
+    "source": "Coran 26:155-158 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 154
+  },
+  {
+    "id": "quiz_439",
+    "question": "Combien de jours s'écoulèrent, selon le Coran, entre l'égorgement de la chamelle de Thamûd et le châtiment final qui s'abattit sur le peuple ?",
+    "choix": ["A. Trois jours", "B. Un an complet", "C. Une seule journée", "D. Le Coran ne précise aucun délai"],
+    "reponse": "A",
+    "explication": "Hûd (11:65) rapporte l'avertissement de Sâlih après l'égorgement : « Jouissez dans votre demeure trois jours. C'est une promesse qui ne sera pas démentie. » Ce délai fut accordé comme dernière chance avant l'anéantissement final annoncé, un signe de miséricorde jusqu'au dernier moment malgré la gravité de la transgression.",
+    "theme": "coran",
+    "source": "Coran 11:65 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 154
+  },
+  {
+    "id": "quiz_440",
+    "question": "Le Coran nomme-t-il explicitement l'homme qui égorgea la chamelle de Thamûd, qualifié de « le plus misérable » de son peuple ?",
+    "choix": ["A. Non, le Coran ne le nomme pas ; un nom (Qudâr ibn Sâlif) fut proposé plus tard par la tradition exégétique post-coranique", "B. Oui, le Coran le nomme explicitement Qudâr", "C. Le Coran attribue cet acte collectivement sans distinguer un responsable", "D. Il s'agit d'un prophète selon le Coran"],
+    "reponse": "A",
+    "explication": "Le Coran ne nomme pas explicitement l'auteur de l'acte, se contentant de le qualifier « d'ashqâhâ » (le plus misérable d'entre eux) en Ash-Shams (91:12). Le nom Qudâr ibn Sâlif provient de la tradition exégétique post-coranique, illustrant la responsabilité individuelle malgré le châtiment collectif qui suivit.",
+    "theme": "coran",
+    "source": "Coran 91:12 ; Tafsîr at-Tabarî (tradition exégétique)",
+    "difficulte": "avancé",
+    "jour": 154
+  }
+]
