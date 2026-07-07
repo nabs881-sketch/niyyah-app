@@ -1,0 +1,222 @@
+[
+  {
+    "id": "quiz_281",
+    "question": "Quelle sourate relate le récit de Yûnus englouti par une immense baleine (ou poisson) après avoir fui sa mission sans autorisation divine ?",
+    "choix": ["A. Yûnus", "B. As-Sâffât et Al-Qalam, entre autres", "C. Uniquement Al-Anbiyâ'", "D. Aucune sourate ne relate cet épisode précis"],
+    "reponse": "B",
+    "explication": "Bien que la sourate porte son nom, l'épisode précis de l'engloutissement figure surtout en As-Sâffât (37:139-148) et Al-Qalam (68:48-50), où Yûnus est appelé « Dhû an-Nûn » (celui du poisson), implorant Allah dans les ténèbres avant d'être rejeté sain et sauf sur le rivage.",
+    "theme": "coran",
+    "source": "Coran 37:139-148, 68:48-50 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 99
+  },
+  {
+    "id": "quiz_282",
+    "question": "Quelle invocation, prononcée par Yûnus dans le ventre du poisson, est aujourd'hui largement récitée par les musulmans en période de détresse ?",
+    "choix": ["A. « Lâ ilâha illâ Anta, subhânaka, innî kuntu min adh-dhâlimîn »", "B. « Rabbi ishrah lî sadrî »", "C. « Hasbunâ Allâhu wa ni'ma al-wakîl »", "D. « Rabbanâ âtinâ fî ad-dunyâ hasana »"],
+    "reponse": "A",
+    "explication": "Al-Anbiyâ' (21:87) rapporte cette invocation de Yûnus : « Nul dieu si ce n'est Toi ! Gloire à Toi ! J'ai été parmi les injustes ! » Un hadith précise que quiconque invoque Allah par ces mots dans l'épreuve verra sa prière exaucée, en souvenir de la délivrance de Yûnus.",
+    "theme": "coran",
+    "source": "Coran 21:87 ; Sunan at-Tirmidhî n°3505",
+    "difficulte": "intermédiaire",
+    "jour": 99
+  },
+  {
+    "id": "quiz_283",
+    "question": "Après sa délivrance du poisson, où le Coran indique-t-il que Yûnus fut rejeté, avant qu'une plante ne pousse pour le protéger ?",
+    "choix": ["A. Sur un rivage désert et dénudé", "B. Directement dans sa ville d'origine", "C. Au sommet d'une montagne", "D. Dans un jardin fertile"],
+    "reponse": "A",
+    "explication": "As-Sâffât (37:145-146) précise que Yûnus fut rejeté sur un rivage désert et dénudé, affaibli par l'épreuve, et qu'Allah fit pousser au-dessus de lui une plante de courge (yaqtîn) pour lui offrir ombre et réconfort durant sa convalescence.",
+    "theme": "coran",
+    "source": "Coran 37:145-146 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 99
+  },
+  {
+    "id": "quiz_284",
+    "question": "Selon la majorité des écoles, une personne peut-elle accomplir la prière assise sur une chaise si elle est physiquement incapable de se prosterner au sol ?",
+    "choix": ["A. Non, elle doit obligatoirement prier debout coûte que coûte", "B. Oui, elle prie selon sa capacité, en inclinant davantage la tête pour le sujûd que pour le rukû', sans obligation de toucher le sol", "C. Elle doit reporter sa prière jusqu'à guérison complète", "D. Elle doit prier uniquement le vendredi"],
+    "reponse": "B",
+    "explication": "S'appuyant sur le principe « Allah n'impose à une âme que ce qu'elle peut supporter » (2:286) et sur des hadiths précisant l'adaptation de la prière à la capacité physique, la majorité autorise la prière assise, en inclinant davantage la tête pour la prosternation que pour l'inclinaison, marquant ainsi la distinction entre les deux postures.",
+    "theme": "fiqh",
+    "source": "Sahîh al-Bukhârî n°1117 ; Fiqh de la prière du malade",
+    "difficulte": "intermédiaire",
+    "jour": 100
+  },
+  {
+    "id": "quiz_285",
+    "question": "Selon la majorité des écoles, un malade totalement incapable de tout mouvement peut-il accomplir sa prière uniquement par le regard ou l'intention du cœur ?",
+    "choix": ["A. Non, la prière devient totalement caduque dans ce cas", "B. Oui, si aucun mouvement n'est possible, la prière se fait par le cœur et l'intention, avec un simple mouvement des yeux ou des paupières si possible", "C. Elle doit être remplacée par une aumône compensatoire", "D. Elle devient uniquement facultative"],
+    "reponse": "B",
+    "explication": "La règle progressive de la prière du malade prévoit qu'en l'absence de toute capacité de mouvement physique, la prière reste due par l'intention du cœur et, si possible, un simple mouvement des yeux, la prière n'étant jamais totalement supprimée tant que la conscience demeure présente.",
+    "theme": "fiqh",
+    "source": "Fiqh comparatif de la prière du malade ; consensus classique",
+    "difficulte": "avancé",
+    "jour": 100
+  },
+  {
+    "id": "quiz_286",
+    "question": "Selon la majorité, un malade peut-il regrouper ses prières (jam') en dehors du voyage, pour cause de véritable difficulté à se lever à chaque heure ?",
+    "choix": ["A. Non, aucune école ne l'autorise en dehors du voyage", "B. Plusieurs savants, notamment hanbalites et certains contemporains, l'autorisent en cas de réelle difficulté médicale documentée", "C. Cela concerne uniquement les femmes enceintes", "D. Seuls les Hanafites l'autorisent largement"],
+    "reponse": "B",
+    "explication": "Plusieurs savants, s'appuyant sur le principe de facilitation en cas de difficulté réelle (harâj), autorisent le malade à regrouper ses prières lorsque se lever à chaque heure représente une contrainte physique documentée, une extension par analogie de la permission accordée au voyageur et aux cas de pluie.",
+    "theme": "fiqh",
+    "source": "Majmû' al-Fatâwâ, Ibn Taymiyya ; fatwas contemporaines",
+    "difficulte": "avancé",
+    "jour": 100
+  },
+  {
+    "id": "quiz_287",
+    "question": "Quel Compagnon fut le porte-étendard personnel du Prophète ﷺ lors de la conquête de la Mecque ?",
+    "choix": ["A. Sa'd ibn 'Ubâda, puis 'Alî après un incident", "B. Bilâl ibn Rabâh seul", "C. Abû Bakr as-Siddîq seul", "D. Zayd ibn Hâritha"],
+    "reponse": "A",
+    "explication": "Sa'd ibn 'Ubâda porta initialement l'étendard, mais une parole menaçante prononcée envers Quraysh lors de l'entrée conduisit le Prophète ﷺ à confier l'étendard à son fils Qays, ou selon d'autres versions à 'Alî, afin de garantir une entrée pacifique et clémente dans la ville, conformément à l'esprit de pardon voulu par le Prophète ﷺ.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.2",
+    "difficulte": "avancé",
+    "jour": 101
+  },
+  {
+    "id": "quiz_288",
+    "question": "Combien d'idoles environ le Prophète ﷺ fit-il détruire à l'intérieur et autour de la Ka'ba après la conquête de la Mecque ?",
+    "choix": ["A. Une dizaine", "B. Environ 360", "C. Trois seulement", "D. Aucune, elles furent conservées"],
+    "reponse": "B",
+    "explication": "Selon la tradition, environ 360 idoles entouraient la Ka'ba, que le Prophète ﷺ fit détruire une à une en récitant : « La vérité est venue et le faux a disparu ; car le faux est destiné à disparaître » (Al-Isrâ' 17:81), purifiant ainsi le sanctuaire de tout polythéisme.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°4287 ; Coran 17:81",
+    "difficulte": "intermédiaire",
+    "jour": 101
+  },
+  {
+    "id": "quiz_289",
+    "question": "Que fit le Prophète ﷺ concernant les peintures et images présentes à l'intérieur de la Ka'ba lors de la conquête, notamment celles représentant des anges ou 'Îsâ et Maryam ?",
+    "choix": ["A. Il les laissa intactes par respect", "B. Il ordonna leur effacement, à l'exception, selon certains récits, d'une image de Maryam et 'Îsâ qu'il aurait couverte de sa main", "C. Il les vendit aux enchères", "D. Il les emporta à Médine"],
+    "reponse": "B",
+    "explication": "Le Prophète ﷺ ordonna l'effacement de toutes les représentations picturales à l'intérieur de la Ka'ba. Certains récits, dont l'authenticité est discutée par les historiens, rapportent qu'il aurait protégé de sa main une image de Maryam et 'Îsâ le temps qu'elle soit effacée avec davantage de soin, sans qu'un consensus historique ferme n'existe sur ce détail précis.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.2 ; débats historiographiques",
+    "difficulte": "avancé",
+    "jour": 101
+  },
+  {
+    "id": "quiz_290",
+    "question": "Comment appelle-t-on, en 'aqîda, le principe selon lequel Allah ne ressemble en rien à Sa création, malgré l'affirmation de Ses Attributs ?",
+    "choix": ["A. At-Tashbîh (l'anthropomorphisme)", "B. At-Tanzîh (la transcendance, l'absence de toute ressemblance avec la création)", "C. At-Ta'tîl (la négation des attributs)", "D. At-Tajsîm (la corporéisation)"],
+    "reponse": "B",
+    "explication": "At-Tanzîh est le principe central d'Ash-Shûrâ (42:11) : « Rien ne Lui ressemble, et Il est l'Audient, le Voyant. » Ce verset concilie l'affirmation des attributs divins (audition, vision) avec le refus catégorique de toute ressemblance avec les créatures, fondement de la méthode athârite en matière de Noms et Attributs.",
+    "theme": "aqida",
+    "source": "Coran 42:11 ; Al-'Aqîda al-Wâsitiyya",
+    "difficulte": "intermédiaire",
+    "jour": 102
+  },
+  {
+    "id": "quiz_291",
+    "question": "Comment Ahl as-Sunna qualifie-t-elle la position de ceux qui, par crainte de tomber dans l'anthropomorphisme, nient totalement les Attributs divins mentionnés dans le Coran ?",
+    "choix": ["A. Une prudence louable et recommandée sans réserve", "B. Ta'tîl (négation des attributs), jugée comme une déviation opposée mais tout aussi problématique que l'anthropomorphisme (tashbîh)", "C. La position officielle et unique d'Ahl as-Sunna", "D. Une question purement académique sans conséquence"],
+    "reponse": "B",
+    "explication": "Ahl as-Sunna considère le ta'tîl (négation pure et simple des attributs par crainte de l'anthropomorphisme) comme une déviation symétriquement opposée au tashbîh (assimilation d'Allah à Sa création) : la voie médiane consiste à affirmer les attributs mentionnés par les textes sans les nier ni les comparer à ceux des créatures.",
+    "theme": "aqida",
+    "source": "Al-'Aqîda al-Wâsitiyya, Ibn Taymiyya",
+    "difficulte": "avancé",
+    "jour": 102
+  },
+  {
+    "id": "quiz_292",
+    "question": "Quelle sourate mecquoise est intégralement consacrée à réfuter l'attribution d'une descendance (fille ou fils) à Allah, notamment la croyance des Mecquois en des « filles d'Allah » (les anges) ?",
+    "choix": ["A. Al-Ikhlâs", "B. An-Najm, entre autres passages", "C. Al-Kâfirûn", "D. Al-Falaq"],
+    "reponse": "B",
+    "explication": "An-Najm (53:19-27) réfute vivement la croyance des Mecquois selon laquelle les anges seraient des « filles d'Allah », qualifiant cette croyance de pure invention sans fondement ni savoir réel, un thème également central dans Al-Ikhlâs sous une forme plus brève et absolue.",
+    "theme": "coran",
+    "source": "Coran 53:19-27 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 102
+  },
+  {
+    "id": "quiz_293",
+    "question": "Quel Compagnon fut choisi par 'Umar ibn al-Khattâb comme l'un des six membres du conseil (shûrâ) chargé de désigner son successeur après son assassinat ?",
+    "choix": ["A. 'Uthmân, 'Alî, Talha, Az-Zubayr, 'Abd ar-Rahmân ibn 'Awf et Sa'd ibn Abî Waqqâs", "B. Seulement 'Alî et 'Uthmân", "C. Abû Hurayra et Anas ibn Mâlik", "D. Aucun conseil ne fut formé, 'Umar désigna directement son successeur"],
+    "reponse": "A",
+    "explication": "Blessé mortellement, 'Umar désigna un conseil de six Compagnons parmi les dix promis au Paradis encore vivants, chargé de choisir le futur calife parmi eux en un délai de trois jours, un mécanisme de succession collégiale qui aboutit finalement au choix de 'Uthmân ibn 'Affân.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°3700 ; Ibn Kathîr, al-Bidâya wa'n-Nihâya",
+    "difficulte": "avancé",
+    "jour": 103
+  },
+  {
+    "id": "quiz_294",
+    "question": "Qui assassina 'Umar ibn al-Khattâb, et pour quel motif principal, selon les récits historiques ?",
+    "choix": ["A. Abû Lu'lu'a, un esclave persan, pour un grief personnel lié à des taxes qu'il jugeait excessives", "B. Un complot politique interne aux Compagnons", "C. Un espion byzantin infiltré", "D. Il mourut de mort naturelle, sans assassinat"],
+    "reponse": "A",
+    "explication": "Abû Lu'lu'a (Fîrûz), esclave persan de confession non musulmane, poignarda 'Umar durant la prière de Fajr, motivé selon les récits par un grief personnel non résolu concernant une taxe qu'il estimait injuste imposée par son maître. 'Umar mourut de ses blessures quelques jours plus tard.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°3700 ; at-Tabarî, Târîkh",
+    "difficulte": "avancé",
+    "jour": 103
+  },
+  {
+    "id": "quiz_295",
+    "question": "Qui 'Umar ibn al-Khattâb chargea-t-il de diriger la prière collective durant les quelques jours entre son agression et sa mort ?",
+    "choix": ["A. 'Abd ar-Rahmân ibn 'Awf", "B. 'Uthmân ibn 'Affân", "C. 'Alî ibn Abî Tâlib", "D. Sa'd ibn Abî Waqqâs"],
+    "reponse": "A",
+    "explication": "'Umar demanda à 'Abd ar-Rahmân ibn 'Awf, membre du conseil de six qu'il venait de constituer, de diriger la prière durant les jours suivant son agression, en attendant sa mort et la désignation collégiale du nouveau calife par le conseil de la shûrâ.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°3700",
+    "difficulte": "avancé",
+    "jour": 103
+  },
+  {
+    "id": "quiz_296",
+    "question": "Quelle sourate coranique est spécifiquement révélée pour condamner l'attitude arrogante d'Abû Lahab et de son épouse envers le Prophète ﷺ ?",
+    "choix": ["A. Al-Masad (Al-Lahab)", "B. Al-Humaza", "C. Al-Mâ'ûn", "D. Quraysh"],
+    "reponse": "A",
+    "explication": "Al-Masad (111) condamne explicitement Abû Lahab, oncle du Prophète ﷺ farouchement opposé à sa mission, ainsi que son épouse « porteuse de bois » (souvent comprise comme colportant calomnies et médisances), annonçant leur destin funeste malgré leur position sociale élevée à la Mecque.",
+    "theme": "coran",
+    "source": "Coran 111 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 104
+  },
+  {
+    "id": "quiz_297",
+    "question": "Quel lien de parenté unissait précisément Abû Lahab au Prophète ﷺ ?",
+    "choix": ["A. Cousin éloigné", "B. Oncle paternel, frère d'Abû Tâlib et de 'Abdullâh", "C. Beau-frère par alliance uniquement", "D. Aucun lien de parenté direct"],
+    "reponse": "B",
+    "explication": "Abû Lahab était l'oncle paternel direct du Prophète ﷺ, frère d'Abû Tâlib et de 'Abdullâh (père du Prophète ﷺ), ce qui rend sa condamnation coranique d'autant plus significative : ni le lien de sang le plus proche, ni le statut social n'exemptent de la responsabilité de ses choix devant Allah.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.1",
+    "difficulte": "intermédiaire",
+    "jour": 104
+  },
+  {
+    "id": "quiz_298",
+    "question": "Quelle sourate décrit l'humiliation subie par ceux qui accumulent les richesses sans jamais en être rassasiés, jusqu'à leur mort ?",
+    "choix": ["A. At-Takâthur", "B. Al-Humaza", "C. Al-'Asr", "D. Al-Qâri'a"],
+    "reponse": "A",
+    "explication": "At-Takâthur (102) décrit l'obsession de l'accumulation des richesses et du nombre (enfants, biens, prestige), qui « distrait » l'homme jusqu'à sa propre visite des tombes, avant un avertissement solennel : « Vous verrez certes l'Enfer... puis vous serez interrogés ce jour-là sur les bienfaits reçus. »",
+    "theme": "coran",
+    "source": "Coran 102 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 104
+  },
+  {
+    "id": "quiz_299",
+    "question": "Quelle sourate mecquoise fustige spécifiquement le médisant et le calomniateur, qui amasse des richesses en pensant qu'elles l'éterniseront ?",
+    "choix": ["A. Al-Humaza", "B. Al-Mâ'ûn", "C. Quraysh", "D. Al-Fîl"],
+    "reponse": "A",
+    "explication": "Al-Humaza (104) condamne « tout calomniateur, médisant » qui amasse une fortune en la comptant sans cesse, croyant qu'elle le rendra immortel, avant d'annoncer son sort dans le Feu qui « atteint les cœurs », une sourate brève d'une intensité rhétorique remarquable.",
+    "theme": "coran",
+    "source": "Coran 104 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 105
+  },
+  {
+    "id": "quiz_300",
+    "question": "Quelle courte sourate mecquoise décrit celui qui néglige l'orphelin et n'incite pas à nourrir le pauvre comme un « menteur de la religion » (Ad-Dîn) malgré une pratique rituelle apparente ?",
+    "choix": ["A. Al-Mâ'ûn", "B. Al-Kawthar", "C. Al-Qadr", "D. Al-'Asr"],
+    "reponse": "A",
+    "explication": "Al-Mâ'ûn (107) dénonce sévèrement celui qui repousse l'orphelin, n'incite pas à nourrir le pauvre, et prie sans conscience réelle (négligeant sa prière ou priant par ostentation), reliant explicitement la sincérité de la pratique cultuelle à l'engagement social concret envers les plus démunis.",
+    "theme": "coran",
+    "source": "Coran 107 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 105
+  }
+]
