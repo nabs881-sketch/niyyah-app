@@ -13083,6 +13083,7 @@ var _tawhidCapsules = [];
 var _tawhidIndex = 0;
 
 function openTawhid() {
+  if (!isKnowledgeUnlocked()) { _showPaywallConnaissance(); return; }
   if (_tawhidCapsules.length === 0) {
     fetch('tawhid_capsules.json?v=' + (window.APP_VERSION || '1'))
       .then(function(r){ return r.json(); })
@@ -13146,6 +13147,7 @@ function _tawhidGo(dir) {
 }
 
 function _openTawhidJour() {
+  if (!isKnowledgeUnlocked()) { _showPaywallConnaissance(); return; }
   window._knowledgeFromFil = true;
   window._tawhidFromFil = true;
   window._tawhidFromPratique = false;
@@ -13191,6 +13193,7 @@ window._openTawhidJour = _openTawhidJour;
 var _quizSession = null;
 
 function _openQuizJour() {
+  if (!isKnowledgeUnlocked()) { _showPaywallConnaissance(); return; }
   window._quizFromFil = true;
   window._quizFromPratique = !!(window._quizFromPratique);
   var _qs = getQuizDuJour();
