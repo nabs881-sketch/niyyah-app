@@ -1,0 +1,222 @@
+[
+  {
+    "id": "quiz_061",
+    "question": "Quelle sourate équivaut, en termes de récompense, au tiers du Coran selon la parole du Prophète ﷺ ?",
+    "choix": ["A. Al-Fâtiha", "B. Al-Ikhlâs", "C. Al-Falaq", "D. Al-Kawthar"],
+    "reponse": "B",
+    "explication": "Le Prophète ﷺ a dit : « Qul Huwa Allâhu Ahad équivaut au tiers du Coran. » Sa brièveté condense l'essentiel du Tawhîd — l'unicité absolue d'Allah — ce qui constitue le tiers thématique du Coran consacré à la croyance en Allah.",
+    "theme": "coran",
+    "source": "Sahîh al-Bukhârî n°5013 ; Sahîh Muslim n°811",
+    "difficulte": "intermédiaire",
+    "jour": 22
+  },
+  {
+    "id": "quiz_062",
+    "question": "Comment le Coran désigne-t-il lui-même la sourate Al-Fâtiha, en référence à ses sept versets récités à chaque prière ?",
+    "choix": ["A. Umm al-Kitâb", "B. As-Sab' al-Mathânî (les sept versets répétés)", "C. Ash-Shifâ'", "D. Al-Kâfiya"],
+    "reponse": "B",
+    "explication": "En Al-Hijr (15:87), Allah dit : « Nous t'avons donné les sept versets qu'on répète (as-sab' al-mathânî) et le Coran sublime. » La majorité des exégètes identifient cette expression à la Fâtiha, récitée intégralement à chaque unité de prière.",
+    "theme": "coran",
+    "source": "Coran 15:87 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 22
+  },
+  {
+    "id": "quiz_063",
+    "question": "Quel verset le Prophète ﷺ a-t-il désigné comme le plus grand verset du Coran ?",
+    "choix": ["A. Le verset du Trône (Âyat al-Kursî)", "B. Le premier verset d'Al-'Alaq", "C. Le verset de la Lumière (An-Nûr 24:35)", "D. Le dernier verset d'Al-Baqara"],
+    "reponse": "A",
+    "explication": "Interrogeant Ubayy ibn Ka'b sur le plus grand verset du Coran, le Prophète ﷺ approuva sa réponse — Âyat al-Kursî (2:255) — et lui tapota la poitrine en disant : « Que le savoir te soit heureux, ô Abû al-Mundhir ! »",
+    "theme": "coran",
+    "source": "Sahîh Muslim n°810",
+    "difficulte": "intermédiaire",
+    "jour": 22
+  },
+  {
+    "id": "quiz_064",
+    "question": "Quelle vertu le Prophète ﷺ attribue-t-il aux deux derniers versets d'Al-Baqara (285-286) récités la nuit ?",
+    "choix": ["A. Ils effacent tous les péchés de l'année", "B. Ils suffisent à protéger celui qui les récite cette nuit-là", "C. Ils remplacent la prière de nuit", "D. Ils garantissent l'entrée directe au Paradis"],
+    "reponse": "B",
+    "explication": "Le Prophète ﷺ a dit : « Quiconque récite ces deux versets la nuit, ils lui suffiront. » Les savants comprennent cette suffisance comme une protection contre le mal et les épreuves de la nuit, sans dispenser des autres obligations religieuses.",
+    "theme": "coran",
+    "source": "Sahîh al-Bukhârî n°5009 ; Sahîh Muslim n°807",
+    "difficulte": "intermédiaire",
+    "jour": 23
+  },
+  {
+    "id": "quiz_065",
+    "question": "Par quels quatre éléments Allah jure-t-Il au début de la sourate At-Tîn ?",
+    "choix": ["A. Le soleil, la lune, les étoiles, la nuit", "B. Le figuier, l'olivier, le Mont Sinaï, cette Cité sûre", "C. Le vent, l'eau, le feu, la terre", "D. Le Coran, la plume, l'encre, le livre"],
+    "reponse": "B",
+    "explication": "At-Tîn (95:1-3) s'ouvre par : « Par le figuier et l'olivier ! Par le Mont Sinaï ! Et par cette Cité sûre (la Mecque) ! » Ces quatre serments évoquent symboliquement les lieux liés à 'Îsâ, Mûsâ et Muhammad ﷺ, avant d'introduire le sujet de la nature humaine.",
+    "theme": "coran",
+    "source": "Coran 95:1-3 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 23
+  },
+  {
+    "id": "quiz_066",
+    "question": "Quelle est la quantité minimale traditionnellement retenue pour la Sadaqat al-Fitr (aumône de rupture du jeûne) ?",
+    "choix": ["A. Un sa' (environ 2,5 à 3 kg) de nourriture de base", "B. Une somme fixe en monnaie locale uniquement", "C. Un dixième du revenu mensuel", "D. Un repas complet pour une personne"],
+    "reponse": "A",
+    "explication": "Ibn 'Umar rapporte que le Prophète ﷺ rendit obligatoire un sa' de dattes ou d'orge par personne à l'occasion de la rupture du jeûne de Ramadan, à verser avant la prière de l'Aïd. La conversion en monnaie fait l'objet de divergences entre écoles.",
+    "theme": "fiqh",
+    "source": "Sahîh al-Bukhârî n°1503 ; Sahîh Muslim n°984",
+    "difficulte": "intermédiaire",
+    "jour": 23
+  },
+  {
+    "id": "quiz_067",
+    "question": "Selon l'école shâfi'ite, dans quelle prière obligatoire le Qunût est-il récité en permanence, toute l'année ?",
+    "choix": ["A. Le Witr uniquement", "B. La prière de Subh (Fajr)", "C. Le Maghrib", "D. Aucune, seulement en cas de calamité"],
+    "reponse": "B",
+    "explication": "Contrairement aux Hanafites qui ne récitent le Qunût que dans le Witr, les Shâfi'ites récitent un Qunût permanent dans la seconde rak'a de Subh, après le relèvement du ruku', une divergence fiqh notable et souvent méconnue des non-spécialistes.",
+    "theme": "fiqh",
+    "source": "Al-Majmû', an-Nawawî ; Fiqh comparatif de la prière",
+    "difficulte": "avancé",
+    "jour": 24
+  },
+  {
+    "id": "quiz_068",
+    "question": "Selon l'école hanafite, à quelle fréquence le Qunût est-il récité dans le Witr ?",
+    "choix": ["A. Seulement le dernier tiers de Ramadan", "B. Dans chaque Witr, toute l'année", "C. Jamais dans le Witr", "D. Seulement le vendredi"],
+    "reponse": "B",
+    "explication": "Les Hanafites récitent le Qunût dans la troisième rak'a du Witr en toute saison, non seulement en Ramadan comme le font certains Mâlikites ou Shâfi'ites dans leur propre cadre, illustrant à nouveau la diversité des pratiques licites en fiqh.",
+    "theme": "fiqh",
+    "source": "Al-Hidâya, al-Marghînânî",
+    "difficulte": "avancé",
+    "jour": 24
+  },
+  {
+    "id": "quiz_069",
+    "question": "Comment appelle-t-on l'année de la naissance du Prophète ﷺ, marquée par l'expédition avortée d'Abraha contre la Ka'ba ?",
+    "choix": ["A. 'Âm al-Huzn (l'Année de la Tristesse)", "B. 'Âm al-Fîl (l'Année de l'Éléphant)", "C. 'Âm ar-Ramâda", "D. 'Âm al-Wufûd"],
+    "reponse": "B",
+    "explication": "Abraha, gouverneur chrétien du Yémen, marcha sur la Mecque avec une armée incluant des éléphants pour détruire la Ka'ba. Son armée fut anéantie par des oiseaux (Abâbîl) jetant des pierres d'argile, événement relaté dans la sourate Al-Fîl, l'année même de la naissance du Prophète ﷺ (~570 EC).",
+    "theme": "sira",
+    "source": "Coran 105 ; Ibn Hishâm, as-Sîra an-Nabawiyya vol.1",
+    "difficulte": "intermédiaire",
+    "jour": 24
+  },
+  {
+    "id": "quiz_070",
+    "question": "Qui régla pacifiquement, avant même le début de la prophétie, le différend entre clans qurayshites sur qui remettrait la Pierre Noire en place ?",
+    "choix": ["A. Abû Tâlib", "B. Le futur Prophète Muhammad ﷺ lui-même", "C. Waraqa ibn Nawfal", "D. 'Abd al-Muttalib"],
+    "reponse": "B",
+    "explication": "Vers l'âge de 35 ans, lors de la reconstruction de la Ka'ba, Muhammad ﷺ — encore non prophète mais déjà surnommé al-Amîn (le Digne de confiance) — proposa de placer la Pierre Noire sur un tissu porté ensemble par les chefs de tous les clans, évitant ainsi un conflit armé.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.1",
+    "difficulte": "intermédiaire",
+    "jour": 25
+  },
+  {
+    "id": "quiz_071",
+    "question": "Quel était le nom de la nourrice bédouine qui allaita le Prophète ﷺ dans le désert, selon la coutume qurayshite ?",
+    "choix": ["A. Umm Ayman", "B. Halîma as-Sa'diyya", "C. Barîra", "D. Umm Sulaym"],
+    "reponse": "B",
+    "explication": "Halîma, de la tribu bédouine des Banû Sa'd, allaita et éleva le Prophète ﷺ pendant ses premières années, suivant la coutume qurayshite d'envoyer les nourrissons se fortifier au grand air du désert, loin des maladies de la ville.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.1",
+    "difficulte": "intermédiaire",
+    "jour": 25
+  },
+  {
+    "id": "quiz_072",
+    "question": "Comment appelle-t-on l'année marquée par la mort de Khadîja et d'Abû Tâlib, survenues la même année ?",
+    "choix": ["A. 'Âm al-Fîl", "B. 'Âm al-Huzn (l'Année de la Tristesse)", "C. 'Âm al-Wufûd", "D. 'Âm ar-Ridwân"],
+    "reponse": "B",
+    "explication": "En l'an 10 de la mission, le Prophète ﷺ perdit à quelques jours d'intervalle son épouse Khadîja, son plus grand soutien, et son oncle Abû Tâlib, qui l'avait protégé face à Quraysh. Cette double perte lui valut le nom d''Âm al-Huzn.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.1",
+    "difficulte": "intermédiaire",
+    "jour": 26
+  },
+  {
+    "id": "quiz_073",
+    "question": "Quel âge avait le Prophète ﷺ lorsqu'il reçut la première révélation dans la grotte de Hirâ' ?",
+    "choix": ["A. 25 ans", "B. 33 ans", "C. 40 ans", "D. 45 ans"],
+    "reponse": "C",
+    "explication": "Le Prophète ﷺ avait 40 ans lorsque l'ange Jibrîl lui apparut dans la grotte de Hirâ' avec les premiers versets d'Al-'Alaq. Cet âge marque traditionnellement la pleine maturité, moment où un homme est jugé prêt à porter un message aussi lourd.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.1",
+    "difficulte": "intermédiaire",
+    "jour": 26
+  },
+  {
+    "id": "quiz_074",
+    "question": "Vers quelle destination le Prophète ﷺ envoya-t-il un premier groupe de musulmans persécutés fuir La Mecque ?",
+    "choix": ["A. Yathrib (Médine)", "B. La Syrie", "C. L'Abyssinie (Éthiopie)", "D. Le Yémen"],
+    "reponse": "C",
+    "explication": "Vers la cinquième année de la mission, le Prophète ﷺ conseilla à un groupe de musulmans persécutés de migrer vers l'Abyssinie, gouvernée par le Négus, un roi chrétien juste. Ce fut la toute première migration (hijra) de l'histoire islamique, précédant Médine de plusieurs années.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.1",
+    "difficulte": "intermédiaire",
+    "jour": 26
+  },
+  {
+    "id": "quiz_075",
+    "question": "Selon la majorité des savants, le sommeil profond en position allongée annule-t-il les ablutions ?",
+    "choix": ["A. Non, jamais", "B. Oui, à la différence d'un léger assoupissement assis fermement", "C. Seulement s'il dure plus d'une heure", "D. Seulement pendant le jeûne"],
+    "reponse": "B",
+    "explication": "La majorité des savants distingue le sommeil léger, où l'on reste conscient de son environnement et assis stable (n'annulant pas les ablutions), du sommeil profond couché qui relâche le corps et peut faire sortir du vent sans qu'on s'en aperçoive — ce dernier annule les ablutions.",
+    "theme": "fiqh",
+    "source": "Al-Majmû', an-Nawawî ; Fiqh comparatif de la purification",
+    "difficulte": "intermédiaire",
+    "jour": 27
+  },
+  {
+    "id": "quiz_076",
+    "question": "Quelles sont les trois catégories classiques du Tawhîd systématisées par les savants sunnites ?",
+    "choix": ["A. Rububiyya, 'Ulûhiyya, Asmâ' wa Sifât", "B. Îmân, Islâm, Ihsân", "C. Dhât, Sifât, Af'âl", "D. 'Ilm, Qudra, Irâda"],
+    "reponse": "A",
+    "explication": "Les savants, dont Ibn Taymiyya, ont systématisé le Tawhîd en trois catégories : Rububiyya (unicité du Seigneur et Créateur), 'Ulûhiyya (unicité dans l'adoration) et Asmâ' wa Sifât (unicité dans les Noms et Attributs divins). Une classification pédagogique, non une invention théologique nouvelle.",
+    "theme": "aqida",
+    "source": "Ibn Taymiyya, al-'Aqîda al-Wâsitiyya",
+    "difficulte": "avancé",
+    "jour": 27
+  },
+  {
+    "id": "quiz_077",
+    "question": "Comment s'appelle le bassin/fleuve du Paradis promis au Prophète ﷺ, mentionné dans une courte sourate du Coran ?",
+    "choix": ["A. Al-Kawthar", "B. As-Salsabîl", "C. Tasnîm", "D. Al-Firdaws"],
+    "reponse": "A",
+    "explication": "La sourate Al-Kawthar (108) annonce : « Nous t'avons certes accordé al-Kawthar. » Les commentateurs l'identifient à un fleuve ou bassin du Paradis d'une abondance et d'une pureté incomparables, dont le Prophète ﷺ abreuvera sa communauté au Jour du Jugement.",
+    "theme": "aqida",
+    "source": "Coran 108:1 ; Sahîh Muslim n°400",
+    "difficulte": "intermédiaire",
+    "jour": 27
+  },
+  {
+    "id": "quiz_078",
+    "question": "Quel événement précipita la conversion de 'Umar ibn al-Khattâb à l'Islam, lui qui s'était pourtant juré de tuer le Prophète ﷺ ?",
+    "choix": ["A. Un rêve prémonitoire", "B. Trouver sa sœur en train de réciter la sourate Tâ-Hâ", "C. Une bataille perdue par Quraysh", "D. Un conseil d'Abû Jahl"],
+    "reponse": "B",
+    "explication": "En chemin pour tuer le Prophète ﷺ, 'Umar apprit la conversion de sa sœur Fâtima et de son mari. Furieux, il les frappa puis, ému par les versets de Tâ-Hâ qu'ils récitaient, demanda à les lire lui-même. Bouleversé, il se rendit ensuite auprès du Prophète ﷺ pour se convertir.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.1",
+    "difficulte": "intermédiaire",
+    "jour": 28
+  },
+  {
+    "id": "quiz_079",
+    "question": "Comment appelle-t-on le pont que chaque être humain devra traverser au-dessus de l'Enfer au Jour du Jugement ?",
+    "choix": ["A. Al-Mîzân", "B. As-Sirât", "C. Al-A'râf", "D. Al-Hawd"],
+    "reponse": "B",
+    "explication": "As-Sirât est décrit dans la Sunna comme un pont plus fin qu'un cheveu et plus tranchant qu'une épée, tendu au-dessus de l'Enfer. Chacun le traversera selon la valeur de ses œuvres, certains passant tel l'éclair, d'autres tombant dans le Feu.",
+    "theme": "aqida",
+    "source": "Sahîh al-Bukhârî n°806 ; Sahîh Muslim n°182",
+    "difficulte": "intermédiaire",
+    "jour": 28
+  },
+  {
+    "id": "quiz_080",
+    "question": "Comment appelle-t-on le livre où furent consignés, avant même la création du monde, les destins de toute la création ?",
+    "choix": ["A. Al-Kitâb al-Mubîn", "B. Al-Lawh al-Mahfûz (la Table Préservée)", "C. Sahîfat al-A'mâl", "D. Umm al-Kitâb seulement"],
+    "reponse": "B",
+    "explication": "Al-Burûj (85:22) mentionne « un Coran glorieux, sur une Table préservée (Lawh Mahfûz) ». Un hadith précise qu'Allah y consigna les destinées de toute la création cinquante mille ans avant de créer les cieux et la terre.",
+    "theme": "aqida",
+    "source": "Coran 85:22 ; Sahîh Muslim n°2653",
+    "difficulte": "avancé",
+    "jour": 28
+  }
+]
