@@ -1,0 +1,222 @@
+[
+  {
+    "id": "quiz_081",
+    "question": "La Nuit du Destin (Laylat al-Qadr) équivaut, selon le Coran, à combien de mois d'adoration ?",
+    "choix": ["A. 100 mois", "B. 1000 mois", "C. 10 000 mois", "D. Un mois entier"],
+    "reponse": "B",
+    "explication": "Al-Qadr (97:3) déclare : « La Nuit du Destin est meilleure que mille mois. » Adorer Allah cette nuit-là équivaut ainsi à plus de 83 années d'adoration continue, une miséricorde immense accordée à cette communauté à la durée de vie plus courte que les précédentes.",
+    "theme": "coran",
+    "source": "Coran 97:3 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 29
+  },
+  {
+    "id": "quiz_082",
+    "question": "Quelle sourate porte comme titre une seule lettre de l'alphabet arabe, qui constitue aussi son unique verset d'ouverture ?",
+    "choix": ["A. Yâ-Sîn", "B. Qâf", "C. Tâ-Hâ", "D. Al-Kahf"],
+    "reponse": "B",
+    "explication": "La sourate Qâf (50) tire son nom de sa première lettre disjointe, qui la compose entièrement à elle seule. Yâ-Sîn et Tâ-Hâ sont, elles, composées de deux lettres. Sâd (38) et Nûn (68) suivent le même principe qu'une lettre unique.",
+    "theme": "coran",
+    "source": "Coran 50:1 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 29
+  },
+  {
+    "id": "quiz_083",
+    "question": "Quelle sourate s'ouvre par la combinaison de lettres disjointes « Hâ Mîm » suivie séparément de « 'Ayn Sîn Qâf », un cas unique dans le Coran ?",
+    "choix": ["A. Ash-Shûrâ", "B. Ghâfir", "C. Fussilat", "D. Az-Zukhruf"],
+    "reponse": "A",
+    "explication": "Ash-Shûrâ (42) est la seule sourate où deux groupes distincts de lettres disjointes ouvrent le texte : Hâ Mîm, puis 'Ayn Sîn Qâf. Les autres sourates du groupe des Hawâmîm (commençant par Hâ Mîm) ne comportent qu'un seul groupe de lettres.",
+    "theme": "coran",
+    "source": "Coran 42:1-2 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 29
+  },
+  {
+    "id": "quiz_084",
+    "question": "Selon Ibn 'Abbâs, que signifiait la révélation de la sourate An-Nasr pour le Prophète ﷺ ?",
+    "choix": ["A. L'annonce d'une future conquête", "B. Un signe discret que sa mort approchait", "C. Une simple exhortation à la gratitude", "D. Une menace contre les hypocrites"],
+    "reponse": "B",
+    "explication": "Ibn 'Abbâs rapporte que 'Umar le consultait parmi les jeunes Compagnons ; interrogé sur cette sourate, il expliqua qu'elle annonçait, à travers l'ordre de glorifier Allah et de demander pardon, l'approche de la mort du Prophète ﷺ — un signe que les Compagnons plus âgés n'avaient pas perçu.",
+    "theme": "coran",
+    "source": "Sahîh al-Bukhârî n°4970",
+    "difficulte": "avancé",
+    "jour": 30
+  },
+  {
+    "id": "quiz_085",
+    "question": "Quelle est la durée autorisée pour essuyer les chaussettes en cuir (mash 'alal-khuffayn) au lieu de laver les pieds ?",
+    "choix": ["A. Un jour et une nuit pour le résident, trois pour le voyageur", "B. Toujours 24h, résident ou voyageur", "C. Trois jours pour tous", "D. Aucune limite tant qu'elles restent portées"],
+    "reponse": "A",
+    "explication": "Le hadith de 'Alî précise : un jour et une nuit pour le résident, trois jours et trois nuits pour le voyageur, décompte démarrant à partir du premier passage d'essuyage effectué après une annulation des ablutions, non depuis leur mise en place.",
+    "theme": "fiqh",
+    "source": "Sahîh Muslim n°276",
+    "difficulte": "intermédiaire",
+    "jour": 30
+  },
+  {
+    "id": "quiz_086",
+    "question": "Contrairement aux autres écoles, sur quel type de chaussettes l'école mâlikite classique restreint-elle traditionnellement le mash (essuyage) ?",
+    "choix": ["A. Le cuir épais uniquement (khuff)", "B. N'importe quel tissu", "C. Uniquement les chaussettes en laine", "D. Aucune restriction"],
+    "reponse": "A",
+    "explication": "La position classique mâlikite limite le mash aux chaussettes en cuir épais (khuff), alors que des savants hanbalites et certains hanafites tardifs ont étendu la permission aux chaussettes épaisses en tissu remplissant les mêmes conditions d'opacité et de solidité.",
+    "theme": "fiqh",
+    "source": "Fiqh comparatif de la purification, al-Mudawwana",
+    "difficulte": "avancé",
+    "jour": 30
+  },
+  {
+    "id": "quiz_087",
+    "question": "Selon la majorité des écoles, à quel âge la majorité légale (bulûgh) est-elle atteinte en l'absence de signes physiques de puberté ?",
+    "choix": ["A. 12 ans lunaires", "B. 15 ans lunaires", "C. 18 ans lunaires", "D. 21 ans lunaires"],
+    "reponse": "B",
+    "explication": "La majorité des savants retient 15 ans lunaires comme âge de la puberté légale à défaut de signes physiques. Les Hanafites divergent en retenant un âge plus tardif — généralement 18 ans pour le garçon, 17 pour la fille — en l'absence de ces mêmes signes.",
+    "theme": "fiqh",
+    "source": "Fiqh comparatif, Al-Mughnî d'Ibn Qudâma",
+    "difficulte": "avancé",
+    "jour": 31
+  },
+  {
+    "id": "quiz_088",
+    "question": "Selon l'école hanafite, quelle est la durée minimale requise pour un I'tikâf surérogatoire (nâfila) ?",
+    "choix": ["A. Un jour complet", "B. Une nuit entière", "C. Un instant, même bref, dans la mosquée", "D. Dix jours minimum"],
+    "reponse": "C",
+    "explication": "Les Hanafites considèrent que le simple fait de rester dans la mosquée un court instant avec l'intention d'I'tikâf suffit à valider un I'tikâf surérogatoire, à la différence de l'I'tikâf lié à un vœu ou pratiqué durant les dix derniers jours de Ramadan, qui suit des règles plus strictes.",
+    "theme": "fiqh",
+    "source": "Al-Hidâya, al-Marghînânî",
+    "difficulte": "avancé",
+    "jour": 31
+  },
+  {
+    "id": "quiz_089",
+    "question": "Selon un hadith listant les superlatifs parmi les Compagnons, qui est désigné comme le plus savant en matière d'héritage (farâ'id) ?",
+    "choix": ["A. Zayd ibn Thâbit", "B. Mu'âdh ibn Jabal", "C. Ubayy ibn Ka'b", "D. Abû 'Ubayda ibn al-Jarrâh"],
+    "reponse": "A",
+    "explication": "Le Prophète ﷺ énuméra plusieurs excellences parmi ses Compagnons : Zayd ibn Thâbit comme le plus savant en farâ'id, Mu'âdh ibn Jabal en licite et illicite, Ubayy ibn Ka'b comme meilleur récitateur, chacun expert reconnu dans son domaine.",
+    "theme": "sira",
+    "source": "Sunan Ibn Mâja n°154 ; Musnad Ahmad",
+    "difficulte": "avancé",
+    "jour": 31
+  },
+  {
+    "id": "quiz_090",
+    "question": "Dans ce même hadith des superlatifs, quel Compagnon est désigné comme le plus savant en matière de licite et d'illicite (halâl wa harâm) ?",
+    "choix": ["A. Mu'âdh ibn Jabal", "B. Zayd ibn Thâbit", "C. Sâlim mawlâ Abî Hudhayfa", "D. 'Abdullâh ibn Mas'ûd"],
+    "reponse": "A",
+    "explication": "Mu'âdh ibn Jabal fut également envoyé comme juge et gouverneur au Yémen en raison de sa maîtrise du fiqh, conformément à cette réputation établie de son vivant par le Prophète ﷺ lui-même.",
+    "theme": "sira",
+    "source": "Sunan Ibn Mâja n°154 ; Musnad Ahmad",
+    "difficulte": "avancé",
+    "jour": 32
+  },
+  {
+    "id": "quiz_091",
+    "question": "D'où était originaire Salmân al-Fârisî avant son long cheminement spirituel qui l'a mené à l'Islam ?",
+    "choix": ["A. De Syrie, chrétien dès l'enfance", "B. De Perse, élevé dans le zoroastrisme", "C. D'Abyssinie", "D. Du Yémen, judaïsé"],
+    "reponse": "B",
+    "explication": "Salmân, né en Perse dans une famille zoroastrienne, quitta sa région natale à la recherche de la vérité, passant par plusieurs moines chrétiens successifs avant d'être guidé, selon son propre récit, vers l'attente d'un prophète annoncé, qu'il retrouva enfin à Médine.",
+    "theme": "sira",
+    "source": "Musnad Ahmad ; Ibn Hishâm, as-Sîra an-Nabawiyya",
+    "difficulte": "intermédiaire",
+    "jour": 32
+  },
+  {
+    "id": "quiz_092",
+    "question": "Combien de fois le Prophète ﷺ accomplit-il le pèlerinage (Hajj) après l'Hégire ?",
+    "choix": ["A. Trois fois", "B. Deux fois", "C. Une seule fois", "D. Il n'a jamais fait le Hajj lui-même"],
+    "reponse": "C",
+    "explication": "Le Prophète ﷺ n'accomplit le Hajj complet qu'une seule fois après l'Hégire, en l'an 10 H, connu comme Hijjat al-Wadâ' (le Pèlerinage d'Adieu), durant lequel il prononça son célèbre sermon avant de décéder quelques mois plus tard.",
+    "theme": "sira",
+    "source": "Sahîh Muslim n°1218 ; Ibn Kathîr, al-Bidâya wa'n-Nihâya",
+    "difficulte": "intermédiaire",
+    "jour": 32
+  },
+  {
+    "id": "quiz_093",
+    "question": "Comment appelle-t-on l'année 9 H, marquée par l'afflux de nombreuses délégations tribales venues faire allégeance à l'Islam après la conquête de la Mecque ?",
+    "choix": ["A. 'Âm al-Fîl", "B. 'Âm al-Wufûd (l'Année des Délégations)", "C. 'Âm al-Huzn", "D. 'Âm ar-Ramâda"],
+    "reponse": "B",
+    "explication": "Après la conquête pacifique de la Mecque et la victoire de Hunayn, de nombreuses tribus arabes envoyèrent des délégations à Médine pour faire allégeance à l'Islam, donnant à cette année le nom d''Âm al-Wufûd.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.2",
+    "difficulte": "intermédiaire",
+    "jour": 33
+  },
+  {
+    "id": "quiz_094",
+    "question": "Selon Ibn 'Abbâs, quelle est la différence entre al-Kursî et al-'Arsh (le Trône) ?",
+    "choix": ["A. Ce sont deux noms pour la même chose", "B. Le Kursî englobe les cieux et la terre, mais le Trône est incommensurablement plus grand encore", "C. Le Trône est plus petit que le Kursî", "D. Le Kursî se trouve sur Terre, le Trône dans les cieux"],
+    "reponse": "B",
+    "explication": "Ibn 'Abbâs commenta le verset du Kursî (2:255) en expliquant que les sept cieux et les sept terres, comparés au Kursî, sont comme un anneau jeté dans un désert immense — et le Trône surpasse encore le Kursî d'une grandeur que seul Allah connaît.",
+    "theme": "aqida",
+    "source": "Tafsîr Ibn Kathîr, 2:255 ; rapporté par Ibn Jarîr at-Tabarî",
+    "difficulte": "avancé",
+    "jour": 33
+  },
+  {
+    "id": "quiz_095",
+    "question": "Quel ange est chargé de souffler dans la Trompe (as-Sûr) annonçant la fin du monde puis la Résurrection ?",
+    "choix": ["A. Jibrîl", "B. Mîkâ'îl", "C. Isrâfîl", "D. 'Izrâ'îl"],
+    "reponse": "C",
+    "explication": "Isrâfîl est l'ange chargé, selon la Sunna, de souffler dans la Trompe. Il est décrit comme se tenant prêt depuis toujours, la trompe portée à ses lèvres, attendant l'ordre d'Allah pour souffler le premier signal de l'anéantissement de la création.",
+    "theme": "aqida",
+    "source": "Sunan at-Tirmidhî n°2431 ; Tafsîr Ibn Kathîr, 39:68",
+    "difficulte": "intermédiaire",
+    "jour": 34
+  },
+  {
+    "id": "quiz_096",
+    "question": "Selon la position la plus répandue, combien de souffles dans la Trompe sont mentionnés dans le Coran ?",
+    "choix": ["A. Un seul souffle", "B. Deux souffles : anéantissement puis résurrection", "C. Trois souffles distincts", "D. Sept souffles successifs"],
+    "reponse": "B",
+    "explication": "An-Naml et Az-Zumar évoquent ce double souffle : le premier provoquera l'effroi puis l'anéantissement de toute la création à l'exception de qui Allah voudra épargner ; le second ressuscitera l'humanité entière pour le Jugement.",
+    "theme": "aqida",
+    "source": "Coran 39:68 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 34
+  },
+  {
+    "id": "quiz_097",
+    "question": "Le châtiment de la tombe ('adhâb al-qabr), bien qu'absent du Coran sous ce terme exact, est-il affirmé par Ahl as-Sunna ?",
+    "choix": ["A. Non, seulement une croyance populaire sans fondement", "B. Oui, établi par des indices coraniques et une multitude de hadiths, bien que certains l'aient nié historiquement", "C. Oui, mais uniquement pour les mécréants", "D. La question ne fait l'objet d'aucun débat historique"],
+    "reponse": "B",
+    "explication": "Ahl as-Sunna affirme le châtiment de la tombe à partir de versets suggestifs (Ghâfir 40:46) et d'une multitude de hadiths mutawâtir. Certains groupes mu'tazilites l'ont historiquement nié ou minimisé, position rejetée par la quasi-unanimité des savants sunnites.",
+    "theme": "aqida",
+    "source": "Coran 40:46 ; Sahîh al-Bukhârî n°1372",
+    "difficulte": "avancé",
+    "jour": 34
+  },
+  {
+    "id": "quiz_098",
+    "question": "Quelle sourate évoque explicitement le miel et ses vertus curatives, produit par les abeilles inspirées par Allah ?",
+    "choix": ["A. Al-Baqara", "B. An-Nahl (les Abeilles)", "C. An-Naml (les Fourmis)", "D. Al-Mâ'ida"],
+    "reponse": "B",
+    "explication": "An-Nahl (16:69) décrit le processus par lequel l'abeille, inspirée par Allah, produit un breuvage aux couleurs variées « dans lequel il y a une guérison pour les gens ». C'est de cette sourate que le miel tire l'essentiel de sa place en médecine prophétique.",
+    "theme": "coran",
+    "source": "Coran 16:68-69 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 35
+  },
+  {
+    "id": "quiz_099",
+    "question": "Quel était le nom du chameau personnel du Prophète ﷺ, notamment monté lors de la Hijra et à Badr ?",
+    "choix": ["A. Al-'Adbâ'", "B. Al-Qaswâ'", "C. Ad-Duldul", "D. Al-Yahmûm"],
+    "reponse": "B",
+    "explication": "Al-Qaswâ' était la chamelle du Prophète ﷺ, célèbre pour l'avoir porté lors de la Hijra vers Médine — son arrêt spontané désignant l'emplacement de la future mosquée — puis lors de plusieurs expéditions majeures, dont Badr.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°3906 ; Ibn Hishâm, as-Sîra",
+    "difficulte": "avancé",
+    "jour": 35
+  },
+  {
+    "id": "quiz_100",
+    "question": "Combien de temps le Prophète ﷺ et Abû Bakr restèrent-ils cachés dans la grotte de Thawr durant la Hijra ?",
+    "choix": ["A. Une seule nuit", "B. Trois jours et trois nuits", "C. Sept jours", "D. Un mois entier"],
+    "reponse": "B",
+    "explication": "Le Prophète ﷺ et Abû Bakr se cachèrent trois jours et trois nuits dans la grotte de Thawr, au sud de la Mecque — direction opposée à Médine — pour échapper aux poursuivants qurayshites, avant de reprendre la route vers Yathrib. Le Coran y fait allusion en At-Tawba (9:40).",
+    "theme": "sira",
+    "source": "Coran 9:40 ; Sahîh al-Bukhârî n°3652",
+    "difficulte": "intermédiaire",
+    "jour": 35
+  }
+]
