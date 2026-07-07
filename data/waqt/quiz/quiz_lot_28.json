@@ -1,0 +1,222 @@
+[
+  {
+    "id": "quiz_541",
+    "question": "Quelle sourate s'ouvre en qualifiant le traité de Hudaybiyya de « victoire éclatante » (fath mubîn), alors qu'il semblait pourtant être une concession diplomatique difficile pour les musulmans sur le moment ?",
+    "choix": ["A. Al-Fath", "B. Al-Ahzâb uniquement", "C. Al-Hujurât uniquement", "D. Al-Mâ'ida uniquement"],
+    "reponse": "A",
+    "explication": "Al-Fath (48:1) s'ouvre par : « Nous t'avons accordé une victoire éclatante. » Bien que le traité de Hudaybiyya ait paru défavorable à plusieurs Compagnons sur l'instant, il ouvrit en réalité une période de paix permettant une expansion massive de l'Islam, révélant sa portée stratégique véritable a posteriori.",
+    "theme": "coran",
+    "source": "Coran 48:1 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 190
+  },
+  {
+    "id": "quiz_542",
+    "question": "Quelle sourate répète deux fois la formule « avec la difficulté vient certes une facilité », consolant le Prophète ﷺ dans un moment d'épreuve ?",
+    "choix": ["A. Al-Inshirâh", "B. Ad-Duhâ uniquement", "C. Al-'Alaq uniquement", "D. Al-Qadr uniquement"],
+    "reponse": "A",
+    "explication": "Al-Inshirâh (94:5-6) répète : « Car avec la difficulté est certes une facilité. Avec la difficulté est certes une facilité. » Cette double affirmation, plutôt qu'une simple promesse future, souligne que la facilité accompagne déjà la difficulté, non qu'elle la suit seulement après coup.",
+    "theme": "coran",
+    "source": "Coran 94:5-6 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 190
+  },
+  {
+    "id": "quiz_543",
+    "question": "Quel verset propose un défi de mubâhala (imprécation mutuelle) à la délégation chrétienne de Najrân venue débattre de la nature de 'Îsâ avec le Prophète ﷺ ?",
+    "choix": ["A. Âl 'Imrân 3:61", "B. Al-Mâ'ida 5:3", "C. An-Nisâ' 4:171", "D. At-Tawba 9:29"],
+    "reponse": "A",
+    "explication": "Âl 'Imrân (3:61) propose, après l'échec du débat théologique, que chaque partie amène ses fils, ses femmes et elle-même pour invoquer solennellement la malédiction d'Allah sur les menteurs de l'un ou l'autre camp. La délégation de Najrân, prudente, déclina finalement ce défi et préféra négocier un accord de tribut pacifique.",
+    "theme": "coran",
+    "source": "Coran 3:61 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 190
+  },
+  {
+    "id": "quiz_544",
+    "question": "Selon la Sunna, Dhuhr et 'Asr sont-ils regroupés pour les pèlerins durant leur station à 'Arafât, indépendamment de la question générale du voyage ?",
+    "choix": ["A. Oui, ce regroupement fait partie intégrante du rituel du Hajj lui-même à 'Arafât, pratiqué par le Prophète ﷺ", "B. Non, chaque prière est priée séparément à son heure normale", "C. Seul Maghrib et 'Ishâ' sont regroupés à 'Arafât", "D. Aucun regroupement n'a jamais eu lieu à 'Arafât"],
+    "reponse": "A",
+    "explication": "Le Prophète ﷺ regroupa Dhuhr et 'Asr en avançant 'Asr à l'heure de Dhuhr durant sa station à 'Arafât, une pratique rituelle spécifique au Hajj, distincte de la simple permission générale accordée au voyageur, et suivie par la quasi-totalité des pèlerins encore aujourd'hui.",
+    "theme": "fiqh",
+    "source": "Sahîh Muslim n°1218",
+    "difficulte": "intermédiaire",
+    "jour": 191
+  },
+  {
+    "id": "quiz_545",
+    "question": "Selon la Sunna, un pèlerin peut-il se parfumer juste avant d'entrer en état d'ihrâm, même si l'odeur persiste après le début du rituel ?",
+    "choix": ["A. Oui, 'Â'isha rapporte avoir elle-même parfumé le Prophète ﷺ avant son entrée en ihrâm, l'odeur résiduelle n'étant pas problématique une fois l'ihrâm commencé", "B. Non, aucun parfum n'est autorisé même avant l'ihrâm", "C. Seuls les hommes peuvent se parfumer avant l'ihrâm", "D. Le parfum doit obligatoirement disparaître avant le début de l'ihrâm"],
+    "reponse": "A",
+    "explication": "'Â'isha rapporte : « Je parfumais le Prophète ﷺ pour son ihrâm avant qu'il n'entre en ihrâm. » L'interdiction du parfum s'applique une fois l'état d'ihrâm effectivement entamé pour de nouvelles applications, non à la persistance résiduelle d'un parfum appliqué juste avant.",
+    "theme": "fiqh",
+    "source": "Sahîh al-Bukhârî n°1539 ; Sahîh Muslim n°1189",
+    "difficulte": "avancé",
+    "jour": 191
+  },
+  {
+    "id": "quiz_546",
+    "question": "Si un pèlerin en ihrâm oublie et porte par erreur un vêtement cousu, que doit-il faire dès qu'il s'en aperçoit ?",
+    "choix": ["A. Le retirer immédiatement dès qu'il se souvient, sans expiation requise si l'erreur fut réellement involontaire et rapidement corrigée", "B. Son Hajj est automatiquement invalidé sans recours possible", "C. Il doit obligatoirement payer une expiation même s'il l'a retiré immédiatement", "D. Il peut continuer à le porter sans problème jusqu'à la fin du Hajj"],
+    "reponse": "A",
+    "explication": "La majorité des savants considère que l'oubli involontaire, promptement corrigé dès la prise de conscience, ne nécessite aucune expiation, conformément au principe général selon lequel l'erreur et l'oubli sont pardonnés en Islam tant qu'ils ne relèvent pas de la négligence délibérée ou prolongée.",
+    "theme": "fiqh",
+    "source": "Fiqh classique du Hajj ; principe général de l'erreur et de l'oubli",
+    "difficulte": "avancé",
+    "jour": 191
+  },
+  {
+    "id": "quiz_547",
+    "question": "Comment se conclut finalement l'épisode de la délégation chrétienne de Najrân face au défi de mubâhala proposé par le Coran ?",
+    "choix": ["A. La délégation déclina le défi et négocia à la place un accord de paix incluant le paiement d'un tribut (jizya)", "B. La mubâhala eut effectivement lieu avec des conséquences immédiates rapportées", "C. La délégation se convertit immédiatement à l'Islam sur place", "D. Aucun accord ne fut jamais trouvé"],
+    "reponse": "A",
+    "explication": "Consciente de l'enjeu et prudente face à un serment solennel aux conséquences potentiellement graves, la délégation de Najrân préféra décliner le défi de mubâhala et négocier un accord pacifique, incluant le paiement d'un tribut annuel en échange de leur autonomie religieuse continue sous protection musulmane.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.2",
+    "difficulte": "avancé",
+    "jour": 192
+  },
+  {
+    "id": "quiz_548",
+    "question": "Comment appelle-t-on le groupe de Compagnons pauvres et sans famille à Médine, qui vivaient dans un espace attenant à la mosquée et se consacraient pleinement à l'apprentissage religieux ?",
+    "choix": ["A. Ashâb as-Suffa (les Gens du Banc)", "B. Al-Muhâjirûn uniquement", "C. Ahl al-Kahf", "D. Al-Qurrâ' uniquement"],
+    "reponse": "A",
+    "explication": "Les Ashâb as-Suffa, dépourvus de famille ou de logement propre à Médine, vivaient dans une annexe couverte de la mosquée, entièrement dévoués à l'apprentissage du Coran et de la Sunna auprès du Prophète ﷺ, soutenus matériellement par les dons des autres Compagnons plus aisés.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°442 ; Sahîh Muslim n°2038",
+    "difficulte": "intermédiaire",
+    "jour": 192
+  },
+  {
+    "id": "quiz_549",
+    "question": "Pourquoi Abû Hurayra, membre des Ashâb as-Suffa, devint-il le Compagnon ayant transmis le plus grand nombre de hadiths dans l'histoire islamique ?",
+    "choix": ["A. Sa présence quasi permanente aux côtés du Prophète ﷺ, faute d'occupations commerciales ou familiales le détournant, lui permit de mémoriser un nombre exceptionnel de ses paroles et de ses actes", "B. Il inventa des hadiths pour accroître son influence", "C. Il fut le premier Compagnon converti", "D. Il occupa un poste de calife après le Prophète ﷺ"],
+    "reponse": "A",
+    "explication": "Abû Hurayra explique lui-même sa transmission exceptionnelle par sa disponibilité constante auprès du Prophète ﷺ, contrairement à d'autres Compagnons occupés par le commerce ou les affaires agricoles. Sa mémoire remarquable, conjuguée à cette proximité continue durant environ trois ans, en fit le narrateur de plus de 5000 hadiths authentifiés.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°2350",
+    "difficulte": "intermédiaire",
+    "jour": 192
+  },
+  {
+    "id": "quiz_550",
+    "question": "Selon un hadith, comment le Prophète ﷺ relie-t-il l'amour et la haine envers les Ansâr à la foi et à l'hypocrisie ?",
+    "choix": ["A. « Le signe de la foi est l'amour des Ansâr, et le signe de l'hypocrisie est la haine des Ansâr »", "B. Aucun lien de ce type n'est établi dans la Sunna", "C. Il concerne uniquement les Muhâjirûn, jamais les Ansâr", "D. Il s'applique uniquement aux femmes"],
+    "reponse": "A",
+    "explication": "Le Prophète ﷺ a dit : « Le signe de la foi est l'amour des Ansâr, et le signe de l'hypocrisie est la haine des Ansâr. » Une reconnaissance solennelle envers ceux qui accueillirent et soutinrent matériellement les Muhâjirûn à Médine, faisant de l'attachement envers eux un véritable indicateur de sincérité de la foi.",
+    "theme": "aqida",
+    "source": "Sahîh al-Bukhârî n°17 ; Sahîh Muslim n°74",
+    "difficulte": "intermédiaire",
+    "jour": 193
+  },
+  {
+    "id": "quiz_551",
+    "question": "Selon un hadith, le Coran lui-même peut-il intercéder en faveur de celui qui l'a récité et pratiqué régulièrement, au Jour du Jugement ?",
+    "choix": ["A. Oui, un hadith affirme que le Coran interviendra en faveur de son compagnon (celui qui l'a récité et respecté)", "B. Non, seul le Prophète ﷺ peut intercéder", "C. Cette forme d'intercession concerne uniquement les anges", "D. Le Coran n'est jamais mentionné comme source d'intercession dans la Sunna"],
+    "reponse": "A",
+    "explication": "Le Prophète ﷺ a dit : « Récitez le Coran, car il viendra le Jour de la Résurrection comme intercesseur en faveur de ses compagnons [ceux qui l'ont pratiqué]. » Une intercession distincte de celle du Prophète ﷺ, accordée symboliquement au texte révélé lui-même en faveur de ceux qui l'ont honoré par leur pratique assidue.",
+    "theme": "aqida",
+    "source": "Sahîh Muslim n°804",
+    "difficulte": "avancé",
+    "jour": 193
+  },
+  {
+    "id": "quiz_552",
+    "question": "Comment la sourate Al-Fath décrit-elle les Compagnons du Prophète ﷺ dans son dernier verset, à travers un contraste entre fermeté et compassion ?",
+    "choix": ["A. « Rudes envers les mécréants, miséricordieux entre eux »", "B. « Faibles envers tous sans distinction »", "C. « Indifférents à toute relation sociale »", "D. « Uniquement combattants, sans autre qualité »"],
+    "reponse": "A",
+    "explication": "Al-Fath (48:29) décrit les Compagnons du Prophète ﷺ : « Rudes (fermes) envers les mécréants, miséricordieux entre eux. » Ce contraste souligne un équilibre entre la fermeté nécessaire dans un contexte de conflit ouvert et la tendresse fraternelle cultivée au sein de la communauté croyante elle-même.",
+    "theme": "coran",
+    "source": "Coran 48:29 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 193
+  },
+  {
+    "id": "quiz_553",
+    "question": "Selon le Coran, la chasse est-elle interdite durant l'état d'ihrâm, avec une expiation requise en cas de transgression ?",
+    "choix": ["A. Oui, Al-Mâ'ida interdit explicitement la chasse en ihrâm et impose une compensation en cas de manquement", "B. Non, la chasse reste totalement permise en toute circonstance", "C. Elle est interdite uniquement pour les gros gibiers", "D. L'interdiction concerne uniquement le pèlerinage du Hajj, pas la 'Umra"],
+    "reponse": "A",
+    "explication": "Al-Mâ'ida (5:95) déclare : « Ô croyants, ne tuez pas de gibier alors que vous êtes en état d'ihrâm. Quiconque parmi vous le tue délibérément devra une compensation équivalente en bétail. » Cette interdiction souligne le caractère sacré de l'état d'ihrâm, étendant la paix rituelle jusqu'à la vie animale environnante.",
+    "theme": "fiqh",
+    "source": "Coran 5:95 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 194
+  },
+  {
+    "id": "quiz_554",
+    "question": "Lors de la conversion de la tribu de Thaqîf (Tâ'if), quelle demande particulière firent-ils au Prophète ﷺ concernant leur idole Al-Lât ?",
+    "choix": ["A. Ils demandèrent un délai temporaire avant de la détruire, ce que le Prophète ﷺ finit par accorder puis fit exécuter par des Compagnons peu après leur départ", "B. Ils refusèrent totalement de se convertir sans garantie", "C. Ils exigèrent de garder l'idole indéfiniment sans discussion possible", "D. Aucune négociation de ce type n'eut lieu"],
+    "reponse": "A",
+    "explication": "Les envoyés de Thaqîf, négociant leur conversion collective, demandèrent un délai avant la destruction de leur idole Al-Lât, par crainte de la réaction de leur peuple. Le Prophète ﷺ leur accorda finalement un court délai symbolique, avant d'envoyer des Compagnons (dont al-Mughîra ibn Shu'ba, lui-même de cette tribu) démolir l'idole peu après leur retour.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.2",
+    "difficulte": "avancé",
+    "jour": 194
+  },
+  {
+    "id": "quiz_555",
+    "question": "Selon un hadith, l'aumône ou l'invocation faite par un vivant en faveur d'un parent musulman décédé peut-elle profiter à ce dernier ?",
+    "choix": ["A. Oui, un Compagnon demanda si l'aumône pouvait bénéficier à sa mère décédée sans testament, et le Prophète ﷺ confirma que oui", "B. Non, rien de ce que fait un vivant ne peut jamais bénéficier à un défunt", "C. Seule la prière peut bénéficier au défunt, jamais l'aumône", "D. Cette question n'a jamais été posée au Prophète ﷺ"],
+    "reponse": "A",
+    "explication": "Sa'd ibn 'Ubâda demanda si faire l'aumône au nom de sa mère décédée sans testament lui serait bénéfique. Le Prophète ﷺ confirma que oui, l'encourageant à creuser un puits en son nom — fondement de la pratique répandue de la sadaqa jâriya (aumône continue) offerte au nom des défunts.",
+    "theme": "aqida",
+    "source": "Sahîh al-Bukhârî n°2756",
+    "difficulte": "intermédiaire",
+    "jour": 194
+  },
+  {
+    "id": "quiz_556",
+    "question": "Quel verset établit le principe de réconciliation entre deux groupes de croyants en conflit armé, appelant à combattre celui qui refuse de se soumettre à un arbitrage équitable ?",
+    "choix": ["A. Al-Hujurât 49:9", "B. Al-Anfâl 8:1", "C. At-Tawba 9:5", "D. Al-Mumtahana 60:8"],
+    "reponse": "A",
+    "explication": "Al-Hujurât (49:9) établit un principe fondamental de médiation interne : « Si deux groupes de croyants se combattent, réconciliez-les. Si l'un d'eux transgresse envers l'autre, combattez celui qui transgresse jusqu'à ce qu'il revienne à l'ordre d'Allah. » Un fondement coranique explicite pour la résolution pacifique des conflits internes à la communauté musulmane.",
+    "theme": "coran",
+    "source": "Coran 49:9 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 195
+  },
+  {
+    "id": "quiz_557",
+    "question": "Selon la majorité des écoles, un voyageur non pressé et disposant de suffisamment de temps est-il tenu de regrouper ses prières, ou peut-il les prier séparément à leur heure tout en les raccourcissant ?",
+    "choix": ["A. Il peut prier chaque prière séparément à son heure normale, simplement raccourcie, sans obligation de les regrouper", "B. Il doit obligatoirement toujours les regrouper dès qu'il est en voyage", "C. Il perd totalement le droit au raccourcissement s'il ne regroupe pas", "D. Aucune flexibilité n'existe pour le voyageur"],
+    "reponse": "A",
+    "explication": "Le raccourcissement (qasr) et le regroupement (jam') sont deux facilités distinctes accordées au voyageur : le raccourcissement s'applique systématiquement au voyage, tandis que le regroupement reste une option facultative activée selon les besoins pratiques du moment, sans lien de dépendance obligatoire entre les deux.",
+    "theme": "fiqh",
+    "source": "Fiqh comparatif du voyage",
+    "difficulte": "intermédiaire",
+    "jour": 195
+  },
+  {
+    "id": "quiz_558",
+    "question": "Pourquoi le Prophète ﷺ demanda-t-il à Zayd ibn Thâbit d'apprendre l'hébreu et le syriaque en un temps record ?",
+    "choix": ["A. Pour pouvoir lire et répondre lui-même à la correspondance échangée avec les tribus juives de Médine, sans dépendre d'intermédiaires potentiellement peu fiables", "B. Pour traduire le Coran dans ces langues", "C. Pour partir en mission diplomatique à l'étranger", "D. Cette anecdote n'est rapportée dans aucune source"],
+    "reponse": "A",
+    "explication": "Le Prophète ﷺ, soucieux de ne pas dépendre d'intermédiaires pour sa correspondance avec les tribus juives de Médine, demanda à Zayd ibn Thâbit d'apprendre l'hébreu et le syriaque, ce que celui-ci accomplit en quelques semaines selon les récits, illustrant à la fois la vivacité intellectuelle de Zayd et le souci pratique de souveraineté administrative du jeune État musulman.",
+    "theme": "sira",
+    "source": "Sunan Abî Dâwûd n°3645 ; Sunan at-Tirmidhî n°2715",
+    "difficulte": "avancé",
+    "jour": 195
+  },
+  {
+    "id": "quiz_559",
+    "question": "Quel verset affirme qu'Allah ne change pas la condition d'un peuple tant que celui-ci ne change pas ce qui est en lui-même ?",
+    "choix": ["A. Ar-Ra'd 13:11", "B. Al-Baqara 2:286", "C. Âl 'Imrân 3:139", "D. Al-Anfâl 8:53 (verset au contenu proche mais distinct)"],
+    "reponse": "A",
+    "explication": "Ar-Ra'd (13:11) déclare : « Allah ne modifie point l'état d'un peuple tant que les individus ne modifient pas ce qui est en eux-mêmes. » Un principe fondamental reliant transformation collective et responsabilité individuelle, souvent cité pour encourager l'effort personnel plutôt que l'attente passive d'un changement extérieur.",
+    "theme": "aqida",
+    "source": "Coran 13:11 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 196
+  },
+  {
+    "id": "quiz_560",
+    "question": "Comment se conclut la sourate Al-Inshirâh, après avoir consolé le Prophète ﷺ sur l'allègement de son fardeau ?",
+    "choix": ["A. « Donc, quand tu te libères [de tes occupations], consacre-toi [à l'adoration] »", "B. Par un avertissement sévère sans lien avec le début de la sourate", "C. Par une description du Jugement Dernier", "D. Elle ne comporte aucune conclusion, s'arrêtant abruptement"],
+    "reponse": "A",
+    "explication": "Al-Inshirâh (94:7-8) conclut : « Donc, quand tu te libères, consacre-toi [à l'adoration]. Et à ton Seigneur aspire. » Une invitation à transformer chaque moment de répit ou d'achèvement d'une tâche en occasion renouvelée de rapprochement spirituel, plutôt qu'en simple pause vide de sens.",
+    "theme": "coran",
+    "source": "Coran 94:7-8 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 196
+  }
+]
