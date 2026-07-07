@@ -7804,12 +7804,15 @@ button[style*="gold-v2"] {
 #view-priere .prayer-time-item {
   background: transparent;
   border: none;
+  border-right: 0.5px solid rgba(200,168,74,0.12);
   border-radius: 8px;
   padding: 8px 4px;
   text-align: center;
 }
+#view-priere .prayer-time-item:last-child { border-right: none; }
 #view-priere .prayer-time-item.next {
-  background: #C8A84A;
+  background: transparent;
+  border-bottom: 2px solid #C8A84A;
   border-radius: 8px;
   box-shadow: none;
 }
@@ -7823,7 +7826,7 @@ button[style*="gold-v2"] {
   color: rgba(232,217,188,0.5);
   margin-bottom: 5px;
 }
-#view-priere .prayer-time-item.next .prayer-time-name { color: rgba(13,11,8,0.65); }
+#view-priere .prayer-time-item.next .prayer-time-name { color: #E0C870; }
 #view-priere .prayer-time-hour {
   font-family: 'Georgia', serif;
   font-size: 19px;
@@ -7831,7 +7834,7 @@ button[style*="gold-v2"] {
   color: #e8dfc8;
   letter-spacing: 0;
 }
-#view-priere .prayer-time-item.next .prayer-time-hour { color: #0d0b08; font-weight: 600; }
+#view-priere .prayer-time-item.next .prayer-time-hour { color: #F0D880; font-weight: 600; }
 #view-priere .prayer-times-loading {
   font-family: 'Georgia', serif;
   font-style: italic;
