@@ -1,0 +1,222 @@
+[
+  {
+    "id": "quiz_301",
+    "question": "Quelle sourate mecquoise décrit la fabrication de « pierres d'argile durcie » (sijjîl) utilisées par des oiseaux pour détruire l'armée d'Abraha ?",
+    "choix": ["A. Al-Fîl", "B. Quraysh", "C. Al-Humaza", "D. Al-Kawthar"],
+    "reponse": "A",
+    "explication": "Al-Fîl (105) décrit l'anéantissement de l'armée d'Abraha par des oiseaux (Abâbîl) lançant des pierres d'argile durcie (sijjîl), les réduisant à l'état de « paille mâchée » (ka-'asfin ma'kûl), un événement survenu l'année même de la naissance du Prophète ﷺ selon la tradition.",
+    "theme": "coran",
+    "source": "Coran 105:1-5 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 106
+  },
+  {
+    "id": "quiz_302",
+    "question": "Quelle sourate courte, immédiatement suivante d'Al-Fîl, évoque le lien entre la protection de la Ka'ba et les caravanes commerciales de Quraysh ?",
+    "choix": ["A. Quraysh", "B. Al-Humaza", "C. Al-Mâ'ûn", "D. Al-Kawthar"],
+    "reponse": "A",
+    "explication": "La sourate Quraysh (106) rappelle à cette tribu que la sécurité de leurs caravanes hivernales et estivales (vers le Yémen et la Syrie) découlait de la protection divine accordée à la Ka'ba, les invitant en retour à n'adorer que le Seigneur de cette Maison, sans reconnaissance ingrate envers ce bienfait.",
+    "theme": "coran",
+    "source": "Coran 106 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 106
+  },
+  {
+    "id": "quiz_303",
+    "question": "Selon un lien souvent établi par certains commentateurs classiques, les sourates Al-Fîl et Quraysh sont-elles liées dans le mushaf ottoman malgré leur numérotation séparée ?",
+    "choix": ["A. Certains anciens Compagnons, comme Ubayy ibn Ka'b, les considéraient comme une seule sourate reliée par un sens continu", "B. Aucun lien n'a jamais été établi entre elles", "C. Elles furent révélées à des siècles d'écart", "D. Elles portent sur des sujets totalement indépendants"],
+    "reponse": "A",
+    "explication": "Bien que le mushaf 'uthmânien les sépare en deux sourates distinctes, certains anciens Compagnons dont Ubayy ibn Ka'b les auraient récitées sans Basmala entre elles, y voyant un sens continu : la protection divine de la Ka'ba contre Abraha justifiant l'adoration exclusive due par Quraysh, une continuité thématique souvent relevée par les exégètes.",
+    "theme": "coran",
+    "source": "Tafsîr al-Qurtubî, introduction à Quraysh",
+    "difficulte": "avancé",
+    "jour": 106
+  },
+  {
+    "id": "quiz_304",
+    "question": "Selon la majorité des écoles, le musulman doit-il obligatoirement suivre un unique madhab (école juridique) toute sa vie sans jamais en changer ?",
+    "choix": ["A. Oui, changer d'école est unanimement interdit", "B. Non ; suivre un madhab est une facilité méthodologique, non une obligation religieuse en soi ; changer d'avis pour une opinion mieux fondée reste permis", "C. Seuls les savants peuvent changer d'école", "D. Cela dépend uniquement du pays de naissance"],
+    "reponse": "B",
+    "explication": "Les quatre écoles elles-mêmes reconnaissent que suivre un madhab est une facilité méthodologique pour le non-spécialiste, non une obligation religieuse intrinsèque. Un musulman peut légitimement suivre l'avis le mieux argumenté d'une autre école sur une question précise, sans que cela ne constitue une transgression, à condition d'éviter la recherche opportuniste des avis les plus faciles (talfîq abusif).",
+    "theme": "fiqh",
+    "source": "Usûl al-Fiqh classique ; consensus méthodologique",
+    "difficulte": "avancé",
+    "jour": 107
+  },
+  {
+    "id": "quiz_305",
+    "question": "Comment appelle-t-on, en usul al-fiqh, la pratique consistant à combiner opportunément les avis les plus faciles de différentes écoles pour éviter toute contrainte, sans recherche sincère de la vérité ?",
+    "choix": ["A. Al-Ijtihâd", "B. At-Talfîq (le rapiéçage opportuniste)", "C. Al-Ijmâ'", "D. Al-Qiyâs"],
+    "reponse": "B",
+    "explication": "At-Talfîq désigne la pratique consistant à assembler les opinions les plus permissives de plusieurs écoles sur différents aspects d'une même question, aboutissant parfois à une position qu'aucune école n'aurait validée dans son ensemble. Cette pratique est largement critiquée par les savants classiques comme contraire à la rigueur méthodologique.",
+    "theme": "fiqh",
+    "source": "Usûl al-Fiqh classique ; discussions méthodologiques sur le talfîq",
+    "difficulte": "avancé",
+    "jour": 107
+  },
+  {
+    "id": "quiz_306",
+    "question": "Selon la majorité des savants contemporains, un musulman vivant dans un pays où le calcul astronomique est fiable peut-il s'appuyer sur ce calcul plutôt que sur l'observation oculaire pour déterminer le début du mois lunaire ?",
+    "choix": ["A. Le calcul astronomique est unanimement rejeté par tous les savants sans exception", "B. La question fait l'objet de divergences actives ; certains savants et conseils de fiqh acceptent le calcul comme moyen fiable, d'autres maintiennent strictement l'observation oculaire", "C. Le calcul est unanimement adopté par toutes les écoles depuis toujours", "D. Cette question ne concerne que le mois de Ramadan"],
+    "reponse": "B",
+    "explication": "Cette question reste activement débattue parmi les savants et conseils de fiqh contemporains : certains acceptent le calcul astronomique fiable comme moyen légitime de détermination du début et de la fin du mois lunaire, tandis que d'autres maintiennent la primauté du hadith sur l'observation oculaire directe du croissant lunaire (ru'yat al-hilâl).",
+    "theme": "fiqh",
+    "source": "Sahîh al-Bukhârî n°1900 ; débats contemporains des conseils de fiqh",
+    "difficulte": "avancé",
+    "jour": 107
+  },
+  {
+    "id": "quiz_307",
+    "question": "Quel Compagnon fut envoyé par Abû Bakr diriger la première grande expédition de conquête vers l'Irak sassanide ?",
+    "choix": ["A. Khâlid ibn al-Walîd", "B. 'Amr ibn al-'Âs", "C. Sa'd ibn Abî Waqqâs uniquement", "D. Abû 'Ubayda ibn al-Jarrâh uniquement"],
+    "reponse": "A",
+    "explication": "Khâlid ibn al-Walîd mena les premières campagnes musulmanes en Irak contre l'empire sassanide sous le califat d'Abû Bakr, avant d'être réaffecté vers le front syrien face aux Byzantins, où sa réputation de tacticien redoutable se confirma définitivement à la bataille du Yarmouk.",
+    "theme": "sira",
+    "source": "at-Tabarî, Târîkh ar-Rusul wa'l-Mulûk",
+    "difficulte": "avancé",
+    "jour": 108
+  },
+  {
+    "id": "quiz_308",
+    "question": "Quelle bataille majeure, remportée par les musulmans contre l'armée byzantine, marqua la fin durable de la présence byzantine en Syrie ?",
+    "choix": ["A. Le Yarmouk", "B. Mu'ta", "C. Tabûk", "D. 'Aïn Jâlût"],
+    "reponse": "A",
+    "explication": "La bataille du Yarmouk (15 H, sous 'Umar) opposa l'armée musulmane, réorganisée sous le commandement unifié de Khâlid ibn al-Walîd, à une armée byzantine bien plus nombreuse. La victoire musulmane décisive ouvrit durablement la voie à la conquête de la Syrie et de la Palestine.",
+    "theme": "sira",
+    "source": "at-Tabarî, Târîkh ar-Rusul wa'l-Mulûk",
+    "difficulte": "avancé",
+    "jour": 108
+  },
+  {
+    "id": "quiz_309",
+    "question": "Quel geste symbolique 'Umar ibn al-Khattâb accomplit-il lors de son entrée à Jérusalem après sa conquête pacifique, en réponse à une offre du patriarche chrétien ?",
+    "choix": ["A. Il détruisit l'église du Saint-Sépulcre", "B. Il refusa de prier à l'intérieur de l'église pour éviter que les musulmans ne la revendiquent plus tard comme mosquée, priant à l'extérieur", "C. Il exigea la conversion immédiate de tous les habitants", "D. Il imposa la destruction de tous les lieux de culte chrétiens"],
+    "reponse": "B",
+    "explication": "Invité par le patriarche à prier à l'intérieur de l'église du Saint-Sépulcre, 'Umar refusa avec prévoyance, choisissant de prier à l'extérieur, précisément pour éviter que les générations futures de musulmans ne transforment l'église en mosquée au nom de ce précédent — un geste souvent cité comme exemple de justice et de préservation des lieux de culte d'autrui.",
+    "theme": "sira",
+    "source": "at-Tabarî, Târîkh ; historiographie classique de la conquête",
+    "difficulte": "avancé",
+    "jour": 108
+  },
+  {
+    "id": "quiz_310",
+    "question": "Comment appelle-t-on, en 'aqîda, la croyance selon laquelle certains signes annonciateurs mineurs de la fin des temps (al-'Alâmât as-Sughrâ) ont déjà commencé, contrairement aux grands signes qui restent à venir ?",
+    "choix": ["A. Ils n'ont pas encore commencé du tout", "B. Plusieurs petits signes, comme l'augmentation de l'ignorance religieuse ou la course à l'élévation des constructions, sont considérés par de nombreux savants comme déjà en cours d'accomplissement progressif", "C. Ils sont tous déjà pleinement accomplis depuis des siècles", "D. Le Coran interdit toute réflexion sur ce sujet"],
+    "reponse": "B",
+    "explication": "Les savants distinguent les petits signes (déjà largement observés à travers l'histoire islamique, comme la diffusion de l'ignorance religieuse ou la compétition dans les hautes constructions) des grands signes (qui restent, selon la croyance, encore à venir intégralement dans un futur indéterminé, connu d'Allah seul).",
+    "theme": "aqida",
+    "source": "Sahîh Muslim n°2937, hadith de Jibrîl ; classification classique des signes",
+    "difficulte": "avancé",
+    "jour": 109
+  },
+  {
+    "id": "quiz_311",
+    "question": "Selon un hadith, quel signe précis lié à la construction est cité comme annonciateur, parmi les petits signes de la fin des temps ?",
+    "choix": ["A. La disparition totale des villes", "B. Les bergers pieds nus, nus, rivalisant dans l'élévation des constructions", "C. L'interdiction de construire des maisons", "D. Aucun signe lié à la construction n'est mentionné"],
+    "reponse": "B",
+    "explication": "Le hadith de Jibrîl mentionne, parmi les signes de l'Heure, que « les bergers pieds nus, nus, indigents, rivaliseront dans l'élévation des constructions », une image souvent interprétée comme annonçant une transformation sociale rapide et un enrichissement soudain de populations auparavant modestes.",
+    "theme": "aqida",
+    "source": "Sahîh Muslim n°8, hadith de Jibrîl",
+    "difficulte": "intermédiaire",
+    "jour": 109
+  },
+  {
+    "id": "quiz_312",
+    "question": "Quelle sourate mecquoise met en garde contre le fait de « repousser l'orphelin » tout en affirmant paradoxalement pratiquer la religion (Ad-Dîn) ?",
+    "choix": ["A. Al-Mâ'ûn", "B. Ad-Duhâ", "C. Al-Balad", "D. Al-Fajr"],
+    "reponse": "A",
+    "explication": "Al-Mâ'ûn (107:1-3) interpelle directement : « As-tu vu celui qui traite de mensonge la religion ? C'est celui qui repousse l'orphelin, et qui n'incite pas à nourrir le pauvre. » Une critique frontale de la religiosité purement formelle, déconnectée de tout engagement social concret.",
+    "theme": "coran",
+    "source": "Coran 107:1-3 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 109
+  },
+  {
+    "id": "quiz_313",
+    "question": "Quelle sourate mecquoise rappelle au Prophète ﷺ, orphelin lui-même dans son enfance, qu'Allah l'a recueilli, guidé et enrichi malgré ses conditions initiales ?",
+    "choix": ["A. Ad-Duhâ", "B. Al-Fajr", "C. Al-Balad", "D. Ash-Shams"],
+    "reponse": "A",
+    "explication": "Ad-Duhâ (93:6-8) rappelle : « Ne t'a-t-Il pas trouvé orphelin et t'a-t-Il donné refuge ? Ne t'a-t-Il pas trouvé égaré et t'a-t-Il guidé ? Ne t'a-t-Il pas trouvé pauvre et t'a-t-Il enrichi ? » Une consolation directe adressée au Prophète ﷺ durant une période où il se sentait délaissé après une interruption de la révélation.",
+    "theme": "coran",
+    "source": "Coran 93:6-8 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 110
+  },
+  {
+    "id": "quiz_314",
+    "question": "Quelle sourate met en scène deux voies opposées symbolisées par « les deux mamelles » ou « deux voies visibles » offertes à l'homme dès sa naissance ?",
+    "choix": ["A. Al-Balad", "B. Ash-Shams", "C. Al-Layl", "D. Al-Fajr"],
+    "reponse": "A",
+    "explication": "Al-Balad (90:10) déclare : « Ne lui avons-Nous pas montré les deux voies (visibles) ? » — le bien et le mal — avant d'exhorter à franchir « la montée abrupte » (al-'aqaba) : libérer un esclave, nourrir en période de disette l'orphelin proche ou le pauvre dans le dénuement.",
+    "theme": "coran",
+    "source": "Coran 90:10-16 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 110
+  },
+  {
+    "id": "quiz_315",
+    "question": "Quelle sourate décrit trois symboles cosmiques opposés — le jour, la nuit, le mâle et la femelle — pour illustrer la diversité des voies humaines vers la facilité ou la difficulté ?",
+    "choix": ["A. Al-Layl", "B. Ash-Shams", "C. Al-Fajr", "D. At-Tîn"],
+    "reponse": "A",
+    "explication": "Al-Layl (92:1-4) jure par la nuit, le jour et la création du mâle et de la femelle pour introduire une classification fondamentale : celui qui donne et craint Allah verra la voie facilitée vers le bien-être, tandis que l'avare et l'indifférent verront la voie facilitée vers la difficulté.",
+    "theme": "coran",
+    "source": "Coran 92:1-10 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 111
+  },
+  {
+    "id": "quiz_316",
+    "question": "Quelle sourate évoque le châtiment du peuple de Thamûd à travers l'image de « celui qui, dans sa méchanceté, égorgea la chamelle » sacrée ?",
+    "choix": ["A. Ash-Shams", "B. Al-Fajr", "C. Al-Qamar", "D. Al-Buruj"],
+    "reponse": "A",
+    "explication": "Ash-Shams (91:11-15) relate le châtiment de Thamûd après l'égorgement de la chamelle miraculeuse de Sâlih, insistant sur la responsabilité collective assumée par le peuple entier malgré l'acte d'un seul homme, « le plus misérable d'entre eux », un châtiment survenu « à cause de leur péché ».",
+    "theme": "coran",
+    "source": "Coran 91:11-15 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 111
+  },
+  {
+    "id": "quiz_317",
+    "question": "Quelle sourate évoque le châtiment des peuples de 'Âd, Thamûd et de Pharaon en les regroupant comme exemples de « dépassement des limites » (tughyân) sur terre ?",
+    "choix": ["A. Al-Fajr", "B. Al-Balad", "C. Al-Ghâshiya", "D. At-Târiq"],
+    "reponse": "A",
+    "explication": "Al-Fajr (89:6-14) évoque successivement 'Âd (le peuple d'Iram aux colonnes), Thamûd (qui taillait le rocher dans la vallée) et Pharaon (maître des « pieux » ou des piliers), tous châtiés pour avoir « multiplié la corruption sur terre », une leçon historique répétée pour avertir les générations suivantes.",
+    "theme": "coran",
+    "source": "Coran 89:6-14 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 112
+  },
+  {
+    "id": "quiz_318",
+    "question": "Quelle sourate évoque le « Jour Recouvrant » (Al-Ghâshiya) où certains visages seront humiliés et d'autres radieux et satisfaits ?",
+    "choix": ["A. Al-Ghâshiya", "B. At-Târiq", "C. Al-A'lâ", "D. Al-Fajr"],
+    "reponse": "A",
+    "explication": "Al-Ghâshiya (88) oppose deux destinées : des visages humiliés, épuisés, subissant une nourriture d'épines amères ; et des visages radieux, satisfaits de leurs efforts passés, dans un jardin élevé où ne résonne aucune parole vaine — une image saisissante de la rétribution finale.",
+    "theme": "coran",
+    "source": "Coran 88:1-16 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 112
+  },
+  {
+    "id": "quiz_319",
+    "question": "Quelle sourate mentionne « l'étoile perçante » (An-Nâjm ath-Thâqib) comme signe cosmique introduisant la création de l'homme à partir d'un liquide jaillissant ?",
+    "choix": ["A. At-Târiq", "B. Al-Buruj", "C. Al-Insân", "D. Al-Qadr"],
+    "reponse": "A",
+    "explication": "At-Târiq (86:1-4) jure par « l'astre nocturne, l'étoile perçante » avant d'affirmer qu'aucune âme n'est laissée sans gardien veillant sur elle, puis d'évoquer la création de l'homme à partir d'un liquide jaillissant, reliant l'observation cosmique à la réflexion sur l'origine humaine.",
+    "theme": "coran",
+    "source": "Coran 86:1-7 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 112
+  },
+  {
+    "id": "quiz_320",
+    "question": "Quelle sourate décrit les Compagnons de la Fosse (Ashâb al-Ukhdûd), croyants brûlés vifs pour leur foi par un roi persécuteur ?",
+    "choix": ["A. Al-Burûj", "B. At-Târiq", "C. Al-Fajr", "D. Al-A'lâ"],
+    "reponse": "A",
+    "explication": "Al-Burûj (85:4-8) relate le sort de croyants jetés dans une fosse de feu par un roi persécuteur, uniquement « parce qu'ils croyaient en Allah, le Tout-Puissant, le Digne de louange » — un récit souvent cité pour illustrer la fidélité à la foi jusqu'au sacrifice suprême face à la persécution.",
+    "theme": "coran",
+    "source": "Coran 85:4-8 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 112
+  }
+]
