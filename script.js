@@ -2079,144 +2079,12 @@ function switchView(name) {
       setTimeout(v2GoSanctuaire, 10);
       return;
     }
-    renderAccueil();
     renderDefiCard();
   }
 }
 
 const accueilBg = ''; // fond géré par CSS
 
-function renderAccueil() {
-  // Avertissement J20 : il reste 10 jours de contenu Connaissance
-  var _dsi = _daysSinceInstall();
-  if (!isPremium() && _dsi >= 20 && _dsi < 30 && !safeGetItem('niyyah_j20_shown')) {
-    safeSetItem('niyyah_j20_shown', '1');
-    setTimeout(function() {
-      showToast('✦ Il te reste ' + Math.ceil(30 - _dsi) + ' jours d\'accès complet — découvre Niyyah+');
-    }, 3000);
-  }
-  // Forcer la vue en flex pour remplir tout l'écran sans vide
-  const view = document.getElementById('view-accueil');
-  const inner = view ? view.querySelector('div') : null;
-  if (view) {
-    view.style.cssText = "display:flex;flex-direction:column;height:100vh;overflow-y:auto;position:relative;background:var(--bg);";
-  }
-  if (inner) {
-    inner.style.cssText = 'flex:1;display:flex;flex-direction:column;padding:calc(var(--safe-top, 0px) + 16px) 16px calc(70px + var(--safe-bot, 0px));gap:9px;overflow:hidden;position:relative;z-index:1;'; var overlay = view.querySelector('.accueil-overlay'); if (!overlay) { overlay = document.createElement('div'); overlay.className = 'accueil-overlay'; overlay.style.cssText = 'position:absolute;inset:0;background:rgba(0,0,0,0.52);z-index:0;pointer-events:none;'; view.insertBefore(overlay, view.firstChild); }
-  }
-  // Forcer le bouton CTA tout en bas
-  const cta = view ? view.querySelector('#accueilCTA') : null;
-  if (cta) cta.style.marginTop = 'auto';
-  const streakDisplay = history.streak + (getLevelProgress(1) >= 100 ? 1 : 0);
-  const bestDisplay = Math.max(history.bestStreak || 0, streakDisplay);
-  const totalDisplay = history.totalDays + (getLevelProgress(1) >= 100 ? 1 : 0);
-  const allLvlItems = LEVELS.filter(l => state._unlocked.includes(l.id)).flatMap(l => getLevelItems(l.id)).filter(_itemMatchesProfile);
-  const scoreJour = Math.round(getWeightedScore(allLvlItems, state));
-  const pct = Math.min(Math.round(getLevelProgress(1)), 100);
-  const currentLvl = LEVELS.find(l => l.id === (state._unlocked ? Math.max(...state._unlocked) : 1));
-  const medal = 'none';
-
-  // Date
-  const now = new Date();
-  const dateStr = now.toLocaleDateString(_dateLocale(), { weekday: 'long', day: 'numeric', month: 'long' });
-  const el = document.getElementById('accueilDateLabel');
-  if (el) el.textContent = dateStr;
-
-  // Streak
-  const streakEl = document.getElementById('accueilStreak');
-  if (streakEl) streakEl.textContent = streakDisplay;
-
-  // Niveau
-  const lvlEl = document.getElementById('accueilLevel');
-  if (lvlEl) lvlEl.textContent = currentLvl ? currentLvl.title : '—';
-
-  // Barre
-  const barEl = document.getElementById('accueilProgBar');
-  if (barEl) setTimeout(() => { barEl.style.width = pct + '%'; }, 100);
-  const pctEl = document.getElementById('accueilPct');
-  if (pctEl) pctEl.textContent = pct + '%';
-
-  // Score
-  const scoreEl = document.getElementById('accueilScore');
-  if (scoreEl) scoreEl.textContent = scoreJour;
-  const scoreLbl = document.getElementById('accueilScoreLabel');
-  if (scoreLbl) scoreLbl.textContent = scoreJour >= 80 ? 'MashaAllah ✦' : scoreJour >= 50 ? t('score_continue') : t('score_progress');
-  if (scoreEl) scoreEl.style.color = scoreJour >= 80 ? '#c8a84b' : scoreJour >= 50 ? 'var(--green)' : 'var(--t2)';
-
-  // Medal
-  const medalEl = document.getElementById('accueilMedalBadge');
-  if (medalEl) {
-    const medalMap = { none: '\u2014', bronze: 'Bronze', silver: 'Argent', gold: 'Or' };
-    medalEl.textContent = medalMap[medal] || '—';
-    if (medal === 'gold') { medalEl.style.background = 'var(--gold-soft)'; medalEl.style.color = 'var(--gold)'; }
-    else if (medal === 'silver') { medalEl.style.background = 'rgba(176,196,206,0.1)'; medalEl.style.color = 'var(--silver)'; }
-    else if (medal === 'bronze') { medalEl.style.background = 'rgba(212,145,74,0.1)'; medalEl.style.color = 'var(--bronze)'; }
-  }
-
-  // Medal hero
-  const mhEl = document.getElementById('accueilMedalHero');
-  if (mhEl) {
-    const medalMap2 = { none: '\u2014', bronze: 'Bronze', silver: 'Argent', gold: 'Or' };
-    mhEl.textContent = medalMap2[medal] || '—';
-  }
-
-  // 4ème stat score
-  const s4 = document.getElementById('accueilScoreStat'); if (s4) s4.textContent = scoreJour;
-
-  // Stats
-  const s1 = document.getElementById('accueilStreakStat'); if (s1) s1.textContent = streakDisplay;
-  const s2 = document.getElementById('accueilBestStat'); if (s2) s2.textContent = bestDisplay;
-  const s3 = document.getElementById('accueilTotalStat'); if (s3) s3.textContent = totalDisplay;
-
-  // Heatmap 14 jours
-  const hm = document.getElementById('accueilHeatmap');
-  if (hm) {
-    hm.innerHTML = '';
-    for (let i = 13; i >= 0; i--) {
-      const d = getDateMinus(TODAY, i);
-      const isToday = d === TODAY;
-      const done = isToday ? getLevelProgress(1) >= 100 : !!(history.days && history.days[d]);
-      const medal2 = isToday ? (done ? 'none' : null) : ((history.dayMedals && history.dayMedals[d]) || (done ? 'bronze' : null));
-      const dot = document.createElement('div');
-      let bg = 'rgba(255,255,255,0.06)';
-      if (medal2 === 'gold') bg = 'linear-gradient(135deg,#c8a84b,#e8cc6a)';
-      else if (done) bg = 'var(--green)';
-      dot.style.cssText = 'width:16px;height:8px;border-radius:3px;background:' + bg + ';flex:1;' + (isToday ? 'box-shadow:0 0 6px rgba(200,168,74,0.5);' : '');
-      hm.appendChild(dot);
-    }
-  }
-
-  // Phrase du jour
-  const PHRASES_ACCUEIL = [
-    { text: 'L\'acte le plus aimé d\'Allah est celui qui est régulier, même s\'il est peu.', ref: '— Bukhari 6464' },
-    { text: 'Certes, avec la difficulté vient la facilité.', ref: '— Coran 94:5' },
-    { text: 'Les actes ne valent que par les intentions.', ref: '— Bukhari 1' },
-    { text: 'Allah est avec ceux qui sont patients.', ref: '— Coran 2:153' },
-    { text: 'Celui qui se rapproche de Moi d\'un empan, Je Me rapproche de lui d\'une coudée.', ref: '— Bukhari 7405' },
-    { text: 'Ne sous-estime aucun acte de bonté, fût-ce un visage souriant.', ref: '— Muslim 2626' },
-    { text: 'La vraie richesse est la richesse de l\'âme.', ref: '— Bukhari 6446' },
-  ];
-  const dayIdx = Math.floor(Date.now() / 86400000) % PHRASES_ACCUEIL.length;
-  const phrase = PHRASES_ACCUEIL[dayIdx];
-  const ptEl = document.getElementById('accueilPhraseText'); if (ptEl) ptEl.textContent = phrase.text;
-  const prEl = document.getElementById('accueilPhraseRef'); if (prEl) prEl.textContent = phrase.ref;
-
-  // Défis
-
-  // Intention
-  const intentionLabel = safeGetItem('niyyah_intention_label');
-  const intentionDate = safeGetItem('niyyah_intention_date');
-  const intentionEl = document.getElementById('accueilIntention');
-  if (intentionEl && intentionLabel && intentionDate === TODAY) {
-    intentionEl.style.display = 'flex';
-    const icons = { rapprochement: '🌙', engagement: '⚖️', reconstruction: '🤲', gratitude: '✦' };
-    const type = safeGetItem('niyyah_intention_type') || 'rapprochement';
-    const iconEl = document.getElementById('accueilIntentionIcon'); if (iconEl) iconEl.textContent = icons[type] || '🌙';
-    const txtEl = document.getElementById('accueilIntentionText'); if (txtEl) txtEl.textContent = intentionLabel.replace(/[🌙⚖️🤲✦]/g, '').trim();
-  } else if (intentionEl) {
-    intentionEl.style.display = 'none';
-  }
-}
 function renderResume() {
   const el = document.getElementById('resumeContent');
   const dateEl = document.getElementById('resumeDatePill');
@@ -2302,7 +2170,6 @@ function init() {
   updateNavRamadan();
   renderTabs();
   renderLevel(currentLevel);
-  renderAccueil();
   updateGlobalProgress();
   renderRamadanActivateBtn();
   initNotifications();
