@@ -10186,6 +10186,7 @@ function renderZakatCard() {
 function closeZakat() {
   var ov = document.getElementById('zakat-overlay');
   if (ov) ov.remove();
+  _restoreScroll();
 }
 
 function _zNum(id) {
@@ -10223,6 +10224,7 @@ function computeZakat() {
 }
 
 function openZakat() {
+  _saveScroll();
   closeZakat();
   var ov = document.createElement('div');
   ov.id = 'zakat-overlay';
@@ -12527,12 +12529,13 @@ function _sunanCountThisMonth() {
   var pre = todayKey().slice(0, 7);
   return _sunanLog().filter(function(x) { return x.slice(0, 7) === pre; }).length;
 }
-function closeSunan() { var ov = document.getElementById('sunan-overlay'); if (ov) ov.remove(); }
+function closeSunan() { var ov = document.getElementById('sunan-overlay'); if (ov) ov.remove(); _restoreScroll(); }
 function openJeune() {
   if (typeof ramadanState !== 'undefined' && ramadanState && ramadanState.active) { if (typeof closeRepere === 'function') closeRepere(); switchView('ramadan'); return; }
   openSunanHub();
 }
 function openSunanHub() {
+  _saveScroll();
   closeSunan();
   var info = _sunanFor(new Date()), fasted = _sunanFastedToday(), up = _sunanUpcoming(), count = _sunanCountThisMonth();
   var todayLine, todaySub;
@@ -12597,7 +12600,7 @@ function renderZakatFitrCard() {
     + '<div style="flex:1;min-width:0;"><div style="font-family:\'Georgia\',serif;font-size:18px;letter-spacing:0.02em;color:#E8CE8A;line-height:1.2;">Zak\u00e2t al-Fitr</div>'
     + '<div style="font-size:14px;color:rgba(200,168,74,0.55);margin-top:3px;font-style:italic;font-family:\'Georgia\',serif;">L\u2019aum\u00f4ne de la rupture du je\u00fbne</div></div></div>';
 }
-function closeZakatFitr() { var ov = document.getElementById('zakatfitr-overlay'); if (ov) ov.remove(); }
+function closeZakatFitr() { var ov = document.getElementById('zakatfitr-overlay'); if (ov) ov.remove(); _restoreScroll(); }
 function computeZakatFitr() {
   var n = Math.max(0, Math.round(_zNum('zf-pers')));
   var m = _zNum('zf-montant');
@@ -12616,6 +12619,7 @@ function computeZakatFitr() {
     + '</div></div>';
 }
 function openZakatFitr() {
+  _saveScroll();
   closeZakatFitr();
   var ov = document.createElement('div');
   ov.id = 'zakatfitr-overlay';
@@ -12655,7 +12659,7 @@ function renderFidyaCard() {
     + '<div style="flex:1;min-width:0;"><div style="font-family:\'Georgia\',serif;font-size:18px;letter-spacing:0.02em;color:#E8CE8A;line-height:1.2;">Fidya / Kaff\u00e2ra</div>'
     + '<div style="font-size:14px;color:rgba(200,168,74,0.55);margin-top:3px;font-style:italic;font-family:\'Georgia\',serif;">Je\u00fbnes manqu\u00e9s ou rompus</div></div></div>';
 }
-function closeFidya() { var ov = document.getElementById('fidya-overlay'); if (ov) ov.remove(); }
+function closeFidya() { var ov = document.getElementById('fidya-overlay'); if (ov) ov.remove(); _restoreScroll(); }
 function computeFidya() {
   var cost = _zNum('fk-cost');
   var fmt = function(x){ return x.toLocaleString('fr-FR', {maximumFractionDigits:2}); };
@@ -12682,6 +12686,7 @@ function computeFidya() {
   }
 }
 function openFidya() {
+  _saveScroll();
   closeFidya();
   var ov = document.createElement('div');
   ov.id = 'fidya-overlay';
@@ -12769,8 +12774,9 @@ function renderConvertCard() {
     + '<div style="flex:1;min-width:0;"><div style="font-family:\'Georgia\',serif;font-size:18px;letter-spacing:0.02em;color:#E8CE8A;line-height:1.2;">Convertisseur</div>'
     + '<div style="font-size:14px;color:rgba(200,168,74,0.55);margin-top:3px;font-style:italic;font-family:\'Georgia\',serif;">Dates Hijri \u2194 Gr\u00e9gorien</div></div></div>';
 }
-function closeConvert() { var ov = document.getElementById('convert-overlay'); if (ov) ov.remove(); }
+function closeConvert() { var ov = document.getElementById('convert-overlay'); if (ov) ov.remove(); _restoreScroll(); }
 function openConvert() {
+  _saveScroll();
   closeConvert();
   var today = new Date(); var th = _convHijri(today);
   var iso = today.getFullYear() + '-' + String(today.getMonth() + 1).padStart(2, '0') + '-' + String(today.getDate()).padStart(2, '0');
@@ -12810,7 +12816,7 @@ window.computeConvertG2H = computeConvertG2H;
 window.computeConvertH2G = computeConvertH2G;
 
 // ── WUDU ─────────────────────────────────────────────────────────────────────
-function closeWudu() { var o = document.getElementById('wudu-overlay'); if (o) o.remove(); }
+function closeWudu() { var o = document.getElementById('wudu-overlay'); if (o) o.remove(); _restoreScroll(); }
 function renderWuduCard() {
   return '<div onclick="openWudu()" style="position:relative;background:linear-gradient(165deg,#1a130b,#0d0a06);border:1px solid rgba(200,168,74,0.22);border-radius:16px;padding:15px 16px;margin-bottom:8px;display:flex;align-items:center;gap:14px;cursor:pointer;box-shadow:inset 0 1px 0 rgba(232,206,138,0.08),0 4px 16px rgba(0,0,0,0.35);">'
     + '<div style="flex-shrink:0;width:42px;height:42px;border-radius:50%;border:1px solid rgba(232,206,138,0.3);background:radial-gradient(circle at 50% 35%,rgba(232,206,138,0.16),rgba(232,206,138,0.02) 70%);display:flex;align-items:center;justify-content:center;"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#E8CE8A" stroke-width="1.3" stroke-linecap="round"><path d="M12 2.5C10 5 5 10.5 5 14.5a7 7 0 0 0 14 0C19 10.5 14 5 12 2.5z"/></svg></div>'
@@ -12819,6 +12825,7 @@ function renderWuduCard() {
     + '<div style="color:rgba(200,168,74,0.3);font-size:18px;">\u203a</div></div>';
 }
 function openWudu() {
+  _saveScroll();
   closeWudu();
   var ov = document.createElement('div');
   ov.id = 'wudu-overlay';
@@ -12855,7 +12862,7 @@ window.closeWudu = closeWudu;
 window.renderWuduCard = renderWuduCard;
 
 // ── TAYAMMUM ──────────────────────────────────────────────────────────────────
-function closeTayammum() { var o = document.getElementById('tayammum-overlay'); if (o) o.remove(); }
+function closeTayammum() { var o = document.getElementById('tayammum-overlay'); if (o) o.remove(); _restoreScroll(); }
 function renderTayammumCard() {
   return '<div onclick="openTayammum()" style="position:relative;background:linear-gradient(165deg,#1a130b,#0d0a06);border:1px solid rgba(200,168,74,0.22);border-radius:16px;padding:15px 16px;margin-bottom:8px;display:flex;align-items:center;gap:14px;cursor:pointer;box-shadow:inset 0 1px 0 rgba(232,206,138,0.08),0 4px 16px rgba(0,0,0,0.35);">'
     + '<div style="flex-shrink:0;width:42px;height:42px;border-radius:50%;border:1px solid rgba(232,206,138,0.3);background:radial-gradient(circle at 50% 35%,rgba(232,206,138,0.16),rgba(232,206,138,0.02) 70%);display:flex;align-items:center;justify-content:center;"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#E8CE8A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20"/><path d="M6 20v-6l6-10 6 10v6"/></svg></div>'
@@ -12864,6 +12871,7 @@ function renderTayammumCard() {
     + '<div style="color:rgba(200,168,74,0.3);font-size:18px;">\u203a</div></div>';
 }
 function openTayammum() {
+  _saveScroll();
   closeTayammum();
   var ov = document.createElement('div');
   ov.id = 'tayammum-overlay';
@@ -12897,7 +12905,7 @@ window.closeTayammum = closeTayammum;
 window.renderTayammumCard = renderTayammumCard;
 
 // ── QASR / JAM' ───────────────────────────────────────────────────────────────
-function closeQasr() { var o = document.getElementById('qasr-overlay'); if (o) o.remove(); }
+function closeQasr() { var o = document.getElementById('qasr-overlay'); if (o) o.remove(); _restoreScroll(); }
 function renderQasrCard() {
   return '<div onclick="openQasr()" style="position:relative;background:linear-gradient(165deg,#1a130b,#0d0a06);border:1px solid rgba(200,168,74,0.22);border-radius:16px;padding:15px 16px;margin-bottom:8px;display:flex;align-items:center;gap:14px;cursor:pointer;box-shadow:inset 0 1px 0 rgba(232,206,138,0.08),0 4px 16px rgba(0,0,0,0.35);">'
     + '<div style="flex-shrink:0;width:42px;height:42px;border-radius:50%;border:1px solid rgba(232,206,138,0.3);background:radial-gradient(circle at 50% 35%,rgba(232,206,138,0.16),rgba(232,206,138,0.02) 70%);display:flex;align-items:center;justify-content:center;"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#E8CE8A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>'
@@ -12906,6 +12914,7 @@ function renderQasrCard() {
     + '<div style="color:rgba(200,168,74,0.3);font-size:18px;">\u203a</div></div>';
 }
 function openQasr() {
+  _saveScroll();
   closeQasr();
   var ov = document.createElement('div');
   ov.id = 'qasr-overlay';
@@ -13192,8 +13201,9 @@ window._resetTawhidJour = function() {
   console.log('[RESET] tawhid_jour supprimé');
 };
 
-function closeRepere() { var o = document.getElementById('repere-overlay'); if (o) o.remove(); }
+function closeRepere() { var o = document.getElementById('repere-overlay'); if (o) o.remove(); _restoreScroll(); }
 function openRepere() {
+  _saveScroll();
   closeRepere();
   var eb = function(t) { return '<div style="display:flex;align-items:center;gap:10px;margin:24px 2px 13px;"><div style="flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(200,168,74,0.22));"></div><span style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:rgba(200,168,74,0.5);">' + t + '</span><div style="flex:1;height:1px;background:linear-gradient(90deg,rgba(200,168,74,0.22),transparent);"></div></div>'; };
   var ov = document.createElement('div');
@@ -13260,7 +13270,7 @@ function renderQadaBody() {
   var body = document.getElementById('qada-body');
   if (body) body.innerHTML = '<div style="text-align:center;font-family:\'Georgia\',serif;font-style:italic;font-size:16px;color:#C8A84A;margin-bottom:20px;">' + (total > 0 ? ('Reste ' + total + ' pri\u00e8re' + (total > 1 ? 's' : '') + ' \u00e0 rattraper') : 'Aucune pri\u00e8re en attente.') + '</div>' + rows;
 }
-function closeQada() { var o = document.getElementById('qada-overlay'); if (o) o.remove(); }
+function closeQada() { var o = document.getElementById('qada-overlay'); if (o) o.remove(); _restoreScroll(); }
 function renderQadaCard() {
   return '<div onclick="openQada()" style="position:relative;background:linear-gradient(165deg,#1a130b,#0d0a06);border:1px solid rgba(200,168,74,0.22);border-radius:16px;padding:15px 16px;margin-bottom:8px;display:flex;align-items:center;gap:14px;cursor:pointer;box-shadow:inset 0 1px 0 rgba(232,206,138,0.08),0 4px 16px rgba(0,0,0,0.35);">'
     + '<div style="flex-shrink:0;width:42px;height:42px;border-radius:50%;border:1px solid rgba(232,206,138,0.3);background:radial-gradient(circle at 50% 35%,rgba(232,206,138,0.16),rgba(232,206,138,0.02) 70%);display:flex;align-items:center;justify-content:center;"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#E8CE8A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 2.5-6.2"/><path d="M3 3v4h4"/><path d="M12 8v4l3 2"/></svg></div>'
@@ -13269,6 +13279,7 @@ function renderQadaCard() {
     + '<div style="color:rgba(200,168,74,0.3);font-size:18px;">\u203a</div></div>';
 }
 function openQada() {
+  _saveScroll();
   closeQada();
   var ov = document.createElement('div');
   ov.id = 'qada-overlay';
@@ -13298,8 +13309,9 @@ function renderIstikharaCard() {
     + '<div style="font-size:14px;color:rgba(200,168,74,0.55);margin-top:3px;font-style:italic;font-family:\'Georgia\',serif;">La pri\u00e8re de consultation</div></div>'
     + '<div style="color:rgba(200,168,74,0.3);font-size:18px;">\u203a</div></div>';
 }
-function closeIstikhara() { var o = document.getElementById('istikhara-overlay'); if (o) o.remove(); }
+function closeIstikhara() { var o = document.getElementById('istikhara-overlay'); if (o) o.remove(); _restoreScroll(); }
 function openIstikhara() {
+  _saveScroll();
   closeIstikhara();
   var step = function(n, t) { return '<div style="display:flex;gap:13px;margin-bottom:13px;align-items:flex-start;"><div style="flex-shrink:0;width:26px;height:26px;border-radius:50%;border:1px solid rgba(232,206,138,0.4);display:flex;align-items:center;justify-content:center;font-family:\'Georgia\',serif;font-size:14px;color:#E8CE8A;">' + n + '</div><div style="flex:1;font-family:\'Georgia\',serif;font-size:16px;line-height:1.5;color:rgba(240,234,214,0.85);">' + t + '</div></div>'; };
   var head = function(t) { return '<div style="display:flex;align-items:center;gap:10px;margin:26px 2px 14px;"><div style="flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(200,168,74,0.22));"></div><span style="font-size:14px;letter-spacing:.22em;text-transform:uppercase;color:rgba(200,168,74,0.55);">' + t + '</span><div style="flex:1;height:1px;background:linear-gradient(90deg,rgba(200,168,74,0.22),transparent);"></div></div>'; };
@@ -13371,7 +13383,7 @@ function renderCalGrid() {
   var b = document.getElementById('cal-body');
   if (b) b.innerHTML = header + wd + cells + legend;
 }
-function closeCalendrier() { var o = document.getElementById('calendrier-overlay'); if (o) o.remove(); }
+function closeCalendrier() { var o = document.getElementById('calendrier-overlay'); if (o) o.remove(); _restoreScroll(); }
 function renderCalendrierCard() {
   return '<div onclick="openCalendrier()" style="position:relative;background:linear-gradient(165deg,#1a130b,#0d0a06);border:1px solid rgba(200,168,74,0.22);border-radius:16px;padding:15px 16px;margin-bottom:8px;display:flex;align-items:center;gap:14px;cursor:pointer;box-shadow:inset 0 1px 0 rgba(232,206,138,0.08),0 4px 16px rgba(0,0,0,0.35);">'
     + '<div style="flex-shrink:0;width:42px;height:42px;border-radius:50%;border:1px solid rgba(232,206,138,0.3);background:radial-gradient(circle at 50% 35%,rgba(232,206,138,0.16),rgba(232,206,138,0.02) 70%);display:flex;align-items:center;justify-content:center;"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#E8CE8A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/><circle cx="8" cy="14" r="0.6"/><circle cx="12" cy="14" r="0.6"/><circle cx="16" cy="14" r="0.6"/></svg></div>'
@@ -13380,6 +13392,7 @@ function renderCalendrierCard() {
     + '<div style="color:rgba(200,168,74,0.3);font-size:18px;">\u203a</div></div>';
 }
 function openCalendrier() {
+  _saveScroll();
   closeCalendrier();
   _calOffset = 0;
   var ov = document.createElement('div');
