@@ -1,0 +1,222 @@
+[
+  {
+    "id": "quiz_361",
+    "question": "Quelle sourate divise l'humanité, le Jour du Jugement, en trois groupes distincts : les Compagnons de la droite, les Compagnons de la gauche, et les Précurseurs ?",
+    "choix": ["A. Al-Wâqi'a", "B. Al-Hâqqa", "C. Al-Ma'ârij", "D. Al-Mursalât"],
+    "reponse": "A",
+    "explication": "Al-Wâqi'a (56:7-56) répartit l'humanité en trois catégories : As-hâb al-Yamîn (les Gens de la droite, récompensés), As-hâb ash-Shimâl (les Gens de la gauche, châtiés), et As-Sâbiqûn (les Précurseurs, élite rapprochée d'Allah), chaque groupe recevant un sort et une description détaillée distincts.",
+    "theme": "coran",
+    "source": "Coran 56:7-56 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 127
+  },
+  {
+    "id": "quiz_362",
+    "question": "Quelle sourate ordonne aux croyants de ne pas élever la voix au-dessus de celle du Prophète ﷺ, sous peine de voir leurs œuvres anéanties sans même s'en rendre compte ?",
+    "choix": ["A. Al-Hujurât", "B. Al-Ahzâb", "C. An-Nûr", "D. Al-Mumtahana"],
+    "reponse": "A",
+    "explication": "Al-Hujurât (49:2) avertit : « Ô vous qui croyez ! N'élevez pas vos voix au-dessus de la voix du Prophète... sinon vos œuvres seraient vaines sans que vous vous en rendiez compte. » Cette sourate établit plusieurs règles fondamentales de savoir-vivre (adab) envers le Prophète ﷺ et entre croyants.",
+    "theme": "coran",
+    "source": "Coran 49:2 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 127
+  },
+  {
+    "id": "quiz_363",
+    "question": "Le Verset de la Lumière (Ayat an-Nûr) compare la lumière d'Allah à une niche contenant une lampe. À quoi cette lampe est-elle elle-même comparée ?",
+    "choix": ["A. À une étoile brillante, dans un verre semblable à une perle", "B. Au soleil directement", "C. À un simple feu de bois", "D. À la lune"],
+    "reponse": "A",
+    "explication": "An-Nûr (24:35) décrit une lampe placée dans un verre, « le verre est comme un astre étincelant », alimentée par l'huile d'un olivier béni, « ni oriental ni occidental », dont l'huile illuminerait presque sans même que le feu ne la touche — une image poétique d'une intensité lumineuse absolue et universelle.",
+    "theme": "coran",
+    "source": "Coran 24:35 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 127
+  },
+  {
+    "id": "quiz_364",
+    "question": "Selon les écoles shâfi'ite et hanbalite, un acheteur et un vendeur peuvent-ils annuler librement une vente tant qu'ils ne se sont pas physiquement séparés (khiyâr al-majlis) ?",
+    "choix": ["A. Non, aucune école ne reconnaît ce droit", "B. Oui, ce droit d'option de séance est reconnu par ces deux écoles ; les Hanafites et Mâlikites considèrent en revanche le contrat définitivement conclu dès l'accord des volontés", "C. Ce droit est reconnu uniquement pour les biens immobiliers", "D. Il concerne uniquement les transactions entre musulmans"],
+    "reponse": "B",
+    "explication": "S'appuyant sur un hadith explicite, Shâfi'ites et Hanbalites reconnaissent le khiyâr al-majlis : chaque partie peut annuler la vente tant que les deux protagonistes ne se sont pas séparés physiquement. Hanafites et Mâlikites considèrent au contraire le contrat immédiatement contraignant dès l'accord des volontés, une divergence fiqh classique sur la nature du consentement contractuel.",
+    "theme": "fiqh",
+    "source": "Sahîh al-Bukhârî n°2079 ; Fiqh comparatif des transactions",
+    "difficulte": "avancé",
+    "jour": 128
+  },
+  {
+    "id": "quiz_365",
+    "question": "Les Hanafites et Hanbalites autorisent-ils, comme pour les chaussettes, l'essuyage (mash) sur le turban à la place du lavage complet de la tête lors des ablutions ?",
+    "choix": ["A. Non, aucune école ne l'autorise jamais", "B. Oui, sous certaines conditions, notamment lorsqu'il serait pénible ou compliqué de le retirer ; les Mâlikites classiques restent plus restrictifs sur ce point", "C. Cela concerne uniquement les femmes voilées", "D. Uniquement durant le Hajj"],
+    "reponse": "B",
+    "explication": "S'appuyant sur des hadiths rapportant le Prophète ﷺ essuyant son turban en complément d'un essuyage partiel de la tête, Hanafites et Hanbalites autorisent cette facilité dans certaines conditions, tandis que la position mâlikite classique reste plus restrictive et exige généralement un lavage direct de la tête ou du moins une majeure partie.",
+    "theme": "fiqh",
+    "source": "Sahîh Muslim n°274 ; Fiqh comparatif de la purification",
+    "difficulte": "avancé",
+    "jour": 128
+  },
+  {
+    "id": "quiz_366",
+    "question": "Selon la majorité des savants, celui qui a l'intention de sacrifier un animal (udhiya) pour l'Aïd al-Adhâ doit-il s'abstenir de couper cheveux et ongles durant les dix premiers jours de Dhû al-Hijja ?",
+    "choix": ["A. Non, cette recommandation ne concerne personne", "B. Oui, il est recommandé (fortement pour certains, simplement préférable pour d'autres) de s'en abstenir jusqu'après l'accomplissement du sacrifice", "C. Cela est obligatoire sous peine de nullité du sacrifice", "D. Cela concerne uniquement les pèlerins du Hajj"],
+    "reponse": "B",
+    "explication": "Un hadith rapporte que celui qui souhaite sacrifier doit s'abstenir de couper ses cheveux et ses ongles dès le début de Dhû al-Hijja jusqu'à l'accomplissement du sacrifice. Les Shâfi'ites et Hanbalites y voient une recommandation forte, tandis que les Hanafites la considèrent comme simplement préférable, sans caractère obligatoire strict.",
+    "theme": "fiqh",
+    "source": "Sahîh Muslim n°1977 ; Fiqh comparatif du sacrifice",
+    "difficulte": "avancé",
+    "jour": 128
+  },
+  {
+    "id": "quiz_367",
+    "question": "Comment appelle-t-on la prière spécifique instituée par le Prophète ﷺ pour permettre à l'armée de prier en toute sécurité tout en restant vigilante face à un ennemi proche ?",
+    "choix": ["A. Salât al-Khawf (la prière de la peur/du danger)", "B. Salât al-Istisqâ'", "C. Salât al-Kusûf", "D. Salât al-Janâza"],
+    "reponse": "A",
+    "explication": "La Salât al-Khawf, instituée notamment lors de l'expédition de Dhât ar-Riqâ', organise la prière collective en divisant l'armée en deux groupes priant successivement pendant que l'autre monte la garde, permettant d'accomplir l'obligation rituelle sans exposer l'ensemble des troupes à un danger militaire immédiat.",
+    "theme": "sira",
+    "source": "Coran 4:102 ; Sahîh al-Bukhârî n°4131",
+    "difficulte": "avancé",
+    "jour": 129
+  },
+  {
+    "id": "quiz_368",
+    "question": "Quel Compagnon, capturé lors de la tragédie du Rajî' puis vendu à Quraysh, récita des vers de foi inébranlable juste avant son exécution ?",
+    "choix": ["A. Khubayb ibn 'Adî", "B. Zayd ibn ad-Dathinna seul", "C. 'Âsim ibn Thâbit seul", "D. Aucun Compagnon ne fut exécuté ainsi"],
+    "reponse": "A",
+    "explication": "Khubayb ibn 'Adî, capturé après la trahison d'une tribu voisine ayant livré ce petit groupe de missionnaires musulmans à Quraysh, récita des vers célèbres affirmant son indifférence à la mort tant qu'elle survenait sur le chemin d'Allah, avant d'être crucifié — un épisode resté un modèle classique de fermeté dans la foi face à la mort.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°3045 ; Ibn Hishâm, as-Sîra",
+    "difficulte": "avancé",
+    "jour": 129
+  },
+  {
+    "id": "quiz_369",
+    "question": "Comment appelle-t-on la tragédie où environ soixante-dix récitateurs et enseignants du Coran (al-Qurrâ') furent massacrés par traîtrise alors qu'ils avaient été envoyés en mission pacifique d'enseignement ?",
+    "choix": ["A. Bi'r Ma'ûna", "B. Ghazwat Badr", "C. Yawm ar-Rajî'", "D. Ghazwat Uhud"],
+    "reponse": "A",
+    "explication": "Envoyés à la demande apparente d'une tribu voulant apprendre l'Islam, environ soixante-dix récitateurs du Coran furent massacrés par traîtrise près du puits de Ma'ûna, un événement qui affecta profondément le Prophète ﷺ, au point qu'il invoqua contre les responsables durant plusieurs semaines lors de ses prières.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°4090 ; Ibn Hishâm, as-Sîra",
+    "difficulte": "avancé",
+    "jour": 129
+  },
+  {
+    "id": "quiz_370",
+    "question": "Selon le Coran, à partir de quoi les djinns furent-ils créés, contrairement à l'homme créé d'argile ?",
+    "choix": ["A. D'eau", "B. D'un feu sans fumée (mârij min nâr)", "C. De lumière pure", "D. De vent"],
+    "reponse": "B",
+    "explication": "Ar-Rahmân (55:15) précise que les djinns furent créés « d'un feu sans fumée ». Al-A'râf (7:27) ajoute qu'ils voient les humains alors que ceux-ci ne les voient généralement pas, une asymétrie perceptive qui fonde une part importante de la croyance islamique concernant ce monde invisible parallèle.",
+    "theme": "aqida",
+    "source": "Coran 55:15, 7:27 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 130
+  },
+  {
+    "id": "quiz_371",
+    "question": "Selon un hadith, à quel moment précis du vendredi se situerait une heure privilégiée où toute invocation sincère serait exaucée ?",
+    "choix": ["A. Le matin uniquement", "B. Une heure non précisément déterminée, généralement associée à la fin de l'après-midi avant le coucher du soleil, ou pendant le sermon et la prière", "C. Uniquement pendant l'adhân du Fajr", "D. Le hadith ne mentionne aucune heure spécifique au vendredi"],
+    "reponse": "B",
+    "explication": "Le Prophète ﷺ mentionna une heure du vendredi où toute invocation formulée par un croyant en état de prière serait exaucée, sans en préciser le moment exact. Les savants ont proposé plusieurs pistes, la plus répandue la situant entre 'Asr et le coucher du soleil, ou durant le sermon et la prière elle-même.",
+    "theme": "aqida",
+    "source": "Sahîh al-Bukhârî n°935 ; Sahîh Muslim n°852",
+    "difficulte": "intermédiaire",
+    "jour": 130
+  },
+  {
+    "id": "quiz_372",
+    "question": "Selon un hadith, l'invocation formulée entre l'adhân et l'iqâma est-elle considérée comme un moment particulièrement propice à l'exaucement ?",
+    "choix": ["A. Non, ce moment n'a aucune particularité", "B. Oui, le Prophète ﷺ a explicitement déclaré que l'invocation entre l'adhân et l'iqâma n'est pas repoussée", "C. Seulement le vendredi", "D. Seulement pour l'imam de la mosquée"],
+    "reponse": "B",
+    "explication": "Le Prophète ﷺ a dit : « L'invocation entre l'adhân et l'iqâma n'est pas repoussée. » Ce court intervalle, souvent négligé, est ainsi présenté comme un moment particulièrement opportun pour formuler ses demandes avant même le début formel de la prière.",
+    "theme": "aqida",
+    "source": "Sunan at-Tirmidhî n°212",
+    "difficulte": "intermédiaire",
+    "jour": 130
+  },
+  {
+    "id": "quiz_373",
+    "question": "Quelle sourate évoque un Jour du Jugement dont la durée équivaudrait, pour les anges et l'Esprit y montant, à cinquante mille années terrestres ?",
+    "choix": ["A. Al-Ma'ârij", "B. Al-Hâqqa", "C. An-Naba'", "D. Al-Mursalât"],
+    "reponse": "A",
+    "explication": "Al-Ma'ârij (70:4) déclare : « Les anges et l'Esprit montent vers Lui en un jour dont la durée est de cinquante mille ans. » Les commentateurs discutent si ce chiffre décrit la durée du Jour du Jugement lui-même pour les mécréants, ou la distance/l'ascension spirituelle des anges, sans consensus définitif sur l'interprétation exacte.",
+    "theme": "coran",
+    "source": "Coran 70:4 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 131
+  },
+  {
+    "id": "quiz_374",
+    "question": "Un voyageur endormi qui manque la prière de Fajr sans faute de sa part (impossibilité de se réveiller) : que doit-il faire dès son réveil, selon l'épisode rapporté durant un voyage du Prophète ﷺ lui-même ?",
+    "choix": ["A. Attendre le lendemain pour la prier à la même heure", "B. La prier immédiatement dès le réveil, sans délai, quelle que soit l'heure", "C. Elle est définitivement perdue sans possibilité de rattrapage", "D. La remplacer par une aumône uniquement"],
+    "reponse": "B",
+    "explication": "Lors d'un voyage, le Prophète ﷺ et ses Compagnons, épuisés, s'endormirent après le coucher du soleil et manquèrent le réveil pour Fajr. À leur réveil, le soleil s'était déjà levé ; le Prophète ﷺ ordonna de prier immédiatement, déclarant qu'il n'y a de blâme que pour celui qui néglige volontairement la prière en étant éveillé, non pour celui qui dort sans faute.",
+    "theme": "fiqh",
+    "source": "Sahîh Muslim n°681",
+    "difficulte": "intermédiaire",
+    "jour": 131
+  },
+  {
+    "id": "quiz_375",
+    "question": "Quel Compagnon avait été chargé de monter la garde et de réveiller le groupe pour la prière de Fajr, lors de cet épisode où tous s'endormirent durant un voyage ?",
+    "choix": ["A. Bilâl ibn Rabâh", "B. Abû Bakr as-Siddîq", "C. 'Umar ibn al-Khattâb", "D. Zayd ibn Thâbit"],
+    "reponse": "A",
+    "explication": "Bilâl s'était porté volontaire pour veiller et réveiller le groupe, mais succomba lui-même au sommeil après une longue journée de marche épuisante, entraînant le retard collectif de la prière — un épisode illustrant que même les Compagnons les plus dévoués restent des êtres humains sujets à la fatigue.",
+    "theme": "sira",
+    "source": "Sahîh Muslim n°681",
+    "difficulte": "avancé",
+    "jour": 131
+  },
+  {
+    "id": "quiz_376",
+    "question": "Quel verset coranique, révélé lors du Pèlerinage d'Adieu à 'Arafât, proclame l'achèvement complet de la religion islamique ?",
+    "choix": ["A. Al-Mâ'ida 5:3", "B. Al-Baqara 2:286", "C. An-Nisâ' 4:1", "D. Al-Ahzâb 33:40"],
+    "reponse": "A",
+    "explication": "Al-Mâ'ida (5:3) proclame : « Aujourd'hui, J'ai parachevé pour vous votre religion, accompli sur vous Mon bienfait, et J'agrée pour vous l'Islam comme religion. » Révélé un vendredi à 'Arafât durant le Pèlerinage d'Adieu, ce verset marque symboliquement l'achèvement du message religieux transmis par le Prophète ﷺ.",
+    "theme": "coran",
+    "source": "Coran 5:3 ; Sahîh al-Bukhârî n°45",
+    "difficulte": "intermédiaire",
+    "jour": 132
+  },
+  {
+    "id": "quiz_377",
+    "question": "Selon Ahl as-Sunna, le Paradis et l'Enfer sont-ils déjà créés et existants dès maintenant, ou seront-ils créés uniquement après le Jour du Jugement ?",
+    "choix": ["A. Ils seront créés uniquement après le Jugement, contrairement à une idée répandue", "B. Ils sont déjà créés et existent actuellement, position affirmée contre certains courants mu'tazilites qui soutenaient leur création future uniquement", "C. Seul le Paradis existe déjà, l'Enfer sera créé plus tard", "D. La question n'a jamais fait débat parmi les théologiens"],
+    "reponse": "B",
+    "explication": "Ahl as-Sunna affirme, en s'appuyant notamment sur le récit du Mi'râj où le Prophète ﷺ vit le Paradis et l'Enfer, que les deux sont d'ores et déjà créés et existants, contre la position de certains théologiens mu'tazilites qui soutenaient qu'ils ne seraient créés qu'après le Jugement dernier, jugeant illogique leur création anticipée sans habitants immédiats.",
+    "theme": "aqida",
+    "source": "Sahîh al-Bukhârî n°3242 ; Al-'Aqîda at-Tahâwiyya",
+    "difficulte": "avancé",
+    "jour": 132
+  },
+  {
+    "id": "quiz_378",
+    "question": "Selon les écoles shâfi'ite et hanbalite, le « Âmîn » prononcé après la Fâtiha doit-il être dit à voix haute dans les prières à voix haute (Fajr, Maghrib, 'Ishâ') ?",
+    "choix": ["A. Non, toujours à voix basse pour toutes les écoles", "B. Oui, à voix haute pour ces deux écoles ; les Hanafites et Mâlikites (dans leur position la plus répandue) le disent silencieusement", "C. Cela dépend uniquement de l'imam", "D. Il ne se prononce jamais en prière collective"],
+    "reponse": "B",
+    "explication": "Shâfi'ites et Hanbalites disent Âmîn à voix haute après la Fâtiha dans les prières à récitation audible, l'imam et les fidèles répondant ensemble. Hanafites et Mâlikites (position majoritaire) le prononcent silencieusement, une divergence fiqh visible et fréquemment observée d'une mosquée à l'autre selon la tradition suivie localement.",
+    "theme": "fiqh",
+    "source": "Al-Majmû', an-Nawawî ; Fiqh comparatif de la prière",
+    "difficulte": "avancé",
+    "jour": 132
+  },
+  {
+    "id": "quiz_379",
+    "question": "Sous quel calife rachidun un second appel à la prière (adhân) fut-il ajouté avant celui de la Jumu'a, en raison de la croissance de la population de Médine ?",
+    "choix": ["A. Abû Bakr as-Siddîq", "B. 'Umar ibn al-Khattâb", "C. 'Uthmân ibn 'Affân", "D. 'Alî ibn Abî Tâlib"],
+    "reponse": "C",
+    "explication": "'Uthmân institua un premier adhân supplémentaire, prononcé plus tôt, pour avertir à l'avance une population médinoise devenue plus nombreuse et dispersée de l'approche du vendredi, en complément de l'adhân traditionnel donné directement devant l'imam avant le sermon, une adaptation pratique restée en usage.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°912",
+    "difficulte": "avancé",
+    "jour": 133
+  },
+  {
+    "id": "quiz_380",
+    "question": "Comment distingue-t-on, en 'aqîda, les attributs essentiels d'Allah (dhâtiyya), toujours présents, des attributs d'action (fi'liyya), liés à Sa volonté libre comme créer ou pardonner ?",
+    "choix": ["A. Il n'existe aucune distinction reconnue par les théologiens", "B. Les attributs essentiels sont permanents et inséparables de l'Être divin (Science, Puissance, Vie) ; les attributs d'action dépendent de la volonté libre d'Allah et se manifestent quand Il le veut (créer, pardonner, se mettre en colère)", "C. Seuls les attributs d'action sont reconnus par Ahl as-Sunna", "D. Cette distinction concerne uniquement les noms d'Allah, jamais Ses attributs"],
+    "reponse": "B",
+    "explication": "Les théologiens sunnites distinguent les attributs essentiels (dhâtiyya), permanents et inséparables de l'Être divin comme la Science ou la Vie, des attributs d'action (fi'liyya), qui se manifestent selon la volonté libre d'Allah — comme créer, pardonner ou Se mettre en colère — sans que cette distinction n'introduise de changement dans l'Essence divine elle-même.",
+    "theme": "aqida",
+    "source": "Ibn Taymiyya, al-'Aqîda al-Wâsitiyya ; théologie classique des Attributs",
+    "difficulte": "avancé",
+    "jour": 133
+  }
+]
