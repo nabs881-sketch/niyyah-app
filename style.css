@@ -6108,7 +6108,7 @@ body::before {
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background: radial-gradient(circle at 30% 28%, rgba(201,168,76,0.25), #081428 48%, #020608);
+  background: radial-gradient(circle at 30% 28%, rgba(201,168,76,0.3), #1a1410 48%, #0a0806);
   z-index: 2;
   pointer-events: none;
   transition: opacity 2s ease;
