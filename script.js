@@ -1343,8 +1343,8 @@ function loadDuaas(cb) {
     if (cb) cb(duaasData);
   }).catch(function(){ if (cb) cb([]); });
 }
-function getDuaaJourNum() { var p = parseInt(safeGetItem('niyyah_duaa_progress') || '1', 10); return ((p - 1) % 245) + 1; }
-function getDuaaJourPreview() { var n = getDuaaJourNum(); return { jour: n, total: 245 }; }
+function getDuaaJourNum() { var p = parseInt(safeGetItem('niyyah_duaa_progress') || '1', 10); var _pool = (duaasData && duaasData.length) || 245; return ((p - 1) % _pool) + 1; }
+function getDuaaJourPreview() { var n = getDuaaJourNum(); var _pool = (duaasData && duaasData.length) || 245; return { jour: n, total: _pool }; }
 var GHIDAA_DATA = null;
 function loadGhidaa(cb) {
   if (GHIDAA_DATA) { if (cb) cb(GHIDAA_DATA); return; }
@@ -1413,7 +1413,7 @@ function getPropheteJour() {
   var start = safeGetItem('niyyah_prophetes_start');
   if (!start) { start = String(Date.now()); safeSetItem('niyyah_prophetes_start', start); }
   var daysSince = Math.floor((Date.now() - parseInt(start, 10)) / 86400000);
-  var jourParcours = (daysSince % 77) + 1;
+  var jourParcours = (daysSince % PROPHETES.length) + 1;
   return PROPHETES.find(function(ep) { return ep.jour === jourParcours; }) || PROPHETES[0];
 }
 (function _debugParcours() {
@@ -13022,18 +13022,18 @@ function _openTawhidJour() {
   window._knowledgeFromFil = true;
   window._tawhidFromFil = true;
   window._tawhidFromPratique = false;
-  var _dayIndex = Math.floor(Date.now() / 86400000) % 60;
+  var _dayRaw = Math.floor(Date.now() / 86400000);
   if (_tawhidCapsules.length === 0) {
     fetch('tawhid_capsules.json?v=' + (window.APP_VERSION || '1'))
       .then(function(r){ return r.json(); })
       .then(function(data){
         _tawhidCapsules = data;
-        _tawhidIndex = _dayIndex;
+        _tawhidIndex = _dayRaw % _tawhidCapsules.length;
         _renderTawhidOverlay();
       })
       .catch(function(e){ console.error('[TAWHID] fetch error', e); });
   } else {
-    _tawhidIndex = _dayIndex;
+    _tawhidIndex = _dayRaw % _tawhidCapsules.length;
     _renderTawhidOverlay();
   }
 }
