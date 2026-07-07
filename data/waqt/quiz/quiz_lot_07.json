@@ -1,0 +1,222 @@
+[
+  {
+    "id": "quiz_121",
+    "question": "Quelle sourate est parfois surnommée « Ash-Shifâ' » (la Guérison) en lien avec un épisode de guérison par récitation (ruqya) ?",
+    "choix": ["A. Al-Fâtiha", "B. Yâ-Sîn", "C. Al-Falaq", "D. An-Nâs"],
+    "reponse": "A",
+    "explication": "Un Compagnon guérit un chef de tribu piqué par un scorpion en récitant uniquement Al-Fâtiha en guise de ruqya. Rapportant l'épisode au Prophète ﷺ, celui-ci sourit et dit : « Comment as-tu su qu'elle était une ruqya ? », validant cette pratique. D'où son surnom de sourate guérisseuse.",
+    "theme": "coran",
+    "source": "Sahîh al-Bukhârî n°5749 ; Sahîh Muslim n°2201",
+    "difficulte": "intermédiaire",
+    "jour": 43
+  },
+  {
+    "id": "quiz_122",
+    "question": "Selon un hadith, quelle sourate fait fuir le Shaytân de la maison où elle est récitée régulièrement ?",
+    "choix": ["A. Al-Baqara", "B. Al-Ikhlâs", "C. Al-Kahf", "D. Al-Mulk"],
+    "reponse": "A",
+    "explication": "Le Prophète ﷺ a dit : « Ne transformez pas vos maisons en tombes, car le Shaytân fuit la maison où l'on récite la sourate Al-Baqara. » Un encouragement fort à faire de la lecture régulière du Coran chez soi une protection spirituelle du foyer.",
+    "theme": "coran",
+    "source": "Sahîh Muslim n°780",
+    "difficulte": "intermédiaire",
+    "jour": 43
+  },
+  {
+    "id": "quiz_123",
+    "question": "Combien de versets compte Al-Kawthar, la sourate la plus courte du Coran ?",
+    "choix": ["A. Deux", "B. Trois", "C. Cinq", "D. Sept"],
+    "reponse": "B",
+    "explication": "Al-Kawthar (108) est la plus courte sourate du Coran avec seulement trois versets, malgré sa brièveté extrême, elle annonce l'un des plus grands dons faits au Prophète ﷺ : le fleuve du Paradis qui porte son nom.",
+    "theme": "coran",
+    "source": "Coran 108 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 43
+  },
+  {
+    "id": "quiz_124",
+    "question": "Si l'on a encore de la nourriture en bouche au moment où retentit l'adhân de Fajr durant le jeûne, que doit-on faire ?",
+    "choix": ["A. Recracher immédiatement tout", "B. L'avaler, cela ne rompt pas le jeûne", "C. Le jeûne est automatiquement invalidé", "D. Attendre le lendemain pour rattraper le jour"],
+    "reponse": "B",
+    "explication": "Un hadith autorise à avaler ce qui se trouve déjà en bouche au moment de l'adhân, l'action ayant commencé avant l'entrée effective du temps de jeûne. Cette tolérance illustre la facilité (yusr) que la Sharî'a accorde dans les situations limites.",
+    "theme": "fiqh",
+    "source": "Sunan Abî Dâwûd n°2350",
+    "difficulte": "avancé",
+    "jour": 44
+  },
+  {
+    "id": "quiz_125",
+    "question": "Selon les Hanafites et Hanbalites, le raccourcissement (qasr) de la prière en voyage est-il obligatoire ou simplement une concession facultative ?",
+    "choix": ["A. Une concession facultative uniquement", "B. Obligatoire (wâjib), pas une simple option", "C. Interdit en réalité", "D. Réservé aux femmes en voyage"],
+    "reponse": "B",
+    "explication": "Contrairement aux Mâlikites et Shâfi'ites, qui considèrent le qasr comme une rukhsa (facilité facultative), Hanafites et Hanbalites estiment qu'il est obligatoire de raccourcir la prière en voyage, sans possibilité de prier la version complète dans ce contexte.",
+    "theme": "fiqh",
+    "source": "Al-Hidâya, al-Marghînânî ; Fiqh comparatif du voyage",
+    "difficulte": "avancé",
+    "jour": 44
+  },
+  {
+    "id": "quiz_126",
+    "question": "Quelle école fixe un montant minimal légal pour la dot (mahr) du mariage, contrairement aux trois autres ?",
+    "choix": ["A. Shâfi'ite", "B. Mâlikite", "C. Hanafite", "D. Hanbalite"],
+    "reponse": "C",
+    "explication": "L'école hanafite fixe un minimum légal de dix dirhams pour le mahr, en dessous duquel le mariage reste valide mais le mari doit compléter la somme. Les trois autres écoles ne fixent aucun montant minimum, la dot pouvant symboliquement être très modeste.",
+    "theme": "fiqh",
+    "source": "Al-Hidâya, al-Marghînânî ; Fiqh comparatif du mariage",
+    "difficulte": "avancé",
+    "jour": 44
+  },
+  {
+    "id": "quiz_127",
+    "question": "Qui fut choisi comme porte-parole des musulmans devant le Négus lors de la seconde émigration vers l'Abyssinie ?",
+    "choix": ["A. 'Uthmân ibn 'Affân", "B. Ja'far ibn Abî Tâlib", "C. Zayd ibn Hâritha", "D. 'Abdullâh ibn Mas'ûd"],
+    "reponse": "B",
+    "explication": "Face aux émissaires qurayshites venus réclamer leur extradition, Ja'far ibn Abî Tâlib, cousin du Prophète ﷺ, plaida la cause des musulmans devant le Négus avec une éloquence restée célèbre, décrivant leur passage de l'ignorance à l'Islam.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.1 ; Musnad Ahmad",
+    "difficulte": "intermédiaire",
+    "jour": 45
+  },
+  {
+    "id": "quiz_128",
+    "question": "Quelle sourate Ja'far ibn Abî Tâlib récita-t-il devant le Négus pour illustrer la position du Coran sur 'Îsâ (Jésus) ?",
+    "choix": ["A. Âl 'Imrân", "B. Maryam", "C. An-Nisâ'", "D. Al-Mâ'ida"],
+    "reponse": "B",
+    "explication": "Ja'far récita les versets d'ouverture de la sourate Maryam relatant la naissance miraculeuse de 'Îsâ. Le Négus, chrétien, en pleura d'émotion et refusa de livrer les musulmans à Quraysh, reconnaissant une parenté spirituelle avec le message qu'il portait.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.1",
+    "difficulte": "intermédiaire",
+    "jour": 45
+  },
+  {
+    "id": "quiz_129",
+    "question": "Comment appelle-t-on les guerres tribales pré-islamiques auxquelles le jeune Muhammad ﷺ assista, aidant notamment ses oncles à ramasser des flèches ?",
+    "choix": ["A. Harb al-Basûs", "B. Harb al-Fijâr (la Guerre Sacrilège)", "C. Yawm Dhî Qâr", "D. Harb Dâhis wal-Ghabrâ'"],
+    "reponse": "B",
+    "explication": "Harb al-Fijâr opposa Quraysh et ses alliés à la tribu de Qays 'Aylân, en partie durant les mois sacrés où la guerre était normalement proscrite — d'où son nom. Le jeune Muhammad ﷺ, encore adolescent, y participa en soutien logistique sans combattre directement.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.1",
+    "difficulte": "avancé",
+    "jour": 45
+  },
+  {
+    "id": "quiz_130",
+    "question": "Comment appelle-t-on le pacte conclu entre plusieurs clans mecquois avant l'Islam, engageant à défendre collectivement toute personne victime d'injustice à la Mecque ?",
+    "choix": ["A. Hilf al-Fudûl", "B. Sahîfat al-Madîna", "C. Bay'at ar-Ridwân", "D. 'Ahd al-Hudaybiyya"],
+    "reponse": "A",
+    "explication": "Hilf al-Fudûl fut conclu par plusieurs clans qurayshites, dont les Banû Hâshim, s'engageant à secourir tout opprimé à la Mecque, marchand ou étranger, quel que soit son statut. Le jeune Muhammad ﷺ, alors âgé d'environ 20 ans, y assista et y participa.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.1",
+    "difficulte": "intermédiaire",
+    "jour": 46
+  },
+  {
+    "id": "quiz_131",
+    "question": "Après le début de sa mission prophétique, comment le Prophète ﷺ jugea-t-il rétrospectivement le Hilf al-Fudûl auquel il avait assisté avant la révélation ?",
+    "choix": ["A. Il le désavoua comme pratique païenne", "B. Il déclara qu'il répondrait encore à un pacte semblable même en tant que prophète", "C. Il n'en reparla jamais", "D. Il l'interdit formellement à ses Compagnons"],
+    "reponse": "B",
+    "explication": "Le Prophète ﷺ déclara après la révélation : « J'ai assisté avec mes oncles à un pacte à la maison de 'Abdullâh ibn Jud'ân, et je n'aimerais pas l'échanger contre des chameaux rouges (les biens les plus précieux) ; si l'on m'y appelait aujourd'hui en Islam, je répondrais. »",
+    "theme": "sira",
+    "source": "Musnad Ahmad ; as-Sîra an-Nabawiyya",
+    "difficulte": "avancé",
+    "jour": 46
+  },
+  {
+    "id": "quiz_132",
+    "question": "Selon le hadith de la Fitra, sur quelle disposition naturelle naît tout enfant avant l'influence de son entourage ?",
+    "choix": ["A. Sur l'incroyance par défaut", "B. Sur la Fitra (disposition naturelle proche du Tawhîd)", "C. Sur une religion déjà déterminée dès la naissance", "D. Sur l'indifférence totale"],
+    "reponse": "B",
+    "explication": "Le Prophète ﷺ a dit : « Tout enfant naît sur la Fitra ; ce sont ses parents qui en font un juif, un chrétien ou un mazdéen. » Ce hadith fonde la conception islamique d'une disposition innée à reconnaître son Créateur, façonnée ensuite par l'éducation reçue.",
+    "theme": "aqida",
+    "source": "Sahîh al-Bukhârî n°1359 ; Sahîh Muslim n°2658",
+    "difficulte": "intermédiaire",
+    "jour": 46
+  },
+  {
+    "id": "quiz_133",
+    "question": "Comment appelle-t-on l'étape intermédiaire entre la mort et la Résurrection selon la croyance islamique ?",
+    "choix": ["A. Al-Firdaws", "B. Al-Barzakh", "C. Al-A'râf", "D. As-Sirât"],
+    "reponse": "B",
+    "explication": "Al-Mu'minûn (23:100) mentionne un Barzakh (barrière, intervalle) séparant la mort de la Résurrection. C'est durant cette période que se déroulent l'interrogatoire de la tombe et son châtiment ou son délice, en attendant le Jour du Jugement.",
+    "theme": "aqida",
+    "source": "Coran 23:100 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 47
+  },
+  {
+    "id": "quiz_134",
+    "question": "Selon un hadith célèbre, combien de catégories de personnes seront à l'ombre du Trône d'Allah le Jour où il n'y aura d'autre ombre que la Sienne ?",
+    "choix": ["A. Trois", "B. Cinq", "C. Sept", "D. Douze"],
+    "reponse": "C",
+    "explication": "Le hadith énumère sept catégories : le dirigeant juste, le jeune élevé dans l'adoration, celui dont le cœur reste attaché aux mosquées, deux personnes s'aimant pour Allah, celui qui refuse la tentation par crainte d'Allah, celui qui donne l'aumône en secret, et celui qui pleure seul en se souvenant d'Allah.",
+    "theme": "aqida",
+    "source": "Sahîh al-Bukhârî n°660 ; Sahîh Muslim n°1031",
+    "difficulte": "intermédiaire",
+    "jour": 47
+  },
+  {
+    "id": "quiz_135",
+    "question": "Quelle sourate l'Imam ash-Shâfi'î considérait-il si complète que, selon lui, elle suffirait à guider l'humanité si elle la méditait vraiment ?",
+    "choix": ["A. Al-Ikhlâs", "B. Al-'Asr", "C. Al-Kawthar", "D. Al-Fâtiha"],
+    "reponse": "B",
+    "explication": "L'Imam ash-Shâfi'î aurait affirmé à propos d'Al-'Asr (103), malgré sa brièveté de trois versets : « Si les gens réfléchissaient à cette sourate, elle leur suffirait. » Il ne s'agit pas d'un hadith prophétique mais d'une appréciation savante largement rapportée.",
+    "theme": "coran",
+    "source": "Tafsîr ash-Shâfi'î, cité par at-Tabarânî et divers commentateurs",
+    "difficulte": "avancé",
+    "jour": 47
+  },
+  {
+    "id": "quiz_136",
+    "question": "Les Hanafites encouragent-ils la prosternation de gratitude (sujûd ash-shukr) comme pratique régulière à l'annonce d'une bonne nouvelle, contrairement aux Shâfi'ites et Hanbalites ?",
+    "choix": ["A. Oui, ils l'encouragent davantage que les autres écoles", "B. Non, ils la jugent d'usage non recommandé (makrûh tanzîhî) en pratique régulière", "C. Ils l'interdisent totalement", "D. Ils l'imposent comme obligatoire"],
+    "reponse": "B",
+    "explication": "Alors que Shâfi'ites et Hanbalites encouragent le sujûd ash-shukr en s'appuyant sur des récits de prosternations ponctuelles du Prophète ﷺ à l'annonce de bonnes nouvelles, l'école hanafite considère cette pratique comme non recommandée en dehors du cadre strict de la prière rituelle.",
+    "theme": "fiqh",
+    "source": "Al-Hidâya, al-Marghînânî ; Fiqh comparatif de la prière",
+    "difficulte": "avancé",
+    "jour": 48
+  },
+  {
+    "id": "quiz_137",
+    "question": "Combien de femmes participèrent au second pacte d'al-'Aqaba, aux côtés d'environ 73 hommes de Médine ?",
+    "choix": ["A. Aucune", "B. Deux", "C. Dix", "D. Vingt"],
+    "reponse": "B",
+    "explication": "Le second pacte d'al-'Aqaba (an 13 de la mission) réunit environ 73 hommes et deux femmes, dont Nusayba bint Ka'b (Umm 'Umâra). Contrairement au premier pacte, celui-ci incluait l'engagement de défendre militairement le Prophète ﷺ, ouvrant la voie à la Hijra.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.1",
+    "difficulte": "avancé",
+    "jour": 48
+  },
+  {
+    "id": "quiz_138",
+    "question": "Selon Ahl as-Sunna, les prophètes sont-ils protégés de toute erreur, y compris dans leurs jugements sur les affaires de ce monde ?",
+    "choix": ["A. Oui, aucune erreur n'est possible dans quelque domaine que ce soit", "B. Ils sont protégés du péché majeur et de l'erreur dans la transmission du message, mais des erreurs de jugement mondain restent possibles, corrigées le cas échéant par révélation", "C. Non, ils peuvent se tromper même sur le message religieux", "D. La question ne concerne que certains prophètes"],
+    "reponse": "B",
+    "explication": "L'infaillibilité ('isma) des prophètes concerne la préservation du message religieux et l'absence de péché majeur. Dans les affaires purement mondaines (stratégie agricole, jugement ponctuel), une erreur d'appréciation reste concevable, comme l'illustre l'épisode de la pollinisation des palmiers à Médine, corrigé par le Prophète ﷺ lui-même sur avis des Compagnons.",
+    "theme": "aqida",
+    "source": "Sahîh Muslim n°2363 ; théologie classique sur la 'isma",
+    "difficulte": "avancé",
+    "jour": 48
+  },
+  {
+    "id": "quiz_139",
+    "question": "Comment plusieurs hadiths décrivent-ils la terre sur laquelle l'humanité sera rassemblée le Jour du Jugement ?",
+    "choix": ["A. La même terre actuelle, inchangée", "B. Une terre transformée, blanche comme de l'argent", "C. Une terre recouverte d'eau", "D. Aucune description n'est donnée"],
+    "reponse": "B",
+    "explication": "S'appuyant sur Ibrâhîm (14:48) : « Le jour où la terre sera changée en une autre terre », un hadith précise qu'elle sera « blanche comme de l'argent », plane, sans repère ni relief, où nul ne connaîtra la place d'un autre sinon par la trace de ses pas.",
+    "theme": "aqida",
+    "source": "Coran 14:48 ; Sahîh Muslim n°2790",
+    "difficulte": "avancé",
+    "jour": 49
+  },
+  {
+    "id": "quiz_140",
+    "question": "Quelle est la peine prescrite dans le Coran pour l'accusation calomnieuse de zina (qadhaf) sans les quatre témoins requis ?",
+    "choix": ["A. 40 coups de fouet", "B. 80 coups de fouet", "C. Une amende financière seulement", "D. L'exil uniquement"],
+    "reponse": "B",
+    "explication": "An-Nûr (24:4) prescrit 80 coups de fouet pour quiconque accuse une personne chaste de zina sans produire les quatre témoins requis, ainsi que le rejet définitif de son témoignage — une peine sévère visant à protéger l'honneur contre les accusations infondées.",
+    "theme": "fiqh",
+    "source": "Coran 24:4 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 49
+  }
+]
