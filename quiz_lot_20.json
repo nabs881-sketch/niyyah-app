@@ -1,0 +1,222 @@
+[
+  {
+    "id": "quiz_381",
+    "question": "Quelle sourate relate la rencontre entre Mûsâ et Pharaon, où celui-ci prétend être « votre seigneur, le plus élevé » ?",
+    "choix": ["A. An-Nâzi'ât", "B. Ash-Shu'arâ' uniquement", "C. Al-A'râf uniquement", "D. Aucune sourate ne rapporte cette parole"],
+    "reponse": "A",
+    "explication": "An-Nâzi'ât (79:24) rapporte la parole de Pharaon : « Je suis votre Seigneur, le Très-Haut ! » Ce blasphème extrême, l'une des affirmations les plus graves rapportées dans le Coran, précéda son châtiment exemplaire, cité comme leçon pour la postérité (79:25-26).",
+    "theme": "coran",
+    "source": "Coran 79:24-26 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 134
+  },
+  {
+    "id": "quiz_382",
+    "question": "Quelle sourate évoque le repentir sincère de Pharaon au moment de se noyer, repentir qu'Allah n'accepta pas car venu trop tard ?",
+    "choix": ["A. Yûnus", "B. Tâ-Hâ", "C. Al-Qasas", "D. Ghâfir"],
+    "reponse": "A",
+    "explication": "Yûnus (10:90-91) rapporte que Pharaon, sur le point de se noyer, proclama enfin croire au Dieu des enfants d'Israël. La réponse divine fut sans appel : « Maintenant ? Alors que tu as désobéi auparavant et que tu étais du nombre des corrupteurs ! » Un rappel puissant sur l'urgence du repentir avant qu'il ne soit trop tard.",
+    "theme": "coran",
+    "source": "Coran 10:90-91 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 134
+  },
+  {
+    "id": "quiz_383",
+    "question": "Selon la majorité des écoles, un musulman peut-il consommer de la viande abattue par des gens du Livre (juifs ou chrétiens), sous certaines conditions ?",
+    "choix": ["A. Non, jamais, sous aucune condition", "B. Oui, sous condition que l'abattage suive des règles similaires (saignée, absence d'invocation explicite à un autre qu'Allah), sur la base d'un verset explicite", "C. Uniquement si l'animal est un poisson", "D. Seulement pour les juifs, jamais pour les chrétiens"],
+    "reponse": "B",
+    "explication": "Al-Mâ'ida (5:5) autorise explicitement la nourriture des Gens du Livre, sous réserve que l'abattage respecte des conditions similaires à celles de l'abattage islamique. Les savants contemporains nuancent selon les pratiques industrielles modernes (étourdissement, méthodes d'abattage), un sujet de fatwas actives.",
+    "theme": "fiqh",
+    "source": "Coran 5:5 ; Tafsîr Ibn Kathîr, discussions contemporaines",
+    "difficulte": "avancé",
+    "jour": 135
+  },
+  {
+    "id": "quiz_384",
+    "question": "Selon la majorité des écoles, les fruits de mer et poissons nécessitent-ils un abattage rituel (dhabh) pour être licites ?",
+    "choix": ["A. Oui, comme tout animal", "B. Non ; la majorité des écoles considère les produits de la mer licites sans abattage rituel requis, sur la base d'un verset et de hadiths spécifiques", "C. Seuls les poissons à écailles sont concernés par cette dispense", "D. Cela dépend uniquement du pays"],
+    "reponse": "B",
+    "explication": "Al-Mâ'ida (5:96) déclare licite « le gibier de la mer et sa nourriture ». La majorité des écoles (à l'exception de nuances hanafites sur certaines créatures marines non poissons) considère les produits de la mer intrinsèquement licites sans nécessité d'abattage rituel, contrairement aux animaux terrestres.",
+    "theme": "fiqh",
+    "source": "Coran 5:96 ; Sunan Abî Dâwûd n°83 (hadith sur l'eau de mer)",
+    "difficulte": "intermédiaire",
+    "jour": 135
+  },
+  {
+    "id": "quiz_385",
+    "question": "Selon la majorité des écoles, quels sont les critères minimaux d'un abattage rituel valide (dhabh) sur un animal terrestre licite ?",
+    "choix": ["A. Prononcer la Basmala et sectionner la gorge (trachée, œsophage, les deux veines jugulaires) avec un instrument tranchant", "B. Seulement dire Bismillah, sans condition sur la méthode", "C. Assommer l'animal suffit sans autre condition", "D. Aucun critère précis n'existe en fiqh"],
+    "reponse": "A",
+    "explication": "L'abattage rituel valide requiert la prononciation du Nom d'Allah (Bismillah) et la section franche de la gorge — trachée, œsophage et les deux veines jugulaires — avec un instrument tranchant, permettant l'écoulement rapide et complet du sang, condition essentielle de la licéité de la viande consommée.",
+    "theme": "fiqh",
+    "source": "Sahîh al-Bukhârî n°5498 ; Fiqh classique de l'abattage",
+    "difficulte": "intermédiaire",
+    "jour": 135
+  },
+  {
+    "id": "quiz_386",
+    "question": "Quel Compagnon, gouverneur de Kûfa, fut destitué par 'Umar après une accusation d'ivresse, malgré son statut de héros de Qâdisiyya ?",
+    "choix": ["A. Sa'd ibn Abî Waqqâs", "B. Al-Mughîra ibn Shu'ba", "C. Khâlid ibn al-Walîd", "D. Abû Mûsâ al-Ash'arî"],
+    "reponse": "B",
+    "explication": "Al-Mughîra ibn Shu'ba, gouverneur de Kûfa, fut accusé d'adultère par des témoins dont l'un se rétracta finalement sur un détail décisif, le sauvant de la peine capitale grâce à l'exigence stricte des quatre témoins oculaires directs — un cas souvent cité en fiqh illustrant la rigueur protectrice de cette condition.",
+    "theme": "sira",
+    "source": "at-Tabarî, Târîkh ar-Rusul wa'l-Mulûk",
+    "difficulte": "avancé",
+    "jour": 136
+  },
+  {
+    "id": "quiz_387",
+    "question": "Quel principe juridique fondamental ce cas d'Al-Mughîra ibn Shu'ba illustre-t-il concrètement, au-delà de l'anecdote historique ?",
+    "choix": ["A. L'exigence stricte des quatre témoins oculaires directs pour la peine de zina, rendant la condamnation quasi impossible sans aveu", "B. L'impossibilité totale de juger un gouverneur", "C. L'abolition de la peine de zina après cet épisode", "D. Aucun principe juridique n'en découle"],
+    "reponse": "A",
+    "explication": "Ce cas historique est souvent cité par les savants comme illustration concrète que l'exigence coranique des quatre témoins oculaires directs de l'acte lui-même (An-Nûr 24:4) protège en réalité l'accusé et l'honneur des gens, rendant la condamnation effective extrêmement rare sans aveu volontaire.",
+    "theme": "fiqh",
+    "source": "Tafsîr Ibn Kathîr, 24:4 ; historiographie classique",
+    "difficulte": "avancé",
+    "jour": 136
+  },
+  {
+    "id": "quiz_388",
+    "question": "Comment appelle-t-on, en 'aqîda, l'ensemble des croyances relatives aux événements de la fin des temps et de l'au-delà (mort, tombe, résurrection, jugement, Paradis, Enfer) ?",
+    "choix": ["A. 'Ilm al-Kalâm", "B. Al-'Aqîda al-Ukhrawiyya / Al-Ghayb, souvent regroupées sous le terme général d'eschatologie islamique", "C. Usûl al-Fiqh", "D. 'Ilm al-Hadîth"],
+    "reponse": "B",
+    "explication": "Ces croyances relatives aux réalités invisibles et à l'au-delà (al-ghayb) constituent une branche centrale de l'aqîda islamique, distincte du fiqh (droit pratique) ou du 'ilm al-hadîth (science du hadith), regroupant tout ce qui touche à la mort, au Barzakh, à la Résurrection et au Jugement.",
+    "theme": "aqida",
+    "source": "Classification classique des sciences islamiques",
+    "difficulte": "intermédiaire",
+    "jour": 136
+  },
+  {
+    "id": "quiz_389",
+    "question": "Selon la Sunna, quel sera, parmi les catégories de gens, le premier groupe à entrer au Paradis ?",
+    "choix": ["A. Les rois et gouvernants justes", "B. Les pauvres, selon plusieurs hadiths, précédant les riches d'un long délai en raison du compte à rendre sur les richesses", "C. Les savants uniquement", "D. Aucun ordre n'est mentionné dans la Sunna"],
+    "reponse": "B",
+    "explication": "Plusieurs hadiths rapportent que les pauvres croyants entreront au Paradis avant les riches d'un délai important (parfois chiffré à un demi-jour, soit 500 ans selon la mesure céleste), en raison du compte détaillé que les riches devront rendre sur l'origine et l'usage de leurs richesses.",
+    "theme": "aqida",
+    "source": "Sunan at-Tirmidhî n°2353 ; Sahîh Ibn Hibbân",
+    "difficulte": "avancé",
+    "jour": 137
+  },
+  {
+    "id": "quiz_390",
+    "question": "Selon un hadith, quel sera le tout dernier homme à entrer au Paradis, après avoir traversé plusieurs cycles d'épreuves et de négociations avec Allah ?",
+    "choix": ["A. Un homme dont le récit détaillé illustre l'immensité de la miséricorde divine face à une foi minimale mais sincère", "B. Aucun récit de ce type n'existe dans la Sunna", "C. Ce sera nécessairement un grand savant", "D. Ce sera un prophète mineur"],
+    "reponse": "A",
+    "explication": "Un hadith long et célèbre (rapporté par Muslim) décrit le dernier homme sortant de l'Enfer et entrant au Paradis : après plusieurs demandes progressivement satisfaites par Allah malgré ses réticences apparentes, il reçoit finalement dix fois le monde entier, provoquant le rire d'Allah face à sa gratitude débordante — un récit souvent cité pour illustrer l'immensité insondable de la miséricorde divine.",
+    "theme": "aqida",
+    "source": "Sahîh Muslim n°182",
+    "difficulte": "avancé",
+    "jour": 137
+  },
+  {
+    "id": "quiz_391",
+    "question": "Quelle sourate décrit les huit portes du Paradis et les sept portes de l'Enfer, chacune correspondant à des catégories différentes selon les actes ?",
+    "choix": ["A. Az-Zumar", "B. Al-Hijr", "C. Les deux sourates ensemble mentionnent ces chiffres respectivement", "D. Aucune sourate ne précise ce nombre"],
+    "reponse": "C",
+    "explication": "Az-Zumar (39:71-73) évoque les portes multiples de l'Enfer et du Paradis ouvertes successivement pour accueillir leurs habitants respectifs, tandis qu'Al-Hijr (15:44) précise que l'Enfer compte sept portes distinctes, chacune assignée à une part définie de ses habitants selon leurs actes.",
+    "theme": "coran",
+    "source": "Coran 39:71-73, 15:44 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 137
+  },
+  {
+    "id": "quiz_392",
+    "question": "Selon un hadith, par quelles portes spécifiques certaines catégories de croyants pourront-elles être appelées à entrer au Paradis, chacune récompensant un acte particulier ?",
+    "choix": ["A. La porte de la prière, du jeûne, de l'aumône, du jihad, entre autres, chacune ouverte à ceux qui excellaient dans cette pratique", "B. Il n'existe qu'une seule porte pour tous sans distinction", "C. Seule la porte du jihad est mentionnée dans la Sunna", "D. Les portes sont attribuées uniquement par tirage au sort"],
+    "reponse": "A",
+    "explication": "Un hadith rapporte que le Paradis comporte des portes nommées selon des pratiques spécifiques (bâb as-salât, bâb as-sadaqa, bâb ar-rayyân pour le jeûne, bâb al-jihâd), certains croyants exceptionnellement assidus dans un domaine précis pouvant être appelés à entrer par plusieurs portes simultanément, un honneur particulier évoqué pour Abû Bakr par le Prophète ﷺ.",
+    "theme": "aqida",
+    "source": "Sahîh al-Bukhârî n°1897, 3666",
+    "difficulte": "avancé",
+    "jour": 138
+  },
+  {
+    "id": "quiz_393",
+    "question": "Selon plusieurs hadiths, quelle catégorie de personnes sera la première à voir sa cause jugée le Jour du Jugement, avant même les autres affaires ?",
+    "choix": ["A. Les affaires de sang versé injustement (les meurtres)", "B. Les affaires financières mineures", "C. Les péchés liés à la prière uniquement", "D. Aucune priorité n'est établie"],
+    "reponse": "A",
+    "explication": "Le Prophète ﷺ a dit : « La première chose sur laquelle les gens seront jugés le Jour de la Résurrection concernera le sang versé. » Cette priorité souligne la gravité extrême accordée à la vie humaine en Islam, jugée avant même les manquements aux piliers religieux comme la prière.",
+    "theme": "aqida",
+    "source": "Sahîh al-Bukhârî n°6864 ; Sahîh Muslim n°1678",
+    "difficulte": "avancé",
+    "jour": 138
+  },
+  {
+    "id": "quiz_394",
+    "question": "Selon la majorité des écoles, le talion (qisâs) pour meurtre volontaire est-il une obligation systématique, ou la famille de la victime peut-elle y renoncer ?",
+    "choix": ["A. C'est une obligation systématique sans possibilité de renoncement", "B. La famille de la victime a le choix entre le talion, le pardon gratuit, ou l'acceptation d'une compensation financière (diya), une gradation encouragée par le Coran", "C. Seul le juge décide sans consultation de la famille", "D. Le talion a été aboli par consensus"],
+    "reponse": "B",
+    "explication": "Al-Baqara (2:178) établit un système gradué : la famille de la victime peut exiger le talion, accorder un pardon gratuit (jugé plus méritoire spirituellement), ou accepter une compensation financière (diya) convenue à l'amiable, offrant ainsi une voie de miséricorde et de réconciliation sociale plutôt qu'une vengeance automatique.",
+    "theme": "fiqh",
+    "source": "Coran 2:178 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 138
+  },
+  {
+    "id": "quiz_395",
+    "question": "Quelle sourate mecquoise décrit la balance des actes le Jour du Jugement comme un instrument de justice si précis qu'aucune âme ne sera lésée, fût-ce du poids d'un grain de moutarde ?",
+    "choix": ["A. Al-Anbiyâ'", "B. Luqmân", "C. Al-Kahf", "D. Yâ-Sîn"],
+    "reponse": "A",
+    "explication": "Al-Anbiyâ' (21:47) déclare : « Nous placerons les balances exactes pour le Jour de la Résurrection, et nulle âme ne sera lésée en rien ; fût-ce du poids d'un grain de moutarde, Nous l'apporterons. Et Nous suffisons pour compter. » Une image d'une précision absolue de la justice divine, jusqu'au moindre détail.",
+    "theme": "coran",
+    "source": "Coran 21:47 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 139
+  },
+  {
+    "id": "quiz_396",
+    "question": "Selon un hadith, quelle phrase simple, légère sur la langue mais lourde sur la balance, est particulièrement aimée d'Allah ?",
+    "choix": ["A. « Subhânallâhi wa bihamdihi, Subhânallâhi al-'Azîm »", "B. « Allâhu Akbar » uniquement", "C. « Lâ hawla wa lâ quwwata illâ billâh » uniquement", "D. Aucune phrase n'est mentionnée à ce sujet"],
+    "reponse": "A",
+    "explication": "Le Prophète ﷺ a dit : « Deux paroles sont légères sur la langue, lourdes sur la balance, et aimées du Tout Miséricordieux : Subhânallâhi wa bihamdihi, Subhânallâhi al-'Azîm » (Gloire et louange à Allah, gloire à Allah l'Immense). Une invitation à cultiver un dhikr simple mais spirituellement dense.",
+    "theme": "aqida",
+    "source": "Sahîh al-Bukhârî n°6406 ; Sahîh Muslim n°2694",
+    "difficulte": "intermédiaire",
+    "jour": 139
+  },
+  {
+    "id": "quiz_397",
+    "question": "Selon la majorité des savants, un musulman peut-il accomplir la 'Umra plusieurs fois durant un même voyage à la Mecque ?",
+    "choix": ["A. Non, une seule fois par voyage quelle que soit sa durée", "B. Oui, sous condition de ressortir du territoire sacré (généralement vers Tan'îm) pour reprendre un nouvel état d'ihrâm avant chaque 'Umra supplémentaire", "C. Un nombre illimité sans aucune condition ni sortie requise", "D. Seulement une fois par an au maximum"],
+    "reponse": "B",
+    "explication": "Pour accomplir plusieurs 'Umra durant un même séjour, le pèlerin doit sortir des limites du Haram (généralement vers la mosquée de Tan'îm, la plus proche) afin de reprendre un nouvel état d'ihrâm avec une intention renouvelée, avant de revenir accomplir les rites de la 'Umra suivante.",
+    "theme": "fiqh",
+    "source": "Fiqh classique du Hajj et de la 'Umra",
+    "difficulte": "intermédiaire",
+    "jour": 139
+  },
+  {
+    "id": "quiz_398",
+    "question": "Selon la majorité des écoles, quelles sont les interdictions spécifiques à l'état d'ihrâm concernant l'apparence physique de l'homme ?",
+    "choix": ["A. Porter des vêtements cousus (formant le contour du corps), se couvrir la tête, se couper cheveux ou ongles, utiliser du parfum", "B. Aucune restriction vestimentaire particulière", "C. Uniquement l'interdiction de parler", "D. Seule l'interdiction du parfum existe"],
+    "reponse": "A",
+    "explication": "En état d'ihrâm, l'homme doit porter deux pièces de tissu non cousues (ridâ' et izâr), ne peut se couvrir la tête directement, ni couper cheveux ou ongles, ni utiliser de parfum — des restrictions symbolisant l'égalité totale entre tous les pèlerins devant Allah, effaçant les distinctions sociales habituelles.",
+    "theme": "fiqh",
+    "source": "Sahîh al-Bukhârî n°134 ; Fiqh classique du Hajj",
+    "difficulte": "intermédiaire",
+    "jour": 140
+  },
+  {
+    "id": "quiz_399",
+    "question": "Selon la majorité des écoles, l'interdiction du parfum en ihrâm s'applique-t-elle également à la femme, en plus de l'homme ?",
+    "choix": ["A. Non, uniquement l'homme est concerné par cette interdiction", "B. Oui, l'interdiction du parfum concerne les deux sexes en état d'ihrâm, bien que les restrictions vestimentaires diffèrent par ailleurs", "C. La femme est totalement exemptée de toute restriction en ihrâm", "D. Cela dépend uniquement de l'âge de la femme"],
+    "reponse": "B",
+    "explication": "L'interdiction du parfum en état d'ihrâm concerne aussi bien l'homme que la femme, contrairement aux restrictions vestimentaires spécifiques (vêtements non cousus, tête découverte) qui ne s'appliquent qu'à l'homme — la femme conservant ses vêtements habituels mais sans se couvrir le visage devant des hommes non-mahram selon la majorité, ni porter de gants.",
+    "theme": "fiqh",
+    "source": "Fiqh classique du Hajj ; consensus des quatre écoles",
+    "difficulte": "avancé",
+    "jour": 140
+  },
+  {
+    "id": "quiz_400",
+    "question": "Quelle sourate décrit la Ka'ba comme « la première Maison édifiée pour les hommes », bénie et guidance pour l'univers ?",
+    "choix": ["A. Âl 'Imrân", "B. Al-Baqara", "C. Al-Hajj", "D. Ibrâhîm"],
+    "reponse": "A",
+    "explication": "Âl 'Imrân (3:96) proclame : « La première Maison édifiée pour les hommes est bien celle de Bakka (la Mecque), bénie et une guidance pour l'univers. » Ce verset fonde la centralité spirituelle unique de la Ka'ba, antérieure historiquement à toute autre maison de culte selon la tradition islamique.",
+    "theme": "coran",
+    "source": "Coran 3:96 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 140
+  }
+]

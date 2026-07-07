@@ -8712,7 +8712,7 @@ var MEDIT_PHRASES_AR = [
 window.QUIZ_DB = [];
 (function _loadQuizDB() {
   var _lots = [];
-  for (var i = 1; i <= 20; i++) { _lots.push('quiz_lot_' + String(i).padStart(2, '0')); }
+  for (var i = 1; i <= 30; i++) { _lots.push('quiz_lot_' + String(i).padStart(2, '0')); }
   _lots.forEach(function(lot) {
     fetch('./data/waqt/quiz/' + lot + '.json')
       .then(function(r) { return r.ok ? r.json() : null; })
