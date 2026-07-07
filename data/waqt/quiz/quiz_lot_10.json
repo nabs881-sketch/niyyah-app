@@ -1,0 +1,222 @@
+[
+  {
+    "id": "quiz_181",
+    "question": "Selon 'Â'isha, la sourate Al-Mâ'ida fait-elle partie des toutes dernières révélations reçues par le Prophète ﷺ ?",
+    "choix": ["A. Non, elle est parmi les premières révélations mecquoises", "B. Oui, elle est comptée parmi les dernières révélations, d'où l'invitation à bien en observer le licite et l'illicite", "C. Sa datation reste totalement inconnue", "D. Elle fut révélée avant l'Hégire"],
+    "reponse": "B",
+    "explication": "'Â'isha rapporte : « Al-Mâ'ida est parmi les dernières sourates révélées ; considérez donc ce qu'elle rend licite comme licite, et ce qu'elle rend illicite comme illicite. » Cette précision invite à ne pas chercher d'abrogation ultérieure de ses prescriptions, étant parmi les toutes dernières paroles législatives.",
+    "theme": "coran",
+    "source": "Sahîh Muslim n°3032",
+    "difficulte": "avancé",
+    "jour": 64
+  },
+  {
+    "id": "quiz_182",
+    "question": "Quelles sont les deux lectures (qirâ'ât) du Coran les plus répandues dans le monde musulman aujourd'hui ?",
+    "choix": ["A. Hafs 'an 'Âsim et Warsh 'an Nâfi'", "B. Qâlûn et Ad-Dûrî uniquement", "C. Il n'existe qu'une seule lecture universelle", "D. Ibn Kathîr et Abû 'Amr uniquement"],
+    "reponse": "A",
+    "explication": "La lecture de Hafs 'an 'Âsim domine la majeure partie du monde musulman (Moyen-Orient, Asie), tandis que Warsh 'an Nâfi' reste très répandue au Maghreb et dans certaines régions d'Afrique de l'Ouest. Ces deux lectures, parmi les dix lectures authentiques transmises, présentent quelques variations mineures de prononciation sans altérer le sens général.",
+    "theme": "coran",
+    "source": "'Ulûm al-Qur'ân classiques ; sciences des qirâ'ât",
+    "difficulte": "intermédiaire",
+    "jour": 64
+  },
+  {
+    "id": "quiz_183",
+    "question": "Selon un hadith bien établi, en combien de « lettres » ou modes (ahruf) le Coran fut-il révélé pour faciliter sa récitation aux différentes tribus arabes ?",
+    "choix": ["A. Trois", "B. Sept", "C. Dix", "D. Un seul mode unique"],
+    "reponse": "B",
+    "explication": "Le Prophète ﷺ a dit : « Jibrîl m'a fait réciter le Coran sur une seule lettre (harf), puis je lui ai demandé d'en ajouter, jusqu'à ce qu'il atteigne sept lettres. » Les savants divergent sur le sens exact de ce terme technique, mais l'objectif visait à faciliter la récitation aux différentes tribus arabes aux dialectes variés.",
+    "theme": "coran",
+    "source": "Sahîh al-Bukhârî n°4991 ; Sahîh Muslim n°818",
+    "difficulte": "avancé",
+    "jour": 64
+  },
+  {
+    "id": "quiz_184",
+    "question": "Quel surnom porte parfois la sourate At-Tawba en raison de son dévoilement des hypocrites de Médine ?",
+    "choix": ["A. Al-Fâdiha (l'Exposante)", "B. Al-Munjiya", "C. Al-'Azîma", "D. Al-Kâshifa seulement"],
+    "reponse": "A",
+    "explication": "At-Tawba est parfois surnommée Al-Fâdiha (« celle qui dévoile ») car elle expose sans détour les manœuvres et les excuses fallacieuses des hypocrites qui évitaient de participer à l'expédition de Tabûk, révélant leur duplicité aux yeux de toute la communauté.",
+    "theme": "coran",
+    "source": "Tafsîr Ibn Kathîr, introduction à At-Tawba",
+    "difficulte": "avancé",
+    "jour": 65
+  },
+  {
+    "id": "quiz_185",
+    "question": "Les Hanbalites autorisent-ils, plus largement que les autres écoles, le regroupement des prières (jam') pour cause de maladie ou de grande difficulté, en dehors du seul voyage ?",
+    "choix": ["A. Non, aucune école ne l'autorise hors voyage", "B. Oui, les Hanbalites élargissent cette permission à la maladie et aux difficultés réelles justifiant un besoin sincère", "C. Seuls les Hanafites l'autorisent pour maladie", "D. Cela concerne uniquement les femmes enceintes"],
+    "reponse": "B",
+    "explication": "Contrairement à une application stricte limitée au voyage et à la pluie, plusieurs savants hanbalites (dont Ibn Taymiyya) élargissent la permission du jam' aux malades, aux personnes allaitantes en difficulté ou à toute personne subissant une contrainte réelle rendant la séparation des prières pénible.",
+    "theme": "fiqh",
+    "source": "Majmû' al-Fatâwâ, Ibn Taymiyya ; Fiqh comparatif de la prière",
+    "difficulte": "avancé",
+    "jour": 65
+  },
+  {
+    "id": "quiz_186",
+    "question": "Selon l'école hanafite, le sacrifice de l'Aïd al-Adhâ (udhiya) est-il obligatoire (wâjib) pour qui en a les moyens, contrairement aux trois autres écoles ?",
+    "choix": ["A. Non, il est facultatif pour tous, y compris les Hanafites", "B. Oui ; les trois autres écoles le considèrent comme une sunna fortement recommandée, non obligatoire", "C. Il est obligatoire pour toutes les écoles sans exception", "D. Il n'existe aucune divergence sur ce point"],
+    "reponse": "B",
+    "explication": "Les Hanafites considèrent l'udhiya comme wâjib (obligatoire) pour tout musulman résident disposant du nisâb, tandis que Mâlikites, Shâfi'ites et Hanbalites la classent en sunna mu'akkada (fortement recommandée), une divergence fiqh classique bien documentée.",
+    "theme": "fiqh",
+    "source": "Al-Hidâya, al-Marghînânî ; Fiqh comparatif du sacrifice",
+    "difficulte": "avancé",
+    "jour": 65
+  },
+  {
+    "id": "quiz_187",
+    "question": "Selon les Hanbalites et Shâfi'ites, sur combien de jours s'étend la période autorisée pour le sacrifice de l'Aïd al-Adhâ ?",
+    "choix": ["A. Un seul jour, le jour de l'Aïd", "B. Quatre jours (10, 11, 12 et 13 Dhû al-Hijja)", "C. Sept jours complets", "D. Toute la première décade de Dhû al-Hijja"],
+    "reponse": "B",
+    "explication": "Shâfi'ites et Hanbalites étendent la période du sacrifice à quatre jours, incluant les trois jours de Tashrîq (11, 12, 13) en plus du jour de l'Aïd. Hanafites et Mâlikites restreignent traditionnellement cette période à trois jours seulement (10, 11 et 12 Dhû al-Hijja).",
+    "theme": "fiqh",
+    "source": "Al-Majmû', an-Nawawî ; Fiqh comparatif du sacrifice",
+    "difficulte": "avancé",
+    "jour": 66
+  },
+  {
+    "id": "quiz_188",
+    "question": "Quelle sourate innocenta directement Umm al-Mu'minîn 'Â'isha d'une accusation calomnieuse (l'événement de l'Ifk), après une longue période d'épreuve pour elle et sa famille ?",
+    "choix": ["A. Al-Ahzâb", "B. An-Nûr", "C. Al-Mumtahana", "D. At-Talâq"],
+    "reponse": "B",
+    "explication": "An-Nûr (24:11-20) fut révélée pour innocenter formellement 'Â'isha d'une calomnie propagée par des hypocrites de Médine, établissant par la même occasion des principes fondamentaux de protection de l'honneur : nécessité de preuves solides et peine sévère pour toute accusation infondée.",
+    "theme": "sira",
+    "source": "Coran 24:11-20 ; Sahîh al-Bukhârî n°4141",
+    "difficulte": "intermédiaire",
+    "jour": 66
+  },
+  {
+    "id": "quiz_189",
+    "question": "Combien de temps environ dura l'épreuve de l'Ifk pour 'Â'isha, avant que la révélation ne vienne l'innocenter ?",
+    "choix": ["A. Quelques heures", "B. Environ un mois", "C. Une année entière", "D. Une seule nuit"],
+    "reponse": "B",
+    "explication": "'Â'isha elle-même décrit environ un mois d'attente pénible, marquée par le silence relatif du Prophète ﷺ dans l'attente d'une révélation divine, avant qu'An-Nûr ne vienne clore définitivement l'affaire et affirmer son innocence de manière irréfutable.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°4141",
+    "difficulte": "intermédiaire",
+    "jour": 66
+  },
+  {
+    "id": "quiz_190",
+    "question": "Dans son sermon d'adieu (Khutbat al-Wadâ'), quel principe d'égalité fondamental le Prophète ﷺ proclama-t-il devant la foule rassemblée ?",
+    "choix": ["A. La supériorité des Arabes sur les autres peuples", "B. Nulle supériorité d'un Arabe sur un non-Arabe si ce n'est par la piété", "C. La supériorité des riches sur les pauvres selon leur générosité", "D. Aucun principe d'égalité n'y fut mentionné"],
+    "reponse": "B",
+    "explication": "Le Prophète ﷺ déclara : « Ô gens ! Il n'y a nulle supériorité d'un Arabe sur un non-Arabe, ni d'un non-Arabe sur un Arabe, ni d'un Blanc sur un Noir, ni d'un Noir sur un Blanc, si ce n'est par la piété (taqwâ). » Une proclamation d'égalité fondamentale entre tous les croyants.",
+    "theme": "sira",
+    "source": "Musnad Ahmad ; Ibn Kathîr, al-Bidâya wa'n-Nihâya",
+    "difficulte": "intermédiaire",
+    "jour": 67
+  },
+  {
+    "id": "quiz_191",
+    "question": "À la mort de son fils Ibrâhîm, une éclipse solaire survint. Comment le Prophète ﷺ réagit-il face aux gens qui y virent un signe lié à ce deuil ?",
+    "choix": ["A. Il confirma que le soleil s'éclipsait en signe de deuil", "B. Il corrigea cette croyance, rappelant que le soleil et la lune ne s'éclipsent pour la mort ou la naissance de personne", "C. Il resta silencieux sur le sujet", "D. Il ordonna un jour de deuil national"],
+    "reponse": "B",
+    "explication": "Le Prophète ﷺ déclara : « Le soleil et la lune sont deux signes parmi les signes d'Allah ; ils ne s'éclipsent ni pour la mort ni pour la naissance de qui que ce soit. » Une correction ferme contre toute superstition, malgré la coïncidence troublante avec la mort de son propre fils.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°1043 ; Sahîh Muslim n°915",
+    "difficulte": "intermédiaire",
+    "jour": 67
+  },
+  {
+    "id": "quiz_192",
+    "question": "Lorsque les habitants de Tâ'if repoussèrent violemment le Prophète ﷺ venu leur présenter l'Islam, que lui proposa l'ange des montagnes ?",
+    "choix": ["A. D'anéantir la ville par le feu", "B. D'écraser la ville entre les deux montagnes qui l'entourent", "C. De provoquer un tremblement de terre", "D. De les noyer par un déluge"],
+    "reponse": "B",
+    "explication": "Meurtri et rejeté à Tâ'if, le Prophète ﷺ reçut la visite de l'ange des montagnes, proposant d'écraser la ville entre les deux monts environnants. Le Prophète ﷺ refusa, espérant qu'Allah ferait naître de leur descendance des gens qui n'adoreraient qu'Allah seul — une réponse restée un modèle de patience face à l'adversité.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°3231 ; Sahîh Muslim n°1795",
+    "difficulte": "intermédiaire",
+    "jour": 67
+  },
+  {
+    "id": "quiz_193",
+    "question": "Contrairement aux Khawârij qui excluaient le grand pécheur de la communauté des croyants, quelle est la position d'Ahl as-Sunna sur l'intercession en faveur des croyants ayant commis de grands péchés ?",
+    "choix": ["A. Aucune intercession n'est possible pour eux", "B. L'intercession du Prophète ﷺ et d'autres est établie en leur faveur, sans les exclure de la foi ni les vouer à l'Enfer éternel", "C. Ils sont automatiquement pardonnés sans jugement", "D. Seuls les prophètes bénéficient d'intercession"],
+    "reponse": "B",
+    "explication": "Contrairement aux Khawârij, qui excluaient le grand pécheur de l'Islam, et à certains Mu'tazilites qui le plaçaient dans un état intermédiaire, Ahl as-Sunna affirme que le croyant fautif reste musulman, pouvant être châtié temporairement pour ses péchés, tout en bénéficiant potentiellement de l'intercession avant d'entrer finalement au Paradis.",
+    "theme": "aqida",
+    "source": "Al-'Aqîda at-Tahâwiyya ; théologie classique sur l'intercession",
+    "difficulte": "avancé",
+    "jour": 68
+  },
+  {
+    "id": "quiz_194",
+    "question": "Le hadith sur les 99 Noms d'Allah donne-t-il lui-même la liste précise et complète de ces noms ?",
+    "choix": ["A. Oui, la liste exacte figure dans le hadith authentique original", "B. Le hadith authentique mentionne le nombre 99 sans en donner la liste ; celle-ci fut compilée ultérieurement par des narrateurs et savants", "C. Non, le nombre 99 lui-même n'est mentionné dans aucun hadith", "D. Le Coran donne la liste complète et exhaustive"],
+    "reponse": "B",
+    "explication": "Le hadith de Sahîh al-Bukhârî mentionne qu'Allah a 99 noms et que quiconque les dénombre entre au Paradis, sans toutefois donner la liste exhaustive dans la version la plus authentique. La liste précise couramment diffusée fut compilée plus tard, notamment via une version rapportée par at-Tirmidhî à la chaîne jugée plus faible.",
+    "theme": "aqida",
+    "source": "Sahîh al-Bukhârî n°2736 ; Sunan at-Tirmidhî n°3507",
+    "difficulte": "avancé",
+    "jour": 68
+  },
+  {
+    "id": "quiz_195",
+    "question": "Quelle sourate compare la dispersion des gens le Jour du Jugement à des papillons éparpillés ?",
+    "choix": ["A. Al-Qâri'a", "B. Al-Wâqi'a", "C. Al-Infitâr", "D. Az-Zalzala"],
+    "reponse": "A",
+    "explication": "Al-Qâri'a (101:4) décrit : « Le jour où les gens seront comme des papillons dispersés (al-farâsh al-mabthûth). » Une image saisissante de la panique et de la désorganisation totale de l'humanité au moment du cataclysme final.",
+    "theme": "coran",
+    "source": "Coran 101:4 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 68
+  },
+  {
+    "id": "quiz_196",
+    "question": "Selon la majorité des savants, l'aqîqa (sacrifice de naissance) est-elle obligatoire ou simplement une sunna fortement recommandée ?",
+    "choix": ["A. Obligatoire pour tous sans exception", "B. Sunna mu'akkada (fortement recommandée), non obligatoire", "C. Interdite en Islam", "D. Obligatoire uniquement pour les garçons"],
+    "reponse": "B",
+    "explication": "La majorité considère l'aqîqa comme une sunna fortement recommandée : deux ovins pour un garçon, un seul pour une fille, idéalement le septième jour après la naissance, sans que son omission ne constitue un péché pour les parents dans l'incapacité de s'en acquitter.",
+    "theme": "fiqh",
+    "source": "Sunan at-Tirmidhî n°1513 ; Fiqh de la famille",
+    "difficulte": "intermédiaire",
+    "jour": 69
+  },
+  {
+    "id": "quiz_197",
+    "question": "Le célèbre chant « Tala' al-Badru 'Alaynâ », souvent présenté comme accueillant le Prophète ﷺ à son arrivée à Médine lors de la Hijra, fait-il consensus historique sur cette origine précise ?",
+    "choix": ["A. Oui, c'est un fait historiquement incontesté", "B. Non, plusieurs historiens l'associent plutôt au retour de l'expédition de Tabûk, la datation à la Hijra étant discutée", "C. Ce chant n'existe dans aucune source historique", "D. Il fut composé plusieurs siècles après le Prophète ﷺ"],
+    "reponse": "B",
+    "explication": "Bien que très populaire dans l'imaginaire lié à la Hijra, plusieurs historiens et biographes notent que ce chant serait davantage associé, dans les sources les plus anciennes, à l'accueil du retour de l'expédition de Tabûk plutôt qu'à l'arrivée initiale à Médine — une nuance souvent ignorée du grand public.",
+    "theme": "sira",
+    "source": "Analyses historiographiques classiques de la Sîra",
+    "difficulte": "avancé",
+    "jour": 69
+  },
+  {
+    "id": "quiz_198",
+    "question": "Comment appelle-t-on la pesée des actes de chaque être humain le Jour du Jugement, mentionnée explicitement dans le Coran ?",
+    "choix": ["A. As-Sirât", "B. Al-Hisâb seul", "C. Al-Mîzân (la Balance)", "D. Al-Kitâb"],
+    "reponse": "C",
+    "explication": "Al-Anbiyâ' (21:47) et Al-Qâri'a (101:6-9) évoquent Al-Mîzân, la Balance, sur laquelle seront pesées les bonnes et mauvaises actions de chacun, déterminant son sort entre légèreté salvatrice ou lourdeur menant à la ruine.",
+    "theme": "aqida",
+    "source": "Coran 21:47, 101:6-9 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 69
+  },
+  {
+    "id": "quiz_199",
+    "question": "Selon une position mâlikite particulière, le chien est-il intrinsèquement impur (najis), ou son lavage rituel relève-t-il d'un ordre religieux à observer sans souillure matérielle réelle ?",
+    "choix": ["A. Il est intrinsèquement impur pour toutes les écoles, sans exception", "B. La position mâlikite classique considère qu'il n'est pas intrinsèquement impur, le lavage restant une prescription d'obéissance (ta'abbudî)", "C. Il est totalement pur pour toutes les écoles, aucun lavage n'est requis", "D. Seul le chien noir est concerné par cette divergence"],
+    "reponse": "B",
+    "explication": "Alors que la majorité des écoles considère la salive du chien najis (impure) au sens matériel, la position mâlikite classique retient qu'il n'est pas intrinsèquement impur (tâhir dhâtan) ; le lavage en sept fois, dont une à la terre, reste néanmoins une prescription d'obéissance rituelle à respecter sans qu'il y ait souillure réelle constatée.",
+    "theme": "fiqh",
+    "source": "Fiqh comparatif de la purification, école mâlikite",
+    "difficulte": "avancé",
+    "jour": 70
+  },
+  {
+    "id": "quiz_200",
+    "question": "Quelle fut la première décision majeure et controversée d'Abû Bakr dès son accession au califat, malgré les réticences initiales de certains Compagnons dont 'Umar ?",
+    "choix": ["A. La compilation du Coran en un seul volume", "B. La poursuite de la guerre contre les tribus refusant de payer la zakât (Harb ar-Ridda)", "C. La conquête de la Syrie", "D. La construction d'une nouvelle mosquée"],
+    "reponse": "B",
+    "explication": "Abû Bakr insista fermement pour combattre les tribus refusant désormais de verser la zakât après la mort du Prophète ﷺ, malgré l'avis initial plus conciliant de 'Umar. Il affirma : « Par Allah, je combattrai quiconque sépare la prière de la zakât », une fermeté qui préserva l'unité de la jeune communauté musulmane.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°1400 ; at-Tabarî, Târîkh ar-Rusul wa'l-Mulûk",
+    "difficulte": "avancé",
+    "jour": 70
+  }
+]
