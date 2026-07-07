@@ -1,0 +1,222 @@
+[
+  {
+    "id": "quiz_201",
+    "question": "Quelle sourate est appelée « la sourate des femmes » et traite en détail des règles d'héritage, de mariage et de protection des orphelins ?",
+    "choix": ["A. Al-Mumtahana", "B. An-Nisâ'", "C. At-Talâq", "D. An-Nûr"],
+    "reponse": "B",
+    "explication": "An-Nisâ' (4) est la quatrième sourate du Coran, consacrée en grande partie aux droits des femmes, des orphelins, aux règles précises d'héritage (farâ'id) et à la protection des plus vulnérables, révélée à Médine dans un contexte de réorganisation sociale de la communauté.",
+    "theme": "coran",
+    "source": "Coran 4 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 71
+  },
+  {
+    "id": "quiz_202",
+    "question": "Quelle sourate mecquoise est intégralement consacrée à décrire les catégories de personnes selon leur réponse à la vérité : croyants, mécréants, hypocrites ?",
+    "choix": ["A. Al-Baqara (ses premiers versets seulement)", "B. Al-Munâfiqûn", "C. Al-Mumtahana", "D. Al-Kâfirûn"],
+    "reponse": "A",
+    "explication": "Les premiers versets d'Al-Baqara (2:1-20) présentent successivement les trois catégories fondamentales face à la révélation : les croyants, les mécréants déclarés, puis les hypocrites, dont la description occupe la portion la plus longue, révélant la subtilité de leur duplicité.",
+    "theme": "coran",
+    "source": "Coran 2:1-20 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 71
+  },
+  {
+    "id": "quiz_203",
+    "question": "Quelle sourate porte le nom d'un phénomène céleste et est intégralement consacrée à décrire son événement à la fin des temps ?",
+    "choix": ["A. Ash-Shams", "B. Al-Inshiqâq (la Déchirure du ciel)", "C. Al-Qamar", "D. An-Najm"],
+    "reponse": "B",
+    "explication": "Al-Inshiqâq (84) décrit la déchirure du ciel comme signe cosmique de la fin des temps, obéissant à son Seigneur. D'autres sourates courtes de la fin du Coran (At-Takwîr, Al-Infitâr) partagent ce même thème de bouleversement cosmique annonçant le Jour du Jugement.",
+    "theme": "coran",
+    "source": "Coran 84:1-5 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 71
+  },
+  {
+    "id": "quiz_204",
+    "question": "Selon la majorité des écoles, une personne en état de janâba (impureté majeure) peut-elle jeûner valablement si elle ne se lave qu'après l'aube ?",
+    "choix": ["A. Non, le jeûne est automatiquement invalide", "B. Oui, le jeûne reste valide ; seul le fait de manger, boire ou avoir un rapport après l'aube l'invalide, pas l'état de janâba lui-même", "C. Il doit obligatoirement rattraper ce jour", "D. Cela dépend uniquement du genre de la personne"],
+    "reponse": "B",
+    "explication": "'Â'isha et Umm Salama rapportent que le Prophète ﷺ commençait parfois son jeûne en état de janâba après une nuit conjugale, se lavant après l'aube. L'état d'impureté majeure n'invalide donc pas le jeûne, contrairement à une idée répandue à tort chez certains pratiquants.",
+    "theme": "fiqh",
+    "source": "Sahîh al-Bukhârî n°1926 ; Sahîh Muslim n°1109",
+    "difficulte": "intermédiaire",
+    "jour": 72
+  },
+  {
+    "id": "quiz_205",
+    "question": "Selon l'école hanafite, l'utilisation de gouttes pour les yeux ou d'un collyre annule-t-elle le jeûne ?",
+    "choix": ["A. Oui, systématiquement", "B. Non selon la position hanafite majoritaire, l'œil n'étant pas considéré comme une voie d'alimentation directe vers l'estomac", "C. Seulement si l'on ressent le goût dans la gorge", "D. Uniquement pendant Ramadan"],
+    "reponse": "B",
+    "explication": "La majorité des Hanafites considère que le collyre ou les gouttes oculaires n'annulent pas le jeûne, l'œil n'étant pas une voie d'ingestion reconnue vers l'estomac, contrairement à d'autres orifices. D'autres écoles nuancent davantage cette question selon le ressenti d'un goût dans la gorge.",
+    "theme": "fiqh",
+    "source": "Al-Hidâya, al-Marghînânî ; Fiqh comparatif du jeûne",
+    "difficulte": "avancé",
+    "jour": 72
+  },
+  {
+    "id": "quiz_206",
+    "question": "Selon la majorité des savants, l'injection médicale (non nutritive) annule-t-elle le jeûne ?",
+    "choix": ["A. Oui, toute injection annule systématiquement le jeûne", "B. La position la plus répandue chez les savants contemporains distingue : les injections nutritives (remplaçant un repas) annulent le jeûne, contrairement aux injections purement médicales non nutritives", "C. Non, aucune injection n'annule jamais le jeûne", "D. Seules les injections intraveineuses sont concernées"],
+    "reponse": "B",
+    "explication": "Cette question, absente des textes classiques faute d'existence de la pratique à l'époque, fait l'objet d'un ijtihâd contemporain : la majorité des conseils de fiqh actuels distingue l'injection nutritive substituant un repas (annulant le jeûne, assimilée à une alimentation) de l'injection purement thérapeutique non nutritive (n'annulant pas le jeûne).",
+    "theme": "fiqh",
+    "source": "Fatwas contemporaines des conseils de fiqh (majma' al-fiqh al-islami)",
+    "difficulte": "avancé",
+    "jour": 72
+  },
+  {
+    "id": "quiz_207",
+    "question": "Qui fut chargé par le calife 'Uthmân de diriger la commission de standardisation officielle du Coran en un seul Mushaf de référence ?",
+    "choix": ["A. 'Abdullâh ibn Mas'ûd seul", "B. Zayd ibn Thâbit, avec trois autres Compagnons qurayshites", "C. Ubayy ibn Ka'b seul", "D. 'Alî ibn Abî Tâlib seul"],
+    "reponse": "B",
+    "explication": "'Uthmân chargea Zayd ibn Thâbit de diriger une commission incluant trois Compagnons qurayshites ('Abdullâh ibn az-Zubayr, Sa'îd ibn al-'Âs, 'Abd ar-Rahmân ibn al-Hârith), avec instruction d'écrire selon le dialecte de Quraysh en cas de désaccord, aboutissant aux copies officielles envoyées dans les grandes provinces.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°4987",
+    "difficulte": "avancé",
+    "jour": 73
+  },
+  {
+    "id": "quiz_208",
+    "question": "Combien de copies officielles du Mushaf 'Uthmânien furent envoyées dans les grandes provinces de l'empire musulman naissant ?",
+    "choix": ["A. Une seule, gardée à Médine", "B. Environ quatre à cinq copies (Kûfa, Basra, Damas, et Médine, parfois Yémen ou Bahreïn selon les récits)", "C. Douze copies exactement", "D. Cent copies furent immédiatement diffusées"],
+    "reponse": "B",
+    "explication": "Les récits historiques varient légèrement sur le nombre exact, mais la plupart s'accordent sur environ quatre à cinq copies officielles envoyées vers les grandes garnisons et villes (Kûfa, Basra, Damas, Médine, parfois d'autres provinces), avec ordre de détruire les manuscrits divergents pour unifier la lecture du texte coranique.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°4987 ; historiographie classique de la compilation",
+    "difficulte": "avancé",
+    "jour": 73
+  },
+  {
+    "id": "quiz_209",
+    "question": "Quel Compagnon exprima initialement une réticence face au projet de standardisation du Mushaf par 'Uthmân, avant de s'y rallier ?",
+    "choix": ["A. 'Abdullâh ibn Mas'ûd", "B. 'Alî ibn Abî Tâlib", "C. Abû Hurayra", "D. Sa'd ibn Abî Waqqâs"],
+    "reponse": "A",
+    "explication": "'Abdullâh ibn Mas'ûd exprima une réticence initiale, attaché à sa propre lecture et transmission personnelle du Coran reçue directement du Prophète ﷺ. La tradition rapporte des tensions à ce sujet, bien que l'unification finale ait été largement acceptée pour préserver l'unité de la communauté face à la dispersion géographique croissante.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°4987 ; historiographie classique",
+    "difficulte": "avancé",
+    "jour": 73
+  },
+  {
+    "id": "quiz_210",
+    "question": "Comment appelle-t-on, en 'aqîda, le fait qu'Allah entend et voit absolument tout, sans limite ni distance ?",
+    "choix": ["A. As-Samî' al-Basîr (l'Audient, le Voyant)", "B. Al-Muhaymin seul", "C. Al-Wakîl seul", "D. Al-Muqît seul"],
+    "reponse": "A",
+    "explication": "Ahl as-Sunna affirme, à partir de nombreux versets coraniques, qu'Allah est As-Samî' (l'Audient absolu) et al-Basîr (le Voyant absolu), entendant chaque parole même murmurée et voyant chaque action même cachée, sans que la distance, l'obscurité ou le nombre ne constituent un obstacle à Sa perception.",
+    "theme": "aqida",
+    "source": "Coran 2:256, 4:58, 17:1 ; Al-'Aqîda at-Tahâwiyya",
+    "difficulte": "intermédiaire",
+    "jour": 74
+  },
+  {
+    "id": "quiz_211",
+    "question": "Comment Ahl as-Sunna comprend-elle le fait qu'Allah « rit » (yadhak) selon certains hadiths authentiques, sans tomber dans l'anthropomorphisme ?",
+    "choix": ["A. Ces hadiths sont rejetés car jugés incompatibles avec la transcendance d'Allah", "B. On affirme l'attribut tel qu'il est mentionné, sans en demander le comment (bilâ kayf), sans le comparer au rire des créatures", "C. On l'interprète uniquement comme une métaphore vide de sens réel", "D. Seuls les mystiques peuvent comprendre ce concept"],
+    "reponse": "B",
+    "explication": "Fidèle à la méthode athârite, Ahl as-Sunna affirme cet attribut rapporté authentiquement (notamment à propos du dernier homme entrant au Paradis) sans en nier la réalité, sans en préciser la modalité, et sans le comparer au rire limité et physique des créatures — un principe appliqué à tous les attributs divins rapportés par les textes.",
+    "theme": "aqida",
+    "source": "Sahîh al-Bukhârî n°6574 ; Al-'Aqîda at-Tahâwiyya",
+    "difficulte": "avancé",
+    "jour": 74
+  },
+  {
+    "id": "quiz_212",
+    "question": "Quel est le nom de la vallée sacrée où Mûsâ reçut son premier appel prophétique, mentionnée explicitement dans le Coran ?",
+    "choix": ["A. Wâdî Tuwâ", "B. Wâdî al-Qurâ", "C. Wâdî an-Naml", "D. Wâdî Muhassar"],
+    "reponse": "A",
+    "explication": "Tâ-Hâ (20:12) situe l'appel divin à Mûsâ dans la vallée sacrée de Tuwâ, où il reçut l'ordre de retirer ses sandales en signe de respect du lieu saint, avant de recevoir sa mission prophétique face au buisson ardent.",
+    "theme": "coran",
+    "source": "Coran 20:11-12 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 74
+  },
+  {
+    "id": "quiz_213",
+    "question": "Quel Compagnon fut envoyé par le Prophète ﷺ comme premier gouverneur musulman de la Mecque après sa conquête ?",
+    "choix": ["A. 'Attâb ibn Usayd", "B. Khâlid ibn al-Walîd", "C. Abû Sufyân", "D. 'Amr ibn al-'Âs"],
+    "reponse": "A",
+    "explication": "'Attâb ibn Usayd, jeune Compagnon d'à peine vingt ans, fut nommé gouverneur de la Mecque par le Prophète ﷺ après sa conquête pacifique, chargé de diriger la prière et d'administrer la ville désormais musulmane, un choix qui surprit certains par sa jeunesse.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.2",
+    "difficulte": "avancé",
+    "jour": 75
+  },
+  {
+    "id": "quiz_214",
+    "question": "Quelle expédition permit la libération et l'incorporation pacifique de nombreux juifs de Khaybar sous protection musulmane, moyennant un tribut ?",
+    "choix": ["A. La bataille de Khaybar (an 7 H)", "B. La bataille de Badr", "C. Le siège de Tâ'if", "D. La conquête de Najrân"],
+    "reponse": "A",
+    "explication": "Après la conquête de Khaybar, oasis fortifiée au nord de Médine, un accord permit aux habitants juifs de continuer à cultiver leurs terres moyennant la moitié de leurs récoltes reversée aux musulmans, un arrangement qui perdura jusqu'à leur expulsion ultérieure sous 'Umar.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°2338 ; Ibn Hishâm, as-Sîra",
+    "difficulte": "intermédiaire",
+    "jour": 75
+  },
+  {
+    "id": "quiz_215",
+    "question": "Quel Compagnon perdit un œil lors de la bataille de Khaybar et reçut du Prophète ﷺ une prière particulière de guérison ?",
+    "choix": ["A. Qatâda ibn an-Nu'mân", "B. Talha ibn 'Ubaydillâh", "C. Sa'd ibn Abî Waqqâs", "D. Az-Zubayr ibn al-'Awwâm"],
+    "reponse": "A",
+    "explication": "Qatâda ibn an-Nu'mân perdit un œil, littéralement sorti de son orbite, lors du combat. Le Prophète ﷺ le replaça de sa main et pria pour lui ; la tradition rapporte que cet œil devint ensuite plus fort et plus perçant que l'autre, resté intact jusqu'à sa mort.",
+    "theme": "sira",
+    "source": "Ibn Sa'd, at-Tabaqât al-Kubrâ",
+    "difficulte": "avancé",
+    "jour": 75
+  },
+  {
+    "id": "quiz_216",
+    "question": "Le Coran affirme-t-il explicitement que le Prophète ﷺ ne connaissait pas l'écriture (lecture et écriture) avant la révélation ?",
+    "choix": ["A. Non, cette information ne figure nulle part dans le Coran", "B. Oui, le Coran le qualifie explicitement d'« an-Nabî al-Ummî » (le Prophète illettré)", "C. Le Coran affirme au contraire qu'il savait lire et écrire couramment", "D. Le sujet reste totalement inconnu et non documenté"],
+    "reponse": "B",
+    "explication": "Al-A'râf (7:157-158) qualifie le Prophète ﷺ d'« an-Nabî al-Ummî », traditionnellement compris comme signifiant qu'il ne savait ni lire ni écrire avant la révélation — un fait mis en avant par les savants comme argument renforçant le caractère miraculeux du Coran, transmis par quelqu'un sans formation livresque.",
+    "theme": "coran",
+    "source": "Coran 7:157-158 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 76
+  },
+  {
+    "id": "quiz_217",
+    "question": "Quelle sourate mecquoise met en scène un dialogue entre Ibrâhîm et son père idolâtre, Âzar, qui refuse son message ?",
+    "choix": ["A. Maryam", "B. Al-An'âm et Maryam toutes deux", "C. Uniquement Hûd", "D. Uniquement An-Naml"],
+    "reponse": "B",
+    "explication": "Le dialogue entre Ibrâhîm et son père figure notamment en Maryam (19:41-48), avec une tendresse et une insistance filiale remarquables malgré le refus obstiné du père, et le nom Âzar est mentionné explicitement en Al-An'âm (6:74), les deux sourates se complétant sur cette relation.",
+    "theme": "coran",
+    "source": "Coran 19:41-48, 6:74 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 76
+  },
+  {
+    "id": "quiz_218",
+    "question": "Selon la position la plus répandue chez les savants, le père d'Ibrâhîm mentionné dans le Coran (Âzar) était-il son père biologique ou son oncle ?",
+    "choix": ["A. Un consensus total affirme qu'il s'agissait de son oncle, jamais de son père biologique", "B. La majorité l'identifie comme son père biologique, bien qu'une minorité de commentateurs, s'appuyant sur des généalogies arabes, ait avancé qu'il s'agissait de son oncle", "C. Le Coran précise qu'il s'agit de son grand-père", "D. Aucun commentateur ne s'est jamais penché sur cette question"],
+    "reponse": "B",
+    "explication": "La majorité des exégètes retient qu'Âzar était le père biologique d'Ibrâhîm, en accord avec le sens le plus direct du texte. Une minorité, s'appuyant sur des données généalogiques arabes différentes, a avancé l'hypothèse d'un oncle, débat resté marginal mais régulièrement mentionné dans les tafsîr classiques.",
+    "theme": "coran",
+    "source": "Tafsîr at-Tabarî et Ibn Kathîr, 6:74",
+    "difficulte": "avancé",
+    "jour": 76
+  },
+  {
+    "id": "quiz_219",
+    "question": "Comment appelle-t-on, en fiqh, le principe selon lequel la nécessité rend licite ce qui est normalement interdit, dans les limites strictes du besoin ?",
+    "choix": ["A. Al-'Urf", "B. Ad-Darûra tubîhu al-Mahzûrât", "C. Al-Istihsân seul", "D. Sadd adh-Dharâ'i'"],
+    "reponse": "B",
+    "explication": "Cette maxime juridique fondamentale (« la nécessité rend licite ce qui est interdit ») permet, par exemple, de consommer une nourriture normalement illicite en cas de danger de mort par manque d'alternative, mais reste strictement encadrée par la mesure du besoin réel, sans dépassement.",
+    "theme": "fiqh",
+    "source": "Coran 2:173 ; Al-Ashbâh wa'n-Nazâ'ir, as-Suyûtî",
+    "difficulte": "avancé",
+    "jour": 77
+  },
+  {
+    "id": "quiz_220",
+    "question": "Selon la majorité des écoles, la coutume locale (al-'urf) peut-elle servir de source secondaire pour trancher des questions de fiqh non explicitement traitées par les textes ?",
+    "choix": ["A. Non, jamais, seuls le Coran et la Sunna comptent", "B. Oui, à condition qu'elle ne contredise pas un texte religieux explicite", "C. Oui, même si elle contredit un texte religieux clair", "D. Seule l'école hanafite reconnaît ce principe"],
+    "reponse": "B",
+    "explication": "La coutume locale (al-'urf) est reconnue par plusieurs écoles, notamment hanafite et mâlikite, comme source auxiliaire dans les questions non explicitement tranchées, à condition de ne jamais contredire un texte religieux clair — principe résumé par la maxime « la coutume a force de loi » (al-'âda muhakkama).",
+    "theme": "fiqh",
+    "source": "Al-Ashbâh wa'n-Nazâ'ir, as-Suyûtî ; Usûl al-Fiqh classique",
+    "difficulte": "avancé",
+    "jour": 77
+  }
+]
