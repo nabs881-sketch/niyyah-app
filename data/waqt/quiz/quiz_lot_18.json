@@ -1,0 +1,222 @@
+[
+  {
+    "id": "quiz_341",
+    "question": "Quelle sourate relate la longue histoire de Yûsuf, de sa jalousie fraternelle jusqu'à son ascension comme ministre d'Égypte ?",
+    "choix": ["A. Yûsuf", "B. Al-Qasas", "C. Hûd", "D. Ash-Shu'arâ'"],
+    "reponse": "A",
+    "explication": "La sourate Yûsuf (12) déroule sans interruption l'ensemble du récit : le rêve prémonitoire de l'enfant, la trahison de ses frères, l'esclavage en Égypte, l'épreuve de la tentation, l'emprisonnement, l'interprétation des rêves du roi, puis son ascension au rang de ministre et sa réconciliation finale avec sa famille.",
+    "theme": "coran",
+    "source": "Coran 12 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 120
+  },
+  {
+    "id": "quiz_342",
+    "question": "Comment Yûsuf réagit-il, selon le Coran, face à la tentation de la femme d'al-'Azîz alors qu'il se trouvait seul avec elle ?",
+    "choix": ["A. Il céda momentanément avant de se raviser", "B. Il refusa catégoriquement, invoquant la crainte d'Allah et la trahison envers celui qui l'avait accueilli", "C. Il ne fut jamais confronté à cette situation", "D. Il quitta l'Égypte immédiatement"],
+    "reponse": "B",
+    "explication": "Yûsuf (12:23-24) rapporte le refus ferme de Yûsuf, déclarant : « Qu'Allah me protège ! C'est mon maître qui m'a accueilli au mieux. » Sa fuite vers la porte, où son vêtement fut déchiré par derrière, constitua la preuve matérielle décisive de son innocence face aux accusations ultérieures.",
+    "theme": "coran",
+    "source": "Coran 12:23-29 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 120
+  },
+  {
+    "id": "quiz_343",
+    "question": "Quel indice matériel permit d'établir l'innocence de Yûsuf face à l'accusation portée contre lui par la femme d'al-'Azîz ?",
+    "choix": ["A. Un témoin oculaire extérieur", "B. Son vêtement déchiré par derrière plutôt que par devant, prouvant qu'il fuyait plutôt qu'il n'agressait", "C. Une confession spontanée de la femme", "D. Un rêve prémonitoire du roi"],
+    "reponse": "B",
+    "explication": "Un témoin de la maison suggéra ce critère logique : si la tunique était déchirée par devant, elle avait dit vrai et lui avait menti ; par derrière, c'est lui qui disait vrai et elle qui mentait. La déchirure par derrière confirma sa fuite et son innocence, un exemple précoce de raisonnement déductif fondé sur un indice matériel.",
+    "theme": "coran",
+    "source": "Coran 12:26-28 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 120
+  },
+  {
+    "id": "quiz_344",
+    "question": "Selon la majorité des écoles, le contrat de location (ijâra) impose-t-il au locataire de restituer le bien loué en parfait état, sans usure normale ?",
+    "choix": ["A. Oui, toute usure doit être compensée par le locataire", "B. Non, l'usure normale liée à un usage raisonnable n'engage pas la responsabilité du locataire, sauf négligence ou usage abusif prouvé", "C. Le locataire doit toujours remplacer le bien par un neuf", "D. Le propriétaire assume systématiquement toute détérioration"],
+    "reponse": "B",
+    "explication": "Le principe général du fiqh des contrats considère le locataire comme un dépositaire de confiance (amîn) : il n'est responsable que de la négligence ou de l'usage abusif prouvé, non de l'usure normale résultant d'un usage raisonnable et conforme à l'objet du contrat de location.",
+    "theme": "fiqh",
+    "source": "Fiqh classique des contrats de location (ijâra)",
+    "difficulte": "avancé",
+    "jour": 121
+  },
+  {
+    "id": "quiz_345",
+    "question": "Selon la majorité des écoles, un contrat de partenariat commercial (mudâraba) où l'un apporte le capital et l'autre le travail répartit-il les pertes financières de manière égale entre les deux parties ?",
+    "choix": ["A. Oui, toujours à parts égales", "B. Non ; en cas de perte financière (hors négligence de l'associé travailleur), seul l'apporteur de capital assume la perte financière, l'associé travailleur ne perdant que son temps et son effort", "C. La perte est systématiquement à la charge exclusive du travailleur", "D. Ce type de contrat est interdit en Islam"],
+    "reponse": "B",
+    "explication": "Dans la mudâraba, principe fondamental de la finance islamique, l'apporteur de capital assume seul la perte financière en l'absence de négligence prouvée de l'associé travailleur, ce dernier ne perdant que son temps et son travail investi, un partage des risques asymétrique mais cohérent avec la nature différente de chaque contribution.",
+    "theme": "fiqh",
+    "source": "Fiqh classique de la finance islamique (mu'âmalât)",
+    "difficulte": "avancé",
+    "jour": 121
+  },
+  {
+    "id": "quiz_346",
+    "question": "Comment appelle-t-on, en finance islamique contemporaine, un contrat de vente à tempérament où le vendeur informe explicitement l'acheteur du coût d'achat initial et de la marge bénéficiaire ajoutée ?",
+    "choix": ["A. Al-Murâbaha", "B. Al-Mudâraba", "C. Al-Musharaka", "D. As-Salam"],
+    "reponse": "A",
+    "explication": "Al-Murâbaha est un contrat de vente où le vendeur (souvent une banque islamique) divulgue transparemment le prix d'achat initial du bien et la marge bénéficiaire ajoutée, permettant à l'acheteur de payer en plusieurs échéances, largement utilisé aujourd'hui comme alternative islamique aux prêts bancaires classiques avec intérêt.",
+    "theme": "fiqh",
+    "source": "Fiqh contemporain de la finance islamique",
+    "difficulte": "intermédiaire",
+    "jour": 121
+  },
+  {
+    "id": "quiz_347",
+    "question": "Quel calife abbasside fonda Bagdad comme nouvelle capitale de l'empire musulman, marquant le déplacement du centre de pouvoir depuis Damas ?",
+    "choix": ["A. Abû al-'Abbâs as-Saffâh", "B. Al-Mansûr", "C. Hârûn ar-Rashîd", "D. Al-Ma'mûn"],
+    "reponse": "B",
+    "explication": "Al-Mansûr, deuxième calife abbasside, fonda Bagdad (762 EC) comme nouvelle capitale circulaire stratégiquement positionnée, marquant définitivement le déplacement du centre de gravité politique et culturel du monde musulman depuis Damas omeyyade vers la Mésopotamie abbasside.",
+    "theme": "sira",
+    "source": "Historiographie classique de la période abbasside",
+    "difficulte": "avancé",
+    "jour": 122
+  },
+  {
+    "id": "quiz_348",
+    "question": "Sous quel calife abbasside la Maison de la Sagesse (Bayt al-Hikma) connut-elle son plus grand rayonnement scientifique et intellectuel à Bagdad ?",
+    "choix": ["A. Hârûn ar-Rashîd et surtout al-Ma'mûn", "B. Al-Mutawakkil", "C. Al-Musta'sim", "D. Abû Ja'far al-Mansûr uniquement"],
+    "reponse": "A",
+    "explication": "La Maison de la Sagesse, centre de traduction et de recherche scientifique fondé sous Hârûn ar-Rashîd, connut son apogée sous son fils al-Ma'mûn, attirant savants musulmans, chrétiens et juifs pour traduire et développer les héritages grec, perse et indien en mathématiques, astronomie, médecine et philosophie.",
+    "theme": "sira",
+    "source": "Historiographie classique de la civilisation abbasside",
+    "difficulte": "avancé",
+    "jour": 122
+  },
+  {
+    "id": "quiz_349",
+    "question": "Comment appelle-t-on, en 'aqîda, l'attribut divin exprimant qu'Allah pardonne les péchés de qui Il veut parmi Ses serviteurs sincèrement repentants ?",
+    "choix": ["A. Al-Ghafûr, Al-Ghaffâr (le Très Pardonneur)", "B. Al-Jabbâr seul", "C. Al-Muntaqim seul", "D. Al-Qahhâr seul"],
+    "reponse": "A",
+    "explication": "Az-Zumar (39:53) proclame : « Ô Mes serviteurs qui avez commis des excès contre vous-mêmes, ne désespérez pas de la miséricorde d'Allah. Certes, Allah pardonne tous les péchés. » Un des versets les plus cités pour rappeler l'immensité du pardon divin face au désespoir spirituel.",
+    "theme": "aqida",
+    "source": "Coran 39:53 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 122
+  },
+  {
+    "id": "quiz_350",
+    "question": "Selon un hadith qudsî célèbre, comment Allah décrit-Il Sa propre miséricorde par rapport à Sa colère ?",
+    "choix": ["A. Sa colère l'emporte toujours sur Sa miséricorde", "B. Sa miséricorde précède et l'emporte sur Sa colère", "C. Les deux sont strictement égales en toute circonstance", "D. Ce sujet n'est abordé dans aucun hadith"],
+    "reponse": "B",
+    "explication": "Un hadith qudsî rapporte qu'Allah a inscrit sur Son Trône : « Ma miséricorde précède (ou l'emporte sur) Ma colère. » Cette parole fondamentale oriente toute la théologie islamique de l'espoir, rappelant que malgré la justice divine, la miséricorde demeure l'attribut prédominant dans la relation d'Allah à Ses créatures.",
+    "theme": "aqida",
+    "source": "Sahîh al-Bukhârî n°7404 ; Sahîh Muslim n°2751",
+    "difficulte": "intermédiaire",
+    "jour": 123
+  },
+  {
+    "id": "quiz_351",
+    "question": "Selon un hadith, quelle proportion de la miséricorde totale d'Allah a-t-Il répartie parmi Ses créatures dans ce bas monde, en gardant le reste pour l'au-delà ?",
+    "choix": ["A. La totalité", "B. Une seule partie sur cent, les 99 restantes étant réservées pour le Jour du Jugement", "C. La moitié", "D. Aucune part n'est accordée dans ce bas monde"],
+    "reponse": "B",
+    "explication": "Le Prophète ﷺ a dit qu'Allah a divisé Sa miséricorde en cent parts, n'en faisant descendre qu'une seule dans ce bas monde — par laquelle les créatures se montrent tendres entre elles — réservant les 99 autres parts pour le Jour du Jugement, une image insistant sur l'immensité incommensurable de la miséricorde divine.",
+    "theme": "aqida",
+    "source": "Sahîh Muslim n°2752",
+    "difficulte": "intermédiaire",
+    "jour": 123
+  },
+  {
+    "id": "quiz_352",
+    "question": "Quelle sourate évoque la parabole de la « bonne parole » comparée à un arbre excellent, aux racines fermes et à la ramure atteignant le ciel ?",
+    "choix": ["A. Ibrâhîm", "B. An-Nahl", "C. Ar-Ra'd", "D. Al-Kahf"],
+    "reponse": "A",
+    "explication": "Ibrâhîm (14:24-25) compare la bonne parole (souvent identifiée à la parole de Tawhîd, « Lâ ilâha illâ Allâh ») à un arbre excellent aux racines fermement ancrées et à la ramure atteignant le ciel, produisant du fruit en toute saison par la permission de son Seigneur — image de stabilité et de fécondité continue de la foi sincère.",
+    "theme": "coran",
+    "source": "Coran 14:24-25 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 124
+  },
+  {
+    "id": "quiz_353",
+    "question": "À l'inverse de la bonne parole, à quoi la même sourate compare-t-elle la « mauvaise parole » ?",
+    "choix": ["A. Un arbre mauvais, déraciné de la surface de la terre, sans stabilité aucune", "B. Une pierre inerte", "C. Un océan sans rivage", "D. Un feu qui ne s'éteint jamais"],
+    "reponse": "A",
+    "explication": "Ibrâhîm (14:26) poursuit la parabole : la mauvaise parole (l'incrédulité, le mensonge) est comme un arbre mauvais, déraciné de la surface de la terre, dépourvu de toute stabilité — contraste saisissant avec l'arbre fermement enraciné de la bonne parole évoquée juste avant.",
+    "theme": "coran",
+    "source": "Coran 14:26 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 124
+  },
+  {
+    "id": "quiz_354",
+    "question": "Quelle sourate met en scène la parabole du « feu allumé » puis éteint, illustrant la situation des hypocrites qui perdent la lumière de la guidance ?",
+    "choix": ["A. Al-Baqara", "B. An-Nûr", "C. Al-Munâfiqûn", "D. Al-Hadîd"],
+    "reponse": "A",
+    "explication": "Al-Baqara (2:17-18) compare les hypocrites à celui qui allume un feu ; dès qu'il illumine ce qui l'entoure, Allah leur retire leur lumière et les laisse dans des ténèbres où ils ne voient plus rien — sourds, muets, aveugles, incapables de revenir sur le droit chemin après avoir rejeté sciemment la guidance.",
+    "theme": "coran",
+    "source": "Coran 2:17-18 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 125
+  },
+  {
+    "id": "quiz_355",
+    "question": "Dans la même série de paraboles sur les hypocrites, à quel phénomène météorologique intense Al-Baqara compare-t-elle également leur situation ?",
+    "choix": ["A. Une pluie orageuse avec ténèbres, tonnerre et éclairs", "B. Une sécheresse prolongée", "C. Une tempête de sable", "D. Une éclipse totale"],
+    "reponse": "A",
+    "explication": "Al-Baqara (2:19-20) ajoute une seconde image : celle de nuages chargés de pluie orageuse, ténèbres, tonnerre et éclairs, où les hypocrites se bouchent les oreilles par crainte de la mort face au tonnerre, tandis que l'éclair manque de leur ravir la vue à chaque fois qu'il illumine leur chemin — image d'une foi instable, oscillant entre brefs éclats de clarté et retour aux ténèbres.",
+    "theme": "coran",
+    "source": "Coran 2:19-20 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 125
+  },
+  {
+    "id": "quiz_356",
+    "question": "Quel Compagnon (Tâbi'î) fut connu pour son rôle majeur dans l'expansion musulmane vers le Khorâsân et les régions orientales de l'ancien empire sassanide ?",
+    "choix": ["A. Al-Ahnaf ibn Qays", "B. Sa'd ibn Abî Waqqâs uniquement", "C. Abû Mûsâ al-Ash'arî uniquement", "D. Aucune conquête n'eut lieu dans cette région"],
+    "reponse": "A",
+    "explication": "Al-Ahnaf ibn Qays, connu pour sa sagesse et sa patience légendaires, joua un rôle majeur dans l'expansion musulmane vers le Khorâsân et les régions orientales de l'ancien empire sassanide sous 'Umar et ses successeurs, contribuant à l'intégration progressive de ces territoires dans le califat.",
+    "theme": "sira",
+    "source": "at-Tabarî, Târîkh ar-Rusul wa'l-Mulûk",
+    "difficulte": "avancé",
+    "jour": 126
+  },
+  {
+    "id": "quiz_357",
+    "question": "Quelle qualité particulière valut à Al-Ahnaf ibn Qays une réputation durable dans la tradition islamique, au-delà de ses conquêtes militaires ?",
+    "choix": ["A. Sa richesse extraordinaire", "B. Sa patience légendaire et sa capacité à maîtriser sa colère face à la provocation", "C. Sa poésie satirique", "D. Sa maîtrise de la calligraphie"],
+    "reponse": "B",
+    "explication": "Al-Ahnaf ibn Qays devint proverbial pour sa patience (hilm) exceptionnelle, capable de maîtriser sa colère même face à des provocations sévères, une qualité citée en exemple dans de nombreux récits classiques sur la maîtrise de soi et la noblesse du caractère, indépendamment de son parcours militaire.",
+    "theme": "sira",
+    "source": "Récits classiques sur la sagesse des Tâbi'ûn",
+    "difficulte": "avancé",
+    "jour": 126
+  },
+  {
+    "id": "quiz_358",
+    "question": "Quelle sourate décrit la répartition de la subsistance (rizq) parmi les créatures comme relevant exclusivement de la volonté divine, sans que l'effort humain seul n'en soit la cause ultime ?",
+    "choix": ["A. Hûd", "B. Ar-Ra'd", "C. Ash-Shûrâ", "D. Fâtir, entre autres"],
+    "reponse": "D",
+    "explication": "Fâtir (35:2-3) rappelle qu'aucune créature ne peut retenir ce qu'Allah accorde en miséricorde, ni obtenir ce qu'Il retient. Ce thème, présent dans plusieurs sourates, ne dispense pas l'effort humain légitime (kasb) mais rappelle que la cause ultime de toute subsistance demeure la volonté et la générosité divines.",
+    "theme": "coran",
+    "source": "Coran 35:2-3 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 126
+  },
+  {
+    "id": "quiz_359",
+    "question": "Comment Ahl as-Sunna concilie-t-elle la croyance en la répartition divine de la subsistance (rizq) avec l'obligation religieuse de travailler et de chercher activement son pain ?",
+    "choix": ["A. Elle nie l'obligation de travailler puisque tout est déjà déterminé", "B. Elle affirme les deux ensemble : la subsistance est décrétée par Allah, mais l'effort et le travail restent les moyens légitimes et obligatoires par lesquels cette subsistance parvient habituellement", "C. Elle considère le travail comme une simple option facultative sans lien avec la foi", "D. Cette conciliation n'a jamais été formulée par les savants"],
+    "reponse": "B",
+    "explication": "Ahl as-Sunna affirme conjointement la prédestination de la subsistance et l'obligation de chercher activement son pain par des moyens licites, à l'image de l'oiseau qui part affamé le matin et revient repu le soir — non pas en restant immobile, mais en volant activement à la recherche de sa nourriture, une image souvent citée par les savants pour illustrer cet équilibre.",
+    "theme": "aqida",
+    "source": "Sunan at-Tirmidhî n°2344 ; théologie classique du Qadar et du travail",
+    "difficulte": "avancé",
+    "jour": 126
+  },
+  {
+    "id": "quiz_360",
+    "question": "Quelle sourate mecquoise interroge : « Sont-ils égaux, ceux qui savent et ceux qui ne savent pas ? », valorisant la recherche du savoir ?",
+    "choix": ["A. Az-Zumar", "B. Fâtir", "C. Ar-Rûm", "D. Luqmân"],
+    "reponse": "A",
+    "explication": "Az-Zumar (39:9) pose cette question rhétorique, fréquemment citée pour valoriser la recherche de la connaissance religieuse et générale, rappelant que seuls « les doués d'intelligence » (ulû al-albâb) tirent véritablement leçon des signes divins qui les entourent.",
+    "theme": "coran",
+    "source": "Coran 39:9 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 126
+  }
+]
