@@ -1,0 +1,222 @@
+[
+  {
+    "id": "quiz_321",
+    "question": "Quelle bataille opposant les musulmans aux Perses sassanides, remportée sous 'Umar, ouvrit durablement la voie à la conquête de l'Irak ?",
+    "choix": ["A. Al-Qâdisiyya", "B. Nahâwand", "C. Al-Yarmûk", "D. Jalûlâ'"],
+    "reponse": "A",
+    "explication": "La bataille d'al-Qâdisiyya (an 15-16 H), menée sous le commandement de Sa'd ibn Abî Waqqâs, opposa l'armée musulmane à l'imposante armée sassanide. La victoire décisive musulmane ouvrit la voie à la chute de la capitale perse, Ctésiphon, et à la conquête progressive de toute la Mésopotamie.",
+    "theme": "sira",
+    "source": "at-Tabarî, Târîkh ar-Rusul wa'l-Mulûk",
+    "difficulte": "avancé",
+    "jour": 113
+  },
+  {
+    "id": "quiz_322",
+    "question": "Quel Compagnon commandait l'armée musulmane à la bataille d'al-Qâdisiyya contre les Perses ?",
+    "choix": ["A. Khâlid ibn al-Walîd", "B. Sa'd ibn Abî Waqqâs", "C. 'Amr ibn al-'Âs", "D. Abû 'Ubayda ibn al-Jarrâh"],
+    "reponse": "B",
+    "explication": "Sa'd ibn Abî Waqqâs, l'un des dix Compagnons promis au Paradis et oncle maternel du Prophète ﷺ par alliance tribale, fut désigné par 'Umar pour commander cette expédition décisive contre l'empire sassanide, aboutissant à une victoire majeure malgré l'infériorité numérique initiale des troupes musulmanes.",
+    "theme": "sira",
+    "source": "at-Tabarî, Târîkh ar-Rusul wa'l-Mulûk",
+    "difficulte": "intermédiaire",
+    "jour": 113
+  },
+  {
+    "id": "quiz_323",
+    "question": "Comment appelle-t-on, en 'aqîda, la croyance selon laquelle le Coran demeure valable et applicable pour toute l'humanité jusqu'au Jour du Jugement, sans nouvelle révélation à venir ?",
+    "choix": ["A. Khâtim an-Nubuwwa (le Sceau de la Prophétie) et universalité du message coranique", "B. At-Tajdîd permanent des textes sacrés", "C. Une croyance minoritaire contestée", "D. Un concept purement moderne sans fondement scripturaire"],
+    "reponse": "A",
+    "explication": "Al-Ahzâb (33:40) désigne le Prophète ﷺ comme « le Sceau des prophètes », fondement du principe selon lequel aucune nouvelle révélation ni prophétie ne viendra après lui, faisant du Coran le texte religieux définitif et universel valable jusqu'au Jour du Jugement, un pilier central de la croyance islamique.",
+    "theme": "aqida",
+    "source": "Coran 33:40 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 113
+  },
+  {
+    "id": "quiz_324",
+    "question": "Selon la majorité des écoles, un contrat de vente (bay') conclu sans que le prix exact soit clairement fixé à l'avance est-il valide ?",
+    "choix": ["A. Oui, sans aucune condition", "B. Non ; la clarté du prix (thaman ma'lûm) est une condition de validité, l'incertitude excessive (gharar) invalidant la transaction", "C. Cela dépend uniquement du montant", "D. Seuls les marchés publics exigent cette clarté"],
+    "reponse": "B",
+    "explication": "Le Prophète ﷺ interdit la vente entachée de gharar (incertitude/ambiguïté excessive), rendant obligatoire la clarté du prix et de l'objet de la transaction pour la validité du contrat. Cette exigence protège les deux parties contre les litiges et l'exploitation par ambiguïté délibérée.",
+    "theme": "fiqh",
+    "source": "Sahîh Muslim n°1513 ; Fiqh classique des transactions",
+    "difficulte": "intermédiaire",
+    "jour": 114
+  },
+  {
+    "id": "quiz_325",
+    "question": "Comment appelle-t-on, en fiqh commercial, la vente d'un bien qu'on ne possède pas encore et qu'on n'est pas certain de pouvoir livrer ?",
+    "choix": ["A. Bay' mâ lâ yamlik (vente de ce que l'on ne possède pas), interdite par un hadith explicite", "B. Al-Murâbaha, une vente parfaitement licite et courante", "C. As-Salam, toujours interdite sans exception", "D. Al-Ijâra, réservée aux locations uniquement"],
+    "reponse": "A",
+    "explication": "Le Prophète ﷺ interdit explicitement de vendre ce que l'on ne possède pas encore, une règle protégeant contre la spéculation sur des biens hypothétiques. Le contrat de Salam (vente avec paiement anticipé et livraison différée d'un bien décrit précisément) constitue une exception encadrée et licite à ce principe général, sous conditions strictes.",
+    "theme": "fiqh",
+    "source": "Sunan Abî Dâwûd n°3503 ; Fiqh classique des transactions",
+    "difficulte": "avancé",
+    "jour": 114
+  },
+  {
+    "id": "quiz_326",
+    "question": "Selon la majorité des écoles, la vente à crédit (bay' bi-thaman âjil) avec un prix plus élevé que le prix comptant est-elle licite ?",
+    "choix": ["A. Non, considérée comme une forme déguisée de ribâ par toutes les écoles", "B. Oui, la majorité l'autorise, à condition que le prix soit fixé clairement dès la conclusion du contrat sans possibilité de pénalité de retard ultérieure", "C. Elle est licite uniquement pour les biens immobiliers", "D. Elle est licite uniquement entre musulmans"],
+    "reponse": "B",
+    "explication": "La majorité des savants autorise la vente à crédit avec un prix supérieur au prix comptant, à condition que ce prix soit fixé une fois pour toutes dès la conclusion du contrat, sans qu'une pénalité supplémentaire ne puisse être ajoutée en cas de retard de paiement, ce qui basculerait alors dans le ribâ interdit.",
+    "theme": "fiqh",
+    "source": "Fiqh az-Zakât et des transactions ; consensus classique du fiqh commercial",
+    "difficulte": "avancé",
+    "jour": 114
+  },
+  {
+    "id": "quiz_327",
+    "question": "Quel Compagnon fut envoyé par le calife 'Umar comme premier gouverneur musulman d'Égypte après sa conquête ?",
+    "choix": ["A. 'Amr ibn al-'Âs", "B. Khâlid ibn al-Walîd", "C. Mu'âwiya ibn Abî Sufyân", "D. Sa'd ibn Abî Waqqâs"],
+    "reponse": "A",
+    "explication": "'Amr ibn al-'Âs mena la conquête de l'Égypte (an 20-21 H) et en devint le premier gouverneur musulman, fondant la ville de Fustât (près du Caire actuel) comme nouvelle garnison et capitale administrative, marquant le début durable de la présence islamique dans la région.",
+    "theme": "sira",
+    "source": "at-Tabarî, Târîkh ar-Rusul wa'l-Mulûk",
+    "difficulte": "intermédiaire",
+    "jour": 115
+  },
+  {
+    "id": "quiz_328",
+    "question": "Quelle ville égyptienne 'Amr ibn al-'Âs fonda-t-il comme première garnison et capitale musulmane du pays ?",
+    "choix": ["A. Alexandrie", "B. Fustât", "C. Le Caire moderne directement", "D. Assouan"],
+    "reponse": "B",
+    "explication": "Fustât, fondée par 'Amr ibn al-'Âs autour de son camp militaire, devint la première capitale musulmane d'Égypte, précédant de plusieurs siècles la fondation du Caire (al-Qâhira) par les Fatimides. Elle abrite encore aujourd'hui l'une des plus anciennes mosquées d'Afrique, la mosquée de 'Amr ibn al-'Âs.",
+    "theme": "sira",
+    "source": "at-Tabarî, Târîkh ar-Rusul wa'l-Mulûk",
+    "difficulte": "avancé",
+    "jour": 115
+  },
+  {
+    "id": "quiz_329",
+    "question": "Quelle sourate évoque l'humiliation subie par ceux qui interrogeront leurs propres membres (mains, pieds, peau) témoignant contre eux le Jour du Jugement ?",
+    "choix": ["A. Yâ-Sîn et Fussilat, entre autres", "B. Al-Kahf uniquement", "C. Al-Fâtiha", "D. Al-Kawthar"],
+    "reponse": "A",
+    "explication": "Yâ-Sîn (36:65) et Fussilat (41:20-21) décrivent comment, le Jour du Jugement, les mains, les pieds et même la peau des mécréants témoigneront contre eux de leurs actes, un moment où toute dénégation devient impossible face à ce témoignage corporel incontestable.",
+    "theme": "coran",
+    "source": "Coran 36:65, 41:20-21 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 116
+  },
+  {
+    "id": "quiz_330",
+    "question": "Quelle sourate est traditionnellement récitée par le croyant sur son lit de mort ou auprès du mourant, en raison de sa vertu d'apaisement ?",
+    "choix": ["A. Yâ-Sîn", "B. Al-Baqara", "C. An-Nisâ'", "D. Al-Anfâl"],
+    "reponse": "A",
+    "explication": "Un hadith recommande de réciter Yâ-Sîn auprès des mourants, une pratique très répandue dans la tradition musulmane. Les savants du hadith notent toutefois que la chaîne de transmission de ce hadith spécifique est discutée, sans que cela n'empêche la pratique de rester largement répandue par précaution et piété populaire.",
+    "theme": "coran",
+    "source": "Sunan Abî Dâwûd n°3121 (chaîne discutée) ; usage traditionnel répandu",
+    "difficulte": "avancé",
+    "jour": 116
+  },
+  {
+    "id": "quiz_331",
+    "question": "Selon la majorité des écoles, laver le corps du défunt musulman est-il une obligation collective (fard kifâya) incombant à la communauté ?",
+    "choix": ["A. Non, c'est une simple recommandation facultative", "B. Oui, c'est une obligation collective : si certains musulmans s'en acquittent, les autres sont dispensés de péché, mais elle doit impérativement être accomplie par quelqu'un", "C. Seule la famille proche peut légalement y procéder", "D. Cela ne concerne que les hommes défunts"],
+    "reponse": "B",
+    "explication": "Le lavage rituel, l'ensevelissement dans un linceul, la prière funéraire et l'enterrement du défunt musulman constituent des obligations collectives (fard kifâya) : si un nombre suffisant de musulmans s'en acquitte, l'obligation est levée pour l'ensemble de la communauté, mais elle ne peut être totalement négligée par tous.",
+    "theme": "fiqh",
+    "source": "Fiqh classique des funérailles ; consensus des quatre écoles",
+    "difficulte": "intermédiaire",
+    "jour": 116
+  },
+  {
+    "id": "quiz_332",
+    "question": "Quel calife omeyyade est généralement associé à la construction du Dôme du Rocher (Qubbat as-Sakhra) à Jérusalem ?",
+    "choix": ["A. Mu'âwiya ibn Abî Sufyân", "B. 'Abd al-Malik ibn Marwân", "C. Al-Walîd ibn 'Abd al-Malik", "D. 'Umar ibn 'Abd al-'Azîz"],
+    "reponse": "B",
+    "explication": "'Abd al-Malik ibn Marwân ordonna la construction du Dôme du Rocher vers 691-692 EC, monument emblématique surplombant le rocher traditionnellement associé au Voyage Nocturne du Prophète ﷺ, l'un des plus anciens monuments architecturaux islamiques encore intact aujourd'hui.",
+    "theme": "sira",
+    "source": "Historiographie classique de la période omeyyade",
+    "difficulte": "avancé",
+    "jour": 117
+  },
+  {
+    "id": "quiz_333",
+    "question": "Quel calife omeyyade est traditionnellement présenté par de nombreux savants comme un modèle de justice et de piété, parfois surnommé le « cinquième calife bien guidé » ?",
+    "choix": ["A. Yazîd ibn Mu'âwiya", "B. 'Umar ibn 'Abd al-'Azîz", "C. Al-Walîd ibn 'Abd al-Malik", "D. Hishâm ibn 'Abd al-Malik"],
+    "reponse": "B",
+    "explication": "'Umar ibn 'Abd al-'Azîz, calife omeyyade réputé pour sa justice, sa simplicité et ses réformes fiscales équitables envers les non-musulmans, est souvent surnommé par les savants « le cinquième calife bien guidé », en référence aux quatre premiers califes rachidun, malgré son appartenance dynastique omeyyade.",
+    "theme": "sira",
+    "source": "Ibn Kathîr, al-Bidâya wa'n-Nihâya ; historiographie classique",
+    "difficulte": "intermédiaire",
+    "jour": 117
+  },
+  {
+    "id": "quiz_334",
+    "question": "Comment appelle-t-on, en 'aqîda, l'ensemble des textes et récits d'origine judéo-chrétienne intégrés par certains commentateurs dans les récits exégétiques, sans validation prophétique explicite ?",
+    "choix": ["A. Al-Isrâ'îliyyât", "B. Al-Hadîth al-Qudsî", "C. As-Sunna al-Mutawâtira", "D. Al-Ijmâ' al-Kâmil"],
+    "reponse": "A",
+    "explication": "Les Isrâ'îliyyât désignent des récits d'origine judéo-chrétienne intégrés par certains commentateurs, particulièrement pour combler des détails absents du texte coranique (noms précis, chiffres). Les savants classent ces récits en trois catégories : ceux confirmés par l'Islam, ceux contredits, et ceux ni confirmés ni infirmés, à traiter alors avec prudence méthodologique.",
+    "theme": "aqida",
+    "source": "'Ulûm al-Qur'ân classiques ; méthodologie exégétique",
+    "difficulte": "avancé",
+    "jour": 117
+  },
+  {
+    "id": "quiz_335",
+    "question": "Quelle sourate décrit longuement l'histoire de Mûsâ et Pharaon, incluant l'épisode du panier déposé sur le fleuve pour sauver le nourrisson Mûsâ ?",
+    "choix": ["A. Al-Qasas", "B. Al-Anbiyâ'", "C. Al-Mu'minûn", "D. Al-Ahqâf"],
+    "reponse": "A",
+    "explication": "Al-Qasas (28:7-13) relate en détail l'ordre divin inspiré à la mère de Mûsâ de le confier au fleuve dans un coffret, sa récupération par la famille de Pharaon, puis le stratagème permettant à sa propre mère de l'allaiter sans être reconnue, un récit d'une grande richesse narrative sur la protection divine face au danger.",
+    "theme": "coran",
+    "source": "Coran 28:7-13 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 118
+  },
+  {
+    "id": "quiz_336",
+    "question": "Après avoir tué accidentellement un Égyptien dans une rixe, vers quelle région Mûsâ s'enfuit-il, selon le récit coranique, avant de rencontrer Shu'ayb ?",
+    "choix": ["A. Madyan", "B. L'Égypte du Sud", "C. La Palestine", "D. Le Yémen"],
+    "reponse": "A",
+    "explication": "Al-Qasas (28:22-28) rapporte la fuite de Mûsâ vers Madyan, où il aida deux jeunes femmes à abreuver leur troupeau avant d'être accueilli par leur père (traditionnellement identifié à Shu'ayb ou à un homme pieux de la région), épousant l'une de ses filles après un contrat de service de plusieurs années.",
+    "theme": "coran",
+    "source": "Coran 28:22-28 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 118
+  },
+  {
+    "id": "quiz_337",
+    "question": "Quel personnage richissime et arrogant, contemporain de Mûsâ, est cité en exemple de l'orgueil détruit par sa propre fortune, jusqu'à être englouti avec ses biens ?",
+    "choix": ["A. Qârûn", "B. Hâmân", "C. Bal'am ibn Bâ'ûrâ", "D. As-Sâmirî"],
+    "reponse": "A",
+    "explication": "Al-Qasas (28:76-81) relate l'histoire de Qârûn, membre du peuple de Mûsâ d'une richesse fabuleuse dont les clés de trésor pesaient si lourd qu'un groupe robuste peinait à les porter, mais dont l'arrogance et le refus de reconnaître la faveur divine menèrent à son engloutissement avec toute sa demeure.",
+    "theme": "coran",
+    "source": "Coran 28:76-81 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 118
+  },
+  {
+    "id": "quiz_338",
+    "question": "Qui était As-Sâmirî, personnage coranique responsable de la fabrication du veau d'or adoré par une partie du peuple de Mûsâ durant son absence sur le Mont Sinaï ?",
+    "choix": ["A. Un membre du peuple de Mûsâ dont l'identité exacte reste discutée par les commentateurs", "B. Pharaon lui-même déguisé", "C. Le frère de Mûsâ, Hârûn", "D. Un ange déchu"],
+    "reponse": "A",
+    "explication": "Tâ-Hâ (20:85-97) attribue la fabrication du veau d'or à As-Sâmirî, membre du peuple de Mûsâ, dont l'identité précise et l'origine exacte (parfois rattachée à une tribu ou une région spécifique) demeurent discutées parmi les commentateurs, sans que le Coran ne fournisse davantage de détails biographiques sur lui.",
+    "theme": "coran",
+    "source": "Coran 20:85-97 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 119
+  },
+  {
+    "id": "quiz_339",
+    "question": "Comment Hârûn, frère de Mûsâ, réagit-il face à l'adoration du veau d'or par une partie du peuple durant l'absence de son frère ?",
+    "choix": ["A. Il approuva discrètement cette adoration", "B. Il s'y opposa fermement mais fut menacé et peu écouté par une partie du peuple, restant sans moyen de coercition suffisant", "C. Il quitta immédiatement le peuple sans intervenir", "D. Il participa lui-même à la fabrication du veau"],
+    "reponse": "B",
+    "explication": "Tâ-Hâ (20:90-94) rapporte que Hârûn avertit clairement le peuple de l'égarement de cette adoration, mais fut peu écouté et craignit d'aggraver la division en agissant avec une fermeté excessive en l'absence de Mûsâ, préférant attendre son retour plutôt que de risquer une scission plus grave encore.",
+    "theme": "coran",
+    "source": "Coran 20:90-94 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 119
+  },
+  {
+    "id": "quiz_340",
+    "question": "Quelle punition Mûsâ infligea-t-il finalement à As-Sâmirî après son retour et la confrontation sur le veau d'or ?",
+    "choix": ["A. Il fut condamné à mort immédiatement", "B. Il fut banni, condamné à errer en criant « Ne me touchez pas ! », tandis que le veau d'or fut brûlé et ses cendres dispersées dans la mer", "C. Il fut simplement pardonné sans conséquence", "D. Il fut emprisonné à vie"],
+    "reponse": "B",
+    "explication": "Tâ-Hâ (20:97) rapporte la sentence de Mûsâ contre As-Sâmirî : un bannissement accompagné d'une malédiction le condamnant à crier « Ne me touchez pas ! » pour le reste de sa vie, isolé de toute relation sociale normale, tandis que le veau d'or fut brûlé et ses cendres jetées dans la mer, effaçant toute trace de cette idolâtrie.",
+    "theme": "coran",
+    "source": "Coran 20:95-97 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 119
+  }
+]
