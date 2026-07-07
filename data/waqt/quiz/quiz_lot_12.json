@@ -1,0 +1,222 @@
+[
+  {
+    "id": "quiz_221",
+    "question": "Quelle sourate débute par l'ordre « Lis ! » (Iqra'), premier mot révélé au Prophète ﷺ dans la grotte de Hirâ' ?",
+    "choix": ["A. Al-Muddaththir", "B. Al-'Alaq", "C. Al-Qalam", "D. Al-Muzzammil"],
+    "reponse": "B",
+    "explication": "Al-'Alaq (96) s'ouvre par « Iqra' bi-ismi Rabbika alladhî khalaq » (Lis, au nom de ton Seigneur qui a créé), les tout premiers versets révélés au Prophète ﷺ, marquant le début officiel de la révélation coranique et de sa mission prophétique.",
+    "theme": "coran",
+    "source": "Coran 96:1-5 ; Sahîh al-Bukhârî n°3",
+    "difficulte": "intermédiaire",
+    "jour": 78
+  },
+  {
+    "id": "quiz_222",
+    "question": "Quelle sourate courte est considérée par plusieurs récits comme la seconde révélation reçue par le Prophète ﷺ, après une interruption de la révélation (fatrat al-wahy) ?",
+    "choix": ["A. Al-Muddaththir", "B. Al-Fâtiha", "C. Al-Ikhlâs", "D. Al-Kawthar"],
+    "reponse": "A",
+    "explication": "Après une période d'interruption ayant profondément angoissé le Prophète ﷺ, Al-Muddaththir (74) lui parvint, l'exhortant : « Ô toi, l'enveloppé (dans un manteau) ! Lève-toi et avertis ! » Ce fut, selon la version la plus répandue, le signal du début formel de la prédication publique.",
+    "theme": "coran",
+    "source": "Sahîh al-Bukhârî n°4 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 78
+  },
+  {
+    "id": "quiz_223",
+    "question": "Quelle sourate est appelée « la sourate de la Table servie » car elle relate la demande des disciples de 'Îsâ pour un festin descendu du ciel ?",
+    "choix": ["A. Al-Mâ'ida", "B. Al-A'râf", "C. Al-Anbiyâ'", "D. Al-Kahf"],
+    "reponse": "A",
+    "explication": "Al-Mâ'ida (5:112-115) relate la demande des disciples ('al-Hawâriyyûn') à 'Îsâ pour qu'une table garnie descende du ciel, comme signe et fête pour affermir leur foi, ce qu'Allah leur accorda tout en avertissant du châtiment sévère en cas d'incrédulité persistante après ce signe.",
+    "theme": "coran",
+    "source": "Coran 5:112-115 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 78
+  },
+  {
+    "id": "quiz_224",
+    "question": "Selon la majorité des écoles, un musulman peut-il rattraper un jeûne surérogatoire manqué, contrairement à un jeûne obligatoire ?",
+    "choix": ["A. Le jeûne surérogatoire, une fois commencé, doit obligatoirement être achevé sous peine de péché", "B. Il n'est pas obligatoire d'achever un jeûne surérogatoire commencé ; on peut le rompre sans péché ni obligation de rattrapage", "C. Il devient automatiquement obligatoire dès qu'on l'entame", "D. Aucune école n'autorise à rompre un jeûne surérogatoire"],
+    "reponse": "B",
+    "explication": "Contrairement au jeûne obligatoire, le jeûne surérogatoire (nâfila) peut être rompu en cours de journée sans péché, notamment pour répondre à une invitation ou un besoin, ainsi que l'illustre un épisode où le Prophète ﷺ rompit son propre jeûne surérogatoire chez Umm Hâni'.",
+    "theme": "fiqh",
+    "source": "Sunan at-Tirmidhî n°732 ; Fiqh comparatif du jeûne",
+    "difficulte": "intermédiaire",
+    "jour": 79
+  },
+  {
+    "id": "quiz_225",
+    "question": "Selon l'école mâlikite, un jeûneur qui a un rapport conjugal volontaire en plein jour de Ramadan doit-il, en plus du rattrapage, s'acquitter d'une expiation (kaffâra) ?",
+    "choix": ["A. Non, aucune expiation n'est requise pour aucune école", "B. Oui, une expiation sévère est due (affranchissement, ou jeûne de deux mois consécutifs, ou nourrir 60 pauvres), en plus du jour à rattraper", "C. Seule une simple demande de pardon suffit", "D. L'expiation ne concerne que les femmes"],
+    "reponse": "B",
+    "explication": "Toutes les écoles s'accordent, avec des nuances, sur la gravité de cet acte : une expiation progressive est due — affranchir un esclave (obsolète aujourd'hui), à défaut jeûner deux mois consécutifs, à défaut nourrir soixante pauvres — en plus du rattrapage du jour rompu, illustrant la sévérité particulière réservée à cette transgression précise.",
+    "theme": "fiqh",
+    "source": "Sahîh al-Bukhârî n°1936 ; Sahîh Muslim n°1111",
+    "difficulte": "intermédiaire",
+    "jour": 79
+  },
+  {
+    "id": "quiz_226",
+    "question": "Selon la majorité des savants, un jeûneur qui prend une douche fraîche en pleine journée de Ramadan pour se rafraîchir voit-il son jeûne annulé ?",
+    "choix": ["A. Oui, l'eau froide annule systématiquement le jeûne", "B. Non, se rafraîchir par l'eau (douche, bain) est permis et n'annule pas le jeûne", "C. Seulement après 'Asr", "D. Uniquement en hiver"],
+    "reponse": "B",
+    "explication": "Plusieurs Compagnons rapportent avoir vu le Prophète ﷺ se verser de l'eau sur la tête en plein jeûne pour se rafraîchir de la chaleur ou de la soif. Se laver, nager ou se rafraîchir par l'eau n'annule donc pas le jeûne, à condition de ne pas avaler d'eau volontairement.",
+    "theme": "fiqh",
+    "source": "Sunan Abî Dâwûd n°2365",
+    "difficulte": "intermédiaire",
+    "jour": 79
+  },
+  {
+    "id": "quiz_227",
+    "question": "Quel Compagnon fut envoyé au Yémen par le Prophète ﷺ avec la mission spécifique de simplifier la religion et de ne jamais compliquer inutilement la prédication ?",
+    "choix": ["A. Mu'âdh ibn Jabal, avec Abû Mûsâ al-Ash'arî", "B. Khâlid ibn al-Walîd seul", "C. 'Amr ibn al-'Âs seul", "D. Abû 'Ubayda ibn al-Jarrâh seul"],
+    "reponse": "A",
+    "explication": "Envoyant Mu'âdh et Abû Mûsâ ensemble au Yémen, le Prophète ﷺ leur recommanda : « Facilitez, ne compliquez pas ; annoncez la bonne nouvelle, ne repoussez pas les gens ; entendez-vous, ne divergez pas entre vous. » Une consigne fondatrice de pédagogie religieuse, encore citée aujourd'hui.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°3038 ; Sahîh Muslim n°1733",
+    "difficulte": "intermédiaire",
+    "jour": 80
+  },
+  {
+    "id": "quiz_228",
+    "question": "Quel Compagnon est traditionnellement désigné comme le premier calligraphe/gouverneur de l'écriture officielle du courrier diplomatique envoyé par le Prophète ﷺ aux rois voisins ?",
+    "choix": ["A. Zayd ibn Thâbit", "B. 'Abdullâh ibn Arqam", "C. Mu'âwiya ibn Abî Sufyân", "D. Hanzala ibn ar-Rabî'"],
+    "reponse": "B",
+    "explication": "'Abdullâh ibn Arqam figure parmi les scribes chargés de rédiger la correspondance officielle et diplomatique du Prophète ﷺ, notamment les lettres envoyées aux souverains voisins (Héraclius, Chosroès, le Négus, Muqawqis) les invitant à l'Islam.",
+    "theme": "sira",
+    "source": "Ibn Sa'd, at-Tabaqât al-Kubrâ",
+    "difficulte": "avancé",
+    "jour": 80
+  },
+  {
+    "id": "quiz_229",
+    "question": "Quelle fut la réaction de Chosroès (Kisrâ), empereur perse, à la réception de la lettre du Prophète ﷺ l'invitant à l'Islam ?",
+    "choix": ["A. Il se convertit immédiatement", "B. Il déchira la lettre avec colère", "C. Il l'ignora sans réponse", "D. Il envoya une délégation pour débattre"],
+    "reponse": "B",
+    "explication": "Furieux qu'un homme lui écrive en le nommant avant lui-même dans la formule d'adresse, Chosroès déchira la lettre du Prophète ﷺ. Informé de ce geste, le Prophète ﷺ aurait prédit que son royaume serait déchiré de la même manière — une prophétie que la postérité relie à la chute rapide de l'empire sassanide.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°4424 ; Ibn Hishâm, as-Sîra",
+    "difficulte": "avancé",
+    "jour": 80
+  },
+  {
+    "id": "quiz_230",
+    "question": "Quelle fut la réaction d'Héraclius, empereur byzantin, à la lettre du Prophète ﷺ, selon le récit détaillé rapporté par Abû Sufyân lui-même ?",
+    "choix": ["A. Il la brûla immédiatement", "B. Il enquêta sérieusement sur le Prophète ﷺ auprès d'Abû Sufyân, reconnaissant certains signes de prophétie sans se convertir publiquement", "C. Il déclara aussitôt la guerre aux musulmans", "D. Il n'en tint aucun compte"],
+    "reponse": "B",
+    "explication": "Abû Sufyân, alors encore non-musulman, rapporte lui-même avoir été interrogé par Héraclius sur les caractéristiques de Muhammad ﷺ (lignée, promesses tenues, croissance du mouvement). Héraclius conclut que les signes correspondaient à un vrai prophète, sans toutefois abandonner son trône ni se convertir ouvertement.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°7, célèbre hadith détaillé",
+    "difficulte": "avancé",
+    "jour": 81
+  },
+  {
+    "id": "quiz_231",
+    "question": "Comment appelle-t-on, en 'aqîda, le principe selon lequel toute croyance ou pratique doit se fonder sur une preuve authentique (Coran, Sunna, consensus), sans innovation injustifiée ?",
+    "choix": ["A. Al-Ijtihâd seul", "B. Rejet de l'innovation blâmable (al-bid'a) dans la religion", "C. At-Taqlîd obligatoire", "D. Al-Qiyâs seul"],
+    "reponse": "B",
+    "explication": "Le Prophète ﷺ mit en garde contre toute innovation introduite dans la religion sans fondement, déclarant que toute innovation est égarement. Les savants distinguent néanmoins les innovations purement mondaines et organisationnelles des innovations proprement cultuelles (dans l'adoration elle-même), objet de cette mise en garde spécifique.",
+    "theme": "aqida",
+    "source": "Sahîh Muslim n°867 ; Sunan Abî Dâwûd n°4607",
+    "difficulte": "avancé",
+    "jour": 81
+  },
+  {
+    "id": "quiz_232",
+    "question": "Selon Ahl as-Sunna, la foi (îmân) est-elle un état figé et invariable, ou peut-elle augmenter et diminuer ?",
+    "choix": ["A. Elle est totalement figée dès la profession de foi initiale", "B. Elle augmente par l'obéissance et diminue par la désobéissance, selon la position majoritaire d'Ahl as-Sunna", "C. Elle ne peut qu'augmenter, jamais diminuer", "D. La question ne concerne que les théologiens, sans conséquence pratique"],
+    "reponse": "B",
+    "explication": "Contrairement à certains courants qui considèrent la foi comme un bloc figé et indivisible, la position majoritaire d'Ahl as-Sunna, fondée sur plusieurs versets (Al-Anfâl 8:2, Al-Muddaththir 74:31), affirme que la foi augmente par les actes d'obéissance et le rappel d'Allah, et diminue par la négligence et la désobéissance.",
+    "theme": "aqida",
+    "source": "Coran 8:2, 74:31 ; Al-'Aqîda at-Tahâwiyya",
+    "difficulte": "avancé",
+    "jour": 81
+  },
+  {
+    "id": "quiz_233",
+    "question": "Quelle sourate raconte l'histoire des gens de la Caverne (Ashâb al-Kahf), jeunes croyants réfugiés fuyant la persécution religieuse de leur roi ?",
+    "choix": ["A. Al-Kahf", "B. Al-Anbiyâ'", "C. Al-Mu'minûn", "D. Ar-Rûm"],
+    "reponse": "A",
+    "explication": "Al-Kahf (18) relate l'histoire de jeunes croyants s'étant réfugiés dans une caverne pour échapper à la persécution religieuse, plongés dans un sommeil miraculeux de plusieurs siècles par la protection divine, un récit riche d'enseignements sur la préservation de la foi face à l'oppression.",
+    "theme": "coran",
+    "source": "Coran 18:9-26 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 82
+  },
+  {
+    "id": "quiz_234",
+    "question": "Combien de temps, selon le Coran lui-même, les gens de la Caverne restèrent-ils endormis, en précisant une durée en années solaires puis lunaires ?",
+    "choix": ["A. 100 ans exactement", "B. 300 années solaires, soit 309 années lunaires", "C. 40 ans seulement", "D. Le Coran ne précise aucune durée"],
+    "reponse": "B",
+    "explication": "Al-Kahf (18:25) précise : « Ils demeurèrent dans leur caverne 300 ans, et ajoutez-en neuf. » Les commentateurs expliquent cet écart de neuf années par la conversion entre le calendrier solaire (300 ans) utilisé par certains peuples et le calendrier lunaire (309 ans) de la révélation coranique.",
+    "theme": "coran",
+    "source": "Coran 18:25 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 82
+  },
+  {
+    "id": "quiz_235",
+    "question": "Quel animal, selon le Coran, accompagna fidèlement les gens de la Caverne durant leur long sommeil ?",
+    "choix": ["A. Un chameau", "B. Un chien", "C. Un oiseau", "D. Aucun animal n'est mentionné"],
+    "reponse": "B",
+    "explication": "Al-Kahf (18:18) mentionne leur chien, allongé les pattes étendues à l'entrée de la caverne, un détail unique dans le Coran où un animal aussi ordinaire est associé directement à un groupe de croyants protégés, sans jugement négatif porté sur sa présence.",
+    "theme": "coran",
+    "source": "Coran 18:18 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 82
+  },
+  {
+    "id": "quiz_236",
+    "question": "Selon la majorité des savants contemporains, la zakât est-elle due sur les revenus locatifs d'un bien immobilier, ou seulement sur sa valeur d'achat/revente ?",
+    "choix": ["A. Sur la valeur totale du bien immobilier lui-même chaque année", "B. Sur les revenus locatifs nets accumulés une fois le nisâb atteint, et non sur la valeur du bien loué lui-même", "C. Aucune zakât n'est due sur l'immobilier locatif", "D. Seulement si le bien est situé en terre sainte"],
+    "reponse": "B",
+    "explication": "La position la plus répandue chez les savants contemporains distingue le bien immobilier destiné à la location (non soumis lui-même à la zakât, car conservé pour usage productif) des revenus locatifs qu'il génère, ces derniers étant soumis à la zakât une fois accumulés et ayant atteint le nisâb après une année lunaire.",
+    "theme": "fiqh",
+    "source": "Fiqh az-Zakât, Yûsuf al-Qaradâwî ; fatwas contemporaines",
+    "difficulte": "avancé",
+    "jour": 83
+  },
+  {
+    "id": "quiz_237",
+    "question": "Selon la majorité des écoles, la zakât est-elle due sur un bien immobilier destiné à l'habitation personnelle (résidence principale) ?",
+    "choix": ["A. Oui, toujours", "B. Non, la résidence personnelle, comme les biens d'usage propre, n'est pas soumise à la zakât", "C. Seulement si elle dépasse 500 m²", "D. Seulement pour les propriétaires de plusieurs biens"],
+    "reponse": "B",
+    "explication": "Le principe général du fiqh de la zakât exclut les biens destinés à l'usage personnel (résidence, véhicule, mobilier) de l'assiette de la zakât, celle-ci ciblant les biens productifs, thésaurisés ou destinés au commerce et à la croissance patrimoniale, non les besoins de base légitimes.",
+    "theme": "fiqh",
+    "source": "Fiqh az-Zakât, Yûsuf al-Qaradâwî ; consensus classique",
+    "difficulte": "intermédiaire",
+    "jour": 83
+  },
+  {
+    "id": "quiz_238",
+    "question": "Quel Compagnon, connu pour sa grande richesse, finança une part considérable de l'expédition de Tabûk, suscitant la joie visible du Prophète ﷺ ?",
+    "choix": ["A. 'Uthmân ibn 'Affân", "B. 'Abd ar-Rahmân ibn 'Awf", "C. Talha ibn 'Ubaydillâh", "D. Az-Zubayr ibn al-'Awwâm"],
+    "reponse": "A",
+    "explication": "'Uthmân finança une part très importante de l'expédition de Tabûk (chameaux, chevaux, équipement), au point que le Prophète ﷺ répéta plusieurs fois : « Rien ne nuira à 'Uthmân après ce qu'il a fait aujourd'hui », soulignant l'ampleur exceptionnelle de sa générosité ce jour-là.",
+    "theme": "sira",
+    "source": "Sunan at-Tirmidhî n°3701",
+    "difficulte": "avancé",
+    "jour": 84
+  },
+  {
+    "id": "quiz_239",
+    "question": "Quels trois Compagnons restèrent volontairement en retrait de l'expédition de Tabûk sans excuse valable, puis furent mis à l'écart socialement pendant cinquante jours avant leur pardon révélé par le Coran ?",
+    "choix": ["A. Ka'b ibn Mâlik et deux autres Compagnons", "B. Abû Lubâba seul", "C. Hâtib ibn Abî Balta'a seul", "D. Aucun Compagnon ne fut concerné par cet épisode"],
+    "reponse": "A",
+    "explication": "Ka'b ibn Mâlik, avec deux autres Compagnons sincères mais sans excuse valable, resta en retrait de Tabûk. Le Prophète ﷺ ordonna leur mise à l'écart sociale totale durant cinquante jours, jusqu'à ce qu'At-Tawba (9:118) révèle leur pardon, Ka'b ayant lui-même relaté cette épreuve en détail dans un récit célèbre.",
+    "theme": "sira",
+    "source": "Coran 9:118 ; Sahîh al-Bukhârî n°4418",
+    "difficulte": "avancé",
+    "jour": 84
+  },
+  {
+    "id": "quiz_240",
+    "question": "Pourquoi Ka'b ibn Mâlik insista-t-il, dans son récit, sur le fait d'avoir dit la vérité au Prophète ﷺ plutôt que d'inventer une excuse comme d'autres l'avaient fait ?",
+    "choix": ["A. Il ne voyait aucune différence entre mentir et dire la vérité", "B. Il estimait que dire la vérité, même douloureuse, était le chemin le plus sûr vers le salut, contrairement au mensonge qui aurait pu apaiser sur le moment mais rester une source d'angoisse durable", "C. Il fut contraint par la torture à avouer", "D. Il ignorait que d'autres avaient menti"],
+    "reponse": "B",
+    "explication": "Ka'b raconte avoir vu d'autres Compagnons inventer des excuses acceptées par le Prophète ﷺ mais qui, selon lui, cachaient un malaise intérieur durable. En choisissant la vérité malgré la sanction sociale sévère qui suivit, il rapporte avoir ressenti une paix intérieure absente chez ceux ayant menti, un épisode souvent cité sur la valeur rédemptrice de la sincérité.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°4418, récit complet de Ka'b ibn Mâlik",
+    "difficulte": "avancé",
+    "jour": 84
+  }
+]
